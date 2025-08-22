@@ -1,0 +1,113 @@
+{
+  "uuid": "wlXF",
+  "title": "Limite d'une fonction définie sur $\\R^2$",
+  "chapter": "Fonction de plusieurs variables",
+  "subchapter": "Limite",
+  "theme": "fonctions de plusieurs variables",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-03-01",
+  "updated_at": "2025-08-22T12:41:31.033Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $f \\colon \\R^2 \\to \\R$,\n$$ (x,y) \\mapsto \\dfrac{x^2 y^2}{x^2 y^2 + (x-y)^2} $$",
+      "html": "<p>Soit <span>\\(f \\colon \\R^2 \\to \\R\\)</span>,\n<span>\\[(x,y) \\mapsto \\dfrac{x^2 y^2}{x^2 y^2 + (x-y)^2}\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Donner l'ensemble de définition de $f$.",
+      "html": "<p>Donner l’ensemble de définition de <span>\\(f\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "La fonction $f$ est définie pour tout $(x,y)\\in \\R^2$ tels que $x^2 y^2 + (x-y)^2 \\neq 0 $. Or $x^2y^2 + (x-y)^2 = 0 \\iff xy = 0 \\text{ et } x=y \\iff x=y=0$ donc $f$ est définie sur $\\R^2 \\backslash \\{(0,0)\\}$.",
+      "html": "<p>La fonction <span>\\(f\\)</span> est définie pour tout <span>\\((x,y)\\in \\R^2\\)</span> tels que <span>\\(x^2 y^2 + (x-y)^2 \\neq 0\\)</span>. Or <span>\\(x^2y^2 + (x-y)^2 = 0 \\iff xy = 0 \\text{ et } x=y \\iff x=y=0\\)</span> donc <span>\\(f\\)</span> est définie sur <span>\\(\\R^2 \\backslash \\{(0,0)\\}\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Pour $x$ fixé, calculer $g(x) = \\lim\\limits_{y \\to 0} f(x,y)$.",
+      "html": "<p>Pour <span>\\(x\\)</span> fixé, calculer <span>\\(g(x) = \\lim\\limits_{y \\to 0} f(x,y)\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Soit $x \\in \\R$ : si $x=0$, $f(0,y) = 0$ et si $x \\neq 0$, $f(x,y) \\xrightarrow[y \\to 0]{} \\frac{0}{x^2} = 0$",
+      "html": "<p>Soit <span>\\(x \\in \\R\\)</span> : si <span>\\(x=0\\)</span>, <span>\\(f(0,y) = 0\\)</span> et si <span>\\(x \\neq 0\\)</span>, <span>\\(f(x,y) \\xrightarrow[y \\to 0]{} \\frac{0}{x^2} = 0\\)</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Pour $y$ fixé, calculer $h(y) = \\lim\\limits_{x \\to 0} f(x,y)$.",
+      "html": "<p>Pour <span>\\(y\\)</span> fixé, calculer <span>\\(h(y) = \\lim\\limits_{x \\to 0} f(x,y)\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "De même, $h(y) = 0$.",
+      "html": "<p>De même, <span>\\(h(y) = 0\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Calculer $\\lim\\limits_{x \\to 0} g(x)$.",
+      "html": "<p>Calculer <span>\\(\\lim\\limits_{x \\to 0} g(x)\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "On en déduit que $\\lim\\limits_{x \\to 0} g(x) = 0$",
+      "html": "<p>On en déduit que <span>\\(\\lim\\limits_{x \\to 0} g(x) = 0\\)</span></p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "Calculer $\\lim\\limits_{y \\to 0} h(y)$.",
+      "html": "<p>Calculer <span>\\(\\lim\\limits_{y \\to 0} h(y)\\)</span>.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "reponse",
+      "latex": "De même $\\lim\\limits_{y \\to 0} h(y) = 0$",
+      "html": "<p>De même <span>\\(\\lim\\limits_{y \\to 0} h(y) = 0\\)</span></p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "question",
+      "latex": "La fonction $f$ admet-elle une limite quand $(x,y) \\to (0,0)$~?",
+      "html": "<p>La fonction <span>\\(f\\)</span> admet-elle une limite quand <span>\\((x,y) \\to (0,0)\\)</span> ?</p>",
+      "order": 12
+    },
+    {
+      "id": "block_13",
+      "type": "reponse",
+      "latex": "Non car $f(x,x) = 1 \\xrightarrow[x \\to 0]{} 1$ et $f(x,0) = 0 \\xrightarrow[x \\to 0]{} 0 \\neq 1$ : on a deux chemins qui donnent deux limites différentes.",
+      "html": "<p>Non car <span>\\(f(x,x) = 1 \\xrightarrow[x \\to 0]{} 1\\)</span> et <span>\\(f(x,0) = 0 \\xrightarrow[x \\to 0]{} 0 \\neq 1\\)</span> : on a deux chemins qui donnent deux limites différentes.</p>",
+      "order": 13
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "5d16815cbf21cf03811b9aa0e100a3f9c06be48fbcbef2467a7228fbf1d0585d"
+}

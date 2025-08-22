@@ -1,0 +1,22 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./static/artifacts:/usr/share/nginx/html/artifacts:ro
+    depends_on:
+      - app
+
+  app:
+    build: .
+    environment:
+      - NODE_ENV=production
+      - DATABASE_PATH=/app/data/exercises.sqlite
+    volumes:
+      - ./data:/app/data:ro
+      - ./static:/app/static:ro
+    expose:
+      - "3000"
+    restart: unless-stopped

@@ -1,0 +1,36 @@
+{
+  "uuid": "Y8t7",
+  "title": "Etude d'une série entière",
+  "chapter": "Série entière",
+  "subchapter": "Autre",
+  "theme": "séries entières",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-06-05",
+  "updated_at": "2025-08-22T13:03:15.614Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "Déterminer le rayon de convergence de la série : \n\t$$\\sum_{n=0}^{+\\infty}\\frac{n^2+4n-1}{n!(n+2)}x^n$$\npuis déterminer sa somme dans l'intervalle ouvert de convergence.",
+      "html": "<p>Déterminer le rayon de convergence de la série :\n<span>\\[\\sum_{n=0}^{+\\infty}\\frac{n^2+4n-1}{n!(n+2)}x^n\\]</span>\npuis déterminer sa somme dans l’intervalle ouvert de convergence.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "reponse",
+      "latex": "La règle de d'\\textsc{Alembert} montre que le rayon de convergence est égal à $+\\infty$.\n\nPour $n$ entier naturel donné, $\\frac{n^2+4n-1}{n!(n+2)}=\\frac{n^3+5n^2+3n-1}{(n+2)!}$ puis \n\n$$\\begin{align*}\\ensuremath\nn^3+5n^2+3n-1&= (n+2)(n+1)n+2n^2+n-1 = (n+2)(n+1)n+2(n+2)(n+1) - 5n - 5\\\\\n&= (n+2)(n+1)n + 2(n+2)(n+1) - 5(n+2) + 5\n\\end{align*}$$\n\nDonc, pour tout réel $x$,\n\n\t$$f(x) =\\sum_{n=0}^{+\\infty}\\frac{(n+2)(n+1)n}{(n+2)!}x^n +2\\sum_{n=0}^{+\\infty}\\frac{(n+2)(n+1)}{(n+2)!}x^n- 5\\sum_{n=0}^{+\\infty}\\frac{n+2}{(n+2)!}x^n+ 5\\sum_{n=0}^{+\\infty}\\frac{1}{(n+2)!}x^n.$$\n\nEnsuite $f(0) = -\\frac{1}{2}$  et pour $x\\neq 0$,\n\n$$\\begin{align*}\nf(x)&=\\sum_{n=1}^{+\\infty}\\frac{1}{(n-1)!}x^n +2\\sum_{n=0}^{+\\infty}\\frac{1}{n!}x^n- 5\\sum_{n=0}^{+\\infty}\\frac{1}{(n+1)!}x^n+ 5\\sum_{n=0}^{+\\infty}\\frac{1}{(n+2)!}x^n\\\\\n&= xe^x + 2e^x -5\\frac{e^x-1}{x}+ 5\\frac{e^x-1-x}{x^2}= \\frac{e^x(x^3+2x^2-5x+5) -5x}{x^2}.\n\\end{align*}$$\n\n\t\t$$\\forall x\\in\\Rr \\, \\quad, \\quad \\sum_{n=0}^{+\\infty}\\frac{n^2+4n-1}{n!(n+2)}x^n=\\left\\{\n\t\t\\begin{array}{l}\n\t\t\\frac{e^x(x^3+2x^2-5x+5) -5x}{x^2}\\;\\text{si}\\;x\\in\\Rr^*\\\\\n\t\t-\\frac{1}{2}\\;\\text{si}\\;x=0\n\t\t\\end{array}\n\t\t\\right.$$",
+      "html": "<p>La règle de d’<span>Alembert</span> montre que le rayon de convergence est égal à <span>\\(+\\infty\\)</span>.</p>\n<p>Pour <span>\\(n\\)</span> entier naturel donné, <span>\\(\\frac{n^2+4n-1}{n!(n+2)}=\\frac{n^3+5n^2+3n-1}{(n+2)!}\\)</span> puis</p>\n<p><span>\\[\\begin{align*}\\ensuremath\nn^3+5n^2+3n-1&amp;= (n+2)(n+1)n+2n^2+n-1 = (n+2)(n+1)n+2(n+2)(n+1) - 5n - 5\\\\\n&amp;= (n+2)(n+1)n + 2(n+2)(n+1) - 5(n+2) + 5\n\\end{align*}\\]</span></p>\n<p>Donc, pour tout réel <span>\\(x\\)</span>,</p>\n<p><span>\\[f(x) =\\sum_{n=0}^{+\\infty}\\frac{(n+2)(n+1)n}{(n+2)!}x^n +2\\sum_{n=0}^{+\\infty}\\frac{(n+2)(n+1)}{(n+2)!}x^n- 5\\sum_{n=0}^{+\\infty}\\frac{n+2}{(n+2)!}x^n+ 5\\sum_{n=0}^{+\\infty}\\frac{1}{(n+2)!}x^n.\\]</span></p>\n<p>Ensuite <span>\\(f(0) = -\\frac{1}{2}\\)</span> et pour <span>\\(x\\neq 0\\)</span>,</p>\n<p><span>\\[\\begin{align*}\nf(x)&amp;=\\sum_{n=1}^{+\\infty}\\frac{1}{(n-1)!}x^n +2\\sum_{n=0}^{+\\infty}\\frac{1}{n!}x^n- 5\\sum_{n=0}^{+\\infty}\\frac{1}{(n+1)!}x^n+ 5\\sum_{n=0}^{+\\infty}\\frac{1}{(n+2)!}x^n\\\\\n&amp;= xe^x + 2e^x -5\\frac{e^x-1}{x}+ 5\\frac{e^x-1-x}{x^2}= \\frac{e^x(x^3+2x^2-5x+5) -5x}{x^2}.\n\\end{align*}\\]</span></p>\n<p><span>\\[\\forall x\\in\\Rr \\, \\quad, \\quad \\sum_{n=0}^{+\\infty}\\frac{n^2+4n-1}{n!(n+2)}x^n=\\left\\{\n        \\begin{array}{l}\n        \\frac{e^x(x^3+2x^2-5x+5) -5x}{x^2}\\;\\text{si}\\;x\\in\\Rr^*\\\\\n        -\\frac{1}{2}\\;\\text{si}\\;x=0\n        \\end{array}\n        \\right.\\]</span></p>",
+      "order": 2
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "5047858a5323a20c3474b0264ac553f1befb93b2b4198e69d866bb2c92055920"
+}

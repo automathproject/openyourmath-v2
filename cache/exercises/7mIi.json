@@ -1,0 +1,57 @@
+{
+  "uuid": "7mIi",
+  "title": "Résolution d'un système linéaire",
+  "chapter": "Déterminant, système linéaire",
+  "subchapter": "Système linéaire, rang",
+  "theme": "matrices, systèmes linéaires",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-01-31",
+  "updated_at": "2025-08-22T12:38:49.310Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit la matrice $M = \\begin{pmatrix}\n            0&1&2\\\\\n            1&1&2\\\\\n            0&2&3\n            \\end{pmatrix}$.",
+      "html": "<p>Soit la matrice <span>\\(M = \\begin{pmatrix}\n            0&amp;1&amp;2\\\\\n            1&amp;1&amp;2\\\\\n            0&amp;2&amp;3\n            \\end{pmatrix}\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Montrer que $M$ est inversible et calculer $M^{-1}$.",
+      "html": "<p>Montrer que <span>\\(M\\)</span> est inversible et calculer <span>\\(M^{-1}\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "On pourra calculer le déterminant de $M$.",
+      "html": "<p>On pourra calculer le déterminant de <span>\\(M\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "On calcule le déterminant de $M$ :\n        $$\\begin{align*}\n            \\det(M) &= 0 \\times \\begin{vmatrix} 1&2\\\\2&3 \\end{vmatrix} - 1 \\times \\begin{vmatrix} 1&2\\\\0&3 \\end{vmatrix} + 2 \\times \\begin{vmatrix} 1&1\\\\0&2 \\end{vmatrix} \\\\\n            &= -1 \\times (3-0) + 2 \\times (2-0) = -3+4 = 1.\n        \\end{align*}$$\n        Donc $M$ est inversible. On calcule $M^{-1}$ :\n        $$\\begin{align*}\n            M^{-1} &= \\frac{1}{\\det(M)} \\begin{pmatrix} 3&-2&1\\\\-2&1&0\\\\1&0&-1 \\end{pmatrix} = \\begin{pmatrix} 3&-2&1\\\\-2&1&0\\\\1&0&-1 \\end{pmatrix}.\n        \\end{align*}$$",
+      "html": "<p>On calcule le déterminant de <span>\\(M\\)</span> :\n<span>\\[\\begin{align*}\n            \\det(M) &amp;= 0 \\times \\begin{vmatrix} 1&amp;2\\\\2&amp;3 \\end{vmatrix} - 1 \\times \\begin{vmatrix} 1&amp;2\\\\0&amp;3 \\end{vmatrix} + 2 \\times \\begin{vmatrix} 1&amp;1\\\\0&amp;2 \\end{vmatrix} \\\\\n            &amp;= -1 \\times (3-0) + 2 \\times (2-0) = -3+4 = 1.\n        \\end{align*}\\]</span>\nDonc <span>\\(M\\)</span> est inversible. On calcule <span>\\(M^{-1}\\)</span> :\n<span>\\[\\begin{align*}\n            M^{-1} &amp;= \\frac{1}{\\det(M)} \\begin{pmatrix} 3&amp;-2&amp;1\\\\-2&amp;1&amp;0\\\\1&amp;0&amp;-1 \\end{pmatrix} = \\begin{pmatrix} 3&amp;-2&amp;1\\\\-2&amp;1&amp;0\\\\1&amp;0&amp;-1 \\end{pmatrix}.\n        \\end{align*}\\]</span></p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Résoudre le système linéaire suivant : \n        $$\n        \\left\\{\\begin{aligned}\n        y+2z & =1 \\\\\n        x+y+2z & =2 \\\\\n        2y+3z & =3\n        \\end{aligned}\\right.\n        $$",
+      "html": "<p>Résoudre le système linéaire suivant :\n<span>\\[\\left\\{\\begin{aligned}\n        y+2z &amp; =1 \\\\\n        x+y+2z &amp; =2 \\\\\n        2y+3z &amp; =3\n        \\end{aligned}\\right.\\]</span></p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "c3248e9880131beb12ff588a2858fb7a34118608f342b95b931b53531553dd7d"
+}

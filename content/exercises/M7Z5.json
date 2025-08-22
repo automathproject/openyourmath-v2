@@ -1,0 +1,43 @@
+{
+  "uuid": "M7Z5",
+  "title": "Comparaison de moyennes",
+  "chapter": "Statistique",
+  "subchapter": "Tests d'hypothèses, intervalle de confiance",
+  "theme": "tests d'hypothèses",
+  "difficulty": null,
+  "author": "Maxime Nguyen",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-11-27",
+  "updated_at": "2025-08-22T13:02:50.988Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Un professeur affirme qu'il existe une différence entre les\nhommes et les femmes sur un test d'habileté spatio-cognitivo-émotive.\nVoici les données sur lesquelles repose son\naffirmation: \\\\ Hommes: 82, 80, 81, 84, 75 \\\\ Femmes: 74, 79, 78, 71",
+      "html": "<p>Un professeur affirme qu’il existe une différence entre les\nhommes et les femmes sur un test d’habileté spatio-cognitivo-émotive.\nVoici les données sur lesquelles repose son\naffirmation:<br />\nHommes: 82, 80, 81, 84, 75<br />\nFemmes: 74, 79, 78, 71</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "La différence observée est-elle significative au seuil de 5\\% (on suppose que $\\sigma_H = \\sigma_F$)?",
+      "html": "<p>La différence observée est-elle significative au seuil de 5% (on suppose que <span>\\(\\sigma_H = \\sigma_F\\)</span>)?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "\\href{https://stcyrterrenetdefensegouvf-my.sharepoint.com/:x:/g/personal/maxime_nguyen_st-cyr_terre-net_defense_gouv_fr/EYlCPJY62BdMpTYscg1T6zABc9_WCIR_pzt6XSOajALYhw?e=WsbIMH&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wNDAwLTAwMDAwMDAwMDAwMH0}{lien vers tableur}",
+      "html": "<p><a href=\"https://stcyrterrenetdefensegouvf-my.sharepoint.com/:x:/g/personal/maxime_nguyen_st-cyr_terre-net_defense_gouv_fr/EYlCPJY62BdMpTYscg1T6zABc9_WCIR_pzt6XSOajALYhw?e=WsbIMH&amp;nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wNDAwLTAwMDAwMDAwMDAwMH0\">lien vers tableur</a></p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "df6a6773ae3a7f9d64f5293f09595a746519ef39980dc647b1b4adc4c0fdf868"
+}

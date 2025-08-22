@@ -1,0 +1,43 @@
+{
+  "uuid": "ZIua",
+  "title": "Loi d'une variable aléatoire",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Variable aléatoire discrète",
+  "theme": "variables aléatoires discrètes",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-02-07",
+  "updated_at": "2025-08-22T12:39:52.004Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Une variable aléatoire $X$ prend les valeurs 3,4,5 et 6.",
+      "html": "<p>Une variable aléatoire <span>\\(X\\)</span> prend les valeurs 3,4,5 et 6.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Quelle est la loi de probabilité de X sachant que\n\t\t$$\\PP(X > 5) = 1/2 \\qquad \\PP(X < 5) = 1/3 \\qquad P(X=3)=P(X=4)$$",
+      "html": "<p>Quelle est la loi de probabilité de X sachant que\n<span>\\[\\PP(X &gt; 5) = 1/2 \\qquad \\PP(X &lt; 5) = 1/3 \\qquad P(X=3)=P(X=4)\\]</span></p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "Calculer l'espérance mathématique, la variance puis l'écart type de la variable $X$.",
+      "html": "<p>Calculer l’espérance mathématique, la variance puis l’écart type de la variable <span>\\(X\\)</span>.</p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "75a3f4ed21ec8c5c2f9389dd476eaafe690f5eb2b5601c3d7109cc595c78e1c8"
+}

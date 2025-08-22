@@ -1,0 +1,85 @@
+{
+  "uuid": "kWDX",
+  "title": "Fiabilité d'un système électronique",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Autre",
+  "theme": "variables aléatoires à densité, loi exponentielle",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-19",
+  "updated_at": "2025-08-22T12:40:29.331Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Un système électronique est constitué de $n$ composants disposés en série. Cela implique que la panne d'un composant entraîne la panne de tout le système. Chacun des composants a une durée de vie $T_k$ qui suit une loi exponentielle de paramètre $\\lambda = 1$, pour tout $k \\in \\{1, \\ldots, n\\}$. On admet que les variables aléatoires $T_1, \\ldots, T_n$ sont indépendantes. On note $S$ la durée de vie du système et on note $t \\geq 0$ la variable de temps.",
+      "html": "<p>Un système électronique est constitué de <span>\\(n\\)</span> composants disposés en série. Cela implique que la panne d’un composant entraîne la panne de tout le système. Chacun des composants a une durée de vie <span>\\(T_k\\)</span> qui suit une loi exponentielle de paramètre <span>\\(\\lambda = 1\\)</span>, pour tout <span>\\(k \\in \\{1, \\ldots, n\\}\\)</span>. On admet que les variables aléatoires <span>\\(T_1, \\ldots, T_n\\)</span> sont indépendantes. On note <span>\\(S\\)</span> la durée de vie du système et on note <span>\\(t \\geq 0\\)</span> la variable de temps.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Soit $t \\geq 0$. Pour tout $k \\in \\{1, \\ldots, n \\}$, on note $R_k(t) = \\prob(T_k > t)$ la fiabilité du composant $k$ à l'instant $t$. C'est la probabilité que le composant $k$ fonctionne encore après un temps d'utilisation $t$. Déterminer $R_k(t)$.",
+      "html": "<p>Soit <span>\\(t \\geq 0\\)</span>. Pour tout <span>\\(k \\in \\{1, \\ldots, n \\}\\)</span>, on note <span>\\(R_k(t) = \\prob(T_k &gt; t)\\)</span> la fiabilité du composant <span>\\(k\\)</span> à l’instant <span>\\(t\\)</span>. C’est la probabilité que le composant <span>\\(k\\)</span> fonctionne encore après un temps d’utilisation <span>\\(t\\)</span>. Déterminer <span>\\(R_k(t)\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "$R_k(t) = \\int_{t}^{+\\infty} e^{-x} dx = e^{-t}$ pour tout $t \\geq 0$.",
+      "html": "<p><span>\\(R_k(t) = \\int_{t}^{+\\infty} e^{-x} dx = e^{-t}\\)</span> pour tout <span>\\(t \\geq 0\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Calculer $\\E(T_k)$ et déterminer la probabilité que le composant $k$ fonctionne après un temps d'utilisation égal à $\\E(T_k)$.",
+      "html": "<p>Calculer <span>\\(\\E(T_k)\\)</span> et déterminer la probabilité que le composant <span>\\(k\\)</span> fonctionne après un temps d’utilisation égal à <span>\\(\\E(T_k)\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "$\\E(T_k) = \\frac{1}{\\lambda} = 1$ et $R_k(\\E(T_k)) = e^{-\\E(T_k)} = e^{-1} \\approx 0,37$.",
+      "html": "<p><span>\\(\\E(T_k) = \\frac{1}{\\lambda} = 1\\)</span> et <span>\\(R_k(\\E(T_k)) = e^{-\\E(T_k)} = e^{-1} \\approx 0,37\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "On note $R(t) = \\prob(S > t)$ la fiabilité du système à l'instant $t$. C'est la probabilité que le système fonctionne encore après un temps d'utilisation $t$. Exprimer $R(t)$ en fonction de $R_1(t), \\ldots, R_n(t)$ et en déduire que $S$ suit une loi exponentielle dont on précisera le paramètre.",
+      "html": "<p>On note <span>\\(R(t) = \\prob(S &gt; t)\\)</span> la fiabilité du système à l’instant <span>\\(t\\)</span>. C’est la probabilité que le système fonctionne encore après un temps d’utilisation <span>\\(t\\)</span>. Exprimer <span>\\(R(t)\\)</span> en fonction de <span>\\(R_1(t), \\ldots, R_n(t)\\)</span> et en déduire que <span>\\(S\\)</span> suit une loi exponentielle dont on précisera le paramètre.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "$R(t) = \\prob(S > t) = \\prob(T_1 > t, \\ldots, T_n > t) = \\prod_{k=1}^{n} \\prob(T_k > t) = \\prod_{k=1}^{n} R_k(t) = e^{-nt}$ pour tout $t \\geq 0$. Donc $S$ suit une loi exponentielle de paramètre $n$.",
+      "html": "<p><span>\\(R(t) = \\prob(S &gt; t) = \\prob(T_1 &gt; t, \\ldots, T_n &gt; t) = \\prod_{k=1}^{n} \\prob(T_k &gt; t) = \\prod_{k=1}^{n} R_k(t) = e^{-nt}\\)</span> pour tout <span>\\(t \\geq 0\\)</span>. Donc <span>\\(S\\)</span> suit une loi exponentielle de paramètre <span>\\(n\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Déterminer le temps moyen de bon fonctionnement du système.",
+      "html": "<p>Déterminer le temps moyen de bon fonctionnement du système.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "$\\E(S) = \\frac{1}{\\lambda} = \\frac{1}{n}$.",
+      "html": "<p><span>\\(\\E(S) = \\frac{1}{\\lambda} = \\frac{1}{n}\\)</span>.</p>",
+      "order": 9
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "cbb727a408542bfde09bdada55c7425acb8826f5c93f5e9bfbb1aa821d4b6a1a"
+}

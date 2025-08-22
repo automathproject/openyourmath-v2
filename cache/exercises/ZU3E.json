@@ -1,0 +1,71 @@
+{
+  "uuid": "ZU3E",
+  "title": "Approximation par inégalité",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Lois de distributions",
+  "theme": "variables aléatoires discrètes, loi de Poisson, approximation de loi",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-20",
+  "updated_at": "2025-08-22T12:39:53.044Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $X$ le nombre d'avions arrivant en une heure sur un aéroport. On suppose que $X$ suit une loi de Poisson de paramètre $\\lambda = 16$.",
+      "html": "<p>Soit <span>\\(X\\)</span> le nombre d’avions arrivant en une heure sur un aéroport. On suppose que <span>\\(X\\)</span> suit une loi de Poisson de paramètre <span>\\(\\lambda = 16\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "\\'A l'aide de l'inégalité de Bienaymé-Tchebychev, donner une minoration de la probabilité $\\prob(10 < X < 22)$.",
+      "html": "<p>Á l’aide de l’inégalité de Bienaymé-Tchebychev, donner une minoration de la probabilité <span>\\(\\prob(10 &lt; X &lt; 22)\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "D'après l'inégalité de Bienaymé-Tchebychev, on a : \n            $$\\prob(|X-\\E(X)|\\geq 6 ) \\leq  \\frac{\\V(X)}{6^2}$$\n            ce qui donne : \n            $$\\prob(10\\leq X\\leq 22) = \\prob(|X-16|\\geq 6 ) \\leq  \\frac{\\V(X)}{6^2} = \\frac{16}{36}$$",
+      "html": "<p>D’après l’inégalité de Bienaymé-Tchebychev, on a :\n<span>\\[\\prob(|X-\\E(X)|\\geq 6 ) \\leq  \\frac{\\V(X)}{6^2}\\]</span>\nce qui donne :\n<span>\\[\\prob(10\\leq X\\leq 22) = \\prob(|X-16|\\geq 6 ) \\leq  \\frac{\\V(X)}{6^2} = \\frac{16}{36}\\]</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "\\'A l'aide d'une table de la fonction de répartition de la loi de Poisson $\\mathcal{P}(16)$ donnée ci-dessous, donner une valeur approchée de la probabilité $\\prob(10 < X < 22)$. \n        \n        \\begin{center}\n            \\begin{tabular}{|c|c|c|c|c|c|c|c|}\n                \\hline\n                $k$ & 9 & 10 & 11 & $\\ldots$ & 21 & 22 & 23 \\\\\n                \\hline\n                $\\prob(X\\leq k)$ & $0.043$ & $0.077$ & $0.127$ & $\\ldots$ & $0.911$ & $0.942$ & $0.963$ \\\\ \n                \\hline\n            \\end{tabular}\n        \\end{center}",
+      "html": "<p>Á l’aide d’une table de la fonction de répartition de la loi de Poisson <span>\\(\\mathcal{P}(16)\\)</span> donnée ci-dessous, donner une valeur approchée de la probabilité <span>\\(\\prob(10 &lt; X &lt; 22)\\)</span>.</p>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><span>\\(k\\)</span></th>\n<th style=\"text-align: center;\">9</th>\n<th style=\"text-align: center;\">10</th>\n<th style=\"text-align: center;\">11</th>\n<th style=\"text-align: center;\"><span>\\(\\ldots\\)</span></th>\n<th style=\"text-align: center;\">21</th>\n<th style=\"text-align: center;\">22</th>\n<th style=\"text-align: center;\">23</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><span>\\(\\prob(X\\leq k)\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(0.043\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(0.077\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(0.127\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\ldots\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(0.911\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(0.942\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(0.963\\)</span></td>\n</tr>\n</tbody>\n</table>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On a $\\prob(10 < X < 22) = \\prob(10 < X \\leq 21) = \\prob(X\\leq 21) - \\prob(X\\leq 10) = 0.911 - 0.077 = 0.834$.",
+      "html": "<p>On a <span>\\(\\prob(10 &lt; X &lt; 22) = \\prob(10 &lt; X \\leq 21) = \\prob(X\\leq 21) - \\prob(X\\leq 10) = 0.911 - 0.077 = 0.834\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "On admet que $X$ peut s'écrire comme la somme de $n$ variables aléatoires indépendantes suivant une loi de Poisson $\\mathcal{P}(1)$. Donner une autre approximation de la probabilité $\\prob(10 < X < 22)$ en utilisant une loi normale.",
+      "html": "<p>On admet que <span>\\(X\\)</span> peut s’écrire comme la somme de <span>\\(n\\)</span> variables aléatoires indépendantes suivant une loi de Poisson <span>\\(\\mathcal{P}(1)\\)</span>. Donner une autre approximation de la probabilité <span>\\(\\prob(10 &lt; X &lt; 22)\\)</span> en utilisant une loi normale.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On a $\\E(X) = 16$ et $\\V(X) = 16$. D'après le théorème central limite, la variable aléatoire $Z = \\frac{X-16}{4}$ suit approximativement une loi normale centrée réduite. On a donc : \n            $$\\prob(10 < X < 22) = \\prob\\left(\\frac{10-16}{4} < Z < \\frac{22-16}{4}\\right) = \\prob(-1.5 < Z < 1.5)$$\n            Par lecture de la table de la loi normale centrée réduite, on trouve $\\prob(-1.5 < Z < 1.5) = 2 \\times \\Phi(1.5) - 1 = 2 \\times 0.9332 - 1 \\approx 0.8664$.",
+      "html": "<p>On a <span>\\(\\E(X) = 16\\)</span> et <span>\\(\\V(X) = 16\\)</span>. D’après le théorème central limite, la variable aléatoire <span>\\(Z = \\frac{X-16}{4}\\)</span> suit approximativement une loi normale centrée réduite. On a donc :\n<span>\\[\\prob(10 &lt; X &lt; 22) = \\prob\\left(\\frac{10-16}{4} &lt; Z &lt; \\frac{22-16}{4}\\right) = \\prob(-1.5 &lt; Z &lt; 1.5)\\]</span>\nPar lecture de la table de la loi normale centrée réduite, on trouve <span>\\(\\prob(-1.5 &lt; Z &lt; 1.5) = 2 \\times \\Phi(1.5) - 1 = 2 \\times 0.9332 - 1 \\approx 0.8664\\)</span>.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "5d6f7b6c14d65c10934a7dc7c65e7e2550ad02b108a2526baa6d266be4063e12"
+}

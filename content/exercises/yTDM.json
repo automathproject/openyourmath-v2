@@ -1,0 +1,43 @@
+{
+  "uuid": "yTDM",
+  "title": "Changement de variable",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-11-15",
+  "updated_at": "2025-08-22T13:05:01.017Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $X$ une variable aléatoire absolument continue dont la densité est donnée par $$f(x)=\\frac{1}{2}\\textbf{1}_{[-1;1]}(x)$$",
+      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire absolument continue dont la densité est donnée par <span>\\[f(x)=\\frac{1}{2}\\textbf{1}_{[-1;1]}(x)\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "On cherche à identifier la loi de $Y=X^2$.",
+      "html": "<p>On cherche à identifier la loi de <span>\\(Y=X^2\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "\\begin{enumerate}\n\t\t\\item pour tout $t$, $F_Y(t)= \\prob(X^2 \\leq t)$\n\t\t\\item si $t \\geq 0$, $\\{X^2 \\leq t\\} = \\{X \\in [-\\sqrt{t};\\sqrt{t}] \\}$ ; \\\\ si $t<0$ $\\{X^2 \\leq t\\} = \\emptyset$\n\t\t\\item donc pour tout $t \\geq 0$, $$F_Y(t) = \\prob(X \\in [-\\sqrt{t};\\sqrt{t}]) = \\int_{-\\sqrt{t}}^{+\\sqrt{t}} \\frac{1}{2}\\textbf{1}_{[-1;1]}(x) dx$$\n\t\tsi $0 \\leq t \\leq 1$ alors $F_Y(t)=\\int_{-\\sqrt{t}}^{+\\sqrt{t}} \\frac{1}{2} dx = \\sqrt{t}$ \\\\\n\t\tsi $t>1$ alors $F_Y(t)=\\int_{-1}^1 \\frac{1}{2} dx = 1$\n\t\t\\item pour tout $t \\in ]0;1[$, $F_Y$ est dérivable en $t$ et $F_Y'(t) = \\frac{1}{2} \\frac{1}{\\sqrt{t}}$ donc en intégrant, $F_Y(t) = \\int_{0}^{t}  \\frac{1}{2} \\frac{1}{\\sqrt{x}} dx$ de sorte que $F_Y(0)=0$ et $F_Y(1)=1$. \\\\\n\t\tPour résumer ces conditions, on peut écrire que pour tout $t \\in \\R $, \n\t\t$$F_Y(t) = \\int_{-\\infty}^t \\frac{1}{2} \\frac{1}{\\sqrt{x}} \\textbf{1}_{[0;1]}(x)dx$$\n\t\t\n\t\tOn en déduit que $Y$ admet pour densité la fonction $g \\colon x \\mapsto   \\frac{1}{2\\sqrt{x}} \\textbf{1}_{[0;1]}(x)$\n\\end{enumerate}",
+      "html": "<ol>\n<li><p>pour tout <span>\\(t\\)</span>, <span>\\(F_Y(t)= \\prob(X^2 \\leq t)\\)</span></p></li>\n<li><p>si <span>\\(t \\geq 0\\)</span>, <span>\\(\\{X^2 \\leq t\\} = \\{X \\in [-\\sqrt{t};\\sqrt{t}] \\}\\)</span> ;<br />\nsi <span>\\(t&lt;0\\)</span> <span>\\(\\{X^2 \\leq t\\} = \\emptyset\\)</span></p></li>\n<li><p>donc pour tout <span>\\(t \\geq 0\\)</span>, <span>\\[F_Y(t) = \\prob(X \\in [-\\sqrt{t};\\sqrt{t}]) = \\int_{-\\sqrt{t}}^{+\\sqrt{t}} \\frac{1}{2}\\textbf{1}_{[-1;1]}(x) dx\\]</span>\nsi <span>\\(0 \\leq t \\leq 1\\)</span> alors <span>\\(F_Y(t)=\\int_{-\\sqrt{t}}^{+\\sqrt{t}} \\frac{1}{2} dx = \\sqrt{t}\\)</span><br />\nsi <span>\\(t&gt;1\\)</span> alors <span>\\(F_Y(t)=\\int_{-1}^1 \\frac{1}{2} dx = 1\\)</span></p></li>\n<li><p>pour tout <span>\\(t \\in ]0;1[\\)</span>, <span>\\(F_Y\\)</span> est dérivable en <span>\\(t\\)</span> et <span>\\(F_Y&#39;(t) = \\frac{1}{2} \\frac{1}{\\sqrt{t}}\\)</span> donc en intégrant, <span>\\(F_Y(t) = \\int_{0}^{t}  \\frac{1}{2} \\frac{1}{\\sqrt{x}} dx\\)</span> de sorte que <span>\\(F_Y(0)=0\\)</span> et <span>\\(F_Y(1)=1\\)</span>.<br />\nPour résumer ces conditions, on peut écrire que pour tout <span>\\(t \\in \\R\\)</span>,\n<span>\\[F_Y(t) = \\int_{-\\infty}^t \\frac{1}{2} \\frac{1}{\\sqrt{x}} \\textbf{1}_{[0;1]}(x)dx\\]</span></p>\n<p>On en déduit que <span>\\(Y\\)</span> admet pour densité la fonction <span>\\(g \\colon x \\mapsto   \\frac{1}{2\\sqrt{x}} \\textbf{1}_{[0;1]}(x)\\)</span></p></li>\n</ol>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "a18db3b7b320b1675342503c16e916d07ea20b368e0efb41bf3cb11eeda3a11e"
+}

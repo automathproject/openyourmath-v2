@@ -1,0 +1,57 @@
+{
+  "uuid": "uSXE",
+  "title": "Durées des contrôles fiscaux",
+  "chapter": "Statistique",
+  "subchapter": "Tests d'hypothèses, intervalle de confiance",
+  "theme": "estimateurs, intervalle de confiance",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-12-14",
+  "updated_at": "2025-08-22T13:04:52.552Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On s'intéresse à la méthode de contrôle fiscal d'une entreprise qui consiste à vérifier la comptabilité de l'entreprise.\n\nOn considère que le temps de contrôle d'une entreprise est une variable aléatoire de loi $\\mathcal{N}\\left(m, \\sigma^2\\right)$. On réalise 7 contrôles et on obtient les temps suivants (en jours) :\n$$\n\\begin{array}{lllllll}\n\t57 & 61 & 42 & 53 & 45 & 65 & 58 .\n\\end{array}\n$$",
+      "html": "<p>On s’intéresse à la méthode de contrôle fiscal d’une entreprise qui consiste à vérifier la comptabilité de l’entreprise.</p>\n<p>On considère que le temps de contrôle d’une entreprise est une variable aléatoire de loi <span>\\(\\mathcal{N}\\left(m, \\sigma^2\\right)\\)</span>. On réalise 7 contrôles et on obtient les temps suivants (en jours) :\n<span>\\[\\begin{array}{lllllll}\n    57 &amp; 61 &amp; 42 &amp; 53 &amp; 45 &amp; 65 &amp; 58 .\n\\end{array}\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Donner une estimation de $m$ et de $\\sigma^2$. On précisera les estimateurs utilisés en indiquant leurs propriétés.",
+      "html": "<p>Donner une estimation de <span>\\(m\\)</span> et de <span>\\(\\sigma^2\\)</span>. On précisera les estimateurs utilisés en indiquant leurs propriétés.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On estime la moyenne $m$ à l'aide de la moyenne empirique $\\left(\\bar{X}=\\frac{1}{n} \\sum_{i=1}^n X_i\\right)$, qui est sans biais et convergente :\n$$\n\\bar{x}=\\frac{57+61+42+53+45+65+58}{7}=\\frac{381}{7} \\simeq 54.43\n$$\n On estime la variance $\\sigma^2$ à l'aide de la variance empirique $\\left(S^2=\\frac{1}{n-1} \\sum_{i=1}^n\\left(X_i-\\bar{X}\\right)^2\\right)$, qui est sans biais et convergent :\n$$\ns^2=\\frac{1}{6}\\left((57-54.43)^2+(61-54.43)^2+\\ldots+(58-54.43)^2\\right) \\simeq 69.95\n$$",
+      "html": "<p>On estime la moyenne <span>\\(m\\)</span> à l’aide de la moyenne empirique <span>\\(\\left(\\bar{X}=\\frac{1}{n} \\sum_{i=1}^n X_i\\right)\\)</span>, qui est sans biais et convergente :\n<span>\\[\\bar{x}=\\frac{57+61+42+53+45+65+58}{7}=\\frac{381}{7} \\simeq 54.43\\]</span>\nOn estime la variance <span>\\(\\sigma^2\\)</span> à l’aide de la variance empirique <span>\\(\\left(S^2=\\frac{1}{n-1} \\sum_{i=1}^n\\left(X_i-\\bar{X}\\right)^2\\right)\\)</span>, qui est sans biais et convergent :\n<span>\\[s^2=\\frac{1}{6}\\left((57-54.43)^2+(61-54.43)^2+\\ldots+(58-54.43)^2\\right) \\simeq 69.95\\]</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Donner un intervalle de confiance de niveau $90 \\%$ permettant d'estimer $m$.",
+      "html": "<p>Donner un intervalle de confiance de niveau <span>\\(90 \\%\\)</span> permettant d’estimer <span>\\(m\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Il s'agit d'un intervalle de confiance d'une moyenne dans le cas où la variance est inconnue et la loi mère de l'échantillon est une loi Normale. On a donc:\n$$\nI C(\\bar{X})=\\left[\\bar{x}-t \\times \\frac{s}{\\sqrt{n}} ; \\bar{x}+t \\times \\frac{s}{\\sqrt{n}}\\right]\n$$\navec $\\bar{x}=54.43, s=\\sqrt{69.95} \\simeq 8.36, n=7$ et $t$ est le réel tel que $\\mathbb{P}(U \\leq t)=1-\\frac{0.10}{2}=0.95$, où $U \\sim S t(6)$, c'est-à-dire $t=1.9432$. On obtient alors\n$$\nI C(\\bar{X})=[48.29 ; 60.57]\n$$",
+      "html": "<p>Il s’agit d’un intervalle de confiance d’une moyenne dans le cas où la variance est inconnue et la loi mère de l’échantillon est une loi Normale. On a donc:\n<span>\\[I C(\\bar{X})=\\left[\\bar{x}-t \\times \\frac{s}{\\sqrt{n}} ; \\bar{x}+t \\times \\frac{s}{\\sqrt{n}}\\right]\\]</span>\navec <span>\\(\\bar{x}=54.43, s=\\sqrt{69.95} \\simeq 8.36, n=7\\)</span> et <span>\\(t\\)</span> est le réel tel que <span>\\(\\mathbb{P}(U \\leq t)=1-\\frac{0.10}{2}=0.95\\)</span>, où <span>\\(U \\sim S t(6)\\)</span>, c’est-à-dire <span>\\(t=1.9432\\)</span>. On obtient alors\n<span>\\[I C(\\bar{X})=[48.29 ; 60.57]\\]</span></p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "f27d3b5c6468c36149fa283618f2d2984b4913c116af75352c23808dc1a51954"
+}

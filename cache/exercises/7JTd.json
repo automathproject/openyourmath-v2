@@ -1,0 +1,43 @@
+{
+  "uuid": "7JTd",
+  "title": "Simulation et fonction de répartition",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité, simulation de loi",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-09-22",
+  "updated_at": "2025-08-22T12:38:49.085Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $X$ une variable aléatoire et soit $F$ sa fonction de répartition. On suppose que $F$ est continue et strictement croissante sur $\\mathbb{R}$. Soit la variable aléatoire $Y=F(X)$.",
+      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire et soit <span>\\(F\\)</span> sa fonction de répartition. On suppose que <span>\\(F\\)</span> est continue et strictement croissante sur <span>\\(\\mathbb{R}\\)</span>. Soit la variable aléatoire <span>\\(Y=F(X)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Démontrer que $Y$ suit une loi uniforme sur $[0;1]$.",
+      "html": "<p>Démontrer que <span>\\(Y\\)</span> suit une loi uniforme sur <span>\\([0;1]\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On cherche la fonction de répartition de la variable aléatoire $Y$. Soit $t\\in\\mathbb{R}$. Par définition :\n\t\\[ F_Y(t)=\\mathbb{P}(Y\\leq t)\n\t=\\mathbb{P}(F(X)\\leq t).\n\t\\]\n\tOr la fonction de répartition $F$ prend ses valeurs dans $[0;1]$. On en déduit\n\t$$\\begin{align*}\n\t\tF_Y(t)=\\begin{cases}\n\t\t\t0 & \\text{ si } t< 0 \\\\\n\t\t\t1 & \\text{ si } t\\geq 1\n\t\t\\end{cases}\n\t\\end{align*}$$\n\tSoit $t\\in[0;1[$. Comme la fonction de répartition $F$ est croissante et supposée continue sur $\\mathbb{R}$, il existe au moins un réel $t_0$ tel que $F(t_0)=t$. Alors on a\n\t$$\\begin{align*}\n\t\tF_Y(t)&=\\mathbb{P}(F(X)\\leq t) \\\\\n\t\t&=\\mathbb{P}(F(X)\\leq F(t_0)) \\\\\n\t\t&=\\mathbb{P}(X\\leq t_0) \\quad \\text{ car $F$ est croissante sur $\\mathbb{R}$} \\\\\n\t\t&=F(t_0) \\\\\n\t\t&=t.\n\t\\end{align*}$$\n\tOn a ainsi obtenu \n\t$$\\begin{align*}\n\t\tF_Y(t)=\\begin{cases}\n\t\t\t0 & \\text{ si } t< 0 \\\\\n\t\t\tt & \\text{ si } t\\in[0;1[ \\\\\n\t\t\t1 & \\text{ si } t\\geq 1\n\t\t\\end{cases}\n\t\\end{align*}$$\n\tqui correspond à la fonction de répartition de la loi uniforme sur $[0;1]$. Donc $Y\\sim \\mathcal{U}([0;1])$.",
+      "html": "<p>On cherche la fonction de répartition de la variable aléatoire <span>\\(Y\\)</span>. Soit <span>\\(t\\in\\mathbb{R}\\)</span>. Par définition :\n<span>\\[F_Y(t)=\\mathbb{P}(Y\\leq t)\n    =\\mathbb{P}(F(X)\\leq t).\\]</span>\nOr la fonction de répartition <span>\\(F\\)</span> prend ses valeurs dans <span>\\([0;1]\\)</span>. On en déduit\n<span>\\[\\begin{align*}\n        F_Y(t)=\\begin{cases}\n            0 &amp; \\text{ si } t&lt; 0 \\\\\n            1 &amp; \\text{ si } t\\geq 1\n        \\end{cases}\n    \\end{align*}\\]</span>\nSoit <span>\\(t\\in[0;1[\\)</span>. Comme la fonction de répartition <span>\\(F\\)</span> est croissante et supposée continue sur <span>\\(\\mathbb{R}\\)</span>, il existe au moins un réel <span>\\(t_0\\)</span> tel que <span>\\(F(t_0)=t\\)</span>. Alors on a\n<span>\\[\\begin{align*}\n        F_Y(t)&amp;=\\mathbb{P}(F(X)\\leq t) \\\\\n        &amp;=\\mathbb{P}(F(X)\\leq F(t_0)) \\\\\n        &amp;=\\mathbb{P}(X\\leq t_0) \\quad \\text{ car $F$ est croissante sur $\\mathbb{R}$} \\\\\n        &amp;=F(t_0) \\\\\n        &amp;=t.\n    \\end{align*}\\]</span>\nOn a ainsi obtenu\n<span>\\[\\begin{align*}\n        F_Y(t)=\\begin{cases}\n            0 &amp; \\text{ si } t&lt; 0 \\\\\n            t &amp; \\text{ si } t\\in[0;1[ \\\\\n            1 &amp; \\text{ si } t\\geq 1\n        \\end{cases}\n    \\end{align*}\\]</span>\nqui correspond à la fonction de répartition de la loi uniforme sur <span>\\([0;1]\\)</span>. Donc <span>\\(Y\\sim \\mathcal{U}([0;1])\\)</span>.</p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "966de0796b15df5c1d6dcc2a7b4150f3eda91de19c2d4feb4d5d4d7dc5ac06d2"
+}

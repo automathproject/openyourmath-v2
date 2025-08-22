@@ -1,0 +1,85 @@
+{
+  "uuid": "V97L",
+  "title": "Étude d'un gain",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Variable aléatoire discrète",
+  "theme": "variables aléatoires discrètes",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-20",
+  "updated_at": "2025-08-22T12:39:39.394Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On lance un dé équilibré. On gagne 1 euro si le résultat est pair, on pert 1 euro si le résultat est impair. Ŝoit $n \\geq 1$ le nombre de parties. On note $X$ le nombre le nombre de lancers pairs obtenus au bout de $n$ parties et $G$ le gain obtenu au bout de $n$ parties.",
+      "html": "<p>On lance un dé équilibré. On gagne 1 euro si le résultat est pair, on pert 1 euro si le résultat est impair. Ŝoit <span>\\(n \\geq 1\\)</span> le nombre de parties. On note <span>\\(X\\)</span> le nombre le nombre de lancers pairs obtenus au bout de <span>\\(n\\)</span> parties et <span>\\(G\\)</span> le gain obtenu au bout de <span>\\(n\\)</span> parties.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Donner la loi de $X$, son espérance et sa variance.",
+      "html": "<p>Donner la loi de <span>\\(X\\)</span>, son espérance et sa variance.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "La variable aléatoire $X$ donne le nombre de succès à l'issue de $n$ expériences indépendantes de Bernoulli où le succès est l'obtention d'un résultat pair, de probabilité $p=0.5$. On a donc $X\\sim\\mathcal{B}(n,0.5)$, $\\E(X) = n\\times0.5 = \\frac{n}{2}$ et $\\V(X) = n\\times0.5\\times0.5 = \\frac{n}{4}$.",
+      "html": "<p>La variable aléatoire <span>\\(X\\)</span> donne le nombre de succès à l’issue de <span>\\(n\\)</span> expériences indépendantes de Bernoulli où le succès est l’obtention d’un résultat pair, de probabilité <span>\\(p=0.5\\)</span>. On a donc <span>\\(X\\sim\\mathcal{B}(n,0.5)\\)</span>, <span>\\(\\E(X) = n\\times0.5 = \\frac{n}{2}\\)</span> et <span>\\(\\V(X) = n\\times0.5\\times0.5 = \\frac{n}{4}\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Exprimer $G$ en fonction de $X$.",
+      "html": "<p>Exprimer <span>\\(G\\)</span> en fonction de <span>\\(X\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On a $G = X - (n-X) = 2X-n$.",
+      "html": "<p>On a <span>\\(G = X - (n-X) = 2X-n\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Exprimer l'événement \\og le gain ou la perte n'excède pas 20 euros \\fg{} en fonction de $X$.",
+      "html": "<p>Exprimer l’événement le gain ou la perte n’excède pas 20 euros en fonction de <span>\\(X\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On a $-20 \\leq G \\leq 20 \\iff -20 \\leq 2X-n \\leq 20 \\iff -10 \\leq X-\\frac{n}{2} \\leq 10$. Donc l'événement considéré est $\\{|X - \\frac{n}{2}| \\leq 10\\}$ ou encore $\\{-10 \\leq X - \\frac{n}{2} \\leq 10\\}$.",
+      "html": "<p>On a <span>\\(-20 \\leq G \\leq 20 \\iff -20 \\leq 2X-n \\leq 20 \\iff -10 \\leq X-\\frac{n}{2} \\leq 10\\)</span>. Donc l’événement considéré est <span>\\(\\{|X - \\frac{n}{2}| \\leq 10\\}\\)</span> ou encore <span>\\(\\{-10 \\leq X - \\frac{n}{2} \\leq 10\\}\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "En utilisant le théorème central limite sans correction de continuité, déterminer le nombre maximal de lancers $n$ à effectuer pour que la probabilité de l'événement \\og le gain ou la perte n'excède pas 20 euros \\fg{} soit supérieure à $0.9544$.",
+      "html": "<p>En utilisant le théorème central limite sans correction de continuité, déterminer le nombre maximal de lancers <span>\\(n\\)</span> à effectuer pour que la probabilité de l’événement le gain ou la perte n’excède pas 20 euros soit supérieure à <span>\\(0.9544\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "On cherche $n$ tel que $\\prob(|X - \\frac{n}{2}| \\leq 10) \\geq 0.9544$. On sait que $\\E(X) = \\frac{n}{2}$ et $\\V(X) = \\frac{n}{4}$. D'après le théorème central limite, la variable aléatoire $Z = \\frac{X-\\frac{n}{2}}{\\frac{\\sqrt{n}}{2}}$ suit approximativement une loi normale centrée réduite. On a donc : \n            $$\\prob(|X - \\frac{n}{2}| \\leq 10) = \\prob\\left(\\frac{|X - \\frac{n}{2}|}{\\frac{\\sqrt{n}}{2}} \\leq \\frac{10}{\\frac{\\sqrt{n}}{2}}\\right) = \\prob\\left(|Z| \\leq \\frac{10}{\\frac{\\sqrt{n}}{2}}\\right)$$\n            On cherche donc $n$ tel que $\\prob(|Z| \\leq \\frac{10}{\\frac{\\sqrt{n}}{2}}) = 2 \\times \\Phi(\\frac{10}{\\frac{\\sqrt{n}}{2}}) - 1 = 2 \\times \\Phi(\\frac{20}{\\sqrt{n}}) - 1 \\geq 0.9544$ soit encore $\\Phi(\\frac{20}{\\sqrt{n}}) \\geq 0.9772$.\n\n            Par lecture de table, on trouve $\\frac{20}{\\sqrt{n}} \\geq 2$ soit $n \\leq 100$.",
+      "html": "<p>On cherche <span>\\(n\\)</span> tel que <span>\\(\\prob(|X - \\frac{n}{2}| \\leq 10) \\geq 0.9544\\)</span>. On sait que <span>\\(\\E(X) = \\frac{n}{2}\\)</span> et <span>\\(\\V(X) = \\frac{n}{4}\\)</span>. D’après le théorème central limite, la variable aléatoire <span>\\(Z = \\frac{X-\\frac{n}{2}}{\\frac{\\sqrt{n}}{2}}\\)</span> suit approximativement une loi normale centrée réduite. On a donc :\n<span>\\[\\prob(|X - \\frac{n}{2}| \\leq 10) = \\prob\\left(\\frac{|X - \\frac{n}{2}|}{\\frac{\\sqrt{n}}{2}} \\leq \\frac{10}{\\frac{\\sqrt{n}}{2}}\\right) = \\prob\\left(|Z| \\leq \\frac{10}{\\frac{\\sqrt{n}}{2}}\\right)\\]</span>\nOn cherche donc <span>\\(n\\)</span> tel que <span>\\(\\prob(|Z| \\leq \\frac{10}{\\frac{\\sqrt{n}}{2}}) = 2 \\times \\Phi(\\frac{10}{\\frac{\\sqrt{n}}{2}}) - 1 = 2 \\times \\Phi(\\frac{20}{\\sqrt{n}}) - 1 \\geq 0.9544\\)</span> soit encore <span>\\(\\Phi(\\frac{20}{\\sqrt{n}}) \\geq 0.9772\\)</span>.</p>\n<p>Par lecture de table, on trouve <span>\\(\\frac{20}{\\sqrt{n}} \\geq 2\\)</span> soit <span>\\(n \\leq 100\\)</span>.</p>",
+      "order": 9
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "0b13a35a158cc5e91b06aba1477c5e8b506b1a7f362d0308dab5087cffb23e2a"
+}

@@ -1,0 +1,127 @@
+{
+  "uuid": "S8kg",
+  "title": "Différentiabilité d'une fonction de deux variables",
+  "chapter": "",
+  "subchapter": "",
+  "theme": "",
+  "difficulty": null,
+  "author": "Grégoire MENET",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2025-04-16",
+  "updated_at": "2025-08-22T12:39:34.484Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On donne \\( f : \\mathbb{R}^2 \\to \\mathbb{R} \\) définie par :\n$$\n\t\tf(x,y) =\n\t\t\\begin{cases} \n\t\t\t\\frac{3xy^2+y^3}{x^2 + y^2} & \\text{si } (x,y) \\neq (0,0), \\\\[1mm]\n\t\t\t0 & \\text{sinon}.\n\t\t\\end{cases}\n$$",
+      "html": "<p>On donne <span>\\(f : \\mathbb{R}^2 \\to \\mathbb{R}\\)</span> définie par :\n<span>\\[f(x,y) =\n        \\begin{cases} \n            \\frac{3xy^2+y^3}{x^2 + y^2} &amp; \\text{si } (x,y) \\neq (0,0), \\\\[1mm]\n            0 &amp; \\text{sinon}.\n        \\end{cases}\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Déterminer la courbe de niveau 0 de \\(f\\).",
+      "html": "<p>Déterminer la courbe de niveau 0 de <span>\\(f\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "Il s'agit de trouver l'ensemble des \\((x,y)\\) pour lesquels \\(f(x,y)=0\\). Pour \\((x,y)\\neq (0,0)\\), résoudre l'équation \\(\\frac{3xy^2+y^3}{x^2+y^2}=0\\) afin d'identifier les conditions sur \\(x\\) et \\(y\\).",
+      "html": "<p>Il s’agit de trouver l’ensemble des <span>\\((x,y)\\)</span> pour lesquels <span>\\(f(x,y)=0\\)</span>. Pour <span>\\((x,y)\\neq (0,0)\\)</span>, résoudre l’équation <span>\\(\\frac{3xy^2+y^3}{x^2+y^2}=0\\)</span> afin d’identifier les conditions sur <span>\\(x\\)</span> et <span>\\(y\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "On a $f(x, y) = 0 \\Leftrightarrow y = 0$ ou $3x + y = 0$.\\\\\n\t\t\tAinsi, la courbe de niveau 0 est l'union de la droite $y = 0$ et de la droite $y = -3x$.",
+      "html": "<p>On a <span>\\(f(x, y) = 0 \\Leftrightarrow y = 0\\)</span> ou <span>\\(3x + y = 0\\)</span>.<br />\nAinsi, la courbe de niveau 0 est l’union de la droite <span>\\(y = 0\\)</span> et de la droite <span>\\(y = -3x\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Montrer que \\( f \\) est continue en \\((0,0)\\).",
+      "html": "<p>Montrer que <span>\\(f\\)</span> est continue en <span>\\((0,0)\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "indication",
+      "latex": "Utiliser notamment le passage en coordonnées polaires pour étudier la limite de \\(f(x,y)\\) lorsque \\((x,y)\\to(0,0)\\) et vérifier que cette limite est égale à \\(f(0,0)=0\\).",
+      "html": "<p>Utiliser notamment le passage en coordonnées polaires pour étudier la limite de <span>\\(f(x,y)\\)</span> lorsque <span>\\((x,y)\\to(0,0)\\)</span> et vérifier que cette limite est égale à <span>\\(f(0,0)=0\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On utilise les coordonnées polaires : $x = r\\cos\\theta$, $y = r\\sin\\theta$.\\\\\n\t\t\tOn a : $f(x, y) = \\frac{3xy^2 + y^3}{x^2 + y^2} = \\frac{r^3 \\cos\\theta \\sin^2\\theta \\cdot 3 + r^3 \\sin^3\\theta}{r^2} = r \\cdot (3\\cos\\theta \\sin^2\\theta + \\sin^3\\theta)$.\\\\\n\t\t\tDonc : $$\\left|f(x,y)\\right|\\leq r\\left(\\left|3\\cos\\theta \\sin^2\\theta\\right|+ \\left|\\sin^3\\theta\\right|\\right)\\leq4r.$$\n\t\t\tOn a $4r\\rightarrow 0$ quand $r\\rightarrow0$.\n\t\t\tDonc $\\lim\\limits_{(x, y) \\to (0, 0)} f(x, y) = 0 = f(0,0)$, donc $f$ est continue en $(0,0)$.",
+      "html": "<p>On utilise les coordonnées polaires : <span>\\(x = r\\cos\\theta\\)</span>, <span>\\(y = r\\sin\\theta\\)</span>.<br />\nOn a : <span>\\(f(x, y) = \\frac{3xy^2 + y^3}{x^2 + y^2} = \\frac{r^3 \\cos\\theta \\sin^2\\theta \\cdot 3 + r^3 \\sin^3\\theta}{r^2} = r \\cdot (3\\cos\\theta \\sin^2\\theta + \\sin^3\\theta)\\)</span>.<br />\nDonc : <span>\\[\\left|f(x,y)\\right|\\leq r\\left(\\left|3\\cos\\theta \\sin^2\\theta\\right|+ \\left|\\sin^3\\theta\\right|\\right)\\leq4r.\\]</span>\nOn a <span>\\(4r\\rightarrow 0\\)</span> quand <span>\\(r\\rightarrow0\\)</span>.\nDonc <span>\\(\\lim\\limits_{(x, y) \\to (0, 0)} f(x, y) = 0 = f(0,0)\\)</span>, donc <span>\\(f\\)</span> est continue en <span>\\((0,0)\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Vérifier l'existence des dérivées partielles \\(\\frac{\\partial f}{\\partial x}(0,0)\\) et \\(\\frac{\\partial f}{\\partial y}(0,0)\\) et les calculer si elles existent.",
+      "html": "<p>Vérifier l’existence des dérivées partielles <span>\\(\\frac{\\partial f}{\\partial x}(0,0)\\)</span> et <span>\\(\\frac{\\partial f}{\\partial y}(0,0)\\)</span> et les calculer si elles existent.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "indication",
+      "latex": "Utiliser la définition des dérivées partielles, c'est-à-dire calculer les limites \\(\\lim_{h\\to 0}\\frac{f(h,0)-f(0,0)}{h}\\) et \\(\\lim_{h\\to 0}\\frac{f(0,h)-f(0,0)}{h}\\) pour obtenir \\(\\frac{\\partial f}{\\partial x}(0,0)\\) et \\(\\frac{\\partial f}{\\partial y}(0,0)\\) respectivement.",
+      "html": "<p>Utiliser la définition des dérivées partielles, c’est-à-dire calculer les limites <span>\\(\\lim_{h\\to 0}\\frac{f(h,0)-f(0,0)}{h}\\)</span> et <span>\\(\\lim_{h\\to 0}\\frac{f(0,h)-f(0,0)}{h}\\)</span> pour obtenir <span>\\(\\frac{\\partial f}{\\partial x}(0,0)\\)</span> et <span>\\(\\frac{\\partial f}{\\partial y}(0,0)\\)</span> respectivement.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "reponse",
+      "latex": "On considère les fonctions partielles. On a $f(x,0)=0$ si $x\\neq0$ et $f(0,0)=0$, donc $f(x,0)=0$ pour tout $x\\in\\R$.\n\t\t\tAinsi $\\frac{\\partial f}{\\partial x}(0,0)=0$.\n\t\t\tDe même, on a $f(0,y)=y$ si $y\\neq0$ et  $f(0,0)=0$, donc $f(0,y)=y$ pour tout $y\\in\\R$.\n\t\t\tAinsi $\\frac{\\partial f}{\\partial y}(0,0)=1$.",
+      "html": "<p>On considère les fonctions partielles. On a <span>\\(f(x,0)=0\\)</span> si <span>\\(x\\neq0\\)</span> et <span>\\(f(0,0)=0\\)</span>, donc <span>\\(f(x,0)=0\\)</span> pour tout <span>\\(x\\in\\R\\)</span>.\nAinsi <span>\\(\\frac{\\partial f}{\\partial x}(0,0)=0\\)</span>.\nDe même, on a <span>\\(f(0,y)=y\\)</span> si <span>\\(y\\neq0\\)</span> et <span>\\(f(0,0)=0\\)</span>, donc <span>\\(f(0,y)=y\\)</span> pour tout <span>\\(y\\in\\R\\)</span>.\nAinsi <span>\\(\\frac{\\partial f}{\\partial y}(0,0)=1\\)</span>.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "question",
+      "latex": "La fonction \\(f\\) est-elle différentiable en \\((0,0)\\) ?",
+      "html": "<p>La fonction <span>\\(f\\)</span> est-elle différentiable en <span>\\((0,0)\\)</span> ?</p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "indication",
+      "latex": "Étudier la différentiabilité en \\((0,0)\\) en vérifiant si l'approximation linéaire de \\(f\\) en ce point représente correctement le comportement de \\(f\\) près de \\((0,0)\\), c'est-à-dire si le reste est négligeable devant \\(\\sqrt{x^2+y^2}\\).",
+      "html": "<p>Étudier la différentiabilité en <span>\\((0,0)\\)</span> en vérifiant si l’approximation linéaire de <span>\\(f\\)</span> en ce point représente correctement le comportement de <span>\\(f\\)</span> près de <span>\\((0,0)\\)</span>, c’est-à-dire si le reste est négligeable devant <span>\\(\\sqrt{x^2+y^2}\\)</span>.</p>",
+      "order": 12
+    },
+    {
+      "id": "block_13",
+      "type": "reponse",
+      "latex": "Pour tester la différentiabilité de $f$ en $(0,0)$, on doit examiner si :\n\t\t\t\\[\n\t\t\t\\lim_{(x, y) \\to (0,0)} \\frac{f(x,y) - f(0,0) - \\frac{\\partial f}{\\partial x}(0,0)x - \\frac{\\partial f}{\\partial y}(0,0)y}{\\sqrt{x^2 + y^2}} = 0.\n\t\t\t\\]\n\t\t\t\n\t\t\tOn a vu précédemment que :\n\t\t\t\\[\n\t\t\tf(0,0) = 0,\\quad \\frac{\\partial f}{\\partial x}(0,0) = 0,\\quad \\frac{\\partial f}{\\partial y}(0,0) = 1.\n\t\t\t\\]\n\t\t\t\n\t\t\tDonc, on étudie la limite :\n\t\t\t\\[\n\t\t\t\\lim_{(x, y) \\to (0,0)} \\frac{f(x, y) - y}{\\sqrt{x^2 + y^2}}.\n\t\t\t\\]\n\t\t\t\n\t\t\tOn remplace $f(x,y)$ :\n\t\t\t\\[\n\t\t\tf(x, y) = \\frac{3xy^2 + y^3}{x^2 + y^2} \\Rightarrow f(x,y) - y = \\frac{3xy^2 + y^3 - y(x^2 + y^2)}{x^2 + y^2}.\n\t\t\t\\]\n\t\t\t\n\t\t\tSimplifions le numérateur :\n\t\t\t\\[\n\t\t\t3xy^2 + y^3 - yx^2 - y^3 = 3xy^2 - yx^2.\n\t\t\t\\]\n\t\t\t\n\t\t\tDonc :\n\t\t\t\\[\n\t\t\tf(x,y) - y = \\frac{3xy^2 - x^2 y}{x^2 + y^2}.\n\t\t\t\\]\n\t\t\t\n\t\t\tOn utilise maintenant les coordonnées polaires : $x = r\\cos\\theta$, $y = r\\sin\\theta$.\\\\\n\t\t\tOn a :\n\t\t\t\n\t\t\t\\[\n\t\t\t\\frac{f(x,y) - y}{\\sqrt{x^2 + y^2}} = \\frac{r(3\\cos\\theta \\sin^2\\theta - \\cos^2\\theta \\sin\\theta)}{r} = 3\\cos\\theta \\sin^2\\theta - \\cos^2\\theta \\sin\\theta.\n\t\t\t\\]\n\t\t\t\n\t\t\tLa limite de cette expression quand $r\\rightarrow0$ dépend de $\\theta$ donc le taux d'accroissement n'admet pas de limite en $(0,0)$. La fonction $f$ n'est donc pas différentiable en $(0,0)$.",
+      "html": "<p>Pour tester la différentiabilité de <span>\\(f\\)</span> en <span>\\((0,0)\\)</span>, on doit examiner si :\n<span>\\[\\lim_{(x, y) \\to (0,0)} \\frac{f(x,y) - f(0,0) - \\frac{\\partial f}{\\partial x}(0,0)x - \\frac{\\partial f}{\\partial y}(0,0)y}{\\sqrt{x^2 + y^2}} = 0.\\]</span></p>\n<p>On a vu précédemment que :\n<span>\\[f(0,0) = 0,\\quad \\frac{\\partial f}{\\partial x}(0,0) = 0,\\quad \\frac{\\partial f}{\\partial y}(0,0) = 1.\\]</span></p>\n<p>Donc, on étudie la limite :\n<span>\\[\\lim_{(x, y) \\to (0,0)} \\frac{f(x, y) - y}{\\sqrt{x^2 + y^2}}.\\]</span></p>\n<p>On remplace <span>\\(f(x,y)\\)</span> :\n<span>\\[f(x, y) = \\frac{3xy^2 + y^3}{x^2 + y^2} \\Rightarrow f(x,y) - y = \\frac{3xy^2 + y^3 - y(x^2 + y^2)}{x^2 + y^2}.\\]</span></p>\n<p>Simplifions le numérateur :\n<span>\\[3xy^2 + y^3 - yx^2 - y^3 = 3xy^2 - yx^2.\\]</span></p>\n<p>Donc :\n<span>\\[f(x,y) - y = \\frac{3xy^2 - x^2 y}{x^2 + y^2}.\\]</span></p>\n<p>On utilise maintenant les coordonnées polaires : <span>\\(x = r\\cos\\theta\\)</span>, <span>\\(y = r\\sin\\theta\\)</span>.<br />\nOn a :</p>\n<p><span>\\[\\frac{f(x,y) - y}{\\sqrt{x^2 + y^2}} = \\frac{r(3\\cos\\theta \\sin^2\\theta - \\cos^2\\theta \\sin\\theta)}{r} = 3\\cos\\theta \\sin^2\\theta - \\cos^2\\theta \\sin\\theta.\\]</span></p>\n<p>La limite de cette expression quand <span>\\(r\\rightarrow0\\)</span> dépend de <span>\\(\\theta\\)</span> donc le taux d’accroissement n’admet pas de limite en <span>\\((0,0)\\)</span>. La fonction <span>\\(f\\)</span> n’est donc pas différentiable en <span>\\((0,0)\\)</span>.</p>",
+      "order": 13
+    },
+    {
+      "id": "block_14",
+      "type": "question",
+      "latex": "La fonction \\(f\\) est-elle de classe \\(\\mathcal{C}^1\\) en \\((0,0)\\) ?",
+      "html": "<p>La fonction <span>\\(f\\)</span> est-elle de classe <span>\\(\\mathcal{C}^1\\)</span> en <span>\\((0,0)\\)</span> ?</p>",
+      "order": 14
+    },
+    {
+      "id": "block_15",
+      "type": "reponse",
+      "latex": "Non car $f$ n'est pas différentiable en $(0,0)$.",
+      "html": "<p>Non car <span>\\(f\\)</span> n’est pas différentiable en <span>\\((0,0)\\)</span>.</p>",
+      "order": 15
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "f4ce6f873aee51a11ac5172811ba2d35773ad994418856e82950f00693a693cf"
+}

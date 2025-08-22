@@ -1,0 +1,36 @@
+{
+  "uuid": "D70J",
+  "title": "Dérivées partielles",
+  "chapter": "Fonction de plusieurs variables",
+  "subchapter": "Dérivée partielle",
+  "theme": "fonctions de plusieurs variables",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-07-10",
+  "updated_at": "2025-08-22T12:39:07.255Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $u \\colon t \\mapsto u(t)$ une fonction de classe $\\mathcal{C}^1$ sur $\\R$ et $h \\colon (x,y) \\mapsto h(x,y)$ une fonction de classe $\\mathcal{C}^1$ sur $\\R^2$. Pour tout $t \\in \\R$, on pose :\n$$F(t) = h(u(t),u(t)^2)$$",
+      "html": "<p>Soit <span>\\(u \\colon t \\mapsto u(t)\\)</span> une fonction de classe <span>\\(\\mathcal{C}^1\\)</span> sur <span>\\(\\R\\)</span> et <span>\\(h \\colon (x,y) \\mapsto h(x,y)\\)</span> une fonction de classe <span>\\(\\mathcal{C}^1\\)</span> sur <span>\\(\\R^2\\)</span>. Pour tout <span>\\(t \\in \\R\\)</span>, on pose :\n<span>\\[F(t) = h(u(t),u(t)^2)\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Vérifier que $F$ est dérivable sur $\\R$ et exprimer sa dérivée en fonction de $u(t)$ et $u'(t)$.",
+      "html": "<p>Vérifier que <span>\\(F\\)</span> est dérivable sur <span>\\(\\R\\)</span> et exprimer sa dérivée en fonction de <span>\\(u(t)\\)</span> et <span>\\(u&#39;(t)\\)</span>.</p>",
+      "order": 2
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "63f0fdff2e64edfbad2c4d76164528658150841f0e4c62f36e7b1c82ff6df1ee"
+}

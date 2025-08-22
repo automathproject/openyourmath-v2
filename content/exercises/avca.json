@@ -1,0 +1,29 @@
+{
+  "uuid": "avca",
+  "title": "Anova",
+  "chapter": "",
+  "subchapter": "",
+  "theme": "Statistique",
+  "difficulty": null,
+  "author": "Erwan L'Haridon",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "",
+  "updated_at": "2025-08-22T13:03:23.227Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "La dépense annuelle en euros pour le tabac d’un échantillon au hasard d’anglais, d’allemands et d’italiens est :\n\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|}\n    \\hline\n      Anglais & 600 & 610 & 550 & 640 & 590 \\\\\n    Allemands & 580 & 610 & 605 & 575 & 600 \\\\\n    Italiens & 608 & 560 & 605 & 592 & 590 \\\\\n    \\hline\n\\end{tabular}\n\\end{center}\n\nPeut-on dire que les Anglais, les Allemands et les Italiens ont la même dépense moyenne pour le tabac ?",
+      "html": "<p>La dépense annuelle en euros pour le tabac d’un échantillon au hasard d’anglais, d’allemands et d’italiens est :</p>\n<table>\n<tbody>\n<tr>\n<td style=\"text-align: center;\">Anglais</td>\n<td style=\"text-align: center;\">600</td>\n<td style=\"text-align: center;\">610</td>\n<td style=\"text-align: center;\">550</td>\n<td style=\"text-align: center;\">640</td>\n<td style=\"text-align: center;\">590</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">Allemands</td>\n<td style=\"text-align: center;\">580</td>\n<td style=\"text-align: center;\">610</td>\n<td style=\"text-align: center;\">605</td>\n<td style=\"text-align: center;\">575</td>\n<td style=\"text-align: center;\">600</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">Italiens</td>\n<td style=\"text-align: center;\">608</td>\n<td style=\"text-align: center;\">560</td>\n<td style=\"text-align: center;\">605</td>\n<td style=\"text-align: center;\">592</td>\n<td style=\"text-align: center;\">590</td>\n</tr>\n</tbody>\n</table>\n<p>Peut-on dire que les Anglais, les Allemands et les Italiens ont la même dépense moyenne pour le tabac ?</p>",
+      "order": 1
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "2d4de3eca84449940190d1ebacf3079c748447ca05d8ef7a2d11bc536a9e572f"
+}

@@ -1,0 +1,57 @@
+{
+  "uuid": "HojS",
+  "title": "Domaine de définition",
+  "chapter": "Fonction de plusieurs variables",
+  "subchapter": "Autre",
+  "theme": "fonctions de plusieurs variables",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-02-23",
+  "updated_at": "2025-08-22T13:02:41.285Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Déterminer le domaine de définition des fonctions suivantes et si possible donner une représentation graphique.",
+      "html": "<p>Déterminer le domaine de définition des fonctions suivantes et si possible donner une représentation graphique.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "$f_1(x,y) = \\frac{\\sqrt{-y+x^2}}{\\sqrt{x}}$",
+      "html": "<p><span>\\(f_1(x,y) = \\frac{\\sqrt{-y+x^2}}{\\sqrt{x}}\\)</span></p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "$f_2(x,y) = \\frac{\\ln(y)}{\\sqrt{x-y}}$",
+      "html": "<p><span>\\(f_2(x,y) = \\frac{\\ln(y)}{\\sqrt{x-y}}\\)</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "$f_3(x,y) = \\ln(x+2y)$",
+      "html": "<p><span>\\(f_3(x,y) = \\ln(x+2y)\\)</span></p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "$f_4(x,y,z) = \\frac{\\ln(x^2+1)}{yz}$",
+      "html": "<p><span>\\(f_4(x,y,z) = \\frac{\\ln(x^2+1)}{yz}\\)</span></p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "9e0862bacd70c162e06d3555024a94dd8e57de704e265918c3b80f90871c3a1d"
+}

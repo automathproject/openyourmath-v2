@@ -1,0 +1,71 @@
+{
+  "uuid": "td27",
+  "title": "Défaillances et loi de Poisson",
+  "chapter": "",
+  "subchapter": "",
+  "theme": "",
+  "difficulty": null,
+  "author": "",
+  "organization": "",
+  "video_id": "",
+  "created_at": "2025-03-20",
+  "updated_at": "2025-08-22T12:41:24.640Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Un statisticien observe chaque jour, pendant $n$ jours, le nombre d’ampoules défaillantes à la sortie d’une chaîne de fabrication. Il veut estimer la probabilité de n’avoir aucune ampoule défaillante. Il note $X_i$ le nombre d’ampoules défaillantes à la sortie de la chaîne le $i$-ème jour.",
+      "html": "<p>Un statisticien observe chaque jour, pendant <span>\\(n\\)</span> jours, le nombre d’ampoules défaillantes à la sortie d’une chaîne de fabrication. Il veut estimer la probabilité de n’avoir aucune ampoule défaillante. Il note <span>\\(X_i\\)</span> le nombre d’ampoules défaillantes à la sortie de la chaîne le <span>\\(i\\)</span>-ème jour.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Dans un premier temps, il compte le nombre $N_n$ de jours où aucune défaillance n’a été observée. Il propose d’estimer $P(X_1 = 0)$ par $p_{b1} = \\frac{N_n}{n}$. \\\\\n    (a) Montrer, en supposant juste les $X_i$ i.i.d., que $p_{b1}$ est un estimateur sans biais de $P(X_1 = 0)$. Calculer son risque quadratique et donner sa loi limite. \\\\\n    (b) Donner des intervalles de confiance pour $P(X_1 = 0)$ de niveau $(1-\\alpha)$.",
+      "html": "<p>Dans un premier temps, il compte le nombre <span>\\(N_n\\)</span> de jours où aucune défaillance n’a été observée. Il propose d’estimer <span>\\(P(X_1 = 0)\\)</span> par <span>\\(p_{b1} = \\frac{N_n}{n}\\)</span>.<br />\n(a) Montrer, en supposant juste les <span>\\(X_i\\)</span> i.i.d., que <span>\\(p_{b1}\\)</span> est un estimateur sans biais de <span>\\(P(X_1 = 0)\\)</span>. Calculer son risque quadratique et donner sa loi limite.<br />\n(b) Donner des intervalles de confiance pour <span>\\(P(X_1 = 0)\\)</span> de niveau <span>\\((1-\\alpha)\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "",
+      "html": "",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Le statisticien suppose de plus que $X_1 \\sim P(\\lambda)$. Il propose d’estimer $P(X_1 = 0) = \\exp(-\\lambda)$ par $p_{b2} = e^{-\\bar{X}_n}$.\\\\\n     (a) Préliminaire : soient $Y_1 \\sim P(\\lambda_1)$ et $Y_2 \\sim P(\\lambda_2)$, deux v.a. indépendantes. Rappeler la loi de $Y_1 + Y_2$. \\\\\n     (b) Expliquer sa démarche. Montrer que $p_{b2}$ est biaisé. Calculer sa variance et son biais. Déterminer des équivalents asymptotiques des quantités précédentes. \\\\\n      (c) Lequel de $p_{b1}$ ou $p_{b2}$ choisiriez-vous pour estimer $e^{-\\lambda}$ ?",
+      "html": "<p>Le statisticien suppose de plus que <span>\\(X_1 \\sim P(\\lambda)\\)</span>. Il propose d’estimer <span>\\(P(X_1 = 0) = \\exp(-\\lambda)\\)</span> par <span>\\(p_{b2} = e^{-\\bar{X}_n}\\)</span>.<br />\n(a) Préliminaire : soient <span>\\(Y_1 \\sim P(\\lambda_1)\\)</span> et <span>\\(Y_2 \\sim P(\\lambda_2)\\)</span>, deux v.a. indépendantes. Rappeler la loi de <span>\\(Y_1 + Y_2\\)</span>.<br />\n(b) Expliquer sa démarche. Montrer que <span>\\(p_{b2}\\)</span> est biaisé. Calculer sa variance et son biais. Déterminer des équivalents asymptotiques des quantités précédentes.<br />\n(c) Lequel de <span>\\(p_{b1}\\)</span> ou <span>\\(p_{b2}\\)</span> choisiriez-vous pour estimer <span>\\(e^{-\\lambda}\\)</span> ?</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "",
+      "html": "",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "6874f4aa730075be0564870999766c368dffaad8a1c8ed9c8615f28db5e9a23d"
+}

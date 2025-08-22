@@ -1,0 +1,57 @@
+{
+  "uuid": "YBwt",
+  "title": "Loi d'un couple",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Lois de distributions",
+  "theme": "variables aléatoires discrètes, loi conjointe",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-02-07",
+  "updated_at": "2025-08-22T12:39:50.533Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soient $X$ et $Y$ deux variables aléatoires réelles discrètes dont la loi de probabilité conjointe est\n\tdonnée par le tableau ci-contre:\n\t\n\t\\begin{center}\n\t\t\\begin{tabular}{|c|c|c|c|}\n\t\t\t\\hline\n\t\t\t$X \\backslash  Y$ & 0 & 1 & 2 \\\\ \n\t\t\t\\hline\n\t\t\t0 & 1/12 &  & 5/24 \\\\\n\t\t\t\\hline \n\t\t\t1 & 1/24 & 1/48 & 5/48 \\\\ \n\t\t\t\\hline\n\t\t\t2 & 1/8 & 1/16 & 5/16\\\\\n\t\t\t\\hline\n\t\t\\end{tabular} \n\t\\end{center}",
+      "html": "<p>Soient <span>\\(X\\)</span> et <span>\\(Y\\)</span> deux variables aléatoires réelles discrètes dont la loi de probabilité conjointe est\ndonnée par le tableau ci-contre:</p>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><span>\\(X \\backslash  Y\\)</span></th>\n<th style=\"text-align: center;\">0</th>\n<th style=\"text-align: center;\">1</th>\n<th style=\"text-align: center;\">2</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\">1/12</td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\">5/24</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">1</td>\n<td style=\"text-align: center;\">1/24</td>\n<td style=\"text-align: center;\">1/48</td>\n<td style=\"text-align: center;\">5/48</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">2</td>\n<td style=\"text-align: center;\">1/8</td>\n<td style=\"text-align: center;\">1/16</td>\n<td style=\"text-align: center;\">5/16</td>\n</tr>\n</tbody>\n</table>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Calculer la probabilité de l'événement $(X, Y) = (0, 1)$.",
+      "html": "<p>Calculer la probabilité de l’événement <span>\\((X, Y) = (0, 1)\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "Calculer les lois marginales de $X$ et de $Y$.",
+      "html": "<p>Calculer les lois marginales de <span>\\(X\\)</span> et de <span>\\(Y\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Les variables aléatoires $X$ et $Y$ sont-elles indépendantes ?",
+      "html": "<p>Les variables aléatoires <span>\\(X\\)</span> et <span>\\(Y\\)</span> sont-elles indépendantes ?</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Calculer la loi de probabilité, l'espérance et la variance de $X + Y$.",
+      "html": "<p>Calculer la loi de probabilité, l’espérance et la variance de <span>\\(X + Y\\)</span>.</p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "d536bbe880674863cd5dbf69edc0da252c5f21d539519a788d205f085bfcdb0f"
+}

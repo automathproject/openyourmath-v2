@@ -1,0 +1,99 @@
+{
+  "uuid": "w4TW",
+  "title": "Maximum de vraisemblance",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "maximum de vraisemblance, variables aléatoires à densité",
+  "difficulty": null,
+  "author": "",
+  "organization": "",
+  "video_id": "",
+  "created_at": "2024-11-05",
+  "updated_at": "2025-08-22T13:04:56.617Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère une variable aléatoire $X$ suivant une loi exponentielle de paramètre $\\theta > 0$. On rappelle que sa densité est donnée par :\n$$f_\\theta(x) = \\begin{cases} \\theta e^{-\\theta x} & \\text{ si } x \\geq 0 \\\\ 0 & \\text{ sinon. } \\end{cases}$$\nOn dispose d'un échantillon $(X_1,...,X_n)$ de $n$ variables aléatoires indépendantes et de même loi que $X$. On cherche à estimer le paramètre $\\theta$ par la méthode du maximum de vraisemblance.",
+      "html": "<p>On considère une variable aléatoire <span>\\(X\\)</span> suivant une loi exponentielle de paramètre <span>\\(\\theta &gt; 0\\)</span>. On rappelle que sa densité est donnée par :\n<span>\\[f_\\theta(x) = \\begin{cases} \\theta e^{-\\theta x} &amp; \\text{ si } x \\geq 0 \\\\ 0 &amp; \\text{ sinon. } \\end{cases}\\]</span>\nOn dispose d’un échantillon <span>\\((X_1,...,X_n)\\)</span> de <span>\\(n\\)</span> variables aléatoires indépendantes et de même loi que <span>\\(X\\)</span>. On cherche à estimer le paramètre <span>\\(\\theta\\)</span> par la méthode du maximum de vraisemblance.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Écrire la vraisemblance $L(\\theta)$ de l'échantillon en fonction de $\\theta$ et des observations $(x_1,...,x_n)$.",
+      "html": "<p>Écrire la vraisemblance <span>\\(L(\\theta)\\)</span> de l’échantillon en fonction de <span>\\(\\theta\\)</span> et des observations <span>\\((x_1,...,x_n)\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Par indépendance des variables, la vraisemblance est le produit des densités :\n        $$\\begin{align*}\n            L(\\theta) &= \\prod_{i=1}^n f_\\theta(x_i) \\\\\n            &= \\prod_{i=1}^n \\theta e^{-\\theta x_i}\\mathbf{1}_{x_i \\geq 0} \\\\\n            &= \\theta^n e^{-\\theta \\sum_{i=1}^n x_i}\\mathbf{1}_{\\min(x_i) \\geq 0}\n        \\end{align*}$$",
+      "html": "<p>Par indépendance des variables, la vraisemblance est le produit des densités :\n<span>\\[\\begin{align*}\n            L(\\theta) &amp;= \\prod_{i=1}^n f_\\theta(x_i) \\\\\n            &amp;= \\prod_{i=1}^n \\theta e^{-\\theta x_i}\\mathbf{1}_{x_i \\geq 0} \\\\\n            &amp;= \\theta^n e^{-\\theta \\sum_{i=1}^n x_i}\\mathbf{1}_{\\min(x_i) \\geq 0}\n        \\end{align*}\\]</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "En déduire la log-vraisemblance $\\ell(\\theta)$ puis calculer sa dérivée $\\ell'(\\theta)$.",
+      "html": "<p>En déduire la log-vraisemblance <span>\\(\\ell(\\theta)\\)</span> puis calculer sa dérivée <span>\\(\\ell&#39;(\\theta)\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "La log-vraisemblance est :\n        $$\\begin{align*}\n            \\ell(\\theta) &= \\ln(L(\\theta)) \\\\\n            &= n\\ln(\\theta) - \\theta \\sum_{i=1}^n x_i\n        \\end{align*}$$\n        \n        Sa dérivée est :\n        $$\\ell'(\\theta) = \\frac{n}{\\theta} - \\sum_{i=1}^n x_i$$",
+      "html": "<p>La log-vraisemblance est :\n<span>\\[\\begin{align*}\n            \\ell(\\theta) &amp;= \\ln(L(\\theta)) \\\\\n            &amp;= n\\ln(\\theta) - \\theta \\sum_{i=1}^n x_i\n        \\end{align*}\\]</span></p>\n<p>Sa dérivée est :\n<span>\\[\\ell&#39;(\\theta) = \\frac{n}{\\theta} - \\sum_{i=1}^n x_i\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "En déduire  l'estimateur du maximum de vraisemblance $\\widehat{\\theta}_n$ de $\\theta$.",
+      "html": "<p>En déduire l’estimateur du maximum de vraisemblance <span>\\(\\widehat{\\theta}_n\\)</span> de <span>\\(\\theta\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "L'équation $\\ell'(\\theta)=0$ donne :\n        $$\\begin{align*}\n            \\frac{n}{\\theta} - \\sum_{i=1}^n x_i &= 0 \\\\\n            \\frac{n}{\\theta} &= \\sum_{i=1}^n x_i \\\\\n            \\theta &= \\frac{n}{\\sum_{i=1}^n x_i}\n        \\end{align*}$$\n\n        Donc $\\widehat{\\theta}_n = \\frac{n}{\\sum_{i=1}^n x_i} = \\frac{1}{\\overline{X_n}}$ où $\\overline{X_n}$ est la moyenne empirique.",
+      "html": "<p>L’équation <span>\\(\\ell&#39;(\\theta)=0\\)</span> donne :\n<span>\\[\\begin{align*}\n            \\frac{n}{\\theta} - \\sum_{i=1}^n x_i &amp;= 0 \\\\\n            \\frac{n}{\\theta} &amp;= \\sum_{i=1}^n x_i \\\\\n            \\theta &amp;= \\frac{n}{\\sum_{i=1}^n x_i}\n        \\end{align*}\\]</span></p>\n<p>Donc <span>\\(\\widehat{\\theta}_n = \\frac{n}{\\sum_{i=1}^n x_i} = \\frac{1}{\\overline{X_n}}\\)</span> où <span>\\(\\overline{X_n}\\)</span> est la moyenne empirique.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Vérifier que $\\widehat{\\theta}_n$ est bien un maximum en étudiant le signe de $\\ell''(\\theta)$.",
+      "html": "<p>Vérifier que <span>\\(\\widehat{\\theta}_n\\)</span> est bien un maximum en étudiant le signe de <span>\\(\\ell&#39;&#39;(\\theta)\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "On calcule la dérivée seconde :\n        $$\\ell''(\\theta) = -\\frac{n}{\\theta^2}$$\n        \n        Cette dérivée seconde est toujours négative pour $\\theta > 0$, donc $\\widehat{\\theta}_n$ correspond bien à un maximum.",
+      "html": "<p>On calcule la dérivée seconde :\n<span>\\[\\ell&#39;&#39;(\\theta) = -\\frac{n}{\\theta^2}\\]</span></p>\n<p>Cette dérivée seconde est toujours négative pour <span>\\(\\theta &gt; 0\\)</span>, donc <span>\\(\\widehat{\\theta}_n\\)</span> correspond bien à un maximum.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "Montrer que $\\frac{1}{\\widehat{\\theta}_n}$ est un estimateur sans biais de $\\frac{1}{\\theta}$.",
+      "html": "<p>Montrer que <span>\\(\\frac{1}{\\widehat{\\theta}_n}\\)</span> est un estimateur sans biais de <span>\\(\\frac{1}{\\theta}\\)</span>.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "reponse",
+      "latex": "On a :\n        $$\\begin{align*}\n            \\E\\left(\\frac{1}{\\widehat{\\theta}_n}\\right) &= \\E\\left(\\overline{X_n}\\right) \\\\\n            &= \\E\\left(\\frac{1}{n}\\sum_{i=1}^n X_i\\right) \\\\\n            &= \\frac{1}{n}\\sum_{i=1}^n \\E(X_i) \\\\\n            &= \\frac{1}{n} \\times n \\times \\frac{1}{\\theta} \\\\\n            &= \\frac{1}{\\theta}\n        \\end{align*}$$\n        \n        Donc $\\frac{1}{\\widehat{\\theta}_n}$ est un estimateur sans biais de $\\frac{1}{\\theta}$.",
+      "html": "<p>On a :\n<span>\\[\\begin{align*}\n            \\E\\left(\\frac{1}{\\widehat{\\theta}_n}\\right) &amp;= \\E\\left(\\overline{X_n}\\right) \\\\\n            &amp;= \\E\\left(\\frac{1}{n}\\sum_{i=1}^n X_i\\right) \\\\\n            &amp;= \\frac{1}{n}\\sum_{i=1}^n \\E(X_i) \\\\\n            &amp;= \\frac{1}{n} \\times n \\times \\frac{1}{\\theta} \\\\\n            &amp;= \\frac{1}{\\theta}\n        \\end{align*}\\]</span></p>\n<p>Donc <span>\\(\\frac{1}{\\widehat{\\theta}_n}\\)</span> est un estimateur sans biais de <span>\\(\\frac{1}{\\theta}\\)</span>.</p>",
+      "order": 11
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "5149d285c3c85cd7e7bc970e13d30330a4c28688b348552c71e00f56b8c1a5eb"
+}

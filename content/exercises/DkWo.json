@@ -1,0 +1,43 @@
+{
+  "uuid": "DkWo",
+  "title": "Effet d'un traitement",
+  "chapter": "Statistique",
+  "subchapter": "Tests d'hypothèses, intervalle de confiance",
+  "theme": "statistiques, tests d'hypothèses",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-11-27",
+  "updated_at": "2025-08-22T13:02:33.091Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On a mesuré les dimensions (en cm$^2$) d'une tumeur chez des souris. Certaines sont traitées avec une substance, d'autres non. On a obtenu les résultats suivants :\n\n\\begin{center}\n\t\n\t\\begin{tabular}{|c|c|c|c|}\n\t\t\\hline  & taille échantillon & moyenne & écart type \\\\ \n\t\t\\hline souris témoins & 20 & 7.075 cm$^2$ & 0.576 cm$^2$ \\\\ \n\t\t\\hline souris traitées & 18 & 5.850  cm$^2$ & 0.614 cm$^2$ \\\\ \n\t\t\\hline \n\t\\end{tabular} \n\t\n\\end{center}",
+      "html": "<p>On a mesuré les dimensions (en cm<span>\\(^2\\)</span>) d’une tumeur chez des souris. Certaines sont traitées avec une substance, d’autres non. On a obtenu les résultats suivants :</p>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\"></th>\n<th style=\"text-align: center;\">taille échantillon</th>\n<th style=\"text-align: center;\">moyenne</th>\n<th style=\"text-align: center;\">écart type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\">souris témoins</td>\n<td style=\"text-align: center;\">20</td>\n<td style=\"text-align: center;\">7.075 cm<span>\\(^2\\)</span></td>\n<td style=\"text-align: center;\">0.576 cm<span>\\(^2\\)</span></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">souris traitées</td>\n<td style=\"text-align: center;\">18</td>\n<td style=\"text-align: center;\">5.850 cm<span>\\(^2\\)</span></td>\n<td style=\"text-align: center;\">0.614 cm<span>\\(^2\\)</span></td>\n</tr>\n</tbody>\n</table>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "A partir de ces résultats, peut-on affirmer que le traitement a permis de réduire significativement la taille des tumeurs ?",
+      "html": "<p>A partir de ces résultats, peut-on affirmer que le traitement a permis de réduire significativement la taille des tumeurs ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "\\href{https://stcyrterrenetdefensegouvf-my.sharepoint.com/:x:/g/personal/maxime_nguyen_st-cyr_terre-net_defense_gouv_fr/EYlCPJY62BdMpTYscg1T6zABc9_WCIR_pzt6XSOajALYhw?e=u1SXuH&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wNjAwLTAwMDAwMDAwMDAwMH0}{lien vers tableur}",
+      "html": "<p><a href=\"https://stcyrterrenetdefensegouvf-my.sharepoint.com/:x:/g/personal/maxime_nguyen_st-cyr_terre-net_defense_gouv_fr/EYlCPJY62BdMpTYscg1T6zABc9_WCIR_pzt6XSOajALYhw?e=u1SXuH&amp;nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wNjAwLTAwMDAwMDAwMDAwMH0\">lien vers tableur</a></p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "432d5bb92c7b61d0f38e19faeac0a5f5a230bd6b9b07e5ad2031bf6ae5bd74a8"
+}

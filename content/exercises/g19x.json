@@ -1,0 +1,148 @@
+{
+  "uuid": "g19x",
+  "title": "Méthode itérative d'inversion d'une matrice",
+  "chapter": "Matrice",
+  "subchapter": "Inverse, méthode de Gauss",
+  "theme": "",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-04-29",
+  "updated_at": "2025-08-22T13:03:46.599Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soient $n \\in \\mathbb{N}$ tel que $n \\geq 3$ et $b \\in \\mathbb{R}^n$, de composantes $(b_1, \\ldots, b_n)$. On cherche $x \\in \\mathbb{R}^n$, de composantes $(x_1, \\ldots, x_n)$, solution de :\n\n$$\n\\begin{cases}\t\n\t4x_1 + x_2 &= b_1, \\\\\n\tx_{i-1} + 4x_i + x_{i+1} &= b_i, \\quad \\forall i \\in [\\![ 2, n - 1 ]\\!] \\\\\t\n\tx_{n-1} + 4x_n &= b_n.\t\n\\end{cases}\n$$",
+      "html": "<p>Soient <span>\\(n \\in \\mathbb{N}\\)</span> tel que <span>\\(n \\geq 3\\)</span> et <span>\\(b \\in \\mathbb{R}^n\\)</span>, de composantes <span>\\((b_1, \\ldots, b_n)\\)</span>. On cherche <span>\\(x \\in \\mathbb{R}^n\\)</span>, de composantes <span>\\((x_1, \\ldots, x_n)\\)</span>, solution de :</p>\n<p><span>\\[\\begin{cases}   \n    4x_1 + x_2 &amp;= b_1, \\\\\n    x_{i-1} + 4x_i + x_{i+1} &amp;= b_i, \\quad \\forall i \\in [\\![ 2, n - 1 ]\\!] \\\\  \n    x_{n-1} + 4x_n &amp;= b_n.  \n\\end{cases}\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Montrer que le syst\\`eme ci-dessus peut s'\\'ecrire sous la forme $Ax=b$ avec une matrice $A$ que l'on donnera pour $n=4$.",
+      "html": "<p>Montrer que le système ci-dessus peut s’écrire sous la forme <span>\\(Ax=b\\)</span> avec une matrice <span>\\(A\\)</span> que l’on donnera pour <span>\\(n=4\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Soit $x$ le vecteur $\\begin{pmatrix}\nx_1 \\\\ x_2 \\\\ \\vdots{} \\\\ x_n \\end{pmatrix},$ b le vecteur  $\\begin{pmatrix}\nb_1 \\\\ b_2 \\\\ \\vdots{} \\\\ b_n \\end{pmatrix},$ le syst\\`eme proposé est donc équivalent \\`a l'égalité matricielle $Ax=b$ avec \n$A=$ $\\begin{pmatrix} 4 & 1 & 0 & 0 \\\\\n1 & 4 & 1 & 0 \\\\\n0 & 1 & 4 & 1 \\\\\n0 & 0 & 1 & 4 \n\\end{pmatrix}.\n$",
+      "html": "<p>Soit <span>\\(x\\)</span> le vecteur <span>\\(\\begin{pmatrix}\nx_1 \\\\ x_2 \\\\ \\vdots{} \\\\ x_n \\end{pmatrix},\\)</span> b le vecteur <span>\\(\\begin{pmatrix}\nb_1 \\\\ b_2 \\\\ \\vdots{} \\\\ b_n \\end{pmatrix},\\)</span> le système proposé est donc équivalent à l’égalité matricielle <span>\\(Ax=b\\)</span> avec\n<span>\\(A=\\)</span> <span>\\(\\begin{pmatrix} 4 &amp; 1 &amp; 0 &amp; 0 \\\\\n1 &amp; 4 &amp; 1 &amp; 0 \\\\\n0 &amp; 1 &amp; 4 &amp; 1 \\\\\n0 &amp; 0 &amp; 1 &amp; 4 \n\\end{pmatrix}.\\)</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Montrer que : $\\forall i \\in [\\![1, n]\\!]\\,, \\quad 4 |x_i| \\leq 2 \\|x\\|_\\infty$.",
+      "html": "<p>Montrer que : <span>\\(\\forall i \\in [\\![1, n]\\!]\\,, \\quad 4 |x_i| \\leq 2 \\|x\\|_\\infty\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Pour tout $i \\in [\\![1, n]\\!]\\,,$ on a:\\\\\n$4 |x_i|\\leq |x_{i-1}|+|x_{i+1}|\\leq 2 \\|x\\|_\\infty,$\navec $4 |x_1|\\leq |x_2|\\leq \\|x\\|_\\infty$ et $4 |x_{n}|\\leq |x_2|\\leq \\|x\\|_\\infty,$\nd'o\\`u le r\\'esultat.",
+      "html": "<p>Pour tout <span>\\(i \\in [\\![1, n]\\!]\\,,\\)</span> on a:<br />\n<span>\\(4 |x_i|\\leq |x_{i-1}|+|x_{i+1}|\\leq 2 \\|x\\|_\\infty,\\)</span>\navec <span>\\(4 |x_1|\\leq |x_2|\\leq \\|x\\|_\\infty\\)</span> et <span>\\(4 |x_{n}|\\leq |x_2|\\leq \\|x\\|_\\infty,\\)</span>\nd’où le résultat.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "En déduire que $x = 0$.",
+      "html": "<p>En déduire que <span>\\(x = 0\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Ainsi on a pour tout $i \\in [\\![1, n]\\!]\\,,$ $|x_i|\\leq \\frac{1}{2}\\|x\\|_{\\infty}$. Or si $\\|x\\|_{\\infty}\\neq 0,$ il existe $i_0  \\in \\{1, \\ldots, n\\}$ tel que $\\|x\\|_{\\infty}=|x_{i_{0}}|\\neq 0$ ce qui contredit l'in\\'egalit\\'e pr\\'ec\\'edente.",
+      "html": "<p>Ainsi on a pour tout <span>\\(i \\in [\\![1, n]\\!]\\,,\\)</span> <span>\\(|x_i|\\leq \\frac{1}{2}\\|x\\|_{\\infty}\\)</span>. Or si <span>\\(\\|x\\|_{\\infty}\\neq 0,\\)</span> il existe <span>\\(i_0  \\in \\{1, \\ldots, n\\}\\)</span> tel que <span>\\(\\|x\\|_{\\infty}=|x_{i_{0}}|\\neq 0\\)</span> ce qui contredit l’inégalité précédente.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Montrer que dans le cas d’un second membre quelconque $b$, il existe une unique $x \\in \\mathbb{R}^n$ solution du système linéaire.",
+      "html": "<p>Montrer que dans le cas d’un second membre quelconque <span>\\(b\\)</span>, il existe une unique <span>\\(x \\in \\mathbb{R}^n\\)</span> solution du système linéaire.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "On a montr\\'e \\`a la question précédente que $Ker(A)=0$ avec $A$ la matrice carr\\'ee d\\'efinie \\`a la question 2). Ainsi la matrice $A$ est inversible et la solution du syst\\`eme est $x=A^{-1}b$.",
+      "html": "<p>On a montré à la question précédente que <span>\\(Ker(A)=0\\)</span> avec <span>\\(A\\)</span> la matrice carrée définie à la question 2). Ainsi la matrice <span>\\(A\\)</span> est inversible et la solution du système est <span>\\(x=A^{-1}b\\)</span>.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "text",
+      "latex": "Afin de résoudre le système, on considère la méthode itérative suivante : $x^{(0)} = 0 \\in \\mathbb{R}^n$ et\n\t\n\t$$\t\n\t\\begin{cases}\t\n\t\tx^{(k+1)}_1 = \\alpha x^{(k)}_1 + \\frac{\\alpha - 1}{4} (x^{(k)}_2 - b_1), \\\\\t\n\t\tx^{(k+1)}_i = \\alpha x^{(k)}_i + \\frac{\\alpha - 1}{4} (x^{(k)}_{i-1} + x^{(k)}_{i+1} - b_i), & \\forall i \\in [\\![ 2, n - 1 ]\\!] \\\\\t\n\t\tx^{(k+1)}_n = \\alpha x^{(k)}_n + \\frac{\\alpha - 1}{4} (x^{(k)}_{n-1} - b_n).\t\n\t\\end{cases}\n\t$$\n\t\n\tavec pour paramètre $\\alpha \\in \\mathbb{R}$.",
+      "html": "<p>Afin de résoudre le système, on considère la méthode itérative suivante : <span>\\(x^{(0)} = 0 \\in \\mathbb{R}^n\\)</span> et</p>\n<p><span>\\[\\begin{cases}   \n        x^{(k+1)}_1 = \\alpha x^{(k)}_1 + \\frac{\\alpha - 1}{4} (x^{(k)}_2 - b_1), \\\\ \n        x^{(k+1)}_i = \\alpha x^{(k)}_i + \\frac{\\alpha - 1}{4} (x^{(k)}_{i-1} + x^{(k)}_{i+1} - b_i), &amp; \\forall i \\in [\\![ 2, n - 1 ]\\!] \\\\  \n        x^{(k+1)}_n = \\alpha x^{(k)}_n + \\frac{\\alpha - 1}{4} (x^{(k)}_{n-1} - b_n).    \n    \\end{cases}\\]</span></p>\n<p>avec pour paramètre <span>\\(\\alpha \\in \\mathbb{R}\\)</span>.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "question",
+      "latex": "Montrer que pour tout $\\alpha \\in \\mathbb{R}$, on a\n\t\t\n\t\t$$\\|x^{(k+1)} - x\\|_\\infty \\leq \\left(|\\alpha| + \\frac{|\\alpha - 1|}{2}\\right) \\|x^{(k)} - x\\|_\\infty.$$",
+      "html": "<p>Montrer que pour tout <span>\\(\\alpha \\in \\mathbb{R}\\)</span>, on a</p>\n<p><span>\\[\\|x^{(k+1)} - x\\|_\\infty \\leq \\left(|\\alpha| + \\frac{|\\alpha - 1|}{2}\\right) \\|x^{(k)} - x\\|_\\infty.\\]</span></p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "reponse",
+      "latex": "Pour tout $i \\in \\{2, \\ldots, n-1\\},$ on a:\n    $$|x^{(k+1)}_{i}-x_i|=|\\alpha x_i^{(k)}+\\frac{(\\alpha-1)}{4}(x_2^{(k)}-b_1)-x_1|\\leq |\\alpha(x_1^{(k)}-x_1)+\\alpha x_1-x_1+(\\frac{\\alpha-1}{4})(b_i-x_{i+1}-x_{i-1})|$$\n$$\\leq |\\alpha (x_1^{(k)}-x_1)+(\\frac{\\alpha-1}{4})(b_i-x_{i+1}-x_{i-1})+(\\frac{\\alpha-1}{4})(x_{i+1}^{(k)}-x_{i+1}+x_{i+1}^{(k)}-x_{i-1})| $$ \n$$\\leq |\\alpha|\\times\\|x^{(k)}-x\\|_{\\infty}+|\\frac{\\alpha-1}{4}|\\times 2 \\times \\|x^{(k)}-x\\|_{\\infty}\\leq \\big(\\,|\\alpha|+|\\frac{\\alpha-1}{2}|\\,\\big)\\|x^{(k)}-x\\|_{\\infty}.$$\nPour $j=2$ et $j=n$ on a la majoration suivante:\n  $$|x^{(k+1)}_{j}-x_j|\\leq (|\\alpha|+|\\frac{\\alpha-1}{4}|)\\,\\|x^{(k)}-x\\|_{\\infty}.$$\nLe passage \\`a la borne sup\\'erieure \\`a gauche de l'in\\'egalit\\'e ach\\`eve la preuve.",
+      "html": "<p>Pour tout <span>\\(i \\in \\{2, \\ldots, n-1\\},\\)</span> on a:\n<span>\\[|x^{(k+1)}_{i}-x_i|=|\\alpha x_i^{(k)}+\\frac{(\\alpha-1)}{4}(x_2^{(k)}-b_1)-x_1|\\leq |\\alpha(x_1^{(k)}-x_1)+\\alpha x_1-x_1+(\\frac{\\alpha-1}{4})(b_i-x_{i+1}-x_{i-1})|\\]</span>\n<span>\\[\\leq |\\alpha (x_1^{(k)}-x_1)+(\\frac{\\alpha-1}{4})(b_i-x_{i+1}-x_{i-1})+(\\frac{\\alpha-1}{4})(x_{i+1}^{(k)}-x_{i+1}+x_{i+1}^{(k)}-x_{i-1})|\\]</span>\n<span>\\[\\leq |\\alpha|\\times\\|x^{(k)}-x\\|_{\\infty}+|\\frac{\\alpha-1}{4}|\\times 2 \\times \\|x^{(k)}-x\\|_{\\infty}\\leq \\big(\\,|\\alpha|+|\\frac{\\alpha-1}{2}|\\,\\big)\\|x^{(k)}-x\\|_{\\infty}.\\]</span>\nPour <span>\\(j=2\\)</span> et <span>\\(j=n\\)</span> on a la majoration suivante:\n<span>\\[|x^{(k+1)}_{j}-x_j|\\leq (|\\alpha|+|\\frac{\\alpha-1}{4}|)\\,\\|x^{(k)}-x\\|_{\\infty}.\\]</span>\nLe passage à la borne supérieure à gauche de l’inégalité achève la preuve.</p>",
+      "order": 12
+    },
+    {
+      "id": "block_13",
+      "type": "question",
+      "latex": "Trouver $\\alpha_{\\text{min}}, \\alpha_{\\text{max}} \\in \\mathbb{R}$, tels que $\\alpha \\in ]\\alpha_{\\text{min}}, \\alpha_{\\text{max}}[$ si et seulement si $|\\alpha| + \\frac{|\\alpha - 1|}{2} < 1$.",
+      "html": "<p>Trouver <span>\\(\\alpha_{\\text{min}}, \\alpha_{\\text{max}} \\in \\mathbb{R}\\)</span>, tels que <span>\\(\\alpha \\in ]\\alpha_{\\text{min}}, \\alpha_{\\text{max}}[\\)</span> si et seulement si <span>\\(|\\alpha| + \\frac{|\\alpha - 1|}{2} &lt; 1\\)</span>.</p>",
+      "order": 13
+    },
+    {
+      "id": "block_14",
+      "type": "reponse",
+      "latex": "La condition $|\\alpha|>1$ n'est pas compatible avec l'in\\'egalit\\'e $|\\alpha| + \\frac{|\\alpha - 1|}{2} < 1$ on cherche l'intervalle $]\\alpha_{min};\\alpha_{max}[$ dans l'intervalle $]-1;1[.$\nOr pour $\\alpha \\in [0;1]$ on a: $|\\alpha| + \\frac{|\\alpha - 1|}{2} < 1 \\Longleftrightarrow \\alpha<1$ et pour $\\alpha\\in ]-1;0[$ on a: $-\\alpha+\\frac{1-\\alpha}{2}<1 \\Longleftrightarrow -3\\alpha<1 \\Longleftrightarrow \\alpha>-\\frac{1}{3}$.\\\\\nAinsi l'intervalle cherch\\'e est $]-\\frac{1}{3};1[$.",
+      "html": "<p>La condition <span>\\(|\\alpha|&gt;1\\)</span> n’est pas compatible avec l’inégalité <span>\\(|\\alpha| + \\frac{|\\alpha - 1|}{2} &lt; 1\\)</span> on cherche l’intervalle <span>\\(]\\alpha_{min};\\alpha_{max}[\\)</span> dans l’intervalle <span>\\(]-1;1[.\\)</span>\nOr pour <span>\\(\\alpha \\in [0;1]\\)</span> on a: <span>\\(|\\alpha| + \\frac{|\\alpha - 1|}{2} &lt; 1 \\Longleftrightarrow \\alpha&lt;1\\)</span> et pour <span>\\(\\alpha\\in ]-1;0[\\)</span> on a: <span>\\(-\\alpha+\\frac{1-\\alpha}{2}&lt;1 \\Longleftrightarrow -3\\alpha&lt;1 \\Longleftrightarrow \\alpha&gt;-\\frac{1}{3}\\)</span>.<br />\nAinsi l’intervalle cherché est <span>\\(]-\\frac{1}{3};1[\\)</span>.</p>",
+      "order": 14
+    },
+    {
+      "id": "block_15",
+      "type": "question",
+      "latex": "Montrer que la méthode itérative converge vers $x$ pour $\\alpha \\in ]\\alpha_{\\text{min}}, \\alpha_{\\text{max}}[$.",
+      "html": "<p>Montrer que la méthode itérative converge vers <span>\\(x\\)</span> pour <span>\\(\\alpha \\in ]\\alpha_{\\text{min}}, \\alpha_{\\text{max}}[\\)</span>.</p>",
+      "order": 15
+    },
+    {
+      "id": "block_16",
+      "type": "reponse",
+      "latex": "Pour $\\alpha \\in ]\\frac{1}{3},1[,$ on a par r\\'ecurrence pour tout $k\\geq 1$:\n        $$\\|x^{(k)}-x\\|_{\\infty}\\leq \\big(|\\alpha|+|\\frac{\\alpha-1}{4}|\\big)^{k}\\,\\|x^{(0)}-x\\|_{\\infty},$$\net la convergence vers $0$ est assur\\'ee par la condition sur $\\alpha$.",
+      "html": "<p>Pour <span>\\(\\alpha \\in ]\\frac{1}{3},1[,\\)</span> on a par récurrence pour tout <span>\\(k\\geq 1\\)</span>:\n<span>\\[\\|x^{(k)}-x\\|_{\\infty}\\leq \\big(|\\alpha|+|\\frac{\\alpha-1}{4}|\\big)^{k}\\,\\|x^{(0)}-x\\|_{\\infty},\\]</span>\net la convergence vers <span>\\(0\\)</span> est assurée par la condition sur <span>\\(\\alpha\\)</span>.</p>",
+      "order": 16
+    },
+    {
+      "id": "block_17",
+      "type": "question",
+      "latex": "Trouver $\\alpha_0 \\in \\mathbb{R}$ qui minimise la quantité $|\\alpha| + \\frac{|\\alpha - 1|}{2}.$ Que peut-on d\\'eduire de la convergence du syst\\`eme pour ce $\\alpha_0$ ? Quelle méthode du cours reconnaissez-vous ?",
+      "html": "<p>Trouver <span>\\(\\alpha_0 \\in \\mathbb{R}\\)</span> qui minimise la quantité <span>\\(|\\alpha| + \\frac{|\\alpha - 1|}{2}.\\)</span> Que peut-on déduire de la convergence du système pour ce <span>\\(\\alpha_0\\)</span> ? Quelle méthode du cours reconnaissez-vous ?</p>",
+      "order": 17
+    },
+    {
+      "id": "block_18",
+      "type": "reponse",
+      "latex": "Le minimum de la quantité $|\\alpha| + \\frac{|\\alpha - 1|}{2}$ est le minimum sous la contrainte $|\\alpha| + \\frac{|\\alpha - 1|}{2} < 1$. Ce minimum vaut $\\frac{1}{2}$ et est atteint en $\\alpha_{0}=0$. En effet il suffit de minimiser $\\frac{\\alpha+1}{2}$ sur $]0;1[$ et $\\frac{-3\\alpha+1}{2}$ sur $]-\\frac{1}{3};1[$. On reconnait pour $\\alpha_0=0$ la m\\'ethode de Jacobi.",
+      "html": "<p>Le minimum de la quantité <span>\\(|\\alpha| + \\frac{|\\alpha - 1|}{2}\\)</span> est le minimum sous la contrainte <span>\\(|\\alpha| + \\frac{|\\alpha - 1|}{2} &lt; 1\\)</span>. Ce minimum vaut <span>\\(\\frac{1}{2}\\)</span> et est atteint en <span>\\(\\alpha_{0}=0\\)</span>. En effet il suffit de minimiser <span>\\(\\frac{\\alpha+1}{2}\\)</span> sur <span>\\(]0;1[\\)</span> et <span>\\(\\frac{-3\\alpha+1}{2}\\)</span> sur <span>\\(]-\\frac{1}{3};1[\\)</span>. On reconnait pour <span>\\(\\alpha_0=0\\)</span> la méthode de Jacobi.</p>",
+      "order": 18
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "0c5513c19a013032b8e06fbd364e89b9e8089cfa2a7157a2f02cd4724f53e13a"
+}

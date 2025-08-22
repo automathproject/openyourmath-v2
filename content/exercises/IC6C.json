@@ -1,0 +1,78 @@
+{
+  "uuid": "IC6C",
+  "title": "Séries de signe non constant",
+  "chapter": "Série numérique",
+  "subchapter": "Séries semi-convergentes",
+  "theme": "séries",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-06-05",
+  "updated_at": "2025-08-22T13:02:42.921Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "Quelle est la nature de la série $\\displaystyle\\sum_{n\\geq 1} \\frac{(-1)^n}{n}$ ?",
+      "html": "<p>Quelle est la nature de la série <span>\\(\\displaystyle\\sum_{n\\geq 1} \\frac{(-1)^n}{n}\\)</span> ?</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "reponse",
+      "latex": "Il s'agit d'une série à termes de signe non constant. On commence donc par étudier la convergence absolue. Soit $u_n=\\frac{(-1)^n}{n}$. On a $|u_n|=\\frac{1}{n}$ qui est le terme général d'une série de Riemann divergente. On en conclut que la série $\\sum u_n$ ne converge pas absolument. \\\\\n\t\t\tÉtudions maintenant la convergence de la série : il s'agit d'une série alternée. On applique donc le critère spécial des séries alternées: la suite $(\\frac{1}{n})_{n\\geq 1}$ étant positive, décroissante et ayant pour limite $0$ en l'infini, on en conclut que la série $\\sum u_n$ converge. \\\\\n\t\t\tFinalement, la série $\\sum u_n$ est convergente mais non absolument convergente (elle est dite semi-convergente).",
+      "html": "<p>Il s’agit d’une série à termes de signe non constant. On commence donc par étudier la convergence absolue. Soit <span>\\(u_n=\\frac{(-1)^n}{n}\\)</span>. On a <span>\\(|u_n|=\\frac{1}{n}\\)</span> qui est le terme général d’une série de Riemann divergente. On en conclut que la série <span>\\(\\sum u_n\\)</span> ne converge pas absolument.<br />\nÉtudions maintenant la convergence de la série : il s’agit d’une série alternée. On applique donc le critère spécial des séries alternées: la suite <span>\\((\\frac{1}{n})_{n\\geq 1}\\)</span> étant positive, décroissante et ayant pour limite <span>\\(0\\)</span> en l’infini, on en conclut que la série <span>\\(\\sum u_n\\)</span> converge.<br />\nFinalement, la série <span>\\(\\sum u_n\\)</span> est convergente mais non absolument convergente (elle est dite semi-convergente).</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "Déterminer la nature de la série $\\displaystyle \\sum_{n\\geq 1} \\frac{1}{n^2}$.",
+      "html": "<p>Déterminer la nature de la série <span>\\(\\displaystyle \\sum_{n\\geq 1} \\frac{1}{n^2}\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "Il s'agit d'une série de Riemann convergente. Comme cette série est à termes positifs, elle est absolument convergente.",
+      "html": "<p>Il s’agit d’une série de Riemann convergente. Comme cette série est à termes positifs, elle est absolument convergente.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Que peut-on en déduire sur la convergence de la série $\\displaystyle \\sum_{n\\geq 1} \\Big(\\frac{(-1)^n}{n} +\\frac{1}{n^2} \\Big)$ ?",
+      "html": "<p>Que peut-on en déduire sur la convergence de la série <span>\\(\\displaystyle \\sum_{n\\geq 1} \\Big(\\frac{(-1)^n}{n} +\\frac{1}{n^2} \\Big)\\)</span> ?</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "reponse",
+      "latex": "Les séries $\\sum \\frac{(-1)^n}{n}$ et $\\sum \\frac{1}{n^2}$ étant convergentes, la somme de ces deux séries est une série convergente. Par conséquent, la série $ \\sum (\\frac{(-1)^n}{n} +\\frac{1}{n^2} )$ est convergente.",
+      "html": "<p>Les séries <span>\\(\\sum \\frac{(-1)^n}{n}\\)</span> et <span>\\(\\sum \\frac{1}{n^2}\\)</span> étant convergentes, la somme de ces deux séries est une série convergente. Par conséquent, la série <span>\\(\\sum (\\frac{(-1)^n}{n} +\\frac{1}{n^2} )\\)</span> est convergente.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "question",
+      "latex": "Converge-t-elle absolument ?",
+      "html": "<p>Converge-t-elle absolument ?</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "reponse",
+      "latex": "On s'intéresse à la convergence de la série $ \\sum |\\frac{(-1)^n}{n} +\\frac{1}{n^2} |$. On a par inégalité triangulaire:\n\t\t\t\\[ \\Big|\\frac{(-1)^n}{n} +\\frac{1}{n^2}\\Big| \\geq \\frac{1}{n} - \\frac{1}{n^2} .\\]\n\t\t\tOr $\\sum \\frac{1}{n}-\\frac{1}{n^2}$ est une série de Riemann divergente. Donc la série $ \\sum |\\frac{(-1)^n}{n} +\\frac{1}{n^2} |$ n'est pas convergente. On en déduit que la série $ \\sum \\frac{(-1)^n}{n} +\\frac{1}{n^2}$ n'est pas absolument convergente.",
+      "html": "<p>On s’intéresse à la convergence de la série <span>\\(\\sum |\\frac{(-1)^n}{n} +\\frac{1}{n^2} |\\)</span>. On a par inégalité triangulaire:\n<span>\\[\\Big|\\frac{(-1)^n}{n} +\\frac{1}{n^2}\\Big| \\geq \\frac{1}{n} - \\frac{1}{n^2} .\\]</span>\nOr <span>\\(\\sum \\frac{1}{n}-\\frac{1}{n^2}\\)</span> est une série de Riemann divergente. Donc la série <span>\\(\\sum |\\frac{(-1)^n}{n} +\\frac{1}{n^2} |\\)</span> n’est pas convergente. On en déduit que la série <span>\\(\\sum \\frac{(-1)^n}{n} +\\frac{1}{n^2}\\)</span> n’est pas absolument convergente.</p>",
+      "order": 8
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "bcea6f0cc7e7df821b0949e21f379d0833d7b599f9e482c612f809437b4a0218"
+}

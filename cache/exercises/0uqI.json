@@ -1,0 +1,43 @@
+{
+  "uuid": "0uqI",
+  "title": "Optimisation par approximation",
+  "chapter": "Probabilité continue",
+  "subchapter": "Lois des grands nombres, théorème central limite",
+  "theme": "variables aléatoires, théorème central limite",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-20",
+  "updated_at": "2025-08-22T12:38:31.256Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Un usager de train effectue régulièremment $100$ trajets par mois en première classe. On admet qu'à chacun de ses voyages, cet usager a une chance sur dix d'être contrôlé. \n\n        On suppose que cet usager fraude systématiquement en voyageant en première classe avec un titre de transport de seconde classe. La différence entre le prix d'un billet de première classe et celui d'un billet de seconde classe est de $1$ euro. En cas de contrôle, le montant de l'amende à payer est noté $\\alpha$ euros.",
+      "html": "<p>Un usager de train effectue régulièremment <span>\\(100\\)</span> trajets par mois en première classe. On admet qu’à chacun de ses voyages, cet usager a une chance sur dix d’être contrôlé.</p>\n<p>On suppose que cet usager fraude systématiquement en voyageant en première classe avec un titre de transport de seconde classe. La différence entre le prix d’un billet de première classe et celui d’un billet de seconde classe est de <span>\\(1\\)</span> euro. En cas de contrôle, le montant de l’amende à payer est noté <span>\\(\\alpha\\)</span> euros.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Quel est le montant minimum de l'amende $\\alpha$ qu'il faudrait infliger à cet usager pour qu'il soit dissuadé de frauder en étant financièrement perdant à la fin du mois avec une probabilité supérieure à $95\\%$ ?",
+      "html": "<p>Quel est le montant minimum de l’amende <span>\\(\\alpha\\)</span> qu’il faudrait infliger à cet usager pour qu’il soit dissuadé de frauder en étant financièrement perdant à la fin du mois avec une probabilité supérieure à <span>\\(95\\%\\)</span> ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Soit $X$ le nombre de fois dans le mois où l'usager est contrôlé. On a $X\\sim\\mathcal{B}(100,0.1)$. \n\n        Sur un mois, l'usager fait un bénéfice de $100\\times1$ euros sur sa fraude et perd $X\\times\\alpha$ euros en amende.\n\n        On cherche $\\alpha$ tel que $\\prob(100-X\\alpha<0) \\geq 0.95$.\n\n        On sait que $\\E(X) = 100\\times0.1 = 10$ et $\\V(X) = 100\\times0.1\\times0.9 = 9$.\n\n        D'après le théorème central limite, la variable aléatoire $Z = \\frac{X-10}{3}$ suit approximativement une loi normale centrée réduite.\n\n        Or $\\prob(100-X\\alpha<0) = \\prob(X>\\frac{100}{\\alpha}) = \\prob(Z>\\frac{100/\\alpha-10}{3})$. On cherche donc $\\alpha$ tel que $\\prob(Z>\\frac{100/\\alpha-10}{3}) \\geq 0.95$. \n\n        On a $\\prob(Z>\\frac{100/\\alpha-10}{3}) = 1-\\prob\\left(Z\\leq\\frac{100/\\alpha-10}{3}\\right) = 1-\\Phi\\left(\\frac{100/\\alpha-10}{3}\\right)$. On cherche donc $\\alpha$ tel que $1-\\Phi\\left(\\frac{100/\\alpha-10}{3}\\right) \\geq 0.95$ soit $\\Phi\\left(\\frac{100/\\alpha-10}{3}\\right) \\leq 0.05$. \n\n        Par lecture de la table de la loi normale centrée réduite, on trouve $\\frac{100/\\alpha-10}{3} \\leq -1.65$ soit $100/\\alpha \\leq -1.65\\times3+10 = 5.05$ soit $\\alpha \\geq 100/5.05 = 19.8$.\n\n        L'amende doit donc être supérieure à $19.8$ euros pour que l'usager soit dissuadé de frauder en étant financièrement perdant à la fin du mois avec une probabilité supérieure à $95\\%$.",
+      "html": "<p>Soit <span>\\(X\\)</span> le nombre de fois dans le mois où l’usager est contrôlé. On a <span>\\(X\\sim\\mathcal{B}(100,0.1)\\)</span>.</p>\n<p>Sur un mois, l’usager fait un bénéfice de <span>\\(100\\times1\\)</span> euros sur sa fraude et perd <span>\\(X\\times\\alpha\\)</span> euros en amende.</p>\n<p>On cherche <span>\\(\\alpha\\)</span> tel que <span>\\(\\prob(100-X\\alpha&lt;0) \\geq 0.95\\)</span>.</p>\n<p>On sait que <span>\\(\\E(X) = 100\\times0.1 = 10\\)</span> et <span>\\(\\V(X) = 100\\times0.1\\times0.9 = 9\\)</span>.</p>\n<p>D’après le théorème central limite, la variable aléatoire <span>\\(Z = \\frac{X-10}{3}\\)</span> suit approximativement une loi normale centrée réduite.</p>\n<p>Or <span>\\(\\prob(100-X\\alpha&lt;0) = \\prob(X&gt;\\frac{100}{\\alpha}) = \\prob(Z&gt;\\frac{100/\\alpha-10}{3})\\)</span>. On cherche donc <span>\\(\\alpha\\)</span> tel que <span>\\(\\prob(Z&gt;\\frac{100/\\alpha-10}{3}) \\geq 0.95\\)</span>.</p>\n<p>On a <span>\\(\\prob(Z&gt;\\frac{100/\\alpha-10}{3}) = 1-\\prob\\left(Z\\leq\\frac{100/\\alpha-10}{3}\\right) = 1-\\Phi\\left(\\frac{100/\\alpha-10}{3}\\right)\\)</span>. On cherche donc <span>\\(\\alpha\\)</span> tel que <span>\\(1-\\Phi\\left(\\frac{100/\\alpha-10}{3}\\right) \\geq 0.95\\)</span> soit <span>\\(\\Phi\\left(\\frac{100/\\alpha-10}{3}\\right) \\leq 0.05\\)</span>.</p>\n<p>Par lecture de la table de la loi normale centrée réduite, on trouve <span>\\(\\frac{100/\\alpha-10}{3} \\leq -1.65\\)</span> soit <span>\\(100/\\alpha \\leq -1.65\\times3+10 = 5.05\\)</span> soit <span>\\(\\alpha \\geq 100/5.05 = 19.8\\)</span>.</p>\n<p>L’amende doit donc être supérieure à <span>\\(19.8\\)</span> euros pour que l’usager soit dissuadé de frauder en étant financièrement perdant à la fin du mois avec une probabilité supérieure à <span>\\(95\\%\\)</span>.</p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "68a2c4d8971262f11c6fa2f248b47619a664c7dc3cc6457af7435a9b7f079bf5"
+}

@@ -1,0 +1,106 @@
+{
+  "uuid": "G5Jt",
+  "title": "Probabilités et divisibilité",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Variable aléatoire discrète",
+  "theme": "variables aléatoires discrètes",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-04",
+  "updated_at": "2025-08-22T12:39:12.573Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $n \\in \\N^*$. Une urne contient $n$ boules blanches numérotées de $1$ à $n$ et $2$ boules noires numérotées $1$ et $2$. On effectue le tirage de toutes les boules de l'urne, une à une, et sans remise. On appelle $X$ le rang d'apparition de la première boule blanche et $Y$ celui du premier numéro $1$.",
+      "html": "<p>Soit <span>\\(n \\in \\N^*\\)</span>. Une urne contient <span>\\(n\\)</span> boules blanches numérotées de <span>\\(1\\)</span> à <span>\\(n\\)</span> et <span>\\(2\\)</span> boules noires numérotées <span>\\(1\\)</span> et <span>\\(2\\)</span>. On effectue le tirage de toutes les boules de l’urne, une à une, et sans remise. On appelle <span>\\(X\\)</span> le rang d’apparition de la première boule blanche et <span>\\(Y\\)</span> celui du premier numéro <span>\\(1\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Déterminer la loi de $X$.",
+      "html": "<p>Déterminer la loi de <span>\\(X\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "L'ensemble des valeurs prises par $X$ est $X(\\Omega) = \\{1,2,3\\}$. \nLes boules sont a priori indiscernables au toucher donc le tirage d'un boule parmi les $n+2$ suit une loi uniforme, autrement dit la probabilité de tirer une boule en particulier est $\\frac{1}{n+2}$. On en déduit que la probabilité que la première boule tirée soit blanche est $$\\prob(X=1) = \\frac{n}{n+2}$$.\n\nPar indépendance des tirages et formule de Baye, on a $$\\prob(X=2) = \\prob(\\overline{N_1})\\prob(N_2 \\mid \\overline{N_1}) = \\frac{2}{n+2}\\frac{n}{n+1} = \\frac{2n}{(n+2)(n+1)}$$\n\nDe même, on a $$\\prob(X=3) = \\frac{2}{n+2}\\frac{1}{n+1}\\frac{n}{n} = \\frac{2}{(n+2)(n+1)}$$",
+      "html": "<p>L’ensemble des valeurs prises par <span>\\(X\\)</span> est <span>\\(X(\\Omega) = \\{1,2,3\\}\\)</span>.\nLes boules sont a priori indiscernables au toucher donc le tirage d’un boule parmi les <span>\\(n+2\\)</span> suit une loi uniforme, autrement dit la probabilité de tirer une boule en particulier est <span>\\(\\frac{1}{n+2}\\)</span>. On en déduit que la probabilité que la première boule tirée soit blanche est <span>\\[\\prob(X=1) = \\frac{n}{n+2}\\]</span>.</p>\n<p>Par indépendance des tirages et formule de Baye, on a <span>\\[\\prob(X=2) = \\prob(\\overline{N_1})\\prob(N_2 \\mid \\overline{N_1}) = \\frac{2}{n+2}\\frac{n}{n+1} = \\frac{2n}{(n+2)(n+1)}\\]</span></p>\n<p>De même, on a <span>\\[\\prob(X=3) = \\frac{2}{n+2}\\frac{1}{n+1}\\frac{n}{n} = \\frac{2}{(n+2)(n+1)}\\]</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Montrer que les événements $\\{X=1\\}$ et $\\{Y=1\\}$ sont indépendants si et seulement si $n=2$.",
+      "html": "<p>Montrer que les événements <span>\\(\\{X=1\\}\\)</span> et <span>\\(\\{Y=1\\}\\)</span> sont indépendants si et seulement si <span>\\(n=2\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On a $\\prob(X=1,Y=1) = \\frac{1}{n+2}$, c'est la probabilité que la première boule tirée soit blanche et qu'elle porte le numéro 1. \n\t\nOn a $\\prob(Y=1) = \\frac{2}{n+2}$ car au premier tirage, $2$ boules portent le numéro $1$. \n\nLes événements  $\\{X=1\\}$ et $\\{Y=1\\}$ sont indépendants si et seulement si : \n$$\\begin{align*}\n\\prob(X=1,Y=1) = \\prob(X=1)\\prob(Y=1) &\\iff \\frac{1}{n+2} = \\frac{n}{n+2} \\times \\frac{2}{n+2} \\\\\n&\\iff 2n = n+2 \\\\\n&\\iff n = 2\n\\end{align*}$$",
+      "html": "<p>On a <span>\\(\\prob(X=1,Y=1) = \\frac{1}{n+2}\\)</span>, c’est la probabilité que la première boule tirée soit blanche et qu’elle porte le numéro 1.</p>\n<p>On a <span>\\(\\prob(Y=1) = \\frac{2}{n+2}\\)</span> car au premier tirage, <span>\\(2\\)</span> boules portent le numéro <span>\\(1\\)</span>.</p>\n<p>Les événements <span>\\(\\{X=1\\}\\)</span> et <span>\\(\\{Y=1\\}\\)</span> sont indépendants si et seulement si :\n<span>\\[\\begin{align*}\n\\prob(X=1,Y=1) = \\prob(X=1)\\prob(Y=1) &amp;\\iff \\frac{1}{n+2} = \\frac{n}{n+2} \\times \\frac{2}{n+2} \\\\\n&amp;\\iff 2n = n+2 \\\\\n&amp;\\iff n = 2\n\\end{align*}\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Montrer que les variables aléatoires $X$ et $Y$ ne sont pas indépenantes.",
+      "html": "<p>Montrer que les variables aléatoires <span>\\(X\\)</span> et <span>\\(Y\\)</span> ne sont pas indépenantes.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On compare par exemple $\\prob(X=3,Y=3)$ et $\\prob(X=3)\\times \\prob(Y=3)$. Or $\\prob(X=3,Y=3)=0$ car pour que la première boule blanche apparaisse au rang $3$, il faut que les deux premières tirées soient noires, dont l'une d'elle porte le numéro $1$. \n\t\nOr il est clair que $\\prob(X=3) \\neq 0$ et $\\prob(Y=3)\\neq 0$. On en déduit que  $\\prob(X=3,Y=3) \\neq \\prob(X=3)\\times \\prob(Y=3)$ ce qui permet de conclure que  les variables aléatoires $X$ et $Y$ ne sont pas indépenantes.",
+      "html": "<p>On compare par exemple <span>\\(\\prob(X=3,Y=3)\\)</span> et <span>\\(\\prob(X=3)\\times \\prob(Y=3)\\)</span>. Or <span>\\(\\prob(X=3,Y=3)=0\\)</span> car pour que la première boule blanche apparaisse au rang <span>\\(3\\)</span>, il faut que les deux premières tirées soient noires, dont l’une d’elle porte le numéro <span>\\(1\\)</span>.</p>\n<p>Or il est clair que <span>\\(\\prob(X=3) \\neq 0\\)</span> et <span>\\(\\prob(Y=3)\\neq 0\\)</span>. On en déduit que <span>\\(\\prob(X=3,Y=3) \\neq \\prob(X=3)\\times \\prob(Y=3)\\)</span> ce qui permet de conclure que les variables aléatoires <span>\\(X\\)</span> et <span>\\(Y\\)</span> ne sont pas indépenantes.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "text",
+      "latex": "On suppose maintenant que $n=2$.",
+      "html": "<p>On suppose maintenant que <span>\\(n=2\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "question",
+      "latex": "Montrer que $X$ et $Y$ ont la même loi de probabilité.",
+      "html": "<p>Montrer que <span>\\(X\\)</span> et <span>\\(Y\\)</span> ont la même loi de probabilité.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "reponse",
+      "latex": "Sous cette hypothèse, on a $Y(\\Omega) = \\{1,2,3\\}$. De plus, d'après la question 1, on a \n\t$$\\prob(X=1) = \\frac{1}{2} \\quad \\prob(X=2) = \\frac{1}{3} \\quad \\prob(X=3) = \\frac{1}{6}$$\n\tPar ailleurs : \n\t\\begin{itemize}\n\t\t\\item $\\prob(Y=1) = \\frac{2}{4} = \\frac{1}{2}$, c'est la probabilité que la première boule tirée porte le numéro $1$.\n\t\t\\item $\\prob(Y=2) = \\prob(B_1)\\prob(\\overline{B_2} \\mid \\B_1) = \\frac{2}{4}\\frac{1}{3} = \\frac{1}{3}$.\n\t\t\\item de même, $\\prob(Y=3) = \\frac{2}{4}\\frac{1}{3}\\frac{2}{2} = \\frac{1}{6$.}\n\t\\end{itemize}\n\t\tLes deux variables $X$ et $Y$ ont donc la même loi de probabilité.",
+      "html": "<p>Sous cette hypothèse, on a <span>\\(Y(\\Omega) = \\{1,2,3\\}\\)</span>. De plus, d’après la question 1, on a\n<span>\\[\\prob(X=1) = \\frac{1}{2} \\quad \\prob(X=2) = \\frac{1}{3} \\quad \\prob(X=3) = \\frac{1}{6}\\]</span>\nPar ailleurs :</p>\n<p>Les deux variables <span>\\(X\\)</span> et <span>\\(Y\\)</span> ont donc la même loi de probabilité.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "question",
+      "latex": "Déterminer la loi du couple $(X,Y)$.",
+      "html": "<p>Déterminer la loi du couple <span>\\((X,Y)\\)</span>.</p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "reponse",
+      "latex": "En utilisant les questions précédentes et en calculant de manière similaire $\\prob(X=1,Y=2)$, $\\prob(X=1,Y=3)$, $\\prob(X=3,Y=1)$\n\\begin{center}\n\t \t\\begin{tabular}{|c|c|c|c|}\n \t\t\\hline\n \t$X \\backslash Y$\t& $1$ & $2$ & $3$ \\\\\n \t\t\\hline\n \t$1$\t& $\\frac{1}{4}$ & $\\frac{1}{6}$  & $\\frac{1}{12}$ \\\\\n \t\t\\hline\n \t$2$\t& $\\frac{1}{6}$ & $\\frac{1}{12}$ & $\\frac{1}{12}$ \\\\\n \t\t\\hline\n \t$3$\t& $\\frac{1}{12}$ & $\\frac{1}{12}$ & $0$ \\\\\n \t\t\\hline\n \t\\end{tabular}\t\n\\end{center}\nEn sommant les lignes et les colonnes, on retrouve les résultats des lois marginales calculées précédemment.",
+      "html": "<p>En utilisant les questions précédentes et en calculant de manière similaire <span>\\(\\prob(X=1,Y=2)\\)</span>, <span>\\(\\prob(X=1,Y=3)\\)</span>, <span>\\(\\prob(X=3,Y=1)\\)</span></p>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><span>\\(X \\backslash Y\\)</span></th>\n<th style=\"text-align: center;\"><span>\\(1\\)</span></th>\n<th style=\"text-align: center;\"><span>\\(2\\)</span></th>\n<th style=\"text-align: center;\"><span>\\(3\\)</span></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><span>\\(1\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{4}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{6}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{12}\\)</span></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(2\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{6}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{12}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{12}\\)</span></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(3\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{12}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{12}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(0\\)</span></td>\n</tr>\n</tbody>\n</table>\n<p>En sommant les lignes et les colonnes, on retrouve les résultats des lois marginales calculées précédemment.</p>",
+      "order": 12
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "faf39a507519adc827d73b02a1fc6906deb63f333c7ccb30852d1a1d763323b0"
+}

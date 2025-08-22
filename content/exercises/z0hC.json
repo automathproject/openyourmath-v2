@@ -1,0 +1,50 @@
+{
+  "uuid": "z0hC",
+  "title": "Inversibilité de matrices",
+  "chapter": "Matrice",
+  "subchapter": "Inverse, méthode de Gauss",
+  "theme": "calcul matriciel",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-01-03",
+  "updated_at": "2025-08-22T13:05:01.805Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère les matrices: $A=\\left(\\begin{array}{lll}1 & 0 & 0 \\\\ 0 & 1 & 1 \\\\ 3 & 1 & 1\\end{array}\\right), B=\\left(\\begin{array}{lll}1 & 1 & 1 \\\\ 0 & 1 & 0 \\\\ 1 & 0 & 0\\end{array}\\right)$ et $C=\\left(\\begin{array}{ccc}1 & 1 & 1 \\\\ 1 & 2 & 1 \\\\ 0 & -1 & -1\\end{array}\\right)$.",
+      "html": "<p>On considère les matrices: <span>\\(A=\\left(\\begin{array}{lll}1 &amp; 0 &amp; 0 \\\\ 0 &amp; 1 &amp; 1 \\\\ 3 &amp; 1 &amp; 1\\end{array}\\right), B=\\left(\\begin{array}{lll}1 &amp; 1 &amp; 1 \\\\ 0 &amp; 1 &amp; 0 \\\\ 1 &amp; 0 &amp; 0\\end{array}\\right)\\)</span> et <span>\\(C=\\left(\\begin{array}{ccc}1 &amp; 1 &amp; 1 \\\\ 1 &amp; 2 &amp; 1 \\\\ 0 &amp; -1 &amp; -1\\end{array}\\right)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Calculer les produits $AB$ et $AC$. Que constate-t-on ?",
+      "html": "<p>Calculer les produits <span>\\(AB\\)</span> et <span>\\(AC\\)</span>. Que constate-t-on ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "La matrice $A$ est-elle inversible ?",
+      "html": "<p>La matrice <span>\\(A\\)</span> est-elle inversible ?</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "On a :\n\t$$\n\t\\begin{aligned}\n\t\t& A \\cdot B=\\left(\\begin{array}{lll}\n\t\t\t1 & 0 & 0 \\\\\n\t\t\t0 & 1 & 1 \\\\\n\t\t\t3 & 1 & 1\n\t\t\\end{array}\\right) \\cdot\\left(\\begin{array}{ccc}\n\t\t\t1 & 1 & 1 \\\\\n\t\t\t0 & 1 & 0 \\\\\n\t\t\t1 & 0 & 0\n\t\t\\end{array}\\right)=\\left(\\begin{array}{lll}\n\t\t\t1 & 1 & 1 \\\\\n\t\t\t1 & 1 & 0 \\\\\n\t\t\t4 & 4 & 3\n\t\t\\end{array}\\right) \\\\\n\t\t& A \\cdot C=\\left(\\begin{array}{lll}\n\t\t\t1 & 0 & 0 \\\\\n\t\t\t0 & 1 & 1 \\\\\n\t\t\t3 & 1 & 1\n\t\t\\end{array}\\right) \\cdot\\left(\\begin{array}{ccc}\n\t\t\t1 & 1 & 1 \\\\\n\t\t\t1 & 2 & 1 \\\\\n\t\t\t0 & -1 & -1\n\t\t\\end{array}\\right)=\\left(\\begin{array}{lll}\n\t\t\t1 & 1 & 1 \\\\\n\t\t\t1 & 1 & 0 \\\\\n\t\t\t4 & 4 & 3\n\t\t\\end{array}\\right)\n\t\\end{aligned}\n\t$$\n\tOn remarque que :\n\t$$\n\tA \\cdot B=A \\cdot C\n\t$$\n\tMontrons que la matrice $A$ n'est pas inversible.\n\t(Démonstration par l'absurde.)\n\tSupposons que $A$ soit inversible, notons $A^{-1}$ son inverse.\n\tOn aurait :\n\t$$\n\tA^{-1} \\cdot A \\cdot B=A^{-1} \\cdot A \\cdot C \\Leftrightarrow B=C\n\t$$\n\tOr $B \\neq C$. Donc $A$ n'est pas inversible.",
+      "html": "<p>On a :\n<span>\\[\\begin{aligned}\n        &amp; A \\cdot B=\\left(\\begin{array}{lll}\n            1 &amp; 0 &amp; 0 \\\\\n            0 &amp; 1 &amp; 1 \\\\\n            3 &amp; 1 &amp; 1\n        \\end{array}\\right) \\cdot\\left(\\begin{array}{ccc}\n            1 &amp; 1 &amp; 1 \\\\\n            0 &amp; 1 &amp; 0 \\\\\n            1 &amp; 0 &amp; 0\n        \\end{array}\\right)=\\left(\\begin{array}{lll}\n            1 &amp; 1 &amp; 1 \\\\\n            1 &amp; 1 &amp; 0 \\\\\n            4 &amp; 4 &amp; 3\n        \\end{array}\\right) \\\\\n        &amp; A \\cdot C=\\left(\\begin{array}{lll}\n            1 &amp; 0 &amp; 0 \\\\\n            0 &amp; 1 &amp; 1 \\\\\n            3 &amp; 1 &amp; 1\n        \\end{array}\\right) \\cdot\\left(\\begin{array}{ccc}\n            1 &amp; 1 &amp; 1 \\\\\n            1 &amp; 2 &amp; 1 \\\\\n            0 &amp; -1 &amp; -1\n        \\end{array}\\right)=\\left(\\begin{array}{lll}\n            1 &amp; 1 &amp; 1 \\\\\n            1 &amp; 1 &amp; 0 \\\\\n            4 &amp; 4 &amp; 3\n        \\end{array}\\right)\n    \\end{aligned}\\]</span>\nOn remarque que :\n<span>\\[A \\cdot B=A \\cdot C\\]</span>\nMontrons que la matrice <span>\\(A\\)</span> n’est pas inversible.\n(Démonstration par l’absurde.)\nSupposons que <span>\\(A\\)</span> soit inversible, notons <span>\\(A^{-1}\\)</span> son inverse.\nOn aurait :\n<span>\\[A^{-1} \\cdot A \\cdot B=A^{-1} \\cdot A \\cdot C \\Leftrightarrow B=C\\]</span>\nOr <span>\\(B \\neq C\\)</span>. Donc <span>\\(A\\)</span> n’est pas inversible.</p>",
+      "order": 4
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "b3bf75c291d47a7191cd89cce0e7a91daaf565712674354730ef0f090d2c84aa"
+}

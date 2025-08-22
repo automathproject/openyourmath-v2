@@ -1,0 +1,64 @@
+{
+  "uuid": "5gPB",
+  "title": "Étude d'un schéma numérique",
+  "chapter": "Equation différentielle",
+  "subchapter": "Résolution d'équation différentielle",
+  "theme": "méthodes numériques, équations différentielles",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-04-29",
+  "updated_at": "2025-08-22T12:38:42.035Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère l'équation différentielle ordinaire suivante :\n\n$$\\begin{cases} y'(t) = f(t, y(t)), \\quad t \\in [0, T] \\\\ y(0) = y_0 \\end{cases}$$\n\noù $f : [0, T] \\times \\mathbb{R} \\to \\mathbb{R}$ est une fonction suffisamment régulière (par exemple de classe $C^2$).\n\nOn se propose d'étudier la consistance du schéma numérique de Leapfrog défini par :\n\n$$\\begin{cases} t_n = n \\cdot h, \\quad n = 0, \\ldots, N \\\\ y_{n+1} = y_n + h \\cdot f(t_n + \\frac{h}{2}, y_n + \\frac{h}{2} f(t_n, y_n)) \\end{cases}$$\n\noù $h = \\frac{T}{N}$ est le pas de discrétisation en temps et $N$ est un entier strictement positif. \n\nOn donne le développement de Taylor-Lagrange à l'ordre 1 pour une fonction $g$ de classe $\\mathcal{C}^2$ de deux variables $x$ et $y$ au voisinage du point $(x_0, y_0)$ est donné par :\n\n$$g(x, y) = g(x_0, y_0) + \\frac{\\partial g}{\\partial x}(x_0, y_0) (x - x_0) + \\frac{\\partial g}{\\partial y}(x_0, y_0) (y - y_0) + R_1(x, y)$$\n\noù $R_1(x, y)$ est le reste du développement limité, qui vérifie :\n\n$$R_1(x, y) = \\frac{1}{2} \\left( \\frac{\\partial^2 g}{\\partial x^2}(\\xi, \\eta) (x - x_0)^2 + 2 \\frac{\\partial^2 g}{\\partial x \\partial y}(\\xi, \\eta) (x - x_0)(y - y_0) + \\frac{\\partial^2 g}{\\partial y^2}(\\xi, \\eta) (y - y_0)^2 \\right)$$\n\navec $(\\xi, \\eta)$ un point situé sur le segment reliant les points $(x_0, y_0)$ et $(x, y)$.",
+      "html": "<p>On considère l’équation différentielle ordinaire suivante :</p>\n<p><span>\\[\\begin{cases} y&#39;(t) = f(t, y(t)), \\quad t \\in [0, T] \\\\ y(0) = y_0 \\end{cases}\\]</span></p>\n<p>où <span>\\(f : [0, T] \\times \\mathbb{R} \\to \\mathbb{R}\\)</span> est une fonction suffisamment régulière (par exemple de classe <span>\\(C^2\\)</span>).</p>\n<p>On se propose d’étudier la consistance du schéma numérique de Leapfrog défini par :</p>\n<p><span>\\[\\begin{cases} t_n = n \\cdot h, \\quad n = 0, \\ldots, N \\\\ y_{n+1} = y_n + h \\cdot f(t_n + \\frac{h}{2}, y_n + \\frac{h}{2} f(t_n, y_n)) \\end{cases}\\]</span></p>\n<p>où <span>\\(h = \\frac{T}{N}\\)</span> est le pas de discrétisation en temps et <span>\\(N\\)</span> est un entier strictement positif.</p>\n<p>On donne le développement de Taylor-Lagrange à l’ordre 1 pour une fonction <span>\\(g\\)</span> de classe <span>\\(\\mathcal{C}^2\\)</span> de deux variables <span>\\(x\\)</span> et <span>\\(y\\)</span> au voisinage du point <span>\\((x_0, y_0)\\)</span> est donné par :</p>\n<p><span>\\[g(x, y) = g(x_0, y_0) + \\frac{\\partial g}{\\partial x}(x_0, y_0) (x - x_0) + \\frac{\\partial g}{\\partial y}(x_0, y_0) (y - y_0) + R_1(x, y)\\]</span></p>\n<p>où <span>\\(R_1(x, y)\\)</span> est le reste du développement limité, qui vérifie :</p>\n<p><span>\\[R_1(x, y) = \\frac{1}{2} \\left( \\frac{\\partial^2 g}{\\partial x^2}(\\xi, \\eta) (x - x_0)^2 + 2 \\frac{\\partial^2 g}{\\partial x \\partial y}(\\xi, \\eta) (x - x_0)(y - y_0) + \\frac{\\partial^2 g}{\\partial y^2}(\\xi, \\eta) (y - y_0)^2 \\right)\\]</span></p>\n<p>avec <span>\\((\\xi, \\eta)\\)</span> un point situé sur le segment reliant les points <span>\\((x_0, y_0)\\)</span> et <span>\\((x, y)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Justifier l'existence de $\\xi_n \\in [t_n, t_{n+1}]$ tel que : \n\t$$y(t_{n+1}) = y(t_n + h) = y(t_n) + h \\cdot f(t_n, y(t_n)) + \\frac{h^2}{2} y''(\\xi_n)$$",
+      "html": "<p>Justifier l’existence de <span>\\(\\xi_n \\in [t_n, t_{n+1}]\\)</span> tel que :\n<span>\\[y(t_{n+1}) = y(t_n + h) = y(t_n) + h \\cdot f(t_n, y(t_n)) + \\frac{h^2}{2} y&#39;&#39;(\\xi_n)\\]</span></p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "$$y(t_{n+1}) = y(t_n + h) = y(t_n) + h \\cdot y'(t_n) + \\frac{h^2}{2} y''(\\xi_n)$$\n\t\t\n\t\toù $\\xi_n \\in [t_n, t_{n+1}]$.",
+      "html": "<p><span>\\[y(t_{n+1}) = y(t_n + h) = y(t_n) + h \\cdot y&#39;(t_n) + \\frac{h^2}{2} y&#39;&#39;(\\xi_n)\\]</span></p>\n<p>où <span>\\(\\xi_n \\in [t_n, t_{n+1}]\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Donne le développement de Taylor-Lagrange à l'ordre $1$ de $f(t_n + \\frac{h}{2}, y(t_n) + \\frac{h}{2} f(t_n, y(t_n)))$ au voisinage de $(t_n,y(t_n))$.",
+      "html": "<p>Donne le développement de Taylor-Lagrange à l’ordre <span>\\(1\\)</span> de <span>\\(f(t_n + \\frac{h}{2}, y(t_n) + \\frac{h}{2} f(t_n, y(t_n)))\\)</span> au voisinage de <span>\\((t_n,y(t_n))\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "$$f(t_n + \\frac{h}{2}, y(t_n) + \\frac{h}{2} f(t_n, y(t_n))) = f(t_n, y(t_n)) + \\frac{h}{2} \\left( \\frac{\\partial f}{\\partial t}(t_n, y(t_n)) + f(t_n, y(t_n)) \\frac{\\partial f}{\\partial y}(t_n, y(t_n)) \\right) + \\mathcal{O}(h^2)$$",
+      "html": "<p><span>\\[f(t_n + \\frac{h}{2}, y(t_n) + \\frac{h}{2} f(t_n, y(t_n))) = f(t_n, y(t_n)) + \\frac{h}{2} \\left( \\frac{\\partial f}{\\partial t}(t_n, y(t_n)) + f(t_n, y(t_n)) \\frac{\\partial f}{\\partial y}(t_n, y(t_n)) \\right) + \\mathcal{O}(h^2)\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "En déduire que le schéma de Leapfrogest consistant d'ordre au moins $1$.",
+      "html": "<p>En déduire que le schéma de Leapfrogest consistant d’ordre au moins <span>\\(1\\)</span>.</p>",
+      "order": 6
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "a110e3ec2939df058ec52a15a9de69060cb34b2cdf988c4fd536a2415fe1c8fd"
+}

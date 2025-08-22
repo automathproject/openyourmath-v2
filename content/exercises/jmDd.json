@@ -1,0 +1,57 @@
+{
+  "uuid": "jmDd",
+  "title": "Durée de vie",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité, loi exponentielle",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-10-23",
+  "updated_at": "2025-08-22T13:03:54.347Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Une machine est composée de trois alternateurs indépendants. La durée de vie de $T$ de chaque alternateur suit une loi exponentielle de paramètre $\\lambda$. La machine fonctionne si et seulement si au moins deux des alternateurs fonctionnent.  On appelle $X$ la variable aléatoire mesurant le temps de fonctionnement de la machine.",
+      "html": "<p>Une machine est composée de trois alternateurs indépendants. La durée de vie de <span>\\(T\\)</span> de chaque alternateur suit une loi exponentielle de paramètre <span>\\(\\lambda\\)</span>. La machine fonctionne si et seulement si au moins deux des alternateurs fonctionnent. On appelle <span>\\(X\\)</span> la variable aléatoire mesurant le temps de fonctionnement de la machine.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Déterminer la loi de $X$ et calculer son espérance.",
+      "html": "<p>Déterminer la loi de <span>\\(X\\)</span> et calculer son espérance.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Soient $T_1$, $T_2$ et $T_3$ les durées de vie des alternateurs. Soit $t >0$, on a~: \n    $$\\begin{align*}\n        \\prob(X \\geq t) & = \\prob(T_1 \\geq t, T_2 \\geq t, T_3 \\geq t) + \\prob(T_1 < t, T_2 \\geq t, T_3 \\geq t) \\\\ &+ \\prob(T_1 \\geq t, T_2 < t, T_3 \\geq t) + \\prob(T_1 \\geq t, T_2 \\geq t, T_3 < t) \\\\\n        & = \\prob(T_1 \\geq t) \\prob(T_2 \\geq t) \\prob(T_3 \\geq t) + \\prob(T_1 < t) \\prob(T_2 \\geq t) \\prob(T_3 \\geq t) \\\\ & + \\prob(T_1 \\geq t) \\prob(T_2 < t) \\prob(T_3 \\geq t) + \\prob(T_1 \\geq t) \\prob(T_2 \\geq t) \\prob(T_3 < t) \\\\\n        & = e^{-3\\lambda t} + 3 e^{-2\\lambda t} (1-e^{-\\lambda t}) \\\\\n        &= 3 e^{-2\\lambda t} - 2 e^{-3\\lambda t} \n    \\end{align*}$$\n    Donc la fonction de répartition de $X$ est~: \n    $$\\begin{align*}\n        F_X(t) & = \\prob(X \\leq t) \\\\\n        & = 1 - \\prob(X \\geq t) \\\\\n        & = 1 - 3 e^{-2\\lambda t} + 2 e^{-3\\lambda t} \n    \\end{align*}$$\n    Cete fonction est dérivable sur $\\R_+$ et sa dérivée est~:\n    $$\\begin{align*}\n        f_X(t) & = 6\\lambda e^{-2\\lambda t}  - 6 \\lambda e^{-3\\lambda t} \\\\\n    \\end{align*}$$\nOn conclut que $X$ admet pour densité de probabilité $f_X(x) = 6 ( e^{-2\\lambda x}  - e^{-3\\lambda x})1_{\\R_+}(x)$. \n\nOn peut alors calculer son espérance : \n$$\\begin{align*}\n    \\E(X) & = \\int_{-\\infty}^{+\\infty} x f_X(x) dx \\\\\n    & = \\int_{0}^{+\\infty} 6 x ( e^{-2\\lambda x}  - e^{-3\\lambda x}) dx \\\\\n    &= 3 \\times \\frac{1}{2\\lambda} - 2 \\times \\frac{1}{3\\lambda} \\\\\n    & = \\frac{5}{6\\lambda} \\\\\n\\end{align*}$$",
+      "html": "<p>Soient <span>\\(T_1\\)</span>, <span>\\(T_2\\)</span> et <span>\\(T_3\\)</span> les durées de vie des alternateurs. Soit <span>\\(t &gt;0\\)</span>, on a :\n<span>\\[\\begin{align*}\n        \\prob(X \\geq t) &amp; = \\prob(T_1 \\geq t, T_2 \\geq t, T_3 \\geq t) + \\prob(T_1 &lt; t, T_2 \\geq t, T_3 \\geq t) \\\\ &amp;+ \\prob(T_1 \\geq t, T_2 &lt; t, T_3 \\geq t) + \\prob(T_1 \\geq t, T_2 \\geq t, T_3 &lt; t) \\\\\n        &amp; = \\prob(T_1 \\geq t) \\prob(T_2 \\geq t) \\prob(T_3 \\geq t) + \\prob(T_1 &lt; t) \\prob(T_2 \\geq t) \\prob(T_3 \\geq t) \\\\ &amp; + \\prob(T_1 \\geq t) \\prob(T_2 &lt; t) \\prob(T_3 \\geq t) + \\prob(T_1 \\geq t) \\prob(T_2 \\geq t) \\prob(T_3 &lt; t) \\\\\n        &amp; = e^{-3\\lambda t} + 3 e^{-2\\lambda t} (1-e^{-\\lambda t}) \\\\\n        &amp;= 3 e^{-2\\lambda t} - 2 e^{-3\\lambda t} \n    \\end{align*}\\]</span>\nDonc la fonction de répartition de <span>\\(X\\)</span> est :\n<span>\\[\\begin{align*}\n        F_X(t) &amp; = \\prob(X \\leq t) \\\\\n        &amp; = 1 - \\prob(X \\geq t) \\\\\n        &amp; = 1 - 3 e^{-2\\lambda t} + 2 e^{-3\\lambda t} \n    \\end{align*}\\]</span>\nCete fonction est dérivable sur <span>\\(\\R_+\\)</span> et sa dérivée est :\n<span>\\[\\begin{align*}\n        f_X(t) &amp; = 6\\lambda e^{-2\\lambda t}  - 6 \\lambda e^{-3\\lambda t} \\\\\n    \\end{align*}\\]</span>\nOn conclut que <span>\\(X\\)</span> admet pour densité de probabilité <span>\\(f_X(x) = 6 ( e^{-2\\lambda x}  - e^{-3\\lambda x})1_{\\R_+}(x)\\)</span>.</p>\n<p>On peut alors calculer son espérance :\n<span>\\[\\begin{align*}\n    \\E(X) &amp; = \\int_{-\\infty}^{+\\infty} x f_X(x) dx \\\\\n    &amp; = \\int_{0}^{+\\infty} 6 x ( e^{-2\\lambda x}  - e^{-3\\lambda x}) dx \\\\\n    &amp;= 3 \\times \\frac{1}{2\\lambda} - 2 \\times \\frac{1}{3\\lambda} \\\\\n    &amp; = \\frac{5}{6\\lambda} \\\\\n\\end{align*}\\]</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Soient les réels $t>0$, $h>0$. Sachant que la machine a déjà fonctionné pendant un temps $t$, quelle est la probabilité qu'elle fonctionne encore pendant un temps $h$ ? Déterminer la limite de cette probabilité, à $h$ fixé, lorsque $t \\to +\\infty$.",
+      "html": "<p>Soient les réels <span>\\(t&gt;0\\)</span>, <span>\\(h&gt;0\\)</span>. Sachant que la machine a déjà fonctionné pendant un temps <span>\\(t\\)</span>, quelle est la probabilité qu’elle fonctionne encore pendant un temps <span>\\(h\\)</span> ? Déterminer la limite de cette probabilité, à <span>\\(h\\)</span> fixé, lorsque <span>\\(t \\to +\\infty\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On exprime la probabilité conditionnelle : \n    $$\\begin{align*}\n        \\prob(X \\geq t+h | X \\geq t) & = \\frac{\\prob(X \\geq t+h, X \\geq t)}{\\prob(X \\geq t)} \\\\\n        & = \\frac{\\prob(X \\geq t+h)}{\\prob(X \\geq t)} \\\\\n        &= \\frac{3e^{-2\\lambda (t+h)} -2 e^{-3\\lambda (t+h)}}{3e^{-2\\lambda t} -2 e^{-3\\lambda t}} \\\\\n        & = \\frac{ 3 e^{-2\\lambda h} - 2 e^{-\\lambda t} e^{-3\\lambda h}}{3 - 2 e^{-\\lambda t}} \\\\\n        & \\xrightarrow[t \\to +\\infty]{} e^{-2\\lambda h}\n    \\end{align*}$$",
+      "html": "<p>On exprime la probabilité conditionnelle :\n<span>\\[\\begin{align*}\n        \\prob(X \\geq t+h | X \\geq t) &amp; = \\frac{\\prob(X \\geq t+h, X \\geq t)}{\\prob(X \\geq t)} \\\\\n        &amp; = \\frac{\\prob(X \\geq t+h)}{\\prob(X \\geq t)} \\\\\n        &amp;= \\frac{3e^{-2\\lambda (t+h)} -2 e^{-3\\lambda (t+h)}}{3e^{-2\\lambda t} -2 e^{-3\\lambda t}} \\\\\n        &amp; = \\frac{ 3 e^{-2\\lambda h} - 2 e^{-\\lambda t} e^{-3\\lambda h}}{3 - 2 e^{-\\lambda t}} \\\\\n        &amp; \\xrightarrow[t \\to +\\infty]{} e^{-2\\lambda h}\n    \\end{align*}\\]</span></p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "89355c34502d4fc812a2695ed9eb914b64973086577ac5abbd828380929867ee"
+}

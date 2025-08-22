@@ -1,0 +1,71 @@
+{
+  "uuid": "9hTr",
+  "title": "Files d'attente",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité, loi exponentielle",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-09-22",
+  "updated_at": "2025-08-22T12:38:53.792Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère deux files d'attente indépendantes. Deux personnes arrivent simultanément et se présentent respectivement aux deux files d'attente. On note $X$ le temps d'attente de la première personne, $Y$ le temps d'attente de la seconde personne, en minutes. On supposera que $X$ et $Y$ suivent chacune une loi exponentielle de paramètre $\\lambda =2$.",
+      "html": "<p>On considère deux files d’attente indépendantes. Deux personnes arrivent simultanément et se présentent respectivement aux deux files d’attente. On note <span>\\(X\\)</span> le temps d’attente de la première personne, <span>\\(Y\\)</span> le temps d’attente de la seconde personne, en minutes. On supposera que <span>\\(X\\)</span> et <span>\\(Y\\)</span> suivent chacune une loi exponentielle de paramètre <span>\\(\\lambda =2\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Quel est le temps d'attente moyen pour chaque personne ?",
+      "html": "<p>Quel est le temps d’attente moyen pour chaque personne ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Puisque $X$ et $Y$ suivent chacune une loi exponentielle de paramètre $\\lambda =2$, on a $\\mathbb{E}(X)=\\mathbb{E}(Y) = 0.5$ minutes, ce qui donne le temps d'attente moyen pour chaque personne.",
+      "html": "<p>Puisque <span>\\(X\\)</span> et <span>\\(Y\\)</span> suivent chacune une loi exponentielle de paramètre <span>\\(\\lambda =2\\)</span>, on a <span>\\(\\mathbb{E}(X)=\\mathbb{E}(Y) = 0.5\\)</span> minutes, ce qui donne le temps d’attente moyen pour chaque personne.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Quelle est la densité de la variable $X^2$ ? la variable $-Y$ ?",
+      "html": "<p>Quelle est la densité de la variable <span>\\(X^2\\)</span> ? la variable <span>\\(-Y\\)</span> ?</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Pour obtenir la loi de $X^2$, on cherche sa densité par identification. Soit $h$ une fonction continue bornée quelconque : \n\t\t$$\\begin{align*}\n\t\t\t\\mathbb{E}(h(X^2)) &= \\int_0^{+\\infty}  h(x^2)2e^{-2x}dx \\\\\n\t\t\t&= \\int_0^{+\\infty} 2h(u)e^{-2\\sqrt{u}} \\frac{1}{2\\sqrt{u}} du\n\t\t\\end{align*}$$\t\n\t\tPar identification, on en déduit une densité de $X^2$ définie par $f_{X^2}(x) = \\frac{e^{-2\\sqrt{u}}}{\\sqrt{u}}1_{\\R_+}(x)$.\n\t\t\n\t\tOn procède de même pour obtenir la loi de $-Y$ : \n\t\t$$\\begin{align*}\n\t\t\t\\mathbb{E}(h(-Y)) &= \\int_0^{+\\infty}  h(-x)2e^{-2x}dx \\\\\n\t\t\t&= \\int_0^{-\\infty} 2h(u)e^{2{u}} \\times (-du) \\\\\n\t\t\t&= \\int_{-\\infty}^0 2h(u)e^{2{u}} du \\\\\n\t\t\\end{align*}$$\n\t\tPar identification, on en déduit une densité de $-Y$ définie par $f_{-Y}(y) = {2e^{2{y}}}1_{\\R_-}(y) = f_Y(-y)$.",
+      "html": "<p>Pour obtenir la loi de <span>\\(X^2\\)</span>, on cherche sa densité par identification. Soit <span>\\(h\\)</span> une fonction continue bornée quelconque :\n<span>\\[\\begin{align*}\n            \\mathbb{E}(h(X^2)) &amp;= \\int_0^{+\\infty}  h(x^2)2e^{-2x}dx \\\\\n            &amp;= \\int_0^{+\\infty} 2h(u)e^{-2\\sqrt{u}} \\frac{1}{2\\sqrt{u}} du\n        \\end{align*}\\]</span>\nPar identification, on en déduit une densité de <span>\\(X^2\\)</span> définie par <span>\\(f_{X^2}(x) = \\frac{e^{-2\\sqrt{u}}}{\\sqrt{u}}1_{\\R_+}(x)\\)</span>.</p>\n<p>On procède de même pour obtenir la loi de <span>\\(-Y\\)</span> :\n<span>\\[\\begin{align*}\n            \\mathbb{E}(h(-Y)) &amp;= \\int_0^{+\\infty}  h(-x)2e^{-2x}dx \\\\\n            &amp;= \\int_0^{-\\infty} 2h(u)e^{2{u}} \\times (-du) \\\\\n            &amp;= \\int_{-\\infty}^0 2h(u)e^{2{u}} du \\\\\n        \\end{align*}\\]</span>\nPar identification, on en déduit une densité de <span>\\(-Y\\)</span> définie par <span>\\(f_{-Y}(y) = {2e^{2{y}}}1_{\\R_-}(y) = f_Y(-y)\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Calculer la probabilité que la différence d'attente entre les deux personnes soit inférieure à 1 minute.",
+      "html": "<p>Calculer la probabilité que la différence d’attente entre les deux personnes soit inférieure à 1 minute.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On calcule $\\PP(|X-Y|<1) = \\PP(-1<X-Y<1)$ en utilisant la loi du couple $(X,Y)$. Par indépendance de $X$ et $Y$, le couple $(X,Y)$ admet pour densité $g(x,y)=2e^{-2x}\\times 2e^{-2y}1_{\\R_+^2}(x,y)$. La probabilité cherchée est \n\t\t$$\\PP(|X-Y|<1) = \\iint_D g(x,y)dxdy$$\n\t\toù $D=\\{(x,y) \\in \\mathbb{R}^2 \\, , \\, x>0, y>0, -1<x-y<1 \\} = \\{ y\\in[0;1], x \\in [0;1+y]  \\} \\cup  \\{ y\\in]1;+\\infty, x \\in [-1+y;1+y]  \\} $.\n\t\t\n\t\tOn utilise cette décomposition du domaine $D$ pour écrire l'intégrale sous forme d'une somme :\n\t\t$$\\begin{align*}\n\t\t\t\\iint_D g(x,y)dxdy &= \\int_0^1 \\int_0^{1+y}2e^{-2x}dx 2e^{-2y}dy &+&  \\int_1^{+\\infty} \\int_{y-1}^{y+1}2e^{-2x}dx 2e^{-2y}dy\t\\\\\n\t\t\t&= \\int_0^1 2e^{-2y}(1-e^{-2(1+y)})dy &+&  \\int_1^{+\\infty} (e^{-2(y-1)}-e^{-2(y+1)})  (1-e^{-2(1+y)}) \\\\\n\t\t\t&= 1-\\frac{3}{2}e^{-2}+\\frac{1}{2}e^{-6} &+& \\frac{1}{2}e^{-2}-\\frac{1}{2}e^{-6} \\\\\n\t\t\t&= 1-e^{-2} &&\n\t\\end{align*}$$",
+      "html": "<p>On calcule <span>\\(\\PP(|X-Y|&lt;1) = \\PP(-1&lt;X-Y&lt;1)\\)</span> en utilisant la loi du couple <span>\\((X,Y)\\)</span>. Par indépendance de <span>\\(X\\)</span> et <span>\\(Y\\)</span>, le couple <span>\\((X,Y)\\)</span> admet pour densité <span>\\(g(x,y)=2e^{-2x}\\times 2e^{-2y}1_{\\R_+^2}(x,y)\\)</span>. La probabilité cherchée est\n<span>\\[\\PP(|X-Y|&lt;1) = \\iint_D g(x,y)dxdy\\]</span>\noù <span>\\(D=\\{(x,y) \\in \\mathbb{R}^2 \\, , \\, x&gt;0, y&gt;0, -1&lt;x-y&lt;1 \\} = \\{ y\\in[0;1], x \\in [0;1+y]  \\} \\cup  \\{ y\\in]1;+\\infty, x \\in [-1+y;1+y]  \\}\\)</span>.</p>\n<p>On utilise cette décomposition du domaine <span>\\(D\\)</span> pour écrire l’intégrale sous forme d’une somme :\n<span>\\[\\begin{align*}\n            \\iint_D g(x,y)dxdy &amp;= \\int_0^1 \\int_0^{1+y}2e^{-2x}dx 2e^{-2y}dy &amp;+&amp;  \\int_1^{+\\infty} \\int_{y-1}^{y+1}2e^{-2x}dx 2e^{-2y}dy    \\\\\n            &amp;= \\int_0^1 2e^{-2y}(1-e^{-2(1+y)})dy &amp;+&amp;  \\int_1^{+\\infty} (e^{-2(y-1)}-e^{-2(y+1)})  (1-e^{-2(1+y)}) \\\\\n            &amp;= 1-\\frac{3}{2}e^{-2}+\\frac{1}{2}e^{-6} &amp;+&amp; \\frac{1}{2}e^{-2}-\\frac{1}{2}e^{-6} \\\\\n            &amp;= 1-e^{-2} &amp;&amp;\n    \\end{align*}\\]</span></p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "972f2c05a4b474c4ec1d6a845f437443572edd6dd284bd54760f934b7c86c9e3"
+}

@@ -1,0 +1,43 @@
+{
+  "uuid": "Ueb3",
+  "title": "Majoration de probabilité",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Variable aléatoire discrète",
+  "theme": "variables aléatoires, inégalité de probabilité",
+  "difficulty": null,
+  "author": "Maxime Nguyen",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-18",
+  "updated_at": "2025-08-22T12:39:38.963Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Le nombre de sodas vendus journellement par une machine sur un quai de métro suit une loi d'espérance $100$ et d'écart-type $8$.",
+      "html": "<p>Le nombre de sodas vendus journellement par une machine sur un quai de métro suit une loi d’espérance <span>\\(100\\)</span> et d’écart-type <span>\\(8\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Donner un majorant de la probabilité qu'un jour il s'en vende au maximum $60$.",
+      "html": "<p>Donner un majorant de la probabilité qu’un jour il s’en vende au maximum <span>\\(60\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Soit $X$ le nombre de sodas vendus par la machine par jour. On sait que $X$ est telle que $\\E(X)=100$ et $\\sigma(X)=8$. \\\\\n\tPar l'inégalité de Bienaymé-Tchebychev, on a:\n\t$$\\begin{align*}\n\t\\prob(X\\leq 60)\n\t&= \\prob(X-100\\leq -40) \\\\\n\t&\\leq \\prob(|X-100|\\geq 40) \\\\\n\t& \\leq \\prob(|X-\\E(X)|\\geq 40) \\\\\n\t& \\leq \\frac{\\sigma^2(X)}{40^2}=\\frac{8^2}{40^2}=\\frac{1}{25}=0.04,\n\t\\end{align*}$$\n\tsoit au plus $4$\\% de chance pour qu'il y ait moins de $60$ sodas vendus dans une journée.",
+      "html": "<p>Soit <span>\\(X\\)</span> le nombre de sodas vendus par la machine par jour. On sait que <span>\\(X\\)</span> est telle que <span>\\(\\E(X)=100\\)</span> et <span>\\(\\sigma(X)=8\\)</span>.<br />\nPar l’inégalité de Bienaymé-Tchebychev, on a:\n<span>\\[\\begin{align*}\n    \\prob(X\\leq 60)\n    &amp;= \\prob(X-100\\leq -40) \\\\\n    &amp;\\leq \\prob(|X-100|\\geq 40) \\\\\n    &amp; \\leq \\prob(|X-\\E(X)|\\geq 40) \\\\\n    &amp; \\leq \\frac{\\sigma^2(X)}{40^2}=\\frac{8^2}{40^2}=\\frac{1}{25}=0.04,\n    \\end{align*}\\]</span>\nsoit au plus <span>\\(4\\)</span>% de chance pour qu’il y ait moins de <span>\\(60\\)</span> sodas vendus dans une journée.</p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "37ca00cb11e82c77c0ebd9cae785babfedffff2f30774b8ddb08610047c0af1f"
+}

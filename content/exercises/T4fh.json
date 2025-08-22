@@ -1,0 +1,64 @@
+{
+  "uuid": "T4fh",
+  "title": "Estimateurs et loi de Bernoulli",
+  "chapter": "",
+  "subchapter": "",
+  "theme": "probabilité",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "",
+  "updated_at": "2025-08-22T13:03:01.837Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "Exprimer $\\mathbb{E}(Y)$ et $\\mathbb{E}(Y^2)$ en fonction de $n$ et $p$.",
+      "html": "<p>Exprimer <span>\\(\\mathbb{E}(Y)\\)</span> et <span>\\(\\mathbb{E}(Y^2)\\)</span> en fonction de <span>\\(n\\)</span> et <span>\\(p\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "reponse",
+      "latex": "On considère $Y = n\\overline{X} = \\sum_{i=1}^n X_i$ : par définition, $Y$ suit une loi binomiale $\\mathcal{B}(n,p)$, ce qui permet d'affirmer que $\\mathbb{E}(Y) = np$ et $V(Y) = np(1-p)$. Or on sait que $V(Y) = \\mathbb{E}(Y^2)-(\\mathbb{E}(Y))^2$, donc $\\mathbb{E}(Y^2) = np(1-p)+(np)^2 = np(1+p(n-1))$",
+      "html": "<p>On considère <span>\\(Y = n\\overline{X} = \\sum_{i=1}^n X_i\\)</span> : par définition, <span>\\(Y\\)</span> suit une loi binomiale <span>\\(\\mathcal{B}(n,p)\\)</span>, ce qui permet d’affirmer que <span>\\(\\mathbb{E}(Y) = np\\)</span> et <span>\\(V(Y) = np(1-p)\\)</span>. Or on sait que <span>\\(V(Y) = \\mathbb{E}(Y^2)-(\\mathbb{E}(Y))^2\\)</span>, donc <span>\\(\\mathbb{E}(Y^2) = np(1-p)+(np)^2 = np(1+p(n-1))\\)</span></p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "On pose $Z = \\overline{X}^2$. Peut-on dire que $Z$ est un estimateur sais biais de $p^2$ ?",
+      "html": "<p>On pose <span>\\(Z = \\overline{X}^2\\)</span>. Peut-on dire que <span>\\(Z\\)</span> est un estimateur sais biais de <span>\\(p^2\\)</span> ?</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "En voyant la variable $Z$ comme un estimateur de $p^2$, on va calculer son biais $B(Z)=\\mathbb{E}(Z-p^2) = \\mathbb{E}(Z)-p^2$. Or $\\mathbb{E}(Z) = \\mathbb{E}\\left(\\left(\\frac{1}{n}Y\\right)^2\\right) = \\frac{1}{n^2}\\mathbb{E}(Y^2) = \\frac{p}{n} + p^2 \\frac{n-1}{n} \\neq p^2$ donc $B(Z) \\neq 0$.",
+      "html": "<p>En voyant la variable <span>\\(Z\\)</span> comme un estimateur de <span>\\(p^2\\)</span>, on va calculer son biais <span>\\(B(Z)=\\mathbb{E}(Z-p^2) = \\mathbb{E}(Z)-p^2\\)</span>. Or <span>\\(\\mathbb{E}(Z) = \\mathbb{E}\\left(\\left(\\frac{1}{n}Y\\right)^2\\right) = \\frac{1}{n^2}\\mathbb{E}(Y^2) = \\frac{p}{n} + p^2 \\frac{n-1}{n} \\neq p^2\\)</span> donc <span>\\(B(Z) \\neq 0\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "On pose $T = \\frac{Y(Y-1)}{n(n-1)}$. Vérifier que $T$ est un estimateur sans biais de $p^2$.",
+      "html": "<p>On pose <span>\\(T = \\frac{Y(Y-1)}{n(n-1)}\\)</span>. Vérifier que <span>\\(T\\)</span> est un estimateur sans biais de <span>\\(p^2\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "reponse",
+      "latex": "En revanche, $\\mathbb{E}(T) = \\frac{1}{n(n-1)}\\mathbb{E}(Y(Y-1)) = \\frac{1}{n(n-1)}(np(1+(n-1)p)-np) = p^2$ donc $T$ est un estimateur non biaisé de la valeur $p^2$.",
+      "html": "<p>En revanche, <span>\\(\\mathbb{E}(T) = \\frac{1}{n(n-1)}\\mathbb{E}(Y(Y-1)) = \\frac{1}{n(n-1)}(np(1+(n-1)p)-np) = p^2\\)</span> donc <span>\\(T\\)</span> est un estimateur non biaisé de la valeur <span>\\(p^2\\)</span>.</p>",
+      "order": 6
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "c3ca1c6901495fe76d7ab0b63b4a322b7b244f9965cc03f49df1e68ebe184fa5"
+}

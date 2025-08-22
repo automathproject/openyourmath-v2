@@ -1,0 +1,50 @@
+{
+  "name": "openyourmath-v2",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node build/parse-latex.mjs content/exercises/ cache/exercises/ && node build/build-db.mjs",
+    "build:fast": "node build/parse-latex.mjs --incremental content/exercises/ cache/exercises/ && node build/build-db.mjs",
+    "build:clean": "rm -rf cache/exercises/* data/exercises.sqlite && pnpm build",
+    "build:stats": "echo '📊 Statistics:' && echo '📝 LaTeX files:' $(find content/exercises -name '*.tex' | wc -l) && echo '📄 JSON cache:' $(find cache/exercises -name '*.json' | wc -l) && echo '💾 Database:' $(sqlite3 data/exercises.sqlite 'SELECT COUNT(*) FROM exercises;' 2>/dev/null || echo '0') 'exercises'",
+    
+    "parse": "node build/parse-latex.mjs",
+    "parse:watch": "find content/exercises -name '*.tex' | entr -r pnpm build:fast",
+    
+    "dev": "vite dev",
+    "dev:full": "pnpm build:fast && pnpm dev",
+    
+    "build:app": "vite build",
+    "preview": "vite preview",
+    
+    "clean": "rm -rf cache/exercises/* data/exercises.sqlite static/artifacts/* .svelte-kit",
+    "reset": "pnpm clean && pnpm build",
+    
+    "test": "vitest",
+    "test:build": "vitest run tests/build/",
+    "test:integration": "playwright test",
+    
+    "docker:build": "docker build -t openyourmath .",
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up",
+    "docker:prod": "docker-compose up -d"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@sveltejs/adapter-node": "^5.2.9",
+    "@sveltejs/kit": "^2.7.7",
+    "@sveltejs/vite-plugin-svelte": "^4.0.3",
+    "@tailwindcss/typography": "^0.5.15",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "svelte": "^5.14.3",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.19",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "auto-render": "link:katex/contrib/auto-render",
+    "better-sqlite3": "^11.10.0",
+    "katex": "^0.16.22"
+  }
+}

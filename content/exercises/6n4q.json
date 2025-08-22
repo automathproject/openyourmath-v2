@@ -1,0 +1,85 @@
+{
+  "uuid": "6n4q",
+  "title": "Dérivées partielles et règle des chaînes",
+  "chapter": "Fonction de plusieurs variables",
+  "subchapter": "Dérivée partielle",
+  "theme": "calcul différentiel",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-03-09",
+  "updated_at": "2025-08-22T13:02:12.097Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère une boîte dont la longueur $\\ell$, la largeur $w$ et la hauteur $h$ varient au cours du temps $t$. \n\nA l'instant $t_0$, les dimensions de la boîte sont $\\ell = 1$~m, $w=h=2$~m. A ce même instant, on sait que $\\ell$ et $w$ augmentent de $2$m/s et $h$ diminue de $3$m/s. \n\nOn note $V$ le volume, $S$ la surface et $D$ la longueur de la diagonale de cette boîte.",
+      "html": "<p>On considère une boîte dont la longueur <span>\\(\\ell\\)</span>, la largeur <span>\\(w\\)</span> et la hauteur <span>\\(h\\)</span> varient au cours du temps <span>\\(t\\)</span>.</p>\n<p>A l’instant <span>\\(t_0\\)</span>, les dimensions de la boîte sont <span>\\(\\ell = 1\\)</span> m, <span>\\(w=h=2\\)</span> m. A ce même instant, on sait que <span>\\(\\ell\\)</span> et <span>\\(w\\)</span> augmentent de <span>\\(2\\)</span>m/s et <span>\\(h\\)</span> diminue de <span>\\(3\\)</span>m/s.</p>\n<p>On note <span>\\(V\\)</span> le volume, <span>\\(S\\)</span> la surface et <span>\\(D\\)</span> la longueur de la diagonale de cette boîte.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Exprimer $V$, $S$ et $D$ comme fonction des trois variables $\\ell$, $w$, $h$.",
+      "html": "<p>Exprimer <span>\\(V\\)</span>, <span>\\(S\\)</span> et <span>\\(D\\)</span> comme fonction des trois variables <span>\\(\\ell\\)</span>, <span>\\(w\\)</span>, <span>\\(h\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On écrit $V(\\ell,w,h) = \\ell\\times w \\times h$, $S(\\ell,w,h)=2(wh+w\\ell+h\\ell)$, $D=\\sqrt{\\ell^2+w^2+h^2}$.",
+      "html": "<p>On écrit <span>\\(V(\\ell,w,h) = \\ell\\times w \\times h\\)</span>, <span>\\(S(\\ell,w,h)=2(wh+w\\ell+h\\ell)\\)</span>, <span>\\(D=\\sqrt{\\ell^2+w^2+h^2}\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Exprimer $\\dfrac{\\partial D}{\\partial h}(\\ell,w,h)$.",
+      "html": "<p>Exprimer <span>\\(\\dfrac{\\partial D}{\\partial h}(\\ell,w,h)\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "$\\dfrac{\\partial D}{\\partial h}(\\ell,w,h) = \\frac{2h}{2\\sqrt{\\ell^2+w^2+h^2}} = \\frac{h}{\\sqrt{\\ell^2+w^2+h^2}}$",
+      "html": "<p><span>\\(\\dfrac{\\partial D}{\\partial h}(\\ell,w,h) = \\frac{2h}{2\\sqrt{\\ell^2+w^2+h^2}} = \\frac{h}{\\sqrt{\\ell^2+w^2+h^2}}\\)</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Que valent $\\ell'(t_0)$, $w'(t_0)$, $h'(t_0)$ ?",
+      "html": "<p>Que valent <span>\\(\\ell&#39;(t_0)\\)</span>, <span>\\(w&#39;(t_0)\\)</span>, <span>\\(h&#39;(t_0)\\)</span> ?</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "D'après l'énoncé, $\\ell'(t_0) = w'(t_0)=2$, $h'(t_0)=-3$.",
+      "html": "<p>D’après l’énoncé, <span>\\(\\ell&#39;(t_0) = w&#39;(t_0)=2\\)</span>, <span>\\(h&#39;(t_0)=-3\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "On pose $\\tilde{V}(t) = V(\\ell(t),w(t),h(t))$. Exprimer $\\frac{\\partial V}{\\partial \\ell}$, $\\frac{\\partial V}{\\partial w}$ et $\\frac{\\partial V}{\\partial h}$ puis en calculant une dérivée partielle, déterminer les taux de variations à l'instant $t_0$ du volume, de la surface et de la diagonale de cette boîte.",
+      "html": "<p>On pose <span>\\(\\tilde{V}(t) = V(\\ell(t),w(t),h(t))\\)</span>. Exprimer <span>\\(\\frac{\\partial V}{\\partial \\ell}\\)</span>, <span>\\(\\frac{\\partial V}{\\partial w}\\)</span> et <span>\\(\\frac{\\partial V}{\\partial h}\\)</span> puis en calculant une dérivée partielle, déterminer les taux de variations à l’instant <span>\\(t_0\\)</span> du volume, de la surface et de la diagonale de cette boîte.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "Le taux de variation du volume est modélisé par la dérivée de $\\tilde{V}$ par rapport au temps. On peut voir $V$ comme la composée de la fonction $t\\mapsto (\\ell(t),w(t),h(t)$ avec la fonction de trois variables $(\\ell,w,h) \\mapsto \\ell\\times w \\times h$.\n\t\t\n\t\tD'après la règle des chaînes, \n\t\t$$\\frac{\\partial \\tilde{V}}{\\partial t}(t_0) = \\frac{\\partial V}{\\partial \\ell}(\\ell(t_0),w(t_0),h(t_0)) \\times \\ell'(t_0) + \\frac{\\partial V}{\\partial w}(w(t_0),w(t_0),h(t_0)) \\times w'(t_0) + \\frac{\\partial V}{\\partial h}(h(t_0),w(t_0),h(t_0)) \\times h'(t_0)$$\n\t\tOr $\\frac{\\partial V}{\\partial \\ell}(\\ell,w,h) = wh$, $\\frac{\\partial V}{\\partial w}(\\ell,w,h) = \\ell h$ et $\\frac{\\partial V}{\\partial h}(\\ell,w,h) = \\ell w$.\n\t\t\n\t\tDonc en substituant, on obtient :\n\t\t$$\\begin{align*}\n\t\t\\frac{\\partial V}{\\partial t}(t_0) &= \\ell'(t_0)w(t_0)h(t_0) + \\ell(t_0)w'(t_0)h(t_0)+\\ell(t_0)w(t_0)h'(t_0) \\\\\n\t\t&= 2 \\times 2 \\times 2 + 1 \\times 2 \\times 2 + 1 \\times 2 \\times (-3)\\\\\n\t\t&= 6m^3/s\n\t\t\\end{align*}$$\n\t\tEn suivant le même raisonnement avec la règle des chaînes, on obtient :\n\t\t$$\\begin{align*}\n\t\t\\frac{\\partial S}{\\partial t}(t_0) &= 2\\ell'(t_0)(w(t_0)+h(t_0)) +  2w'(t_0)(\\ell(t_0)+h(t_0)) + 2h'(t_0)(\\ell(t_0)+w(t_0)) \\\\\n\t\t&= 10m^2/s\n\t\t\\end{align*}$$\n\t\tet enfin\n\t\t$$\\begin{align*}\n\t\t\\frac{\\partial D}{\\partial t}(t_0) &= \\frac{\\ell(t_0)\\ell'(t_0)+w(t_0)w'(t_0)+h(t_0)h'(t_0)}{\\sqrt{\\ell^2(t_0)+w^2(t_0)+h^2(t_0)}} \\\\\n\t\t&= 0m/s\n\t\t\\end{align*}$$",
+      "html": "<p>Le taux de variation du volume est modélisé par la dérivée de <span>\\(\\tilde{V}\\)</span> par rapport au temps. On peut voir <span>\\(V\\)</span> comme la composée de la fonction <span>\\(t\\mapsto (\\ell(t),w(t),h(t)\\)</span> avec la fonction de trois variables <span>\\((\\ell,w,h) \\mapsto \\ell\\times w \\times h\\)</span>.</p>\n<p>D’après la règle des chaînes,\n<span>\\[\\frac{\\partial \\tilde{V}}{\\partial t}(t_0) = \\frac{\\partial V}{\\partial \\ell}(\\ell(t_0),w(t_0),h(t_0)) \\times \\ell&#39;(t_0) + \\frac{\\partial V}{\\partial w}(w(t_0),w(t_0),h(t_0)) \\times w&#39;(t_0) + \\frac{\\partial V}{\\partial h}(h(t_0),w(t_0),h(t_0)) \\times h&#39;(t_0)\\]</span>\nOr <span>\\(\\frac{\\partial V}{\\partial \\ell}(\\ell,w,h) = wh\\)</span>, <span>\\(\\frac{\\partial V}{\\partial w}(\\ell,w,h) = \\ell h\\)</span> et <span>\\(\\frac{\\partial V}{\\partial h}(\\ell,w,h) = \\ell w\\)</span>.</p>\n<p>Donc en substituant, on obtient :\n<span>\\[\\begin{align*}\n        \\frac{\\partial V}{\\partial t}(t_0) &amp;= \\ell&#39;(t_0)w(t_0)h(t_0) + \\ell(t_0)w&#39;(t_0)h(t_0)+\\ell(t_0)w(t_0)h&#39;(t_0) \\\\\n        &amp;= 2 \\times 2 \\times 2 + 1 \\times 2 \\times 2 + 1 \\times 2 \\times (-3)\\\\\n        &amp;= 6m^3/s\n        \\end{align*}\\]</span>\nEn suivant le même raisonnement avec la règle des chaînes, on obtient :\n<span>\\[\\begin{align*}\n        \\frac{\\partial S}{\\partial t}(t_0) &amp;= 2\\ell&#39;(t_0)(w(t_0)+h(t_0)) +  2w&#39;(t_0)(\\ell(t_0)+h(t_0)) + 2h&#39;(t_0)(\\ell(t_0)+w(t_0)) \\\\\n        &amp;= 10m^2/s\n        \\end{align*}\\]</span>\net enfin\n<span>\\[\\begin{align*}\n        \\frac{\\partial D}{\\partial t}(t_0) &amp;= \\frac{\\ell(t_0)\\ell&#39;(t_0)+w(t_0)w&#39;(t_0)+h(t_0)h&#39;(t_0)}{\\sqrt{\\ell^2(t_0)+w^2(t_0)+h^2(t_0)}} \\\\\n        &amp;= 0m/s\n        \\end{align*}\\]</span></p>",
+      "order": 9
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "fabcaa269167ce3de15b5207eca46f77653b6123dc0f9dd75980c84955d08205"
+}

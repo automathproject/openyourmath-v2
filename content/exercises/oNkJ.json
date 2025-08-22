@@ -1,0 +1,85 @@
+{
+  "uuid": "oNkJ",
+  "title": "Changement de variable",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-11-29",
+  "updated_at": "2025-08-22T13:04:24.430Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $X$ une variable aléatoire suivant la loi uniforme $\\mathcal{U}([0;2])$. On pose $Y=\\max(1,X)$.",
+      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire suivant la loi uniforme <span>\\(\\mathcal{U}([0;2])\\)</span>. On pose <span>\\(Y=\\max(1,X)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Déterminer la fonction de répartition de $X$.",
+      "html": "<p>Déterminer la fonction de répartition de <span>\\(X\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "C'est du cours : $F_X(t)= \\begin{cases} 0 & \\text{ si } t<0 \\\\ \n\t\t\t\\frac{t}{2} & \\text{ si } t\\in]0;2[ \\\\\n\t\t\t1 & \\text{ si } t\\geq 2\n\t\t\\end{cases} $ ; $\\EX = 1$ et $V(X) = 4/12 = 1/3$.",
+      "html": "<p>C’est du cours : <span>\\(F_X(t)= \\begin{cases} 0 &amp; \\text{ si } t&lt;0 \\\\ \n            \\frac{t}{2} &amp; \\text{ si } t\\in]0;2[ \\\\\n            1 &amp; \\text{ si } t\\geq 2\n        \\end{cases}\\)</span> ; <span>\\(\\EX = 1\\)</span> et <span>\\(V(X) = 4/12 = 1/3\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Déterminer la fonction de répartition de $Y$.",
+      "html": "<p>Déterminer la fonction de répartition de <span>\\(Y\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Soit $t \\in \\R$ : $F_Y(t) = \\PP(Y \\leq t) = \\PP(\\{1 \\leq t\\} \\cap \\{X \\leq t\\})$. On distingue trois cas : \\\\\n\t\tSi $t \\geq 2$ : $\\PP(Y \\leq t) = 1$ ; \\\\\n\t\tSi $ 1 \\leq t < 2$ : $\\PP(Y \\leq t) = \\PP(X \\leq t) = \\frac{t}{2}$ ; \\\\\n\t\tSi $t<1$, $\\PP(Y \\leq t) = 0$.\n\t\t\n\t\tOn remarque que $F_Y$ n'est pas continue en $1$ (mais elle est bien continue à droite en $1$.).",
+      "html": "<p>Soit <span>\\(t \\in \\R\\)</span> : <span>\\(F_Y(t) = \\PP(Y \\leq t) = \\PP(\\{1 \\leq t\\} \\cap \\{X \\leq t\\})\\)</span>. On distingue trois cas :<br />\nSi <span>\\(t \\geq 2\\)</span> : <span>\\(\\PP(Y \\leq t) = 1\\)</span> ;<br />\nSi <span>\\(1 \\leq t &lt; 2\\)</span> : <span>\\(\\PP(Y \\leq t) = \\PP(X \\leq t) = \\frac{t}{2}\\)</span> ;<br />\nSi <span>\\(t&lt;1\\)</span>, <span>\\(\\PP(Y \\leq t) = 0\\)</span>.</p>\n<p>On remarque que <span>\\(F_Y\\)</span> n’est pas continue en <span>\\(1\\)</span> (mais elle est bien continue à droite en <span>\\(1\\)</span>.).</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Calculer la probabilité $\\PP(Y=1)$.",
+      "html": "<p>Calculer la probabilité <span>\\(\\PP(Y=1)\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On remarque que $Y=1 \\iff X \\leq 1$ donc $\\PP(Y=1) = \\PP(X \\leq 1) = 1/2$. \n\t\t\n\t\tOn sait aussi d'après le cours que $\\PP(Y=1) = \\lim\\limits_{1^+}F_Y-\\lim\\limits_{1^-}F_Y = F_Y(1)-0 = 1/2$.",
+      "html": "<p>On remarque que <span>\\(Y=1 \\iff X \\leq 1\\)</span> donc <span>\\(\\PP(Y=1) = \\PP(X \\leq 1) = 1/2\\)</span>.</p>\n<p>On sait aussi d’après le cours que <span>\\(\\PP(Y=1) = \\lim\\limits_{1^+}F_Y-\\lim\\limits_{1^-}F_Y = F_Y(1)-0 = 1/2\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "La variable aléatoire $Y$ est-elle discrète ? absolument continue ? Justifier.",
+      "html": "<p>La variable aléatoire <span>\\(Y\\)</span> est-elle discrète ? absolument continue ? Justifier.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "La variable aléatoire $Y$ n'est pas discrète car sa fonction de répartition n'est pas en escalier. Elle n'est pas non plus absolument continue car sa fonction de répartition n'est pas continue partout (discontinuité en $1$).",
+      "html": "<p>La variable aléatoire <span>\\(Y\\)</span> n’est pas discrète car sa fonction de répartition n’est pas en escalier. Elle n’est pas non plus absolument continue car sa fonction de répartition n’est pas continue partout (discontinuité en <span>\\(1\\)</span>).</p>",
+      "order": 9
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "68bd297c6daa70a1ffc91e78c18238de44c66c80d860a458a1fa20bda7a2bea0"
+}

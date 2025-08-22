@@ -1,0 +1,113 @@
+{
+  "uuid": "td26",
+  "title": "Exponentielle translatée",
+  "chapter": "",
+  "subchapter": "",
+  "theme": "",
+  "difficulty": null,
+  "author": "",
+  "organization": "",
+  "video_id": "",
+  "created_at": "2025-03-20",
+  "updated_at": "2025-08-22T12:41:24.244Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $X$ une v.a.r. admettant pour densité $f_\\theta(x) = \\frac{1}{\\theta} \\exp\\left(-\\frac{x - \\theta}{\\theta}\\right) \\mathbf{1}_{[\\theta,+\\infty[}(x)$, où $\\theta > 0$ est inconnu, et $(X_1, \\ldots, X_n)$ un échantillon i.i.d. de même loi que $X$.",
+      "html": "<p>Soit <span>\\(X\\)</span> une v.a.r. admettant pour densité <span>\\(f_\\theta(x) = \\frac{1}{\\theta} \\exp\\left(-\\frac{x - \\theta}{\\theta}\\right) \\mathbf{1}_{[\\theta,+\\infty[}(x)\\)</span>, où <span>\\(\\theta &gt; 0\\)</span> est inconnu, et <span>\\((X_1, \\ldots, X_n)\\)</span> un échantillon i.i.d. de même loi que <span>\\(X\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Montrer que $X/\\theta - 1$ suit une loi exponentielle $E(1)$.",
+      "html": "<p>Montrer que <span>\\(X/\\theta - 1\\)</span> suit une loi exponentielle <span>\\(E(1)\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "",
+      "html": "",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Déterminer la fonction de répartition de $X^{(1)} = \\min_{1 \\leq i \\leq n} X_i$.",
+      "html": "<p>Déterminer la fonction de répartition de <span>\\(X^{(1)} = \\min_{1 \\leq i \\leq n} X_i\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "",
+      "html": "",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Étudier la convergence de $X^{(1)}$ vers $\\theta$ en moyenne quadratique.",
+      "html": "<p>Étudier la convergence de <span>\\(X^{(1)}\\)</span> vers <span>\\(\\theta\\)</span> en moyenne quadratique.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "reponse",
+      "latex": "",
+      "html": "",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "question",
+      "latex": "Construire un intervalle de confiance pour $\\theta$ de niveau $(1-\\alpha)$.",
+      "html": "<p>Construire un intervalle de confiance pour <span>\\(\\theta\\)</span> de niveau <span>\\((1-\\alpha)\\)</span>.</p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 12
+    },
+    {
+      "id": "block_13",
+      "type": "reponse",
+      "latex": "",
+      "html": "",
+      "order": 13
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "a83c41929d4d296819fef6128c64c79e57e29329537e010a77af9b1a2252cc78"
+}

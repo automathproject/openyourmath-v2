@@ -1,0 +1,64 @@
+{
+  "uuid": "LnaN",
+  "title": "Comparaison de lois normales",
+  "chapter": "Probabilité continue",
+  "subchapter": "Loi normale",
+  "theme": "loi normale",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-14",
+  "updated_at": "2025-08-22T12:39:25.840Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "reponse",
+      "latex": "Soit $X$ la note obtenue par un étudiant: $X\\sim\\mathcal{N}(7,\\sigma^2=3^2)$.",
+      "html": "<p>Soit <span>\\(X\\)</span> la note obtenue par un étudiant: <span>\\(X\\sim\\mathcal{N}(7,\\sigma^2=3^2)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Calculer le pourcentage d'individus ayant plus de $10$ et la note en dessous de laquelle se trouvent $10$\\% des étudiants.",
+      "html": "<p>Calculer le pourcentage d’individus ayant plus de <span>\\(10\\)</span> et la note en dessous de laquelle se trouvent <span>\\(10\\)</span>% des étudiants.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Comme $\\frac{X-7}{3} \\sim \\mathcal{N}(0,1)$, on a\n\t\t\\[\\prob(X\\geq 10)=\\prob\\left(\\frac{X-7}{3}\\geq 1\\right)=1-\\prob\\left(\\frac{X-7}{3}\\leq 1\\right)\\simeq 1-0.8413 \\simeq 0.1587\\]\n\t\tsoit environ $15.87$\\% des étudiants ont plus de $10$.\n\t\t\\vspace{1em}\n\t\t\n\t\tOn cherche $\\alpha$ la note telle que $\\prob(X\\leq \\alpha )=0.10$. On note que\n\t\t$$\\begin{align*}\n\t\t\t\\prob(X\\leq \\alpha )=0.1 & \\quad \\Leftrightarrow \\quad \n\t\t\t\\prob\\left(\\frac{X-7}{3} \\leq \\frac{\\alpha-7}{3}\\right)=0.1 \\\\\n\t\t\t& \\quad \\Leftrightarrow \\quad\n\t\t\t\\prob\\left(\\frac{X-7}{3} \\geq \\frac{-\\alpha+7}{3}\\right)=0.1 \\\\\n\t\t\t& \\quad \\Leftrightarrow \\quad\n\t\t\t\\prob\\left(\\frac{X-7}{3}\\leq \\frac{-\\alpha+7}{3}\\right)=0.9,\n\t\t\\end{align*}$$\n\t\tce qui donne par lecture de table de la loi $\\mathcal{N}(0,1)$, $\\frac{-\\alpha+7}{3}\\simeq 1.3$, soit $\\alpha \\simeq 3.1$.\n\t\tDonc $10$\\% des étudiants ont en-dessous de $3.1$.",
+      "html": "<p>Comme <span>\\(\\frac{X-7}{3} \\sim \\mathcal{N}(0,1)\\)</span>, on a\n<span>\\[\\prob(X\\geq 10)=\\prob\\left(\\frac{X-7}{3}\\geq 1\\right)=1-\\prob\\left(\\frac{X-7}{3}\\leq 1\\right)\\simeq 1-0.8413 \\simeq 0.1587\\]</span>\nsoit environ <span>\\(15.87\\)</span>% des étudiants ont plus de <span>\\(10\\)</span>.</p>\n<p>On cherche <span>\\(\\alpha\\)</span> la note telle que <span>\\(\\prob(X\\leq \\alpha )=0.10\\)</span>. On note que\n<span>\\[\\begin{align*}\n            \\prob(X\\leq \\alpha )=0.1 &amp; \\quad \\Leftrightarrow \\quad \n            \\prob\\left(\\frac{X-7}{3} \\leq \\frac{\\alpha-7}{3}\\right)=0.1 \\\\\n            &amp; \\quad \\Leftrightarrow \\quad\n            \\prob\\left(\\frac{X-7}{3} \\geq \\frac{-\\alpha+7}{3}\\right)=0.1 \\\\\n            &amp; \\quad \\Leftrightarrow \\quad\n            \\prob\\left(\\frac{X-7}{3}\\leq \\frac{-\\alpha+7}{3}\\right)=0.9,\n        \\end{align*}\\]</span>\nce qui donne par lecture de table de la loi <span>\\(\\mathcal{N}(0,1)\\)</span>, <span>\\(\\frac{-\\alpha+7}{3}\\simeq 1.3\\)</span>, soit <span>\\(\\alpha \\simeq 3.1\\)</span>.\nDonc <span>\\(10\\)</span>% des étudiants ont en-dessous de <span>\\(3.1\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Compte tenu de ces résultats, on décide de revaloriser l'ensemble des notes par une transformation linéaire $Z=aX+b$. Quelles valeurs doit-on donner à $a$ et $b$ pour que les valeurs précédentes passent respectivement à $50$\\% et $7$.",
+      "html": "<p>Compte tenu de ces résultats, on décide de revaloriser l’ensemble des notes par une transformation linéaire <span>\\(Z=aX+b\\)</span>. Quelles valeurs doit-on donner à <span>\\(a\\)</span> et <span>\\(b\\)</span> pour que les valeurs précédentes passent respectivement à <span>\\(50\\)</span>% et <span>\\(7\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "indication",
+      "latex": "Calculer $\\E(Z)$ et $\\var(Z)$ en fonction de $\\E(X)$ et de $\\var(X)$.",
+      "html": "<p>Calculer <span>\\(\\E(Z)\\)</span> et <span>\\(\\var(Z)\\)</span> en fonction de <span>\\(\\E(X)\\)</span> et de <span>\\(\\var(X)\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "reponse",
+      "latex": "On a $Z=aX+b$ donc \n\t\t\\begin{eqnarray*}\n\t\t\t\\E(Z) &=& a\\E(X)+b \\, =\\, 7a+b \\\\\n\t\t\t\\var(Z) &=& \\var(aX) \\,=\\, a^2\\var(X) \\,=\\, 9a^2 \\text{.}\n\t\t\\end{eqnarray*}\n\t\tOn souhaite avoir $50$\\% des étudiants ayant plus de $10$. Comme la loi normale est symétrique par rapport à sa moyenne, cela revient à prendre $\\E(Z)=10$ donc $10=7a+b$.\n\t\t\\\\[1mm]\n\t\tEnsuite, on souhaite avoir $\\prob(Z\\leq 7)=0.1$. On a\n\t\t\\[ \\prob\\left( \\frac{Z-10}{3a}\\leq \\frac{7-10}{3a}\\right)=0.1 \n\t\t\\quad \\Leftrightarrow \\quad \\prob\\left( \\frac{Z-10}{3a}\\leq \\frac{1}{a}\\right)=0.9\n\t\t\\quad \\Leftrightarrow \\quad \\frac{1}{a}\\simeq 1.29\n\t\t\\quad \\Leftrightarrow \\quad a\\simeq 0.775\\text{.}\n\t\t\\]\n\t\tPar conséquent, $b=10-7a\\simeq 4.573$.",
+      "html": "<p>On a <span>\\(Z=aX+b\\)</span> donc\n<span>\\[\\begin{aligned}\n            \\E(Z) &amp;=&amp; a\\E(X)+b \\, =\\, 7a+b \\\\\n            \\var(Z) &amp;=&amp; \\var(aX) \\,=\\, a^2\\var(X) \\,=\\, 9a^2 \\text{.}\n        \\end{aligned}\\]</span>\nOn souhaite avoir <span>\\(50\\)</span>% des étudiants ayant plus de <span>\\(10\\)</span>. Comme la loi normale est symétrique par rapport à sa moyenne, cela revient à prendre <span>\\(\\E(Z)=10\\)</span> donc <span>\\(10=7a+b\\)</span>.<br />\nEnsuite, on souhaite avoir <span>\\(\\prob(Z\\leq 7)=0.1\\)</span>. On a\n<span>\\[\\prob\\left( \\frac{Z-10}{3a}\\leq \\frac{7-10}{3a}\\right)=0.1 \n        \\quad \\Leftrightarrow \\quad \\prob\\left( \\frac{Z-10}{3a}\\leq \\frac{1}{a}\\right)=0.9\n        \\quad \\Leftrightarrow \\quad \\frac{1}{a}\\simeq 1.29\n        \\quad \\Leftrightarrow \\quad a\\simeq 0.775\\text{.}\\]</span>\nPar conséquent, <span>\\(b=10-7a\\simeq 4.573\\)</span>.</p>",
+      "order": 6
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "e58fd6f4a933158e22b50f4bee5125377992e97f497ee8038916c191f3c9774e"
+}

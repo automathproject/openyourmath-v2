@@ -1,0 +1,36 @@
+{
+  "uuid": "c5jf",
+  "title": "Loi binomiale sur tableur",
+  "chapter": "Statistique",
+  "subchapter": "Autre",
+  "theme": "statistiques, tableur",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-09-30",
+  "updated_at": "2025-08-22T13:03:28.370Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "A l'aide des formules du tableur, générer une table de probabilité de la loi binomiale $\\mathcal{B}(100;0.4)$ ainsi que les probabilités cumulées. Représenter le résultat obtenu par un diagramme en bâtons. Changer les paramètres de la loi binomiale : les tables et le graphique doivent se mettre à jour automatiquement.",
+      "html": "<p>A l’aide des formules du tableur, générer une table de probabilité de la loi binomiale <span>\\(\\mathcal{B}(100;0.4)\\)</span> ainsi que les probabilités cumulées. Représenter le résultat obtenu par un diagramme en bâtons. Changer les paramètres de la loi binomiale : les tables et le graphique doivent se mettre à jour automatiquement.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "reponse",
+      "latex": "\\href{https://stcyrterrenetdefensegouvf-my.sharepoint.com/:x:/g/personal/maxime_nguyen_st-cyr_terre-net_defense_gouv_fr/EU0RhMP2JjdIm-TFfMHz79IBFs9M-i5K64Zb3gcMF6OBhg?e=yZvUoa}{Lien vers le fichier tableur}",
+      "html": "<p><a href=\"https://stcyrterrenetdefensegouvf-my.sharepoint.com/:x:/g/personal/maxime_nguyen_st-cyr_terre-net_defense_gouv_fr/EU0RhMP2JjdIm-TFfMHz79IBFs9M-i5K64Zb3gcMF6OBhg?e=yZvUoa\">Lien vers le fichier tableur</a></p>",
+      "order": 2
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "b27a6929f6411771bb2819ef1df2d7d4c94fe5b9bc9325fc02105cbdc5c42c99"
+}

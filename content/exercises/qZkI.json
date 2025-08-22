@@ -1,0 +1,43 @@
+{
+  "uuid": "qZkI",
+  "title": "Dilemme",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Lois de distributions",
+  "theme": "variables aléatoires discrètes, loi binomiale",
+  "difficulty": null,
+  "author": "bibmath",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-08-30",
+  "updated_at": "2025-08-22T13:04:32.392Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère deux avions $A$ et $B$ ayant respectivement 4 et 2 moteurs. Les moteurs fonctionnent de manière indépendante et chacun a une probabilité $p \\in ]0;1[$ de tomber en panne. On admet qu'un vol se termine bien si moins de la moitié des moteurs tombe en panne.",
+      "html": "<p>On considère deux avions <span>\\(A\\)</span> et <span>\\(B\\)</span> ayant respectivement 4 et 2 moteurs. Les moteurs fonctionnent de manière indépendante et chacun a une probabilité <span>\\(p \\in ]0;1[\\)</span> de tomber en panne. On admet qu’un vol se termine bien si moins de la moitié des moteurs tombe en panne.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Quel avion est-il préférable de choisir ?",
+      "html": "<p>Quel avion est-il préférable de choisir ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Soit $X$ le nombre de moteurs tombant en panne sur l'avion $A$ et $Y$  le nombre de moteurs tombant en panne sur l'avion $B$. Alors $X$ suit une loi binomiale $\\mathcal{B}(4,p)$ et $Y$ suit une loi binomiale $\\mathcal{B}(2,p)$. \n\nOn en déduit que $\\prob(X=0)+\\prob(X=1) = (1-p)^4 + 4p(1-p)^3$ et $\\prob(Y=0) = (1-p)^2$.\n\nIl est préférable de prendre l'avion $A$ si et seulement si $\\prob(X=0)+\\prob(X=1) \\geq \\prob(Y=0)$, c'est-à-dire :\n$$p(1-p)^2(2-3p) \\geq 0 \\iff 2-3p \\geq 0$$\n\nEn conclusion, si $p < \\frac{2}{3}$, il est préférable de prendre l'avion $A$.",
+      "html": "<p>Soit <span>\\(X\\)</span> le nombre de moteurs tombant en panne sur l’avion <span>\\(A\\)</span> et <span>\\(Y\\)</span> le nombre de moteurs tombant en panne sur l’avion <span>\\(B\\)</span>. Alors <span>\\(X\\)</span> suit une loi binomiale <span>\\(\\mathcal{B}(4,p)\\)</span> et <span>\\(Y\\)</span> suit une loi binomiale <span>\\(\\mathcal{B}(2,p)\\)</span>.</p>\n<p>On en déduit que <span>\\(\\prob(X=0)+\\prob(X=1) = (1-p)^4 + 4p(1-p)^3\\)</span> et <span>\\(\\prob(Y=0) = (1-p)^2\\)</span>.</p>\n<p>Il est préférable de prendre l’avion <span>\\(A\\)</span> si et seulement si <span>\\(\\prob(X=0)+\\prob(X=1) \\geq \\prob(Y=0)\\)</span>, c’est-à-dire :\n<span>\\[p(1-p)^2(2-3p) \\geq 0 \\iff 2-3p \\geq 0\\]</span></p>\n<p>En conclusion, si <span>\\(p &lt; \\frac{2}{3}\\)</span>, il est préférable de prendre l’avion <span>\\(A\\)</span>.</p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "7f8ea7ef9ea31467fc30b113af7e44fc216b49f6b16c090ef6fe3c53bfa8e66a"
+}

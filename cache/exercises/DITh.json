@@ -1,0 +1,99 @@
+{
+  "uuid": "DITh",
+  "title": "Fonctions périodiques",
+  "chapter": "Fonction de plusieurs variables",
+  "subchapter": "Autre",
+  "theme": "fonctions de plusieurs variables",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-04-18",
+  "updated_at": "2025-08-22T12:39:07.699Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $f \\colon \\mathbb{R}^2 \\to \\mathbb{R}$ une fonction différentiable telle que pour tout $t \\in \\mathbb{R}$ et pour tout $(x,y) \\in \\mathbb{R}^2$, \n\t$$f(x+t,y+t) = f(x,y)$$",
+      "html": "<p>Soit <span>\\(f \\colon \\mathbb{R}^2 \\to \\mathbb{R}\\)</span> une fonction différentiable telle que pour tout <span>\\(t \\in \\mathbb{R}\\)</span> et pour tout <span>\\((x,y) \\in \\mathbb{R}^2\\)</span>,\n<span>\\[f(x+t,y+t) = f(x,y)\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "On fixe $(x,y) \\in \\mathbb{R}^2$ et pour tout $t \\in \\mathbb{R}$ on pose $g(t) = f(x+t,y+t)$. Calculer $g'(t)$ pour tout $t \\in \\mathbb{R}$, en l'exprimant en fonction de $\\dfrac{\\partial f}{\\partial x}(x,y)$ et $\\dfrac{\\partial f}{\\partial y}(x,y)$.",
+      "html": "<p>On fixe <span>\\((x,y) \\in \\mathbb{R}^2\\)</span> et pour tout <span>\\(t \\in \\mathbb{R}\\)</span> on pose <span>\\(g(t) = f(x+t,y+t)\\)</span>. Calculer <span>\\(g&#39;(t)\\)</span> pour tout <span>\\(t \\in \\mathbb{R}\\)</span>, en l’exprimant en fonction de <span>\\(\\dfrac{\\partial f}{\\partial x}(x,y)\\)</span> et <span>\\(\\dfrac{\\partial f}{\\partial y}(x,y)\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Par la règle des chaînes, $g$ est dérivable sur $\\mathbb{R}$ et $g'(t) = 1 \\times \\dfrac{\\partial f}{\\partial x}(x,y) + 1 \\times \\dfrac{\\partial f}{\\partial y}(x,y)$.",
+      "html": "<p>Par la règle des chaînes, <span>\\(g\\)</span> est dérivable sur <span>\\(\\mathbb{R}\\)</span> et <span>\\(g&#39;(t) = 1 \\times \\dfrac{\\partial f}{\\partial x}(x,y) + 1 \\times \\dfrac{\\partial f}{\\partial y}(x,y)\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "En déduire que $\\dfrac{\\partial f}{\\partial x}(x,y) + \\dfrac{\\partial f}{\\partial y}(x,y) = 0$.",
+      "html": "<p>En déduire que <span>\\(\\dfrac{\\partial f}{\\partial x}(x,y) + \\dfrac{\\partial f}{\\partial y}(x,y) = 0\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Par hypothèse sur la fonction $f$, $g(t) = f(x,y)$ donc $g$ est constante par rapport à $t$ donc $g'(t) = 0$. D'où l'égalité demandée.",
+      "html": "<p>Par hypothèse sur la fonction <span>\\(f\\)</span>, <span>\\(g(t) = f(x,y)\\)</span> donc <span>\\(g\\)</span> est constante par rapport à <span>\\(t\\)</span> donc <span>\\(g&#39;(t) = 0\\)</span>. D’où l’égalité demandée.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "En utilisant la règle des chaînes, exprimer la dérivée partielle $\\frac{\\partial h}{\\partial u}(u,v)$, en fonction des dérivées partielles de $f$.",
+      "html": "<p>En utilisant la règle des chaînes, exprimer la dérivée partielle <span>\\(\\frac{\\partial h}{\\partial u}(u,v)\\)</span>, en fonction des dérivées partielles de <span>\\(f\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Par la règle des chaînes, $h$ admet des dérivées partielles en tout point $(u,v) \\in \\mathbb{R}^2$ et on a :\n\t\t\t$$\\begin{align*}\n\t\t\t\t\\frac{\\partial h}{\\partial u}(u,v) & = \\frac{\\partial f}{\\partial x}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right) \\times \\frac{1}{2} + \\frac{\\partial f}{\\partial y}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right) \\times \\frac{1}{2} \\\\\n\t\t\t\t& = \\frac{1}{2}\\left(\\frac{\\partial f}{\\partial x}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right) + \\frac{\\partial f}{\\partial y}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right)\\right).\n\t\t\t\\end{align*}$$",
+      "html": "<p>Par la règle des chaînes, <span>\\(h\\)</span> admet des dérivées partielles en tout point <span>\\((u,v) \\in \\mathbb{R}^2\\)</span> et on a :\n<span>\\[\\begin{align*}\n                \\frac{\\partial h}{\\partial u}(u,v) &amp; = \\frac{\\partial f}{\\partial x}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right) \\times \\frac{1}{2} + \\frac{\\partial f}{\\partial y}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right) \\times \\frac{1}{2} \\\\\n                &amp; = \\frac{1}{2}\\left(\\frac{\\partial f}{\\partial x}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right) + \\frac{\\partial f}{\\partial y}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right)\\right).\n            \\end{align*}\\]</span></p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "En utilisant une question précédente, en déduire que $\\frac{\\partial h}{\\partial u}(u,v) = 0$",
+      "html": "<p>En utilisant une question précédente, en déduire que <span>\\(\\frac{\\partial h}{\\partial u}(u,v) = 0\\)</span></p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "D'après la question 2 de la partie A, on a $\\dfrac{\\partial f}{\\partial x}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right) + \\dfrac{\\partial f}{\\partial y}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right) = 0$. Donc, $\\frac{\\partial h}{\\partial u}(u,v) = 0$.",
+      "html": "<p>D’après la question 2 de la partie A, on a <span>\\(\\dfrac{\\partial f}{\\partial x}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right) + \\dfrac{\\partial f}{\\partial y}\\left(\\dfrac{u+v}{2}, \\dfrac{u-v}{2}\\right) = 0\\)</span>. Donc, <span>\\(\\frac{\\partial h}{\\partial u}(u,v) = 0\\)</span>.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "En déduire qu'il existe une fonction $k \\colon  \\mathbb{R} \\to \\mathbb{R}$ telle que pour tout $(x,y) \\in \\R^2$, $$f(x,y) = k(x-y).$$",
+      "html": "<p>En déduire qu’il existe une fonction <span>\\(k \\colon  \\mathbb{R} \\to \\mathbb{R}\\)</span> telle que pour tout <span>\\((x,y) \\in \\R^2\\)</span>, <span>\\[f(x,y) = k(x-y).\\]</span></p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "reponse",
+      "latex": "On a démontré à la question précédente que $\\frac{\\partial h}{\\partial u}(u,v) = 0$. Donc, $h$ est constante par rapport à $u = x+y$. Il existe donc une fonction $k \\colon \\mathbb{R} \\to \\mathbb{R}$ telle que pour tout $(x,y) \\in \\R^2$, $f(x,y) = k(x-y)$.",
+      "html": "<p>On a démontré à la question précédente que <span>\\(\\frac{\\partial h}{\\partial u}(u,v) = 0\\)</span>. Donc, <span>\\(h\\)</span> est constante par rapport à <span>\\(u = x+y\\)</span>. Il existe donc une fonction <span>\\(k \\colon \\mathbb{R} \\to \\mathbb{R}\\)</span> telle que pour tout <span>\\((x,y) \\in \\R^2\\)</span>, <span>\\(f(x,y) = k(x-y)\\)</span>.</p>",
+      "order": 11
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "c70807c452d32c79174d4f49ad2b4d65cf7f231ead50bada60e3121cd7f50b97"
+}

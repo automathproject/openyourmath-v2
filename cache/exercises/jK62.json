@@ -1,0 +1,85 @@
+{
+  "uuid": "jK62",
+  "title": "Jeu de boules",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Lois de distributions",
+  "theme": "variables aléatoires discrètes, loi binomiale",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-01",
+  "updated_at": "2025-08-22T12:40:27.531Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On tire $4$ boules avec remise dans une urne contenant des boules numérotées de $1$ à $5$. On dit que $i\\in{1,2,3,4,5}$ est une valeur gagnante si la boule numéro $i$ est tirée au moins une fois.",
+      "html": "<p>On tire <span>\\(4\\)</span> boules avec remise dans une urne contenant des boules numérotées de <span>\\(1\\)</span> à <span>\\(5\\)</span>. On dit que <span>\\(i\\in{1,2,3,4,5}\\)</span> est une valeur gagnante si la boule numéro <span>\\(i\\)</span> est tirée au moins une fois.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Pour $i=1,...,5$, soit $X_i$ la variable aléatoire qui est égale à $1$ si le numéro $i$ est une valeur gagnante, et $0$ sinon. Trouver $\\prob(X_i=0)$. Déterminer la loi, l'espérance et la variance de $X_i$ pour $i=1,...,5$.",
+      "html": "<p>Pour <span>\\(i=1,...,5\\)</span>, soit <span>\\(X_i\\)</span> la variable aléatoire qui est égale à <span>\\(1\\)</span> si le numéro <span>\\(i\\)</span> est une valeur gagnante, et <span>\\(0\\)</span> sinon. Trouver <span>\\(\\prob(X_i=0)\\)</span>. Déterminer la loi, l’espérance et la variance de <span>\\(X_i\\)</span> pour <span>\\(i=1,...,5\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On a \\qquad $X_i=\\begin{cases} 1 & \\text{ si } i \\text{ valeur gagnante} \\\\\n\t\t0 & \\text{ sinon}\n\t\t\\end{cases}$ \\qquad \n\t\tdonc \n\t\t\\[ \\prob(X_i=0)=\\prob(\\text{''La boule numérotée $i$ n'a jamais été tirée``})=\\left(\\frac{4}{5}\\right)^4.\\]\n\t\tComme $X_i$ ne peut prendre que deux valeurs: $0$ ou $1$, on en déduit:\n\t\t\\[ \\prob(X_i=1)=1-\\prob(X_i=0)=1-\\left(\\frac{4}{5}\\right)^4=\\frac{369}{625},\\]\n\t\tce qui revient à dire que $X_i\\sim \\mathcal{B}\\left(1-\\left(\\frac{4}{5}\\right)^4\\right)$. Ainsi, on a\n\t\t$$\\begin{align*}\n\t\t\\E(X_i)&=1-\\left(\\frac{4}{5}\\right)^4=\\frac{369}{625}, \\\\\n\t\t\\V(X_i)&=\\left(1-\\left(\\frac{4}{5}\\right)^4\\right)\\times \\left(\\frac{4}{5}\\right)^4=\\frac{94\\ 464}{390\\ 625}.\n\t\t\\end{align*}$$",
+      "html": "<p>On a <span>\\(X_i=\\begin{cases} 1 &amp; \\text{ si } i \\text{ valeur gagnante} \\\\\n        0 &amp; \\text{ sinon}\n        \\end{cases}\\)</span>\ndonc\n<span>\\[\\prob(X_i=0)=\\prob(\\text{&#39;&#39;La boule numérotée $i$ n&#39;a jamais été tirée``})=\\left(\\frac{4}{5}\\right)^4.\\]</span>\nComme <span>\\(X_i\\)</span> ne peut prendre que deux valeurs: <span>\\(0\\)</span> ou <span>\\(1\\)</span>, on en déduit:\n<span>\\[\\prob(X_i=1)=1-\\prob(X_i=0)=1-\\left(\\frac{4}{5}\\right)^4=\\frac{369}{625},\\]</span>\nce qui revient à dire que <span>\\(X_i\\sim \\mathcal{B}\\left(1-\\left(\\frac{4}{5}\\right)^4\\right)\\)</span>. Ainsi, on a\n<span>\\[\\begin{align*}\n        \\E(X_i)&amp;=1-\\left(\\frac{4}{5}\\right)^4=\\frac{369}{625}, \\\\\n        \\V(X_i)&amp;=\\left(1-\\left(\\frac{4}{5}\\right)^4\\right)\\times \\left(\\frac{4}{5}\\right)^4=\\frac{94\\ 464}{390\\ 625}.\n        \\end{align*}\\]</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Calculer $\\prob((X_1=0)\\cap(X_2=0))$. Les variables aléatoires $X_1$ et $X_2$ sont-elles indépendantes ?",
+      "html": "<p>Calculer <span>\\(\\prob((X_1=0)\\cap(X_2=0))\\)</span>. Les variables aléatoires <span>\\(X_1\\)</span> et <span>\\(X_2\\)</span> sont-elles indépendantes ?</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "$$\\begin{align*}\n\t\t\\prob((X_1=0)\\cap(X_2=0))&=\\prob(\\text{''Les boules numérotées $1$ et $2$ n'ont jamais été tirées``}) \\\\\n\t\t&= \\left(\\frac{3}{5}\\right)^4=\\frac{81}{625}\n\t\t\\end{align*}$$\n\t\tor $\\prob(X_1=0)\\prob(X_2=0)=\\left(\\frac{4}{5}\\right)^4 \\times \\left(\\frac{4}{5}\\right)^4$ donc $\\prob((X_1=0)\\cap(X_2=0)) \\neq \\prob(X_1=0)\\prob(X_2=0)$. On en conclut que les variables $X_1$ et $X_2$ ne sont pas indépendantes.",
+      "html": "<p><span>\\[\\begin{align*}\n        \\prob((X_1=0)\\cap(X_2=0))&amp;=\\prob(\\text{&#39;&#39;Les boules numérotées $1$ et $2$ n&#39;ont jamais été tirées``}) \\\\\n        &amp;= \\left(\\frac{3}{5}\\right)^4=\\frac{81}{625}\n        \\end{align*}\\]</span>\nor <span>\\(\\prob(X_1=0)\\prob(X_2=0)=\\left(\\frac{4}{5}\\right)^4 \\times \\left(\\frac{4}{5}\\right)^4\\)</span> donc <span>\\(\\prob((X_1=0)\\cap(X_2=0)) \\neq \\prob(X_1=0)\\prob(X_2=0)\\)</span>. On en conclut que les variables <span>\\(X_1\\)</span> et <span>\\(X_2\\)</span> ne sont pas indépendantes.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Déterminer la loi jointe de $(X_1,X_2)$.",
+      "html": "<p>Déterminer la loi jointe de <span>\\((X_1,X_2)\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "\\begin{center}\n\t\t\t\\begin{tabular}{|c|c|c||c|}\n\t\t\t\t\\hline\n\t\t\t\t$X \\backslash Y$ & $0$ & $1$ & $\\prob_{X_2}$ (loi de $X_2$)  \\\\\n\t\t\t\t\\hline\n\t\t\t\t$0$ & $\\frac{81}{625}$ & $\\frac{175}{625}$ & $\\frac{256}{625}$  \\\\\n\t\t\t\t\\hline\n\t\t\t\t$1$ & $\\frac{175}{625}$ & $\\frac{194}{625}$ & $\\frac{369}{625}$  \\\\\n\t\t\t\t\\hline\n\t\t\t\t\\hline\n\t\t\t\t$\\prob_{X_1}$ (loi de $X_1$) & $\\frac{256}{625}$ & $\\frac{369}{625}$ & $1$  \\\\\n\t\t\t\t\\hline\n\t\t\t\\end{tabular}\n\t\t\\end{center}",
+      "html": "<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><span>\\(X \\backslash Y\\)</span></th>\n<th style=\"text-align: center;\"><span>\\(0\\)</span></th>\n<th style=\"text-align: center;\"><span>\\(1\\)</span></th>\n<th style=\"text-align: center;\"><span>\\(\\prob_{X_2}\\)</span> (loi de <span>\\(X_2\\)</span>)</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><span>\\(0\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{81}{625}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{175}{625}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{256}{625}\\)</span></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(1\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{175}{625}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{194}{625}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{369}{625}\\)</span></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(\\prob_{X_1}\\)</span> (loi de <span>\\(X_1\\)</span>)</td>\n<td style=\"text-align: center;\"><span>\\(\\frac{256}{625}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{369}{625}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(1\\)</span></td>\n</tr>\n</tbody>\n</table>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Soit $X$ la variable aléatoire égale au nombre de valeurs gagnantes. Exprimer $X$ en fonction de $X_1$,...,$X_5$. Déterminer l'espérance de $X$.",
+      "html": "<p>Soit <span>\\(X\\)</span> la variable aléatoire égale au nombre de valeurs gagnantes. Exprimer <span>\\(X\\)</span> en fonction de <span>\\(X_1\\)</span>,...,<span>\\(X_5\\)</span>. Déterminer l’espérance de <span>\\(X\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "On a $X=X_1+X_2+X_3+X_4+X_5$. Comme les variables aléatoires $X_i$ sont de même loi, on obtient\n\t\t\\[ \\E(X)=\\sum_{i=1}^5 \\E(X_i)=5\\E(X_1)=5\\times \\frac{369}{625}=\\frac{369}{125}\\simeq 2.95.\\]\n\t\tEn moyenne, on aura quasiment $3$ valeurs gagnantes par jeu.",
+      "html": "<p>On a <span>\\(X=X_1+X_2+X_3+X_4+X_5\\)</span>. Comme les variables aléatoires <span>\\(X_i\\)</span> sont de même loi, on obtient\n<span>\\[\\E(X)=\\sum_{i=1}^5 \\E(X_i)=5\\E(X_1)=5\\times \\frac{369}{625}=\\frac{369}{125}\\simeq 2.95.\\]</span>\nEn moyenne, on aura quasiment <span>\\(3\\)</span> valeurs gagnantes par jeu.</p>",
+      "order": 9
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "6ca200ec6eadb6d0d98de3a7207041ddf0e2a27cc555425032775b6a9b0cc9ad"
+}

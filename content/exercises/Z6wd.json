@@ -1,0 +1,57 @@
+{
+  "uuid": "Z6wd",
+  "title": "Méthode des moindres carrés",
+  "chapter": "Dérivabilité des fonctions réelles",
+  "subchapter": "Applications",
+  "theme": "calcul différentiel, optimisation",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-03-21",
+  "updated_at": "2025-08-22T13:03:16.557Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère des points $M_{1}, \\ldots, M_{n}$ de $\\mathbb{R}^{2}$, et on note $\\left(x_{i}, y_{i}\\right)$ les coordonnées de chaque point $M_{i}$.",
+      "html": "<p>On considère des points <span>\\(M_{1}, \\ldots, M_{n}\\)</span> de <span>\\(\\mathbb{R}^{2}\\)</span>, et on note <span>\\(\\left(x_{i}, y_{i}\\right)\\)</span> les coordonnées de chaque point <span>\\(M_{i}\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "On cherche les points $(x, y)$ de $\\mathbb{R}^{2}$ approchant au mieux le nuage de points formé par les points $M_{i}$ au sens des moindres carrés, c'est-à-dire qu'on cherche à minimiser la fonction\n\t\t$$\n\t\tf:(x, y) \\mapsto \\sum_{i=1}^{N}\\left(x-x_{i}\\right)^{2}+\\left(y-y_{i}\\right)^{2}\n\t\t$$\n\t\tOn admet que $f$ admet au moins un minimum global sur $\\mathbb{R}^{2}$. Déterminer en quels points $f$ admet ce minimum.",
+      "html": "<p>On cherche les points <span>\\((x, y)\\)</span> de <span>\\(\\mathbb{R}^{2}\\)</span> approchant au mieux le nuage de points formé par les points <span>\\(M_{i}\\)</span> au sens des moindres carrés, c’est-à-dire qu’on cherche à minimiser la fonction\n<span>\\[f:(x, y) \\mapsto \\sum_{i=1}^{N}\\left(x-x_{i}\\right)^{2}+\\left(y-y_{i}\\right)^{2}\\]</span>\nOn admet que <span>\\(f\\)</span> admet au moins un minimum global sur <span>\\(\\mathbb{R}^{2}\\)</span>. Déterminer en quels points <span>\\(f\\)</span> admet ce minimum.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On cherche les points stationnaires : on trouve un point stationnaire $(x,y) = \\left(\\frac{1}{N}\\sum_{i=1}^N x_i,\\frac{1}{N}\\sum_{i=1}^N y_i \\right)$ et on reconnait le point moyen du nuage de points. On vérifie aisément qu'il s'agit d'un minimum local et qu'il est unique, c'est donc le minimum global.",
+      "html": "<p>On cherche les points stationnaires : on trouve un point stationnaire <span>\\((x,y) = \\left(\\frac{1}{N}\\sum_{i=1}^N x_i,\\frac{1}{N}\\sum_{i=1}^N y_i \\right)\\)</span> et on reconnait le point moyen du nuage de points. On vérifie aisément qu’il s’agit d’un minimum local et qu’il est unique, c’est donc le minimum global.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "On cherche maintenant une relation affine entre les abscisses et les ordonnées de ces points. On cherche des constantes $m$ et $q$ pour que la droite d'équation $y=mx+q$ s'ajuste le mieux possible aux points observés. \n\t\t\n\t\tPour cela, on introduit $d_i = y_i - (mx_i + q)$ l'écart vertical du point $M_i$ par rapport à la droite. \n\t\t\n\t\tLa méthode des moindres carrés consiste à choisir $m$ et $q$ de telle sorte que la somme des écarts au carré soit minimale. \n\t\t\n\t\tExprimer $m$ et $q$ en fonction des coordonnées des points.",
+      "html": "<p>On cherche maintenant une relation affine entre les abscisses et les ordonnées de ces points. On cherche des constantes <span>\\(m\\)</span> et <span>\\(q\\)</span> pour que la droite d’équation <span>\\(y=mx+q\\)</span> s’ajuste le mieux possible aux points observés.</p>\n<p>Pour cela, on introduit <span>\\(d_i = y_i - (mx_i + q)\\)</span> l’écart vertical du point <span>\\(M_i\\)</span> par rapport à la droite.</p>\n<p>La méthode des moindres carrés consiste à choisir <span>\\(m\\)</span> et <span>\\(q\\)</span> de telle sorte que la somme des écarts au carré soit minimale.</p>\n<p>Exprimer <span>\\(m\\)</span> et <span>\\(q\\)</span> en fonction des coordonnées des points.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Pour cela, on doit minimiser la fonction $\\mathscr{E}: \\mathbb{R}^{2} \\rightarrow \\mathbb{R}_{+}$définie par\n\t\t\t$$\n\t\t\t\\mathscr{E}(m, q)=\\sum_{i=0}^{n} d_{i}^{2}=\\sum_{i=0}^{n}\\left(y_{i}-m x_{i}-q\\right)^{2}\n\t\t\t$$\n\t\t\tPour minimiser $\\mathscr{E}$ on cherche d'abord les points stationnaires, i.e. les points $(m, q)$ qui vérifient $\\frac{\\partial \\mathscr{E}}{\\partial m}=\\frac{\\partial \\mathscr{E}}{\\partial q}=0$. Puisque\n\t\t\t$$\n\t\t\t\\frac{\\partial \\mathscr{E}}{\\partial m}(m, q)=-2\\left(\\sum_{i=0}^{n}\\left(y_{i}-\\left(m x_{i}+q\\right)\\right) x_{i}\\right), \\quad \\frac{\\partial \\mathscr{E}}{\\partial q}(m, q)=-2\\left(\\sum_{i=0}^{n}\\left(y_{i}-\\left(m x_{i}+q\\right)\\right)\\right),\n\t\t\t$$\n\t\t\t$$\n\t\t\t\\left\\{\\begin{array} { l } \n\t\t\t\t{ \\frac { \\partial \\mathscr { E } } { \\partial m } ( m , q ) = 0 } \\\\\n\t\t\t\t{ \\frac { \\partial \\mathscr { E } } { \\partial q } ( m , q ) = 0 }\n\t\t\t\\end{array} \\Longleftrightarrow \\left\\{\\begin{array}{l}\n\t\t\t\t\\sum_{i=0}^{n}\\left(y_{i}-m x_{i}-q\\right) x_{i}=0 \\\\\n\t\t\t\t\\sum_{i=0}^{n}\\left(y_{i}-m x_{i}-q\\right)=0\n\t\t\t\\end{array}\\right.\\right.\n\t\t\t$$\n\t\t\t$$\n\t\t\t\\Longleftrightarrow\\left\\{\\begin{array} { l } \n\t\t\t\t{ ( \\sum _ { i = 1 } ^ { n } x _ { i } ^ { 2 } ) m + ( \\sum _ { i = 0 } ^ { n } x _ { i } ) q = \\sum _ { i = 0 } ^ { n } y _ { i } x _ { i } } \\\\\n\t\t\t\t{ ( \\sum _ { i = 1 } ^ { n } x _ { i } ) m + ( n + 1 ) q = \\sum _ { i = 0 } ^ { n } y _ { i } }\n\t\t\t\\end{array} \\Longleftrightarrow \\left\\{\\begin{array}{l}\n\t\t\t\tm=\\frac{\\left(\\sum_{i=0}^{n} x_{i}\\right)\\left(\\sum_{i=0}^{n} y_{i}\\right)-(n+1)\\left(\\sum_{i=0}^{n} x_{i} y_{i}\\right)}{\\left(\\sum_{i=0}^{n} x_{i}\\right)^{2}-(n+1)\\left(\\sum_{i=0}^{n} x_{i}^{2}\\right)}, \\\\\n\t\t\t\tq=\\frac{\\left(\\sum_{i=0}^{n} x_{i}\\right)\\left(\\sum_{i=0}^{n} x_{i} y_{i}\\right)-\\left(\\sum_{i=0}^{n} y_{i}\\right)\\left(\\sum_{i=0}^{n} x_{i}^{2}\\right)}{\\left(\\sum_{i=0}^{n} x_{i}\\right)^{2}-(n+1)\\left(\\sum_{i=0}^{n} x_{i}^{2}\\right)} .\n\t\t\t\\end{array}\\right.\\right.\n\t\t\t$$\n\t\t\tOn a trouvé un seul point stationnaire. On établi sa nature en étudiant la matrice Hessienne :\n\t\t\t$$\n\t\t\tH_{\\mathscr{E}}(m, q)=2\\left(\\begin{array}{cc}\n\t\t\t\t\\sum_{i=1}^{n} x_{i}^{2} & \\sum_{i=0}^{n} x_{i} \\\\\n\t\t\t\t\\sum_{i=0}^{n} x_{i} & (n+1)\n\t\t\t\\end{array}\\right)\n\t\t\t$$\n\t\t\tet $\\operatorname{det}\\left(H_{\\mathscr{E}}(m, q)\\right)=4\\left((n+1) \\sum_{i=1}^{n} x_{i}^{2}-\\left(\\sum_{i=0}^{n} x_{i}\\right)^{2}\\right)>0$ avec $\\partial_{m m} \\mathscr{E}(m, q)=\\sum_{i=1}^{n} x_{i}^{2}>0$ donc il s'agit bien d'un minimum. La droite d'équation $y=m x+q$ ainsi calculée s'appelle droite de régression de y par rapport à $x$.",
+      "html": "<p>Pour cela, on doit minimiser la fonction <span>\\(\\mathscr{E}: \\mathbb{R}^{2} \\rightarrow \\mathbb{R}_{+}\\)</span>définie par\n<span>\\[\\mathscr{E}(m, q)=\\sum_{i=0}^{n} d_{i}^{2}=\\sum_{i=0}^{n}\\left(y_{i}-m x_{i}-q\\right)^{2}\\]</span>\nPour minimiser <span>\\(\\mathscr{E}\\)</span> on cherche d’abord les points stationnaires, i.e. les points <span>\\((m, q)\\)</span> qui vérifient <span>\\(\\frac{\\partial \\mathscr{E}}{\\partial m}=\\frac{\\partial \\mathscr{E}}{\\partial q}=0\\)</span>. Puisque\n<span>\\[\\frac{\\partial \\mathscr{E}}{\\partial m}(m, q)=-2\\left(\\sum_{i=0}^{n}\\left(y_{i}-\\left(m x_{i}+q\\right)\\right) x_{i}\\right), \\quad \\frac{\\partial \\mathscr{E}}{\\partial q}(m, q)=-2\\left(\\sum_{i=0}^{n}\\left(y_{i}-\\left(m x_{i}+q\\right)\\right)\\right),\\]</span>\n<span>\\[\\left\\{\\begin{array} { l } \n                { \\frac { \\partial \\mathscr { E } } { \\partial m } ( m , q ) = 0 } \\\\\n                { \\frac { \\partial \\mathscr { E } } { \\partial q } ( m , q ) = 0 }\n            \\end{array} \\Longleftrightarrow \\left\\{\\begin{array}{l}\n                \\sum_{i=0}^{n}\\left(y_{i}-m x_{i}-q\\right) x_{i}=0 \\\\\n                \\sum_{i=0}^{n}\\left(y_{i}-m x_{i}-q\\right)=0\n            \\end{array}\\right.\\right.\\]</span>\n<span>\\[\\Longleftrightarrow\\left\\{\\begin{array} { l } \n                { ( \\sum _ { i = 1 } ^ { n } x _ { i } ^ { 2 } ) m + ( \\sum _ { i = 0 } ^ { n } x _ { i } ) q = \\sum _ { i = 0 } ^ { n } y _ { i } x _ { i } } \\\\\n                { ( \\sum _ { i = 1 } ^ { n } x _ { i } ) m + ( n + 1 ) q = \\sum _ { i = 0 } ^ { n } y _ { i } }\n            \\end{array} \\Longleftrightarrow \\left\\{\\begin{array}{l}\n                m=\\frac{\\left(\\sum_{i=0}^{n} x_{i}\\right)\\left(\\sum_{i=0}^{n} y_{i}\\right)-(n+1)\\left(\\sum_{i=0}^{n} x_{i} y_{i}\\right)}{\\left(\\sum_{i=0}^{n} x_{i}\\right)^{2}-(n+1)\\left(\\sum_{i=0}^{n} x_{i}^{2}\\right)}, \\\\\n                q=\\frac{\\left(\\sum_{i=0}^{n} x_{i}\\right)\\left(\\sum_{i=0}^{n} x_{i} y_{i}\\right)-\\left(\\sum_{i=0}^{n} y_{i}\\right)\\left(\\sum_{i=0}^{n} x_{i}^{2}\\right)}{\\left(\\sum_{i=0}^{n} x_{i}\\right)^{2}-(n+1)\\left(\\sum_{i=0}^{n} x_{i}^{2}\\right)} .\n            \\end{array}\\right.\\right.\\]</span>\nOn a trouvé un seul point stationnaire. On établi sa nature en étudiant la matrice Hessienne :\n<span>\\[H_{\\mathscr{E}}(m, q)=2\\left(\\begin{array}{cc}\n                \\sum_{i=1}^{n} x_{i}^{2} &amp; \\sum_{i=0}^{n} x_{i} \\\\\n                \\sum_{i=0}^{n} x_{i} &amp; (n+1)\n            \\end{array}\\right)\\]</span>\net <span>\\(\\operatorname{det}\\left(H_{\\mathscr{E}}(m, q)\\right)=4\\left((n+1) \\sum_{i=1}^{n} x_{i}^{2}-\\left(\\sum_{i=0}^{n} x_{i}\\right)^{2}\\right)&gt;0\\)</span> avec <span>\\(\\partial_{m m} \\mathscr{E}(m, q)=\\sum_{i=1}^{n} x_{i}^{2}&gt;0\\)</span> donc il s’agit bien d’un minimum. La droite d’équation <span>\\(y=m x+q\\)</span> ainsi calculée s’appelle droite de régression de y par rapport à <span>\\(x\\)</span>.</p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "7f51ec0c1b03b7e77cc71ca5002ece15c9857342b313b44c3acf518f665759da"
+}

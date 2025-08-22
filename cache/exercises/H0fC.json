@@ -1,0 +1,91 @@
+{
+  "uuid": "H0fC",
+  "title": "Etude de points critiques et d'ue ligne de niveau",
+  "chapter": "Fonction de plusieurs variables",
+  "subchapter": "Extremums locaux",
+  "theme": "calcul différentiel",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-03-20",
+  "updated_at": "2025-08-22T12:39:14.296Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Une usine produit deux types de matériaux, notés $A$ et $B$. Si, en une semaine, elle produit $x$ kg de type $A$ et $y$ kg de type $B$, le coût total de production (en euros) est modélisé par la fonction\n\t$$\n\tc(x,y)=10000+50x+60y-0.05xy.\n\t$$\n\tEn pleine capacité, la production hebdomadaire totale ne peut dépasser $3000$ kg, c’est-à-dire que\n\t$$\n\tx\\geq0,\\quad y\\geq 0,\\quad x+y\\leq3000.\n\t$$\n\tDans ce modèle, le coût reste toujours positif.",
+      "html": "<p>Une usine produit deux types de matériaux, notés <span>\\(A\\)</span> et <span>\\(B\\)</span>. Si, en une semaine, elle produit <span>\\(x\\)</span> kg de type <span>\\(A\\)</span> et <span>\\(y\\)</span> kg de type <span>\\(B\\)</span>, le coût total de production (en euros) est modélisé par la fonction\n<span>\\[c(x,y)=10000+50x+60y-0.05xy.\\]</span>\nEn pleine capacité, la production hebdomadaire totale ne peut dépasser <span>\\(3000\\)</span> kg, c’est-à-dire que\n<span>\\[x\\geq0,\\quad y\\geq 0,\\quad x+y\\leq3000.\\]</span>\nDans ce modèle, le coût reste toujours positif.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Décrire et représenter graphiquement le domaine de définition $\\mathcal{D}_c$.",
+      "html": "<p>Décrire et représenter graphiquement le domaine de définition <span>\\(\\mathcal{D}_c\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Le domaine de définition est l’ensemble des couples $(x,y)$ tels que $x\\geq0$, $y\\geq0$ et $x+y\\leq3000$. Géométriquement, il s’agit d’un triangle du plan dont les sommets sont $(0,0)$, $(3000,0)$ et $(0,3000)$.\n\t\t\n\t\t\\begin{center}\n\t\t\t__TIKZ_tikz_d8Ru__\n\t\t\\end{center}",
+      "html": "<p>Le domaine de définition est l’ensemble des couples $(x,y)$ tels que $x\\geq0$, $y\\geq0$ et $x+y\\leq3000$. Géométriquement, il s’agit d’un triangle du plan dont les sommets sont $(0,0)$, $(3000,0)$ et $(0,3000)$.\n\t\t\n\t\t\\begin{center}\n\t\t\t<svg viewBox=\"0 0 400 200\" class=\"tikz-error\" style=\"border: 2px dashed #dc3545; background: #f8d7da;\">\n    <rect width=\"400\" height=\"200\" fill=\"#f8d7da\" stroke=\"#dc3545\" stroke-width=\"2\" stroke-dasharray=\"5,5\"/>\n    <text x=\"200\" y=\"30\" text-anchor=\"middle\" font-family=\"monospace\" font-size=\"14\" fill=\"#721c24\">\n      TikZ Conversion Error\n    </text>\n    <text x=\"10\" y=\"60\" font-family=\"monospace\" font-size=\"10\" fill=\"#721c24\">\n      Error: LaTeX compilation failed:\nCompilation failed. Last lines:\n\\everyMPtoPDFconversion=\\toks44\n) (/usr/lo...\n    </text>\n    <text x=\"10\" y=\"90\" font-family=\"monospace\" font-size=\"9\" fill=\"#6c757d\">\n      Content:\n    </text>\n    <text x=\"10\" y=\"110\" font-family=\"monospace\" font-size=\"8\" fill=\"#6c757d\">\n      \\draw[thick,->] (-100,0) -- (3100,0) node[below right] {$x$ (kg)};\n\t\t\t\t\\draw[thick,->] (0,-100) -- (0,3100) node[above left] {$y$ (kg)};\n\t\t\t\t\\draw[ult...\n    </text>\n  </svg>\n\t\t\\end{center}</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Justifier que la fonction $c$ admet un minimum sur $\\mathcal{D}_c$ et que ce minimum est atteint.",
+      "html": "<p>Justifier que la fonction <span>\\(c\\)</span> admet un minimum sur <span>\\(\\mathcal{D}_c\\)</span> et que ce minimum est atteint.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On remarque que $\\mathcal{D}_c$ est un fermé de $\\mathbb{R}^2$. De plus il est borné (c'est un triangle). Par ailleurs, la fonction $c$ est polynomiale donc continue sur $\\mathcal{D}_c$. D'après le théorème des valeurs extrêmes, la fonction $c$ admet donc un minimum sur $\\mathcal{D}_c$ et ce minimum est atteint en au moins un point de $\\mathcal{D}_c$.",
+      "html": "<p>On remarque que <span>\\(\\mathcal{D}_c\\)</span> est un fermé de <span>\\(\\mathbb{R}^2\\)</span>. De plus il est borné (c’est un triangle). Par ailleurs, la fonction <span>\\(c\\)</span> est polynomiale donc continue sur <span>\\(\\mathcal{D}_c\\)</span>. D’après le théorème des valeurs extrêmes, la fonction <span>\\(c\\)</span> admet donc un minimum sur <span>\\(\\mathcal{D}_c\\)</span> et ce minimum est atteint en au moins un point de <span>\\(\\mathcal{D}_c\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Rechercher les points critiques (minimum ou maximum locaux) à l’intérieur du domaine de définition.",
+      "html": "<p>Rechercher les points critiques (minimum ou maximum locaux) à l’intérieur du domaine de définition.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "La fonction $c$ est polynomiale (donc de classe $\\mathcal{C}^{\\infty}$) sur $\\mathbb{R}^2$. Calculons ses dérivées partielles :\n\t\t$$\n\t\t\\frac{\\partial c}{\\partial x}(x,y)=50-0.05y,\\quad \\frac{\\partial c}{\\partial y}(x,y)=60-0.05x.\n\t\t$$\n\t\tEn annulant ces dérivées, on obtient :\n\t\t$$\n\t\t\\begin{cases}\n\t\t\t50-0.05y=0 \\quad\\Rightarrow\\quad y=1000,\\\\[1mm]\n\t\t\t60-0.05x=0 \\quad\\Rightarrow\\quad x=1200.\n\t\t\\end{cases}\n\t\t$$\n\t\tLe seul point critique intérieur est donc $(1200,1000)$.  \n\t\t\n\t\tPour étudier sa nature, on calcule le Hessien :\n\t\t$$\n\t\tH_c(x,y)=\n\t\t\\begin{pmatrix}\n\t\t\t\\frac{\\partial^2 c}{\\partial x^2}(x,y) & \\frac{\\partial^2 c}{\\partial x \\partial y}(x,y)\\\\[1mm]\n\t\t\t\\frac{\\partial^2 c}{\\partial y \\partial x}(x,y) & \\frac{\\partial^2 c}{\\partial y^2}(x,y)\n\t\t\\end{pmatrix}\n\t\t=\n\t\t\\begin{pmatrix}\n\t\t\t0 & -0.05\\\\[1mm]\n\t\t\t-0.05 & 0\n\t\t\\end{pmatrix}.\n\t\t$$\n\t\tLe déterminant de ce Hessien est\n\t\t$$\n\t\t\\det H_c = 0\\cdot0 - (-0.05)^2 = -0.0025 < 0,\n\t\t$$\n\t\tce qui caractérise un point selle en $(1200,1000)$.",
+      "html": "<p>La fonction <span>\\(c\\)</span> est polynomiale (donc de classe <span>\\(\\mathcal{C}^{\\infty}\\)</span>) sur <span>\\(\\mathbb{R}^2\\)</span>. Calculons ses dérivées partielles :\n<span>\\[\\frac{\\partial c}{\\partial x}(x,y)=50-0.05y,\\quad \\frac{\\partial c}{\\partial y}(x,y)=60-0.05x.\\]</span>\nEn annulant ces dérivées, on obtient :\n<span>\\[\\begin{cases}\n            50-0.05y=0 \\quad\\Rightarrow\\quad y=1000,\\\\[1mm]\n            60-0.05x=0 \\quad\\Rightarrow\\quad x=1200.\n        \\end{cases}\\]</span>\nLe seul point critique intérieur est donc <span>\\((1200,1000)\\)</span>.</p>\n<p>Pour étudier sa nature, on calcule le Hessien :\n<span>\\[H_c(x,y)=\n        \\begin{pmatrix}\n            \\frac{\\partial^2 c}{\\partial x^2}(x,y) &amp; \\frac{\\partial^2 c}{\\partial x \\partial y}(x,y)\\\\[1mm]\n            \\frac{\\partial^2 c}{\\partial y \\partial x}(x,y) &amp; \\frac{\\partial^2 c}{\\partial y^2}(x,y)\n        \\end{pmatrix}\n        =\n        \\begin{pmatrix}\n            0 &amp; -0.05\\\\[1mm]\n            -0.05 &amp; 0\n        \\end{pmatrix}.\\]</span>\nLe déterminant de ce Hessien est\n<span>\\[\\det H_c = 0\\cdot0 - (-0.05)^2 = -0.0025 &lt; 0,\\]</span>\nce qui caractérise un point selle en <span>\\((1200,1000)\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Étudier la fonction $c$ sur le bord du domaine en substituant une variable en fonction de l’autre.",
+      "html": "<p>Étudier la fonction <span>\\(c\\)</span> sur le bord du domaine en substituant une variable en fonction de l’autre.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "Sur le bord du domaine, la contrainte est $x+y=3000$. En posant $y=3000-x$, on définit la fonction d’une variable :\n\t\t$$\n\t\tf(x)=c\\bigl(x,3000-x\\bigr)=10000+50x+60(3000-x)-0.05x(3000-x).\n\t\t$$\n\t\tCalculons :\n\t\t$$\n\t\tf(x)=10000+50x+180000-60x-0.05\\bigl(3000x-x^2\\bigr)=190000-10x-150x+0.05x^2,\n\t\t$$\n\t\tsoit\n\t\t$$\n\t\tf(x)=190000-160x+0.05x^2,\\quad x\\in[0,3000].\n\t\t$$\n\t\t\n\t\tLa dérivée de $f$ est\n\t\t$$\n\t\tf'(x)=-160+0.1x.\n\t\t$$\n\t\tEn posant $f'(x)=0$, on trouve\n\t\t$$\n\t\t0.1x=160\\quad\\Longrightarrow\\quad x=1600.\n\t\t$$\n\t\tDonc, $y=3000-1600=1400$.  \n\t\t\n\t\tLa dérivée seconde vaut $f''(x)=0.1>0$, ce qui confirme que $x=1600$ est bien un minimum local sur le bord. Ainsi, pour minimiser le coût sur la frontière du domaine, l’usine doit produire $1600$ kg de type $A$ et $1400$ kg de type $B$.  \n\t\t\n\t\tLe coût minimal correspondant est\n\t\t$$\n\t\tc(1600,1400)=10000+50\\times1600+60\\times1400-0.05\\times1600\\times1400=62000\\text{ euros}.\n\t\t$$",
+      "html": "<p>Sur le bord du domaine, la contrainte est <span>\\(x+y=3000\\)</span>. En posant <span>\\(y=3000-x\\)</span>, on définit la fonction d’une variable :\n<span>\\[f(x)=c\\bigl(x,3000-x\\bigr)=10000+50x+60(3000-x)-0.05x(3000-x).\\]</span>\nCalculons :\n<span>\\[f(x)=10000+50x+180000-60x-0.05\\bigl(3000x-x^2\\bigr)=190000-10x-150x+0.05x^2,\\]</span>\nsoit\n<span>\\[f(x)=190000-160x+0.05x^2,\\quad x\\in[0,3000].\\]</span></p>\n<p>La dérivée de <span>\\(f\\)</span> est\n<span>\\[f&#39;(x)=-160+0.1x.\\]</span>\nEn posant <span>\\(f&#39;(x)=0\\)</span>, on trouve\n<span>\\[0.1x=160\\quad\\Longrightarrow\\quad x=1600.\\]</span>\nDonc, <span>\\(y=3000-1600=1400\\)</span>.</p>\n<p>La dérivée seconde vaut <span>\\(f&#39;&#39;(x)=0.1&gt;0\\)</span>, ce qui confirme que <span>\\(x=1600\\)</span> est bien un minimum local sur le bord. Ainsi, pour minimiser le coût sur la frontière du domaine, l’usine doit produire <span>\\(1600\\)</span> kg de type <span>\\(A\\)</span> et <span>\\(1400\\)</span> kg de type <span>\\(B\\)</span>.</p>\n<p>Le coût minimal correspondant est\n<span>\\[c(1600,1400)=10000+50\\times1600+60\\times1400-0.05\\times1600\\times1400=62000\\text{ euros}.\\]</span></p>",
+      "order": 9
+    }
+  ],
+  "artifacts": {
+    "tikz": [
+      {
+        "id": "tikz_d8Ru",
+        "type": "tikz",
+        "svg": "<svg viewBox=\"0 0 400 200\" class=\"tikz-error\" style=\"border: 2px dashed #dc3545; background: #f8d7da;\">\n    <rect width=\"400\" height=\"200\" fill=\"#f8d7da\" stroke=\"#dc3545\" stroke-width=\"2\" stroke-dasharray=\"5,5\"/>\n    <text x=\"200\" y=\"30\" text-anchor=\"middle\" font-family=\"monospace\" font-size=\"14\" fill=\"#721c24\">\n      TikZ Conversion Error\n    </text>\n    <text x=\"10\" y=\"60\" font-family=\"monospace\" font-size=\"10\" fill=\"#721c24\">\n      Error: LaTeX compilation failed:\nCompilation failed. Last lines:\n\\everyMPtoPDFconversion=\\toks44\n) (/usr/lo...\n    </text>\n    <text x=\"10\" y=\"90\" font-family=\"monospace\" font-size=\"9\" fill=\"#6c757d\">\n      Content:\n    </text>\n    <text x=\"10\" y=\"110\" font-family=\"monospace\" font-size=\"8\" fill=\"#6c757d\">\n      \\draw[thick,->] (-100,0) -- (3100,0) node[below right] {$x$ (kg)};\n\t\t\t\t\\draw[thick,->] (0,-100) -- (0,3100) node[above left] {$y$ (kg)};\n\t\t\t\t\\draw[ult...\n    </text>\n  </svg>"
+      }
+    ],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "2dcd25f59708e859f135951af5304a70de0d950259362b72599ecf04f3a238fa"
+}

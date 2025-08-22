@@ -1,0 +1,43 @@
+{
+  "uuid": "lCVu",
+  "title": "Déterminant d'un produit",
+  "chapter": "Déterminant, système linéaire",
+  "subchapter": "Calcul de déterminants",
+  "theme": "calcul déterminant",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-01-11",
+  "updated_at": "2025-08-22T13:04:01.989Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soient $A$ et $B$ deux matrices carrées telles que $\\det(AB)=-2, \\det(B)>0$, et $B=B^{-1}$.",
+      "html": "<p>Soient <span>\\(A\\)</span> et <span>\\(B\\)</span> deux matrices carrées telles que <span>\\(\\det(AB)=-2, \\det(B)&gt;0\\)</span>, et <span>\\(B=B^{-1}\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Déterminer $\\det(A)$.",
+      "html": "<p>Déterminer <span>\\(\\det(A)\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On a $\\operatorname{det}(A \\cdot B)=\\operatorname{det}(A) \\times \\operatorname{det}(B)=-2$, et $B=B^{-1} \\Rightarrow \\operatorname{det}(B)=\\operatorname{det}\\left(B^{-1}\\right)$.\nOr $\\operatorname{det}\\left(B^{-1}\\right)=(\\operatorname{det}(B))^{-1}$, aussi :\n$$\n\\operatorname{det}(B)=\\operatorname{det}\\left(B^{-1}\\right)=(\\operatorname{det}(B))^{-1}=\\frac{1}{\\operatorname{det}(B)} \\Leftrightarrow(\\operatorname{det}(B))^2=1 \\Leftrightarrow \\operatorname{det}(B)=\\pm 1\n$$\nPuisque $\\operatorname{det}(B)>0, \\operatorname{det}(B)=+1$ et $\\operatorname{det}(A)=-2$.",
+      "html": "<p>On a <span>\\(\\operatorname{det}(A \\cdot B)=\\operatorname{det}(A) \\times \\operatorname{det}(B)=-2\\)</span>, et <span>\\(B=B^{-1} \\Rightarrow \\operatorname{det}(B)=\\operatorname{det}\\left(B^{-1}\\right)\\)</span>.\nOr <span>\\(\\operatorname{det}\\left(B^{-1}\\right)=(\\operatorname{det}(B))^{-1}\\)</span>, aussi :\n<span>\\[\\operatorname{det}(B)=\\operatorname{det}\\left(B^{-1}\\right)=(\\operatorname{det}(B))^{-1}=\\frac{1}{\\operatorname{det}(B)} \\Leftrightarrow(\\operatorname{det}(B))^2=1 \\Leftrightarrow \\operatorname{det}(B)=\\pm 1\\]</span>\nPuisque <span>\\(\\operatorname{det}(B)&gt;0, \\operatorname{det}(B)=+1\\)</span> et <span>\\(\\operatorname{det}(A)=-2\\)</span>.</p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "61d86f044dff4bf54481f93eb613da9425b30d08b676a2eece76c2078ccec310"
+}

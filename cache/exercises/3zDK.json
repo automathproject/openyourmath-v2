@@ -1,0 +1,56 @@
+{
+  "uuid": "3zDK",
+  "title": "Application de la loi de Benford",
+  "chapter": "Statistique",
+  "subchapter": "Tests d'hypothèses, intervalle de confiance",
+  "theme": "statistiques, tests d'hypothèses",
+  "difficulty": null,
+  "author": "Maxime NGUYEN",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-12-10",
+  "updated_at": "2025-08-22T12:38:34.783Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "La loi de Benford, initialement appelée loi des nombres anormaux par Benford, fait référence à une fréquence de distribution statistique observée empiriquement sur de nombreuses sources de données dans la vraie vie, ainsi qu’en mathématiques. Dans une série de données numériques, on pourrait s’attendre à voir les chiffres de 1 à 9 apparaître à peu près aussi fréquemment comme premier chiffre significatif, soit avec une fréquence de $1/9 = 11,1\\%$ pour chacun. Or, contrairement à cette intuition (biais d’équiprobabilité), la série suit très souvent approximativement la loi de Benford :\n\n\n\n\\def\\yscale{0.2}\n\n\n\\def\\barwidth{0.5}\n\n\n\\def\\data{{1/30.10},{2/17.61},{3/12.49},{4/9.69},{5/7.92},{6/6.69},{7/5.80},{8/5.12},{9/4.58}}\n\n\\begin{center}\n__TIKZ_tikz_gDqy__\n\\end{center}\n\nCette loi est utilisée notamment dans la détection des fraudes. \n\nEn 2019, le mathématicien Mickäel Launay a relevé 1226 prix dans un supermarché, et a obtenu comme fréquences successives pour les premiers chiffres de 1 à 9 : 32\\%, 26\\%, 15\\%, 9\\%, 5\\%, 4\\%, 3\\%, 2\\%, 4\\%.",
+      "html": "La loi de Benford, initialement appelée loi des nombres anormaux par Benford, fait référence à une fréquence de distribution statistique observée empiriquement sur de nombreuses sources de données dans la vraie vie, ainsi qu’en mathématiques. Dans une série de données numériques, on pourrait s’attendre à voir les chiffres de 1 à 9 apparaître à peu près aussi fréquemment comme premier chiffre significatif, soit avec une fréquence de $1/9 = 11,1\\%$ pour chacun. Or, contrairement à cette intuition (biais d’équiprobabilité), la série suit très souvent approximativement la loi de Benford :</p><p></p><p>\\def\\yscale{0.2}</p><p>\n\\def\\barwidth{0.5}</p><p>\n\\def\\data{{1/30.10},{2/17.61},{3/12.49},{4/9.69},{5/7.92},{6/6.69},{7/5.80},{8/5.12},{9/4.58}}</p><p>\\begin{center}\n<svg viewBox=\"0 0 400 200\" class=\"tikz-error\" style=\"border: 2px dashed #dc3545; background: #f8d7da;\">\n    <rect width=\"400\" height=\"200\" fill=\"#f8d7da\" stroke=\"#dc3545\" stroke-width=\"2\" stroke-dasharray=\"5,5\"/>\n    <text x=\"200\" y=\"30\" text-anchor=\"middle\" font-family=\"monospace\" font-size=\"14\" fill=\"#721c24\">\n      TikZ Conversion Error\n    </text>\n    <text x=\"10\" y=\"60\" font-family=\"monospace\" font-size=\"10\" fill=\"#721c24\">\n      Error: LaTeX compilation failed:\nUndefined Command: Undefined control sequence.\n    </text>\n    <text x=\"10\" y=\"90\" font-family=\"monospace\" font-size=\"9\" fill=\"#6c757d\">\n      Content:\n    </text>\n    <text x=\"10\" y=\"110\" font-family=\"monospace\" font-size=\"8\" fill=\"#6c757d\">\n      % Axe Y de 0 à 35% -> 35 * 0.2 = 7 cm\n\\draw[->,thick] (0.5,0) -- (0.5,7.5) node[above]{Fréquence (\\%)};\n\n% Graduations Y : 0 à 35% par pas de 5%\n\\fore...\n    </text>\n  </svg>\n\\end{center}</p><p>Cette loi est utilisée notamment dans la détection des fraudes. </p><p>En 2019, le mathématicien Mickäel Launay a relevé 1226 prix dans un supermarché, et a obtenu comme fréquences successives pour les premiers chiffres de 1 à 9 : 32\\%, 26\\%, 15\\%, 9\\%, 5\\%, 4\\%, 3\\%, 2\\%, 4\\%.",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Avec un risque de première espèce de 5\\%, peut-on affirmer que l’observation du mathématicien est incompatible avec la loi de Benford ?",
+      "html": "<p>Avec un risque de première espèce de 5%, peut-on affirmer que l’observation du mathématicien est incompatible avec la loi de Benford ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "Effectuer un test du $\\chi^2$ pour comparer les fréquences observées avec celles attendues selon la loi de Benford.",
+      "html": "<p>Effectuer un test du <span>\\(\\chi^2\\)</span> pour comparer les fréquences observées avec celles attendues selon la loi de Benford.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "À compléter.",
+      "html": "<p>À compléter.</p>",
+      "order": 4
+    }
+  ],
+  "artifacts": {
+    "tikz": [
+      {
+        "id": "tikz_gDqy",
+        "type": "tikz",
+        "svg": "<svg viewBox=\"0 0 400 200\" class=\"tikz-error\" style=\"border: 2px dashed #dc3545; background: #f8d7da;\">\n    <rect width=\"400\" height=\"200\" fill=\"#f8d7da\" stroke=\"#dc3545\" stroke-width=\"2\" stroke-dasharray=\"5,5\"/>\n    <text x=\"200\" y=\"30\" text-anchor=\"middle\" font-family=\"monospace\" font-size=\"14\" fill=\"#721c24\">\n      TikZ Conversion Error\n    </text>\n    <text x=\"10\" y=\"60\" font-family=\"monospace\" font-size=\"10\" fill=\"#721c24\">\n      Error: LaTeX compilation failed:\nUndefined Command: Undefined control sequence.\n    </text>\n    <text x=\"10\" y=\"90\" font-family=\"monospace\" font-size=\"9\" fill=\"#6c757d\">\n      Content:\n    </text>\n    <text x=\"10\" y=\"110\" font-family=\"monospace\" font-size=\"8\" fill=\"#6c757d\">\n      % Axe Y de 0 à 35% -> 35 * 0.2 = 7 cm\n\\draw[->,thick] (0.5,0) -- (0.5,7.5) node[above]{Fréquence (\\%)};\n\n% Graduations Y : 0 à 35% par pas de 5%\n\\fore...\n    </text>\n  </svg>"
+      }
+    ],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "96f6240a18f7316742d137b5f4b4b337feec7b834b45becf85f344165cb2cd93"
+}

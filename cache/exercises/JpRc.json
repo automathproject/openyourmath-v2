@@ -1,0 +1,36 @@
+{
+  "uuid": "JpRc",
+  "title": "Loi d'une variable aléatoire discrète",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Variable aléatoire discrète",
+  "theme": "variables aléatoires discrètes",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-07-05",
+  "updated_at": "2025-08-22T12:39:20.520Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "Soit $X$ une variable aléatoire discrète telle que $X(\\Omega)=\\{3,4,5,6\\}$ telle que : \n$$\\prob(X<5)=\\frac{1}{6}, \\quad \\prob(X>5)=\\frac{1}{2}, \\quad \\prob(X\\leq 3)=\\prob(X=4).$$\nDéterminer la loi de $X$ et calculer son espérance.",
+      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire discrète telle que <span>\\(X(\\Omega)=\\{3,4,5,6\\}\\)</span> telle que :\n<span>\\[\\prob(X&lt;5)=\\frac{1}{6}, \\quad \\prob(X&gt;5)=\\frac{1}{2}, \\quad \\prob(X\\leq 3)=\\prob(X=4).\\]</span>\nDéterminer la loi de <span>\\(X\\)</span> et calculer son espérance.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "reponse",
+      "latex": "\\begin{itemize}\n    \\item $\\prob(X>5)=\\prob(X=6)=\\frac{1}{2}$ \n \\item $1=\\prob(X<5)+\\prob(X=5)+\\prob(X>5)$ donc $\\prob(X=5)=1-\\frac{1}{6}-\\frac{1}{2}=\\frac{1}{3}$\n \\item $\\prob(X\\leq 3)=\\prob(X=3)=\\prob(X=4)$ et $\\frac{1}{6}=\\prob(X<5)=\\prob(X=3)+\\prob(X=4)$ donc $\\prob(X=3)=\\prob(X=4)=\\frac{1}{12}$\n\\end{itemize}\nOn a ainsi déterminé la loi de $X$ : \\quad \n\\begin{tabular}{|c|c|c|c|c|}\n\\hline\n $\\omega$ & 3 & 4 & 5 & 6 \\\\\n\\hline\n $\\prob(\\omega)$ & $\\frac{1}{12}$ & $\\frac{1}{12}$ & $\\frac{1}{3}$ & $\\frac{1}{2}$ \\\\\n\\hline\n\\end{tabular}\nL'espérance de $X$ est:\n\\[ \\E(X)=3\\times \\prob(X=3)+4\\times\\prob(X=4)+5\\times\\prob(X=5)+6\\times\\prob(X=6) = \\frac{21}{4}=5.25\\]",
+      "html": "<ul>\n<li><p><span>\\(\\prob(X&gt;5)=\\prob(X=6)=\\frac{1}{2}\\)</span></p></li>\n<li><p><span>\\(1=\\prob(X&lt;5)+\\prob(X=5)+\\prob(X&gt;5)\\)</span> donc <span>\\(\\prob(X=5)=1-\\frac{1}{6}-\\frac{1}{2}=\\frac{1}{3}\\)</span></p></li>\n<li><p><span>\\(\\prob(X\\leq 3)=\\prob(X=3)=\\prob(X=4)\\)</span> et <span>\\(\\frac{1}{6}=\\prob(X&lt;5)=\\prob(X=3)+\\prob(X=4)\\)</span> donc <span>\\(\\prob(X=3)=\\prob(X=4)=\\frac{1}{12}\\)</span></p></li>\n</ul>\n<p>On a ainsi déterminé la loi de <span>\\(X\\)</span> :</p>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><span>\\(\\omega\\)</span></th>\n<th style=\"text-align: center;\">3</th>\n<th style=\"text-align: center;\">4</th>\n<th style=\"text-align: center;\">5</th>\n<th style=\"text-align: center;\">6</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><span>\\(\\prob(\\omega)\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{12}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{12}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{3}\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\frac{1}{2}\\)</span></td>\n</tr>\n</tbody>\n</table>\n<p>L’espérance de <span>\\(X\\)</span> est:\n<span>\\[\\E(X)=3\\times \\prob(X=3)+4\\times\\prob(X=4)+5\\times\\prob(X=5)+6\\times\\prob(X=6) = \\frac{21}{4}=5.25\\]</span></p>",
+      "order": 2
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "c637937f1b1e003e8f0a2cd593c9e09c9a36b574d33dda4ccf48a54221f1b319"
+}

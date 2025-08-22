@@ -1,0 +1,99 @@
+{
+  "uuid": "PPhD",
+  "title": "Etude d'une variable aléatoire à densité",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité",
+  "difficulty": null,
+  "author": "Maxime Nguyen",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-18",
+  "updated_at": "2025-08-22T13:02:54.996Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $X$ une variable aléatoire absolument continue de densité $f$ définie sur $\\R$ par :\n$$f_X \\colon x \\mapsto \\begin{cases}\n    kx^2 & \\text{si } x \\in [-1;1] \\\\\n    0 & \\text{sinon}\n\\end{cases}$$",
+      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire absolument continue de densité <span>\\(f\\)</span> définie sur <span>\\(\\R\\)</span> par :\n<span>\\[f_X \\colon x \\mapsto \\begin{cases}\n    kx^2 &amp; \\text{si } x \\in [-1;1] \\\\\n    0 &amp; \\text{sinon}\n\\end{cases}\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Déterminer la valeur de $k$.",
+      "html": "<p>Déterminer la valeur de <span>\\(k\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Pour que $f_X$ soit une densité, il faut que $\\int_{\\R} f_X(x) dx = 1$. On a donc :\n    $$\\begin{align*}\n        \\int_{\\R} f_X(x) dx &= \\int_{-1}^1 kx^2 dx \\\\\n        &= \\left[ \\frac{k}{3}x^3 \\right]_{-1}^1 \\\\\n        &= \\frac{2k}{3} = 1\n    \\end{align*}$$\n    Donc $k = \\frac{3}{2}$.",
+      "html": "<p>Pour que <span>\\(f_X\\)</span> soit une densité, il faut que <span>\\(\\int_{\\R} f_X(x) dx = 1\\)</span>. On a donc :\n<span>\\[\\begin{align*}\n        \\int_{\\R} f_X(x) dx &amp;= \\int_{-1}^1 kx^2 dx \\\\\n        &amp;= \\left[ \\frac{k}{3}x^3 \\right]_{-1}^1 \\\\\n        &amp;= \\frac{2k}{3} = 1\n    \\end{align*}\\]</span>\nDonc <span>\\(k = \\frac{3}{2}\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Déterminer la fonction de répartition $F_X$ de $X$.",
+      "html": "<p>Déterminer la fonction de répartition <span>\\(F_X\\)</span> de <span>\\(X\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "$$\\begin{align*}\n        F_X \\colon t \\mapsto \\begin{cases}\n            0 & \\text{si } t < -1 \\\\\n            \\frac{3}{2} \\int_{-1}^t x^2 dx & \\text{si } t \\in [-1;1] \\\\\n            1 & \\text{si } t > 1\n        \\end{cases}\n    \\end{align*}$$\n    donc :\n    $$\\begin{align*}\n        F_X \\colon x \\mapsto \\begin{cases}\n            0 & \\text{si } t < -1 \\\\\n            \\frac{1}{2}t^3 + \\frac{1}{2} & \\text{si } t \\in [-1;1] \\\\\n            1 & \\text{si } t > 1\n        \\end{cases}\n    \\end{align*}$$",
+      "html": "<p><span>\\[\\begin{align*}\n        F_X \\colon t \\mapsto \\begin{cases}\n            0 &amp; \\text{si } t &lt; -1 \\\\\n            \\frac{3}{2} \\int_{-1}^t x^2 dx &amp; \\text{si } t \\in [-1;1] \\\\\n            1 &amp; \\text{si } t &gt; 1\n        \\end{cases}\n    \\end{align*}\\]</span>\ndonc :\n<span>\\[\\begin{align*}\n        F_X \\colon x \\mapsto \\begin{cases}\n            0 &amp; \\text{si } t &lt; -1 \\\\\n            \\frac{1}{2}t^3 + \\frac{1}{2} &amp; \\text{si } t \\in [-1;1] \\\\\n            1 &amp; \\text{si } t &gt; 1\n        \\end{cases}\n    \\end{align*}\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Calculer la probabilité conditionnelle $\\prob(X \\leq \\frac{1}{2} \\mid X > 0)$.",
+      "html": "<p>Calculer la probabilité conditionnelle <span>\\(\\prob(X \\leq \\frac{1}{2} \\mid X &gt; 0)\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "D'après la formule des probabilités conditionnelles, on a :\n$$\\begin{align*}\n    \\prob(X \\leq \\frac{1}{2} \\mid X > 0) &= \\frac{\\prob(X \\leq \\frac{1}{2} \\cap X > 0)}{\\prob(X > 0)} \\\\\n    &= \\frac{\\prob(0 < X \\leq \\frac{1}{2})}{\\prob(X > 0)}\n\\end{align*}$$\nOr $\\prob(X>0) = 1 - \\prob(X \\leq 0) = 1 - F_X(0) = 1 - \\frac{1}{2} = \\frac{1}{2}$ et : \n$$\\begin{align*}\n    \\prob(0 < X \\leq \\frac{1}{2}) &= F_X(\\frac{1}{2}) - F_X(0) \\\\\n    &= \\frac{1}{2}(\\frac{1}{2})^3 + \\frac{1}{2} - \\frac{1}{2} \\\\\n    &= \\frac{1}{16} \n\\end{align*}$$\nDonc $\\prob(X \\leq \\frac{1}{2} \\mid X > 0) = \\frac{\\frac{1}{16}}{\\frac{1}{2}} = \\frac{1}{8}$.",
+      "html": "<p>D’après la formule des probabilités conditionnelles, on a :\n<span>\\[\\begin{align*}\n    \\prob(X \\leq \\frac{1}{2} \\mid X &gt; 0) &amp;= \\frac{\\prob(X \\leq \\frac{1}{2} \\cap X &gt; 0)}{\\prob(X &gt; 0)} \\\\\n    &amp;= \\frac{\\prob(0 &lt; X \\leq \\frac{1}{2})}{\\prob(X &gt; 0)}\n\\end{align*}\\]</span>\nOr <span>\\(\\prob(X&gt;0) = 1 - \\prob(X \\leq 0) = 1 - F_X(0) = 1 - \\frac{1}{2} = \\frac{1}{2}\\)</span> et :\n<span>\\[\\begin{align*}\n    \\prob(0 &lt; X \\leq \\frac{1}{2}) &amp;= F_X(\\frac{1}{2}) - F_X(0) \\\\\n    &amp;= \\frac{1}{2}(\\frac{1}{2})^3 + \\frac{1}{2} - \\frac{1}{2} \\\\\n    &amp;= \\frac{1}{16} \n\\end{align*}\\]</span>\nDonc <span>\\(\\prob(X \\leq \\frac{1}{2} \\mid X &gt; 0) = \\frac{\\frac{1}{16}}{\\frac{1}{2}} = \\frac{1}{8}\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Calculer $\\E(X)$ et $\\var(X)$.",
+      "html": "<p>Calculer <span>\\(\\E(X)\\)</span> et <span>\\(\\var(X)\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "$$\\begin{align*}\n        \\E(X) &= \\int_{\\R} xf_X(x) dx \\\\\n        &= \\int_{-1}^1 x \\frac{3}{2}x^2 dx \\\\\n        &= \\left[ \\frac{3}{8}x^4 \\right]_{-1}^1 \\\\\n        &= 0\n    \\end{align*}$$\n    D'après le théorème de transfert, on a : \n    $$\\begin{align*}\n        \\E(X^2) &= \\int_{\\R} x^2 f_X(x) dx \\\\\n        &= \\int_{-1}^1 x^2 \\frac{3}{2}x^2 dx \\\\\n        &= \\left[ \\frac{3}{10}x^5 \\right]_{-1}^1 \\\\\n        &= \\frac{3}{5}\n    \\end{align*}$$\n    Donc $\\var(X) = \\E(X^2) - \\E(X)^2 = \\frac{3}{5}$.",
+      "html": "<p><span>\\[\\begin{align*}\n        \\E(X) &amp;= \\int_{\\R} xf_X(x) dx \\\\\n        &amp;= \\int_{-1}^1 x \\frac{3}{2}x^2 dx \\\\\n        &amp;= \\left[ \\frac{3}{8}x^4 \\right]_{-1}^1 \\\\\n        &amp;= 0\n    \\end{align*}\\]</span>\nD’après le théorème de transfert, on a :\n<span>\\[\\begin{align*}\n        \\E(X^2) &amp;= \\int_{\\R} x^2 f_X(x) dx \\\\\n        &amp;= \\int_{-1}^1 x^2 \\frac{3}{2}x^2 dx \\\\\n        &amp;= \\left[ \\frac{3}{10}x^5 \\right]_{-1}^1 \\\\\n        &amp;= \\frac{3}{5}\n    \\end{align*}\\]</span>\nDonc <span>\\(\\var(X) = \\E(X^2) - \\E(X)^2 = \\frac{3}{5}\\)</span>.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "Soit $Y = X^2$. Déterminer la fonction de répartition $F_Y$ de $Y$ et en déduire sa densité.",
+      "html": "<p>Soit <span>\\(Y = X^2\\)</span>. Déterminer la fonction de répartition <span>\\(F_Y\\)</span> de <span>\\(Y\\)</span> et en déduire sa densité.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "reponse",
+      "latex": "Par définition, si $t \\in \\R$ alors $F_Y(t) = \\prob(Y \\leq t) = \\prob(X^2 \\leq t)$. Donc : \n    $$F_Y(t) = \\begin{cases}\n        0 & \\text{si } t < 0 \\\\\n        \\prob(-\\sqrt{t} \\leq X \\leq \\sqrt{t}) & \\text{si } t \\geq 0\n    \\end{cases}$$\n    Or si $t \\geq 0$, $\\prob(-\\sqrt{t} \\leq X \\leq \\sqrt{t}) = F_X(\\sqrt{t}) - F_X(-\\sqrt{t}) = \\begin{cases}\n        1 & \\text{si } t \\geq 1 \\\\\n        \\left[ \\frac{1}{2} x^3 \\right]_{-\\sqrt{t}}^{\\sqrt{t}} = t\\sqrt{t} & \\text{si } t \\in [0;1]\n    \\end{cases}$.\n\n    En définitive, $$F_Y(t) = \\begin{cases}\n        0 & \\text{si } t < 0 \\\\\n        t\\sqrt{t} & \\text{si } t \\in [0;1] \\\\\n        1 & \\text{si } t \\geq 1\n    \\end{cases}$$\nPar dérivation de la fonction de répartition, on obtient la densité de $Y$ : \n$$f_Y(t) = \\begin{cases}\n    \\frac{3}{2}\\sqrt{t} & \\text{si } t \\in [0;1] \\\\\n    0 & \\text{sinon}\n\\end{cases}$$",
+      "html": "<p>Par définition, si <span>\\(t \\in \\R\\)</span> alors <span>\\(F_Y(t) = \\prob(Y \\leq t) = \\prob(X^2 \\leq t)\\)</span>. Donc :\n<span>\\[F_Y(t) = \\begin{cases}\n        0 &amp; \\text{si } t &lt; 0 \\\\\n        \\prob(-\\sqrt{t} \\leq X \\leq \\sqrt{t}) &amp; \\text{si } t \\geq 0\n    \\end{cases}\\]</span>\nOr si <span>\\(t \\geq 0\\)</span>, <span>\\(\\prob(-\\sqrt{t} \\leq X \\leq \\sqrt{t}) = F_X(\\sqrt{t}) - F_X(-\\sqrt{t}) = \\begin{cases}\n        1 &amp; \\text{si } t \\geq 1 \\\\\n        \\left[ \\frac{1}{2} x^3 \\right]_{-\\sqrt{t}}^{\\sqrt{t}} = t\\sqrt{t} &amp; \\text{si } t \\in [0;1]\n    \\end{cases}\\)</span>.</p>\n<p>En définitive, <span>\\[F_Y(t) = \\begin{cases}\n        0 &amp; \\text{si } t &lt; 0 \\\\\n        t\\sqrt{t} &amp; \\text{si } t \\in [0;1] \\\\\n        1 &amp; \\text{si } t \\geq 1\n    \\end{cases}\\]</span>\nPar dérivation de la fonction de répartition, on obtient la densité de <span>\\(Y\\)</span> :\n<span>\\[f_Y(t) = \\begin{cases}\n    \\frac{3}{2}\\sqrt{t} &amp; \\text{si } t \\in [0;1] \\\\\n    0 &amp; \\text{sinon}\n\\end{cases}\\]</span></p>",
+      "order": 11
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "ac79ac2a9c39f364afeb4d7c7e424d64f44d1ed92972b56750c8ffe133234af9"
+}

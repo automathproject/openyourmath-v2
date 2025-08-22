@@ -1,0 +1,43 @@
+{
+  "uuid": "ItUH",
+  "title": "Propriétés de la loi normale centrée réduite",
+  "chapter": "Probabilité continue",
+  "subchapter": "Loi normale",
+  "theme": "loi normale",
+  "difficulty": null,
+  "author": "Maxime NGUYEN",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-10-17",
+  "updated_at": "2025-08-22T12:39:18.579Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit  $Z$ une variable aléatoire suivant une loi normale centrée réduite $\\mathcal{N}(0,1)$.",
+      "html": "<p>Soit <span>\\(Z\\)</span> une variable aléatoire suivant une loi normale centrée réduite <span>\\(\\mathcal{N}(0,1)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Justifier que $\\PP(Z>0) = \\frac{1}{2}$ et que pour tout réel $a \\in \\R$, $\\PP(Z<-a) = \\PP(Z>a)$.",
+      "html": "<p>Justifier que <span>\\(\\PP(Z&gt;0) = \\frac{1}{2}\\)</span> et que pour tout réel <span>\\(a \\in \\R\\)</span>, <span>\\(\\PP(Z&lt;-a) = \\PP(Z&gt;a)\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On sait que $\\PP(Z>0) = \\int_0^{+\\infty} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{x^2}{2}} dx = \\frac{1}{2} \\int_{-\\infty}^{+\\infty} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{x^2}{2}} dx$ par parité de la fonction intégrée. Or $\\int_{-\\infty}^{+\\infty} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{x^2}{2}} dx$ d'où le premier résultat.\n\nDe même, on a par changement de variable $u=-x$ et parité : $$\\PP(Z<-a) = \\int_{-\\infty}^{-a} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{x^2}{2}} dx = -\\int_{+\\infty}^{a} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{u^2}{2}} du = \\int^{+\\infty}_{a} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{u^2}{2}} du = \\PP(Z>a)$$",
+      "html": "<p>On sait que <span>\\(\\PP(Z&gt;0) = \\int_0^{+\\infty} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{x^2}{2}} dx = \\frac{1}{2} \\int_{-\\infty}^{+\\infty} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{x^2}{2}} dx\\)</span> par parité de la fonction intégrée. Or <span>\\(\\int_{-\\infty}^{+\\infty} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{x^2}{2}} dx\\)</span> d’où le premier résultat.</p>\n<p>De même, on a par changement de variable <span>\\(u=-x\\)</span> et parité : <span>\\[\\PP(Z&lt;-a) = \\int_{-\\infty}^{-a} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{x^2}{2}} dx = -\\int_{+\\infty}^{a} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{u^2}{2}} du = \\int^{+\\infty}_{a} \\frac{1}{\\sqrt{2\\pi}}\\;\\; \\mathrm{e}^{-\\frac{u^2}{2}} du = \\PP(Z&gt;a)\\]</span></p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "3fb88298b7d8650d7366482d928f1785ce57599214a75a26f1049c9726145f51"
+}

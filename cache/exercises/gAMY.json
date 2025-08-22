@@ -1,0 +1,29 @@
+{
+  "uuid": "gAMY",
+  "title": "Puissance d'une matrice à paramètres",
+  "chapter": "Matrice",
+  "subchapter": "Autre",
+  "theme": "calcul matriciel",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-01-31",
+  "updated_at": "2025-08-22T12:40:22.016Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit la matrice de  $M_{\\alpha,\\beta} = \\begin{pmatrix} \\alpha & 0 & -1  \\\\\n    2 & \\alpha & \\beta\\\\\n    -3-\\beta & -1 & \\alpha \\\\\n    \\end{pmatrix} \\in \\mathcal{M}_{3}(\\R)$.",
+      "html": "<p>Soit la matrice de <span>\\(M_{\\alpha,\\beta} = \\begin{pmatrix} \\alpha &amp; 0 &amp; -1  \\\\\n    2 &amp; \\alpha &amp; \\beta\\\\\n    -3-\\beta &amp; -1 &amp; \\alpha \\\\\n    \\end{pmatrix} \\in \\mathcal{M}_{3}(\\R)\\)</span>.</p>",
+      "order": 1
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "36651787b5d7f5e47fbeb31f7119bb8d75c9030f22c7bf6a5dbcbc58ad8b2bed"
+}

@@ -1,0 +1,85 @@
+{
+  "uuid": "DMpD",
+  "title": "Dérivées partielles",
+  "chapter": "Fonction de plusieurs variables",
+  "subchapter": "Dérivée partielle",
+  "theme": "calcul différentiel",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-03-09",
+  "updated_at": "2025-08-22T13:02:32.739Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit la fonction $V \\colon \\R^2 \\to \\R$ définie par $$V(r,\\theta) = \\dfrac{\\cos \\theta}{r^2}$$",
+      "html": "<p>Soit la fonction <span>\\(V \\colon \\R^2 \\to \\R\\)</span> définie par <span>\\[V(r,\\theta) = \\dfrac{\\cos \\theta}{r^2}\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Donner l'ensemble de définition de $V$.",
+      "html": "<p>Donner l’ensemble de définition de <span>\\(V\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "$\\mathcal{D}_V = \\R^* \\times \\R$",
+      "html": "<p><span>\\(\\mathcal{D}_V = \\R^* \\times \\R\\)</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Calculer les dérivées partielles $\\dpa{V}{r}$ et $\\dpa{V}{\\theta}$.",
+      "html": "<p>Calculer les dérivées partielles <span>\\(\\dpa{V}{r}\\)</span> et <span>\\(\\dpa{V}{\\theta}\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "pour $(r,\\theta) \\in \\mathcal{D}_V$, on a \n\t\t\t\\[ \\dpa{V}{r} = -\\frac{2}{r^3}\\cos\\theta, \\ \\ \\dpa{V}{\\theta} = -\\frac{1}{r^2}\\sin\\theta \\]",
+      "html": "<p>pour <span>\\((r,\\theta) \\in \\mathcal{D}_V\\)</span>, on a\n<span>\\[\\dpa{V}{r} = -\\frac{2}{r^3}\\cos\\theta, \\ \\ \\dpa{V}{\\theta} = -\\frac{1}{r^2}\\sin\\theta\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Calculer les dérivées partielles secondes $\\dpsp{V}{r}$, $\\dpa{V}{\\theta}$ et $\\dpsm{V}{r}{\\theta}$.",
+      "html": "<p>Calculer les dérivées partielles secondes <span>\\(\\dpsp{V}{r}\\)</span>, <span>\\(\\dpa{V}{\\theta}\\)</span> et <span>\\(\\dpsm{V}{r}{\\theta}\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "pour $(r,\\theta) \\in \\mathcal{D}_V$, on a\n\t\t\t$$\\begin{align*} \n\t\t\t\\dpsp{V}{r} &= \\dpa{}{r}\\left[ -\\frac{2}{r^3}\\cos\\theta \\right] = \\frac{6}{r^4}\\cos\\theta \\\\\n\t\t\t\\dpsp{V}{\\theta} &= \\dpa{}{\\theta}\\left[ -\\frac{1}{r^2}\\sin\\theta \\right] = -\\frac{1}{r^2}\\cos\\theta \\\\\n\t\t\t\\dpsm{V}{r}{\\theta} &= \\dpa{}{r}\\left[ -\\frac{1}{r^2}\\sin\\theta \\right] = \\frac{2}{r^3}\\sin\\theta\n\t\t\t\\end{align*}$$",
+      "html": "<p>pour <span>\\((r,\\theta) \\in \\mathcal{D}_V\\)</span>, on a\n<span>\\[\\begin{align*} \n            \\dpsp{V}{r} &amp;= \\dpa{}{r}\\left[ -\\frac{2}{r^3}\\cos\\theta \\right] = \\frac{6}{r^4}\\cos\\theta \\\\\n            \\dpsp{V}{\\theta} &amp;= \\dpa{}{\\theta}\\left[ -\\frac{1}{r^2}\\sin\\theta \\right] = -\\frac{1}{r^2}\\cos\\theta \\\\\n            \\dpsm{V}{r}{\\theta} &amp;= \\dpa{}{r}\\left[ -\\frac{1}{r^2}\\sin\\theta \\right] = \\frac{2}{r^3}\\sin\\theta\n            \\end{align*}\\]</span></p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "En déduire que $$\\sin \\theta \\ \\dpa{}{r} \\left[ r^2 \\dpa{V}{r} \\right]  + \\dpa{}{\\theta} \\left[ \\sin \\theta \\dpa{V}{\\theta} \\right]  = 0.$$",
+      "html": "<p>En déduire que <span>\\[\\sin \\theta \\ \\dpa{}{r} \\left[ r^2 \\dpa{V}{r} \\right]  + \\dpa{}{\\theta} \\left[ \\sin \\theta \\dpa{V}{\\theta} \\right]  = 0.\\]</span></p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "On a\n\t\t\t\\begin{eqnarray*}\n\t\t\t\t\\sin \\theta \\ \\dpa{}{r} \\left[ r^2 \\dpa{V}{r} \\right]  + \\dpa{}{\\theta} \\left[ \\sin \\theta \\dpa{V}{\\theta} \\right]\n\t\t\t\t&= \\sin\\theta \\left[ 2r \\dpa{V}{r} + r^2 \\dpsp{V}{r} \\right] + \\left[ \\cos\\theta \\dpa{V}{\\theta} + \\sin\\theta \\dpsp{V}{\\theta} \\right] \\\\\n\t\t\t\t&= \\sin\\theta \\left[ 2r (-\\frac{2}{r^3}\\cos\\theta) + r^2 \\frac{6}{r^4}\\cos\\theta \\right] + \\left[ \\cos\\theta (-\\frac{1}{r^2}\\sin\\theta) + \\sin\\theta (-\\frac{1}{r^2}\\cos\\theta) \\right] \\\\\n\t\t\t\t&= \\frac{\\cos\\theta\\sin\\theta}{r^2}(-4+ 6-1-1) \\\\\n\t\t\t\t&= 0\n\t\t\\end{eqnarray*}",
+      "html": "<p>On a\n<span>\\[\\begin{aligned}\n                \\sin \\theta \\ \\dpa{}{r} \\left[ r^2 \\dpa{V}{r} \\right]  + \\dpa{}{\\theta} \\left[ \\sin \\theta \\dpa{V}{\\theta} \\right]\n                &amp;= \\sin\\theta \\left[ 2r \\dpa{V}{r} + r^2 \\dpsp{V}{r} \\right] + \\left[ \\cos\\theta \\dpa{V}{\\theta} + \\sin\\theta \\dpsp{V}{\\theta} \\right] \\\\\n                &amp;= \\sin\\theta \\left[ 2r (-\\frac{2}{r^3}\\cos\\theta) + r^2 \\frac{6}{r^4}\\cos\\theta \\right] + \\left[ \\cos\\theta (-\\frac{1}{r^2}\\sin\\theta) + \\sin\\theta (-\\frac{1}{r^2}\\cos\\theta) \\right] \\\\\n                &amp;= \\frac{\\cos\\theta\\sin\\theta}{r^2}(-4+ 6-1-1) \\\\\n                &amp;= 0\n        \\end{aligned}\\]</span></p>",
+      "order": 9
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "a98cf0a6902dda0de23c5a424c80c8a0f58eae0e90c05d7d7a90f6696d62e52a"
+}

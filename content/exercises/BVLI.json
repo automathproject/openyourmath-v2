@@ -1,0 +1,71 @@
+{
+  "uuid": "BVLI",
+  "title": "Optimisation sans contrainte",
+  "chapter": "Fonction de plusieurs variables",
+  "subchapter": "Extremums locaux",
+  "theme": "optimisation",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-10-15",
+  "updated_at": "2025-08-22T13:02:22.580Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère la fonction $f$ définie sur $\\mathbb{R}^2$ par :\n$$f(x,y) = x^4 + y^4 - 2(x - y)^2$$",
+      "html": "<p>On considère la fonction <span>\\(f\\)</span> définie sur <span>\\(\\mathbb{R}^2\\)</span> par :\n<span>\\[f(x,y) = x^4 + y^4 - 2(x - y)^2\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Montrer qu’il existe $(\\alpha, \\beta) \\in \\mathbb{R}_+^2$ (et les déterminer) tels que\n  $$\n  f(x, y) \\geq \\alpha \\|(x, y)\\|^2 + \\beta\n  $$\n  pour tous $(x, y) \\in \\mathbb{R}^2$, où $\\|(x, y)\\|$ désigne la norme euclidienne de $\\mathbb{R}^2$. En déduire que le problème\n$$\n  \\inf_{(x,y) \\in \\mathbb{R}^2} f(x, y)\n$$\n  possède au moins une solution.",
+      "html": "<p>Montrer qu’il existe <span>\\((\\alpha, \\beta) \\in \\mathbb{R}_+^2\\)</span> (et les déterminer) tels que\n<span>\\[f(x, y) \\geq \\alpha \\|(x, y)\\|^2 + \\beta\\]</span>\npour tous <span>\\((x, y) \\in \\mathbb{R}^2\\)</span>, où <span>\\(\\|(x, y)\\|\\)</span> désigne la norme euclidienne de <span>\\(\\mathbb{R}^2\\)</span>. En déduire que le problème\n<span>\\[\\inf_{(x,y) \\in \\mathbb{R}^2} f(x, y)\\]</span>\npossède au moins une solution.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "La fonction $f$ est donnée par $f(x, y) = x^4 + y^4 - 2(x - y)^2$. Puisque $f$ est une fonction polynomiale, elle est de classe $C^\\infty$ sur $\\mathbb{R}^2$. En utilisant l'inégalité $xy \\geq -\\frac{1}{2}(x^2 + y^2)$, on peut écrire :\n  \\[\n  f(x, y) \\geq x^4 + y^4 - 2x^2 - 2y^2 + 4xy \\geq x^4 + y^4 - 4x^2 - 4y^2.\n  \\]\n  Choisissant $\\alpha = 2$ et $\\beta = -16$, on obtient que $f(x, y) \\geq \\alpha \\|(x, y)\\|^2 + \\beta$. Cela montre que $f$ est coercive sur $\\mathbb{R}^2$, et d'après le théorème de Weierstrass, le problème $\\inf_{(x,y)\\in \\mathbb{R}^2} f(x, y)$ possède au moins une solution.",
+      "html": "<p>La fonction <span>\\(f\\)</span> est donnée par <span>\\(f(x, y) = x^4 + y^4 - 2(x - y)^2\\)</span>. Puisque <span>\\(f\\)</span> est une fonction polynomiale, elle est de classe <span>\\(C^\\infty\\)</span> sur <span>\\(\\mathbb{R}^2\\)</span>. En utilisant l’inégalité <span>\\(xy \\geq -\\frac{1}{2}(x^2 + y^2)\\)</span>, on peut écrire :\n<span>\\[f(x, y) \\geq x^4 + y^4 - 2x^2 - 2y^2 + 4xy \\geq x^4 + y^4 - 4x^2 - 4y^2.\\]</span>\nChoisissant <span>\\(\\alpha = 2\\)</span> et <span>\\(\\beta = -16\\)</span>, on obtient que <span>\\(f(x, y) \\geq \\alpha \\|(x, y)\\|^2 + \\beta\\)</span>. Cela montre que <span>\\(f\\)</span> est coercive sur <span>\\(\\mathbb{R}^2\\)</span>, et d’après le théorème de Weierstrass, le problème <span>\\(\\inf_{(x,y)\\in \\mathbb{R}^2} f(x, y)\\)</span> possède au moins une solution.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "La fonction $f$ est-elle convexe sur $\\mathbb{R}^2$ ?",
+      "html": "<p>La fonction <span>\\(f\\)</span> est-elle convexe sur <span>\\(\\mathbb{R}^2\\)</span> ?</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Pour étudier la convexité de $f$, calculons sa matrice hessienne en tout point $(x, y) \\in \\mathbb{R}^2$. On a :\n  \\[\n  \\text{Hess } f(x, y) = 4 \\begin{pmatrix} 3x^2 - 1 & 1 \\\\ 1 & 3y^2 - 1 \\end{pmatrix}.\n  \\]\n  La fonction $f$ est convexe sur $\\mathbb{R}^2$ si, et seulement si, sa matrice hessienne est semi-définie positive en tout point. Or, les valeurs propres de la hessienne en $(0, 0)$ sont 0 et -2. Par conséquent, $f$ n'est pas convexe.",
+      "html": "<p>Pour étudier la convexité de <span>\\(f\\)</span>, calculons sa matrice hessienne en tout point <span>\\((x, y) \\in \\mathbb{R}^2\\)</span>. On a :\n<span>\\[\\text{Hess } f(x, y) = 4 \\begin{pmatrix} 3x^2 - 1 &amp; 1 \\\\ 1 &amp; 3y^2 - 1 \\end{pmatrix}.\\]</span>\nLa fonction <span>\\(f\\)</span> est convexe sur <span>\\(\\mathbb{R}^2\\)</span> si, et seulement si, sa matrice hessienne est semi-définie positive en tout point. Or, les valeurs propres de la hessienne en <span>\\((0, 0)\\)</span> sont 0 et -2. Par conséquent, <span>\\(f\\)</span> n’est pas convexe.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Déterminer les points critiques de $f$, et préciser leur nature (minimum local, maximum local, point-selle, etc.). Résoudre alors le problème d'optimisation.",
+      "html": "<p>Déterminer les points critiques de <span>\\(f\\)</span>, et préciser leur nature (minimum local, maximum local, point-selle, etc.). Résoudre alors le problème d’optimisation.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Les points critiques de $f$ sont donnés par les solutions de $\\nabla f(x, y) = (0, 0)$, c'est-à-dire :\n  \\[\n  \\begin{cases} \n  x^3 - (x - y) = 0, \\\\\n  y^3 + (x - y) = 0.\n  \\end{cases}\n  \\]\n  En résolvant ce système, on obtient trois points critiques : $O(0, 0)$, $A(\\sqrt{2}, -\\sqrt{2})$ et $B(-\\sqrt{2}, \\sqrt{2})$.\n\n  Pour déterminer la nature de ces points critiques, on utilise la matrice hessienne. Les points $A$ et $B$ sont des points de minimum local car la hessienne y est définie positive. Le point $O$ est un point-selle car la hessienne y a des valeurs propres de signes opposés.\n\n  Ainsi, la solution du problème d'optimisation est donnée par $\\inf_{(x,y) \\in \\mathbb{R}^2} f(x, y) = f(A) = f(B) = -8$.",
+      "html": "<p>Les points critiques de <span>\\(f\\)</span> sont donnés par les solutions de <span>\\(\\nabla f(x, y) = (0, 0)\\)</span>, c’est-à-dire :\n<span>\\[\\begin{cases} \n  x^3 - (x - y) = 0, \\\\\n  y^3 + (x - y) = 0.\n  \\end{cases}\\]</span>\nEn résolvant ce système, on obtient trois points critiques : <span>\\(O(0, 0)\\)</span>, <span>\\(A(\\sqrt{2}, -\\sqrt{2})\\)</span> et <span>\\(B(-\\sqrt{2}, \\sqrt{2})\\)</span>.</p>\n<p>Pour déterminer la nature de ces points critiques, on utilise la matrice hessienne. Les points <span>\\(A\\)</span> et <span>\\(B\\)</span> sont des points de minimum local car la hessienne y est définie positive. Le point <span>\\(O\\)</span> est un point-selle car la hessienne y a des valeurs propres de signes opposés.</p>\n<p>Ainsi, la solution du problème d’optimisation est donnée par <span>\\(\\inf_{(x,y) \\in \\mathbb{R}^2} f(x, y) = f(A) = f(B) = -8\\)</span>.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "ad0ee192a0ca6fb9d1c10836f8817377b1a8a7219e99a143a3b59a5339e0b1f3"
+}

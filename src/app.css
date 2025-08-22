@@ -1,0 +1,48 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* KaTeX styles */
+@import 'katex/dist/katex.min.css';
+
+/* Custom styles for math rendering */
+.math-block {
+  @apply my-4 overflow-x-auto;
+}
+
+.math-inline {
+  @apply inline;
+}
+
+/* Exercise styling */
+.exercise {
+  @apply max-w-4xl mx-auto bg-white rounded-lg shadow-sm border p-6;
+}
+
+.exercise h1 {
+  @apply text-2xl font-bold text-gray-900 mb-4;
+}
+
+.exercise .metadata {
+  @apply flex gap-4 mb-6 text-sm text-gray-600;
+}
+
+.exercise .question {
+  @apply mb-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400;
+}
+
+.exercise .hint {
+  @apply mb-4;
+}
+
+.exercise .answer {
+  @apply mb-4;
+}
+
+.exercise details summary {
+  @apply cursor-pointer font-medium text-gray-700 hover:text-gray-900 transition-colors;
+}
+
+.exercise details[open] summary {
+  @apply mb-3;
+}

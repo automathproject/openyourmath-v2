@@ -1,0 +1,92 @@
+{
+  "uuid": "Fg10",
+  "title": "Calcul de dérivées partielles au bord du domaine de définition",
+  "chapter": "Fonction de plusieurs variables",
+  "subchapter": "Dérivée partielle",
+  "theme": "calcul différentiel",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-03-09",
+  "updated_at": "2025-08-22T12:39:12.256Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère la fonction $f: \\R^2 \\to \\R,\\ (x,y) \\mapsto \\sqrt{x+5y}$.",
+      "html": "<p>On considère la fonction <span>\\(f: \\R^2 \\to \\R,\\ (x,y) \\mapsto \\sqrt{x+5y}\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Donner le domaine de définition de $f$.",
+      "html": "<p>Donner le domaine de définition de <span>\\(f\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "La fonction $f$ est définie sur le demi plan $\\{(x,y)\\in\\R^2 \\mid x+5y \\geq 0  \\}  $",
+      "html": "<p>La fonction <span>\\(f\\)</span> est définie sur le demi plan <span>\\(\\{(x,y)\\in\\R^2 \\mid x+5y \\geq 0  \\}\\)</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Calculer $\\dpa{f}{x}$ et $\\dpa{f}{y}$ pour les points $(x,y)$ où c'est possible.",
+      "html": "<p>Calculer <span>\\(\\dpa{f}{x}\\)</span> et <span>\\(\\dpa{f}{y}\\)</span> pour les points <span>\\((x,y)\\)</span> où c’est possible.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "La fonction racine étant dérivable sur $]0;+\\infty[$, on peut calculer avec les règles usuelles les dérivées partielles de $f$ sur le demi plan ouvert $\\{(x,y)\\in\\R^2 \\mid x+5y > 0  \\}  $ : \n$$\\frac{\\partial f}{\\partial x}(x,y) = \\frac{1}{2\\sqrt{x+5y}} \\qquad \\frac{\\partial f}{\\partial y}(x,y) = \\frac{5}{2\\sqrt{x+5y}}$$",
+      "html": "<p>La fonction racine étant dérivable sur <span>\\(]0;+\\infty[\\)</span>, on peut calculer avec les règles usuelles les dérivées partielles de <span>\\(f\\)</span> sur le demi plan ouvert <span>\\(\\{(x,y)\\in\\R^2 \\mid x+5y &gt; 0  \\}\\)</span> :\n<span>\\[\\frac{\\partial f}{\\partial x}(x,y) = \\frac{1}{2\\sqrt{x+5y}} \\qquad \\frac{\\partial f}{\\partial y}(x,y) = \\frac{5}{2\\sqrt{x+5y}}\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Étudier l'existence des dérivées partielles en $(x,y) = (0,0)$.",
+      "html": "<p>Étudier l’existence des dérivées partielles en <span>\\((x,y) = (0,0)\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "indication",
+      "latex": "On sait que la fonction $x \\mapsto \\sqrt{x}$ est définie en $0$ mais pas dérivable en $0$. La question se pose donc pour $f$ en $(x,y)=(0,0)$ car dans ce cas $\\sqrt{x+5y} = \\sqrt{0}$. Pour répondre à la question, il faut revenir à la définition de la dérivée partielle en cherchant la limite du taux d'accroissement.",
+      "html": "<p>On sait que la fonction <span>\\(x \\mapsto \\sqrt{x}\\)</span> est définie en <span>\\(0\\)</span> mais pas dérivable en <span>\\(0\\)</span>. La question se pose donc pour <span>\\(f\\)</span> en <span>\\((x,y)=(0,0)\\)</span> car dans ce cas <span>\\(\\sqrt{x+5y} = \\sqrt{0}\\)</span>. Pour répondre à la question, il faut revenir à la définition de la dérivée partielle en cherchant la limite du taux d’accroissement.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "reponse",
+      "latex": "Il faut ici revenir à la définition en étudiant le taux d'accroissement des fonctions partielles en $0$.\n\t\n\tPour étudier l'existence de $\\frac{\\partial f}{\\partial x}(0,0)$, on pose pour tout $x>0$ :\n$\\frac{f(x,0)-f(0,0)}{x-0} = \\frac{\\sqrt{x}}{x} = \\frac{1}{\\sqrt{x}} \\xrightarrow[x \\to 0]{} +\\infty$. On conclut que \n$\\frac{\\partial f}{\\partial x}(0,0)$n'existe pas.\n\nDe même, on pose pour tout $y>0$ :\n$\\frac{f(0,y)-f(0,0)}{y-0} = \\frac{\\sqrt{5y}}{y} = \\frac{\\sqrt{5}}{\\sqrt{y}} \\xrightarrow[y \\to 0]{} +\\infty$. On conclut que \n$\\frac{\\partial f}{\\partial y}(0,0)$ n'existe pas.",
+      "html": "<p>Il faut ici revenir à la définition en étudiant le taux d’accroissement des fonctions partielles en <span>\\(0\\)</span>.</p>\n<p>Pour étudier l’existence de <span>\\(\\frac{\\partial f}{\\partial x}(0,0)\\)</span>, on pose pour tout <span>\\(x&gt;0\\)</span> :\n<span>\\(\\frac{f(x,0)-f(0,0)}{x-0} = \\frac{\\sqrt{x}}{x} = \\frac{1}{\\sqrt{x}} \\xrightarrow[x \\to 0]{} +\\infty\\)</span>. On conclut que\n<span>\\(\\frac{\\partial f}{\\partial x}(0,0)\\)</span>n’existe pas.</p>\n<p>De même, on pose pour tout <span>\\(y&gt;0\\)</span> :\n<span>\\(\\frac{f(0,y)-f(0,0)}{y-0} = \\frac{\\sqrt{5y}}{y} = \\frac{\\sqrt{5}}{\\sqrt{y}} \\xrightarrow[y \\to 0]{} +\\infty\\)</span>. On conclut que\n<span>\\(\\frac{\\partial f}{\\partial y}(0,0)\\)</span> n’existe pas.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "question",
+      "latex": "Même question en $(x,y) = (5, -1)$.",
+      "html": "<p>Même question en <span>\\((x,y) = (5, -1)\\)</span>.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "reponse",
+      "latex": "C'est exactement le même problème qu'en $(0,0)$ translaté en $(5,-1)$ : \n\t\n\ton pose $x=5+h$ et on étudie le taux d'accroissement quand $x$ tend vers $5$, soit $h \\to 0$ :  $\\frac{f(5+h,-1)-f(5,-1)}{h} = \\frac{\\sqrt{h}}{h} = \\frac{1}{\\sqrt{h}}  \\xrightarrow[h \\to 0]{} +\\infty$\n\t\n\ton pose $y=-1+h$ et on étudie le taux d'accroissement quand $y$ tend vers $-1$, soit $h \\to 0$ :  $\\frac{f(5,-1+h)-f(5,-1)}{h} = \\frac{\\sqrt{h}}{h} = \\frac{1}{\\sqrt{h}}  \\xrightarrow[h \\to 0]{} +\\infty$\n\nOn conclut que les dérivées partielles n'existent pas en $(0,0)$.",
+      "html": "<p>C’est exactement le même problème qu’en <span>\\((0,0)\\)</span> translaté en <span>\\((5,-1)\\)</span> :</p>\n<p>on pose <span>\\(x=5+h\\)</span> et on étudie le taux d’accroissement quand <span>\\(x\\)</span> tend vers <span>\\(5\\)</span>, soit <span>\\(h \\to 0\\)</span> : <span>\\(\\frac{f(5+h,-1)-f(5,-1)}{h} = \\frac{\\sqrt{h}}{h} = \\frac{1}{\\sqrt{h}}  \\xrightarrow[h \\to 0]{} +\\infty\\)</span></p>\n<p>on pose <span>\\(y=-1+h\\)</span> et on étudie le taux d’accroissement quand <span>\\(y\\)</span> tend vers <span>\\(-1\\)</span>, soit <span>\\(h \\to 0\\)</span> : <span>\\(\\frac{f(5,-1+h)-f(5,-1)}{h} = \\frac{\\sqrt{h}}{h} = \\frac{1}{\\sqrt{h}}  \\xrightarrow[h \\to 0]{} +\\infty\\)</span></p>\n<p>On conclut que les dérivées partielles n’existent pas en <span>\\((0,0)\\)</span>.</p>",
+      "order": 10
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "a5dabc59c6cf0e675ab2a79e723ffdc60d984a46f1611457eafa533345356f61"
+}

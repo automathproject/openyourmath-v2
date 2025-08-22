@@ -1,0 +1,77 @@
+{
+  "uuid": "56tw",
+  "title": "Etude de points critiques et d'une ligne de niveau",
+  "chapter": "Dérivabilité des fonctions réelles",
+  "subchapter": "Applications",
+  "theme": "calcul différentiel",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-03-20",
+  "updated_at": "2025-08-22T12:38:39.469Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On pose $$f(x,y)= x\\hskip 2pt (x+1)^2 - y^2$$",
+      "html": "<p>On pose <span>\\[f(x,y)= x\\hskip 2pt (x+1)^2 - y^2\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "D\\'eterminer les points stationnaires de \tla fonction $f$  et pr\\'eciser\tla nature de chacun d'eux.",
+      "html": "<p>Déterminer les points stationnaires de la fonction <span>\\(f\\)</span> et préciser la nature de chacun d’eux.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On a $\\frac{\\partial f}{\\partial y}(x,y) = -2y$ et\n\t\t$\\frac{\\partial f}{\\partial x} = (x+1)(3x+1)$\n\t\t\n\t\tOn a $\\frac{\\partial f}{\\partial y}(x,y) = 0 \\iff y=0$\\\\ et $\\frac{\\partial f}{\\partial x}(x,y) = 0 \\iff x \\in \\{-1;-1/3\\}$. \n\t\t\n\t\tDonc les points stationnaires de $f$ sont les points\n\t\t$(-1,0)$ et $(-1/3,0)$.\n\t\t\n\t\tPour étudier la nature de ces points stationnaires, on utilise les conditions d'ordre 2 en donnant la matrice hessienne : \n\t\t$$\\mathrm{Hess}_f(x,y)=\\begin{pmatrix} \n\t\t\t6x+4 & 0\\\\  0 & -2\n\t\t\\end{pmatrix}$$ \n\t\td'o\\`u\n\t\t$\\mathrm{Hess}_f(-1,0)= \\begin{pmatrix} \n\t\t\t-2 &  0\\\\  0 & -2\n\t\t\\end{pmatrix}$\n\t\tet\n\t\t$\\mathrm{Hess}_f(-1/3,0)= \\begin{pmatrix} \n\t\t\t2 &  0\\\\  0 & -2\n\t\t\\end{pmatrix}$.\n\t\t\n\t\tOn a $(-2)\\times(-2)>0$ et $-2<0$ donc la fonction $f$ présente un maximum local en $(-1,0)$.\n\t\t\n\t\tDe même, $2 \\times (-2) <0$ donc la fonction $f$ présente un point selle en $(-1/3,0)$..",
+      "html": "<p>On a <span>\\(\\frac{\\partial f}{\\partial y}(x,y) = -2y\\)</span> et\n<span>\\(\\frac{\\partial f}{\\partial x} = (x+1)(3x+1)\\)</span></p>\n<p>On a <span>\\(\\frac{\\partial f}{\\partial y}(x,y) = 0 \\iff y=0\\)</span><br />\net <span>\\(\\frac{\\partial f}{\\partial x}(x,y) = 0 \\iff x \\in \\{-1;-1/3\\}\\)</span>.</p>\n<p>Donc les points stationnaires de <span>\\(f\\)</span> sont les points\n<span>\\((-1,0)\\)</span> et <span>\\((-1/3,0)\\)</span>.</p>\n<p>Pour étudier la nature de ces points stationnaires, on utilise les conditions d’ordre 2 en donnant la matrice hessienne :\n<span>\\[\\mathrm{Hess}_f(x,y)=\\begin{pmatrix} \n            6x+4 &amp; 0\\\\  0 &amp; -2\n        \\end{pmatrix}\\]</span>\nd’où\n<span>\\(\\mathrm{Hess}_f(-1,0)= \\begin{pmatrix} \n            -2 &amp;  0\\\\  0 &amp; -2\n        \\end{pmatrix}\\)</span>\net\n<span>\\(\\mathrm{Hess}_f(-1/3,0)= \\begin{pmatrix} \n            2 &amp;  0\\\\  0 &amp; -2\n        \\end{pmatrix}\\)</span>.</p>\n<p>On a <span>\\((-2)\\times(-2)&gt;0\\)</span> et <span>\\(-2&lt;0\\)</span> donc la fonction <span>\\(f\\)</span> présente un maximum local en <span>\\((-1,0)\\)</span>.</p>\n<p>De même, <span>\\(2 \\times (-2) &lt;0\\)</span> donc la fonction <span>\\(f\\)</span> présente un point selle en <span>\\((-1/3,0)\\)</span>..</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Tracer la courbe  \tconstitu\\'ee des points tels que $f(x,y)=0$ et $x \\geq 0$ en faisant apparaître des éléments qualitatifs (tangente, inflexion de la courbe).",
+      "html": "<p>Tracer la courbe constituée des points tels que <span>\\(f(x,y)=0\\)</span> et <span>\\(x \\geq 0\\)</span> en faisant apparaître des éléments qualitatifs (tangente, inflexion de la courbe).</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "\\begin{minipage}{0.6\\textwidth}\n\t\t\tOn cherche l'ensemble des points $(x,y) \\in \\R^2$ tels que $f(x,y)=0 \\iff y^2 = x(x+1)^2$.\n\t\t\t\n\t\t\tSi on se restreint aux $x \\geq 0$, $f(x,y)=0 \\iff y= \\sqrt{x} \\hskip 2pt (x+1)$.\n\t\t\t\n\t\t\tPour étudier la courbe d'équation $y= \\sqrt{x} \\hskip 2pt (x+1)$ pour $x\\geq 0$ dans le plan, on pose $g(x) = \\sqrt{x} \\hskip 2pt (x+1)$ : c'est une fonction continue sur $[0;+\\infty[$ et dérivable sur $]0;+\\infty[$. \n\t\t\t\n\t\t\tPour tout $x>0$, on a :\n\t\t\t$$g'(x)= \\tfrac 32 \\sqrt x + \\tfrac 12 (\\sqrt x)^{-1}>0$$ et \t$$g''(x)= \\tfrac 34 x^{-\\tfrac 12} - \\tfrac 14 x^{-\\tfrac 32}$$\n\t\t\tDe l'expression de $g(x)$, on déduit que la courbe passe par les points $(0,0)$, $(\\tfrac 13,\\tfrac 43 \\sqrt 3)$, \n\t\t\t$(1,2)$, et $(2,3 \\sqrt 2)$;\n\t\t\t\n\t\t\tDe l'expression de $g'(x)$, on déduit que la courbe a une tangente verticale \\`a l'origine.\n\t\t\t\n\t\t\tDe la résolution de $g''(x)=0$, on déduit que \tle point $(\\tfrac 13,\\tfrac 43 \\sqrt 3)$\n\t\t\test un point d'inflexion, la pente en ce point vaut $g'(\\tfrac 13) = \\sqrt 3$,\n\t\t\tet c'est la pente minimale de la courbe.\n\t\t\t\n\t\t\tLa courbe constitu\\'ee des points tels que $f(x,y)=0$ et $x \\geq 0$\n\t\t\ts'obtient par r\\'eflexion de la courbe\n\t\t\t$y= \\sqrt{x} \\hskip 2pt (x+1)$ pour $x\\geq 0$\n\t\t\tpar rapport \\`a l'axe des $x$.\n\t\t\\end{minipage}\n\t\t\\begin{minipage}{0.4\\textwidth}\n\t\t\t__TIKZ_tikz_IXET__\n\t\t\\end{minipage}",
+      "html": "<p>\\begin{minipage}{0.6\\textwidth}\n\t\t\tOn cherche l'ensemble des points $(x,y) \\in \\R^2$ tels que $f(x,y)=0 \\iff y^2 = x(x+1)^2$.\n\t\t\t\n\t\t\tSi on se restreint aux $x \\geq 0$, $f(x,y)=0 \\iff y= \\sqrt{x} \\hskip 2pt (x+1)$.\n\t\t\t\n\t\t\tPour étudier la courbe d'équation $y= \\sqrt{x} \\hskip 2pt (x+1)$ pour $x\\geq 0$ dans le plan, on pose $g(x) = \\sqrt{x} \\hskip 2pt (x+1)$ : c'est une fonction continue sur $[0;+\\infty[$ et dérivable sur $]0;+\\infty[$. \n\t\t\t\n\t\t\tPour tout $x>0$, on a :\n\t\t\t$$g'(x)= \\tfrac 32 \\sqrt x + \\tfrac 12 (\\sqrt x)^{-1}>0$$ et \t$$g''(x)= \\tfrac 34 x^{-\\tfrac 12} - \\tfrac 14 x^{-\\tfrac 32}$$\n\t\t\tDe l'expression de $g(x)$, on déduit que la courbe passe par les points $(0,0)$, $(\\tfrac 13,\\tfrac 43 \\sqrt 3)$, \n\t\t\t$(1,2)$, et $(2,3 \\sqrt 2)$;\n\t\t\t\n\t\t\tDe l'expression de $g'(x)$, on déduit que la courbe a une tangente verticale \\`a l'origine.\n\t\t\t\n\t\t\tDe la résolution de $g''(x)=0$, on déduit que \tle point $(\\tfrac 13,\\tfrac 43 \\sqrt 3)$\n\t\t\test un point d'inflexion, la pente en ce point vaut $g'(\\tfrac 13) = \\sqrt 3$,\n\t\t\tet c'est la pente minimale de la courbe.\n\t\t\t\n\t\t\tLa courbe constitu\\'ee des points tels que $f(x,y)=0$ et $x \\geq 0$\n\t\t\ts'obtient par r\\'eflexion de la courbe\n\t\t\t$y= \\sqrt{x} \\hskip 2pt (x+1)$ pour $x\\geq 0$\n\t\t\tpar rapport \\`a l'axe des $x$.\n\t\t\\end{minipage}\n\t\t\\begin{minipage}{0.4\\textwidth}\n\t\t\t<svg viewBox=\"0 0 400 200\" class=\"tikz-error\" style=\"border: 2px dashed #dc3545; background: #f8d7da;\">\n    <rect width=\"400\" height=\"200\" fill=\"#f8d7da\" stroke=\"#dc3545\" stroke-width=\"2\" stroke-dasharray=\"5,5\"/>\n    <text x=\"200\" y=\"30\" text-anchor=\"middle\" font-family=\"monospace\" font-size=\"14\" fill=\"#721c24\">\n      TikZ Conversion Error\n    </text>\n    <text x=\"10\" y=\"60\" font-family=\"monospace\" font-size=\"10\" fill=\"#721c24\">\n      Error: LaTeX compilation failed:\nCompilation failed. Last lines:\n)\nLaTeX Font Info:    Trying to load font ...\n    </text>\n    <text x=\"10\" y=\"90\" font-family=\"monospace\" font-size=\"9\" fill=\"#6c757d\">\n      Content:\n    </text>\n    <text x=\"10\" y=\"110\" font-family=\"monospace\" font-size=\"8\" fill=\"#6c757d\">\n      \\draw[dotted, very thin, gray!40, step=0.5] (-1.5,-2.5) grid (2.5,2.5) ;\n\t\t\t\t\\draw[dotted, gray!60] (-1.5,-2.5) grid (2.5,2.5) ;\n\t\t\t\t\\draw[->,thick] (...\n    </text>\n  </svg>\n\t\t\\end{minipage}</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Montrer que \tle point $(-1,0)$ est un point isol\\'e de la partie ${\\cal C}=\\{(x,y); f(x,y)=0\\}$\n\tdu plan, c'est-\\`a-dire, le point $(-1,0)$ appartient \\`a cette partie\tet il existe un nombre r\\'eel \n\t$\\varepsilon >0$ tel que \t$D_{\\varepsilon} \\cap {\\cal C} =\\{(-1,0)\\}$ o\\`u $D_{\\varepsilon}$ est le disque ouvert centr\\'e en $(-1,0)$ et de rayon $\\varepsilon$.",
+      "html": "<p>Montrer que le point <span>\\((-1,0)\\)</span> est un point isolé de la partie <span>\\({\\cal C}=\\{(x,y); f(x,y)=0\\}\\)</span>\ndu plan, c’est-à-dire, le point <span>\\((-1,0)\\)</span> appartient à cette partie et il existe un nombre réel\n<span>\\(\\varepsilon &gt;0\\)</span> tel que <span>\\(D_{\\varepsilon} \\cap {\\cal C} =\\{(-1,0)\\}\\)</span> où <span>\\(D_{\\varepsilon}\\)</span> est le disque ouvert centré en <span>\\((-1,0)\\)</span> et de rayon <span>\\(\\varepsilon\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Dans la boule ouverte \t$\\{(x,y,z);(x+1)^2+y^2+x^2 <1\\} \\subseteq \\R^3$, on est notamment dans le demi espace $\\{x<0\\}$. Or si $x<0$ et $f(x,y)=0$ alors nécessairement $y^2 = x(x+1)^2 \\geq 0$ ce qui ne laisse d'autre choix que d'avoir $(x+1)^2 =0$. \n\t\t\n\t\tPar conséquent, le graphe\n\t\t$z=f(x,y)$ de la fonction $f$ ne rencontre le plan des $x$ et $y$ qu'au point\n\t\t$(-1,0)$. Par cons\\'equent, l'intersection \n\t\t$D \\cap \\cal C$ du disque\n\t\t\\[\n\t\tD=\\{(x,y); (x+1)^2+y^2<1\\}\n\t\t\\]\n\t\tavec $\\cal C$ ne consiste qu'au point $(-1,0)$.",
+      "html": "<p>Dans la boule ouverte <span>\\(\\{(x,y,z);(x+1)^2+y^2+x^2 &lt;1\\} \\subseteq \\R^3\\)</span>, on est notamment dans le demi espace <span>\\(\\{x&lt;0\\}\\)</span>. Or si <span>\\(x&lt;0\\)</span> et <span>\\(f(x,y)=0\\)</span> alors nécessairement <span>\\(y^2 = x(x+1)^2 \\geq 0\\)</span> ce qui ne laisse d’autre choix que d’avoir <span>\\((x+1)^2 =0\\)</span>.</p>\n<p>Par conséquent, le graphe\n<span>\\(z=f(x,y)\\)</span> de la fonction <span>\\(f\\)</span> ne rencontre le plan des <span>\\(x\\)</span> et <span>\\(y\\)</span> qu’au point\n<span>\\((-1,0)\\)</span>. Par conséquent, l’intersection\n<span>\\(D \\cap \\cal C\\)</span> du disque\n<span>\\[D=\\{(x,y); (x+1)^2+y^2&lt;1\\}\\]</span>\navec <span>\\(\\cal C\\)</span> ne consiste qu’au point <span>\\((-1,0)\\)</span>.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [
+      {
+        "id": "tikz_IXET",
+        "type": "tikz",
+        "svg": "<svg viewBox=\"0 0 400 200\" class=\"tikz-error\" style=\"border: 2px dashed #dc3545; background: #f8d7da;\">\n    <rect width=\"400\" height=\"200\" fill=\"#f8d7da\" stroke=\"#dc3545\" stroke-width=\"2\" stroke-dasharray=\"5,5\"/>\n    <text x=\"200\" y=\"30\" text-anchor=\"middle\" font-family=\"monospace\" font-size=\"14\" fill=\"#721c24\">\n      TikZ Conversion Error\n    </text>\n    <text x=\"10\" y=\"60\" font-family=\"monospace\" font-size=\"10\" fill=\"#721c24\">\n      Error: LaTeX compilation failed:\nCompilation failed. Last lines:\n)\nLaTeX Font Info:    Trying to load font ...\n    </text>\n    <text x=\"10\" y=\"90\" font-family=\"monospace\" font-size=\"9\" fill=\"#6c757d\">\n      Content:\n    </text>\n    <text x=\"10\" y=\"110\" font-family=\"monospace\" font-size=\"8\" fill=\"#6c757d\">\n      \\draw[dotted, very thin, gray!40, step=0.5] (-1.5,-2.5) grid (2.5,2.5) ;\n\t\t\t\t\\draw[dotted, gray!60] (-1.5,-2.5) grid (2.5,2.5) ;\n\t\t\t\t\\draw[->,thick] (...\n    </text>\n  </svg>"
+      }
+    ],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "9f0a74e50f09b2e55e0fdf41c8debdb10d413c95ff825593005790310df467e7"
+}

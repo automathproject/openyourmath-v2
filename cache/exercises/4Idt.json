@@ -1,0 +1,71 @@
+{
+  "uuid": "4Idt",
+  "title": "Inégalités et loi de Poisson",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Lois de distributions",
+  "theme": "variables aléatoires, loi de Poisson",
+  "difficulty": null,
+  "author": "Maxime Nguyen",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-18",
+  "updated_at": "2025-08-22T12:38:35.760Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $X$ une variable aléatoire de loi de Poisson de paramètre $\\lambda>0$.",
+      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire de loi de Poisson de paramètre <span>\\(\\lambda&gt;0\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "En utilisant l'inégalité de Markov, montrer que: $\\prob(X\\geq 2\\lambda)\\leq\\frac{1}{2}$.",
+      "html": "<p>En utilisant l’inégalité de Markov, montrer que: <span>\\(\\prob(X\\geq 2\\lambda)\\leq\\frac{1}{2}\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Par l'inégalité de Markov, on a:\n\t\t\\[ \\prob(|X|\\geq 2\\lambda)\\leq \\frac{\\E(|X|)}{2\\lambda}\\]\n\t\tor $X\\sim\\mathcal{P}(\\lambda)$ donc $X(\\Omega)=\\N$ et on a\n\t\t\\[ \\prob(X\\leq 2\\lambda) \\geq \\frac{\\E(X)}{2\\lambda}=\\frac{\\lambda}{2\\lambda}=\\frac{1}{2}.\\]",
+      "html": "<p>Par l’inégalité de Markov, on a:\n<span>\\[\\prob(|X|\\geq 2\\lambda)\\leq \\frac{\\E(|X|)}{2\\lambda}\\]</span>\nor <span>\\(X\\sim\\mathcal{P}(\\lambda)\\)</span> donc <span>\\(X(\\Omega)=\\N\\)</span> et on a\n<span>\\[\\prob(X\\leq 2\\lambda) \\geq \\frac{\\E(X)}{2\\lambda}=\\frac{\\lambda}{2\\lambda}=\\frac{1}{2}.\\]</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Montrer que $\\prob(|X-\\lambda| \\geq \\lambda) \\leq \\frac{1}{\\lambda}$ et en déduire que $\\prob(X\\geq 2\\lambda)\\leq \\frac{1}{\\lambda}$.",
+      "html": "<p>Montrer que <span>\\(\\prob(|X-\\lambda| \\geq \\lambda) \\leq \\frac{1}{\\lambda}\\)</span> et en déduire que <span>\\(\\prob(X\\geq 2\\lambda)\\leq \\frac{1}{\\lambda}\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Par l'inégalité de Bienaymé-Tchebychev, on a\n\t\t\\[ \\prob(|X-\\E(X)|\\geq \\lambda)\\leq \\frac{\\sigma^2(X)}{\\lambda^2}=\\frac{\\lambda}{\\lambda^2}=\\frac{1}{\\lambda}\\]\n\t\tdonc\n\t\t\\[ \\prob(|X-\\lambda|)\\geq \\frac{1}{\\lambda}.\\]\n\t\tOr\n\t\t\\[ \\prob(X\\geq 2\\lambda)=\\prob(X-\\lambda \\geq \\lambda)\n\t\t\\leq \\prob(|X-\\lambda|\\geq \\lambda)\\leq \\frac{1}{\\lambda},\n\t\t\\]\n\t\td'où\n\t\t\\[ \\prob(X\\geq 2\\lambda) \\leq \\frac{1}{\\lambda}.\\]",
+      "html": "<p>Par l’inégalité de Bienaymé-Tchebychev, on a\n<span>\\[\\prob(|X-\\E(X)|\\geq \\lambda)\\leq \\frac{\\sigma^2(X)}{\\lambda^2}=\\frac{\\lambda}{\\lambda^2}=\\frac{1}{\\lambda}\\]</span>\ndonc\n<span>\\[\\prob(|X-\\lambda|)\\geq \\frac{1}{\\lambda}.\\]</span>\nOr\n<span>\\[\\prob(X\\geq 2\\lambda)=\\prob(X-\\lambda \\geq \\lambda)\n        \\leq \\prob(|X-\\lambda|\\geq \\lambda)\\leq \\frac{1}{\\lambda},\\]</span>\nd’où\n<span>\\[\\prob(X\\geq 2\\lambda) \\leq \\frac{1}{\\lambda}.\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Pour $\\lambda$ assez grand, laquelle des deux inégalités est la meilleure ?",
+      "html": "<p>Pour <span>\\(\\lambda\\)</span> assez grand, laquelle des deux inégalités est la meilleure ?</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Pour $\\lambda \\geq 2$, $\\frac{1}{\\lambda}\\leq \\frac{1}{2}$ donc l'inégalité de Bienaymé-Tchebychev est meilleure que celle de Markov.",
+      "html": "<p>Pour <span>\\(\\lambda \\geq 2\\)</span>, <span>\\(\\frac{1}{\\lambda}\\leq \\frac{1}{2}\\)</span> donc l’inégalité de Bienaymé-Tchebychev est meilleure que celle de Markov.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "1288c94377136380f380948c07bb484bddf19bcd076077e735eeb27d4cd92e8a"
+}

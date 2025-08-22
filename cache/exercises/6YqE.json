@@ -1,0 +1,64 @@
+{
+  "uuid": "6YqE",
+  "title": "Contrôle qualité",
+  "chapter": "Statistique",
+  "subchapter": "Tests d'hypothèses, intervalle de confiance",
+  "theme": "statistiques, tests d'hypothèses",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-10-17",
+  "updated_at": "2025-08-22T12:38:47.099Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "La proportion $p$ des pièces défectueuses fabriquées par une machine est $p=0.05$ quand la machine est bien réglée, et s'élève à $p_1=0.10$ quand est elle déréglée. \n\nOn dispose d'un lot de pièces fabriquées par la machine qui doit permettre de décider si la machine est bien réglée ou non. Un  échantillon aléatoire de 100 pièces, prélevé dans le lot, contient 8 mauvaises pièces.",
+      "html": "<p>La proportion <span>\\(p\\)</span> des pièces défectueuses fabriquées par une machine est <span>\\(p=0.05\\)</span> quand la machine est bien réglée, et s’élève à <span>\\(p_1=0.10\\)</span> quand est elle déréglée.</p>\n<p>On dispose d’un lot de pièces fabriquées par la machine qui doit permettre de décider si la machine est bien réglée ou non. Un échantillon aléatoire de 100 pièces, prélevé dans le lot, contient 8 mauvaises pièces.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "On pose $\\pi$ la valeur critique. En utilisant la définition, exprimer le risque de 1ère espèce $\\alpha$ en fonction de cette valeur critique.",
+      "html": "<p>On pose <span>\\(\\pi\\)</span> la valeur critique. En utilisant la définition, exprimer le risque de 1ère espèce <span>\\(\\alpha\\)</span> en fonction de cette valeur critique.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "On pose $\\alpha = 0.05$. Quelle est la région d'acceptation de l'hypothèse $H_0$ ?",
+      "html": "<p>On pose <span>\\(\\alpha = 0.05\\)</span>. Quelle est la région d’acceptation de l’hypothèse <span>\\(H_0\\)</span> ?</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "La machine est-elle bien réglée ?",
+      "html": "<p>La machine est-elle bien réglée ?</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Quelle est l'erreur de seconde espèce $\\beta$ ?",
+      "html": "<p>Quelle est l’erreur de seconde espèce <span>\\(\\beta\\)</span> ?</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Quel doit être l'effectif de l'échantillon $n$ pour qu'une fréquence observée de pièce défectueuses de $0.08$ permette de conclure à un dérèglement de la machine ?",
+      "html": "<p>Quel doit être l’effectif de l’échantillon <span>\\(n\\)</span> pour qu’une fréquence observée de pièce défectueuses de <span>\\(0.08\\)</span> permette de conclure à un dérèglement de la machine ?</p>",
+      "order": 6
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "3d885cb3954a13de663e21ef9faf8620121ea80af7e682d712f2ba58831d8221"
+}

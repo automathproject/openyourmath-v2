@@ -1,0 +1,85 @@
+{
+  "uuid": "4iSJ",
+  "title": "Qualité d'un algorithme",
+  "chapter": "Statistique",
+  "subchapter": "Tests d'hypothèses, intervalle de confiance",
+  "theme": "statistiques, estimateurs, tests d'hypothèses",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-12-07",
+  "updated_at": "2025-08-22T13:02:03.622Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On souhaite quantifier la qualité d'un algorithme de classification d'images. \n\n\n\n\n\n\n\n\n\nL'algorithme ne retourne pas une catégorie à partir d'une image $i$, mais seulement une grandeur $G_i$ qui permet de déterminer la classe la plus probable. On note $X_i$ l'erreur commise par l'algorithme pour la valeur $G_i$. \n\nOn suppose que $X_i$ suit une loi normale centrée de variance $\\sigma^2$.",
+      "html": "<p>On souhaite quantifier la qualité d’un algorithme de classification d’images.</p>\n<p>L’algorithme ne retourne pas une catégorie à partir d’une image <span>\\(i\\)</span>, mais seulement une grandeur <span>\\(G_i\\)</span> qui permet de déterminer la classe la plus probable. On note <span>\\(X_i\\)</span> l’erreur commise par l’algorithme pour la valeur <span>\\(G_i\\)</span>.</p>\n<p>On suppose que <span>\\(X_i\\)</span> suit une loi normale centrée de variance <span>\\(\\sigma^2\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "text",
+      "latex": "Sur un premier échantillon de 25 images, on obtient une erreur moyenne de $0{,}01$ calculée avec l'estimateur de moyenne empirique et une variance de 0{,}25 calculée avec l'estimateur $\\tilde{S}^2=\\frac{1}{n}\\sum_{i=1}^n (X_i-\\overline{X})^2$.",
+      "html": "<p>Sur un premier échantillon de 25 images, on obtient une erreur moyenne de <span>\\(0{,}01\\)</span> calculée avec l’estimateur de moyenne empirique et une variance de 0<span>,</span>25 calculée avec l’estimateur <span>\\(\\tilde{S}^2=\\frac{1}{n}\\sum_{i=1}^n (X_i-\\overline{X})^2\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "Donner une estimation non biaisée de $\\sigma^2$.",
+      "html": "<p>Donner une estimation non biaisée de <span>\\(\\sigma^2\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Avec un risque d'erreur de $10\\%$, peut-on remettre en cause l'hypothèse que l'espérance de $X_i$ est nulle ?",
+      "html": "<p>Avec un risque d’erreur de <span>\\(10\\%\\)</span>, peut-on remettre en cause l’hypothèse que l’espérance de <span>\\(X_i\\)</span> est nulle ?</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "text",
+      "latex": "Pour étudier la stabilité de l'algorithme par rapport au bruitage des images, on étudie un second échantillon de $25$ images bruitées. On obtient avec les mêmes estimateurs que précédemment une erreur empirique de $0{,}012$ et une variance de $0{,}50$.",
+      "html": "<p>Pour étudier la stabilité de l’algorithme par rapport au bruitage des images, on étudie un second échantillon de <span>\\(25\\)</span> images bruitées. On obtient avec les mêmes estimateurs que précédemment une erreur empirique de <span>\\(0{,}012\\)</span> et une variance de <span>\\(0{,}50\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Donner une estimation non biaisée $\\sigma^2$ à partir de cet échantillon.",
+      "html": "<p>Donner une estimation non biaisée <span>\\(\\sigma^2\\)</span> à partir de cet échantillon.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "question",
+      "latex": "Déterminer la loi de la variable $\\frac{n}{\\sigma^2}\\tilde{S}^2$ puis de $\\frac{n-1}{\\sigma^2}{S}^2$ où $S^2$ est l'estimateur de variance non biaisé pour un échantillon de taille $n$.",
+      "html": "<p>Déterminer la loi de la variable <span>\\(\\frac{n}{\\sigma^2}\\tilde{S}^2\\)</span> puis de <span>\\(\\frac{n-1}{\\sigma^2}{S}^2\\)</span> où <span>\\(S^2\\)</span> est l’estimateur de variance non biaisé pour un échantillon de taille <span>\\(n\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Déterminer la loi de la variable $\\frac{S_2^2}{S_1^2}$ où $S_i^2$ est l'estimateur de variance non biaisé de l'échantillon $i \\in \\{1;2\\}$.",
+      "html": "<p>Déterminer la loi de la variable <span>\\(\\frac{S_2^2}{S_1^2}\\)</span> où <span>\\(S_i^2\\)</span> est l’estimateur de variance non biaisé de l’échantillon <span>\\(i \\in \\{1;2\\}\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "question",
+      "latex": "En considérant le quotient de la plus grande variance par la plus petite, construire et mettre en oeuvre un test d'hypothèse permettant de dire si la variance obtenue dans l'échantillon 2 et significativement plus élevée que celle de l'échantillon 1.",
+      "html": "<p>En considérant le quotient de la plus grande variance par la plus petite, construire et mettre en oeuvre un test d’hypothèse permettant de dire si la variance obtenue dans l’échantillon 2 et significativement plus élevée que celle de l’échantillon 1.</p>",
+      "order": 9
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "7bbfb314ba2b2fbb9ea2c6141cf82be3da1084b0b93a6a79e2dc4c008124b4c9"
+}

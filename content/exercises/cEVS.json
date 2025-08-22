@@ -1,0 +1,162 @@
+{
+  "uuid": "cEVS",
+  "title": "Séries à termes réels positifs",
+  "chapter": "Série numérique",
+  "subchapter": "Série à  termes positifs",
+  "theme": "séries",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-05-17",
+  "updated_at": "2025-08-22T13:03:28.438Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Étudier la convergence des séries $\\sum u_n$ suivantes:",
+      "html": "<p>Étudier la convergence des séries <span>\\(\\sum u_n\\)</span> suivantes:</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "$u_n=\\frac{n}{n^3+1}$",
+      "html": "<p><span>\\(u_n=\\frac{n}{n^3+1}\\)</span></p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Alors $u_n \\geq 0$ pour tout $n \\in \\N$ et $u_n \\underset{+\\infty}\\sim \\frac{n}{n^3} = \\frac{1}{n^2}$ donc par comparaison à une série de Riemann convergente ($\\alpha = 2>1$), la série $\\sum u_n$ converge.",
+      "html": "<p>Alors <span>\\(u_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N\\)</span> et <span>\\(u_n \\underset{+\\infty}\\sim \\frac{n}{n^3} = \\frac{1}{n^2}\\)</span> donc par comparaison à une série de Riemann convergente (<span>\\(\\alpha = 2&gt;1\\)</span>), la série <span>\\(\\sum u_n\\)</span> converge.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "$u_n=\\frac{\\sqrt{n}}{n^2+\\sqrt{n}}$",
+      "html": "<p><span>\\(u_n=\\frac{\\sqrt{n}}{n^2+\\sqrt{n}}\\)</span></p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Alors $u_n \\geq 0$ pour tout $n \\in \\N$ et $u_n \\underset{+\\infty}\\sim \\frac{\\sqrt{n}}{n^2} = \\frac{1}{n^{3/2}}$ donc par comparaison à une série de Riemann convergente ($\\alpha = 3/2>1$), la série $\\sum u_n$ converge.",
+      "html": "<p>Alors <span>\\(u_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N\\)</span> et <span>\\(u_n \\underset{+\\infty}\\sim \\frac{\\sqrt{n}}{n^2} = \\frac{1}{n^{3/2}}\\)</span> donc par comparaison à une série de Riemann convergente (<span>\\(\\alpha = 3/2&gt;1\\)</span>), la série <span>\\(\\sum u_n\\)</span> converge.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "$u_n=n\\sin\\Big(\\frac{1}{n}\\Big)$",
+      "html": "<p><span>\\(u_n=n\\sin\\Big(\\frac{1}{n}\\Big)\\)</span></p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Alors $u_n \\geq 0$ pour tout $n \\in \\N^*$ et $u_n \\underset{+\\infty}\\sim n \\times \\frac{1}{n} = 1$ donc la série $\\sum u_n$ diverge grossièrement.",
+      "html": "<p>Alors <span>\\(u_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N^*\\)</span> et <span>\\(u_n \\underset{+\\infty}\\sim n \\times \\frac{1}{n} = 1\\)</span> donc la série <span>\\(\\sum u_n\\)</span> diverge grossièrement.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "$u_n=\\frac{1}{\\sqrt{n}}\\ln\\Big(1+\\frac{1}{\\sqrt{n}}\\Big)$",
+      "html": "<p><span>\\(u_n=\\frac{1}{\\sqrt{n}}\\ln\\Big(1+\\frac{1}{\\sqrt{n}}\\Big)\\)</span></p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "Alors $u_n \\geq 0$ pour tout $n \\in \\N^*$ et $u_n \\underset{+\\infty}\\sim \\frac{1}{\\sqrt{n}} \\times \\frac{1}{\\sqrt{ n}} = \\frac{1}{n}$ donc par comparaison à une série de Riemann divergente ($\\alpha = 1<1$), la série $\\sum u_n$ diverge.",
+      "html": "<p>Alors <span>\\(u_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N^*\\)</span> et <span>\\(u_n \\underset{+\\infty}\\sim \\frac{1}{\\sqrt{n}} \\times \\frac{1}{\\sqrt{ n}} = \\frac{1}{n}\\)</span> donc par comparaison à une série de Riemann divergente (<span>\\(\\alpha = 1&lt;1\\)</span>), la série <span>\\(\\sum u_n\\)</span> diverge.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "$u_n=\\frac{\\sqrt{n+1}-\\sqrt{n}}{n}$",
+      "html": "<p><span>\\(u_n=\\frac{\\sqrt{n+1}-\\sqrt{n}}{n}\\)</span></p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "indication",
+      "latex": "utiliser la quantité conjuguée, i.e. multiplier le numérateur et le dénominateur par $\\sqrt{n+1}+\\sqrt{n}$.",
+      "html": "<p>utiliser la quantité conjuguée, i.e. multiplier le numérateur et le dénominateur par <span>\\(\\sqrt{n+1}+\\sqrt{n}\\)</span>.</p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "reponse",
+      "latex": "Alors $u_n \\geq 0$ pour tout $n \\in \\N^*$ et $u_n = \\frac{\\sqrt{n+1}-\\sqrt{n}}{n} = \\frac{(\\sqrt{n+1}+ \\sqrt{n})(\\sqrt{n+1}-\\sqrt{n})}{n(\\sqrt{n+1}+ \\sqrt{n})} = \\frac{1}{n(\\sqrt{n+1}+ \\sqrt{n})} = \\frac{1}{n\\sqrt{n}\\left(\\sqrt{1+\\frac{1}{n}}+1\\right)} \\underset{+\\infty}\\sim \\frac{1}{n \\times 2\\sqrt{n}} = \\frac{1}{2n^{3/2}}$ donc par comparaison à une série de Riemann convergente ($\\alpha = 3/2>1$), la série $\\sum u_n$ converge.",
+      "html": "<p>Alors <span>\\(u_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N^*\\)</span> et <span>\\(u_n = \\frac{\\sqrt{n+1}-\\sqrt{n}}{n} = \\frac{(\\sqrt{n+1}+ \\sqrt{n})(\\sqrt{n+1}-\\sqrt{n})}{n(\\sqrt{n+1}+ \\sqrt{n})} = \\frac{1}{n(\\sqrt{n+1}+ \\sqrt{n})} = \\frac{1}{n\\sqrt{n}\\left(\\sqrt{1+\\frac{1}{n}}+1\\right)} \\underset{+\\infty}\\sim \\frac{1}{n \\times 2\\sqrt{n}} = \\frac{1}{2n^{3/2}}\\)</span> donc par comparaison à une série de Riemann convergente (<span>\\(\\alpha = 3/2&gt;1\\)</span>), la série <span>\\(\\sum u_n\\)</span> converge.</p>",
+      "order": 12
+    },
+    {
+      "id": "block_13",
+      "type": "question",
+      "latex": "$u_n=\\frac{(-1)^n+n}{n^2+1}$",
+      "html": "<p><span>\\(u_n=\\frac{(-1)^n+n}{n^2+1}\\)</span></p>",
+      "order": 13
+    },
+    {
+      "id": "block_14",
+      "type": "indication",
+      "latex": "utiliser l'inégalité $n!\\geq 2^{n-1}$.",
+      "html": "<p>utiliser l’inégalité <span>\\(n!\\geq 2^{n-1}\\)</span>.</p>",
+      "order": 14
+    },
+    {
+      "id": "block_15",
+      "type": "reponse",
+      "latex": "Alors $u_n \\geq 0$ pour tout $n \\in \\N^* $ et $u_n = \\frac{(-1)^n+n}{n^2+1} \\underset{+\\infty}\\sim \\frac{n}{n^2} = \\frac{1}{n}$ donc par comparaison à une série de Riemann divergente ($\\alpha = 1<1$), la série $\\sum u_n$ diverge.",
+      "html": "<p>Alors <span>\\(u_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N^*\\)</span> et <span>\\(u_n = \\frac{(-1)^n+n}{n^2+1} \\underset{+\\infty}\\sim \\frac{n}{n^2} = \\frac{1}{n}\\)</span> donc par comparaison à une série de Riemann divergente (<span>\\(\\alpha = 1&lt;1\\)</span>), la série <span>\\(\\sum u_n\\)</span> diverge.</p>",
+      "order": 15
+    },
+    {
+      "id": "block_16",
+      "type": "question",
+      "latex": "$u_n=\\frac{1}{n!}$",
+      "html": "<p><span>\\(u_n=\\frac{1}{n!}\\)</span></p>",
+      "order": 16
+    },
+    {
+      "id": "block_17",
+      "type": "reponse",
+      "latex": "Alors $u_n \\geq 0$ pour tout $n \\in \\N^*$ et $u_n \\leq \\frac{1}{2^{n-1}}$ pour tout $n \\in \\N^*$ donc par comparaison à une série géométrique convergente ($q = \\frac{1}{2}<1$), la série $\\sum u_n$ converge.",
+      "html": "<p>Alors <span>\\(u_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N^*\\)</span> et <span>\\(u_n \\leq \\frac{1}{2^{n-1}}\\)</span> pour tout <span>\\(n \\in \\N^*\\)</span> donc par comparaison à une série géométrique convergente (<span>\\(q = \\frac{1}{2}&lt;1\\)</span>), la série <span>\\(\\sum u_n\\)</span> converge.</p>",
+      "order": 17
+    },
+    {
+      "id": "block_18",
+      "type": "question",
+      "latex": "$u_n=\\ln\\left(\\frac{n^2+n+1}{n^2+n-1}\\right)$",
+      "html": "<p><span>\\(u_n=\\ln\\left(\\frac{n^2+n+1}{n^2+n-1}\\right)\\)</span></p>",
+      "order": 18
+    },
+    {
+      "id": "block_19",
+      "type": "indication",
+      "latex": "utiliser un équivalent de $\\ln(1+x)$ en $0$.",
+      "html": "<p>utiliser un équivalent de <span>\\(\\ln(1+x)\\)</span> en <span>\\(0\\)</span>.</p>",
+      "order": 19
+    },
+    {
+      "id": "block_20",
+      "type": "reponse",
+      "latex": "Alors $u_n \\geq 0$ pour tout $n \\in \\N^*$ et $u_n = \\ln\\left(\\frac{n^2+n+2-1}{n^2+n-1}\\right) = \\ln\\left(1+\\frac{2}{n^2+n-1}\\right) \\underset{+\\infty}\\sim \\frac{2}{n^2+n-1}$ donc par comparaison à une série de Riemann convergente ($\\alpha = 2>1$), la série $\\sum u_n$ converge.",
+      "html": "<p>Alors <span>\\(u_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N^*\\)</span> et <span>\\(u_n = \\ln\\left(\\frac{n^2+n+2-1}{n^2+n-1}\\right) = \\ln\\left(1+\\frac{2}{n^2+n-1}\\right) \\underset{+\\infty}\\sim \\frac{2}{n^2+n-1}\\)</span> donc par comparaison à une série de Riemann convergente (<span>\\(\\alpha = 2&gt;1\\)</span>), la série <span>\\(\\sum u_n\\)</span> converge.</p>",
+      "order": 20
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "c77ab58d4ae057b5c0f4523f418dddb12ebf212dea2d32ddca3cfcf6d8cf6988"
+}

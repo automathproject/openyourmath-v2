@@ -1,0 +1,29 @@
+{
+  "uuid": "ovua",
+  "title": "Test non paramétrique",
+  "chapter": "",
+  "subchapter": "",
+  "theme": "Statistique",
+  "difficulty": null,
+  "author": "Erwan L'Haridon",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "",
+  "updated_at": "2025-08-22T13:04:25.469Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Une enquête portant sur les dépenses mensuelles de produits surgelés chez les ménages dotés d’un réfrigérateur avec conservateur a été faite. Les résultats de cette enquête réalisée auprès de 500 ménages sont :\n\\begin{center}\n\\begin{tabular}{|c|c|}\n    \\hline\n    Dépenses mensuelles (euros) & Nombre de ménages \\\\\n    \\hline\n    $X<20$ & 25 \\\\\n    $20\\leq X<40$ & 25 \\\\\n    $40\\leq X<60$ & 45 \\\\\n    $60\\leq X<80$ & 60 \\\\\n    $80\\leq X<100$ & 75 \\\\\n    $100\\leq X<120$ & 85 \\\\\n    $120\\leq X<140$ & 75 \\\\\n    $140\\leq X<160$ & 50 \\\\\n    $160\\leq X<200$ & 45 \\\\\n    $X\\geq 200$ & 15 \\\\\n    \\hline\n\\end{tabular}\n\\end{center}\nTester, au risque de 5\\%, l’adéquation des observations à une loi Normale de moyenne 100 euros, et d’écart-type 50 euros.",
+      "html": "<p>Une enquête portant sur les dépenses mensuelles de produits surgelés chez les ménages dotés d’un réfrigérateur avec conservateur a été faite. Les résultats de cette enquête réalisée auprès de 500 ménages sont :</p>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\">Dépenses mensuelles (euros)</th>\n<th style=\"text-align: center;\">Nombre de ménages</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><span>\\(X&lt;20\\)</span></td>\n<td style=\"text-align: center;\">25</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(20\\leq X&lt;40\\)</span></td>\n<td style=\"text-align: center;\">25</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(40\\leq X&lt;60\\)</span></td>\n<td style=\"text-align: center;\">45</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(60\\leq X&lt;80\\)</span></td>\n<td style=\"text-align: center;\">60</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(80\\leq X&lt;100\\)</span></td>\n<td style=\"text-align: center;\">75</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(100\\leq X&lt;120\\)</span></td>\n<td style=\"text-align: center;\">85</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(120\\leq X&lt;140\\)</span></td>\n<td style=\"text-align: center;\">75</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(140\\leq X&lt;160\\)</span></td>\n<td style=\"text-align: center;\">50</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(160\\leq X&lt;200\\)</span></td>\n<td style=\"text-align: center;\">45</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(X\\geq 200\\)</span></td>\n<td style=\"text-align: center;\">15</td>\n</tr>\n</tbody>\n</table>\n<p>Tester, au risque de 5%, l’adéquation des observations à une loi Normale de moyenne 100 euros, et d’écart-type 50 euros.</p>",
+      "order": 1
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "6abe083cdcd8146bf5effde4c78ec3b6a5159b3c8ed0c3455ad36651f45da234"
+}

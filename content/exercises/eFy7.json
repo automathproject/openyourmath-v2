@@ -1,0 +1,85 @@
+{
+  "uuid": "eFy7",
+  "title": "Analyse de covariance et moments d'une loi normale",
+  "chapter": "Probabilité continue",
+  "subchapter": "Loi normale",
+  "theme": "loi normale",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-11-15",
+  "updated_at": "2025-08-22T13:03:38.764Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère deux variables aléatoires réelles \\( X \\) et \\( U \\)  indépendantes, \\( X \\) suivant la loi normale \\( \\mathcal{N}(0, 1) \\) et \\( U \\) suivant la loi discrète uniforme sur \\( \\{-1,1\\} \\).\n\nOn pose \\( Y = UX \\) et on admet que \\( Y \\) est une variable aléatoire absolument continue.",
+      "html": "<p>On considère deux variables aléatoires réelles <span>\\(X\\)</span> et <span>\\(U\\)</span> indépendantes, <span>\\(X\\)</span> suivant la loi normale <span>\\(\\mathcal{N}(0, 1)\\)</span> et <span>\\(U\\)</span> suivant la loi discrète uniforme sur <span>\\(\\{-1,1\\}\\)</span>.</p>\n<p>On pose <span>\\(Y = UX\\)</span> et on admet que <span>\\(Y\\)</span> est une variable aléatoire absolument continue.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "En utilisant la formule des probabilités totales, montrer que :\n$$ \\forall x \\in \\mathbb{R}, \\quad \\mathbb{P}(Y \\leq x) = \\mathbb{P}(U = 1) \\mathbb{P}(X \\leq x) + \\mathbb{P}(U = -1) \\mathbb{P}(X > -x) $$\n\net en déduire que \\( Y \\) suit la même loi que \\( X \\).",
+      "html": "<p>En utilisant la formule des probabilités totales, montrer que :\n<span>\\[\\forall x \\in \\mathbb{R}, \\quad \\mathbb{P}(Y \\leq x) = \\mathbb{P}(U = 1) \\mathbb{P}(X \\leq x) + \\mathbb{P}(U = -1) \\mathbb{P}(X &gt; -x)\\]</span></p>\n<p>et en déduire que <span>\\(Y\\)</span> suit la même loi que <span>\\(X\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Soient \\( X \\sim \\mathcal{N}(0,1) \\) et \\( U \\) une variable discrète uniforme sur \\(\\{-1,1\\}\\), indépendantes. Pour tout \\( x \\in \\mathbb{R} \\), on a\n\\[\n\\mathbb{P}(Y\\le x) = \\mathbb{P}(UX\\le x)\n= \\mathbb{P}(\\{U=1\\}\\cap\\{X\\le x\\}) + \\mathbb{P}(\\{U=-1\\}\\cap\\{-X\\le x\\}).\n\\]\nLorsque \\( U = -1 \\), l'inégalité \\(-X\\le x\\) s'écrit \\( X\\ge -x \\). Par indépendance de \\( U \\) et \\( X \\) et en utilisant la formule des probabilités totales, on obtient\n\\[\n\\mathbb{P}(Y\\le x)\n=\\mathbb{P}(U=1)\\,\\mathbb{P}(X\\le x) + \\mathbb{P}(U=-1)\\,\\mathbb{P}(X\\ge -x).\n\\]\nÉtant donné que \\( \\mathbb{P}(U=1)=\\mathbb{P}(U=-1)=\\frac{1}{2} \\) et que la symétrie de la loi normale implique que\n\\[\n\\mathbb{P}(X\\ge -x)=\\mathbb{P}(X\\le x),\n\\]\nil vient\n\\[\n\\mathbb{P}(Y\\le x)\n=\\frac{1}{2}\\,\\mathbb{P}(X\\le x) + \\frac{1}{2}\\,\\mathbb{P}(X\\le x)\n=\\mathbb{P}(X\\le x).\n\\]\nAinsi, la fonction de répartition de \\( Y \\) est identique à celle de \\( X \\) et donc \\( Y \\sim \\mathcal{N}(0,1) \\).",
+      "html": "<p>Soient <span>\\(X \\sim \\mathcal{N}(0,1)\\)</span> et <span>\\(U\\)</span> une variable discrète uniforme sur <span>\\(\\{-1,1\\}\\)</span>, indépendantes. Pour tout <span>\\(x \\in \\mathbb{R}\\)</span>, on a\n<span>\\[\\mathbb{P}(Y\\le x) = \\mathbb{P}(UX\\le x)\n= \\mathbb{P}(\\{U=1\\}\\cap\\{X\\le x\\}) + \\mathbb{P}(\\{U=-1\\}\\cap\\{-X\\le x\\}).\\]</span>\nLorsque <span>\\(U = -1\\)</span>, l’inégalité <span>\\(-X\\le x\\)</span> s’écrit <span>\\(X\\ge -x\\)</span>. Par indépendance de <span>\\(U\\)</span> et <span>\\(X\\)</span> et en utilisant la formule des probabilités totales, on obtient\n<span>\\[\\mathbb{P}(Y\\le x)\n=\\mathbb{P}(U=1)\\,\\mathbb{P}(X\\le x) + \\mathbb{P}(U=-1)\\,\\mathbb{P}(X\\ge -x).\\]</span>\nÉtant donné que <span>\\(\\mathbb{P}(U=1)=\\mathbb{P}(U=-1)=\\frac{1}{2}\\)</span> et que la symétrie de la loi normale implique que\n<span>\\[\\mathbb{P}(X\\ge -x)=\\mathbb{P}(X\\le x),\\]</span>\nil vient\n<span>\\[\\mathbb{P}(Y\\le x)\n=\\frac{1}{2}\\,\\mathbb{P}(X\\le x) + \\frac{1}{2}\\,\\mathbb{P}(X\\le x)\n=\\mathbb{P}(X\\le x).\\]</span>\nAinsi, la fonction de répartition de <span>\\(Y\\)</span> est identique à celle de <span>\\(X\\)</span> et donc <span>\\(Y \\sim \\mathcal{N}(0,1)\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Calculer l'espérance de \\( U \\), puis montrer que \\( \\mathbb{E}(XY) = 0 \\). En déduire que \\( \\mathrm{Cov}(X, Y) = 0 \\).",
+      "html": "<p>Calculer l’espérance de <span>\\(U\\)</span>, puis montrer que <span>\\(\\mathbb{E}(XY) = 0\\)</span>. En déduire que <span>\\(\\mathrm{Cov}(X, Y) = 0\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Tout d'abord, comme \\( U \\) prend les valeurs \\( -1 \\) et \\( 1 \\) avec même probabilité,\n\\[\n\\mathbb{E}(U)=\\frac{1}{2}(-1)+\\frac{1}{2}(1)=0.\n\\]\nEn écrivant \\( Y = UX \\), on a\n\\[\n\\mathbb{E}(XY)=\\mathbb{E}(X\\,(UX))=\\mathbb{E}(U\\,X^2).\n\\]\nComme \\( U \\) et \\( X \\) sont indépendantes, on peut séparer l'espérance :\n\\[\n\\mathbb{E}(U\\,X^2)=\\mathbb{E}(U)\\,\\mathbb{E}(X^2)=0\\times\\mathbb{E}(X^2)=0.\n\\]\nLa covariance est donnée par\n\\[\n\\mathrm{Cov}(X,Y)=\\mathbb{E}(XY)-\\mathbb{E}(X)\\,\\mathbb{E}(Y).\n\\]\nOr, \\( \\mathbb{E}(X)=0 \\) (pour une loi normale centrée) et, comme \\( Y \\sim \\mathcal{N}(0,1) \\), \\( \\mathbb{E}(Y)=0 \\). Ainsi,\n\\[\n\\mathrm{Cov}(X,Y)=0-0=0.\n\\]",
+      "html": "<p>Tout d’abord, comme <span>\\(U\\)</span> prend les valeurs <span>\\(-1\\)</span> et <span>\\(1\\)</span> avec même probabilité,\n<span>\\[\\mathbb{E}(U)=\\frac{1}{2}(-1)+\\frac{1}{2}(1)=0.\\]</span>\nEn écrivant <span>\\(Y = UX\\)</span>, on a\n<span>\\[\\mathbb{E}(XY)=\\mathbb{E}(X\\,(UX))=\\mathbb{E}(U\\,X^2).\\]</span>\nComme <span>\\(U\\)</span> et <span>\\(X\\)</span> sont indépendantes, on peut séparer l’espérance :\n<span>\\[\\mathbb{E}(U\\,X^2)=\\mathbb{E}(U)\\,\\mathbb{E}(X^2)=0\\times\\mathbb{E}(X^2)=0.\\]</span>\nLa covariance est donnée par\n<span>\\[\\mathrm{Cov}(X,Y)=\\mathbb{E}(XY)-\\mathbb{E}(X)\\,\\mathbb{E}(Y).\\]</span>\nOr, <span>\\(\\mathbb{E}(X)=0\\)</span> (pour une loi normale centrée) et, comme <span>\\(Y \\sim \\mathcal{N}(0,1)\\)</span>, <span>\\(\\mathbb{E}(Y)=0\\)</span>. Ainsi,\n<span>\\[\\mathrm{Cov}(X,Y)=0-0=0.\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Rappeler la valeur de \\( \\mathbb{E}(X^2) \\) et en déduire que :\n$$ \\int_{0}^{+\\infty} x^2 e^{-\\frac{x^2}{2}} \\, dx = \\frac{\\sqrt{\\pi}}{2} $$",
+      "html": "<p>Rappeler la valeur de <span>\\(\\mathbb{E}(X^2)\\)</span> et en déduire que :\n<span>\\[\\int_{0}^{+\\infty} x^2 e^{-\\frac{x^2}{2}} \\, dx = \\frac{\\sqrt{\\pi}}{2}\\]</span></p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Pour \\( X \\sim \\mathcal{N}(0,1) \\), on connaît que\n\\[\n\\mathbb{E}(X^2)=1.\n\\]\nD'autre part, en utilisant la densité de \\( X \\),\n\\[\nf_X(x)=\\frac{1}{\\sqrt{2\\pi}}\\,e^{-x^2/2},\n\\]\non a\n\\[\n\\mathbb{E}(X^2)=\\int_{-\\infty}^{+\\infty} x^2\\,f_X(x)\\,dx\n=\\frac{1}{\\sqrt{2\\pi}} \\int_{-\\infty}^{+\\infty} x^2 e^{-x^2/2}\\,dx.\n\\]\nLa fonction \\( x\\mapsto x^2e^{-x^2/2} \\) est paire, donc\n\\[\n\\int_{-\\infty}^{+\\infty} x^2 e^{-x^2/2}\\,dx = 2\\int_{0}^{+\\infty} x^2 e^{-x^2/2}\\,dx.\n\\]\nAinsi,\n\\[\n1=\\frac{1}{\\sqrt{2\\pi}} \\cdot 2\\int_{0}^{+\\infty} x^2 e^{-x^2/2}\\,dx,\n\\]\nce qui donne\n\\[\n\\int_{0}^{+\\infty} x^2 e^{-x^2/2}\\,dx\n=\\frac{\\sqrt{2\\pi}}{2}.\n\\]",
+      "html": "<p>Pour <span>\\(X \\sim \\mathcal{N}(0,1)\\)</span>, on connaît que\n<span>\\[\\mathbb{E}(X^2)=1.\\]</span>\nD’autre part, en utilisant la densité de <span>\\(X\\)</span>,\n<span>\\[f_X(x)=\\frac{1}{\\sqrt{2\\pi}}\\,e^{-x^2/2},\\]</span>\non a\n<span>\\[\\mathbb{E}(X^2)=\\int_{-\\infty}^{+\\infty} x^2\\,f_X(x)\\,dx\n=\\frac{1}{\\sqrt{2\\pi}} \\int_{-\\infty}^{+\\infty} x^2 e^{-x^2/2}\\,dx.\\]</span>\nLa fonction <span>\\(x\\mapsto x^2e^{-x^2/2}\\)</span> est paire, donc\n<span>\\[\\int_{-\\infty}^{+\\infty} x^2 e^{-x^2/2}\\,dx = 2\\int_{0}^{+\\infty} x^2 e^{-x^2/2}\\,dx.\\]</span>\nAinsi,\n<span>\\[1=\\frac{1}{\\sqrt{2\\pi}} \\cdot 2\\int_{0}^{+\\infty} x^2 e^{-x^2/2}\\,dx,\\]</span>\nce qui donne\n<span>\\[\\int_{0}^{+\\infty} x^2 e^{-x^2/2}\\,dx\n=\\frac{\\sqrt{2\\pi}}{2}.\\]</span></p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "En déduire, s'il existe, le moment d'ordre $4$ de $X$.",
+      "html": "<p>En déduire, s’il existe, le moment d’ordre <span>\\(4\\)</span> de <span>\\(X\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "Nous souhaitons calculer\n\\[\n\\mathbb{E}(X^4)=\\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} x^4 e^{-x^2/2}\\,dx.\n\\]\nComme la fonction \\( x\\mapsto x^4e^{-x^2/2} \\) est paire, on peut écrire\n\\[\n\\mathbb{E}(X^4)=\\frac{2}{\\sqrt{2\\pi}}\\int_{0}^{+\\infty} x^4 e^{-x^2/2}\\,dx.\n\\]\nPour évaluer l'intégrale\n\\[\nI = \\int_{0}^{+\\infty} x^4 e^{-x^2/2}\\,dx,\n\\]\nnous effectuons une intégration par parties en posant\n\\[\n\\begin{cases}\nu = x^3, \\quad & du = 3x^2\\,dx,\\\\[1mm]\ndv = x\\,e^{-x^2/2}\\,dx, \\quad & v = -e^{-x^2/2}.\n\\end{cases}\n\\]\nAinsi, par intégration par parties,\n\\[\nI = \\Bigl[-x^3e^{-x^2/2}\\Bigr]_0^{+\\infty} + \\int_0^{+\\infty} 3x^2e^{-x^2/2}\\,dx.\n\\]\nLe terme d'évaluation aux bornes s'annule (en effet, \\( x^3 e^{-x^2/2}\\to 0 \\) quand \\( x\\to+\\infty \\) et vaut 0 en 0), ce qui donne\n\\[\nI = 3\\int_{0}^{+\\infty} x^2 e^{-x^2/2}\\,dx.\n\\]\nD'après la question précédente, on a établi que\n\\[\n\\int_{0}^{+\\infty} x^2 e^{-x^2/2}\\,dx = \\frac{\\sqrt{2\\pi}}{2}.\n\\]\nIl s'ensuit que\n\\[\nI = 3\\,\\frac{\\sqrt{2\\pi}}{2}.\n\\]\nFinalement,\n\\[\n\\mathbb{E}(X^4)=\\frac{2}{\\sqrt{2\\pi}}\\;I=\\frac{2}{\\sqrt{2\\pi}}\\cdot\\frac{3\\sqrt{2\\pi}}{2}=3.\n\\]\nAinsi, le moment d'ordre 4 de \\( X \\) existe et vaut \\( 3 \\).",
+      "html": "<p>Nous souhaitons calculer\n<span>\\[\\mathbb{E}(X^4)=\\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} x^4 e^{-x^2/2}\\,dx.\\]</span>\nComme la fonction <span>\\(x\\mapsto x^4e^{-x^2/2}\\)</span> est paire, on peut écrire\n<span>\\[\\mathbb{E}(X^4)=\\frac{2}{\\sqrt{2\\pi}}\\int_{0}^{+\\infty} x^4 e^{-x^2/2}\\,dx.\\]</span>\nPour évaluer l’intégrale\n<span>\\[I = \\int_{0}^{+\\infty} x^4 e^{-x^2/2}\\,dx,\\]</span>\nnous effectuons une intégration par parties en posant\n<span>\\[\\begin{cases}\nu = x^3, \\quad &amp; du = 3x^2\\,dx,\\\\[1mm]\ndv = x\\,e^{-x^2/2}\\,dx, \\quad &amp; v = -e^{-x^2/2}.\n\\end{cases}\\]</span>\nAinsi, par intégration par parties,\n<span>\\[I = \\Bigl[-x^3e^{-x^2/2}\\Bigr]_0^{+\\infty} + \\int_0^{+\\infty} 3x^2e^{-x^2/2}\\,dx.\\]</span>\nLe terme d’évaluation aux bornes s’annule (en effet, <span>\\(x^3 e^{-x^2/2}\\to 0\\)</span> quand <span>\\(x\\to+\\infty\\)</span> et vaut 0 en 0), ce qui donne\n<span>\\[I = 3\\int_{0}^{+\\infty} x^2 e^{-x^2/2}\\,dx.\\]</span>\nD’après la question précédente, on a établi que\n<span>\\[\\int_{0}^{+\\infty} x^2 e^{-x^2/2}\\,dx = \\frac{\\sqrt{2\\pi}}{2}.\\]</span>\nIl s’ensuit que\n<span>\\[I = 3\\,\\frac{\\sqrt{2\\pi}}{2}.\\]</span>\nFinalement,\n<span>\\[\\mathbb{E}(X^4)=\\frac{2}{\\sqrt{2\\pi}}\\;I=\\frac{2}{\\sqrt{2\\pi}}\\cdot\\frac{3\\sqrt{2\\pi}}{2}=3.\\]</span>\nAinsi, le moment d’ordre 4 de <span>\\(X\\)</span> existe et vaut <span>\\(3\\)</span>.</p>",
+      "order": 9
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "e686bdaa4d8b1a82adde0db4f2f0c3f8d08be5a3ddb7d511e27f7e7941a0127d"
+}

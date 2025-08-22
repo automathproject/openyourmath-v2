@@ -1,0 +1,99 @@
+{
+  "uuid": "zhwJ",
+  "title": "Etude d'extrema",
+  "chapter": "Fonction de plusieurs variables",
+  "subchapter": "Extremums locaux",
+  "theme": "calcul différentiel, optimisation",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-03-21",
+  "updated_at": "2025-08-22T12:41:36.132Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On étudie la fonction de deux variables $$f \\colon (x,y) \\mapsto x\\ln(y)-y\\ln(x)$$",
+      "html": "<p>On étudie la fonction de deux variables <span>\\[f \\colon (x,y) \\mapsto x\\ln(y)-y\\ln(x)\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Déterminer l'ensemble de définition de la fonction $f$ et vérifier que $f$ est de classe $\\mathcal{C}^2$ sur son ensemble de définition.",
+      "html": "<p>Déterminer l’ensemble de définition de la fonction <span>\\(f\\)</span> et vérifier que <span>\\(f\\)</span> est de classe <span>\\(\\mathcal{C}^2\\)</span> sur son ensemble de définition.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "L'ensemble de définition de $f$ est $D_f = \\{(x,y) \\in \\R^2\\, , \\, x>0, y>0 \\}$",
+      "html": "<p>L’ensemble de définition de <span>\\(f\\)</span> est <span>\\(D_f = \\{(x,y) \\in \\R^2\\, , \\, x&gt;0, y&gt;0 \\}\\)</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "On pose $h(t) = t-\\ln(t)-\\frac{1}{t}$ : déterminer l'ensemble de définition de $h$ et étudier ses variations.",
+      "html": "<p>On pose <span>\\(h(t) = t-\\ln(t)-\\frac{1}{t}\\)</span> : déterminer l’ensemble de définition de <span>\\(h\\)</span> et étudier ses variations.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "L'ensemble de définition de $h$ est $D_h = \\{t \\in \\R\\, , \\, t>0\\}= \\R_+^*$. La fonction $h$ est dérivable sur son ensemble de définition et $\\forall t \\in \\R_+^*$ : \n\t\t\t$$h'(t) = 1-\\frac{1}{t}+\\frac{1}{t^2} = \\frac{t^2-t+1}{t^2} = \\frac{(t+1)^2+t}{t^2} > 0$$\n\t\t\tPar conséquent, $h$ est strictement croissante sur $]0;+\\infty[$.",
+      "html": "<p>L’ensemble de définition de <span>\\(h\\)</span> est <span>\\(D_h = \\{t \\in \\R\\, , \\, t&gt;0\\}= \\R_+^*\\)</span>. La fonction <span>\\(h\\)</span> est dérivable sur son ensemble de définition et <span>\\(\\forall t \\in \\R_+^*\\)</span> :\n<span>\\[h&#39;(t) = 1-\\frac{1}{t}+\\frac{1}{t^2} = \\frac{t^2-t+1}{t^2} = \\frac{(t+1)^2+t}{t^2} &gt; 0\\]</span>\nPar conséquent, <span>\\(h\\)</span> est strictement croissante sur <span>\\(]0;+\\infty[\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Démontrer que $\\mathrm{grad}_f(x,y)=(0,0) \\iff \t\\begin{cases}\n\t\t\th\\left(\\frac{x}{y}\\right) = 0\\\\\n\t\t\t\\frac{x}{y} - \\ln(x) =0\n\t\t\\end{cases}$",
+      "html": "<p>Démontrer que <span>\\(\\mathrm{grad}_f(x,y)=(0,0) \\iff  \\begin{cases}\n            h\\left(\\frac{x}{y}\\right) = 0\\\\\n            \\frac{x}{y} - \\ln(x) =0\n        \\end{cases}\\)</span></p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "$$\\begin{align*}\n\t\t\t\t\\begin{cases}\n\t\t\t\t\t\\frac{\\partial f}{\\partial x}(x,y) = 0\\\\\n\t\t\t\t\t\\frac{\\partial f}{\\partial y}(x,y) =0\n\t\t\t\t\\end{cases}\n\t\t\t\t\\Leftrightarrow\n\t\t\t\t\\begin{cases}\n\t\t\t\t\t\\ln(y) - \\frac{y}{x} = 0\\\\\n\t\t\t\t\t\\frac{x}{y} - \\ln(x)=0\n\t\t\t\t\\end{cases}\t\t\n\t\t\t\t\\Leftrightarrow\n\t\t\t\t\\begin{cases}\n\t\t\t\t\t\\ln(y) - \\ln(x) +  \\frac{x}{y}  - \\frac{y}{x} = 0            \\\\\n\t\t\t\t\t\\frac{x}{y} - \\ln(x) = 0\n\t\t\t\t\\end{cases}\t\t\n\t\t\t\t\\Leftrightarrow\n\t\t\t\t\\begin{cases}\n\t\t\t\t\th\\left(\\frac{x}{y}\\right) = 0            \\\\\n\t\t\t\t\t\\frac{x}{y} - \\ln(x) = 0\n\t\t\t\t\\end{cases}\t\t\t\n\t\t\\end{align*}$$",
+      "html": "<p><span>\\[\\begin{align*}\n                \\begin{cases}\n                    \\frac{\\partial f}{\\partial x}(x,y) = 0\\\\\n                    \\frac{\\partial f}{\\partial y}(x,y) =0\n                \\end{cases}\n                \\Leftrightarrow\n                \\begin{cases}\n                    \\ln(y) - \\frac{y}{x} = 0\\\\\n                    \\frac{x}{y} - \\ln(x)=0\n                \\end{cases}     \n                \\Leftrightarrow\n                \\begin{cases}\n                    \\ln(y) - \\ln(x) +  \\frac{x}{y}  - \\frac{y}{x} = 0            \\\\\n                    \\frac{x}{y} - \\ln(x) = 0\n                \\end{cases}     \n                \\Leftrightarrow\n                \\begin{cases}\n                    h\\left(\\frac{x}{y}\\right) = 0            \\\\\n                    \\frac{x}{y} - \\ln(x) = 0\n                \\end{cases}         \n        \\end{align*}\\]</span></p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "En déduire l'ensemble des points stationnaires de $f$.",
+      "html": "<p>En déduire l’ensemble des points stationnaires de <span>\\(f\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "La fonction $h$ s'annule une et une seule fois sur son ensemble définition en $t=1$ donc $(x,y)$ est un point stationnaire si et seulement si $x=y=e$. Il existe un unique point stationnaire qui est le point $(e,e)$.",
+      "html": "<p>La fonction <span>\\(h\\)</span> s’annule une et une seule fois sur son ensemble définition en <span>\\(t=1\\)</span> donc <span>\\((x,y)\\)</span> est un point stationnaire si et seulement si <span>\\(x=y=e\\)</span>. Il existe un unique point stationnaire qui est le point <span>\\((e,e)\\)</span>.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "Déterminer l'ensemble des points extrémaux (locaux et globaux) de $f$.",
+      "html": "<p>Déterminer l’ensemble des points extrémaux (locaux et globaux) de <span>\\(f\\)</span>.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "reponse",
+      "latex": "Il est clair que $f$ n'admet pas d'extremum global. En effet, on peut voir par exemple que $\\lim\\limits_{x \\to +\\infty}f(x,1) = -\\infty$ et $\\lim\\limits_{y \\to +\\infty}f(1,y) = +\\infty$.\n\t\t\t\n\t\t\tDe plus, au voisinage du point stationnaire $(e,e)$, on peut étudier les conditions du second ordre en formant la matrice hessienne : \n\t\t\t\n\t\t\t$$Hess_f(x,y)=\\begin{pmatrix}\n\t\t\t\t\t\t\t\\frac{y}{x^2} & \\frac{1}{y} - \\frac{1}{x} \\\\\n\t\t\t\t\t\t\t\\frac{1}{y} - \\frac{1}{x} & -\\frac{x}{y^2}\n\t\t\t\t\t\t\\end{pmatrix}$$\n\t\t\td'où \n\t\t\t$$Hess_f(e,e)=\\begin{pmatrix}\n\t\t\t\t\\frac{1}{e} & 0 \\\\\n\t\t\t\t0 & -\\frac{1}{e}\n\t\t\t\t\\end{pmatrix}$$\n\t\t\t\n\t\t\tOn a un déterminant négatif, donc le point $(e,e)$ est un point selle.",
+      "html": "<p>Il est clair que <span>\\(f\\)</span> n’admet pas d’extremum global. En effet, on peut voir par exemple que <span>\\(\\lim\\limits_{x \\to +\\infty}f(x,1) = -\\infty\\)</span> et <span>\\(\\lim\\limits_{y \\to +\\infty}f(1,y) = +\\infty\\)</span>.</p>\n<p>De plus, au voisinage du point stationnaire <span>\\((e,e)\\)</span>, on peut étudier les conditions du second ordre en formant la matrice hessienne :</p>\n<p><span>\\[Hess_f(x,y)=\\begin{pmatrix}\n                            \\frac{y}{x^2} &amp; \\frac{1}{y} - \\frac{1}{x} \\\\\n                            \\frac{1}{y} - \\frac{1}{x} &amp; -\\frac{x}{y^2}\n                        \\end{pmatrix}\\]</span>\nd’où\n<span>\\[Hess_f(e,e)=\\begin{pmatrix}\n                \\frac{1}{e} &amp; 0 \\\\\n                0 &amp; -\\frac{1}{e}\n                \\end{pmatrix}\\]</span></p>\n<p>On a un déterminant négatif, donc le point <span>\\((e,e)\\)</span> est un point selle.</p>",
+      "order": 11
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "892af5378a030d178bbe3c51ec9be604e8d36579779e205ef5aed4d4914b7525"
+}

@@ -1,0 +1,57 @@
+{
+  "uuid": "FKpl",
+  "title": "Comparaison d'estimateurs",
+  "chapter": "Statistique",
+  "subchapter": "Estimation",
+  "theme": "estimateurs",
+  "difficulty": null,
+  "author": "Maxime Nguyen",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-13",
+  "updated_at": "2025-08-22T13:02:36.643Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère trois variables aléatoires indépendantes $X_1,X_2,X_3$ suivant chacune une loi de probabilité de même moyenne $\\mu$ et de variance $\\sigma^2$. On pose $$M_1=\\frac{X_1+X_2+X_3}{3} \\text{ et } M_2=\\frac{X_1+2X_2+3X_3}{6}$$",
+      "html": "<p>On considère trois variables aléatoires indépendantes <span>\\(X_1,X_2,X_3\\)</span> suivant chacune une loi de probabilité de même moyenne <span>\\(\\mu\\)</span> et de variance <span>\\(\\sigma^2\\)</span>. On pose <span>\\[M_1=\\frac{X_1+X_2+X_3}{3} \\text{ et } M_2=\\frac{X_1+2X_2+3X_3}{6}\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Démontrer que ce sont deux estimateurs sans biais de la moyenne $\\mu$.",
+      "html": "<p>Démontrer que ce sont deux estimateurs sans biais de la moyenne <span>\\(\\mu\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "$$\\begin{align*}\n\t\t\\E(M_1) &= \\E\\left(\\frac{X_1+X_2+X_3}{3}\\right) \\\\\n\t\t&= \\frac{1}{3}\\E(X_1+X_2+X_3) \\\\\n\t\t&= \\frac{1}{3}(\\E(X_1)+\\E(X_2)+\\E(X_3)) \\\\\n\t\t&= \\frac{1}{3}(3\\mu) \\\\\n\t\t&= \\mu\n\t\\end{align*}$$\n\tDonc $B(M_1) = \\E(M_1 - \\mu) = \\E(M_1) - \\mu = \\mu - \\mu = 0$. \\\\\n\tDonc $M_1$ est un estimateur sans biais de la moyenne $\\mu$. \\\\\n\n\tDe même, on a :\n\t$$\\begin{align*}\n\t\t\\E(M_2) &= \\E\\left(\\frac{X_1+2X_2+3X_3}{6}\\right) \\\\\n\t\t&= \\frac{1}{6}\\E(X_1+2X_2+3X_3) \\\\\n\t\t&= \\frac{1}{6}(\\mu+2\\mu+3\\mu) \\\\\n\t\t&= \\frac{6\\mu}{6} \\\\\n\t\t&= \\mu\n\t\\end{align*}$$\n\tDonc $B(M_2) = \\E(M_2 - \\mu) = \\E(M_2) - \\mu = \\mu - \\mu = 0$. \\\\\n\tDonc $M_2$ est un estimateur sans biais de la moyenne $\\mu$.",
+      "html": "<p><span>\\[\\begin{align*}\n        \\E(M_1) &amp;= \\E\\left(\\frac{X_1+X_2+X_3}{3}\\right) \\\\\n        &amp;= \\frac{1}{3}\\E(X_1+X_2+X_3) \\\\\n        &amp;= \\frac{1}{3}(\\E(X_1)+\\E(X_2)+\\E(X_3)) \\\\\n        &amp;= \\frac{1}{3}(3\\mu) \\\\\n        &amp;= \\mu\n    \\end{align*}\\]</span>\nDonc <span>\\(B(M_1) = \\E(M_1 - \\mu) = \\E(M_1) - \\mu = \\mu - \\mu = 0\\)</span>.<br />\nDonc <span>\\(M_1\\)</span> est un estimateur sans biais de la moyenne <span>\\(\\mu\\)</span>.<br />\nDe même, on a :\n<span>\\[\\begin{align*}\n        \\E(M_2) &amp;= \\E\\left(\\frac{X_1+2X_2+3X_3}{6}\\right) \\\\\n        &amp;= \\frac{1}{6}\\E(X_1+2X_2+3X_3) \\\\\n        &amp;= \\frac{1}{6}(\\mu+2\\mu+3\\mu) \\\\\n        &amp;= \\frac{6\\mu}{6} \\\\\n        &amp;= \\mu\n    \\end{align*}\\]</span>\nDonc <span>\\(B(M_2) = \\E(M_2 - \\mu) = \\E(M_2) - \\mu = \\mu - \\mu = 0\\)</span>.<br />\nDonc <span>\\(M_2\\)</span> est un estimateur sans biais de la moyenne <span>\\(\\mu\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Lequel de ces deux estimateurs est le plus efficace ?",
+      "html": "<p>Lequel de ces deux estimateurs est le plus efficace ?</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "$$\\begin{align*}\n\t\t\\V(M_1) &= \\V\\left(\\frac{X_1+X_2+X_3}{3}\\right) \\\\\n\t\t&= \\frac{1}{9}\\V(X_1+X_2+X_3) \\\\\n\t\t&= \\frac{1}{9}(\\V(X_1)+\\V(X_2)+\\V(X_3)) \\\\\n\t\t&= \\frac{1}{9}(3\\sigma^2) \\\\\n\t\t&= \\frac{\\sigma^2}{3}\n\t\\end{align*}$$\n\t$$\\begin{align*}\n\t\t\\V(M_2) &= \\V\\left(\\frac{X_1+2X_2+3X_3}{6}\\right) \\\\\n\t\t&= \\frac{1}{36}\\V(X_1+2X_2+3X_3) \\\\\n\t\t&= \\frac{1}{36}(\\V(X_1)+4\\V(X_2)+9\\V(X_3)) \\\\\n\t\t&= \\frac{1}{36}(3\\sigma^2+4\\sigma^2+9\\sigma^2) \\\\\n\t\t&= \\frac{16\\sigma^2}{36} \\\\\n\t\t&= \\frac{4\\sigma^2}{9}\n\t\\end{align*}$$\n\tDonc $\\V(M_1) = \\frac{\\sigma^2}{3}$ et $\\V(M_2) = \\frac{4\\sigma^2}{9}$. \\\\\n\tDonc $\\V(M_1) < \\V(M_2)$. \\\\\n\tDonc $M_1$ est plus efficace que $M_2$.",
+      "html": "<p><span>\\[\\begin{align*}\n        \\V(M_1) &amp;= \\V\\left(\\frac{X_1+X_2+X_3}{3}\\right) \\\\\n        &amp;= \\frac{1}{9}\\V(X_1+X_2+X_3) \\\\\n        &amp;= \\frac{1}{9}(\\V(X_1)+\\V(X_2)+\\V(X_3)) \\\\\n        &amp;= \\frac{1}{9}(3\\sigma^2) \\\\\n        &amp;= \\frac{\\sigma^2}{3}\n    \\end{align*}\\]</span>\n<span>\\[\\begin{align*}\n        \\V(M_2) &amp;= \\V\\left(\\frac{X_1+2X_2+3X_3}{6}\\right) \\\\\n        &amp;= \\frac{1}{36}\\V(X_1+2X_2+3X_3) \\\\\n        &amp;= \\frac{1}{36}(\\V(X_1)+4\\V(X_2)+9\\V(X_3)) \\\\\n        &amp;= \\frac{1}{36}(3\\sigma^2+4\\sigma^2+9\\sigma^2) \\\\\n        &amp;= \\frac{16\\sigma^2}{36} \\\\\n        &amp;= \\frac{4\\sigma^2}{9}\n    \\end{align*}\\]</span>\nDonc <span>\\(\\V(M_1) = \\frac{\\sigma^2}{3}\\)</span> et <span>\\(\\V(M_2) = \\frac{4\\sigma^2}{9}\\)</span>.<br />\nDonc <span>\\(\\V(M_1) &lt; \\V(M_2)\\)</span>.<br />\nDonc <span>\\(M_1\\)</span> est plus efficace que <span>\\(M_2\\)</span>.</p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "536c17f1e9209f227e46b893af11a61eb387a662605cffdd05a60bacaefb3dde"
+}

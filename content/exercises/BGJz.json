@@ -1,0 +1,50 @@
+{
+  "uuid": "BGJz",
+  "title": "Densité et transformation affine",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-09-21",
+  "updated_at": "2025-08-22T13:02:22.445Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $X$ une variable aléatoire absolument continue admettant pour densité $f$. Soit $(a,b) \\in \\mathbb{R}^2$ avec $a>0$ et $Y=aX+b$.",
+      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire absolument continue admettant pour densité <span>\\(f\\)</span>. Soit <span>\\((a,b) \\in \\mathbb{R}^2\\)</span> avec <span>\\(a&gt;0\\)</span> et <span>\\(Y=aX+b\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Démontrer que $Y$ est une variable aléatoire absolument continue en exprimant sa densité en fonction de $f$.",
+      "html": "<p>Démontrer que <span>\\(Y\\)</span> est une variable aléatoire absolument continue en exprimant sa densité en fonction de <span>\\(f\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "Exprimer la fonction de répartition de la variable $aX+b$ ou utiliser un théorème d'identification de densité pour cette variable aléatoire.",
+      "html": "<p>Exprimer la fonction de répartition de la variable <span>\\(aX+b\\)</span> ou utiliser un théorème d’identification de densité pour cette variable aléatoire.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "On utilise le théorème d'identification. La densité $f_Y$ de $Y$ est l'unique fonction telle que pour toute fonction $h$ continue bornée, on ait\n\t\\[ \\E(h(Y))=\\int_\\R h(y)f_Y(y)\\ dy.\\]\n\tOr, étant donné $h$, on a\n\t$$\\begin{align*}\n\t\t\\E(h(Y))&=\\E(h(aX+b)) \\\\\n\t\t&= \\int_\\R h(ax+b) f_X(x) \\ dx \\quad \\text{(par le théorème de transfert)} \\\\\n\t\t&= \\int_\\R h(y) f_X\\left(\\frac{y-b}{a}\\right) \\frac{1}{a} dy \\quad \\text{(par changement de variable } y=ax+b \\text{)}\n\t\\end{align*}$$\n\td'où son identification\n\t\\[ f_Y(y)=\\frac{1}{a}f_X\\left(\\frac{y-b}{a}\\right).\\]",
+      "html": "<p>On utilise le théorème d’identification. La densité <span>\\(f_Y\\)</span> de <span>\\(Y\\)</span> est l’unique fonction telle que pour toute fonction <span>\\(h\\)</span> continue bornée, on ait\n<span>\\[\\E(h(Y))=\\int_\\R h(y)f_Y(y)\\ dy.\\]</span>\nOr, étant donné <span>\\(h\\)</span>, on a\n<span>\\[\\begin{align*}\n        \\E(h(Y))&amp;=\\E(h(aX+b)) \\\\\n        &amp;= \\int_\\R h(ax+b) f_X(x) \\ dx \\quad \\text{(par le théorème de transfert)} \\\\\n        &amp;= \\int_\\R h(y) f_X\\left(\\frac{y-b}{a}\\right) \\frac{1}{a} dy \\quad \\text{(par changement de variable } y=ax+b \\text{)}\n    \\end{align*}\\]</span>\nd’où son identification\n<span>\\[f_Y(y)=\\frac{1}{a}f_X\\left(\\frac{y-b}{a}\\right).\\]</span></p>",
+      "order": 4
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "456748b9ddc18fe24fca736b903b845a6c4eccb18caa2cf3b678aecc961cddea"
+}

@@ -1,0 +1,71 @@
+{
+  "uuid": "KowJ",
+  "title": "Saturation d'un standard téléphonique",
+  "chapter": "Probabilité continue",
+  "subchapter": "Loi normale",
+  "theme": "loi binomiale, loi normale, théorème central limite",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-10-16",
+  "updated_at": "2025-08-22T13:02:47.656Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Une entreprise compte $300$ employés. Chaque employé utilise son téléphone de manière aléatoire, en moyenne $6$ minutes par heure. Cela implique qu'à un instant donné, la probabilité qu'il soit au téléphone est de $\\frac{6}{60} =  0{,}1$. On suppose que l'utilisation du téléphone par un employé est indépendante de celle des autres employés.",
+      "html": "<p>Une entreprise compte <span>\\(300\\)</span> employés. Chaque employé utilise son téléphone de manière aléatoire, en moyenne <span>\\(6\\)</span> minutes par heure. Cela implique qu’à un instant donné, la probabilité qu’il soit au téléphone est de <span>\\(\\frac{6}{60} =  0{,}1\\)</span>. On suppose que l’utilisation du téléphone par un employé est indépendante de celle des autres employés.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Il est 10h00. Soit $X$ le nombre d'employés qui téléphonent à cet instant. Déterminer la loi de $X$.",
+      "html": "<p>Il est 10h00. Soit <span>\\(X\\)</span> le nombre d’employés qui téléphonent à cet instant. Déterminer la loi de <span>\\(X\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On a $X \\sim \\mathcal{B}(300,0{,}1)$.",
+      "html": "<p>On a <span>\\(X \\sim \\mathcal{B}(300,0{,}1)\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Justifier que la loi de $X$ peut être approchée par une loi normale $\\mathcal{N}(30;\\sqrt{27})$.",
+      "html": "<p>Justifier que la loi de <span>\\(X\\)</span> peut être approchée par une loi normale <span>\\(\\mathcal{N}(30;\\sqrt{27})\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On a $np = 300 \\times 0{,}1 = 30$ et $np(1-p) = 300 \\times 0{,}1 \\times 0{,}9 = 27$. Le paramètre $n$ est considéré comme grand ($>30$) donc les conditions d'application du théorème de Moivre-Laplace sont vérifiées. On peut donc approcher la loi de $\\frac{X-30}{\\sqrt{27}}$ par une loi normale centrée réduite, ce qui revient à approcher $X$ par une loi normale $\\mathcal{N}(30;\\sqrt{27})$.",
+      "html": "<p>On a <span>\\(np = 300 \\times 0{,}1 = 30\\)</span> et <span>\\(np(1-p) = 300 \\times 0{,}1 \\times 0{,}9 = 27\\)</span>. Le paramètre <span>\\(n\\)</span> est considéré comme grand (<span>\\(&gt;30\\)</span>) donc les conditions d’application du théorème de Moivre-Laplace sont vérifiées. On peut donc approcher la loi de <span>\\(\\frac{X-30}{\\sqrt{27}}\\)</span> par une loi normale centrée réduite, ce qui revient à approcher <span>\\(X\\)</span> par une loi normale <span>\\(\\mathcal{N}(30;\\sqrt{27})\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Estimer le nombre $\\ell$ de lignes que l'entreprise doit installer pour que la probabilité que toutes les lignes soient occupées soit au plus égale à $2{,}5\\%$.",
+      "html": "<p>Estimer le nombre <span>\\(\\ell\\)</span> de lignes que l’entreprise doit installer pour que la probabilité que toutes les lignes soient occupées soit au plus égale à <span>\\(2{,}5\\%\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On cherche $\\ell$ tel que $\\prob(X \\geq \\ell) \\leq 0{,}025$. On a : \n            $$\\begin{align*}\n                \\prob\\left( X \\geq \\ell \\right) &= \\prob\\left( \\frac{X - 30}{\\sqrt{27}} \\geq \\frac{\\ell - 30}{\\sqrt{27}} \\right) \\\\\n                &= 1- \\prob\\left( \\frac{X - 30}{\\sqrt{27}} \\leq \\frac{\\ell - 30}{\\sqrt{27}} \\right) \\\\\n            \\end{align*}$$\n            On cherche donc $\\ell$ tel que $\\prob \\left( \\frac{X - 30}{\\sqrt{27}} \\leq \\frac{\\ell - 30}{\\sqrt{27}} \\right) \\geq 0{,}975$. Par lecture inverse de table, on en déduit que $\\frac{\\ell - 30}{\\sqrt{27}} \\geq 1{,}96$ donc $\\ell \\geq 30 + 1{,}96 \\times \\sqrt{27} \\approx 38{,}8$. On en déduit que $\\ell = 39$.",
+      "html": "<p>On cherche <span>\\(\\ell\\)</span> tel que <span>\\(\\prob(X \\geq \\ell) \\leq 0{,}025\\)</span>. On a :\n<span>\\[\\begin{align*}\n                \\prob\\left( X \\geq \\ell \\right) &amp;= \\prob\\left( \\frac{X - 30}{\\sqrt{27}} \\geq \\frac{\\ell - 30}{\\sqrt{27}} \\right) \\\\\n                &amp;= 1- \\prob\\left( \\frac{X - 30}{\\sqrt{27}} \\leq \\frac{\\ell - 30}{\\sqrt{27}} \\right) \\\\\n            \\end{align*}\\]</span>\nOn cherche donc <span>\\(\\ell\\)</span> tel que <span>\\(\\prob \\left( \\frac{X - 30}{\\sqrt{27}} \\leq \\frac{\\ell - 30}{\\sqrt{27}} \\right) \\geq 0{,}975\\)</span>. Par lecture inverse de table, on en déduit que <span>\\(\\frac{\\ell - 30}{\\sqrt{27}} \\geq 1{,}96\\)</span> donc <span>\\(\\ell \\geq 30 + 1{,}96 \\times \\sqrt{27} \\approx 38{,}8\\)</span>. On en déduit que <span>\\(\\ell = 39\\)</span>.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "b290756fd486469b20422911f7458a13716500dbaa4924205718466f80baae40"
+}

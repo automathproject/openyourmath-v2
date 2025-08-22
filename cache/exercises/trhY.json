@@ -1,0 +1,113 @@
+{
+  "uuid": "trhY",
+  "title": "Selon le choix de l'hypothèse",
+  "chapter": "Statistique",
+  "subchapter": "Tests d'hypothèses, intervalle de confiance",
+  "theme": "tests statistiques",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-09-28",
+  "updated_at": "2025-08-22T12:41:25.127Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Dans une grande entreprise, le salaire moyen annuel des hommes ayant entre 3 et 5 ans d'ancienneté est de \\numprint{28000} euros. Pour préparer une négociation sur la parité des salaires hommes femmes, on fait un sondage sur 10 femmes qui donne les résultats suivants (en milliers d'euros):\n\t\n\t$$ 24 \\qquad 27 \\qquad 31 \\qquad 19 \\qquad 26 \\qquad 27 \\qquad 22 \\qquad 15 \\qquad 33 \\qquad 21 $$\n\t\n\tA l'ouverture de la réunion, Monsieur A, délégué du personnel annonce : \\og Le sondage montre qu'il n'y a pas lieu de penser que le salaire des femmes est différent de celui des hommes \\fg{}. Il est aussitôt interrompu par Madame B, Directrice des Ressources Humaines, qui dit \\og Pas du tout, le sondage prouve que le salaire des femmes est inférieur à celui des hommes \\fg{}. Qu'en pensez-vous ?\n\t\n\tPour argumenter les réponses, on pourra se poser les questions suivantes pour Monsieur A et Madame B.",
+      "html": "<p>Dans une grande entreprise, le salaire moyen annuel des hommes ayant entre 3 et 5 ans d’ancienneté est de euros. Pour préparer une négociation sur la parité des salaires hommes femmes, on fait un sondage sur 10 femmes qui donne les résultats suivants (en milliers d’euros):</p>\n<p><span>\\[24 \\qquad 27 \\qquad 31 \\qquad 19 \\qquad 26 \\qquad 27 \\qquad 22 \\qquad 15 \\qquad 33 \\qquad 21\\]</span></p>\n<p>A l’ouverture de la réunion, Monsieur A, délégué du personnel annonce : Le sondage montre qu’il n’y a pas lieu de penser que le salaire des femmes est différent de celui des hommes . Il est aussitôt interrompu par Madame B, Directrice des Ressources Humaines, qui dit Pas du tout, le sondage prouve que le salaire des femmes est inférieur à celui des hommes . Qu’en pensez-vous ?</p>\n<p>Pour argumenter les réponses, on pourra se poser les questions suivantes pour Monsieur A et Madame B.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Que doit-on supposer sur la distribution des salaires des femmes pour pouvoir faire des tests statistiques ?",
+      "html": "<p>Que doit-on supposer sur la distribution des salaires des femmes pour pouvoir faire des tests statistiques ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On doit supposer que la distribution dans la population suit une loi normale.",
+      "html": "<p>On doit supposer que la distribution dans la population suit une loi normale.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Si on note $\\mu_0 = 28$ et $H_0 \\colon \\mu = \\mu_0$ l'hypothèse nulle de Monsieur A / Madame B, quelle est l'hypothèse alternative pour chacun ?",
+      "html": "<p>Si on note <span>\\(\\mu_0 = 28\\)</span> et <span>\\(H_0 \\colon \\mu = \\mu_0\\)</span> l’hypothèse nulle de Monsieur A / Madame B, quelle est l’hypothèse alternative pour chacun ?</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Monsieur A fait son test sur le jeu d'hypothèses : $\\begin{cases}\n\t\t\t\t\\mu = 28 \\\\\n\t\t\t\t\\mu \\neq 28\n\t\t\t\\end{cases}$, partant du principe que la moyenne de salaire des femmes peut être aussi bien supérieur qu'inférieur à la moyenne. \n\t\n\tQuant à Mme B, elle fait son test sur les hypothèses : \t$\\begin{cases}\n\t\t\\mu = 28 \\\\\n\t\t\\mu < 28\n\t\\end{cases}$, partant du principe qu'il est improbable que les femmes aient une moyenne salariale supérieure.",
+      "html": "<p>Monsieur A fait son test sur le jeu d’hypothèses : <span>\\(\\begin{cases}\n                \\mu = 28 \\\\\n                \\mu \\neq 28\n            \\end{cases}\\)</span>, partant du principe que la moyenne de salaire des femmes peut être aussi bien supérieur qu’inférieur à la moyenne.</p>\n<p>Quant à Mme B, elle fait son test sur les hypothèses : <span>\\(\\begin{cases}\n        \\mu = 28 \\\\\n        \\mu &lt; 28\n    \\end{cases}\\)</span>, partant du principe qu’il est improbable que les femmes aient une moyenne salariale supérieure.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Déterminer la variable de décision et sa loi sous $H_0$.",
+      "html": "<p>Déterminer la variable de décision et sa loi sous <span>\\(H_0\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On pose $Z = \\frac{\\overline{X}-28}{\\frac{S}{\\sqrt{10}}} $, cette variable suit une loi $St(9)$ d'après le cours.",
+      "html": "<p>On pose <span>\\(Z = \\frac{\\overline{X}-28}{\\frac{S}{\\sqrt{10}}}\\)</span>, cette variable suit une loi <span>\\(St(9)\\)</span> d’après le cours.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Déterminer la région critique pour un risque de première espèce $\\alpha = 5\\%$.",
+      "html": "<p>Déterminer la région critique pour un risque de première espèce <span>\\(\\alpha = 5\\%\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "Par lecture de table, on déterminer la région critique du test bilatéral de M. A : $W_A = ]-\\infty;-2.26[\\cup]2.26;+\\infty[$. \n\t\n\tPour Mme B, le test unilatéral à gauche donne la région critique $W_B = ]-\\infty;-1.83[$.",
+      "html": "<p>Par lecture de table, on déterminer la région critique du test bilatéral de M. A : <span>\\(W_A = ]-\\infty;-2.26[\\cup]2.26;+\\infty[\\)</span>.</p>\n<p>Pour Mme B, le test unilatéral à gauche donne la région critique <span>\\(W_B = ]-\\infty;-1.83[\\)</span>.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "Calculer une réalisation de la variable de décision.",
+      "html": "<p>Calculer une réalisation de la variable de décision.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "reponse",
+      "latex": "Après calculs sur cet échantillon, on obtient $\\overline{x}_{obs} = 24.5$ et $s_{obs} \\approx 5.46$.",
+      "html": "<p>Après calculs sur cet échantillon, on obtient <span>\\(\\overline{x}_{obs} = 24.5\\)</span> et <span>\\(s_{obs} \\approx 5.46\\)</span>.</p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "question",
+      "latex": "Peut-on dire que Monsieur A ou Madame B se trompe ?",
+      "html": "<p>Peut-on dire que Monsieur A ou Madame B se trompe ?</p>",
+      "order": 12
+    },
+    {
+      "id": "block_13",
+      "type": "reponse",
+      "latex": "",
+      "html": "",
+      "order": 13
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "0febde49f71a6c5178a93c3bedcd8fe66a586bb87c71167c2fb86a908c47b31d"
+}

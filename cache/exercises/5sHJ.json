@@ -1,0 +1,43 @@
+{
+  "uuid": "5sHJ",
+  "title": "Gain au loto",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Variable aléatoire discrète",
+  "theme": "variables aléatoires discrètes, loi hypergéométrique",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-07-05",
+  "updated_at": "2025-08-22T12:38:43.144Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Le loto est un jeu consistant à choisir six numéros différents compris entre 1 et 49.\nAu dernier tirage, il fallait jouer les numéros: $4$, $8$, $21$, $23$, $42$ et $49$. Le gain était de $\\nombre{700000}$ euros avec les six bons numéros, de $\\nombre{1100}$ euros avec cinq bons numéros, de $20$ euros avec quatre bons numéros et de $1$ euro avec trois bons numéros.",
+      "html": "<p>Le loto est un jeu consistant à choisir six numéros différents compris entre 1 et 49.\nAu dernier tirage, il fallait jouer les numéros: <span>\\(4\\)</span>, <span>\\(8\\)</span>, <span>\\(21\\)</span>, <span>\\(23\\)</span>, <span>\\(42\\)</span> et <span>\\(49\\)</span>. Le gain était de <span>\\(\\nombre{700000}\\)</span> euros avec les six bons numéros, de <span>\\(\\nombre{1100}\\)</span> euros avec cinq bons numéros, de <span>\\(20\\)</span> euros avec quatre bons numéros et de <span>\\(1\\)</span> euro avec trois bons numéros.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Pour un jeu simple, calculer l'espérance de gain.",
+      "html": "<p>Pour un jeu simple, calculer l’espérance de gain.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Soit $X$ le nombre de bons numéros trouvés par le joueur. Alors $X$ suit une loi hypergéométrique de paramètres: $\\mathcal{H}(6,\\frac{1}{46},49)$. Une loi hypergéométrique de paramètres $(N,p,n)$ est une loi de probabilité sur $\\{0,1,\\ldots,N\\}$ dont la loi de probabilité e est donnée par : \n    \\[ \\forall k \\in \\{0,1,\\ldots,N\\}, \\prob(X=k)=\\frac{\\binom{n}{k}\\binom{N-n}{n-k}}{\\binom{N}{n}}.\\]\n    Elle permet de modéliser le tirage sans remise de $n$ boules parmi $N$ boules dont $n$ sont marquées. Ici, $N=49$, $n=6$ et $p=\\frac{1}{46}$.\n    \n    Soit $Y$ le gain du joueur. Alors on a\n\\begin{center}\n\\begin{tabular}{|c|c|c|c|c|c|c|c|}\n \\hline\n $k$ & 0 & 0 & 0 & 1 & 20 & 1100 & $700\\ 000$ \\\\\n \\hline\n $\\prob(Y=k)$ & $\\prob(X=0)$ & $\\prob(X=1)$ & $\\prob(X=2)$ & $\\prob(X=3)$ & $\\prob(X=4)$ & $\\prob(X=5)$ & $\\prob(X=6)$ \\\\\n \\hline\n\\end{tabular}\n\\end{center}\nOn a donc\n\\[ \\E(Y)=\\prob(X=3)+20\\times \\prob(X=4)+\\nombre{1100}\\times \\prob(X=5) + {700000}\\times \\prob(X=6).\\]\nOr\n$$\\begin{align*}\n & \\prob(X=3)=\\frac{\\binom{6}{3}\\binom{43}{3}}{\\binom{49}{6}}= \\frac{246\\ 820}{13\\ 983\\ 816} \\\\\n & \\prob(X=4)=\\frac{\\binom{6}{4}\\binom{43}{2}}{\\binom{49}{6}}= \\frac{13\\ 545}{13\\ 983\\ 816} \\\\\n & \\prob(X=5)=\\frac{\\binom{6}{5}\\binom{6}{1}}{\\binom{49}{6}}= \\frac{258}{13\\ 983\\ 816} \\\\\n & \\prob(X=6)=\\frac{\\binom{6}{6}\\binom{43}{0}}{\\binom{49}{6}}= \\frac{1}{13\\ 983\\ 816} \n\\end{align*}$$\ndonc \n\\[ \\E(Y)=\\frac{1}{13\\ 983\\ 816} (246\\ 820+ 20\\times 13\\ 545+ 1\\ 100\\times 258+700\\ 000)\n =\\frac{1\\ 501 520}{13\\ 983\\ 816}\n \\simeq 0.1074\n\\]\nL'espérance du gain du joueur (sans compter sa mise de départ) est d'environ $0.11$ euros.",
+      "html": "<p>Soit <span>\\(X\\)</span> le nombre de bons numéros trouvés par le joueur. Alors <span>\\(X\\)</span> suit une loi hypergéométrique de paramètres: <span>\\(\\mathcal{H}(6,\\frac{1}{46},49)\\)</span>. Une loi hypergéométrique de paramètres <span>\\((N,p,n)\\)</span> est une loi de probabilité sur <span>\\(\\{0,1,\\ldots,N\\}\\)</span> dont la loi de probabilité e est donnée par :\n<span>\\[\\forall k \\in \\{0,1,\\ldots,N\\}, \\prob(X=k)=\\frac{\\binom{n}{k}\\binom{N-n}{n-k}}{\\binom{N}{n}}.\\]</span>\nElle permet de modéliser le tirage sans remise de <span>\\(n\\)</span> boules parmi <span>\\(N\\)</span> boules dont <span>\\(n\\)</span> sont marquées. Ici, <span>\\(N=49\\)</span>, <span>\\(n=6\\)</span> et <span>\\(p=\\frac{1}{46}\\)</span>.</p>\n<p>Soit <span>\\(Y\\)</span> le gain du joueur. Alors on a</p>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><span>\\(k\\)</span></th>\n<th style=\"text-align: center;\">0</th>\n<th style=\"text-align: center;\">0</th>\n<th style=\"text-align: center;\">0</th>\n<th style=\"text-align: center;\">1</th>\n<th style=\"text-align: center;\">20</th>\n<th style=\"text-align: center;\">1100</th>\n<th style=\"text-align: center;\"><span>\\(700\\ 000\\)</span></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><span>\\(\\prob(Y=k)\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\prob(X=0)\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\prob(X=1)\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\prob(X=2)\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\prob(X=3)\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\prob(X=4)\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\prob(X=5)\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\prob(X=6)\\)</span></td>\n</tr>\n</tbody>\n</table>\n<p>On a donc\n<span>\\[\\E(Y)=\\prob(X=3)+20\\times \\prob(X=4)+\\nombre{1100}\\times \\prob(X=5) + {700000}\\times \\prob(X=6).\\]</span>\nOr\n<span>\\[\\begin{align*}\n &amp; \\prob(X=3)=\\frac{\\binom{6}{3}\\binom{43}{3}}{\\binom{49}{6}}= \\frac{246\\ 820}{13\\ 983\\ 816} \\\\\n &amp; \\prob(X=4)=\\frac{\\binom{6}{4}\\binom{43}{2}}{\\binom{49}{6}}= \\frac{13\\ 545}{13\\ 983\\ 816} \\\\\n &amp; \\prob(X=5)=\\frac{\\binom{6}{5}\\binom{6}{1}}{\\binom{49}{6}}= \\frac{258}{13\\ 983\\ 816} \\\\\n &amp; \\prob(X=6)=\\frac{\\binom{6}{6}\\binom{43}{0}}{\\binom{49}{6}}= \\frac{1}{13\\ 983\\ 816} \n\\end{align*}\\]</span>\ndonc\n<span>\\[\\E(Y)=\\frac{1}{13\\ 983\\ 816} (246\\ 820+ 20\\times 13\\ 545+ 1\\ 100\\times 258+700\\ 000)\n =\\frac{1\\ 501 520}{13\\ 983\\ 816}\n \\simeq 0.1074\\]</span>\nL’espérance du gain du joueur (sans compter sa mise de départ) est d’environ <span>\\(0.11\\)</span> euros.</p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "156dc04416362bff454002bc9d9509868bb9c6524f9e21d8656089fb03c9be4e"
+}

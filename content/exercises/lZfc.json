@@ -1,0 +1,71 @@
+{
+  "uuid": "lZfc",
+  "title": "Produit matriciel et inverse",
+  "chapter": "Matrice",
+  "subchapter": "Inverse, méthode de Gauss",
+  "theme": "calcul matriciel",
+  "difficulty": null,
+  "author": "Maxime NGUYEN",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-12-15",
+  "updated_at": "2025-08-22T13:04:02.637Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soient $A=\\begin{pmatrix}a & 0 & 0 \\\\ 0 & b & 0 \\\\ 0 & 0 & c\\end{pmatrix}$ et $B=\\begin{pmatrix}d & 0 & 0 \\\\ 0 & e & 0 \\\\ 0 & 0 & f\\end{pmatrix}$.",
+      "html": "<p>Soient <span>\\(A=\\begin{pmatrix}a &amp; 0 &amp; 0 \\\\ 0 &amp; b &amp; 0 \\\\ 0 &amp; 0 &amp; c\\end{pmatrix}\\)</span> et <span>\\(B=\\begin{pmatrix}d &amp; 0 &amp; 0 \\\\ 0 &amp; e &amp; 0 \\\\ 0 &amp; 0 &amp; f\\end{pmatrix}\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Calculer $A \\times B$ et $B \\times A$. Que remarque-t-on ?",
+      "html": "<p>Calculer <span>\\(A \\times B\\)</span> et <span>\\(B \\times A\\)</span>. Que remarque-t-on ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On remarque que $AB = BA = \\begin{pmatrix}ad & 0 & 0 \\\\ 0 & be & 0 \\\\ 0 & 0 & cf\\end{pmatrix}$",
+      "html": "<p>On remarque que <span>\\(AB = BA = \\begin{pmatrix}ad &amp; 0 &amp; 0 \\\\ 0 &amp; be &amp; 0 \\\\ 0 &amp; 0 &amp; cf\\end{pmatrix}\\)</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Déterminer $A^k$ pour tout entier $k \\geq 1$.",
+      "html": "<p>Déterminer <span>\\(A^k\\)</span> pour tout entier <span>\\(k \\geq 1\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On déduit de la question précédente que $A^2 = \\begin{pmatrix}a^2 & 0 & 0 \\\\ 0 & b^2 & 0 \\\\ 0 & 0 & c^2\\end{pmatrix}$ puis par récurrence que :\n\t\t$$A^k = \\begin{pmatrix}a^k & 0 & 0 \\\\ 0 & b^k & 0 \\\\ 0 & 0 & c^k\\end{pmatrix}.$$",
+      "html": "<p>On déduit de la question précédente que <span>\\(A^2 = \\begin{pmatrix}a^2 &amp; 0 &amp; 0 \\\\ 0 &amp; b^2 &amp; 0 \\\\ 0 &amp; 0 &amp; c^2\\end{pmatrix}\\)</span> puis par récurrence que :\n<span>\\[A^k = \\begin{pmatrix}a^k &amp; 0 &amp; 0 \\\\ 0 &amp; b^k &amp; 0 \\\\ 0 &amp; 0 &amp; c^k\\end{pmatrix}.\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "\\`A quelles conditions sur $a,b,c \\in \\R$ la matrice $A$ est-elle inversible ? Déterminer dans ce cas $A^{-1}$ puis $A^{-k}$ pour tout entier $k \\geq 1$.",
+      "html": "<p>À quelles conditions sur <span>\\(a,b,c \\in \\R\\)</span> la matrice <span>\\(A\\)</span> est-elle inversible ? Déterminer dans ce cas <span>\\(A^{-1}\\)</span> puis <span>\\(A^{-k}\\)</span> pour tout entier <span>\\(k \\geq 1\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Si $a \\neq 0$, $b \\neq 0$ et $c \\neq 0$ alors la matrice $A$ est inversible et \n$$A^{-1} = \\begin{pmatrix}a^{-1} & 0 & 0 \\\\ 0 & b^{-1} & 0 \\\\ 0 & 0 & c^{-1}\\end{pmatrix}$$",
+      "html": "<p>Si <span>\\(a \\neq 0\\)</span>, <span>\\(b \\neq 0\\)</span> et <span>\\(c \\neq 0\\)</span> alors la matrice <span>\\(A\\)</span> est inversible et\n<span>\\[A^{-1} = \\begin{pmatrix}a^{-1} &amp; 0 &amp; 0 \\\\ 0 &amp; b^{-1} &amp; 0 \\\\ 0 &amp; 0 &amp; c^{-1}\\end{pmatrix}\\]</span></p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "3c3c479442116d9b9601a4c0c0c522c4245c1f46974d6fcac799e23dad832f59"
+}

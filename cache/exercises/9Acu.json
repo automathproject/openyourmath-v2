@@ -1,0 +1,113 @@
+{
+  "uuid": "9Acu",
+  "title": "Equivalents simples",
+  "chapter": "Continuité, limite et étude de fonctions réelles",
+  "subchapter": "Fonctions équivalentes, fonctions négligeables",
+  "theme": "limite",
+  "difficulty": null,
+  "author": "Maxime NGUYEN",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2025-04-12",
+  "updated_at": "2025-08-22T12:38:53.180Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Trouver un équivalent simple pour chaque fonction suivante :",
+      "html": "<p>Trouver un équivalent simple pour chaque fonction suivante :</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "$\\frac{3x^2-x+4}{2x^3+5x+7} \\ \\text{ en } 0$",
+      "html": "<p><span>\\(\\frac{3x^2-x+4}{2x^3+5x+7} \\ \\text{ en } 0\\)</span></p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Réponse : $\\frac{4}{7}$ \\\\ \n\t\t\tLorsque $x \\to 0$, le numérateur tend vers $3(0)^2-(0)+4 = 4$ et le dénominateur vers $2(0)^3+5(0)+7 = 7$. Donc la fonction est équivalente à $\\frac{4}{7}$ en $0$.",
+      "html": "<p>Réponse : <span>\\(\\frac{4}{7}\\)</span><br />\nLorsque <span>\\(x \\to 0\\)</span>, le numérateur tend vers <span>\\(3(0)^2-(0)+4 = 4\\)</span> et le dénominateur vers <span>\\(2(0)^3+5(0)+7 = 7\\)</span>. Donc la fonction est équivalente à <span>\\(\\frac{4}{7}\\)</span> en <span>\\(0\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "$ \\sqrt{\\frac{x^2+1}{x^2-1}} \\ \\text{ en } +\\infty$",
+      "html": "<p><span>\\(\\sqrt{\\frac{x^2+1}{x^2-1}} \\ \\text{ en } +\\infty\\)</span></p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Réponse : $1$ \\\\\n\t\t\tQuand $x \\to +\\infty$, $\\frac{x^2+1}{x^2-1} = \\frac{1+\\frac{1}{x^2}}{1-\\frac{1}{x^2}} \\sim 1$. Par continuité de la racine carrée, $\\sqrt{\\frac{x^2+1}{x^2-1}} \\sim \\sqrt{1} = 1$.",
+      "html": "<p>Réponse : <span>\\(1\\)</span><br />\nQuand <span>\\(x \\to +\\infty\\)</span>, <span>\\(\\frac{x^2+1}{x^2-1} = \\frac{1+\\frac{1}{x^2}}{1-\\frac{1}{x^2}} \\sim 1\\)</span>. Par continuité de la racine carrée, <span>\\(\\sqrt{\\frac{x^2+1}{x^2-1}} \\sim \\sqrt{1} = 1\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "$e^{x}-1-x \\ \\text{ en } 0$",
+      "html": "<p><span>\\(e^{x}-1-x \\ \\text{ en } 0\\)</span></p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Réponse : $\\frac{x^2}{2}$ \\\\\n\t\t\tEn développant $e^x$ en $0$ : $e^x = 1 + x + \\frac{x^2}{2} + o(x^2)$. Donc $e^x-1-x = \\frac{x^2}{2} + o(x^2)$.",
+      "html": "<p>Réponse : <span>\\(\\frac{x^2}{2}\\)</span><br />\nEn développant <span>\\(e^x\\)</span> en <span>\\(0\\)</span> : <span>\\(e^x = 1 + x + \\frac{x^2}{2} + o(x^2)\\)</span>. Donc <span>\\(e^x-1-x = \\frac{x^2}{2} + o(x^2)\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "$\\ln(1+\\frac{1}{x^4}) \\ \\text{ en } +\\infty$",
+      "html": "<p><span>\\(\\ln(1+\\frac{1}{x^4}) \\ \\text{ en } +\\infty\\)</span></p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "Réponse : $\\frac{1}{x^4}$ \\\\\n\t\t\tQuand $x \\to +\\infty$, $\\frac{1}{x^4} \\to 0$. En posant $t = \\frac{1}{x}$, on a $\\ln(1+t) \\sim t$ pour $t$ proche de $0$. Donc $\\ln(1+\\frac{1}{x^4}) \\sim \\frac{1}{x^4}$.",
+      "html": "<p>Réponse : <span>\\(\\frac{1}{x^4}\\)</span><br />\nQuand <span>\\(x \\to +\\infty\\)</span>, <span>\\(\\frac{1}{x^4} \\to 0\\)</span>. En posant <span>\\(t = \\frac{1}{x}\\)</span>, on a <span>\\(\\ln(1+t) \\sim t\\)</span> pour <span>\\(t\\)</span> proche de <span>\\(0\\)</span>. Donc <span>\\(\\ln(1+\\frac{1}{x^4}) \\sim \\frac{1}{x^4}\\)</span>.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "$ \\frac{\\sin x - x\\cos x}{x^3} \\ \\text{ en } 0$",
+      "html": "<p><span>\\(\\frac{\\sin x - x\\cos x}{x^3} \\ \\text{ en } 0\\)</span></p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "reponse",
+      "latex": "Réponse : $\\frac{1}{6}$ \\\\\n\t\t\tDéveloppons $\\sin x = x - \\frac{x^3}{6} + o(x^3)$ et $\\cos x = 1 - \\frac{x^2}{2} + o(x^3)$ en $0$. Donc $\\sin x - x\\cos x = x - \\frac{x^3}{6} - x(1 - \\frac{x^2}{2}) + o(x^3) = x - \\frac{x^3}{6} - x + \\frac{x^3}{2} + o(x^3)= \\frac{x^3}{3} + o(x^3)$. Ainsi, $\\frac{\\sin x - x\\cos x}{x^3} \\sim \\frac{1}{3}$.",
+      "html": "<p>Réponse : <span>\\(\\frac{1}{6}\\)</span><br />\nDéveloppons <span>\\(\\sin x = x - \\frac{x^3}{6} + o(x^3)\\)</span> et <span>\\(\\cos x = 1 - \\frac{x^2}{2} + o(x^3)\\)</span> en <span>\\(0\\)</span>. Donc <span>\\(\\sin x - x\\cos x = x - \\frac{x^3}{6} - x(1 - \\frac{x^2}{2}) + o(x^3) = x - \\frac{x^3}{6} - x + \\frac{x^3}{2} + o(x^3)= \\frac{x^3}{3} + o(x^3)\\)</span>. Ainsi, <span>\\(\\frac{\\sin x - x\\cos x}{x^3} \\sim \\frac{1}{3}\\)</span>.</p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "question",
+      "latex": "$ \\frac{x^3+2\\sqrt{x}}{3x^3-x^2} \\ \\text{ en } +\\infty$",
+      "html": "<p><span>\\(\\frac{x^3+2\\sqrt{x}}{3x^3-x^2} \\ \\text{ en } +\\infty\\)</span></p>",
+      "order": 12
+    },
+    {
+      "id": "block_13",
+      "type": "reponse",
+      "latex": "Réponse : $\\frac{1}{3}$ \\\\\n\t\t\tPour $x \\to +\\infty$, les termes dominants sont $x^3$ au numérateur et $3x^3$ au dénominateur. Donc $\\frac{x^3+2\\sqrt{x}}{3x^3-x^2} \\sim \\frac{x^3}{3x^3} = \\frac{1}{3}$.",
+      "html": "<p>Réponse : <span>\\(\\frac{1}{3}\\)</span><br />\nPour <span>\\(x \\to +\\infty\\)</span>, les termes dominants sont <span>\\(x^3\\)</span> au numérateur et <span>\\(3x^3\\)</span> au dénominateur. Donc <span>\\(\\frac{x^3+2\\sqrt{x}}{3x^3-x^2} \\sim \\frac{x^3}{3x^3} = \\frac{1}{3}\\)</span>.</p>",
+      "order": 13
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "78570171ba06c7ce0b354abd051a786d0b110c25144c464d1cad180a1db7d766"
+}

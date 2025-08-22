@@ -1,0 +1,36 @@
+{
+  "uuid": "f4ze",
+  "title": "Résolution d'une équation différentielle",
+  "chapter": "Série entière",
+  "subchapter": "Equations différentielles",
+  "theme": "équations différentielles, séries entières",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-06-17",
+  "updated_at": "2025-08-22T13:03:45.283Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "On suppose que $f$ s'écrit sous la forme d'une série entière $f(x)=\\displaystyle\\sum_{n=0}^{\\infty}a_n\\,x^{n}$. Déterminer les coefficients $(a_n)$ pour $n$ entier et déterminer le rayon de convergence de $f$.",
+      "html": "<p>On suppose que <span>\\(f\\)</span> s’écrit sous la forme d’une série entière <span>\\(f(x)=\\displaystyle\\sum_{n=0}^{\\infty}a_n\\,x^{n}\\)</span>. Déterminer les coefficients <span>\\((a_n)\\)</span> pour <span>\\(n\\)</span> entier et déterminer le rayon de convergence de <span>\\(f\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Donner une expression alternative de $f,$ solution de $(E)$, en résolvant directement l'équation différentielle avec la condition initiale $f(0)=1$.",
+      "html": "<p>Donner une expression alternative de <span>\\(f,\\)</span> solution de <span>\\((E)\\)</span>, en résolvant directement l’équation différentielle avec la condition initiale <span>\\(f(0)=1\\)</span>.</p>",
+      "order": 2
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "afa49a7452349f910ddf65b4f63d530c40fcc38b03142789da61faac48fa5972"
+}

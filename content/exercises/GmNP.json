@@ -1,0 +1,50 @@
+{
+  "uuid": "GmNP",
+  "title": "Convergence en loi",
+  "chapter": "Probabilité continue",
+  "subchapter": "Convergence en loi",
+  "theme": "fonction caractéristique, convergence en loi",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-12-14",
+  "updated_at": "2025-08-22T13:02:38.975Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $\\lambda >0$. Pour tout $n \\geq \\lambda$, on définit une suite $\\left(X_k^n\\right)_{k \\in \\N}$une suite de variables aléatoires indépendantes suivant une loi de Bernoulli de paramètre $p_n = \\frac{\\lambda}{n}$. On considère alors la variable aléatoire :\n$$N_n = \\frac{1}{n} \\inf\\{ k \\in N \\, , \\, X_k^n = 1\\}$$",
+      "html": "<p>Soit <span>\\(\\lambda &gt;0\\)</span>. Pour tout <span>\\(n \\geq \\lambda\\)</span>, on définit une suite <span>\\(\\left(X_k^n\\right)_{k \\in \\N}\\)</span>une suite de variables aléatoires indépendantes suivant une loi de Bernoulli de paramètre <span>\\(p_n = \\frac{\\lambda}{n}\\)</span>. On considère alors la variable aléatoire :\n<span>\\[N_n = \\frac{1}{n} \\inf\\{ k \\in N \\, , \\, X_k^n = 1\\}\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Soit un entier $n \\geq \\lambda$. Justifier que la variable $nN_n$ suit une loi géométrique dont on précisera le paramètre.",
+      "html": "<p>Soit un entier <span>\\(n \\geq \\lambda\\)</span>. Justifier que la variable <span>\\(nN_n\\)</span> suit une loi géométrique dont on précisera le paramètre.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "Déterminer la fonction caractéristique de la variable aléatoire $N_n$.",
+      "html": "<p>Déterminer la fonction caractéristique de la variable aléatoire <span>\\(N_n\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "En déduire que la suite de variables aléatoires $(N_n)$ converge en loi vers une loi usuelle que l'on précisera.",
+      "html": "<p>En déduire que la suite de variables aléatoires <span>\\((N_n)\\)</span> converge en loi vers une loi usuelle que l’on précisera.</p>",
+      "order": 4
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "fd5ffa106efd399c1889243ffa1587f9225623c374ed70803563bc16667b73d4"
+}

@@ -1,0 +1,57 @@
+{
+  "uuid": "aRzj",
+  "title": "Recherche d'un estimateur",
+  "chapter": "Statistique",
+  "subchapter": "Estimation",
+  "theme": "statistiques, estimateurs, maximum de vraisemblance",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-01-11",
+  "updated_at": "2025-08-22T13:03:19.493Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soient $\\theta$ un réel strictement positif et $X_1, X_2, \\ldots, X_n$ un échantillon dont la loi mère a pour densité la fonction $f$ définie sur $\\R$ par : $$f \\colon x \\mapsto \\frac{1}{\\theta^2} x e^{-\\frac{x}{\\theta}} {\\textbf{1}}_{]0;+\\infty[}(x)$$.",
+      "html": "<p>Soient <span>\\(\\theta\\)</span> un réel strictement positif et <span>\\(X_1, X_2, \\ldots, X_n\\)</span> un échantillon dont la loi mère a pour densité la fonction <span>\\(f\\)</span> définie sur <span>\\(\\R\\)</span> par : <span>\\[f \\colon x \\mapsto \\frac{1}{\\theta^2} x e^{-\\frac{x}{\\theta}} {\\textbf{1}}_{]0;+\\infty[}(x)\\]</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Déterminer un estimateur de $\\theta$ issu de la méthode du maximum de vraisemblance.",
+      "html": "<p>Déterminer un estimateur de <span>\\(\\theta\\)</span> issu de la méthode du maximum de vraisemblance.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On définit un échantillon $(X_1,...,X_n)$ de cette loi et on considère une réalisation quelconque $(x_1,...,x_n)$ de cet échantillon. Le support de la loi étant l'intervalle $]0;+\\infty[$, on peut supposer que pour tout $i$, $x_i > 0$. \n\t\t\n\t\tOn exprime maintenant la log vraisemblance de cet échantillon : \n\t\t$$\\begin{align*}\n\t\t\\ln \\mathcal{L}(x_1,...,x_n,\\theta) &= \\ln \\prod_{i=1}^n f(x_i) \\\\\n\t\t&= -2n \\ln(\\theta) + \\sum_{i=1}^{n} \\ln(x_i) -\\frac{1}{\\theta} \\sum_{i=1}^{n} x_i \\\\\n\t\t\\frac{\\partial \\ln \\mathcal{L}}{\\partial \\theta}(x_1,...,x_n,\\theta) = 0 &\\iff \\theta = \\frac{1}{2 n} \\sum_{i=1}^n x_i \\\\\n\t\t\\frac{\\partial^2 \\ln \\mathcal{L}}{\\partial \\theta^2}(x_1,...,x_n,\\theta) &= \\frac{2n}{\\theta^2} - \\frac{2}{\\theta^3} \\sum_{i=1}^n x_i\n\t\t\\end{align*}$$\n\tEn posant $\\theta_0 = \\frac{1}{2 n} \\sum_{i=1}^n x_i$, on a :\n\t$$\\begin{align*}\n\t\t\\frac{\\partial^2 \\ln \\mathcal{L}}{\\partial \\theta^2}(x_1,...,x_n,\\theta_0) &= \\frac{2}{\\theta_0} \\left(\\frac{n}{\\theta_0} - \\frac{1}{\\theta_0} \\times (2n)\\right) \\\\\n\t\t&= \\frac{-2n}{\\theta_0^2} < 0\n\t\\end{align*}$$\nDonc la fonction $\\theta \\mapsto \\ln \\mathcal{L}(x_1,...,x_n,\\theta)$ admet bien un maximum en $\\theta = \\theta_0$ pour tout $x_1,...,x_n$. On en déduit un estimateur de $\\theta$ : \t \\fbox{$\\hat{\\theta}=\\frac{1}{2 n} \\sum_{i=1}^n X_i$}.",
+      "html": "<p>On définit un échantillon <span>\\((X_1,...,X_n)\\)</span> de cette loi et on considère une réalisation quelconque <span>\\((x_1,...,x_n)\\)</span> de cet échantillon. Le support de la loi étant l’intervalle <span>\\(]0;+\\infty[\\)</span>, on peut supposer que pour tout <span>\\(i\\)</span>, <span>\\(x_i &gt; 0\\)</span>.</p>\n<p>On exprime maintenant la log vraisemblance de cet échantillon :\n<span>\\[\\begin{align*}\n        \\ln \\mathcal{L}(x_1,...,x_n,\\theta) &amp;= \\ln \\prod_{i=1}^n f(x_i) \\\\\n        &amp;= -2n \\ln(\\theta) + \\sum_{i=1}^{n} \\ln(x_i) -\\frac{1}{\\theta} \\sum_{i=1}^{n} x_i \\\\\n        \\frac{\\partial \\ln \\mathcal{L}}{\\partial \\theta}(x_1,...,x_n,\\theta) = 0 &amp;\\iff \\theta = \\frac{1}{2 n} \\sum_{i=1}^n x_i \\\\\n        \\frac{\\partial^2 \\ln \\mathcal{L}}{\\partial \\theta^2}(x_1,...,x_n,\\theta) &amp;= \\frac{2n}{\\theta^2} - \\frac{2}{\\theta^3} \\sum_{i=1}^n x_i\n        \\end{align*}\\]</span>\nEn posant <span>\\(\\theta_0 = \\frac{1}{2 n} \\sum_{i=1}^n x_i\\)</span>, on a :\n<span>\\[\\begin{align*}\n        \\frac{\\partial^2 \\ln \\mathcal{L}}{\\partial \\theta^2}(x_1,...,x_n,\\theta_0) &amp;= \\frac{2}{\\theta_0} \\left(\\frac{n}{\\theta_0} - \\frac{1}{\\theta_0} \\times (2n)\\right) \\\\\n        &amp;= \\frac{-2n}{\\theta_0^2} &lt; 0\n    \\end{align*}\\]</span>\nDonc la fonction <span>\\(\\theta \\mapsto \\ln \\mathcal{L}(x_1,...,x_n,\\theta)\\)</span> admet bien un maximum en <span>\\(\\theta = \\theta_0\\)</span> pour tout <span>\\(x_1,...,x_n\\)</span>. On en déduit un estimateur de <span>\\(\\theta\\)</span> : .</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Déterminer le biais de cet estimateur.  \\\\(Indication : on admet que pour tout $n \\in \\N$, $\\int_0^{+\\infty} x^n e^{-x} \\, \\mathrm{d}x = n!$.)",
+      "html": "<p>Déterminer le biais de cet estimateur.<br />\n(Indication : on admet que pour tout <span>\\(n \\in \\N\\)</span>, <span>\\(\\int_0^{+\\infty} x^n e^{-x} \\, \\mathrm{d}x = n!\\)</span>.)</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On calcule l'espérance de cette loi : \n$$\\begin{align*}\n\\E(X_1) &= \\int xf(x)dx \\\\\n        &= \\int_0^{+\\infty} \\frac{x^2}{\\theta^2}e^{-\\frac{x}{\\theta}} dx \\\\\n        &= \\theta \\int_0^{+\\infty} {u^2}e^{-u} du \\\\\n        &= 2 \\theta \n\\end{align*}$$\t\nDonc par linéarité, l'espérance de $\\hat{\\theta}$ est $$\\E\\left(\\hat{\\theta}\\right) = \\frac{1}{2n} \\times n \\times 2 \\theta = \\theta$$\ndonc le biais de $\\hat{\\theta}$ est $$B(\\hat{\\theta}) = \\E(\\hat{\\theta} - \\theta) = 0$$",
+      "html": "<p>On calcule l’espérance de cette loi :\n<span>\\[\\begin{align*}\n\\E(X_1) &amp;= \\int xf(x)dx \\\\\n        &amp;= \\int_0^{+\\infty} \\frac{x^2}{\\theta^2}e^{-\\frac{x}{\\theta}} dx \\\\\n        &amp;= \\theta \\int_0^{+\\infty} {u^2}e^{-u} du \\\\\n        &amp;= 2 \\theta \n\\end{align*}\\]</span>\nDonc par linéarité, l’espérance de <span>\\(\\hat{\\theta}\\)</span> est <span>\\[\\E\\left(\\hat{\\theta}\\right) = \\frac{1}{2n} \\times n \\times 2 \\theta = \\theta\\]</span>\ndonc le biais de <span>\\(\\hat{\\theta}\\)</span> est <span>\\[B(\\hat{\\theta}) = \\E(\\hat{\\theta} - \\theta) = 0\\]</span></p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "6e5e829e354e0ca21d579cb158ffe2bab52e1078914acf8925c0f58844aa5908"
+}

@@ -1,0 +1,71 @@
+{
+  "uuid": "e7W3",
+  "title": "Loi exponentielle et loi géométrique",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité, loi exponentielle, loi géométrique",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-09-21",
+  "updated_at": "2025-08-22T13:03:35.745Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $X$ une variable aléatoire réelle suivant une loi exponentielle de paramètre $\\lambda >0$. On définit $Y= \\lfloor X \\rfloor$ la partie entière de $X$. On pose $Z=X-\\lfloor X \\rfloor$.",
+      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire réelle suivant une loi exponentielle de paramètre <span>\\(\\lambda &gt;0\\)</span>. On définit <span>\\(Y= \\lfloor X \\rfloor\\)</span> la partie entière de <span>\\(X\\)</span>. On pose <span>\\(Z=X-\\lfloor X \\rfloor\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Déterminer la loi de probabilité de $Y$.",
+      "html": "<p>Déterminer la loi de probabilité de <span>\\(Y\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On peut remarquer que $Y(\\Omega)=\\N$. Pour tout $n\\in \\N$, comme $X\\sim \\mathcal{E}(\\lambda)$, \n\t\t\\[\\p(Y=n)=\\p(n\\leq X<n+1)=\\int_n^{n+1} \\lambda e^{-\\lambda x} \\dx\n\t\t=\\left[ -e^{-\\lambda x} \\right]_n^{n+1}\n\t\t=e^{-\\lambda n}(1-e^{-\\lambda}), \\]\n\t\tce qui détermine entièrement la loi de $Y$ : $Y+1$ suit une loi géométrique de paramètre $(1-e^{-\\lambda})$.",
+      "html": "<p>On peut remarquer que <span>\\(Y(\\Omega)=\\N\\)</span>. Pour tout <span>\\(n\\in \\N\\)</span>, comme <span>\\(X\\sim \\mathcal{E}(\\lambda)\\)</span>,\n<span>\\[\\p(Y=n)=\\p(n\\leq X&lt;n+1)=\\int_n^{n+1} \\lambda e^{-\\lambda x} \\dx\n        =\\left[ -e^{-\\lambda x} \\right]_n^{n+1}\n        =e^{-\\lambda n}(1-e^{-\\lambda}),\\]</span>\nce qui détermine entièrement la loi de <span>\\(Y\\)</span> : <span>\\(Y+1\\)</span> suit une loi géométrique de paramètre <span>\\((1-e^{-\\lambda})\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Calculer $\\PP(n \\leq X < n+t)$ pour tout $n \\in \\N $ et $t \\in ]0;1[$. En déduire la fonction de répartition de $Z$.",
+      "html": "<p>Calculer <span>\\(\\PP(n \\leq X &lt; n+t)\\)</span> pour tout <span>\\(n \\in \\N\\)</span> et <span>\\(t \\in ]0;1[\\)</span>. En déduire la fonction de répartition de <span>\\(Z\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "\\[ \\p(n\\leq X\\leq n+t)=\\int_n^{n+t} \\lambda e^{-\\lambda x} \\dx\n\t\t=\\left[ -e^{-\\lambda x} \\right]_n^{n+t}\n\t\t=e^{-\\lambda n}-e^{-\\lambda (n+t)}.\\]\n\t\tOn a $\\{Z\\in[0;t[\\}=\\cup_{n\\in\\N} \\{n\\leq X\\leq n+t]$, la réunion étant disjointe. Ainsi, pour $t\\in[0;1[$,\n\t\t\\[ \\p(0\\leq Z\\leq t)\n\t\t=\\sum_{n\\in\\N} \\p(n\\leq X\\leq n+t)\n\t\t=\\sum_{n\\in\\N} e^{-\\lambda n} (1-e^{-\\lambda t})\n\t\t=\\frac{1-e^{-\\lambda t}}{1-e^{-\\lambda}}.\n\t\t\\]\n\t\tComme $Z$ est à valeurs dans $[0;1[$, on a\n\t\t$\n\t\tF_Z(t)=\n\t\t\\begin{cases}\n\t\t\t0 \\ \\text{ si } t<0 \\\\\n\t\t\t\\frac{1-e^{-\\lambda t}}{1-e^{-\\lambda}} \\ \\text{ si } 0\\leq t < 1 \\\\\n\t\t\t1 \\ \\text{ si } t \\geq 1\n\t\t\\end{cases}\n\t\t$.",
+      "html": "<p><span>\\[\\p(n\\leq X\\leq n+t)=\\int_n^{n+t} \\lambda e^{-\\lambda x} \\dx\n        =\\left[ -e^{-\\lambda x} \\right]_n^{n+t}\n        =e^{-\\lambda n}-e^{-\\lambda (n+t)}.\\]</span>\nOn a <span>\\(\\{Z\\in[0;t[\\}=\\cup_{n\\in\\N} \\{n\\leq X\\leq n+t]\\)</span>, la réunion étant disjointe. Ainsi, pour <span>\\(t\\in[0;1[\\)</span>,\n<span>\\[\\p(0\\leq Z\\leq t)\n        =\\sum_{n\\in\\N} \\p(n\\leq X\\leq n+t)\n        =\\sum_{n\\in\\N} e^{-\\lambda n} (1-e^{-\\lambda t})\n        =\\frac{1-e^{-\\lambda t}}{1-e^{-\\lambda}}.\\]</span>\nComme <span>\\(Z\\)</span> est à valeurs dans <span>\\([0;1[\\)</span>, on a\n<span>\\(F_Z(t)=\n        \\begin{cases}\n            0 \\ \\text{ si } t&lt;0 \\\\\n            \\frac{1-e^{-\\lambda t}}{1-e^{-\\lambda}} \\ \\text{ si } 0\\leq t &lt; 1 \\\\\n            1 \\ \\text{ si } t \\geq 1\n        \\end{cases}\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Calculer l'espérance de $Y$ et de $Z$.",
+      "html": "<p>Calculer l’espérance de <span>\\(Y\\)</span> et de <span>\\(Z\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Pour la \\va $Y$, on a\n\t\t\\[ \\E(Y)=\\sum_{n=0}^{+\\infty} n \\p(Y=n)\n\t\t=\\sum_{n=0}^{+\\infty} n(e^{-\\lambda n}-e^{-\\lambda (n+1)})\n\t\t= (1-e^{-\\lambda}) \\sum_{n=0}^{+\\infty} ne^{-\\lambda n}.\n\t\t\\]\n\t\tOn utilise la formule \n\t\t\\[ \\sum_{n=0}^{+\\infty} n t^n\n\t\t= t \\sum_{n=0}^{+\\infty} nt^{n-1}\n\t\t=t \\left[ \\sum_{n=0}^{+\\infty} t^n\\right]'\n\t\t=t\\left[\\frac{1}{1-t}\\right]'\n\t\t=\\frac{t}{(1-t)^2}.\n\t\t\\]\n\t\tIl vient\n\t\t\\[ \\E(Y)=(1-e^{-\\lambda})\\frac{e^{-\\lambda}}{(1-e^{-\\lambda})^2}\n\t\t=\\frac{1}{e^\\lambda -1}.\n\t\t\\]\n\t\tCe résultat était prévisible puisque $Y+1$ suit une loi géométrique $\\mathcal{G}(1-e^{-\\lambda})$, donc il est acquis que $\\mathbb{E}(Y+1) = \\frac{1}{1-e^{-\\lambda}}$, d'où par linéarité $\\mathbb{E}(Y) = \\frac{1}{1-e^{-\\lambda}}-1 = \\frac{e^{-\\lambda}}{1-e^{-\\lambda}} $.\n\t\t\\vspace{0.5em}\n\t\t\n\t\tPour la \\va $Z$, on procède par linéarité : \n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\ton sait que $\\E(X)=\\frac{1}{\\lambda}$ donc $\\E(Z) = \\frac{1}{\\lambda}  -  \\frac{e^{-\\lambda}}{1-e^{-\\lambda}} = \\frac{1}{\\lambda}  -  \\frac{1}{e^{\\lambda}-1}$. \n\t\t\n\t\tPar ailleurs, comme $\\lambda<e^\\lambda-1$ pour $\\lambda >0$, on a $\\frac{1}{\\lambda}>\\frac{1}{e^\\lambda -1}$ et donc $\\E(Z)>0$, ce qui est cohérent car $Z$ est à valeurs dans $[0;1]$.",
+      "html": "<p>Pour la <span>\\(Y\\)</span>, on a\n<span>\\[\\E(Y)=\\sum_{n=0}^{+\\infty} n \\p(Y=n)\n        =\\sum_{n=0}^{+\\infty} n(e^{-\\lambda n}-e^{-\\lambda (n+1)})\n        = (1-e^{-\\lambda}) \\sum_{n=0}^{+\\infty} ne^{-\\lambda n}.\\]</span>\nOn utilise la formule\n<span>\\[\\sum_{n=0}^{+\\infty} n t^n\n        = t \\sum_{n=0}^{+\\infty} nt^{n-1}\n        =t \\left[ \\sum_{n=0}^{+\\infty} t^n\\right]&#39;\n        =t\\left[\\frac{1}{1-t}\\right]&#39;\n        =\\frac{t}{(1-t)^2}.\\]</span>\nIl vient\n<span>\\[\\E(Y)=(1-e^{-\\lambda})\\frac{e^{-\\lambda}}{(1-e^{-\\lambda})^2}\n        =\\frac{1}{e^\\lambda -1}.\\]</span>\nCe résultat était prévisible puisque <span>\\(Y+1\\)</span> suit une loi géométrique <span>\\(\\mathcal{G}(1-e^{-\\lambda})\\)</span>, donc il est acquis que <span>\\(\\mathbb{E}(Y+1) = \\frac{1}{1-e^{-\\lambda}}\\)</span>, d’où par linéarité <span>\\(\\mathbb{E}(Y) = \\frac{1}{1-e^{-\\lambda}}-1 = \\frac{e^{-\\lambda}}{1-e^{-\\lambda}}\\)</span>.</p>\n<p>Pour la <span>\\(Z\\)</span>, on procède par linéarité :</p>\n<p>on sait que <span>\\(\\E(X)=\\frac{1}{\\lambda}\\)</span> donc <span>\\(\\E(Z) = \\frac{1}{\\lambda}  -  \\frac{e^{-\\lambda}}{1-e^{-\\lambda}} = \\frac{1}{\\lambda}  -  \\frac{1}{e^{\\lambda}-1}\\)</span>.</p>\n<p>Par ailleurs, comme <span>\\(\\lambda&lt;e^\\lambda-1\\)</span> pour <span>\\(\\lambda &gt;0\\)</span>, on a <span>\\(\\frac{1}{\\lambda}&gt;\\frac{1}{e^\\lambda -1}\\)</span> et donc <span>\\(\\E(Z)&gt;0\\)</span>, ce qui est cohérent car <span>\\(Z\\)</span> est à valeurs dans <span>\\([0;1]\\)</span>.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "206a0f9678c412a921fa28f5c00da6dbc76a25fd12ccd5fa732cb76a6a056d69"
+}

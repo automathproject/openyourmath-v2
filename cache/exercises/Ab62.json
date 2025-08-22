@@ -1,0 +1,50 @@
+{
+  "uuid": "Ab62",
+  "title": "Développement d'une fonction en série de Fourier",
+  "chapter": "Série de Fourier",
+  "subchapter": "Calcul de coefficients",
+  "theme": "séries de Fourier",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-06-17",
+  "updated_at": "2025-08-22T12:38:55.982Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $f \\colon \\R \\to \\R$ la fonction $2\\pi$-périodique définie par :\n$$f(x) =\\left\\{\n\\begin{array}{cl}\n\t1&\\textrm{si $x \\in ]-\\pi;0[$}\\\\\n\t0& \\textrm{si $x =0$}\\\\\n\t-1&\\textrm{si $x \\in ]0;\\pi[$}\\end{array}\\right.$$",
+      "html": "<p>Soit <span>\\(f \\colon \\R \\to \\R\\)</span> la fonction <span>\\(2\\pi\\)</span>-périodique définie par :\n<span>\\[f(x) =\\left\\{\n\\begin{array}{cl}\n    1&amp;\\textrm{si $x \\in ]-\\pi;0[$}\\\\\n    0&amp; \\textrm{si $x =0$}\\\\\n    -1&amp;\\textrm{si $x \\in ]0;\\pi[$}\\end{array}\\right.\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Représenter graphiquement l'allure de la fonction $f$ et vérifier que $f$ est une fonction impaire.",
+      "html": "<p>Représenter graphiquement l’allure de la fonction <span>\\(f\\)</span> et vérifier que <span>\\(f\\)</span> est une fonction impaire.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "Déterminer les coefficients de Fourier trigonométriques de la fonction $f$ et en déduire sa série de Fourier. La série de Fourier est-elle égale à $f$ en tout $x \\in \\R$ ?",
+      "html": "<p>Déterminer les coefficients de Fourier trigonométriques de la fonction <span>\\(f\\)</span> et en déduire sa série de Fourier. La série de Fourier est-elle égale à <span>\\(f\\)</span> en tout <span>\\(x \\in \\R\\)</span> ?</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "C'est une fonction impaire donc $a_n = 0$ pour tout $n$. Il reste à calculer :\n\t\t$$b_n=\\frac{1}{\\pi}\\int_{-\\pi}^{0}\\,(1)\\sin(nx)dx+\\frac{1}{\\pi}\\int_{0}^{\\pi}\\,(-1)\\sin(nx)dx=\\frac{2}{n\\pi}(\\cos(n\\pi)-1).$$ soit $$b_n=\\left\\{\n\t\t\\begin{array}{cl}\n\t\t\t0&\\textrm{pour $n$ pair}\\\\\n\t\t\t\\frac{4}{n\\pi}&\\textrm{pour $n$ impair}\\end{array}\\right.$$",
+      "html": "<p>C’est une fonction impaire donc <span>\\(a_n = 0\\)</span> pour tout <span>\\(n\\)</span>. Il reste à calculer :\n<span>\\[b_n=\\frac{1}{\\pi}\\int_{-\\pi}^{0}\\,(1)\\sin(nx)dx+\\frac{1}{\\pi}\\int_{0}^{\\pi}\\,(-1)\\sin(nx)dx=\\frac{2}{n\\pi}(\\cos(n\\pi)-1).\\]</span> soit <span>\\[b_n=\\left\\{\n        \\begin{array}{cl}\n            0&amp;\\textrm{pour $n$ pair}\\\\\n            \\frac{4}{n\\pi}&amp;\\textrm{pour $n$ impair}\\end{array}\\right.\\]</span></p>",
+      "order": 4
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "9ee6cbe3b40d868541827b8b162d0f5476f2362ce534259c8921263f9c7137f0"
+}

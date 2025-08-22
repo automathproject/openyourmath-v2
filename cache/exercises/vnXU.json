@@ -1,0 +1,71 @@
+{
+  "uuid": "vnXU",
+  "title": "Loi log-normale",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité",
+  "difficulty": null,
+  "author": "Djessy Vianne",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-12-01",
+  "updated_at": "2025-08-22T12:41:29.606Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $X$ une variable aléatoire réelle définie sur un espace probabilisé $(\\Omega, \\mathcal{T}, \\prob)$. On suppose que $X(\\Omega) = ]0,+\\infty[$ et que $\\ln(X)$ suit une loi normale d'espérance $\\mu = 1$ et d'écart-type $\\sigma = 2$. On note $\\Phi$ la fonction de répartition de la loi normale centrée réduite $\\mathcal{N}(0,1)$.",
+      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire réelle définie sur un espace probabilisé <span>\\((\\Omega, \\mathcal{T}, \\prob)\\)</span>. On suppose que <span>\\(X(\\Omega) = ]0,+\\infty[\\)</span> et que <span>\\(\\ln(X)\\)</span> suit une loi normale d’espérance <span>\\(\\mu = 1\\)</span> et d’écart-type <span>\\(\\sigma = 2\\)</span>. On note <span>\\(\\Phi\\)</span> la fonction de répartition de la loi normale centrée réduite <span>\\(\\mathcal{N}(0,1)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Donner une valeur approchée, à $10^{-2}$ près, de $\\prob(-0{,}5 \\leq \\ln(X) \\leq 2{,}5)$.",
+      "html": "<p>Donner une valeur approchée, à <span>\\(10^{-2}\\)</span> près, de <span>\\(\\prob(-0{,}5 \\leq \\ln(X) \\leq 2{,}5)\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On a $\\prob(-0{,}5 \\leq \\ln(X) \\leq 2{,}5) = \\prob\\left(\\frac{-0{,}5 - 1}{2} \\leq \\frac{\\ln(X) - 1}{2} \\leq \\frac{2{,}5 - 1}{2}\\right) = \\prob(-0{,}75 \\leq Z \\leq 0{,}75)$. \n\n            On a $\\Phi(0{,}75) \\approx 0{,}7734$ et $\\prob(-0{,}75 \\leq Z \\leq 0{,}75) = 2 \\Phi(0{,}75) - 1 \\approx 0{,}55$.",
+      "html": "<p>On a <span>\\(\\prob(-0{,}5 \\leq \\ln(X) \\leq 2{,}5) = \\prob\\left(\\frac{-0{,}5 - 1}{2} \\leq \\frac{\\ln(X) - 1}{2} \\leq \\frac{2{,}5 - 1}{2}\\right) = \\prob(-0{,}75 \\leq Z \\leq 0{,}75)\\)</span>.</p>\n<p>On a <span>\\(\\Phi(0{,}75) \\approx 0{,}7734\\)</span> et <span>\\(\\prob(-0{,}75 \\leq Z \\leq 0{,}75) = 2 \\Phi(0{,}75) - 1 \\approx 0{,}55\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "On note $F_X$ la fonction de répartition de $X$. Exprimer $F_X$ en fonction de $\\Phi$.",
+      "html": "<p>On note <span>\\(F_X\\)</span> la fonction de répartition de <span>\\(X\\)</span>. Exprimer <span>\\(F_X\\)</span> en fonction de <span>\\(\\Phi\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Soit $t \\in \\R$. Si $t \\leq 0$, alors $F_X(t) = \\prob(X \\leq t) = 0$ car $X(\\Omega) = ]0,+\\infty[$. Si $t > 0$, alors : \n            $$\\begin{align*}\n                F_X(t) &= \\prob(X \\leq t) \\\\\n                &= \\prob(\\ln(X) \\leq \\ln(t)) \\\\\n                &= \\prob\\left(\\frac{\\ln(X) - 1}{2} \\leq \\frac{\\ln(t) - 1}{2}\\right) \\\\\n                &= \\Phi\\left(\\frac{\\ln(t) - 1}{2}\\right)\n            \\end{align*}$$",
+      "html": "<p>Soit <span>\\(t \\in \\R\\)</span>. Si <span>\\(t \\leq 0\\)</span>, alors <span>\\(F_X(t) = \\prob(X \\leq t) = 0\\)</span> car <span>\\(X(\\Omega) = ]0,+\\infty[\\)</span>. Si <span>\\(t &gt; 0\\)</span>, alors :\n<span>\\[\\begin{align*}\n                F_X(t) &amp;= \\prob(X \\leq t) \\\\\n                &amp;= \\prob(\\ln(X) \\leq \\ln(t)) \\\\\n                &amp;= \\prob\\left(\\frac{\\ln(X) - 1}{2} \\leq \\frac{\\ln(t) - 1}{2}\\right) \\\\\n                &amp;= \\Phi\\left(\\frac{\\ln(t) - 1}{2}\\right)\n            \\end{align*}\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "En déduire la loi de $X$.",
+      "html": "<p>En déduire la loi de <span>\\(X\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "La fonction $F_X$ est dérivable presque partout, sa dérivée est une densité de probabilité que l'on note $f$. On note au passage que pour tout $x \\in \\R$, $\\Phi'(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}}$. \n\n               Si $x \\leq 0$, alors $f(x) = 0$. Si $x > 0$, alors par dérivation d'une fonction composée : $$f(x) = \\frac{1}{2x} \\times \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{(\\ln(x) - 1)^2}{2}}.$$",
+      "html": "<p>La fonction <span>\\(F_X\\)</span> est dérivable presque partout, sa dérivée est une densité de probabilité que l’on note <span>\\(f\\)</span>. On note au passage que pour tout <span>\\(x \\in \\R\\)</span>, <span>\\(\\Phi&#39;(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}}\\)</span>.</p>\n<p>Si <span>\\(x \\leq 0\\)</span>, alors <span>\\(f(x) = 0\\)</span>. Si <span>\\(x &gt; 0\\)</span>, alors par dérivation d’une fonction composée : <span>\\[f(x) = \\frac{1}{2x} \\times \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{(\\ln(x) - 1)^2}{2}}.\\]</span></p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "bcf57c8c4ef7c44cd7944a043a6f9723353b5700e48fd8b03571475762368b90"
+}

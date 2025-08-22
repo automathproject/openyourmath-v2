@@ -1,0 +1,99 @@
+{
+  "uuid": "64Uj",
+  "title": "Résolution d'une EDO par un schéma numérique",
+  "chapter": "Equation différentielle",
+  "subchapter": "Résolution d'équation différentielle",
+  "theme": "méthodes numériques, équations différentielles",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-04-29",
+  "updated_at": "2025-08-22T13:02:08.277Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit l'équation différentielle sur $[0,1]$:\n$$(E)\t\\begin{cases} \n\ty'(t) = f(t,y(t)) \\\\\n\ty(0) = 0,\n\\end{cases} $$\noù\n$$\nf(t,y)=\\sin\\left((t+y)^2\\right).\n$$",
+      "html": "<p>Soit l’équation différentielle sur <span>\\([0,1]\\)</span>:\n<span>\\[(E)   \\begin{cases} \n    y&#39;(t) = f(t,y(t)) \\\\\n    y(0) = 0,\n\\end{cases}\\]</span>\noù\n<span>\\[f(t,y)=\\sin\\left((t+y)^2\\right).\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Justifier l'existence et l'unicité locale d'une solution $y$ de classe $\\mathcal{C}^1$.",
+      "html": "<p>Justifier l’existence et l’unicité locale d’une solution <span>\\(y\\)</span> de classe <span>\\(\\mathcal{C}^1\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "$f$ est $C^1$: Théorème de Cauchy-Lipschitz.",
+      "html": "<p><span>\\(f\\)</span> est <span>\\(C^1\\)</span>: Théorème de Cauchy-Lipschitz.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Justifier le caractère borné de $y$.",
+      "html": "<p>Justifier le caractère borné de <span>\\(y\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "$|y'(t)|\\leq 1$, donc $|y(t)|\\leq a+T=1$.",
+      "html": "<p><span>\\(|y&#39;(t)|\\leq 1\\)</span>, donc <span>\\(|y(t)|\\leq a+T=1\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "reponse",
+      "latex": "Principe de prolongement.",
+      "html": "<p>Principe de prolongement.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "text",
+      "latex": "Pour approcher la solution de $(E)$, on propose le schéma numérique suivant : \n\t$h=1/N$, $t_n=nh$, $y_0=0$ et \n\t$$(S) \\colon y_{n+1} = y_n +  \\frac{h}{4}\\left( f(t_n,y_n)+3f\\left(t_n+ \\frac{2h}{3},y_n+\\frac{2h}{3}f(t_n,y_n) \\right) \\right)$$",
+      "html": "<p>Pour approcher la solution de <span>\\((E)\\)</span>, on propose le schéma numérique suivant :\n<span>\\(h=1/N\\)</span>, <span>\\(t_n=nh\\)</span>, <span>\\(y_0=0\\)</span> et\n<span>\\[(S) \\colon y_{n+1} = y_n +  \\frac{h}{4}\\left( f(t_n,y_n)+3f\\left(t_n+ \\frac{2h}{3},y_n+\\frac{2h}{3}f(t_n,y_n) \\right) \\right)\\]</span></p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Démontrer que ce schéma est convergent.",
+      "html": "<p>Démontrer que ce schéma est convergent.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "On vérifie qu'il est consistant en appliquant le résultat du cours : on écrit le schéma sous la forme standard $y_{n+1} = y_n+hF(t_n,y_n,h)$ et on vérifie que $F(t,y,0) = f(t,y)$.\n\t\t\n\t\tPar ailleurs, on vérifie facilement que $F$ est lipschitzienne par rapport à la deuxième variable $y$, c'est une condition suffisante de stabilité du schéma.",
+      "html": "<p>On vérifie qu’il est consistant en appliquant le résultat du cours : on écrit le schéma sous la forme standard <span>\\(y_{n+1} = y_n+hF(t_n,y_n,h)\\)</span> et on vérifie que <span>\\(F(t,y,0) = f(t,y)\\)</span>.</p>\n<p>Par ailleurs, on vérifie facilement que <span>\\(F\\)</span> est lipschitzienne par rapport à la deuxième variable <span>\\(y\\)</span>, c’est une condition suffisante de stabilité du schéma.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "Vérifier que ce schéma est consistant d'ordre 2.",
+      "html": "<p>Vérifier que ce schéma est consistant d’ordre 2.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "reponse",
+      "latex": "On applique le critère énoncé et admis ci-dessus en calculant $\\frac{1}{2}f^{[1]}(t,y)$.",
+      "html": "<p>On applique le critère énoncé et admis ci-dessus en calculant <span>\\(\\frac{1}{2}f^{[1]}(t,y)\\)</span>.</p>",
+      "order": 11
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "9515f4e261cfde4350327036da1eafde3bcb8cbc3824297da4d1961578867f90"
+}

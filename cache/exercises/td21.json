@@ -1,0 +1,71 @@
+{
+  "uuid": "td21",
+  "title": "Comparaison d’estimateurs",
+  "chapter": "",
+  "subchapter": "",
+  "theme": "",
+  "difficulty": null,
+  "author": "Sorbonne Université, Master 1 MU4MA015, Statistique, 2024-2025\\\\ Cours : A. Guyader\\\\ TD : C. Dion-Blanc, A. Godichon, A. Guyader",
+  "organization": "",
+  "video_id": "",
+  "created_at": "2025-03-20",
+  "updated_at": "2025-08-22T12:41:22.106Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit un échantillon i.i.d. $(X_i)_{1 \\leq i \\leq n}$ tel que $E(X_1) = m$ et $Var(X_1) = \\sigma^2$. On suppose $\\sigma^2$ connue, $m \\in \\mathbb{R}$ étant ici le paramètre inconnu. On propose deux estimateurs de $m$ : \n$$\\overline{X}_n=\\frac{1}{n}\\sum_{i=1}^{n}X_i,\\,\\,\\text{et}\\,\\,Z_n = \\frac{1}{2}(X_n + X_{n-1}).$$",
+      "html": "<p>Soit un échantillon i.i.d. <span>\\((X_i)_{1 \\leq i \\leq n}\\)</span> tel que <span>\\(E(X_1) = m\\)</span> et <span>\\(Var(X_1) = \\sigma^2\\)</span>. On suppose <span>\\(\\sigma^2\\)</span> connue, <span>\\(m \\in \\mathbb{R}\\)</span> étant ici le paramètre inconnu. On propose deux estimateurs de <span>\\(m\\)</span> :\n<span>\\[\\overline{X}_n=\\frac{1}{n}\\sum_{i=1}^{n}X_i,\\,\\,\\text{et}\\,\\,Z_n = \\frac{1}{2}(X_n + X_{n-1}).\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Montrer que $\\overline{X}_n$ et $Z_n$ sont sans biais.",
+      "html": "<p>Montrer que <span>\\(\\overline{X}_n\\)</span> et <span>\\(Z_n\\)</span> sont sans biais.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "On a :\n$$\\begin{equation}\n    \\mathbb{E}[\\overline{X}_n] = \\frac{1}{n} \\sum_{i=1}^{n} \\mathbb{E}[X_i] = m\n\\end{equation}$$\n$$\\begin{equation}\n    \\mathbb{E}[Z_n] = \\frac{1}{2} \\left( \\mathbb{E}[X_n] + \\mathbb{E}[X_{n-1}] \\right) = m\n\\end{equation}$$\nAinsi, les deux estimateurs sont sans biais pour l'estimation de $m$.",
+      "html": "<p>On a :\n<span>\\[\\begin{equation}\n    \\mathbb{E}[\\overline{X}_n] = \\frac{1}{n} \\sum_{i=1}^{n} \\mathbb{E}[X_i] = m\n\\end{equation}\\]</span>\n<span>\\[\\begin{equation}\n    \\mathbb{E}[Z_n] = \\frac{1}{2} \\left( \\mathbb{E}[X_n] + \\mathbb{E}[X_{n-1}] \\right) = m\n\\end{equation}\\]</span>\nAinsi, les deux estimateurs sont sans biais pour l’estimation de <span>\\(m\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Qui de $\\overline{X}_n$ ou $Z_n$ choisiriez-vous pour approcher $m$ ?",
+      "html": "<p>Qui de <span>\\(\\overline{X}_n\\)</span> ou <span>\\(Z_n\\)</span> choisiriez-vous pour approcher <span>\\(m\\)</span> ?</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "L'écart quadratique moyen d'un estimateur $\\hat{m}$ de $m$ est donné par :\n$$\\begin{equation}\n    EQM(\\hat{m}) = (\\mathbb{E}[\\hat{m}] - m)^2 + \\text{Var}(\\hat{m}).\n\\end{equation}$$\nOn compare les EQM des deux estimateurs. On a :\n$$\\begin{equation}\n    EQM(\\overline{X}_n) = 0 + \\text{Var}(\\overline{X}_n) = \\frac{\\sigma^2}{n}\n\\end{equation}$$\n$$\\begin{equation}\n    EQM(Z_n) = 0 + \\frac{1}{4} \\text{Var}(X_n + X_{n-1}) = \\frac{\\sigma^2}{2}.\n\\end{equation}$$\nPour tout $n \\geq 3$, on a $EQM(\\overline{X}_n) < EQM(Z_n)$, donc $\\overline{X}_n$ est préférable à $Z_n$ au sens du risque quadratique.",
+      "html": "<p>L’écart quadratique moyen d’un estimateur <span>\\(\\hat{m}\\)</span> de <span>\\(m\\)</span> est donné par :\n<span>\\[\\begin{equation}\n    EQM(\\hat{m}) = (\\mathbb{E}[\\hat{m}] - m)^2 + \\text{Var}(\\hat{m}).\n\\end{equation}\\]</span>\nOn compare les EQM des deux estimateurs. On a :\n<span>\\[\\begin{equation}\n    EQM(\\overline{X}_n) = 0 + \\text{Var}(\\overline{X}_n) = \\frac{\\sigma^2}{n}\n\\end{equation}\\]</span>\n<span>\\[\\begin{equation}\n    EQM(Z_n) = 0 + \\frac{1}{4} \\text{Var}(X_n + X_{n-1}) = \\frac{\\sigma^2}{2}.\n\\end{equation}\\]</span>\nPour tout <span>\\(n \\geq 3\\)</span>, on a <span>\\(EQM(\\overline{X}_n) &lt; EQM(Z_n)\\)</span>, donc <span>\\(\\overline{X}_n\\)</span> est préférable à <span>\\(Z_n\\)</span> au sens du risque quadratique.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "2cc264ac5967a76acd001dd2401fa6bab0dabb13b674e8379cf4041376260e8d"
+}

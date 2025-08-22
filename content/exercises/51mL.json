@@ -1,0 +1,71 @@
+{
+  "uuid": "51mL",
+  "title": "Calcul de probabilité",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité",
+  "difficulty": null,
+  "author": "Maxime Nguyen",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-13",
+  "updated_at": "2025-08-22T13:02:04.029Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit une fonction $f \\colon x \\mapsto \\begin{cases}\n        2x & \\text{ si } x \\in [0;1] \\\\\n        0 & \\text{ sinon }\n    \\end{cases}$.",
+      "html": "<p>Soit une fonction <span>\\(f \\colon x \\mapsto \\begin{cases}\n        2x &amp; \\text{ si } x \\in [0;1] \\\\\n        0 &amp; \\text{ sinon }\n    \\end{cases}\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Montrer que $f$ est une densité de probabilité.",
+      "html": "<p>Montrer que <span>\\(f\\)</span> est une densité de probabilité.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "\\begin{enumerate}\n                \\item $f$ est positive sur $\\R$.\n                \\item $\\int_{-\\infty}^{+\\infty} f(x) \\mathrm{d}x = \\int_0^1 2x \\mathrm{d}x = \\left[ x^2 \\right]_0^1 = 1$.\n            \\end{enumerate}\n            Donc $f$ est une densité de probabilité.",
+      "html": "<ol>\n<li><p><span>\\(f\\)</span> est positive sur <span>\\(\\R\\)</span>.</p></li>\n<li><p><span>\\(\\int_{-\\infty}^{+\\infty} f(x) \\mathrm{d}x = \\int_0^1 2x \\mathrm{d}x = \\left[ x^2 \\right]_0^1 = 1\\)</span>.</p></li>\n</ol>\n<p>Donc <span>\\(f\\)</span> est une densité de probabilité.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "\\'Ecrire $f$ à l'aide d'une fonction indicatrice $x \\mapsto \\textbf{1}_A(x)$ où $A$ est un ensemble à préciser.",
+      "html": "<p>Écrire <span>\\(f\\)</span> à l’aide d’une fonction indicatrice <span>\\(x \\mapsto \\textbf{1}_A(x)\\)</span> où <span>\\(A\\)</span> est un ensemble à préciser.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "$f(x) = 2x \\textbf{1}_{[0;1]}(x)$.",
+      "html": "<p><span>\\(f(x) = 2x \\textbf{1}_{[0;1]}(x)\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Soit $X$ une variable aléatoire admettant $f$ pour densité de probabilité. Calculer $\\prob(X \\leq \\frac{1}{2})$ et $\\prob(-1 \\leq X \\leq 0.2)$.",
+      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire admettant <span>\\(f\\)</span> pour densité de probabilité. Calculer <span>\\(\\prob(X \\leq \\frac{1}{2})\\)</span> et <span>\\(\\prob(-1 \\leq X \\leq 0.2)\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "$$\\begin{align*}\n                \\prob(X \\leq \\frac{1}{2}) &= \\int_{-\\infty}^{\\frac{1}{2}} f(x) \\mathrm{d}x \\\\\n                &= \\int_0^{\\frac{1}{2}} 2x \\mathrm{d}x \\\\\n                &= \\left[ x^2 \\right]_0^{\\frac{1}{2}} \\\\\n                &= \\frac{1}{4}\n            \\end{align*}$$\n            $$\\begin{align*}\n                \\prob(-1 \\leq X \\leq 0.2) &= \\int_{-1}^{0.2} f(x) \\mathrm{d}x \\\\\n                &= \\int_0^{0.2} 2x \\mathrm{d}x \\\\\n                &= \\left[ x^2 \\right]_0^{0.2} \\\\\n                &= 0.04\n            \\end{align*}$$",
+      "html": "<p><span>\\[\\begin{align*}\n                \\prob(X \\leq \\frac{1}{2}) &amp;= \\int_{-\\infty}^{\\frac{1}{2}} f(x) \\mathrm{d}x \\\\\n                &amp;= \\int_0^{\\frac{1}{2}} 2x \\mathrm{d}x \\\\\n                &amp;= \\left[ x^2 \\right]_0^{\\frac{1}{2}} \\\\\n                &amp;= \\frac{1}{4}\n            \\end{align*}\\]</span>\n<span>\\[\\begin{align*}\n                \\prob(-1 \\leq X \\leq 0.2) &amp;= \\int_{-1}^{0.2} f(x) \\mathrm{d}x \\\\\n                &amp;= \\int_0^{0.2} 2x \\mathrm{d}x \\\\\n                &amp;= \\left[ x^2 \\right]_0^{0.2} \\\\\n                &amp;= 0.04\n            \\end{align*}\\]</span></p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "1598c1630a826dfb6cedf7280260cb45343daa713320f40abd4e61d6cee7824f"
+}

@@ -1,0 +1,36 @@
+{
+  "uuid": "Z8Dq",
+  "title": "Moments de la loi exponentielle",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité",
+  "difficulty": null,
+  "author": "Maxime NGUYEN",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-10-17",
+  "updated_at": "2025-08-22T13:03:16.756Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "Soit $X$ une variable aléatoire suivant une loi exponentielle  de paramètre $\\lambda>0$. Démontrer l'existence des moments d'ordre $n$ de $X$ pour tout $n \\in \\mathbb{N}$ puis les calculer.",
+      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire suivant une loi exponentielle de paramètre <span>\\(\\lambda&gt;0\\)</span>. Démontrer l’existence des moments d’ordre <span>\\(n\\)</span> de <span>\\(X\\)</span> pour tout <span>\\(n \\in \\mathbb{N}\\)</span> puis les calculer.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "reponse",
+      "latex": "On sait par comparaison que la fonction $x\\mapsto x e^{-\\lambda x}$ est intégrable au voisinage de $+\\infty$ donc on peut calculer par théorème de transfert pour tout $n \\in \\N^*$ : \n\t$$\\begin{align*}\n\t\t\\mathbb{E}(X^n) &= \\lambda \\int_0^{+\\infty} x^n e^{-\\lambda x} dx \\\\\n\t\t&= \\lambda \\left[ \\frac{x^n e^{-\\lambda x}}{-\\lambda} \\right]_{0}^{+\\infty} + \\frac{1}{\\lambda} n \\int_{0}^{+\\infty} x^{n-1} \\lambda e^{-\\lambda x} dx \\\\\n\t\t&= \\frac{n}{\\lambda } \\mathbb{E}(X^{n-1})\n\t\\end{align*}$$\n\tDe plus, on a immédiatement que $\\mathbb{E}(X^0) = 1$ donc par récurrence, on obtient :\n\t$$\\mathbb{E}(X^n) = \\frac{n!}{\\lambda^n}$$",
+      "html": "<p>On sait par comparaison que la fonction <span>\\(x\\mapsto x e^{-\\lambda x}\\)</span> est intégrable au voisinage de <span>\\(+\\infty\\)</span> donc on peut calculer par théorème de transfert pour tout <span>\\(n \\in \\N^*\\)</span> :\n<span>\\[\\begin{align*}\n        \\mathbb{E}(X^n) &amp;= \\lambda \\int_0^{+\\infty} x^n e^{-\\lambda x} dx \\\\\n        &amp;= \\lambda \\left[ \\frac{x^n e^{-\\lambda x}}{-\\lambda} \\right]_{0}^{+\\infty} + \\frac{1}{\\lambda} n \\int_{0}^{+\\infty} x^{n-1} \\lambda e^{-\\lambda x} dx \\\\\n        &amp;= \\frac{n}{\\lambda } \\mathbb{E}(X^{n-1})\n    \\end{align*}\\]</span>\nDe plus, on a immédiatement que <span>\\(\\mathbb{E}(X^0) = 1\\)</span> donc par récurrence, on obtient :\n<span>\\[\\mathbb{E}(X^n) = \\frac{n!}{\\lambda^n}\\]</span></p>",
+      "order": 2
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "9ebb7ecfe94f1a3f2f2f75f8a064e94d45c538995b32432bc52757d3e5542487"
+}

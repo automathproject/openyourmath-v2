@@ -1,0 +1,71 @@
+{
+  "uuid": "Ocbl",
+  "title": "Convergence vers une loi exponentielle",
+  "chapter": "Probabilité continue",
+  "subchapter": "Convergence en loi",
+  "theme": "convergence en loi, convergence en probabilité, variables aléatoires à densité",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-09-25",
+  "updated_at": "2025-08-22T12:39:29.004Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit une suite de variables indépendantes $(U_i)_{i \\in \\N^*}$ suivant chacune une loi uniforme $\\mathcal{U}([0;1])$. Pour tout $n \\in \\N^*$, on pose $M_n = \\max(U_1,...,U_n)$.",
+      "html": "<p>Soit une suite de variables indépendantes <span>\\((U_i)_{i \\in \\N^*}\\)</span> suivant chacune une loi uniforme <span>\\(\\mathcal{U}([0;1])\\)</span>. Pour tout <span>\\(n \\in \\N^*\\)</span>, on pose <span>\\(M_n = \\max(U_1,...,U_n)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Démontrer que $M_n \\xrightarrow[]{\\mathcal{P}} 1$.",
+      "html": "<p>Démontrer que <span>\\(M_n \\xrightarrow[]{\\mathcal{P}} 1\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Soit $M_n=\\max \\left(U_1, \\ldots, U_n\\right)$. Pour tout $i$, $U_i \\leqslant 1$ donc  $M_n \\leqslant 1$. \n\t      \tSoit $\\varepsilon>0$. On cherche la limite de\n\t      \t$$\n\t      \tP\\left(\\left|M_n-1\\right|<\\varepsilon\\right)=P\\left(1-M_n<\\varepsilon\\right) = P\\left(M_n > 1-\\varepsilon\\right)\n\t      \t$$\n\t      \tOr la fonction de répartition de $M_n$ est définie pour tout réel $t$ par \n\t      \t$$\\begin{align*}\n\t      \tF_n(t) &=\\PP\\left(\\Pi_n \\leq t\\right)=P\\left(\\bigcap_{i=1}^n\\left(U_i \\leqslant t\\right)\\right)\\\\\n\t      \t       & = \\prod_{i=1}^n \\PP\\left(U_i \\leq t\\right) \\text { par indépendance }\\\\\n\t      \t       &=\\PP\\left(U_1 \\leqslant t\\right)^n \\text { car les variables sont identiquement distribuées }\\\\\n\t      \t       &= \\begin{cases}\n\t      \t       \t      \t0   & \\text{si } t<0\\\\\n\t      \t                t^n & \\text{si } t \\in [0;1]\\\\\n\t      \t                1   & \\text{si } t>1\n\t      \t          \\end{cases} \\\\\n\t      \t\\end{align*}$$\n\t      \tDonc \n\t      \t$$\\begin{align*}\n\t      \t  \\PP(M_n > 1- \\varepsilon) &= 1 - \\PP(M_n \\leq 1- \\varepsilon)  \\\\\n\t      \t                            &= 1 - \\left(1-\\varepsilon\\right)^n  \\\\\n\t      \t                            &\\xrightarrow[n \\to +\\infty]{} 1\n\t      \t\\end{align*}$$\n\t      \tce qui achève la démonstration de la convergence en probabilité de la suite $(M_n)$ vers $1$.",
+      "html": "<p>Soit <span>\\(M_n=\\max \\left(U_1, \\ldots, U_n\\right)\\)</span>. Pour tout <span>\\(i\\)</span>, <span>\\(U_i \\leqslant 1\\)</span> donc <span>\\(M_n \\leqslant 1\\)</span>.\nSoit <span>\\(\\varepsilon&gt;0\\)</span>. On cherche la limite de\n<span>\\[P\\left(\\left|M_n-1\\right|&lt;\\varepsilon\\right)=P\\left(1-M_n&lt;\\varepsilon\\right) = P\\left(M_n &gt; 1-\\varepsilon\\right)\\]</span>\nOr la fonction de répartition de <span>\\(M_n\\)</span> est définie pour tout réel <span>\\(t\\)</span> par\n<span>\\[\\begin{align*}\n            F_n(t) &amp;=\\PP\\left(\\Pi_n \\leq t\\right)=P\\left(\\bigcap_{i=1}^n\\left(U_i \\leqslant t\\right)\\right)\\\\\n                   &amp; = \\prod_{i=1}^n \\PP\\left(U_i \\leq t\\right) \\text { par indépendance }\\\\\n                   &amp;=\\PP\\left(U_1 \\leqslant t\\right)^n \\text { car les variables sont identiquement distribuées }\\\\\n                   &amp;= \\begin{cases}\n                            0   &amp; \\text{si } t&lt;0\\\\\n                            t^n &amp; \\text{si } t \\in [0;1]\\\\\n                            1   &amp; \\text{si } t&gt;1\n                      \\end{cases} \\\\\n            \\end{align*}\\]</span>\nDonc\n<span>\\[\\begin{align*}\n              \\PP(M_n &gt; 1- \\varepsilon) &amp;= 1 - \\PP(M_n \\leq 1- \\varepsilon)  \\\\\n                                        &amp;= 1 - \\left(1-\\varepsilon\\right)^n  \\\\\n                                        &amp;\\xrightarrow[n \\to +\\infty]{} 1\n            \\end{align*}\\]</span>\nce qui achève la démonstration de la convergence en probabilité de la suite <span>\\((M_n)\\)</span> vers <span>\\(1\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "En déduire que $M_n \\xrightarrow[]{\\text{p.s.}} 1$ et $M_n \\xrightarrow[]{\\text{en loi}} 1$.",
+      "html": "<p>En déduire que <span>\\(M_n \\xrightarrow[]{\\text{p.s.}} 1\\)</span> et <span>\\(M_n \\xrightarrow[]{\\text{en loi}} 1\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On remarque que pour tout $\\omega \\in \\Omega$, la suite $(M_n(\\omega))$ est une suite réelle croissante. Cette suite est également majorée par $1$ puisque chaque variable $U_i$ est majorée par $1$. La suite $(M_n(\\omega))$ est donc une suite convergente, notons $L(\\omega)$ sa suite. Il existe donc une variable aléatoire $L$ telle que la suite $(M_n)$ converge vers $L$ presque sûrement. \n\t      \t\n\t      Or on sait que la convergence presque sûre implique la convergence en probabilité. Et d'après la question précédente, la suite $(M_n)$ converge en probabilité vers la variable aléatoire constante $1$. \n\t      \n\t      Par unicité de la limite, on déduit que pour tout $\\omega \\in \\Omega$, $L(\\omega) = 1$. \n\t      \t\n\t      \tOn a donc montré que $M_n \\xrightarrow[]{\\text{p.s.}} 1$, ce qui implique directement par théorème du cours que $M_n \\xrightarrow[]{\\text{en loi}} 1$.",
+      "html": "<p>On remarque que pour tout <span>\\(\\omega \\in \\Omega\\)</span>, la suite <span>\\((M_n(\\omega))\\)</span> est une suite réelle croissante. Cette suite est également majorée par <span>\\(1\\)</span> puisque chaque variable <span>\\(U_i\\)</span> est majorée par <span>\\(1\\)</span>. La suite <span>\\((M_n(\\omega))\\)</span> est donc une suite convergente, notons <span>\\(L(\\omega)\\)</span> sa suite. Il existe donc une variable aléatoire <span>\\(L\\)</span> telle que la suite <span>\\((M_n)\\)</span> converge vers <span>\\(L\\)</span> presque sûrement.</p>\n<p>Or on sait que la convergence presque sûre implique la convergence en probabilité. Et d’après la question précédente, la suite <span>\\((M_n)\\)</span> converge en probabilité vers la variable aléatoire constante <span>\\(1\\)</span>.</p>\n<p>Par unicité de la limite, on déduit que pour tout <span>\\(\\omega \\in \\Omega\\)</span>, <span>\\(L(\\omega) = 1\\)</span>.</p>\n<p>On a donc montré que <span>\\(M_n \\xrightarrow[]{\\text{p.s.}} 1\\)</span>, ce qui implique directement par théorème du cours que <span>\\(M_n \\xrightarrow[]{\\text{en loi}} 1\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Pour tout $n \\in \\N^*$, on pose $Y_n = n(1-M_n)$. Démontrer que la suite $(Y_n)$ converge en loi vers une loi exponentielle dont on précisera le paramètre.",
+      "html": "<p>Pour tout <span>\\(n \\in \\N^*\\)</span>, on pose <span>\\(Y_n = n(1-M_n)\\)</span>. Démontrer que la suite <span>\\((Y_n)\\)</span> converge en loi vers une loi exponentielle dont on précisera le paramètre.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On cherche à étudier la convergence de la fonction de répartition $F_{Y_n}$ de $Y_n$. Soit $t \\in \\R$. On constate que $$Y_n\\leq t\\iff M_n\\geq 1-\\frac {t}{n}$$\n\t      Si $t \\leq 0$ alors $\\PP(Y_n \\leq t) = \\PP(M_n\\geq 1-\\frac {t}{n}) = 0$ car $M_n \\leq 1$. \n\t      \n\t      Si $t \\in [0;n]$ alors $\\PP(Y_n \\leq t) = 1 - \\left(1-\\frac {t}{n}\\right)^n$ d'après la question précédente.\n\t      \n\t      Si $t >n$  alors $\\PP(Y_n \\leq t) = 1 $ car $M_n \\geq 0$.\n\t      \n\t      Or $\\lim\\limits_{n\\to+\\infty}\\left(1-\\frac tn\\right)^n=e^{-t}.$\n\t      \n\t      Donc : \n\t      \\begin{itemize}\n\t      \t\\item si $t<0$, $F_{Y_n}(t) \\xrightarrow[n \\to +\\infty]{} 0$ ;\n\t      \t\\item si $t \\geq 0$, $F_{Y_n}(t) \\xrightarrow[n \\to +\\infty]{} 1-e^{-t}$.\n\t      \\end{itemize}\n\t      \n\t      On en déduit que la suite de fonctions $\\left(F_{Y_n}\\right)$ converge simplement vers la fonction de répartition d'une loi exponentielle de paramètre $1$.\n\t      \n\t      Cela prouve la convergence en loi de la suite $(Y_n)$ vers une loi exponentielle de paramètre $1$.",
+      "html": "<p>On cherche à étudier la convergence de la fonction de répartition <span>\\(F_{Y_n}\\)</span> de <span>\\(Y_n\\)</span>. Soit <span>\\(t \\in \\R\\)</span>. On constate que <span>\\[Y_n\\leq t\\iff M_n\\geq 1-\\frac {t}{n}\\]</span>\nSi <span>\\(t \\leq 0\\)</span> alors <span>\\(\\PP(Y_n \\leq t) = \\PP(M_n\\geq 1-\\frac {t}{n}) = 0\\)</span> car <span>\\(M_n \\leq 1\\)</span>.</p>\n<p>Si <span>\\(t \\in [0;n]\\)</span> alors <span>\\(\\PP(Y_n \\leq t) = 1 - \\left(1-\\frac {t}{n}\\right)^n\\)</span> d’après la question précédente.</p>\n<p>Si <span>\\(t &gt;n\\)</span> alors <span>\\(\\PP(Y_n \\leq t) = 1\\)</span> car <span>\\(M_n \\geq 0\\)</span>.</p>\n<p>Or <span>\\(\\lim\\limits_{n\\to+\\infty}\\left(1-\\frac tn\\right)^n=e^{-t}.\\)</span></p>\n<p>Donc :</p>\n<ul>\n<li><p>si <span>\\(t&lt;0\\)</span>, <span>\\(F_{Y_n}(t) \\xrightarrow[n \\to +\\infty]{} 0\\)</span> ;</p></li>\n<li><p>si <span>\\(t \\geq 0\\)</span>, <span>\\(F_{Y_n}(t) \\xrightarrow[n \\to +\\infty]{} 1-e^{-t}\\)</span>.</p></li>\n</ul>\n<p>On en déduit que la suite de fonctions <span>\\(\\left(F_{Y_n}\\right)\\)</span> converge simplement vers la fonction de répartition d’une loi exponentielle de paramètre <span>\\(1\\)</span>.</p>\n<p>Cela prouve la convergence en loi de la suite <span>\\((Y_n)\\)</span> vers une loi exponentielle de paramètre <span>\\(1\\)</span>.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "0b8044933e32ab23829d0cca52f10c2960accc12facd0dc6dffc40ff54360ae2"
+}

@@ -1,0 +1,36 @@
+{
+  "uuid": "mDzt",
+  "title": "Modélisation avec des estimateurs",
+  "chapter": "Probabilité continue",
+  "subchapter": "Lois des grands nombres, théorème central limite",
+  "theme": "estimateurs, théorème central limite",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-12-14",
+  "updated_at": "2025-08-22T12:40:38.272Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Lors d'une  élection, un  candidat a obtenu 65\\% des voix. On considère deux échantillons de \n\tvotants.  Déterminer  la  probabilité  pour  que  deux  échantillons  de  200  votants  chacun \tindiquent  plus  de  10 points  de  différence  entre  les  fréquences  de  gens  qui  ont  voté  pour  ce \tcandidat.",
+      "html": "<p>Lors d’une élection, un candidat a obtenu 65% des voix. On considère deux échantillons de\nvotants. Déterminer la probabilité pour que deux échantillons de 200 votants chacun indiquent plus de 10 points de différence entre les fréquences de gens qui ont voté pour ce candidat.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "reponse",
+      "latex": "On note respectivement $F_1$ et $F_2$ la proportion de votants pour ce candidat dans chaque échantillon de taille 200. En notant $(X_1,...,X_n)$ le premier échantillon, on sait que $n=200$ et que chaque $X_i$ suit une loi de Bernoulli $\\mathcal{B}(p)$ où $p = 0{,}65$. Ainsi, d'après le Théorème Central Limite, $F_1 = \\frac{1}{n} \\sum_{i=1}^n X_i$ suit approximativement une loi normale de moyenne $p$ et de variance $\\frac{p(1-p)}{n}$. Il est clair que $F_2$ suit la même loi de probabilité que $F_1$. \n\t\n\tAinsi, on peut s'intéresser à la différence des résultats pour chaque échantillon $D=F_1-F_2$. Par somme de lois normales, cette variable $D$ suit une loi normale centrée (moyenne $p-p=0$) de variance $\\frac{p(1-p)}{n}+\\frac{p(1-p)}{n} = \\frac{2p(1-p)}{n}$.\n\t\n\tIl reste donc à calculer $\\prob(|D|>0.10) = 2 \\times \\prob(D>0.10) = \\PP\\left(\\frac{D}{\\sqrt{\\frac{2p(1-p)}{n}}} > 2.1\\right) = 2 \\times 0.00179 = 0.036$",
+      "html": "<p>On note respectivement <span>\\(F_1\\)</span> et <span>\\(F_2\\)</span> la proportion de votants pour ce candidat dans chaque échantillon de taille 200. En notant <span>\\((X_1,...,X_n)\\)</span> le premier échantillon, on sait que <span>\\(n=200\\)</span> et que chaque <span>\\(X_i\\)</span> suit une loi de Bernoulli <span>\\(\\mathcal{B}(p)\\)</span> où <span>\\(p = 0{,}65\\)</span>. Ainsi, d’après le Théorème Central Limite, <span>\\(F_1 = \\frac{1}{n} \\sum_{i=1}^n X_i\\)</span> suit approximativement une loi normale de moyenne <span>\\(p\\)</span> et de variance <span>\\(\\frac{p(1-p)}{n}\\)</span>. Il est clair que <span>\\(F_2\\)</span> suit la même loi de probabilité que <span>\\(F_1\\)</span>.</p>\n<p>Ainsi, on peut s’intéresser à la différence des résultats pour chaque échantillon <span>\\(D=F_1-F_2\\)</span>. Par somme de lois normales, cette variable <span>\\(D\\)</span> suit une loi normale centrée (moyenne <span>\\(p-p=0\\)</span>) de variance <span>\\(\\frac{p(1-p)}{n}+\\frac{p(1-p)}{n} = \\frac{2p(1-p)}{n}\\)</span>.</p>\n<p>Il reste donc à calculer <span>\\(\\prob(|D|&gt;0.10) = 2 \\times \\prob(D&gt;0.10) = \\PP\\left(\\frac{D}{\\sqrt{\\frac{2p(1-p)}{n}}} &gt; 2.1\\right) = 2 \\times 0.00179 = 0.036\\)</span></p>",
+      "order": 2
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "530e840b4cce4aa0b431d1c14739f52370cfb387acc1fea8d78f354fc1226c70"
+}

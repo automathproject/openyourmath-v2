@@ -1,0 +1,71 @@
+{
+  "uuid": "tbue",
+  "title": "Vraisemblance sur un modèle de translation",
+  "chapter": "",
+  "subchapter": "",
+  "theme": "Statistique",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "",
+  "updated_at": "2025-08-22T13:04:47.820Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit \\( X_1, \\dots, X_n \\) i.i.d. de densité commune \\( f_\\theta(x) = f(x - \\theta) \\), \\( \\theta \\in \\mathbb{R} \\). Déterminer l'estimateur du maximum de vraisemblance dans les cas suivants :",
+      "html": "<p>Soit <span>\\(X_1, \\dots, X_n\\)</span> i.i.d. de densité commune <span>\\(f_\\theta(x) = f(x - \\theta)\\)</span>, <span>\\(\\theta \\in \\mathbb{R}\\)</span>. Déterminer l’estimateur du maximum de vraisemblance dans les cas suivants :</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "\\( f \\) est la densité de la loi \\( \\mathcal{N}(0, \\sigma^2) \\) (\\( \\sigma \\) connue) ;",
+      "html": "<p><span>\\(f\\)</span> est la densité de la loi <span>\\(\\mathcal{N}(0, \\sigma^2)\\)</span> (<span>\\(\\sigma\\)</span> connue) ;</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "La vraisemblance est \\( L(\\theta) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-\\frac{(X_i - \\theta)^2}{2\\sigma^2}} \\).\n\tLa log-vraisemblance est \\( \\ell(\\theta) = \\ln L(\\theta) = -\\frac{n}{2} \\ln(2\\pi\\sigma^2) - \\frac{1}{2\\sigma^2} \\sum_{i=1}^n (X_i - \\theta)^2 \\).\n\tMaximiser \\( \\ell(\\theta) \\) par rapport à \\( \\theta \\) revient à minimiser la somme des carrés \\( \\sum_{i=1}^n (X_i - \\theta)^2 \\). La dérivée par rapport à \\( \\theta \\) est \\( \\frac{d}{d\\theta} \\sum_{i=1}^n (X_i - \\theta)^2 = \\sum_{i=1}^n -2(X_i - \\theta) \\). En annulant la dérivée, on obtient \\( \\sum_{i=1}^n (X_i - \\theta) = 0 \\), soit \\( \\sum X_i - n\\theta = 0 \\), d'où \\( \\theta = \\frac{1}{n} \\sum X_i = \\bar{X}_n \\).\n\t\\( \\hat{\\theta}_{MV} = \\bar{X}_n = \\frac{1}{n} \\sum_{i=1}^n X_i \\)",
+      "html": "<p>La vraisemblance est <span>\\(L(\\theta) = \\prod_{i=1}^n \\frac{1}{\\sqrt{2\\pi}\\sigma} e^{-\\frac{(X_i - \\theta)^2}{2\\sigma^2}}\\)</span>.\nLa log-vraisemblance est <span>\\(\\ell(\\theta) = \\ln L(\\theta) = -\\frac{n}{2} \\ln(2\\pi\\sigma^2) - \\frac{1}{2\\sigma^2} \\sum_{i=1}^n (X_i - \\theta)^2\\)</span>.\nMaximiser <span>\\(\\ell(\\theta)\\)</span> par rapport à <span>\\(\\theta\\)</span> revient à minimiser la somme des carrés <span>\\(\\sum_{i=1}^n (X_i - \\theta)^2\\)</span>. La dérivée par rapport à <span>\\(\\theta\\)</span> est <span>\\(\\frac{d}{d\\theta} \\sum_{i=1}^n (X_i - \\theta)^2 = \\sum_{i=1}^n -2(X_i - \\theta)\\)</span>. En annulant la dérivée, on obtient <span>\\(\\sum_{i=1}^n (X_i - \\theta) = 0\\)</span>, soit <span>\\(\\sum X_i - n\\theta = 0\\)</span>, d’où <span>\\(\\theta = \\frac{1}{n} \\sum X_i = \\bar{X}_n\\)</span>.\n<span>\\(\\hat{\\theta}_{MV} = \\bar{X}_n = \\frac{1}{n} \\sum_{i=1}^n X_i\\)</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "\\( f(x) = \\frac{1}{2} e^{-|x|} \\) (loi de Laplace) ;",
+      "html": "<p><span>\\(f(x) = \\frac{1}{2} e^{-|x|}\\)</span> (loi de Laplace) ;</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "La vraisemblance est \\( L(\\theta) = \\prod_{i=1}^n \\frac{1}{2} e^{-|X_i - \\theta|} = (\\frac{1}{2})^n e^{-\\sum_{i=1}^n |X_i - \\theta|} \\).\n\t\n\tLa log-vraisemblance est \\( \\ell(\\theta) = -n \\ln(2) - \\sum_{i=1}^n |X_i - \\theta| \\).\n\tMaximiser \\( \\ell(\\theta) \\) revient à minimiser la somme des valeurs absolues des écarts \\( \\sum_{i=1}^n |X_i - \\theta| \\). \n\t\n\tCette somme est minimisée lorsque \\( \\theta \\) est la médiane empirique de l'échantillon \\( (X_1, \\dots, X_n) \\).\n\t\\( \\hat{\\theta}_{MV} = \\text{med}(X_1, \\dots, X_n) \\), la médiane empirique de l'échantillon.",
+      "html": "<p>La vraisemblance est <span>\\(L(\\theta) = \\prod_{i=1}^n \\frac{1}{2} e^{-|X_i - \\theta|} = (\\frac{1}{2})^n e^{-\\sum_{i=1}^n |X_i - \\theta|}\\)</span>.</p>\n<p>La log-vraisemblance est <span>\\(\\ell(\\theta) = -n \\ln(2) - \\sum_{i=1}^n |X_i - \\theta|\\)</span>.\nMaximiser <span>\\(\\ell(\\theta)\\)</span> revient à minimiser la somme des valeurs absolues des écarts <span>\\(\\sum_{i=1}^n |X_i - \\theta|\\)</span>.</p>\n<p>Cette somme est minimisée lorsque <span>\\(\\theta\\)</span> est la médiane empirique de l’échantillon <span>\\((X_1, \\dots, X_n)\\)</span>.\n<span>\\(\\hat{\\theta}_{MV} = \\text{med}(X_1, \\dots, X_n)\\)</span>, la médiane empirique de l’échantillon.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "\\( f(x) = \\frac{3}{4} (1 - x^2) \\) sur \\( [-1, 1] \\).",
+      "html": "<p><span>\\(f(x) = \\frac{3}{4} (1 - x^2)\\)</span> sur <span>\\([-1, 1]\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "La densité \\( f_\\theta(x) = f(x - \\theta) = \\frac{3}{4} (1 - (x - \\theta)^2) \\) est définie pour \\( x - \\theta \\in [-1, 1] \\), c'est-à-dire \\( \\theta - 1 \\le x \\le \\theta + 1 \\).\n\t\n\tLa vraisemblance est \\( L(\\theta) = \\prod_{i=1}^n \\frac{3}{4} (1 - (X_i - \\theta)^2) \\) si \\( \\theta - 1 \\le X_i \\le \\theta + 1 \\) pour tout \\( i \\), et \\( L(\\theta) = 0 \\) sinon.\n\tLa condition \\( \\theta - 1 \\le X_i \\le \\theta + 1 \\) pour tout \\( i \\) équivaut à \\( \\max_i X_i - 1 \\le \\theta \\le \\min_i X_i + 1 \\). Soient \\( X_{(1)} = \\min_i X_i \\) et \\( X_{(n)} = \\max_i X_i \\). La vraisemblance est non nulle pour \\( \\theta \\in [X_{(n)} - 1, X_{(1)} + 1] \\).\n\t\n\tSur cet intervalle, la log-vraisemblance est : $$ \\ell(\\theta) = n \\ln(3/4) + \\sum_{i=1}^n \\ln(1 - (X_i - \\theta)^2). $$\n\tL'estimateur du maximum de vraisemblance \\( \\hat{\\theta}_{MV} \\) est la valeur de \\( \\theta \\) qui maximise \\( \\sum_{i=1}^n \\ln(1 - (X_i - \\theta)^2) \\) sur l'intervalle \\( [X_{(n)} - 1, X_{(1)} + 1] \\). Il n'y a pas de solution analytique simple en général. \n\t\n\tL'estimateur est défini par cette optimisation.\n\t\\( \\hat{\\theta}_{MV} = \\mathrm{argmax}_{\\theta \\in [X_{(n)}-1, X_{(1)}+1]} \\sum_{i=1}^n \\ln(1 - (X_i - \\theta)^2) \\), où \\( X_{(1)} = \\min_i X_i \\) et \\( X_{(n)} = \\max_i X_i \\).",
+      "html": "<p>La densité <span>\\(f_\\theta(x) = f(x - \\theta) = \\frac{3}{4} (1 - (x - \\theta)^2)\\)</span> est définie pour <span>\\(x - \\theta \\in [-1, 1]\\)</span>, c’est-à-dire <span>\\(\\theta - 1 \\le x \\le \\theta + 1\\)</span>.</p>\n<p>La vraisemblance est <span>\\(L(\\theta) = \\prod_{i=1}^n \\frac{3}{4} (1 - (X_i - \\theta)^2)\\)</span> si <span>\\(\\theta - 1 \\le X_i \\le \\theta + 1\\)</span> pour tout <span>\\(i\\)</span>, et <span>\\(L(\\theta) = 0\\)</span> sinon.\nLa condition <span>\\(\\theta - 1 \\le X_i \\le \\theta + 1\\)</span> pour tout <span>\\(i\\)</span> équivaut à <span>\\(\\max_i X_i - 1 \\le \\theta \\le \\min_i X_i + 1\\)</span>. Soient <span>\\(X_{(1)} = \\min_i X_i\\)</span> et <span>\\(X_{(n)} = \\max_i X_i\\)</span>. La vraisemblance est non nulle pour <span>\\(\\theta \\in [X_{(n)} - 1, X_{(1)} + 1]\\)</span>.</p>\n<p>Sur cet intervalle, la log-vraisemblance est : <span>\\[\\ell(\\theta) = n \\ln(3/4) + \\sum_{i=1}^n \\ln(1 - (X_i - \\theta)^2).\\]</span>\nL’estimateur du maximum de vraisemblance <span>\\(\\hat{\\theta}_{MV}\\)</span> est la valeur de <span>\\(\\theta\\)</span> qui maximise <span>\\(\\sum_{i=1}^n \\ln(1 - (X_i - \\theta)^2)\\)</span> sur l’intervalle <span>\\([X_{(n)} - 1, X_{(1)} + 1]\\)</span>. Il n’y a pas de solution analytique simple en général.</p>\n<p>L’estimateur est défini par cette optimisation.\n<span>\\(\\hat{\\theta}_{MV} = \\mathrm{argmax}_{\\theta \\in [X_{(n)}-1, X_{(1)}+1]} \\sum_{i=1}^n \\ln(1 - (X_i - \\theta)^2)\\)</span>, où <span>\\(X_{(1)} = \\min_i X_i\\)</span> et <span>\\(X_{(n)} = \\max_i X_i\\)</span>.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "4c1e729f5ff865a736275e9514a2fed215809699a317637fa02c9cf3ef0efd86"
+}

@@ -1,0 +1,36 @@
+{
+  "uuid": "pWdA",
+  "title": "Résolution de système linéaire à coefficients complexes",
+  "chapter": "Déterminant, système linéaire",
+  "subchapter": "Système linéaire, rang",
+  "theme": "systèmes linéaires",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-01-17",
+  "updated_at": "2025-08-22T13:04:25.988Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "Résoudre le système linéaire à coefficients complexes suivant :\n$$\n\\left\\{\\begin{aligned}\n(1+i) x+(1-2 i) y+(-1+3 i) z & =2+i \\\\\nx-2 y+z & =0 \\\\\ni x+(2-i) y-2 z & =0\n\\end{aligned}\\right.\n$$",
+      "html": "<p>Résoudre le système linéaire à coefficients complexes suivant :\n<span>\\[\\left\\{\\begin{aligned}\n(1+i) x+(1-2 i) y+(-1+3 i) z &amp; =2+i \\\\\nx-2 y+z &amp; =0 \\\\\ni x+(2-i) y-2 z &amp; =0\n\\end{aligned}\\right.\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "reponse",
+      "latex": "$$\n\\begin{aligned}\n& \\left\\{\\begin{aligned}\n(1+i) x+(1-2 i) y+(-1+3 i) z & =2+i \\\\\nx-2 y+z & =0 \\\\\ni x+(2-i) y-2 z & =0\n\\end{aligned}\\right. \\\\\n& \\begin{array}{l}\n\\ell_1 \\leftarrow \\ell_2 \\\\\n\\ell_2 \\leftarrow \\ell_1-(1+i) \\ell_2 \\\\\n\\ell_3 \\leftarrow \\ell_3-i \\ell_2\n\\end{array}\\left\\{\\begin{aligned}\nx-2 y+z & =0 \\\\\n((1-2 i)+(2+2 i)) y+((-1+3 i)-(1+i)) z & =2+i \\\\\n((2-i)+2 i) y+(-2-i) z & =0\n\\end{aligned}\\right. \\\\\n& \\Leftrightarrow\\left\\{\\begin{aligned}\nx-2 y+z & =0 \\\\\n3 y+(-2+2 i) z & =2+i \\\\\n(2+i) y+(-2-i) z & =0\n\\end{aligned}\\right. \\\\\n& \\Leftrightarrow\\left\\{\\begin{array}{c}\nx-2 y+z=0 \\\\\n3 y+(-2+i) z=2+i \\\\\n(-5 i) z=-3-4 i\n\\end{array}\\right. \\\\\n& \\Rightarrow\\left\\{\\begin{array}{l}\nx=\\frac{4}{5}-\\frac{3}{5} i \\\\\ny=\\frac{4}{5}-\\frac{3}{5} i \\\\\nz=\\frac{4}{5}-\\frac{3}{5} i\n\\end{array}\\right. \\\\\n&\n\\end{aligned}\n$$\n$$\\mathcal{S}  = \\left\\{\\left(\\frac{4}{5}-\\frac{3}{5} i,\\frac{4}{5}-\\frac{3}{5} i,\\frac{4}{5}-\\frac{3}{5} i\\right)\\right\\}$$",
+      "html": "<p><span>\\[\\begin{aligned}\n&amp; \\left\\{\\begin{aligned}\n(1+i) x+(1-2 i) y+(-1+3 i) z &amp; =2+i \\\\\nx-2 y+z &amp; =0 \\\\\ni x+(2-i) y-2 z &amp; =0\n\\end{aligned}\\right. \\\\\n&amp; \\begin{array}{l}\n\\ell_1 \\leftarrow \\ell_2 \\\\\n\\ell_2 \\leftarrow \\ell_1-(1+i) \\ell_2 \\\\\n\\ell_3 \\leftarrow \\ell_3-i \\ell_2\n\\end{array}\\left\\{\\begin{aligned}\nx-2 y+z &amp; =0 \\\\\n((1-2 i)+(2+2 i)) y+((-1+3 i)-(1+i)) z &amp; =2+i \\\\\n((2-i)+2 i) y+(-2-i) z &amp; =0\n\\end{aligned}\\right. \\\\\n&amp; \\Leftrightarrow\\left\\{\\begin{aligned}\nx-2 y+z &amp; =0 \\\\\n3 y+(-2+2 i) z &amp; =2+i \\\\\n(2+i) y+(-2-i) z &amp; =0\n\\end{aligned}\\right. \\\\\n&amp; \\Leftrightarrow\\left\\{\\begin{array}{c}\nx-2 y+z=0 \\\\\n3 y+(-2+i) z=2+i \\\\\n(-5 i) z=-3-4 i\n\\end{array}\\right. \\\\\n&amp; \\Rightarrow\\left\\{\\begin{array}{l}\nx=\\frac{4}{5}-\\frac{3}{5} i \\\\\ny=\\frac{4}{5}-\\frac{3}{5} i \\\\\nz=\\frac{4}{5}-\\frac{3}{5} i\n\\end{array}\\right. \\\\\n&amp;\n\\end{aligned}\\]</span>\n<span>\\[\\mathcal{S}  = \\left\\{\\left(\\frac{4}{5}-\\frac{3}{5} i,\\frac{4}{5}-\\frac{3}{5} i,\\frac{4}{5}-\\frac{3}{5} i\\right)\\right\\}\\]</span></p>",
+      "order": 2
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "4fd3318045a5357de0cf6c1735c4663474e09268b4a9b8f96822e51831cfa529"
+}

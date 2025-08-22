@@ -1,0 +1,57 @@
+{
+  "uuid": "SxZb",
+  "title": "Densité",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité, loi conjointe",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-06",
+  "updated_at": "2025-08-22T13:03:01.450Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit la fonction $f$ définie sur $\\R^2$ par : $$f(x,y)=2e^{-x}e^{-2y}\\textbf{1}_{(\\R^+)^2}(x,y).$$",
+      "html": "<p>Soit la fonction <span>\\(f\\)</span> définie sur <span>\\(\\R^2\\)</span> par : <span>\\[f(x,y)=2e^{-x}e^{-2y}\\textbf{1}_{(\\R^+)^2}(x,y).\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Vérifier que $f$ définit une densité de probabilité.",
+      "html": "<p>Vérifier que <span>\\(f\\)</span> définit une densité de probabilité.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On vérifie que pour tout $(x,y) \\in \\R^2$, $f(x,y) \\geq 0$. De plus, par le théorème de Fubini,\n\t$$\\begin{align*}\n\t\\int_{-\\infty}^{+\\infty}\\int_{-\\infty}^{+\\infty} f(x,y) dxdy &= \\int_{0}^{+\\infty}\\int_{0}^{+\\infty} 2e^{-x}e^{-2y} dxdy \\\\\n\t&= \\int_{0}^{+\\infty} e^{-x} dx \\int_{0}^{+\\infty} 2e^{-2y} dy \\\\\n\t&= 1\n\t\\end{align*}$$",
+      "html": "<p>On vérifie que pour tout <span>\\((x,y) \\in \\R^2\\)</span>, <span>\\(f(x,y) \\geq 0\\)</span>. De plus, par le théorème de Fubini,\n<span>\\[\\begin{align*}\n    \\int_{-\\infty}^{+\\infty}\\int_{-\\infty}^{+\\infty} f(x,y) dxdy &amp;= \\int_{0}^{+\\infty}\\int_{0}^{+\\infty} 2e^{-x}e^{-2y} dxdy \\\\\n    &amp;= \\int_{0}^{+\\infty} e^{-x} dx \\int_{0}^{+\\infty} 2e^{-2y} dy \\\\\n    &amp;= 1\n    \\end{align*}\\]</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Calculer $\\prob(X>1,Y<1)$, $\\prob(X<Y)$ et $\\prob(X<a)$.",
+      "html": "<p>Calculer <span>\\(\\prob(X&gt;1,Y&lt;1)\\)</span>, <span>\\(\\prob(X&lt;Y)\\)</span> et <span>\\(\\prob(X&lt;a)\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On applique la définition et on trouve $\\prob(X>1,Y<1) = e^{-1}(1-e^{-2})$, $\\prob(X<Y)=\\frac{1}{3}$ et $\\prob(X<a)=1-e^{-a}$.",
+      "html": "<p>On applique la définition et on trouve <span>\\(\\prob(X&gt;1,Y&lt;1) = e^{-1}(1-e^{-2})\\)</span>, <span>\\(\\prob(X&lt;Y)=\\frac{1}{3}\\)</span> et <span>\\(\\prob(X&lt;a)=1-e^{-a}\\)</span>.</p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "d85d50091e958c1c8a4cc4b170e3e1ef8cf8fa3431889326c7d310040e46b063"
+}

@@ -1,0 +1,64 @@
+{
+  "uuid": "taba",
+  "title": "Polynômes et division euclidienne",
+  "chapter": "Polynôme, fraction rationnelle",
+  "subchapter": "Division euclidienne",
+  "theme": "Algèbre",
+  "difficulty": null,
+  "author": "Q. Liard",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "",
+  "updated_at": "2025-08-22T12:41:21.182Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "Déterminer les racines complexes de $P(X)=X^4-4X^3+5X^2-2X$ ainsi que leur ordre de multiplicité.",
+      "html": "<p>Déterminer les racines complexes de <span>\\(P(X)=X^4-4X^3+5X^2-2X\\)</span> ainsi que leur ordre de multiplicité.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "reponse",
+      "latex": "$P(0)=0,\\,P(1)=0$ et $P(2)=0$. Calculons $P'(X)$ et $P''(X)$. On obtient\n$$P'(X)=4X^3-12X^2+10X-2,\\quad P''(X)=12X^2-24X+10.$$\nAinsi $P'(0)\\neq 0$ et $P'(2)\\neq 0$ mais $P'(1)=0,\\,P''(1)\\neq 0$. $1$ est racine multiplicité double, $0$ et $2$ sont racines simples. On obtient la factorisation $P(X)=X(X-1)^2(X-2)$.",
+      "html": "<p><span>\\(P(0)=0,\\,P(1)=0\\)</span> et <span>\\(P(2)=0\\)</span>. Calculons <span>\\(P&#39;(X)\\)</span> et <span>\\(P&#39;&#39;(X)\\)</span>. On obtient\n<span>\\[P&#39;(X)=4X^3-12X^2+10X-2,\\quad P&#39;&#39;(X)=12X^2-24X+10.\\]</span>\nAinsi <span>\\(P&#39;(0)\\neq 0\\)</span> et <span>\\(P&#39;(2)\\neq 0\\)</span> mais <span>\\(P&#39;(1)=0,\\,P&#39;&#39;(1)\\neq 0\\)</span>. <span>\\(1\\)</span> est racine multiplicité double, <span>\\(0\\)</span> et <span>\\(2\\)</span> sont racines simples. On obtient la factorisation <span>\\(P(X)=X(X-1)^2(X-2)\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "Effectuer la division euclidienne de $P$ par $(X-2)^2$.",
+      "html": "<p>Effectuer la division euclidienne de <span>\\(P\\)</span> par <span>\\((X-2)^2\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "La division euclidienne de $P$ par $(X-2)^2$ donne l'égalité suivante:\n$$P(X)=(X-2)^2(X^2+1)+2X-4.$$",
+      "html": "<p>La division euclidienne de <span>\\(P\\)</span> par <span>\\((X-2)^2\\)</span> donne l’égalité suivante:\n<span>\\[P(X)=(X-2)^2(X^2+1)+2X-4.\\]</span></p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "En déduire l'égalité suivante:\n$$\\frac{P(X)}{X^2-4X+4}=X^2+1+\\frac{2X-4}{(X-2)^2}.$$",
+      "html": "<p>En déduire l’égalité suivante:\n<span>\\[\\frac{P(X)}{X^2-4X+4}=X^2+1+\\frac{2X-4}{(X-2)^2}.\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "reponse",
+      "latex": "$\\frac{P(X)}{X^2-4X+4}=\\frac{P(X)}{(X-2)^2}=X^2+1+\\frac{2X-4}{(X-2)^2},$\nd'après la question précédente.",
+      "html": "<p><span>\\(\\frac{P(X)}{X^2-4X+4}=\\frac{P(X)}{(X-2)^2}=X^2+1+\\frac{2X-4}{(X-2)^2},\\)</span>\nd’après la question précédente.</p>",
+      "order": 6
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "573486ffcf2f50ce27ee65fd44f0477f3f0c2f2eecd1ea9e23ec04d9646ea5af"
+}

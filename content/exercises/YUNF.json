@@ -1,0 +1,71 @@
+{
+  "uuid": "YUNF",
+  "title": "Optimisation quadratique, moindres carrés",
+  "chapter": "Optimisation",
+  "subchapter": "Autre",
+  "theme": "optimisation",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-10-15",
+  "updated_at": "2025-08-22T13:03:16.073Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère la fonction $f$ définie sur $[-1, 1]$ par $f(x) = x^3$. L'espace $\\mathcal{C}^0([-1, 1])$ est muni du produit scalaire $\\langle h, g \\rangle = \\int_{-1}^{1} h(x)g(x) dx$ et on note $\\|h\\|^2 = \\int_{-1}^{1} h(x)^2 dx$ la norme associée. \n\n  On cherche à déterminer le polynôme $P$ de degré inférieur ou égal à 1 qui approche le mieux la fonction $f$ sur l’intervalle $[-1, 1]$, au sens des moindres carrés. Autrement dit, on veut minimiser l’erreur $\\|f - P\\|^2$.",
+      "html": "<p>On considère la fonction <span>\\(f\\)</span> définie sur <span>\\([-1, 1]\\)</span> par <span>\\(f(x) = x^3\\)</span>. L’espace <span>\\(\\mathcal{C}^0([-1, 1])\\)</span> est muni du produit scalaire <span>\\(\\langle h, g \\rangle = \\int_{-1}^{1} h(x)g(x) dx\\)</span> et on note <span>\\(\\|h\\|^2 = \\int_{-1}^{1} h(x)^2 dx\\)</span> la norme associée.</p>\n<p>On cherche à déterminer le polynôme <span>\\(P\\)</span> de degré inférieur ou égal à 1 qui approche le mieux la fonction <span>\\(f\\)</span> sur l’intervalle <span>\\([-1, 1]\\)</span>, au sens des moindres carrés. Autrement dit, on veut minimiser l’erreur <span>\\(\\|f - P\\|^2\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Mettre ce problème sous la forme d’un problème de moindres carrés de dimension finie. Quelle est cette dimension ?",
+      "html": "<p>Mettre ce problème sous la forme d’un problème de moindres carrés de dimension finie. Quelle est cette dimension ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Le problème est de trouver le polynôme $P$ de degré inférieur ou égal à 1 qui approche le mieux la fonction $f(x) = x^3$ sur l’intervalle $[-1, 1]$, au sens des moindres carrés. Autrement dit, on veut minimiser l’erreur $\\|f - P\\|^2$, où la norme est définie par :\n  \\[\n  \\|h\\|^2 = \\int_{-1}^{1} h(x)^2 dx.\n  \\]\n  Le polynôme $P(x) = ax + b$ est de degré inférieur ou égal à 1. On doit donc minimiser l'intégrale :\n  \\[\n  J(a, b) = \\int_{-1}^{1} \\left( x^3 - (ax + b) \\right)^2 dx.\n  \\]\n  Ce problème peut être formulé comme un problème de moindres carrés dans un espace vectoriel de dimension 2 (les paramètres à déterminer étant $a$ et $b$).",
+      "html": "<p>Le problème est de trouver le polynôme <span>\\(P\\)</span> de degré inférieur ou égal à 1 qui approche le mieux la fonction <span>\\(f(x) = x^3\\)</span> sur l’intervalle <span>\\([-1, 1]\\)</span>, au sens des moindres carrés. Autrement dit, on veut minimiser l’erreur <span>\\(\\|f - P\\|^2\\)</span>, où la norme est définie par :\n<span>\\[\\|h\\|^2 = \\int_{-1}^{1} h(x)^2 dx.\\]</span>\nLe polynôme <span>\\(P(x) = ax + b\\)</span> est de degré inférieur ou égal à 1. On doit donc minimiser l’intégrale :\n<span>\\[J(a, b) = \\int_{-1}^{1} \\left( x^3 - (ax + b) \\right)^2 dx.\\]</span>\nCe problème peut être formulé comme un problème de moindres carrés dans un espace vectoriel de dimension 2 (les paramètres à déterminer étant <span>\\(a\\)</span> et <span>\\(b\\)</span>).</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Étudier l’existence/l’unicité des solutions de ce problème.",
+      "html": "<p>Étudier l’existence/l’unicité des solutions de ce problème.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Le problème est quadratique en les paramètres $a$ et $b$. Par conséquent, il peut être formulé comme la minimisation d'une fonction quadratique définie positive, dont la matrice hessienne associée est définie positive. Cela garantit que le problème possède une solution unique.",
+      "html": "<p>Le problème est quadratique en les paramètres <span>\\(a\\)</span> et <span>\\(b\\)</span>. Par conséquent, il peut être formulé comme la minimisation d’une fonction quadratique définie positive, dont la matrice hessienne associée est définie positive. Cela garantit que le problème possède une solution unique.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Résoudre ce problème.",
+      "html": "<p>Résoudre ce problème.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On calcule l’intégrale de $J(a, b)$ :\n  \\[\n  J(a, b) = \\int_{-1}^{1} \\left( x^6 + a^2x^2 + b^2 - 2ax^4 - 2bx^3 + 2abx \\right) dx.\n  \\]\n  En calculant chaque terme séparément, on obtient :\n  \\[\n  J(a, b) = \\frac{2}{7} - \\frac{4}{5}a + 2a^2 + 0 \\cdot b + 0 \\cdot ab + \\text{termes constants}.\n  \\]\n  Résoudre ce problème d'optimisation quadratique donne les valeurs $a = \\frac{3}{5}$ et $b = 0$. Ainsi, le polynôme $P(x)$ qui approche le mieux $f(x) = x^3$ au sens des moindres carrés est $P(x) = \\frac{3}{5}x$.",
+      "html": "<p>On calcule l’intégrale de <span>\\(J(a, b)\\)</span> :\n<span>\\[J(a, b) = \\int_{-1}^{1} \\left( x^6 + a^2x^2 + b^2 - 2ax^4 - 2bx^3 + 2abx \\right) dx.\\]</span>\nEn calculant chaque terme séparément, on obtient :\n<span>\\[J(a, b) = \\frac{2}{7} - \\frac{4}{5}a + 2a^2 + 0 \\cdot b + 0 \\cdot ab + \\text{termes constants}.\\]</span>\nRésoudre ce problème d’optimisation quadratique donne les valeurs <span>\\(a = \\frac{3}{5}\\)</span> et <span>\\(b = 0\\)</span>. Ainsi, le polynôme <span>\\(P(x)\\)</span> qui approche le mieux <span>\\(f(x) = x^3\\)</span> au sens des moindres carrés est <span>\\(P(x) = \\frac{3}{5}x\\)</span>.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "6ca22c20a55fc495b93c5a152a209d824a12f2b402618287b29bfed3319e20b7"
+}

@@ -1,0 +1,43 @@
+{
+  "uuid": "gLXG",
+  "title": "Divisibilité et racines",
+  "chapter": "Polynôme, fraction rationnelle",
+  "subchapter": "Racine, décomposition en facteurs irréductibles",
+  "theme": "polynômes",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-01-23",
+  "updated_at": "2025-08-22T12:40:22.056Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "Soit $n \\in \\mathbb{N} \\backslash\\{0,1\\}$. Montrer que $P_n(X)=(X+1)^{2 n}-X^{2 n}-2 X-1$ est divisible par $Q(X)=X(X+1)(2 X+1)$.",
+      "html": "<p>Soit <span>\\(n \\in \\mathbb{N} \\backslash\\{0,1\\}\\)</span>. Montrer que <span>\\(P_n(X)=(X+1)^{2 n}-X^{2 n}-2 X-1\\)</span> est divisible par <span>\\(Q(X)=X(X+1)(2 X+1)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "indication",
+      "latex": "Traduire cette information de divisibilité de polynômes en termes de racines : si $P_n$ est divisible par $Q$ alors les racines de $Q$ sont également des racines de $P_n$.",
+      "html": "<p>Traduire cette information de divisibilité de polynômes en termes de racines : si <span>\\(P_n\\)</span> est divisible par <span>\\(Q\\)</span> alors les racines de <span>\\(Q\\)</span> sont également des racines de <span>\\(P_n\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On a :\n$$\\begin{align*}\nP_n(0) & =(1)^{2 n}-0-0-1=0 \\\\\nP_n(-1) & =(-1+1)^{2 n}-(-1)^{2 n}-2 \\cdot(-1)-1=0-1+2-1=0 \\\\\nP_n\\left(-\\frac{1}{2}\\right) & =\\left(-\\frac{1}{2}+1\\right)^{2 n}-\\left(-\\frac{1}{2}\\right)^{2 n}-2 \\cdot\\left(-\\frac{1}{2}\\right)-1=\\left(\\frac{1}{2}\\right)^{2 n}-\\left(\\frac{1}{2}\\right)^{2 n}+1-1=0\n\\end{align*}$$\n\n$0$ racine signifie que $X$ divise $P_n(X): P_n(X)=X Q_1(X)$;\n$-1$ racine signifie que $(X+1)$ divise $P_n(X): P_n(X)=(X+1) \\underbrace{Q_2(X)}_{X \\cdot Q_3(X)}=X \\cdot(X+1)  Q_3(X)$;\n$-\\frac{1}{2}$ racine signifie que $(2 X+1)$ divise $P_n(X)$ :\n$$\nP_n(X)=(2 X+1) \\cdot Q_4(X)=\\underbrace{X (X+1) (2 X+1)}_{Q(X)} \\cdot Q_5(X)\n$$\ndonc $Q(X)=X(X+1)(2 X+1)$ divise $P_n(X)=(X+1)^{2 n}-X^{2 n}-2 X-1$.",
+      "html": "<p>On a :\n<span>\\[\\begin{align*}\nP_n(0) &amp; =(1)^{2 n}-0-0-1=0 \\\\\nP_n(-1) &amp; =(-1+1)^{2 n}-(-1)^{2 n}-2 \\cdot(-1)-1=0-1+2-1=0 \\\\\nP_n\\left(-\\frac{1}{2}\\right) &amp; =\\left(-\\frac{1}{2}+1\\right)^{2 n}-\\left(-\\frac{1}{2}\\right)^{2 n}-2 \\cdot\\left(-\\frac{1}{2}\\right)-1=\\left(\\frac{1}{2}\\right)^{2 n}-\\left(\\frac{1}{2}\\right)^{2 n}+1-1=0\n\\end{align*}\\]</span></p>\n<p><span>\\(0\\)</span> racine signifie que <span>\\(X\\)</span> divise <span>\\(P_n(X): P_n(X)=X Q_1(X)\\)</span>;\n<span>\\(-1\\)</span> racine signifie que <span>\\((X+1)\\)</span> divise <span>\\(P_n(X): P_n(X)=(X+1) \\underbrace{Q_2(X)}_{X \\cdot Q_3(X)}=X \\cdot(X+1)  Q_3(X)\\)</span>;\n<span>\\(-\\frac{1}{2}\\)</span> racine signifie que <span>\\((2 X+1)\\)</span> divise <span>\\(P_n(X)\\)</span> :\n<span>\\[P_n(X)=(2 X+1) \\cdot Q_4(X)=\\underbrace{X (X+1) (2 X+1)}_{Q(X)} \\cdot Q_5(X)\\]</span>\ndonc <span>\\(Q(X)=X(X+1)(2 X+1)\\)</span> divise <span>\\(P_n(X)=(X+1)^{2 n}-X^{2 n}-2 X-1\\)</span>.</p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "721ed9d315fa1b7f9f5feda331012364aa4909de5f67e3b1f072b246dd3bce39"
+}

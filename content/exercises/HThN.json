@@ -1,0 +1,71 @@
+{
+  "uuid": "HThN",
+  "title": "Probabilités et divisibilité",
+  "chapter": "Probabilité discrète",
+  "subchapter": "Probabilité et dénombrement",
+  "theme": "probabilités",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-09-04",
+  "updated_at": "2025-08-22T13:02:40.467Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Une urne contient $n$ boules numérotées de $1$ à $n$, $n$ étant un entier non nul et non premier. On tire une boule au hasard de l'urne et on définit les événements $A_{p_i}$ comme étant ``Le nombre est divisible par $p_i$.'', où les entiers $p_1, p_2, \\ldots , p_r$ sont les diviseurs premiers de $n$.",
+      "html": "<p>Une urne contient <span>\\(n\\)</span> boules numérotées de <span>\\(1\\)</span> à <span>\\(n\\)</span>, <span>\\(n\\)</span> étant un entier non nul et non premier. On tire une boule au hasard de l’urne et on définit les événements <span>\\(A_{p_i}\\)</span> comme étant “Le nombre est divisible par <span>\\(p_i\\)</span>.”, où les entiers <span>\\(p_1, p_2, \\ldots , p_r\\)</span> sont les diviseurs premiers de <span>\\(n\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Calculer la probabilité $\\prob(A_{p_i})$.",
+      "html": "<p>Calculer la probabilité <span>\\(\\prob(A_{p_i})\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Il y a $\\frac n {p_i}$ multiples de $p_i$ inférieurs à $n$, donc $\\prob(A_{p_i})=\\frac{\\frac{n}{p_i}}{n} = \\frac{1}{p_i}$.",
+      "html": "<p>Il y a <span>\\(\\frac n {p_i}\\)</span> multiples de <span>\\(p_i\\)</span> inférieurs à <span>\\(n\\)</span>, donc <span>\\(\\prob(A_{p_i})=\\frac{\\frac{n}{p_i}}{n} = \\frac{1}{p_i}\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Calculer $\\prob(A_{p_{i_1}}\\cap A_{p_{i_2}}\\cap \\ldots\\cap A_{p_{i_k}})$ pour $k$ quelconques de ces $r$ événements. \n\tEn déduire que $A_{p_{1}}, A_{p_{2}}, \\ldots, A_{p_{r}}$ sont $r$ événements indépendants dans leur ensemble.",
+      "html": "<p>Calculer <span>\\(\\prob(A_{p_{i_1}}\\cap A_{p_{i_2}}\\cap \\ldots\\cap A_{p_{i_k}})\\)</span> pour <span>\\(k\\)</span> quelconques de ces <span>\\(r\\)</span> événements.\nEn déduire que <span>\\(A_{p_{1}}, A_{p_{2}}, \\ldots, A_{p_{r}}\\)</span> sont <span>\\(r\\)</span> événements indépendants dans leur ensemble.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "L'événement $A_{p_{i_1}}\\cap A_{p_{i_2}}\\cap \\ldots\\cap A_{p_{i_k}}$ est réalisé ssi le nombre est divisible à la fois par $p_{i_1}$, $p_{i_2}$, \\ldots, $p_{i_k}$. Comme il s'agit de nombres premiers, ceci équivaut à dire que le nombre est divisible par $p_{i_1}\\times p_{i_2} \\times \\ldots \\times p_{i_k}$. Ainsi,\n\t\t$$\\begin{align*}\n\t\t\t\\prob(A_{p_{i_1}}\\cap A_{p_{i_2}}\\cap \\ldots\\cap A_{p_{i_k}})&=\\prob(\\text{``Le nombre est divisible par }p_{i_1}\\times p_{i_2} \\times \\ldots \\times p_{i_k}\\text{''})\\\\\n\t\t\t&=\\frac{1}{p_{i_1}\\times p_{i_2} \\times \\ldots \\times p_{i_k}}\\\\\n\t\t\t&=\n\t\t\t\\frac{1}{p_{i_1}}\\times \\frac{1}{p_{i_2}} \\times \\ldots \\frac{1}{\\times p_{i_k}}\n\t\t\t\\\\\n\t\t\t&=\\prob(A_{p_{i_1}})\\times \\prob(A_{p_{i_2}}) \\times \\ldots \\times \\prob(A_{p_{i_k}}).\n\t\t\\end{align*}$$\n\t\tOn vient donc de montrer que $A_{p_{1}}, A_{p_{2}}, \\ldots, A_{p_{r}}$ sont indépendants dans leur ensemble.",
+      "html": "<p>L’événement <span>\\(A_{p_{i_1}}\\cap A_{p_{i_2}}\\cap \\ldots\\cap A_{p_{i_k}}\\)</span> est réalisé ssi le nombre est divisible à la fois par <span>\\(p_{i_1}\\)</span>, <span>\\(p_{i_2}\\)</span>, …, <span>\\(p_{i_k}\\)</span>. Comme il s’agit de nombres premiers, ceci équivaut à dire que le nombre est divisible par <span>\\(p_{i_1}\\times p_{i_2} \\times \\ldots \\times p_{i_k}\\)</span>. Ainsi,\n<span>\\[\\begin{align*}\n            \\prob(A_{p_{i_1}}\\cap A_{p_{i_2}}\\cap \\ldots\\cap A_{p_{i_k}})&amp;=\\prob(\\text{``Le nombre est divisible par }p_{i_1}\\times p_{i_2} \\times \\ldots \\times p_{i_k}\\text{&#39;&#39;})\\\\\n            &amp;=\\frac{1}{p_{i_1}\\times p_{i_2} \\times \\ldots \\times p_{i_k}}\\\\\n            &amp;=\n            \\frac{1}{p_{i_1}}\\times \\frac{1}{p_{i_2}} \\times \\ldots \\frac{1}{\\times p_{i_k}}\n            \\\\\n            &amp;=\\prob(A_{p_{i_1}})\\times \\prob(A_{p_{i_2}}) \\times \\ldots \\times \\prob(A_{p_{i_k}}).\n        \\end{align*}\\]</span>\nOn vient donc de montrer que <span>\\(A_{p_{1}}, A_{p_{2}}, \\ldots, A_{p_{r}}\\)</span> sont indépendants dans leur ensemble.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "On appelle $A$ l'événement ``le nombre choisi n'est divisible par aucun $p_i$''. Calculer $\\prob(A)$.\n\tEn déduire que le nombre d'entiers de $\\{1,2,\\ldots,n\\}$ qui sont premiers avec $n$, c'est-à-dire qui n'ont aucun facteur premier commun avec $n$, est $\\displaystyle \\Phi(n)=n\\prod_{i=1}^r\\left(1-\\frac{1}{p_i}\\right)$.",
+      "html": "<p>On appelle <span>\\(A\\)</span> l’événement “le nombre choisi n’est divisible par aucun <span>\\(p_i\\)</span>”. Calculer <span>\\(\\prob(A)\\)</span>.\nEn déduire que le nombre d’entiers de <span>\\(\\{1,2,\\ldots,n\\}\\)</span> qui sont premiers avec <span>\\(n\\)</span>, c’est-à-dire qui n’ont aucun facteur premier commun avec <span>\\(n\\)</span>, est <span>\\(\\displaystyle \\Phi(n)=n\\prod_{i=1}^r\\left(1-\\frac{1}{p_i}\\right)\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "L'événement $A$ se réécrit $\\overline{A}_{p_1}\\cap \\overline{A}_{p_2}\\cap \\ldots \\cap \\overline{A}_{p_r}$. Comme les événements $A_{p_{1}}, A_{p_{2}}, \\ldots, A_{p_{r}}$ sont indépendants dans leur ensemble, c'est aussi le cas des événements $\\overline{A}_{p_{1}}, \\ldots, \\overline{A}_{p_{r}}$. Par conséquent,\n\t\t$$\\begin{align*}\n\t\t\t\\prob(A)&=\\prob(\\overline{A}_{p_1}\\cap \\overline{A}_{p_2}\\cap \\ldots \\cap \\overline{A}_{p_r}) \\\\\n\t\t\t&= \\prod_{i=1}^r \\prob(\\overline {A_{p_i}}) \n\t\t\t= \\prod_{i=1}^r \\left( 1-\\frac{1}{p_i}\\right)\n\t\t\\end{align*}$$\n\t\td'où $\\displaystyle\\frac{\\Phi(n)}{n}= \\prod_{i=1}^r \\left( 1-\\frac{1}{p_i}\\right)$ et $\\displaystyle\\Phi(n)=n\\prod_{i=1}^r \\left( 1-\\frac{1}{p_i}\\right)$. \\\\\n\t\tLa fonction $\\Phi$ est appellée l'indicatrice d'Euler. Elle associe à tout entier naturel n non nul, le nombre d'entiers compris entre 1 et n  et premiers avec n.",
+      "html": "<p>L’événement <span>\\(A\\)</span> se réécrit <span>\\(\\overline{A}_{p_1}\\cap \\overline{A}_{p_2}\\cap \\ldots \\cap \\overline{A}_{p_r}\\)</span>. Comme les événements <span>\\(A_{p_{1}}, A_{p_{2}}, \\ldots, A_{p_{r}}\\)</span> sont indépendants dans leur ensemble, c’est aussi le cas des événements <span>\\(\\overline{A}_{p_{1}}, \\ldots, \\overline{A}_{p_{r}}\\)</span>. Par conséquent,\n<span>\\[\\begin{align*}\n            \\prob(A)&amp;=\\prob(\\overline{A}_{p_1}\\cap \\overline{A}_{p_2}\\cap \\ldots \\cap \\overline{A}_{p_r}) \\\\\n            &amp;= \\prod_{i=1}^r \\prob(\\overline {A_{p_i}}) \n            = \\prod_{i=1}^r \\left( 1-\\frac{1}{p_i}\\right)\n        \\end{align*}\\]</span>\nd’où <span>\\(\\displaystyle\\frac{\\Phi(n)}{n}= \\prod_{i=1}^r \\left( 1-\\frac{1}{p_i}\\right)\\)</span> et <span>\\(\\displaystyle\\Phi(n)=n\\prod_{i=1}^r \\left( 1-\\frac{1}{p_i}\\right)\\)</span>.<br />\nLa fonction <span>\\(\\Phi\\)</span> est appellée l’indicatrice d’Euler. Elle associe à tout entier naturel n non nul, le nombre d’entiers compris entre 1 et n et premiers avec n.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "6949502a4565997fea5d9b1540d3e0ec0ae9ea92d7b5779e785258c0578f42cd"
+}

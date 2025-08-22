@@ -1,0 +1,57 @@
+{
+  "uuid": "cLt6",
+  "title": "Contrôle de première intention avec la loi de Benford",
+  "chapter": "Statistique",
+  "subchapter": "Tests d'hypothèses, intervalle de confiance",
+  "theme": "statistiques, tests d'hypothèses",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-12-14",
+  "updated_at": "2025-08-22T12:40:03.801Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Le principe de ce contrôle est le suivant : on relève au hasard 120 montants apparaissant dans une zone éventuellement falsifiée de la comptabilité de l'entreprise.\n\nOn a remarqué que dans des comptes d'entreprises, les zones falsifiées comportent plus de montants commençant par le chiffre 6 que dans les zones non falsifiées, pour lesquelles la proportion théorique de montants commençant par 6 est égale à $6.7 \\%$ selon la loi de Benford.\n\nEn première intention, le contrôleur décide de regarder la proportion de montants commençant par 6 dans les montants qu'il a relevés.",
+      "html": "<p>Le principe de ce contrôle est le suivant : on relève au hasard 120 montants apparaissant dans une zone éventuellement falsifiée de la comptabilité de l’entreprise.</p>\n<p>On a remarqué que dans des comptes d’entreprises, les zones falsifiées comportent plus de montants commençant par le chiffre 6 que dans les zones non falsifiées, pour lesquelles la proportion théorique de montants commençant par 6 est égale à <span>\\(6.7 \\%\\)</span> selon la loi de Benford.</p>\n<p>En première intention, le contrôleur décide de regarder la proportion de montants commençant par 6 dans les montants qu’il a relevés.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "On souhaite construire un test avec $\\left(H_0\\right): \\theta=0.067$ contre $\\left(H_1\\right): \\theta>0.067$. Que signifie ce choix d'hypothèses?",
+      "html": "<p>On souhaite construire un test avec <span>\\(\\left(H_0\\right): \\theta=0.067\\)</span> contre <span>\\(\\left(H_1\\right): \\theta&gt;0.067\\)</span>. Que signifie ce choix d’hypothèses?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On souhaite savoir si la proportion de montants commençant par 6 est anormalement élevé. En faisant ce choix d'hypothèse, on se prémunit en priorité du risque de déclarer que la zone considérée est falsifiée alors qu'elle ne l'est pas.",
+      "html": "<p>On souhaite savoir si la proportion de montants commençant par 6 est anormalement élevé. En faisant ce choix d’hypothèse, on se prémunit en priorité du risque de déclarer que la zone considérée est falsifiée alors qu’elle ne l’est pas.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Sur les 120 montants relevés par le contrôleur, 18 commencent par le chiffre 6. À l'aide d'un test de niveau $5 \\%$, peut-on conclure sur une éventuelle falsification des données ?",
+      "html": "<p>Sur les 120 montants relevés par le contrôleur, 18 commencent par le chiffre 6. À l’aide d’un test de niveau <span>\\(5 \\%\\)</span>, peut-on conclure sur une éventuelle falsification des données ?</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "(a) Hypothèses : $\\left(H_0\\right): \\theta=0.067$ contre $\\left(H_1\\right): \\theta>0.067$ (test unilatéral droit)\n(b) Variable aléatoire de décision :\n$$\nZ=\\frac{F-0.067}{\\sqrt{\\frac{0.067(1-0.067)}{120}}} \\simeq \\frac{F-0.067}{0.022824},\n$$\noù $F$ est la fréquence empirique et $Z \\sim \\mathcal{N}(0,1)$ si $H_0$ est vraie.\n(c) Zone de rejet:\n$W=] u ;+\\infty[$, avec $u$ le réel tel que $\\mathbb{P}(Z \\leq u)=1-0.05=0.95$ et $Z \\sim \\mathcal{N}(0,1)$, c'est-à-dire $u=1.64$.\nLa zone de rejet est donc $W=] 1.64 ;+\\infty[$.\n\n(d) Valeur observée:\n$$\nz_{o b s}=\\frac{\\frac{18}{120}-0.067}{0.022824} \\simeq 3.6365\n$$\n(e) Conclusion :\n$z_{o b s} \\in W$ donc on rejette $H_0$ et on peut considérer que les données sont a priori falsifiées.",
+      "html": "<p>(a) Hypothèses : <span>\\(\\left(H_0\\right): \\theta=0.067\\)</span> contre <span>\\(\\left(H_1\\right): \\theta&gt;0.067\\)</span> (test unilatéral droit)\n(b) Variable aléatoire de décision :\n<span>\\[Z=\\frac{F-0.067}{\\sqrt{\\frac{0.067(1-0.067)}{120}}} \\simeq \\frac{F-0.067}{0.022824},\\]</span>\noù <span>\\(F\\)</span> est la fréquence empirique et <span>\\(Z \\sim \\mathcal{N}(0,1)\\)</span> si <span>\\(H_0\\)</span> est vraie.\n(c) Zone de rejet:\n<span>\\(W=] u ;+\\infty[\\)</span>, avec <span>\\(u\\)</span> le réel tel que <span>\\(\\mathbb{P}(Z \\leq u)=1-0.05=0.95\\)</span> et <span>\\(Z \\sim \\mathcal{N}(0,1)\\)</span>, c’est-à-dire <span>\\(u=1.64\\)</span>.\nLa zone de rejet est donc <span>\\(W=] 1.64 ;+\\infty[\\)</span>.</p>\n<p>(d) Valeur observée:\n<span>\\[z_{o b s}=\\frac{\\frac{18}{120}-0.067}{0.022824} \\simeq 3.6365\\]</span>\n(e) Conclusion :\n<span>\\(z_{o b s} \\in W\\)</span> donc on rejette <span>\\(H_0\\)</span> et on peut considérer que les données sont a priori falsifiées.</p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "e72c7e9350daaed402d92d4ed8933f69fb065709608e111bde7ddec9ff14c0dd"
+}

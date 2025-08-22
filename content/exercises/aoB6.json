@@ -1,0 +1,141 @@
+{
+  "uuid": "aoB6",
+  "title": "Convergence de séries entières",
+  "chapter": "Série entière",
+  "subchapter": "Rayon de convergence",
+  "theme": "séries entières",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-06-01",
+  "updated_at": "2025-08-22T13:03:22.291Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Calculer le rayon $R$ de convergence et déterminer le domaine $D$ de convergence (sauf pour la question 8) des séries entières réelles suivantes.",
+      "html": "<p>Calculer le rayon <span>\\(R\\)</span> de convergence et déterminer le domaine <span>\\(D\\)</span> de convergence (sauf pour la question 8) des séries entières réelles suivantes.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "$\\displaystyle S_1(t)=\\sum_{n= 0}^{+\\infty} n^2 t^n$",
+      "html": "<p><span>\\(\\displaystyle S_1(t)=\\sum_{n= 0}^{+\\infty} n^2 t^n\\)</span></p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "$R=1$: Pour $n\\in\\N^*$, en posant $u_n=n^2 t^n$ avec $t\\in\\R^*$,\n    \\[ \\left| \\frac{u_{n+1}}{u_n}\\right|=\\left(1+\\frac{1}{n}\\right)^2|t| \\underset{n\\to +\\infty}\\longrightarrow |t|,  \\]\n    donc par le critère de d'Alembert, si $|t|<1$, la série $\\sum n^2t^n$ converge et si $|t|>1$, cette série diverge. D'où le rayon de convergence de $S_1$ qui vaut $1$. \\\\\n    \n    $D=]-1;1[$ car pour $t=1$, $n^2 t^n=n^2$ et $\\sum n^2$ est une série divergente grossièrement. Pour $t=-1$, la série $\\sum (-1)^n n^2$ diverge grossièrement.",
+      "html": "<p><span>\\(R=1\\)</span>: Pour <span>\\(n\\in\\N^*\\)</span>, en posant <span>\\(u_n=n^2 t^n\\)</span> avec <span>\\(t\\in\\R^*\\)</span>,\n<span>\\[\\left| \\frac{u_{n+1}}{u_n}\\right|=\\left(1+\\frac{1}{n}\\right)^2|t| \\underset{n\\to +\\infty}\\longrightarrow |t|,\\]</span>\ndonc par le critère de d’Alembert, si <span>\\(|t|&lt;1\\)</span>, la série <span>\\(\\sum n^2t^n\\)</span> converge et si <span>\\(|t|&gt;1\\)</span>, cette série diverge. D’où le rayon de convergence de <span>\\(S_1\\)</span> qui vaut <span>\\(1\\)</span>.<br />\n<span>\\(D=]-1;1[\\)</span> car pour <span>\\(t=1\\)</span>, <span>\\(n^2 t^n=n^2\\)</span> et <span>\\(\\sum n^2\\)</span> est une série divergente grossièrement. Pour <span>\\(t=-1\\)</span>, la série <span>\\(\\sum (-1)^n n^2\\)</span> diverge grossièrement.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "$\\displaystyle S_2(t)=\\sum_{n=0}^{+\\infty} \\frac{(-2)^n}{n!}t^n$",
+      "html": "<p><span>\\(\\displaystyle S_2(t)=\\sum_{n=0}^{+\\infty} \\frac{(-2)^n}{n!}t^n\\)</span></p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "$R=+\\infty$: Pour $n\\in\\N^*$, en posant $u_n=\\frac{(-2)^n}{n!}t^n$ avec $t\\in\\R^*$, on a :  \n    $$ \\left| \\frac{u_{n+1}}{u_n}\\right|=\\frac{2}{n+1}|t| \\underset{n\\to +\\infty}\\longrightarrow 0,  $$ \n    donc par le critère de d'Alembert, la série $\\sum \\frac{(-2)^n}{n!}t^n$ converge pour tout $t\\in\\R$. D'où le rayon de convergence de $S_2$ qui vaut $+\\infty$.",
+      "html": "<p><span>\\(R=+\\infty\\)</span>: Pour <span>\\(n\\in\\N^*\\)</span>, en posant <span>\\(u_n=\\frac{(-2)^n}{n!}t^n\\)</span> avec <span>\\(t\\in\\R^*\\)</span>, on a :\n<span>\\[\\left| \\frac{u_{n+1}}{u_n}\\right|=\\frac{2}{n+1}|t| \\underset{n\\to +\\infty}\\longrightarrow 0,\\]</span>\ndonc par le critère de d’Alembert, la série <span>\\(\\sum \\frac{(-2)^n}{n!}t^n\\)</span> converge pour tout <span>\\(t\\in\\R\\)</span>. D’où le rayon de convergence de <span>\\(S_2\\)</span> qui vaut <span>\\(+\\infty\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "$\\displaystyle S_3(t)=\\sum_{n=1}^{+\\infty} \\sin\\left( \\frac{1}{n^2}\\right) t^n$",
+      "html": "<p><span>\\(\\displaystyle S_3(t)=\\sum_{n=1}^{+\\infty} \\sin\\left( \\frac{1}{n^2}\\right) t^n\\)</span></p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "$R=1$: Pour $n\\in\\N^*$, en posant $u_n=\\sin\\left( \\frac{1}{n^2}\\right) t^n$ avec $t\\in\\R^*$, on a : \n    $$ \\left| \\frac{u_{n+1}}{u_n}\\right|=\\left| \\frac{\\sin\\left( \\frac{1}{(n+1)^2}\\right) t^{n+1}}{\\sin\\left( \\frac{1}{n^2}\\right) t^n}\\right|=\\left| \\frac{\\sin\\left( \\frac{1}{(n+1)^2}\\right)}{\\sin\\left( \\frac{1}{n^2}\\right)}\\right| |t| \\underset{n\\to +\\infty}\\longrightarrow |t|,  $$\n    donc par le critère de d'Alembert, si $|t|<1$, la série $\\sum \\sin\\left( \\frac{1}{n^2}\\right) t^n$ converge et si $|t|>1$, cette série diverge. D'où le rayon de convergence de $S_3$ qui vaut $1$. \n    Si $t = 1$ ou $t = -1$, $|u_n(t)| \\underset{+\\infty}{\\sim} \\frac{1}{n^2}$, donc la série $\\sum |u_n(t)|$ converge. Donc $D = [-1,1]$.",
+      "html": "<p><span>\\(R=1\\)</span>: Pour <span>\\(n\\in\\N^*\\)</span>, en posant <span>\\(u_n=\\sin\\left( \\frac{1}{n^2}\\right) t^n\\)</span> avec <span>\\(t\\in\\R^*\\)</span>, on a :\n<span>\\[\\left| \\frac{u_{n+1}}{u_n}\\right|=\\left| \\frac{\\sin\\left( \\frac{1}{(n+1)^2}\\right) t^{n+1}}{\\sin\\left( \\frac{1}{n^2}\\right) t^n}\\right|=\\left| \\frac{\\sin\\left( \\frac{1}{(n+1)^2}\\right)}{\\sin\\left( \\frac{1}{n^2}\\right)}\\right| |t| \\underset{n\\to +\\infty}\\longrightarrow |t|,\\]</span>\ndonc par le critère de d’Alembert, si <span>\\(|t|&lt;1\\)</span>, la série <span>\\(\\sum \\sin\\left( \\frac{1}{n^2}\\right) t^n\\)</span> converge et si <span>\\(|t|&gt;1\\)</span>, cette série diverge. D’où le rayon de convergence de <span>\\(S_3\\)</span> qui vaut <span>\\(1\\)</span>.\nSi <span>\\(t = 1\\)</span> ou <span>\\(t = -1\\)</span>, <span>\\(|u_n(t)| \\underset{+\\infty}{\\sim} \\frac{1}{n^2}\\)</span>, donc la série <span>\\(\\sum |u_n(t)|\\)</span> converge. Donc <span>\\(D = [-1,1]\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "$\\displaystyle S_4(t)=\\sum_{n=1}^{+\\infty} \\frac{\\ln n}{n} t^n$",
+      "html": "<p><span>\\(\\displaystyle S_4(t)=\\sum_{n=1}^{+\\infty} \\frac{\\ln n}{n} t^n\\)</span></p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "$R=1$: Pour $n\\in\\N^*$, en posant $u_n=\\frac{\\ln n}{n} t^n$ avec $t\\in\\R^*$, on a :\n    $$ \\left| \\frac{u_{n+1}}{u_n}\\right|=\\left| \\frac{\\ln(n+1)}{\\ln n}\\right| |t| \\underset{n\\to +\\infty}\\longrightarrow |t|,  $$\n    donc par le critère de d'Alembert, si $|t|<1$, la série $\\sum \\frac{\\ln n}{n} t^n$ converge et si $|t|>1$, cette série diverge. D'où le rayon de convergence de $S_4$ qui vaut $1$. \\\\  \n    Pour $t=-1$, la série $\\sum (-1)^n \\frac{\\ln n}{n}$ converge par théorème des séries alternées. Pour $t=1$, la série $\\sum \\frac{\\ln n}{n}$ diverge par comparaison à la série harmonique. Donc $D = [-1,1[$.",
+      "html": "<p><span>\\(R=1\\)</span>: Pour <span>\\(n\\in\\N^*\\)</span>, en posant <span>\\(u_n=\\frac{\\ln n}{n} t^n\\)</span> avec <span>\\(t\\in\\R^*\\)</span>, on a :\n<span>\\[\\left| \\frac{u_{n+1}}{u_n}\\right|=\\left| \\frac{\\ln(n+1)}{\\ln n}\\right| |t| \\underset{n\\to +\\infty}\\longrightarrow |t|,\\]</span>\ndonc par le critère de d’Alembert, si <span>\\(|t|&lt;1\\)</span>, la série <span>\\(\\sum \\frac{\\ln n}{n} t^n\\)</span> converge et si <span>\\(|t|&gt;1\\)</span>, cette série diverge. D’où le rayon de convergence de <span>\\(S_4\\)</span> qui vaut <span>\\(1\\)</span>.<br />\nPour <span>\\(t=-1\\)</span>, la série <span>\\(\\sum (-1)^n \\frac{\\ln n}{n}\\)</span> converge par théorème des séries alternées. Pour <span>\\(t=1\\)</span>, la série <span>\\(\\sum \\frac{\\ln n}{n}\\)</span> diverge par comparaison à la série harmonique. Donc <span>\\(D = [-1,1[\\)</span>.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "$\\displaystyle S_5(t)=\\sum_{n=1}^{+\\infty} \\frac{1}{n^n}t^n$",
+      "html": "<p><span>\\(\\displaystyle S_5(t)=\\sum_{n=1}^{+\\infty} \\frac{1}{n^n}t^n\\)</span></p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "reponse",
+      "latex": "$R=+\\infty$: Pour $n\\in\\N^*$, en posant $u_n=\\frac{1}{n^n}t^n$ avec $t\\in\\R^*$, on a :\n    $$ \\left| \\frac{u_{n+1}}{u_n}\\right|=\\left| \\left( \\frac{n}{n+1}\\right)^{n}\\times \\frac{1}{n+1}\\right| |t| \\underset{n\\to +\\infty}\\longrightarrow 0,  $$\n    donc par le critère de d'Alembert, la série $\\sum \\frac{1}{n^n}t^n$ converge pour tout $t\\in\\R$. D'où le rayon de convergence de $S_5$ qui vaut $+\\infty$.",
+      "html": "<p><span>\\(R=+\\infty\\)</span>: Pour <span>\\(n\\in\\N^*\\)</span>, en posant <span>\\(u_n=\\frac{1}{n^n}t^n\\)</span> avec <span>\\(t\\in\\R^*\\)</span>, on a :\n<span>\\[\\left| \\frac{u_{n+1}}{u_n}\\right|=\\left| \\left( \\frac{n}{n+1}\\right)^{n}\\times \\frac{1}{n+1}\\right| |t| \\underset{n\\to +\\infty}\\longrightarrow 0,\\]</span>\ndonc par le critère de d’Alembert, la série <span>\\(\\sum \\frac{1}{n^n}t^n\\)</span> converge pour tout <span>\\(t\\in\\R\\)</span>. D’où le rayon de convergence de <span>\\(S_5\\)</span> qui vaut <span>\\(+\\infty\\)</span>.</p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "question",
+      "latex": "$\\displaystyle S_6(t)=\\sum_{n=2}^{+\\infty} \\frac{n^n}{\\ln n} t^n$",
+      "html": "<p><span>\\(\\displaystyle S_6(t)=\\sum_{n=2}^{+\\infty} \\frac{n^n}{\\ln n} t^n\\)</span></p>",
+      "order": 12
+    },
+    {
+      "id": "block_13",
+      "type": "reponse",
+      "latex": "$R=0$ : Pour $n\\in\\N^*$, en posant $u_n=\\frac{n^n}{\\ln n} t^n$ avec $t\\in\\R^*$, on a :\n    $$ \\left| \\frac{u_{n+1}}{u_n}\\right|=\\left| \\frac{(n+1)^{n+1}}{n^n}\\times \\frac{\\ln n}{\\ln(n+1)}\\right| |t| \\underset{n\\to +\\infty}\\longrightarrow +\\infty,  $$\n    donc par le critère de d'Alembert, la série $\\sum \\frac{n^n}{\\ln n}t^n$ diverge pour tout $t\\in\\R^*$. D'où le rayon de convergence de $S_6$ qui vaut $0$.",
+      "html": "<p><span>\\(R=0\\)</span> : Pour <span>\\(n\\in\\N^*\\)</span>, en posant <span>\\(u_n=\\frac{n^n}{\\ln n} t^n\\)</span> avec <span>\\(t\\in\\R^*\\)</span>, on a :\n<span>\\[\\left| \\frac{u_{n+1}}{u_n}\\right|=\\left| \\frac{(n+1)^{n+1}}{n^n}\\times \\frac{\\ln n}{\\ln(n+1)}\\right| |t| \\underset{n\\to +\\infty}\\longrightarrow +\\infty,\\]</span>\ndonc par le critère de d’Alembert, la série <span>\\(\\sum \\frac{n^n}{\\ln n}t^n\\)</span> diverge pour tout <span>\\(t\\in\\R^*\\)</span>. D’où le rayon de convergence de <span>\\(S_6\\)</span> qui vaut <span>\\(0\\)</span>.</p>",
+      "order": 13
+    },
+    {
+      "id": "block_14",
+      "type": "question",
+      "latex": "$\\displaystyle S_7(t)=\\sum_{n=0}^{+\\infty} 2^n t^{2n}$",
+      "html": "<p><span>\\(\\displaystyle S_7(t)=\\sum_{n=0}^{+\\infty} 2^n t^{2n}\\)</span></p>",
+      "order": 14
+    },
+    {
+      "id": "block_15",
+      "type": "reponse",
+      "latex": "$R=\\frac{1}{\\sqrt{2}}$: Pour $n\\in\\N^*$, en posant $u_n=2^n t^{2n}$ avec $t\\in\\R^*$, on a une série géométrique de raison $2t^2$ donc : \n    la série $\\sum 2^n t^{2n}$ converge et si $2|t|^2 \\geq 1$, cette série diverge. D'où le rayon de convergence de $S_7$ qui vaut $\\frac{1}{\\sqrt{2}}$. et $D = ]-\\frac{1}{\\sqrt{2}},\\frac{1}{\\sqrt{2}}[$.",
+      "html": "<p><span>\\(R=\\frac{1}{\\sqrt{2}}\\)</span>: Pour <span>\\(n\\in\\N^*\\)</span>, en posant <span>\\(u_n=2^n t^{2n}\\)</span> avec <span>\\(t\\in\\R^*\\)</span>, on a une série géométrique de raison <span>\\(2t^2\\)</span> donc :\nla série <span>\\(\\sum 2^n t^{2n}\\)</span> converge et si <span>\\(2|t|^2 \\geq 1\\)</span>, cette série diverge. D’où le rayon de convergence de <span>\\(S_7\\)</span> qui vaut <span>\\(\\frac{1}{\\sqrt{2}}\\)</span>. et <span>\\(D = ]-\\frac{1}{\\sqrt{2}},\\frac{1}{\\sqrt{2}}[\\)</span>.</p>",
+      "order": 15
+    },
+    {
+      "id": "block_16",
+      "type": "question",
+      "latex": "$\\displaystyle S_8(t)=\\sum_{n=1}^{+\\infty} \\frac{(1+i)^n}{n2^n}t^{3n}$",
+      "html": "<p><span>\\(\\displaystyle S_8(t)=\\sum_{n=1}^{+\\infty} \\frac{(1+i)^n}{n2^n}t^{3n}\\)</span></p>",
+      "order": 16
+    },
+    {
+      "id": "block_17",
+      "type": "reponse",
+      "latex": "$R=2^{\\frac{1}{6}}$: Pour $n\\in\\N^*$, en posant $u_n=\\frac{(1+i)^n}{n2^n}t^{3n}$ avec $t\\in\\R^*$, on a :\n    $$ \\left| \\frac{u_{n+1}}{u_n}\\right|=\\left| \\frac{(1+i)^{n+1}}{(n+1)2^{n+1}}\\times \\frac{n2^n}{(1+i)^n}\\right| |t|^3 \\underset{n\\to +\\infty}\\longrightarrow \\frac{|t|^3}{\\sqrt{2}},  $$\n    donc par le critère de d'Alembert, si $\\frac{|t|^3}{2}<1$, la série $\\sum \\frac{(1+i)^n}{n2^n}t^{3n}$ converge et si $\\frac{|t|^3}{2}>1$, cette série diverge. D'où le rayon de convergence de $S_8$ qui vaut $2^{\\frac{1}{6}}$.",
+      "html": "<p><span>\\(R=2^{\\frac{1}{6}}\\)</span>: Pour <span>\\(n\\in\\N^*\\)</span>, en posant <span>\\(u_n=\\frac{(1+i)^n}{n2^n}t^{3n}\\)</span> avec <span>\\(t\\in\\R^*\\)</span>, on a :\n<span>\\[\\left| \\frac{u_{n+1}}{u_n}\\right|=\\left| \\frac{(1+i)^{n+1}}{(n+1)2^{n+1}}\\times \\frac{n2^n}{(1+i)^n}\\right| |t|^3 \\underset{n\\to +\\infty}\\longrightarrow \\frac{|t|^3}{\\sqrt{2}},\\]</span>\ndonc par le critère de d’Alembert, si <span>\\(\\frac{|t|^3}{2}&lt;1\\)</span>, la série <span>\\(\\sum \\frac{(1+i)^n}{n2^n}t^{3n}\\)</span> converge et si <span>\\(\\frac{|t|^3}{2}&gt;1\\)</span>, cette série diverge. D’où le rayon de convergence de <span>\\(S_8\\)</span> qui vaut <span>\\(2^{\\frac{1}{6}}\\)</span>.</p>",
+      "order": 17
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "40cba67e484d1cc20e089a167ec214586c0c198231b410547792b1e2ba30c5a0"
+}

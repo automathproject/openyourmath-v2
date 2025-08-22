@@ -1,0 +1,57 @@
+{
+  "uuid": "5cbY",
+  "title": "Intervalles de confiance",
+  "chapter": "Statistique",
+  "subchapter": "Tests d'hypothèses, intervalle de confiance",
+  "theme": "statistiques, intervalle de confiance",
+  "difficulty": null,
+  "author": "Maxime NGUYEN",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-09-07",
+  "updated_at": "2025-08-22T13:02:06.609Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Pour étudier le degré de pollution des eaux d'une rivière par les déchets d'une usine, on mesure la teneur en milligrammes d'un certain polluant par litre d'eau.",
+      "html": "<p>Pour étudier le degré de pollution des eaux d’une rivière par les déchets d’une usine, on mesure la teneur en milligrammes d’un certain polluant par litre d’eau.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "On effectue 17 mesures pour lesquelles les valeurs observées des teneurs en polluant ont une moyenne de 5.2~mg/L et un écart-type de 1.2~mg/L. \n  \t\\begin{enumerate}\n  \t\t\\item Donner une estimation sans biais de la moyenne et de l'écart type de la teneur en polluant dans cette rivière.\n\n  \t\t\\item Donner un intervalle de confiance au seuil de 5\\% pour la teneur moyenne en polluant de cette rivière.\n  \t\t\\item A partir de ces résultats, peut-on considérer que l'usine respecte la législation en vigueur selon laquelle cette teneur moyenne en polluant ne doit pas dépasser 7~mg/ ?\n  \t\\end{enumerate}",
+      "html": "<p>On effectue 17 mesures pour lesquelles les valeurs observées des teneurs en polluant ont une moyenne de 5.2 mg/L et un écart-type de 1.2 mg/L.</p>\n<ol>\n<li><p>Donner une estimation sans biais de la moyenne et de l’écart type de la teneur en polluant dans cette rivière.</p></li>\n<li><p>Donner un intervalle de confiance au seuil de 5% pour la teneur moyenne en polluant de cette rivière.</p></li>\n<li><p>A partir de ces résultats, peut-on considérer que l’usine respecte la législation en vigueur selon laquelle cette teneur moyenne en polluant ne doit pas dépasser 7 mg/ ?</p></li>\n</ol>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "La moyenne observée dans l'échantillon est une estimation sans biais de la moyenne de la teneur dans la rivière, on obtient $\\overline{x}=5.2$. L'écart type observé donne une estimation biaisée de l'écart type de la teneur en polluant dans la rivière, on calcule donc la variance observée $\\tilde{S}^2 = 1.2^2 = 1.44$ puis la variance corrigée $S^2 = \\frac{17}{16} \\tilde{S}^2 \\approx 1.53$ d'où une estimation non biaisée $s \\approx 1.24$ de l'écart type. \n   \t\n   \tL'échantillon étant petit ($n=17$), on doit supposer de surcroit que la distribution des mesures est normale. De là, on tire un intervalle de confiance à l'aide de la loi de Student $St(16)$  : $[4.58;5.82]$.",
+      "html": "<p>La moyenne observée dans l’échantillon est une estimation sans biais de la moyenne de la teneur dans la rivière, on obtient <span>\\(\\overline{x}=5.2\\)</span>. L’écart type observé donne une estimation biaisée de l’écart type de la teneur en polluant dans la rivière, on calcule donc la variance observée <span>\\(\\tilde{S}^2 = 1.2^2 = 1.44\\)</span> puis la variance corrigée <span>\\(S^2 = \\frac{17}{16} \\tilde{S}^2 \\approx 1.53\\)</span> d’où une estimation non biaisée <span>\\(s \\approx 1.24\\)</span> de l’écart type.</p>\n<p>L’échantillon étant petit (<span>\\(n=17\\)</span>), on doit supposer de surcroit que la distribution des mesures est normale. De là, on tire un intervalle de confiance à l’aide de la loi de Student <span>\\(St(16)\\)</span> : <span>\\([4.58;5.82]\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Combien de mesures devrait-on faire pour estimer la teneur moyenne en polluant avec une précision de 0.1~mg/L au niveau de confiance 95\\% ?",
+      "html": "<p>Combien de mesures devrait-on faire pour estimer la teneur moyenne en polluant avec une précision de 0.1 mg/L au niveau de confiance 95% ?</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "En supposant que l'écart type de l'échantillon reste le même, la précision de l'intervalle de confiance est donné par sa longueur qui est $2\\times t_{\\alpha/2}\\sqrt{\\frac{s^2}{n}}$. Dans la question précédente, cette longueur vaut environ $1.23$. \n\nOn cherche $n$ tel que   $2\\times t_{\\alpha/2}\\sqrt{\\frac{s^2}{n}} = \\leq 0.1$. On peut supposer que $n$ sera plus grand que $30$, donc on remplace $t_{\\alpha/2}$ (quantile d'une loi de Student) par $u_{\\alpha/2}$ en lecture de table de la loi normale centrée réduite.   En supposant que l'estimation de variance reste la même, on obtient $2\\times 1.96 \\times\\frac{1.24}{\\sqrt{n}} \\leq 0.1$ soit $\\sqrt{n} \\geq 48.608$ soit \\fbox{$n \\geq 2363$}. \n\n\\href{https://stcyrterrenetdefensegouvf-my.sharepoint.com/:x:/g/personal/maxime_nguyen_st-cyr_terre-net_defense_gouv_fr/Ec9ve_iQd-pNn_Tf86GSa8EBJUrDEkRpISpMW4xkp23PeQ?e=oOly0h}{Détail des calculs sur tableur}",
+      "html": "<p>En supposant que l’écart type de l’échantillon reste le même, la précision de l’intervalle de confiance est donné par sa longueur qui est <span>\\(2\\times t_{\\alpha/2}\\sqrt{\\frac{s^2}{n}}\\)</span>. Dans la question précédente, cette longueur vaut environ <span>\\(1.23\\)</span>.</p>\n<p>On cherche <span>\\(n\\)</span> tel que <span>\\(2\\times t_{\\alpha/2}\\sqrt{\\frac{s^2}{n}} = \\leq 0.1\\)</span>. On peut supposer que <span>\\(n\\)</span> sera plus grand que <span>\\(30\\)</span>, donc on remplace <span>\\(t_{\\alpha/2}\\)</span> (quantile d’une loi de Student) par <span>\\(u_{\\alpha/2}\\)</span> en lecture de table de la loi normale centrée réduite. En supposant que l’estimation de variance reste la même, on obtient <span>\\(2\\times 1.96 \\times\\frac{1.24}{\\sqrt{n}} \\leq 0.1\\)</span> soit <span>\\(\\sqrt{n} \\geq 48.608\\)</span> soit .</p>\n<p><a href=\"https://stcyrterrenetdefensegouvf-my.sharepoint.com/:x:/g/personal/maxime_nguyen_st-cyr_terre-net_defense_gouv_fr/Ec9ve_iQd-pNn_Tf86GSa8EBJUrDEkRpISpMW4xkp23PeQ?e=oOly0h\">Détail des calculs sur tableur</a></p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "26d05d0a1bbbee3fd4a7dc327cb31ac43acb7be2e25e9f174a0790572d6ebb14"
+}

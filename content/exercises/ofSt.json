@@ -1,0 +1,106 @@
+{
+  "uuid": "ofSt",
+  "title": "Fonction Logarithmique",
+  "chapter": "",
+  "subchapter": "",
+  "theme": "",
+  "difficulty": null,
+  "author": "Grégoire Menet",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2025-03-20",
+  "updated_at": "2025-08-22T13:04:24.881Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère la fonction définie par $f(x,y)=\\ln(4-x^2-y^2)$.",
+      "html": "<p>On considère la fonction définie par <span>\\(f(x,y)=\\ln(4-x^2-y^2)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Déterminer le domaine de définition de $f$ et le représenter graphiquement.",
+      "html": "<p>Déterminer le domaine de définition de <span>\\(f\\)</span> et le représenter graphiquement.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "L'expression $f(x,y)$ existe si et seulement si $4-x^2-y^2>0$. Ainsi le domaine de définition de $f$ est :\n\t\t\t$\\mathcal{D}_f=\\left\\{\\left.(x,y)\\in \\R^2\\right|\\ x^2+y^2<4\\right\\}$. Il s'agit du disque ouvert de rayon 2 et de centre $(0,0)$.",
+      "html": "<p>L’expression <span>\\(f(x,y)\\)</span> existe si et seulement si <span>\\(4-x^2-y^2&gt;0\\)</span>. Ainsi le domaine de définition de <span>\\(f\\)</span> est :\n<span>\\(\\mathcal{D}_f=\\left\\{\\left.(x,y)\\in \\R^2\\right|\\ x^2+y^2&lt;4\\right\\}\\)</span>. Il s’agit du disque ouvert de rayon 2 et de centre <span>\\((0,0)\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Déterminer la courbe de niveau $k=0$ de $f$ (donner son équation et sa nature géométrique).",
+      "html": "<p>Déterminer la courbe de niveau <span>\\(k=0\\)</span> de <span>\\(f\\)</span> (donner son équation et sa nature géométrique).</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On regarde $f(x,y)=0$. Ce qui donne $4-x^2-y^2=1$, c'est à dire $x^2+y^2=3$. Il s'agit du cercle de centre $(0,0)$ et de rayon $\\sqrt{3}$.",
+      "html": "<p>On regarde <span>\\(f(x,y)=0\\)</span>. Ce qui donne <span>\\(4-x^2-y^2=1\\)</span>, c’est à dire <span>\\(x^2+y^2=3\\)</span>. Il s’agit du cercle de centre <span>\\((0,0)\\)</span> et de rayon <span>\\(\\sqrt{3}\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Calculer les dérivées partielles de $f$ en un point $(x,y)$ dans le domaine de définition de $f$.",
+      "html": "<p>Calculer les dérivées partielles de <span>\\(f\\)</span> en un point <span>\\((x,y)\\)</span> dans le domaine de définition de <span>\\(f\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "reponse",
+      "latex": "On a :\n\t\t\t$$\\frac{\\partial f}{\\partial x}(x,y)=\\frac{-2x}{4-x^2-y^2}\\ \\ \\text{et}\\ \\ \\frac{\\partial f}{\\partial x}(x,y)=\\frac{-2y}{4-x^2-y^2}.$$",
+      "html": "<p>On a :\n<span>\\[\\frac{\\partial f}{\\partial x}(x,y)=\\frac{-2x}{4-x^2-y^2}\\ \\ \\text{et}\\ \\ \\frac{\\partial f}{\\partial x}(x,y)=\\frac{-2y}{4-x^2-y^2}.\\]</span></p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "question",
+      "latex": "Parmi les figures suivantes laquelle correspond au graphe de $f$ ? Justifier votre réponse. \n\t\t$$\\begin{align*}\n\t\t\t\\includegraphics[width=200pt]{Courbe exam2}&  &\\includegraphics[width=200pt]{Courbe exam3}\\\\\n\t\t\t\\text{Figure 1} & &\\text{Figure 2}\\\\\n\t\t\t\\includegraphics[width=200pt]{Courbe exam1}& &\\includegraphics[width=200pt]{Courbe exam4}\\\\\n\t\t\t\\text{Figure 3} & &\\text{Figure 4}\\\\\n\t\t\\end{align*}$$",
+      "html": "<p>Parmi les figures suivantes laquelle correspond au graphe de <span>\\(f\\)</span> ? Justifier votre réponse.\n<span>\\[\\begin{align*}\n            \\includegraphics[width=200pt]{Courbe exam2}&amp;  &amp;\\includegraphics[width=200pt]{Courbe exam3}\\\\\n            \\text{Figure 1} &amp; &amp;\\text{Figure 2}\\\\\n            \\includegraphics[width=200pt]{Courbe exam1}&amp; &amp;\\includegraphics[width=200pt]{Courbe exam4}\\\\\n            \\text{Figure 3} &amp; &amp;\\text{Figure 4}\\\\\n        \\end{align*}\\]</span></p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "reponse",
+      "latex": "La figure 3 est correcte : on peut regarde $f(0,0) = \\ln(4)$ et constater que la fonction prend des valeurs positives et négatives sur son ensemble de définition.",
+      "html": "<p>La figure 3 est correcte : on peut regarde <span>\\(f(0,0) = \\ln(4)\\)</span> et constater que la fonction prend des valeurs positives et négatives sur son ensemble de définition.</p>",
+      "order": 12
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "adda8feb0ce09b2ba52783026ea43939910c1b449fc80a86aa4de7a76832e3b2"
+}

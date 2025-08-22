@@ -1,0 +1,57 @@
+{
+  "uuid": "fU9E",
+  "title": "Couple de variables aléatoires",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-11-15",
+  "updated_at": "2025-08-22T12:40:20.309Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $f(x,y)=2e^{-x}e^{-2y}\\textbf{1}_{(\\R^+)^2}(x,y)$.",
+      "html": "<p>Soit <span>\\(f(x,y)=2e^{-x}e^{-2y}\\textbf{1}_{(\\R^+)^2}(x,y)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Vérifier que $f$ définit une densité de probabilité.",
+      "html": "<p>Vérifier que <span>\\(f\\)</span> définit une densité de probabilité.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On vérifie que $f$ est positive sur $\\R^2$ et par application du théorème de Fubini que $\\int_{-\\infty}^{+\\infty}\\int_{-\\infty}^{+\\infty} f(x,y) dxdy=1$",
+      "html": "<p>On vérifie que <span>\\(f\\)</span> est positive sur <span>\\(\\R^2\\)</span> et par application du théorème de Fubini que <span>\\(\\int_{-\\infty}^{+\\infty}\\int_{-\\infty}^{+\\infty} f(x,y) dxdy=1\\)</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Calculer $\\PP(X>1,Y<1)$, $\\PP(X<Y)$ et $\\PP(X<a)$.",
+      "html": "<p>Calculer <span>\\(\\PP(X&gt;1,Y&lt;1)\\)</span>, <span>\\(\\PP(X&lt;Y)\\)</span> et <span>\\(\\PP(X&lt;a)\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On applique la définition et on trouve $\\PP(X>1,Y<1) = e^{-1}(1-e^{-2})$, $\\PP(X<Y)=\\frac{1}{3}$ et $\\PP(X<a)=1-e^{-a}$.",
+      "html": "<p>On applique la définition et on trouve <span>\\(\\PP(X&gt;1,Y&lt;1) = e^{-1}(1-e^{-2})\\)</span>, <span>\\(\\PP(X&lt;Y)=\\frac{1}{3}\\)</span> et <span>\\(\\PP(X&lt;a)=1-e^{-a}\\)</span>.</p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "95f97a0511a1e312527c89d189735992d89bcdcf24dae3c62b850994e5ee9b71"
+}

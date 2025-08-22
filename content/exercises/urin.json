@@ -1,0 +1,64 @@
+{
+  "uuid": "urin",
+  "title": "Calcul d'une somme de série entière",
+  "chapter": "Série entière",
+  "subchapter": "Calcul de la somme d'une série entière",
+  "theme": "séries entières",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-06-01",
+  "updated_at": "2025-08-22T13:04:53.986Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "En utilisant le résultat de la somme de la série entière $\\sum_{k=0}^{+\\infty} x^k = \\frac{1}{1-x}$, déterminer la somme de la série entière à valeurs réelles $\\displaystyle S_1(x)=\\sum_{k=0}^{+\\infty} k x^k$. On précisera son domaine de convergence.",
+      "html": "<p>En utilisant le résultat de la somme de la série entière <span>\\(\\sum_{k=0}^{+\\infty} x^k = \\frac{1}{1-x}\\)</span>, déterminer la somme de la série entière à valeurs réelles <span>\\(\\displaystyle S_1(x)=\\sum_{k=0}^{+\\infty} k x^k\\)</span>. On précisera son domaine de convergence.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "reponse",
+      "latex": "On dérive $\\frac{1}{1-x}$ : $\\displaystyle \\frac{1}{(1-x)^2}=\\sum_{k=0}^{+\\infty} k x^{k-1}$. En multipliant par $x$, on obtient :\n\t\t\\[\\forall x \\in ]-1;1[, \\quad S_1(x)=\\frac{x}{(1-x)^2}.\\]",
+      "html": "<p>On dérive <span>\\(\\frac{1}{1-x}\\)</span> : <span>\\(\\displaystyle \\frac{1}{(1-x)^2}=\\sum_{k=0}^{+\\infty} k x^{k-1}\\)</span>. En multipliant par <span>\\(x\\)</span>, on obtient :\n<span>\\[\\forall x \\in ]-1;1[, \\quad S_1(x)=\\frac{x}{(1-x)^2}.\\]</span></p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "Déterminer la somme de la série entière à valeurs réelles $\\displaystyle S_2(x)= \\sum_{k=0}^{+\\infty} (k+1)^2x^k$. On précisera son domaine de convergence.",
+      "html": "<p>Déterminer la somme de la série entière à valeurs réelles <span>\\(\\displaystyle S_2(x)= \\sum_{k=0}^{+\\infty} (k+1)^2x^k\\)</span>. On précisera son domaine de convergence.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "On dérive deux fois $\\frac{1}{1-x}$ : $\\displaystyle \\frac{2}{(1-x)^3}=\\sum_{k=0}^{+\\infty} k(k-1)x^{k-2} = \\sum_{k=2}^{+\\infty} k(k-1)x^{k-2}$ car les deux premiers termes sont nuls. Par changement d'indice, on obtient : \n\t\t\\[\\forall x \\in ]-1;1[, \\quad \\frac{2}{(1-x)^3} = \\sum_{k=0}^{+\\infty} (k+1)k x^{k-1}.\\] d'où : \n\t\t\\[\\forall x \\in ]-1;1[, \\quad \\frac{2x}{(1-x)^3} = \\sum_{k=0}^{+\\infty} (k+1)k x^k.\\] \n\t\tOr $(k+1)^2 = k(k+1) + (k+1)$ donc :\n\t\t\\[\\forall x \\in ]-1;1[,\\quad S_2(x) = \\sum_{k=0}^{+\\infty} k(k+1)x^k + \\sum_{k=0}^{+\\infty} (k+1)x^k = \\frac{2x}{(1-x)^3} + \\frac{1}{(1-x)^2} = \\frac{x+1}{(1-x)^3}.\\]",
+      "html": "<p>On dérive deux fois <span>\\(\\frac{1}{1-x}\\)</span> : <span>\\(\\displaystyle \\frac{2}{(1-x)^3}=\\sum_{k=0}^{+\\infty} k(k-1)x^{k-2} = \\sum_{k=2}^{+\\infty} k(k-1)x^{k-2}\\)</span> car les deux premiers termes sont nuls. Par changement d’indice, on obtient :\n<span>\\[\\forall x \\in ]-1;1[, \\quad \\frac{2}{(1-x)^3} = \\sum_{k=0}^{+\\infty} (k+1)k x^{k-1}.\\]</span> d’où :\n<span>\\[\\forall x \\in ]-1;1[, \\quad \\frac{2x}{(1-x)^3} = \\sum_{k=0}^{+\\infty} (k+1)k x^k.\\]</span>\nOr <span>\\((k+1)^2 = k(k+1) + (k+1)\\)</span> donc :\n<span>\\[\\forall x \\in ]-1;1[,\\quad S_2(x) = \\sum_{k=0}^{+\\infty} k(k+1)x^k + \\sum_{k=0}^{+\\infty} (k+1)x^k = \\frac{2x}{(1-x)^3} + \\frac{1}{(1-x)^2} = \\frac{x+1}{(1-x)^3}.\\]</span></p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Après avoir décomposé la fraction rationnelle $\\displaystyle \\frac{1}{n(n+2)}$ en éléments simples,  déterminer la somme de la série entière à valeurs réelles $\\displaystyle S_3(x)=\\sum_{n= 1}^{+\\infty} \\frac{x^n}{n(n+2)}$. On précisera son rayon de convergence.",
+      "html": "<p>Après avoir décomposé la fraction rationnelle <span>\\(\\displaystyle \\frac{1}{n(n+2)}\\)</span> en éléments simples, déterminer la somme de la série entière à valeurs réelles <span>\\(\\displaystyle S_3(x)=\\sum_{n= 1}^{+\\infty} \\frac{x^n}{n(n+2)}\\)</span>. On précisera son rayon de convergence.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "reponse",
+      "latex": "Ici, $R=1$ :\n\t\t\\[\\forall x \\in ]-1;1[, \\quad S_3(x)=\\frac{1}{2}\\left( -\\ln(1-x)+\\frac{1}{x^2}\\left[\\ln(1-x)+x+\\frac{x^2}{2}\\right]\\right).\\]",
+      "html": "<p>Ici, <span>\\(R=1\\)</span> :\n<span>\\[\\forall x \\in ]-1;1[, \\quad S_3(x)=\\frac{1}{2}\\left( -\\ln(1-x)+\\frac{1}{x^2}\\left[\\ln(1-x)+x+\\frac{x^2}{2}\\right]\\right).\\]</span></p>",
+      "order": 6
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "ebf59ac810dce1ebd794efb30b9b7b45fcd5c652ffeae2f8850ff78de891aa1a"
+}

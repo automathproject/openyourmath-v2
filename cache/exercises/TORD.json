@@ -1,0 +1,43 @@
+{
+  "uuid": "TORD",
+  "title": "Produit matriciel",
+  "chapter": "Matrice",
+  "subchapter": "Propriétés élémentaires, généralités",
+  "theme": "calcul matriciel",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-12-15",
+  "updated_at": "2025-08-22T12:39:37.224Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère la matrice $A=\\begin{pmatrix}1 & 2 & 1 & 3 \\\\ 1 & 0 & 2 & 1\\end{pmatrix}$.",
+      "html": "<p>On considère la matrice <span>\\(A=\\begin{pmatrix}1 &amp; 2 &amp; 1 &amp; 3 \\\\ 1 &amp; 0 &amp; 2 &amp; 1\\end{pmatrix}\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Calculer $A^\\top\\times A$ et $A \\times A^\\top$ où $A^\\top$ désigne la matrice transposée de $A$.",
+      "html": "<p>Calculer <span>\\(A^\\top\\times A\\)</span> et <span>\\(A \\times A^\\top\\)</span> où <span>\\(A^\\top\\)</span> désigne la matrice transposée de <span>\\(A\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "$$\n\\begin{aligned}\n\t& A=\\left(\\begin{array}{llll}\n\t\t1 & 2 & 1 & 3 \\\\\n\t\t1 & 0 & 2 & 1\n\t\\end{array}\\right) \\Rightarrow{ }^t A=\\left(\\begin{array}{ll}\n\t\t1 & 1 \\\\\n\t\t2 & 0 \\\\\n\t\t1 & 2 \\\\\n\t\t3 & 1\n\t\\end{array}\\right) \\\\\n\t& \\left({ }^t A\\right) \\cdot A=\\left(\\begin{array}{ll}\n\t\t1 & 1 \\\\\n\t\t2 & 0 \\\\\n\t\t1 & 2 \\\\\n\t\t3 & 1\n\t\\end{array}\\right)\\left(\\begin{array}{llll}\n\t\t1 & 2 & 1 & 3 \\\\\n\t\t1 & 0 & 2 & 1\n\t\\end{array}\\right)=\\left(\\begin{array}{cccc}\n\t\t2 & 2 & 3 & 4 \\\\\n\t\t2 & 4 & 2 & 6 \\\\\n\t\t3 & 2 & 5 & 5 \\\\\n\t\t4 & 6 & 5 & 10\n\t\\end{array}\\right) \\\\\n\t& \\text { A. }\\left({ }^t A\\right)=\\left(\\begin{array}{llll}\n\t\t1 & 2 & 1 & 3 \\\\\n\t\t1 & 0 & 2 & 1\n\t\\end{array}\\right)\\left(\\begin{array}{ll}\n\t\t1 & 1 \\\\\n\t\t2 & 0 \\\\\n\t\t1 & 2 \\\\\n\t\t3 & 1\n\t\\end{array}\\right)=\\left(\\begin{array}{cc}\n\t\t15 & 6 \\\\\n\t\t6 & 6\n\t\\end{array}\\right) \\\\\n\t&\n\\end{aligned}\n$$",
+      "html": "<p><span>\\[\\begin{aligned}\n    &amp; A=\\left(\\begin{array}{llll}\n        1 &amp; 2 &amp; 1 &amp; 3 \\\\\n        1 &amp; 0 &amp; 2 &amp; 1\n    \\end{array}\\right) \\Rightarrow{ }^t A=\\left(\\begin{array}{ll}\n        1 &amp; 1 \\\\\n        2 &amp; 0 \\\\\n        1 &amp; 2 \\\\\n        3 &amp; 1\n    \\end{array}\\right) \\\\\n    &amp; \\left({ }^t A\\right) \\cdot A=\\left(\\begin{array}{ll}\n        1 &amp; 1 \\\\\n        2 &amp; 0 \\\\\n        1 &amp; 2 \\\\\n        3 &amp; 1\n    \\end{array}\\right)\\left(\\begin{array}{llll}\n        1 &amp; 2 &amp; 1 &amp; 3 \\\\\n        1 &amp; 0 &amp; 2 &amp; 1\n    \\end{array}\\right)=\\left(\\begin{array}{cccc}\n        2 &amp; 2 &amp; 3 &amp; 4 \\\\\n        2 &amp; 4 &amp; 2 &amp; 6 \\\\\n        3 &amp; 2 &amp; 5 &amp; 5 \\\\\n        4 &amp; 6 &amp; 5 &amp; 10\n    \\end{array}\\right) \\\\\n    &amp; \\text { A. }\\left({ }^t A\\right)=\\left(\\begin{array}{llll}\n        1 &amp; 2 &amp; 1 &amp; 3 \\\\\n        1 &amp; 0 &amp; 2 &amp; 1\n    \\end{array}\\right)\\left(\\begin{array}{ll}\n        1 &amp; 1 \\\\\n        2 &amp; 0 \\\\\n        1 &amp; 2 \\\\\n        3 &amp; 1\n    \\end{array}\\right)=\\left(\\begin{array}{cc}\n        15 &amp; 6 \\\\\n        6 &amp; 6\n    \\end{array}\\right) \\\\\n    &amp;\n\\end{aligned}\\]</span></p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "a6395446e04e6d93ba429a6391e1aad07aa31dd9b464a0fbfc32d46bd1be2e7f"
+}

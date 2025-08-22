@@ -1,0 +1,43 @@
+{
+  "uuid": "erHi",
+  "title": "Racine multiple",
+  "chapter": "Polynôme, fraction rationnelle",
+  "subchapter": "Racine, décomposition en facteurs irréductibles",
+  "theme": "polynômes",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-01-23",
+  "updated_at": "2025-08-22T13:03:45.070Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "Montrer que le polynôme $P(X)=1+X+\\frac{X^2}{2 !}+\\frac{X^3}{3 !}+\\ldots+\\frac{X^n}{n !}$ n'a pas de racine multiple.",
+      "html": "<p>Montrer que le polynôme <span>\\(P(X)=1+X+\\frac{X^2}{2 !}+\\frac{X^3}{3 !}+\\ldots+\\frac{X^n}{n !}\\)</span> n’a pas de racine multiple.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "indication",
+      "latex": "Supposer qu'il existe une racine multiple, c'est-à-dire qu'il existe $\\alpha$ tel que $P(\\alpha) = P'(\\alpha) = 0$ et raisonner par l'absurde.",
+      "html": "<p>Supposer qu’il existe une racine multiple, c’est-à-dire qu’il existe <span>\\(\\alpha\\)</span> tel que <span>\\(P(\\alpha) = P&#39;(\\alpha) = 0\\)</span> et raisonner par l’absurde.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Raisonnement par l'absurde :\n$a$ est racine multiple ssi $P(a)=P^{\\prime}(a)=0$.\nOn a :\n$$\n\\begin{aligned}\n& P(X)=1+X+\\frac{X^2}{2 !}+\\ldots+\\frac{X^{n-1}}{(n-1) !}+\\frac{X^n}{n !} \\\\\n& P^{\\prime}(X)=1+X+\\frac{X^2}{2 !}+\\ldots+\\frac{X^{n-1}}{(n-1) !} \\\\\n& \\left.\\begin{array}{l}\nP(a)=0 \\quad \\Leftrightarrow 1+a+\\frac{a^2}{2 !}+\\ldots+\\frac{a^{n-1}}{(n-1) !}+\\frac{a^n}{n !}=0 \\\\\nP^{\\prime}(a)=0 \\Leftrightarrow 1+a+\\frac{a^2}{2 !}+\\ldots+\\frac{a^{n-1}}{(n-1) !}=0\n\\end{array}\\right\\} \\Rightarrow \\frac{a^n}{n !}=0 \\Leftrightarrow a=0 \\\\\n&\n\\end{aligned}\n$$\nor 0 n'est pas racine car $P(0)=1$, donc $a$ ne peut pas être racine simultanément de $P$ et $P^{\\prime}$. $a$ ne peut pas être racine multiple.",
+      "html": "<p>Raisonnement par l’absurde :\n<span>\\(a\\)</span> est racine multiple ssi <span>\\(P(a)=P^{\\prime}(a)=0\\)</span>.\nOn a :\n<span>\\[\\begin{aligned}\n&amp; P(X)=1+X+\\frac{X^2}{2 !}+\\ldots+\\frac{X^{n-1}}{(n-1) !}+\\frac{X^n}{n !} \\\\\n&amp; P^{\\prime}(X)=1+X+\\frac{X^2}{2 !}+\\ldots+\\frac{X^{n-1}}{(n-1) !} \\\\\n&amp; \\left.\\begin{array}{l}\nP(a)=0 \\quad \\Leftrightarrow 1+a+\\frac{a^2}{2 !}+\\ldots+\\frac{a^{n-1}}{(n-1) !}+\\frac{a^n}{n !}=0 \\\\\nP^{\\prime}(a)=0 \\Leftrightarrow 1+a+\\frac{a^2}{2 !}+\\ldots+\\frac{a^{n-1}}{(n-1) !}=0\n\\end{array}\\right\\} \\Rightarrow \\frac{a^n}{n !}=0 \\Leftrightarrow a=0 \\\\\n&amp;\n\\end{aligned}\\]</span>\nor 0 n’est pas racine car <span>\\(P(0)=1\\)</span>, donc <span>\\(a\\)</span> ne peut pas être racine simultanément de <span>\\(P\\)</span> et <span>\\(P^{\\prime}\\)</span>. <span>\\(a\\)</span> ne peut pas être racine multiple.</p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "f085e303e41b9e191610e018dd4da36863a5478dcce036ceb221a8093b890177"
+}

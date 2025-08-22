@@ -1,0 +1,71 @@
+{
+  "uuid": "lJaW",
+  "title": "Limite d'une Fonction",
+  "chapter": "",
+  "subchapter": "",
+  "theme": "",
+  "difficulty": null,
+  "author": "Grégoire Menet",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2025-03-20",
+  "updated_at": "2025-08-22T12:40:36.481Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère la fonction définie par $f(x,y)=\\frac{x^2y}{x^4+y^2}$. De plus on considère la suite de termes générales $u_n=\\left(\\frac{1}{n},\\frac{1}{n^2}\\right)$ pour $n\\in\\N^*$.",
+      "html": "<p>On considère la fonction définie par <span>\\(f(x,y)=\\frac{x^2y}{x^4+y^2}\\)</span>. De plus on considère la suite de termes générales <span>\\(u_n=\\left(\\frac{1}{n},\\frac{1}{n^2}\\right)\\)</span> pour <span>\\(n\\in\\N^*\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Calculer $f(u_n)$ et déterminer sa limite quand $n$ tend vers $+\\infty$.",
+      "html": "<p>Calculer <span>\\(f(u_n)\\)</span> et déterminer sa limite quand <span>\\(n\\)</span> tend vers <span>\\(+\\infty\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "On a $f(u_n)=\\frac{\\frac{1}{n^2}\\frac{1}{n^2}}{\\frac{1}{n^4}+\\frac{1}{n^4}}=\\frac{1}{2}$. Donc $\\lim f(u_n)=\\frac{1}{2}$.",
+      "html": "<p>On a <span>\\(f(u_n)=\\frac{\\frac{1}{n^2}\\frac{1}{n^2}}{\\frac{1}{n^4}+\\frac{1}{n^4}}=\\frac{1}{2}\\)</span>. Donc <span>\\(\\lim f(u_n)=\\frac{1}{2}\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "La fonction $f$ admet-elle une limite en $(0,0)$ ? Justifier précisément votre réponse.",
+      "html": "<p>La fonction <span>\\(f\\)</span> admet-elle une limite en <span>\\((0,0)\\)</span> ? Justifier précisément votre réponse.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On considère $v_n=\\left(\\frac{1}{n},\\frac{1}{n}\\right)$.\n\t\t\tOn a $f(v_n)=\\frac{\\frac{1}{n^2}\\frac{1}{n}}{\\frac{1}{n^4}+\\frac{1}{n^2}}=\\frac{\\frac{1}{n}}{\\frac{1}{n^2}+1}$. Donc $\\lim f(v_n)=0$.\n\t\t\tOn a $\\lim u_n=(0,0)$ et $\\lim v_n=(0,0)$, cependant $\\lim f(u_n)\\neq \\lim f(v_n)$, donc $f$ n'admet pas de limite en $(0,0)$.",
+      "html": "<p>On considère <span>\\(v_n=\\left(\\frac{1}{n},\\frac{1}{n}\\right)\\)</span>.\nOn a <span>\\(f(v_n)=\\frac{\\frac{1}{n^2}\\frac{1}{n}}{\\frac{1}{n^4}+\\frac{1}{n^2}}=\\frac{\\frac{1}{n}}{\\frac{1}{n^2}+1}\\)</span>. Donc <span>\\(\\lim f(v_n)=0\\)</span>.\nOn a <span>\\(\\lim u_n=(0,0)\\)</span> et <span>\\(\\lim v_n=(0,0)\\)</span>, cependant <span>\\(\\lim f(u_n)\\neq \\lim f(v_n)\\)</span>, donc <span>\\(f\\)</span> n’admet pas de limite en <span>\\((0,0)\\)</span>.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "ff499ee461d245c5b9ac22144880a4851805793306963bd41e57fd62c575fd29"
+}

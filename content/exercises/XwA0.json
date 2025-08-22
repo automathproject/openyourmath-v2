@@ -1,0 +1,36 @@
+{
+  "uuid": "XwA0",
+  "title": "Contrôle de qualité",
+  "chapter": "Statistique",
+  "subchapter": "Tests d'hypothèses, intervalle de confiance",
+  "theme": "tests d'hypothèses",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2022-09-28",
+  "updated_at": "2025-08-22T13:03:11.916Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Pour simuler le tirage aléatoire uniforme avec un tableur, on peut utiliser la commande \\begin{center}\n\\texttt{=ALEA.ENTRE.BORNES(1;8)}\n\t\\end{center} qui génère un nombre entier aléatoire entre 1 et 8.",
+      "html": "<p>Pour simuler le tirage aléatoire uniforme avec un tableur, on peut utiliser la commande</p>\n<p><code>=ALEA.ENTRE.BORNES(1;8)</code></p>\n<p>qui génère un nombre entier aléatoire entre 1 et 8.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "text",
+      "latex": "\\`A l'aide d'un test du $\\chi^2$ et une simulation de 500 tirages de dé, peut-on affirmer que cette commande simule correctement un tirage uniforme ? On pourra illustrer le résultat à l'aide d'un histogramme.",
+      "html": "<p>À l’aide d’un test du <span>\\(\\chi^2\\)</span> et une simulation de 500 tirages de dé, peut-on affirmer que cette commande simule correctement un tirage uniforme ? On pourra illustrer le résultat à l’aide d’un histogramme.</p>",
+      "order": 2
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "6519b94a2a62f7ac095fa802db23970c6a49052b6bf507eaf27d44f0364195f9"
+}

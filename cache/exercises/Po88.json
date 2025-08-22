@@ -1,0 +1,71 @@
+{
+  "uuid": "Po88",
+  "title": "Limite et continuité d'une fonction définie sur $\\R^2$",
+  "chapter": "Fonction de plusieurs variables",
+  "subchapter": "Limite",
+  "theme": "fonctions de plusieurs variables",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-03-01",
+  "updated_at": "2025-08-22T12:39:30.661Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $f \\colon \\R^2 \\to \\R$,\n$$ (x,y) \\mapsto \\left\\{ \\begin{array}{ll} \\dfrac{x^2 y}{x^4 - 2x^2y + 3y^2} & \\text{ si } (x,y) \\neq (0,0) \\\\\n0 & \\text{ si } (x,y) = (0,0) \\end{array} \\right.\n$$",
+      "html": "<p>Soit <span>\\(f \\colon \\R^2 \\to \\R\\)</span>,\n<span>\\[(x,y) \\mapsto \\left\\{ \\begin{array}{ll} \\dfrac{x^2 y}{x^4 - 2x^2y + 3y^2} &amp; \\text{ si } (x,y) \\neq (0,0) \\\\\n0 &amp; \\text{ si } (x,y) = (0,0) \\end{array} \\right.\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Montrer que la restriction de $f$ à toute droite passant par l'origine est continue en $(0,0)$. Autrement dit, montrer que les trois limites suivantes existent et sont égales à $0$ :\n\t\\begin{enumerate}\n\t\t\\item $\\lim\\limits_{x \\to 0} f(x,0)$,\n\t\t\\item $\\lim\\limits_{x \\to 0} f(x,ax)$, pour $a \\in \\R^*$,\n\t\t\\item $\\lim\\limits_{y \\to 0} f(0,y)$\n\t\\end{enumerate}",
+      "html": "<p>Montrer que la restriction de <span>\\(f\\)</span> à toute droite passant par l’origine est continue en <span>\\((0,0)\\)</span>. Autrement dit, montrer que les trois limites suivantes existent et sont égales à <span>\\(0\\)</span> :</p>\n<ol>\n<li><p><span>\\(\\lim\\limits_{x \\to 0} f(x,0)\\)</span>,</p></li>\n<li><p><span>\\(\\lim\\limits_{x \\to 0} f(x,ax)\\)</span>, pour <span>\\(a \\in \\R^*\\)</span>,</p></li>\n<li><p><span>\\(\\lim\\limits_{y \\to 0} f(0,y)\\)</span></p></li>\n</ol>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On a effectivement $f(x,0) = 0  \\xrightarrow[x \\to 0]{} 0$, $f(x,ax) = \\frac{ax}{x^2-2ax+3a^2}  \\xrightarrow[x \\to 0]{} 0$ et $f(0,y) = 0 \\xrightarrow[y \\to 0]{} 0$.",
+      "html": "<p>On a effectivement <span>\\(f(x,0) = 0  \\xrightarrow[x \\to 0]{} 0\\)</span>, <span>\\(f(x,ax) = \\frac{ax}{x^2-2ax+3a^2}  \\xrightarrow[x \\to 0]{} 0\\)</span> et <span>\\(f(0,y) = 0 \\xrightarrow[y \\to 0]{} 0\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Calculer la limite en $(0,0)$ de la restriction de $f$ à la courbe d'équation $y=x^2$.",
+      "html": "<p>Calculer la limite en <span>\\((0,0)\\)</span> de la restriction de <span>\\(f\\)</span> à la courbe d’équation <span>\\(y=x^2\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "On évalue $f$ sur la courbe d'équation $y=x^2$ : quelque soit $x$, $f(x,x^2) = \\frac{x^4}{x^4(1-2+3)} = \\frac{1}{2} \\xrightarrow[x \\to 0]{} \\frac{1}{2}$.",
+      "html": "<p>On évalue <span>\\(f\\)</span> sur la courbe d’équation <span>\\(y=x^2\\)</span> : quelque soit <span>\\(x\\)</span>, <span>\\(f(x,x^2) = \\frac{x^4}{x^4(1-2+3)} = \\frac{1}{2} \\xrightarrow[x \\to 0]{} \\frac{1}{2}\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "La fonction $f$ est-elle continue en $(0,0)$~? Justifier.",
+      "html": "<p>La fonction <span>\\(f\\)</span> est-elle continue en <span>\\((0,0)\\)</span> ? Justifier.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "D'après ce qui précède, $f$ n'est pas continue en $(0,0)$ puisqu'on observe des limites différentes en $(0,0)$ selon le chemin suivi.",
+      "html": "<p>D’après ce qui précède, <span>\\(f\\)</span> n’est pas continue en <span>\\((0,0)\\)</span> puisqu’on observe des limites différentes en <span>\\((0,0)\\)</span> selon le chemin suivi.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "cf94de0c8be95471230f380533c7e56f1f7859b203d63312443ca03908ad57bf"
+}

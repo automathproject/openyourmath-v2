@@ -1,0 +1,43 @@
+{
+  "uuid": "JABn",
+  "title": "Indépendance de caractères",
+  "chapter": "",
+  "subchapter": "",
+  "theme": "statistiques",
+  "difficulty": null,
+  "author": "Maxime Nguyen",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "",
+  "updated_at": "2025-08-22T12:39:19.402Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Le tableau suivant donne la répartition de 10 000 personnes en fonction de leur groupe sanguin et de leur facteur Rhésus. \n\n\\begin{center}\n\t\\begin{tabular}{|c|c|c|c|c|}\n\t\t\\hline  & O & A & B & AB  \\\\ \n\t\t\\hline Rh+ & 3500 & 3800 & 900 & 170  \\\\ \n\t\t\\hline Rh- & 700 & 700 & 200 & 30   \\\\ \n\t\t\\hline \n\t\\end{tabular} \n\\end{center}",
+      "html": "<p>Le tableau suivant donne la répartition de 10 000 personnes en fonction de leur groupe sanguin et de leur facteur Rhésus.</p>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\"></th>\n<th style=\"text-align: center;\">O</th>\n<th style=\"text-align: center;\">A</th>\n<th style=\"text-align: center;\">B</th>\n<th style=\"text-align: center;\">AB</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\">Rh+</td>\n<td style=\"text-align: center;\">3500</td>\n<td style=\"text-align: center;\">3800</td>\n<td style=\"text-align: center;\">900</td>\n<td style=\"text-align: center;\">170</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">Rh-</td>\n<td style=\"text-align: center;\">700</td>\n<td style=\"text-align: center;\">700</td>\n<td style=\"text-align: center;\">200</td>\n<td style=\"text-align: center;\">30</td>\n</tr>\n</tbody>\n</table>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Les deux caractères \\og groupe sanguin \\fg{} et \\og facteur Rhésus \\fg{} sont-ils indépendants ?",
+      "html": "<p>Les deux caractères groupe sanguin et facteur Rhésus sont-ils indépendants ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "\\href{https://stcyrterrenetdefensegouvf-my.sharepoint.com/:x:/g/personal/maxime_nguyen_st-cyr_terre-net_defense_gouv_fr/EYlCPJY62BdMpTYscg1T6zABc9_WCIR_pzt6XSOajALYhw?e=kf80uR&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMzAwLTAwMDAwMDAwMDAwMH0}{Lien vers tableur}",
+      "html": "<p><a href=\"https://stcyrterrenetdefensegouvf-my.sharepoint.com/:x:/g/personal/maxime_nguyen_st-cyr_terre-net_defense_gouv_fr/EYlCPJY62BdMpTYscg1T6zABc9_WCIR_pzt6XSOajALYhw?e=kf80uR&amp;nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMzAwLTAwMDAwMDAwMDAwMH0\">Lien vers tableur</a></p>",
+      "order": 3
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "73a4e2282fbd944f4067e9c933e465418f1e232463e2cac553f210099cae38ef"
+}

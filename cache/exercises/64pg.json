@@ -1,0 +1,120 @@
+{
+  "uuid": "64pg",
+  "title": "Sondage et confidentialité",
+  "chapter": "Statistique",
+  "subchapter": "Estimation",
+  "theme": "variables aléatoires, estimateurs, intervalle de confiance",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-01-11",
+  "updated_at": "2025-08-22T12:38:43.866Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Pour préserver la confidentialité des opinions individuelles, un sondage est effectué avec le protocole suivant. Chaque personne sondée doit, avant de répondre <<oui>> ou <<non>> à la question posée, réaliser confidentiellement (elle seule connait le résultat) une variable de Bernoulli de paramètre $a$, $a \\in ]0;1[$ donné et connu du sondeur. Si le résultat est $1$, la personne doit répondre à la question selon son avis. Si le résultat est $0$, la personne doit répondre à la question selon le contraire de son avis. \n\t\n\tOn suppose que les personnes sondées suivent parfaitement ce protocole et l'on note $X_i$ la variable aléatoire qui vaut $1$ si la $i$-ème personne sondée répond <<oui>> et $0$ si elle répond <<non>>. \n\t\n\tOn note $n$ le nombre de personnes sondées et $p$ la proportion de personnes dont l'opinion personnelle est <<oui>> dans la population sondée. Soit $q$ la probabilité qu'une personne sondée réponde <<oui>>. Enfin, on suppose que $a \\neq \\frac{1}{2}$.",
+      "html": "<p>Pour préserver la confidentialité des opinions individuelles, un sondage est effectué avec le protocole suivant. Chaque personne sondée doit, avant de répondre &lt;&lt;oui&gt;&gt; ou &lt;&lt;non&gt;&gt; à la question posée, réaliser confidentiellement (elle seule connait le résultat) une variable de Bernoulli de paramètre <span>\\(a\\)</span>, <span>\\(a \\in ]0;1[\\)</span> donné et connu du sondeur. Si le résultat est <span>\\(1\\)</span>, la personne doit répondre à la question selon son avis. Si le résultat est <span>\\(0\\)</span>, la personne doit répondre à la question selon le contraire de son avis.</p>\n<p>On suppose que les personnes sondées suivent parfaitement ce protocole et l’on note <span>\\(X_i\\)</span> la variable aléatoire qui vaut <span>\\(1\\)</span> si la <span>\\(i\\)</span>-ème personne sondée répond &lt;&lt;oui&gt;&gt; et <span>\\(0\\)</span> si elle répond &lt;&lt;non&gt;&gt;.</p>\n<p>On note <span>\\(n\\)</span> le nombre de personnes sondées et <span>\\(p\\)</span> la proportion de personnes dont l’opinion personnelle est &lt;&lt;oui&gt;&gt; dans la population sondée. Soit <span>\\(q\\)</span> la probabilité qu’une personne sondée réponde &lt;&lt;oui&gt;&gt;. Enfin, on suppose que <span>\\(a \\neq \\frac{1}{2}\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Exprimer $q$ en fonction de $p$ et $a$.",
+      "html": "<p>Exprimer <span>\\(q\\)</span> en fonction de <span>\\(p\\)</span> et <span>\\(a\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "D'après l'énoncé de la situation et le théorème des probabilités totales, $q=ap+(1-a)(1-p)$.",
+      "html": "<p>D’après l’énoncé de la situation et le théorème des probabilités totales, <span>\\(q=ap+(1-a)(1-p)\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "Chaque variable $X_i$ suit une loi $\\mathcal{B}(q)$ donc $\\mathbb{E}(\\overline{X})=q$ : $\\overline{X}$ est un estimateur sais biais de $q$. Et $V(\\overline{X}) = \\frac{q(1-q)}{n} \\to 0$ donc $\\overline{X}$ est un estimateur convergent.",
+      "html": "<p>Chaque variable <span>\\(X_i\\)</span> suit une loi <span>\\(\\mathcal{B}(q)\\)</span> donc <span>\\(\\mathbb{E}(\\overline{X})=q\\)</span> : <span>\\(\\overline{X}\\)</span> est un estimateur sais biais de <span>\\(q\\)</span>. Et <span>\\(V(\\overline{X}) = \\frac{q(1-q)}{n} \\to 0\\)</span> donc <span>\\(\\overline{X}\\)</span> est un estimateur convergent.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "On pose $$T_n = \\frac{\\overline{X}-1+a}{2a-1}$$\n\t\tCalculer l'espérance et la variance de $T_n$.",
+      "html": "<p>On pose <span>\\[T_n = \\frac{\\overline{X}-1+a}{2a-1}\\]</span>\nCalculer l’espérance et la variance de <span>\\(T_n\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "reponse",
+      "latex": "Par linéarité et d'après le calcul précédent, on trouve $\\mathbb{E}(T_n)=\\frac{q-1+a}{2a-1}=p$. D'après les règles de calcul pour la variance, \n\t\t\t$$V(T_n) = \\frac{1}{(a-1)^2}V(\\overline{X}-1+a) = \\frac{1}{(2a-1)^2}V(\\overline{X}) = \\frac{q(q-1)}{n(2a-1)^2}$$\n\t\t\tOr en développant le calcul, on trouve $q(q-1) = p(1-p)(2a-1)^2+a(1-a)$ donc $V(T_n) = \\frac{p(1-p)}{n}+\\frac{a(1-a)}{n(2a-1)^2}$",
+      "html": "<p>Par linéarité et d’après le calcul précédent, on trouve <span>\\(\\mathbb{E}(T_n)=\\frac{q-1+a}{2a-1}=p\\)</span>. D’après les règles de calcul pour la variance,\n<span>\\[V(T_n) = \\frac{1}{(a-1)^2}V(\\overline{X}-1+a) = \\frac{1}{(2a-1)^2}V(\\overline{X}) = \\frac{q(q-1)}{n(2a-1)^2}\\]</span>\nOr en développant le calcul, on trouve <span>\\(q(q-1) = p(1-p)(2a-1)^2+a(1-a)\\)</span> donc <span>\\(V(T_n) = \\frac{p(1-p)}{n}+\\frac{a(1-a)}{n(2a-1)^2}\\)</span></p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "question",
+      "latex": "Démontrer que $T_n$ est un estimateur de $p$ sans biais et convergent.",
+      "html": "<p>Démontrer que <span>\\(T_n\\)</span> est un estimateur de <span>\\(p\\)</span> sans biais et convergent.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "reponse",
+      "latex": "Cela permet de voir que $B(T_n) = p-p=0$ et $V(T_n) \\to 0$ quand $n \\to +\\infty$.",
+      "html": "<p>Cela permet de voir que <span>\\(B(T_n) = p-p=0\\)</span> et <span>\\(V(T_n) \\to 0\\)</span> quand <span>\\(n \\to +\\infty\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "question",
+      "latex": "Justifier que la variable $\\frac{T_n-p}{\\sigma(T_n)}$ converge en loi vers la loi normale centrée réduite.",
+      "html": "<p>Justifier que la variable <span>\\(\\frac{T_n-p}{\\sigma(T_n)}\\)</span> converge en loi vers la loi normale centrée réduite.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "reponse",
+      "latex": "Pour pouvoir appliquer le théorème central limite, il suffit de vérifier que $T_n$ s'écrit bien sous la forme d'une somme de variables aléatoires indépendantes et identiquement distribuées. En effet, on a \n\t\t\t$$T_n = \\frac{\\frac{1}{n} \\left( \\sum_{i=1}^n  X_i \\right) -1+a}{2a-1} = \\frac{ \\frac{1}{n} \\sum_{i=1}^n  \\left( X_i  -1+a \\right)}{2a-1} = \\sum_{i=1}^n \\frac{X_i  -1+a}{n(2a-1)} $$\n\t\t\tLes variables $X_i$ étant i.i.d, les hypothèses sont bien vérifiées et d'après le théorème central limite, la variable $\\frac{T_n-\\mathbb{E}(T_n)}{\\sigma(T_n)}$ converge bien en loi vers une variable suivant une loi normale centrée réduite.",
+      "html": "<p>Pour pouvoir appliquer le théorème central limite, il suffit de vérifier que <span>\\(T_n\\)</span> s’écrit bien sous la forme d’une somme de variables aléatoires indépendantes et identiquement distribuées. En effet, on a\n<span>\\[T_n = \\frac{\\frac{1}{n} \\left( \\sum_{i=1}^n  X_i \\right) -1+a}{2a-1} = \\frac{ \\frac{1}{n} \\sum_{i=1}^n  \\left( X_i  -1+a \\right)}{2a-1} = \\sum_{i=1}^n \\frac{X_i  -1+a}{n(2a-1)}\\]</span>\nLes variables <span>\\(X_i\\)</span> étant i.i.d, les hypothèses sont bien vérifiées et d’après le théorème central limite, la variable <span>\\(\\frac{T_n-\\mathbb{E}(T_n)}{\\sigma(T_n)}\\)</span> converge bien en loi vers une variable suivant une loi normale centrée réduite.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "question",
+      "latex": "Donner une estimation de $p$ par intervalle de confiance au niveau de confiance $1-\\alpha$ que l'on notera $I_\\alpha$.",
+      "html": "<p>Donner une estimation de <span>\\(p\\)</span> par intervalle de confiance au niveau de confiance <span>\\(1-\\alpha\\)</span> que l’on notera <span>\\(I_\\alpha\\)</span>.</p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "reponse",
+      "latex": "D'après la question précédente, on peut (en supposant $n$ grand) approcher la variable $\\frac{T_n-\\mathbb{E}(T_n)}{\\sigma(T_n)}$ par une variable $Z$ qui suit une loi $\\mathcal{N}(0,1)$. Ensuite, on construit facilement un intervalle de confiance pour $p=\\mathbb{E}(T_n)$ au niveau $1-\\alpha$ en choisissant dans la table la valeur $u_{\\alpha/2}$ permettant d'avoir \n\t\t\t$$\\PP(-u_{\\alpha/2} < Z < u_{\\alpha/2}) = 1-\\alpha$$\n\t\t\tpuis en redéployant l'inégalité autour de $p$ :\n\t\t\t$$\\PP(T_n-u_{\\alpha/2} \\sigma(T_n) < \\mathbb{E}(T_n) < T_n + u_{\\alpha/2} \\sigma(T_n)) = 1-\\alpha $$\n\t\t\tD'où l'intervalle de confiance pour $p = \\mathbb{E}(T_n)$ : \n\t\t\t$$I_conf = [ T_n - u_{\\alpha/2} \\sigma(T_n) \\,;\\,  T_n + u_{\\alpha/2} \\sigma(T_n)]$$\n\t\t\tPour réaliser cet intervalle, il suffit de réaliser l'échantillon et de remplacer $ T_n$ et $\\sigma( T_n)$ par leurs réalisations. On obtiendra un intervalle par excès en replaçant $\\sigma(T_n)$ par un majorant $\\frac{1/2}{\\sqrt{n(2a-1)^2}}$",
+      "html": "<p>D’après la question précédente, on peut (en supposant <span>\\(n\\)</span> grand) approcher la variable <span>\\(\\frac{T_n-\\mathbb{E}(T_n)}{\\sigma(T_n)}\\)</span> par une variable <span>\\(Z\\)</span> qui suit une loi <span>\\(\\mathcal{N}(0,1)\\)</span>. Ensuite, on construit facilement un intervalle de confiance pour <span>\\(p=\\mathbb{E}(T_n)\\)</span> au niveau <span>\\(1-\\alpha\\)</span> en choisissant dans la table la valeur <span>\\(u_{\\alpha/2}\\)</span> permettant d’avoir\n<span>\\[\\PP(-u_{\\alpha/2} &lt; Z &lt; u_{\\alpha/2}) = 1-\\alpha\\]</span>\npuis en redéployant l’inégalité autour de <span>\\(p\\)</span> :\n<span>\\[\\PP(T_n-u_{\\alpha/2} \\sigma(T_n) &lt; \\mathbb{E}(T_n) &lt; T_n + u_{\\alpha/2} \\sigma(T_n)) = 1-\\alpha\\]</span>\nD’où l’intervalle de confiance pour <span>\\(p = \\mathbb{E}(T_n)\\)</span> :\n<span>\\[I_conf = [ T_n - u_{\\alpha/2} \\sigma(T_n) \\,;\\,  T_n + u_{\\alpha/2} \\sigma(T_n)]\\]</span>\nPour réaliser cet intervalle, il suffit de réaliser l’échantillon et de remplacer <span>\\(T_n\\)</span> et <span>\\(\\sigma( T_n)\\)</span> par leurs réalisations. On obtiendra un intervalle par excès en replaçant <span>\\(\\sigma(T_n)\\)</span> par un majorant <span>\\(\\frac{1/2}{\\sqrt{n(2a-1)^2}}\\)</span></p>",
+      "order": 12
+    },
+    {
+      "id": "block_13",
+      "type": "question",
+      "latex": "On fixe $a = \\frac{1}{6}$, $n=1000$ et on considère une réalisation de la variable aléatoire $\\overline{X}$ égale à $0{,}425$. Déterminer une réalisation de l'intervalle de confiance utilisé pour l'estimation de $p$ au risque $\\alpha = 0{,}05$ (on pourra utiliser la majoration $q(1-q) \\leq \\frac{1}{4}$).",
+      "html": "<p>On fixe <span>\\(a = \\frac{1}{6}\\)</span>, <span>\\(n=1000\\)</span> et on considère une réalisation de la variable aléatoire <span>\\(\\overline{X}\\)</span> égale à <span>\\(0{,}425\\)</span>. Déterminer une réalisation de l’intervalle de confiance utilisé pour l’estimation de <span>\\(p\\)</span> au risque <span>\\(\\alpha = 0{,}05\\)</span> (on pourra utiliser la majoration <span>\\(q(1-q) \\leq \\frac{1}{4}\\)</span>).</p>",
+      "order": 13
+    },
+    {
+      "id": "block_14",
+      "type": "reponse",
+      "latex": "Application numérique : on trouve $\\alpha = 0.05$, on utilise $u_{\\alpha/2} = 1.96$ et on trouve \n\t\t\t$$I = [0.566 \\,;\\, 0.658]$$",
+      "html": "<p>Application numérique : on trouve <span>\\(\\alpha = 0.05\\)</span>, on utilise <span>\\(u_{\\alpha/2} = 1.96\\)</span> et on trouve\n<span>\\[I = [0.566 \\,;\\, 0.658]\\]</span></p>",
+      "order": 14
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "34336576a04f5dd362ef929adfb6767a2918175f57926566223fd29383c9ee32"
+}

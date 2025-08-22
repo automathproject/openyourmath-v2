@@ -1,0 +1,99 @@
+{
+  "uuid": "acya",
+  "title": "Système linéaire avec paramètre et déterminant",
+  "chapter": "Déterminant, système linéaire",
+  "subchapter": "Système linéaire, rang",
+  "theme": "Algèbre linéaire",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "",
+  "updated_at": "2025-08-22T13:03:21.053Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Considérer le système suivant dépendant d'un paramètre réel \\(m\\) :\n\\begin{center}\n$$\n\\begin{cases}\nx + my + (m-1)z = m+1, \\\\\n3x + 2y + mz = 3, \\\\\n(m-1)x + my + (m+1)z = m-1.\n\\end{cases}\n$$\n\\end{center}",
+      "html": "<p>Considérer le système suivant dépendant d’un paramètre réel <span>\\(m\\)</span> :</p>\n<p><span>\\[\\begin{cases}\nx + my + (m-1)z = m+1, \\\\\n3x + 2y + mz = 3, \\\\\n(m-1)x + my + (m+1)z = m-1.\n\\end{cases}\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Écrire le système sous forme matricielle, c'est-à-dire :\n    $$\n    A\\,\\mathbf{X} = \\mathbf{B},\n    $$\n    où \\(A\\) est la matrice des coefficients, \\(\\mathbf{X}\\) le vecteur des inconnues, et \\(\\mathbf{B}\\) le vecteur des constantes.",
+      "html": "<p>Écrire le système sous forme matricielle, c’est-à-dire :\n<span>\\[A\\,\\mathbf{X} = \\mathbf{B},\\]</span>\noù <span>\\(A\\)</span> est la matrice des coefficients, <span>\\(\\mathbf{X}\\)</span> le vecteur des inconnues, et <span>\\(\\mathbf{B}\\)</span> le vecteur des constantes.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "La matrice $A$ est $\\begin{pmatrix}\n1 & m & m-1 \\\\ 3 & 2 & m \\\\ m-1 & m & m-1 \\\\\n\n\\end{pmatrix}$, le vecteur d'inconnue est $\\mathbf{X}=\\begin{pmatrix} x \\\\ y \\\\ z \\end{pmatrix}$ et le vecteur d'inconnue est $\\mathbf{B}=\\begin{pmatrix} m+1 \\\\ 3 \\\\ m-1 \\end{pmatrix}$",
+      "html": "<p>La matrice <span>\\(A\\)</span> est <span>\\(\\begin{pmatrix}\n1 &amp; m &amp; m-1 \\\\ 3 &amp; 2 &amp; m \\\\ m-1 &amp; m &amp; m-1 \\\\\n\n\\end{pmatrix}\\)</span>, le vecteur d’inconnue est <span>\\(\\mathbf{X}=\\begin{pmatrix} x \\\\ y \\\\ z \\end{pmatrix}\\)</span> et le vecteur d’inconnue est <span>\\(\\mathbf{B}=\\begin{pmatrix} m+1 \\\\ 3 \\\\ m-1 \\end{pmatrix}\\)</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Calculer le déterminant de la matrice \\(A\\) et montrer que\n    $\n    \\det(A) = m^2(m-4).\n    $",
+      "html": "<p>Calculer le déterminant de la matrice <span>\\(A\\)</span> et montrer que\n<span>\\(\\det(A) = m^2(m-4).\\)</span></p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Le déterminant est $A$ est:\n$$\\det(A)=\\begin{vmatrix}\n1 & m & m-1 \\\\ 3 & 2 & m \\\\ m-1 & m & m-1 \\\\\n\\end{vmatrix}=\\begin{vmatrix}\n-m+2 & 0 & -2 \\\\ 3 & 2 & m \\\\ m-1 & m & m-1 \\\\\n\\end{vmatrix}\n$$\n$$=(2-m)(-m^2+2m+2)-6m+4m-4=m^2(m-4).$$",
+      "html": "<p>Le déterminant est <span>\\(A\\)</span> est:\n<span>\\[\\det(A)=\\begin{vmatrix}\n1 &amp; m &amp; m-1 \\\\ 3 &amp; 2 &amp; m \\\\ m-1 &amp; m &amp; m-1 \\\\\n\\end{vmatrix}=\\begin{vmatrix}\n-m+2 &amp; 0 &amp; -2 \\\\ 3 &amp; 2 &amp; m \\\\ m-1 &amp; m &amp; m-1 \\\\\n\\end{vmatrix}\\]</span>\n<span>\\[=(2-m)(-m^2+2m+2)-6m+4m-4=m^2(m-4).\\]</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Déterminer les valeurs de \\(m\\) pour lesquelles le système n'a pas de solution unique.",
+      "html": "<p>Déterminer les valeurs de <span>\\(m\\)</span> pour lesquelles le système n’a pas de solution unique.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Pour $m=0$ et $m=4$ la matrice $A$ pour déterminant $0$, la matrice $A$ n'est pas inversible donc il existe une infinité de solutions ou pas de solution.",
+      "html": "<p>Pour <span>\\(m=0\\)</span> et <span>\\(m=4\\)</span> la matrice <span>\\(A\\)</span> pour déterminant <span>\\(0\\)</span>, la matrice <span>\\(A\\)</span> n’est pas inversible donc il existe une infinité de solutions ou pas de solution.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Le système a-t-il une solution pour $m=4$? Si oui, la déterminer.",
+      "html": "<p>Le système a-t-il une solution pour <span>\\(m=4\\)</span>? Si oui, la déterminer.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "Le système s'écrit:\n \\begin{center}\n$$\n\\begin{cases}\nx + 4y + 3z = 5, \\\\\n3x + 2y + 4z = 3, \\\\\n3x + 4y + 5z = 3.\n\\end{cases}\n$$\n\\end{center}\nIl est équivalent au système  \n \\begin{center}\n$$\n\\begin{cases}\nx=5+2y \\\\\nz=-2y \\\\\n15=3.\n\\end{cases}\n$$\n\\end{center}\nCe système n'a donc aucune solution!",
+      "html": "<p>Le système s’écrit:</p>\n<p><span>\\[\\begin{cases}\nx + 4y + 3z = 5, \\\\\n3x + 2y + 4z = 3, \\\\\n3x + 4y + 5z = 3.\n\\end{cases}\\]</span></p>\n<p>Il est équivalent au système</p>\n<p><span>\\[\\begin{cases}\nx=5+2y \\\\\nz=-2y \\\\\n15=3.\n\\end{cases}\\]</span></p>\n<p>Ce système n’a donc aucune solution!</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "Si \\(m \\neq 0\\) et \\(m \\neq 4\\), résoudre le système.",
+      "html": "<p>Si <span>\\(m \\neq 0\\)</span> et <span>\\(m \\neq 4\\)</span>, résoudre le système.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "reponse",
+      "latex": "Si $m\\neq 4$ et $m\\neq 0$ alors le système a une unique solution:\n  $$x=-2\\frac{m-1}{m(m-4)},\\quad\n    y=\\frac{m^2-4m-3}{m(m-4)},\\quad z=\\frac{m+2}{m(m-4)}.$$",
+      "html": "<p>Si <span>\\(m\\neq 4\\)</span> et <span>\\(m\\neq 0\\)</span> alors le système a une unique solution:\n<span>\\[x=-2\\frac{m-1}{m(m-4)},\\quad\n    y=\\frac{m^2-4m-3}{m(m-4)},\\quad z=\\frac{m+2}{m(m-4)}.\\]</span></p>",
+      "order": 11
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "664dfb6fba6eb291487b258daabb1010b44a2c37c8cb5e54d7ea184e227e4f95"
+}

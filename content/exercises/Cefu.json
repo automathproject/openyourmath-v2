@@ -1,0 +1,57 @@
+{
+  "uuid": "Cefu",
+  "title": "Vrai ou faux",
+  "chapter": "Série numérique",
+  "subchapter": "Autre",
+  "theme": "séries",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-06-14",
+  "updated_at": "2025-08-22T13:02:29.025Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Pour chacune des assertions suivantes, dire si elle est vraie ou fausse. Une justification, le cas échéant avec un contre exemple, est attendue.",
+      "html": "<p>Pour chacune des assertions suivantes, dire si elle est vraie ou fausse. Une justification, le cas échéant avec un contre exemple, est attendue.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Soit $(u_n)$ une suite de réels positifs tels que $\\lim\\limits_{n \\to +\\infty} u_n = +\\infty$. \\\\ Alors $\\lim\\limits_{n \\to +\\infty} \\frac{1}{u_n^2} = 0$ et la série $\\sum\\limits_{n \\geq 0} \\frac{1}{u_n^2}$ converge.",
+      "html": "<p>Soit <span>\\((u_n)\\)</span> une suite de réels positifs tels que <span>\\(\\lim\\limits_{n \\to +\\infty} u_n = +\\infty\\)</span>.<br />\nAlors <span>\\(\\lim\\limits_{n \\to +\\infty} \\frac{1}{u_n^2} = 0\\)</span> et la série <span>\\(\\sum\\limits_{n \\geq 0} \\frac{1}{u_n^2}\\)</span> converge.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Faux. Par exemple, considérer $u_n = \\sqrt{n}$ pour tout $n \\in \\N$.",
+      "html": "<p>Faux. Par exemple, considérer <span>\\(u_n = \\sqrt{n}\\)</span> pour tout <span>\\(n \\in \\N\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Soit $(a_n)$ une suite de réels tels que la série entière $\\sum a_n x^n$ ait un rayon de convergence $R=2$. \\\\ Alors la série $\\sum a_n (-3)^n$ diverge.",
+      "html": "<p>Soit <span>\\((a_n)\\)</span> une suite de réels tels que la série entière <span>\\(\\sum a_n x^n\\)</span> ait un rayon de convergence <span>\\(R=2\\)</span>.<br />\nAlors la série <span>\\(\\sum a_n (-3)^n\\)</span> diverge.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Vrai. Par définition du rayon de convergence, si $R=2$ alors la série $\\sum a_n x^n$ diverge  pour tout $x \\in ]-\\infty;-2[$, donc en particulier pour $x=-3$.",
+      "html": "<p>Vrai. Par définition du rayon de convergence, si <span>\\(R=2\\)</span> alors la série <span>\\(\\sum a_n x^n\\)</span> diverge pour tout <span>\\(x \\in ]-\\infty;-2[\\)</span>, donc en particulier pour <span>\\(x=-3\\)</span>.</p>",
+      "order": 5
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "927e1bce884a13e0c6a08ed0388762e2a188de89fe27b4c90158999ab32ca930"
+}

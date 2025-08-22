@@ -1,0 +1,78 @@
+{
+  "uuid": "6Aqe",
+  "title": "Loi uniforme sur un triangle",
+  "chapter": "Probabilité continue",
+  "subchapter": "Densité de probabilité",
+  "theme": "variables aléatoires à densité, loi uniforme",
+  "difficulty": null,
+  "author": "Maxime Nguyen",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-12-01",
+  "updated_at": "2025-08-22T13:02:10.749Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "question",
+      "latex": "Déterminer un nombre réel $k$ tel que $f(x,y) = k \\cdot \\mathbf{1}_T(x,y)$ définisse sur $\\R^2$ la densité du couple $(X,Y)$.",
+      "html": "<p>Déterminer un nombre réel <span>\\(k\\)</span> tel que <span>\\(f(x,y) = k \\cdot \\mathbf{1}_T(x,y)\\)</span> définisse sur <span>\\(\\R^2\\)</span> la densité du couple <span>\\((X,Y)\\)</span>.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "reponse",
+      "latex": "On a $(x,y) \\in T$ si et seulement si $x \\in [0,1]$, $y \\in [0,1]$ et $y \\leq 1-x$. Donc d'après le théorème de Fubini : \n\t\t\t$$\\begin{align*}\n\t\t\t\t\\int_{\\R^2} f(x,y) dx dy &= \\int_0^1 \\int_0^{1-x} k \\,dy dx \\\\\n\t\t\t\t&= \\int_0^1 k(1-x) dx \\\\\n\t\t\t\t&= k \\left[ x - \\frac{x^2}{2} \\right]_0^1 \\\\\n\t\t\t\t&= k \\times \\frac{1}{2}\n\t\t\t\\end{align*}$$\n\t\t\tPour que $f$ soit une densité, il faut que $\\int_{\\R^2} f(x,y) dx dy = 1$ et $f(x,y) \\geq 0$ pour tout $(x,y) \\in \\R^2$. Donc $k = 2$.",
+      "html": "<p>On a <span>\\((x,y) \\in T\\)</span> si et seulement si <span>\\(x \\in [0,1]\\)</span>, <span>\\(y \\in [0,1]\\)</span> et <span>\\(y \\leq 1-x\\)</span>. Donc d’après le théorème de Fubini :\n<span>\\[\\begin{align*}\n                \\int_{\\R^2} f(x,y) dx dy &amp;= \\int_0^1 \\int_0^{1-x} k \\,dy dx \\\\\n                &amp;= \\int_0^1 k(1-x) dx \\\\\n                &amp;= k \\left[ x - \\frac{x^2}{2} \\right]_0^1 \\\\\n                &amp;= k \\times \\frac{1}{2}\n            \\end{align*}\\]</span>\nPour que <span>\\(f\\)</span> soit une densité, il faut que <span>\\(\\int_{\\R^2} f(x,y) dx dy = 1\\)</span> et <span>\\(f(x,y) \\geq 0\\)</span> pour tout <span>\\((x,y) \\in \\R^2\\)</span>. Donc <span>\\(k = 2\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "question",
+      "latex": "Déterminer les lois marginales du couple $(X,Y)$.",
+      "html": "<p>Déterminer les lois marginales du couple <span>\\((X,Y)\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "Si $(x,y) \\notin T$, alors $f(x,y) = 0$. Donc pour tout $x \\notin [0,1]$, $f_X(x) = 0$. De même pour tout $y \\notin [0,1]$, $f_Y(y) = 0$. \n\n\t\t\tSi $x \\in [0,1]$, alors $f_X(x) = \\int_{-\\infty}^{+\\infty}f(x,y)dy = 2 \\int_0^{1-x} dy = 2(1-x)$. De même pour tout $y \\in [0,1]$, $f_Y(y) = 2(1-y)$.",
+      "html": "<p>Si <span>\\((x,y) \\notin T\\)</span>, alors <span>\\(f(x,y) = 0\\)</span>. Donc pour tout <span>\\(x \\notin [0,1]\\)</span>, <span>\\(f_X(x) = 0\\)</span>. De même pour tout <span>\\(y \\notin [0,1]\\)</span>, <span>\\(f_Y(y) = 0\\)</span>.</p>\n<p>Si <span>\\(x \\in [0,1]\\)</span>, alors <span>\\(f_X(x) = \\int_{-\\infty}^{+\\infty}f(x,y)dy = 2 \\int_0^{1-x} dy = 2(1-x)\\)</span>. De même pour tout <span>\\(y \\in [0,1]\\)</span>, <span>\\(f_Y(y) = 2(1-y)\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Les variables aléatoires $X$ et $Y$ sont-elles indépendantes ?",
+      "html": "<p>Les variables aléatoires <span>\\(X\\)</span> et <span>\\(Y\\)</span> sont-elles indépendantes ?</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "reponse",
+      "latex": "Si elles l'étaient, on aurait $f(x,y) = f_X(x) \\times f_Y(y) = 4(1-x)(1-y)$ pour tout $(x,y) \\in \\R^2$. Or $f(0,0) = 2 \\neq 4$. Donc $X$ et $Y$ ne sont pas indépendantes.",
+      "html": "<p>Si elles l’étaient, on aurait <span>\\(f(x,y) = f_X(x) \\times f_Y(y) = 4(1-x)(1-y)\\)</span> pour tout <span>\\((x,y) \\in \\R^2\\)</span>. Or <span>\\(f(0,0) = 2 \\neq 4\\)</span>. Donc <span>\\(X\\)</span> et <span>\\(Y\\)</span> ne sont pas indépendantes.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "question",
+      "latex": "Calculer la covariance du couple $(X,Y)$.",
+      "html": "<p>Calculer la covariance du couple <span>\\((X,Y)\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "reponse",
+      "latex": "On sait que $\\cov(X,Y) = \\E(XY) - \\E(X)\\E(Y)$. On a $\\E(X) = \\int_{-\\infty}^{+\\infty} x f_X(x) dx = \\int_0^1 2x(1-x) dx = \\frac{1}{3}$. De même $\\E(Y) = \\frac{1}{3}$. \n\n\t\t\tDe plus, \n\t\t\t$$\\begin{align*}\n\t\t\t\t\\E(XY) &= \\int_{-\\infty}^{+\\infty} \\int_{-\\infty}^{+\\infty} xy f(x,y) dx dy \\\\\n\t\t\t\t&= \\int_0^1 \\int_0^{1-x} 2xy dy dx \\\\\n\t\t\t\t&= \\int_0^1 x(1-x)^2 dx \\\\\n\t\t\t\t&= \\int_0^1 x - 2x^2 + x^3 dx \\\\\n\t\t\t\t&= \\left[ \\frac{x^2}{2} - \\frac{2x^3}{3} + \\frac{x^4}{4} \\right]_0^1 \\\\\n\t\t\t\t&= \\frac{1}{12}\n\t\t\t\\end{align*}$$\nDonc $\\cov(X,Y) = \\frac{1}{12} - \\frac{1}{3} \\times \\frac{1}{3} = -\\frac{1}{36}$.",
+      "html": "<p>On sait que <span>\\(\\cov(X,Y) = \\E(XY) - \\E(X)\\E(Y)\\)</span>. On a <span>\\(\\E(X) = \\int_{-\\infty}^{+\\infty} x f_X(x) dx = \\int_0^1 2x(1-x) dx = \\frac{1}{3}\\)</span>. De même <span>\\(\\E(Y) = \\frac{1}{3}\\)</span>.</p>\n<p>De plus,\n<span>\\[\\begin{align*}\n                \\E(XY) &amp;= \\int_{-\\infty}^{+\\infty} \\int_{-\\infty}^{+\\infty} xy f(x,y) dx dy \\\\\n                &amp;= \\int_0^1 \\int_0^{1-x} 2xy dy dx \\\\\n                &amp;= \\int_0^1 x(1-x)^2 dx \\\\\n                &amp;= \\int_0^1 x - 2x^2 + x^3 dx \\\\\n                &amp;= \\left[ \\frac{x^2}{2} - \\frac{2x^3}{3} + \\frac{x^4}{4} \\right]_0^1 \\\\\n                &amp;= \\frac{1}{12}\n            \\end{align*}\\]</span>\nDonc <span>\\(\\cov(X,Y) = \\frac{1}{12} - \\frac{1}{3} \\times \\frac{1}{3} = -\\frac{1}{36}\\)</span>.</p>",
+      "order": 8
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "738ce932a4a016b247995947b2443b7891d24cbe8b0aa356d944a85dd07865d4"
+}

@@ -1,0 +1,99 @@
+{
+  "uuid": "b1T2",
+  "title": "Etude d'une matrice tridiagonale",
+  "chapter": "Résolution de systèmes linéaires : méthode itérative",
+  "subchapter": "Résolution de systèmes linéaires : méthode itérative",
+  "theme": "analyse numérique",
+  "difficulty": null,
+  "author": "",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2023-03-02",
+  "updated_at": "2025-08-22T13:03:23.570Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Soit $A \\in \\mathcal{M}_{n}(\\mathbb{R})$ la matrice tridiagonale d'ordre $n > 2$ définie par \n$$A = \\begin{pmatrix}\n\t2 & -1 &  &  & & \\\\\n\t-1 & 2 & -1 &      & &\\\\\n\t&   \\ddots & \\ddots & \\ddots  && \\\\\n\t& & -1 &2 &-1 \\\\\n\t& & & -1 & 2 \\\\\n\\end{pmatrix}\n$$\n\nOn admet que l'ensemble des valeurs propres de $A$ est $$sp(A) = \\left\\{ \\lambda_k = 4 \\sin^2\\left(\\frac{k\\pi}{2(n+1)} \\right) \\, , \\, k \\in \\{1,...,n \\} \\right\\}$$\n\nOn souhaite résoudre un système linéaire $AX=b$ à l'aide d'une méthode itérative et on note $X$ sa solution.",
+      "html": "<p>Soit <span>\\(A \\in \\mathcal{M}_{n}(\\mathbb{R})\\)</span> la matrice tridiagonale d’ordre <span>\\(n &gt; 2\\)</span> définie par\n<span>\\[A = \\begin{pmatrix}\n    2 &amp; -1 &amp;  &amp;  &amp; &amp; \\\\\n    -1 &amp; 2 &amp; -1 &amp;      &amp; &amp;\\\\\n    &amp;   \\ddots &amp; \\ddots &amp; \\ddots  &amp;&amp; \\\\\n    &amp; &amp; -1 &amp;2 &amp;-1 \\\\\n    &amp; &amp; &amp; -1 &amp; 2 \\\\\n\\end{pmatrix}\\]</span></p>\n<p>On admet que l’ensemble des valeurs propres de <span>\\(A\\)</span> est <span>\\[sp(A) = \\left\\{ \\lambda_k = 4 \\sin^2\\left(\\frac{k\\pi}{2(n+1)} \\right) \\, , \\, k \\in \\{1,...,n \\} \\right\\}\\]</span></p>\n<p>On souhaite résoudre un système linéaire <span>\\(AX=b\\)</span> à l’aide d’une méthode itérative et on note <span>\\(X\\)</span> sa solution.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Exprimer la suite des itérés de la méthode de Jacobi sous la forme $X^{(k+1)}=BX^{(k)}+C$ en exprimant la matrice $B$ en fonction de la matrice identité $I_n$ et de la matrice $A$. La matrice $A$ est-elle à diagonale strictement dominante ?",
+      "html": "<p>Exprimer la suite des itérés de la méthode de Jacobi sous la forme <span>\\(X^{(k+1)}=BX^{(k)}+C\\)</span> en exprimant la matrice <span>\\(B\\)</span> en fonction de la matrice identité <span>\\(I_n\\)</span> et de la matrice <span>\\(A\\)</span>. La matrice <span>\\(A\\)</span> est-elle à diagonale strictement dominante ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "Avec les notations du cours, $A=M-N$ avec $M=2I$ d'où la suite de Jacobi $x^{(k+1)}=M^{-1}Nx^{(k)}+M^{-1}b = (I-\\frac{1}{2}A) x^{(k)} + \\frac{1}{2}b$.\n\t\tLa matrice $A$ n'est pas à diagonale strictement dominante donc la convergence de la méthode de Jacobi n'est pas acquise.",
+      "html": "<p>Avec les notations du cours, <span>\\(A=M-N\\)</span> avec <span>\\(M=2I\\)</span> d’où la suite de Jacobi <span>\\(x^{(k+1)}=M^{-1}Nx^{(k)}+M^{-1}b = (I-\\frac{1}{2}A) x^{(k)} + \\frac{1}{2}b\\)</span>.\nLa matrice <span>\\(A\\)</span> n’est pas à diagonale strictement dominante donc la convergence de la méthode de Jacobi n’est pas acquise.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "On définit l'erreur $e^{(k)}=X^{(k)}-X$ à la $k$-ème itération. Exprimer $e^{(k)}$ en fonction de $e^{(k-1)}$ et en déduire que $\\Vert e^{(k)}\\Vert \\leq \\vvvert B\\vvvert^k\\Vert e^{(0)}\\Vert$ où $\\Vert.\\Vert$ est une norme quelconque sur $\\mathbb{R}^{n}$ et $\\vvvert.\\vvvert$ la norme induite sur $\\mathcal{M}_{n}(\\mathbb{R})$.",
+      "html": "<p>On définit l’erreur <span>\\(e^{(k)}=X^{(k)}-X\\)</span> à la <span>\\(k\\)</span>-ème itération. Exprimer <span>\\(e^{(k)}\\)</span> en fonction de <span>\\(e^{(k-1)}\\)</span> et en déduire que <span>\\(\\Vert e^{(k)}\\Vert \\leq \\vvvert B\\vvvert^k\\Vert e^{(0)}\\Vert\\)</span> où <span>\\(\\Vert.\\Vert\\)</span> est une norme quelconque sur <span>\\(\\mathbb{R}^{n}\\)</span> et <span>\\(\\vvvert.\\vvvert\\)</span> la norme induite sur <span>\\(\\mathcal{M}_{n}(\\mathbb{R})\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "$$\\begin{align*}\n\t\t\te^{(k)} &= X^{k}-X\\\\\n\t\t\t&=(BX^{k-1}+ C) - (BX+C) \\\\\n\t\t\t&= B(X^{(k-1)}-X) \\\\\n\t\t\t&=B e^{(k-1)} \n\t\t\\end{align*}$$\n\t\tdonc par récurrence $e^{(k)}=B^ke^{(0)}$.\tEn passant à la norme et par inégalité des normes induites, $|| e^{(k)}|| \\leq \\vvvert B\\vvvert^k || e^{(0)}||$",
+      "html": "<p><span>\\[\\begin{align*}\n            e^{(k)} &amp;= X^{k}-X\\\\\n            &amp;=(BX^{k-1}+ C) - (BX+C) \\\\\n            &amp;= B(X^{(k-1)}-X) \\\\\n            &amp;=B e^{(k-1)} \n        \\end{align*}\\]</span>\ndonc par récurrence <span>\\(e^{(k)}=B^ke^{(0)}\\)</span>. En passant à la norme et par inégalité des normes induites, <span>\\(|| e^{(k)}|| \\leq \\vvvert B\\vvvert^k || e^{(0)}||\\)</span></p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Calculer $\\vvvert B\\vvvert_{\\infty}$. Qu'en conclure ?",
+      "html": "<p>Calculer <span>\\(\\vvvert B\\vvvert_{\\infty}\\)</span>. Qu’en conclure ?</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On calcule $B = \\begin{pmatrix}\n\t\t\t0 & \\frac{1}{2} &  &  & & \\\\\n\t\t\t\\frac{1}{2} & 0 & \\frac{1}{2} &      & &\\\\\n\t\t\t&   \\ddots & \\ddots & \\ddots  && \\\\\n\t\t\t& & \\frac{1}{2} &0 &\\frac{1}{2} \\\\\n\t\t\t& & & \\frac{1}{2} & 0 \\\\\n\t\t\\end{pmatrix}\n\t\t$ D'après le cours,   $\\displaystyle\\vvvert B\\vvvert_{\\infty} =  \\sup\\limits_{1 \\leq i \\leq N} \\sum_{j=1}^N|b_{i,j}| = \\frac{1}{2}+\\frac{1}{2} = 1$. Donc ce choix de norme ne permet pas de conclure que l'erreur tend vers $0$.",
+      "html": "<p>On calcule <span>\\(B = \\begin{pmatrix}\n            0 &amp; \\frac{1}{2} &amp;  &amp;  &amp; &amp; \\\\\n            \\frac{1}{2} &amp; 0 &amp; \\frac{1}{2} &amp;      &amp; &amp;\\\\\n            &amp;   \\ddots &amp; \\ddots &amp; \\ddots  &amp;&amp; \\\\\n            &amp; &amp; \\frac{1}{2} &amp;0 &amp;\\frac{1}{2} \\\\\n            &amp; &amp; &amp; \\frac{1}{2} &amp; 0 \\\\\n        \\end{pmatrix}\\)</span> D’après le cours, <span>\\(\\displaystyle\\vvvert B\\vvvert_{\\infty} =  \\sup\\limits_{1 \\leq i \\leq N} \\sum_{j=1}^N|b_{i,j}| = \\frac{1}{2}+\\frac{1}{2} = 1\\)</span>. Donc ce choix de norme ne permet pas de conclure que l’erreur tend vers <span>\\(0\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Vérifier que le rayon spectral de $B$ est  $\\rho(B)=\\cos\\left(\\frac{\\pi}{n+1}\\right)$.",
+      "html": "<p>Vérifier que le rayon spectral de <span>\\(B\\)</span> est <span>\\(\\rho(B)=\\cos\\left(\\frac{\\pi}{n+1}\\right)\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "Les valeurs propres de $B=I-\\frac{1}{2}A$ sont les valeurs $\\mu_k = 1-2 \\sin^2\\left(\\frac{k\\pi}{2(n+1)}\\right) = \\cos\\left(\\frac{k\\pi}{n+1}\\right)$ donc $\\rho(B) = \\max\\{|\\mu_k|\\} = \\cos\\left(\\frac{\\pi}{n+1}\\right)$.",
+      "html": "<p>Les valeurs propres de <span>\\(B=I-\\frac{1}{2}A\\)</span> sont les valeurs <span>\\(\\mu_k = 1-2 \\sin^2\\left(\\frac{k\\pi}{2(n+1)}\\right) = \\cos\\left(\\frac{k\\pi}{n+1}\\right)\\)</span> donc <span>\\(\\rho(B) = \\max\\{|\\mu_k|\\} = \\cos\\left(\\frac{\\pi}{n+1}\\right)\\)</span>.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "En déduire que la méthode de Jacobi converge pour la matrice $A$ quelque soit l'initialisation.",
+      "html": "<p>En déduire que la méthode de Jacobi converge pour la matrice <span>\\(A\\)</span> quelque soit l’initialisation.</p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "reponse",
+      "latex": "On remarque que $A$ est une matrice symétrique donc $B$ est une matrice symétrique. D'après la propriété 1 admise, $||B||_2 =\\rho(B) =  \\cos\\left(\\frac{\\pi}{n+1}\\right)$ donc $0<||B||_2<1$. Donc d'après la question 2, $|| e^{(k)}||_2 \\to 0$ quelque soit l'erreur $e^{(0)}$.\n\t\tcommise au départ, autrement dit la méthode converge.",
+      "html": "<p>On remarque que <span>\\(A\\)</span> est une matrice symétrique donc <span>\\(B\\)</span> est une matrice symétrique. D’après la propriété 1 admise, <span>\\(||B||_2 =\\rho(B) =  \\cos\\left(\\frac{\\pi}{n+1}\\right)\\)</span> donc <span>\\(0&lt;||B||_2&lt;1\\)</span>. Donc d’après la question 2, <span>\\(|| e^{(k)}||_2 \\to 0\\)</span> quelque soit l’erreur <span>\\(e^{(0)}\\)</span>.\ncommise au départ, autrement dit la méthode converge.</p>",
+      "order": 11
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "3c70677489e38379971d9e25d2d365c9b994079267121f2188c1317235e47509"
+}

@@ -1,0 +1,71 @@
+{
+  "uuid": "SxMf",
+  "title": "Analyse statistique d'un temps de trajet",
+  "chapter": "Statistique",
+  "subchapter": "Autre",
+  "theme": "statistiques, tableur",
+  "difficulty": null,
+  "author": "Maxime NGUYEN",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2024-11-05",
+  "updated_at": "2025-08-22T13:03:01.216Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Une ingénieure souhaite étudier le temps de trajet quotidien d'un employé entre son domicile et son lieu de travail. Elle dispose de 30 observations de ce temps de trajet en minutes. Elle souhaite réaliser une analyse statistique de ces données disponibles dans le fichier  \\href{https://github.com/smaxx73/Exercices/blob/main/data/commute-data.txt}{ commute-data.txt } .",
+      "html": "<p>Une ingénieure souhaite étudier le temps de trajet quotidien d’un employé entre son domicile et son lieu de travail. Elle dispose de 30 observations de ce temps de trajet en minutes. Elle souhaite réaliser une analyse statistique de ces données disponibles dans le fichier <a href=\"https://github.com/smaxx73/Exercices/blob/main/data/commute-data.txt\"> commute-data.txt </a> .</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Importer les données dans un tableur et calculer la moyenne empirique des temps de trajet du jeu de données. Que représente cette valeur compte tenu du contexte ?",
+      "html": "<p>Importer les données dans un tableur et calculer la moyenne empirique des temps de trajet du jeu de données. Que représente cette valeur compte tenu du contexte ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "En calculant la moyenne sur les 30 valeurs, on obtient une estimation sans biais de la moyenne des temps de trajet. Le calcul donne $43{,}35$.",
+      "html": "<p>En calculant la moyenne sur les 30 valeurs, on obtient une estimation sans biais de la moyenne des temps de trajet. Le calcul donne <span>\\(43{,}35\\)</span>.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Donner une estimation sans biais de la variance du temps de trajet de cet employé. On précisera l'estimateur utilisé.",
+      "html": "<p>Donner une estimation sans biais de la variance du temps de trajet de cet employé. On précisera l’estimateur utilisé.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Avec l'estimateur de variance empirique corrigé $\\frac{1}{29}\\sum_{i=1}^{30}(X_i-\\overline{X})^2$on obtient une variance estimée à environ $23{,}70666$.",
+      "html": "<p>Avec l’estimateur de variance empirique corrigé <span>\\(\\frac{1}{29}\\sum_{i=1}^{30}(X_i-\\overline{X})^2\\)</span>on obtient une variance estimée à environ <span>\\(23{,}70666\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Observe-t-on une différence de temps de trajet entre le vendredi et les autres jours ? Décrire une méthode pour répondre à cette question.",
+      "html": "<p>Observe-t-on une différence de temps de trajet entre le vendredi et les autres jours ? Décrire une méthode pour répondre à cette question.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On peut ne retenir que les valeurs du vendredi obtenues par exemple avec la formule \\texttt{=SI(B2=\"Vendredi\";C2;\"\")} et on trouve numériquement $50{,}4625$. On observe donc une différence dans le temps de trajet.",
+      "html": "<p>On peut ne retenir que les valeurs du vendredi obtenues par exemple avec la formule <code>=SI(B2=\"Vendredi\";C2;\"\")</code> et on trouve numériquement <span>\\(50{,}4625\\)</span>. On observe donc une différence dans le temps de trajet.</p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "8f391db1c67dcabb5280da01543632d80c9aed5c3d139dd56a4c28a885458139"
+}
