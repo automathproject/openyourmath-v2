@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-10-04",
-  "updated_at": "2025-08-22T12:40:27.953Z",
+  "updated_at": "2025-08-23T12:07:38.049Z",
   "content": [
     {
       "id": "block_1",
@@ -35,7 +35,7 @@
     {
       "id": "block_4",
       "type": "reponse",
-      "latex": "D'après le cours, la fonction de vraisemblance associée à cet échantillon est donnée par :\n\t\t$$\\begin{align*}\n\t\t\tL(p) &= \\PP(X_1=3) \\times \\PP(X_2=4) \\times \\PP(X_3=4) \\times \\PP(X_4=2) \\times \\PP(X_5=3) \\\\\n\t\t\t&= p(1-p)^2 \\times p(1-p)^3 \\times p(1-p)^3 \\times p(1-p) \\times p(1-p)^2 \\\\\n\t\t\t&= p^5(1-p)^{11}\n\t\t\\end{align*}$$",
+      "latex": "D'après le cours, la fonction de vraisemblance associée à cet échantillon est donnée par :\n\t\t\\begin{align*}\n\t\t\tL(p) &= \\PP(X_1=3) \\times \\PP(X_2=4) \\times \\PP(X_3=4) \\times \\PP(X_4=2) \\times \\PP(X_5=3) \\\\\n\t\t\t&= p(1-p)^2 \\times p(1-p)^3 \\times p(1-p)^3 \\times p(1-p) \\times p(1-p)^2 \\\\\n\t\t\t&= p^5(1-p)^{11}\n\t\t\\end{align*}",
       "html": "<p>D’après le cours, la fonction de vraisemblance associée à cet échantillon est donnée par :\n<span>\\[\\begin{align*}\n            L(p) &amp;= \\PP(X_1=3) \\times \\PP(X_2=4) \\times \\PP(X_3=4) \\times \\PP(X_4=2) \\times \\PP(X_5=3) \\\\\n            &amp;= p(1-p)^2 \\times p(1-p)^3 \\times p(1-p)^3 \\times p(1-p) \\times p(1-p)^2 \\\\\n            &amp;= p^5(1-p)^{11}\n        \\end{align*}\\]</span></p>",
       "order": 4
     },
@@ -49,7 +49,7 @@
     {
       "id": "block_6",
       "type": "reponse",
-      "latex": "On cherche à maximiser la fonction $L$ sur $]0;1[$. Pour cela, on calcule la dérivée de $L$ :\n\t\t$$\\begin{align*}\n\t\t\tL'(p) &= 5p^4(1-p)^{11} - 11p^5(1-p)^{10} \\\\\n\t\t\t&= p^4(1-p)^{10}(5-11p)\n\t\t\\end{align*}$$\n\t\tLa fonction $L$ est dérivable sur $]0;1[$ et $L'(p)=0$ si et seulement si $p=0$, $p=1$ ou $p=\\frac{5}{11}$. \\\\\n\t\tOr, $L(0)=0$, $L(1)=0$ et $L(\\frac{5}{11})>0$. \\\\\n\t\tDonc, $L$ admet un maximum en $p=\\frac{5}{11}$.  \n\n\t\tEn conclusion, la valeur la plus vraisemblable pour $p$ est $\\frac{5}{11}$. Il s'agit donc d'une estimation du paramètre $p$ par la méthode du maximum de vraisemblance.",
+      "latex": "On cherche à maximiser la fonction $L$ sur $]0;1[$. Pour cela, on calcule la dérivée de $L$ :\n\t\t\\begin{align*}\n\t\t\tL'(p) &= 5p^4(1-p)^{11} - 11p^5(1-p)^{10} \\\\\n\t\t\t&= p^4(1-p)^{10}(5-11p)\n\t\t\\end{align*}\n\t\tLa fonction $L$ est dérivable sur $]0;1[$ et $L'(p)=0$ si et seulement si $p=0$, $p=1$ ou $p=\\frac{5}{11}$. \\\\\n\t\tOr, $L(0)=0$, $L(1)=0$ et $L(\\frac{5}{11})>0$. \\\\\n\t\tDonc, $L$ admet un maximum en $p=\\frac{5}{11}$.  \n\n\t\tEn conclusion, la valeur la plus vraisemblable pour $p$ est $\\frac{5}{11}$. Il s'agit donc d'une estimation du paramètre $p$ par la méthode du maximum de vraisemblance.",
       "html": "<p>On cherche à maximiser la fonction <span>\\(L\\)</span> sur <span>\\(]0;1[\\)</span>. Pour cela, on calcule la dérivée de <span>\\(L\\)</span> :\n<span>\\[\\begin{align*}\n            L&#39;(p) &amp;= 5p^4(1-p)^{11} - 11p^5(1-p)^{10} \\\\\n            &amp;= p^4(1-p)^{10}(5-11p)\n        \\end{align*}\\]</span>\nLa fonction <span>\\(L\\)</span> est dérivable sur <span>\\(]0;1[\\)</span> et <span>\\(L&#39;(p)=0\\)</span> si et seulement si <span>\\(p=0\\)</span>, <span>\\(p=1\\)</span> ou <span>\\(p=\\frac{5}{11}\\)</span>.<br />\nOr, <span>\\(L(0)=0\\)</span>, <span>\\(L(1)=0\\)</span> et <span>\\(L(\\frac{5}{11})&gt;0\\)</span>.<br />\nDonc, <span>\\(L\\)</span> admet un maximum en <span>\\(p=\\frac{5}{11}\\)</span>.</p>\n<p>En conclusion, la valeur la plus vraisemblable pour <span>\\(p\\)</span> est <span>\\(\\frac{5}{11}\\)</span>. Il s’agit donc d’une estimation du paramètre <span>\\(p\\)</span> par la méthode du maximum de vraisemblance.</p>",
       "order": 6
     },
@@ -70,7 +70,7 @@
     {
       "id": "block_9",
       "type": "reponse",
-      "latex": "$$\\begin{align*}\n\t\t\tL(x_1,...,x_n,p) &= \\PP(X_1=x_1) \\times ... \\times \\PP(X_n=x_n) \\\\\n\t\t\t&= p(1-p)^{x_1-1} \\times ... \\times p(1-p)^{x_n-1} \\\\\n\t\t\t&= p^n(1-p)^{x_1+...+x_n-n}\n\t\t\\end{align*}$$",
+      "latex": "\\begin{align*}\n\t\t\tL(x_1,...,x_n,p) &= \\PP(X_1=x_1) \\times ... \\times \\PP(X_n=x_n) \\\\\n\t\t\t&= p(1-p)^{x_1-1} \\times ... \\times p(1-p)^{x_n-1} \\\\\n\t\t\t&= p^n(1-p)^{x_1+...+x_n-n}\n\t\t\\end{align*}",
       "html": "<p><span>\\[\\begin{align*}\n            L(x_1,...,x_n,p) &amp;= \\PP(X_1=x_1) \\times ... \\times \\PP(X_n=x_n) \\\\\n            &amp;= p(1-p)^{x_1-1} \\times ... \\times p(1-p)^{x_n-1} \\\\\n            &amp;= p^n(1-p)^{x_1+...+x_n-n}\n        \\end{align*}\\]</span></p>",
       "order": 9
     },
@@ -84,7 +84,7 @@
     {
       "id": "block_11",
       "type": "reponse",
-      "latex": "On cherche à maximiser la fonction $L$ sur $]0;1[$. Pour cela, on calcule la dérivée partielle de $L$ par rapport à $p$ : \n\t\t$$\\begin{align*}\n\t\t\t\\frac{\\partial L}{\\partial p}(x_1,...,x_n,p) &= np^{n-1}(1-p)^{x_1+...+x_n-n} - p^n(x_1+...+x_n-n)(1-p)^{x_1+...+x_n-n-1} \\\\\n\t\t\t&= p^{n-1}(1-p)^{x_1+...+x_n-n-1}(n-(x_1+...+x_n-n)p)\n\t\t\\end{align*}$$\n\t\tLa fonction $L$ est dérivable sur $]0;1[$ et $\\frac{\\partial L}{\\partial p}(p)=0$ si et seulement si $p=0$, $p=1$ ou $p=\\frac{n}{\\sum\\limits_{i=1}^n x_i}$. \\\\\n\t\tOr, $L(0)=0$, $L(1)=0$ et $L\\left(\\frac{n}{\\sum\\limits_{i=1}^n x_i}\\right)>0$. \\\\\n\t\tDonc, $L$ admet un maximum en $p=\\frac{n}{\\sum\\limits_{i=1}^n x_i}$. \n\n\t\tCeci étant vrai pour toute réalisation $(x_1,...,x_n)$ de l'échantillon, on en déduit que $\\widehat{p}=\\frac{n}{\\sum\\limits_{i=1}^n X_i}$ est un estimateur du paramètre $p$ par la méthode du maximum de vraisemblance.",
+      "latex": "On cherche à maximiser la fonction $L$ sur $]0;1[$. Pour cela, on calcule la dérivée partielle de $L$ par rapport à $p$ : \n\t\t\\begin{align*}\n\t\t\t\\frac{\\partial L}{\\partial p}(x_1,...,x_n,p) &= np^{n-1}(1-p)^{x_1+...+x_n-n} - p^n(x_1+...+x_n-n)(1-p)^{x_1+...+x_n-n-1} \\\\\n\t\t\t&= p^{n-1}(1-p)^{x_1+...+x_n-n-1}(n-(x_1+...+x_n-n)p)\n\t\t\\end{align*}\n\t\tLa fonction $L$ est dérivable sur $]0;1[$ et $\\frac{\\partial L}{\\partial p}(p)=0$ si et seulement si $p=0$, $p=1$ ou $p=\\frac{n}{\\sum\\limits_{i=1}^n x_i}$. \\\\\n\t\tOr, $L(0)=0$, $L(1)=0$ et $L\\left(\\frac{n}{\\sum\\limits_{i=1}^n x_i}\\right)>0$. \\\\\n\t\tDonc, $L$ admet un maximum en $p=\\frac{n}{\\sum\\limits_{i=1}^n x_i}$. \n\n\t\tCeci étant vrai pour toute réalisation $(x_1,...,x_n)$ de l'échantillon, on en déduit que $\\widehat{p}=\\frac{n}{\\sum\\limits_{i=1}^n X_i}$ est un estimateur du paramètre $p$ par la méthode du maximum de vraisemblance.",
       "html": "<p>On cherche à maximiser la fonction <span>\\(L\\)</span> sur <span>\\(]0;1[\\)</span>. Pour cela, on calcule la dérivée partielle de <span>\\(L\\)</span> par rapport à <span>\\(p\\)</span> :\n<span>\\[\\begin{align*}\n            \\frac{\\partial L}{\\partial p}(x_1,...,x_n,p) &amp;= np^{n-1}(1-p)^{x_1+...+x_n-n} - p^n(x_1+...+x_n-n)(1-p)^{x_1+...+x_n-n-1} \\\\\n            &amp;= p^{n-1}(1-p)^{x_1+...+x_n-n-1}(n-(x_1+...+x_n-n)p)\n        \\end{align*}\\]</span>\nLa fonction <span>\\(L\\)</span> est dérivable sur <span>\\(]0;1[\\)</span> et <span>\\(\\frac{\\partial L}{\\partial p}(p)=0\\)</span> si et seulement si <span>\\(p=0\\)</span>, <span>\\(p=1\\)</span> ou <span>\\(p=\\frac{n}{\\sum\\limits_{i=1}^n x_i}\\)</span>.<br />\nOr, <span>\\(L(0)=0\\)</span>, <span>\\(L(1)=0\\)</span> et <span>\\(L\\left(\\frac{n}{\\sum\\limits_{i=1}^n x_i}\\right)&gt;0\\)</span>.<br />\nDonc, <span>\\(L\\)</span> admet un maximum en <span>\\(p=\\frac{n}{\\sum\\limits_{i=1}^n x_i}\\)</span>.</p>\n<p>Ceci étant vrai pour toute réalisation <span>\\((x_1,...,x_n)\\)</span> de l’échantillon, on en déduit que <span>\\(\\widehat{p}=\\frac{n}{\\sum\\limits_{i=1}^n X_i}\\)</span> est un estimateur du paramètre <span>\\(p\\)</span> par la méthode du maximum de vraisemblance.</p>",
       "order": 11
     }

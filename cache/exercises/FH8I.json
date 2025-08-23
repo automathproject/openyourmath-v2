@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2024-10-01",
-  "updated_at": "2025-08-22T12:39:11.130Z",
+  "updated_at": "2025-08-23T12:06:45.122Z",
   "content": [
     {
       "id": "block_1",
@@ -154,7 +154,7 @@
     {
       "id": "block_21",
       "type": "reponse",
-      "latex": "La fonction $f'$ est continue, donc \n\t$$\\begin{equation}\n\t\tf'(l) = \\lim_{n \\rightarrow \\infty} f'(x_n) = \\lim_{n \\rightarrow \\infty} \\frac{x_n-x_{n+1}}{\\gamma} = \\frac{l-l}{\\gamma} = 0.\n\\end{equation}$$",
+      "latex": "La fonction $f'$ est continue, donc \n\t\\begin{equation*}\n\t\tf'(l) = \\lim_{n \\rightarrow \\infty} f'(x_n) = \\lim_{n \\rightarrow \\infty} \\frac{x_n-x_{n+1}}{\\gamma} = \\frac{l-l}{\\gamma} = 0.\n\\end{equation*}",
       "html": "<p>La fonction <span>\\(f&#39;\\)</span> est continue, donc\n<span>\\[\\begin{equation}\n        f&#39;(l) = \\lim_{n \\rightarrow \\infty} f&#39;(x_n) = \\lim_{n \\rightarrow \\infty} \\frac{x_n-x_{n+1}}{\\gamma} = \\frac{l-l}{\\gamma} = 0.\n\\end{equation}\\]</span></p>",
       "order": 21
     }

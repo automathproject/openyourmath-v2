@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-09-27",
-  "updated_at": "2025-08-22T12:39:52.438Z",
+  "updated_at": "2025-08-23T12:07:15.670Z",
   "content": [
     {
       "id": "block_1",
@@ -42,7 +42,7 @@
     {
       "id": "block_5",
       "type": "reponse",
-      "latex": "C'est une simple application de la définition\n\t\t\t$$\\begin{align*}\n\t\t\t\\mathbb{E}[X] &= \\int_{\\R} x\\ f_{\\theta}(x)\\ dx \\\\\n\t\t\t&= \\int_{-1/2}^{0} x(1-\\theta) \\ dx + \\int_{0}^{1/2} x(1+\\theta)\\ dx \\\\\n\t\t\t&= \\left[ (1-\\theta)\\dfrac{x^2}{2}\\right]_{-1/2}^{0} + \\left[ (1+\\theta)\\dfrac{x^2}{2}\\right]_{0}^{1/2} \\\\\n\t\t\t&= \\dfrac{\\theta}{4}\n\t\t\t\\end{align*}$$",
+      "latex": "C'est une simple application de la définition\n\t\t\t\\begin{align*}\n\t\t\t\\mathbb{E}[X] &= \\int_{\\R} x\\ f_{\\theta}(x)\\ dx \\\\\n\t\t\t&= \\int_{-1/2}^{0} x(1-\\theta) \\ dx + \\int_{0}^{1/2} x(1+\\theta)\\ dx \\\\\n\t\t\t&= \\left[ (1-\\theta)\\dfrac{x^2}{2}\\right]_{-1/2}^{0} + \\left[ (1+\\theta)\\dfrac{x^2}{2}\\right]_{0}^{1/2} \\\\\n\t\t\t&= \\dfrac{\\theta}{4}\n\t\t\t\\end{align*}",
       "html": "<p>C’est une simple application de la définition\n<span>\\[\\begin{align*}\n            \\mathbb{E}[X] &amp;= \\int_{\\R} x\\ f_{\\theta}(x)\\ dx \\\\\n            &amp;= \\int_{-1/2}^{0} x(1-\\theta) \\ dx + \\int_{0}^{1/2} x(1+\\theta)\\ dx \\\\\n            &amp;= \\left[ (1-\\theta)\\dfrac{x^2}{2}\\right]_{-1/2}^{0} + \\left[ (1+\\theta)\\dfrac{x^2}{2}\\right]_{0}^{1/2} \\\\\n            &amp;= \\dfrac{\\theta}{4}\n            \\end{align*}\\]</span></p>",
       "order": 5
     },
@@ -91,7 +91,7 @@
     {
       "id": "block_12",
       "type": "reponse",
-      "latex": "$$\\begin{align*}\n\t\t\t\tU_n+V_n&=\\sum_{i=1}^{n} \\left(\\mathbf{1}_{]-\\infty;0]}(X_i)+ \\mathbf{1}_{]0;+\\infty[}(X_i) \\right) \n\t\t\t\t= \\sum_{i=1}^{n} \\mathbf{1}_\\R(X_i) = \\sum_{i=1}^{n} 1=n\n\t\t\t\t\\end{align*}$$",
+      "latex": "\\begin{align*}\n\t\t\t\tU_n+V_n&=\\sum_{i=1}^{n} \\left(\\mathbf{1}_{]-\\infty;0]}(X_i)+ \\mathbf{1}_{]0;+\\infty[}(X_i) \\right) \n\t\t\t\t= \\sum_{i=1}^{n} \\mathbf{1}_\\R(X_i) = \\sum_{i=1}^{n} 1=n\n\t\t\t\t\\end{align*}",
       "html": "<p><span>\\[\\begin{align*}\n                U_n+V_n&amp;=\\sum_{i=1}^{n} \\left(\\mathbf{1}_{]-\\infty;0]}(X_i)+ \\mathbf{1}_{]0;+\\infty[}(X_i) \\right) \n                = \\sum_{i=1}^{n} \\mathbf{1}_\\R(X_i) = \\sum_{i=1}^{n} 1=n\n                \\end{align*}\\]</span></p>",
       "order": 12
     },
@@ -105,7 +105,7 @@
     {
       "id": "block_14",
       "type": "reponse",
-      "latex": "$$\\begin{align*}\n\t\t\t\t\\E \\left( \\frac{V_n-U_n}{n}\\right)\n\t\t\t\t&=  \\E \\left( \\frac{V_n-(n-V_n)}{n}\\right)\n\t\t\t\t= \\frac{2}{n}\\E (V_n)-1\n\t\t\t\t=\\frac{2}{n}\\times n \\times \\frac{1+\\theta}{2}-1\n\t\t\t\t=\\theta\n\t\t\t\t\\end{align*}$$",
+      "latex": "\\begin{align*}\n\t\t\t\t\\E \\left( \\frac{V_n-U_n}{n}\\right)\n\t\t\t\t&=  \\E \\left( \\frac{V_n-(n-V_n)}{n}\\right)\n\t\t\t\t= \\frac{2}{n}\\E (V_n)-1\n\t\t\t\t=\\frac{2}{n}\\times n \\times \\frac{1+\\theta}{2}-1\n\t\t\t\t=\\theta\n\t\t\t\t\\end{align*}",
       "html": "<p><span>\\[\\begin{align*}\n                \\E \\left( \\frac{V_n-U_n}{n}\\right)\n                &amp;=  \\E \\left( \\frac{V_n-(n-V_n)}{n}\\right)\n                = \\frac{2}{n}\\E (V_n)-1\n                =\\frac{2}{n}\\times n \\times \\frac{1+\\theta}{2}-1\n                =\\theta\n                \\end{align*}\\]</span></p>",
       "order": 14
     },
@@ -119,7 +119,7 @@
     {
       "id": "block_16",
       "type": "reponse",
-      "latex": "$$\\begin{align*}\n\t\t\t\t\\mathbb{E}(U_nV_n) =\\mathbb{E}((n-V_n)V_n)=n\\mathbb{E}(V_n)-\\mathbb{E}(V_n^2)\n\t\t\t\t\\end{align*}$$\n\t\t\t\tor $V_n \\sim \\mathcal{B}\\left( n,\\frac{1+\\theta}{2}\\right)$ donc \n\t\t\t\t\\begin{itemize}\n\t\t\t\t\t\\item $\\mathbb{E}(V_n)=n\\times \\frac{1+\\theta}{2}$\n\t\t\t\t\t\\item ${\\mathrm{V}}(V_n)=n\\times \\frac{1+\\theta}{2}\\times \\left(1-\\frac{1+\\theta}{2}\\right)=\\frac{n}{4}(1-\\theta^2)$, or ${\\mathrm{V}}(V_n)=\\mathbb{E}(V_n^2)-\\mathbb{E}(V_n)^2$ donc\n\t\t\t\t\t\\[\\mathbb{E}(V_n^2)=\\frac{n}{4}(1-\\theta^2) + \\frac{n^2}{4} (1+\\theta)^2\\]\n\t\t\t\t\\end{itemize}\n\t\t\t\td'où\n\t\t\t\t$$\\begin{align*}\n\t\t\t\t\\mathbb{E}(U_nV_n)& =\\frac{n^2}{2}(1+\\theta) -\\left( \\frac{n}{4}(1-\\theta^2) + \\frac{n^2}{4} (1+\\theta)^2\\right) \\\\\n\t\t\t\t&=\\frac{n^2}{4}(1+\\theta)(2-(1+\\theta)) - \\frac{n}{4}(1-\\theta^2) \\\\\n\t\t\t\t&=\\frac{n^2}{4}(1-\\theta^2) - \\frac{n}{4}(1-\\theta^2) \\\\\n\t\t\t\t&=(n^2-n)\\frac{1-\\theta^2}{4}\n\t\t\t\t\\end{align*}$$\n\t\t\t\tOn en déduit la covariance:\n\t\t\t\t$$\\begin{align*}\n\t\t\t\t\\textrm{cov}(U_n, V_n)\n\t\t\t\t&= \\mathbb{E}(U_nV_n)-\\mathbb{E}(U_n)\\mathbb{E}(V_n) \\\\\n\t\t\t\t&= \\frac{n^2-n}{4}(1-\\theta^2)-\\mathbb{E}(n-V_n)\\mathbb{E}(V_n) \\\\\n\t\t\t\t&= \\frac{n^2-n}{4}(1-\\theta^2)-\\left(n-\\frac{n}{2}(1+\\theta)\\right)\\frac{n}{2}(1+\\theta) \\\\\n\t\t\t\t&= \\frac{n^2-n}{4}(1-\\theta^2) - \\frac{n^2}{4}(1-\\theta^2) \\\\\n\t\t\t\t&= \\frac{-n}{4}(1-\\theta^2)\n\t\t\t\t\\end{align*}$$",
+      "latex": "\\begin{align*}\n\t\t\t\t\\mathbb{E}(U_nV_n) =\\mathbb{E}((n-V_n)V_n)=n\\mathbb{E}(V_n)-\\mathbb{E}(V_n^2)\n\t\t\t\t\\end{align*}\n\t\t\t\tor $V_n \\sim \\mathcal{B}\\left( n,\\frac{1+\\theta}{2}\\right)$ donc \n\t\t\t\t\\begin{itemize}\n\t\t\t\t\t\\item $\\mathbb{E}(V_n)=n\\times \\frac{1+\\theta}{2}$\n\t\t\t\t\t\\item ${\\mathrm{V}}(V_n)=n\\times \\frac{1+\\theta}{2}\\times \\left(1-\\frac{1+\\theta}{2}\\right)=\\frac{n}{4}(1-\\theta^2)$, or ${\\mathrm{V}}(V_n)=\\mathbb{E}(V_n^2)-\\mathbb{E}(V_n)^2$ donc\n\t\t\t\t\t\\[\\mathbb{E}(V_n^2)=\\frac{n}{4}(1-\\theta^2) + \\frac{n^2}{4} (1+\\theta)^2\\]\n\t\t\t\t\\end{itemize}\n\t\t\t\td'où\n\t\t\t\t\\begin{align*}\n\t\t\t\t\\mathbb{E}(U_nV_n)& =\\frac{n^2}{2}(1+\\theta) -\\left( \\frac{n}{4}(1-\\theta^2) + \\frac{n^2}{4} (1+\\theta)^2\\right) \\\\\n\t\t\t\t&=\\frac{n^2}{4}(1+\\theta)(2-(1+\\theta)) - \\frac{n}{4}(1-\\theta^2) \\\\\n\t\t\t\t&=\\frac{n^2}{4}(1-\\theta^2) - \\frac{n}{4}(1-\\theta^2) \\\\\n\t\t\t\t&=(n^2-n)\\frac{1-\\theta^2}{4}\n\t\t\t\t\\end{align*}\n\t\t\t\tOn en déduit la covariance:\n\t\t\t\t\\begin{align*}\n\t\t\t\t\\textrm{cov}(U_n, V_n)\n\t\t\t\t&= \\mathbb{E}(U_nV_n)-\\mathbb{E}(U_n)\\mathbb{E}(V_n) \\\\\n\t\t\t\t&= \\frac{n^2-n}{4}(1-\\theta^2)-\\mathbb{E}(n-V_n)\\mathbb{E}(V_n) \\\\\n\t\t\t\t&= \\frac{n^2-n}{4}(1-\\theta^2)-\\left(n-\\frac{n}{2}(1+\\theta)\\right)\\frac{n}{2}(1+\\theta) \\\\\n\t\t\t\t&= \\frac{n^2-n}{4}(1-\\theta^2) - \\frac{n^2}{4}(1-\\theta^2) \\\\\n\t\t\t\t&= \\frac{-n}{4}(1-\\theta^2)\n\t\t\t\t\\end{align*}",
       "html": "<p><span>\\[\\begin{align*}\n                \\mathbb{E}(U_nV_n) =\\mathbb{E}((n-V_n)V_n)=n\\mathbb{E}(V_n)-\\mathbb{E}(V_n^2)\n                \\end{align*}\\]</span>\nor <span>\\(V_n \\sim \\mathcal{B}\\left( n,\\frac{1+\\theta}{2}\\right)\\)</span> donc</p>\n<ul>\n<li><p><span>\\(\\mathbb{E}(V_n)=n\\times \\frac{1+\\theta}{2}\\)</span></p></li>\n<li><p><span>\\({\\mathrm{V}}(V_n)=n\\times \\frac{1+\\theta}{2}\\times \\left(1-\\frac{1+\\theta}{2}\\right)=\\frac{n}{4}(1-\\theta^2)\\)</span>, or <span>\\({\\mathrm{V}}(V_n)=\\mathbb{E}(V_n^2)-\\mathbb{E}(V_n)^2\\)</span> donc\n<span>\\[\\mathbb{E}(V_n^2)=\\frac{n}{4}(1-\\theta^2) + \\frac{n^2}{4} (1+\\theta)^2\\]</span></p></li>\n</ul>\n<p>d’où\n<span>\\[\\begin{align*}\n                \\mathbb{E}(U_nV_n)&amp; =\\frac{n^2}{2}(1+\\theta) -\\left( \\frac{n}{4}(1-\\theta^2) + \\frac{n^2}{4} (1+\\theta)^2\\right) \\\\\n                &amp;=\\frac{n^2}{4}(1+\\theta)(2-(1+\\theta)) - \\frac{n}{4}(1-\\theta^2) \\\\\n                &amp;=\\frac{n^2}{4}(1-\\theta^2) - \\frac{n}{4}(1-\\theta^2) \\\\\n                &amp;=(n^2-n)\\frac{1-\\theta^2}{4}\n                \\end{align*}\\]</span>\nOn en déduit la covariance:\n<span>\\[\\begin{align*}\n                \\textrm{cov}(U_n, V_n)\n                &amp;= \\mathbb{E}(U_nV_n)-\\mathbb{E}(U_n)\\mathbb{E}(V_n) \\\\\n                &amp;= \\frac{n^2-n}{4}(1-\\theta^2)-\\mathbb{E}(n-V_n)\\mathbb{E}(V_n) \\\\\n                &amp;= \\frac{n^2-n}{4}(1-\\theta^2)-\\left(n-\\frac{n}{2}(1+\\theta)\\right)\\frac{n}{2}(1+\\theta) \\\\\n                &amp;= \\frac{n^2-n}{4}(1-\\theta^2) - \\frac{n^2}{4}(1-\\theta^2) \\\\\n                &amp;= \\frac{-n}{4}(1-\\theta^2)\n                \\end{align*}\\]</span></p>",
       "order": 16
     },
@@ -133,7 +133,7 @@
     {
       "id": "block_18",
       "type": "reponse",
-      "latex": "$$\\begin{align*}\n\t\t\t\t{\\mathrm{V}}\\left(\\dfrac{V_n-U_n}{n}\\right)\n\t\t\t\t&= \\frac{1}{n^2}\\left( {\\mathrm{V}}(U_n)+{\\mathrm{V}}(V_n)-2\\textrm{cov}(U_n, V_n) \\right) \\\\\n\t\t\t\t&= \\frac{1}{n^2}\\left(2{\\mathrm{V}}(V_n)-2\\textrm{cov}(U_n, V_n) \\right) \\qquad \\text{ car } \\quad {\\mathrm{V}}(U_n)={\\mathrm{V}}(n-V_n)={\\mathrm{V}}(V_n) \\\\\n\t\t\t\t&= \\frac{1}{n^2} \\left(\\frac{n}{2}(1-\\theta^2)+\\frac{n}{2}(1-\\theta^2) \\right) \\\\\n\t\t\t\t&=\\frac{1-\\theta^2}{n} \\underset{n\\to +\\infty}\\longrightarrow 0.\n\t\t\t\t\\end{align*}$$",
+      "latex": "\\begin{align*}\n\t\t\t\t{\\mathrm{V}}\\left(\\dfrac{V_n-U_n}{n}\\right)\n\t\t\t\t&= \\frac{1}{n^2}\\left( {\\mathrm{V}}(U_n)+{\\mathrm{V}}(V_n)-2\\textrm{cov}(U_n, V_n) \\right) \\\\\n\t\t\t\t&= \\frac{1}{n^2}\\left(2{\\mathrm{V}}(V_n)-2\\textrm{cov}(U_n, V_n) \\right) \\qquad \\text{ car } \\quad {\\mathrm{V}}(U_n)={\\mathrm{V}}(n-V_n)={\\mathrm{V}}(V_n) \\\\\n\t\t\t\t&= \\frac{1}{n^2} \\left(\\frac{n}{2}(1-\\theta^2)+\\frac{n}{2}(1-\\theta^2) \\right) \\\\\n\t\t\t\t&=\\frac{1-\\theta^2}{n} \\underset{n\\to +\\infty}\\longrightarrow 0.\n\t\t\t\t\\end{align*}",
       "html": "<p><span>\\[\\begin{align*}\n                {\\mathrm{V}}\\left(\\dfrac{V_n-U_n}{n}\\right)\n                &amp;= \\frac{1}{n^2}\\left( {\\mathrm{V}}(U_n)+{\\mathrm{V}}(V_n)-2\\textrm{cov}(U_n, V_n) \\right) \\\\\n                &amp;= \\frac{1}{n^2}\\left(2{\\mathrm{V}}(V_n)-2\\textrm{cov}(U_n, V_n) \\right) \\qquad \\text{ car } \\quad {\\mathrm{V}}(U_n)={\\mathrm{V}}(n-V_n)={\\mathrm{V}}(V_n) \\\\\n                &amp;= \\frac{1}{n^2} \\left(\\frac{n}{2}(1-\\theta^2)+\\frac{n}{2}(1-\\theta^2) \\right) \\\\\n                &amp;=\\frac{1-\\theta^2}{n} \\underset{n\\to +\\infty}\\longrightarrow 0.\n                \\end{align*}\\]</span></p>",
       "order": 18
     }

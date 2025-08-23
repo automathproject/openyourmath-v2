@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "",
-  "updated_at": "2025-08-22T12:40:25.163Z",
+  "updated_at": "2025-08-23T12:07:35.319Z",
   "content": [
     {
       "id": "block_1",
@@ -35,7 +35,7 @@
     {
       "id": "block_4",
       "type": "reponse",
-      "latex": "En notant $Z$ une variable aléatoire normale centrée réduite, on en déduit que \n\t\t$$\\begin{align*}\n\t\t\t\\PP\\left(X > 7300\\right) &= \\PP\\left(\\frac{X-7100}{70} > \\frac{7300-7100}{70}\\right) \\\\\n\t\t\t&\\approx  \\PP\\left(Z > \\frac{200}{70} \\approx 2{,}857\\right) \\\\\n\t\t\t&\\approx 0{,}0021 = 0{,}21\\%\n\t\t\\end{align*}$$\n\t\tIl n'y a quasiment aucune chance que le poids total des passagers dépasse $7{}3$ tonnes.",
+      "latex": "En notant $Z$ une variable aléatoire normale centrée réduite, on en déduit que \n\t\t\\begin{align*}\n\t\t\t\\PP\\left(X > 7300\\right) &= \\PP\\left(\\frac{X-7100}{70} > \\frac{7300-7100}{70}\\right) \\\\\n\t\t\t&\\approx  \\PP\\left(Z > \\frac{200}{70} \\approx 2{,}857\\right) \\\\\n\t\t\t&\\approx 0{,}0021 = 0{,}21\\%\n\t\t\\end{align*}\n\t\tIl n'y a quasiment aucune chance que le poids total des passagers dépasse $7{}3$ tonnes.",
       "html": "<p>En notant <span>\\(Z\\)</span> une variable aléatoire normale centrée réduite, on en déduit que\n<span>\\[\\begin{align*}\n            \\PP\\left(X &gt; 7300\\right) &amp;= \\PP\\left(\\frac{X-7100}{70} &gt; \\frac{7300-7100}{70}\\right) \\\\\n            &amp;\\approx  \\PP\\left(Z &gt; \\frac{200}{70} \\approx 2{,}857\\right) \\\\\n            &amp;\\approx 0{,}0021 = 0{,}21\\%\n        \\end{align*}\\]</span>\nIl n’y a quasiment aucune chance que le poids total des passagers dépasse <span>\\(7{}3\\)</span> tonnes.</p>",
       "order": 4
     },

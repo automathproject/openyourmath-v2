@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-20",
-  "updated_at": "2025-08-22T12:40:23.262Z",
+  "updated_at": "2025-08-23T12:07:33.531Z",
   "content": [
     {
       "id": "block_1",
@@ -84,7 +84,7 @@
     {
       "id": "block_11",
       "type": "reponse",
-      "latex": "Si l'équation est autonome, $f$ ne dépend pas de $t$ et $F$ non plus, ce qui permet de réécrire \n\t\t\t$$F(t,y,h) = F(y,h) = f(y)+\\frac{h}{2}f(y)f'(y)$$\n\t\t\tPour montrer que la méthode est stable, il suffit de montrer que $F$ est lipschitzienne en $y$ uniformément en $h$ :\n\t\t\t\n\t\t\t$$\\begin{align*}\n\t\t\t\t|F(y,h)-F(z,h)| &\\leq |f(y)-f(z)|+\\frac{h}{2}|f(y)f'(y)-f(z)f'(z)| \\\\\n\t\t\t\t&\\leq |f(y)-f(z)|+\\frac{h}{2}\\left( |f(y)|\\cdot|f'(y)-f'(z)|+|f'(z)|\\cdot|f(y)-f(z)|  \\right)\\\\\n\t\t\t\t&\\leq (L+TLM)|y-z|\n\t\t\t\\end{align*}$$\n\t\t\tLa méthode est donc stable et consistante, elle est donc convergente.",
+      "latex": "Si l'équation est autonome, $f$ ne dépend pas de $t$ et $F$ non plus, ce qui permet de réécrire \n\t\t\t$$F(t,y,h) = F(y,h) = f(y)+\\frac{h}{2}f(y)f'(y)$$\n\t\t\tPour montrer que la méthode est stable, il suffit de montrer que $F$ est lipschitzienne en $y$ uniformément en $h$ :\n\t\t\t\n\t\t\t\\begin{align*}\n\t\t\t\t|F(y,h)-F(z,h)| &\\leq |f(y)-f(z)|+\\frac{h}{2}|f(y)f'(y)-f(z)f'(z)| \\\\\n\t\t\t\t&\\leq |f(y)-f(z)|+\\frac{h}{2}\\left( |f(y)|\\cdot|f'(y)-f'(z)|+|f'(z)|\\cdot|f(y)-f(z)|  \\right)\\\\\n\t\t\t\t&\\leq (L+TLM)|y-z|\n\t\t\t\\end{align*}\n\t\t\tLa méthode est donc stable et consistante, elle est donc convergente.",
       "html": "<p>Si l’équation est autonome, <span>\\(f\\)</span> ne dépend pas de <span>\\(t\\)</span> et <span>\\(F\\)</span> non plus, ce qui permet de réécrire\n<span>\\[F(t,y,h) = F(y,h) = f(y)+\\frac{h}{2}f(y)f&#39;(y)\\]</span>\nPour montrer que la méthode est stable, il suffit de montrer que <span>\\(F\\)</span> est lipschitzienne en <span>\\(y\\)</span> uniformément en <span>\\(h\\)</span> :</p>\n<p><span>\\[\\begin{align*}\n                |F(y,h)-F(z,h)| &amp;\\leq |f(y)-f(z)|+\\frac{h}{2}|f(y)f&#39;(y)-f(z)f&#39;(z)| \\\\\n                &amp;\\leq |f(y)-f(z)|+\\frac{h}{2}\\left( |f(y)|\\cdot|f&#39;(y)-f&#39;(z)|+|f&#39;(z)|\\cdot|f(y)-f(z)|  \\right)\\\\\n                &amp;\\leq (L+TLM)|y-z|\n            \\end{align*}\\]</span>\nLa méthode est donc stable et consistante, elle est donc convergente.</p>",
       "order": 11
     },

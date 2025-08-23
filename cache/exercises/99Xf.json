@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-09-27",
-  "updated_at": "2025-08-22T12:38:52.884Z",
+  "updated_at": "2025-08-23T12:06:35.559Z",
   "content": [
     {
       "id": "block_1",
@@ -42,7 +42,7 @@
     {
       "id": "block_5",
       "type": "reponse",
-      "latex": "Comme $Y=X+U$, on a\n\t\t      \t$$\\begin{align*}\n\t\t      \t\\p(Y>n)&=\\p(Y>n,X>n) + \\p(Y>n,X=n) + \\p(Y>n,X<n) \\text{ d'après le th. des proba. totales } \\\\\n\t\t      \t&= \\p(X>n)+\\p(X=n,U=1) + 0 \\\\\n\t\t      \t&= \\p(X>n)+\\p(X=n)\\ \\p(U=1) \\text{ par indépendance de $X$ et $U$ }\\\\\n\t\t      \t&= \\p(X>n)+p\\ \\p(X=n).\n\t\t      \t\\end{align*}$$",
+      "latex": "Comme $Y=X+U$, on a\n\t\t      \t\\begin{align*}\n\t\t      \t\\p(Y>n)&=\\p(Y>n,X>n) + \\p(Y>n,X=n) + \\p(Y>n,X<n) \\text{ d'après le th. des proba. totales } \\\\\n\t\t      \t&= \\p(X>n)+\\p(X=n,U=1) + 0 \\\\\n\t\t      \t&= \\p(X>n)+\\p(X=n)\\ \\p(U=1) \\text{ par indépendance de $X$ et $U$ }\\\\\n\t\t      \t&= \\p(X>n)+p\\ \\p(X=n).\n\t\t      \t\\end{align*}",
       "html": "<p>Comme <span>\\(Y=X+U\\)</span>, on a\n<span>\\[\\begin{align*}\n                \\p(Y&gt;n)&amp;=\\p(Y&gt;n,X&gt;n) + \\p(Y&gt;n,X=n) + \\p(Y&gt;n,X&lt;n) \\text{ d&#39;après le th. des proba. totales } \\\\\n                &amp;= \\p(X&gt;n)+\\p(X=n,U=1) + 0 \\\\\n                &amp;= \\p(X&gt;n)+\\p(X=n)\\ \\p(U=1) \\text{ par indépendance de $X$ et $U$ }\\\\\n                &amp;= \\p(X&gt;n)+p\\ \\p(X=n).\n                \\end{align*}\\]</span></p>",
       "order": 5
     },
@@ -56,7 +56,7 @@
     {
       "id": "block_7",
       "type": "reponse",
-      "latex": "On a:\n\t\t      \t$$\\begin{align*}\n\t\t      \tp_1-p_2&=\\p(X\\geq n)-\\left[\\p(Y>n)+\\frac{1}{2}\\ \\p(Y=n)\\right] \\\\\n\t\t      \t\n\t\t      \t&= \\p(X=n)+\\p(X>n)-\\p(X>n)-p\\ \\p(X=n)-\\frac{1}{2}\\ \\p(Y=n) \\\\\n\t\t      \t&= (1-p)\\ \\p(X=n)-\\frac{1}{2}\\ \\p(Y=n).\n\t\t      \t\\end{align*}$$",
+      "latex": "On a:\n\t\t      \t\\begin{align*}\n\t\t      \tp_1-p_2&=\\p(X\\geq n)-\\left[\\p(Y>n)+\\frac{1}{2}\\ \\p(Y=n)\\right] \\\\\n\t\t      \t\n\t\t      \t&= \\p(X=n)+\\p(X>n)-\\p(X>n)-p\\ \\p(X=n)-\\frac{1}{2}\\ \\p(Y=n) \\\\\n\t\t      \t&= (1-p)\\ \\p(X=n)-\\frac{1}{2}\\ \\p(Y=n).\n\t\t      \t\\end{align*}",
       "html": "<p>On a:\n<span>\\[\\begin{align*}\n                p_1-p_2&amp;=\\p(X\\geq n)-\\left[\\p(Y&gt;n)+\\frac{1}{2}\\ \\p(Y=n)\\right] \\\\\n                \n                &amp;= \\p(X=n)+\\p(X&gt;n)-\\p(X&gt;n)-p\\ \\p(X=n)-\\frac{1}{2}\\ \\p(Y=n) \\\\\n                &amp;= (1-p)\\ \\p(X=n)-\\frac{1}{2}\\ \\p(Y=n).\n                \\end{align*}\\]</span></p>",
       "order": 7
     },
@@ -70,7 +70,7 @@
     {
       "id": "block_9",
       "type": "reponse",
-      "latex": "Étudions le signe de $p_1-p_2$. Comme $X \\sim \\mathcal{B}(2n-1,p)$ et $Y \\sim \\mathcal{B}(2n,p)$, on a\n\t\t      \t$$\\begin{align*}\n\t\t      \tp_1-p_2&=(1-p) \\binom{2n-1}{n} p^n (1-p)^{2n-1-n} -\\frac{1}{2} \\binom{n}{2n} p^n (1-p)^{2n-n} \\\\\n\t\t      \t&= \\frac{(2n-1)!}{n!\\times (n-1)!}p^n(1-p)^n -\\frac{1}{2}\\times\\frac{(2n)!}{ n! \\times n!}p^n(1-p)^n \\\\\n\t\t      \t&= \\frac{(2n)!}{(n!)^2}\\left( \\frac{n}{2n}- \\frac{1}{2} \\right) p^n (1-p)^n \\\\\n\t\t      \t&= 0\n\t\t      \t\\end{align*}$$\n\t\t      \tOn en conclut qu'aucun des deux jeux n'est préférable à l'autre.",
+      "latex": "Étudions le signe de $p_1-p_2$. Comme $X \\sim \\mathcal{B}(2n-1,p)$ et $Y \\sim \\mathcal{B}(2n,p)$, on a\n\t\t      \t\\begin{align*}\n\t\t      \tp_1-p_2&=(1-p) \\binom{2n-1}{n} p^n (1-p)^{2n-1-n} -\\frac{1}{2} \\binom{n}{2n} p^n (1-p)^{2n-n} \\\\\n\t\t      \t&= \\frac{(2n-1)!}{n!\\times (n-1)!}p^n(1-p)^n -\\frac{1}{2}\\times\\frac{(2n)!}{ n! \\times n!}p^n(1-p)^n \\\\\n\t\t      \t&= \\frac{(2n)!}{(n!)^2}\\left( \\frac{n}{2n}- \\frac{1}{2} \\right) p^n (1-p)^n \\\\\n\t\t      \t&= 0\n\t\t      \t\\end{align*}\n\t\t      \tOn en conclut qu'aucun des deux jeux n'est préférable à l'autre.",
       "html": "<p>Étudions le signe de <span>\\(p_1-p_2\\)</span>. Comme <span>\\(X \\sim \\mathcal{B}(2n-1,p)\\)</span> et <span>\\(Y \\sim \\mathcal{B}(2n,p)\\)</span>, on a\n<span>\\[\\begin{align*}\n                p_1-p_2&amp;=(1-p) \\binom{2n-1}{n} p^n (1-p)^{2n-1-n} -\\frac{1}{2} \\binom{n}{2n} p^n (1-p)^{2n-n} \\\\\n                &amp;= \\frac{(2n-1)!}{n!\\times (n-1)!}p^n(1-p)^n -\\frac{1}{2}\\times\\frac{(2n)!}{ n! \\times n!}p^n(1-p)^n \\\\\n                &amp;= \\frac{(2n)!}{(n!)^2}\\left( \\frac{n}{2n}- \\frac{1}{2} \\right) p^n (1-p)^n \\\\\n                &amp;= 0\n                \\end{align*}\\]</span>\nOn en conclut qu’aucun des deux jeux n’est préférable à l’autre.</p>",
       "order": 9
     }

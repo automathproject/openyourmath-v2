@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-08-25",
-  "updated_at": "2025-08-22T12:38:32.960Z",
+  "updated_at": "2025-08-23T12:06:24.725Z",
   "content": [
     {
       "id": "block_1",
@@ -28,7 +28,7 @@
     {
       "id": "block_3",
       "type": "reponse",
-      "latex": "Soit $X$ le nombre d'étudiants souhaitant un plat de risotto. D'après les données de l'énoncé, $X$ suit une loi binomiale $\\mathcal{B}(600,0.4)$. \n\nOn cherche donc un entier $n$ tel que $\\PP(X \\geq n) \\leq 0.1$. Pour ce faire, on approche la loi de $X$ par une loi normale. L'effectif $n$ est supérieur à $30$ donc d'après le théorème central limite, $X$ suit approximativement une loi normale de paramètres $\\mu=600 \\times 0.4 = 240$ et de variance $\\sigma^2 = 600 \\times 0.4 \\times 0.6 = 144 = 12^2$. \n\nAinsi, \n$$\\begin{align*}\n\\PP(X \\geq n) \\leq 0.1 &\\iff \\PP\\left(\\frac{X-240}{12} \\geq \\frac{n-240}{12}\\right)  \\leq 0.1 \\\\\n&\\iff \\PP\\left(\\frac{X-240}{12} \\leq \\frac{n-240}{12}\\right)  \\geq 0.9\n&\\iff \\frac{n-240}{12} \\geq 1.28 \\\\\n&\\iff n \\geq 12 \\times 1.28 + 240 = 255.36 \\\\\n&\\iff n \\geq 256\n\\end{align*}$$\n\nIl faut donc prévoir au moins 256 plats de risotto pour que le risque qu'il en manque soit inférieur à 10\\%.",
+      "latex": "Soit $X$ le nombre d'étudiants souhaitant un plat de risotto. D'après les données de l'énoncé, $X$ suit une loi binomiale $\\mathcal{B}(600,0.4)$. \n\nOn cherche donc un entier $n$ tel que $\\PP(X \\geq n) \\leq 0.1$. Pour ce faire, on approche la loi de $X$ par une loi normale. L'effectif $n$ est supérieur à $30$ donc d'après le théorème central limite, $X$ suit approximativement une loi normale de paramètres $\\mu=600 \\times 0.4 = 240$ et de variance $\\sigma^2 = 600 \\times 0.4 \\times 0.6 = 144 = 12^2$. \n\nAinsi, \n\\begin{align*}\n\\PP(X \\geq n) \\leq 0.1 &\\iff \\PP\\left(\\frac{X-240}{12} \\geq \\frac{n-240}{12}\\right)  \\leq 0.1 \\\\\n&\\iff \\PP\\left(\\frac{X-240}{12} \\leq \\frac{n-240}{12}\\right)  \\geq 0.9\n&\\iff \\frac{n-240}{12} \\geq 1.28 \\\\\n&\\iff n \\geq 12 \\times 1.28 + 240 = 255.36 \\\\\n&\\iff n \\geq 256\n\\end{align*}\n\nIl faut donc prévoir au moins 256 plats de risotto pour que le risque qu'il en manque soit inférieur à 10\\%.",
       "html": "<p>Soit <span>\\(X\\)</span> le nombre d’étudiants souhaitant un plat de risotto. D’après les données de l’énoncé, <span>\\(X\\)</span> suit une loi binomiale <span>\\(\\mathcal{B}(600,0.4)\\)</span>.</p>\n<p>On cherche donc un entier <span>\\(n\\)</span> tel que <span>\\(\\PP(X \\geq n) \\leq 0.1\\)</span>. Pour ce faire, on approche la loi de <span>\\(X\\)</span> par une loi normale. L’effectif <span>\\(n\\)</span> est supérieur à <span>\\(30\\)</span> donc d’après le théorème central limite, <span>\\(X\\)</span> suit approximativement une loi normale de paramètres <span>\\(\\mu=600 \\times 0.4 = 240\\)</span> et de variance <span>\\(\\sigma^2 = 600 \\times 0.4 \\times 0.6 = 144 = 12^2\\)</span>.</p>\n<p>Ainsi,\n<span>\\[\\begin{align*}\n\\PP(X \\geq n) \\leq 0.1 &amp;\\iff \\PP\\left(\\frac{X-240}{12} \\geq \\frac{n-240}{12}\\right)  \\leq 0.1 \\\\\n&amp;\\iff \\PP\\left(\\frac{X-240}{12} \\leq \\frac{n-240}{12}\\right)  \\geq 0.9\n&amp;\\iff \\frac{n-240}{12} \\geq 1.28 \\\\\n&amp;\\iff n \\geq 12 \\times 1.28 + 240 = 255.36 \\\\\n&amp;\\iff n \\geq 256\n\\end{align*}\\]</span></p>\n<p>Il faut donc prévoir au moins 256 plats de risotto pour que le risque qu’il en manque soit inférieur à 10%.</p>",
       "order": 3
     }

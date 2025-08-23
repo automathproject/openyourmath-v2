@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-20",
-  "updated_at": "2025-08-22T12:39:14.296Z",
+  "updated_at": "2025-08-23T12:06:48.323Z",
   "content": [
     {
       "id": "block_1",
@@ -28,8 +28,8 @@
     {
       "id": "block_3",
       "type": "reponse",
-      "latex": "Le domaine de définition est l’ensemble des couples $(x,y)$ tels que $x\\geq0$, $y\\geq0$ et $x+y\\leq3000$. Géométriquement, il s’agit d’un triangle du plan dont les sommets sont $(0,0)$, $(3000,0)$ et $(0,3000)$.\n\t\t\n\t\t\\begin{center}\n\t\t\t__TIKZ_tikz_d8Ru__\n\t\t\\end{center}",
-      "html": "<p>Le domaine de définition est l’ensemble des couples $(x,y)$ tels que $x\\geq0$, $y\\geq0$ et $x+y\\leq3000$. Géométriquement, il s’agit d’un triangle du plan dont les sommets sont $(0,0)$, $(3000,0)$ et $(0,3000)$.\n\t\t\n\t\t\\begin{center}\n\t\t\t<svg viewBox=\"0 0 400 200\" class=\"tikz-error\" style=\"border: 2px dashed #dc3545; background: #f8d7da;\">\n    <rect width=\"400\" height=\"200\" fill=\"#f8d7da\" stroke=\"#dc3545\" stroke-width=\"2\" stroke-dasharray=\"5,5\"/>\n    <text x=\"200\" y=\"30\" text-anchor=\"middle\" font-family=\"monospace\" font-size=\"14\" fill=\"#721c24\">\n      TikZ Conversion Error\n    </text>\n    <text x=\"10\" y=\"60\" font-family=\"monospace\" font-size=\"10\" fill=\"#721c24\">\n      Error: LaTeX compilation failed:\nCompilation failed. Last lines:\n\\everyMPtoPDFconversion=\\toks44\n) (/usr/lo...\n    </text>\n    <text x=\"10\" y=\"90\" font-family=\"monospace\" font-size=\"9\" fill=\"#6c757d\">\n      Content:\n    </text>\n    <text x=\"10\" y=\"110\" font-family=\"monospace\" font-size=\"8\" fill=\"#6c757d\">\n      \\draw[thick,->] (-100,0) -- (3100,0) node[below right] {$x$ (kg)};\n\t\t\t\t\\draw[thick,->] (0,-100) -- (0,3100) node[above left] {$y$ (kg)};\n\t\t\t\t\\draw[ult...\n    </text>\n  </svg>\n\t\t\\end{center}</p>",
+      "latex": "Le domaine de définition est l’ensemble des couples $(x,y)$ tels que $x\\geq0$, $y\\geq0$ et $x+y\\leq3000$. Géométriquement, il s’agit d’un triangle du plan dont les sommets sont $(0,0)$, $(3000,0)$ et $(0,3000)$.\n\t\t\n\t\t\\begin{center}\n\t\t\t\\begin{tikzpicture}[scale=0.0018]\n\t\t\t\t\\draw[thick,->] (-100,0) -- (3100,0) node[below right] {$x$ (kg)};\n\t\t\t\t\\draw[thick,->] (0,-100) -- (0,3100) node[above left] {$y$ (kg)};\n\t\t\t\t\\draw[ultra thick, color=blue, fill=blue!30, opacity=0.4] (0,0) -- (3000,0) -- (0,3000) -- cycle;\n\t\t\t\t\\node at (800,800) {$\\mathcal{D}_c$};\n\t\t\t\t\\draw (3000,0) node[below] {$3000$};\n\t\t\t\t\\draw (0,3000) node[left] {$3000$};\n\t\t\t\\end{tikzpicture}\n\t\t\\end{center}",
+      "html": "<p>Le domaine de définition est l’ensemble des couples <span>\\((x,y)\\)</span> tels que <span>\\(x\\geq0\\)</span>, <span>\\(y\\geq0\\)</span> et <span>\\(x+y\\leq3000\\)</span>. Géométriquement, il s’agit d’un triangle du plan dont les sommets sont <span>\\((0,0)\\)</span>, <span>\\((3000,0)\\)</span> et <span>\\((0,3000)\\)</span>.</p>\n<p><img src=\"/artifacts/tikz/H0fC-tikz-0.svg\" alt=\"Diagramme TikZ 0\" class=\"tikz-svg-image\"></p>",
       "order": 3
     },
     {
@@ -78,9 +78,10 @@
   "artifacts": {
     "tikz": [
       {
-        "id": "tikz_d8Ru",
+        "id": "tikz_0",
         "type": "tikz",
-        "svg": "<svg viewBox=\"0 0 400 200\" class=\"tikz-error\" style=\"border: 2px dashed #dc3545; background: #f8d7da;\">\n    <rect width=\"400\" height=\"200\" fill=\"#f8d7da\" stroke=\"#dc3545\" stroke-width=\"2\" stroke-dasharray=\"5,5\"/>\n    <text x=\"200\" y=\"30\" text-anchor=\"middle\" font-family=\"monospace\" font-size=\"14\" fill=\"#721c24\">\n      TikZ Conversion Error\n    </text>\n    <text x=\"10\" y=\"60\" font-family=\"monospace\" font-size=\"10\" fill=\"#721c24\">\n      Error: LaTeX compilation failed:\nCompilation failed. Last lines:\n\\everyMPtoPDFconversion=\\toks44\n) (/usr/lo...\n    </text>\n    <text x=\"10\" y=\"90\" font-family=\"monospace\" font-size=\"9\" fill=\"#6c757d\">\n      Content:\n    </text>\n    <text x=\"10\" y=\"110\" font-family=\"monospace\" font-size=\"8\" fill=\"#6c757d\">\n      \\draw[thick,->] (-100,0) -- (3100,0) node[below right] {$x$ (kg)};\n\t\t\t\t\\draw[thick,->] (0,-100) -- (0,3100) node[above left] {$y$ (kg)};\n\t\t\t\t\\draw[ult...\n    </text>\n  </svg>"
+        "url": "/artifacts/tikz/H0fC-tikz-0.svg",
+        "latex": "\\begin{tikzpicture}[scale=0.0018]\n\t\t\t\t\\draw[thick,->] (-100,0) -- (3100,0) node[below right] {$x$ (kg)};\n\t\t\t\t\\draw[thick,->] (0,-100) -- (0,3100) node[above left] {$y$ (kg)};\n\t\t\t\t\\draw[ultra thick, color=blue, fill=blue!30, opacity=0.4] (0,0) -- (3000,0) -- (0,3000) -- cycle;\n\t\t\t\t\\node at (800,800) {$\\mathcal{D}_c$};\n\t\t\t\t\\draw (3000,0) node[below] {$3000$};\n\t\t\t\t\\draw (0,3000) node[left] {$3000$};\n\t\t\t\\end{tikzpicture}"
       }
     ],
     "geogebra": [],

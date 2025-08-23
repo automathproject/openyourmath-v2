@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-09",
-  "updated_at": "2025-08-22T12:41:37.546Z",
+  "updated_at": "2025-08-23T12:08:10.071Z",
   "content": [
     {
       "id": "block_1",
@@ -28,7 +28,7 @@
     {
       "id": "block_3",
       "type": "reponse",
-      "latex": "Par composition, $\\varphi$ est dérivable en tout point $(x,y) \\in \\R^2$ et par dérivation d'un produit et application de la règle des chaînes on a : \n\t\t$$\\begin{align*}\n\t\t\\dpa{\\varphi}{x}(x,y) &= f(x+y) + x \\times 1 \\times f'(x+y) + y\\times 1 \\times g'(x+y) \\\\\n\t\t&= f(x+y) + xf'(x+y) + yg'(x+y) \\\\\n\t\t\\dpa{\\varphi}{y}(x,y) &= xf'(x+y) + g(x+y) + yg'(x+y)\n\t\t\\end{align*}$$",
+      "latex": "Par composition, $\\varphi$ est dérivable en tout point $(x,y) \\in \\R^2$ et par dérivation d'un produit et application de la règle des chaînes on a : \n\t\t\\begin{align*}\n\t\t\\dpa{\\varphi}{x}(x,y) &= f(x+y) + x \\times 1 \\times f'(x+y) + y\\times 1 \\times g'(x+y) \\\\\n\t\t&= f(x+y) + xf'(x+y) + yg'(x+y) \\\\\n\t\t\\dpa{\\varphi}{y}(x,y) &= xf'(x+y) + g(x+y) + yg'(x+y)\n\t\t\\end{align*}",
       "html": "<p>Par composition, <span>\\(\\varphi\\)</span> est dérivable en tout point <span>\\((x,y) \\in \\R^2\\)</span> et par dérivation d’un produit et application de la règle des chaînes on a :\n<span>\\[\\begin{align*}\n        \\dpa{\\varphi}{x}(x,y) &amp;= f(x+y) + x \\times 1 \\times f&#39;(x+y) + y\\times 1 \\times g&#39;(x+y) \\\\\n        &amp;= f(x+y) + xf&#39;(x+y) + yg&#39;(x+y) \\\\\n        \\dpa{\\varphi}{y}(x,y) &amp;= xf&#39;(x+y) + g(x+y) + yg&#39;(x+y)\n        \\end{align*}\\]</span></p>",
       "order": 3
     },
@@ -42,7 +42,7 @@
     {
       "id": "block_5",
       "type": "reponse",
-      "latex": "On redérive les expressions ci-dessus : \n\t\t$$\\begin{align*}\n\t\t\\dpsp{\\varphi}{x}(x,y) &= \\frac{\\partial }{\\partial x} \\left(f(x+y) + xf'(x+y) + yg'(x+y)  \\right) \\\\\n\t\t&= 1 \\times f'(x+y) + (1 \\times f'(x+y) + x \\times 1 \\times f''(x+y)) + y\\times 1 \\times g''(x+y) \\\\\n\t\t&=2f'(x+y)+xf''(x+y)+yg''(x+y) \\\\\n\t\t\\dpsp{\\varphi}{y}(x,y) &= xf''(x+y)+2g'(x+y)+yg''(x+y) \\\\\n\t\t\\dpsm{\\varphi}{x}{y}(x,y) &= \\frac{\\partial }{\\partial x} \\left( xf'(x+y) + g(x+y) + yg'(x+y) \\right) \\\\\n\t\t&= f'(x+y) + xf''(x+y) + g'(x+y)+ yg''(x+y) \n\t\t\\end{align*}$$",
+      "latex": "On redérive les expressions ci-dessus : \n\t\t\\begin{align*}\n\t\t\\dpsp{\\varphi}{x}(x,y) &= \\frac{\\partial }{\\partial x} \\left(f(x+y) + xf'(x+y) + yg'(x+y)  \\right) \\\\\n\t\t&= 1 \\times f'(x+y) + (1 \\times f'(x+y) + x \\times 1 \\times f''(x+y)) + y\\times 1 \\times g''(x+y) \\\\\n\t\t&=2f'(x+y)+xf''(x+y)+yg''(x+y) \\\\\n\t\t\\dpsp{\\varphi}{y}(x,y) &= xf''(x+y)+2g'(x+y)+yg''(x+y) \\\\\n\t\t\\dpsm{\\varphi}{x}{y}(x,y) &= \\frac{\\partial }{\\partial x} \\left( xf'(x+y) + g(x+y) + yg'(x+y) \\right) \\\\\n\t\t&= f'(x+y) + xf''(x+y) + g'(x+y)+ yg''(x+y) \n\t\t\\end{align*}",
       "html": "<p>On redérive les expressions ci-dessus :\n<span>\\[\\begin{align*}\n        \\dpsp{\\varphi}{x}(x,y) &amp;= \\frac{\\partial }{\\partial x} \\left(f(x+y) + xf&#39;(x+y) + yg&#39;(x+y)  \\right) \\\\\n        &amp;= 1 \\times f&#39;(x+y) + (1 \\times f&#39;(x+y) + x \\times 1 \\times f&#39;&#39;(x+y)) + y\\times 1 \\times g&#39;&#39;(x+y) \\\\\n        &amp;=2f&#39;(x+y)+xf&#39;&#39;(x+y)+yg&#39;&#39;(x+y) \\\\\n        \\dpsp{\\varphi}{y}(x,y) &amp;= xf&#39;&#39;(x+y)+2g&#39;(x+y)+yg&#39;&#39;(x+y) \\\\\n        \\dpsm{\\varphi}{x}{y}(x,y) &amp;= \\frac{\\partial }{\\partial x} \\left( xf&#39;(x+y) + g(x+y) + yg&#39;(x+y) \\right) \\\\\n        &amp;= f&#39;(x+y) + xf&#39;&#39;(x+y) + g&#39;(x+y)+ yg&#39;&#39;(x+y) \n        \\end{align*}\\]</span></p>",
       "order": 5
     },

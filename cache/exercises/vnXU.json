@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-12-01",
-  "updated_at": "2025-08-22T12:41:29.606Z",
+  "updated_at": "2025-08-23T12:08:03.044Z",
   "content": [
     {
       "id": "block_1",
@@ -42,7 +42,7 @@
     {
       "id": "block_5",
       "type": "reponse",
-      "latex": "Soit $t \\in \\R$. Si $t \\leq 0$, alors $F_X(t) = \\prob(X \\leq t) = 0$ car $X(\\Omega) = ]0,+\\infty[$. Si $t > 0$, alors : \n            $$\\begin{align*}\n                F_X(t) &= \\prob(X \\leq t) \\\\\n                &= \\prob(\\ln(X) \\leq \\ln(t)) \\\\\n                &= \\prob\\left(\\frac{\\ln(X) - 1}{2} \\leq \\frac{\\ln(t) - 1}{2}\\right) \\\\\n                &= \\Phi\\left(\\frac{\\ln(t) - 1}{2}\\right)\n            \\end{align*}$$",
+      "latex": "Soit $t \\in \\R$. Si $t \\leq 0$, alors $F_X(t) = \\prob(X \\leq t) = 0$ car $X(\\Omega) = ]0,+\\infty[$. Si $t > 0$, alors : \n            \\begin{align*}\n                F_X(t) &= \\prob(X \\leq t) \\\\\n                &= \\prob(\\ln(X) \\leq \\ln(t)) \\\\\n                &= \\prob\\left(\\frac{\\ln(X) - 1}{2} \\leq \\frac{\\ln(t) - 1}{2}\\right) \\\\\n                &= \\Phi\\left(\\frac{\\ln(t) - 1}{2}\\right)\n            \\end{align*}",
       "html": "<p>Soit <span>\\(t \\in \\R\\)</span>. Si <span>\\(t \\leq 0\\)</span>, alors <span>\\(F_X(t) = \\prob(X \\leq t) = 0\\)</span> car <span>\\(X(\\Omega) = ]0,+\\infty[\\)</span>. Si <span>\\(t &gt; 0\\)</span>, alors :\n<span>\\[\\begin{align*}\n                F_X(t) &amp;= \\prob(X \\leq t) \\\\\n                &amp;= \\prob(\\ln(X) \\leq \\ln(t)) \\\\\n                &amp;= \\prob\\left(\\frac{\\ln(X) - 1}{2} \\leq \\frac{\\ln(t) - 1}{2}\\right) \\\\\n                &amp;= \\Phi\\left(\\frac{\\ln(t) - 1}{2}\\right)\n            \\end{align*}\\]</span></p>",
       "order": 5
     },

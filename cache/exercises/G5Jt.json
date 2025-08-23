@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-09-04",
-  "updated_at": "2025-08-22T12:39:12.573Z",
+  "updated_at": "2025-08-23T12:06:46.582Z",
   "content": [
     {
       "id": "block_1",
@@ -42,7 +42,7 @@
     {
       "id": "block_5",
       "type": "reponse",
-      "latex": "On a $\\prob(X=1,Y=1) = \\frac{1}{n+2}$, c'est la probabilité que la première boule tirée soit blanche et qu'elle porte le numéro 1. \n\t\nOn a $\\prob(Y=1) = \\frac{2}{n+2}$ car au premier tirage, $2$ boules portent le numéro $1$. \n\nLes événements  $\\{X=1\\}$ et $\\{Y=1\\}$ sont indépendants si et seulement si : \n$$\\begin{align*}\n\\prob(X=1,Y=1) = \\prob(X=1)\\prob(Y=1) &\\iff \\frac{1}{n+2} = \\frac{n}{n+2} \\times \\frac{2}{n+2} \\\\\n&\\iff 2n = n+2 \\\\\n&\\iff n = 2\n\\end{align*}$$",
+      "latex": "On a $\\prob(X=1,Y=1) = \\frac{1}{n+2}$, c'est la probabilité que la première boule tirée soit blanche et qu'elle porte le numéro 1. \n\t\nOn a $\\prob(Y=1) = \\frac{2}{n+2}$ car au premier tirage, $2$ boules portent le numéro $1$. \n\nLes événements  $\\{X=1\\}$ et $\\{Y=1\\}$ sont indépendants si et seulement si : \n\\begin{align*}\n\\prob(X=1,Y=1) = \\prob(X=1)\\prob(Y=1) &\\iff \\frac{1}{n+2} = \\frac{n}{n+2} \\times \\frac{2}{n+2} \\\\\n&\\iff 2n = n+2 \\\\\n&\\iff n = 2\n\\end{align*}",
       "html": "<p>On a <span>\\(\\prob(X=1,Y=1) = \\frac{1}{n+2}\\)</span>, c’est la probabilité que la première boule tirée soit blanche et qu’elle porte le numéro 1.</p>\n<p>On a <span>\\(\\prob(Y=1) = \\frac{2}{n+2}\\)</span> car au premier tirage, <span>\\(2\\)</span> boules portent le numéro <span>\\(1\\)</span>.</p>\n<p>Les événements <span>\\(\\{X=1\\}\\)</span> et <span>\\(\\{Y=1\\}\\)</span> sont indépendants si et seulement si :\n<span>\\[\\begin{align*}\n\\prob(X=1,Y=1) = \\prob(X=1)\\prob(Y=1) &amp;\\iff \\frac{1}{n+2} = \\frac{n}{n+2} \\times \\frac{2}{n+2} \\\\\n&amp;\\iff 2n = n+2 \\\\\n&amp;\\iff n = 2\n\\end{align*}\\]</span></p>",
       "order": 5
     },

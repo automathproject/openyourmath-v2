@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-09",
-  "updated_at": "2025-08-22T12:39:08.031Z",
+  "updated_at": "2025-08-23T12:06:43.638Z",
   "content": [
     {
       "id": "block_1",
@@ -56,7 +56,7 @@
     {
       "id": "block_7",
       "type": "reponse",
-      "latex": "pour $(r,\\theta) \\in \\mathcal{D}_V$, on a\n\t\t\t$$\\begin{align*} \n\t\t\t\\dpsp{V}{r} &= \\dpa{}{r}\\left[ -\\frac{2}{r^3}\\cos\\theta \\right] = \\frac{6}{r^4}\\cos\\theta \\\\\n\t\t\t\\dpsp{V}{\\theta} &= \\dpa{}{\\theta}\\left[ -\\frac{1}{r^2}\\sin\\theta \\right] = -\\frac{1}{r^2}\\cos\\theta \\\\\n\t\t\t\\dpsm{V}{r}{\\theta} &= \\dpa{}{r}\\left[ -\\frac{1}{r^2}\\sin\\theta \\right] = \\frac{2}{r^3}\\sin\\theta\n\t\t\t\\end{align*}$$",
+      "latex": "pour $(r,\\theta) \\in \\mathcal{D}_V$, on a\n\t\t\t\\begin{align*} \n\t\t\t\\dpsp{V}{r} &= \\dpa{}{r}\\left[ -\\frac{2}{r^3}\\cos\\theta \\right] = \\frac{6}{r^4}\\cos\\theta \\\\\n\t\t\t\\dpsp{V}{\\theta} &= \\dpa{}{\\theta}\\left[ -\\frac{1}{r^2}\\sin\\theta \\right] = -\\frac{1}{r^2}\\cos\\theta \\\\\n\t\t\t\\dpsm{V}{r}{\\theta} &= \\dpa{}{r}\\left[ -\\frac{1}{r^2}\\sin\\theta \\right] = \\frac{2}{r^3}\\sin\\theta\n\t\t\t\\end{align*}",
       "html": "<p>pour <span>\\((r,\\theta) \\in \\mathcal{D}_V\\)</span>, on a\n<span>\\[\\begin{align*} \n            \\dpsp{V}{r} &amp;= \\dpa{}{r}\\left[ -\\frac{2}{r^3}\\cos\\theta \\right] = \\frac{6}{r^4}\\cos\\theta \\\\\n            \\dpsp{V}{\\theta} &amp;= \\dpa{}{\\theta}\\left[ -\\frac{1}{r^2}\\sin\\theta \\right] = -\\frac{1}{r^2}\\cos\\theta \\\\\n            \\dpsm{V}{r}{\\theta} &amp;= \\dpa{}{r}\\left[ -\\frac{1}{r^2}\\sin\\theta \\right] = \\frac{2}{r^3}\\sin\\theta\n            \\end{align*}\\]</span></p>",
       "order": 7
     },

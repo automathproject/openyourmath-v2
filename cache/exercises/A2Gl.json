@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-09-24",
-  "updated_at": "2025-08-22T12:38:54.705Z",
+  "updated_at": "2025-08-23T12:06:37.332Z",
   "content": [
     {
       "id": "block_1",
@@ -42,7 +42,7 @@
     {
       "id": "block_5",
       "type": "reponse",
-      "latex": "On a\n\t\t$$\\begin{align*}\n\t\t\t\\ln L(x_1,\\cdots,x_n,\\lambda) &= \\sum_{i=1}^n \\left(\\ln(\\lambda^{x_i})-\\lambda - \\ln(x_i !) \\right) \\\\\n\t\t\t&= (\\ln \\lambda) \\sum_{i=1}^n x_i -n\\lambda - \\sum_{i=1}^n \\ln(x_i !)\n\t\t\\end{align*}$$\n\t\tdonc en dérivant par rapport à $\\lambda$,\n\t\t\\[ \\frac{\\partial L(x_1,\\cdots,x_n,\\lambda)}{\\partial \\lambda}=\\frac{1}{\\lambda}\\sum_{i=1}^n x_i -n.\\]\n\t\tOr \n\t\t\\[ \\frac{\\partial L(x_1,\\cdots,x_n,\\lambda)}{\\partial \\lambda}=0 \\quad \\Leftrightarrow \\quad \\lambda=\\frac{1}{n}\\sum_{i=1}^n x_i.\\]",
+      "latex": "On a\n\t\t\\begin{align*}\n\t\t\t\\ln L(x_1,\\cdots,x_n,\\lambda) &= \\sum_{i=1}^n \\left(\\ln(\\lambda^{x_i})-\\lambda - \\ln(x_i !) \\right) \\\\\n\t\t\t&= (\\ln \\lambda) \\sum_{i=1}^n x_i -n\\lambda - \\sum_{i=1}^n \\ln(x_i !)\n\t\t\\end{align*}\n\t\tdonc en dérivant par rapport à $\\lambda$,\n\t\t\\[ \\frac{\\partial L(x_1,\\cdots,x_n,\\lambda)}{\\partial \\lambda}=\\frac{1}{\\lambda}\\sum_{i=1}^n x_i -n.\\]\n\t\tOr \n\t\t\\[ \\frac{\\partial L(x_1,\\cdots,x_n,\\lambda)}{\\partial \\lambda}=0 \\quad \\Leftrightarrow \\quad \\lambda=\\frac{1}{n}\\sum_{i=1}^n x_i.\\]",
       "html": "<p>On a\n<span>\\[\\begin{align*}\n            \\ln L(x_1,\\cdots,x_n,\\lambda) &amp;= \\sum_{i=1}^n \\left(\\ln(\\lambda^{x_i})-\\lambda - \\ln(x_i !) \\right) \\\\\n            &amp;= (\\ln \\lambda) \\sum_{i=1}^n x_i -n\\lambda - \\sum_{i=1}^n \\ln(x_i !)\n        \\end{align*}\\]</span>\ndonc en dérivant par rapport à <span>\\(\\lambda\\)</span>,\n<span>\\[\\frac{\\partial L(x_1,\\cdots,x_n,\\lambda)}{\\partial \\lambda}=\\frac{1}{\\lambda}\\sum_{i=1}^n x_i -n.\\]</span>\nOr\n<span>\\[\\frac{\\partial L(x_1,\\cdots,x_n,\\lambda)}{\\partial \\lambda}=0 \\quad \\Leftrightarrow \\quad \\lambda=\\frac{1}{n}\\sum_{i=1}^n x_i.\\]</span></p>",
       "order": 5
     },

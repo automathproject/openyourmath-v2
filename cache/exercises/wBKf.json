@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-01-03",
-  "updated_at": "2025-08-22T12:41:30.466Z",
+  "updated_at": "2025-08-23T12:08:03.890Z",
   "content": [
     {
       "id": "block_1",
@@ -56,7 +56,7 @@
     {
       "id": "block_7",
       "type": "reponse",
-      "latex": "$$\\begin{align*}\n\t\t\t\\left(\\frac{1+i \\sqrt{3}}{1-i \\sqrt{3}}\\right)^5 & =\\left(\\frac{\\frac{1}{2}+\\frac{i \\sqrt{3}}{2}}{\\frac{1}{2}-\\frac{i \\sqrt{3}}{2}}\\right)^5 \\\\ &=\\left(\\frac{\\cos \\left(\\frac{\\pi}{3}\\right)+i \\sin \\left(\\frac{\\pi}{3}\\right)}{\\cos \\left(-\\frac{\\pi}{3}\\right)+i \\sin \\left(-\\frac{\\pi}{3}\\right)}\\right)^5 \\\\ &=\\left(\\frac{e^{i \\frac{\\pi}{3}}}{e^{-i \\frac{\\pi}{3}}}\\right)^5 \\\\ &=\\left(e^{i \\frac{2 \\pi}{3}}\\right)^5=e^{i \\frac{10 \\pi}{3}} \\\\\n\t\t\t& =e^{-i \\frac{2 \\pi}{3}} \\\\ &=\\cos \\left(-\\frac{2 \\pi}{3}\\right)+i \\sin \\left(-\\frac{2 \\pi}{3}\\right) \\\\\n\t\t\t& =-\\frac{1}{2}-\\frac{i \\sqrt{3}}{2}\n\t\t\\end{align*}$$",
+      "latex": "\\begin{align*}\n\t\t\t\\left(\\frac{1+i \\sqrt{3}}{1-i \\sqrt{3}}\\right)^5 & =\\left(\\frac{\\frac{1}{2}+\\frac{i \\sqrt{3}}{2}}{\\frac{1}{2}-\\frac{i \\sqrt{3}}{2}}\\right)^5 \\\\ &=\\left(\\frac{\\cos \\left(\\frac{\\pi}{3}\\right)+i \\sin \\left(\\frac{\\pi}{3}\\right)}{\\cos \\left(-\\frac{\\pi}{3}\\right)+i \\sin \\left(-\\frac{\\pi}{3}\\right)}\\right)^5 \\\\ &=\\left(\\frac{e^{i \\frac{\\pi}{3}}}{e^{-i \\frac{\\pi}{3}}}\\right)^5 \\\\ &=\\left(e^{i \\frac{2 \\pi}{3}}\\right)^5=e^{i \\frac{10 \\pi}{3}} \\\\\n\t\t\t& =e^{-i \\frac{2 \\pi}{3}} \\\\ &=\\cos \\left(-\\frac{2 \\pi}{3}\\right)+i \\sin \\left(-\\frac{2 \\pi}{3}\\right) \\\\\n\t\t\t& =-\\frac{1}{2}-\\frac{i \\sqrt{3}}{2}\n\t\t\\end{align*}",
       "html": "<p><span>\\[\\begin{align*}\n            \\left(\\frac{1+i \\sqrt{3}}{1-i \\sqrt{3}}\\right)^5 &amp; =\\left(\\frac{\\frac{1}{2}+\\frac{i \\sqrt{3}}{2}}{\\frac{1}{2}-\\frac{i \\sqrt{3}}{2}}\\right)^5 \\\\ &amp;=\\left(\\frac{\\cos \\left(\\frac{\\pi}{3}\\right)+i \\sin \\left(\\frac{\\pi}{3}\\right)}{\\cos \\left(-\\frac{\\pi}{3}\\right)+i \\sin \\left(-\\frac{\\pi}{3}\\right)}\\right)^5 \\\\ &amp;=\\left(\\frac{e^{i \\frac{\\pi}{3}}}{e^{-i \\frac{\\pi}{3}}}\\right)^5 \\\\ &amp;=\\left(e^{i \\frac{2 \\pi}{3}}\\right)^5=e^{i \\frac{10 \\pi}{3}} \\\\\n            &amp; =e^{-i \\frac{2 \\pi}{3}} \\\\ &amp;=\\cos \\left(-\\frac{2 \\pi}{3}\\right)+i \\sin \\left(-\\frac{2 \\pi}{3}\\right) \\\\\n            &amp; =-\\frac{1}{2}-\\frac{i \\sqrt{3}}{2}\n        \\end{align*}\\]</span></p>",
       "order": 7
     },
@@ -70,7 +70,7 @@
     {
       "id": "block_9",
       "type": "reponse",
-      "latex": "$$\\begin{align*}\n\t\t\t\\frac{i}{(1+i \\sqrt{2})^2} & =\\frac{i}{1^2+2 \\sqrt{2} i+(i \\sqrt{2})^2}\\\\ &=\\frac{i}{1-2+2 \\sqrt{2} i}=\\frac{i}{-1+2 \\sqrt{2} i}\\\\ &=\\frac{i(-1-2 \\sqrt{2} i)}{(-1+2 \\sqrt{2} i)(-1-2 \\sqrt{2} i)} \\\\\n\t\t\t& =\\frac{2 \\sqrt{2}-i}{(1+8)} \\\\ &=\\frac{2 \\sqrt{2}}{9}-\\frac{i}{9}\n\t\t\\end{align*}$$",
+      "latex": "\\begin{align*}\n\t\t\t\\frac{i}{(1+i \\sqrt{2})^2} & =\\frac{i}{1^2+2 \\sqrt{2} i+(i \\sqrt{2})^2}\\\\ &=\\frac{i}{1-2+2 \\sqrt{2} i}=\\frac{i}{-1+2 \\sqrt{2} i}\\\\ &=\\frac{i(-1-2 \\sqrt{2} i)}{(-1+2 \\sqrt{2} i)(-1-2 \\sqrt{2} i)} \\\\\n\t\t\t& =\\frac{2 \\sqrt{2}-i}{(1+8)} \\\\ &=\\frac{2 \\sqrt{2}}{9}-\\frac{i}{9}\n\t\t\\end{align*}",
       "html": "<p><span>\\[\\begin{align*}\n            \\frac{i}{(1+i \\sqrt{2})^2} &amp; =\\frac{i}{1^2+2 \\sqrt{2} i+(i \\sqrt{2})^2}\\\\ &amp;=\\frac{i}{1-2+2 \\sqrt{2} i}=\\frac{i}{-1+2 \\sqrt{2} i}\\\\ &amp;=\\frac{i(-1-2 \\sqrt{2} i)}{(-1+2 \\sqrt{2} i)(-1-2 \\sqrt{2} i)} \\\\\n            &amp; =\\frac{2 \\sqrt{2}-i}{(1+8)} \\\\ &amp;=\\frac{2 \\sqrt{2}}{9}-\\frac{i}{9}\n        \\end{align*}\\]</span></p>",
       "order": 9
     }

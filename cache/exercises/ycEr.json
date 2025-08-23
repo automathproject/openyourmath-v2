@@ -9,19 +9,19 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2024-10-01",
-  "updated_at": "2025-08-22T12:41:34.574Z",
+  "updated_at": "2025-08-23T12:08:07.142Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
-      "latex": "On dispose d'observations $(x_1,y_1),\\ldots,(x_n,y_n)$. On cherche les \"meilleurs\" coefficients $a$ et $b$ tels que pour chaque observation, on ait $y_i \\approx a x_i + b$. Ce probl\\`eme est appel\\'e r\\'egression lin\\'eaire simple.\n\n\\medskip\n\nPour mesurer la qualit\\'e des param\\`etres $(a,b)$, on souhaite que l'\\'ecart entre $y_i$ et $ax_i+b$ soit faible pour chaque observation. Pour quantifier l'erreur, on utilise le risque quadratique :\n$$\\begin{equation}\nR(a,b) = \\sum_{i=1}^n (y_i - (a x_i+b) )^2.\n\\end{equation}$$\nLe probl\\`eme est de minimiser la fonction $R(a,b)$.",
+      "latex": "On dispose d'observations $(x_1,y_1),\\ldots,(x_n,y_n)$. On cherche les \"meilleurs\" coefficients $a$ et $b$ tels que pour chaque observation, on ait $y_i \\approx a x_i + b$. Ce probl\\`eme est appel\\'e r\\'egression lin\\'eaire simple.\n\n\\medskip\n\nPour mesurer la qualit\\'e des param\\`etres $(a,b)$, on souhaite que l'\\'ecart entre $y_i$ et $ax_i+b$ soit faible pour chaque observation. Pour quantifier l'erreur, on utilise le risque quadratique :\n\\begin{equation*}\nR(a,b) = \\sum_{i=1}^n (y_i - (a x_i+b) )^2.\n\\end{equation*}\nLe probl\\`eme est de minimiser la fonction $R(a,b)$.",
       "html": "<p>On dispose d’observations <span>\\((x_1,y_1),\\ldots,(x_n,y_n)\\)</span>. On cherche les \"meilleurs\" coefficients <span>\\(a\\)</span> et <span>\\(b\\)</span> tels que pour chaque observation, on ait <span>\\(y_i \\approx a x_i + b\\)</span>. Ce problème est appelé régression linéaire simple.</p>\n<p>Pour mesurer la qualité des paramètres <span>\\((a,b)\\)</span>, on souhaite que l’écart entre <span>\\(y_i\\)</span> et <span>\\(ax_i+b\\)</span> soit faible pour chaque observation. Pour quantifier l’erreur, on utilise le risque quadratique :\n<span>\\[\\begin{equation}\nR(a,b) = \\sum_{i=1}^n (y_i - (a x_i+b) )^2.\n\\end{equation}\\]</span>\nLe problème est de minimiser la fonction <span>\\(R(a,b)\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
-      "latex": "Montrer que :\n$$\\begin{equation}\nR(a,b) = a^2 \\sum_{i=1}^n x_i^2 + 2ab \\sum_{i=1}^n x_i + b^2 n -2 a\\sum_{i=1}^n x_i y_i -2 b \\sum_{i=1}^n y_i + \\sum_{i=1}^n y_i^2.\n\\end{equation}$$",
+      "latex": "Montrer que :\n\\begin{equation*}\nR(a,b) = a^2 \\sum_{i=1}^n x_i^2 + 2ab \\sum_{i=1}^n x_i + b^2 n -2 a\\sum_{i=1}^n x_i y_i -2 b \\sum_{i=1}^n y_i + \\sum_{i=1}^n y_i^2.\n\\end{equation*}",
       "html": "<p>Montrer que :\n<span>\\[\\begin{equation}\nR(a,b) = a^2 \\sum_{i=1}^n x_i^2 + 2ab \\sum_{i=1}^n x_i + b^2 n -2 a\\sum_{i=1}^n x_i y_i -2 b \\sum_{i=1}^n y_i + \\sum_{i=1}^n y_i^2.\n\\end{equation}\\]</span></p>",
       "order": 2
     },
@@ -35,7 +35,7 @@
     {
       "id": "block_4",
       "type": "question",
-      "latex": "Montrer que le gradient de $R$ s'écrit : \n$$\\begin{equation} \\label{eq:nablaR}\n(\\nabla R)(a,b) = \\left( \\begin{array}{c} 2a \\sum_{i=1}^n x_i^2 + 2 b \\sum_{i=1}^n x_i -2 \\sum_{i=1}^n x_i y_i \\\\ 2a \\sum_{i=1}^n x_i +2 b n -2 \\sum_{i=1}^n y_i \\end{array} \\right).\n\\end{equation}$$",
+      "latex": "Montrer que le gradient de $R$ s'écrit : \n\\begin{equation} \\label{eq:nablaR}\n(\\nabla R)(a,b) = \\left( \\begin{array}{c} 2a \\sum_{i=1}^n x_i^2 + 2 b \\sum_{i=1}^n x_i -2 \\sum_{i=1}^n x_i y_i \\\\ 2a \\sum_{i=1}^n x_i +2 b n -2 \\sum_{i=1}^n y_i \\end{array} \\right).\n\\end{equation}",
       "html": "<p>Montrer que le gradient de <span>\\(R\\)</span> s’écrit :\n<span>\\[\\begin{equation} \\label{eq:nablaR}\n(\\nabla R)(a,b) = \\left( \\begin{array}{c} 2a \\sum_{i=1}^n x_i^2 + 2 b \\sum_{i=1}^n x_i -2 \\sum_{i=1}^n x_i y_i \\\\ 2a \\sum_{i=1}^n x_i +2 b n -2 \\sum_{i=1}^n y_i \\end{array} \\right).\n\\end{equation}\\]</span></p>",
       "order": 4
     },
@@ -63,7 +63,7 @@
     {
       "id": "block_8",
       "type": "question",
-      "latex": "Montrer que la hessienne de $R$ s'écrit :\n$$\\begin{equation}\n\\textrm{Hess}_R(a,b)  = \\left( \\begin{array}{cc} 2 \\sum_{i=1}^n x_i^2 & 2 \\sum_{i=1}^n x_i \\\\ 2 \\sum_{i=1}^n x_i & 2 n \\end{array}\\right).\n\\end{equation}$$",
+      "latex": "Montrer que la hessienne de $R$ s'écrit :\n\\begin{equation*}\n\\textrm{Hess}_R(a,b)  = \\left( \\begin{array}{cc} 2 \\sum_{i=1}^n x_i^2 & 2 \\sum_{i=1}^n x_i \\\\ 2 \\sum_{i=1}^n x_i & 2 n \\end{array}\\right).\n\\end{equation*}",
       "html": "<p>Montrer que la hessienne de <span>\\(R\\)</span> s’écrit :\n<span>\\[\\begin{equation}\n\\textrm{Hess}_R(a,b)  = \\left( \\begin{array}{cc} 2 \\sum_{i=1}^n x_i^2 &amp; 2 \\sum_{i=1}^n x_i \\\\ 2 \\sum_{i=1}^n x_i &amp; 2 n \\end{array}\\right).\n\\end{equation}\\]</span></p>",
       "order": 8
     },

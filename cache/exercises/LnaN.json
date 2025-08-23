@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-09-14",
-  "updated_at": "2025-08-22T12:39:25.840Z",
+  "updated_at": "2025-08-23T12:06:57.919Z",
   "content": [
     {
       "id": "block_1",
@@ -28,7 +28,7 @@
     {
       "id": "block_3",
       "type": "reponse",
-      "latex": "Comme $\\frac{X-7}{3} \\sim \\mathcal{N}(0,1)$, on a\n\t\t\\[\\prob(X\\geq 10)=\\prob\\left(\\frac{X-7}{3}\\geq 1\\right)=1-\\prob\\left(\\frac{X-7}{3}\\leq 1\\right)\\simeq 1-0.8413 \\simeq 0.1587\\]\n\t\tsoit environ $15.87$\\% des étudiants ont plus de $10$.\n\t\t\\vspace{1em}\n\t\t\n\t\tOn cherche $\\alpha$ la note telle que $\\prob(X\\leq \\alpha )=0.10$. On note que\n\t\t$$\\begin{align*}\n\t\t\t\\prob(X\\leq \\alpha )=0.1 & \\quad \\Leftrightarrow \\quad \n\t\t\t\\prob\\left(\\frac{X-7}{3} \\leq \\frac{\\alpha-7}{3}\\right)=0.1 \\\\\n\t\t\t& \\quad \\Leftrightarrow \\quad\n\t\t\t\\prob\\left(\\frac{X-7}{3} \\geq \\frac{-\\alpha+7}{3}\\right)=0.1 \\\\\n\t\t\t& \\quad \\Leftrightarrow \\quad\n\t\t\t\\prob\\left(\\frac{X-7}{3}\\leq \\frac{-\\alpha+7}{3}\\right)=0.9,\n\t\t\\end{align*}$$\n\t\tce qui donne par lecture de table de la loi $\\mathcal{N}(0,1)$, $\\frac{-\\alpha+7}{3}\\simeq 1.3$, soit $\\alpha \\simeq 3.1$.\n\t\tDonc $10$\\% des étudiants ont en-dessous de $3.1$.",
+      "latex": "Comme $\\frac{X-7}{3} \\sim \\mathcal{N}(0,1)$, on a\n\t\t\\[\\prob(X\\geq 10)=\\prob\\left(\\frac{X-7}{3}\\geq 1\\right)=1-\\prob\\left(\\frac{X-7}{3}\\leq 1\\right)\\simeq 1-0.8413 \\simeq 0.1587\\]\n\t\tsoit environ $15.87$\\% des étudiants ont plus de $10$.\n\t\t\\vspace{1em}\n\t\t\n\t\tOn cherche $\\alpha$ la note telle que $\\prob(X\\leq \\alpha )=0.10$. On note que\n\t\t\\begin{align*}\n\t\t\t\\prob(X\\leq \\alpha )=0.1 & \\quad \\Leftrightarrow \\quad \n\t\t\t\\prob\\left(\\frac{X-7}{3} \\leq \\frac{\\alpha-7}{3}\\right)=0.1 \\\\\n\t\t\t& \\quad \\Leftrightarrow \\quad\n\t\t\t\\prob\\left(\\frac{X-7}{3} \\geq \\frac{-\\alpha+7}{3}\\right)=0.1 \\\\\n\t\t\t& \\quad \\Leftrightarrow \\quad\n\t\t\t\\prob\\left(\\frac{X-7}{3}\\leq \\frac{-\\alpha+7}{3}\\right)=0.9,\n\t\t\\end{align*}\n\t\tce qui donne par lecture de table de la loi $\\mathcal{N}(0,1)$, $\\frac{-\\alpha+7}{3}\\simeq 1.3$, soit $\\alpha \\simeq 3.1$.\n\t\tDonc $10$\\% des étudiants ont en-dessous de $3.1$.",
       "html": "<p>Comme <span>\\(\\frac{X-7}{3} \\sim \\mathcal{N}(0,1)\\)</span>, on a\n<span>\\[\\prob(X\\geq 10)=\\prob\\left(\\frac{X-7}{3}\\geq 1\\right)=1-\\prob\\left(\\frac{X-7}{3}\\leq 1\\right)\\simeq 1-0.8413 \\simeq 0.1587\\]</span>\nsoit environ <span>\\(15.87\\)</span>% des étudiants ont plus de <span>\\(10\\)</span>.</p>\n<p>On cherche <span>\\(\\alpha\\)</span> la note telle que <span>\\(\\prob(X\\leq \\alpha )=0.10\\)</span>. On note que\n<span>\\[\\begin{align*}\n            \\prob(X\\leq \\alpha )=0.1 &amp; \\quad \\Leftrightarrow \\quad \n            \\prob\\left(\\frac{X-7}{3} \\leq \\frac{\\alpha-7}{3}\\right)=0.1 \\\\\n            &amp; \\quad \\Leftrightarrow \\quad\n            \\prob\\left(\\frac{X-7}{3} \\geq \\frac{-\\alpha+7}{3}\\right)=0.1 \\\\\n            &amp; \\quad \\Leftrightarrow \\quad\n            \\prob\\left(\\frac{X-7}{3}\\leq \\frac{-\\alpha+7}{3}\\right)=0.9,\n        \\end{align*}\\]</span>\nce qui donne par lecture de table de la loi <span>\\(\\mathcal{N}(0,1)\\)</span>, <span>\\(\\frac{-\\alpha+7}{3}\\simeq 1.3\\)</span>, soit <span>\\(\\alpha \\simeq 3.1\\)</span>.\nDonc <span>\\(10\\)</span>% des étudiants ont en-dessous de <span>\\(3.1\\)</span>.</p>",
       "order": 3
     },

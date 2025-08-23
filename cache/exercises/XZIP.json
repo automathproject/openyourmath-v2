@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-09-13",
-  "updated_at": "2025-08-22T12:39:45.290Z",
+  "updated_at": "2025-08-23T12:07:11.761Z",
   "content": [
     {
       "id": "block_1",
@@ -63,7 +63,7 @@
     {
       "id": "block_8",
       "type": "reponse",
-      "latex": "Par définition, \n\t\t\t$F_T(x)=\\int_{-\\infty}^x f_T(t)\\dx t$ donc si $x< 0$, $F_T(x)=0$ et si $x\\geq 0$,\n\t\t\t$$\\begin{align*}\n\t\t\t\tF_T(x) & =\\int_0^x te^{-t}\\dx t\n\t\t\t\t= \\left[-te^{-t}\\right]_0^x + \\int_0^x e^{-t}\\dx t\n\t\t\t\t= -xe^{-x}+0+\\left[-e^{-t}\\right]_0^x \n\t\t\t\t=-xe^{-x}-e^{x}+e^0 \\\\\n\t\t\t\t&= 1-(1+x)e^{-x},\n\t\t\t\\end{align*}$$\n\t\t\tce qui correspond à la formule donnée dans l'énoncé.",
+      "latex": "Par définition, \n\t\t\t$F_T(x)=\\int_{-\\infty}^x f_T(t)\\dx t$ donc si $x< 0$, $F_T(x)=0$ et si $x\\geq 0$,\n\t\t\t\\begin{align*}\n\t\t\t\tF_T(x) & =\\int_0^x te^{-t}\\dx t\n\t\t\t\t= \\left[-te^{-t}\\right]_0^x + \\int_0^x e^{-t}\\dx t\n\t\t\t\t= -xe^{-x}+0+\\left[-e^{-t}\\right]_0^x \n\t\t\t\t=-xe^{-x}-e^{x}+e^0 \\\\\n\t\t\t\t&= 1-(1+x)e^{-x},\n\t\t\t\\end{align*}\n\t\t\tce qui correspond à la formule donnée dans l'énoncé.",
       "html": "<p>Par définition,\n<span>\\(F_T(x)=\\int_{-\\infty}^x f_T(t)\\dx t\\)</span> donc si <span>\\(x&lt; 0\\)</span>, <span>\\(F_T(x)=0\\)</span> et si <span>\\(x\\geq 0\\)</span>,\n<span>\\[\\begin{align*}\n                F_T(x) &amp; =\\int_0^x te^{-t}\\dx t\n                = \\left[-te^{-t}\\right]_0^x + \\int_0^x e^{-t}\\dx t\n                = -xe^{-x}+0+\\left[-e^{-t}\\right]_0^x \n                =-xe^{-x}-e^{x}+e^0 \\\\\n                &amp;= 1-(1+x)e^{-x},\n            \\end{align*}\\]</span>\nce qui correspond à la formule donnée dans l’énoncé.</p>",
       "order": 8
     },
@@ -77,7 +77,7 @@
     {
       "id": "block_10",
       "type": "reponse",
-      "latex": "$$\\begin{align*}\n\t\t\t\t\\prob(T\\leq 2|T\\geq 1)\n\t\t\t\t&=\\frac{\\prob(\\{T\\leq 2\\}\\cap \\{T\\geq 1\\})}{\\prob(T\\geq 1)}\n\t\t\t\t=\\frac{\\prob(1\\leq T\\leq 2)}{1-\\prob(T\\leq 1)}\n\t\t\t\t= \\frac{F_T(2)-F_T(1)}{1-F_T(1)} \\\\\n\t\t\t\t&=\\frac{1-3e^{-2}-1+2e^{-1}}{1-1+2e^{-1}}\n\t\t\t\t=\\frac{2e^{-1}-3e^{-2}}{2e^{-1}}\n\t\t\t\t=\\frac{2e-3}{2e}\n\t\t\t\\end{align*}$$",
+      "latex": "\\begin{align*}\n\t\t\t\t\\prob(T\\leq 2|T\\geq 1)\n\t\t\t\t&=\\frac{\\prob(\\{T\\leq 2\\}\\cap \\{T\\geq 1\\})}{\\prob(T\\geq 1)}\n\t\t\t\t=\\frac{\\prob(1\\leq T\\leq 2)}{1-\\prob(T\\leq 1)}\n\t\t\t\t= \\frac{F_T(2)-F_T(1)}{1-F_T(1)} \\\\\n\t\t\t\t&=\\frac{1-3e^{-2}-1+2e^{-1}}{1-1+2e^{-1}}\n\t\t\t\t=\\frac{2e^{-1}-3e^{-2}}{2e^{-1}}\n\t\t\t\t=\\frac{2e-3}{2e}\n\t\t\t\\end{align*}",
       "html": "<p><span>\\[\\begin{align*}\n                \\prob(T\\leq 2|T\\geq 1)\n                &amp;=\\frac{\\prob(\\{T\\leq 2\\}\\cap \\{T\\geq 1\\})}{\\prob(T\\geq 1)}\n                =\\frac{\\prob(1\\leq T\\leq 2)}{1-\\prob(T\\leq 1)}\n                = \\frac{F_T(2)-F_T(1)}{1-F_T(1)} \\\\\n                &amp;=\\frac{1-3e^{-2}-1+2e^{-1}}{1-1+2e^{-1}}\n                =\\frac{2e^{-1}-3e^{-2}}{2e^{-1}}\n                =\\frac{2e-3}{2e}\n            \\end{align*}\\]</span></p>",
       "order": 10
     },
@@ -112,7 +112,7 @@
     {
       "id": "block_15",
       "type": "reponse",
-      "latex": "Pour tout $t\\in \\R$,\n\t\t\t$$\\begin{align*}\n\t\t\t\tF_M(t)\n\t\t\t\t&=\\prob(M\\leq t) \\\\\n\t\t\t\t&=1-\\prob(M>t) \\\\\n\t\t\t\t&=1-\\prob(\\{T_A>t\\}\\cap\\{T_B>t\\}) \\\\\n\t\t\t\t&=1-\\prob(T_A>t)\\prob(T_B>t) \\quad \\text{ par indépendance de $T_A$ et de $T_B$} \\\\\n\t\t\t\t&=1-(1-\\prob(T_A\\leq t))(1-\\prob(T_B\\leq t)) \\\\\n\t\t\t\t&= 1- (1-F_{T_A}(t))(1-F_{T_B}(t))\n\t\t\t\\end{align*}$$",
+      "latex": "Pour tout $t\\in \\R$,\n\t\t\t\\begin{align*}\n\t\t\t\tF_M(t)\n\t\t\t\t&=\\prob(M\\leq t) \\\\\n\t\t\t\t&=1-\\prob(M>t) \\\\\n\t\t\t\t&=1-\\prob(\\{T_A>t\\}\\cap\\{T_B>t\\}) \\\\\n\t\t\t\t&=1-\\prob(T_A>t)\\prob(T_B>t) \\quad \\text{ par indépendance de $T_A$ et de $T_B$} \\\\\n\t\t\t\t&=1-(1-\\prob(T_A\\leq t))(1-\\prob(T_B\\leq t)) \\\\\n\t\t\t\t&= 1- (1-F_{T_A}(t))(1-F_{T_B}(t))\n\t\t\t\\end{align*}",
       "html": "<p>Pour tout <span>\\(t\\in \\R\\)</span>,\n<span>\\[\\begin{align*}\n                F_M(t)\n                &amp;=\\prob(M\\leq t) \\\\\n                &amp;=1-\\prob(M&gt;t) \\\\\n                &amp;=1-\\prob(\\{T_A&gt;t\\}\\cap\\{T_B&gt;t\\}) \\\\\n                &amp;=1-\\prob(T_A&gt;t)\\prob(T_B&gt;t) \\quad \\text{ par indépendance de $T_A$ et de $T_B$} \\\\\n                &amp;=1-(1-\\prob(T_A\\leq t))(1-\\prob(T_B\\leq t)) \\\\\n                &amp;= 1- (1-F_{T_A}(t))(1-F_{T_B}(t))\n            \\end{align*}\\]</span></p>",
       "order": 15
     },
@@ -126,7 +126,7 @@
     {
       "id": "block_17",
       "type": "reponse",
-      "latex": "Comme $T_A$ et $T_B$ suivent la même loi que $T$, on $F_{T_A}=F_{T_B}=F_T$. On obtient donc :\n\t\t\t$$\\begin{equation}\n\t\t\t\tF_M (x)\n\t\t\t\t\\,=\\, 1-{(1-F_T(x))}^2 \\,=\\, \n\t\t\t\t\\begin{cases}\n\t\t\t\t\t1-(1+x)^2e^{-2x} & \\text{ si } x\\geq 0 \\\\\n\t\t\t\t\t0 \\text{ si } x<0.\n\t\t\t\t\\end{cases} \n\t\t\t\\end{equation}$$\n\t\t\tAfin d'obtenir la densité de la variable aléatoire $M$, on dérive sa fonction de répartition en tous les points de continuité de sa densité :\n\t\t\t$$\\begin{align*}\n\t\t\t\tf_M(t)&= \\begin{cases}\n\t\t\t\t\t-2(1+x)e^{-2x}+2(1+x)^2e^{-2x} & \\text{ si } x\\geq 0 \\\\\n\t\t\t\t\t0 \\text{ si } x<0\n\t\t\t\t\\end{cases} \\\\\n\t\t\t\t&= \\begin{cases}\n\t\t\t\t\t2x\\, (1+x)e^{-2x} & \\text{ si } x\\geq 0 \\\\\n\t\t\t\t\t0 \\text{ si } x<0\n\t\t\t\t\\end{cases}\n\t\t\t\\end{align*}$$",
+      "latex": "Comme $T_A$ et $T_B$ suivent la même loi que $T$, on $F_{T_A}=F_{T_B}=F_T$. On obtient donc :\n\t\t\t\\begin{equation*}\n\t\t\t\tF_M (x)\n\t\t\t\t\\,=\\, 1-{(1-F_T(x))}^2 \\,=\\, \n\t\t\t\t\\begin{cases}\n\t\t\t\t\t1-(1+x)^2e^{-2x} & \\text{ si } x\\geq 0 \\\\\n\t\t\t\t\t0 \\text{ si } x<0.\n\t\t\t\t\\end{cases} \n\t\t\t\\end{equation*}\n\t\t\tAfin d'obtenir la densité de la variable aléatoire $M$, on dérive sa fonction de répartition en tous les points de continuité de sa densité :\n\t\t\t\\begin{align*}\n\t\t\t\tf_M(t)&= \\begin{cases}\n\t\t\t\t\t-2(1+x)e^{-2x}+2(1+x)^2e^{-2x} & \\text{ si } x\\geq 0 \\\\\n\t\t\t\t\t0 \\text{ si } x<0\n\t\t\t\t\\end{cases} \\\\\n\t\t\t\t&= \\begin{cases}\n\t\t\t\t\t2x\\, (1+x)e^{-2x} & \\text{ si } x\\geq 0 \\\\\n\t\t\t\t\t0 \\text{ si } x<0\n\t\t\t\t\\end{cases}\n\t\t\t\\end{align*}",
       "html": "<p>Comme <span>\\(T_A\\)</span> et <span>\\(T_B\\)</span> suivent la même loi que <span>\\(T\\)</span>, on <span>\\(F_{T_A}=F_{T_B}=F_T\\)</span>. On obtient donc :\n<span>\\[\\begin{equation}\n                F_M (x)\n                \\,=\\, 1-{(1-F_T(x))}^2 \\,=\\, \n                \\begin{cases}\n                    1-(1+x)^2e^{-2x} &amp; \\text{ si } x\\geq 0 \\\\\n                    0 \\text{ si } x&lt;0.\n                \\end{cases} \n            \\end{equation}\\]</span>\nAfin d’obtenir la densité de la variable aléatoire <span>\\(M\\)</span>, on dérive sa fonction de répartition en tous les points de continuité de sa densité :\n<span>\\[\\begin{align*}\n                f_M(t)&amp;= \\begin{cases}\n                    -2(1+x)e^{-2x}+2(1+x)^2e^{-2x} &amp; \\text{ si } x\\geq 0 \\\\\n                    0 \\text{ si } x&lt;0\n                \\end{cases} \\\\\n                &amp;= \\begin{cases}\n                    2x\\, (1+x)e^{-2x} &amp; \\text{ si } x\\geq 0 \\\\\n                    0 \\text{ si } x&lt;0\n                \\end{cases}\n            \\end{align*}\\]</span></p>",
       "order": 17
     }

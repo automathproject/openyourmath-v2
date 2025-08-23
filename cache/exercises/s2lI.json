@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2024-04-18",
-  "updated_at": "2025-08-22T12:41:16.560Z",
+  "updated_at": "2025-08-23T12:07:53.020Z",
   "content": [
     {
       "id": "block_1",
@@ -42,7 +42,7 @@
     {
       "id": "block_5",
       "type": "reponse",
-      "latex": "Soit $h \\in \\R$. On a :\n\t\t$$\\begin{align*}\n\t\t\tg(h,0) &= \\frac{h^2}{|h|} = |h|, \\\\\n\t\t\tg(0,h) &= \\frac{3h^3}{|h|} = 3|h|^2, \\\\\n\t\t\tg(h,h) &= \\frac{h^2 + 3h^3}{2|h|} = \\frac{h^2(1 + 3h)}{2|h|} = \\frac{h(1 + 3h)}{2}.\n\t\t\\end{align*}$$\n\t\tDonc, $\\lim\\limits_{h \\to 0} g(h,0) = \\lim\\limits_{h \\to 0} g(0,h) = \\lim\\limits_{h \\to 0} g(h,h) = 0$.",
+      "latex": "Soit $h \\in \\R$. On a :\n\t\t\\begin{align*}\n\t\t\tg(h,0) &= \\frac{h^2}{|h|} = |h|, \\\\\n\t\t\tg(0,h) &= \\frac{3h^3}{|h|} = 3|h|^2, \\\\\n\t\t\tg(h,h) &= \\frac{h^2 + 3h^3}{2|h|} = \\frac{h^2(1 + 3h)}{2|h|} = \\frac{h(1 + 3h)}{2}.\n\t\t\\end{align*}\n\t\tDonc, $\\lim\\limits_{h \\to 0} g(h,0) = \\lim\\limits_{h \\to 0} g(0,h) = \\lim\\limits_{h \\to 0} g(h,h) = 0$.",
       "html": "<p>Soit <span>\\(h \\in \\R\\)</span>. On a :\n<span>\\[\\begin{align*}\n            g(h,0) &amp;= \\frac{h^2}{|h|} = |h|, \\\\\n            g(0,h) &amp;= \\frac{3h^3}{|h|} = 3|h|^2, \\\\\n            g(h,h) &amp;= \\frac{h^2 + 3h^3}{2|h|} = \\frac{h^2(1 + 3h)}{2|h|} = \\frac{h(1 + 3h)}{2}.\n        \\end{align*}\\]</span>\nDonc, <span>\\(\\lim\\limits_{h \\to 0} g(h,0) = \\lim\\limits_{h \\to 0} g(0,h) = \\lim\\limits_{h \\to 0} g(h,h) = 0\\)</span>.</p>",
       "order": 5
     },
@@ -56,7 +56,7 @@
     {
       "id": "block_7",
       "type": "reponse",
-      "latex": "Soit $r > 0$ et $\\theta \\in \\R$. On a :\n\t\t$$\\begin{align*}\n\t\t\t\\frac{1}{r|\\cos(\\theta)| + r|\\sin(\\theta)|} & = \\frac{1}{r(|\\cos(\\theta)| + |\\sin(\\theta)|)} \\\\\n\t\t\t& \\leq \\frac{1}{r} \n\t\t\\end{align*}$$\n\t\tDonc, on peut prendre $m(r) = \\frac{1}{r}$.",
+      "latex": "Soit $r > 0$ et $\\theta \\in \\R$. On a :\n\t\t\\begin{align*}\n\t\t\t\\frac{1}{r|\\cos(\\theta)| + r|\\sin(\\theta)|} & = \\frac{1}{r(|\\cos(\\theta)| + |\\sin(\\theta)|)} \\\\\n\t\t\t& \\leq \\frac{1}{r} \n\t\t\\end{align*}\n\t\tDonc, on peut prendre $m(r) = \\frac{1}{r}$.",
       "html": "<p>Soit <span>\\(r &gt; 0\\)</span> et <span>\\(\\theta \\in \\R\\)</span>. On a :\n<span>\\[\\begin{align*}\n            \\frac{1}{r|\\cos(\\theta)| + r|\\sin(\\theta)|} &amp; = \\frac{1}{r(|\\cos(\\theta)| + |\\sin(\\theta)|)} \\\\\n            &amp; \\leq \\frac{1}{r} \n        \\end{align*}\\]</span>\nDonc, on peut prendre <span>\\(m(r) = \\frac{1}{r}\\)</span>.</p>",
       "order": 7
     },
@@ -70,7 +70,7 @@
     {
       "id": "block_9",
       "type": "reponse",
-      "latex": "Soit $(x,y) \\in \\R^2 \\setminus \\{(0,0)\\}$. On passe en coordonnées polaires : $x = r\\cos(\\theta)$ et $y = r\\sin(\\theta)$ avec $r > 0$ et $\\theta \\in \\R$. On a :\n\n\t\t$$\\begin{align*}\n\t\t\t|g(x,y)| & = \\left|\\frac{r^2\\cos^2(\\theta) + 3r^3\\sin^3(\\theta)}{r|\\cos(\\theta)| + r|\\sin(\\theta)|}\\right| \\\\\n\t\t\t& \\leq \\frac{r^2|\\cos(\\theta)| + 3r^3|\\sin(\\theta)|}{r|\\cos(\\theta)| + r|\\sin(\\theta)|} \\\\\n\t\t\t& = r|\\cos(\\theta)| + 3r^2|\\sin(\\theta)| \\text{ d'après la question précédente } \\\\\n\t\t\t& \\leq r + 3r^2 \\text{ car } |\\cos(\\theta)| \\leq 1 \\text{ et } |\\sin(\\theta)| \\leq 1 \\\\\n\t\t\t& = r(1 + 3r) \\xrightarrow[r \\to 0]{} 0.\n\t\t\\end{align*}$$",
+      "latex": "Soit $(x,y) \\in \\R^2 \\setminus \\{(0,0)\\}$. On passe en coordonnées polaires : $x = r\\cos(\\theta)$ et $y = r\\sin(\\theta)$ avec $r > 0$ et $\\theta \\in \\R$. On a :\n\n\t\t\\begin{align*}\n\t\t\t|g(x,y)| & = \\left|\\frac{r^2\\cos^2(\\theta) + 3r^3\\sin^3(\\theta)}{r|\\cos(\\theta)| + r|\\sin(\\theta)|}\\right| \\\\\n\t\t\t& \\leq \\frac{r^2|\\cos(\\theta)| + 3r^3|\\sin(\\theta)|}{r|\\cos(\\theta)| + r|\\sin(\\theta)|} \\\\\n\t\t\t& = r|\\cos(\\theta)| + 3r^2|\\sin(\\theta)| \\text{ d'après la question précédente } \\\\\n\t\t\t& \\leq r + 3r^2 \\text{ car } |\\cos(\\theta)| \\leq 1 \\text{ et } |\\sin(\\theta)| \\leq 1 \\\\\n\t\t\t& = r(1 + 3r) \\xrightarrow[r \\to 0]{} 0.\n\t\t\\end{align*}",
       "html": "<p>Soit <span>\\((x,y) \\in \\R^2 \\setminus \\{(0,0)\\}\\)</span>. On passe en coordonnées polaires : <span>\\(x = r\\cos(\\theta)\\)</span> et <span>\\(y = r\\sin(\\theta)\\)</span> avec <span>\\(r &gt; 0\\)</span> et <span>\\(\\theta \\in \\R\\)</span>. On a :</p>\n<p><span>\\[\\begin{align*}\n            |g(x,y)| &amp; = \\left|\\frac{r^2\\cos^2(\\theta) + 3r^3\\sin^3(\\theta)}{r|\\cos(\\theta)| + r|\\sin(\\theta)|}\\right| \\\\\n            &amp; \\leq \\frac{r^2|\\cos(\\theta)| + 3r^3|\\sin(\\theta)|}{r|\\cos(\\theta)| + r|\\sin(\\theta)|} \\\\\n            &amp; = r|\\cos(\\theta)| + 3r^2|\\sin(\\theta)| \\text{ d&#39;après la question précédente } \\\\\n            &amp; \\leq r + 3r^2 \\text{ car } |\\cos(\\theta)| \\leq 1 \\text{ et } |\\sin(\\theta)| \\leq 1 \\\\\n            &amp; = r(1 + 3r) \\xrightarrow[r \\to 0]{} 0.\n        \\end{align*}\\]</span></p>",
       "order": 9
     }

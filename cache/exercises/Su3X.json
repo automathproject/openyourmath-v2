@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-09-07",
-  "updated_at": "2025-08-22T12:39:35.806Z",
+  "updated_at": "2025-08-23T12:07:06.237Z",
   "content": [
     {
       "id": "block_1",
@@ -28,7 +28,7 @@
     {
       "id": "block_3",
       "type": "reponse",
-      "latex": "On applique le théorème de transfert : \n\t\t\t$$\\begin{align*}\n\t\t\t\t\\mathbb{E}(X_i^2) &= \\int_{-\\infty}^{+\\infty} x^2 e^{-\\frac{x^2}{2}} \\frac{1}{\\sqrt{2\\pi}} dx \\\\\n\t\t\t\t&= 2 \\int_{0}^{+\\infty} x^2 e^{-\\frac{x^2}{2}} \\frac{1}{\\sqrt{2\\pi}} dx \\\\\n\t\t\t\t&= \\sqrt{\\frac{2}{\\pi}}I\n\t\t\t\\end{align*}$$",
+      "latex": "On applique le théorème de transfert : \n\t\t\t\\begin{align*}\n\t\t\t\t\\mathbb{E}(X_i^2) &= \\int_{-\\infty}^{+\\infty} x^2 e^{-\\frac{x^2}{2}} \\frac{1}{\\sqrt{2\\pi}} dx \\\\\n\t\t\t\t&= 2 \\int_{0}^{+\\infty} x^2 e^{-\\frac{x^2}{2}} \\frac{1}{\\sqrt{2\\pi}} dx \\\\\n\t\t\t\t&= \\sqrt{\\frac{2}{\\pi}}I\n\t\t\t\\end{align*}",
       "html": "<p>On applique le théorème de transfert :\n<span>\\[\\begin{align*}\n                \\mathbb{E}(X_i^2) &amp;= \\int_{-\\infty}^{+\\infty} x^2 e^{-\\frac{x^2}{2}} \\frac{1}{\\sqrt{2\\pi}} dx \\\\\n                &amp;= 2 \\int_{0}^{+\\infty} x^2 e^{-\\frac{x^2}{2}} \\frac{1}{\\sqrt{2\\pi}} dx \\\\\n                &amp;= \\sqrt{\\frac{2}{\\pi}}I\n            \\end{align*}\\]</span></p>",
       "order": 3
     },
@@ -56,7 +56,7 @@
     {
       "id": "block_7",
       "type": "reponse",
-      "latex": "On constate que $\\tilde{f}(x) \\geq 0$ pour tout $x \\geq 0$. Par ailleurs, \n\t\t\t$$\\begin{align*}\n\t\t\t\t\\int \\tilde{f}(x) dx &= \\int_{0}^{+\\infty}  xe^{-\\frac{x^2}{2}} dx \\\\\n\t\t\t\t&=  \\left[ -e^{-\\frac{x^2}{2}}\\right]_0^{+\\infty} \\\\\n\t\t\t\t&= 1\n\t\t\t\\end{align*}$$\t\n\t\t\tDonc $\\tilde{f}$ est bien une fonction densité de probabilité. \n\t\t\t\n\t\t\tSoit $\\tilde{F}$ la fonction de répartition associée : si $t \\leq 0$, il est clair que $\\tilde{F}(t) = 0$. Soit $t>0$ : \n\t\t\t$$\\begin{align*}\n\t\t\t\t\\tilde{F}(t) &= \\int_{0}^{t}  xe^{-\\frac{x^2}{2}} dx \\\\\n\t\t\t\t&= 1 - e^{-\\frac{t^2}{2}}\n\t\t\t\\end{align*}$$",
+      "latex": "On constate que $\\tilde{f}(x) \\geq 0$ pour tout $x \\geq 0$. Par ailleurs, \n\t\t\t\\begin{align*}\n\t\t\t\t\\int \\tilde{f}(x) dx &= \\int_{0}^{+\\infty}  xe^{-\\frac{x^2}{2}} dx \\\\\n\t\t\t\t&=  \\left[ -e^{-\\frac{x^2}{2}}\\right]_0^{+\\infty} \\\\\n\t\t\t\t&= 1\n\t\t\t\\end{align*}\t\n\t\t\tDonc $\\tilde{f}$ est bien une fonction densité de probabilité. \n\t\t\t\n\t\t\tSoit $\\tilde{F}$ la fonction de répartition associée : si $t \\leq 0$, il est clair que $\\tilde{F}(t) = 0$. Soit $t>0$ : \n\t\t\t\\begin{align*}\n\t\t\t\t\\tilde{F}(t) &= \\int_{0}^{t}  xe^{-\\frac{x^2}{2}} dx \\\\\n\t\t\t\t&= 1 - e^{-\\frac{t^2}{2}}\n\t\t\t\\end{align*}",
       "html": "<p>On constate que <span>\\(\\tilde{f}(x) \\geq 0\\)</span> pour tout <span>\\(x \\geq 0\\)</span>. Par ailleurs,\n<span>\\[\\begin{align*}\n                \\int \\tilde{f}(x) dx &amp;= \\int_{0}^{+\\infty}  xe^{-\\frac{x^2}{2}} dx \\\\\n                &amp;=  \\left[ -e^{-\\frac{x^2}{2}}\\right]_0^{+\\infty} \\\\\n                &amp;= 1\n            \\end{align*}\\]</span>\nDonc <span>\\(\\tilde{f}\\)</span> est bien une fonction densité de probabilité.</p>\n<p>Soit <span>\\(\\tilde{F}\\)</span> la fonction de répartition associée : si <span>\\(t \\leq 0\\)</span>, il est clair que <span>\\(\\tilde{F}(t) = 0\\)</span>. Soit <span>\\(t&gt;0\\)</span> :\n<span>\\[\\begin{align*}\n                \\tilde{F}(t) &amp;= \\int_{0}^{t}  xe^{-\\frac{x^2}{2}} dx \\\\\n                &amp;= 1 - e^{-\\frac{t^2}{2}}\n            \\end{align*}\\]</span></p>",
       "order": 7
     },

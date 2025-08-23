@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-09-07",
-  "updated_at": "2025-08-22T12:39:32.088Z",
+  "updated_at": "2025-08-23T12:07:03.344Z",
   "content": [
     {
       "id": "block_1",
@@ -56,7 +56,7 @@
     {
       "id": "block_7",
       "type": "reponse",
-      "latex": "Soit $t \\in ]0;1[$. On constate que $U \\leq t \\iff X \\leq t(X+Y) \\iff X\\frac{1-t}{t} \\leq Y$.    On intègre $f(x,y)$ sur le domaine $D_t = \\{(x,y) \\in \\R^2, y \\geq \\frac{1-t}{t}x \\}$ en appliquant le théorème de Fubini :\n\t\t\t$$\\begin{align*}\n\t\t\t\t\\PP(U \\leq t) &= \\iint_{D_t} f(x,y)dxdy \\\\\n\t\t\t\t&= \\int_{0}^{+\\infty} \\left(\\int_{\\frac{1-t}{t}x}^{+\\infty} \\lambda^2 e^{-\\lambda x - \\lambda y} dy  \\right)dx\n\t\t\t\\end{align*}$$",
+      "latex": "Soit $t \\in ]0;1[$. On constate que $U \\leq t \\iff X \\leq t(X+Y) \\iff X\\frac{1-t}{t} \\leq Y$.    On intègre $f(x,y)$ sur le domaine $D_t = \\{(x,y) \\in \\R^2, y \\geq \\frac{1-t}{t}x \\}$ en appliquant le théorème de Fubini :\n\t\t\t\\begin{align*}\n\t\t\t\t\\PP(U \\leq t) &= \\iint_{D_t} f(x,y)dxdy \\\\\n\t\t\t\t&= \\int_{0}^{+\\infty} \\left(\\int_{\\frac{1-t}{t}x}^{+\\infty} \\lambda^2 e^{-\\lambda x - \\lambda y} dy  \\right)dx\n\t\t\t\\end{align*}",
       "html": "<p>Soit <span>\\(t \\in ]0;1[\\)</span>. On constate que <span>\\(U \\leq t \\iff X \\leq t(X+Y) \\iff X\\frac{1-t}{t} \\leq Y\\)</span>. On intègre <span>\\(f(x,y)\\)</span> sur le domaine <span>\\(D_t = \\{(x,y) \\in \\R^2, y \\geq \\frac{1-t}{t}x \\}\\)</span> en appliquant le théorème de Fubini :\n<span>\\[\\begin{align*}\n                \\PP(U \\leq t) &amp;= \\iint_{D_t} f(x,y)dxdy \\\\\n                &amp;= \\int_{0}^{+\\infty} \\left(\\int_{\\frac{1-t}{t}x}^{+\\infty} \\lambda^2 e^{-\\lambda x - \\lambda y} dy  \\right)dx\n            \\end{align*}\\]</span></p>",
       "order": 7
     },
@@ -70,7 +70,7 @@
     {
       "id": "block_9",
       "type": "reponse",
-      "latex": "Soit  $t \\in ]0;1[$ : \n\t\t\t$$\\begin{align*}\n\t\t\t\t\\PP(U \\leq t) &= \\int_{0}^{+\\infty} \\left(\\int_{\\frac{1-t}{t}x}^{+\\infty} \\lambda^2 e^{-\\lambda x - \\lambda y} dy  \\right)dx \\\\\n\t\t\t\t&= \\int_{0}^{+\\infty} \\lambda e^{-\\lambda x} \\times e^{-\\lambda \\frac{1-t}{t} x } dx \\\\\n\t\t\t\t&= \\int_{0}^{+\\infty} \\lambda e^{-\\lambda \\frac{x}{t} } dx \\\\\n\t\t\t\t&= \\int_{0}^{+\\infty} t \\frac{\\lambda}{t} e^{-\\lambda \\frac{x}{t} } dx \\\\\n\t\t\t\t&= t\n\t\t\t\\end{align*}$$\n\t\t\tSi $t \\geq 1$ alors d'après la question 1, $\\PP(U \\geq t) = 1$ et si $t \\leq 0$ alors $\\PP(U \\geq t) = 0$.",
+      "latex": "Soit  $t \\in ]0;1[$ : \n\t\t\t\\begin{align*}\n\t\t\t\t\\PP(U \\leq t) &= \\int_{0}^{+\\infty} \\left(\\int_{\\frac{1-t}{t}x}^{+\\infty} \\lambda^2 e^{-\\lambda x - \\lambda y} dy  \\right)dx \\\\\n\t\t\t\t&= \\int_{0}^{+\\infty} \\lambda e^{-\\lambda x} \\times e^{-\\lambda \\frac{1-t}{t} x } dx \\\\\n\t\t\t\t&= \\int_{0}^{+\\infty} \\lambda e^{-\\lambda \\frac{x}{t} } dx \\\\\n\t\t\t\t&= \\int_{0}^{+\\infty} t \\frac{\\lambda}{t} e^{-\\lambda \\frac{x}{t} } dx \\\\\n\t\t\t\t&= t\n\t\t\t\\end{align*}\n\t\t\tSi $t \\geq 1$ alors d'après la question 1, $\\PP(U \\geq t) = 1$ et si $t \\leq 0$ alors $\\PP(U \\geq t) = 0$.",
       "html": "<p>Soit <span>\\(t \\in ]0;1[\\)</span> :\n<span>\\[\\begin{align*}\n                \\PP(U \\leq t) &amp;= \\int_{0}^{+\\infty} \\left(\\int_{\\frac{1-t}{t}x}^{+\\infty} \\lambda^2 e^{-\\lambda x - \\lambda y} dy  \\right)dx \\\\\n                &amp;= \\int_{0}^{+\\infty} \\lambda e^{-\\lambda x} \\times e^{-\\lambda \\frac{1-t}{t} x } dx \\\\\n                &amp;= \\int_{0}^{+\\infty} \\lambda e^{-\\lambda \\frac{x}{t} } dx \\\\\n                &amp;= \\int_{0}^{+\\infty} t \\frac{\\lambda}{t} e^{-\\lambda \\frac{x}{t} } dx \\\\\n                &amp;= t\n            \\end{align*}\\]</span>\nSi <span>\\(t \\geq 1\\)</span> alors d’après la question 1, <span>\\(\\PP(U \\geq t) = 1\\)</span> et si <span>\\(t \\leq 0\\)</span> alors <span>\\(\\PP(U \\geq t) = 0\\)</span>.</p>",
       "order": 9
     },

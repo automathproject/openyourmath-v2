@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-10-17",
-  "updated_at": "2025-08-22T12:40:37.573Z",
+  "updated_at": "2025-08-23T12:07:42.032Z",
   "content": [
     {
       "id": "block_1",
@@ -28,7 +28,7 @@
     {
       "id": "block_3",
       "type": "reponse",
-      "latex": "On exprime l'intégrale en posant le changement de variable affine $u=\\frac{x-\\mu}{\\sigma} \\iff x = \\sigma u + \\mu$ :\n\t$$\\begin{align*}\n\t\t\\mathbb{E}(X) &= \\int_{-\\infty}^{+\\infty}xf(x)dx \\\\\n\t\t&= \\int_{-\\infty}^{+\\infty} (\\sigma u + \\mu) \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{u^2}{2}} \\sigma du\\\\\n\t\t&= \\frac{\\sigma}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} u e^{-\\frac{u^2}{2}} du + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du\\\\\n\t\t&= 0 + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du \\\\\n\t\t&= 0 + \\mu \\times 1 \\\\\n\t\t&= \\mu\n\\end{align*}$$",
+      "latex": "On exprime l'intégrale en posant le changement de variable affine $u=\\frac{x-\\mu}{\\sigma} \\iff x = \\sigma u + \\mu$ :\n\t\\begin{align*}\n\t\t\\mathbb{E}(X) &= \\int_{-\\infty}^{+\\infty}xf(x)dx \\\\\n\t\t&= \\int_{-\\infty}^{+\\infty} (\\sigma u + \\mu) \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{u^2}{2}} \\sigma du\\\\\n\t\t&= \\frac{\\sigma}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} u e^{-\\frac{u^2}{2}} du + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du\\\\\n\t\t&= 0 + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du \\\\\n\t\t&= 0 + \\mu \\times 1 \\\\\n\t\t&= \\mu\n\\end{align*}",
       "html": "<p>On exprime l’intégrale en posant le changement de variable affine <span>\\(u=\\frac{x-\\mu}{\\sigma} \\iff x = \\sigma u + \\mu\\)</span> :\n<span>\\[\\begin{align*}\n        \\mathbb{E}(X) &amp;= \\int_{-\\infty}^{+\\infty}xf(x)dx \\\\\n        &amp;= \\int_{-\\infty}^{+\\infty} (\\sigma u + \\mu) \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{u^2}{2}} \\sigma du\\\\\n        &amp;= \\frac{\\sigma}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} u e^{-\\frac{u^2}{2}} du + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du\\\\\n        &amp;= 0 + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du \\\\\n        &amp;= 0 + \\mu \\times 1 \\\\\n        &amp;= \\mu\n\\end{align*}\\]</span></p>",
       "order": 3
     },

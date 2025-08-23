@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-10-07",
-  "updated_at": "2025-08-22T12:39:26.051Z",
+  "updated_at": "2025-08-23T12:06:58.128Z",
   "content": [
     {
       "id": "block_1",
@@ -28,7 +28,7 @@
     {
       "id": "block_3",
       "type": "reponse",
-      "latex": "Soit $t \\in \\R$ et $F_{2X}$ la fonction de répartition de la variable aléatoire $2X$ : alors\n $$\\begin{align*}\n F_{2X}(t) &= \\PP(2X \\leq t) \\\\\n           &= \\PP\\left(X \\leq \\frac{t}{2}\\right)\\\\\n           &= \\int_{-\\infty}^{\\frac{t}{2}} 1_{[0;1]}(x) dx\\\\\n           &=\\begin{cases}\n           0& \\text{ si } t \\leq 0 \\\\\n           \\frac{t}{2} & \\text{ si } 0 < t \\leq 2 \\\\\n           1 & \\text{ si } t \\geq 2\n           \\end{cases}\n \\end{align*}$$\t\nLa fonction $F_{2X}$ est dérivable presque partout (sauf en ${0}$ et en $2$). Sa dérivée coïncide donc presque partout avec une fonction densité $g$ de la variable $2X$. On peut donc poser \n$$g(x)=\\frac{1}{2}\\textbf{1}_{[0;2]}(x)$$\net on conclut que $2X$ suit une loi uniforme sur $[0;2]$.",
+      "latex": "Soit $t \\in \\R$ et $F_{2X}$ la fonction de répartition de la variable aléatoire $2X$ : alors\n \\begin{align*}\n F_{2X}(t) &= \\PP(2X \\leq t) \\\\\n           &= \\PP\\left(X \\leq \\frac{t}{2}\\right)\\\\\n           &= \\int_{-\\infty}^{\\frac{t}{2}} 1_{[0;1]}(x) dx\\\\\n           &=\\begin{cases}\n           0& \\text{ si } t \\leq 0 \\\\\n           \\frac{t}{2} & \\text{ si } 0 < t \\leq 2 \\\\\n           1 & \\text{ si } t \\geq 2\n           \\end{cases}\n \\end{align*}\t\nLa fonction $F_{2X}$ est dérivable presque partout (sauf en ${0}$ et en $2$). Sa dérivée coïncide donc presque partout avec une fonction densité $g$ de la variable $2X$. On peut donc poser \n$$g(x)=\\frac{1}{2}\\textbf{1}_{[0;2]}(x)$$\net on conclut que $2X$ suit une loi uniforme sur $[0;2]$.",
       "html": "<p>Soit <span>\\(t \\in \\R\\)</span> et <span>\\(F_{2X}\\)</span> la fonction de répartition de la variable aléatoire <span>\\(2X\\)</span> : alors\n<span>\\[\\begin{align*}\n F_{2X}(t) &amp;= \\PP(2X \\leq t) \\\\\n           &amp;= \\PP\\left(X \\leq \\frac{t}{2}\\right)\\\\\n           &amp;= \\int_{-\\infty}^{\\frac{t}{2}} 1_{[0;1]}(x) dx\\\\\n           &amp;=\\begin{cases}\n           0&amp; \\text{ si } t \\leq 0 \\\\\n           \\frac{t}{2} &amp; \\text{ si } 0 &lt; t \\leq 2 \\\\\n           1 &amp; \\text{ si } t \\geq 2\n           \\end{cases}\n \\end{align*}\\]</span>\nLa fonction <span>\\(F_{2X}\\)</span> est dérivable presque partout (sauf en <span>\\({0}\\)</span> et en <span>\\(2\\)</span>). Sa dérivée coïncide donc presque partout avec une fonction densité <span>\\(g\\)</span> de la variable <span>\\(2X\\)</span>. On peut donc poser\n<span>\\[g(x)=\\frac{1}{2}\\textbf{1}_{[0;2]}(x)\\]</span>\net on conclut que <span>\\(2X\\)</span> suit une loi uniforme sur <span>\\([0;2]\\)</span>.</p>",
       "order": 3
     }
