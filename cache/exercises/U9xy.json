@@ -9,13 +9,13 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-31",
-  "updated_at": "2025-08-25T08:56:58.543Z",
+  "updated_at": "2025-08-25T11:47:03.238Z",
   "content": [
     {
       "id": "block_1",
       "type": "reponse",
       "latex": "\\begin{tikzpicture}[scale=1.5]\n\t\t\t\\draw[->] (-2,0) -- (2,0) node[right] {$x$};\n\t\t\t\\draw[->] (0,-2) -- (0,2) node[above] {$y$};\n\t\t\t\\fill[blue!20,domain=0:2,smooth] (2,2) -- (2,0) -- (0,0) -- cycle;\n\t\t\t\\draw[dashed, blue] (0,0) -- (2,2) node[midway,left] {$x=y$};\n\t\t\t\\draw[blue] (0,0) -- (2,0);\n\t\t\\end{tikzpicture}",
-      "html": "<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/U9xy-tikz-1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></p></p>",
+      "html": "<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/U9xy-tikz_1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></p></p>",
       "order": 1
     },
     {
@@ -42,12 +42,7 @@
   ],
   "artifacts": {
     "tikz": [
-      {
-        "id": "tikz_1",
-        "type": "tikz",
-        "url": "/artifacts/tikz/U9xy-tikz-1.svg",
-        "latex": "\\begin{tikzpicture}[scale=1.5]\n\t\t\t\\draw[->] (-2,0) -- (2,0) node[right] {$x$};\n\t\t\t\\draw[->] (0,-2) -- (0,2) node[above] {$y$};\n\t\t\t\\fill[blue!20,domain=0:2,smooth] (2,2) -- (2,0) -- (0,0) -- cycle;\n\t\t\t\\draw[dashed, blue] (0,0) -- (2,2) node[midway,left] {$x=y$};\n\t\t\t\\draw[blue] (0,0) -- (2,0);\n\t\t\\end{tikzpicture}"
-      }
+      "tikz_1"
     ],
     "geogebra": [],
     "code": [],

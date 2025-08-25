@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-01",
-  "updated_at": "2025-08-25T08:56:30.347Z",
+  "updated_at": "2025-08-25T11:46:35.347Z",
   "content": [
     {
       "id": "block_1",
@@ -119,24 +119,9 @@
   ],
   "artifacts": {
     "tikz": [
-      {
-        "id": "tikz_1",
-        "type": "tikz",
-        "url": "/artifacts/tikz/CPgC-tikz-1.svg",
-        "latex": "\\begin{tikzpicture}\n\\def\\xmin{-3}; \n\\def\\xmax{+3}; \n\\def\\ymin{0}; \n\\def\\ymax{+7};\n\\draw[help lines] (\\xmin,\\ymin) grid (\\xmax,\\ymax);\n\\clip (\\xmin,\\ymin-0.1) rectangle (\\xmax,\\ymax);\n\\draw[->,>=latex,thick,gray] (\\xmin,0)--(\\xmax,0);\n\\draw[->,>=latex,thick,gray] (0,\\ymin)--(0,\\ymax);\n% \\def\\a{+1};\n% \\draw [thick, domain=\\xmin:\\xmax] plot(\\x,{exp(\\x)});\n\\foreach \\a/\\macoul in {3.0/20,2.5/40,2.0/60,1.5/80,1.0/100}{\n\t\\draw [very thick, color=red!\\macoul,samples=20,smooth] plot(\\x,{\\a*(exp(\\x/\\a)+exp(-\\x/\\a))/2});\n}; \n\n% \\draw [thick, color=blue] plot(\\x,{(exp(\\x)-exp(-\\x))/2});\n\\end{tikzpicture}"
-      },
-      {
-        "id": "tikz_2",
-        "type": "tikz",
-        "url": "/artifacts/tikz/CPgC-tikz-2.svg",
-        "latex": "\\begin{tikzpicture}[scale=0.8]\n\\def\\xmin{-4}; \n\\def\\xmax{+3}; \n\\def\\ymin{-3}; \n\\def\\ymax{+5};\n\n\\draw[help lines] (\\xmin,\\ymin) grid (\\xmax,\\ymax);\n\\draw[->,>=latex,thick,gray] (\\xmin,0) -- (\\xmax,0);\n\\draw[->,>=latex,thick,gray] (0,\\ymin) -- (0,\\ymax);\n\\clip (\\xmin,\\ymin) rectangle (\\xmax,\\ymax);\n\n%  \\def\\a{+1};\n\\draw [very thick, color=orange,samples=200,smooth] plot(\\x,{exp(\\x)});\n\\node[color=orange] at (1.6,3.5) {$e^x$};  \n%  \\draw [thick, color= red] plot(\\x,{(exp(\\x)+exp(-\\x))/2});\n%  \\draw [thick, color=blue] plot(\\x,{(exp(\\x)-exp(-\\x))/2});\n\\node[below right,gray] at (0,0) {$0$};\n\\node[below right,gray] at (1,0) {$1$};\n\\node[below right,gray] at (0,1) {$1$};\n\\end{tikzpicture}"
-      },
-      {
-        "id": "tikz_3",
-        "type": "tikz",
-        "url": "/artifacts/tikz/CPgC-tikz-3.svg",
-        "latex": "\\begin{tikzpicture}[scale=0.8]\n\\def\\xmin{-3}; \n\\def\\xmax{+3}; \n\\def\\ymin{-3}; \n\\def\\ymax{+5};\n\\draw[help lines] (\\xmin,\\ymin) grid (\\xmax,\\ymax);\n\\draw[->,>=latex,thick,gray] (\\xmin,0)--(\\xmax,0);\n\\draw[->,>=latex,thick,gray] (0,\\ymin)--(0,\\ymax);\n\\clip (\\xmin,\\ymin) rectangle (\\xmax,\\ymax);\n\\def\\a{+1};\n% \\draw [thick, domain=\\xmin:\\xmax] plot(\\x,{exp(\\x)});\n\\draw [very thick, color=red,samples=200,smooth] plot(\\x,{(exp(\\x)+exp(-\\x))/2});\n% \\beameronly{\\uncover<5->}{\n\\draw [very thick, color=blue,samples=200,smooth] plot(\\x,{(exp(\\x)-exp(-\\x))/2});\n%};\n\\node[color=red] at (-1.6,4.5) {$\\ch(x)$};  \n%  \\beameronly{\\uncover<5->}{\n\\node[color=blue] at (-1.6,-1.5) {$\\sh(x)$};  \n%};\n\\node[below right,gray] at (0,0) {$0$};\n\\node[below right,gray] at (1,0) {$1$};\n\\node[below left,gray] at (0,1) {$1$};\n\\end{tikzpicture}"
-      }
+      "tikz_1",
+      "tikz_2",
+      "tikz_3"
     ],
     "geogebra": [],
     "code": [],

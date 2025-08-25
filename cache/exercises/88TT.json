@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-07-10",
-  "updated_at": "2025-08-25T08:56:23.770Z",
+  "updated_at": "2025-08-25T11:46:28.848Z",
   "content": [
     {
       "id": "block_1",
@@ -56,24 +56,9 @@
   ],
   "artifacts": {
     "tikz": [
-      {
-        "id": "tikz_1",
-        "type": "tikz",
-        "url": "/artifacts/tikz/88TT-tikz-1.svg",
-        "latex": "\\begin{tikzpicture}[domain=-1:1]\n\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\\draw[very thin, style=gray!20,  step=0.1] (-1.5,-1.5) grid(1.5,1.5);\n\t\t\\draw[thin,gray!60, step = 0.5]  (-1.5,-1.5) grid(1.5,1.5);\n\t\t\\filldraw[fill=red!20, draw=red, line width = 2pt, opacity = 0.5] plot [domain=-1:1] (\\x,{1-\\x*\\x})  -- plot [domain=1:-1] (\\x,{\\x*\\x-1}) ;\n\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\\draw (0,-1.2) node[below]{$\\mathcal{D}_1$} ;\n\t\\end{tikzpicture}"
-      },
-      {
-        "id": "tikz_2",
-        "type": "tikz",
-        "url": "/artifacts/tikz/88TT-tikz-2.svg",
-        "latex": "\\begin{tikzpicture}[domain=-1:1]\n\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\\draw[very thin, style=gray!20,  step=0.1] (-1.5,-1.5) grid(1.5,1.5);\n\t\t\\draw[thin,gray!60, step = 0.5]  (-1.5,-1.5) grid(1.5,1.5);\n\t\t\\filldraw[fill=red!20, draw=red, line width = 2pt, opacity = 0.5] (1,1) -- (1,-1) -- (-1,-1) -- (-1,1) -- cycle ;\n\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\\draw (0,-1.2) node[below]{$\\mathcal{D}_2$} ;\n\t\\end{tikzpicture}"
-      },
-      {
-        "id": "tikz_3",
-        "type": "tikz",
-        "url": "/artifacts/tikz/88TT-tikz-3.svg",
-        "latex": "\\begin{tikzpicture}[domain=-1:1]\n\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\\draw[very thin, style=gray!20,  step=0.1] (-1.5,-1.5) grid(1.5,1.5);\n\t\t\\draw[thin,gray!60, step = 0.5]  (-1.5,-1.5) grid(1.5,1.5);\n\t\t\\filldraw[fill=red!20, draw=red, line width = 2pt, opacity = 0.5] (0,0) circle (1) ;\n\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\\draw (0,-1.2) node[below]{$\\mathcal{D}_3$} ;\n\t\\end{tikzpicture}"
-      }
+      "tikz_1",
+      "tikz_2",
+      "tikz_3"
     ],
     "geogebra": [],
     "code": [],

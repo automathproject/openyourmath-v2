@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-09-22",
-  "updated_at": "2025-08-25T08:57:13.172Z",
+  "updated_at": "2025-08-25T11:47:18.083Z",
   "content": [
     {
       "id": "block_1",
@@ -22,7 +22,7 @@
       "id": "block_2",
       "type": "question",
       "latex": "Dire lequel de ces trois domaines de $\\R^2$ représentés ci-dessous est le domaine $\\mathcal{C}$.\n\t\t\n\t\t\\begin{minipage}{0.2\\textwidth}\n\t\t\t\\begin{center}\\begin{tikzpicture}\n\t\t\t\t\t\\fill[gray!40] (0,0) circle (1);\n\t\t\t\t\t\\draw (0,0) circle(1);\t\n\t\t\t\t\t\\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};\\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};\n\t\t\t\t\t\\draw[] (1,0) node[below right] {$1$};\n\t\t\t\t\t\\draw[] (-1,0) node[below left] {$-1$};\n\t\t\t\t\t\\draw[] (0,1) node[above left] {$1$};\n\t\t\t\t\t\\draw[] (0,-1) node[below left]{$-1$};\n\t\t\t\t\t\\node[below left] at (0,0) {$0$};\n\t\t\t\t\\end{tikzpicture}\\\\ D1\\end{center}\n\t\t\\end{minipage}\n\t\t\\hfill\n\t\t\\begin{minipage}{0.2\\textwidth}\n\t\t\t\\begin{center}\\begin{tikzpicture}\n\t\t\t\t\t\\fill[gray!40] (-1,0) -- (0,1) -- (1,0) -- (0,-1) -- cycle;\n\t\t\t\t\t\\draw (-1,0) -- (0,1) -- (1,0) -- (0,-1) -- cycle;\n\t\t\t\t\t\\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};\\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};\\foreach \\x in {-1} {\\draw (\\x,0.1cm) -- (\\x,-0.1cm) node[below] {$\\x\\phantom{-}\\strut$};}\n\t\t\t\t\t\\foreach \\x in {1,} {\\draw (\\x,0.1cm) -- (\\x,-0.1cm) node[below] {$\\x\\strut$};}\n\t\t\t\t\t\\foreach \\y in {-1,1} {\\draw (0.1cm,\\y) -- (-0.1cm,\\y) node[left] {$\\y\\strut$};}\n\t\t\t\t\t\\node[below left] at (0,0) {$0$};\t\n\t\t\t\t\\end{tikzpicture}\\\\ D2\\end{center}\n\t\t\\end{minipage}\n\t\t\\hfill\n\t\t\\begin{minipage}{0.2\\textwidth}\n\t\t\t\\begin{center}\\begin{tikzpicture}\n\t\t\t\t\t\\fill[gray!40] (-1,1) -- (1,1) -- (1,-1) -- (-1,-1) -- cycle;\n\t\t\t\t\t\\draw (-1,1) -- (1,1) -- (1,-1) -- (-1,-1) -- cycle;\n\t\t\t\t\t\\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\t\t\t\\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};\n\t\t\t\t\t\\draw[] (1,0) node[below right] {$1$};\n\t\t\t\t\t\\draw[] (-1,0) node[below left] {$-1$};\n\t\t\t\t\t\\draw[] (0,1) node[above left] {$1$};\n\t\t\t\t\t\\draw[] (0,-1) node[below left]{$-1$};\n\t\t\t\t\t\\node[below left] at (0,0) {$0$};\n\t\t\t\t\\end{tikzpicture}\\\\ D3\\end{center}\n\t\\end{minipage}",
-      "html": "<p>Dire lequel de ces trois domaines de <span class=\"math inline\">\\(\\R^2\\)</span> représentés ci-dessous est le domaine <span class=\"math inline\">\\(\\mathcal{C}\\)</span>.</p>\n<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/bOga-tikz-1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></p><br />\nD1</p>\n<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/bOga-tikz-2.svg\" alt=\"Diagramme TikZ 2\" class=\"tikz-svg-image\"></p><br />\nD2</p>\n<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/bOga-tikz-3.svg\" alt=\"Diagramme TikZ 3\" class=\"tikz-svg-image\"></p><br />\nD3</p>",
+      "html": "<p>Dire lequel de ces trois domaines de <span class=\"math inline\">\\(\\R^2\\)</span> représentés ci-dessous est le domaine <span class=\"math inline\">\\(\\mathcal{C}\\)</span>.</p>\n<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/bOga-tikz_1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></p><br />\nD1</p>\n<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/bOga-tikz_2.svg\" alt=\"Diagramme TikZ 2\" class=\"tikz-svg-image\"></p><br />\nD2</p>\n<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/bOga-tikz_3.svg\" alt=\"Diagramme TikZ 3\" class=\"tikz-svg-image\"></p><br />\nD3</p>",
       "order": 2
     },
     {
@@ -91,24 +91,9 @@
   ],
   "artifacts": {
     "tikz": [
-      {
-        "id": "tikz_1",
-        "type": "tikz",
-        "url": "/artifacts/tikz/bOga-tikz-1.svg",
-        "latex": "\\begin{tikzpicture}\n\t\t\t\t\t\\fill[gray!40] (0,0) circle (1);\n\t\t\t\t\t\\draw (0,0) circle(1);\t\n\t\t\t\t\t\\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};\\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};\n\t\t\t\t\t\\draw[] (1,0) node[below right] {$1$};\n\t\t\t\t\t\\draw[] (-1,0) node[below left] {$-1$};\n\t\t\t\t\t\\draw[] (0,1) node[above left] {$1$};\n\t\t\t\t\t\\draw[] (0,-1) node[below left]{$-1$};\n\t\t\t\t\t\\node[below left] at (0,0) {$0$};\n\t\t\t\t\\end{tikzpicture}"
-      },
-      {
-        "id": "tikz_2",
-        "type": "tikz",
-        "url": "/artifacts/tikz/bOga-tikz-2.svg",
-        "latex": "\\begin{tikzpicture}\n\t\t\t\t\t\\fill[gray!40] (-1,0) -- (0,1) -- (1,0) -- (0,-1) -- cycle;\n\t\t\t\t\t\\draw (-1,0) -- (0,1) -- (1,0) -- (0,-1) -- cycle;\n\t\t\t\t\t\\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};\\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};\\foreach \\x in {-1} {\\draw (\\x,0.1cm) -- (\\x,-0.1cm) node[below] {$\\x\\phantom{-}\\strut$};}\n\t\t\t\t\t\\foreach \\x in {1,} {\\draw (\\x,0.1cm) -- (\\x,-0.1cm) node[below] {$\\x\\strut$};}\n\t\t\t\t\t\\foreach \\y in {-1,1} {\\draw (0.1cm,\\y) -- (-0.1cm,\\y) node[left] {$\\y\\strut$};}\n\t\t\t\t\t\\node[below left] at (0,0) {$0$};\t\n\t\t\t\t\\end{tikzpicture}"
-      },
-      {
-        "id": "tikz_3",
-        "type": "tikz",
-        "url": "/artifacts/tikz/bOga-tikz-3.svg",
-        "latex": "\\begin{tikzpicture}\n\t\t\t\t\t\\fill[gray!40] (-1,1) -- (1,1) -- (1,-1) -- (-1,-1) -- cycle;\n\t\t\t\t\t\\draw (-1,1) -- (1,1) -- (1,-1) -- (-1,-1) -- cycle;\n\t\t\t\t\t\\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\t\t\t\\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};\n\t\t\t\t\t\\draw[] (1,0) node[below right] {$1$};\n\t\t\t\t\t\\draw[] (-1,0) node[below left] {$-1$};\n\t\t\t\t\t\\draw[] (0,1) node[above left] {$1$};\n\t\t\t\t\t\\draw[] (0,-1) node[below left]{$-1$};\n\t\t\t\t\t\\node[below left] at (0,0) {$0$};\n\t\t\t\t\\end{tikzpicture}"
-      }
+      "tikz_1",
+      "tikz_2",
+      "tikz_3"
     ],
     "geogebra": [],
     "code": [],

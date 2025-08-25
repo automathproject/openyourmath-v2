@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2025-04-16",
-  "updated_at": "2025-08-25T08:57:35.776Z",
+  "updated_at": "2025-08-25T11:47:40.522Z",
   "content": [
     {
       "id": "block_1",
@@ -36,7 +36,7 @@
       "id": "block_4",
       "type": "reponse",
       "latex": "\\begin{tikzpicture}[scale=1]\n\t\t\t\t% Disque unité\n\t\t\t\t\\fill[white] (0,0) circle(1);\n\t\t\t\t\n\t\t\t\t% Demi-plan x + y >= 0\n\t\t\t\t\\begin{scope}\n\t\t\t\t\t\\clip (0,0) circle(1);\n\t\t\t\t\t\\fill[gray!50, opacity=0.6] (-1.2,1.2) -- (1.2,-1.2) -- (1.2,1.2) -- cycle;\n\t\t\t\t\\end{scope}\n\t\t\t\t\n\t\t\t\t% Cercle frontière\n\t\t\t\t\\draw[thick] (0,0) circle(1);\n\t\t\t\t\n\t\t\t\t% Droite x + y = 0\n\t\t\t\t\\draw[black, thick, ] (-1.2,1.2) -- (1.2,-1.2) node[below right] {\\small $x + y = 0$};\n\t\t\t\t\n\t\t\t\t% Axes\n\t\t\t\t\\draw[->] (-1.2,0) -- (1.3,0) node[right] {$x$};\n\t\t\t\t\\draw[->] (0,-1.2) -- (0,1.3) node[above] {$y$};\n\t\t\t\t\n\t\t\t\t% Label du domaine\n\t\t\t\t\\node at (0.4,0.4) { $\\mathcal{K}$};\n\t\t\t\\end{tikzpicture}\n\t\t\tLe domaine $\\mathcal{K}$ est le disque unité tronqué par la droite $x + y = 0$. Il contient tout son bord, il est fermé et n'est pas ouvert.",
-      "html": "<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/nQHm-tikz-1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></p>\nLe domaine <span class=\"math inline\">\\(\\mathcal{K}\\)</span> est le disque unité tronqué par la droite <span class=\"math inline\">\\(x + y = 0\\)</span>. Il contient tout son bord, il est fermé et n’est pas ouvert.</p>",
+      "html": "<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/nQHm-tikz_1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></p>\nLe domaine <span class=\"math inline\">\\(\\mathcal{K}\\)</span> est le disque unité tronqué par la droite <span class=\"math inline\">\\(x + y = 0\\)</span>. Il contient tout son bord, il est fermé et n’est pas ouvert.</p>",
       "order": 4
     },
     {
@@ -210,12 +210,7 @@
   ],
   "artifacts": {
     "tikz": [
-      {
-        "id": "tikz_1",
-        "type": "tikz",
-        "url": "/artifacts/tikz/nQHm-tikz-1.svg",
-        "latex": "\\begin{tikzpicture}[scale=1]\n\t\t\t\t% Disque unité\n\t\t\t\t\\fill[white] (0,0) circle(1);\n\t\t\t\t\n\t\t\t\t% Demi-plan x + y >= 0\n\t\t\t\t\\begin{scope}\n\t\t\t\t\t\\clip (0,0) circle(1);\n\t\t\t\t\t\\fill[gray!50, opacity=0.6] (-1.2,1.2) -- (1.2,-1.2) -- (1.2,1.2) -- cycle;\n\t\t\t\t\\end{scope}\n\t\t\t\t\n\t\t\t\t% Cercle frontière\n\t\t\t\t\\draw[thick] (0,0) circle(1);\n\t\t\t\t\n\t\t\t\t% Droite x + y = 0\n\t\t\t\t\\draw[black, thick, ] (-1.2,1.2) -- (1.2,-1.2) node[below right] {\\small $x + y = 0$};\n\t\t\t\t\n\t\t\t\t% Axes\n\t\t\t\t\\draw[->] (-1.2,0) -- (1.3,0) node[right] {$x$};\n\t\t\t\t\\draw[->] (0,-1.2) -- (0,1.3) node[above] {$y$};\n\t\t\t\t\n\t\t\t\t% Label du domaine\n\t\t\t\t\\node at (0.4,0.4) { $\\mathcal{K}$};\n\t\t\t\\end{tikzpicture}"
-      }
+      "tikz_1"
     ],
     "geogebra": [],
     "code": [],
