@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-09-07",
-  "updated_at": "2025-08-25T11:47:01.187Z",
+  "updated_at": "2025-08-25T13:14:35.996Z",
   "content": [
     {
       "id": "block_1",
@@ -85,14 +85,16 @@
       "id": "block_11",
       "type": "reponse",
       "latex": "Soit $J_n = \\frac{1}{n} \\sum_{i=1}^n Y_i$ où $(Y_i)$ est une suite de variables aléatoires i.i.d. selon une loi admettant $\\tilde{f}$ pour densité. Alors on remarque que $I = \\mathbb{E}(Y_1)$ et d'après la loi forte des grands nombres, \n\t\t\t$$ \\displaystyle \\frac{1}{n}\\sum_{i=1}^n Y_i \\xrightarrow[n \\to \\infty]{{\\rm{p.s.}}} I$$\n\t\t\t\n\t\t\tSachant simuler la loi de $Y_1$, on déduit l'algorithme suivant permettant de déterminer une valeur approchée de $I$ :\n\t\t\t\n\t\t\t{\\centering \\fbox{\\BUseVerbatim{Su3Xpython}}\\par}",
-      "html": "<p>Soit <span class=\"math inline\">\\(J_n = \\frac{1}{n} \\sum_{i=1}^n Y_i\\)</span> où <span class=\"math inline\">\\((Y_i)\\)</span> est une suite de variables aléatoires i.i.d. selon une loi admettant <span class=\"math inline\">\\(\\tilde{f}\\)</span> pour densité. Alors on remarque que <span class=\"math inline\">\\(I = \\mathbb{E}(Y_1)\\)</span> et d’après la loi forte des grands nombres,\n<span class=\"math display\">\\[\\displaystyle \\frac{1}{n}\\sum_{i=1}^n Y_i \\xrightarrow[n \\to \\infty]{{\\rm{p.s.}}} I\\]</span></p>\n<p>Sachant simuler la loi de <span class=\"math inline\">\\(Y_1\\)</span>, on déduit l’algorithme suivant permettant de déterminer une valeur approchée de <span class=\"math inline\">\\(I\\)</span> :</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(J_n = \\frac{1}{n} \\sum_{i=1}^n Y_i\\)</span> où <span class=\"math inline\">\\((Y_i)\\)</span> est une suite de variables aléatoires i.i.d. selon une loi admettant <span class=\"math inline\">\\(\\tilde{f}\\)</span> pour densité. Alors on remarque que <span class=\"math inline\">\\(I = \\mathbb{E}(Y_1)\\)</span> et d’après la loi forte des grands nombres,\n<span class=\"math display\">\\[\\displaystyle \\frac{1}{n}\\sum_{i=1}^n Y_i \\xrightarrow[n \\to \\infty]{{\\rm{p.s.}}} I\\]</span></p>\n<p>Sachant simuler la loi de <span class=\"math inline\">\\(Y_1\\)</span>, on déduit l’algorithme suivant permettant de déterminer une valeur approchée de <span class=\"math inline\">\\(I\\)</span> :</p>\n<p><div class=\"code-block\" data-language=\"python\" data-block-name=\"Su3Xpython\">\n  <div class=\"code-header\">\n    <span class=\"language-label\">PYTHON</span>\n    <span class=\"block-name\">Su3Xpython</span>\n  </div>\n  <pre><code class=\"language-python\">n=1000\n\tS=0\n\tfor i in range(n):\n\tu = rand()\n\tS= S + sqrt(-2*log(1-u))\n\tprint(&quot;Valeur approchée de I = &quot;)\n\tprint(S/n)</code></pre>\n</div></p>",
       "order": 11
     }
   ],
   "artifacts": {
     "tikz": [],
     "geogebra": [],
-    "code": [],
+    "code": [
+      "code_1"
+    ],
     "video": null
   },
   "source_hash": "c73a3767580670e2fd4ad7e9f30405e62a43f78d64284797cc57149cadca152f"

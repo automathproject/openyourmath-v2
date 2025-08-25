@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-09-24",
-  "updated_at": "2025-08-25T11:47:14.199Z",
+  "updated_at": "2025-08-25T13:14:49.181Z",
   "content": [
     {
       "id": "block_1",
@@ -36,14 +36,14 @@
       "id": "block_4",
       "type": "question",
       "latex": "Compléter le code Python ci-dessous, comportant deux champs manquants, afin qu'il affiche une approximation de $I$.\n\t\t\n\t{\\centering \\fbox{\\BUseVerbatim{aYzLpython}}\\par}",
-      "html": "<p>Compléter le code Python ci-dessous, comportant deux champs manquants, afin qu’il affiche une approximation de <span class=\"math inline\">\\(I\\)</span>.</p>",
+      "html": "<p>Compléter le code Python ci-dessous, comportant deux champs manquants, afin qu’il affiche une approximation de <span class=\"math inline\">\\(I\\)</span>.</p>\n<p><div class=\"code-block\" data-language=\"python\" data-block-name=\"aYzLpython\">\n  <div class=\"code-header\">\n    <span class=\"language-label\">PYTHON</span>\n    <span class=\"block-name\">aYzLpython</span>\n  </div>\n  <pre><code class=\"language-python\">n=1000\nS=0\nfor i in range(n):\n  u = ...\n  S= ...\nprint(&quot;Valeur approchée de I = &quot;)\nprint(...)</code></pre>\n</div></p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "{\\centering \\fbox{\\BUseVerbatim{aYzLpythonsolution}}\\par}",
-      "html": "",
+      "html": "<p><div class=\"code-block\" data-language=\"python\" data-block-name=\"aYzLpythonsolution\">\n  <div class=\"code-header\">\n    <span class=\"language-label\">PYTHON</span>\n    <span class=\"block-name\">aYzLpythonsolution</span>\n  </div>\n  <pre><code class=\"language-python\">n=1000\n\tS=0\n\tfor i in range(n):\n\tu = rand()\n\tS= S+sin(sqrt(u))\n\tprint(&quot;Valeur approchée de I = &quot;)\n\tprint(S/n)</code></pre>\n</div></p>",
       "order": 5
     },
     {
@@ -113,7 +113,10 @@
   "artifacts": {
     "tikz": [],
     "geogebra": [],
-    "code": [],
+    "code": [
+      "code_1",
+      "code_2"
+    ],
     "video": null
   },
   "source_hash": "c41e42f7190b937ab8e0070c6391adf9cabd1c03f34d044a23bc4ecff0b4ddc9"
