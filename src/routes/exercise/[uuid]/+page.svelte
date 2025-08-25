@@ -113,14 +113,14 @@
               on:click={() => showHint = !showHint}
               class="action-button action-button--hint {showHint ? 'action-button--active' : ''} print-hidden"
             >
-              💡 {showHint ? 'Masquer' : 'Voir'} l'indication
+              💡 {showHint ? 'Masquer' : 'Voir'} les indications
             </button>
             
             <button 
               on:click={() => showSolution = !showSolution}
               class="action-button action-button--solution {showSolution ? 'action-button--active' : ''} print-hidden"
             >
-              ✅ {showSolution ? 'Masquer' : 'Voir'} la solution
+              ✅ {showSolution ? 'Masquer' : 'Voir'} les solutions
             </button>
           </div>
         </div>

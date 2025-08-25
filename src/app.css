@@ -170,6 +170,10 @@
     @apply bg-gray-50 rounded-lg p-4 mb-4;
   }
   
+  .question-header {
+    @apply flex items-start gap-3;
+  }
+  
   .question-number {
     @apply flex-shrink-0 mt-1;
   }
@@ -180,6 +184,61 @@
   
   .question-content {
     @apply flex-1;
+  }
+  
+  .question-actions {
+    @apply flex-shrink-0 flex gap-2 ml-2;
+  }
+  
+  .question-action-btn {
+    @apply w-8 h-8 rounded-full flex items-center justify-center text-lg cursor-pointer transition-all duration-200;
+    @apply bg-white border-2 border-gray-300 hover:border-gray-400;
+  }
+  
+  .question-action-btn--hint {
+    @apply hover:border-yellow-400 hover:bg-yellow-50;
+  }
+  
+  .question-action-btn--solution {
+    @apply hover:border-green-400 hover:bg-green-50;
+  }
+  
+  .question-action-btn--active.question-action-btn--hint {
+    @apply bg-yellow-100 border-yellow-400;
+  }
+  
+  .question-action-btn--active.question-action-btn--solution {
+    @apply bg-green-100 border-green-400;
+  }
+  
+  /* ==================
+     INLINE SOLUTIONS AND HINTS
+     ================== */
+  
+  .inline-hint {
+    @apply ml-11 mb-4 rounded-lg border border-yellow-300 bg-yellow-50;
+    @apply animate-in slide-in-from-top-1 duration-300;
+  }
+  
+  .inline-hint-content {
+    @apply p-4;
+  }
+  
+  .inline-solution {
+    @apply ml-11 mb-4 rounded-lg border border-green-300 bg-green-50;
+    @apply animate-in slide-in-from-top-1 duration-300;
+  }
+  
+  .inline-solution-content {
+    @apply p-4;
+  }
+  
+  /* ==================
+     TRADITIONAL STRUCTURE
+     ================== */
+  
+  .traditional-content {
+    @apply space-y-4 mb-6;
   }
   
   .response-block {
@@ -428,6 +487,26 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+  
+  /* Animations personnalisées */
+  .animate-in {
+    animation-fill-mode: both;
+  }
+  
+  .slide-in-from-top-1 {
+    animation-name: slide-in-from-top-1;
+  }
+  
+  @keyframes slide-in-from-top-1 {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   /* Styles pour l'impression */
