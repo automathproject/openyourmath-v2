@@ -9,69 +9,69 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-09-22",
-  "updated_at": "2025-08-23T12:07:07.974Z",
+  "updated_at": "2025-08-25T08:56:58.244Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soit $a \\in \\mathbb{R}$ et $(X,Y)$ un couple de variables aléatoires admettant une densité $f$ définie par \n\t$$f(x,y)= a(x+y)  \\textbf{1}_{[0;1]}(x) \\textbf{1}_{[0;1]}(y)$$",
-      "html": "<p>Soit <span>\\(a \\in \\mathbb{R}\\)</span> et <span>\\((X,Y)\\)</span> un couple de variables aléatoires admettant une densité <span>\\(f\\)</span> définie par\n<span>\\[f(x,y)= a(x+y)  \\textbf{1}_{[0;1]}(x) \\textbf{1}_{[0;1]}(y)\\]</span></p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(a \\in \\mathbb{R}\\)</span> et <span class=\"math inline\">\\((X,Y)\\)</span> un couple de variables aléatoires admettant une densité <span class=\"math inline\">\\(f\\)</span> définie par\n<span class=\"math display\">\\[f(x,y)= a(x+y)  \\textbf{1}_{[0;1]}(x) \\textbf{1}_{[0;1]}(y)\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Déterminer $a$.",
-      "html": "<p>Déterminer <span>\\(a\\)</span>.</p>",
+      "html": "<p>Déterminer <span class=\"math inline\">\\(a\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "On calcule $\\int_0^1 \\int_0^1(x+y)dxdy = \\int_0^1 xdx\\int_0^1 dy + \\int_0^1 dx\\int_0^1 ydy = \\frac{1}{2} \\times 1 + 1 \\times \\frac{1}{2} = 1$ donc il faut $a=1$.",
-      "html": "<p>On calcule <span>\\(\\int_0^1 \\int_0^1(x+y)dxdy = \\int_0^1 xdx\\int_0^1 dy + \\int_0^1 dx\\int_0^1 ydy = \\frac{1}{2} \\times 1 + 1 \\times \\frac{1}{2} = 1\\)</span> donc il faut <span>\\(a=1\\)</span>.</p>",
+      "html": "<p>On calcule <span class=\"math inline\">\\(\\int_0^1 \\int_0^1(x+y)dxdy = \\int_0^1 xdx\\int_0^1 dy + \\int_0^1 dx\\int_0^1 ydy = \\frac{1}{2} \\times 1 + 1 \\times \\frac{1}{2} = 1\\)</span> donc il faut <span class=\"math inline\">\\(a=1\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Déterminer les lois marginales du couple $(X,Y)$.",
-      "html": "<p>Déterminer les lois marginales du couple <span>\\((X,Y)\\)</span>.</p>",
+      "html": "<p>Déterminer les lois marginales du couple <span class=\"math inline\">\\((X,Y)\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "On détermine les densités marginales $f_X$ et $f_Y$ à partir de la densité $f$ du couple de variables : \n\t\t$f_X(x) = \\int f(x,y)dy = 1_{[0;1]}(x)\\left[xy+\\frac{y^2}{2} \\right]_0^1 =  1_{[0;1]}(x) \\left(x+\\frac{1}{2}\\right)$. De même, $f_Y(y) = 1_{[0;1]}(y) \\left(y+\\frac{1}{2}\\right)$",
-      "html": "<p>On détermine les densités marginales <span>\\(f_X\\)</span> et <span>\\(f_Y\\)</span> à partir de la densité <span>\\(f\\)</span> du couple de variables :\n<span>\\(f_X(x) = \\int f(x,y)dy = 1_{[0;1]}(x)\\left[xy+\\frac{y^2}{2} \\right]_0^1 =  1_{[0;1]}(x) \\left(x+\\frac{1}{2}\\right)\\)</span>. De même, <span>\\(f_Y(y) = 1_{[0;1]}(y) \\left(y+\\frac{1}{2}\\right)\\)</span></p>",
+      "html": "<p>On détermine les densités marginales <span class=\"math inline\">\\(f_X\\)</span> et <span class=\"math inline\">\\(f_Y\\)</span> à partir de la densité <span class=\"math inline\">\\(f\\)</span> du couple de variables :\n<span class=\"math inline\">\\(f_X(x) = \\int f(x,y)dy = 1_{[0;1]}(x)\\left[xy+\\frac{y^2}{2} \\right]_0^1 =  1_{[0;1]}(x) \\left(x+\\frac{1}{2}\\right)\\)</span>. De même, <span class=\"math inline\">\\(f_Y(y) = 1_{[0;1]}(y) \\left(y+\\frac{1}{2}\\right)\\)</span></p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Calculer $\\mathbb{E}(X)$, $\\sigma^2(X)$, $\\mathbb{E}(Y)$, $\\sigma^2(Y)$, $cov(X,Y)$.",
-      "html": "<p>Calculer <span>\\(\\mathbb{E}(X)\\)</span>, <span>\\(\\sigma^2(X)\\)</span>, <span>\\(\\mathbb{E}(Y)\\)</span>, <span>\\(\\sigma^2(Y)\\)</span>, <span>\\(cov(X,Y)\\)</span>.</p>",
+      "html": "<p>Calculer <span class=\"math inline\">\\(\\mathbb{E}(X)\\)</span>, <span class=\"math inline\">\\(\\sigma^2(X)\\)</span>, <span class=\"math inline\">\\(\\mathbb{E}(Y)\\)</span>, <span class=\"math inline\">\\(\\sigma^2(Y)\\)</span>, <span class=\"math inline\">\\(cov(X,Y)\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "On utilise les densités marginales : \n\t\t$\\mathbb{E}(X) = \\int xf_X(x)dx = \\int_0^1 \\left(x^2+\\frac{x}{2}\\right)dx = \\frac{7}{12}$. De même, $\\mathbb{E}(Y) = \\frac{7}{12}$. \n\t\t\n\t\t\n\t\t\n\t\t\n\t\tPar théorème de transfert, $\\mathbb{E}(X^2) = \\int x^2f_X(x)dx = \\int_0^1 x^3+ \\frac{x^2}{2} dx = \\frac{1}{4}+\\frac{1}{6} = \\frac{5}{12}$. De même, $\\mathbb{E}(Y^2)=\\frac{5}{12}$. \n\t\t\n\t\tOn peut ainsi calculer la variance $\\sigma^2(X)=\\mathbb{E}(X^2)-\\mathbb{E}(X)^2 = \\frac{11}{144}$ et $\\sigma^2(Y)=\\sigma^2(X)$.\n\t\t\n\t\tPour le calcul de la covariance, on calcule $\\mathbb{E}(XY)$ en appliquant le théorème de transfert sur la loi du couple $(X,Y)$ : $\\mathbb{E}(XY)=\\int_0^1 \\int_0^1xy(x+y)dxdy = \\int_0^1x^2dx \\int_0^1ydy + \\int_0^1xdx \\int_0^1y^2dy = \\frac{1}{3}$. Il vient $cov(X,Y) = \\mathbb{E}(XY)-\\mathbb{E}(X)\\mathbb{E}(Y) = \\frac{-1}{144}$.",
-      "html": "<p>On utilise les densités marginales :\n<span>\\(\\mathbb{E}(X) = \\int xf_X(x)dx = \\int_0^1 \\left(x^2+\\frac{x}{2}\\right)dx = \\frac{7}{12}\\)</span>. De même, <span>\\(\\mathbb{E}(Y) = \\frac{7}{12}\\)</span>.</p>\n<p>Par théorème de transfert, <span>\\(\\mathbb{E}(X^2) = \\int x^2f_X(x)dx = \\int_0^1 x^3+ \\frac{x^2}{2} dx = \\frac{1}{4}+\\frac{1}{6} = \\frac{5}{12}\\)</span>. De même, <span>\\(\\mathbb{E}(Y^2)=\\frac{5}{12}\\)</span>.</p>\n<p>On peut ainsi calculer la variance <span>\\(\\sigma^2(X)=\\mathbb{E}(X^2)-\\mathbb{E}(X)^2 = \\frac{11}{144}\\)</span> et <span>\\(\\sigma^2(Y)=\\sigma^2(X)\\)</span>.</p>\n<p>Pour le calcul de la covariance, on calcule <span>\\(\\mathbb{E}(XY)\\)</span> en appliquant le théorème de transfert sur la loi du couple <span>\\((X,Y)\\)</span> : <span>\\(\\mathbb{E}(XY)=\\int_0^1 \\int_0^1xy(x+y)dxdy = \\int_0^1x^2dx \\int_0^1ydy + \\int_0^1xdx \\int_0^1y^2dy = \\frac{1}{3}\\)</span>. Il vient <span>\\(cov(X,Y) = \\mathbb{E}(XY)-\\mathbb{E}(X)\\mathbb{E}(Y) = \\frac{-1}{144}\\)</span>.</p>",
+      "html": "<p>On utilise les densités marginales :\n<span class=\"math inline\">\\(\\mathbb{E}(X) = \\int xf_X(x)dx = \\int_0^1 \\left(x^2+\\frac{x}{2}\\right)dx = \\frac{7}{12}\\)</span>. De même, <span class=\"math inline\">\\(\\mathbb{E}(Y) = \\frac{7}{12}\\)</span>.</p>\n<p>Par théorème de transfert, <span class=\"math inline\">\\(\\mathbb{E}(X^2) = \\int x^2f_X(x)dx = \\int_0^1 x^3+ \\frac{x^2}{2} dx = \\frac{1}{4}+\\frac{1}{6} = \\frac{5}{12}\\)</span>. De même, <span class=\"math inline\">\\(\\mathbb{E}(Y^2)=\\frac{5}{12}\\)</span>.</p>\n<p>On peut ainsi calculer la variance <span class=\"math inline\">\\(\\sigma^2(X)=\\mathbb{E}(X^2)-\\mathbb{E}(X)^2 = \\frac{11}{144}\\)</span> et <span class=\"math inline\">\\(\\sigma^2(Y)=\\sigma^2(X)\\)</span>.</p>\n<p>Pour le calcul de la covariance, on calcule <span class=\"math inline\">\\(\\mathbb{E}(XY)\\)</span> en appliquant le théorème de transfert sur la loi du couple <span class=\"math inline\">\\((X,Y)\\)</span> : <span class=\"math inline\">\\(\\mathbb{E}(XY)=\\int_0^1 \\int_0^1xy(x+y)dxdy = \\int_0^1x^2dx \\int_0^1ydy + \\int_0^1xdx \\int_0^1y^2dy = \\frac{1}{3}\\)</span>. Il vient <span class=\"math inline\">\\(cov(X,Y) = \\mathbb{E}(XY)-\\mathbb{E}(X)\\mathbb{E}(Y) = \\frac{-1}{144}\\)</span>.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "question",
       "latex": "Les variables $X$ et $Y$ sont-elles indépendantes ?",
-      "html": "<p>Les variables <span>\\(X\\)</span> et <span>\\(Y\\)</span> sont-elles indépendantes ?</p>",
+      "html": "<p>Les variables <span class=\"math inline\">\\(X\\)</span> et <span class=\"math inline\">\\(Y\\)</span> sont-elles indépendantes ?</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "reponse",
       "latex": "Les variables $X$ et $Y$ sont donc corrélées, elles ne sont donc pas indépendantes. Cela se vérifie également en comparant le produit des densités marginales avec la densité du couple $(X,Y)$.",
-      "html": "<p>Les variables <span>\\(X\\)</span> et <span>\\(Y\\)</span> sont donc corrélées, elles ne sont donc pas indépendantes. Cela se vérifie également en comparant le produit des densités marginales avec la densité du couple <span>\\((X,Y)\\)</span>.</p>",
+      "html": "<p>Les variables <span class=\"math inline\">\\(X\\)</span> et <span class=\"math inline\">\\(Y\\)</span> sont donc corrélées, elles ne sont donc pas indépendantes. Cela se vérifie également en comparant le produit des densités marginales avec la densité du couple <span class=\"math inline\">\\((X,Y)\\)</span>.</p>",
       "order": 9
     }
   ],

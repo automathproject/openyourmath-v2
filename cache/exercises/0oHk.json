@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-09-30",
-  "updated_at": "2025-08-23T12:06:22.554Z",
+  "updated_at": "2025-08-25T08:56:10.764Z",
   "content": [
     {
       "id": "block_1",
@@ -22,7 +22,7 @@
       "id": "block_2",
       "type": "question",
       "latex": "$\\PP(X \\leq 1.2)$ pour $X$ suivant une $\\mathcal{N}(0,1)$",
-      "html": "<p><span>\\(\\PP(X \\leq 1.2)\\)</span> pour <span>\\(X\\)</span> suivant une <span>\\(\\mathcal{N}(0,1)\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(\\PP(X \\leq 1.2)\\)</span> pour <span class=\"math inline\">\\(X\\)</span> suivant une <span class=\"math inline\">\\(\\mathcal{N}(0,1)\\)</span></p>",
       "order": 2
     },
     {
@@ -36,7 +36,7 @@
       "id": "block_4",
       "type": "question",
       "latex": "$\\PP(X \\leq 102)$ pour $X$ suivant une $\\mathcal{N}(120,4)$",
-      "html": "<p><span>\\(\\PP(X \\leq 102)\\)</span> pour <span>\\(X\\)</span> suivant une <span>\\(\\mathcal{N}(120,4)\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(\\PP(X \\leq 102)\\)</span> pour <span class=\"math inline\">\\(X\\)</span> suivant une <span class=\"math inline\">\\(\\mathcal{N}(120,4)\\)</span></p>",
       "order": 4
     },
     {
@@ -50,7 +50,7 @@
       "id": "block_6",
       "type": "question",
       "latex": "la valeur $t$ telle que $\\PP(X \\leq t) = 90\\%$ pour $X$ suivant une $\\mathcal{N}(120,4)$",
-      "html": "<p>la valeur <span>\\(t\\)</span> telle que <span>\\(\\PP(X \\leq t) = 90\\%\\)</span> pour <span>\\(X\\)</span> suivant une <span>\\(\\mathcal{N}(120,4)\\)</span></p>",
+      "html": "<p>la valeur <span class=\"math inline\">\\(t\\)</span> telle que <span class=\"math inline\">\\(\\PP(X \\leq t) = 90\\%\\)</span> pour <span class=\"math inline\">\\(X\\)</span> suivant une <span class=\"math inline\">\\(\\mathcal{N}(120,4)\\)</span></p>",
       "order": 6
     },
     {
@@ -64,7 +64,7 @@
       "id": "block_8",
       "type": "question",
       "latex": "$\\PP(X \\geq 40)$ pour $X$ suivant une $\\mathcal{N}(50,3)$",
-      "html": "<p><span>\\(\\PP(X \\geq 40)\\)</span> pour <span>\\(X\\)</span> suivant une <span>\\(\\mathcal{N}(50,3)\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(\\PP(X \\geq 40)\\)</span> pour <span class=\"math inline\">\\(X\\)</span> suivant une <span class=\"math inline\">\\(\\mathcal{N}(50,3)\\)</span></p>",
       "order": 8
     },
     {
@@ -78,7 +78,7 @@
       "id": "block_10",
       "type": "question",
       "latex": "$\\PP( 90 \\leq X \\leq 120)$ pour $X$ suivant une $\\mathcal{N}(100,15)$",
-      "html": "<p><span>\\(\\PP( 90 \\leq X \\leq 120)\\)</span> pour <span>\\(X\\)</span> suivant une <span>\\(\\mathcal{N}(100,15)\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(\\PP( 90 \\leq X \\leq 120)\\)</span> pour <span class=\"math inline\">\\(X\\)</span> suivant une <span class=\"math inline\">\\(\\mathcal{N}(100,15)\\)</span></p>",
       "order": 10
     },
     {
@@ -92,7 +92,7 @@
       "id": "block_12",
       "type": "question",
       "latex": "$\\PP(X \\geq 5)$ pour $X$ suivant une $\\mathcal{E}(1/2)$",
-      "html": "<p><span>\\(\\PP(X \\geq 5)\\)</span> pour <span>\\(X\\)</span> suivant une <span>\\(\\mathcal{E}(1/2)\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(\\PP(X \\geq 5)\\)</span> pour <span class=\"math inline\">\\(X\\)</span> suivant une <span class=\"math inline\">\\(\\mathcal{E}(1/2)\\)</span></p>",
       "order": 12
     },
     {
@@ -106,7 +106,7 @@
       "id": "block_14",
       "type": "question",
       "latex": "$\\PP(X = 3)$ et $\\PP(X \\geq 2)$ pour $X$ suivant une $\\mathcal{P}(1.5)$",
-      "html": "<p><span>\\(\\PP(X = 3)\\)</span> et <span>\\(\\PP(X \\geq 2)\\)</span> pour <span>\\(X\\)</span> suivant une <span>\\(\\mathcal{P}(1.5)\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(\\PP(X = 3)\\)</span> et <span class=\"math inline\">\\(\\PP(X \\geq 2)\\)</span> pour <span class=\"math inline\">\\(X\\)</span> suivant une <span class=\"math inline\">\\(\\mathcal{P}(1.5)\\)</span></p>",
       "order": 14
     },
     {
@@ -120,7 +120,7 @@
       "id": "block_16",
       "type": "question",
       "latex": "la valeur $t$ telle que $\\PP(100-t \\leq X \\leq 100+t) = 95\\%$ où $X$ suit une $\\mathcal{N}(100,15)$",
-      "html": "<p>la valeur <span>\\(t\\)</span> telle que <span>\\(\\PP(100-t \\leq X \\leq 100+t) = 95\\%\\)</span> où <span>\\(X\\)</span> suit une <span>\\(\\mathcal{N}(100,15)\\)</span></p>",
+      "html": "<p>la valeur <span class=\"math inline\">\\(t\\)</span> telle que <span class=\"math inline\">\\(\\PP(100-t \\leq X \\leq 100+t) = 95\\%\\)</span> où <span class=\"math inline\">\\(X\\)</span> suit une <span class=\"math inline\">\\(\\mathcal{N}(100,15)\\)</span></p>",
       "order": 16
     },
     {

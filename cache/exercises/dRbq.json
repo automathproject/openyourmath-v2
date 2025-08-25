@@ -9,20 +9,20 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-02-07",
-  "updated_at": "2025-08-23T12:07:26.357Z",
+  "updated_at": "2025-08-25T08:57:17.770Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Un standard téléphonique est, en moyenne, occupé 6 fois sur 10. Soit $X$ le nombre de tentatives nécessaires pour obtenir le standard.",
-      "html": "<p>Un standard téléphonique est, en moyenne, occupé 6 fois sur 10. Soit <span>\\(X\\)</span> le nombre de tentatives nécessaires pour obtenir le standard.</p>",
+      "html": "<p>Un standard téléphonique est, en moyenne, occupé 6 fois sur 10. Soit <span class=\"math inline\">\\(X\\)</span> le nombre de tentatives nécessaires pour obtenir le standard.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Déterminer la loi de $X$.",
-      "html": "<p>Déterminer la loi de <span>\\(X\\)</span>.</p>",
+      "html": "<p>Déterminer la loi de <span class=\"math inline\">\\(X\\)</span>.</p>",
       "order": 2
     },
     {

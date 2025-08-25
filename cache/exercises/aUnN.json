@@ -9,55 +9,55 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-09",
-  "updated_at": "2025-08-23T12:07:17.818Z",
+  "updated_at": "2025-08-25T08:57:08.658Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soit $f: \\R^2 \\to \\R$ définie par :\n$$ (x,y) \\mapsto \\left\\{ \\begin{array}{ll} \\dfrac{xy(x^2-y^2)}{x^2+y^2} & \\text{ si } (x,y) \\neq (0,0) \\\\\n0 & \\text{ si } (x,y) = (0,0)\n\\end{array}\n\\right. $$",
-      "html": "<p>Soit <span>\\(f: \\R^2 \\to \\R\\)</span> définie par :\n<span>\\[(x,y) \\mapsto \\left\\{ \\begin{array}{ll} \\dfrac{xy(x^2-y^2)}{x^2+y^2} &amp; \\text{ si } (x,y) \\neq (0,0) \\\\\n0 &amp; \\text{ si } (x,y) = (0,0)\n\\end{array}\n\\right.\\]</span></p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(f: \\R^2 \\to \\R\\)</span> définie par :\n<span class=\"math display\">\\[(x,y) \\mapsto \\left\\{ \\begin{array}{ll} \\dfrac{xy(x^2-y^2)}{x^2+y^2} &amp; \\text{ si } (x,y) \\neq (0,0) \\\\\n0 &amp; \\text{ si } (x,y) = (0,0)\n\\end{array}\n\\right.\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "La fonction $f$ est-elle continue en $(0,0)$~?",
-      "html": "<p>La fonction <span>\\(f\\)</span> est-elle continue en <span>\\((0,0)\\)</span> ?</p>",
+      "html": "<p>La fonction <span class=\"math inline\">\\(f\\)</span> est-elle continue en <span class=\"math inline\">\\((0,0)\\)</span> ?</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "On peut passer en coordonnées polaires en posant $x=r\\cos(\\theta)$ et $y=r\\sin(\\theta)$ : en utilisant l'inégalité triangulaire et le fait que $|\\cos(\\theta)| \\leq 1$ et $|\\sin(\\theta)| \\leq 1$, on obtient la majoration suivante :\n\t\t$|f(x,y)| \\leq \\frac{r \\times r(r^2 +r^2)}{r^2} \\leq 2r^2 \\xrightarrow[r \\to 0]{}0$. On peut ainsi conclure que $f$ est bien continue en $(0,0)$.",
-      "html": "<p>On peut passer en coordonnées polaires en posant <span>\\(x=r\\cos(\\theta)\\)</span> et <span>\\(y=r\\sin(\\theta)\\)</span> : en utilisant l’inégalité triangulaire et le fait que <span>\\(|\\cos(\\theta)| \\leq 1\\)</span> et <span>\\(|\\sin(\\theta)| \\leq 1\\)</span>, on obtient la majoration suivante :\n<span>\\(|f(x,y)| \\leq \\frac{r \\times r(r^2 +r^2)}{r^2} \\leq 2r^2 \\xrightarrow[r \\to 0]{}0\\)</span>. On peut ainsi conclure que <span>\\(f\\)</span> est bien continue en <span>\\((0,0)\\)</span>.</p>",
+      "html": "<p>On peut passer en coordonnées polaires en posant <span class=\"math inline\">\\(x=r\\cos(\\theta)\\)</span> et <span class=\"math inline\">\\(y=r\\sin(\\theta)\\)</span> : en utilisant l’inégalité triangulaire et le fait que <span class=\"math inline\">\\(|\\cos(\\theta)| \\leq 1\\)</span> et <span class=\"math inline\">\\(|\\sin(\\theta)| \\leq 1\\)</span>, on obtient la majoration suivante :\n<span class=\"math inline\">\\(|f(x,y)| \\leq \\frac{r \\times r(r^2 +r^2)}{r^2} \\leq 2r^2 \\xrightarrow[r \\to 0]{}0\\)</span>. On peut ainsi conclure que <span class=\"math inline\">\\(f\\)</span> est bien continue en <span class=\"math inline\">\\((0,0)\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Calculer $\\dpa{f}{x}(x,y)$ et $\\dpa{f}{y}(x,y)$ pour $(x,y) \\neq (0,0)$.",
-      "html": "<p>Calculer <span>\\(\\dpa{f}{x}(x,y)\\)</span> et <span>\\(\\dpa{f}{y}(x,y)\\)</span> pour <span>\\((x,y) \\neq (0,0)\\)</span>.</p>",
+      "html": "<p>Calculer <span class=\"math inline\">\\(\\dpa{f}{x}(x,y)\\)</span> et <span class=\"math inline\">\\(\\dpa{f}{y}(x,y)\\)</span> pour <span class=\"math inline\">\\((x,y) \\neq (0,0)\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "Les formules de dérivation usuelles s'appliquent sur l'expression de $f$ en tout point $(x,y) \\neq (0,0)$ : \n\t\t\\begin{align*}\n\t\t\\dpa{f}{x}(x,y) &= \\frac{y (x^{4}+4 x^{2} y^{2}-y^{4})}{\\left(y^{2}+x^{2}\\right)^{2}} \\\\\n\t\t\\dpa{f}{y}(x,y) &= \\frac{(-x) (y^{4}+4 y^{2} x^{2}-x^{4})}{\\left(x^{2}+y^{2}\\right)^{2}}\n\t\t\\end{align*}",
-      "html": "<p>Les formules de dérivation usuelles s’appliquent sur l’expression de <span>\\(f\\)</span> en tout point <span>\\((x,y) \\neq (0,0)\\)</span> :\n<span>\\[\\begin{align*}\n        \\dpa{f}{x}(x,y) &amp;= \\frac{y (x^{4}+4 x^{2} y^{2}-y^{4})}{\\left(y^{2}+x^{2}\\right)^{2}} \\\\\n        \\dpa{f}{y}(x,y) &amp;= \\frac{(-x) (y^{4}+4 y^{2} x^{2}-x^{4})}{\\left(x^{2}+y^{2}\\right)^{2}}\n        \\end{align*}\\]</span></p>",
+      "html": "<p>Les formules de dérivation usuelles s’appliquent sur l’expression de <span class=\"math inline\">\\(f\\)</span> en tout point <span class=\"math inline\">\\((x,y) \\neq (0,0)\\)</span> :\n<span class=\"math display\">\\[\\begin{align*}\n        \\dpa{f}{x}(x,y) &amp;= \\frac{y (x^{4}+4 x^{2} y^{2}-y^{4})}{\\left(y^{2}+x^{2}\\right)^{2}} \\\\\n        \\dpa{f}{y}(x,y) &amp;= \\frac{(-x) (y^{4}+4 y^{2} x^{2}-x^{4})}{\\left(x^{2}+y^{2}\\right)^{2}}\n        \\end{align*}\\]</span></p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Calculer $\\dpa{f}{x}(0,0)$ et $\\dpa{f}{y}(0,0)$.",
-      "html": "<p>Calculer <span>\\(\\dpa{f}{x}(0,0)\\)</span> et <span>\\(\\dpa{f}{y}(0,0)\\)</span>.</p>",
+      "html": "<p>Calculer <span class=\"math inline\">\\(\\dpa{f}{x}(0,0)\\)</span> et <span class=\"math inline\">\\(\\dpa{f}{y}(0,0)\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "Hors de question ici d'utiliser des formules de dérivation puisqu'il n'y a pas d'expression de la fonction au voisinage de ce point... On doit donc revenir à la définition et regarder la limite du taux d'accroissement pour chaque variable.\n\t\t\\begin{align*}\n\t\t\\dpa{f}{x}(0,0) &= \\lim\\limits_{h \\to 0} \\frac{f(h,0)-f(0,0)}{h} = 0  \\\\\n\t\t\\dpa{f}{y}(0,0) &= \\lim\\limits_{h \\to 0} \\frac{f(0,h)-f(0,0)}{h} = 0  \n\t\t\\end{align*}",
-      "html": "<p>Hors de question ici d’utiliser des formules de dérivation puisqu’il n’y a pas d’expression de la fonction au voisinage de ce point... On doit donc revenir à la définition et regarder la limite du taux d’accroissement pour chaque variable.\n<span>\\[\\begin{align*}\n        \\dpa{f}{x}(0,0) &amp;= \\lim\\limits_{h \\to 0} \\frac{f(h,0)-f(0,0)}{h} = 0  \\\\\n        \\dpa{f}{y}(0,0) &amp;= \\lim\\limits_{h \\to 0} \\frac{f(0,h)-f(0,0)}{h} = 0  \n        \\end{align*}\\]</span></p>",
+      "html": "<p>Hors de question ici d’utiliser des formules de dérivation puisqu’il n’y a pas d’expression de la fonction au voisinage de ce point... On doit donc revenir à la définition et regarder la limite du taux d’accroissement pour chaque variable.\n<span class=\"math display\">\\[\\begin{align*}\n        \\dpa{f}{x}(0,0) &amp;= \\lim\\limits_{h \\to 0} \\frac{f(h,0)-f(0,0)}{h} = 0  \\\\\n        \\dpa{f}{y}(0,0) &amp;= \\lim\\limits_{h \\to 0} \\frac{f(0,h)-f(0,0)}{h} = 0  \n        \\end{align*}\\]</span></p>",
       "order": 7
     }
   ],

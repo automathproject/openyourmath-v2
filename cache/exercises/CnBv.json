@@ -9,13 +9,13 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2025-04-16",
-  "updated_at": "2025-08-23T12:06:42.296Z",
+  "updated_at": "2025-08-25T08:56:31.646Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On considère trois fonctions de deux variables \\(f\\), \\(g\\) et \\(h\\) dont les expressions ne sont pas connues.\n\t\tLes domaines de définition de ces fonctions sont respectivement :\n\t\t\\[\n\t\tD_f = \\left\\{(x,y) \\in \\mathbb{R}^2 \\ \\middle|\\ x + y \\geq 0 \\text{ et } x^2 \\neq y \\right\\}\n\t\t\\]\n\t\t\\[\n\t\tD_g = \\left\\{(x,y) \\in \\mathbb{R}^2 \\ \\middle|\\ x \\neq y \\text{ et } x^2 + y^2 > 1 \\right\\}\n\t\t\\]\n\t\t\\[\n\t\tD_h = \\left\\{(x,y) \\in \\mathbb{R}^2 \\ \\middle|\\ x + y \\neq 1 \\right\\}\n\t\t\\]",
-      "html": "<p>On considère trois fonctions de deux variables <span>\\(f\\)</span>, <span>\\(g\\)</span> et <span>\\(h\\)</span> dont les expressions ne sont pas connues.\nLes domaines de définition de ces fonctions sont respectivement :\n<span>\\[D_f = \\left\\{(x,y) \\in \\mathbb{R}^2 \\ \\middle|\\ x + y \\geq 0 \\text{ et } x^2 \\neq y \\right\\}\\]</span>\n<span>\\[D_g = \\left\\{(x,y) \\in \\mathbb{R}^2 \\ \\middle|\\ x \\neq y \\text{ et } x^2 + y^2 &gt; 1 \\right\\}\\]</span>\n<span>\\[D_h = \\left\\{(x,y) \\in \\mathbb{R}^2 \\ \\middle|\\ x + y \\neq 1 \\right\\}\\]</span></p>",
+      "html": "<p>On considère trois fonctions de deux variables <span class=\"math inline\">\\(f\\)</span>, <span class=\"math inline\">\\(g\\)</span> et <span class=\"math inline\">\\(h\\)</span> dont les expressions ne sont pas connues.\nLes domaines de définition de ces fonctions sont respectivement :\n<span class=\"math display\">\\[D_f = \\left\\{(x,y) \\in \\mathbb{R}^2 \\ \\middle|\\ x + y \\geq 0 \\text{ et } x^2 \\neq y \\right\\}\\]</span>\n<span class=\"math display\">\\[D_g = \\left\\{(x,y) \\in \\mathbb{R}^2 \\ \\middle|\\ x \\neq y \\text{ et } x^2 + y^2 &gt; 1 \\right\\}\\]</span>\n<span class=\"math display\">\\[D_h = \\left\\{(x,y) \\in \\mathbb{R}^2 \\ \\middle|\\ x + y \\neq 1 \\right\\}\\]</span></p>",
       "order": 1
     },
     {
@@ -35,43 +35,43 @@
     {
       "id": "block_4",
       "type": "reponse",
-      "latex": "\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\\fill[white] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\\clip (-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\fill[gray!20, domain=-2:2, variable=\\x]\n\t\t\t\t\t\tplot ({\\x}, {-1*\\x}) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[red, thick, domain=-1.5:1.5, samples=100] plot (\\x, {\\x*\\x});\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t\\node at (0,-2.5) {$D_f$};\n\t\t\t\t\t\t\n\t\t\t\t\t\\end{tikzpicture}\n\t\t\t\t\t\n\n\n\t\t\t\t\t\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20, even odd rule] \n\t\t\t\t\t\t(0,0) circle (1.0)\n\t\t\t\t\t\t(-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\\draw[red, thick] (0,0) circle (1);   \n\t\t\t\t\t\t\\draw[red, thick, domain=-2:2] plot (\\x, {\\x}); \n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t\n\t\t\t\t\t\\end{tikzpicture}\n\t\t\t\t\t\n\n\n\t\t\t\t\t\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20] (-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\\draw[red, thick, domain=-2:2] plot (\\x, {1 - \\x}); \n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t\n\t\t\t\t\t\\end{tikzpicture}\n\t\t\t\t\t\n\n\t\t\tLes courbes en rouge sont exclues du domaine de définition.\\\\\n\t\t\tLe domaine de $f$ contient seulement une partie de son bord, il est donc ni ouvert ni fermé. Les domaines de $g$ et de $h$ ne contiennent pas leurs bords, ils sont donc ouverts.",
-      "html": "<p>Les courbes en rouge sont exclues du domaine de définition.<br />\nLe domaine de <span>\\(f\\)</span> contient seulement une partie de son bord, il est donc ni ouvert ni fermé. Les domaines de <span>\\(g\\)</span> et de <span>\\(h\\)</span> ne contiennent pas leurs bords, ils sont donc ouverts.</p>",
+      "latex": "\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\\fill[white] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\\clip (-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\fill[gray!20, domain=-2:2, variable=\\x]\n\t\t\t\t\t\tplot ({\\x}, {-1*\\x}) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\n\t\t\t\t\t\t% exclusion y = x^2\n\t\t\t\t\t\t\\draw[red, thick, domain=-1.5:1.5, samples=100] plot (\\x, {\\x*\\x});\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t\\node at (0,-2.5) {$D_f$};\n\t\t\t\t\t\t%\\node at (1.5,1.8) {\\Large $D_f$}\n\t\t\t\t\t\\end{tikzpicture}\n\t\t\t\t\t%\\caption*{\\textbf{Domaine $D_f$} : $x+y \\geq 0$ sans la courbe $y = x^2$}\n\n\n\t\t\t\t\t\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20, even odd rule] \n\t\t\t\t\t\t(0,0) circle (1.0)\n\t\t\t\t\t\t(-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\\draw[red, thick] (0,0) circle (1);   \n\t\t\t\t\t\t\\draw[red, thick, domain=-2:2] plot (\\x, {\\x}); % x = y\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t%\\node at (0,-2.5) {$D_g$};\n\t\t\t\t\t\\end{tikzpicture}\n\t\t\t\t\t%\\caption*{\\textbf{Domaine $D_g$} : extérieur du disque unité sans la droite $x = y$}\n\n\n\t\t\t\t\t\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20] (-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\\draw[red, thick, domain=-2:2] plot (\\x, {1 - \\x}); % x + y = 1\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t%\\node at (0,-2.5) {$D_h$};\n\t\t\t\t\t\\end{tikzpicture}\n\t\t\t\t\t%\\caption*{\\textbf{Domaine $D_h$} : tout $\\mathbb{R}^2$ sauf la droite $x + y = 1$}\n\n\t\t\tLes courbes en rouge sont exclues du domaine de définition.\\\\\n\t\t\tLe domaine de $f$ contient seulement une partie de son bord, il est donc ni ouvert ni fermé. Les domaines de $g$ et de $h$ ne contiennent pas leurs bords, ils sont donc ouverts.",
+      "html": "<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/CnBv-tikz-1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></p></p>\n<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/CnBv-tikz-2.svg\" alt=\"Diagramme TikZ 2\" class=\"tikz-svg-image\"></p></p>\n<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/CnBv-tikz-3.svg\" alt=\"Diagramme TikZ 3\" class=\"tikz-svg-image\"></p></p>\n<p>Les courbes en rouge sont exclues du domaine de définition.<br />\nLe domaine de <span class=\"math inline\">\\(f\\)</span> contient seulement une partie de son bord, il est donc ni ouvert ni fermé. Les domaines de <span class=\"math inline\">\\(g\\)</span> et de <span class=\"math inline\">\\(h\\)</span> ne contiennent pas leurs bords, ils sont donc ouverts.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "question",
       "latex": "On sait que \\(f\\) est de classe \\(\\mathcal{C}^1\\) sur son domaine de définition et que \\(f(x^2,0)=\\frac{1}{x^3}\\) pour \\(x>0\\). À l'aide de la dérivée d'une composée, déduire \\(\\frac{\\partial f}{\\partial x}(1,0)\\).",
-      "html": "<p>On sait que <span>\\(f\\)</span> est de classe <span>\\(\\mathcal{C}^1\\)</span> sur son domaine de définition et que <span>\\(f(x^2,0)=\\frac{1}{x^3}\\)</span> pour <span>\\(x&gt;0\\)</span>. À l’aide de la dérivée d’une composée, déduire <span>\\(\\frac{\\partial f}{\\partial x}(1,0)\\)</span>.</p>",
+      "html": "<p>On sait que <span class=\"math inline\">\\(f\\)</span> est de classe <span class=\"math inline\">\\(\\mathcal{C}^1\\)</span> sur son domaine de définition et que <span class=\"math inline\">\\(f(x^2,0)=\\frac{1}{x^3}\\)</span> pour <span class=\"math inline\">\\(x&gt;0\\)</span>. À l’aide de la dérivée d’une composée, déduire <span class=\"math inline\">\\(\\frac{\\partial f}{\\partial x}(1,0)\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "indication",
       "latex": "Appliquer la règle de dérivation en chaîne à l'expression \\(f(x^2,0)\\) et égaler la dérivée obtenue à celle de \\(\\frac{1}{x^3}\\) pour \\(x>0\\).",
-      "html": "<p>Appliquer la règle de dérivation en chaîne à l’expression <span>\\(f(x^2,0)\\)</span> et égaler la dérivée obtenue à celle de <span>\\(\\frac{1}{x^3}\\)</span> pour <span>\\(x&gt;0\\)</span>.</p>",
+      "html": "<p>Appliquer la règle de dérivation en chaîne à l’expression <span class=\"math inline\">\\(f(x^2,0)\\)</span> et égaler la dérivée obtenue à celle de <span class=\"math inline\">\\(\\frac{1}{x^3}\\)</span> pour <span class=\"math inline\">\\(x&gt;0\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "On pose $F(x) = f(x^2, 0)$, avec $F(x) = \\frac{1}{x^3}$ pour $x > 0$.\\\\\n\t\t\t\n\t\t\tD'après la formule de la dérivée composée :\n\t\t\t\\[\n\t\t\tF'(x) = \\frac{\\partial f}{\\partial x}(x^2, 0) \\cdot 2x\n\t\t\t\\]\n\t\t\t\n\t\t\tOn évalue en $x = 1$ :\n\t\t\t\\[\n\t\t\t-\\frac{3}{1^4} = \\frac{\\partial f}{\\partial x}(1, 0) \\cdot 2 \\Rightarrow \\frac{\\partial f}{\\partial x}(1, 0) = -\\frac{3}{2}\n\t\t\t\\]\n\t\t\t\n\t\t\t\\[\n\t\t\t\\boxed{\\frac{\\partial f}{\\partial x}(1, 0) = -\\frac{3}{2}}\n\t\t\t\\]",
-      "html": "<p>On pose <span>\\(F(x) = f(x^2, 0)\\)</span>, avec <span>\\(F(x) = \\frac{1}{x^3}\\)</span> pour <span>\\(x &gt; 0\\)</span>.<br />\nD’après la formule de la dérivée composée :\n<span>\\[F&#39;(x) = \\frac{\\partial f}{\\partial x}(x^2, 0) \\cdot 2x\\]</span></p>\n<p>On évalue en <span>\\(x = 1\\)</span> :\n<span>\\[-\\frac{3}{1^4} = \\frac{\\partial f}{\\partial x}(1, 0) \\cdot 2 \\Rightarrow \\frac{\\partial f}{\\partial x}(1, 0) = -\\frac{3}{2}\\]</span></p>\n<p><span>\\[\\boxed{\\frac{\\partial f}{\\partial x}(1, 0) = -\\frac{3}{2}}\\]</span></p>",
+      "html": "<p>On pose <span class=\"math inline\">\\(F(x) = f(x^2, 0)\\)</span>, avec <span class=\"math inline\">\\(F(x) = \\frac{1}{x^3}\\)</span> pour <span class=\"math inline\">\\(x &gt; 0\\)</span>.<br />\nD’après la formule de la dérivée composée :\n<span class=\"math display\">\\[F&#39;(x) = \\frac{\\partial f}{\\partial x}(x^2, 0) \\cdot 2x\\]</span></p>\n<p>On évalue en <span class=\"math inline\">\\(x = 1\\)</span> :\n<span class=\"math display\">\\[-\\frac{3}{1^4} = \\frac{\\partial f}{\\partial x}(1, 0) \\cdot 2 \\Rightarrow \\frac{\\partial f}{\\partial x}(1, 0) = -\\frac{3}{2}\\]</span></p>\n<p><span class=\"math display\">\\[\\boxed{\\frac{\\partial f}{\\partial x}(1, 0) = -\\frac{3}{2}}\\]</span></p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "question",
       "latex": "On sait que \\(\\lim\\limits_{(x,y)\\rightarrow(2,0)} g(x,y)=\\ln\\left(\\frac{2}{3}\\right)\\) et que les dérivées partielles de \\(g\\) en \\((2,0)\\) existent. Peut-on en conclure que \\(g(2,0)=\\ln\\left(\\frac{2}{3}\\right)\\) ? Justifier votre réponse.",
-      "html": "<p>On sait que <span>\\(\\lim\\limits_{(x,y)\\rightarrow(2,0)} g(x,y)=\\ln\\left(\\frac{2}{3}\\right)\\)</span> et que les dérivées partielles de <span>\\(g\\)</span> en <span>\\((2,0)\\)</span> existent. Peut-on en conclure que <span>\\(g(2,0)=\\ln\\left(\\frac{2}{3}\\right)\\)</span> ? Justifier votre réponse.</p>",
+      "html": "<p>On sait que <span class=\"math inline\">\\(\\lim\\limits_{(x,y)\\rightarrow(2,0)} g(x,y)=\\ln\\left(\\frac{2}{3}\\right)\\)</span> et que les dérivées partielles de <span class=\"math inline\">\\(g\\)</span> en <span class=\"math inline\">\\((2,0)\\)</span> existent. Peut-on en conclure que <span class=\"math inline\">\\(g(2,0)=\\ln\\left(\\frac{2}{3}\\right)\\)</span> ? Justifier votre réponse.</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "reponse",
       "latex": "Non, une fonction qui admet des dérivées partielles en un point n'est pas nécessairement continue en ce point. On n'a donc pas nécessairement $\\lim_{(x,y)\\rightarrow(2,0)} g(x,y)=g(2,0)$.",
-      "html": "<p>Non, une fonction qui admet des dérivées partielles en un point n’est pas nécessairement continue en ce point. On n’a donc pas nécessairement <span>\\(\\lim_{(x,y)\\rightarrow(2,0)} g(x,y)=g(2,0)\\)</span>.</p>",
+      "html": "<p>Non, une fonction qui admet des dérivées partielles en un point n’est pas nécessairement continue en ce point. On n’a donc pas nécessairement <span class=\"math inline\">\\(\\lim_{(x,y)\\rightarrow(2,0)} g(x,y)=g(2,0)\\)</span>.</p>",
       "order": 9
     },
     {
@@ -85,28 +85,28 @@
       "id": "block_11",
       "type": "reponse",
       "latex": "Le graphe correspond à la fonction $h$. En effet on voit que la fonction correspondant au graphe n'est pas définie sur la droite d'équation $x + y = 1$, ce qui coïncide avec le domaine de définition de $h$.",
-      "html": "<p>Le graphe correspond à la fonction <span>\\(h\\)</span>. En effet on voit que la fonction correspondant au graphe n’est pas définie sur la droite d’équation <span>\\(x + y = 1\\)</span>, ce qui coïncide avec le domaine de définition de <span>\\(h\\)</span>.</p>",
+      "html": "<p>Le graphe correspond à la fonction <span class=\"math inline\">\\(h\\)</span>. En effet on voit que la fonction correspondant au graphe n’est pas définie sur la droite d’équation <span class=\"math inline\">\\(x + y = 1\\)</span>, ce qui coïncide avec le domaine de définition de <span class=\"math inline\">\\(h\\)</span>.</p>",
       "order": 11
     }
   ],
   "artifacts": {
     "tikz": [
       {
-        "id": "tikz_0",
-        "type": "tikz",
-        "url": "/artifacts/tikz/CnBv-tikz-0.svg",
-        "latex": "\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\\fill[white] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\\clip (-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\fill[gray!20, domain=-2:2, variable=\\x]\n\t\t\t\t\t\tplot ({\\x}, {-1*\\x}) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\n\t\t\t\t\t\t% exclusion y = x^2\n\t\t\t\t\t\t\\draw[red, thick, domain=-1.5:1.5, samples=100] plot (\\x, {\\x*\\x});\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t\\node at (0,-2.5) {$D_f$};\n\t\t\t\t\t\t%\\node at (1.5,1.8) {\\Large $D_f$}\n\t\t\t\t\t\\end{tikzpicture}"
-      },
-      {
         "id": "tikz_1",
         "type": "tikz",
         "url": "/artifacts/tikz/CnBv-tikz-1.svg",
-        "latex": "\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20, even odd rule] \n\t\t\t\t\t\t(0,0) circle (1.0)\n\t\t\t\t\t\t(-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\\draw[red, thick] (0,0) circle (1);   \n\t\t\t\t\t\t\\draw[red, thick, domain=-2:2] plot (\\x, {\\x}); % x = y\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t%\\node at (0,-2.5) {$D_g$};\n\t\t\t\t\t\\end{tikzpicture}"
+        "latex": "\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\\fill[white] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\\clip (-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\fill[gray!20, domain=-2:2, variable=\\x]\n\t\t\t\t\t\tplot ({\\x}, {-1*\\x}) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\n\t\t\t\t\t\t% exclusion y = x^2\n\t\t\t\t\t\t\\draw[red, thick, domain=-1.5:1.5, samples=100] plot (\\x, {\\x*\\x});\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t\\node at (0,-2.5) {$D_f$};\n\t\t\t\t\t\t%\\node at (1.5,1.8) {\\Large $D_f$}\n\t\t\t\t\t\\end{tikzpicture}"
       },
       {
         "id": "tikz_2",
         "type": "tikz",
         "url": "/artifacts/tikz/CnBv-tikz-2.svg",
+        "latex": "\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20, even odd rule] \n\t\t\t\t\t\t(0,0) circle (1.0)\n\t\t\t\t\t\t(-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\\draw[red, thick] (0,0) circle (1);   \n\t\t\t\t\t\t\\draw[red, thick, domain=-2:2] plot (\\x, {\\x}); % x = y\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t%\\node at (0,-2.5) {$D_g$};\n\t\t\t\t\t\\end{tikzpicture}"
+      },
+      {
+        "id": "tikz_3",
+        "type": "tikz",
+        "url": "/artifacts/tikz/CnBv-tikz-3.svg",
         "latex": "\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20] (-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\\draw[red, thick, domain=-2:2] plot (\\x, {1 - \\x}); % x + y = 1\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t%\\node at (0,-2.5) {$D_h$};\n\t\t\t\t\t\\end{tikzpicture}"
       }
     ],

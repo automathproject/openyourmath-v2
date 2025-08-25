@@ -9,97 +9,97 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-20",
-  "updated_at": "2025-08-23T12:07:00.824Z",
+  "updated_at": "2025-08-25T08:56:50.544Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soit la fonction $f$ de deux variables $x$ et $y$ définie par \n\t$$f(x,y) = 4 - \\sqrt{1+x^2+y^2}$$",
-      "html": "<p>Soit la fonction <span>\\(f\\)</span> de deux variables <span>\\(x\\)</span> et <span>\\(y\\)</span> définie par\n<span>\\[f(x,y) = 4 - \\sqrt{1+x^2+y^2}\\]</span></p>",
+      "html": "<p>Soit la fonction <span class=\"math inline\">\\(f\\)</span> de deux variables <span class=\"math inline\">\\(x\\)</span> et <span class=\"math inline\">\\(y\\)</span> définie par\n<span class=\"math display\">\\[f(x,y) = 4 - \\sqrt{1+x^2+y^2}\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Déterminer l'ensemble de définition de la fonction $f$.",
-      "html": "<p>Déterminer l’ensemble de définition de la fonction <span>\\(f\\)</span>.</p>",
+      "html": "<p>Déterminer l’ensemble de définition de la fonction <span class=\"math inline\">\\(f\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "Pour tous réels $x$ et $y$, $1+x^2+y^2 \\geq 0$ donc la fonction $f$ est bien définie sur $\\R^2$.",
-      "html": "<p>Pour tous réels <span>\\(x\\)</span> et <span>\\(y\\)</span>, <span>\\(1+x^2+y^2 \\geq 0\\)</span> donc la fonction <span>\\(f\\)</span> est bien définie sur <span>\\(\\R^2\\)</span>.</p>",
+      "html": "<p>Pour tous réels <span class=\"math inline\">\\(x\\)</span> et <span class=\"math inline\">\\(y\\)</span>, <span class=\"math inline\">\\(1+x^2+y^2 \\geq 0\\)</span> donc la fonction <span class=\"math inline\">\\(f\\)</span> est bien définie sur <span class=\"math inline\">\\(\\R^2\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Exprimer les équations des lignes de niveau $k$ de cette fonction.",
-      "html": "<p>Exprimer les équations des lignes de niveau <span>\\(k\\)</span> de cette fonction.</p>",
+      "html": "<p>Exprimer les équations des lignes de niveau <span class=\"math inline\">\\(k\\)</span> de cette fonction.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "Soit $k$ réel : la ligne de niveau $k$ est l'ensemble des points $(x,y)$ tels que $f(x,y)=k$, c'est-à-dire \n\t\t\t$$\\sqrt{1+x^2+y^2} = 4 - k$$\n\t\t\t\n\t\t\tOr $1+x^2+y^2 \\geq 1$ quels que soient $x$ et $y$ réels donc $\\sqrt{1+x^2+y^2} \\geq 1$ et ainsi l'ensemble des points $(x,y)$ tels que $f(x,y)=k$ est non vide si   $4-k \\geq 1$ soit $k \\leq 3$ : dans ce cas, la ligne de niveau est un cercle centré en $0$ de rayon $\\sqrt{(4-k)^2-1}$.",
-      "html": "<p>Soit <span>\\(k\\)</span> réel : la ligne de niveau <span>\\(k\\)</span> est l’ensemble des points <span>\\((x,y)\\)</span> tels que <span>\\(f(x,y)=k\\)</span>, c’est-à-dire\n<span>\\[\\sqrt{1+x^2+y^2} = 4 - k\\]</span></p>\n<p>Or <span>\\(1+x^2+y^2 \\geq 1\\)</span> quels que soient <span>\\(x\\)</span> et <span>\\(y\\)</span> réels donc <span>\\(\\sqrt{1+x^2+y^2} \\geq 1\\)</span> et ainsi l’ensemble des points <span>\\((x,y)\\)</span> tels que <span>\\(f(x,y)=k\\)</span> est non vide si <span>\\(4-k \\geq 1\\)</span> soit <span>\\(k \\leq 3\\)</span> : dans ce cas, la ligne de niveau est un cercle centré en <span>\\(0\\)</span> de rayon <span>\\(\\sqrt{(4-k)^2-1}\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(k\\)</span> réel : la ligne de niveau <span class=\"math inline\">\\(k\\)</span> est l’ensemble des points <span class=\"math inline\">\\((x,y)\\)</span> tels que <span class=\"math inline\">\\(f(x,y)=k\\)</span>, c’est-à-dire\n<span class=\"math display\">\\[\\sqrt{1+x^2+y^2} = 4 - k\\]</span></p>\n<p>Or <span class=\"math inline\">\\(1+x^2+y^2 \\geq 1\\)</span> quels que soient <span class=\"math inline\">\\(x\\)</span> et <span class=\"math inline\">\\(y\\)</span> réels donc <span class=\"math inline\">\\(\\sqrt{1+x^2+y^2} \\geq 1\\)</span> et ainsi l’ensemble des points <span class=\"math inline\">\\((x,y)\\)</span> tels que <span class=\"math inline\">\\(f(x,y)=k\\)</span> est non vide si <span class=\"math inline\">\\(4-k \\geq 1\\)</span> soit <span class=\"math inline\">\\(k \\leq 3\\)</span> : dans ce cas, la ligne de niveau est un cercle centré en <span class=\"math inline\">\\(0\\)</span> de rayon <span class=\"math inline\">\\(\\sqrt{(4-k)^2-1}\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Calculer les dérivées partielles de la fonction $f$.",
-      "html": "<p>Calculer les dérivées partielles de la fonction <span>\\(f\\)</span>.</p>",
+      "html": "<p>Calculer les dérivées partielles de la fonction <span class=\"math inline\">\\(f\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "On calcule les dérivées partielles :\n\t\t\t\\begin{align*}\n\t\t\t\t\\frac{\\partial f}{\\partial x}(x,y) &= 0-\\frac{0+2x+0}{2\\sqrt{1+x^2+y^2}} \\\\\n\t\t\t\t&= \\frac{-x}{\\sqrt{1+x^2+y^2}}\\\\\n\t\t\t\t\\frac{\\partial f}{\\partial y}(x,y) &= 0-\\frac{0 + 0 + 2y}{2\\sqrt{1+x^2+y^2}} \\\\\n\t\t\t\t&= \\frac{-y}{\\sqrt{1+x^2+y^2}}\n\t\t\\end{align*}",
-      "html": "<p>On calcule les dérivées partielles :\n<span>\\[\\begin{align*}\n                \\frac{\\partial f}{\\partial x}(x,y) &amp;= 0-\\frac{0+2x+0}{2\\sqrt{1+x^2+y^2}} \\\\\n                &amp;= \\frac{-x}{\\sqrt{1+x^2+y^2}}\\\\\n                \\frac{\\partial f}{\\partial y}(x,y) &amp;= 0-\\frac{0 + 0 + 2y}{2\\sqrt{1+x^2+y^2}} \\\\\n                &amp;= \\frac{-y}{\\sqrt{1+x^2+y^2}}\n        \\end{align*}\\]</span></p>",
+      "html": "<p>On calcule les dérivées partielles :\n<span class=\"math display\">\\[\\begin{align*}\n                \\frac{\\partial f}{\\partial x}(x,y) &amp;= 0-\\frac{0+2x+0}{2\\sqrt{1+x^2+y^2}} \\\\\n                &amp;= \\frac{-x}{\\sqrt{1+x^2+y^2}}\\\\\n                \\frac{\\partial f}{\\partial y}(x,y) &amp;= 0-\\frac{0 + 0 + 2y}{2\\sqrt{1+x^2+y^2}} \\\\\n                &amp;= \\frac{-y}{\\sqrt{1+x^2+y^2}}\n        \\end{align*}\\]</span></p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "question",
       "latex": "Exprimer la matrice hessienne de $f$.",
-      "html": "<p>Exprimer la matrice hessienne de <span>\\(f\\)</span>.</p>",
+      "html": "<p>Exprimer la matrice hessienne de <span class=\"math inline\">\\(f\\)</span>.</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "reponse",
       "latex": "On calcule les dérivées partielles secondes :\n\t\t\t\\begin{align*}\n\t\t\t\t\\frac{\\partial^2 f}{\\partial x^2}(x,y) \t&= \\frac{-\\sqrt{1+x^2+y^2} - \\frac{-x \\times 2x}{2\\sqrt{1+x^2+y^2}}}{\\left(\\sqrt{1+x^2+y^2}\\right)^2}\\\\\n\t\t\t\t&= \\frac{-\\sqrt{1+x^2+y^2} + \\frac{x^2}{\\sqrt{1+x^2+y^2}}}{{1+x^2+y^2}}\\\\\n\t\t\t\t&= \\frac{ \\frac{-(1+x^2+y^2)+x^2}{\\sqrt{1+x^2+y^2}}}{{1+x^2+y^2}}\\\\\n\t\t\t\t&= \\frac{-(1+x^2+y^2)+x^2}{(1+x^2+y^2)\\sqrt{1+x^2+y^2}}\\\\\n\t\t\t\t&= \\frac{-1-y^2}{(1+x^2+y^2)^{\\frac{3}{2}}}\\\\\n\t\t\t\t&= -(1+y^2)(1+x^2+y^2)^{-\\frac{3}{2}}\n\t\t\t\\end{align*}\n\t\t\tDe même, $x$ et $y$ jouant des rôles symétriques, \n\t\t\t\\begin{align*}\n\t\t\t\t\\frac{\\partial^2 f}{\\partial y^2}(x,y) \t&= \\frac{-1-x^2}{(1+x^2+y^2)^{\\frac{3}{2}}}\\\\\n\t\t\t\t&= -(1+x^2)(1+x^2+y^2)^{-\\frac{3}{2}}\n\t\t\t\\end{align*}\n\t\t\tEnfin, on calcule $\\frac{\\partial^2 f}{\\partial x \\partial y}(x,y) = \\frac{\\partial^2 f}{\\partial y \\partial x}(x,y)$ en réécrivant $\\frac{\\partial f}{\\partial x}(x,y) = \\frac{-x}{\\sqrt{1+x^2+y^2}} = -x\\,(1+x^2+y^2)^{-\\frac{1}{2}}$ puis en dérivant cette expression par rapport à $y$ :\n\t\t\t\\begin{align*}\n\t\t\t\t\\frac{\\partial^2 f}{\\partial x \\partial y}(x,y) \t&= -x \\times (2y) \\times \\frac{-1}{2} (1+x^2+y^2)^{-\\frac{1}{2}-1}\\\\\n\t\t\t\t&= xy \\, (1+x^2+y^2)^{-\\frac{3}{2}}\n\t\t\t\\end{align*}\n\t\t\t\n\t\t\tOn peut enfin écrire la matrice hessienne :\n\t\t\t\n\t\t\t\\begin{align*} Hess_f(x,y) &= \\begin{pmatrix}\n\t\t\t\t\t-(1+y^2)(1+x^2+y^2)^{-\\frac{3}{2}} & xy \\, (1+x^2+y^2)^{-\\frac{3}{2}} \\\\\n\t\t\t\t\txy \\, (1+x^2+y^2)^{-\\frac{3}{2}} & -(1+x^2)(1+x^2+y^2)^{-\\frac{3}{2}}\n\t\t\t\t\\end{pmatrix}\\\\\n\t\t\t\t&= (1+x^2+y^2)^{-\\frac{3}{2}} \\begin{pmatrix}\n\t\t\t\t\t-(1+y^2) & xy  \\\\\n\t\t\t\t\txy  & -(1+x^2)\n\t\t\t\t\\end{pmatrix}\n\t\t\\end{align*}",
-      "html": "<p>On calcule les dérivées partielles secondes :\n<span>\\[\\begin{align*}\n                \\frac{\\partial^2 f}{\\partial x^2}(x,y)  &amp;= \\frac{-\\sqrt{1+x^2+y^2} - \\frac{-x \\times 2x}{2\\sqrt{1+x^2+y^2}}}{\\left(\\sqrt{1+x^2+y^2}\\right)^2}\\\\\n                &amp;= \\frac{-\\sqrt{1+x^2+y^2} + \\frac{x^2}{\\sqrt{1+x^2+y^2}}}{{1+x^2+y^2}}\\\\\n                &amp;= \\frac{ \\frac{-(1+x^2+y^2)+x^2}{\\sqrt{1+x^2+y^2}}}{{1+x^2+y^2}}\\\\\n                &amp;= \\frac{-(1+x^2+y^2)+x^2}{(1+x^2+y^2)\\sqrt{1+x^2+y^2}}\\\\\n                &amp;= \\frac{-1-y^2}{(1+x^2+y^2)^{\\frac{3}{2}}}\\\\\n                &amp;= -(1+y^2)(1+x^2+y^2)^{-\\frac{3}{2}}\n            \\end{align*}\\]</span>\nDe même, <span>\\(x\\)</span> et <span>\\(y\\)</span> jouant des rôles symétriques,\n<span>\\[\\begin{align*}\n                \\frac{\\partial^2 f}{\\partial y^2}(x,y)  &amp;= \\frac{-1-x^2}{(1+x^2+y^2)^{\\frac{3}{2}}}\\\\\n                &amp;= -(1+x^2)(1+x^2+y^2)^{-\\frac{3}{2}}\n            \\end{align*}\\]</span>\nEnfin, on calcule <span>\\(\\frac{\\partial^2 f}{\\partial x \\partial y}(x,y) = \\frac{\\partial^2 f}{\\partial y \\partial x}(x,y)\\)</span> en réécrivant <span>\\(\\frac{\\partial f}{\\partial x}(x,y) = \\frac{-x}{\\sqrt{1+x^2+y^2}} = -x\\,(1+x^2+y^2)^{-\\frac{1}{2}}\\)</span> puis en dérivant cette expression par rapport à <span>\\(y\\)</span> :\n<span>\\[\\begin{align*}\n                \\frac{\\partial^2 f}{\\partial x \\partial y}(x,y)     &amp;= -x \\times (2y) \\times \\frac{-1}{2} (1+x^2+y^2)^{-\\frac{1}{2}-1}\\\\\n                &amp;= xy \\, (1+x^2+y^2)^{-\\frac{3}{2}}\n            \\end{align*}\\]</span></p>\n<p>On peut enfin écrire la matrice hessienne :</p>\n<p><span>\\[\\begin{align*} Hess_f(x,y) &amp;= \\begin{pmatrix}\n                    -(1+y^2)(1+x^2+y^2)^{-\\frac{3}{2}} &amp; xy \\, (1+x^2+y^2)^{-\\frac{3}{2}} \\\\\n                    xy \\, (1+x^2+y^2)^{-\\frac{3}{2}} &amp; -(1+x^2)(1+x^2+y^2)^{-\\frac{3}{2}}\n                \\end{pmatrix}\\\\\n                &amp;= (1+x^2+y^2)^{-\\frac{3}{2}} \\begin{pmatrix}\n                    -(1+y^2) &amp; xy  \\\\\n                    xy  &amp; -(1+x^2)\n                \\end{pmatrix}\n        \\end{align*}\\]</span></p>",
+      "html": "<p>On calcule les dérivées partielles secondes :\n<span class=\"math display\">\\[\\begin{align*}\n                \\frac{\\partial^2 f}{\\partial x^2}(x,y)  &amp;= \\frac{-\\sqrt{1+x^2+y^2} - \\frac{-x \\times 2x}{2\\sqrt{1+x^2+y^2}}}{\\left(\\sqrt{1+x^2+y^2}\\right)^2}\\\\\n                &amp;= \\frac{-\\sqrt{1+x^2+y^2} + \\frac{x^2}{\\sqrt{1+x^2+y^2}}}{{1+x^2+y^2}}\\\\\n                &amp;= \\frac{ \\frac{-(1+x^2+y^2)+x^2}{\\sqrt{1+x^2+y^2}}}{{1+x^2+y^2}}\\\\\n                &amp;= \\frac{-(1+x^2+y^2)+x^2}{(1+x^2+y^2)\\sqrt{1+x^2+y^2}}\\\\\n                &amp;= \\frac{-1-y^2}{(1+x^2+y^2)^{\\frac{3}{2}}}\\\\\n                &amp;= -(1+y^2)(1+x^2+y^2)^{-\\frac{3}{2}}\n            \\end{align*}\\]</span>\nDe même, <span class=\"math inline\">\\(x\\)</span> et <span class=\"math inline\">\\(y\\)</span> jouant des rôles symétriques,\n<span class=\"math display\">\\[\\begin{align*}\n                \\frac{\\partial^2 f}{\\partial y^2}(x,y)  &amp;= \\frac{-1-x^2}{(1+x^2+y^2)^{\\frac{3}{2}}}\\\\\n                &amp;= -(1+x^2)(1+x^2+y^2)^{-\\frac{3}{2}}\n            \\end{align*}\\]</span>\nEnfin, on calcule <span class=\"math inline\">\\(\\frac{\\partial^2 f}{\\partial x \\partial y}(x,y) = \\frac{\\partial^2 f}{\\partial y \\partial x}(x,y)\\)</span> en réécrivant <span class=\"math inline\">\\(\\frac{\\partial f}{\\partial x}(x,y) = \\frac{-x}{\\sqrt{1+x^2+y^2}} = -x\\,(1+x^2+y^2)^{-\\frac{1}{2}}\\)</span> puis en dérivant cette expression par rapport à <span class=\"math inline\">\\(y\\)</span> :\n<span class=\"math display\">\\[\\begin{align*}\n                \\frac{\\partial^2 f}{\\partial x \\partial y}(x,y)     &amp;= -x \\times (2y) \\times \\frac{-1}{2} (1+x^2+y^2)^{-\\frac{1}{2}-1}\\\\\n                &amp;= xy \\, (1+x^2+y^2)^{-\\frac{3}{2}}\n            \\end{align*}\\]</span></p>\n<p>On peut enfin écrire la matrice hessienne :</p>\n<p><span class=\"math display\">\\[\\begin{align*} Hess_f(x,y) &amp;= \\begin{pmatrix}\n                    -(1+y^2)(1+x^2+y^2)^{-\\frac{3}{2}} &amp; xy \\, (1+x^2+y^2)^{-\\frac{3}{2}} \\\\\n                    xy \\, (1+x^2+y^2)^{-\\frac{3}{2}} &amp; -(1+x^2)(1+x^2+y^2)^{-\\frac{3}{2}}\n                \\end{pmatrix}\\\\\n                &amp;= (1+x^2+y^2)^{-\\frac{3}{2}} \\begin{pmatrix}\n                    -(1+y^2) &amp; xy  \\\\\n                    xy  &amp; -(1+x^2)\n                \\end{pmatrix}\n        \\end{align*}\\]</span></p>",
       "order": 9
     },
     {
       "id": "block_10",
       "type": "question",
       "latex": "Déterminer les points critiques de la fonction $f$.",
-      "html": "<p>Déterminer les points critiques de la fonction <span>\\(f\\)</span>.</p>",
+      "html": "<p>Déterminer les points critiques de la fonction <span class=\"math inline\">\\(f\\)</span>.</p>",
       "order": 10
     },
     {
       "id": "block_11",
       "type": "reponse",
       "latex": "Pour déterminer les points critiques (stationnaires) de la fonction $f$, on résout \n\t\t\tle système d'équations :\n\t\t\t\\begin{align*}\n\t\t\t\t\\begin{cases}\n\t\t\t\t\t\\frac{\\partial f}{\\partial x}(x,y) = 0\\\\\n\t\t\t\t\t\\frac{\\partial f}{\\partial y}(x,y) =0\n\t\t\t\t\\end{cases}\n\t\t\t\t\\Leftrightarrow\n\t\t\t\t\\begin{cases}\n\t\t\t\t\t\\frac{-x}{\\sqrt{1+x^2+y^2}} = 0\\\\\n\t\t\t\t\t\\frac{-y}{\\sqrt{1+x^2+y^2}} =0\n\t\t\t\t\\end{cases}\t\t\n\t\t\t\t\\Leftrightarrow\n\t\t\t\t\\begin{cases}\n\t\t\t\t\tx = 0\\\\\n\t\t\t\t\ty =0\n\t\t\t\t\\end{cases}\t\t\t\n\t\t\t\\end{align*}\n\t\t\tIl existe donc un unique point stationnaire : c'est le point $(0,0)$.",
-      "html": "<p>Pour déterminer les points critiques (stationnaires) de la fonction <span>\\(f\\)</span>, on résout\nle système d’équations :\n<span>\\[\\begin{align*}\n                \\begin{cases}\n                    \\frac{\\partial f}{\\partial x}(x,y) = 0\\\\\n                    \\frac{\\partial f}{\\partial y}(x,y) =0\n                \\end{cases}\n                \\Leftrightarrow\n                \\begin{cases}\n                    \\frac{-x}{\\sqrt{1+x^2+y^2}} = 0\\\\\n                    \\frac{-y}{\\sqrt{1+x^2+y^2}} =0\n                \\end{cases}     \n                \\Leftrightarrow\n                \\begin{cases}\n                    x = 0\\\\\n                    y =0\n                \\end{cases}         \n            \\end{align*}\\]</span>\nIl existe donc un unique point stationnaire : c’est le point <span>\\((0,0)\\)</span>.</p>",
+      "html": "<p>Pour déterminer les points critiques (stationnaires) de la fonction <span class=\"math inline\">\\(f\\)</span>, on résout\nle système d’équations :\n<span class=\"math display\">\\[\\begin{align*}\n                \\begin{cases}\n                    \\frac{\\partial f}{\\partial x}(x,y) = 0\\\\\n                    \\frac{\\partial f}{\\partial y}(x,y) =0\n                \\end{cases}\n                \\Leftrightarrow\n                \\begin{cases}\n                    \\frac{-x}{\\sqrt{1+x^2+y^2}} = 0\\\\\n                    \\frac{-y}{\\sqrt{1+x^2+y^2}} =0\n                \\end{cases}     \n                \\Leftrightarrow\n                \\begin{cases}\n                    x = 0\\\\\n                    y =0\n                \\end{cases}         \n            \\end{align*}\\]</span>\nIl existe donc un unique point stationnaire : c’est le point <span class=\"math inline\">\\((0,0)\\)</span>.</p>",
       "order": 11
     },
     {
       "id": "block_12",
       "type": "question",
       "latex": "Vérifier que la fonction $f$ admet un maximum local au point $(0,0)$ et donner la valeur de ce maximum. Peut-on dire que ce maximum est global ?",
-      "html": "<p>Vérifier que la fonction <span>\\(f\\)</span> admet un maximum local au point <span>\\((0,0)\\)</span> et donner la valeur de ce maximum. Peut-on dire que ce maximum est global ?</p>",
+      "html": "<p>Vérifier que la fonction <span class=\"math inline\">\\(f\\)</span> admet un maximum local au point <span class=\"math inline\">\\((0,0)\\)</span> et donner la valeur de ce maximum. Peut-on dire que ce maximum est global ?</p>",
       "order": 12
     },
     {
       "id": "block_13",
       "type": "reponse",
       "latex": "On étudie la nature de ce point stationnaire en évaluant $Hess_f(0,0) = 1 \\times \\begin{pmatrix}\n\t\t\t\t-1 & 0  \\\\\n\t\t\t\t0  & -1\n\t\t\t\\end{pmatrix}$. Le déterminant de cette matrice est $(-1) \\times (-1) = 1 >0$ donc la matrice admet bien un extremum local. Du fait que $\\frac{\\partial^2 f}{\\partial x \\partial y}(0,0) = -1 <0$, on en déduit qu'il s'agit bien d'un maximum local dont la valeur est $f(0,0) = 4-\\sqrt{1} = 3$. \\\\\n\t\t\tIl s'agit bien d'un maximum global car pour tout $(x,y) \\in \\R^2$, $\\sqrt{1+x^2+y^2} \\geq 1$ ce qui implique que $f(x,y) \\leq 3$.",
-      "html": "<p>On étudie la nature de ce point stationnaire en évaluant <span>\\(Hess_f(0,0) = 1 \\times \\begin{pmatrix}\n                -1 &amp; 0  \\\\\n                0  &amp; -1\n            \\end{pmatrix}\\)</span>. Le déterminant de cette matrice est <span>\\((-1) \\times (-1) = 1 &gt;0\\)</span> donc la matrice admet bien un extremum local. Du fait que <span>\\(\\frac{\\partial^2 f}{\\partial x \\partial y}(0,0) = -1 &lt;0\\)</span>, on en déduit qu’il s’agit bien d’un maximum local dont la valeur est <span>\\(f(0,0) = 4-\\sqrt{1} = 3\\)</span>.<br />\nIl s’agit bien d’un maximum global car pour tout <span>\\((x,y) \\in \\R^2\\)</span>, <span>\\(\\sqrt{1+x^2+y^2} \\geq 1\\)</span> ce qui implique que <span>\\(f(x,y) \\leq 3\\)</span>.</p>",
+      "html": "<p>On étudie la nature de ce point stationnaire en évaluant <span class=\"math inline\">\\(Hess_f(0,0) = 1 \\times \\begin{pmatrix}\n                -1 &amp; 0  \\\\\n                0  &amp; -1\n            \\end{pmatrix}\\)</span>. Le déterminant de cette matrice est <span class=\"math inline\">\\((-1) \\times (-1) = 1 &gt;0\\)</span> donc la matrice admet bien un extremum local. Du fait que <span class=\"math inline\">\\(\\frac{\\partial^2 f}{\\partial x \\partial y}(0,0) = -1 &lt;0\\)</span>, on en déduit qu’il s’agit bien d’un maximum local dont la valeur est <span class=\"math inline\">\\(f(0,0) = 4-\\sqrt{1} = 3\\)</span>.<br />\nIl s’agit bien d’un maximum global car pour tout <span class=\"math inline\">\\((x,y) \\in \\R^2\\)</span>, <span class=\"math inline\">\\(\\sqrt{1+x^2+y^2} \\geq 1\\)</span> ce qui implique que <span class=\"math inline\">\\(f(x,y) \\leq 3\\)</span>.</p>",
       "order": 13
     }
   ],

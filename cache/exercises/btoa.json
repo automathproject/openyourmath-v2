@@ -9,34 +9,34 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "",
-  "updated_at": "2025-08-23T12:07:23.233Z",
+  "updated_at": "2025-08-25T08:57:14.409Z",
   "content": [
     {
       "id": "block_1",
       "type": "question",
       "latex": "Vérifier que $1$ est racine de $Q$ et donner la décomposition en facteurs irréductibles de $Q$ dans $\\mathbb{R}[X]$.",
-      "html": "<p>Vérifier que <span>\\(1\\)</span> est racine de <span>\\(Q\\)</span> et donner la décomposition en facteurs irréductibles de <span>\\(Q\\)</span> dans <span>\\(\\mathbb{R}[X]\\)</span>.</p>",
+      "html": "<p>Vérifier que <span class=\"math inline\">\\(1\\)</span> est racine de <span class=\"math inline\">\\(Q\\)</span> et donner la décomposition en facteurs irréductibles de <span class=\"math inline\">\\(Q\\)</span> dans <span class=\"math inline\">\\(\\mathbb{R}[X]\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "reponse",
       "latex": "$Q$ a pour racine réelle $1$ et possède un discriminant $\\Delta$ égal à $\\Delta=1-4\\times 1 \\times 2=-7$. $Q$ admet donc deux racines complexes $x_1=\\frac{-1-i\\sqrt{7}}{2}$ et $x_2=\\frac{-1+i\\sqrt{7}}{2}$. La factorisation de $Q$ en polynômes irréductibles sur \\(\\mathbb{R}[X]\\) est donc $Q(X)=(X-1)(X^2+X+2)$.",
-      "html": "<p><span>\\(Q\\)</span> a pour racine réelle <span>\\(1\\)</span> et possède un discriminant <span>\\(\\Delta\\)</span> égal à <span>\\(\\Delta=1-4\\times 1 \\times 2=-7\\)</span>. <span>\\(Q\\)</span> admet donc deux racines complexes <span>\\(x_1=\\frac{-1-i\\sqrt{7}}{2}\\)</span> et <span>\\(x_2=\\frac{-1+i\\sqrt{7}}{2}\\)</span>. La factorisation de <span>\\(Q\\)</span> en polynômes irréductibles sur <span>\\(\\mathbb{R}[X]\\)</span> est donc <span>\\(Q(X)=(X-1)(X^2+X+2)\\)</span>.</p>",
+      "html": "<p><span class=\"math inline\">\\(Q\\)</span> a pour racine réelle <span class=\"math inline\">\\(1\\)</span> et possède un discriminant <span class=\"math inline\">\\(\\Delta\\)</span> égal à <span class=\"math inline\">\\(\\Delta=1-4\\times 1 \\times 2=-7\\)</span>. <span class=\"math inline\">\\(Q\\)</span> admet donc deux racines complexes <span class=\"math inline\">\\(x_1=\\frac{-1-i\\sqrt{7}}{2}\\)</span> et <span class=\"math inline\">\\(x_2=\\frac{-1+i\\sqrt{7}}{2}\\)</span>. La factorisation de <span class=\"math inline\">\\(Q\\)</span> en polynômes irréductibles sur <span class=\"math inline\">\\(\\mathbb{R}[X]\\)</span> est donc <span class=\"math inline\">\\(Q(X)=(X-1)(X^2+X+2)\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "question",
       "latex": "Décomposer \\(P\\) en éléments simples dans $\\mathbb{R}(X)$.",
-      "html": "<p>Décomposer <span>\\(P\\)</span> en éléments simples dans <span>\\(\\mathbb{R}(X)\\)</span>.</p>",
+      "html": "<p>Décomposer <span class=\"math inline\">\\(P\\)</span> en éléments simples dans <span class=\"math inline\">\\(\\mathbb{R}(X)\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "reponse",
       "latex": "$P$ peut s'écrire sous la forme\n       $$P(X)=E(X)+\\frac{a}{X-1}+\\frac{bX+c}{X^2+X+2}$$ avec $E$ la partie entière, $a,b$ et $c$ étant des constantes réelles. La division euclidienne de $X^4 + 2X^3 - X^2 + 5X - 4$ par $Q$ donne:  \n       $$X^4 + 2X^3 - X^2 + 5X - 4=Q(X)(X+2)+5X-2X^2.$$\n       Ainsi $E=X+2.$ \n       En calculant $(X-1)P(X)$ de deux manières différentes puis en posant $X=1$ on obtient $a=\\frac{3}{4}.$\\\\\n       En posant $X=0$ on obtient l'équation $P(0)=\\frac{-4}{(-1\\times 2)}=2=2+\\frac{3/4}{-1}+\\frac{c}{2},$\nd'où $c=\\frac{3}{2}.$ En évaluant en $X=2$ on trouve la dernière constante $b$ égale à $-\\frac{11}{4}$. La décomposition de $P$ est donc:\n$$P(X)=X+2+\\frac{3/4}{X-1}+\\frac{-11X+6}{4(X^2+X+2)}$$",
-      "html": "<p><span>\\(P\\)</span> peut s’écrire sous la forme\n<span>\\[P(X)=E(X)+\\frac{a}{X-1}+\\frac{bX+c}{X^2+X+2}\\]</span> avec <span>\\(E\\)</span> la partie entière, <span>\\(a,b\\)</span> et <span>\\(c\\)</span> étant des constantes réelles. La division euclidienne de <span>\\(X^4 + 2X^3 - X^2 + 5X - 4\\)</span> par <span>\\(Q\\)</span> donne:\n<span>\\[X^4 + 2X^3 - X^2 + 5X - 4=Q(X)(X+2)+5X-2X^2.\\]</span>\nAinsi <span>\\(E=X+2.\\)</span>\nEn calculant <span>\\((X-1)P(X)\\)</span> de deux manières différentes puis en posant <span>\\(X=1\\)</span> on obtient <span>\\(a=\\frac{3}{4}.\\)</span><br />\nEn posant <span>\\(X=0\\)</span> on obtient l’équation <span>\\(P(0)=\\frac{-4}{(-1\\times 2)}=2=2+\\frac{3/4}{-1}+\\frac{c}{2},\\)</span>\nd’où <span>\\(c=\\frac{3}{2}.\\)</span> En évaluant en <span>\\(X=2\\)</span> on trouve la dernière constante <span>\\(b\\)</span> égale à <span>\\(-\\frac{11}{4}\\)</span>. La décomposition de <span>\\(P\\)</span> est donc:\n<span>\\[P(X)=X+2+\\frac{3/4}{X-1}+\\frac{-11X+6}{4(X^2+X+2)}\\]</span></p>",
+      "html": "<p><span class=\"math inline\">\\(P\\)</span> peut s’écrire sous la forme\n<span class=\"math display\">\\[P(X)=E(X)+\\frac{a}{X-1}+\\frac{bX+c}{X^2+X+2}\\]</span> avec <span class=\"math inline\">\\(E\\)</span> la partie entière, <span class=\"math inline\">\\(a,b\\)</span> et <span class=\"math inline\">\\(c\\)</span> étant des constantes réelles. La division euclidienne de <span class=\"math inline\">\\(X^4 + 2X^3 - X^2 + 5X - 4\\)</span> par <span class=\"math inline\">\\(Q\\)</span> donne:\n<span class=\"math display\">\\[X^4 + 2X^3 - X^2 + 5X - 4=Q(X)(X+2)+5X-2X^2.\\]</span>\nAinsi <span class=\"math inline\">\\(E=X+2.\\)</span>\nEn calculant <span class=\"math inline\">\\((X-1)P(X)\\)</span> de deux manières différentes puis en posant <span class=\"math inline\">\\(X=1\\)</span> on obtient <span class=\"math inline\">\\(a=\\frac{3}{4}.\\)</span><br />\nEn posant <span class=\"math inline\">\\(X=0\\)</span> on obtient l’équation <span class=\"math inline\">\\(P(0)=\\frac{-4}{(-1\\times 2)}=2=2+\\frac{3/4}{-1}+\\frac{c}{2},\\)</span>\nd’où <span class=\"math inline\">\\(c=\\frac{3}{2}.\\)</span> En évaluant en <span class=\"math inline\">\\(X=2\\)</span> on trouve la dernière constante <span class=\"math inline\">\\(b\\)</span> égale à <span class=\"math inline\">\\(-\\frac{11}{4}\\)</span>. La décomposition de <span class=\"math inline\">\\(P\\)</span> est donc:\n<span class=\"math display\">\\[P(X)=X+2+\\frac{3/4}{X-1}+\\frac{-11X+6}{4(X^2+X+2)}\\]</span></p>",
       "order": 4
     }
   ],

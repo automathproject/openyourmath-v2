@@ -9,34 +9,34 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-06-05",
-  "updated_at": "2025-08-23T12:07:55.406Z",
+  "updated_at": "2025-08-25T08:57:48.123Z",
   "content": [
     {
       "id": "block_1",
       "type": "question",
       "latex": "Exprimer sous forme d'une série entière la solution de l'équation différentielle $(E)$:\n\t\t\\[ x^2y''(x)+x(x+1)y'(x)-y(x)=0 \\qquad y'(0)=1.\\]",
-      "html": "<p>Exprimer sous forme d’une série entière la solution de l’équation différentielle <span>\\((E)\\)</span>:\n<span>\\[x^2y&#39;&#39;(x)+x(x+1)y&#39;(x)-y(x)=0 \\qquad y&#39;(0)=1.\\]</span></p>",
+      "html": "<p>Exprimer sous forme d’une série entière la solution de l’équation différentielle <span class=\"math inline\">\\((E)\\)</span>:\n<span class=\"math display\">\\[x^2y&#39;&#39;(x)+x(x+1)y&#39;(x)-y(x)=0 \\qquad y&#39;(0)=1.\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "reponse",
       "latex": "Soit $y$ une solution développable en série entière, de rayon de convergence $R$: on note $\\displaystyle y(x)=\\sum_{n=0}^{+\\infty} a_n x^n$ et on a\n\t\t\t\\[ \\forall x \\in ]-R;R[, \\qquad y'(x)=\\sum_{n=1}^{+\\infty} na_n x^{n-1}\\quad \\text{ et } \\quad y''(x)=\\sum_{n=2}^{+\\infty} n(n-1)a_n x^{n-2}.\\]\n\t\t\tOn a les équivalences suivantes:\n\t\t\t\\begin{align*}\n\t\t\ty \\text{ solution de }(E) \\ & \\Leftrightarrow \\ \n\t\t\t\\forall x \\in ]-R;R[, \\ -a_0 + \\sum_{n=2}^{+\\infty} [(n-1)(n+1)a_n - (n-1)a_{n-1}] x^n =0  \\\\\n\t\t\t\\ & \\Leftrightarrow \\\n\t\t\ta_0=0 \\quad \\text{ et } \\quad  \\forall n \\geq 2, \\ a_n=\\frac{-1}{n+1} a_{n-1}\n\t\t\t\\end{align*}\n\t\t\tLa condition initiale donne: $y'(0)=a_1=1$.\n\t\t\tOn en conclut que $a_0=0$, $a_1=1$ et pour tout $n\\geq 2$, $a_n=2\\frac{(-1)^{n+1}}{(n+1)!}$ et donc \n\t\t\t\\[ y(x)=2 \\sum_{n=1}^{+\\infty} \\frac{(-1)^{n+1}}{(n+1)!} x^n,\\] \n\t\t\tdéfinie sur l'intervalle $\\R$. On peut également déterminer la fonction somme, ce qui donne\n\t\t\t\\[ \\forall x \\in \\R, \\qquad y(x)=\\sum_{n=1}^{+\\infty} \\frac{(-1)^{n+1}}{(n+1)!}x^n.\\]",
-      "html": "<p>Soit <span>\\(y\\)</span> une solution développable en série entière, de rayon de convergence <span>\\(R\\)</span>: on note <span>\\(\\displaystyle y(x)=\\sum_{n=0}^{+\\infty} a_n x^n\\)</span> et on a\n<span>\\[\\forall x \\in ]-R;R[, \\qquad y&#39;(x)=\\sum_{n=1}^{+\\infty} na_n x^{n-1}\\quad \\text{ et } \\quad y&#39;&#39;(x)=\\sum_{n=2}^{+\\infty} n(n-1)a_n x^{n-2}.\\]</span>\nOn a les équivalences suivantes:\n<span>\\[\\begin{align*}\n            y \\text{ solution de }(E) \\ &amp; \\Leftrightarrow \\ \n            \\forall x \\in ]-R;R[, \\ -a_0 + \\sum_{n=2}^{+\\infty} [(n-1)(n+1)a_n - (n-1)a_{n-1}] x^n =0  \\\\\n            \\ &amp; \\Leftrightarrow \\\n            a_0=0 \\quad \\text{ et } \\quad  \\forall n \\geq 2, \\ a_n=\\frac{-1}{n+1} a_{n-1}\n            \\end{align*}\\]</span>\nLa condition initiale donne: <span>\\(y&#39;(0)=a_1=1\\)</span>.\nOn en conclut que <span>\\(a_0=0\\)</span>, <span>\\(a_1=1\\)</span> et pour tout <span>\\(n\\geq 2\\)</span>, <span>\\(a_n=2\\frac{(-1)^{n+1}}{(n+1)!}\\)</span> et donc\n<span>\\[y(x)=2 \\sum_{n=1}^{+\\infty} \\frac{(-1)^{n+1}}{(n+1)!} x^n,\\]</span>\ndéfinie sur l’intervalle <span>\\(\\R\\)</span>. On peut également déterminer la fonction somme, ce qui donne\n<span>\\[\\forall x \\in \\R, \\qquad y(x)=\\sum_{n=1}^{+\\infty} \\frac{(-1)^{n+1}}{(n+1)!}x^n.\\]</span></p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(y\\)</span> une solution développable en série entière, de rayon de convergence <span class=\"math inline\">\\(R\\)</span>: on note <span class=\"math inline\">\\(\\displaystyle y(x)=\\sum_{n=0}^{+\\infty} a_n x^n\\)</span> et on a\n<span class=\"math display\">\\[\\forall x \\in ]-R;R[, \\qquad y&#39;(x)=\\sum_{n=1}^{+\\infty} na_n x^{n-1}\\quad \\text{ et } \\quad y&#39;&#39;(x)=\\sum_{n=2}^{+\\infty} n(n-1)a_n x^{n-2}.\\]</span>\nOn a les équivalences suivantes:\n<span class=\"math display\">\\[\\begin{align*}\n            y \\text{ solution de }(E) \\ &amp; \\Leftrightarrow \\ \n            \\forall x \\in ]-R;R[, \\ -a_0 + \\sum_{n=2}^{+\\infty} [(n-1)(n+1)a_n - (n-1)a_{n-1}] x^n =0  \\\\\n            \\ &amp; \\Leftrightarrow \\\n            a_0=0 \\quad \\text{ et } \\quad  \\forall n \\geq 2, \\ a_n=\\frac{-1}{n+1} a_{n-1}\n            \\end{align*}\\]</span>\nLa condition initiale donne: <span class=\"math inline\">\\(y&#39;(0)=a_1=1\\)</span>.\nOn en conclut que <span class=\"math inline\">\\(a_0=0\\)</span>, <span class=\"math inline\">\\(a_1=1\\)</span> et pour tout <span class=\"math inline\">\\(n\\geq 2\\)</span>, <span class=\"math inline\">\\(a_n=2\\frac{(-1)^{n+1}}{(n+1)!}\\)</span> et donc\n<span class=\"math display\">\\[y(x)=2 \\sum_{n=1}^{+\\infty} \\frac{(-1)^{n+1}}{(n+1)!} x^n,\\]</span>\ndéfinie sur l’intervalle <span class=\"math inline\">\\(\\R\\)</span>. On peut également déterminer la fonction somme, ce qui donne\n<span class=\"math display\">\\[\\forall x \\in \\R, \\qquad y(x)=\\sum_{n=1}^{+\\infty} \\frac{(-1)^{n+1}}{(n+1)!}x^n.\\]</span></p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "question",
       "latex": "Déterminer l'intervalle de convergence $I$ de la série entière solution de l'équation différentielle ci-dessus.",
-      "html": "<p>Déterminer l’intervalle de convergence <span>\\(I\\)</span> de la série entière solution de l’équation différentielle ci-dessus.</p>",
+      "html": "<p>Déterminer l’intervalle de convergence <span class=\"math inline\">\\(I\\)</span> de la série entière solution de l’équation différentielle ci-dessus.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "reponse",
       "latex": "Fait ci-dessus: $D=\\R$.",
-      "html": "<p>Fait ci-dessus: <span>\\(D=\\R\\)</span>.</p>",
+      "html": "<p>Fait ci-dessus: <span class=\"math inline\">\\(D=\\R\\)</span>.</p>",
       "order": 4
     },
     {
@@ -50,7 +50,7 @@
       "id": "block_6",
       "type": "reponse",
       "latex": "On a:\n\t\t\t\\[\\forall x \\in \\R, \\qquad xy(x)=2 \\sum_{n=1}^{+\\infty} \\frac{(-1)^{n+1}}{(n+1)!}x^{n+1}=2\\sum_{n=2}^{+\\infty} \\frac{(-x)^{n}}{n!}\n\t\t\t=2\\left[\\sum_{n=0}^{+\\infty} \\frac{(-x)^{n}}{n!}-(1-x)\\right]\n\t\t\t\\]\n\t\t\td'où\n\t\t\t\\[\\forall x \\in \\R, \\qquad y(x)=\\frac{2}{x}(e^{-x}-1+x).\\]",
-      "html": "<p>On a:\n<span>\\[\\forall x \\in \\R, \\qquad xy(x)=2 \\sum_{n=1}^{+\\infty} \\frac{(-1)^{n+1}}{(n+1)!}x^{n+1}=2\\sum_{n=2}^{+\\infty} \\frac{(-x)^{n}}{n!}\n            =2\\left[\\sum_{n=0}^{+\\infty} \\frac{(-x)^{n}}{n!}-(1-x)\\right]\\]</span>\nd’où\n<span>\\[\\forall x \\in \\R, \\qquad y(x)=\\frac{2}{x}(e^{-x}-1+x).\\]</span></p>",
+      "html": "<p>On a:\n<span class=\"math display\">\\[\\forall x \\in \\R, \\qquad xy(x)=2 \\sum_{n=1}^{+\\infty} \\frac{(-1)^{n+1}}{(n+1)!}x^{n+1}=2\\sum_{n=2}^{+\\infty} \\frac{(-x)^{n}}{n!}\n            =2\\left[\\sum_{n=0}^{+\\infty} \\frac{(-x)^{n}}{n!}-(1-x)\\right]\\]</span>\nd’où\n<span class=\"math display\">\\[\\forall x \\in \\R, \\qquad y(x)=\\frac{2}{x}(e^{-x}-1+x).\\]</span></p>",
       "order": 6
     }
   ],

@@ -9,27 +9,27 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-02-22",
-  "updated_at": "2025-08-23T12:07:52.654Z",
+  "updated_at": "2025-08-25T08:57:45.026Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "La méthode de la corde pour résoudre une équation du type $f(x)=0$ consiste à construire la suite $(x_k)$ définie par\n$$\\forall k \\in \\mathbb{N} : \\quad x_{k+1}=x_k-\\frac{f(x_k)}{f'(x_0)}$$",
-      "html": "<p>La méthode de la corde pour résoudre une équation du type <span>\\(f(x)=0\\)</span> consiste à construire la suite <span>\\((x_k)\\)</span> définie par\n<span>\\[\\forall k \\in \\mathbb{N} : \\quad x_{k+1}=x_k-\\frac{f(x_k)}{f&#39;(x_0)}\\]</span></p>",
+      "html": "<p>La méthode de la corde pour résoudre une équation du type <span class=\"math inline\">\\(f(x)=0\\)</span> consiste à construire la suite <span class=\"math inline\">\\((x_k)\\)</span> définie par\n<span class=\"math display\">\\[\\forall k \\in \\mathbb{N} : \\quad x_{k+1}=x_k-\\frac{f(x_k)}{f&#39;(x_0)}\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Sur un graphique, construire les premières itérations de cette méthode en prenant $f(x)=x^2$ et $x_0=1$.",
-      "html": "<p>Sur un graphique, construire les premières itérations de cette méthode en prenant <span>\\(f(x)=x^2\\)</span> et <span>\\(x_0=1\\)</span>.</p>",
+      "html": "<p>Sur un graphique, construire les premières itérations de cette méthode en prenant <span class=\"math inline\">\\(f(x)=x^2\\)</span> et <span class=\"math inline\">\\(x_0=1\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "Le principe de construction du point $x_{k+1}$ est le suivant: on prend l'intersection de l'axe des abscisses avec la droite passant par le point $(x_k,f(x_k))$ de pente $f'(x_0)=2x_0=2$. \n\t\t\t\\begin{center} \n\t\t\t\t\\newcommand\\newtfonc[1]{#1*#1) } \n\t\t\t\t\\begin{tikzpicture}[scale=.5]\n\t\t\t\t\\begin{axis}[\n\t\t\t\twidth=14cm, height=10cm,\n\t\t\t\taxis x line=center, \n\t\t\t\taxis y line=middle,\n\t\t\t\txlabel =$x$,\n\t\t\t\tevery axis x label/.style={\n\t\t\t\t\tat={(ticklabel* cs:1.0)},\n\t\t\t\t\tanchor=west,\n\t\t\t\t},\n\t\t\t\tylabel = $y$,\n\t\t\t\tevery axis y label/.style={\n\t\t\t\t\tat={(ticklabel* cs:1)},\n\t\t\t\t\tanchor=south,},\n\t\t\t\tlegend style={draw=none,at={(-.1,1)},anchor=north west,font=\\large },\n\t\t\t\tsamples=100,\n\t\t\t\tymin=-0.6, ymax=1.5,\n\t\t\t\txmin=-1.8, xmax=2.1,\n\t\t\t\tytick={0 },\n\t\t\t\txtick={0 },\n\t\t\t\tlegend cell align=left,\n\t\t\t\t]\n\t\t\t\t\\addplot [mark=none,line width=.5mm,blue,domain= -1.7:2 ]{\\newtfonc{x} };\n\t\t\t\t\\node[label={-90:{\\large{$x_0$}}},circle,fill,red,inner sep=2pt] at (axis cs:1,0) {};\n\t\t\t\t\\node[label={-80:{\\large{$x_1$}}},circle,fill,red,inner sep=2pt] at (axis cs:0.5 ,0) {};\n\t\t\t\t\\node[label={-120:{\\large{$x_2$}}},circle,fill,red,inner sep=2pt] at (axis cs:0.375 ,0) {};\n\t\t\t\t\\addplot [dotted,thick,blue] coordinates { (1,0) (1,1)};\n\t\t\t\t\\addplot [line width=.3mm,red] {2*x-1};\n\t\t\t\t\\addplot [dotted,thick,blue] coordinates { (0.5,0) (0.5,0.25)};\n\t\t\t\t\\addplot [line width=.3mm,red] {2*x-0.75};\n\t\t\t\t\\end{axis}\n\t\t\t\t\\end{tikzpicture}\n\t\t\\end{center}",
-      "html": "<p>Le principe de construction du point <span>\\(x_{k+1}\\)</span> est le suivant: on prend l’intersection de l’axe des abscisses avec la droite passant par le point <span>\\((x_k,f(x_k))\\)</span> de pente <span>\\(f&#39;(x_0)=2x_0=2\\)</span>.</p>\n<p><img src=\"/artifacts/tikz/rvC6-tikz-0.svg\" alt=\"Diagramme TikZ 0\" class=\"tikz-svg-image\"></p>",
+      "html": "<p>Le principe de construction du point <span class=\"math inline\">\\(x_{k+1}\\)</span> est le suivant: on prend l’intersection de l’axe des abscisses avec la droite passant par le point <span class=\"math inline\">\\((x_k,f(x_k))\\)</span> de pente <span class=\"math inline\">\\(f&#39;(x_0)=2x_0=2\\)</span>.</p>\n<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/rvC6-tikz-1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></p></p>",
       "order": 3
     },
     {
@@ -43,7 +43,7 @@
       "id": "block_5",
       "type": "reponse",
       "latex": "La méthode de la corde est un cas particulier de la méthode de point fixe : on a $x_{k+1}=g(x_k)$, où $g$ est la fonction définie par $g(x)=x-\\frac{f(x)}{f'(x_0)}$.",
-      "html": "<p>La méthode de la corde est un cas particulier de la méthode de point fixe : on a <span>\\(x_{k+1}=g(x_k)\\)</span>, où <span>\\(g\\)</span> est la fonction définie par <span>\\(g(x)=x-\\frac{f(x)}{f&#39;(x_0)}\\)</span>.</p>",
+      "html": "<p>La méthode de la corde est un cas particulier de la méthode de point fixe : on a <span class=\"math inline\">\\(x_{k+1}=g(x_k)\\)</span>, où <span class=\"math inline\">\\(g\\)</span> est la fonction définie par <span class=\"math inline\">\\(g(x)=x-\\frac{f(x)}{f&#39;(x_0)}\\)</span>.</p>",
       "order": 5
     },
     {
@@ -57,29 +57,29 @@
       "id": "block_7",
       "type": "reponse",
       "latex": "Quand une méthode de point fixe converge, elle est au minimum d'ordre $1$.",
-      "html": "<p>Quand une méthode de point fixe converge, elle est au minimum d’ordre <span>\\(1\\)</span>.</p>",
+      "html": "<p>Quand une méthode de point fixe converge, elle est au minimum d’ordre <span class=\"math inline\">\\(1\\)</span>.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "text",
       "latex": "On souhaite trouver une méthode efficace pour trouver une approximation de la racine carrée d'un nombre positif $A$ donné. Considérons tout d'abord l'algorithme suivant: étant donné une valeur $x_0$, on calcule\n\\[x_{k+1}=x_k+\\frac{A-x^2_k}{2}, \\quad k=0,1,2,... \\]",
-      "html": "<p>On souhaite trouver une méthode efficace pour trouver une approximation de la racine carrée d’un nombre positif <span>\\(A\\)</span> donné. Considérons tout d’abord l’algorithme suivant: étant donné une valeur <span>\\(x_0\\)</span>, on calcule\n<span>\\[x_{k+1}=x_k+\\frac{A-x^2_k}{2}, \\quad k=0,1,2,...\\]</span></p>",
+      "html": "<p>On souhaite trouver une méthode efficace pour trouver une approximation de la racine carrée d’un nombre positif <span class=\"math inline\">\\(A\\)</span> donné. Considérons tout d’abord l’algorithme suivant: étant donné une valeur <span class=\"math inline\">\\(x_0\\)</span>, on calcule\n<span class=\"math display\">\\[x_{k+1}=x_k+\\frac{A-x^2_k}{2}, \\quad k=0,1,2,...\\]</span></p>",
       "order": 8
     }
   ],
   "artifacts": {
     "tikz": [
       {
-        "id": "tikz_0",
-        "type": "tikz",
-        "url": "/artifacts/tikz/rvC6-tikz-0.svg",
-        "latex": "\\begin{tikzpicture}[scale=.5]\n\t\t\t\t\\begin{axis}[\n\t\t\t\twidth=14cm, height=10cm,\n\t\t\t\taxis x line=center, \n\t\t\t\taxis y line=middle,\n\t\t\t\txlabel =$x$,\n\t\t\t\tevery axis x label/.style={\n\t\t\t\t\tat={(ticklabel* cs:1.0)},\n\t\t\t\t\tanchor=west,\n\t\t\t\t},\n\t\t\t\tylabel = $y$,\n\t\t\t\tevery axis y label/.style={\n\t\t\t\t\tat={(ticklabel* cs:1)},\n\t\t\t\t\tanchor=south,},\n\t\t\t\tlegend style={draw=none,at={(-.1,1)},anchor=north west,font=\\large },\n\t\t\t\tsamples=100,\n\t\t\t\tymin=-0.6, ymax=1.5,\n\t\t\t\txmin=-1.8, xmax=2.1,\n\t\t\t\tytick={0 },\n\t\t\t\txtick={0 },\n\t\t\t\tlegend cell align=left,\n\t\t\t\t]\n\t\t\t\t\\addplot [mark=none,line width=.5mm,blue,domain= -1.7:2 ]{\\newtfonc{x} };\n\t\t\t\t\\node[label={-90:{\\large{$x_0$}}},circle,fill,red,inner sep=2pt] at (axis cs:1,0) {};\n\t\t\t\t\\node[label={-80:{\\large{$x_1$}}},circle,fill,red,inner sep=2pt] at (axis cs:0.5 ,0) {};\n\t\t\t\t\\node[label={-120:{\\large{$x_2$}}},circle,fill,red,inner sep=2pt] at (axis cs:0.375 ,0) {};\n\t\t\t\t\\addplot [dotted,thick,blue] coordinates { (1,0) (1,1)};\n\t\t\t\t\\addplot [line width=.3mm,red] {2*x-1};\n\t\t\t\t\\addplot [dotted,thick,blue] coordinates { (0.5,0) (0.5,0.25)};\n\t\t\t\t\\addplot [line width=.3mm,red] {2*x-0.75};\n\t\t\t\t\\end{axis}\n\t\t\t\t\\end{tikzpicture}"
-      },
-      {
         "id": "tikz_1",
         "type": "tikz",
         "url": "/artifacts/tikz/rvC6-tikz-1.svg",
+        "latex": "\\begin{tikzpicture}[scale=.5]\n\t\t\t\t\\begin{axis}[\n\t\t\t\twidth=14cm, height=10cm,\n\t\t\t\taxis x line=center, \n\t\t\t\taxis y line=middle,\n\t\t\t\txlabel =$x$,\n\t\t\t\tevery axis x label/.style={\n\t\t\t\t\tat={(ticklabel* cs:1.0)},\n\t\t\t\t\tanchor=west,\n\t\t\t\t},\n\t\t\t\tylabel = $y$,\n\t\t\t\tevery axis y label/.style={\n\t\t\t\t\tat={(ticklabel* cs:1)},\n\t\t\t\t\tanchor=south,},\n\t\t\t\tlegend style={draw=none,at={(-.1,1)},anchor=north west,font=\\large },\n\t\t\t\tsamples=100,\n\t\t\t\tymin=-0.6, ymax=1.5,\n\t\t\t\txmin=-1.8, xmax=2.1,\n\t\t\t\tytick={0 },\n\t\t\t\txtick={0 },\n\t\t\t\tlegend cell align=left,\n\t\t\t\t]\n\t\t\t\t\\addplot [mark=none,line width=.5mm,blue,domain= -1.7:2 ]{\\newtfonc{x} };\n\t\t\t\t\\node[label={-90:{\\large{$x_0$}}},circle,fill,red,inner sep=2pt] at (axis cs:1,0) {};\n\t\t\t\t\\node[label={-80:{\\large{$x_1$}}},circle,fill,red,inner sep=2pt] at (axis cs:0.5 ,0) {};\n\t\t\t\t\\node[label={-120:{\\large{$x_2$}}},circle,fill,red,inner sep=2pt] at (axis cs:0.375 ,0) {};\n\t\t\t\t\\addplot [dotted,thick,blue] coordinates { (1,0) (1,1)};\n\t\t\t\t\\addplot [line width=.3mm,red] {2*x-1};\n\t\t\t\t\\addplot [dotted,thick,blue] coordinates { (0.5,0) (0.5,0.25)};\n\t\t\t\t\\addplot [line width=.3mm,red] {2*x-0.75};\n\t\t\t\t\\end{axis}\n\t\t\t\t\\end{tikzpicture}"
+      },
+      {
+        "id": "tikz_2",
+        "type": "tikz",
+        "url": "/artifacts/tikz/rvC6-tikz-2.svg",
         "latex": "\\begin{tikzpicture}[scale=.5]\n%\t\t\t\t\\begin{axis}[\n%\t\t\t\twidth=14cm, height=10cm,\n%\t\t\t\taxis x line=center, \n%\t\t\t\taxis y line=middle,\n%\t\t\t\txlabel =$x$,\n%\t\t\t\tevery axis x label/.style={\n%\t\t\t\t\tat={(ticklabel* cs:1.0)},\n%\t\t\t\t\tanchor=west,\n%\t\t\t\t},\n%\t\t\t\tylabel = $y$,\n%\t\t\t\tevery axis y label/.style={\n%\t\t\t\t\tat={(ticklabel* cs:1)},\n%\t\t\t\t\tanchor=south,},\n%\t\t\t\tlegend style={draw=none,at={(-.1,1)},anchor=north west,font=\\large },\n%\t\t\t\tsamples=100,\n%\t\t\t\tymin=-1.8, ymax=1,\n%\t\t\t\txmin=-1.5, xmax=3,\n%\t\t\t\tytick={0 },\n%\t\t\t\txtick={0 },\n%\t\t\t\tlegend cell align=left,\n%\t\t\t\t]\n%\t\t\t\t\\addplot [mark=none,line width=.5mm,blue,domain= -1.5:2.5 ]{\\newtfonc{x} };\n%\t\t\t\t\\node[label={90:{\\large{$-\\sqrt{A}$}}},circle,fill,red,inner sep=2pt] at (axis cs:-0.707,0) {};\n%\t\t\t\t\\node[label={-90:{\\large{$\\sqrt{A}$}}},circle,fill,red,inner sep=2pt] at (axis cs:0.707 ,0) {};\n%\t\t\t\t\\addplot [dotted,thick,blue] coordinates { (-0.707,0) (-0.707,-0.707)};\n%\t\t\t\t\\addplot [dotted,thick,blue] coordinates { (0.707,0) (0.707,0.707)};\n%\t\t\t\t\\addplot [line width=.3mm,red] {x};\n%\t\t\t\t\\end{axis}\n%\t\t\t\t\\end{tikzpicture}"
       }
     ],

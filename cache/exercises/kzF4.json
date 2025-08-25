@@ -9,64 +9,64 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2024-10-21",
-  "updated_at": "2025-08-23T12:07:40.632Z",
+  "updated_at": "2025-08-25T08:57:32.803Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On considère la fonction $f$ définie sur $\\mathbb{R}^2$ par \n$$ f(x,y)= (x^2+y^2) e^{-x}$$",
-      "html": "<p>On considère la fonction <span>\\(f\\)</span> définie sur <span>\\(\\mathbb{R}^2\\)</span> par\n<span>\\[f(x,y)= (x^2+y^2) e^{-x}\\]</span></p>",
+      "html": "<p>On considère la fonction <span class=\"math inline\">\\(f\\)</span> définie sur <span class=\"math inline\">\\(\\mathbb{R}^2\\)</span> par\n<span class=\"math display\">\\[f(x,y)= (x^2+y^2) e^{-x}\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Justifier (rapidement) que cette fonction est de classe $\\mathcal{C}^2$ sur $\\mathbb{R}^2$.",
-      "html": "<p>Justifier (rapidement) que cette fonction est de classe <span>\\(\\mathcal{C}^2\\)</span> sur <span>\\(\\mathbb{R}^2\\)</span>.</p>",
+      "html": "<p>Justifier (rapidement) que cette fonction est de classe <span class=\"math inline\">\\(\\mathcal{C}^2\\)</span> sur <span class=\"math inline\">\\(\\mathbb{R}^2\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "Les fonctions $(x,y)\\mapsto x^2+y^2$ et $(x,y)\\mapsto e^{-x}$ étant de classe $\\mathcal{C}^{\\infty}(\\mathbb{R}^2)$,  leur produit l'est aussi.",
-      "html": "<p>Les fonctions <span>\\((x,y)\\mapsto x^2+y^2\\)</span> et <span>\\((x,y)\\mapsto e^{-x}\\)</span> étant de classe <span>\\(\\mathcal{C}^{\\infty}(\\mathbb{R}^2)\\)</span>, leur produit l’est aussi.</p>",
+      "html": "<p>Les fonctions <span class=\"math inline\">\\((x,y)\\mapsto x^2+y^2\\)</span> et <span class=\"math inline\">\\((x,y)\\mapsto e^{-x}\\)</span> étant de classe <span class=\"math inline\">\\(\\mathcal{C}^{\\infty}(\\mathbb{R}^2)\\)</span>, leur produit l’est aussi.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Trouver les points critiques de $f$ sur $\\mathbb{R}^2$.",
-      "html": "<p>Trouver les points critiques de <span>\\(f\\)</span> sur <span>\\(\\mathbb{R}^2\\)</span>.</p>",
+      "html": "<p>Trouver les points critiques de <span class=\"math inline\">\\(f\\)</span> sur <span class=\"math inline\">\\(\\mathbb{R}^2\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "Calculons déjà les dérivées partielles premières de $f$. Nous avons: \n\\\\ $\\frac{\\partial f}{\\partial x} (x,y)=2x e^{-x} -(x^2+y^2) e^{-x}$\n$\\frac{\\partial f}{\\partial y} (x,y)= 2y e^{-x}$. \n\\\\ Ainsi, cherchons les valeurs $(x,y) \\in \\mathbb{R}^2$ telles que \n$$ \\frac{\\partial f}{\\partial x}(x,y) = \\frac{\\partial f}{\\partial y}(x,y) =0$$\nDe $\\frac{\\partial f}{\\partial y}(x,y)=0$, nous déduisons que $y=0$ et en injectant dans l'autre équation, nous obtenons que $2x -x^2=0$ soit $x(2-x)=0$ et donc $x=0$ ou $x=2$.\n\\\\ Les points critiques sont alors $(0,0)$ et $(2,0)$.",
-      "html": "<p>Calculons déjà les dérivées partielles premières de <span>\\(f\\)</span>. Nous avons:<br />\n<span>\\(\\frac{\\partial f}{\\partial x} (x,y)=2x e^{-x} -(x^2+y^2) e^{-x}\\)</span>\n<span>\\(\\frac{\\partial f}{\\partial y} (x,y)= 2y e^{-x}\\)</span>.<br />\nAinsi, cherchons les valeurs <span>\\((x,y) \\in \\mathbb{R}^2\\)</span> telles que\n<span>\\[\\frac{\\partial f}{\\partial x}(x,y) = \\frac{\\partial f}{\\partial y}(x,y) =0\\]</span>\nDe <span>\\(\\frac{\\partial f}{\\partial y}(x,y)=0\\)</span>, nous déduisons que <span>\\(y=0\\)</span> et en injectant dans l’autre équation, nous obtenons que <span>\\(2x -x^2=0\\)</span> soit <span>\\(x(2-x)=0\\)</span> et donc <span>\\(x=0\\)</span> ou <span>\\(x=2\\)</span>.<br />\nLes points critiques sont alors <span>\\((0,0)\\)</span> et <span>\\((2,0)\\)</span>.</p>",
+      "html": "<p>Calculons déjà les dérivées partielles premières de <span class=\"math inline\">\\(f\\)</span>. Nous avons:<br />\n<span class=\"math inline\">\\(\\frac{\\partial f}{\\partial x} (x,y)=2x e^{-x} -(x^2+y^2) e^{-x}\\)</span>\n<span class=\"math inline\">\\(\\frac{\\partial f}{\\partial y} (x,y)= 2y e^{-x}\\)</span>.<br />\nAinsi, cherchons les valeurs <span class=\"math inline\">\\((x,y) \\in \\mathbb{R}^2\\)</span> telles que\n<span class=\"math display\">\\[\\frac{\\partial f}{\\partial x}(x,y) = \\frac{\\partial f}{\\partial y}(x,y) =0\\]</span>\nDe <span class=\"math inline\">\\(\\frac{\\partial f}{\\partial y}(x,y)=0\\)</span>, nous déduisons que <span class=\"math inline\">\\(y=0\\)</span> et en injectant dans l’autre équation, nous obtenons que <span class=\"math inline\">\\(2x -x^2=0\\)</span> soit <span class=\"math inline\">\\(x(2-x)=0\\)</span> et donc <span class=\"math inline\">\\(x=0\\)</span> ou <span class=\"math inline\">\\(x=2\\)</span>.<br />\nLes points critiques sont alors <span class=\"math inline\">\\((0,0)\\)</span> et <span class=\"math inline\">\\((2,0)\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Trouver les extrema locaux de $f$ sur $\\mathbb{R}^2$.",
-      "html": "<p>Trouver les extrema locaux de <span>\\(f\\)</span> sur <span>\\(\\mathbb{R}^2\\)</span>.</p>",
+      "html": "<p>Trouver les extrema locaux de <span class=\"math inline\">\\(f\\)</span> sur <span class=\"math inline\">\\(\\mathbb{R}^2\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
-      "latex": "Etudions les dérivées secondes de $f$: \n\\\\ $\\frac{\\partial^2 f}{\\partial x^2}(x,y)=(2-2x)e^{-x} - (2x-x^2-y^2) e^{-x} = (x^2+y^2-4x+2) e^{-x}$.\n\\\\ $\\frac{\\partial^2 f}{\\partial x \\partial y}(x,y) = -2y e^{-x}$\net  $\\frac{\\partial^2 f}{\\partial y^2}(x,y) = 2 e^{-x}$.\n\nAinsi, la hessienne associée à la fonction $f$ est:\n$$H_f(x,y) = \\begin{vmatrix} \n(x^2+y^2-4x+2) e^{-x} & -2y e^{-x} \\\\\n-2y e^{-x} & 2 e^{-x} \\end{vmatrix}$$\nAinsi, en évaluant cette fonction aux points critiques de $f$, nous obtenons: \n$$ \nH_f(0,0) = \\begin{vmatrix} \n2 & 0 \\\\ 0 & 2 \\end{vmatrix} ~~\\text{ et }~~\nH_f(2,0) = \\begin{vmatrix} \n-2 e^{-2} & 0 \\\\ 0 & 2e^{-2} \\end{vmatrix} $$\nOn en déduit que $f$ possède un minimum en $(0;0)$ et un point selle en $(2;0)$. \n\n\\begin{tikzpicture}\n    \\begin{axis}[\n        width=8cm, \n        view={70}{40}, \n        domain=-1:3, y domain=-2:2, \n        samples=40, \n        xlabel=$x$, ylabel=$y$, zlabel={$f(x, y)$},\n        colormap/hot, \n        \n        colorbar, \n        zmin=0, zmax=10, \n        point meta min=0, point meta max=10, \n    ]\n        \\addplot3[\n            surf, mesh/ordering=y varies \n        ]\n        {(x^2 + y^2)*exp(-x)};\n    \\end{axis}\n\\end{tikzpicture}",
-      "html": "<p>Etudions les dérivées secondes de <span>\\(f\\)</span>:<br />\n<span>\\(\\frac{\\partial^2 f}{\\partial x^2}(x,y)=(2-2x)e^{-x} - (2x-x^2-y^2) e^{-x} = (x^2+y^2-4x+2) e^{-x}\\)</span>.<br />\n<span>\\(\\frac{\\partial^2 f}{\\partial x \\partial y}(x,y) = -2y e^{-x}\\)</span>\net <span>\\(\\frac{\\partial^2 f}{\\partial y^2}(x,y) = 2 e^{-x}\\)</span>.</p>\n<p>Ainsi, la hessienne associée à la fonction <span>\\(f\\)</span> est:\n<span>\\[H_f(x,y) = \\begin{vmatrix} \n(x^2+y^2-4x+2) e^{-x} &amp; -2y e^{-x} \\\\\n-2y e^{-x} &amp; 2 e^{-x} \\end{vmatrix}\\]</span>\nAinsi, en évaluant cette fonction aux points critiques de <span>\\(f\\)</span>, nous obtenons:\n<span>\\[H_f(0,0) = \\begin{vmatrix} \n2 &amp; 0 \\\\ 0 &amp; 2 \\end{vmatrix} ~~\\text{ et }~~\nH_f(2,0) = \\begin{vmatrix} \n-2 e^{-2} &amp; 0 \\\\ 0 &amp; 2e^{-2} \\end{vmatrix}\\]</span>\nOn en déduit que <span>\\(f\\)</span> possède un minimum en <span>\\((0;0)\\)</span> et un point selle en <span>\\((2;0)\\)</span>.</p>",
+      "latex": "Etudions les dérivées secondes de $f$: \n\\\\ $\\frac{\\partial^2 f}{\\partial x^2}(x,y)=(2-2x)e^{-x} - (2x-x^2-y^2) e^{-x} = (x^2+y^2-4x+2) e^{-x}$.\n\\\\ $\\frac{\\partial^2 f}{\\partial x \\partial y}(x,y) = -2y e^{-x}$\net  $\\frac{\\partial^2 f}{\\partial y^2}(x,y) = 2 e^{-x}$.\n\nAinsi, la hessienne associée à la fonction $f$ est:\n$$H_f(x,y) = \\begin{vmatrix} \n(x^2+y^2-4x+2) e^{-x} & -2y e^{-x} \\\\\n-2y e^{-x} & 2 e^{-x} \\end{vmatrix}$$\nAinsi, en évaluant cette fonction aux points critiques de $f$, nous obtenons: \n$$ \nH_f(0,0) = \\begin{vmatrix} \n2 & 0 \\\\ 0 & 2 \\end{vmatrix} ~~\\text{ et }~~\nH_f(2,0) = \\begin{vmatrix} \n-2 e^{-2} & 0 \\\\ 0 & 2e^{-2} \\end{vmatrix} $$\nOn en déduit que $f$ possède un minimum en $(0;0)$ et un point selle en $(2;0)$. \n\n\\begin{tikzpicture}\n    \\begin{axis}[\n        width=8cm, % taille du graphique\n        view={70}{40}, % angle de vue\n        domain=-1:3, y domain=-2:2, % limites pour x et y\n        samples=40, % augmenter la résolution du tracé\n        xlabel=$x$, ylabel=$y$, zlabel={$f(x, y)$},\n        colormap/hot, % palette de couleurs chaudes\n        %shader=interp, % ombrage interpolé pour plus de douceur\n        colorbar, % ajouter une barre de couleurs\n        zmin=0, zmax=10, % étendre les limites de l'axe z\n        point meta min=0, point meta max=10, % ajuster la plage de la colormap\n    ]\n        \\addplot3[\n            surf, mesh/ordering=y varies % ajouter un maillage\n        ]\n        {(x^2 + y^2)*exp(-x)};\n    \\end{axis}\n\\end{tikzpicture}",
+      "html": "<p>Etudions les dérivées secondes de <span class=\"math inline\">\\(f\\)</span>:<br />\n<span class=\"math inline\">\\(\\frac{\\partial^2 f}{\\partial x^2}(x,y)=(2-2x)e^{-x} - (2x-x^2-y^2) e^{-x} = (x^2+y^2-4x+2) e^{-x}\\)</span>.<br />\n<span class=\"math inline\">\\(\\frac{\\partial^2 f}{\\partial x \\partial y}(x,y) = -2y e^{-x}\\)</span>\net <span class=\"math inline\">\\(\\frac{\\partial^2 f}{\\partial y^2}(x,y) = 2 e^{-x}\\)</span>.</p>\n<p>Ainsi, la hessienne associée à la fonction <span class=\"math inline\">\\(f\\)</span> est:\n<span class=\"math display\">\\[H_f(x,y) = \\begin{vmatrix} \n(x^2+y^2-4x+2) e^{-x} &amp; -2y e^{-x} \\\\\n-2y e^{-x} &amp; 2 e^{-x} \\end{vmatrix}\\]</span>\nAinsi, en évaluant cette fonction aux points critiques de <span class=\"math inline\">\\(f\\)</span>, nous obtenons:\n<span class=\"math display\">\\[H_f(0,0) = \\begin{vmatrix} \n2 &amp; 0 \\\\ 0 &amp; 2 \\end{vmatrix} ~~\\text{ et }~~\nH_f(2,0) = \\begin{vmatrix} \n-2 e^{-2} &amp; 0 \\\\ 0 &amp; 2e^{-2} \\end{vmatrix}\\]</span>\nOn en déduit que <span class=\"math inline\">\\(f\\)</span> possède un minimum en <span class=\"math inline\">\\((0;0)\\)</span> et un point selle en <span class=\"math inline\">\\((2;0)\\)</span>.</p>\n<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/kzF4-tikz-1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></p></p>",
       "order": 7
     }
   ],
   "artifacts": {
     "tikz": [
       {
-        "id": "tikz_0",
+        "id": "tikz_1",
         "type": "tikz",
-        "url": "/artifacts/tikz/kzF4-tikz-0.svg",
+        "url": "/artifacts/tikz/kzF4-tikz-1.svg",
         "latex": "\\begin{tikzpicture}\n    \\begin{axis}[\n        width=8cm, % taille du graphique\n        view={70}{40}, % angle de vue\n        domain=-1:3, y domain=-2:2, % limites pour x et y\n        samples=40, % augmenter la résolution du tracé\n        xlabel=$x$, ylabel=$y$, zlabel={$f(x, y)$},\n        colormap/hot, % palette de couleurs chaudes\n        %shader=interp, % ombrage interpolé pour plus de douceur\n        colorbar, % ajouter une barre de couleurs\n        zmin=0, zmax=10, % étendre les limites de l'axe z\n        point meta min=0, point meta max=10, % ajuster la plage de la colormap\n    ]\n        \\addplot3[\n            surf, mesh/ordering=y varies % ajouter un maillage\n        ]\n        {(x^2 + y^2)*exp(-x)};\n    \\end{axis}\n\\end{tikzpicture}"
       }
     ],

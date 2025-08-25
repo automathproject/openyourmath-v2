@@ -9,41 +9,41 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-11-15",
-  "updated_at": "2025-08-23T12:07:46.629Z",
+  "updated_at": "2025-08-25T08:57:39.086Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soit $X_1,..,X_n$ des variables aléatoires indépendantes suivant chacune une même loi exponentielle $\\mathcal{E}(\\lambda)$ de paramètre $\\lambda>0$.",
-      "html": "<p>Soit <span>\\(X_1,..,X_n\\)</span> des variables aléatoires indépendantes suivant chacune une même loi exponentielle <span>\\(\\mathcal{E}(\\lambda)\\)</span> de paramètre <span>\\(\\lambda&gt;0\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(X_1,..,X_n\\)</span> des variables aléatoires indépendantes suivant chacune une même loi exponentielle <span class=\"math inline\">\\(\\mathcal{E}(\\lambda)\\)</span> de paramètre <span class=\"math inline\">\\(\\lambda&gt;0\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Calculer la fonction de répartition de la variable $\\max(X_1,...,X_n)$ et en déduire la loi de cette variable aléatoire.",
-      "html": "<p>Calculer la fonction de répartition de la variable <span>\\(\\max(X_1,...,X_n)\\)</span> et en déduire la loi de cette variable aléatoire.</p>",
+      "html": "<p>Calculer la fonction de répartition de la variable <span class=\"math inline\">\\(\\max(X_1,...,X_n)\\)</span> et en déduire la loi de cette variable aléatoire.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "On note $V=\\max(X_1,...,X_n)$. On sait que $\\PP(V \\leq t) = \\PP((X_1 \\leq t) \\cap ... \\cap (X_n \\leq t))$ et par indépendance des variables qui suivent chacune une même loi, on en déduit que \n\t\t$$\\PP(V \\leq t) = \\PP(X_1 \\leq t)^n = \\begin{cases}\n\t\t(1-e^{-\\lambda t})^n & \\text{ si } t \\geq 0 \\\\\n\t\t0 & \\text{ sinon}\n\t\t\\end{cases} $$\n\t\tOn obtient ainsi la fonction de répartition de $V$. La densité de $V$ s'obtient en dérivant cette fonction.",
-      "html": "<p>On note <span>\\(V=\\max(X_1,...,X_n)\\)</span>. On sait que <span>\\(\\PP(V \\leq t) = \\PP((X_1 \\leq t) \\cap ... \\cap (X_n \\leq t))\\)</span> et par indépendance des variables qui suivent chacune une même loi, on en déduit que\n<span>\\[\\PP(V \\leq t) = \\PP(X_1 \\leq t)^n = \\begin{cases}\n        (1-e^{-\\lambda t})^n &amp; \\text{ si } t \\geq 0 \\\\\n        0 &amp; \\text{ sinon}\n        \\end{cases}\\]</span>\nOn obtient ainsi la fonction de répartition de <span>\\(V\\)</span>. La densité de <span>\\(V\\)</span> s’obtient en dérivant cette fonction.</p>",
+      "html": "<p>On note <span class=\"math inline\">\\(V=\\max(X_1,...,X_n)\\)</span>. On sait que <span class=\"math inline\">\\(\\PP(V \\leq t) = \\PP((X_1 \\leq t) \\cap ... \\cap (X_n \\leq t))\\)</span> et par indépendance des variables qui suivent chacune une même loi, on en déduit que\n<span class=\"math display\">\\[\\PP(V \\leq t) = \\PP(X_1 \\leq t)^n = \\begin{cases}\n        (1-e^{-\\lambda t})^n &amp; \\text{ si } t \\geq 0 \\\\\n        0 &amp; \\text{ sinon}\n        \\end{cases}\\]</span>\nOn obtient ainsi la fonction de répartition de <span class=\"math inline\">\\(V\\)</span>. La densité de <span class=\"math inline\">\\(V\\)</span> s’obtient en dérivant cette fonction.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Calculer la loi de la variable $\\min(X_1,...,X_n)$.",
-      "html": "<p>Calculer la loi de la variable <span>\\(\\min(X_1,...,X_n)\\)</span>.</p>",
+      "html": "<p>Calculer la loi de la variable <span class=\"math inline\">\\(\\min(X_1,...,X_n)\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "On note $U= \\min(X_1,...,X_n)$. On sait que $\\PP(U \\geq t) = \\PP((X_1 \\geq t) \\cap ... \\cap (X_n \\geq t))$ et par indépendance des variables qui suivent chacune une même loi, on en déduit que \n\t\t$$\\PP(U \\geq t) = \\PP(X_1 \\geq t)^n = \\begin{cases}\n\t\te^{-\\lambda nt} & \\text{ si } t \\geq 0 \\\\\n\t\t1 & \\text{ sinon}\n\t\t\\end{cases} $$\n\t\tOn en déduit que la fonction de répartition de $U$ est la fonction \n\t\t$$ t \\mapsto \\begin{cases}\n\t\t1 - e^{-\\lambda nt} & \\text{ si } t \\geq 0 \\\\\n\t\t0 & \\text{ sinon}\n\t\t\\end{cases} $$\n\t\tUne fonction densité de $U$ s'obtient en dérivant cette fonction de répartition.",
-      "html": "<p>On note <span>\\(U= \\min(X_1,...,X_n)\\)</span>. On sait que <span>\\(\\PP(U \\geq t) = \\PP((X_1 \\geq t) \\cap ... \\cap (X_n \\geq t))\\)</span> et par indépendance des variables qui suivent chacune une même loi, on en déduit que\n<span>\\[\\PP(U \\geq t) = \\PP(X_1 \\geq t)^n = \\begin{cases}\n        e^{-\\lambda nt} &amp; \\text{ si } t \\geq 0 \\\\\n        1 &amp; \\text{ sinon}\n        \\end{cases}\\]</span>\nOn en déduit que la fonction de répartition de <span>\\(U\\)</span> est la fonction\n<span>\\[t \\mapsto \\begin{cases}\n        1 - e^{-\\lambda nt} &amp; \\text{ si } t \\geq 0 \\\\\n        0 &amp; \\text{ sinon}\n        \\end{cases}\\]</span>\nUne fonction densité de <span>\\(U\\)</span> s’obtient en dérivant cette fonction de répartition.</p>",
+      "html": "<p>On note <span class=\"math inline\">\\(U= \\min(X_1,...,X_n)\\)</span>. On sait que <span class=\"math inline\">\\(\\PP(U \\geq t) = \\PP((X_1 \\geq t) \\cap ... \\cap (X_n \\geq t))\\)</span> et par indépendance des variables qui suivent chacune une même loi, on en déduit que\n<span class=\"math display\">\\[\\PP(U \\geq t) = \\PP(X_1 \\geq t)^n = \\begin{cases}\n        e^{-\\lambda nt} &amp; \\text{ si } t \\geq 0 \\\\\n        1 &amp; \\text{ sinon}\n        \\end{cases}\\]</span>\nOn en déduit que la fonction de répartition de <span class=\"math inline\">\\(U\\)</span> est la fonction\n<span class=\"math display\">\\[t \\mapsto \\begin{cases}\n        1 - e^{-\\lambda nt} &amp; \\text{ si } t \\geq 0 \\\\\n        0 &amp; \\text{ sinon}\n        \\end{cases}\\]</span>\nUne fonction densité de <span class=\"math inline\">\\(U\\)</span> s’obtient en dérivant cette fonction de répartition.</p>",
       "order": 5
     }
   ],

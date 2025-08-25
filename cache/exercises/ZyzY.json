@@ -9,48 +9,48 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2024-01-31",
-  "updated_at": "2025-08-23T12:07:16.737Z",
+  "updated_at": "2025-08-25T08:57:07.498Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soient les polynômes $P,Q \\in \\R[X]$ définis par $P(X) = -6X^3 + 4X^2 + X^4 + X^3 + 3X + 9$ et $Q(X) = X^2 + X + 1$.",
-      "html": "<p>Soient les polynômes <span>\\(P,Q \\in \\R[X]\\)</span> définis par <span>\\(P(X) = -6X^3 + 4X^2 + X^4 + X^3 + 3X + 9\\)</span> et <span>\\(Q(X) = X^2 + X + 1\\)</span>.</p>",
+      "html": "<p>Soient les polynômes <span class=\"math inline\">\\(P,Q \\in \\R[X]\\)</span> définis par <span class=\"math inline\">\\(P(X) = -6X^3 + 4X^2 + X^4 + X^3 + 3X + 9\\)</span> et <span class=\"math inline\">\\(Q(X) = X^2 + X + 1\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Donner le degré des polynômes $P$ et $Q$.",
-      "html": "<p>Donner le degré des polynômes <span>\\(P\\)</span> et <span>\\(Q\\)</span>.</p>",
+      "html": "<p>Donner le degré des polynômes <span class=\"math inline\">\\(P\\)</span> et <span class=\"math inline\">\\(Q\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "question",
       "latex": "Montrer que $3$ est une racine double de $P$.",
-      "html": "<p>Montrer que <span>\\(3\\)</span> est une racine double de <span>\\(P\\)</span>.</p>",
+      "html": "<p>Montrer que <span class=\"math inline\">\\(3\\)</span> est une racine double de <span class=\"math inline\">\\(P\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Déterminer l'ensemble des racines réelles de $Q$ puis l'ensemble des racines complexes de $Q$. En déduire une factorisation de $Q$ en polynômes irréductibles dans $\\mathbb{C}[X]$.",
-      "html": "<p>Déterminer l’ensemble des racines réelles de <span>\\(Q\\)</span> puis l’ensemble des racines complexes de <span>\\(Q\\)</span>. En déduire une factorisation de <span>\\(Q\\)</span> en polynômes irréductibles dans <span>\\(\\mathbb{C}[X]\\)</span>.</p>",
+      "html": "<p>Déterminer l’ensemble des racines réelles de <span class=\"math inline\">\\(Q\\)</span> puis l’ensemble des racines complexes de <span class=\"math inline\">\\(Q\\)</span>. En déduire une factorisation de <span class=\"math inline\">\\(Q\\)</span> en polynômes irréductibles dans <span class=\"math inline\">\\(\\mathbb{C}[X]\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "question",
       "latex": "Effectuer la division euclidienne de $P$ par $Q$.",
-      "html": "<p>Effectuer la division euclidienne de <span>\\(P\\)</span> par <span>\\(Q\\)</span>.</p>",
+      "html": "<p>Effectuer la division euclidienne de <span class=\"math inline\">\\(P\\)</span> par <span class=\"math inline\">\\(Q\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "En déduire une factorisation de $P$ en polynômes irréductibles dans $\\mathbb{C}[X]$.",
-      "html": "<p>En déduire une factorisation de <span>\\(P\\)</span> en polynômes irréductibles dans <span>\\(\\mathbb{C}[X]\\)</span>.</p>",
+      "html": "<p>En déduire une factorisation de <span class=\"math inline\">\\(P\\)</span> en polynômes irréductibles dans <span class=\"math inline\">\\(\\mathbb{C}[X]\\)</span>.</p>",
       "order": 6
     }
   ],

@@ -9,44 +9,44 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-02-23",
-  "updated_at": "2025-08-23T12:07:42.810Z",
+  "updated_at": "2025-08-25T08:57:35.025Z",
   "content": [],
   "artifacts": {
     "tikz": [
       {
-        "id": "tikz_0",
-        "type": "tikz",
-        "url": "/artifacts/tikz/mH1D-tikz-0.svg",
-        "latex": "\\begin{tikzpicture}[scale=1]\n\t\\begin{axis}[\n\ttitle={Surface $A$},\n\tview={30}{20},\n\tmesh/interior colormap name=red,\n\tcolormap/viridis,\n\txmin=-1, xmax=1,\n\tymin=-1, ymax=1,\n\tzmin=0, zmax=2,\nxlabel=$x$,\nylabel=$y$,\nzlabel={$f(x,y)$},\naxis equal,\ngrid=major\n\t]\n\t\\addplot3[\n\tdomain=-1:1,\n\tdomain y=-1:1,\n\tsamples=40,\n\tsamples y=40,\n\tsurf,\n\t] {abs(x)+abs(y)};\n\t\\end{axis}\n\t\\end{tikzpicture}"
-      },
-      {
         "id": "tikz_1",
         "type": "tikz",
         "url": "/artifacts/tikz/mH1D-tikz-1.svg",
-        "latex": "\\begin{tikzpicture}[scale=1]\n\t\\begin{axis}[\n\ttitle={Surface $B$},\n\tview={30}{20},\n\tmesh/interior colormap name=red,\n\tcolormap/viridis,\n\txmin=-1, xmax=1,\n    ymin=-1, ymax=1,\n\tzmin=0, zmax=1,\nxlabel=$x$,\nylabel=$y$,\nzlabel={$f(x,y)$},\naxis equal,\ngrid=major\n\t]\n\t\\addplot3[\n\tdomain=-1:1,\n    domain y=-1:1,\n\tsamples=40,\n\tsamples y=40,\n\tsurf,\n\t] {abs(x*y)};\n\t\\end{axis}\n\t\\end{tikzpicture}"
+        "latex": "\\begin{tikzpicture}[scale=1]\n\t\\begin{axis}[\n\ttitle={Surface $A$},\n\tview={30}{20},\n\tmesh/interior colormap name=red,\n\tcolormap/viridis,\n\txmin=-1, xmax=1,\n\tymin=-1, ymax=1,\n\tzmin=0, zmax=2,\nxlabel=$x$,\nylabel=$y$,\nzlabel={$f(x,y)$},\naxis equal,\ngrid=major\n\t]\n\t\\addplot3[\n\tdomain=-1:1,\n\tdomain y=-1:1,\n\tsamples=40,\n\tsamples y=40,\n\tsurf,\n\t] {abs(x)+abs(y)};\n\t\\end{axis}\n\t\\end{tikzpicture}"
       },
       {
         "id": "tikz_2",
         "type": "tikz",
         "url": "/artifacts/tikz/mH1D-tikz-2.svg",
-        "latex": "\\begin{tikzpicture}[scale=1]\n\t\\begin{axis}[\n\ttitle={Surface $C$},\n\tview={30}{20},\n\tmesh/interior colormap name=red,\n\tcolormap/viridis,\n\txmin=-2, xmax=2,\n\tymin=-2, ymax=2,\n\tzmin=0, zmax=1,\nxlabel=$x$,\nylabel=$y$,\nzlabel={$f(x,y)$},\ngrid=major\n\t]\n\t\\addplot3[\n\tdomain=-2:2,\n\tdomain y=-2:2,\n\tsamples=40,\n\tsamples y=40,\n\tsurf,\n\t] {1/(1+x^2+y^2)};\n\t\\end{axis}\n\t\\end{tikzpicture}"
+        "latex": "\\begin{tikzpicture}[scale=1]\n\t\\begin{axis}[\n\ttitle={Surface $B$},\n\tview={30}{20},\n\tmesh/interior colormap name=red,\n\tcolormap/viridis,\n\txmin=-1, xmax=1,\n    ymin=-1, ymax=1,\n\tzmin=0, zmax=1,\nxlabel=$x$,\nylabel=$y$,\nzlabel={$f(x,y)$},\naxis equal,\ngrid=major\n\t]\n\t\\addplot3[\n\tdomain=-1:1,\n    domain y=-1:1,\n\tsamples=40,\n\tsamples y=40,\n\tsurf,\n\t] {abs(x*y)};\n\t\\end{axis}\n\t\\end{tikzpicture}"
       },
       {
         "id": "tikz_3",
         "type": "tikz",
         "url": "/artifacts/tikz/mH1D-tikz-3.svg",
-        "latex": "\\begin{tikzpicture}[scale=1]\n\t\t\\begin{axis}[\n\ttitle={Surface $D$},\n\t\tview={30}{20},\n\t\tmesh/interior colormap name=red,\n\t\tcolormap/viridis,\n\t\txmin=-1, xmax=1,\n\t\tymin=-1, ymax=1,\n\t\tzmin=0, zmax=0.3,\n\txlabel=$x$,\n\tylabel=$y$,\n\tzlabel={$f(x,y)$},\n\taxis equal,\n\tgrid=major\n\t\t]\n\t\t\\addplot3[\n\t\tdomain=-1:1,\n\t\tdomain y=-1:1,\n\t\tsamples=40,\n\t\tsamples y=40,\n\t\tsurf,\n\t\t] {(x^2-y^2)^2};\n\t\t\\end{axis}\n\t\t\\end{tikzpicture}"
+        "latex": "\\begin{tikzpicture}[scale=1]\n\t\\begin{axis}[\n\ttitle={Surface $C$},\n\tview={30}{20},\n\tmesh/interior colormap name=red,\n\tcolormap/viridis,\n\txmin=-2, xmax=2,\n\tymin=-2, ymax=2,\n\tzmin=0, zmax=1,\nxlabel=$x$,\nylabel=$y$,\nzlabel={$f(x,y)$},\ngrid=major\n\t]\n\t\\addplot3[\n\tdomain=-2:2,\n\tdomain y=-2:2,\n\tsamples=40,\n\tsamples y=40,\n\tsurf,\n\t] {1/(1+x^2+y^2)};\n\t\\end{axis}\n\t\\end{tikzpicture}"
       },
       {
         "id": "tikz_4",
         "type": "tikz",
         "url": "/artifacts/tikz/mH1D-tikz-4.svg",
-        "latex": "\\begin{tikzpicture}[scale=1]\n\\begin{axis}[\n\ttitle={Surface $E$},\n\tview={10}{20},\n\tmesh/interior colormap name=red,\n\tcolormap/viridis,\n\txmin=-0.5, xmax=0.5,\n\tymin=-0.5, ymax=0.5,\nzmin=0, zmax=1,\nxlabel=$x$,\nylabel=$y$,\nzlabel={$f(x,y)$},\naxis equal,\ngrid=major\n]\n\\addplot3[\ndomain=-0.5:0.5,\ndomain y=-0.5:0.5,\nsamples=40,\nsamples y=40,\nsurf\n] {(x-y)^2};\n\\end{axis}\n\\end{tikzpicture}"
+        "latex": "\\begin{tikzpicture}[scale=1]\n\t\t\\begin{axis}[\n\ttitle={Surface $D$},\n\t\tview={30}{20},\n\t\tmesh/interior colormap name=red,\n\t\tcolormap/viridis,\n\t\txmin=-1, xmax=1,\n\t\tymin=-1, ymax=1,\n\t\tzmin=0, zmax=0.3,\n\txlabel=$x$,\n\tylabel=$y$,\n\tzlabel={$f(x,y)$},\n\taxis equal,\n\tgrid=major\n\t\t]\n\t\t\\addplot3[\n\t\tdomain=-1:1,\n\t\tdomain y=-1:1,\n\t\tsamples=40,\n\t\tsamples y=40,\n\t\tsurf,\n\t\t] {(x^2-y^2)^2};\n\t\t\\end{axis}\n\t\t\\end{tikzpicture}"
       },
       {
         "id": "tikz_5",
         "type": "tikz",
         "url": "/artifacts/tikz/mH1D-tikz-5.svg",
+        "latex": "\\begin{tikzpicture}[scale=1]\n\\begin{axis}[\n\ttitle={Surface $E$},\n\tview={10}{20},\n\tmesh/interior colormap name=red,\n\tcolormap/viridis,\n\txmin=-0.5, xmax=0.5,\n\tymin=-0.5, ymax=0.5,\nzmin=0, zmax=1,\nxlabel=$x$,\nylabel=$y$,\nzlabel={$f(x,y)$},\naxis equal,\ngrid=major\n]\n\\addplot3[\ndomain=-0.5:0.5,\ndomain y=-0.5:0.5,\nsamples=40,\nsamples y=40,\nsurf\n] {(x-y)^2};\n\\end{axis}\n\\end{tikzpicture}"
+      },
+      {
+        "id": "tikz_6",
+        "type": "tikz",
+        "url": "/artifacts/tikz/mH1D-tikz-6.svg",
         "latex": "\\begin{tikzpicture}[scale=1]\n\\begin{axis}[\n\ttitle={Surface $F$},\nview={30}{20},\nmesh/interior colormap name=red,\ncolormap/viridis,\nxmin=-10, xmax=10,\nymin=-10, ymax=10,\nzmin=-2, zmax=2,\nxlabel=$x$,\nylabel=$y$,\nzlabel={$f(x,y)$},\naxis equal,\ngrid=major\n]\n\\addplot3[\ndomain=-10:10,\ndomain y=-10:10,\nsamples=40,\nsamples y=40,\nsurf,\nfill opacity=0.9,\n] {sin((abs(x)+abs(y)) r)};\n\\end{axis}\n\\end{tikzpicture}"
       }
     ],

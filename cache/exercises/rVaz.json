@@ -9,41 +9,41 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-05-17",
-  "updated_at": "2025-08-23T12:07:52.209Z",
+  "updated_at": "2025-08-25T08:57:44.545Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On définit les deux suites suivantes pour tout $n$ entier naturel non nul :\n$$u_n=\\frac{(n+1)(n+2)...(2n)}{(2n)^n} \\quad \\text{ et } \\quad v_n=\\frac{1}{\\sqrt{n(n+1)}}.$$\n\tOn s'intéresse à la nature de la série de terme général $u_n$ et de la série de terme général $v_n$.",
-      "html": "<p>On définit les deux suites suivantes pour tout <span>\\(n\\)</span> entier naturel non nul :\n<span>\\[u_n=\\frac{(n+1)(n+2)...(2n)}{(2n)^n} \\quad \\text{ et } \\quad v_n=\\frac{1}{\\sqrt{n(n+1)}}.\\]</span>\nOn s’intéresse à la nature de la série de terme général <span>\\(u_n\\)</span> et de la série de terme général <span>\\(v_n\\)</span>.</p>",
+      "html": "<p>On définit les deux suites suivantes pour tout <span class=\"math inline\">\\(n\\)</span> entier naturel non nul :\n<span class=\"math display\">\\[u_n=\\frac{(n+1)(n+2)...(2n)}{(2n)^n} \\quad \\text{ et } \\quad v_n=\\frac{1}{\\sqrt{n(n+1)}}.\\]</span>\nOn s’intéresse à la nature de la série de terme général <span class=\"math inline\">\\(u_n\\)</span> et de la série de terme général <span class=\"math inline\">\\(v_n\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Appliquer le critère de d'Alembert à ces deux séries.  Que peut-on conclure sur la nature des séries de terme général $u_n$ et $v_n$ ?",
-      "html": "<p>Appliquer le critère de d’Alembert à ces deux séries. Que peut-on conclure sur la nature des séries de terme général <span>\\(u_n\\)</span> et <span>\\(v_n\\)</span> ?</p>",
+      "html": "<p>Appliquer le critère de d’Alembert à ces deux séries. Que peut-on conclure sur la nature des séries de terme général <span class=\"math inline\">\\(u_n\\)</span> et <span class=\"math inline\">\\(v_n\\)</span> ?</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "On a $u_n \\geq 0$ pour tout $n \\in \\N^*$ et \n\t\t\\begin{align*} \n\t\t\t\\frac{u_{n+1}}{u_n} &= \\frac{(n+2)(n+3)...(2n+2)}{(2n+2)^{n+1}} \\times \\frac{(2n)^n}{(n+1)(n+2)...(2n)} \\\\\n\t\t\t&= \\frac{2n+1}{n+1} \\times \\left(\\frac{2n}{2n+2}\\right)^n \\\\\n\t\t\t&= \\frac{2n+1}{n+1} \\times \\left(1-\\frac{1}{n+1}\\right)^n \\\\\n\t\t\t&\\underset{+\\infty}\\sim \\frac{2n+1}{n+1} \\times \\frac{1}{e} \\underset{+\\infty}\\sim \\frac{2}{e} < 1\n\t\t\\end{align*}\n\t\tdonc par le critère de d'Alembert, la série $\\sum u_n$ converge.\t\n\n\t\tPour la deuxième série, on a $v_n \\geq 0$ pour tout $n \\in \\N^*$ et $\\frac{v_{n+1}}{v_n} = \\frac{\\sqrt{n(n+1)}}{\\sqrt{(n+1)(n+2)}} = \\frac{\\sqrt{n}}{\\sqrt{n+2}} = \\frac{\\sqrt{n}}{\\sqrt{n}(\\sqrt{1+\\frac{2}{n}})} \\underset{+\\infty}\\sim \\frac{1}{\\sqrt{1+\\frac{2}{n}}} \\underset{+\\infty}\\sim 1$ donc par le critère de d'Alembert, la série $\\sum v_n$ est indéterminée.",
-      "html": "<p>On a <span>\\(u_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N^*\\)</span> et\n<span>\\[\\begin{align*} \n            \\frac{u_{n+1}}{u_n} &amp;= \\frac{(n+2)(n+3)...(2n+2)}{(2n+2)^{n+1}} \\times \\frac{(2n)^n}{(n+1)(n+2)...(2n)} \\\\\n            &amp;= \\frac{2n+1}{n+1} \\times \\left(\\frac{2n}{2n+2}\\right)^n \\\\\n            &amp;= \\frac{2n+1}{n+1} \\times \\left(1-\\frac{1}{n+1}\\right)^n \\\\\n            &amp;\\underset{+\\infty}\\sim \\frac{2n+1}{n+1} \\times \\frac{1}{e} \\underset{+\\infty}\\sim \\frac{2}{e} &lt; 1\n        \\end{align*}\\]</span>\ndonc par le critère de d’Alembert, la série <span>\\(\\sum u_n\\)</span> converge.</p>\n<p>Pour la deuxième série, on a <span>\\(v_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N^*\\)</span> et <span>\\(\\frac{v_{n+1}}{v_n} = \\frac{\\sqrt{n(n+1)}}{\\sqrt{(n+1)(n+2)}} = \\frac{\\sqrt{n}}{\\sqrt{n+2}} = \\frac{\\sqrt{n}}{\\sqrt{n}(\\sqrt{1+\\frac{2}{n}})} \\underset{+\\infty}\\sim \\frac{1}{\\sqrt{1+\\frac{2}{n}}} \\underset{+\\infty}\\sim 1\\)</span> donc par le critère de d’Alembert, la série <span>\\(\\sum v_n\\)</span> est indéterminée.</p>",
+      "html": "<p>On a <span class=\"math inline\">\\(u_n \\geq 0\\)</span> pour tout <span class=\"math inline\">\\(n \\in \\N^*\\)</span> et\n<span class=\"math display\">\\[\\begin{align*} \n            \\frac{u_{n+1}}{u_n} &amp;= \\frac{(n+2)(n+3)...(2n+2)}{(2n+2)^{n+1}} \\times \\frac{(2n)^n}{(n+1)(n+2)...(2n)} \\\\\n            &amp;= \\frac{2n+1}{n+1} \\times \\left(\\frac{2n}{2n+2}\\right)^n \\\\\n            &amp;= \\frac{2n+1}{n+1} \\times \\left(1-\\frac{1}{n+1}\\right)^n \\\\\n            &amp;\\underset{+\\infty}\\sim \\frac{2n+1}{n+1} \\times \\frac{1}{e} \\underset{+\\infty}\\sim \\frac{2}{e} &lt; 1\n        \\end{align*}\\]</span>\ndonc par le critère de d’Alembert, la série <span class=\"math inline\">\\(\\sum u_n\\)</span> converge.</p>\n<p>Pour la deuxième série, on a <span class=\"math inline\">\\(v_n \\geq 0\\)</span> pour tout <span class=\"math inline\">\\(n \\in \\N^*\\)</span> et <span class=\"math inline\">\\(\\frac{v_{n+1}}{v_n} = \\frac{\\sqrt{n(n+1)}}{\\sqrt{(n+1)(n+2)}} = \\frac{\\sqrt{n}}{\\sqrt{n+2}} = \\frac{\\sqrt{n}}{\\sqrt{n}(\\sqrt{1+\\frac{2}{n}})} \\underset{+\\infty}\\sim \\frac{1}{\\sqrt{1+\\frac{2}{n}}} \\underset{+\\infty}\\sim 1\\)</span> donc par le critère de d’Alembert, la série <span class=\"math inline\">\\(\\sum v_n\\)</span> est indéterminée.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "En comparant la série de terme général $v_n$ à une série usuelle, déterminer sa nature.",
-      "html": "<p>En comparant la série de terme général <span>\\(v_n\\)</span> à une série usuelle, déterminer sa nature.</p>",
+      "html": "<p>En comparant la série de terme général <span class=\"math inline\">\\(v_n\\)</span> à une série usuelle, déterminer sa nature.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "On a $v_n \\geq 0$ pour tout $n \\in \\N^*$ et $v_n \\underset{+\\infty}\\sim \\frac{1}{n}$ donc par comparaison à une série de Riemann divergente, la série $\\sum v_n$ diverge.",
-      "html": "<p>On a <span>\\(v_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N^*\\)</span> et <span>\\(v_n \\underset{+\\infty}\\sim \\frac{1}{n}\\)</span> donc par comparaison à une série de Riemann divergente, la série <span>\\(\\sum v_n\\)</span> diverge.</p>",
+      "html": "<p>On a <span class=\"math inline\">\\(v_n \\geq 0\\)</span> pour tout <span class=\"math inline\">\\(n \\in \\N^*\\)</span> et <span class=\"math inline\">\\(v_n \\underset{+\\infty}\\sim \\frac{1}{n}\\)</span> donc par comparaison à une série de Riemann divergente, la série <span class=\"math inline\">\\(\\sum v_n\\)</span> diverge.</p>",
       "order": 5
     }
   ],

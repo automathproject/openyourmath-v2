@@ -9,55 +9,55 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-09-08",
-  "updated_at": "2025-08-23T12:07:16.500Z",
+  "updated_at": "2025-08-25T08:57:07.255Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soient $\\left(X_i\\right)_{1 \\leq i \\leq 9}$ des variables aléatoires indépendantes, identiquement distribuées, suivant chacune une loi normale de moyenne $\\mu = 2$ et de variance $\\sigma^2 = 9$.",
-      "html": "<p>Soient <span>\\(\\left(X_i\\right)_{1 \\leq i \\leq 9}\\)</span> des variables aléatoires indépendantes, identiquement distribuées, suivant chacune une loi normale de moyenne <span>\\(\\mu = 2\\)</span> et de variance <span>\\(\\sigma^2 = 9\\)</span>.</p>",
+      "html": "<p>Soient <span class=\"math inline\">\\(\\left(X_i\\right)_{1 \\leq i \\leq 9}\\)</span> des variables aléatoires indépendantes, identiquement distribuées, suivant chacune une loi normale de moyenne <span class=\"math inline\">\\(\\mu = 2\\)</span> et de variance <span class=\"math inline\">\\(\\sigma^2 = 9\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Déterminer la probabilité de l'événement $\\{X_1 \\geq 1\\}$.",
-      "html": "<p>Déterminer la probabilité de l’événement <span>\\(\\{X_1 \\geq 1\\}\\)</span>.</p>",
+      "html": "<p>Déterminer la probabilité de l’événement <span class=\"math inline\">\\(\\{X_1 \\geq 1\\}\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "$X_1$ suit une loi $\\mathcal{N}(2,3^2)$ donc $\\PP(X_1 \\geq 1)=\\PP(\\frac{X_1-2}{3} \\geq \\frac{1-2}{3}) = \\PP(U \\geq -0.3333)$ où $U$ suit une loi $\\mathcal{N}(0,1)$. Or par symétrie,  $\\PP(U \\geq -0.3333) = \\PP(U \\leq 0.3333)$ et d'après la table, $\\PP(U \\leq 0.3333)=0.6293$\n\t\t\n\t\tDonc  \\fbox{$\\PP(X_1 \\geq 1)=0.6293$}",
-      "html": "<p><span>\\(X_1\\)</span> suit une loi <span>\\(\\mathcal{N}(2,3^2)\\)</span> donc <span>\\(\\PP(X_1 \\geq 1)=\\PP(\\frac{X_1-2}{3} \\geq \\frac{1-2}{3}) = \\PP(U \\geq -0.3333)\\)</span> où <span>\\(U\\)</span> suit une loi <span>\\(\\mathcal{N}(0,1)\\)</span>. Or par symétrie, <span>\\(\\PP(U \\geq -0.3333) = \\PP(U \\leq 0.3333)\\)</span> et d’après la table, <span>\\(\\PP(U \\leq 0.3333)=0.6293\\)</span></p>\n<p>Donc</p>",
+      "html": "<p><span class=\"math inline\">\\(X_1\\)</span> suit une loi <span class=\"math inline\">\\(\\mathcal{N}(2,3^2)\\)</span> donc <span class=\"math inline\">\\(\\PP(X_1 \\geq 1)=\\PP(\\frac{X_1-2}{3} \\geq \\frac{1-2}{3}) = \\PP(U \\geq -0.3333)\\)</span> où <span class=\"math inline\">\\(U\\)</span> suit une loi <span class=\"math inline\">\\(\\mathcal{N}(0,1)\\)</span>. Or par symétrie, <span class=\"math inline\">\\(\\PP(U \\geq -0.3333) = \\PP(U \\leq 0.3333)\\)</span> et d’après la table, <span class=\"math inline\">\\(\\PP(U \\leq 0.3333)=0.6293\\)</span></p>\n<p>Donc</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Soit $Y$ la variable aléatoire définie par $$Y = \\frac{1}{9}\\sum_{i=1}^9 X_i$$ Déterminer la loi de $Y$ et calculer $\\PP(Y \\geq 1)$.",
-      "html": "<p>Soit <span>\\(Y\\)</span> la variable aléatoire définie par <span>\\[Y = \\frac{1}{9}\\sum_{i=1}^9 X_i\\]</span> Déterminer la loi de <span>\\(Y\\)</span> et calculer <span>\\(\\PP(Y \\geq 1)\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(Y\\)</span> la variable aléatoire définie par <span class=\"math display\">\\[Y = \\frac{1}{9}\\sum_{i=1}^9 X_i\\]</span> Déterminer la loi de <span class=\"math inline\">\\(Y\\)</span> et calculer <span class=\"math inline\">\\(\\PP(Y \\geq 1)\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "On sait que $\\mathbb{E}(Y)=\\frac{1}{9} \\sum_{i=1}^9 \\mathbb{E}(X_i) = \\frac{1}{9} \\times 9 \\times 2 = 2$.\n\t\t\n\t\tOn sait que par indépendance des variables,  $\\sigma^2(Y)=\\frac{1}{9^2} \\sum_{i=1}^9 \\sigma^2(X_i) = \\frac{1}{9^2} \\times 9 \\times 3^2 = 1$.\n\t\t\n\t\tDonc \\fbox{$Y$ suit une loi $\\mathcal{N}(2,1)$}.",
-      "html": "<p>On sait que <span>\\(\\mathbb{E}(Y)=\\frac{1}{9} \\sum_{i=1}^9 \\mathbb{E}(X_i) = \\frac{1}{9} \\times 9 \\times 2 = 2\\)</span>.</p>\n<p>On sait que par indépendance des variables, <span>\\(\\sigma^2(Y)=\\frac{1}{9^2} \\sum_{i=1}^9 \\sigma^2(X_i) = \\frac{1}{9^2} \\times 9 \\times 3^2 = 1\\)</span>.</p>\n<p>Donc .</p>",
+      "html": "<p>On sait que <span class=\"math inline\">\\(\\mathbb{E}(Y)=\\frac{1}{9} \\sum_{i=1}^9 \\mathbb{E}(X_i) = \\frac{1}{9} \\times 9 \\times 2 = 2\\)</span>.</p>\n<p>On sait que par indépendance des variables, <span class=\"math inline\">\\(\\sigma^2(Y)=\\frac{1}{9^2} \\sum_{i=1}^9 \\sigma^2(X_i) = \\frac{1}{9^2} \\times 9 \\times 3^2 = 1\\)</span>.</p>\n<p>Donc .</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Soit $Z$ la variable aléatoire définie par $$Z = X_1 + X_2 + X_3 + X_4 + X_5 - X_6 - X_7 - X_8 - X_9$$\n\t\tDéterminer la loi de $Z$ et calculer $\\PP(Z \\geq 1)$.",
-      "html": "<p>Soit <span>\\(Z\\)</span> la variable aléatoire définie par <span>\\[Z = X_1 + X_2 + X_3 + X_4 + X_5 - X_6 - X_7 - X_8 - X_9\\]</span>\nDéterminer la loi de <span>\\(Z\\)</span> et calculer <span>\\(\\PP(Z \\geq 1)\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(Z\\)</span> la variable aléatoire définie par <span class=\"math display\">\\[Z = X_1 + X_2 + X_3 + X_4 + X_5 - X_6 - X_7 - X_8 - X_9\\]</span>\nDéterminer la loi de <span class=\"math inline\">\\(Z\\)</span> et calculer <span class=\"math inline\">\\(\\PP(Z \\geq 1)\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "De même, $\\mathbb{E}(Z)=2+2+2+2+2-2-2-2-2=2$ et, puisque toutes ces variables sont indépendantes, \\\\ $\\sigma^2(Z)= 3^2+3^2+3^2+3^2+3^2+(-3)^2+(-3)^2+(-3)^2+(-3)^2 =5 \\times 3^2+4 \\times 3^2 = 81 = 9^2$\n\t\t\n\t\tDonc $Z$ suit une loi $\\mathcal{N}(2,9^2)$.\n\t\t\n\t\tPuis on calcule $\\PP(Z \\geq 1) = \\PP(U \\geq \\frac{1-2}{9}) = \\PP(U \\geq -\\frac19 )=\\PP(U \\leq \\frac19)$. D'après la table, \\fbox{$\\PP(Z \\geq 1) = 0.5438$}.",
-      "html": "<p>De même, <span>\\(\\mathbb{E}(Z)=2+2+2+2+2-2-2-2-2=2\\)</span> et, puisque toutes ces variables sont indépendantes,<br />\n<span>\\(\\sigma^2(Z)= 3^2+3^2+3^2+3^2+3^2+(-3)^2+(-3)^2+(-3)^2+(-3)^2 =5 \\times 3^2+4 \\times 3^2 = 81 = 9^2\\)</span></p>\n<p>Donc <span>\\(Z\\)</span> suit une loi <span>\\(\\mathcal{N}(2,9^2)\\)</span>.</p>\n<p>Puis on calcule <span>\\(\\PP(Z \\geq 1) = \\PP(U \\geq \\frac{1-2}{9}) = \\PP(U \\geq -\\frac19 )=\\PP(U \\leq \\frac19)\\)</span>. D’après la table, .</p>",
+      "html": "<p>De même, <span class=\"math inline\">\\(\\mathbb{E}(Z)=2+2+2+2+2-2-2-2-2=2\\)</span> et, puisque toutes ces variables sont indépendantes,<br />\n<span class=\"math inline\">\\(\\sigma^2(Z)= 3^2+3^2+3^2+3^2+3^2+(-3)^2+(-3)^2+(-3)^2+(-3)^2 =5 \\times 3^2+4 \\times 3^2 = 81 = 9^2\\)</span></p>\n<p>Donc <span class=\"math inline\">\\(Z\\)</span> suit une loi <span class=\"math inline\">\\(\\mathcal{N}(2,9^2)\\)</span>.</p>\n<p>Puis on calcule <span class=\"math inline\">\\(\\PP(Z \\geq 1) = \\PP(U \\geq \\frac{1-2}{9}) = \\PP(U \\geq -\\frac19 )=\\PP(U \\leq \\frac19)\\)</span>. D’après la table, .</p>",
       "order": 7
     }
   ],

@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-11-15",
-  "updated_at": "2025-08-23T12:06:44.083Z",
+  "updated_at": "2025-08-25T08:56:33.556Z",
   "content": [
     {
       "id": "block_1",
@@ -22,21 +22,21 @@
       "id": "block_2",
       "type": "reponse",
       "latex": "Avec l'estimateur de moyenne empirique (sans biais et convergent), on trouve une estimation de la moyenne de prix de $1{,}661759$ et une variance de $0{,}0139$.",
-      "html": "<p>Avec l’estimateur de moyenne empirique (sans biais et convergent), on trouve une estimation de la moyenne de prix de <span>\\(1{,}661759\\)</span> et une variance de <span>\\(0{,}0139\\)</span>.</p>",
+      "html": "<p>Avec l’estimateur de moyenne empirique (sans biais et convergent), on trouve une estimation de la moyenne de prix de <span class=\"math inline\">\\(1{,}661759\\)</span> et une variance de <span class=\"math inline\">\\(0{,}0139\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "question",
       "latex": "Proposer une estimation par intervalle de confiance du prix moyen et de la variance du carburant E10 en France, respectivement pour une confiance de $95\\%$ puis $99\\%$.",
-      "html": "<p>Proposer une estimation par intervalle de confiance du prix moyen et de la variance du carburant E10 en France, respectivement pour une confiance de <span>\\(95\\%\\)</span> puis <span>\\(99\\%\\)</span>.</p>",
+      "html": "<p>Proposer une estimation par intervalle de confiance du prix moyen et de la variance du carburant E10 en France, respectivement pour une confiance de <span class=\"math inline\">\\(95\\%\\)</span> puis <span class=\"math inline\">\\(99\\%\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "reponse",
       "latex": "On travaille sur un échantillon de taille $108$ donc les calculs se font avec la loi normale.\n\t\n\tPour $\\alpha = 5\\%$, on trouve $[1{,}6395 ; 1{,6840}]$. \n\t\n\tPour $\\alpha = 5\\%$, on trouve $[1{,}6325 ; 1{,6910}]$.",
-      "html": "<p>On travaille sur un échantillon de taille <span>\\(108\\)</span> donc les calculs se font avec la loi normale.</p>\n<p>Pour <span>\\(\\alpha = 5\\%\\)</span>, on trouve <span>\\([1{,}6395 ; 1{,6840}]\\)</span>.</p>\n<p>Pour <span>\\(\\alpha = 5\\%\\)</span>, on trouve <span>\\([1{,}6325 ; 1{,6910}]\\)</span>.</p>",
+      "html": "<p>On travaille sur un échantillon de taille <span class=\"math inline\">\\(108\\)</span> donc les calculs se font avec la loi normale.</p>\n<p>Pour <span class=\"math inline\">\\(\\alpha = 5\\%\\)</span>, on trouve <span class=\"math inline\">\\([1{,}6395 ; 1{,6840}]\\)</span>.</p>\n<p>Pour <span class=\"math inline\">\\(\\alpha = 5\\%\\)</span>, on trouve <span class=\"math inline\">\\([1{,}6325 ; 1{,6910}]\\)</span>.</p>",
       "order": 4
     }
   ],

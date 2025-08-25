@@ -9,97 +9,97 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-05-17",
-  "updated_at": "2025-08-23T12:07:45.095Z",
+  "updated_at": "2025-08-25T08:57:37.451Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Étudier la convergence des séries $\\sum\\limits_{n \\geq n_0} u_n$ suivantes et préciser la somme de la série quand celle-ci est convergente.",
-      "html": "<p>Étudier la convergence des séries <span>\\(\\sum\\limits_{n \\geq n_0} u_n\\)</span> suivantes et préciser la somme de la série quand celle-ci est convergente.</p>",
+      "html": "<p>Étudier la convergence des séries <span class=\"math inline\">\\(\\sum\\limits_{n \\geq n_0} u_n\\)</span> suivantes et préciser la somme de la série quand celle-ci est convergente.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "$u_n=\\Big(\\frac{3}{2}\\Big)^n$ , $n_0=0$",
-      "html": "<p><span>\\(u_n=\\Big(\\frac{3}{2}\\Big)^n\\)</span> , <span>\\(n_0=0\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(u_n=\\Big(\\frac{3}{2}\\Big)^n\\)</span> , <span class=\"math inline\">\\(n_0=0\\)</span></p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "C'est une série géométrique de raison $q = \\frac32 >0$ donc une série divergente.",
-      "html": "<p>C’est une série géométrique de raison <span>\\(q = \\frac32 &gt;0\\)</span> donc une série divergente.</p>",
+      "html": "<p>C’est une série géométrique de raison <span class=\"math inline\">\\(q = \\frac32 &gt;0\\)</span> donc une série divergente.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "$u_n=\\ln\\Big(1-\\frac{1}{n^2}\\Big)$ , $n_0=2$",
-      "html": "<p><span>\\(u_n=\\ln\\Big(1-\\frac{1}{n^2}\\Big)\\)</span> , <span>\\(n_0=2\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(u_n=\\ln\\Big(1-\\frac{1}{n^2}\\Big)\\)</span> , <span class=\"math inline\">\\(n_0=2\\)</span></p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "indication",
       "latex": "On peut remarquer que $\\ln(1-\\frac{1}{n^2})=\\ln(n-1)+\\ln(n+1)-2\\ln(n)$.",
-      "html": "<p>On peut remarquer que <span>\\(\\ln(1-\\frac{1}{n^2})=\\ln(n-1)+\\ln(n+1)-2\\ln(n)\\)</span>.</p>",
+      "html": "<p>On peut remarquer que <span class=\"math inline\">\\(\\ln(1-\\frac{1}{n^2})=\\ln(n-1)+\\ln(n+1)-2\\ln(n)\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "reponse",
       "latex": "On écrit la somme partielle : \n\t\t\t\t\\begin{align*}\n\t\t\t\t\\sum_{k=2}^{n} \\ln \\left(1-\\frac{1}{k^{2}}\\right) &=\\sum_{k=2}^{n} \\ln (k+1)+\\ln (k-1)-2 \\ln (k) \\\\\n\t\t\t\t&=\\sum_{k=2}^{n} \\ln (k+1)-\\ln (k)-(\\ln (k)-\\ln (k-1)) \\\\\n\t\t\t\t&=\\ln (n+1)-\\ln (n)-\\ln 2 \\underset{n \\rightarrow+\\infty}{\\longrightarrow}-\\ln 2\n\t\t\t\t\\end{align*}\n\t\t\tLa série $\\sum u_n$ est convergente et sa somme vaut $-\\ln(2)$.",
-      "html": "<p>On écrit la somme partielle :\n<span>\\[\\begin{align*}\n                \\sum_{k=2}^{n} \\ln \\left(1-\\frac{1}{k^{2}}\\right) &amp;=\\sum_{k=2}^{n} \\ln (k+1)+\\ln (k-1)-2 \\ln (k) \\\\\n                &amp;=\\sum_{k=2}^{n} \\ln (k+1)-\\ln (k)-(\\ln (k)-\\ln (k-1)) \\\\\n                &amp;=\\ln (n+1)-\\ln (n)-\\ln 2 \\underset{n \\rightarrow+\\infty}{\\longrightarrow}-\\ln 2\n                \\end{align*}\\]</span>\nLa série <span>\\(\\sum u_n\\)</span> est convergente et sa somme vaut <span>\\(-\\ln(2)\\)</span>.</p>",
+      "html": "<p>On écrit la somme partielle :\n<span class=\"math display\">\\[\\begin{align*}\n                \\sum_{k=2}^{n} \\ln \\left(1-\\frac{1}{k^{2}}\\right) &amp;=\\sum_{k=2}^{n} \\ln (k+1)+\\ln (k-1)-2 \\ln (k) \\\\\n                &amp;=\\sum_{k=2}^{n} \\ln (k+1)-\\ln (k)-(\\ln (k)-\\ln (k-1)) \\\\\n                &amp;=\\ln (n+1)-\\ln (n)-\\ln 2 \\underset{n \\rightarrow+\\infty}{\\longrightarrow}-\\ln 2\n                \\end{align*}\\]</span>\nLa série <span class=\"math inline\">\\(\\sum u_n\\)</span> est convergente et sa somme vaut <span class=\"math inline\">\\(-\\ln(2)\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "question",
       "latex": "$u_n=\\Big(\\frac{1+i}{2}\\Big)^n$ , $n_0=0$",
-      "html": "<p><span>\\(u_n=\\Big(\\frac{1+i}{2}\\Big)^n\\)</span> , <span>\\(n_0=0\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(u_n=\\Big(\\frac{1+i}{2}\\Big)^n\\)</span> , <span class=\"math inline\">\\(n_0=0\\)</span></p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "reponse",
       "latex": "C'est une série géométrique de raison $q = \\frac{1+i}{2}$ et $|q| = \\frac{1}{\\sqrt{2}}<1$ donc une série convergente. Sa somme vaut $\\sum_{n=0}^{+\\infty} u_n = \\frac{1}{1-q} = \\frac{2}{1-\\mathrm{i}}$.",
-      "html": "<p>C’est une série géométrique de raison <span>\\(q = \\frac{1+i}{2}\\)</span> et <span>\\(|q| = \\frac{1}{\\sqrt{2}}&lt;1\\)</span> donc une série convergente. Sa somme vaut <span>\\(\\sum_{n=0}^{+\\infty} u_n = \\frac{1}{1-q} = \\frac{2}{1-\\mathrm{i}}\\)</span>.</p>",
+      "html": "<p>C’est une série géométrique de raison <span class=\"math inline\">\\(q = \\frac{1+i}{2}\\)</span> et <span class=\"math inline\">\\(|q| = \\frac{1}{\\sqrt{2}}&lt;1\\)</span> donc une série convergente. Sa somme vaut <span class=\"math inline\">\\(\\sum_{n=0}^{+\\infty} u_n = \\frac{1}{1-q} = \\frac{2}{1-\\mathrm{i}}\\)</span>.</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "question",
       "latex": "$u_n=\\frac{1}{3^n}$ , $n_0=0$",
-      "html": "<p><span>\\(u_n=\\frac{1}{3^n}\\)</span> , <span>\\(n_0=0\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(u_n=\\frac{1}{3^n}\\)</span> , <span class=\"math inline\">\\(n_0=0\\)</span></p>",
       "order": 9
     },
     {
       "id": "block_10",
       "type": "reponse",
       "latex": "C'est une série géométrique de raison $q = \\frac{1}{3} <1$ donc c'est une série convergente.  Sa somme vaut $\\sum_{n=0}^{+\\infty} u_n = \\frac{1}{1-q} = \\frac{3}{2}$.",
-      "html": "<p>C’est une série géométrique de raison <span>\\(q = \\frac{1}{3} &lt;1\\)</span> donc c’est une série convergente. Sa somme vaut <span>\\(\\sum_{n=0}^{+\\infty} u_n = \\frac{1}{1-q} = \\frac{3}{2}\\)</span>.</p>",
+      "html": "<p>C’est une série géométrique de raison <span class=\"math inline\">\\(q = \\frac{1}{3} &lt;1\\)</span> donc c’est une série convergente. Sa somme vaut <span class=\"math inline\">\\(\\sum_{n=0}^{+\\infty} u_n = \\frac{1}{1-q} = \\frac{3}{2}\\)</span>.</p>",
       "order": 10
     },
     {
       "id": "block_11",
       "type": "question",
       "latex": "$u_n=\\frac{2n-1}{n(n^2-4)}$ , $n_0=3$",
-      "html": "<p><span>\\(u_n=\\frac{2n-1}{n(n^2-4)}\\)</span> , <span>\\(n_0=3\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(u_n=\\frac{2n-1}{n(n^2-4)}\\)</span> , <span class=\"math inline\">\\(n_0=3\\)</span></p>",
       "order": 11
     },
     {
       "id": "block_12",
       "type": "indication",
       "latex": "On peut décomposer la fraction en éléments simples, i.e. chercher $a$, $b$ et $c$ des réels tels que $\\frac{2n-1}{n(n^2-4)}=\\frac{a}{n}+\\frac{b}{n-2}+\\frac{c}{n+2}$.",
-      "html": "<p>On peut décomposer la fraction en éléments simples, i.e. chercher <span>\\(a\\)</span>, <span>\\(b\\)</span> et <span>\\(c\\)</span> des réels tels que <span>\\(\\frac{2n-1}{n(n^2-4)}=\\frac{a}{n}+\\frac{b}{n-2}+\\frac{c}{n+2}\\)</span>.</p>",
+      "html": "<p>On peut décomposer la fraction en éléments simples, i.e. chercher <span class=\"math inline\">\\(a\\)</span>, <span class=\"math inline\">\\(b\\)</span> et <span class=\"math inline\">\\(c\\)</span> des réels tels que <span class=\"math inline\">\\(\\frac{2n-1}{n(n^2-4)}=\\frac{a}{n}+\\frac{b}{n-2}+\\frac{c}{n+2}\\)</span>.</p>",
       "order": 12
     },
     {
       "id": "block_13",
       "type": "reponse",
       "latex": "On trouve dans un premier temps que $u_n = \\frac{1}{4n}-\\frac{5}{8(n+2)}+\\frac{3}{8(n-2)} $. \n\t\t\t\tOn écrit la somme partielle pour $n \\geq 3$ (les termes de la série ne sont pas bien définis pour $n \\leq 2$) : \n\t\t\t\t\\begin{align*}\n\t\t\t\t\\sum_{k=3}^{n} u_n &=\\sum_{k=3}^{n} \\frac{1}{4k}-\\frac{5}{8(k+2)}+\\frac{3}{8(k-2)} \\\\\n\t\t\t\t&=\\sum_{k=3}^{n} \\frac{1}{4k} - \\sum_{k=5}^{n+2} \\frac{5}{8k} + \\sum_{k=1}^{n-2} \\frac{3}{8k}     \\\\\n\t\t\t\t&= \\frac{1}{12} + \\frac{1}{16} + \\frac{1}{4(n-1)} +  \\frac{1}{4n} - \\sum_{k=n-1}^{n+2} \\frac{5}{8k} + \\frac{3}{8} + \\frac{3}{16} + \\frac{3}{24} + \\frac{3}{32} \\\\\n\t\t\t\t& \\underset{n \\rightarrow+\\infty}{\\longrightarrow} \\frac{89}{96}\n\t\t\t\t\\end{align*}",
-      "html": "<p>On trouve dans un premier temps que <span>\\(u_n = \\frac{1}{4n}-\\frac{5}{8(n+2)}+\\frac{3}{8(n-2)}\\)</span>.\nOn écrit la somme partielle pour <span>\\(n \\geq 3\\)</span> (les termes de la série ne sont pas bien définis pour <span>\\(n \\leq 2\\)</span>) :\n<span>\\[\\begin{align*}\n                \\sum_{k=3}^{n} u_n &amp;=\\sum_{k=3}^{n} \\frac{1}{4k}-\\frac{5}{8(k+2)}+\\frac{3}{8(k-2)} \\\\\n                &amp;=\\sum_{k=3}^{n} \\frac{1}{4k} - \\sum_{k=5}^{n+2} \\frac{5}{8k} + \\sum_{k=1}^{n-2} \\frac{3}{8k}     \\\\\n                &amp;= \\frac{1}{12} + \\frac{1}{16} + \\frac{1}{4(n-1)} +  \\frac{1}{4n} - \\sum_{k=n-1}^{n+2} \\frac{5}{8k} + \\frac{3}{8} + \\frac{3}{16} + \\frac{3}{24} + \\frac{3}{32} \\\\\n                &amp; \\underset{n \\rightarrow+\\infty}{\\longrightarrow} \\frac{89}{96}\n                \\end{align*}\\]</span></p>",
+      "html": "<p>On trouve dans un premier temps que <span class=\"math inline\">\\(u_n = \\frac{1}{4n}-\\frac{5}{8(n+2)}+\\frac{3}{8(n-2)}\\)</span>.\nOn écrit la somme partielle pour <span class=\"math inline\">\\(n \\geq 3\\)</span> (les termes de la série ne sont pas bien définis pour <span class=\"math inline\">\\(n \\leq 2\\)</span>) :\n<span class=\"math display\">\\[\\begin{align*}\n                \\sum_{k=3}^{n} u_n &amp;=\\sum_{k=3}^{n} \\frac{1}{4k}-\\frac{5}{8(k+2)}+\\frac{3}{8(k-2)} \\\\\n                &amp;=\\sum_{k=3}^{n} \\frac{1}{4k} - \\sum_{k=5}^{n+2} \\frac{5}{8k} + \\sum_{k=1}^{n-2} \\frac{3}{8k}     \\\\\n                &amp;= \\frac{1}{12} + \\frac{1}{16} + \\frac{1}{4(n-1)} +  \\frac{1}{4n} - \\sum_{k=n-1}^{n+2} \\frac{5}{8k} + \\frac{3}{8} + \\frac{3}{16} + \\frac{3}{24} + \\frac{3}{32} \\\\\n                &amp; \\underset{n \\rightarrow+\\infty}{\\longrightarrow} \\frac{89}{96}\n                \\end{align*}\\]</span></p>",
       "order": 13
     }
   ],

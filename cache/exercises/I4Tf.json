@@ -9,20 +9,20 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-01",
-  "updated_at": "2025-08-23T12:06:51.466Z",
+  "updated_at": "2025-08-25T08:56:41.094Z",
   "content": [
     {
       "id": "block_1",
       "type": "question",
       "latex": "Déterminer si les ensembles suivants sont ouverts ou fermés dans $\\R$.\n\t\n\t$$[0;1[ \\, , \\, [0;+\\infty[ \\, , \\, ]0;1[\\cup \\{2\\} \\, , \\, \\Z \\, , \\, \\left\\{\\frac{1}{n} \\in \\R \\, \\mid n \\in \\N^* \\right\\} $$",
-      "html": "<p>Déterminer si les ensembles suivants sont ouverts ou fermés dans <span>\\(\\R\\)</span>.</p>\n<p><span>\\[[0;1[ \\, , \\, [0;+\\infty[ \\, , \\, ]0;1[\\cup \\{2\\} \\, , \\, \\Z \\, , \\, \\left\\{\\frac{1}{n} \\in \\R \\, \\mid n \\in \\N^* \\right\\}\\]</span></p>",
+      "html": "<p>Déterminer si les ensembles suivants sont ouverts ou fermés dans <span class=\"math inline\">\\(\\R\\)</span>.</p>\n<p><span class=\"math display\">\\[[0;1[ \\, , \\, [0;+\\infty[ \\, , \\, ]0;1[\\cup \\{2\\} \\, , \\, \\Z \\, , \\, \\left\\{\\frac{1}{n} \\in \\R \\, \\mid n \\in \\N^* \\right\\}\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "reponse",
       "latex": "\\begin{itemize}\n\t\\item $[0;1[$ est ni ouvert, ni fermé ;\n\t\\item $[0;+\\infty[$ est fermé ;\n\t\\item $]0;1[\\cup \\{2\\}$ est ni ouvert, ni fermé ;\n\t\\item $\\Z$ est fermé ;\n\t\\item $\\left\\{\\frac{1}{n} \\in \\R \\, \\mid n \\in \\N^* \\right\\}$ est ni ouvert, ni fermé.\n\\end{itemize}",
-      "html": "<ul>\n<li><p><span>\\([0;1[\\)</span> est ni ouvert, ni fermé ;</p></li>\n<li><p><span>\\([0;+\\infty[\\)</span> est fermé ;</p></li>\n<li><p><span>\\(]0;1[\\cup \\{2\\}\\)</span> est ni ouvert, ni fermé ;</p></li>\n<li><p><span>\\(\\Z\\)</span> est fermé ;</p></li>\n<li><p><span>\\(\\left\\{\\frac{1}{n} \\in \\R \\, \\mid n \\in \\N^* \\right\\}\\)</span> est ni ouvert, ni fermé.</p></li>\n</ul>",
+      "html": "<ul>\n<li><p><span class=\"math inline\">\\([0;1[\\)</span> est ni ouvert, ni fermé ;</p></li>\n<li><p><span class=\"math inline\">\\([0;+\\infty[\\)</span> est fermé ;</p></li>\n<li><p><span class=\"math inline\">\\(]0;1[\\cup \\{2\\}\\)</span> est ni ouvert, ni fermé ;</p></li>\n<li><p><span class=\"math inline\">\\(\\Z\\)</span> est fermé ;</p></li>\n<li><p><span class=\"math inline\">\\(\\left\\{\\frac{1}{n} \\in \\R \\, \\mid n \\in \\N^* \\right\\}\\)</span> est ni ouvert, ni fermé.</p></li>\n</ul>",
       "order": 2
     }
   ],

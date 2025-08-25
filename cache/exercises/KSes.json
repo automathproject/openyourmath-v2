@@ -9,90 +9,90 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-09-27",
-  "updated_at": "2025-08-23T12:06:54.090Z",
+  "updated_at": "2025-08-25T08:56:43.843Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On considère l'intégrale \n\t$$I = \\int_0^4 \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{y^2}{2}} dy$$",
-      "html": "<p>On considère l’intégrale\n<span>\\[I = \\int_0^4 \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{y^2}{2}} dy\\]</span></p>",
+      "html": "<p>On considère l’intégrale\n<span class=\"math display\">\\[I = \\int_0^4 \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{y^2}{2}} dy\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Démontrer qu'il existe une fonction $\\varphi \\colon \\R \\to \\R$ telle que $I=\\mathbb{E}(\\varphi(Z_1))$ où $Z_1$ est une variable aléatoire normale $\\mathcal{N}(0,1)$.",
-      "html": "<p>Démontrer qu’il existe une fonction <span>\\(\\varphi \\colon \\R \\to \\R\\)</span> telle que <span>\\(I=\\mathbb{E}(\\varphi(Z_1))\\)</span> où <span>\\(Z_1\\)</span> est une variable aléatoire normale <span>\\(\\mathcal{N}(0,1)\\)</span>.</p>",
+      "html": "<p>Démontrer qu’il existe une fonction <span class=\"math inline\">\\(\\varphi \\colon \\R \\to \\R\\)</span> telle que <span class=\"math inline\">\\(I=\\mathbb{E}(\\varphi(Z_1))\\)</span> où <span class=\"math inline\">\\(Z_1\\)</span> est une variable aléatoire normale <span class=\"math inline\">\\(\\mathcal{N}(0,1)\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "Il suffit de poser $\\varphi = 1_{[0;4]}$ de telle sorte qu'en appliquant le théorème de transfert à $Z_1$ admettant pour densité $f_Z(x) =  \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{x^2}{2}}$, on obtienne\n\t\t\t$$\\mathbb{E}(1_{[0;4]}(Z_1)) = \\int_\\R 1_{[0;4]}(y) \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{y^2}{2}} dy = I$$",
-      "html": "<p>Il suffit de poser <span>\\(\\varphi = 1_{[0;4]}\\)</span> de telle sorte qu’en appliquant le théorème de transfert à <span>\\(Z_1\\)</span> admettant pour densité <span>\\(f_Z(x) =  \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{x^2}{2}}\\)</span>, on obtienne\n<span>\\[\\mathbb{E}(1_{[0;4]}(Z_1)) = \\int_\\R 1_{[0;4]}(y) \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{y^2}{2}} dy = I\\]</span></p>",
+      "html": "<p>Il suffit de poser <span class=\"math inline\">\\(\\varphi = 1_{[0;4]}\\)</span> de telle sorte qu’en appliquant le théorème de transfert à <span class=\"math inline\">\\(Z_1\\)</span> admettant pour densité <span class=\"math inline\">\\(f_Z(x) =  \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{x^2}{2}}\\)</span>, on obtienne\n<span class=\"math display\">\\[\\mathbb{E}(1_{[0;4]}(Z_1)) = \\int_\\R 1_{[0;4]}(y) \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{y^2}{2}} dy = I\\]</span></p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "text",
       "latex": "On définit une suite de variables $(Z_n)_{n \\geq 1}$ indépendantes et identiquement distribuées selon une loi normale $\\mathcal{N}(0,1)$.",
-      "html": "<p>On définit une suite de variables <span>\\((Z_n)_{n \\geq 1}\\)</span> indépendantes et identiquement distribuées selon une loi normale <span>\\(\\mathcal{N}(0,1)\\)</span>.</p>",
+      "html": "<p>On définit une suite de variables <span class=\"math inline\">\\((Z_n)_{n \\geq 1}\\)</span> indépendantes et identiquement distribuées selon une loi normale <span class=\"math inline\">\\(\\mathcal{N}(0,1)\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "question",
       "latex": "Déterminer une fonction $g \\colon \\R \\to \\R$ telle que la suite  $\\left( \\frac{1}{n}\\sum_{i=1}^n g(Z_i)  \\right))_{n \\geq 1}$  converge presque sûrement vers $I$.",
-      "html": "<p>Déterminer une fonction <span>\\(g \\colon \\R \\to \\R\\)</span> telle que la suite <span>\\(\\left( \\frac{1}{n}\\sum_{i=1}^n g(Z_i)  \\right))_{n \\geq 1}\\)</span> converge presque sûrement vers <span>\\(I\\)</span>.</p>",
+      "html": "<p>Déterminer une fonction <span class=\"math inline\">\\(g \\colon \\R \\to \\R\\)</span> telle que la suite <span class=\"math inline\">\\(\\left( \\frac{1}{n}\\sum_{i=1}^n g(Z_i)  \\right))_{n \\geq 1}\\)</span> converge presque sûrement vers <span class=\"math inline\">\\(I\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "reponse",
       "latex": "Il suffit de poser $g = \\varphi = 1_{[0;4]}$ pour que les variables $(g(Z_i))$ soient i.i.d et admettent une espérance $I$. Ainsi, d'après la Loi Forte des Grands Nombres, on a \n\t\t\t\t$$\\frac{1}{n}\\sum_{i=1}^n 1_{[0;4]}(Z_i) \\xrightarrow[n \\to +\\infty]{p.s.} I$$",
-      "html": "<p>Il suffit de poser <span>\\(g = \\varphi = 1_{[0;4]}\\)</span> pour que les variables <span>\\((g(Z_i))\\)</span> soient i.i.d et admettent une espérance <span>\\(I\\)</span>. Ainsi, d’après la Loi Forte des Grands Nombres, on a\n<span>\\[\\frac{1}{n}\\sum_{i=1}^n 1_{[0;4]}(Z_i) \\xrightarrow[n \\to +\\infty]{p.s.} I\\]</span></p>",
+      "html": "<p>Il suffit de poser <span class=\"math inline\">\\(g = \\varphi = 1_{[0;4]}\\)</span> pour que les variables <span class=\"math inline\">\\((g(Z_i))\\)</span> soient i.i.d et admettent une espérance <span class=\"math inline\">\\(I\\)</span>. Ainsi, d’après la Loi Forte des Grands Nombres, on a\n<span class=\"math display\">\\[\\frac{1}{n}\\sum_{i=1}^n 1_{[0;4]}(Z_i) \\xrightarrow[n \\to +\\infty]{p.s.} I\\]</span></p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "question",
       "latex": "Construire un intervalle de confiance $I_{conf}$ tel que $\\mathbb{P}(I \\in I_{conf}) \\approx 0{,}95$.",
-      "html": "<p>Construire un intervalle de confiance <span>\\(I_{conf}\\)</span> tel que <span>\\(\\mathbb{P}(I \\in I_{conf}) \\approx 0{,}95\\)</span>.</p>",
+      "html": "<p>Construire un intervalle de confiance <span class=\"math inline\">\\(I_{conf}\\)</span> tel que <span class=\"math inline\">\\(\\mathbb{P}(I \\in I_{conf}) \\approx 0{,}95\\)</span>.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "reponse",
       "latex": "On note  $\\sigma^2 = \\mathbb{V}(g(Z_1))$. D'après le Théorème Central Limite, \n\t\t\t\t$$ \\frac{\\frac{1}{n}\\sum_{i=1}^n 1_{[0;4]}(Z_i) - I }{ \\frac{\\sigma}{\\sqrt{n}}} \\xrightarrow[n\\to+\\infty]{\\mathcal{L}} \\mathcal{N}(0,1) $$\n\t\t\t\tSi $n$ est grand, on peut considérer que la variable $Z'_n = \t \\frac{\\frac{1}{n}\\sum_{i=1}^n 1_{[0;4]}(Z_i) - I }{ \\frac{\\sigma}{\\sqrt{n}}}$ suit approximativement une loi $\\mathcal{N}(0,1)$. Par conséquent, d'après la table de loi,\n\t\t\t\t$$\\PP(-1{,}96 \\leq Z'_n \\leq 1{,}96) \\approx 0{,}95 \\iff  \\mathbb{P}\\left(  Z'_n - 1{,}96 \\frac{\\sigma}{\\sqrt{n}}     \\leq  I  \\leq   Z'_n + 1{,}96 \\frac{\\sigma}{\\sqrt{n}} \\right) \\approx 0{,}95   $$\n\t\t\t\tOn en déduit un intervalle de confiance $I_{conf} = \\left[  Z'_n - 1{,}96 \\frac{\\sigma}{\\sqrt{n}} ; Z'_n + 1{,}96 \\frac{\\sigma}{\\sqrt{n}} \\right] $ qui est en réalité un intervalle de confiance asymptotique. Il resterait à expliciter $\\sigma = \\sqrt{V(g(Z_1))}$.",
-      "html": "<p>On note <span>\\(\\sigma^2 = \\mathbb{V}(g(Z_1))\\)</span>. D’après le Théorème Central Limite,\n<span>\\[\\frac{\\frac{1}{n}\\sum_{i=1}^n 1_{[0;4]}(Z_i) - I }{ \\frac{\\sigma}{\\sqrt{n}}} \\xrightarrow[n\\to+\\infty]{\\mathcal{L}} \\mathcal{N}(0,1)\\]</span>\nSi <span>\\(n\\)</span> est grand, on peut considérer que la variable <span>\\(Z&#39;_n =     \\frac{\\frac{1}{n}\\sum_{i=1}^n 1_{[0;4]}(Z_i) - I }{ \\frac{\\sigma}{\\sqrt{n}}}\\)</span> suit approximativement une loi <span>\\(\\mathcal{N}(0,1)\\)</span>. Par conséquent, d’après la table de loi,\n<span>\\[\\PP(-1{,}96 \\leq Z&#39;_n \\leq 1{,}96) \\approx 0{,}95 \\iff  \\mathbb{P}\\left(  Z&#39;_n - 1{,}96 \\frac{\\sigma}{\\sqrt{n}}     \\leq  I  \\leq   Z&#39;_n + 1{,}96 \\frac{\\sigma}{\\sqrt{n}} \\right) \\approx 0{,}95\\]</span>\nOn en déduit un intervalle de confiance <span>\\(I_{conf} = \\left[  Z&#39;_n - 1{,}96 \\frac{\\sigma}{\\sqrt{n}} ; Z&#39;_n + 1{,}96 \\frac{\\sigma}{\\sqrt{n}} \\right]\\)</span> qui est en réalité un intervalle de confiance asymptotique. Il resterait à expliciter <span>\\(\\sigma = \\sqrt{V(g(Z_1))}\\)</span>.</p>",
+      "html": "<p>On note <span class=\"math inline\">\\(\\sigma^2 = \\mathbb{V}(g(Z_1))\\)</span>. D’après le Théorème Central Limite,\n<span class=\"math display\">\\[\\frac{\\frac{1}{n}\\sum_{i=1}^n 1_{[0;4]}(Z_i) - I }{ \\frac{\\sigma}{\\sqrt{n}}} \\xrightarrow[n\\to+\\infty]{\\mathcal{L}} \\mathcal{N}(0,1)\\]</span>\nSi <span class=\"math inline\">\\(n\\)</span> est grand, on peut considérer que la variable <span class=\"math inline\">\\(Z&#39;_n =     \\frac{\\frac{1}{n}\\sum_{i=1}^n 1_{[0;4]}(Z_i) - I }{ \\frac{\\sigma}{\\sqrt{n}}}\\)</span> suit approximativement une loi <span class=\"math inline\">\\(\\mathcal{N}(0,1)\\)</span>. Par conséquent, d’après la table de loi,\n<span class=\"math display\">\\[\\PP(-1{,}96 \\leq Z&#39;_n \\leq 1{,}96) \\approx 0{,}95 \\iff  \\mathbb{P}\\left(  Z&#39;_n - 1{,}96 \\frac{\\sigma}{\\sqrt{n}}     \\leq  I  \\leq   Z&#39;_n + 1{,}96 \\frac{\\sigma}{\\sqrt{n}} \\right) \\approx 0{,}95\\]</span>\nOn en déduit un intervalle de confiance <span class=\"math inline\">\\(I_{conf} = \\left[  Z&#39;_n - 1{,}96 \\frac{\\sigma}{\\sqrt{n}} ; Z&#39;_n + 1{,}96 \\frac{\\sigma}{\\sqrt{n}} \\right]\\)</span> qui est en réalité un intervalle de confiance asymptotique. Il resterait à expliciter <span class=\"math inline\">\\(\\sigma = \\sqrt{V(g(Z_1))}\\)</span>.</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "text",
       "latex": "On définit une suite de variables $(U_n)$ indépendantes et identiquement distribuées selon une loi uniforme $\\mathcal{U}([0;4])$.",
-      "html": "<p>On définit une suite de variables <span>\\((U_n)\\)</span> indépendantes et identiquement distribuées selon une loi uniforme <span>\\(\\mathcal{U}([0;4])\\)</span>.</p>",
+      "html": "<p>On définit une suite de variables <span class=\"math inline\">\\((U_n)\\)</span> indépendantes et identiquement distribuées selon une loi uniforme <span class=\"math inline\">\\(\\mathcal{U}([0;4])\\)</span>.</p>",
       "order": 9
     },
     {
       "id": "block_10",
       "type": "question",
       "latex": "A l'aide de cette suite, définir une suite de variables aléatoires $(Y_n)$ qui converge presque sûrement vers $I$.",
-      "html": "<p>A l’aide de cette suite, définir une suite de variables aléatoires <span>\\((Y_n)\\)</span> qui converge presque sûrement vers <span>\\(I\\)</span>.</p>",
+      "html": "<p>A l’aide de cette suite, définir une suite de variables aléatoires <span class=\"math inline\">\\((Y_n)\\)</span> qui converge presque sûrement vers <span class=\"math inline\">\\(I\\)</span>.</p>",
       "order": 10
     },
     {
       "id": "block_11",
       "type": "reponse",
       "latex": "D'après la loi forte des grands nombres,\n\t\t\t\t$$\\frac{4}{n}\\sum_{i=1}^n \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{U_i^2}{2}} \\xrightarrow[n \\to +\\infty]{p.s.} \\mathbb{E}\\left(\\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{U_1^2}{2}}\\right) = \\int_{\\R}^{} \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{x^2}{2}} \\frac{1}{4} 1_{[0;4]}(x)  dx = I$$",
-      "html": "<p>D’après la loi forte des grands nombres,\n<span>\\[\\frac{4}{n}\\sum_{i=1}^n \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{U_i^2}{2}} \\xrightarrow[n \\to +\\infty]{p.s.} \\mathbb{E}\\left(\\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{U_1^2}{2}}\\right) = \\int_{\\R}^{} \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{x^2}{2}} \\frac{1}{4} 1_{[0;4]}(x)  dx = I\\]</span></p>",
+      "html": "<p>D’après la loi forte des grands nombres,\n<span class=\"math display\">\\[\\frac{4}{n}\\sum_{i=1}^n \\frac{1}{\\sqrt{2\\pi}}e^{-\\frac{U_i^2}{2}} \\xrightarrow[n \\to +\\infty]{p.s.} \\mathbb{E}\\left(\\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{U_1^2}{2}}\\right) = \\int_{\\R}^{} \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{x^2}{2}} \\frac{1}{4} 1_{[0;4]}(x)  dx = I\\]</span></p>",
       "order": 11
     },
     {
       "id": "block_12",
       "type": "question",
-      "latex": "En déduire une méthode de Monte Carlo permettant d'obtenir une valeur approchée de $I$ en complétant l'algorithme suivant :\n\t\t\t\t\\texttt{n=1000;S=0 \\\\\n\t\t\t\t\tfor i in range(n): \\\\\n\t\t\t\t\t  u = ... \\\\\n\t\t\t\t\t S= S + ... \\\\\n\t\t\t\t\tprint(...)}",
-      "html": "<p>En déduire une méthode de Monte Carlo permettant d’obtenir une valeur approchée de <span>\\(I\\)</span> en complétant l’algorithme suivant :\n<code>n=1000;S=0 for i in range(n): u = ... S= S + ... print(...)</code></p>",
+      "latex": "En déduire une méthode de Monte Carlo permettant d'obtenir une valeur approchée de $I$ en complétant l'algorithme suivant :\n\t\t\t\t\\texttt{n=1000;S=0 \\\\\n\t\t\t\t\tfor i in range(n): \\\\\n\t\t\t\t\t  u = ... \\\\\n\t\t\t\t\t S= S + ... \\\\\n\t\t\t\t\tprint(...)}\n%\\begin{verbatim}\n%%n=1000;S=0\n%%for i in range(n):\n%%   u = ... \n%%   S= S + ...\n%%print(...)\n%\\end{verbatim}",
+      "html": "<p>En déduire une méthode de Monte Carlo permettant d’obtenir une valeur approchée de <span class=\"math inline\">\\(I\\)</span> en complétant l’algorithme suivant :\n<code>n=1000;S=0 for i in range(n): u = ... S= S + ... print(...)</code></p>",
       "order": 12
     },
     {
@@ -106,28 +106,28 @@
       "id": "block_14",
       "type": "question",
       "latex": "Construire un intervalle de confiance $I_{conf}$ tel que $\\mathbb{P}(I \\in I_{conf}) \\approx 0{,}95$.",
-      "html": "<p>Construire un intervalle de confiance <span>\\(I_{conf}\\)</span> tel que <span>\\(\\mathbb{P}(I \\in I_{conf}) \\approx 0{,}95\\)</span>.</p>",
+      "html": "<p>Construire un intervalle de confiance <span class=\"math inline\">\\(I_{conf}\\)</span> tel que <span class=\"math inline\">\\(\\mathbb{P}(I \\in I_{conf}) \\approx 0{,}95\\)</span>.</p>",
       "order": 14
     },
     {
       "id": "block_15",
       "type": "reponse",
       "latex": "On procède de même en posant $h \\colon x \\mapsto \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{x^2}{2}}$.\n\t\t\t\t\n\t\t\t\tOn note  $\\sigma'^2 = \\mathbb{V}(h(Z_1))$. D'après le Théorème Central Limite, \n\t\t\t\t$$ \\frac{\\frac{1}{n}\\sum\\limits_{i=1}^n \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{U_i^2}{2}} - I }{ \\frac{\\sigma'}{\\sqrt{n}}} \\xrightarrow[n\\to+\\infty]{\\mathcal{L}} \\mathcal{N}(0,1) $$\n\t\t\t\tSi $n$ est grand, on peut considérer que la variable $Z''_n = \t \\frac{\\frac{1}{n}\\sum_{i=1}^n \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{U_i^2}{2}} - I }{ \\frac{\\sigma'}{\\sqrt{n}}}$ suit approximativement une loi $\\mathcal{N}(0,1)$. On en déduit un intervalle de confiance $I_{conf} = \\left[  Z''_n - 1{,}96 \\frac{\\sigma'}{\\sqrt{n}} ; Z''_n + 1{,}96 \\frac{\\sigma'}{\\sqrt{n}} \\right] $",
-      "html": "<p>On procède de même en posant <span>\\(h \\colon x \\mapsto \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{x^2}{2}}\\)</span>.</p>\n<p>On note <span>\\(\\sigma&#39;^2 = \\mathbb{V}(h(Z_1))\\)</span>. D’après le Théorème Central Limite,\n<span>\\[\\frac{\\frac{1}{n}\\sum\\limits_{i=1}^n \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{U_i^2}{2}} - I }{ \\frac{\\sigma&#39;}{\\sqrt{n}}} \\xrightarrow[n\\to+\\infty]{\\mathcal{L}} \\mathcal{N}(0,1)\\]</span>\nSi <span>\\(n\\)</span> est grand, on peut considérer que la variable <span>\\(Z&#39;&#39;_n =    \\frac{\\frac{1}{n}\\sum_{i=1}^n \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{U_i^2}{2}} - I }{ \\frac{\\sigma&#39;}{\\sqrt{n}}}\\)</span> suit approximativement une loi <span>\\(\\mathcal{N}(0,1)\\)</span>. On en déduit un intervalle de confiance <span>\\(I_{conf} = \\left[  Z&#39;&#39;_n - 1{,}96 \\frac{\\sigma&#39;}{\\sqrt{n}} ; Z&#39;&#39;_n + 1{,}96 \\frac{\\sigma&#39;}{\\sqrt{n}} \\right]\\)</span></p>",
+      "html": "<p>On procède de même en posant <span class=\"math inline\">\\(h \\colon x \\mapsto \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{x^2}{2}}\\)</span>.</p>\n<p>On note <span class=\"math inline\">\\(\\sigma&#39;^2 = \\mathbb{V}(h(Z_1))\\)</span>. D’après le Théorème Central Limite,\n<span class=\"math display\">\\[\\frac{\\frac{1}{n}\\sum\\limits_{i=1}^n \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{U_i^2}{2}} - I }{ \\frac{\\sigma&#39;}{\\sqrt{n}}} \\xrightarrow[n\\to+\\infty]{\\mathcal{L}} \\mathcal{N}(0,1)\\]</span>\nSi <span class=\"math inline\">\\(n\\)</span> est grand, on peut considérer que la variable <span class=\"math inline\">\\(Z&#39;&#39;_n =    \\frac{\\frac{1}{n}\\sum_{i=1}^n \\frac{4}{\\sqrt{2\\pi}}e^{-\\frac{U_i^2}{2}} - I }{ \\frac{\\sigma&#39;}{\\sqrt{n}}}\\)</span> suit approximativement une loi <span class=\"math inline\">\\(\\mathcal{N}(0,1)\\)</span>. On en déduit un intervalle de confiance <span class=\"math inline\">\\(I_{conf} = \\left[  Z&#39;&#39;_n - 1{,}96 \\frac{\\sigma&#39;}{\\sqrt{n}} ; Z&#39;&#39;_n + 1{,}96 \\frac{\\sigma&#39;}{\\sqrt{n}} \\right]\\)</span></p>",
       "order": 15
     },
     {
       "id": "block_16",
       "type": "question",
       "latex": "Afin d'obtenir une approximation de $I$, au vu des intervalles de confiance obtenus pour chaque méthode, mieux vaut-il utiliser une méthode de Monte Carlo basée sur la suite $(Z_n)$ ou la suite $(U_n)$ ?",
-      "html": "<p>Afin d’obtenir une approximation de <span>\\(I\\)</span>, au vu des intervalles de confiance obtenus pour chaque méthode, mieux vaut-il utiliser une méthode de Monte Carlo basée sur la suite <span>\\((Z_n)\\)</span> ou la suite <span>\\((U_n)\\)</span> ?</p>",
+      "html": "<p>Afin d’obtenir une approximation de <span class=\"math inline\">\\(I\\)</span>, au vu des intervalles de confiance obtenus pour chaque méthode, mieux vaut-il utiliser une méthode de Monte Carlo basée sur la suite <span class=\"math inline\">\\((Z_n)\\)</span> ou la suite <span class=\"math inline\">\\((U_n)\\)</span> ?</p>",
       "order": 16
     },
     {
       "id": "block_17",
       "type": "reponse",
       "latex": "Il reste à comparer $\\sigma$ et $\\sigma'$...",
-      "html": "<p>Il reste à comparer <span>\\(\\sigma\\)</span> et <span>\\(\\sigma&#39;\\)</span>...</p>",
+      "html": "<p>Il reste à comparer <span class=\"math inline\">\\(\\sigma\\)</span> et <span class=\"math inline\">\\(\\sigma&#39;\\)</span>...</p>",
       "order": 17
     }
   ],

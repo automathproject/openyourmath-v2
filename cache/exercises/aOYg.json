@@ -9,20 +9,20 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-02",
-  "updated_at": "2025-08-23T12:07:17.128Z",
+  "updated_at": "2025-08-25T08:57:07.913Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soit $n \\geq 3$, $\\varepsilon >0$ et $A_\\varepsilon$ la matrice pentadiagonale définie par \n\n$$A_\\varepsilon = \\begin{pmatrix}\n\t1 & \\varepsilon & \\varepsilon^2  &  &  & \\\\\n\t\\varepsilon & 1 & \\varepsilon & \\varepsilon^2     & &  \\\\\n\t\\varepsilon^2 & \\ddots & \\ddots & \\ddots & & \\\\\n\t&   \\ddots &  &  & \\varepsilon  & \\varepsilon^2 \\\\\n\t&  &  & \\varepsilon &1  &\\varepsilon \\\\\n\t& & & \\varepsilon^2 & \\varepsilon & 1 \\\\\n\\end{pmatrix}\n$$\net on s'intéresse au système $A_\\varepsilon x = b$ où $x,b \\in \\mathbb{R}^n$.",
-      "html": "<p>Soit <span>\\(n \\geq 3\\)</span>, <span>\\(\\varepsilon &gt;0\\)</span> et <span>\\(A_\\varepsilon\\)</span> la matrice pentadiagonale définie par</p>\n<p><span>\\[A_\\varepsilon = \\begin{pmatrix}\n    1 &amp; \\varepsilon &amp; \\varepsilon^2  &amp;  &amp;  &amp; \\\\\n    \\varepsilon &amp; 1 &amp; \\varepsilon &amp; \\varepsilon^2     &amp; &amp;  \\\\\n    \\varepsilon^2 &amp; \\ddots &amp; \\ddots &amp; \\ddots &amp; &amp; \\\\\n    &amp;   \\ddots &amp;  &amp;  &amp; \\varepsilon  &amp; \\varepsilon^2 \\\\\n    &amp;  &amp;  &amp; \\varepsilon &amp;1  &amp;\\varepsilon \\\\\n    &amp; &amp; &amp; \\varepsilon^2 &amp; \\varepsilon &amp; 1 \\\\\n\\end{pmatrix}\\]</span>\net on s’intéresse au système <span>\\(A_\\varepsilon x = b\\)</span> où <span>\\(x,b \\in \\mathbb{R}^n\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(n \\geq 3\\)</span>, <span class=\"math inline\">\\(\\varepsilon &gt;0\\)</span> et <span class=\"math inline\">\\(A_\\varepsilon\\)</span> la matrice pentadiagonale définie par</p>\n<p><span class=\"math display\">\\[A_\\varepsilon = \\begin{pmatrix}\n    1 &amp; \\varepsilon &amp; \\varepsilon^2  &amp;  &amp;  &amp; \\\\\n    \\varepsilon &amp; 1 &amp; \\varepsilon &amp; \\varepsilon^2     &amp; &amp;  \\\\\n    \\varepsilon^2 &amp; \\ddots &amp; \\ddots &amp; \\ddots &amp; &amp; \\\\\n    &amp;   \\ddots &amp;  &amp;  &amp; \\varepsilon  &amp; \\varepsilon^2 \\\\\n    &amp;  &amp;  &amp; \\varepsilon &amp;1  &amp;\\varepsilon \\\\\n    &amp; &amp; &amp; \\varepsilon^2 &amp; \\varepsilon &amp; 1 \\\\\n\\end{pmatrix}\\]</span>\net on s’intéresse au système <span class=\"math inline\">\\(A_\\varepsilon x = b\\)</span> où <span class=\"math inline\">\\(x,b \\in \\mathbb{R}^n\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Ecrire une fonction Python qui génère la matrice $A_\\varepsilon$ pour tout $n$ et $\\varepsilon$ :",
-      "html": "<p>Ecrire une fonction Python qui génère la matrice <span>\\(A_\\varepsilon\\)</span> pour tout <span>\\(n\\)</span> et <span>\\(\\varepsilon\\)</span> :</p>",
+      "html": "<p>Ecrire une fonction Python qui génère la matrice <span class=\"math inline\">\\(A_\\varepsilon\\)</span> pour tout <span class=\"math inline\">\\(n\\)</span> et <span class=\"math inline\">\\(\\varepsilon\\)</span> :</p>",
       "order": 2
     },
     {
@@ -35,22 +35,22 @@
     {
       "id": "block_4",
       "type": "question",
-      "latex": "Donner un intervalle de valeurs de $\\varepsilon$ pour lesquelles $A_\\varepsilon$ est à diagonale strictement dominante.",
-      "html": "<p>Donner un intervalle de valeurs de <span>\\(\\varepsilon\\)</span> pour lesquelles <span>\\(A_\\varepsilon\\)</span> est à diagonale strictement dominante.</p>",
+      "latex": "Donner un intervalle de valeurs de $\\varepsilon$ pour lesquelles $A_\\varepsilon$ est à diagonale strictement dominante.%, et calculer numériquement le conditionnement de $A_\\varepsilon$ pour $n=10$ et $\\varepsilon = 0.2$.",
+      "html": "<p>Donner un intervalle de valeurs de <span class=\"math inline\">\\(\\varepsilon\\)</span> pour lesquelles <span class=\"math inline\">\\(A_\\varepsilon\\)</span> est à diagonale strictement dominante.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "La matrice $A_\\varepsilon$ est à diagonale strictement dominante si et seulement si $1 > 2\\varepsilon + 2\\varepsilon^2 \\iff \\varepsilon \\in \\left[0 ; \\frac{\\sqrt{3}-1}{2} \\right]$.",
-      "html": "<p>La matrice <span>\\(A_\\varepsilon\\)</span> est à diagonale strictement dominante si et seulement si <span>\\(1 &gt; 2\\varepsilon + 2\\varepsilon^2 \\iff \\varepsilon \\in \\left[0 ; \\frac{\\sqrt{3}-1}{2} \\right]\\)</span>.</p>",
+      "html": "<p>La matrice <span class=\"math inline\">\\(A_\\varepsilon\\)</span> est à diagonale strictement dominante si et seulement si <span class=\"math inline\">\\(1 &gt; 2\\varepsilon + 2\\varepsilon^2 \\iff \\varepsilon \\in \\left[0 ; \\frac{\\sqrt{3}-1}{2} \\right]\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Que permet de calculer la fonction suivante où \\texttt{matrice} est une matrice carrée de taille $n$ quelconque ?",
-      "html": "<p>Que permet de calculer la fonction suivante où <code>matrice</code> est une matrice carrée de taille <span>\\(n\\)</span> quelconque ?</p>",
+      "html": "<p>Que permet de calculer la fonction suivante où <code>matrice</code> est une matrice carrée de taille <span class=\"math inline\">\\(n\\)</span> quelconque ?</p>",
       "order": 6
     },
     {
@@ -64,28 +64,28 @@
       "id": "block_8",
       "type": "question",
       "latex": "Ecrire une fonction Python qui génère la matrice $b_{\\varepsilon} = A_\\varepsilon\\overline{x}$ où $\\overline{x} = (1,...,1) \\in \\mathbb{R}^n$.",
-      "html": "<p>Ecrire une fonction Python qui génère la matrice <span>\\(b_{\\varepsilon} = A_\\varepsilon\\overline{x}\\)</span> où <span>\\(\\overline{x} = (1,...,1) \\in \\mathbb{R}^n\\)</span>.</p>",
+      "html": "<p>Ecrire une fonction Python qui génère la matrice <span class=\"math inline\">\\(b_{\\varepsilon} = A_\\varepsilon\\overline{x}\\)</span> où <span class=\"math inline\">\\(\\overline{x} = (1,...,1) \\in \\mathbb{R}^n\\)</span>.</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "question",
       "latex": "La méthode de Jacobi est-elle convergente pour $n=10$ et $\\varepsilon = 0.2$ ? Si oui, résoudre le système $A_\\varepsilon x = b_{\\varepsilon}$ par cette méthode et donner le nombre d'itérations nécessaire pour une erreur de $10^{-8}$ et un vecteur initial $x_0 = 0$.",
-      "html": "<p>La méthode de Jacobi est-elle convergente pour <span>\\(n=10\\)</span> et <span>\\(\\varepsilon = 0.2\\)</span> ? Si oui, résoudre le système <span>\\(A_\\varepsilon x = b_{\\varepsilon}\\)</span> par cette méthode et donner le nombre d’itérations nécessaire pour une erreur de <span>\\(10^{-8}\\)</span> et un vecteur initial <span>\\(x_0 = 0\\)</span>.</p>",
+      "html": "<p>La méthode de Jacobi est-elle convergente pour <span class=\"math inline\">\\(n=10\\)</span> et <span class=\"math inline\">\\(\\varepsilon = 0.2\\)</span> ? Si oui, résoudre le système <span class=\"math inline\">\\(A_\\varepsilon x = b_{\\varepsilon}\\)</span> par cette méthode et donner le nombre d’itérations nécessaire pour une erreur de <span class=\"math inline\">\\(10^{-8}\\)</span> et un vecteur initial <span class=\"math inline\">\\(x_0 = 0\\)</span>.</p>",
       "order": 9
     },
     {
       "id": "block_10",
       "type": "reponse",
       "latex": "La matrice est à diagonale strictement dominante pour cette valeur de $\\varepsilon$. La résolution demande $26$ itérations.",
-      "html": "<p>La matrice est à diagonale strictement dominante pour cette valeur de <span>\\(\\varepsilon\\)</span>. La résolution demande <span>\\(26\\)</span> itérations.</p>",
+      "html": "<p>La matrice est à diagonale strictement dominante pour cette valeur de <span class=\"math inline\">\\(\\varepsilon\\)</span>. La résolution demande <span class=\"math inline\">\\(26\\)</span> itérations.</p>",
       "order": 10
     },
     {
       "id": "block_11",
       "type": "question",
       "latex": "Soit $B$ la matrice d'itération associée à la méthode de Jacobi pour la matrice $A_\\varepsilon$. Pour $n=20$ fixé, représenter graphiquement le rayon spectral de $B$ en fonction de $\\varepsilon \\in [0;1]$.",
-      "html": "<p>Soit <span>\\(B\\)</span> la matrice d’itération associée à la méthode de Jacobi pour la matrice <span>\\(A_\\varepsilon\\)</span>. Pour <span>\\(n=20\\)</span> fixé, représenter graphiquement le rayon spectral de <span>\\(B\\)</span> en fonction de <span>\\(\\varepsilon \\in [0;1]\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(B\\)</span> la matrice d’itération associée à la méthode de Jacobi pour la matrice <span class=\"math inline\">\\(A_\\varepsilon\\)</span>. Pour <span class=\"math inline\">\\(n=20\\)</span> fixé, représenter graphiquement le rayon spectral de <span class=\"math inline\">\\(B\\)</span> en fonction de <span class=\"math inline\">\\(\\varepsilon \\in [0;1]\\)</span>.</p>",
       "order": 11
     },
     {

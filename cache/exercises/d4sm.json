@@ -9,62 +9,62 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-11-29",
-  "updated_at": "2025-08-23T12:07:25.507Z",
+  "updated_at": "2025-08-25T08:57:16.856Z",
   "content": [
     {
       "id": "block_1",
       "type": "question",
       "latex": "Vérifier que la fonction $f$ définit bien une densité de probabilité.",
-      "html": "<p>Vérifier que la fonction <span>\\(f\\)</span> définit bien une densité de probabilité.</p>",
+      "html": "<p>Vérifier que la fonction <span class=\"math inline\">\\(f\\)</span> définit bien une densité de probabilité.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "reponse",
       "latex": "Pour que $ f $ soit une densité, l'intégrale de $ f $ doit être égale à 1. On a : \n        \\begin{align*}\n            \\int_1^{+\\infty} \\alpha \\left( \\frac{1}{x} \\right)^{\\alpha+1} dx &= \\alpha \\int_1^{+\\infty} x^{-(\\alpha+1)} dx \\\\\n            &= \\alpha \\left[ \\frac{x^{-\\alpha}}{-\\alpha} \\right]_1^{+\\infty} \\\\\n            &= \\frac{\\alpha}{\\alpha} = 1\n        \\end{align*}\n        Donc $f$ est positive et $\\int f = 1$.",
-      "html": "<p>Pour que <span>\\(f\\)</span> soit une densité, l’intégrale de <span>\\(f\\)</span> doit être égale à 1. On a :\n<span>\\[\\begin{align*}\n            \\int_1^{+\\infty} \\alpha \\left( \\frac{1}{x} \\right)^{\\alpha+1} dx &amp;= \\alpha \\int_1^{+\\infty} x^{-(\\alpha+1)} dx \\\\\n            &amp;= \\alpha \\left[ \\frac{x^{-\\alpha}}{-\\alpha} \\right]_1^{+\\infty} \\\\\n            &amp;= \\frac{\\alpha}{\\alpha} = 1\n        \\end{align*}\\]</span>\nDonc <span>\\(f\\)</span> est positive et <span>\\(\\int f = 1\\)</span>.</p>",
+      "html": "<p>Pour que <span class=\"math inline\">\\(f\\)</span> soit une densité, l’intégrale de <span class=\"math inline\">\\(f\\)</span> doit être égale à 1. On a :\n<span class=\"math display\">\\[\\begin{align*}\n            \\int_1^{+\\infty} \\alpha \\left( \\frac{1}{x} \\right)^{\\alpha+1} dx &amp;= \\alpha \\int_1^{+\\infty} x^{-(\\alpha+1)} dx \\\\\n            &amp;= \\alpha \\left[ \\frac{x^{-\\alpha}}{-\\alpha} \\right]_1^{+\\infty} \\\\\n            &amp;= \\frac{\\alpha}{\\alpha} = 1\n        \\end{align*}\\]</span>\nDonc <span class=\"math inline\">\\(f\\)</span> est positive et <span class=\"math inline\">\\(\\int f = 1\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "question",
       "latex": "Déterminer la fonction de répartition de $ X $.",
-      "html": "<p>Déterminer la fonction de répartition de <span>\\(X\\)</span>.</p>",
+      "html": "<p>Déterminer la fonction de répartition de <span class=\"math inline\">\\(X\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "reponse",
       "latex": "Soit $t \\in \\R$. Si $t \\leq 1$, alors $F_X(t) = 0$. Si $t > 1$, alors :\n            \\begin{align*}\n                F_X(t) &= \\int_1^t \\alpha \\left( \\frac{1}{x} \\right)^{\\alpha+1} dx \\\\\n                &= \\alpha \\left[ \\frac{x^{-\\alpha}}{-\\alpha} \\right]_1^t \\\\\n                &= 1 - \\frac{1}{t^\\alpha}\n            \\end{align*}",
-      "html": "<p>Soit <span>\\(t \\in \\R\\)</span>. Si <span>\\(t \\leq 1\\)</span>, alors <span>\\(F_X(t) = 0\\)</span>. Si <span>\\(t &gt; 1\\)</span>, alors :\n<span>\\[\\begin{align*}\n                F_X(t) &amp;= \\int_1^t \\alpha \\left( \\frac{1}{x} \\right)^{\\alpha+1} dx \\\\\n                &amp;= \\alpha \\left[ \\frac{x^{-\\alpha}}{-\\alpha} \\right]_1^t \\\\\n                &amp;= 1 - \\frac{1}{t^\\alpha}\n            \\end{align*}\\]</span></p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(t \\in \\R\\)</span>. Si <span class=\"math inline\">\\(t \\leq 1\\)</span>, alors <span class=\"math inline\">\\(F_X(t) = 0\\)</span>. Si <span class=\"math inline\">\\(t &gt; 1\\)</span>, alors :\n<span class=\"math display\">\\[\\begin{align*}\n                F_X(t) &amp;= \\int_1^t \\alpha \\left( \\frac{1}{x} \\right)^{\\alpha+1} dx \\\\\n                &amp;= \\alpha \\left[ \\frac{x^{-\\alpha}}{-\\alpha} \\right]_1^t \\\\\n                &amp;= 1 - \\frac{1}{t^\\alpha}\n            \\end{align*}\\]</span></p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "question",
       "latex": "Étudier l'existence de $ \\E(X)$ en fonction de la valeur du paramètre $\\alpha$.",
-      "html": "<p>Étudier l’existence de <span>\\(\\E(X)\\)</span> en fonction de la valeur du paramètre <span>\\(\\alpha\\)</span>.</p>",
+      "html": "<p>Étudier l’existence de <span class=\"math inline\">\\(\\E(X)\\)</span> en fonction de la valeur du paramètre <span class=\"math inline\">\\(\\alpha\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "reponse",
       "latex": "Si elle existe, l'espérance de $ X $ est $ \\int_1^{+\\infty} x \\alpha \\left( \\frac{1}{x} \\right)^{\\alpha+1} dx$. Or cette intégrale existe si et seulement si $ \\alpha > 1 $.",
-      "html": "<p>Si elle existe, l’espérance de <span>\\(X\\)</span> est <span>\\(\\int_1^{+\\infty} x \\alpha \\left( \\frac{1}{x} \\right)^{\\alpha+1} dx\\)</span>. Or cette intégrale existe si et seulement si <span>\\(\\alpha &gt; 1\\)</span>.</p>",
+      "html": "<p>Si elle existe, l’espérance de <span class=\"math inline\">\\(X\\)</span> est <span class=\"math inline\">\\(\\int_1^{+\\infty} x \\alpha \\left( \\frac{1}{x} \\right)^{\\alpha+1} dx\\)</span>. Or cette intégrale existe si et seulement si <span class=\"math inline\">\\(\\alpha &gt; 1\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "question",
       "latex": "Déterminer la loi de la variable aléatoire $Y$.",
-      "html": "<p>Déterminer la loi de la variable aléatoire <span>\\(Y\\)</span>.</p>",
+      "html": "<p>Déterminer la loi de la variable aléatoire <span class=\"math inline\">\\(Y\\)</span>.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "reponse",
       "latex": "Soit $ t \\in \\R $. Si $ t \\leq s+1 $, alors $ F_Y(t) = 0 $. Si $ t > s+1 $, alors :\n            \\begin{align*}\n                F_Y(t) &= \\prob(Y \\leq t) \\\\\n                &= \\prob(rX + s \\leq t) \\\\\n                &= \\prob(X \\leq \\frac{t-s}{r}) \\\\\n                &= F_X\\left( \\frac{t-s}{r} \\right) \\\\\n                &= 1 - \\frac{1}{\\left( \\frac{t-s}{r} \\right)^\\alpha} \\\\\n                &= 1 - \\left( \\frac{r}{t-s} \\right)^\\alpha\n            \\end{align*}\n            Par dérivation, on trouve que $Y$ est une variable aléatoire absolument continue et que la densité de $Y$ est $ f_Y(x) = \\mathbf{1}_{]s+1;+\\infty[}(x) \\frac{\\alpha}{r} \\left( \\frac{r}{x-s} \\right)^{\\alpha+1} $. On trouve une loi de Pareto de paramètre $(\\alpha, r, s+1)$.",
-      "html": "<p>Soit <span>\\(t \\in \\R\\)</span>. Si <span>\\(t \\leq s+1\\)</span>, alors <span>\\(F_Y(t) = 0\\)</span>. Si <span>\\(t &gt; s+1\\)</span>, alors :\n<span>\\[\\begin{align*}\n                F_Y(t) &amp;= \\prob(Y \\leq t) \\\\\n                &amp;= \\prob(rX + s \\leq t) \\\\\n                &amp;= \\prob(X \\leq \\frac{t-s}{r}) \\\\\n                &amp;= F_X\\left( \\frac{t-s}{r} \\right) \\\\\n                &amp;= 1 - \\frac{1}{\\left( \\frac{t-s}{r} \\right)^\\alpha} \\\\\n                &amp;= 1 - \\left( \\frac{r}{t-s} \\right)^\\alpha\n            \\end{align*}\\]</span>\nPar dérivation, on trouve que <span>\\(Y\\)</span> est une variable aléatoire absolument continue et que la densité de <span>\\(Y\\)</span> est <span>\\(f_Y(x) = \\mathbf{1}_{]s+1;+\\infty[}(x) \\frac{\\alpha}{r} \\left( \\frac{r}{x-s} \\right)^{\\alpha+1}\\)</span>. On trouve une loi de Pareto de paramètre <span>\\((\\alpha, r, s+1)\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(t \\in \\R\\)</span>. Si <span class=\"math inline\">\\(t \\leq s+1\\)</span>, alors <span class=\"math inline\">\\(F_Y(t) = 0\\)</span>. Si <span class=\"math inline\">\\(t &gt; s+1\\)</span>, alors :\n<span class=\"math display\">\\[\\begin{align*}\n                F_Y(t) &amp;= \\prob(Y \\leq t) \\\\\n                &amp;= \\prob(rX + s \\leq t) \\\\\n                &amp;= \\prob(X \\leq \\frac{t-s}{r}) \\\\\n                &amp;= F_X\\left( \\frac{t-s}{r} \\right) \\\\\n                &amp;= 1 - \\frac{1}{\\left( \\frac{t-s}{r} \\right)^\\alpha} \\\\\n                &amp;= 1 - \\left( \\frac{r}{t-s} \\right)^\\alpha\n            \\end{align*}\\]</span>\nPar dérivation, on trouve que <span class=\"math inline\">\\(Y\\)</span> est une variable aléatoire absolument continue et que la densité de <span class=\"math inline\">\\(Y\\)</span> est <span class=\"math inline\">\\(f_Y(x) = \\mathbf{1}_{]s+1;+\\infty[}(x) \\frac{\\alpha}{r} \\left( \\frac{r}{x-s} \\right)^{\\alpha+1}\\)</span>. On trouve une loi de Pareto de paramètre <span class=\"math inline\">\\((\\alpha, r, s+1)\\)</span>.</p>",
       "order": 8
     }
   ],

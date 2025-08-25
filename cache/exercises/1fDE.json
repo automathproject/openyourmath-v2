@@ -9,13 +9,13 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-09-18",
-  "updated_at": "2025-08-23T12:06:23.884Z",
+  "updated_at": "2025-08-25T08:56:12.232Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On effectue un contrôle sur des pièces de un euro dont une proportion $p=0.05$ est fausse et sur des pièces de deux euros dont une proportion $p'=0.02$ est fausse. On considère un lot de $500$ pièces dont $150$ pièces de un euro et $350$ pièces de deux euros.",
-      "html": "<p>On effectue un contrôle sur des pièces de un euro dont une proportion <span>\\(p=0.05\\)</span> est fausse et sur des pièces de deux euros dont une proportion <span>\\(p&#39;=0.02\\)</span> est fausse. On considère un lot de <span>\\(500\\)</span> pièces dont <span>\\(150\\)</span> pièces de un euro et <span>\\(350\\)</span> pièces de deux euros.</p>",
+      "html": "<p>On effectue un contrôle sur des pièces de un euro dont une proportion <span class=\"math inline\">\\(p=0.05\\)</span> est fausse et sur des pièces de deux euros dont une proportion <span class=\"math inline\">\\(p&#39;=0.02\\)</span> est fausse. On considère un lot de <span class=\"math inline\">\\(500\\)</span> pièces dont <span class=\"math inline\">\\(150\\)</span> pièces de un euro et <span class=\"math inline\">\\(350\\)</span> pièces de deux euros.</p>",
       "order": 1
     },
     {
@@ -29,7 +29,7 @@
       "id": "block_3",
       "type": "reponse",
       "latex": "On peut utiliser un arbre de probabilité pour modéliser la situation. En notant $F$ l'événement ``obtenir une pièce fausse'' et $A$ (resp. $B$) l'événement ``obtenir une pièce de un euro (resp. deux euros)'', on a\n\t\t\\[\\prob(F)=\\prob(F\\cap A)+\\prob(F\\cap B)=\\prob(A)\\prob(F|A)+\\prob(B)\\prob(F|B)=\\frac{150}{500}\\times 0.05+\\frac{350}{500}\\times 0.02=0.029.\\]\n\t\tOn a environ $2.9$\\% d'avoir une pièce fausse.",
-      "html": "<p>On peut utiliser un arbre de probabilité pour modéliser la situation. En notant <span>\\(F\\)</span> l’événement “obtenir une pièce fausse” et <span>\\(A\\)</span> (resp. <span>\\(B\\)</span>) l’événement “obtenir une pièce de un euro (resp. deux euros)”, on a\n<span>\\[\\prob(F)=\\prob(F\\cap A)+\\prob(F\\cap B)=\\prob(A)\\prob(F|A)+\\prob(B)\\prob(F|B)=\\frac{150}{500}\\times 0.05+\\frac{350}{500}\\times 0.02=0.029.\\]</span>\nOn a environ <span>\\(2.9\\)</span>% d’avoir une pièce fausse.</p>",
+      "html": "<p>On peut utiliser un arbre de probabilité pour modéliser la situation. En notant <span class=\"math inline\">\\(F\\)</span> l’événement “obtenir une pièce fausse” et <span class=\"math inline\">\\(A\\)</span> (resp. <span class=\"math inline\">\\(B\\)</span>) l’événement “obtenir une pièce de un euro (resp. deux euros)”, on a\n<span class=\"math display\">\\[\\prob(F)=\\prob(F\\cap A)+\\prob(F\\cap B)=\\prob(A)\\prob(F|A)+\\prob(B)\\prob(F|B)=\\frac{150}{500}\\times 0.05+\\frac{350}{500}\\times 0.02=0.029.\\]</span>\nOn a environ <span class=\"math inline\">\\(2.9\\)</span>% d’avoir une pièce fausse.</p>",
       "order": 3
     },
     {
@@ -43,21 +43,21 @@
       "id": "block_5",
       "type": "reponse",
       "latex": "On calcule :\n\t\t\\[ \\prob(A|F)=\\frac{\\prob(A\\cap F)}{\\prob(F)}=\\frac{\\prob(A)\\prob(F|A)}{\\prob(F)}=\\frac{\\frac{150}{500}\\times 0.05}{0.029}=0.5172.\\]",
-      "html": "<p>On calcule :\n<span>\\[\\prob(A|F)=\\frac{\\prob(A\\cap F)}{\\prob(F)}=\\frac{\\prob(A)\\prob(F|A)}{\\prob(F)}=\\frac{\\frac{150}{500}\\times 0.05}{0.029}=0.5172.\\]</span></p>",
+      "html": "<p>On calcule :\n<span class=\"math display\">\\[\\prob(A|F)=\\frac{\\prob(A\\cap F)}{\\prob(F)}=\\frac{\\prob(A)\\prob(F|A)}{\\prob(F)}=\\frac{\\frac{150}{500}\\times 0.05}{0.029}=0.5172.\\]</span></p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "On contrôle à présent un lot de $\\nombre{1000}$ pièces de un euro. Soit $X$ la variable aléatoire égale au nombre de pièces fausses parmi les $\\nombre{1000}$. \\\\\n\tQuelle est la loi de $X$ ? Quelle est son espérance ? Son écart-type ? \\\\\n\tEn approchant cette loi par celle d'une loi normale adaptée, donner une approximation de la probabilité pour que $X$ soit compris entre $48$ et $52$.",
-      "html": "<p>On contrôle à présent un lot de <span>\\(\\nombre{1000}\\)</span> pièces de un euro. Soit <span>\\(X\\)</span> la variable aléatoire égale au nombre de pièces fausses parmi les <span>\\(\\nombre{1000}\\)</span>.<br />\nQuelle est la loi de <span>\\(X\\)</span> ? Quelle est son espérance ? Son écart-type ?<br />\nEn approchant cette loi par celle d’une loi normale adaptée, donner une approximation de la probabilité pour que <span>\\(X\\)</span> soit compris entre <span>\\(48\\)</span> et <span>\\(52\\)</span>.</p>",
+      "html": "<p>On contrôle à présent un lot de <span class=\"math inline\">\\(\\nombre{1000}\\)</span> pièces de un euro. Soit <span class=\"math inline\">\\(X\\)</span> la variable aléatoire égale au nombre de pièces fausses parmi les <span class=\"math inline\">\\(\\nombre{1000}\\)</span>.<br />\nQuelle est la loi de <span class=\"math inline\">\\(X\\)</span> ? Quelle est son espérance ? Son écart-type ?<br />\nEn approchant cette loi par celle d’une loi normale adaptée, donner une approximation de la probabilité pour que <span class=\"math inline\">\\(X\\)</span> soit compris entre <span class=\"math inline\">\\(48\\)</span> et <span class=\"math inline\">\\(52\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "On a: $X\\sim \\mathcal{B}(\\nombre{1000},0.05)$, $\\E(X)=\\nombre{1000}\\times 0.05=50$ et $\\sigma^2(X)=\\nombre{1000}\\times 0.05\\times 0.95=47.5$. \\\\\n\t\tLa \\va $X$ peut être approchée (avec correction de continuité) par la \\va $Y$ de loi $\\mathcal{N}(50,\\sigma^2=47.5)$. Ainsi, on a\n\t\t\\begin{align*}\n\t\t\\prob(48\\leq X\\leq 52)\n\t\t&= \\prob(47.5\\leq X\\leq 52.5) \\\\\n\t\t&\\simeq \\prob(47.5\\leq Y\\leq 52.5) \\\\\n\t\t& \\simeq \\prob(-0.36 \\leq Z \\leq 0.36) \\quad \\text{ avec } Z=\\frac{Y-50}{\\sqrt{47.5}} \\sim \\mathcal{N}(0,1) \\\\\n\t\t&\\simeq 2\\prob(Z\\leq 0.36)-1 \\\\\n\t\t& \\simeq 2\\times 0.6406 - 1\\\\\n\t\t1\\simeq 0.2812\n\t\t\\end{align*}",
-      "html": "<p>On a: <span>\\(X\\sim \\mathcal{B}(\\nombre{1000},0.05)\\)</span>, <span>\\(\\E(X)=\\nombre{1000}\\times 0.05=50\\)</span> et <span>\\(\\sigma^2(X)=\\nombre{1000}\\times 0.05\\times 0.95=47.5\\)</span>.<br />\nLa <span>\\(X\\)</span> peut être approchée (avec correction de continuité) par la <span>\\(Y\\)</span> de loi <span>\\(\\mathcal{N}(50,\\sigma^2=47.5)\\)</span>. Ainsi, on a\n<span>\\[\\begin{align*}\n        \\prob(48\\leq X\\leq 52)\n        &amp;= \\prob(47.5\\leq X\\leq 52.5) \\\\\n        &amp;\\simeq \\prob(47.5\\leq Y\\leq 52.5) \\\\\n        &amp; \\simeq \\prob(-0.36 \\leq Z \\leq 0.36) \\quad \\text{ avec } Z=\\frac{Y-50}{\\sqrt{47.5}} \\sim \\mathcal{N}(0,1) \\\\\n        &amp;\\simeq 2\\prob(Z\\leq 0.36)-1 \\\\\n        &amp; \\simeq 2\\times 0.6406 - 1\\\\\n        1\\simeq 0.2812\n        \\end{align*}\\]</span></p>",
+      "html": "<p>On a: <span class=\"math inline\">\\(X\\sim \\mathcal{B}(\\nombre{1000},0.05)\\)</span>, <span class=\"math inline\">\\(\\E(X)=\\nombre{1000}\\times 0.05=50\\)</span> et <span class=\"math inline\">\\(\\sigma^2(X)=\\nombre{1000}\\times 0.05\\times 0.95=47.5\\)</span>.<br />\nLa <span class=\"math inline\">\\(X\\)</span> peut être approchée (avec correction de continuité) par la <span class=\"math inline\">\\(Y\\)</span> de loi <span class=\"math inline\">\\(\\mathcal{N}(50,\\sigma^2=47.5)\\)</span>. Ainsi, on a\n<span class=\"math display\">\\[\\begin{align*}\n        \\prob(48\\leq X\\leq 52)\n        &amp;= \\prob(47.5\\leq X\\leq 52.5) \\\\\n        &amp;\\simeq \\prob(47.5\\leq Y\\leq 52.5) \\\\\n        &amp; \\simeq \\prob(-0.36 \\leq Z \\leq 0.36) \\quad \\text{ avec } Z=\\frac{Y-50}{\\sqrt{47.5}} \\sim \\mathcal{N}(0,1) \\\\\n        &amp;\\simeq 2\\prob(Z\\leq 0.36)-1 \\\\\n        &amp; \\simeq 2\\times 0.6406 - 1\\\\\n        1\\simeq 0.2812\n        \\end{align*}\\]</span></p>",
       "order": 7
     }
   ],

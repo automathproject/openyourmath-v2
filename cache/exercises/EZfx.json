@@ -9,69 +9,69 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-08-25",
-  "updated_at": "2025-08-23T12:06:44.607Z",
+  "updated_at": "2025-08-25T08:56:34.110Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "La bestiole est un animal dont le poids est distribué selon une loi normale de moyenne 100 g et d'écart-type 5 g.\n\n On prélève un échantillon aléatoire de 16 bestioles. On note $X_i$ le poids de la bestiole numéro $i$ ($1 \\leq i \\leq 16$).",
-      "html": "<p>La bestiole est un animal dont le poids est distribué selon une loi normale de moyenne 100 g et d’écart-type 5 g.</p>\n<p>On prélève un échantillon aléatoire de 16 bestioles. On note <span>\\(X_i\\)</span> le poids de la bestiole numéro <span>\\(i\\)</span> (<span>\\(1 \\leq i \\leq 16\\)</span>).</p>",
+      "html": "<p>La bestiole est un animal dont le poids est distribué selon une loi normale de moyenne 100 g et d’écart-type 5 g.</p>\n<p>On prélève un échantillon aléatoire de 16 bestioles. On note <span class=\"math inline\">\\(X_i\\)</span> le poids de la bestiole numéro <span class=\"math inline\">\\(i\\)</span> (<span class=\"math inline\">\\(1 \\leq i \\leq 16\\)</span>).</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Déterminer la loi suivie par  $$\\overline{X}=\\frac{\\sum\\limits_{i=1}^{16} X_i}{16}$$",
-      "html": "<p>Déterminer la loi suivie par <span>\\[\\overline{X}=\\frac{\\sum\\limits_{i=1}^{16} X_i}{16}\\]</span></p>",
+      "html": "<p>Déterminer la loi suivie par <span class=\"math display\">\\[\\overline{X}=\\frac{\\sum\\limits_{i=1}^{16} X_i}{16}\\]</span></p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "Par propriétés de somme de lois normales, on obtient que $\\overline{X}$ suit une loi normale. Il reste à calculer $\\mathbb{E}(\\overline{X}) = \\frac{1}{16} \\times 16 \\times 100 = 100$ et $V(\\overline{X}) = \\frac{1}{16^2} \\times 16 \\times 5^2 = \\frac{5^2}{16}$. On en déduit que $\\overline{X}$ suit une loi normale $\\mathcal{N}(100, \\sigma = \\frac{5}{4})$.",
-      "html": "<p>Par propriétés de somme de lois normales, on obtient que <span>\\(\\overline{X}\\)</span> suit une loi normale. Il reste à calculer <span>\\(\\mathbb{E}(\\overline{X}) = \\frac{1}{16} \\times 16 \\times 100 = 100\\)</span> et <span>\\(V(\\overline{X}) = \\frac{1}{16^2} \\times 16 \\times 5^2 = \\frac{5^2}{16}\\)</span>. On en déduit que <span>\\(\\overline{X}\\)</span> suit une loi normale <span>\\(\\mathcal{N}(100, \\sigma = \\frac{5}{4})\\)</span>.</p>",
+      "html": "<p>Par propriétés de somme de lois normales, on obtient que <span class=\"math inline\">\\(\\overline{X}\\)</span> suit une loi normale. Il reste à calculer <span class=\"math inline\">\\(\\mathbb{E}(\\overline{X}) = \\frac{1}{16} \\times 16 \\times 100 = 100\\)</span> et <span class=\"math inline\">\\(V(\\overline{X}) = \\frac{1}{16^2} \\times 16 \\times 5^2 = \\frac{5^2}{16}\\)</span>. On en déduit que <span class=\"math inline\">\\(\\overline{X}\\)</span> suit une loi normale <span class=\"math inline\">\\(\\mathcal{N}(100, \\sigma = \\frac{5}{4})\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Déterminer la loi suivie par $$Q=\\frac{\\sum\\limits_{i=1} ^{16} (X_i-100)^2}{25}$$\nDéterminer le réel $q$ tel que $\\PP(Q > q) = 0.05$.",
-      "html": "<p>Déterminer la loi suivie par <span>\\[Q=\\frac{\\sum\\limits_{i=1} ^{16} (X_i-100)^2}{25}\\]</span>\nDéterminer le réel <span>\\(q\\)</span> tel que <span>\\(\\PP(Q &gt; q) = 0.05\\)</span>.</p>",
+      "html": "<p>Déterminer la loi suivie par <span class=\"math display\">\\[Q=\\frac{\\sum\\limits_{i=1} ^{16} (X_i-100)^2}{25}\\]</span>\nDéterminer le réel <span class=\"math inline\">\\(q\\)</span> tel que <span class=\"math inline\">\\(\\PP(Q &gt; q) = 0.05\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "On réécrit $Q= \\sum\\limits_{i=1} ^{16} \\left(\\frac{X_i-100}{5}\\right)^2$ or $\\frac{X_i-100}{5}$ suit une loi $\\mathcal{N}(0,1)$ et les variables $X_i$ sont indépendantes donc par définition, $Q$ suit une loi $\\chi^2(16)$. \nOn cherche maintenant $q$ tel que $\\PP(Q \\leq q) = 0.95$ dans la table de valeurs soit $q = 26.296$.",
-      "html": "<p>On réécrit <span>\\(Q= \\sum\\limits_{i=1} ^{16} \\left(\\frac{X_i-100}{5}\\right)^2\\)</span> or <span>\\(\\frac{X_i-100}{5}\\)</span> suit une loi <span>\\(\\mathcal{N}(0,1)\\)</span> et les variables <span>\\(X_i\\)</span> sont indépendantes donc par définition, <span>\\(Q\\)</span> suit une loi <span>\\(\\chi^2(16)\\)</span>.\nOn cherche maintenant <span>\\(q\\)</span> tel que <span>\\(\\PP(Q \\leq q) = 0.95\\)</span> dans la table de valeurs soit <span>\\(q = 26.296\\)</span>.</p>",
+      "html": "<p>On réécrit <span class=\"math inline\">\\(Q= \\sum\\limits_{i=1} ^{16} \\left(\\frac{X_i-100}{5}\\right)^2\\)</span> or <span class=\"math inline\">\\(\\frac{X_i-100}{5}\\)</span> suit une loi <span class=\"math inline\">\\(\\mathcal{N}(0,1)\\)</span> et les variables <span class=\"math inline\">\\(X_i\\)</span> sont indépendantes donc par définition, <span class=\"math inline\">\\(Q\\)</span> suit une loi <span class=\"math inline\">\\(\\chi^2(16)\\)</span>.\nOn cherche maintenant <span class=\"math inline\">\\(q\\)</span> tel que <span class=\"math inline\">\\(\\PP(Q \\leq q) = 0.95\\)</span> dans la table de valeurs soit <span class=\"math inline\">\\(q = 26.296\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Déterminer la loi suivie par $$V=\\frac{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}{25}$$\n  puis déterminer le réel $v$ tel que $\\PP(V > v) = 0.05$.",
-      "html": "<p>Déterminer la loi suivie par <span>\\[V=\\frac{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}{25}\\]</span>\npuis déterminer le réel <span>\\(v\\)</span> tel que <span>\\(\\PP(V &gt; v) = 0.05\\)</span>.</p>",
+      "html": "<p>Déterminer la loi suivie par <span class=\"math display\">\\[V=\\frac{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}{25}\\]</span>\npuis déterminer le réel <span class=\"math inline\">\\(v\\)</span> tel que <span class=\"math inline\">\\(\\PP(V &gt; v) = 0.05\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "D'après le théorème de Fisher, $V$ suit une loi  $\\chi^2(15)$. Par lecture de table, on trouve $\\PP(V \\leq v) = 0.95$ pour $v=24.996$.",
-      "html": "<p>D’après le théorème de Fisher, <span>\\(V\\)</span> suit une loi <span>\\(\\chi^2(15)\\)</span>. Par lecture de table, on trouve <span>\\(\\PP(V \\leq v) = 0.95\\)</span> pour <span>\\(v=24.996\\)</span>.</p>",
+      "html": "<p>D’après le théorème de Fisher, <span class=\"math inline\">\\(V\\)</span> suit une loi <span class=\"math inline\">\\(\\chi^2(15)\\)</span>. Par lecture de table, on trouve <span class=\"math inline\">\\(\\PP(V \\leq v) = 0.95\\)</span> pour <span class=\"math inline\">\\(v=24.996\\)</span>.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "question",
       "latex": "Déterminer la loi suivie par $$W=\\frac{(\\overline{X}-100)4\\sqrt{15}}{\\sqrt{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}}$$\n    Déterminer le réel $w$ tel que $\\PP(W > w) = 0.05$.",
-      "html": "<p>Déterminer la loi suivie par <span>\\[W=\\frac{(\\overline{X}-100)4\\sqrt{15}}{\\sqrt{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}}\\]</span>\nDéterminer le réel <span>\\(w\\)</span> tel que <span>\\(\\PP(W &gt; w) = 0.05\\)</span>.</p>",
+      "html": "<p>Déterminer la loi suivie par <span class=\"math display\">\\[W=\\frac{(\\overline{X}-100)4\\sqrt{15}}{\\sqrt{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}}\\]</span>\nDéterminer le réel <span class=\"math inline\">\\(w\\)</span> tel que <span class=\"math inline\">\\(\\PP(W &gt; w) = 0.05\\)</span>.</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "reponse",
       "latex": "D'après la question 1, la variable $\\frac{\\overline{X}-100}{\\frac{5}{4}}$ suit une loi $\\mathcal{N}(0,1)$.  On réécrit maintenant :\n$$W = \\frac{\\frac{\\overline{X}-100}{\\frac{5}{4}} \\times \\frac{5}{4} \\times 4\\sqrt{15}}{\\sqrt{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}} = \\frac{\\frac{\\overline{X}-100}{\\frac{5}{4}}}{\\frac{\\sqrt{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}}{5\\sqrt{15}}} = \\frac{\\frac{\\overline{X}-100}{\\frac{5}{4}}}{\\frac{\\sqrt{V}}{\\sqrt{15}}} $$\n\tOr $V$ suit une  $\\chi^2(15)$ d'après la question précédente. Donc par définition, $W$ suit une loi de Student $St(15)$.",
-      "html": "<p>D’après la question 1, la variable <span>\\(\\frac{\\overline{X}-100}{\\frac{5}{4}}\\)</span> suit une loi <span>\\(\\mathcal{N}(0,1)\\)</span>. On réécrit maintenant :\n<span>\\[W = \\frac{\\frac{\\overline{X}-100}{\\frac{5}{4}} \\times \\frac{5}{4} \\times 4\\sqrt{15}}{\\sqrt{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}} = \\frac{\\frac{\\overline{X}-100}{\\frac{5}{4}}}{\\frac{\\sqrt{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}}{5\\sqrt{15}}} = \\frac{\\frac{\\overline{X}-100}{\\frac{5}{4}}}{\\frac{\\sqrt{V}}{\\sqrt{15}}}\\]</span>\nOr <span>\\(V\\)</span> suit une <span>\\(\\chi^2(15)\\)</span> d’après la question précédente. Donc par définition, <span>\\(W\\)</span> suit une loi de Student <span>\\(St(15)\\)</span>.</p>",
+      "html": "<p>D’après la question 1, la variable <span class=\"math inline\">\\(\\frac{\\overline{X}-100}{\\frac{5}{4}}\\)</span> suit une loi <span class=\"math inline\">\\(\\mathcal{N}(0,1)\\)</span>. On réécrit maintenant :\n<span class=\"math display\">\\[W = \\frac{\\frac{\\overline{X}-100}{\\frac{5}{4}} \\times \\frac{5}{4} \\times 4\\sqrt{15}}{\\sqrt{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}} = \\frac{\\frac{\\overline{X}-100}{\\frac{5}{4}}}{\\frac{\\sqrt{\\sum\\limits_{i=1} ^{16} (X_i-\\overline{X})^2}}{5\\sqrt{15}}} = \\frac{\\frac{\\overline{X}-100}{\\frac{5}{4}}}{\\frac{\\sqrt{V}}{\\sqrt{15}}}\\]</span>\nOr <span class=\"math inline\">\\(V\\)</span> suit une <span class=\"math inline\">\\(\\chi^2(15)\\)</span> d’après la question précédente. Donc par définition, <span class=\"math inline\">\\(W\\)</span> suit une loi de Student <span class=\"math inline\">\\(St(15)\\)</span>.</p>",
       "order": 9
     }
   ],

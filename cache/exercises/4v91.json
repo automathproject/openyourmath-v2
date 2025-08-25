@@ -9,41 +9,41 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-01-11",
-  "updated_at": "2025-08-23T12:06:28.023Z",
+  "updated_at": "2025-08-25T08:56:16.696Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soit la suite de variables aléatoires $(X_n)_{n \\geq 1}$ définie par\n$$\n\\left\\{\\begin{array}{l}\n\tP\\left(X_n=0\\right)=1-\\frac{1}{n} \\\\\n\tP\\left(X_n=n\\right)=\\frac{1}{n}\n\\end{array}\\right.\n$$",
-      "html": "<p>Soit la suite de variables aléatoires <span>\\((X_n)_{n \\geq 1}\\)</span> définie par\n<span>\\[\\left\\{\\begin{array}{l}\n    P\\left(X_n=0\\right)=1-\\frac{1}{n} \\\\\n    P\\left(X_n=n\\right)=\\frac{1}{n}\n\\end{array}\\right.\\]</span></p>",
+      "html": "<p>Soit la suite de variables aléatoires <span class=\"math inline\">\\((X_n)_{n \\geq 1}\\)</span> définie par\n<span class=\"math display\">\\[\\left\\{\\begin{array}{l}\n    P\\left(X_n=0\\right)=1-\\frac{1}{n} \\\\\n    P\\left(X_n=n\\right)=\\frac{1}{n}\n\\end{array}\\right.\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Montrer que la suite $(X_n)_{n \\geq 1}$ converge en loi vers $X=0$.",
-      "html": "<p>Montrer que la suite <span>\\((X_n)_{n \\geq 1}\\)</span> converge en loi vers <span>\\(X=0\\)</span>.</p>",
+      "html": "<p>Montrer que la suite <span class=\"math inline\">\\((X_n)_{n \\geq 1}\\)</span> converge en loi vers <span class=\"math inline\">\\(X=0\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "On peut utiliser la fonction caractéristique : \n\t\t$$\n\t\t\\varphi_{X_n}(t)=\\mathrm{E}\\left[\\mathrm{e}^{\\mathrm{it} X_{\\mathrm{n}}}\\right]=1-\\frac{1}{n}+\\frac{1}{n} e^{i t n}\n\t\t$$\n\t\tdonc\n\t\t$$\n\t\t\\lim _{n \\rightarrow+\\infty} \\varphi_{X_n}(t)=1=\\mathrm{E}\\left[\\mathrm{e}^{\\mathrm{it} 0}\\right]\n\t\t$$\n\t\tet par théorème du cours, on a $X_n \\xrightarrow[n \\to +\\infty]{\\text{en loi}} 0$",
-      "html": "<p>On peut utiliser la fonction caractéristique :\n<span>\\[\\varphi_{X_n}(t)=\\mathrm{E}\\left[\\mathrm{e}^{\\mathrm{it} X_{\\mathrm{n}}}\\right]=1-\\frac{1}{n}+\\frac{1}{n} e^{i t n}\\]</span>\ndonc\n<span>\\[\\lim _{n \\rightarrow+\\infty} \\varphi_{X_n}(t)=1=\\mathrm{E}\\left[\\mathrm{e}^{\\mathrm{it} 0}\\right]\\]</span>\net par théorème du cours, on a <span>\\(X_n \\xrightarrow[n \\to +\\infty]{\\text{en loi}} 0\\)</span></p>",
+      "html": "<p>On peut utiliser la fonction caractéristique :\n<span class=\"math display\">\\[\\varphi_{X_n}(t)=\\mathrm{E}\\left[\\mathrm{e}^{\\mathrm{it} X_{\\mathrm{n}}}\\right]=1-\\frac{1}{n}+\\frac{1}{n} e^{i t n}\\]</span>\ndonc\n<span class=\"math display\">\\[\\lim _{n \\rightarrow+\\infty} \\varphi_{X_n}(t)=1=\\mathrm{E}\\left[\\mathrm{e}^{\\mathrm{it} 0}\\right]\\]</span>\net par théorème du cours, on a <span class=\"math inline\">\\(X_n \\xrightarrow[n \\to +\\infty]{\\text{en loi}} 0\\)</span></p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "En revenant à la définition, montrer que la suite $\\left(X_n\\right)_{n \\in \\mathbb{N}}$ converge en probabilité vers $X=0$.",
-      "html": "<p>En revenant à la définition, montrer que la suite <span>\\(\\left(X_n\\right)_{n \\in \\mathbb{N}}\\)</span> converge en probabilité vers <span>\\(X=0\\)</span>.</p>",
+      "html": "<p>En revenant à la définition, montrer que la suite <span class=\"math inline\">\\(\\left(X_n\\right)_{n \\in \\mathbb{N}}\\)</span> converge en probabilité vers <span class=\"math inline\">\\(X=0\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "Remarque :\n\t\t$$\n\t\t\\forall m \\neq n \\text { et } m \\neq 0, \\quad P\\left(X_n=m\\right)=0 \n\t\t$$\n\t\tSoit $\\varepsilon>0$\n\t\t$$\n\t\tP\\left(\\left|X_n\\right|>\\varepsilon\\right)=P\\left(X_n=n\\right)=\\frac{1}{n}\n\t\t$$\n\t\tdonc\n\t\t$$\n\t\t\\lim _{n \\rightarrow+\\infty} P\\left(\\left|X_n\\right|>\\varepsilon\\right)=0\n\t\t$$",
-      "html": "<p>Remarque :\n<span>\\[\\forall m \\neq n \\text { et } m \\neq 0, \\quad P\\left(X_n=m\\right)=0\\]</span>\nSoit <span>\\(\\varepsilon&gt;0\\)</span>\n<span>\\[P\\left(\\left|X_n\\right|&gt;\\varepsilon\\right)=P\\left(X_n=n\\right)=\\frac{1}{n}\\]</span>\ndonc\n<span>\\[\\lim _{n \\rightarrow+\\infty} P\\left(\\left|X_n\\right|&gt;\\varepsilon\\right)=0\\]</span></p>",
+      "html": "<p>Remarque :\n<span class=\"math display\">\\[\\forall m \\neq n \\text { et } m \\neq 0, \\quad P\\left(X_n=m\\right)=0\\]</span>\nSoit <span class=\"math inline\">\\(\\varepsilon&gt;0\\)</span>\n<span class=\"math display\">\\[P\\left(\\left|X_n\\right|&gt;\\varepsilon\\right)=P\\left(X_n=n\\right)=\\frac{1}{n}\\]</span>\ndonc\n<span class=\"math display\">\\[\\lim _{n \\rightarrow+\\infty} P\\left(\\left|X_n\\right|&gt;\\varepsilon\\right)=0\\]</span></p>",
       "order": 5
     }
   ],

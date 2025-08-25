@@ -9,125 +9,125 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-09-13",
-  "updated_at": "2025-08-23T12:07:11.761Z",
+  "updated_at": "2025-08-25T08:57:02.239Z",
   "content": [
     {
       "id": "block_1",
       "type": "indication",
       "latex": "Dans les calculs, on pourra utiliser une intégration par parties:\n\t\\[\\int_a^b u(x)v'(x) \\dx= {[uv]}_a^b-\\int_a^b u'(x)v(x) \\dx \\]\n\tou bien se souvenir que \n\t\\[\\int_0^{+\\infty} x^n e^{-x} \\dx= n!=1\\times 2\\times \\ldots \\times n\\text{.}\\]",
-      "html": "<p>Dans les calculs, on pourra utiliser une intégration par parties:\n<span>\\[\\int_a^b u(x)v&#39;(x) \\dx= {[uv]}_a^b-\\int_a^b u&#39;(x)v(x) \\dx\\]</span>\nou bien se souvenir que\n<span>\\[\\int_0^{+\\infty} x^n e^{-x} \\dx= n!=1\\times 2\\times \\ldots \\times n\\text{.}\\]</span></p>",
+      "html": "<p>Dans les calculs, on pourra utiliser une intégration par parties:\n<span class=\"math display\">\\[\\int_a^b u(x)v&#39;(x) \\dx= {[uv]}_a^b-\\int_a^b u&#39;(x)v(x) \\dx\\]</span>\nou bien se souvenir que\n<span class=\"math display\">\\[\\int_0^{+\\infty} x^n e^{-x} \\dx= n!=1\\times 2\\times \\ldots \\times n\\text{.}\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "text",
       "latex": "Après enquête, on estime que le temps de passage à une caisse, exprimé en unités de temps, est une \\va $T$ dont une densité de probabilité est donnée par la fonction $f_T$ définie par: \n$$ f_T(t)=\\begin{cases} 0 & \\text{ si } t<0  \\\\\n\tt e^{-t}& \\text{ si } t\\geq 0.\n\\end{cases}$$",
-      "html": "<p>Après enquête, on estime que le temps de passage à une caisse, exprimé en unités de temps, est une <span>\\(T\\)</span> dont une densité de probabilité est donnée par la fonction <span>\\(f_T\\)</span> définie par:\n<span>\\[f_T(t)=\\begin{cases} 0 &amp; \\text{ si } t&lt;0  \\\\\n    t e^{-t}&amp; \\text{ si } t\\geq 0.\n\\end{cases}\\]</span></p>",
+      "html": "<p>Après enquête, on estime que le temps de passage à une caisse, exprimé en unités de temps, est une <span class=\"math inline\">\\(T\\)</span> dont une densité de probabilité est donnée par la fonction <span class=\"math inline\">\\(f_T\\)</span> définie par:\n<span class=\"math display\">\\[f_T(t)=\\begin{cases} 0 &amp; \\text{ si } t&lt;0  \\\\\n    t e^{-t}&amp; \\text{ si } t\\geq 0.\n\\end{cases}\\]</span></p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "question",
       "latex": "Soit $X$ une variable aléatoire exponentielle de paramètre $\\lambda=1$. Donner une densité $f_X$ de $X$, son espérance et sa variance.",
-      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire exponentielle de paramètre <span>\\(\\lambda=1\\)</span>. Donner une densité <span>\\(f_X\\)</span> de <span>\\(X\\)</span>, son espérance et sa variance.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(X\\)</span> une variable aléatoire exponentielle de paramètre <span class=\"math inline\">\\(\\lambda=1\\)</span>. Donner une densité <span class=\"math inline\">\\(f_X\\)</span> de <span class=\"math inline\">\\(X\\)</span>, son espérance et sa variance.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "reponse",
       "latex": "$X\\sim \\mathcal{E}(1)$, \\hspace{2em} $f_X(t)=\\begin{cases} e^{-t} & \\text{ si } t\\geq 0 \\\\\n\t\t\t\t0 & \\text{ sinon}\n\t\t\t\\end{cases}$, \\hspace{2em}\n\t\t\t$\\E(X)=\\frac{1}{\\lambda}$ \\hspace{2em} et \\hspace{2em} $\\V(X)=\\frac{1}{\\lambda^2}$.",
-      "html": "<p><span>\\(X\\sim \\mathcal{E}(1)\\)</span>, <span>\\(f_X(t)=\\begin{cases} e^{-t} &amp; \\text{ si } t\\geq 0 \\\\\n                0 &amp; \\text{ sinon}\n            \\end{cases}\\)</span>,\n<span>\\(\\E(X)=\\frac{1}{\\lambda}\\)</span> et <span>\\(\\V(X)=\\frac{1}{\\lambda^2}\\)</span>.</p>",
+      "html": "<p><span class=\"math inline\">\\(X\\sim \\mathcal{E}(1)\\)</span>, <span class=\"math inline\">\\(f_X(t)=\\begin{cases} e^{-t} &amp; \\text{ si } t\\geq 0 \\\\\n                0 &amp; \\text{ sinon}\n            \\end{cases}\\)</span>,\n<span class=\"math inline\">\\(\\E(X)=\\frac{1}{\\lambda}\\)</span> et <span class=\"math inline\">\\(\\V(X)=\\frac{1}{\\lambda^2}\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "question",
       "latex": "Vérifier que $f_T$ est bien une densité de probabilité. Déterminer $\\E(T)$ et $\\V(T)$.",
-      "html": "<p>Vérifier que <span>\\(f_T\\)</span> est bien une densité de probabilité. Déterminer <span>\\(\\E(T)\\)</span> et <span>\\(\\V(T)\\)</span>.</p>",
+      "html": "<p>Vérifier que <span class=\"math inline\">\\(f_T\\)</span> est bien une densité de probabilité. Déterminer <span class=\"math inline\">\\(\\E(T)\\)</span> et <span class=\"math inline\">\\(\\V(T)\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "reponse",
-      "latex": "$f_T$ est une fonction positive sur $\\R$ et\n\t\t\t\\[ \\int_\\R f_T(x)\\dx=\\int_0^{+\\infty}xe^{-x}\\dx=\\left[-xe^{-x} \\right]_0^{+\\infty} +\\int_0^{+\\infty} e^{-x}\\dx = \\left[-e^{-x}\\right]_0^{+\\infty}=1.\\]\n\t\t\tDonc $f_T$ est bien une densité de probabilité. \\\\\n\t\t\t\n\t\t\t\n\t\t\tL'espérance de $T$ peut se calculer soit par intégrations par parties, soit en utilisant le rappel:\n\t\t\t\\[ \\E(T)=\\int_0^{+\\infty} x^2e^{-x}\\dx=\\left[ -x^2e^{-x}\\right]_0^{+\\infty} +\\int_0^{+\\infty} 2xe^{-x}\\dx=2\\int_0^{+\\infty}xe^{-x} \\dx=2.\\] \\\\\n\t\t\t\n\t\t\tDe même pour la variance de $T$: $\\V(T)=\\E(T^2)-\\E(T)^2$. Or\n\t\t\t\\[ \\E(T^2)=\\int_0^{+\\infty} x^3e^{-x}\\dx=6\\]\n\t\t\tdonc $\\V(T)=6-2^2=2$.",
-      "html": "<p><span>\\(f_T\\)</span> est une fonction positive sur <span>\\(\\R\\)</span> et\n<span>\\[\\int_\\R f_T(x)\\dx=\\int_0^{+\\infty}xe^{-x}\\dx=\\left[-xe^{-x} \\right]_0^{+\\infty} +\\int_0^{+\\infty} e^{-x}\\dx = \\left[-e^{-x}\\right]_0^{+\\infty}=1.\\]</span>\nDonc <span>\\(f_T\\)</span> est bien une densité de probabilité.<br />\nL’espérance de <span>\\(T\\)</span> peut se calculer soit par intégrations par parties, soit en utilisant le rappel:\n<span>\\[\\E(T)=\\int_0^{+\\infty} x^2e^{-x}\\dx=\\left[ -x^2e^{-x}\\right]_0^{+\\infty} +\\int_0^{+\\infty} 2xe^{-x}\\dx=2\\int_0^{+\\infty}xe^{-x} \\dx=2.\\]</span><br />\nDe même pour la variance de <span>\\(T\\)</span>: <span>\\(\\V(T)=\\E(T^2)-\\E(T)^2\\)</span>. Or\n<span>\\[\\E(T^2)=\\int_0^{+\\infty} x^3e^{-x}\\dx=6\\]</span>\ndonc <span>\\(\\V(T)=6-2^2=2\\)</span>.</p>",
+      "latex": "$f_T$ est une fonction positive sur $\\R$ et\n\t\t\t\\[ \\int_\\R f_T(x)\\dx=\\int_0^{+\\infty}xe^{-x}\\dx=\\left[-xe^{-x} \\right]_0^{+\\infty} +\\int_0^{+\\infty} e^{-x}\\dx = \\left[-e^{-x}\\right]_0^{+\\infty}=1.\\]\n\t\t\tDonc $f_T$ est bien une densité de probabilité. \\\\\n\t\t\t%\\hspace{0.3em}\n\t\t\t\n\t\t\tL'espérance de $T$ peut se calculer soit par intégrations par parties, soit en utilisant le rappel:\n\t\t\t\\[ \\E(T)=\\int_0^{+\\infty} x^2e^{-x}\\dx=\\left[ -x^2e^{-x}\\right]_0^{+\\infty} +\\int_0^{+\\infty} 2xe^{-x}\\dx=2\\int_0^{+\\infty}xe^{-x} \\dx=2.\\] \\\\\n\t\t\t\n\t\t\tDe même pour la variance de $T$: $\\V(T)=\\E(T^2)-\\E(T)^2$. Or\n\t\t\t\\[ \\E(T^2)=\\int_0^{+\\infty} x^3e^{-x}\\dx=6\\]\n\t\t\tdonc $\\V(T)=6-2^2=2$.",
+      "html": "<p><span class=\"math inline\">\\(f_T\\)</span> est une fonction positive sur <span class=\"math inline\">\\(\\R\\)</span> et\n<span class=\"math display\">\\[\\int_\\R f_T(x)\\dx=\\int_0^{+\\infty}xe^{-x}\\dx=\\left[-xe^{-x} \\right]_0^{+\\infty} +\\int_0^{+\\infty} e^{-x}\\dx = \\left[-e^{-x}\\right]_0^{+\\infty}=1.\\]</span>\nDonc <span class=\"math inline\">\\(f_T\\)</span> est bien une densité de probabilité.<br />\nL’espérance de <span class=\"math inline\">\\(T\\)</span> peut se calculer soit par intégrations par parties, soit en utilisant le rappel:\n<span class=\"math display\">\\[\\E(T)=\\int_0^{+\\infty} x^2e^{-x}\\dx=\\left[ -x^2e^{-x}\\right]_0^{+\\infty} +\\int_0^{+\\infty} 2xe^{-x}\\dx=2\\int_0^{+\\infty}xe^{-x} \\dx=2.\\]</span><br />\nDe même pour la variance de <span class=\"math inline\">\\(T\\)</span>: <span class=\"math inline\">\\(\\V(T)=\\E(T^2)-\\E(T)^2\\)</span>. Or\n<span class=\"math display\">\\[\\E(T^2)=\\int_0^{+\\infty} x^3e^{-x}\\dx=6\\]</span>\ndonc <span class=\"math inline\">\\(\\V(T)=6-2^2=2\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "question",
       "latex": "Démontrer que la fonction de répartition de $T$, notée $F_T$, est définie par:\n\t\t\\[\n\t\tF_T(x)=\n\t\t\\begin{cases}\n\t\t\t0  \\text{ si } x<0, \\\\\n\t\t\t1-(1+x)e^{-x} \\text{ si } x \\geq 0.\n\t\t\\end{cases}\n\t\t\\]",
-      "html": "<p>Démontrer que la fonction de répartition de <span>\\(T\\)</span>, notée <span>\\(F_T\\)</span>, est définie par:\n<span>\\[F_T(x)=\n        \\begin{cases}\n            0  \\text{ si } x&lt;0, \\\\\n            1-(1+x)e^{-x} \\text{ si } x \\geq 0.\n        \\end{cases}\\]</span></p>",
+      "html": "<p>Démontrer que la fonction de répartition de <span class=\"math inline\">\\(T\\)</span>, notée <span class=\"math inline\">\\(F_T\\)</span>, est définie par:\n<span class=\"math display\">\\[F_T(x)=\n        \\begin{cases}\n            0  \\text{ si } x&lt;0, \\\\\n            1-(1+x)e^{-x} \\text{ si } x \\geq 0.\n        \\end{cases}\\]</span></p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "reponse",
       "latex": "Par définition, \n\t\t\t$F_T(x)=\\int_{-\\infty}^x f_T(t)\\dx t$ donc si $x< 0$, $F_T(x)=0$ et si $x\\geq 0$,\n\t\t\t\\begin{align*}\n\t\t\t\tF_T(x) & =\\int_0^x te^{-t}\\dx t\n\t\t\t\t= \\left[-te^{-t}\\right]_0^x + \\int_0^x e^{-t}\\dx t\n\t\t\t\t= -xe^{-x}+0+\\left[-e^{-t}\\right]_0^x \n\t\t\t\t=-xe^{-x}-e^{x}+e^0 \\\\\n\t\t\t\t&= 1-(1+x)e^{-x},\n\t\t\t\\end{align*}\n\t\t\tce qui correspond à la formule donnée dans l'énoncé.",
-      "html": "<p>Par définition,\n<span>\\(F_T(x)=\\int_{-\\infty}^x f_T(t)\\dx t\\)</span> donc si <span>\\(x&lt; 0\\)</span>, <span>\\(F_T(x)=0\\)</span> et si <span>\\(x\\geq 0\\)</span>,\n<span>\\[\\begin{align*}\n                F_T(x) &amp; =\\int_0^x te^{-t}\\dx t\n                = \\left[-te^{-t}\\right]_0^x + \\int_0^x e^{-t}\\dx t\n                = -xe^{-x}+0+\\left[-e^{-t}\\right]_0^x \n                =-xe^{-x}-e^{x}+e^0 \\\\\n                &amp;= 1-(1+x)e^{-x},\n            \\end{align*}\\]</span>\nce qui correspond à la formule donnée dans l’énoncé.</p>",
+      "html": "<p>Par définition,\n<span class=\"math inline\">\\(F_T(x)=\\int_{-\\infty}^x f_T(t)\\dx t\\)</span> donc si <span class=\"math inline\">\\(x&lt; 0\\)</span>, <span class=\"math inline\">\\(F_T(x)=0\\)</span> et si <span class=\"math inline\">\\(x\\geq 0\\)</span>,\n<span class=\"math display\">\\[\\begin{align*}\n                F_T(x) &amp; =\\int_0^x te^{-t}\\dx t\n                = \\left[-te^{-t}\\right]_0^x + \\int_0^x e^{-t}\\dx t\n                = -xe^{-x}+0+\\left[-e^{-t}\\right]_0^x \n                =-xe^{-x}-e^{x}+e^0 \\\\\n                &amp;= 1-(1+x)e^{-x},\n            \\end{align*}\\]</span>\nce qui correspond à la formule donnée dans l’énoncé.</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "question",
       "latex": "Montrer que la probabilité que le temps de passage en caisse soit inférieur à deux unités de temps sachant qu'il est supérieur à une unité, est égale à $\\frac{2e-3}{2e}$.",
-      "html": "<p>Montrer que la probabilité que le temps de passage en caisse soit inférieur à deux unités de temps sachant qu’il est supérieur à une unité, est égale à <span>\\(\\frac{2e-3}{2e}\\)</span>.</p>",
+      "html": "<p>Montrer que la probabilité que le temps de passage en caisse soit inférieur à deux unités de temps sachant qu’il est supérieur à une unité, est égale à <span class=\"math inline\">\\(\\frac{2e-3}{2e}\\)</span>.</p>",
       "order": 9
     },
     {
       "id": "block_10",
       "type": "reponse",
       "latex": "\\begin{align*}\n\t\t\t\t\\prob(T\\leq 2|T\\geq 1)\n\t\t\t\t&=\\frac{\\prob(\\{T\\leq 2\\}\\cap \\{T\\geq 1\\})}{\\prob(T\\geq 1)}\n\t\t\t\t=\\frac{\\prob(1\\leq T\\leq 2)}{1-\\prob(T\\leq 1)}\n\t\t\t\t= \\frac{F_T(2)-F_T(1)}{1-F_T(1)} \\\\\n\t\t\t\t&=\\frac{1-3e^{-2}-1+2e^{-1}}{1-1+2e^{-1}}\n\t\t\t\t=\\frac{2e^{-1}-3e^{-2}}{2e^{-1}}\n\t\t\t\t=\\frac{2e-3}{2e}\n\t\t\t\\end{align*}",
-      "html": "<p><span>\\[\\begin{align*}\n                \\prob(T\\leq 2|T\\geq 1)\n                &amp;=\\frac{\\prob(\\{T\\leq 2\\}\\cap \\{T\\geq 1\\})}{\\prob(T\\geq 1)}\n                =\\frac{\\prob(1\\leq T\\leq 2)}{1-\\prob(T\\leq 1)}\n                = \\frac{F_T(2)-F_T(1)}{1-F_T(1)} \\\\\n                &amp;=\\frac{1-3e^{-2}-1+2e^{-1}}{1-1+2e^{-1}}\n                =\\frac{2e^{-1}-3e^{-2}}{2e^{-1}}\n                =\\frac{2e-3}{2e}\n            \\end{align*}\\]</span></p>",
+      "html": "<p><span class=\"math display\">\\[\\begin{align*}\n                \\prob(T\\leq 2|T\\geq 1)\n                &amp;=\\frac{\\prob(\\{T\\leq 2\\}\\cap \\{T\\geq 1\\})}{\\prob(T\\geq 1)}\n                =\\frac{\\prob(1\\leq T\\leq 2)}{1-\\prob(T\\leq 1)}\n                = \\frac{F_T(2)-F_T(1)}{1-F_T(1)} \\\\\n                &amp;=\\frac{1-3e^{-2}-1+2e^{-1}}{1-1+2e^{-1}}\n                =\\frac{2e^{-1}-3e^{-2}}{2e^{-1}}\n                =\\frac{2e-3}{2e}\n            \\end{align*}\\]</span></p>",
       "order": 10
     },
     {
       "id": "block_11",
       "type": "text",
       "latex": "Un jour donné, trois clients $A$, $B$ et $C$ se présentent simultanément devant deux caisses libres. Par courtoisie, $C$ décide de laisser passer $A$ et $B$ et de prendre la place du premier d'entre eux qui aura terminé. On suppose que les variable aléatoires $T_A$ et $T_B$ correspondant aux temps de passage en caisse de $A$ et de $B$ sont indépendantes.",
-      "html": "<p>Un jour donné, trois clients <span>\\(A\\)</span>, <span>\\(B\\)</span> et <span>\\(C\\)</span> se présentent simultanément devant deux caisses libres. Par courtoisie, <span>\\(C\\)</span> décide de laisser passer <span>\\(A\\)</span> et <span>\\(B\\)</span> et de prendre la place du premier d’entre eux qui aura terminé. On suppose que les variable aléatoires <span>\\(T_A\\)</span> et <span>\\(T_B\\)</span> correspondant aux temps de passage en caisse de <span>\\(A\\)</span> et de <span>\\(B\\)</span> sont indépendantes.</p>",
+      "html": "<p>Un jour donné, trois clients <span class=\"math inline\">\\(A\\)</span>, <span class=\"math inline\">\\(B\\)</span> et <span class=\"math inline\">\\(C\\)</span> se présentent simultanément devant deux caisses libres. Par courtoisie, <span class=\"math inline\">\\(C\\)</span> décide de laisser passer <span class=\"math inline\">\\(A\\)</span> et <span class=\"math inline\">\\(B\\)</span> et de prendre la place du premier d’entre eux qui aura terminé. On suppose que les variable aléatoires <span class=\"math inline\">\\(T_A\\)</span> et <span class=\"math inline\">\\(T_B\\)</span> correspondant aux temps de passage en caisse de <span class=\"math inline\">\\(A\\)</span> et de <span class=\"math inline\">\\(B\\)</span> sont indépendantes.</p>",
       "order": 11
     },
     {
       "id": "block_12",
       "type": "question",
       "latex": "Soit $M$ la variable aléatoire égale au temps d'attente du client $C$. Exprimer l'événement $\\{M>x\\}$ en fonction des événements $\\{T_A>x\\}$ et $\\{T_B>x\\}$.",
-      "html": "<p>Soit <span>\\(M\\)</span> la variable aléatoire égale au temps d’attente du client <span>\\(C\\)</span>. Exprimer l’événement <span>\\(\\{M&gt;x\\}\\)</span> en fonction des événements <span>\\(\\{T_A&gt;x\\}\\)</span> et <span>\\(\\{T_B&gt;x\\}\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(M\\)</span> la variable aléatoire égale au temps d’attente du client <span class=\"math inline\">\\(C\\)</span>. Exprimer l’événement <span class=\"math inline\">\\(\\{M&gt;x\\}\\)</span> en fonction des événements <span class=\"math inline\">\\(\\{T_A&gt;x\\}\\)</span> et <span class=\"math inline\">\\(\\{T_B&gt;x\\}\\)</span>.</p>",
       "order": 12
     },
     {
       "id": "block_13",
       "type": "reponse",
       "latex": "$\\{M>x\\}=\\{T_A>x\\}\\cap\\{T_B>x\\}$",
-      "html": "<p><span>\\(\\{M&gt;x\\}=\\{T_A&gt;x\\}\\cap\\{T_B&gt;x\\}\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(\\{M&gt;x\\}=\\{T_A&gt;x\\}\\cap\\{T_B&gt;x\\}\\)</span></p>",
       "order": 13
     },
     {
       "id": "block_14",
       "type": "question",
       "latex": "En déduire une expression de la fonction de répartition $F_M$ de $M$, en fonction de $F_{T_A}$ et $F_{T_B}$.",
-      "html": "<p>En déduire une expression de la fonction de répartition <span>\\(F_M\\)</span> de <span>\\(M\\)</span>, en fonction de <span>\\(F_{T_A}\\)</span> et <span>\\(F_{T_B}\\)</span>.</p>",
+      "html": "<p>En déduire une expression de la fonction de répartition <span class=\"math inline\">\\(F_M\\)</span> de <span class=\"math inline\">\\(M\\)</span>, en fonction de <span class=\"math inline\">\\(F_{T_A}\\)</span> et <span class=\"math inline\">\\(F_{T_B}\\)</span>.</p>",
       "order": 14
     },
     {
       "id": "block_15",
       "type": "reponse",
       "latex": "Pour tout $t\\in \\R$,\n\t\t\t\\begin{align*}\n\t\t\t\tF_M(t)\n\t\t\t\t&=\\prob(M\\leq t) \\\\\n\t\t\t\t&=1-\\prob(M>t) \\\\\n\t\t\t\t&=1-\\prob(\\{T_A>t\\}\\cap\\{T_B>t\\}) \\\\\n\t\t\t\t&=1-\\prob(T_A>t)\\prob(T_B>t) \\quad \\text{ par indépendance de $T_A$ et de $T_B$} \\\\\n\t\t\t\t&=1-(1-\\prob(T_A\\leq t))(1-\\prob(T_B\\leq t)) \\\\\n\t\t\t\t&= 1- (1-F_{T_A}(t))(1-F_{T_B}(t))\n\t\t\t\\end{align*}",
-      "html": "<p>Pour tout <span>\\(t\\in \\R\\)</span>,\n<span>\\[\\begin{align*}\n                F_M(t)\n                &amp;=\\prob(M\\leq t) \\\\\n                &amp;=1-\\prob(M&gt;t) \\\\\n                &amp;=1-\\prob(\\{T_A&gt;t\\}\\cap\\{T_B&gt;t\\}) \\\\\n                &amp;=1-\\prob(T_A&gt;t)\\prob(T_B&gt;t) \\quad \\text{ par indépendance de $T_A$ et de $T_B$} \\\\\n                &amp;=1-(1-\\prob(T_A\\leq t))(1-\\prob(T_B\\leq t)) \\\\\n                &amp;= 1- (1-F_{T_A}(t))(1-F_{T_B}(t))\n            \\end{align*}\\]</span></p>",
+      "html": "<p>Pour tout <span class=\"math inline\">\\(t\\in \\R\\)</span>,\n<span class=\"math display\">\\[\\begin{align*}\n                F_M(t)\n                &amp;=\\prob(M\\leq t) \\\\\n                &amp;=1-\\prob(M&gt;t) \\\\\n                &amp;=1-\\prob(\\{T_A&gt;t\\}\\cap\\{T_B&gt;t\\}) \\\\\n                &amp;=1-\\prob(T_A&gt;t)\\prob(T_B&gt;t) \\quad \\text{ par indépendance de $T_A$ et de $T_B$} \\\\\n                &amp;=1-(1-\\prob(T_A\\leq t))(1-\\prob(T_B\\leq t)) \\\\\n                &amp;= 1- (1-F_{T_A}(t))(1-F_{T_B}(t))\n            \\end{align*}\\]</span></p>",
       "order": 15
     },
     {
       "id": "block_16",
       "type": "question",
       "latex": "Déterminer explicitement une densité de $M$.",
-      "html": "<p>Déterminer explicitement une densité de <span>\\(M\\)</span>.</p>",
+      "html": "<p>Déterminer explicitement une densité de <span class=\"math inline\">\\(M\\)</span>.</p>",
       "order": 16
     },
     {
       "id": "block_17",
       "type": "reponse",
       "latex": "Comme $T_A$ et $T_B$ suivent la même loi que $T$, on $F_{T_A}=F_{T_B}=F_T$. On obtient donc :\n\t\t\t\\begin{equation*}\n\t\t\t\tF_M (x)\n\t\t\t\t\\,=\\, 1-{(1-F_T(x))}^2 \\,=\\, \n\t\t\t\t\\begin{cases}\n\t\t\t\t\t1-(1+x)^2e^{-2x} & \\text{ si } x\\geq 0 \\\\\n\t\t\t\t\t0 \\text{ si } x<0.\n\t\t\t\t\\end{cases} \n\t\t\t\\end{equation*}\n\t\t\tAfin d'obtenir la densité de la variable aléatoire $M$, on dérive sa fonction de répartition en tous les points de continuité de sa densité :\n\t\t\t\\begin{align*}\n\t\t\t\tf_M(t)&= \\begin{cases}\n\t\t\t\t\t-2(1+x)e^{-2x}+2(1+x)^2e^{-2x} & \\text{ si } x\\geq 0 \\\\\n\t\t\t\t\t0 \\text{ si } x<0\n\t\t\t\t\\end{cases} \\\\\n\t\t\t\t&= \\begin{cases}\n\t\t\t\t\t2x\\, (1+x)e^{-2x} & \\text{ si } x\\geq 0 \\\\\n\t\t\t\t\t0 \\text{ si } x<0\n\t\t\t\t\\end{cases}\n\t\t\t\\end{align*}",
-      "html": "<p>Comme <span>\\(T_A\\)</span> et <span>\\(T_B\\)</span> suivent la même loi que <span>\\(T\\)</span>, on <span>\\(F_{T_A}=F_{T_B}=F_T\\)</span>. On obtient donc :\n<span>\\[\\begin{equation}\n                F_M (x)\n                \\,=\\, 1-{(1-F_T(x))}^2 \\,=\\, \n                \\begin{cases}\n                    1-(1+x)^2e^{-2x} &amp; \\text{ si } x\\geq 0 \\\\\n                    0 \\text{ si } x&lt;0.\n                \\end{cases} \n            \\end{equation}\\]</span>\nAfin d’obtenir la densité de la variable aléatoire <span>\\(M\\)</span>, on dérive sa fonction de répartition en tous les points de continuité de sa densité :\n<span>\\[\\begin{align*}\n                f_M(t)&amp;= \\begin{cases}\n                    -2(1+x)e^{-2x}+2(1+x)^2e^{-2x} &amp; \\text{ si } x\\geq 0 \\\\\n                    0 \\text{ si } x&lt;0\n                \\end{cases} \\\\\n                &amp;= \\begin{cases}\n                    2x\\, (1+x)e^{-2x} &amp; \\text{ si } x\\geq 0 \\\\\n                    0 \\text{ si } x&lt;0\n                \\end{cases}\n            \\end{align*}\\]</span></p>",
+      "html": "<p>Comme <span class=\"math inline\">\\(T_A\\)</span> et <span class=\"math inline\">\\(T_B\\)</span> suivent la même loi que <span class=\"math inline\">\\(T\\)</span>, on <span class=\"math inline\">\\(F_{T_A}=F_{T_B}=F_T\\)</span>. On obtient donc :\n<span class=\"math display\">\\[\\begin{equation}\n                F_M (x)\n                \\,=\\, 1-{(1-F_T(x))}^2 \\,=\\, \n                \\begin{cases}\n                    1-(1+x)^2e^{-2x} &amp; \\text{ si } x\\geq 0 \\\\\n                    0 \\text{ si } x&lt;0.\n                \\end{cases} \n            \\end{equation}\\]</span>\nAfin d’obtenir la densité de la variable aléatoire <span class=\"math inline\">\\(M\\)</span>, on dérive sa fonction de répartition en tous les points de continuité de sa densité :\n<span class=\"math display\">\\[\\begin{align*}\n                f_M(t)&amp;= \\begin{cases}\n                    -2(1+x)e^{-2x}+2(1+x)^2e^{-2x} &amp; \\text{ si } x\\geq 0 \\\\\n                    0 \\text{ si } x&lt;0\n                \\end{cases} \\\\\n                &amp;= \\begin{cases}\n                    2x\\, (1+x)e^{-2x} &amp; \\text{ si } x\\geq 0 \\\\\n                    0 \\text{ si } x&lt;0\n                \\end{cases}\n            \\end{align*}\\]</span></p>",
       "order": 17
     }
   ],

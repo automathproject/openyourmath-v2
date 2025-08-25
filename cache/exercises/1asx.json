@@ -9,7 +9,7 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-10-12",
-  "updated_at": "2025-08-23T12:06:23.719Z",
+  "updated_at": "2025-08-25T08:56:12.042Z",
   "content": [
     {
       "id": "block_1",
@@ -22,28 +22,28 @@
       "id": "block_2",
       "type": "question",
       "latex": "Calculer la probabilité que le poids de l'ensemble des passagers soit supérieur à $7{,}3$ tonnes.",
-      "html": "<p>Calculer la probabilité que le poids de l’ensemble des passagers soit supérieur à <span>\\(7{,}3\\)</span> tonnes.</p>",
+      "html": "<p>Calculer la probabilité que le poids de l’ensemble des passagers soit supérieur à <span class=\"math inline\">\\(7{,}3\\)</span> tonnes.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "Soit la variable aléatoire $X$ donnant la somme des poids des 100 passagers. Si on note $Y_i$ le poids du $i$-ème passager, on a $X = \\sum_{i=1}^{100} Y_i$. Par conséquent, $\\mathbb{E}(X) = 7100$ et $\\var(X) = 100 \\times 7^2 = 4900$. \nD'après le théorème central limite, la loi de $X$ peut être approchée par une loi normale de moyenne $7100$ et de variance $4900$, soit un écart type de $70$. \n\nEn notant $Z$ une variable aléatoire normale centrée réduite, on en déduit que :\n\\begin{align*}\n  \\PP\\left(X > 7300\\right) &= \\PP\\left(\\frac{X-7100}{70} > \\frac{7300-7100}{70}\\right) \\\\\n  &\\approx  \\PP\\left(Z > \\frac{200}{70} \\approx 2{,}857\\right) \\\\\n  &\\approx 0{,}0021 = 0{,}21\\%\n\\end{align*}\nIl n'y a quasiment aucune chance que le poids total des passagers dépasse $7{,}3$ tonnes.",
-      "html": "<p>Soit la variable aléatoire <span>\\(X\\)</span> donnant la somme des poids des 100 passagers. Si on note <span>\\(Y_i\\)</span> le poids du <span>\\(i\\)</span>-ème passager, on a <span>\\(X = \\sum_{i=1}^{100} Y_i\\)</span>. Par conséquent, <span>\\(\\mathbb{E}(X) = 7100\\)</span> et <span>\\(\\var(X) = 100 \\times 7^2 = 4900\\)</span>.\nD’après le théorème central limite, la loi de <span>\\(X\\)</span> peut être approchée par une loi normale de moyenne <span>\\(7100\\)</span> et de variance <span>\\(4900\\)</span>, soit un écart type de <span>\\(70\\)</span>.</p>\n<p>En notant <span>\\(Z\\)</span> une variable aléatoire normale centrée réduite, on en déduit que :\n<span>\\[\\begin{align*}\n  \\PP\\left(X &gt; 7300\\right) &amp;= \\PP\\left(\\frac{X-7100}{70} &gt; \\frac{7300-7100}{70}\\right) \\\\\n  &amp;\\approx  \\PP\\left(Z &gt; \\frac{200}{70} \\approx 2{,}857\\right) \\\\\n  &amp;\\approx 0{,}0021 = 0{,}21\\%\n\\end{align*}\\]</span>\nIl n’y a quasiment aucune chance que le poids total des passagers dépasse <span>\\(7{,}3\\)</span> tonnes.</p>",
+      "html": "<p>Soit la variable aléatoire <span class=\"math inline\">\\(X\\)</span> donnant la somme des poids des 100 passagers. Si on note <span class=\"math inline\">\\(Y_i\\)</span> le poids du <span class=\"math inline\">\\(i\\)</span>-ème passager, on a <span class=\"math inline\">\\(X = \\sum_{i=1}^{100} Y_i\\)</span>. Par conséquent, <span class=\"math inline\">\\(\\mathbb{E}(X) = 7100\\)</span> et <span class=\"math inline\">\\(\\var(X) = 100 \\times 7^2 = 4900\\)</span>.\nD’après le théorème central limite, la loi de <span class=\"math inline\">\\(X\\)</span> peut être approchée par une loi normale de moyenne <span class=\"math inline\">\\(7100\\)</span> et de variance <span class=\"math inline\">\\(4900\\)</span>, soit un écart type de <span class=\"math inline\">\\(70\\)</span>.</p>\n<p>En notant <span class=\"math inline\">\\(Z\\)</span> une variable aléatoire normale centrée réduite, on en déduit que :\n<span class=\"math display\">\\[\\begin{align*}\n  \\PP\\left(X &gt; 7300\\right) &amp;= \\PP\\left(\\frac{X-7100}{70} &gt; \\frac{7300-7100}{70}\\right) \\\\\n  &amp;\\approx  \\PP\\left(Z &gt; \\frac{200}{70} \\approx 2{,}857\\right) \\\\\n  &amp;\\approx 0{,}0021 = 0{,}21\\%\n\\end{align*}\\]</span>\nIl n’y a quasiment aucune chance que le poids total des passagers dépasse <span class=\"math inline\">\\(7{,}3\\)</span> tonnes.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Sur 40 passagers interrogés au hasard, 23 voyagent avec un bagage en soute. Déterminer à l'aide d'un intervalle de confiance au niveau $95\\%$ une estimation de la proportion de passagers qui voyagent avec un bagage en soute sur ce vol.",
-      "html": "<p>Sur 40 passagers interrogés au hasard, 23 voyagent avec un bagage en soute. Déterminer à l’aide d’un intervalle de confiance au niveau <span>\\(95\\%\\)</span> une estimation de la proportion de passagers qui voyagent avec un bagage en soute sur ce vol.</p>",
+      "html": "<p>Sur 40 passagers interrogés au hasard, 23 voyagent avec un bagage en soute. Déterminer à l’aide d’un intervalle de confiance au niveau <span class=\"math inline\">\\(95\\%\\)</span> une estimation de la proportion de passagers qui voyagent avec un bagage en soute sur ce vol.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "On cherche à estimer une fréquence à partir d'un échantillon de taille $40$. La fréquence observée dans l'échantillon est $f_{obs} = \\frac{23}{40}$. On peut donc utiliser la formule du cours : \n\t\t$$I_{conf}(F(\\omega))=\\left[f_{obs}-u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} ~;~ f_{obs} + u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} \\right]$$\n\t\ten remplaçant $u_{\\alpha/2}$ par $1{,}96$ pour une confiance de $95\\%$, on obtient numériquement $I_{conf} \\approx [0.42 ; 0.73]$.\n\t\nOn peut estimer que la proportion de passagers voyageant avec un bagage en soute est compris entre $42\\%$ et $73\\%$.",
-      "html": "<p>On cherche à estimer une fréquence à partir d’un échantillon de taille <span>\\(40\\)</span>. La fréquence observée dans l’échantillon est <span>\\(f_{obs} = \\frac{23}{40}\\)</span>. On peut donc utiliser la formule du cours :\n<span>\\[I_{conf}(F(\\omega))=\\left[f_{obs}-u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} ~;~ f_{obs} + u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} \\right]\\]</span>\nen remplaçant <span>\\(u_{\\alpha/2}\\)</span> par <span>\\(1{,}96\\)</span> pour une confiance de <span>\\(95\\%\\)</span>, on obtient numériquement <span>\\(I_{conf} \\approx [0.42 ; 0.73]\\)</span>.</p>\n<p>On peut estimer que la proportion de passagers voyageant avec un bagage en soute est compris entre <span>\\(42\\%\\)</span> et <span>\\(73\\%\\)</span>.</p>",
+      "html": "<p>On cherche à estimer une fréquence à partir d’un échantillon de taille <span class=\"math inline\">\\(40\\)</span>. La fréquence observée dans l’échantillon est <span class=\"math inline\">\\(f_{obs} = \\frac{23}{40}\\)</span>. On peut donc utiliser la formule du cours :\n<span class=\"math display\">\\[I_{conf}(F(\\omega))=\\left[f_{obs}-u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} ~;~ f_{obs} + u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} \\right]\\]</span>\nen remplaçant <span class=\"math inline\">\\(u_{\\alpha/2}\\)</span> par <span class=\"math inline\">\\(1{,}96\\)</span> pour une confiance de <span class=\"math inline\">\\(95\\%\\)</span>, on obtient numériquement <span class=\"math inline\">\\(I_{conf} \\approx [0.42 ; 0.73]\\)</span>.</p>\n<p>On peut estimer que la proportion de passagers voyageant avec un bagage en soute est compris entre <span class=\"math inline\">\\(42\\%\\)</span> et <span class=\"math inline\">\\(73\\%\\)</span>.</p>",
       "order": 5
     }
   ],

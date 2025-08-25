@@ -9,55 +9,55 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-10-17",
-  "updated_at": "2025-08-23T12:07:42.032Z",
+  "updated_at": "2025-08-25T08:57:34.241Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soit $X$ une variable aléatoire dont la loi est déterminée par la fonction densité définie pour tout $x \\in \\R$ par : $$\n\tf_X(x)=\\frac{1}{\\sigma \\sqrt{2 \\pi}} \\exp \\left[-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right]\n\t$$",
-      "html": "<p>Soit <span>\\(X\\)</span> une variable aléatoire dont la loi est déterminée par la fonction densité définie pour tout <span>\\(x \\in \\R\\)</span> par : <span>\\[f_X(x)=\\frac{1}{\\sigma \\sqrt{2 \\pi}} \\exp \\left[-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right]\\]</span></p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(X\\)</span> une variable aléatoire dont la loi est déterminée par la fonction densité définie pour tout <span class=\"math inline\">\\(x \\in \\R\\)</span> par : <span class=\"math display\">\\[f_X(x)=\\frac{1}{\\sigma \\sqrt{2 \\pi}} \\exp \\left[-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right]\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "A l'aide d'un changement de variable, calculer $\\mathbb{E}(X)$.",
-      "html": "<p>A l’aide d’un changement de variable, calculer <span>\\(\\mathbb{E}(X)\\)</span>.</p>",
+      "html": "<p>A l’aide d’un changement de variable, calculer <span class=\"math inline\">\\(\\mathbb{E}(X)\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "On exprime l'intégrale en posant le changement de variable affine $u=\\frac{x-\\mu}{\\sigma} \\iff x = \\sigma u + \\mu$ :\n\t\\begin{align*}\n\t\t\\mathbb{E}(X) &= \\int_{-\\infty}^{+\\infty}xf(x)dx \\\\\n\t\t&= \\int_{-\\infty}^{+\\infty} (\\sigma u + \\mu) \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{u^2}{2}} \\sigma du\\\\\n\t\t&= \\frac{\\sigma}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} u e^{-\\frac{u^2}{2}} du + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du\\\\\n\t\t&= 0 + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du \\\\\n\t\t&= 0 + \\mu \\times 1 \\\\\n\t\t&= \\mu\n\\end{align*}",
-      "html": "<p>On exprime l’intégrale en posant le changement de variable affine <span>\\(u=\\frac{x-\\mu}{\\sigma} \\iff x = \\sigma u + \\mu\\)</span> :\n<span>\\[\\begin{align*}\n        \\mathbb{E}(X) &amp;= \\int_{-\\infty}^{+\\infty}xf(x)dx \\\\\n        &amp;= \\int_{-\\infty}^{+\\infty} (\\sigma u + \\mu) \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{u^2}{2}} \\sigma du\\\\\n        &amp;= \\frac{\\sigma}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} u e^{-\\frac{u^2}{2}} du + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du\\\\\n        &amp;= 0 + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du \\\\\n        &amp;= 0 + \\mu \\times 1 \\\\\n        &amp;= \\mu\n\\end{align*}\\]</span></p>",
+      "html": "<p>On exprime l’intégrale en posant le changement de variable affine <span class=\"math inline\">\\(u=\\frac{x-\\mu}{\\sigma} \\iff x = \\sigma u + \\mu\\)</span> :\n<span class=\"math display\">\\[\\begin{align*}\n        \\mathbb{E}(X) &amp;= \\int_{-\\infty}^{+\\infty}xf(x)dx \\\\\n        &amp;= \\int_{-\\infty}^{+\\infty} (\\sigma u + \\mu) \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{u^2}{2}} \\sigma du\\\\\n        &amp;= \\frac{\\sigma}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} u e^{-\\frac{u^2}{2}} du + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du\\\\\n        &amp;= 0 + \\mu \\times \\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty} e^{-\\frac{u^2}{2}}du \\\\\n        &amp;= 0 + \\mu \\times 1 \\\\\n        &amp;= \\mu\n\\end{align*}\\]</span></p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Calculer la variance de $X$.",
-      "html": "<p>Calculer la variance de <span>\\(X\\)</span>.</p>",
+      "html": "<p>Calculer la variance de <span class=\"math inline\">\\(X\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "On utilise le même changement de variable : \n\t$$\n\t\\mathbb{E}\\left((X-\\mu)^2\\right)=\\frac{1}{\\sigma \\sqrt{2 \\pi}} \\int_{-\\infty}^{+\\infty}(x-\\mu)^2 \\exp \\left[-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right] \\mathrm{d} x\n\t$$\n\tdevient, après changement de variables ci-dessus :\n\t$$\n\tE\\left((X-\\mu)^2\\right)=\\frac{\\sigma^2}{\\sqrt{2 \\pi}} \\int_{-\\infty}^{+\\infty} u^2 \\exp \\left[-\\frac{u^2}{2}\\right] \\mathrm{d} u .\n\t$$\n\tEn intégrant par parties, on trouve directement que\n\t$$\n\tE\\left((X-\\mu)^2\\right)=\\sigma^2 .\n\t$$",
-      "html": "<p>On utilise le même changement de variable :\n<span>\\[\\mathbb{E}\\left((X-\\mu)^2\\right)=\\frac{1}{\\sigma \\sqrt{2 \\pi}} \\int_{-\\infty}^{+\\infty}(x-\\mu)^2 \\exp \\left[-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right] \\mathrm{d} x\\]</span>\ndevient, après changement de variables ci-dessus :\n<span>\\[E\\left((X-\\mu)^2\\right)=\\frac{\\sigma^2}{\\sqrt{2 \\pi}} \\int_{-\\infty}^{+\\infty} u^2 \\exp \\left[-\\frac{u^2}{2}\\right] \\mathrm{d} u .\\]</span>\nEn intégrant par parties, on trouve directement que\n<span>\\[E\\left((X-\\mu)^2\\right)=\\sigma^2 .\\]</span></p>",
+      "html": "<p>On utilise le même changement de variable :\n<span class=\"math display\">\\[\\mathbb{E}\\left((X-\\mu)^2\\right)=\\frac{1}{\\sigma \\sqrt{2 \\pi}} \\int_{-\\infty}^{+\\infty}(x-\\mu)^2 \\exp \\left[-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right] \\mathrm{d} x\\]</span>\ndevient, après changement de variables ci-dessus :\n<span class=\"math display\">\\[E\\left((X-\\mu)^2\\right)=\\frac{\\sigma^2}{\\sqrt{2 \\pi}} \\int_{-\\infty}^{+\\infty} u^2 \\exp \\left[-\\frac{u^2}{2}\\right] \\mathrm{d} u .\\]</span>\nEn intégrant par parties, on trouve directement que\n<span class=\"math display\">\\[E\\left((X-\\mu)^2\\right)=\\sigma^2 .\\]</span></p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Soit $Z = \\frac{X-\\mu}{\\sigma}$. Déterminer la loi de $Z$.",
-      "html": "<p>Soit <span>\\(Z = \\frac{X-\\mu}{\\sigma}\\)</span>. Déterminer la loi de <span>\\(Z\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(Z = \\frac{X-\\mu}{\\sigma}\\)</span>. Déterminer la loi de <span class=\"math inline\">\\(Z\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "En effectuant toujours le même changement de variables $u=\\frac{x-\\mu}{\\sigma}$, on a pour tout réel $t$ :\n\t$$\n\t\\PP(Z \\leqslant t)=\\PP(X \\leq \\sigma t + \\mu )\\int_{-\\infty}^{\\sigma t + \\mu} \\frac{1}{\\sigma \\sqrt{2 \\pi}} \\exp \\left[-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right] \\mathrm{d} x=\\int_{-\\infty}^t \\frac{1}{\\sqrt{2 \\pi}} \\exp \\left[-\\frac{u^2}{2}\\right] \\mathrm{d} u .\n\t$$\n\tLa densité de la variable aléatoire $Y$ est donc la fonction\n\t$$\n\tf_Y(u)=\\frac{1}{\\sqrt{2 \\pi}} \\exp \\left[-\\frac{u^2}{2}\\right],\n\t$$\n\tqui correspond à celle de la loi normale centrée réduite $\\mathscr{N}(0,1)$.",
-      "html": "<p>En effectuant toujours le même changement de variables <span>\\(u=\\frac{x-\\mu}{\\sigma}\\)</span>, on a pour tout réel <span>\\(t\\)</span> :\n<span>\\[\\PP(Z \\leqslant t)=\\PP(X \\leq \\sigma t + \\mu )\\int_{-\\infty}^{\\sigma t + \\mu} \\frac{1}{\\sigma \\sqrt{2 \\pi}} \\exp \\left[-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right] \\mathrm{d} x=\\int_{-\\infty}^t \\frac{1}{\\sqrt{2 \\pi}} \\exp \\left[-\\frac{u^2}{2}\\right] \\mathrm{d} u .\\]</span>\nLa densité de la variable aléatoire <span>\\(Y\\)</span> est donc la fonction\n<span>\\[f_Y(u)=\\frac{1}{\\sqrt{2 \\pi}} \\exp \\left[-\\frac{u^2}{2}\\right],\\]</span>\nqui correspond à celle de la loi normale centrée réduite <span>\\(\\mathscr{N}(0,1)\\)</span>.</p>",
+      "html": "<p>En effectuant toujours le même changement de variables <span class=\"math inline\">\\(u=\\frac{x-\\mu}{\\sigma}\\)</span>, on a pour tout réel <span class=\"math inline\">\\(t\\)</span> :\n<span class=\"math display\">\\[\\PP(Z \\leqslant t)=\\PP(X \\leq \\sigma t + \\mu )\\int_{-\\infty}^{\\sigma t + \\mu} \\frac{1}{\\sigma \\sqrt{2 \\pi}} \\exp \\left[-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2\\right] \\mathrm{d} x=\\int_{-\\infty}^t \\frac{1}{\\sqrt{2 \\pi}} \\exp \\left[-\\frac{u^2}{2}\\right] \\mathrm{d} u .\\]</span>\nLa densité de la variable aléatoire <span class=\"math inline\">\\(Y\\)</span> est donc la fonction\n<span class=\"math display\">\\[f_Y(u)=\\frac{1}{\\sqrt{2 \\pi}} \\exp \\left[-\\frac{u^2}{2}\\right],\\]</span>\nqui correspond à celle de la loi normale centrée réduite <span class=\"math inline\">\\(\\mathscr{N}(0,1)\\)</span>.</p>",
       "order": 7
     }
   ],

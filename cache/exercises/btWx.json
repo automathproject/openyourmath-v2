@@ -9,48 +9,48 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-20",
-  "updated_at": "2025-08-23T12:07:23.032Z",
+  "updated_at": "2025-08-25T08:57:14.208Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Pour une fonction $f$ continue par morceaux sur $[a;b]$, on pose $\\theta \\in [0;1]$ on considère l'approximation :\n$$\\int_a^b f(s)ds \\approx (b-a)(\\theta f(a) + (1-\\theta)f(b))$$",
-      "html": "<p>Pour une fonction <span>\\(f\\)</span> continue par morceaux sur <span>\\([a;b]\\)</span>, on pose <span>\\(\\theta \\in [0;1]\\)</span> on considère l’approximation :\n<span>\\[\\int_a^b f(s)ds \\approx (b-a)(\\theta f(a) + (1-\\theta)f(b))\\]</span></p>",
+      "html": "<p>Pour une fonction <span class=\"math inline\">\\(f\\)</span> continue par morceaux sur <span class=\"math inline\">\\([a;b]\\)</span>, on pose <span class=\"math inline\">\\(\\theta \\in [0;1]\\)</span> on considère l’approximation :\n<span class=\"math display\">\\[\\int_a^b f(s)ds \\approx (b-a)(\\theta f(a) + (1-\\theta)f(b))\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "\\'A partir de ce choix d'approximation, construire un schéma de résolution d'une EDO $y'(t)=f(t,y)$.",
-      "html": "<p>Á partir de ce choix d’approximation, construire un schéma de résolution d’une EDO <span>\\(y&#39;(t)=f(t,y)\\)</span>.</p>",
+      "html": "<p>Á partir de ce choix d’approximation, construire un schéma de résolution d’une EDO <span class=\"math inline\">\\(y&#39;(t)=f(t,y)\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "question",
       "latex": "Reconnaître des schémas usuels pour les valeurs $\\theta \\in \\{0,\\frac{1}{2},1\\}$.",
-      "html": "<p>Reconnaître des schémas usuels pour les valeurs <span>\\(\\theta \\in \\{0,\\frac{1}{2},1\\}\\)</span>.</p>",
+      "html": "<p>Reconnaître des schémas usuels pour les valeurs <span class=\"math inline\">\\(\\theta \\in \\{0,\\frac{1}{2},1\\}\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "reponse",
       "latex": "\\begin{itemize}\n\t\t\t\\item \tSi $\\theta =0$ : méthode d'Euler implicite (rectangle à droite) ;\n\t\t\t\\item   Si $\\theta = 1$ : méthode d'Euler explicite (rectangle à gauche) ;\n\t\t\t\\item   Si $\\theta = 1/2$ : méthode de Carnk Nikolson.\n\t\t\\end{itemize}",
-      "html": "<ul>\n<li><p>Si <span>\\(\\theta =0\\)</span> : méthode d’Euler implicite (rectangle à droite) ;</p></li>\n<li><p>Si <span>\\(\\theta = 1\\)</span> : méthode d’Euler explicite (rectangle à gauche) ;</p></li>\n<li><p>Si <span>\\(\\theta = 1/2\\)</span> : méthode de Carnk Nikolson.</p></li>\n</ul>",
+      "html": "<ul>\n<li><p>Si <span class=\"math inline\">\\(\\theta =0\\)</span> : méthode d’Euler implicite (rectangle à droite) ;</p></li>\n<li><p>Si <span class=\"math inline\">\\(\\theta = 1\\)</span> : méthode d’Euler explicite (rectangle à gauche) ;</p></li>\n<li><p>Si <span class=\"math inline\">\\(\\theta = 1/2\\)</span> : méthode de Carnk Nikolson.</p></li>\n</ul>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "question",
       "latex": "Montrer que le schéma est consistant d'ordre 1 si $\\theta \\neq \\frac12$.",
-      "html": "<p>Montrer que le schéma est consistant d’ordre 1 si <span>\\(\\theta \\neq \\frac12\\)</span>.</p>",
+      "html": "<p>Montrer que le schéma est consistant d’ordre 1 si <span class=\"math inline\">\\(\\theta \\neq \\frac12\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "reponse",
       "latex": "On calcule l'erreur de consistance : \n\\begin{align*}\n  h\\, e_n(h) &= \\underbrace{y(t_{n+1}) - y(t_n)}_{\\text{développement de Taylor}} - h \\theta \\underbrace{f(t_n, y(t_n))}_{y'(t_n)} - h(1-\\theta) \\underbrace{f(t_{n+1}, y(t_{n+1}))}_{y'(t_{n+1})} \\\\\n             &= h y'(t_n) + \\frac{h^2}{2}y''(t_n) + \\frac{h^3}{6} y'''(c_n) - h \\theta y'(t_n) - h(1-\\theta) \\left( y'(t_n) + hy''(t_n) + \\frac{h^2}{2}y'''(c'_n)  \\right) \\\\\n             &= h y'(t_n)(1-\\theta - (1-\\theta)) + h^2 \\left( \\frac{y''(t_n)}{2} - (1-\\theta)y''(t_n)  \\right) + h^3 \\underbrace{\\left( ... \\right)}_{\\text{borné}} \\\\\n\\end{align*}\t\nDonc $$|e_n(h)| \\leq h \\left| \\frac{y''(t_n)}{2} - (1-\\theta)y''(t_n)  \\right| + h^2 M$$\nce qui permet de conclure que l'ordre de consistance est $1$ si $\\theta \\neq \\frac{1}{2}$, l'ordre de consistance est $2$ si $\\theta = \\frac{1}{2}$.",
-      "html": "<p>On calcule l’erreur de consistance :\n<span>\\[\\begin{align*}\n  h\\, e_n(h) &amp;= \\underbrace{y(t_{n+1}) - y(t_n)}_{\\text{développement de Taylor}} - h \\theta \\underbrace{f(t_n, y(t_n))}_{y&#39;(t_n)} - h(1-\\theta) \\underbrace{f(t_{n+1}, y(t_{n+1}))}_{y&#39;(t_{n+1})} \\\\\n             &amp;= h y&#39;(t_n) + \\frac{h^2}{2}y&#39;&#39;(t_n) + \\frac{h^3}{6} y&#39;&#39;&#39;(c_n) - h \\theta y&#39;(t_n) - h(1-\\theta) \\left( y&#39;(t_n) + hy&#39;&#39;(t_n) + \\frac{h^2}{2}y&#39;&#39;&#39;(c&#39;_n)  \\right) \\\\\n             &amp;= h y&#39;(t_n)(1-\\theta - (1-\\theta)) + h^2 \\left( \\frac{y&#39;&#39;(t_n)}{2} - (1-\\theta)y&#39;&#39;(t_n)  \\right) + h^3 \\underbrace{\\left( ... \\right)}_{\\text{borné}} \\\\\n\\end{align*}\\]</span>\nDonc <span>\\[|e_n(h)| \\leq h \\left| \\frac{y&#39;&#39;(t_n)}{2} - (1-\\theta)y&#39;&#39;(t_n)  \\right| + h^2 M\\]</span>\nce qui permet de conclure que l’ordre de consistance est <span>\\(1\\)</span> si <span>\\(\\theta \\neq \\frac{1}{2}\\)</span>, l’ordre de consistance est <span>\\(2\\)</span> si <span>\\(\\theta = \\frac{1}{2}\\)</span>.</p>",
+      "html": "<p>On calcule l’erreur de consistance :\n<span class=\"math display\">\\[\\begin{align*}\n  h\\, e_n(h) &amp;= \\underbrace{y(t_{n+1}) - y(t_n)}_{\\text{développement de Taylor}} - h \\theta \\underbrace{f(t_n, y(t_n))}_{y&#39;(t_n)} - h(1-\\theta) \\underbrace{f(t_{n+1}, y(t_{n+1}))}_{y&#39;(t_{n+1})} \\\\\n             &amp;= h y&#39;(t_n) + \\frac{h^2}{2}y&#39;&#39;(t_n) + \\frac{h^3}{6} y&#39;&#39;&#39;(c_n) - h \\theta y&#39;(t_n) - h(1-\\theta) \\left( y&#39;(t_n) + hy&#39;&#39;(t_n) + \\frac{h^2}{2}y&#39;&#39;&#39;(c&#39;_n)  \\right) \\\\\n             &amp;= h y&#39;(t_n)(1-\\theta - (1-\\theta)) + h^2 \\left( \\frac{y&#39;&#39;(t_n)}{2} - (1-\\theta)y&#39;&#39;(t_n)  \\right) + h^3 \\underbrace{\\left( ... \\right)}_{\\text{borné}} \\\\\n\\end{align*}\\]</span>\nDonc <span class=\"math display\">\\[|e_n(h)| \\leq h \\left| \\frac{y&#39;&#39;(t_n)}{2} - (1-\\theta)y&#39;&#39;(t_n)  \\right| + h^2 M\\]</span>\nce qui permet de conclure que l’ordre de consistance est <span class=\"math inline\">\\(1\\)</span> si <span class=\"math inline\">\\(\\theta \\neq \\frac{1}{2}\\)</span>, l’ordre de consistance est <span class=\"math inline\">\\(2\\)</span> si <span class=\"math inline\">\\(\\theta = \\frac{1}{2}\\)</span>.</p>",
       "order": 6
     }
   ],

@@ -9,69 +9,69 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "",
-  "updated_at": "2025-08-23T12:07:02.134Z",
+  "updated_at": "2025-08-25T08:56:52.154Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On considère un échantillon $X_1,...,X_n$ suivant une loi normale $\\mathcal{N}(\\mu,\\sigma)$. On cherche un estimateur de $\\mu$ et de $\\sigma$ par la méthode du maximum de vraisemblance. On note $(x_1,...,x_n)$ une réalisation de cet échantillon. On rappelle que la densité d'une loi normale est $$f(x)=\\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}$$",
-      "html": "<p>On considère un échantillon <span>\\(X_1,...,X_n\\)</span> suivant une loi normale <span>\\(\\mathcal{N}(\\mu,\\sigma)\\)</span>. On cherche un estimateur de <span>\\(\\mu\\)</span> et de <span>\\(\\sigma\\)</span> par la méthode du maximum de vraisemblance. On note <span>\\((x_1,...,x_n)\\)</span> une réalisation de cet échantillon. On rappelle que la densité d’une loi normale est <span>\\[f(x)=\\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\]</span></p>",
+      "html": "<p>On considère un échantillon <span class=\"math inline\">\\(X_1,...,X_n\\)</span> suivant une loi normale <span class=\"math inline\">\\(\\mathcal{N}(\\mu,\\sigma)\\)</span>. On cherche un estimateur de <span class=\"math inline\">\\(\\mu\\)</span> et de <span class=\"math inline\">\\(\\sigma\\)</span> par la méthode du maximum de vraisemblance. On note <span class=\"math inline\">\\((x_1,...,x_n)\\)</span> une réalisation de cet échantillon. On rappelle que la densité d’une loi normale est <span class=\"math display\">\\[f(x)=\\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Exprimer la fonction de vraisemblance $L(x_1,...,x_n,\\mu,\\sigma)$, puis son logarithme.",
-      "html": "<p>Exprimer la fonction de vraisemblance <span>\\(L(x_1,...,x_n,\\mu,\\sigma)\\)</span>, puis son logarithme.</p>",
+      "html": "<p>Exprimer la fonction de vraisemblance <span class=\"math inline\">\\(L(x_1,...,x_n,\\mu,\\sigma)\\)</span>, puis son logarithme.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "$$L(x_1,...,x_n,\\mu,\\sigma) = \\prod_{i=1}^n f(x_i) = \\prod_{i=1}^n \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{(x_i-\\mu)^2}{2\\sigma^2}}$$\n\t\t$$\\ln L(x_1,...,x_n,\\mu,\\sigma) = \\sum_{i=1}^n \\ln \\left(\\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{(x_i-\\mu)^2}{2\\sigma^2}}\\right) = -n\\ln(\\sigma \\sqrt{2\\pi}) - \\sum_{i=1}^n \\frac{(x_i-\\mu)^2}{2\\sigma^2}$$",
-      "html": "<p><span>\\[L(x_1,...,x_n,\\mu,\\sigma) = \\prod_{i=1}^n f(x_i) = \\prod_{i=1}^n \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{(x_i-\\mu)^2}{2\\sigma^2}}\\]</span>\n<span>\\[\\ln L(x_1,...,x_n,\\mu,\\sigma) = \\sum_{i=1}^n \\ln \\left(\\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{(x_i-\\mu)^2}{2\\sigma^2}}\\right) = -n\\ln(\\sigma \\sqrt{2\\pi}) - \\sum_{i=1}^n \\frac{(x_i-\\mu)^2}{2\\sigma^2}\\]</span></p>",
+      "html": "<p><span class=\"math display\">\\[L(x_1,...,x_n,\\mu,\\sigma) = \\prod_{i=1}^n f(x_i) = \\prod_{i=1}^n \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{(x_i-\\mu)^2}{2\\sigma^2}}\\]</span>\n<span class=\"math display\">\\[\\ln L(x_1,...,x_n,\\mu,\\sigma) = \\sum_{i=1}^n \\ln \\left(\\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{(x_i-\\mu)^2}{2\\sigma^2}}\\right) = -n\\ln(\\sigma \\sqrt{2\\pi}) - \\sum_{i=1}^n \\frac{(x_i-\\mu)^2}{2\\sigma^2}\\]</span></p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Dériver $\\ln L(x_1,...,x_n,\\mu,\\sigma)$ par rapport à $\\mu$.",
-      "html": "<p>Dériver <span>\\(\\ln L(x_1,...,x_n,\\mu,\\sigma)\\)</span> par rapport à <span>\\(\\mu\\)</span>.</p>",
+      "html": "<p>Dériver <span class=\"math inline\">\\(\\ln L(x_1,...,x_n,\\mu,\\sigma)\\)</span> par rapport à <span class=\"math inline\">\\(\\mu\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "$$\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\mu} = \\sum_{i=1}^n \\frac{x_i-\\mu}{\\sigma^2}$$",
-      "html": "<p><span>\\[\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\mu} = \\sum_{i=1}^n \\frac{x_i-\\mu}{\\sigma^2}\\]</span></p>",
+      "html": "<p><span class=\"math display\">\\[\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\mu} = \\sum_{i=1}^n \\frac{x_i-\\mu}{\\sigma^2}\\]</span></p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "En déduire un estimateur de $\\mu$.",
-      "html": "<p>En déduire un estimateur de <span>\\(\\mu\\)</span>.</p>",
+      "html": "<p>En déduire un estimateur de <span class=\"math inline\">\\(\\mu\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "$$\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\mu} = 0 \\Leftrightarrow \\sum_{i=1}^n \\frac{x_i-\\mu}{\\sigma^2} = 0 \\Leftrightarrow \\sum_{i=1}^n x_i - n\\mu = 0 \\Leftrightarrow \\mu = \\frac{1}{n}\\sum_{i=1}^n x_i$$\n\t\tdonc $\\hat{\\mu} = \\frac{1}{n}\\sum_{i=1}^n x_i$ est un estimateur de $\\mu$.",
-      "html": "<p><span>\\[\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\mu} = 0 \\Leftrightarrow \\sum_{i=1}^n \\frac{x_i-\\mu}{\\sigma^2} = 0 \\Leftrightarrow \\sum_{i=1}^n x_i - n\\mu = 0 \\Leftrightarrow \\mu = \\frac{1}{n}\\sum_{i=1}^n x_i\\]</span>\ndonc <span>\\(\\hat{\\mu} = \\frac{1}{n}\\sum_{i=1}^n x_i\\)</span> est un estimateur de <span>\\(\\mu\\)</span>.</p>",
+      "html": "<p><span class=\"math display\">\\[\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\mu} = 0 \\Leftrightarrow \\sum_{i=1}^n \\frac{x_i-\\mu}{\\sigma^2} = 0 \\Leftrightarrow \\sum_{i=1}^n x_i - n\\mu = 0 \\Leftrightarrow \\mu = \\frac{1}{n}\\sum_{i=1}^n x_i\\]</span>\ndonc <span class=\"math inline\">\\(\\hat{\\mu} = \\frac{1}{n}\\sum_{i=1}^n x_i\\)</span> est un estimateur de <span class=\"math inline\">\\(\\mu\\)</span>.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "question",
       "latex": "Déterminer un estimateur de $\\sigma$ avec une démarche analogue.",
-      "html": "<p>Déterminer un estimateur de <span>\\(\\sigma\\)</span> avec une démarche analogue.</p>",
+      "html": "<p>Déterminer un estimateur de <span class=\"math inline\">\\(\\sigma\\)</span> avec une démarche analogue.</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "reponse",
       "latex": "$$\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\sigma} = \\sum_{i=1}^n \\frac{(x_i-\\mu)^2}{\\sigma^3} - \\frac{n}{\\sigma}$$\n\t\t$$\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\sigma} = 0 \\Leftrightarrow \\sum_{i=1}^n \\frac{(x_i-\\mu)^2}{\\sigma^3} - \\frac{n}{\\sigma} = 0 \\Leftrightarrow \\sum_{i=1}^n (x_i-\\mu)^2 = n\\sigma^2$$\n\t\t$$\\Leftrightarrow \\sigma^2 = \\frac{1}{n}\\sum_{i=1}^n (x_i-\\mu)^2$$\n\t\tdonc $\\hat{\\sigma} = \\sqrt{\\frac{1}{n}\\sum_{i=1}^n (x_i-\\mu)^2}$ est un estimateur de $\\sigma$.",
-      "html": "<p><span>\\[\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\sigma} = \\sum_{i=1}^n \\frac{(x_i-\\mu)^2}{\\sigma^3} - \\frac{n}{\\sigma}\\]</span>\n<span>\\[\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\sigma} = 0 \\Leftrightarrow \\sum_{i=1}^n \\frac{(x_i-\\mu)^2}{\\sigma^3} - \\frac{n}{\\sigma} = 0 \\Leftrightarrow \\sum_{i=1}^n (x_i-\\mu)^2 = n\\sigma^2\\]</span>\n<span>\\[\\Leftrightarrow \\sigma^2 = \\frac{1}{n}\\sum_{i=1}^n (x_i-\\mu)^2\\]</span>\ndonc <span>\\(\\hat{\\sigma} = \\sqrt{\\frac{1}{n}\\sum_{i=1}^n (x_i-\\mu)^2}\\)</span> est un estimateur de <span>\\(\\sigma\\)</span>.</p>",
+      "html": "<p><span class=\"math display\">\\[\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\sigma} = \\sum_{i=1}^n \\frac{(x_i-\\mu)^2}{\\sigma^3} - \\frac{n}{\\sigma}\\]</span>\n<span class=\"math display\">\\[\\frac{\\partial \\ln L(x_1,...,x_n,\\mu,\\sigma)}{\\partial \\sigma} = 0 \\Leftrightarrow \\sum_{i=1}^n \\frac{(x_i-\\mu)^2}{\\sigma^3} - \\frac{n}{\\sigma} = 0 \\Leftrightarrow \\sum_{i=1}^n (x_i-\\mu)^2 = n\\sigma^2\\]</span>\n<span class=\"math display\">\\[\\Leftrightarrow \\sigma^2 = \\frac{1}{n}\\sum_{i=1}^n (x_i-\\mu)^2\\]</span>\ndonc <span class=\"math inline\">\\(\\hat{\\sigma} = \\sqrt{\\frac{1}{n}\\sum_{i=1}^n (x_i-\\mu)^2}\\)</span> est un estimateur de <span class=\"math inline\">\\(\\sigma\\)</span>.</p>",
       "order": 9
     }
   ],

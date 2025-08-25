@@ -9,27 +9,27 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-09-01",
-  "updated_at": "2025-08-23T12:07:03.141Z",
+  "updated_at": "2025-08-25T08:56:53.186Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Pour des raisons de rentabilité, le vol Océanic $815$ reliant Sydney à Los Angeles a été sur-réservé. Il y a $98$ places dans l'avion et $100$ billets ont été vendus.",
-      "html": "<p>Pour des raisons de rentabilité, le vol Océanic <span>\\(815\\)</span> reliant Sydney à Los Angeles a été sur-réservé. Il y a <span>\\(98\\)</span> places dans l’avion et <span>\\(100\\)</span> billets ont été vendus.</p>",
+      "html": "<p>Pour des raisons de rentabilité, le vol Océanic <span class=\"math inline\">\\(815\\)</span> reliant Sydney à Los Angeles a été sur-réservé. Il y a <span class=\"math inline\">\\(98\\)</span> places dans l’avion et <span class=\"math inline\">\\(100\\)</span> billets ont été vendus.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Sachant que la probabilité qu'un passager se désiste est de $10\\%$, quelle est la probabilité qu'au moins un passager reste bloqué à Sydney ?",
-      "html": "<p>Sachant que la probabilité qu’un passager se désiste est de <span>\\(10\\%\\)</span>, quelle est la probabilité qu’au moins un passager reste bloqué à Sydney ?</p>",
+      "html": "<p>Sachant que la probabilité qu’un passager se désiste est de <span class=\"math inline\">\\(10\\%\\)</span>, quelle est la probabilité qu’au moins un passager reste bloqué à Sydney ?</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "Soit $Y$ le nombre de passagers à se présenter à l'embarquement: $Y\\sim \\mathcal{B}(100,0.9)$ et on cherche la probabilité qu'il y ait au moins un passager bloqué à Sydney, c'est-à-dire qu'il y ait plus de $99$ personne à se présenter:\n\t\\begin{align*}\n\t\\p(Y\\geq 99)&=\\p(Y=99)+\\p(Y=100) \\\\\n\t&=\\binom{100}{99}\\times 0.9^{99} \\times 0.1^{1} + \\binom{100}{100}\\times 0.9^{100} \\times 0.1^{0} \\\\\n\t&\\simeq 0.00032,\n\t\\end{align*}\n\tsoit environ $0.03$\\% de chance qu'il y ait au moins un passager bloqué à Sydney.",
-      "html": "<p>Soit <span>\\(Y\\)</span> le nombre de passagers à se présenter à l’embarquement: <span>\\(Y\\sim \\mathcal{B}(100,0.9)\\)</span> et on cherche la probabilité qu’il y ait au moins un passager bloqué à Sydney, c’est-à-dire qu’il y ait plus de <span>\\(99\\)</span> personne à se présenter:\n<span>\\[\\begin{align*}\n    \\p(Y\\geq 99)&amp;=\\p(Y=99)+\\p(Y=100) \\\\\n    &amp;=\\binom{100}{99}\\times 0.9^{99} \\times 0.1^{1} + \\binom{100}{100}\\times 0.9^{100} \\times 0.1^{0} \\\\\n    &amp;\\simeq 0.00032,\n    \\end{align*}\\]</span>\nsoit environ <span>\\(0.03\\)</span>% de chance qu’il y ait au moins un passager bloqué à Sydney.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(Y\\)</span> le nombre de passagers à se présenter à l’embarquement: <span class=\"math inline\">\\(Y\\sim \\mathcal{B}(100,0.9)\\)</span> et on cherche la probabilité qu’il y ait au moins un passager bloqué à Sydney, c’est-à-dire qu’il y ait plus de <span class=\"math inline\">\\(99\\)</span> personne à se présenter:\n<span class=\"math display\">\\[\\begin{align*}\n    \\p(Y\\geq 99)&amp;=\\p(Y=99)+\\p(Y=100) \\\\\n    &amp;=\\binom{100}{99}\\times 0.9^{99} \\times 0.1^{1} + \\binom{100}{100}\\times 0.9^{100} \\times 0.1^{0} \\\\\n    &amp;\\simeq 0.00032,\n    \\end{align*}\\]</span>\nsoit environ <span class=\"math inline\">\\(0.03\\)</span>% de chance qu’il y ait au moins un passager bloqué à Sydney.</p>",
       "order": 3
     }
   ],

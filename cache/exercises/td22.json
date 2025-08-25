@@ -9,20 +9,20 @@
   "organization": "",
   "video_id": "",
   "created_at": "2025-03-20",
-  "updated_at": "2025-08-23T12:07:57.149Z",
+  "updated_at": "2025-08-25T08:57:49.932Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soient $X_1, \\ldots, X_n$ des variables aléatoires indépendantes de même loi de Poisson de paramètre $\\theta > 0$. On note $\\theta_n = \\frac{1}{n} \\sum_{i=1}^n X_i$.",
-      "html": "<p>Soient <span>\\(X_1, \\ldots, X_n\\)</span> des variables aléatoires indépendantes de même loi de Poisson de paramètre <span>\\(\\theta &gt; 0\\)</span>. On note <span>\\(\\theta_n = \\frac{1}{n} \\sum_{i=1}^n X_i\\)</span>.</p>",
+      "html": "<p>Soient <span class=\"math inline\">\\(X_1, \\ldots, X_n\\)</span> des variables aléatoires indépendantes de même loi de Poisson de paramètre <span class=\"math inline\">\\(\\theta &gt; 0\\)</span>. On note <span class=\"math inline\">\\(\\theta_n = \\frac{1}{n} \\sum_{i=1}^n X_i\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Rappeler le TCL vérifié par $\\theta_n$. En déduire un intervalle de confiance asymptotique à 95 \\% pour $\\theta$.",
-      "html": "<p>Rappeler le TCL vérifié par <span>\\(\\theta_n\\)</span>. En déduire un intervalle de confiance asymptotique à 95 % pour <span>\\(\\theta\\)</span>.</p>",
+      "html": "<p>Rappeler le TCL vérifié par <span class=\"math inline\">\\(\\theta_n\\)</span>. En déduire un intervalle de confiance asymptotique à 95 % pour <span class=\"math inline\">\\(\\theta\\)</span>.</p>",
       "order": 2
     },
     {
@@ -36,14 +36,14 @@
       "id": "block_4",
       "type": "reponse",
       "latex": "D'après le théorème de la limite centrale appliqué aux variables $X_i$ i.i.d. :\n$$\n    \\sqrt{n} (\\hat{\\theta}_n - \\theta) \\xrightarrow{\\text{en loi}} \\mathcal{N}(0, \\theta),\n$$\nce qui implique que :\n$$\n    \\sqrt{n} \\frac{\\hat{\\theta}_n - \\theta}{\\sqrt{\\hat{\\theta}_n}} \\xrightarrow{\\text{en loi}} \\mathcal{N}(0,1).\n$$\nUn intervalle de confiance asymptotique à 95\\% pour $\\theta$ est donc donné par :\n$$\n    \\left[ \\hat{\\theta}_n - q \\frac{\\sqrt{\\hat{\\theta}_n}}{\\sqrt{n}}, \\hat{\\theta}_n + q \\frac{\\sqrt{\\hat{\\theta}_n}}{\\sqrt{n}} \\right]\n$$\navec $q = \\Phi^{-1}(0.975) \\approx 1.96$.",
-      "html": "<p>D’après le théorème de la limite centrale appliqué aux variables <span>\\(X_i\\)</span> i.i.d. :\n<span>\\[\\sqrt{n} (\\hat{\\theta}_n - \\theta) \\xrightarrow{\\text{en loi}} \\mathcal{N}(0, \\theta),\\]</span>\nce qui implique que :\n<span>\\[\\sqrt{n} \\frac{\\hat{\\theta}_n - \\theta}{\\sqrt{\\hat{\\theta}_n}} \\xrightarrow{\\text{en loi}} \\mathcal{N}(0,1).\\]</span>\nUn intervalle de confiance asymptotique à 95% pour <span>\\(\\theta\\)</span> est donc donné par :\n<span>\\[\\left[ \\hat{\\theta}_n - q \\frac{\\sqrt{\\hat{\\theta}_n}}{\\sqrt{n}}, \\hat{\\theta}_n + q \\frac{\\sqrt{\\hat{\\theta}_n}}{\\sqrt{n}} \\right]\\]</span>\navec <span>\\(q = \\Phi^{-1}(0.975) \\approx 1.96\\)</span>.</p>",
+      "html": "<p>D’après le théorème de la limite centrale appliqué aux variables <span class=\"math inline\">\\(X_i\\)</span> i.i.d. :\n<span class=\"math display\">\\[\\sqrt{n} (\\hat{\\theta}_n - \\theta) \\xrightarrow{\\text{en loi}} \\mathcal{N}(0, \\theta),\\]</span>\nce qui implique que :\n<span class=\"math display\">\\[\\sqrt{n} \\frac{\\hat{\\theta}_n - \\theta}{\\sqrt{\\hat{\\theta}_n}} \\xrightarrow{\\text{en loi}} \\mathcal{N}(0,1).\\]</span>\nUn intervalle de confiance asymptotique à 95% pour <span class=\"math inline\">\\(\\theta\\)</span> est donc donné par :\n<span class=\"math display\">\\[\\left[ \\hat{\\theta}_n - q \\frac{\\sqrt{\\hat{\\theta}_n}}{\\sqrt{n}}, \\hat{\\theta}_n + q \\frac{\\sqrt{\\hat{\\theta}_n}}{\\sqrt{n}} \\right]\\]</span>\navec <span class=\"math inline\">\\(q = \\Phi^{-1}(0.975) \\approx 1.96\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "question",
       "latex": "Trouver une fonction $g : \\mathbb{R}^+ \\rightarrow \\mathbb{R}$ telle que $\\sqrt{n}(g(\\theta_n) - g(\\theta))$ tende en loi vers une gaussienne centrée réduite. En déduire un intervalle de confiance asymptotique à 95\\% pour $\\theta$.",
-      "html": "<p>Trouver une fonction <span>\\(g : \\mathbb{R}^+ \\rightarrow \\mathbb{R}\\)</span> telle que <span>\\(\\sqrt{n}(g(\\theta_n) - g(\\theta))\\)</span> tende en loi vers une gaussienne centrée réduite. En déduire un intervalle de confiance asymptotique à 95% pour <span>\\(\\theta\\)</span>.</p>",
+      "html": "<p>Trouver une fonction <span class=\"math inline\">\\(g : \\mathbb{R}^+ \\rightarrow \\mathbb{R}\\)</span> telle que <span class=\"math inline\">\\(\\sqrt{n}(g(\\theta_n) - g(\\theta))\\)</span> tende en loi vers une gaussienne centrée réduite. En déduire un intervalle de confiance asymptotique à 95% pour <span class=\"math inline\">\\(\\theta\\)</span>.</p>",
       "order": 5
     },
     {
@@ -57,7 +57,7 @@
       "id": "block_7",
       "type": "reponse",
       "latex": "En utilisant la méthode Delta, nous avons :\n\\begin{equation}\n    \\sqrt{n} (g(\\hat{\\lambda}_n) - g(\\lambda)) \\xrightarrow{d} \\mathcal{N}(0, \\lambda (g'(\\lambda))^2).\n\\end{equation}\nSi nous choisissons $g(\\lambda) = 2\\sqrt{\\lambda}$, nous obtenons :\n\\begin{equation}\n    \\sqrt{n} \\left( 2\\sqrt{\\hat{\\lambda}_n} - 2\\sqrt{\\lambda} \\right) \\xrightarrow{d} \\mathcal{N}(0,1).\n\\end{equation}\nD'où un nouvel intervalle de confiance asymptotique à 95\\% :\n\\begin{equation}\n    \\left[ 2\\sqrt{\\hat{\\lambda}_n} - \\frac{q}{\\sqrt{n}}, 2\\sqrt{\\hat{\\lambda}_n} + \\frac{q}{\\sqrt{n}} \\right]^2.\n\\end{equation}",
-      "html": "<p>En utilisant la méthode Delta, nous avons :\n<span>\\[\\begin{equation}\n    \\sqrt{n} (g(\\hat{\\lambda}_n) - g(\\lambda)) \\xrightarrow{d} \\mathcal{N}(0, \\lambda (g&#39;(\\lambda))^2).\n\\end{equation}\\]</span>\nSi nous choisissons <span>\\(g(\\lambda) = 2\\sqrt{\\lambda}\\)</span>, nous obtenons :\n<span>\\[\\begin{equation}\n    \\sqrt{n} \\left( 2\\sqrt{\\hat{\\lambda}_n} - 2\\sqrt{\\lambda} \\right) \\xrightarrow{d} \\mathcal{N}(0,1).\n\\end{equation}\\]</span>\nD’où un nouvel intervalle de confiance asymptotique à 95% :\n<span>\\[\\begin{equation}\n    \\left[ 2\\sqrt{\\hat{\\lambda}_n} - \\frac{q}{\\sqrt{n}}, 2\\sqrt{\\hat{\\lambda}_n} + \\frac{q}{\\sqrt{n}} \\right]^2.\n\\end{equation}\\]</span></p>",
+      "html": "<p>En utilisant la méthode Delta, nous avons :\n<span class=\"math display\">\\[\\begin{equation}\n    \\sqrt{n} (g(\\hat{\\lambda}_n) - g(\\lambda)) \\xrightarrow{d} \\mathcal{N}(0, \\lambda (g&#39;(\\lambda))^2).\n\\end{equation}\\]</span>\nSi nous choisissons <span class=\"math inline\">\\(g(\\lambda) = 2\\sqrt{\\lambda}\\)</span>, nous obtenons :\n<span class=\"math display\">\\[\\begin{equation}\n    \\sqrt{n} \\left( 2\\sqrt{\\hat{\\lambda}_n} - 2\\sqrt{\\lambda} \\right) \\xrightarrow{d} \\mathcal{N}(0,1).\n\\end{equation}\\]</span>\nD’où un nouvel intervalle de confiance asymptotique à 95% :\n<span class=\"math display\">\\[\\begin{equation}\n    \\left[ 2\\sqrt{\\hat{\\lambda}_n} - \\frac{q}{\\sqrt{n}}, 2\\sqrt{\\hat{\\lambda}_n} + \\frac{q}{\\sqrt{n}} \\right]^2.\n\\end{equation}\\]</span></p>",
       "order": 7
     },
     {

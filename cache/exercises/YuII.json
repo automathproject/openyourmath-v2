@@ -9,27 +9,27 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-11-27",
-  "updated_at": "2025-08-23T12:07:14.562Z",
+  "updated_at": "2025-08-25T08:57:05.221Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Un laboratoire vient d'acquérir une nouvelle balance et on souhaite comparer la régularité du travail de cette dernière pour de très petites pesées à la norme habituelle du descriptif pour laquelle la variance $\\sigma_0^2$ est égale à $4 g^2$. On prélève alors un échantillon de 30 masses dont les valeurs (en grammes) sont données ci-après :\n2.53 ; 1.51 ; 1.52 ; 1.44 ; 4.32 ; 2.36 ; 2.41 ; 2.06 ; 1.57 ; 1.68 ; 3.09 ; 0.54 ; 2.32 ; 0.19 ; 2.66 ; 2.20 ; 1.04 ; 1.02 ; 0.74 ; 1.01 ; 0.35 ; 2.42 ; 2.66 ; 1.11 ; 0.56 ; 1.75 ; 1.51 ; 3.80 ; 2.22 ; 2.88\n\nOn suppose que les masses sont distribuées selon une loi normale.",
-      "html": "<p>Un laboratoire vient d’acquérir une nouvelle balance et on souhaite comparer la régularité du travail de cette dernière pour de très petites pesées à la norme habituelle du descriptif pour laquelle la variance <span>\\(\\sigma_0^2\\)</span> est égale à <span>\\(4 g^2\\)</span>. On prélève alors un échantillon de 30 masses dont les valeurs (en grammes) sont données ci-après :\n2.53 ; 1.51 ; 1.52 ; 1.44 ; 4.32 ; 2.36 ; 2.41 ; 2.06 ; 1.57 ; 1.68 ; 3.09 ; 0.54 ; 2.32 ; 0.19 ; 2.66 ; 2.20 ; 1.04 ; 1.02 ; 0.74 ; 1.01 ; 0.35 ; 2.42 ; 2.66 ; 1.11 ; 0.56 ; 1.75 ; 1.51 ; 3.80 ; 2.22 ; 2.88</p>\n<p>On suppose que les masses sont distribuées selon une loi normale.</p>",
+      "html": "<p>Un laboratoire vient d’acquérir une nouvelle balance et on souhaite comparer la régularité du travail de cette dernière pour de très petites pesées à la norme habituelle du descriptif pour laquelle la variance <span class=\"math inline\">\\(\\sigma_0^2\\)</span> est égale à <span class=\"math inline\">\\(4 g^2\\)</span>. On prélève alors un échantillon de 30 masses dont les valeurs (en grammes) sont données ci-après :\n2.53 ; 1.51 ; 1.52 ; 1.44 ; 4.32 ; 2.36 ; 2.41 ; 2.06 ; 1.57 ; 1.68 ; 3.09 ; 0.54 ; 2.32 ; 0.19 ; 2.66 ; 2.20 ; 1.04 ; 1.02 ; 0.74 ; 1.01 ; 0.35 ; 2.42 ; 2.66 ; 1.11 ; 0.56 ; 1.75 ; 1.51 ; 3.80 ; 2.22 ; 2.88</p>\n<p>On suppose que les masses sont distribuées selon une loi normale.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Au risque de $5\\%$, peut-on affirmer que la variance de l'échantillon est conforme à la norme du descriptif ?",
-      "html": "<p>Au risque de <span>\\(5\\%\\)</span>, peut-on affirmer que la variance de l’échantillon est conforme à la norme du descriptif ?</p>",
+      "html": "<p>Au risque de <span class=\"math inline\">\\(5\\%\\)</span>, peut-on affirmer que la variance de l’échantillon est conforme à la norme du descriptif ?</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "text",
       "latex": "Indication : ce test n'est pas détaillé dans le cours. Pour le mettre en place, on pourra définir une variable de décision en s'appuyant sur le fait que si $X_1,...,X_n$ est un $n$-échantillon dont la loi mère est une loi normale $\\mathcal{N}(\\mu,\\sigma^2)$ et $\\overline{X}$ la moyenne empirique de l'échantillon, alors la variable aléatoire \n$$S =  \\sum_{i=1}^{n} \\left(\\frac{X_i-\\overline{X}}{\\sigma} \\right)^2$$\nsuit une loi $\\chi^2(n-1)$.",
-      "html": "<p>Indication : ce test n’est pas détaillé dans le cours. Pour le mettre en place, on pourra définir une variable de décision en s’appuyant sur le fait que si <span>\\(X_1,...,X_n\\)</span> est un <span>\\(n\\)</span>-échantillon dont la loi mère est une loi normale <span>\\(\\mathcal{N}(\\mu,\\sigma^2)\\)</span> et <span>\\(\\overline{X}\\)</span> la moyenne empirique de l’échantillon, alors la variable aléatoire\n<span>\\[S =  \\sum_{i=1}^{n} \\left(\\frac{X_i-\\overline{X}}{\\sigma} \\right)^2\\]</span>\nsuit une loi <span>\\(\\chi^2(n-1)\\)</span>.</p>",
+      "html": "<p>Indication : ce test n’est pas détaillé dans le cours. Pour le mettre en place, on pourra définir une variable de décision en s’appuyant sur le fait que si <span class=\"math inline\">\\(X_1,...,X_n\\)</span> est un <span class=\"math inline\">\\(n\\)</span>-échantillon dont la loi mère est une loi normale <span class=\"math inline\">\\(\\mathcal{N}(\\mu,\\sigma^2)\\)</span> et <span class=\"math inline\">\\(\\overline{X}\\)</span> la moyenne empirique de l’échantillon, alors la variable aléatoire\n<span class=\"math display\">\\[S =  \\sum_{i=1}^{n} \\left(\\frac{X_i-\\overline{X}}{\\sigma} \\right)^2\\]</span>\nsuit une loi <span class=\"math inline\">\\(\\chi^2(n-1)\\)</span>.</p>",
       "order": 3
     }
   ],

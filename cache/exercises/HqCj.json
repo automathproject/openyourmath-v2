@@ -9,27 +9,27 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2024-11-24",
-  "updated_at": "2025-08-23T12:06:50.109Z",
+  "updated_at": "2025-08-25T08:56:39.698Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On s’intéresse à la campagne de vaccination contre la grippe A pandémique de l’année 2009 en France. On mène une étude sur la teneur en thiomersal dans un vaccin. Le thiomersal est un composé contenant du mercure, utilisé de longue date comme conservateur dans les médicaments, et notamment dans les vaccins, pour prévenir la contamination bactérienne. Toutefois, sa toxicité oblige à limiter la quantité utilisée.\n\nUn vaccin produit par un laboratoire français contient, selon la notice, 45 $\\mu g$ de thiomersal par dose. On suppose que la teneur en thiomersal suit une loi normale d'espérance $m$ et de variance $\\sigma^2$, inconnues. On dispose d’un échantillon de 16 valeurs disponibles dans le fichier joint.",
-      "html": "<p>On s’intéresse à la campagne de vaccination contre la grippe A pandémique de l’année 2009 en France. On mène une étude sur la teneur en thiomersal dans un vaccin. Le thiomersal est un composé contenant du mercure, utilisé de longue date comme conservateur dans les médicaments, et notamment dans les vaccins, pour prévenir la contamination bactérienne. Toutefois, sa toxicité oblige à limiter la quantité utilisée.</p>\n<p>Un vaccin produit par un laboratoire français contient, selon la notice, 45 <span>\\(\\mu g\\)</span> de thiomersal par dose. On suppose que la teneur en thiomersal suit une loi normale d’espérance <span>\\(m\\)</span> et de variance <span>\\(\\sigma^2\\)</span>, inconnues. On dispose d’un échantillon de 16 valeurs disponibles dans le fichier joint.</p>",
+      "html": "<p>On s’intéresse à la campagne de vaccination contre la grippe A pandémique de l’année 2009 en France. On mène une étude sur la teneur en thiomersal dans un vaccin. Le thiomersal est un composé contenant du mercure, utilisé de longue date comme conservateur dans les médicaments, et notamment dans les vaccins, pour prévenir la contamination bactérienne. Toutefois, sa toxicité oblige à limiter la quantité utilisée.</p>\n<p>Un vaccin produit par un laboratoire français contient, selon la notice, 45 <span class=\"math inline\">\\(\\mu g\\)</span> de thiomersal par dose. On suppose que la teneur en thiomersal suit une loi normale d’espérance <span class=\"math inline\">\\(m\\)</span> et de variance <span class=\"math inline\">\\(\\sigma^2\\)</span>, inconnues. On dispose d’un échantillon de 16 valeurs disponibles dans le fichier joint.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "On considère trois tests de conformité de la moyenne $m$, définis par les hypothèses suivantes : \n$$A : \\begin{cases}\n                    H_0 : m = 45,\\\\\n                    H_1 : m > 45,\n                \\end{cases} \\quad B : \\begin{cases}\n                    H_0 : m = 45,\\\\\n                    H_1 : m < 45,\n                \\end{cases} \\quad C : \\begin{cases}\n                    H_0 : m = 45,\\\\\n                    H_1 : m \\neq 45,\n                \\end{cases}$$\n    Si on veut se prémunir en priorité du risque :\n    \\begin{enumerate}\n        \\item[(a)] lié à la contamination bactérienne du vaccin,\n        \\item[(b)] ou de la toxicité du thiomersal,\n    \\end{enumerate}\n    quel test doit-on choisir dans chacun de ces deux cas ? Justifier rapidement.",
-      "html": "<p>On considère trois tests de conformité de la moyenne <span>\\(m\\)</span>, définis par les hypothèses suivantes :\n<span>\\[A : \\begin{cases}\n                    H_0 : m = 45,\\\\\n                    H_1 : m &gt; 45,\n                \\end{cases} \\quad B : \\begin{cases}\n                    H_0 : m = 45,\\\\\n                    H_1 : m &lt; 45,\n                \\end{cases} \\quad C : \\begin{cases}\n                    H_0 : m = 45,\\\\\n                    H_1 : m \\neq 45,\n                \\end{cases}\\]</span>\nSi on veut se prémunir en priorité du risque :</p>\n<ol>\n<li><p>lié à la contamination bactérienne du vaccin,</p></li>\n<li><p>ou de la toxicité du thiomersal,</p></li>\n</ol>\n<p>quel test doit-on choisir dans chacun de ces deux cas ? Justifier rapidement.</p>",
+      "html": "<p>On considère trois tests de conformité de la moyenne <span class=\"math inline\">\\(m\\)</span>, définis par les hypothèses suivantes :\n<span class=\"math display\">\\[A : \\begin{cases}\n                    H_0 : m = 45,\\\\\n                    H_1 : m &gt; 45,\n                \\end{cases} \\quad B : \\begin{cases}\n                    H_0 : m = 45,\\\\\n                    H_1 : m &lt; 45,\n                \\end{cases} \\quad C : \\begin{cases}\n                    H_0 : m = 45,\\\\\n                    H_1 : m \\neq 45,\n                \\end{cases}\\]</span>\nSi on veut se prémunir en priorité du risque :</p>\n<ol>\n<li><p>lié à la contamination bactérienne du vaccin,</p></li>\n<li><p>ou de la toxicité du thiomersal,</p></li>\n</ol>\n<p>quel test doit-on choisir dans chacun de ces deux cas ? Justifier rapidement.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "indication",
       "latex": "Identifier le risque que chaque hypothèse alternative $H_1$ cherche à prévenir.",
-      "html": "<p>Identifier le risque que chaque hypothèse alternative <span>\\(H_1\\)</span> cherche à prévenir.</p>",
+      "html": "<p>Identifier le risque que chaque hypothèse alternative <span class=\"math inline\">\\(H_1\\)</span> cherche à prévenir.</p>",
       "order": 3
     },
     {
@@ -43,7 +43,7 @@
       "id": "block_5",
       "type": "question",
       "latex": "Donner une estimation de $m$ par un intervalle de confiance de niveau 99\\%.",
-      "html": "<p>Donner une estimation de <span>\\(m\\)</span> par un intervalle de confiance de niveau 99%.</p>",
+      "html": "<p>Donner une estimation de <span class=\"math inline\">\\(m\\)</span> par un intervalle de confiance de niveau 99%.</p>",
       "order": 5
     },
     {
@@ -64,7 +64,7 @@
       "id": "block_8",
       "type": "question",
       "latex": "Réaliser le test $A$ avec un risque de première espèce de 5\\%. Quelle est la valeur critique de la moyenne de l’échantillon au-delà de laquelle on rejette l’hypothèse $H_0$ ? Exprimer la prise de décision à l’issue de ce test.",
-      "html": "<p>Réaliser le test <span>\\(A\\)</span> avec un risque de première espèce de 5%. Quelle est la valeur critique de la moyenne de l’échantillon au-delà de laquelle on rejette l’hypothèse <span>\\(H_0\\)</span> ? Exprimer la prise de décision à l’issue de ce test.</p>",
+      "html": "<p>Réaliser le test <span class=\"math inline\">\\(A\\)</span> avec un risque de première espèce de 5%. Quelle est la valeur critique de la moyenne de l’échantillon au-delà de laquelle on rejette l’hypothèse <span class=\"math inline\">\\(H_0\\)</span> ? Exprimer la prise de décision à l’issue de ce test.</p>",
       "order": 8
     },
     {
@@ -85,14 +85,14 @@
       "id": "block_11",
       "type": "question",
       "latex": "On considère le test défini par les hypothèses suivantes : \n    $$\\begin{cases}\n        H_0 : m = 45, \\\\\n        H_1 : m = m_1.\n    \\end{cases}$$\n    Calculer la puissance du test $A'$ pour $m_1 = 46$ et $m_1 = 47$.",
-      "html": "<p>On considère le test défini par les hypothèses suivantes :\n<span>\\[\\begin{cases}\n        H_0 : m = 45, \\\\\n        H_1 : m = m_1.\n    \\end{cases}\\]</span>\nCalculer la puissance du test <span>\\(A&#39;\\)</span> pour <span>\\(m_1 = 46\\)</span> et <span>\\(m_1 = 47\\)</span>.</p>",
+      "html": "<p>On considère le test défini par les hypothèses suivantes :\n<span class=\"math display\">\\[\\begin{cases}\n        H_0 : m = 45, \\\\\n        H_1 : m = m_1.\n    \\end{cases}\\]</span>\nCalculer la puissance du test <span class=\"math inline\">\\(A&#39;\\)</span> pour <span class=\"math inline\">\\(m_1 = 46\\)</span> et <span class=\"math inline\">\\(m_1 = 47\\)</span>.</p>",
       "order": 11
     },
     {
       "id": "block_12",
       "type": "indication",
       "latex": "La puissance est $1 - \\beta$, où $\\beta$ est la probabilité d’erreur de seconde espèce.",
-      "html": "<p>La puissance est <span>\\(1 - \\beta\\)</span>, où <span>\\(\\beta\\)</span> est la probabilité d’erreur de seconde espèce.</p>",
+      "html": "<p>La puissance est <span class=\"math inline\">\\(1 - \\beta\\)</span>, où <span class=\"math inline\">\\(\\beta\\)</span> est la probabilité d’erreur de seconde espèce.</p>",
       "order": 12
     },
     {

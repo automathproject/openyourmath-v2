@@ -9,27 +9,27 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-10-07",
-  "updated_at": "2025-08-23T12:08:04.333Z",
+  "updated_at": "2025-08-25T08:57:57.362Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soit $F_X$ une fonction de répartition admettant un point de discontinuité en $x_0 \\in \\R$.",
-      "html": "<p>Soit <span>\\(F_X\\)</span> une fonction de répartition admettant un point de discontinuité en <span>\\(x_0 \\in \\R\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(F_X\\)</span> une fonction de répartition admettant un point de discontinuité en <span class=\"math inline\">\\(x_0 \\in \\R\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Démontrer que le saut $p_0 = F_X(x_0)-F_X(x_0^-)$ est égal à $\\PP(X=x_0)$.",
-      "html": "<p>Démontrer que le saut <span>\\(p_0 = F_X(x_0)-F_X(x_0^-)\\)</span> est égal à <span>\\(\\PP(X=x_0)\\)</span>.</p>",
+      "html": "<p>Démontrer que le saut <span class=\"math inline\">\\(p_0 = F_X(x_0)-F_X(x_0^-)\\)</span> est égal à <span class=\"math inline\">\\(\\PP(X=x_0)\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "La limite à gauche se traduit par $F_X(x_0^-) = \\lim\\limits_{h_n \\to 0, h_n >0} F_X(x_0-h_n) = \\lim\\limits_{h_n \\to 0, h_n >0}\\PP(X \\leq x_0-h_n)$ donc $p_0 = \\lim_{h_n \\to 0, h_n >0} \\PP(X \\in ]x_0-h_n ; x_0])$. \n \t\n \tOr la suite d'événements $(B_n)$ définie par $B_n = \\{X \\in ]x_0-h_n ; x_0]\\}$ est décroissante donc d'après le théorème de continuité décroissante, $\\PP(B_n) \\xrightarrow[n \\to +\\infty]{} \\PP(\\bigcap B_n) = \\PP(\\{x_0\\})$.",
-      "html": "<p>La limite à gauche se traduit par <span>\\(F_X(x_0^-) = \\lim\\limits_{h_n \\to 0, h_n &gt;0} F_X(x_0-h_n) = \\lim\\limits_{h_n \\to 0, h_n &gt;0}\\PP(X \\leq x_0-h_n)\\)</span> donc <span>\\(p_0 = \\lim_{h_n \\to 0, h_n &gt;0} \\PP(X \\in ]x_0-h_n ; x_0])\\)</span>.</p>\n<p>Or la suite d’événements <span>\\((B_n)\\)</span> définie par <span>\\(B_n = \\{X \\in ]x_0-h_n ; x_0]\\}\\)</span> est décroissante donc d’après le théorème de continuité décroissante, <span>\\(\\PP(B_n) \\xrightarrow[n \\to +\\infty]{} \\PP(\\bigcap B_n) = \\PP(\\{x_0\\})\\)</span>.</p>",
+      "html": "<p>La limite à gauche se traduit par <span class=\"math inline\">\\(F_X(x_0^-) = \\lim\\limits_{h_n \\to 0, h_n &gt;0} F_X(x_0-h_n) = \\lim\\limits_{h_n \\to 0, h_n &gt;0}\\PP(X \\leq x_0-h_n)\\)</span> donc <span class=\"math inline\">\\(p_0 = \\lim_{h_n \\to 0, h_n &gt;0} \\PP(X \\in ]x_0-h_n ; x_0])\\)</span>.</p>\n<p>Or la suite d’événements <span class=\"math inline\">\\((B_n)\\)</span> définie par <span class=\"math inline\">\\(B_n = \\{X \\in ]x_0-h_n ; x_0]\\}\\)</span> est décroissante donc d’après le théorème de continuité décroissante, <span class=\"math inline\">\\(\\PP(B_n) \\xrightarrow[n \\to +\\infty]{} \\PP(\\bigcap B_n) = \\PP(\\{x_0\\})\\)</span>.</p>",
       "order": 3
     }
   ],

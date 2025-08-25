@@ -9,55 +9,55 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-08-25",
-  "updated_at": "2025-08-23T12:06:53.517Z",
+  "updated_at": "2025-08-25T08:56:43.260Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Soient 9 variables aléatoires indépendantes, normales centrées réduites notées $(U_i)_{1 \\leq i \\leq 9}$.",
-      "html": "<p>Soient 9 variables aléatoires indépendantes, normales centrées réduites notées <span>\\((U_i)_{1 \\leq i \\leq 9}\\)</span>.</p>",
+      "html": "<p>Soient 9 variables aléatoires indépendantes, normales centrées réduites notées <span class=\"math inline\">\\((U_i)_{1 \\leq i \\leq 9}\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Quelle est la loi suivie par la variable aléatoire $X=\\sum\\limits_{i=1}^{9}U_i^2$ ? Déterminer le réel $x$ tel que $\\PP(X > x) = 0.05$.",
-      "html": "<p>Quelle est la loi suivie par la variable aléatoire <span>\\(X=\\sum\\limits_{i=1}^{9}U_i^2\\)</span> ? Déterminer le réel <span>\\(x\\)</span> tel que <span>\\(\\PP(X &gt; x) = 0.05\\)</span>.</p>",
+      "html": "<p>Quelle est la loi suivie par la variable aléatoire <span class=\"math inline\">\\(X=\\sum\\limits_{i=1}^{9}U_i^2\\)</span> ? Déterminer le réel <span class=\"math inline\">\\(x\\)</span> tel que <span class=\"math inline\">\\(\\PP(X &gt; x) = 0.05\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "On a $X \\sim \\chi^2(9)$ et $x = 16.92$.",
-      "html": "<p>On a <span>\\(X \\sim \\chi^2(9)\\)</span> et <span>\\(x = 16.92\\)</span>.</p>",
+      "html": "<p>On a <span class=\"math inline\">\\(X \\sim \\chi^2(9)\\)</span> et <span class=\"math inline\">\\(x = 16.92\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Soit $Y$ une variable aléatoire suivant une loi normale de moyenne 10 et d'écart-type 3, indépendante de $X$. Quelle est la loi suivie par la variable aléatoire $Z=\\frac{Y-10}{\\sqrt{X}}$ ? Déterminer le réel $z$ tel que $\\PP(Z > z) = 0.05$.",
-      "html": "<p>Soit <span>\\(Y\\)</span> une variable aléatoire suivant une loi normale de moyenne 10 et d’écart-type 3, indépendante de <span>\\(X\\)</span>. Quelle est la loi suivie par la variable aléatoire <span>\\(Z=\\frac{Y-10}{\\sqrt{X}}\\)</span> ? Déterminer le réel <span>\\(z\\)</span> tel que <span>\\(\\PP(Z &gt; z) = 0.05\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(Y\\)</span> une variable aléatoire suivant une loi normale de moyenne 10 et d’écart-type 3, indépendante de <span class=\"math inline\">\\(X\\)</span>. Quelle est la loi suivie par la variable aléatoire <span class=\"math inline\">\\(Z=\\frac{Y-10}{\\sqrt{X}}\\)</span> ? Déterminer le réel <span class=\"math inline\">\\(z\\)</span> tel que <span class=\"math inline\">\\(\\PP(Z &gt; z) = 0.05\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "On a $Z = \\frac{\\frac{Y-10}{3}}{\\sqrt{\\frac{X}{9}}}$ donc par définition, $Z$ suit une loi de Student $St(9)$ et $z = 1.833$.",
-      "html": "<p>On a <span>\\(Z = \\frac{\\frac{Y-10}{3}}{\\sqrt{\\frac{X}{9}}}\\)</span> donc par définition, <span>\\(Z\\)</span> suit une loi de Student <span>\\(St(9)\\)</span> et <span>\\(z = 1.833\\)</span>.</p>",
+      "html": "<p>On a <span class=\"math inline\">\\(Z = \\frac{\\frac{Y-10}{3}}{\\sqrt{\\frac{X}{9}}}\\)</span> donc par définition, <span class=\"math inline\">\\(Z\\)</span> suit une loi de Student <span class=\"math inline\">\\(St(9)\\)</span> et <span class=\"math inline\">\\(z = 1.833\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Soit $V$ une variable aléatoire distribuée selon une loi du $\\chi^2$ à 3 degrés de liberté, indépendante de $X$. Quelle est la loi suivie par $W_1=\\frac{X}{3V}$ ? Quelle est la loi suivie par $W_2=\\frac{3V}{X}$ ? Déterminer le réel $w_2$ tel que $\\PP(W_2 > w_2) = 0.05$.",
-      "html": "<p>Soit <span>\\(V\\)</span> une variable aléatoire distribuée selon une loi du <span>\\(\\chi^2\\)</span> à 3 degrés de liberté, indépendante de <span>\\(X\\)</span>. Quelle est la loi suivie par <span>\\(W_1=\\frac{X}{3V}\\)</span> ? Quelle est la loi suivie par <span>\\(W_2=\\frac{3V}{X}\\)</span> ? Déterminer le réel <span>\\(w_2\\)</span> tel que <span>\\(\\PP(W_2 &gt; w_2) = 0.05\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(V\\)</span> une variable aléatoire distribuée selon une loi du <span class=\"math inline\">\\(\\chi^2\\)</span> à 3 degrés de liberté, indépendante de <span class=\"math inline\">\\(X\\)</span>. Quelle est la loi suivie par <span class=\"math inline\">\\(W_1=\\frac{X}{3V}\\)</span> ? Quelle est la loi suivie par <span class=\"math inline\">\\(W_2=\\frac{3V}{X}\\)</span> ? Déterminer le réel <span class=\"math inline\">\\(w_2\\)</span> tel que <span class=\"math inline\">\\(\\PP(W_2 &gt; w_2) = 0.05\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "On a $W_1 = \\frac{\\frac{X}{9}}{\\frac{V}{3}}$ donc $W_1$ suit une loi de Fisher $F(9,3)$. De même, $W_2 = \\frac{3V}{\\frac{X}{9}}$ donc $W_2$ suit une loi de Fisher $F(3,9)$. On a $w_2 = 0.325$.",
-      "html": "<p>On a <span>\\(W_1 = \\frac{\\frac{X}{9}}{\\frac{V}{3}}\\)</span> donc <span>\\(W_1\\)</span> suit une loi de Fisher <span>\\(F(9,3)\\)</span>. De même, <span>\\(W_2 = \\frac{3V}{\\frac{X}{9}}\\)</span> donc <span>\\(W_2\\)</span> suit une loi de Fisher <span>\\(F(3,9)\\)</span>. On a <span>\\(w_2 = 0.325\\)</span>.</p>",
+      "html": "<p>On a <span class=\"math inline\">\\(W_1 = \\frac{\\frac{X}{9}}{\\frac{V}{3}}\\)</span> donc <span class=\"math inline\">\\(W_1\\)</span> suit une loi de Fisher <span class=\"math inline\">\\(F(9,3)\\)</span>. De même, <span class=\"math inline\">\\(W_2 = \\frac{3V}{\\frac{X}{9}}\\)</span> donc <span class=\"math inline\">\\(W_2\\)</span> suit une loi de Fisher <span class=\"math inline\">\\(F(3,9)\\)</span>. On a <span class=\"math inline\">\\(w_2 = 0.325\\)</span>.</p>",
       "order": 7
     }
   ],

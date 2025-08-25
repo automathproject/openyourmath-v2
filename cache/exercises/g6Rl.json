@@ -9,62 +9,62 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-09-24",
-  "updated_at": "2025-08-23T12:07:31.763Z",
+  "updated_at": "2025-08-25T08:57:23.556Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Une machine fabrique des lames de carton empilées par paquets de 36. On suppose que chaque lame a une épaisseur $X_i$ sont i.i.d. avec $\\mathbb{E}(X_i)=0.6$~cm et $\\sigma(X_i)=0.1$~cm. On note $X$ l'épaisseur d'un paquet de 36 cartons.",
-      "html": "<p>Une machine fabrique des lames de carton empilées par paquets de 36. On suppose que chaque lame a une épaisseur <span>\\(X_i\\)</span> sont i.i.d. avec <span>\\(\\mathbb{E}(X_i)=0.6\\)</span> cm et <span>\\(\\sigma(X_i)=0.1\\)</span> cm. On note <span>\\(X\\)</span> l’épaisseur d’un paquet de 36 cartons.</p>",
+      "html": "<p>Une machine fabrique des lames de carton empilées par paquets de 36. On suppose que chaque lame a une épaisseur <span class=\"math inline\">\\(X_i\\)</span> sont i.i.d. avec <span class=\"math inline\">\\(\\mathbb{E}(X_i)=0.6\\)</span> cm et <span class=\"math inline\">\\(\\sigma(X_i)=0.1\\)</span> cm. On note <span class=\"math inline\">\\(X\\)</span> l’épaisseur d’un paquet de 36 cartons.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Si les $X_i$ suivent une loi normale, quelle est la loi de probabilité de $X$ ?",
-      "html": "<p>Si les <span>\\(X_i\\)</span> suivent une loi normale, quelle est la loi de probabilité de <span>\\(X\\)</span> ?</p>",
+      "html": "<p>Si les <span class=\"math inline\">\\(X_i\\)</span> suivent une loi normale, quelle est la loi de probabilité de <span class=\"math inline\">\\(X\\)</span> ?</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "Si les $X_i$ suivent des lois Normales, alors $X_i\\sim \\mathcal{N}(0.6,\\sigma=0.1)$ et la variable $\\displaystyle X=\\sum_{i=1}^{36}$ suit une loi Normale de paramètres $\\mu=36\\times 0.6=21.6$ et $\\sigma=\\sqrt{36\\times 0.1^2}=0.6$.",
-      "html": "<p>Si les <span>\\(X_i\\)</span> suivent des lois Normales, alors <span>\\(X_i\\sim \\mathcal{N}(0.6,\\sigma=0.1)\\)</span> et la variable <span>\\(\\displaystyle X=\\sum_{i=1}^{36}\\)</span> suit une loi Normale de paramètres <span>\\(\\mu=36\\times 0.6=21.6\\)</span> et <span>\\(\\sigma=\\sqrt{36\\times 0.1^2}=0.6\\)</span>.</p>",
+      "html": "<p>Si les <span class=\"math inline\">\\(X_i\\)</span> suivent des lois Normales, alors <span class=\"math inline\">\\(X_i\\sim \\mathcal{N}(0.6,\\sigma=0.1)\\)</span> et la variable <span class=\"math inline\">\\(\\displaystyle X=\\sum_{i=1}^{36}\\)</span> suit une loi Normale de paramètres <span class=\"math inline\">\\(\\mu=36\\times 0.6=21.6\\)</span> et <span class=\"math inline\">\\(\\sigma=\\sqrt{36\\times 0.1^2}=0.6\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Si on ne connaît pas la loi des $X_i$, donner une approximation de la loi de $X$ en justifiant.",
-      "html": "<p>Si on ne connaît pas la loi des <span>\\(X_i\\)</span>, donner une approximation de la loi de <span>\\(X\\)</span> en justifiant.</p>",
+      "html": "<p>Si on ne connaît pas la loi des <span class=\"math inline\">\\(X_i\\)</span>, donner une approximation de la loi de <span class=\"math inline\">\\(X\\)</span> en justifiant.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "Comme $n\\geq 30$, on peut appliquer le théorème central limite et ainsi $X$ suit approximativement la loi $\\mathcal{N}(21.6,\\sigma=0.6)$.",
-      "html": "<p>Comme <span>\\(n\\geq 30\\)</span>, on peut appliquer le théorème central limite et ainsi <span>\\(X\\)</span> suit approximativement la loi <span>\\(\\mathcal{N}(21.6,\\sigma=0.6)\\)</span>.</p>",
+      "html": "<p>Comme <span class=\"math inline\">\\(n\\geq 30\\)</span>, on peut appliquer le théorème central limite et ainsi <span class=\"math inline\">\\(X\\)</span> suit approximativement la loi <span class=\"math inline\">\\(\\mathcal{N}(21.6,\\sigma=0.6)\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "text",
       "latex": "On pose $$Y=\\frac{1}{36}\\sum_{i=1}^{36}X_i$$",
-      "html": "<p>On pose <span>\\[Y=\\frac{1}{36}\\sum_{i=1}^{36}X_i\\]</span></p>",
+      "html": "<p>On pose <span class=\"math display\">\\[Y=\\frac{1}{36}\\sum_{i=1}^{36}X_i\\]</span></p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "question",
       "latex": "Quelle est la probabilité que $Y$ soit compris entre 0.63 et 0.66 cm ? Comment peut-on interpréter ce résultat ?",
-      "html": "<p>Quelle est la probabilité que <span>\\(Y\\)</span> soit compris entre 0.63 et 0.66 cm ? Comment peut-on interpréter ce résultat ?</p>",
+      "html": "<p>Quelle est la probabilité que <span class=\"math inline\">\\(Y\\)</span> soit compris entre 0.63 et 0.66 cm ? Comment peut-on interpréter ce résultat ?</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "reponse",
       "latex": "On a\n\t\t\\begin{align*}\n\t\t\t\\mathbb{P}(0.63\\leq Y \\leq 0.66)\n\t\t\t&= \\mathbb{P}(36\\times 0.63 \\leq X \\leq 36 \\times 0.66) \\\\\n\t\t\t&= \\mathbb{P}\\left( \\frac{36\\times 0.63-21.6}{0.6}\\leq \\frac{X-21.6}{0.6} \\leq \\frac{36\\times 0.66-21.6}{0.6}\\right) \\\\\n\t\t\t&\\simeq \\mathbb{P}(1.8 \\leq Z \\leq 3.6) \\quad \\text{ par le théorème central-limite, avec } Z\\sim \\mathcal{N}(0,1) \\\\\n\t\t\t&\\simeq \\mathbb{P}(Z\\leq 3.6) -\\mathbb{P}(Z\\leq 1.8) \\\\\n\t\t\t&\\simeq 0.999-0.9641 \\quad \\text{par lecture du tableau de loi} \\\\\n\t\t\t&\\simeq 0.0358\n\t\t\\end{align*}\n\t\t$Y$ représente l'épaisseur moyenne d'un carton sur un paquet de $36$ cartons.",
-      "html": "<p>On a\n<span>\\[\\begin{align*}\n            \\mathbb{P}(0.63\\leq Y \\leq 0.66)\n            &amp;= \\mathbb{P}(36\\times 0.63 \\leq X \\leq 36 \\times 0.66) \\\\\n            &amp;= \\mathbb{P}\\left( \\frac{36\\times 0.63-21.6}{0.6}\\leq \\frac{X-21.6}{0.6} \\leq \\frac{36\\times 0.66-21.6}{0.6}\\right) \\\\\n            &amp;\\simeq \\mathbb{P}(1.8 \\leq Z \\leq 3.6) \\quad \\text{ par le théorème central-limite, avec } Z\\sim \\mathcal{N}(0,1) \\\\\n            &amp;\\simeq \\mathbb{P}(Z\\leq 3.6) -\\mathbb{P}(Z\\leq 1.8) \\\\\n            &amp;\\simeq 0.999-0.9641 \\quad \\text{par lecture du tableau de loi} \\\\\n            &amp;\\simeq 0.0358\n        \\end{align*}\\]</span>\n<span>\\(Y\\)</span> représente l’épaisseur moyenne d’un carton sur un paquet de <span>\\(36\\)</span> cartons.</p>",
+      "html": "<p>On a\n<span class=\"math display\">\\[\\begin{align*}\n            \\mathbb{P}(0.63\\leq Y \\leq 0.66)\n            &amp;= \\mathbb{P}(36\\times 0.63 \\leq X \\leq 36 \\times 0.66) \\\\\n            &amp;= \\mathbb{P}\\left( \\frac{36\\times 0.63-21.6}{0.6}\\leq \\frac{X-21.6}{0.6} \\leq \\frac{36\\times 0.66-21.6}{0.6}\\right) \\\\\n            &amp;\\simeq \\mathbb{P}(1.8 \\leq Z \\leq 3.6) \\quad \\text{ par le théorème central-limite, avec } Z\\sim \\mathcal{N}(0,1) \\\\\n            &amp;\\simeq \\mathbb{P}(Z\\leq 3.6) -\\mathbb{P}(Z\\leq 1.8) \\\\\n            &amp;\\simeq 0.999-0.9641 \\quad \\text{par lecture du tableau de loi} \\\\\n            &amp;\\simeq 0.0358\n        \\end{align*}\\]</span>\n<span class=\"math inline\">\\(Y\\)</span> représente l’épaisseur moyenne d’un carton sur un paquet de <span class=\"math inline\">\\(36\\)</span> cartons.</p>",
       "order": 8
     }
   ],

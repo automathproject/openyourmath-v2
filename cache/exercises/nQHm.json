@@ -9,211 +9,211 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2025-04-16",
-  "updated_at": "2025-08-23T12:07:43.557Z",
+  "updated_at": "2025-08-25T08:57:35.776Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On considère la fonction \\( f \\) définie par \\( f(x,y)=x^2+y \\) sur l'ensemble :\n$$\n\t\t\\mathcal{K}=\\left\\{\\left.(x,y)\\in\\R^2\\right|\\ x^2+y^2\\leq1\\ \\text{et}\\ x+y\\geq0\\right\\}.\n$$\n\nOn définit également les ensembles : $$B_1=\\left\\{ (x,-x) \\in \\mathbb{R}^2 \\,,\\,\\ x\\in\\left[-\\frac{\\sqrt{2}}{2};\\frac{\\sqrt{2}}{2}\\right]\\right\\} \\text{ et } B_2=\\left\\{(\\cos\\theta,\\sin\\theta)\\in \\mathbb{R}^2 \\,,\\, \\theta\\in\\left[-\\frac{\\pi}{4};\\frac{3\\pi}{4}\\right]\\right\\}.$$",
-      "html": "<p>On considère la fonction <span>\\(f\\)</span> définie par <span>\\(f(x,y)=x^2+y\\)</span> sur l’ensemble :\n<span>\\[\\mathcal{K}=\\left\\{\\left.(x,y)\\in\\R^2\\right|\\ x^2+y^2\\leq1\\ \\text{et}\\ x+y\\geq0\\right\\}.\\]</span></p>\n<p>On définit également les ensembles : <span>\\[B_1=\\left\\{ (x,-x) \\in \\mathbb{R}^2 \\,,\\,\\ x\\in\\left[-\\frac{\\sqrt{2}}{2};\\frac{\\sqrt{2}}{2}\\right]\\right\\} \\text{ et } B_2=\\left\\{(\\cos\\theta,\\sin\\theta)\\in \\mathbb{R}^2 \\,,\\, \\theta\\in\\left[-\\frac{\\pi}{4};\\frac{3\\pi}{4}\\right]\\right\\}.\\]</span></p>",
+      "html": "<p>On considère la fonction <span class=\"math inline\">\\(f\\)</span> définie par <span class=\"math inline\">\\(f(x,y)=x^2+y\\)</span> sur l’ensemble :\n<span class=\"math display\">\\[\\mathcal{K}=\\left\\{\\left.(x,y)\\in\\R^2\\right|\\ x^2+y^2\\leq1\\ \\text{et}\\ x+y\\geq0\\right\\}.\\]</span></p>\n<p>On définit également les ensembles : <span class=\"math display\">\\[B_1=\\left\\{ (x,-x) \\in \\mathbb{R}^2 \\,,\\,\\ x\\in\\left[-\\frac{\\sqrt{2}}{2};\\frac{\\sqrt{2}}{2}\\right]\\right\\} \\text{ et } B_2=\\left\\{(\\cos\\theta,\\sin\\theta)\\in \\mathbb{R}^2 \\,,\\, \\theta\\in\\left[-\\frac{\\pi}{4};\\frac{3\\pi}{4}\\right]\\right\\}.\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Représenter graphiquement  \\(\\mathcal{K}\\). Le domaine \\(\\mathcal{K}\\) est-il ouvert ? Est-il fermé ?",
-      "html": "<p>Représenter graphiquement <span>\\(\\mathcal{K}\\)</span>. Le domaine <span>\\(\\mathcal{K}\\)</span> est-il ouvert ? Est-il fermé ?</p>",
+      "html": "<p>Représenter graphiquement <span class=\"math inline\">\\(\\mathcal{K}\\)</span>. Le domaine <span class=\"math inline\">\\(\\mathcal{K}\\)</span> est-il ouvert ? Est-il fermé ?</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "indication",
       "latex": "Tracer le disque unité défini par \\(x^2+y^2\\leq 1\\) et la demi-plan défini par \\(x+y\\geq0\\), puis représenter l'intersection de ces deux ensembles. Analyser les conditions sur le cercle (bord du disque) et la droite \\(x+y=0\\) pour déterminer la nature topologique de \\(\\mathcal{K}\\).",
-      "html": "<p>Tracer le disque unité défini par <span>\\(x^2+y^2\\leq 1\\)</span> et la demi-plan défini par <span>\\(x+y\\geq0\\)</span>, puis représenter l’intersection de ces deux ensembles. Analyser les conditions sur le cercle (bord du disque) et la droite <span>\\(x+y=0\\)</span> pour déterminer la nature topologique de <span>\\(\\mathcal{K}\\)</span>.</p>",
+      "html": "<p>Tracer le disque unité défini par <span class=\"math inline\">\\(x^2+y^2\\leq 1\\)</span> et la demi-plan défini par <span class=\"math inline\">\\(x+y\\geq0\\)</span>, puis représenter l’intersection de ces deux ensembles. Analyser les conditions sur le cercle (bord du disque) et la droite <span class=\"math inline\">\\(x+y=0\\)</span> pour déterminer la nature topologique de <span class=\"math inline\">\\(\\mathcal{K}\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "reponse",
-      "latex": "\\begin{tikzpicture}[scale=1]\n\t\t\t\t\n\t\t\t\t\\fill[white] (0,0) circle(1);\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\\begin{scope}\n\t\t\t\t\t\\clip (0,0) circle(1);\n\t\t\t\t\t\\fill[gray!50, opacity=0.6] (-1.2,1.2) -- (1.2,-1.2) -- (1.2,1.2) -- cycle;\n\t\t\t\t\\end{scope}\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\\draw[thick] (0,0) circle(1);\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\\draw[black, thick, ] (-1.2,1.2) -- (1.2,-1.2) node[below right] {\\small $x + y = 0$};\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\\draw[->] (-1.2,0) -- (1.3,0) node[right] {$x$};\n\t\t\t\t\\draw[->] (0,-1.2) -- (0,1.3) node[above] {$y$};\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\\node at (0.4,0.4) { $\\mathcal{K}$};\n\t\t\t\\end{tikzpicture}\n\t\t\tLe domaine $\\mathcal{K}$ est le disque unité tronqué par la droite $x + y = 0$. Il contient tout son bord, il est fermé et n'est pas ouvert.",
-      "html": "<p>Le domaine <span>\\(\\mathcal{K}\\)</span> est le disque unité tronqué par la droite <span>\\(x + y = 0\\)</span>. Il contient tout son bord, il est fermé et n’est pas ouvert.</p>",
+      "latex": "\\begin{tikzpicture}[scale=1]\n\t\t\t\t% Disque unité\n\t\t\t\t\\fill[white] (0,0) circle(1);\n\t\t\t\t\n\t\t\t\t% Demi-plan x + y >= 0\n\t\t\t\t\\begin{scope}\n\t\t\t\t\t\\clip (0,0) circle(1);\n\t\t\t\t\t\\fill[gray!50, opacity=0.6] (-1.2,1.2) -- (1.2,-1.2) -- (1.2,1.2) -- cycle;\n\t\t\t\t\\end{scope}\n\t\t\t\t\n\t\t\t\t% Cercle frontière\n\t\t\t\t\\draw[thick] (0,0) circle(1);\n\t\t\t\t\n\t\t\t\t% Droite x + y = 0\n\t\t\t\t\\draw[black, thick, ] (-1.2,1.2) -- (1.2,-1.2) node[below right] {\\small $x + y = 0$};\n\t\t\t\t\n\t\t\t\t% Axes\n\t\t\t\t\\draw[->] (-1.2,0) -- (1.3,0) node[right] {$x$};\n\t\t\t\t\\draw[->] (0,-1.2) -- (0,1.3) node[above] {$y$};\n\t\t\t\t\n\t\t\t\t% Label du domaine\n\t\t\t\t\\node at (0.4,0.4) { $\\mathcal{K}$};\n\t\t\t\\end{tikzpicture}\n\t\t\tLe domaine $\\mathcal{K}$ est le disque unité tronqué par la droite $x + y = 0$. Il contient tout son bord, il est fermé et n'est pas ouvert.",
+      "html": "<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/nQHm-tikz-1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></p>\nLe domaine <span class=\"math inline\">\\(\\mathcal{K}\\)</span> est le disque unité tronqué par la droite <span class=\"math inline\">\\(x + y = 0\\)</span>. Il contient tout son bord, il est fermé et n’est pas ouvert.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "question",
       "latex": "Justifier que $B_1$ et $B_2$ sont des sous-ensembles de $\\mathcal{K}$ et les représenter sur le graphique.",
-      "html": "<p>Justifier que <span>\\(B_1\\)</span> et <span>\\(B_2\\)</span> sont des sous-ensembles de <span>\\(\\mathcal{K}\\)</span> et les représenter sur le graphique.</p>",
+      "html": "<p>Justifier que <span class=\"math inline\">\\(B_1\\)</span> et <span class=\"math inline\">\\(B_2\\)</span> sont des sous-ensembles de <span class=\"math inline\">\\(\\mathcal{K}\\)</span> et les représenter sur le graphique.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "indication",
       "latex": "Montrer que \\(B_2\\) est une portion du cercle unité correspondant aux angles \\(\\theta\\in\\left[-\\frac{\\pi}{4},\\frac{3\\pi}{4}\\right]\\) et préciser comment cette portion s'intersecte avec la condition \\(x+y\\geq0\\).",
-      "html": "<p>Montrer que <span>\\(B_2\\)</span> est une portion du cercle unité correspondant aux angles <span>\\(\\theta\\in\\left[-\\frac{\\pi}{4},\\frac{3\\pi}{4}\\right]\\)</span> et préciser comment cette portion s’intersecte avec la condition <span>\\(x+y\\geq0\\)</span>.</p>",
+      "html": "<p>Montrer que <span class=\"math inline\">\\(B_2\\)</span> est une portion du cercle unité correspondant aux angles <span class=\"math inline\">\\(\\theta\\in\\left[-\\frac{\\pi}{4},\\frac{3\\pi}{4}\\right]\\)</span> et préciser comment cette portion s’intersecte avec la condition <span class=\"math inline\">\\(x+y\\geq0\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "$B_1$ est la partie du bord de $\\mathcal{K}$ en forme d'arc de cercle ; $B_2$ est la partie droite. Les extrémités coïncident bien, ce sont les points de coordonnées respectives $\\left(-\\frac{\\sqrt{2}}{2},\\frac{\\sqrt{2}}{2}\\right)$ et $\\left(\\frac{\\sqrt{2}}{2}, -\\frac{\\sqrt{2}}{2}\\right)$.",
-      "html": "<p><span>\\(B_1\\)</span> est la partie du bord de <span>\\(\\mathcal{K}\\)</span> en forme d’arc de cercle ; <span>\\(B_2\\)</span> est la partie droite. Les extrémités coïncident bien, ce sont les points de coordonnées respectives <span>\\(\\left(-\\frac{\\sqrt{2}}{2},\\frac{\\sqrt{2}}{2}\\right)\\)</span> et <span>\\(\\left(\\frac{\\sqrt{2}}{2}, -\\frac{\\sqrt{2}}{2}\\right)\\)</span>.</p>",
+      "html": "<p><span class=\"math inline\">\\(B_1\\)</span> est la partie du bord de <span class=\"math inline\">\\(\\mathcal{K}\\)</span> en forme d’arc de cercle ; <span class=\"math inline\">\\(B_2\\)</span> est la partie droite. Les extrémités coïncident bien, ce sont les points de coordonnées respectives <span class=\"math inline\">\\(\\left(-\\frac{\\sqrt{2}}{2},\\frac{\\sqrt{2}}{2}\\right)\\)</span> et <span class=\"math inline\">\\(\\left(\\frac{\\sqrt{2}}{2}, -\\frac{\\sqrt{2}}{2}\\right)\\)</span>.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "question",
       "latex": "Justifier que la fonction \\(f\\) admet un maximum et un minimum global sur \\(\\mathcal{K}\\).",
-      "html": "<p>Justifier que la fonction <span>\\(f\\)</span> admet un maximum et un minimum global sur <span>\\(\\mathcal{K}\\)</span>.</p>",
+      "html": "<p>Justifier que la fonction <span class=\"math inline\">\\(f\\)</span> admet un maximum et un minimum global sur <span class=\"math inline\">\\(\\mathcal{K}\\)</span>.</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "indication",
       "latex": "Montrer que \\(\\mathcal{K}\\) est un ensemble compact (fermé et borné) et appliquer le théorème des extrema sur les compacts pour conclure à l'existence d'un maximum et d'un minimum global de \\(f\\).",
-      "html": "<p>Montrer que <span>\\(\\mathcal{K}\\)</span> est un ensemble compact (fermé et borné) et appliquer le théorème des extrema sur les compacts pour conclure à l’existence d’un maximum et d’un minimum global de <span>\\(f\\)</span>.</p>",
+      "html": "<p>Montrer que <span class=\"math inline\">\\(\\mathcal{K}\\)</span> est un ensemble compact (fermé et borné) et appliquer le théorème des extrema sur les compacts pour conclure à l’existence d’un maximum et d’un minimum global de <span class=\"math inline\">\\(f\\)</span>.</p>",
       "order": 9
     },
     {
       "id": "block_10",
       "type": "reponse",
       "latex": "On a que $\\mathcal{K}$ est fermé borné et $f$ est continue (car polynomiale) sur ce domaine donc d'après le théorème des valeurs extrêmes, $f$ admet un maximum et un minimumm atteint sur $\\mathcal{K}$.",
-      "html": "<p>On a que <span>\\(\\mathcal{K}\\)</span> est fermé borné et <span>\\(f\\)</span> est continue (car polynomiale) sur ce domaine donc d’après le théorème des valeurs extrêmes, <span>\\(f\\)</span> admet un maximum et un minimumm atteint sur <span>\\(\\mathcal{K}\\)</span>.</p>",
+      "html": "<p>On a que <span class=\"math inline\">\\(\\mathcal{K}\\)</span> est fermé borné et <span class=\"math inline\">\\(f\\)</span> est continue (car polynomiale) sur ce domaine donc d’après le théorème des valeurs extrêmes, <span class=\"math inline\">\\(f\\)</span> admet un maximum et un minimumm atteint sur <span class=\"math inline\">\\(\\mathcal{K}\\)</span>.</p>",
       "order": 10
     },
     {
       "id": "block_11",
       "type": "question",
       "latex": "La fonction \\(f\\) admet-elle des points critiques ?",
-      "html": "<p>La fonction <span>\\(f\\)</span> admet-elle des points critiques ?</p>",
+      "html": "<p>La fonction <span class=\"math inline\">\\(f\\)</span> admet-elle des points critiques ?</p>",
       "order": 11
     },
     {
       "id": "block_12",
       "type": "indication",
       "latex": "Rechercher, dans le domaine intérieur de \\(\\mathcal{K}\\), les points où \\(\\nabla f=(0,0)\\) et examiner l'existence de points critiques sur le bord si nécessaire.",
-      "html": "<p>Rechercher, dans le domaine intérieur de <span>\\(\\mathcal{K}\\)</span>, les points où <span>\\(\\nabla f=(0,0)\\)</span> et examiner l’existence de points critiques sur le bord si nécessaire.</p>",
+      "html": "<p>Rechercher, dans le domaine intérieur de <span class=\"math inline\">\\(\\mathcal{K}\\)</span>, les points où <span class=\"math inline\">\\(\\nabla f=(0,0)\\)</span> et examiner l’existence de points critiques sur le bord si nécessaire.</p>",
       "order": 12
     },
     {
       "id": "block_13",
       "type": "reponse",
       "latex": "On calcule les dérivées partielles :\n\t\t\t\\[\n\t\t\t\\frac{\\partial f}{\\partial x}(x,y) = 2x,\\quad \\frac{\\partial f}{\\partial y}(x,y) = 1.\n\t\t\t\\]\n\t\t\tPour qu'un point soit critique, il faut que le gradient soit nul. Or ici :\n\t\t\t\\[\n\t\t\t\\frac{\\partial f}{\\partial y}(x,y) = 1 \\neq 0,\n\t\t\t\\]\n\t\t\tdonc \\( f \\) n'a \\textbf{aucun point critique à l'intérieur} de \\( D_f \\).",
-      "html": "<p>On calcule les dérivées partielles :\n<span>\\[\\frac{\\partial f}{\\partial x}(x,y) = 2x,\\quad \\frac{\\partial f}{\\partial y}(x,y) = 1.\\]</span>\nPour qu’un point soit critique, il faut que le gradient soit nul. Or ici :\n<span>\\[\\frac{\\partial f}{\\partial y}(x,y) = 1 \\neq 0,\\]</span>\ndonc <span>\\(f\\)</span> n’a <strong>aucun point critique à l’intérieur</strong> de <span>\\(D_f\\)</span>.</p>",
+      "html": "<p>On calcule les dérivées partielles :\n<span class=\"math display\">\\[\\frac{\\partial f}{\\partial x}(x,y) = 2x,\\quad \\frac{\\partial f}{\\partial y}(x,y) = 1.\\]</span>\nPour qu’un point soit critique, il faut que le gradient soit nul. Or ici :\n<span class=\"math display\">\\[\\frac{\\partial f}{\\partial y}(x,y) = 1 \\neq 0,\\]</span>\ndonc <span class=\"math inline\">\\(f\\)</span> n’a <strong>aucun point critique à l’intérieur</strong> de <span class=\"math inline\">\\(D_f\\)</span>.</p>",
       "order": 13
     },
     {
       "id": "block_14",
       "type": "question",
       "latex": "Exprimer \\(f(x,y)\\) lorsque \\((x,y) \\in B_1\\) en fonction d'une seule variable \\(x\\).",
-      "html": "<p>Exprimer <span>\\(f(x,y)\\)</span> lorsque <span>\\((x,y) \\in B_1\\)</span> en fonction d’une seule variable <span>\\(x\\)</span>.</p>",
+      "html": "<p>Exprimer <span class=\"math inline\">\\(f(x,y)\\)</span> lorsque <span class=\"math inline\">\\((x,y) \\in B_1\\)</span> en fonction d’une seule variable <span class=\"math inline\">\\(x\\)</span>.</p>",
       "order": 14
     },
     {
       "id": "block_15",
       "type": "indication",
       "latex": "En substituant \\(y=-x\\) dans \\(f\\), on obtient \\(f(x,-x)=x^2-x\\). Préciser que \\(B_1\\) correspond à la droite d'équation \\(y=-x\\) limitée par l'intersection avec \\(\\mathcal{K}\\).",
-      "html": "<p>En substituant <span>\\(y=-x\\)</span> dans <span>\\(f\\)</span>, on obtient <span>\\(f(x,-x)=x^2-x\\)</span>. Préciser que <span>\\(B_1\\)</span> correspond à la droite d’équation <span>\\(y=-x\\)</span> limitée par l’intersection avec <span>\\(\\mathcal{K}\\)</span>.</p>",
+      "html": "<p>En substituant <span class=\"math inline\">\\(y=-x\\)</span> dans <span class=\"math inline\">\\(f\\)</span>, on obtient <span class=\"math inline\">\\(f(x,-x)=x^2-x\\)</span>. Préciser que <span class=\"math inline\">\\(B_1\\)</span> correspond à la droite d’équation <span class=\"math inline\">\\(y=-x\\)</span> limitée par l’intersection avec <span class=\"math inline\">\\(\\mathcal{K}\\)</span>.</p>",
       "order": 15
     },
     {
       "id": "block_16",
       "type": "reponse",
       "latex": "Si \\( y = -x \\), alors :\n\t\t\t\t\\[\n\t\t\t\tf(x, -x) = x^2 - x.\n\t\t\t\t\\]",
-      "html": "<p>Si <span>\\(y = -x\\)</span>, alors :\n<span>\\[f(x, -x) = x^2 - x.\\]</span></p>",
+      "html": "<p>Si <span class=\"math inline\">\\(y = -x\\)</span>, alors :\n<span class=\"math display\">\\[f(x, -x) = x^2 - x.\\]</span></p>",
       "order": 16
     },
     {
       "id": "block_17",
       "type": "question",
       "latex": "Dresser le tableau de variation de la fonction \\(g: x\\mapsto f(x,-x)\\) sur \\(\\left[-\\frac{\\sqrt{2}}{2};\\frac{\\sqrt{2}}{2}\\right]\\).",
-      "html": "<p>Dresser le tableau de variation de la fonction <span>\\(g: x\\mapsto f(x,-x)\\)</span> sur <span>\\(\\left[-\\frac{\\sqrt{2}}{2};\\frac{\\sqrt{2}}{2}\\right]\\)</span>.</p>",
+      "html": "<p>Dresser le tableau de variation de la fonction <span class=\"math inline\">\\(g: x\\mapsto f(x,-x)\\)</span> sur <span class=\"math inline\">\\(\\left[-\\frac{\\sqrt{2}}{2};\\frac{\\sqrt{2}}{2}\\right]\\)</span>.</p>",
       "order": 17
     },
     {
       "id": "block_18",
       "type": "indication",
       "latex": "Étudier la fonction \\(g(x)=x^2-x\\) sur l'intervalle donné en calculant sa dérivée, en déterminant les extrema locaux, et en présentant les variations sous forme de tableau.",
-      "html": "<p>Étudier la fonction <span>\\(g(x)=x^2-x\\)</span> sur l’intervalle donné en calculant sa dérivée, en déterminant les extrema locaux, et en présentant les variations sous forme de tableau.</p>",
+      "html": "<p>Étudier la fonction <span class=\"math inline\">\\(g(x)=x^2-x\\)</span> sur l’intervalle donné en calculant sa dérivée, en déterminant les extrema locaux, et en présentant les variations sous forme de tableau.</p>",
       "order": 18
     },
     {
       "id": "block_19",
       "type": "reponse",
-      "latex": "On dérive $g(x)=f(x,-x)$.\n\t\t\t\t\\[\n\t\t\t\tg'(x) = 2x - 1 \\Rightarrow h'(x) = 0 \\Leftrightarrow x = \\frac{1}{2}.\n\t\t\t\t\\]\n\t\t\t\t\n\t\t\t\tOn a $\\frac{1}{2} <\\frac{\\sqrt{2}}{2}$, on a donc le tableau suivant.\n\t\t\t\t\\medskip\n\t\t\t\t\n\t\t\t\t\\textbf{Tableau de variation :}\n\t\t\t\t\n\t\t\t\t\\begin{center}\n\t\t\t\t\t\\begin{tabular}{c|ccc}\n\t\t\t\t\t\t\\( x \\) & \\( -\\frac{\\sqrt{2}}{2} \\) & \\( \\frac{1}{2} \\) & \\( \\frac{\\sqrt{2}}{2} \\) \\\\\n\t\t\t\t\t\t\\hline\n\t\t\t\t\t\t\\( g'(x) \\) & $-$ & 0 & $+$ \\\\\n\t\t\t\t\t\t\\( g(x) \\) & $\\searrow$ & $h(\\frac{1}{2})$ & $\\nearrow$ \\\\\n\t\t\t\t\t\\end{tabular}\n\t\t\t\t\\end{center}\n\t\t\t\t\n\t\t\t\t\\textbf{Valeurs :}\n\t\t\t\t\\[\n\t\t\t\th\\left(-\\frac{\\sqrt{2}}{2}\\right) = \\left(-\\frac{\\sqrt{2}}{2}\\right)^2 - \\left(\\frac{\\sqrt{2}}{2}\\right) = \\frac{1}{2} -\\frac{\\sqrt{2}}{2},\n\t\t\t\t\\]\n\t\t\t\t\\[\n\t\t\t\th\\left(\\frac{\\sqrt{2}}{2}\\right) = \\left(\\frac{\\sqrt{2}}{2}\\right)^2 + \\left(\\frac{\\sqrt{2}}{2}\\right) = \\frac{1}{2} +\\frac{\\sqrt{2}}{2},\n\t\t\t\t\\]\n\t\t\t\t\\[\n\t\t\t\th\\left(\\frac{1}{2}\\right) = \\left(\\frac{1}{2}\\right)^2 - \\frac{1}{2} = -\\frac{1}{4}.\n\t\t\t\t\\]",
-      "html": "<p>On dérive <span>\\(g(x)=f(x,-x)\\)</span>.\n<span>\\[g&#39;(x) = 2x - 1 \\Rightarrow h&#39;(x) = 0 \\Leftrightarrow x = \\frac{1}{2}.\\]</span></p>\n<p>On a <span>\\(\\frac{1}{2} &lt;\\frac{\\sqrt{2}}{2}\\)</span>, on a donc le tableau suivant.</p>\n<p><strong>Tableau de variation :</strong></p>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><span>\\(x\\)</span></th>\n<th style=\"text-align: center;\"><span>\\(-\\frac{\\sqrt{2}}{2}\\)</span></th>\n<th style=\"text-align: center;\"><span>\\(\\frac{1}{2}\\)</span></th>\n<th style=\"text-align: center;\"><span>\\(\\frac{\\sqrt{2}}{2}\\)</span></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><span>\\(g&#39;(x)\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(-\\)</span></td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\"><span>\\(+\\)</span></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(g(x)\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\searrow\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(h(\\frac{1}{2})\\)</span></td>\n<td style=\"text-align: center;\"><span>\\(\\nearrow\\)</span></td>\n</tr>\n</tbody>\n</table>\n<p><strong>Valeurs :</strong>\n<span>\\[h\\left(-\\frac{\\sqrt{2}}{2}\\right) = \\left(-\\frac{\\sqrt{2}}{2}\\right)^2 - \\left(\\frac{\\sqrt{2}}{2}\\right) = \\frac{1}{2} -\\frac{\\sqrt{2}}{2},\\]</span>\n<span>\\[h\\left(\\frac{\\sqrt{2}}{2}\\right) = \\left(\\frac{\\sqrt{2}}{2}\\right)^2 + \\left(\\frac{\\sqrt{2}}{2}\\right) = \\frac{1}{2} +\\frac{\\sqrt{2}}{2},\\]</span>\n<span>\\[h\\left(\\frac{1}{2}\\right) = \\left(\\frac{1}{2}\\right)^2 - \\frac{1}{2} = -\\frac{1}{4}.\\]</span></p>",
+      "latex": "On dérive $g(x)=f(x,-x)$.\n\t\t\t\t\\[\n\t\t\t\tg'(x) = 2x - 1 \\Rightarrow h'(x) = 0 \\Leftrightarrow x = \\frac{1}{2}.\n\t\t\t\t\\]\n\t\t\t\t%Sur \\( \\left[-\\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{2}}{2}\\right] \\approx [-0.707, 0.707] \\), \\( x = \\frac{1}{2} \\) appartient à lintervalle.\n\t\t\t\tOn a $\\frac{1}{2} <\\frac{\\sqrt{2}}{2}$, on a donc le tableau suivant.\n\t\t\t\t\\medskip\n\t\t\t\t\n\t\t\t\t\\textbf{Tableau de variation :}\n\t\t\t\t\n\t\t\t\t\\begin{center}\n\t\t\t\t\t\\begin{tabular}{c|ccc}\n\t\t\t\t\t\t\\( x \\) & \\( -\\frac{\\sqrt{2}}{2} \\) & \\( \\frac{1}{2} \\) & \\( \\frac{\\sqrt{2}}{2} \\) \\\\\n\t\t\t\t\t\t\\hline\n\t\t\t\t\t\t\\( g'(x) \\) & $-$ & 0 & $+$ \\\\\n\t\t\t\t\t\t\\( g(x) \\) & $\\searrow$ & $h(\\frac{1}{2})$ & $\\nearrow$ \\\\\n\t\t\t\t\t\\end{tabular}\n\t\t\t\t\\end{center}\n\t\t\t\t\n\t\t\t\t\\textbf{Valeurs :}\n\t\t\t\t\\[\n\t\t\t\th\\left(-\\frac{\\sqrt{2}}{2}\\right) = \\left(-\\frac{\\sqrt{2}}{2}\\right)^2 - \\left(\\frac{\\sqrt{2}}{2}\\right) = \\frac{1}{2} -\\frac{\\sqrt{2}}{2},\n\t\t\t\t\\]\n\t\t\t\t\\[\n\t\t\t\th\\left(\\frac{\\sqrt{2}}{2}\\right) = \\left(\\frac{\\sqrt{2}}{2}\\right)^2 + \\left(\\frac{\\sqrt{2}}{2}\\right) = \\frac{1}{2} +\\frac{\\sqrt{2}}{2},\n\t\t\t\t\\]\n\t\t\t\t\\[\n\t\t\t\th\\left(\\frac{1}{2}\\right) = \\left(\\frac{1}{2}\\right)^2 - \\frac{1}{2} = -\\frac{1}{4}.\n\t\t\t\t\\]",
+      "html": "<p>On dérive <span class=\"math inline\">\\(g(x)=f(x,-x)\\)</span>.\n<span class=\"math display\">\\[g&#39;(x) = 2x - 1 \\Rightarrow h&#39;(x) = 0 \\Leftrightarrow x = \\frac{1}{2}.\\]</span></p>\n<p>On a <span class=\"math inline\">\\(\\frac{1}{2} &lt;\\frac{\\sqrt{2}}{2}\\)</span>, on a donc le tableau suivant.</p>\n<p><strong>Tableau de variation :</strong></p>\n<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: center;\"><span class=\"math inline\">\\(x\\)</span></th>\n<th style=\"text-align: center;\"><span class=\"math inline\">\\(-\\frac{\\sqrt{2}}{2}\\)</span></th>\n<th style=\"text-align: center;\"><span class=\"math inline\">\\(\\frac{1}{2}\\)</span></th>\n<th style=\"text-align: center;\"><span class=\"math inline\">\\(\\frac{\\sqrt{2}}{2}\\)</span></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(g&#39;(x)\\)</span></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(-\\)</span></td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(+\\)</span></td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(g(x)\\)</span></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(\\searrow\\)</span></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(h(\\frac{1}{2})\\)</span></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(\\nearrow\\)</span></td>\n</tr>\n</tbody>\n</table>\n<p><strong>Valeurs :</strong>\n<span class=\"math display\">\\[h\\left(-\\frac{\\sqrt{2}}{2}\\right) = \\left(-\\frac{\\sqrt{2}}{2}\\right)^2 - \\left(\\frac{\\sqrt{2}}{2}\\right) = \\frac{1}{2} -\\frac{\\sqrt{2}}{2},\\]</span>\n<span class=\"math display\">\\[h\\left(\\frac{\\sqrt{2}}{2}\\right) = \\left(\\frac{\\sqrt{2}}{2}\\right)^2 + \\left(\\frac{\\sqrt{2}}{2}\\right) = \\frac{1}{2} +\\frac{\\sqrt{2}}{2},\\]</span>\n<span class=\"math display\">\\[h\\left(\\frac{1}{2}\\right) = \\left(\\frac{1}{2}\\right)^2 - \\frac{1}{2} = -\\frac{1}{4}.\\]</span></p>",
       "order": 19
     },
     {
       "id": "block_20",
       "type": "question",
       "latex": "On pose \\(h(\\theta)=f(\\cos\\theta,\\sin\\theta)\\) pour tout $\\theta\\in\\left[-\\frac{\\pi}{4};\\frac{3\\pi}{4}\\right]$. Montrer que \\(h'\\) s'annule en \\(\\frac{\\pi}{2}\\) et en \\(\\frac{\\pi}{6}\\).",
-      "html": "<p>On pose <span>\\(h(\\theta)=f(\\cos\\theta,\\sin\\theta)\\)</span> pour tout <span>\\(\\theta\\in\\left[-\\frac{\\pi}{4};\\frac{3\\pi}{4}\\right]\\)</span>. Montrer que <span>\\(h&#39;\\)</span> s’annule en <span>\\(\\frac{\\pi}{2}\\)</span> et en <span>\\(\\frac{\\pi}{6}\\)</span>.</p>",
+      "html": "<p>On pose <span class=\"math inline\">\\(h(\\theta)=f(\\cos\\theta,\\sin\\theta)\\)</span> pour tout <span class=\"math inline\">\\(\\theta\\in\\left[-\\frac{\\pi}{4};\\frac{3\\pi}{4}\\right]\\)</span>. Montrer que <span class=\"math inline\">\\(h&#39;\\)</span> s’annule en <span class=\"math inline\">\\(\\frac{\\pi}{2}\\)</span> et en <span class=\"math inline\">\\(\\frac{\\pi}{6}\\)</span>.</p>",
       "order": 20
     },
     {
       "id": "block_21",
       "type": "indication",
       "latex": "Calculer la dérivée de \\(h(\\theta)\\) par rapport à \\(\\theta\\) et résoudre l'équation \\(h'(\\theta)=0\\) pour identifier les valeurs \\(\\theta=\\frac{\\pi}{2}\\) et \\(\\theta=\\frac{\\pi}{6}\\).",
-      "html": "<p>Calculer la dérivée de <span>\\(h(\\theta)\\)</span> par rapport à <span>\\(\\theta\\)</span> et résoudre l’équation <span>\\(h&#39;(\\theta)=0\\)</span> pour identifier les valeurs <span>\\(\\theta=\\frac{\\pi}{2}\\)</span> et <span>\\(\\theta=\\frac{\\pi}{6}\\)</span>.</p>",
+      "html": "<p>Calculer la dérivée de <span class=\"math inline\">\\(h(\\theta)\\)</span> par rapport à <span class=\"math inline\">\\(\\theta\\)</span> et résoudre l’équation <span class=\"math inline\">\\(h&#39;(\\theta)=0\\)</span> pour identifier les valeurs <span class=\"math inline\">\\(\\theta=\\frac{\\pi}{2}\\)</span> et <span class=\"math inline\">\\(\\theta=\\frac{\\pi}{6}\\)</span>.</p>",
       "order": 21
     },
     {
       "id": "block_22",
       "type": "reponse",
       "latex": "On dérive :\n\t\t\t\t\\[\n\t\t\t\th'(\\theta) = -2\\cos\\theta \\sin\\theta + \\cos\\theta = \\cos\\theta (1 - 2\\sin\\theta).\n\t\t\t\t\\]\n\t\t\t\tDonc \\( h'(\\theta) = 0 \\) ssi \\( \\cos\\theta = 0 \\) ou \\( \\sin\\theta = \\frac{1}{2} \\).\\\\\n\t\t\t\tSur $\\left[-\\frac{\\pi}{4};\\frac{3\\pi}{4}\\right]$ cela donne :\n\t\t\t\t\\[\n\t\t\t\t\\theta = \\frac{\\pi}{2}\\ \\ \\text{ou}\\ \\ \\theta = \\frac{\\pi}{6}.\n\t\t\t\t\\]",
-      "html": "<p>On dérive :\n<span>\\[h&#39;(\\theta) = -2\\cos\\theta \\sin\\theta + \\cos\\theta = \\cos\\theta (1 - 2\\sin\\theta).\\]</span>\nDonc <span>\\(h&#39;(\\theta) = 0\\)</span> ssi <span>\\(\\cos\\theta = 0\\)</span> ou <span>\\(\\sin\\theta = \\frac{1}{2}\\)</span>.<br />\nSur <span>\\(\\left[-\\frac{\\pi}{4};\\frac{3\\pi}{4}\\right]\\)</span> cela donne :\n<span>\\[\\theta = \\frac{\\pi}{2}\\ \\ \\text{ou}\\ \\ \\theta = \\frac{\\pi}{6}.\\]</span></p>",
+      "html": "<p>On dérive :\n<span class=\"math display\">\\[h&#39;(\\theta) = -2\\cos\\theta \\sin\\theta + \\cos\\theta = \\cos\\theta (1 - 2\\sin\\theta).\\]</span>\nDonc <span class=\"math inline\">\\(h&#39;(\\theta) = 0\\)</span> ssi <span class=\"math inline\">\\(\\cos\\theta = 0\\)</span> ou <span class=\"math inline\">\\(\\sin\\theta = \\frac{1}{2}\\)</span>.<br />\nSur <span class=\"math inline\">\\(\\left[-\\frac{\\pi}{4};\\frac{3\\pi}{4}\\right]\\)</span> cela donne :\n<span class=\"math display\">\\[\\theta = \\frac{\\pi}{2}\\ \\ \\text{ou}\\ \\ \\theta = \\frac{\\pi}{6}.\\]</span></p>",
       "order": 22
     },
     {
       "id": "block_23",
       "type": "question",
       "latex": "Dresser le tableau de variation de \\(h\\).",
-      "html": "<p>Dresser le tableau de variation de <span>\\(h\\)</span>.</p>",
+      "html": "<p>Dresser le tableau de variation de <span class=\"math inline\">\\(h\\)</span>.</p>",
       "order": 23
     },
     {
       "id": "block_24",
       "type": "indication",
       "latex": "Étudier les variations de \\(h(\\theta)\\) sur l'intervalle \\(\\left[-\\frac{\\pi}{4},\\frac{3\\pi}{4}\\right]\\) en utilisant les points critiques trouvés ainsi que les valeurs aux bornes.",
-      "html": "<p>Étudier les variations de <span>\\(h(\\theta)\\)</span> sur l’intervalle <span>\\(\\left[-\\frac{\\pi}{4},\\frac{3\\pi}{4}\\right]\\)</span> en utilisant les points critiques trouvés ainsi que les valeurs aux bornes.</p>",
+      "html": "<p>Étudier les variations de <span class=\"math inline\">\\(h(\\theta)\\)</span> sur l’intervalle <span class=\"math inline\">\\(\\left[-\\frac{\\pi}{4},\\frac{3\\pi}{4}\\right]\\)</span> en utilisant les points critiques trouvés ainsi que les valeurs aux bornes.</p>",
       "order": 24
     },
     {
       "id": "block_25",
       "type": "reponse",
-      "latex": "\\begin{center}\n\t\t\t\t\t\\begin{tabular}{c|ccccccc}\n\t\t\t\t\t\t\\( \\theta \\) & \\(-\\frac{\\pi}{4}  \\) & &\\( \\frac{\\pi}{6} \\) & &\\( \\frac{\\pi}{2} \\) & &\\(\\frac{\\pi}{4}  \\)\\\\\n\t\t\t\t\t\t\\hline\n\t\t\t\t\t\t\\( \\cos\\theta \\) & & $+$  &  &$+$ & 0 & $-$ &\\\\\n\t\t\t\t\t\t\\hline\n\t\t\t\t\t\t\\( 1 - 2\\sin\\theta \\) & & $+$  & 0 &$-$ &  & $-$ &\\\\\n\t\t\t\t\t\t\\hline\n\t\t\t\t\t\t\\( h'(\\theta) \\) & & $+$  & 0 &$-$ &0  & $+$ &\\\\\n\t\t\t\t\t\t\\hline\n\t\t\t\t\t\t\\( h(\\theta) \\)  & & $\\nearrow$ &  &$\\searrow$ & &$\\nearrow$ &\\\\\n\t\t\t\t\t\\end{tabular}\n\t\t\t\t\\end{center}\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\tOn calcule les valeurs de \\( g \\) :\n\t\t\t\t\\[\n\t\t\t\tg\\left(\\frac{\\pi}{2}\\right) = \\cos^2\\left(\\frac{\\pi}{2}\\right) + \\sin\\left(\\frac{\\pi}{2}\\right) = 0 + 1 = 1,\n\t\t\t\t\\]\n\t\t\t\t\\[\n\t\t\t\tg\\left(\\frac{\\pi}{6}\\right) = \\cos^2\\left(\\frac{\\pi}{6}\\right) + \\sin\\left(\\frac{\\pi}{6}\\right) = \\left(\\frac{\\sqrt{3}}{2}\\right)^2 + \\frac{1}{2} = \\frac{3}{4} + \\frac{1}{2} = \\frac{5}{4},\n\t\t\t\t\\]\n\t\t\t\t\\[\n\t\t\t\tg\\left(-\\frac{\\pi}{4}\\right) = \\cos^2\\left(-\\frac{\\pi}{4}\\right) + \\sin\\left(-\\frac{\\pi}{4}\\right) =\\frac{1}{2}-\\frac{\\sqrt{2}}{2},\n\t\t\t\t\\]\n\t\t\t\t\\[\n\t\t\t\tg\\left(\\frac{\\pi}{4}\\right) = \\cos^2\\left(\\frac{\\pi}{4}\\right) + \\sin\\left(\\frac{\\pi}{4}\\right) =\\frac{1}{2}+\\frac{\\sqrt{2}}{2}.\n\t\t\t\t\\]",
-      "html": "<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><span>\\(\\theta\\)</span></th>\n<th style=\"text-align: center;\"><span>\\(-\\frac{\\pi}{4}\\)</span></th>\n<th style=\"text-align: center;\"></th>\n<th style=\"text-align: center;\"><span>\\(\\frac{\\pi}{6}\\)</span></th>\n<th style=\"text-align: center;\"></th>\n<th style=\"text-align: center;\"><span>\\(\\frac{\\pi}{2}\\)</span></th>\n<th style=\"text-align: center;\"></th>\n<th style=\"text-align: center;\"><span>\\(\\frac{\\pi}{4}\\)</span></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><span>\\(\\cos\\theta\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span>\\(+\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span>\\(+\\)</span></td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\"><span>\\(-\\)</span></td>\n<td style=\"text-align: center;\"></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(1 - 2\\sin\\theta\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span>\\(+\\)</span></td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\"><span>\\(-\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span>\\(-\\)</span></td>\n<td style=\"text-align: center;\"></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(h&#39;(\\theta)\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span>\\(+\\)</span></td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\"><span>\\(-\\)</span></td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\"><span>\\(+\\)</span></td>\n<td style=\"text-align: center;\"></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><span>\\(h(\\theta)\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span>\\(\\nearrow\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span>\\(\\searrow\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span>\\(\\nearrow\\)</span></td>\n<td style=\"text-align: center;\"></td>\n</tr>\n</tbody>\n</table>\n<p>On calcule les valeurs de <span>\\(g\\)</span> :\n<span>\\[g\\left(\\frac{\\pi}{2}\\right) = \\cos^2\\left(\\frac{\\pi}{2}\\right) + \\sin\\left(\\frac{\\pi}{2}\\right) = 0 + 1 = 1,\\]</span>\n<span>\\[g\\left(\\frac{\\pi}{6}\\right) = \\cos^2\\left(\\frac{\\pi}{6}\\right) + \\sin\\left(\\frac{\\pi}{6}\\right) = \\left(\\frac{\\sqrt{3}}{2}\\right)^2 + \\frac{1}{2} = \\frac{3}{4} + \\frac{1}{2} = \\frac{5}{4},\\]</span>\n<span>\\[g\\left(-\\frac{\\pi}{4}\\right) = \\cos^2\\left(-\\frac{\\pi}{4}\\right) + \\sin\\left(-\\frac{\\pi}{4}\\right) =\\frac{1}{2}-\\frac{\\sqrt{2}}{2},\\]</span>\n<span>\\[g\\left(\\frac{\\pi}{4}\\right) = \\cos^2\\left(\\frac{\\pi}{4}\\right) + \\sin\\left(\\frac{\\pi}{4}\\right) =\\frac{1}{2}+\\frac{\\sqrt{2}}{2}.\\]</span></p>",
+      "latex": "\\begin{center}\n\t\t\t\t\t\\begin{tabular}{c|ccccccc}\n\t\t\t\t\t\t\\( \\theta \\) & \\(-\\frac{\\pi}{4}  \\) & &\\( \\frac{\\pi}{6} \\) & &\\( \\frac{\\pi}{2} \\) & &\\(\\frac{\\pi}{4}  \\)\\\\\n\t\t\t\t\t\t\\hline\n\t\t\t\t\t\t\\( \\cos\\theta \\) & & $+$  &  &$+$ & 0 & $-$ &\\\\\n\t\t\t\t\t\t\\hline\n\t\t\t\t\t\t\\( 1 - 2\\sin\\theta \\) & & $+$  & 0 &$-$ &  & $-$ &\\\\\n\t\t\t\t\t\t\\hline\n\t\t\t\t\t\t\\( h'(\\theta) \\) & & $+$  & 0 &$-$ &0  & $+$ &\\\\\n\t\t\t\t\t\t\\hline\n\t\t\t\t\t\t\\( h(\\theta) \\)  & & $\\nearrow$ &  &$\\searrow$ & &$\\nearrow$ &\\\\\n\t\t\t\t\t\\end{tabular}\n\t\t\t\t\\end{center}\n\t\t\t\t%On étudie les signes de \\( g'(\\theta) = \\cos\\theta (1 - 2\\sin\\theta) \\) sur \\( \\left[ -\\frac{\\pi}{4}, \\frac{3\\pi}{4} \\right] \\), avec annulations en \\( \\frac{\\pi}{6} \\) et \\( \\frac{\\pi}{2} \\).\\\\\n\t\t\t\t% On peut utiliser une analyse graphique ou numérique pour déterminer les variations (ou faire un tableau de signe de \\( g' \\)).\\\\\n\t\t\t\t\n\t\t\t\tOn calcule les valeurs de \\( g \\) :\n\t\t\t\t\\[\n\t\t\t\tg\\left(\\frac{\\pi}{2}\\right) = \\cos^2\\left(\\frac{\\pi}{2}\\right) + \\sin\\left(\\frac{\\pi}{2}\\right) = 0 + 1 = 1,\n\t\t\t\t\\]\n\t\t\t\t\\[\n\t\t\t\tg\\left(\\frac{\\pi}{6}\\right) = \\cos^2\\left(\\frac{\\pi}{6}\\right) + \\sin\\left(\\frac{\\pi}{6}\\right) = \\left(\\frac{\\sqrt{3}}{2}\\right)^2 + \\frac{1}{2} = \\frac{3}{4} + \\frac{1}{2} = \\frac{5}{4},\n\t\t\t\t\\]\n\t\t\t\t\\[\n\t\t\t\tg\\left(-\\frac{\\pi}{4}\\right) = \\cos^2\\left(-\\frac{\\pi}{4}\\right) + \\sin\\left(-\\frac{\\pi}{4}\\right) =\\frac{1}{2}-\\frac{\\sqrt{2}}{2},\n\t\t\t\t\\]\n\t\t\t\t\\[\n\t\t\t\tg\\left(\\frac{\\pi}{4}\\right) = \\cos^2\\left(\\frac{\\pi}{4}\\right) + \\sin\\left(\\frac{\\pi}{4}\\right) =\\frac{1}{2}+\\frac{\\sqrt{2}}{2}.\n\t\t\t\t\\]",
+      "html": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: center;\"><span class=\"math inline\">\\(\\theta\\)</span></th>\n<th style=\"text-align: center;\"><span class=\"math inline\">\\(-\\frac{\\pi}{4}\\)</span></th>\n<th style=\"text-align: center;\"></th>\n<th style=\"text-align: center;\"><span class=\"math inline\">\\(\\frac{\\pi}{6}\\)</span></th>\n<th style=\"text-align: center;\"></th>\n<th style=\"text-align: center;\"><span class=\"math inline\">\\(\\frac{\\pi}{2}\\)</span></th>\n<th style=\"text-align: center;\"></th>\n<th style=\"text-align: center;\"><span class=\"math inline\">\\(\\frac{\\pi}{4}\\)</span></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(\\cos\\theta\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(+\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(+\\)</span></td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(-\\)</span></td>\n<td style=\"text-align: center;\"></td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(1 - 2\\sin\\theta\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(+\\)</span></td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(-\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(-\\)</span></td>\n<td style=\"text-align: center;\"></td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(h&#39;(\\theta)\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(+\\)</span></td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(-\\)</span></td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(+\\)</span></td>\n<td style=\"text-align: center;\"></td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(h(\\theta)\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(\\nearrow\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(\\searrow\\)</span></td>\n<td style=\"text-align: center;\"></td>\n<td style=\"text-align: center;\"><span class=\"math inline\">\\(\\nearrow\\)</span></td>\n<td style=\"text-align: center;\"></td>\n</tr>\n</tbody>\n</table>\n<p>On calcule les valeurs de <span class=\"math inline\">\\(g\\)</span> :\n<span class=\"math display\">\\[g\\left(\\frac{\\pi}{2}\\right) = \\cos^2\\left(\\frac{\\pi}{2}\\right) + \\sin\\left(\\frac{\\pi}{2}\\right) = 0 + 1 = 1,\\]</span>\n<span class=\"math display\">\\[g\\left(\\frac{\\pi}{6}\\right) = \\cos^2\\left(\\frac{\\pi}{6}\\right) + \\sin\\left(\\frac{\\pi}{6}\\right) = \\left(\\frac{\\sqrt{3}}{2}\\right)^2 + \\frac{1}{2} = \\frac{3}{4} + \\frac{1}{2} = \\frac{5}{4},\\]</span>\n<span class=\"math display\">\\[g\\left(-\\frac{\\pi}{4}\\right) = \\cos^2\\left(-\\frac{\\pi}{4}\\right) + \\sin\\left(-\\frac{\\pi}{4}\\right) =\\frac{1}{2}-\\frac{\\sqrt{2}}{2},\\]</span>\n<span class=\"math display\">\\[g\\left(\\frac{\\pi}{4}\\right) = \\cos^2\\left(\\frac{\\pi}{4}\\right) + \\sin\\left(\\frac{\\pi}{4}\\right) =\\frac{1}{2}+\\frac{\\sqrt{2}}{2}.\\]</span></p>",
       "order": 25
     },
     {
       "id": "block_26",
       "type": "question",
       "latex": "En utilisant les questions précédentes, déterminer le maximum et le minimum global de \\(f\\) sur \\(\\mathcal{K}\\). En quels points ces extremums sont-ils atteints ?",
-      "html": "<p>En utilisant les questions précédentes, déterminer le maximum et le minimum global de <span>\\(f\\)</span> sur <span>\\(\\mathcal{K}\\)</span>. En quels points ces extremums sont-ils atteints ?</p>",
+      "html": "<p>En utilisant les questions précédentes, déterminer le maximum et le minimum global de <span class=\"math inline\">\\(f\\)</span> sur <span class=\"math inline\">\\(\\mathcal{K}\\)</span>. En quels points ces extremums sont-ils atteints ?</p>",
       "order": 26
     },
     {
       "id": "block_27",
       "type": "indication",
       "latex": "Comparer les valeurs de \\(f\\) obtenues dans le domaine intérieur et sur le bord de \\(\\mathcal{K}\\), en s'appuyant sur les études réalisées précédemment, pour identifier les points où \\(f\\) atteint son maximum et son minimum global.",
-      "html": "<p>Comparer les valeurs de <span>\\(f\\)</span> obtenues dans le domaine intérieur et sur le bord de <span>\\(\\mathcal{K}\\)</span>, en s’appuyant sur les études réalisées précédemment, pour identifier les points où <span>\\(f\\)</span> atteint son maximum et son minimum global.</p>",
+      "html": "<p>Comparer les valeurs de <span class=\"math inline\">\\(f\\)</span> obtenues dans le domaine intérieur et sur le bord de <span class=\"math inline\">\\(\\mathcal{K}\\)</span>, en s’appuyant sur les études réalisées précédemment, pour identifier les points où <span class=\"math inline\">\\(f\\)</span> atteint son maximum et son minimum global.</p>",
       "order": 27
     },
     {
       "id": "block_28",
       "type": "reponse",
-      "latex": "On ordonne les différentes valeurs trouvées. Notons que $\\frac{1}{2}<\\frac{\\sqrt{2}}{2}<\\frac{3}{4}$ (ce voit en prenant le carré par exemple). On a donc :\n\t\t\t$$-\\frac{1}{4}<\\frac{1}{2}-\\frac{\\sqrt{2}}{2}<1<\\frac{1}{2}+\\frac{\\sqrt{2}}{2}<\\frac{5}{4}.$$\n\t\t\t\n\t\t\t\n\t\t\tLe minimum de $f$ est donc $-\\frac{1}{4}$ et le maximum est $\\frac{5}{4}$. Le minimum est atteint en $(\\frac{1}{2},-\\frac{1}{2})$ et le maximum est atteint en $\\left(\\cos\\left(\\frac{\\pi}{6}\\right),\\sin\\left(\\frac{\\pi}{6}\\right)\\right)=\\left(\\frac{\\sqrt{3}}{2},\\frac{1}{2}\\right)$.",
-      "html": "<p>On ordonne les différentes valeurs trouvées. Notons que <span>\\(\\frac{1}{2}&lt;\\frac{\\sqrt{2}}{2}&lt;\\frac{3}{4}\\)</span> (ce voit en prenant le carré par exemple). On a donc :\n<span>\\[-\\frac{1}{4}&lt;\\frac{1}{2}-\\frac{\\sqrt{2}}{2}&lt;1&lt;\\frac{1}{2}+\\frac{\\sqrt{2}}{2}&lt;\\frac{5}{4}.\\]</span></p>\n<p>Le minimum de <span>\\(f\\)</span> est donc <span>\\(-\\frac{1}{4}\\)</span> et le maximum est <span>\\(\\frac{5}{4}\\)</span>. Le minimum est atteint en <span>\\((\\frac{1}{2},-\\frac{1}{2})\\)</span> et le maximum est atteint en <span>\\(\\left(\\cos\\left(\\frac{\\pi}{6}\\right),\\sin\\left(\\frac{\\pi}{6}\\right)\\right)=\\left(\\frac{\\sqrt{3}}{2},\\frac{1}{2}\\right)\\)</span>.</p>",
+      "latex": "On ordonne les différentes valeurs trouvées. Notons que $\\frac{1}{2}<\\frac{\\sqrt{2}}{2}<\\frac{3}{4}$ (ce voit en prenant le carré par exemple). On a donc :\n\t\t\t$$-\\frac{1}{4}<\\frac{1}{2}-\\frac{\\sqrt{2}}{2}<1<\\frac{1}{2}+\\frac{\\sqrt{2}}{2}<\\frac{5}{4}.$$\n\t\t\t%C'est à dire :\n\t\t\t%$$f(\\frac{1}{2},-\\frac{1}{2})<\\frac{1}{2}-\\frac{\\sqrt{2}}{2}<1<\\frac{1}{2}+\\frac{\\sqrt{2}}{2}<\\frac{5}{4}.$$\n\t\t\tLe minimum de $f$ est donc $-\\frac{1}{4}$ et le maximum est $\\frac{5}{4}$. Le minimum est atteint en $(\\frac{1}{2},-\\frac{1}{2})$ et le maximum est atteint en $\\left(\\cos\\left(\\frac{\\pi}{6}\\right),\\sin\\left(\\frac{\\pi}{6}\\right)\\right)=\\left(\\frac{\\sqrt{3}}{2},\\frac{1}{2}\\right)$.",
+      "html": "<p>On ordonne les différentes valeurs trouvées. Notons que <span class=\"math inline\">\\(\\frac{1}{2}&lt;\\frac{\\sqrt{2}}{2}&lt;\\frac{3}{4}\\)</span> (ce voit en prenant le carré par exemple). On a donc :\n<span class=\"math display\">\\[-\\frac{1}{4}&lt;\\frac{1}{2}-\\frac{\\sqrt{2}}{2}&lt;1&lt;\\frac{1}{2}+\\frac{\\sqrt{2}}{2}&lt;\\frac{5}{4}.\\]</span></p>\n<p>Le minimum de <span class=\"math inline\">\\(f\\)</span> est donc <span class=\"math inline\">\\(-\\frac{1}{4}\\)</span> et le maximum est <span class=\"math inline\">\\(\\frac{5}{4}\\)</span>. Le minimum est atteint en <span class=\"math inline\">\\((\\frac{1}{2},-\\frac{1}{2})\\)</span> et le maximum est atteint en <span class=\"math inline\">\\(\\left(\\cos\\left(\\frac{\\pi}{6}\\right),\\sin\\left(\\frac{\\pi}{6}\\right)\\right)=\\left(\\frac{\\sqrt{3}}{2},\\frac{1}{2}\\right)\\)</span>.</p>",
       "order": 28
     }
   ],
   "artifacts": {
     "tikz": [
       {
-        "id": "tikz_0",
+        "id": "tikz_1",
         "type": "tikz",
-        "url": "/artifacts/tikz/nQHm-tikz-0.svg",
+        "url": "/artifacts/tikz/nQHm-tikz-1.svg",
         "latex": "\\begin{tikzpicture}[scale=1]\n\t\t\t\t% Disque unité\n\t\t\t\t\\fill[white] (0,0) circle(1);\n\t\t\t\t\n\t\t\t\t% Demi-plan x + y >= 0\n\t\t\t\t\\begin{scope}\n\t\t\t\t\t\\clip (0,0) circle(1);\n\t\t\t\t\t\\fill[gray!50, opacity=0.6] (-1.2,1.2) -- (1.2,-1.2) -- (1.2,1.2) -- cycle;\n\t\t\t\t\\end{scope}\n\t\t\t\t\n\t\t\t\t% Cercle frontière\n\t\t\t\t\\draw[thick] (0,0) circle(1);\n\t\t\t\t\n\t\t\t\t% Droite x + y = 0\n\t\t\t\t\\draw[black, thick, ] (-1.2,1.2) -- (1.2,-1.2) node[below right] {\\small $x + y = 0$};\n\t\t\t\t\n\t\t\t\t% Axes\n\t\t\t\t\\draw[->] (-1.2,0) -- (1.3,0) node[right] {$x$};\n\t\t\t\t\\draw[->] (0,-1.2) -- (0,1.3) node[above] {$y$};\n\t\t\t\t\n\t\t\t\t% Label du domaine\n\t\t\t\t\\node at (0.4,0.4) { $\\mathcal{K}$};\n\t\t\t\\end{tikzpicture}"
       }
     ],

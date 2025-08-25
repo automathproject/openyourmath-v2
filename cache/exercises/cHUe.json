@@ -9,27 +9,27 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-12-06",
-  "updated_at": "2025-08-23T12:07:24.516Z",
+  "updated_at": "2025-08-25T08:57:15.758Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On  interroge 1873 ́étudiants  de  Master  sur  la  catégorie  socio-professionnelle  de  leurs parents.  Les  ́étudiants  suivent  différents  cursus :   ́écoles  d'ingénieurs,  ́école de  commerce,  universités scientifiques,  médecine.  Les résultats sont les suivants :\n\t\n\\begin{center}\n\t\t\\begin{tabular}{|c|c|c|c|c|}\n\t\t\\hline \n\t\t& Ouvriers & Employés & Cadres & Professions libérales \\\\ \n\t\t\\hline \n\t\tEcoles d'ingénieurs & 50 & 280 & 120 & 20 \\\\ \n\t\t\\hline \n\t\tEcoles de commerce & 8 & 29 & 210 & 350 \\\\ \n\t\t\\hline \n\t\tUniversités scientifiques & 150 & 230 & 100 & 40 \\\\ \n\t\t\\hline \n\t\tMédecine & 26 & 80 & 80 & 100 \\\\ \n\t\t\\hline \n\t\\end{tabular} \n\\end{center}\n\nOn s'intéresse à l'influence du milieu socio-professionnel des parents sur le type d'étude des enfants. Pour répondre à cette question :",
-      "html": "<p>On interroge 1873 ́étudiants de Master sur la catégorie socio-professionnelle de leurs parents. Les ́étudiants suivent différents cursus : ́écoles d’ingénieurs, ́école de commerce, universités scientifiques, médecine. Les résultats sont les suivants :</p>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: center;\"></th>\n<th style=\"text-align: center;\">Ouvriers</th>\n<th style=\"text-align: center;\">Employés</th>\n<th style=\"text-align: center;\">Cadres</th>\n<th style=\"text-align: center;\">Professions libérales</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\">Ecoles d’ingénieurs</td>\n<td style=\"text-align: center;\">50</td>\n<td style=\"text-align: center;\">280</td>\n<td style=\"text-align: center;\">120</td>\n<td style=\"text-align: center;\">20</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">Ecoles de commerce</td>\n<td style=\"text-align: center;\">8</td>\n<td style=\"text-align: center;\">29</td>\n<td style=\"text-align: center;\">210</td>\n<td style=\"text-align: center;\">350</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">Universités scientifiques</td>\n<td style=\"text-align: center;\">150</td>\n<td style=\"text-align: center;\">230</td>\n<td style=\"text-align: center;\">100</td>\n<td style=\"text-align: center;\">40</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">Médecine</td>\n<td style=\"text-align: center;\">26</td>\n<td style=\"text-align: center;\">80</td>\n<td style=\"text-align: center;\">80</td>\n<td style=\"text-align: center;\">100</td>\n</tr>\n</tbody>\n</table>\n<p>On s’intéresse à l’influence du milieu socio-professionnel des parents sur le type d’étude des enfants. Pour répondre à cette question :</p>",
+      "html": "<p>On interroge 1873 ́étudiants de Master sur la catégorie socio-professionnelle de leurs parents. Les ́étudiants suivent différents cursus : ́écoles d’ingénieurs, ́école de commerce, universités scientifiques, médecine. Les résultats sont les suivants :</p>\n<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: center;\"></th>\n<th style=\"text-align: center;\">Ouvriers</th>\n<th style=\"text-align: center;\">Employés</th>\n<th style=\"text-align: center;\">Cadres</th>\n<th style=\"text-align: center;\">Professions libérales</th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: center;\">Ecoles d’ingénieurs</td>\n<td style=\"text-align: center;\">50</td>\n<td style=\"text-align: center;\">280</td>\n<td style=\"text-align: center;\">120</td>\n<td style=\"text-align: center;\">20</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: center;\">Ecoles de commerce</td>\n<td style=\"text-align: center;\">8</td>\n<td style=\"text-align: center;\">29</td>\n<td style=\"text-align: center;\">210</td>\n<td style=\"text-align: center;\">350</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: center;\">Universités scientifiques</td>\n<td style=\"text-align: center;\">150</td>\n<td style=\"text-align: center;\">230</td>\n<td style=\"text-align: center;\">100</td>\n<td style=\"text-align: center;\">40</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: center;\">Médecine</td>\n<td style=\"text-align: center;\">26</td>\n<td style=\"text-align: center;\">80</td>\n<td style=\"text-align: center;\">80</td>\n<td style=\"text-align: center;\">100</td>\n</tr>\n</tbody>\n</table>\n<p>On s’intéresse à l’influence du milieu socio-professionnel des parents sur le type d’étude des enfants. Pour répondre à cette question :</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Réaliser un test d'indépendance du $\\chi^2$ en expliquant le résultat obtenu pour un risque de première espèce de $5\\%$.",
-      "html": "<p>Réaliser un test d’indépendance du <span>\\(\\chi^2\\)</span> en expliquant le résultat obtenu pour un risque de première espèce de <span>\\(5\\%\\)</span>.</p>",
+      "html": "<p>Réaliser un test d’indépendance du <span class=\"math inline\">\\(\\chi^2\\)</span> en expliquant le résultat obtenu pour un risque de première espèce de <span class=\"math inline\">\\(5\\%\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "question",
       "latex": "Jusqu'à quel risque de première espèce peut-on maintenir cette décision ? Le résultat obtenu s'appelle la $p$-valeur du test.",
-      "html": "<p>Jusqu’à quel risque de première espèce peut-on maintenir cette décision ? Le résultat obtenu s’appelle la <span>\\(p\\)</span>-valeur du test.</p>",
+      "html": "<p>Jusqu’à quel risque de première espèce peut-on maintenir cette décision ? Le résultat obtenu s’appelle la <span class=\"math inline\">\\(p\\)</span>-valeur du test.</p>",
       "order": 3
     }
   ],

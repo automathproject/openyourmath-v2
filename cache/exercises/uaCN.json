@@ -9,76 +9,76 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-10-14",
-  "updated_at": "2025-08-23T12:08:00.313Z",
+  "updated_at": "2025-08-25T08:57:53.100Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Une commune a lancé une étude concernant les problèmes liés au transport. Sur une ligne de bus, une enquête a permis de révéler que le retard (ou l'avance) sur l'horaire officiel du bus à une station donnée est donné par une variable aléatoire $X$, en minutes, suivant une loi normale $\\mathcal{N}(5,\\sigma)$ où $\\sigma >0$ est pour l'instant indéterminé. Cependant, on sait que la probabilité que le retard soit inférieur à $7$ minutes est de $p=84{,}13\\%$.",
-      "html": "<p>Une commune a lancé une étude concernant les problèmes liés au transport. Sur une ligne de bus, une enquête a permis de révéler que le retard (ou l’avance) sur l’horaire officiel du bus à une station donnée est donné par une variable aléatoire <span>\\(X\\)</span>, en minutes, suivant une loi normale <span>\\(\\mathcal{N}(5,\\sigma)\\)</span> où <span>\\(\\sigma &gt;0\\)</span> est pour l’instant indéterminé. Cependant, on sait que la probabilité que le retard soit inférieur à <span>\\(7\\)</span> minutes est de <span>\\(p=84{,}13\\%\\)</span>.</p>",
+      "html": "<p>Une commune a lancé une étude concernant les problèmes liés au transport. Sur une ligne de bus, une enquête a permis de révéler que le retard (ou l’avance) sur l’horaire officiel du bus à une station donnée est donné par une variable aléatoire <span class=\"math inline\">\\(X\\)</span>, en minutes, suivant une loi normale <span class=\"math inline\">\\(\\mathcal{N}(5,\\sigma)\\)</span> où <span class=\"math inline\">\\(\\sigma &gt;0\\)</span> est pour l’instant indéterminé. Cependant, on sait que la probabilité que le retard soit inférieur à <span class=\"math inline\">\\(7\\)</span> minutes est de <span class=\"math inline\">\\(p=84{,}13\\%\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Justifier que $\\sigma = 2$.",
-      "html": "<p>Justifier que <span>\\(\\sigma = 2\\)</span>.</p>",
+      "html": "<p>Justifier que <span class=\"math inline\">\\(\\sigma = 2\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "On sait que $\\prob\\left(X \\leq 7 \\right) = 0{,}8413$ d'où $\\prob\\left(\\frac{X-5}{\\sigma} \\leq \\frac{2}{\\sigma}\\right) = 0{,}8413$. Par lecture de table, $\\frac{2}{\\sigma} = 1$ d'où $\\sigma = 2$.",
-      "html": "<p>On sait que <span>\\(\\prob\\left(X \\leq 7 \\right) = 0{,}8413\\)</span> d’où <span>\\(\\prob\\left(\\frac{X-5}{\\sigma} \\leq \\frac{2}{\\sigma}\\right) = 0{,}8413\\)</span>. Par lecture de table, <span>\\(\\frac{2}{\\sigma} = 1\\)</span> d’où <span>\\(\\sigma = 2\\)</span>.</p>",
+      "html": "<p>On sait que <span class=\"math inline\">\\(\\prob\\left(X \\leq 7 \\right) = 0{,}8413\\)</span> d’où <span class=\"math inline\">\\(\\prob\\left(\\frac{X-5}{\\sigma} \\leq \\frac{2}{\\sigma}\\right) = 0{,}8413\\)</span>. Par lecture de table, <span class=\"math inline\">\\(\\frac{2}{\\sigma} = 1\\)</span> d’où <span class=\"math inline\">\\(\\sigma = 2\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Sachant que le retard est supérieur à $3$ minutes, quelle est la probablité que ce retard soit inférieur à $7$ minutes ?",
-      "html": "<p>Sachant que le retard est supérieur à <span>\\(3\\)</span> minutes, quelle est la probablité que ce retard soit inférieur à <span>\\(7\\)</span> minutes ?</p>",
+      "html": "<p>Sachant que le retard est supérieur à <span class=\"math inline\">\\(3\\)</span> minutes, quelle est la probablité que ce retard soit inférieur à <span class=\"math inline\">\\(7\\)</span> minutes ?</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "On cherche $\\prob(X \\leq 7 \\mid X \\geq 3) = \\frac{\\prob(3 \\leq X \\leq 7)}{\\prob(X \\geq 3)}$. Or $\\prob(3 \\leq X \\leq 7) = \\prob\\left(-1 \\leq \\frac{X-5}{2} \\leq 1\\right) = 2 \\Phi(1) - 1 \\approx 2 \\times 0{,}8413 - 1 = 0{,}6826$ et $\\prob(X \\geq 3) = \\prob\\left( \\frac{X-5}{2} \\geq -1\\right) \\approx 0{,}8413$ d'où $\\prob(X \\leq 7 \\mid X \\geq 3) \\approx 0{,}8114$.",
-      "html": "<p>On cherche <span>\\(\\prob(X \\leq 7 \\mid X \\geq 3) = \\frac{\\prob(3 \\leq X \\leq 7)}{\\prob(X \\geq 3)}\\)</span>. Or <span>\\(\\prob(3 \\leq X \\leq 7) = \\prob\\left(-1 \\leq \\frac{X-5}{2} \\leq 1\\right) = 2 \\Phi(1) - 1 \\approx 2 \\times 0{,}8413 - 1 = 0{,}6826\\)</span> et <span>\\(\\prob(X \\geq 3) = \\prob\\left( \\frac{X-5}{2} \\geq -1\\right) \\approx 0{,}8413\\)</span> d’où <span>\\(\\prob(X \\leq 7 \\mid X \\geq 3) \\approx 0{,}8114\\)</span>.</p>",
+      "html": "<p>On cherche <span class=\"math inline\">\\(\\prob(X \\leq 7 \\mid X \\geq 3) = \\frac{\\prob(3 \\leq X \\leq 7)}{\\prob(X \\geq 3)}\\)</span>. Or <span class=\"math inline\">\\(\\prob(3 \\leq X \\leq 7) = \\prob\\left(-1 \\leq \\frac{X-5}{2} \\leq 1\\right) = 2 \\Phi(1) - 1 \\approx 2 \\times 0{,}8413 - 1 = 0{,}6826\\)</span> et <span class=\"math inline\">\\(\\prob(X \\geq 3) = \\prob\\left( \\frac{X-5}{2} \\geq -1\\right) \\approx 0{,}8413\\)</span> d’où <span class=\"math inline\">\\(\\prob(X \\leq 7 \\mid X \\geq 3) \\approx 0{,}8114\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "text",
       "latex": "Une dame fréquente cette ligne de bus une fois par jour pendant 10 jours. On suppose que les retards journaliers sont indépendants. On note $Y$ le nombre de jours où la dame a attendu moins de $7$ minutes.",
-      "html": "<p>Une dame fréquente cette ligne de bus une fois par jour pendant 10 jours. On suppose que les retards journaliers sont indépendants. On note <span>\\(Y\\)</span> le nombre de jours où la dame a attendu moins de <span>\\(7\\)</span> minutes.</p>",
+      "html": "<p>Une dame fréquente cette ligne de bus une fois par jour pendant 10 jours. On suppose que les retards journaliers sont indépendants. On note <span class=\"math inline\">\\(Y\\)</span> le nombre de jours où la dame a attendu moins de <span class=\"math inline\">\\(7\\)</span> minutes.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "question",
       "latex": "Déterminer la loi de $Y$, son espérance et sa variance.",
-      "html": "<p>Déterminer la loi de <span>\\(Y\\)</span>, son espérance et sa variance.</p>",
+      "html": "<p>Déterminer la loi de <span class=\"math inline\">\\(Y\\)</span>, son espérance et sa variance.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "reponse",
       "latex": "On a $Y \\sim \\mathcal{B}(10,p)$ d'où $\\E(Y) = 10p = 8{,}413$ et $\\var(Y) = 10p(1-p) = 1{,}3351431$.",
-      "html": "<p>On a <span>\\(Y \\sim \\mathcal{B}(10,p)\\)</span> d’où <span>\\(\\E(Y) = 10p = 8{,}413\\)</span> et <span>\\(\\var(Y) = 10p(1-p) = 1{,}3351431\\)</span>.</p>",
+      "html": "<p>On a <span class=\"math inline\">\\(Y \\sim \\mathcal{B}(10,p)\\)</span> d’où <span class=\"math inline\">\\(\\E(Y) = 10p = 8{,}413\\)</span> et <span class=\"math inline\">\\(\\var(Y) = 10p(1-p) = 1{,}3351431\\)</span>.</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "question",
       "latex": "Soit $T$ la variable aléatoire définie de la manière suivante : si la dame attend moins de $7$ minutes chaque jour pendant les 10 jours, $T$ prend la valeur $0$ ; sinon $T$ pend la valeur du $k$-ème jour ($k \\in \\{1,...,10\\}$) où pour la première fois, la dame attend plus de $7$ minutes. Déterminer, en fonction de $p$, la loi de probabilité de $T$.",
-      "html": "<p>Soit <span>\\(T\\)</span> la variable aléatoire définie de la manière suivante : si la dame attend moins de <span>\\(7\\)</span> minutes chaque jour pendant les 10 jours, <span>\\(T\\)</span> prend la valeur <span>\\(0\\)</span> ; sinon <span>\\(T\\)</span> pend la valeur du <span>\\(k\\)</span>-ème jour (<span>\\(k \\in \\{1,...,10\\}\\)</span>) où pour la première fois, la dame attend plus de <span>\\(7\\)</span> minutes. Déterminer, en fonction de <span>\\(p\\)</span>, la loi de probabilité de <span>\\(T\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(T\\)</span> la variable aléatoire définie de la manière suivante : si la dame attend moins de <span class=\"math inline\">\\(7\\)</span> minutes chaque jour pendant les 10 jours, <span class=\"math inline\">\\(T\\)</span> prend la valeur <span class=\"math inline\">\\(0\\)</span> ; sinon <span class=\"math inline\">\\(T\\)</span> pend la valeur du <span class=\"math inline\">\\(k\\)</span>-ème jour (<span class=\"math inline\">\\(k \\in \\{1,...,10\\}\\)</span>) où pour la première fois, la dame attend plus de <span class=\"math inline\">\\(7\\)</span> minutes. Déterminer, en fonction de <span class=\"math inline\">\\(p\\)</span>, la loi de probabilité de <span class=\"math inline\">\\(T\\)</span>.</p>",
       "order": 9
     },
     {
       "id": "block_10",
       "type": "reponse",
       "latex": "Pour $k \\in \\{1,...,10\\}$, $\\prob(X=k) = p^{k-1}(1-p)$ (on reconnait la loi géométrique de paramètre $1-p$ pour ces $10$ cas). Pour $k=0$, $\\prob(T=0) = \\sum_{k=11}^{+\\infty} p^{k-1}(1-p) = (1-p) \\sum_{k=11}^{+\\infty} p^{k-1} = (1-p) \\times \\frac{p^{10}}{1-p} = p^{10}$.",
-      "html": "<p>Pour <span>\\(k \\in \\{1,...,10\\}\\)</span>, <span>\\(\\prob(X=k) = p^{k-1}(1-p)\\)</span> (on reconnait la loi géométrique de paramètre <span>\\(1-p\\)</span> pour ces <span>\\(10\\)</span> cas). Pour <span>\\(k=0\\)</span>, <span>\\(\\prob(T=0) = \\sum_{k=11}^{+\\infty} p^{k-1}(1-p) = (1-p) \\sum_{k=11}^{+\\infty} p^{k-1} = (1-p) \\times \\frac{p^{10}}{1-p} = p^{10}\\)</span>.</p>",
+      "html": "<p>Pour <span class=\"math inline\">\\(k \\in \\{1,...,10\\}\\)</span>, <span class=\"math inline\">\\(\\prob(X=k) = p^{k-1}(1-p)\\)</span> (on reconnait la loi géométrique de paramètre <span class=\"math inline\">\\(1-p\\)</span> pour ces <span class=\"math inline\">\\(10\\)</span> cas). Pour <span class=\"math inline\">\\(k=0\\)</span>, <span class=\"math inline\">\\(\\prob(T=0) = \\sum_{k=11}^{+\\infty} p^{k-1}(1-p) = (1-p) \\sum_{k=11}^{+\\infty} p^{k-1} = (1-p) \\times \\frac{p^{10}}{1-p} = p^{10}\\)</span>.</p>",
       "order": 10
     }
   ],

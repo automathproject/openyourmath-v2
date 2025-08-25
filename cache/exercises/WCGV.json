@@ -9,69 +9,69 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-09-04",
-  "updated_at": "2025-08-23T12:07:09.977Z",
+  "updated_at": "2025-08-25T08:57:00.419Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Une usine produit des circuits imprimés dont $1$\\% sont défectueux.",
-      "html": "<p>Une usine produit des circuits imprimés dont <span>\\(1\\)</span>% sont défectueux.</p>",
+      "html": "<p>Une usine produit des circuits imprimés dont <span class=\"math inline\">\\(1\\)</span>% sont défectueux.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "On fait un prélèvement de $100$ circuits imprimés. Quelle est la probabilité qu'il n'y ait pas de circuit imprimé défectueux dans ce prélèvement ?",
-      "html": "<p>On fait un prélèvement de <span>\\(100\\)</span> circuits imprimés. Quelle est la probabilité qu’il n’y ait pas de circuit imprimé défectueux dans ce prélèvement ?</p>",
+      "html": "<p>On fait un prélèvement de <span class=\"math inline\">\\(100\\)</span> circuits imprimés. Quelle est la probabilité qu’il n’y ait pas de circuit imprimé défectueux dans ce prélèvement ?</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "Soit $X$ le nombre de circuits défectueux dans ce prélèvement.\n\t\tAlors $X\\sim \\mathcal{B}(100,0.01)$. La probabilité qu'il n'y ait pas de circuit défectueux est:\n\t\t\\[ \\prob(X=0)=\\binom{100}{0}\\times 0.01^{0}\\times 0.99^{100}=0.99^{100} \\simeq 0.366.\\]",
-      "html": "<p>Soit <span>\\(X\\)</span> le nombre de circuits défectueux dans ce prélèvement.\nAlors <span>\\(X\\sim \\mathcal{B}(100,0.01)\\)</span>. La probabilité qu’il n’y ait pas de circuit défectueux est:\n<span>\\[\\prob(X=0)=\\binom{100}{0}\\times 0.01^{0}\\times 0.99^{100}=0.99^{100} \\simeq 0.366.\\]</span></p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(X\\)</span> le nombre de circuits défectueux dans ce prélèvement.\nAlors <span class=\"math inline\">\\(X\\sim \\mathcal{B}(100,0.01)\\)</span>. La probabilité qu’il n’y ait pas de circuit défectueux est:\n<span class=\"math display\">\\[\\prob(X=0)=\\binom{100}{0}\\times 0.01^{0}\\times 0.99^{100}=0.99^{100} \\simeq 0.366.\\]</span></p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Quelle est la probabilité qu'il y ait deux circuits imprimés défectueux dans un prélèvement de $100$ circuits imprimés ?",
-      "html": "<p>Quelle est la probabilité qu’il y ait deux circuits imprimés défectueux dans un prélèvement de <span>\\(100\\)</span> circuits imprimés ?</p>",
+      "html": "<p>Quelle est la probabilité qu’il y ait deux circuits imprimés défectueux dans un prélèvement de <span class=\"math inline\">\\(100\\)</span> circuits imprimés ?</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "$\\prob(X=2)=\\binom{100}{2}\\times 0.01^{2}\\times 0.99^{98}\\simeq 0.185$",
-      "html": "<p><span>\\(\\prob(X=2)=\\binom{100}{2}\\times 0.01^{2}\\times 0.99^{98}\\simeq 0.185\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(\\prob(X=2)=\\binom{100}{2}\\times 0.01^{2}\\times 0.99^{98}\\simeq 0.185\\)</span></p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "On prélève les circuits imprimés un par un et on les teste immédiatement. Quelle est la probabilité que le premier circuit imprimé défectueux apparaisse au $100$\\up{ème} tirage ?",
-      "html": "<p>On prélève les circuits imprimés un par un et on les teste immédiatement. Quelle est la probabilité que le premier circuit imprimé défectueux apparaisse au <span>\\(100\\)</span> tirage ?</p>",
+      "html": "<p>On prélève les circuits imprimés un par un et on les teste immédiatement. Quelle est la probabilité que le premier circuit imprimé défectueux apparaisse au <span class=\"math inline\">\\(100\\)</span> tirage ?</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "Soit $Y$ le rang du premier circuit imprimé défectueux. Alors $Y\\sim \\mathcal{G}(0.01)$ et on a:\n\t\t\\[ \\prob(Y=100)=0.99^{99}\\times 0.01 \\simeq 0.0037,\\]\n\t\tsoit environ $0.37$\\% de chance de rencontrer le premier circuit défectueux au dernier tirage.",
-      "html": "<p>Soit <span>\\(Y\\)</span> le rang du premier circuit imprimé défectueux. Alors <span>\\(Y\\sim \\mathcal{G}(0.01)\\)</span> et on a:\n<span>\\[\\prob(Y=100)=0.99^{99}\\times 0.01 \\simeq 0.0037,\\]</span>\nsoit environ <span>\\(0.37\\)</span>% de chance de rencontrer le premier circuit défectueux au dernier tirage.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(Y\\)</span> le rang du premier circuit imprimé défectueux. Alors <span class=\"math inline\">\\(Y\\sim \\mathcal{G}(0.01)\\)</span> et on a:\n<span class=\"math display\">\\[\\prob(Y=100)=0.99^{99}\\times 0.01 \\simeq 0.0037,\\]</span>\nsoit environ <span class=\"math inline\">\\(0.37\\)</span>% de chance de rencontrer le premier circuit défectueux au dernier tirage.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "question",
       "latex": "Sur $N=10\\ 000$ circuits imprimés en stock dont $d=100$ sont défectueux, on en choisit $500$. Quelle est la probabilité que sur les $500$ prélevés il y en ait cinq défectueux ?",
-      "html": "<p>Sur <span>\\(N=10\\ 000\\)</span> circuits imprimés en stock dont <span>\\(d=100\\)</span> sont défectueux, on en choisit <span>\\(500\\)</span>. Quelle est la probabilité que sur les <span>\\(500\\)</span> prélevés il y en ait cinq défectueux ?</p>",
+      "html": "<p>Sur <span class=\"math inline\">\\(N=10\\ 000\\)</span> circuits imprimés en stock dont <span class=\"math inline\">\\(d=100\\)</span> sont défectueux, on en choisit <span class=\"math inline\">\\(500\\)</span>. Quelle est la probabilité que sur les <span class=\"math inline\">\\(500\\)</span> prélevés il y en ait cinq défectueux ?</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "reponse",
       "latex": "Soit $Z$ le nombre de circuits défectueux sur les $500$ prélevés. Alors $Z\\sim \\mathcal{H}(500,0.01,10\\ 000)$ et on a\n\t\t\\[ \\prob(Z=5)=\\frac{\\binom{100}{5}\\binom{9900}{495}}{\\binom{10\\ 000}{500}}.\n\t\t\\]\n\t\tQuand le paramètre $N$ est grand (dans les faits, quand $\\frac n N < 0,1$), on peut approcher une loi hypergéométrique $\\mathcal{H}(n,p,N)$ par une loi binomiale $\\mathcal{B}(n,p)$. Ici, on obtient une approximation de $\\prob(X=5)$ par $\\binom{500}{5}\\times 0.01^5 \\times 0.99^{495} \\simeq 0.18$.",
-      "html": "<p>Soit <span>\\(Z\\)</span> le nombre de circuits défectueux sur les <span>\\(500\\)</span> prélevés. Alors <span>\\(Z\\sim \\mathcal{H}(500,0.01,10\\ 000)\\)</span> et on a\n<span>\\[\\prob(Z=5)=\\frac{\\binom{100}{5}\\binom{9900}{495}}{\\binom{10\\ 000}{500}}.\\]</span>\nQuand le paramètre <span>\\(N\\)</span> est grand (dans les faits, quand <span>\\(\\frac n N &lt; 0,1\\)</span>), on peut approcher une loi hypergéométrique <span>\\(\\mathcal{H}(n,p,N)\\)</span> par une loi binomiale <span>\\(\\mathcal{B}(n,p)\\)</span>. Ici, on obtient une approximation de <span>\\(\\prob(X=5)\\)</span> par <span>\\(\\binom{500}{5}\\times 0.01^5 \\times 0.99^{495} \\simeq 0.18\\)</span>.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(Z\\)</span> le nombre de circuits défectueux sur les <span class=\"math inline\">\\(500\\)</span> prélevés. Alors <span class=\"math inline\">\\(Z\\sim \\mathcal{H}(500,0.01,10\\ 000)\\)</span> et on a\n<span class=\"math display\">\\[\\prob(Z=5)=\\frac{\\binom{100}{5}\\binom{9900}{495}}{\\binom{10\\ 000}{500}}.\\]</span>\nQuand le paramètre <span class=\"math inline\">\\(N\\)</span> est grand (dans les faits, quand <span class=\"math inline\">\\(\\frac n N &lt; 0,1\\)</span>), on peut approcher une loi hypergéométrique <span class=\"math inline\">\\(\\mathcal{H}(n,p,N)\\)</span> par une loi binomiale <span class=\"math inline\">\\(\\mathcal{B}(n,p)\\)</span>. Ici, on obtient une approximation de <span class=\"math inline\">\\(\\prob(X=5)\\)</span> par <span class=\"math inline\">\\(\\binom{500}{5}\\times 0.01^5 \\times 0.99^{495} \\simeq 0.18\\)</span>.</p>",
       "order": 9
     }
   ],

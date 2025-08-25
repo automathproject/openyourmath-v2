@@ -9,13 +9,13 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "",
-  "updated_at": "2025-08-23T12:06:34.470Z",
+  "updated_at": "2025-08-25T08:56:23.489Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Lors d'un référendum, un sondage aléatoire simple avec remise pratiqué sur $1000$ personnes a\ndonné $55\\%$ pour le << Oui >> et $45\\%$ pour le << Non >>.",
-      "html": "<p>Lors d’un référendum, un sondage aléatoire simple avec remise pratiqué sur <span>\\(1000\\)</span> personnes a\ndonné <span>\\(55\\%\\)</span> pour le &lt;&lt; Oui &gt;&gt; et <span>\\(45\\%\\)</span> pour le &lt;&lt; Non &gt;&gt;.</p>",
+      "html": "<p>Lors d’un référendum, un sondage aléatoire simple avec remise pratiqué sur <span class=\"math inline\">\\(1000\\)</span> personnes a\ndonné <span class=\"math inline\">\\(55\\%\\)</span> pour le &lt;&lt; Oui &gt;&gt; et <span class=\"math inline\">\\(45\\%\\)</span> pour le &lt;&lt; Non &gt;&gt;.</p>",
       "order": 1
     },
     {
@@ -29,21 +29,21 @@
       "id": "block_3",
       "type": "reponse",
       "latex": "On cherche à estimer une fréquence à partir d'un échantillon de taille $1000$. La fréquence observée dans l'échantillon est $f_{obs} = \\frac{55}{100}$. On peut donc utiliser la formule du cours : \n\t\t$$I_{conf}(F(\\omega))=\\left[f_{obs}-u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} ~;~ f_{obs} + u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} \\right]$$\n\t\ten remplaçant $u_{\\alpha/2}$ par $1{,}96$ pour une confiance de $95\\%$, on obtient numériquement $I_{conf} \\approx [0.519 ; 0.581]$. \n\nEn remplaçant $u_{\\alpha/2}$ par $2{,}5758$ pour une confiance de $99\\%$, on obtient numériquement $I_{conf} \\approx [0.509 ; 0.591]$.",
-      "html": "<p>On cherche à estimer une fréquence à partir d’un échantillon de taille <span>\\(1000\\)</span>. La fréquence observée dans l’échantillon est <span>\\(f_{obs} = \\frac{55}{100}\\)</span>. On peut donc utiliser la formule du cours :\n<span>\\[I_{conf}(F(\\omega))=\\left[f_{obs}-u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} ~;~ f_{obs} + u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} \\right]\\]</span>\nen remplaçant <span>\\(u_{\\alpha/2}\\)</span> par <span>\\(1{,}96\\)</span> pour une confiance de <span>\\(95\\%\\)</span>, on obtient numériquement <span>\\(I_{conf} \\approx [0.519 ; 0.581]\\)</span>.</p>\n<p>En remplaçant <span>\\(u_{\\alpha/2}\\)</span> par <span>\\(2{,}5758\\)</span> pour une confiance de <span>\\(99\\%\\)</span>, on obtient numériquement <span>\\(I_{conf} \\approx [0.509 ; 0.591]\\)</span>.</p>",
+      "html": "<p>On cherche à estimer une fréquence à partir d’un échantillon de taille <span class=\"math inline\">\\(1000\\)</span>. La fréquence observée dans l’échantillon est <span class=\"math inline\">\\(f_{obs} = \\frac{55}{100}\\)</span>. On peut donc utiliser la formule du cours :\n<span class=\"math display\">\\[I_{conf}(F(\\omega))=\\left[f_{obs}-u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} ~;~ f_{obs} + u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} \\right]\\]</span>\nen remplaçant <span class=\"math inline\">\\(u_{\\alpha/2}\\)</span> par <span class=\"math inline\">\\(1{,}96\\)</span> pour une confiance de <span class=\"math inline\">\\(95\\%\\)</span>, on obtient numériquement <span class=\"math inline\">\\(I_{conf} \\approx [0.519 ; 0.581]\\)</span>.</p>\n<p>En remplaçant <span class=\"math inline\">\\(u_{\\alpha/2}\\)</span> par <span class=\"math inline\">\\(2{,}5758\\)</span> pour une confiance de <span class=\"math inline\">\\(99\\%\\)</span>, on obtient numériquement <span class=\"math inline\">\\(I_{conf} \\approx [0.509 ; 0.591]\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "reponse",
       "latex": "La réponse est oui car dans chacun des cas, l'intervalle de confiance se situe au dessus de $50\\%$. Il faudrait dépasser $99,8\\%$ de confiance pour pouvoir commencer à mettre en doute que le << Oui >> l'emporte.",
-      "html": "<p>La réponse est oui car dans chacun des cas, l’intervalle de confiance se situe au dessus de <span>\\(50\\%\\)</span>. Il faudrait dépasser <span>\\(99,8\\%\\)</span> de confiance pour pouvoir commencer à mettre en doute que le &lt;&lt; Oui &gt;&gt; l’emporte.</p>",
+      "html": "<p>La réponse est oui car dans chacun des cas, l’intervalle de confiance se situe au dessus de <span class=\"math inline\">\\(50\\%\\)</span>. Il faudrait dépasser <span class=\"math inline\">\\(99,8\\%\\)</span> de confiance pour pouvoir commencer à mettre en doute que le &lt;&lt; Oui &gt;&gt; l’emporte.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "La longueur de l'intervalle de confiance est de l'ordre de $\\frac{1}{\\sqrt{n}}$ où $n$ est la taille de l'échantillon. Pour avoir $\\frac{1}{\\sqrt{n}} < 0{,}01$, il faut $n > 10\\,000$.",
-      "html": "<p>La longueur de l’intervalle de confiance est de l’ordre de <span>\\(\\frac{1}{\\sqrt{n}}\\)</span> où <span>\\(n\\)</span> est la taille de l’échantillon. Pour avoir <span>\\(\\frac{1}{\\sqrt{n}} &lt; 0{,}01\\)</span>, il faut <span>\\(n &gt; 10\\,000\\)</span>.</p>",
+      "html": "<p>La longueur de l’intervalle de confiance est de l’ordre de <span class=\"math inline\">\\(\\frac{1}{\\sqrt{n}}\\)</span> où <span class=\"math inline\">\\(n\\)</span> est la taille de l’échantillon. Pour avoir <span class=\"math inline\">\\(\\frac{1}{\\sqrt{n}} &lt; 0{,}01\\)</span>, il faut <span class=\"math inline\">\\(n &gt; 10\\,000\\)</span>.</p>",
       "order": 5
     }
   ],

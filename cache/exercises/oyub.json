@@ -9,13 +9,13 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "",
-  "updated_at": "2025-08-23T12:07:47.336Z",
+  "updated_at": "2025-08-25T08:57:39.811Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On étudie la consommation du chauffage pendant les mois d’hiver, dans deux régions A et B. On suppose que la consommation dans ces régions est distribuée selon une loi normale. On prélève un échantillon aléatoire de ménages dans les deux régions. Après calcul, on observe sur ces deux échantillons les valeurs :\n\n\\begin{enumerate}\n    \\item Région A : échantillon de taille $n_A=200$, moyenne $\\bar{x}_A=600$, variance $\\sigma_A^2=20000$ ;\n    \\item Région B : échantillon de taille $n_B=100$, moyenne $\\bar{x}_B=500$, variance $\\sigma_B^2=160000$.\n\\end{enumerate}\n\nL’écart de consommation entre les deux régions est-il significatif à 5 \\% près ?",
-      "html": "<p>On étudie la consommation du chauffage pendant les mois d’hiver, dans deux régions A et B. On suppose que la consommation dans ces régions est distribuée selon une loi normale. On prélève un échantillon aléatoire de ménages dans les deux régions. Après calcul, on observe sur ces deux échantillons les valeurs :</p>\n<ol>\n<li><p>Région A : échantillon de taille <span>\\(n_A=200\\)</span>, moyenne <span>\\(\\bar{x}_A=600\\)</span>, variance <span>\\(\\sigma_A^2=20000\\)</span> ;</p></li>\n<li><p>Région B : échantillon de taille <span>\\(n_B=100\\)</span>, moyenne <span>\\(\\bar{x}_B=500\\)</span>, variance <span>\\(\\sigma_B^2=160000\\)</span>.</p></li>\n</ol>\n<p>L’écart de consommation entre les deux régions est-il significatif à 5 % près ?</p>",
+      "html": "<p>On étudie la consommation du chauffage pendant les mois d’hiver, dans deux régions A et B. On suppose que la consommation dans ces régions est distribuée selon une loi normale. On prélève un échantillon aléatoire de ménages dans les deux régions. Après calcul, on observe sur ces deux échantillons les valeurs :</p>\n<ol>\n<li><p>Région A : échantillon de taille <span class=\"math inline\">\\(n_A=200\\)</span>, moyenne <span class=\"math inline\">\\(\\bar{x}_A=600\\)</span>, variance <span class=\"math inline\">\\(\\sigma_A^2=20000\\)</span> ;</p></li>\n<li><p>Région B : échantillon de taille <span class=\"math inline\">\\(n_B=100\\)</span>, moyenne <span class=\"math inline\">\\(\\bar{x}_B=500\\)</span>, variance <span class=\"math inline\">\\(\\sigma_B^2=160000\\)</span>.</p></li>\n</ol>\n<p>L’écart de consommation entre les deux régions est-il significatif à 5 % près ?</p>",
       "order": 1
     }
   ],

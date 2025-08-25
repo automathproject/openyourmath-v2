@@ -9,13 +9,13 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-03-02",
-  "updated_at": "2025-08-23T12:07:41.736Z",
+  "updated_at": "2025-08-25T08:57:33.927Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On consid\\`ere le syst\\`eme lin\\'eaire :\n\\begin{equation}\n\t\\left\\{\\begin{array}{rcl}\n\t\t5 x +  y + z & = & 7\\\\\n\t\tx + 5 y -z & = & 5 \\\\\n\t\tx -y + 4z & = & 4\n\t\\end{array}\\right.\n\t\\tag{$S$}\n\t\\label{eq:syslin1}\n\\end{equation}\n\ndont la solution est $(1,1,1)$.",
-      "html": "<p>On considère le système linéaire :\n<span>\\[\\begin{equation}\n    \\left\\{\\begin{array}{rcl}\n        5 x +  y + z &amp; = &amp; 7\\\\\n        x + 5 y -z &amp; = &amp; 5 \\\\\n        x -y + 4z &amp; = &amp; 4\n    \\end{array}\\right.\n    \\tag{$S$}\n    \\label{eq:syslin1}\n\\end{equation}\\]</span></p>\n<p>dont la solution est <span>\\((1,1,1)\\)</span>.</p>",
+      "html": "<p>On considère le système linéaire :\n<span class=\"math display\">\\[\\begin{equation}\n    \\left\\{\\begin{array}{rcl}\n        5 x +  y + z &amp; = &amp; 7\\\\\n        x + 5 y -z &amp; = &amp; 5 \\\\\n        x -y + 4z &amp; = &amp; 4\n    \\end{array}\\right.\n    \\tag{$S$}\n    \\label{eq:syslin1}\n\\end{equation}\\]</span></p>\n<p>dont la solution est <span class=\"math inline\">\\((1,1,1)\\)</span>.</p>",
       "order": 1
     },
     {
@@ -29,49 +29,49 @@
       "id": "block_3",
       "type": "reponse",
       "latex": "Résoudre ce système revient à résoudre l'équation $Ax=b$ où $A=\\left(\\begin{matrix} 5 & 1 & 1\\\\1 & 5 & -1\\\\1 & -1 & 4 \\end{matrix}\\right)$ et $b=\\left(\\begin{matrix} 7\\\\5\\\\4 \\end{matrix}\\right)$. Cette matrice $A$ est à diagonale strictement dominante car $5>1+1$ et $4>1+1$. Par théorème, on en déduit que la méthode de Jacobi converge vers la solution.",
-      "html": "<p>Résoudre ce système revient à résoudre l’équation <span>\\(Ax=b\\)</span> où <span>\\(A=\\left(\\begin{matrix} 5 &amp; 1 &amp; 1\\\\1 &amp; 5 &amp; -1\\\\1 &amp; -1 &amp; 4 \\end{matrix}\\right)\\)</span> et <span>\\(b=\\left(\\begin{matrix} 7\\\\5\\\\4 \\end{matrix}\\right)\\)</span>. Cette matrice <span>\\(A\\)</span> est à diagonale strictement dominante car <span>\\(5&gt;1+1\\)</span> et <span>\\(4&gt;1+1\\)</span>. Par théorème, on en déduit que la méthode de Jacobi converge vers la solution.</p>",
+      "html": "<p>Résoudre ce système revient à résoudre l’équation <span class=\"math inline\">\\(Ax=b\\)</span> où <span class=\"math inline\">\\(A=\\left(\\begin{matrix} 5 &amp; 1 &amp; 1\\\\1 &amp; 5 &amp; -1\\\\1 &amp; -1 &amp; 4 \\end{matrix}\\right)\\)</span> et <span class=\"math inline\">\\(b=\\left(\\begin{matrix} 7\\\\5\\\\4 \\end{matrix}\\right)\\)</span>. Cette matrice <span class=\"math inline\">\\(A\\)</span> est à diagonale strictement dominante car <span class=\"math inline\">\\(5&gt;1+1\\)</span> et <span class=\"math inline\">\\(4&gt;1+1\\)</span>. Par théorème, on en déduit que la méthode de Jacobi converge vers la solution.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Calculer la premi\\`ere it\\'eration de la m\\'ethode de Jacobi en partant de $X_0 = (0,0,0)$ puis la 50ème itération à l'aide d'un programme Python.",
-      "html": "<p>Calculer la première itération de la méthode de Jacobi en partant de <span>\\(X_0 = (0,0,0)\\)</span> puis la 50ème itération à l’aide d’un programme Python.</p>",
+      "html": "<p>Calculer la première itération de la méthode de Jacobi en partant de <span class=\"math inline\">\\(X_0 = (0,0,0)\\)</span> puis la 50ème itération à l’aide d’un programme Python.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "Pour appliquer la méthode de Jacobi, on décompose $A$ sous la forme $A=M-N$ où \n\t\t$M=\\left(\\begin{matrix} 5 & 0 & 0\\\\0 & 5 & 0\\\\0 & 0 & 4 \\end{matrix}\\right)$ et $N=\\left(\\begin{matrix} 0 & -1 & -1\\\\-1 & 0 & 1\\\\-1 & 1 & 0 \\end{matrix}\\right)$. Pour tout entier $n$, on définit $X_{n+1}=F(X_n)$ où $F(X)=M^{-1}NX+M^{-1}b$ et $M^{-1}=\\left(\\begin{matrix} \\frac15 & 0 & 0\\\\0 & \\frac15 & 0\\\\0 & 0 & \\frac14 \\end{matrix}\\right)$. On décide d'initialiser l'itération avec $X_0=\\left(\\begin{matrix} 0\\\\0\\\\0 \\end{matrix}\\right)$.\n\t\t\n\t\tOn calcule :\n\t\t$$X_1 = M^{-1}NX_0+M^{-1}b= M^{-1}b = \\left(\\begin{matrix} 1.4\\\\1\\\\1 \\end{matrix}\\right) $$\n\t\t$$X_2 = M^{-1}NX_1+M^{-1}b = \\left(\\begin{matrix} 1\\\\0.92\\\\0.9 \\end{matrix}\\right) $$\n\t\t$$X_3 = M^{-1}NX_2+M^{-1}b = \\left(\\begin{matrix} 1.036\\\\0.98\\\\0.98 \\end{matrix}\\right) $$",
-      "html": "<p>Pour appliquer la méthode de Jacobi, on décompose <span>\\(A\\)</span> sous la forme <span>\\(A=M-N\\)</span> où\n<span>\\(M=\\left(\\begin{matrix} 5 &amp; 0 &amp; 0\\\\0 &amp; 5 &amp; 0\\\\0 &amp; 0 &amp; 4 \\end{matrix}\\right)\\)</span> et <span>\\(N=\\left(\\begin{matrix} 0 &amp; -1 &amp; -1\\\\-1 &amp; 0 &amp; 1\\\\-1 &amp; 1 &amp; 0 \\end{matrix}\\right)\\)</span>. Pour tout entier <span>\\(n\\)</span>, on définit <span>\\(X_{n+1}=F(X_n)\\)</span> où <span>\\(F(X)=M^{-1}NX+M^{-1}b\\)</span> et <span>\\(M^{-1}=\\left(\\begin{matrix} \\frac15 &amp; 0 &amp; 0\\\\0 &amp; \\frac15 &amp; 0\\\\0 &amp; 0 &amp; \\frac14 \\end{matrix}\\right)\\)</span>. On décide d’initialiser l’itération avec <span>\\(X_0=\\left(\\begin{matrix} 0\\\\0\\\\0 \\end{matrix}\\right)\\)</span>.</p>\n<p>On calcule :\n<span>\\[X_1 = M^{-1}NX_0+M^{-1}b= M^{-1}b = \\left(\\begin{matrix} 1.4\\\\1\\\\1 \\end{matrix}\\right)\\]</span>\n<span>\\[X_2 = M^{-1}NX_1+M^{-1}b = \\left(\\begin{matrix} 1\\\\0.92\\\\0.9 \\end{matrix}\\right)\\]</span>\n<span>\\[X_3 = M^{-1}NX_2+M^{-1}b = \\left(\\begin{matrix} 1.036\\\\0.98\\\\0.98 \\end{matrix}\\right)\\]</span></p>",
+      "html": "<p>Pour appliquer la méthode de Jacobi, on décompose <span class=\"math inline\">\\(A\\)</span> sous la forme <span class=\"math inline\">\\(A=M-N\\)</span> où\n<span class=\"math inline\">\\(M=\\left(\\begin{matrix} 5 &amp; 0 &amp; 0\\\\0 &amp; 5 &amp; 0\\\\0 &amp; 0 &amp; 4 \\end{matrix}\\right)\\)</span> et <span class=\"math inline\">\\(N=\\left(\\begin{matrix} 0 &amp; -1 &amp; -1\\\\-1 &amp; 0 &amp; 1\\\\-1 &amp; 1 &amp; 0 \\end{matrix}\\right)\\)</span>. Pour tout entier <span class=\"math inline\">\\(n\\)</span>, on définit <span class=\"math inline\">\\(X_{n+1}=F(X_n)\\)</span> où <span class=\"math inline\">\\(F(X)=M^{-1}NX+M^{-1}b\\)</span> et <span class=\"math inline\">\\(M^{-1}=\\left(\\begin{matrix} \\frac15 &amp; 0 &amp; 0\\\\0 &amp; \\frac15 &amp; 0\\\\0 &amp; 0 &amp; \\frac14 \\end{matrix}\\right)\\)</span>. On décide d’initialiser l’itération avec <span class=\"math inline\">\\(X_0=\\left(\\begin{matrix} 0\\\\0\\\\0 \\end{matrix}\\right)\\)</span>.</p>\n<p>On calcule :\n<span class=\"math display\">\\[X_1 = M^{-1}NX_0+M^{-1}b= M^{-1}b = \\left(\\begin{matrix} 1.4\\\\1\\\\1 \\end{matrix}\\right)\\]</span>\n<span class=\"math display\">\\[X_2 = M^{-1}NX_1+M^{-1}b = \\left(\\begin{matrix} 1\\\\0.92\\\\0.9 \\end{matrix}\\right)\\]</span>\n<span class=\"math display\">\\[X_3 = M^{-1}NX_2+M^{-1}b = \\left(\\begin{matrix} 1.036\\\\0.98\\\\0.98 \\end{matrix}\\right)\\]</span></p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Montrer que la matrice $A$ est symétrique définie positive et en déduire la convergence de la m\\'ethode de Gauss-Seidel pour ce probl\\`eme.",
-      "html": "<p>Montrer que la matrice <span>\\(A\\)</span> est symétrique définie positive et en déduire la convergence de la méthode de Gauss-Seidel pour ce problème.</p>",
+      "html": "<p>Montrer que la matrice <span class=\"math inline\">\\(A\\)</span> est symétrique définie positive et en déduire la convergence de la méthode de Gauss-Seidel pour ce problème.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "Pour utiliser la méthode de Gauss-Seidel, on peut s'assurer que la matrice $A$ est symétrique définie positive. Elle est visiblement symétrique réelle donc diagonalisable. Il reste donc à vérifier que ses valeurs propres sont toutes strictement positives. \n\t\t\n\t\tOn se lance dans le calcul du polynôme caractéristique : \n\t\t$$P_A(X) = \\begin{vmatrix}\n\t\t\t5-X & 1 & 1 \\\\\n\t\t\t1 & 5-X & -1 \\\\\n\t\t\t1 & -1 & 4-X \n\t\t\\end{vmatrix} = \\begin{vmatrix}\n\t\t\t6-X & 1 & 1 \\\\\n\t\t\t6-X & 5-X & -1 \\\\\n\t\t\t0 & -1 & 4-X \n\t\t\\end{vmatrix} \t\t=(6-X)(X^2-8X+14)$$\n\t\tUne valeur propre évidente est donc $\\lambda_1=6$. En analysant le polynôme du second degré $(X^2-8X+14)$, on déduit que $\\lambda_2\\lambda_3=14$ donc $\\lambda_2$ et $\\lambda_3$ sont de même signe. De plus, $\\lambda_2+\\lambda_3=8$ donc on est assuré que $\\lambda_2>0$ et $\\lambda_3>0$.",
-      "html": "<p>Pour utiliser la méthode de Gauss-Seidel, on peut s’assurer que la matrice <span>\\(A\\)</span> est symétrique définie positive. Elle est visiblement symétrique réelle donc diagonalisable. Il reste donc à vérifier que ses valeurs propres sont toutes strictement positives.</p>\n<p>On se lance dans le calcul du polynôme caractéristique :\n<span>\\[P_A(X) = \\begin{vmatrix}\n            5-X &amp; 1 &amp; 1 \\\\\n            1 &amp; 5-X &amp; -1 \\\\\n            1 &amp; -1 &amp; 4-X \n        \\end{vmatrix} = \\begin{vmatrix}\n            6-X &amp; 1 &amp; 1 \\\\\n            6-X &amp; 5-X &amp; -1 \\\\\n            0 &amp; -1 &amp; 4-X \n        \\end{vmatrix}       =(6-X)(X^2-8X+14)\\]</span>\nUne valeur propre évidente est donc <span>\\(\\lambda_1=6\\)</span>. En analysant le polynôme du second degré <span>\\((X^2-8X+14)\\)</span>, on déduit que <span>\\(\\lambda_2\\lambda_3=14\\)</span> donc <span>\\(\\lambda_2\\)</span> et <span>\\(\\lambda_3\\)</span> sont de même signe. De plus, <span>\\(\\lambda_2+\\lambda_3=8\\)</span> donc on est assuré que <span>\\(\\lambda_2&gt;0\\)</span> et <span>\\(\\lambda_3&gt;0\\)</span>.</p>",
+      "html": "<p>Pour utiliser la méthode de Gauss-Seidel, on peut s’assurer que la matrice <span class=\"math inline\">\\(A\\)</span> est symétrique définie positive. Elle est visiblement symétrique réelle donc diagonalisable. Il reste donc à vérifier que ses valeurs propres sont toutes strictement positives.</p>\n<p>On se lance dans le calcul du polynôme caractéristique :\n<span class=\"math display\">\\[P_A(X) = \\begin{vmatrix}\n            5-X &amp; 1 &amp; 1 \\\\\n            1 &amp; 5-X &amp; -1 \\\\\n            1 &amp; -1 &amp; 4-X \n        \\end{vmatrix} = \\begin{vmatrix}\n            6-X &amp; 1 &amp; 1 \\\\\n            6-X &amp; 5-X &amp; -1 \\\\\n            0 &amp; -1 &amp; 4-X \n        \\end{vmatrix}       =(6-X)(X^2-8X+14)\\]</span>\nUne valeur propre évidente est donc <span class=\"math inline\">\\(\\lambda_1=6\\)</span>. En analysant le polynôme du second degré <span class=\"math inline\">\\((X^2-8X+14)\\)</span>, on déduit que <span class=\"math inline\">\\(\\lambda_2\\lambda_3=14\\)</span> donc <span class=\"math inline\">\\(\\lambda_2\\)</span> et <span class=\"math inline\">\\(\\lambda_3\\)</span> sont de même signe. De plus, <span class=\"math inline\">\\(\\lambda_2+\\lambda_3=8\\)</span> donc on est assuré que <span class=\"math inline\">\\(\\lambda_2&gt;0\\)</span> et <span class=\"math inline\">\\(\\lambda_3&gt;0\\)</span>.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "question",
       "latex": "Calculer les cinquante premi\\`eres it\\'erations de la m\\'ethode de Gauss-Seidel en partant de $X_0 = (0,0,0)$.",
-      "html": "<p>Calculer les cinquante premières itérations de la méthode de Gauss-Seidel en partant de <span>\\(X_0 = (0,0,0)\\)</span>.</p>",
+      "html": "<p>Calculer les cinquante premières itérations de la méthode de Gauss-Seidel en partant de <span class=\"math inline\">\\(X_0 = (0,0,0)\\)</span>.</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "reponse",
       "latex": "On calcule :\n\t\t$$X_1 = M^{-1}NX_0+M^{-1}b= M^{-1}b = \\left(\\begin{matrix} 1.4\\\\0.72\\\\0.83 \\end{matrix}\\right) $$\n\t\t$$X_2 = M^{-1}NX_1+M^{-1}b = \\left(\\begin{matrix} 1.09\\\\0.948\\\\0.9645 \\end{matrix}\\right) $$\n\t\t$$X_3 = M^{-1}NX_2+M^{-1}b = \\left(\\begin{matrix} 1.0175\\\\0.9894\\\\0.992975 \\end{matrix}\\right) $$",
-      "html": "<p>On calcule :\n<span>\\[X_1 = M^{-1}NX_0+M^{-1}b= M^{-1}b = \\left(\\begin{matrix} 1.4\\\\0.72\\\\0.83 \\end{matrix}\\right)\\]</span>\n<span>\\[X_2 = M^{-1}NX_1+M^{-1}b = \\left(\\begin{matrix} 1.09\\\\0.948\\\\0.9645 \\end{matrix}\\right)\\]</span>\n<span>\\[X_3 = M^{-1}NX_2+M^{-1}b = \\left(\\begin{matrix} 1.0175\\\\0.9894\\\\0.992975 \\end{matrix}\\right)\\]</span></p>",
+      "html": "<p>On calcule :\n<span class=\"math display\">\\[X_1 = M^{-1}NX_0+M^{-1}b= M^{-1}b = \\left(\\begin{matrix} 1.4\\\\0.72\\\\0.83 \\end{matrix}\\right)\\]</span>\n<span class=\"math display\">\\[X_2 = M^{-1}NX_1+M^{-1}b = \\left(\\begin{matrix} 1.09\\\\0.948\\\\0.9645 \\end{matrix}\\right)\\]</span>\n<span class=\"math display\">\\[X_3 = M^{-1}NX_2+M^{-1}b = \\left(\\begin{matrix} 1.0175\\\\0.9894\\\\0.992975 \\end{matrix}\\right)\\]</span></p>",
       "order": 9
     }
   ],

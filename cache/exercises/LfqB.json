@@ -9,62 +9,62 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2024-06-04",
-  "updated_at": "2025-08-23T12:06:57.485Z",
+  "updated_at": "2025-08-25T08:56:47.091Z",
   "content": [
     {
       "id": "block_1",
       "type": "question",
       "latex": "Pour tout $n \\in \\N^*$, $0 \\leq u_n \\leq \\frac{1}{n}$ donc $\\sum u_n$ est une série convergente.",
-      "html": "<p>Pour tout <span>\\(n \\in \\N^*\\)</span>, <span>\\(0 \\leq u_n \\leq \\frac{1}{n}\\)</span> donc <span>\\(\\sum u_n\\)</span> est une série convergente.</p>",
+      "html": "<p>Pour tout <span class=\"math inline\">\\(n \\in \\N^*\\)</span>, <span class=\"math inline\">\\(0 \\leq u_n \\leq \\frac{1}{n}\\)</span> donc <span class=\"math inline\">\\(\\sum u_n\\)</span> est une série convergente.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "reponse",
       "latex": "{\\bf{Faux.}} La majoration proposée ne permet pas de conclure quand à la nature de la série. La suite $u_n=\\frac{1}{n}$ fournit un bon contre-exemple.",
-      "html": "<p><span><strong><span>Faux.</span></strong></span> La majoration proposée ne permet pas de conclure quand à la nature de la série. La suite <span>\\(u_n=\\frac{1}{n}\\)</span> fournit un bon contre-exemple.</p>",
+      "html": "<p><span><strong><span>Faux.</span></strong></span> La majoration proposée ne permet pas de conclure quand à la nature de la série. La suite <span class=\"math inline\">\\(u_n=\\frac{1}{n}\\)</span> fournit un bon contre-exemple.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "question",
       "latex": "$e^x - x - 1 \\underset{x\\to 0}{\\sim} \\frac{x^2}{2}$",
-      "html": "<p><span>\\(e^x - x - 1 \\underset{x\\to 0}{\\sim} \\frac{x^2}{2}\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(e^x - x - 1 \\underset{x\\to 0}{\\sim} \\frac{x^2}{2}\\)</span></p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "reponse",
       "latex": "{\\bf{Vrai.}} Le développement limité de $x \\mapsto e^{x}$ à l'ordre $2$ est $e^{x}=1+x+\\frac{x^{2}}{2}+o(x^{2})$. Il s'ensuite que le premier terme non nul du développement limité de $e^{x}-x-1$ est $\\frac{x^2}{2}$.",
-      "html": "<p><span><strong><span>Vrai.</span></strong></span> Le développement limité de <span>\\(x \\mapsto e^{x}\\)</span> à l’ordre <span>\\(2\\)</span> est <span>\\(e^{x}=1+x+\\frac{x^{2}}{2}+o(x^{2})\\)</span>. Il s’ensuite que le premier terme non nul du développement limité de <span>\\(e^{x}-x-1\\)</span> est <span>\\(\\frac{x^2}{2}\\)</span>.</p>",
+      "html": "<p><span><strong><span>Vrai.</span></strong></span> Le développement limité de <span class=\"math inline\">\\(x \\mapsto e^{x}\\)</span> à l’ordre <span class=\"math inline\">\\(2\\)</span> est <span class=\"math inline\">\\(e^{x}=1+x+\\frac{x^{2}}{2}+o(x^{2})\\)</span>. Il s’ensuite que le premier terme non nul du développement limité de <span class=\"math inline\">\\(e^{x}-x-1\\)</span> est <span class=\"math inline\">\\(\\frac{x^2}{2}\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "question",
       "latex": "$\\ln(1+x) \\underset{x\\to +\\infty}{\\sim}  x$",
-      "html": "<p><span>\\(\\ln(1+x) \\underset{x\\to +\\infty}{\\sim}  x\\)</span></p>",
+      "html": "<p><span class=\"math inline\">\\(\\ln(1+x) \\underset{x\\to +\\infty}{\\sim}  x\\)</span></p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "reponse",
       "latex": "{\\bf{Faux.}} La limite en $+\\infty$ de la fonction $x \\mapsto \\frac{ln(1+x)}{x}$ est $0\\neq 1$.",
-      "html": "<p><span><strong><span>Faux.</span></strong></span> La limite en <span>\\(+\\infty\\)</span> de la fonction <span>\\(x \\mapsto \\frac{ln(1+x)}{x}\\)</span> est <span>\\(0\\neq 1\\)</span>.</p>",
+      "html": "<p><span><strong><span>Faux.</span></strong></span> La limite en <span class=\"math inline\">\\(+\\infty\\)</span> de la fonction <span class=\"math inline\">\\(x \\mapsto \\frac{ln(1+x)}{x}\\)</span> est <span class=\"math inline\">\\(0\\neq 1\\)</span>.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "question",
       "latex": "Si pour tout $n \\in \\N^*$, $0 \\leq u_n$ et $\\sum u_n$ converge alors $\\sum u_n^2$ converge.",
-      "html": "<p>Si pour tout <span>\\(n \\in \\N^*\\)</span>, <span>\\(0 \\leq u_n\\)</span> et <span>\\(\\sum u_n\\)</span> converge alors <span>\\(\\sum u_n^2\\)</span> converge.</p>",
+      "html": "<p>Si pour tout <span class=\"math inline\">\\(n \\in \\N^*\\)</span>, <span class=\"math inline\">\\(0 \\leq u_n\\)</span> et <span class=\"math inline\">\\(\\sum u_n\\)</span> converge alors <span class=\"math inline\">\\(\\sum u_n^2\\)</span> converge.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "reponse",
       "latex": "{\\bf{Vrai.}} En effet comme la limite de la suite $(u_n)$ quand $n$ tend vers $+\\infty$ est $0$, il existe un entier $n_0$ tel que:\n  $$\\forall n\\geq n_0,\\,0\\leq u_n\\leq 1.$$\n  De plus on a: $\\forall n\\geq n_0,\\,0\\leq u_n^{2}\\leq u_n.$\\\\\n  Par comparaison de suites positives, $\\sum u_n^2$ converge car la série $\\sum u_n$ converge.",
-      "html": "<p><span><strong><span>Vrai.</span></strong></span> En effet comme la limite de la suite <span>\\((u_n)\\)</span> quand <span>\\(n\\)</span> tend vers <span>\\(+\\infty\\)</span> est <span>\\(0\\)</span>, il existe un entier <span>\\(n_0\\)</span> tel que:\n<span>\\[\\forall n\\geq n_0,\\,0\\leq u_n\\leq 1.\\]</span>\nDe plus on a: <span>\\(\\forall n\\geq n_0,\\,0\\leq u_n^{2}\\leq u_n.\\)</span><br />\nPar comparaison de suites positives, <span>\\(\\sum u_n^2\\)</span> converge car la série <span>\\(\\sum u_n\\)</span> converge.</p>",
+      "html": "<p><span><strong><span>Vrai.</span></strong></span> En effet comme la limite de la suite <span class=\"math inline\">\\((u_n)\\)</span> quand <span class=\"math inline\">\\(n\\)</span> tend vers <span class=\"math inline\">\\(+\\infty\\)</span> est <span class=\"math inline\">\\(0\\)</span>, il existe un entier <span class=\"math inline\">\\(n_0\\)</span> tel que:\n<span class=\"math display\">\\[\\forall n\\geq n_0,\\,0\\leq u_n\\leq 1.\\]</span>\nDe plus on a: <span class=\"math inline\">\\(\\forall n\\geq n_0,\\,0\\leq u_n^{2}\\leq u_n.\\)</span><br />\nPar comparaison de suites positives, <span class=\"math inline\">\\(\\sum u_n^2\\)</span> converge car la série <span class=\"math inline\">\\(\\sum u_n\\)</span> converge.</p>",
       "order": 8
     }
   ],

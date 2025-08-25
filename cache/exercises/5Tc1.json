@@ -9,55 +9,55 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-10-12",
-  "updated_at": "2025-08-23T12:06:29.173Z",
+  "updated_at": "2025-08-25T08:56:17.895Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On considère un échantillon $(X_i)$ de taille $n=4$ dans une population suivant une loi normale de paramètres $\\mu$ et $\\sigma^2$. \n\n\n\nOn pose \n$$T_1 = \\frac{1}{4}\\sum_{i=1}^{4} X_i  \\qquad T_2 = \\frac{1}{5}(2X_1+X_2)+\\frac{1}{10}(3X_3+X_4)$$\n$$U = \\frac{1}{\\sigma^2}\\sum_{i=1}^{4}  {(X_i-\\mu)^2} \\qquad V = \\frac{1}{\\sigma^2}\\sum_{i=1}^{4}  {(X_i-T_1)^2}$$",
-      "html": "<p>On considère un échantillon <span>\\((X_i)\\)</span> de taille <span>\\(n=4\\)</span> dans une population suivant une loi normale de paramètres <span>\\(\\mu\\)</span> et <span>\\(\\sigma^2\\)</span>.</p>\n<p>On pose\n<span>\\[T_1 = \\frac{1}{4}\\sum_{i=1}^{4} X_i  \\qquad T_2 = \\frac{1}{5}(2X_1+X_2)+\\frac{1}{10}(3X_3+X_4)\\]</span>\n<span>\\[U = \\frac{1}{\\sigma^2}\\sum_{i=1}^{4}  {(X_i-\\mu)^2} \\qquad V = \\frac{1}{\\sigma^2}\\sum_{i=1}^{4}  {(X_i-T_1)^2}\\]</span></p>",
+      "html": "<p>On considère un échantillon <span class=\"math inline\">\\((X_i)\\)</span> de taille <span class=\"math inline\">\\(n=4\\)</span> dans une population suivant une loi normale de paramètres <span class=\"math inline\">\\(\\mu\\)</span> et <span class=\"math inline\">\\(\\sigma^2\\)</span>.</p>\n<p>On pose\n<span class=\"math display\">\\[T_1 = \\frac{1}{4}\\sum_{i=1}^{4} X_i  \\qquad T_2 = \\frac{1}{5}(2X_1+X_2)+\\frac{1}{10}(3X_3+X_4)\\]</span>\n<span class=\"math display\">\\[U = \\frac{1}{\\sigma^2}\\sum_{i=1}^{4}  {(X_i-\\mu)^2} \\qquad V = \\frac{1}{\\sigma^2}\\sum_{i=1}^{4}  {(X_i-T_1)^2}\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "On cherche à estimer $\\mu$ à l'aide des estimateurs $T_1$ et $T_2$. \\'Etudier leur biais et comparer leurs efficacités.",
-      "html": "<p>On cherche à estimer <span>\\(\\mu\\)</span> à l’aide des estimateurs <span>\\(T_1\\)</span> et <span>\\(T_2\\)</span>. Étudier leur biais et comparer leurs efficacités.</p>",
+      "html": "<p>On cherche à estimer <span class=\"math inline\">\\(\\mu\\)</span> à l’aide des estimateurs <span class=\"math inline\">\\(T_1\\)</span> et <span class=\"math inline\">\\(T_2\\)</span>. Étudier leur biais et comparer leurs efficacités.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "Par linéarité de l'espérance, on calcule $\\mathbb{E}(T_1) = \\frac{4\\mu}{4} = \\mu$, $\\mathbb{E}(T_2) = \\frac{3\\mu}{5}+\\frac{4\\mu}{10} = \\mu$. Par conséquent, $B(T_1)=B(T_2)=0$.\n\t\t\n\t\tPour comparer l'efficacité des deux estimateurs sais biais, on calcule leur EQM (ce qui revient à calculer leur variance.) Par indépendance des variables, on a :\n\t\t\n\t\t$V(T_1) = \\frac{\\sigma^2}{4} < V(T_3) = \\frac{(4^2+2^2+3^2+1^2)\\sigma^2}{100}$. Le plus efficace est donc l'estimateur $T_1$ qui est la moyenne empirique.",
-      "html": "<p>Par linéarité de l’espérance, on calcule <span>\\(\\mathbb{E}(T_1) = \\frac{4\\mu}{4} = \\mu\\)</span>, <span>\\(\\mathbb{E}(T_2) = \\frac{3\\mu}{5}+\\frac{4\\mu}{10} = \\mu\\)</span>. Par conséquent, <span>\\(B(T_1)=B(T_2)=0\\)</span>.</p>\n<p>Pour comparer l’efficacité des deux estimateurs sais biais, on calcule leur EQM (ce qui revient à calculer leur variance.) Par indépendance des variables, on a :</p>\n<p><span>\\(V(T_1) = \\frac{\\sigma^2}{4} &lt; V(T_3) = \\frac{(4^2+2^2+3^2+1^2)\\sigma^2}{100}\\)</span>. Le plus efficace est donc l’estimateur <span>\\(T_1\\)</span> qui est la moyenne empirique.</p>",
+      "html": "<p>Par linéarité de l’espérance, on calcule <span class=\"math inline\">\\(\\mathbb{E}(T_1) = \\frac{4\\mu}{4} = \\mu\\)</span>, <span class=\"math inline\">\\(\\mathbb{E}(T_2) = \\frac{3\\mu}{5}+\\frac{4\\mu}{10} = \\mu\\)</span>. Par conséquent, <span class=\"math inline\">\\(B(T_1)=B(T_2)=0\\)</span>.</p>\n<p>Pour comparer l’efficacité des deux estimateurs sais biais, on calcule leur EQM (ce qui revient à calculer leur variance.) Par indépendance des variables, on a :</p>\n<p><span class=\"math inline\">\\(V(T_1) = \\frac{\\sigma^2}{4} &lt; V(T_3) = \\frac{(4^2+2^2+3^2+1^2)\\sigma^2}{100}\\)</span>. Le plus efficace est donc l’estimateur <span class=\"math inline\">\\(T_1\\)</span> qui est la moyenne empirique.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "Quelle est la loi suivie par la variable $T_1$ ? la variable $T_2$ ? la variable $U$ ? la variable $V$ ? justifier.",
-      "html": "<p>Quelle est la loi suivie par la variable <span>\\(T_1\\)</span> ? la variable <span>\\(T_2\\)</span> ? la variable <span>\\(U\\)</span> ? la variable <span>\\(V\\)</span> ? justifier.</p>",
+      "html": "<p>Quelle est la loi suivie par la variable <span class=\"math inline\">\\(T_1\\)</span> ? la variable <span class=\"math inline\">\\(T_2\\)</span> ? la variable <span class=\"math inline\">\\(U\\)</span> ? la variable <span class=\"math inline\">\\(V\\)</span> ? justifier.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "$U = \\sum_{i=1}^{4}  \\left(\\frac{X_i-\\mu}{\\sigma}\\right)^2$ ; or les $X_i$ sont des variables aléatoires indépendantes et $\\frac{X_i-\\mu}{\\sigma}$ suit une loi $\\mathcal{N}(0,1)$ donc par définition, $U$ suit une loi de $\\chi^2(4)$. \n\t\t\n\t\tDe plus, $T_1 = \\overline{X}$ est l'estimateur de moyenne empirique donc d'après le théorème de Fisher, $V$ suit une loi de $\\chi^2(4-1) = \\chi^2(3)$.",
-      "html": "<p><span>\\(U = \\sum_{i=1}^{4}  \\left(\\frac{X_i-\\mu}{\\sigma}\\right)^2\\)</span> ; or les <span>\\(X_i\\)</span> sont des variables aléatoires indépendantes et <span>\\(\\frac{X_i-\\mu}{\\sigma}\\)</span> suit une loi <span>\\(\\mathcal{N}(0,1)\\)</span> donc par définition, <span>\\(U\\)</span> suit une loi de <span>\\(\\chi^2(4)\\)</span>.</p>\n<p>De plus, <span>\\(T_1 = \\overline{X}\\)</span> est l’estimateur de moyenne empirique donc d’après le théorème de Fisher, <span>\\(V\\)</span> suit une loi de <span>\\(\\chi^2(4-1) = \\chi^2(3)\\)</span>.</p>",
+      "html": "<p><span class=\"math inline\">\\(U = \\sum_{i=1}^{4}  \\left(\\frac{X_i-\\mu}{\\sigma}\\right)^2\\)</span> ; or les <span class=\"math inline\">\\(X_i\\)</span> sont des variables aléatoires indépendantes et <span class=\"math inline\">\\(\\frac{X_i-\\mu}{\\sigma}\\)</span> suit une loi <span class=\"math inline\">\\(\\mathcal{N}(0,1)\\)</span> donc par définition, <span class=\"math inline\">\\(U\\)</span> suit une loi de <span class=\"math inline\">\\(\\chi^2(4)\\)</span>.</p>\n<p>De plus, <span class=\"math inline\">\\(T_1 = \\overline{X}\\)</span> est l’estimateur de moyenne empirique donc d’après le théorème de Fisher, <span class=\"math inline\">\\(V\\)</span> suit une loi de <span class=\"math inline\">\\(\\chi^2(4-1) = \\chi^2(3)\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Quelle est la loi de la variable aléatoire $\\frac{4(T_1-\\mu)}{{\\sigma \\sqrt{U}}}$ ?",
-      "html": "<p>Quelle est la loi de la variable aléatoire <span>\\(\\frac{4(T_1-\\mu)}{{\\sigma \\sqrt{U}}}\\)</span> ?</p>",
+      "html": "<p>Quelle est la loi de la variable aléatoire <span class=\"math inline\">\\(\\frac{4(T_1-\\mu)}{{\\sigma \\sqrt{U}}}\\)</span> ?</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "On pose $Z = \\frac{T_1-\\mu}{\\frac{\\sigma}{\\sqrt{4} }} = \\frac{2(T_1-\\mu)}{\\sigma}$ variable distribuée selon une loi $\\mathcal{N}(0,1)$. Soit alors $Y = \\frac{Z}{\\sqrt{\\frac{U}{4} }}$ : par définition, $Y$ suit une loi $St(4)$. Après simplifications, on peut réécrire $Y = \\frac{4(T_1-\\mu)}{{\\sigma \\sqrt{U}}}$.",
-      "html": "<p>On pose <span>\\(Z = \\frac{T_1-\\mu}{\\frac{\\sigma}{\\sqrt{4} }} = \\frac{2(T_1-\\mu)}{\\sigma}\\)</span> variable distribuée selon une loi <span>\\(\\mathcal{N}(0,1)\\)</span>. Soit alors <span>\\(Y = \\frac{Z}{\\sqrt{\\frac{U}{4} }}\\)</span> : par définition, <span>\\(Y\\)</span> suit une loi <span>\\(St(4)\\)</span>. Après simplifications, on peut réécrire <span>\\(Y = \\frac{4(T_1-\\mu)}{{\\sigma \\sqrt{U}}}\\)</span>.</p>",
+      "html": "<p>On pose <span class=\"math inline\">\\(Z = \\frac{T_1-\\mu}{\\frac{\\sigma}{\\sqrt{4} }} = \\frac{2(T_1-\\mu)}{\\sigma}\\)</span> variable distribuée selon une loi <span class=\"math inline\">\\(\\mathcal{N}(0,1)\\)</span>. Soit alors <span class=\"math inline\">\\(Y = \\frac{Z}{\\sqrt{\\frac{U}{4} }}\\)</span> : par définition, <span class=\"math inline\">\\(Y\\)</span> suit une loi <span class=\"math inline\">\\(St(4)\\)</span>. Après simplifications, on peut réécrire <span class=\"math inline\">\\(Y = \\frac{4(T_1-\\mu)}{{\\sigma \\sqrt{U}}}\\)</span>.</p>",
       "order": 7
     }
   ],

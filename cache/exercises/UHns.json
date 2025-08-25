@@ -9,20 +9,20 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-05-17",
-  "updated_at": "2025-08-23T12:07:08.426Z",
+  "updated_at": "2025-08-25T08:56:58.806Z",
   "content": [
     {
       "id": "block_1",
       "type": "question",
       "latex": "En utilisant le critère de Cauchy, déterminer la nature de la série dont le terme général est défini par:\n\t$\\displaystyle u_n=\\left(\\frac{n-1}{2n+1}\\right)^n $.",
-      "html": "<p>En utilisant le critère de Cauchy, déterminer la nature de la série dont le terme général est défini par:\n<span>\\(\\displaystyle u_n=\\left(\\frac{n-1}{2n+1}\\right)^n\\)</span>.</p>",
+      "html": "<p>En utilisant le critère de Cauchy, déterminer la nature de la série dont le terme général est défini par:\n<span class=\"math inline\">\\(\\displaystyle u_n=\\left(\\frac{n-1}{2n+1}\\right)^n\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "reponse",
       "latex": "On a $u_n \\geq 0$ pour tout $n \\in \\N^*$ et \n\t\\begin{align*} \n\t\t\\left(u_n\\right)^{\\frac{1}{n}} &= \\left(\\frac{n-1}{2n+1}\\right)^{n\\times \\frac{1}{n}} \\\\\n\t\t&= \\frac{1-\\frac{1}{n}}{2+\\frac{1}{n}} \\\\\n\t\t&\\underset{+\\infty}\\sim \\frac{1}{2} < 1\n\t\\end{align*}\n\tdonc par le critère de Cauchy, la série $\\sum u_n$ converge.",
-      "html": "<p>On a <span>\\(u_n \\geq 0\\)</span> pour tout <span>\\(n \\in \\N^*\\)</span> et\n<span>\\[\\begin{align*} \n        \\left(u_n\\right)^{\\frac{1}{n}} &amp;= \\left(\\frac{n-1}{2n+1}\\right)^{n\\times \\frac{1}{n}} \\\\\n        &amp;= \\frac{1-\\frac{1}{n}}{2+\\frac{1}{n}} \\\\\n        &amp;\\underset{+\\infty}\\sim \\frac{1}{2} &lt; 1\n    \\end{align*}\\]</span>\ndonc par le critère de Cauchy, la série <span>\\(\\sum u_n\\)</span> converge.</p>",
+      "html": "<p>On a <span class=\"math inline\">\\(u_n \\geq 0\\)</span> pour tout <span class=\"math inline\">\\(n \\in \\N^*\\)</span> et\n<span class=\"math display\">\\[\\begin{align*} \n        \\left(u_n\\right)^{\\frac{1}{n}} &amp;= \\left(\\frac{n-1}{2n+1}\\right)^{n\\times \\frac{1}{n}} \\\\\n        &amp;= \\frac{1-\\frac{1}{n}}{2+\\frac{1}{n}} \\\\\n        &amp;\\underset{+\\infty}\\sim \\frac{1}{2} &lt; 1\n    \\end{align*}\\]</span>\ndonc par le critère de Cauchy, la série <span class=\"math inline\">\\(\\sum u_n\\)</span> converge.</p>",
       "order": 2
     }
   ],

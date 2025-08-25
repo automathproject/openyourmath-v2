@@ -9,62 +9,62 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-12-01",
-  "updated_at": "2025-08-23T12:07:33.286Z",
+  "updated_at": "2025-08-25T08:57:25.145Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "Pour toute variable al\\'eatoire $T$, on définit la \\textbf{transformée de Laplace} $\\mathcal{L}_{\\cdot}(T) \\colon \\R_+ \\to \\R$ par :\n\n    $$\\forall t \\in \\R_+, \\quad \\mathcal{L}_t(T)=\\mathbb{E}(e^{-tT}).$$\n\n    {\\it{On admet le r\\'esultat suivant :}}\n\n    \\begin{tcolorbox}        Si $T_1,T_2$ sont des variables al\\'eatoires absolument continues telles que pour tout $t\\geq 0$, $\\mathcal{L}_t(T_1)=\\mathcal{L}_t(T_2)$, alors les variables $T_1$ et $T_2$ suivent la m\\^eme loi. \n    \\end{tcolorbox}\n\n    On admet également que pour tout $n \\in \\N^*$ : \n    $$\\int_0^{+\\infty} x^n e^{-x} dx = n!$$\n\n    Soit $n \\in \\N^*$ quelconque et soit $Z_1,Z_2,\\cdots{},Z_n$ une famille de $n$ variables aléatoires indépendantes identiquement distribuées selon  une loi exponentielle de param\\`etre $\\frac{1}{2}$. L'objectif de l'exercice est de déterminer la loi de $S_n=\\displaystyle\\sum_{i=1}^{n}Z_i$.",
-      "html": "<p>Pour toute variable aléatoire <span>\\(T\\)</span>, on définit la <strong>transformée de Laplace</strong> <span>\\(\\mathcal{L}_{\\cdot}(T) \\colon \\R_+ \\to \\R\\)</span> par :</p>\n<p><span>\\[\\forall t \\in \\R_+, \\quad \\mathcal{L}_t(T)=\\mathbb{E}(e^{-tT}).\\]</span></p>\n<p><span><em><span>On admet le résultat suivant :</span></em></span></p>\n<p>Si <span>\\(T_1,T_2\\)</span> sont des variables aléatoires absolument continues telles que pour tout <span>\\(t\\geq 0\\)</span>, <span>\\(\\mathcal{L}_t(T_1)=\\mathcal{L}_t(T_2)\\)</span>, alors les variables <span>\\(T_1\\)</span> et <span>\\(T_2\\)</span> suivent la même loi.</p>\n<p>On admet également que pour tout <span>\\(n \\in \\N^*\\)</span> :\n<span>\\[\\int_0^{+\\infty} x^n e^{-x} dx = n!\\]</span></p>\n<p>Soit <span>\\(n \\in \\N^*\\)</span> quelconque et soit <span>\\(Z_1,Z_2,\\cdots{},Z_n\\)</span> une famille de <span>\\(n\\)</span> variables aléatoires indépendantes identiquement distribuées selon une loi exponentielle de paramètre <span>\\(\\frac{1}{2}\\)</span>. L’objectif de l’exercice est de déterminer la loi de <span>\\(S_n=\\displaystyle\\sum_{i=1}^{n}Z_i\\)</span>.</p>",
+      "html": "<p>Pour toute variable aléatoire <span class=\"math inline\">\\(T\\)</span>, on définit la <strong>transformée de Laplace</strong> <span class=\"math inline\">\\(\\mathcal{L}_{\\cdot}(T) \\colon \\R_+ \\to \\R\\)</span> par :</p>\n<p><span class=\"math display\">\\[\\forall t \\in \\R_+, \\quad \\mathcal{L}_t(T)=\\mathbb{E}(e^{-tT}).\\]</span></p>\n<p><span><em><span>On admet le résultat suivant :</span></em></span></p>\n<p>Si <span class=\"math inline\">\\(T_1,T_2\\)</span> sont des variables aléatoires absolument continues telles que pour tout <span class=\"math inline\">\\(t\\geq 0\\)</span>, <span class=\"math inline\">\\(\\mathcal{L}_t(T_1)=\\mathcal{L}_t(T_2)\\)</span>, alors les variables <span class=\"math inline\">\\(T_1\\)</span> et <span class=\"math inline\">\\(T_2\\)</span> suivent la même loi.</p>\n<p>On admet également que pour tout <span class=\"math inline\">\\(n \\in \\N^*\\)</span> :\n<span class=\"math display\">\\[\\int_0^{+\\infty} x^n e^{-x} dx = n!\\]</span></p>\n<p>Soit <span class=\"math inline\">\\(n \\in \\N^*\\)</span> quelconque et soit <span class=\"math inline\">\\(Z_1,Z_2,\\cdots{},Z_n\\)</span> une famille de <span class=\"math inline\">\\(n\\)</span> variables aléatoires indépendantes identiquement distribuées selon une loi exponentielle de paramètre <span class=\"math inline\">\\(\\frac{1}{2}\\)</span>. L’objectif de l’exercice est de déterminer la loi de <span class=\"math inline\">\\(S_n=\\displaystyle\\sum_{i=1}^{n}Z_i\\)</span>.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Soient $X$ et $Y$ deux variables aléatoires indépendantes. Démontrer que  pour tout $t\\geq 0$ : $$\\mathcal{L}_t(X+Y)=\\mathcal{L}_t(X)\\mathcal{L}_t(Y).$$",
-      "html": "<p>Soient <span>\\(X\\)</span> et <span>\\(Y\\)</span> deux variables aléatoires indépendantes. Démontrer que pour tout <span>\\(t\\geq 0\\)</span> : <span>\\[\\mathcal{L}_t(X+Y)=\\mathcal{L}_t(X)\\mathcal{L}_t(Y).\\]</span></p>",
+      "html": "<p>Soient <span class=\"math inline\">\\(X\\)</span> et <span class=\"math inline\">\\(Y\\)</span> deux variables aléatoires indépendantes. Démontrer que pour tout <span class=\"math inline\">\\(t\\geq 0\\)</span> : <span class=\"math display\">\\[\\mathcal{L}_t(X+Y)=\\mathcal{L}_t(X)\\mathcal{L}_t(Y).\\]</span></p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "question",
       "latex": "D\\'eterminer $\\mathcal{L}_{t}(Z_1)$ et en déduire $\\mathcal{L}_t(S_n)$ pour tout $t\\geq 0$.",
-      "html": "<p>Déterminer <span>\\(\\mathcal{L}_{t}(Z_1)\\)</span> et en déduire <span>\\(\\mathcal{L}_t(S_n)\\)</span> pour tout <span>\\(t\\geq 0\\)</span>.</p>",
+      "html": "<p>Déterminer <span class=\"math inline\">\\(\\mathcal{L}_{t}(Z_1)\\)</span> et en déduire <span class=\"math inline\">\\(\\mathcal{L}_t(S_n)\\)</span> pour tout <span class=\"math inline\">\\(t\\geq 0\\)</span>.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "reponse",
       "latex": "On a $\\mathcal{L}_t(Z) = \\mathbb{E}(e^{-tZ}) = \\int_0^{+\\infty} e^{-tz} \\frac{1}{2} e^{-\\frac{z}{2}} dz = \\frac{1}{2} \\int_0^{+\\infty} e^{-\\frac{z}{2}(2t+1)} dz = \\frac{1}{2} \\left[ \\frac{e^{-\\frac{z}{2}(2t+1)}}{-\\frac{2t+1}{2}} \\right]_0^{+\\infty} = \\frac{1}{2t+1}$. \n    On a $\\mathcal{L}_t(S_n) = \\prod_{i=1}^n \\mathcal{L}_t(Z_i) = \\prod_{i=1}^n \\frac{1}{2t+1} = \\left( \\frac{1}{2t+1} \\right)^n$.",
-      "html": "<p>On a <span>\\(\\mathcal{L}_t(Z) = \\mathbb{E}(e^{-tZ}) = \\int_0^{+\\infty} e^{-tz} \\frac{1}{2} e^{-\\frac{z}{2}} dz = \\frac{1}{2} \\int_0^{+\\infty} e^{-\\frac{z}{2}(2t+1)} dz = \\frac{1}{2} \\left[ \\frac{e^{-\\frac{z}{2}(2t+1)}}{-\\frac{2t+1}{2}} \\right]_0^{+\\infty} = \\frac{1}{2t+1}\\)</span>.\nOn a <span>\\(\\mathcal{L}_t(S_n) = \\prod_{i=1}^n \\mathcal{L}_t(Z_i) = \\prod_{i=1}^n \\frac{1}{2t+1} = \\left( \\frac{1}{2t+1} \\right)^n\\)</span>.</p>",
+      "html": "<p>On a <span class=\"math inline\">\\(\\mathcal{L}_t(Z) = \\mathbb{E}(e^{-tZ}) = \\int_0^{+\\infty} e^{-tz} \\frac{1}{2} e^{-\\frac{z}{2}} dz = \\frac{1}{2} \\int_0^{+\\infty} e^{-\\frac{z}{2}(2t+1)} dz = \\frac{1}{2} \\left[ \\frac{e^{-\\frac{z}{2}(2t+1)}}{-\\frac{2t+1}{2}} \\right]_0^{+\\infty} = \\frac{1}{2t+1}\\)</span>.\nOn a <span class=\"math inline\">\\(\\mathcal{L}_t(S_n) = \\prod_{i=1}^n \\mathcal{L}_t(Z_i) = \\prod_{i=1}^n \\frac{1}{2t+1} = \\left( \\frac{1}{2t+1} \\right)^n\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "question",
       "latex": "On pose pour tout $x \\in \\R$ :\n$$f_U(x)=\\mathrm{1}_{\\R^{+}}(x)\\frac{1}{2^n}\\frac{x^{n-1}}{(n-1)!}\\,e^{-\\frac{x}{2}}.$$\n\nV\\'erifier que $f_U$ est bien une fonction densité de probabilité.",
-      "html": "<p>On pose pour tout <span>\\(x \\in \\R\\)</span> :\n<span>\\[f_U(x)=\\mathrm{1}_{\\R^{+}}(x)\\frac{1}{2^n}\\frac{x^{n-1}}{(n-1)!}\\,e^{-\\frac{x}{2}}.\\]</span></p>\n<p>Vérifier que <span>\\(f_U\\)</span> est bien une fonction densité de probabilité.</p>",
+      "html": "<p>On pose pour tout <span class=\"math inline\">\\(x \\in \\R\\)</span> :\n<span class=\"math display\">\\[f_U(x)=\\mathrm{1}_{\\R^{+}}(x)\\frac{1}{2^n}\\frac{x^{n-1}}{(n-1)!}\\,e^{-\\frac{x}{2}}.\\]</span></p>\n<p>Vérifier que <span class=\"math inline\">\\(f_U\\)</span> est bien une fonction densité de probabilité.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "reponse",
       "latex": "On a $\\int_{\\R} f_U(x) dx = \\frac{1}{2^n} \\int_0^{+\\infty} \\frac{x^{n-1}}{n-1!} e^{-\\frac{x}{2}} dx = \\int_0^{+\\infty} \\frac{y^{n-1}}{n-1!} e^{-y} dy = 1$. Donc $f_U$ est bien une densité de probabilité.",
-      "html": "<p>On a <span>\\(\\int_{\\R} f_U(x) dx = \\frac{1}{2^n} \\int_0^{+\\infty} \\frac{x^{n-1}}{n-1!} e^{-\\frac{x}{2}} dx = \\int_0^{+\\infty} \\frac{y^{n-1}}{n-1!} e^{-y} dy = 1\\)</span>. Donc <span>\\(f_U\\)</span> est bien une densité de probabilité.</p>",
+      "html": "<p>On a <span class=\"math inline\">\\(\\int_{\\R} f_U(x) dx = \\frac{1}{2^n} \\int_0^{+\\infty} \\frac{x^{n-1}}{n-1!} e^{-\\frac{x}{2}} dx = \\int_0^{+\\infty} \\frac{y^{n-1}}{n-1!} e^{-y} dy = 1\\)</span>. Donc <span class=\"math inline\">\\(f_U\\)</span> est bien une densité de probabilité.</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "question",
       "latex": "Soit $U$ une variable aléatoire absolument continue de densit\\'e de probabilit\\'e $f_U$. Calculer, pour tout $t\\geq 0,$ $\\mathcal{L}_t(U)$. Conclure.",
-      "html": "<p>Soit <span>\\(U\\)</span> une variable aléatoire absolument continue de densité de probabilité <span>\\(f_U\\)</span>. Calculer, pour tout <span>\\(t\\geq 0,\\)</span> <span>\\(\\mathcal{L}_t(U)\\)</span>. Conclure.</p>",
+      "html": "<p>Soit <span class=\"math inline\">\\(U\\)</span> une variable aléatoire absolument continue de densité de probabilité <span class=\"math inline\">\\(f_U\\)</span>. Calculer, pour tout <span class=\"math inline\">\\(t\\geq 0,\\)</span> <span class=\"math inline\">\\(\\mathcal{L}_t(U)\\)</span>. Conclure.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "reponse",
       "latex": "On a \n    \\begin{align*}\n        \\mathcal{L}_t(U) &= \\int_0^{+\\infty} e^{-tx} \\frac{1}{2^n} \\frac{x^{n-1}}{n-1!} e^{-\\frac{x}{2}} dx \\\\ \n        &= \\frac{1}{2^n} \\int_0^{+\\infty} \\frac{x^{n-1}}{n-1!} e^{-\\frac{x}{2}(2t+1)} dx \\\\\n        &= \\int_0^{+\\infty} \\frac{1}{2^n} \\left(\\frac{2}{2t+1}\\right)^{n-1}\\frac{y^{n-1}}{n-1!} e^{-y} \\frac{2}{2t+1} dy \\\\\n         &= \\frac{1}{(2t+1)^n}\n    \\end{align*}\n    Donc $U$ et $S_n$ suivent la même loi définie par la densité $f_U$.",
-      "html": "<p>On a\n<span>\\[\\begin{align*}\n        \\mathcal{L}_t(U) &amp;= \\int_0^{+\\infty} e^{-tx} \\frac{1}{2^n} \\frac{x^{n-1}}{n-1!} e^{-\\frac{x}{2}} dx \\\\ \n        &amp;= \\frac{1}{2^n} \\int_0^{+\\infty} \\frac{x^{n-1}}{n-1!} e^{-\\frac{x}{2}(2t+1)} dx \\\\\n        &amp;= \\int_0^{+\\infty} \\frac{1}{2^n} \\left(\\frac{2}{2t+1}\\right)^{n-1}\\frac{y^{n-1}}{n-1!} e^{-y} \\frac{2}{2t+1} dy \\\\\n         &amp;= \\frac{1}{(2t+1)^n}\n    \\end{align*}\\]</span>\nDonc <span>\\(U\\)</span> et <span>\\(S_n\\)</span> suivent la même loi définie par la densité <span>\\(f_U\\)</span>.</p>",
+      "html": "<p>On a\n<span class=\"math display\">\\[\\begin{align*}\n        \\mathcal{L}_t(U) &amp;= \\int_0^{+\\infty} e^{-tx} \\frac{1}{2^n} \\frac{x^{n-1}}{n-1!} e^{-\\frac{x}{2}} dx \\\\ \n        &amp;= \\frac{1}{2^n} \\int_0^{+\\infty} \\frac{x^{n-1}}{n-1!} e^{-\\frac{x}{2}(2t+1)} dx \\\\\n        &amp;= \\int_0^{+\\infty} \\frac{1}{2^n} \\left(\\frac{2}{2t+1}\\right)^{n-1}\\frac{y^{n-1}}{n-1!} e^{-y} \\frac{2}{2t+1} dy \\\\\n         &amp;= \\frac{1}{(2t+1)^n}\n    \\end{align*}\\]</span>\nDonc <span class=\"math inline\">\\(U\\)</span> et <span class=\"math inline\">\\(S_n\\)</span> suivent la même loi définie par la densité <span class=\"math inline\">\\(f_U\\)</span>.</p>",
       "order": 8
     }
   ],

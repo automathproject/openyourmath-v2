@@ -9,92 +9,92 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2024-10-11",
-  "updated_at": "2025-08-23T12:07:09.605Z",
+  "updated_at": "2025-08-25T08:57:00.033Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On considère la fonction $f$ définie sur $\\R^2$ par \n\t\t$$f(x,y)= x^4+y^4-2(x-y)^2.$$",
-      "html": "<p>On considère la fonction <span>\\(f\\)</span> définie sur <span>\\(\\R^2\\)</span> par\n<span>\\[f(x,y)= x^4+y^4-2(x-y)^2.\\]</span></p>",
+      "html": "<p>On considère la fonction <span class=\"math inline\">\\(f\\)</span> définie sur <span class=\"math inline\">\\(\\R^2\\)</span> par\n<span class=\"math display\">\\[f(x,y)= x^4+y^4-2(x-y)^2.\\]</span></p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "Montrer qu'il existe $(\\alpha,\\beta)\\in \\R_+^2$ (et les déterminer) tels que, pour tout $(x,y)\\in R^2$, si $\\|.\\|$ désigne la norme euclidienne de $\\R^2$:\n\t\t\t\t$$f(x,y)\\geq \\alpha \\| (x,y)\\|^2+\\beta$$",
-      "html": "<p>Montrer qu’il existe <span>\\((\\alpha,\\beta)\\in \\R_+^2\\)</span> (et les déterminer) tels que, pour tout <span>\\((x,y)\\in R^2\\)</span>, si <span>\\(\\|.\\|\\)</span> désigne la norme euclidienne de <span>\\(\\R^2\\)</span>:\n<span>\\[f(x,y)\\geq \\alpha \\| (x,y)\\|^2+\\beta\\]</span></p>",
+      "html": "<p>Montrer qu’il existe <span class=\"math inline\">\\((\\alpha,\\beta)\\in \\R_+^2\\)</span> (et les déterminer) tels que, pour tout <span class=\"math inline\">\\((x,y)\\in R^2\\)</span>, si <span class=\"math inline\">\\(\\|.\\|\\)</span> désigne la norme euclidienne de <span class=\"math inline\">\\(\\R^2\\)</span>:\n<span class=\"math display\">\\[f(x,y)\\geq \\alpha \\| (x,y)\\|^2+\\beta\\]</span></p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
       "latex": "$f(x,y)=x^4 +y^4-2x^2-2y^2+4xy$. \n\t\t\t\tNous savons (par une astucieuse inégalité) que $xy\\geq -\\frac{1}{2}(x^2+y^2)$.\n\t\t\t\tAinsi, nous en déduisons que \n\t\t\t\t$$f(x,y)\\geq x^4+y^4-4x^2-4y^2$$\n\t\t\t\tPour tout $(x,y)\\in \\R^2$, nous savons que \n\t\t\t\t$X^4+\\varepsilon^2-2\\varepsilon X^2\\geq 0$ d'où, en utilisant cette inégalité pour $x$ et pour $y$, nous obtenons:\n\t\t\t\t$$f(x,y)\\geq (2\\varepsilon-4)x^2+(2\\varepsilon-4)y^2-2\\varepsilon^4$$\n\t\t\t\tPour $\\varepsilon=3$, il s'ensuit que $f(x,y)\\geq 2(x^2+y^2)-162 =2 \\|(x,y)\\|^2-162$.\n\t\t\t\tAinsi, en prenant $\\alpha=2$ et $\\beta=-162$, nous obtenons l'inégalité souhaitée.",
-      "html": "<p><span>\\(f(x,y)=x^4 +y^4-2x^2-2y^2+4xy\\)</span>.\nNous savons (par une astucieuse inégalité) que <span>\\(xy\\geq -\\frac{1}{2}(x^2+y^2)\\)</span>.\nAinsi, nous en déduisons que\n<span>\\[f(x,y)\\geq x^4+y^4-4x^2-4y^2\\]</span>\nPour tout <span>\\((x,y)\\in \\R^2\\)</span>, nous savons que\n<span>\\(X^4+\\varepsilon^2-2\\varepsilon X^2\\geq 0\\)</span> d’où, en utilisant cette inégalité pour <span>\\(x\\)</span> et pour <span>\\(y\\)</span>, nous obtenons:\n<span>\\[f(x,y)\\geq (2\\varepsilon-4)x^2+(2\\varepsilon-4)y^2-2\\varepsilon^4\\]</span>\nPour <span>\\(\\varepsilon=3\\)</span>, il s’ensuit que <span>\\(f(x,y)\\geq 2(x^2+y^2)-162 =2 \\|(x,y)\\|^2-162\\)</span>.\nAinsi, en prenant <span>\\(\\alpha=2\\)</span> et <span>\\(\\beta=-162\\)</span>, nous obtenons l’inégalité souhaitée.</p>",
+      "html": "<p><span class=\"math inline\">\\(f(x,y)=x^4 +y^4-2x^2-2y^2+4xy\\)</span>.\nNous savons (par une astucieuse inégalité) que <span class=\"math inline\">\\(xy\\geq -\\frac{1}{2}(x^2+y^2)\\)</span>.\nAinsi, nous en déduisons que\n<span class=\"math display\">\\[f(x,y)\\geq x^4+y^4-4x^2-4y^2\\]</span>\nPour tout <span class=\"math inline\">\\((x,y)\\in \\R^2\\)</span>, nous savons que\n<span class=\"math inline\">\\(X^4+\\varepsilon^2-2\\varepsilon X^2\\geq 0\\)</span> d’où, en utilisant cette inégalité pour <span class=\"math inline\">\\(x\\)</span> et pour <span class=\"math inline\">\\(y\\)</span>, nous obtenons:\n<span class=\"math display\">\\[f(x,y)\\geq (2\\varepsilon-4)x^2+(2\\varepsilon-4)y^2-2\\varepsilon^4\\]</span>\nPour <span class=\"math inline\">\\(\\varepsilon=3\\)</span>, il s’ensuit que <span class=\"math inline\">\\(f(x,y)\\geq 2(x^2+y^2)-162 =2 \\|(x,y)\\|^2-162\\)</span>.\nAinsi, en prenant <span class=\"math inline\">\\(\\alpha=2\\)</span> et <span class=\"math inline\">\\(\\beta=-162\\)</span>, nous obtenons l’inégalité souhaitée.</p>",
       "order": 3
     },
     {
       "id": "block_4",
       "type": "question",
       "latex": "En déduire que $f$ admet (au moins) un minimum global sur $\\R^2$.",
-      "html": "<p>En déduire que <span>\\(f\\)</span> admet (au moins) un minimum global sur <span>\\(\\R^2\\)</span>.</p>",
+      "html": "<p>En déduire que <span class=\"math inline\">\\(f\\)</span> admet (au moins) un minimum global sur <span class=\"math inline\">\\(\\R^2\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
       "latex": "Quand $\\|(x,y)\\|\\to +\\infty$, nous obtenons que $f(x,y)\\to +\\infty$. \n\t\t\t\tAinsi, $f$ est coersive sur $\\R^2$, c'est-à-dire qu'elle tends vers l'infini quand son argument tends vers l'infini. Aussi, le minimum ne peut être atteint par cette fonction que dans une région bornée du plan, et donc elle admet  un minimum global sur $\\R^2$.",
-      "html": "<p>Quand <span>\\(\\|(x,y)\\|\\to +\\infty\\)</span>, nous obtenons que <span>\\(f(x,y)\\to +\\infty\\)</span>.\nAinsi, <span>\\(f\\)</span> est coersive sur <span>\\(\\R^2\\)</span>, c’est-à-dire qu’elle tends vers l’infini quand son argument tends vers l’infini. Aussi, le minimum ne peut être atteint par cette fonction que dans une région bornée du plan, et donc elle admet un minimum global sur <span>\\(\\R^2\\)</span>.</p>",
+      "html": "<p>Quand <span class=\"math inline\">\\(\\|(x,y)\\|\\to +\\infty\\)</span>, nous obtenons que <span class=\"math inline\">\\(f(x,y)\\to +\\infty\\)</span>.\nAinsi, <span class=\"math inline\">\\(f\\)</span> est coersive sur <span class=\"math inline\">\\(\\R^2\\)</span>, c’est-à-dire qu’elle tends vers l’infini quand son argument tends vers l’infini. Aussi, le minimum ne peut être atteint par cette fonction que dans une région bornée du plan, et donc elle admet un minimum global sur <span class=\"math inline\">\\(\\R^2\\)</span>.</p>",
       "order": 5
     },
     {
       "id": "block_6",
       "type": "question",
       "latex": "Calculer la matrice Hessienne de $f$ et l'évaluer au point $(0,0)$.\n\t\t\t\tLa fonction $f$ est-elle convexe sur $\\R^2$?",
-      "html": "<p>Calculer la matrice Hessienne de <span>\\(f\\)</span> et l’évaluer au point <span>\\((0,0)\\)</span>.\nLa fonction <span>\\(f\\)</span> est-elle convexe sur <span>\\(\\R^2\\)</span>?</p>",
+      "html": "<p>Calculer la matrice Hessienne de <span class=\"math inline\">\\(f\\)</span> et l’évaluer au point <span class=\"math inline\">\\((0,0)\\)</span>.\nLa fonction <span class=\"math inline\">\\(f\\)</span> est-elle convexe sur <span class=\"math inline\">\\(\\R^2\\)</span>?</p>",
       "order": 6
     },
     {
       "id": "block_7",
       "type": "reponse",
       "latex": "Rappelons que $f$ est convexe si et seulement si sa matrice hessienne est semi-définie positive, c'est-à-dire si \n\t\t\t\tpour tout vecteur $z\\in \\R^2$, nous avons $z^T \\cdot H_f \\cdot z\\geq 0$. Cela revient à ce que toutes les valeurs propres de $H_f$ soient positives ou nulles. \n\t\t\t\t\n\t\t\t\tLa matrice Hessienne est alors:\n\t\t\t\t$4 \\begin{pmatrix}\n\t\t\t\t\t3x^2-1 & 1 \\\\ 1& 3y^2-1\n\t\t\t\t\\end{pmatrix}$. \n\t\t\t\tAinsi, sa hessienne en $(0,0)$ est $\\begin{pmatrix}\n\t\t\t\t\t-1 & 1 \\\\ 1&-1\n\t\t\t\t\\end{pmatrix}$: ces valeurs propres sont $0$ et $-2$. Ainsi, cette matrice n'est pas semi-definie positive et donc la fonction $f$ n'est pas convexe.",
-      "html": "<p>Rappelons que <span>\\(f\\)</span> est convexe si et seulement si sa matrice hessienne est semi-définie positive, c’est-à-dire si\npour tout vecteur <span>\\(z\\in \\R^2\\)</span>, nous avons <span>\\(z^T \\cdot H_f \\cdot z\\geq 0\\)</span>. Cela revient à ce que toutes les valeurs propres de <span>\\(H_f\\)</span> soient positives ou nulles.</p>\n<p>La matrice Hessienne est alors:\n<span>\\(4 \\begin{pmatrix}\n                    3x^2-1 &amp; 1 \\\\ 1&amp; 3y^2-1\n                \\end{pmatrix}\\)</span>.\nAinsi, sa hessienne en <span>\\((0,0)\\)</span> est <span>\\(\\begin{pmatrix}\n                    -1 &amp; 1 \\\\ 1&amp;-1\n                \\end{pmatrix}\\)</span>: ces valeurs propres sont <span>\\(0\\)</span> et <span>\\(-2\\)</span>. Ainsi, cette matrice n’est pas semi-definie positive et donc la fonction <span>\\(f\\)</span> n’est pas convexe.</p>",
+      "html": "<p>Rappelons que <span class=\"math inline\">\\(f\\)</span> est convexe si et seulement si sa matrice hessienne est semi-définie positive, c’est-à-dire si\npour tout vecteur <span class=\"math inline\">\\(z\\in \\R^2\\)</span>, nous avons <span class=\"math inline\">\\(z^T \\cdot H_f \\cdot z\\geq 0\\)</span>. Cela revient à ce que toutes les valeurs propres de <span class=\"math inline\">\\(H_f\\)</span> soient positives ou nulles.</p>\n<p>La matrice Hessienne est alors:\n<span class=\"math inline\">\\(4 \\begin{pmatrix}\n                    3x^2-1 &amp; 1 \\\\ 1&amp; 3y^2-1\n                \\end{pmatrix}\\)</span>.\nAinsi, sa hessienne en <span class=\"math inline\">\\((0,0)\\)</span> est <span class=\"math inline\">\\(\\begin{pmatrix}\n                    -1 &amp; 1 \\\\ 1&amp;-1\n                \\end{pmatrix}\\)</span>: ces valeurs propres sont <span class=\"math inline\">\\(0\\)</span> et <span class=\"math inline\">\\(-2\\)</span>. Ainsi, cette matrice n’est pas semi-definie positive et donc la fonction <span class=\"math inline\">\\(f\\)</span> n’est pas convexe.</p>",
       "order": 7
     },
     {
       "id": "block_8",
       "type": "question",
       "latex": "Déterminer les points critiques de $f$ et préciser leur nature (minimum ou maximum local, point selle...",
-      "html": "<p>Déterminer les points critiques de <span>\\(f\\)</span> et préciser leur nature (minimum ou maximum local, point selle...</p>",
+      "html": "<p>Déterminer les points critiques de <span class=\"math inline\">\\(f\\)</span> et préciser leur nature (minimum ou maximum local, point selle...</p>",
       "order": 8
     },
     {
       "id": "block_9",
       "type": "reponse",
       "latex": "Les points critiques sont donnés par les solutions de $\\nabla f(x,y)=(0,0)$, soit \n\t\t\t\t$$\n\t\t\t\t\\left\\lbrace \\begin{array}{ll}\n\t\t\t\t\t\\frac{\\partial f}{\\partial x}(x,y) & = 4(x^3-x+y)=0 \\\\ \n\t\t\t\t\t\\frac{\\partial f}{\\partial y}(x,y) & = y^3+x-y =0 \\end{array}\\right. \n\t\t\t\t~~\\Rightarrow ~~\n\t\t\t\t\\left\\lbrace\\begin{array}{ll}\n\t\t\t\t\tx^3+y^3 &=0 \\\\\n\t\t\t\t\ty^3+x-y&=0 \n\t\t\t\t\\end{array}\\right. \n\t\t\t\t~~\\Rightarrow ~~\n\t\t\t\t\\left\\lbrace \\begin{array}{ll}\n\t\t\t\t\ty&=-x \\\\\n\t\t\t\t\tx^3-2x&=0\\end{array}\\right. $$\n\t\t\t\tIl y a donc trois points critiques: $O(0,0)$, $A(\\sqrt{2};-\\sqrt{2})$ et $B(-\\sqrt{2};\\sqrt{2})$.\n\t\t\t\t\\\\ Point $O$: La Hessienne est $Hess~f(0,0) = \\begin{pmatrix} -4 & 4 \\\\ 4&-4\\end{pmatrix}$: son déterminant est nul donc on ne peut pas conclure directement. Une petite étude plus spécifique s'impose. \n\t\t\t\tPour $|x|<2$, nous avons $f(x,-x) = 2x^4-8x^2 = -2x^2(4-x^4)<0$. \n\t\t\t\tDe même, $f(x,x)=2x^4\\geq 0$ ce qui montre que $(0,0)$ est un point-selle de $f$. \n\t\t\t\t\\\\ Point $A$: $Hess~f(\\sqrt{2};-\\sqrt{2}) = \\begin{pmatrix} 20&4 \\\\ 4&20\\end{pmatrix}$. \n\t\t\t\tLa Hessienne a alors un déterminant positif et $20>0$ donc $f$ possède un minimum local en $A$.\n\t\t\t\t\\\\ Point $B$:   $Hess~f(-\\sqrt{2};\\sqrt{2}) = \\begin{pmatrix} 20&4 \\\\ 4&20\\end{pmatrix}$: idem, $f$ admet un minimul local en $B$.",
-      "html": "<p>Les points critiques sont donnés par les solutions de <span>\\(\\nabla f(x,y)=(0,0)\\)</span>, soit\n<span>\\[\\left\\lbrace \\begin{array}{ll}\n                    \\frac{\\partial f}{\\partial x}(x,y) &amp; = 4(x^3-x+y)=0 \\\\ \n                    \\frac{\\partial f}{\\partial y}(x,y) &amp; = y^3+x-y =0 \\end{array}\\right. \n                ~~\\Rightarrow ~~\n                \\left\\lbrace\\begin{array}{ll}\n                    x^3+y^3 &amp;=0 \\\\\n                    y^3+x-y&amp;=0 \n                \\end{array}\\right. \n                ~~\\Rightarrow ~~\n                \\left\\lbrace \\begin{array}{ll}\n                    y&amp;=-x \\\\\n                    x^3-2x&amp;=0\\end{array}\\right.\\]</span>\nIl y a donc trois points critiques: <span>\\(O(0,0)\\)</span>, <span>\\(A(\\sqrt{2};-\\sqrt{2})\\)</span> et <span>\\(B(-\\sqrt{2};\\sqrt{2})\\)</span>.<br />\nPoint <span>\\(O\\)</span>: La Hessienne est <span>\\(Hess~f(0,0) = \\begin{pmatrix} -4 &amp; 4 \\\\ 4&amp;-4\\end{pmatrix}\\)</span>: son déterminant est nul donc on ne peut pas conclure directement. Une petite étude plus spécifique s’impose.\nPour <span>\\(|x|&lt;2\\)</span>, nous avons <span>\\(f(x,-x) = 2x^4-8x^2 = -2x^2(4-x^4)&lt;0\\)</span>.\nDe même, <span>\\(f(x,x)=2x^4\\geq 0\\)</span> ce qui montre que <span>\\((0,0)\\)</span> est un point-selle de <span>\\(f\\)</span>.<br />\nPoint <span>\\(A\\)</span>: <span>\\(Hess~f(\\sqrt{2};-\\sqrt{2}) = \\begin{pmatrix} 20&amp;4 \\\\ 4&amp;20\\end{pmatrix}\\)</span>.\nLa Hessienne a alors un déterminant positif et <span>\\(20&gt;0\\)</span> donc <span>\\(f\\)</span> possède un minimum local en <span>\\(A\\)</span>.<br />\nPoint <span>\\(B\\)</span>: <span>\\(Hess~f(-\\sqrt{2};\\sqrt{2}) = \\begin{pmatrix} 20&amp;4 \\\\ 4&amp;20\\end{pmatrix}\\)</span>: idem, <span>\\(f\\)</span> admet un minimul local en <span>\\(B\\)</span>.</p>",
+      "html": "<p>Les points critiques sont donnés par les solutions de <span class=\"math inline\">\\(\\nabla f(x,y)=(0,0)\\)</span>, soit\n<span class=\"math display\">\\[\\left\\lbrace \\begin{array}{ll}\n                    \\frac{\\partial f}{\\partial x}(x,y) &amp; = 4(x^3-x+y)=0 \\\\ \n                    \\frac{\\partial f}{\\partial y}(x,y) &amp; = y^3+x-y =0 \\end{array}\\right. \n                ~~\\Rightarrow ~~\n                \\left\\lbrace\\begin{array}{ll}\n                    x^3+y^3 &amp;=0 \\\\\n                    y^3+x-y&amp;=0 \n                \\end{array}\\right. \n                ~~\\Rightarrow ~~\n                \\left\\lbrace \\begin{array}{ll}\n                    y&amp;=-x \\\\\n                    x^3-2x&amp;=0\\end{array}\\right.\\]</span>\nIl y a donc trois points critiques: <span class=\"math inline\">\\(O(0,0)\\)</span>, <span class=\"math inline\">\\(A(\\sqrt{2};-\\sqrt{2})\\)</span> et <span class=\"math inline\">\\(B(-\\sqrt{2};\\sqrt{2})\\)</span>.<br />\nPoint <span class=\"math inline\">\\(O\\)</span>: La Hessienne est <span class=\"math inline\">\\(Hess~f(0,0) = \\begin{pmatrix} -4 &amp; 4 \\\\ 4&amp;-4\\end{pmatrix}\\)</span>: son déterminant est nul donc on ne peut pas conclure directement. Une petite étude plus spécifique s’impose.\nPour <span class=\"math inline\">\\(|x|&lt;2\\)</span>, nous avons <span class=\"math inline\">\\(f(x,-x) = 2x^4-8x^2 = -2x^2(4-x^4)&lt;0\\)</span>.\nDe même, <span class=\"math inline\">\\(f(x,x)=2x^4\\geq 0\\)</span> ce qui montre que <span class=\"math inline\">\\((0,0)\\)</span> est un point-selle de <span class=\"math inline\">\\(f\\)</span>.<br />\nPoint <span class=\"math inline\">\\(A\\)</span>: <span class=\"math inline\">\\(Hess~f(\\sqrt{2};-\\sqrt{2}) = \\begin{pmatrix} 20&amp;4 \\\\ 4&amp;20\\end{pmatrix}\\)</span>.\nLa Hessienne a alors un déterminant positif et <span class=\"math inline\">\\(20&gt;0\\)</span> donc <span class=\"math inline\">\\(f\\)</span> possède un minimum local en <span class=\"math inline\">\\(A\\)</span>.<br />\nPoint <span class=\"math inline\">\\(B\\)</span>: <span class=\"math inline\">\\(Hess~f(-\\sqrt{2};\\sqrt{2}) = \\begin{pmatrix} 20&amp;4 \\\\ 4&amp;20\\end{pmatrix}\\)</span>: idem, <span class=\"math inline\">\\(f\\)</span> admet un minimul local en <span class=\"math inline\">\\(B\\)</span>.</p>",
       "order": 9
     },
     {
       "id": "block_10",
       "type": "question",
       "latex": "En déduire le minimum de $f$ sur $\\R^2$.",
-      "html": "<p>En déduire le minimum de <span>\\(f\\)</span> sur <span>\\(\\R^2\\)</span>.</p>",
+      "html": "<p>En déduire le minimum de <span class=\"math inline\">\\(f\\)</span> sur <span class=\"math inline\">\\(\\R^2\\)</span>.</p>",
       "order": 10
     },
     {
       "id": "block_11",
       "type": "reponse",
       "latex": "D'après l'étude précédente, nous en déduisons que $f$ admet deux minimums, l'un en $A$ et l'autre en $B$, et que la valeur minimale pour $f$ est $-8$.\n\t\t\t\t\n\t\t\t\t\\begin{tikzpicture}\n\t\t\t\t\t\t\\begin{axis}[\n\t\t\t\t\t\t\twidth=10cm,\n\t\t\t\t\t\t\tview={60}{30},\n\t\t\t\t\t\t\txlabel={$x$},\n\t\t\t\t\t\t\tylabel={$y$},\n\t\t\t\t\t\t\tzlabel={$f(x,y)$},\n\t\t\t\t\t\t\tdomain=-2:2,\n\t\t\t\t\t\t\tdomain y=-2:2,\n\t\t\t\t\t\t\tsamples=40,\n\t\t\t\t\t\t\tcolormap/cool\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t\\addplot3[surf] {x^4 + y^4 - 2*(x - y)^2};\n\t\t\t\t\t\t\\end{axis}\n\t\t\t\t\t\\end{tikzpicture}",
-      "html": "<p>D’après l’étude précédente, nous en déduisons que <span>\\(f\\)</span> admet deux minimums, l’un en <span>\\(A\\)</span> et l’autre en <span>\\(B\\)</span>, et que la valeur minimale pour <span>\\(f\\)</span> est <span>\\(-8\\)</span>.</p>\n<p><img src=\"/artifacts/tikz/VuTl-tikz-0.svg\" alt=\"Diagramme TikZ 0\" class=\"tikz-svg-image\"></p>",
+      "html": "<p>D’après l’étude précédente, nous en déduisons que <span class=\"math inline\">\\(f\\)</span> admet deux minimums, l’un en <span class=\"math inline\">\\(A\\)</span> et l’autre en <span class=\"math inline\">\\(B\\)</span>, et que la valeur minimale pour <span class=\"math inline\">\\(f\\)</span> est <span class=\"math inline\">\\(-8\\)</span>.</p>\n<p><p class=\"tikz-container\"><img src=\"/artifacts/tikz/VuTl-tikz-1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></p></p>",
       "order": 11
     }
   ],
   "artifacts": {
     "tikz": [
       {
-        "id": "tikz_0",
+        "id": "tikz_1",
         "type": "tikz",
-        "url": "/artifacts/tikz/VuTl-tikz-0.svg",
+        "url": "/artifacts/tikz/VuTl-tikz-1.svg",
         "latex": "\\begin{tikzpicture}\n\t\t\t\t\t\t\\begin{axis}[\n\t\t\t\t\t\t\twidth=10cm,\n\t\t\t\t\t\t\tview={60}{30},\n\t\t\t\t\t\t\txlabel={$x$},\n\t\t\t\t\t\t\tylabel={$y$},\n\t\t\t\t\t\t\tzlabel={$f(x,y)$},\n\t\t\t\t\t\t\tdomain=-2:2,\n\t\t\t\t\t\t\tdomain y=-2:2,\n\t\t\t\t\t\t\tsamples=40,\n\t\t\t\t\t\t\tcolormap/cool\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t\\addplot3[surf] {x^4 + y^4 - 2*(x - y)^2};\n\t\t\t\t\t\t\\end{axis}\n\t\t\t\t\t\\end{tikzpicture}"
       }
     ],

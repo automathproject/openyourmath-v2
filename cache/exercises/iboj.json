@@ -9,27 +9,27 @@
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-10-04",
-  "updated_at": "2025-08-23T12:07:35.553Z",
+  "updated_at": "2025-08-25T08:57:27.589Z",
   "content": [
     {
       "id": "block_1",
       "type": "text",
       "latex": "On effectue un contrôle de fabrication sur des pièces dont la proportion $p$ est défectueuse.",
-      "html": "<p>On effectue un contrôle de fabrication sur des pièces dont la proportion <span>\\(p\\)</span> est défectueuse.</p>",
+      "html": "<p>On effectue un contrôle de fabrication sur des pièces dont la proportion <span class=\"math inline\">\\(p\\)</span> est défectueuse.</p>",
       "order": 1
     },
     {
       "id": "block_2",
       "type": "question",
       "latex": "On contrôle un lot de 200 pièces et on trouve $n=24$ pièces défectueuses. Donner les intervalles de confiance pour l'estimation de $p$, au risque $\\alpha=0.05$.",
-      "html": "<p>On contrôle un lot de 200 pièces et on trouve <span>\\(n=24\\)</span> pièces défectueuses. Donner les intervalles de confiance pour l’estimation de <span>\\(p\\)</span>, au risque <span>\\(\\alpha=0.05\\)</span>.</p>",
+      "html": "<p>On contrôle un lot de 200 pièces et on trouve <span class=\"math inline\">\\(n=24\\)</span> pièces défectueuses. Donner les intervalles de confiance pour l’estimation de <span class=\"math inline\">\\(p\\)</span>, au risque <span class=\"math inline\">\\(\\alpha=0.05\\)</span>.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "question",
       "latex": "Combien faudrait-il contrôler de pièces pour que, au risque  $\\alpha=0.05$, l'intervalle de confiance centré soit d'amplitude $0.04$ ?",
-      "html": "<p>Combien faudrait-il contrôler de pièces pour que, au risque <span>\\(\\alpha=0.05\\)</span>, l’intervalle de confiance centré soit d’amplitude <span>\\(0.04\\)</span> ?</p>",
+      "html": "<p>Combien faudrait-il contrôler de pièces pour que, au risque <span class=\"math inline\">\\(\\alpha=0.05\\)</span>, l’intervalle de confiance centré soit d’amplitude <span class=\"math inline\">\\(0.04\\)</span> ?</p>",
       "order": 3
     }
   ],
