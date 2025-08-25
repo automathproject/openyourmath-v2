@@ -65,26 +65,26 @@
   </div>
 
   <!-- Search interface -->
-  <div class="max-w-2xl mx-auto">
+  <div class="search-container">
     <div class="relative">
       <input
         bind:value={searchQuery}
         on:input={debouncedSearch}
         type="text"
         placeholder="Rechercher des exercices..."
-        class="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        class="search-input"
       />
       {#if loading}
-        <div class="absolute right-3 top-1/2 transform -translate-y-1/2">
-          <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+        <div class="search-loading">
+          <div class="search-spinner"></div>
         </div>
       {/if}
     </div>
     
     <!-- Error message -->
     {#if error}
-      <div class="mt-2 p-3 bg-red-50 border border-red-200 rounded-lg">
-        <p class="text-red-600 text-sm">{error}</p>
+      <div class="search-error">
+        <p class="search-error-text">{error}</p>
       </div>
     {/if}
   </div>
@@ -92,8 +92,8 @@
   <!-- Results -->
   {#if results.length > 0}
     <div class="space-y-4">
-      <div class="flex items-center justify-between">
-        <h2 class="text-xl font-semibold text-gray-900">
+      <div class="results-header">
+        <h2 class="results-title">
           {results.length} résultat{results.length > 1 ? 's' : ''}
           {#if searchMeta?.pagination?.totalCount}
             sur {searchMeta.pagination.totalCount}
@@ -107,19 +107,19 @@
         {/if}
       </div>
       
-      <div class="grid gap-4">
+      <div class="results-grid">
         {#each results as exercise (exercise.uuid)}
-          <div class="bg-white rounded-lg border shadow-sm p-6 hover:shadow-md transition-shadow">
-            <div class="flex items-start justify-between">
+          <div class="result-card">
+            <div class="result-header">
               <div class="flex-1">
-                <h3 class="text-lg font-medium text-gray-900 mb-2">
-                  <a href="/exercise/{exercise.uuid}" class="hover:text-blue-600 transition-colors">
+                <h3 class="result-title">
+                  <a href="/exercise/{exercise.uuid}">
                     {exercise.title}
                   </a>
                 </h3>
                 
-                <div class="flex items-center gap-4 text-sm text-gray-600 mb-2">
-                  <span class="bg-gray-100 px-2 py-1 rounded">{exercise.chapter}</span>
+                <div class="result-metadata">
+                  <span class="result-badge">{exercise.chapter}</span>
                   {#if exercise.theme}
                     <span class="text-blue-600">{exercise.theme}</span>
                   {/if}
@@ -130,12 +130,12 @@
               </div>
               
               {#if exercise.difficulty}
-                <div class="text-sm text-gray-500 flex items-center">
+                <div class="result-difficulty">
                   <span>Niveau {exercise.difficulty}/5</span>
                   <!-- Visual difficulty indicator -->
-                  <div class="ml-2 flex gap-1">
+                  <div class="result-difficulty-dots">
                     {#each Array(5) as _, i}
-                      <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-blue-400' : 'bg-gray-200'}"></div>
+                      <div class="result-difficulty-dot {i < exercise.difficulty ? 'result-difficulty-dot--active' : 'result-difficulty-dot--inactive'}"></div>
                     {/each}
                   </div>
                 </div>
@@ -146,23 +146,23 @@
       </div>
     </div>
   {:else if searchQuery && !loading && !error}
-    <div class="text-center py-12">
-      <div class="text-gray-400 mb-4">
+    <div class="empty-state">
+      <div class="empty-state-icon">
         <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.562M15 17H9m6-8V9a6 6 0 10-12 0v6c0 3.314 2.686 6 6 6h6a6 6 0 000-12z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.562M15 17H9m6-8V9a6 6 0 10-12 0v6c0 3.314 2.686 6 6h6a6 6 0 000-12z" />
         </svg>
       </div>
-      <p class="text-gray-600 text-lg">Aucun exercice trouvé pour "{searchQuery}"</p>
-      <p class="text-gray-500 text-sm mt-2">Essayez avec d'autres mots-clés</p>
+      <p class="empty-state-title">Aucun exercice trouvé pour "{searchQuery}"</p>
+      <p class="empty-state-subtitle">Essayez avec d'autres mots-clés</p>
     </div>
   {:else if !searchQuery}
-    <div class="text-center py-12">
-      <div class="text-gray-400 mb-4">
+    <div class="empty-state">
+      <div class="empty-state-icon">
         <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </div>
-      <p class="text-gray-500">Tapez quelques mots pour commencer votre recherche</p>
+      <p class="empty-state-title">Tapez quelques mots pour commencer votre recherche</p>
     </div>
   {/if}
 </div>

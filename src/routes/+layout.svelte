@@ -19,11 +19,11 @@
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 print-full-width">
     <slot />
   </main>
 
-  <footer class="mt-16 bg-gray-100 border-t">
+  <footer class="mt-16 bg-gray-100 border-t print-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <p class="text-center text-gray-600">OpenYourMath V2 - Exercices de mathématiques</p>
     </div>

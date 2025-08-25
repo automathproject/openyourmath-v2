@@ -68,20 +68,15 @@
       hasQuestionResponseStructure: questions.length > 0 && reponses.length > 0
     };
   })();
-  
-  // Debug
-  $: {
-    console.log('🔍 Organized content:', organizedContent);
-  }
 </script>
 
 <div class="exercise-content">
   <!-- Contenu principal (texte introductif) -->
   {#if organizedContent.mainContent.length > 0}
-    <div class="main-content space-y-4 mb-6">
+    <div class="main-content">
       {#each organizedContent.mainContent as block}
         {@const processed = processContentBlock(block)}
-        <div class="content-block {processed.type}">
+        <div class="content-block">
           <MathRenderer content={processed.html} />
         </div>
       {/each}
@@ -90,20 +85,20 @@
   
   <!-- Structure question/réponse alternée -->
   {#if organizedContent.hasQuestionResponseStructure}
-    <div class="questions-responses space-y-6">
+    <div class="questions-responses">
       {#each organizedContent.questionResponsePairs as pair, index}
         <div class="question-response-pair">
           <!-- Question -->
           {#if pair.question}
             {@const processedQ = processContentBlock(pair.question)}
-            <div class="question-block mb-4">
+            <div class="question-block">
               <div class="flex items-start gap-3">
                 <div class="question-number">
-                  <span class="bg-blue-100 text-blue-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold">
+                  <span class="question-number-badge">
                     {index + 1}
                   </span>
                 </div>
-                <div class="question-content flex-1">
+                <div class="question-content">
                   <MathRenderer content={processedQ.html} />
                 </div>
               </div>
@@ -113,12 +108,17 @@
           <!-- Réponse correspondante -->
           {#if pair.response}
             {@const processedR = processContentBlock(pair.response)}
-            <details class="response-block bg-green-50 border border-green-200 rounded-lg" bind:open={showSolution}>
-              <summary class="cursor-pointer font-medium p-4 hover:bg-green-100 rounded-lg transition-colors flex items-center gap-2">
+            <details 
+              class="response-block collapsible-section collapsible-section--solution" 
+              bind:open={showSolution}
+            >
+              <summary class="collapsible-summary collapsible-summary--solution">
                 <span class="text-green-700">✅ Réponse {index + 1}</span>
-                <span class="text-sm text-green-600">({showSolution ? 'Masquer' : 'Voir'} la solution)</span>
+                <span class="text-sm text-green-600">
+                  ({showSolution ? 'Masquer' : 'Voir'} la solution)
+                </span>
               </summary>
-              <div class="px-4 pb-4">
+              <div class="collapsible-content">
                 <MathRenderer content={processedR.html} />
               </div>
             </details>
@@ -132,7 +132,7 @@
     <div class="traditional-content space-y-4">
       {#each content.filter(b => b.type === 'question' || !b.type || b.type === 'text') as block}
         {@const processed = processContentBlock(block)}
-        <div class="content-block {processed.type}">
+        <div class="content-block">
           <MathRenderer content={processed.html} />
         </div>
       {/each}
@@ -140,14 +140,17 @@
     
     <!-- Solutions groupées -->
     {#if content.filter(b => b.type === 'reponse' || b.type === 'solution').length > 0}
-      <details class="mt-8 bg-green-50 border border-green-200 rounded-lg" bind:open={showSolution}>
-        <summary class="cursor-pointer font-medium p-4 hover:bg-green-100 rounded-lg transition-colors">
+      <details 
+        class="mt-8 collapsible-section collapsible-section--solution" 
+        bind:open={showSolution}
+      >
+        <summary class="collapsible-summary collapsible-summary--solution">
           ✅ Solution complète
         </summary>
-        <div class="px-4 pb-4 space-y-3">
+        <div class="collapsible-content">
           {#each content.filter(b => b.type === 'reponse' || b.type === 'solution') as block}
             {@const processed = processContentBlock(block)}
-            <div class="content-block {processed.type}">
+            <div class="content-block">
               <MathRenderer content={processed.html} />
             </div>
           {/each}
@@ -158,14 +161,17 @@
   
   <!-- Section Indications (toujours séparée) -->
   {#if organizedContent.hints.length > 0}
-    <details class="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg" bind:open={showHint}>
-      <summary class="cursor-pointer font-medium p-4 hover:bg-yellow-100 rounded-lg transition-colors">
+    <details 
+      class="mt-8 collapsible-section collapsible-section--hint" 
+      bind:open={showHint}
+    >
+      <summary class="collapsible-summary collapsible-summary--hint">
         💡 Indication{organizedContent.hints.length > 1 ? 's' : ''}
       </summary>
-      <div class="px-4 pb-4 space-y-3">
+      <div class="collapsible-content">
         {#each organizedContent.hints as block}
           {@const processed = processContentBlock(block)}
-          <div class="content-block {processed.type}">
+          <div class="content-block">
             <MathRenderer content={processed.html} />
           </div>
         {/each}
@@ -173,90 +179,3 @@
     </details>
   {/if}
 </div>
-
-<style>
-  .exercise-content {
-    line-height: 1.7;
-  }
-  
-  .content-block {
-    margin: 1rem 0;
-  }
-  
-  .question-response-pair {
-    border-left: 3px solid #e5e7eb;
-    padding-left: 1rem;
-    margin: 2rem 0;
-  }
-  
-  .question-block {
-    background: #f8fafc;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .question-number {
-    flex-shrink: 0;
-    margin-top: 0.25rem;
-  }
-  
-  .response-block {
-    margin-left: 2.75rem; /* Aligné avec le contenu de la question */
-  }
-  
-  /* Styles pour les éléments HTML du contenu */
-  .exercise-content :global(p) {
-    margin: 1rem 0;
-    color: #374151;
-  }
-  
-  .exercise-content :global(h1),
-  .exercise-content :global(h2),
-  .exercise-content :global(h3) {
-    font-weight: 600;
-    margin: 1.5rem 0 1rem 0;
-    color: #111827;
-  }
-  
-  .exercise-content :global(h1) { font-size: 1.5rem; }
-  .exercise-content :global(h2) { font-size: 1.25rem; }
-  .exercise-content :global(h3) { font-size: 1.125rem; }
-  
-  .exercise-content :global(ul),
-  .exercise-content :global(ol) {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-  }
-  
-  .exercise-content :global(li) {
-    margin: 0.5rem 0;
-  }
-  
-  .exercise-content :global(strong) {
-    font-weight: 600;
-    color: #111827;
-  }
-  
-  .exercise-content :global(em) {
-    font-style: italic;
-    color: #6B7280;
-  }
-  
-  .exercise-content :global(code) {
-    background-color: #F3F4F6;
-    padding: 0.125rem 0.25rem;
-    border-radius: 0.25rem;
-    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-    font-size: 0.875rem;
-  }
-  
-  /* Animation pour les details */
-  details {
-    transition: all 0.2s ease;
-  }
-  
-  details[open] {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  }
-</style>
