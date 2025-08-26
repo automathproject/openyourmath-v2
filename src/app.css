@@ -163,7 +163,7 @@
   }
   
   .question-response-pair {
-    @apply border-l-4 border-gray-200 pl-4 my-8;
+    @apply my-8;
   }
   
   .question-block {
