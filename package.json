@@ -1,34 +1,38 @@
 {
   "name": "openyourmath-v2",
   "version": "0.1.0",
-  "type": "module",
   "private": true,
+  "type": "module",
+
+  "_comment_scripts": "Scripts maison pour parser LaTeX et construire la DB avant le build de l'app",
   "scripts": {
     "build": "node scripts/parse-latex.mjs content/exercises/ cache/exercises/ && node scripts/build-db.mjs",
     "build:fast": "node scripts/parse-latex.mjs --incremental content/exercises/ cache/exercises/ && node scripts/build-db.mjs",
     "build:clean": "rm -rf cache/exercises/* data/exercises.sqlite && pnpm build",
-    "build:stats": "echo '📊 Statistics:' && echo '📝 LaTeX files:' $(find content/exercises -name '*.tex' | wc -l) && echo '📄 JSON cache:' $(find cache/exercises -name '*.json' | wc -l) && echo '💾 Database:' $(sqlite3 data/exercises.sqlite 'SELECT COUNT(*) FROM exercises;' 2>/dev/null || echo '0') 'exercises'",
-    
+    "build:stats": "echo '📊 Statistics:' && echo \"📝 LaTeX files:\" $(find content/exercises -name '*.tex' | wc -l) && echo \"📄 JSON cache:\" $(find cache/exercises -name '*.json' | wc -l) && echo \"💾 Database:\" $(test -f data/exercises.sqlite && sqlite3 data/exercises.sqlite 'SELECT COUNT(*) FROM exercises;' 2>/dev/null || echo '0') 'exercises'",
+
     "parse": "node scripts/parse-latex.mjs",
     "parse:watch": "find content/exercises -name '*.tex' | entr -r pnpm build:fast",
-    
+
     "dev": "vite dev",
     "dev:full": "pnpm build:fast && pnpm dev",
-    
+
     "build:app": "vite build",
     "preview": "vite preview",
-    
+
     "clean": "rm -rf cache/exercises/* data/exercises.sqlite static/artifacts/* .svelte-kit",
     "reset": "pnpm clean && pnpm build",
-    
+
     "test": "vitest",
     "test:build": "vitest run tests/build/",
     "test:integration": "playwright test",
-    
+
     "docker:build": "docker build -t openyourmath .",
-    "docker:dev": "docker-compose -f docker-compose.dev.yml up",
+    "docker:dev": "docker-compose up",
     "docker:prod": "docker-compose up -d"
   },
+
+  "_comment_devDependencies": "SvelteKit + Tailwind + Vite + tests",
   "devDependencies": {
     "@playwright/test": "^1.48.2",
     "@sveltejs/adapter-node": "^5.2.9",
@@ -42,9 +46,12 @@
     "vite": "^5.4.19",
     "vitest": "^2.1.8"
   },
+
+  "_comment_dependencies": "Runtime deps (SQLite + KaTeX)",
   "dependencies": {
-    "auto-render": "link:katex/contrib/auto-render",
     "better-sqlite3": "^11.10.0",
     "katex": "^0.16.22"
-  }
+  },
+
+  "packageManager": "pnpm@9"
 }
