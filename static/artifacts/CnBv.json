@@ -1,0 +1,23 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/CnBv-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\\fill[white] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\\clip (-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\fill[gray!20, domain=-2:2, variable=\\x]\n\t\t\t\t\t\tplot ({\\x}, {-1*\\x}) -- (2,2) -- (-2,2) -- cycle;\n\t\t\t\t\t\t\n\t\t\t\t\t\t% exclusion y = x^2\n\t\t\t\t\t\t\\draw[red, thick, domain=-1.5:1.5, samples=100] plot (\\x, {\\x*\\x});\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t\\node at (0,-2.5) {$D_f$};\n\t\t\t\t\t\t%\\node at (1.5,1.8) {\\Large $D_f$}\n\t\t\t\t\t\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_2",
+      "url": "/artifacts/tikz/CnBv-tikz_2.svg",
+      "latex": "\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20, even odd rule] \n\t\t\t\t\t\t(0,0) circle (1.0)\n\t\t\t\t\t\t(-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\\draw[red, thick] (0,0) circle (1);   \n\t\t\t\t\t\t\\draw[red, thick, domain=-2:2] plot (\\x, {\\x}); % x = y\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t%\\node at (0,-2.5) {$D_g$};\n\t\t\t\t\t\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_3",
+      "url": "/artifacts/tikz/CnBv-tikz_3.svg",
+      "latex": "\\begin{tikzpicture}[scale=1.2]\n\t\t\t\t\t\t\\fill[gray!20] (-2,-2) rectangle (2,2);\n\t\t\t\t\t\t\\draw[red, thick, domain=-2:2] plot (\\x, {1 - \\x}); % x + y = 1\n\t\t\t\t\t\t\n\t\t\t\t\t\t\\draw[->] (-2.2,0) -- (2.2,0) node[below right] {$x$};\n\t\t\t\t\t\t\\draw[->] (0,-2.2) -- (0,2.2) node[left] {$y$};\n\t\t\t\t\t\t%\\node at (0,-2.5) {$D_h$};\n\t\t\t\t\t\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

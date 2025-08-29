@@ -1,0 +1,17 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/o5At-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}\n    \\begin{axis}[\n        view={60}{30},        % Angle de vue\n        colormap/viridis,     % Colormap pour les couleurs\n        domain=-2:2,          % Domaine des variables x et y\n        samples=40,           % Nombre d'échantillons\n        xlabel=$x$,           % Étiquette pour l'axe x\n        ylabel=$y$,           % Étiquette pour l'axe y\n        zlabel={$f(x,y)$},    % Étiquette pour l'axe z\n        zmax=10,              % Limite maximale de l'axe z\n        zmin=-20              % Limite minimale de l'axe z\n    ]\n    \\addplot3[\n        surf,                 % Style de tracé en surface\n    ]\n    {4*x + 2*y - x^2 - y^2 - 2*x^3*y^2};    % Fonction à tracer\n    \\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_2",
+      "url": "/artifacts/tikz/o5At-tikz_2.svg",
+      "latex": "\\begin{tikzpicture}\n    \\begin{axis}[\n        view={60}{30},         % Angle de vue (azimuth, elevation)\n        colormap/viridis,      % Colormap pour les couleurs\n        domain=-2:2,           % Domaine des variables x et y\n        samples=40,            % Nombre d'échantillons pour chaque variable\n        xlabel=$x$,            % Étiquette pour l'axe x\n        ylabel=$y$,            % Étiquette pour l'axe y\n        zlabel={$g(x,y)$},     % Étiquette pour l'axe z\n        zmax=10,               % Limite maximale de l'axe z\n        zmin=-10               % Limite minimale de l'axe z\n    ]\n    \\addplot3[\n        surf,                  % Style de tracé en surface\n        shader=interp,         % Interpolation des couleurs pour lisser la surface\n    ]\n    {x*y + x^3*y^2};           % Fonction à tracer\n    \\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

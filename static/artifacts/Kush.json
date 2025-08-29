@@ -1,0 +1,11 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/Kush-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}[xscale=0.5]\n\t\t\t\t\\draw[->] (-4,0) -- (8,0);\n\t\t\t\t\\draw (8,0) node[right] {$x$};\n\t\t\t\t\\draw (6.28,0) node[below] {$2\\pi$};\n\t\t\t\t\\draw (3.14,0) node[below] {$\\pi$};\n\t\t\t\t\\draw (-3.14,0) node[below] {$-\\pi$};\n\t\t\t\t\\draw [->] (0,-1) -- (0,1.2);\n\t\t\t\t\\draw (0,1.2) node[above] {$y$};\n\t\t\t\t\\draw[line width=3pt, color=red] (7,1) -- (6.28,1);\n\t\t\t\t\\draw[line width=3pt, color=red] (3.14,-1) -- (6.28,-1);\n\t\t\t\t\\draw[line width=3pt, color=red] (0,1) -- (3.14,1);\n\t\t\t\t\\draw[color=red] (0,0) node {$\\bullet$} ;\n\t\t\t\t\\draw[color=red] (-3.14,0) node {$\\bullet$} ;\n\t\t\t\t\\draw[color=red] (3.14,0) node {$\\bullet$} ;\n\t\t\t\t\\draw[color=red] (6.28,0) node {$\\bullet$} ;\n\t\t\t\t\\draw[line width=3pt, color=red] (0,-1) -- (-3.14,-1);\n\t\t\t\t\\draw[line width=3pt, color=red] (-4,1) -- (-3.14,1);\n\t\t\t\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

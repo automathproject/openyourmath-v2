@@ -1,0 +1,11 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/KfgI-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}[scale=.5]\n%\t\t% Calcul des valeurs nécessaires\n%\t\t\\pgfmathsetmacro{\\yA}{exp(-0.5-1)} % y pour x=-0.5\n%\t\t\\pgfmathsetmacro{\\yB}{exp(0.61-1)} % y pour x=0.61\n%\t\t\\pgfmathsetmacro{\\xB}{exp(0.61-1)} % x pour x=0.61\n%\t\t\n%\t\t\\begin{axis}[\n%\t\t\twidth=14cm, height=10cm,\n%\t\t\taxis x line=center, \n%\t\t\taxis y line=middle,\n%\t\t\txlabel =$x$,\n%\t\t\tevery axis x label/.style={\n%\t\t\t\tat={(ticklabel* cs:1.0)},\n%\t\t\t\tanchor=west,\n%\t\t\t},\n%\t\t\tylabel = $y$,\n%\t\t\tevery axis y label/.style={\n%\t\t\t\tat={(ticklabel* cs:1)},\n%\t\t\t\tanchor=south,},\n%\t\t\tlegend style={draw=none,at={(-.1,1)},anchor=north west,font=\\large },\n%\t\t\tsamples=100,\n%\t\t\tymin=-0.6, ymax=1.5,\n%\t\t\txmin=-1.8, xmax=2.1,\n%\t\t\tytick={0 },\n%\t\t\txtick={0 },\n%\t\t\tlegend cell align=left\n%\t\t\t]\n%\t\t\t% Tracé de la fonction\n%\t\t\t\\addplot [mark=none,line width=.5mm,blue,domain=-1.7:2] {exp(-x-1)};\n%\t\t\t\n%\t\t\t% Points rouges\n%\t\t\t\\node[label={-90:{\\large{$x_0$}}},circle,fill,red,inner sep=2pt] at (axis cs:-0.5,0) {};\n%\t\t\t\\node[label={-90:{\\large{$x_1$}}},circle,fill,red,inner sep=2pt] at (axis cs:0.61,0) {};\n%\t\t\t\\node[label={-90:{\\large{$x_2$}}},circle,fill,red,inner sep=2pt] at (axis cs:0.20,0) {};\n%\t\t\t\n%\t\t\t% Autres tracés\n%\t\t\t\\addplot [line width=.5mm,red] {x};\n%\t\t\t\\addplot [dotted,thick,blue] coordinates {(-0.5,0) (-0.5,\\yA) (\\yA,\\yA) (\\yA,0)};\n%\t\t\t\\addplot [dotted,thick,blue] coordinates {(0.61,\\yB) (\\xB,\\yB)};\n%\t\t\t\\addplot [dotted,thick,blue] coordinates {(\\xB,0) (\\xB,0.30)};\n%\t\t\\end{axis}\n%\t\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

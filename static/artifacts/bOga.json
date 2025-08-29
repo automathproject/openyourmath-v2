@@ -1,0 +1,23 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/bOga-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}\n\t\t\t\t\t\\fill[gray!40] (0,0) circle (1);\n\t\t\t\t\t\\draw (0,0) circle(1);\t\n\t\t\t\t\t\\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};\\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};\n\t\t\t\t\t\\draw[] (1,0) node[below right] {$1$};\n\t\t\t\t\t\\draw[] (-1,0) node[below left] {$-1$};\n\t\t\t\t\t\\draw[] (0,1) node[above left] {$1$};\n\t\t\t\t\t\\draw[] (0,-1) node[below left]{$-1$};\n\t\t\t\t\t\\node[below left] at (0,0) {$0$};\n\t\t\t\t\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_2",
+      "url": "/artifacts/tikz/bOga-tikz_2.svg",
+      "latex": "\\begin{tikzpicture}\n\t\t\t\t\t\\fill[gray!40] (-1,0) -- (0,1) -- (1,0) -- (0,-1) -- cycle;\n\t\t\t\t\t\\draw (-1,0) -- (0,1) -- (1,0) -- (0,-1) -- cycle;\n\t\t\t\t\t\\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};\\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};\\foreach \\x in {-1} {\\draw (\\x,0.1cm) -- (\\x,-0.1cm) node[below] {$\\x\\phantom{-}\\strut$};}\n\t\t\t\t\t\\foreach \\x in {1,} {\\draw (\\x,0.1cm) -- (\\x,-0.1cm) node[below] {$\\x\\strut$};}\n\t\t\t\t\t\\foreach \\y in {-1,1} {\\draw (0.1cm,\\y) -- (-0.1cm,\\y) node[left] {$\\y\\strut$};}\n\t\t\t\t\t\\node[below left] at (0,0) {$0$};\t\n\t\t\t\t\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_3",
+      "url": "/artifacts/tikz/bOga-tikz_3.svg",
+      "latex": "\\begin{tikzpicture}\n\t\t\t\t\t\\fill[gray!40] (-1,1) -- (1,1) -- (1,-1) -- (-1,-1) -- cycle;\n\t\t\t\t\t\\draw (-1,1) -- (1,1) -- (1,-1) -- (-1,-1) -- cycle;\n\t\t\t\t\t\\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\t\t\t\\draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};\n\t\t\t\t\t\\draw[] (1,0) node[below right] {$1$};\n\t\t\t\t\t\\draw[] (-1,0) node[below left] {$-1$};\n\t\t\t\t\t\\draw[] (0,1) node[above left] {$1$};\n\t\t\t\t\t\\draw[] (0,-1) node[below left]{$-1$};\n\t\t\t\t\t\\node[below left] at (0,0) {$0$};\n\t\t\t\t\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

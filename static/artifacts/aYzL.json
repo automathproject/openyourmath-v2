@@ -1,0 +1,19 @@
+{
+  "tikz": [],
+  "code": [
+    {
+      "id": "code_1",
+      "name": "aYzLpython",
+      "language": "python",
+      "content": "n=1000\nS=0\nfor i in range(n):\n  u = ...\n  S= ...\nprint(\"Valeur approchée de I = \")\nprint(...)",
+      "html": "<div class=\"code-block\" data-language=\"python\" data-block-name=\"aYzLpython\">\n  <div class=\"code-header\">\n    <span class=\"language-label\">PYTHON</span>\n    <span class=\"block-name\">aYzLpython</span>\n  </div>\n  <pre><code class=\"language-python\">n=1000\nS=0\nfor i in range(n):\n  u = ...\n  S= ...\nprint(&quot;Valeur approchée de I = &quot;)\nprint(...)</code></pre>\n</div>"
+    },
+    {
+      "id": "code_2",
+      "name": "aYzLpythonsolution",
+      "language": "python",
+      "content": "n=1000\n\tS=0\n\tfor i in range(n):\n\tu = rand()\n\tS= S+sin(sqrt(u))\n\tprint(\"Valeur approchée de I = \")\n\tprint(S/n)",
+      "html": "<div class=\"code-block\" data-language=\"python\" data-block-name=\"aYzLpythonsolution\">\n  <div class=\"code-header\">\n    <span class=\"language-label\">PYTHON</span>\n    <span class=\"block-name\">aYzLpythonsolution</span>\n  </div>\n  <pre><code class=\"language-python\">n=1000\n\tS=0\n\tfor i in range(n):\n\tu = rand()\n\tS= S+sin(sqrt(u))\n\tprint(&quot;Valeur approchée de I = &quot;)\n\tprint(S/n)</code></pre>\n</div>"
+    }
+  ]
+}

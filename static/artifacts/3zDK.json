@@ -1,0 +1,11 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/3zDK-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}[x=1cm,y=1cm,font=\\small]\n\n% Axe Y de 0 à 35% -> 35 * 0.2 = 7 cm\n\\draw[->,thick] (0.5,0) -- (0.5,7.5) node[above]{Fréquence (\\%)};\n\n% Graduations Y : 0 à 35% par pas de 5%\n\\foreach \\v in {0,5,10,15,20,25,30,35} {\n   \\draw (0.5,\\v*\\yscale) -- (0.45,\\v*\\yscale) node[left]{\\v};\n}\n\n% Axe X de 0.5 à 9.5\n\\draw[->,thick] (0.5,0) -- (9.5,0) node[right]{1ère décimale};\n\n% Titre et sous-titre\n\\node[font=\\bfseries,anchor=south] at (5,7.7) {Loi de BENFORD};\n\\node[font=\\small,anchor=south] at (5,6.4) {Fréquences relatives d'apparition de la 1ère décimale};\n\n% Graduation X (1 à 9)\n\\foreach \\x in {1,2,3,4,5,6,7,8,9} {\n  \\draw (\\x,0) -- (\\x,-0.1) node[below]{\\x};\n}\n\n% Dessin des barres\n\\foreach \\X/\\Y in \\data {\n  % Calcul de la hauteur : h = Y * yscale\n  \\pgfmathsetmacro{\\h}{\\Y*\\yscale}\n  % Dessin de la barre :\n  % La barre est centrée sur X, avec une largeur de barwidth cm \n  % et une hauteur de h (qu'on interprète en cm grâce au [y=1cm])\n  \\filldraw[fill=cyan!70!black,draw=black] (\\X-\\barwidth/2,0) rectangle (\\X+\\barwidth/2,\\h);\n  % Étiquette du pourcentage au-dessus de la barre\n  \\node[font=\\footnotesize,anchor=south] at (\\X,\\h) {\\Y\\%};\n}\n\n\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

@@ -1,0 +1,23 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/krLE-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}[domain=-1:1]\n\t\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\t\\draw[very thin, style=gray!20,  step=0.1] (-1.5,-1.5) grid(1.5,1.5);\n\t\t\t\\draw[thin,gray!60]  (-1.5,-1.5) grid(1.5,1.5);\n\t\t\t\\filldraw[fill=red!20, draw=red, line width = 2pt, opacity = 0.5] plot [domain=-1:1] (\\x,{1-\\x*\\x})  -- plot [domain=1:-1] (\\x,{\\x*\\x-1}) ;\n\t\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\t\\draw (0,-1.2) node[below]{$\\mathcal{D}_1$} ;\n\t\t\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_2",
+      "url": "/artifacts/tikz/krLE-tikz_2.svg",
+      "latex": "\\begin{tikzpicture}[domain=-1:1]\n\t\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\t\\draw[very thin, style=gray!20,  step=0.1] (-1.5,-1.5) grid(1.5,1.5);\n\t\t\t\\draw[thin,gray!60]  (-1.5,-1.5) grid(1.5,1.5);\n\t\t\t\\filldraw[fill=red!20, draw=red, line width = 2pt, opacity = 0.5] (1,1) -- (1,-1) -- (-1,-1) -- (-1,1) -- cycle ;\n\t\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\t\\draw (0,-1.2) node[below]{$\\mathcal{D}_2$} ;\n\t\t\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_3",
+      "url": "/artifacts/tikz/krLE-tikz_3.svg",
+      "latex": "\\begin{tikzpicture}[domain=-1:1]\n\t\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\t\\draw[very thin, style=gray!20,  step=0.1] (-1.5,-1.5) grid(1.5,1.5);\n\t\t\t\\draw[thin,gray!60]  (-1.5,-1.5) grid(1.5,1.5);\n\t\t\t\\filldraw[fill=red!20, draw=red, line width = 2pt, opacity = 0.5] (0,0) circle (1) ;\n\t\t\t\\draw[->,thick] (-1.5,0) -- (1.5,0) node[right] {$x$};\n\t\t\t\\draw[->,thick] (0,-1.2) -- (0,1.2) node[above] {$y$};\n\t\t\t\\draw (0,-1.2) node[below]{$\\mathcal{D}_3$} ;\n\t\t\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

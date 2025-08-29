@@ -1,0 +1,23 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/4R9m-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}\n\\begin{axis}[\ntitle={$f(x,y)=x+y-1$},\nenlarge x limits,\nview={0}{90},\nxlabel=$x$, ylabel=$y$,\nsmall,\naxis equal,\naxis x line=center,\naxis y line=center,\n%grid=major,\n]\n\\addplot3[\ndomain=-3:3,\ndomain y=-3:3,\ncontour gnuplot={number=14},\nthick,\n]\n{x+y-1};\n\\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_2",
+      "url": "/artifacts/tikz/4R9m-tikz_2.svg",
+      "latex": "\\begin{tikzpicture}\n\t\\begin{axis}[\n\t%title={$f(x,y)=e^{y-x^2}$},\n\tenlarge x limits,\n\tview={0}{90},\n\txlabel=$x$, ylabel=$y$,\n\tsmall,\n\taxis equal,\n\taxis x line=center,\n\taxis y line=center,\n\t%grid=major,\n\t]\n\t\\addplot3[\n\tdomain=-3:3,\n\tdomain y=-3:3,\n\tcontour gnuplot={levels={0.2,0.4,0.6, 0.8,1,2,3,4,5,6,7,8,9,10,11,12}},\n\tsamples=40,\n\tthick,\n\t]\n\t{exp(y-x^2)};\n\t\\end{axis}\n\t\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_3",
+      "url": "/artifacts/tikz/4R9m-tikz_3.svg",
+      "latex": "\\begin{tikzpicture}\n\t\\begin{axis}[\n\t%title={$f(x,y)=\\ln(x+2y)$},\n\tenlarge x limits,\n\tview={0}{90},\n\txlabel=$x$, ylabel=$y$,\n\tsmall,\n\taxis equal,\n\taxis x line=center,\n\taxis y line=center,\n\t%grid=major,\n\t]\n\t\\addplot3[\n\tdomain=-5:5,\n\tdomain y=-5:5,\n\tcontour gnuplot={levels={-1,0,1,1.5,2}},\n\tsamples=20,\n\tthick,\n\t]\n\t{ln(x+2*y)};\n\t\\end{axis}\n\t\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

@@ -1,0 +1,17 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/EXyV-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}\n\t\t\\begin{axis}[\n\t\t\twidth=5cm, height=4cm,\n\t\t\taxis x line=center, xlabel={$x$},\n\t\t\taxis y line=middle, \n\t\t\t%axis equal,\n\t\t\tlegend style={draw=none,at={(1,1)},anchor=north west },\n\t\t\tsamples=100,\n\t\t\tymin=-1, ymax=3,\n\t\t\txmin=-1, xmax=8,\n\t\t\txtick={\n\t\t\t\t0 ,\n\t\t\t\t3, 7\n\t\t\t},\n\t\t\txticklabels={\n\t\t\t\t$0$, $\\frac{\\pi}{k_0}$,$\\pi$     },\n\t\t\tytick={2},\n\t\t\tyticklabels={1 }\n\t\t\t]\n\t\t\t\\addplot [mark=none, very thick, red,domain=0:3] {2};\n\t\t\t\\addplot [mark=none, very thick, red,domain=3:7] {0};\n\t\t\t\\legend{$f$ },\n\t\t\\end{axis}\n\t\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_2",
+      "url": "/artifacts/tikz/EXyV-tikz_2.svg",
+      "latex": "\\begin{tikzpicture}\n\t\t\\begin{axis}[\n\t\t\twidth=5cm, height=4cm,\n\t\t\taxis x line=center, xlabel={$x$},\n\t\t\taxis y line=middle, \n\t\t\t%axis equal,\n\t\t\tlegend style={draw=none,at={(1,1)},anchor=north west },\n\t\t\tsamples=100,\n\t\t\tymin=-1, ymax=3,\n\t\t\txmin=-1, xmax=8,\n\t\t\txtick={\n\t\t\t\t0 ,\n\t\t\t\t3.5, 7\n\t\t\t},\n\t\t\txticklabels={\n\t\t\t\t$0$, $\\frac{\\pi}{2}$,$\\pi$     },\n\t\t\tytick={2},\n\t\t\tyticklabels={1}\n\t\t\t]\n\t\t\t\\addplot [mark=none, very thick, red,domain=0:3.5] {x*2/3.5};\n\t\t\t\\addplot [mark=none, very thick, red,domain=3.5:7] {4-2*x/3.5};\n\t\t\t\\legend{$g$ },\n\t\t\\end{axis}\n\t\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

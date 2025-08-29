@@ -1,0 +1,11 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/kzF4-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}\n    \\begin{axis}[\n        width=8cm, % taille du graphique\n        view={70}{40}, % angle de vue\n        domain=-1:3, y domain=-2:2, % limites pour x et y\n        samples=40, % augmenter la résolution du tracé\n        xlabel=$x$, ylabel=$y$, zlabel={$f(x, y)$},\n        colormap/hot, % palette de couleurs chaudes\n        %shader=interp, % ombrage interpolé pour plus de douceur\n        colorbar, % ajouter une barre de couleurs\n        zmin=0, zmax=10, % étendre les limites de l'axe z\n        point meta min=0, point meta max=10, % ajuster la plage de la colormap\n    ]\n        \\addplot3[\n            surf, mesh/ordering=y varies % ajouter un maillage\n        ]\n        {(x^2 + y^2)*exp(-x)};\n    \\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

@@ -1,0 +1,11 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/nSSt-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}\n    \\begin{axis}[\n        width=12cm, % largeur du graphique\n        view={60}{45}, % angle de vue\n        domain=0.1:3, y domain=0.1:3, % limites pour x et y (éviter 0)\n        samples=40, % nombre de points pour tracer le graphique\n        xlabel=$x$, ylabel=$y$, zlabel={$f(x, y)$},\n        colormap/jet, % colormap avec plus de couleurs vives\n        %shader=interp, % shading interpolé\n        colorbar, % afficher une barre de couleur\n        zmin=0, % limite inférieure de z\n        zmax=10, % limite supérieure de z\n        point meta min=0, point meta max=10, % ajuster l'étendue de la colormap\n    ]\n        \\addplot3[\n            surf,\n        ]\n        {x*y + 1/x + 1/y};\n    \\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

@@ -1,0 +1,41 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/r0au-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}\n\\begin{axis}[\ntitle={A},\nenlarge x limits,\nview={0}{90},\nxlabel=$x$, ylabel=$y$,\nsmall,\naxis equal,\naxis x line=center,\naxis y line=center,\n%grid=major,\n]\n\\addplot3[\ndomain=-3:3,\ndomain y=-3:3,\ncontour gnuplot={number=14,labels=false},%levels={0.2,0.4,0.6, 0.8,1,2,3,4,5,6,7,8,9,10,11,12}},\nsamples=40,\nthick,\n]\n{sin((x-y) r)};\n\\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_2",
+      "url": "/artifacts/tikz/r0au-tikz_2.svg",
+      "latex": "\\begin{tikzpicture}\n\\begin{axis}[\ntitle={B},\nenlarge x limits,\nview={0}{90},\nxlabel=$x$, ylabel=$y$,\nsmall,\naxis equal,\naxis x line=center,\naxis y line=center,\n%grid=major,\n]\n\\addplot3[\ndomain=-3:3,\ndomain y=-3:3,\ncontour gnuplot={number=14,labels=false},%levels={0.2,0.4,0.6, 0.8,1,2,3,4,5,6,7,8,9,10,11,12}},\nsamples=40,\nthick,\n]\n{sin((x*y) r)};\n\\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_3",
+      "url": "/artifacts/tikz/r0au-tikz_3.svg",
+      "latex": "\\begin{tikzpicture}\n\\begin{axis}[\ntitle={C},\nenlarge x limits,\nview={0}{90},\nxlabel=$x$, ylabel=$y$,\nsmall,\naxis equal,\naxis x line=center,\naxis y line=center,\n%grid=major,\n]\n\\addplot3[\ndomain=-3:3,\ndomain y=-3:3,\ncontour gnuplot={number=14,labels=false},%levels={0.2,0.4,0.6, 0.8,1,2,3,4,5,6,7,8,9,10,11,12}},\nsamples=40,\nthick,\n]\n{sin((x) r) - sin((y) r)};\n\\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_4",
+      "url": "/artifacts/tikz/r0au-tikz_4.svg",
+      "latex": "\\begin{tikzpicture}\n\\begin{axis}[\ntitle={D},\nenlarge x limits,\nview={0}{90},\nxlabel=$x$, ylabel=$y$,\nsmall,\naxis equal,\naxis x line=center,\naxis y line=center,\n%grid=major,\n]\n\\addplot3[\ndomain=-3:3,\ndomain y=-3:3,\ncontour gnuplot={number=14,labels=false},%levels={0.2,0.4,0.6, 0.8,1,2,3,4,5,6,7,8,9,10,11,12}},\nsamples=40,\nthick,\n]\n{exp(x)*cos((y) r)};\n\\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_5",
+      "url": "/artifacts/tikz/r0au-tikz_5.svg",
+      "latex": "\\begin{tikzpicture}\n\\begin{axis}[\ntitle={E},\nenlarge x limits,\nview={0}{90},\nxlabel=$x$, ylabel=$y$,\nsmall,\naxis equal,\naxis x line=center,\naxis y line=center,\n%grid=major,\n]\n\\addplot3[\ndomain=-3:3,\ndomain y=-3:3,\ncontour gnuplot={number=14,labels=false},%levels={0.2,0.4,0.6, 0.8,1,2,3,4,5,6,7,8,9,10,11,12}},\nsamples=40,\nthick,\n]\n{(x-y)/(1+x^2+y^2)};\n\\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_6",
+      "url": "/artifacts/tikz/r0au-tikz_6.svg",
+      "latex": "\\begin{tikzpicture}\n\\begin{axis}[\ntitle={F},\nenlarge x limits,\nview={0}{90},\nxlabel=$x$, ylabel=$y$,\nsmall,\naxis equal,\naxis x line=center,\naxis y line=center,\n%grid=major,\n]\n\\addplot3[\ndomain=-3:3,\ndomain y=-3:3,\ncontour gnuplot={number=14,labels=false},%levels={0.2,0.4,0.6, 0.8,1,2,3,4,5,6,7,8,9,10,11,12}},\nsamples=40,\nthick,\n]\n{(1-x^2)*(1-y^2)};\n\\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

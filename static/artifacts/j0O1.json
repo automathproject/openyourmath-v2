@@ -1,0 +1,19 @@
+{
+  "tikz": [],
+  "code": [
+    {
+      "id": "code_1",
+      "name": "j0O1python",
+      "language": "python",
+      "content": "def pareto(a,b):\n        return b * rand()**(-1/a)",
+      "html": "<div class=\"code-block\" data-language=\"python\" data-block-name=\"j0O1python\">\n  <div class=\"code-header\">\n    <span class=\"language-label\">PYTHON</span>\n    <span class=\"block-name\">j0O1python</span>\n  </div>\n  <pre><code class=\"language-python\">def pareto(a,b):\n        return b * rand()**(-1/a)</code></pre>\n</div>"
+    },
+    {
+      "id": "code_2",
+      "name": "j0O1python2",
+      "language": "python",
+      "content": "def surprise(a,b):\n        L = []\n        for p in range(5):\n            S = 0\n            for i in range(10**p):\n                S = S + pareto(a,b)\n            L.append(S/10**p)\n        return L",
+      "html": "<div class=\"code-block\" data-language=\"python\" data-block-name=\"j0O1python2\">\n  <div class=\"code-header\">\n    <span class=\"language-label\">PYTHON</span>\n    <span class=\"block-name\">j0O1python2</span>\n  </div>\n  <pre><code class=\"language-python\">def surprise(a,b):\n        L = []\n        for p in range(5):\n            S = 0\n            for i in range(10**p):\n                S = S + pareto(a,b)\n            L.append(S/10**p)\n        return L</code></pre>\n</div>"
+    }
+  ]
+}

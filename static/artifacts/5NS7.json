@@ -1,0 +1,19 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/5NS7-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}\n\t\t\\def\\layersep{2cm}\n\t\t\\tikzstyle{neuron}=[circle,fill=red!50,minimum size=12pt,inner sep=0pt]\n\t\t\n\t\t% Entree\n\t\t\\node[blue] (E) at (-\\layersep,0) {$x$};\n\t\t\t\n\t\t% Neurone F\n\t\t\\node[neuron] (F) at (0,0) {};\n\t\t\\node[above right=0.8ex,scale=0.8] at (F) {$g_1$};\n\t\t\\node[below right=0.8ex,scale=0.8] at (F) {};\n\t\t\\path[thick] (E) edge node[pos=0.8,above,scale=0.8]{$a$} (F);\n\t\t\\draw[-o,thick] (F) to node[midway,below right,scale=0.8]{$b$} ++ (-130:1.3);\n\t\t\n\t\t% Neurone G\n\t\t\\node[neuron] (G) at (\\layersep,0) {};\n\t\t\\node[above right=0.8ex,scale=0.8] at (G) {$g_2$};\n\t\t\\node[below right=0.8ex,scale=0.8] at (G) {$...$};\n\t\t\\path[thick] (F) edge node[pos=0.8,above,scale=0.8]{$c$} (G);\n\t\t\n\t\t\\draw[->,>=latex,thick] (G)-- ++(2,0) node[right,blue]{$F(x,a,b,c)$};\n\t\t\n\t\t\n\t\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": [
+    {
+      "id": "code_1",
+      "name": "5NS7",
+      "language": "text",
+      "content": "def ReLu(y):\n\tif y<0:\n\t\treturn 0\n\telse:\n\t\treturn y",
+      "html": "<div class=\"code-block\" data-language=\"text\" data-block-name=\"5NS7\">\n  <div class=\"code-header\">\n    <span class=\"language-label\">TEXT</span>\n    <span class=\"block-name\">5NS7</span>\n  </div>\n  <pre><code class=\"language-text\">def ReLu(y):\n\tif y&lt;0:\n\t\treturn 0\n\telse:\n\t\treturn y</code></pre>\n</div>"
+    }
+  ]
+}

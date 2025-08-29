@@ -1,0 +1,17 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/tPb8-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}[scale=0.6]\n\t\t\\tikzstyle{rouge} = [fill,rectangle,red,scale=1.2];\n\t\t\\tikzstyle{bleu} = [fill,circle,blue] ;\n\t\t\n\t\t\n\t\t\\draw[gray] (-4,-4) grid ++(8,8);\n\t\t\\draw[->,>=latex, very thick,black] (-4.5,0)--(5,0) node[below] {$x$};\n\t\t\\draw[->,>=latex, very thick, black] (0,-4.1)--(0,5) node[left] {$y$};\n\t\t\n\t\t\n\t\t\\foreach \\x/\\y in {-2/3,-1/2,-3/-0.3,1/1.8,2.3/3.1}{\n\t\t\t\\node[bleu] at (\\x,\\y) {};\n\t\t}\n\t\t\\foreach \\x/\\y in {1/-2,3/-1,1.5/-2.5,0/-3,-2.2/-3.3}{\n\t\t\t\\node[rouge] at (\\x,\\y) {};\n\t\t}\n\t\t\n\t\t\n\t\t\\begin{scope}[even odd rule]\n\t\t\t\\clip (-4,-4) rectangle (4,4);\n\t\t\t\\draw[red,ultra thick] (4,3) -- (-4,-2);\n\t\t\t\\fill[red!50,opacity=0.5] (4,3) -- (4,-4) --(-4,-4)--(-4,-2) -- cycle;\n\t\t\t\\fill[blue!20,opacity=0.5] (4,3) -- (4,4) --(-4,4)--(-4,-2) -- cycle;\n\t\t\t\n\t\t\t\n\t\t\\end{scope}\n\t\t\n\t\t\n\t\t\\node[scale=1,red,below] at (4,-4) {$F(x,y)=1$};\n\t\t\\node[scale=1,blue,above] at (-4,4) {$F(x,y)=0$};\n\t\t%\\node[red,below] at (-1,-4) {$y=8x+4$};\n\t\t\n\t\t\n\t\\end{tikzpicture}",
+      "svg": ""
+    },
+    {
+      "id": "tikz_2",
+      "url": "/artifacts/tikz/tPb8-tikz_2.svg",
+      "latex": "\\begin{tikzpicture}[scale=0.5]\n\t\t\t\\draw[thick,fill=black!10] (0,0) circle (2);\n\t\t\t\\node at (150:9) {$x$};\n\t\t\t\\node at (190:9) {$y$};\n\t\t\t\\draw[ultra thick]  (150:3) -- (150:8)node[pos=0.3,above]{$5$};;\n\t\t\t\\draw[ultra thick]  (190:3) -- (190:8) node[pos=0.3,above]{$-8$};\n\t\t\t\\draw[-o,ultra thick]  (210:3) -- (210:8) node[pos=0.3,above]{$4$};\n\t\t\t\\draw[->,>=latex,ultra thick] (0:3) --  (8,0) node[right] {};\n\t\t\t\\node[below right] at (-15:3) {$H$};\n\t\t\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

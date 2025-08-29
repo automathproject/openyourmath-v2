@@ -1,0 +1,11 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/H0fC-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}[scale=0.0018]\n\t\t\t\t\\draw[thick,->] (-100,0) -- (3100,0) node[below right] {$x$ (kg)};\n\t\t\t\t\\draw[thick,->] (0,-100) -- (0,3100) node[above left] {$y$ (kg)};\n\t\t\t\t\\draw[ultra thick, color=blue, fill=blue!30, opacity=0.4] (0,0) -- (3000,0) -- (0,3000) -- cycle;\n\t\t\t\t\\node at (800,800) {$\\mathcal{D}_c$};\n\t\t\t\t\\draw (3000,0) node[below] {$3000$};\n\t\t\t\t\\draw (0,3000) node[left] {$3000$};\n\t\t\t\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

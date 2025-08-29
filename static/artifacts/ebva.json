@@ -1,0 +1,11 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/ebva-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}\n    \\begin{axis}[\n        view={60}{30},                  % Angle de vue (azimuth, elevation)\n        domain=-2:2,                    % Domaine en x\n        domain y=-2:2,                  % Domaine en y\n        samples=40,                     % Nombre d'échantillons par axe\n        xlabel=$x$,                     % Étiquette de l'axe x\n        ylabel=$y$,                     % Étiquette de l'axe y\n        zlabel={$f(x,y)$},              % Étiquette de l'axe z\n        zmax=4,                         % Limite supérieure pour z\n        zmin=-4,                        % Limite inférieure pour z\n        colormap/cool,                  % Colormap pour les couleurs\n    ]\n    % Partie pour x ≠ 0 (exclure x=0 pour éviter division par zéro)\n    \\addplot3[\n        surf,                           % Style de tracé en surface\n        domain=-2:0.1,                  % Domaine en x (partie négative)\n    ]\n    {y^2/x};                            % Fonction pour x ≠ 0\n\n    \\addplot3[\n        surf,                           % Style de tracé en surface\n        domain=0.1:2,                   % Domaine en x (partie positive)\n    ]\n    {y^2/x};                            % Fonction pour x ≠ 0\n\n    % Partie pour x = 0 (cylindre vertical)\n    \\addplot3[\n        domain=-2:2,                    % Domaine en y\n        samples=40,                     % Nombre d'échantillons en y\n        thick,                          % Épaisseur de la ligne\n    ]\n    (0,y,y);                            % Fonction pour x = 0\n    \\end{axis}\n\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}
