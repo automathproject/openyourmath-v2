@@ -4,12 +4,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "node build/parse-latex.mjs content/exercises/ cache/exercises/ && node build/build-db.mjs",
-    "build:fast": "node build/parse-latex.mjs --incremental content/exercises/ cache/exercises/ && node build/build-db.mjs",
+    "build": "node scripts/parse-latex.mjs content/exercises/ cache/exercises/ && node scripts/build-db.mjs",
+    "build:fast": "node scripts/parse-latex.mjs --incremental content/exercises/ cache/exercises/ && node scripts/build-db.mjs",
     "build:clean": "rm -rf cache/exercises/* data/exercises.sqlite && pnpm build",
     "build:stats": "echo '📊 Statistics:' && echo '📝 LaTeX files:' $(find content/exercises -name '*.tex' | wc -l) && echo '📄 JSON cache:' $(find cache/exercises -name '*.json' | wc -l) && echo '💾 Database:' $(sqlite3 data/exercises.sqlite 'SELECT COUNT(*) FROM exercises;' 2>/dev/null || echo '0') 'exercises'",
     
-    "parse": "node build/parse-latex.mjs",
+    "parse": "node scripts/parse-latex.mjs",
     "parse:watch": "find content/exercises -name '*.tex' | entr -r pnpm build:fast",
     
     "dev": "vite dev",
