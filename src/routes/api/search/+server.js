@@ -7,6 +7,7 @@ export async function GET({ url }) {
     // Extraction et validation des paramètres
     const query = url.searchParams.get('q')?.trim() || '';
     const chapter = url.searchParams.get('chapter')?.trim() || '';
+    const subchapter = url.searchParams.get('subchapter')?.trim() || ''; // ✅ AJOUT
     const difficulty = url.searchParams.get('difficulty');
     const author = url.searchParams.get('author')?.trim() || '';
     
@@ -21,6 +22,7 @@ export async function GET({ url }) {
     // Construire les filtres
     const filters = {};
     if (chapter) filters.chapter = chapter;
+    if (subchapter) filters.subchapter = subchapter; // ✅ AJOUT
     if (difficulty && !isNaN(parseInt(difficulty))) {
       filters.difficulty = parseInt(difficulty);
     }
@@ -68,8 +70,8 @@ export async function GET({ url }) {
   } catch (error) {
     console.error('Search API error:', error);
     return json(
-      { 
-        error: 'Search failed', 
+      {
+        error: 'Search failed',
         message: error.message,
         timestamp: new Date().toISOString()
       },

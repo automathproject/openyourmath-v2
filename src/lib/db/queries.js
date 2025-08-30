@@ -1,4 +1,4 @@
-// src/lib/db/queries.js - Version corrigée
+// src/lib/db/queries.js - Version complète avec toutes les fonctions nécessaires
 import Database from 'better-sqlite3';
 import path from 'path';
 
@@ -77,10 +77,26 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       `;
     }
     
-    // Ajouter les filtres
-    if (filters.chapter) {
+    // Ajouter les filtres - Logique hiérarchique
+    if (filters.subchapter) {
+      // Si on a un sous-chapitre, on filtre UNIQUEMENT sur celui-ci
+      // Le sous-chapitre est suffisamment spécifique
+      sql += ' AND e.subchapter = ?';
+      params.push(filters.subchapter);
+      
+      // On peut aussi ajouter le chapitre pour plus de sécurité
+      if (filters.chapter) {
+        sql += ' AND e.chapter = ?';
+        params.push(filters.chapter);
+      }
+      
+      console.log('Filtering by subchapter:', filters.subchapter, 'and chapter:', filters.chapter);
+    } else if (filters.chapter) {
+      // Si on n'a qu'un chapitre (pas de sous-chapitre), on filtre sur le chapitre
       sql += ' AND e.chapter = ?';
       params.push(filters.chapter);
+      
+      console.log('Filtering by chapter only:', filters.chapter);
     }
     
     if (filters.difficulty !== undefined) {
@@ -110,6 +126,10 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
     console.log('Search params:', params);
     
     const results = db.prepare(sql).all(...params);
+    
+    console.log('Results count:', results.length);
+    console.log('First few results subchapters:', results.slice(0, 3).map(r => ({title: r.title, subchapter: r.subchapter})));
+    
     return results;
     
   } catch (error) {
@@ -161,8 +181,18 @@ export async function getExerciseCount(query = '', filters = {}) {
       sql = 'SELECT COUNT(*) as count FROM exercises e WHERE 1=1';
     }
     
-    // Ajouter les filtres
-    if (filters.chapter) {
+    // Ajouter les filtres - même logique hiérarchique
+    if (filters.subchapter) {
+      // Si on a un sous-chapitre, on filtre sur celui-ci
+      sql += ' AND e.subchapter = ?';
+      params.push(filters.subchapter);
+      
+      if (filters.chapter) {
+        sql += ' AND e.chapter = ?';
+        params.push(filters.chapter);
+      }
+    } else if (filters.chapter) {
+      // Sinon on filtre sur le chapitre seulement
       sql += ' AND e.chapter = ?';
       params.push(filters.chapter);
     }
@@ -187,8 +217,6 @@ export async function getExerciseCount(query = '', filters = {}) {
     if (db) db.close();
   }
 }
-
-// Autres fonctions inchangées...
 
 /**
  * Récupère un exercice par son UUID
@@ -277,6 +305,138 @@ export async function getSimilarExercises(uuid, limit = 5) {
     
   } catch (error) {
     console.error('Database error in getSimilarExercises:', error);
+    return [];
+  } finally {
+    if (db) db.close();
+  }
+}
+
+/**
+ * Récupère la structure hiérarchique des chapitres et sous-chapitres
+ */
+export async function getChapterStructure() {
+  let db;
+  try {
+    db = new Database(DB_PATH, { readonly: true });
+    
+    // Récupérer tous les chapitres avec leurs counts
+    const chapters = db.prepare(`
+      SELECT 
+        chapter,
+        subchapter,
+        COUNT(*) as exerciseCount
+      FROM exercises 
+      WHERE chapter IS NOT NULL 
+      GROUP BY chapter, subchapter
+      ORDER BY chapter, subchapter
+    `).all();
+    
+    // Organiser en structure hiérarchique
+    const structure = [];
+    const chapterMap = new Map();
+    
+    for (const row of chapters) {
+      if (!chapterMap.has(row.chapter)) {
+        chapterMap.set(row.chapter, {
+          name: row.chapter,
+          exerciseCount: 0,
+          subchapters: []
+        });
+        structure.push(chapterMap.get(row.chapter));
+      }
+      
+      const chapterObj = chapterMap.get(row.chapter);
+      chapterObj.exerciseCount += row.exerciseCount;
+      
+      // Ajouter le sous-chapitre s'il existe
+      if (row.subchapter) {
+        chapterObj.subchapters.push({
+          name: row.subchapter,
+          exerciseCount: row.exerciseCount
+        });
+      }
+    }
+    
+    return structure;
+    
+  } catch (error) {
+    console.error('Database error in getChapterStructure:', error);
+    throw new Error('Erreur lors de la récupération de la structure');
+  } finally {
+    if (db) db.close();
+  }
+}
+
+/**
+ * Récupère des suggestions pour l'autocomplétion
+ */
+export async function getSuggestions(type = 'all', limit = 10) {
+  let db;
+  try {
+    db = new Database(DB_PATH, { readonly: true });
+    
+    let query = '';
+    
+    switch (type) {
+      case 'chapters':
+        query = `
+          SELECT DISTINCT chapter as value, COUNT(*) as count
+          FROM exercises 
+          WHERE chapter IS NOT NULL
+          GROUP BY chapter 
+          ORDER BY count DESC, chapter
+          LIMIT ?
+        `;
+        break;
+        
+      case 'themes':
+        query = `
+          SELECT DISTINCT theme as value, COUNT(*) as count
+          FROM exercises 
+          WHERE theme IS NOT NULL
+          GROUP BY theme 
+          ORDER BY count DESC, theme
+          LIMIT ?
+        `;
+        break;
+        
+      case 'authors':
+        query = `
+          SELECT DISTINCT author as value, COUNT(*) as count
+          FROM exercises 
+          WHERE author IS NOT NULL
+          GROUP BY author 
+          ORDER BY count DESC, author
+          LIMIT ?
+        `;
+        break;
+        
+      default:
+        // Suggestions mixtes
+        query = `
+          SELECT 'chapter' as type, chapter as value, COUNT(*) as count
+          FROM exercises 
+          WHERE chapter IS NOT NULL
+          GROUP BY chapter 
+          
+          UNION ALL
+          
+          SELECT 'theme' as type, theme as value, COUNT(*) as count
+          FROM exercises 
+          WHERE theme IS NOT NULL
+          GROUP BY theme 
+          
+          ORDER BY count DESC
+          LIMIT ?
+        `;
+        break;
+    }
+    
+    const results = db.prepare(query).all(limit);
+    return results;
+    
+  } catch (error) {
+    console.error('Database error in getSuggestions:', error);
     return [];
   } finally {
     if (db) db.close();
