@@ -1,4 +1,4 @@
-// build/utils/hash-utils.mjs
+// scripts/utils/hash-utils.mjs
 import fs from 'fs';
 import crypto from 'crypto';
 

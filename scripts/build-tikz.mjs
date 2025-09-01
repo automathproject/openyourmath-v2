@@ -1,4 +1,4 @@
-// build/build-tikz.mjs
+// scripts/build-tikz.mjs
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

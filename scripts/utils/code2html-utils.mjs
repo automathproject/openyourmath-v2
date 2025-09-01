@@ -1,4 +1,4 @@
-// build/utils/code2html-utils.mjs
+// scripts/utils/code2html-utils.mjs
 import crypto from 'crypto';
 import { stripComments } from './tex2html-utils.mjs';
 

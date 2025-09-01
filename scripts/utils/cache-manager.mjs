@@ -1,4 +1,4 @@
-// build/utils/cache-manager.mjs
+// scripts/utils/cache-manager.mjs
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
