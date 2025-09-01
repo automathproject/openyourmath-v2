@@ -1,0 +1,95 @@
+{
+  "uuid": "YouX",
+  "title": "Taille dans une population et probabilités",
+  "chapter": "Probabilité continue",
+  "subchapter": "Loi normale",
+  "theme": "Loi normale, Variable aléatoire continue, Probabilités conditionnelles; Formule de Bayes",
+  "difficulty": "L2",
+  "module": "Probabilité et statistique",
+  "author": "Grégoire Menet",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2025-05-07",
+  "updated_at": "2025-09-01T12:16:59.478Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "Dans un pays, la taille en centimètres des femmes de 18 à 65 ans peut être modélisée par une variable aléatoire \\(X_1\\) suivant la loi normale d'espérance \\(\\mu_1 = 165\\)\\,cm et d'écart-type \\(\\sigma_1 = 6\\)\\,cm, et celle des hommes de 18 à 65 ans par une variable aléatoire \\(X_2\\) suivant la loi normale d'espérance \\(\\mu_2 = 175\\)\\,cm et d'écart-type \\(\\sigma_2 = 11\\)\\,cm.\n\t\t\n\t\tDans cet exercice, tous les résultats seront arrondis à \\(10^{-3}\\) près.",
+      "html": "<p>Dans un pays, la taille en centimètres des femmes de 18 à 65 ans peut être modélisée par une variable aléatoire <span class=\"math inline\">\\(X_1\\)</span> suivant la loi normale d’espérance <span class=\"math inline\">\\(\\mu_1 = 165\\)</span> cm et d’écart-type <span class=\"math inline\">\\(\\sigma_1 = 6\\)</span> cm, et celle des hommes de 18 à 65 ans par une variable aléatoire <span class=\"math inline\">\\(X_2\\)</span> suivant la loi normale d’espérance <span class=\"math inline\">\\(\\mu_2 = 175\\)</span> cm et d’écart-type <span class=\"math inline\">\\(\\sigma_2 = 11\\)</span> cm.</p>\n<p>Dans cet exercice, tous les résultats seront arrondis à <span class=\"math inline\">\\(10^{-3}\\)</span> près.</p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Quelle est la probabilité qu'une femme choisie au hasard dans ce pays mesure entre $1{,}53$ m et $1{,}77$ m ?",
+      "html": "<p>Quelle est la probabilité qu’une femme choisie au hasard dans ce pays mesure entre <span class=\"math inline\">\\(1{,}53\\)</span> m et <span class=\"math inline\">\\(1{,}77\\)</span> m ?</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "Convertir les mesures en centimètres. Centrer et réduire la variable aléatoire $X_1$ pour utiliser la table de la loi normale standard ou les propriétés de la fonction de répartition.",
+      "html": "<p>Convertir les mesures en centimètres. Centrer et réduire la variable aléatoire <span class=\"math inline\">\\(X_1\\)</span> pour utiliser la table de la loi normale standard ou les propriétés de la fonction de répartition.</p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "La taille d'une femme est modélisée par la v.a. $X_1$, qui suit la loi normale d'espérance $\\mu_1 = 165$ cm et d'écart-type $\\sigma_1 = 6$ cm.\\\\\n\t\t\tOn convertit en cm : $1,53\\,$m $= 153\\,$cm et $1,77\\,$m $= 177\\,$cm. On cherche alors $P(153 \\leq X_1 \\leq 177)$.\\\\\n\t\t\tOn a : $P(153 \\leq X_1 \\leq 177)= P\\left(\\frac{153-165}{6} \\leq \\frac{X_1-165}{6} \\leq \\frac{177-165}{6}\\right)=P\\left(-2 \\leq \\frac{X_1-165}{6} \\leq 2\\right)$.\\\\\n\t\t\tSi $Z = \\frac{X_1-165}{6}$, alors $Z$ suit la loi normale centrée réduite.\n\t\t\t$P(-2 \\leq Z \\leq 2) = P(Z \\leq 2) - P(Z < -2) = \\Phi(2) - \\Phi(-2)$.\n\t\t\tComme $\\Phi(-2) = 1 - \\Phi(2)$, on a $P(-2 \\leq Z \\leq 2) = \\Phi(2) - (1-\\Phi(2)) = 2\\Phi(2)-1$.\n\t\t\tEt grâce aux tables, on trouve : $P(153 \\leq X_1 \\leq 177)\\simeq 0{,}954$.\\\\",
+      "html": "<p>La taille d’une femme est modélisée par la v.a. <span class=\"math inline\">\\(X_1\\)</span>, qui suit la loi normale d’espérance <span class=\"math inline\">\\(\\mu_1 = 165\\)</span> cm et d’écart-type <span class=\"math inline\">\\(\\sigma_1 = 6\\)</span> cm.<br />\nOn convertit en cm : <span class=\"math inline\">\\(1,53\\,\\)</span>m <span class=\"math inline\">\\(= 153\\,\\)</span>cm et <span class=\"math inline\">\\(1,77\\,\\)</span>m <span class=\"math inline\">\\(= 177\\,\\)</span>cm. On cherche alors <span class=\"math inline\">\\(P(153 \\leq X_1 \\leq 177)\\)</span>.<br />\nOn a : <span class=\"math inline\">\\(P(153 \\leq X_1 \\leq 177)= P\\left(\\frac{153-165}{6} \\leq \\frac{X_1-165}{6} \\leq \\frac{177-165}{6}\\right)=P\\left(-2 \\leq \\frac{X_1-165}{6} \\leq 2\\right)\\)</span>.<br />\nSi <span class=\"math inline\">\\(Z = \\frac{X_1-165}{6}\\)</span>, alors <span class=\"math inline\">\\(Z\\)</span> suit la loi normale centrée réduite.\n<span class=\"math inline\">\\(P(-2 \\leq Z \\leq 2) = P(Z \\leq 2) - P(Z &lt; -2) = \\Phi(2) - \\Phi(-2)\\)</span>.\nComme <span class=\"math inline\">\\(\\Phi(-2) = 1 - \\Phi(2)\\)</span>, on a <span class=\"math inline\">\\(P(-2 \\leq Z \\leq 2) = \\Phi(2) - (1-\\Phi(2)) = 2\\Phi(2)-1\\)</span>.\nEt grâce aux tables, on trouve : <span class=\"math inline\">\\(P(153 \\leq X_1 \\leq 177)\\simeq 0{,}954\\)</span>.<br />\n</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Calculer la probabilité qu'un homme choisi au hasard dans ce pays mesure plus de $1{,}70$ m.",
+      "html": "<p>Calculer la probabilité qu’un homme choisi au hasard dans ce pays mesure plus de <span class=\"math inline\">\\(1{,}70\\)</span> m.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "indication",
+      "latex": "Centrer et réduire la variable aléatoire $X_2$. Exprimer la probabilité $P(X_2 \\geq 170)$ en utilisant la fonction de répartition $\\Phi$ de la loi normale centrée réduite.",
+      "html": "<p>Centrer et réduire la variable aléatoire <span class=\"math inline\">\\(X_2\\)</span>. Exprimer la probabilité <span class=\"math inline\">\\(P(X_2 \\geq 170)\\)</span> en utilisant la fonction de répartition <span class=\"math inline\">\\(\\Phi\\)</span> de la loi normale centrée réduite.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "La taille d'un homme est modélisée par la v.a. $X_2$, qui suit la loi normale d'espérance $\\mu_2 = 175$ cm et d'écart-type $\\sigma_2 = 11$ cm.\\\\\n\t\t\tOn cherche ici $P(X_2 \\geq 170)$ (on applique un raisonnement similaire à la question 1 pour centrer et réduire $X_2$).\\\\\n\t\t\t$P(X_2 \\geq 170) = P\\left(\\frac{X_2-\\mu_2}{\\sigma_2} \\geq \\frac{170-175}{11}\\right) = P\\left(Z \\geq \\frac{-5}{11}\\right)$ où $Z$ suit la loi normale centrée réduite.\\\\\n\t\t\t$P(Z \\geq -5/11) = P(Z \\leq 5/11) = \\Phi(5/11)$.\n\t\t\tOn trouve grâce aux tables (ou à la calculatrice) : $P(X_2 \\geq 170) \\simeq 0{,}675$.",
+      "html": "<p>La taille d’un homme est modélisée par la v.a. <span class=\"math inline\">\\(X_2\\)</span>, qui suit la loi normale d’espérance <span class=\"math inline\">\\(\\mu_2 = 175\\)</span> cm et d’écart-type <span class=\"math inline\">\\(\\sigma_2 = 11\\)</span> cm.<br />\nOn cherche ici <span class=\"math inline\">\\(P(X_2 \\geq 170)\\)</span> (on applique un raisonnement similaire à la question 1 pour centrer et réduire <span class=\"math inline\">\\(X_2\\)</span>).<br />\n<span class=\"math inline\">\\(P(X_2 \\geq 170) = P\\left(\\frac{X_2-\\mu_2}{\\sigma_2} \\geq \\frac{170-175}{11}\\right) = P\\left(Z \\geq \\frac{-5}{11}\\right)\\)</span> où <span class=\"math inline\">\\(Z\\)</span> suit la loi normale centrée réduite.<br />\n<span class=\"math inline\">\\(P(Z \\geq -5/11) = P(Z \\leq 5/11) = \\Phi(5/11)\\)</span>.\nOn trouve grâce aux tables (ou à la calculatrice) : <span class=\"math inline\">\\(P(X_2 \\geq 170) \\simeq 0{,}675\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "On sait que dans ce pays les femmes représentent \\(52\\%\\) de la population des personnes dont l'âge est compris entre 18 et 65 ans. On choisit au hasard une personne qui a entre 18 et 65 ans. Elle mesure plus de $1{,}70$ m. Quelle est la probabilité que cette personne soit une femme ?",
+      "html": "<p>On sait que dans ce pays les femmes représentent <span class=\"math inline\">\\(52\\%\\)</span> de la population des personnes dont l’âge est compris entre 18 et 65 ans. On choisit au hasard une personne qui a entre 18 et 65 ans. Elle mesure plus de <span class=\"math inline\">\\(1{,}70\\)</span> m. Quelle est la probabilité que cette personne soit une femme ?</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "indication",
+      "latex": "Définir les événements $F$ (être une femme), $H$ (être un homme), et $C$ (mesurer plus de $1,70$ m). Calculer les probabilités conditionnelles $P(C|F)$ et $P(C|H)$ en utilisant la loi normale pour $X_1$ et $X_2$. Utiliser la formule des probabilités totales pour $P(C)$, puis la formule de Bayes pour trouver $P(F|C)$.",
+      "html": "<p>Définir les événements <span class=\"math inline\">\\(F\\)</span> (être une femme), <span class=\"math inline\">\\(H\\)</span> (être un homme), et <span class=\"math inline\">\\(C\\)</span> (mesurer plus de <span class=\"math inline\">\\(1,70\\)</span> m). Calculer les probabilités conditionnelles <span class=\"math inline\">\\(P(C|F)\\)</span> et <span class=\"math inline\">\\(P(C|H)\\)</span> en utilisant la loi normale pour <span class=\"math inline\">\\(X_1\\)</span> et <span class=\"math inline\">\\(X_2\\)</span>. Utiliser la formule des probabilités totales pour <span class=\"math inline\">\\(P(C)\\)</span>, puis la formule de Bayes pour trouver <span class=\"math inline\">\\(P(F|C)\\)</span>.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "reponse",
+      "latex": "Il s'agit d'un problème de probabilités conditionnelles.\\\\\n\t\t\tSoit $F$ l'événement : « La personne choisie est une femme ».\\\\\n\t\t\tSoit $H$ l'événement : « La personne choisie est un homme » (donc $H = \\bar{F}$).\\\\\n\t\t\tSoit $C$ l'événement : « La personne choisie mesure plus de 1{,}70 m ».\\\\\n\t\t\tOn sait que $P(F) = 0,52$, donc $P(H) = 1 - P(F) = 1 - 0{,}52 = 0{,}48$.\\\\\n\t\t\tOn cherche la probabilité $P(F|C)$. D'après la formule de Bayes, $P(F|C) = \\frac{P(C|F)P(F)}{P(C)}$.\\\\\n\t\t\t\n\t\t\tCalculons $P(C|F)$ : c'est la probabilité qu'une femme mesure plus de $1,70$ m, soit $P(X_1 \\geq 170)$.\\\\\n\t\t\t$P(X_1 \\geq 170) = P\\left(\\frac{X_1-165}{6} \\geq \\frac{170-165}{6}\\right) = P(Z \\geq 5/6)$.\\\\\n\t\t\tOn trouve à la calculatrice (ou table) : $P(X_1 \\geq 170) \\simeq 0{,}202$. Donc $P(C|F) \\simeq 0{,}202$.\\\\\n\t\t\t\n\t\t\tCalculons $P(C|H)$ : c'est la probabilité qu'un homme mesure plus de $1{,}70$ m, soit $P(X_2 \\geq 170)$.\\\\\n\t\t\tCette probabilité a été calculée dans la question 2 : $P(X_2 \\geq 170) \\simeq 0{,}675$. Donc $P(C|H) \\simeq 0{,}675$.\\\\\n\t\t\t\n\t\t\tOn peut représenter ces informations sur un arbre de probabilités :\n\t\t\t\\begin{center}\n\\begin{tikzpicture}[\n\t% Style for the nodes (circles)\n\tnode_style/.style={\n\t\tcircle,\n\t\tdraw,\n\t\tminimum size=7mm, % Adjust size as needed\n\t\tinner sep=0pt\n\t},\n\t% Style for the probability labels on edges\n\tprob_style/.style={\n\t\tsloped, % Orients the text along the path\n\t\tmidway, % Places it in the middle of the path\n\t\tabove,  % Places it above the path (can be 'below')\n\t\tfont=\\footnotesize,\n\t\tinner sep=1.5pt % Small padding around text\n\t},\n\t% Define distances for tree layout\n\tlevel 1/.style={sibling distance=3cm},\n\tlevel 2/.style={sibling distance=2cm},\n\tedge from parent/.style={draw, -{Stealth[length=1.5mm, width=1.5mm]}} % Optional: add arrow tips\n\t]\n\t\n\t% Root node (invisible, just for starting paths)\n\t\\coordinate (root) at (0,0);\n\t\n\t% First level nodes (F and H)\n\t\\node[node_style] (F) at (2.5,1.2) {F};\n\t\\node[node_style] (H) at (2.5,-1.2) {H};\n\t\n\t% Second level nodes (C and Cbar)\n\t% Branching from F\n\t\\node[node_style] (C_F) at (5, 2.0) {C};      % F's y + offset\n\t\\node[node_style] (Cbar_F) at (5, 0.4) {$\\bar{C}$}; % F's y - offset\n\t\n\t% Branching from H\n\t\\node[node_style] (C_H) at (5, -0.4) {C};     % H's y + offset\n\t\\node[node_style] (Cbar_H) at (5, -2.0) {$\\bar{C}$};% H's y - offset\n\t\n\t% Edges and probabilities\n\t% From root to F and H\n\t\\draw (root) -- (F) node[prob_style, pos=0.4, above=-1pt] {0,52}; % pos=0.4 to move it left from center\n\t\\draw (root) -- (H) node[prob_style, pos=0.4, above=-1pt] {0,48}; % 'above' is relative to sloped line\n\t\n\t% From F to C and Cbar_F\n\t\\draw (F) -- (C_F) node[prob_style] {0,202};\n\t\\draw (F) -- (Cbar_F) node[prob_style] {0,798};\n\t\n\t% From H to C and Cbar_H\n\t\\draw (H) -- (C_H) node[prob_style] {0,675};\n\t\\draw (H) -- (Cbar_H) node[prob_style] {0,325};\n\t\n\\end{tikzpicture}\n\t\t\t\\end{center}\n\t\t\t% Description textuelle de l'arbre si l'image n'est pas disponible:\n\t\t\t% Racine -> F (0,52) -> C (0,202) / non C (1-0,202)\n\t\t\t%        -> H (0,48) -> C (0,675) / non C (1-0,675)\n\t\t\t\n\t\t\tD'après la formule des probabilités totales :\n\t\t\t$P(C) = P(C|F)P(F) + P(C|H)P(H)$\n\t\t\t$P(C) \\simeq 0{,}202 \\times 0{,}52 + 0{,}675 \\times 0{,}48$\n\t\t\t$P(C) \\simeq 0{,}10504 + 0{,}324 = 0{,}42904$.\\\\\n\t\t\t\n\t\t\tCalculons $P(F \\cap C) = P(C|F)P(F)$.\n\t\t\t$P(F \\cap C) \\simeq 0{,}202 \\times 0{,}52 = 0{,}10504$.\\\\\n\t\t\t\n\t\t\tAlors, la probabilité recherchée $P(F|C)$ est :\n\t\t\t$P(F|C) = \\frac{P(F \\cap C)}{P(C)} \\simeq \\frac{0{,}10504}{0{,}42904} \\simeq 0{,}2448...$\n\t\t\tEn arrondissant à $10^{-3}$ : $P(F|C) \\simeq 0{,}245$.\\\\\n\t\t\t\n\t\t\tAinsi, la probabilité qu'une personne mesurant plus de $1{,}70$ m soit une femme est d'environ $0{,}245$.\n\t\t)",
+      "html": "<p>Il s’agit d’un problème de probabilités conditionnelles.<br />\nSoit <span class=\"math inline\">\\(F\\)</span> l’événement : « La personne choisie est une femme ».<br />\nSoit <span class=\"math inline\">\\(H\\)</span> l’événement : « La personne choisie est un homme » (donc <span class=\"math inline\">\\(H = \\bar{F}\\)</span>).<br />\nSoit <span class=\"math inline\">\\(C\\)</span> l’événement : « La personne choisie mesure plus de 1<span>,</span>70 m ».<br />\nOn sait que <span class=\"math inline\">\\(P(F) = 0,52\\)</span>, donc <span class=\"math inline\">\\(P(H) = 1 - P(F) = 1 - 0{,}52 = 0{,}48\\)</span>.<br />\nOn cherche la probabilité <span class=\"math inline\">\\(P(F|C)\\)</span>. D’après la formule de Bayes, <span class=\"math inline\">\\(P(F|C) = \\frac{P(C|F)P(F)}{P(C)}\\)</span>.<br />\nCalculons <span class=\"math inline\">\\(P(C|F)\\)</span> : c’est la probabilité qu’une femme mesure plus de <span class=\"math inline\">\\(1,70\\)</span> m, soit <span class=\"math inline\">\\(P(X_1 \\geq 170)\\)</span>.<br />\n<span class=\"math inline\">\\(P(X_1 \\geq 170) = P\\left(\\frac{X_1-165}{6} \\geq \\frac{170-165}{6}\\right) = P(Z \\geq 5/6)\\)</span>.<br />\nOn trouve à la calculatrice (ou table) : <span class=\"math inline\">\\(P(X_1 \\geq 170) \\simeq 0{,}202\\)</span>. Donc <span class=\"math inline\">\\(P(C|F) \\simeq 0{,}202\\)</span>.<br />\nCalculons <span class=\"math inline\">\\(P(C|H)\\)</span> : c’est la probabilité qu’un homme mesure plus de <span class=\"math inline\">\\(1{,}70\\)</span> m, soit <span class=\"math inline\">\\(P(X_2 \\geq 170)\\)</span>.<br />\nCette probabilité a été calculée dans la question 2 : <span class=\"math inline\">\\(P(X_2 \\geq 170) \\simeq 0{,}675\\)</span>. Donc <span class=\"math inline\">\\(P(C|H) \\simeq 0{,}675\\)</span>.<br />\nOn peut représenter ces informations sur un arbre de probabilités :\n<div class=\"tikz-container\" style=\"text-align: center;\"><img src=\"/artifacts/tikz/YouX-tikz_1.svg\" alt=\"Diagramme TikZ 1\" class=\"tikz-svg-image\"></div></p>\n<p>D’après la formule des probabilités totales :\n<span class=\"math inline\">\\(P(C) = P(C|F)P(F) + P(C|H)P(H)\\)</span>\n<span class=\"math inline\">\\(P(C) \\simeq 0{,}202 \\times 0{,}52 + 0{,}675 \\times 0{,}48\\)</span>\n<span class=\"math inline\">\\(P(C) \\simeq 0{,}10504 + 0{,}324 = 0{,}42904\\)</span>.<br />\nCalculons <span class=\"math inline\">\\(P(F \\cap C) = P(C|F)P(F)\\)</span>.\n<span class=\"math inline\">\\(P(F \\cap C) \\simeq 0{,}202 \\times 0{,}52 = 0{,}10504\\)</span>.<br />\nAlors, la probabilité recherchée <span class=\"math inline\">\\(P(F|C)\\)</span> est :\n<span class=\"math inline\">\\(P(F|C) = \\frac{P(F \\cap C)}{P(C)} \\simeq \\frac{0{,}10504}{0{,}42904} \\simeq 0{,}2448...\\)</span>\nEn arrondissant à <span class=\"math inline\">\\(10^{-3}\\)</span> : <span class=\"math inline\">\\(P(F|C) \\simeq 0{,}245\\)</span>.<br />\nAinsi, la probabilité qu’une personne mesurant plus de <span class=\"math inline\">\\(1{,}70\\)</span> m soit une femme est d’environ <span class=\"math inline\">\\(0{,}245\\)</span>.\n)</p>",
+      "order": 10
+    }
+  ],
+  "artifacts": {
+    "tikz": [
+      "tikz_1"
+    ],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "0ff49bdd04793d28884f511d961aabaa8f8aae1cd960938fb424518844573a68"
+}

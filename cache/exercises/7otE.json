@@ -1,15 +1,16 @@
 {
   "uuid": "7otE",
   "title": "Sondage et intervalles de confiance",
-  "chapter": "",
-  "subchapter": "",
+  "chapter": "Statistique",
+  "subchapter": "Tests d'hypothèses, intervalles de confiance",
   "theme": "statistiques",
-  "difficulty": null,
+  "difficulty": "L2",
+  "module": "Probabilité et statistique",
   "author": "",
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "",
-  "updated_at": "2025-08-25T13:14:03.095Z",
+  "updated_at": "2025-09-01T12:16:15.213Z",
   "content": [
     {
       "id": "block_1",
@@ -20,31 +21,59 @@
     },
     {
       "id": "block_2",
-      "type": "reponse",
-      "latex": "La taille de la population n'infuence pas le résultat de l'estimation. Mais plus la taille de l'échantillon est importante, plus le sondage est précis. Il vaut donc mieux faire un sondage sur 2000 personnes que sur 1000 personnnes.",
-      "html": "<p>La taille de la population n’infuence pas le résultat de l’estimation. Mais plus la taille de l’échantillon est importante, plus le sondage est précis. Il vaut donc mieux faire un sondage sur 2000 personnes que sur 1000 personnnes.</p>",
+      "type": "question",
+      "latex": "Est-il plus précis de faire un sondage sur $1000$ personnes dans une population de $1$ million de personnes ou un sondage sur $2000$ personnes dans une population de $10$ millions de personnes ? Justifier.",
+      "html": "<p>Est-il plus précis de faire un sondage sur <span class=\"math inline\">\\(1000\\)</span> personnes dans une population de <span class=\"math inline\">\\(1\\)</span> million de personnes ou un sondage sur <span class=\"math inline\">\\(2000\\)</span> personnes dans une population de <span class=\"math inline\">\\(10\\)</span> millions de personnes ? Justifier.</p>",
       "order": 2
     },
     {
       "id": "block_3",
       "type": "reponse",
-      "latex": "On cherche à estimer une fréquence à partir d'un échantillon de taille $1000$. La fréquence observée dans l'échantillon est $f_{obs} = \\frac{55}{100}$. On peut donc utiliser la formule du cours : \n\t\t$$I_{conf}(F(\\omega))=\\left[f_{obs}-u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} ~;~ f_{obs} + u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} \\right]$$\n\t\ten remplaçant $u_{\\alpha/2}$ par $1{,}96$ pour une confiance de $95\\%$, on obtient numériquement $I_{conf} \\approx [0.519 ; 0.581]$. \n\nEn remplaçant $u_{\\alpha/2}$ par $2{,}5758$ pour une confiance de $99\\%$, on obtient numériquement $I_{conf} \\approx [0.509 ; 0.591]$.",
-      "html": "<p>On cherche à estimer une fréquence à partir d’un échantillon de taille <span class=\"math inline\">\\(1000\\)</span>. La fréquence observée dans l’échantillon est <span class=\"math inline\">\\(f_{obs} = \\frac{55}{100}\\)</span>. On peut donc utiliser la formule du cours :\n<span class=\"math display\">\\[I_{conf}(F(\\omega))=\\left[f_{obs}-u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} ~;~ f_{obs} + u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} \\right]\\]</span>\nen remplaçant <span class=\"math inline\">\\(u_{\\alpha/2}\\)</span> par <span class=\"math inline\">\\(1{,}96\\)</span> pour une confiance de <span class=\"math inline\">\\(95\\%\\)</span>, on obtient numériquement <span class=\"math inline\">\\(I_{conf} \\approx [0.519 ; 0.581]\\)</span>.</p>\n<p>En remplaçant <span class=\"math inline\">\\(u_{\\alpha/2}\\)</span> par <span class=\"math inline\">\\(2{,}5758\\)</span> pour une confiance de <span class=\"math inline\">\\(99\\%\\)</span>, on obtient numériquement <span class=\"math inline\">\\(I_{conf} \\approx [0.509 ; 0.591]\\)</span>.</p>",
+      "latex": "La taille de la population n'influence pas le résultat de l'estimation. Mais plus la taille de l'échantillon est importante, plus le sondage est précis. Il vaut donc mieux faire un sondage sur 2000 personnes que sur 1000 personnes.",
+      "html": "<p>La taille de la population n’influence pas le résultat de l’estimation. Mais plus la taille de l’échantillon est importante, plus le sondage est précis. Il vaut donc mieux faire un sondage sur 2000 personnes que sur 1000 personnes.</p>",
       "order": 3
     },
     {
       "id": "block_4",
-      "type": "reponse",
-      "latex": "La réponse est oui car dans chacun des cas, l'intervalle de confiance se situe au dessus de $50\\%$. Il faudrait dépasser $99,8\\%$ de confiance pour pouvoir commencer à mettre en doute que le << Oui >> l'emporte.",
-      "html": "<p>La réponse est oui car dans chacun des cas, l’intervalle de confiance se situe au dessus de <span class=\"math inline\">\\(50\\%\\)</span>. Il faudrait dépasser <span class=\"math inline\">\\(99,8\\%\\)</span> de confiance pour pouvoir commencer à mettre en doute que le &lt;&lt; Oui &gt;&gt; l’emporte.</p>",
+      "type": "question",
+      "latex": "Concernant le référendum cité ci-dessus, déterminer un intervalle contenant le pourcentage de << Oui >> avec une probabilité de $0{,}95$.",
+      "html": "<p>Concernant le référendum cité ci-dessus, déterminer un intervalle contenant le pourcentage de &lt;&lt; Oui &gt;&gt; avec une probabilité de <span class=\"math inline\">\\(0{,}95\\)</span>.</p>",
       "order": 4
     },
     {
       "id": "block_5",
       "type": "reponse",
+      "latex": "On cherche à estimer une fréquence à partir d'un échantillon de taille $1000$. La fréquence observée dans l'échantillon est $f_{obs} = \\frac{55}{100}$. On peut donc utiliser la formule du cours : \n\t\t$$I_{conf}(F(\\omega))=\\left[f_{obs}-u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} ~;~ f_{obs} + u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} \\right]$$\n\t\ten remplaçant $u_{\\alpha/2}$ par $1{,}96$ pour une confiance de $95\\%$, on obtient numériquement $I_{conf} \\approx [0.519 ; 0.581]$. \n\nEn remplaçant $u_{\\alpha/2}$ par $2{,}5758$ pour une confiance de $99\\%$, on obtient numériquement $I_{conf} \\approx [0.509 ; 0.591]$.",
+      "html": "<p>On cherche à estimer une fréquence à partir d’un échantillon de taille <span class=\"math inline\">\\(1000\\)</span>. La fréquence observée dans l’échantillon est <span class=\"math inline\">\\(f_{obs} = \\frac{55}{100}\\)</span>. On peut donc utiliser la formule du cours :\n<span class=\"math display\">\\[I_{conf}(F(\\omega))=\\left[f_{obs}-u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} ~;~ f_{obs} + u_{\\alpha/2} \\sqrt{\\frac{f_{obs}(1-f_{obs})}{n}} \\right]\\]</span>\nen remplaçant <span class=\"math inline\">\\(u_{\\alpha/2}\\)</span> par <span class=\"math inline\">\\(1{,}96\\)</span> pour une confiance de <span class=\"math inline\">\\(95\\%\\)</span>, on obtient numériquement <span class=\"math inline\">\\(I_{conf} \\approx [0.519 ; 0.581]\\)</span>.</p>\n<p>En remplaçant <span class=\"math inline\">\\(u_{\\alpha/2}\\)</span> par <span class=\"math inline\">\\(2{,}5758\\)</span> pour une confiance de <span class=\"math inline\">\\(99\\%\\)</span>, on obtient numériquement <span class=\"math inline\">\\(I_{conf} \\approx [0.509 ; 0.591]\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "Peut-on considérer, avec une confiance de $95\\%$, que le << Oui >> l'emporte ? La réponse est-elle\n\tla même avec un niveau de confiance de $99\\%$ ? \\`A partir de quel niveau de confiance peut-on commencer à douter que le << Oui >> l'emporte ?",
+      "html": "<p>Peut-on considérer, avec une confiance de <span class=\"math inline\">\\(95\\%\\)</span>, que le &lt;&lt; Oui &gt;&gt; l’emporte ? La réponse est-elle\nla même avec un niveau de confiance de <span class=\"math inline\">\\(99\\%\\)</span> ? À partir de quel niveau de confiance peut-on commencer à douter que le &lt;&lt; Oui &gt;&gt; l’emporte ?</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "La réponse est oui car dans chacun des cas, l'intervalle de confiance se situe au dessus de $50\\%$. Il faudrait dépasser $99,8\\%$ de confiance pour pouvoir commencer à mettre en doute que le << Oui >> l'emporte.",
+      "html": "<p>La réponse est oui car dans chacun des cas, l’intervalle de confiance se situe au dessus de <span class=\"math inline\">\\(50\\%\\)</span>. Il faudrait dépasser <span class=\"math inline\">\\(99,8\\%\\)</span> de confiance pour pouvoir commencer à mettre en doute que le &lt;&lt; Oui &gt;&gt; l’emporte.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Si, pour un référendum, on sait que << oui >> se situe autour de $50\\%$, combien de personnes\n\tfaudrait-il interroger pour que la proportion de << Oui >> soit connue à $1\\%$ près (en plus ou en\n\tmoins), avec un niveau de confiance de $0{,}95$ ?",
+      "html": "<p>Si, pour un référendum, on sait que &lt;&lt; oui &gt;&gt; se situe autour de <span class=\"math inline\">\\(50\\%\\)</span>, combien de personnes\nfaudrait-il interroger pour que la proportion de &lt;&lt; Oui &gt;&gt; soit connue à <span class=\"math inline\">\\(1\\%\\)</span> près (en plus ou en\nmoins), avec un niveau de confiance de <span class=\"math inline\">\\(0{,}95\\)</span> ?</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
       "latex": "La longueur de l'intervalle de confiance est de l'ordre de $\\frac{1}{\\sqrt{n}}$ où $n$ est la taille de l'échantillon. Pour avoir $\\frac{1}{\\sqrt{n}} < 0{,}01$, il faut $n > 10\\,000$.",
       "html": "<p>La longueur de l’intervalle de confiance est de l’ordre de <span class=\"math inline\">\\(\\frac{1}{\\sqrt{n}}\\)</span> où <span class=\"math inline\">\\(n\\)</span> est la taille de l’échantillon. Pour avoir <span class=\"math inline\">\\(\\frac{1}{\\sqrt{n}} &lt; 0{,}01\\)</span>, il faut <span class=\"math inline\">\\(n &gt; 10\\,000\\)</span>.</p>",
-      "order": 5
+      "order": 9
     }
   ],
   "artifacts": {
@@ -53,5 +82,5 @@
     "code": [],
     "video": null
   },
-  "source_hash": "99f1434a584b5cdf665ea5f808c45c13eac3b2dd2193e47a9d0e4fffe4a5e69a"
+  "source_hash": "3126e1a5bbd744ae9ea8f484bbbdf031939d35b6a36809a4e4cf698e34b42828"
 }

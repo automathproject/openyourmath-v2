@@ -47,6 +47,7 @@ const CONFIG = {
     { name: 'video', jsonKey: 'video_id', isContent: false },
     { name: 'datecreate', jsonKey: 'created_at', isContent: false },
     { name: 'niveau', jsonKey: 'difficulty', isContent: false },
+    { name: 'module', jsonKey: 'module', isContent: false }, // NOUVEAU
     { name: 'texte', jsonKey: 'content', isContent: true, blockType: 'text' },
     { name: 'question', jsonKey: 'content', isContent: true, blockType: 'question' },
     { name: 'indication', jsonKey: 'content', isContent: true, blockType: 'indication' },
@@ -78,7 +79,8 @@ async function parseLatexFile(filePath) {
     chapter: "",
     subchapter: "",
     theme: "",
-    difficulty: null,
+    difficulty: "",
+    module: "", // NOUVEAU
     author: "",
     organization: "",
     video_id: "",
@@ -273,11 +275,15 @@ async function parseLatexFile(filePath) {
     } else {
       const finalContent = stripComments(content.trim());
       const processedContent = preprocessLatex(finalContent);
-      if (commandObj.jsonKey === 'theme') mainData[commandObj.jsonKey] = processedContent.split(',').map(s => s.trim()).join(', ');
-      else if (commandObj.jsonKey === 'difficulty') mainData[commandObj.jsonKey] = parseInt(processedContent) || null;
-      else if (commandObj.jsonKey === 'video_id') {
+      if (commandObj.jsonKey === 'theme') {
+        mainData[commandObj.jsonKey] = processedContent.split(',').map(s => s.trim()).join(', ');
+      } else if (commandObj.jsonKey === 'difficulty') { // MODIFIÉ : difficulty est maintenant du texte
+        mainData[commandObj.jsonKey] = processedContent;
+      } else if (commandObj.jsonKey === 'video_id') {
         mainData[commandObj.jsonKey] = processedContent;
         mainData.artifacts.video = processedContent;
+      } else if (commandObj.jsonKey === 'module') { // NOUVEAU : Traitement spécial pour module
+        mainData[commandObj.jsonKey] = processedContent;
       } else {
         mainData[commandObj.jsonKey] = processedContent;
       }

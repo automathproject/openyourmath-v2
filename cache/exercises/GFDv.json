@@ -1,0 +1,72 @@
+{
+  "uuid": "GFDv",
+  "title": "Rayon et domaine de convergence d'une série entière",
+  "chapter": "Série entière",
+  "subchapter": "Rayon de convergence",
+  "theme": "Séries entières",
+  "difficulty": "L2",
+  "module": "Analyse",
+  "author": "",
+  "organization": "",
+  "video_id": "",
+  "created_at": "2025-05-17",
+  "updated_at": "2025-09-01T12:16:29.563Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère la série entière de la variable réelle $x$ : \n\t\t$$\\sum_{n \\geq 0} \\frac{(-1)^n}{\\sqrt{n}+1}x^n$$",
+      "html": "<p>On considère la série entière de la variable réelle <span class=\"math inline\">\\(x\\)</span> :\n<span class=\"math display\">\\[\\sum_{n \\geq 0} \\frac{(-1)^n}{\\sqrt{n}+1}x^n\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Vérifier que le rayon de convergence est égal à $1$.",
+      "html": "<p>Vérifier que le rayon de convergence est égal à <span class=\"math inline\">\\(1\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "On pose $u_n(x) = \\frac{(-1)^n}{\\sqrt{n}+1}x^n$ et on utilise le théorème de d'Alembert : \n\t\t\t\\begin{align*}\n\t\t\t\t\\frac{|u_{n+1}(x)|}{|u_n(x)|} &= \\frac{ \\sqrt{n}+1 }{\\sqrt{n+1}+1}\\frac{|x^{n+1}|}{|x^{n}|} \\\\\n\t\t\t\t& \\sim  \\frac{\\sqrt{n}}{\\sqrt{n}} |x| \\\\\n\t\t\t\t&\\xrightarrow[n\\to+\\infty]{}  |x|\n\t\t\t\\end{align*}\n\t\t\tDonc la série converge si et seulement si $|x|<1$. Donc le rayon de convergence est bien $R=1$.",
+      "html": "<p>On pose <span class=\"math inline\">\\(u_n(x) = \\frac{(-1)^n}{\\sqrt{n}+1}x^n\\)</span> et on utilise le théorème de d’Alembert :\n<span class=\"math display\">\\[\\begin{align*}\n                \\frac{|u_{n+1}(x)|}{|u_n(x)|} &amp;= \\frac{ \\sqrt{n}+1 }{\\sqrt{n+1}+1}\\frac{|x^{n+1}|}{|x^{n}|} \\\\\n                &amp; \\sim  \\frac{\\sqrt{n}}{\\sqrt{n}} |x| \\\\\n                &amp;\\xrightarrow[n\\to+\\infty]{}  |x|\n            \\end{align*}\\]</span>\nDonc la série converge si et seulement si <span class=\"math inline\">\\(|x|&lt;1\\)</span>. Donc le rayon de convergence est bien <span class=\"math inline\">\\(R=1\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Déterminer le domaine de convergence de cette série entière.",
+      "html": "<p>Déterminer le domaine de convergence de cette série entière.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On sait que la série converge sur l'intervalle $]-R;R[ = ]-1;1[$. Il reste à étudier le cas où $x=-1$ et $x=1$. \n\t\t\t\n\t\t\tOr $u_n(-1) = \\frac{(-1)^n}{\\sqrt{n}+1}(-1)^n = \\frac{1}{\\sqrt{n}+1}$. La série $\\sum u_n(-1)$ est donc une série à termes positifs et le terme général est équivalent à $\\frac{1}{\\sqrt{n}}$, qui est le terme général d'une série de Riemann divergente ($\\alpha = 1/2 < 1$). Donc la série $\\sum u_n(-1)$ diverge. \n\t\t\t(Correction: $u_n(-1) = \\frac{(-1)^n}{\\sqrt{n}+1}(-1)^n = \\frac{1}{\\sqrt{n}+1}$. L'énoncé original contenait une petite erreur dans la transcription de $u_n(-1)$ en $\\sum \\frac{1}{n^{\\frac{1}{2}}}$, il s'agit de $\\frac{1}{\\sqrt{n}+1} \\sim \\frac{1}{\\sqrt{n}}$.)\n\t\t\t\n\t\t\tDe plus, $u_n(1) = \\frac{(-1)^n}{\\sqrt{n}+1}$. On pose $a_n = \\frac{1}{\\sqrt{n}+1} >0$ pour tout $n \\geq 1$. Donc $u_n(1)$ est le terme général d'une série alternée. Or il est clair que $(a_n)$ est une suite décroissante et $\\lim\\limits_{n\\to+\\infty} a_n = 0$ donc d'après le critère spécial des séries alternées, la série $\\sum u_n(1)$ converge.\n\t\t\t\n\t\t\tEn définitive, le domaine de convergence est \n\t\t\t$$D = ]-1;1]$$",
+      "html": "<p>On sait que la série converge sur l’intervalle <span class=\"math inline\">\\(]-R;R[ = ]-1;1[\\)</span>. Il reste à étudier le cas où <span class=\"math inline\">\\(x=-1\\)</span> et <span class=\"math inline\">\\(x=1\\)</span>.</p>\n<p>Or <span class=\"math inline\">\\(u_n(-1) = \\frac{(-1)^n}{\\sqrt{n}+1}(-1)^n = \\frac{1}{\\sqrt{n}+1}\\)</span>. La série <span class=\"math inline\">\\(\\sum u_n(-1)\\)</span> est donc une série à termes positifs et le terme général est équivalent à <span class=\"math inline\">\\(\\frac{1}{\\sqrt{n}}\\)</span>, qui est le terme général d’une série de Riemann divergente (<span class=\"math inline\">\\(\\alpha = 1/2 &lt; 1\\)</span>). Donc la série <span class=\"math inline\">\\(\\sum u_n(-1)\\)</span> diverge.\n(Correction: <span class=\"math inline\">\\(u_n(-1) = \\frac{(-1)^n}{\\sqrt{n}+1}(-1)^n = \\frac{1}{\\sqrt{n}+1}\\)</span>. L’énoncé original contenait une petite erreur dans la transcription de <span class=\"math inline\">\\(u_n(-1)\\)</span> en <span class=\"math inline\">\\(\\sum \\frac{1}{n^{\\frac{1}{2}}}\\)</span>, il s’agit de <span class=\"math inline\">\\(\\frac{1}{\\sqrt{n}+1} \\sim \\frac{1}{\\sqrt{n}}\\)</span>.)</p>\n<p>De plus, <span class=\"math inline\">\\(u_n(1) = \\frac{(-1)^n}{\\sqrt{n}+1}\\)</span>. On pose <span class=\"math inline\">\\(a_n = \\frac{1}{\\sqrt{n}+1} &gt;0\\)</span> pour tout <span class=\"math inline\">\\(n \\geq 1\\)</span>. Donc <span class=\"math inline\">\\(u_n(1)\\)</span> est le terme général d’une série alternée. Or il est clair que <span class=\"math inline\">\\((a_n)\\)</span> est une suite décroissante et <span class=\"math inline\">\\(\\lim\\limits_{n\\to+\\infty} a_n = 0\\)</span> donc d’après le critère spécial des séries alternées, la série <span class=\"math inline\">\\(\\sum u_n(1)\\)</span> converge.</p>\n<p>En définitive, le domaine de convergence est\n<span class=\"math display\">\\[D = ]-1;1]\\]</span></p>",
+      "order": 7
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "38d384f15fb5bd1e22de21bc578413b7ea00a177d6b857bb92f646d449ae277b"
+}

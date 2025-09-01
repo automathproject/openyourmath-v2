@@ -1,0 +1,114 @@
+{
+  "uuid": "qM6e",
+  "title": "Calcul de la somme d'une série entière",
+  "chapter": "Série entière",
+  "subchapter": "Calcul de la somme d'une série entière",
+  "theme": "Séries entières, Sommation",
+  "difficulty": "L2",
+  "module": "Analyse",
+  "author": "",
+  "organization": "",
+  "video_id": "",
+  "created_at": "2023-10-27",
+  "updated_at": "2025-09-01T12:17:39.529Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "On considère la série entière : \n\t\t$$S(x) = \\sum_{n=0}^{+\\infty} \\frac{n}{n+2}x^n$$",
+      "html": "<p>On considère la série entière :\n<span class=\"math display\">\\[S(x) = \\sum_{n=0}^{+\\infty} \\frac{n}{n+2}x^n\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "Vérifier que : $\\forall n \\in \\N$, $ \\frac{n}{n+2} = 1 - \\frac{2}{n+2}$.",
+      "html": "<p>Vérifier que : <span class=\"math inline\">\\(\\forall n \\in \\N\\)</span>, <span class=\"math inline\">\\(\\frac{n}{n+2} = 1 - \\frac{2}{n+2}\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "reponse",
+      "latex": "Il suffit de voir que $\\frac{n}{n+2} = \\frac{n+2-2}{n+2} = \\frac{n+2}{n+2} - \\frac{2}{n+2} = 1 - \\frac{2}{n+2} $.",
+      "html": "<p>Il suffit de voir que <span class=\"math inline\">\\(\\frac{n}{n+2} = \\frac{n+2-2}{n+2} = \\frac{n+2}{n+2} - \\frac{2}{n+2} = 1 - \\frac{2}{n+2}\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "question",
+      "latex": "Déterminer le domaine de convergence $I$ de cette série entière.",
+      "html": "<p>Déterminer le domaine de convergence <span class=\"math inline\">\\(I\\)</span> de cette série entière.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "indication",
+      "latex": "",
+      "html": "",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "On pose $a_n = \\frac{n}{n+2}$. On utilise le critère de d'Alembert pour la série entière $\\sum a_n x^n$. Soit $u_n(x) =  \\frac{n}{n+2}x^n$.\n\t\t\t\\begin{align*}\n\t\t\t\t\\frac{|u_{n+1}(x)|}{|u_n(x)|} &= \\frac{ (n+1) }{ (n+1)+2 } \\frac{ n+2 }{n} \\frac{|x^{n+1}|}{|x^{n}|} \\\\\n\t\t\t\t&= \\frac{ (n+1)(n+2) }{n(n+3)}|x| \\\\\n\t\t\t\t& \\sim  \\frac{n^2}{n^2} |x| \\quad \\text{quand } n \\to +\\infty \\\\\n\t\t\t\t&\\xrightarrow[n\\to+\\infty]{}  |x|\n\t\t\t\\end{align*}\t\n\t\t\tDonc le rayon de convergence est $R=1$.\n\t\t\t\n\t\t\tÉtude aux bornes :\n\t\t\tPour $x=1$, le terme général est $u_n(1) = \\frac{n}{n+2}$. On a $\\lim\\limits_{n\\to+\\infty} u_n(1) = \\lim\\limits_{n\\to+\\infty} \\frac{n}{n+2} = 1 \\neq 0$. Donc la série $\\sum u_n(1)$ diverge grossièrement.\n\t\t\tPour $x=-1$, le terme général est $u_n(-1) = \\frac{n}{n+2}(-1)^n$. On a $\\lim\\limits_{n\\to+\\infty} |u_n(-1)| = \\lim\\limits_{n\\to+\\infty} \\frac{n}{n+2} = 1 \\neq 0$. Donc le terme général $u_n(-1)$ ne tend pas vers $0$, et la série $\\sum u_n(-1)$ diverge grossièrement.\n\t\t\t\n\t\t\tPar conséquent, le domaine de convergence est $I = ]-1;1[$.",
+      "html": "<p>On pose <span class=\"math inline\">\\(a_n = \\frac{n}{n+2}\\)</span>. On utilise le critère de d’Alembert pour la série entière <span class=\"math inline\">\\(\\sum a_n x^n\\)</span>. Soit <span class=\"math inline\">\\(u_n(x) =  \\frac{n}{n+2}x^n\\)</span>.\n<span class=\"math display\">\\[\\begin{align*}\n                \\frac{|u_{n+1}(x)|}{|u_n(x)|} &amp;= \\frac{ (n+1) }{ (n+1)+2 } \\frac{ n+2 }{n} \\frac{|x^{n+1}|}{|x^{n}|} \\\\\n                &amp;= \\frac{ (n+1)(n+2) }{n(n+3)}|x| \\\\\n                &amp; \\sim  \\frac{n^2}{n^2} |x| \\quad \\text{quand } n \\to +\\infty \\\\\n                &amp;\\xrightarrow[n\\to+\\infty]{}  |x|\n            \\end{align*}\\]</span>\nDonc le rayon de convergence est <span class=\"math inline\">\\(R=1\\)</span>.</p>\n<p>Étude aux bornes :\nPour <span class=\"math inline\">\\(x=1\\)</span>, le terme général est <span class=\"math inline\">\\(u_n(1) = \\frac{n}{n+2}\\)</span>. On a <span class=\"math inline\">\\(\\lim\\limits_{n\\to+\\infty} u_n(1) = \\lim\\limits_{n\\to+\\infty} \\frac{n}{n+2} = 1 \\neq 0\\)</span>. Donc la série <span class=\"math inline\">\\(\\sum u_n(1)\\)</span> diverge grossièrement.\nPour <span class=\"math inline\">\\(x=-1\\)</span>, le terme général est <span class=\"math inline\">\\(u_n(-1) = \\frac{n}{n+2}(-1)^n\\)</span>. On a <span class=\"math inline\">\\(\\lim\\limits_{n\\to+\\infty} |u_n(-1)| = \\lim\\limits_{n\\to+\\infty} \\frac{n}{n+2} = 1 \\neq 0\\)</span>. Donc le terme général <span class=\"math inline\">\\(u_n(-1)\\)</span> ne tend pas vers <span class=\"math inline\">\\(0\\)</span>, et la série <span class=\"math inline\">\\(\\sum u_n(-1)\\)</span> diverge grossièrement.</p>\n<p>Par conséquent, le domaine de convergence est <span class=\"math inline\">\\(I = ]-1;1[\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "Calculer la valeur de $\\displaystyle x^2 \\sum_{n=0}^{+\\infty} \\frac{x^n}{n+2}$ pour tout $x \\in I$.",
+      "html": "<p>Calculer la valeur de <span class=\"math inline\">\\(\\displaystyle x^2 \\sum_{n=0}^{+\\infty} \\frac{x^n}{n+2}\\)</span> pour tout <span class=\"math inline\">\\(x \\in I\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "indication",
+      "latex": "Pensez à un changement d'indice et à la série du logarithme.",
+      "html": "<p>Pensez à un changement d’indice et à la série du logarithme.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "reponse",
+      "latex": "Pour tout $x \\in I = ]-1;1[$:\n\t\t\t\\begin{align*}\n\t\t\t\tx^2 \\sum_{n=0}^{+\\infty} \\frac{x^n}{n+2} &= \\sum_{n=0}^{+\\infty}\\frac{x^{n+2}}{n+2} \\\\\n\t\t\t\t&= \\sum_{k=2}^{+\\infty}\\frac{x^{k}}{k} \\quad (\\text{en posant } k=n+2) \\\\\n\t\t\t\t&= \\left( \\sum_{k=1}^{+\\infty}\\frac{x^{k}}{k} \\right) - x \\\\\n\t\t\t\t&= -\\ln(1-x) -x\n\t\t\t\\end{align*}",
+      "html": "<p>Pour tout <span class=\"math inline\">\\(x \\in I = ]-1;1[\\)</span>:\n<span class=\"math display\">\\[\\begin{align*}\n                x^2 \\sum_{n=0}^{+\\infty} \\frac{x^n}{n+2} &amp;= \\sum_{n=0}^{+\\infty}\\frac{x^{n+2}}{n+2} \\\\\n                &amp;= \\sum_{k=2}^{+\\infty}\\frac{x^{k}}{k} \\quad (\\text{en posant } k=n+2) \\\\\n                &amp;= \\left( \\sum_{k=1}^{+\\infty}\\frac{x^{k}}{k} \\right) - x \\\\\n                &amp;= -\\ln(1-x) -x\n            \\end{align*}\\]</span></p>",
+      "order": 10
+    },
+    {
+      "id": "block_11",
+      "type": "question",
+      "latex": "En déduire le calcul de la somme $S(x)$ pour tout $x \\in I$.",
+      "html": "<p>En déduire le calcul de la somme <span class=\"math inline\">\\(S(x)\\)</span> pour tout <span class=\"math inline\">\\(x \\in I\\)</span>.</p>",
+      "order": 11
+    },
+    {
+      "id": "block_12",
+      "type": "indication",
+      "latex": "Utiliser les questions précédentes.",
+      "html": "<p>Utiliser les questions précédentes.</p>",
+      "order": 12
+    },
+    {
+      "id": "block_13",
+      "type": "reponse",
+      "latex": "D'après la question 1, $\\frac{n}{n+2} = 1 - \\frac{2}{n+2}$. Donc pour $x \\in I = ]-1;1[$ :\n\t\t\t\\begin{align*}\n\t\t\t\tS(x) &= \\sum_{n=0}^{+\\infty} \\left(1 - \\frac{2}{n+2}\\right)x^n \\\\\n\t\t\t\t&=  \\sum_{n=0}^{+\\infty} x^n - 2\\sum_{n=0}^{+\\infty}\\frac{x^{n}}{n+2}\n\t\t\t\\end{align*}\n\t\t\tOn sait que $\\sum_{n=0}^{+\\infty} x^n = \\frac{1}{1-x}$ pour $x \\in ]-1;1[$.\n\t\t\t\n\t\t\tPour $x \\neq 0$, d'après la question précédente, $\\sum_{n=0}^{+\\infty}\\frac{x^{n}}{n+2} = \\frac{-\\ln(1-x)-x}{x^2}$.\n\t\t\tDonc, pour $x \\in ]-1;1[$ et $x \\neq 0$ :\n\t\t\t\\begin{align*}\n\t\t\t\tS(x) &= \\frac{1}{1-x} - 2 \\left( \\frac{-\\ln(1-x)-x}{x^2} \\right) \\\\\n\t\t\t\t&= \\frac{1}{1-x} + \\frac{2\\ln(1-x)}{x^2} + \\frac{2x}{x^2} \\\\\n\t\t\t\t&= \\frac{1}{1-x} + \\frac{2\\ln(1-x)}{x^2} + \\frac{2}{x} \n\t\t\t\\end{align*}\t\n\t\t\tPour $x=0$:\n\t\t\t$S(0) = \\frac{0}{0+2}x^0 + \\sum_{n=1}^{+\\infty} \\frac{n}{n+2}0^n = 0 \\cdot 1 + 0 = 0$.\n\t\t\t\n\t\t\tVérifions si la formule est cohérente en $x=0$ via un développement limité.\n\t\t\tPour $x \\to 0$:\n\t\t\t$\\frac{1}{1-x} = 1+x+x^2+o(x^2)$\n\t\t\t$\\ln(1-x) = -x - \\frac{x^2}{2} - \\frac{x^3}{3} + o(x^3)$\n\t\t\t$\\frac{2\\ln(1-x)}{x^2} = \\frac{2(-x - x^2/2 - x^3/3 + o(x^3))}{x^2} = -\\frac{2}{x} - 1 - \\frac{2x}{3} + o(x)$\n\t\t\t$\\frac{2}{x}$\n\t\t\t$S(x) = (1+x+x^2) + (-\\frac{2}{x} - 1 - \\frac{2x}{3}) + \\frac{2}{x} + o(x)$\n\t\t\t$S(x) = 1+x+x^2 - \\frac{2}{x} - 1 - \\frac{2x}{3} + \\frac{2}{x} + o(x)$\n\t\t\t$S(x) = x - \\frac{2x}{3} + x^2 + o(x) = \\frac{x}{3} + x^2 + o(x)$.\n\t\t\tLe terme constant $\\frac{0}{0+2} = 0$. Le terme en $x$ est $\\frac{1}{1+2}x = \\frac{x}{3}$. Le terme en $x^2$ est $\\frac{2}{2+2}x^2 = \\frac{x^2}{2}$.\n\t\t\tIl y a une cohérence.\n\t\t\t$S(x) = \\sum_{n=0}^{\\infty} \\frac{n}{n+2}x^n = 0 \\cdot x^0 + \\frac{1}{3}x^1 + \\frac{2}{4}x^2 + \\frac{3}{5}x^3 + \\dots = \\frac{1}{3}x + \\frac{1}{2}x^2 + \\frac{3}{5}x^3 + \\dots$\n\t\t\tLa formule donne $S(x) \\xrightarrow{x \\to 0} \\frac{x}{3}$.\n\t\t\tEffectivement, $S(0) = 0$. La formule trouvée pour $x \\neq 0$ n'est pas définie en $x=0$.\n\t\t\tDonc, on écrit :\n\t\t\t$S(x) = \\begin{cases} \\frac{1}{1-x} + \\frac{2\\ln(1-x)}{x^2} + \\frac{2}{x} & \\text{si } x \\in ]-1;1[ \\setminus \\{0\\} \\\\ 0 & \\text{si } x=0 \\end{cases}$",
+      "html": "<p>D’après la question 1, <span class=\"math inline\">\\(\\frac{n}{n+2} = 1 - \\frac{2}{n+2}\\)</span>. Donc pour <span class=\"math inline\">\\(x \\in I = ]-1;1[\\)</span> :\n<span class=\"math display\">\\[\\begin{align*}\n                S(x) &amp;= \\sum_{n=0}^{+\\infty} \\left(1 - \\frac{2}{n+2}\\right)x^n \\\\\n                &amp;=  \\sum_{n=0}^{+\\infty} x^n - 2\\sum_{n=0}^{+\\infty}\\frac{x^{n}}{n+2}\n            \\end{align*}\\]</span>\nOn sait que <span class=\"math inline\">\\(\\sum_{n=0}^{+\\infty} x^n = \\frac{1}{1-x}\\)</span> pour <span class=\"math inline\">\\(x \\in ]-1;1[\\)</span>.</p>\n<p>Pour <span class=\"math inline\">\\(x \\neq 0\\)</span>, d’après la question précédente, <span class=\"math inline\">\\(\\sum_{n=0}^{+\\infty}\\frac{x^{n}}{n+2} = \\frac{-\\ln(1-x)-x}{x^2}\\)</span>.\nDonc, pour <span class=\"math inline\">\\(x \\in ]-1;1[\\)</span> et <span class=\"math inline\">\\(x \\neq 0\\)</span> :\n<span class=\"math display\">\\[\\begin{align*}\n                S(x) &amp;= \\frac{1}{1-x} - 2 \\left( \\frac{-\\ln(1-x)-x}{x^2} \\right) \\\\\n                &amp;= \\frac{1}{1-x} + \\frac{2\\ln(1-x)}{x^2} + \\frac{2x}{x^2} \\\\\n                &amp;= \\frac{1}{1-x} + \\frac{2\\ln(1-x)}{x^2} + \\frac{2}{x} \n            \\end{align*}\\]</span>\nPour <span class=\"math inline\">\\(x=0\\)</span>:\n<span class=\"math inline\">\\(S(0) = \\frac{0}{0+2}x^0 + \\sum_{n=1}^{+\\infty} \\frac{n}{n+2}0^n = 0 \\cdot 1 + 0 = 0\\)</span>.</p>\n<p>Vérifions si la formule est cohérente en <span class=\"math inline\">\\(x=0\\)</span> via un développement limité.\nPour <span class=\"math inline\">\\(x \\to 0\\)</span>:\n<span class=\"math inline\">\\(\\frac{1}{1-x} = 1+x+x^2+o(x^2)\\)</span>\n<span class=\"math inline\">\\(\\ln(1-x) = -x - \\frac{x^2}{2} - \\frac{x^3}{3} + o(x^3)\\)</span>\n<span class=\"math inline\">\\(\\frac{2\\ln(1-x)}{x^2} = \\frac{2(-x - x^2/2 - x^3/3 + o(x^3))}{x^2} = -\\frac{2}{x} - 1 - \\frac{2x}{3} + o(x)\\)</span>\n<span class=\"math inline\">\\(\\frac{2}{x}\\)</span>\n<span class=\"math inline\">\\(S(x) = (1+x+x^2) + (-\\frac{2}{x} - 1 - \\frac{2x}{3}) + \\frac{2}{x} + o(x)\\)</span>\n<span class=\"math inline\">\\(S(x) = 1+x+x^2 - \\frac{2}{x} - 1 - \\frac{2x}{3} + \\frac{2}{x} + o(x)\\)</span>\n<span class=\"math inline\">\\(S(x) = x - \\frac{2x}{3} + x^2 + o(x) = \\frac{x}{3} + x^2 + o(x)\\)</span>.\nLe terme constant <span class=\"math inline\">\\(\\frac{0}{0+2} = 0\\)</span>. Le terme en <span class=\"math inline\">\\(x\\)</span> est <span class=\"math inline\">\\(\\frac{1}{1+2}x = \\frac{x}{3}\\)</span>. Le terme en <span class=\"math inline\">\\(x^2\\)</span> est <span class=\"math inline\">\\(\\frac{2}{2+2}x^2 = \\frac{x^2}{2}\\)</span>.\nIl y a une cohérence.\n<span class=\"math inline\">\\(S(x) = \\sum_{n=0}^{\\infty} \\frac{n}{n+2}x^n = 0 \\cdot x^0 + \\frac{1}{3}x^1 + \\frac{2}{4}x^2 + \\frac{3}{5}x^3 + \\dots = \\frac{1}{3}x + \\frac{1}{2}x^2 + \\frac{3}{5}x^3 + \\dots\\)</span>\nLa formule donne <span class=\"math inline\">\\(S(x) \\xrightarrow{x \\to 0} \\frac{x}{3}\\)</span>.\nEffectivement, <span class=\"math inline\">\\(S(0) = 0\\)</span>. La formule trouvée pour <span class=\"math inline\">\\(x \\neq 0\\)</span> n’est pas définie en <span class=\"math inline\">\\(x=0\\)</span>.\nDonc, on écrit :\n<span class=\"math inline\">\\(S(x) = \\begin{cases} \\frac{1}{1-x} + \\frac{2\\ln(1-x)}{x^2} + \\frac{2}{x} &amp; \\text{si } x \\in ]-1;1[ \\setminus \\{0\\} \\\\ 0 &amp; \\text{si } x=0 \\end{cases}\\)</span></p>",
+      "order": 13
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "3a69310efa38ed23ef711936cc410f9e87f096960ff465510249a6df9e7f59d3"
+}

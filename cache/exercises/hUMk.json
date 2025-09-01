@@ -1,0 +1,93 @@
+{
+  "uuid": "hUMk",
+  "title": "Estimateur du Maximum de Vraisemblance et ses Propriétés",
+  "chapter": "Statistique",
+  "subchapter": "Estimation",
+  "theme": "Statistiques Inférentielles, Estimation ponctuelle, Biais, Convergence",
+  "difficulty": "L2",
+  "module": "Probabilité et statistique",
+  "author": "Maxime NGUYEN",
+  "organization": "AMSCC",
+  "video_id": "",
+  "created_at": "2025-06-04",
+  "updated_at": "2025-09-01T12:17:21.605Z",
+  "content": [
+    {
+      "id": "block_1",
+      "type": "text",
+      "latex": "\\paragraph{Résultats admis sur la Loi Gamma et relation avec la loi exponentielle}\n\t\t\t\n\t\t\tLa loi Gamma est une famille de lois de probabilité continues à deux paramètres, définies sur l'intervalle $(0, \\infty)$. Elle est fréquemment utilisée pour modéliser des temps d'attente ou des variables continues positives.\n\t\t\t\n\t\t\tSi une variable aléatoire $X$ suit une loi Gamma de paramètre de forme $k > 0$ (souvent noté $\\alpha$) et de paramètre d'intensité (ou de taux, \"rate\") $\\lambda > 0$ (parfois noté $\\beta$ dans cette paramétrisation), on écrit $X \\sim \\mathcal{G}amma(k, \\lambda)$.\n\t\t\t\n\t\t\t\\begin{itemize}\n\t\t\t\t\\item Fonction de densité de probabilité :\n\t\t\t\tPour tout $x > 0$, la densité est donnée par :\n\t\t\t\t\\[ f(x; k, \\lambda) = \\frac{\\lambda^k x^{k-1} e^{-\\lambda x}}{\\Gamma(k)} \\]\n\t\t\t\toù $\\Gamma(k) = \\int_0^\\infty t^{k-1}e^{-t}dt$ est la fonction Gamma d'Euler.\n\t\t\t\tSi $k$ est un entier positif, alors $\\Gamma(k) = (k-1)!$.\n\t\t\t\t\n\t\t\t\t\\item Espérance et variance :\n\t\t\t\t\\[ \\mathbb{E}[X] = \\frac{k}{\\lambda} \\quad  \\text{Var}(X) = \\frac{k}{\\lambda^2} \\]\n\t\t\t\t\\item La loi exponentielle de paramètre $\\lambda$, notée $\\mathcal{E}(\\lambda)$, est un cas particulier de la loi Gamma : $\\mathcal{E}(\\lambda) \\equiv \\mathcal{G}amma(1, \\lambda)$.\n\t\t\t\t\\item Si $Y_1, Y_2, \\dots, Y_n$ sont $n$ variables aléatoires indépendantes et identiquement distribuées (i.i.d.) suivant une loi exponentielle de paramètre $\\lambda$, alors leur somme $S_n = \\sum_{i=1}^n Y_i$ suit une loi Gamma de paramètres $n$ et $\\lambda$:\n\t\t\t\t\\[ S_n = \\sum_{i=1}^n Y_i \\sim \\mathcal{G}amma(n, \\lambda) \\]\n\t\t\t\tDans ce cas, $n$ (le nombre de variables sommées) devient le paramètre de forme $k$, et $\\lambda$ reste le paramètre d'intensité.\n\t\t\t\\end{itemize}\t\t\n\t\t\n\t\t\\vspace{2em}\n\t\t\n\t\tSoit $\\theta \\in \\left]\\frac{1}{2}; 1\\right[$ un paramètre inconnu et une fonction densité :\n\t\t$$ g_\\theta : x \\mapsto \\frac{\\theta}{1-\\theta} x^{\\frac{2\\theta-1}{1-\\theta}} \\mathbf{1}_{[0;1]}(x) $$",
+      "html": "<h4>Résultats admis sur la Loi Gamma et relation avec la loi exponentielle</h4>\n<p>La loi Gamma est une famille de lois de probabilité continues à deux paramètres, définies sur l’intervalle <span class=\"math inline\">\\((0, \\infty)\\)</span>. Elle est fréquemment utilisée pour modéliser des temps d’attente ou des variables continues positives.</p>\n<p>Si une variable aléatoire <span class=\"math inline\">\\(X\\)</span> suit une loi Gamma de paramètre de forme <span class=\"math inline\">\\(k &gt; 0\\)</span> (souvent noté <span class=\"math inline\">\\(\\alpha\\)</span>) et de paramètre d’intensité (ou de taux, \"rate\") <span class=\"math inline\">\\(\\lambda &gt; 0\\)</span> (parfois noté <span class=\"math inline\">\\(\\beta\\)</span> dans cette paramétrisation), on écrit <span class=\"math inline\">\\(X \\sim \\mathcal{G}amma(k, \\lambda)\\)</span>.</p>\n<ul>\n<li><p>Fonction de densité de probabilité :\nPour tout <span class=\"math inline\">\\(x &gt; 0\\)</span>, la densité est donnée par :\n<span class=\"math display\">\\[f(x; k, \\lambda) = \\frac{\\lambda^k x^{k-1} e^{-\\lambda x}}{\\Gamma(k)}\\]</span>\noù <span class=\"math inline\">\\(\\Gamma(k) = \\int_0^\\infty t^{k-1}e^{-t}dt\\)</span> est la fonction Gamma d’Euler.\nSi <span class=\"math inline\">\\(k\\)</span> est un entier positif, alors <span class=\"math inline\">\\(\\Gamma(k) = (k-1)!\\)</span>.</p></li>\n<li><p>Espérance et variance :\n<span class=\"math display\">\\[\\mathbb{E}[X] = \\frac{k}{\\lambda} \\quad  \\text{Var}(X) = \\frac{k}{\\lambda^2}\\]</span></p></li>\n<li><p>La loi exponentielle de paramètre <span class=\"math inline\">\\(\\lambda\\)</span>, notée <span class=\"math inline\">\\(\\mathcal{E}(\\lambda)\\)</span>, est un cas particulier de la loi Gamma : <span class=\"math inline\">\\(\\mathcal{E}(\\lambda) \\equiv \\mathcal{G}amma(1, \\lambda)\\)</span>.</p></li>\n<li><p>Si <span class=\"math inline\">\\(Y_1, Y_2, \\dots, Y_n\\)</span> sont <span class=\"math inline\">\\(n\\)</span> variables aléatoires indépendantes et identiquement distribuées (i.i.d.) suivant une loi exponentielle de paramètre <span class=\"math inline\">\\(\\lambda\\)</span>, alors leur somme <span class=\"math inline\">\\(S_n = \\sum_{i=1}^n Y_i\\)</span> suit une loi Gamma de paramètres <span class=\"math inline\">\\(n\\)</span> et <span class=\"math inline\">\\(\\lambda\\)</span>:\n<span class=\"math display\">\\[S_n = \\sum_{i=1}^n Y_i \\sim \\mathcal{G}amma(n, \\lambda)\\]</span>\nDans ce cas, <span class=\"math inline\">\\(n\\)</span> (le nombre de variables sommées) devient le paramètre de forme <span class=\"math inline\">\\(k\\)</span>, et <span class=\"math inline\">\\(\\lambda\\)</span> reste le paramètre d’intensité.</p></li>\n</ul>\n<p>Soit <span class=\"math inline\">\\(\\theta \\in \\left]\\frac{1}{2}; 1\\right[\\)</span> un paramètre inconnu et une fonction densité :\n<span class=\"math display\">\\[g_\\theta : x \\mapsto \\frac{\\theta}{1-\\theta} x^{\\frac{2\\theta-1}{1-\\theta}} \\mathbf{1}_{[0;1]}(x)\\]</span></p>",
+      "order": 1
+    },
+    {
+      "id": "block_2",
+      "type": "question",
+      "latex": "À l'aide de la méthode du maximum de vraisemblance, proposer un estimateur de $\\theta$.",
+      "html": "<p>À l’aide de la méthode du maximum de vraisemblance, proposer un estimateur de <span class=\"math inline\">\\(\\theta\\)</span>.</p>",
+      "order": 2
+    },
+    {
+      "id": "block_3",
+      "type": "reponse",
+      "latex": "On définit un échantillon $X_1,...,X_n$ et on considère la probabilité que cet échantillon réalise un ensemble de valeurs $V=\\{x_1,...,x_n\\}$ dans $[0;1]$. La fonction de vraisemblance pour une variable à densité s'écrit alors \n\t\t\t\t$$L(x_1,...,x_n,\\theta) = \\prod_{i=1}^{n} f(x_k) = \\frac{\\theta^n}{(1-\\theta)^n} \\prod_{i=1}^n x_i^{ \\frac{2\\theta -1}{1-\\theta} }$$\n\t\t\t\t\n\t\t\t\tOn considère la log vraisemblance :\n\t\t\t\t\n\t\t\t\t$$\\ln L(x_1,...,x_n,\\theta) = n \\ln(\\theta) - n \\ln(1-\\theta) + \\frac{2\\theta -1}{1-\\theta} \\sum_{i=1}^n \\ln(x_i)$$\n\t\t\t\t\n\t\t\t\tOn annule la log vraisemblance :\n\t\t\t\t$$ \\frac{\\partial}{\\partial \\theta} \\ln L(x_1,...,x_n,\\theta) = 0 \\iff \\frac{n}{\\theta}- \\frac{n}{1-\\theta}+ \\frac{1}{(1-\\theta)^2}\\sum_{i=1}^n \\ln(x_i) = 0 \\iff \\theta = \\dfrac{n}{n-\\sum_{i=1}^n \\ln(x_i)}$$\n\t\t\t\t\n\t\t\t\tOn propose donc l'estimateur $$\\widehat{\\theta} = \\dfrac{n}{n-\\sum_{n=1}^n \\ln(X_i)}$$",
+      "html": "<p>On définit un échantillon <span class=\"math inline\">\\(X_1,...,X_n\\)</span> et on considère la probabilité que cet échantillon réalise un ensemble de valeurs <span class=\"math inline\">\\(V=\\{x_1,...,x_n\\}\\)</span> dans <span class=\"math inline\">\\([0;1]\\)</span>. La fonction de vraisemblance pour une variable à densité s’écrit alors\n<span class=\"math display\">\\[L(x_1,...,x_n,\\theta) = \\prod_{i=1}^{n} f(x_k) = \\frac{\\theta^n}{(1-\\theta)^n} \\prod_{i=1}^n x_i^{ \\frac{2\\theta -1}{1-\\theta} }\\]</span></p>\n<p>On considère la log vraisemblance :</p>\n<p><span class=\"math display\">\\[\\ln L(x_1,...,x_n,\\theta) = n \\ln(\\theta) - n \\ln(1-\\theta) + \\frac{2\\theta -1}{1-\\theta} \\sum_{i=1}^n \\ln(x_i)\\]</span></p>\n<p>On annule la log vraisemblance :\n<span class=\"math display\">\\[\\frac{\\partial}{\\partial \\theta} \\ln L(x_1,...,x_n,\\theta) = 0 \\iff \\frac{n}{\\theta}- \\frac{n}{1-\\theta}+ \\frac{1}{(1-\\theta)^2}\\sum_{i=1}^n \\ln(x_i) = 0 \\iff \\theta = \\dfrac{n}{n-\\sum_{i=1}^n \\ln(x_i)}\\]</span></p>\n<p>On propose donc l’estimateur <span class=\"math display\">\\[\\widehat{\\theta} = \\dfrac{n}{n-\\sum_{n=1}^n \\ln(X_i)}\\]</span></p>",
+      "order": 3
+    },
+    {
+      "id": "block_4",
+      "type": "question",
+      "latex": "Soit $Y_k = -\\ln(X_k)$. Montrer que $Y_k$ suit une loi exponentielle dont vous préciserez le paramètre $\\lambda$ en fonction de $\\theta$.",
+      "html": "<p>Soit <span class=\"math inline\">\\(Y_k = -\\ln(X_k)\\)</span>. Montrer que <span class=\"math inline\">\\(Y_k\\)</span> suit une loi exponentielle dont vous préciserez le paramètre <span class=\"math inline\">\\(\\lambda\\)</span> en fonction de <span class=\"math inline\">\\(\\theta\\)</span>.</p>",
+      "order": 4
+    },
+    {
+      "id": "block_5",
+      "type": "reponse",
+      "latex": "Pour $Y_k = -\\ln(X_k)$. Puisque $X_k \\in [0,1]$, $Y_k \\in [0, +\\infty)$.\n\t\t\tLa fonction de répartition de $Y_k$ pour $y \\ge 0$ est :\n\t\t\t$F_{Y_k}(y) = P(Y_k \\le y) = P(-\\ln(X_k) \\le y) = P(\\ln(X_k) \\ge -y) = P(X_k \\ge e^{-y})$.\n\t\t\t\\[ P(X_k \\ge e^{-y}) = \\int_{e^{-y}}^1 g_\\theta(x) dx = \\int_{e^{-y}}^1 \\frac{\\theta}{1-\\theta} x^{\\frac{2\\theta-1}{1-\\theta}} dx \\]\n\t\t\tPosons $\\alpha = \\frac{2\\theta-1}{1-\\theta}$. Alors $\\alpha+1 = \\frac{2\\theta-1+1-\\theta}{1-\\theta} = \\frac{\\theta}{1-\\theta}$.\n\t\t\t\\[ F_{Y_k}(y) = \\frac{\\theta}{1-\\theta} \\left[ \\frac{x^{\\alpha+1}}{\\alpha+1} \\right]_{e^{-y}}^1 = \\frac{\\theta}{1-\\theta} \\left[ \\frac{x^{\\frac{\\theta}{1-\\theta}}}{\\frac{\\theta}{1-\\theta}} \\right]_{e^{-y}}^1 = \\left[ x^{\\frac{\\theta}{1-\\theta}} \\right]_{e^{-y}}^1 = 1 - (e^{-y})^{\\frac{\\theta}{1-\\theta}} = 1 - e^{-y \\frac{\\theta}{1-\\theta}} \\]\n\t\t\tC'est la fonction de répartition d'une loi exponentielle de paramètre $\\lambda = \\frac{\\theta}{1-\\theta}$.\n\t\t\tDonc, $Y_k \\sim \\mathcal{E}\\left(\\frac{\\theta}{1-\\theta}\\right)$.",
+      "html": "<p>Pour <span class=\"math inline\">\\(Y_k = -\\ln(X_k)\\)</span>. Puisque <span class=\"math inline\">\\(X_k \\in [0,1]\\)</span>, <span class=\"math inline\">\\(Y_k \\in [0, +\\infty)\\)</span>.\nLa fonction de répartition de <span class=\"math inline\">\\(Y_k\\)</span> pour <span class=\"math inline\">\\(y \\ge 0\\)</span> est :\n<span class=\"math inline\">\\(F_{Y_k}(y) = P(Y_k \\le y) = P(-\\ln(X_k) \\le y) = P(\\ln(X_k) \\ge -y) = P(X_k \\ge e^{-y})\\)</span>.\n<span class=\"math display\">\\[P(X_k \\ge e^{-y}) = \\int_{e^{-y}}^1 g_\\theta(x) dx = \\int_{e^{-y}}^1 \\frac{\\theta}{1-\\theta} x^{\\frac{2\\theta-1}{1-\\theta}} dx\\]</span>\nPosons <span class=\"math inline\">\\(\\alpha = \\frac{2\\theta-1}{1-\\theta}\\)</span>. Alors <span class=\"math inline\">\\(\\alpha+1 = \\frac{2\\theta-1+1-\\theta}{1-\\theta} = \\frac{\\theta}{1-\\theta}\\)</span>.\n<span class=\"math display\">\\[F_{Y_k}(y) = \\frac{\\theta}{1-\\theta} \\left[ \\frac{x^{\\alpha+1}}{\\alpha+1} \\right]_{e^{-y}}^1 = \\frac{\\theta}{1-\\theta} \\left[ \\frac{x^{\\frac{\\theta}{1-\\theta}}}{\\frac{\\theta}{1-\\theta}} \\right]_{e^{-y}}^1 = \\left[ x^{\\frac{\\theta}{1-\\theta}} \\right]_{e^{-y}}^1 = 1 - (e^{-y})^{\\frac{\\theta}{1-\\theta}} = 1 - e^{-y \\frac{\\theta}{1-\\theta}}\\]</span>\nC’est la fonction de répartition d’une loi exponentielle de paramètre <span class=\"math inline\">\\(\\lambda = \\frac{\\theta}{1-\\theta}\\)</span>.\nDonc, <span class=\"math inline\">\\(Y_k \\sim \\mathcal{E}\\left(\\frac{\\theta}{1-\\theta}\\right)\\)</span>.</p>",
+      "order": 5
+    },
+    {
+      "id": "block_6",
+      "type": "question",
+      "latex": "En déduire la loi de $S_Y = \\sum_{k=1}^{n} Y_k$.",
+      "html": "<p>En déduire la loi de <span class=\"math inline\">\\(S_Y = \\sum_{k=1}^{n} Y_k\\)</span>.</p>",
+      "order": 6
+    },
+    {
+      "id": "block_7",
+      "type": "reponse",
+      "latex": "Les $Y_k$ sont i.i.d. car les $X_k$ le sont. La somme de $n$ variables aléatoires i.i.d. suivant une loi $\\mathcal{E}(\\lambda)$ suit une loi Gamma $\\mathcal{G}amma(n, \\lambda)$.\n\t\t\tDonc, $S_Y = \\sum_{k=1}^n Y_k \\sim \\mathcal{G}amma\\left(n, \\frac{\\theta}{1-\\theta}\\right)$.\n\t\t\tL'espérance de $S_Y$ est $\\mathbb{E}[S_Y] = n/\\lambda = n \\frac{1-\\theta}{\\theta}$.",
+      "html": "<p>Les <span class=\"math inline\">\\(Y_k\\)</span> sont i.i.d. car les <span class=\"math inline\">\\(X_k\\)</span> le sont. La somme de <span class=\"math inline\">\\(n\\)</span> variables aléatoires i.i.d. suivant une loi <span class=\"math inline\">\\(\\mathcal{E}(\\lambda)\\)</span> suit une loi Gamma <span class=\"math inline\">\\(\\mathcal{G}amma(n, \\lambda)\\)</span>.\nDonc, <span class=\"math inline\">\\(S_Y = \\sum_{k=1}^n Y_k \\sim \\mathcal{G}amma\\left(n, \\frac{\\theta}{1-\\theta}\\right)\\)</span>.\nL’espérance de <span class=\"math inline\">\\(S_Y\\)</span> est <span class=\"math inline\">\\(\\mathbb{E}[S_Y] = n/\\lambda = n \\frac{1-\\theta}{\\theta}\\)</span>.</p>",
+      "order": 7
+    },
+    {
+      "id": "block_8",
+      "type": "question",
+      "latex": "En déduire que $\\frac{S_Y}{n}$ est un estimateur sans biais de la quantité $\\frac{1-\\theta}{\\theta}$.",
+      "html": "<p>En déduire que <span class=\"math inline\">\\(\\frac{S_Y}{n}\\)</span> est un estimateur sans biais de la quantité <span class=\"math inline\">\\(\\frac{1-\\theta}{\\theta}\\)</span>.</p>",
+      "order": 8
+    },
+    {
+      "id": "block_9",
+      "type": "reponse",
+      "latex": "On sait que $\\mathbb{E}[Y_k] = \\frac{1-\\theta}{\\theta}$. En posant :\n\t\t\\[T = \\frac{1}{n} \\sum_{k=1}^n Y_k = \\frac{S_Y}{n} \\]\n\t\tAlors $\\mathbb{E}[T] = \\frac{1}{n} \\mathbb{E}[S_Y] = \\frac{1}{n} \\left(n \\frac{1-\\theta}{\\theta}\\right) = \\frac{1-\\theta}{\\theta}$.",
+      "html": "<p>On sait que <span class=\"math inline\">\\(\\mathbb{E}[Y_k] = \\frac{1-\\theta}{\\theta}\\)</span>. En posant :\n<span class=\"math display\">\\[T = \\frac{1}{n} \\sum_{k=1}^n Y_k = \\frac{S_Y}{n}\\]</span>\nAlors <span class=\"math inline\">\\(\\mathbb{E}[T] = \\frac{1}{n} \\mathbb{E}[S_Y] = \\frac{1}{n} \\left(n \\frac{1-\\theta}{\\theta}\\right) = \\frac{1-\\theta}{\\theta}\\)</span>.</p>",
+      "order": 9
+    },
+    {
+      "id": "block_10",
+      "type": "question",
+      "latex": "On souhaite vérifier numériquement certaines propriétés de l'estimateur $\\hat{\\theta} = \\frac{n}{n+S_Y}$. Rappeler comment simuler une variable aléatoire $Y$ suivant une loi exponentielle $\\mathcal{E}(\\lambda)$ à partir d'une variable aléatoire $U$ suivant une loi uniforme $\\mathcal{U}[0,1]$.",
+      "html": "<p>On souhaite vérifier numériquement certaines propriétés de l’estimateur <span class=\"math inline\">\\(\\hat{\\theta} = \\frac{n}{n+S_Y}\\)</span>. Rappeler comment simuler une variable aléatoire <span class=\"math inline\">\\(Y\\)</span> suivant une loi exponentielle <span class=\"math inline\">\\(\\mathcal{E}(\\lambda)\\)</span> à partir d’une variable aléatoire <span class=\"math inline\">\\(U\\)</span> suivant une loi uniforme <span class=\"math inline\">\\(\\mathcal{U}[0,1]\\)</span>.</p>",
+      "order": 10
+    }
+  ],
+  "artifacts": {
+    "tikz": [],
+    "geogebra": [],
+    "code": [],
+    "video": null
+  },
+  "source_hash": "5c8e110578da8e11d08498ec791a77a6c86a5591688cfac210c84a51c42c18bc"
+}

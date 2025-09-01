@@ -1,0 +1,11 @@
+{
+  "tikz": [
+    {
+      "id": "tikz_1",
+      "url": "/artifacts/tikz/YouX-tikz_1.svg",
+      "latex": "\\begin{tikzpicture}[\n\t% Style for the nodes (circles)\n\tnode_style/.style={\n\t\tcircle,\n\t\tdraw,\n\t\tminimum size=7mm, % Adjust size as needed\n\t\tinner sep=0pt\n\t},\n\t% Style for the probability labels on edges\n\tprob_style/.style={\n\t\tsloped, % Orients the text along the path\n\t\tmidway, % Places it in the middle of the path\n\t\tabove,  % Places it above the path (can be 'below')\n\t\tfont=\\footnotesize,\n\t\tinner sep=1.5pt % Small padding around text\n\t},\n\t% Define distances for tree layout\n\tlevel 1/.style={sibling distance=3cm},\n\tlevel 2/.style={sibling distance=2cm},\n\tedge from parent/.style={draw, -{Stealth[length=1.5mm, width=1.5mm]}} % Optional: add arrow tips\n\t]\n\t\n\t% Root node (invisible, just for starting paths)\n\t\\coordinate (root) at (0,0);\n\t\n\t% First level nodes (F and H)\n\t\\node[node_style] (F) at (2.5,1.2) {F};\n\t\\node[node_style] (H) at (2.5,-1.2) {H};\n\t\n\t% Second level nodes (C and Cbar)\n\t% Branching from F\n\t\\node[node_style] (C_F) at (5, 2.0) {C};      % F's y + offset\n\t\\node[node_style] (Cbar_F) at (5, 0.4) {$\\bar{C}$}; % F's y - offset\n\t\n\t% Branching from H\n\t\\node[node_style] (C_H) at (5, -0.4) {C};     % H's y + offset\n\t\\node[node_style] (Cbar_H) at (5, -2.0) {$\\bar{C}$};% H's y - offset\n\t\n\t% Edges and probabilities\n\t% From root to F and H\n\t\\draw (root) -- (F) node[prob_style, pos=0.4, above=-1pt] {0,52}; % pos=0.4 to move it left from center\n\t\\draw (root) -- (H) node[prob_style, pos=0.4, above=-1pt] {0,48}; % 'above' is relative to sloped line\n\t\n\t% From F to C and Cbar_F\n\t\\draw (F) -- (C_F) node[prob_style] {0,202};\n\t\\draw (F) -- (Cbar_F) node[prob_style] {0,798};\n\t\n\t% From H to C and Cbar_H\n\t\\draw (H) -- (C_H) node[prob_style] {0,675};\n\t\\draw (H) -- (Cbar_H) node[prob_style] {0,325};\n\t\n\\end{tikzpicture}",
+      "svg": ""
+    }
+  ],
+  "code": []
+}

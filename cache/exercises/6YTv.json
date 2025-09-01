@@ -1,21 +1,22 @@
 {
   "uuid": "6YTv",
-  "title": "Calcul d'une somme de série entière",
+  "title": "Développement d'une fonction usuelle en série entière",
   "chapter": "Série entière",
-  "subchapter": "Calcul de la somme d'une série entière",
+  "subchapter": "Développement en série entière",
   "theme": "séries entières",
-  "difficulty": null,
+  "difficulty": "L2",
+  "module": "Analyse",
   "author": "",
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-06-01",
-  "updated_at": "2025-08-25T13:14:00.584Z",
+  "updated_at": "2025-09-01T12:16:11.475Z",
   "content": [
     {
       "id": "block_1",
       "type": "question",
-      "latex": "À l'aide des développements en séries entières des fonctions usuelles, calculer les développements en séries entières en $0$ des fonctions réelles suivantes:\n\\[ f(x)=\\frac{1}{ 2+3x}, \\qquad g(x)=\\ln \\Big(\\frac{1+x}{1-x}\\Big), \\qquad h(x)=\\frac{1}{\\sqrt{1-x^2}},\\]\net déterminer le rayon de convergence de ces développements.",
-      "html": "<p>À l’aide des développements en séries entières des fonctions usuelles, calculer les développements en séries entières en <span class=\"math inline\">\\(0\\)</span> des fonctions réelles suivantes:\n<span class=\"math display\">\\[f(x)=\\frac{1}{ 2+3x}, \\qquad g(x)=\\ln \\Big(\\frac{1+x}{1-x}\\Big), \\qquad h(x)=\\frac{1}{\\sqrt{1-x^2}},\\]</span>\net déterminer le rayon de convergence de ces développements.</p>",
+      "latex": "À l'aide des développements en séries entières des fonctions usuelles, calculer les développements en séries entières en $0$ des fonctions réelles suivantes:\n$$ f(x)=\\frac{1}{ 2+3x}, \\qquad g(x)=\\ln \\Big(\\frac{1+x}{1-x}\\Big), \\qquad h(x)=\\frac{1}{\\sqrt{1-x^2}}$$\net déterminer le rayon de convergence de ces développements.",
+      "html": "<p>À l’aide des développements en séries entières des fonctions usuelles, calculer les développements en séries entières en <span class=\"math inline\">\\(0\\)</span> des fonctions réelles suivantes:\n<span class=\"math display\">\\[f(x)=\\frac{1}{ 2+3x}, \\qquad g(x)=\\ln \\Big(\\frac{1+x}{1-x}\\Big), \\qquad h(x)=\\frac{1}{\\sqrt{1-x^2}}\\]</span>\net déterminer le rayon de convergence de ces développements.</p>",
       "order": 1
     },
     {
@@ -32,5 +33,5 @@
     "code": [],
     "video": null
   },
-  "source_hash": "0df02546c7229375b395cc2f3bc777668bb17ec88529baf338e718f8add3cf31"
+  "source_hash": "94357622872cca0bffa3e53dbbe0d84f3f9fbc4173bfd8bc8080ed19b27baf82"
 }
