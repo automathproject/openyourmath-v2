@@ -1,30 +1,24 @@
-// src/lib/db/queries.js - Version complète avec toutes les fonctions nécessaires
+// src/lib/db/queries.js - Version corrigée avec recherche insensible à la casse
 import Database from 'better-sqlite3';
 import path from 'path';
 
 const DB_PATH = path.resolve('data/exercises.sqlite');
 
-/**
- * Prépare une requête de recherche pour FTS5 avec gestion des préfixes
- */
+// ... (la fonction prepareSearchQuery reste la même) ...
 function prepareSearchQuery(query) {
   if (!query || query.trim() === '') {
     return '';
   }
-  
   const cleanQuery = query.trim().toLowerCase();
-  
-  // Si c'est très court (1-2 caractères), utiliser LIKE plutôt que FTS
   if (cleanQuery.length <= 2) {
-    return null; // Signale qu'il faut utiliser LIKE
+    return null; 
   }
-  
-  // Pour FTS5 : ajouter * à la fin pour recherche de préfixe
   return `"${cleanQuery}"*`;
 }
 
+
 /**
- * Recherche d'exercices avec filtres (version améliorée)
+ * Recherche d'exercices avec filtres (version améliorée avec module/niveau)
  */
 export async function searchExercises(query = '', filters = {}, options = {}) {
   let db;
@@ -36,80 +30,68 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
     
     let sql, params = [];
     
-    // Pour les requêtes très courtes, utiliser LIKE
+    // ... (la première partie de la construction de la requête reste la même) ...
     if (query.trim() && searchQuery === null) {
       sql = `
-        SELECT 
-          e.uuid, e.title, e.chapter, e.theme, e.difficulty,
-          e.author, e.created_at
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at
         FROM exercises e
-        WHERE (
-          e.title LIKE ? 
-          OR e.chapter LIKE ? 
-          OR e.theme LIKE ?
-        )
+        WHERE (UPPER(e.title) LIKE UPPER(?) OR UPPER(e.chapter) LIKE UPPER(?) OR UPPER(e.theme) LIKE UPPER(?) OR UPPER(e.module) LIKE UPPER(?))
       `;
-      
       const likeQuery = `%${query.trim()}%`;
-      params.push(likeQuery, likeQuery, likeQuery);
-      
+      params.push(likeQuery, likeQuery, likeQuery, likeQuery);
     } else if (searchQuery) {
-      // Recherche FTS5 avec préfixes
       sql = `
-        SELECT 
-          e.uuid, e.title, e.chapter, e.theme, e.difficulty,
-          e.author, e.created_at,
-          bm25(fts_exercises) as rank
-        FROM exercises e
-        JOIN fts_exercises fts ON e.uuid = fts.uuid
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at, bm25(fts_exercises) as rank
+        FROM exercises e JOIN fts_exercises fts ON e.uuid = fts.uuid
         WHERE fts_exercises MATCH ?
       `;
       params.push(searchQuery);
-      
     } else {
-      // Pas de recherche textuelle, juste les filtres
       sql = `
-        SELECT 
-          e.uuid, e.title, e.chapter, e.theme, e.difficulty,
-          e.author, e.created_at
-        FROM exercises e
-        WHERE 1=1
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at
+        FROM exercises e WHERE 1=1
       `;
     }
     
-    // Ajouter les filtres - Logique hiérarchique
+    // ===== SECTION MODIFIÉE CI-DESSOUS =====
+
     if (filters.subchapter) {
-      // Si on a un sous-chapitre, on filtre UNIQUEMENT sur celui-ci
-      // Le sous-chapitre est suffisamment spécifique
-      sql += ' AND e.subchapter = ?';
+      // MODIFICATION : Utilisation de UPPER() pour l'insensibilité à la casse
+      sql += ' AND UPPER(e.subchapter) = UPPER(?)';
       params.push(filters.subchapter);
       
-      // On peut aussi ajouter le chapitre pour plus de sécurité
       if (filters.chapter) {
-        sql += ' AND e.chapter = ?';
+        // MODIFICATION : Utilisation de UPPER()
+        sql += ' AND UPPER(e.chapter) = UPPER(?)';
         params.push(filters.chapter);
       }
-      
-      console.log('Filtering by subchapter:', filters.subchapter, 'and chapter:', filters.chapter);
     } else if (filters.chapter) {
-      // Si on n'a qu'un chapitre (pas de sous-chapitre), on filtre sur le chapitre
-      sql += ' AND e.chapter = ?';
+      // MODIFICATION : Utilisation de UPPER()
+      sql += ' AND UPPER(e.chapter) = UPPER(?)';
       params.push(filters.chapter);
-      
-      console.log('Filtering by chapter only:', filters.chapter);
     }
     
-    if (filters.difficulty !== undefined) {
-      sql += ' AND e.difficulty = ?';
+    if (filters.module) {
+      // MODIFICATION : Utilisation de UPPER()
+      sql += ' AND UPPER(e.module) = UPPER(?)';
+      params.push(filters.module);
+    }
+    
+    if (filters.difficulty) {
+      // MODIFICATION : Utilisation de UPPER()
+      sql += ' AND UPPER(e.difficulty) = UPPER(?)';
       params.push(filters.difficulty);
     }
     
     if (filters.author) {
-      sql += ' AND e.author = ?';
+      // MODIFICATION : Utilisation de UPPER()
+      sql += ' AND UPPER(e.author) = UPPER(?)';
       params.push(filters.author);
     }
     
-    // Ordre
+    // ===== FIN DE LA SECTION MODIFIÉE =====
+    
+    // ... (la partie Ordre et Pagination reste la même) ...
     if (searchQuery) {
       sql += ' ORDER BY rank';
     } else if (query.trim() && searchQuery === null) {
@@ -118,7 +100,6 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       sql += ' ORDER BY e.created_at DESC';
     }
     
-    // Pagination
     sql += ' LIMIT ? OFFSET ?';
     params.push(limit, offset);
     
@@ -126,10 +107,6 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
     console.log('Search params:', params);
     
     const results = db.prepare(sql).all(...params);
-    
-    console.log('Results count:', results.length);
-    console.log('First few results subchapters:', results.slice(0, 3).map(r => ({title: r.title, subchapter: r.subchapter})));
-    
     return results;
     
   } catch (error) {
@@ -151,61 +128,55 @@ export async function getExerciseCount(query = '', filters = {}) {
     const searchQuery = prepareSearchQuery(query);
     let sql, params = [];
     
-    // Pour les requêtes très courtes, utiliser LIKE
+    // ... (la première partie de la construction de la requête reste la même) ...
     if (query.trim() && searchQuery === null) {
       sql = `
-        SELECT COUNT(*) as count 
-        FROM exercises e
-        WHERE (
-          e.title LIKE ? 
-          OR e.chapter LIKE ? 
-          OR e.theme LIKE ?
-        )
+        SELECT COUNT(*) as count FROM exercises e
+        WHERE (UPPER(e.title) LIKE UPPER(?) OR UPPER(e.chapter) LIKE UPPER(?) OR UPPER(e.theme) LIKE UPPER(?) OR UPPER(e.module) LIKE UPPER(?))
       `;
-      
       const likeQuery = `%${query.trim()}%`;
-      params.push(likeQuery, likeQuery, likeQuery);
-      
+      params.push(likeQuery, likeQuery, likeQuery, likeQuery);
     } else if (searchQuery) {
-      // Recherche FTS5
       sql = `
-        SELECT COUNT(*) as count 
-        FROM exercises e
-        JOIN fts_exercises fts ON e.uuid = fts.uuid
+        SELECT COUNT(*) as count FROM exercises e JOIN fts_exercises fts ON e.uuid = fts.uuid
         WHERE fts_exercises MATCH ?
       `;
       params.push(searchQuery);
-      
     } else {
-      // Pas de recherche textuelle
       sql = 'SELECT COUNT(*) as count FROM exercises e WHERE 1=1';
     }
     
-    // Ajouter les filtres - même logique hiérarchique
+    // ===== SECTION MODIFIÉE CI-DESSOUS =====
+
     if (filters.subchapter) {
-      // Si on a un sous-chapitre, on filtre sur celui-ci
-      sql += ' AND e.subchapter = ?';
+      sql += ' AND UPPER(e.subchapter) = UPPER(?)';
       params.push(filters.subchapter);
       
       if (filters.chapter) {
-        sql += ' AND e.chapter = ?';
+        sql += ' AND UPPER(e.chapter) = UPPER(?)';
         params.push(filters.chapter);
       }
     } else if (filters.chapter) {
-      // Sinon on filtre sur le chapitre seulement
-      sql += ' AND e.chapter = ?';
+      sql += ' AND UPPER(e.chapter) = UPPER(?)';
       params.push(filters.chapter);
     }
     
-    if (filters.difficulty !== undefined) {
-      sql += ' AND e.difficulty = ?';
+    if (filters.module) {
+      sql += ' AND UPPER(e.module) = UPPER(?)';
+      params.push(filters.module);
+    }
+    
+    if (filters.difficulty) {
+      sql += ' AND UPPER(e.difficulty) = UPPER(?)';
       params.push(filters.difficulty);
     }
     
     if (filters.author) {
-      sql += ' AND e.author = ?';
+      sql += ' AND UPPER(e.author) = UPPER(?)';
       params.push(filters.author);
     }
+    
+    // ===== FIN DE LA SECTION MODIFIÉE =====
     
     const result = db.prepare(sql).get(...params);
     return result.count;
@@ -218,9 +189,8 @@ export async function getExerciseCount(query = '', filters = {}) {
   }
 }
 
-/**
- * Récupère un exercice par son UUID
- */
+// ... (les autres fonctions getExerciseByUuid, getSimilarExercises, etc. restent les mêmes) ...
+// ... (copiez-collez la fin de votre fichier original ici) ...
 export async function getExerciseByUuid(uuid) {
   let db;
   try {
@@ -228,7 +198,7 @@ export async function getExerciseByUuid(uuid) {
     
     const exercise = db.prepare(`
       SELECT 
-        uuid, title, chapter, subchapter, theme, difficulty,
+        uuid, title, chapter, subchapter, theme, difficulty, module,
         author, organization, video_id, created_at, updated_at,
         content_json
       FROM exercises 
@@ -239,7 +209,6 @@ export async function getExerciseByUuid(uuid) {
       return null;
     }
     
-    // Parser le contenu JSON
     if (exercise.content_json) {
       try {
         exercise.content = JSON.parse(exercise.content_json);
@@ -260,15 +229,12 @@ export async function getExerciseByUuid(uuid) {
   }
 }
 
-/**
- * Récupère des exercices similaires
- */
 export async function getSimilarExercises(uuid, limit = 5) {
   let db;
   try {
     db = new Database(DB_PATH, { readonly: true });
     
-    const reference = db.prepare('SELECT chapter, theme, difficulty FROM exercises WHERE uuid = ?').get(uuid);
+    const reference = db.prepare('SELECT chapter, theme, difficulty, module FROM exercises WHERE uuid = ?').get(uuid);
     
     if (!reference) {
       return [];
@@ -276,27 +242,32 @@ export async function getSimilarExercises(uuid, limit = 5) {
     
     const similar = db.prepare(`
       SELECT 
-        uuid, title, chapter, theme, difficulty, author
+        uuid, title, chapter, theme, difficulty, module, author
       FROM exercises 
       WHERE uuid != ? 
         AND (
           chapter = ? 
           OR theme = ? 
           OR difficulty = ?
+          OR module = ?
         )
       ORDER BY 
         CASE 
-          WHEN chapter = ? AND theme = ? THEN 1
-          WHEN chapter = ? THEN 2
-          WHEN theme = ? THEN 3
-          ELSE 4
+          WHEN module = ? AND chapter = ? THEN 1
+          WHEN chapter = ? AND theme = ? THEN 2
+          WHEN module = ? THEN 3
+          WHEN chapter = ? THEN 4
+          WHEN theme = ? THEN 5
+          ELSE 6
         END,
         RANDOM()
       LIMIT ?
     `).all(
       uuid,
-      reference.chapter, reference.theme, reference.difficulty,
+      reference.chapter, reference.theme, reference.difficulty, reference.module,
+      reference.module, reference.chapter,
       reference.chapter, reference.theme,
+      reference.module,
       reference.chapter, reference.theme,
       limit
     );
@@ -311,15 +282,11 @@ export async function getSimilarExercises(uuid, limit = 5) {
   }
 }
 
-/**
- * Récupère la structure hiérarchique des chapitres et sous-chapitres
- */
 export async function getChapterStructure() {
   let db;
   try {
     db = new Database(DB_PATH, { readonly: true });
     
-    // Récupérer tous les chapitres avec leurs counts
     const chapters = db.prepare(`
       SELECT 
         chapter,
@@ -331,7 +298,6 @@ export async function getChapterStructure() {
       ORDER BY chapter, subchapter
     `).all();
     
-    // Organiser en structure hiérarchique
     const structure = [];
     const chapterMap = new Map();
     
@@ -348,7 +314,6 @@ export async function getChapterStructure() {
       const chapterObj = chapterMap.get(row.chapter);
       chapterObj.exerciseCount += row.exerciseCount;
       
-      // Ajouter le sous-chapitre s'il existe
       if (row.subchapter) {
         chapterObj.subchapters.push({
           name: row.subchapter,
@@ -367,9 +332,6 @@ export async function getChapterStructure() {
   }
 }
 
-/**
- * Récupère des suggestions pour l'autocomplétion
- */
 export async function getSuggestions(type = 'all', limit = 10) {
   let db;
   try {
@@ -411,21 +373,51 @@ export async function getSuggestions(type = 'all', limit = 10) {
         `;
         break;
         
+      case 'modules':
+        query = `
+          SELECT DISTINCT module as value, COUNT(*) as count
+          FROM exercises 
+          WHERE module IS NOT NULL AND TRIM(module) != ''
+          GROUP BY module 
+          ORDER BY count DESC, module
+          LIMIT ?
+        `;
+        break;
+        
+      case 'levels':
+        query = `
+          SELECT DISTINCT difficulty as value, COUNT(*) as count
+          FROM exercises 
+          WHERE difficulty IS NOT NULL AND TRIM(difficulty) != ''
+          GROUP BY difficulty 
+          ORDER BY 
+            CASE 
+              WHEN difficulty LIKE 'L%' THEN 1
+              WHEN difficulty LIKE 'M%' THEN 2
+              WHEN difficulty LIKE 'D%' THEN 3
+              ELSE 4
+            END,
+            difficulty
+          LIMIT ?
+        `;
+        break;
+        
       default:
-        // Suggestions mixtes
         query = `
           SELECT 'chapter' as type, chapter as value, COUNT(*) as count
           FROM exercises 
           WHERE chapter IS NOT NULL
           GROUP BY chapter 
-          
           UNION ALL
-          
           SELECT 'theme' as type, theme as value, COUNT(*) as count
           FROM exercises 
           WHERE theme IS NOT NULL
           GROUP BY theme 
-          
+          UNION ALL
+          SELECT 'module' as type, module as value, COUNT(*) as count
+          FROM exercises 
+          WHERE module IS NOT NULL AND TRIM(module) != ''
+          GROUP BY module
           ORDER BY count DESC
           LIMIT ?
         `;

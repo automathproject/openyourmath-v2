@@ -16,12 +16,21 @@ export async function GET({ url }) {
       const suggestionType = url.searchParams.get('for') || 'all';
       const limit = parseInt(url.searchParams.get('limit') || '10');
       
+      // Validation des types de suggestions supportés
+      const validTypes = ['all', 'chapters', 'themes', 'authors', 'modules', 'levels'];
+      if (!validTypes.includes(suggestionType)) {
+        return json(
+          { error: `Invalid suggestion type. Valid types: ${validTypes.join(', ')}` },
+          { status: 400 }
+        );
+      }
+      
       const suggestions = await getSuggestions(suggestionType, limit);
       return json({ suggestions });
       
     } else {
       return json(
-        { error: 'Invalid type parameter' },
+        { error: 'Invalid type parameter. Valid types: structure, suggestions' },
         { status: 400 }
       );
     }

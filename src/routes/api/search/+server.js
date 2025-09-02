@@ -7,8 +7,9 @@ export async function GET({ url }) {
     // Extraction et validation des paramètres
     const query = url.searchParams.get('q')?.trim() || '';
     const chapter = url.searchParams.get('chapter')?.trim() || '';
-    const subchapter = url.searchParams.get('subchapter')?.trim() || ''; // ✅ AJOUT
-    const difficulty = url.searchParams.get('difficulty');
+    const subchapter = url.searchParams.get('subchapter')?.trim() || '';
+    const difficulty = url.searchParams.get('difficulty')?.trim() || '';  // MODIFIÉ : string
+    const module = url.searchParams.get('module')?.trim() || '';          // NOUVEAU
     const author = url.searchParams.get('author')?.trim() || '';
     
     // Validation et parsing des paramètres de pagination
@@ -22,14 +23,15 @@ export async function GET({ url }) {
     // Construire les filtres
     const filters = {};
     if (chapter) filters.chapter = chapter;
-    if (subchapter) filters.subchapter = subchapter; // ✅ AJOUT
-    if (difficulty && !isNaN(parseInt(difficulty))) {
-      filters.difficulty = parseInt(difficulty);
-    }
+    if (subchapter) filters.subchapter = subchapter;
+    if (difficulty) filters.difficulty = difficulty;   // MODIFIÉ : pas de parsing en int
+    if (module) filters.module = module;               // NOUVEAU
     if (author) filters.author = author;
     
     // Options de pagination
     const options = { limit: limit + 1, offset }; // +1 pour détecter hasMore
+    
+    console.log('Search API - Filters:', filters);  // Debug
     
     // Effectuer la recherche
     const results = await searchExercises(query, filters, options);
