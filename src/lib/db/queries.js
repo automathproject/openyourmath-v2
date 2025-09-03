@@ -1,4 +1,4 @@
-// src/lib/db/queries.js - Version corrigée avec recherche insensible à la casse
+// src/lib/db/queries.js - Version corrigée avec recherche insensible à la casse ET preview
 import Database from 'better-sqlite3';
 import path from 'path';
 
@@ -16,7 +16,7 @@ function prepareSearchQuery(query) {
 }
 
 /**
- * Recherche d'exercices avec filtres (version améliorée avec module/niveau)
+ * Recherche d'exercices avec filtres (version améliorée avec module/niveau + preview)
  */
 export async function searchExercises(query = '', filters = {}, options = {}) {
   let db;
@@ -30,7 +30,7 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
     
     if (query.trim() && searchQuery === null) {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at, e.preview
         FROM exercises e
         WHERE (UPPER(e.title) LIKE UPPER(?) OR UPPER(e.chapter) LIKE UPPER(?) OR UPPER(e.theme) LIKE UPPER(?) OR UPPER(e.module) LIKE UPPER(?))
       `;
@@ -38,14 +38,14 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       params.push(likeQuery, likeQuery, likeQuery, likeQuery);
     } else if (searchQuery) {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at, bm25(fts_exercises) as rank
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at, e.preview, bm25(fts_exercises) as rank
         FROM exercises e JOIN fts_exercises fts ON e.uuid = fts.uuid
         WHERE fts_exercises MATCH ?
       `;
       params.push(searchQuery);
     } else {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at, e.preview
         FROM exercises e WHERE 1=1
       `;
     }
@@ -181,7 +181,7 @@ export async function getExerciseByUuid(uuid) {
     const exercise = db.prepare(`
       SELECT 
         uuid, title, chapter, subchapter, theme, difficulty, module,
-        author, organization, video_id, created_at, updated_at,
+        author, organization, video_id, created_at, updated_at, preview,
         content_json
       FROM exercises 
       WHERE uuid = ?
@@ -224,7 +224,7 @@ export async function getSimilarExercises(uuid, limit = 5) {
     
     const similar = db.prepare(`
       SELECT 
-        uuid, title, chapter, theme, difficulty, module, author
+        uuid, title, chapter, theme, difficulty, module, author, preview
       FROM exercises 
       WHERE uuid != ? 
         AND (

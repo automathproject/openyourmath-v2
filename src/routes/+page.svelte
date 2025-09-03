@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
   import MobileChapterNav from '../lib/components/MobileChapterNav.svelte';
+  import MathRenderer from '$lib/components/MathRenderer.svelte';
   
   // Import des stores
   import { 
@@ -249,26 +250,42 @@
             </h2>
           </div>
           <div class="results-grid">
-            {#each $results as exercise (exercise.uuid)}
-              <a href="/exercise/{exercise.uuid}" class="result-card">
-                <div class="result-header">
-                  <div>
-                    <h3 class="result-title">{exercise.title}</h3>
-                    <div class="result-metadata">
-                      {#if exercise.chapter}
-                        <span class="result-badge">📚 {exercise.chapter}</span>
-                      {/if}
-                      {#if exercise.module}
-                        <span class="result-badge">📖 {exercise.module}</span>
-                      {/if}
-                    </div>
-                  </div>
-                  {#if exercise.difficulty}
-                    <div class="result-difficulty">{exercise.difficulty}</div>
-                  {/if}
-                </div>
-              </a>
-            {/each}
+{#each $results as exercise (exercise.uuid)}
+  <a href="/exercise/{exercise.uuid}" class="result-card">
+    <!-- En-tête avec difficulté à gauche et UUID à droite -->
+    <div class="flex justify-between items-start mb-2">
+      {#if exercise.difficulty}
+        <div class="result-difficulty">{exercise.difficulty}</div>
+      {:else}
+        <div></div>
+      {/if}
+      <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
+    </div>
+    
+    <div class="result-header">
+      <div>
+        <h3 class="result-title">{exercise.title}</h3>
+        <div class="result-metadata">
+          {#if exercise.module}
+            <span class="result-badge">📖 {exercise.module} - </span>
+          {/if}
+          {#if exercise.chapter}
+            <span class="result-badge"> {exercise.chapter}</span>
+          {/if}
+        </div>
+      </div>
+    </div>
+    
+    <!-- Section preview ajoutée -->
+    {#if exercise.preview}
+      <div class="result-preview mt-3">
+        <div class="text-gray-600 text-sm line-clamp-3">
+          <MathRenderer content={exercise.preview} />
+        </div>
+      </div>
+    {/if}
+  </a>
+{/each}
           </div>
         {:else if $hasSearched}
           <div class="empty-state">
@@ -290,6 +307,23 @@
 </div>
 
 <style>
-  /* Cette section est intentionnellement vide car tous les styles 
-     sont gérés par Tailwind et mutualisés dans app.css */
+  /* Styles pour la section preview */
+  .result-preview div {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Styles spéciaux pour les formules dans la preview */
+  .result-preview :global(.katex) {
+    font-size: 0.875rem !important;
+  }
+  
+  .result-preview :global(.katex-display) {
+    margin: 0.25rem 0 !important;
+  }
+  
+  /* Cette section utilise principalement Tailwind mais ajoute 
+     quelques styles personnalisés pour le preview */
 </style>
