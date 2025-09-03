@@ -46,20 +46,54 @@ async function findJsonFiles(dir) {
 function extractSearchText(contentArray) {
   if (!Array.isArray(contentArray)) return '';
   
+  function cleanLatex(latex) {
+    if (!latex) return '';
+    
+    let text = latex
+      // Nettoyer mise en forme
+      .replace(/\\textbf\{([^}]+)\}/g, '$1')
+      .replace(/\\textit\{([^}]+)\}/g, '$1') 
+      .replace(/\\emph\{([^}]+)\}/g, '$1')
+      .replace(/\\text\{([^}]+)\}/g, '$1')
+      // Nettoyer math
+      .replace(/\$\$([^$]+)\$\$/g, ' $1 ')
+      .replace(/\$([^$]+)\$/g, ' $1 ')
+      .replace(/\\\\?\[([^\]]+)\\\\?\]/g, ' $1 ')
+      .replace(/\\\\?\(([^)]+)\\\\?\)/g, ' $1 ')
+      // Simplifier notations
+      .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '$1 sur $2')
+      .replace(/\\sqrt\{([^}]+)\}/g, 'racine de $1')
+      .replace(/\^{([^}]+)}/g, ' puissance $1')
+      .replace(/\^(\w)/g, ' puissance $1')
+      .replace(/_\{([^}]+)\}/g, ' indice $1')
+      .replace(/_(\w)/g, ' indice $1')
+      // Supprimer environnements
+      .replace(/\\begin\{[^}]+\}|\\end\{[^}]+\}/g, ' ')
+      .replace(/\\[a-zA-Z]+\*?(?:\[[^\]]*\])?(?:\{[^}]*\})?/g, ' ')
+      .replace(/[{}]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    
+    return text;
+  }
+  
   return contentArray
-    .map(block => {
-      const html = block.html || '';
-      const latex = block.latex || '';
-      
-      // Nettoyer le HTML (supprimer tags, garder texte)
-      const cleanHtml = html
-        .replace(/<[^>]*>/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
-      
-      return `${cleanHtml} ${latex}`.trim();
-    })
+    .map(block => block.latex ? cleanLatex(block.latex) : '')
+    .filter(text => text.trim() !== '')
     .join(' ');
+}
+
+/**
+ * Nettoie le texte de preview pour la recherche FTS5
+ */
+function cleanPreviewForSearch(preview) {
+  if (!preview) return '';
+  
+  // Nettoyer le HTML de la preview (supprimer tags, garder texte)
+  return preview
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 /**
@@ -82,7 +116,7 @@ function createDatabase(dbPath) {
       console.log('✅ FTS5 version:', ftsCheck['fts5_version()']);
       ftsSupported = true;
     } catch (error) {
-      console.log('⚠️  fts5_version() failed:', error.message);
+      console.log('⚠️ fts5_version() failed:', error.message);
       
       try {
         // Méthode 2: Tester la création d'une table FTS5
@@ -91,8 +125,8 @@ function createDatabase(dbPath) {
         console.log('✅ FTS5 table creation successful');
         ftsSupported = true;
       } catch (error2) {
-        console.log('⚠️  FTS5 table creation failed:', error2.message);
-        console.warn('⚠️  FTS5 not available, falling back to standard tables');
+        console.log('⚠️ FTS5 table creation failed:', error2.message);
+        console.warn('⚠️ FTS5 not available, falling back to standard tables');
         ftsSupported = false;
       }
     }
@@ -121,13 +155,15 @@ function createDatabase(dbPath) {
           chapter TEXT,
           module TEXT,
           difficulty TEXT,
+          preview TEXT,
           content_text TEXT
         );
         CREATE INDEX IF NOT EXISTS idx_fts_title ON fts_exercises(title);
         CREATE INDEX IF NOT EXISTS idx_fts_theme ON fts_exercises(theme);
         CREATE INDEX IF NOT EXISTS idx_fts_chapter ON fts_exercises(chapter);
         CREATE INDEX IF NOT EXISTS idx_fts_module ON fts_exercises(module);
-        CREATE INDEX IF NOT EXISTS idx_fts_difficulty ON fts_exercises(difficulty);`
+        CREATE INDEX IF NOT EXISTS idx_fts_difficulty ON fts_exercises(difficulty);
+        CREATE INDEX IF NOT EXISTS idx_fts_preview ON fts_exercises(preview);`
       );
     }
     
@@ -168,7 +204,7 @@ async function loadExercises(cacheDir) {
       
       // Validation simple
       if (!data.uuid || !data.title || !data.chapter || !Array.isArray(data.content)) {
-        console.warn(`⚠️  Invalid exercise in ${path.basename(filePath)}`);
+        console.warn(`⚠️ Invalid exercise in ${path.basename(filePath)}`);
         continue;
       }
       
@@ -192,14 +228,14 @@ function insertExercises(db, exercises) {
   const insertExercise = db.prepare(`
     INSERT OR REPLACE INTO exercises (
       uuid, title, chapter, subchapter, theme, difficulty, module,
-      author, organization, video_id, created_at, updated_at,
+      author, organization, video_id, created_at, updated_at, preview,
       content_json, source_hash
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   
   const insertFTS = db.prepare(`
-    INSERT OR REPLACE INTO fts_exercises (uuid, title, theme, chapter, module, difficulty, content_text)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    INSERT OR REPLACE INTO fts_exercises (uuid, title, theme, chapter, module, difficulty, preview, content_text)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
   
   // Transaction pour la performance
@@ -210,7 +246,7 @@ function insertExercises(db, exercises) {
       try {
         // Vérifier que les champs obligatoires existent
         if (!exercise.uuid || !exercise.title || !exercise.chapter) {
-          console.warn(`⚠️  Skipping exercise with missing required fields:`, {
+          console.warn(`⚠️ Skipping exercise with missing required fields:`, {
             uuid: exercise.uuid,
             title: exercise.title,
             chapter: exercise.chapter
@@ -232,12 +268,15 @@ function insertExercises(db, exercises) {
           exercise.video_id || null,
           exercise.created_at || new Date().toISOString(),
           exercise.updated_at || new Date().toISOString(),
+          exercise.preview || null, // NOUVEAU : Ajout de la preview
           JSON.stringify(exercise.content),
           exercise.source_hash || null
         );
         
         // Insérer dans FTS5 pour la recherche
         const searchText = extractSearchText(exercise.content);
+        const cleanPreview = cleanPreviewForSearch(exercise.preview, exercise.content);
+        
         // S'assurer que tous les champs sont des chaînes non nulles
         insertFTS.run(
           exercise.uuid || '',
@@ -246,6 +285,7 @@ function insertExercises(db, exercises) {
           exercise.chapter || '',
           exercise.module || '',
           exercise.difficulty || '',
+          cleanPreview || '', // NOUVEAU : Preview nettoyée pour la recherche
           searchText || ''
         );
         
@@ -258,7 +298,8 @@ function insertExercises(db, exercises) {
           title: exercise.title,
           chapter: exercise.chapter,
           module: exercise.module,
-          difficulty: exercise.difficulty
+          difficulty: exercise.difficulty,
+          preview: exercise.preview ? exercise.preview.substring(0, 50) + '...' : 'N/A'
         });
       }
     }
@@ -302,9 +343,27 @@ async function main() {
       const exercises = await loadExercises(CACHE_DIR);
       
       if (exercises.length === 0) {
-        console.warn('⚠️  No valid exercises found!');
+        console.warn('⚠️ No valid exercises found!');
         process.exit(1);
       }
+      
+      // Vérifier les previews avant insertion
+      console.log('🔍 Checking preview generation...');
+      let exercisesWithPreview = 0;
+      let exercisesWithoutPreview = 0;
+      
+      exercises.forEach(exercise => {
+        if (exercise.preview && exercise.preview.trim() !== '') {
+          exercisesWithPreview++;
+        } else {
+          exercisesWithoutPreview++;
+          if (exercisesWithoutPreview <= 3) { // Afficher seulement les 3 premiers
+            console.log(`⚠️ Exercise without preview: ${exercise.uuid} - ${exercise.title}`);
+          }
+        }
+      });
+      
+      console.log(`📊 Preview stats: ${exercisesWithPreview} with preview, ${exercisesWithoutPreview} without preview`);
       
       // Insérer en base
       const inserted = insertExercises(db, exercises);
@@ -329,13 +388,13 @@ async function main() {
           db.exec("INSERT INTO fts_exercises(fts_exercises) VALUES('optimize')");
           console.log('✅ FTS5 search index optimized');
         } else {
-          console.log('ℹ️  Using standard table for search (FTS5 not available)');
+          console.log('ℹ️ Using standard table for search (FTS5 not available)');
         }
         
       } catch (error) {
         console.error('❌ Search optimization failed:', error.message);
         // Ne pas faire échouer le build pour ça
-        console.log('⚠️  Continuing without optimization...');
+        console.log('⚠️ Continuing without optimization...');
       }
       
       // Statistiques finales
@@ -363,6 +422,14 @@ async function main() {
         `).get().count;
         console.log(`✅ Levels: ${levels}`);
         
+        // NOUVEAU : Statistiques sur les previews
+        const withPreview = db.prepare(`
+          SELECT COUNT(*) as count 
+          FROM exercises 
+          WHERE preview IS NOT NULL AND TRIM(preview) != ''
+        `).get().count;
+        console.log(`✅ Exercises with preview: ${withPreview}`);
+        
         const size = (fs.statSync(DB_PATH).size / 1024).toFixed(1);
         
         console.log('\n📊 Results:');
@@ -370,12 +437,13 @@ async function main() {
         console.log(`📖 ${chapters} different chapters`);
         console.log(`📚 ${modules} different modules`);
         console.log(`🎓 ${levels} different levels`);
+        console.log(`👁️ ${withPreview} exercises with preview`);
         console.log(`💾 Database size: ${size} KB`);
         console.log('\n🎉 Database build completed!');
         
       } catch (statsError) {
         console.error('❌ Error calculating statistics:', statsError.message);
-        console.log('⚠️  Database created successfully but statistics failed');
+        console.log('⚠️ Database created successfully but statistics failed');
       }
       
     } finally {

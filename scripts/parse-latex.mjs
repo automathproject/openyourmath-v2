@@ -21,6 +21,9 @@ import {
 
 import { CacheManager } from './utils/cache-manager.mjs';
 
+// Import des utilitaires de preview
+import { generatePreview } from './utils/previewUtils.js';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -66,6 +69,25 @@ async function calculateFileHash(filePath) {
 }
 
 /**
+ * Génère la preview pour un exercice basé sur son contenu
+ * @param {Array} content - Le tableau des blocs de contenu
+ * @returns {string} La preview générée
+ */
+function generateExercisePreview(content) {
+  // Créer un objet compatible avec generatePreview de previewUtils
+  const exerciseForPreview = {
+    contenu: content.map(block => ({
+      type: block.type === 'text' ? 'description' : block.type,
+      value: {
+        html: block.html
+      }
+    }))
+  };
+  
+  return generatePreview(exerciseForPreview);
+}
+
+/**
  * MODIFIÉ : Retourne maintenant un objet { mainData, artifactsData }
  */
 async function parseLatexFile(filePath) {
@@ -86,6 +108,7 @@ async function parseLatexFile(filePath) {
     video_id: "",
     created_at: "",
     updated_at: new Date().toISOString(),
+    preview: "", // NOUVEAU : Champ preview
     content: [],
     artifacts: { 
       // Le champ tikz ne contiendra que les IDs
@@ -296,8 +319,39 @@ async function parseLatexFile(filePath) {
     mainData.artifacts.geogebra.push(geoMatch[1]);
   }
 
+  // NOUVEAU : Génération de la preview après traitement de tout le contenu
+  let previewContent = '';
+  if (mainData.content.length > 0) {
+    try {
+      previewContent = generateExercisePreview(mainData.content);
+    } catch (error) {
+      console.warn(`Failed to generate preview for ${filePath}:`, error.message);
+      previewContent = '';
+    }
+  }
+
+  // Réorganiser mainData pour placer preview avant content
+  const orderedMainData = {
+    uuid: mainData.uuid,
+    title: mainData.title,
+    chapter: mainData.chapter,
+    subchapter: mainData.subchapter,
+    theme: mainData.theme,
+    difficulty: mainData.difficulty,
+    module: mainData.module,
+    author: mainData.author,
+    organization: mainData.organization,
+    video_id: mainData.video_id,
+    created_at: mainData.created_at,
+    updated_at: mainData.updated_at,
+    preview: previewContent,
+    content: mainData.content,
+    artifacts: mainData.artifacts,
+    source_hash: mainData.source_hash
+  };
+
   // On retourne les deux objets
-  return { mainData, artifactsData };
+  return { mainData: orderedMainData, artifactsData };
 }
 
 /**
@@ -307,16 +361,16 @@ async function processFile(inputPath, outputPath, cacheManager, options = {}) {
   try {
     const { incremental = false } = options;
     if (incremental && await cacheManager.isUpToDate(inputPath, outputPath)) {
-      console.log(`⏭️  Skipped (up to date): ${path.relative(CONFIG.content.inputDir, inputPath)}`);
+      console.log(`⭐️ Skipped (up to date): ${path.relative(CONFIG.content.inputDir, inputPath)}`);
       return { skipped: true };
     }
     
-    console.log(`🔄 Parsing: ${path.relative(CONFIG.content.inputDir, inputPath)}`);
+    console.log(`📄 Parsing: ${path.relative(CONFIG.content.inputDir, inputPath)}`);
     
     const { mainData, artifactsData } = await parseLatexFile(inputPath);
     
     if (!mainData.title) {
-      console.warn(`⚠️  Missing title in ${inputPath}`);
+      console.warn(`⚠️ Missing title in ${inputPath}`);
     }
 
     // 1. Sauvegarder le fichier JSON principal dans le cache
@@ -402,7 +456,7 @@ async function main() {
     await cacheManager.updateMetadata(stats);
     console.log('\n📊 Summary:');
     console.log(`✅ Processed: ${stats.processed} files`);
-    console.log(`⏭️  Skipped:   ${stats.skipped} files`);
+    console.log(`⭐️ Skipped:   ${stats.skipped} files`);
     console.log(`❌ Errors:    ${stats.errors} files`);
     if (stats.errors > 0) process.exit(1);
   } catch (error) {

@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS exercises (
   video_id TEXT,
   created_at TEXT,
   updated_at TEXT,
+  preview TEXT, -- NOUVEAU : Ajout du champ preview
   content_json TEXT NOT NULL,
   source_hash TEXT
 );
@@ -28,6 +29,7 @@ CREATE VIRTUAL TABLE IF NOT EXISTS fts_exercises USING fts5(
   chapter,
   module,
   difficulty,
+  preview, -- NOUVEAU : Ajout de preview dans la recherche FTS5
   content_text,
   tokenize='unicode61 remove_diacritics 1'
 );
