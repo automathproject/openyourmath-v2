@@ -4,13 +4,14 @@
   "chapter": "Statistique",
   "subchapter": "Tests d'hypothèses, intervalle de confiance",
   "theme": "tests d'hypothèses",
-  "difficulty": "L2",
+  "level": "L2",
+  "difficulty": null,
   "module": "Probabilité et statistique",
   "author": "",
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2022-09-28",
-  "updated_at": "2025-09-03T12:08:09.538Z",
+  "updated_at": "2025-09-03T13:56:31.982Z",
   "preview": "<p>Pour simuler le tirage aléatoire uniforme avec un tableur, on peut utiliser la commande</p>\n<p><code>=ALEA.ENTRE.BORNES(1;8)</code></p>\n<p>qui génè ...",
   "content": [
     {
@@ -34,5 +35,5 @@
     "code": [],
     "video": null
   },
-  "source_hash": "761e3c5816900416598bc850953e1238de31c589d1cab68fc82f372230ce0794"
+  "source_hash": "a7668a073cad692d93fdcb4b3482b8628df5c15a283b5d28dedb2d46de250028"
 }

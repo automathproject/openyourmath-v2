@@ -9,14 +9,15 @@ CREATE TABLE IF NOT EXISTS exercises (
   chapter TEXT NOT NULL,
   subchapter TEXT,
   theme TEXT,
-  difficulty TEXT, -- MODIFIÉ : difficulty est maintenant TEXT au lieu d'INTEGER
-  module TEXT, -- NOUVEAU : Ajout du champ module
+  level TEXT, -- MODIFIÉ : ancien difficulty devient level (TEXT)
+  difficulty INTEGER, -- NOUVEAU : nouvelle difficulté numérique (1-5 ou NULL)
+  module TEXT,
   author TEXT,
   organization TEXT,
   video_id TEXT,
   created_at TEXT,
   updated_at TEXT,
-  preview TEXT, -- NOUVEAU : Ajout du champ preview
+  preview TEXT,
   content_json TEXT NOT NULL,
   source_hash TEXT
 );
@@ -28,14 +29,16 @@ CREATE VIRTUAL TABLE IF NOT EXISTS fts_exercises USING fts5(
   theme,
   chapter,
   module,
-  difficulty,
-  preview, -- NOUVEAU : Ajout de preview dans la recherche FTS5
+  level, -- MODIFIÉ : level au lieu de difficulty
+  difficulty UNINDEXED, -- NOUVEAU : difficulté numérique (pas indexée pour recherche texte)
+  preview,
   content_text,
   tokenize='unicode61 remove_diacritics 1'
 );
 
 -- Index pour accélérer les requêtes de navigation et de filtrage
 CREATE INDEX IF NOT EXISTS idx_chapter ON exercises(chapter);
-CREATE INDEX IF NOT EXISTS idx_difficulty ON exercises(difficulty);
-CREATE INDEX IF NOT EXISTS idx_module ON exercises(module); -- NOUVEAU : Index sur module
+CREATE INDEX IF NOT EXISTS idx_level ON exercises(level); -- MODIFIÉ : index sur level
+CREATE INDEX IF NOT EXISTS idx_difficulty ON exercises(difficulty); -- NOUVEAU : index sur difficulty numérique
+CREATE INDEX IF NOT EXISTS idx_module ON exercises(module);
 CREATE INDEX IF NOT EXISTS idx_author ON exercises(author);

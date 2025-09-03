@@ -4,13 +4,14 @@
   "chapter": "Méthodes numériques",
   "subchapter": "Méthode de Newton",
   "theme": "méthodes numériques",
-  "difficulty": "L3",
-  "module": "Analyse numérique",
+  "level": "",
+  "difficulty": null,
+  "module": "",
   "author": "Alizée GEERAERT",
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2024-04-29",
-  "updated_at": "2025-09-03T12:08:19.777Z",
+  "updated_at": "2025-09-03T13:56:42.255Z",
   "preview": "<p>Soit\n<span class=\"math display\">\\[f:\\;\n\\begin{array}{rcl}\n    [0,1]&amp;\\to&amp; \\mathbb{R}\\\\\n    x&amp;\\to&amp; x(1+e^x)-e^x.\n\\end{array}\\]</span> ...",
   "content": [
     {
@@ -125,5 +126,5 @@
     "code": [],
     "video": null
   },
-  "source_hash": "64048db11cad22df7a85a4637c53dcac5512c3e2eef1aa7b24be3ef9f075ada7"
+  "source_hash": "976556efaeae0fadbd9075fb85261f94c58989a52d3e215dd82837142ee12350"
 }

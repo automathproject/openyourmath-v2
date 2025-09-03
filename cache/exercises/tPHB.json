@@ -4,13 +4,14 @@
   "chapter": "Série entière",
   "subchapter": "Calcul de la somme d'une série entière",
   "theme": "séries entières",
-  "difficulty": "L2",
+  "level": "L2",
+  "difficulty": null,
   "module": "Analyse",
   "author": "",
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-06-01",
-  "updated_at": "2025-09-03T12:08:56.203Z",
+  "updated_at": "2025-09-03T13:57:18.693Z",
   "preview": "<p>Soit la série entière <span class=\"math inline\">\\(\\displaystyle \\sum_{n\\geq 2} \\frac{(-1)^n}{n(n-1)}x^n\\)</span>.</p>",
   "content": [
     {
@@ -83,5 +84,5 @@
     "code": [],
     "video": null
   },
-  "source_hash": "19e34a401ccd21dd9596fcdd1560b5770953ab4f048ccfb4b2d89584ead605f0"
+  "source_hash": "739bf71293cc270158124b2e47e1a89923ab45b56c98c344580a685511e97c21"
 }

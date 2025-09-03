@@ -32,7 +32,7 @@
   
   // États dérivés réactifs utilisant les stores
   $: selectedPath = {
-    level: $filters.difficulty,
+    level: $filters.level, // MODIFIÉ : level au lieu de difficulty
     module: $filters.module,
     chapter: $filters.chapter,
     subchapter: $filters.subchapter
@@ -79,8 +79,22 @@
     setTimeout(() => showAuthorSuggestions = false, 150);
   }
   
+  // MODIFIÉ : Renommé pour refléter le changement de level
+  function handleLevelChange() {
+    searchActions.search();
+  }
+
+  // NOUVEAU : Gestion du filtre difficulty numérique
   function handleDifficultyChange() {
     searchActions.search();
+  }
+
+  // NOUVEAU : Fonction pour formater l'affichage de la difficulté
+  function formatDifficulty(difficulty) {
+    if (difficulty === null || difficulty === undefined) {
+      return null;
+    }
+    return `★${difficulty}`;
   }
 </script>
 
@@ -116,7 +130,7 @@
       <!-- Version desktop (masquée sur mobile) -->
       <div class="hidden lg:block sticky top-8">
         <ChapterNavigation 
-          bind:selectedLevel={$filters.difficulty}
+          bind:selectedLevel={$filters.level}
           bind:selectedModule={$filters.module}
           bind:selectedChapter={$filters.chapter}
           bind:selectedSubchapter={$filters.subchapter}
@@ -127,7 +141,7 @@
       <!-- Version mobile (masquée sur desktop) -->
       <div class="block lg:hidden mb-6">
         <MobileChapterNav 
-          bind:selectedLevel={$filters.difficulty}
+          bind:selectedLevel={$filters.level}
           bind:selectedModule={$filters.module}
           bind:selectedChapter={$filters.chapter}
           bind:selectedSubchapter={$filters.subchapter}
@@ -153,7 +167,7 @@
         </div>
 
         {#if showAdvancedFilters}
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg border">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg border">
             <!-- Module -->
             <div>
               <label for="module-filter" class="block text-sm font-medium text-gray-700 mb-1">Module</label>
@@ -182,18 +196,35 @@
               {/if}
             </div>
             
-            <!-- Niveau -->
+            <!-- MODIFIÉ : Niveau (level) au lieu de difficulty -->
             <div>
               <label for="level-filter" class="block text-sm font-medium text-gray-700 mb-1">Niveau</label>
               <select 
                 id="level-filter" 
-                bind:value={$filters.difficulty} 
-                on:change={handleDifficultyChange} 
+                bind:value={$filters.level} 
+                on:change={handleLevelChange} 
                 class="form-input"
               >
                 <option value="">Tous les niveaux</option>
                 {#each $suggestions.levels as level}
                   <option value={level.value}>{level.value} ({level.count})</option>
+                {/each}
+              </select>
+            </div>
+            
+            <!-- NOUVEAU : Difficulté numérique (1-5) -->
+            <div>
+              <label for="difficulty-filter" class="block text-sm font-medium text-gray-700 mb-1">Difficulté</label>
+              <select 
+                id="difficulty-filter" 
+                bind:value={$filters.difficulty} 
+                on:change={handleDifficultyChange} 
+                class="form-input"
+              >
+                <option value="">Toutes difficultés</option>
+                <option value="null">Sans difficulté</option>
+                {#each $suggestions.difficulties || [] as diff}
+                  <option value={diff.value}>★{diff.value} ({diff.count})</option>
                 {/each}
               </select>
             </div>
@@ -252,13 +283,18 @@
           <div class="results-grid">
 {#each $results as exercise (exercise.uuid)}
   <a href="/exercise/{exercise.uuid}" class="result-card">
-    <!-- En-tête avec difficulté à gauche et UUID à droite -->
+    <!-- En-tête avec badges et UUID -->
     <div class="flex justify-between items-start mb-2">
-      {#if exercise.difficulty}
-        <div class="result-difficulty">{exercise.difficulty}</div>
-      {:else}
-        <div></div>
-      {/if}
+      <div class="flex gap-2 items-center">
+        <!-- MODIFIÉ : Affichage du niveau (level) -->
+        {#if exercise.level}
+          <div class="result-level">{exercise.level}</div>
+        {/if}
+        <!-- NOUVEAU : Affichage de la difficulté numérique (difficulty) -->
+        {#if exercise.difficulty}
+          <div class="result-difficulty">{formatDifficulty(exercise.difficulty)}</div>
+        {/if}
+      </div>
       <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
     </div>
     
@@ -324,6 +360,15 @@
     margin: 0.25rem 0 !important;
   }
   
+  /* NOUVEAU : Styles pour les badges de niveau et difficulté */
+  .result-level {
+    @apply px-2 py-1 text-xs rounded-md bg-blue-100 text-blue-800 font-medium;
+  }
+  
+  .result-difficulty {
+    @apply px-2 py-1 text-xs rounded-md bg-yellow-100 text-yellow-800 font-medium;
+  }
+  
   /* Cette section utilise principalement Tailwind mais ajoute 
-     quelques styles personnalisés pour le preview */
+     quelques styles personnalisés pour le preview et les badges */
 </style>

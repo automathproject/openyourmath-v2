@@ -10,14 +10,13 @@ export async function GET({ url }) {
       // Structure hiérarchique des chapitres
       const structure = await getChapterStructure();
       return json({ structure });
-      
     } else if (type === 'suggestions') {
       // Suggestions pour autocomplétion
       const suggestionType = url.searchParams.get('for') || 'all';
       const limit = parseInt(url.searchParams.get('limit') || '10');
       
-      // Validation des types de suggestions supportés
-      const validTypes = ['all', 'chapters', 'themes', 'authors', 'modules', 'levels'];
+      // MODIFIÉ : Ajouter 'difficulties' à la liste des types valides
+      const validTypes = ['all', 'chapters', 'themes', 'authors', 'modules', 'levels', 'difficulties'];
       if (!validTypes.includes(suggestionType)) {
         return json(
           { error: `Invalid suggestion type. Valid types: ${validTypes.join(', ')}` },
@@ -27,14 +26,12 @@ export async function GET({ url }) {
       
       const suggestions = await getSuggestions(suggestionType, limit);
       return json({ suggestions });
-      
     } else {
       return json(
         { error: 'Invalid type parameter. Valid types: structure, suggestions' },
         { status: 400 }
       );
     }
-    
   } catch (error) {
     console.error('Chapters API error:', error);
     return json(

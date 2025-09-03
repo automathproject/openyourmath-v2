@@ -16,7 +16,7 @@ function prepareSearchQuery(query) {
 }
 
 /**
- * Recherche d'exercices avec filtres (version améliorée avec module/niveau + preview)
+ * Recherche d'exercices avec filtres (version améliorée avec level/difficulty + preview)
  */
 export async function searchExercises(query = '', filters = {}, options = {}) {
   let db;
@@ -30,7 +30,7 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
     
     if (query.trim() && searchQuery === null) {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at, e.preview
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview
         FROM exercises e
         WHERE (UPPER(e.title) LIKE UPPER(?) OR UPPER(e.chapter) LIKE UPPER(?) OR UPPER(e.theme) LIKE UPPER(?) OR UPPER(e.module) LIKE UPPER(?))
       `;
@@ -38,14 +38,14 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       params.push(likeQuery, likeQuery, likeQuery, likeQuery);
     } else if (searchQuery) {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at, e.preview, bm25(fts_exercises) as rank
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview, bm25(fts_exercises) as rank
         FROM exercises e JOIN fts_exercises fts ON e.uuid = fts.uuid
         WHERE fts_exercises MATCH ?
       `;
       params.push(searchQuery);
     } else {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at, e.preview
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview
         FROM exercises e WHERE 1=1
       `;
     }
@@ -69,9 +69,20 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       params.push(filters.module);
     }
     
-    if (filters.difficulty) {
-      sql += ' AND UPPER(e.difficulty) = UPPER(?)';
-      params.push(filters.difficulty);
+    // MODIFIÉ : Filtre sur level au lieu de difficulty (pour le texte)
+    if (filters.level) {
+      sql += ' AND UPPER(e.level) = UPPER(?)';
+      params.push(filters.level);
+    }
+    
+    // NOUVEAU : Filtre sur difficulty numérique
+    if (filters.difficulty !== undefined && filters.difficulty !== null) {
+      if (filters.difficulty === 'null' || filters.difficulty === '') {
+        sql += ' AND e.difficulty IS NULL';
+      } else {
+        sql += ' AND e.difficulty = ?';
+        params.push(parseInt(filters.difficulty, 10));
+      }
     }
     
     if (filters.author) {
@@ -152,9 +163,20 @@ export async function getExerciseCount(query = '', filters = {}) {
       params.push(filters.module);
     }
     
-    if (filters.difficulty) {
-      sql += ' AND UPPER(e.difficulty) = UPPER(?)';
-      params.push(filters.difficulty);
+    // MODIFIÉ : Filtre sur level au lieu de difficulty
+    if (filters.level) {
+      sql += ' AND UPPER(e.level) = UPPER(?)';
+      params.push(filters.level);
+    }
+    
+    // NOUVEAU : Filtre sur difficulty numérique
+    if (filters.difficulty !== undefined && filters.difficulty !== null) {
+      if (filters.difficulty === 'null' || filters.difficulty === '') {
+        sql += ' AND e.difficulty IS NULL';
+      } else {
+        sql += ' AND e.difficulty = ?';
+        params.push(parseInt(filters.difficulty, 10));
+      }
     }
     
     if (filters.author) {
@@ -180,7 +202,7 @@ export async function getExerciseByUuid(uuid) {
     
     const exercise = db.prepare(`
       SELECT 
-        uuid, title, chapter, subchapter, theme, difficulty, module,
+        uuid, title, chapter, subchapter, theme, level, difficulty, module,
         author, organization, video_id, created_at, updated_at, preview,
         content_json
       FROM exercises 
@@ -216,7 +238,7 @@ export async function getSimilarExercises(uuid, limit = 5) {
   try {
     db = new Database(DB_PATH, { readonly: true });
     
-    const reference = db.prepare('SELECT chapter, theme, difficulty, module FROM exercises WHERE uuid = ?').get(uuid);
+    const reference = db.prepare('SELECT chapter, theme, level, difficulty, module FROM exercises WHERE uuid = ?').get(uuid);
     
     if (!reference) {
       return [];
@@ -224,12 +246,13 @@ export async function getSimilarExercises(uuid, limit = 5) {
     
     const similar = db.prepare(`
       SELECT 
-        uuid, title, chapter, theme, difficulty, module, author, preview
+        uuid, title, chapter, theme, level, difficulty, module, author, preview
       FROM exercises 
       WHERE uuid != ? 
         AND (
           chapter = ? 
           OR theme = ? 
+          OR level = ?
           OR difficulty = ?
           OR module = ?
         )
@@ -239,18 +262,23 @@ export async function getSimilarExercises(uuid, limit = 5) {
           WHEN chapter = ? AND theme = ? THEN 2
           WHEN module = ? THEN 3
           WHEN chapter = ? THEN 4
-          WHEN theme = ? THEN 5
-          ELSE 6
+          WHEN level = ? THEN 5
+          WHEN difficulty = ? THEN 6
+          WHEN theme = ? THEN 7
+          ELSE 8
         END,
         RANDOM()
       LIMIT ?
     `).all(
       uuid,
-      reference.chapter, reference.theme, reference.difficulty, reference.module,
+      reference.chapter, reference.theme, reference.level, reference.difficulty, reference.module,
       reference.module, reference.chapter,
       reference.chapter, reference.theme,
       reference.module,
-      reference.chapter, reference.theme,
+      reference.chapter,
+      reference.level,
+      reference.difficulty,
+      reference.theme,
       limit
     );
     
@@ -265,31 +293,31 @@ export async function getSimilarExercises(uuid, limit = 5) {
 }
 
 /**
- * FONCTION CORRIGÉE : Retourne la structure hiérarchique Niveau > Module > Chapitre > Sous-chapitre
+ * FONCTION CORRIGÉE : Retourne la structure hiérarchique Level > Module > Chapitre > Sous-chapitre
  */
 export async function getChapterStructure() {
   let db;
   try {
     db = new Database(DB_PATH, { readonly: true });
     
-    // Requête pour obtenir tous les groupements avec comptages
+    // MODIFIÉ : Requête pour obtenir tous les groupements avec level au lieu de difficulty
     const query = `
       SELECT 
-        difficulty,
+        level,
         module,
         chapter,
         subchapter,
         COUNT(*) as exerciseCount
       FROM exercises 
       WHERE 
-        difficulty IS NOT NULL 
+        level IS NOT NULL 
         AND module IS NOT NULL 
         AND chapter IS NOT NULL
-      GROUP BY difficulty, module, chapter, subchapter
+      GROUP BY level, module, chapter, subchapter
       ORDER BY 
         CASE 
-          WHEN difficulty LIKE 'L%' THEN CAST(SUBSTR(difficulty, 2) AS INTEGER)
-          WHEN difficulty LIKE 'M%' THEN 100 + CAST(SUBSTR(difficulty, 2) AS INTEGER)
+          WHEN level LIKE 'L%' THEN CAST(SUBSTR(level, 2) AS INTEGER)
+          WHEN level LIKE 'M%' THEN 100 + CAST(SUBSTR(level, 2) AS INTEGER)
           ELSE 1000 
         END,
         module,
@@ -303,13 +331,13 @@ export async function getChapterStructure() {
     const hierarchy = new Map();
     
     rows.forEach(row => {
-      const level = row.difficulty;
+      const level = row.level; // MODIFIÉ : level au lieu de difficulty
       const module = row.module;
       const chapter = row.chapter;
       const subchapter = row.subchapter;
       const count = row.exerciseCount;
       
-      // Niveau (difficulty)
+      // Niveau (level)
       if (!hierarchy.has(level)) {
         hierarchy.set(level, {
           name: level,
@@ -446,20 +474,33 @@ export async function getSuggestions(type = 'all', limit = 10) {
         `;
         break;
         
+      // MODIFIÉ : 'levels' utilise maintenant le champ 'level' au lieu de 'difficulty'
       case 'levels':
         query = `
-          SELECT DISTINCT difficulty as value, COUNT(*) as count
+          SELECT DISTINCT level as value, COUNT(*) as count
           FROM exercises 
-          WHERE difficulty IS NOT NULL AND TRIM(difficulty) != ''
-          GROUP BY difficulty 
+          WHERE level IS NOT NULL AND TRIM(level) != ''
+          GROUP BY level 
           ORDER BY 
             CASE 
-              WHEN difficulty LIKE 'L%' THEN 1
-              WHEN difficulty LIKE 'M%' THEN 2
-              WHEN difficulty LIKE 'D%' THEN 3
+              WHEN level LIKE 'L%' THEN 1
+              WHEN level LIKE 'M%' THEN 2
+              WHEN level LIKE 'D%' THEN 3
               ELSE 4
             END,
-            difficulty
+            level
+          LIMIT ?
+        `;
+        break;
+        
+      // NOUVEAU : 'difficulties' pour les difficultés numériques 1-5
+      case 'difficulties':
+        query = `
+          SELECT difficulty as value, COUNT(*) as count
+          FROM exercises 
+          WHERE difficulty IS NOT NULL
+          GROUP BY difficulty 
+          ORDER BY difficulty
           LIMIT ?
         `;
         break;
@@ -480,6 +521,11 @@ export async function getSuggestions(type = 'all', limit = 10) {
           FROM exercises 
           WHERE module IS NOT NULL AND TRIM(module) != ''
           GROUP BY module
+          UNION ALL
+          SELECT 'level' as type, level as value, COUNT(*) as count
+          FROM exercises 
+          WHERE level IS NOT NULL AND TRIM(level) != ''
+          GROUP BY level
           ORDER BY count DESC
           LIMIT ?
         `;

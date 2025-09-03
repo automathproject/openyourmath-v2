@@ -8,11 +8,12 @@ export const loading = writable(false);
 export const error = writable(null);
 export const searchMeta = writable(null);
 
-// Filtres de recherche
+// Filtres de recherche - MODIFIÉ : Ajout du champ difficulty
 export const filters = writable({
   chapter: '',
   subchapter: '',
-  difficulty: '',
+  level: '',
+  difficulty: '', // NOUVEAU : Filtre pour difficulté numérique
   module: '',
   author: ''
 });
@@ -24,7 +25,8 @@ export const hasActiveFilters = derived(
     return !!(
       $searchQuery || 
       $filters.chapter || 
-      $filters.difficulty || 
+      $filters.level || 
+      $filters.difficulty || // NOUVEAU : Inclure difficulty
       $filters.module || 
       $filters.author
     );
@@ -59,13 +61,14 @@ export const searchActions = {
     }));
   },
 
-  // Effacer tous les filtres
+  // Effacer tous les filtres - MODIFIÉ : Inclure difficulty
   clearAllFilters() {
     searchQuery.set('');
     filters.set({
       chapter: '',
       subchapter: '',
-      difficulty: '',
+      level: '',
+      difficulty: '', // NOUVEAU : Reset difficulty
       module: '',
       author: ''
     });
@@ -78,14 +81,14 @@ export const searchActions = {
   updateFromNavigation({ level, module, chapter, subchapter }) {
     filters.update(currentFilters => ({
       ...currentFilters,
-      difficulty: level || '',
+      level: level || '',
       module: module || '',
       chapter: chapter || '',
       subchapter: subchapter || ''
     }));
   },
 
-  // Exécuter la recherche
+  // Exécuter la recherche - MODIFIÉ : Inclure difficulty
   async search() {
     let currentQuery;
     let currentFilters;
@@ -121,6 +124,11 @@ export const searchActions = {
         searchParams.set('chapter', currentFilters.chapter);
       }
       
+      if (currentFilters.level) {
+        searchParams.set('level', currentFilters.level);
+      }
+      
+      // NOUVEAU : Ajouter le filtre difficulty
       if (currentFilters.difficulty) {
         searchParams.set('difficulty', currentFilters.difficulty);
       }
@@ -156,11 +164,12 @@ export const searchActions = {
   }
 };
 
-// Store pour les suggestions (autocomplete)
+// Store pour les suggestions (autocomplete) - MODIFIÉ : Ajout des difficulties
 export const suggestions = writable({
   authors: [],
   modules: [],
   levels: [],
+  difficulties: [], // NOUVEAU : Suggestions pour les difficultés numériques
   loading: false
 });
 
@@ -169,22 +178,35 @@ export const suggestionActions = {
     suggestions.update(current => ({ ...current, loading: true }));
 
     try {
-      const [authorsResponse, modulesResponse, levelsResponse] = await Promise.all([
+      // MODIFIÉ : Ajouter l'appel pour difficulties en utilisant votre API existante
+      const [authorsResponse, modulesResponse, levelsResponse, difficultiesResponse] = await Promise.all([
         fetch('/api/chapters?type=suggestions&for=authors&limit=20'),
         fetch('/api/chapters?type=suggestions&for=modules&limit=15'),
-        fetch('/api/chapters?type=suggestions&for=levels&limit=10')
+        fetch('/api/chapters?type=suggestions&for=levels&limit=10'),
+        fetch('/api/chapters?type=suggestions&for=difficulties&limit=10') // NOUVEAU : Utiliser votre API existante
       ]);
 
       const authorsData = authorsResponse.ok ? await authorsResponse.json() : { suggestions: [] };
       const modulesData = modulesResponse.ok ? await modulesResponse.json() : { suggestions: [] };
       const levelsData = levelsResponse.ok ? await levelsResponse.json() : { suggestions: [] };
+      const difficultiesData = difficultiesResponse.ok ? await difficultiesResponse.json() : { suggestions: [] };
 
       suggestions.set({
         authors: authorsData.suggestions || [],
         modules: modulesData.suggestions || [],
         levels: levelsData.suggestions || [],
+        difficulties: difficultiesData.suggestions || [], // NOUVEAU : Stocker les difficultés
         loading: false
       });
+
+      // Debug temporaire - supprimez après vérification
+      console.log('Suggestions chargées:', {
+        authors: (authorsData.suggestions || []).length,
+        modules: (modulesData.suggestions || []).length,
+        levels: (levelsData.suggestions || []).length,
+        difficulties: (difficultiesData.suggestions || []).length
+      });
+
     } catch (err) {
       console.warn('Failed to load suggestions:', err);
       suggestions.update(current => ({ ...current, loading: false }));

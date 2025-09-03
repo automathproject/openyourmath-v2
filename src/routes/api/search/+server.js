@@ -8,8 +8,9 @@ export async function GET({ url }) {
     const query = url.searchParams.get('q')?.trim() || '';
     const chapter = url.searchParams.get('chapter')?.trim() || '';
     const subchapter = url.searchParams.get('subchapter')?.trim() || '';
-    const difficulty = url.searchParams.get('difficulty')?.trim() || '';  // MODIFIÉ : string
-    const module = url.searchParams.get('module')?.trim() || '';          // NOUVEAU
+    const level = url.searchParams.get('level')?.trim() || '';          // NOUVEAU : niveau textuel (L1, L2, M1...)
+    const difficulty = url.searchParams.get('difficulty')?.trim() || ''; // NOUVEAU : difficulté numérique (1-5)
+    const module = url.searchParams.get('module')?.trim() || '';
     const author = url.searchParams.get('author')?.trim() || '';
     
     // Validation et parsing des paramètres de pagination
@@ -24,8 +25,21 @@ export async function GET({ url }) {
     const filters = {};
     if (chapter) filters.chapter = chapter;
     if (subchapter) filters.subchapter = subchapter;
-    if (difficulty) filters.difficulty = difficulty;   // MODIFIÉ : pas de parsing en int
-    if (module) filters.module = module;               // NOUVEAU
+    if (level) filters.level = level;                                   // NOUVEAU : Filtre level (texte)
+    
+    // MODIFIÉ : Traitement spécial pour difficulty (numérique)
+    if (difficulty) {
+      if (difficulty === 'null' || difficulty === '') {
+        filters.difficulty = 'null'; // Exercices sans difficulté
+      } else {
+        const difficultyNum = parseInt(difficulty, 10);
+        if (!isNaN(difficultyNum) && difficultyNum >= 1 && difficultyNum <= 5) {
+          filters.difficulty = difficultyNum; // Difficulté valide 1-5
+        }
+      }
+    }
+    
+    if (module) filters.module = module;
     if (author) filters.author = author;
     
     // Options de pagination

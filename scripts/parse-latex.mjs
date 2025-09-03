@@ -49,7 +49,8 @@ const CONFIG = {
     { name: 'organisation', jsonKey: 'organization', isContent: false },
     { name: 'video', jsonKey: 'video_id', isContent: false },
     { name: 'datecreate', jsonKey: 'created_at', isContent: false },
-    { name: 'niveau', jsonKey: 'difficulty', isContent: false },
+    { name: 'niveau', jsonKey: 'level', isContent: false }, // MODIFIÉ : niveau devient level
+    { name: 'difficulte', jsonKey: 'difficulty', isContent: false }, // NOUVEAU : difficulte devient difficulty
     { name: 'module', jsonKey: 'module', isContent: false }, // NOUVEAU
     { name: 'texte', jsonKey: 'content', isContent: true, blockType: 'text' },
     { name: 'question', jsonKey: 'content', isContent: true, blockType: 'question' },
@@ -66,6 +67,25 @@ function generateShortUuid() {
 async function calculateFileHash(filePath) {
   const content = await fsPromises.readFile(filePath);
   return crypto.createHash('sha256').update(content).digest('hex');
+}
+
+/**
+ * Valide et normalise la valeur de difficulté
+ * @param {string} value - La valeur à valider (peut être vide ou contenir un entier)
+ * @returns {number|null} - L'entier entre 1 et 5, ou null si invalide ou vide
+ */
+function validateDifficulty(value) {
+  if (!value || value.trim() === '') {
+    return null;
+  }
+  
+  const parsed = parseInt(value.trim(), 10);
+  if (isNaN(parsed) || parsed < 1 || parsed > 5) {
+    console.warn(`Invalid difficulty value: "${value}". Expected integer between 1 and 5.`);
+    return null;
+  }
+  
+  return parsed;
 }
 
 /**
@@ -101,7 +121,8 @@ async function parseLatexFile(filePath) {
     chapter: "",
     subchapter: "",
     theme: "",
-    difficulty: "",
+    level: "", // MODIFIÉ : ancien "difficulty" devient "level"
+    difficulty: null, // NOUVEAU : nouvelle difficulté numérique (1-5 ou null)
     module: "", // NOUVEAU
     author: "",
     organization: "",
@@ -300,8 +321,10 @@ async function parseLatexFile(filePath) {
       const processedContent = preprocessLatex(finalContent);
       if (commandObj.jsonKey === 'theme') {
         mainData[commandObj.jsonKey] = processedContent.split(',').map(s => s.trim()).join(', ');
-      } else if (commandObj.jsonKey === 'difficulty') { // MODIFIÉ : difficulty est maintenant du texte
+      } else if (commandObj.jsonKey === 'level') { // MODIFIÉ : ancien difficulty devient level (texte)
         mainData[commandObj.jsonKey] = processedContent;
+      } else if (commandObj.jsonKey === 'difficulty') { // NOUVEAU : nouveau champ difficulty (entier 1-5 ou null)
+        mainData[commandObj.jsonKey] = validateDifficulty(processedContent);
       } else if (commandObj.jsonKey === 'video_id') {
         mainData[commandObj.jsonKey] = processedContent;
         mainData.artifacts.video = processedContent;
@@ -337,7 +360,8 @@ async function parseLatexFile(filePath) {
     chapter: mainData.chapter,
     subchapter: mainData.subchapter,
     theme: mainData.theme,
-    difficulty: mainData.difficulty,
+    level: mainData.level, // MODIFIÉ : niveau devient level
+    difficulty: mainData.difficulty, // NOUVEAU : difficulté numérique
     module: mainData.module,
     author: mainData.author,
     organization: mainData.organization,
@@ -381,7 +405,7 @@ async function processFile(inputPath, outputPath, cacheManager, options = {}) {
     // si il y a des tikz OU des blocs de code
     if (artifactsData.tikz.length > 0 || artifactsData.code.length > 0) {
       if (!mainData.uuid) {
-        console.error(`❌ Cannot save artifact file for ${inputPath}: Missing UUID.`);
+        console.error(`⌐ Cannot save artifact file for ${inputPath}: Missing UUID.`);
       } else {
         const artifactPath = path.join(ARTIFACTS_OUTPUT_DIR, `${mainData.uuid}.json`);
         // S'assurer que le dossier de destination existe
@@ -399,7 +423,7 @@ async function processFile(inputPath, outputPath, cacheManager, options = {}) {
     };
 
   } catch (error) {
-    console.error(`❌ Error processing ${inputPath}:`, error.message);
+    console.error(`⌐ Error processing ${inputPath}:`, error.message);
     return { skipped: false, error: error.message };
   }
 }
@@ -457,7 +481,7 @@ async function main() {
     console.log('\n📊 Summary:');
     console.log(`✅ Processed: ${stats.processed} files`);
     console.log(`⭐️ Skipped:   ${stats.skipped} files`);
-    console.log(`❌ Errors:    ${stats.errors} files`);
+    console.log(`⌐ Errors:    ${stats.errors} files`);
     if (stats.errors > 0) process.exit(1);
   } catch (error) {
     console.error('💥 Fatal error:', error.message);

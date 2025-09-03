@@ -154,7 +154,8 @@ function createDatabase(dbPath) {
           theme TEXT,
           chapter TEXT,
           module TEXT,
-          difficulty TEXT,
+          level TEXT,
+          difficulty INTEGER,
           preview TEXT,
           content_text TEXT
         );
@@ -162,6 +163,7 @@ function createDatabase(dbPath) {
         CREATE INDEX IF NOT EXISTS idx_fts_theme ON fts_exercises(theme);
         CREATE INDEX IF NOT EXISTS idx_fts_chapter ON fts_exercises(chapter);
         CREATE INDEX IF NOT EXISTS idx_fts_module ON fts_exercises(module);
+        CREATE INDEX IF NOT EXISTS idx_fts_level ON fts_exercises(level);
         CREATE INDEX IF NOT EXISTS idx_fts_difficulty ON fts_exercises(difficulty);
         CREATE INDEX IF NOT EXISTS idx_fts_preview ON fts_exercises(preview);`
       );
@@ -227,15 +229,15 @@ function insertExercises(db, exercises) {
   // Préparer les requêtes
   const insertExercise = db.prepare(`
     INSERT OR REPLACE INTO exercises (
-      uuid, title, chapter, subchapter, theme, difficulty, module,
+      uuid, title, chapter, subchapter, theme, level, difficulty, module,
       author, organization, video_id, created_at, updated_at, preview,
       content_json, source_hash
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   
   const insertFTS = db.prepare(`
-    INSERT OR REPLACE INTO fts_exercises (uuid, title, theme, chapter, module, difficulty, preview, content_text)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT OR REPLACE INTO fts_exercises (uuid, title, theme, chapter, module, level, difficulty, preview, content_text)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   
   // Transaction pour la performance
@@ -261,31 +263,33 @@ function insertExercises(db, exercises) {
           exercise.chapter,
           exercise.subchapter || null,
           exercise.theme || null,
-          exercise.difficulty || null, // MODIFIÉ : difficulty est maintenant du texte
-          exercise.module || null, // NOUVEAU : Ajout du module
+          exercise.level || null, // MODIFIÉ : ancien difficulty devient level (TEXT)
+          exercise.difficulty, // NOUVEAU : difficulté numérique (INTEGER, peut être null)
+          exercise.module || null,
           exercise.author || null,
           exercise.organization || null,
           exercise.video_id || null,
           exercise.created_at || new Date().toISOString(),
           exercise.updated_at || new Date().toISOString(),
-          exercise.preview || null, // NOUVEAU : Ajout de la preview
+          exercise.preview || null,
           JSON.stringify(exercise.content),
           exercise.source_hash || null
         );
         
         // Insérer dans FTS5 pour la recherche
         const searchText = extractSearchText(exercise.content);
-        const cleanPreview = cleanPreviewForSearch(exercise.preview, exercise.content);
+        const cleanPreview = cleanPreviewForSearch(exercise.preview);
         
-        // S'assurer que tous les champs sont des chaînes non nulles
+        // S'assurer que tous les champs sont des chaînes non nulles pour FTS5
         insertFTS.run(
           exercise.uuid || '',
           exercise.title || '',
           exercise.theme || '',
           exercise.chapter || '',
           exercise.module || '',
-          exercise.difficulty || '',
-          cleanPreview || '', // NOUVEAU : Preview nettoyée pour la recherche
+          exercise.level || '', // MODIFIÉ : level au lieu de difficulty
+          exercise.difficulty || null, // NOUVEAU : difficulté numérique
+          cleanPreview || '',
           searchText || ''
         );
         
@@ -298,6 +302,7 @@ function insertExercises(db, exercises) {
           title: exercise.title,
           chapter: exercise.chapter,
           module: exercise.module,
+          level: exercise.level,
           difficulty: exercise.difficulty,
           preview: exercise.preview ? exercise.preview.substring(0, 50) + '...' : 'N/A'
         });
@@ -365,6 +370,28 @@ async function main() {
       
       console.log(`📊 Preview stats: ${exercisesWithPreview} with preview, ${exercisesWithoutPreview} without preview`);
       
+      // NOUVEAU : Vérifier les statistiques sur les nouveaux champs
+      console.log('🔍 Checking level/difficulty distribution...');
+      let levelStats = {};
+      let difficultyStats = { null: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+      
+      exercises.forEach(exercise => {
+        // Statistiques sur level (texte)
+        const level = exercise.level || 'N/A';
+        levelStats[level] = (levelStats[level] || 0) + 1;
+        
+        // Statistiques sur difficulty (numérique)
+        const diff = exercise.difficulty;
+        if (diff === null || diff === undefined) {
+          difficultyStats.null++;
+        } else if (diff >= 1 && diff <= 5) {
+          difficultyStats[diff]++;
+        }
+      });
+      
+      console.log('📈 Level distribution:', Object.entries(levelStats).slice(0, 5).map(([k,v]) => `${k}: ${v}`).join(', '));
+      console.log('📊 Difficulty distribution:', Object.entries(difficultyStats).map(([k,v]) => `${k}: ${v}`).join(', '));
+      
       // Insérer en base
       const inserted = insertExercises(db, exercises);
       
@@ -415,14 +442,22 @@ async function main() {
         `).get().count;
         console.log(`✅ Modules: ${modules}`);
         
+        // MODIFIÉ : Statistiques pour level (texte) au lieu de difficulty
         const levels = db.prepare(`
-          SELECT COUNT(DISTINCT difficulty) as count 
+          SELECT COUNT(DISTINCT level) as count 
           FROM exercises 
-          WHERE difficulty IS NOT NULL AND TRIM(difficulty) != ''
+          WHERE level IS NOT NULL AND TRIM(level) != ''
         `).get().count;
         console.log(`✅ Levels: ${levels}`);
         
-        // NOUVEAU : Statistiques sur les previews
+        // NOUVEAU : Statistiques pour difficulty (numérique 1-5)
+        const difficulties = db.prepare(`
+          SELECT COUNT(DISTINCT difficulty) as count 
+          FROM exercises 
+          WHERE difficulty IS NOT NULL
+        `).get().count;
+        console.log(`✅ Numeric difficulties: ${difficulties}`);
+        
         const withPreview = db.prepare(`
           SELECT COUNT(*) as count 
           FROM exercises 
@@ -436,7 +471,8 @@ async function main() {
         console.log(`✅ ${total} exercises in database`);
         console.log(`📖 ${chapters} different chapters`);
         console.log(`📚 ${modules} different modules`);
-        console.log(`🎓 ${levels} different levels`);
+        console.log(`🎓 ${levels} different levels (text)`);
+        console.log(`📈 ${difficulties} different difficulties (1-5)`);
         console.log(`👁️ ${withPreview} exercises with preview`);
         console.log(`💾 Database size: ${size} KB`);
         console.log('\n🎉 Database build completed!');

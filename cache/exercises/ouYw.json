@@ -4,13 +4,14 @@
   "chapter": "Calcul d'intégrales",
   "subchapter": "Autre",
   "theme": "séries entières, intégration",
-  "difficulty": "L1",
+  "level": "L1",
+  "difficulty": null,
   "module": "Analyse",
   "author": "",
   "organization": "AMSCC",
   "video_id": "",
   "created_at": "2023-06-05",
-  "updated_at": "2025-09-03T12:08:48.256Z",
+  "updated_at": "2025-09-03T13:57:10.774Z",
   "preview": "<p>Le but de l’exercice est de calculer l’intégrale :\n<span class=\"math display\">\\[I = \\int_0^1 \\ln(t)\\ln(1-t)\\mathrm{d}t\\]</span>\nà l’aide d’un dével ...",
   "content": [
     {
@@ -69,5 +70,5 @@
     "code": [],
     "video": null
   },
-  "source_hash": "63919a3324806f52a38059d1f7fedb358c1002c2ea896e723f0b7a17711d64fa"
+  "source_hash": "d73493a10332979581fb8f8f2049f5ebf48ff1d14a41c2f5718cffc6af02bdb7"
 }
