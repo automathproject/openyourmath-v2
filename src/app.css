@@ -142,6 +142,303 @@
     @apply bg-opacity-100;
   }
 
+  /* Styles à AJOUTER dans app.css - Section @layer components */
+
+/* ==================
+   MOBILE NAVIGATION - Composant de navigation mobile
+   ================== */
+
+.mobile-chapter-nav {
+  @apply relative lg:hidden;
+}
+
+/* Bouton déclencheur principal */
+.mobile-nav-trigger {
+  @apply w-full p-4 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 transition-colors;
+}
+
+.mobile-nav-trigger--active {
+  @apply bg-gray-50 border-gray-400;
+}
+
+.mobile-nav-content {
+  @apply flex items-center gap-3;
+}
+
+.mobile-nav-icon {
+  @apply text-gray-600;
+}
+
+.mobile-nav-text {
+  @apply flex-1 text-left min-w-0;
+}
+
+.mobile-nav-selection {
+  @apply font-medium text-gray-900 block truncate;
+}
+
+.mobile-nav-placeholder {
+  @apply text-gray-500 font-normal;
+}
+
+.mobile-nav-arrow {
+  @apply text-gray-400 flex-shrink-0;
+}
+
+/* Menu déroulant principal */
+.mobile-nav-dropdown {
+  @apply absolute top-full left-0 right-0 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg z-50;
+  max-height: 70vh;
+  overflow-y: auto;
+  animation: mobile-slide-down 0.2s ease-out;
+}
+
+.mobile-nav-content-wrapper {
+  @apply pb-2;
+}
+
+/* États de chargement et erreur */
+.mobile-nav-loading, .mobile-nav-error {
+  @apply flex items-center justify-center gap-3 p-6 text-gray-600;
+}
+
+.mobile-loading-spinner {
+  @apply w-4 h-4 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin;
+}
+
+.mobile-nav-error button {
+  @apply text-blue-600 hover:text-blue-800 font-medium;
+}
+
+/* Système d'onglets */
+.mobile-nav-tabs {
+  @apply flex bg-gray-50 border-b border-gray-200;
+}
+
+.mobile-nav-tab {
+  @apply flex-1 flex flex-col items-center py-3 px-2 text-sm transition-colors;
+}
+
+.mobile-nav-tab--active {
+  @apply bg-white border-b-2 border-blue-500 text-blue-600;
+}
+
+.mobile-nav-tab-icon {
+  @apply text-lg mb-1;
+}
+
+.mobile-nav-tab-text {
+  @apply text-xs font-medium;
+}
+
+.mobile-nav-tab-count {
+  @apply text-xs bg-gray-200 text-gray-600 rounded-full px-2 py-0.5 min-w-[20px] text-center mt-1;
+}
+
+.mobile-nav-tab--active .mobile-nav-tab-count {
+  @apply bg-blue-100 text-blue-600;
+}
+
+/* Option d'effacement */
+.mobile-nav-option--clear {
+  @apply w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-red-50 text-red-600 border-b border-gray-100;
+}
+
+/* Vue hiérarchique */
+.mobile-nav-hierarchy {
+  @apply divide-y divide-gray-100;
+}
+
+.mobile-nav-level-container {
+  @apply py-1;
+}
+
+.mobile-nav-level-header {
+  @apply flex items-center;
+}
+
+.mobile-nav-expand-btn {
+  @apply p-2 text-gray-600 hover:text-gray-800 flex-shrink-0;
+}
+
+.mobile-nav-level-button {
+  @apply flex-1 text-left p-2 hover:bg-blue-50 transition-colors rounded;
+}
+
+.mobile-nav-level-button--active {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.mobile-nav-level-content, .mobile-nav-module-content, .mobile-nav-chapter-content {
+  @apply flex items-center gap-2;
+}
+
+.mobile-nav-level-icon {
+  @apply text-lg;
+}
+
+.mobile-nav-level-name {
+  @apply font-bold text-lg;
+}
+
+.mobile-nav-level-count, .mobile-nav-module-count, .mobile-nav-chapter-count {
+  @apply text-sm text-gray-500 ml-auto;
+}
+
+/* Conteneurs hiérarchiques */
+.mobile-nav-modules-container {
+  @apply ml-6 border-l-2 border-gray-200 pl-2;
+}
+
+.mobile-nav-module-container {
+  @apply py-1;
+}
+
+.mobile-nav-module-header {
+  @apply flex items-center;
+}
+
+.mobile-nav-module-button {
+  @apply flex-1 text-left p-2 hover:bg-green-50 transition-colors rounded;
+}
+
+.mobile-nav-module-button--active {
+  @apply bg-green-100 text-green-800;
+}
+
+.mobile-nav-module-icon {
+  @apply text-base text-green-600;
+}
+
+.mobile-nav-module-name {
+  @apply font-medium;
+}
+
+.mobile-nav-chapters-container {
+  @apply ml-6 border-l-2 border-gray-200 pl-2 space-y-1;
+}
+
+.mobile-nav-chapter-button {
+  @apply w-full text-left p-2 hover:bg-gray-50 transition-colors rounded;
+}
+
+.mobile-nav-chapter-button--active {
+  @apply bg-gray-100 text-gray-800;
+}
+
+.mobile-nav-chapter-icon {
+  @apply text-sm text-blue-600;
+}
+
+.mobile-nav-chapter-name {
+  @apply font-medium;
+}
+
+/* Sous-chapitres */
+.mobile-nav-subchapters-container {
+  @apply ml-4 mt-1 space-y-1;
+}
+
+.mobile-nav-subchapter-button {
+  @apply w-full text-left p-2 hover:bg-gray-50 transition-colors rounded text-sm;
+}
+
+.mobile-nav-subchapter-button--active {
+  @apply bg-blue-50 text-blue-700;
+}
+
+.mobile-nav-subchapter-content {
+  @apply flex items-center gap-2;
+}
+
+.mobile-nav-subchapter-name {
+  @apply text-gray-700;
+}
+
+.mobile-nav-subchapter-count {
+  @apply text-xs text-gray-500 ml-auto;
+}
+
+/* Vue plate */
+.mobile-nav-flat {
+  @apply p-2;
+}
+
+.mobile-nav-flat-section {
+  @apply mb-4;
+}
+
+.mobile-nav-flat-title {
+  @apply font-bold text-gray-800 mb-2 px-2;
+}
+
+.mobile-nav-flat-list {
+  @apply space-y-1;
+}
+
+.mobile-nav-flat-item {
+  @apply w-full text-left p-3 hover:bg-gray-50 transition-colors rounded border border-gray-100;
+}
+
+.mobile-nav-flat-item--active {
+  @apply bg-blue-50 text-blue-700 border-blue-200;
+}
+
+.mobile-nav-flat-item-content {
+  @apply flex items-center justify-between;
+}
+
+.mobile-nav-flat-item-info {
+  @apply flex-1;
+}
+
+.mobile-nav-flat-item-name {
+  @apply font-medium block;
+}
+
+.mobile-nav-flat-item-path {
+  @apply text-sm text-gray-500;
+}
+
+.mobile-nav-flat-item-count {
+  @apply text-sm text-gray-500 ml-2;
+}
+
+/* Animation personnalisée pour le dropdown mobile */
+@keyframes mobile-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive pour très petits écrans */
+@media (max-width: 380px) {
+  .mobile-nav-trigger {
+    @apply p-3;
+  }
+  
+  .mobile-nav-content {
+    @apply gap-2;
+  }
+  
+  .mobile-nav-text {
+    @apply text-sm;
+  }
+  
+  .mobile-nav-level-name, .mobile-nav-module-name, .mobile-nav-chapter-name {
+    @apply truncate;
+  }
+  
+  .mobile-nav-flat-item-name {
+    @apply truncate;
+  }
+}
+
   /* ==============================================
      NOUVELLES CLASSES MUTUALISÉES
      ============================================== */

@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
+  import MobileChapterNav from '../lib/components/MobileChapterNav.svelte';
   
   let searchQuery = '';
   let selectedFilters = {
@@ -155,15 +156,27 @@
     
     <!-- COLONNE DE GAUCHE : Navigation -->
     <aside class="lg:col-span-1">
-      <div class="sticky top-8">
-        <ChapterNavigation 
-          bind:selectedLevel={selectedFilters.difficulty}
-          bind:selectedModule={selectedFilters.module}
-          bind:selectedChapter={selectedFilters.chapter}
-          bind:selectedSubchapter={selectedFilters.subchapter}
-          on:navigate={handleChapterNavigation}
-        />
-      </div>
+<!-- Version desktop (masquée sur mobile) -->
+<div class="hidden lg:block sticky top-8">
+  <ChapterNavigation 
+    bind:selectedLevel={selectedFilters.difficulty}
+    bind:selectedModule={selectedFilters.module}
+    bind:selectedChapter={selectedFilters.chapter}
+    bind:selectedSubchapter={selectedFilters.subchapter}
+    on:navigate={handleChapterNavigation}
+  />
+</div>
+
+<!-- Version mobile (masquée sur desktop) -->
+<div class="block lg:hidden mb-6">
+  <MobileChapterNav 
+    bind:selectedLevel={selectedFilters.difficulty}
+    bind:selectedModule={selectedFilters.module}
+    bind:selectedChapter={selectedFilters.chapter}
+    bind:selectedSubchapter={selectedFilters.subchapter}
+    on:navigate={handleChapterNavigation}
+  />
+</div>
     </aside>
 
     <!-- COLONNE DE DROITE : Filtres et Résultats -->

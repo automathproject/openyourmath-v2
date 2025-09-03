@@ -4,7 +4,6 @@ import path from 'path';
 
 const DB_PATH = path.resolve('data/exercises.sqlite');
 
-// ... (la fonction prepareSearchQuery reste la même) ...
 function prepareSearchQuery(query) {
   if (!query || query.trim() === '') {
     return '';
@@ -15,7 +14,6 @@ function prepareSearchQuery(query) {
   }
   return `"${cleanQuery}"*`;
 }
-
 
 /**
  * Recherche d'exercices avec filtres (version améliorée avec module/niveau)
@@ -30,7 +28,6 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
     
     let sql, params = [];
     
-    // ... (la première partie de la construction de la requête reste la même) ...
     if (query.trim() && searchQuery === null) {
       sql = `
         SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.difficulty, e.module, e.author, e.created_at
@@ -53,45 +50,36 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       `;
     }
     
-    // ===== SECTION MODIFIÉE CI-DESSOUS =====
-
+    // Filtres avec insensibilité à la casse
     if (filters.subchapter) {
-      // MODIFICATION : Utilisation de UPPER() pour l'insensibilité à la casse
       sql += ' AND UPPER(e.subchapter) = UPPER(?)';
       params.push(filters.subchapter);
       
       if (filters.chapter) {
-        // MODIFICATION : Utilisation de UPPER()
         sql += ' AND UPPER(e.chapter) = UPPER(?)';
         params.push(filters.chapter);
       }
     } else if (filters.chapter) {
-      // MODIFICATION : Utilisation de UPPER()
       sql += ' AND UPPER(e.chapter) = UPPER(?)';
       params.push(filters.chapter);
     }
     
     if (filters.module) {
-      // MODIFICATION : Utilisation de UPPER()
       sql += ' AND UPPER(e.module) = UPPER(?)';
       params.push(filters.module);
     }
     
     if (filters.difficulty) {
-      // MODIFICATION : Utilisation de UPPER()
       sql += ' AND UPPER(e.difficulty) = UPPER(?)';
       params.push(filters.difficulty);
     }
     
     if (filters.author) {
-      // MODIFICATION : Utilisation de UPPER()
       sql += ' AND UPPER(e.author) = UPPER(?)';
       params.push(filters.author);
     }
     
-    // ===== FIN DE LA SECTION MODIFIÉE =====
-    
-    // ... (la partie Ordre et Pagination reste la même) ...
+    // Ordre et Pagination
     if (searchQuery) {
       sql += ' ORDER BY rank';
     } else if (query.trim() && searchQuery === null) {
@@ -128,7 +116,6 @@ export async function getExerciseCount(query = '', filters = {}) {
     const searchQuery = prepareSearchQuery(query);
     let sql, params = [];
     
-    // ... (la première partie de la construction de la requête reste la même) ...
     if (query.trim() && searchQuery === null) {
       sql = `
         SELECT COUNT(*) as count FROM exercises e
@@ -146,8 +133,7 @@ export async function getExerciseCount(query = '', filters = {}) {
       sql = 'SELECT COUNT(*) as count FROM exercises e WHERE 1=1';
     }
     
-    // ===== SECTION MODIFIÉE CI-DESSOUS =====
-
+    // Mêmes filtres que dans searchExercises
     if (filters.subchapter) {
       sql += ' AND UPPER(e.subchapter) = UPPER(?)';
       params.push(filters.subchapter);
@@ -176,8 +162,6 @@ export async function getExerciseCount(query = '', filters = {}) {
       params.push(filters.author);
     }
     
-    // ===== FIN DE LA SECTION MODIFIÉE =====
-    
     const result = db.prepare(sql).get(...params);
     return result.count;
     
@@ -189,8 +173,6 @@ export async function getExerciseCount(query = '', filters = {}) {
   }
 }
 
-// ... (les autres fonctions getExerciseByUuid, getSimilarExercises, etc. restent les mêmes) ...
-// ... (copiez-collez la fin de votre fichier original ici) ...
 export async function getExerciseByUuid(uuid) {
   let db;
   try {
@@ -282,51 +264,131 @@ export async function getSimilarExercises(uuid, limit = 5) {
   }
 }
 
+/**
+ * FONCTION CORRIGÉE : Retourne la structure hiérarchique Niveau > Module > Chapitre > Sous-chapitre
+ */
 export async function getChapterStructure() {
   let db;
   try {
     db = new Database(DB_PATH, { readonly: true });
     
-    const chapters = db.prepare(`
+    // Requête pour obtenir tous les groupements avec comptages
+    const query = `
       SELECT 
+        difficulty,
+        module,
         chapter,
         subchapter,
         COUNT(*) as exerciseCount
       FROM exercises 
-      WHERE chapter IS NOT NULL 
-      GROUP BY chapter, subchapter
-      ORDER BY chapter, subchapter
-    `).all();
+      WHERE 
+        difficulty IS NOT NULL 
+        AND module IS NOT NULL 
+        AND chapter IS NOT NULL
+      GROUP BY difficulty, module, chapter, subchapter
+      ORDER BY 
+        CASE 
+          WHEN difficulty LIKE 'L%' THEN CAST(SUBSTR(difficulty, 2) AS INTEGER)
+          WHEN difficulty LIKE 'M%' THEN 100 + CAST(SUBSTR(difficulty, 2) AS INTEGER)
+          ELSE 1000 
+        END,
+        module,
+        chapter,
+        subchapter
+    `;
     
-    const structure = [];
-    const chapterMap = new Map();
+    const rows = db.prepare(query).all();
     
-    for (const row of chapters) {
-      if (!chapterMap.has(row.chapter)) {
-        chapterMap.set(row.chapter, {
-          name: row.chapter,
+    // Construire la hiérarchie
+    const hierarchy = new Map();
+    
+    rows.forEach(row => {
+      const level = row.difficulty;
+      const module = row.module;
+      const chapter = row.chapter;
+      const subchapter = row.subchapter;
+      const count = row.exerciseCount;
+      
+      // Niveau (difficulty)
+      if (!hierarchy.has(level)) {
+        hierarchy.set(level, {
+          name: level,
           exerciseCount: 0,
-          subchapters: []
-        });
-        structure.push(chapterMap.get(row.chapter));
-      }
-      
-      const chapterObj = chapterMap.get(row.chapter);
-      chapterObj.exerciseCount += row.exerciseCount;
-      
-      if (row.subchapter) {
-        chapterObj.subchapters.push({
-          name: row.subchapter,
-          exerciseCount: row.exerciseCount
+          modules: new Map()
         });
       }
-    }
+      
+      const levelObj = hierarchy.get(level);
+      levelObj.exerciseCount += count;
+      
+      // Module dans le niveau
+      if (!levelObj.modules.has(module)) {
+        levelObj.modules.set(module, {
+          name: module,
+          exerciseCount: 0,
+          chapters: new Map()
+        });
+      }
+      
+      const moduleObj = levelObj.modules.get(module);
+      moduleObj.exerciseCount += count;
+      
+      // Chapitre dans le module
+      if (!moduleObj.chapters.has(chapter)) {
+        moduleObj.chapters.set(chapter, {
+          name: chapter,
+          exerciseCount: 0,
+          subchapters: new Map()
+        });
+      }
+      
+      const chapterObj = moduleObj.chapters.get(chapter);
+      chapterObj.exerciseCount += count;
+      
+      // Sous-chapitre dans le chapitre (si existe)
+      if (subchapter) {
+        if (!chapterObj.subchapters.has(subchapter)) {
+          chapterObj.subchapters.set(subchapter, {
+            name: subchapter,
+            exerciseCount: 0
+          });
+        }
+        chapterObj.subchapters.get(subchapter).exerciseCount += count;
+      }
+    });
     
-    return structure;
+    // Convertir en arrays et trier
+    const result = Array.from(hierarchy.entries()).map(([levelName, levelData]) => ({
+      name: levelName,
+      exerciseCount: levelData.exerciseCount,
+      modules: Array.from(levelData.modules.entries()).map(([moduleName, moduleData]) => ({
+        name: moduleName,
+        exerciseCount: moduleData.exerciseCount,
+        chapters: Array.from(moduleData.chapters.entries()).map(([chapterName, chapterData]) => ({
+          name: chapterName,
+          exerciseCount: chapterData.exerciseCount,
+          subchapters: Array.from(chapterData.subchapters.entries()).map(([subName, subData]) => ({
+            name: subName,
+            exerciseCount: subData.exerciseCount
+          })).sort((a, b) => a.name.localeCompare(b.name))
+        })).sort((a, b) => a.name.localeCompare(b.name))
+      })).sort((a, b) => a.name.localeCompare(b.name))
+    })).sort((a, b) => {
+      // Tri intelligent des niveaux
+      const getOrder = (level) => {
+        if (level.startsWith('L')) return parseInt(level.substring(1)) || 0;
+        if (level.startsWith('M')) return 100 + (parseInt(level.substring(1)) || 0);
+        return 1000;
+      };
+      return getOrder(a.name) - getOrder(b.name);
+    });
+    
+    console.log(`Chapter structure built: ${result.length} levels, ${rows.length} total combinations`);
+    return result;
     
   } catch (error) {
-    console.error('Database error in getChapterStructure:', error);
-    throw new Error('Erreur lors de la récupération de la structure');
+    console.error('Error building chapter structure:', error);
+    throw error;
   } finally {
     if (db) db.close();
   }

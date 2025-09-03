@@ -1,14 +1,12 @@
-<!-- src/lib/components/ChapterNavigation.svelte - Version hiérarchique Niveau > Module > Chapitre -->
 <script>
   import { onMount } from 'svelte';
   import { createEventDispatcher } from 'svelte';
   
   const dispatch = createEventDispatcher();
   
-  let hierarchyStructure = [];  // Structure hiérarchique complète
+  let hierarchyStructure = [];
   let loading = true;
   let error = null;
-  let loadingPromise = null; // NOUVEAU : Guard contre les doubles chargements
   let expandedLevels = new Set();
   let expandedModules = new Set();
   let expandedChapters = new Set();
@@ -26,140 +24,32 @@
   export let selectedLevel = '';
   export let compact = false;
   
-  // Charger la structure hiérarchique complète
+  // Charger la structure hiérarchique avec les vrais comptages
   onMount(async () => {
     console.log('🚀 ChapterNavigation component mounted');
     await loadHierarchicalStructure();
   });
   
   async function loadHierarchicalStructure() {
-    // NOUVEAU : Éviter les doubles chargements
-    if (loadingPromise) {
-      console.log('⚠️ loadHierarchicalStructure already in progress, skipping');
-      return loadingPromise;
-    }
-    
     console.log('🔄 Starting loadHierarchicalStructure');
     
-    loadingPromise = (async () => {
-      try {
-        // Charger toutes les données en parallèle - LIMITE pour éviter trop de données
-        const [exercisesResponse] = await Promise.all([
-          fetch('/api/search?limit=500') // Limiter pour éviter les doublons
-        ]);
-        
-        if (exercisesResponse.ok) {
-          const data = await exercisesResponse.json();
-          hierarchyStructure = buildHierarchy(data.results || []);
-          console.log('Hierarchy loaded:', hierarchyStructure.length, 'levels');
-        } else {
-          error = 'Impossible de charger la structure';
-        }
-      } catch (err) {
-        error = 'Erreur de connexion';
-        console.error('Failed to load hierarchy:', err);
-      } finally {
-        loading = false;
-        loadingPromise = null; // Reset après completion
+    try {
+      // CORRECTION: Utiliser l'API chapters avec le bon type
+      const response = await fetch('/api/chapters?type=structure');
+      
+      if (response.ok) {
+        const data = await response.json();
+        hierarchyStructure = data.structure || [];
+        console.log('Hierarchy loaded:', hierarchyStructure.length, 'levels');
+      } else {
+        error = 'Impossible de charger la structure';
       }
-    })();
-    
-    return loadingPromise;
-  }
-  
-  // Construction de la hiérarchie Niveau > Module > Chapitre
-  function buildHierarchy(exercises) {
-    const hierarchy = new Map();
-    
-    // DÉBOGAGE : Éviter les doublons
-    const uniqueExercises = exercises.filter((exercise, index, self) => 
-      index === self.findIndex(e => e.uuid === exercise.uuid)
-    );
-    
-    console.log(`Building hierarchy from ${exercises.length} exercises (${uniqueExercises.length} unique)`);
-    
-    uniqueExercises.forEach(exercise => {
-      const level = exercise.difficulty || 'Non spécifié';
-      const module = exercise.module || 'Non spécifié';
-      const chapter = exercise.chapter || 'Non spécifié';
-      const subchapter = exercise.subchapter;
-      
-      // Niveau
-      if (!hierarchy.has(level)) {
-        hierarchy.set(level, {
-          name: level,
-          exerciseCount: 0,
-          modules: new Map()
-        });
-      }
-      
-      const levelObj = hierarchy.get(level);
-      levelObj.exerciseCount++;
-      
-      // Module dans le niveau
-      if (!levelObj.modules.has(module)) {
-        levelObj.modules.set(module, {
-          name: module,
-          exerciseCount: 0,
-          chapters: new Map()
-        });
-      }
-      
-      const moduleObj = levelObj.modules.get(module);
-      moduleObj.exerciseCount++;
-      
-      // Chapitre dans le module
-      if (!moduleObj.chapters.has(chapter)) {
-        moduleObj.chapters.set(chapter, {
-          name: chapter,
-          exerciseCount: 0,
-          subchapters: new Map()
-        });
-      }
-      
-      const chapterObj = moduleObj.chapters.get(chapter);
-      chapterObj.exerciseCount++;
-      
-      // Sous-chapitre dans le chapitre (si existe)
-      if (subchapter) {
-        if (!chapterObj.subchapters.has(subchapter)) {
-          chapterObj.subchapters.set(subchapter, {
-            name: subchapter,
-            exerciseCount: 0
-          });
-        }
-        chapterObj.subchapters.get(subchapter).exerciseCount++;
-      }
-    });
-    
-    // Convertir en arrays et trier
-    const result = Array.from(hierarchy.entries()).map(([levelName, levelData]) => ({
-      name: levelName,
-      exerciseCount: levelData.exerciseCount,
-      modules: Array.from(levelData.modules.entries()).map(([moduleName, moduleData]) => ({
-        name: moduleName,
-        exerciseCount: moduleData.exerciseCount,
-        chapters: Array.from(moduleData.chapters.entries()).map(([chapterName, chapterData]) => ({
-          name: chapterName,
-          exerciseCount: chapterData.exerciseCount,
-          subchapters: Array.from(chapterData.subchapters.entries()).map(([subName, subData]) => ({
-            name: subName,
-            exerciseCount: subData.exerciseCount
-          })).sort((a, b) => a.name.localeCompare(b.name))
-        })).sort((a, b) => a.name.localeCompare(b.name))
-      })).sort((a, b) => a.name.localeCompare(b.name))
-    })).sort((a, b) => {
-      // Tri intelligent des niveaux
-      const getOrder = (level) => {
-        if (level.startsWith('L')) return parseInt(level.substring(1)) || 0;
-        if (level.startsWith('M')) return 100 + (parseInt(level.substring(1)) || 0);
-        return 1000;
-      };
-      return getOrder(a.name) - getOrder(b.name);
-    });
-    
-    console.log(`Hierarchy built with ${result.length} levels`);
-    return result;
+    } catch (err) {
+      error = 'Erreur de connexion';
+      console.error('Failed to load hierarchy:', err);
+    } finally {
+      loading = false;
+    }
   }
   
   // Synchroniser avec les props externes
@@ -229,11 +119,31 @@
       subchapter: null 
     });
   }
-</script>
 
-<!-- ======================================================= -->
-<!-- LA PARTIE HTML COMMENCE ICI, EN DEHORS DE LA BALISE SCRIPT -->
-<!-- ======================================================= -->
+  function expandAll() {
+    hierarchyStructure.forEach(level => {
+      expandedLevels.add(level.name);
+      level.modules.forEach(module => {
+        expandedModules.add(`${level.name}-${module.name}`);
+        module.chapters.forEach(chapter => {
+          expandedChapters.add(`${level.name}-${module.name}-${chapter.name}`);
+        });
+      });
+    });
+    expandedLevels = expandedLevels;
+    expandedModules = expandedModules;
+    expandedChapters = expandedChapters;
+  }
+
+  function collapseAll() {
+    expandedLevels.clear();
+    expandedModules.clear();
+    expandedChapters.clear();
+    expandedLevels = expandedLevels;
+    expandedModules = expandedModules;
+    expandedChapters = expandedChapters;
+  }
+</script>
 
 <div class="p-4 bg-white rounded-lg border shadow-sm">
   <!-- En-tête de la navigation -->
@@ -264,7 +174,7 @@
     {:else if error}
       <div class="p-3 bg-red-50 text-red-700 rounded-md text-sm">
         {error}
-        <button on:click={fetchHierarchy} class="font-semibold underline mt-2">Réessayer</button>
+        <button on:click={loadHierarchicalStructure} class="font-semibold underline mt-2">Réessayer</button>
       </div>
     {:else if hierarchyStructure.length === 0}
       <div class="text-center text-gray-500 py-4">Aucune donnée disponible</div>
@@ -353,9 +263,6 @@
   {/if}
 </div>
 
-<!-- ======================================================= -->
-<!-- LA BALISE STYLE EST OPTIONNELLE MAIS MONTRE LA STRUCTURE -->
-<!-- ======================================================= -->
 <style>
   /* Les styles spécifiques à CE composant iraient ici.
      Puisque nous avons tout factorisé dans app.css, cette section peut rester vide. */
