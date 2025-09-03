@@ -52,61 +52,86 @@
     return { html, type };
   }
   
-  // Organiser le contenu par type et ordre
+  // Organiser le contenu par type et ordre - VERSION CORRIGÉE
   $: organizedContent = (() => {
-    // Séparer les différents types
-    const questions = content.filter(block => 
-      block.type === 'question'
-    ).sort((a, b) => (a.order || 0) - (b.order || 0));
+    // Trier tout le contenu par ordre d'abord
+    const sortedContent = [...content].sort((a, b) => (a.order || 0) - (b.order || 0));
     
-    const reponses = content.filter(block => 
+    // Séparer les différents types APRÈS le tri
+    const questions = sortedContent.filter(block => block.type === 'question');
+    const reponses = sortedContent.filter(block => 
       block.type === 'reponse' || block.type === 'solution' || block.type === 'answer'
-    ).sort((a, b) => (a.order || 0) - (b.order || 0));
-    
-    const hints = content.filter(block => 
+    );
+    const hints = sortedContent.filter(block => 
       block.type === 'hint' || block.type === 'indication'
-    ).sort((a, b) => (a.order || 0) - (b.order || 0));
-    
-    const mainContent = content.filter(block => 
+    );
+    const mainContent = sortedContent.filter(block => 
       !block.type || block.type === 'text' || block.type === 'math'
-    ).sort((a, b) => (a.order || 0) - (b.order || 0));
+    );
     
-    // Créer des paires question/réponse/indication
-    const questionResponsePairs = [];
+    // Créer des groupes question/indication/réponse basés sur l'ordre réel
+    const questionGroups = [];
+    const usedHints = new Set();
+    const usedResponses = new Set();
     
-    // Si on a autant de questions que de réponses, les associer
-    if (questions.length === reponses.length) {
-      for (let i = 0; i < questions.length; i++) {
-        questionResponsePairs.push({
-          question: questions[i],
-          response: reponses[i],
-          hint: hints[i] || null
+    if (questions.length > 0) {
+      questions.forEach((question, questionIndex) => {
+        const questionOrder = question.order || 0;
+        
+        // Trouver la prochaine question pour délimiter la zone de recherche
+        const nextQuestion = questions[questionIndex + 1];
+        const nextQuestionOrder = nextQuestion ? (nextQuestion.order || 0) : Infinity;
+        
+        // Trouver l'indication la plus proche APRÈS cette question et AVANT la suivante
+        let correspondingHint = null;
+        const availableHints = hints.filter(h => !usedHints.has(h));
+        for (const hint of availableHints) {
+          const hintOrder = hint.order || 0;
+          if (hintOrder > questionOrder && hintOrder < nextQuestionOrder) {
+            correspondingHint = hint;
+            usedHints.add(hint);
+            break; // Prendre la première (plus proche)
+          }
+        }
+        
+        // Trouver la réponse la plus proche APRÈS cette question et AVANT la suivante
+        let correspondingResponse = null;
+        const availableResponses = reponses.filter(r => !usedResponses.has(r));
+        for (const response of availableResponses) {
+          const responseOrder = response.order || 0;
+          if (responseOrder > questionOrder && responseOrder < nextQuestionOrder) {
+            correspondingResponse = response;
+            usedResponses.add(response);
+            break; // Prendre la première (plus proche)
+          }
+        }
+        
+        questionGroups.push({
+          question,
+          hint: correspondingHint,
+          response: correspondingResponse,
+          index: questionIndex
         });
-      }
-    } else {
-      // Sinon, traiter séparément
-      questions.forEach((q, i) => questionResponsePairs.push({ 
-        question: q, 
-        response: reponses[i] || null,
-        hint: hints[i] || null
-      }));
+      });
     }
     
     return {
       mainContent,
-      questionResponsePairs,
-      hints: hints.filter((_, i) => i >= questions.length), // Indications supplémentaires
-      hasQuestionResponseStructure: questions.length > 0
+      questionGroups,
+      extraHints: hints.filter(h => !usedHints.has(h)),
+      extraResponses: reponses.filter(r => !usedResponses.has(r)),
+      hasQuestionStructure: questions.length > 0
     };
   })();
   
   // Initialiser les états locaux basés sur le nombre de questions
-  $: if (organizedContent.questionResponsePairs) {
-    organizedContent.questionResponsePairs.forEach((pair, index) => {
-      if (pair.response && !(index in solutionStates)) {
+  $: if (organizedContent.questionGroups) {
+    organizedContent.questionGroups.forEach((group) => {
+      const index = group.index;
+      if (group.response && !(index in solutionStates)) {
         solutionStates[index] = showSolution || false;
       }
-      if (pair.hint && !(index in hintStates)) {
+      if (group.hint && !(index in hintStates)) {
         hintStates[index] = showHint || false;
       }
     });
@@ -115,10 +140,8 @@
   // Fonctions pour basculer l'affichage individuel
   function toggleSolution(index) {
     if (showSolution) {
-      // Si le mode global est activé, désactiver le global ne change que l'état local
       solutionStates[index] = !solutionStates[index];
     } else {
-      // Sinon, basculer normalement l'état local
       solutionStates[index] = !solutionStates[index];
     }
     solutionStates = { ...solutionStates };
@@ -126,10 +149,8 @@
   
   function toggleHint(index) {
     if (showHint) {
-      // Si le mode global est activé, désactiver le global ne change que l'état local
       hintStates[index] = !hintStates[index];
     } else {
-      // Sinon, basculer normalement l'état local
       hintStates[index] = !hintStates[index];
     }
     hintStates = { ...hintStates };
@@ -149,41 +170,41 @@
     </div>
   {/if}
   
-  <!-- Structure question/réponse alternée -->
-  {#if organizedContent.hasQuestionResponseStructure}
+  <!-- Structure question/indication/réponse dans l'ordre -->
+  {#if organizedContent.hasQuestionStructure}
     <div class="questions-responses">
-      {#each organizedContent.questionResponsePairs as pair, index}
+      {#each organizedContent.questionGroups as group}
         <div class="question-response-pair">
           <!-- Question avec icônes d'actions -->
-          {#if pair.question}
-            {@const processedQ = processContentBlock(pair.question)}
+          {#if group.question}
+            {@const processedQ = processContentBlock(group.question)}
             <div class="question-block">
               <div class="question-header">
                 <div class="question-number">
                   <span class="question-number-badge">
-                    {index + 1}
+                    {group.index + 1}
                   </span>
                 </div>
                 <div class="question-content">
                   <MathRenderer content={processedQ.html} />
                 </div>
                 <div class="question-actions">
-                  {#if pair.hint}
+                  {#if group.hint}
                     <button 
                       class="question-action-btn question-action-btn--hint"
-                      class:question-action-btn--active={hintStates[index] || showHint}
-                      on:click={() => toggleHint(index)}
-                      title={(hintStates[index] || showHint) ? 'Masquer l\'indication' : 'Voir l\'indication'}
+                      class:question-action-btn--active={hintStates[group.index] || showHint}
+                      on:click={() => toggleHint(group.index)}
+                      title={(hintStates[group.index] || showHint) ? 'Masquer l\'indication' : 'Voir l\'indication'}
                     >
                       💡
                     </button>
                   {/if}
-                  {#if pair.response}
+                  {#if group.response}
                     <button 
                       class="question-action-btn question-action-btn--solution"
-                      class:question-action-btn--active={solutionStates[index] || showSolution}
-                      on:click={() => toggleSolution(index)}
-                      title={(solutionStates[index] || showSolution) ? 'Masquer la solution' : 'Voir la solution'}
+                      class:question-action-btn--active={solutionStates[group.index] || showSolution}
+                      on:click={() => toggleSolution(group.index)}
+                      title={(solutionStates[group.index] || showSolution) ? 'Masquer la solution' : 'Voir la solution'}
                     >
                       ✅
                     </button>
@@ -193,9 +214,9 @@
             </div>
           {/if}
           
-          <!-- Indication (affichée conditionnellement) -->
-          {#if pair.hint && (hintStates[index] || showHint)}
-            {@const processedH = processContentBlock(pair.hint)}
+          <!-- Indication (affichée immédiatement après la question si activée) -->
+          {#if group.hint && (hintStates[group.index] || showHint)}
+            {@const processedH = processContentBlock(group.hint)}
             <div class="inline-hint">
               <div class="inline-hint-content">
                 <MathRenderer content={processedH.html} />
@@ -203,9 +224,9 @@
             </div>
           {/if}
           
-          <!-- Réponse (affichée conditionnellement) -->
-          {#if pair.response && (solutionStates[index] || showSolution)}
-            {@const processedR = processContentBlock(pair.response)}
+          <!-- Réponse (affichée après l'indication si activée) -->
+          {#if group.response && (solutionStates[group.index] || showSolution)}
+            {@const processedR = processContentBlock(group.response)}
             <div class="inline-solution">
               <div class="inline-solution-content">
                 <MathRenderer content={processedR.html} />
@@ -219,7 +240,7 @@
   {:else}
     <!-- Fallback : affichage traditionnel si pas de structure Q/R -->
     <div class="traditional-content">
-      {#each content.filter(b => b.type === 'question' || !b.type || b.type === 'text') as block}
+      {#each content.filter(b => b.type === 'question' || !b.type || b.type === 'text').sort((a, b) => (a.order || 0) - (b.order || 0)) as block}
         {@const processed = processContentBlock(block)}
         <div class="content-block">
           <MathRenderer content={processed.html} />
@@ -228,7 +249,7 @@
     </div>
     
     <!-- Solutions groupées (seulement si pas de structure Q/R) -->
-    {#if content.filter(b => b.type === 'reponse' || b.type === 'solution').length > 0}
+    {#if organizedContent.extraResponses.length > 0 || content.filter(b => b.type === 'reponse' || b.type === 'solution').length > 0}
       <details 
         class="mt-8 collapsible-section collapsible-section--solution" 
         bind:open={showSolution}
@@ -237,7 +258,7 @@
           ✅ Solution complète
         </summary>
         <div class="collapsible-content">
-          {#each content.filter(b => b.type === 'reponse' || b.type === 'solution') as block}
+          {#each content.filter(b => b.type === 'reponse' || b.type === 'solution').sort((a, b) => (a.order || 0) - (b.order || 0)) as block}
             {@const processed = processContentBlock(block)}
             <div class="content-block">
               <MathRenderer content={processed.html} />
@@ -248,7 +269,7 @@
     {/if}
     
     <!-- Indications groupées (seulement si pas de structure Q/R) -->
-    {#if content.filter(b => b.type === 'hint' || b.type === 'indication').length > 0}
+    {#if organizedContent.extraHints.length > 0 || content.filter(b => b.type === 'hint' || b.type === 'indication').length > 0}
       <details 
         class="mt-8 collapsible-section collapsible-section--hint" 
         bind:open={showHint}
@@ -257,7 +278,7 @@
           💡 Indication{content.filter(b => b.type === 'hint' || b.type === 'indication').length > 1 ? 's' : ''}
         </summary>
         <div class="collapsible-content">
-          {#each content.filter(b => b.type === 'hint' || b.type === 'indication') as block}
+          {#each content.filter(b => b.type === 'hint' || b.type === 'indication').sort((a, b) => (a.order || 0) - (b.order || 0)) as block}
             {@const processed = processContentBlock(block)}
             <div class="content-block">
               <MathRenderer content={processed.html} />
@@ -269,16 +290,16 @@
   {/if}
   
   <!-- Indications supplémentaires non associées à des questions spécifiques -->
-  {#if organizedContent.hints.length > 0}
+  {#if organizedContent.extraHints.length > 0}
     <details 
       class="mt-8 collapsible-section collapsible-section--hint" 
       bind:open={showHint}
     >
       <summary class="collapsible-summary collapsible-summary--hint">
-        💡 Indication{organizedContent.hints.length > 1 ? 's' : ''} générale{organizedContent.hints.length > 1 ? 's' : ''}
+        💡 Indication{organizedContent.extraHints.length > 1 ? 's' : ''} générale{organizedContent.extraHints.length > 1 ? 's' : ''}
       </summary>
       <div class="collapsible-content">
-        {#each organizedContent.hints as block}
+        {#each organizedContent.extraHints as block}
           {@const processed = processContentBlock(block)}
           <div class="content-block">
             <MathRenderer content={processed.html} />
