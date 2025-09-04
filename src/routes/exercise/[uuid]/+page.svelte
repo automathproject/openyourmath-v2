@@ -40,15 +40,20 @@
       <!-- Header de l'exercice -->
       <header class="exercise-header">
         <!-- Breadcrumb -->
-        <nav class="exercise-breadcrumb">
-          <a href="/">Accueil</a>
-          <span class="mx-2">›</span>
-          <span>{data.exercise.chapter}</span>
-          {#if data.exercise.theme}
-            <span class="mx-2">›</span>
-            <span>{data.exercise.theme}</span>
-          {/if}
-        </nav>
+<nav class="exercise-breadcrumb">
+  <div class="breadcrumb-left">
+    <a href="/">Accueil</a>
+    <span class="mx-2">›</span>
+    <span>{data.exercise.level}</span>
+    <span class="mx-2">›</span>
+    <span>{data.exercise.module}</span>
+    {#if data.exercise.chapter}
+      <span class="mx-2">›</span>
+      <span>{data.exercise.chapter}</span>
+    {/if}
+  </div>
+  <span class="exercise-uuid">{data.exercise.uuid}</span>
+</nav>
         
         <!-- Titre principal -->
         <h1 class="exercise-title">
@@ -56,11 +61,7 @@
         </h1>
         
         <!-- Métadonnées -->
-        <div class="exercise-metadata">
-          <span class="exercise-badge exercise-badge--chapter">
-            {data.exercise.chapter}
-          </span>
-          
+        <div class="exercise-metadata">         
           {#if data.exercise.theme}
             <span class="exercise-badge exercise-badge--theme">
               {data.exercise.theme}
@@ -200,3 +201,23 @@
     </div>
   </div>
 {/if}
+
+<style>
+  .exercise-breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.breadcrumb-left {
+  display: flex;
+  align-items: center;
+}
+
+.exercise-uuid {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: rgb(156, 163, 175); /* text-gray-400 */
+  opacity: 0.8;
+}
+</style>

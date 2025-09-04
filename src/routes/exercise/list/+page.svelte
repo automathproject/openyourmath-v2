@@ -329,15 +329,16 @@
           <article class="exercise-content-wrapper">
             <!-- Header de l'exercice -->
             <header class="exercise-header">
-              <div class="exercise-breadcrumb">
-                <span class="breadcrumb-item">Liste</span>
-                <span class="breadcrumb-separator">›</span>
-                <span class="breadcrumb-item">Exercice {$currentPosition.current}</span>
-                {#if $selectedExercise?.chapter}
-                  <span class="breadcrumb-separator">›</span>
-                  <span class="breadcrumb-item">{$selectedExercise.chapter}</span>
-                {/if}
-              </div>
+<div class="exercise-breadcrumb">
+  <div class="breadcrumb-left">
+    <span class="breadcrumb-item">Exercice {$currentPosition.current}</span>
+    {#if $selectedExercise?.chapter}
+      <span class="breadcrumb-separator">›</span>
+      <span class="breadcrumb-item">{$selectedExercise.chapter}</span>
+    {/if}
+  </div>
+  <span class="exercise-uuid">{$selectedExercise.uuid}</span>
+</div>
               
               <h1 class="exercise-title">{$selectedExercise?.title || 'Exercice'}</h1>
               
@@ -415,3 +416,24 @@
     </div>
   {/if}
 </div>
+
+<style>
+  .exercise-breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.breadcrumb-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.exercise-uuid {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: rgb(156, 163, 175); /* text-gray-400 */
+  opacity: 0.8;
+}
+</style>

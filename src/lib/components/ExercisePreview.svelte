@@ -93,27 +93,14 @@
       <div class="preview-exercise">
         <!-- En-tête de l'exercice -->
         <div class="preview-exercise-header">
-          <div class="preview-breadcrumb">
-            <span class="text-sm text-gray-500">
-              {$previewState.exercise.chapter}
-              {#if $previewState.exercise.theme}
-                › {$previewState.exercise.theme}
-              {/if}
-            </span>
-          </div>
-          
+         
           <h1 class="preview-exercise-title">
             {$previewState.exercise.title}
           </h1>
           
           <!-- Métadonnées -->
           <div class="preview-metadata">
-            {#if $previewState.exercise.level}
-              <span class="preview-badge preview-badge--level">
-                {$previewState.exercise.level}
-              </span>
-            {/if}
-            
+           
             {#if $previewState.exercise.difficulty}
               <span class="preview-badge preview-badge--difficulty">
                 {formatDifficulty($previewState.exercise.difficulty)}
@@ -126,23 +113,7 @@
               </span>
             {/if}
           </div>
-          
-          <!-- Actions rapides -->
-          <div class="preview-quick-actions">
-            <button 
-              on:click={() => showHint = !showHint}
-              class="preview-action-btn {showHint ? 'preview-action-btn--active' : ''}"
-            >
-              💡 {showHint ? 'Masquer' : 'Voir'} indices
-            </button>
-            
-            <button 
-              on:click={() => showSolution = !showSolution}
-              class="preview-action-btn {showSolution ? 'preview-action-btn--active' : ''}"
-            >
-              ✅ {showSolution ? 'Masquer' : 'Voir'} solutions
-            </button>
-          </div>
+
         </div>
         
         <!-- Contenu de l'exercice -->
