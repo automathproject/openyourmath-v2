@@ -308,13 +308,18 @@
                   </div>
                   <div class="flex items-center gap-2">
                     <!-- NOUVEAU : Bouton d'ajout à la liste -->
-                    <div on:click|stopPropagation>
+                    <button 
+                      type="button" 
+                      on:click|stopPropagation 
+                      aria-label="Ajouter à la liste"
+                      class="bg-transparent border-none p-0 m-0"
+                    >
                       <AddToListButton 
                         {exercise} 
                         size="small" 
                         variant="icon"
                       />
-                    </div>
+                    </button>
                     
                     <!-- Indicateur de sélection -->
                     {#if $previewState.selectedUuid === exercise.uuid && $previewState.isOpen}
@@ -332,6 +337,7 @@
                       href="/exercise/{exercise.uuid}" 
                       class="external-link-btn"
                       title="Ouvrir la page complète"
+                      aria-label="Ouvrir la page complète de l'exercice"
                       on:click|stopPropagation
                     >
                       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -395,11 +401,23 @@
 
   <!-- NOUVEAU : Modal de prévisualisation pour mobile -->
   {#if $hasPreview}
-    <div class="lg:hidden fixed inset-0 z-50 bg-black bg-opacity-50" on:click={previewActions.closePreview}>
-      <div class="absolute inset-x-0 bottom-0 bg-white rounded-t-xl max-h-[80vh] overflow-hidden" on:click|stopPropagation>
+    <button
+      type="button"
+      class="lg:hidden fixed inset-0 z-50 bg-black bg-opacity-50"
+      aria-label="Fermer la prévisualisation"
+      on:click={previewActions.closePreview}
+      on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && previewActions.closePreview()}
+      tabindex="0"
+      style="width:100%;height:100%;border:none;padding:0;background:transparent;"
+    >
+      <div
+        class="absolute inset-x-0 bottom-0 bg-white rounded-t-xl max-h-[80vh] overflow-hidden"
+        on:click|stopPropagation
+        role="presentation"
+      >
         <ExercisePreview />
       </div>
-    </div>
+    </button>
   {/if}
 </div>
 
