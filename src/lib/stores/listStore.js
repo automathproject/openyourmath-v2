@@ -2,8 +2,30 @@
 import { writable, derived } from 'svelte/store';
 import { browser } from '$app/environment';
 
-// État de base de la liste
-export const exerciseList = writable([]);
+// Store persistant pour la liste d'exercices (utilise une variable globale côté client)
+let globalExerciseList = [];
+
+// Fonction pour initialiser le store avec la liste globale
+function createExerciseList() {
+  const { subscribe, set, update } = writable(globalExerciseList);
+  
+  return {
+    subscribe,
+    set: (value) => {
+      globalExerciseList = [...value];
+      set(value);
+    },
+    update: (fn) => {
+      const newValue = fn(globalExerciseList);
+      globalExerciseList = [...newValue];
+      set(newValue);
+      return newValue;
+    }
+  };
+}
+
+// État de base de la liste (maintenant persistant)
+export const exerciseList = createExerciseList();
 export const listLoading = writable(false);
 export const listError = writable(null);
 
@@ -74,14 +96,27 @@ export const listActions = {
       }
 
       // Charger les métadonnées des exercices (titre, chapitre, etc.)
+      console.log('Loading metadata for UUIDs:', validUuids);
+      
       const promises = validUuids.map(async (uuid) => {
         try {
-          const response = await fetch(`/api/exercise/${uuid.trim()}/metadata`);
+          // Utiliser l'API complète pour l'instant (on optimisera plus tard)
+          const response = await fetch(`/api/exercise/${uuid.trim()}`);
           if (response.ok) {
             const data = await response.json();
-            return { uuid: uuid.trim(), ...data.exercise };
+            console.log(`Metadata loaded for ${uuid}:`, !!data.exercise);
+            return { 
+              uuid: uuid.trim(), 
+              title: data.exercise.title,
+              chapter: data.exercise.chapter,
+              theme: data.exercise.theme,
+              author: data.exercise.author,
+              difficulty: data.exercise.difficulty,
+              level: data.exercise.level,
+              module: data.exercise.module
+            };
           } else {
-            console.warn(`Failed to load metadata for ${uuid}`);
+            console.warn(`Failed to load metadata for ${uuid}: ${response.status}`);
             return { uuid: uuid.trim(), title: `Exercice ${uuid.slice(0, 8)}...`, error: true };
           }
         } catch (err) {
@@ -114,11 +149,7 @@ export const listActions = {
 
   // Sélectionner un exercice par son index
   async selectExercise(index) {
-    let currentList;
-    const unsubscribe = exerciseList.subscribe(value => currentList = value);
-    unsubscribe();
-
-    if (index < 0 || index >= currentList.length) {
+    if (index < 0 || index >= globalExerciseList.length) {
       console.warn('Invalid exercise index:', index);
       return;
     }
@@ -128,7 +159,7 @@ export const listActions = {
     exerciseError.set(null);
 
     try {
-      const exercise = currentList[index];
+      const exercise = globalExerciseList[index];
       const response = await fetch(`/api/exercise/${exercise.uuid}`);
       
       if (response.ok) {
@@ -151,14 +182,10 @@ export const listActions = {
   // Naviguer vers l'exercice suivant
   async nextExercise() {
     let currentIndex;
-    let currentList;
-    
-    const unsubscribeIndex = selectedExerciseIndex.subscribe(value => currentIndex = value);
-    const unsubscribeList = exerciseList.subscribe(value => currentList = value);
-    unsubscribeIndex();
-    unsubscribeList();
+    const unsubscribe = selectedExerciseIndex.subscribe(value => currentIndex = value);
+    unsubscribe();
 
-    if (currentIndex < currentList.length - 1) {
+    if (currentIndex < globalExerciseList.length - 1) {
       await listActions.selectExercise(currentIndex + 1);
     }
   },
@@ -166,7 +193,6 @@ export const listActions = {
   // Naviguer vers l'exercice précédent
   async previousExercise() {
     let currentIndex;
-    
     const unsubscribe = selectedExerciseIndex.subscribe(value => currentIndex = value);
     unsubscribe();
 
@@ -175,64 +201,51 @@ export const listActions = {
     }
   },
 
-  // Ajouter un exercice à la liste (pour intégration future avec la recherche)
-  async addExercise(uuid) {
-    if (!uuid || uuid.trim() === '') return;
-
-    let currentList;
-    const unsubscribe = exerciseList.subscribe(value => currentList = value);
-    unsubscribe();
-
-    // Vérifier si l'exercice n'est pas déjà dans la liste
-    if (currentList.some(ex => ex.uuid === uuid.trim())) {
-      console.warn('Exercise already in list:', uuid);
+  // Ajouter un exercice à la liste (pour intégration avec la recherche)
+  async addExercise(exerciseData) {
+    if (!exerciseData || !exerciseData.uuid) {
+      console.warn('Invalid exercise data provided to addExercise');
       return;
     }
 
-    try {
-      // Charger les métadonnées de l'exercice
-      // Utiliser l'API complète pour l'instant
-      const response = await fetch(`/api/exercise/${uuid.trim()}`);
-      let exerciseData;
-      
-      if (response.ok) {
-        const data = await response.json();
-        exerciseData = { 
-          uuid: uuid.trim(), 
-          title: data.exercise.title,
-          chapter: data.exercise.chapter,
-          theme: data.exercise.theme,
-          author: data.exercise.author,
-          difficulty: data.exercise.difficulty,
-          level: data.exercise.level,
-          module: data.exercise.module
-        };
-      } else {
-        exerciseData = { uuid: uuid.trim(), title: `Exercice ${uuid.slice(0, 8)}...`, error: true };
-      }
-
-      // Ajouter à la liste
-      exerciseList.update(list => [...list, exerciseData]);
-
-    } catch (err) {
-      console.error('Failed to add exercise to list:', err);
+    // Vérifier si l'exercice n'est pas déjà dans la liste
+    if (globalExerciseList.some(ex => ex.uuid === exerciseData.uuid)) {
+      console.warn('Exercise already in list:', exerciseData.uuid);
+      return;
     }
+
+    // Ajouter l'exercice avec les métadonnées complètes
+    const newExercise = {
+      uuid: exerciseData.uuid,
+      title: exerciseData.title || `Exercice ${exerciseData.uuid.slice(0, 8)}...`,
+      chapter: exerciseData.chapter,
+      theme: exerciseData.theme,
+      author: exerciseData.author,
+      difficulty: exerciseData.difficulty,
+      level: exerciseData.level,
+      module: exerciseData.module
+    };
+
+    console.log('Adding exercise to list:', newExercise);
+    exerciseList.update(list => [...list, newExercise]);
+    console.log('New list length:', globalExerciseList.length);
+  },
+
+  // Vérifier si un exercice est dans la liste
+  isInList(uuid) {
+    return globalExerciseList.some(ex => ex.uuid === uuid);
   },
 
   // Supprimer un exercice de la liste
   removeExercise(index) {
-    let currentList;
     let currentIndex;
-    
-    const unsubscribeList = exerciseList.subscribe(value => currentList = value);
-    const unsubscribeIndex = selectedExerciseIndex.subscribe(value => currentIndex = value);
-    unsubscribeList();
-    unsubscribeIndex();
+    const unsubscribe = selectedExerciseIndex.subscribe(value => currentIndex = value);
+    unsubscribe();
 
-    if (index < 0 || index >= currentList.length) return;
+    if (index < 0 || index >= globalExerciseList.length) return;
 
     // Supprimer l'exercice
-    const newList = currentList.filter((_, i) => i !== index);
+    const newList = globalExerciseList.filter((_, i) => i !== index);
     exerciseList.set(newList);
 
     // Ajuster la sélection
@@ -263,13 +276,9 @@ export const listActions = {
 
   // Obtenir l'URL de la liste actuelle
   getCurrentListUrl() {
-    let currentList;
-    const unsubscribe = exerciseList.subscribe(value => currentList = value);
-    unsubscribe();
+    if (globalExerciseList.length === 0) return '/exercise/list';
 
-    if (currentList.length === 0) return '/exercise/list';
-
-    const uuids = currentList.map(ex => ex.uuid).join(',');
+    const uuids = globalExerciseList.map(ex => ex.uuid).join(',');
     return `/exercise/list?list=${encodeURIComponent(uuids)}`;
   },
 
@@ -289,23 +298,15 @@ export const listActions = {
 export const listUtils = {
   // Générer une URL partageable
   getShareableUrl(baseUrl = '') {
-    let currentList;
-    const unsubscribe = exerciseList.subscribe(value => currentList = value);
-    unsubscribe();
+    if (globalExerciseList.length === 0) return `${baseUrl}/exercise/list`;
 
-    if (currentList.length === 0) return `${baseUrl}/exercise/list`;
-
-    const uuids = currentList.map(ex => ex.uuid).join(',');
+    const uuids = globalExerciseList.map(ex => ex.uuid).join(',');
     return `${baseUrl}/exercise/list?list=${encodeURIComponent(uuids)}`;
   },
 
   // Exporter la liste en format simple
   exportList() {
-    let currentList;
-    const unsubscribe = exerciseList.subscribe(value => currentList = value);
-    unsubscribe();
-
-    return currentList.map(ex => ({
+    return globalExerciseList.map(ex => ({
       uuid: ex.uuid,
       title: ex.title,
       chapter: ex.chapter,
@@ -316,18 +317,14 @@ export const listUtils = {
 
   // Statistiques de la liste
   getListStats() {
-    let currentList;
-    const unsubscribe = exerciseList.subscribe(value => currentList = value);
-    unsubscribe();
-
     const stats = {
-      total: currentList.length,
+      total: globalExerciseList.length,
       byChapter: {},
       byDifficulty: {},
       hasErrors: 0
     };
 
-    currentList.forEach(ex => {
+    globalExerciseList.forEach(ex => {
       if (ex.error) {
         stats.hasErrors++;
       }

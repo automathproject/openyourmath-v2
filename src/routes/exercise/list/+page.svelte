@@ -25,6 +25,7 @@
   // Initialiser la liste depuis les données du serveur
   onMount(() => {
     if (data.exercises && data.exercises.length > 0) {
+      // Mettre à jour la liste seulement si elle vient de l'URL
       exerciseList.set(data.exercises);
       
       // Sélectionner le premier exercice
@@ -35,8 +36,10 @@
         listActions.selectExercise(0);
       }
     } else {
-      exerciseList.set([]);
+      // Si pas d'exercices dans l'URL, garder la liste existante
+      // Ne pas vider exerciseList ici
       selectedExercise.set(null);
+      selectedExerciseIndex.set(0);
     }
     
     // Générer l'URL de partage
@@ -327,28 +330,28 @@
                 <span class="breadcrumb-item">Liste</span>
                 <span class="breadcrumb-separator">›</span>
                 <span class="breadcrumb-item">Exercice {$currentPosition.current}</span>
-                {#if $selectedExercise.chapter}
+                {#if $selectedExercise?.chapter}
                   <span class="breadcrumb-separator">›</span>
                   <span class="breadcrumb-item">{$selectedExercise.chapter}</span>
                 {/if}
               </div>
               
-              <h1 class="exercise-title">{$selectedExercise.title}</h1>
+              <h1 class="exercise-title">{$selectedExercise?.title || 'Exercice'}</h1>
               
               <div class="exercise-metadata">
-                {#if $selectedExercise.chapter}
+                {#if $selectedExercise?.chapter}
                   <span class="exercise-badge exercise-badge--chapter">
                     {$selectedExercise.chapter}
                   </span>
                 {/if}
                 
-                {#if $selectedExercise.theme}
+                {#if $selectedExercise?.theme}
                   <span class="exercise-badge exercise-badge--theme">
                     {$selectedExercise.theme}
                   </span>
                 {/if}
                 
-                {#if $selectedExercise.difficulty}
+                {#if $selectedExercise?.difficulty}
                   <div class="exercise-difficulty">
                     <span class="difficulty-label">Difficulté :</span>
                     <div class="difficulty-stars">
@@ -360,7 +363,7 @@
                   </div>
                 {/if}
                 
-                {#if $selectedExercise.author}
+                {#if $selectedExercise?.author}
                   <span class="exercise-author">
                     Par <strong>{$selectedExercise.author}</strong>
                   </span>

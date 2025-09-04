@@ -1,6 +1,7 @@
 <!-- src/lib/components/ExercisePreview.svelte -->
 <script>
   import ExerciseContent from './ExerciseContent.svelte';
+  import AddToListButton from './AddToListButton.svelte';
   import { previewState, previewActions } from '$lib/stores/searchStore.js';
   
   // Variables locales pour contrôler l'affichage
@@ -36,6 +37,15 @@
     <div class="preview-header-content">
       <h2 class="preview-title">Prévisualisation</h2>
       <div class="preview-actions">
+        <!-- NOUVEAU : Bouton d'ajout à la liste dans la preview -->
+        {#if $previewState.exercise}
+          <AddToListButton 
+            exercise={$previewState.exercise} 
+            size="small" 
+            variant="button"
+          />
+        {/if}
+        
         <button 
           on:click={goToFullPage}
           class="preview-btn preview-btn--primary"

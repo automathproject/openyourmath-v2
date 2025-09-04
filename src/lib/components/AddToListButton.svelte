@@ -1,0 +1,254 @@
+<!-- src/lib/components/AddToListButton.svelte -->
+<script>
+  import { 
+    listActions, 
+    listCount,
+    exerciseList
+  } from '$lib/stores/listStore.js';
+  
+  export let exercise;
+  export let size = 'normal'; // 'small', 'normal', 'large'
+  export let variant = 'button'; // 'button', 'icon'
+  
+  let isAdding = false;
+  let justAdded = false;
+  
+  // Vérifier si l'exercice est déjà dans la liste
+  $: isInList = exercise ? listActions.isInList(exercise.uuid) : false;
+  
+  // Fonction pour ajouter/supprimer de la liste
+  async function toggleInList() {
+    if (!exercise || isAdding) return;
+    
+    isAdding = true;
+    
+    try {
+      if (isInList) {
+        // Supprimer de la liste
+        const exerciseIndex = $exerciseList.findIndex(ex => ex.uuid === exercise.uuid);
+        if (exerciseIndex !== -1) {
+          listActions.removeExercise(exerciseIndex);
+        }
+      } else {
+        // Ajouter à la liste
+        await listActions.addExercise({
+          uuid: exercise.uuid,
+          title: exercise.title,
+          chapter: exercise.chapter,
+          theme: exercise.theme,
+          author: exercise.author,
+          difficulty: exercise.difficulty,
+          level: exercise.level,
+          module: exercise.module
+        });
+        
+        // Animation de feedback
+        justAdded = true;
+        setTimeout(() => {
+          justAdded = false;
+        }, 2000);
+      }
+    } catch (err) {
+      console.error('Failed to toggle exercise in list:', err);
+    } finally {
+      isAdding = false;
+    }
+  }
+  
+  // Classes CSS dynamiques
+  $: buttonClasses = [
+    'add-to-list-btn',
+    `add-to-list-btn--${size}`,
+    `add-to-list-btn--${variant}`,
+    isInList ? 'add-to-list-btn--in-list' : '',
+    isAdding ? 'add-to-list-btn--loading' : '',
+    justAdded ? 'add-to-list-btn--just-added' : ''
+  ].filter(Boolean).join(' ');
+  
+  // Texte du bouton
+  $: buttonText = (() => {
+    if (isAdding) return variant === 'icon' ? '⏳' : 'Ajout...';
+    if (justAdded) return variant === 'icon' ? '✅' : 'Ajouté !';
+    if (isInList) return variant === 'icon' ? '✓' : 'Dans la liste';
+    return variant === 'icon' ? '+' : 'Ajouter à ma liste';
+  })();
+  
+  // Titre du bouton (tooltip)
+  $: buttonTitle = (() => {
+    if (isInList) return 'Supprimer de ma liste';
+    if ($listCount > 0) return `Ajouter à ma liste (${$listCount} exercice${$listCount > 1 ? 's' : ''})`;
+    return 'Ajouter à ma liste';
+  })();
+</script>
+
+<button
+  on:click={toggleInList}
+  disabled={isAdding || !exercise}
+  class={buttonClasses}
+  title={buttonTitle}
+  aria-label={buttonTitle}
+>
+  {#if variant === 'icon'}
+    <span class="add-to-list-icon">{buttonText}</span>
+  {:else}
+    <svg class="add-to-list-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      {#if isInList}
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+      {:else}
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+      {/if}
+    </svg>
+    <span class="add-to-list-text">{buttonText}</span>
+  {/if}
+</button>
+
+<style>
+  .add-to-list-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    background-color: white;
+    color: #374151;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .add-to-list-btn:hover:not(:disabled) {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-to-list-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Tailles */
+  .add-to-list-btn--small {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .add-to-list-btn--normal {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .add-to-list-btn--large {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  /* Variante icône seulement */
+  .add-to-list-btn--icon {
+    padding: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .add-to-list-btn--icon.add-to-list-btn--small {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.25rem;
+  }
+  
+  .add-to-list-btn--icon.add-to-list-btn--large {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.75rem;
+  }
+  
+  /* États */
+  .add-to-list-btn--in-list {
+    background-color: #dcfce7;
+    border-color: #10b981;
+    color: #065f46;
+  }
+  
+  .add-to-list-btn--in-list:hover:not(:disabled) {
+    background-color: #fef2f2;
+    border-color: #ef4444;
+    color: #b91c1c;
+  }
+  
+  .add-to-list-btn--loading {
+    background-color: #f3f4f6;
+    color: #6b7280;
+  }
+  
+  .add-to-list-btn--just-added {
+    background-color: #d1fae5;
+    border-color: #10b981;
+    color: #065f46;
+    animation: pulse-success 0.5s ease-in-out;
+  }
+  
+  /* Éléments internes */
+  .add-to-list-svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+  
+  .add-to-list-btn--small .add-to-list-svg {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+  
+  .add-to-list-btn--large .add-to-list-svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .add-to-list-icon {
+    font-size: 1rem;
+    line-height: 1;
+  }
+  
+  .add-to-list-text {
+    white-space: nowrap;
+  }
+  
+  /* Animation */
+  @keyframes pulse-success {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 640px) {
+    .add-to-list-btn--normal {
+      padding: 0.375rem 0.625rem;
+      font-size: 0.8rem;
+    }
+    
+    .add-to-list-text {
+      display: none;
+    }
+    
+    .add-to-list-btn {
+      width: 2rem;
+      height: 2rem;
+      padding: 0.5rem;
+      border-radius: 50%;
+      justify-content: center;
+    }
+  }
+</style>

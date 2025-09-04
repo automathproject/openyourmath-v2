@@ -4,6 +4,7 @@
   import MobileChapterNav from '../lib/components/MobileChapterNav.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import ExercisePreview from '$lib/components/ExercisePreview.svelte';
+  import AddToListButton from '$lib/components/AddToListButton.svelte';
   
   // Import des stores
   import { 
@@ -286,7 +287,7 @@
           </div>
           <div class="results-grid">
             {#each $results as exercise (exercise.uuid)}
-              <!-- MODIFIÉ : Carte cliquable pour la prévisualisation -->
+              <!-- MODIFIÉ : Carte avec bouton d'ajout à la liste -->
               <div 
                 class="result-card cursor-pointer transition-all duration-200 {$previewState.selectedUuid === exercise.uuid && $previewState.isOpen ? 'result-card--selected' : ''}"
                 on:click={() => selectExercise(exercise)}
@@ -294,7 +295,7 @@
                 tabindex="0"
                 on:keydown={(e) => e.key === 'Enter' && selectExercise(exercise)}
               >
-                <!-- En-tête avec badges et UUID -->
+                <!-- En-tête avec badges et actions -->
                 <div class="flex justify-between items-start mb-2">
                   <div class="flex gap-2 items-center">
                     {#if exercise.level}
@@ -305,7 +306,16 @@
                     {/if}
                   </div>
                   <div class="flex items-center gap-2">
-                    <!-- NOUVEAU : Indicateur de sélection -->
+                    <!-- NOUVEAU : Bouton d'ajout à la liste -->
+                    <div on:click|stopPropagation>
+                      <AddToListButton 
+                        {exercise} 
+                        size="small" 
+                        variant="icon"
+                      />
+                    </div>
+                    
+                    <!-- Indicateur de sélection -->
                     {#if $previewState.selectedUuid === exercise.uuid && $previewState.isOpen}
                       <div class="selection-indicator">
                         <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -313,8 +323,10 @@
                         </svg>
                       </div>
                     {/if}
+                    
                     <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
-                    <!-- NOUVEAU : Lien direct vers la page complète -->
+                    
+                    <!-- Lien direct vers la page complète -->
                     <a 
                       href="/exercise/{exercise.uuid}" 
                       class="external-link-btn"
