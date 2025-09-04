@@ -134,8 +134,9 @@
           <button 
             on:click={shareList}
             class="list-action-btn list-action-btn--primary"
+            aria-label="Partager la liste d'exercices"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
             </svg>
             Partager
@@ -144,8 +145,9 @@
           <button 
             on:click={clearList}
             class="list-action-btn list-action-btn--danger"
+            aria-label="Vider la liste d'exercices"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>
             Vider
@@ -156,7 +158,7 @@
           href="/"
           class="list-action-btn list-action-btn--secondary"
         >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           Rechercher
@@ -170,7 +172,7 @@
     <div class="empty-state">
       <div class="empty-state-content">
         <div class="empty-state-icon">
-          <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
         </div>
@@ -185,7 +187,7 @@
             href="/"
             class="btn btn--primary"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             Commencer la recherche
@@ -223,9 +225,9 @@
             on:click={listActions.previousExercise}
             disabled={!$currentPosition.hasPrevious}
             class="nav-btn nav-btn--prev"
-            title="Exercice précédent (↑)"
+            aria-label="Exercice précédent"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
             </svg>
           </button>
@@ -234,9 +236,9 @@
             on:click={listActions.nextExercise}
             disabled={!$currentPosition.hasNext}
             class="nav-btn nav-btn--next"
-            title="Exercice suivant (↓)"
+            aria-label="Exercice suivant"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
@@ -252,6 +254,7 @@
               <button 
                 on:click={() => selectExercise(index)}
                 class="nav-exercise-btn"
+                aria-label="Sélectionner l'exercice {index + 1}: {exercise.title || `Exercice ${exercise.uuid.slice(0, 8)}...`}"
               >
                 <div class="nav-exercise-info">
                   <div class="nav-exercise-number">
@@ -271,12 +274,12 @@
                       {/if}
                       
                       {#if exercise.difficulty}
-                        <div class="nav-exercise-difficulty">
+                        <div class="nav-exercise-difficulty" aria-label="Difficulté: {exercise.difficulty} sur 5">
                           {#each Array(exercise.difficulty) as _}
-                            <div class="difficulty-dot difficulty-dot--filled"></div>
+                            <div class="difficulty-dot difficulty-dot--filled" aria-hidden="true"></div>
                           {/each}
                           {#each Array(5 - exercise.difficulty) as _}
-                            <div class="difficulty-dot"></div>
+                            <div class="difficulty-dot" aria-hidden="true"></div>
                           {/each}
                         </div>
                       {/if}
@@ -288,9 +291,9 @@
               <button 
                 on:click={() => removeExercise(index)}
                 class="nav-exercise-remove"
-                title="Supprimer de la liste"
+                aria-label="Supprimer l'exercice {exercise.title || `Exercice ${exercise.uuid.slice(0, 8)}...`} de la liste"
               >
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -309,7 +312,7 @@
         {:else if $exerciseError}
           <div class="exercise-error">
             <div class="error-icon">
-              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
@@ -354,9 +357,9 @@
                 {#if $selectedExercise?.difficulty}
                   <div class="exercise-difficulty">
                     <span class="difficulty-label">Difficulté :</span>
-                    <div class="difficulty-stars">
+                    <div class="difficulty-stars" aria-label="Difficulté: {$selectedExercise.difficulty} sur 5">
                       {#each Array(5) as _, i}
-                        <div class="difficulty-star {i < $selectedExercise.difficulty ? 'difficulty-star--filled' : ''}"></div>
+                        <div class="difficulty-star {i < $selectedExercise.difficulty ? 'difficulty-star--filled' : ''}" aria-hidden="true"></div>
                       {/each}
                     </div>
                     <span class="difficulty-value">({$selectedExercise.difficulty}/5)</span>
@@ -401,7 +404,7 @@
         {:else}
           <div class="no-selection">
             <div class="no-selection-icon">
-              <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>

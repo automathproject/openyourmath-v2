@@ -93,31 +93,4 @@
   </footer>
 </div>
 
-<style>
-  .list-counter {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: #ef4444;
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 600;
-    min-width: 1.25rem;
-    height: 1.25rem;
-    border-radius: 9999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 0.25rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Responsive : masquer le texte "Ma liste" sur petits écrans */
-  @media (max-width: 640px) {
-    .list-counter {
-      position: static;
-      margin-left: 0.25rem;
-      background-color: #6b7280;
-    }
-  }
-</style>
+<style></style>

@@ -1,3 +1,4 @@
+<!-- src/routes/+page.svelte -->
 <script>
   import { onMount } from 'svelte';
   import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
@@ -299,10 +300,10 @@
                 <div class="flex justify-between items-start mb-2">
                   <div class="flex gap-2 items-center">
                     {#if exercise.level}
-                      <div class="result-level">{exercise.level}</div>
+                      <div class="result-badge">{exercise.level}</div>
                     {/if}
                     {#if exercise.difficulty}
-                      <div class="result-difficulty">{formatDifficulty(exercise.difficulty)}</div>
+                      <div class="result-badge">{formatDifficulty(exercise.difficulty)}</div>
                     {/if}
                   </div>
                   <div class="flex items-center gap-2">
@@ -402,124 +403,4 @@
   {/if}
 </div>
 
-<style>
-  /* Styles pour la section preview */
-  .result-preview div {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
-  /* Styles spéciaux pour les formules dans la preview */
-  .result-preview :global(.katex) {
-    font-size: 0.875rem !important;
-  }
-  
-  .result-preview :global(.katex-display) {
-    margin: 0.25rem 0 !important;
-  }
-  
-  /* Styles pour les badges de niveau et difficulté */
-  .result-level {
-    @apply px-2 py-1 text-xs rounded-md bg-blue-100 text-blue-800 font-medium;
-  }
-  
-  .result-difficulty {
-    @apply px-2 py-1 text-xs rounded-md bg-yellow-100 text-yellow-800 font-medium;
-  }
-  
-  /* NOUVEAU : Styles pour la sélection et interactions */
-  .result-card {
-    @apply p-4 border border-gray-200 rounded-lg bg-white hover:border-blue-300 hover:shadow-md;
-  }
-  
-  .result-card--selected {
-    @apply border-blue-500 bg-blue-50 shadow-md;
-  }
-  
-  .selection-indicator {
-    @apply w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center;
-  }
-  
-  .external-link-btn {
-    @apply text-gray-400 hover:text-blue-600 transition-colors p-1 rounded;
-  }
-  
-  .external-link-btn:hover {
-    @apply bg-blue-50;
-  }
-  
-  /* Styles pour les classes utilitaires manquantes */
-  .search-input {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
-  }
-  
-  .btn {
-    @apply inline-flex items-center px-4 py-2 border font-medium rounded-md transition-colors;
-  }
-  
-  .btn-secondary {
-    @apply bg-white text-gray-700 border-gray-300 hover:bg-gray-50;
-  }
-  
-  .btn-text {
-    @apply bg-transparent border-transparent hover:bg-gray-50;
-  }
-  
-  .btn-primary {
-    @apply bg-blue-600 text-white border-blue-600 hover:bg-blue-700;
-  }
-  
-  .form-input {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500;
-  }
-  
-  .results-title {
-    @apply text-lg font-semibold text-gray-900;
-  }
-  
-  .results-grid {
-    @apply grid gap-4;
-  }
-  
-  .result-title {
-    @apply text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors;
-  }
-  
-  .result-metadata {
-    @apply text-sm text-gray-600 mt-1;
-  }
-  
-  .result-badge {
-    @apply text-gray-600;
-  }
-  
-  .search-error {
-    @apply bg-red-50 border border-red-200 rounded-lg p-4;
-  }
-  
-  .search-error-text {
-    @apply text-red-800;
-  }
-  
-  .empty-state {
-    @apply text-center py-12;
-  }
-  
-  .empty-state-title {
-    @apply text-xl font-semibold text-gray-900 mb-2;
-  }
-  
-  .empty-state-subtitle {
-    @apply text-gray-600;
-  }
-  
-  .search-loading {
-    @apply absolute right-4 top-1/2 transform -translate-y-1/2;
-  }
-  
-  .search-spinner {
-    @apply animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600;
-  }
-</style>
+<style></style>
