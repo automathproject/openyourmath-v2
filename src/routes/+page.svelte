@@ -286,20 +286,13 @@
     <!-- En-tête avec badges et UUID -->
     <div class="flex justify-between items-start mb-2">
       <div class="flex gap-2 items-center">
-        <!-- MODIFIÉ : Affichage du niveau (level) -->
         {#if exercise.level}
           <div class="result-level">{exercise.level}</div>
         {/if}
-        <!-- NOUVEAU : Affichage de la difficulté numérique (difficulty) -->
         {#if exercise.difficulty}
           <div class="result-difficulty">{formatDifficulty(exercise.difficulty)}</div>
         {/if}
-      </div>
-      <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
-    </div>
-    
-    <div class="result-header">
-      <div>
+              <div>
         <h3 class="result-title">{exercise.title}</h3>
         <div class="result-metadata">
           {#if exercise.module}
@@ -310,6 +303,12 @@
           {/if}
         </div>
       </div>
+      </div>
+      <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
+    </div>
+    
+    <div class="result-header">
+
     </div>
     
     <!-- Section preview ajoutée -->
