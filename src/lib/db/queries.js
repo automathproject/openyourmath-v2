@@ -542,3 +542,73 @@ export async function getSuggestions(type = 'all', limit = 10) {
     if (db) db.close();
   }
 }
+
+// Fonction à ajouter dans src/lib/db/queries.js
+
+/**
+ * Récupère uniquement les métadonnées d'un exercice (sans le contenu complet)
+ * Optimisé pour les listes et prévisualisations
+ */
+export async function getExerciseMetadata(uuid) {
+  let db;
+  try {
+    db = openDatabase();
+    
+    // Requête optimisée : sélectionner uniquement les champs métadonnées
+    const stmt = db.prepare(`
+      SELECT 
+        uuid,
+        title,
+        chapter,
+        theme,
+        author,
+        difficulty,
+        level,
+        module,
+        -- Vérifier si l'exercice a du contenu sans le charger
+        CASE 
+          WHEN content IS NOT NULL AND content != '' AND content != '[]' 
+          THEN 1 
+          ELSE 0 
+        END as has_content,
+        created_at,
+        updated_at
+      FROM exercises 
+      WHERE uuid = ?
+      LIMIT 1
+    `);
+    
+    const exercise = stmt.get(uuid);
+    
+    if (!exercise) {
+      return null;
+    }
+    
+    // Formater la réponse
+    return {
+      uuid: exercise.uuid,
+      title: exercise.title || `Exercice ${exercise.uuid.slice(0, 8)}...`,
+      chapter: exercise.chapter,
+      theme: exercise.theme,
+      author: exercise.author,
+      difficulty: exercise.difficulty,
+      level: exercise.level,
+      module: exercise.module,
+      hasContent: !!exercise.has_content,
+      createdAt: exercise.created_at,
+      updatedAt: exercise.updated_at
+    };
+    
+  } catch (error) {
+    console.error('Database error in getExerciseMetadata:', error);
+    throw error;
+  } finally {
+    if (db) {
+      try {
+        db.close();
+      } catch (closeError) {
+        console.warn('Error closing database:', closeError);
+      }
+    }
+  }
+}
