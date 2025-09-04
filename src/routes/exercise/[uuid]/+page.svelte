@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-  <title>{data.exercise?.title || 'Exercice'} - OpenYourMath</title>
+  <title>{data.exercise?.title || 'Exercice'} - OpenYourMath v2</title>
   <meta name="description" content="Exercice de mathématiques : {data.exercise?.title || 'Non trouvé'}" />
 </svelte:head>
 

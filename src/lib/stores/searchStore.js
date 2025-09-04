@@ -8,12 +8,21 @@ export const loading = writable(false);
 export const error = writable(null);
 export const searchMeta = writable(null);
 
-// Filtres de recherche - MODIFIÉ : Ajout du champ difficulty
+// NOUVEAU : État pour la prévisualisation
+export const previewState = writable({
+  selectedUuid: null,
+  exercise: null,
+  loading: false,
+  error: null,
+  isOpen: false
+});
+
+// Filtres de recherche
 export const filters = writable({
   chapter: '',
   subchapter: '',
   level: '',
-  difficulty: '', // NOUVEAU : Filtre pour difficulté numérique
+  difficulty: '',
   module: '',
   author: ''
 });
@@ -26,7 +35,7 @@ export const hasActiveFilters = derived(
       $searchQuery || 
       $filters.chapter || 
       $filters.level || 
-      $filters.difficulty || // NOUVEAU : Inclure difficulty
+      $filters.difficulty ||
       $filters.module || 
       $filters.author
     );
@@ -41,6 +50,12 @@ export const hasResults = derived(
 export const hasSearched = derived(
   hasActiveFilters,
   ($hasActiveFilters) => $hasActiveFilters
+);
+
+// NOUVEAU : État dérivé pour la prévisualisation
+export const hasPreview = derived(
+  previewState,
+  ($previewState) => $previewState.isOpen && $previewState.exercise
 );
 
 // Actions pour gérer la recherche
@@ -61,14 +76,14 @@ export const searchActions = {
     }));
   },
 
-  // Effacer tous les filtres - MODIFIÉ : Inclure difficulty
+  // Effacer tous les filtres
   clearAllFilters() {
     searchQuery.set('');
     filters.set({
       chapter: '',
       subchapter: '',
       level: '',
-      difficulty: '', // NOUVEAU : Reset difficulty
+      difficulty: '',
       module: '',
       author: ''
     });
@@ -88,7 +103,7 @@ export const searchActions = {
     }));
   },
 
-  // Exécuter la recherche - MODIFIÉ : Inclure difficulty
+  // Exécuter la recherche
   async search() {
     let currentQuery;
     let currentFilters;
@@ -128,7 +143,6 @@ export const searchActions = {
         searchParams.set('level', currentFilters.level);
       }
       
-      // NOUVEAU : Ajouter le filtre difficulty
       if (currentFilters.difficulty) {
         searchParams.set('difficulty', currentFilters.difficulty);
       }
@@ -164,12 +178,95 @@ export const searchActions = {
   }
 };
 
-// Store pour les suggestions (autocomplete) - MODIFIÉ : Ajout des difficulties
+// NOUVEAU : Actions pour gérer la prévisualisation
+export const previewActions = {
+  // Sélectionner un exercice pour prévisualisation
+  async selectExercise(uuid) {
+    // Si c'est le même exercice, on ferme/ouvre la preview
+    previewState.update(current => {
+      if (current.selectedUuid === uuid && current.isOpen) {
+        return {
+          ...current,
+          isOpen: false
+        };
+      }
+      return {
+        ...current,
+        selectedUuid: uuid,
+        loading: true,
+        error: null,
+        isOpen: true
+      };
+    });
+
+    // Si on ferme juste la preview, pas besoin de charger
+    let shouldLoad = true;
+    const unsubscribe = previewState.subscribe(state => {
+      if (state.selectedUuid === uuid && !state.isOpen) {
+        shouldLoad = false;
+      }
+    });
+    unsubscribe();
+
+    if (!shouldLoad) return;
+
+    try {
+      const response = await fetch(`/api/exercise/${uuid}`);
+      
+      if (response.ok) {
+        const data = await response.json();
+        previewState.update(current => ({
+          ...current,
+          exercise: data.exercise,
+          loading: false,
+          error: null
+        }));
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        previewState.update(current => ({
+          ...current,
+          exercise: null,
+          loading: false,
+          error: errorData.error || 'Erreur de chargement'
+        }));
+      }
+    } catch (err) {
+      console.error('Erreur chargement exercice:', err);
+      previewState.update(current => ({
+        ...current,
+        exercise: null,
+        loading: false,
+        error: 'Erreur de connexion'
+      }));
+    }
+  },
+
+  // Fermer la prévisualisation
+  closePreview() {
+    previewState.update(current => ({
+      ...current,
+      isOpen: false
+    }));
+  },
+
+  // Effacer complètement la prévisualisation
+  clearPreview() {
+    previewState.set({
+      selectedUuid: null,
+      exercise: null,
+      loading: false,
+      error: null,
+      isOpen: false
+    });
+  }
+};
+
+// Store pour les suggestions (autocomplete)
 export const suggestions = writable({
   authors: [],
   modules: [],
   levels: [],
-  difficulties: [], // NOUVEAU : Suggestions pour les difficultés numériques
+  difficulties: [],
   loading: false
 });
 
@@ -178,12 +275,11 @@ export const suggestionActions = {
     suggestions.update(current => ({ ...current, loading: true }));
 
     try {
-      // MODIFIÉ : Ajouter l'appel pour difficulties en utilisant votre API existante
       const [authorsResponse, modulesResponse, levelsResponse, difficultiesResponse] = await Promise.all([
         fetch('/api/chapters?type=suggestions&for=authors&limit=20'),
         fetch('/api/chapters?type=suggestions&for=modules&limit=15'),
         fetch('/api/chapters?type=suggestions&for=levels&limit=10'),
-        fetch('/api/chapters?type=suggestions&for=difficulties&limit=10') // NOUVEAU : Utiliser votre API existante
+        fetch('/api/chapters?type=suggestions&for=difficulties&limit=10')
       ]);
 
       const authorsData = authorsResponse.ok ? await authorsResponse.json() : { suggestions: [] };
@@ -195,16 +291,8 @@ export const suggestionActions = {
         authors: authorsData.suggestions || [],
         modules: modulesData.suggestions || [],
         levels: levelsData.suggestions || [],
-        difficulties: difficultiesData.suggestions || [], // NOUVEAU : Stocker les difficultés
+        difficulties: difficultiesData.suggestions || [],
         loading: false
-      });
-
-      // Debug temporaire - supprimez après vérification
-      console.log('Suggestions chargées:', {
-        authors: (authorsData.suggestions || []).length,
-        modules: (modulesData.suggestions || []).length,
-        levels: (levelsData.suggestions || []).length,
-        difficulties: (difficultiesData.suggestions || []).length
       });
 
     } catch (err) {

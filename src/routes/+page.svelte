@@ -3,6 +3,7 @@
   import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
   import MobileChapterNav from '../lib/components/MobileChapterNav.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
+  import ExercisePreview from '$lib/components/ExercisePreview.svelte';
   
   // Import des stores
   import { 
@@ -17,7 +18,10 @@
     hasSearched,
     searchActions,
     suggestions,
-    suggestionActions
+    suggestionActions,
+    previewState,
+    previewActions,
+    hasPreview
   } from '$lib/stores/searchStore.js';
   
   import { useDebounce } from '$lib/hooks/useDebounce.js';
@@ -32,7 +36,7 @@
   
   // États dérivés réactifs utilisant les stores
   $: selectedPath = {
-    level: $filters.level, // MODIFIÉ : level au lieu de difficulty
+    level: $filters.level,
     module: $filters.module,
     chapter: $filters.chapter,
     subchapter: $filters.subchapter
@@ -49,6 +53,11 @@
     // Utiliser l'action du store au lieu de la logique locale
     searchActions.updateFromNavigation({ level, module, chapter, subchapter });
     searchActions.search();
+  }
+  
+  // NOUVEAU : Fonction pour sélectionner un exercice
+  function selectExercise(exercise) {
+    previewActions.selectExercise(exercise.uuid);
   }
   
   function selectAuthor(author) {
@@ -79,17 +88,14 @@
     setTimeout(() => showAuthorSuggestions = false, 150);
   }
   
-  // MODIFIÉ : Renommé pour refléter le changement de level
   function handleLevelChange() {
     searchActions.search();
   }
 
-  // NOUVEAU : Gestion du filtre difficulty numérique
   function handleDifficultyChange() {
     searchActions.search();
   }
 
-  // NOUVEAU : Fonction pour formater l'affichage de la difficulté
   function formatDifficulty(difficulty) {
     if (difficulty === null || difficulty === undefined) {
       return null;
@@ -108,7 +114,6 @@
     <h1 class="text-4xl font-bold text-gray-900 mb-2">Recherchez votre exercice</h1>
     <p class="text-gray-600 mb-6">Utilisez la recherche textuelle ou naviguez par chapitres, modules et niveaux.</p>
     <div class="relative">
-      <!-- Utilisation du store searchQuery avec binding réactif -->
       <input 
         type="search" 
         bind:value={$searchQuery} 
@@ -122,8 +127,8 @@
     </div>
   </div>
 
-  <!-- Mise en page principale en deux colonnes -->
-  <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+  <!-- MODIFIÉ : Mise en page principale adaptative selon la prévisualisation -->
+  <div class="grid gap-8 transition-all duration-300 {$hasPreview ? 'grid-cols-1 lg:grid-cols-6' : 'grid-cols-1 lg:grid-cols-4'}">
     
     <!-- COLONNE DE GAUCHE : Navigation -->
     <aside class="lg:col-span-1">
@@ -150,15 +155,14 @@
       </div>
     </aside>
 
-    <!-- COLONNE DE DROITE : Filtres et Résultats -->
-    <main class="lg:col-span-3">
+    <!-- COLONNE DU MILIEU : Filtres et Résultats -->
+    <main class="{$hasPreview ? 'lg:col-span-3' : 'lg:col-span-3'}">
       <!-- Section des filtres avancés -->
       <div class="mb-6">
         <div class="flex items-center justify-between mb-4">
           <button on:click={() => showAdvancedFilters = !showAdvancedFilters} class="btn btn-secondary">
             Filtres avancés {showAdvancedFilters ? '▲' : '▼'}
           </button>
-          <!-- Utilisation du store hasActiveFilters -->
           {#if $hasActiveFilters}
             <button on:click={searchActions.clearAllFilters} class="btn btn-text text-sm text-blue-600">
               Effacer tout
@@ -196,7 +200,7 @@
               {/if}
             </div>
             
-            <!-- MODIFIÉ : Niveau (level) au lieu de difficulty -->
+            <!-- Niveau -->
             <div>
               <label for="level-filter" class="block text-sm font-medium text-gray-700 mb-1">Niveau</label>
               <select 
@@ -212,7 +216,7 @@
               </select>
             </div>
             
-            <!-- NOUVEAU : Difficulté numérique (1-5) -->
+            <!-- Difficulté numérique -->
             <div>
               <label for="difficulty-filter" class="block text-sm font-medium text-gray-700 mb-1">Difficulté</label>
               <select 
@@ -281,46 +285,73 @@
             </h2>
           </div>
           <div class="results-grid">
-{#each $results as exercise (exercise.uuid)}
-  <a href="/exercise/{exercise.uuid}" class="result-card">
-    <!-- En-tête avec badges et UUID -->
-    <div class="flex justify-between items-start mb-2">
-      <div class="flex gap-2 items-center">
-        {#if exercise.level}
-          <div class="result-level">{exercise.level}</div>
-        {/if}
-        {#if exercise.difficulty}
-          <div class="result-difficulty">{formatDifficulty(exercise.difficulty)}</div>
-        {/if}
-              <div>
-        <h3 class="result-title">{exercise.title}</h3>
-        <div class="result-metadata">
-          {#if exercise.module}
-            <span class="result-badge">📖 {exercise.module} - </span>
-          {/if}
-          {#if exercise.chapter}
-            <span class="result-badge"> {exercise.chapter}</span>
-          {/if}
-        </div>
-      </div>
-      </div>
-      <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
-    </div>
-    
-    <div class="result-header">
-
-    </div>
-    
-    <!-- Section preview ajoutée -->
-    {#if exercise.preview}
-      <div class="result-preview mt-3">
-        <div class="text-gray-600 text-sm line-clamp-3">
-          <MathRenderer content={exercise.preview} />
-        </div>
-      </div>
-    {/if}
-  </a>
-{/each}
+            {#each $results as exercise (exercise.uuid)}
+              <!-- MODIFIÉ : Carte cliquable pour la prévisualisation -->
+              <div 
+                class="result-card cursor-pointer transition-all duration-200 {$previewState.selectedUuid === exercise.uuid && $previewState.isOpen ? 'result-card--selected' : ''}"
+                on:click={() => selectExercise(exercise)}
+                role="button"
+                tabindex="0"
+                on:keydown={(e) => e.key === 'Enter' && selectExercise(exercise)}
+              >
+                <!-- En-tête avec badges et UUID -->
+                <div class="flex justify-between items-start mb-2">
+                  <div class="flex gap-2 items-center">
+                    {#if exercise.level}
+                      <div class="result-level">{exercise.level}</div>
+                    {/if}
+                    {#if exercise.difficulty}
+                      <div class="result-difficulty">{formatDifficulty(exercise.difficulty)}</div>
+                    {/if}
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <!-- NOUVEAU : Indicateur de sélection -->
+                    {#if $previewState.selectedUuid === exercise.uuid && $previewState.isOpen}
+                      <div class="selection-indicator">
+                        <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                    {/if}
+                    <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
+                    <!-- NOUVEAU : Lien direct vers la page complète -->
+                    <a 
+                      href="/exercise/{exercise.uuid}" 
+                      class="external-link-btn"
+                      title="Ouvrir la page complète"
+                      on:click|stopPropagation
+                    >
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="result-header">
+                  <div>
+                    <h3 class="result-title">{exercise.title}</h3>
+                    <div class="result-metadata">
+                      {#if exercise.module}
+                        <span class="result-badge">📖 {exercise.module} - </span>
+                      {/if}
+                      {#if exercise.chapter}
+                        <span class="result-badge"> {exercise.chapter}</span>
+                      {/if}
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Section preview -->
+                {#if exercise.preview}
+                  <div class="result-preview mt-3">
+                    <div class="text-gray-600 text-sm line-clamp-3">
+                      <MathRenderer content={exercise.preview} />
+                    </div>
+                  </div>
+                {/if}
+              </div>
+            {/each}
           </div>
         {:else if $hasSearched}
           <div class="empty-state">
@@ -338,7 +369,25 @@
         {/if}
       </div>
     </main>
+
+    <!-- NOUVEAU : COLONNE DE DROITE : Prévisualisation -->
+    {#if $hasPreview}
+      <aside class="lg:col-span-2 hidden lg:block">
+        <div class="sticky top-8 h-[calc(100vh-8rem)]">
+          <ExercisePreview />
+        </div>
+      </aside>
+    {/if}
   </div>
+
+  <!-- NOUVEAU : Modal de prévisualisation pour mobile -->
+  {#if $hasPreview}
+    <div class="lg:hidden fixed inset-0 z-50 bg-black bg-opacity-50" on:click={previewActions.closePreview}>
+      <div class="absolute inset-x-0 bottom-0 bg-white rounded-t-xl max-h-[80vh] overflow-hidden" on:click|stopPropagation>
+        <ExercisePreview />
+      </div>
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -359,7 +408,7 @@
     margin: 0.25rem 0 !important;
   }
   
-  /* NOUVEAU : Styles pour les badges de niveau et difficulté */
+  /* Styles pour les badges de niveau et difficulté */
   .result-level {
     @apply px-2 py-1 text-xs rounded-md bg-blue-100 text-blue-800 font-medium;
   }
@@ -368,6 +417,97 @@
     @apply px-2 py-1 text-xs rounded-md bg-yellow-100 text-yellow-800 font-medium;
   }
   
-  /* Cette section utilise principalement Tailwind mais ajoute 
-     quelques styles personnalisés pour le preview et les badges */
+  /* NOUVEAU : Styles pour la sélection et interactions */
+  .result-card {
+    @apply p-4 border border-gray-200 rounded-lg bg-white hover:border-blue-300 hover:shadow-md;
+  }
+  
+  .result-card--selected {
+    @apply border-blue-500 bg-blue-50 shadow-md;
+  }
+  
+  .selection-indicator {
+    @apply w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center;
+  }
+  
+  .external-link-btn {
+    @apply text-gray-400 hover:text-blue-600 transition-colors p-1 rounded;
+  }
+  
+  .external-link-btn:hover {
+    @apply bg-blue-50;
+  }
+  
+  /* Styles pour les classes utilitaires manquantes */
+  .search-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+  }
+  
+  .btn {
+    @apply inline-flex items-center px-4 py-2 border font-medium rounded-md transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-gray-700 border-gray-300 hover:bg-gray-50;
+  }
+  
+  .btn-text {
+    @apply bg-transparent border-transparent hover:bg-gray-50;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white border-blue-600 hover:bg-blue-700;
+  }
+  
+  .form-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500;
+  }
+  
+  .results-title {
+    @apply text-lg font-semibold text-gray-900;
+  }
+  
+  .results-grid {
+    @apply grid gap-4;
+  }
+  
+  .result-title {
+    @apply text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors;
+  }
+  
+  .result-metadata {
+    @apply text-sm text-gray-600 mt-1;
+  }
+  
+  .result-badge {
+    @apply text-gray-600;
+  }
+  
+  .search-error {
+    @apply bg-red-50 border border-red-200 rounded-lg p-4;
+  }
+  
+  .search-error-text {
+    @apply text-red-800;
+  }
+  
+  .empty-state {
+    @apply text-center py-12;
+  }
+  
+  .empty-state-title {
+    @apply text-xl font-semibold text-gray-900 mb-2;
+  }
+  
+  .empty-state-subtitle {
+    @apply text-gray-600;
+  }
+  
+  .search-loading {
+    @apply absolute right-4 top-1/2 transform -translate-y-1/2;
+  }
+  
+  .search-spinner {
+    @apply animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600;
+  }
 </style>
