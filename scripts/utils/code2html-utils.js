@@ -1,6 +1,6 @@
-// scripts/utils/code2html-utils.mjs
+// scripts/utils/code2html-utils.js
 import crypto from 'crypto';
-import { stripComments } from './tex2html-utils.mjs';
+import { stripComments } from './tex2html-utils.js';
 
 /**
  * Détecte le langage de programmation à partir du nom du bloc SaveVerbatim

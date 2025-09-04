@@ -1,4 +1,4 @@
-// scripts/analyze-chapters.mjs - Script pour analyser tous les chapitres existants
+// scripts/analyze-chapters.js - Script pour analyser tous les chapitres existants
 import Database from 'better-sqlite3';
 import path from 'path';
 import fs from 'fs';
@@ -190,8 +190,8 @@ function generateDomainSuggestions(chapterMap) {
  */
 async function generateMappingFile(chapterMap, domainSuggestions) {
   const mappingContent = `// src/lib/metadata-mappings.js - Généré automatiquement
-// ⚠️  Ce fichier est généré par scripts/analyze-chapters.mjs
-// ✏️  Modifiez les mappings selon vos besoins puis relancez build-db.mjs
+// ⚠️  Ce fichier est généré par scripts/analyze-chapters.js
+// ✏️  Modifiez les mappings selon vos besoins puis relancez build-db.js
 
 export const chapterMappings = {
 ${Array.from(chapterMap.keys()).map(chapter => {
