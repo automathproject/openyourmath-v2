@@ -1,8 +1,8 @@
-// scripts/build-tikz.mjs
+// scripts/build-tikz.js
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { convertTikzToSVG, defaultConfig } from './utils/tikz2svg-utils.mjs';
+import { convertTikzToSVG, defaultConfig } from './utils/tikz2svg-utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

@@ -1,4 +1,4 @@
-// scripts/parse-latex.mjs
+// scripts/parse-latex.js
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
@@ -10,16 +10,16 @@ import {
   wrapAlignWithDollar, 
   isCommandCommented, 
   convertLaTeXToHTML 
-} from './utils/tex2html-utils.mjs';
+} from './utils/tex2html-utils.js';
 
 import {
   extractSaveVerbatimBlocks,
   replaceBUseVerbatimWithPlaceholders,
   restoreCodeBlocksFromPlaceholders,
   convertCodeToHTML
-} from './utils/code2html-utils.mjs';
+} from './utils/code2html-utils.js';
 
-import { CacheManager } from './utils/cache-manager.mjs';
+import { CacheManager } from './utils/cache-manager.js';
 
 // Import des utilitaires de preview
 import { generatePreview } from './utils/previewUtils.js';

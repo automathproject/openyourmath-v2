@@ -9,8 +9,8 @@ echo "📁 Création des fichiers utils..."
 # 1. Créer le dossier utils
 mkdir -p build/utils
 
-# 2. Copier tex2html-utils.mjs (depuis l'artifact)
-cat > build/utils/tex2html-utils.mjs << 'EOF'
+# 2. Copier tex2html-utils.js (depuis l'artifact)
+cat > build/utils/tex2html-utils.js << 'EOF'
 // (Le contenu de l'artifact tex2html_utils sera copié ici)
 import fs from 'fs';
 import path from 'path';
@@ -173,8 +173,8 @@ function convertLaTeXToHTMLFallback(latex) {
 }
 EOF
 
-# 3. Créer tikz2svg-utils.mjs simplifié (sans TikZ pour le test)
-cat > build/utils/tikz2svg-utils.mjs << 'EOF'
+# 3. Créer tikz2svg-utils.js simplifié (sans TikZ pour le test)
+cat > build/utils/tikz2svg-utils.js << 'EOF'
 export async function checkDependencies() {
   return { 
     success: false, 
@@ -187,8 +187,8 @@ export async function extractAndConvertTikzBlocks(latex) {
 }
 EOF
 
-# 4. Créer cache-manager.mjs simplifié
-cat > build/utils/cache-manager.mjs << 'EOF'
+# 4. Créer cache-manager.js simplifié
+cat > build/utils/cache-manager.js << 'EOF'
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
@@ -243,8 +243,8 @@ export class CacheManager {
 }
 EOF
 
-# 5. Créer hash-utils.mjs minimal
-cat > build/utils/hash-utils.mjs << 'EOF'
+# 5. Créer hash-utils.js minimal
+cat > build/utils/hash-utils.js << 'EOF'
 export function validateHash(hash) {
   return typeof hash === 'string' && hash.length === 64;
 }
@@ -270,7 +270,7 @@ echo "--------------------------------"
 
 # Exécuter le parser
 echo "🚀 Exécution du parser..."
-node build/parse-latex.mjs content/exercises/algebra/test.tex
+node build/parse-latex.js content/exercises/algebra/test.tex
 
 # Vérifier le résultat
 echo ""

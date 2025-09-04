@@ -1,4 +1,4 @@
-// scripts/build-db.mjs
+// scripts/build-db.js
 import fs from 'fs';
 import path from 'path';
 import Database from 'better-sqlite3';

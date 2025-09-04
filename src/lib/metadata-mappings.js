@@ -1,6 +1,6 @@
 // src/lib/metadata-mappings.js - Généré automatiquement
-// ⚠️  Ce fichier est généré par scripts/analyze-chapters.mjs
-// ✏️  Modifiez les mappings selon vos besoins puis relancez build-db.mjs
+// ⚠️  Ce fichier est généré par scripts/analyze-chapters.js
+// ✏️  Modifiez les mappings selon vos besoins puis relancez build-db.js
 
 export const chapterMappings = {
   "Analyse numérique": { 
