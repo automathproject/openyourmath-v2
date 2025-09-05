@@ -21,11 +21,14 @@ services:
 
   # --- Service de votre Application ---
   app:
-    # IMPORTANT: C'est le nom de l'image que vous construisez et poussez sur GHCR
     image: ghcr.io/automathproject/openyourmath:2.0.0
     restart: always
     # Pas de 'ports' ici ! Caddy communique directement avec l'app
     # via le réseau interne de Docker.
+    environment:
+      - DATABASE_PATH=/app/data/exercises.sqlite
+      - NODE_ENV=production
+      - ORIGIN=https://openyourmath.org
 
 # Définir les volumes nommés pour que Docker les gère automatiquement.
 # C'est plus propre et plus robuste que d'utiliser des chemins sur l'hôte.
