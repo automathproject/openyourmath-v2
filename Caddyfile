@@ -1,0 +1,6 @@
+# ./Caddyfile
+
+openyourmath.org, www.openyourmath.org {
+    # Fait un reverse proxy vers le service Docker nommé "app" sur le port 3000
+    reverse_proxy app:3000
+}

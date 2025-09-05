@@ -1,22 +1,34 @@
-services:
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./static/artifacts:/usr/share/nginx/html/artifacts:ro
-    depends_on:
-      - app
+# ./docker-compose.yml
 
-  app:
-    build: .
-    environment:
-      - NODE_ENV=production
-      - DATABASE_PATH=/app/data/exercises.sqlite
+version: '3.8'
+
+services:
+  # --- Service Caddy (le reverse proxy) ---
+  caddy:
+    image: caddy:latest
+    restart: always
+    ports:
+      - "80:80"       # Pour le trafic HTTP et la redirection automatique
+      - "443:443"     # Pour le trafic HTTPS
+      - "443:443/udp" # Nécessaire pour le protocole moderne HTTP/3
     volumes:
-      - ./data:/app/data:ro
-      - ./static:/app/static:ro
-    expose:
-      - "3000"
-    restart: unless-stopped
+      # Monter notre Caddyfile pour que Caddy lise sa configuration
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      # Utiliser un volume nommé pour stocker les certificats de manière permanente
+      - caddy_data:/data
+      # Utiliser un volume nommé pour la configuration interne de Caddy
+      - caddy_config:/config
+
+  # --- Service de votre Application ---
+  app:
+    # IMPORTANT: C'est le nom de l'image que vous construisez et poussez sur GHCR
+    image: ghcr.io/smaxx73/openyourmath:2.0.0
+    restart: always
+    # Pas de 'ports' ici ! Caddy communique directement avec l'app
+    # via le réseau interne de Docker.
+
+# Définir les volumes nommés pour que Docker les gère automatiquement.
+# C'est plus propre et plus robuste que d'utiliser des chemins sur l'hôte.
+volumes:
+  caddy_data:
+  caddy_config:
