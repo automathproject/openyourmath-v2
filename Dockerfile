@@ -1,38 +1,45 @@
-# ./Dockerfile (Version corrigée)
+# ./Dockerfile (Version corrigée pour les dépendances natives)
 
-# ---- Stage 1: Base avec dépendances ----
-FROM node:18-alpine AS base
-RUN npm install -g pnpm
+# ---- Stage 1: Builder ----
+# Ce stage sert à construire nos artéfacts (DB, SVGs) et le build SvelteKit
+FROM node:18-alpine AS builder
+RUN npm install -g pnpm@9
 WORKDIR /app
+
+# On copie d'abord les fichiers de dépendances pour utiliser le cache Docker
 COPY pnpm-lock.yaml package.json ./
 RUN pnpm fetch
+RUN pnpm install --prod=false
 
-# ---- Stage 2: Builder ----
-FROM base AS builder
-WORKDIR /app
-
-# Copier TOUT le code source ET les artéfacts pré-construits (`cache/`, `static/artifacts/`, `data/`)
-# grâce au fichier .dockerignore.
+# On copie le reste (code source de l'app et artéfacts pré-construits)
 COPY . .
 
-# Installer toutes les dépendances
-RUN pnpm install --offline --prod=false
+# On exécute les builds
+# REMARQUE : Ces étapes sont optionnelles si vous préférez les faire localement
+# Mais les laisser ici garantit que tout est construit dans le même environnement.
+# Pour le moment, nous les gardons commentées car vous les faites localement.
+# RUN pnpm build:content 
 
 # Construire l'application SvelteKit
 RUN pnpm run build:app
 
-# Nettoyer les dépendances de développement
-RUN pnpm prune --prod
-
-# ---- Stage 3: Production ----
+# ---- Stage 2: Production ----
+# Ce stage crée l'image finale, propre et légère
 FROM node:18-alpine AS production
+RUN npm install -g pnpm@9
 WORKDIR /app
 ENV NODE_ENV=production
 
-# Copier les artéfacts nécessaires depuis l'étape 'builder'
+# On copie les fichiers de manifeste de dépendances
+COPY package.json pnpm-lock.yaml ./
+
+# On installe UNIQUEMENT les dépendances de production.
+# C'est l'étape clé. `better-sqlite3` sera téléchargé et compilé
+# proprement pour cet environnement final.
+RUN pnpm install --prod
+
+# On copie les artéfacts de build et de contenu depuis le stage 'builder'
 COPY --from=builder /app/build ./build
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/data ./data
 COPY --from=builder /app/static ./static
 
