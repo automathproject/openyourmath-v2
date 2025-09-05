@@ -1,0 +1,26 @@
+# ./dockerignore
+
+# Ignorer TOUT le code source LaTeX. 
+/content/
+
+# Ignorer le dossier Git, les dépendances locales, etc.
+.git
+.github
+node_modules
+.pnpm-store
+
+# Ignorer les fichiers inutiles pour la production
+README.md
+DEPLOYMENT_WORKFLOW.md
+docs/
+tests/
+*.log
+
+#
+# --- EXCEPTIONS ---
+# Annuler l'ignorance pour les artéfacts pré-construits que nous voulons embarquer.
+# Ces dossiers seront copiés dans l'image.
+#
+!data/
+!static/artifacts/
+!cache/
