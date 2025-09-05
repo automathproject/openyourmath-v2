@@ -22,7 +22,7 @@ services:
   # --- Service de votre Application ---
   app:
     # IMPORTANT: C'est le nom de l'image que vous construisez et poussez sur GHCR
-    image: ghcr.io/smaxx73/openyourmath:2.0.0
+    image: ghcr.io/automathproject/openyourmath:2.0.0
     restart: always
     # Pas de 'ports' ici ! Caddy communique directement avec l'app
     # via le réseau interne de Docker.
