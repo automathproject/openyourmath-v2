@@ -69,6 +69,102 @@ export const selectedUuid = derived(
   }
 );
 
+// Utilitaires pour la liste
+export const listUtils = {
+  // Parser une chaîne d'UUIDs séparés par des virgules
+  parseUuidString(uuidString) {
+    if (!uuidString || typeof uuidString !== 'string') {
+      return [];
+    }
+    
+    return uuidString
+      .split(',')
+      .map(uuid => uuid.trim())
+      .filter(uuid => uuid !== '' && this.isValidUuid(uuid));
+  },
+
+  // Formater la liste actuelle en chaîne d'UUIDs
+  formatCurrentList() {
+    return globalExerciseList.map(ex => ex.uuid).join(', ');
+  },
+
+// Validation d'UUID (accepte les formats courts ET standards)
+isValidUuid(uuid) {
+  if (!uuid || typeof uuid !== 'string') {
+    return false;
+  }
+  
+  // Nettoyer l'UUID
+  const cleanUuid = uuid.trim();
+  
+  // Accepter les UUIDs courts (au moins 3 caractères alphanumériques)
+  const shortUuidRegex = /^[a-zA-Z0-9]{3,}$/;
+  
+  // Accepter les UUIDs standards (format classique avec tirets)
+  const standardUuidRegex = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
+  
+  const isShortValid = shortUuidRegex.test(cleanUuid);
+  const isStandardValid = standardUuidRegex.test(cleanUuid);
+  
+  return isShortValid || isStandardValid;
+},
+
+  // Compter les UUIDs valides dans une chaîne
+  countValidUuids(uuidString) {
+    const parsed = this.parseUuidString(uuidString);
+    return {
+      total: uuidString ? uuidString.split(',').length : 0,
+      valid: parsed.length,
+      invalid: uuidString ? uuidString.split(',').length - parsed.length : 0
+    };
+  },
+
+  // Générer une URL partageable
+  getShareableUrl(baseUrl = '') {
+    if (globalExerciseList.length === 0) return `${baseUrl}/exercise/list`;
+
+    const uuids = globalExerciseList.map(ex => ex.uuid).join(',');
+    return `${baseUrl}/exercise/list?list=${encodeURIComponent(uuids)}`;
+  },
+
+  // Exporter la liste en format simple
+  exportList() {
+    return globalExerciseList.map(ex => ({
+      uuid: ex.uuid,
+      title: ex.title,
+      chapter: ex.chapter,
+      theme: ex.theme,
+      difficulty: ex.difficulty
+    }));
+  },
+
+  // Statistiques de la liste
+  getListStats() {
+    const stats = {
+      total: globalExerciseList.length,
+      byChapter: {},
+      byDifficulty: {},
+      hasErrors: 0
+    };
+
+    globalExerciseList.forEach(ex => {
+      if (ex.error) {
+        stats.hasErrors++;
+      }
+      
+      if (ex.chapter) {
+        stats.byChapter[ex.chapter] = (stats.byChapter[ex.chapter] || 0) + 1;
+      }
+      
+      if (ex.difficulty) {
+        stats.byDifficulty[ex.difficulty] = (stats.byDifficulty[ex.difficulty] || 0) + 1;
+      }
+    });
+
+    return stats;
+  }
+};
+
 // Actions pour gérer la liste
 export const listActions = {
   // Charger une liste d'exercices à partir d'UUIDs
@@ -145,6 +241,12 @@ export const listActions = {
     } finally {
       listLoading.set(false);
     }
+  },
+
+  // Charger depuis une chaîne d'UUIDs (CORRIGÉ)
+  async loadFromUuidString(uuidString) {
+    const uuids = listUtils.parseUuidString(uuidString);
+    await listActions.loadFromUuids(uuids);
   },
 
   // Sélectionner un exercice par son index
@@ -291,53 +393,5 @@ export const listActions = {
 
     const uuids = uuidString.split(',').map(uuid => uuid.trim()).filter(uuid => uuid !== '');
     listActions.loadFromUuids(uuids);
-  }
-};
-
-// Utilitaires pour la liste
-export const listUtils = {
-  // Générer une URL partageable
-  getShareableUrl(baseUrl = '') {
-    if (globalExerciseList.length === 0) return `${baseUrl}/exercise/list`;
-
-    const uuids = globalExerciseList.map(ex => ex.uuid).join(',');
-    return `${baseUrl}/exercise/list?list=${encodeURIComponent(uuids)}`;
-  },
-
-  // Exporter la liste en format simple
-  exportList() {
-    return globalExerciseList.map(ex => ({
-      uuid: ex.uuid,
-      title: ex.title,
-      chapter: ex.chapter,
-      theme: ex.theme,
-      difficulty: ex.difficulty
-    }));
-  },
-
-  // Statistiques de la liste
-  getListStats() {
-    const stats = {
-      total: globalExerciseList.length,
-      byChapter: {},
-      byDifficulty: {},
-      hasErrors: 0
-    };
-
-    globalExerciseList.forEach(ex => {
-      if (ex.error) {
-        stats.hasErrors++;
-      }
-      
-      if (ex.chapter) {
-        stats.byChapter[ex.chapter] = (stats.byChapter[ex.chapter] || 0) + 1;
-      }
-      
-      if (ex.difficulty) {
-        stats.byDifficulty[ex.difficulty] = (stats.byDifficulty[ex.difficulty] || 0) + 1;
-      }
-    });
-
-    return stats;
   }
 };

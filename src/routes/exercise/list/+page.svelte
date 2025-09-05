@@ -22,6 +22,12 @@
   let showSolution = false;
   let shareUrl = '';
   
+  // Nouveau : État pour le champ UUID
+  let uuidInputValue = '';
+  let uuidInputLoading = false;
+  let uuidInputFeedback = '';
+  let uuidInputError = false;
+  
   // Initialiser la liste depuis les données du serveur
   onMount(() => {
     if (data.exercises && data.exercises.length > 0) {
@@ -42,13 +48,103 @@
       selectedExerciseIndex.set(0);
     }
     
-    // Générer l'URL de partage
+    // Générer l'URL de partage et initialiser le champ UUID
     shareUrl = listUtils.getShareableUrl(window.location.origin);
+    updateUuidInput();
   });
   
-  // Réactivité pour mettre à jour l'URL de partage
+  // Réactivité pour mettre à jour l'URL de partage et le champ UUID
   $: if ($exerciseList) {
     shareUrl = listUtils.getShareableUrl(typeof window !== 'undefined' ? window.location.origin : '');
+    updateUuidInput();
+  }
+  
+  // Mettre à jour le champ UUID avec la liste actuelle
+  function updateUuidInput() {
+    uuidInputValue = listUtils.formatCurrentList();
+    uuidInputFeedback = '';
+    uuidInputError = false;
+  }
+  
+  // Analyser le contenu du champ UUID en temps réel
+  function analyzeUuidInput() {
+    if (!uuidInputValue.trim()) {
+      uuidInputFeedback = '';
+      uuidInputError = false;
+      return;
+    }
+    
+    const stats = listUtils.countValidUuids(uuidInputValue);
+    
+    if (stats.valid === 0) {
+      uuidInputFeedback = 'Aucun UUID valide détecté';
+      uuidInputError = true;
+    } else if (stats.invalid > 0) {
+      uuidInputFeedback = `${stats.valid} UUID${stats.valid > 1 ? 's' : ''} valide${stats.valid > 1 ? 's' : ''}, ${stats.invalid} invalide${stats.invalid > 1 ? 's' : ''}`;
+      uuidInputError = true;
+    } else {
+      uuidInputFeedback = `${stats.valid} UUID${stats.valid > 1 ? 's' : ''} détecté${stats.valid > 1 ? 's' : ''}`;
+      uuidInputError = false;
+    }
+  }
+  
+  // Charger la liste depuis le champ UUID
+  async function loadFromUuidInput() {
+    if (!uuidInputValue.trim()) {
+      listActions.clearList();
+      updateUrl();
+      return;
+    }
+    
+    const stats = listUtils.countValidUuids(uuidInputValue);
+    if (stats.valid === 0) {
+      uuidInputFeedback = 'Aucun UUID valide à charger';
+      uuidInputError = true;
+      return;
+    }
+    
+    uuidInputLoading = true;
+    uuidInputFeedback = 'Chargement...';
+    uuidInputError = false;
+    
+    try {
+      await listActions.loadFromUuidString(uuidInputValue);
+      updateUrl();
+      uuidInputFeedback = `${stats.valid} exercice${stats.valid > 1 ? 's' : ''} chargé${stats.valid > 1 ? 's' : ''}`;
+      uuidInputError = false;
+    } catch (err) {
+      uuidInputFeedback = 'Erreur lors du chargement';
+      uuidInputError = true;
+      console.error('Error loading from UUID input:', err);
+    } finally {
+      uuidInputLoading = false;
+    }
+  }
+  
+  // Copier le contenu du champ UUID
+  async function copyUuidInput() {
+    if (!uuidInputValue.trim()) {
+      uuidInputFeedback = 'Rien à copier';
+      uuidInputError = true;
+      return;
+    }
+    
+    try {
+      await navigator.clipboard.writeText(uuidInputValue);
+      uuidInputFeedback = 'Liste copiée !';
+      uuidInputError = false;
+      
+      // Effacer le feedback après 2 secondes
+      setTimeout(() => {
+        if (uuidInputFeedback === 'Liste copiée !') {
+          uuidInputFeedback = '';
+        }
+      }, 2000);
+    } catch (err) {
+      uuidInputFeedback = 'Erreur de copie';
+      uuidInputError = true;
+      console.error('Copy failed:', err);
+    }
   }
   
   // Fonctions de navigation
@@ -130,6 +226,56 @@
       </div>
       
       <div class="list-actions">
+        <!-- NOUVEAU : Contrôle UUID -->
+        <div class="uuid-control">
+          <div class="uuid-input-wrapper">
+            <input 
+              type="text"
+              bind:value={uuidInputValue}
+              on:input={analyzeUuidInput}
+              placeholder="uuid1, uuid2, uuid3..."
+              class="uuid-input"
+              class:uuid-input--error={uuidInputError}
+              disabled={uuidInputLoading}
+            />
+            
+            <div class="uuid-buttons">
+              <button 
+                on:click={copyUuidInput}
+                class="uuid-btn uuid-btn--copy"
+                disabled={!uuidInputValue.trim() || uuidInputLoading}
+                title="Copier la liste d'UUIDs"
+                aria-label="Copier la liste d'UUIDs"
+              >
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </button>
+              
+              <button 
+                on:click={loadFromUuidInput}
+                class="uuid-btn uuid-btn--load"
+                disabled={uuidInputLoading}
+                title="Charger cette liste d'UUIDs"
+              >
+                {#if uuidInputLoading}
+                  <div class="loading-spinner-small"></div>
+                {:else}
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                {/if}
+              </button>
+            </div>
+          </div>
+          
+          {#if uuidInputFeedback}
+            <div class="uuid-feedback" class:uuid-feedback--error={uuidInputError}>
+              {uuidInputFeedback}
+            </div>
+          {/if}
+        </div>
+        
         {#if $hasExercises}
           <button 
             on:click={shareList}
@@ -179,7 +325,7 @@
         
         <h2 class="empty-state-title">Aucun exercice dans cette liste</h2>
         <p class="empty-state-description">
-          Ajoutez des exercices à votre liste en utilisant la recherche, ou partagez une URL avec des UUIDs d'exercices.
+          Ajoutez des exercices à votre liste en utilisant la recherche, ou collez des UUIDs dans le champ ci-dessus.
         </p>
         
         <div class="empty-state-actions">
@@ -419,21 +565,170 @@
 
 <style>
   .exercise-breadcrumb {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.breadcrumb-left {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+  .breadcrumb-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-.exercise-uuid {
-  font-family: monospace;
-  font-size: 0.75rem;
-  color: rgb(156, 163, 175); /* text-gray-400 */
-  opacity: 0.8;
-}
+  .exercise-uuid {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: rgb(156, 163, 175); /* text-gray-400 */
+    opacity: 0.8;
+  }
+
+  /* NOUVEAU : Styles pour le contrôle UUID */
+  .uuid-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 300px;
+  }
+
+  .uuid-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: white;
+    border: 1px solid rgb(209, 213, 219); /* border-gray-300 */
+    border-radius: 0.375rem;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+
+  .uuid-input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    outline: none;
+    font-size: 0.875rem;
+    font-family: monospace;
+    background: transparent;
+  }
+
+  .uuid-input::placeholder {
+    color: rgb(156, 163, 175); /* text-gray-400 */
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .uuid-input--error {
+    border-color: rgb(239, 68, 68); /* border-red-500 */
+  }
+
+  .uuid-input:disabled {
+    background-color: rgb(249, 250, 251); /* bg-gray-50 */
+    color: rgb(107, 114, 128); /* text-gray-500 */
+  }
+
+  .uuid-buttons {
+    display: flex;
+    gap: 0.125rem;
+    padding: 0.25rem;
+  }
+
+  .uuid-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 0.25rem;
+    background: rgb(243, 244, 246); /* bg-gray-100 */
+    color: rgb(75, 85, 99); /* text-gray-600 */
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .uuid-btn:hover:not(:disabled) {
+    background: rgb(229, 231, 235); /* bg-gray-200 */
+    color: rgb(55, 65, 81); /* text-gray-700 */
+  }
+
+  .uuid-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .uuid-btn--copy:hover:not(:disabled) {
+    background: rgb(219, 234, 254); /* bg-blue-100 */
+    color: rgb(37, 99, 235); /* text-blue-600 */
+  }
+
+  .uuid-btn--load {
+    background: rgb(34, 197, 94); /* bg-green-500 */
+    color: white;
+  }
+
+  .uuid-btn--load:hover:not(:disabled) {
+    background: rgb(22, 163, 74); /* bg-green-600 */
+  }
+
+  .uuid-feedback {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    background: rgb(219, 234, 254); /* bg-blue-100 */
+    color: rgb(37, 99, 235); /* text-blue-600 */
+  }
+
+  .uuid-feedback--error {
+    background: rgb(254, 226, 226); /* bg-red-100 */
+    color: rgb(220, 38, 38); /* text-red-600 */
+  }
+
+  .loading-spinner-small {
+    width: 0.875rem;
+    height: 0.875rem;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Responsive : masquer le contrôle UUID sur petits écrans */
+  @media (max-width: 768px) {
+    .uuid-control {
+      display: none;
+    }
+  }
+
+  /* Ajustements pour le header */
+  .list-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .list-actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    .list-header-content {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .list-actions {
+      justify-content: flex-end;
+    }
+  }
 </style>
