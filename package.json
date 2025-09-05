@@ -5,21 +5,23 @@
   "type": "module",
   "_comment_scripts": "Scripts maison pour parser LaTeX et construire la DB avant le build de l'app",
   "scripts": {
-    "build": "node scripts/parse-latex.js content/exercises/ cache/exercises/ && node scripts/build-db.js",
-    "build:fast": "node scripts/parse-latex.js --incremental content/exercises/ cache/exercises/ && node scripts/build-db.js",
-    "build:clean": "rm -rf cache/exercises/* data/exercises.sqlite && pnpm build",
-    "build:stats": "echo '📊 Statistics:' && echo \"📝 LaTeX files:\" $(find content/exercises -name '*.tex' | wc -l) && echo \"📄 JSON cache:\" $(find cache/exercises -name '*.json' | wc -l) && echo \"💾 Database:\" $(test -f data/exercises.sqlite && sqlite3 data/exercises.sqlite 'SELECT COUNT(*) FROM exercises;' 2>/dev/null || echo '0') 'exercises'",
-    "parse": "node scripts/parse-latex.js",
-    "parse:watch": "find content/exercises -name '*.tex' | entr -r pnpm build:fast",
     "dev": "vite dev",
-    "dev:full": "pnpm build:fast && pnpm dev",
-    "build:app": "vite build",
-    "preview": "vite preview",
-    "clean": "rm -rf cache/exercises/* data/exercises.sqlite static/artifacts/* .svelte-kit",
-    "reset": "pnpm clean && pnpm build",
+    "dev:full": "pnpm build:content && pnpm dev", 
+
+    "build:cache": "node scripts/parse-latex.js --incremental content/exercises/ cache/exercises/",
+    "build:content": "pnpm build:cache && node scripts/build-tikz.js && node scripts/build-db.js",
+    "build:content:full": "node scripts/parse-latex.js content/exercises/ cache/exercises/ && node scripts/build-tikz.js && node scripts/build-db.js",
+    "build": "pnpm build:content && vite build",
+
+    "preview": "vite preview", 
+    "clean": "rm -rf .svelte-kit cache data static/artifacts",
+    "reset": "pnpm clean && pnpm build:content:full", 
+    "build:stats": "echo '📊 Statistics:' && echo \"📝 LaTeX files:\" $(find content/exercises -name '*.tex' | wc -l) && echo \"📄 JSON cache:\" $(find cache/exercises -name '*.json' | wc -l) && echo \"💾 Database:\" $(test -f data/exercises.sqlite && sqlite3 data/exercises.sqlite 'SELECT COUNT(*) FROM exercises;' 2>/dev/null || echo '0') 'exercises'",
+
     "test": "vitest",
     "test:build": "vitest run tests/build/",
     "test:integration": "playwright test",
+    
     "docker:build": "docker build -t openyourmath .",
     "docker:dev": "docker-compose up",
     "docker:prod": "docker-compose up -d"
