@@ -4,6 +4,7 @@
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
+  import ExerciseListEditor from '$lib/components/ExerciseListEditor.svelte';
   import { 
     exerciseList, 
     selectedExerciseIndex, 
@@ -21,6 +22,7 @@
   let showHint = false;
   let showSolution = false;
   let shareUrl = '';
+  let isEditMode = false; // NOUVEAU : État du mode édition
   
   // Nouveau : État pour le champ UUID
   let uuidInputValue = '';
@@ -147,7 +149,35 @@
     }
   }
   
-  // Fonctions de navigation
+  // NOUVEAU : Gestion du mode édition
+  function toggleEditMode() {
+    isEditMode = !isEditMode;
+  }
+  
+  // NOUVEAU : Gestionnaires d'événements de l'éditeur
+  function handleReorder(event) {
+    const { exercises, newSelectedIndex } = event.detail;
+    listActions.reorderExercises(exercises, newSelectedIndex);
+    updateUrl();
+  }
+  
+  function handleDeleteMultiple(event) {
+    const { indices } = event.detail;
+    listActions.removeMultipleExercises(indices);
+    updateUrl();
+  }
+  
+  function handleSelectFromEditor(event) {
+    const { index } = event.detail;
+    listActions.selectExercise(index);
+  }
+  
+  function handleRemoveFromEditor(event) {
+    const { index } = event.detail;
+    removeExercise(index);
+  }
+  
+  // Fonctions de navigation (existantes)
   function selectExercise(index) {
     listActions.selectExercise(index);
   }
@@ -226,7 +256,7 @@
       </div>
       
       <div class="list-actions">
-        <!-- NOUVEAU : Contrôle UUID -->
+        <!-- Contrôle UUID -->
         <div class="uuid-control">
           <div class="uuid-input-wrapper">
             <input 
@@ -245,7 +275,6 @@
                 class="uuid-btn uuid-btn--copy"
                 disabled={!uuidInputValue.trim() || uuidInputLoading}
                 title="Copier la liste d'UUIDs"
-                aria-label="Copier la liste d'UUIDs"
               >
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -359,93 +388,69 @@
       <aside class="list-navigation">
         <div class="nav-header">
           <h2 class="nav-title">Exercices</h2>
-          {#if $currentPosition.total > 0}
-            <span class="nav-counter">
-              {$currentPosition.current} / {$currentPosition.total}
-            </span>
-          {/if}
-        </div>
-        
-        <div class="nav-controls">
-          <button 
-            on:click={listActions.previousExercise}
-            disabled={!$currentPosition.hasPrevious}
-            class="nav-btn nav-btn--prev"
-            aria-label="Exercice précédent"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-            </svg>
-          </button>
-          
-          <button 
-            on:click={listActions.nextExercise}
-            disabled={!$currentPosition.hasNext}
-            class="nav-btn nav-btn--next"
-            aria-label="Exercice suivant"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-        </div>
-        
-        <div class="exercise-nav-list">
-          {#each $exerciseList as exercise, index}
-            <div 
-              class="nav-exercise-item"
-              class:nav-exercise-item--selected={index === $selectedExerciseIndex}
-              class:nav-exercise-item--error={exercise.error}
+          <div class="nav-header-actions">
+            {#if $currentPosition.total > 0}
+              <span class="nav-counter">
+                {$currentPosition.current} / {$currentPosition.total}
+              </span>
+            {/if}
+            
+            <!-- NOUVEAU : Bouton d'édition -->
+            <button 
+              on:click={toggleEditMode}
+              class="edit-toggle-btn"
+              class:edit-toggle-btn--active={isEditMode}
+              title={isEditMode ? 'Quitter le mode édition' : 'Éditer la liste'}
             >
-              <button 
-                on:click={() => selectExercise(index)}
-                class="nav-exercise-btn"
-                aria-label="Sélectionner l'exercice {index + 1}: {exercise.title || `Exercice ${exercise.uuid.slice(0, 8)}...`}"
-              >
-                <div class="nav-exercise-info">
-                  <div class="nav-exercise-number">
-                    {index + 1}
-                  </div>
-                  
-                  <div class="nav-exercise-content">
-                    <h3 class="nav-exercise-title">
-                      {exercise.title || `Exercice ${exercise.uuid.slice(0, 8)}...`}
-                    </h3>
-                    
-                    <div class="nav-exercise-meta">
-                      {#if exercise.chapter}
-                        <span class="nav-exercise-chapter">
-                          {exercise.chapter}
-                        </span>
-                      {/if}
-                      
-                      {#if exercise.difficulty}
-                        <div class="nav-exercise-difficulty" aria-label="Difficulté: {exercise.difficulty} sur 5">
-                          {#each Array(exercise.difficulty) as _}
-                            <div class="difficulty-dot difficulty-dot--filled" aria-hidden="true"></div>
-                          {/each}
-                          {#each Array(5 - exercise.difficulty) as _}
-                            <div class="difficulty-dot" aria-hidden="true"></div>
-                          {/each}
-                        </div>
-                      {/if}
-                    </div>
-                  </div>
-                </div>
-              </button>
-              
-              <button 
-                on:click={() => removeExercise(index)}
-                class="nav-exercise-remove"
-                aria-label="Supprimer l'exercice {exercise.title || `Exercice ${exercise.uuid.slice(0, 8)}...`} de la liste"
-              >
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              {#if isEditMode}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
-              </button>
-            </div>
-          {/each}
+              {:else}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+              {/if}
+            </button>
+          </div>
         </div>
+        
+        {#if !isEditMode}
+          <div class="nav-controls">
+            <button 
+              on:click={listActions.previousExercise}
+              disabled={!$currentPosition.hasPrevious}
+              class="nav-btn nav-btn--prev"
+              aria-label="Exercice précédent"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+              </svg>
+            </button>
+            
+            <button 
+              on:click={listActions.nextExercise}
+              disabled={!$currentPosition.hasNext}
+              class="nav-btn nav-btn--next"
+              aria-label="Exercice suivant"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+        {/if}
+        
+        <!-- NOUVEAU : Composant éditeur -->
+        <ExerciseListEditor 
+          exercises={$exerciseList}
+          selectedIndex={$selectedExerciseIndex}
+          {isEditMode}
+          on:reorder={handleReorder}
+          on:deleteMultiple={handleDeleteMultiple}
+          on:select={handleSelectFromEditor}
+          on:remove={handleRemoveFromEditor}
+        />
       </aside>
       
       <!-- Colonne d'affichage -->
@@ -475,16 +480,16 @@
           <article class="exercise-content-wrapper">
             <!-- Header de l'exercice -->
             <header class="exercise-header">
-<div class="exercise-breadcrumb">
-  <div class="breadcrumb-left">
-    <span class="breadcrumb-item">Exercice {$currentPosition.current}</span>
-    {#if $selectedExercise?.chapter}
-      <span class="breadcrumb-separator">›</span>
-      <span class="breadcrumb-item">{$selectedExercise.chapter}</span>
-    {/if}
-  </div>
-  <span class="exercise-uuid">{$selectedExercise.uuid}</span>
-</div>
+              <div class="exercise-breadcrumb">
+                <div class="breadcrumb-left">
+                  <span class="breadcrumb-item">Exercice {$currentPosition.current}</span>
+                  {#if $selectedExercise?.chapter}
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-item">{$selectedExercise.chapter}</span>
+                  {/if}
+                </div>
+                <span class="exercise-uuid">{$selectedExercise.uuid}</span>
+              </div>
               
               <h1 class="exercise-title">{$selectedExercise?.title || 'Exercice'}</h1>
               
@@ -583,7 +588,7 @@
     opacity: 0.8;
   }
 
-  /* NOUVEAU : Styles pour le contrôle UUID */
+  /* Styles pour le contrôle UUID */
   .uuid-control {
     display: flex;
     flex-direction: column;
@@ -690,6 +695,49 @@
     border-top: 2px solid currentColor;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+  }
+
+  /* NOUVEAU : Styles pour le bouton d'édition */
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .nav-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .edit-toggle-btn {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid rgb(209, 213, 219); /* border-gray-300 */
+    border-radius: 0.375rem;
+    background: white;
+    color: rgb(75, 85, 99); /* text-gray-600 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .edit-toggle-btn:hover {
+    background: rgb(243, 244, 246); /* bg-gray-100 */
+    border-color: rgb(156, 163, 175); /* border-gray-400 */
+  }
+
+  .edit-toggle-btn--active {
+    background: rgb(254, 249, 195); /* bg-yellow-100 */
+    border-color: rgb(245, 158, 11); /* border-yellow-500 */
+    color: rgb(133, 77, 14); /* text-yellow-800 */
+  }
+
+  .edit-toggle-btn--active:hover {
+    background: rgb(254, 240, 138); /* bg-yellow-200 */
   }
 
   @keyframes spin {

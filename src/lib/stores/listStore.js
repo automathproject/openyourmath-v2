@@ -393,5 +393,57 @@ export const listActions = {
 
     const uuids = uuidString.split(',').map(uuid => uuid.trim()).filter(uuid => uuid !== '');
     listActions.loadFromUuids(uuids);
+  },
+
+  // Réorganiser la liste d'exercices
+reorderExercises(newExercises, newSelectedIndex) {
+  exerciseList.set(newExercises);
+  if (newSelectedIndex !== undefined) {
+    selectedExerciseIndex.set(newSelectedIndex);
   }
+},
+
+// Supprimer plusieurs exercices par leurs indices
+removeMultipleExercises(indices) {
+  if (!Array.isArray(indices) || indices.length === 0) return;
+
+  let currentIndex;
+  const unsubscribe = selectedExerciseIndex.subscribe(value => currentIndex = value);
+  unsubscribe();
+
+  // Trier les indices en ordre décroissant pour éviter les problèmes d'index
+  const sortedIndices = [...indices].sort((a, b) => b - a);
+  
+  let newList = [...globalExerciseList];
+  
+  // Supprimer les exercices
+  sortedIndices.forEach(index => {
+    if (index >= 0 && index < newList.length) {
+      newList.splice(index, 1);
+    }
+  });
+
+  exerciseList.set(newList);
+
+  // Ajuster la sélection
+  if (newList.length === 0) {
+    selectedExerciseIndex.set(0);
+    selectedExercise.set(null);
+  } else {
+    // Calculer le nouvel index sélectionné
+    const removedBeforeSelected = indices.filter(i => i < currentIndex).length;
+    let newSelectedIndex = currentIndex - removedBeforeSelected;
+    
+    // Si l'exercice sélectionné a été supprimé
+    if (indices.includes(currentIndex)) {
+      newSelectedIndex = Math.min(newSelectedIndex, newList.length - 1);
+    }
+    
+    newSelectedIndex = Math.max(0, Math.min(newSelectedIndex, newList.length - 1));
+    
+    if (newSelectedIndex !== currentIndex) {
+      listActions.selectExercise(newSelectedIndex);
+    }
+  }
+},
 };
