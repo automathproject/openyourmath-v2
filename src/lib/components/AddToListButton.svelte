@@ -13,8 +13,9 @@
   let isAdding = false;
   let justAdded = false;
   
-  // Vérifier si l'exercice est déjà dans la liste
-  $: isInList = exercise ? listActions.isInList(exercise.uuid) : false;
+  // Vérifier si l'exercice est déjà dans la liste (réactif au store)
+  // Important: on référence `$exerciseList` pour déclencher la réactivité immédiate
+  $: isInList = exercise ? $exerciseList.some(ex => ex.uuid === exercise.uuid) : false;
   
   // Fonction pour ajouter/supprimer de la liste
   async function toggleInList() {
@@ -69,13 +70,13 @@
   $: buttonText = (() => {
     if (isAdding) return variant === 'icon' ? '⏳' : 'Ajout...';
     if (justAdded) return variant === 'icon' ? '✅' : 'Ajouté !';
-    if (isInList) return variant === 'icon' ? '✓' : 'Dans la liste';
+    if (isInList) return variant === 'icon' ? '−' : 'Retirer de ma liste';
     return variant === 'icon' ? '+' : 'Ajouter à ma liste';
   })();
   
   // Titre du bouton (tooltip)
   $: buttonTitle = (() => {
-    if (isInList) return 'Supprimer de ma liste';
+    if (isInList) return 'Retirer de ma liste';
     if ($listCount > 0) return `Ajouter à ma liste (${$listCount} exercice${$listCount > 1 ? 's' : ''})`;
     return 'Ajouter à ma liste';
   })();
@@ -87,14 +88,17 @@
   class={buttonClasses}
   title={buttonTitle}
   aria-label={buttonTitle}
+  aria-pressed={isInList}
 >
   {#if variant === 'icon'}
     <span class="add-to-list-icon">{buttonText}</span>
   {:else}
-    <svg class="add-to-list-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg class="add-to-list-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       {#if isInList}
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        <!-- Icône retirer (signe moins) -->
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
       {:else}
+        <!-- Icône ajouter (plus) -->
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
       {/if}
     </svg>
@@ -170,15 +174,17 @@
   
   /* États */
   .add-to-list-btn--in-list {
-    background-color: #dcfce7;
-    border-color: #10b981;
-    color: #065f46;
+    /* Rouge par défaut quand déjà dans la liste */
+    background-color: #fee2e2; /* red-200 */
+    border-color: #ef4444;     /* red-500 */
+    color: #991b1b;            /* red-800 */
   }
   
   .add-to-list-btn--in-list:hover:not(:disabled) {
-    background-color: #fef2f2;
-    border-color: #ef4444;
-    color: #b91c1c;
+    /* Rouge un peu plus marqué au survol */
+    background-color: #fecaca; /* red-300 */
+    border-color: #dc2626;     /* red-600 */
+    color: #7f1d1d;            /* red-900 */
   }
   
   .add-to-list-btn--loading {
