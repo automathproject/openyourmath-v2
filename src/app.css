@@ -2172,3 +2172,60 @@
     width: 200px;
   }
 }
+
+/* ===== Mobile compact (≤ 640px) ===== */
+@media (max-width: 640px) {
+  /* Conteneurs principaux */
+  .exercise { border: 0 !important; box-shadow: none !important; } /* supprime le cadre gris */
+  .exercise-header { border-bottom: 0 !important; padding: 0.75rem 0.75rem !important; }
+  .exercise-content { padding: 0.75rem !important; }
+
+  /* Breadcrumb + séparateurs plus fins/rares */
+  .exercise-breadcrumb { margin-bottom: 0.5rem !important; gap: 0.25rem !important; }
+  .breadcrumb-separator { opacity: 0.7; }
+
+  /* Titre plus compact */
+  .exercise-title { margin-bottom: 0.75rem !important; font-size: 1.25rem !important; line-height: 1.25 !important; }
+
+  /* Métadonnées et badges plus petits */
+  .exercise-metadata { gap: 0.5rem !important; margin-bottom: 0.75rem !important; }
+  .exercise-badge { padding: 0.125rem 0.5rem !important; font-size: 0.75rem !important; }
+
+  /* Actions plus denses */
+  .exercise-actions { gap: 0.5rem !important; margin-top: 0.25rem !important; }
+  .exercise-action-btn { padding: 0.375rem 0.5rem !important; font-size: 0.875rem !important; border-radius: 0.5rem !important; }
+
+  /* Blocs et cartes : plus de bordures grises */
+  .content-card,
+  .question-block,
+  .collapsible-section,
+  .preview-header,
+  .preview-exercise-header,
+  .similar-exercise-card {
+    border: 0 !important;              /* supprime lignes grises */
+    box-shadow: none !important;        /* allège l’UI */
+    padding: 0.75rem !important;        /* réduit padding */
+  }
+
+  /* Traits internes (footer, dividers) */
+  .content-card-footer,
+  .preview-header,
+  .exercise-header,
+  .results-header,
+  .nav-header,
+  .nav-controls {
+    border: 0 !important;               /* supprime lignes grises inutiles */
+  }
+
+  /* Math : taille un peu réduite déjà prévue, on garde tes règles */
+  /* (tes règles KaTeX mobile existent déjà ; on ne les duplique pas) */
+
+  /* Listes/questions : interlignes et marges allégées */
+  .questions-responses { gap: 0.75rem !important; }
+  .question-response-pair { margin: 0.75rem 0 !important; }
+}
+
+/* Optionnel : très petits écrans (≤ 380px) */
+@media (max-width: 380px) {
+  .exercise-title { font-size: 1.125rem !important; }
+}

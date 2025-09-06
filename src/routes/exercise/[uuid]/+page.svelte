@@ -7,26 +7,6 @@
   
   let showHint = false;
   let showSolution = false;
-  
-  // Fonction pour partager l'exercice
-  function shareExercise() {
-    if (navigator.share) {
-      navigator.share({
-        title: data.exercise.title,
-        text: `Exercice de mathématiques : ${data.exercise.title}`,
-        url: window.location.href
-      });
-    } else {
-      // Fallback : copier l'URL
-      navigator.clipboard.writeText(window.location.href);
-      alert('Lien copié dans le presse-papier !');
-    }
-  }
-  
-  // Fonction pour imprimer
-  function printExercise() {
-    window.print();
-  }
 </script>
 
 <svelte:head>
@@ -35,27 +15,26 @@
 </svelte:head>
 
 {#if data.exercise}
-  <div class="container mx-auto px-4 py-8">
-    <article class="exercise">
-      <!-- Header de l'exercice -->
+<div class="container max-w-4xl mx-auto px-3 sm:px-6 py-2 sm:py-6">    <article class="exercise">
+      <!-- HEADER -->
       <header class="exercise-header">
-        <!-- Breadcrumb -->
-<nav class="exercise-breadcrumb">
-  <div class="breadcrumb-left">
-    <a href="/">Accueil</a>
-    <span class="mx-2">›</span>
-    <span>{data.exercise.level}</span>
-    <span class="mx-2">›</span>
-    <span>{data.exercise.module}</span>
-    {#if data.exercise.chapter}
-      <span class="mx-2">›</span>
-      <span>{data.exercise.chapter}</span>
-    {/if}
-  </div>
-  <span class="exercise-uuid">{data.exercise.uuid}</span>
-</nav>
+        <!-- Breadcrumb (masqué sur mobile) -->
+        <nav class="exercise-breadcrumb">
+          <div class="breadcrumb-left hidden sm:flex">
+            <a href="/">Accueil</a>
+            <span class="mx-2">›</span>
+            <span>{data.exercise.level}</span>
+            <span class="mx-2">›</span>
+            <span>{data.exercise.module}</span>
+            {#if data.exercise.chapter}
+              <span class="mx-2">›</span>
+              <span>{data.exercise.chapter}</span>
+            {/if}
+          </div>
+          <span class="exercise-uuid">{data.exercise.uuid}</span>
+        </nav>
         
-        <!-- Titre principal -->
+        <!-- Titre -->
         <h1 class="exercise-title">
           {data.exercise.title}
         </h1>
@@ -86,49 +65,10 @@
             </span>
           {/if}
         </div>
-        
-        <!-- Actions -->
-        <div class="exercise-actions">
-          <button 
-            on:click={shareExercise}
-            class="action-button action-button--primary"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
-            </svg>
-            Partager
-          </button>
-          
-          <button 
-            on:click={printExercise}
-            class="action-button action-button--secondary print-hidden"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-            </svg>
-            Imprimer
-          </button>
-          
-          <div class="flex gap-2">
-            <button 
-              on:click={() => showHint = !showHint}
-              class="action-button action-button--hint {showHint ? 'action-button--active' : ''} print-hidden"
-            >
-              💡 {showHint ? 'Masquer' : 'Voir'} les indications
-            </button>
-            
-            <button 
-              on:click={() => showSolution = !showSolution}
-              class="action-button action-button--solution {showSolution ? 'action-button--active' : ''} print-hidden"
-            >
-              ✅ {showSolution ? 'Masquer' : 'Voir'} les solutions
-            </button>
-          </div>
-        </div>
       </header>
       
-      <!-- Contenu de l'exercice -->
-      <main class="p-6">
+      <!-- CONTENU -->
+      <main class="px-3 py-1 sm:px-6 sm:py-3">
         <ExerciseContent 
           content={data.exercise.content || []}
           bind:showHint
@@ -172,28 +112,14 @@
 {:else}
   <div class="error-page">
     <div class="error-content">
-      <div class="error-icon">
-        <svg class="w-24 h-24 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.562M15 17H9m6-8V9a6 6 0 10-12 0v6c0 3.314 2.686 6 6h6a6 6 0 000-12z" />
-        </svg>
-      </div>
-      
       <h1 class="error-title">Exercice non trouvé</h1>
       <p class="error-description">
         L'exercice demandé n'existe pas ou a été supprimé.
       </p>
-      
       <div class="error-actions">
-        <a 
-          href="/" 
-          class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+        <a href="/" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
           Retour à la recherche
         </a>
-        
         <div class="error-uuid">
           UUID recherché : <code>{$page.params.uuid}</code>
         </div>
@@ -204,20 +130,42 @@
 
 <style>
   .exercise-breadcrumb {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .breadcrumb-left {
+    display: flex;
+    align-items: center;
+  }
+  .exercise-uuid {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: rgb(156, 163, 175);
+    opacity: 0.8;
+  }
+
+  @media (max-width: 640px) {
+    .exercise-title {
+      margin: 0.25rem 0 0.75rem 0;
+      line-height: 1.2;
+      font-size: clamp(1.125rem, 4.5vw, 1.375rem);
+    }
+
+
+  }
+  @media (max-width: 640px) {
+  /* réduit marge/padding gauche des questions */
+  :global(.exercise-content .question),
+  :global(.exercise-content .question-block) {
+    margin-left: -1rem !important;
+    padding-left: 0.25rem !important;
+  }
+    .exercise-header {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
 }
 
-.breadcrumb-left {
-  display: flex;
-  align-items: center;
-}
-
-.exercise-uuid {
-  font-family: monospace;
-  font-size: 0.75rem;
-  color: rgb(156, 163, 175); /* text-gray-400 */
-  opacity: 0.8;
-}
 </style>

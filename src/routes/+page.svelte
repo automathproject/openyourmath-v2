@@ -343,18 +343,18 @@
                     
                     <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
                     
-                    <!-- Lien direct vers la page complète -->
-                    <a 
-                      href="/exercise/{exercise.uuid}" 
+                    <!-- Ouvrir la page complète dans un nouvel onglet (comme la prévisualisation) -->
+                    <button 
+                      type="button"
                       class="external-link-btn"
-                      title="Ouvrir la page complète"
-                      aria-label="Ouvrir la page complète de l'exercice"
-                      on:click|stopPropagation
+                      title="Ouvrir dans un nouvel onglet"
+                      aria-label="Ouvrir dans un nouvel onglet"
+                      on:click|stopPropagation={() => window.open(`/exercise/${exercise.uuid}`, '_blank')}
                     >
                       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                    </a>
+                    </button>
                   </div>
                 </div>
                 
