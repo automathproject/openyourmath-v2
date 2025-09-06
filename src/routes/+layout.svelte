@@ -49,13 +49,7 @@
             Recherche
           </a>
           
-          <a 
-            href="/browse" 
-            class="text-gray-600 hover:text-gray-900 transition-colors"
-            class:text-blue-600={$page.route.id === '/browse'}
-          >
-            Parcourir
-          </a>
+
           
           <!-- Lien vers la liste d'exercices -->
           <a 
