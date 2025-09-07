@@ -21,7 +21,7 @@ services:
 
   # --- Service de votre Application ---
   app:
-    image: ghcr.io/automathproject/openyourmath:2.0.3
+    image: ghcr.io/automathproject/openyourmath:2.0.4
     restart: always
     # Pas de 'ports' ici ! Caddy communique directement avec l'app
     # via le réseau interne de Docker.
