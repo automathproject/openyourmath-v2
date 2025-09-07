@@ -22,21 +22,43 @@
   let showHint = false;
   let showSolution = false;
   let shareUrl = '';
-  let isEditMode = false; // NOUVEAU : État du mode édition
+  let isEditMode = false;
   
-  // Nouveau : État pour le champ UUID
+  // NOUVEAU : État pour la navigation mobile
+  let isMobileNavOpen = false;
+  let isMobile = false;
+  
+  // État pour le champ UUID
   let uuidInputValue = '';
   let uuidInputLoading = false;
   let uuidInputFeedback = '';
   let uuidInputError = false;
   
+  // NOUVEAU : Fonction pour détecter si on est sur mobile
+  function checkMobile() {
+    isMobile = window.innerWidth < 768; // md breakpoint
+    if (!isMobile) {
+      isMobileNavOpen = false; // Fermer la nav si on passe en desktop
+    }
+  }
+  
+  // NOUVEAU : Fermer la navigation mobile
+  function closeMobileNav() {
+    isMobileNavOpen = false;
+  }
+  
+  // NOUVEAU : Ouvrir/fermer la navigation mobile
+  function toggleMobileNav() {
+    isMobileNavOpen = !isMobileNavOpen;
+  }
+  
   // Initialiser la liste depuis les données du serveur
   onMount(() => {
+    // Vérifier si on est sur mobile
+    checkMobile();
+    
     if (data.exercises && data.exercises.length > 0) {
-      // Mettre à jour la liste seulement si elle vient de l'URL
       exerciseList.set(data.exercises);
-      
-      // Sélectionner le premier exercice
       selectedExerciseIndex.set(0);
       if (data.exercises[0].fullExercise) {
         selectedExercise.set(data.exercises[0].fullExercise);
@@ -44,13 +66,10 @@
         listActions.selectExercise(0);
       }
     } else {
-      // Si pas d'exercices dans l'URL, garder la liste existante
-      // Ne pas vider exerciseList ici
       selectedExercise.set(null);
       selectedExerciseIndex.set(0);
     }
     
-    // Générer l'URL de partage et initialiser le champ UUID
     shareUrl = listUtils.getShareableUrl(window.location.origin);
     updateUuidInput();
   });
@@ -136,7 +155,6 @@
       uuidInputFeedback = 'Liste copiée !';
       uuidInputError = false;
       
-      // Effacer le feedback après 2 secondes
       setTimeout(() => {
         if (uuidInputFeedback === 'Liste copiée !') {
           uuidInputFeedback = '';
@@ -149,12 +167,12 @@
     }
   }
   
-  // NOUVEAU : Gestion du mode édition
+  // Gestion du mode édition
   function toggleEditMode() {
     isEditMode = !isEditMode;
   }
   
-  // NOUVEAU : Gestionnaires d'événements de l'éditeur
+  // Gestionnaires d'événements de l'éditeur
   function handleReorder(event) {
     const { exercises, newSelectedIndex } = event.detail;
     listActions.reorderExercises(exercises, newSelectedIndex);
@@ -170,6 +188,10 @@
   function handleSelectFromEditor(event) {
     const { index } = event.detail;
     listActions.selectExercise(index);
+    // NOUVEAU : Fermer la navigation mobile après sélection
+    if (isMobile) {
+      closeMobileNav();
+    }
   }
   
   function handleRemoveFromEditor(event) {
@@ -177,9 +199,12 @@
     removeExercise(index);
   }
   
-  // Fonctions de navigation (existantes)
+  // Fonctions de navigation
   function selectExercise(index) {
     listActions.selectExercise(index);
+    if (isMobile) {
+      closeMobileNav();
+    }
   }
   
   function removeExercise(index) {
@@ -219,6 +244,16 @@
     } else if (event.key === 'ArrowDown' && $currentPosition.hasNext) {
       event.preventDefault();
       listActions.nextExercise();
+    } else if (event.key === 'Escape' && isMobileNavOpen) {
+      event.preventDefault();
+      closeMobileNav();
+    }
+  }
+  
+  // NOUVEAU : Gestionnaire de clic sur l'overlay
+  function handleOverlayClick(event) {
+    if (event.target === event.currentTarget) {
+      closeMobileNav();
     }
   }
 </script>
@@ -228,7 +263,7 @@
   <meta name="description" content="Liste personnalisée de {$exerciseList.length} exercices de mathématiques" />
 </svelte:head>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window on:keydown={handleKeydown} on:resize={checkMobile} />
 
 <div class="exercise-list-page">
   <!-- Header de la page -->
@@ -256,7 +291,7 @@
       </div>
       
       <div class="list-actions">
-        <!-- Contrôle UUID -->
+        <!-- Contrôle UUID - masqué sur mobile -->
         <div class="uuid-control">
           <div class="uuid-input-wrapper">
             <input 
@@ -384,8 +419,8 @@
   {:else}
     <!-- Interface deux colonnes -->
     <div class="list-container">
-      <!-- Colonne de navigation -->
-      <aside class="list-navigation">
+      <!-- Colonne de navigation - MODIFIÉE pour le responsive -->
+      <aside class="list-navigation" class:list-navigation--mobile-open={isMobileNavOpen}>
         <div class="nav-header">
           <h2 class="nav-title">Exercices</h2>
           <div class="nav-header-actions">
@@ -395,7 +430,18 @@
               </span>
             {/if}
             
-            <!-- NOUVEAU : Bouton d'édition -->
+            <!-- Bouton fermer sur mobile -->
+            <button 
+              class="mobile-close-btn"
+              on:click={closeMobileNav}
+              aria-label="Fermer la navigation"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            <!-- Bouton d'édition -->
             <button 
               on:click={toggleEditMode}
               class="edit-toggle-btn"
@@ -441,7 +487,7 @@
           </div>
         {/if}
         
-        <!-- NOUVEAU : Composant éditeur -->
+        <!-- Composant éditeur -->
         <ExerciseListEditor 
           exercises={$exerciseList}
           selectedIndex={$selectedExerciseIndex}
@@ -452,6 +498,11 @@
           on:remove={handleRemoveFromEditor}
         />
       </aside>
+      
+      <!-- NOUVEAU : Overlay pour mobile -->
+      {#if isMobileNavOpen}
+        <div class="mobile-nav-overlay" on:click={handleOverlayClick}></div>
+      {/if}
       
       <!-- Colonne d'affichage -->
       <main class="exercise-display">
@@ -564,6 +615,50 @@
           </div>
         {/if}
       </main>
+      
+      <!-- NOUVEAU : Bouton flottant pour ouvrir la navigation mobile -->
+      <button 
+        class="mobile-nav-toggle"
+        on:click={toggleMobileNav}
+        aria-label="Ouvrir la liste d'exercices"
+        title="Liste d'exercices"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        {#if $currentPosition.total > 0}
+          <span class="mobile-nav-badge">{$currentPosition.current}/{$currentPosition.total}</span>
+        {/if}
+      </button>
+      
+      <!-- NOUVEAU : Barre de navigation mobile fixe en bas -->
+      <div class="mobile-nav-bar">
+        <button 
+          on:click={listActions.previousExercise}
+          disabled={!$currentPosition.hasPrevious}
+          class="mobile-nav-btn mobile-nav-btn--prev"
+          aria-label="Exercice précédent"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        
+        <div class="mobile-nav-info">
+          <span class="mobile-nav-counter">{$currentPosition.current} / {$currentPosition.total}</span>
+        </div>
+        
+        <button 
+          on:click={listActions.nextExercise}
+          disabled={!$currentPosition.hasNext}
+          class="mobile-nav-btn mobile-nav-btn--next"
+          aria-label="Exercice suivant"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </div>
   {/if}
 </div>
@@ -697,7 +792,7 @@
     animation: spin 1s linear infinite;
   }
 
-  /* NOUVEAU : Styles pour le bouton d'édition */
+  /* Styles pour le bouton d'édition */
   .nav-header {
     display: flex;
     justify-content: space-between;
@@ -740,16 +835,223 @@
     background: rgb(254, 240, 138); /* bg-yellow-200 */
   }
 
+  /* NOUVEAU : Styles pour la navigation mobile */
+  
+  /* Bouton flottant principal */
+  .mobile-nav-toggle {
+    position: fixed;
+    bottom: 6rem; /* Au-dessus de la barre de navigation */
+    right: 1rem;
+    z-index: 1000;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: rgb(37, 99, 235); /* bg-blue-600 */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.3);
+    cursor: pointer;
+    display: none; /* Masqué par défaut */
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .mobile-nav-toggle:hover {
+    background: rgb(29, 78, 216); /* bg-blue-700 */
+    transform: scale(1.05);
+  }
+
+  .mobile-nav-toggle:active {
+    transform: scale(0.95);
+  }
+
+  /* Badge du compteur sur le bouton flottant */
+  .mobile-nav-badge {
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    background: rgb(239, 68, 68); /* bg-red-500 */
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 600;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.75rem;
+    min-width: 1.25rem;
+    text-align: center;
+    border: 2px solid white;
+  }
+
+  /* Barre de navigation mobile en bas */
+  .mobile-nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    border-top: 1px solid rgb(229, 231, 235); /* border-gray-200 */
+    padding: 0.75rem;
+    display: none; /* Masqué par défaut */
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1);
+    safe-area-inset-bottom: env(safe-area-inset-bottom);
+  }
+
+  .mobile-nav-btn {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgb(209, 213, 219); /* border-gray-300 */
+    border-radius: 0.5rem;
+    background: white;
+    color: rgb(75, 85, 99); /* text-gray-600 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .mobile-nav-btn:hover:not(:disabled) {
+    background: rgb(243, 244, 246); /* bg-gray-100 */
+    border-color: rgb(156, 163, 175); /* border-gray-400 */
+    color: rgb(55, 65, 81); /* text-gray-700 */
+  }
+
+  .mobile-nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .mobile-nav-btn--prev:hover:not(:disabled) {
+    background: rgb(219, 234, 254); /* bg-blue-100 */
+    border-color: rgb(37, 99, 235); /* border-blue-600 */
+    color: rgb(37, 99, 235); /* text-blue-600 */
+  }
+
+  .mobile-nav-btn--next:hover:not(:disabled) {
+    background: rgb(220, 252, 231); /* bg-green-100 */
+    border-color: rgb(34, 197, 94); /* border-green-500 */
+    color: rgb(34, 197, 94); /* text-green-500 */
+  }
+
+  .mobile-nav-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .mobile-nav-counter {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(55, 65, 81); /* text-gray-700 */
+  }
+
+  /* Overlay pour la navigation mobile */
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+    display: none;
+  }
+
+  /* Modifications de la navigation pour le mobile */
+  .list-navigation {
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  /* Bouton fermer mobile (masqué par défaut) */
+  .mobile-close-btn {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid rgb(209, 213, 219);
+    border-radius: 0.375rem;
+    background: white;
+    color: rgb(75, 85, 99);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+  }
+
+  .mobile-close-btn:hover {
+    background: rgb(254, 226, 226); /* bg-red-100 */
+    border-color: rgb(239, 68, 68); /* border-red-500 */
+    color: rgb(220, 38, 38); /* text-red-600 */
+  }
+
   @keyframes spin {
     to {
       transform: rotate(360deg);
     }
   }
 
-  /* Responsive : masquer le contrôle UUID sur petits écrans */
-  @media (max-width: 768px) {
+  /* Responsive : Affichage mobile */
+  @media (max-width: 767px) {
+    /* Masquer le contrôle UUID sur mobile */
     .uuid-control {
       display: none;
+    }
+
+    /* Afficher les éléments mobiles */
+    .mobile-nav-toggle,
+    .mobile-nav-bar {
+      display: flex;
+    }
+
+    /* Masquer la navigation par défaut sur mobile */
+    .list-navigation {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 85%;
+      max-width: 400px;
+      background: white;
+      border-left: 1px solid rgb(229, 231, 235);
+      z-index: 1200;
+      transform: translateX(100%);
+      overflow-y: auto;
+      padding: 1rem;
+      box-shadow: -4px 0 6px -1px rgb(0 0 0 / 0.1);
+    }
+
+    .list-navigation--mobile-open {
+      transform: translateX(0);
+    }
+
+    /* Afficher l'overlay quand la nav est ouverte */
+    .mobile-nav-overlay {
+      display: block;
+    }
+
+    /* Afficher le bouton fermer sur mobile */
+    .mobile-close-btn {
+      display: flex;
+    }
+
+    /* Ajuster l'affichage principal pour faire place à la barre mobile */
+    .exercise-display {
+      padding-bottom: 5rem; /* Espace pour la barre mobile */
+    }
+
+    /* Masquer les contrôles de navigation dans la sidebar mobile */
+    .list-navigation .nav-controls {
+      display: none;
+    }
+
+    /* Ajuster le container principal */
+    .list-container {
+      display: block;
     }
   }
 
@@ -777,6 +1079,18 @@
     
     .list-actions {
       justify-content: flex-end;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .list-actions {
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .list-action-btn {
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
     }
   }
 </style>
