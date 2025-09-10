@@ -8,8 +8,9 @@
     "dev": "vite dev",
     "dev:full": "pnpm build:content && pnpm dev", 
 
-    "build:cache": "node scripts/parse-latex.js content/exercises/ cache/exercises/",
-    "build:content": "pnpm build:cache && node scripts/build-tikz.js && node scripts/build-db.js",
+    "build:cache": "node scripts/parse-latex.js content/exercises/ cache/exercises/ --incremental",
+    "build:content": "pnpm build:cache && node scripts/build-db.js",
+    "build:tikz": "node scripts/build-tikz.js",
     "build:content:full": "node scripts/parse-latex.js content/exercises/ cache/exercises/ && node scripts/build-tikz.js && node scripts/build-db.js",
     "build:app": "vite build",
     "build": "pnpm build:content && vite build",
