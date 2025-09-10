@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-// scripts/test-incrementals.js - Script de test du mode incrémental
+// scripts/debug/test-incrementals.js - Script de test du mode incrémental
 import fs from 'fs';
 import path from 'path';
 import { exec } from 'child_process';
@@ -127,3 +126,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     process.exit(1);
   });
 }
+

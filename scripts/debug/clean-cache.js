@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// scripts/clean-cache.js
-import { CacheManager } from './utils/cache-manager.js';
+// scripts/debug/clean-cache.js
+import { CacheManager } from '../utils/cache-manager.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 const fsPromises = fs.promises;
 
 async function main() {
-  const cacheDir = process.argv[2] || path.resolve(__dirname, '../cache/exercises');
+  const cacheDir = process.argv[2] || path.resolve(__dirname, '../../cache/exercises');
   const cm = new CacheManager(cacheDir);
   
   console.log('🧹 OpenYourMath V2 - Cache Cleanup Tool');
@@ -113,48 +113,36 @@ async function main() {
       // Conditions pour garder une entrée :
       // 1. Le fichier existe
       // 2. Le chemin est valide (pas de ../, pas absolu)
-      // 3. L'UUID n'est pas déjà pris (garder la première occurrence)
+      // 3. Ne pas garder les doublons (premier rencontré)
+      const isPathValid = !cacheKey.includes('../') && !path.isAbsolute(cacheKey);
+      const isDuplicate = keptUUIDs.has(fileInfo.uuid);
       
-      if (exists && 
-          !cacheKey.includes('../') && 
-          !path.isAbsolute(cacheKey) &&
-          !keptUUIDs.has(fileInfo.uuid)) {
-        
+      if (exists && isPathValid && !isDuplicate) {
         cleanMetadata.files[cacheKey] = fileInfo;
-        keptUUIDs.add(fileInfo.uuid);
         keptEntries++;
+        keptUUIDs.add(fileInfo.uuid);
       }
     }
     
-    console.log(`   Will keep: ${keptEntries} entries`);
-    console.log(`   Will remove: ${oldCount - keptEntries} entries`);
+    cleanMetadata.total_exercises = keptEntries;
     
-    // 5. Demander confirmation
-    if (process.argv.includes('--force') || process.argv.includes('-f')) {
-      console.log(`\n🚀 Force mode: proceeding with cleanup...`);
+    console.log(`\n✅ Summary:`);
+    console.log(`   Kept entries: ${keptEntries}`);
+    console.log(`   Removed entries: ${oldCount - keptEntries}`);
+    
+    // 5. Demander confirmation avant d'écraser les métadonnées
+    if (process.argv.includes('--apply')) {
+      await cm.saveMetadata(cleanMetadata);
+      console.log('\n💾 Metadata updated.');
     } else {
-      console.log(`\n❓ Proceed with cleanup? Add --force to auto-confirm`);
-      console.log(`   This will update the cache metadata file.`);
-      console.log(`   Existing cache files will not be deleted.`);
-      return;
+      console.log('\nℹ️  Dry-run mode. Use --apply to write changes.');
     }
-    
-    // 6. Effectuer le nettoyage
-    await cm.saveMetadata(cleanMetadata);
-    
-    console.log(`\n✅ Cache cleanup completed!`);
-    console.log(`   Entries before: ${oldCount}`);
-    console.log(`   Entries after: ${keptEntries}`);
-    console.log(`   Removed: ${oldCount - keptEntries}`);
-    
-    // 7. Statistiques finales
-    const finalStats = await cm.getStats();
-    console.log(`\n📊 Final cache state:`);
-    console.log(`   Total files: ${finalStats.totalFiles}`);
-    console.log(`   Last update: ${finalStats.lastUpdate}`);
     
   } catch (error) {
     console.error('💥 Error during cleanup:', error.message);
+    if (process.argv.includes('--debug')) {
+      console.error(error.stack);
+    }
     process.exit(1);
   }
 }
@@ -165,3 +153,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     process.exit(1);
   });
 }
+

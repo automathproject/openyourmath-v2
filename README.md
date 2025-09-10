@@ -29,3 +29,5 @@ docker-compose -f docker-compose.dev.yml up
 ## Documentation
 
 Voir `/docs` pour plus de détails.
+
+- Scripts de debug/maintenance: `docs/debug-scripts.md`

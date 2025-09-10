@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// scripts/debug-cache.js - Script de debug du cache
-import { CacheManager } from './utils/cache-manager.js';
+// scripts/debug/debug-cache.js - Script de debug du cache
+import { CacheManager } from '../utils/cache-manager.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 async function main() {
   const command = process.argv[2];
-  const cacheDir = process.argv[3] || path.resolve(__dirname, '../cache/exercises');
+  const cacheDir = process.argv[3] || path.resolve(__dirname, '../../cache/exercises');
   const cm = new CacheManager(cacheDir);
   
   console.log('🔍 OpenYourMath V2 - Cache Management Tool');
@@ -67,7 +67,7 @@ async function main() {
         break;
         
       default:
-        console.log('Usage: node scripts/debug-cache.js <command> [cache-dir]');
+        console.log('Usage: node scripts/debug/debug-cache.js <command> [cache-dir]');
         console.log('');
         console.log('Commands:');
         console.log('  debug     - Show detailed cache state');
@@ -78,9 +78,9 @@ async function main() {
         console.log('  stats     - Show cache statistics');
         console.log('');
         console.log('Examples:');
-        console.log('  node scripts/debug-cache.js debug');
-        console.log('  node scripts/debug-cache.js repair');
-        console.log('  node scripts/debug-cache.js cleanup cache/exercises');
+        console.log('  node scripts/debug/debug-cache.js debug');
+        console.log('  node scripts/debug/debug-cache.js repair');
+        console.log('  node scripts/debug/debug-cache.js cleanup cache/exercises');
         break;
     }
     
@@ -99,3 +99,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     process.exit(1);
   });
 }
+
