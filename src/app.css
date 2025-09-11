@@ -619,16 +619,9 @@
      QUESTION-RESPONSE STRUCTURE
      ================== */
   
-  .questions-responses {
-    @apply space-y-6;
-  }
-  
-  .question-response-pair {
-    @apply my-8;
-  }
   
   .question-block {
-    @apply bg-gray-50 rounded-lg p-4 mb-4;
+    @apply bg-gray-50 rounded-lg p-4;
   }
   
   .question-header {
@@ -679,18 +672,12 @@
   @apply ml-0 sm:ml-11;
 }
 
-.inline-hint-content {
-  @apply p-4;
-}
 
 .inline-solution {
   @apply mb-4 rounded-lg border border-green-300 bg-green-50 animate-in slide-in-from-top-1 duration-300;
   @apply ml-0 sm:ml-11;
 }
 
-.inline-solution-content {
-  @apply p-4;
-}
   
   /* ==================
      TRADITIONAL STRUCTURE
