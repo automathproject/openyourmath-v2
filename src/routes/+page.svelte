@@ -113,8 +113,13 @@
 <div class="container mx-auto px-4 py-4 sm:py-8">
   <!-- Section d'en-tête et barre de recherche -->
   <div class="search-container text-center mb-6 sm:mb-12">
-    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">Recherchez votre exercice</h1>
-    <p class="hidden sm:block text-gray-600 text-sm sm:text-base mb-4 sm:mb-6">Utilisez la recherche textuelle ou naviguez par chapitres, modules et niveaux.</p>
+    <div class="lg:flex lg:items-center lg:justify-center lg:gap-6">
+      <img src="/img/logo1.png" alt="OpenYourMath" class="hidden lg:block w-24 h-auto" loading="eager" />
+      <div class="lg:text-left">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">Recherchez votre exercice</h1>
+        <p class="hidden sm:block text-gray-600 text-sm sm:text-base mb-4 sm:mb-6">Utilisez la recherche textuelle ou naviguez par chapitres, modules et niveaux.</p>
+      </div>
+    </div>
     <div class="relative">
       <!-- Icône loupe à gauche -->
       <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-gray-400" aria-hidden="true">
@@ -142,11 +147,6 @@
     <aside class="lg:col-span-2">
       <!-- Version desktop (masquée sur mobile) -->
       <div class="hidden lg:block sticky top-4">
-        <!-- Logo (grands écrans seulement) -->
-        <a href="/" class="inline-block mb-4" aria-label="Accueil OpenYourMath">
-          <img src="/img/logo1.png" alt="OpenYourMath" class="w-36 h-auto" loading="eager" />
-        </a>
-        
         <ChapterNavigation 
           bind:selectedLevel={$filters.level}
           bind:selectedModule={$filters.module}
