@@ -864,7 +864,17 @@
 
   /* Layout + display column */
   .list-container { flex:1; display:flex; min-height:0; overflow:hidden; }
-  .exercise-display { background:white; overflow-y:auto; position:relative; }
+  .exercise-display {
+    background:white;
+    position:relative;
+    /* Make width stable regardless of content and scrollbar */
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-gutter: stable; /* reserve scrollbar space when needed */
+  }
   .exercise-loading { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:#6b7280; }
   .loading-spinner { width:2rem; height:2rem; border:2px solid #e5e7eb; border-top:2px solid #3b82f6; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:1rem; }
   @keyframes spin { to { transform: rotate(360deg); } }

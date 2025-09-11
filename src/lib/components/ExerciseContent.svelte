@@ -301,9 +301,7 @@
 </div>
 
 <style>
-  .exercise-content {
-    /* Ne pas utiliser space-y-6 qui applique automatiquement des marges */
-  }
+
   
   /* Appliquer l'espacement manuellement seulement où nécessaire */
   .exercise-content > :global(*:not(.question-response-pair) + *:not(.question-response-pair)) {

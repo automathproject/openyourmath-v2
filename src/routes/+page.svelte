@@ -143,34 +143,9 @@
   <!-- MODIFIÉ : Mise en page principale adaptative selon la prévisualisation -->
   <div class="grid gap-8 transition-all duration-300 {$hasPreview ? 'grid-cols-1 lg:grid-cols-6' : 'grid-cols-1 lg:grid-cols-4'}">
     
-    <!-- COLONNE DE GAUCHE : Navigation -->
+    <!-- COLONNE DE GAUCHE : Filtres + Navigation -->
     <aside class="lg:col-span-2">
-      <!-- Version desktop (masquée sur mobile) -->
-      <div class="hidden lg:block sticky top-4">
-        <ChapterNavigation 
-          bind:selectedLevel={$filters.level}
-          bind:selectedModule={$filters.module}
-          bind:selectedChapter={$filters.chapter}
-          bind:selectedSubchapter={$filters.subchapter}
-          on:navigate={handleChapterNavigation}
-        />
-      </div>
-
-      <!-- Version mobile (masquée sur desktop) -->
-      <div class="block lg:hidden mb-6">
-        <MobileChapterNav 
-          bind:selectedLevel={$filters.level}
-          bind:selectedModule={$filters.module}
-          bind:selectedChapter={$filters.chapter}
-          bind:selectedSubchapter={$filters.subchapter}
-          on:navigate={handleChapterNavigation}
-        />
-      </div>
-    </aside>
-
-    <!-- COLONNE DU MILIEU : Filtres et Résultats -->
-    <main class="lg:col-span-2">
-      <!-- Section des filtres avancés -->
+      <!-- Filtres avancés (désormais au-dessus de la navigation) -->
       <div class="mb-6">
         <div class="flex items-center justify-between mb-4">
           <button on:click={() => showAdvancedFilters = !showAdvancedFilters} class="btn btn-secondary">
@@ -184,7 +159,7 @@
         </div>
 
         {#if showAdvancedFilters}
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg border">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg border">
             <!-- Module -->
             <div>
               <label for="module-filter" class="block text-sm font-medium text-gray-700 mb-1">Module</label>
@@ -212,7 +187,7 @@
                 </div>
               {/if}
             </div>
-            
+
             <!-- Niveau -->
             <div>
               <label for="level-filter" class="block text-sm font-medium text-gray-700 mb-1">Niveau</label>
@@ -228,7 +203,7 @@
                 {/each}
               </select>
             </div>
-            
+
             <!-- Difficulté numérique -->
             <div>
               <label for="difficulty-filter" class="block text-sm font-medium text-gray-700 mb-1">Difficulté</label>
@@ -245,7 +220,7 @@
                 {/each}
               </select>
             </div>
-            
+
             <!-- Auteur -->
             <div>
               <label for="author-filter" class="block text-sm font-medium text-gray-700 mb-1">Auteur</label>
@@ -276,8 +251,31 @@
           </div>
         {/if}
       </div>
+      <!-- Navigation desktop (masquée sur mobile) -->
+      <div class="hidden lg:block sticky top-4">
+        <ChapterNavigation 
+          bind:selectedLevel={$filters.level}
+          bind:selectedModule={$filters.module}
+          bind:selectedChapter={$filters.chapter}
+          bind:selectedSubchapter={$filters.subchapter}
+          on:navigate={handleChapterNavigation}
+        />
+      </div>
 
-      <!-- Section des résultats -->
+      <!-- Navigation mobile (masquée sur desktop) -->
+      <div class="block lg:hidden mb-6">
+        <MobileChapterNav 
+          bind:selectedLevel={$filters.level}
+          bind:selectedModule={$filters.module}
+          bind:selectedChapter={$filters.chapter}
+          bind:selectedSubchapter={$filters.subchapter}
+          on:navigate={handleChapterNavigation}
+        />
+      </div>
+    </aside>
+
+    <!-- COLONNE DU MILIEU : Résultats -->
+    <main class="lg:col-span-2">
       <div>
         {#if $error}
           <div class="search-error">

@@ -178,8 +178,7 @@
   <!-- Fil d'Ariane pour la sélection active (non compact) -->
   {#if (selectedPath.level || selectedPath.module || selectedPath.chapter) && !compact}
     <div class="text-sm text-gray-600 bg-gray-50 p-2 rounded-md mb-4 truncate">
-      <span class="font-semibold">🧭 Actif :</span>
-      {#if selectedPath.level} › <span class="text-blue-700">🎓 {selectedPath.level}</span>{/if}
+      {#if selectedPath.level}<span class="text-blue-700">🎓 {selectedPath.level}</span>{/if}
       {#if selectedPath.module} › <span class="text-blue-700">📖 {selectedPath.module}</span>{/if}
       {#if selectedPath.chapter} › <span class="text-blue-700">📚 {selectedPath.chapter}</span>{/if}
       {#if selectedPath.subchapter} › <span class="text-blue-700">{selectedPath.subchapter}</span>{/if}

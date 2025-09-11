@@ -24,8 +24,9 @@
   }
 
   // Compute default breadcrumb when not provided
+  $: showCrumb = showBreadcrumb && variant !== 'preview';
   $: computedBreadcrumb = (() => {
-    if (!showBreadcrumb) return [];
+    if (!showCrumb) return [];
     if (breadcrumbItems && breadcrumbItems.length > 0) return breadcrumbItems;
     const items = [];
     if (variant === 'full' && position) {
@@ -44,8 +45,8 @@
   })();
 </script>
 
-<header class="exercise-header">
-  {#if showBreadcrumb}
+<header class="exercise-header" class:is-preview={variant === 'preview'}>
+  {#if showCrumb}
     <Breadcrumb items={computedBreadcrumb} />
   {/if}
   <div class="flex items-baseline justify-between">
@@ -57,6 +58,7 @@
     {/if}
   </div>
 
+  {#if variant !== 'preview'}
   <div class="exercise-metadata">
     {#if exercise.chapter && variant !== 'full'}
       <span class="exercise-badge exercise-badge--chapter">{exercise.chapter}</span>
@@ -80,6 +82,7 @@
       <span class="text-sm text-gray-600">Par <strong>{exercise.author}</strong></span>
     {/if}
   </div>
+  {/if}
 
   {#if showGlobalToggles}
     <div class="exercise-actions">
@@ -104,23 +107,13 @@
 <style>
   .exercise-header {
     border-bottom: 1px solid rgb(229 231 235);
-    padding: 1.5rem;
   }
   .exercise-title {
     color: rgb(17 24 39);
     font-weight: 700;
     margin-bottom: 1rem;
   }
-  .exercise-breadcrumb {
-    color: rgb(107 114 128);
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .exercise-breadcrumb a { text-decoration: none; }
-  .exercise-breadcrumb a:hover { color: rgb(37 99 235); }
+
   .exercise-metadata {
     display: flex;
     flex-wrap: wrap;
@@ -152,4 +145,11 @@
   .action-button--hint:hover { background: rgb(253 246 178); }
   .action-button--solution { background: rgb(240 253 244); color: rgb(22 101 52); }
   .action-button--solution:hover { background: rgb(187 247 208); }
+
+  /* Preview context: reduce header typography scale */
+  .exercise-header.is-preview { font-size: 0.9em; }
+  .exercise-header.is-preview .exercise-badge,
+  .exercise-header.is-preview .action-button,
+  .exercise-header.is-preview .exercise-title,
+  .exercise-header.is-preview .exercise-metadata { font-size: inherit !important; }
 </style>
