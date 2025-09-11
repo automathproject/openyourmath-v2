@@ -529,80 +529,15 @@
           </div>
         {:else if $selectedExercise}
           <article class="exercise-content-wrapper">
-            <!-- Header de l'exercice -->
-            <header class="exercise-header">
-              <div class="exercise-breadcrumb">
-                <div class="breadcrumb-left">
-                  <span class="breadcrumb-item">Exercice {$currentPosition.current}</span>
-                  {#if $selectedExercise?.chapter}
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-item">{$selectedExercise.chapter}</span>
-                  {/if}
-                </div>
-                <span class="exercise-uuid">{$selectedExercise.uuid}</span>
-              </div>
-              
-              <h1 class="exercise-title">{$selectedExercise?.title || 'Exercice'}</h1>
-              
-              <div class="exercise-metadata">
-                {#if $selectedExercise?.chapter}
-                  <span class="exercise-badge exercise-badge--chapter">
-                    {$selectedExercise.chapter}
-                  </span>
-                {/if}
-                
-                {#if $selectedExercise?.theme}
-                  <span class="exercise-badge exercise-badge--theme">
-                    {$selectedExercise.theme}
-                  </span>
-                {/if}
-                
-                {#if $selectedExercise?.difficulty}
-                  <div class="exercise-difficulty">
-                    <span class="difficulty-label">Difficulté :</span>
-                    <div class="difficulty-stars" aria-label="Difficulté: {$selectedExercise.difficulty} sur 5">
-                      {#each Array(5) as _, i}
-                        <div class="difficulty-star {i < $selectedExercise.difficulty ? 'difficulty-star--filled' : ''}" aria-hidden="true"></div>
-                      {/each}
-                    </div>
-                    <span class="difficulty-value">({$selectedExercise.difficulty}/5)</span>
-                  </div>
-                {/if}
-                
-                {#if $selectedExercise?.author}
-                  <span class="exercise-author">
-                    Par <strong>{$selectedExercise.author}</strong>
-                  </span>
-                {/if}
-              </div>
-              
-              <div class="exercise-actions">
-                <button 
-                  on:click={() => showHint = !showHint}
-                  class="exercise-action-btn exercise-action-btn--hint"
-                  class:exercise-action-btn--active={showHint}
-                >
-                  💡 {showHint ? 'Masquer' : 'Voir'} les indications
-                </button>
-                
-                <button 
-                  on:click={() => showSolution = !showSolution}
-                  class="exercise-action-btn exercise-action-btn--solution"
-                  class:exercise-action-btn--active={showSolution}
-                >
-                  ✅ {showSolution ? 'Masquer' : 'Voir'} les solutions
-                </button>
-              </div>
-            </header>
-            
-            <!-- Contenu de l'exercice -->
-            <div class="exercise-content">
-              <ExerciseContent 
-                content={$selectedExercise.content || []}
-                bind:showHint
-                bind:showSolution
-              />
-            </div>
+            <ExerciseContent 
+              exercise={$selectedExercise}
+              position={$currentPosition}
+              variant="full"
+              showGlobalToggles={true}
+              content={$selectedExercise.content || []}
+              bind:showHint
+              bind:showSolution
+            />
           </article>
         {:else}
           <div class="no-selection">

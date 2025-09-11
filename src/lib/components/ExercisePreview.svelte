@@ -93,34 +93,11 @@
       </div>
     {:else if $previewState.exercise}
       <div class="preview-exercise">
-        <!-- En-tête de l'exercice -->
-        <div class="preview-exercise-header">
-         
-          <h1 class="preview-exercise-title">
-            {$previewState.exercise.title}
-          </h1>
-          
-          <!-- Métadonnées -->
-          <div class="preview-metadata">
-           
-            {#if $previewState.exercise.difficulty}
-              <span class="preview-badge preview-badge--difficulty">
-                {formatDifficulty($previewState.exercise.difficulty)}
-              </span>
-            {/if}
-            
-            {#if $previewState.exercise.author}
-              <span class="text-sm text-gray-600">
-                Par <strong>{$previewState.exercise.author}</strong>
-              </span>
-            {/if}
-          </div>
-
-        </div>
-        
-        <!-- Contenu de l'exercice -->
         <div class="preview-exercise-content">
           <ExerciseContent 
+            exercise={$previewState.exercise}
+            variant="preview"
+            showGlobalToggles={false}
             content={$previewState.exercise.content || []}
             bind:showHint
             bind:showSolution

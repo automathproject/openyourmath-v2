@@ -845,6 +845,10 @@
   .external-link-btn { @apply text-gray-400 hover:text-blue-600 transition-colors p-1 rounded; }
   .external-link-btn:hover { @apply bg-blue-50; }
   
+  /* Difficulty dots override to ensure active/inactive colors win */
+  .difficulty-dot.difficulty-dot--active { background-color: #f59e0b; }
+  .difficulty-dot.difficulty-dot--inactive { background-color: #e5e7eb; }
+  
   /* ==================
      SIMILAR EXERCISES
      ================== */

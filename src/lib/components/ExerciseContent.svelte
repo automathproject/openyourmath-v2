@@ -1,10 +1,15 @@
 <!-- src/lib/components/ExerciseContent.svelte -->
 <script>
   import MathRenderer from './MathRenderer.svelte';
+  import ExerciseHeader from './ExerciseHeader.svelte';
   
   export let content = [];
   export let showSolution = false;
   export let showHint = false;
+  export let exercise = null; // objet exercice complet si disponible
+  export let variant = 'full'; // 'full' | 'preview' | 'simple'
+  export let position = null; // { current, total }
+  export let showGlobalToggles = false;
   
   // État local pour contrôler l'affichage individuel des solutions et indications
   let solutionStates = {};
@@ -158,6 +163,16 @@
 </script>
 
 <div class="exercise-content">
+  {#if exercise}
+    <ExerciseHeader 
+      {exercise} 
+      {variant}
+      {position}
+      bind:showHint
+      bind:showSolution
+      showGlobalToggles={showGlobalToggles}
+    />
+  {/if}
   <!-- Contenu principal (texte introductif) -->
   {#if organizedContent.mainContent.length > 0}
     <div class="main-content">

@@ -314,7 +314,11 @@
                       <div class="result-badge">{exercise.level}</div>
                     {/if}
                     {#if exercise.difficulty}
-                      <div class="result-badge">{formatDifficulty(exercise.difficulty)}</div>
+                      <div class="flex items-center gap-1">
+                        {#each Array(5) as _, i}
+                          <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-400' : 'bg-gray-200'}"></div>
+                        {/each}
+                      </div>
                     {/if}
                   </div>
                   <div class="flex items-center gap-2">

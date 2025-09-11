@@ -16,60 +16,11 @@
 
 {#if data.exercise}
 <div class="container max-w-4xl mx-auto px-3 sm:px-6 py-2 sm:py-6">    <article class="exercise">
-      <!-- HEADER -->
-      <header class="exercise-header">
-        <!-- Breadcrumb (masqué sur mobile) -->
-        <nav class="exercise-breadcrumb">
-          <div class="breadcrumb-left hidden sm:flex">
-            <a href="/">Accueil</a>
-            <span class="mx-2">›</span>
-            <span>{data.exercise.level}</span>
-            <span class="mx-2">›</span>
-            <span>{data.exercise.module}</span>
-            {#if data.exercise.chapter}
-              <span class="mx-2">›</span>
-              <span>{data.exercise.chapter}</span>
-            {/if}
-          </div>
-          <span class="exercise-uuid">{data.exercise.uuid}</span>
-        </nav>
-        
-        <!-- Titre -->
-        <h1 class="exercise-title">
-          {data.exercise.title}
-        </h1>
-        
-        <!-- Métadonnées -->
-        <div class="exercise-metadata">         
-          {#if data.exercise.theme}
-            <span class="exercise-badge exercise-badge--theme">
-              {data.exercise.theme}
-            </span>
-          {/if}
-          
-          {#if data.exercise.difficulty}
-            <div class="exercise-difficulty">
-              <span class="text-sm text-gray-600">Difficulté :</span>
-              <div class="flex gap-1">
-                {#each Array(5) as _, i}
-                  <div class="difficulty-dot {i < data.exercise.difficulty ? 'difficulty-dot--active' : 'difficulty-dot--inactive'}"></div>
-                {/each}
-              </div>
-              <span class="text-sm text-gray-500">({data.exercise.difficulty}/5)</span>
-            </div>
-          {/if}
-          
-          {#if data.exercise.author}
-            <span class="text-sm text-gray-600">
-              Par <strong>{data.exercise.author}</strong>
-            </span>
-          {/if}
-        </div>
-      </header>
-      
-      <!-- CONTENU -->
       <main class="px-3 py-1 sm:px-6 sm:py-3">
         <ExerciseContent 
+          exercise={data.exercise}
+          variant="preview"
+          showGlobalToggles={true}
           content={data.exercise.content || []}
           bind:showHint
           bind:showSolution
