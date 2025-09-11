@@ -139,7 +139,7 @@
   <div class="grid gap-8 transition-all duration-300 {$hasPreview ? 'grid-cols-1 lg:grid-cols-6' : 'grid-cols-1 lg:grid-cols-4'}">
     
     <!-- COLONNE DE GAUCHE : Navigation -->
-    <aside class="lg:col-span-1">
+    <aside class="lg:col-span-2">
       <!-- Version desktop (masquée sur mobile) -->
       <div class="hidden lg:block sticky top-4">
         <!-- Logo (grands écrans seulement) -->
@@ -169,7 +169,7 @@
     </aside>
 
     <!-- COLONNE DU MILIEU : Filtres et Résultats -->
-    <main class="{$hasPreview ? 'lg:col-span-3' : 'lg:col-span-3'}">
+    <main class="lg:col-span-2">
       <!-- Section des filtres avancés -->
       <div class="mb-6">
         <div class="flex items-center justify-between mb-4">

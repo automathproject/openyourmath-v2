@@ -80,8 +80,13 @@
           href="/" 
           class="nav-link"
           class:nav-link--active={isHomePage}
+          aria-label="Rechercher des exercices"
+          title="Rechercher des exercices"
         >
-          Recherche
+          <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <span class="nav-text">Rechercher</span>
         </a>
         
         <a 
@@ -97,6 +102,18 @@
 
       <!-- NOUVEAU BLOC : Actions du header (liste + menu mobile) -->
       <div class="header-actions">
+        <!-- Lien recherche visible sur mobile (icône seule) -->
+        <a 
+          href="/"
+          class="nav-link mobile-search-link"
+          aria-label="Rechercher des exercices"
+          title="Rechercher des exercices"
+        >
+          <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <span class="nav-text">Rechercher</span>
+        </a>
         <!-- LE LIEN VERS LA LISTE EST MAINTENANT ICI, EN DEHORS DE .desktop-nav -->
         <a 
           href={listUrl}
@@ -481,6 +498,10 @@
     .header-scrolled .brand-title {
       font-size: 1.125rem;
     }
+
+    /* Lien recherche mobile visible (icône), texte masqué */
+    .mobile-search-link { display: flex !important; }
+    .mobile-search-link .nav-text { display: none; }
   }
   
   /* Tablet: 768px - 1023px */
@@ -512,6 +533,9 @@
       padding: 2rem;
     }
   }
+
+  /* Masquer le lien recherche mobile par défaut (affiché via MQ mobile) */
+  .mobile-search-link { display: none; }
   
   /* Large screens: ≥ 1280px */
   @media (min-width: 1280px) {
