@@ -24,6 +24,11 @@
   export let selectedLevel = '';
   export let compact = false;
   
+  // Mémoriser la sélection précédente pour éviter de ré-étendre après un repli manuel
+  let prevSelectedLevel = null;
+  let prevSelectedModule = null;
+  let prevSelectedChapter = null;
+  
   // Charger la structure hiérarchique avec les vrais comptages
   onMount(async () => {
     console.log('🚀 ChapterNavigation component mounted');
@@ -59,10 +64,24 @@
     selectedPath.chapter = selectedChapter;
     selectedPath.subchapter = selectedSubchapter;
     
-    // Auto-expand basé sur la sélection
-    if (selectedLevel) expandedLevels.add(selectedLevel);
-    if (selectedModule) expandedModules.add(`${selectedLevel}-${selectedModule}`);
-    if (selectedChapter) expandedChapters.add(`${selectedLevel}-${selectedModule}-${selectedChapter}`);
+    // Auto-étendre uniquement quand la sélection change (et pas après un toggle manuel)
+    const levelChanged = selectedLevel !== prevSelectedLevel;
+    const moduleChanged = selectedModule !== prevSelectedModule || selectedLevel !== prevSelectedLevel;
+    const chapterChanged = selectedChapter !== prevSelectedChapter || moduleChanged;
+
+    if (levelChanged && selectedLevel) {
+      expandedLevels.add(selectedLevel);
+    }
+    if (moduleChanged && selectedLevel && selectedModule) {
+      expandedModules.add(`${selectedLevel}-${selectedModule}`);
+    }
+    if (chapterChanged && selectedLevel && selectedModule && selectedChapter) {
+      expandedChapters.add(`${selectedLevel}-${selectedModule}-${selectedChapter}`);
+    }
+
+    prevSelectedLevel = selectedLevel;
+    prevSelectedModule = selectedModule;
+    prevSelectedChapter = selectedChapter;
     
     expandedLevels = expandedLevels;
     expandedModules = expandedModules;
@@ -264,6 +283,45 @@
 </div>
 
 <style>
-  /* Les styles spécifiques à CE composant iraient ici.
-     Puisque nous avons tout factorisé dans app.css, cette section peut rester vide. */
+  /* Local styles for hierarchical navigation (moved from app.css) */
+  .nav-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 0.25rem 0.25rem;
+    border-radius: 0.375rem;
+    gap: 0.25rem;
+  }
+
+  .nav-item:not(.is-active):hover {
+    background: #f3f4f6; /* gray-100 */
+  }
+
+  .nav-item.is-active {
+    background: #dbeafe; /* blue-100 */
+    color: #1e40af;      /* blue-800 */
+  }
+
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+  }
+
+  .nav-item-content {
+    flex: 1;
+    min-width: 0;
+    margin-left: 0.25rem;
+    cursor: pointer;
+  }
+
+  .nav-sublist {
+    border-left: 2px solid #e5e7eb; /* gray-200 */
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+  }
 </style>
