@@ -112,11 +112,23 @@
     margin-left: -1rem !important;
     padding-left: 0.25rem !important;
   }
-    .exercise-header {
+  :global(.exercise-header) {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
     margin-bottom: 0.75rem !important;
   }
-}
+  }
+
+  /* Similar exercises */
+  .similar-exercises { margin-top: 3rem; }
+  .similar-exercises-title { font-size: 1.5rem; font-weight: 700; color:#111827; margin-bottom: 1.5rem; }
+  .similar-exercises-grid { display:grid; gap:1rem; grid-template-columns: repeat(1,minmax(0,1fr)); }
+  @media (min-width: 768px) { .similar-exercises-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media (min-width: 1024px) { .similar-exercises-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+  .similar-exercise-card { display:block; background:#fff; border-radius:0.5rem; border:1px solid #e5e7eb; box-shadow:0 1px 2px rgba(0,0,0,0.05); padding:1rem; }
+  .similar-exercise-card:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+  .similar-exercise-title { font-weight:600; color:#111827; margin-bottom:0.5rem; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .similar-exercise-metadata { display:flex; align-items:center; gap:0.5rem; font-size:0.875rem; color:#4b5563; }
+  .similar-exercise-badge { background:#f3f4f6; padding:0.25rem 0.5rem; border-radius:0.25rem; font-size:0.75rem; }
 
 </style>

@@ -436,4 +436,34 @@
   {/if}
 </div>
 
-<style></style>
+<style>
+  /* Search interface */
+  .search-container { max-width: 42rem; margin-left: auto; margin-right: auto; }
+  .search-input { width: 100%; padding: 0.75rem 3rem 0.75rem 2.5rem; font-size: 1.125rem; border: 1px solid rgb(209 213 219); border-radius: 0.5rem; }
+  .search-input:focus { outline: none; box-shadow: 0 0 0 2px rgb(59 130 246 / 0.5); border-color: transparent; }
+  .search-loading { position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); }
+  .search-spinner { border-bottom: 2px solid rgb(37 99 235); border-radius: 9999px; width: 1.25rem; height: 1.25rem; animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg);} }
+  .search-error { margin-top: 0.5rem; padding: 0.75rem; background: rgb(254 242 242); border: 1px solid rgb(254 202 202); border-radius: 0.5rem; }
+  .search-error-text { color: rgb(220 38 38); font-size: 0.875rem; }
+
+  /* Results */
+  .results-header { display: flex; align-items: center; justify-content: space-between; }
+  .results-title { font-size: 1.25rem; font-weight: 600; color: rgb(17 24 39); }
+  .results-grid { display: grid; gap: 1rem; }
+  .result-card { background: white; border-radius: 0.5rem; border: 1px solid rgb(229 231 235); box-shadow: 0 1px 2px rgb(0 0 0 / 0.05); padding: 1.5rem; transition: box-shadow .2s; }
+  .result-card:hover { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06); }
+  .result-header { display: flex; align-items: start; justify-content: space-between; }
+  .result-title { font-size: 1.125rem; font-weight: 500; color: rgb(17 24 39); margin-bottom: 0.5rem; }
+  .result-title a { text-decoration: none; }
+  .result-title a:hover { color: rgb(37 99 235); }
+  .result-metadata { display: flex; align-items: center; gap: 1rem; font-size: 0.875rem; color: rgb(75 85 99); margin-bottom: 0.5rem; }
+  .result-badge { background: rgb(243 244 246); padding: 0.25rem 0.5rem; border-radius: 0.375rem; }
+  .result-preview div { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .result-preview .katex { font-size: 0.875rem !important; }
+  .result-preview .katex-display { margin: 0.25rem 0 !important; }
+  .result-card--selected { border-color: rgb(59 130 246); background: rgb(239 246 255); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+  .selection-indicator { width: 1.5rem; height: 1.5rem; background: rgb(219 234 254); border-radius: 9999px; display: flex; align-items: center; justify-content: center; }
+  .external-link-btn { color: rgb(156 163 175); transition: color .2s, background-color .2s; padding: 0.25rem; border-radius: 0.25rem; }
+  .external-link-btn:hover { color: rgb(37 99 235); background: rgb(239 246 255); }
+</style>

@@ -599,6 +599,92 @@
 </div>
 
 <style>
+  /* List page styles (moved from app.css) */
+  .exercise-list-page {
+    min-height: 100vh;
+    background-color: #f8fafc;
+  }
+
+  .list-header {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .list-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .list-header-info { flex: 1; }
+
+  .list-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .list-count { color: #6b7280; font-weight: 500; }
+
+  .list-warning {
+    color: #d97706;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .list-info {
+    color: #3b82f6;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .list-actions { display: flex; gap: 0.5rem; align-items: center; }
+
+  .list-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+
+  .list-action-btn--primary { background-color: #3b82f6; color: white; }
+  .list-action-btn--primary:hover { background-color: #2563eb; }
+
+  .list-action-btn--secondary { background-color: #f1f5f9; color: #475569; }
+  .list-action-btn--secondary:hover { background-color: #e2e8f0; }
+
+  .list-action-btn--danger { background-color: #ef4444; color: white; }
+  .list-action-btn--danger:hover { background-color: #dc2626; }
+
+  @media (max-width: 768px) {
+    .list-header-content { flex-direction: column; align-items: stretch; gap: 1rem; }
+    .list-actions { justify-content: center; }
+  }
   .exercise-breadcrumb {
     display: flex;
     justify-content: space-between;
@@ -768,6 +854,45 @@
 
   .edit-toggle-btn--active:hover {
     background: rgb(254, 240, 138); /* bg-yellow-200 */
+  }
+
+  /* Empty state (scoped to list page) */
+  .exercise-list-page .empty-state { display:flex; align-items:center; justify-content:center; min-height:60vh; padding:2rem; }
+  .exercise-list-page .empty-state-content { text-align:center; max-width:28rem; }
+  .exercise-list-page .empty-state-icon { margin:0 auto 1.5rem; color:#9ca3af; }
+  .exercise-list-page .empty-state-title { font-size:1.25rem; font-weight:600; color:#374151; margin:0 0 0.5rem; }
+  .exercise-list-page .empty-state-description { color:#6b7280; margin:0 0 2rem; line-height:1.6; }
+  .exercise-list-page .empty-state-actions { margin-bottom:2rem; }
+  .exercise-list-page .empty-state-help { border-top:1px solid #e5e7eb; padding-top:1.5rem; }
+  .exercise-list-page .help-details { text-align:left; }
+  .exercise-list-page .help-summary { color:#6b7280; cursor:pointer; font-size:0.875rem; }
+  .help-content { margin-top:0.5rem; padding:1rem; background:#f9fafb; border-radius:0.375rem; font-size:0.875rem; }
+  .help-code { background:#1f2937; color:#f9fafb; padding:0.5rem; border-radius:0.25rem; font-family:monospace; display:block; margin:0.5rem 0; }
+  .help-note { color:#6b7280; font-size:0.8rem; margin:0.5rem 0 0; }
+
+  /* Layout + display column */
+  .list-container { flex:1; display:flex; min-height:0; overflow:hidden; }
+  .exercise-display { background:white; overflow-y:auto; position:relative; }
+  .exercise-loading { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:#6b7280; }
+  .loading-spinner { width:2rem; height:2rem; border:2px solid #e5e7eb; border-top:2px solid #3b82f6; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:1rem; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .exercise-error { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:2rem; text-align:center; }
+  .error-icon { color:#ef4444; margin-bottom:1rem; }
+  .error-title { font-size:1.125rem; font-weight:600; color:#374151; margin:0 0 0.5rem; }
+  .error-message { color:#6b7280; margin:0 0 1.5rem; }
+  .error-retry-btn { padding:0.5rem 1rem; background:#3b82f6; color:white; border:none; border-radius:0.375rem; cursor:pointer; font-weight:500; transition:background-color .2s; }
+  .error-retry-btn:hover { background:#2563eb; }
+  .no-selection { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:#9ca3af; }
+  .no-selection-icon { margin-bottom:1rem; }
+  .no-selection-text { font-size:1.125rem; color:#6b7280; }
+
+  /* Wrapper */
+  .exercise-content-wrapper { padding:1.5rem; height:100%; overflow-y:auto; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .list-container { flex-direction:column; }
+    .list-navigation { width:100%; height:200px; border-right:none; border-bottom:1px solid #e5e7eb; }
   }
 
   /* NOUVEAU : Styles pour la navigation mobile */
@@ -1027,5 +1152,33 @@
       font-size: 0.875rem;
       padding: 0.5rem 1rem;
     }
+  }
+  /* Mobile compact for list page */
+  @media (max-width: 640px) {
+    .exercise-list-page .exercise { border: 0 !important; box-shadow: none !important; }
+    .exercise-list-page .exercise-header { border-bottom: 0 !important; padding: 0.75rem 0.75rem !important; }
+    .exercise-list-page .exercise-content { padding: 0.75rem !important; }
+    .exercise-list-page .exercise-breadcrumb { margin-bottom: 0.5rem !important; gap: 0.25rem !important; }
+    .exercise-list-page .exercise-title { margin-bottom: 0.75rem !important; font-size: 1.25rem !important; line-height: 1.25 !important; }
+    .exercise-list-page .exercise-metadata { gap: 0.5rem !important; margin-bottom: 0.75rem !important; }
+    .exercise-list-page .exercise-badge { padding: 0.125rem 0.5rem !important; font-size: 0.75rem !important; }
+    .exercise-list-page .exercise-actions { gap: 0.5rem !important; margin-top: 0.25rem !important; }
+    .exercise-list-page .exercise-action-btn { padding: 0.375rem 0.5rem !important; font-size: 0.875rem !important; border-radius: 0.5rem !important; }
+    .exercise-list-page .content-card,
+    .exercise-list-page .question-block,
+    .exercise-list-page .collapsible-section,
+    .exercise-list-page .preview-header,
+    .exercise-list-page .preview-exercise-header,
+    .exercise-list-page .similar-exercise-card {
+      border: 0 !important; box-shadow: none !important; padding: 0.75rem !important;
+    }
+    .exercise-list-page .content-card-footer,
+    .exercise-list-page .results-header,
+    .exercise-list-page .nav-header,
+    .exercise-list-page .nav-controls {
+      border: 0 !important;
+    }
+    .exercise-list-page .questions-responses { gap: 0.75rem !important; }
+    .exercise-list-page .question-response-pair { margin: 0.75rem 0 !important; }
   }
 </style>

@@ -101,4 +101,55 @@
   {/if}
 </header>
 
-<style></style>
+<style>
+  .exercise-header {
+    border-bottom: 1px solid rgb(229 231 235);
+    padding: 1.5rem;
+  }
+  .exercise-title {
+    color: rgb(17 24 39);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .exercise-breadcrumb {
+    color: rgb(107 114 128);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .exercise-breadcrumb a { text-decoration: none; }
+  .exercise-breadcrumb a:hover { color: rgb(37 99 235); }
+  .exercise-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .exercise-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .exercise-badge--chapter { background: rgb(219 234 254); color: rgb(30 64 175); }
+  .exercise-badge--theme { background: rgb(237 233 254); color: rgb(91 33 182); }
+  .exercise-difficulty { display: flex; align-items: center; gap: 0.5rem; }
+
+  .exercise-actions { display: flex; gap: 0.75rem; }
+  .action-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    transition: background-color .2s ease;
+  }
+  .action-button--hint { background: rgb(254 252 232); color: rgb(133 77 14); }
+  .action-button--hint:hover { background: rgb(253 246 178); }
+  .action-button--solution { background: rgb(240 253 244); color: rgb(22 101 52); }
+  .action-button--solution:hover { background: rgb(187 247 208); }
+</style>

@@ -432,7 +432,6 @@
     padding: 2rem 1rem;
   }
   .footer {
-    margin-top: 4rem;
     background: #f9fafb;
     border-top: 1px solid #e5e7eb;
   }

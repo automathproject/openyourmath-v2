@@ -397,5 +397,81 @@
 </div>
 
 <style>
-
+  .mobile-chapter-nav { position: relative; }
+  @media (min-width: 1024px) { .mobile-chapter-nav { display: none; } }
+  .mobile-nav-trigger { width:100%; padding:1rem; background:#fff; border:1px solid #d1d5db; border-radius:0.5rem; box-shadow:0 1px 2px rgba(0,0,0,0.05); }
+  .mobile-nav-trigger:hover { background:#f9fafb; }
+  .mobile-nav-trigger--active { background:#f3f4f6; border-color:#9ca3af; }
+  .mobile-nav-content { display:flex; align-items:center; gap:0.75rem; }
+  .mobile-nav-icon { color:#4b5563; }
+  .mobile-nav-text { flex:1; text-align:left; min-width:0; }
+  .mobile-nav-selection { font-weight:500; color:#111827; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .mobile-nav-placeholder { color:#6b7280; font-weight:400; }
+  .mobile-nav-arrow { color:#9ca3af; flex-shrink:0; }
+  .mobile-nav-dropdown { position:absolute; left:0; right:0; top:100%; margin-top:0.5rem; background:#fff; border:1px solid #d1d5db; border-radius:0.5rem; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1); z-index:50; max-height:70vh; overflow-y:auto; animation:mobile-slide-down .2s ease-out; }
+  .mobile-nav-content-wrapper { padding-bottom:0.5rem; }
+  .mobile-nav-loading, .mobile-nav-error { display:flex; align-items:center; justify-content:center; gap:0.75rem; padding:1.5rem; color:#4b5563; }
+  .mobile-loading-spinner { width:1rem; height:1rem; border:2px solid #d1d5db; border-top-color:#2563eb; border-radius:9999px; animation:spin 1s linear infinite; }
+  .mobile-nav-error button { color:#2563eb; font-weight:500; }
+  .mobile-nav-tabs { display:flex; background:#f9fafb; border-bottom:1px solid #e5e7eb; }
+  .mobile-nav-tab { flex:1; display:flex; flex-direction:column; align-items:center; padding:0.75rem 0.5rem; font-size:0.875rem; transition:color .2s; }
+  .mobile-nav-tab--active { background:#fff; border-bottom:2px solid #3b82f6; color:#2563eb; }
+  .mobile-nav-tab-icon { font-size:1.125rem; margin-bottom:0.25rem; }
+  .mobile-nav-tab-text { font-size:0.75rem; font-weight:500; }
+  .mobile-nav-tab-count { font-size:0.75rem; background:#e5e7eb; color:#4b5563; border-radius:9999px; padding:0 0.5rem; min-width:20px; text-align:center; margin-top:0.25rem; }
+  .mobile-nav-tab--active .mobile-nav-tab-count { background:#dbeafe; color:#2563eb; }
+  .mobile-nav-option--clear { width:100%; display:flex; align-items:center; gap:0.75rem; padding:0.75rem 1rem; text-align:left; background:#fff; color:#dc2626; border-bottom:1px solid #f3f4f6; }
+  .mobile-nav-option--clear:hover { background:#fef2f2; }
+  .mobile-nav-hierarchy { border-top:1px solid #f3f4f6; border-bottom:1px solid #f3f4f6; }
+  .mobile-nav-level-container { padding:0.25rem 0; }
+  .mobile-nav-level-header { display:flex; align-items:center; }
+  .mobile-nav-expand-btn { padding:0.5rem; color:#4b5563; }
+  .mobile-nav-expand-btn:hover { color:#1f2937; }
+  .mobile-nav-level-button { flex:1; text-align:left; padding:0.5rem; border-radius:0.25rem; }
+  .mobile-nav-level-button:hover { background:#eff6ff; }
+  .mobile-nav-level-button--active { background:#dbeafe; color:#1e40af; }
+  .mobile-nav-level-content, .mobile-nav-module-content, .mobile-nav-chapter-content { display:flex; align-items:center; gap:0.5rem; }
+  .mobile-nav-level-icon, .mobile-nav-module-icon { }
+  .mobile-nav-level-name, .mobile-nav-module-name { font-weight:500; }
+  .mobile-nav-level-count, .mobile-nav-module-count { color:#6b7280; font-size:0.875rem; }
+  .mobile-nav-modules-container { margin-left:1.5rem; border-left:2px solid #e5e7eb; padding-left:0.5rem; }
+  .mobile-nav-module-container { padding:0.25rem 0; }
+  .mobile-nav-module-header { display:flex; align-items:center; }
+  .mobile-nav-module-button { flex:1; text-align:left; padding:0.5rem; border-radius:0.25rem; }
+  .mobile-nav-module-button:hover { background:#eff6ff; }
+  .mobile-nav-module-button--active { background:#dbeafe; color:#1e40af; }
+  .mobile-nav-chapters-container { margin-left:1.5rem; border-left:2px solid #e5e7eb; padding-left:0.5rem; display:block; }
+  .mobile-nav-chapter-button { width:100%; text-align:left; padding:0.5rem; border-radius:0.25rem; }
+  .mobile-nav-chapter-button:hover { background:#f9fafb; }
+  .mobile-nav-chapter-button--active { background:#f3f4f6; color:#1f2937; }
+  .mobile-nav-chapter-icon { font-size:0.875rem; color:#2563eb; }
+  .mobile-nav-chapter-name { font-weight:500; }
+  .mobile-nav-subchapters-container { margin-left:1rem; margin-top:0.25rem; display:block; }
+  .mobile-nav-subchapter-button { width:100%; text-align:left; padding:0.5rem; border-radius:0.25rem; font-size:0.875rem; }
+  .mobile-nav-subchapter-button:hover { background:#f9fafb; }
+  .mobile-nav-subchapter-button--active { background:#eff6ff; color:#2563eb; }
+  .mobile-nav-subchapter-content { display:flex; align-items:center; gap:0.5rem; }
+  .mobile-nav-subchapter-name { color:#374151; }
+  .mobile-nav-subchapter-count { font-size:0.75rem; color:#6b7280; margin-left:auto; }
+  .mobile-nav-flat { padding:0.5rem; }
+  .mobile-nav-flat-section { margin-bottom:1rem; }
+  .mobile-nav-flat-title { font-weight:700; color:#1f2937; margin-bottom:0.5rem; padding:0 0.5rem; }
+  .mobile-nav-flat-list { display:block; }
+  .mobile-nav-flat-item { width:100%; text-align:left; padding:0.75rem; border:1px solid #f3f4f6; border-radius:0.5rem; }
+  .mobile-nav-flat-item:hover { background:#f9fafb; }
+  .mobile-nav-flat-item--active { background:#eff6ff; color:#2563eb; border-color:#bfdbfe; }
+  .mobile-nav-flat-item-content { display:flex; align-items:center; justify-content:space-between; }
+  .mobile-nav-flat-item-info { flex:1; }
+  .mobile-nav-flat-item-name { font-weight:500; display:block; }
+  .mobile-nav-flat-item-path { font-size:0.875rem; color:#6b7280; }
+  .mobile-nav-flat-item-count { font-size:0.875rem; color:#6b7280; margin-left:0.5rem; }
+  @keyframes mobile-slide-down { from { opacity:0; transform: translateY(-10px);} to { opacity:1; transform: translateY(0);} }
+  @media (max-width: 380px) {
+    .mobile-nav-trigger { padding:0.75rem; }
+    .mobile-nav-content { gap:0.5rem; }
+    .mobile-nav-text { font-size:0.875rem; }
+    .mobile-nav-level-name, .mobile-nav-module-name, .mobile-nav-chapter-name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .mobile-nav-flat-item-name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  }
+  @keyframes spin { to { transform:rotate(360deg);} }
 </style>
