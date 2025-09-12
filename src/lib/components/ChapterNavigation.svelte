@@ -283,6 +283,8 @@
 
 <style>
   /* Local styles for hierarchical navigation (moved from app.css) */
+  /* fond gris clair pour le conteneur */
+
   .nav-item {
     display: flex;
     align-items: center;
