@@ -60,7 +60,13 @@
 
   {#if variant !== 'preview'}
   <div class="exercise-metadata">
-    {#if exercise.chapter && variant !== 'full'}
+    {#if exercise.level}
+      <span class="exercise-badge exercise-badge--level">{exercise.level}</span>
+    {/if}
+    {#if exercise.module}
+      <span class="exercise-badge exercise-badge--module">📖 {exercise.module}</span>
+    {/if}
+    {#if exercise.chapter}
       <span class="exercise-badge exercise-badge--chapter">{exercise.chapter}</span>
     {/if}
     {#if exercise.theme}
@@ -129,6 +135,8 @@
   }
   .exercise-badge--chapter { background: rgb(219 234 254); color: rgb(30 64 175); }
   .exercise-badge--theme { background: rgb(237 233 254); color: rgb(91 33 182); }
+  .exercise-badge--module { background: rgb(243 244 246); color: rgb(55 65 81); }
+  .exercise-badge--level { background: rgb(240 253 244); color: rgb(22 101 52); }
   .exercise-difficulty { display: flex; align-items: center; gap: 0.5rem; }
 
   .exercise-actions { display: flex; gap: 0.75rem; }

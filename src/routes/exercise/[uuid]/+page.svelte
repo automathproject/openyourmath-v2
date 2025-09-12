@@ -19,7 +19,7 @@
       <main class="px-3 py-1 sm:px-6 sm:py-3">
         <ExerciseContent 
           exercise={data.exercise}
-          variant="preview"
+          variant="full"
           showGlobalToggles={true}
           content={data.exercise.content || []}
           bind:showHint
