@@ -105,6 +105,25 @@
     }
     return `★${difficulty}`;
   }
+
+  // Chips de filtre rapides (tri-état: '', '1', '0')
+  function cycleTri(value) {
+    if (value === '' || value === undefined || value === null) return '1';
+    if (value === '1' || value === true) return '0';
+    return '';
+  }
+
+  function toggleSolutionChip() {
+    const next = cycleTri($filters.hasSolution);
+    searchActions.updateFilter('hasSolution', next);
+    searchActions.search();
+  }
+
+  function toggleIndicationChip() {
+    const next = cycleTri($filters.hasIndication);
+    searchActions.updateFilter('hasIndication', next);
+    searchActions.search();
+  }
 </script>
 
 <svelte:head>
@@ -222,6 +241,36 @@
               </select>
             </div>
 
+            <!-- Solution -->
+            <div>
+              <label for="solution-filter" class="block text-sm font-medium text-gray-700 mb-1">Solution</label>
+              <select 
+                id="solution-filter"
+                bind:value={$filters.hasSolution}
+                on:change={handleDifficultyChange}
+                class="form-input"
+              >
+                <option value="">Tous</option>
+                <option value="1">Avec solution</option>
+                <option value="0">Sans solution</option>
+              </select>
+            </div>
+
+            <!-- Indication -->
+            <div>
+              <label for="indication-filter" class="block text-sm font-medium text-gray-700 mb-1">Indication</label>
+              <select 
+                id="indication-filter"
+                bind:value={$filters.hasIndication}
+                on:change={handleDifficultyChange}
+                class="form-input"
+              >
+                <option value="">Tous</option>
+                <option value="1">Avec indication</option>
+                <option value="0">Sans indication</option>
+              </select>
+            </div>
+
             <!-- Auteur -->
             <div>
               <label for="author-filter" class="block text-sm font-medium text-gray-700 mb-1">Auteur</label>
@@ -295,6 +344,26 @@
               résultat{$results.length > 1 ? 's' : ''} 
               trouvé{$results.length > 1 ? 's' : ''}
             </h2>
+            <div class="filter-chips">
+              <button 
+                type="button" 
+                class="chip {($filters.hasSolution==='1') ? 'chip--on' : ($filters.hasSolution==='0' ? 'chip--off' : '')}"
+                title="Filtrer par solution (clic pour basculer)"
+                on:click={toggleSolutionChip}
+                disabled={$loading}
+              >
+                ✅ Solution { $filters.hasSolution==='1' ? '• oui' : $filters.hasSolution==='0' ? '• non' : '' }
+              </button>
+              <button 
+                type="button" 
+                class="chip {($filters.hasIndication==='1') ? 'chip--on' : ($filters.hasIndication==='0' ? 'chip--off' : '')}"
+                title="Filtrer par indication (clic pour basculer)"
+                on:click={toggleIndicationChip}
+                disabled={$loading}
+              >
+                💡 Indication { $filters.hasIndication==='1' ? '• oui' : $filters.hasIndication==='0' ? '• non' : '' }
+              </button>
+            </div>
           </div>
           <div class="results-grid">
             {#each $results as exercise (exercise.uuid)}
@@ -457,6 +526,11 @@
   .results-header { display: flex; align-items: center; justify-content: space-between; }
   .results-title { font-size: 1.25rem; font-weight: 600; color: rgb(17 24 39); }
   .results-grid { display: grid; gap: 1rem; }
+  .filter-chips { display:flex; gap:0.5rem; align-items:center; }
+  .chip { padding: 0.25rem 0.5rem; font-size:0.875rem; border-radius: 9999px; background:#f3f4f6; color:#374151; border:1px solid #e5e7eb; transition: background-color .2s; }
+  .chip:hover { background:#e5e7eb; }
+  .chip--on { background:#dcfce7; color:#166534; border-color:#bbf7d0; }
+  .chip--off { background:#fee2e2; color:#991b1b; border-color:#fecaca; }
   .result-card { background: white; border-radius: 0.5rem; border: 1px solid rgb(229 231 235); box-shadow: 0 1px 2px rgb(0 0 0 / 0.05); padding: 1.5rem; transition: box-shadow .2s; }
   .result-card:hover { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06); }
   .result-header { display: flex; align-items: start; justify-content: space-between; }

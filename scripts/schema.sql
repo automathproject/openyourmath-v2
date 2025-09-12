@@ -18,6 +18,8 @@ CREATE TABLE IF NOT EXISTS exercises (
   created_at TEXT,
   updated_at TEXT,
   preview TEXT,
+  hasIndication INTEGER NOT NULL DEFAULT 0, -- 0/1 booléen: au moins une indication
+  hasSolution INTEGER NOT NULL DEFAULT 0,   -- 0/1 booléen: au moins une solution/réponse
   content_json TEXT NOT NULL,
   source_hash TEXT
 );

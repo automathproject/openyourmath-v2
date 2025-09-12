@@ -25,7 +25,9 @@ export const filters = writable({
   level: '',
   difficulty: '',
   module: '',
-  author: ''
+  author: '',
+  hasSolution: '',
+  hasIndication: ''
 });
 
 // États dérivés (calculés automatiquement)
@@ -38,7 +40,9 @@ export const hasActiveFilters = derived(
       $filters.level || 
       $filters.difficulty ||
       $filters.module || 
-      $filters.author
+      $filters.author ||
+      ($filters.hasSolution !== '' && $filters.hasSolution !== null && $filters.hasSolution !== undefined) ||
+      ($filters.hasIndication !== '' && $filters.hasIndication !== null && $filters.hasIndication !== undefined)
     );
   }
 );
@@ -86,7 +90,9 @@ export const searchActions = {
       level: '',
       difficulty: '',
       module: '',
-      author: ''
+      author: '',
+      hasSolution: '',
+      hasIndication: ''
     });
     results.set([]);
     searchMeta.set(null);
@@ -154,6 +160,13 @@ export const searchActions = {
       
       if (currentFilters.author) {
         searchParams.set('author', currentFilters.author);
+      }
+      
+      if (currentFilters.hasSolution !== '' && currentFilters.hasSolution !== null && currentFilters.hasSolution !== undefined) {
+        searchParams.set('hasSolution', String(currentFilters.hasSolution));
+      }
+      if (currentFilters.hasIndication !== '' && currentFilters.hasIndication !== null && currentFilters.hasIndication !== undefined) {
+        searchParams.set('hasIndication', String(currentFilters.hasIndication));
       }
       
       // Limite par page (afficher 20 résultats puis "voir plus")
@@ -226,6 +239,12 @@ export const searchActions = {
       }
       if (currentFilters.author) {
         searchParams.set('author', currentFilters.author);
+      }
+      if (currentFilters.hasSolution !== '' && currentFilters.hasSolution !== null && currentFilters.hasSolution !== undefined) {
+        searchParams.set('hasSolution', String(currentFilters.hasSolution));
+      }
+      if (currentFilters.hasIndication !== '' && currentFilters.hasIndication !== null && currentFilters.hasIndication !== undefined) {
+        searchParams.set('hasIndication', String(currentFilters.hasIndication));
       }
 
       searchParams.set('limit', String(limit));

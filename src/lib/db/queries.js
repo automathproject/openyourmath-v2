@@ -30,7 +30,8 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
     
     if (query.trim() && searchQuery === null) {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview,
+               e.hasIndication, e.hasSolution
         FROM exercises e
         WHERE (UPPER(e.title) LIKE UPPER(?) OR UPPER(e.chapter) LIKE UPPER(?) OR UPPER(e.theme) LIKE UPPER(?) OR UPPER(e.module) LIKE UPPER(?))
       `;
@@ -38,14 +39,17 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       params.push(likeQuery, likeQuery, likeQuery, likeQuery);
     } else if (searchQuery) {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview, bm25(fts_exercises) as rank
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview,
+               e.hasIndication, e.hasSolution,
+               bm25(fts_exercises) as rank
         FROM exercises e JOIN fts_exercises fts ON e.uuid = fts.uuid
         WHERE fts_exercises MATCH ?
       `;
       params.push(searchQuery);
     } else {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview,
+               e.hasIndication, e.hasSolution
         FROM exercises e WHERE 1=1
       `;
     }
@@ -88,6 +92,15 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
     if (filters.author) {
       sql += ' AND UPPER(e.author) = UPPER(?)';
       params.push(filters.author);
+    }
+    
+    if (typeof filters.hasSolution === 'boolean') {
+      sql += ' AND e.hasSolution = ?';
+      params.push(filters.hasSolution ? 1 : 0);
+    }
+    if (typeof filters.hasIndication === 'boolean') {
+      sql += ' AND e.hasIndication = ?';
+      params.push(filters.hasIndication ? 1 : 0);
     }
     
     // Ordre et Pagination
@@ -184,6 +197,15 @@ export async function getExerciseCount(query = '', filters = {}) {
       params.push(filters.author);
     }
     
+    if (typeof filters.hasSolution === 'boolean') {
+      sql += ' AND e.hasSolution = ?';
+      params.push(filters.hasSolution ? 1 : 0);
+    }
+    if (typeof filters.hasIndication === 'boolean') {
+      sql += ' AND e.hasIndication = ?';
+      params.push(filters.hasIndication ? 1 : 0);
+    }
+    
     const result = db.prepare(sql).get(...params);
     return result.count;
     
@@ -204,6 +226,7 @@ export async function getExerciseByUuid(uuid) {
       SELECT 
         uuid, title, chapter, subchapter, theme, level, difficulty, module,
         author, organization, video_id, created_at, updated_at, preview,
+        hasIndication, hasSolution,
         content_json
       FROM exercises 
       WHERE uuid = ?
@@ -246,7 +269,8 @@ export async function getSimilarExercises(uuid, limit = 5) {
     
     const similar = db.prepare(`
       SELECT 
-        uuid, title, chapter, theme, level, difficulty, module, author, preview
+        uuid, title, chapter, theme, level, difficulty, module, author, preview,
+        hasIndication, hasSolution
       FROM exercises 
       WHERE uuid != ? 
         AND (

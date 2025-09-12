@@ -12,6 +12,8 @@ export async function GET({ url }) {
     const difficulty = url.searchParams.get('difficulty')?.trim() || ''; // NOUVEAU : difficulté numérique (1-5)
     const module = url.searchParams.get('module')?.trim() || '';
     const author = url.searchParams.get('author')?.trim() || '';
+    const hasSolutionParam = url.searchParams.get('hasSolution');
+    const hasIndicationParam = url.searchParams.get('hasIndication');
     
     // Validation et parsing des paramètres de pagination
     let limit = parseInt(url.searchParams.get('limit') || '20');
@@ -41,6 +43,16 @@ export async function GET({ url }) {
     
     if (module) filters.module = module;
     if (author) filters.author = author;
+    if (hasSolutionParam !== null && hasSolutionParam !== undefined && hasSolutionParam !== '') {
+      const v = hasSolutionParam.toString().toLowerCase();
+      if (v === '1' || v === 'true') filters.hasSolution = true;
+      else if (v === '0' || v === 'false') filters.hasSolution = false;
+    }
+    if (hasIndicationParam !== null && hasIndicationParam !== undefined && hasIndicationParam !== '') {
+      const v2 = hasIndicationParam.toString().toLowerCase();
+      if (v2 === '1' || v2 === 'true') filters.hasIndication = true;
+      else if (v2 === '0' || v2 === 'false') filters.hasIndication = false;
+    }
     
     // Options de pagination
     const options = { limit: limit + 1, offset }; // +1 pour détecter hasMore

@@ -231,8 +231,9 @@ function insertExercises(db, exercises) {
     INSERT OR REPLACE INTO exercises (
       uuid, title, chapter, subchapter, theme, level, difficulty, module,
       author, organization, video_id, created_at, updated_at, preview,
+      hasIndication, hasSolution,
       content_json, source_hash
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   
   const insertFTS = db.prepare(`
@@ -256,6 +257,17 @@ function insertExercises(db, exercises) {
           continue;
         }
 
+        // Calculer les flags hasIndication / hasSolution
+        const blocks = Array.isArray(exercise.content) ? exercise.content : [];
+        const hasIndication = blocks.some((b) => {
+          const t = (b?.type || '').toString().toLowerCase();
+          return t === 'indication' || t === 'hint';
+        }) ? 1 : 0;
+        const hasSolution = blocks.some((b) => {
+          const t = (b?.type || '').toString().toLowerCase();
+          return t === 'reponse' || t === 'solution' || t === 'answer';
+        }) ? 1 : 0;
+
         // Insérer dans la table principale
         insertExercise.run(
           exercise.uuid,
@@ -272,6 +284,8 @@ function insertExercises(db, exercises) {
           exercise.created_at || new Date().toISOString(),
           exercise.updated_at || new Date().toISOString(),
           exercise.preview || null,
+          hasIndication,
+          hasSolution,
           JSON.stringify(exercise.content),
           exercise.source_hash || null
         );

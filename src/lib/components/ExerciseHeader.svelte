@@ -92,20 +92,24 @@
 
   {#if showGlobalToggles}
     <div class="exercise-actions">
-      <button
-        on:click={() => showHint = !showHint}
-        class="action-button action-button--hint"
-        aria-pressed={showHint}
-      >
-        💡 {showHint ? 'Masquer' : 'Voir'} les indications
-      </button>
-      <button
-        on:click={() => showSolution = !showSolution}
-        class="action-button action-button--solution"
-        aria-pressed={showSolution}
-      >
-        ✅ {showSolution ? 'Masquer' : 'Voir'} les solutions
-      </button>
+      {#if exercise?.hasIndication}
+        <button
+          on:click={() => showHint = !showHint}
+          class="action-button action-button--hint"
+          aria-pressed={showHint}
+        >
+          💡 {showHint ? 'Masquer' : 'Voir'} les indications
+        </button>
+      {/if}
+      {#if exercise?.hasSolution}
+        <button
+          on:click={() => showSolution = !showSolution}
+          class="action-button action-button--solution"
+          aria-pressed={showSolution}
+        >
+          ✅ {showSolution ? 'Masquer' : 'Voir'} les solutions
+        </button>
+      {/if}
     </div>
   {/if}
 </header>
