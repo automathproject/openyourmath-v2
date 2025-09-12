@@ -23,7 +23,8 @@
     suggestionActions,
     previewState,
     previewActions,
-    hasPreview
+    hasPreview,
+    loadingMore
   } from '$lib/stores/searchStore.js';
   
   import { useDebounce } from '$lib/hooks/useDebounce.js';
@@ -385,6 +386,13 @@
               </div>
             {/each}
           </div>
+          {#if $searchMeta?.pagination?.hasMore}
+            <div class="text-center mt-4">
+              <button class="btn btn-secondary" on:click={searchActions.loadMore} disabled={$loadingMore}>
+                {$loadingMore ? 'Chargement…' : 'Voir plus'}
+              </button>
+            </div>
+          {/if}
         {:else if $hasSearched}
           <div class="empty-state">
             <h3 class="empty-state-title">Aucun exercice trouvé</h3>

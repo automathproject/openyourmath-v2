@@ -7,6 +7,7 @@ export const results = writable([]);
 export const loading = writable(false);
 export const error = writable(null);
 export const searchMeta = writable(null);
+export const loadingMore = writable(false);
 
 // NOUVEAU : État pour la prévisualisation
 export const previewState = writable({
@@ -155,7 +156,9 @@ export const searchActions = {
         searchParams.set('author', currentFilters.author);
       }
       
-      searchParams.set('limit', '100');
+      // Limite par page (afficher 20 résultats puis "voir plus")
+      searchParams.set('limit', '20');
+      searchParams.set('offset', '0');
 
       const response = await fetch(`/api/search?${searchParams.toString()}`);
 
@@ -174,6 +177,86 @@ export const searchActions = {
       results.set([]);
     } finally {
       loading.set(false);
+    }
+  },
+
+  // Charger plus de résultats (pagination)
+  async loadMore() {
+    let currentQuery;
+    let currentFilters;
+    let currentMeta;
+    let currentResults = [];
+
+    const unsubQ = searchQuery.subscribe((v) => (currentQuery = v));
+    const unsubF = filters.subscribe((v) => (currentFilters = v));
+    const unsubM = searchMeta.subscribe((v) => (currentMeta = v));
+    const unsubR = results.subscribe((v) => (currentResults = v));
+    unsubQ();
+    unsubF();
+    unsubM();
+    unsubR();
+
+    if (!currentMeta?.pagination?.hasMore) return;
+
+    const limit = currentMeta.pagination.limit || 20;
+    const offset = (currentMeta.pagination.offset || 0) + (currentMeta.pagination.count || currentResults.length);
+
+    loadingMore.set(true);
+
+    try {
+      const searchParams = new URLSearchParams();
+
+      if (currentQuery?.trim()) {
+        searchParams.set('q', currentQuery);
+      }
+      if (currentFilters.subchapter) {
+        searchParams.set('subchapter', currentFilters.subchapter);
+        searchParams.set('chapter', currentFilters.chapter);
+      } else if (currentFilters.chapter) {
+        searchParams.set('chapter', currentFilters.chapter);
+      }
+      if (currentFilters.level) {
+        searchParams.set('level', currentFilters.level);
+      }
+      if (currentFilters.difficulty) {
+        searchParams.set('difficulty', currentFilters.difficulty);
+      }
+      if (currentFilters.module) {
+        searchParams.set('module', currentFilters.module);
+      }
+      if (currentFilters.author) {
+        searchParams.set('author', currentFilters.author);
+      }
+
+      searchParams.set('limit', String(limit));
+      searchParams.set('offset', String(offset));
+
+      const response = await fetch(`/api/search?${searchParams.toString()}`);
+      if (response.ok) {
+        const data = await response.json();
+        results.update((prev) => [...prev, ...(data.results || [])]);
+        // Préserver totalCount du premier appel si non renvoyé ensuite
+        searchMeta.update((prev) => {
+          const prevTotal = prev?.pagination?.totalCount;
+          const next = data.meta || null;
+          if (!next) return prev;
+          return {
+            ...next,
+            pagination: {
+              ...next.pagination,
+              totalCount: prevTotal ?? next.pagination?.totalCount ?? null
+            }
+          };
+        });
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        error.set(errorData.message || 'Erreur de recherche');
+      }
+    } catch (err) {
+      console.error('Erreur pagination:', err);
+      error.set('Erreur de connexion');
+    } finally {
+      loadingMore.set(false);
     }
   }
 };
