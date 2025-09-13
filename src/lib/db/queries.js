@@ -33,10 +33,16 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
         SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview,
                e.hasIndication, e.hasSolution
         FROM exercises e
-        WHERE (UPPER(e.title) LIKE UPPER(?) OR UPPER(e.chapter) LIKE UPPER(?) OR UPPER(e.theme) LIKE UPPER(?) OR UPPER(e.module) LIKE UPPER(?))
+        WHERE (
+          UPPER(e.title) LIKE UPPER(?) OR 
+          UPPER(e.chapter) LIKE UPPER(?) OR 
+          UPPER(e.theme) LIKE UPPER(?) OR 
+          UPPER(e.module) LIKE UPPER(?) OR 
+          UPPER(e.uuid) LIKE UPPER(?)
+        )
       `;
       const likeQuery = `%${query.trim()}%`;
-      params.push(likeQuery, likeQuery, likeQuery, likeQuery);
+      params.push(likeQuery, likeQuery, likeQuery, likeQuery, likeQuery);
     } else if (searchQuery) {
       sql = `
         SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview,

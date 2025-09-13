@@ -26,14 +26,14 @@ CREATE TABLE IF NOT EXISTS exercises (
 
 -- Table virtuelle pour la recherche plein texte (FTS5)
 CREATE VIRTUAL TABLE IF NOT EXISTS fts_exercises USING fts5(
-  uuid UNINDEXED,
+  uuid, -- Désormais indexé pour permettre la recherche par UUID
   title,
   theme,
   chapter,
   module,
   level, -- MODIFIÉ : level au lieu de difficulty
   difficulty UNINDEXED, -- NOUVEAU : difficulté numérique (pas indexée pour recherche texte)
-  preview,
+  preview UNINDEXED, -- Ne participe plus au MATCH
   content_text,
   tokenize='unicode61 remove_diacritics 1'
 );
