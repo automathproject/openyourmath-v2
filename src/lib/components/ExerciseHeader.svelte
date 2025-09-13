@@ -49,13 +49,21 @@
   {#if showCrumb}
     <Breadcrumb items={computedBreadcrumb} />
   {/if}
-  <div class="flex items-baseline justify-between">
-    <h1 class="exercise-title {variant !== 'full' ? 'text-2xl mb-3' : ''}">
-      {exercise?.title || 'Exercice'}
-    </h1>
-    {#if exercise?.uuid}
-      <span class="exercise-uuid text-xs text-gray-400 font-mono" style="opacity:0.8">{exercise.uuid}</span>
-    {/if}
+  
+  <div class="exercise-title-section">
+    <div class="title-left">
+      <h1 class="exercise-title {variant !== 'full' ? 'text-2xl mb-3' : ''}">
+        {exercise?.title || 'Exercice'}
+      </h1>
+    </div>
+    
+    <div class="title-right">
+      {#if exercise?.uuid}
+        <span class="exercise-uuid text-xs text-gray-400 font-mono">{exercise.uuid}</span>
+      {/if}
+      
+
+    </div>
   </div>
 
   {#if variant !== 'preview'}
@@ -83,9 +91,6 @@
           <span class="text-sm text-gray-500">({exercise.difficulty}/5)</span>
         {/if}
       </div>
-    {/if}
-    {#if exercise.author}
-      <span class="text-sm text-gray-600">Par <strong>{exercise.author}</strong></span>
     {/if}
   </div>
   {/if}
@@ -115,15 +120,69 @@
 </header>
 
 <style>
+  /* Header container */
   .exercise-header {
     border-bottom: 1px solid rgb(229 231 235);
   }
+
+  /* Title row: left = title, right = UUID + attribution */
+  .exercise-title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .title-left {
+    flex: 1;
+    min-width: 0; /* allow long titles to shrink properly */
+  }
+
   .exercise-title {
     color: rgb(17 24 39);
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* tighter than default */
   }
 
+  .title-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;  /* right-align content */
+    gap: 0.5rem;
+    flex-shrink: 0;
+    margin-left: auto;      /* push to far right */
+    text-align: right;
+  }
+
+  .exercise-uuid {
+    opacity: 0.8;
+  }
+
+  .attribution-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-end;
+  }
+
+  .attribution-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    color: rgb(75 85 99);
+  }
+
+  .attribution-icon {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+
+  .attribution-text {
+    font-weight: 500;
+  }
+
+  /* Metadata row */
   .exercise-metadata {
     display: flex;
     flex-wrap: wrap;
@@ -131,6 +190,7 @@
     gap: 1rem;
     margin-bottom: 1rem;
   }
+
   .exercise-badge {
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
@@ -138,12 +198,22 @@
     font-weight: 500;
   }
   .exercise-badge--chapter { background: rgb(219 234 254); color: rgb(30 64 175); }
-  .exercise-badge--theme { background: rgb(237 233 254); color: rgb(91 33 182); }
-  .exercise-badge--module { background: rgb(243 244 246); color: rgb(55 65 81); }
-  .exercise-badge--level { background: rgb(240 253 244); color: rgb(22 101 52); }
-  .exercise-difficulty { display: flex; align-items: center; gap: 0.5rem; }
+  .exercise-badge--theme   { background: rgb(237 233 254); color: rgb(91 33 182); }
+  .exercise-badge--module  { background: rgb(243 244 246); color: rgb(55 65 81); }
+  .exercise-badge--level   { background: rgb(240 253 244); color: rgb(22 101 52); }
 
-  .exercise-actions { display: flex; gap: 0.75rem; }
+  .exercise-difficulty {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Actions (indication/solution toggles) */
+  .exercise-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
   .action-button {
     display: inline-flex;
     align-items: center;
@@ -160,8 +230,32 @@
 
   /* Preview context: reduce header typography scale */
   .exercise-header.is-preview { font-size: 0.9em; }
+
   .exercise-header.is-preview .exercise-badge,
   .exercise-header.is-preview .action-button,
   .exercise-header.is-preview .exercise-title,
-  .exercise-header.is-preview .exercise-metadata { font-size: inherit !important; }
+  .exercise-header.is-preview .exercise-metadata {
+    font-size: inherit !important;
+  }
+
+  .exercise-header.is-preview .attribution-item { font-size: 0.7rem; }
+  .exercise-header.is-preview .attribution-info { gap: 0.125rem; }
+
+  /* Responsive behavior: keep right column at top-right */
+  @media (max-width: 640px) {
+    .exercise-title-section {
+      /* stay in row so the right column remains pinned right */
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .title-left { flex: 1; }
+    .title-right {
+      flex-direction: column;
+      align-items: flex-end; /* keep right-aligned on mobile */
+    }
+
+    .exercise-title { margin-bottom: 0.25rem; }
+  }
 </style>
