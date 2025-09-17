@@ -5,14 +5,24 @@ import path from 'path';
 const DB_PATH = path.resolve('data/exercises.sqlite');
 
 function prepareSearchQuery(query) {
-  if (!query || query.trim() === '') {
-    return '';
-  }
-  const cleanQuery = query.trim().toLowerCase();
-  if (cleanQuery.length <= 2) {
-    return null; 
-  }
-  return `"${cleanQuery}"*`;
+  if (!query || query.trim() === '') return '';
+  const tokens = query
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .map((t) => t.replace(/"/g, ''))
+    .filter(Boolean);
+
+  // Garder uniquement les tokens significatifs (≥3) pour FTS
+  const longTokens = tokens.filter((t) => t.length >= 3);
+  if (longTokens.length === 0) return null;
+
+  // Construire une requête FTS en AND ordre libre, préfixe sur le dernier mot
+  const parts = longTokens.map((t, i) => {
+    const isLast = i === longTokens.length - 1;
+    return isLast ? `${t}*` : `${t}`;
+  });
+  return parts.join(' AND ');
 }
 
 /**
@@ -29,20 +39,25 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
     let sql, params = [];
     
     if (query.trim() && searchQuery === null) {
+      // Fallback LIKE: AND sur chaque mot, OR entre champs
+      const words = query.trim().split(/\s+/).filter(Boolean);
       sql = `
         SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview,
                e.hasIndication, e.hasSolution
         FROM exercises e
-        WHERE (
+        WHERE 1=1
+      `;
+      words.forEach((w) => {
+        sql += ` AND (
           UPPER(e.title) LIKE UPPER(?) OR 
           UPPER(e.chapter) LIKE UPPER(?) OR 
           UPPER(e.theme) LIKE UPPER(?) OR 
           UPPER(e.module) LIKE UPPER(?) OR 
           UPPER(e.uuid) LIKE UPPER(?)
-        )
-      `;
-      const likeQuery = `%${query.trim()}%`;
-      params.push(likeQuery, likeQuery, likeQuery, likeQuery, likeQuery);
+        )`;
+        const like = `%${w}%`;
+        params.push(like, like, like, like, like);
+      });
     } else if (searchQuery) {
       sql = `
         SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview,
@@ -147,12 +162,19 @@ export async function getExerciseCount(query = '', filters = {}) {
     let sql, params = [];
     
     if (query.trim() && searchQuery === null) {
-      sql = `
-        SELECT COUNT(*) as count FROM exercises e
-        WHERE (UPPER(e.title) LIKE UPPER(?) OR UPPER(e.chapter) LIKE UPPER(?) OR UPPER(e.theme) LIKE UPPER(?) OR UPPER(e.module) LIKE UPPER(?))
-      `;
-      const likeQuery = `%${query.trim()}%`;
-      params.push(likeQuery, likeQuery, likeQuery, likeQuery);
+      const words = query.trim().split(/\s+/).filter(Boolean);
+      sql = `SELECT COUNT(*) as count FROM exercises e WHERE 1=1`;
+      words.forEach((w) => {
+        sql += ` AND (
+          UPPER(e.title) LIKE UPPER(?) OR 
+          UPPER(e.chapter) LIKE UPPER(?) OR 
+          UPPER(e.theme) LIKE UPPER(?) OR 
+          UPPER(e.module) LIKE UPPER(?) OR 
+          UPPER(e.uuid) LIKE UPPER(?)
+        )`;
+        const like = `%${w}%`;
+        params.push(like, like, like, like, like);
+      });
     } else if (searchQuery) {
       sql = `
         SELECT COUNT(*) as count FROM exercises e JOIN fts_exercises fts ON e.uuid = fts.uuid
@@ -465,24 +487,24 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
     let params = [];
 
     // Gestion de la requête texte: FTS si possible, sinon LIKE pour courtes
-    const clean = (query || '').trim();
-    if (clean) {
-      const lower = clean.toLowerCase();
-      if (lower.length <= 2) {
-        baseWhere += ` AND (
-          UPPER(e.title) LIKE UPPER(?) OR 
-          UPPER(e.chapter) LIKE UPPER(?) OR 
-          UPPER(e.theme) LIKE UPPER(?) OR 
-          UPPER(e.module) LIKE UPPER(?) OR 
-          UPPER(e.uuid) LIKE UPPER(?)
-        )`;
-        const likeQ = `%${clean}%`;
-        params.push(likeQ, likeQ, likeQ, likeQ, likeQ);
+    const sq = prepareSearchQuery(query);
+    if ((query || '').trim()) {
+      if (sq) {
+        baseWhere += ` AND e.uuid IN (SELECT uuid FROM fts_exercises WHERE fts_exercises MATCH ?)`;
+        params.push(sq);
       } else {
-        baseWhere += ` AND e.uuid IN (
-          SELECT uuid FROM fts_exercises WHERE fts_exercises MATCH ?
-        )`;
-        params.push(`"${lower}"*`);
+        const words = query.trim().split(/\s+/).filter(Boolean);
+        words.forEach((w) => {
+          baseWhere += ` AND (
+            UPPER(e.title) LIKE UPPER(?) OR 
+            UPPER(e.chapter) LIKE UPPER(?) OR 
+            UPPER(e.theme) LIKE UPPER(?) OR 
+            UPPER(e.module) LIKE UPPER(?) OR 
+            UPPER(e.uuid) LIKE UPPER(?)
+          )`;
+          const like = `%${w}%`;
+          params.push(like, like, like, like, like);
+        });
       }
     }
 
