@@ -31,7 +31,6 @@ services:
       - ORIGIN=https://openyourmath.org
 
 # Définir les volumes nommés pour que Docker les gère automatiquement.
-# C'est plus propre et plus robuste que d'utiliser des chemins sur l'hôte.
 volumes:
   caddy_data:
   caddy_config:

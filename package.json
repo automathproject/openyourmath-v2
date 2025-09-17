@@ -6,30 +6,27 @@
   "_comment_scripts": "Scripts maison pour parser LaTeX et construire la DB avant le build de l'app",
   "scripts": {
     "dev": "vite dev",
-    "dev:full": "pnpm build:content && pnpm dev", 
-
+    "dev:full": "pnpm build:content && pnpm dev",
     "build:cache": "node scripts/parse-latex.js content/exercises/ cache/exercises/ --incremental",
     "build:content": "pnpm build:cache && node scripts/build-db.js",
     "build:tikz": "node scripts/build-tikz.js",
     "build:content:full": "node scripts/parse-latex.js content/exercises/ cache/exercises/ && node scripts/build-tikz.js && node scripts/build-db.js",
     "build:app": "vite build",
     "build": "pnpm build:content && vite build",
-
-    "preview": "vite preview", 
+    "preview": "vite preview",
     "clean": "rm -rf .svelte-kit cache data static/artifacts",
-    "reset": "pnpm clean && pnpm build:content:full", 
+    "reset": "pnpm clean && pnpm build:content:full",
     "build:stats": "echo '📊 Statistics:' && echo \"📝 LaTeX files:\" $(find content/exercises -name '*.tex' | wc -l) && echo \"📄 JSON cache:\" $(find cache/exercises -name '*.json' | wc -l) && echo \"💾 Database:\" $(test -f data/exercises.sqlite && sqlite3 data/exercises.sqlite 'SELECT COUNT(*) FROM exercises;' 2>/dev/null || echo '0') 'exercises'",
-
     "test": "vitest",
     "test:build": "vitest run tests/build/",
     "test:integration": "playwright test",
-    
     "docker:build": "docker build -t ghcr.io/automathproject/openyourmath:2.1.2 .",
     "docker:dev": "docker-compose up",
     "docker:prod": "docker-compose up -d"
   },
   "_comment_devDependencies": "SvelteKit + Tailwind + Vite + tests",
   "devDependencies": {
+    "@openai/codex": "^0.36.0",
     "@playwright/test": "^1.48.2",
     "@sveltejs/adapter-node": "^5.2.9",
     "@sveltejs/kit": "^2.7.7",
@@ -44,7 +41,6 @@
   },
   "_comment_dependencies": "Runtime deps (SQLite + KaTeX)",
   "dependencies": {
-    "@openai/codex": "^0.27.0",
     "better-sqlite3": "^11.10.0",
     "katex": "^0.16.22"
   },
