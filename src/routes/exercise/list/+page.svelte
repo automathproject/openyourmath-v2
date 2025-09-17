@@ -577,7 +577,7 @@
         {/if}
       </main>
       
-      <!-- NOUVEAU : Bouton flottant pour ouvrir la navigation mobile -->
+      <!-- Bouton flottant pour ouvrir la navigation mobile -->
       <button 
         class="mobile-nav-toggle"
         on:click={toggleMobileNav}
@@ -592,7 +592,7 @@
         {/if}
       </button>
       
-      <!-- NOUVEAU : Barre de navigation mobile fixe en bas -->
+      <!-- Barre de navigation mobile fixe en bas -->
       <div class="mobile-nav-bar">
         <button 
           on:click={listActions.previousExercise}

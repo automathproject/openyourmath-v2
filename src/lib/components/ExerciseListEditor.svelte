@@ -294,8 +294,8 @@
           </div>
         </button>
 
-        <div class="exercise-actions">
-          {#if isEditMode}
+        {#if isEditMode}
+          <div class="exercise-actions">
             <button
               class="action-btn action-btn--move"
               on:click={() => moveUp(index)}
@@ -315,16 +315,8 @@
             </button>
 
             <div class="drag-handle" title="Glisser pour réorganiser">⋮⋮</div>
-          {:else}
-            <button
-              class="action-btn action-btn--remove"
-              on:click={() => removeExercise(index)}
-              title="Supprimer cet exercice"
-            >
-              ✕
-            </button>
-          {/if}
-        </div>
+          </div>
+        {/if}
       </div>
         <div
           class="drop-slot"
@@ -590,6 +582,7 @@
     background:transparent; 
     cursor:pointer; 
     text-align:left; 
+    width: 100%; /* ne jamais élargir la carte */
   }
 
   .exercise-content:disabled { 
@@ -616,8 +609,9 @@
   }
 
   .exercise-info { 
-    flex:1; 
+    flex:1 1 auto; 
     min-width:0; 
+    overflow:hidden; /* clippe les titres trop longs */
   }
 
   .exercise-title { 
@@ -628,6 +622,8 @@
     overflow:hidden; 
     text-overflow:ellipsis; 
     white-space:nowrap; 
+    display:block; 
+    max-width:100%;
   }
 
   .exercise-meta { 
@@ -775,4 +771,3 @@ border-radius: .5rem;
 
 
 </style>
-
