@@ -8,7 +8,7 @@
   export let showGlobalToggles = false;
   export let showHint = false;
   export let showSolution = false;
-  export let breadcrumbItems = []; // optional custom items [{label, href?}]
+  export let breadcrumbItems = []; // [{label, href?}]
   export let showBreadcrumb = true;
 
   function toggleHint() {
@@ -23,7 +23,6 @@
     dispatchEvent(e);
   }
 
-  // Compute default breadcrumb when not provided
   $: showCrumb = showBreadcrumb && variant !== 'preview';
   $: computedBreadcrumb = (() => {
     if (!showCrumb) return [];
@@ -34,7 +33,6 @@
       if (exercise?.chapter) items.push({ label: exercise.chapter });
       return items;
     }
-    // preview/simple: use Accueil > level > module > chapter
     if (exercise) {
       items.push({ label: 'Accueil', href: '/' });
       if (exercise.level) items.push({ label: exercise.level });
@@ -49,50 +47,58 @@
   {#if showCrumb}
     <Breadcrumb items={computedBreadcrumb} />
   {/if}
-  
-  <div class="exercise-title-section">
-    <div class="title-left">
-      <h1 class="exercise-title {variant !== 'full' ? 'text-2xl mb-3' : ''}">
-        {exercise?.title || 'Exercice'}
-      </h1>
-    </div>
-    
+
+  <!-- Top row -->
+  <div class="header-top">
+    <h1 class="exercise-title {variant !== 'full' ? 'text-2xl mb-6' : ''}">
+      {exercise?.title || 'Exercice'}
+    </h1>
+
+    <!-- Absolutely positioned, removed from normal flow -->
     <div class="title-right">
       {#if exercise?.uuid}
         <span class="exercise-uuid text-xs text-gray-400 font-mono">{exercise.uuid}</span>
       {/if}
-      
 
+      <div class="attribution-info">
+        {#if exercise?.author}
+          <div class="attribution-item">
+            <span class="attribution-icon">👤</span>
+            <span class="attribution-text">{exercise.author}</span>
+          </div>
+        {/if}
+
+        {#if exercise?.organization}
+          <div class="attribution-item">
+            <span class="attribution-icon">🏛️</span>
+            <span class="attribution-text">{exercise.organization}</span>
+          </div>
+        {/if}
+      </div>
     </div>
   </div>
 
   {#if variant !== 'preview'}
-  <div class="exercise-metadata">
-    {#if exercise.level}
-      <span class="exercise-badge exercise-badge--level">{exercise.level}</span>
-    {/if}
-    {#if exercise.module}
-      <span class="exercise-badge exercise-badge--module">📖 {exercise.module}</span>
-    {/if}
-    {#if exercise.chapter}
-      <span class="exercise-badge exercise-badge--chapter">{exercise.chapter}</span>
-    {/if}
-    {#if exercise.theme}
-      <span class="exercise-badge exercise-badge--theme">{exercise.theme}</span>
-    {/if}
-    {#if exercise.difficulty}
-      <div class="exercise-difficulty">
-        <div class="flex gap-1">
-          {#each Array(5) as _, i}
-            <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-400' : 'bg-gray-200'}"></div>
-          {/each}
+    <div class="exercise-metadata">
+      {#if exercise.level}
+        <span class="exercise-badge exercise-badge--level">{exercise.level}</span>
+      {/if}
+      {#if exercise.theme}
+        <span class="exercise-badge exercise-badge--theme">{exercise.theme}</span>
+      {/if}
+      {#if exercise.difficulty}
+        <div class="exercise-difficulty">
+          <div class="flex gap-1">
+            {#each Array(5) as _, i}
+              <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-400' : 'bg-gray-200'}"></div>
+            {/each}
+          </div>
+          {#if variant === 'full'}
+            <span class="text-sm text-gray-500">({exercise.difficulty}/5)</span>
+          {/if}
         </div>
-        {#if variant === 'full'}
-          <span class="text-sm text-gray-500">({exercise.difficulty}/5)</span>
-        {/if}
-      </div>
-    {/if}
-  </div>
+      {/if}
+    </div>
   {/if}
 
   {#if showGlobalToggles}
@@ -120,38 +126,35 @@
 </header>
 
 <style>
-  /* Header container */
   .exercise-header {
+    position: relative; /* anchor for absolute right column */
     border-bottom: 1px solid rgb(229 231 235);
   }
 
-  /* Title row: left = title, right = UUID + attribution */
-  .exercise-title-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .title-left {
-    flex: 1;
-    min-width: 0; /* allow long titles to shrink properly */
+  .header-top {
+    position: relative;
+    display: block;
+    min-height: 2.25rem; /* ensures room for the absolutely positioned block */
   }
 
   .exercise-title {
     color: rgb(17 24 39);
     font-weight: 700;
-    margin-bottom: 0.5rem; /* tighter than default */
+    margin-bottom: 0.5rem; /* tighter */
+    /* Reserve space on the right so the title never overlaps the pinned block */
+    margin-right: clamp(10rem, 28vw, 22rem);
+    line-height: 1.2;
   }
 
   .title-right {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;  /* right-align content */
-    gap: 0.5rem;
-    flex-shrink: 0;
-    margin-left: auto;      /* push to far right */
-    text-align: right;
+    align-items: flex-end;
+    gap: 0.375rem;
+    max-width: 40ch; /* prevent overgrowth */
   }
 
   .exercise-uuid {
@@ -161,7 +164,7 @@
   .attribution-info {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.125rem;
     align-items: flex-end;
   }
 
@@ -171,6 +174,7 @@
     gap: 0.375rem;
     font-size: 0.75rem;
     color: rgb(75 85 99);
+    white-space: nowrap;
   }
 
   .attribution-icon {
@@ -182,7 +186,6 @@
     font-weight: 500;
   }
 
-  /* Metadata row */
   .exercise-metadata {
     display: flex;
     flex-wrap: wrap;
@@ -198,22 +201,12 @@
     font-weight: 500;
   }
   .exercise-badge--chapter { background: rgb(219 234 254); color: rgb(30 64 175); }
-  .exercise-badge--theme   { background: rgb(237 233 254); color: rgb(91 33 182); }
-  .exercise-badge--module  { background: rgb(243 244 246); color: rgb(55 65 81); }
-  .exercise-badge--level   { background: rgb(240 253 244); color: rgb(22 101 52); }
+  .exercise-badge--theme { background: rgb(237 233 254); color: rgb(91 33 182); }
+  .exercise-badge--module { background: rgb(243 244 246); color: rgb(55 65 81); }
+  .exercise-badge--level { background: rgb(240 253 244); color: rgb(22 101 52); }
+  .exercise-difficulty { display: flex; align-items: center; gap: 0.5rem; }
 
-  .exercise-difficulty {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  /* Actions (indication/solution toggles) */
-  .exercise-actions {
-    display: flex;
-    gap: 0.75rem;
-  }
-
+  .exercise-actions { display: flex; gap: 0.75rem; }
   .action-button {
     display: inline-flex;
     align-items: center;
@@ -228,34 +221,24 @@
   .action-button--solution { background: rgb(240 253 244); color: rgb(22 101 52); }
   .action-button--solution:hover { background: rgb(187 247 208); }
 
-  /* Preview context: reduce header typography scale */
+  /* Preview context */
   .exercise-header.is-preview { font-size: 0.9em; }
-
   .exercise-header.is-preview .exercise-badge,
   .exercise-header.is-preview .action-button,
   .exercise-header.is-preview .exercise-title,
-  .exercise-header.is-preview .exercise-metadata {
-    font-size: inherit !important;
-  }
+  .exercise-header.is-preview .exercise-metadata { font-size: inherit !important; }
 
-  .exercise-header.is-preview .attribution-item { font-size: 0.7rem; }
-  .exercise-header.is-preview .attribution-info { gap: 0.125rem; }
-
-  /* Responsive behavior: keep right column at top-right */
+  /* Responsive: on small screens, put the right block back into flow */
   @media (max-width: 640px) {
-    .exercise-title-section {
-      /* stay in row so the right column remains pinned right */
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 0.75rem;
-    }
-
-    .title-left { flex: 1; }
     .title-right {
-      flex-direction: column;
-      align-items: flex-end; /* keep right-aligned on mobile */
+      position: static;
+      align-items: flex-start;
+      margin-top: 0.25rem;
+      max-width: 100%;
     }
-
-    .exercise-title { margin-bottom: 0.25rem; }
+    .exercise-title {
+      margin-right: 0; /* no reservation needed on mobile */
+      margin-bottom: 0.375rem;
+    }
   }
 </style>
