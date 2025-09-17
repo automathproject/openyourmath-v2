@@ -1,6 +1,6 @@
 // src/routes/api/chapters/+server.js
 import { json } from '@sveltejs/kit';
-import { getChapterStructure, getSuggestions } from '$lib/db/queries.js';
+import { getChapterStructure, getChapterStructureFiltered, getSuggestions } from '$lib/db/queries.js';
 
 export async function GET({ url }) {
   try {
@@ -8,7 +8,23 @@ export async function GET({ url }) {
     
     if (type === 'structure') {
       // Structure hiérarchique des chapitres
-      const structure = await getChapterStructure();
+      const q = url.searchParams.get('q') || '';
+      // Filtres optionnels
+      const filters = {
+        level: url.searchParams.get('level') || '',
+        module: url.searchParams.get('module') || '',
+        chapter: url.searchParams.get('chapter') || '',
+        subchapter: url.searchParams.get('subchapter') || '',
+        difficulty: url.searchParams.get('difficulty') || '',
+        author: url.searchParams.get('author') || '',
+        hasSolution: url.searchParams.get('hasSolution') || '',
+        hasIndication: url.searchParams.get('hasIndication') || ''
+      };
+
+      const hasQueryOrFilters = q.trim() || Object.values(filters).some(v => v);
+      const structure = hasQueryOrFilters
+        ? await getChapterStructureFiltered(q, filters)
+        : await getChapterStructure();
       return json({ structure });
     } else if (type === 'suggestions') {
       // Suggestions pour autocomplétion

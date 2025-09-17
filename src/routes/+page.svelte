@@ -308,6 +308,8 @@
           bind:selectedModule={$filters.module}
           bind:selectedChapter={$filters.chapter}
           bind:selectedSubchapter={$filters.subchapter}
+          query={$searchQuery}
+          activeFilters={$filters}
           on:navigate={handleChapterNavigation}
         />
       </div>
@@ -319,6 +321,8 @@
           bind:selectedModule={$filters.module}
           bind:selectedChapter={$filters.chapter}
           bind:selectedSubchapter={$filters.subchapter}
+          query={$searchQuery}
+          activeFilters={$filters}
           on:navigate={handleChapterNavigation}
         />
       </div>

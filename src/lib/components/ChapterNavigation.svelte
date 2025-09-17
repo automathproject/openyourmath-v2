@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
   import { createEventDispatcher } from 'svelte';
   
   const dispatch = createEventDispatcher();
@@ -10,6 +10,8 @@
   let expandedLevels = new Set();
   let expandedModules = new Set();
   let expandedChapters = new Set();
+  let lastParamsKey = '';
+  let debounceTimer;
   
   let selectedPath = { 
     level: null, 
@@ -23,6 +25,18 @@
   export let selectedModule = '';
   export let selectedLevel = '';
   export let compact = false;
+  // Nouveau: prise en compte de la requête et filtres pour recalculer les comptages
+  export let query = '';
+  export let activeFilters = {
+    level: '',
+    module: '',
+    chapter: '',
+    subchapter: '',
+    difficulty: '',
+    author: '',
+    hasSolution: '',
+    hasIndication: ''
+  };
   
   // Mémoriser la sélection précédente pour éviter de ré-étendre après un repli manuel
   let prevSelectedLevel = null;
@@ -39,8 +53,23 @@
     console.log('🔄 Starting loadHierarchicalStructure');
     
     try {
-      // CORRECTION: Utiliser l'API chapters avec le bon type
-      const response = await fetch('/api/chapters?type=structure');
+      // Construire l'URL en fonction de la recherche en cours
+      const params = new URLSearchParams();
+      params.set('type', 'structure');
+      if (query && query.trim()) params.set('q', query.trim());
+      if (activeFilters?.level) params.set('level', activeFilters.level);
+      if (activeFilters?.module) params.set('module', activeFilters.module);
+      if (activeFilters?.chapter) params.set('chapter', activeFilters.chapter);
+      if (activeFilters?.subchapter) params.set('subchapter', activeFilters.subchapter);
+      if (activeFilters?.difficulty) params.set('difficulty', String(activeFilters.difficulty));
+      if (activeFilters?.author) params.set('author', activeFilters.author);
+      if (activeFilters?.hasSolution !== '' && activeFilters?.hasSolution !== undefined && activeFilters?.hasSolution !== null) {
+        params.set('hasSolution', String(activeFilters.hasSolution));
+      }
+      if (activeFilters?.hasIndication !== '' && activeFilters?.hasIndication !== undefined && activeFilters?.hasIndication !== null) {
+        params.set('hasIndication', String(activeFilters.hasIndication));
+      }
+      const response = await fetch(`/api/chapters?${params.toString()}`);
       
       if (response.ok) {
         const data = await response.json();
@@ -54,6 +83,41 @@
       console.error('Failed to load hierarchy:', err);
     } finally {
       loading = false;
+    }
+  }
+
+  // Construire une clé compacte des paramètres actuels
+  function buildParamsKey() {
+    const q = (query || '').trim();
+    return JSON.stringify({
+      q,
+      level: activeFilters?.level || '',
+      module: activeFilters?.module || '',
+      chapter: activeFilters?.chapter || '',
+      subchapter: activeFilters?.subchapter || '',
+      difficulty: activeFilters?.difficulty || '',
+      author: activeFilters?.author || '',
+      hasSolution: activeFilters?.hasSolution ?? '',
+      hasIndication: activeFilters?.hasIndication ?? ''
+    });
+  }
+
+  // Initialiser la clé dès le chargement du module pour éviter un double chargement
+  lastParamsKey = buildParamsKey();
+
+  onDestroy(() => {
+    if (debounceTimer) clearTimeout(debounceTimer);
+  });
+
+  // Recharger la structure quand la requête ou les filtres changent
+  $: {
+    const key = buildParamsKey();
+    if (key !== lastParamsKey) {
+      lastParamsKey = key;
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        loadHierarchicalStructure();
+      }, 1000);
     }
   }
   

@@ -452,6 +452,163 @@ export async function getChapterStructure() {
   }
 }
 
+/**
+ * Version filtrée: construit la hiérarchie en appliquant une requête texte et des filtres.
+ */
+export async function getChapterStructureFiltered(query = '', filters = {}) {
+  let db;
+  try {
+    db = new Database(DB_PATH, { readonly: true });
+
+    // Construire les clauses WHERE en reprenant la logique de recherche
+    let baseWhere = '1=1';
+    let params = [];
+
+    // Gestion de la requête texte: FTS si possible, sinon LIKE pour courtes
+    const clean = (query || '').trim();
+    if (clean) {
+      const lower = clean.toLowerCase();
+      if (lower.length <= 2) {
+        baseWhere += ` AND (
+          UPPER(e.title) LIKE UPPER(?) OR 
+          UPPER(e.chapter) LIKE UPPER(?) OR 
+          UPPER(e.theme) LIKE UPPER(?) OR 
+          UPPER(e.module) LIKE UPPER(?) OR 
+          UPPER(e.uuid) LIKE UPPER(?)
+        )`;
+        const likeQ = `%${clean}%`;
+        params.push(likeQ, likeQ, likeQ, likeQ, likeQ);
+      } else {
+        baseWhere += ` AND e.uuid IN (
+          SELECT uuid FROM fts_exercises WHERE fts_exercises MATCH ?
+        )`;
+        params.push(`"${lower}"*`);
+      }
+    }
+
+    // Filtres exacts optionnels (insensibles à la casse sur texte)
+    if (filters.subchapter) {
+      baseWhere += ' AND UPPER(e.subchapter) = UPPER(?)';
+      params.push(filters.subchapter);
+      if (filters.chapter) {
+        baseWhere += ' AND UPPER(e.chapter) = UPPER(?)';
+        params.push(filters.chapter);
+      }
+    } else if (filters.chapter) {
+      baseWhere += ' AND UPPER(e.chapter) = UPPER(?)';
+      params.push(filters.chapter);
+    }
+    if (filters.module) {
+      baseWhere += ' AND UPPER(e.module) = UPPER(?)';
+      params.push(filters.module);
+    }
+    if (filters.level) {
+      baseWhere += ' AND UPPER(e.level) = UPPER(?)';
+      params.push(filters.level);
+    }
+    if (filters.difficulty !== undefined && filters.difficulty !== null && filters.difficulty !== '') {
+      baseWhere += ' AND e.difficulty = ?';
+      params.push(parseInt(filters.difficulty, 10));
+    }
+    if (filters.author) {
+      baseWhere += ' AND UPPER(e.author) = UPPER(?)';
+      params.push(filters.author);
+    }
+    if (filters.hasSolution === '1' || filters.hasSolution === 1 || filters.hasSolution === true) {
+      baseWhere += ' AND e.hasSolution = 1';
+    } else if (filters.hasSolution === '0' || filters.hasSolution === 0 || filters.hasSolution === false) {
+      baseWhere += ' AND e.hasSolution = 0';
+    }
+    if (filters.hasIndication === '1' || filters.hasIndication === 1 || filters.hasIndication === true) {
+      baseWhere += ' AND e.hasIndication = 1';
+    } else if (filters.hasIndication === '0' || filters.hasIndication === 0 || filters.hasIndication === false) {
+      baseWhere += ' AND e.hasIndication = 0';
+    }
+
+    const sql = `
+      SELECT 
+        e.level,
+        e.module,
+        e.chapter,
+        e.subchapter,
+        COUNT(*) as exerciseCount
+      FROM exercises e
+      WHERE ${baseWhere}
+        AND e.level IS NOT NULL 
+        AND e.module IS NOT NULL 
+        AND e.chapter IS NOT NULL
+      GROUP BY e.level, e.module, e.chapter, e.subchapter
+    `;
+
+    const rows = db.prepare(sql).all(...params);
+
+    // Reprise de la construction hiérarchique depuis getChapterStructure
+    const hierarchy = new Map();
+    rows.forEach((row) => {
+      const level = row.level;
+      const module = row.module;
+      const chapter = row.chapter;
+      const subchapter = row.subchapter;
+      const count = row.exerciseCount;
+
+      if (!hierarchy.has(level)) {
+        hierarchy.set(level, { name: level, exerciseCount: 0, modules: new Map() });
+      }
+      const levelObj = hierarchy.get(level);
+      levelObj.exerciseCount += count;
+
+      if (!levelObj.modules.has(module)) {
+        levelObj.modules.set(module, { name: module, exerciseCount: 0, chapters: new Map() });
+      }
+      const moduleObj = levelObj.modules.get(module);
+      moduleObj.exerciseCount += count;
+
+      if (!moduleObj.chapters.has(chapter)) {
+        moduleObj.chapters.set(chapter, { name: chapter, exerciseCount: 0, subchapters: new Map() });
+      }
+      const chapterObj = moduleObj.chapters.get(chapter);
+      chapterObj.exerciseCount += count;
+
+      if (subchapter) {
+        if (!chapterObj.subchapters.has(subchapter)) {
+          chapterObj.subchapters.set(subchapter, { name: subchapter, exerciseCount: 0 });
+        }
+        chapterObj.subchapters.get(subchapter).exerciseCount += count;
+      }
+    });
+
+    const result = Array.from(hierarchy.entries()).map(([levelName, levelData]) => ({
+      name: levelName,
+      exerciseCount: levelData.exerciseCount,
+      modules: Array.from(levelData.modules.entries()).map(([moduleName, moduleData]) => ({
+        name: moduleName,
+        exerciseCount: moduleData.exerciseCount,
+        chapters: Array.from(moduleData.chapters.entries()).map(([chapterName, chapterData]) => ({
+          name: chapterName,
+          exerciseCount: chapterData.exerciseCount,
+          subchapters: Array.from(chapterData.subchapters.entries()).map(([subName, subData]) => ({
+            name: subName,
+            exerciseCount: subData.exerciseCount
+          })).sort((a, b) => a.name.localeCompare(b.name))
+        })).sort((a, b) => a.name.localeCompare(b.name))
+      })).sort((a, b) => a.name.localeCompare(b.name))
+    })).sort((a, b) => {
+      const getOrder = (level) => {
+        if (level.startsWith('L')) return parseInt(level.substring(1)) || 0;
+        if (level.startsWith('M')) return 100 + (parseInt(level.substring(1)) || 0);
+        return 1000;
+      };
+      return getOrder(a.name) - getOrder(b.name);
+    });
+
+    return result;
+  } catch (error) {
+    console.error('Error building filtered chapter structure:', error);
+    throw error;
+  } finally {
+    if (db) db.close();
+  }
+}
 export async function getSuggestions(type = 'all', limit = 10) {
   let db;
   try {
