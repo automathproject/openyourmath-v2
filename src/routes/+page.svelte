@@ -456,6 +456,19 @@
                     </div>
                   </div>
                 {/if}
+
+                <!-- Footer auteur / organisation -->
+                {#if exercise.author || exercise.organization}
+                  <div class="result-footer">
+                    {#if exercise.author}
+                      <span class="result-footer-item">👤 {exercise.author}</span>
+                    {/if}
+                    {#if exercise.organization}
+                      <span class="result-footer-sep">•</span>
+                      <span class="result-footer-item">🏛️ {exercise.organization}</span>
+                    {/if}
+                  </div>
+                {/if}
               </div>
             {/each}
           </div>
@@ -546,6 +559,11 @@
   .result-preview div { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .result-preview .katex { font-size: 0.875rem !important; }
   .result-preview .katex-display { margin: 0.25rem 0 !important; }
+
+  /* Result footer */
+  .result-footer { margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #f3f4f6; display:flex; gap:0.5rem; flex-wrap:wrap; color:#6b7280; font-size:0.875rem; }
+  .result-footer-item { white-space: nowrap; }
+  .result-footer-sep { color:#d1d5db; }
   .result-card--selected { border-color: rgb(59 130 246); background: rgb(239 246 255); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
   .selection-indicator { width: 1.5rem; height: 1.5rem; background: rgb(219 234 254); border-radius: 9999px; display: flex; align-items: center; justify-content: center; }
   .external-link-btn { color: rgb(156 163 175); transition: color .2s, background-color .2s; padding: 0.25rem; border-radius: 0.25rem; }

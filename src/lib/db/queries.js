@@ -40,7 +40,7 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       // Fallback LIKE: AND sur chaque mot, OR entre champs
       const words = query.trim().split(/\s+/).filter(Boolean);
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview,
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.created_at, e.preview,
                e.hasIndication, e.hasSolution
         FROM exercises e
         WHERE 1=1
@@ -58,7 +58,7 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       });
     } else if (searchQuery) {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview,
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.created_at, e.preview,
                e.hasIndication, e.hasSolution,
                bm25(fts_exercises) as rank
         FROM exercises e JOIN fts_exercises fts ON e.uuid = fts.uuid
@@ -67,7 +67,7 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       params.push(searchQuery);
     } else {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.created_at, e.preview,
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.created_at, e.preview,
                e.hasIndication, e.hasSolution
         FROM exercises e WHERE 1=1
       `;

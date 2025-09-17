@@ -60,21 +60,23 @@
         <span class="exercise-uuid text-xs text-gray-400 font-mono">{exercise.uuid}</span>
       {/if}
 
-      <div class="attribution-info">
-        {#if exercise?.author}
-          <div class="attribution-item">
-            <span class="attribution-icon">👤</span>
-            <span class="attribution-text">{exercise.author}</span>
-          </div>
-        {/if}
+      {#if variant !== 'preview'}
+        <div class="attribution-info">
+          {#if exercise?.author}
+            <div class="attribution-item">
+              <span class="attribution-icon">👤</span>
+              <span class="attribution-text">{exercise.author}</span>
+            </div>
+          {/if}
 
-        {#if exercise?.organization}
-          <div class="attribution-item">
-            <span class="attribution-icon">🏛️</span>
-            <span class="attribution-text">{exercise.organization}</span>
-          </div>
-        {/if}
-      </div>
+          {#if exercise?.organization}
+            <div class="attribution-item">
+              <span class="attribution-icon">🏛️</span>
+              <span class="attribution-text">{exercise.organization}</span>
+            </div>
+          {/if}
+        </div>
+      {/if}
     </div>
   </div>
 
@@ -227,6 +229,12 @@
   .exercise-header.is-preview .action-button,
   .exercise-header.is-preview .exercise-title,
   .exercise-header.is-preview .exercise-metadata { font-size: inherit !important; }
+
+  /* In preview, allow the title to take more width */
+  .exercise-header.is-preview .exercise-title {
+    /* Reduce the reserved space for the right block */
+    margin-right: clamp(6rem, 18vw, 14rem);
+  }
 
   /* Responsive: on small screens, put the right block back into flow */
   @media (max-width: 640px) {
