@@ -87,6 +87,18 @@
     uuidInputError = false;
   }
   
+  // Normaliser une chaîne d'UUIDs (espaces/virgules -> virgules, sans espaces)
+  function normalizeUuidString(str) {
+    if (!str || typeof str !== 'string') return '';
+    const hasTrailingSeparator = /[\s,]$/.test(str);
+    const tokens = str.trim().split(/[\s,]+/).filter(Boolean);
+    let normalized = tokens.join(',');
+    if (normalized && hasTrailingSeparator) {
+      normalized += ','; // préserver l'intention de saisir un nouveau UUID
+    }
+    return normalized;
+  }
+
   // Analyser le contenu du champ UUID en temps réel
   function analyzeUuidInput() {
     if (!uuidInputValue.trim()) {
@@ -106,6 +118,23 @@
     } else {
       uuidInputFeedback = `${stats.valid} UUID${stats.valid > 1 ? 's' : ''} détecté${stats.valid > 1 ? 's' : ''}`;
       uuidInputError = false;
+    }
+  }
+
+  // Normaliser au blur ou Enter, pas à chaque frappe
+  function handleUuidBlur() {
+    uuidInputValue = normalizeUuidString(uuidInputValue);
+    analyzeUuidInput();
+  }
+
+  function handleUuidKeydown(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      uuidInputValue = normalizeUuidString(uuidInputValue);
+      analyzeUuidInput();
+      if (!uuidInputLoading) {
+        loadFromUuidInput();
+      }
     }
   }
   
@@ -151,7 +180,8 @@
     }
     
     try {
-      await navigator.clipboard.writeText(uuidInputValue);
+      // Copier la version normalisée (sans espaces)
+      await navigator.clipboard.writeText(normalizeUuidString(uuidInputValue));
       uuidInputFeedback = 'Liste copiée !';
       uuidInputError = false;
       
@@ -298,7 +328,9 @@
               type="text"
               bind:value={uuidInputValue}
               on:input={analyzeUuidInput}
-              placeholder="uuid1, uuid2, uuid3..."
+              on:blur={handleUuidBlur}
+              on:keydown={handleUuidKeydown}
+              placeholder="uuid1,uuid2,uuid3..."
               class="uuid-input"
               class:uuid-input--error={uuidInputError}
               disabled={uuidInputLoading}

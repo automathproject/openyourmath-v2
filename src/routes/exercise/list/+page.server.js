@@ -21,7 +21,9 @@ export async function load({ url }) {
     
     // Parser les UUIDs
     const uuids = listParam
-      .split(',')
+      // Accepter virgules OU espaces comme séparateurs
+      .trim()
+      .split(/[\s,]+/)
       .map(uuid => uuid.trim())
       .filter(uuid => uuid !== '' && uuid.length >= 3); // Moins restrictif pour les UUIDs courts
     

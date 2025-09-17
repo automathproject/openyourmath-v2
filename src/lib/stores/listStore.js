@@ -78,14 +78,16 @@ export const listUtils = {
     }
     
     return uuidString
-      .split(',')
+      // Accepter virgules OU espaces comme séparateurs
+      .split(/[\s,]+/)
       .map(uuid => uuid.trim())
       .filter(uuid => uuid !== '' && this.isValidUuid(uuid));
   },
 
   // Formater la liste actuelle en chaîne d'UUIDs
   formatCurrentList() {
-    return globalExerciseList.map(ex => ex.uuid).join(', ');
+    // Sortie normalisée sans espaces: uuid1,uuid2,uuid3
+    return globalExerciseList.map(ex => ex.uuid).join(',');
   },
 
 // Validation d'UUID (accepte les formats courts ET standards)
@@ -112,10 +114,13 @@ isValidUuid(uuid) {
   // Compter les UUIDs valides dans une chaîne
   countValidUuids(uuidString) {
     const parsed = this.parseUuidString(uuidString);
+    const tokens = (uuidString && typeof uuidString === 'string')
+      ? uuidString.trim().split(/[\s,]+/).filter(Boolean)
+      : [];
     return {
-      total: uuidString ? uuidString.split(',').length : 0,
+      total: tokens.length,
       valid: parsed.length,
-      invalid: uuidString ? uuidString.split(',').length - parsed.length : 0
+      invalid: Math.max(0, tokens.length - parsed.length)
     };
   },
 
@@ -124,7 +129,8 @@ isValidUuid(uuid) {
     if (globalExerciseList.length === 0) return `${baseUrl}/exercise/list`;
 
     const uuids = globalExerciseList.map(ex => ex.uuid).join(',');
-    return `${baseUrl}/exercise/list?list=${encodeURIComponent(uuids)}`;
+    // Laisser les virgules non encodées pour une URL lisible
+    return `${baseUrl}/exercise/list?list=${uuids}`;
   },
 
   // Exporter la liste en format simple
@@ -381,7 +387,8 @@ export const listActions = {
     if (globalExerciseList.length === 0) return '/exercise/list';
 
     const uuids = globalExerciseList.map(ex => ex.uuid).join(',');
-    return `/exercise/list?list=${encodeURIComponent(uuids)}`;
+    // Laisser les virgules non encodées pour une URL lisible
+    return `/exercise/list?list=${uuids}`;
   },
 
   // Synchroniser avec l'URL (pour la navigation du navigateur)
@@ -391,7 +398,12 @@ export const listActions = {
       return;
     }
 
-    const uuids = uuidString.split(',').map(uuid => uuid.trim()).filter(uuid => uuid !== '');
+    // Accepter virgules OU espaces comme séparateurs
+    const uuids = uuidString
+      .trim()
+      .split(/[\s,]+/)
+      .map(uuid => uuid.trim())
+      .filter(uuid => uuid !== '');
     listActions.loadFromUuids(uuids);
   },
 

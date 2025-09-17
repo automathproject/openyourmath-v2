@@ -20,7 +20,8 @@
   // Mettre à jour l'URL de la liste de manière réactive
   $: if ($exerciseList && $exerciseList.length > 0) {
     const uuids = $exerciseList.map(ex => ex.uuid).join(',');
-    listUrl = `/exercise/list?list=${encodeURIComponent(uuids)}`;
+    // Ne pas encoder les virgules pour voir "uuid1,uuid2" dans l'URL
+    listUrl = `/exercise/list?list=${uuids}`;
   } else {
     listUrl = '/exercise/list';
   }
