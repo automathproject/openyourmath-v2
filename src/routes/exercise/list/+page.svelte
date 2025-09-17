@@ -512,15 +512,17 @@
         {/if}
         
         <!-- Composant éditeur -->
-        <ExerciseListEditor 
-          exercises={$exerciseList}
-          selectedIndex={$selectedExerciseIndex}
-          {isEditMode}
-          on:reorder={handleReorder}
-          on:deleteMultiple={handleDeleteMultiple}
-          on:select={handleSelectFromEditor}
-          on:remove={handleRemoveFromEditor}
-        />
+        <div class="list-editor-scroll">
+          <ExerciseListEditor 
+            exercises={$exerciseList}
+            selectedIndex={$selectedExerciseIndex}
+            {isEditMode}
+            on:reorder={handleReorder}
+            on:deleteMultiple={handleDeleteMultiple}
+            on:select={handleSelectFromEditor}
+            on:remove={handleRemoveFromEditor}
+          />
+        </div>
       </aside>
       
       <!-- NOUVEAU : Overlay pour mobile -->
@@ -896,6 +898,19 @@
 
   /* Layout + display column */
   .list-container { flex:1; display:flex; min-height:0; overflow:hidden; }
+  /* Desktop: fixed sidebar height with its own scroll */
+  @media (min-width: 768px) {
+    .list-navigation {
+      flex: 0 0 320px;
+      max-width: 320px;
+      border-right: 1px solid #e5e7eb;
+      background: #fff;
+      height: auto;
+      overflow: visible; /* pas de scroll sur le conteneur */
+    }
+    /* La zone scrollable est limitée au composant éditeur */
+    .list-editor-scroll { height: 600px; overflow-y: auto; }
+  }
   .exercise-display {
     background:white;
     position:relative;
@@ -904,8 +919,8 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    scrollbar-gutter: stable; /* reserve scrollbar space when needed */
+    /* Let the page scroll; avoid inner scrollbar */
+    overflow: visible;
   }
   .exercise-loading { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:#6b7280; }
   .loading-spinner { width:2rem; height:2rem; border:2px solid #e5e7eb; border-top:2px solid #3b82f6; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:1rem; }
@@ -921,7 +936,7 @@
   .no-selection-text { font-size:1.125rem; color:#6b7280; }
 
   /* Wrapper */
-  .exercise-content-wrapper { padding:1.5rem; height:100%; overflow-y:auto; }
+  .exercise-content-wrapper { padding:1.5rem; height:auto; overflow: visible; }
 
   /* Responsive */
   @media (max-width: 768px) {
