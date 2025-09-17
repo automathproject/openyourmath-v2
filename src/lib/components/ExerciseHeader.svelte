@@ -1,6 +1,7 @@
 <!-- src/lib/components/ExerciseHeader.svelte -->
 <script>
   import Breadcrumb from './Breadcrumb.svelte';
+  import NameRenderer from './NameRenderer.svelte';
 
   export let exercise = {};
   export let variant = 'full'; // 'full' | 'preview' | 'simple'
@@ -63,10 +64,12 @@
       {#if variant !== 'preview'}
         <div class="attribution-info">
           {#if exercise?.author}
-            <div class="attribution-item">
-              <span class="attribution-icon">👤</span>
-              <span class="attribution-text">{exercise.author}</span>
-            </div>
+            <NameRenderer
+              author={exercise.author}
+              licenseCode={exercise.license_code}
+              licenseUrl={exercise.license_url}
+              variant="compact"
+            />
           {/if}
 
           {#if exercise?.organization}
