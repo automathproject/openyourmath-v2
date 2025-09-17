@@ -451,6 +451,7 @@
                           author={exercise.author}
                           licenseCode={exercise.license_code}
                           licenseUrl={exercise.license_url}
+                          email={exercise.author_email || exercise.authorEmail || ''}
                           variant="inline"
                         />
                       {/if}
@@ -475,6 +476,7 @@
                         author={exercise.author}
                         licenseCode={exercise.license_code}
                         licenseUrl={exercise.license_url}
+                        email={exercise.author_email || exercise.authorEmail || ''}
                         variant="footer"
                         className="result-footer-item"
                       />

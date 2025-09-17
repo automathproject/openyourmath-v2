@@ -3,6 +3,7 @@
   export let author = '';
   export let licenseCode = '';
   export let licenseUrl = '';
+  export let email = '';
   export let icon = '👤';
   export let variant = 'inline'; // inline | footer | compact
   export let className = '';
@@ -43,12 +44,16 @@
     {#if open}
       <div class="name-renderer__license" role="dialog" aria-live="polite" on:click|stopPropagation>
         {#if licenseCode}
-          <span class="name-renderer__badge">🔖 {licenseCode}</span>
+          <span class="name-renderer__badge">🔖 </span>
           {#if licenseUrl}
-            <a class="name-renderer__link" href={licenseUrl} target="_blank" rel="noopener">Détails</a>
+            <a class="name-renderer__link" href={licenseUrl} target="_blank" rel="noopener">{licenseCode}</a>
           {/if}
         {:else}
           <span class="name-renderer__missing">Licence non renseignée</span>
+        {/if}
+        {#if email}
+          <span class="name-renderer__sep">•</span>
+          <a class="name-renderer__link" href={`mailto:${email}`}>Contacter</a>
         {/if}
       </div>
     {/if}
@@ -120,6 +125,10 @@
   .name-renderer__link {
     color: #2563eb;
     text-decoration: underline;
+  }
+
+  .name-renderer__sep {
+    color: #d1d5db;
   }
 
   .name-renderer__missing {
