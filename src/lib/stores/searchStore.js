@@ -378,7 +378,7 @@ export const suggestionActions = {
 
     try {
       const [authorsResponse, modulesResponse, levelsResponse, difficultiesResponse] = await Promise.all([
-        fetch('/api/chapters?type=suggestions&for=authors&limit=20'),
+        fetch('/api/chapters?type=suggestions&for=authors&limit=200'),
         fetch('/api/chapters?type=suggestions&for=modules&limit=15'),
         fetch('/api/chapters?type=suggestions&for=levels&limit=10'),
         fetch('/api/chapters?type=suggestions&for=difficulties&limit=10')

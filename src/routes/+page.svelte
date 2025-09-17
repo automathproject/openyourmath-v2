@@ -33,6 +33,7 @@
   let showAdvancedFilters = false;
   let showAuthorSuggestions = false;
   let showModuleSuggestions = false;
+  let licenseOpenFor = null; // uuid de la carte dont on affiche la licence
   
   // Créer la fonction de recherche débouncée
   const debouncedSearch = useDebounce(searchActions.search, 300);
@@ -73,6 +74,10 @@
     searchActions.updateFilter('module', module);
     showModuleSuggestions = false;
     searchActions.search();
+  }
+
+  function toggleLicense(exercise) {
+    licenseOpenFor = licenseOpenFor === exercise.uuid ? null : exercise.uuid;
   }
   
   function handleModuleInput() {
@@ -444,6 +449,17 @@
                       {#if exercise.chapter}
                         <span class="result-badge"> {exercise.chapter}</span>
                       {/if}
+                      {#if exercise.author}
+                        <span class="result-metadata-sep">•</span>
+                        <button 
+                          type="button" 
+                          class="result-author-inline"
+                          title="Voir la licence"
+                          on:click|stopPropagation={() => toggleLicense(exercise)}
+                        >
+                          👤 {exercise.author}
+                        </button>
+                      {/if}
                     </div>
                   </div>
                 </div>
@@ -461,13 +477,32 @@
                 {#if exercise.author || exercise.organization}
                   <div class="result-footer">
                     {#if exercise.author}
-                      <span class="result-footer-item">👤 {exercise.author}</span>
+                      <button 
+                        type="button"
+                        class="result-footer-item result-author"
+                        title="Voir la licence"
+                        on:click|stopPropagation={() => toggleLicense(exercise)}
+                      >
+                        👤 {exercise.author}
+                      </button>
                     {/if}
                     {#if exercise.organization}
                       <span class="result-footer-sep">•</span>
                       <span class="result-footer-item">🏛️ {exercise.organization}</span>
                     {/if}
                   </div>
+                  {#if licenseOpenFor === exercise.uuid}
+                    <div class="result-license-pop" on:click|stopPropagation>
+                      {#if exercise.license_code}
+                        <span class="license-badge">🔖 {exercise.license_code}</span>
+                        {#if exercise.license_url}
+                          <a class="license-link" href={exercise.license_url} target="_blank" rel="noopener">Détails</a>
+                        {/if}
+                      {:else}
+                        <span class="text-gray-500">Licence non renseignée</span>
+                      {/if}
+                    </div>
+                  {/if}
                 {/if}
               </div>
             {/each}
@@ -564,6 +599,16 @@
   .result-footer { margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #f3f4f6; display:flex; gap:0.5rem; flex-wrap:wrap; color:#6b7280; font-size:0.875rem; }
   .result-footer-item { white-space: nowrap; }
   .result-footer-sep { color:#d1d5db; }
+  .result-author { cursor: pointer; padding: 0 0.125rem; border-radius: 0.25rem; background: transparent; border: none; color: inherit; }
+  .result-author:hover { background: #f3f4f6; color:#374151; }
+  .result-license-pop { margin-top: 0.25rem; background:#f9fafb; border:1px solid #e5e7eb; border-radius:0.375rem; padding:0.5rem 0.625rem; display:flex; align-items:center; gap:0.5rem; color:#374151; font-size:0.875rem; }
+  .license-badge { font-weight:600; }
+  .license-link { color:#2563eb; text-decoration: underline; }
+
+  /* Result header author (inline) */
+  .result-metadata-sep { color:#d1d5db; margin: 0 0.25rem; }
+  .result-author-inline { cursor: pointer; padding: 0 0.125rem; border-radius: 0.25rem; background: transparent; border: none; color: #6b7280; font-size: 0.875rem; }
+  .result-author-inline:hover { background:#f3f4f6; color:#374151; }
   .result-card--selected { border-color: rgb(59 130 246); background: rgb(239 246 255); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
   .selection-indicator { width: 1.5rem; height: 1.5rem; background: rgb(219 234 254); border-radius: 9999px; display: flex; align-items: center; justify-content: center; }
   .external-link-btn { color: rgb(156 163 175); transition: color .2s, background-color .2s; padding: 0.25rem; border-radius: 0.25rem; }

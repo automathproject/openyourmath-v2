@@ -17,6 +17,7 @@
     "clean": "rm -rf .svelte-kit cache data static/artifacts",
     "reset": "pnpm clean && pnpm build:content:full",
     "build:stats": "echo '📊 Statistics:' && echo \"📝 LaTeX files:\" $(find content/exercises -name '*.tex' | wc -l) && echo \"📄 JSON cache:\" $(find cache/exercises -name '*.json' | wc -l) && echo \"💾 Database:\" $(test -f data/exercises.sqlite && sqlite3 data/exercises.sqlite 'SELECT COUNT(*) FROM exercises;' 2>/dev/null || echo '0') 'exercises'",
+    "authors:add-exo7-license": "node scripts/update-authors-licenses.js",
     "test": "vitest",
     "test:build": "vitest run tests/build/",
     "test:integration": "playwright test",

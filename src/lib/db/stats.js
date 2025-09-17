@@ -4,6 +4,66 @@ import path from 'path';
 
 const DB_PATH = path.resolve('data/exercises.sqlite');
 
+function escapeLikePattern(value) {
+  return value.replace(/[%_\\]/g, (ch) => `\\${ch}`);
+}
+
+function buildAuthorFacetClause(authorValue, tableAlias = 'exercises') {
+  const trimmed = (authorValue ?? '').trim();
+  if (!trimmed) {
+    return { clause: '', params: [] };
+  }
+
+  const tokens = trimmed.split(/\s+/).filter(Boolean);
+  const directLike = `%${escapeLikePattern(trimmed)}%`;
+  const tokenLikes = tokens.map((token) => `%${escapeLikePattern(token)}%`);
+
+  const buildColumnClause = (column) => {
+    const clauses = [`UPPER(${column}) LIKE UPPER(?) ESCAPE '\\'`];
+    const params = [directLike];
+
+    if (tokens.length > 1) {
+      const tokenClause = tokens
+        .map(() => `UPPER(${column}) LIKE UPPER(?) ESCAPE '\\'`)
+        .join(' AND ');
+      clauses.push(`(${tokenClause})`);
+      params.push(...tokenLikes);
+    }
+
+    return {
+      clause: clauses.length > 1 ? `(${clauses.join(' OR ')})` : clauses[0],
+      params
+    };
+  };
+
+  const conditions = [];
+  const params = [];
+
+  const displayMatch = buildColumnClause('ea.author_display');
+  if (displayMatch.clause) {
+    conditions.push(`(ea.author_display IS NOT NULL AND ${displayMatch.clause})`);
+    params.push(...displayMatch.params);
+  }
+
+  const pseudoMatch = buildColumnClause('ea.author_pseudo');
+  if (pseudoMatch.clause) {
+    conditions.push(`(ea.author_pseudo IS NOT NULL AND ${pseudoMatch.clause})`);
+    params.push(...pseudoMatch.params);
+  }
+
+  if (!conditions.length) {
+    return { clause: '', params: [] };
+  }
+
+  const clause = ` AND EXISTS (
+    SELECT 1 FROM exercise_authors ea
+    WHERE ea.uuid = ${tableAlias}.uuid
+      AND (${conditions.join(' OR ')})
+  )`;
+
+  return { clause, params };
+}
+
 /**
  * Obtient des statistiques globales sur la base d'exercices
  */
@@ -200,8 +260,11 @@ export async function searchWithFacets(query = '', filters = {}) {
     }
     
     if (filters.author) {
-      baseWhere += ' AND author = ?';
-      params.push(filters.author);
+      const { clause, params: authorParams } = buildAuthorFacetClause(filters.author, 'exercises');
+      if (clause) {
+        baseWhere += clause;
+        params.push(...authorParams);
+      }
     }
     
     // Facettes : chapitres disponibles

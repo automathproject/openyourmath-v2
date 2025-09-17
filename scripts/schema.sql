@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS exercises (
   module TEXT,
   author TEXT,
   organization TEXT,
+  license_code TEXT,
+  license_url TEXT,
   video_id TEXT,
   created_at TEXT,
   updated_at TEXT,
@@ -23,6 +25,16 @@ CREATE TABLE IF NOT EXISTS exercises (
   content_json TEXT NOT NULL,
   source_hash TEXT
 );
+
+-- Table d'association exercice ↔ auteurs (un enregistrement par auteur)
+CREATE TABLE IF NOT EXISTS exercise_authors (
+  uuid TEXT NOT NULL,
+  author_display TEXT NOT NULL,
+  author_pseudo TEXT,
+  PRIMARY KEY (uuid, author_display)
+);
+CREATE INDEX IF NOT EXISTS idx_ex_auth_display ON exercise_authors(author_display);
+CREATE INDEX IF NOT EXISTS idx_ex_auth_uuid ON exercise_authors(uuid);
 
 -- Table virtuelle pour la recherche plein texte (FTS5)
 CREATE VIRTUAL TABLE IF NOT EXISTS fts_exercises USING fts5(
@@ -44,3 +56,4 @@ CREATE INDEX IF NOT EXISTS idx_level ON exercises(level); -- MODIFIÉ : index su
 CREATE INDEX IF NOT EXISTS idx_difficulty ON exercises(difficulty); -- NOUVEAU : index sur difficulty numérique
 CREATE INDEX IF NOT EXISTS idx_module ON exercises(module);
 CREATE INDEX IF NOT EXISTS idx_author ON exercises(author);
+CREATE INDEX IF NOT EXISTS idx_license_code ON exercises(license_code);

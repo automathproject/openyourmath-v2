@@ -23,6 +23,66 @@ function prepareSearchQuery(query) {
   return parts.join(' ');
 }
 
+function escapeLikePattern(value) {
+  return value.replace(/[%_\\]/g, (ch) => `\\${ch}`);
+}
+
+function buildAuthorFilterClause(authorValue, tableAlias = 'e') {
+  const trimmed = (authorValue ?? '').trim();
+  if (!trimmed) {
+    return { clause: '', params: [] };
+  }
+
+  const tokens = trimmed.split(/\s+/).filter(Boolean);
+  const directLike = `%${escapeLikePattern(trimmed)}%`;
+  const tokenLikes = tokens.map((token) => `%${escapeLikePattern(token)}%`);
+
+  const buildColumnClause = (column) => {
+    const clauses = [`UPPER(${column}) LIKE UPPER(?) ESCAPE '\\'`];
+    const params = [directLike];
+
+    if (tokens.length > 1) {
+      const tokenClause = tokens
+        .map(() => `UPPER(${column}) LIKE UPPER(?) ESCAPE '\\'`)
+        .join(' AND ');
+      clauses.push(`(${tokenClause})`);
+      params.push(...tokenLikes);
+    }
+
+    return {
+      clause: clauses.length > 1 ? `(${clauses.join(' OR ')})` : clauses[0],
+      params
+    };
+  };
+
+  const conditions = [];
+  const params = [];
+
+  const displayMatch = buildColumnClause('ea.author_display');
+  if (displayMatch.clause) {
+    conditions.push(`(ea.author_display IS NOT NULL AND ${displayMatch.clause})`);
+    params.push(...displayMatch.params);
+  }
+
+  const pseudoMatch = buildColumnClause('ea.author_pseudo');
+  if (pseudoMatch.clause) {
+    conditions.push(`(ea.author_pseudo IS NOT NULL AND ${pseudoMatch.clause})`);
+    params.push(...pseudoMatch.params);
+  }
+
+  if (conditions.length === 0) {
+    return { clause: '', params: [] };
+  }
+
+  const clause = ` AND EXISTS (
+    SELECT 1 FROM exercise_authors ea
+    WHERE ea.uuid = ${tableAlias}.uuid
+      AND (${conditions.join(' OR ')})
+  )`;
+
+  return { clause, params };
+}
+
 /**
  * Recherche d'exercices avec filtres (version améliorée avec level/difficulty + preview)
  */
@@ -40,8 +100,8 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       // Fallback LIKE: AND sur chaque mot, OR entre champs
       const words = query.trim().split(/\s+/).filter(Boolean);
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.created_at, e.preview,
-               e.hasIndication, e.hasSolution
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.created_at, e.preview,
+                e.hasIndication, e.hasSolution
         FROM exercises e
         WHERE 1=1
       `;
@@ -58,17 +118,17 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
       });
     } else if (searchQuery) {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.created_at, e.preview,
-               e.hasIndication, e.hasSolution,
-               bm25(fts_exercises) as rank
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.created_at, e.preview,
+                e.hasIndication, e.hasSolution,
+                bm25(fts_exercises) as rank
         FROM exercises e JOIN fts_exercises fts ON e.uuid = fts.uuid
         WHERE fts_exercises MATCH ?
       `;
       params.push(searchQuery);
     } else {
       sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.created_at, e.preview,
-               e.hasIndication, e.hasSolution
+        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.created_at, e.preview,
+                e.hasIndication, e.hasSolution
         FROM exercises e WHERE 1=1
       `;
     }
@@ -109,8 +169,9 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
     }
     
     if (filters.author) {
-      sql += ' AND UPPER(e.author) = UPPER(?)';
-      params.push(filters.author);
+      const { clause, params: authorParams } = buildAuthorFilterClause(filters.author, 'e');
+      sql += clause;
+      params.push(...authorParams);
     }
     
     if (typeof filters.hasSolution === 'boolean') {
@@ -219,8 +280,9 @@ export async function getExerciseCount(query = '', filters = {}) {
     }
     
     if (filters.author) {
-      sql += ' AND UPPER(e.author) = UPPER(?)';
-      params.push(filters.author);
+      const { clause, params: authorParams } = buildAuthorFilterClause(filters.author, 'e');
+      sql += clause;
+      params.push(...authorParams);
     }
     
     if (typeof filters.hasSolution === 'boolean') {
@@ -251,7 +313,8 @@ export async function getExerciseByUuid(uuid) {
     const exercise = db.prepare(`
       SELECT 
         uuid, title, chapter, subchapter, theme, level, difficulty, module,
-        author, organization, video_id, created_at, updated_at, preview,
+        author, organization, license_code, license_url,
+        video_id, created_at, updated_at, preview,
         hasIndication, hasSolution,
         content_json
       FROM exercises 
@@ -541,8 +604,9 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
       }
     }
     if (filters.author) {
-      baseWhere += ' AND UPPER(e.author) = UPPER(?)';
-      params.push(filters.author);
+      const { clause, params: authorParams } = buildAuthorFilterClause(filters.author, 'e');
+      baseWhere += clause;
+      params.push(...authorParams);
     }
     if (filters.hasSolution === '1' || filters.hasSolution === 1 || filters.hasSolution === true) {
       baseWhere += ' AND e.hasSolution = 1';
@@ -671,11 +735,11 @@ export async function getSuggestions(type = 'all', limit = 10) {
         
       case 'authors':
         query = `
-          SELECT DISTINCT author as value, COUNT(*) as count
-          FROM exercises 
-          WHERE author IS NOT NULL
-          GROUP BY author 
-          ORDER BY count DESC, author
+          SELECT author_display as value, COUNT(*) as count
+          FROM exercise_authors 
+          WHERE author_display IS NOT NULL AND TRIM(author_display) != ''
+          GROUP BY author_display 
+          ORDER BY count DESC, author_display
           LIMIT ?
         `;
         break;

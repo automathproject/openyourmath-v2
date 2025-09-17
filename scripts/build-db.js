@@ -221,19 +221,160 @@ async function loadExercises(cacheDir) {
 }
 
 /**
+ * Chargement auteurs (facultatif)
+ */
+function loadAuthorsConfig() {
+  const AUTHORS_PATH = path.resolve(__dirname, '../content/authors.json');
+  try {
+    if (!fs.existsSync(AUTHORS_PATH)) return { list: [], byPseudo: new Map(), byNorm: new Map() };
+    const raw = fs.readFileSync(AUTHORS_PATH, 'utf8').trim();
+    if (!raw) return { list: [], byPseudo: new Map(), byNorm: new Map() };
+    const list = JSON.parse(raw);
+
+    // Build indexes by pseudo and by normalized names/aliases
+    const byPseudo = new Map();
+    const byNorm = new Map();
+
+    const norm = (s) => (s || '')
+      .toString()
+      .trim()
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/\s+/g, ' ');
+
+    for (const a of Array.isArray(list) ? list : []) {
+      if (!a || typeof a !== 'object') continue;
+      if (a.pseudo) byPseudo.set(a.pseudo, a);
+      const prenom = a.prenom || a.first_name || '';
+      const nom = a.nom || a.last_name || '';
+      const display = a.display_name || [prenom, nom].filter(Boolean).join(' ') || a.pseudo || '';
+      const variants = new Set([
+        display,
+        [nom, prenom].filter(Boolean).join(' '),
+        prenom,
+        nom,
+        a.pseudo
+      ].filter(Boolean));
+      // aliases éventuels
+      if (Array.isArray(a.aliases)) a.aliases.forEach(v => v && variants.add(v));
+      for (const v of variants) {
+        const key = norm(v);
+        if (key) byNorm.set(key, a);
+      }
+    }
+
+    return { list, byPseudo, byNorm };
+  } catch (e) {
+    console.warn('⚠️ Failed to load content/authors.json:', e.message);
+    return { list: [], byPseudo: new Map(), byNorm: new Map() };
+  }
+}
+
+function resolveAuthor(authorValue, exerciseOrg, authorsIdx) {
+  if (!authorValue) return { author: null, organization: exerciseOrg || null, license_code: null, license_url: null };
+  const { byPseudo, byNorm } = authorsIdx || {};
+  const norm = (s) => (s || '')
+    .toString()
+    .trim()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, ' ');
+
+  // Normalize and split potential multi-author strings.
+  // Preserve commas used as "Nom, Prénom" by first trying a two-token comma form.
+  const original = authorValue.toString().trim();
+
+  // Candidate separators for multiple authors (avoid raw comma alone)
+  const multiSepRegex = /\s*(?:;|\||\/|•|·| et | and )\s*/i;
+
+  let parts = [original];
+  if (multiSepRegex.test(original)) {
+    parts = original.split(multiSepRegex).map(s => s.trim()).filter(Boolean);
+  }
+
+  const resolvedParts = parts.map((part) => {
+    // Try pseudo exact
+    let e = byPseudo?.get(part) || null;
+    
+    // Try reverse comma form: "Nom, Prénom" -> "Nom Prénom"
+    let candidate = part;
+    if (!e && /,/.test(part)) {
+      const tw = part.split(',').map(s => s.trim()).filter(Boolean);
+      if (tw.length === 2) candidate = `${tw[0]} ${tw[1]}`;
+    }
+    
+    // Try normalized match on name/aliases
+    if (!e) e = byNorm?.get(norm(candidate)) || null;
+
+    // NOUVEAU : Si toujours pas trouvé, tester l'inversion "Prénom Nom" -> "Nom Prénom"
+    if (!e && !candidate.includes(',')) {
+      const words = candidate.trim().split(/\s+/).filter(Boolean);
+      if (words.length === 2) {
+        // Tester "Nom Prénom" si on avait "Prénom Nom"
+        const reversed = `${words[1]} ${words[0]}`;
+        e = byNorm?.get(norm(reversed)) || null;
+        
+        // Si trouvé avec l'ordre inversé, utiliser ce candidat
+        if (e) {
+          candidate = reversed;
+        }
+      }
+    }
+
+    if (!e) {
+      return {
+        display: part,
+        organization: null,
+        license_code: null,
+        license_url: null
+      };
+    }
+
+    const prenom = e.prenom || e.first_name || '';
+    const nom = e.nom || e.last_name || '';
+    const display = e.display_name || [prenom, nom].filter(Boolean).join(' ') || e.pseudo || part;
+    return {
+      display,
+      pseudo: e.pseudo || null,
+      organization: e.organization || null,
+      license_code: e.license_code || null,
+      license_url: e.license_url || null
+    };
+  });
+
+  // Compose final values
+  const authorDisplay = resolvedParts.map(p => p.display).join(' • ');
+  const organization = exerciseOrg || resolvedParts.find(p => p.organization)?.organization || null;
+  // If all license codes are the same (non-null), keep it; otherwise null
+  const codes = Array.from(new Set(resolvedParts.map(p => p.license_code).filter(Boolean)));
+  const urls = Array.from(new Set(resolvedParts.map(p => p.license_url).filter(Boolean)));
+  const license_code = codes.length === 1 ? codes[0] : null;
+  const license_url = urls.length === 1 ? urls[0] : null;
+
+  return { author: authorDisplay, organization, license_code, license_url, parts: resolvedParts };
+}
+
+/**
  * Insère les exercices dans la base
  */
-function insertExercises(db, exercises) {
+function insertExercises(db, exercises, authorsIdx) {
   console.log(`💾 Inserting ${exercises.length} exercises...`);
   
   // Préparer les requêtes
   const insertExercise = db.prepare(`
     INSERT OR REPLACE INTO exercises (
       uuid, title, chapter, subchapter, theme, level, difficulty, module,
-      author, organization, video_id, created_at, updated_at, preview,
+      author, organization, license_code, license_url, video_id, created_at, updated_at, preview,
       hasIndication, hasSolution,
       content_json, source_hash
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+  const deleteAuthorsFor = db.prepare(`DELETE FROM exercise_authors WHERE uuid = ?`);
+  const insertAuthor = db.prepare(`
+    INSERT OR REPLACE INTO exercise_authors (uuid, author_display, author_pseudo)
+    VALUES (?, ?, ?)
   `);
   
   const insertFTS = db.prepare(`
@@ -268,6 +409,9 @@ function insertExercises(db, exercises) {
           return t === 'reponse' || t === 'solution' || t === 'answer';
         }) ? 1 : 0;
 
+        // Résoudre l'auteur (pseudo vs "Prénom Nom") et organisation
+        const resolved = resolveAuthor(exercise.author, exercise.organization, authorsIdx);
+
         // Insérer dans la table principale
         insertExercise.run(
           exercise.uuid,
@@ -278,8 +422,10 @@ function insertExercises(db, exercises) {
           exercise.level || null, // MODIFIÉ : ancien difficulty devient level (TEXT)
           exercise.difficulty, // NOUVEAU : difficulté numérique (INTEGER, peut être null)
           exercise.module || null,
-          exercise.author || null,
-          exercise.organization || null,
+          resolved.author || null,
+          resolved.organization || null,
+          resolved.license_code || null,
+          resolved.license_url || null,
           exercise.video_id || null,
           exercise.created_at || new Date().toISOString(),
           exercise.updated_at || new Date().toISOString(),
@@ -290,6 +436,18 @@ function insertExercises(db, exercises) {
           exercise.source_hash || null
         );
         
+        // Insérer les auteurs (table plate)
+        try {
+          deleteAuthorsFor.run(exercise.uuid);
+          const parts = (resolved.parts || []).length ? resolved.parts : [{ display: resolved.author, pseudo: null }];
+          for (const p of parts) {
+            if (!p || !p.display) continue;
+            insertAuthor.run(exercise.uuid, p.display, p.pseudo || null);
+          }
+        } catch (e) {
+          console.warn('⚠️ Failed to insert exercise_authors for', exercise.uuid, e.message);
+        }
+
         // Insérer dans FTS5 pour la recherche
         const searchText = extractSearchText(exercise.content);
         const cleanPreview = cleanPreviewForSearch(exercise.preview);
@@ -357,6 +515,11 @@ async function main() {
     const db = createDatabase(DB_PATH);
     
     try {
+      // Charger les auteurs (optionnel)
+      console.log('👤 Loading authors config (if any)...');
+      const authorsIdx = loadAuthorsConfig();
+      console.log(`👤 Authors loaded: ${authorsIdx.list.length}`);
+
       // Charger les exercices
       console.log('📖 Loading exercises...');
       const exercises = await loadExercises(CACHE_DIR);
@@ -407,7 +570,7 @@ async function main() {
       console.log('📊 Difficulty distribution:', Object.entries(difficultyStats).map(([k,v]) => `${k}: ${v}`).join(', '));
       
       // Insérer en base
-      const inserted = insertExercises(db, exercises);
+      const inserted = insertExercises(db, exercises, authorsIdx);
       
       // Vérifier que la table FTS5 existe avant d'optimiser
       console.log('🔍 Checking search table...');
