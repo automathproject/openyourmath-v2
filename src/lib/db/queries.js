@@ -17,12 +17,10 @@ function prepareSearchQuery(query) {
   const longTokens = tokens.filter((t) => t.length >= 3);
   if (longTokens.length === 0) return null;
 
-  // Construire une requête FTS en AND ordre libre, préfixe sur le dernier mot
-  const parts = longTokens.map((t, i) => {
-    const isLast = i === longTokens.length - 1;
-    return isLast ? `${t}*` : `${t}`;
-  });
-  return parts.join(' AND ');
+  // Construire une requête FTS en AND (ordre libre), préfixe sur TOUS les mots
+  // En FTS5, les espaces équivalent à AND
+  const parts = longTokens.map((t) => `${t}*`);
+  return parts.join(' ');
 }
 
 /**
@@ -486,10 +484,16 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
     let baseWhere = '1=1';
     let params = [];
 
-    // Gestion de la requête texte: FTS si possible, sinon LIKE pour courtes
-    const sq = prepareSearchQuery(query);
+    // Gestion de la requête texte: FTS si dispo (même logique que searchExercises), sinon LIKE multi-mots
     if ((query || '').trim()) {
-      if (sq) {
+      let hasFts = false;
+      try {
+        const row = db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='fts_exercises'").get();
+        hasFts = !!row;
+      } catch (_) { hasFts = false; }
+
+      const sq = prepareSearchQuery(query);
+      if (sq && hasFts) {
         baseWhere += ` AND e.uuid IN (SELECT uuid FROM fts_exercises WHERE fts_exercises MATCH ?)`;
         params.push(sq);
       } else {
@@ -528,9 +532,13 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
       baseWhere += ' AND UPPER(e.level) = UPPER(?)';
       params.push(filters.level);
     }
-    if (filters.difficulty !== undefined && filters.difficulty !== null && filters.difficulty !== '') {
-      baseWhere += ' AND e.difficulty = ?';
-      params.push(parseInt(filters.difficulty, 10));
+    if (filters.difficulty !== undefined && filters.difficulty !== null) {
+      if (filters.difficulty === 'null' || filters.difficulty === '') {
+        baseWhere += ' AND e.difficulty IS NULL';
+      } else {
+        baseWhere += ' AND e.difficulty = ?';
+        params.push(parseInt(filters.difficulty, 10));
+      }
     }
     if (filters.author) {
       baseWhere += ' AND UPPER(e.author) = UPPER(?)';

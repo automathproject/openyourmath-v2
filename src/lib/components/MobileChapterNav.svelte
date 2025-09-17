@@ -82,23 +82,24 @@
     }
   }
 
-  function buildParamsKey() {
-    const q = (query || '').trim();
+  function buildParamsKey(qParam, filtersParam) {
+    const q = (qParam || '').trim();
+    const f = filtersParam || {};
     return JSON.stringify({
       q,
-      level: activeFilters?.level || '',
-      module: activeFilters?.module || '',
-      chapter: activeFilters?.chapter || '',
-      subchapter: activeFilters?.subchapter || '',
-      difficulty: activeFilters?.difficulty || '',
-      author: activeFilters?.author || '',
-      hasSolution: activeFilters?.hasSolution ?? '',
-      hasIndication: activeFilters?.hasIndication ?? ''
+      level: f.level || '',
+      module: f.module || '',
+      chapter: f.chapter || '',
+      subchapter: f.subchapter || '',
+      difficulty: f.difficulty || '',
+      author: f.author || '',
+      hasSolution: f.hasSolution ?? '',
+      hasIndication: f.hasIndication ?? ''
     });
   }
 
   // Initialiser la clé pour éviter un double chargement après onMount
-  lastParamsKey = buildParamsKey();
+  lastParamsKey = buildParamsKey(query, activeFilters);
 
   onDestroy(() => {
     if (debounceTimer) clearTimeout(debounceTimer);
@@ -106,7 +107,8 @@
 
   // Recharger la structure quand la requête ou les filtres changent
   $: {
-    const key = buildParamsKey();
+    // Référencer explicitement `query` et `activeFilters` pour la réactivité
+    const key = buildParamsKey(query, activeFilters);
     if (key !== lastParamsKey) {
       lastParamsKey = key;
       if (debounceTimer) clearTimeout(debounceTimer);
