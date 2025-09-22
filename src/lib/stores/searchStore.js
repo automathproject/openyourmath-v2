@@ -18,6 +18,29 @@ export const previewState = writable({
   isOpen: false
 });
 
+// Gestion de la mise en page (largeurs / visibilité)
+export const layoutState = writable({
+  previewPanelVisible: false,
+  previewPanelWidth: 400
+});
+
+export const layoutConfig = derived(
+  [previewState, layoutState],
+  ([$preview, $layout]) => {
+    const width = Number($layout.previewPanelWidth) || 400;
+    const clampedWidth = Math.max(280, Math.min(width, 640));
+    const previewWidth = `${clampedWidth}px`;
+    const showPreviewPanel = $layout.previewPanelVisible && $preview.isOpen;
+    const resultsWidth = showPreviewPanel ? `calc(100% - ${previewWidth})` : '100%';
+
+    return {
+      showPreviewPanel,
+      previewWidth,
+      resultsWidth
+    };
+  }
+);
+
 // Filtres de recherche
 export const filters = writable({
   chapter: '',
@@ -28,6 +51,21 @@ export const filters = writable({
   author: '',
   hasSolution: '',
   hasIndication: ''
+});
+
+export const breadcrumb = derived(filters, ($filters) => {
+  const segments = [];
+
+  if ($filters.level) segments.push($filters.level);
+  if ($filters.module) segments.push($filters.module);
+  if ($filters.chapter) segments.push($filters.chapter);
+  if ($filters.subchapter) segments.push($filters.subchapter);
+
+  return {
+    segments,
+    label: segments.join(' > '),
+    isEmpty: segments.length === 0
+  };
 });
 
 // États dérivés (calculés automatiquement)
@@ -285,8 +323,19 @@ export const previewActions = {
   // Sélectionner un exercice pour prévisualisation
   async selectExercise(uuid) {
     // Si c'est le même exercice, on ferme/ouvre la preview
+    let panelVisible = true;
+    const unsubscribeLayout = layoutState.subscribe(value => (panelVisible = value.previewPanelVisible));
+    unsubscribeLayout();
+
+    let closedExisting = false;
+    let reopenedHidden = false;
     previewState.update(current => {
       if (current.selectedUuid === uuid && current.isOpen) {
+        if (!panelVisible) {
+          reopenedHidden = true;
+          return current;
+        }
+        closedExisting = true;
         return {
           ...current,
           isOpen: false
@@ -300,6 +349,27 @@ export const previewActions = {
         isOpen: true
       };
     });
+
+    if (reopenedHidden) {
+      layoutState.update(current => ({
+        ...current,
+        previewPanelVisible: true
+      }));
+      return;
+    }
+
+    if (closedExisting) {
+      layoutState.update(current => ({
+        ...current,
+        previewPanelVisible: false
+      }));
+      return;
+    }
+
+    layoutState.update(current => ({
+      ...current,
+      previewPanelVisible: true
+    }));
 
     // Si on ferme juste la preview, pas besoin de charger
     let shouldLoad = true;
@@ -349,6 +419,10 @@ export const previewActions = {
       ...current,
       isOpen: false
     }));
+    layoutState.update(current => ({
+      ...current,
+      previewPanelVisible: false
+    }));
   },
 
   // Effacer complètement la prévisualisation
@@ -360,6 +434,33 @@ export const previewActions = {
       error: null,
       isOpen: false
     });
+    layoutState.update(current => ({
+      ...current,
+      previewPanelVisible: false
+    }));
+  }
+};
+
+export const layoutActions = {
+  togglePreviewPanel() {
+    layoutState.update(current => ({
+      ...current,
+      previewPanelVisible: !current.previewPanelVisible
+    }));
+  },
+
+  setPreviewPanelVisible(visible) {
+    layoutState.update(current => ({
+      ...current,
+      previewPanelVisible: Boolean(visible)
+    }));
+  },
+
+  setPreviewPanelWidth(width) {
+    layoutState.update(current => ({
+      ...current,
+      previewPanelWidth: Number(width) || current.previewPanelWidth
+    }));
   }
 };
 

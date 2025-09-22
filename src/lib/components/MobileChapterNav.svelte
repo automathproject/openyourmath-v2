@@ -11,6 +11,7 @@
   let activeTab = 'levels';
   let expandedLevels = new Set();
   let expandedModules = new Set();
+  let containerEl;
   
   let selectedPath = { 
     level: null, 
@@ -23,6 +24,7 @@
   export let selectedSubchapter = '';
   export let selectedModule = '';
   export let selectedLevel = '';
+  export let embedded = false;
   
   // Nouveau: prise en compte de la requête et filtres pour recalculer les comptages
   export let query = '';
@@ -134,6 +136,7 @@
   }
   
   function toggleMenu() {
+    if (embedded) return;
     isOpen = !isOpen;
   }
   
@@ -158,7 +161,9 @@
   
   function selectPath(level = null, module = null, chapter = null, subchapter = null) {
     selectedPath = { level, module, chapter, subchapter };
-    isOpen = false;
+    if (!embedded) {
+      isOpen = false;
+    }
     
     // Émettre l'événement de navigation
     dispatch('navigate', {
@@ -171,7 +176,9 @@
   
   function clearSelection() {
     selectedPath = { level: null, module: null, chapter: null, subchapter: null };
-    isOpen = false;
+    if (!embedded) {
+      isOpen = false;
+    }
     
     dispatch('navigate', { 
       level: null, 
@@ -184,10 +191,15 @@
   function switchTab(tab) {
     activeTab = tab;
   }
-  
+
+  $: if (embedded && !isOpen) {
+    isOpen = true;
+  }
+
   // Fermer le menu si on clique à l'extérieur
   function handleClickOutside(event) {
-    if (isOpen && !event.target.closest('.mobile-chapter-nav')) {
+    if (embedded) return;
+    if (isOpen && containerEl && !containerEl.contains(event.target)) {
       isOpen = false;
     }
   }
@@ -224,41 +236,43 @@
 
 <svelte:window on:click={handleClickOutside} />
 
-<div class="mobile-chapter-nav">
-  <!-- Bouton d'ouverture -->
-  <button 
-    class="mobile-nav-trigger"
-    class:mobile-nav-trigger--active={isOpen}
-    on:click={toggleMenu}
-  >
-    <div class="mobile-nav-content">
-      <div class="mobile-nav-icon">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+<div class="mobile-chapter-nav" class:mobile-chapter-nav--embedded={embedded} bind:this={containerEl}>
+  {#if !embedded}
+    <!-- Bouton d'ouverture -->
+    <button 
+      class="mobile-nav-trigger"
+      class:mobile-nav-trigger--active={isOpen}
+      on:click={toggleMenu}
+    >
+      <div class="mobile-nav-content">
+        <div class="mobile-nav-icon">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </div>
+        
+        <div class="mobile-nav-text">
+          <span class="mobile-nav-selection" class:mobile-nav-placeholder={!selectedPath.level && !selectedPath.module && !selectedPath.chapter}>
+            {getSelectionDisplayText()}
+          </span>
+        </div>
+        
+        <div class="mobile-nav-arrow">
+          <svg 
+            class="w-4 h-4 transition-transform"
+            class:rotate-180={isOpen}
+            fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
       </div>
-      
-      <div class="mobile-nav-text">
-        <span class="mobile-nav-selection" class:mobile-nav-placeholder={!selectedPath.level && !selectedPath.module && !selectedPath.chapter}>
-          {getSelectionDisplayText()}
-        </span>
-      </div>
-      
-      <div class="mobile-nav-arrow">
-        <svg 
-          class="w-4 h-4 transition-transform"
-          class:rotate-180={isOpen}
-          fill="none" stroke="currentColor" viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </div>
-    </div>
-  </button>
+    </button>
+  {/if}
   
   <!-- Menu déroulant -->
-  {#if isOpen}
-    <div class="mobile-nav-dropdown">
+  {#if embedded || isOpen}
+    <div class="mobile-nav-dropdown" class:mobile-nav-dropdown--embedded={embedded}>
       {#if loading}
         <div class="mobile-nav-loading">
           <div class="mobile-loading-spinner"></div>
@@ -474,8 +488,34 @@
   .mobile-nav-selection { font-weight:500; color:#111827; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .mobile-nav-placeholder { color:#6b7280; font-weight:400; }
   .mobile-nav-arrow { color:#9ca3af; flex-shrink:0; }
-  .mobile-nav-dropdown { position:absolute; left:0; right:0; top:100%; margin-top:0.5rem; background:#fff; border:1px solid #d1d5db; border-radius:0.5rem; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1); z-index:50; max-height:70vh; overflow-y:auto; animation:mobile-slide-down .2s ease-out; }
-  .mobile-nav-content-wrapper { padding-bottom:0.5rem; }
+.mobile-nav-dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  z-index: 50;
+  animation: mobile-slide-down .2s ease-out;
+  max-height: min(70vh, 540px);
+  overflow-y: auto;
+}
+.mobile-chapter-nav--embedded {
+  position: static;
+  width: 100%;
+}
+.mobile-nav-dropdown--embedded {
+  position: static;
+  margin-top: 0;
+  max-height: none;
+  overflow: visible;
+  box-shadow: none;
+  border: 1px solid #d1d5db;
+}
+.mobile-nav-content-wrapper { padding-bottom:0.5rem; }
   .mobile-nav-loading, .mobile-nav-error { display:flex; align-items:center; justify-content:center; gap:0.75rem; padding:1.5rem; color:#4b5563; }
   .mobile-loading-spinner { width:1rem; height:1rem; border:2px solid #d1d5db; border-top-color:#2563eb; border-radius:9999px; animation:spin 1s linear infinite; }
   .mobile-nav-error button { color:#2563eb; font-weight:500; }

@@ -2,7 +2,7 @@
 <script>
   import ExerciseContent from './ExerciseContent.svelte';
   import AddToListButton from './AddToListButton.svelte';
-  import { previewState, previewActions } from '$lib/stores/searchStore.js';
+  import { previewState, previewActions, layoutActions } from '$lib/stores/searchStore.js';
   
   // Variables locales pour contrôler l'affichage
   let showHint = false;
@@ -21,6 +21,10 @@
     if ($previewState.exercise?.uuid) {
       window.open(`/exercise/${$previewState.exercise.uuid}`, '_blank');
     }
+  }
+
+  function hidePanel() {
+    layoutActions.setPreviewPanelVisible(false);
   }
   
   // Fonction pour formater la difficulté
@@ -45,6 +49,17 @@
             variant="icon"
           />
         {/if}
+
+        <button
+          on:click={hidePanel}
+          class="preview-btn preview-btn--ghost"
+          title="Masquer le panneau"
+          aria-label="Masquer le panneau"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+          </svg>
+        </button>
         
         <button 
           on:click={goToFullPage}
@@ -127,6 +142,8 @@
   .preview-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.375rem 0.75rem; font-size:0.875rem; font-weight:500; border-radius:0.375rem; border:1px solid transparent; transition:background-color .2s ease; }
   .preview-btn--primary { background:#2563eb; color:#fff; border-color:#2563eb; }
   .preview-btn--primary:hover { background:#1d4ed8; }
+  .preview-btn--ghost { background:#fff; color:#1d4ed8; border-color:#bfdbfe; }
+  .preview-btn--ghost:hover { background:#e0ecff; }
   .preview-btn--close { background:#fff; color:#4b5563; border-color:#d1d5db; }
   .preview-btn--close:hover { background:#f9fafb; color:#111827; }
   .preview-content { flex:1; overflow-y:auto; }
