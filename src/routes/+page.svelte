@@ -406,7 +406,7 @@
       {/if}
     </div>
     <div class="toolbar-buttons flex gap-2 sm:flex-none">
-      <button type="button" class="btn btn-secondary toolbar-button" on:click={openFilters}>
+      <button type="button" class="btn btn-secondary toolbar-button lg:hidden" on:click={openFilters}>
         🔧 Filtres
       </button>
       {#if canTogglePreview}
@@ -462,6 +462,392 @@
   </div>
 
   <div class="content-layout flex flex-col gap-6 lg:flex-row">
+    <aside
+      class={`filters-sidebar ${isFilterPanelOpen ? 'filters-sidebar--open' : ''}`}
+      aria-label="Filtres de recherche"
+    >
+      <div class="filters-panel" on:click|stopPropagation>
+        <div class="filters-header">
+          <h2>Filtres</h2>
+          <button type="button" class="filters-close lg:hidden" on:click={closeFilters}>
+            Fermer ✕
+          </button>
+        </div>
+        <div class="filters-body">
+          <section class="filters-section">
+            <div class="filters-section-header">
+              <h3>Navigation hiérarchique</h3>
+              {#if !$breadcrumb.isEmpty}
+                <button type="button" class="btn btn-text text-sm text-blue-600" on:click={clearHierarchyFilters}>
+                  Réinitialiser
+                </button>
+              {/if}
+            </div>
+            <div class="filters-navigation">
+              <div class="filters-navigation-desktop">
+                <ChapterNavigation
+                  bind:selectedLevel={$filters.level}
+                  bind:selectedModule={$filters.module}
+                  bind:selectedChapter={$filters.chapter}
+                  bind:selectedSubchapter={$filters.subchapter}
+                  query={$searchQuery}
+                  activeFilters={$filters}
+                  on:navigate={handleChapterNavigation}
+                  compact={true}
+                />
+              </div>
+              <div class="filters-navigation-mobile">
+                <MobileChapterNav
+                  bind:selectedLevel={$filters.level}
+                  bind:selectedModule={$filters.module}
+                  bind:selectedChapter={$filters.chapter}
+                  bind:selectedSubchapter={$filters.subchapter}
+                  query={$searchQuery}
+                  activeFilters={$filters}
+                  on:navigate={handleChapterNavigation}
+                  embedded={true}
+                />
+              </div>
+            </div>
+          </section>
+
+          <section class="filters-section">
+            <div class="filters-chips md:hidden" aria-live="polite">
+              <div class="filters-chips-title">Filtres actifs</div>
+              <div class="filters-chips-list">
+                {#if activeFilterChips.length === 0}
+                  <p class="filters-chips-empty">Aucun filtre actif</p>
+                {:else}
+                  {#each activeFilterChips as chip}
+                    <button type="button" class="filters-chip" on:click={() => handleChipClick(chip)}>
+                      <span class="filters-chip-label">{chip.icon} {chip.label}</span>
+                      <span
+                        class="filters-chip-remove"
+                        role="button"
+                        aria-label={`Retirer ${chip.label}`}
+                        on:click|stopPropagation={() => removeFilterChip(chip.key)}
+                      >×</span>
+                    </button>
+                  {/each}
+                {/if}
+              </div>
+              <button type="button" class="filters-add-chip" on:click={() => openFilterMenu()}>
+                + Ajouter un filtre
+              </button>
+            </div>
+
+            {#if showFilterMenu}
+              <div class="filters-menu-overlay md:hidden" on:click={closeFilterMenu}>
+                <div
+                  class="filters-menu"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-label="Ajouter un filtre"
+                  on:click|stopPropagation
+                >
+                  <div class="filters-menu-header">
+                    {#if filterMenuCategory}
+                      <button type="button" class="filters-menu-back" on:click={() => handleFilterMenuCategory(null)}>
+                        ← Catégories
+                      </button>
+                      <h4>{getCategoryLabel(filterMenuCategory)}</h4>
+                    {:else}
+                      <h4>Ajouter un filtre</h4>
+                    {/if}
+                    <button type="button" class="filters-menu-close" on:click={closeFilterMenu} aria-label="Fermer">✕</button>
+                  </div>
+
+                  <div class="filters-menu-body">
+                    {#if !filterMenuCategory}
+                      {#each filterMenuCategories as category}
+                        <button type="button" class="filters-menu-category" on:click={() => handleFilterMenuCategory(category.id)}>
+                          <div class="filters-menu-category-label">
+                            <span class="filters-menu-category-icon">{category.icon}</span>
+                            <span>{category.label}</span>
+                          </div>
+                          <span class="filters-menu-category-arrow">›</span>
+                        </button>
+                      {/each}
+                    {:else if filterMenuCategory === 'content'}
+                      <div class="filters-menu-section">
+                        <h5>Module</h5>
+                        {#if moduleOptions.length === 0}
+                          <p class="filters-menu-empty">Aucun module disponible</p>
+                        {:else}
+                          <div class="filters-menu-options">
+                            {#each moduleOptions as module (module.value)}
+                              <button
+                                type="button"
+                                class="filters-menu-option {module.active ? 'filters-menu-option--active' : ''}"
+                                on:click={() => applyModuleFilter(module.value)}
+                              >
+                                <span>{module.value}</span>
+                                <span class="filters-menu-option-count">{module.count}</span>
+                              </button>
+                            {/each}
+                          </div>
+                        {/if}
+                        <p class="filters-menu-helper">Utilisez la navigation hiérarchique pour choisir un chapitre précis.</p>
+                      </div>
+                    {:else if filterMenuCategory === 'level'}
+                      <div class="filters-menu-section">
+                        <h5>Niveau</h5>
+                        {#if levelOptions.length === 0}
+                          <p class="filters-menu-empty">Aucun niveau disponible</p>
+                        {:else}
+                          <div class="filters-menu-options">
+                            {#each levelOptions as level (level.value)}
+                              <button
+                                type="button"
+                                class="filters-menu-option {level.active ? 'filters-menu-option--active' : ''}"
+                                on:click={() => applyLevelFilter(level.value)}
+                              >
+                                <span>{level.value}</span>
+                                <span class="filters-menu-option-count">{level.count}</span>
+                              </button>
+                            {/each}
+                          </div>
+                        {/if}
+                      </div>
+                      <div class="filters-menu-section">
+                        <h5>Difficulté</h5>
+                        <div class="filters-menu-options">
+                          <button
+                            type="button"
+                            class="filters-menu-option {activeMenuFilters.difficulty === '' ? 'filters-menu-option--active' : ''}"
+                            on:click={() => applyDifficultyFilter('')}
+                          >
+                            <span>Toutes</span>
+                          </button>
+                          <button
+                            type="button"
+                            class="filters-menu-option {activeMenuFilters.difficulty === 'null' ? 'filters-menu-option--active' : ''}"
+                            on:click={() => applyDifficultyFilter('null')}
+                          >
+                            <span>Sans difficulté</span>
+                          </button>
+                          {#if difficultyOptions.length === 0}
+                            <p class="filters-menu-empty">Aucune difficulté disponible</p>
+                          {:else}
+                            {#each difficultyOptions as diff (diff.value)}
+                              <button
+                                type="button"
+                                class="filters-menu-option {diff.active ? 'filters-menu-option--active' : ''}"
+                                on:click={() => applyDifficultyFilter(diff.value)}
+                              >
+                                <span>{diff.label}</span>
+                                <span class="filters-menu-option-count">{diff.count}</span>
+                              </button>
+                            {/each}
+                          {/if}
+                        </div>
+                      </div>
+                    {:else if filterMenuCategory === 'properties'}
+                      <div class="filters-menu-section">
+                        <h5>Solution</h5>
+                        <div class="filters-menu-options">
+                          <button
+                            type="button"
+                            class="filters-menu-option {activeMenuFilters.hasSolution === '1' ? 'filters-menu-option--active' : ''}"
+                            on:click={() => applyPropertyFilter('hasSolution', '1')}
+                          >
+                            <span>✅ Avec solution</span>
+                          </button>
+                          <button
+                            type="button"
+                            class="filters-menu-option {activeMenuFilters.hasSolution === '0' ? 'filters-menu-option--active' : ''}"
+                            on:click={() => applyPropertyFilter('hasSolution', '0')}
+                          >
+                            <span>🚫 Sans solution</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="filters-menu-section">
+                        <h5>Indication</h5>
+                        <div class="filters-menu-options">
+                          <button
+                            type="button"
+                            class="filters-menu-option {activeMenuFilters.hasIndication === '1' ? 'filters-menu-option--active' : ''}"
+                            on:click={() => applyPropertyFilter('hasIndication', '1')}
+                          >
+                            <span>💡 Avec indication</span>
+                          </button>
+                          <button
+                            type="button"
+                            class="filters-menu-option {activeMenuFilters.hasIndication === '0' ? 'filters-menu-option--active' : ''}"
+                            on:click={() => applyPropertyFilter('hasIndication', '0')}
+                          >
+                            <span>🚫 Sans indication</span>
+                          </button>
+                        </div>
+                      </div>
+                    {:else if filterMenuCategory === 'author'}
+                      <div class="filters-menu-section">
+                        <h5>Auteur</h5>
+                        <div class="filters-menu-author">
+                          <input
+                            type="text"
+                            class="filters-menu-author-input"
+                            placeholder="Nom ou mot-clé"
+                            value={authorSearch}
+                            on:input={(event) => handleAuthorSearchInput(event.target.value)}
+                            on:keydown={(event) => event.key === 'Enter' && applyAuthorSearch()}
+                          />
+                          <div class="filters-menu-author-actions">
+                            <button
+                              type="button"
+                              class="filters-menu-apply"
+                              on:click={applyAuthorSearch}
+                              disabled={!authorSearch.trim()}
+                            >
+                              Appliquer
+                            </button>
+                          </div>
+                        </div>
+                        <div class="filters-menu-options">
+                          {#if filteredAuthors.length === 0}
+                            <p class="filters-menu-empty">Aucun auteur trouvé</p>
+                          {:else}
+                            {#each filteredAuthors as author (author.value)}
+                              <button
+                                type="button"
+                                class="filters-menu-option {author.active ? 'filters-menu-option--active' : ''}"
+                                on:click={() => applyAuthorFilter(author.value)}
+                              >
+                                <span>{author.value}</span>
+                                <span class="filters-menu-option-count">{author.count}</span>
+                              </button>
+                            {/each}
+                          {/if}
+                        </div>
+                      </div>
+                    {/if}
+                  </div>
+                </div>
+              </div>
+            {/if}
+
+            <div class="filters-grid filters-grid--desktop hidden md:grid">
+              <div class="filters-field">
+                <label for="module-filter">Module</label>
+                <input
+                  id="module-filter"
+                  type="text"
+                  bind:value={$filters.module}
+                  on:input={handleModuleInput}
+                  on:blur={handleModuleBlur}
+                  placeholder="Ex: Algèbre..."
+                  class="form-input"
+                />
+                {#if showModuleSuggestions && moduleOptions.length > 0}
+                  <div class="filters-suggestions">
+                    {#each moduleOptions.filter((option) => option.value.toLowerCase().includes(($filters.module || '').toLowerCase())) as option}
+                      <button on:click={() => selectModule(option.value)}>
+                        {option.value} ({option.count})
+                      </button>
+                    {/each}
+                  </div>
+                {/if}
+              </div>
+
+              <div class="filters-field">
+                <label for="level-filter">Niveau</label>
+                <select
+                  id="level-filter"
+                  bind:value={$filters.level}
+                  on:change={handleLevelChange}
+                  class="form-input"
+                >
+                  <option value="">Tous les niveaux</option>
+                  {#each levelOptions as level}
+                    <option value={level.value}>{level.value} ({level.count})</option>
+                  {/each}
+                </select>
+              </div>
+
+              <div class="filters-field">
+                <label for="difficulty-filter">Difficulté</label>
+                <select
+                  id="difficulty-filter"
+                  bind:value={$filters.difficulty}
+                  on:change={handleDifficultyChange}
+                  class="form-input"
+                >
+                  <option value="">Toutes difficultés</option>
+                  <option value="null">Sans difficulté ({difficultyCounts['null'] || 0})</option>
+                  {#each difficultyOptions.filter((diff) => diff.value !== 'null') as diff}
+                    <option value={diff.value}>{diff.label} ({diff.count})</option>
+                  {/each}
+                </select>
+              </div>
+
+              <div class="filters-field">
+                <label for="solution-filter">Solution</label>
+                <select
+                  id="solution-filter"
+                  bind:value={$filters.hasSolution}
+                  on:change={handleDifficultyChange}
+                  class="form-input"
+                >
+                  <option value="">Tous</option>
+                  <option value="1">Avec solution</option>
+                  <option value="0">Sans solution</option>
+                </select>
+              </div>
+
+              <div class="filters-field">
+                <label for="indication-filter">Indication</label>
+                <select
+                  id="indication-filter"
+                  bind:value={$filters.hasIndication}
+                  on:change={handleDifficultyChange}
+                  class="form-input"
+                >
+                  <option value="">Tous</option>
+                  <option value="1">Avec indication</option>
+                  <option value="0">Sans indication</option>
+                </select>
+              </div>
+
+              <div class="filters-field">
+                <label for="author-filter">Auteur</label>
+                <input
+                  id="author-filter"
+                  type="text"
+                  bind:value={$filters.author}
+                  on:input={handleAuthorInput}
+                  on:blur={handleAuthorBlur}
+                  placeholder="Nom de l'auteur..."
+                  class="form-input"
+                />
+                {#if showAuthorSuggestions && authorOptions.length > 0}
+                  <div class="filters-suggestions">
+                    {#each authorOptions.filter((option) => option.value.toLowerCase().includes(($filters.author || '').toLowerCase())) as option}
+                      <button on:click={() => selectAuthor(option.value)}>
+                        {option.value} ({option.count})
+                      </button>
+                    {/each}
+                  </div>
+                {/if}
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="filters-footer">
+          <button type="button" class="btn btn-text text-sm text-blue-600" on:click={searchActions.clearAllFilters}>
+            Effacer tous les filtres
+          </button>
+          <button type="button" class="btn btn-secondary lg:hidden" on:click={closeFilters}>
+            Fermer
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    {#if isFilterPanelOpen}
+      <div class="filters-backdrop lg:hidden" on:click={closeFilters} aria-hidden="true"></div>
+    {/if}
+
     <div class="results-section flex-1" style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}>
       {#if $error}
         <div class="search-error">
@@ -616,392 +1002,6 @@
   </div>
 </div>
 
-{#if isFilterPanelOpen}
-  <div class="filters-overlay" on:click={closeFilters}>
-    <div
-      class="filters-panel"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Filtres de recherche"
-      on:click|stopPropagation
-    >
-      <div class="filters-header">
-        <h2>Filtres</h2>
-        <button type="button" class="filters-close" on:click={closeFilters}>
-          Fermer ✕
-        </button>
-      </div>
-      <div class="filters-body">
-        <section class="filters-section">
-          <div class="filters-section-header">
-            <h3>Navigation hiérarchique</h3>
-            {#if !$breadcrumb.isEmpty}
-              <button type="button" class="btn btn-text text-sm text-blue-600" on:click={clearHierarchyFilters}>
-                Réinitialiser
-              </button>
-            {/if}
-          </div>
-          <div class="filters-navigation">
-            <div class="filters-navigation-desktop">
-              <ChapterNavigation
-                bind:selectedLevel={$filters.level}
-                bind:selectedModule={$filters.module}
-                bind:selectedChapter={$filters.chapter}
-                bind:selectedSubchapter={$filters.subchapter}
-                query={$searchQuery}
-                activeFilters={$filters}
-                on:navigate={handleChapterNavigation}
-                compact={true}
-              />
-            </div>
-            <div class="filters-navigation-mobile">
-              <MobileChapterNav
-                bind:selectedLevel={$filters.level}
-                bind:selectedModule={$filters.module}
-                bind:selectedChapter={$filters.chapter}
-                bind:selectedSubchapter={$filters.subchapter}
-                query={$searchQuery}
-                activeFilters={$filters}
-                on:navigate={handleChapterNavigation}
-                embedded={true}
-              />
-            </div>
-          </div>
-        </section>
-
-        <section class="filters-section">
-          <div class="filters-chips md:hidden" aria-live="polite">
-            <div class="filters-chips-title">Filtres actifs</div>
-            <div class="filters-chips-list">
-              {#if activeFilterChips.length === 0}
-                <p class="filters-chips-empty">Aucun filtre actif</p>
-              {:else}
-                {#each activeFilterChips as chip}
-                  <button type="button" class="filters-chip" on:click={() => handleChipClick(chip)}>
-                    <span class="filters-chip-label">{chip.icon} {chip.label}</span>
-                    <span
-                      class="filters-chip-remove"
-                      role="button"
-                      aria-label={`Retirer ${chip.label}`}
-                      on:click|stopPropagation={() => removeFilterChip(chip.key)}
-                    >×</span>
-                  </button>
-                {/each}
-              {/if}
-            </div>
-            <button type="button" class="filters-add-chip" on:click={() => openFilterMenu()}>
-              + Ajouter un filtre
-            </button>
-          </div>
-
-          {#if showFilterMenu}
-            <div class="filters-menu-overlay md:hidden" on:click={closeFilterMenu}>
-              <div
-                class="filters-menu"
-                role="dialog"
-                aria-modal="true"
-                aria-label="Ajouter un filtre"
-                on:click|stopPropagation
-              >
-                <div class="filters-menu-header">
-                  {#if filterMenuCategory}
-                    <button type="button" class="filters-menu-back" on:click={() => handleFilterMenuCategory(null)}>
-                      ← Catégories
-                    </button>
-                    <h4>{getCategoryLabel(filterMenuCategory)}</h4>
-                  {:else}
-                    <h4>Ajouter un filtre</h4>
-                  {/if}
-                  <button type="button" class="filters-menu-close" on:click={closeFilterMenu} aria-label="Fermer">✕</button>
-                </div>
-
-                <div class="filters-menu-body">
-                  {#if !filterMenuCategory}
-                    {#each filterMenuCategories as category}
-                      <button type="button" class="filters-menu-category" on:click={() => handleFilterMenuCategory(category.id)}>
-                        <div class="filters-menu-category-label">
-                          <span class="filters-menu-category-icon">{category.icon}</span>
-                          <span>{category.label}</span>
-                        </div>
-                        <span class="filters-menu-category-arrow">›</span>
-                      </button>
-                    {/each}
-                  {:else if filterMenuCategory === 'content'}
-                    <div class="filters-menu-section">
-                      <h5>Module</h5>
-                      {#if moduleOptions.length === 0}
-                        <p class="filters-menu-empty">Aucun module disponible</p>
-                      {:else}
-                        <div class="filters-menu-options">
-                          {#each moduleOptions as module (module.value)}
-                            <button
-                              type="button"
-                              class="filters-menu-option {module.active ? 'filters-menu-option--active' : ''}"
-                              on:click={() => applyModuleFilter(module.value)}
-                            >
-                              <span>{module.value}</span>
-                              <span class="filters-menu-option-count">{module.count}</span>
-                            </button>
-                          {/each}
-                        </div>
-                      {/if}
-                      <p class="filters-menu-helper">Utilisez la navigation hiérarchique pour choisir un chapitre précis.</p>
-                    </div>
-                  {:else if filterMenuCategory === 'level'}
-                    <div class="filters-menu-section">
-                      <h5>Niveau</h5>
-                      {#if levelOptions.length === 0}
-                        <p class="filters-menu-empty">Aucun niveau disponible</p>
-                      {:else}
-                        <div class="filters-menu-options">
-                          {#each levelOptions as level (level.value)}
-                            <button
-                              type="button"
-                              class="filters-menu-option {level.active ? 'filters-menu-option--active' : ''}"
-                              on:click={() => applyLevelFilter(level.value)}
-                            >
-                              <span>{level.value}</span>
-                              <span class="filters-menu-option-count">{level.count}</span>
-                            </button>
-                          {/each}
-                        </div>
-                      {/if}
-                    </div>
-                    <div class="filters-menu-section">
-                      <h5>Difficulté</h5>
-                      <div class="filters-menu-options">
-                        <button
-                          type="button"
-                          class="filters-menu-option {activeMenuFilters.difficulty === '' ? 'filters-menu-option--active' : ''}"
-                          on:click={() => applyDifficultyFilter('')}
-                        >
-                          <span>Toutes</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="filters-menu-option {activeMenuFilters.difficulty === 'null' ? 'filters-menu-option--active' : ''}"
-                          on:click={() => applyDifficultyFilter('null')}
-                        >
-                          <span>Sans difficulté</span>
-                        </button>
-                        {#if difficultyOptions.length === 0}
-                          <p class="filters-menu-empty">Aucune difficulté disponible</p>
-                        {:else}
-                          {#each difficultyOptions as diff (diff.value)}
-                            <button
-                              type="button"
-                              class="filters-menu-option {diff.active ? 'filters-menu-option--active' : ''}"
-                              on:click={() => applyDifficultyFilter(diff.value)}
-                            >
-                              <span>{diff.label}</span>
-                              <span class="filters-menu-option-count">{diff.count}</span>
-                            </button>
-                          {/each}
-                        {/if}
-                      </div>
-                    </div>
-                  {:else if filterMenuCategory === 'properties'}
-                    <div class="filters-menu-section">
-                      <h5>Solution</h5>
-                      <div class="filters-menu-options">
-                        <button
-                          type="button"
-                          class="filters-menu-option {activeMenuFilters.hasSolution === '1' ? 'filters-menu-option--active' : ''}"
-                          on:click={() => applyPropertyFilter('hasSolution', '1')}
-                        >
-                          <span>✅ Avec solution</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="filters-menu-option {activeMenuFilters.hasSolution === '0' ? 'filters-menu-option--active' : ''}"
-                          on:click={() => applyPropertyFilter('hasSolution', '0')}
-                        >
-                          <span>🚫 Sans solution</span>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="filters-menu-section">
-                      <h5>Indication</h5>
-                      <div class="filters-menu-options">
-                        <button
-                          type="button"
-                          class="filters-menu-option {activeMenuFilters.hasIndication === '1' ? 'filters-menu-option--active' : ''}"
-                          on:click={() => applyPropertyFilter('hasIndication', '1')}
-                        >
-                          <span>💡 Avec indication</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="filters-menu-option {activeMenuFilters.hasIndication === '0' ? 'filters-menu-option--active' : ''}"
-                          on:click={() => applyPropertyFilter('hasIndication', '0')}
-                        >
-                          <span>🚫 Sans indication</span>
-                        </button>
-                      </div>
-                    </div>
-                  {:else if filterMenuCategory === 'author'}
-                    <div class="filters-menu-section">
-                      <h5>Auteur</h5>
-                      <div class="filters-menu-author">
-                        <input
-                          type="text"
-                          class="filters-menu-author-input"
-                          placeholder="Nom ou mot-clé"
-                          value={authorSearch}
-                          on:input={(event) => handleAuthorSearchInput(event.target.value)}
-                          on:keydown={(event) => event.key === 'Enter' && applyAuthorSearch()}
-                        />
-                        <div class="filters-menu-author-actions">
-                          <button
-                            type="button"
-                            class="filters-menu-apply"
-                            on:click={applyAuthorSearch}
-                            disabled={!authorSearch.trim()}
-                          >
-                            Appliquer
-                          </button>
-                        </div>
-                      </div>
-                      <div class="filters-menu-options">
-                        {#if filteredAuthors.length === 0}
-                          <p class="filters-menu-empty">Aucun auteur trouvé</p>
-                        {:else}
-                          {#each filteredAuthors as author (author.value)}
-                            <button
-                              type="button"
-                              class="filters-menu-option {author.active ? 'filters-menu-option--active' : ''}"
-                              on:click={() => applyAuthorFilter(author.value)}
-                            >
-                              <span>{author.value}</span>
-                              <span class="filters-menu-option-count">{author.count}</span>
-                            </button>
-                          {/each}
-                        {/if}
-                      </div>
-                    </div>
-                  {/if}
-                </div>
-              </div>
-            </div>
-          {/if}
-
-          <div class="filters-grid filters-grid--desktop hidden md:grid">
-            <div class="filters-field">
-              <label for="module-filter">Module</label>
-              <input
-                id="module-filter"
-                type="text"
-                bind:value={$filters.module}
-                on:input={handleModuleInput}
-                on:blur={handleModuleBlur}
-                placeholder="Ex: Algèbre..."
-                class="form-input"
-              />
-              {#if showModuleSuggestions && moduleOptions.length > 0}
-                <div class="filters-suggestions">
-                  {#each moduleOptions.filter((option) => option.value.toLowerCase().includes(($filters.module || '').toLowerCase())) as option}
-                    <button on:click={() => selectModule(option.value)}>
-                      {option.value} ({option.count})
-                    </button>
-                  {/each}
-                </div>
-              {/if}
-            </div>
-
-            <div class="filters-field">
-              <label for="level-filter">Niveau</label>
-              <select
-                id="level-filter"
-                bind:value={$filters.level}
-                on:change={handleLevelChange}
-                class="form-input"
-              >
-                <option value="">Tous les niveaux</option>
-                {#each levelOptions as level}
-                  <option value={level.value}>{level.value} ({level.count})</option>
-                {/each}
-              </select>
-            </div>
-
-            <div class="filters-field">
-              <label for="difficulty-filter">Difficulté</label>
-              <select
-                id="difficulty-filter"
-                bind:value={$filters.difficulty}
-                on:change={handleDifficultyChange}
-                class="form-input"
-              >
-                <option value="">Toutes difficultés</option>
-                <option value="null">Sans difficulté ({difficultyCounts['null'] || 0})</option>
-                {#each difficultyOptions.filter((diff) => diff.value !== 'null') as diff}
-                  <option value={diff.value}>{diff.label} ({diff.count})</option>
-                {/each}
-              </select>
-            </div>
-
-            <div class="filters-field">
-              <label for="solution-filter">Solution</label>
-              <select
-                id="solution-filter"
-                bind:value={$filters.hasSolution}
-                on:change={handleDifficultyChange}
-                class="form-input"
-              >
-                <option value="">Tous</option>
-                <option value="1">Avec solution</option>
-                <option value="0">Sans solution</option>
-              </select>
-            </div>
-
-            <div class="filters-field">
-              <label for="indication-filter">Indication</label>
-              <select
-                id="indication-filter"
-                bind:value={$filters.hasIndication}
-                on:change={handleDifficultyChange}
-                class="form-input"
-              >
-                <option value="">Tous</option>
-                <option value="1">Avec indication</option>
-                <option value="0">Sans indication</option>
-              </select>
-            </div>
-
-            <div class="filters-field">
-              <label for="author-filter">Auteur</label>
-              <input
-                id="author-filter"
-                type="text"
-                bind:value={$filters.author}
-                on:input={handleAuthorInput}
-                on:blur={handleAuthorBlur}
-                placeholder="Nom de l'auteur..."
-                class="form-input"
-              />
-              {#if showAuthorSuggestions && authorOptions.length > 0}
-                <div class="filters-suggestions">
-                  {#each authorOptions.filter((option) => option.value.toLowerCase().includes(($filters.author || '').toLowerCase())) as option}
-                    <button on:click={() => selectAuthor(option.value)}>
-                      {option.value} ({option.count})
-                    </button>
-                  {/each}
-                </div>
-              {/if}
-            </div>
-          </div>
-        </section>
-      </div>
-      <div class="filters-footer">
-        <button type="button" class="btn btn-text text-sm text-blue-600" on:click={searchActions.clearAllFilters}>
-          Effacer tous les filtres
-        </button>
-        <button type="button" class="btn btn-secondary" on:click={closeFilters}>
-          Fermer
-        </button>
-      </div>
-    </div>
-  </div>
-{/if}
 
 {#if $previewState.isOpen && $layoutState.previewPanelVisible}
   <button
@@ -1051,8 +1051,10 @@
   }
   .preview-sticky { position:sticky; top:2rem; height:calc(100vh - 4rem); }
 
-  .filters-overlay { position:fixed; inset:0; background:rgba(17,24,39,0.5); z-index:70; display:flex; align-items:flex-start; justify-content:center; padding:1.5rem; overflow-y:auto; }
-  .filters-panel { background:#fff; border-radius:1rem; max-width:960px; width:100%; box-shadow:0 20px 45px rgba(15,23,42,0.2); display:flex; flex-direction:column; gap:1.5rem; padding:1.5rem; position:relative; }
+  .filters-sidebar { position:fixed; top:0; bottom:0; left:0; width:min(90vw, 22rem); max-width:22rem; padding:1.25rem; display:flex; flex-direction:column; transform:translateX(-110%); transition:transform 0.25s ease-in-out; z-index:80; pointer-events:none; }
+  .filters-sidebar--open { transform:translateX(0); pointer-events:auto; }
+  .filters-backdrop { position:fixed; inset:0; background:rgba(17,24,39,0.45); z-index:70; }
+  .filters-panel { background:#fff; border-radius:1rem; width:100%; box-shadow:0 20px 45px rgba(15,23,42,0.2); display:flex; flex-direction:column; gap:1.5rem; padding:1.5rem; max-height:calc(100vh - 2.5rem); overflow-y:auto; }
   .filters-header { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
   .filters-header h2 { font-size:1.25rem; font-weight:600; color:#111827; }
   .filters-close { color:#111827; background:#f3f4f6; border:1px solid #d1d5db; border-radius:0.5rem; padding:0.5rem 0.75rem; font-size:0.875rem; cursor:pointer; transition:background-color .2s ease; }
@@ -1090,6 +1092,12 @@
   .filters-chip-remove:hover { background:#d1d5db; }
   .filters-add-chip { align-self:flex-start; display:inline-flex; align-items:center; gap:0.35rem; padding:0.5rem 0.9rem; border-radius:0.75rem; border:1px dashed #94a3b8; background:#fff; color:#1f2937; font-weight:500; cursor:pointer; }
   .filters-add-chip:hover { background:#f8fafc; }
+
+  @media (min-width:1024px) {
+    .filters-sidebar { position:sticky; top:1.5rem; align-self:flex-start; transform:none; pointer-events:auto; padding:0; width:min(22rem, 100%); max-width:22rem; z-index:auto; }
+    .filters-panel { box-shadow:none; border:1px solid #e5e7eb; max-height:calc(100vh - 3rem); }
+    .filters-backdrop { display:none; }
+  }
 
   .filters-menu-overlay { position:fixed; inset:0; z-index:90; display:flex; align-items:flex-end; justify-content:center; background:rgba(17,24,39,0.45); padding:1rem; }
   .filters-menu { width:100%; max-width:24rem; background:#fff; border-radius:1rem 1rem 0 0; box-shadow:0 20px 45px rgba(15,23,42,0.25); padding:1rem 1.25rem 1.5rem; display:flex; flex-direction:column; gap:1rem; }
