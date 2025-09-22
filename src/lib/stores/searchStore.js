@@ -101,6 +101,36 @@ export const hasPreview = derived(
   ($previewState) => $previewState.isOpen && $previewState.exercise
 );
 
+function incrementCount(map, key) {
+  if (!key && key !== 0) return;
+  const value = String(key).trim();
+  if (!value) return;
+  map[value] = (map[value] || 0) + 1;
+}
+
+export const filterCounts = derived(results, ($results) => {
+  const counts = {
+    module: {},
+    level: {},
+    difficulty: {},
+    author: {}
+  };
+
+  $results.forEach((item) => {
+    incrementCount(counts.module, item.module);
+    incrementCount(counts.level, item.level);
+    incrementCount(counts.author, item.author);
+
+    if (item.difficulty === null || item.difficulty === undefined || item.difficulty === '') {
+      incrementCount(counts.difficulty, 'null');
+    } else {
+      incrementCount(counts.difficulty, item.difficulty);
+    }
+  });
+
+  return counts;
+});
+
 // Actions pour gérer la recherche
 export const searchActions = {
   // Mettre à jour un filtre spécifique
@@ -474,15 +504,46 @@ export const suggestions = writable({
 });
 
 export const suggestionActions = {
-  async loadSuggestions() {
+  async loadSuggestions(context = {}) {
+    const { query = '', filters: currentFilters = {} } = context;
+
+    const sharedParams = (forType) => {
+      const params = new URLSearchParams();
+      params.set('type', 'suggestions');
+      params.set('for', forType);
+
+      if (query && query.trim()) params.set('q', query.trim());
+
+      if (currentFilters.subchapter) {
+        params.set('subchapter', currentFilters.subchapter);
+        if (currentFilters.chapter) params.set('chapter', currentFilters.chapter);
+      } else if (currentFilters.chapter) {
+        params.set('chapter', currentFilters.chapter);
+      }
+
+      if (currentFilters.level) params.set('level', currentFilters.level);
+      if (currentFilters.module) params.set('module', currentFilters.module);
+      if (currentFilters.difficulty) params.set('difficulty', currentFilters.difficulty);
+      if (currentFilters.author && forType !== 'authors') params.set('author', currentFilters.author);
+
+      if (currentFilters.hasSolution !== '' && currentFilters.hasSolution !== undefined && currentFilters.hasSolution !== null) {
+        params.set('hasSolution', String(currentFilters.hasSolution));
+      }
+      if (currentFilters.hasIndication !== '' && currentFilters.hasIndication !== undefined && currentFilters.hasIndication !== null) {
+        params.set('hasIndication', String(currentFilters.hasIndication));
+      }
+
+      return params;
+    };
+
     suggestions.update(current => ({ ...current, loading: true }));
 
     try {
       const [authorsResponse, modulesResponse, levelsResponse, difficultiesResponse] = await Promise.all([
-        fetch('/api/chapters?type=suggestions&for=authors&limit=200'),
-        fetch('/api/chapters?type=suggestions&for=modules&limit=15'),
-        fetch('/api/chapters?type=suggestions&for=levels&limit=10'),
-        fetch('/api/chapters?type=suggestions&for=difficulties&limit=10')
+        fetch(`/api/chapters?${sharedParams('authors').toString()}&limit=200`),
+        fetch(`/api/chapters?${sharedParams('modules').toString()}&limit=15`),
+        fetch(`/api/chapters?${sharedParams('levels').toString()}&limit=10`),
+        fetch(`/api/chapters?${sharedParams('difficulties').toString()}&limit=10`)
       ]);
 
       const authorsData = authorsResponse.ok ? await authorsResponse.json() : { suggestions: [] };

@@ -27,7 +27,8 @@
     layoutState,
     layoutConfig,
     layoutActions,
-    breadcrumb
+    breadcrumb,
+    filterCounts
   } from '$lib/stores/searchStore.js';
 
   import { useDebounce } from '$lib/hooks/useDebounce.js';
@@ -35,6 +36,16 @@
   let showAuthorSuggestions = false;
   let showModuleSuggestions = false;
   let isFilterPanelOpen = false;
+  let showFilterMenu = false;
+  let filterMenuCategory = null;
+  let authorSearch = '';
+
+  const filterMenuCategories = [
+    { id: 'content', icon: '📚', label: 'Contenu' },
+    { id: 'level', icon: '🎓', label: 'Niveau académique' },
+    { id: 'properties', icon: '✅', label: 'Propriétés' },
+    { id: 'author', icon: '👤', label: 'Auteur' }
+  ];
 
   const debouncedSearch = useDebounce(searchActions.search, 300);
 
@@ -111,14 +122,221 @@
     searchActions.search();
   }
 
+  function formatDifficultyLabel(value) {
+    if (value === null || value === undefined || value === '') return '';
+    if (value === 'null') return 'Sans difficulté';
+    const numeric = Number(value);
+    if (!Number.isNaN(numeric) && numeric > 0) {
+      return '★'.repeat(Math.min(numeric, 5));
+    }
+    return String(value);
+  }
+
+  function getCategoryLabel(id) {
+    const match = filterMenuCategories.find((item) => item.id === id);
+    return match ? match.label : 'Ajouter un filtre';
+  }
+
+  function buildOptions(baseList, counts, activeValue, formatLabel) {
+    const options = [];
+    const seen = new Set();
+
+    (baseList || []).forEach((item) => {
+      const value = item.value ?? item;
+      if (!value && value !== 0) return;
+      const key = String(value);
+      const count = (counts && counts[key]) ?? item.count ?? 0;
+      options.push({
+        value: key,
+        count,
+        active: String(activeValue ?? '') === key,
+        label: formatLabel ? formatLabel(key) : key
+      });
+      seen.add(key);
+    });
+
+    if (counts) {
+      Object.entries(counts).forEach(([key, count]) => {
+        if (!key || seen.has(key)) return;
+        options.push({
+          value: key,
+          count,
+          active: String(activeValue ?? '') === key,
+          label: formatLabel ? formatLabel(key) : key
+        });
+      });
+    }
+
+    options.sort((a, b) => a.value.localeCompare(b.value, 'fr', { sensitivity: 'base' }));
+    return options;
+  }
+
+  $: moduleCounts = $filterCounts.module || {};
+  $: levelCounts = $filterCounts.level || {};
+  $: difficultyCounts = $filterCounts.difficulty || {};
+  $: authorCounts = $filterCounts.author || {};
+
+  $: moduleOptions = buildOptions($suggestions.modules || [], moduleCounts, $filters.module);
+  $: levelOptions = buildOptions($suggestions.levels || [], levelCounts, $filters.level);
+
+  $: difficultyOptions = buildOptions($suggestions.difficulties || [], difficultyCounts, $filters.difficulty, formatDifficultyLabel);
+
+  $: authorOptions = buildOptions($suggestions.authors || [], authorCounts, $filters.author);
+  $: filteredAuthors = authorOptions
+    .filter((entry) => {
+      const term = authorSearch.trim().toLowerCase();
+      if (!term) return true;
+      return entry.value.toLowerCase().includes(term);
+    })
+    .slice(0, 25);
+
+  $: activeFilterChips = (() => {
+    const chips = [];
+
+    if ($filters.module) {
+      chips.push({ key: 'module', label: $filters.module, icon: '📖', category: 'content' });
+    }
+    if ($filters.chapter) {
+      chips.push({ key: 'chapter', label: $filters.chapter, icon: '📚', category: 'content' });
+    }
+    if ($filters.subchapter) {
+      chips.push({ key: 'subchapter', label: $filters.subchapter, icon: '📑', category: 'content' });
+    }
+    if ($filters.level) {
+      chips.push({ key: 'level', label: $filters.level, icon: '🎓', category: 'level' });
+    }
+    if ($filters.difficulty && $filters.difficulty !== '') {
+      chips.push({ key: 'difficulty', label: formatDifficultyLabel($filters.difficulty), icon: '⭐', category: 'level' });
+    }
+    if ($filters.hasSolution === '1') {
+      chips.push({ key: 'hasSolution', label: 'Avec solution', icon: '✅', category: 'properties' });
+    } else if ($filters.hasSolution === '0') {
+      chips.push({ key: 'hasSolution', label: 'Sans solution', icon: '🚫', category: 'properties' });
+    }
+    if ($filters.hasIndication === '1') {
+      chips.push({ key: 'hasIndication', label: 'Avec indication', icon: '💡', category: 'properties' });
+    } else if ($filters.hasIndication === '0') {
+      chips.push({ key: 'hasIndication', label: 'Sans indication', icon: '🚫', category: 'properties' });
+    }
+    if ($filters.author) {
+      chips.push({ key: 'author', label: $filters.author, icon: '👤', category: 'author' });
+    }
+
+    return chips;
+  })();
+
+  $: activeMenuFilters = {
+    difficulty: $filters.difficulty ?? '',
+    hasSolution: $filters.hasSolution ?? '',
+    hasIndication: $filters.hasIndication ?? ''
+  };
+
+  function openFilterMenu(category = null) {
+    showFilterMenu = true;
+    authorSearch = $filters.author || '';
+    handleFilterMenuCategory(category);
+  }
+
+  function handleFilterMenuCategory(id) {
+    filterMenuCategory = id;
+    if (id === 'author') {
+      authorSearch = $filters.author || '';
+    }
+  }
+
+  function closeFilterMenu() {
+    showFilterMenu = false;
+    filterMenuCategory = null;
+    authorSearch = $filters.author || '';
+  }
+
+  function handleChipClick(chip) {
+    openFilterMenu(chip.category || null);
+  }
+
+  function removeFilterChip(key) {
+    switch (key) {
+      case 'module':
+        searchActions.updateFilter('module', '');
+        searchActions.updateFilter('chapter', '');
+        searchActions.updateFilter('subchapter', '');
+        break;
+      case 'chapter':
+        searchActions.updateFilter('chapter', '');
+        searchActions.updateFilter('subchapter', '');
+        break;
+      case 'subchapter':
+        searchActions.updateFilter('subchapter', '');
+        break;
+      case 'level':
+        searchActions.updateFilter('level', '');
+        break;
+      case 'difficulty':
+        searchActions.updateFilter('difficulty', '');
+        break;
+      case 'hasSolution':
+        searchActions.updateFilter('hasSolution', '');
+        break;
+      case 'hasIndication':
+        searchActions.updateFilter('hasIndication', '');
+        break;
+      case 'author':
+        searchActions.updateFilter('author', '');
+        break;
+      default:
+        return;
+    }
+    searchActions.search();
+  }
+
+  function applyModuleFilter(value) {
+    selectModule(value);
+    closeFilterMenu();
+  }
+
+  function applyLevelFilter(value) {
+    searchActions.updateFilter('level', value);
+    searchActions.search();
+    closeFilterMenu();
+  }
+
+  function applyDifficultyFilter(value) {
+    searchActions.updateFilter('difficulty', value);
+    searchActions.search();
+    closeFilterMenu();
+  }
+
+  function applyPropertyFilter(key, value) {
+    searchActions.updateFilter(key, value);
+    searchActions.search();
+    closeFilterMenu();
+  }
+
+  function applyAuthorFilter(value) {
+    selectAuthor(value);
+    closeFilterMenu();
+  }
+
+  function handleAuthorSearchInput(value) {
+    authorSearch = value;
+  }
+
+  function applyAuthorSearch() {
+    const value = authorSearch.trim();
+    if (!value) return;
+    applyAuthorFilter(value);
+  }
+
   function openFilters() {
     isFilterPanelOpen = true;
+    closeFilterMenu();
   }
 
   function closeFilters() {
     isFilterPanelOpen = false;
     showAuthorSuggestions = false;
     showModuleSuggestions = false;
+    closeFilterMenu();
   }
 
   $: canTogglePreview = Boolean($previewState.selectedUuid);
@@ -423,122 +641,220 @@
         </section>
 
         <section class="filters-section">
-          <div class="filters-accordion md:hidden" aria-label="Filtres détaillés">
-            <details class="filters-accordion-item" open={$filters.module?.length > 0}>
-              <summary>Module</summary>
-              <div class="filters-field filters-field--accordion">
-                <input
-                  id="module-filter-mobile"
-                  type="text"
-                  bind:value={$filters.module}
-                  on:input={handleModuleInput}
-                  on:blur={handleModuleBlur}
-                  placeholder="Ex: Algèbre..."
-                  class="form-input"
-                />
-                {#if showModuleSuggestions && $suggestions.modules.length > 0}
-                  <div class="filters-suggestions">
-                    {#each $suggestions.modules.filter(s => s.value.toLowerCase().includes($filters.module.toLowerCase())) as suggestion}
-                      <button on:click={() => selectModule(suggestion.value)}>
-                        {suggestion.value} ({suggestion.count})
-                      </button>
-                    {/each}
-                  </div>
-                {/if}
-              </div>
-            </details>
-
-            <details class="filters-accordion-item" open={$filters.level?.length > 0}>
-              <summary>Niveau</summary>
-              <div class="filters-field filters-field--accordion">
-                <select
-                  id="level-filter-mobile"
-                  bind:value={$filters.level}
-                  on:change={handleLevelChange}
-                  class="form-input"
-                >
-                  <option value="">Tous les niveaux</option>
-                  {#each $suggestions.levels as level}
-                    <option value={level.value}>{level.value} ({level.count})</option>
-                  {/each}
-                </select>
-              </div>
-            </details>
-
-            <details class="filters-accordion-item" open={$filters.difficulty?.length > 0 && $filters.difficulty !== ''}>
-              <summary>Difficulté</summary>
-              <div class="filters-field filters-field--accordion">
-                <select
-                  id="difficulty-filter-mobile"
-                  bind:value={$filters.difficulty}
-                  on:change={handleDifficultyChange}
-                  class="form-input"
-                >
-                  <option value="">Toutes difficultés</option>
-                  <option value="null">Sans difficulté</option>
-                  {#each $suggestions.difficulties || [] as diff}
-                    <option value={diff.value}>★{diff.value} ({diff.count})</option>
-                  {/each}
-                </select>
-              </div>
-            </details>
-
-            <details class="filters-accordion-item" open={$filters.hasSolution !== '' && $filters.hasSolution !== null && $filters.hasSolution !== undefined}>
-              <summary>Solution</summary>
-              <div class="filters-field filters-field--accordion">
-                <select
-                  id="solution-filter-mobile"
-                  bind:value={$filters.hasSolution}
-                  on:change={handleDifficultyChange}
-                  class="form-input"
-                >
-                  <option value="">Tous</option>
-                  <option value="1">Avec solution</option>
-                  <option value="0">Sans solution</option>
-                </select>
-              </div>
-            </details>
-
-            <details class="filters-accordion-item" open={$filters.hasIndication !== '' && $filters.hasIndication !== null && $filters.hasIndication !== undefined}>
-              <summary>Indication</summary>
-              <div class="filters-field filters-field--accordion">
-                <select
-                  id="indication-filter-mobile"
-                  bind:value={$filters.hasIndication}
-                  on:change={handleDifficultyChange}
-                  class="form-input"
-                >
-                  <option value="">Tous</option>
-                  <option value="1">Avec indication</option>
-                  <option value="0">Sans indication</option>
-                </select>
-              </div>
-            </details>
-
-            <details class="filters-accordion-item" open={$filters.author?.length > 0}>
-              <summary>Auteur</summary>
-              <div class="filters-field filters-field--accordion">
-                <input
-                  id="author-filter-mobile"
-                  type="text"
-                  bind:value={$filters.author}
-                  on:input={handleAuthorInput}
-                  on:blur={handleAuthorBlur}
-                  placeholder="Nom de l'auteur..."
-                  class="form-input"
-                />
-                {#if showAuthorSuggestions && $suggestions.authors.length > 0}
-                  <div class="filters-suggestions">
-                    {#each $suggestions.authors.filter(s => s.value.toLowerCase().includes($filters.author.toLowerCase())) as suggestion}
-                      <button on:click={() => selectAuthor(suggestion.value)}>
-                        {suggestion.value} ({suggestion.count})
-                      </button>
-                    {/each}
-                  </div>
-                {/if}
-              </div>
-            </details>
+          <div class="filters-chips md:hidden" aria-live="polite">
+            <div class="filters-chips-title">Filtres actifs</div>
+            <div class="filters-chips-list">
+              {#if activeFilterChips.length === 0}
+                <p class="filters-chips-empty">Aucun filtre actif</p>
+              {:else}
+                {#each activeFilterChips as chip}
+                  <button type="button" class="filters-chip" on:click={() => handleChipClick(chip)}>
+                    <span class="filters-chip-label">{chip.icon} {chip.label}</span>
+                    <span
+                      class="filters-chip-remove"
+                      role="button"
+                      aria-label={`Retirer ${chip.label}`}
+                      on:click|stopPropagation={() => removeFilterChip(chip.key)}
+                    >×</span>
+                  </button>
+                {/each}
+              {/if}
+            </div>
+            <button type="button" class="filters-add-chip" on:click={() => openFilterMenu()}>
+              + Ajouter un filtre
+            </button>
           </div>
+
+          {#if showFilterMenu}
+            <div class="filters-menu-overlay md:hidden" on:click={closeFilterMenu}>
+              <div
+                class="filters-menu"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Ajouter un filtre"
+                on:click|stopPropagation
+              >
+                <div class="filters-menu-header">
+                  {#if filterMenuCategory}
+                    <button type="button" class="filters-menu-back" on:click={() => handleFilterMenuCategory(null)}>
+                      ← Catégories
+                    </button>
+                    <h4>{getCategoryLabel(filterMenuCategory)}</h4>
+                  {:else}
+                    <h4>Ajouter un filtre</h4>
+                  {/if}
+                  <button type="button" class="filters-menu-close" on:click={closeFilterMenu} aria-label="Fermer">✕</button>
+                </div>
+
+                <div class="filters-menu-body">
+                  {#if !filterMenuCategory}
+                    {#each filterMenuCategories as category}
+                      <button type="button" class="filters-menu-category" on:click={() => handleFilterMenuCategory(category.id)}>
+                        <div class="filters-menu-category-label">
+                          <span class="filters-menu-category-icon">{category.icon}</span>
+                          <span>{category.label}</span>
+                        </div>
+                        <span class="filters-menu-category-arrow">›</span>
+                      </button>
+                    {/each}
+                  {:else if filterMenuCategory === 'content'}
+                    <div class="filters-menu-section">
+                      <h5>Module</h5>
+                      {#if moduleOptions.length === 0}
+                        <p class="filters-menu-empty">Aucun module disponible</p>
+                      {:else}
+                        <div class="filters-menu-options">
+                          {#each moduleOptions as module (module.value)}
+                            <button
+                              type="button"
+                              class="filters-menu-option {module.active ? 'filters-menu-option--active' : ''}"
+                              on:click={() => applyModuleFilter(module.value)}
+                            >
+                              <span>{module.value}</span>
+                              <span class="filters-menu-option-count">{module.count}</span>
+                            </button>
+                          {/each}
+                        </div>
+                      {/if}
+                      <p class="filters-menu-helper">Utilisez la navigation hiérarchique pour choisir un chapitre précis.</p>
+                    </div>
+                  {:else if filterMenuCategory === 'level'}
+                    <div class="filters-menu-section">
+                      <h5>Niveau</h5>
+                      {#if levelOptions.length === 0}
+                        <p class="filters-menu-empty">Aucun niveau disponible</p>
+                      {:else}
+                        <div class="filters-menu-options">
+                          {#each levelOptions as level (level.value)}
+                            <button
+                              type="button"
+                              class="filters-menu-option {level.active ? 'filters-menu-option--active' : ''}"
+                              on:click={() => applyLevelFilter(level.value)}
+                            >
+                              <span>{level.value}</span>
+                              <span class="filters-menu-option-count">{level.count}</span>
+                            </button>
+                          {/each}
+                        </div>
+                      {/if}
+                    </div>
+                    <div class="filters-menu-section">
+                      <h5>Difficulté</h5>
+                      <div class="filters-menu-options">
+                        <button
+                          type="button"
+                          class="filters-menu-option {activeMenuFilters.difficulty === '' ? 'filters-menu-option--active' : ''}"
+                          on:click={() => applyDifficultyFilter('')}
+                        >
+                          <span>Toutes</span>
+                        </button>
+                        <button
+                          type="button"
+                          class="filters-menu-option {activeMenuFilters.difficulty === 'null' ? 'filters-menu-option--active' : ''}"
+                          on:click={() => applyDifficultyFilter('null')}
+                        >
+                          <span>Sans difficulté</span>
+                        </button>
+                        {#if difficultyOptions.length === 0}
+                          <p class="filters-menu-empty">Aucune difficulté disponible</p>
+                        {:else}
+                          {#each difficultyOptions as diff (diff.value)}
+                            <button
+                              type="button"
+                              class="filters-menu-option {diff.active ? 'filters-menu-option--active' : ''}"
+                              on:click={() => applyDifficultyFilter(diff.value)}
+                            >
+                              <span>{diff.label}</span>
+                              <span class="filters-menu-option-count">{diff.count}</span>
+                            </button>
+                          {/each}
+                        {/if}
+                      </div>
+                    </div>
+                  {:else if filterMenuCategory === 'properties'}
+                    <div class="filters-menu-section">
+                      <h5>Solution</h5>
+                      <div class="filters-menu-options">
+                        <button
+                          type="button"
+                          class="filters-menu-option {activeMenuFilters.hasSolution === '1' ? 'filters-menu-option--active' : ''}"
+                          on:click={() => applyPropertyFilter('hasSolution', '1')}
+                        >
+                          <span>✅ Avec solution</span>
+                        </button>
+                        <button
+                          type="button"
+                          class="filters-menu-option {activeMenuFilters.hasSolution === '0' ? 'filters-menu-option--active' : ''}"
+                          on:click={() => applyPropertyFilter('hasSolution', '0')}
+                        >
+                          <span>🚫 Sans solution</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="filters-menu-section">
+                      <h5>Indication</h5>
+                      <div class="filters-menu-options">
+                        <button
+                          type="button"
+                          class="filters-menu-option {activeMenuFilters.hasIndication === '1' ? 'filters-menu-option--active' : ''}"
+                          on:click={() => applyPropertyFilter('hasIndication', '1')}
+                        >
+                          <span>💡 Avec indication</span>
+                        </button>
+                        <button
+                          type="button"
+                          class="filters-menu-option {activeMenuFilters.hasIndication === '0' ? 'filters-menu-option--active' : ''}"
+                          on:click={() => applyPropertyFilter('hasIndication', '0')}
+                        >
+                          <span>🚫 Sans indication</span>
+                        </button>
+                      </div>
+                    </div>
+                  {:else if filterMenuCategory === 'author'}
+                    <div class="filters-menu-section">
+                      <h5>Auteur</h5>
+                      <div class="filters-menu-author">
+                        <input
+                          type="text"
+                          class="filters-menu-author-input"
+                          placeholder="Nom ou mot-clé"
+                          value={authorSearch}
+                          on:input={(event) => handleAuthorSearchInput(event.target.value)}
+                          on:keydown={(event) => event.key === 'Enter' && applyAuthorSearch()}
+                        />
+                        <div class="filters-menu-author-actions">
+                          <button
+                            type="button"
+                            class="filters-menu-apply"
+                            on:click={applyAuthorSearch}
+                            disabled={!authorSearch.trim()}
+                          >
+                            Appliquer
+                          </button>
+                        </div>
+                      </div>
+                      <div class="filters-menu-options">
+                        {#if filteredAuthors.length === 0}
+                          <p class="filters-menu-empty">Aucun auteur trouvé</p>
+                        {:else}
+                          {#each filteredAuthors as author (author.value)}
+                            <button
+                              type="button"
+                              class="filters-menu-option {author.active ? 'filters-menu-option--active' : ''}"
+                              on:click={() => applyAuthorFilter(author.value)}
+                            >
+                              <span>{author.value}</span>
+                              <span class="filters-menu-option-count">{author.count}</span>
+                            </button>
+                          {/each}
+                        {/if}
+                      </div>
+                    </div>
+                  {/if}
+                </div>
+              </div>
+            </div>
+          {/if}
 
           <div class="filters-grid filters-grid--desktop hidden md:grid">
             <div class="filters-field">
@@ -552,11 +868,11 @@
                 placeholder="Ex: Algèbre..."
                 class="form-input"
               />
-              {#if showModuleSuggestions && $suggestions.modules.length > 0}
+              {#if showModuleSuggestions && moduleOptions.length > 0}
                 <div class="filters-suggestions">
-                  {#each $suggestions.modules.filter(s => s.value.toLowerCase().includes($filters.module.toLowerCase())) as suggestion}
-                    <button on:click={() => selectModule(suggestion.value)}>
-                      {suggestion.value} ({suggestion.count})
+                  {#each moduleOptions.filter((option) => option.value.toLowerCase().includes(($filters.module || '').toLowerCase())) as option}
+                    <button on:click={() => selectModule(option.value)}>
+                      {option.value} ({option.count})
                     </button>
                   {/each}
                 </div>
@@ -572,7 +888,7 @@
                 class="form-input"
               >
                 <option value="">Tous les niveaux</option>
-                {#each $suggestions.levels as level}
+                {#each levelOptions as level}
                   <option value={level.value}>{level.value} ({level.count})</option>
                 {/each}
               </select>
@@ -587,9 +903,9 @@
                 class="form-input"
               >
                 <option value="">Toutes difficultés</option>
-                <option value="null">Sans difficulté</option>
-                {#each $suggestions.difficulties || [] as diff}
-                  <option value={diff.value}>★{diff.value} ({diff.count})</option>
+                <option value="null">Sans difficulté ({difficultyCounts['null'] || 0})</option>
+                {#each difficultyOptions.filter((diff) => diff.value !== 'null') as diff}
+                  <option value={diff.value}>{diff.label} ({diff.count})</option>
                 {/each}
               </select>
             </div>
@@ -633,11 +949,11 @@
                 placeholder="Nom de l'auteur..."
                 class="form-input"
               />
-              {#if showAuthorSuggestions && $suggestions.authors.length > 0}
+              {#if showAuthorSuggestions && authorOptions.length > 0}
                 <div class="filters-suggestions">
-                  {#each $suggestions.authors.filter(s => s.value.toLowerCase().includes($filters.author.toLowerCase())) as suggestion}
-                    <button on:click={() => selectAuthor(suggestion.value)}>
-                      {suggestion.value} ({suggestion.count})
+                  {#each authorOptions.filter((option) => option.value.toLowerCase().includes(($filters.author || '').toLowerCase())) as option}
+                    <button on:click={() => selectAuthor(option.value)}>
+                      {option.value} ({option.count})
                     </button>
                   {/each}
                 </div>
@@ -734,14 +1050,45 @@
     background:#f9fafb;
   }
 
-  .filters-accordion { display:flex; flex-direction:column; gap:0.75rem; }
-  .filters-accordion-item { border:1px solid #e5e7eb; border-radius:0.75rem; background:#fff; overflow:hidden; }
-  .filters-accordion-item summary { list-style:none; padding:0.75rem 1rem; font-weight:600; cursor:pointer; display:flex; align-items:center; justify-content:space-between; color:#1f2937; }
-  .filters-accordion-item summary::-webkit-details-marker { display:none; }
-  .filters-accordion-item[open] summary { background:#f3f4f6; }
-  .filters-accordion-item summary::after { content:'+'; font-size:1.25rem; line-height:1; color:#6b7280; transition:transform .2s ease, color .2s ease; }
-  .filters-accordion-item[open] summary::after { content:'–'; color:#2563eb; }
-  .filters-field--accordion { padding:0 1rem 1rem; }
+  .filters-chips { border:1px solid #e5e7eb; border-radius:0.75rem; background:#f9fafb; padding:1rem; display:flex; flex-direction:column; gap:0.75rem; }
+  .filters-chips-title { font-weight:600; color:#1f2937; font-size:0.9rem; }
+  .filters-chips-list { display:flex; flex-wrap:wrap; gap:0.5rem; }
+  .filters-chips-empty { font-size:0.875rem; color:#6b7280; }
+  .filters-chip { display:inline-flex; align-items:center; gap:0.5rem; padding:0.45rem 0.75rem; border-radius:9999px; border:1px solid #d1d5db; background:#fff; box-shadow:0 1px 2px rgba(15,23,42,0.08); font-size:0.85rem; color:#1f2937; cursor:pointer; }
+  .filters-chip:hover { background:#f3f4f6; }
+  .filters-chip-label { display:flex; align-items:center; gap:0.35rem; }
+  .filters-chip-remove { display:inline-flex; align-items:center; justify-content:center; width:1.25rem; height:1.25rem; border-radius:9999px; background:#e5e7eb; color:#374151; font-weight:600; cursor:pointer; }
+  .filters-chip-remove:hover { background:#d1d5db; }
+  .filters-add-chip { align-self:flex-start; display:inline-flex; align-items:center; gap:0.35rem; padding:0.5rem 0.9rem; border-radius:0.75rem; border:1px dashed #94a3b8; background:#fff; color:#1f2937; font-weight:500; cursor:pointer; }
+  .filters-add-chip:hover { background:#f8fafc; }
+
+  .filters-menu-overlay { position:fixed; inset:0; z-index:90; display:flex; align-items:flex-end; justify-content:center; background:rgba(17,24,39,0.45); padding:1rem; }
+  .filters-menu { width:100%; max-width:24rem; background:#fff; border-radius:1rem 1rem 0 0; box-shadow:0 20px 45px rgba(15,23,42,0.25); padding:1rem 1.25rem 1.5rem; display:flex; flex-direction:column; gap:1rem; }
+  .filters-menu-header { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; }
+  .filters-menu-header h4 { font-size:1rem; font-weight:600; color:#111827; }
+  .filters-menu-back { border:none; background:none; color:#2563eb; font-weight:600; display:inline-flex; align-items:center; gap:0.35rem; cursor:pointer; }
+  .filters-menu-close { border:none; background:none; font-size:1.25rem; color:#6b7280; cursor:pointer; }
+  .filters-menu-body { display:flex; flex-direction:column; gap:1rem; max-height:60vh; overflow-y:auto; padding-right:0.25rem; }
+  .filters-menu-category { display:flex; align-items:center; justify-content:space-between; padding:0.75rem 0.5rem; border-bottom:1px solid #e5e7eb; font-weight:500; color:#1f2937; background:none; border:none; text-align:left; cursor:pointer; }
+  .filters-menu-category:hover { background:#f3f4f6; }
+  .filters-menu-category:last-child { border-bottom:none; }
+  .filters-menu-category-label { display:flex; align-items:center; gap:0.65rem; }
+  .filters-menu-category-icon { font-size:1.1rem; }
+  .filters-menu-category-arrow { font-size:1rem; color:#9ca3af; }
+  .filters-menu-section { display:flex; flex-direction:column; gap:0.75rem; }
+  .filters-menu-section h5 { font-weight:600; color:#1f2937; font-size:0.95rem; }
+  .filters-menu-options { display:flex; flex-direction:column; gap:0.5rem; }
+  .filters-menu-option { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; padding:0.6rem 0.75rem; border:1px solid #e5e7eb; border-radius:0.5rem; background:#fff; font-size:0.95rem; color:#1f2937; cursor:pointer; }
+  .filters-menu-option:hover { background:#f3f4f6; }
+  .filters-menu-option--active { border-color:#2563eb; background:#eff6ff; color:#1d4ed8; }
+  .filters-menu-option-count { font-size:0.85rem; color:#6b7280; }
+  .filters-menu-helper { font-size:0.8rem; color:#6b7280; margin-top:-0.1rem; }
+  .filters-menu-author { display:flex; flex-direction:column; gap:0.75rem; }
+  .filters-menu-author-input { width:100%; padding:0.6rem 0.75rem; border:1px solid #d1d5db; border-radius:0.5rem; }
+  .filters-menu-author-actions { display:flex; gap:0.5rem; }
+  .filters-menu-apply { flex:1; padding:0.6rem 0.75rem; border:none; border-radius:0.5rem; background:#2563eb; color:#fff; font-weight:600; cursor:pointer; }
+  .filters-menu-apply:disabled { background:#c7d2fe; color:#1f2937; cursor:not-allowed; }
+  .filters-menu-empty { font-size:0.85rem; color:#6b7280; text-align:center; }
 
   .filters-grid { grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; }
 
