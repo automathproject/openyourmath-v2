@@ -36,6 +36,7 @@
   let showAuthorSuggestions = false;
   let showModuleSuggestions = false;
   let isFilterPanelOpen = false;
+  let isDesktop = false;
   let showFilterMenu = false;
   let filterMenuCategory = null;
   let authorSearch = '';
@@ -51,6 +52,30 @@
 
   onMount(() => {
     suggestionActions.loadSuggestions();
+
+    if (typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(min-width: 1024px)');
+
+      const applyViewportState = (matches) => {
+        isDesktop = matches;
+        if (matches) {
+          isFilterPanelOpen = true;
+          closeFilterMenu();
+          showAuthorSuggestions = false;
+          showModuleSuggestions = false;
+        } else {
+          closeFilters();
+        }
+      };
+
+      applyViewportState(mediaQuery.matches);
+      const handleChange = (event) => applyViewportState(event.matches);
+      mediaQuery.addEventListener('change', handleChange);
+
+      return () => {
+        mediaQuery.removeEventListener('change', handleChange);
+      };
+    }
   });
 
   function handleChapterNavigation(event) {
@@ -356,9 +381,17 @@
     applyAuthorFilter(value);
   }
 
-  function openFilters() {
-    isFilterPanelOpen = true;
-    closeFilterMenu();
+  function toggleFiltersPanel() {
+    if (isDesktop) {
+      if (isFilterPanelOpen) {
+        closeFilters();
+      } else {
+        isFilterPanelOpen = true;
+      }
+    } else {
+      isFilterPanelOpen = true;
+      closeFilterMenu();
+    }
   }
 
   function closeFilters() {
@@ -369,6 +402,11 @@
   }
 
   $: canTogglePreview = Boolean($previewState.selectedUuid);
+  $: filtersButtonLabel = isDesktop
+    ? isFilterPanelOpen
+      ? 'Masquer les filtres'
+      : 'Afficher les filtres'
+    : 'Filtres';
   $: previewToggleLabel = $layoutConfig.showPreviewPanel ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation';
 </script>
 
@@ -405,10 +443,35 @@
         <div class="search-loading"><div class="search-spinner"></div></div>
       {/if}
     </div>
-    <div class="toolbar-buttons flex gap-2 sm:flex-none">
-      <button type="button" class="btn btn-secondary toolbar-button lg:hidden" on:click={openFilters}>
-        🔧 Filtres
+    <div class="toolbar-actions flex flex-wrap items-center gap-2 sm:flex-none sm:justify-end">
+      <button
+        type="button"
+        class="btn btn-secondary toolbar-button"
+        on:click={toggleFiltersPanel}
+        aria-expanded={isFilterPanelOpen}
+      >
+        🔧 {filtersButtonLabel}
       </button>
+      <div class="toolbar-chips flex gap-2">
+        <button
+          type="button"
+          class="chip {($filters.hasSolution==='1') ? 'chip--on' : ($filters.hasSolution==='0' ? 'chip--off' : '')}"
+          title="Filtrer par solution (clic pour basculer)"
+          on:click={toggleSolutionChip}
+          disabled={$loading}
+        >
+          ✅ Solution { $filters.hasSolution==='1' ? '• oui' : $filters.hasSolution==='0' ? '• non' : '' }
+        </button>
+        <button
+          type="button"
+          class="chip {($filters.hasIndication==='1') ? 'chip--on' : ($filters.hasIndication==='0' ? 'chip--off' : '')}"
+          title="Filtrer par indication (clic pour basculer)"
+          on:click={toggleIndicationChip}
+          disabled={$loading}
+        >
+          💡 Indication { $filters.hasIndication==='1' ? '• oui' : $filters.hasIndication==='0' ? '• non' : '' }
+        </button>
+      </div>
       {#if canTogglePreview}
         <button
           type="button"
@@ -440,30 +503,11 @@
     </div>
   </div>
 
-  <div class="chips-row flex flex-wrap gap-2 mb-6">
-    <button
-      type="button"
-      class="chip {($filters.hasSolution==='1') ? 'chip--on' : ($filters.hasSolution==='0' ? 'chip--off' : '')}"
-      title="Filtrer par solution (clic pour basculer)"
-      on:click={toggleSolutionChip}
-      disabled={$loading}
-    >
-      ✅ Solution { $filters.hasSolution==='1' ? '• oui' : $filters.hasSolution==='0' ? '• non' : '' }
-    </button>
-    <button
-      type="button"
-      class="chip {($filters.hasIndication==='1') ? 'chip--on' : ($filters.hasIndication==='0' ? 'chip--off' : '')}"
-      title="Filtrer par indication (clic pour basculer)"
-      on:click={toggleIndicationChip}
-      disabled={$loading}
-    >
-      💡 Indication { $filters.hasIndication==='1' ? '• oui' : $filters.hasIndication==='0' ? '• non' : '' }
-    </button>
-  </div>
-
   <div class="content-layout flex flex-col gap-6 lg:flex-row">
     <aside
-      class={`filters-sidebar ${isFilterPanelOpen ? 'filters-sidebar--open' : ''}`}
+      class="filters-sidebar"
+      class:filters-sidebar--open={!isDesktop && isFilterPanelOpen}
+      class:filters-sidebar--closed={isDesktop && !isFilterPanelOpen}
       aria-label="Filtres de recherche"
     >
       <div class="filters-panel" on:click|stopPropagation>
@@ -844,8 +888,8 @@
       </div>
     </aside>
 
-    {#if isFilterPanelOpen}
-      <div class="filters-backdrop lg:hidden" on:click={closeFilters} aria-hidden="true"></div>
+    {#if isFilterPanelOpen && !isDesktop}
+      <div class="filters-backdrop" on:click={closeFilters} aria-hidden="true"></div>
     {/if}
 
     <div class="results-section flex-1" style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}>
@@ -1030,7 +1074,10 @@
   }
 
   .toolbar-search { min-width:0; }
-  .toolbar-buttons { justify-content:flex-start; }
+  .toolbar-actions { justify-content:flex-start; }
+  @media (min-width:640px) {
+    .toolbar-actions { justify-content:flex-end; }
+  }
   .toolbar-button { display:inline-flex; align-items:center; gap:0.5rem; white-space:nowrap; }
 
   .breadcrumb-bar { background:#f9fafb; border:1px solid #e5e7eb; border-radius:0.75rem; padding:0.75rem 1rem; }
@@ -1038,7 +1085,7 @@
   .breadcrumb-actions { display:flex; gap:0.75rem; align-items:center; justify-content:flex-end; }
   .breadcrumb-icon { font-size:1rem; }
 
-  .chips-row button { min-height:2.25rem; }
+  .toolbar-chips .chip { min-height:2.25rem; }
 
   .content-layout { align-items:stretch; }
   .results-section { width:100%; }
@@ -1053,6 +1100,7 @@
 
   .filters-sidebar { position:fixed; top:0; bottom:0; left:0; width:min(90vw, 22rem); max-width:22rem; padding:1.25rem; display:flex; flex-direction:column; transform:translateX(-110%); transition:transform 0.25s ease-in-out; z-index:80; pointer-events:none; }
   .filters-sidebar--open { transform:translateX(0); pointer-events:auto; }
+  .filters-sidebar--closed { display:none; }
   .filters-backdrop { position:fixed; inset:0; background:rgba(17,24,39,0.45); z-index:70; }
   .filters-panel { background:#fff; border-radius:1rem; width:100%; box-shadow:0 20px 45px rgba(15,23,42,0.2); display:flex; flex-direction:column; gap:1.5rem; padding:1.5rem; max-height:calc(100vh - 2.5rem); overflow-y:auto; }
   .filters-header { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
@@ -1094,9 +1142,9 @@
   .filters-add-chip:hover { background:#f8fafc; }
 
   @media (min-width:1024px) {
-    .filters-sidebar { position:sticky; top:1.5rem; align-self:flex-start; transform:none; pointer-events:auto; padding:0; width:min(22rem, 100%); max-width:22rem; z-index:auto; }
+    .filters-sidebar { position:sticky; top:1.5rem; align-self:flex-start; transform:none; pointer-events:auto; padding:0; width:min(22rem, 100%); max-width:22rem; z-index:auto; display:block; }
+    .filters-sidebar--closed { display:none; }
     .filters-panel { box-shadow:none; border:1px solid #e5e7eb; max-height:calc(100vh - 3rem); }
-    .filters-backdrop { display:none; }
   }
 
   .filters-menu-overlay { position:fixed; inset:0; z-index:90; display:flex; align-items:flex-end; justify-content:center; background:rgba(17,24,39,0.45); padding:1rem; }
@@ -1144,7 +1192,7 @@
     .filters-footer { flex-direction:row; justify-content:flex-end; }
   }
 
-  .toolbar-buttons .btn { min-height:2.5rem; }
+  .toolbar-actions .btn { min-height:2.5rem; }
 
   .search-input { width: 100%; padding: 0.75rem 3rem 0.75rem 2.5rem; font-size: 1.125rem; border: 1px solid rgb(209 213 219); border-radius: 0.75rem; transition: all .2s ease; }
   .search-input:focus { outline: none; box-shadow: 0 0 0 2px rgb(59 130 246 / 0.5); border-color: transparent; }
