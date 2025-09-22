@@ -1,6 +1,6 @@
 // src/routes/api/search/+server.js
 import { json } from '@sveltejs/kit';
-import { searchExercises, getExerciseCount } from '$lib/db/queries.js';
+import { searchExercises, getExerciseCount, getContextualFilterCounts } from '$lib/db/queries.js';
 
 export async function GET({ url }) {
   try {
@@ -61,11 +61,11 @@ export async function GET({ url }) {
     
     // Effectuer la recherche
     const results = await searchExercises(query, filters, options);
-    
+
     // Déterminer s'il y a plus de résultats
     const hasMore = results.length > limit;
     const finalResults = hasMore ? results.slice(0, limit) : results;
-    
+
     // Obtenir le nombre total (optionnel, pour de meilleures infos de pagination)
     let totalCount = null;
     if (offset === 0) {
@@ -73,6 +73,15 @@ export async function GET({ url }) {
         totalCount = await getExerciseCount(query, filters);
       } catch (err) {
         console.warn('Could not get total count:', err.message);
+      }
+    }
+
+    let filterCounts = null;
+    if (offset === 0) {
+      try {
+        filterCounts = await getContextualFilterCounts(query, filters);
+      } catch (err) {
+        console.warn('Could not get filter counts:', err.message);
       }
     }
     
@@ -89,6 +98,7 @@ export async function GET({ url }) {
           hasMore,
           totalCount
         },
+        filterCounts,
         timestamp: new Date().toISOString()
       }
     };

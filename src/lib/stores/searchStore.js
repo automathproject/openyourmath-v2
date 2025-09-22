@@ -9,7 +9,7 @@ export const error = writable(null);
 export const searchMeta = writable(null);
 export const loadingMore = writable(false);
 
-// NOUVEAU : État pour la prévisualisation
+// État pour la prévisualisation
 export const previewState = writable({
   selectedUuid: null,
   exercise: null,
@@ -95,41 +95,22 @@ export const hasSearched = derived(
   ($hasActiveFilters) => $hasActiveFilters
 );
 
-// NOUVEAU : État dérivé pour la prévisualisation
+// État dérivé pour la prévisualisation
 export const hasPreview = derived(
   previewState,
   ($previewState) => $previewState.isOpen && $previewState.exercise
 );
 
-function incrementCount(map, key) {
-  if (!key && key !== 0) return;
-  const value = String(key).trim();
-  if (!value) return;
-  map[value] = (map[value] || 0) + 1;
-}
-
-export const filterCounts = derived(results, ($results) => {
-  const counts = {
+function createEmptyFilterCounts() {
+  return {
     module: {},
     level: {},
     difficulty: {},
     author: {}
   };
+}
 
-  $results.forEach((item) => {
-    incrementCount(counts.module, item.module);
-    incrementCount(counts.level, item.level);
-    incrementCount(counts.author, item.author);
-
-    if (item.difficulty === null || item.difficulty === undefined || item.difficulty === '') {
-      incrementCount(counts.difficulty, 'null');
-    } else {
-      incrementCount(counts.difficulty, item.difficulty);
-    }
-  });
-
-  return counts;
-});
+export const filterCounts = writable(createEmptyFilterCounts());
 
 // Actions pour gérer la recherche
 export const searchActions = {
@@ -165,6 +146,7 @@ export const searchActions = {
     results.set([]);
     searchMeta.set(null);
     error.set(null);
+    filterCounts.set(createEmptyFilterCounts());
   },
 
   // Mettre à jour depuis la navigation hiérarchique
@@ -194,6 +176,7 @@ export const searchActions = {
       results.set([]);
       searchMeta.set(null);
       error.set(null);
+      filterCounts.set(createEmptyFilterCounts());
       return;
     }
 
@@ -245,8 +228,16 @@ export const searchActions = {
 
       if (response.ok) {
         const data = await response.json();
-        results.set(data.results || []);
+        const nextResults = data.results || [];
+        results.set(nextResults);
         searchMeta.set(data.meta || null);
+        
+        // Utiliser les filterCounts du serveur (contextuels) ou vide
+        if (data.meta?.filterCounts) {
+          filterCounts.set(data.meta.filterCounts);
+        } else {
+          filterCounts.set(createEmptyFilterCounts());
+        }
       } else {
         const errorData = await response.json().catch(() => ({}));
         error.set(errorData.message || 'Erreur de recherche');
@@ -321,14 +312,29 @@ export const searchActions = {
       const response = await fetch(`/api/search?${searchParams.toString()}`);
       if (response.ok) {
         const data = await response.json();
-        results.update((prev) => [...prev, ...(data.results || [])]);
+        const newResults = data.results || [];
+        
+        // Pour loadMore, on garde les filterCounts existants du premier appel
+        // car les comptages contextuels ne changent pas avec la pagination
+        if (data.meta?.filterCounts) {
+          filterCounts.set(data.meta.filterCounts);
+        }
+
+        let appendedSnapshot = [];
+        results.update((prev) => {
+          appendedSnapshot = [...prev, ...newResults];
+          return appendedSnapshot;
+        });
+
         // Préserver totalCount du premier appel si non renvoyé ensuite
         searchMeta.update((prev) => {
           const prevTotal = prev?.pagination?.totalCount;
+          const prevFilterCounts = prev?.filterCounts ?? null;
           const next = data.meta || null;
           if (!next) return prev;
           return {
             ...next,
+            filterCounts: next.filterCounts ?? prevFilterCounts,
             pagination: {
               ...next.pagination,
               totalCount: prevTotal ?? next.pagination?.totalCount ?? null
@@ -348,7 +354,7 @@ export const searchActions = {
   }
 };
 
-// NOUVEAU : Actions pour gérer la prévisualisation
+// Actions pour gérer la prévisualisation
 export const previewActions = {
   // Sélectionner un exercice pour prévisualisation
   async selectExercise(uuid) {

@@ -137,7 +137,7 @@
     return match ? match.label : 'Ajouter un filtre';
   }
 
-  function buildOptions(baseList, counts, activeValue, formatLabel) {
+  function buildOptions(baseList, counts, activeValue, formatLabel, preferCountsOnly = false) {
     const options = [];
     const seen = new Set();
 
@@ -145,7 +145,10 @@
       const value = item.value ?? item;
       if (!value && value !== 0) return;
       const key = String(value);
-      const count = (counts && counts[key]) ?? item.count ?? 0;
+      const hasCounts = counts && Object.prototype.hasOwnProperty.call(counts, key);
+      const count = preferCountsOnly
+        ? (hasCounts ? counts[key] : 0)
+        : (hasCounts ? counts[key] : item.count ?? 0);
       options.push({
         value: key,
         count,
@@ -176,12 +179,38 @@
   $: difficultyCounts = $filterCounts.difficulty || {};
   $: authorCounts = $filterCounts.author || {};
 
-  $: moduleOptions = buildOptions($suggestions.modules || [], moduleCounts, $filters.module);
-  $: levelOptions = buildOptions($suggestions.levels || [], levelCounts, $filters.level);
+  $: useResultFilterCounts = $hasActiveFilters;
 
-  $: difficultyOptions = buildOptions($suggestions.difficulties || [], difficultyCounts, $filters.difficulty, formatDifficultyLabel);
+  $: moduleOptions = buildOptions(
+    $suggestions.modules || [],
+    moduleCounts,
+    $filters.module,
+    undefined,
+    useResultFilterCounts
+  );
+  $: levelOptions = buildOptions(
+    $suggestions.levels || [],
+    levelCounts,
+    $filters.level,
+    undefined,
+    useResultFilterCounts
+  );
 
-  $: authorOptions = buildOptions($suggestions.authors || [], authorCounts, $filters.author);
+  $: difficultyOptions = buildOptions(
+    $suggestions.difficulties || [],
+    difficultyCounts,
+    $filters.difficulty,
+    formatDifficultyLabel,
+    useResultFilterCounts
+  );
+
+  $: authorOptions = buildOptions(
+    $suggestions.authors || [],
+    authorCounts,
+    $filters.author,
+    undefined,
+    useResultFilterCounts
+  );
   $: filteredAuthors = authorOptions
     .filter((entry) => {
       const term = authorSearch.trim().toLowerCase();

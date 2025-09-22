@@ -27,7 +27,7 @@ function escapeLikePattern(value) {
   return value.replace(/[%_\\]/g, (ch) => `\\${ch}`);
 }
 
-function buildAuthorFilterClause(authorValue, tableAlias = 'e') {
+function buildAuthorFilterClause(authorValue, tableAlias = 'e', includeLeadingAnd = true) {
   const trimmed = (authorValue ?? '').trim();
   if (!trimmed) {
     return { clause: '', params: [] };
@@ -74,13 +74,123 @@ function buildAuthorFilterClause(authorValue, tableAlias = 'e') {
     return { clause: '', params: [] };
   }
 
-  const clause = ` AND EXISTS (
+  const clauseBody = `EXISTS (
     SELECT 1 FROM exercise_authors ea
     WHERE ea.uuid = ${tableAlias}.uuid
       AND (${conditions.join(' OR ')})
   )`;
 
+  const clause = includeLeadingAnd ? ` AND ${clauseBody}` : clauseBody;
+
   return { clause, params };
+}
+
+function buildSearchContext(query = '', filters = {}) {
+  const trimmedQuery = (query || '').trim();
+  const ftsQuery = prepareSearchQuery(trimmedQuery);
+  const useFts = Boolean(ftsQuery);
+  const useFallback = Boolean(trimmedQuery) && ftsQuery === null;
+
+  let fromClause = 'FROM exercises e';
+  const whereClauses = [];
+  const params = [];
+
+  if (useFts) {
+    fromClause = 'FROM exercises e JOIN fts_exercises fts ON e.uuid = fts.uuid';
+    whereClauses.push('fts_exercises MATCH ?');
+    params.push(ftsQuery);
+  } else {
+    whereClauses.push('1=1');
+  }
+
+  if (useFallback) {
+    const words = trimmedQuery.split(/\s+/).filter(Boolean);
+    words.forEach((word) => {
+      whereClauses.push(`(
+        UPPER(e.title) LIKE UPPER(?) OR 
+        UPPER(e.chapter) LIKE UPPER(?) OR 
+        UPPER(e.theme) LIKE UPPER(?) OR 
+        UPPER(e.module) LIKE UPPER(?) OR 
+        UPPER(e.uuid) LIKE UPPER(?)
+      )`);
+      const like = `%${word}%`;
+      params.push(like, like, like, like, like);
+    });
+  }
+
+  if (filters.subchapter) {
+    whereClauses.push('UPPER(e.subchapter) = UPPER(?)');
+    params.push(filters.subchapter);
+
+    if (filters.chapter) {
+      whereClauses.push('UPPER(e.chapter) = UPPER(?)');
+      params.push(filters.chapter);
+    }
+  } else if (filters.chapter) {
+    whereClauses.push('UPPER(e.chapter) = UPPER(?)');
+    params.push(filters.chapter);
+  }
+
+  if (filters.module) {
+    whereClauses.push('UPPER(e.module) = UPPER(?)');
+    params.push(filters.module);
+  }
+
+  if (filters.level) {
+    whereClauses.push('UPPER(e.level) = UPPER(?)');
+    params.push(filters.level);
+  }
+
+  if (filters.difficulty !== undefined && filters.difficulty !== null && filters.difficulty !== '') {
+    if (filters.difficulty === 'null' || filters.difficulty === 'NULL') {
+      whereClauses.push('e.difficulty IS NULL');
+    } else {
+      whereClauses.push('e.difficulty = ?');
+      params.push(parseInt(filters.difficulty, 10));
+    }
+  }
+
+  if (filters.author) {
+    const { clause, params: authorParams } = buildAuthorFilterClause(filters.author, 'e', false);
+    if (clause) {
+      whereClauses.push(clause);
+      params.push(...authorParams);
+    }
+  }
+
+  if (typeof filters.hasSolution === 'boolean') {
+    whereClauses.push('e.hasSolution = ?');
+    params.push(filters.hasSolution ? 1 : 0);
+  }
+
+  if (typeof filters.hasIndication === 'boolean') {
+    whereClauses.push('e.hasIndication = ?');
+    params.push(filters.hasIndication ? 1 : 0);
+  }
+
+  const selectBase = `SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.created_at, e.preview,
+                e.hasIndication, e.hasSolution`;
+
+  const selectClause = useFts
+    ? `${selectBase},
+                bm25(fts_exercises) as rank`
+    : selectBase;
+
+  const orderClause = useFts
+    ? 'ORDER BY rank'
+    : useFallback
+      ? 'ORDER BY e.title'
+      : 'ORDER BY e.created_at DESC';
+
+  return {
+    selectClause,
+    fromClause,
+    whereClause: whereClauses.join('\n  AND '),
+    params,
+    orderClause,
+    useFts,
+    useFallback
+  };
 }
 
 /**
@@ -90,117 +200,25 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
   let db;
   try {
     db = new Database(DB_PATH, { readonly: true });
-    
+
     const { limit = 20, offset = 0 } = options;
-    const searchQuery = prepareSearchQuery(query);
-    
-    let sql, params = [];
-    
-    if (query.trim() && searchQuery === null) {
-      // Fallback LIKE: AND sur chaque mot, OR entre champs
-      const words = query.trim().split(/\s+/).filter(Boolean);
-      sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.created_at, e.preview,
-                e.hasIndication, e.hasSolution
-        FROM exercises e
-        WHERE 1=1
-      `;
-      words.forEach((w) => {
-        sql += ` AND (
-          UPPER(e.title) LIKE UPPER(?) OR 
-          UPPER(e.chapter) LIKE UPPER(?) OR 
-          UPPER(e.theme) LIKE UPPER(?) OR 
-          UPPER(e.module) LIKE UPPER(?) OR 
-          UPPER(e.uuid) LIKE UPPER(?)
-        )`;
-        const like = `%${w}%`;
-        params.push(like, like, like, like, like);
-      });
-    } else if (searchQuery) {
-      sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.created_at, e.preview,
-                e.hasIndication, e.hasSolution,
-                bm25(fts_exercises) as rank
-        FROM exercises e JOIN fts_exercises fts ON e.uuid = fts.uuid
-        WHERE fts_exercises MATCH ?
-      `;
-      params.push(searchQuery);
-    } else {
-      sql = `
-        SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.created_at, e.preview,
-                e.hasIndication, e.hasSolution
-        FROM exercises e WHERE 1=1
-      `;
-    }
-    
-    // Filtres avec insensibilité à la casse
-    if (filters.subchapter) {
-      sql += ' AND UPPER(e.subchapter) = UPPER(?)';
-      params.push(filters.subchapter);
-      
-      if (filters.chapter) {
-        sql += ' AND UPPER(e.chapter) = UPPER(?)';
-        params.push(filters.chapter);
-      }
-    } else if (filters.chapter) {
-      sql += ' AND UPPER(e.chapter) = UPPER(?)';
-      params.push(filters.chapter);
-    }
-    
-    if (filters.module) {
-      sql += ' AND UPPER(e.module) = UPPER(?)';
-      params.push(filters.module);
-    }
-    
-    // MODIFIÉ : Filtre sur level au lieu de difficulty (pour le texte)
-    if (filters.level) {
-      sql += ' AND UPPER(e.level) = UPPER(?)';
-      params.push(filters.level);
-    }
-    
-    // NOUVEAU : Filtre sur difficulty numérique
-    if (filters.difficulty !== undefined && filters.difficulty !== null) {
-      if (filters.difficulty === 'null' || filters.difficulty === '') {
-        sql += ' AND e.difficulty IS NULL';
-      } else {
-        sql += ' AND e.difficulty = ?';
-        params.push(parseInt(filters.difficulty, 10));
-      }
-    }
-    
-    if (filters.author) {
-      const { clause, params: authorParams } = buildAuthorFilterClause(filters.author, 'e');
-      sql += clause;
-      params.push(...authorParams);
-    }
-    
-    if (typeof filters.hasSolution === 'boolean') {
-      sql += ' AND e.hasSolution = ?';
-      params.push(filters.hasSolution ? 1 : 0);
-    }
-    if (typeof filters.hasIndication === 'boolean') {
-      sql += ' AND e.hasIndication = ?';
-      params.push(filters.hasIndication ? 1 : 0);
-    }
-    
-    // Ordre et Pagination
-    if (searchQuery) {
-      sql += ' ORDER BY rank';
-    } else if (query.trim() && searchQuery === null) {
-      sql += ' ORDER BY e.title';
-    } else {
-      sql += ' ORDER BY e.created_at DESC';
-    }
-    
-    sql += ' LIMIT ? OFFSET ?';
-    params.push(limit, offset);
-    
+    const context = buildSearchContext(query, filters);
+
+    const sql = `
+      ${context.selectClause}
+      ${context.fromClause}
+      WHERE ${context.whereClause}
+      ${context.orderClause}
+      LIMIT ? OFFSET ?
+    `;
+    const params = [...context.params, limit, offset];
+
     console.log('Search SQL:', sql);
     console.log('Search params:', params);
-    
+
     const results = db.prepare(sql).all(...params);
     return results;
-    
+
   } catch (error) {
     console.error('Database error in searchExercises:', error);
     throw new Error('Erreur de recherche');
@@ -216,85 +234,15 @@ export async function getExerciseCount(query = '', filters = {}) {
   let db;
   try {
     db = new Database(DB_PATH, { readonly: true });
-    
-    const searchQuery = prepareSearchQuery(query);
-    let sql, params = [];
-    
-    if (query.trim() && searchQuery === null) {
-      const words = query.trim().split(/\s+/).filter(Boolean);
-      sql = `SELECT COUNT(*) as count FROM exercises e WHERE 1=1`;
-      words.forEach((w) => {
-        sql += ` AND (
-          UPPER(e.title) LIKE UPPER(?) OR 
-          UPPER(e.chapter) LIKE UPPER(?) OR 
-          UPPER(e.theme) LIKE UPPER(?) OR 
-          UPPER(e.module) LIKE UPPER(?) OR 
-          UPPER(e.uuid) LIKE UPPER(?)
-        )`;
-        const like = `%${w}%`;
-        params.push(like, like, like, like, like);
-      });
-    } else if (searchQuery) {
-      sql = `
-        SELECT COUNT(*) as count FROM exercises e JOIN fts_exercises fts ON e.uuid = fts.uuid
-        WHERE fts_exercises MATCH ?
-      `;
-      params.push(searchQuery);
-    } else {
-      sql = 'SELECT COUNT(*) as count FROM exercises e WHERE 1=1';
-    }
-    
-    // Mêmes filtres que dans searchExercises
-    if (filters.subchapter) {
-      sql += ' AND UPPER(e.subchapter) = UPPER(?)';
-      params.push(filters.subchapter);
-      
-      if (filters.chapter) {
-        sql += ' AND UPPER(e.chapter) = UPPER(?)';
-        params.push(filters.chapter);
-      }
-    } else if (filters.chapter) {
-      sql += ' AND UPPER(e.chapter) = UPPER(?)';
-      params.push(filters.chapter);
-    }
-    
-    if (filters.module) {
-      sql += ' AND UPPER(e.module) = UPPER(?)';
-      params.push(filters.module);
-    }
-    
-    // MODIFIÉ : Filtre sur level au lieu de difficulty
-    if (filters.level) {
-      sql += ' AND UPPER(e.level) = UPPER(?)';
-      params.push(filters.level);
-    }
-    
-    // NOUVEAU : Filtre sur difficulty numérique
-    if (filters.difficulty !== undefined && filters.difficulty !== null) {
-      if (filters.difficulty === 'null' || filters.difficulty === '') {
-        sql += ' AND e.difficulty IS NULL';
-      } else {
-        sql += ' AND e.difficulty = ?';
-        params.push(parseInt(filters.difficulty, 10));
-      }
-    }
-    
-    if (filters.author) {
-      const { clause, params: authorParams } = buildAuthorFilterClause(filters.author, 'e');
-      sql += clause;
-      params.push(...authorParams);
-    }
-    
-    if (typeof filters.hasSolution === 'boolean') {
-      sql += ' AND e.hasSolution = ?';
-      params.push(filters.hasSolution ? 1 : 0);
-    }
-    if (typeof filters.hasIndication === 'boolean') {
-      sql += ' AND e.hasIndication = ?';
-      params.push(filters.hasIndication ? 1 : 0);
-    }
-    
-    const result = db.prepare(sql).get(...params);
+
+    const context = buildSearchContext(query, filters);
+    const sql = `
+      SELECT COUNT(*) as count
+      ${context.fromClause}
+      WHERE ${context.whereClause}
+    `;
+
+    const result = db.prepare(sql).get(...context.params);
     return result.count;
     
   } catch (error) {
@@ -703,6 +651,76 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
     if (db) db.close();
   }
 }
+
+export async function getFilterCounts(query = '', filters = {}) {
+  let db;
+  try {
+    db = new Database(DB_PATH, { readonly: true });
+
+    const context = buildSearchContext(query, filters);
+
+    const baseFromWhere = `
+      ${context.fromClause}
+      WHERE ${context.whereClause}
+    `;
+
+    const moduleRows = db.prepare(`
+      SELECT e.module as value, COUNT(*) as count
+      ${baseFromWhere}
+        AND e.module IS NOT NULL AND TRIM(e.module) != ''
+      GROUP BY e.module
+    `).all(...context.params);
+
+    const levelRows = db.prepare(`
+      SELECT e.level as value, COUNT(*) as count
+      ${baseFromWhere}
+        AND e.level IS NOT NULL AND TRIM(e.level) != ''
+      GROUP BY e.level
+    `).all(...context.params);
+
+    const difficultyRows = db.prepare(`
+      SELECT e.difficulty as value, COUNT(*) as count
+      ${baseFromWhere}
+      GROUP BY e.difficulty
+    `).all(...context.params);
+
+    const authorRows = db.prepare(`
+      SELECT e.author as value, COUNT(*) as count
+      ${baseFromWhere}
+        AND e.author IS NOT NULL AND TRIM(e.author) != ''
+      GROUP BY e.author
+    `).all(...context.params);
+
+    const toMap = (rows, transformValue = (v) => v) => {
+      const map = {};
+      rows.forEach(({ value, count }) => {
+        const key = transformValue(value);
+        if (key === null || key === undefined) return;
+        if (String(key).trim() === '') return;
+        map[key] = count;
+      });
+      return map;
+    };
+
+    return {
+      module: toMap(moduleRows, (v) => v),
+      level: toMap(levelRows, (v) => v),
+      difficulty: toMap(difficultyRows, (v) => (v === null || v === undefined ? 'null' : String(v))),
+      author: toMap(authorRows, (v) => v)
+    };
+
+  } catch (error) {
+    console.error('Database error in getFilterCounts:', error);
+    return {
+      module: {},
+      level: {},
+      difficulty: {},
+      author: {}
+    };
+  } finally {
+    if (db) db.close();
+  }
+}
 export async function getSuggestions(type = 'all', limit = 10) {
   let db;
   try {
@@ -891,5 +909,127 @@ export async function getExerciseMetadata(uuid) {
         console.warn('Error closing database:', closeError);
       }
     }
+  }
+}
+
+// Ajout dans queries.js
+
+/**
+ * Calcule les comptages contextuels pour chaque filtre
+ * Chaque filtre montre combien d'exercices sont disponibles en tenant compte des autres filtres actifs
+ */
+export async function getContextualFilterCounts(query = '', filters = {}) {
+  let db;
+  try {
+    db = new Database(DB_PATH, { readonly: true });
+
+    const results = {
+      module: {},
+      level: {},
+      difficulty: {},
+      author: {}
+    };
+
+    // Pour chaque type de filtre, on calcule les comptages en excluant ce filtre spécifique
+    const filterTypes = ['module', 'level', 'difficulty', 'author'];
+
+    for (const excludeFilter of filterTypes) {
+      // Créer une copie des filtres en excluant le filtre actuel
+      const contextFilters = { ...filters };
+      delete contextFilters[excludeFilter];
+
+      // Construire le contexte de recherche sans ce filtre
+      const context = buildSearchContext(query, contextFilters);
+
+      let countQuery = '';
+      let groupBy = '';
+      let additionalWhere = '';
+
+      switch (excludeFilter) {
+        case 'module':
+          countQuery = 'e.module as value';
+          groupBy = 'e.module';
+          additionalWhere = 'AND e.module IS NOT NULL AND TRIM(e.module) != \'\'';
+          break;
+
+        case 'level':
+          countQuery = 'e.level as value';
+          groupBy = 'e.level';
+          additionalWhere = 'AND e.level IS NOT NULL AND TRIM(e.level) != \'\'';
+          break;
+
+        case 'difficulty':
+          countQuery = 'e.difficulty as value';
+          groupBy = 'e.difficulty';
+          additionalWhere = ''; // On inclut les NULL
+          break;
+
+        case 'author':
+          // Pour les auteurs, on doit joindre avec exercise_authors
+          countQuery = 'ea.author_display as value';
+          groupBy = 'ea.author_display';
+          additionalWhere = 'AND ea.author_display IS NOT NULL AND TRIM(ea.author_display) != \'\'';
+          break;
+      }
+
+      // Construire la requête SQL
+      let sql;
+      let params = [...context.params];
+
+      if (excludeFilter === 'author') {
+        // Cas spécial pour les auteurs avec jointure
+        sql = `
+          SELECT ${countQuery}, COUNT(DISTINCT e.uuid) as count
+          ${context.fromClause}
+          LEFT JOIN exercise_authors ea ON ea.uuid = e.uuid
+          WHERE ${context.whereClause}
+            ${additionalWhere}
+          GROUP BY ${groupBy}
+        `;
+      } else {
+        sql = `
+          SELECT ${countQuery}, COUNT(*) as count
+          ${context.fromClause}
+          WHERE ${context.whereClause}
+            ${additionalWhere}
+          GROUP BY ${groupBy}
+        `;
+      }
+
+      try {
+        const rows = db.prepare(sql).all(...params);
+        
+        // Transformer les résultats
+        rows.forEach(({ value, count }) => {
+          let key = value;
+          
+          // Traitement spécial pour difficulty
+          if (excludeFilter === 'difficulty') {
+            key = (value === null || value === undefined) ? 'null' : String(value);
+          }
+          
+          if (key !== null && key !== undefined && String(key).trim() !== '') {
+            results[excludeFilter][key] = count;
+          }
+        });
+
+      } catch (err) {
+        console.warn(`Error counting ${excludeFilter}:`, err);
+        results[excludeFilter] = {};
+      }
+    }
+
+    return results;
+
+  } catch (error) {
+    console.error('Database error in getContextualFilterCounts:', error);
+    return {
+      module: {},
+      level: {},
+      difficulty: {},
+      author: {}
+    };
+  } finally {
+    if (db) db.close();
   }
 }
