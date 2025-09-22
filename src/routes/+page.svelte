@@ -528,30 +528,28 @@
               {/if}
             </div>
             <div class="filters-navigation">
-              <div class="filters-navigation-desktop">
-                <ChapterNavigation
-                  bind:selectedLevel={$filters.level}
-                  bind:selectedModule={$filters.module}
-                  bind:selectedChapter={$filters.chapter}
-                  bind:selectedSubchapter={$filters.subchapter}
-                  query={$searchQuery}
-                  activeFilters={$filters}
-                  on:navigate={handleChapterNavigation}
-                  compact={true}
-                />
-              </div>
-              <div class="filters-navigation-mobile">
-                <MobileChapterNav
-                  bind:selectedLevel={$filters.level}
-                  bind:selectedModule={$filters.module}
-                  bind:selectedChapter={$filters.chapter}
-                  bind:selectedSubchapter={$filters.subchapter}
-                  query={$searchQuery}
-                  activeFilters={$filters}
-                  on:navigate={handleChapterNavigation}
-                  embedded={true}
-                />
-              </div>
+              <ChapterNavigation
+                class="filters-navigation-desktop"
+                bind:selectedLevel={$filters.level}
+                bind:selectedModule={$filters.module}
+                bind:selectedChapter={$filters.chapter}
+                bind:selectedSubchapter={$filters.subchapter}
+                query={$searchQuery}
+                activeFilters={$filters}
+                on:navigate={handleChapterNavigation}
+                compact={true}
+              />
+              <MobileChapterNav
+                class="filters-navigation-mobile"
+                bind:selectedLevel={$filters.level}
+                bind:selectedModule={$filters.module}
+                bind:selectedChapter={$filters.chapter}
+                bind:selectedSubchapter={$filters.subchapter}
+                query={$searchQuery}
+                activeFilters={$filters}
+                on:navigate={handleChapterNavigation}
+                embedded={true}
+              />
             </div>
           </section>
 
@@ -1113,12 +1111,8 @@
   .filters-section-header { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
   .filters-navigation-desktop {
     display:none;
-    border:1px solid #e5e7eb;
-    border-radius:0.75rem;
-    padding:1rem;
     max-height:24rem;
     overflow:auto;
-    background:#f9fafb;
   }
 
   .filters-navigation-mobile {
@@ -1178,6 +1172,7 @@
   .filters-grid { grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; }
 
   @media (min-width:768px) {
+    .filters-navigation { border:1px solid #e5e7eb; border-radius:0.75rem; padding:1rem; background:#f9fafb; }
     .filters-navigation-desktop { display:block; }
     .filters-navigation-mobile { display:none; }
     .filters-accordion { display:none; }
