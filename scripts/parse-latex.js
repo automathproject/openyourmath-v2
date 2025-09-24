@@ -448,7 +448,7 @@ class SkipTracker {
 
   final() {
     if (this.count > this.lastReportedCount) {
-      console.log(`⭐️ Skipped ${this.count} files (up to date) - final`);
+      console.log(`⭐️ Skipped ${this.count} files (up to date)`);
     }
   }
 
@@ -457,9 +457,17 @@ class SkipTracker {
   }
 }
 
+// NOUVEAU : Instance globale pour éviter les multiples "final"
+let globalSkipTracker = null;
+
 async function traverseDirectory(inputDir, outputDir, cacheManager, options = {}) {
   const stats = { processed: 0, skipped: 0, errors: 0 };
-  const skipTracker = new SkipTracker(200); // Rapport tous les 200 fichiers
+  
+  // Utiliser le tracker global ou en créer un nouveau si on est au niveau racine
+  const isRoot = globalSkipTracker === null;
+  if (isRoot) {
+    globalSkipTracker = new SkipTracker(200);
+  }
   
   await fsPromises.mkdir(outputDir, { recursive: true });
   const entries = await fsPromises.readdir(inputDir, { withFileTypes: true });
@@ -477,7 +485,7 @@ async function traverseDirectory(inputDir, outputDir, cacheManager, options = {}
       const result = await processFile(inputPath, outputPath, cacheManager, options);
       
       if (result.skipped) {
-        skipTracker.increment();
+        globalSkipTracker.increment();
         stats.skipped++;
       } else if (result.error) {
         stats.errors++;
@@ -487,8 +495,11 @@ async function traverseDirectory(inputDir, outputDir, cacheManager, options = {}
     }
   }
   
-  // Affichage final des fichiers skippés restants
-  skipTracker.final();
+  // Affichage final seulement au niveau racine
+  if (isRoot) {
+    globalSkipTracker.final();
+    globalSkipTracker = null; // Reset pour la prochaine exécution
+  }
   
   return stats;
 }
