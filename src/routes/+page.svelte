@@ -381,6 +381,13 @@
     applyAuthorFilter(value);
   }
 
+  function handleKeyboardActivate(event, callback) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      callback();
+    }
+  }
+
   function toggleFiltersPanel() {
     if (isDesktop) {
       if (isFilterPanelOpen) {
@@ -510,9 +517,9 @@
       class:filters-sidebar--closed={isDesktop && !isFilterPanelOpen}
       aria-label="Filtres de recherche"
     >
-      <div class="filters-panel" on:click|stopPropagation>
+      <div class="filters-panel" role="region" aria-label="Panneau de filtres">
         <div class="filters-header">
-          <h2>Filtres</h2>
+          <h3>Filtres</h3>
           <button type="button" class="filters-close lg:hidden" on:click={closeFilters}>
             Fermer ✕
           </button>
@@ -520,7 +527,6 @@
         <div class="filters-body">
           <section class="filters-section">
             <div class="filters-section-header">
-              <h3>Navigation hiérarchique</h3>
               {#if !$breadcrumb.isEmpty}
                 <button type="button" class="btn btn-text text-sm text-blue-600" on:click={clearHierarchyFilters}>
                   Réinitialiser
@@ -566,8 +572,12 @@
                       <span
                         class="filters-chip-remove"
                         role="button"
+                        tabindex="0"
                         aria-label={`Retirer ${chip.label}`}
                         on:click|stopPropagation={() => removeFilterChip(chip.key)}
+                        on:keydown|stopPropagation={(event) =>
+                          handleKeyboardActivate(event, () => removeFilterChip(chip.key))
+                        }
                       >×</span>
                     </button>
                   {/each}
@@ -579,13 +589,22 @@
             </div>
 
             {#if showFilterMenu}
-              <div class="filters-menu-overlay md:hidden" on:click={closeFilterMenu}>
+              <div
+                class="filters-menu-overlay md:hidden"
+                role="button"
+                tabindex="0"
+                aria-label="Fermer l'ajout de filtre"
+                on:click={closeFilterMenu}
+                on:keydown={(event) => handleKeyboardActivate(event, closeFilterMenu)}
+              >
                 <div
                   class="filters-menu"
                   role="dialog"
                   aria-modal="true"
                   aria-label="Ajouter un filtre"
+                  tabindex="0"
                   on:click|stopPropagation
+                  on:keydown|stopPropagation
                 >
                   <div class="filters-menu-header">
                     {#if filterMenuCategory}
@@ -887,7 +906,14 @@
     </aside>
 
     {#if isFilterPanelOpen && !isDesktop}
-      <div class="filters-backdrop" on:click={closeFilters} aria-hidden="true"></div>
+      <div
+        class="filters-backdrop"
+        role="button"
+        tabindex="0"
+        aria-label="Fermer les filtres"
+        on:click={closeFilters}
+        on:keydown={(event) => handleKeyboardActivate(event, closeFilters)}
+      ></div>
     {/if}
 
     <div class="results-section flex-1" style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}>
@@ -1109,19 +1135,7 @@
   .filters-section { display:flex; flex-direction:column; gap:1rem; }
   .filters-section h3 { font-size:1rem; font-weight:600; color:#1f2937; }
   .filters-section-header { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
-  .filters-navigation-desktop {
-    display:none;
-    max-height:24rem;
-    overflow:auto;
-  }
-
-  .filters-navigation-mobile {
-    display:block;
-    border:1px solid #e5e7eb;
-    border-radius:0.75rem;
-    padding:1rem;
-    background:#f9fafb;
-  }
+  .filters-navigation { border:1px solid #e5e7eb; border-radius:0.75rem; padding:1rem; background:#f9fafb; }
 
   .filters-chips { border:1px solid #e5e7eb; border-radius:0.75rem; background:#f9fafb; padding:1rem; display:flex; flex-direction:column; gap:0.75rem; }
   .filters-chips-title { font-weight:600; color:#1f2937; font-size:0.9rem; }
@@ -1172,7 +1186,7 @@
   .filters-grid { grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; }
 
   @media (min-width:768px) {
-    .filters-navigation { border:1px solid #e5e7eb; border-radius:0.75rem; padding:1rem; background:#f9fafb; }
+    .filters-navigation { border:none; border-radius:0; padding:0; background:transparent; }
     .filters-navigation-desktop { display:block; }
     .filters-navigation-mobile { display:none; }
     .filters-accordion { display:none; }
