@@ -385,7 +385,7 @@ async function processFile(inputPath, outputPath, cacheManager, options = {}) {
   try {
     const { incremental = false } = options;
     if (incremental && await cacheManager.isUpToDate(inputPath, outputPath)) {
-      console.log(`⭐️ Skipped (up to date): ${path.relative(CONFIG.content.inputDir, inputPath)}`);
+      // Plus de log individuel ici - sera géré par le système de comptage groupé
       return { skipped: true };
     }
     
@@ -428,12 +428,42 @@ async function processFile(inputPath, outputPath, cacheManager, options = {}) {
   }
 }
 
-// Le reste du fichier (traverseDirectory, main) est INCHANGÉ
+/**
+ * NOUVEAU : Classe pour gérer l'affichage groupé des fichiers skippés
+ */
+class SkipTracker {
+  constructor(reportInterval = 200) {
+    this.count = 0;
+    this.reportInterval = reportInterval;
+    this.lastReportedCount = 0;
+  }
+
+  increment() {
+    this.count++;
+    if (this.count - this.lastReportedCount >= this.reportInterval) {
+      console.log(`⭐️ Skipped ${this.count} files (up to date)`);
+      this.lastReportedCount = this.count;
+    }
+  }
+
+  final() {
+    if (this.count > this.lastReportedCount) {
+      console.log(`⭐️ Skipped ${this.count} files (up to date) - final`);
+    }
+  }
+
+  getCount() {
+    return this.count;
+  }
+}
 
 async function traverseDirectory(inputDir, outputDir, cacheManager, options = {}) {
   const stats = { processed: 0, skipped: 0, errors: 0 };
+  const skipTracker = new SkipTracker(200); // Rapport tous les 200 fichiers
+  
   await fsPromises.mkdir(outputDir, { recursive: true });
   const entries = await fsPromises.readdir(inputDir, { withFileTypes: true });
+  
   for (const entry of entries) {
     const inputPath = path.join(inputDir, entry.name);
     if (entry.isDirectory()) {
@@ -445,11 +475,21 @@ async function traverseDirectory(inputDir, outputDir, cacheManager, options = {}
     } else if (entry.isFile() && path.extname(entry.name).toLowerCase() === '.tex') {
       const outputPath = path.join(outputDir, path.basename(entry.name, '.tex') + '.json');
       const result = await processFile(inputPath, outputPath, cacheManager, options);
-      if (result.skipped) stats.skipped++;
-      else if (result.error) stats.errors++;
-      else stats.processed++;
+      
+      if (result.skipped) {
+        skipTracker.increment();
+        stats.skipped++;
+      } else if (result.error) {
+        stats.errors++;
+      } else {
+        stats.processed++;
+      }
     }
   }
+  
+  // Affichage final des fichiers skippés restants
+  skipTracker.final();
+  
   return stats;
 }
 
@@ -460,15 +500,24 @@ async function main() {
     inputPath: args.find(arg => !arg.startsWith('--')) || CONFIG.content.inputDir,
     outputPath: args.find((arg, i) => !arg.startsWith('--') && i > 0) || CONFIG.content.cacheDir
   };
+  
   console.log('🚀 OpenYourMath V2 - LaTeX to JSON Parser');
   console.log(`📁 Input:  ${options.inputPath}`);
   console.log(`📁 Output: ${options.outputPath}`);
   console.log(`⚡ Mode:   ${options.incremental ? 'incremental' : 'full'}`);
+  
+  if (options.incremental) {
+    console.log(`📊 Skip reports: every 200 files`);
+  }
+  
   console.log('');
+  
   const cacheManager = new CacheManager(CONFIG.content.cacheDir);
+  
   try {
     const inputStats = await fsPromises.stat(options.inputPath);
     let stats;
+    
     if (inputStats.isFile()) {
       if (!options.inputPath.endsWith('.tex')) throw new Error('Input file must be .tex');
       const outputPath = path.join(options.outputPath, path.basename(options.inputPath, '.tex') + '.json');
@@ -477,12 +526,16 @@ async function main() {
     } else {
       stats = await traverseDirectory(options.inputPath, options.outputPath, cacheManager, options);
     }
+    
     await cacheManager.updateMetadata(stats);
+    
     console.log('\n📊 Summary:');
     console.log(`✅ Processed: ${stats.processed} files`);
     console.log(`⭐️ Skipped:   ${stats.skipped} files`);
     console.log(`⌐ Errors:    ${stats.errors} files`);
+    
     if (stats.errors > 0) process.exit(1);
+    
   } catch (error) {
     console.error('💥 Fatal error:', error.message);
     process.exit(1);
