@@ -502,11 +502,6 @@
           Effacer
         </button>
       {/if}
-      {#if $hasActiveFilters}
-        <button type="button" class="btn btn-text text-sm text-blue-600" on:click={searchActions.clearAllFilters}>
-          Effacer tout
-        </button>
-      {/if}
     </div>
   </div>
 
@@ -520,16 +515,23 @@
       <div class="filters-panel" role="region" aria-label="Panneau de filtres">
         <div class="filters-header">
           <h3>Filtres</h3>
-          <button type="button" class="filters-close lg:hidden" on:click={closeFilters}>
-            Fermer ✕
-          </button>
+          <div class="filters-header-actions">
+            {#if $hasActiveFilters || !$breadcrumb.isEmpty}
+              <button type="button" class="filters-reset" on:click={searchActions.clearAllFilters}>
+                Réinitialiser
+              </button>
+            {/if}
+            <button type="button" class="filters-close lg:hidden" on:click={closeFilters}>
+              Fermer ✕
+            </button>
+          </div>
         </div>
         <div class="filters-body">
           <section class="filters-section">
             <div class="filters-section-header">
               {#if !$breadcrumb.isEmpty}
-                <button type="button" class="btn btn-text text-sm text-blue-600" on:click={clearHierarchyFilters}>
-                  Réinitialiser
+                <button type="button" class="filters-section-reset" on:click={clearHierarchyFilters}>
+                  Réinitialiser la navigation
                 </button>
               {/if}
             </div>
@@ -1122,31 +1124,36 @@
   }
   .preview-sticky { position:sticky; top:2rem; height:calc(100vh - 4rem); }
 
-  .filters-sidebar { position:fixed; top:0; bottom:0; left:0; width:min(90vw, 22rem); max-width:22rem; padding:1.25rem; display:flex; flex-direction:column; transform:translateX(-110%); transition:transform 0.25s ease-in-out; z-index:80; pointer-events:none; }
+  .filters-sidebar { position:fixed; top:0; bottom:0; left:0; width:min(90vw, 22rem); max-width:22rem; padding:1rem; display:flex; flex-direction:column; transform:translateX(-110%); transition:transform 0.25s ease-in-out; z-index:80; pointer-events:none; }
   .filters-sidebar--open { transform:translateX(0); pointer-events:auto; }
   .filters-sidebar--closed { display:none; }
   .filters-backdrop { position:fixed; inset:0; background:rgba(17,24,39,0.45); z-index:70; }
-  .filters-panel { background:#fff; border-radius:1rem; width:100%; box-shadow:0 20px 45px rgba(15,23,42,0.2); display:flex; flex-direction:column; gap:1.5rem; padding:1.5rem; max-height:calc(100vh - 2.5rem); overflow-y:auto; }
-  .filters-header { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
-  .filters-header h2 { font-size:1.25rem; font-weight:600; color:#111827; }
+  .filters-panel { background:#fff; border-radius:1rem; width:100%; box-shadow:0 20px 45px rgba(15,23,42,0.2); display:flex; flex-direction:column; gap:1.25rem; padding:1.25rem; max-height:calc(100vh - 2.5rem); overflow-y:auto; }
+  .filters-header { display:flex; align-items:center; justify-content:space-between; gap:0.75rem; }
+  .filters-header-actions { display:flex; align-items:center; gap:0.5rem; }
+  .filters-reset { padding:0.3rem 0.6rem; border:1px solid #d1d5db; border-radius:0.5rem; background:#f9fafb; color:#1d4ed8; font-size:0.85rem; font-weight:500; cursor:pointer; }
+  .filters-reset:hover { background:#eef2ff; }
+  .filters-header h3 { font-size:1.15rem; font-weight:600; color:#111827; }
   .filters-close { color:#111827; background:#f3f4f6; border:1px solid #d1d5db; border-radius:0.5rem; padding:0.5rem 0.75rem; font-size:0.875rem; cursor:pointer; transition:background-color .2s ease; }
   .filters-close:hover { background:#e5e7eb; }
-  .filters-body { display:flex; flex-direction:column; gap:2rem; }
-  .filters-section { display:flex; flex-direction:column; gap:1rem; }
+  .filters-body { display:flex; flex-direction:column; gap:1.25rem; }
+  .filters-section { display:flex; flex-direction:column; gap:0.75rem; }
   .filters-section h3 { font-size:1rem; font-weight:600; color:#1f2937; }
-  .filters-section-header { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
-  .filters-navigation { border:1px solid #e5e7eb; border-radius:0.75rem; padding:1rem; background:#f9fafb; }
+  .filters-section-header { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; }
+  .filters-section-reset { padding:0.3rem 0.4rem; background:none; border:none; color:#2563eb; font-size:0.85rem; font-weight:500; cursor:pointer; }
+  .filters-section-reset:hover { text-decoration:underline; }
+  .filters-navigation { border:1px solid #e5e7eb; border-radius:0.75rem; padding:0.75rem; background:#f9fafb; }
 
-  .filters-chips { border:1px solid #e5e7eb; border-radius:0.75rem; background:#f9fafb; padding:1rem; display:flex; flex-direction:column; gap:0.75rem; }
+  .filters-chips { border:1px solid #e5e7eb; border-radius:0.75rem; background:#f9fafb; padding:0.75rem; display:flex; flex-direction:column; gap:0.6rem; }
   .filters-chips-title { font-weight:600; color:#1f2937; font-size:0.9rem; }
-  .filters-chips-list { display:flex; flex-wrap:wrap; gap:0.5rem; }
+  .filters-chips-list { display:flex; flex-wrap:wrap; gap:0.4rem; }
   .filters-chips-empty { font-size:0.875rem; color:#6b7280; }
   .filters-chip { display:inline-flex; align-items:center; gap:0.5rem; padding:0.45rem 0.75rem; border-radius:9999px; border:1px solid #d1d5db; background:#fff; box-shadow:0 1px 2px rgba(15,23,42,0.08); font-size:0.85rem; color:#1f2937; cursor:pointer; }
   .filters-chip:hover { background:#f3f4f6; }
   .filters-chip-label { display:flex; align-items:center; gap:0.35rem; }
   .filters-chip-remove { display:inline-flex; align-items:center; justify-content:center; width:1.25rem; height:1.25rem; border-radius:9999px; background:#e5e7eb; color:#374151; font-weight:600; cursor:pointer; }
   .filters-chip-remove:hover { background:#d1d5db; }
-  .filters-add-chip { align-self:flex-start; display:inline-flex; align-items:center; gap:0.35rem; padding:0.5rem 0.9rem; border-radius:0.75rem; border:1px dashed #94a3b8; background:#fff; color:#1f2937; font-weight:500; cursor:pointer; }
+  .filters-add-chip { align-self:flex-start; display:inline-flex; align-items:center; gap:0.3rem; padding:0.45rem 0.8rem; border-radius:0.75rem; border:1px dashed #94a3b8; background:#fff; color:#1f2937; font-weight:500; cursor:pointer; }
   .filters-add-chip:hover { background:#f8fafc; }
 
   @media (min-width:1024px) {
@@ -1183,7 +1190,7 @@
   .filters-menu-apply:disabled { background:#c7d2fe; color:#1f2937; cursor:not-allowed; }
   .filters-menu-empty { font-size:0.85rem; color:#6b7280; text-align:center; }
 
-  .filters-grid { grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; }
+  .filters-grid { grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.75rem; }
 
   @media (min-width:768px) {
     .filters-navigation { border:none; border-radius:0; padding:0; background:transparent; }
@@ -1191,7 +1198,7 @@
     .filters-navigation-mobile { display:none; }
     .filters-accordion { display:none; }
   }
-  .filters-field { display:flex; flex-direction:column; gap:0.5rem; position:relative; }
+  .filters-field { display:flex; flex-direction:column; gap:0.4rem; position:relative; }
   .filters-field label { font-size:0.875rem; font-weight:500; color:#374151; }
   .filters-suggestions { position:absolute; z-index:10; left:0; right:0; top:100%; margin-top:0.25rem; background:#fff; border:1px solid #e5e7eb; border-radius:0.5rem; box-shadow:0 10px 30px rgba(15,23,42,0.1); max-height:12rem; overflow:auto; }
   .filters-suggestions button { width:100%; text-align:left; padding:0.5rem 0.75rem; font-size:0.875rem; color:#1f2937; background:transparent; border:none; }
