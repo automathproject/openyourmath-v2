@@ -71,7 +71,10 @@
     <div class="header-content">
       <div class="header-brand">
         <h1 class="brand-title">
-          <a href="/" class="brand-link">OpenYourMath</a>
+          <a href="/" class="brand-link">
+            <span class="brand-icon" aria-hidden="true"></span>
+            <span>OpenYourMath</span>
+          </a>
         </h1>
       </div>
       
@@ -253,10 +256,21 @@
     color: #111827;
     text-decoration: none;
     transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
   }
-  
+
   .brand-link:hover {
     color: #2563eb;
+  }
+
+  .brand-icon {
+    display: inline-block;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 9999px;
+    background: #53c7c4;
   }
   
   /* ==============================================
