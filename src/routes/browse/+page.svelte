@@ -4,6 +4,7 @@
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
+  import MathRenderer from '$lib/components/MathRenderer.svelte';
   
   let chapterStructure = [];
   let selectedChapter = null;
@@ -318,7 +319,9 @@
               <div class="result-header">
                 <div>
                   <h3 class="result-title">
-                    <a href="/exercise/{exercise.uuid}" class="hover:underline">{exercise.title}</a>
+                    <a href="/exercise/{exercise.uuid}" class="hover:underline">
+                      <MathRenderer content={exercise.title} inline={true} />
+                    </a>
                   </h3>
                   <div class="result-metadata">
                     {#if exercise.chapter && exercise.chapter !== selectedChapter}<span class="result-badge">📚 {exercise.chapter}</span>{/if}

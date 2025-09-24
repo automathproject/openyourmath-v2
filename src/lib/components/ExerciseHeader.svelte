@@ -2,6 +2,7 @@
 <script>
   import Breadcrumb from './Breadcrumb.svelte';
   import NameRenderer from './NameRenderer.svelte';
+  import MathRenderer from './MathRenderer.svelte';
 
   export let exercise = {};
   export let variant = 'full'; // 'full' | 'preview' | 'simple'
@@ -52,7 +53,7 @@
   <!-- Top row -->
   <div class="header-top">
     <h1 class="exercise-title {variant !== 'full' ? 'text-2xl mb-6' : ''}">
-      {exercise?.title || 'Exercice'}
+      <MathRenderer content={exercise?.title || 'Exercice'} inline={true} />
     </h1>
 
     <!-- Absolutely positioned, removed from normal flow -->

@@ -1,6 +1,7 @@
 <!-- src/lib/components/ExerciseListEditor.svelte -->
 <script>
   import { createEventDispatcher } from 'svelte';
+  import MathRenderer from './MathRenderer.svelte';
 
   export let exercises = [];
   export let selectedIndex = 0;
@@ -272,7 +273,10 @@
 
           <div class="exercise-info">
             <h4 class="exercise-title">
-              {exercise.title || `Exercice ${exercise.uuid?.slice(0, 8) ?? ''}...`}
+              <MathRenderer
+                content={exercise.title || `Exercice ${exercise.uuid?.slice(0, 8) ?? ''}...`}
+                inline={true}
+              />
             </h4>
 
             <div class="exercise-meta">

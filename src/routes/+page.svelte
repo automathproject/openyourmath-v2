@@ -998,7 +998,9 @@
 
               <div class="result-header">
                 <div>
-                  <h3 class="result-title">{exercise.title}</h3>
+                  <h3 class="result-title">
+                    <MathRenderer content={exercise.title} inline={true} />
+                  </h3>
                   <div class="result-metadata">
                     {#if exercise.module}
                       <span class="result-badge">📖 {exercise.module}</span>

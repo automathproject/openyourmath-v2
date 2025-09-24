@@ -1,6 +1,7 @@
 <!-- src/routes/exercise/[uuid]/+page.svelte -->
 <script>
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
+  import MathRenderer from '$lib/components/MathRenderer.svelte';
   import { page } from '$app/stores';
   
   export let data;
@@ -39,7 +40,7 @@
               class="similar-exercise-card"
             >
               <h3 class="similar-exercise-title">
-                {exercise.title}
+                <MathRenderer content={exercise.title} inline={true} />
               </h3>
               <div class="similar-exercise-metadata">
                 <span class="similar-exercise-badge">

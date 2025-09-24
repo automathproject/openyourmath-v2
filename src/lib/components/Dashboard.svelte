@@ -1,6 +1,7 @@
 <!-- src/lib/components/Dashboard.svelte -->
 <script>
   import { onMount } from 'svelte';
+  import MathRenderer from './MathRenderer.svelte';
   
   let stats = null;
   let trending = [];
@@ -232,7 +233,7 @@
                 <div class="trending-content">
                   <h4 class="trending-title">
                     <a href="/exercise/{exercise.uuid}">
-                      {exercise.title}
+                      <MathRenderer content={exercise.title} inline={true} />
                     </a>
                   </h4>
                   
