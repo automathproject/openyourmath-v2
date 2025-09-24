@@ -117,7 +117,7 @@ export function useSearchDebounce(searchFunction, delay = 300) {
  * @param {number} delay - Délai en millisecondes
  * @returns {Object} - Objet avec fonction débouncée et état de chargement
  */
-export function createAsyncDebouncer(asyncFunction, delay = 300) {
+export function createAsyncDebouncer(asyncFunction, delay = 200) {
   let timeoutId = null;
   const loading = writable(false);
   const error = writable(null);
