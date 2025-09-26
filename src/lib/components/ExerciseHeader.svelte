@@ -52,9 +52,11 @@
 
   <!-- Top row -->
   <div class="header-top">
-    <h1 class="exercise-title {variant !== 'full' ? 'text-2xl mb-6' : ''}">
-      <MathRenderer content={exercise?.title || 'Exercice'} inline={true} />
-    </h1>
+    {#if variant !== 'preview'}
+      <h1 class="exercise-title {variant !== 'full' ? 'text-2xl mb-6' : ''}">
+        <MathRenderer content={exercise?.title || 'Exercice'} inline={true} />
+      </h1>
+    {/if}
 
     <!-- Absolutely positioned, removed from normal flow -->
     <div class="title-right">
@@ -240,6 +242,22 @@
   .exercise-header.is-preview .exercise-title {
     /* Reduce the reserved space for the right block */
     margin-right: clamp(6rem, 18vw, 14rem);
+  }
+
+  /* Compact preview header without the title */
+  .exercise-header.is-preview {
+    @apply px-4 py-3 md:px-5 md:py-4 rounded-lg;
+  }
+
+  .exercise-header.is-preview .header-top {
+    min-height: auto;
+  }
+
+  .exercise-header.is-preview .title-right {
+    position: static;
+    align-items: flex-start;
+    gap: 0.25rem;
+    max-width: 100%;
   }
 
   /* Responsive: on small screens, put the right block back into flow */

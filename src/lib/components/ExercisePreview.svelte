@@ -2,19 +2,11 @@
 <script>
   import ExerciseContent from './ExerciseContent.svelte';
   import AddToListButton from './AddToListButton.svelte';
-  import { previewState, previewActions, layoutActions } from '$lib/stores/searchStore.js';
+  import { previewState, layoutActions } from '$lib/stores/searchStore.js';
   
   // Variables locales pour contrôler l'affichage
   let showHint = false;
   let showSolution = false;
-  
-  // Fonction pour fermer la preview
-  function closePreview() {
-    previewActions.closePreview();
-    // Reset des états d'affichage quand on ferme
-    showHint = false;
-    showSolution = false;
-  }
   
   // Fonction pour aller vers la page complète
   function goToFullPage() {
@@ -50,16 +42,7 @@
           />
         {/if}
 
-        <button
-          on:click={hidePanel}
-          class="preview-btn preview-btn--ghost"
-          title="Masquer le panneau"
-          aria-label="Masquer le panneau"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
-          </svg>
-        </button>
+
         
         <button 
           on:click={goToFullPage}
@@ -71,16 +54,16 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </button>
-        <button 
-          on:click={closePreview}
-          class="preview-btn preview-btn--close"
-          title="Fermer la prévisualisation"
-          aria-label="Fermer la prévisualisation"
+
+        <button
+          on:click={hidePanel}
+          class="preview-btn preview-btn--ghost"
+          title="Masquer le panneau"
+          aria-label="Masquer le panneau"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
           </svg>
-          
         </button>
       </div>
     </div>
@@ -142,7 +125,7 @@
   }
   .preview-header {
     flex-shrink:0;
-    @apply border-b border-gray-200 bg-green-100;
+    @apply border-b border-gray-200 bg-brand-100;
   }
   .preview-header-content { display:flex; align-items:center; justify-content:space-between; padding:1rem; }
   .preview-title { font-size:1.125rem; font-weight:600; @apply text-gray-900; }
@@ -152,8 +135,6 @@
   .preview-btn--primary:hover { @apply bg-brand-700; }
   .preview-btn--ghost { @apply bg-interface-bg-primary text-brand-primary border-brand-200; }
   .preview-btn--ghost:hover { @apply bg-brand-50; }
-  .preview-btn--close { @apply bg-interface-bg-primary text-gray-600 border-gray-300; }
-  .preview-btn--close:hover { @apply bg-gray-50 text-interface-text-primary; }
   .preview-content { flex:1; overflow-y:auto; }
   .preview-exercise-header { padding:1rem; @apply border-b border-gray-100; }
   .preview-metadata { display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
@@ -166,7 +147,7 @@
 .preview-exercise-content .question-number-badge { font-size:0.75rem; width:1.25rem; height:1.25rem; }
 
 /* Scale down all preview exercise text to 70% */
-.preview-exercise { font-size: 0.9em; @apply bg-green-50; }
+.preview-exercise { font-size: 0.9em; @apply bg-brand-50; }
 /* Ensure inner content uses inherited font-size, overriding rem-based sizes */
 .preview-exercise .exercise-content * { font-size: inherit !important; }
 
