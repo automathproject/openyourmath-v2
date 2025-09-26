@@ -24,8 +24,9 @@
   let shareUrl = '';
   let isEditMode = false;
   
-  // NOUVEAU : État pour la navigation mobile
+  // NOUVEAU : États pour la navigation mobile et contrôles
   let isMobileNavOpen = false;
+  let showUuidControl = false; // Nouveau : contrôle de l'affichage UUID
   let isMobile = false;
   
   // État pour le champ UUID
@@ -39,7 +40,17 @@
     isMobile = window.innerWidth < 768; // md breakpoint
     if (!isMobile) {
       isMobileNavOpen = false; // Fermer la nav si on passe en desktop
+      showUuidControl = false; // Fermer UUID control si on passe en desktop
     }
+  }
+  
+  // NOUVEAU : Fonctions pour gérer l'affichage des contrôles
+  function toggleUuidControl() {
+    showUuidControl = !showUuidControl;
+  }
+  
+  function closeUuidControl() {
+    showUuidControl = false;
   }
   
   // NOUVEAU : Fermer la navigation mobile
@@ -135,6 +146,8 @@
       if (!uuidInputLoading) {
         loadFromUuidInput();
       }
+    } else if (event.key === 'Escape') {
+      closeUuidControl();
     }
   }
   
@@ -274,16 +287,25 @@
     } else if (event.key === 'ArrowDown' && $currentPosition.hasNext) {
       event.preventDefault();
       listActions.nextExercise();
-    } else if (event.key === 'Escape' && isMobileNavOpen) {
-      event.preventDefault();
-      closeMobileNav();
+    } else if (event.key === 'Escape') {
+      if (isMobileNavOpen) {
+        event.preventDefault();
+        closeMobileNav();
+      } else if (showUuidControl) {
+        event.preventDefault();
+        closeUuidControl();
+      }
     }
   }
   
   // NOUVEAU : Gestionnaire de clic sur l'overlay
   function handleOverlayClick(event) {
     if (event.target === event.currentTarget) {
-      closeMobileNav();
+      if (isMobileNavOpen) {
+        closeMobileNav();
+      } else if (showUuidControl) {
+        closeUuidControl();
+      }
     }
   }
 </script>
@@ -321,7 +343,126 @@
       </div>
       
       <div class="list-actions">
-        <!-- Contrôle UUID - masqué sur mobile -->
+        <!-- Contrôle UUID desktop (toujours visible) -->
+        <div class="uuid-control-desktop">
+          <div class="uuid-input-wrapper">
+            <input 
+              type="text"
+              bind:value={uuidInputValue}
+              on:input={analyzeUuidInput}
+              on:blur={handleUuidBlur}
+              on:keydown={handleUuidKeydown}
+              placeholder="uuid1,uuid2,uuid3..."
+              class="uuid-input"
+              class:uuid-input--error={uuidInputError}
+              disabled={uuidInputLoading}
+            />
+            
+            <div class="uuid-buttons">
+              <button 
+                on:click={copyUuidInput}
+                class="uuid-btn uuid-btn--copy"
+                disabled={!uuidInputValue.trim() || uuidInputLoading}
+                title="Copier la liste d'UUIDs"
+              >
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </button>
+              
+              <button 
+                on:click={loadFromUuidInput}
+                class="uuid-btn uuid-btn--load"
+                disabled={uuidInputLoading}
+                title="Charger cette liste d'UUIDs"
+              >
+                {#if uuidInputLoading}
+                  <div class="loading-spinner-small"></div>
+                {:else}
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                {/if}
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bouton mobile : ouvrir navigation / gestion UUID -->
+        {#if isMobile}
+          <button 
+            on:click={toggleUuidControl}
+            class="header-action-btn header-action-btn--secondary"
+            class:header-action-btn--active={showUuidControl}
+            title="Gérer les UUIDs"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+            <span class="header-action-btn__label">UUIDs</span>
+          </button>
+        {/if}
+
+        {#if isMobile && $hasExercises}
+          <button 
+            on:click={toggleMobileNav}
+            class="header-action-btn header-action-btn--primary"
+            title="Ouvrir la liste d'exercices"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <span class="header-action-btn__label">Liste</span>
+            {#if $currentPosition.total > 0}
+              <span class="header-nav-badge">{$currentPosition.current}/{$currentPosition.total}</span>
+            {/if}
+          </button>
+        {/if}
+        
+        {#if $hasExercises}
+          <div class="list-action-buttons">
+            <button 
+              on:click={shareList}
+              class="list-action-btn list-action-btn--primary"
+              aria-label="Partager la liste d'exercices"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+              </svg>
+              <span class="list-action-btn__label">Partager</span>
+            </button>
+            
+            <button 
+              on:click={clearList}
+              class="list-action-btn list-action-btn--danger"
+              aria-label="Vider la liste d'exercices"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              </svg>
+              <span class="list-action-btn__label">Vider</span>
+            </button>
+          </div>
+        {/if}
+      </div>
+    </div>
+    
+    <!-- NOUVEAU : Panneau de contrôle UUID (conditionnel) -->
+        {#if showUuidControl && isMobile}
+      <div class="uuid-control-panel" class:uuid-control-panel--mobile={isMobile}>
+        <div class="uuid-control-header">
+          <h3 class="uuid-control-title">Gestion des UUIDs</h3>
+          <button 
+            on:click={closeUuidControl}
+            class="uuid-control-close"
+            aria-label="Fermer le panneau UUID"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        
         <div class="uuid-control">
           <div class="uuid-input-wrapper">
             <input 
@@ -371,34 +512,8 @@
             </div>
           {/if}
         </div>
-        
-        {#if $hasExercises}
-          <button 
-            on:click={shareList}
-            class="list-action-btn list-action-btn--primary"
-            aria-label="Partager la liste d'exercices"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
-            </svg>
-            Partager
-          </button>
-          
-          <button 
-            on:click={clearList}
-            class="list-action-btn list-action-btn--danger"
-            aria-label="Vider la liste d'exercices"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-            </svg>
-            Vider
-          </button>
-        {/if}
-        
-        <!-- Bouton rechercher déplacé dans le header global -->
       </div>
-    </div>
+    {/if}
   </header>
   
   {#if !$hasExercises}
@@ -413,7 +528,7 @@
         
         <h2 class="empty-state-title">Aucun exercice dans cette liste</h2>
         <p class="empty-state-description">
-          Ajoutez des exercices à votre liste en utilisant la recherche, ou collez des UUIDs dans le champ ci-dessus.
+          Ajoutez des exercices à votre liste en utilisant la recherche, ou utilisez le bouton "UUIDs" ci-dessus pour coller des identifiants d'exercices.
         </p>
         
         <div class="empty-state-actions">
@@ -455,15 +570,17 @@
             {/if}
             
             <!-- Bouton fermer sur mobile -->
-            <button 
-              class="mobile-close-btn"
-              on:click={closeMobileNav}
-              aria-label="Fermer la navigation"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+            {#if isMobile}
+              <button 
+                class="mobile-close-btn"
+                on:click={closeMobileNav}
+                aria-label="Fermer la navigation"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            {/if}
             
             <!-- Bouton d'édition -->
             <button 
@@ -525,9 +642,14 @@
         </div>
       </aside>
       
-      <!-- NOUVEAU : Overlay pour mobile -->
-      {#if isMobileNavOpen}
-        <div class="mobile-nav-overlay" on:click={handleOverlayClick}></div>
+      <!-- NOUVEAU : Overlay pour mobile (navigation ET UUID control) -->
+      {#if (isMobileNavOpen || showUuidControl) && isMobile}
+        <div class="mobile-overlay" on:click={handleOverlayClick}></div>
+      {/if}
+      
+      <!-- Overlay pour UUID control sur desktop -->
+      {#if showUuidControl && !isMobile}
+        <div class="desktop-uuid-overlay" on:click={handleOverlayClick}></div>
       {/if}
       
       <!-- Colonne d'affichage -->
@@ -577,49 +699,36 @@
         {/if}
       </main>
       
-      <!-- Bouton flottant pour ouvrir la navigation mobile -->
-      <button 
-        class="mobile-nav-toggle"
-        on:click={toggleMobileNav}
-        aria-label="Ouvrir la liste d'exercices"
-        title="Liste d'exercices"
-      >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        {#if $currentPosition.total > 0}
-          <span class="mobile-nav-badge">{$currentPosition.current}/{$currentPosition.total}</span>
-        {/if}
-      </button>
-      
       <!-- Barre de navigation mobile fixe en bas -->
-      <div class="mobile-nav-bar">
-        <button 
-          on:click={listActions.previousExercise}
-          disabled={!$currentPosition.hasPrevious}
-          class="mobile-nav-btn mobile-nav-btn--prev"
-          aria-label="Exercice précédent"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        
-        <div class="mobile-nav-info">
-          <span class="mobile-nav-counter">{$currentPosition.current} / {$currentPosition.total}</span>
+      {#if isMobile && $hasExercises}
+        <div class="mobile-nav-bar">
+          <button 
+            on:click={listActions.previousExercise}
+            disabled={!$currentPosition.hasPrevious}
+            class="mobile-nav-btn mobile-nav-btn--prev"
+            aria-label="Exercice précédent"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          <div class="mobile-nav-info">
+            <span class="mobile-nav-counter">{$currentPosition.current} / {$currentPosition.total}</span>
+          </div>
+          
+          <button 
+            on:click={listActions.nextExercise}
+            disabled={!$currentPosition.hasNext}
+            class="mobile-nav-btn mobile-nav-btn--next"
+            aria-label="Exercice suivant"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
-        
-        <button 
-          on:click={listActions.nextExercise}
-          disabled={!$currentPosition.hasNext}
-          class="mobile-nav-btn mobile-nav-btn--next"
-          aria-label="Exercice suivant"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
+      {/if}
     </div>
   {/if}
 </div>
@@ -635,7 +744,7 @@
     padding: 1rem 0;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 60;
     @apply bg-interface-bg-primary border-b border-slate-200;
   }
 
@@ -681,7 +790,74 @@
     @apply text-brand-primary;
   }
 
-  .list-actions { display: flex; gap: 0.5rem; align-items: center; }
+  .list-actions {
+    display: flex;
+    align-items: stretch;
+    gap: 0.75rem;
+    flex: 1;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+
+  /* NOUVEAU : Styles pour les boutons d'action du header */
+  .header-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .header-action-btn__label {
+    display: inline;
+  }
+
+  .header-action-btn--primary { 
+    @apply bg-brand-600 text-white border-brand-600; 
+  }
+  .header-action-btn--primary:hover { 
+    @apply bg-brand-700 border-brand-700; 
+  }
+
+  .header-action-btn--secondary { 
+    @apply bg-slate-100 text-slate-600 border-slate-300; 
+  }
+  .header-action-btn--secondary:hover { 
+    @apply bg-slate-200 border-slate-400; 
+  }
+
+  .header-action-btn--active {
+    @apply bg-brand-100 text-brand-700 border-brand-300;
+  }
+
+  /* Badge pour le bouton de navigation mobile */
+  .header-nav-badge {
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    font-size: 0.625rem;
+    font-weight: 600;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.75rem;
+    min-width: 1.25rem;
+    text-align: center;
+    border: 2px solid white;
+    @apply bg-error-500 text-white;
+  }
+
+  .list-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
 
   .list-action-btn {
     display: inline-flex;
@@ -697,6 +873,10 @@
     cursor: pointer;
   }
 
+  .list-action-btn__label {
+    display: inline;
+  }
+
   .list-action-btn--primary { @apply bg-brand-600 text-white; }
   .list-action-btn--primary:hover { @apply bg-brand-700; }
 
@@ -706,42 +886,102 @@
   .list-action-btn--danger { @apply bg-error-500 text-white; }
   .list-action-btn--danger:hover { @apply bg-error-600; }
 
-  @media (max-width: 768px) {
-    .list-header-content { flex-direction: column; align-items: stretch; gap: 1rem; }
-    .list-actions { justify-content: center; }
+  /* NOUVEAU : Panneau de contrôle UUID */
+  .uuid-control-panel {
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    width: 400px;
+    max-width: calc(100vw - 2rem);
+    z-index: 70; /* Au-dessus de l'overlay desktop */
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.3);
+    animation: slide-in 0.2s ease-out;
+    @apply bg-interface-bg-primary border border-gray-300;
   }
-  .exercise-breadcrumb {
+
+  .uuid-control-panel--mobile {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    z-index: 70; /* Plus haut que l'overlay mobile */
+  }
+
+  .uuid-control-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 1rem 0.5rem;
   }
 
-  .breadcrumb-left {
+  .uuid-control-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    @apply text-gray-900;
+  }
+
+  .uuid-control-close {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    transition: all 0.15s ease;
+    @apply bg-gray-100 text-gray-600;
   }
 
-  .exercise-uuid {
-    font-family: monospace;
-    font-size: 0.75rem;
-    opacity: 0.8;
-    @apply text-gray-400;
+  .uuid-control-close:hover {
+    @apply bg-red-100 text-red-600;
+  }
+
+  /* Overlays */
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 55; /* Sous le header (60), au-dessus du contenu */
+  }
+
+  .desktop-uuid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 40; /* Sous le header (60) et le panneau (70) */
   }
 
   /* Styles pour le contrôle UUID */
   .uuid-control {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    min-width: 300px;
+    gap: 0.5rem;
+    padding: 0 1rem 1rem;
+  }
+
+  .uuid-control-desktop {
+    flex: 1 1 340px;
+    max-width: 420px;
+    display: flex;
+    align-items: stretch;
   }
 
   .uuid-input-wrapper {
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    border-radius: 0.375rem;
+    border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     @apply bg-interface-bg-primary border border-gray-300;
@@ -749,7 +989,7 @@
 
   .uuid-input {
     flex: 1;
-    padding: 0.5rem 0.75rem;
+    padding: 0.75rem;
     border: none;
     outline: none;
     font-size: 0.875rem;
@@ -772,18 +1012,18 @@
 
   .uuid-buttons {
     display: flex;
-    gap: 0.125rem;
-    padding: 0.25rem;
+    gap: 0.25rem;
+    padding: 0.5rem;
   }
 
   .uuid-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
+    width: 2.25rem;
+    height: 2.25rem;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 0.375rem;
     cursor: pointer;
     transition: all 0.15s ease;
     @apply bg-gray-100 text-gray-600;
@@ -803,17 +1043,17 @@
   }
 
   .uuid-btn--load {
-    @apply bg-green-500 text-white;
+    @apply bg-brand-500 text-white;
   }
 
   .uuid-btn--load:hover:not(:disabled) {
-    @apply bg-green-600;
+    @apply bg-brand-600;
   }
 
   .uuid-feedback {
     font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
     @apply bg-blue-100 text-blue-600;
   }
 
@@ -867,6 +1107,21 @@
     @apply bg-yellow-200;
   }
 
+  .mobile-close-btn {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    @apply border border-gray-300 rounded-md bg-interface-bg-primary text-gray-600;
+  }
+
+  .mobile-close-btn:hover {
+    @apply bg-red-100 border-red-500 text-red-600;
+  }
+
   /* Empty state (scoped to list page) */
   .exercise-list-page .empty-state { display:flex; align-items:center; justify-content:center; min-height:60vh; padding:2rem; }
   .exercise-list-page .empty-state-content { text-align:center; max-width:28rem; }
@@ -883,6 +1138,7 @@
 
   /* Layout + display column */
   .list-container { flex:1; display:flex; min-height:0; overflow:hidden; }
+  
   /* Desktop: fixed sidebar height with its own scroll */
   @media (min-width: 768px) {
     .list-navigation {
@@ -895,6 +1151,7 @@
     /* La zone scrollable est limitée au composant éditeur */
     .list-editor-scroll { height: 600px; overflow-y: auto; }
   }
+  
   .exercise-display {
     @apply bg-interface-bg-primary;
     position:relative;
@@ -906,15 +1163,17 @@
     /* Let the page scroll; avoid inner scrollbar */
     overflow: visible;
   }
+  
   .exercise-loading { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; @apply text-interface-text-secondary; }
   .loading-spinner { width:2rem; height:2rem; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:1rem; border:2px solid theme('colors.gray.200'); border-top:2px solid theme('colors.blue.500'); }
-  @keyframes spin { to { transform: rotate(360deg); } }
+  
   .exercise-error { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:2rem; text-align:center; }
   .error-icon { margin-bottom:1rem; @apply text-error-500; }
   .error-title { font-size:1.125rem; font-weight:600; margin:0 0 0.5rem; @apply text-gray-700; }
   .error-message { margin:0 0 1.5rem; @apply text-interface-text-secondary; }
   .error-retry-btn { padding:0.5rem 1rem; border:none; border-radius:0.375rem; cursor:pointer; font-weight:500; transition:background-color .2s; @apply bg-blue-500 text-white; }
   .error-retry-btn:hover { @apply bg-blue-600; }
+  
   .no-selection { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; @apply text-gray-400; }
   .no-selection-icon { margin-bottom:1rem; }
   .no-selection-text { font-size:1.125rem; @apply text-interface-text-secondary; }
@@ -922,71 +1181,18 @@
   /* Wrapper */
   .exercise-content-wrapper { padding:1.5rem; height:auto; overflow: visible; }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    .list-container { flex-direction:column; }
-    .list-navigation { width:100%; height:200px; border-right:none; @apply border-b border-gray-200; }
-  }
-
-  /* NOUVEAU : Styles pour la navigation mobile */
-  
-  /* Bouton flottant principal */
-  .mobile-nav-toggle {
-    position: fixed;
-    bottom: 6rem; /* Au-dessus de la barre de navigation */
-    right: 1rem;
-    z-index: 1000;
-    width: 3.5rem;
-    height: 3.5rem;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.3);
-    cursor: pointer;
-    display: none; /* Masqué par défaut */
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    position: relative;
-    @apply bg-blue-600 text-white;
-  }
-
-  .mobile-nav-toggle:hover {
-    transform: scale(1.05);
-    @apply bg-blue-700;
-  }
-
-  .mobile-nav-toggle:active {
-    transform: scale(0.95);
-  }
-
-  /* Badge du compteur sur le bouton flottant */
-  .mobile-nav-badge {
-    position: absolute;
-    top: -0.25rem;
-    right: -0.25rem;
-    font-size: 0.625rem;
-    font-weight: 600;
-    padding: 0.125rem 0.375rem;
-    border-radius: 0.75rem;
-    min-width: 1.25rem;
-    text-align: center;
-    border: 2px solid white;
-    @apply bg-error-500 text-white;
-  }
-
   /* Barre de navigation mobile en bas */
   .mobile-nav-bar {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 50;
     padding: 0.75rem;
-    display: none; /* Masqué par défaut */
+    display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1);
-    safe-area-inset-bottom: env(safe-area-inset-bottom);
     @apply bg-interface-bg-primary border-t border-gray-200;
   }
 
@@ -1031,38 +1237,10 @@
     @apply text-gray-700;
   }
 
-  /* Overlay pour la navigation mobile */
-  .mobile-nav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1100;
-    display: none;
-  }
-
   /* Modifications de la navigation pour le mobile */
   .list-navigation {
     position: relative;
     transition: transform 0.3s ease;
-  }
-
-  /* Bouton fermer mobile (masqué par défaut) */
-  .mobile-close-btn {
-    display: none;
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.15s ease;
-    @apply border border-gray-300 rounded-md bg-interface-bg-primary text-gray-600;
-  }
-
-  .mobile-close-btn:hover {
-    @apply bg-red-100 border-red-500 text-red-600;
   }
 
   @keyframes spin {
@@ -1071,17 +1249,83 @@
     }
   }
 
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Navigation controls */
+  .nav-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .nav-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    font-size: 0.875rem;
+    font-weight: 500;
+    @apply bg-interface-bg-primary text-gray-600 border-gray-300;
+  }
+
+  .nav-btn:hover:not(:disabled) {
+    @apply bg-gray-100 border-gray-400;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .nav-btn--prev:hover:not(:disabled) {
+    @apply bg-blue-100 border-blue-600 text-blue-600;
+  }
+
+  .nav-btn--next:hover:not(:disabled) {
+    @apply bg-green-100 border-green-500 text-green-500;
+  }
+
+  .nav-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0;
+    @apply text-gray-900;
+  }
+
+  .nav-counter {
+    font-size: 0.875rem;
+    font-weight: 500;
+    @apply text-gray-500;
+  }
+
   /* Responsive : Affichage mobile */
   @media (max-width: 767px) {
-    /* Masquer le contrôle UUID sur mobile */
-    .uuid-control {
-      display: none;
+    /* Ajustements pour le header mobile */
+    .list-header-content {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
     }
-
-    /* Afficher les éléments mobiles */
-    .mobile-nav-toggle,
-    .mobile-nav-bar {
-      display: flex;
+    
+    .list-actions {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
     /* Masquer la navigation par défaut sur mobile */
@@ -1093,7 +1337,7 @@
       width: 85%;
       max-width: 400px;
       @apply bg-interface-bg-primary border-l border-gray-200;
-      z-index: 1200;
+      z-index: 60;
       transform: translateX(100%);
       overflow-y: auto;
       padding: 1rem;
@@ -1102,16 +1346,6 @@
 
     .list-navigation--mobile-open {
       transform: translateX(0);
-    }
-
-    /* Afficher l'overlay quand la nav est ouverte */
-    .mobile-nav-overlay {
-      display: block;
-    }
-
-    /* Afficher le bouton fermer sur mobile */
-    .mobile-close-btn {
-      display: flex;
     }
 
     /* Ajuster l'affichage principal pour faire place à la barre mobile */
@@ -1128,72 +1362,42 @@
     .list-container {
       display: block;
     }
-  }
 
-  /* Ajustements pour le header */
-  .list-header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .list-actions {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  @media (max-width: 1024px) {
-    .list-header-content {
-      flex-direction: column;
-      align-items: stretch;
-    }
-    
-    .list-actions {
-      justify-content: flex-end;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .list-actions {
-      justify-content: center;
-      gap: 0.5rem;
-    }
-    
+    /* Ajustements des boutons */
+    .header-action-btn,
     .list-action-btn {
       font-size: 0.875rem;
       padding: 0.5rem 1rem;
     }
+
+    /* Responsive pour les labels */
+    .header-action-btn__label,
+    .list-action-btn__label {
+      display: none;
+    }
+
+    .uuid-control-desktop {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .header-action-btn,
+      .list-action-btn {
+        padding: 0.5rem;
+      }
+    }
   }
-  /* Mobile compact for list page */
-  @media (max-width: 640px) {
-    .exercise-list-page .exercise { border: 0 !important; box-shadow: none !important; }
-    .exercise-list-page .exercise-header { border-bottom: 0 !important; padding: 0.75rem 0.75rem !important; }
-    .exercise-list-page .exercise-content { padding: 0.75rem !important; }
-    .exercise-list-page .exercise-breadcrumb { margin-bottom: 0.5rem !important; gap: 0.25rem !important; }
-    .exercise-list-page .exercise-title { margin-bottom: 0.75rem !important; font-size: 1.25rem !important; line-height: 1.25 !important; }
-    .exercise-list-page .exercise-metadata { gap: 0.5rem !important; margin-bottom: 0.75rem !important; }
-    .exercise-list-page .exercise-badge { padding: 0.125rem 0.5rem !important; font-size: 0.75rem !important; }
-    .exercise-list-page .exercise-actions { gap: 0.5rem !important; margin-top: 0.25rem !important; }
-    .exercise-list-page .exercise-action-btn { padding: 0.375rem 0.5rem !important; font-size: 0.875rem !important; border-radius: 0.5rem !important; }
-    .exercise-list-page .content-card,
-    .exercise-list-page .question-block,
-    .exercise-list-page .collapsible-section,
-    .exercise-list-page .preview-header,
-    .exercise-list-page .preview-exercise-header,
-    .exercise-list-page .similar-exercise-card {
-      border: 0 !important; box-shadow: none !important; padding: 0.75rem !important;
+
+  /* Ajustements pour tablettes */
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .list-header-content {
+      flex-wrap: wrap;
     }
-    .exercise-list-page .content-card-footer,
-    .exercise-list-page .results-header,
-    .exercise-list-page .nav-header,
-    .exercise-list-page .nav-controls {
-      border: 0 !important;
+    
+    .list-actions {
+      min-width: 100%;
+      justify-content: flex-end;
+      margin-top: 0.5rem;
     }
-    .exercise-list-page .questions-responses { gap: 0.75rem !important; }
-    .exercise-list-page .question-response-pair { margin: 0.75rem 0 !important; }
   }
 </style>
