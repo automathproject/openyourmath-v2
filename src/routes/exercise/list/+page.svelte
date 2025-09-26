@@ -678,7 +678,7 @@
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    @apply text-blue-500;
+    @apply text-brand-primary;
   }
 
   .list-actions { display: flex; gap: 0.5rem; align-items: center; }
@@ -697,8 +697,8 @@
     cursor: pointer;
   }
 
-  .list-action-btn--primary { @apply bg-blue-500 text-white; }
-  .list-action-btn--primary:hover { @apply bg-blue-600; }
+  .list-action-btn--primary { @apply bg-brand-600 text-white; }
+  .list-action-btn--primary:hover { @apply bg-brand-700; }
 
   .list-action-btn--secondary { @apply bg-slate-100 text-slate-600; }
   .list-action-btn--secondary:hover { @apply bg-slate-200; }
