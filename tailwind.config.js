@@ -116,6 +116,7 @@ export default {
 
       // ===== SHADOWS =====
       boxShadow: {
+        'card': '0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.06)',
         'search': '0 1px 6px rgba(32, 33, 36, 0.28)',
         'search-hover': '0 1px 10px rgba(32, 33, 36, 0.45)',
         'card-hover': '0 4px 6px rgba(0, 0, 0, 0.1)',

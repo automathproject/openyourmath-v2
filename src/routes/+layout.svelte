@@ -98,7 +98,7 @@
           class="nav-link"
           class:nav-link--active={$page.route.id === '/about'}
         >
-          À propos
+          <span class="nav-text">À propos</span>
         </a>
         
         <!-- LE LIEN VERS LA LISTE A ÉTÉ DÉPLACÉ D'ICI -->
@@ -191,9 +191,58 @@
 
   <footer class="footer print-hidden">
     <div class="footer-content">
-      <p class="footer-text">OpenYourMath V2 - Exercices de mathématiques</p>
+      <div class="footer-grid">
+        <!-- Col 1 : Brand / Pitch -->
+        <div class="footer-col">
+          <a href="/" class="footer-brand">
+            <span class="brand-dot" aria-hidden="true"></span>
+            <span class="footer-brand-text">OpenYourMath</span>
+          </a>
+          <p class="footer-subtext">
+            Plateforme pédagogique libre — exercices de mathématiques, sans collecte de données personnelles.
+          </p>
+          <p class="footer-license">
+            Contenus : <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> •
+            Code : <a href="https://github.com/automathproject/openyourmath-v2/">GitHub</a>
+          </p>
+        </div>
+
+        <!-- Col 2 : Liens -->
+        <nav class="footer-col footer-links" aria-label="Liens">
+          <a href="/about">À propos</a>
+          <a href="/mentions-legales">Mentions légales</a>
+          <a href="/confidentialite">Confidentialité</a>
+          <a href="https://github.com/automathproject/openyourmath-v2/">Dépôt Git</a>
+          <a href="mailto:maxime.nguyen@st-cyr.terre-net.defense.gouv.fr">Contact</a>
+        </nav>
+
+        <!-- Col 3 : Statut / Hébergement -->
+        <div class="footer-col">
+          <p class="footer-meta">
+            Hébergement OVH (FR) • HTTPS via Caddy
+          </p>
+          <p class="footer-meta">
+            <span id="oym-year"></span> • v2.1.5
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-text">
+          © <span id="oym-year-bottom"></span> OpenYourMath — Partagez, améliorez, apprenez.
+        </p>
+      </div>
     </div>
+    <script>
+      // Année dynamique (SSR-safe : se réécrit côté client)
+      const y = new Date().getFullYear();
+      const a = document.getElementById('oym-year');
+      const b = document.getElementById('oym-year-bottom');
+      if (a) a.textContent = y;
+      if (b) b.textContent = y;
+    </script>
   </footer>
+
 </div>
 
 <style>
@@ -452,18 +501,96 @@
     padding: 2rem 1rem;
   }
   .footer {
-    @apply bg-gray-50 border-t border-gray-200;
+    @apply bg-interface-bg-primary border-t border-gray-200;
   }
   .footer-content {
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem 1rem;
   }
+
+  /* Grille responsive */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .footer-col {
+    @apply bg-white/60 dark:bg-gray-900/60 rounded-xl shadow-card p-4;
+  }
+
+  /* Brand */
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    text-decoration: none;
+    @apply text-interface-text-primary;
+  }
+  .brand-dot {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 9999px;
+    @apply bg-brand-500;
+  }
+  .footer-brand-text {
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+
+  .footer-subtext {
+    margin: 0.35rem 0 0;
+    line-height: 1.5;
+    @apply text-interface-text-secondary;
+  }
+
+  .footer-license a {
+    text-decoration: underline;
+    @apply text-brand-700 hover:text-brand-800;
+  }
+
+  /* Liens */
+  .footer-links {
+    display: grid;
+    gap: 0.35rem;
+    align-content: start;
+  }
+  .footer-links a {
+    text-decoration: none;
+    font-weight: 500;
+    @apply text-interface-text-secondary hover:text-interface-text-primary;
+  }
+
+  /* Meta */
+  .footer-meta {
+    margin: 0.2rem 0;
+    @apply text-interface-text-secondary;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    margin-top: 1.25rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 1rem;
+  }
   .footer-text {
     text-align: center;
     margin: 0;
     @apply text-interface-text-secondary;
   }
+
+  /* Dark mode (si tu actives darkMode:'class' dans Tailwind) */
+  :global(html.dark) .footer-col {
+    @apply shadow-card;
+  }
+
   
   /* ==============================================
      RESPONSIVE BREAKPOINTS
