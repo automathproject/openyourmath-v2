@@ -362,12 +362,11 @@
   }
 
   .nav-item:not(.is-active):hover {
-    background: #f3f4f6; /* gray-100 */
+    @apply bg-gray-100;
   }
 
   .nav-item.is-active {
-    background: #dbeafe; /* blue-100 */
-    color: #1e40af;      /* blue-800 */
+    @apply bg-blue-100 text-blue-800;
   }
 
   .btn-icon {
@@ -387,8 +386,8 @@
   }
 
   .nav-sublist {
-    border-left: 2px solid #e5e7eb; /* gray-200 */
     margin-left: 1rem;
     padding-left: 0.5rem;
+    @apply border-l-2 border-gray-200;
   }
 </style>

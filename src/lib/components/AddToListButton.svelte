@@ -111,22 +111,18 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.375rem;
-    background-color: white;
-    color: #374151;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     position: relative;
     overflow: hidden;
+    @apply border border-gray-300 rounded-md bg-interface-bg-primary text-gray-700;
   }
   
   .add-to-list-btn:hover:not(:disabled) {
-    background-color: #f9fafb;
-    border-color: #9ca3af;
     transform: translateY(-1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    @apply bg-gray-50 border-gray-400;
   }
   
   .add-to-list-btn:disabled {
@@ -175,28 +171,21 @@
   /* États */
   .add-to-list-btn--in-list {
     /* Rouge par défaut quand déjà dans la liste */
-    background-color: #fee2e2; /* red-200 */
-    border-color: #ef4444;     /* red-500 */
-    color: #991b1b;            /* red-800 */
+    @apply bg-error-200 border-error-500 text-error-800;
   }
   
   .add-to-list-btn--in-list:hover:not(:disabled) {
     /* Rouge un peu plus marqué au survol */
-    background-color: #fecaca; /* red-300 */
-    border-color: #dc2626;     /* red-600 */
-    color: #7f1d1d;            /* red-900 */
+    @apply bg-error-300 border-error-600 text-error-900;
   }
   
   .add-to-list-btn--loading {
-    background-color: #f3f4f6;
-    color: #6b7280;
+    @apply bg-gray-100 text-gray-500;
   }
   
   .add-to-list-btn--just-added {
-    background-color: #d1fae5;
-    border-color: #10b981;
-    color: #065f46;
     animation: pulse-success 0.5s ease-in-out;
+    @apply bg-green-100 border-green-500 text-green-800;
   }
   
   /* Éléments internes */

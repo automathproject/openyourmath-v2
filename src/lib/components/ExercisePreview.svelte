@@ -134,31 +134,39 @@
 </div>
 
 <style>
-  .exercise-preview { height:100%; display:flex; flex-direction:column; background:#fff; border-left:1px solid #e5e7eb; }
-  .preview-header { flex-shrink:0; border-bottom:1px solid #e5e7eb; background:#d8e7cc; }
+  .exercise-preview {
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    @apply bg-interface-bg-primary border-l border-gray-200;
+  }
+  .preview-header {
+    flex-shrink:0;
+    @apply border-b border-gray-200 bg-green-100;
+  }
   .preview-header-content { display:flex; align-items:center; justify-content:space-between; padding:1rem; }
-  .preview-title { font-size:1.125rem; font-weight:600; color:#111827; }
+  .preview-title { font-size:1.125rem; font-weight:600; @apply text-gray-900; }
   .preview-actions { display:flex; align-items:center; gap:0.5rem; }
   .preview-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.375rem 0.75rem; font-size:0.875rem; font-weight:500; border-radius:0.375rem; border:1px solid transparent; transition:background-color .2s ease; }
-  .preview-btn--primary { background:#2563eb; color:#fff; border-color:#2563eb; }
-  .preview-btn--primary:hover { background:#1d4ed8; }
-  .preview-btn--ghost { background:#fff; color:#1d4ed8; border-color:#bfdbfe; }
-  .preview-btn--ghost:hover { background:#e0ecff; }
-  .preview-btn--close { background:#fff; color:#4b5563; border-color:#d1d5db; }
-  .preview-btn--close:hover { background:#f9fafb; color:#111827; }
+  .preview-btn--primary { @apply bg-blue-600 text-white border-blue-600; }
+  .preview-btn--primary:hover { @apply bg-blue-700; }
+  .preview-btn--ghost { @apply bg-interface-bg-primary text-blue-600 border-blue-200; }
+  .preview-btn--ghost:hover { @apply bg-blue-100; }
+  .preview-btn--close { @apply bg-interface-bg-primary text-gray-600 border-gray-300; }
+  .preview-btn--close:hover { @apply bg-gray-50 text-interface-text-primary; }
   .preview-content { flex:1; overflow-y:auto; }
-  .preview-exercise-header { padding:1rem; border-bottom:1px solid #f3f4f6;  }
+  .preview-exercise-header { padding:1rem; @apply border-b border-gray-100; }
   .preview-metadata { display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
   .preview-badge { padding:0.25rem 0.5rem; font-size:0.75rem; border-radius:0.375rem; font-weight:500; }
-  .preview-badge--level { background:#dbeafe; color:#1e40af; }
-  .preview-badge--difficulty { background:#fef3c7; color:#92400e; }
+  .preview-badge--level { @apply bg-blue-100 text-blue-800; }
+  .preview-badge--difficulty { @apply bg-warning-100 text-warning-800; }
 .preview-exercise-content { padding:1rem; }
 .preview-exercise-content .exercise-content { font-size:0.875rem; }
 .preview-exercise-content .question-block { margin-bottom:1rem; }
 .preview-exercise-content .question-number-badge { font-size:0.75rem; width:1.25rem; height:1.25rem; }
 
 /* Scale down all preview exercise text to 70% */
-.preview-exercise { font-size: 0.9em; background-color: #eeffe3;}
+.preview-exercise { font-size: 0.9em; @apply bg-green-50; }
 /* Ensure inner content uses inherited font-size, overriding rem-based sizes */
 .preview-exercise .exercise-content * { font-size: inherit !important; }
 

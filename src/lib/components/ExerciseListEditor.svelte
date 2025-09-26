@@ -768,7 +768,7 @@ border-radius: .5rem;
 /* Détacher visuellement la pastille du fond jaune (anneau blanc) */
 .drop-slot.drop-slot--active span {
   box-shadow:
-    0 0 0 3px #fff,                 /* anneau blanc anti-camouflage */
+    0 0 0 3px theme('colors.white'),                 /* anneau blanc anti-camouflage */
     0 2px 8px rgba(0,0,0,.25),
     0 0 14px rgba(34,197,94,.45);
 }

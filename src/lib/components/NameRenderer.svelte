@@ -86,8 +86,7 @@
 
   .name-renderer__button:hover,
   .name-renderer--open .name-renderer__button {
-    background: rgba(229, 231, 235, 0.6);
-    color: rgb(55, 65, 81);
+    @apply bg-gray-200 text-gray-700;
   }
 
   .name-renderer--compact .name-renderer__button {
@@ -96,7 +95,7 @@
   }
 
   .name-renderer--footer .name-renderer__button {
-    color: rgb(107, 114, 128);
+    @apply text-gray-500;
   }
 
   .name-renderer__icon {
@@ -105,17 +104,15 @@
   }
 
   .name-renderer__license {
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
     border-radius: 0.375rem;
     padding: 0.5rem 0.625rem;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #374151;
     font-size: 0.875rem;
     box-shadow: 0 2px 6px rgb(15 23 42 / 0.1);
     z-index: 5;
+    @apply bg-gray-50 border border-gray-200 text-gray-700;
   }
 
   .name-renderer__badge {
@@ -123,16 +120,16 @@
   }
 
   .name-renderer__link {
-    color: #2563eb;
     text-decoration: underline;
+    @apply text-blue-600;
   }
 
   .name-renderer__sep {
-    color: #d1d5db;
+    @apply text-gray-300;
   }
 
   .name-renderer__missing {
-    color: #6b7280;
+    @apply text-gray-500;
   }
 
   .name-renderer--inline .name-renderer__license,
@@ -153,7 +150,7 @@
   }
 
   .name-renderer--compact .name-renderer__button {
-    color: rgb(75, 85, 99);
+    @apply text-gray-600;
   }
 
   .name-renderer--compact .name-renderer__icon {
