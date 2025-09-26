@@ -136,20 +136,12 @@
   .preview-btn--ghost { @apply bg-interface-bg-primary text-brand-primary border-brand-200; }
   .preview-btn--ghost:hover { @apply bg-brand-50; }
   .preview-content { flex:1; overflow-y:auto; }
-  .preview-exercise-header { padding:1rem; @apply border-b border-gray-100; }
-  .preview-metadata { display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
-  .preview-badge { padding:0.25rem 0.5rem; font-size:0.75rem; border-radius:0.375rem; font-weight:500; }
-  .preview-badge--level { @apply bg-brand-100 text-brand-800; }
-  .preview-badge--difficulty { @apply bg-warning-100 text-warning-800; }
 .preview-exercise-content { padding:1rem; }
-.preview-exercise-content .exercise-content { font-size:0.875rem; }
-.preview-exercise-content .question-block { margin-bottom:1rem; }
-.preview-exercise-content .question-number-badge { font-size:0.75rem; width:1.25rem; height:1.25rem; }
+
 
 /* Scale down all preview exercise text to 70% */
 .preview-exercise { font-size: 0.9em; @apply bg-brand-50; }
 /* Ensure inner content uses inherited font-size, overriding rem-based sizes */
-.preview-exercise .exercise-content * { font-size: inherit !important; }
 
 /* Scale down the preview header to 90% */
 .preview-header { font-size: 0.7em; }
