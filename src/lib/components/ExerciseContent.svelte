@@ -308,6 +308,10 @@
     @apply mt-6;
   }
   
+  .exercise-content {
+    @apply bg-brand-50 rounded-xl p-2 md:p-4;
+  }
+
   .exercise-content > :global(*:not(.question-response-pair) + .question-response-pair) {
     @apply mt-6;
   }

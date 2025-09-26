@@ -498,7 +498,7 @@
   .main-content {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 0;
   }
   .footer {
     @apply bg-interface-bg-primary border-t border-gray-200;
@@ -617,7 +617,7 @@
     }
     
     .main-content {
-      padding: 1.5rem 1rem;
+      padding: 0;
     }
     
     .brand-title {
@@ -648,7 +648,7 @@
     }
     
     .main-content {
-      padding: 1.5rem;
+      padding: 0;
     }
   }
   
@@ -659,7 +659,7 @@
     }
     
     .main-content {
-      padding: 2rem;
+      padding: 0;
     }
   }
 
@@ -673,7 +673,7 @@
     }
     
     .main-content {
-      padding: 2rem 1rem;
+      padding: 0;
     }
   }
   

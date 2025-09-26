@@ -16,18 +16,15 @@
 </svelte:head>
 
 {#if data.exercise}
-<div class="container max-w-4xl mx-auto px-3 sm:px-6 py-2 sm:py-6">    <article class="exercise">
-      <main class="px-3 py-1 sm:px-6 sm:py-3">
-        <ExerciseContent 
-          exercise={data.exercise}
-          variant="full"
-          showGlobalToggles={true}
-          content={data.exercise.content || []}
-          bind:showHint
-          bind:showSolution
-        />
-      </main>
-    </article>
+  <div class="container max-w-4xl mx-auto px-3 sm:px-6 pt-1 sm:pt-3 pb-6 sm:pb-8">
+    <ExerciseContent 
+      exercise={data.exercise}
+      variant="full"
+      showGlobalToggles={true}
+      content={data.exercise.content || []}
+      bind:showHint
+      bind:showSolution
+    />
     
     <!-- Exercices similaires -->
     {#if data.similar && data.similar.length > 0}

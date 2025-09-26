@@ -136,6 +136,7 @@
   .exercise-header {
     position: relative; /* anchor for absolute right column */
     border-bottom: 1px solid rgb(229 231 235);
+    @apply bg-brand-100 px-6 py-4 md:px-8 md:py-6 rounded-xl;
   }
 
   .header-top {
