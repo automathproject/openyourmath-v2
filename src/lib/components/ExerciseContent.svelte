@@ -326,13 +326,13 @@
   }
   
   .question-response-pair {
-    @apply border-l-4 border-blue-200 pl-4 m-0 p-0;
+    @apply border-l-4 border-brand-200 pl-4 m-0 p-0;
     /* Force margin et padding à 0, puis réapplique seulement pl-4 pour la bordure */
     padding-left: 1rem !important; /* Garde le padding gauche pour la bordure */
   }
   
   .question-block {
-    @apply bg-blue-50 rounded-lg p-2;
+    @apply bg-brand-50 rounded-lg p-2;
     /* Réduction du padding de p-4 à p-2 */
     margin-bottom: 0 !important; /* Annuler le margin-bottom global */
   }
@@ -346,7 +346,7 @@
   }
   
   .question-number-badge {
-    @apply inline-flex items-center justify-center w-8 h-8 bg-blue-600 text-white text-sm font-semibold rounded-full;
+    @apply inline-flex items-center justify-center w-8 h-8 bg-brand-600 text-white text-sm font-semibold rounded-full;
   }
   
   .question-content {
@@ -360,7 +360,7 @@
   .question-action-btn {
     @apply w-8 h-8 rounded-full bg-white border-2 border-gray-300 hover:border-gray-400 
            flex items-center justify-center text-lg transition-colors duration-200
-           hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1;
+           hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-1;
   }
   
   .question-action-btn--hint.question-action-btn--active {

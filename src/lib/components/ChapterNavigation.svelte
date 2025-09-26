@@ -244,10 +244,10 @@
   <!-- Fil d'Ariane pour la sélection active (non compact) -->
   {#if (selectedPath.level || selectedPath.module || selectedPath.chapter) && !compact}
     <div class="text-sm text-gray-600 bg-gray-50 p-2 rounded-md mb-4 truncate">
-      {#if selectedPath.level}<span class="text-blue-700">🎓 {selectedPath.level}</span>{/if}
-      {#if selectedPath.module} › <span class="text-blue-700">📖 {selectedPath.module}</span>{/if}
-      {#if selectedPath.chapter} › <span class="text-blue-700">📚 {selectedPath.chapter}</span>{/if}
-      {#if selectedPath.subchapter} › <span class="text-blue-700">{selectedPath.subchapter}</span>{/if}
+      {#if selectedPath.level}<span class="text-brand-700">🎓 {selectedPath.level}</span>{/if}
+      {#if selectedPath.module} › <span class="text-brand-700">📖 {selectedPath.module}</span>{/if}
+      {#if selectedPath.chapter} › <span class="text-brand-700">📚 {selectedPath.chapter}</span>{/if}
+      {#if selectedPath.subchapter} › <span class="text-brand-700">{selectedPath.subchapter}</span>{/if}
     </div>
   {/if}
 
@@ -366,7 +366,7 @@
   }
 
   .nav-item.is-active {
-    @apply bg-blue-100 text-blue-800;
+    @apply bg-brand-100 text-brand-800;
   }
 
   .btn-icon {

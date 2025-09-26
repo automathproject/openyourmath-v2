@@ -121,7 +121,7 @@
 
   .name-renderer__link {
     text-decoration: underline;
-    @apply text-blue-600;
+    @apply text-brand-primary;
   }
 
   .name-renderer__sep {

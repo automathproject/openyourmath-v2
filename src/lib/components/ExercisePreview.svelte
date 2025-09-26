@@ -90,7 +90,7 @@
     {#if $previewState.loading}
       <div class="preview-loading">
         <div class="flex items-center justify-center py-12">
-          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-600"></div>
           <span class="ml-3 text-gray-600">Chargement...</span>
         </div>
       </div>
@@ -148,17 +148,17 @@
   .preview-title { font-size:1.125rem; font-weight:600; @apply text-gray-900; }
   .preview-actions { display:flex; align-items:center; gap:0.5rem; }
   .preview-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.375rem 0.75rem; font-size:0.875rem; font-weight:500; border-radius:0.375rem; border:1px solid transparent; transition:background-color .2s ease; }
-  .preview-btn--primary { @apply bg-blue-600 text-white border-blue-600; }
-  .preview-btn--primary:hover { @apply bg-blue-700; }
-  .preview-btn--ghost { @apply bg-interface-bg-primary text-blue-600 border-blue-200; }
-  .preview-btn--ghost:hover { @apply bg-blue-100; }
+  .preview-btn--primary { @apply bg-brand-600 text-white border-brand-600; }
+  .preview-btn--primary:hover { @apply bg-brand-700; }
+  .preview-btn--ghost { @apply bg-interface-bg-primary text-brand-primary border-brand-200; }
+  .preview-btn--ghost:hover { @apply bg-brand-50; }
   .preview-btn--close { @apply bg-interface-bg-primary text-gray-600 border-gray-300; }
   .preview-btn--close:hover { @apply bg-gray-50 text-interface-text-primary; }
   .preview-content { flex:1; overflow-y:auto; }
   .preview-exercise-header { padding:1rem; @apply border-b border-gray-100; }
   .preview-metadata { display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
   .preview-badge { padding:0.25rem 0.5rem; font-size:0.75rem; border-radius:0.375rem; font-weight:500; }
-  .preview-badge--level { @apply bg-blue-100 text-blue-800; }
+  .preview-badge--level { @apply bg-brand-100 text-brand-800; }
   .preview-badge--difficulty { @apply bg-warning-100 text-warning-800; }
 .preview-exercise-content { padding:1rem; }
 .preview-exercise-content .exercise-content { font-size:0.875rem; }

@@ -26,7 +26,7 @@
   button:focus,
   input:focus,
   summary:focus {
-    @apply outline-none ring-2 ring-blue-500 ring-opacity-50;
+    @apply outline-none ring-2 ring-brand-500 ring-opacity-50;
   }
 }
 
@@ -128,11 +128,11 @@
      ================== */
   
   .btn {
-    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-opacity-50;
   }
   
   .btn-primary {
-    @apply bg-blue-600 text-white hover:bg-blue-700;
+    @apply bg-brand-600 text-white hover:bg-brand-700;
   }
   
   .btn-secondary {
@@ -148,14 +148,14 @@
   }
 
   /* Legacy aliases */
-  .btn--primary { @apply bg-blue-600 text-white hover:bg-blue-700; }
+  .btn--primary { @apply bg-brand-600 text-white hover:bg-brand-700; }
 
   /* ==================
      FORMS & FILTERS
      ================== */
 
   .form-input {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-blue-500 focus:border-blue-500;
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-brand-500 focus:border-brand-500;
   }
 
   .filters-bar {
@@ -163,11 +163,11 @@
   }
   
   .filter-chip {
-    @apply flex items-center gap-2 pl-3 pr-2 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium;
+    @apply flex items-center gap-2 pl-3 pr-2 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-medium;
   }
   
   .filter-chip-close {
-    @apply w-5 h-5 flex items-center justify-center bg-blue-200 text-blue-800 rounded-full hover:bg-blue-300 transition-colors;
+    @apply w-5 h-5 flex items-center justify-center bg-brand-100 text-brand-700 rounded-full hover:bg-brand-200 transition-colors;
   }
 
   /* ==============================================
@@ -189,19 +189,19 @@
      ================== */
   .dashboard { @apply space-y-8; }
   .dashboard-loading, .dashboard-error { @apply text-center py-16; }
-  .loading-spinner { @apply w-12 h-12 border-4 border-gray-300 border-t-blue-600 rounded-full animate-spin mx-auto mb-4; }
-  .retry-button { @apply mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors; }
+  .loading-spinner { @apply w-12 h-12 border-4 border-gray-300 border-t-brand-600 rounded-full animate-spin mx-auto mb-4; }
+  .retry-button { @apply mt-4 px-6 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors; }
   .dashboard-content { @apply space-y-8; }
   .section-title { @apply text-2xl font-bold text-gray-900 mb-6; }
   .subsection-title { @apply text-xl font-semibold text-gray-800 mb-4; }
   .stats-grid { @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6; }
   .stat-card { @apply bg-white rounded-xl shadow-sm border p-6 flex items-center gap-4; }
-  .stat-card--primary { @apply border-blue-200 bg-gradient-to-br from-blue-50 to-white; }
+  .stat-card--primary { @apply border-brand-200 bg-gradient-to-br from-brand-50 to-white; }
   .stat-card--success { @apply border-green-200 bg-gradient-to-br from-green-50 to-white; }
   .stat-card--info { @apply border-purple-200 bg-gradient-to-br from-purple-50 to-white; }
   .stat-card--warning { @apply border-orange-200 bg-gradient-to-br from-orange-50 to-white; }
   .stat-icon { @apply flex-shrink-0; }
-  .stat-card--primary .stat-icon { @apply text-blue-600; }
+  .stat-card--primary .stat-icon { @apply text-brand-600; }
   .stat-card--success .stat-icon { @apply text-green-600; }
   .stat-card--info .stat-icon { @apply text-purple-600; }
   .stat-card--warning .stat-icon { @apply text-orange-600; }
@@ -214,7 +214,7 @@
   .difficulty-level { @apply flex-shrink-0 w-24; }
   .difficulty-badge { @apply px-2 py-1 rounded-full text-xs font-medium; }
   .difficulty-bar-wrapper { @apply flex-1 flex items-center gap-3; }
-  .difficulty-bar { @apply h-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all duration-500; }
+  .difficulty-bar { @apply h-4 bg-gradient-to-r from-brand-400 to-brand-600 rounded-full transition-all duration-500; }
   .difficulty-count { @apply text-sm text-gray-600 font-medium min-w-24; }
   .dashboard-grid { @apply grid grid-cols-1 lg:grid-cols-2 gap-8; }
   .dashboard-card { @apply bg-white rounded-xl shadow-sm border p-6; }
@@ -225,7 +225,7 @@
   .top-item-name { @apply font-medium text-gray-900 truncate flex-1 mr-3; }
   .top-item-count { @apply text-sm text-gray-600 flex-shrink-0; }
   .top-item-bar { @apply w-full bg-gray-200 rounded-full h-2; }
-  .top-item-progress { @apply h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all duration-500; }
+  .top-item-progress { @apply h-full bg-gradient-to-r from-brand-400 to-brand-600 rounded-full transition-all duration-500; }
   .top-item-progress--author { @apply from-green-500 to-green-600; }
   .trending-section { @apply bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6 border border-orange-200; }
   .trending-grid { @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4; }
@@ -237,9 +237,9 @@
   .difficulty-dot { @apply w-2 h-2 rounded-full bg-gray-300; }
   .difficulty-dot--active { @apply bg-orange-400; }
   .trending-content { @apply mb-3; }
-  .trending-title a { @apply font-semibold text-gray-900 hover:text-blue-600 transition-colors line-clamp-2; }
+  .trending-title a { @apply font-semibold text-gray-900 hover:text-brand-primary transition-colors line-clamp-2; }
   .trending-meta { @apply flex flex-col gap-1 mt-2 text-sm text-gray-600; }
-  .trending-chapter { @apply px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs inline-block; }
+  .trending-chapter { @apply px-2 py-1 bg-brand-50 text-brand-700 rounded text-xs inline-block; }
   .trending-author { @apply text-xs; }
   .trending-score { @apply pt-3 border-t border-gray-100; }
   .score-indicator { @apply space-y-1; }
@@ -455,7 +455,7 @@
 }
 
 .exercise-content :global(a) {
-  @apply text-blue-600 hover:text-blue-800 underline;
+  @apply text-brand-primary hover:text-brand-700 underline;
 }
 
 /* Styles spécifiques pour les formules mathématiques */

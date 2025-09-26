@@ -421,7 +421,7 @@
   }
   
   .mobile-nav-link--active {
-    @apply bg-blue-100 text-brand-primary;
+    @apply bg-brand-50 text-brand-primary;
   }
   
   .mobile-nav-icon {

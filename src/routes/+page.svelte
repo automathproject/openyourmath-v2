@@ -498,7 +498,7 @@
     </div>
     <div class="breadcrumb-actions">
       {#if !$breadcrumb.isEmpty}
-        <button type="button" class="btn btn-text text-sm text-blue-600" on:click={clearHierarchyFilters}>
+        <button type="button" class="btn btn-text text-sm text-brand-primary" on:click={clearHierarchyFilters}>
           Effacer
         </button>
       {/if}
@@ -897,7 +897,7 @@
           </section>
         </div>
         <div class="filters-footer">
-          <button type="button" class="btn btn-text text-sm text-blue-600" on:click={searchActions.clearAllFilters}>
+          <button type="button" class="btn btn-text text-sm text-brand-primary" on:click={searchActions.clearAllFilters}>
             Effacer tous les filtres
           </button>
           <button type="button" class="btn btn-secondary lg:hidden" on:click={closeFilters}>
@@ -974,7 +974,7 @@
 
                   {#if $previewState.selectedUuid === exercise.uuid && $previewState.isOpen}
                     <div class="selection-indicator">
-                      <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                      <svg class="w-4 h-4 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
@@ -1162,9 +1162,9 @@
     font-size:0.85rem;
     font-weight:500;
     cursor:pointer;
-    @apply border border-gray-300 rounded-md bg-gray-50 text-blue-600 transition-colors;
+    @apply border border-gray-300 rounded-md bg-gray-50 text-brand-primary transition-colors;
   }
-  .filters-reset:hover { @apply bg-blue-100; }
+  .filters-reset:hover { @apply bg-brand-50; }
   .filters-header h3 {
     font-size:1.15rem;
     font-weight:600;
@@ -1342,7 +1342,7 @@
   }
   .filters-menu-option:hover { @apply bg-gray-100; }
   .filters-menu-option--active {
-    @apply border-brand-primary bg-blue-100 text-brand-primary;
+    @apply border-brand-primary bg-brand-50 text-brand-primary;
   }
   .filters-menu-option-count {
     font-size:0.85rem;
@@ -1416,7 +1416,7 @@
     border:none;
     @apply text-gray-800;
   }
-  .filters-suggestions button:hover { @apply bg-blue-100; }
+  .filters-suggestions button:hover { @apply bg-brand-50; }
   .filters-footer { display:flex; flex-direction:column; gap:1rem; align-items:flex-end; }
   @media (min-width:640px) {
     .filters-footer { flex-direction:row; justify-content:flex-end; }
@@ -1429,7 +1429,7 @@
     padding: 0.75rem 3rem 0.75rem 2.5rem;
     font-size: 1.125rem;
     transition: all .2s ease;
-    @apply border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+    @apply border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent;
   }
   .search-loading { position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); }
   .search-spinner {
@@ -1438,7 +1438,7 @@
     height: 1.25rem;
     animation: spin 1s linear infinite;
     border: 2px solid transparent;
-    border-bottom-color: theme('colors.blue.600');
+    border-bottom-color: theme('colors.brand.600');
   }
   @keyframes spin { to { transform: rotate(360deg);} }
 
@@ -1480,7 +1480,7 @@
   .result-card:hover { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06); }
   .result-card--selected {
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-    @apply border-brand-primary bg-blue-100;
+    @apply border-brand-primary bg-brand-50;
   }
   .result-header { display: flex; align-items: start; justify-content: space-between; }
   .result-title {
@@ -1524,7 +1524,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @apply bg-blue-100;
+    @apply bg-brand-50;
   }
   .external-link-btn {
     transition: color .2s, background-color .2s;
@@ -1532,7 +1532,7 @@
     border-radius: 0.25rem;
     @apply text-gray-400;
   }
-  .external-link-btn:hover { @apply text-blue-600 bg-blue-100; }
+  .external-link-btn:hover { @apply text-brand-primary bg-brand-50; }
 
   .empty-state {
     text-align: center;

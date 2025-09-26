@@ -218,7 +218,7 @@
     <p class="text-gray-600 mt-2">Explorez les exercices par chapitres, modules et niveaux.</p>
     {#if selectedChapter || selectedModule || selectedLevel}
       <!-- CORRECTION : `resetView` remplacé par `clearSelection` -->
-      <button on:click={clearSelection} class="btn btn-text text-blue-600 mt-4">
+      <button on:click={clearSelection} class="btn btn-text text-brand-primary mt-4">
         &larr; Retour à la vue générale
       </button>
     {/if}
