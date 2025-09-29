@@ -4,18 +4,52 @@ Application web pour servir des exercices de mathématiques LaTeX avec recherche
 
 ## Démarrage rapide
 
+### Développement local
+
 ```bash
-# Installation
+# Installation des dépendances (Node 22 + pnpm via corepack)
 pnpm install
 
-# Développement
+# Générer le cache JSON et la base SQLite (à relancer quand le LaTeX change)
+pnpm build:content
+
+# Démarrer le serveur Vite (http://localhost:5173)
 pnpm dev
 
-# Build complet (nécessite LaTeX/Pandoc)
+# Variante: rebuild du contenu puis démarrer le serveur
+pnpm dev:full
+```
+
+### Production (sans Docker)
+
+```bash
+# Build complet (contenu + bundle Node adapter)
 pnpm build
 
-# Docker développement
-docker-compose -f docker-compose.dev.yml up
+# Vérifier le build localement
+pnpm preview
+
+# Lancer le serveur Node en production (PORT=3000 par défaut)
+NODE_ENV=production node build
+```
+
+### Production (avec Docker)
+
+```bash
+# Préparer les artéfacts locaux si vous reconstruisez l'image
+pnpm build:content:full
+
+# Construire l'image locale
+pnpm docker:build
+
+# Démarrer la stack (Caddy + app) en mode interactif
+pnpm docker:dev
+
+# Lancer en détaché (prod)
+pnpm docker:prod
+
+# Arrêt
+docker compose down
 ```
 
 ## Structure
