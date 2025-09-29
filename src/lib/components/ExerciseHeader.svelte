@@ -58,6 +58,29 @@
       </h1>
     {/if}
 
+    {#if variant !== 'preview'}
+      <div class="exercise-metadata">
+        {#if exercise.level}
+          <span class="exercise-badge exercise-badge--level">{exercise.level}</span>
+        {/if}
+        {#if exercise.theme}
+          <span class="exercise-badge exercise-badge--theme">{exercise.theme}</span>
+        {/if}
+        {#if exercise.difficulty}
+          <div class="exercise-difficulty">
+            <div class="flex gap-1">
+              {#each Array(5) as _, i}
+                <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-400' : 'bg-gray-200'}"></div>
+              {/each}
+            </div>
+            {#if variant === 'full'}
+              <span class="text-sm text-gray-500">({exercise.difficulty}/5)</span>
+            {/if}
+          </div>
+        {/if}
+      </div>
+    {/if}
+
     <!-- Absolutely positioned, removed from normal flow -->
     <div class="title-right">
       {#if exercise?.uuid}
@@ -86,29 +109,6 @@
       {/if}
     </div>
   </div>
-
-  {#if variant !== 'preview'}
-    <div class="exercise-metadata">
-      {#if exercise.level}
-        <span class="exercise-badge exercise-badge--level">{exercise.level}</span>
-      {/if}
-      {#if exercise.theme}
-        <span class="exercise-badge exercise-badge--theme">{exercise.theme}</span>
-      {/if}
-      {#if exercise.difficulty}
-        <div class="exercise-difficulty">
-          <div class="flex gap-1">
-            {#each Array(5) as _, i}
-              <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-400' : 'bg-gray-200'}"></div>
-            {/each}
-          </div>
-          {#if variant === 'full'}
-            <span class="text-sm text-gray-500">({exercise.difficulty}/5)</span>
-          {/if}
-        </div>
-      {/if}
-    </div>
-  {/if}
 
   {#if showGlobalToggles}
     <div class="exercise-actions">
@@ -262,15 +262,32 @@
 
   /* Responsive: on small screens, put the right block back into flow */
   @media (max-width: 640px) {
-    .title-right {
-      position: static;
-      align-items: flex-start;
-      margin-top: 0.25rem;
-      max-width: 100%;
+    .header-top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "title title-right"
+        "metadata title-right";
+      column-gap: 0.75rem;
+      row-gap: 0.5rem;
+      align-items: start;
     }
     .exercise-title {
+      grid-area: title;
       margin-right: 0; /* no reservation needed on mobile */
-      margin-bottom: 0.375rem;
+      margin-bottom: 0;
+    }
+    .exercise-metadata {
+      grid-area: metadata;
+      margin-bottom: 0;
+    }
+    .title-right {
+      grid-area: title-right;
+      position: static;
+      align-items: flex-end;
+      text-align: right;
+      margin-top: 0;
+      max-width: 100%;
     }
   }
 </style>
