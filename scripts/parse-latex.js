@@ -93,8 +93,9 @@ function generateExercisePreview(content) {
   return generatePreview(exerciseForPreview);
 }
 
+
 /**
- * NOUVEAU : Résout le chemin d'une image \includegraphics
+ * Résout le chemin d'une image \includegraphics avec priorité SVG > PNG > JPG
  * TOUTES les images sont dans content/images/{source}/{format}/
  */
 async function resolveImagePath(imagePath, exerciseUuid, sourceFilePath) {
@@ -107,8 +108,8 @@ async function resolveImagePath(imagePath, exerciseUuid, sourceFilePath) {
   // Formats à ignorer (sources, non artifacts)
   const SKIP_FORMATS = ['eps', 'ps', 'tex', 'tikz', 'maple', 'dvi'];
   
-  // Extensions à essayer si pas spécifiée (ordre de priorité pour le web)
-  const SEARCH_EXTENSIONS = ['svg', 'png', 'jpg', 'jpeg', 'pdf'];
+  // Extensions à essayer DANS L'ORDRE DE PRIORITÉ
+  const PRIORITY_EXTENSIONS = ['svg', 'png', 'jpg', 'jpeg', 'pdf'];
   
   // Extraire l'extension si présente
   let ext = path.extname(imagePath).toLowerCase().replace('.', '');
@@ -120,36 +121,27 @@ async function resolveImagePath(imagePath, exerciseUuid, sourceFilePath) {
   }
   
   // Parser le chemin pour extraire format et nom de fichier
-  // Exemples:
-  // - "pdf/4R9m-tikz-1.pdf" → format: pdf, filename: 4R9m-tikz-1.pdf
-  // - "pdf/4R9m-tikz-1" → format: pdf, filename: 4R9m-tikz-1 (sans ext)
-  // - "../images/pdf/roOt-1.pdf" → format: pdf, filename: roOt-1.pdf
-  // - "4R9m-tikz-1.pdf" → format: à deviner depuis extension, filename: 4R9m-tikz-1.pdf
-  
   let format = null;
   let filename = null;
+  let baseFilename = null; // Nom sans extension
   
   if (imagePath.includes('/') || imagePath.includes('\\')) {
     // Chemin avec répertoires
     const pathParts = imagePath.split(/[/\\]/);
     
-    // Chercher "images" dans le chemin (ex: ../images/pdf/file.pdf)
+    // Chercher "images" dans le chemin
     const imagesIndex = pathParts.indexOf('images');
     
     if (imagesIndex !== -1 && pathParts.length > imagesIndex + 2) {
-      // Format après "images": ../images/pdf/file.pdf → format: pdf
       format = pathParts[imagesIndex + 1];
       filename = pathParts.slice(imagesIndex + 2).join('/');
     } else {
-      // Sinon, le premier élément est probablement le format
-      // Ex: pdf/4R9m-tikz-1.pdf → format: pdf
       format = pathParts[0];
       filename = pathParts.slice(1).join('/');
     }
   } else {
-    // Juste un nom de fichier (ex: 4R9m-tikz-1.pdf)
+    // Juste un nom de fichier
     filename = imagePath;
-    // Format sera déduit de l'extension
     if (ext) {
       format = ext;
     }
@@ -160,153 +152,96 @@ async function resolveImagePath(imagePath, exerciseUuid, sourceFilePath) {
     return null;
   }
   
-  // Fonction helper pour chercher un fichier
-  async function searchInFormat(formatDir, fname, needsExt) {
-    if (!fs.existsSync(formatDir)) {
-      return null;
-    }
-    
-    if (needsExt) {
-      // Essayer toutes les extensions
-      for (const tryExt of SEARCH_EXTENSIONS) {
-        const testPath = path.join(formatDir, fname + '.' + tryExt);
+  // Extraire le nom de base (sans extension)
+  const lastDot = filename.lastIndexOf('.');
+  if (lastDot > 0 && lastDot < filename.length - 1) {
+    baseFilename = filename.substring(0, lastDot);
+  } else {
+    baseFilename = filename;
+  }
+  
+  // Fonction helper pour chercher un fichier avec priorité
+  async function searchWithPriority(baseDir, baseName) {
+    // Essayer chaque format dans l'ordre de priorité
+    for (const tryExt of PRIORITY_EXTENSIONS) {
+      const formatDir = path.join(baseDir, tryExt);
+      const formatDirUpper = path.join(baseDir, tryExt.toUpperCase());
+      
+      // Essayer le format en minuscules
+      if (fs.existsSync(formatDir)) {
+        const testPath = path.join(formatDir, baseName + '.' + tryExt);
         if (fs.existsSync(testPath)) {
+          console.log(`  ℹ️  Found (priority ${tryExt}): images/${sourceName}/${tryExt}/${path.basename(testPath)}`);
           return testPath;
         }
-      }
-      
-      // Essayer avec insensibilité à la casse
-      try {
-        const files = await fsPromises.readdir(formatDir);
-        for (const tryExt of SEARCH_EXTENSIONS) {
-          const searchName = (fname + '.' + tryExt).toLowerCase();
+        
+        // Essayer avec insensibilité à la casse
+        try {
+          const files = await fsPromises.readdir(formatDir);
+          const searchName = (baseName + '.' + tryExt).toLowerCase();
           for (const file of files) {
             if (file.toLowerCase() === searchName) {
+              console.log(`  ℹ️  Found (priority ${tryExt}): images/${sourceName}/${tryExt}/${file}`);
               return path.join(formatDir, file);
             }
           }
+        } catch (err) {
+          // Ignore
         }
-      } catch (err) {
-        // Ignore
-      }
-    } else {
-      // Chercher le fichier exact
-      const exactPath = path.join(formatDir, fname);
-      if (fs.existsSync(exactPath)) {
-        return exactPath;
       }
       
-      // Insensibilité à la casse
-      try {
-        const files = await fsPromises.readdir(formatDir);
-        const searchName = fname.toLowerCase();
-        for (const file of files) {
-          if (file.toLowerCase() === searchName) {
-            return path.join(formatDir, file);
-          }
+      // Essayer le format en MAJUSCULES
+      if (fs.existsSync(formatDirUpper)) {
+        const testPath = path.join(formatDirUpper, baseName + '.' + tryExt);
+        if (fs.existsSync(testPath)) {
+          console.log(`  ℹ️  Found (priority ${tryExt}): images/${sourceName}/${tryExt.toUpperCase()}/${path.basename(testPath)}`);
+          return testPath;
         }
-      } catch (err) {
-        // Ignore
+        
+        // Essayer avec insensibilité à la casse
+        try {
+          const files = await fsPromises.readdir(formatDirUpper);
+          const searchName = (baseName + '.' + tryExt).toLowerCase();
+          for (const file of files) {
+            if (file.toLowerCase() === searchName) {
+              console.log(`  ℹ️  Found (priority ${tryExt}): images/${sourceName}/${tryExt.toUpperCase()}/${file}`);
+              return path.join(formatDirUpper, file);
+            }
+          }
+        } catch (err) {
+          // Ignore
+        }
       }
     }
     
     return null;
   }
   
-  // Chercher l'image avec priorité web-optimale
-  const needsExtension = !ext;
+  // Chercher l'image avec priorité
+  const baseDir = path.join(contentDir, 'images', sourceName);
+  const found = await searchWithPriority(baseDir, baseFilename);
   
-  // Si on a un format explicite ET une extension dans filename,
-  // extraire le basename pour chercher des alternatives
-  let baseFilename = filename;
-  if (ext && filename.endsWith('.' + ext)) {
-    baseFilename = filename.slice(0, -(ext.length + 1));
+  if (found) {
+    return found;
   }
   
-  // NOUVEAU : Ordre de priorité des formats pour le web
-  const WEB_FORMAT_PRIORITY = ['svg', 'png', 'jpg', 'jpeg', 'pdf'];
-  
-  if (format) {
-    // Stratégie : chercher d'abord les alternatives web-optimales
-    // Exemple : \includegraphics{pdf/diagram.pdf}
-    // → Chercher diagram.svg dans images/{source}/svg/
-    // → Sinon diagram.png dans images/{source}/png/
-    // → Sinon diagram.pdf dans images/{source}/pdf/ (fallback)
-    
-    if (ext) {
-      // Extension explicite dans le filename
-      // Chercher des alternatives avec le même basename
-      for (const webFormat of WEB_FORMAT_PRIORITY) {
-        const webFormatDir = path.join(contentDir, 'images', sourceName, webFormat);
-        const webFormatDirAlt = path.join(contentDir, 'images', sourceName, webFormat.toUpperCase());
-        
-        // Chercher avec le nouveau format
-        const webFilename = baseFilename + '.' + webFormat;
-        
-        let found = await searchInFormat(webFormatDir, webFilename, false);
-        if (found) {
-          if (webFormat !== format) {
-            console.log(`  ✨ Using web-optimized: ${webFormat.toUpperCase()} instead of ${format.toUpperCase()}`);
-          }
-          console.log(`  ℹ️  Found: images/${sourceName}/${webFormat}/${path.basename(found)}`);
-          return found;
-        }
-        
-        // Essayer avec majuscules (PNG vs png)
-        found = await searchInFormat(webFormatDirAlt, webFilename, false);
-        if (found) {
-          if (webFormat !== format) {
-            console.log(`  ✨ Using web-optimized: ${webFormat.toUpperCase()} instead of ${format.toUpperCase()}`);
-          }
-          console.log(`  ℹ️  Found: images/${sourceName}/${webFormat.toUpperCase()}/${path.basename(found)}`);
-          return found;
-        }
-      }
-    } else {
-      // Pas d'extension : chercher avec ordre de priorité web
-      for (const webFormat of WEB_FORMAT_PRIORITY) {
-        const webFormatDir = path.join(contentDir, 'images', sourceName, webFormat);
-        const webFormatDirAlt = path.join(contentDir, 'images', sourceName, webFormat.toUpperCase());
-        
-        let found = await searchInFormat(webFormatDir, filename, true);
-        if (found) {
-          console.log(`  ℹ️  Found: images/${sourceName}/${webFormat}/${path.basename(found)}`);
-          return found;
-        }
-        
-        found = await searchInFormat(webFormatDirAlt, filename, true);
-        if (found) {
-          console.log(`  ℹ️  Found: images/${sourceName}/${webFormat.toUpperCase()}/${path.basename(found)}`);
-          return found;
-        }
-      }
-    }
-  }
-  
-  // Si pas de format ou pas trouvé, chercher dans tous les formats possibles
-  const formatsToTry = ext ? [ext, ext.toUpperCase()] : SEARCH_EXTENSIONS;
-  
-  for (const tryFormat of formatsToTry) {
-    const formatDir = path.join(contentDir, 'images', sourceName, tryFormat);
-    const formatDirAlt = path.join(contentDir, 'images', sourceName, tryFormat.toUpperCase());
-    
-    let found = await searchInFormat(formatDir, filename, needsExtension);
-    if (found) {
-      console.log(`  ℹ️  Found: images/${sourceName}/${tryFormat}/${path.basename(found)}`);
-      return found;
-    }
-    
-    found = await searchInFormat(formatDirAlt, filename, needsExtension);
-    if (found) {
-      console.log(`  ℹ️  Found: images/${sourceName}/${tryFormat.toUpperCase()}/${path.basename(found)}`);
-      return found;
+  // Si on avait un format spécifique demandé et qu'on ne l'a pas trouvé avec priorité,
+  // essayer quand même de le chercher exactement comme demandé
+  if (format && ext) {
+    const exactPath = path.join(contentDir, 'images', sourceName, format, filename);
+    if (fs.existsSync(exactPath)) {
+      console.log(`  ℹ️  Found (exact match): images/${sourceName}/${format}/${filename}`);
+      return exactPath;
     }
   }
   
   console.warn(`⚠️  Image not found: ${imagePath}`);
-  console.warn(`    Searched in: images/${sourceName}/{format}/`);
+  console.warn(`    Base name: ${baseFilename}`);
+  console.warn(`    Searched in: images/${sourceName}/{svg,png,jpg,jpeg,pdf}/`);
   return null;
 }
+
+// À intégrer dans parse-latex.js en remplacement de la fonction existante
 
 /**
  * NOUVEAU : Extrait et copie les images \includegraphics
@@ -425,7 +360,7 @@ async function parseLatexFile(filePath) {
     content: [],
     artifacts: { 
       tikz: [], 
-      images: [],  // NOUVEAU
+      images: [],
       geogebra: [], 
       code: [], 
       video: null 
@@ -435,7 +370,7 @@ async function parseLatexFile(filePath) {
 
   const artifactsData = {
     tikz: [],
-    images: [],  // NOUVEAU
+    images: [],
     code: []
   };
 
@@ -462,7 +397,7 @@ async function parseLatexFile(filePath) {
     codeBlockIndex++;
   }
 
-  // NOUVEAU : Extraction des \includegraphics
+  // Extraction des \includegraphics SANS modifier le LaTeX source
   const { images: includedImages, replacements: imageReplacements } = 
     await extractIncludegraphicsImages(latexContent, exerciseUuid, filePath);
   
@@ -471,23 +406,16 @@ async function parseLatexFile(filePath) {
     mainData.artifacts.images = includedImages.map(img => img.id);
   }
 
-  // Créer les placeholders pour les images (avant conversion Pandoc)
-  let processedLatex = latexContent;
-  const imagePlaceholders = new Map();
-  
-  for (const [original, imgTag] of imageReplacements) {
-    const placeholder = `IMGPLACEHOLDER${crypto.randomBytes(4).toString('hex')}`;
-    processedLatex = processedLatex.replace(original, placeholder);
-    imagePlaceholders.set(placeholder, imgTag);
-  }
+  // NE PAS créer de placeholders dans le LaTeX source !
+  // Les imageReplacements seront utilisés uniquement lors de la conversion HTML
 
-  // Extraction TikZ (sur le contenu avec placeholders)
+  // Extraction TikZ
   const tikzReplacements = new Map();
   const tikzRegex = /(\\begin{tikzpicture}[\s\S]*?\\end{tikzpicture})/g;
   let tikzMatch;
   let tikzBlockIndex = 1;
   
-  while ((tikzMatch = tikzRegex.exec(processedLatex)) !== null) {
+  while ((tikzMatch = tikzRegex.exec(latexContent)) !== null) {
     const tikzBlockWithComments = tikzMatch[1];
     const tikzKey = stripComments(tikzBlockWithComments);
     if (tikzReplacements.has(tikzKey)) continue;
@@ -510,29 +438,29 @@ async function parseLatexFile(filePath) {
     tikzBlockIndex++;
   }
 
-  // Parsing du contenu
+  // Parsing du contenu - utiliser le LaTeX ORIGINAL
   const allCommandNames = CONFIG.commands.map(cmd => cmd.name).join('|');
   const commandRegex = new RegExp(`(?<!\\\\)\\\\(${allCommandNames})\\s*\\{`, 'g');
   let blockOrder = 1;
   let cmdMatch;
 
-  while ((cmdMatch = commandRegex.exec(processedLatex)) !== null) {
+  while ((cmdMatch = commandRegex.exec(latexContent)) !== null) {  // <-- Utiliser latexContent, pas processedLatex
     const commandName = cmdMatch[1];
     const commandObj = CONFIG.commands.find(cmd => cmd.name === commandName);
     if (!commandObj) continue;
 
     const matchStart = cmdMatch.index;
-    const lineStart = processedLatex.lastIndexOf('\n', matchStart) + 1;
-    const line = processedLatex.substring(lineStart, processedLatex.indexOf('\n', lineStart));
+    const lineStart = latexContent.lastIndexOf('\n', matchStart) + 1;
+    const line = latexContent.substring(lineStart, latexContent.indexOf('\n', lineStart));
     if (isCommandCommented(line, cmdMatch.index - lineStart)) continue;
 
     let startIndex = cmdMatch.index + cmdMatch[0].length;
     let index = startIndex;
     let braceCount = 1;
     let content = '';
-    while (braceCount > 0 && index < processedLatex.length) {
-      const char = processedLatex[index];
-      if (char === '\\') { content += char + processedLatex[++index]; }
+    while (braceCount > 0 && index < latexContent.length) {
+      const char = latexContent[index];
+      if (char === '\\') { content += char + latexContent[++index]; }
       else if (char === '{') { braceCount++; content += char; }
       else if (char === '}') { braceCount--; if (braceCount > 0) content += char; }
       else { content += char; }
@@ -543,17 +471,30 @@ async function parseLatexFile(filePath) {
       const originalBlockLatex = commandObj.isVerbatim ? content.trim() : stripComments(content.trim());
       let htmlContent = "";
 
-      let processedContent = originalBlockLatex;
+      // Pour la conversion HTML, créer une version avec placeholders
+      let contentForConversion = originalBlockLatex;
       let codeReplacements = [];
       
-      if (processedContent.includes('\\BUseVerbatim{')) {
-        const result = replaceBUseVerbatimWithPlaceholders(processedContent, codeBlocks);
-        processedContent = result.content;
+      // Créer des placeholders temporaires pour les images SEULEMENT pour cette conversion
+      const tempImagePlaceholders = new Map();
+      for (const [original, imgTag] of imageReplacements) {
+        if (contentForConversion.includes(original)) {
+          const placeholder = `IMGPLACEHOLDER${crypto.randomBytes(4).toString('hex')}`;
+          contentForConversion = contentForConversion.replace(new RegExp(original.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), placeholder);
+          tempImagePlaceholders.set(placeholder, imgTag);
+        }
+      }
+      
+      // Remplacer les codes
+      if (contentForConversion.includes('\\BUseVerbatim{')) {
+        const result = replaceBUseVerbatimWithPlaceholders(contentForConversion, codeBlocks);
+        contentForConversion = result.content;
         codeReplacements = result.replacements;
       }
 
-      if (processedContent.includes('\\begin{tikzpicture}')) {
-        let pandocInput = processedContent;
+      // Conversion HTML
+      if (contentForConversion.includes('\\begin{tikzpicture}')) {
+        let pandocInput = contentForConversion;
         const replacementsForPandoc = [];
 
         const wrappedTikzRegex = /\\begin{(center|figure|minipage)(?:\[[^\]]*\])?(?:\{[^}]*\})?}\s*(\\begin{tikzpicture}[\s\S]*?\\end{tikzpicture})\s*\\end{\1}|(\\begin{tikzpicture}[\s\S]*?\\end{tikzpicture})/g;
@@ -588,9 +529,9 @@ async function parseLatexFile(filePath) {
             finalHtml = finalHtml.replace(item.placeholder, item.html);
           }
           
-          // Restaurer les images \includegraphics
-          for (const [placeholder, imgTag] of imagePlaceholders) {
-            finalHtml = finalHtml.replace(placeholder, imgTag);
+          // Restaurer les images
+          for (const [placeholder, imgTag] of tempImagePlaceholders) {
+            finalHtml = finalHtml.replace(new RegExp(placeholder.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), imgTag);
           }
           
           // Restaurer les blocs de code
@@ -603,12 +544,12 @@ async function parseLatexFile(filePath) {
         }
       } else {
         try {
-          const pandocInput = wrapAlignWithDollar(processedContent);
+          const pandocInput = wrapAlignWithDollar(contentForConversion);
           let htmlWithPlaceholders = (pandocInput.trim() === '') ? '' : await convertLaTeXToHTML(pandocInput);
           
           // Restaurer les images
-          for (const [placeholder, imgTag] of imagePlaceholders) {
-            htmlWithPlaceholders = htmlWithPlaceholders.replace(placeholder, imgTag);
+          for (const [placeholder, imgTag] of tempImagePlaceholders) {
+            htmlWithPlaceholders = htmlWithPlaceholders.replace(new RegExp(placeholder.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), imgTag);
           }
           
           // Restaurer les blocs de code
@@ -623,11 +564,12 @@ async function parseLatexFile(filePath) {
       mainData.content.push({
         id: blockId,
         type: commandObj.blockType,
-        latex: content.trim(),
+        latex: content.trim(),  // <-- LaTeX ORIGINAL sans placeholders
         html: htmlContent,
         order: blockOrder - 1
       });
     } else {
+      // Traitement des métadonnées (non-content)
       const finalContent = stripComments(content.trim());
       const processedContent = preprocessLatex(finalContent);
       if (commandObj.jsonKey === 'theme') {
@@ -647,6 +589,9 @@ async function parseLatexFile(filePath) {
     }
   }
 
+  // Reste du code pour GeoGebra, preview, etc...
+  // (inchangé)
+  
   // Extraction GeoGebra
   const geogebraRegex = /\\geogebra\{([^}]+)\}/g;
   let geoMatch;
@@ -665,7 +610,7 @@ async function parseLatexFile(filePath) {
     }
   }
 
-  // Réorganiser mainData pour placer preview avant content
+  // Réorganiser mainData
   const orderedMainData = {
     uuid: mainData.uuid,
     title: mainData.title,
