@@ -20,8 +20,6 @@ import {
 } from './utils/code2html-utils.js';
 
 import { CacheManager } from './utils/cache-manager.js';
-
-// Import des utilitaires de preview
 import { generatePreview } from './utils/previewUtils.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -31,7 +29,6 @@ const fsPromises = fs.promises;
 
 // Chemins de sortie
 const TIKZ_ASSETS_PUBLIC_PATH = '/artifacts/tikz';
-// NOUVEAU : Chemin de sortie pour les fichiers JSON des artéfacts
 const ARTIFACTS_OUTPUT_DIR = path.resolve(__dirname, '../static/artifacts');
 
 const CONFIG = {
@@ -49,9 +46,9 @@ const CONFIG = {
     { name: 'organisation', jsonKey: 'organization', isContent: false },
     { name: 'video', jsonKey: 'video_id', isContent: false },
     { name: 'datecreate', jsonKey: 'created_at', isContent: false },
-    { name: 'niveau', jsonKey: 'level', isContent: false }, // MODIFIÉ : niveau devient level
-    { name: 'difficulte', jsonKey: 'difficulty', isContent: false }, // NOUVEAU : difficulte devient difficulty
-    { name: 'module', jsonKey: 'module', isContent: false }, // NOUVEAU
+    { name: 'niveau', jsonKey: 'level', isContent: false },
+    { name: 'difficulte', jsonKey: 'difficulty', isContent: false },
+    { name: 'module', jsonKey: 'module', isContent: false },
     { name: 'texte', jsonKey: 'content', isContent: true, blockType: 'text' },
     { name: 'question', jsonKey: 'content', isContent: true, blockType: 'question' },
     { name: 'indication', jsonKey: 'content', isContent: true, blockType: 'indication' },
@@ -69,11 +66,6 @@ async function calculateFileHash(filePath) {
   return crypto.createHash('sha256').update(content).digest('hex');
 }
 
-/**
- * Valide et normalise la valeur de difficulté
- * @param {string} value - La valeur à valider (peut être vide ou contenir un entier)
- * @returns {number|null} - L'entier entre 1 et 5, ou null si invalide ou vide
- */
 function validateDifficulty(value) {
   if (!value || value.trim() === '') {
     return null;
@@ -88,13 +80,7 @@ function validateDifficulty(value) {
   return parsed;
 }
 
-/**
- * Génère la preview pour un exercice basé sur son contenu
- * @param {Array} content - Le tableau des blocs de contenu
- * @returns {string} La preview générée
- */
 function generateExercisePreview(content) {
-  // Créer un objet compatible avec generatePreview de previewUtils
   const exerciseForPreview = {
     contenu: content.map(block => ({
       type: block.type === 'text' ? 'description' : block.type,
@@ -108,32 +94,290 @@ function generateExercisePreview(content) {
 }
 
 /**
- * MODIFIÉ : Retourne maintenant un objet { mainData, artifactsData }
+ * NOUVEAU : Résout le chemin d'une image \includegraphics
+ * TOUTES les images sont dans content/images/{source}/{format}/
+ */
+async function resolveImagePath(imagePath, exerciseUuid, sourceFilePath) {
+  const contentDir = path.resolve(__dirname, '../content');
+  
+  // Déterminer la source (amscc, exo7, etc.)
+  const relativePath = path.relative(path.join(contentDir, 'exercises'), sourceFilePath);
+  const sourceName = relativePath.split(path.sep)[0];
+  
+  // Formats à ignorer (sources, non artifacts)
+  const SKIP_FORMATS = ['eps', 'ps', 'tex', 'tikz', 'maple', 'dvi'];
+  
+  // Extensions à essayer si pas spécifiée
+  const SEARCH_EXTENSIONS = ['pdf', 'png', 'svg', 'jpg', 'jpeg'];
+  
+  // Extraire l'extension si présente
+  let ext = path.extname(imagePath).toLowerCase().replace('.', '');
+  
+  // Vérifier si format à ignorer
+  if (ext && SKIP_FORMATS.includes(ext)) {
+    console.log(`  ⏭️  Skipping ${ext.toUpperCase()} source: ${imagePath}`);
+    return null;
+  }
+  
+  // Parser le chemin pour extraire format et nom de fichier
+  // Exemples:
+  // - "pdf/4R9m-tikz-1.pdf" → format: pdf, filename: 4R9m-tikz-1.pdf
+  // - "pdf/4R9m-tikz-1" → format: pdf, filename: 4R9m-tikz-1 (sans ext)
+  // - "../images/pdf/roOt-1.pdf" → format: pdf, filename: roOt-1.pdf
+  // - "4R9m-tikz-1.pdf" → format: à deviner depuis extension, filename: 4R9m-tikz-1.pdf
+  
+  let format = null;
+  let filename = null;
+  
+  if (imagePath.includes('/') || imagePath.includes('\\')) {
+    // Chemin avec répertoires
+    const pathParts = imagePath.split(/[/\\]/);
+    
+    // Chercher "images" dans le chemin (ex: ../images/pdf/file.pdf)
+    const imagesIndex = pathParts.indexOf('images');
+    
+    if (imagesIndex !== -1 && pathParts.length > imagesIndex + 2) {
+      // Format après "images": ../images/pdf/file.pdf → format: pdf
+      format = pathParts[imagesIndex + 1];
+      filename = pathParts.slice(imagesIndex + 2).join('/');
+    } else {
+      // Sinon, le premier élément est probablement le format
+      // Ex: pdf/4R9m-tikz-1.pdf → format: pdf
+      format = pathParts[0];
+      filename = pathParts.slice(1).join('/');
+    }
+  } else {
+    // Juste un nom de fichier (ex: 4R9m-tikz-1.pdf)
+    filename = imagePath;
+    // Format sera déduit de l'extension
+    if (ext) {
+      format = ext;
+    }
+  }
+  
+  if (!filename) {
+    console.warn(`⚠️  Could not parse image path: ${imagePath}`);
+    return null;
+  }
+  
+  // Fonction helper pour chercher un fichier
+  async function searchInFormat(formatDir, fname, needsExt) {
+    if (!fs.existsSync(formatDir)) {
+      return null;
+    }
+    
+    if (needsExt) {
+      // Essayer toutes les extensions
+      for (const tryExt of SEARCH_EXTENSIONS) {
+        const testPath = path.join(formatDir, fname + '.' + tryExt);
+        if (fs.existsSync(testPath)) {
+          return testPath;
+        }
+      }
+      
+      // Essayer avec insensibilité à la casse
+      try {
+        const files = await fsPromises.readdir(formatDir);
+        for (const tryExt of SEARCH_EXTENSIONS) {
+          const searchName = (fname + '.' + tryExt).toLowerCase();
+          for (const file of files) {
+            if (file.toLowerCase() === searchName) {
+              return path.join(formatDir, file);
+            }
+          }
+        }
+      } catch (err) {
+        // Ignore
+      }
+    } else {
+      // Chercher le fichier exact
+      const exactPath = path.join(formatDir, fname);
+      if (fs.existsSync(exactPath)) {
+        return exactPath;
+      }
+      
+      // Insensibilité à la casse
+      try {
+        const files = await fsPromises.readdir(formatDir);
+        const searchName = fname.toLowerCase();
+        for (const file of files) {
+          if (file.toLowerCase() === searchName) {
+            return path.join(formatDir, file);
+          }
+        }
+      } catch (err) {
+        // Ignore
+      }
+    }
+    
+    return null;
+  }
+  
+  // Chercher l'image
+  const needsExtension = !ext;
+  
+  if (format) {
+    // On a un format explicite, chercher dans images/{source}/{format}/
+    const formatDir = path.join(contentDir, 'images', sourceName, format);
+    const formatDirAlt = path.join(contentDir, 'images', sourceName, format.toUpperCase());
+    
+    let found = await searchInFormat(formatDir, filename, needsExtension);
+    if (found) {
+      console.log(`  ℹ️  Found: images/${sourceName}/${format}/${path.basename(found)}`);
+      return found;
+    }
+    
+    // Essayer avec majuscules (PNG vs png)
+    found = await searchInFormat(formatDirAlt, filename, needsExtension);
+    if (found) {
+      console.log(`  ℹ️  Found: images/${sourceName}/${format.toUpperCase()}/${path.basename(found)}`);
+      return found;
+    }
+  }
+  
+  // Si pas de format ou pas trouvé, chercher dans tous les formats possibles
+  const formatsToTry = ext ? [ext, ext.toUpperCase()] : SEARCH_EXTENSIONS;
+  
+  for (const tryFormat of formatsToTry) {
+    const formatDir = path.join(contentDir, 'images', sourceName, tryFormat);
+    const formatDirAlt = path.join(contentDir, 'images', sourceName, tryFormat.toUpperCase());
+    
+    let found = await searchInFormat(formatDir, filename, needsExtension);
+    if (found) {
+      console.log(`  ℹ️  Found: images/${sourceName}/${tryFormat}/${path.basename(found)}`);
+      return found;
+    }
+    
+    found = await searchInFormat(formatDirAlt, filename, needsExtension);
+    if (found) {
+      console.log(`  ℹ️  Found: images/${sourceName}/${tryFormat.toUpperCase()}/${path.basename(found)}`);
+      return found;
+    }
+  }
+  
+  console.warn(`⚠️  Image not found: ${imagePath}`);
+  console.warn(`    Searched in: images/${sourceName}/{format}/`);
+  return null;
+}
+
+/**
+ * NOUVEAU : Extrait et copie les images \includegraphics
+ */
+async function extractIncludegraphicsImages(latexContent, exerciseUuid, sourceFilePath) {
+  const images = [];
+  const replacements = new Map();
+  
+  const regex = /\\includegraphics(?:\[([^\]]*)\])?\{([^}]+)\}/g;
+  let match;
+  let imgIndex = 1;
+  
+  const contentDir = path.resolve(__dirname, '../content');
+  const outputDir = path.join(ARTIFACTS_OUTPUT_DIR, 'images', exerciseUuid);
+  
+  await fsPromises.mkdir(outputDir, { recursive: true });
+  
+  console.log(`\n🔍 Searching for images...`);
+  
+  while ((match = regex.exec(latexContent)) !== null) {
+    const options = match[1] || '';
+    const imagePath = match[2].trim();
+    
+    const absoluteSourcePath = await resolveImagePath(imagePath, exerciseUuid, sourceFilePath);
+    
+    if (!absoluteSourcePath) {
+      continue;
+    }
+    
+    const ext = path.extname(absoluteSourcePath).toLowerCase().replace('.', '');
+    const SUPPORTED_FORMATS = ['pdf', 'png', 'svg', 'jpg', 'jpeg'];
+    
+    if (!SUPPORTED_FORMATS.includes(ext)) {
+      console.warn(`⚠️  Unsupported format for artifacts: ${ext}`);
+      continue;
+    }
+    
+    const imgId = `img_${imgIndex}`;
+    const destFilename = `${imgId}.${ext}`;
+    const destPath = path.join(outputDir, destFilename);
+    const publicUrl = `/artifacts/images/${exerciseUuid}/${destFilename}`;
+    
+    try {
+      const needsCopy = await shouldCopyFile(absoluteSourcePath, destPath);
+      if (needsCopy) {
+        await fsPromises.copyFile(absoluteSourcePath, destPath);
+        const relativeSrc = path.relative(contentDir, absoluteSourcePath);
+        console.log(`  📸 Copied: ${relativeSrc} → ${destFilename}`);
+      }
+    } catch (error) {
+      console.error(`❌ Failed to copy ${imagePath}:`, error.message);
+      continue;
+    }
+    
+    images.push({
+      id: imgId,
+      url: publicUrl,
+      originalPath: imagePath,
+      sourcePath: path.relative(contentDir, absoluteSourcePath),
+      sourceFilename: path.basename(absoluteSourcePath),
+      format: ext,
+      ...(options && { options })
+    });
+    
+    const imgTag = `<img src="${publicUrl}" alt="Image ${imgIndex}" class="includegraphics-image">`;
+    replacements.set(match[0], imgTag);
+    
+    imgIndex++;
+  }
+  
+  if (images.length > 0) {
+    console.log(`  ✅ Found ${images.length} image(s)`);
+  } else {
+    console.log(`  ℹ️  No images to process`);
+  }
+  
+  return { images, replacements };
+}
+
+async function shouldCopyFile(sourcePath, destPath) {
+  try {
+    const [sourceStat, destStat] = await Promise.all([
+      fsPromises.stat(sourcePath),
+      fsPromises.stat(destPath).catch(() => null)
+    ]);
+    
+    if (!destStat) return true;
+    return sourceStat.mtime > destStat.mtime;
+  } catch {
+    return true;
+  }
+}
+
+/**
+ * MODIFIÉ : Parsing avec support des images \includegraphics
  */
 async function parseLatexFile(filePath) {
   const latexContent = await fsPromises.readFile(filePath, 'utf8');
   const fileHash = await calculateFileHash(filePath);
   
-  // Données principales pour le cache
   const mainData = {
     uuid: "",
     title: "",
     chapter: "",
     subchapter: "",
     theme: "",
-    level: "", // MODIFIÉ : ancien "difficulty" devient "level"
-    difficulty: null, // NOUVEAU : nouvelle difficulté numérique (1-5 ou null)
-    module: "", // NOUVEAU
+    level: "",
+    difficulty: null,
+    module: "",
     author: "",
     organization: "",
     video_id: "",
     created_at: "",
     updated_at: new Date().toISOString(),
-    preview: "", // NOUVEAU : Champ preview
+    preview: "",
     content: [],
     artifacts: { 
-      // Le champ tikz ne contiendra que les IDs
       tikz: [], 
+      images: [],  // NOUVEAU
       geogebra: [], 
       code: [], 
       video: null 
@@ -141,25 +385,23 @@ async function parseLatexFile(filePath) {
     source_hash: fileHash
   };
 
-  // NOUVEAU : Objet pour le fichier JSON des artéfacts
   const artifactsData = {
     tikz: [],
-    code: []  // NOUVEAU : Ajout des blocs de code
+    images: [],  // NOUVEAU
+    code: []
   };
 
   const uuidMatch = latexContent.match(/\\uuid\{([^}]+)\}/);
   const exerciseUuid = uuidMatch ? uuidMatch[1].trim() : generateShortUuid();
   mainData.uuid = exerciseUuid;
 
-  // NOUVEAU : Extraction des blocs SaveVerbatim
+  // Extraction des blocs SaveVerbatim (code)
   const codeBlocks = extractSaveVerbatimBlocks(latexContent);
   let codeBlockIndex = 1;
   
-  // Traiter chaque bloc SaveVerbatim trouvé
   for (const [blockName, blockData] of codeBlocks) {
     const codeId = `code_${codeBlockIndex}`;
     
-    // Ajouter à l'objet des artéfacts
     artifactsData.code.push({
       id: codeId,
       name: blockName,
@@ -168,18 +410,36 @@ async function parseLatexFile(filePath) {
       html: convertCodeToHTML(blockData.content, blockData.language, blockName)
     });
     
-    // Ajouter l'ID à la liste des artéfacts de code
     mainData.artifacts.code.push(codeId);
-    
     codeBlockIndex++;
   }
 
+  // NOUVEAU : Extraction des \includegraphics
+  const { images: includedImages, replacements: imageReplacements } = 
+    await extractIncludegraphicsImages(latexContent, exerciseUuid, filePath);
+  
+  if (includedImages.length > 0) {
+    artifactsData.images = includedImages;
+    mainData.artifacts.images = includedImages.map(img => img.id);
+  }
+
+  // Créer les placeholders pour les images (avant conversion Pandoc)
+  let processedLatex = latexContent;
+  const imagePlaceholders = new Map();
+  
+  for (const [original, imgTag] of imageReplacements) {
+    const placeholder = `IMGPLACEHOLDER${crypto.randomBytes(4).toString('hex')}`;
+    processedLatex = processedLatex.replace(original, placeholder);
+    imagePlaceholders.set(placeholder, imgTag);
+  }
+
+  // Extraction TikZ (sur le contenu avec placeholders)
   const tikzReplacements = new Map();
   const tikzRegex = /(\\begin{tikzpicture}[\s\S]*?\\end{tikzpicture})/g;
   let tikzMatch;
   let tikzBlockIndex = 1;
   
-  while ((tikzMatch = tikzRegex.exec(latexContent)) !== null) {
+  while ((tikzMatch = tikzRegex.exec(processedLatex)) !== null) {
     const tikzBlockWithComments = tikzMatch[1];
     const tikzKey = stripComments(tikzBlockWithComments);
     if (tikzReplacements.has(tikzKey)) continue;
@@ -188,15 +448,13 @@ async function parseLatexFile(filePath) {
     const svgFilename = `${exerciseUuid}-${tikzId}.svg`;
     const publicUrl = `${TIKZ_ASSETS_PUBLIC_PATH}/${svgFilename}`;
 
-    // MODIFIÉ : Remplissage des deux objets de données
-    mainData.artifacts.tikz.push(tikzId); // On ne stocke que l'ID dans le JSON principal
+    mainData.artifacts.tikz.push(tikzId);
     
-    // On stocke l'objet complet dans le JSON des artéfacts
     artifactsData.tikz.push({
       id: tikzId,
       url: publicUrl,
       latex: tikzBlockWithComments,
-      svg: "" // Champ prêt à être rempli par le prochain script de build
+      svg: ""
     });
     
     const imgTag = `<img src="${publicUrl}" alt="Diagramme TikZ ${tikzBlockIndex}" class="tikz-svg-image">`;
@@ -204,29 +462,29 @@ async function parseLatexFile(filePath) {
     tikzBlockIndex++;
   }
 
-  // Le reste de la logique de parsing, mais avec traitement des références de code
+  // Parsing du contenu
   const allCommandNames = CONFIG.commands.map(cmd => cmd.name).join('|');
   const commandRegex = new RegExp(`(?<!\\\\)\\\\(${allCommandNames})\\s*\\{`, 'g');
   let blockOrder = 1;
   let cmdMatch;
 
-  while ((cmdMatch = commandRegex.exec(latexContent)) !== null) {
+  while ((cmdMatch = commandRegex.exec(processedLatex)) !== null) {
     const commandName = cmdMatch[1];
     const commandObj = CONFIG.commands.find(cmd => cmd.name === commandName);
     if (!commandObj) continue;
 
     const matchStart = cmdMatch.index;
-    const lineStart = latexContent.lastIndexOf('\n', matchStart) + 1;
-    const line = latexContent.substring(lineStart, latexContent.indexOf('\n', lineStart));
+    const lineStart = processedLatex.lastIndexOf('\n', matchStart) + 1;
+    const line = processedLatex.substring(lineStart, processedLatex.indexOf('\n', lineStart));
     if (isCommandCommented(line, cmdMatch.index - lineStart)) continue;
 
     let startIndex = cmdMatch.index + cmdMatch[0].length;
     let index = startIndex;
     let braceCount = 1;
     let content = '';
-    while (braceCount > 0 && index < latexContent.length) {
-      const char = latexContent[index];
-      if (char === '\\') { content += char + latexContent[++index]; }
+    while (braceCount > 0 && index < processedLatex.length) {
+      const char = processedLatex[index];
+      if (char === '\\') { content += char + processedLatex[++index]; }
       else if (char === '{') { braceCount++; content += char; }
       else if (char === '}') { braceCount--; if (braceCount > 0) content += char; }
       else { content += char; }
@@ -237,7 +495,6 @@ async function parseLatexFile(filePath) {
       const originalBlockLatex = commandObj.isVerbatim ? content.trim() : stripComments(content.trim());
       let htmlContent = "";
 
-      // NOUVEAU : Traitement des références \BUseVerbatim avec placeholders
       let processedContent = originalBlockLatex;
       let codeReplacements = [];
       
@@ -278,12 +535,17 @@ async function parseLatexFile(filePath) {
           let htmlWithPlaceholders = await convertLaTeXToHTML(wrapAlignWithDollar(pandocInput));
           let finalHtml = htmlWithPlaceholders;
           
-          // Restaurer d'abord les TikZ
+          // Restaurer les TikZ
           for (const item of replacementsForPandoc) {
             finalHtml = finalHtml.replace(item.placeholder, item.html);
           }
           
-          // Puis restaurer les blocs de code
+          // Restaurer les images \includegraphics
+          for (const [placeholder, imgTag] of imagePlaceholders) {
+            finalHtml = finalHtml.replace(placeholder, imgTag);
+          }
+          
+          // Restaurer les blocs de code
           finalHtml = restoreCodeBlocksFromPlaceholders(finalHtml, codeReplacements);
           
           htmlContent = finalHtml;
@@ -293,11 +555,15 @@ async function parseLatexFile(filePath) {
         }
       } else {
         try {
-          // MODIFIÉ : Traitement standard avec placeholders
           const pandocInput = wrapAlignWithDollar(processedContent);
           let htmlWithPlaceholders = (pandocInput.trim() === '') ? '' : await convertLaTeXToHTML(pandocInput);
           
-          // Restaurer les blocs de code après conversion Pandoc
+          // Restaurer les images
+          for (const [placeholder, imgTag] of imagePlaceholders) {
+            htmlWithPlaceholders = htmlWithPlaceholders.replace(placeholder, imgTag);
+          }
+          
+          // Restaurer les blocs de code
           htmlContent = restoreCodeBlocksFromPlaceholders(htmlWithPlaceholders, codeReplacements);
         } catch (error) {
           console.error(`Pandoc conversion failed for ${filePath}:`, error.message);
@@ -313,22 +579,19 @@ async function parseLatexFile(filePath) {
         html: htmlContent,
         order: blockOrder - 1
       });
-
-      // MODIFIÉ : Ne pas ajouter les blocs normaux aux artéfacts de code
-      // Les SaveVerbatim sont déjà traités séparément
     } else {
       const finalContent = stripComments(content.trim());
       const processedContent = preprocessLatex(finalContent);
       if (commandObj.jsonKey === 'theme') {
         mainData[commandObj.jsonKey] = processedContent.split(',').map(s => s.trim()).join(', ');
-      } else if (commandObj.jsonKey === 'level') { // MODIFIÉ : ancien difficulty devient level (texte)
+      } else if (commandObj.jsonKey === 'level') {
         mainData[commandObj.jsonKey] = processedContent;
-      } else if (commandObj.jsonKey === 'difficulty') { // NOUVEAU : nouveau champ difficulty (entier 1-5 ou null)
+      } else if (commandObj.jsonKey === 'difficulty') {
         mainData[commandObj.jsonKey] = validateDifficulty(processedContent);
       } else if (commandObj.jsonKey === 'video_id') {
         mainData[commandObj.jsonKey] = processedContent;
         mainData.artifacts.video = processedContent;
-      } else if (commandObj.jsonKey === 'module') { // NOUVEAU : Traitement spécial pour module
+      } else if (commandObj.jsonKey === 'module') {
         mainData[commandObj.jsonKey] = processedContent;
       } else {
         mainData[commandObj.jsonKey] = processedContent;
@@ -336,13 +599,14 @@ async function parseLatexFile(filePath) {
     }
   }
 
+  // Extraction GeoGebra
   const geogebraRegex = /\\geogebra\{([^}]+)\}/g;
   let geoMatch;
   while ((geoMatch = geogebraRegex.exec(latexContent)) !== null) {
     mainData.artifacts.geogebra.push(geoMatch[1]);
   }
 
-  // NOUVEAU : Génération de la preview après traitement de tout le contenu
+  // Génération de la preview
   let previewContent = '';
   if (mainData.content.length > 0) {
     try {
@@ -360,8 +624,8 @@ async function parseLatexFile(filePath) {
     chapter: mainData.chapter,
     subchapter: mainData.subchapter,
     theme: mainData.theme,
-    level: mainData.level, // MODIFIÉ : niveau devient level
-    difficulty: mainData.difficulty, // NOUVEAU : difficulté numérique
+    level: mainData.level,
+    difficulty: mainData.difficulty,
     module: mainData.module,
     author: mainData.author,
     organization: mainData.organization,
@@ -374,18 +638,16 @@ async function parseLatexFile(filePath) {
     source_hash: mainData.source_hash
   };
 
-  // On retourne les deux objets
   return { mainData: orderedMainData, artifactsData };
 }
 
 /**
- * MODIFIÉ : Sauvegarde maintenant deux fichiers si nécessaire.
+ * MODIFIÉ : Sauvegarde des fichiers JSON (principal + artifacts)
  */
 async function processFile(inputPath, outputPath, cacheManager, options = {}) {
   try {
     const { incremental = false } = options;
     if (incremental && await cacheManager.isUpToDate(inputPath, outputPath)) {
-      // Plus de log individuel ici - sera géré par le système de comptage groupé
       return { skipped: true };
     }
     
@@ -394,23 +656,20 @@ async function processFile(inputPath, outputPath, cacheManager, options = {}) {
     const { mainData, artifactsData } = await parseLatexFile(inputPath);
     
     if (!mainData.title) {
-      console.warn(`⚠️ Missing title in ${inputPath}`);
+      console.warn(`⚠️  Missing title in ${inputPath}`);
     }
 
     // 1. Sauvegarder le fichier JSON principal dans le cache
     await cacheManager.save(outputPath, mainData);
     console.log(`✅ Converted: ${path.relative(CONFIG.content.inputDir, inputPath)} → ${path.relative(CONFIG.content.cacheDir, outputPath)}`);
     
-    // 2. MODIFIÉ : Sauvegarder le fichier JSON des artéfacts dans static/ 
-    // si il y a des tikz OU des blocs de code
-    if (artifactsData.tikz.length > 0 || artifactsData.code.length > 0) {
+    // 2. Sauvegarder le fichier JSON des artifacts si nécessaire
+    if (artifactsData.tikz.length > 0 || artifactsData.code.length > 0 || artifactsData.images.length > 0) {
       if (!mainData.uuid) {
-        console.error(`⌐ Cannot save artifact file for ${inputPath}: Missing UUID.`);
+        console.error(`❌ Cannot save artifact file for ${inputPath}: Missing UUID.`);
       } else {
         const artifactPath = path.join(ARTIFACTS_OUTPUT_DIR, `${mainData.uuid}.json`);
-        // S'assurer que le dossier de destination existe
         await fsPromises.mkdir(ARTIFACTS_OUTPUT_DIR, { recursive: true });
-        // Écrire le fichier
         await fsPromises.writeFile(artifactPath, JSON.stringify(artifactsData, null, 2), 'utf8');
         console.log(`✨ Artifacts saved: → ${path.relative(path.resolve(__dirname, '..'), artifactPath)}`);
       }
@@ -418,18 +677,18 @@ async function processFile(inputPath, outputPath, cacheManager, options = {}) {
     
     return { 
       skipped: false, 
-      data: mainData, // On retourne les données principales pour les stats
+      data: mainData,
       artifacts: mainData.artifacts 
     };
 
   } catch (error) {
-    console.error(`⌐ Error processing ${inputPath}:`, error.message);
+    console.error(`❌ Error processing ${inputPath}:`, error.message);
     return { skipped: false, error: error.message };
   }
 }
 
 /**
- * NOUVEAU : Classe pour gérer l'affichage groupé des fichiers skippés
+ * Classe pour gérer l'affichage groupé des fichiers skippés
  */
 class SkipTracker {
   constructor(reportInterval = 200) {
@@ -441,14 +700,14 @@ class SkipTracker {
   increment() {
     this.count++;
     if (this.count - this.lastReportedCount >= this.reportInterval) {
-      console.log(`⭐️ Skipped ${this.count} files (up to date)`);
+      console.log(`⏭️  Skipped ${this.count} files (up to date)`);
       this.lastReportedCount = this.count;
     }
   }
 
   final() {
     if (this.count > this.lastReportedCount) {
-      console.log(`⭐️ Skipped ${this.count} files (up to date)`);
+      console.log(`⏭️  Skipped ${this.count} files (up to date)`);
     }
   }
 
@@ -457,13 +716,11 @@ class SkipTracker {
   }
 }
 
-// NOUVEAU : Instance globale pour éviter les multiples "final"
 let globalSkipTracker = null;
 
 async function traverseDirectory(inputDir, outputDir, cacheManager, options = {}) {
   const stats = { processed: 0, skipped: 0, errors: 0 };
   
-  // Utiliser le tracker global ou en créer un nouveau si on est au niveau racine
   const isRoot = globalSkipTracker === null;
   if (isRoot) {
     globalSkipTracker = new SkipTracker(200);
@@ -495,10 +752,9 @@ async function traverseDirectory(inputDir, outputDir, cacheManager, options = {}
     }
   }
   
-  // Affichage final seulement au niveau racine
   if (isRoot) {
     globalSkipTracker.final();
-    globalSkipTracker = null; // Reset pour la prochaine exécution
+    globalSkipTracker = null;
   }
   
   return stats;
@@ -542,8 +798,8 @@ async function main() {
     
     console.log('\n📊 Summary:');
     console.log(`✅ Processed: ${stats.processed} files`);
-    console.log(`⭐️ Skipped:   ${stats.skipped} files`);
-    console.log(`⌐ Errors:    ${stats.errors} files`);
+    console.log(`⏭️  Skipped:   ${stats.skipped} files`);
+    console.log(`❌ Errors:    ${stats.errors} files`);
     
     if (stats.errors > 0) process.exit(1);
     
