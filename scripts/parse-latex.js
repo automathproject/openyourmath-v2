@@ -19,6 +19,7 @@ import {
   convertCodeToHTML
 } from './utils/code2html-utils.js';
 
+import { extractIncludegraphicsImages } from './utils/image-artifacts.js';
 import { CacheManager } from './utils/cache-manager.js';
 import { generatePreview } from './utils/previewUtils.js';
 
@@ -30,6 +31,8 @@ const fsPromises = fs.promises;
 // Chemins de sortie
 const TIKZ_ASSETS_PUBLIC_PATH = '/artifacts/tikz';
 const ARTIFACTS_OUTPUT_DIR = path.resolve(__dirname, '../static/artifacts');
+const CONTENT_ROOT_DIR = path.resolve(__dirname, '../content');
+const IMAGES_PUBLIC_BASE_PATH = '/artifacts/images';
 
 const CONFIG = {
   content: {
@@ -92,249 +95,6 @@ function generateExercisePreview(content) {
   
   return generatePreview(exerciseForPreview);
 }
-
-
-/**
- * Résout le chemin d'une image \includegraphics avec priorité SVG > PNG > JPG
- * TOUTES les images sont dans content/images/{source}/{format}/
- */
-async function resolveImagePath(imagePath, exerciseUuid, sourceFilePath) {
-  const contentDir = path.resolve(__dirname, '../content');
-  
-  // Déterminer la source (amscc, exo7, etc.)
-  const relativePath = path.relative(path.join(contentDir, 'exercises'), sourceFilePath);
-  const sourceName = relativePath.split(path.sep)[0];
-  
-  // Formats à ignorer (sources, non artifacts)
-  const SKIP_FORMATS = ['eps', 'ps', 'tex', 'tikz', 'maple', 'dvi'];
-  
-  // Extensions à essayer DANS L'ORDRE DE PRIORITÉ
-  const PRIORITY_EXTENSIONS = ['svg', 'png', 'jpg', 'jpeg', 'pdf'];
-  
-  // Extraire l'extension si présente
-  let ext = path.extname(imagePath).toLowerCase().replace('.', '');
-  
-  // Vérifier si format à ignorer
-  if (ext && SKIP_FORMATS.includes(ext)) {
-    console.log(`  ⏭️  Skipping ${ext.toUpperCase()} source: ${imagePath}`);
-    return null;
-  }
-  
-  // Parser le chemin pour extraire format et nom de fichier
-  let format = null;
-  let filename = null;
-  let baseFilename = null; // Nom sans extension
-  
-  if (imagePath.includes('/') || imagePath.includes('\\')) {
-    // Chemin avec répertoires
-    const pathParts = imagePath.split(/[/\\]/);
-    
-    // Chercher "images" dans le chemin
-    const imagesIndex = pathParts.indexOf('images');
-    
-    if (imagesIndex !== -1 && pathParts.length > imagesIndex + 2) {
-      format = pathParts[imagesIndex + 1];
-      filename = pathParts.slice(imagesIndex + 2).join('/');
-    } else {
-      format = pathParts[0];
-      filename = pathParts.slice(1).join('/');
-    }
-  } else {
-    // Juste un nom de fichier
-    filename = imagePath;
-    if (ext) {
-      format = ext;
-    }
-  }
-  
-  if (!filename) {
-    console.warn(`⚠️  Could not parse image path: ${imagePath}`);
-    return null;
-  }
-  
-  // Extraire le nom de base (sans extension)
-  const lastDot = filename.lastIndexOf('.');
-  if (lastDot > 0 && lastDot < filename.length - 1) {
-    baseFilename = filename.substring(0, lastDot);
-  } else {
-    baseFilename = filename;
-  }
-  
-  // Fonction helper pour chercher un fichier avec priorité
-  async function searchWithPriority(baseDir, baseName) {
-    // Essayer chaque format dans l'ordre de priorité
-    for (const tryExt of PRIORITY_EXTENSIONS) {
-      const formatDir = path.join(baseDir, tryExt);
-      const formatDirUpper = path.join(baseDir, tryExt.toUpperCase());
-      
-      // Essayer le format en minuscules
-      if (fs.existsSync(formatDir)) {
-        const testPath = path.join(formatDir, baseName + '.' + tryExt);
-        if (fs.existsSync(testPath)) {
-          console.log(`  ℹ️  Found (priority ${tryExt}): images/${sourceName}/${tryExt}/${path.basename(testPath)}`);
-          return testPath;
-        }
-        
-        // Essayer avec insensibilité à la casse
-        try {
-          const files = await fsPromises.readdir(formatDir);
-          const searchName = (baseName + '.' + tryExt).toLowerCase();
-          for (const file of files) {
-            if (file.toLowerCase() === searchName) {
-              console.log(`  ℹ️  Found (priority ${tryExt}): images/${sourceName}/${tryExt}/${file}`);
-              return path.join(formatDir, file);
-            }
-          }
-        } catch (err) {
-          // Ignore
-        }
-      }
-      
-      // Essayer le format en MAJUSCULES
-      if (fs.existsSync(formatDirUpper)) {
-        const testPath = path.join(formatDirUpper, baseName + '.' + tryExt);
-        if (fs.existsSync(testPath)) {
-          console.log(`  ℹ️  Found (priority ${tryExt}): images/${sourceName}/${tryExt.toUpperCase()}/${path.basename(testPath)}`);
-          return testPath;
-        }
-        
-        // Essayer avec insensibilité à la casse
-        try {
-          const files = await fsPromises.readdir(formatDirUpper);
-          const searchName = (baseName + '.' + tryExt).toLowerCase();
-          for (const file of files) {
-            if (file.toLowerCase() === searchName) {
-              console.log(`  ℹ️  Found (priority ${tryExt}): images/${sourceName}/${tryExt.toUpperCase()}/${file}`);
-              return path.join(formatDirUpper, file);
-            }
-          }
-        } catch (err) {
-          // Ignore
-        }
-      }
-    }
-    
-    return null;
-  }
-  
-  // Chercher l'image avec priorité
-  const baseDir = path.join(contentDir, 'images', sourceName);
-  const found = await searchWithPriority(baseDir, baseFilename);
-  
-  if (found) {
-    return found;
-  }
-  
-  // Si on avait un format spécifique demandé et qu'on ne l'a pas trouvé avec priorité,
-  // essayer quand même de le chercher exactement comme demandé
-  if (format && ext) {
-    const exactPath = path.join(contentDir, 'images', sourceName, format, filename);
-    if (fs.existsSync(exactPath)) {
-      console.log(`  ℹ️  Found (exact match): images/${sourceName}/${format}/${filename}`);
-      return exactPath;
-    }
-  }
-  
-  console.warn(`⚠️  Image not found: ${imagePath}`);
-  console.warn(`    Base name: ${baseFilename}`);
-  console.warn(`    Searched in: images/${sourceName}/{svg,png,jpg,jpeg,pdf}/`);
-  return null;
-}
-
-// À intégrer dans parse-latex.js en remplacement de la fonction existante
-
-/**
- * NOUVEAU : Extrait et copie les images \includegraphics
- */
-async function extractIncludegraphicsImages(latexContent, exerciseUuid, sourceFilePath) {
-  const images = [];
-  const replacements = new Map();
-  
-  const regex = /\\includegraphics(?:\[([^\]]*)\])?\{([^}]+)\}/g;
-  let match;
-  let imgIndex = 1;
-  
-  const contentDir = path.resolve(__dirname, '../content');
-  const outputDir = path.join(ARTIFACTS_OUTPUT_DIR, 'images', exerciseUuid);
-  
-  await fsPromises.mkdir(outputDir, { recursive: true });
-  
-  console.log(`\n🔍 Searching for images...`);
-  
-  while ((match = regex.exec(latexContent)) !== null) {
-    const options = match[1] || '';
-    const imagePath = match[2].trim();
-    
-    const absoluteSourcePath = await resolveImagePath(imagePath, exerciseUuid, sourceFilePath);
-    
-    if (!absoluteSourcePath) {
-      continue;
-    }
-    
-    const ext = path.extname(absoluteSourcePath).toLowerCase().replace('.', '');
-    const SUPPORTED_FORMATS = ['pdf', 'png', 'svg', 'jpg', 'jpeg'];
-    
-    if (!SUPPORTED_FORMATS.includes(ext)) {
-      console.warn(`⚠️  Unsupported format for artifacts: ${ext}`);
-      continue;
-    }
-    
-    const imgId = `img_${imgIndex}`;
-    const destFilename = `${imgId}.${ext}`;
-    const destPath = path.join(outputDir, destFilename);
-    const publicUrl = `/artifacts/images/${exerciseUuid}/${destFilename}`;
-    
-    try {
-      const needsCopy = await shouldCopyFile(absoluteSourcePath, destPath);
-      if (needsCopy) {
-        await fsPromises.copyFile(absoluteSourcePath, destPath);
-        const relativeSrc = path.relative(contentDir, absoluteSourcePath);
-        console.log(`  📸 Copied: ${relativeSrc} → ${destFilename}`);
-      }
-    } catch (error) {
-      console.error(`❌ Failed to copy ${imagePath}:`, error.message);
-      continue;
-    }
-    
-    images.push({
-      id: imgId,
-      url: publicUrl,
-      originalPath: imagePath,
-      sourcePath: path.relative(contentDir, absoluteSourcePath),
-      sourceFilename: path.basename(absoluteSourcePath),
-      format: ext,
-      ...(options && { options })
-    });
-    
-    const imgTag = `<img src="${publicUrl}" alt="Image ${imgIndex}" class="includegraphics-image">`;
-    replacements.set(match[0], imgTag);
-    
-    imgIndex++;
-  }
-  
-  if (images.length > 0) {
-    console.log(`  ✅ Found ${images.length} image(s)`);
-  } else {
-    console.log(`  ℹ️  No images to process`);
-  }
-  
-  return { images, replacements };
-}
-
-async function shouldCopyFile(sourcePath, destPath) {
-  try {
-    const [sourceStat, destStat] = await Promise.all([
-      fsPromises.stat(sourcePath),
-      fsPromises.stat(destPath).catch(() => null)
-    ]);
-    
-    if (!destStat) return true;
-    return sourceStat.mtime > destStat.mtime;
-  } catch {
-    return true;
-  }
-}
-
 /**
  * MODIFIÉ : Parsing avec support des images \includegraphics
  */
@@ -398,8 +158,16 @@ async function parseLatexFile(filePath) {
   }
 
   // Extraction des \includegraphics SANS modifier le LaTeX source
-  const { images: includedImages, replacements: imageReplacements } = 
-    await extractIncludegraphicsImages(latexContent, exerciseUuid, filePath);
+  const { images: includedImages, replacements: imageReplacements } =
+    await extractIncludegraphicsImages({
+      latexContent,
+      exerciseUuid,
+      sourceFilePath: filePath,
+      contentRoot: CONTENT_ROOT_DIR,
+      artifactsRoot: ARTIFACTS_OUTPUT_DIR,
+      publicBasePath: IMAGES_PUBLIC_BASE_PATH,
+      logger: console
+    });
   
   if (includedImages.length > 0) {
     artifactsData.images = includedImages;
