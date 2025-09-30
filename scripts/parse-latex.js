@@ -107,8 +107,8 @@ async function resolveImagePath(imagePath, exerciseUuid, sourceFilePath) {
   // Formats à ignorer (sources, non artifacts)
   const SKIP_FORMATS = ['eps', 'ps', 'tex', 'tikz', 'maple', 'dvi'];
   
-  // Extensions à essayer si pas spécifiée
-  const SEARCH_EXTENSIONS = ['pdf', 'png', 'svg', 'jpg', 'jpeg'];
+  // Extensions à essayer si pas spécifiée (ordre de priorité pour le web)
+  const SEARCH_EXTENSIONS = ['svg', 'png', 'jpg', 'jpeg', 'pdf'];
   
   // Extraire l'extension si présente
   let ext = path.extname(imagePath).toLowerCase().replace('.', '');
@@ -213,25 +213,73 @@ async function resolveImagePath(imagePath, exerciseUuid, sourceFilePath) {
     return null;
   }
   
-  // Chercher l'image
+  // Chercher l'image avec priorité web-optimale
   const needsExtension = !ext;
   
+  // Si on a un format explicite ET une extension dans filename,
+  // extraire le basename pour chercher des alternatives
+  let baseFilename = filename;
+  if (ext && filename.endsWith('.' + ext)) {
+    baseFilename = filename.slice(0, -(ext.length + 1));
+  }
+  
+  // NOUVEAU : Ordre de priorité des formats pour le web
+  const WEB_FORMAT_PRIORITY = ['svg', 'png', 'jpg', 'jpeg', 'pdf'];
+  
   if (format) {
-    // On a un format explicite, chercher dans images/{source}/{format}/
-    const formatDir = path.join(contentDir, 'images', sourceName, format);
-    const formatDirAlt = path.join(contentDir, 'images', sourceName, format.toUpperCase());
+    // Stratégie : chercher d'abord les alternatives web-optimales
+    // Exemple : \includegraphics{pdf/diagram.pdf}
+    // → Chercher diagram.svg dans images/{source}/svg/
+    // → Sinon diagram.png dans images/{source}/png/
+    // → Sinon diagram.pdf dans images/{source}/pdf/ (fallback)
     
-    let found = await searchInFormat(formatDir, filename, needsExtension);
-    if (found) {
-      console.log(`  ℹ️  Found: images/${sourceName}/${format}/${path.basename(found)}`);
-      return found;
-    }
-    
-    // Essayer avec majuscules (PNG vs png)
-    found = await searchInFormat(formatDirAlt, filename, needsExtension);
-    if (found) {
-      console.log(`  ℹ️  Found: images/${sourceName}/${format.toUpperCase()}/${path.basename(found)}`);
-      return found;
+    if (ext) {
+      // Extension explicite dans le filename
+      // Chercher des alternatives avec le même basename
+      for (const webFormat of WEB_FORMAT_PRIORITY) {
+        const webFormatDir = path.join(contentDir, 'images', sourceName, webFormat);
+        const webFormatDirAlt = path.join(contentDir, 'images', sourceName, webFormat.toUpperCase());
+        
+        // Chercher avec le nouveau format
+        const webFilename = baseFilename + '.' + webFormat;
+        
+        let found = await searchInFormat(webFormatDir, webFilename, false);
+        if (found) {
+          if (webFormat !== format) {
+            console.log(`  ✨ Using web-optimized: ${webFormat.toUpperCase()} instead of ${format.toUpperCase()}`);
+          }
+          console.log(`  ℹ️  Found: images/${sourceName}/${webFormat}/${path.basename(found)}`);
+          return found;
+        }
+        
+        // Essayer avec majuscules (PNG vs png)
+        found = await searchInFormat(webFormatDirAlt, webFilename, false);
+        if (found) {
+          if (webFormat !== format) {
+            console.log(`  ✨ Using web-optimized: ${webFormat.toUpperCase()} instead of ${format.toUpperCase()}`);
+          }
+          console.log(`  ℹ️  Found: images/${sourceName}/${webFormat.toUpperCase()}/${path.basename(found)}`);
+          return found;
+        }
+      }
+    } else {
+      // Pas d'extension : chercher avec ordre de priorité web
+      for (const webFormat of WEB_FORMAT_PRIORITY) {
+        const webFormatDir = path.join(contentDir, 'images', sourceName, webFormat);
+        const webFormatDirAlt = path.join(contentDir, 'images', sourceName, webFormat.toUpperCase());
+        
+        let found = await searchInFormat(webFormatDir, filename, true);
+        if (found) {
+          console.log(`  ℹ️  Found: images/${sourceName}/${webFormat}/${path.basename(found)}`);
+          return found;
+        }
+        
+        found = await searchInFormat(webFormatDirAlt, filename, true);
+        if (found) {
+          console.log(`  ℹ️  Found: images/${sourceName}/${webFormat.toUpperCase()}/${path.basename(found)}`);
+          return found;
+        }
+      }
     }
   }
   
