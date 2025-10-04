@@ -6,11 +6,14 @@ const DB_PATH = path.resolve('data/exercises.sqlite');
 
 function prepareSearchQuery(query) {
   if (!query || query.trim() === '') return '';
+
   const tokens = query
     .trim()
     .toLowerCase()
     .split(/\s+/)
-    .map((t) => t.replace(/"/g, ''))
+    .map((t) => t.replace(/["']/g, ''))
+    // Nettoyer les caractères spéciaux qui cassent la syntaxe MATCH (parenthèses, etc.)
+    .map((t) => t.replace(/[^\p{L}\p{N}]+/gu, ''))
     .filter(Boolean);
 
   // Garder uniquement les tokens significatifs (≥3) pour FTS
