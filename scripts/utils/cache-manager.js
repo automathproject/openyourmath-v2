@@ -5,6 +5,14 @@ import crypto from 'crypto';
 
 const fsPromises = fs.promises;
 
+const DEFAULT_METADATA = {
+  version: "1.0.0",
+  last_update: "",
+  total_exercises: 0,
+  hash_algorithm: "sha256",
+  files: {}
+};
+
 /**
  * Gestionnaire de cache intelligent pour OpenYourMath V2
  * Permet le build incrémental et le partage multi-machines via Git
@@ -13,6 +21,9 @@ export class CacheManager {
   constructor(cacheDir) {
     this.cacheDir = path.resolve(cacheDir);
     this.metaFile = path.join(this.cacheDir, '.cache-meta.json');
+    this.metadata = null;
+    this.metadataLoaded = false;
+    this.metadataDirty = false;
   }
 
   /**
@@ -44,30 +55,54 @@ export class CacheManager {
    * Charge les métadonnées du cache
    */
   async loadMetadata() {
+    if (this.metadataLoaded) {
+      return this.metadata;
+    }
+
     try {
       const content = await fsPromises.readFile(this.metaFile, 'utf8');
-      return JSON.parse(content);
+      this.metadata = JSON.parse(content);
     } catch (error) {
-      return {
-        version: "1.0.0",
-        last_update: "",
-        total_exercises: 0,
-        hash_algorithm: "sha256",
-        files: {}
-      };
+      this.metadata = { ...DEFAULT_METADATA };
     }
+
+    this.metadataLoaded = true;
+    this.metadataDirty = false;
+
+    return this.metadata;
   }
 
   /**
    * Sauvegarde les métadonnées du cache
    */
-  async saveMetadata(metadata) {
+  async saveMetadata(metadata, options = {}) {
+    const { flush = true } = options;
+
+    this.metadata = metadata;
+    this.metadataLoaded = true;
+    this.metadataDirty = true;
+
+    if (flush) {
+      await this.flushMetadata();
+    }
+  }
+
+  /**
+   * Écrit les métadonnées sur disque si nécessaire
+   */
+  async flushMetadata() {
+    if (!this.metadataLoaded || !this.metadataDirty) {
+      return;
+    }
+
     await fsPromises.mkdir(this.cacheDir, { recursive: true });
     await fsPromises.writeFile(
-      this.metaFile, 
-      JSON.stringify(metadata, null, 2), 
+      this.metaFile,
+      JSON.stringify(this.metadata, null, 2),
       'utf8'
     );
+
+    this.metadataDirty = false;
   }
 
   /**
@@ -175,7 +210,7 @@ export class CacheManager {
       title: data.title
     };
     
-    await this.saveMetadata(metadata);
+    await this.saveMetadata(metadata, { flush: false });
   }
 
   /**
@@ -205,7 +240,7 @@ export class CacheManager {
       timestamp: new Date().toISOString()
     };
     
-    await this.saveMetadata(metadata);
+    await this.saveMetadata(metadata, { flush: false });
   }
 
   /**

@@ -523,10 +523,12 @@ async function traverseDirectory(inputDir, outputDir, cacheManager, options = {}
 
 async function main() {
   const args = process.argv.slice(2);
+  const positionalArgs = args.filter(arg => !arg.startsWith('--'));
+  const [inputArg, outputArg] = positionalArgs;
   const options = {
     incremental: args.includes('--incremental'),
-    inputPath: args.find(arg => !arg.startsWith('--')) || CONFIG.content.inputDir,
-    outputPath: args.find((arg, i) => !arg.startsWith('--') && i > 0) || CONFIG.content.cacheDir
+    inputPath: inputArg || CONFIG.content.inputDir,
+    outputPath: outputArg || CONFIG.content.cacheDir
   };
   
   console.log('🚀 OpenYourMath V2 - LaTeX to JSON Parser');
@@ -556,6 +558,7 @@ async function main() {
     }
     
     await cacheManager.updateMetadata(stats);
+    await cacheManager.flushMetadata();
     
     console.log('\n📊 Summary:');
     console.log(`✅ Processed: ${stats.processed} files`);
@@ -566,6 +569,11 @@ async function main() {
     
   } catch (error) {
     console.error('💥 Fatal error:', error.message);
+    try {
+      await cacheManager.flushMetadata();
+    } catch (flushError) {
+      console.error('⚠️ Failed to persist cache metadata:', flushError.message);
+    }
     process.exit(1);
   }
 }
