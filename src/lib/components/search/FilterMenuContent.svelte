@@ -170,3 +170,65 @@
     </div>
   </div>
 {/if}
+
+<style>
+  .filters-menu-section {
+    display:flex;
+    flex-direction:column;
+    gap:0.75rem;
+  }
+  .filters-menu-section h5 {
+    font-size:0.95rem;
+    font-weight:600;
+    @apply text-interface-text-primary;
+  }
+  .filters-menu-options {
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+  }
+  .filters-menu-option {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0.6rem 0.85rem;
+    border-radius:0.75rem;
+    cursor:pointer;
+    @apply bg-gray-100 text-gray-800;
+  }
+  .filters-menu-option:hover { @apply bg-gray-200; }
+  .filters-menu-option--active {
+    @apply bg-brand-50 border border-brand-200;
+  }
+  .filters-menu-option-count { font-size:0.85rem; @apply text-gray-500; }
+  .filters-menu-empty {
+    font-size:0.875rem;
+    @apply text-interface-text-secondary;
+  }
+  .filters-menu-helper {
+    font-size:0.8rem;
+    @apply text-gray-500;
+  }
+  .filters-menu-author {
+    display:flex;
+    gap:0.5rem;
+    align-items:center;
+  }
+  .filters-menu-author-input {
+    flex:1;
+    padding:0.6rem 0.75rem;
+    border-radius:0.75rem;
+    @apply border border-gray-300;
+  }
+  .filters-menu-author-actions { display:flex; align-items:center; }
+  .filters-menu-apply {
+    padding:0.5rem 0.9rem;
+    border-radius:0.65rem;
+    font-weight:500;
+    @apply bg-brand-500 text-white;
+  }
+  .filters-menu-apply:disabled {
+    cursor:not-allowed;
+    @apply bg-indigo-200 text-gray-700;
+  }
+</style>
