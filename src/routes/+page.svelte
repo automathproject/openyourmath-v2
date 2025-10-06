@@ -7,6 +7,7 @@
   import FilterPanel from '$lib/components/search/FilterPanel.svelte';
   import SearchToolbar from '$lib/components/search/SearchToolbar.svelte';
   import ResultsGrid from '$lib/components/search/ResultsGrid.svelte';
+  import MobileExercisePreview from '$lib/components/search/MobileExercisePreview.svelte';
   import { cycleTri } from '$lib/utils/filterUtils.js';
 
   import {
@@ -229,24 +230,8 @@
 </div>
 
 
-{#if $previewState.isOpen && $layoutState.previewPanelVisible}
-  <button
-    type="button"
-    class="lg:hidden fixed inset-0 z-30 bg-black bg-opacity-50"
-    aria-label="Fermer la prévisualisation"
-    on:click={previewActions.closePreview}
-    on:keydown={(e) => (e.key === 'Enter' || e.key === ' ') && previewActions.closePreview()}
-    tabindex="0"
-    style="width:100%;height:100%;border:none;padding:0;background:transparent;"
-  >
-    <div
-      class="absolute inset-x-0 bottom-0 bg-white rounded-t-xl max-h-[80vh] overflow-hidden"
-      on:click|stopPropagation
-      role="presentation"
-    >
-      <ExercisePreview />
-    </div>
-  </button>
+{#if !isDesktop}
+  <MobileExercisePreview />
 {/if}
 
 <style>
