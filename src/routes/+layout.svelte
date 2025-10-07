@@ -100,11 +100,8 @@
         >
           <span class="nav-text">À propos</span>
         </a>
-        
-        <!-- LE LIEN VERS LA LISTE A ÉTÉ DÉPLACÉ D'ICI -->
-      </nav>
+              </nav>
 
-      <!-- NOUVEAU BLOC : Actions du header (liste + menu mobile) -->
       <div class="header-actions">
         <!-- Lien recherche visible sur mobile (icône seule) -->
         <a 
@@ -118,7 +115,6 @@
           </svg>
           <span class="nav-text">Rechercher</span>
         </a>
-        <!-- LE LIEN VERS LA LISTE EST MAINTENANT ICI, EN DEHORS DE .desktop-nav -->
         <a 
           href={listUrl}
           class="nav-link nav-link--list"
@@ -168,7 +164,6 @@
             <span>Recherche</span>
           </a>
           
-          <!-- LIEN VERS LA LISTE SUPPRIMÉ D'ICI CAR L'ICÔNE EST TOUJOURS VISIBLE -->
           <a 
             href="/about"
             class="mobile-nav-link"
@@ -211,7 +206,6 @@
         <nav class="footer-col footer-links" aria-label="Liens">
           <a href="/about">À propos</a>
           <a href="/mentions-legales">Mentions légales</a>
-          <a href="/confidentialite">Confidentialité</a>
           <a href="https://github.com/automathproject/openyourmath-v2/">Dépôt Git</a>
           <a href="mailto:maxime.nguyen@st-cyr.terre-net.defense.gouv.fr">Contact</a>
         </nav>

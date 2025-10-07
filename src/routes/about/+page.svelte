@@ -67,8 +67,7 @@
 
     <h2>Remerciements & sources</h2>
     <p>
-      Merci aux auteurs et communautés qui partagent des ressources pédagogiques libres.
-      Les sources externes conservent leurs licences respectives.
+      Merci aux auteurs et communautés qui partagent des ressources pédagogiques libres. En particulier la plateforme <a class="text-brand-700 hover:text-brand-800" href="https://exo7.emath.fr/" rel="noopener">Exo7</a> dont est issue une grande partie du contenu.
     </p>
 
     <h2>Contact</h2>
