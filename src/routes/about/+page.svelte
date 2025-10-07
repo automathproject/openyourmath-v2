@@ -55,7 +55,7 @@
     <h2>Stack technique (v2)</h2>
     <ul>
       <li><strong>Frontend :</strong> SvelteKit + Tailwind CSS, KaTeX.</li>
-      <li><strong>Données :</strong> bundles JSON optimisés (exercices + métadonnées), recherche locale.</li>
+      <li><strong>Données :</strong> SQlite, recherche locale.</li>
       <li><strong>Infra :</strong> Docker + Caddy (HTTPS), serveur Linux.</li>
     </ul>
 

@@ -9,6 +9,19 @@
 
   const dispatch = createEventDispatcher();
 
+  function formatDisplayDate(value) {
+    if (!value) return null;
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return null;
+    return date.toLocaleDateString('fr-FR');
+  }
+
+  $: createdAtLabel = formatDisplayDate(exercise?.created_at ?? exercise?.createdAt);
+  $: updatedAtLabel = formatDisplayDate(exercise?.updated_at ?? exercise?.updatedAt);
+  $: hasDates = Boolean(createdAtLabel || updatedAtLabel);
+  $: hasFooterInfo = Boolean(exercise?.author || exercise?.organization);
+  $: showFooter = hasFooterInfo || hasDates;
+
   function handleClick() {
     dispatch('select', { exercise });
   }
@@ -103,21 +116,51 @@
     </div>
   {/if}
 
-  {#if exercise.author || exercise.organization}
+  {#if showFooter}
     <div class="result-footer">
-      {#if exercise.author}
-        <NameRenderer
-          author={exercise.author}
-          licenseCode={exercise.license_code}
-          licenseUrl={exercise.license_url}
-          email={exercise.author_email || exercise.authorEmail || ''}
-          variant="footer"
-          className="result-footer-item"
-        />
+      {#if hasFooterInfo}
+        <div class="result-footer-left">
+          {#if exercise.author}
+            <NameRenderer
+              author={exercise.author}
+              licenseCode={exercise.license_code}
+              licenseUrl={exercise.license_url}
+              email={exercise.author_email || exercise.authorEmail || ''}
+              variant="footer"
+              className="result-footer-item"
+            />
+          {/if}
+          {#if exercise.author && exercise.organization}
+            <span class="result-footer-sep">•</span>
+          {/if}
+          {#if exercise.organization}
+            <span class="result-footer-item">🏛️ {exercise.organization}</span>
+          {/if}
+        </div>
       {/if}
-      {#if exercise.organization}
-        <span class="result-footer-sep">•</span>
-        <span class="result-footer-item">🏛️ {exercise.organization}</span>
+      {#if hasDates}
+        <div class="result-date" role="presentation">
+          {#if createdAtLabel}
+            <span
+              class="result-date-entry"
+              title="Créé"
+              aria-label={`Créé le ${createdAtLabel}`}
+            >
+              <span class="result-date-icon" aria-hidden="true">📅</span>
+              <span class="result-date-text">{createdAtLabel}</span>
+            </span>
+          {/if}
+          {#if updatedAtLabel}
+            <span
+              class="result-date-entry"
+              title="Mis à jour"
+              aria-label={`Mis à jour le ${updatedAtLabel}`}
+            >
+              <span class="result-date-icon" aria-hidden="true">🔄</span>
+              <span class="result-date-text">{updatedAtLabel}</span>
+            </span>
+          {/if}
+        </div>
       {/if}
     </div>
   {/if}
@@ -164,13 +207,40 @@
     margin-top: 0.5rem;
     padding-top: 0.5rem;
     display:flex;
+    align-items:center;
     gap:0.5rem;
     flex-wrap:wrap;
     font-size:0.875rem;
     @apply border-t border-gray-100 text-interface-text-secondary;
   }
+  .result-footer-left {
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    flex-wrap:wrap;
+  }
   .result-footer-item { white-space: nowrap; }
   .result-footer-sep { @apply text-gray-300; }
+  .result-date {
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    font-size:0.75rem;
+    color: rgb(156 163 175);
+    font-weight:500;
+    white-space:nowrap;
+  }
+
+  .result-date-entry {
+    display:inline-flex;
+    align-items:center;
+    gap:0.375rem;
+  }
+
+  .result-date-icon {
+    font-size:0.875rem;
+  }
   .selection-indicator {
     width: 1.5rem;
     height: 1.5rem;

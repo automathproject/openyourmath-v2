@@ -171,7 +171,7 @@ function buildSearchContext(query = '', filters = {}) {
     params.push(filters.hasIndication ? 1 : 0);
   }
 
-  const selectBase = `SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.created_at, e.preview,
+  const selectBase = `SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.created_at, e.updated_at, e.preview,
                 e.hasIndication, e.hasSolution`;
 
   const selectClause = useFts

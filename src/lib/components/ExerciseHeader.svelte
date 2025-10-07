@@ -13,6 +13,17 @@
   export let breadcrumbItems = []; // [{label, href?}]
   export let showBreadcrumb = true;
 
+  function formatDisplayDate(value) {
+    if (!value) return null;
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return null;
+    return date.toLocaleDateString('fr-FR');
+  }
+
+  $: createdAtLabel = formatDisplayDate(exercise?.created_at ?? exercise?.createdAt);
+  $: updatedAtLabel = formatDisplayDate(exercise?.updated_at ?? exercise?.updatedAt);
+  $: hasDates = Boolean(createdAtLabel || updatedAtLabel);
+
   function toggleHint() {
     showHint = !showHint;
     const e = new CustomEvent('toggleHint', { detail: { showHint } });
@@ -132,6 +143,31 @@
       {/if}
     </div>
   {/if}
+
+  {#if hasDates}
+    <div class="header-bottom">
+      {#if createdAtLabel}
+        <span
+          class="date-entry"
+          title="Créé"
+          aria-label={`Créé le ${createdAtLabel}`}
+        >
+          <span class="date-entry-icon" aria-hidden="true">📅</span>
+          <span class="date-entry-text">{createdAtLabel}</span>
+        </span>
+      {/if}
+      {#if updatedAtLabel}
+        <span
+          class="date-entry"
+          title="Mis à jour"
+          aria-label={`Mis à jour le ${updatedAtLabel}`}
+        >
+          <span class="date-entry-icon" aria-hidden="true">🔄</span>
+          <span class="date-entry-text">{updatedAtLabel}</span>
+        </span>
+      {/if}
+    </div>
+  {/if}
 </header>
 
 <style>
@@ -230,6 +266,28 @@
   .action-button--hint:hover { background: rgb(253 246 178); }
   .action-button--solution { background: rgb(240 253 244); color: rgb(22 101 52); }
   .action-button--solution:hover { background: rgb(187 247 208); }
+
+  .header-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .date-entry {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    color: rgb(107 114 128);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .date-entry-icon {
+    font-size: 0.875rem;
+  }
 
   /* Preview context */
   .exercise-header.is-preview { font-size: 0.9em; }
