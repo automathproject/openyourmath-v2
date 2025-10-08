@@ -119,6 +119,53 @@
       : 'Afficher les filtres'
     : 'Filtres';
   $: previewToggleLabel = $layoutConfig.showPreviewPanel ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation';
+
+  const sortOptions = [
+    { value: 'relevance', label: 'Pertinence' },
+    { value: 'updated', label: 'Date de mise à jour' },
+    { value: 'created', label: 'Date de création' },
+    { value: 'difficulty', label: 'Difficulté' }
+  ];
+
+  const defaultSortDirections = {
+    relevance: 'desc',
+    updated: 'desc',
+    created: 'desc',
+    difficulty: 'asc'
+  };
+
+  let sortSelection = 'relevance';
+  let sortDirection = 'desc';
+
+  $: sortSelection = $filters.sort ?? 'relevance';
+  $: sortDirection = $filters.sortDirection ?? (defaultSortDirections[sortSelection] ?? 'desc');
+  $: sortDirectionIcon = sortSelection === 'relevance'
+    ? '↕'
+    : sortDirection === 'asc'
+      ? '↑'
+      : '↓';
+
+  function handleSortChange(event) {
+    const nextSort = event.target.value;
+    if (nextSort === ($filters.sort ?? 'relevance')) {
+      return;
+    }
+    const nextDirection = defaultSortDirections[nextSort] ?? 'desc';
+    searchActions.updateFilter('sort', nextSort);
+    searchActions.updateFilter('sortDirection', nextSort === 'relevance' ? 'desc' : nextDirection);
+    searchActions.search();
+  }
+
+  function toggleSortDirection() {
+    const currentSort = $filters.sort ?? 'relevance';
+    if (currentSort === 'relevance') {
+      return;
+    }
+    const currentDirection = $filters.sortDirection === 'asc' ? 'asc' : 'desc';
+    const nextDirection = currentDirection === 'asc' ? 'desc' : 'asc';
+    searchActions.updateFilter('sortDirection', nextDirection);
+    searchActions.search();
+  }
 </script>
 
 <svelte:head>
@@ -192,6 +239,31 @@
             {$searchMeta?.pagination?.totalCount || $results.length}
             résultat{$results.length > 1 ? 's' : ''} trouvé{$results.length > 1 ? 's' : ''}
           </h2>
+          <div class="sort-control">
+            <label class="sort-label" for="search-sort-select">Trier par</label>
+            <div class="sort-select-group">
+              <select
+                id="search-sort-select"
+                class="sort-select"
+                bind:value={sortSelection}
+                on:change={handleSortChange}
+              >
+                {#each sortOptions as option}
+                  <option value={option.value}>{option.label}</option>
+                {/each}
+              </select>
+              <button
+                type="button"
+                class="sort-direction-button"
+                on:click={toggleSortDirection}
+                aria-label={`Basculer en ordre ${sortDirection === 'asc' ? 'décroissant' : 'croissant'}`}
+                title={`Basculer en ordre ${sortDirection === 'asc' ? 'décroissant' : 'croissant'}`}
+                disabled={sortSelection === 'relevance'}
+              >
+                {sortDirectionIcon}
+              </button>
+            </div>
+          </div>
         </div>
         <ResultsGrid
           results={$results}
@@ -273,6 +345,34 @@
     font-size: 1.25rem;
     font-weight: 600;
     @apply text-gray-900;
+  }
+  .sort-control { display:flex; align-items:center; gap:0.5rem; }
+  .sort-label {
+    font-size:0.875rem;
+    @apply text-gray-600;
+  }
+  .sort-select-group { display:flex; align-items:center; gap:0.35rem; }
+  .sort-select {
+    padding:0.5rem 0.75rem;
+    font-size:0.9rem;
+    @apply border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-500;
+  }
+  .sort-direction-button {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:2.25rem;
+    height:2.25rem;
+    font-size:1rem;
+    border-radius:0.75rem;
+    transition:background-color .2s, color .2s;
+    @apply border border-gray-300 bg-white text-gray-600;
+  }
+  .sort-direction-button:hover:enabled {
+    @apply bg-gray-100 text-gray-800;
+  }
+  .sort-direction-button:disabled {
+    @apply opacity-60 cursor-not-allowed;
   }
   .empty-state {
     text-align: center;

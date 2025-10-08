@@ -88,11 +88,28 @@ function buildAuthorFilterClause(authorValue, tableAlias = 'e', includeLeadingAn
   return { clause, params };
 }
 
-function buildSearchContext(query = '', filters = {}) {
+function buildSearchContext(query = '', filters = {}, sortOption = null) {
   const trimmedQuery = (query || '').trim();
   const ftsQuery = prepareSearchQuery(trimmedQuery);
   const useFts = Boolean(ftsQuery);
   const useFallback = Boolean(trimmedQuery) && ftsQuery === null;
+
+  const safeFilters = filters || {};
+  const requestedSort = sortOption ?? safeFilters.sort ?? '';
+  const normalizedSort = typeof requestedSort === 'string' ? requestedSort.trim() : '';
+  const allowedSorts = new Set([
+    'updated_desc',
+    'updated_asc',
+    'created_desc',
+    'created_asc',
+    'difficulty_asc',
+    'difficulty_desc'
+  ]);
+  const effectiveSort = allowedSorts.has(normalizedSort) ? normalizedSort : '';
+
+  const filterValues = { ...safeFilters };
+  delete filterValues.sort;
+  delete filterValues.sortDirection;
 
   let fromClause = 'FROM exercises e';
   const whereClauses = [];
@@ -121,54 +138,54 @@ function buildSearchContext(query = '', filters = {}) {
     });
   }
 
-  if (filters.subchapter) {
+  if (filterValues.subchapter) {
     whereClauses.push('UPPER(e.subchapter) = UPPER(?)');
-    params.push(filters.subchapter);
+    params.push(filterValues.subchapter);
 
-    if (filters.chapter) {
+    if (filterValues.chapter) {
       whereClauses.push('UPPER(e.chapter) = UPPER(?)');
-      params.push(filters.chapter);
+      params.push(filterValues.chapter);
     }
-  } else if (filters.chapter) {
+  } else if (filterValues.chapter) {
     whereClauses.push('UPPER(e.chapter) = UPPER(?)');
-    params.push(filters.chapter);
+    params.push(filterValues.chapter);
   }
 
-  if (filters.module) {
+  if (filterValues.module) {
     whereClauses.push('UPPER(e.module) = UPPER(?)');
-    params.push(filters.module);
+    params.push(filterValues.module);
   }
 
-  if (filters.level) {
+  if (filterValues.level) {
     whereClauses.push('UPPER(e.level) = UPPER(?)');
-    params.push(filters.level);
+    params.push(filterValues.level);
   }
 
-  if (filters.difficulty !== undefined && filters.difficulty !== null && filters.difficulty !== '') {
-    if (filters.difficulty === 'null' || filters.difficulty === 'NULL') {
+  if (filterValues.difficulty !== undefined && filterValues.difficulty !== null && filterValues.difficulty !== '') {
+    if (filterValues.difficulty === 'null' || filterValues.difficulty === 'NULL') {
       whereClauses.push('e.difficulty IS NULL');
     } else {
       whereClauses.push('e.difficulty = ?');
-      params.push(parseInt(filters.difficulty, 10));
+      params.push(parseInt(filterValues.difficulty, 10));
     }
   }
 
-  if (filters.author) {
-    const { clause, params: authorParams } = buildAuthorFilterClause(filters.author, 'e', false);
+  if (filterValues.author) {
+    const { clause, params: authorParams } = buildAuthorFilterClause(filterValues.author, 'e', false);
     if (clause) {
       whereClauses.push(clause);
       params.push(...authorParams);
     }
   }
 
-  if (typeof filters.hasSolution === 'boolean') {
+  if (typeof filterValues.hasSolution === 'boolean') {
     whereClauses.push('e.hasSolution = ?');
-    params.push(filters.hasSolution ? 1 : 0);
+    params.push(filterValues.hasSolution ? 1 : 0);
   }
 
-  if (typeof filters.hasIndication === 'boolean') {
+  if (typeof filterValues.hasIndication === 'boolean') {
     whereClauses.push('e.hasIndication = ?');
-    params.push(filters.hasIndication ? 1 : 0);
+    params.push(filterValues.hasIndication ? 1 : 0);
   }
 
   const selectBase = `SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.created_at, e.updated_at, e.preview,
@@ -179,11 +196,30 @@ function buildSearchContext(query = '', filters = {}) {
                 bm25(fts_exercises) as rank`
     : selectBase;
 
-  const orderClause = useFts
-    ? 'ORDER BY rank'
-    : useFallback
-      ? 'ORDER BY e.title'
-      : 'ORDER BY e.created_at DESC';
+  let orderClause;
+  if (effectiveSort === 'updated_desc') {
+    orderClause = 'ORDER BY e.updated_at DESC, e.created_at DESC';
+  } else if (effectiveSort === 'updated_asc') {
+    orderClause = 'ORDER BY e.updated_at ASC, e.created_at ASC';
+  } else if (effectiveSort === 'created_desc') {
+    orderClause = 'ORDER BY e.created_at DESC';
+  } else if (effectiveSort === 'created_asc') {
+    orderClause = 'ORDER BY e.created_at ASC';
+  } else if (effectiveSort === 'difficulty_asc') {
+    orderClause = 'ORDER BY (e.difficulty IS NULL) ASC, e.difficulty ASC, e.created_at DESC';
+  } else if (effectiveSort === 'difficulty_desc') {
+    orderClause = 'ORDER BY (e.difficulty IS NULL) ASC, e.difficulty DESC, e.created_at DESC';
+  } else if (useFts) {
+    orderClause = 'ORDER BY rank';
+  } else if (useFallback) {
+    orderClause = 'ORDER BY e.title';
+  } else {
+    orderClause = 'ORDER BY e.created_at DESC';
+  }
+
+  if (useFts && effectiveSort) {
+    orderClause = `${orderClause}, rank`;
+  }
 
   return {
     selectClause,
@@ -204,8 +240,8 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
   try {
     db = new Database(DB_PATH, { readonly: true });
 
-    const { limit = 20, offset = 0 } = options;
-    const context = buildSearchContext(query, filters);
+    const { limit = 20, offset = 0, sort = '' } = options;
+    const context = buildSearchContext(query, filters, sort);
 
     const sql = `
       ${context.selectClause}

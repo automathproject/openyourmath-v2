@@ -14,6 +14,16 @@ export async function GET({ url }) {
     const author = url.searchParams.get('author')?.trim() || '';
     const hasSolutionParam = url.searchParams.get('hasSolution');
     const hasIndicationParam = url.searchParams.get('hasIndication');
+    const sortParam = url.searchParams.get('sort')?.trim() || '';
+    const allowedSorts = new Set([
+      'updated_desc',
+      'updated_asc',
+      'created_desc',
+      'created_asc',
+      'difficulty_asc',
+      'difficulty_desc'
+    ]);
+    const sort = allowedSorts.has(sortParam) ? sortParam : '';
     
     // Validation et parsing des paramètres de pagination
     let limit = parseInt(url.searchParams.get('limit') || '20');
@@ -53,9 +63,18 @@ export async function GET({ url }) {
       if (v2 === '1' || v2 === 'true') filters.hasIndication = true;
       else if (v2 === '0' || v2 === 'false') filters.hasIndication = false;
     }
+
+    if (sort) {
+      filters.sort = sort;
+      if (sort.endsWith('_asc')) {
+        filters.sortDirection = 'asc';
+      } else if (sort.endsWith('_desc')) {
+        filters.sortDirection = 'desc';
+      }
+    }
     
     // Options de pagination
-    const options = { limit: limit + 1, offset }; // +1 pour détecter hasMore
+    const options = { limit: limit + 1, offset, sort }; // +1 pour détecter hasMore
     
     console.log('Search API - Filters:', filters);  // Debug
     

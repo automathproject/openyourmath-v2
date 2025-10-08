@@ -50,8 +50,17 @@ export const filters = writable({
   module: '',
   author: '',
   hasSolution: '',
-  hasIndication: ''
+  hasIndication: '',
+  sort: 'relevance',
+  sortDirection: 'desc'
 });
+
+const DEFAULT_SORT_DIRECTIONS = {
+  relevance: 'desc',
+  updated: 'desc',
+  created: 'desc',
+  difficulty: 'asc'
+};
 
 export const breadcrumb = derived(filters, ($filters) => {
   const segments = [];
@@ -72,6 +81,7 @@ export const breadcrumb = derived(filters, ($filters) => {
 export const hasActiveFilters = derived(
   [searchQuery, filters],
   ([$searchQuery, $filters]) => {
+    const hasSortOverride = $filters.sort && $filters.sort !== 'relevance';
     return !!(
       $searchQuery || 
       $filters.chapter || 
@@ -80,7 +90,8 @@ export const hasActiveFilters = derived(
       $filters.module || 
       $filters.author ||
       ($filters.hasSolution !== '' && $filters.hasSolution !== null && $filters.hasSolution !== undefined) ||
-      ($filters.hasIndication !== '' && $filters.hasIndication !== null && $filters.hasIndication !== undefined)
+      ($filters.hasIndication !== '' && $filters.hasIndication !== null && $filters.hasIndication !== undefined) ||
+      hasSortOverride
     );
   }
 );
@@ -110,24 +121,126 @@ function createEmptyFilterCounts() {
   };
 }
 
+function resolveSortParam(currentFilters = {}) {
+  let baseSort = currentFilters.sort || 'relevance';
+  let direction = currentFilters.sortDirection === 'asc'
+    ? 'asc'
+    : currentFilters.sortDirection === 'desc'
+      ? 'desc'
+      : DEFAULT_SORT_DIRECTIONS[baseSort] ?? 'desc';
+
+  if (baseSort && baseSort.includes('_')) {
+    const [rawBase, rawDir] = baseSort.split('_');
+    if (['updated', 'created', 'difficulty'].includes(rawBase) && (rawDir === 'asc' || rawDir === 'desc')) {
+      baseSort = rawBase;
+      direction = rawDir;
+    }
+  }
+
+  if (baseSort === 'relevance') {
+    return null;
+  }
+
+  switch (baseSort) {
+    case 'updated':
+      return direction === 'asc' ? 'updated_asc' : 'updated_desc';
+    case 'created':
+      return direction === 'asc' ? 'created_asc' : 'created_desc';
+    case 'difficulty':
+      return direction === 'asc' ? 'difficulty_asc' : 'difficulty_desc';
+    default:
+      return null;
+  }
+}
+
 export const filterCounts = writable(createEmptyFilterCounts());
 
 // Actions pour gérer la recherche
 export const searchActions = {
   // Mettre à jour un filtre spécifique
   updateFilter(filterKey, value) {
-    filters.update(currentFilters => ({
-      ...currentFilters,
-      [filterKey]: value
-    }));
+    filters.update(currentFilters => {
+      if (filterKey === 'sort') {
+        const prevSort = currentFilters.sort || 'relevance';
+        const rawValue = typeof value === 'string' && value ? value : 'relevance';
+        let nextSort = rawValue;
+        let nextDirection = currentFilters.sortDirection ?? DEFAULT_SORT_DIRECTIONS[prevSort] ?? 'desc';
+
+        if (rawValue.includes('_')) {
+          const [base, dir] = rawValue.split('_');
+          if (['relevance', 'updated', 'created', 'difficulty'].includes(base)) {
+            nextSort = base;
+            if (dir === 'asc' || dir === 'desc') {
+              nextDirection = dir;
+            } else {
+              nextDirection = DEFAULT_SORT_DIRECTIONS[base] ?? 'desc';
+            }
+          } else {
+            nextSort = 'relevance';
+            nextDirection = DEFAULT_SORT_DIRECTIONS.relevance;
+          }
+        } else if (!DEFAULT_SORT_DIRECTIONS[nextSort]) {
+          nextSort = 'relevance';
+          nextDirection = DEFAULT_SORT_DIRECTIONS.relevance;
+        } else if (nextSort !== prevSort) {
+          nextDirection = DEFAULT_SORT_DIRECTIONS[nextSort];
+        }
+
+        if (nextSort === 'relevance') {
+          nextDirection = DEFAULT_SORT_DIRECTIONS.relevance;
+        }
+
+        return {
+          ...currentFilters,
+          sort: nextSort,
+          sortDirection: nextDirection
+        };
+      }
+
+      if (filterKey === 'sortDirection') {
+        const sanitized = value === 'asc' ? 'asc' : 'desc';
+        if ((currentFilters.sort || 'relevance') === 'relevance') {
+          return {
+            ...currentFilters,
+            sortDirection: DEFAULT_SORT_DIRECTIONS.relevance
+          };
+        }
+        return {
+          ...currentFilters,
+          sortDirection: sanitized
+        };
+      }
+
+      return {
+        ...currentFilters,
+        [filterKey]: value
+      };
+    });
   },
 
   // Effacer un filtre spécifique
   clearFilter(filterKey) {
-    filters.update(currentFilters => ({
-      ...currentFilters,
-      [filterKey]: ''
-    }));
+    filters.update(currentFilters => {
+      if (filterKey === 'sort') {
+        return {
+          ...currentFilters,
+          sort: 'relevance',
+          sortDirection: DEFAULT_SORT_DIRECTIONS.relevance
+        };
+      }
+
+      if (filterKey === 'sortDirection') {
+        return {
+          ...currentFilters,
+          sortDirection: DEFAULT_SORT_DIRECTIONS[currentFilters.sort || 'relevance'] ?? 'desc'
+        };
+      }
+
+      return {
+        ...currentFilters,
+        [filterKey]: ''
+      };
+    });
   },
 
   // Effacer tous les filtres
@@ -141,7 +254,9 @@ export const searchActions = {
       module: '',
       author: '',
       hasSolution: '',
-      hasIndication: ''
+      hasIndication: '',
+      sort: 'relevance',
+      sortDirection: 'desc'
     });
     results.set([]);
     searchMeta.set(null);
@@ -172,7 +287,17 @@ export const searchActions = {
     unsubscribeFilters();
 
     // Si aucun critère de recherche, vider les résultats
-    if (!currentQuery && !Object.values(currentFilters).some(v => v)) {
+    const hasEffectiveFilters = Object.entries(currentFilters).some(([key, value]) => {
+      if (key === 'sort') {
+        return value && value !== 'relevance';
+      }
+      if (key === 'sortDirection') {
+        return false;
+      }
+      return Boolean(value);
+    });
+
+    if (!currentQuery && !hasEffectiveFilters) {
       results.set([]);
       searchMeta.set(null);
       error.set(null);
@@ -218,6 +343,11 @@ export const searchActions = {
       }
       if (currentFilters.hasIndication !== '' && currentFilters.hasIndication !== null && currentFilters.hasIndication !== undefined) {
         searchParams.set('hasIndication', String(currentFilters.hasIndication));
+      }
+
+      const sortParam = resolveSortParam(currentFilters);
+      if (sortParam) {
+        searchParams.set('sort', sortParam);
       }
       
       // Limite par page (afficher 20 résultats puis "voir plus")
@@ -304,6 +434,11 @@ export const searchActions = {
       }
       if (currentFilters.hasIndication !== '' && currentFilters.hasIndication !== null && currentFilters.hasIndication !== undefined) {
         searchParams.set('hasIndication', String(currentFilters.hasIndication));
+      }
+
+      const sortParam = resolveSortParam(currentFilters);
+      if (sortParam) {
+        searchParams.set('sort', sortParam);
       }
 
       searchParams.set('limit', String(limit));
