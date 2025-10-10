@@ -51,6 +51,7 @@ export const filters = writable({
   author: '',
   hasSolution: '',
   hasIndication: '',
+  hasVideo: '',
   sort: 'relevance',
   sortDirection: 'desc'
 });
@@ -91,6 +92,7 @@ export const hasActiveFilters = derived(
       $filters.author ||
       ($filters.hasSolution !== '' && $filters.hasSolution !== null && $filters.hasSolution !== undefined) ||
       ($filters.hasIndication !== '' && $filters.hasIndication !== null && $filters.hasIndication !== undefined) ||
+      ($filters.hasVideo !== '' && $filters.hasVideo !== null && $filters.hasVideo !== undefined) ||
       hasSortOverride
     );
   }
@@ -255,6 +257,7 @@ export const searchActions = {
       author: '',
       hasSolution: '',
       hasIndication: '',
+      hasVideo: '',
       sort: 'relevance',
       sortDirection: 'desc'
     });
@@ -343,6 +346,9 @@ export const searchActions = {
       }
       if (currentFilters.hasIndication !== '' && currentFilters.hasIndication !== null && currentFilters.hasIndication !== undefined) {
         searchParams.set('hasIndication', String(currentFilters.hasIndication));
+      }
+      if (currentFilters.hasVideo !== '' && currentFilters.hasVideo !== null && currentFilters.hasVideo !== undefined) {
+        searchParams.set('hasVideo', String(currentFilters.hasVideo));
       }
 
       const sortParam = resolveSortParam(currentFilters);
@@ -434,6 +440,9 @@ export const searchActions = {
       }
       if (currentFilters.hasIndication !== '' && currentFilters.hasIndication !== null && currentFilters.hasIndication !== undefined) {
         searchParams.set('hasIndication', String(currentFilters.hasIndication));
+      }
+      if (currentFilters.hasVideo !== '' && currentFilters.hasVideo !== null && currentFilters.hasVideo !== undefined) {
+        searchParams.set('hasVideo', String(currentFilters.hasVideo));
       }
 
       const sortParam = resolveSortParam(currentFilters);
@@ -672,6 +681,9 @@ export const suggestionActions = {
       }
       if (currentFilters.hasIndication !== '' && currentFilters.hasIndication !== undefined && currentFilters.hasIndication !== null) {
         params.set('hasIndication', String(currentFilters.hasIndication));
+      }
+      if (currentFilters.hasVideo !== '' && currentFilters.hasVideo !== undefined && currentFilters.hasVideo !== null) {
+        params.set('hasVideo', String(currentFilters.hasVideo));
       }
 
       return params;

@@ -198,7 +198,7 @@
           </p>
           <p class="footer-license">
             Contenus : <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> •
-            Code : <a href="https://github.com/automathproject/openyourmath-v2/">GitHub</a>
+            Dépôt Git : <a href="https://forge.apps.education.fr/automath/openyourmath-v2">Forge Edu</a>
           </p>
         </div>
 
@@ -206,7 +206,6 @@
         <nav class="footer-col footer-links" aria-label="Liens">
           <a href="/about">À propos</a>
           <a href="/mentions-legales">Mentions légales</a>
-          <a href="https://github.com/automathproject/openyourmath-v2/">Dépôt Git</a>
           <a href="mailto:maxime.nguyen@st-cyr.terre-net.defense.gouv.fr">Contact</a>
         </nav>
 
@@ -216,14 +215,14 @@
             Hébergement OVH (FR) • HTTPS via Caddy
           </p>
           <p class="footer-meta">
-            <span id="oym-year"></span> • v2.1.5
+            <span id="oym-year"></span> • v2.2.5
           </p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p class="footer-text">
-          © <span id="oym-year-bottom"></span> OpenYourMath — Partagez, améliorez, apprenez.
+          © <span id="oym-year-bottom"></span> OpenYourMath v2 2025 — Partagez, apprenez.
         </p>
       </div>
     </div>

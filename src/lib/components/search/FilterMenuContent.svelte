@@ -129,6 +129,25 @@
       </button>
     </div>
   </div>
+  <div class="filters-menu-section">
+    <h5>Vidéo</h5>
+    <div class="filters-menu-options">
+      <button
+        type="button"
+        class="filters-menu-option {activeMenuFilters.hasVideo === '1' ? 'filters-menu-option--active' : ''}"
+        on:click={() => onPropertySelect('hasVideo', '1')}
+      >
+        <span>📺 Avec vidéo</span>
+      </button>
+      <button
+        type="button"
+        class="filters-menu-option {activeMenuFilters.hasVideo === '0' ? 'filters-menu-option--active' : ''}"
+        on:click={() => onPropertySelect('hasVideo', '0')}
+      >
+        <span>🚫 Sans vidéo</span>
+      </button>
+    </div>
+  </div>
 {:else if category === 'author'}
   <div class="filters-menu-section">
     <h5>Auteur</h5>

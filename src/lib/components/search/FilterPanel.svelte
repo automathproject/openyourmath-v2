@@ -106,6 +106,11 @@
     } else if ($filters.hasIndication === '0') {
       chips.push({ key: 'hasIndication', label: 'Sans indication', icon: '🚫', category: 'properties' });
     }
+    if ($filters.hasVideo === '1') {
+      chips.push({ key: 'hasVideo', label: 'Avec vidéo', icon: '📺', category: 'properties' });
+    } else if ($filters.hasVideo === '0') {
+      chips.push({ key: 'hasVideo', label: 'Sans vidéo', icon: '🚫', category: 'properties' });
+    }
     if ($filters.author) {
       chips.push({ key: 'author', label: $filters.author, icon: '👤', category: 'author' });
     }
@@ -116,7 +121,8 @@
   $: activeMenuFilters = {
     difficulty: $filters.difficulty ?? '',
     hasSolution: $filters.hasSolution ?? '',
-    hasIndication: $filters.hasIndication ?? ''
+    hasIndication: $filters.hasIndication ?? '',
+    hasVideo: $filters.hasVideo ?? ''
   };
 
   function openFilterMenu(category = null) {
@@ -167,6 +173,9 @@
         break;
       case 'hasIndication':
         searchActions.updateFilter('hasIndication', '');
+        break;
+      case 'hasVideo':
+        searchActions.updateFilter('hasVideo', '');
         break;
       case 'author':
         searchActions.updateFilter('author', '');
@@ -224,6 +233,11 @@
 
   function handleIndicationChange(value) {
     searchActions.updateFilter('hasIndication', value);
+    searchActions.search();
+  }
+
+  function handleVideoChange(value) {
+    searchActions.updateFilter('hasVideo', value);
     searchActions.search();
   }
 
@@ -379,6 +393,7 @@
           onDifficultyChange={handleDifficultyChange}
           onSolutionChange={handleSolutionChange}
           onIndicationChange={handleIndicationChange}
+          onVideoChange={handleVideoChange}
           onAuthorInput={handleAuthorInput}
           onAuthorBlur={handleAuthorBlur}
           onAuthorSuggestionSelect={selectAuthor}

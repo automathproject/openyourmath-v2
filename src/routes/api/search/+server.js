@@ -14,6 +14,7 @@ export async function GET({ url }) {
     const author = url.searchParams.get('author')?.trim() || '';
     const hasSolutionParam = url.searchParams.get('hasSolution');
     const hasIndicationParam = url.searchParams.get('hasIndication');
+    const hasVideoParam = url.searchParams.get('hasVideo');
     const sortParam = url.searchParams.get('sort')?.trim() || '';
     const allowedSorts = new Set([
       'updated_desc',
@@ -62,6 +63,11 @@ export async function GET({ url }) {
       const v2 = hasIndicationParam.toString().toLowerCase();
       if (v2 === '1' || v2 === 'true') filters.hasIndication = true;
       else if (v2 === '0' || v2 === 'false') filters.hasIndication = false;
+    }
+    if (hasVideoParam !== null && hasVideoParam !== undefined && hasVideoParam !== '') {
+      const v3 = hasVideoParam.toString().toLowerCase();
+      if (v3 === '1' || v3 === 'true') filters.hasVideo = true;
+      else if (v3 === '0' || v3 === 'false') filters.hasVideo = false;
     }
 
     if (sort) {

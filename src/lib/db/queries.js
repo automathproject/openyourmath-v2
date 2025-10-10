@@ -188,7 +188,21 @@ function buildSearchContext(query = '', filters = {}, sortOption = null) {
     params.push(filterValues.hasIndication ? 1 : 0);
   }
 
-  const selectBase = `SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.created_at, e.updated_at, e.preview,
+  if (filterValues.hasVideo !== undefined && filterValues.hasVideo !== null && filterValues.hasVideo !== '') {
+    let wantsVideo = filterValues.hasVideo;
+    if (typeof wantsVideo !== 'boolean') {
+      const normalized = String(wantsVideo).toLowerCase();
+      wantsVideo = normalized === '1' || normalized === 'true';
+    }
+
+    if (wantsVideo) {
+      whereClauses.push("(e.video_id IS NOT NULL AND TRIM(e.video_id) != '')");
+    } else {
+      whereClauses.push("(e.video_id IS NULL OR TRIM(e.video_id) = '')");
+    }
+  }
+
+  const selectBase = `SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.video_id, e.created_at, e.updated_at, e.preview,
                 e.hasIndication, e.hasSolution`;
 
   const selectClause = useFts
@@ -604,6 +618,19 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
       baseWhere += ' AND e.hasIndication = 1';
     } else if (filters.hasIndication === '0' || filters.hasIndication === 0 || filters.hasIndication === false) {
       baseWhere += ' AND e.hasIndication = 0';
+    }
+    if (filters.hasVideo !== undefined && filters.hasVideo !== null && filters.hasVideo !== '') {
+      let wantsVideo = filters.hasVideo;
+      if (typeof wantsVideo !== 'boolean') {
+        const normalized = String(wantsVideo).toLowerCase();
+        wantsVideo = normalized === '1' || normalized === 'true';
+      }
+
+      if (wantsVideo) {
+        baseWhere += " AND (e.video_id IS NOT NULL AND TRIM(e.video_id) != '')";
+      } else {
+        baseWhere += " AND (e.video_id IS NULL OR TRIM(e.video_id) = '')";
+      }
     }
 
     const sql = `

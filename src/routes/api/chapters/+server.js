@@ -18,7 +18,8 @@ export async function GET({ url }) {
         difficulty: url.searchParams.get('difficulty') || '',
         author: url.searchParams.get('author') || '',
         hasSolution: url.searchParams.get('hasSolution') || '',
-        hasIndication: url.searchParams.get('hasIndication') || ''
+        hasIndication: url.searchParams.get('hasIndication') || '',
+        hasVideo: url.searchParams.get('hasVideo') || ''
       };
 
       const hasQueryOrFilters = q.trim() || Object.values(filters).some(v => v);

@@ -16,6 +16,7 @@
   export let onDifficultyChange = () => {};
   export let onSolutionChange = () => {};
   export let onIndicationChange = () => {};
+  export let onVideoChange = () => {};
   export let onAuthorInput = () => {};
   export let onAuthorBlur = () => {};
   export let onAuthorSuggestionSelect = () => {};
@@ -54,6 +55,12 @@
     { value: '', label: 'Tous' },
     { value: '1', label: 'Avec indication' },
     { value: '0', label: 'Sans indication' }
+  ];
+
+  const videoOptions = [
+    { value: '', label: 'Tous' },
+    { value: '1', label: 'Avec vidéo' },
+    { value: '0', label: 'Sans vidéo' }
   ];
 </script>
 
@@ -105,6 +112,15 @@
     value={filtersValues.hasIndication || ''}
     options={indicationOptions}
     onChange={onIndicationChange}
+  />
+
+  <FilterField
+    type="select"
+    id="video-filter"
+    label="Vidéo"
+    value={filtersValues.hasVideo || ''}
+    options={videoOptions}
+    onChange={onVideoChange}
   />
 
   <FilterField
