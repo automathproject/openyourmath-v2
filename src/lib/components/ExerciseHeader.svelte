@@ -1,5 +1,6 @@
 <!-- src/lib/components/ExerciseHeader.svelte -->
 <script>
+  import { tick } from 'svelte';
   import Breadcrumb from './Breadcrumb.svelte';
   import NameRenderer from './NameRenderer.svelte';
   import MathRenderer from './MathRenderer.svelte';
@@ -13,6 +14,9 @@
   export let breadcrumbItems = []; // [{label, href?}]
   export let showBreadcrumb = true;
 
+  let showVideoModal = false;
+  let videoCloseButton;
+
   function formatDisplayDate(value) {
     if (!value) return null;
     const date = new Date(value);
@@ -20,9 +24,60 @@
     return date.toLocaleDateString('fr-FR');
   }
 
+  function extractYoutubeId(ex) {
+    if (!ex) return null;
+    const rawValue = ex?.artifacts?.video ?? ex?.video_id ?? ex?.videoId;
+    if (!rawValue) return null;
+
+    const stringValue = typeof rawValue === 'string' ? rawValue : String(rawValue);
+    const trimmed = stringValue.trim();
+    if (!trimmed) return null;
+
+    try {
+      const asUrl = new URL(trimmed);
+      const host = asUrl.hostname.toLowerCase();
+
+      if (host.includes('youtube.com')) {
+        const byParam = asUrl.searchParams.get('v');
+        if (byParam) return byParam;
+        const parts = asUrl.pathname.split('/').filter(Boolean);
+        if (parts.length > 0) return parts[parts.length - 1];
+      }
+
+      if (host.includes('youtu.be')) {
+        const parts = asUrl.pathname.split('/').filter(Boolean);
+        if (parts.length > 0) return parts[parts.length - 1];
+      }
+    } catch (err) {
+      // Not a full URL, fall back to regex checks below.
+    }
+
+    const watchMatch = trimmed.match(/[?&]v=([a-zA-Z0-9_-]{6,})/);
+    if (watchMatch) {
+      return watchMatch[1];
+    }
+
+    const idMatch = trimmed.match(/^[a-zA-Z0-9_-]{6,}$/);
+    if (idMatch) {
+      return trimmed;
+    }
+
+    return null;
+  }
+
   $: createdAtLabel = formatDisplayDate(exercise?.created_at ?? exercise?.createdAt);
   $: updatedAtLabel = formatDisplayDate(exercise?.updated_at ?? exercise?.updatedAt);
   $: hasDates = Boolean(createdAtLabel || updatedAtLabel);
+  $: videoId = extractYoutubeId(exercise);
+  $: canDisplayVideoAction = Boolean(videoId && variant === 'full');
+  $: if (showVideoModal) {
+    tick().then(() => {
+      videoCloseButton?.focus();
+    });
+  }
+  $: if (!canDisplayVideoAction && showVideoModal) {
+    showVideoModal = false;
+  }
 
   function toggleHint() {
     showHint = !showHint;
@@ -34,6 +89,22 @@
     showSolution = !showSolution;
     const e = new CustomEvent('toggleSolution', { detail: { showSolution } });
     dispatchEvent(e);
+  }
+
+  function openVideoModal() {
+    if (!canDisplayVideoAction) return;
+    showVideoModal = true;
+  }
+
+  function closeVideoModal() {
+    showVideoModal = false;
+  }
+
+  function handleKeydown(event) {
+    if (event.key === 'Escape' && showVideoModal) {
+      event.preventDefault();
+      closeVideoModal();
+    }
   }
 
   $: showCrumb = showBreadcrumb && variant !== 'preview';
@@ -55,6 +126,8 @@
     return items;
   })();
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <header class="exercise-header" class:is-preview={variant === 'preview'}>
   {#if showCrumb}
@@ -121,9 +194,19 @@
     </div>
   </div>
 
-  {#if showGlobalToggles}
+  {#if showGlobalToggles || canDisplayVideoAction}
     <div class="exercise-actions">
-      {#if exercise?.hasIndication}
+      {#if canDisplayVideoAction}
+        <button
+          type="button"
+          class="action-button action-button--video"
+          on:click={openVideoModal}
+        >
+          📺 Voir la vidéo
+        </button>
+      {/if}
+
+      {#if showGlobalToggles && exercise?.hasIndication}
         <button
           on:click={() => showHint = !showHint}
           class="action-button action-button--hint"
@@ -132,7 +215,7 @@
           💡 {showHint ? 'Masquer' : 'Voir'} les indications
         </button>
       {/if}
-      {#if exercise?.hasSolution}
+      {#if showGlobalToggles && exercise?.hasSolution}
         <button
           on:click={() => showSolution = !showSolution}
           class="action-button action-button--solution"
@@ -169,6 +252,38 @@
     </div>
   {/if}
 </header>
+
+{#if showVideoModal && canDisplayVideoAction}
+  <div class="video-modal-backdrop" role="presentation" on:click={closeVideoModal}>
+    <div
+      class="video-modal-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Vidéo associée à l'exercice"
+      on:click|stopPropagation
+    >
+      <button
+        type="button"
+        class="video-modal-close"
+        on:click={closeVideoModal}
+        aria-label="Fermer la vidéo"
+        bind:this={videoCloseButton}
+      >
+        ×
+      </button>
+      {#if videoId}
+        <div class="video-modal-content">
+          <iframe
+            title="Lecture vidéo"
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      {/if}
+    </div>
+  </div>
+{/if}
 
 <style>
   .exercise-header {
@@ -252,7 +367,7 @@
   .exercise-badge--level { background: rgb(240 253 244); color: rgb(22 101 52); }
   .exercise-difficulty { display: flex; align-items: center; gap: 0.5rem; }
 
-  .exercise-actions { display: flex; gap: 0.75rem; }
+  .exercise-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
   .action-button {
     display: inline-flex;
     align-items: center;
@@ -262,6 +377,8 @@
     border-radius: 0.5rem;
     transition: background-color .2s ease;
   }
+  .action-button--video { background: rgb(219 234 254); color: rgb(30 64 175); }
+  .action-button--video:hover { background: rgb(191 219 254); }
   .action-button--hint { background: rgb(254 252 232); color: rgb(133 77 14); }
   .action-button--hint:hover { background: rgb(253 246 178); }
   .action-button--solution { background: rgb(240 253 244); color: rgb(22 101 52); }
@@ -318,6 +435,64 @@
     max-width: 100%;
   }
 
+  .video-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    z-index: 60;
+  }
+
+  .video-modal-dialog {
+    position: relative;
+    width: min(960px, 100%);
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+    padding: 1.5rem;
+  }
+
+  .video-modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 9999px;
+    background: rgba(243, 244, 246, 0.9);
+    color: rgb(55 65 81);
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .video-modal-close:hover {
+    background: rgb(219 234 254);
+    color: rgb(30 64 175);
+  }
+
+  .video-modal-content {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: black;
+  }
+
+  .video-modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   /* Responsive: on small screens, put the right block back into flow */
   @media (max-width: 640px) {
     .header-top {
@@ -346,6 +521,10 @@
       text-align: right;
       margin-top: 0;
       max-width: 100%;
+    }
+    .video-modal-dialog {
+      padding: 1rem;
+      border-radius: 0.75rem;
     }
   }
 </style>
