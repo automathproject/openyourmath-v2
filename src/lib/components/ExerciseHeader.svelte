@@ -1,6 +1,8 @@
 <!-- src/lib/components/ExerciseHeader.svelte -->
 <script>
   import { tick } from 'svelte';
+  import { slide } from 'svelte/transition';
+  import { cubicOut } from 'svelte/easing';
   import Breadcrumb from './Breadcrumb.svelte';
   import NameRenderer from './NameRenderer.svelte';
   import MathRenderer from './MathRenderer.svelte';
@@ -16,6 +18,13 @@
 
   let showVideoModal = false;
   let videoCloseButton;
+  let metadataCollapsed = false;
+
+  const metadataBlockId = 'exercise-metadata-block';
+
+  $: metadataToggleLabel = metadataCollapsed
+    ? 'Afficher les métadonnées'
+    : 'Masquer les métadonnées';
 
   function formatDisplayDate(value) {
     if (!value) return null;
@@ -100,6 +109,10 @@
     showVideoModal = false;
   }
 
+  function toggleMetadata() {
+    metadataCollapsed = !metadataCollapsed;
+  }
+
   function handleKeydown(event) {
     if (event.key === 'Escape' && showVideoModal) {
       event.preventDefault();
@@ -129,7 +142,11 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<header class="exercise-header" class:is-preview={variant === 'preview'}>
+<header
+  class="exercise-header"
+  class:is-preview={variant === 'preview'}
+  class:metadata-collapsed={metadataCollapsed}
+>
   {#if showCrumb}
     <Breadcrumb items={computedBreadcrumb} />
   {/if}
@@ -142,8 +159,12 @@
       </h1>
     {/if}
 
-    {#if variant !== 'preview'}
-      <div class="exercise-metadata">
+    {#if variant !== 'preview' && !metadataCollapsed}
+      <div
+        class="exercise-metadata"
+        id={metadataBlockId}
+        transition:slide={{ duration: 220, easing: cubicOut }}
+      >
         {#if exercise.level}
           <span class="exercise-badge exercise-badge--level">{exercise.level}</span>
         {/if}
@@ -167,12 +188,32 @@
 
     <!-- Absolutely positioned, removed from normal flow -->
     <div class="title-right">
-      {#if exercise?.uuid}
-        <span class="exercise-uuid text-xs text-gray-400 font-mono">{exercise.uuid}</span>
-      {/if}
+      <div class="title-right-top">
+        {#if variant !== 'preview'}
+          <button
+            type="button"
+            class="metadata-toggle"
+            class:collapsed={metadataCollapsed}
+            on:click={toggleMetadata}
+            aria-expanded={!metadataCollapsed}
+            aria-controls={metadataBlockId}
+            aria-label={metadataToggleLabel}
+            title={metadataToggleLabel}
+          >
+            <span class="chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </span>
+          </button>
+        {/if}
+        {#if exercise?.uuid}
+          <span class="exercise-uuid text-xs text-gray-400 font-mono">{exercise.uuid}</span>
+        {/if}
+      </div>
 
-      {#if variant !== 'preview'}
-        <div class="attribution-info">
+      {#if variant !== 'preview' && !metadataCollapsed}
+        <div class="attribution-info" transition:slide={{ duration: 220, easing: cubicOut }}>
           {#if exercise?.author}
             <NameRenderer
               author={exercise.author}
@@ -195,40 +236,42 @@
   </div>
 
   {#if showGlobalToggles || canDisplayVideoAction}
-    <div class="exercise-actions">
-      {#if canDisplayVideoAction}
-        <button
-          type="button"
-          class="action-button action-button--video"
-          on:click={openVideoModal}
-        >
-          📺 Voir la vidéo
-        </button>
-      {/if}
+    {#if !metadataCollapsed}
+      <div class="exercise-actions" transition:slide={{ duration: 220, easing: cubicOut }}>
+        {#if canDisplayVideoAction}
+          <button
+            type="button"
+            class="action-button action-button--video"
+            on:click={openVideoModal}
+          >
+            📺 Voir la vidéo
+          </button>
+        {/if}
 
-      {#if showGlobalToggles && exercise?.hasIndication}
-        <button
-          on:click={() => showHint = !showHint}
-          class="action-button action-button--hint"
-          aria-pressed={showHint}
-        >
-          💡 {showHint ? 'Masquer' : 'Voir'} les indications
-        </button>
-      {/if}
-      {#if showGlobalToggles && exercise?.hasSolution}
-        <button
-          on:click={() => showSolution = !showSolution}
-          class="action-button action-button--solution"
-          aria-pressed={showSolution}
-        >
-          ✅ {showSolution ? 'Masquer' : 'Voir'} les solutions
-        </button>
-      {/if}
-    </div>
+        {#if showGlobalToggles && exercise?.hasIndication}
+          <button
+            on:click={() => showHint = !showHint}
+            class="action-button action-button--hint"
+            aria-pressed={showHint}
+          >
+            💡 {showHint ? 'Masquer' : 'Voir'} les indications
+          </button>
+        {/if}
+        {#if showGlobalToggles && exercise?.hasSolution}
+          <button
+            on:click={() => showSolution = !showSolution}
+            class="action-button action-button--solution"
+            aria-pressed={showSolution}
+          >
+            ✅ {showSolution ? 'Masquer' : 'Voir'} les solutions
+          </button>
+        {/if}
+      </div>
+    {/if}
   {/if}
 
-  {#if hasDates}
-    <div class="header-bottom">
+  {#if hasDates && !metadataCollapsed}
+    <div class="header-bottom" transition:slide={{ duration: 220, easing: cubicOut }}>
       {#if createdAtLabel}
         <span
           class="date-entry"
@@ -290,6 +333,7 @@
     position: relative; /* anchor for absolute right column */
     border-bottom: 1px solid rgb(229 231 235);
     @apply bg-brand-100 px-6 py-4 md:px-8 md:py-6 rounded-xl;
+    transition: padding 0.2s ease;
   }
 
   .header-top {
@@ -318,8 +362,64 @@
     max-width: 40ch; /* prevent overgrowth */
   }
 
+  .title-right-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
   .exercise-uuid {
     opacity: 0.8;
+  }
+
+  .metadata-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(107, 114, 128, 0.15);
+    background: rgba(255, 255, 255, 0.9);
+    color: rgb(55 65 81);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .metadata-toggle:hover,
+  .metadata-toggle:focus-visible {
+    background: rgb(219 234 254);
+    color: rgb(30 64 175);
+    border-color: rgba(30, 64, 175, 0.3);
+  }
+
+  .metadata-toggle:focus-visible {
+    outline: 2px solid rgb(30 64 175);
+    outline-offset: 2px;
+  }
+
+  .metadata-toggle .chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    transform: rotate(180deg);
+  }
+
+  .metadata-toggle.collapsed .chevron {
+    transform: rotate(0deg);
+  }
+
+  .metadata-toggle svg {
+    width: 1rem;
+    height: 1rem;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   .attribution-info {
@@ -413,6 +513,23 @@
   .exercise-header.is-preview .exercise-title,
   .exercise-header.is-preview .exercise-metadata { font-size: inherit !important; }
 
+  .exercise-header.metadata-collapsed {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .exercise-header.metadata-collapsed .exercise-title {
+    margin-bottom: 0;
+  }
+
+  .exercise-header.metadata-collapsed .header-top {
+    min-height: auto;
+  }
+
+  .exercise-header.metadata-collapsed .title-right {
+    gap: 0.125rem;
+  }
+
   /* In preview, allow the title to take more width */
   .exercise-header.is-preview .exercise-title {
     /* Reduce the reserved space for the right block */
@@ -433,6 +550,10 @@
     align-items: flex-start;
     gap: 0.25rem;
     max-width: 100%;
+  }
+
+  .exercise-header.is-preview .title-right-top {
+    justify-content: flex-start;
   }
 
   .video-modal-backdrop {
@@ -521,6 +642,10 @@
       text-align: right;
       margin-top: 0;
       max-width: 100%;
+    }
+
+    .title-right-top {
+      justify-content: flex-end;
     }
     .video-modal-dialog {
       padding: 1rem;
