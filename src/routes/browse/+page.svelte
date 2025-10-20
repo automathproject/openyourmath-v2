@@ -169,10 +169,14 @@
           comparison = a.title.localeCompare(b.title);
           break;
         case 'difficulty':
-          const getDifficultyOrder = (diff) => {
-            if (!diff) return 999;
-            if (diff.startsWith('L')) return parseInt(diff.substring(1)) || 0;
-            if (diff.startsWith('M')) return 100 + (parseInt(diff.substring(1)) || 0);
+          const getDifficultyOrder = (value) => {
+            if (value === null || value === undefined || value === '') return 999;
+            const normalized = String(value).trim().toUpperCase();
+            if (normalized === 'PCSI') return -1;
+            if (normalized.startsWith('L')) return parseInt(normalized.substring(1), 10) || 0;
+            if (normalized.startsWith('M')) return 100 + (parseInt(normalized.substring(1), 10) || 0);
+            const numeric = Number(value);
+            if (!Number.isNaN(numeric)) return 200 + numeric;
             return 500;
           };
           comparison = getDifficultyOrder(a.difficulty) - getDifficultyOrder(b.difficulty);

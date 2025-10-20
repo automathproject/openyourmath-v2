@@ -257,6 +257,7 @@ export const domainHierarchy = {
 };
 
 export const levelHierarchy = {
+  "PCSI": { order: 0, name: "Classe préparatoire PCSI", color: "teal", icon: "🧮" },
   "L1": { order: 1, name: "Licence 1", color: "green", icon: "🟢" },
   "L2": { order: 2, name: "Licence 2", color: "blue", icon: "🔵" },
   "L3": { order: 3, name: "Licence 3", color: "purple", icon: "🟣" },

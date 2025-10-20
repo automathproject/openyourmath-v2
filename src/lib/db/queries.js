@@ -518,6 +518,8 @@ export async function getChapterStructure() {
     })).sort((a, b) => {
       // Tri intelligent des niveaux
       const getOrder = (level) => {
+        if (!level) return 1000;
+        if (level === 'PCSI') return -1;
         if (level.startsWith('L')) return parseInt(level.substring(1)) || 0;
         if (level.startsWith('M')) return 100 + (parseInt(level.substring(1)) || 0);
         return 1000;
@@ -596,8 +598,8 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
       baseWhere += ' AND UPPER(e.level) = UPPER(?)';
       params.push(filters.level);
     }
-    if (filters.difficulty !== undefined && filters.difficulty !== null) {
-      if (filters.difficulty === 'null' || filters.difficulty === '') {
+    if (filters.difficulty !== undefined && filters.difficulty !== null && filters.difficulty !== '') {
+      if (filters.difficulty === 'null' || filters.difficulty === 'NULL') {
         baseWhere += ' AND e.difficulty IS NULL';
       } else {
         baseWhere += ' AND e.difficulty = ?';
@@ -702,6 +704,8 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
       })).sort((a, b) => a.name.localeCompare(b.name))
     })).sort((a, b) => {
       const getOrder = (level) => {
+        if (!level) return 1000;
+        if (level === 'PCSI') return -1;
         if (level.startsWith('L')) return parseInt(level.substring(1)) || 0;
         if (level.startsWith('M')) return 100 + (parseInt(level.substring(1)) || 0);
         return 1000;
@@ -848,6 +852,7 @@ export async function getSuggestions(type = 'all', limit = 10) {
           GROUP BY level 
           ORDER BY 
             CASE 
+              WHEN level = 'PCSI' THEN 0
               WHEN level LIKE 'L%' THEN 1
               WHEN level LIKE 'M%' THEN 2
               WHEN level LIKE 'D%' THEN 3
