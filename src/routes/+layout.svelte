@@ -215,7 +215,7 @@
             Hébergement OVH (FR) • HTTPS via Caddy
           </p>
           <p class="footer-meta">
-            <span id="oym-year"></span> • v2.2.5
+            <span id="oym-year"></span> • v2.2.6
           </p>
         </div>
       </div>
