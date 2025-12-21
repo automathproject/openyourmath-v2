@@ -1104,3 +1104,29 @@ export async function getContextualFilterCounts(query = '', filters = {}) {
     if (db) db.close();
   }
 }
+
+export async function getRandomExercises(limit = 12) {
+  let db;
+  try {
+    db = new Database(DB_PATH, { readonly: true });
+    const safeLimit = Math.max(1, Math.min(Number(limit) || 12, 50));
+
+    const rows = db.prepare(`
+      SELECT 
+        uuid, title, chapter, subchapter, theme, module, level, difficulty, 
+        author, organization, license_code, license_url, preview, created_at, updated_at,
+        hasIndication, hasSolution
+      FROM exercises
+      WHERE title IS NOT NULL AND TRIM(title) != ''
+      ORDER BY RANDOM()
+      LIMIT ?
+    `).all(safeLimit);
+
+    return rows;
+  } catch (error) {
+    console.error('Database error in getRandomExercises:', error);
+    return [];
+  } finally {
+    if (db) db.close();
+  }
+}

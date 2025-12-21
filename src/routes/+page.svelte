@@ -8,6 +8,7 @@
   import SearchToolbar from '$lib/components/search/SearchToolbar.svelte';
   import ResultsGrid from '$lib/components/search/ResultsGrid.svelte';
   import MobileExercisePreview from '$lib/components/search/MobileExercisePreview.svelte';
+  import RandomExercisesCarousel from '$lib/components/search/RandomExercisesCarousel.svelte';
   import { cycleTri } from '$lib/utils/filterUtils.js';
 
   import {
@@ -61,6 +62,7 @@
       };
     }
   });
+
 
   function handleChapterNavigation(event) {
     const { level, module, chapter, subchapter } = event.detail;
@@ -204,6 +206,7 @@
 
   <div class="content-layout flex flex-col gap-6 lg:flex-row">
     <FilterPanel
+      class="filters-column"
       {isDesktop}
       {isFilterPanelOpen}
       {closeFilters}
@@ -284,10 +287,13 @@
           </button>
         </EmptyState>
       {:else}
-        <EmptyState
-          title="Prêt à explorer ?"
-          subtitle="Tapez quelques mots ou ouvrez les filtres pour naviguer."
-        />
+        <section class="random-carousel">
+          <RandomExercisesCarousel
+            selectedUuid={$previewState.selectedUuid}
+            isPreviewOpen={$previewState.isOpen}
+            on:select={(event) => selectExercise(event.detail.exercise)}
+          />
+        </section>
       {/if}
     </div>
 
@@ -313,9 +319,10 @@
   }
 
   .content-layout { align-items:stretch; }
-  .results-section { width:100%; }
+  .results-section { width:100%; flex:1 1 0%; min-width:0; }
   @media (min-width:1024px) {
-    .results-section { width: var(--layout-results-width, 100%); }
+    .filters-column { flex:0 0 320px; max-width:340px; }
+    .results-section { max-width: var(--layout-results-width, 100%); }
   }
 
   .preview-section {
