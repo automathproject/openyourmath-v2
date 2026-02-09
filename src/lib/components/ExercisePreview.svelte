@@ -1,15 +1,9 @@
 <!-- src/lib/components/ExercisePreview.svelte -->
 <script>
   import { browser } from '$app/environment';
-  import MathRenderer from './MathRenderer.svelte';
-  import Collapsible from './Collapsible.svelte';
+  import ExerciseContent from './ExerciseContent.svelte';
   import AddToListButton from './AddToListButton.svelte';
   import { previewState, layoutActions } from '$lib/stores/searchStore.js';
-
-  const previewSectionsState = new Map();
-
-  let hintOpen = false;
-  let solutionOpen = false;
   let copiedLatex = false;
 
   function hidePanel() {
@@ -22,52 +16,12 @@
     }
   }
 
-  function normalizeHtml(block) {
-    if (!block) return '';
-    if (block.html) return block.html;
-    if (block.latex) return block.latex;
-    if (block.text) return `<p>${block.text}</p>`;
-    return '';
-  }
-
   function normalizeRaw(block) {
     if (!block) return '';
     if (block.latex) return block.latex;
     if (block.text) return block.text;
     if (block.html) return block.html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
     return '';
-  }
-
-  function isHintBlock(block) {
-    const type = String(block?.type || '').toLowerCase();
-    return type === 'hint' || type === 'indication';
-  }
-
-  function isSolutionBlock(block) {
-    const type = String(block?.type || '').toLowerCase();
-    return type === 'solution' || type === 'reponse' || type === 'answer';
-  }
-
-  $: contentBlocks = Array.isArray($previewState.exercise?.content)
-    ? [...$previewState.exercise.content].sort((a, b) => (a?.order || 0) - (b?.order || 0))
-    : [];
-
-  $: statementBlocks = contentBlocks.filter((block) => !isHintBlock(block) && !isSolutionBlock(block));
-  $: hintBlocks = contentBlocks.filter((block) => isHintBlock(block));
-  $: solutionBlocks = contentBlocks.filter((block) => isSolutionBlock(block));
-
-  $: selectedUuid = $previewState.selectedUuid;
-  $: if (selectedUuid) {
-    const savedState = previewSectionsState.get(selectedUuid) || { hintOpen: false, solutionOpen: false };
-    hintOpen = savedState.hintOpen;
-    solutionOpen = savedState.solutionOpen;
-  } else {
-    hintOpen = false;
-    solutionOpen = false;
-  }
-
-  $: if (selectedUuid) {
-    previewSectionsState.set(selectedUuid, { hintOpen, solutionOpen });
   }
 
   function buildLatexSource() {
@@ -167,37 +121,12 @@
       </div>
     {:else if $previewState.exercise}
       <div class="preview-exercise-content">
-        <section class="preview-section-main">
-          {#if statementBlocks.length > 0}
-            {#each statementBlocks as block}
-              <div class="preview-block">
-                <MathRenderer content={normalizeHtml(block)} />
-              </div>
-            {/each}
-          {:else}
-            <p class="preview-empty-text">Aucun énoncé disponible.</p>
-          {/if}
-        </section>
-
-        {#if hintBlocks.length > 0}
-          <Collapsible title="💡 Indication" bind:open={hintOpen} tone="hint">
-            {#each hintBlocks as block}
-              <div class="preview-block preview-block--sub">
-                <MathRenderer content={normalizeHtml(block)} />
-              </div>
-            {/each}
-          </Collapsible>
-        {/if}
-
-        {#if solutionBlocks.length > 0}
-          <Collapsible title="✅ Solution" bind:open={solutionOpen} tone="solution">
-            {#each solutionBlocks as block}
-              <div class="preview-block preview-block--sub">
-                <MathRenderer content={normalizeHtml(block)} />
-              </div>
-            {/each}
-          </Collapsible>
-        {/if}
+        <ExerciseContent
+          exercise={$previewState.exercise}
+          variant="preview"
+          showGlobalToggles={false}
+          content={$previewState.exercise.content || []}
+        />
       </div>
     {:else}
       <div class="preview-empty">
@@ -260,29 +189,8 @@
   .preview-content { flex:1; overflow-y:auto; }
 
   .preview-exercise-content {
-    display:flex;
-    flex-direction:column;
-    gap:0.75rem;
     padding:0.8rem;
     @apply bg-brand-50;
-  }
-  .preview-section-main {
-    display:flex;
-    flex-direction:column;
-    gap:0.65rem;
-  }
-  .preview-block {
-    border-radius:0.65rem;
-    padding:0.65rem;
-    @apply bg-white border border-gray-200;
-  }
-  .preview-block--sub {
-    padding:0.5rem 0.6rem;
-    @apply bg-white/90 border border-transparent;
-  }
-  .preview-empty-text {
-    font-size:0.9rem;
-    @apply text-gray-500;
   }
 
   @media (max-width: 1200px) {
