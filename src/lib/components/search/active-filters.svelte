@@ -4,17 +4,6 @@
 
   function removeFilterChip(key) {
     switch (key) {
-      case 'module':
-        searchActions.updateFilter('module', '');
-        searchActions.updateFilter('chapter', '');
-        searchActions.updateFilter('subchapter', '');
-        break;
-      case 'chapter':
-        searchActions.updateFilter('chapter', '');
-        searchActions.updateFilter('subchapter', '');
-        break;
-      case 'subchapter':
-      case 'level':
       case 'difficulty':
       case 'hasSolution':
       case 'hasIndication':
@@ -33,10 +22,6 @@
   }
 
   function clearAllFilterChips() {
-    searchActions.updateFilter('module', '');
-    searchActions.updateFilter('chapter', '');
-    searchActions.updateFilter('subchapter', '');
-    searchActions.updateFilter('level', '');
     searchActions.updateFilter('difficulty', '');
     searchActions.updateFilter('hasSolution', '');
     searchActions.updateFilter('hasIndication', '');
@@ -52,10 +37,6 @@
   $: chips = (() => {
     const entries = [];
 
-    if ($filters.level) entries.push({ key: 'level', label: $filters.level });
-    if ($filters.module) entries.push({ key: 'module', label: $filters.module });
-    if ($filters.chapter) entries.push({ key: 'chapter', label: $filters.chapter });
-    if ($filters.subchapter) entries.push({ key: 'subchapter', label: $filters.subchapter });
     if ($filters.difficulty && $filters.difficulty !== '') {
       entries.push({ key: 'difficulty', label: formatDifficultyLabel($filters.difficulty) });
     }
@@ -75,11 +56,9 @@
   })();
 </script>
 
-<div class="active-filters" aria-live="polite">
-  <div class="active-filters-scroll">
-    {#if chips.length === 0}
-      <span class="active-filters-empty">Aucun filtre actif</span>
-    {:else}
+{#if chips.length > 0}
+  <div class="active-filters" aria-live="polite">
+    <div class="active-filters-scroll">
       {#each chips as chip}
         <span class="active-chip">
           <span class="active-chip-label">{chip.label}</span>
@@ -96,9 +75,9 @@
       <button type="button" class="active-filters-clear" on:click={clearAllFilterChips}>
         Tout effacer
       </button>
-    {/if}
+    </div>
   </div>
-</div>
+{/if}
 
 <style>
   .active-filters {
@@ -135,10 +114,6 @@
     @apply bg-gray-200 text-gray-700;
   }
   .active-chip-remove:hover { @apply bg-gray-300; }
-  .active-filters-empty {
-    font-size: 0.85rem;
-    @apply text-gray-500;
-  }
   .active-filters-clear {
     display: inline-flex;
     align-items: center;

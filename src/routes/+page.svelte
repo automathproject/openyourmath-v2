@@ -359,13 +359,14 @@
       grid-template-areas:"results preview";
       grid-template-columns:minmax(0, 1fr) 0;
       transition:grid-template-columns 200ms ease;
-      gap:1.5rem;
+      column-gap:0;
+      row-gap:1.5rem;
       align-items:start;
     }
     .content-layout.layout--preview-open {
       grid-template-columns:minmax(0, 1fr) minmax(20rem, 28rem);
     }
-    .results-section { grid-area:results; max-width: var(--layout-results-width, 100%); }
+    .results-section { grid-area:results; }
     .preview-shell { grid-area:preview; }
   }
 
