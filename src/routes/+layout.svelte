@@ -12,6 +12,7 @@
   let listUrl = '/exercise/list';
   let mobileMenuOpen = false;
   let headerScrolled = false;
+  const APP_VERSION = '2.3.0';
   
   // Réactivité pour détecter si on est sur la page de liste
   $: isListPage = $page.route.id === '/exercise/list';
@@ -74,6 +75,7 @@
           <a href="/" class="brand-link">
             <span class="brand-icon" aria-hidden="true"></span>
             <span>OpenYourMath</span>
+            <span class="brand-version">v{APP_VERSION}</span>
           </a>
         </h1>
       </div>
@@ -215,14 +217,14 @@
             Hébergement OVH (FR) • HTTPS via Caddy
           </p>
           <p class="footer-meta">
-            <span id="oym-year"></span> • v2.2.6
+            <span id="oym-year"></span> • v{APP_VERSION}
           </p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p class="footer-text">
-          © <span id="oym-year-bottom"></span> OpenYourMath v2 2025 — Partagez, apprenez.
+          © <span id="oym-year-bottom"></span> OpenYourMath v{APP_VERSION} 2025 — Partagez, apprenez.
         </p>
       </div>
     </div>
@@ -308,6 +310,17 @@
     height: 1.75rem;
     border-radius: 9999px;
     @apply bg-brand-500;
+  }
+  .brand-version {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.08rem 0.4rem;
+    border-radius: 9999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    @apply bg-gray-100 text-gray-600 border border-gray-200;
   }
   
   /* ==============================================
