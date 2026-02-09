@@ -1,13 +1,18 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import { tick } from 'svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
+  import SearchSnippet from '$lib/components/search/SearchSnippet.svelte';
   import NameRenderer from '$lib/components/NameRenderer.svelte';
   import AddToListButton from '$lib/components/AddToListButton.svelte';
 
   export let exercise;
+  export let activeFilters = {};
+  export let cardMode = 'detailed'; // 'detailed' | 'compact'
   export let isSelected = false;
 
   const dispatch = createEventDispatcher();
+  let cardEl;
 
   function formatDisplayDate(value) {
     if (!value) return null;
@@ -20,7 +25,20 @@
   $: updatedAtLabel = formatDisplayDate(exercise?.updated_at ?? exercise?.updatedAt);
   $: hasDates = Boolean(createdAtLabel || updatedAtLabel);
   $: hasFooterInfo = Boolean(exercise?.author || exercise?.organization);
-  $: showFooter = hasFooterInfo || hasDates;
+  $: isCompact = cardMode === 'compact';
+  $: showFooter = !isCompact && (hasFooterInfo || hasDates);
+  $: showLevelBadge = Boolean(exercise?.level) && String(activeFilters?.level || '') !== String(exercise?.level || '');
+  $: showModuleBadge = Boolean(exercise?.module) && String(activeFilters?.module || '') !== String(exercise?.module || '');
+  $: showChapterBadge = Boolean(exercise?.chapter) && String(activeFilters?.chapter || '') !== String(exercise?.chapter || '');
+  $: showDifficultyDots = Boolean(exercise?.difficulty) && String(activeFilters?.difficulty || '') !== String(exercise?.difficulty || '');
+  $: showTags = !isCompact && (showLevelBadge || showModuleBadge || showChapterBadge || showDifficultyDots);
+  $: snippetLines = isCompact ? 2 : 4;
+
+  $: if (isSelected && cardEl) {
+    tick().then(() => {
+      cardEl?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  }
 
   function handleClick() {
     dispatch('select', { exercise });
@@ -38,15 +56,16 @@
   class="result-card cursor-pointer transition-all duration-200 {isSelected ? 'result-card--selected' : ''}"
   role="button"
   tabindex="0"
+  bind:this={cardEl}
   on:click={handleClick}
   on:keydown={(event) => event.key === 'Enter' && handleClick()}
 >
   <div class="flex justify-between items-start mb-2">
     <div class="flex gap-2 items-center">
-      {#if exercise.level}
+      {#if showTags && showLevelBadge}
         <div class="result-badge">{exercise.level}</div>
       {/if}
-      {#if exercise.difficulty}
+      {#if showTags && showDifficultyDots}
         <div class="flex items-center gap-1">
           {#each Array(5) as _, i}
             <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-400' : 'bg-gray-200'}"></div>
@@ -97,22 +116,22 @@
       <h3 class="result-title">
         <MathRenderer content={exercise.title} inline={true} />
       </h3>
-      <div class="result-metadata">
-        {#if exercise.module}
-          <span class="result-badge">📖 {exercise.module}</span>
-        {/if}
-        {#if exercise.chapter}
-          <span class="result-badge">{exercise.chapter}</span>
-        {/if}
-      </div>
+      {#if showTags}
+        <div class="result-metadata">
+          {#if showModuleBadge}
+            <span class="result-badge">📖 {exercise.module}</span>
+          {/if}
+          {#if showChapterBadge}
+            <span class="result-badge">{exercise.chapter}</span>
+          {/if}
+        </div>
+      {/if}
     </div>
   </div>
 
   {#if exercise.preview}
     <div class="result-preview mt-3">
-      <div class="text-gray-600 text-sm line-clamp-3">
-        <MathRenderer content={exercise.preview} />
-      </div>
+      <SearchSnippet content={exercise.preview} lines={snippetLines} />
     </div>
   {/if}
 
@@ -176,14 +195,20 @@
   }
   .result-card:hover { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06); }
   .result-card--selected {
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    box-shadow: 0 4px 10px -2px rgb(0 0 0 / 0.12);
+    border-left-width: 4px;
     @apply border-brand-primary bg-brand-50;
   }
   .result-header { display: flex; align-items: start; justify-content: space-between; }
   .result-title {
     font-size: 1.125rem;
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     @apply text-gray-900;
   }
   .result-metadata {
@@ -200,9 +225,6 @@
     border-radius: 0.375rem;
     @apply bg-gray-100;
   }
-  .result-preview div { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-  .result-preview .katex { font-size: 0.875rem !important; }
-  .result-preview .katex-display { margin: 0.25rem 0 !important; }
   .result-footer {
     margin-top: 0.5rem;
     padding-top: 0.5rem;
