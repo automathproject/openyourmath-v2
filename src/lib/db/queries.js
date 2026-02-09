@@ -178,6 +178,23 @@ function buildSearchContext(query = '', filters = {}, sortOption = null) {
     }
   }
 
+  if (filterValues.createdFrom) {
+    whereClauses.push('DATE(e.created_at) >= DATE(?)');
+    params.push(filterValues.createdFrom);
+  }
+  if (filterValues.createdTo) {
+    whereClauses.push('DATE(e.created_at) <= DATE(?)');
+    params.push(filterValues.createdTo);
+  }
+  if (filterValues.updatedFrom) {
+    whereClauses.push('DATE(e.updated_at) >= DATE(?)');
+    params.push(filterValues.updatedFrom);
+  }
+  if (filterValues.updatedTo) {
+    whereClauses.push('DATE(e.updated_at) <= DATE(?)');
+    params.push(filterValues.updatedTo);
+  }
+
   if (typeof filterValues.hasSolution === 'boolean') {
     whereClauses.push('e.hasSolution = ?');
     params.push(filterValues.hasSolution ? 1 : 0);
@@ -610,6 +627,22 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
       const { clause, params: authorParams } = buildAuthorFilterClause(filters.author, 'e');
       baseWhere += clause;
       params.push(...authorParams);
+    }
+    if (filters.createdFrom) {
+      baseWhere += ' AND DATE(e.created_at) >= DATE(?)';
+      params.push(filters.createdFrom);
+    }
+    if (filters.createdTo) {
+      baseWhere += ' AND DATE(e.created_at) <= DATE(?)';
+      params.push(filters.createdTo);
+    }
+    if (filters.updatedFrom) {
+      baseWhere += ' AND DATE(e.updated_at) >= DATE(?)';
+      params.push(filters.updatedFrom);
+    }
+    if (filters.updatedTo) {
+      baseWhere += ' AND DATE(e.updated_at) <= DATE(?)';
+      params.push(filters.updatedTo);
     }
     if (filters.hasSolution === '1' || filters.hasSolution === 1 || filters.hasSolution === true) {
       baseWhere += ' AND e.hasSolution = 1';

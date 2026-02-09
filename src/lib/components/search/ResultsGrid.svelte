@@ -2,6 +2,8 @@
   import ResultCard from '$lib/components/search/ResultCard.svelte';
 
   export let results = [];
+  export let activeFilters = {};
+  export let cardMode = 'detailed';
   export let selectedUuid = null;
   export let isPreviewOpen = false;
   export let onSelect = () => {};
@@ -15,10 +17,12 @@
 </script>
 
 {#if results.length > 0}
-  <div class="results-grid">
+  <div class="results-grid" role="listbox" aria-label="Liste des résultats">
     {#each results as exercise (exercise.uuid)}
       <ResultCard
         {exercise}
+        {activeFilters}
+        {cardMode}
         isSelected={isPreviewOpen && selectedUuid === exercise.uuid}
         on:select={handleSelect}
       />

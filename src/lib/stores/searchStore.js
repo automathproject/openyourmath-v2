@@ -1,5 +1,6 @@
 // src/lib/stores/searchStore.js
 import { writable, derived } from 'svelte/store';
+import { previewPanelOpen, uiActions } from '$lib/stores/uiStore.ts';
 
 // État de base de la recherche
 export const searchQuery = writable('');
@@ -20,17 +21,17 @@ export const previewState = writable({
 
 // Gestion de la mise en page (largeurs / visibilité)
 export const layoutState = writable({
-  previewPanelVisible: false,
+  previewPanelVisible: true,
   previewPanelWidth: 400
 });
 
 export const layoutConfig = derived(
-  [previewState, layoutState],
-  ([$preview, $layout]) => {
+  [previewPanelOpen, layoutState],
+  ([$previewPanelOpen, $layout]) => {
     const width = Number($layout.previewPanelWidth) || 400;
     const clampedWidth = Math.max(280, Math.min(width, 640));
     const previewWidth = `${clampedWidth}px`;
-    const showPreviewPanel = $layout.previewPanelVisible && $preview.isOpen;
+    const showPreviewPanel = $previewPanelOpen;
     const resultsWidth = showPreviewPanel ? `calc(100% - ${previewWidth})` : '100%';
 
     return {
@@ -41,6 +42,13 @@ export const layoutConfig = derived(
   }
 );
 
+previewPanelOpen.subscribe((isOpen) => {
+  layoutState.update((current) => ({
+    ...current,
+    previewPanelVisible: isOpen
+  }));
+});
+
 // Filtres de recherche
 export const filters = writable({
   chapter: '',
@@ -49,6 +57,10 @@ export const filters = writable({
   difficulty: '',
   module: '',
   author: '',
+  createdFrom: '',
+  createdTo: '',
+  updatedFrom: '',
+  updatedTo: '',
   hasSolution: '',
   hasIndication: '',
   hasVideo: '',
@@ -90,6 +102,10 @@ export const hasActiveFilters = derived(
       $filters.difficulty ||
       $filters.module || 
       $filters.author ||
+      $filters.createdFrom ||
+      $filters.createdTo ||
+      $filters.updatedFrom ||
+      $filters.updatedTo ||
       ($filters.hasSolution !== '' && $filters.hasSolution !== null && $filters.hasSolution !== undefined) ||
       ($filters.hasIndication !== '' && $filters.hasIndication !== null && $filters.hasIndication !== undefined) ||
       ($filters.hasVideo !== '' && $filters.hasVideo !== null && $filters.hasVideo !== undefined) ||
@@ -255,6 +271,10 @@ export const searchActions = {
       difficulty: '',
       module: '',
       author: '',
+      createdFrom: '',
+      createdTo: '',
+      updatedFrom: '',
+      updatedTo: '',
       hasSolution: '',
       hasIndication: '',
       hasVideo: '',
@@ -339,6 +359,18 @@ export const searchActions = {
       
       if (currentFilters.author) {
         searchParams.set('author', currentFilters.author);
+      }
+      if (currentFilters.createdFrom) {
+        searchParams.set('createdFrom', currentFilters.createdFrom);
+      }
+      if (currentFilters.createdTo) {
+        searchParams.set('createdTo', currentFilters.createdTo);
+      }
+      if (currentFilters.updatedFrom) {
+        searchParams.set('updatedFrom', currentFilters.updatedFrom);
+      }
+      if (currentFilters.updatedTo) {
+        searchParams.set('updatedTo', currentFilters.updatedTo);
       }
       
       if (currentFilters.hasSolution !== '' && currentFilters.hasSolution !== null && currentFilters.hasSolution !== undefined) {
@@ -435,6 +467,18 @@ export const searchActions = {
       if (currentFilters.author) {
         searchParams.set('author', currentFilters.author);
       }
+      if (currentFilters.createdFrom) {
+        searchParams.set('createdFrom', currentFilters.createdFrom);
+      }
+      if (currentFilters.createdTo) {
+        searchParams.set('createdTo', currentFilters.createdTo);
+      }
+      if (currentFilters.updatedFrom) {
+        searchParams.set('updatedFrom', currentFilters.updatedFrom);
+      }
+      if (currentFilters.updatedTo) {
+        searchParams.set('updatedTo', currentFilters.updatedTo);
+      }
       if (currentFilters.hasSolution !== '' && currentFilters.hasSolution !== null && currentFilters.hasSolution !== undefined) {
         searchParams.set('hasSolution', String(currentFilters.hasSolution));
       }
@@ -504,7 +548,7 @@ export const previewActions = {
   async selectExercise(uuid) {
     // Si c'est le même exercice, on ferme/ouvre la preview
     let panelVisible = true;
-    const unsubscribeLayout = layoutState.subscribe(value => (panelVisible = value.previewPanelVisible));
+    const unsubscribeLayout = previewPanelOpen.subscribe((value) => (panelVisible = value));
     unsubscribeLayout();
 
     let closedExisting = false;
@@ -531,25 +575,16 @@ export const previewActions = {
     });
 
     if (reopenedHidden) {
-      layoutState.update(current => ({
-        ...current,
-        previewPanelVisible: true
-      }));
+      uiActions.setPreviewPanelOpen(true);
       return;
     }
 
     if (closedExisting) {
-      layoutState.update(current => ({
-        ...current,
-        previewPanelVisible: false
-      }));
+      uiActions.setPreviewPanelOpen(false);
       return;
     }
 
-    layoutState.update(current => ({
-      ...current,
-      previewPanelVisible: true
-    }));
+    uiActions.setPreviewPanelOpen(true);
 
     // Si on ferme juste la preview, pas besoin de charger
     let shouldLoad = true;
@@ -599,10 +634,7 @@ export const previewActions = {
       ...current,
       isOpen: false
     }));
-    layoutState.update(current => ({
-      ...current,
-      previewPanelVisible: false
-    }));
+    uiActions.setPreviewPanelOpen(false);
   },
 
   // Effacer complètement la prévisualisation
@@ -614,26 +646,17 @@ export const previewActions = {
       error: null,
       isOpen: false
     });
-    layoutState.update(current => ({
-      ...current,
-      previewPanelVisible: false
-    }));
+    uiActions.setPreviewPanelOpen(false);
   }
 };
 
 export const layoutActions = {
   togglePreviewPanel() {
-    layoutState.update(current => ({
-      ...current,
-      previewPanelVisible: !current.previewPanelVisible
-    }));
+    uiActions.togglePreviewPanel();
   },
 
   setPreviewPanelVisible(visible) {
-    layoutState.update(current => ({
-      ...current,
-      previewPanelVisible: Boolean(visible)
-    }));
+    uiActions.setPreviewPanelOpen(Boolean(visible));
   },
 
   setPreviewPanelWidth(width) {
@@ -675,6 +698,10 @@ export const suggestionActions = {
       if (currentFilters.module) params.set('module', currentFilters.module);
       if (currentFilters.difficulty) params.set('difficulty', currentFilters.difficulty);
       if (currentFilters.author && forType !== 'authors') params.set('author', currentFilters.author);
+      if (currentFilters.createdFrom) params.set('createdFrom', currentFilters.createdFrom);
+      if (currentFilters.createdTo) params.set('createdTo', currentFilters.createdTo);
+      if (currentFilters.updatedFrom) params.set('updatedFrom', currentFilters.updatedFrom);
+      if (currentFilters.updatedTo) params.set('updatedTo', currentFilters.updatedTo);
 
       if (currentFilters.hasSolution !== '' && currentFilters.hasSolution !== undefined && currentFilters.hasSolution !== null) {
         params.set('hasSolution', String(currentFilters.hasSolution));

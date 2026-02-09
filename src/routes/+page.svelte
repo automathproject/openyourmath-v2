@@ -1,15 +1,17 @@
 <!-- src/routes/+page.svelte -->
 <script>
   import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   import ExercisePreview from '$lib/components/ExercisePreview.svelte';
   import EmptyState from '$lib/components/search/EmptyState.svelte';
-  import BreadcrumbBar from '$lib/components/search/BreadcrumbBar.svelte';
-  import FilterPanel from '$lib/components/search/FilterPanel.svelte';
+  import BreadcrumbNav from '$lib/components/search/BreadcrumbNav.svelte';
+  import ActiveFilters from '$lib/components/search/active-filters.svelte';
   import SearchToolbar from '$lib/components/search/SearchToolbar.svelte';
   import ResultsGrid from '$lib/components/search/ResultsGrid.svelte';
   import MobileExercisePreview from '$lib/components/search/MobileExercisePreview.svelte';
   import RandomExercisesCarousel from '$lib/components/search/RandomExercisesCarousel.svelte';
   import { cycleTri } from '$lib/utils/filterUtils.js';
+  import { listActions } from '$lib/stores/listStore.js';
 
   import {
     searchQuery,
@@ -25,16 +27,18 @@
     previewState,
     previewActions,
     loadingMore,
-    layoutState,
     layoutConfig,
-    layoutActions,
-    breadcrumb
+    layoutActions
   } from '$lib/stores/searchStore.js';
+  import { previewPanelOpen, uiActions } from '$lib/stores/uiStore.ts';
 
   import { useDebounce } from '$lib/hooks/useDebounce.js';
 
-  let isFilterPanelOpen = false;
   let isDesktop = false;
+  let advancedFiltersOpen = false;
+  let manualCardMode = 'auto'; // auto | compact | detailed
+  let isHeaderCollapsed = false;
+  let resultsScrollEl;
 
   const debouncedSearch = useDebounce(searchActions.search, 300);
 
@@ -46,10 +50,8 @@
 
       const applyViewportState = (matches) => {
         isDesktop = matches;
-        if (matches) {
-          isFilterPanelOpen = true;
-        } else {
-          closeFilters();
+        if (!matches) {
+          isHeaderCollapsed = false;
         }
       };
 
@@ -74,11 +76,6 @@
     previewActions.selectExercise(exercise.uuid);
   }
 
-  function clearHierarchyFilters() {
-    searchActions.updateFromNavigation({ level: '', module: '', chapter: '', subchapter: '' });
-    searchActions.search();
-  }
-
   function toggleSolutionChip() {
     const next = cycleTri($filters.hasSolution);
     searchActions.updateFilter('hasSolution', next);
@@ -91,36 +88,19 @@
     searchActions.search();
   }
 
-  function handleKeyboardActivate(event, callback) {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      callback();
-    }
-  }
-
   function toggleFiltersPanel() {
-    if (isDesktop) {
-      if (isFilterPanelOpen) {
-        closeFilters();
-      } else {
-        isFilterPanelOpen = true;
-      }
-    } else {
-      isFilterPanelOpen = true;
-    }
+    advancedFiltersOpen = !advancedFiltersOpen;
   }
 
-  function closeFilters() {
-    isFilterPanelOpen = false;
+  function toggleDesktopPreviewPanel() {
+    uiActions.togglePreviewPanel();
   }
 
   $: canTogglePreview = Boolean($previewState.selectedUuid);
-  $: filtersButtonLabel = isDesktop
-    ? isFilterPanelOpen
-      ? 'Masquer les filtres'
-      : 'Afficher les filtres'
-    : 'Filtres';
+  $: filtersButtonLabel = 'Filtres';
   $: previewToggleLabel = $layoutConfig.showPreviewPanel ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation';
+  $: autoCardMode = $previewPanelOpen ? 'compact' : 'detailed';
+  $: cardMode = manualCardMode === 'auto' ? autoCardMode : manualCardMode;
 
   const sortOptions = [
     { value: 'relevance', label: 'Pertinence' },
@@ -168,14 +148,104 @@
     searchActions.updateFilter('sortDirection', nextDirection);
     searchActions.search();
   }
+
+  function isFormFieldFocused() {
+    if (typeof document === 'undefined') return false;
+    const active = document.activeElement;
+    if (!active) return false;
+    const tag = active.tagName?.toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') return true;
+    return Boolean(active.isContentEditable);
+  }
+
+  function getSelectedResultIndex() {
+    if (!$results.length || !$previewState.selectedUuid) return -1;
+    return $results.findIndex((exercise) => exercise.uuid === $previewState.selectedUuid);
+  }
+
+  function addSelectedExerciseToList() {
+    const selectedIndex = getSelectedResultIndex();
+    if (selectedIndex < 0 || selectedIndex >= $results.length) return;
+    const exercise = $results[selectedIndex];
+    listActions.addExercise({
+      uuid: exercise.uuid,
+      title: exercise.title,
+      chapter: exercise.chapter,
+      theme: exercise.theme,
+      author: exercise.author,
+      difficulty: exercise.difficulty,
+      level: exercise.level,
+      module: exercise.module
+    });
+  }
+
+  function openSelectedExercise() {
+    const selectedIndex = getSelectedResultIndex();
+    if (selectedIndex < 0 || selectedIndex >= $results.length) return;
+    const exercise = $results[selectedIndex];
+    if (typeof window !== 'undefined') {
+      window.location.href = `/exercise/${exercise.uuid}`;
+    }
+  }
+
+  function moveSelection(delta) {
+    if (!$results.length) return;
+    const currentIndex = getSelectedResultIndex();
+    const startIndex = currentIndex < 0 ? (delta > 0 ? 0 : $results.length - 1) : currentIndex + delta;
+    const nextIndex = Math.max(0, Math.min(startIndex, $results.length - 1));
+    const next = $results[nextIndex];
+    if (!next) return;
+    if (next.uuid !== $previewState.selectedUuid || !$previewState.isOpen) {
+      previewActions.selectExercise(next.uuid);
+    }
+  }
+
+  function handleResultsKeyboardNav(event) {
+    if (isFormFieldFocused()) return;
+    if (!$results.length) return;
+
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      moveSelection(1);
+      return;
+    }
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      moveSelection(-1);
+      return;
+    }
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      openSelectedExercise();
+      return;
+    }
+    if (event.key === 'Escape') {
+      if ($previewState.isOpen) {
+        event.preventDefault();
+        previewActions.closePreview();
+      }
+      return;
+    }
+    if (event.key === 'a' || event.key === 'A' || event.key === '+') {
+      event.preventDefault();
+      addSelectedExerciseToList();
+    }
+  }
+
+  function handleResultsScroll() {
+    if (!isDesktop || !resultsScrollEl) return;
+    isHeaderCollapsed = resultsScrollEl.scrollTop > 24;
+  }
 </script>
+
+<svelte:window on:keydown={handleResultsKeyboardNav} />
 
 <svelte:head>
   <title>Recherche d'exercices - OpenYourMath</title>
 </svelte:head>
 
-<div class="container mx-auto px-4 py-4 sm:py-8">
-  <div class="hero-block text-center lg:text-left mb-6 sm:mb-10">
+<div class="search-page container mx-auto px-4 py-4 sm:py-8" class:search-page--scrolled={isHeaderCollapsed}>
+  <div class="hero-block text-center lg:text-left mb-6 sm:mb-10" class:hero-block--collapsed={isHeaderCollapsed}>
     <div class="hero-inner">
       <img src="/img/logo1.png" alt="OpenYourMath" class="hidden lg:block w-24 h-auto" loading="eager" />
       <div>
@@ -185,47 +255,48 @@
     </div>
   </div>
 
-  <SearchToolbar
-    searchQueryStore={searchQuery}
-    onSearchInput={debouncedSearch}
-    loading={$loading}
-    hasResults={$hasResults}
-    filtersButtonLabel={filtersButtonLabel}
-    isFilterPanelOpen={isFilterPanelOpen}
-    onToggleFilters={toggleFiltersPanel}
-    hasSolution={$filters.hasSolution}
-    hasIndication={$filters.hasIndication}
-    onToggleSolution={toggleSolutionChip}
-    onToggleIndication={toggleIndicationChip}
-    canTogglePreview={canTogglePreview}
-    previewToggleLabel={previewToggleLabel}
-    onTogglePreview={layoutActions.togglePreviewPanel}
-  />
-
-  <BreadcrumbBar breadcrumb={$breadcrumb} onClear={clearHierarchyFilters} />
-
-  <div class="content-layout flex flex-col gap-6 lg:flex-row">
-    <FilterPanel
-      class="filters-column"
-      {isDesktop}
-      {isFilterPanelOpen}
-      {closeFilters}
-      {clearHierarchyFilters}
-      {handleChapterNavigation}
+  <div class="search-toolbar-shell">
+    <SearchToolbar
+      searchQueryStore={searchQuery}
+      onSearchInput={debouncedSearch}
+      loading={$loading}
+      hasResults={$hasResults}
+      filtersButtonLabel={filtersButtonLabel}
+      showFiltersButton={true}
+      onToggleFilters={toggleFiltersPanel}
+      hasSolution={$filters.hasSolution}
+      hasIndication={$filters.hasIndication}
+      onToggleSolution={toggleSolutionChip}
+      onToggleIndication={toggleIndicationChip}
+      canTogglePreview={canTogglePreview && !isDesktop}
+      previewToggleLabel={previewToggleLabel}
+      onTogglePreview={layoutActions.togglePreviewPanel}
+      {advancedFiltersOpen}
+      onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
     />
+  </div>
 
-    {#if isFilterPanelOpen && !isDesktop}
-      <div
-        class="filters-backdrop"
-        role="button"
-        tabindex="0"
-        aria-label="Fermer les filtres"
-        on:click={closeFilters}
-        on:keydown={(event) => handleKeyboardActivate(event, closeFilters)}
-      ></div>
+  <div class="search-meta-shell" class:search-meta-shell--collapsed={isHeaderCollapsed}>
+    <ActiveFilters />
+    {#if browser}
+      <BreadcrumbNav
+        query={$searchQuery}
+        filters={$filters}
+        on:navigate={handleChapterNavigation}
+      />
     {/if}
+  </div>
 
-    <div class="results-section flex-1" style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}>
+  <div
+    class="content-layout"
+    class:layout--preview-open={isDesktop && $previewPanelOpen}
+  >
+    <div
+      class="results-section flex-1"
+      style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}
+      bind:this={resultsScrollEl}
+      on:scroll={handleResultsScroll}
+    >
       {#if $error}
         <div class="search-error">
           <p class="search-error-text">{$error}</p>
@@ -243,6 +314,32 @@
             résultat{$results.length > 1 ? 's' : ''} trouvé{$results.length > 1 ? 's' : ''}
           </h2>
           <div class="sort-control">
+            <div class="view-mode-toggle" role="group" aria-label="Mode d'affichage des cartes">
+              <button
+                type="button"
+                class={`view-mode-btn ${manualCardMode === 'auto' ? 'view-mode-btn--active' : ''}`}
+                on:click={() => (manualCardMode = 'auto')}
+                title={`Mode auto (${autoCardMode === 'compact' ? 'compact' : 'détaillé'})`}
+              >
+                Auto
+              </button>
+              <button
+                type="button"
+                class={`view-mode-btn ${cardMode === 'compact' && manualCardMode !== 'auto' ? 'view-mode-btn--active' : ''}`}
+                on:click={() => (manualCardMode = 'compact')}
+                title="Mode compact"
+              >
+                ▦
+              </button>
+              <button
+                type="button"
+                class={`view-mode-btn ${cardMode === 'detailed' && manualCardMode !== 'auto' ? 'view-mode-btn--active' : ''}`}
+                on:click={() => (manualCardMode = 'detailed')}
+                title="Mode détaillé"
+              >
+                ☰
+              </button>
+            </div>
             <label class="sort-label" for="search-sort-select">Trier par</label>
             <div class="sort-select-group">
               <select
@@ -270,6 +367,8 @@
         </div>
         <ResultsGrid
           results={$results}
+          activeFilters={$filters}
+          {cardMode}
           selectedUuid={$previewState.selectedUuid}
           isPreviewOpen={$previewState.isOpen}
           onSelect={selectExercise}
@@ -277,6 +376,7 @@
           onLoadMore={searchActions.loadMore}
           loadingMore={$loadingMore}
         />
+        <p class="results-keyboard-hint">↑↓ naviguer · Entrée ouvrir · A ajouter · Échap fermer</p>
       {:else if $hasSearched}
         <EmptyState
           title="Aucun exercice trouvé"
@@ -297,13 +397,26 @@
       {/if}
     </div>
 
-    {#if $layoutConfig.showPreviewPanel}
-      <aside class="preview-section hidden lg:flex" style={`--layout-preview-width: ${$layoutConfig.previewWidth};`}>
-        <div class="preview-sticky">
-          <ExercisePreview />
-        </div>
-      </aside>
-    {/if}
+    <div class="preview-shell">
+      {#if isDesktop && $previewPanelOpen}
+        <aside class="preview-section" style={`--layout-preview-width: ${$layoutConfig.previewWidth};`}>
+          <div class="preview-sticky">
+            <ExercisePreview />
+          </div>
+        </aside>
+      {/if}
+      {#if isDesktop}
+        <button
+          type="button"
+          class="panel-edge-toggle panel-edge-toggle--preview"
+          aria-label={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
+          title={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
+          on:click={toggleDesktopPreviewPanel}
+        >
+          {$previewPanelOpen ? '›' : '‹'}
+        </button>
+      {/if}
+    </div>
   </div>
 </div>
 
@@ -313,16 +426,104 @@
 {/if}
 
 <style>
+  .search-page {
+    --results-scroll-height: auto;
+  }
+
   .hero-inner { display:flex; flex-direction:column; align-items:center; gap:1.5rem; }
   @media (min-width:1024px) {
     .hero-inner { flex-direction:row; align-items:center; justify-content:flex-start; }
+    .search-page {
+      --results-scroll-height: calc(100vh - 19rem);
+    }
+    .search-page.search-page--scrolled {
+      --results-scroll-height: calc(100vh - 11rem);
+    }
+    .hero-block {
+      max-height: 14rem;
+      opacity: 1;
+      overflow: hidden;
+      transition: max-height 180ms ease, opacity 160ms ease, margin 180ms ease;
+    }
+    .hero-block.hero-block--collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin-bottom: 0;
+      pointer-events: none;
+    }
+    .search-meta-shell {
+      max-height: 18rem;
+      opacity: 1;
+      overflow: hidden;
+      transition: max-height 180ms ease, opacity 160ms ease, margin 180ms ease;
+    }
+    .search-meta-shell.search-meta-shell--collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin-bottom: 0;
+      pointer-events: none;
+    }
   }
 
-  .content-layout { align-items:stretch; }
+  .search-toolbar-shell {
+    position: sticky;
+    top: 0;
+    z-index: 35;
+    padding-top: 0.25rem;
+    @apply bg-interface-bg-primary;
+  }
+
+  .content-layout {
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+    align-items:stretch;
+  }
+  .preview-shell {
+    position:relative;
+    overflow:visible;
+    min-width:0;
+  }
+  .panel-edge-toggle {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:1.75rem;
+    height:4.25rem;
+    border-radius:0.5rem;
+    font-size:1.15rem;
+    font-weight:700;
+    z-index:20;
+    @apply border border-gray-300 bg-white text-gray-700 shadow-sm transition-colors;
+  }
+  .panel-edge-toggle:hover { @apply bg-gray-100 text-gray-900; }
+  .panel-edge-toggle--preview {
+    left:-0.875rem;
+  }
   .results-section { width:100%; flex:1 1 0%; min-width:0; }
   @media (min-width:1024px) {
-    .filters-column { flex:0 0 320px; max-width:340px; }
-    .results-section { max-width: var(--layout-results-width, 100%); }
+    .content-layout {
+      display:grid;
+      grid-template-areas:"results preview";
+      grid-template-columns:minmax(0, 1fr) 0;
+      transition:grid-template-columns 200ms ease;
+      column-gap:0;
+      row-gap:1.5rem;
+      align-items:start;
+    }
+    .content-layout.layout--preview-open {
+      grid-template-columns:minmax(0, 1fr) minmax(20rem, 28rem);
+    }
+    .results-section {
+      grid-area:results;
+      height: var(--results-scroll-height);
+      min-height: 20rem;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-gutter: stable;
+      padding-right: 0.35rem;
+    }
+    .preview-shell { grid-area:preview; }
   }
 
   .preview-section {
@@ -330,11 +531,9 @@
     @apply border-l border-gray-200;
   }
   @media (min-width:1024px) {
-    .preview-section { width: var(--layout-preview-width, 400px); }
+    .preview-section { width:100%; min-width:0; }
   }
   .preview-sticky { position:sticky; top:2rem; height:calc(100vh - 4rem); }
-
-  .filters-backdrop { position:fixed; inset:0; background:rgba(17,24,39,0.45); z-index:70; }
 
   .search-error {
     margin-top: 0.5rem;
@@ -354,6 +553,25 @@
     @apply text-gray-900;
   }
   .sort-control { display:flex; align-items:center; gap:0.5rem; }
+  .view-mode-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-right: 0.4rem;
+    padding-right: 0.5rem;
+    @apply border-r border-gray-200;
+  }
+  .view-mode-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    @apply border border-gray-300 bg-white text-gray-600;
+  }
+  .view-mode-btn--active {
+    @apply bg-brand-600 border-brand-600 text-white;
+  }
   .sort-label {
     font-size:0.875rem;
     @apply text-gray-600;
@@ -380,6 +598,11 @@
   }
   .sort-direction-button:disabled {
     @apply opacity-60 cursor-not-allowed;
+  }
+  .results-keyboard-hint {
+    margin-top: 0.7rem;
+    font-size: 0.78rem;
+    @apply text-gray-500;
   }
   .empty-state {
     text-align: center;

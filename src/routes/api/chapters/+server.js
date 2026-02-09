@@ -17,6 +17,10 @@ export async function GET({ url }) {
         subchapter: url.searchParams.get('subchapter') || '',
         difficulty: url.searchParams.get('difficulty') || '',
         author: url.searchParams.get('author') || '',
+        createdFrom: url.searchParams.get('createdFrom') || '',
+        createdTo: url.searchParams.get('createdTo') || '',
+        updatedFrom: url.searchParams.get('updatedFrom') || '',
+        updatedTo: url.searchParams.get('updatedTo') || '',
         hasSolution: url.searchParams.get('hasSolution') || '',
         hasIndication: url.searchParams.get('hasIndication') || '',
         hasVideo: url.searchParams.get('hasVideo') || ''

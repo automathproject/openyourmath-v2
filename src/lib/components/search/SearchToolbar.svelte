@@ -1,10 +1,12 @@
 <script>
+  import AdvancedFiltersPopover from '$lib/components/search/AdvancedFiltersPopover.svelte';
+
   export let searchQueryStore;
   export let onSearchInput = () => {};
   export let loading = false;
   export let hasResults = false;
   export let filtersButtonLabel = 'Filtres';
-  export let isFilterPanelOpen = false;
+  export let showFiltersButton = true;
   export let onToggleFilters = () => {};
   export let hasSolution = '';
   export let hasIndication = '';
@@ -13,6 +15,8 @@
   export let canTogglePreview = false;
   export let previewToggleLabel = '';
   export let onTogglePreview = () => {};
+  export let advancedFiltersOpen = false;
+  export let onCloseAdvancedFilters = () => {};
 
   let inputEl;
 
@@ -76,14 +80,19 @@
     {/if}
   </div>
   <div class="toolbar-actions flex flex-wrap items-center gap-2 sm:flex-none sm:justify-end">
-    <button
-      type="button"
-      class="btn btn-secondary toolbar-button"
-      on:click={onToggleFilters}
-      aria-expanded={isFilterPanelOpen}
-    >
-      🔧 {filtersButtonLabel}
-    </button>
+    {#if showFiltersButton}
+      <div class="filters-popover-anchor">
+        <button
+          type="button"
+          class="btn btn-secondary toolbar-button"
+          on:click={onToggleFilters}
+          aria-expanded={advancedFiltersOpen}
+        >
+          🔧 {filtersButtonLabel}
+        </button>
+        <AdvancedFiltersPopover open={advancedFiltersOpen} on:close={onCloseAdvancedFilters} />
+      </div>
+    {/if}
     <div class="toolbar-chips flex gap-2">
       <button
         type="button"
@@ -123,6 +132,7 @@
     .toolbar-actions { justify-content:flex-end; }
   }
   .toolbar-button { display:inline-flex; align-items:center; gap:0.5rem; white-space:nowrap; }
+  .filters-popover-anchor { position: relative; }
   .toolbar-actions .btn { min-height:2.5rem; }
   .toolbar-chips .chip { min-height:2.25rem; }
 

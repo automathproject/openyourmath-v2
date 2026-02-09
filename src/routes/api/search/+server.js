@@ -12,6 +12,10 @@ export async function GET({ url }) {
     const difficulty = url.searchParams.get('difficulty')?.trim() || ''; // NOUVEAU : difficulté numérique (1-5)
     const module = url.searchParams.get('module')?.trim() || '';
     const author = url.searchParams.get('author')?.trim() || '';
+    const createdFrom = url.searchParams.get('createdFrom')?.trim() || '';
+    const createdTo = url.searchParams.get('createdTo')?.trim() || '';
+    const updatedFrom = url.searchParams.get('updatedFrom')?.trim() || '';
+    const updatedTo = url.searchParams.get('updatedTo')?.trim() || '';
     const hasSolutionParam = url.searchParams.get('hasSolution');
     const hasIndicationParam = url.searchParams.get('hasIndication');
     const hasVideoParam = url.searchParams.get('hasVideo');
@@ -54,6 +58,10 @@ export async function GET({ url }) {
     
     if (module) filters.module = module;
     if (author) filters.author = author;
+    if (createdFrom) filters.createdFrom = createdFrom;
+    if (createdTo) filters.createdTo = createdTo;
+    if (updatedFrom) filters.updatedFrom = updatedFrom;
+    if (updatedTo) filters.updatedTo = updatedTo;
     if (hasSolutionParam !== null && hasSolutionParam !== undefined && hasSolutionParam !== '') {
       const v = hasSolutionParam.toString().toLowerCase();
       if (v === '1' || v === 'true') filters.hasSolution = true;

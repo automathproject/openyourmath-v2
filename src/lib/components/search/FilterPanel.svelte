@@ -1,7 +1,6 @@
 <script>
   import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
   import MobileChapterNav from '$lib/components/MobileChapterNav.svelte';
-  import FilterChips from '$lib/components/search/FilterChips.svelte';
   import FilterGrid from '$lib/components/search/FilterGrid.svelte';
   import FilterMenu from '$lib/components/search/FilterMenu.svelte';
   import {
@@ -78,46 +77,6 @@
     })
     .slice(0, 25);
 
-  $: activeFilterChips = (() => {
-    const chips = [];
-
-    if ($filters.module) {
-      chips.push({ key: 'module', label: $filters.module, icon: '📖', category: 'content' });
-    }
-    if ($filters.chapter) {
-      chips.push({ key: 'chapter', label: $filters.chapter, icon: '📚', category: 'content' });
-    }
-    if ($filters.subchapter) {
-      chips.push({ key: 'subchapter', label: $filters.subchapter, icon: '📑', category: 'content' });
-    }
-    if ($filters.level) {
-      chips.push({ key: 'level', label: $filters.level, icon: '🎓', category: 'level' });
-    }
-    if ($filters.difficulty && $filters.difficulty !== '') {
-      chips.push({ key: 'difficulty', label: formatDifficultyLabel($filters.difficulty), icon: '⭐', category: 'level' });
-    }
-    if ($filters.hasSolution === '1') {
-      chips.push({ key: 'hasSolution', label: 'Avec solution', icon: '✅', category: 'properties' });
-    } else if ($filters.hasSolution === '0') {
-      chips.push({ key: 'hasSolution', label: 'Sans solution', icon: '🚫', category: 'properties' });
-    }
-    if ($filters.hasIndication === '1') {
-      chips.push({ key: 'hasIndication', label: 'Avec indication', icon: '💡', category: 'properties' });
-    } else if ($filters.hasIndication === '0') {
-      chips.push({ key: 'hasIndication', label: 'Sans indication', icon: '🚫', category: 'properties' });
-    }
-    if ($filters.hasVideo === '1') {
-      chips.push({ key: 'hasVideo', label: 'Avec vidéo', icon: '📺', category: 'properties' });
-    } else if ($filters.hasVideo === '0') {
-      chips.push({ key: 'hasVideo', label: 'Sans vidéo', icon: '🚫', category: 'properties' });
-    }
-    if ($filters.author) {
-      chips.push({ key: 'author', label: $filters.author, icon: '👤', category: 'author' });
-    }
-
-    return chips;
-  })();
-
   $: activeMenuFilters = {
     difficulty: $filters.difficulty ?? '',
     hasSolution: $filters.hasSolution ?? '',
@@ -142,48 +101,6 @@
     showFilterMenu = false;
     filterMenuCategory = null;
     authorSearch = $filters.author || '';
-  }
-
-  function handleChipClick(chip) {
-    openFilterMenu(chip.category || null);
-  }
-
-  function removeFilterChip(key) {
-    switch (key) {
-      case 'module':
-        searchActions.updateFilter('module', '');
-        searchActions.updateFilter('chapter', '');
-        searchActions.updateFilter('subchapter', '');
-        break;
-      case 'chapter':
-        searchActions.updateFilter('chapter', '');
-        searchActions.updateFilter('subchapter', '');
-        break;
-      case 'subchapter':
-        searchActions.updateFilter('subchapter', '');
-        break;
-      case 'level':
-        searchActions.updateFilter('level', '');
-        break;
-      case 'difficulty':
-        searchActions.updateFilter('difficulty', '');
-        break;
-      case 'hasSolution':
-        searchActions.updateFilter('hasSolution', '');
-        break;
-      case 'hasIndication':
-        searchActions.updateFilter('hasIndication', '');
-        break;
-      case 'hasVideo':
-        searchActions.updateFilter('hasVideo', '');
-        break;
-      case 'author':
-        searchActions.updateFilter('author', '');
-        break;
-      default:
-        return;
-    }
-    searchActions.search();
   }
 
   function selectModule(module) {
@@ -297,7 +214,7 @@
 <aside
   class="filters-sidebar"
   class:filters-sidebar--open={!isDesktop && isFilterPanelOpen}
-  class:filters-sidebar--closed={isDesktop && !isFilterPanelOpen}
+  class:filters-sidebar--closed={!isFilterPanelOpen}
   aria-label="Filtres de recherche"
 >
   <div class="filters-panel" role="region" aria-label="Panneau de filtres">
@@ -350,12 +267,11 @@
       </section>
 
       <section class="filters-section">
-        <FilterChips
-          chips={activeFilterChips}
-          on:chipSelect={(event) => handleChipClick(event.detail.chip)}
-          on:chipRemove={(event) => removeFilterChip(event.detail.chip.key)}
-          on:addFilter={() => openFilterMenu()}
-        />
+        <div class="filters-menu-trigger md:hidden">
+          <button type="button" class="filters-menu-trigger-btn" on:click={() => openFilterMenu()}>
+            + Ajouter un filtre
+          </button>
+        </div>
         <FilterMenu
           isOpen={showFilterMenu}
           categories={filterMenuCategories}
@@ -426,29 +342,35 @@
     transition:transform 0.25s ease-in-out;
     z-index:80;
     pointer-events:none;
+    opacity:1;
   }
   .filters-sidebar--open {
     transform:translateX(0);
     pointer-events:auto;
   }
   .filters-sidebar--closed {
-    display:none;
+    pointer-events:none;
   }
   @media (min-width:1024px) {
     .filters-sidebar {
-      position:sticky;
-      top:1.5rem;
-      align-self:flex-start;
-      transform:none;
+      position:relative;
+      top:auto;
+      bottom:auto;
+      left:auto;
+      align-self:stretch;
+      transform:translateX(0);
       pointer-events:auto;
       padding:0;
-      width:min(22rem, 100%);
-      max-width:22rem;
+      width:100%;
+      max-width:none;
       z-index:auto;
       display:block;
+      transition:transform 0.2s ease, opacity 0.2s ease;
     }
     .filters-sidebar--closed {
-      display:none;
+      opacity:0;
+      transform:translateX(-1rem);
+      pointer-events:none;
     }
   }
 
@@ -514,6 +436,18 @@
     flex-direction:column;
     gap:1.25rem;
   }
+  .filters-menu-trigger-btn {
+    align-self:flex-start;
+    display:inline-flex;
+    align-items:center;
+    gap:0.3rem;
+    padding:0.45rem 0.8rem;
+    border-radius:0.75rem;
+    font-weight:500;
+    cursor:pointer;
+    @apply border border-dashed border-slate-400 bg-interface-bg-primary text-gray-800;
+  }
+  .filters-menu-trigger-btn:hover { @apply bg-slate-50; }
   .filters-section-header {
     display:flex;
     align-items:center;
