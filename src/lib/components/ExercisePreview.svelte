@@ -6,6 +6,13 @@
   import { previewState, layoutActions } from '$lib/stores/searchStore.js';
   let copiedLatex = false;
 
+  function formatDisplayDate(value) {
+    if (!value) return null;
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return null;
+    return date.toLocaleDateString('fr-FR');
+  }
+
   function hidePanel() {
     layoutActions.setPreviewPanelVisible(false);
   }
@@ -51,12 +58,31 @@
       console.error('Failed to copy LaTeX source:', err);
     }
   }
+
+  $: previewUuid = $previewState.exercise?.uuid || null;
+  $: previewDate = formatDisplayDate($previewState.exercise?.updated_at || $previewState.exercise?.created_at);
 </script>
 
 <div class="exercise-preview">
   <div class="preview-header">
     <div class="preview-header-content">
-      <h2 class="preview-title">Prévisualisation</h2>
+      <div class="preview-headline">
+        <h2 class="preview-title" aria-label="Prévisualisation">
+          <svg class="preview-title-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+        </h2>
+        {#if previewUuid}
+          <p class="preview-meta">
+            <span class="preview-meta-uuid">{previewUuid}</span>
+            {#if previewDate}
+              <span class="preview-meta-sep">·</span>
+              <span class="preview-meta-date">{previewDate}</span>
+            {/if}
+          </p>
+        {/if}
+      </div>
       <div class="preview-actions">
         {#if $previewState.exercise}
           <AddToListButton
@@ -122,7 +148,6 @@
     {:else if $previewState.exercise}
       <div class="preview-exercise-content">
         <ExerciseContent
-          exercise={$previewState.exercise}
           variant="preview"
           showGlobalToggles={false}
           content={$previewState.exercise.content || []}
@@ -161,7 +186,32 @@
     gap:0.75rem;
     padding:0.9rem;
   }
+  .preview-headline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+  }
   .preview-title { font-size:1rem; font-weight:700; @apply text-gray-900; }
+  .preview-title-icon {
+    width: 1.05rem;
+    height: 1.05rem;
+    display: block;
+  }
+  .preview-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    line-height: 1.2;
+    @apply text-gray-600;
+  }
+  .preview-meta-uuid {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    @apply text-gray-700;
+  }
+  .preview-meta-sep { @apply text-gray-400; }
+  .preview-meta-date { @apply text-gray-500; }
   .preview-actions {
     display:flex;
     align-items:center;

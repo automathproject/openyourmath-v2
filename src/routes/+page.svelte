@@ -11,6 +11,7 @@
   import MobileExercisePreview from '$lib/components/search/MobileExercisePreview.svelte';
   import RandomExercisesCarousel from '$lib/components/search/RandomExercisesCarousel.svelte';
   import { cycleTri } from '$lib/utils/filterUtils.js';
+  import { listActions } from '$lib/stores/listStore.js';
 
   import {
     searchQuery,
@@ -36,6 +37,8 @@
   let isDesktop = false;
   let advancedFiltersOpen = false;
   let manualCardMode = 'auto'; // auto | compact | detailed
+  let isHeaderCollapsed = false;
+  let resultsScrollEl;
 
   const debouncedSearch = useDebounce(searchActions.search, 300);
 
@@ -47,6 +50,9 @@
 
       const applyViewportState = (matches) => {
         isDesktop = matches;
+        if (!matches) {
+          isHeaderCollapsed = false;
+        }
       };
 
       applyViewportState(mediaQuery.matches);
@@ -142,14 +148,104 @@
     searchActions.updateFilter('sortDirection', nextDirection);
     searchActions.search();
   }
+
+  function isFormFieldFocused() {
+    if (typeof document === 'undefined') return false;
+    const active = document.activeElement;
+    if (!active) return false;
+    const tag = active.tagName?.toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') return true;
+    return Boolean(active.isContentEditable);
+  }
+
+  function getSelectedResultIndex() {
+    if (!$results.length || !$previewState.selectedUuid) return -1;
+    return $results.findIndex((exercise) => exercise.uuid === $previewState.selectedUuid);
+  }
+
+  function addSelectedExerciseToList() {
+    const selectedIndex = getSelectedResultIndex();
+    if (selectedIndex < 0 || selectedIndex >= $results.length) return;
+    const exercise = $results[selectedIndex];
+    listActions.addExercise({
+      uuid: exercise.uuid,
+      title: exercise.title,
+      chapter: exercise.chapter,
+      theme: exercise.theme,
+      author: exercise.author,
+      difficulty: exercise.difficulty,
+      level: exercise.level,
+      module: exercise.module
+    });
+  }
+
+  function openSelectedExercise() {
+    const selectedIndex = getSelectedResultIndex();
+    if (selectedIndex < 0 || selectedIndex >= $results.length) return;
+    const exercise = $results[selectedIndex];
+    if (typeof window !== 'undefined') {
+      window.location.href = `/exercise/${exercise.uuid}`;
+    }
+  }
+
+  function moveSelection(delta) {
+    if (!$results.length) return;
+    const currentIndex = getSelectedResultIndex();
+    const startIndex = currentIndex < 0 ? (delta > 0 ? 0 : $results.length - 1) : currentIndex + delta;
+    const nextIndex = Math.max(0, Math.min(startIndex, $results.length - 1));
+    const next = $results[nextIndex];
+    if (!next) return;
+    if (next.uuid !== $previewState.selectedUuid || !$previewState.isOpen) {
+      previewActions.selectExercise(next.uuid);
+    }
+  }
+
+  function handleResultsKeyboardNav(event) {
+    if (isFormFieldFocused()) return;
+    if (!$results.length) return;
+
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      moveSelection(1);
+      return;
+    }
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      moveSelection(-1);
+      return;
+    }
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      openSelectedExercise();
+      return;
+    }
+    if (event.key === 'Escape') {
+      if ($previewState.isOpen) {
+        event.preventDefault();
+        previewActions.closePreview();
+      }
+      return;
+    }
+    if (event.key === 'a' || event.key === 'A' || event.key === '+') {
+      event.preventDefault();
+      addSelectedExerciseToList();
+    }
+  }
+
+  function handleResultsScroll() {
+    if (!isDesktop || !resultsScrollEl) return;
+    isHeaderCollapsed = resultsScrollEl.scrollTop > 24;
+  }
 </script>
+
+<svelte:window on:keydown={handleResultsKeyboardNav} />
 
 <svelte:head>
   <title>Recherche d'exercices - OpenYourMath</title>
 </svelte:head>
 
-<div class="container mx-auto px-4 py-4 sm:py-8">
-  <div class="hero-block text-center lg:text-left mb-6 sm:mb-10">
+<div class="search-page container mx-auto px-4 py-4 sm:py-8" class:search-page--scrolled={isHeaderCollapsed}>
+  <div class="hero-block text-center lg:text-left mb-6 sm:mb-10" class:hero-block--collapsed={isHeaderCollapsed}>
     <div class="hero-inner">
       <img src="/img/logo1.png" alt="OpenYourMath" class="hidden lg:block w-24 h-auto" loading="eager" />
       <div>
@@ -159,39 +255,48 @@
     </div>
   </div>
 
-  <SearchToolbar
-    searchQueryStore={searchQuery}
-    onSearchInput={debouncedSearch}
-    loading={$loading}
-    hasResults={$hasResults}
-    filtersButtonLabel={filtersButtonLabel}
-    showFiltersButton={true}
-    onToggleFilters={toggleFiltersPanel}
-    hasSolution={$filters.hasSolution}
-    hasIndication={$filters.hasIndication}
-    onToggleSolution={toggleSolutionChip}
-    onToggleIndication={toggleIndicationChip}
-    canTogglePreview={canTogglePreview && !isDesktop}
-    previewToggleLabel={previewToggleLabel}
-    onTogglePreview={layoutActions.togglePreviewPanel}
-    {advancedFiltersOpen}
-    onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
-  />
-
-  <ActiveFilters />
-  {#if browser}
-    <BreadcrumbNav
-      query={$searchQuery}
-      filters={$filters}
-      on:navigate={handleChapterNavigation}
+  <div class="search-toolbar-shell">
+    <SearchToolbar
+      searchQueryStore={searchQuery}
+      onSearchInput={debouncedSearch}
+      loading={$loading}
+      hasResults={$hasResults}
+      filtersButtonLabel={filtersButtonLabel}
+      showFiltersButton={true}
+      onToggleFilters={toggleFiltersPanel}
+      hasSolution={$filters.hasSolution}
+      hasIndication={$filters.hasIndication}
+      onToggleSolution={toggleSolutionChip}
+      onToggleIndication={toggleIndicationChip}
+      canTogglePreview={canTogglePreview && !isDesktop}
+      previewToggleLabel={previewToggleLabel}
+      onTogglePreview={layoutActions.togglePreviewPanel}
+      {advancedFiltersOpen}
+      onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
     />
-  {/if}
+  </div>
+
+  <div class="search-meta-shell" class:search-meta-shell--collapsed={isHeaderCollapsed}>
+    <ActiveFilters />
+    {#if browser}
+      <BreadcrumbNav
+        query={$searchQuery}
+        filters={$filters}
+        on:navigate={handleChapterNavigation}
+      />
+    {/if}
+  </div>
 
   <div
     class="content-layout"
     class:layout--preview-open={isDesktop && $previewPanelOpen}
   >
-    <div class="results-section flex-1" style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}>
+    <div
+      class="results-section flex-1"
+      style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}
+      bind:this={resultsScrollEl}
+      on:scroll={handleResultsScroll}
+    >
       {#if $error}
         <div class="search-error">
           <p class="search-error-text">{$error}</p>
@@ -271,6 +376,7 @@
           onLoadMore={searchActions.loadMore}
           loadingMore={$loadingMore}
         />
+        <p class="results-keyboard-hint">↑↓ naviguer · Entrée ouvrir · A ajouter · Échap fermer</p>
       {:else if $hasSearched}
         <EmptyState
           title="Aucun exercice trouvé"
@@ -320,9 +426,51 @@
 {/if}
 
 <style>
+  .search-page {
+    --results-scroll-height: auto;
+  }
+
   .hero-inner { display:flex; flex-direction:column; align-items:center; gap:1.5rem; }
   @media (min-width:1024px) {
     .hero-inner { flex-direction:row; align-items:center; justify-content:flex-start; }
+    .search-page {
+      --results-scroll-height: calc(100vh - 19rem);
+    }
+    .search-page.search-page--scrolled {
+      --results-scroll-height: calc(100vh - 11rem);
+    }
+    .hero-block {
+      max-height: 14rem;
+      opacity: 1;
+      overflow: hidden;
+      transition: max-height 180ms ease, opacity 160ms ease, margin 180ms ease;
+    }
+    .hero-block.hero-block--collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin-bottom: 0;
+      pointer-events: none;
+    }
+    .search-meta-shell {
+      max-height: 18rem;
+      opacity: 1;
+      overflow: hidden;
+      transition: max-height 180ms ease, opacity 160ms ease, margin 180ms ease;
+    }
+    .search-meta-shell.search-meta-shell--collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin-bottom: 0;
+      pointer-events: none;
+    }
+  }
+
+  .search-toolbar-shell {
+    position: sticky;
+    top: 0;
+    z-index: 35;
+    padding-top: 0.25rem;
+    @apply bg-interface-bg-primary;
   }
 
   .content-layout {
@@ -366,7 +514,15 @@
     .content-layout.layout--preview-open {
       grid-template-columns:minmax(0, 1fr) minmax(20rem, 28rem);
     }
-    .results-section { grid-area:results; }
+    .results-section {
+      grid-area:results;
+      height: var(--results-scroll-height);
+      min-height: 20rem;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-gutter: stable;
+      padding-right: 0.35rem;
+    }
     .preview-shell { grid-area:preview; }
   }
 
@@ -442,6 +598,11 @@
   }
   .sort-direction-button:disabled {
     @apply opacity-60 cursor-not-allowed;
+  }
+  .results-keyboard-hint {
+    margin-top: 0.7rem;
+    font-size: 0.78rem;
+    @apply text-gray-500;
   }
   .empty-state {
     text-align: center;

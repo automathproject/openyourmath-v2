@@ -17,7 +17,7 @@
 </script>
 
 {#if results.length > 0}
-  <div class="results-grid">
+  <div class="results-grid" role="listbox" aria-label="Liste des résultats">
     {#each results as exercise (exercise.uuid)}
       <ResultCard
         {exercise}

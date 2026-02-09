@@ -54,7 +54,8 @@
 
 <div
   class="result-card cursor-pointer transition-all duration-200 {isSelected ? 'result-card--selected' : ''}"
-  role="button"
+  role="option"
+  aria-selected={isSelected ? 'true' : 'false'}
   tabindex="0"
   bind:this={cardEl}
   on:click={handleClick}
