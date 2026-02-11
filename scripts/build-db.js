@@ -160,17 +160,30 @@ function cleanPreviewForSearch(preview) {
  * Génère un preview intelligent pour un exercice en respectant la syntaxe LaTeX
  */
 function generateExercisePreview(exercise) {
-  if (!Array.isArray(exercise.content)) return '';
+  if (!Array.isArray(exercise.content) || exercise.content.length === 0) {
+    // Fallback: utiliser le titre comme preview si pas de contenu
+    return exercise.title ? `<p>${exercise.title}</p>` : '';
+  }
 
   // Chercher le premier bloc de type "text", "description" ou "question" avec du HTML
-  const firstContent = exercise.content.find(block => {
+  let firstContent = exercise.content.find(block => {
     const type = (block.type || '').toLowerCase();
     return (type === 'text' || type === 'description' || type === 'question') &&
            block.html &&
            block.html.trim();
   });
 
-  if (!firstContent || !firstContent.html) return '';
+  // Si aucun bloc trouvé, chercher n'importe quel bloc avec du HTML (y compris "reponse")
+  if (!firstContent) {
+    firstContent = exercise.content.find(block =>
+      block.html && block.html.trim()
+    );
+  }
+
+  if (!firstContent || !firstContent.html) {
+    // Dernier fallback: utiliser le titre
+    return exercise.title ? `<p>${exercise.title}</p>` : '';
+  }
 
   // Utiliser la fonction getPreview pour tronquer intelligemment le HTML
   return getPreview(firstContent.html, 150);
