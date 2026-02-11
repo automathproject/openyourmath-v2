@@ -17,6 +17,8 @@ WORKDIR /app
 
 # Copier les fichiers de dépendances pour utiliser le cache Docker
 COPY --chown=sveltekit:nodejs pnpm-lock.yaml package.json ./
+# Copier le dossier scripts pour le hook preinstall
+COPY --chown=sveltekit:nodejs scripts ./scripts
 
 # Corepack va automatiquement installer la bonne version de pnpm selon package.json
 # Installer les dépendances avec cache optimisé
@@ -54,7 +56,8 @@ COPY --chown=sveltekit:nodejs package.json pnpm-lock.yaml ./
 # Installer UNIQUEMENT les dépendances de production
 # Corepack utilisera automatiquement la version pnpm@9 définie dans package.json
 # better-sqlite3 sera installé et compilé pour cet environnement
-RUN pnpm install --frozen-lockfile --prod && \
+RUN pnpm install --frozen-lockfile --prod --ignore-scripts && \
+    pnpm rebuild better-sqlite3 && \
     pnpm store prune && \
     rm -rf ~/.pnpm-store
 
