@@ -1,7 +1,7 @@
 <!-- src/routes/+layout.svelte -->
 <script>
   import '../app.css';
-  import { env } from '$env/dynamic/public';
+  import pkg from '../../package.json';
   import { 
     listCount, 
     listActions,
@@ -13,7 +13,7 @@
   let listUrl = '/exercise/list';
   let mobileMenuOpen = false;
   let headerScrolled = false;
-  const APP_VERSION = env.PUBLIC_APP_VERSION || 'dev';
+  const APP_VERSION = pkg.version;
   
   // Réactivité pour détecter si on est sur la page de liste
   $: isListPage = $page.route.id === '/exercise/list';

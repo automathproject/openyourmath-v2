@@ -1,6 +1,6 @@
 {
   "name": "openyourmath-v2",
-  "version": "2.1.3",
+  "version": "2.3.1",
   "private": true,
   "type": "module",
   "_comment_scripts": "Scripts maison pour parser LaTeX et construire la DB avant le build de l'app",
@@ -30,9 +30,9 @@
     "test": "vitest",
     "test:build": "vitest run tests/build/",
     "test:integration": "playwright test",
-    "docker:build": "docker build -t ghcr.io/automathproject/openyourmath:${PUBLIC_APP_VERSION:-$npm_package_version} .",
-    "docker:dev": "docker-compose up",
-    "docker:prod": "docker-compose up -d"
+    "docker:build": "docker build -t ghcr.io/automathproject/openyourmath:$npm_package_version .",
+    "docker:dev": "APP_VERSION=$npm_package_version docker compose up",
+    "docker:prod": "APP_VERSION=$npm_package_version docker compose up -d"
   },
   "_comment_devDependencies": "SvelteKit + Tailwind + Vite + tests",
   "devDependencies": {
