@@ -4,7 +4,6 @@
   import ExerciseContent from './ExerciseContent.svelte';
   import AddToListButton from './AddToListButton.svelte';
   import { previewState, layoutActions } from '$lib/stores/searchStore.js';
-  let copiedLatex = false;
 
   function formatDisplayDate(value) {
     if (!value) return null;
@@ -23,72 +22,23 @@
     }
   }
 
-  function normalizeRaw(block) {
-    if (!block) return '';
-    if (block.latex) return block.latex;
-    if (block.text) return block.text;
-    if (block.html) return block.html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-    return '';
-  }
-
-  function buildLatexSource() {
-    if (!$previewState.exercise?.content || !Array.isArray($previewState.exercise.content)) {
-      return '';
-    }
-
-    return $previewState.exercise.content
-      .map((block) => normalizeRaw(block))
-      .filter(Boolean)
-      .join('\n\n')
-      .trim();
-  }
-
-  async function copyLatexSource() {
-    if (!browser || !$previewState.exercise) return;
-    const raw = buildLatexSource();
-    if (!raw) return;
-
-    try {
-      await navigator.clipboard.writeText(raw);
-      copiedLatex = true;
-      setTimeout(() => {
-        copiedLatex = false;
-      }, 1800);
-    } catch (err) {
-      console.error('Failed to copy LaTeX source:', err);
-    }
-  }
-
   $: previewUuid = $previewState.exercise?.uuid || null;
   $: previewDate = formatDisplayDate($previewState.exercise?.updated_at || $previewState.exercise?.created_at);
+  $: previewTitle = $previewState.exercise?.title || "Exercice";
 </script>
 
 <div class="exercise-preview">
   <div class="preview-header">
     <div class="preview-header-content">
       <div class="preview-headline">
-        <h2 class="preview-title" aria-label="Prévisualisation">
-          <svg class="preview-title-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-          </svg>
-        </h2>
-        {#if previewUuid}
-          <p class="preview-meta">
-            <span class="preview-meta-uuid">{previewUuid}</span>
-            {#if previewDate}
-              <span class="preview-meta-sep">·</span>
-              <span class="preview-meta-date">{previewDate}</span>
-            {/if}
-          </p>
-        {/if}
+        <h2 class="preview-title">{previewTitle}</h2>
       </div>
       <div class="preview-actions">
         {#if $previewState.exercise}
           <AddToListButton
             exercise={$previewState.exercise}
             size="small"
-            variant="button"
+            variant="icon"
           />
 
           <button
@@ -100,16 +50,6 @@
             <span class="preview-btn-icon" aria-hidden="true">↗</span>
             <span class="preview-btn-label">Ouvrir</span>
           </button>
-
-          <button
-            on:click={copyLatexSource}
-            class="preview-btn preview-btn--secondary"
-            title="Copier le LaTeX"
-            aria-label="Copier le LaTeX"
-          >
-            <span class="preview-btn-icon" aria-hidden="true">📋</span>
-            <span class="preview-btn-label">{copiedLatex ? 'Copié' : 'Copier le LaTeX'}</span>
-          </button>
         {/if}
 
         <button
@@ -118,8 +58,7 @@
           title="Masquer la prévisualisation"
           aria-label="Masquer la prévisualisation"
         >
-          <span class="preview-btn-icon" aria-hidden="true">−</span>
-          <span class="preview-btn-label">Fermer</span>
+          <span class="preview-btn-icon" aria-hidden="true">✕</span>
         </button>
       </div>
     </div>
@@ -165,38 +104,50 @@
       </div>
     {/if}
   </div>
+
+  {#if previewUuid}
+    <div class="preview-footer">
+      <p class="preview-meta">
+        <span class="preview-meta-uuid">{previewUuid}</span>
+        {#if previewDate}
+          <span class="preview-meta-sep">·</span>
+          <span class="preview-meta-date">{previewDate}</span>
+        {/if}
+      </p>
+    </div>
+  {/if}
 </div>
 
 <style>
   .exercise-preview {
-    height:100%;
     display:flex;
     flex-direction:column;
-    @apply bg-interface-bg-primary border-l border-gray-200;
+    @apply bg-interface-bg-primary border-2 border-brand-200 rounded-xl shadow-sm;
+    overflow: hidden;
   }
 
   .preview-header {
     flex-shrink:0;
-    @apply border-b border-gray-200 bg-brand-100;
+    @apply border-b border-gray-200 bg-white;
   }
   .preview-header-content {
     display:flex;
-    align-items:flex-start;
+    align-items:center;
     justify-content:space-between;
     gap:0.75rem;
-    padding:0.9rem;
+    padding:0.75rem 0.9rem;
   }
   .preview-headline {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
     min-width: 0;
+    flex: 1;
   }
-  .preview-title { font-size:1rem; font-weight:700; @apply text-gray-900; }
-  .preview-title-icon {
-    width: 1.05rem;
-    height: 1.05rem;
-    display: block;
+  .preview-title {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-weight: 700;
+    @apply text-gray-900;
   }
   .preview-meta {
     display: inline-flex;
@@ -216,7 +167,7 @@
     display:flex;
     align-items:center;
     justify-content:flex-end;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
     gap:0.4rem;
   }
 
@@ -232,8 +183,8 @@
   }
   .preview-btn--secondary { @apply border border-gray-300 bg-white text-gray-700; }
   .preview-btn--secondary:hover { @apply bg-gray-100; }
-  .preview-btn--ghost { @apply border border-gray-300 bg-gray-100 text-gray-700; }
-  .preview-btn--ghost:hover { @apply bg-gray-200; }
+  .preview-btn--ghost { @apply border border-gray-300 bg-white text-gray-700; }
+  .preview-btn--ghost:hover { @apply bg-gray-100; }
 
   .preview-btn-icon { line-height:1; }
   .preview-content { flex:1; overflow-y:auto; }
@@ -241,6 +192,12 @@
   .preview-exercise-content {
     padding:0.8rem;
     @apply bg-brand-50;
+  }
+
+  .preview-footer {
+    flex-shrink: 0;
+    @apply border-t border-gray-200 bg-white;
+    padding: 0.55rem 0.9rem;
   }
 
   @media (max-width: 1200px) {

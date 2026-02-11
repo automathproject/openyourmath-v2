@@ -539,7 +539,7 @@
   @media (min-width:1024px) {
     .preview-section { width:100%; min-width:0; }
   }
-  .preview-sticky { position:sticky; top:2rem; height:calc(100vh - 4rem); }
+  .preview-sticky { position:sticky; top:2rem; }
 
   .search-error {
     margin-top: 0.5rem;
