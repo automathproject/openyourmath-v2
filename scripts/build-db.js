@@ -4,6 +4,7 @@ import path from 'path';
 import { spawnSync } from 'child_process';
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
+import { getPreview } from './utils/previewUtils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -147,12 +148,32 @@ function extractSearchText(contentArray) {
  */
 function cleanPreviewForSearch(preview) {
   if (!preview) return '';
-  
+
   // Nettoyer le HTML de la preview (supprimer tags, garder texte)
   return preview
     .replace(/<[^>]*>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+/**
+ * Génère un preview intelligent pour un exercice en respectant la syntaxe LaTeX
+ */
+function generateExercisePreview(exercise) {
+  if (!Array.isArray(exercise.content)) return '';
+
+  // Chercher le premier bloc de type "text", "description" ou "question" avec du HTML
+  const firstContent = exercise.content.find(block => {
+    const type = (block.type || '').toLowerCase();
+    return (type === 'text' || type === 'description' || type === 'question') &&
+           block.html &&
+           block.html.trim();
+  });
+
+  if (!firstContent || !firstContent.html) return '';
+
+  // Utiliser la fonction getPreview pour tronquer intelligemment le HTML
+  return getPreview(firstContent.html, 150);
 }
 
 /**
@@ -475,6 +496,9 @@ function insertExercises(db, exercises, authorsIdx) {
         // Résoudre l'auteur (pseudo vs "Prénom Nom") et organisation
         const resolved = resolveAuthor(exercise.author, exercise.organization, authorsIdx);
 
+        // Générer un preview intelligent qui respecte la syntaxe LaTeX
+        const smartPreview = generateExercisePreview(exercise) || exercise.preview || null;
+
         // Insérer dans la table principale
         insertExercise.run(
           exercise.uuid,
@@ -492,7 +516,7 @@ function insertExercises(db, exercises, authorsIdx) {
           exercise.video_id || null,
           exercise.created_at || new Date().toISOString(),
           exercise.updated_at || new Date().toISOString(),
-          exercise.preview || null,
+          smartPreview,
           hasIndication,
           hasSolution,
           JSON.stringify(exercise.content),
@@ -513,8 +537,8 @@ function insertExercises(db, exercises, authorsIdx) {
 
         // Insérer dans FTS5 pour la recherche
         const searchText = extractSearchText(exercise.content);
-        const cleanPreview = cleanPreviewForSearch(exercise.preview);
-        
+        const cleanPreview = cleanPreviewForSearch(smartPreview);
+
         // S'assurer que tous les champs sont des chaînes non nulles pour FTS5
         insertFTS.run(
           exercise.uuid || '',
