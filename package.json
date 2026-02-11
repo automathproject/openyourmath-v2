@@ -5,6 +5,12 @@
   "type": "module",
   "_comment_scripts": "Scripts maison pour parser LaTeX et construire la DB avant le build de l'app",
   "scripts": {
+    "preinstall": "node scripts/check-node-version.js",
+    "check:node": "node scripts/check-node-version.js",
+    "predev": "pnpm check:node",
+    "prebuild:db": "pnpm check:node",
+    "prebuild:content": "pnpm check:node",
+    "prebuild:content:full": "pnpm check:node",
     "dev": "vite dev",
     "dev:full": "pnpm build:content && pnpm dev",
     "build:cache": "node scripts/parse-latex.js content/exercises/ cache/exercises/ --incremental",
