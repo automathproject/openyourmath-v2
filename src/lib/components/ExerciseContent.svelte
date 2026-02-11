@@ -171,9 +171,9 @@
 </script>
 
 <div class="exercise-content" class:exercise-content--preview={isPreview}>
-  {#if exercise}
-    <ExerciseHeader 
-      {exercise} 
+  {#if exercise && variant !== 'preview'}
+    <ExerciseHeader
+      {exercise}
       {variant}
       {position}
       bind:showHint

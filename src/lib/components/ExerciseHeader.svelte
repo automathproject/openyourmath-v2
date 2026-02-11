@@ -206,9 +206,9 @@
               </svg>
             </span>
           </button>
-        {/if}
-        {#if exercise?.uuid}
-          <span class="exercise-uuid text-xs text-gray-400 font-mono">{exercise.uuid}</span>
+          {#if exercise?.uuid}
+            <span class="exercise-uuid text-xs text-gray-400 font-mono">{exercise.uuid}</span>
+          {/if}
         {/if}
       </div>
 
@@ -270,7 +270,7 @@
     {/if}
   {/if}
 
-  {#if hasDates && !metadataCollapsed}
+  {#if hasDates && !metadataCollapsed && variant !== 'preview'}
     <div class="header-bottom" transition:slide={{ duration: 220, easing: cubicOut }}>
       {#if createdAtLabel}
         <span

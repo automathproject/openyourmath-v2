@@ -22,10 +22,21 @@
   $: hasPrevious = currentIndex > 0;
   $: hasNext = currentIndex >= 0 && currentIndex < totalResults - 1;
 
+  $: previewTitle = currentExercise?.title || "Exercice";
+  $: previewUuid = currentExercise?.uuid || null;
+  $: previewDate = formatDisplayDate(currentExercise?.updated_at || currentExercise?.created_at);
+
   $: if ($previewState.selectedUuid && $previewState.selectedUuid !== lastUuid) {
     showHint = false;
     showSolution = false;
     lastUuid = $previewState.selectedUuid;
+  }
+
+  function formatDisplayDate(value) {
+    if (!value) return null;
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return null;
+    return date.toLocaleDateString('fr-FR');
   }
 
   function goToFullPage() {
@@ -82,57 +93,34 @@
     on:touchend={handleTouchEnd}
   >
     <header class="mobile-preview__header">
-      <button type="button" class="mobile-preview__back" on:click={closePreview}>
-        <svg class="mobile-preview__back-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span>Résultats</span>
-      </button>
-      <div class="mobile-preview__nav" aria-label="Navigation entre les exercices">
-        <button
-          type="button"
-          class="mobile-preview__nav-btn"
-          on:click={() => navigateTo(-1)}
-          disabled={!hasPrevious}
-          aria-label="Exercice précédent"
-        >
+      <div class="mobile-preview__header-top">
+        <button type="button" class="mobile-preview__back" on:click={closePreview} aria-label="Retour aux résultats">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </button>
-        <span class="mobile-preview__nav-status">
-          {currentIndex >= 0 ? currentIndex + 1 : '—'}
-          <span aria-hidden="true">/</span>
-          {totalResults > 0 ? totalResults : '—'}
-        </span>
-        <button
-          type="button"
-          class="mobile-preview__nav-btn"
-          on:click={() => navigateTo(1)}
-          disabled={!hasNext}
-          aria-label="Exercice suivant"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
-      </div>
-      <div class="mobile-preview__actions">
-        {#if currentExercise}
-          <AddToListButton exercise={currentExercise} size="small" variant="icon" />
-          <button
-            type="button"
-            class="mobile-preview__open"
-            on:click={goToFullPage}
-            aria-label="Ouvrir dans un nouvel onglet"
-            title="Ouvrir dans un nouvel onglet"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M14 4h6m0 0v6m0-6L10 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        {/if}
+
+        <div class="mobile-preview__title-wrapper">
+          <h2 class="mobile-preview__title">{previewTitle}</h2>
+        </div>
+
+        <div class="mobile-preview__actions">
+          {#if currentExercise}
+            <AddToListButton exercise={currentExercise} size="small" variant="icon" />
+            <button
+              type="button"
+              class="mobile-preview__action-btn"
+              on:click={goToFullPage}
+              aria-label="Ouvrir l'exercice"
+              title="Ouvrir l'exercice"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M14 4h6m0 0v6m0-6L10 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          {/if}
+        </div>
       </div>
     </header>
 
@@ -161,6 +149,48 @@
         </div>
       {/if}
     </div>
+
+    {#if previewUuid}
+      <footer class="mobile-preview__footer">
+        <div class="mobile-preview__metadata">
+          <span class="mobile-preview__uuid">{previewUuid}</span>
+          {#if previewDate}
+            <span class="mobile-preview__separator">·</span>
+            <span class="mobile-preview__date">{previewDate}</span>
+          {/if}
+        </div>
+
+        {#if totalResults > 1}
+          <div class="mobile-preview__nav" aria-label="Navigation entre les exercices">
+            <button
+              type="button"
+              class="mobile-preview__nav-btn"
+              on:click={() => navigateTo(-1)}
+              disabled={!hasPrevious}
+              aria-label="Exercice précédent"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <span class="mobile-preview__nav-status">
+              {currentIndex >= 0 ? currentIndex + 1 : '—'} / {totalResults > 0 ? totalResults : '—'}
+            </span>
+            <button
+              type="button"
+              class="mobile-preview__nav-btn"
+              on:click={() => navigateTo(1)}
+              disabled={!hasNext}
+              aria-label="Exercice suivant"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        {/if}
+      </footer>
+    {/if}
   </div>
 {/if}
 
@@ -175,93 +205,99 @@
     color: #111827;
   }
 
+  /* Header */
   .mobile-preview__header {
     position: sticky;
     top: 0;
     z-index: 10;
+    flex-shrink: 0;
+    border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
+  }
+
+  .mobile-preview__header-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid rgba(17, 24, 39, 0.1);
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(6px);
+    padding: 0.75rem 0.9rem;
   }
 
   .mobile-preview__back {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    flex: 1;
-    text-align: left;
-    font-size: 0.95rem;
-    font-weight: 500;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
     background: none;
     border: none;
-    padding: 0.5rem 0.75rem;
-    border-radius: 9999px;
+    border-radius: 0.5rem;
     color: #2563eb;
+    transition: background-color 0.2s ease;
+  }
+
+  .mobile-preview__back svg {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   .mobile-preview__back:active {
-    background: rgba(37, 99, 235, 0.12);
-  }
-
-  .mobile-preview__nav {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-  }
-
-  .mobile-preview__nav-btn {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 9999px;
-    border: none;
     background: rgba(37, 99, 235, 0.1);
-    color: #1f2937;
+  }
+
+  .mobile-preview__title-wrapper {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-preview__title {
     font-size: 1rem;
-  }
-
-  .mobile-preview__back-icon,
-  .mobile-preview__nav-btn svg,
-  .mobile-preview__open svg {
-    width: 1.1rem;
-    height: 1.1rem;
-  }
-
-  .mobile-preview__nav-btn:disabled {
-    opacity: 0.35;
-  }
-
-  .mobile-preview__nav-status {
-    font-variant-numeric: tabular-nums;
-    font-size: 0.85rem;
-    color: #6b7280;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #111827;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .mobile-preview__actions {
     display: flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.4rem;
+    flex-shrink: 0;
   }
 
-  .mobile-preview__open {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 9999px;
-    border: none;
-    background: rgba(37, 99, 235, 0.1);
-    color: #1f2937;
-    font-size: 1rem;
+  .mobile-preview__action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #374151;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
   }
 
+  .mobile-preview__action-btn svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .mobile-preview__action-btn:active {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+  }
+
+  /* Body */
   .mobile-preview__body {
     flex: 1;
     overflow-y: auto;
-    padding: 1rem;
-    background: #f9fafb;
+    padding: 0.8rem;
+    background: #eff6ff;
   }
 
   .mobile-preview__state {
@@ -286,6 +322,88 @@
     border: 3px solid rgba(37, 99, 235, 0.15);
     border-top-color: #2563eb;
     animation: spin 0.9s linear infinite;
+  }
+
+  /* Footer */
+  .mobile-preview__footer {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.55rem 0.9rem;
+    border-top: 1px solid #e5e7eb;
+    background: #ffffff;
+  }
+
+  .mobile-preview__metadata {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    line-height: 1.2;
+    color: #6b7280;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .mobile-preview__uuid {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    color: #374151;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-preview__separator {
+    color: #9ca3af;
+  }
+
+  .mobile-preview__date {
+    color: #6b7280;
+    white-space: nowrap;
+  }
+
+  .mobile-preview__nav {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-shrink: 0;
+  }
+
+  .mobile-preview__nav-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #374151;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .mobile-preview__nav-btn svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .mobile-preview__nav-btn:active:not(:disabled) {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+  }
+
+  .mobile-preview__nav-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  .mobile-preview__nav-status {
+    font-variant-numeric: tabular-nums;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #6b7280;
+    min-width: 2.5rem;
+    text-align: center;
   }
 
   @keyframes spin {

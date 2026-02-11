@@ -43,6 +43,8 @@
 
   function handleOutsideClick(event) {
     if (!open || !panelEl) return;
+    // Ignore clicks on the toggle button (has aria-expanded attribute)
+    if (event.target.closest('[aria-expanded]')) return;
     if (!panelEl.contains(event.target)) close();
   }
 
@@ -187,7 +189,7 @@
     width: min(36rem, 95vw);
     border-radius: 0.85rem;
     padding: 0.8rem;
-    z-index: 40;
+    z-index: 50;
     @apply border border-gray-200 bg-white shadow-xl;
   }
   .advanced-popover__header {

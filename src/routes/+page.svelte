@@ -27,8 +27,7 @@
     previewState,
     previewActions,
     loadingMore,
-    layoutConfig,
-    layoutActions
+    layoutConfig
   } from '$lib/stores/searchStore.js';
   import { previewPanelOpen, uiActions } from '$lib/stores/uiStore.ts';
 
@@ -93,6 +92,14 @@
 
   function toggleDesktopPreviewPanel() {
     uiActions.togglePreviewPanel();
+  }
+
+  function toggleMobilePreview() {
+    if ($previewState.isOpen) {
+      previewActions.closePreview();
+    } else if ($previewState.selectedUuid) {
+      previewActions.selectExercise($previewState.selectedUuid);
+    }
   }
 
   $: canTogglePreview = Boolean($previewState.selectedUuid);
@@ -253,8 +260,8 @@
   <title>Recherche d'exercices - OpenYourMath</title>
 </svelte:head>
 
-<div class="search-page container mx-auto px-4 py-4 sm:py-8" class:search-page--scrolled={isHeaderCollapsed}>
-  <div class="hero-block text-center lg:text-left mb-6 sm:mb-10" class:hero-block--collapsed={isHeaderCollapsed}>
+<div class="search-page container mx-auto px-3 py-3 sm:px-4 sm:py-4 lg:py-8" class:search-page--scrolled={isHeaderCollapsed}>
+  <div class="hero-block text-center lg:text-left mb-4 sm:mb-6 lg:mb-10" class:hero-block--collapsed={isHeaderCollapsed}>
     <div class="hero-inner">
       <img src="/img/logo1.png" alt="OpenYourMath" class="hidden lg:block w-24 h-auto" loading="eager" />
       <div>
@@ -282,7 +289,7 @@
             onToggleIndication={toggleIndicationChip}
             canTogglePreview={canTogglePreview && !isDesktop}
             previewToggleLabel={previewToggleLabel}
-            onTogglePreview={layoutActions.togglePreviewPanel}
+            onTogglePreview={toggleMobilePreview}
             {advancedFiltersOpen}
             onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
           />
@@ -444,7 +451,13 @@
     overflow: visible;
   }
 
-  .hero-inner { display:flex; flex-direction:column; align-items:center; gap:1.5rem; }
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
   .hero-block {
     max-height: 18rem;
     opacity: 1;
@@ -453,14 +466,34 @@
                 opacity 200ms cubic-bezier(0.4, 0, 0.2, 1),
                 margin 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  /* Sur mobile, on garde le hero plus longtemps avant collapse */
+  @media (max-width: 1023px) {
+    .hero-inner {
+      padding: 0.5rem 0;
+    }
+    .hero-block h1 {
+      font-size: 1.5rem;
+    }
+    .hero-block p {
+      font-size: 0.875rem;
+    }
+  }
+
   .hero-block.hero-block--collapsed {
     max-height: 0;
     opacity: 0;
     margin-bottom: 0;
     pointer-events: none;
   }
+
   @media (min-width:1024px) {
-    .hero-inner { flex-direction:row; align-items:center; justify-content:flex-start; }
+    .hero-inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1.5rem;
+    }
     .search-page {
       --results-scroll-height: calc(100vh - 19rem);
     }
@@ -495,14 +528,28 @@
     @apply border border-gray-200 rounded-lg;
   }
 
+  /* Sur mobile, réduire le padding */
+  @media (max-width: 640px) {
+    .search-controls-sticky {
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+    }
+  }
+
   .search-controls-sticky--scrolled {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
 
   .search-toolbar-shell {
     margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .search-toolbar-shell {
+      margin-bottom: 0.35rem;
+    }
   }
 
   .results-section {
@@ -611,13 +658,65 @@
     @apply text-red-600;
   }
 
-  .results-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .results-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
   .results-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 600;
+    flex: 1 1 auto;
+    min-width: fit-content;
     @apply text-gray-900;
   }
-  .sort-control { display:flex; align-items:center; gap:0.5rem; }
+
+  .sort-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  /* Sur mobile, stack les contrôles verticalement */
+  @media (max-width: 640px) {
+    .results-header {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+    }
+
+    .results-title {
+      font-size: 1rem;
+    }
+
+    .sort-control {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .view-mode-toggle {
+      flex: 0 0 auto;
+    }
+
+    .sort-label {
+      display: none;
+    }
+
+    .sort-select-group {
+      flex: 1 1 auto;
+      justify-content: flex-end;
+    }
+
+    .sort-select {
+      flex: 1 1 auto;
+      max-width: 180px;
+    }
+  }
+
   .view-mode-toggle {
     display: inline-flex;
     align-items: center;
@@ -626,48 +725,74 @@
     padding-right: 0.5rem;
     @apply border-r border-gray-200;
   }
+
   .view-mode-btn {
-    width: 2rem;
-    height: 2rem;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 0.5rem;
-    font-size: 0.82rem;
+    font-size: 0.875rem;
     font-weight: 600;
     @apply border border-gray-300 bg-white text-gray-600;
   }
+
   .view-mode-btn--active {
     @apply bg-brand-600 border-brand-600 text-white;
   }
+
   .sort-label {
-    font-size:0.875rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
     @apply text-gray-600;
   }
-  .sort-select-group { display:flex; align-items:center; gap:0.35rem; }
+
+  .sort-select-group {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
   .sort-select {
-    padding:0.5rem 0.75rem;
-    font-size:0.9rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
     @apply border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-500;
   }
+
   .sort-direction-button {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:2.25rem;
-    height:2.25rem;
-    font-size:1rem;
-    border-radius:0.75rem;
-    transition:background-color .2s, color .2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    transition: background-color .2s, color .2s;
     @apply border border-gray-300 bg-white text-gray-600;
   }
+
   .sort-direction-button:hover:enabled {
     @apply bg-gray-100 text-gray-800;
   }
+
   .sort-direction-button:disabled {
     @apply opacity-60 cursor-not-allowed;
+  }
+
+  @media (min-width: 641px) {
+    .results-title {
+      font-size: 1.25rem;
+    }
   }
   .results-keyboard-hint {
     margin-top: 0.7rem;
     font-size: 0.78rem;
     @apply text-gray-500;
+  }
+
+  /* Masquer les raccourcis clavier sur mobile */
+  @media (max-width: 768px) {
+    .results-keyboard-hint {
+      display: none;
+    }
   }
   .empty-state {
     text-align: center;

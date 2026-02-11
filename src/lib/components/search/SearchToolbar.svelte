@@ -40,7 +40,7 @@
   }
 </script>
 
-<div class="toolbar flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-4">
+<div class="toolbar flex flex-col gap-3 md:flex-row md:items-center md:justify-between mb-4">
   <div class="toolbar-search relative flex-1">
     <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-gray-400" aria-hidden="true">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,6 +85,7 @@
         <button
           type="button"
           class="btn btn-secondary toolbar-button"
+          class:toolbar-button--active={advancedFiltersOpen}
           on:click={onToggleFilters}
           aria-expanded={advancedFiltersOpen}
         >
@@ -126,22 +127,94 @@
 </div>
 
 <style>
-  .toolbar-search { min-width:0; }
-  .toolbar-actions { justify-content:flex-start; }
-  @media (min-width:640px) {
-    .toolbar-actions { justify-content:flex-end; }
+  .toolbar-search {
+    min-width: 0;
+    width: 100%;
   }
-  .toolbar-button { display:inline-flex; align-items:center; gap:0.5rem; white-space:nowrap; }
-  .filters-popover-anchor { position: relative; }
-  .toolbar-actions .btn { min-height:2.5rem; }
-  .toolbar-chips .chip { min-height:2.25rem; }
+
+  .toolbar-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .toolbar-actions {
+      justify-content: flex-end;
+      width: auto;
+    }
+  }
+
+  .toolbar-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+  }
+
+  .toolbar-button--active {
+    @apply bg-brand-100 border-brand-300 text-brand-700;
+  }
+
+  .filters-popover-anchor {
+    position: relative;
+  }
+
+  .toolbar-actions .btn {
+    min-height: 2.5rem;
+  }
+
+  .toolbar-chips {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+  }
+
+  .toolbar-chips .chip {
+    min-height: 2.25rem;
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  /* Sur très petits écrans, stack tout verticalement */
+  @media (max-width: 480px) {
+    .toolbar-actions {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .toolbar-chips {
+      width: 100%;
+      order: 2;
+    }
+
+    .toolbar-chips .chip {
+      flex: 1 1 calc(50% - 0.25rem);
+    }
+
+    .filters-popover-anchor {
+      order: 1;
+      width: 100%;
+    }
+
+    .filters-popover-anchor .btn {
+      width: 100%;
+    }
+  }
 
   .search-input {
     width: 100%;
     padding: 0.75rem 3.75rem 0.75rem 2.5rem;
-    font-size: 1.125rem;
+    font-size: 1rem;
     transition: all .2s ease;
     @apply border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent;
+  }
+
+  @media (min-width: 640px) {
+    .search-input {
+      font-size: 1.125rem;
+    }
   }
   .search-clear {
     position: absolute;
@@ -181,12 +254,32 @@
 
   .chip {
     padding: 0.5rem 0.75rem;
-    font-size:0.875rem;
+    font-size: 0.875rem;
     border-radius: 9999px;
     transition: background-color .2s;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
     @apply border border-gray-200 bg-gray-100 text-gray-700;
   }
-  .chip:hover { @apply bg-gray-200; }
-  .chip--on { @apply bg-green-100 text-green-700 border-green-200; }
-  .chip--off { @apply bg-red-100 text-red-800 border-red-200; }
+
+  .chip:hover {
+    @apply bg-gray-200;
+  }
+
+  .chip--on {
+    @apply bg-green-100 text-green-700 border-green-200;
+  }
+
+  .chip--off {
+    @apply bg-red-100 text-red-800 border-red-200;
+  }
+
+  /* Sur petits écrans, réduire la taille du texte */
+  @media (max-width: 480px) {
+    .chip {
+      font-size: 0.8rem;
+      padding: 0.45rem 0.6rem;
+    }
+  }
 </style>
