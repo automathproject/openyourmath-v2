@@ -10,6 +10,7 @@
   export let variant = 'full'; // 'full' | 'preview' | 'simple'
   export let position = null; // { current, total }
   export let showGlobalToggles = false;
+  $: isPreview = variant === 'preview';
   
   // État local pour contrôler l'affichage individuel des solutions et indications
   let solutionStates = {};
@@ -169,7 +170,7 @@
   }
 </script>
 
-<div class="exercise-content">
+<div class="exercise-content" class:exercise-content--preview={isPreview}>
   {#if exercise}
     <ExerciseHeader 
       {exercise} 
@@ -232,39 +233,51 @@
       
     {:else if contentBlock.type === 'question-group'}
       <!-- Groupe question/indication/réponse -->
-      <div class="question-response-pair">
+      <div class="question-response-pair" class:question-response-pair--preview={isPreview}>
         {#each [contentBlock.question] as question}
           {@const processedQ = processContentBlock(question)}
           <!-- Question avec icônes d'actions -->
-          <div class="question-block">
-            <div class="question-header">
-              <div class="question-number">
-                <span class="question-number-badge">
-                  {contentBlock.questionIndex + 1}
-                </span>
+          <div class="question-block" class:question-block--preview={isPreview}>
+            <div class="question-header" class:question-header--preview={isPreview}>
+              <div class="question-main" class:question-main--preview={isPreview}>
+                <div class="question-number" class:question-number--preview={isPreview}>
+                  <span class="question-number-badge" class:question-number-badge--preview={isPreview}>
+                    {contentBlock.questionIndex + 1}
+                  </span>
+                </div>
+                <div class="question-content" class:question-content--preview={isPreview}>
+                  <MathRenderer content={processedQ.html} />
+                </div>
               </div>
-              <div class="question-content">
-                <MathRenderer content={processedQ.html} />
-              </div>
-              <div class="question-actions">
+              <div class="question-actions" class:question-actions--preview={isPreview}>
                 {#if contentBlock.hints.length > 0}
                   <button 
                     class="question-action-btn question-action-btn--hint"
                     class:question-action-btn--active={hintStates[contentBlock.questionIndex] || showHint}
+                    class:question-action-btn--preview={isPreview}
                     on:click={() => toggleHint(contentBlock.questionIndex)}
                     title={(hintStates[contentBlock.questionIndex] || showHint) ? 'Masquer l\'indication' : 'Voir l\'indication'}
                   >
-                    💡
+                    {#if isPreview}
+                      Ind.
+                    {:else}
+                      💡
+                    {/if}
                   </button>
                 {/if}
                 {#if contentBlock.solutions.length > 0}
                   <button 
                     class="question-action-btn question-action-btn--solution"
                     class:question-action-btn--active={solutionStates[contentBlock.questionIndex] || showSolution}
+                    class:question-action-btn--preview={isPreview}
                     on:click={() => toggleSolution(contentBlock.questionIndex)}
                     title={(solutionStates[contentBlock.questionIndex] || showSolution) ? 'Masquer la solution' : 'Voir la solution'}
                   >
-                    ✅
+                    {#if isPreview}
+                      {(solutionStates[contentBlock.questionIndex] || showSolution) ? '✔' : 'Sol.'}
+                    {:else}
+                      ✅
+                    {/if}
                   </button>
                 {/if}
               </div>
@@ -334,37 +347,124 @@
     /* Force margin et padding à 0, puis réapplique seulement pl-4 pour la bordure */
     padding-left: 1rem !important; /* Garde le padding gauche pour la bordure */
   }
+
+  .question-response-pair--preview {
+    border-left: 0;
+    padding-left: 0 !important;
+  }
   
   .question-block {
     @apply bg-brand-50 rounded-lg p-2;
     /* Réduction du padding de p-4 à p-2 */
     margin-bottom: 0 !important; /* Annuler le margin-bottom global */
   }
+
+  .question-block--preview {
+    background: transparent;
+    border-radius: 0;
+    padding: 0.15rem 0;
+  }
   
   .question-header {
     @apply flex items-start gap-3;
+  }
+
+  .question-header--preview {
+    gap: 0.4rem;
+    align-items: flex-start;
+  }
+
+  .question-main {
+    @apply flex items-start gap-3 flex-1;
+  }
+
+  .question-main--preview {
+    position: relative;
+    padding-left: 1.85rem;
+    min-height: 1.45rem;
+    gap: 0;
   }
   
   .question-number {
     @apply flex-shrink-0;
   }
+
+  .question-number--preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-0.45rem);
+    width: 1.6rem;
+    display: flex;
+    justify-content: flex-end;
+  }
   
   .question-number-badge {
     @apply inline-flex items-center justify-center w-8 h-8 bg-brand-600 text-white text-sm font-semibold rounded-full;
+  }
+
+  .question-number-badge--preview {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: transparent;
+    color: #2f7f86;
+    font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 800;
+    font-size: 1.08rem;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
   }
   
   .question-content {
     @apply flex-1 text-gray-800;
   }
+
+  .question-content--preview {
+    @apply text-gray-900;
+    min-width: 0;
+  }
   
   .question-actions {
     @apply flex gap-2 flex-shrink-0;
+  }
+
+  .question-actions--preview {
+    gap: 0.3rem;
+    padding-top: 0.06rem;
   }
   
   .question-action-btn {
     @apply w-8 h-8 rounded-full bg-white border-2 border-gray-300 hover:border-gray-400 
            flex items-center justify-center text-lg transition-colors duration-200
            hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-1;
+  }
+
+  .question-action-btn--preview {
+    width: auto;
+    height: auto;
+    min-height: 1.35rem;
+    border-width: 1px;
+    border-radius: 9999px;
+    padding: 0.05rem 0.45rem;
+    font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.68rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    @apply text-gray-600 bg-gray-50 border-gray-200;
+  }
+
+  .question-action-btn--preview.question-action-btn--hint {
+    @apply bg-yellow-50 text-amber-700 border-yellow-200;
+  }
+
+  .question-action-btn--preview.question-action-btn--solution {
+    @apply bg-green-50 text-green-700 border-green-200;
+  }
+
+  .question-action-btn--preview.question-action-btn--solution.question-action-btn--active {
+    @apply bg-green-100 text-green-700 border-green-300;
   }
   
   .question-action-btn--hint.question-action-btn--active {
