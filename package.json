@@ -30,7 +30,7 @@
     "test": "vitest",
     "test:build": "vitest run tests/build/",
     "test:integration": "playwright test",
-    "docker:build": "docker build -t ghcr.io/automathproject/openyourmath:2.1.2 .",
+    "docker:build": "docker build -t ghcr.io/automathproject/openyourmath:${PUBLIC_APP_VERSION:-$npm_package_version} .",
     "docker:dev": "docker-compose up",
     "docker:prod": "docker-compose up -d"
   },

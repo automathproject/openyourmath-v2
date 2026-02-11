@@ -21,7 +21,7 @@ services:
 
   # --- Service de votre Application ---
   app:
-    image: ghcr.io/automathproject/openyourmath:2.3.0
+    image: ghcr.io/automathproject/openyourmath:${PUBLIC_APP_VERSION:-2.3.0}
     restart: always
     # Pas de 'ports' ici ! Caddy communique directement avec l'app
     # via le réseau interne de Docker.
@@ -29,6 +29,7 @@ services:
       - DATABASE_PATH=/app/data/exercises.sqlite
       - NODE_ENV=production
       - ORIGIN=https://openyourmath.org
+      - PUBLIC_APP_VERSION=${PUBLIC_APP_VERSION:-2.3.0}
 
 # Définir les volumes nommés pour que Docker les gère automatiquement.
 volumes:
