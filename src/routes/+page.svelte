@@ -39,6 +39,7 @@
   let manualCardMode = 'auto'; // auto | compact | detailed
   let isHeaderCollapsed = false;
   let resultsScrollEl;
+  const HEADER_COLLAPSE_THRESHOLD = 24;
 
   const debouncedSearch = useDebounce(searchActions.search, 300);
 
@@ -50,9 +51,7 @@
 
       const applyViewportState = (matches) => {
         isDesktop = matches;
-        if (!matches) {
-          isHeaderCollapsed = false;
-        }
+        syncHeaderCollapsedFromScroll();
       };
 
       applyViewportState(mediaQuery.matches);
@@ -233,12 +232,22 @@
   }
 
   function handleResultsScroll() {
-    if (!isDesktop || !resultsScrollEl) return;
-    isHeaderCollapsed = resultsScrollEl.scrollTop > 24;
+    // Not used anymore - keeping for compatibility
+  }
+
+  function handleWindowScroll() {
+    if (typeof window === 'undefined') return;
+    syncHeaderCollapsedFromScroll();
+  }
+
+  function syncHeaderCollapsedFromScroll() {
+    if (typeof window === 'undefined') return;
+    const pageScrollTop = window.scrollY || document.documentElement.scrollTop || 0;
+    isHeaderCollapsed = pageScrollTop > HEADER_COLLAPSE_THRESHOLD;
   }
 </script>
 
-<svelte:window on:keydown={handleResultsKeyboardNav} />
+<svelte:window on:keydown={handleResultsKeyboardNav} on:scroll={handleWindowScroll} />
 
 <svelte:head>
   <title>Recherche d'exercices - OpenYourMath</title>
@@ -255,48 +264,48 @@
     </div>
   </div>
 
-  <div class="search-toolbar-shell">
-    <SearchToolbar
-      searchQueryStore={searchQuery}
-      onSearchInput={debouncedSearch}
-      loading={$loading}
-      hasResults={$hasResults}
-      filtersButtonLabel={filtersButtonLabel}
-      showFiltersButton={true}
-      onToggleFilters={toggleFiltersPanel}
-      hasSolution={$filters.hasSolution}
-      hasIndication={$filters.hasIndication}
-      onToggleSolution={toggleSolutionChip}
-      onToggleIndication={toggleIndicationChip}
-      canTogglePreview={canTogglePreview && !isDesktop}
-      previewToggleLabel={previewToggleLabel}
-      onTogglePreview={layoutActions.togglePreviewPanel}
-      {advancedFiltersOpen}
-      onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
-    />
-  </div>
+  <div class="search-page-grid" class:search-page-grid--preview-open={isDesktop && $previewPanelOpen}>
+    <div class="search-page-main">
+      <div class="search-controls-sticky" class:search-controls-sticky--scrolled={isHeaderCollapsed}>
+        <div class="search-toolbar-shell">
+          <SearchToolbar
+            searchQueryStore={searchQuery}
+            onSearchInput={debouncedSearch}
+            loading={$loading}
+            hasResults={$hasResults}
+            filtersButtonLabel={filtersButtonLabel}
+            showFiltersButton={true}
+            onToggleFilters={toggleFiltersPanel}
+            hasSolution={$filters.hasSolution}
+            hasIndication={$filters.hasIndication}
+            onToggleSolution={toggleSolutionChip}
+            onToggleIndication={toggleIndicationChip}
+            canTogglePreview={canTogglePreview && !isDesktop}
+            previewToggleLabel={previewToggleLabel}
+            onTogglePreview={layoutActions.togglePreviewPanel}
+            {advancedFiltersOpen}
+            onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
+          />
+        </div>
 
-  <div class="search-meta-shell" class:search-meta-shell--collapsed={isHeaderCollapsed}>
-    <ActiveFilters />
-    {#if browser}
-      <BreadcrumbNav
-        query={$searchQuery}
-        filters={$filters}
-        on:navigate={handleChapterNavigation}
-      />
-    {/if}
-  </div>
+        <div class="search-meta-shell">
+          <ActiveFilters />
+          {#if browser}
+            <BreadcrumbNav
+              query={$searchQuery}
+              filters={$filters}
+              on:navigate={handleChapterNavigation}
+            />
+          {/if}
+        </div>
+      </div>
 
-  <div
-    class="content-layout"
-    class:layout--preview-open={isDesktop && $previewPanelOpen}
-  >
-    <div
-      class="results-section flex-1"
-      style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}
-      bind:this={resultsScrollEl}
-      on:scroll={handleResultsScroll}
-    >
+      <div
+        class="results-section flex-1"
+        style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}
+        bind:this={resultsScrollEl}
+        on:scroll={handleResultsScroll}
+      >
       {#if $error}
         <div class="search-error">
           <p class="search-error-text">{$error}</p>
@@ -395,6 +404,7 @@
           />
         </section>
       {/if}
+      </div>
     </div>
 
     <div class="preview-shell">
@@ -431,11 +441,24 @@
   }
   .search-meta-shell {
     position: relative;
-    z-index: 40;
     overflow: visible;
   }
 
   .hero-inner { display:flex; flex-direction:column; align-items:center; gap:1.5rem; }
+  .hero-block {
+    max-height: 18rem;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 200ms cubic-bezier(0.4, 0, 0.2, 1),
+                margin 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hero-block.hero-block--collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+    pointer-events: none;
+  }
   @media (min-width:1024px) {
     .hero-inner { flex-direction:row; align-items:center; justify-content:flex-start; }
     .search-page {
@@ -444,102 +467,138 @@
     .search-page.search-page--scrolled {
       --results-scroll-height: calc(100vh - 11rem);
     }
-    .hero-block {
-      max-height: 14rem;
-      opacity: 1;
-      overflow: hidden;
-      transition: max-height 180ms ease, opacity 160ms ease, margin 180ms ease;
-    }
-    .hero-block.hero-block--collapsed {
-      max-height: 0;
-      opacity: 0;
-      margin-bottom: 0;
-      pointer-events: none;
-    }
-    .search-meta-shell {
-      max-height: 18rem;
-      opacity: 1;
-      overflow: visible;
-      transition: max-height 180ms ease, opacity 160ms ease, margin 180ms ease;
-    }
-    .search-meta-shell.search-meta-shell--collapsed {
-      max-height: 0;
-      opacity: 0;
-      margin-bottom: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
+  }
+
+  .search-page-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .search-page-main {
+    width: 100%;
+    min-width: 0;
+  }
+
+  :root {
+    --app-header-height: 4rem;
+    --search-controls-height: 6.5rem;
+  }
+
+  .search-controls-sticky {
+    position: sticky;
+    top: var(--app-header-height, 4rem);
+    z-index: 35;
+    padding: 0.75rem;
+    transition: box-shadow 200ms ease, background-color 200ms ease, backdrop-filter 200ms ease, border-color 200ms ease;
+    background: transparent;
+    @apply border border-gray-200 rounded-lg;
+  }
+
+  .search-controls-sticky--scrolled {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
 
   .search-toolbar-shell {
-    position: sticky;
-    top: 0;
-    z-index: 35;
-    padding-top: 0.25rem;
-    @apply bg-interface-bg-primary;
+    margin-bottom: 0.5rem;
   }
 
-  .content-layout {
-    display:flex;
-    flex-direction:column;
-    gap:1.5rem;
-    align-items:stretch;
+  .results-section {
+    width: 100%;
+    min-width: 0;
   }
+
   .preview-shell {
-    position:relative;
-    overflow:visible;
-    min-width:0;
+    position: relative;
+    overflow: visible;
+    min-width: 0;
+    width: 100%;
   }
+
+  @media (min-width:1024px) {
+    .preview-shell {
+      display: block;
+      position: sticky;
+      top: calc(var(--app-header-height, 4rem) + var(--search-controls-height, 6.5rem));
+      align-self: start;
+      z-index: 10;
+      max-height: calc(100vh - var(--app-header-height, 4rem) - var(--search-controls-height, 6.5rem));
+    }
+  }
+
   .panel-edge-toggle {
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    width:1.75rem;
-    height:4.25rem;
-    border-radius:0.5rem;
-    font-size:1.15rem;
-    font-weight:700;
-    z-index:20;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.75rem;
+    height: 4.25rem;
+    border-radius: 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    z-index: 20;
     @apply border border-gray-300 bg-white text-gray-700 shadow-sm transition-colors;
   }
   .panel-edge-toggle:hover { @apply bg-gray-100 text-gray-900; }
   .panel-edge-toggle--preview {
-    left:-0.875rem;
+    left: -0.875rem;
   }
-  .results-section { width:100%; flex:1 1 0%; min-width:0; }
+
   @media (min-width:1024px) {
-    .content-layout {
-      display:grid;
-      grid-template-areas:"results preview";
-      grid-template-columns:minmax(0, 1fr) 0;
-      transition:grid-template-columns 200ms ease;
-      column-gap:0;
-      row-gap:1.5rem;
-      align-items:start;
+    .search-page-grid {
+      display: grid;
+      grid-template-areas: "main preview";
+      grid-template-columns: minmax(0, 1fr) 2rem;
+      column-gap: 0;
+      align-items: start;
+      transition: grid-template-columns 200ms ease;
     }
-    .content-layout.layout--preview-open {
-      grid-template-columns:minmax(0, 1fr) minmax(20rem, 28rem);
+
+    .search-page-grid.search-page-grid--preview-open {
+      grid-template-columns: minmax(0, 1fr) minmax(20rem, 28rem);
     }
+
+    .search-page-main {
+      grid-area: main;
+      min-width: 0;
+    }
+
     .results-section {
-      grid-area:results;
-      height: var(--results-scroll-height);
       min-height: 20rem;
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      scrollbar-gutter: stable;
-      padding-right: 0.35rem;
+      padding-bottom: 2rem;
     }
-    .preview-shell { grid-area:preview; }
+
+    .preview-shell {
+      grid-area: preview;
+      min-width: 2rem;
+    }
   }
 
   .preview-section {
-    width:100%;
+    width: 100%;
+    height: 100%;
     @apply border-l border-gray-200;
   }
+
   @media (min-width:1024px) {
-    .preview-section { width:100%; min-width:0; }
+    .preview-section {
+      width: 100%;
+      min-width: 0;
+    }
   }
-  .preview-sticky { position:sticky; top:2rem; }
+
+  .preview-sticky {
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    padding: 1rem;
+  }
+
+  @media (min-width:1024px) {
+    .preview-sticky {
+      max-height: calc(100vh - var(--app-header-height, 4rem) - var(--search-controls-height, 6.5rem) - 2rem);
+    }
+  }
 
   .search-error {
     margin-top: 0.5rem;
