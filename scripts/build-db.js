@@ -1,13 +1,16 @@
 // scripts/build-db.js
 import fs from 'fs';
 import path from 'path';
-import Database from 'better-sqlite3';
+import { spawnSync } from 'child_process';
+import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const require = createRequire(import.meta.url);
 
 const fsPromises = fs.promises;
+let Database = null;
 
 /**
  * Configuration simple
@@ -15,6 +18,62 @@ const fsPromises = fs.promises;
 const CACHE_DIR = path.resolve(__dirname, '../cache/exercises');
 const DB_PATH = path.resolve(__dirname, '../data/exercises.sqlite');
 const SCHEMA_PATH = path.resolve(__dirname, 'schema.sql'); 
+
+function isAbiMismatchError(error) {
+  const message = String(error?.message || '');
+  return (
+    message.includes('was compiled against a different Node.js version') ||
+    message.includes('NODE_MODULE_VERSION')
+  );
+}
+
+function runNativeRebuild() {
+  const pkgPath = require.resolve('better-sqlite3/package.json');
+  const moduleDir = path.dirname(pkgPath);
+  const env = { ...process.env };
+
+  // Sur Linux/Debian, les headers système sont souvent déjà présents.
+  if (!env.npm_config_nodedir && fs.existsSync('/usr/include/node')) {
+    env.npm_config_nodedir = '/usr';
+  }
+
+  const npmCmd = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+  const result = spawnSync(npmCmd, ['run', 'build-release'], {
+    cwd: moduleDir,
+    stdio: 'inherit',
+    env
+  });
+
+  if (result.status !== 0) {
+    throw new Error('Failed to rebuild better-sqlite3 native bindings');
+  }
+}
+
+function loadDatabaseModule() {
+  try {
+    const mod = require('better-sqlite3');
+    Database = mod.default || mod;
+    return;
+  } catch (error) {
+    if (!isAbiMismatchError(error)) {
+      throw error;
+    }
+
+    console.log('⚠️ better-sqlite3 ABI mismatch detected, rebuilding native bindings...');
+    runNativeRebuild();
+
+    try {
+      const resolved = require.resolve('better-sqlite3');
+      delete require.cache[resolved];
+    } catch {
+      // no-op
+    }
+
+    const mod = require('better-sqlite3');
+    Database = mod.default || mod;
+    console.log('✅ better-sqlite3 rebuilt for current Node.js runtime');
+  }
+}
 
 /**
  * Trouve tous les fichiers JSON dans le cache
@@ -102,6 +161,10 @@ function cleanPreviewForSearch(preview) {
 function createDatabase(dbPath) {
   // Créer le dossier si nécessaire
   fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+
+  if (!Database) {
+    throw new Error('better-sqlite3 is not initialized');
+  }
 
   const db = new Database(dbPath);
 
@@ -504,6 +567,9 @@ async function main() {
     if (!fs.existsSync(CACHE_DIR)) {
       throw new Error(`Cache directory not found: ${CACHE_DIR}`);
     }
+
+    console.log('🔧 Checking native SQLite bindings...');
+    loadDatabaseModule();
 
     if (fs.existsSync(DB_PATH)) {
       console.log('🔥 Deleting existing database...');

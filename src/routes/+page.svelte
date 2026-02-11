@@ -429,6 +429,11 @@
   .search-page {
     --results-scroll-height: auto;
   }
+  .search-meta-shell {
+    position: relative;
+    z-index: 40;
+    overflow: visible;
+  }
 
   .hero-inner { display:flex; flex-direction:column; align-items:center; gap:1.5rem; }
   @media (min-width:1024px) {
@@ -454,13 +459,14 @@
     .search-meta-shell {
       max-height: 18rem;
       opacity: 1;
-      overflow: hidden;
+      overflow: visible;
       transition: max-height 180ms ease, opacity 160ms ease, margin 180ms ease;
     }
     .search-meta-shell.search-meta-shell--collapsed {
       max-height: 0;
       opacity: 0;
       margin-bottom: 0;
+      overflow: hidden;
       pointer-events: none;
     }
   }

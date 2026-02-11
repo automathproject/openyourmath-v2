@@ -220,6 +220,7 @@
 <style>
   .breadcrumb-nav {
     position: relative;
+    z-index: 45;
     margin-bottom: 1rem;
     border-radius: 0.75rem;
     padding: 0.7rem 0.9rem;
@@ -256,7 +257,7 @@
     overflow-y: auto;
     border-radius: 0.75rem;
     padding: 0.35rem;
-    z-index: 30;
+    z-index: 60;
     @apply border border-gray-200 bg-white shadow-lg;
   }
   .crumb-item {
