@@ -84,16 +84,7 @@ function validateDifficulty(value) {
 }
 
 function generateExercisePreview(content) {
-  const exerciseForPreview = {
-    contenu: content.map(block => ({
-      type: block.type === 'text' ? 'description' : block.type,
-      value: {
-        html: block.html
-      }
-    }))
-  };
-  
-  return generatePreview(exerciseForPreview);
+  return generatePreview({ content });
 }
 /**
  * MODIFIÉ : Parsing avec support des images \includegraphics
