@@ -4,7 +4,7 @@ import path from 'path';
 import { spawnSync } from 'child_process';
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
-import { getPreview } from './utils/previewUtils.js';
+import { generatePreview } from './utils/previewUtils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -154,39 +154,6 @@ function cleanPreviewForSearch(preview) {
     .replace(/<[^>]*>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
-}
-
-/**
- * Génère un preview intelligent pour un exercice en respectant la syntaxe LaTeX
- */
-function generateExercisePreview(exercise) {
-  if (!Array.isArray(exercise.content) || exercise.content.length === 0) {
-    // Fallback: utiliser le titre comme preview si pas de contenu
-    return exercise.title ? `<p>${exercise.title}</p>` : '';
-  }
-
-  // Chercher le premier bloc de type "text", "description" ou "question" avec du HTML
-  let firstContent = exercise.content.find(block => {
-    const type = (block.type || '').toLowerCase();
-    return (type === 'text' || type === 'description' || type === 'question') &&
-           block.html &&
-           block.html.trim();
-  });
-
-  // Si aucun bloc trouvé, chercher n'importe quel bloc avec du HTML (y compris "reponse")
-  if (!firstContent) {
-    firstContent = exercise.content.find(block =>
-      block.html && block.html.trim()
-    );
-  }
-
-  if (!firstContent || !firstContent.html) {
-    // Dernier fallback: utiliser le titre
-    return exercise.title ? `<p>${exercise.title}</p>` : '';
-  }
-
-  // Utiliser la fonction getPreview pour tronquer intelligemment le HTML
-  return getPreview(firstContent.html, 150);
 }
 
 /**
@@ -510,7 +477,7 @@ function insertExercises(db, exercises, authorsIdx) {
         const resolved = resolveAuthor(exercise.author, exercise.organization, authorsIdx);
 
         // Générer un preview intelligent qui respecte la syntaxe LaTeX
-        const smartPreview = generateExercisePreview(exercise) || exercise.preview || null;
+        const smartPreview = generatePreview(exercise) || exercise.preview || (exercise.title ? `<p>${exercise.title}</p>` : null);
 
         // Insérer dans la table principale
         insertExercise.run(

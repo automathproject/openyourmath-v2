@@ -88,6 +88,18 @@ function getPreview(content, maxLength = 150) {
 
     return content.slice(0, safeEnd) + ' ...';
   }
+
+  function getBlockHtml(block) {
+    if (!block || typeof block !== 'object') return '';
+    if (typeof block.html === 'string') return block.html;
+    if (typeof block.value?.html === 'string') return block.value.html;
+    return '';
+  }
+
+  function getBlockType(block) {
+    if (!block || typeof block !== 'object') return '';
+    return String(block.type || '').toLowerCase();
+  }
   
   /**
    * Génère une preview pour un exercice
@@ -95,13 +107,31 @@ function getPreview(content, maxLength = 150) {
    * @returns {string} La preview générée
    */
   function generatePreview(exercise) {
-    const firstContent = exercise.contenu.find(item => 
-      (item.type === 'description' || item.type === 'question') && 
-      item.value.html?.trim()
-    );
+    if (!exercise || typeof exercise !== 'object') return '';
+
+    const blocks = Array.isArray(exercise.content)
+      ? exercise.content
+      : Array.isArray(exercise.contenu)
+        ? exercise.contenu
+        : [];
+
+    if (blocks.length === 0) return '';
+
+    const firstContent = blocks.find((item) => {
+      const type = getBlockType(item);
+      return (
+        (type === 'text' || type === 'description' || type === 'question') &&
+        getBlockHtml(item).trim()
+      );
+    });
     
     if (firstContent) {
-      return getPreview(firstContent.value.html);
+      return getPreview(getBlockHtml(firstContent));
+    }
+
+    const fallbackContent = blocks.find((item) => getBlockHtml(item).trim());
+    if (fallbackContent) {
+      return getPreview(getBlockHtml(fallbackContent));
     }
     
     return '';
