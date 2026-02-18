@@ -53,7 +53,7 @@
 </script>
 
 <div
-  class="result-card cursor-pointer transition-all duration-200 {isSelected ? 'result-card--selected' : ''}"
+  class="result-card cursor-pointer transition-all duration-200 {isSelected ? 'result-card--selected' : ''} {isCompact ? 'result-card--compact' : ''}"
   role="option"
   aria-selected={isSelected ? 'true' : 'false'}
   tabindex="0"
@@ -61,74 +61,105 @@
   on:click={handleClick}
   on:keydown={(event) => event.key === 'Enter' && handleClick()}
 >
-  <div class="flex justify-between items-start mb-2">
-    <div class="flex gap-2 items-center">
-      {#if showTags && showLevelBadge}
-        <div class="result-badge">{exercise.level}</div>
-      {/if}
-      {#if showTags && showDifficultyDots}
-        <div class="flex items-center gap-1">
-          {#each Array(5) as _, i}
-            <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-400' : 'bg-gray-200'}"></div>
-          {/each}
-        </div>
-      {/if}
-    </div>
-    <div class="flex items-center gap-2">
-      <button
-        type="button"
-        on:click|stopPropagation
-        aria-label="Ajouter à la liste"
-        class="bg-transparent border-none p-0 m-0"
-      >
-        <AddToListButton
-          {exercise}
-          size="small"
-          variant="icon"
-        />
-      </button>
-
-      {#if isSelected}
-        <div class="selection-indicator">
-          <svg class="w-4 h-4 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-        </div>
-      {/if}
-
-      <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
-
-      <button
-        type="button"
-        class="external-link-btn"
-        title="Ouvrir dans un nouvel onglet"
-        aria-label="Ouvrir dans un nouvel onglet"
-        on:click={openExternal}
-      >
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <div class="result-header">
-    <div>
-      <h3 class="result-title">
+  {#if isCompact}
+    <!-- Compact : titre + actions sur la même ligne, sans UUID -->
+    <div class="compact-row">
+      <h3 class="result-title compact-title">
         <MathRenderer content={exercise.title} inline={true} />
       </h3>
-      {#if showTags}
-        <div class="result-metadata">
-          {#if showModuleBadge}
-            <span class="result-badge">📖 {exercise.module}</span>
-          {/if}
-          {#if showChapterBadge}
-            <span class="result-badge">{exercise.chapter}</span>
-          {/if}
-        </div>
-      {/if}
+      <div class="compact-actions">
+        <button
+          type="button"
+          on:click|stopPropagation
+          aria-label="Ajouter à la liste"
+          class="bg-transparent border-none p-0 m-0"
+        >
+          <AddToListButton {exercise} size="small" variant="icon" />
+        </button>
+        {#if isSelected}
+          <div class="selection-indicator">
+            <svg class="w-4 h-4 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        {/if}
+        <button
+          type="button"
+          class="external-link-btn"
+          title="Ouvrir dans un nouvel onglet"
+          aria-label="Ouvrir dans un nouvel onglet"
+          on:click={openExternal}
+        >
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </button>
+      </div>
     </div>
-  </div>
+  {:else}
+    <!-- Detailed : badges + actions en haut, titre en dessous -->
+    <div class="flex justify-between items-start mb-2">
+      <div class="flex gap-2 items-center">
+        {#if showTags && showLevelBadge}
+          <div class="result-badge">{exercise.level}</div>
+        {/if}
+        {#if showTags && showDifficultyDots}
+          <div class="flex items-center gap-1">
+            {#each Array(5) as _, i}
+              <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-400' : 'bg-gray-200'}"></div>
+            {/each}
+          </div>
+        {/if}
+      </div>
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          on:click|stopPropagation
+          aria-label="Ajouter à la liste"
+          class="bg-transparent border-none p-0 m-0"
+        >
+          <AddToListButton {exercise} size="small" variant="icon" />
+        </button>
+        {#if isSelected}
+          <div class="selection-indicator">
+            <svg class="w-4 h-4 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        {/if}
+        <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
+        <button
+          type="button"
+          class="external-link-btn"
+          title="Ouvrir dans un nouvel onglet"
+          aria-label="Ouvrir dans un nouvel onglet"
+          on:click={openExternal}
+        >
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="result-header">
+      <div>
+        <h3 class="result-title">
+          <MathRenderer content={exercise.title} inline={true} />
+        </h3>
+        {#if showTags}
+          <div class="result-metadata">
+            {#if showModuleBadge}
+              <span class="result-badge">📖 {exercise.module}</span>
+            {/if}
+            {#if showChapterBadge}
+              <span class="result-badge">{exercise.chapter}</span>
+            {/if}
+          </div>
+        {/if}
+      </div>
+    </div>
+  {/if}
 
   {#if exercise.preview}
     <div class="result-preview mt-3">
@@ -193,6 +224,26 @@
     padding: 1.5rem;
     transition: box-shadow .2s;
     @apply border border-gray-200 bg-interface-bg-primary;
+  }
+  .result-card--compact {
+    padding: 0.75rem;
+  }
+  .compact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .compact-title {
+    flex: 1;
+    min-width: 0;
+    font-size: 1rem;
+  }
+  .compact-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
   }
   .result-card:hover { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06); }
   .result-card--selected {

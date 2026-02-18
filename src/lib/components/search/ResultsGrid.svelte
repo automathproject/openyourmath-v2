@@ -17,7 +17,7 @@
 </script>
 
 {#if results.length > 0}
-  <div class="results-grid" role="listbox" aria-label="Liste des résultats">
+  <div class="results-grid {cardMode === 'compact' ? 'results-grid--compact' : ''}" role="listbox" aria-label="Liste des résultats">
     {#each results as exercise (exercise.uuid)}
       <ResultCard
         {exercise}
@@ -39,5 +39,13 @@
 {/if}
 
 <style>
-  .results-grid { display: grid; gap: 1rem; }
+  .results-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .results-grid--compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.625rem;
+  }
 </style>
