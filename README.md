@@ -36,21 +36,28 @@ NODE_ENV=production node build
 ### Production (avec Docker)
 
 ```bash
+# 1) Mettre à jour la version dans package.json (champ "version")
+# Exemple: "2.3.2" -> "2.3.3"
+
 # Préparer les artéfacts locaux si vous reconstruisez l'image
 pnpm build:content:full
 
-# Construire l'image locale
-pnpm docker:build
+# 2) Construire + pousser l'image GHCR taggée avec package.json:version
+pnpm docker:release
 
-# Démarrer la stack (Caddy + app) en mode interactif
+# 3) Démarrer la stack (Caddy + app) en mode interactif
 pnpm docker:dev
 
-# Lancer en détaché (prod)
+# 4) Lancer en détaché (prod)
 pnpm docker:prod
 
 # Arrêt
 docker compose down
 ```
+
+Notes:
+- `pnpm docker:build` et `pnpm docker:push` existent aussi si vous voulez séparer les étapes.
+- Le tag Docker et la version affichée dans l'UI sont pilotés par `package.json` (`version`), sans variable `VERSION=...` à saisir manuellement.
 
 ## Structure
 
