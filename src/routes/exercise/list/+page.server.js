@@ -5,12 +5,14 @@ import { getExerciseByUuid } from '$lib/db/queries.js';
 export async function load({ url }) {
   try {
     const listParam = url.searchParams.get('list');
+    const titleParam = url.searchParams.get('title') || '';
     
     // Si pas de paramètre list, retourner une liste vide
     if (!listParam || listParam.trim() === '') {
       return {
         exercises: [],
         uuids: [],
+        title: titleParam,
         meta: {
           total: 0,
           loaded: 0,
@@ -103,6 +105,7 @@ export async function load({ url }) {
     return {
       exercises: successfulExercises,
       uuids: limitedUuids,
+      title: titleParam,
       meta
     };
     

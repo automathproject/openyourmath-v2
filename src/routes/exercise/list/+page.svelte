@@ -23,6 +23,11 @@
   let showSolution = false;
   let shareUrl = '';
   let isEditMode = false;
+
+  // Titre personnalisé
+  let listTitle = data.title || '';
+  let isEditingTitle = false;
+  let titleDraft = '';
   
   // NOUVEAU : États pour la navigation mobile et contrôles
   let isMobileNavOpen = false;
@@ -91,7 +96,7 @@
       selectedExerciseIndex.set(0);
     }
     
-    shareUrl = listUtils.getShareableUrl(window.location.origin);
+    shareUrl = buildShareUrl();
     updateUuidInput();
   });
   
@@ -108,7 +113,7 @@
 
   // Réactivité pour mettre à jour l'URL de partage et le champ UUID
   $: if ($exerciseList) {
-    shareUrl = listUtils.getShareableUrl(typeof window !== 'undefined' ? window.location.origin : '');
+    shareUrl = buildShareUrl();
     updateUuidInput();
   }
   
@@ -281,9 +286,51 @@
     goto('/exercise/list');
   }
   
+  function buildUrl() {
+    const base = listActions.getCurrentListUrl();
+    if (!listTitle) return base;
+    const separator = base.includes('?') ? '&' : '?';
+    return `${base}${separator}title=${encodeURIComponent(listTitle)}`;
+  }
+
+  function buildShareUrl() {
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    const base = listUtils.getShareableUrl(origin);
+    if (!listTitle) return base;
+    const separator = base.includes('?') ? '&' : '?';
+    return `${base}${separator}title=${encodeURIComponent(listTitle)}`;
+  }
+
   function updateUrl() {
-    const newUrl = listActions.getCurrentListUrl();
-    goto(newUrl, { replaceState: true });
+    goto(buildUrl(), { replaceState: true });
+  }
+
+  // Focus automatique sur l'input titre
+  function focusInput(node) {
+    node.focus();
+  }
+
+  // Édition du titre
+  function startEditTitle() {
+    titleDraft = listTitle;
+    isEditingTitle = true;
+  }
+
+  function saveTitle() {
+    listTitle = titleDraft.trim();
+    isEditingTitle = false;
+    updateUrl();
+    shareUrl = buildShareUrl();
+  }
+
+  function cancelEditTitle() {
+    isEditingTitle = false;
+    titleDraft = listTitle;
+  }
+
+  function handleTitleKeydown(e) {
+    if (e.key === 'Enter') { e.preventDefault(); saveTitle(); }
+    if (e.key === 'Escape') { e.preventDefault(); cancelEditTitle(); }
   }
   
   // Partage de la liste
@@ -355,7 +402,7 @@
 </script>
 
 <svelte:head>
-  <title>Liste d'exercices ({$exerciseList.length}) - OpenYourMath</title>
+  <title>{listTitle || "Liste d'exercices"} ({$exerciseList.length}) - OpenYourMath</title>
   <meta name="description" content="Liste personnalisée de {$exerciseList.length} exercices de mathématiques" />
 </svelte:head>
 
@@ -367,9 +414,23 @@
     <div class="list-header-content">
       <div class="list-header-info">
         <h1 class="list-title">
-          Liste d'exercices
-          {#if $hasExercises}
-            <span class="list-count">({$exerciseList.length})</span>
+          {#if isEditingTitle}
+            <input
+              class="title-edit-input"
+              type="text"
+              bind:value={titleDraft}
+              on:keydown={handleTitleKeydown}
+              on:blur={saveTitle}
+              placeholder="Titre de la liste..."
+              use:focusInput
+            />
+          {:else}
+            <button class="title-text" on:click={startEditTitle} title="Cliquer pour modifier le titre">
+              {listTitle || "Liste d'exercices"}
+            </button>
+            {#if $hasExercises}
+              <span class="list-count">({$exerciseList.length})</span>
+            {/if}
           {/if}
         </h1>
         
@@ -879,6 +940,29 @@
   }
 
   .list-count { font-weight: 500; @apply text-gray-500; }
+
+  .title-text {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    border-bottom: 2px dashed transparent;
+    transition: border-color 0.15s;
+    &:hover { border-bottom-color: currentColor; }
+  }
+
+  .title-edit-input {
+    font-size: inherit;
+    font-weight: inherit;
+    border: none;
+    border-bottom: 2px solid;
+    background: transparent;
+    outline: none;
+    min-width: 12rem;
+    @apply text-gray-900 border-blue-500;
+  }
 
   .list-warning {
     font-size: 0.875rem;
