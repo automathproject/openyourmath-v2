@@ -32,7 +32,7 @@
   $: showChapterBadge = Boolean(exercise?.chapter) && String(activeFilters?.chapter || '') !== String(exercise?.chapter || '');
   $: showDifficultyDots = Boolean(exercise?.difficulty) && String(activeFilters?.difficulty || '') !== String(exercise?.difficulty || '');
   $: showTags = !isCompact && (showLevelBadge || showModuleBadge || showChapterBadge || showDifficultyDots);
-  $: snippetLines = isCompact ? 2 : 4;
+  $: snippetLines = isCompact ? 3 : 6;
 
   $: if (isSelected && cardEl) {
     tick().then(() => {
@@ -167,6 +167,10 @@
     </div>
   {/if}
 
+  {#if isCompact}
+    <div class="compact-uuid">{exercise.uuid.slice(0, 8)}</div>
+  {/if}
+
   {#if showFooter}
     <div class="result-footer">
       {#if hasFooterInfo}
@@ -244,6 +248,15 @@
     align-items: center;
     gap: 0.25rem;
     flex-shrink: 0;
+  }
+  .compact-uuid {
+    margin-top: 0.375rem;
+    text-align: right;
+    font-size: 0.65rem;
+    font-family: monospace;
+    letter-spacing: 0.03em;
+    @apply text-gray-400;
+    user-select: all;
   }
   .result-card:hover { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06); }
   .result-card--selected {

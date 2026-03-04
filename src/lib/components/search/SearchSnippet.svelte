@@ -9,12 +9,10 @@
   <div class="snippet-content">
     <MathRenderer content={content} />
   </div>
-  <div class="snippet-fade" aria-hidden="true"></div>
 </div>
 
 <style>
   .snippet {
-    position: relative;
     overflow: hidden;
   }
   .snippet-content {
@@ -27,14 +25,5 @@
   }
   .snippet-content :global(p) {
     margin: 0;
-  }
-  .snippet-fade {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1.35rem;
-    pointer-events: none;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
   }
 </style>
