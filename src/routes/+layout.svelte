@@ -14,6 +14,7 @@
   let mobileMenuOpen = false;
   let headerScrolled = false;
   const APP_VERSION = env.PUBLIC_APP_VERSION || 'dev';
+  const currentYear = new Date().getFullYear();
   
   // Réactivité pour détecter si on est sur la page de liste
   $: isListPage = $page.route.id === '/exercise/list';
@@ -190,53 +191,57 @@
   <footer class="footer print-hidden">
     <div class="footer-content">
       <div class="footer-grid">
-        <!-- Col 1 : Brand / Pitch -->
-        <div class="footer-col">
+
+        <!-- Zone 1 : Identité -->
+        <div class="footer-identity">
           <a href="/" class="footer-brand">
             <span class="brand-dot" aria-hidden="true"></span>
-            <span class="footer-brand-text">OpenYourMath</span>
+            <span class="footer-brand-name">OpenYourMath</span>
           </a>
-          <p class="footer-subtext">
-            Plateforme pédagogique libre — exercices de mathématiques, sans collecte de données personnelles.
+          <p class="footer-tagline">
+            Exercices de maths libres, sans collecte de données personnelles.
           </p>
           <p class="footer-license">
-            Contenus : <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> •
-            Dépôt Git : <a href="https://forge.apps.education.fr/automath/openyourmath-v2">Forge Edu</a>
+            Contenus :
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="footer-link-subtle" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
           </p>
         </div>
 
-        <!-- Col 2 : Liens -->
-        <nav class="footer-col footer-links" aria-label="Liens">
-          <a href="/about">À propos</a>
-          <a href="/mentions-legales">Mentions légales</a>
-          <a href="mailto:maxime.nguyen@st-cyr.terre-net.defense.gouv.fr">Contact</a>
+        <!-- Zone 2 : Navigation secondaire -->
+        <nav class="footer-nav" aria-label="Liens du pied de page">
+          <p class="footer-nav-heading" aria-hidden="true">Navigation</p>
+          <a href="/about" class="footer-nav-link">À propos</a>
+          <a href="/mentions-legales" class="footer-nav-link">Mentions légales</a>
+          <a href="mailto:maxime.nguyen@st-cyr.terre-net.defense.gouv.fr" class="footer-nav-link">Contact</a>
         </nav>
 
-        <!-- Col 3 : Statut / Hébergement -->
-        <div class="footer-col">
-          <p class="footer-meta">
-            Hébergement OVH (FR) • HTTPS via Caddy
-          </p>
-          <p class="footer-meta">
-            <span id="oym-year"></span> • v{APP_VERSION}
-          </p>
+        <!-- Zone 3 : CTA + Infos techniques -->
+        <div class="footer-actions-col">
+          <a
+            href="https://forge.apps.education.fr/automath/openyourmath-v2"
+            class="footer-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="footer-cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+            Contribuer au projet
+          </a>
+          <div class="footer-tech">
+            <p>Hébergement OVH (FR) · HTTPS Caddy</p>
+            <p>Version {APP_VERSION}</p>
+          </div>
         </div>
+
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-text">
-          © <span id="oym-year-bottom"></span> OpenYourMath v{APP_VERSION} 2025 — Partagez, apprenez.
+        <p class="footer-copyright">
+          © {currentYear} OpenYourMath — Partagez, apprenez.
         </p>
       </div>
     </div>
-    <script>
-      // Année dynamique (SSR-safe : se réécrit côté client)
-      const y = new Date().getFullYear();
-      const a = document.getElementById('oym-year');
-      const b = document.getElementById('oym-year-bottom');
-      if (a) a.textContent = y;
-      if (b) b.textContent = y;
-    </script>
   </footer>
 
 </div>
@@ -507,95 +512,182 @@
     margin: 0 auto;
     padding: 0;
   }
+  /* ==============================================
+     FOOTER
+     ============================================== */
+
   .footer {
-    @apply bg-interface-bg-primary border-t border-gray-200;
+    @apply bg-interface-bg-secondary border-t border-gray-200;
   }
+
   .footer-content {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem 1.5rem;
   }
 
   /* Grille responsive */
   .footer-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 2rem;
   }
+
   @media (min-width: 768px) {
     .footer-grid {
-      grid-template-columns: 1.2fr 0.8fr 1fr;
-      gap: 2rem;
+      grid-template-columns: 1.6fr 1fr 1.2fr;
+      gap: 2.5rem;
+      align-items: start;
     }
   }
 
-  .footer-col {
-    @apply bg-white/60 dark:bg-gray-900/60 rounded-xl shadow-card p-4;
+  /* Zone 1 : Identité */
+  .footer-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
   }
 
-  /* Brand */
   .footer-brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.55rem;
+    gap: 0.5rem;
     text-decoration: none;
-    @apply text-interface-text-primary;
-  }
-  .brand-dot {
-    width: 0.9rem;
-    height: 0.9rem;
-    border-radius: 9999px;
-    @apply bg-brand-500;
-  }
-  .footer-brand-text {
-    font-weight: 700;
-    font-size: 1.05rem;
+    width: fit-content;
+    border-radius: 3px;
+    transition: color 0.2s;
+    @apply text-interface-text-primary hover:text-brand-primary;
   }
 
-  .footer-subtext {
-    margin: 0.35rem 0 0;
-    line-height: 1.5;
+  .footer-brand:focus-visible {
+    outline: 2px solid theme('colors.brand.primary');
+    outline-offset: 3px;
+  }
+
+  .brand-dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+    @apply bg-brand-500;
+  }
+
+  .footer-brand-name {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .footer-tagline {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.55;
     @apply text-interface-text-secondary;
   }
 
-  .footer-license a {
-    text-decoration: underline;
-    @apply text-brand-700 hover:text-brand-800;
+  .footer-license {
+    margin: 0;
+    font-size: 0.75rem;
+    @apply text-gray-400;
   }
 
-  /* Liens */
-  .footer-links {
-    display: grid;
-    gap: 0.35rem;
-    align-content: start;
+  .footer-link-subtle {
+    @apply text-gray-400 hover:text-gray-600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    border-radius: 2px;
+    transition: color 0.2s;
   }
-  .footer-links a {
-    text-decoration: none;
+
+  .footer-link-subtle:focus-visible {
+    outline: 2px solid theme('colors.brand.primary');
+    outline-offset: 2px;
+  }
+
+  /* Zone 2 : Navigation secondaire */
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .footer-nav-heading {
+    margin: 0 0 0.2rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    @apply text-gray-400;
+  }
+
+  .footer-nav-link {
+    font-size: 0.875rem;
     font-weight: 500;
+    text-decoration: none;
+    width: fit-content;
+    border-radius: 3px;
+    transition: color 0.2s;
     @apply text-interface-text-secondary hover:text-interface-text-primary;
   }
 
-  /* Meta */
-  .footer-meta {
-    margin: 0.2rem 0;
-    @apply text-interface-text-secondary;
+  .footer-nav-link:focus-visible {
+    outline: 2px solid theme('colors.brand.primary');
+    outline-offset: 3px;
+  }
+
+  /* Zone 3 : CTA + Technique */
+  .footer-actions-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .footer-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    @apply text-brand-700 bg-brand-50 hover:bg-brand-100 border border-brand-200;
+  }
+
+  .footer-cta:focus-visible {
+    outline: 2px solid theme('colors.brand.primary');
+    outline-offset: 3px;
+  }
+
+  .footer-cta-icon {
+    width: 0.95rem;
+    height: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  .footer-tech {
+    font-size: 0.7rem;
+    line-height: 1.65;
+    @apply text-gray-400;
+  }
+
+  .footer-tech p {
+    margin: 0;
   }
 
   /* Bottom bar */
   .footer-bottom {
-    margin-top: 1.25rem;
-    border-top: 1px solid rgba(0,0,0,0.06);
+    margin-top: 2rem;
     padding-top: 1rem;
-  }
-  .footer-text {
-    text-align: center;
-    margin: 0;
-    @apply text-interface-text-secondary;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
   }
 
-  /* Dark mode (si tu actives darkMode:'class' dans Tailwind) */
-  :global(html.dark) .footer-col {
-    @apply shadow-card;
+  .footer-copyright {
+    text-align: center;
+    font-size: 0.75rem;
+    margin: 0;
+    @apply text-gray-400;
   }
 
   
