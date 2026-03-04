@@ -1,6 +1,6 @@
 <!-- src/routes/exercise/list/+page.svelte -->
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
@@ -28,6 +28,16 @@
   let isMobileNavOpen = false;
   let showUuidControl = false; // Nouveau : contrôle de l'affichage UUID
   let isMobile = false;
+
+  // Mode présentation
+  let isPresentationMode = false;
+
+  function togglePresentationMode() {
+    isPresentationMode = !isPresentationMode;
+    if (isPresentationMode) {
+      isEditMode = false;
+    }
+  }
   
   // État pour le champ UUID
   let uuidInputValue = '';
@@ -85,6 +95,17 @@
     updateUuidInput();
   });
   
+  // Synchroniser la classe body avec le mode présentation
+  $: if (typeof document !== 'undefined') {
+    document.body.classList.toggle('presentation-mode', isPresentationMode);
+  }
+
+  onDestroy(() => {
+    if (typeof document !== 'undefined') {
+      document.body.classList.remove('presentation-mode');
+    }
+  });
+
   // Réactivité pour mettre à jour l'URL de partage et le champ UUID
   $: if ($exerciseList) {
     shareUrl = listUtils.getShareableUrl(typeof window !== 'undefined' ? window.location.origin : '');
@@ -281,6 +302,29 @@
   
   // Navigation clavier
   function handleKeydown(event) {
+    const isTyping = event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA';
+
+    // Raccourcis F / P pour basculer le mode présentation
+    if (!isTyping && (event.key.toLowerCase() === 'f' || event.key.toLowerCase() === 'p')) {
+      event.preventDefault();
+      togglePresentationMode();
+      return;
+    }
+
+    if (isPresentationMode) {
+      if (event.key === 'ArrowLeft' && $currentPosition.hasPrevious) {
+        event.preventDefault();
+        listActions.previousExercise();
+      } else if (event.key === 'ArrowRight' && $currentPosition.hasNext) {
+        event.preventDefault();
+        listActions.nextExercise();
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
+        isPresentationMode = false;
+      }
+      return;
+    }
+
     if (event.key === 'ArrowUp' && $currentPosition.hasPrevious) {
       event.preventDefault();
       listActions.previousExercise();
@@ -317,7 +361,7 @@
 
 <svelte:window on:keydown={handleKeydown} on:resize={checkMobile} />
 
-<div class="exercise-list-page">
+<div class="exercise-list-page" class:presentation-mode={isPresentationMode}>
   <!-- Header de la page -->
   <header class="list-header">
     <div class="list-header-content">
@@ -421,7 +465,20 @@
         
         {#if $hasExercises}
           <div class="list-action-buttons">
-            <button 
+            <button
+              on:click={togglePresentationMode}
+              class="list-action-btn list-action-btn--presentation"
+              class:list-action-btn--presentation-active={isPresentationMode}
+              aria-label={isPresentationMode ? 'Quitter le mode présentation' : 'Mode présentation'}
+              title={isPresentationMode ? 'Quitter le mode présentation (P)' : 'Mode présentation (P)'}
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span class="list-action-btn__label">{isPresentationMode ? 'Quitter' : 'Présentation'}</span>
+            </button>
+
+            <button
               on:click={shareList}
               class="list-action-btn list-action-btn--primary"
               aria-label="Partager la liste d'exercices"
@@ -559,87 +616,109 @@
     <!-- Interface deux colonnes -->
     <div class="list-container">
       <!-- Colonne de navigation - MODIFIÉE pour le responsive -->
-      <aside class="list-navigation" class:list-navigation--mobile-open={isMobileNavOpen}>
-        <div class="nav-header">
-          <h2 class="nav-title">Exercices</h2>
-          <div class="nav-header-actions">
-            {#if $currentPosition.total > 0}
-              <span class="nav-counter">
-                {$currentPosition.current} / {$currentPosition.total}
-              </span>
-            {/if}
-            
-            <!-- Bouton fermer sur mobile -->
-            {#if isMobile}
-              <button 
-                class="mobile-close-btn"
-                on:click={closeMobileNav}
-                aria-label="Fermer la navigation"
+      <aside class="list-navigation"
+        class:list-navigation--mobile-open={isMobileNavOpen}
+        class:list-navigation--rail={isPresentationMode && !isMobile}
+      >
+        {#if isPresentationMode && !isMobile}
+          <!-- Rail d'icônes numérotées en mode présentation -->
+          <nav class="exercise-rail" aria-label="Navigation exercices">
+            {#each $exerciseList as exercise, i}
+              <button
+                class="rail-item"
+                class:rail-item--active={i === $selectedExerciseIndex}
+                on:click={() => listActions.selectExercise(i)}
+                title={exercise.title || `Exercice ${i + 1}`}
+                aria-label={`Exercice ${i + 1}${exercise.title ? ' : ' + exercise.title : ''}`}
+                aria-current={i === $selectedExerciseIndex ? 'true' : undefined}
               >
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                {i + 1}
+              </button>
+            {/each}
+          </nav>
+        {:else}
+          <!-- Navigation complète (mode normal) -->
+          <div class="nav-header">
+            <h2 class="nav-title">Exercices</h2>
+            <div class="nav-header-actions">
+              {#if $currentPosition.total > 0}
+                <span class="nav-counter">
+                  {$currentPosition.current} / {$currentPosition.total}
+                </span>
+              {/if}
+
+              <!-- Bouton fermer sur mobile -->
+              {#if isMobile}
+                <button
+                  class="mobile-close-btn"
+                  on:click={closeMobileNav}
+                  aria-label="Fermer la navigation"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              {/if}
+
+              <!-- Bouton d'édition -->
+              <button
+                on:click={toggleEditMode}
+                class="edit-toggle-btn"
+                class:edit-toggle-btn--active={isEditMode}
+                title={isEditMode ? 'Quitter le mode édition' : 'Éditer la liste'}
+              >
+                {#if isEditMode}
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                {:else}
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                {/if}
+              </button>
+            </div>
+          </div>
+
+          {#if !isEditMode}
+            <div class="nav-controls">
+              <button
+                on:click={listActions.previousExercise}
+                disabled={!$currentPosition.hasPrevious}
+                class="nav-btn nav-btn--prev"
+                aria-label="Exercice précédent"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                 </svg>
               </button>
-            {/if}
-            
-            <!-- Bouton d'édition -->
-            <button 
-              on:click={toggleEditMode}
-              class="edit-toggle-btn"
-              class:edit-toggle-btn--active={isEditMode}
-              title={isEditMode ? 'Quitter le mode édition' : 'Éditer la liste'}
-            >
-              {#if isEditMode}
+
+              <button
+                on:click={listActions.nextExercise}
+                disabled={!$currentPosition.hasNext}
+                class="nav-btn nav-btn--next"
+                aria-label="Exercice suivant"
+              >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
-              {:else}
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                </svg>
-              {/if}
-            </button>
-          </div>
-        </div>
-        
-        {#if !isEditMode}
-          <div class="nav-controls">
-            <button 
-              on:click={listActions.previousExercise}
-              disabled={!$currentPosition.hasPrevious}
-              class="nav-btn nav-btn--prev"
-              aria-label="Exercice précédent"
-            >
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-              </svg>
-            </button>
-            
-            <button 
-              on:click={listActions.nextExercise}
-              disabled={!$currentPosition.hasNext}
-              class="nav-btn nav-btn--next"
-              aria-label="Exercice suivant"
-            >
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+              </button>
+            </div>
+          {/if}
+
+          <!-- Composant éditeur -->
+          <div class="list-editor-scroll">
+            <ExerciseListEditor
+              exercises={$exerciseList}
+              selectedIndex={$selectedExerciseIndex}
+              {isEditMode}
+              on:reorder={handleReorder}
+              on:deleteMultiple={handleDeleteMultiple}
+              on:select={handleSelectFromEditor}
+              on:remove={handleRemoveFromEditor}
+            />
           </div>
         {/if}
-        
-        <!-- Composant éditeur -->
-        <div class="list-editor-scroll">
-          <ExerciseListEditor 
-            exercises={$exerciseList}
-            selectedIndex={$selectedExerciseIndex}
-            {isEditMode}
-            on:reorder={handleReorder}
-            on:deleteMultiple={handleDeleteMultiple}
-            on:select={handleSelectFromEditor}
-            on:remove={handleRemoveFromEditor}
-          />
-        </div>
       </aside>
       
       <!-- NOUVEAU : Overlay pour mobile (navigation ET UUID control) -->
@@ -668,7 +747,7 @@
             </div>
             <h3 class="error-title">Erreur de chargement</h3>
             <p class="error-message">{$exerciseError}</p>
-            <button 
+            <button
               on:click={() => listActions.selectExercise($selectedExerciseIndex)}
               class="error-retry-btn"
             >
@@ -676,8 +755,8 @@
             </button>
           </div>
         {:else if $selectedExercise}
-          <article class="exercise-content-wrapper">
-            <ExerciseContent 
+          <article class="exercise-content-wrapper" class:exercise-content-wrapper--presentation={isPresentationMode}>
+            <ExerciseContent
               exercise={$selectedExercise}
               position={$currentPosition}
               variant="full"
@@ -698,6 +777,35 @@
           </div>
         {/if}
       </main>
+
+      <!-- Mode présentation : grandes flèches tactiles et indicateur de position -->
+      {#if isPresentationMode && !isMobile && $hasExercises}
+        <button
+          class="pres-arrow pres-arrow--prev"
+          on:click={listActions.previousExercise}
+          disabled={!$currentPosition.hasPrevious}
+          aria-label="Exercice précédent"
+          title="Exercice précédent (←)"
+        >
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          class="pres-arrow pres-arrow--next"
+          on:click={listActions.nextExercise}
+          disabled={!$currentPosition.hasNext}
+          aria-label="Exercice suivant"
+          title="Exercice suivant (→)"
+        >
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        <div class="pres-indicator" aria-live="polite">
+          {$currentPosition.current} / {$currentPosition.total}
+        </div>
+      {/if}
       
       <!-- Barre de navigation mobile fixe en bas -->
       {#if isMobile && $hasExercises}
@@ -1393,11 +1501,176 @@
     .list-header-content {
       flex-wrap: wrap;
     }
-    
+
     .list-actions {
       min-width: 100%;
       justify-content: flex-end;
       margin-top: 0.5rem;
     }
+  }
+
+  /* ── Bouton "Mode présentation" dans le header ─────────────────────────── */
+  .list-action-btn--presentation {
+    @apply bg-slate-100 text-slate-600 border border-slate-300;
+  }
+  .list-action-btn--presentation:hover {
+    @apply bg-indigo-50 text-indigo-700 border-indigo-400;
+  }
+  .list-action-btn--presentation-active {
+    @apply bg-indigo-600 text-white border-indigo-600;
+  }
+  .list-action-btn--presentation-active:hover {
+    @apply bg-indigo-700 border-indigo-700;
+  }
+
+  /* ── Rail de navigation (sidebar réduite) ──────────────────────────────── */
+  .list-navigation--rail {
+    flex: 0 0 64px !important;
+    max-width: 64px !important;
+    min-width: 64px !important;
+    overflow: hidden;
+    padding: 0.5rem 0;
+  }
+
+  .exercise-rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0;
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  .rail-item {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+    @apply border-gray-200 bg-interface-bg-primary text-gray-500;
+  }
+
+  .rail-item:hover {
+    @apply border-indigo-400 bg-indigo-50 text-indigo-700;
+  }
+
+  .rail-item--active {
+    @apply border-indigo-600 bg-indigo-600 text-white;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
+  }
+
+  /* ── Grandes flèches tactiles (position fixed, centrées verticalement) ── */
+  .pres-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 45;
+    width: 3rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.625rem;
+    border: 1px solid;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    @apply bg-white/80 border-gray-200 text-gray-500;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .pres-arrow svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .pres-arrow:hover:not(:disabled) {
+    @apply bg-indigo-50 border-indigo-400 text-indigo-700;
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.2);
+  }
+
+  .pres-arrow:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+
+  .pres-arrow--prev {
+    left: 72px; /* laisse la place au rail (64px) + 8px */
+  }
+
+  .pres-arrow--next {
+    right: 0.75rem;
+  }
+
+  /* ── Indicateur de position discret ─────────────────────────────────────── */
+  .pres-indicator {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 45;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.25rem 0.625rem;
+    border-radius: 1rem;
+    @apply bg-black/50 text-white;
+    backdrop-filter: blur(4px);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── Typographie agrandie en mode présentation ───────────────────────────── */
+  .exercise-content-wrapper--presentation {
+    font-size: 1.125rem; /* 18px base */
+    line-height: 1.75;
+    padding: 2rem 3rem;
+  }
+
+  /* Titres et paragraphes dans le composant enfant */
+  .exercise-content-wrapper--presentation :global(h1) {
+    font-size: 2rem !important;
+    line-height: 1.25 !important;
+  }
+  .exercise-content-wrapper--presentation :global(h2) {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+  }
+  .exercise-content-wrapper--presentation :global(h3) {
+    font-size: 1.375rem !important;
+  }
+  .exercise-content-wrapper--presentation :global(p),
+  .exercise-content-wrapper--presentation :global(li) {
+    font-size: 1.125rem !important;
+    line-height: 1.75 !important;
+  }
+
+  /* ── Header et footer global masqués en mode présentation ──────────────── */
+  :global(body.presentation-mode .header-container) {
+    display: none !important;
+  }
+  :global(body.presentation-mode .footer) {
+    display: none !important;
+  }
+  :global(body.presentation-mode .main-content) {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Métadonnées (auteur, date, tags) masquées en mode présentation */
+  /* Les .question-number-badge sont volontairement préservés */
+  .exercise-content-wrapper--presentation :global(.exercise-meta),
+  .exercise-content-wrapper--presentation :global(.exercise-tags),
+  .exercise-content-wrapper--presentation :global(.exercise-author),
+  .exercise-content-wrapper--presentation :global(.exercise-footer),
+  .exercise-content-wrapper--presentation :global(.date-entry),
+  .exercise-content-wrapper--presentation :global([class*="meta"]),
+  .exercise-content-wrapper--presentation :global([class*="tag"]) {
+    display: none !important;
   }
 </style>
