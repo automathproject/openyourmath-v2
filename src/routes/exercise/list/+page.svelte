@@ -871,7 +871,7 @@
       <!-- Barre de navigation mobile fixe en bas -->
       {#if isMobile && $hasExercises}
         <div class="mobile-nav-bar">
-          <button 
+          <button
             on:click={listActions.previousExercise}
             disabled={!$currentPosition.hasPrevious}
             class="mobile-nav-btn mobile-nav-btn--prev"
@@ -881,12 +881,19 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          
+
           <div class="mobile-nav-info">
+            {#if isPresentationMode}
+              <button
+                on:click={togglePresentationMode}
+                class="mobile-pres-exit-btn"
+                aria-label="Quitter le mode présentation"
+              >Quitter</button>
+            {/if}
             <span class="mobile-nav-counter">{$currentPosition.current} / {$currentPosition.total}</span>
           </div>
-          
-          <button 
+
+          <button
             on:click={listActions.nextExercise}
             disabled={!$currentPosition.hasNext}
             class="mobile-nav-btn mobile-nav-btn--next"
@@ -1429,6 +1436,16 @@
     @apply text-gray-700;
   }
 
+  .mobile-pres-exit-btn {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.625rem;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    @apply bg-indigo-600 text-white;
+  }
+
   /* Modifications de la navigation pour le mobile */
   .list-navigation {
     position: relative;
@@ -1513,7 +1530,7 @@
       align-items: stretch;
       gap: 0.75rem;
     }
-    
+
     .list-actions {
       justify-content: center;
       flex-wrap: wrap;
@@ -1577,6 +1594,59 @@
       .list-action-btn {
         padding: 0.5rem;
       }
+    }
+
+    /* ── Mode présentation sur mobile : pleine page ── */
+    .exercise-list-page.presentation-mode .list-header {
+      display: none;
+    }
+
+    .exercise-content-wrapper--presentation {
+      padding: 0.75rem 0.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      overflow: hidden;
+    }
+
+    .exercise-content-wrapper--presentation :global(h1) { font-size: 1.5rem !important; }
+    .exercise-content-wrapper--presentation :global(h2) { font-size: 1.25rem !important; }
+    .exercise-content-wrapper--presentation :global(h3) { font-size: 1.125rem !important; }
+    .exercise-content-wrapper--presentation :global(p),
+    .exercise-content-wrapper--presentation :global(li) {
+      font-size: 1rem !important;
+      line-height: 1.6 !important;
+    }
+
+    /* Compacter le header d'exercice sur mobile en présentation */
+    .exercise-content-wrapper--presentation :global(.exercise-header) {
+      padding: 0.5rem 0.75rem !important;
+      border-radius: 0.5rem !important;
+    }
+    .exercise-content-wrapper--presentation :global(.exercise-title) {
+      font-size: 1.125rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 0.25rem !important;
+      margin-right: 0 !important;
+      line-height: 1.3 !important;
+    }
+    .exercise-content-wrapper--presentation :global(.title-right) {
+      display: none;
+    }
+    .exercise-content-wrapper--presentation :global(.exercise-actions) {
+      gap: 0.375rem !important;
+      margin-top: 0.375rem !important;
+    }
+    .exercise-content-wrapper--presentation :global(.action-button) {
+      font-size: 0.75rem !important;
+      padding: 0.25rem 0.625rem !important;
+    }
+    .exercise-content-wrapper--presentation :global(.exercise-metadata) {
+      gap: 0.25rem !important;
+      margin-top: 0.25rem !important;
+    }
+    .exercise-content-wrapper--presentation :global(.exercise-badge) {
+      font-size: 0.7rem !important;
+      padding: 0.1rem 0.375rem !important;
     }
   }
 
@@ -1713,7 +1783,12 @@
   .exercise-content-wrapper--presentation {
     font-size: 1.125rem; /* 18px base */
     line-height: 1.75;
-    padding: 2rem 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .exercise-content-wrapper--presentation {
+      padding: 2rem 3rem;
+    }
   }
 
   /* Titres et paragraphes dans le composant enfant */
