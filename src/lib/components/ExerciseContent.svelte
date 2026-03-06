@@ -15,29 +15,33 @@
   // État local pour contrôler l'affichage individuel des solutions et indications
   let solutionStates = {};
   let hintStates = {};
-  
+  // Masquage individuel explicite (permet de cacher même si le global est actif)
+  let hiddenHintStates = {};
+  let hiddenSolutionStates = {};
+
   // Variables pour tracker les états globaux précédents
   let previousShowSolution = showSolution;
   let previousShowHint = showHint;
-  
+
   // Réactivité pour détecter les changements d'états globaux
   $: if (showSolution !== previousShowSolution) {
-    // Synchroniser seulement lors d'un changement global
+    hiddenSolutionStates = {};
     Object.keys(solutionStates).forEach(key => {
       solutionStates[key] = showSolution;
     });
     solutionStates = { ...solutionStates };
     previousShowSolution = showSolution;
   }
-  
+
   $: if (showHint !== previousShowHint) {
-    // Synchroniser seulement lors d'un changement global
+    hiddenHintStates = {};
     Object.keys(hintStates).forEach(key => {
       hintStates[key] = showHint;
     });
     hintStates = { ...hintStates };
     previousShowHint = showHint;
   }
+
   
   // Fonction pour traiter un bloc de contenu
   function processContentBlock(block) {
@@ -150,9 +154,11 @@
         const index = group.questionIndex;
         if (group.solutions.length > 0 && !(index in solutionStates)) {
           solutionStates[index] = showSolution || false;
+          hiddenSolutionStates[index] = false;
         }
         if (group.hints.length > 0 && !(index in hintStates)) {
           hintStates[index] = showHint || false;
+          hiddenHintStates[index] = false;
         }
       }
     });
@@ -160,13 +166,39 @@
   
   // Fonctions pour basculer l'affichage individuel
   function toggleSolution(index) {
-    solutionStates[index] = !solutionStates[index];
-    solutionStates = { ...solutionStates };
+    const visible = (solutionStates[index] || showSolution) && !hiddenSolutionStates[index];
+    if (visible) {
+      if (showSolution) {
+        hiddenSolutionStates[index] = true;
+        hiddenSolutionStates = { ...hiddenSolutionStates };
+      } else {
+        solutionStates[index] = false;
+        solutionStates = { ...solutionStates };
+      }
+    } else {
+      hiddenSolutionStates[index] = false;
+      solutionStates[index] = true;
+      hiddenSolutionStates = { ...hiddenSolutionStates };
+      solutionStates = { ...solutionStates };
+    }
   }
-  
+
   function toggleHint(index) {
-    hintStates[index] = !hintStates[index];
-    hintStates = { ...hintStates };
+    const visible = (hintStates[index] || showHint) && !hiddenHintStates[index];
+    if (visible) {
+      if (showHint) {
+        hiddenHintStates[index] = true;
+        hiddenHintStates = { ...hiddenHintStates };
+      } else {
+        hintStates[index] = false;
+        hintStates = { ...hintStates };
+      }
+    } else {
+      hiddenHintStates[index] = false;
+      hintStates[index] = true;
+      hiddenHintStates = { ...hiddenHintStates };
+      hintStates = { ...hintStates };
+    }
   }
 </script>
 
@@ -253,10 +285,10 @@
                 {#if contentBlock.hints.length > 0}
                   <button 
                     class="question-action-btn question-action-btn--hint"
-                    class:question-action-btn--active={hintStates[contentBlock.questionIndex] || showHint}
+                    class:question-action-btn--active={(hintStates[contentBlock.questionIndex] || showHint) && !hiddenHintStates[contentBlock.questionIndex]}
                     class:question-action-btn--preview={isPreview}
                     on:click={() => toggleHint(contentBlock.questionIndex)}
-                    title={(hintStates[contentBlock.questionIndex] || showHint) ? 'Masquer l\'indication' : 'Voir l\'indication'}
+                    title={(hintStates[contentBlock.questionIndex] || showHint) && !hiddenHintStates[contentBlock.questionIndex] ? 'Masquer l\'indication' : 'Voir l\'indication'}
                   >
                     {#if isPreview}
                       Ind.
@@ -268,13 +300,13 @@
                 {#if contentBlock.solutions.length > 0}
                   <button 
                     class="question-action-btn question-action-btn--solution"
-                    class:question-action-btn--active={solutionStates[contentBlock.questionIndex] || showSolution}
+                    class:question-action-btn--active={(solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex]}
                     class:question-action-btn--preview={isPreview}
                     on:click={() => toggleSolution(contentBlock.questionIndex)}
-                    title={(solutionStates[contentBlock.questionIndex] || showSolution) ? 'Masquer la solution' : 'Voir la solution'}
+                    title={(solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex] ? 'Masquer la solution' : 'Voir la solution'}
                   >
                     {#if isPreview}
-                      {(solutionStates[contentBlock.questionIndex] || showSolution) ? '✔' : 'Sol.'}
+                      {(solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex] ? '✔' : 'Sol.'}
                     {:else}
                       ✅
                     {/if}
@@ -286,7 +318,7 @@
         {/each}
         
         <!-- Indications (affichées immédiatement après la question si activées) -->
-        {#if contentBlock.hints.length > 0 && (hintStates[contentBlock.questionIndex] || showHint)}
+        {#if contentBlock.hints.length > 0 && (hintStates[contentBlock.questionIndex] || showHint) && !hiddenHintStates[contentBlock.questionIndex]}
           <div class="inline-hint">
             {#each contentBlock.hints as hint}
               {@const processedH = processContentBlock(hint)}
@@ -298,7 +330,7 @@
         {/if}
         
         <!-- Solutions (affichées après les indications si activées) -->
-        {#if contentBlock.solutions.length > 0 && (solutionStates[contentBlock.questionIndex] || showSolution)}
+        {#if contentBlock.solutions.length > 0 && (solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex]}
           <div class="inline-solution">
             {#each contentBlock.solutions as solution}
               {@const processedS = processContentBlock(solution)}
