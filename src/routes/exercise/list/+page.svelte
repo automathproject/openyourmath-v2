@@ -34,13 +34,20 @@
   let showUuidControl = false; // Nouveau : contrôle de l'affichage UUID
   let isMobile = false;
 
-  // Mode présentation
+  // Mode présentation (0 = normal, 1 = présentation, 2 = présentation maximale)
   let isPresentationMode = false;
+  let isFullPresentation = false;
 
   function togglePresentationMode() {
-    isPresentationMode = !isPresentationMode;
-    if (isPresentationMode) {
+    if (!isPresentationMode) {
+      isPresentationMode = true;
+      isFullPresentation = false;
       isEditMode = false;
+    } else if (!isFullPresentation) {
+      isFullPresentation = true;
+    } else {
+      isPresentationMode = false;
+      isFullPresentation = false;
     }
   }
   
@@ -103,11 +110,13 @@
   // Synchroniser la classe body avec le mode présentation
   $: if (typeof document !== 'undefined') {
     document.body.classList.toggle('presentation-mode', isPresentationMode);
+    document.body.classList.toggle('presentation-mode-full', isFullPresentation);
   }
 
   onDestroy(() => {
     if (typeof document !== 'undefined') {
       document.body.classList.remove('presentation-mode');
+      document.body.classList.remove('presentation-mode-full');
     }
   });
 
@@ -368,6 +377,7 @@
       } else if (event.key === 'Escape') {
         event.preventDefault();
         isPresentationMode = false;
+        isFullPresentation = false;
       }
       return;
     }
@@ -408,7 +418,7 @@
 
 <svelte:window on:keydown={handleKeydown} on:resize={checkMobile} />
 
-<div class="exercise-list-page" class:presentation-mode={isPresentationMode}>
+<div class="exercise-list-page" class:presentation-mode={isPresentationMode} class:full-presentation={isFullPresentation}>
   <!-- Header de la page -->
   <header class="list-header">
     <div class="list-header-content">
@@ -530,13 +540,13 @@
               on:click={togglePresentationMode}
               class="list-action-btn list-action-btn--presentation"
               class:list-action-btn--presentation-active={isPresentationMode}
-              aria-label={isPresentationMode ? 'Quitter le mode présentation' : 'Mode présentation'}
-              title={isPresentationMode ? 'Quitter le mode présentation (P)' : 'Mode présentation (P)'}
+              aria-label={isPresentationMode ? 'Présentation maximale' : 'Mode présentation'}
+              title={isPresentationMode ? 'Présentation maximale – masque le header (P)' : 'Mode présentation (P)'}
             >
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <span class="list-action-btn__label">{isPresentationMode ? 'Quitter' : 'Présentation'}</span>
+              <span class="list-action-btn__label">{isPresentationMode ? 'Max' : 'Présentation'}</span>
             </button>
 
             <button
@@ -684,6 +694,11 @@
         {#if isPresentationMode && !isMobile}
           <!-- Rail d'icônes numérotées en mode présentation -->
           <nav class="exercise-rail" aria-label="Navigation exercices">
+            {#if isFullPresentation}
+              <button class="rail-list-title" on:click={togglePresentationMode} title="Quitter (Échap)">
+                <span>{listTitle || "Liste d'exercices"}</span>
+              </button>
+            {/if}
             {#each $exerciseList as exercise, i}
               <button
                 class="rail-item"
@@ -1675,6 +1690,43 @@
   }
   .list-action-btn--presentation-active:hover {
     @apply bg-indigo-700 border-indigo-700;
+  }
+
+  /* ── Présentation maximale : header masqué, titre dans le rail ─────────── */
+  .exercise-list-page.full-presentation .list-header {
+    display: none !important;
+  }
+
+  .rail-list-title {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: rgb(100 116 139);
+    padding: 0.75rem 0;
+    max-height: 10rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(226 232 240);
+    margin-bottom: 0.25rem;
+    flex-shrink: 0;
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .rail-list-title:hover {
+    color: rgb(79 70 229);
+    background-color: rgb(238 242 255);
   }
 
   /* ── Rail de navigation (sidebar réduite) ──────────────────────────────── */
