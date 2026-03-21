@@ -43,7 +43,8 @@
       isPresentationMode = true;
       isFullPresentation = false;
       isEditMode = false;
-    } else if (!isFullPresentation) {
+    } else if (!isFullPresentation && !isMobile) {
+      // Niveau 2 (header masqué) uniquement sur desktop
       isFullPresentation = true;
     } else {
       isPresentationMode = false;
