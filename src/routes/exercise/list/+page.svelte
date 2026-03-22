@@ -1,6 +1,7 @@
 <!-- src/routes/exercise/list/+page.svelte -->
 <script>
   import { onMount, onDestroy } from 'svelte';
+  import { cubicOut, cubicIn } from 'svelte/easing';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
@@ -37,6 +38,27 @@
   // Mode présentation (0 = normal, 1 = présentation, 2 = présentation maximale)
   let isPresentationMode = false;
   let isFullPresentation = false;
+
+  // Direction de navigation pour l'animation de glissement
+  let navDirection = 1;
+
+  function slideIn(node) {
+    const w = node.offsetWidth;
+    return {
+      duration: 320,
+      easing: cubicOut,
+      css: (t, u) => `transform: translateX(${u * navDirection * w}px)`
+    };
+  }
+
+  function slideOut(node) {
+    const w = node.offsetWidth;
+    return {
+      duration: 280,
+      easing: cubicIn,
+      css: (t, u) => `transform: translateX(${-u * navDirection * w}px)`
+    };
+  }
 
   function togglePresentationMode() {
     if (!isPresentationMode) {
@@ -88,9 +110,17 @@
   
   // Initialiser la liste depuis les données du serveur
   onMount(() => {
+    // Suivre la direction de navigation pour le glissement
+    let prevIdx = 0;
+    const unsubAnim = selectedExerciseIndex.subscribe(newIdx => {
+      if (newIdx !== prevIdx) {
+        navDirection = newIdx > prevIdx ? 1 : -1;
+        prevIdx = newIdx;
+      }
+    });
     // Vérifier si on est sur mobile
     checkMobile();
-    
+
     if (data.exercises && data.exercises.length > 0) {
       exerciseList.set(data.exercises);
       selectedExerciseIndex.set(0);
@@ -103,9 +133,11 @@
       selectedExercise.set(null);
       selectedExerciseIndex.set(0);
     }
-    
+
     shareUrl = buildShareUrl();
     updateUuidInput();
+
+    return () => unsubAnim();
   });
   
   // Synchroniser la classe body avec le mode présentation
@@ -832,17 +864,39 @@
             </button>
           </div>
         {:else if $selectedExercise}
-          <article class="exercise-content-wrapper" class:exercise-content-wrapper--presentation={isPresentationMode}>
-            <ExerciseContent
-              exercise={$selectedExercise}
-              position={$currentPosition}
-              variant="full"
-              showGlobalToggles={true}
-              content={$selectedExercise.content || []}
-              bind:showHint
-              bind:showSolution
-            />
-          </article>
+          {#if isPresentationMode}
+            <div class="exercise-slide-wrapper">
+            {#key $selectedExerciseIndex}
+              <article
+                in:slideIn
+                out:slideOut
+                class="exercise-content-wrapper exercise-content-wrapper--presentation"
+              >
+                <ExerciseContent
+                  exercise={$selectedExercise}
+                  position={$currentPosition}
+                  variant="full"
+                  showGlobalToggles={true}
+                  content={$selectedExercise.content || []}
+                  bind:showHint
+                  bind:showSolution
+                />
+              </article>
+            {/key}
+            </div>
+          {:else}
+            <article class="exercise-content-wrapper">
+              <ExerciseContent
+                exercise={$selectedExercise}
+                position={$currentPosition}
+                variant="full"
+                showGlobalToggles={true}
+                content={$selectedExercise.content || []}
+                bind:showHint
+                bind:showSolution
+              />
+            </article>
+          {/if}
         {:else}
           <div class="no-selection">
             <div class="no-selection-icon">
@@ -1691,6 +1745,17 @@
   }
   .list-action-btn--presentation-active:hover {
     @apply bg-indigo-700 border-indigo-700;
+  }
+
+  /* Wrapper CSS Grid : ancien et nouvel exercice dans la même cellule sans doubler la hauteur */
+  .exercise-slide-wrapper {
+    display: grid;
+    overflow: hidden;
+    flex: 1;
+  }
+  .exercise-slide-wrapper > * {
+    grid-area: 1 / 1;
+    min-width: 0;
   }
 
   /* ── Présentation maximale : header masqué, titre dans le rail ─────────── */
