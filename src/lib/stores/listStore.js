@@ -37,6 +37,35 @@ export const selectedExercise = writable(null);
 export const exerciseLoading = writable(false);
 export const exerciseError = writable(null);
 
+let activeSelectionRequest = 0;
+
+function cacheFullExercise(index, fullExercise) {
+  if (!fullExercise || index < 0 || index >= globalExerciseList.length) {
+    return;
+  }
+
+  exerciseList.update((list) => {
+    if (index < 0 || index >= list.length) {
+      return list;
+    }
+
+    const nextList = [...list];
+    nextList[index] = {
+      ...nextList[index],
+      title: fullExercise.title ?? nextList[index].title,
+      chapter: fullExercise.chapter ?? nextList[index].chapter,
+      theme: fullExercise.theme ?? nextList[index].theme,
+      author: fullExercise.author ?? nextList[index].author,
+      difficulty: fullExercise.difficulty ?? nextList[index].difficulty,
+      level: fullExercise.level ?? nextList[index].level,
+      module: fullExercise.module ?? nextList[index].module,
+      content: fullExercise.content ?? nextList[index].content,
+      fullExercise
+    };
+    return nextList;
+  });
+}
+
 // États dérivés
 export const hasExercises = derived(
   exerciseList,
@@ -215,7 +244,9 @@ export const listActions = {
               author: data.exercise.author,
               difficulty: data.exercise.difficulty,
               level: data.exercise.level,
-              module: data.exercise.module
+              module: data.exercise.module,
+              content: data.exercise.content,
+              fullExercise: data.exercise
             };
           } else {
             console.warn(`Failed to load metadata for ${uuid}: ${response.status}`);
@@ -262,28 +293,51 @@ export const listActions = {
       return;
     }
 
+    const exercise = globalExerciseList[index];
+    const cachedExercise = exercise?.fullExercise;
+
+    if (cachedExercise) {
+      selectedExerciseIndex.set(index);
+      selectedExercise.set(cachedExercise);
+      exerciseError.set(null);
+      exerciseLoading.set(false);
+      return;
+    }
+
+    const requestId = ++activeSelectionRequest;
     selectedExerciseIndex.set(index);
     exerciseLoading.set(true);
     exerciseError.set(null);
 
     try {
-      const exercise = globalExerciseList[index];
       const response = await fetch(`/api/exercise/${exercise.uuid}`);
       
       if (response.ok) {
         const data = await response.json();
+        if (requestId !== activeSelectionRequest) {
+          return;
+        }
+        cacheFullExercise(index, data.exercise);
         selectedExercise.set(data.exercise);
       } else {
+        if (requestId !== activeSelectionRequest) {
+          return;
+        }
         const errorData = await response.json().catch(() => ({}));
         exerciseError.set(errorData.error || 'Erreur de chargement');
         selectedExercise.set(null);
       }
     } catch (err) {
+      if (requestId !== activeSelectionRequest) {
+        return;
+      }
       console.error('Failed to load exercise:', err);
       exerciseError.set('Erreur de connexion');
       selectedExercise.set(null);
     } finally {
-      exerciseLoading.set(false);
+      if (requestId == activeSelectionRequest) {
+        exerciseLoading.set(false);
+      }
     }
   },
 
