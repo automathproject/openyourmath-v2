@@ -10,6 +10,7 @@
 
   let panelEl;
   let draft = {};
+  let showDateFilters = false;
 
   $: difficultyCounts = $filterCounts?.difficulty || {};
   $: difficultyOptions = (() => {
@@ -23,6 +24,18 @@
 
   $: authorSuggestions = ($suggestions?.authors || []).map((entry) => entry.value ?? entry).filter(Boolean);
   $: organizationSuggestions = ($suggestions?.organizations || []).map((entry) => entry.value ?? entry).filter(Boolean);
+  $: hasActiveDateFilters = Boolean(
+    draft.createdFrom ||
+    draft.createdTo ||
+    draft.updatedFrom ||
+    draft.updatedTo
+  );
+  $: dateFiltersSummary = [
+    draft.createdFrom ? `Créé ≥ ${draft.createdFrom}` : '',
+    draft.createdTo ? `Créé ≤ ${draft.createdTo}` : '',
+    draft.updatedFrom ? `MAJ ≥ ${draft.updatedFrom}` : '',
+    draft.updatedTo ? `MAJ ≤ ${draft.updatedTo}` : ''
+  ].filter(Boolean).join(' · ');
 
   $: if (open) {
     draft = {
@@ -37,6 +50,12 @@
       hasIndication: $filters.hasIndication ?? '',
       hasVideo: $filters.hasVideo ?? ''
     };
+    showDateFilters = Boolean(
+      $filters.createdFrom ||
+      $filters.createdTo ||
+      $filters.updatedFrom ||
+      $filters.updatedTo
+    );
   }
 
   function close() {
@@ -149,24 +168,6 @@
       </label>
 
       <label class="advanced-field">
-        <span>Créé après</span>
-        <input type="date" bind:value={draft.createdFrom} />
-      </label>
-      <label class="advanced-field">
-        <span>Créé avant</span>
-        <input type="date" bind:value={draft.createdTo} />
-      </label>
-
-      <label class="advanced-field">
-        <span>Mis à jour après</span>
-        <input type="date" bind:value={draft.updatedFrom} />
-      </label>
-      <label class="advanced-field">
-        <span>Mis à jour avant</span>
-        <input type="date" bind:value={draft.updatedTo} />
-      </label>
-
-      <label class="advanced-field">
         <span>Solution</span>
         <select bind:value={draft.hasSolution}>
           <option value="">Tous</option>
@@ -192,6 +193,48 @@
       </label>
     </div>
 
+    <div class="advanced-dates">
+      <button
+        type="button"
+        class="advanced-dates__toggle"
+        class:advanced-dates__toggle--active={hasActiveDateFilters}
+        on:click={() => (showDateFilters = !showDateFilters)}
+        aria-expanded={showDateFilters}
+      >
+        <span class="advanced-dates__toggle-title">Filtres de dates</span>
+        <span class="advanced-dates__toggle-meta">
+          {#if hasActiveDateFilters}
+            {dateFiltersSummary}
+          {:else}
+            Optionnel
+          {/if}
+        </span>
+        <span class="advanced-dates__toggle-icon">{showDateFilters ? '▴' : '▾'}</span>
+      </button>
+
+      {#if showDateFilters}
+        <div class="advanced-grid advanced-grid--dates">
+          <label class="advanced-field">
+            <span>Créé après</span>
+            <input type="date" bind:value={draft.createdFrom} />
+          </label>
+          <label class="advanced-field">
+            <span>Créé avant</span>
+            <input type="date" bind:value={draft.createdTo} />
+          </label>
+
+          <label class="advanced-field">
+            <span>Mis à jour après</span>
+            <input type="date" bind:value={draft.updatedFrom} />
+          </label>
+          <label class="advanced-field">
+            <span>Mis à jour avant</span>
+            <input type="date" bind:value={draft.updatedTo} />
+          </label>
+        </div>
+      {/if}
+    </div>
+
     <div class="advanced-popover__actions">
       <button type="button" class="btn btn-text" on:click={clear}>Vider</button>
       <button type="button" class="btn btn-primary" on:click={apply}>Appliquer</button>
@@ -205,10 +248,35 @@
     top: calc(100% + 0.45rem);
     right: 0;
     width: min(36rem, 95vw);
+    max-height: min(80vh, calc(100vh - 2rem));
+    overflow-y: auto;
     border-radius: 0.85rem;
     padding: 0.8rem;
     z-index: 50;
     @apply border border-gray-200 bg-white shadow-xl;
+  }
+  @media (max-width: 640px) {
+    .advanced-popover {
+      position: fixed;
+      top: auto;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      max-height: min(85vh, calc(100vh - 0.5rem));
+      padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom, 0px));
+      border-radius: 1.25rem 1.25rem 0 0;
+      box-shadow: 0 -12px 32px rgba(15, 23, 42, 0.18);
+    }
+    .advanced-popover::before {
+      content: '';
+      display: block;
+      width: 2.75rem;
+      height: 0.3rem;
+      margin: 0 auto 0.85rem;
+      border-radius: 9999px;
+      background: rgba(148, 163, 184, 0.9);
+    }
   }
   .advanced-popover__header {
     display: flex;
@@ -256,6 +324,45 @@
     border-radius: 0.55rem;
     font-size: 0.86rem;
     @apply border border-gray-300 bg-white text-gray-800;
+  }
+  .advanced-dates {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    @apply border-t border-gray-200;
+  }
+  .advanced-dates__toggle {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.25rem 0.75rem;
+    align-items: center;
+    text-align: left;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.75rem;
+    @apply bg-gray-50 text-gray-800 border border-gray-200;
+  }
+  .advanced-dates__toggle:hover {
+    @apply bg-gray-100;
+  }
+  .advanced-dates__toggle--active {
+    @apply border-brand-200 bg-brand-50;
+  }
+  .advanced-dates__toggle-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+  .advanced-dates__toggle-meta {
+    font-size: 0.76rem;
+    @apply text-gray-500;
+  }
+  .advanced-dates__toggle-icon {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    font-size: 0.8rem;
+    @apply text-gray-500;
+  }
+  .advanced-grid--dates {
+    margin-top: 0.75rem;
   }
   .advanced-popover__actions {
     margin-top: 0.85rem;

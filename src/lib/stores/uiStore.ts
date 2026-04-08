@@ -1,6 +1,5 @@
 import { writable, type Writable } from 'svelte/store';
 
-const FILTERS_PANEL_KEY = 'search-ui:filters-panel-open';
 const PREVIEW_PANEL_KEY = 'search-ui:preview-panel-open';
 
 function createPersistedBooleanStore(storageKey: string, defaultValue: boolean): Writable<boolean> {
@@ -20,18 +19,9 @@ function createPersistedBooleanStore(storageKey: string, defaultValue: boolean):
   return store;
 }
 
-export const filtersPanelOpen = createPersistedBooleanStore(FILTERS_PANEL_KEY, true);
 export const previewPanelOpen = createPersistedBooleanStore(PREVIEW_PANEL_KEY, true);
 
 export const uiActions = {
-  toggleFiltersPanel() {
-    filtersPanelOpen.update((value) => !value);
-  },
-
-  setFiltersPanelOpen(value: boolean) {
-    filtersPanelOpen.set(Boolean(value));
-  },
-
   togglePreviewPanel() {
     previewPanelOpen.update((value) => !value);
   },
