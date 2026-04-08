@@ -17,6 +17,7 @@ export async function GET({ url }) {
         subchapter: url.searchParams.get('subchapter') || '',
         difficulty: url.searchParams.get('difficulty') || '',
         author: url.searchParams.get('author') || '',
+        organization: url.searchParams.get('organization') || '',
         createdFrom: url.searchParams.get('createdFrom') || '',
         createdTo: url.searchParams.get('createdTo') || '',
         updatedFrom: url.searchParams.get('updatedFrom') || '',
@@ -37,7 +38,7 @@ export async function GET({ url }) {
       const limit = parseInt(url.searchParams.get('limit') || '10');
       
       // MODIFIÉ : Ajouter 'difficulties' à la liste des types valides
-      const validTypes = ['all', 'chapters', 'themes', 'authors', 'modules', 'levels', 'difficulties'];
+      const validTypes = ['all', 'chapters', 'themes', 'authors', 'organizations', 'modules', 'levels', 'difficulties'];
       if (!validTypes.includes(suggestionType)) {
         return json(
           { error: `Invalid suggestion type. Valid types: ${validTypes.join(', ')}` },

@@ -21,6 +21,7 @@
       q: (query || '').trim(),
       difficulty: filters?.difficulty || '',
       author: filters?.author || '',
+      organization: filters?.organization || '',
       hasSolution: filters?.hasSolution ?? '',
       hasIndication: filters?.hasIndication ?? '',
       hasVideo: filters?.hasVideo ?? '',
@@ -40,6 +41,7 @@
       if ((query || '').trim()) params.set('q', query.trim());
       if (filters?.difficulty) params.set('difficulty', String(filters.difficulty));
       if (filters?.author) params.set('author', filters.author);
+      if (filters?.organization) params.set('organization', filters.organization);
       if (filters?.hasSolution !== '' && filters?.hasSolution !== undefined && filters?.hasSolution !== null) {
         params.set('hasSolution', String(filters.hasSolution));
       }

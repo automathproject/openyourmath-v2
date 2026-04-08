@@ -24,20 +24,23 @@
     { id: 'content', icon: '📚', label: 'Contenu' },
     { id: 'level', icon: '🎓', label: 'Niveau académique' },
     { id: 'properties', icon: '✅', label: 'Propriétés' },
-    { id: 'author', icon: '👤', label: 'Auteur' }
+    { id: 'author', icon: '👤', label: 'Auteur et organisation' }
   ];
 
   let showAuthorSuggestions = false;
+  let showOrganizationSuggestions = false;
   let showModuleSuggestions = false;
   let showFilterMenu = false;
   let filterMenuCategory = null;
   let authorSearch = '';
+  let organizationSearch = '';
   let filtersValues = {};
 
   $: moduleCounts = $filterCounts.module || {};
   $: levelCounts = $filterCounts.level || {};
   $: difficultyCounts = $filterCounts.difficulty || {};
   $: authorCounts = $filterCounts.author || {};
+  $: organizationCounts = $filterCounts.organization || {};
 
   $: useResultFilterCounts = $hasActiveFilters;
 
@@ -69,9 +72,23 @@
     undefined,
     useResultFilterCounts
   );
+  $: organizationOptions = buildOptions(
+    $suggestions.organizations || [],
+    organizationCounts,
+    $filters.organization,
+    undefined,
+    useResultFilterCounts
+  );
   $: filteredAuthors = authorOptions
     .filter((entry) => {
       const term = authorSearch.trim().toLowerCase();
+      if (!term) return true;
+      return entry.value.toLowerCase().includes(term);
+    })
+    .slice(0, 25);
+  $: filteredOrganizations = organizationOptions
+    .filter((entry) => {
+      const term = organizationSearch.trim().toLowerCase();
       if (!term) return true;
       return entry.value.toLowerCase().includes(term);
     })
@@ -87,6 +104,7 @@
   function openFilterMenu(category = null) {
     showFilterMenu = true;
     authorSearch = $filters.author || '';
+    organizationSearch = $filters.organization || '';
     handleFilterMenuCategory(category);
   }
 
@@ -94,6 +112,7 @@
     filterMenuCategory = id;
     if (id === 'author') {
       authorSearch = $filters.author || '';
+      organizationSearch = $filters.organization || '';
     }
   }
 
@@ -101,6 +120,7 @@
     showFilterMenu = false;
     filterMenuCategory = null;
     authorSearch = $filters.author || '';
+    organizationSearch = $filters.organization || '';
   }
 
   function selectModule(module) {
@@ -125,12 +145,27 @@
     searchActions.updateFilter('author', value);
   }
 
+  function selectOrganization(organization) {
+    searchActions.updateFilter('organization', organization);
+    showOrganizationSuggestions = false;
+    searchActions.search();
+  }
+
+  function handleOrganizationInput(value) {
+    showOrganizationSuggestions = true;
+    searchActions.updateFilter('organization', value);
+  }
+
   function handleModuleBlur() {
     setTimeout(() => (showModuleSuggestions = false), 150);
   }
 
   function handleAuthorBlur() {
     setTimeout(() => (showAuthorSuggestions = false), 150);
+  }
+
+  function handleOrganizationBlur() {
+    setTimeout(() => (showOrganizationSuggestions = false), 150);
   }
 
   function handleLevelChange(value) {
@@ -186,8 +221,17 @@
     closeFilterMenu();
   }
 
+  function applyOrganizationFilter(value) {
+    selectOrganization(value);
+    closeFilterMenu();
+  }
+
   function handleAuthorSearchInput(value) {
     authorSearch = value;
+  }
+
+  function handleOrganizationSearchInput(value) {
+    organizationSearch = value;
   }
 
   function applyAuthorSearch() {
@@ -196,8 +240,15 @@
     applyAuthorFilter(value);
   }
 
+  function applyOrganizationSearch() {
+    const value = organizationSearch.trim();
+    if (!value) return;
+    applyOrganizationFilter(value);
+  }
+
   $: if (!isFilterPanelOpen) {
     showAuthorSuggestions = false;
+    showOrganizationSuggestions = false;
     showModuleSuggestions = false;
     closeFilterMenu();
   }
@@ -205,6 +256,7 @@
   $: if (isDesktop) {
     showFilterMenu = false;
     showAuthorSuggestions = false;
+    showOrganizationSuggestions = false;
     showModuleSuggestions = false;
   }
 
@@ -283,14 +335,19 @@
           difficultyOptions={difficultyOptions}
           activeMenuFilters={activeMenuFilters}
           filteredAuthors={filteredAuthors}
+          filteredOrganizations={filteredOrganizations}
           authorSearch={authorSearch}
+          organizationSearch={organizationSearch}
           onModuleSelect={applyModuleFilter}
           onLevelSelect={applyLevelFilter}
           onDifficultySelect={applyDifficultyFilter}
           onPropertySelect={applyPropertyFilter}
           onAuthorSelect={applyAuthorFilter}
+          onOrganizationSelect={applyOrganizationFilter}
           onAuthorSearchInput={handleAuthorSearchInput}
           onAuthorSearchSubmit={applyAuthorSearch}
+          onOrganizationSearchInput={handleOrganizationSearchInput}
+          onOrganizationSearchSubmit={applyOrganizationSearch}
         />
 
         <FilterGrid
@@ -300,8 +357,10 @@
           {difficultyOptions}
           difficultyCounts={difficultyCounts}
           authorOptions={authorOptions}
+          organizationOptions={organizationOptions}
           showModuleSuggestions={showModuleSuggestions}
           showAuthorSuggestions={showAuthorSuggestions}
+          showOrganizationSuggestions={showOrganizationSuggestions}
           onModuleInput={handleModuleInput}
           onModuleBlur={handleModuleBlur}
           onModuleSuggestionSelect={selectModule}
@@ -313,6 +372,9 @@
           onAuthorInput={handleAuthorInput}
           onAuthorBlur={handleAuthorBlur}
           onAuthorSuggestionSelect={selectAuthor}
+          onOrganizationInput={handleOrganizationInput}
+          onOrganizationBlur={handleOrganizationBlur}
+          onOrganizationSuggestionSelect={selectOrganization}
         />
       </section>
     </div>

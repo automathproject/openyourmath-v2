@@ -7,8 +7,10 @@
   export let difficultyOptions = [];
   export let difficultyCounts = {};
   export let authorOptions = [];
+  export let organizationOptions = [];
   export let showModuleSuggestions = false;
   export let showAuthorSuggestions = false;
+  export let showOrganizationSuggestions = false;
   export let onModuleInput = () => {};
   export let onModuleBlur = () => {};
   export let onModuleSuggestionSelect = () => {};
@@ -20,6 +22,9 @@
   export let onAuthorInput = () => {};
   export let onAuthorBlur = () => {};
   export let onAuthorSuggestionSelect = () => {};
+  export let onOrganizationInput = () => {};
+  export let onOrganizationBlur = () => {};
+  export let onOrganizationSuggestionSelect = () => {};
 
   $: moduleSuggestions = moduleOptions
     .filter((option) => option.value.toLowerCase().includes((filtersValues.module || '').toLowerCase()))
@@ -27,6 +32,10 @@
 
   $: authorSuggestions = authorOptions
     .filter((option) => option.value.toLowerCase().includes((filtersValues.author || '').toLowerCase()))
+    .map((option) => ({ value: option.value, count: option.count }));
+
+  $: organizationSuggestions = organizationOptions
+    .filter((option) => option.value.toLowerCase().includes((filtersValues.organization || '').toLowerCase()))
     .map((option) => ({ value: option.value, count: option.count }));
 
   $: levelSelectOptions = [
@@ -134,6 +143,19 @@
     onInput={onAuthorInput}
     onBlur={onAuthorBlur}
     onSuggestionSelect={(item) => onAuthorSuggestionSelect(item.value)}
+  />
+
+  <FilterField
+    type="input"
+    id="organization-filter"
+    label="Organisation"
+    value={filtersValues.organization || ''}
+    placeholder="Nom de l'organisation..."
+    showSuggestions={showOrganizationSuggestions && organizationSuggestions.length > 0}
+    suggestions={organizationSuggestions}
+    onInput={onOrganizationInput}
+    onBlur={onOrganizationBlur}
+    onSuggestionSelect={(item) => onOrganizationSuggestionSelect(item.value)}
   />
 </div>
 

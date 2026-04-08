@@ -9,6 +9,7 @@
       case 'hasIndication':
       case 'hasVideo':
       case 'author':
+      case 'organization':
       case 'createdFrom':
       case 'createdTo':
       case 'updatedFrom':
@@ -27,6 +28,7 @@
     searchActions.updateFilter('hasIndication', '');
     searchActions.updateFilter('hasVideo', '');
     searchActions.updateFilter('author', '');
+    searchActions.updateFilter('organization', '');
     searchActions.updateFilter('createdFrom', '');
     searchActions.updateFilter('createdTo', '');
     searchActions.updateFilter('updatedFrom', '');
@@ -47,6 +49,7 @@
     if ($filters.hasVideo === '1') entries.push({ key: 'hasVideo', label: 'Avec vidéo' });
     if ($filters.hasVideo === '0') entries.push({ key: 'hasVideo', label: 'Sans vidéo' });
     if ($filters.author) entries.push({ key: 'author', label: $filters.author });
+    if ($filters.organization) entries.push({ key: 'organization', label: $filters.organization });
     if ($filters.createdFrom) entries.push({ key: 'createdFrom', label: `Créé ≥ ${$filters.createdFrom}` });
     if ($filters.createdTo) entries.push({ key: 'createdTo', label: `Créé ≤ ${$filters.createdTo}` });
     if ($filters.updatedFrom) entries.push({ key: 'updatedFrom', label: `MAJ ≥ ${$filters.updatedFrom}` });

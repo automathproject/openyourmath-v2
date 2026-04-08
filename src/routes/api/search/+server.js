@@ -12,6 +12,7 @@ export async function GET({ url }) {
     const difficulty = url.searchParams.get('difficulty')?.trim() || ''; // NOUVEAU : difficulté numérique (1-5)
     const module = url.searchParams.get('module')?.trim() || '';
     const author = url.searchParams.get('author')?.trim() || '';
+    const organization = url.searchParams.get('organization')?.trim() || '';
     const createdFrom = url.searchParams.get('createdFrom')?.trim() || '';
     const createdTo = url.searchParams.get('createdTo')?.trim() || '';
     const updatedFrom = url.searchParams.get('updatedFrom')?.trim() || '';
@@ -58,6 +59,7 @@ export async function GET({ url }) {
     
     if (module) filters.module = module;
     if (author) filters.author = author;
+    if (organization) filters.organization = organization;
     if (createdFrom) filters.createdFrom = createdFrom;
     if (createdTo) filters.createdTo = createdTo;
     if (updatedFrom) filters.updatedFrom = updatedFrom;

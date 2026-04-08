@@ -11,14 +11,19 @@
   export let difficultyOptions = [];
   export let activeMenuFilters = {};
   export let filteredAuthors = [];
+  export let filteredOrganizations = [];
   export let authorSearch = '';
+  export let organizationSearch = '';
   export let onModuleSelect = () => {};
   export let onLevelSelect = () => {};
   export let onDifficultySelect = () => {};
   export let onPropertySelect = () => {};
   export let onAuthorSelect = () => {};
+  export let onOrganizationSelect = () => {};
   export let onAuthorSearchInput = () => {};
   export let onAuthorSearchSubmit = () => {};
+  export let onOrganizationSearchInput = () => {};
+  export let onOrganizationSearchSubmit = () => {};
 
   const getCategoryLabel = (id) => {
     const match = categories.find((item) => item.id === id);
@@ -75,14 +80,19 @@
             {difficultyOptions}
             {activeMenuFilters}
             {filteredAuthors}
+            {filteredOrganizations}
             {authorSearch}
+            {organizationSearch}
             onModuleSelect={onModuleSelect}
             onLevelSelect={onLevelSelect}
             onDifficultySelect={onDifficultySelect}
             onPropertySelect={onPropertySelect}
             onAuthorSelect={onAuthorSelect}
+            onOrganizationSelect={onOrganizationSelect}
             onAuthorSearchInput={onAuthorSearchInput}
             onAuthorSearchSubmit={onAuthorSearchSubmit}
+            onOrganizationSearchInput={onOrganizationSearchInput}
+            onOrganizationSearchSubmit={onOrganizationSearchSubmit}
           />
         {/if}
       </div>

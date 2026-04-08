@@ -5,15 +5,20 @@
   export let difficultyOptions = [];
   export let activeMenuFilters = {};
   export let filteredAuthors = [];
+  export let filteredOrganizations = [];
   export let authorSearch = '';
+  export let organizationSearch = '';
   export let difficultyLabel = (option) => option.label ?? option.value;
   export let onModuleSelect = () => {};
   export let onLevelSelect = () => {};
   export let onDifficultySelect = () => {};
   export let onPropertySelect = () => {};
   export let onAuthorSelect = () => {};
+  export let onOrganizationSelect = () => {};
   export let onAuthorSearchInput = () => {};
   export let onAuthorSearchSubmit = () => {};
+  export let onOrganizationSearchInput = () => {};
+  export let onOrganizationSearchSubmit = () => {};
 </script>
 
 {#if category === 'content'}
@@ -183,6 +188,45 @@
           >
             <span>{author.value}</span>
             <span class="filters-menu-option-count">{author.count}</span>
+          </button>
+        {/each}
+      {/if}
+    </div>
+  </div>
+  <div class="filters-menu-section">
+    <h5>Organisation</h5>
+    <div class="filters-menu-author">
+      <input
+        type="text"
+        class="filters-menu-author-input"
+        placeholder="Nom ou mot-clé"
+        value={organizationSearch}
+        on:input={(event) => onOrganizationSearchInput(event.target.value)}
+        on:keydown={(event) => event.key === 'Enter' && onOrganizationSearchSubmit()}
+      />
+      <div class="filters-menu-author-actions">
+        <button
+          type="button"
+          class="filters-menu-apply"
+          on:click={onOrganizationSearchSubmit}
+          disabled={!organizationSearch.trim()}
+        >
+          Appliquer
+        </button>
+      </div>
+    </div>
+    <div class="filters-menu-options">
+      {#if filteredOrganizations.length === 0}
+        <p class="filters-menu-empty">Aucune organisation trouvée</p>
+      {:else}
+        {#each filteredOrganizations as organization (organization.value)}
+          <button
+            type="button"
+            class="filters-menu-option {organization.active ? 'filters-menu-option--active' : ''}"
+            on:click={() => onOrganizationSelect(organization.value)}
+          >
+            <span>{organization.value}</span>
+            <span class="filters-menu-option-count">{organization.count}</span>
           </button>
         {/each}
       {/if}

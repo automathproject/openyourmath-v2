@@ -57,6 +57,7 @@ export const filters = writable({
   difficulty: '',
   module: '',
   author: '',
+  organization: '',
   createdFrom: '',
   createdTo: '',
   updatedFrom: '',
@@ -102,6 +103,7 @@ export const hasActiveFilters = derived(
       $filters.difficulty ||
       $filters.module || 
       $filters.author ||
+      $filters.organization ||
       $filters.createdFrom ||
       $filters.createdTo ||
       $filters.updatedFrom ||
@@ -135,7 +137,8 @@ function createEmptyFilterCounts() {
     module: {},
     level: {},
     difficulty: {},
-    author: {}
+    author: {},
+    organization: {}
   };
 }
 
@@ -271,6 +274,7 @@ export const searchActions = {
       difficulty: '',
       module: '',
       author: '',
+      organization: '',
       createdFrom: '',
       createdTo: '',
       updatedFrom: '',
@@ -359,6 +363,9 @@ export const searchActions = {
       
       if (currentFilters.author) {
         searchParams.set('author', currentFilters.author);
+      }
+      if (currentFilters.organization) {
+        searchParams.set('organization', currentFilters.organization);
       }
       if (currentFilters.createdFrom) {
         searchParams.set('createdFrom', currentFilters.createdFrom);
@@ -466,6 +473,9 @@ export const searchActions = {
       }
       if (currentFilters.author) {
         searchParams.set('author', currentFilters.author);
+      }
+      if (currentFilters.organization) {
+        searchParams.set('organization', currentFilters.organization);
       }
       if (currentFilters.createdFrom) {
         searchParams.set('createdFrom', currentFilters.createdFrom);
@@ -670,6 +680,7 @@ export const layoutActions = {
 // Store pour les suggestions (autocomplete)
 export const suggestions = writable({
   authors: [],
+  organizations: [],
   modules: [],
   levels: [],
   difficulties: [],
@@ -698,6 +709,7 @@ export const suggestionActions = {
       if (currentFilters.module) params.set('module', currentFilters.module);
       if (currentFilters.difficulty) params.set('difficulty', currentFilters.difficulty);
       if (currentFilters.author && forType !== 'authors') params.set('author', currentFilters.author);
+      if (currentFilters.organization && forType !== 'organizations') params.set('organization', currentFilters.organization);
       if (currentFilters.createdFrom) params.set('createdFrom', currentFilters.createdFrom);
       if (currentFilters.createdTo) params.set('createdTo', currentFilters.createdTo);
       if (currentFilters.updatedFrom) params.set('updatedFrom', currentFilters.updatedFrom);
@@ -719,20 +731,23 @@ export const suggestionActions = {
     suggestions.update(current => ({ ...current, loading: true }));
 
     try {
-      const [authorsResponse, modulesResponse, levelsResponse, difficultiesResponse] = await Promise.all([
+      const [authorsResponse, organizationsResponse, modulesResponse, levelsResponse, difficultiesResponse] = await Promise.all([
         fetch(`/api/chapters?${sharedParams('authors').toString()}&limit=200`),
+        fetch(`/api/chapters?${sharedParams('organizations').toString()}&limit=100`),
         fetch(`/api/chapters?${sharedParams('modules').toString()}&limit=15`),
         fetch(`/api/chapters?${sharedParams('levels').toString()}&limit=10`),
         fetch(`/api/chapters?${sharedParams('difficulties').toString()}&limit=10`)
       ]);
 
       const authorsData = authorsResponse.ok ? await authorsResponse.json() : { suggestions: [] };
+      const organizationsData = organizationsResponse.ok ? await organizationsResponse.json() : { suggestions: [] };
       const modulesData = modulesResponse.ok ? await modulesResponse.json() : { suggestions: [] };
       const levelsData = levelsResponse.ok ? await levelsResponse.json() : { suggestions: [] };
       const difficultiesData = difficultiesResponse.ok ? await difficultiesResponse.json() : { suggestions: [] };
 
       suggestions.set({
         authors: authorsData.suggestions || [],
+        organizations: organizationsData.suggestions || [],
         modules: modulesData.suggestions || [],
         levels: levelsData.suggestions || [],
         difficulties: difficultiesData.suggestions || [],

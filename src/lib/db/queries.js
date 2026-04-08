@@ -88,6 +88,22 @@ function buildAuthorFilterClause(authorValue, tableAlias = 'e', includeLeadingAn
   return { clause, params };
 }
 
+function buildOrganizationFilterClause(organizationValue, tableAlias = 'e', includeLeadingAnd = true) {
+  const trimmed = (organizationValue ?? '').trim();
+  if (!trimmed) {
+    return { clause: '', params: [] };
+  }
+
+  const directLike = `%${escapeLikePattern(trimmed)}%`;
+  const clauseBody = `UPPER(${tableAlias}.organization) LIKE UPPER(?) ESCAPE '\\'`;
+  const clause = includeLeadingAnd ? ` AND ${clauseBody}` : clauseBody;
+
+  return {
+    clause,
+    params: [directLike]
+  };
+}
+
 function buildSearchContext(query = '', filters = {}, sortOption = null) {
   const trimmedQuery = (query || '').trim();
   const ftsQuery = prepareSearchQuery(trimmedQuery);
@@ -175,6 +191,14 @@ function buildSearchContext(query = '', filters = {}, sortOption = null) {
     if (clause) {
       whereClauses.push(clause);
       params.push(...authorParams);
+    }
+  }
+
+  if (filterValues.organization) {
+    const { clause, params: organizationParams } = buildOrganizationFilterClause(filterValues.organization, 'e', false);
+    if (clause) {
+      whereClauses.push(clause);
+      params.push(...organizationParams);
     }
   }
 
@@ -628,6 +652,11 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
       baseWhere += clause;
       params.push(...authorParams);
     }
+    if (filters.organization) {
+      const { clause, params: organizationParams } = buildOrganizationFilterClause(filters.organization, 'e');
+      baseWhere += clause;
+      params.push(...organizationParams);
+    }
     if (filters.createdFrom) {
       baseWhere += ' AND DATE(e.created_at) >= DATE(?)';
       params.push(filters.createdFrom);
@@ -794,6 +823,13 @@ export async function getFilterCounts(query = '', filters = {}) {
       GROUP BY e.author
     `).all(...context.params);
 
+    const organizationRows = db.prepare(`
+      SELECT e.organization as value, COUNT(*) as count
+      ${baseFromWhere}
+        AND e.organization IS NOT NULL AND TRIM(e.organization) != ''
+      GROUP BY e.organization
+    `).all(...context.params);
+
     const toMap = (rows, transformValue = (v) => v) => {
       const map = {};
       rows.forEach(({ value, count }) => {
@@ -809,7 +845,8 @@ export async function getFilterCounts(query = '', filters = {}) {
       module: toMap(moduleRows, (v) => v),
       level: toMap(levelRows, (v) => v),
       difficulty: toMap(difficultyRows, (v) => (v === null || v === undefined ? 'null' : String(v))),
-      author: toMap(authorRows, (v) => v)
+      author: toMap(authorRows, (v) => v),
+      organization: toMap(organizationRows, (v) => v)
     };
 
   } catch (error) {
@@ -818,7 +855,8 @@ export async function getFilterCounts(query = '', filters = {}) {
       module: {},
       level: {},
       difficulty: {},
-      author: {}
+      author: {},
+      organization: {}
     };
   } finally {
     if (db) db.close();
@@ -861,6 +899,17 @@ export async function getSuggestions(type = 'all', limit = 10) {
           WHERE author_display IS NOT NULL AND TRIM(author_display) != ''
           GROUP BY author_display 
           ORDER BY count DESC, author_display
+          LIMIT ?
+        `;
+        break;
+
+      case 'organizations':
+        query = `
+          SELECT organization as value, COUNT(*) as count
+          FROM exercises
+          WHERE organization IS NOT NULL AND TRIM(organization) != ''
+          GROUP BY organization
+          ORDER BY count DESC, organization
           LIMIT ?
         `;
         break;
@@ -1031,11 +1080,12 @@ export async function getContextualFilterCounts(query = '', filters = {}) {
       module: {},
       level: {},
       difficulty: {},
-      author: {}
+      author: {},
+      organization: {}
     };
 
     // Pour chaque type de filtre, on calcule les comptages en excluant ce filtre spécifique
-    const filterTypes = ['module', 'level', 'difficulty', 'author'];
+    const filterTypes = ['module', 'level', 'difficulty', 'author', 'organization'];
 
     for (const excludeFilter of filterTypes) {
       // Créer une copie des filtres en excluant le filtre actuel
@@ -1073,6 +1123,12 @@ export async function getContextualFilterCounts(query = '', filters = {}) {
           countQuery = 'ea.author_display as value';
           groupBy = 'ea.author_display';
           additionalWhere = 'AND ea.author_display IS NOT NULL AND TRIM(ea.author_display) != \'\'';
+          break;
+
+        case 'organization':
+          countQuery = 'e.organization as value';
+          groupBy = 'e.organization';
+          additionalWhere = 'AND e.organization IS NOT NULL AND TRIM(e.organization) != \'\'';
           break;
       }
 
