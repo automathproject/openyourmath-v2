@@ -22,10 +22,12 @@
   })();
 
   $: authorSuggestions = ($suggestions?.authors || []).map((entry) => entry.value ?? entry).filter(Boolean);
+  $: organizationSuggestions = ($suggestions?.organizations || []).map((entry) => entry.value ?? entry).filter(Boolean);
 
   $: if (open) {
     draft = {
       author: $filters.author || '',
+      organization: $filters.organization || '',
       difficulty: $filters.difficulty || '',
       createdFrom: $filters.createdFrom || '',
       createdTo: $filters.createdTo || '',
@@ -54,6 +56,7 @@
 
   function apply() {
     searchActions.updateFilter('author', (draft.author || '').trim());
+    searchActions.updateFilter('organization', (draft.organization || '').trim());
     searchActions.updateFilter('difficulty', draft.difficulty || '');
     searchActions.updateFilter('createdFrom', draft.createdFrom || '');
     searchActions.updateFilter('createdTo', draft.createdTo || '');
@@ -69,6 +72,7 @@
   function clear() {
     draft = {
       author: '',
+      organization: '',
       difficulty: '',
       createdFrom: '',
       createdTo: '',
@@ -114,6 +118,20 @@
       <datalist id="advanced-author-list">
         {#each authorSuggestions as author}
           <option value={author}></option>
+        {/each}
+      </datalist>
+
+      <label class="advanced-field">
+        <span>Organisation</span>
+        <input
+          list="advanced-organization-list"
+          bind:value={draft.organization}
+          placeholder="Nom de l'organisation"
+        />
+      </label>
+      <datalist id="advanced-organization-list">
+        {#each organizationSuggestions as organization}
+          <option value={organization}></option>
         {/each}
       </datalist>
 
