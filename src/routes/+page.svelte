@@ -35,6 +35,7 @@
 
   let isDesktop = false;
   let advancedFiltersOpen = false;
+  let filtersExpanded = true;
   let manualCardMode = 'auto'; // auto | compact | detailed
   let isHeaderCollapsed = false;
   let resultsScrollEl;
@@ -274,28 +275,87 @@
   <div class="search-page-grid" class:search-page-grid--preview-open={isDesktop && $previewPanelOpen}>
     <div class="search-page-main">
       <div class="search-controls-sticky" class:search-controls-sticky--scrolled={isHeaderCollapsed}>
-        <div class="search-toolbar-shell">
-          <SearchToolbar
-            searchQueryStore={searchQuery}
-            onSearchInput={debouncedSearch}
-            loading={$loading}
-            hasResults={$hasResults}
-            filtersButtonLabel={filtersButtonLabel}
-            showFiltersButton={true}
-            onToggleFilters={toggleFiltersPanel}
-            hasSolution={$filters.hasSolution}
-            hasIndication={$filters.hasIndication}
-            onToggleSolution={toggleSolutionChip}
-            onToggleIndication={toggleIndicationChip}
-            canTogglePreview={canTogglePreview && !isDesktop}
-            previewToggleLabel={previewToggleLabel}
-            onTogglePreview={toggleMobilePreview}
-            {advancedFiltersOpen}
-            onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
-          />
+
+        <!-- Barre de recherche + popover (ancré dans SearchToolbar via position:relative sur .toolbar) -->
+        <SearchToolbar
+          searchQueryStore={searchQuery}
+          onSearchInput={debouncedSearch}
+          loading={$loading}
+          hasResults={$hasResults}
+          filtersButtonLabel={filtersButtonLabel}
+          showFiltersButton={true}
+          onToggleFilters={toggleFiltersPanel}
+          hasSolution={$filters.hasSolution}
+          hasIndication={$filters.hasIndication}
+          onToggleSolution={toggleSolutionChip}
+          onToggleIndication={toggleIndicationChip}
+          canTogglePreview={canTogglePreview && !isDesktop}
+          previewToggleLabel={previewToggleLabel}
+          isPreviewOpen={$previewState.isOpen}
+          onTogglePreview={toggleMobilePreview}
+          {advancedFiltersOpen}
+          onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
+          {filtersExpanded}
+          onToggleExpanded={() => (filtersExpanded = !filtersExpanded)}
+        />
+
+        <!-- Bloc pliant mobile : filtres rapides + hiérarchie -->
+        <div class="mobile-filter-block" class:mobile-filter-block--collapsed={!filtersExpanded}>
+          <!-- Section "Contenu disponible" -->
+          <div class="mfb-section">
+            <span class="mfb-section-label">Contenu disponible</span>
+            <div class="mfb-chips">
+              <button
+                type="button"
+                class="chip {$filters.hasSolution === '1' ? 'chip--on' : $filters.hasSolution === '0' ? 'chip--off' : ''}"
+                on:click={toggleSolutionChip}
+                disabled={$loading}
+              >
+                ✅ Solution{$filters.hasSolution === '1' ? ' • oui' : $filters.hasSolution === '0' ? ' • non' : ''}
+              </button>
+              <button
+                type="button"
+                class="chip {$filters.hasIndication === '1' ? 'chip--on' : $filters.hasIndication === '0' ? 'chip--off' : ''}"
+                on:click={toggleIndicationChip}
+                disabled={$loading}
+              >
+                💡 Indication{$filters.hasIndication === '1' ? ' • oui' : $filters.hasIndication === '0' ? ' • non' : ''}
+              </button>
+            </div>
+          </div>
+
+          <!-- Section "Filtrer par" : hiérarchie en cascade -->
+          <div class="mfb-section">
+            <span class="mfb-section-label">Filtrer par</span>
+            {#if browser}
+              <BreadcrumbNav
+                query={$searchQuery}
+                filters={$filters}
+                on:navigate={handleChapterNavigation}
+              />
+            {/if}
+          </div>
+
+          <!-- Filtres actifs (auteur, difficulté, etc.) -->
+          <ActiveFilters />
+
+          <!-- Bouton filtres avancés -->
+          <button
+            type="button"
+            class="mfb-advanced-btn"
+            class:mfb-advanced-btn--active={advancedFiltersOpen}
+            on:click={toggleFiltersPanel}
+            aria-expanded={advancedFiltersOpen}
+          >
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L13 10.414V15a1 1 0 01-.553.894l-4 2A1 1 0 017 17v-6.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
+            </svg>
+            Filtres avancés
+          </button>
         </div>
 
-        <div class="search-meta-shell">
+        <!-- Sur desktop : ActiveFilters + BreadcrumbNav restent sous la toolbar -->
+        <div class="desktop-meta-shell">
           <ActiveFilters />
           {#if browser}
             <BreadcrumbNav
@@ -305,6 +365,7 @@
             />
           {/if}
         </div>
+
       </div>
 
       <div
@@ -325,11 +386,11 @@
         </div>
       {:else if $hasResults}
         <div class="results-header mb-4">
-          <h2 class="results-title">
-            {$searchMeta?.pagination?.totalCount || $results.length}
-            résultat{$results.length > 1 ? 's' : ''} trouvé{$results.length > 1 ? 's' : ''}
-          </h2>
-          <div class="sort-control">
+          <div class="results-header-row1">
+            <h2 class="results-title">
+              {$searchMeta?.pagination?.totalCount || $results.length}
+              résultat{$results.length > 1 ? 's' : ''} trouvé{$results.length > 1 ? 's' : ''}
+            </h2>
             <div class="view-mode-toggle" role="group" aria-label="Mode d'affichage des cartes">
               <button
                 type="button"
@@ -356,6 +417,8 @@
                 ☰
               </button>
             </div>
+          </div>
+          <div class="sort-control">
             <label class="sort-label" for="search-sort-select">Trier par</label>
             <div class="sort-select-group">
               <select
@@ -446,11 +509,6 @@
   .search-page {
     --results-scroll-height: auto;
   }
-  .search-meta-shell {
-    position: relative;
-    overflow: visible;
-  }
-
   .hero-inner {
     display: flex;
     flex-direction: column;
@@ -542,13 +600,105 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
 
-  .search-toolbar-shell {
-    margin-bottom: 0.5rem;
+  /* ─── Bloc filtres mobile (pliant) ─── */
+
+  /* Caché sur desktop */
+  .mobile-filter-block {
+    display: none;
   }
 
   @media (max-width: 640px) {
-    .search-toolbar-shell {
-      margin-bottom: 0.35rem;
+    .mobile-filter-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      overflow: hidden;
+      max-height: 40rem; /* suffisamment grand */
+      transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 200ms ease,
+                  margin-top 200ms ease;
+      opacity: 1;
+      margin-top: 0.6rem;
+    }
+
+    .mobile-filter-block--collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin-top: 0;
+      pointer-events: none;
+    }
+  }
+
+  .mfb-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .mfb-section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    @apply text-gray-500;
+  }
+
+  .mfb-chips {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .mfb-chips .chip {
+    flex: 1 1 0;
+    justify-content: center;
+    min-height: 2.25rem;
+    font-size: 0.85rem;
+  }
+
+  .chip {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 9999px;
+    transition: background-color .2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    white-space: nowrap;
+    @apply border border-gray-200 bg-gray-100 text-gray-700;
+  }
+  .chip:hover { @apply bg-gray-200; }
+  .chip--on { @apply bg-green-100 text-green-700 border-green-200; }
+  .chip--off { @apply bg-red-100 text-red-800 border-red-200; }
+
+  .mfb-advanced-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 0.85rem;
+    border-radius: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    width: 100%;
+    justify-content: center;
+    transition: background-color .15s;
+    @apply border border-gray-300 bg-gray-50 text-gray-700;
+  }
+  .mfb-advanced-btn svg { width: 0.9rem; height: 0.9rem; flex-shrink: 0; }
+  .mfb-advanced-btn:hover { @apply bg-gray-100; }
+  .mfb-advanced-btn--active { @apply bg-brand-50 border-brand-300 text-brand-700; }
+
+  /* ─── Desktop : ActiveFilters + BreadcrumbNav sous la toolbar ─── */
+
+  .desktop-meta-shell {
+    display: none;
+  }
+
+  @media (min-width: 641px) {
+    .desktop-meta-shell {
+      display: block;
+      position: relative;
+      overflow: visible;
+      margin-top: 0.5rem;
     }
   }
 
@@ -660,10 +810,18 @@
 
   .results-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
     flex-wrap: wrap;
+  }
+
+  /* Sur desktop: row1 = titre (flex) + view-mode-toggle, sort-control à droite */
+  .results-header-row1 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1 1 auto;
   }
 
   .results-title {
@@ -681,25 +839,35 @@
     flex-wrap: wrap;
   }
 
-  /* Sur mobile, stack les contrôles verticalement */
+  /* Sur mobile, ligne 1: titre + view-mode, ligne 2: tri */
   @media (max-width: 640px) {
     .results-header {
       flex-direction: column;
       align-items: stretch;
-      gap: 1rem;
+      gap: 0.5rem;
+    }
+
+    .results-header-row1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
     }
 
     .results-title {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
     .sort-control {
       width: 100%;
-      justify-content: space-between;
+      justify-content: flex-end;
     }
 
     .view-mode-toggle {
       flex: 0 0 auto;
+      margin-right: 0;
+      padding-right: 0;
+      border-right: none;
     }
 
     .sort-label {
@@ -713,7 +881,9 @@
 
     .sort-select {
       flex: 1 1 auto;
-      max-width: 180px;
+      max-width: 160px;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.5rem;
     }
   }
 
@@ -721,9 +891,6 @@
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    margin-right: 0.4rem;
-    padding-right: 0.5rem;
-    @apply border-r border-gray-200;
   }
 
   .view-mode-btn {
