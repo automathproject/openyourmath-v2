@@ -13,6 +13,7 @@
   export let showGlobalToggles = false;
   export let showHint = false;
   export let showSolution = false;
+  export let studentMode = 'normal'; // 'normal' | 'student' | 'student-hints'
   export let breadcrumbItems = []; // [{label, href?}]
   export let showBreadcrumb = true;
 
@@ -248,7 +249,7 @@
           </button>
         {/if}
 
-        {#if showGlobalToggles && exercise?.hasIndication}
+        {#if showGlobalToggles && exercise?.hasIndication && studentMode !== 'student'}
           <button
             on:click={() => showHint = !showHint}
             class="action-button action-button--hint"
@@ -257,7 +258,7 @@
             💡 {showHint ? 'Masquer' : 'Voir'} les indications
           </button>
         {/if}
-        {#if showGlobalToggles && exercise?.hasSolution}
+        {#if showGlobalToggles && exercise?.hasSolution && studentMode === 'normal'}
           <button
             on:click={() => showSolution = !showSolution}
             class="action-button action-button--solution"

@@ -22,8 +22,15 @@
   
   let showHint = false;
   let showSolution = false;
-  let shareUrl = '';
   let isEditMode = false;
+  let showSharePanel = false;
+
+  // Vue élève : 'normal' | 'student' | 'student-hints'
+  $: studentMode = $page.url.searchParams.get('view') === 'student'
+    ? 'student'
+    : $page.url.searchParams.get('view') === 'student-hints'
+      ? 'student-hints'
+      : 'normal';
 
   // Titre personnalisé
   let listTitle = data.title || '';
@@ -134,7 +141,6 @@
       selectedExerciseIndex.set(0);
     }
 
-    shareUrl = buildShareUrl();
     updateUuidInput();
 
     return () => unsubAnim();
@@ -153,9 +159,8 @@
     }
   });
 
-  // Réactivité pour mettre à jour l'URL de partage et le champ UUID
+  // Réactivité pour mettre à jour le champ UUID
   $: if ($exerciseList) {
-    shareUrl = buildShareUrl();
     updateUuidInput();
   }
   
@@ -330,17 +335,20 @@
   
   function buildUrl() {
     const base = listActions.getCurrentListUrl();
-    if (!listTitle) return base;
-    const separator = base.includes('?') ? '&' : '?';
-    return `${base}${separator}title=${encodeURIComponent(listTitle)}`;
+    let url = base;
+    if (listTitle) url += `${url.includes('?') ? '&' : '?'}title=${encodeURIComponent(listTitle)}`;
+    if (studentMode !== 'normal') url += `${url.includes('?') ? '&' : '?'}view=${studentMode}`;
+    return url;
   }
 
-  function buildShareUrl() {
+  function buildShareUrl(viewOverride) {
     const origin = typeof window !== 'undefined' ? window.location.origin : '';
     const base = listUtils.getShareableUrl(origin);
-    if (!listTitle) return base;
-    const separator = base.includes('?') ? '&' : '?';
-    return `${base}${separator}title=${encodeURIComponent(listTitle)}`;
+    let url = base;
+    if (listTitle) url += `${url.includes('?') ? '&' : '?'}title=${encodeURIComponent(listTitle)}`;
+    const view = viewOverride ?? (studentMode !== 'normal' ? studentMode : null);
+    if (view) url += `${url.includes('?') ? '&' : '?'}view=${view}`;
+    return url;
   }
 
   function updateUrl() {
@@ -362,7 +370,6 @@
     listTitle = titleDraft.trim();
     isEditingTitle = false;
     updateUrl();
-    shareUrl = buildShareUrl();
   }
 
   function cancelEditTitle() {
@@ -375,17 +382,26 @@
     if (e.key === 'Escape') { e.preventDefault(); cancelEditTitle(); }
   }
   
-  // Partage de la liste
-  function shareList() {
-    if (navigator.share && shareUrl) {
-      navigator.share({
-        title: `Liste d'exercices (${$exerciseList.length} exercices)`,
-        text: `Découvrez cette liste de ${$exerciseList.length} exercices de mathématiques`,
-        url: shareUrl
-      });
-    } else {
-      navigator.clipboard.writeText(shareUrl);
-      alert('Lien copié dans le presse-papier !');
+  // Panneau de partage
+  let shareCopied = ''; // 'normal' | 'student' | 'student-hints' | ''
+
+  function openSharePanel() {
+    showSharePanel = true;
+  }
+
+  function closeSharePanel() {
+    showSharePanel = false;
+    shareCopied = '';
+  }
+
+  async function copyShareUrl(view) {
+    const url = buildShareUrl(view ?? undefined);
+    try {
+      await navigator.clipboard.writeText(url);
+      shareCopied = view ?? 'normal';
+      setTimeout(() => { if (shareCopied === (view ?? 'normal')) shareCopied = ''; }, 2000);
+    } catch {
+      alert(url);
     }
   }
   
@@ -428,17 +444,22 @@
       } else if (showUuidControl) {
         event.preventDefault();
         closeUuidControl();
+      } else if (showSharePanel) {
+        event.preventDefault();
+        closeSharePanel();
       }
     }
   }
-  
-  // NOUVEAU : Gestionnaire de clic sur l'overlay
+
+  // Gestionnaire de clic sur l'overlay
   function handleOverlayClick(event) {
     if (event.target === event.currentTarget) {
       if (isMobileNavOpen) {
         closeMobileNav();
       } else if (showUuidControl) {
         closeUuidControl();
+      } else if (showSharePanel) {
+        closeSharePanel();
       }
     }
   }
@@ -583,8 +604,9 @@
             </button>
 
             <button
-              on:click={shareList}
+              on:click={openSharePanel}
               class="list-action-btn list-action-btn--primary"
+              class:list-action-btn--active={showSharePanel}
               aria-label="Partager la liste d'exercices"
             >
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -675,8 +697,73 @@
         </div>
       </div>
     {/if}
+
+    <!-- Panneau de partage -->
+    {#if showSharePanel && $hasExercises}
+      <div class="share-panel" class:share-panel--mobile={isMobile}>
+        <div class="uuid-control-header">
+          <h3 class="uuid-control-title">Partager la liste</h3>
+          <button
+            on:click={closeSharePanel}
+            class="uuid-control-close"
+            aria-label="Fermer le panneau de partage"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="share-rows">
+          <!-- Lien professeur (normal) -->
+          <div class="share-row">
+            <div class="share-row-info">
+              <span class="share-row-label">Vue complète</span>
+              <span class="share-row-desc">Solutions et indications accessibles</span>
+            </div>
+            <button
+              class="share-copy-btn"
+              class:share-copy-btn--copied={shareCopied === 'normal'}
+              on:click={() => copyShareUrl(null)}
+            >
+              {shareCopied === 'normal' ? '✓ Copié' : 'Copier le lien'}
+            </button>
+          </div>
+
+          <!-- Lien élève + indications -->
+          <div class="share-row">
+            <div class="share-row-info">
+              <span class="share-row-label">Vue élève + indications</span>
+              <span class="share-row-desc">Indications visibles, solutions masquées</span>
+            </div>
+            <button
+              class="share-copy-btn share-copy-btn--hints"
+              class:share-copy-btn--copied={shareCopied === 'student-hints'}
+              on:click={() => copyShareUrl('student-hints')}
+            >
+              {shareCopied === 'student-hints' ? '✓ Copié' : 'Copier le lien'}
+            </button>
+          </div>
+
+          <!-- Lien élève strict -->
+          <div class="share-row">
+            <div class="share-row-info">
+              <span class="share-row-label">Vue élève</span>
+              <span class="share-row-desc">Solutions et indications masquées</span>
+            </div>
+            <button
+              class="share-copy-btn share-copy-btn--student"
+              class:share-copy-btn--copied={shareCopied === 'student'}
+              on:click={() => copyShareUrl('student')}
+            >
+              {shareCopied === 'student' ? '✓ Copié' : 'Copier le lien'}
+            </button>
+          </div>
+        </div>
+      </div>
+    {/if}
   </header>
-  
+
   {#if !$hasExercises}
     <!-- État vide -->
     <div class="empty-state">
@@ -830,13 +917,13 @@
         {/if}
       </aside>
       
-      <!-- NOUVEAU : Overlay pour mobile (navigation ET UUID control) -->
-      {#if (isMobileNavOpen || showUuidControl) && isMobile}
+      <!-- Overlay pour mobile (navigation, UUID control, partage) -->
+      {#if (isMobileNavOpen || showUuidControl || showSharePanel) && isMobile}
         <div class="mobile-overlay" on:click={handleOverlayClick}></div>
       {/if}
-      
-      <!-- Overlay pour UUID control sur desktop -->
-      {#if showUuidControl && !isMobile}
+
+      <!-- Overlay pour UUID control / partage sur desktop -->
+      {#if (showUuidControl || showSharePanel) && !isMobile}
         <div class="desktop-uuid-overlay" on:click={handleOverlayClick}></div>
       {/if}
       
@@ -880,6 +967,7 @@
                   content={$selectedExercise.content || []}
                   bind:showHint
                   bind:showSolution
+                  {studentMode}
                 />
               </article>
             {/key}
@@ -894,6 +982,7 @@
                 content={$selectedExercise.content || []}
                 bind:showHint
                 bind:showSolution
+                {studentMode}
               />
             </article>
           {/if}
@@ -1155,7 +1244,102 @@
   .list-action-btn--danger { @apply bg-error-500 text-white; }
   .list-action-btn--danger:hover { @apply bg-error-600; }
 
-  /* NOUVEAU : Panneau de contrôle UUID */
+  /* Panneau de partage */
+  .share-panel {
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    width: 420px;
+    max-width: calc(100vw - 2rem);
+    z-index: 70;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.3);
+    animation: slide-in 0.2s ease-out;
+    @apply bg-interface-bg-primary border border-gray-300;
+  }
+
+  .share-panel--mobile {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 420px;
+    z-index: 70;
+  }
+
+  .share-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  .share-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid;
+    @apply border-gray-100;
+  }
+
+  .share-row-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+  }
+
+  .share-row-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    @apply text-gray-900;
+  }
+
+  .share-row-desc {
+    font-size: 0.75rem;
+    @apply text-gray-500;
+  }
+
+  .share-copy-btn {
+    flex-shrink: 0;
+    padding: 0.375rem 0.875rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+    @apply bg-slate-100 text-slate-700 border-slate-200;
+  }
+
+  .share-copy-btn:hover {
+    @apply bg-slate-200;
+  }
+
+  .share-copy-btn--copied {
+    @apply bg-green-100 text-green-700 border-green-200;
+  }
+
+  .share-copy-btn--hints {
+    @apply bg-yellow-50 text-yellow-800 border-yellow-200;
+  }
+
+  .share-copy-btn--hints:hover {
+    @apply bg-yellow-100;
+  }
+
+  .share-copy-btn--student {
+    @apply bg-blue-50 text-blue-800 border-blue-200;
+  }
+
+  .share-copy-btn--student:hover {
+    @apply bg-blue-100;
+  }
+
+  /* Panneau de contrôle UUID */
   .uuid-control-panel {
     position: absolute;
     top: 100%;

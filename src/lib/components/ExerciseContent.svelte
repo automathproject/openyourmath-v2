@@ -10,6 +10,7 @@
   export let variant = 'full'; // 'full' | 'preview' | 'simple'
   export let position = null; // { current, total }
   export let showGlobalToggles = false;
+  export let studentMode = 'normal'; // 'normal' | 'student' | 'student-hints'
   $: isPreview = variant === 'preview';
   
   // État local pour contrôler l'affichage individuel des solutions et indications
@@ -211,6 +212,7 @@
       bind:showHint
       bind:showSolution
       showGlobalToggles={showGlobalToggles}
+      {studentMode}
     />
   {/if}
   
@@ -225,12 +227,12 @@
         </div>
       {/each}
       
-    {:else if contentBlock.type === 'standalone-hint'}
+    {:else if contentBlock.type === 'standalone-hint' && studentMode !== 'student'}
       {#each [contentBlock.block] as block}
         {@const processed = processContentBlock(block)}
         <!-- Indication standalone -->
-        <details 
-          class="mt-8 collapsible-section collapsible-section--hint" 
+        <details
+          class="mt-8 collapsible-section collapsible-section--hint"
           bind:open={showHint}
         >
           <summary class="collapsible-summary collapsible-summary--hint">
@@ -244,7 +246,7 @@
         </details>
       {/each}
       
-    {:else if contentBlock.type === 'standalone-solution'}
+    {:else if contentBlock.type === 'standalone-solution' && studentMode === 'normal'}
       {#each [contentBlock.block] as block}
         {@const processed = processContentBlock(block)}
         <!-- Solution standalone -->
@@ -282,8 +284,8 @@
                 </div>
               </div>
               <div class="question-actions" class:question-actions--preview={isPreview}>
-                {#if contentBlock.hints.length > 0}
-                  <button 
+                {#if contentBlock.hints.length > 0 && studentMode !== 'student'}
+                  <button
                     class="question-action-btn question-action-btn--hint"
                     class:question-action-btn--active={(hintStates[contentBlock.questionIndex] || showHint) && !hiddenHintStates[contentBlock.questionIndex]}
                     class:question-action-btn--preview={isPreview}
@@ -297,8 +299,8 @@
                     {/if}
                   </button>
                 {/if}
-                {#if contentBlock.solutions.length > 0}
-                  <button 
+                {#if contentBlock.solutions.length > 0 && studentMode === 'normal'}
+                  <button
                     class="question-action-btn question-action-btn--solution"
                     class:question-action-btn--active={(solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex]}
                     class:question-action-btn--preview={isPreview}
@@ -318,7 +320,7 @@
         {/each}
         
         <!-- Indications (affichées immédiatement après la question si activées) -->
-        {#if contentBlock.hints.length > 0 && (hintStates[contentBlock.questionIndex] || showHint) && !hiddenHintStates[contentBlock.questionIndex]}
+        {#if contentBlock.hints.length > 0 && studentMode !== 'student' && (hintStates[contentBlock.questionIndex] || showHint) && !hiddenHintStates[contentBlock.questionIndex]}
           <div class="inline-hint">
             {#each contentBlock.hints as hint}
               {@const processedH = processContentBlock(hint)}
@@ -330,7 +332,7 @@
         {/if}
         
         <!-- Solutions (affichées après les indications si activées) -->
-        {#if contentBlock.solutions.length > 0 && (solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex]}
+        {#if contentBlock.solutions.length > 0 && studentMode === 'normal' && (solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex]}
           <div class="inline-solution">
             {#each contentBlock.solutions as solution}
               {@const processedS = processContentBlock(solution)}
