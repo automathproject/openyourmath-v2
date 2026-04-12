@@ -6,6 +6,7 @@
   import { goto } from '$app/navigation';
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
   import ExerciseListEditor from '$lib/components/ExerciseListEditor.svelte';
+  import LatexExportPanel from '$lib/components/LatexExportPanel.svelte';
   import { 
     exerciseList, 
     selectedExerciseIndex, 
@@ -405,131 +406,6 @@
     }
   }
 
-  // Export LaTeX
-  let latexIncludeHints = true;
-  let latexIncludeSolutions = true;
-
-  function blockToLatex(block) {
-    if (block.latex) return block.latex.trim();
-    if (block.text) return block.text.trim();
-    if (block.html) {
-      return block.html
-        .replace(/<br\s*\/?>/gi, '\n')
-        .replace(/<\/p>\s*<p[^>]*>/gi, '\n\n')
-        .replace(/<p[^>]*>/gi, '')
-        .replace(/<\/p>/gi, '')
-        .replace(/<[^>]+>/g, '')
-        .replace(/&amp;/g, '&')
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&quot;/g, '"')
-        .replace(/&#039;/g, "'")
-        .replace(/&nbsp;/g, ' ')
-        .trim();
-    }
-    return '';
-  }
-
-  function latexEscapeTitle(str) {
-    if (!str) return '';
-    return str
-      .replace(/\\/g, '\\textbackslash{}')
-      .replace(/\{/g, '\\{').replace(/\}/g, '\\}')
-      .replace(/\$/g, '\\$').replace(/%/g, '\\%')
-      .replace(/&/g, '\\&').replace(/#/g, '\\#')
-      .replace(/_/g, '\\_').replace(/~/g, '\\textasciitilde{}')
-      .replace(/\^/g, '\\textasciicircum{}');
-  }
-
-  function generateLatex() {
-    const exercises = $exerciseList;
-    const title = listTitle || "Liste d'exercices";
-
-    const lines = [
-      '\\documentclass[a4paper,12pt]{article}',
-      '\\usepackage[utf8]{inputenc}',
-      '\\usepackage[T1]{fontenc}',
-      '\\usepackage[french]{babel}',
-      '\\usepackage{amsmath,amssymb,amsthm}',
-      '\\usepackage{geometry}',
-      '\\geometry{margin=2.5cm}',
-      '',
-      `\\title{${latexEscapeTitle(title)}}`,
-      '\\date{}',
-      '\\author{}',
-      '',
-      '\\begin{document}',
-      '\\maketitle',
-      '',
-    ];
-
-    exercises.forEach((ex, i) => {
-      const content = ex.fullExercise?.content || ex.content || [];
-      const sorted = [...content].sort((a, b) => (a.order || 0) - (b.order || 0));
-      const exTitle = ex.title ? latexEscapeTitle(ex.title) : `Exercice ${i + 1}`;
-      lines.push(`\\section*{Exercice ${i + 1} -- ${exTitle}}`);
-      lines.push('');
-
-      // Regrouper les blocs par question
-      const groups = [];
-      let currentGroup = null;
-      for (const block of sorted) {
-        const type = block.type || 'text';
-        if (type === 'question') {
-          if (currentGroup) groups.push(currentGroup);
-          currentGroup = { question: block, hints: [], solutions: [] };
-        } else if (type === 'hint' || type === 'indication') {
-          if (currentGroup) currentGroup.hints.push(block);
-          else groups.push({ question: null, hints: [block], solutions: [] });
-        } else if (type === 'reponse' || type === 'solution' || type === 'answer') {
-          if (currentGroup) currentGroup.solutions.push(block);
-          else groups.push({ question: null, hints: [], solutions: [block] });
-        } else {
-          if (currentGroup) groups.push(currentGroup);
-          currentGroup = { question: block, hints: [], solutions: [] };
-        }
-      }
-      if (currentGroup) groups.push(currentGroup);
-
-      groups.forEach((group, gi) => {
-        if (gi > 0) lines.push('');
-        if (group.question) {
-          lines.push(blockToLatex(group.question));
-          lines.push('');
-        }
-        if (latexIncludeHints && group.hints.length > 0) {
-          lines.push('\\medskip\\textbf{Indication :}');
-          lines.push('');
-          group.hints.forEach(h => { lines.push(blockToLatex(h)); lines.push(''); });
-        }
-        if (latexIncludeSolutions && group.solutions.length > 0) {
-          lines.push('\\medskip\\textbf{Solution :}');
-          lines.push('');
-          group.solutions.forEach(s => { lines.push(blockToLatex(s)); lines.push(''); });
-        }
-      });
-
-      lines.push('');
-    });
-
-    lines.push('\\end{document}');
-    return lines.join('\n');
-  }
-
-  function downloadLatex() {
-    const content = generateLatex();
-    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    const filename = (listTitle || 'exercices').replace(/[^a-z0-9\-_]/gi, '_').toLowerCase();
-    a.download = `${filename}.tex`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }
-  
   // Navigation clavier
   function handleKeydown(event) {
     const isTyping = event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA';
@@ -887,25 +763,7 @@
         </div>
 
         <!-- Export LaTeX -->
-        <div class="share-latex-section">
-          <span class="share-latex-title">Export LaTeX</span>
-          <div class="share-latex-options">
-            <label class="share-latex-option">
-              <input type="checkbox" bind:checked={latexIncludeHints} />
-              <span>Inclure les indications</span>
-            </label>
-            <label class="share-latex-option">
-              <input type="checkbox" bind:checked={latexIncludeSolutions} />
-              <span>Inclure les solutions</span>
-            </label>
-          </div>
-          <button class="share-latex-btn" on:click={downloadLatex}>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-            Télécharger .tex
-          </button>
-        </div>
+        <LatexExportPanel exercises={$exerciseList} title={listTitle} />
       </div>
     {/if}
   </header>
@@ -1483,64 +1341,6 @@
 
   .share-copy-btn--student:hover {
     @apply bg-blue-100;
-  }
-
-  .share-latex-section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem 1rem;
-    border-top: 1px solid;
-    @apply border-gray-200;
-  }
-
-  .share-latex-title {
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    @apply text-gray-400;
-  }
-
-  .share-latex-options {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .share-latex-option {
-    display: flex;
-    align-items: center;
-    gap: 0.375rem;
-    font-size: 0.8rem;
-    cursor: pointer;
-    @apply text-gray-600;
-  }
-
-  .share-latex-option input[type="checkbox"] {
-    accent-color: #6366f1;
-    width: 0.9rem;
-    height: 0.9rem;
-    cursor: pointer;
-  }
-
-  .share-latex-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    padding: 0.4rem 1rem;
-    border-radius: 0.5rem;
-    font-size: 0.8rem;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all 0.15s ease;
-    align-self: flex-start;
-    @apply bg-indigo-50 text-indigo-700 border-indigo-200;
-  }
-
-  .share-latex-btn:hover {
-    @apply bg-indigo-100;
   }
 
   /* Panneau de contrôle UUID */
