@@ -36,9 +36,13 @@ RUN pnpm run build:app
 # Ce stage crée l'image finale, propre et légère
 FROM node:22-alpine AS production
 
-# Installer uniquement les dépendances système nécessaires pour better-sqlite3 en production
+# Installer sqlite au runtime, plus les outils de build temporaires pour better-sqlite3
 RUN apk add --no-cache \
     sqlite \
+    && apk add --no-cache --virtual .build-deps \
+    python3 \
+    make \
+    g++ \
     && corepack enable \
     && addgroup -g 1001 -S nodejs \
     && adduser -S sveltekit -u 1001
@@ -59,7 +63,8 @@ COPY --chown=sveltekit:nodejs package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile --prod --ignore-scripts && \
     pnpm rebuild better-sqlite3 && \
     pnpm store prune && \
-    rm -rf ~/.pnpm-store
+    rm -rf ~/.pnpm-store && \
+    apk del .build-deps
 
 # Copier les artéfacts de build depuis le stage 'builder'
 COPY --from=builder --chown=sveltekit:nodejs /app/build ./build
