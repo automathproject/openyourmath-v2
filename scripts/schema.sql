@@ -23,7 +23,12 @@ CREATE TABLE IF NOT EXISTS exercises (
   hasIndication INTEGER NOT NULL DEFAULT 0, -- 0/1 booléen: au moins une indication
   hasSolution INTEGER NOT NULL DEFAULT 0,   -- 0/1 booléen: au moins une solution/réponse
   content_json TEXT NOT NULL,
-  source_hash TEXT
+  source_hash TEXT,
+  content_hash TEXT,   -- hash du contenu sémantique (énoncés, questions, réponses, indications) — géré par Pipeline A
+  summary TEXT,        -- résumé généré par LLM (Pipeline B uniquement)
+  concepts TEXT,       -- JSON: liste de concepts (Pipeline B uniquement)
+  methods TEXT,        -- JSON: liste de méthodes (Pipeline B uniquement)
+  indexed_at TEXT      -- horodatage de la dernière indexation sémantique (Pipeline B uniquement)
 );
 
 -- Table d'association exercice ↔ auteurs (un enregistrement par auteur)
@@ -35,6 +40,17 @@ CREATE TABLE IF NOT EXISTS exercise_authors (
 );
 CREATE INDEX IF NOT EXISTS idx_ex_auth_display ON exercise_authors(author_display);
 CREATE INDEX IF NOT EXISTS idx_ex_auth_uuid ON exercise_authors(uuid);
+
+-- Table des embeddings sémantiques (Pipeline B uniquement)
+CREATE TABLE IF NOT EXISTS exercise_embeddings (
+  uuid TEXT PRIMARY KEY,
+  embedding_summary BLOB NOT NULL,
+  model_version TEXT NOT NULL DEFAULT 'BAAI/bge-m3',
+  dimension INTEGER NOT NULL DEFAULT 1024,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (uuid) REFERENCES exercises(uuid) ON DELETE CASCADE
+);
+CREATE INDEX IF NOT EXISTS idx_embeddings_model ON exercise_embeddings(model_version);
 
 -- Table virtuelle pour la recherche plein texte (FTS5)
 CREATE VIRTUAL TABLE IF NOT EXISTS fts_exercises USING fts5(
@@ -57,3 +73,5 @@ CREATE INDEX IF NOT EXISTS idx_difficulty ON exercises(difficulty); -- NOUVEAU :
 CREATE INDEX IF NOT EXISTS idx_module ON exercises(module);
 CREATE INDEX IF NOT EXISTS idx_author ON exercises(author);
 CREATE INDEX IF NOT EXISTS idx_license_code ON exercises(license_code);
+CREATE INDEX IF NOT EXISTS idx_content_hash ON exercises(content_hash);
+CREATE INDEX IF NOT EXISTS idx_indexed_at ON exercises(indexed_at);

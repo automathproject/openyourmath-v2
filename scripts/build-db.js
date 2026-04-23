@@ -1,6 +1,7 @@
 // scripts/build-db.js
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { spawnSync } from 'child_process';
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
@@ -31,18 +32,20 @@ function isAbiMismatchError(error) {
 function runNativeRebuild() {
   const pkgPath = require.resolve('better-sqlite3/package.json');
   const moduleDir = path.dirname(pkgPath);
-  const env = { ...process.env };
 
-  // Sur Linux/Debian, les headers système sont souvent déjà présents.
-  if (!env.npm_config_nodedir && fs.existsSync('/usr/include/node')) {
-    env.npm_config_nodedir = '/usr';
-  }
+  // Dériver le préfixe Node.js depuis le binaire en cours d'exécution.
+  // ex: process.execPath = /home/user/.nvm/versions/node/v22.18.0/bin/node
+  //     nodeDir           = /home/user/.nvm/versions/node/v22.18.0
+  // Cela garantit que node-gyp compile avec les headers du runtime actuel,
+  // quel que soit le Node système ou celui utilisé par pnpm.
+  const nodeDir = path.dirname(path.dirname(process.execPath));
+  const env = { ...process.env, npm_config_nodedir: nodeDir };
 
   const npmCmd = process.platform === 'win32' ? 'npm.cmd' : 'npm';
   const result = spawnSync(npmCmd, ['run', 'build-release'], {
     cwd: moduleDir,
     stdio: 'inherit',
-    env
+    env,
   });
 
   if (result.status !== 0) {
@@ -51,10 +54,17 @@ function runNativeRebuild() {
 }
 
 function loadDatabaseModule() {
-  try {
+  const tryLoad = () => {
     const mod = require('better-sqlite3');
-    Database = mod.default || mod;
-    return;
+    const Db = mod.default || mod;
+    // Provoquer l'erreur ABI maintenant plutôt qu'à l'ouverture de la vraie base
+    const probe = new Db(':memory:');
+    probe.close();
+    return Db;
+  };
+
+  try {
+    Database = tryLoad();
   } catch (error) {
     if (!isAbiMismatchError(error)) {
       throw error;
@@ -63,15 +73,14 @@ function loadDatabaseModule() {
     console.log('⚠️ better-sqlite3 ABI mismatch detected, rebuilding native bindings...');
     runNativeRebuild();
 
-    try {
-      const resolved = require.resolve('better-sqlite3');
-      delete require.cache[resolved];
-    } catch {
-      // no-op
+    // Vider tous les nœuds de cache liés à better-sqlite3 (pnpm inclus)
+    for (const key of Object.keys(require.cache)) {
+      if (key.includes('better-sqlite3') || key.endsWith('.node')) {
+        delete require.cache[key];
+      }
     }
 
-    const mod = require('better-sqlite3');
-    Database = mod.default || mod;
+    Database = tryLoad();
     console.log('✅ better-sqlite3 rebuilt for current Node.js runtime');
   }
 }
@@ -157,6 +166,45 @@ function cleanPreviewForSearch(preview) {
 }
 
 /**
+ * Hash du contenu sémantiquement pertinent (Pipeline A).
+ * Couvre uniquement les blocs énoncé/question/réponse/indication.
+ * Permet au Pipeline B de détecter si une réindexation est nécessaire.
+ */
+function computeContentHash(contentArray) {
+  if (!Array.isArray(contentArray)) return null;
+  const semanticTypes = new Set(['enonce', 'question', 'reponse', 'indication', 'hint', 'answer', 'solution', 'texte', 'text']);
+  const blocks = contentArray.filter(b => semanticTypes.has((b?.type || '').toLowerCase()));
+  return crypto.createHash('sha256').update(JSON.stringify(blocks)).digest('hex');
+}
+
+/**
+ * Ajoute les colonnes manquantes sur une base existante.
+ * Nécessaire lors de la première exécution après ajout des colonnes sémantiques.
+ */
+function runMigrations(db) {
+  // Sur une base neuve la table n'existe pas encore : le schéma s'en charge.
+  const tableExists = db.prepare(
+    "SELECT 1 FROM sqlite_master WHERE type='table' AND name='exercises'"
+  ).get();
+  if (!tableExists) return;
+
+  const existing = new Set(db.prepare('PRAGMA table_info(exercises)').all().map(c => c.name));
+  const toAdd = [
+    ['content_hash', 'TEXT'],
+    ['summary',      'TEXT'],
+    ['concepts',     'TEXT'],
+    ['methods',      'TEXT'],
+    ['indexed_at',   'TEXT'],
+  ];
+  for (const [col, type] of toAdd) {
+    if (!existing.has(col)) {
+      db.exec(`ALTER TABLE exercises ADD COLUMN ${col} ${type}`);
+      console.log(`✅ Migration: added column exercises.${col}`);
+    }
+  }
+}
+
+/**
  * Crée et initialise la base de données
  */
 function createDatabase(dbPath) {
@@ -233,11 +281,35 @@ function createDatabase(dbPath) {
       );
     }
     
+    // Ajouter les colonnes manquantes AVANT d'exécuter le schéma :
+    // sinon CREATE INDEX sur content_hash échoue si la colonne n'existe pas encore.
+    runMigrations(db);
+
+    // Migration : si exercise_embeddings existe avec l'ancien schéma, la recréer
+    try {
+      const existingTable = db.prepare(
+        "SELECT sql FROM sqlite_master WHERE type='table' AND name='exercise_embeddings'"
+      ).get();
+      if (existingTable && !existingTable.sql.includes('embedding_summary')) {
+        const count = db.prepare('SELECT COUNT(*) as n FROM exercise_embeddings').get().n;
+        if (count > 0) {
+          throw new Error(
+            `❌ Migration impossible : ${count} embeddings existent déjà avec l'ancien schéma.\n` +
+            `   Sauvegardez-les avant de recréer la table.`
+          );
+        }
+        console.log('🔄 Migration : recréation de exercise_embeddings avec le schéma conforme');
+        db.exec('DROP TABLE exercise_embeddings');
+      }
+    } catch (err) {
+      if (!err.message.includes('no such table')) throw err;
+    }
+
     console.log('📋 Executing schema...');
-    
+
     // Exécuter tout le script de création en une seule fois
     db.exec(schema);
-    
+
     // Vérifier que les tables ont été créées
     const tables = db.prepare("SELECT name FROM sqlite_master WHERE type='table'").all();
     console.log('✅ Created tables:', tables.map(t => t.name));
@@ -425,15 +497,43 @@ function resolveAuthor(authorValue, exerciseOrg, authorsIdx) {
  */
 function insertExercises(db, exercises, authorsIdx) {
   console.log(`💾 Inserting ${exercises.length} exercises...`);
-  
+
+  const existingHashes = new Map(
+    db.prepare('SELECT uuid, content_hash FROM exercises').all()
+      .map(r => [r.uuid, r.content_hash])
+  );
+
   // Préparer les requêtes
+  // ON CONFLICT : met à jour toutes les colonnes Pipeline A, ne touche JAMAIS
+  // aux colonnes sémantiques (summary, concepts, methods, indexed_at).
+  // created_at est aussi préservé pour ne pas écraser la date de création originale.
   const insertExercise = db.prepare(`
-    INSERT OR REPLACE INTO exercises (
+    INSERT INTO exercises (
       uuid, title, chapter, subchapter, theme, level, difficulty, module,
       author, organization, license_code, license_url, video_id, created_at, updated_at, preview,
       hasIndication, hasSolution,
-      content_json, source_hash
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      content_json, source_hash, content_hash
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ON CONFLICT(uuid) DO UPDATE SET
+      title        = excluded.title,
+      chapter      = excluded.chapter,
+      subchapter   = excluded.subchapter,
+      theme        = excluded.theme,
+      level        = excluded.level,
+      difficulty   = excluded.difficulty,
+      module       = excluded.module,
+      author       = excluded.author,
+      organization = excluded.organization,
+      license_code = excluded.license_code,
+      license_url  = excluded.license_url,
+      video_id     = excluded.video_id,
+      updated_at   = excluded.updated_at,
+      preview      = excluded.preview,
+      hasIndication = excluded.hasIndication,
+      hasSolution  = excluded.hasSolution,
+      content_json = excluded.content_json,
+      source_hash  = excluded.source_hash,
+      content_hash = excluded.content_hash
   `);
   const deleteAuthorsFor = db.prepare(`DELETE FROM exercise_authors WHERE uuid = ?`);
   const insertAuthor = db.prepare(`
@@ -441,11 +541,17 @@ function insertExercises(db, exercises, authorsIdx) {
     VALUES (?, ?, ?)
   `);
   
+  const invalidateIndexing = db.prepare(`UPDATE exercises SET indexed_at = NULL WHERE uuid = ?`);
+
+  // FTS5 ne supporte pas ON CONFLICT : on supprime puis réinsère
+  const deleteFTS = db.prepare(`DELETE FROM fts_exercises WHERE uuid = ?`);
   const insertFTS = db.prepare(`
-    INSERT OR REPLACE INTO fts_exercises (uuid, title, theme, chapter, module, level, difficulty, preview, content_text)
+    INSERT INTO fts_exercises (uuid, title, theme, chapter, module, level, difficulty, preview, content_text)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   
+  let added = 0, changedSemantically = 0, unchanged = 0, errors = 0;
+
   // Transaction pour la performance
   const transaction = db.transaction((exercises) => {
     let count = 0;
@@ -479,15 +585,16 @@ function insertExercises(db, exercises, authorsIdx) {
         // Générer un preview intelligent qui respecte la syntaxe LaTeX
         const smartPreview = generatePreview(exercise) || exercise.preview || (exercise.title ? `<p>${exercise.title}</p>` : null);
 
-        // Insérer dans la table principale
+        // Insérer dans la table principale (upsert Pipeline A)
+        const contentHash = computeContentHash(exercise.content);
         insertExercise.run(
           exercise.uuid,
           exercise.title,
           exercise.chapter,
           exercise.subchapter || null,
           exercise.theme || null,
-          exercise.level || null, // MODIFIÉ : ancien difficulty devient level (TEXT)
-          exercise.difficulty, // NOUVEAU : difficulté numérique (INTEGER, peut être null)
+          exercise.level || null,
+          exercise.difficulty,
           exercise.module || null,
           resolved.author || null,
           resolved.organization || null,
@@ -500,9 +607,23 @@ function insertExercises(db, exercises, authorsIdx) {
           hasIndication,
           hasSolution,
           JSON.stringify(exercise.content),
-          exercise.source_hash || null
+          exercise.source_hash || null,
+          contentHash
         );
         
+        // Classification sémantique
+        const wasNew = !existingHashes.has(exercise.uuid);
+        const oldHash = existingHashes.get(exercise.uuid);
+        const hashChanged = !wasNew && oldHash !== contentHash;
+        if (hashChanged) {
+          invalidateIndexing.run(exercise.uuid);
+          changedSemantically++;
+        } else if (wasNew) {
+          added++;
+        } else {
+          unchanged++;
+        }
+
         // Insérer les auteurs (table plate)
         try {
           deleteAuthorsFor.run(exercise.uuid);
@@ -515,11 +636,10 @@ function insertExercises(db, exercises, authorsIdx) {
           console.warn('⚠️ Failed to insert exercise_authors for', exercise.uuid, e.message);
         }
 
-        // Insérer dans FTS5 pour la recherche
+        // Insérer dans FTS5 pour la recherche (DELETE + INSERT pour compatibilité FTS5)
         const searchText = extractSearchText(exercise.content);
         const cleanPreview = cleanPreviewForSearch(smartPreview);
-
-        // S'assurer que tous les champs sont des chaînes non nulles pour FTS5
+        deleteFTS.run(exercise.uuid);
         insertFTS.run(
           exercise.uuid || '',
           exercise.title || '',
@@ -535,6 +655,7 @@ function insertExercises(db, exercises, authorsIdx) {
         count++;
         
       } catch (error) {
+        errors++;
         console.error(`❌ Failed to insert ${exercise.uuid}:`, error.message);
         console.error(`   Exercise data:`, {
           uuid: exercise.uuid,
@@ -551,10 +672,15 @@ function insertExercises(db, exercises, authorsIdx) {
     return count;
   });
   
-  const inserted = transaction(exercises);
-  console.log(`✅ Inserted ${inserted} exercises`);
-  
-  return inserted;
+  transaction(exercises);
+
+  console.log(`\n📊 Rapport d'insertion :`);
+  console.log(`  ✅ Nouveaux        : ${added}`);
+  console.log(`  🔄 Modifiés (sém.) : ${changedSemantically}  [indexation invalidée]`);
+  console.log(`  ⏸️  Inchangés       : ${unchanged}`);
+  if (errors > 0) console.log(`  ❌ Erreurs         : ${errors}`);
+
+  return added + changedSemantically + unchanged;
 }
 
 /**
@@ -575,13 +701,8 @@ async function main() {
     console.log('🔧 Checking native SQLite bindings...');
     loadDatabaseModule();
 
-    if (fs.existsSync(DB_PATH)) {
-      console.log('🔥 Deleting existing database...');
-      fs.unlinkSync(DB_PATH);
-    }
-    
-    // Créer la base de données
-    console.log('📚 Creating database...');
+    // Ouvrir ou créer la base de données (mode incrémental : pas de suppression)
+    console.log('📚 Opening/creating database...');
     const db = createDatabase(DB_PATH);
     
     try {
@@ -641,7 +762,21 @@ async function main() {
       
       // Insérer en base
       const inserted = insertExercises(db, exercises, authorsIdx);
-      
+
+      // Suppression des exercices qui ne sont plus dans le cache
+      console.log('\n🧹 Recherche des exercices obsolètes...');
+      const validUuids = new Set(exercises.map(e => e.uuid));
+      const allUuidsInDb = db.prepare('SELECT uuid FROM exercises').all().map(r => r.uuid);
+      const toDelete = allUuidsInDb.filter(uuid => !validUuids.has(uuid));
+      if (toDelete.length > 0) {
+        console.log(`🗑️  Suppression de ${toDelete.length} exercices absents du cache`);
+        console.log(`   (leurs embeddings seront supprimés via ON DELETE CASCADE)`);
+        const deleteStmt = db.prepare('DELETE FROM exercises WHERE uuid = ?');
+        db.transaction((uuids) => { for (const uuid of uuids) deleteStmt.run(uuid); })(toDelete);
+      } else {
+        console.log('✅ Aucun exercice obsolète à supprimer');
+      }
+
       // Vérifier que la table FTS5 existe avant d'optimiser
       console.log('🔍 Checking search table...');
       try {
@@ -722,6 +857,15 @@ async function main() {
         console.log(`📈 ${difficulties} different difficulties (1-5)`);
         console.log(`👁️ ${withPreview} exercises with preview`);
         console.log(`💾 Database size: ${size} KB`);
+
+        const indexed = db.prepare(`SELECT COUNT(*) as count FROM exercises WHERE indexed_at IS NOT NULL`).get().count;
+        const pending = db.prepare(`SELECT COUNT(*) as count FROM exercises WHERE indexed_at IS NULL`).get().count;
+        const embeddings = db.prepare(`SELECT COUNT(*) as count FROM exercise_embeddings`).get().count;
+        console.log(`\n🧠 Indexation sémantique :`);
+        console.log(`   ${indexed} exercices indexés (summary + embedding)`);
+        console.log(`   ${pending} exercices en attente d'indexation`);
+        console.log(`   ${embeddings} embeddings stockés`);
+
         console.log('\n🎉 Database build completed!');
         
       } catch (statsError) {
