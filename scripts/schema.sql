@@ -2,7 +2,7 @@
 PRAGMA journal_mode = WAL;
 PRAGMA synchronous = NORMAL;
 
--- Table principale pour les exercices
+-- Table principale pour les exercicaes
 CREATE TABLE IF NOT EXISTS exercises (
   uuid TEXT PRIMARY KEY,
   title TEXT NOT NULL,

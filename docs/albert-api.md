@@ -2,6 +2,8 @@
 
 Documentation condensée pour intégrer les services Albert (embeddings, reranker, LLM) dans le moteur de recherche d'exercices mathématiques.
 
+**Version 2** — corrigée après validation des endpoints sur l'API de production (avril 2026).
+
 ## 1. Informations générales
 
 **Fournisseur** : Etalab / DINUM (service de l'État français)
@@ -12,13 +14,14 @@ Documentation condensée pour intégrer les services Albert (embeddings, reranke
 
 **Base URL** : `https://albert.api.etalab.gouv.fr/v1`
 
-**Compatibilité** : L'API est compatible avec le format OpenAI pour les endpoints `/v1/chat/completions`, `/v1/embeddings`, `/v1/audio/transcriptions`. L'endpoint `/v1/rerank` suit le format HuggingFace Text Embeddings Inference.
+**Compatibilité** : L'API est largement compatible OpenAI pour `/v1/chat/completions`, `/v1/embeddings`, `/v1/audio/transcriptions`. L'endpoint `/v1/rerank` utilise le format Cohere/Jina (champ `documents`, réponse dans `results` avec `relevance_score`).
 
 **Avantages clés** :
 - Gratuit (dans les limites d'usage)
 - Hébergement sur infrastructure française, conformité RGPD
-- Modèles open-source (Apache 2.0, MIT), pas de lock-in
+- Modèles open-source (Apache 2.0, MIT), pas de lock-in possible
 - Stack cohérente embedding + reranker de la même famille (BGE)
+- Reporting transparent : consommation en tokens, coût, empreinte carbone
 
 ## 2. Authentification
 
@@ -30,25 +33,37 @@ Authorization: Bearer VOTRE_CLE_API
 
 **Obtention** : formulaire sur <https://albert.sites.beta.gouv.fr/access/>
 
-**Configuration dans le projet** : stocker dans `.env`, ne jamais committer.
+**Configuration dans le projet** : stocker dans `.env`, ne jamais committer. Vérifier que `.env` est dans `.gitignore` (`git check-ignore -v .env` doit renvoyer une ligne).
 
 ```bash
 # .env
-ALBERT_API_KEY=sk-...
+ALBERT_API_KEY=sk-votre-cle-ici
 ALBERT_BASE_URL=https://albert.api.etalab.gouv.fr/v1
 ```
 
-## 3. Modèles pertinents pour OpenYourMath
+Créer également un `.env.example` versionné pour documenter les variables :
 
-| Alias interne | Modèle sous-jacent | Usage |
+```bash
+# .env.example (celui-ci est commité)
+ALBERT_API_KEY=your_albert_api_key_here
+ALBERT_BASE_URL=https://albert.api.etalab.gouv.fr/v1
+```
+
+## 3. Modèles disponibles (avril 2026)
+
+Liste obtenue via `GET /v1/models` :
+
+| Identifiant API | Type | Usage recommandé |
 |---|---|---|
-| `embeddings-small` | `BAAI/bge-m3` | Embeddings pour indexation et recherche vectorielle |
-| `bge-reranker-v2-m3` | `BAAI/bge-reranker-v2-m3` | Reranking du top-N après retrieval |
-| `openweight-large` | `openai/gpt-oss-120b` | Génération des résumés d'exercices (qualité max) |
-| `openweight-medium` | `mistralai/Mistral-Small-3.2-24B` | Génération de résumés (bon compromis) |
-| `openweight-small` | `mistralai/Ministral-3-8B` | Résumés rapides pour tests |
+| `BAAI/bge-m3` | text-embeddings-inference | Embeddings — 1024 dimensions |
+| `BAAI/bge-reranker-v2-m3` | text-classification | Reranker pour retrieval |
+| `openai/gpt-oss-120b` | text-generation | LLM — qualité max (résumés précis) |
+| `mistralai/Mistral-Small-3.2-24B-Instruct-2506` | image-text-to-text | LLM — équilibré (défaut recommandé) |
+| `mistralai/Ministral-3-8B-Instruct-2512` | image-text-to-text | LLM — rapide (tests, tâches simples) |
+| `Qwen/Qwen3-Coder-30B-A3B-Instruct` | text-generation | LLM — spécialisé code |
+| `openai/whisper-large-v3` | automatic-speech-recognition | Transcription audio (non utilisé ici) |
 
-Les noms exacts à utiliser dans l'API peuvent varier — interroger `GET /v1/models` pour obtenir la liste précise.
+⚠️ Utiliser les **identifiants complets** (`BAAI/bge-m3`, pas `bge-m3` ni `embeddings-small`). Les alias mentionnés sur le site marketing ne sont pas acceptés par l'API.
 
 ## 4. Endpoint `/v1/embeddings`
 
@@ -60,16 +75,15 @@ Content-Type: application/json
 Authorization: Bearer VOTRE_CLE_API
 
 {
-  "model": "embeddings-small",
+  "model": "BAAI/bge-m3",
   "input": "Texte à vectoriser"
 }
 ```
 
 ### Paramètres
 
-- `model` (string, requis) : identifiant du modèle d'embeddings
-- `input` (string | string[], requis) : texte unique ou tableau de textes (batch)
-- `encoding_format` (string, optionnel) : `"float"` (défaut) ou `"base64"`
+- `model` (string, requis) : identifiant complet du modèle
+- `input` (string | string[], requis) : texte unique ou tableau de textes (batching)
 
 ### Réponse
 
@@ -80,77 +94,29 @@ Authorization: Bearer VOTRE_CLE_API
     {
       "object": "embedding",
       "index": 0,
-      "embedding": [0.0123, -0.0456, ...]
+      "embedding": [0.0016, 0.0364, -0.0505, ...]
     }
   ],
-  "model": "embeddings-small",
+  "model": "BAAI/bge-m3",
   "usage": {
-    "prompt_tokens": 42,
-    "total_tokens": 42
+    "prompt_tokens": 50,
+    "total_tokens": 50
   }
 }
 ```
 
-### Notes importantes
+### Caractéristiques BGE-M3
 
-- BGE-M3 produit des vecteurs de **1024 dimensions**
-- Contexte max : **8192 tokens** — largement suffisant pour un résumé d'exercice
-- BGE-M3 ne distingue pas query et document (contrairement à certains modèles comme E5 qui demandent des préfixes)
-- Si le contexte est dépassé, l'API renvoie une erreur explicite
+- **Dimension** : 1024
+- **Contexte max** : 8192 tokens (largement suffisant pour un résumé d'exercice)
+- **Pas de distinction query/document** (contrairement à E5 ou Qwen3-Embedding qui demandent des préfixes)
+- **Stocker en Float32Array** : 4 octets × 1024 = 4 Ko par vecteur
 
-### Client JavaScript
+### Batching
 
-```javascript
-// src/lib/embeddings/albert.js
-const ALBERT_BASE_URL = process.env.ALBERT_BASE_URL;
-const ALBERT_API_KEY = process.env.ALBERT_API_KEY;
-
-export async function embedText(text) {
-  const response = await fetch(`${ALBERT_BASE_URL}/embeddings`, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${ALBERT_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'embeddings-small',
-      input: text
-    })
-  });
-
-  if (!response.ok) {
-    throw new Error(`Albert embeddings error: ${response.status} ${await response.text()}`);
-  }
-
-  const data = await response.json();
-  return new Float32Array(data.data[0].embedding);
-}
-
-export async function embedBatch(texts) {
-  const response = await fetch(`${ALBERT_BASE_URL}/embeddings`, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${ALBERT_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'embeddings-small',
-      input: texts
-    })
-  });
-
-  if (!response.ok) {
-    throw new Error(`Albert embeddings error: ${response.status}`);
-  }
-
-  const data = await response.json();
-  return data.data.map(item => new Float32Array(item.embedding));
-}
-```
+Pour l'indexation en masse, envoyer plusieurs textes dans un seul appel réduit drastiquement la latence réseau. Limiter à ~50-100 textes par batch pour éviter les dépassements de contexte.
 
 ## 5. Endpoint `/v1/rerank`
-
-Le reranker prend une requête + un ensemble de documents et renvoie un score de pertinence pour chaque document. À utiliser après un retrieval initial (BM25 + vectoriel) pour affiner le top-N.
 
 ### Requête
 
@@ -160,11 +126,11 @@ Content-Type: application/json
 Authorization: Bearer VOTRE_CLE_API
 
 {
-  "model": "bge-reranker-v2-m3",
+  "model": "BAAI/bge-reranker-v2-m3",
   "query": "application du théorème central limite",
-  "input": [
-    "Exercice sur l'approximation d'une somme par une loi normale...",
-    "Exercice d'intégration par parties avec fonction exponentielle...",
+  "documents": [
+    "Exercice d'approximation d'une somme par la loi normale...",
+    "Exercice d'intégration par parties...",
     "Application du TCL à un problème de poids cumulés..."
   ]
 }
@@ -174,63 +140,47 @@ Authorization: Bearer VOTRE_CLE_API
 
 - `model` (string, requis) : identifiant du reranker
 - `query` (string, requis) : la requête utilisateur
-- `input` (string[], requis) : liste des documents à classer
+- `documents` (string[], requis) : ⚠️ **bien `documents`, pas `input`**
 
 ### Réponse
 
 ```json
 {
   "object": "list",
-  "data": [
-    { "index": 2, "score": 0.9876 },
-    { "index": 0, "score": 0.8234 },
-    { "index": 1, "score": 0.0452 }
+  "id": "request-xxx",
+  "results": [
+    { "relevance_score": 0.9876, "index": 2 },
+    { "relevance_score": 0.0123, "index": 0 },
+    { "relevance_score": 0.0007, "index": 1 }
   ],
-  "model": "bge-reranker-v2-m3"
-}
-```
-
-Les résultats sont renvoyés **triés par score décroissant**. Le champ `index` correspond à la position dans le tableau `input` d'origine.
-
-### Client JavaScript
-
-```javascript
-// src/lib/embeddings/albert.js (suite)
-
-export async function rerank(query, documents) {
-  const response = await fetch(`${ALBERT_BASE_URL}/rerank`, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${ALBERT_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'bge-reranker-v2-m3',
-      query: query,
-      input: documents
-    })
-  });
-
-  if (!response.ok) {
-    throw new Error(`Albert rerank error: ${response.status}`);
+  "model": "BAAI/bge-reranker-v2-m3",
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "cost": 0,
+    "carbon": { "kWh": { "min": 0, "max": 0 } }
   }
-
-  const data = await response.json();
-  // Retourne les index et scores triés par pertinence
-  return data.data; // [{ index, score }, ...]
 }
 ```
+
+Points importants :
+- Les résultats sont **dans `results`**, pas `data`
+- Clé du score : **`relevance_score`**, pas `score`
+- Résultats **triés par pertinence décroissante** par l'API
+- `index` correspond à la position dans le tableau `documents` envoyé
+- Les **scores ne sont pas calibrés** — seul l'ordre compte (un 0.0097 peut être excellent si les autres sont à 0.0007)
+- `usage.prompt_tokens = 0` : le rerank semble ne pas consommer de quota tokens
 
 ### Bonnes pratiques reranking
 
-- Limiter à **50 documents max** par appel pour garder une latence acceptable (~500ms-1s)
+- Limiter à **50 documents max** par appel pour garder une latence acceptable
 - Passer des **résumés** plutôt que du LaTeX brut (plus pertinent pour le modèle)
-- Le reranker voit query + document simultanément, donc il comprend mieux les relations contextuelles que le simple cosinus d'embeddings
 - Gain typique : **+10-20 points de Recall@10** par rapport à du retrieval sans rerank
 
 ## 6. Endpoint `/v1/chat/completions`
 
-Utilisé pour générer les résumés d'exercices à l'indexation. Format OpenAI standard.
+Format OpenAI standard. Utilisé pour la génération de résumés d'exercices.
 
 ### Requête
 
@@ -240,58 +190,170 @@ Content-Type: application/json
 Authorization: Bearer VOTRE_CLE_API
 
 {
-  "model": "openweight-medium",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
   "messages": [
-    {
-      "role": "user",
-      "content": "Résume cet exercice mathématique..."
-    }
+    { "role": "user", "content": "Résume cet exercice..." }
   ],
   "temperature": 0,
   "max_tokens": 600
 }
 ```
 
-### Client JavaScript
+### Mode JSON
+
+Pour forcer une réponse JSON parseable (utile pour les résumés structurés) :
+
+```json
+{
+  "response_format": { "type": "json_object" }
+}
+```
+
+À combiner avec un prompt qui demande explicitement du JSON.
+
+## 7. Endpoint `/v1/models`
+
+À appeler une fois au démarrage pour valider l'authentification et la disponibilité des modèles.
 
 ```javascript
-// src/lib/llm/summarize.js
+const response = await fetch(`${ALBERT_BASE_URL}/models`, {
+  headers: { 'Authorization': `Bearer ${ALBERT_API_KEY}` }
+});
+const models = (await response.json()).data;
+```
 
-export async function summarizeExercise(prompt) {
-  const response = await fetch(`${ALBERT_BASE_URL}/chat/completions`, {
+## 8. Client unifié
+
+Un seul fichier client peut servir à la fois dans l'application SvelteKit et dans les scripts Node standalone, en s'appuyant sur `process.env`. SvelteKit expose les variables d'env dans `process.env` côté serveur, et `dotenv` les charge pour Node pur.
+
+### Fichier `src/lib/ia/albert.js`
+
+```javascript
+// Fonctionne dans SvelteKit (serveur) ET dans les scripts Node
+const ALBERT_BASE_URL = process.env.ALBERT_BASE_URL || 'https://albert.api.etalab.gouv.fr/v1';
+const ALBERT_API_KEY = process.env.ALBERT_API_KEY;
+
+export const MODELS = {
+  embedding: 'BAAI/bge-m3',
+  reranker: 'BAAI/bge-reranker-v2-m3',
+  chat: 'mistralai/Mistral-Small-3.2-24B-Instruct-2506',
+  chatLarge: 'openai/gpt-oss-120b',
+  chatSmall: 'mistralai/Ministral-3-8B-Instruct-2512'
+};
+
+export const EMBEDDING_DIMENSION = 1024;
+
+async function albertFetch(endpoint, body) {
+  if (!ALBERT_API_KEY) {
+    throw new Error('ALBERT_API_KEY manquante dans les variables d\'environnement');
+  }
+
+  const response = await fetch(`${ALBERT_BASE_URL}${endpoint}`, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${ALBERT_API_KEY}`,
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-      model: 'openweight-medium',
-      messages: [{ role: 'user', content: prompt }],
-      temperature: 0,
-      max_tokens: 600,
-      response_format: { type: 'json_object' }
-    })
+    body: JSON.stringify(body)
   });
 
-  const data = await response.json();
-  return JSON.parse(data.choices[0].message.content);
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`Albert ${endpoint} → ${response.status}: ${text}`);
+  }
+
+  return response.json();
+}
+
+/** Embedding d'un texte unique. Retourne Float32Array de dimension 1024. */
+export async function embed(text) {
+  const data = await albertFetch('/embeddings', {
+    model: MODELS.embedding,
+    input: text
+  });
+  return new Float32Array(data.data[0].embedding);
+}
+
+/** Embeddings en batch. Plus efficace pour l'indexation. */
+export async function embedBatch(texts) {
+  if (texts.length === 0) return [];
+  const data = await albertFetch('/embeddings', {
+    model: MODELS.embedding,
+    input: texts
+  });
+  return data.data.map(item => new Float32Array(item.embedding));
+}
+
+/** Reclasse des documents par pertinence. Retourne [{index, score}, ...] trié décroissant. */
+export async function rerank(query, documents) {
+  if (documents.length === 0) return [];
+  const data = await albertFetch('/rerank', {
+    model: MODELS.reranker,
+    query,
+    documents
+  });
+  return data.results.map(r => ({
+    index: r.index,
+    score: r.relevance_score
+  }));
+}
+
+/** Appel LLM pour génération de texte. */
+export async function chat(prompt, {
+  model = MODELS.chat,
+  temperature = 0,
+  maxTokens = 600,
+  jsonMode = false
+} = {}) {
+  const body = {
+    model,
+    messages: [{ role: 'user', content: prompt }],
+    temperature,
+    max_tokens: maxTokens
+  };
+  if (jsonMode) body.response_format = { type: 'json_object' };
+
+  const data = await albertFetch('/chat/completions', body);
+  return data.choices[0].message.content;
 }
 ```
 
-## 7. Endpoint `/v1/models`
-
-Liste les modèles actuellement disponibles. À interroger au démarrage pour vérifier la disponibilité et obtenir les identifiants exacts.
+### Utilisation dans SvelteKit
 
 ```javascript
-export async function listModels() {
-  const response = await fetch(`${ALBERT_BASE_URL}/models`, {
-    headers: { 'Authorization': `Bearer ${ALBERT_API_KEY}` }
-  });
-  return (await response.json()).data;
+// src/routes/api/search/+server.js
+import { embed, rerank } from '$lib/ia/albert.js';
+
+export async function POST({ request }) {
+  const { query } = await request.json();
+  const vec = await embed(query);
+  // ...
 }
 ```
 
-## 8. Pipeline complet pour OpenYourMath
+Les variables d'env sont chargées automatiquement par SvelteKit au démarrage, `process.env.ALBERT_API_KEY` est directement accessible côté serveur.
+
+### Utilisation dans un script Node standalone
+
+```javascript
+// scripts/ia/indexer.js
+import 'dotenv/config'; // ← charge .env dans process.env
+import { embed, rerank, chat } from '../../src/lib/ia/albert.js';
+
+const vec = await embed('Texte à vectoriser');
+console.log(vec.length); // 1024
+```
+
+La seule ligne différente est l'import de `dotenv/config` en tête de script. Installation : `npm install --save-dev dotenv`.
+
+### Pourquoi ça fonctionne dans les deux contextes
+
+- **Côté SvelteKit** : le serveur Node qui exécute SvelteKit met les variables de `.env` dans `process.env` automatiquement (via Vite)
+- **Côté script standalone** : `import 'dotenv/config'` charge explicitement `.env` dans `process.env`
+
+Dans les deux cas, le client Albert lit `process.env.ALBERT_API_KEY` et n'a pas besoin de savoir dans quel contexte il tourne.
+
+## 9. Pipeline complet pour OpenYourMath
 
 ### Indexation d'un nouvel exercice
 
@@ -300,100 +362,93 @@ Exercice LaTeX
     ↓
 Parser LaTeX (extraction \texte, \question, \reponse, métadonnées)
     ↓
-Prompt de résumé
-    ↓
-[Albert /chat/completions avec openweight-medium]
+chat() avec prompt de résumé structuré
     ↓
 { summary, concepts, methods, objects } en JSON
     ↓
-Texte à embedder = summary + concepts + methods + objects
+Texte à embedder = summary + "\nConcepts: " + concepts.join(", ") + ...
     ↓
-[Albert /embeddings avec embeddings-small]
+embed() → Float32Array[1024]
     ↓
-Vecteur Float32Array[1024]
-    ↓
-INSERT INTO exercise_embeddings (uuid, embedding_summary, model_version)
-UPDATE exercises SET summary, concepts, content_hash, indexed_at
-INSERT INTO fts_exercises (summary, concepts)
+SQLite :
+  INSERT INTO exercise_embeddings (uuid, embedding_summary, model_version)
+  UPDATE exercises SET summary, concepts, content_hash, indexed_at
+  INSERT INTO fts_exercises (summary, concepts)
 ```
 
 ### Recherche hybride avec rerank
 
 ```
-Requête utilisateur "exercice sur le TCL niveau L2"
+Requête "exercice sur le TCL niveau L2"
     ↓
-Filtres SQL (niveau=L2)                  Filtres SQL appliqués
-    ↓                                        ↓
-[FTS5 BM25] → top 50 candidats    [Albert embed query] → cosinus → top 50
-    ↓                                        ↓
+Filtres SQL (niveau=L2)
+    ↓
+[FTS5 BM25] → top 50        [embed(query) + cosinus] → top 50
+    ↓                              ↓
 Fusion RRF (Reciprocal Rank Fusion) → top 50 uniques
     ↓
-[Albert /rerank sur les 50 résumés] → scores précis
+rerank(query, résumés_du_top_50) → scores précis
     ↓
-Top 20 final retourné à l'UI
+Top 20 retourné à l'UI
 ```
 
-## 9. Erreurs courantes et gestion
+## 10. Gestion des erreurs
 
 | Code | Signification | Action |
 |------|---------------|--------|
-| 401 | Clé API invalide ou expirée | Régénérer la clé sur le playground |
-| 404 | Modèle introuvable | Interroger `/v1/models` pour voir les noms exacts |
-| 413 | Contexte trop long | Tronquer l'input avant envoi |
-| 429 | Rate limit atteint | Implémenter un backoff exponentiel |
-| 500-503 | Service indisponible | Activer le fallback (Ollama local) |
+| 401 | Clé API invalide/expirée | Régénérer sur le playground |
+| 404 | Modèle introuvable | Vérifier l'identifiant via `/v1/models` |
+| 413 | Contexte trop long | Tronquer l'input |
+| 422 | Paramètre manquant ou invalide | Vérifier le format (ex: `documents` vs `input` en rerank) |
+| 429 | Rate limit atteint | Backoff exponentiel |
+| 500-503 | Service indisponible | Fallback (Ollama local avec BGE-M3) |
 
-### Wrapper avec retry et fallback
+### Wrapper avec retry
 
 ```javascript
-// src/lib/embeddings/index.js
-import { embedText as albertEmbed } from './albert.js';
-import { embedText as localEmbed } from './ollama.js';
-
-export async function embed(text, { retries = 3, useFallback = true } = {}) {
+export async function embedWithRetry(text, retries = 3) {
   for (let attempt = 0; attempt < retries; attempt++) {
     try {
-      return await albertEmbed(text);
+      return await embed(text);
     } catch (err) {
-      if (attempt === retries - 1) {
-        if (useFallback) {
-          console.warn('Albert indisponible, fallback Ollama local');
-          return await localEmbed(text);
-        }
-        throw err;
+      if (attempt === retries - 1) throw err;
+      if (err.message.includes('429') || err.message.includes('503')) {
+        const delay = 1000 * Math.pow(2, attempt);
+        console.warn(`Retry dans ${delay}ms (${err.message})`);
+        await new Promise(r => setTimeout(r, delay));
+      } else {
+        throw err; // 401, 404 : inutile de retry
       }
-      // Backoff exponentiel : 1s, 2s, 4s
-      await new Promise(r => setTimeout(r, 1000 * Math.pow(2, attempt)));
     }
   }
 }
 ```
 
-## 10. Rate limits et quotas
+## 11. Rate limits et quotas
 
-Les limites exactes dépendent du compte et de la politique Albert. À vérifier sur le playground (`Statistiques d'usage`). Principes généraux à anticiper :
+Les limites exactes dépendent du compte et de la politique Albert, visibles sur le playground (`Statistiques d'usage`). À anticiper :
 
-- **Tokens par minute (TPM)** : à lisser avec du batching
-- **Requêtes par minute (RPM)** : à lisser avec une queue
-- **Tokens par jour (TPD)** : à suivre pour ne pas bloquer l'indexation
+- **TPM** (tokens par minute) : lisser avec du batching
+- **RPM** (requêtes par minute) : lisser avec une queue
+- **TPD** (tokens par jour) : suivre pour ne pas bloquer l'indexation
 
-Pour l'indexation initiale d'un gros corpus (10 000+ exercices), lancer par lots de 100-500 exos avec pauses, plutôt qu'en une seule fois.
+Pour l'indexation initiale d'un gros corpus, lancer par lots de 100-500 exercices avec pauses, plutôt qu'en une fois.
 
-## 11. Schéma SQLite recommandé
+## 12. Schéma SQLite recommandé
 
 ```sql
 -- Enrichissement de la table existante
 ALTER TABLE exercises ADD COLUMN summary TEXT;
 ALTER TABLE exercises ADD COLUMN concepts TEXT;      -- JSON array
 ALTER TABLE exercises ADD COLUMN methods TEXT;       -- JSON array
-ALTER TABLE exercises ADD COLUMN content_hash TEXT;  -- SHA-256 du LaTeX
+ALTER TABLE exercises ADD COLUMN content_hash TEXT;  -- SHA-256 du LaTeX brut
 ALTER TABLE exercises ADD COLUMN indexed_at DATETIME;
 
--- Table dédiée aux embeddings (séparée pour ne pas alourdir exercises)
+-- Table dédiée aux embeddings
 CREATE TABLE IF NOT EXISTS exercise_embeddings (
   uuid TEXT PRIMARY KEY,
   embedding_summary BLOB NOT NULL,
-  model_version TEXT NOT NULL DEFAULT 'bge-m3',
+  model_version TEXT NOT NULL DEFAULT 'BAAI/bge-m3',
   dimension INTEGER NOT NULL DEFAULT 1024,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (uuid) REFERENCES exercises(uuid) ON DELETE CASCADE
@@ -401,34 +456,35 @@ CREATE TABLE IF NOT EXISTS exercise_embeddings (
 
 CREATE INDEX IF NOT EXISTS idx_embeddings_model ON exercise_embeddings(model_version);
 
--- Enrichissement du FTS5 (à recréer avec les nouveaux champs)
+-- Enrichissement du FTS5 (recréer avec les nouveaux champs)
 DROP TABLE IF EXISTS fts_exercises;
 CREATE VIRTUAL TABLE fts_exercises USING fts5(
   uuid UNINDEXED,
   title, chapter, subchapter, theme, module,
-  summary,         -- nouveau : résumé LLM
-  concepts,        -- nouveau : concepts extraits
+  summary, concepts,
   tokenize = 'unicode61 remove_diacritics 2'
 );
 ```
 
-## 12. Checklist avant mise en production
+## 13. Checklist avant mise en production
 
-- [ ] Clé API Albert stockée dans `.env`, exclu de Git
+- [ ] Clé API Albert stockée dans `.env`, `.env` ignoré par Git
+- [ ] `.env.example` commité pour documenter les variables
+- [ ] `dotenv` installé en dev dependency
+- [ ] Client `src/lib/ia/albert.js` créé
+- [ ] Import `dotenv/config` en tête de chaque script Node standalone
 - [ ] Champ `model_version` renseigné dans `exercise_embeddings`
 - [ ] `content_hash` utilisé pour éviter les réindexations inutiles
-- [ ] Fallback Ollama + BGE-M3 local disponible sur la machine
-- [ ] Gestion des erreurs 429 avec backoff
+- [ ] Fallback Ollama + BGE-M3 local prévu en cas d'indisponibilité Albert
+- [ ] Gestion des erreurs 429/503 avec backoff
 - [ ] Benchmark de 20-30 requêtes annotées pour mesurer la qualité
-- [ ] Logs des requêtes Albert pour suivre la consommation
-- [ ] Cache en mémoire des embeddings (rechargé au démarrage du serveur)
-- [ ] Monitoring des quotas (TPM, RPM, TPD)
+- [ ] Cache en mémoire des embeddings au démarrage du serveur
+- [ ] Monitoring des quotas via le playground
 
-## 13. Ressources
+## 14. Ressources
 
 - Page modèles : <https://albert.sites.beta.gouv.fr/solutions/models/>
 - Reference API : <https://albert.api.etalab.gouv.fr/reference>
 - Formulaire d'accès : <https://albert.sites.beta.gouv.fr/access/>
-- Statuts de l'API : <https://albert.sites.beta.gouv.fr/about/status/>
+- Statuts API : <https://albert.sites.beta.gouv.fr/about/status/>
 - Code source OpenGateLLM : <https://github.com/etalab-ia/OpenGateLLM>
-- Contact : via le formulaire sur le site
