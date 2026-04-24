@@ -761,7 +761,7 @@ async function main() {
       console.log('📊 Difficulty distribution:', Object.entries(difficultyStats).map(([k,v]) => `${k}: ${v}`).join(', '));
       
       // Insérer en base
-      const inserted = insertExercises(db, exercises, authorsIdx);
+      insertExercises(db, exercises, authorsIdx);
 
       // Suppression des exercices qui ne sont plus dans le cache
       console.log('\n🧹 Recherche des exercices obsolètes...');
