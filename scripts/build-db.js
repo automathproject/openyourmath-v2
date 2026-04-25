@@ -6,6 +6,7 @@ import { spawnSync } from 'child_process';
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 import { generatePreview } from './utils/previewUtils.js';
+import { loadAllAlbertMetadata } from './utils/albert-store.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -194,6 +195,7 @@ function runMigrations(db) {
     ['summary',      'TEXT'],
     ['concepts',     'TEXT'],
     ['methods',      'TEXT'],
+    ['objects',      'TEXT'],
     ['indexed_at',   'TEXT'],
   ];
   for (const [col, type] of toAdd) {
@@ -503,17 +505,26 @@ function insertExercises(db, exercises, authorsIdx) {
       .map(r => [r.uuid, r.content_hash])
   );
 
-  // Préparer les requêtes
-  // ON CONFLICT : met à jour toutes les colonnes Pipeline A, ne touche JAMAIS
-  // aux colonnes sémantiques (summary, concepts, methods, indexed_at).
-  // created_at est aussi préservé pour ne pas écraser la date de création originale.
+  // Charger les métadonnées Albert versionnées (content/metadata/*.json).
+  // Elles survivent à pnpm clean et permettent de reconstruire la DB sans rappeler l'API.
+  const albertStore = loadAllAlbertMetadata();
+  if (albertStore.size > 0) {
+    console.log(`📚 ${albertStore.size} métadonnées Albert versionnées chargées`);
+  }
+
+  // ON CONFLICT : met à jour toutes les colonnes Pipeline A.
+  // Pipeline B (summary, concepts, methods, indexed_at) :
+  //   - chargées depuis le store versionné si le content_hash correspond
+  //   - sinon COALESCE garde la valeur existante en base (dégradation gracieuse)
+  // created_at est préservé pour ne pas écraser la date de création originale.
   const insertExercise = db.prepare(`
     INSERT INTO exercises (
       uuid, title, chapter, subchapter, theme, level, difficulty, module,
       author, organization, license_code, license_url, video_id, created_at, updated_at, preview,
       hasIndication, hasSolution,
-      content_json, source_hash, content_hash
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      content_json, source_hash, content_hash,
+      summary, concepts, methods, objects, indexed_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(uuid) DO UPDATE SET
       title        = excluded.title,
       chapter      = excluded.chapter,
@@ -533,7 +544,12 @@ function insertExercises(db, exercises, authorsIdx) {
       hasSolution  = excluded.hasSolution,
       content_json = excluded.content_json,
       source_hash  = excluded.source_hash,
-      content_hash = excluded.content_hash
+      content_hash = excluded.content_hash,
+      summary    = COALESCE(excluded.summary,    exercises.summary),
+      concepts   = COALESCE(excluded.concepts,   exercises.concepts),
+      methods    = COALESCE(excluded.methods,    exercises.methods),
+      objects    = COALESCE(excluded.objects,    exercises.objects),
+      indexed_at = COALESCE(excluded.indexed_at, exercises.indexed_at)
   `);
   const deleteAuthorsFor = db.prepare(`DELETE FROM exercise_authors WHERE uuid = ?`);
   const insertAuthor = db.prepare(`
@@ -585,8 +601,18 @@ function insertExercises(db, exercises, authorsIdx) {
         // Générer un preview intelligent qui respecte la syntaxe LaTeX
         const smartPreview = generatePreview(exercise) || exercise.preview || (exercise.title ? `<p>${exercise.title}</p>` : null);
 
-        // Insérer dans la table principale (upsert Pipeline A)
+        // Insérer dans la table principale (upsert Pipeline A + Pipeline B depuis store)
         const contentHash = computeContentHash(exercise.content);
+
+        // Charger les métadonnées Albert versionnées si le hash correspond (contenu inchangé)
+        const albertMeta = albertStore.get(exercise.uuid);
+        const hasValidAlbert = albertMeta?.content_hash === contentHash;
+        const albertSummary   = hasValidAlbert ? (albertMeta.summary    ?? null) : null;
+        const albertConcepts  = hasValidAlbert ? JSON.stringify(albertMeta.concepts  ?? []) : null;
+        const albertMethods   = hasValidAlbert ? JSON.stringify(albertMeta.methods   ?? []) : null;
+        const albertObjects   = hasValidAlbert ? JSON.stringify(albertMeta.objects   ?? []) : null;
+        const albertIndexedAt = hasValidAlbert ? (albertMeta.indexed_at ?? null) : null;
+
         insertExercise.run(
           exercise.uuid,
           exercise.title,
@@ -608,9 +634,14 @@ function insertExercises(db, exercises, authorsIdx) {
           hasSolution,
           JSON.stringify(exercise.content),
           exercise.source_hash || null,
-          contentHash
+          contentHash,
+          albertSummary,
+          albertConcepts,
+          albertMethods,
+          albertObjects,
+          albertIndexedAt
         );
-        
+
         // Classification sémantique
         const wasNew = !existingHashes.has(exercise.uuid);
         const oldHash = existingHashes.get(exercise.uuid);

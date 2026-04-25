@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS exercises (
   summary TEXT,        -- résumé généré par LLM (Pipeline B uniquement)
   concepts TEXT,       -- JSON: liste de concepts (Pipeline B uniquement)
   methods TEXT,        -- JSON: liste de méthodes (Pipeline B uniquement)
+  objects TEXT,        -- JSON: liste d'objets mathématiques (Pipeline B uniquement)
   indexed_at TEXT      -- horodatage de la dernière indexation sémantique (Pipeline B uniquement)
 );
 
