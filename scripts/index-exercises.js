@@ -3,7 +3,8 @@
 // Pipeline B : indexation sémantique des exercices via Albert.
 // Génère summary/concepts/methods/objects via LLM, puis l'embedding vectoriel.
 // Les métadonnées LLM sont versionnées dans content/metadata/{uuid}.json.
-// Les embeddings sont stockés uniquement en base (régénérables depuis le texte).
+// Les embeddings sont mis en cache dans cache/embeddings/{uuid}.json pour éviter
+// de rappeler l'API Albert si le contenu n'a pas changé (content_hash).
 //
 // Usage :
 //   node scripts/index-exercises.js              # exercices non indexés (indexed_at IS NULL)
@@ -20,6 +21,7 @@ import crypto from 'crypto';
 import { config as dotenvConfig } from 'dotenv';
 import { summarizeExercise, buildEmbeddingText } from '../src/lib/ia/summarize.js';
 import { embed, MODELS, withRetry } from '../src/lib/ia/albert.js';
+import { getEmbeddingFromCache, saveEmbeddingCache } from '../src/lib/ia/embedding-cache.js';
 import { saveAlbertMetadata } from './utils/albert-store.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -120,12 +122,20 @@ async function indexOne(db, row, stmts) {
       row.uuid
     );
 
-    // 4. Embedding
+    // 4. Embedding — vérifie le cache local avant d'appeler l'API
     const embeddingText = buildEmbeddingText(summaryObj);
-    const vector = await withRetry(
-      () => embed(embeddingText),
-      { maxAttempts: 3, delayMs: 1000 }
-    );
+    let vector;
+    const cached = getEmbeddingFromCache(row.uuid, contentHash);
+    if (cached) {
+      process.stdout.write('(cache) ');
+      vector = cached.vector;
+    } else {
+      vector = await withRetry(
+        () => embed(embeddingText),
+        { maxAttempts: 3, delayMs: 1000 }
+      );
+      saveEmbeddingCache(row.uuid, vector, contentHash);
+    }
     const blob = Buffer.from(vector.buffer);
     stmts.upsertEmbedding.run(row.uuid, blob, MODELS.embedding, vector.length);
   }

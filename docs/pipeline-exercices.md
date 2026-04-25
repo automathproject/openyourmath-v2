@@ -244,7 +244,10 @@ Chaque fichier versionné contient :
 
 Le `content_hash` permet à `build-db.js` de détecter si le fichier versionné est encore valide (contenu source inchangé). `source_path` évite de réutiliser une métadonnée déplacée ou ambiguë sur un mauvais fichier primaire. Si le contenu a changé, les métadonnées versionnées sont ignorées et l'exercice est marqué pour réindexation.
 
-Les **embeddings** ne sont pas versionnés (trop lourds, régénérables depuis le texte en base sans appel LLM chat).
+Les embeddings sont stockés dans `cache/embeddings/{uuid}.json` (exclu de Git).
+Ce cache local est synchronisé manuellement entre machines via rsync pour
+éviter de régénérer 8634 embeddings à chaque clone du repo.
+Voir [docs/embeddings-sync.md](docs/embeddings-sync.md) pour le workflow détaillé.
 
 ### Modèles Albert utilisés
 

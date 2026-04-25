@@ -1,0 +1,28 @@
+{
+  "uuid": "g5Ka",
+  "source_path": "amscc/g5Ka.tex",
+  "summary": "L'exercice demande de calculer la sortie d'un neurone sigmoïde à partir de son entrée linéaire, d'interpréter la probabilité prédite par rapport à la classe vraie, et d'estimer qualitativement la perte d'entropie croisée binaire sans calcul exact.",
+  "concepts": [
+    "fonction sigmoïde",
+    "neurone artificiel",
+    "entropie croisée binaire",
+    "perte de classification",
+    "probabilité prédite",
+    "forward pass"
+  ],
+  "methods": [
+    "calcul de sortie linéaire",
+    "application de la fonction sigmoïde",
+    "interprétation de probabilité",
+    "estimation qualitative de perte"
+  ],
+  "objects": [
+    "neurone sigmoïde",
+    "probabilité prédite",
+    "classe vraie",
+    "entropie croisée binaire"
+  ],
+  "content_hash": "aecf8f6a3e517b25848bb9256f93038f8439a233bbd916a5fde3ea4efd7c61c9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:02:12.402Z"
+}

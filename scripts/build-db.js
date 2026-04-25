@@ -8,6 +8,7 @@ import { fileURLToPath } from 'url';
 import { generatePreview } from './utils/previewUtils.js';
 import { loadAllAlbertMetadata } from './utils/albert-store.js';
 import { CACHE_ROOT, normalizeContentRelativePath } from './utils/content-paths.js';
+import { getEmbeddingFromCache, EMBEDDINGS_CACHE_ROOT } from '../src/lib/ia/embedding-cache.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -726,6 +727,57 @@ function insertExercises(db, exercises, authorsIdx) {
 }
 
 /**
+ * Repeupler exercise_embeddings depuis le cache local cache/embeddings/{uuid}.json.
+ * Ne modifie pas indexed_at — ce champ reste géré par index-exercises.js.
+ * @param {import('better-sqlite3').Database} db
+ * @returns {number} nombre d'embeddings restaurés
+ */
+function restoreEmbeddingsFromCache(db) {
+  if (!fs.existsSync(EMBEDDINGS_CACHE_ROOT)) return 0;
+
+  // Exercices sans embedding en base mais dont le cache pourrait exister
+  const manquants = db.prepare(`
+    SELECT e.uuid, e.content_hash, e.indexed_at
+    FROM exercises e
+    LEFT JOIN exercise_embeddings ee ON e.uuid = ee.uuid
+    WHERE e.content_hash IS NOT NULL AND ee.uuid IS NULL
+  `).all();
+
+  if (manquants.length === 0) return 0;
+
+  const upsertEmbedding = db.prepare(`
+    INSERT INTO exercise_embeddings (uuid, embedding_summary, model_version, dimension)
+    VALUES (?, ?, ?, ?)
+    ON CONFLICT(uuid) DO UPDATE SET
+      embedding_summary = excluded.embedding_summary,
+      model_version     = excluded.model_version,
+      dimension         = excluded.dimension,
+      created_at        = CURRENT_TIMESTAMP
+  `);
+
+  let restored = 0;
+
+  for (const { uuid, content_hash, indexed_at } of manquants) {
+    const cached = getEmbeddingFromCache(uuid, content_hash);
+    if (!cached) continue;
+
+    if (!indexed_at) {
+      console.warn(`⚠️  Embedding restauré pour ${uuid} mais indexed_at absent des métadonnées versionnées`);
+    }
+
+    try {
+      const blob = Buffer.from(cached.vector.buffer);
+      upsertEmbedding.run(uuid, blob, cached.model, cached.dimension);
+      restored++;
+    } catch (err) {
+      console.warn(`⚠️  Restauration échouée pour ${uuid} : ${err.message}`);
+    }
+  }
+
+  return restored;
+}
+
+/**
  * Point d'entrée principal
  */
 async function main() {
@@ -819,6 +871,15 @@ async function main() {
         console.log('✅ Aucun exercice obsolète à supprimer');
       }
 
+      // Restaurer les embeddings depuis le cache local
+      console.log('\n🔄 Restauration des embeddings depuis le cache local...');
+      const embeddingsRestored = restoreEmbeddingsFromCache(db);
+      if (embeddingsRestored > 0) {
+        console.log(`   ✅ ${embeddingsRestored} embedding(s) restauré(s) depuis cache/embeddings/`);
+      } else {
+        console.log('   ℹ️  Aucun embedding à restaurer depuis le cache local');
+      }
+
       // Vérifier que la table FTS5 existe avant d'optimiser
       console.log('🔍 Checking search table...');
       try {
@@ -907,6 +968,9 @@ async function main() {
         console.log(`   ${indexed} exercices indexés (summary + embedding)`);
         console.log(`   ${pending} exercices en attente d'indexation`);
         console.log(`   ${embeddings} embeddings stockés`);
+        if (embeddingsRestored > 0) {
+          console.log(`   ↑ dont ${embeddingsRestored} restaurés depuis cache/embeddings/`);
+        }
 
         console.log('\n🎉 Database build completed!');
         
