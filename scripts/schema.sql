@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS exercises (
   hasIndication INTEGER NOT NULL DEFAULT 0, -- 0/1 booléen: au moins une indication
   hasSolution INTEGER NOT NULL DEFAULT 0,   -- 0/1 booléen: au moins une solution/réponse
   content_json TEXT NOT NULL,
+  source_path TEXT,
   source_hash TEXT,
   content_hash TEXT,   -- hash du contenu sémantique (énoncés, questions, réponses, indications) — géré par Pipeline A
   summary TEXT,        -- résumé généré par LLM (Pipeline B uniquement)
@@ -74,5 +75,6 @@ CREATE INDEX IF NOT EXISTS idx_difficulty ON exercises(difficulty); -- NOUVEAU :
 CREATE INDEX IF NOT EXISTS idx_module ON exercises(module);
 CREATE INDEX IF NOT EXISTS idx_author ON exercises(author);
 CREATE INDEX IF NOT EXISTS idx_license_code ON exercises(license_code);
+CREATE INDEX IF NOT EXISTS idx_source_path ON exercises(source_path);
 CREATE INDEX IF NOT EXISTS idx_content_hash ON exercises(content_hash);
 CREATE INDEX IF NOT EXISTS idx_indexed_at ON exercises(indexed_at);

@@ -6,13 +6,14 @@ Le pipeline transforme des fichiers LaTeX sources en une base de données SQLite
 
 ```
 Sources LaTeX → Parsing → Cache → Compilation TikZ → Base SQLite → [Optionnel] Indexation sémantique
- (content/)    (parse-   (cache/)  (build-tikz.js)   (build-db.js)   (Albert API)
-               latex.js)
+ (content/     (parse-   (cache/)  (build-tikz.js)   (build-db.js)   (Albert API)
+ exercises/)   latex.js)
 ```
 
 **Caractéristiques principales :**
 - Construction incrémentale basée sur des hash SHA256 (ne retraite que les fichiers modifiés)
 - Double pipeline : Pipeline A (traitement du contenu) et Pipeline B (indexation sémantique)
+- Traçabilité du fichier primaire via `source_path`, conservée dans le cache, la base SQLite et les métadonnées sémantiques
 - Indexation plein-texte FTS5 avec fallback sur table indexée classique
 - Recherche sémantique via l'API Albert (gouvernement français)
 
@@ -51,6 +52,16 @@ Chaque exercice est un fichier `.tex` organisé par dossier (ex. `amscc/`, `exo7
   La suite converge vers $\ell = 1$.
 }
 ```
+
+Le chemin relatif au dossier `content/exercises/` est conservé comme identifiant de provenance `source_path`.
+Exemples :
+
+| Fichier primaire | `source_path` |
+|---|---|
+| `content/exercises/amscc/2F9q.tex` | `amscc/2F9q.tex` |
+| `content/exercises/exo7/8-L3/0VzY.tex` | `exo7/8-L3/0VzY.tex` |
+
+Ce chemin sert ensuite à rattacher le cache, les images et les métadonnées sémantiques au même fichier source.
 
 ### Métadonnées auteurs
 **Fichier :** [content/authors.json](content/authors.json)
@@ -93,9 +104,14 @@ ALBERT_BASE_URL=https://albert.api.etalab.gouv.fr/v1
    - **Code** : extraction des blocs `SaveVerbatim` → conversion HTML avec coloration syntaxique
    - **Images** : résolution et copie des `\includegraphics{...}` vers [static/artifacts/images/](static/artifacts/images/)
 
+   Les images sont recherchées dans `content/images/{source}/`, où `{source}` est le premier segment de `source_path`.
+   Par exemple `exo7/8-L3/0VzY.tex` résout ses images dans `content/images/exo7/`.
+
 4. **Conversion LaTeX → HTML** via Pandoc (utilitaire [scripts/utils/tex2html-utils.js](scripts/utils/tex2html-utils.js))
 
 5. **Génération du preview** : troncature sécurisée à 150 caractères sans casser les balises HTML ni les délimiteurs mathématiques (`$...$`, `\[...\]`)
+
+6. **Écriture de provenance** : le JSON de cache contient `source_path` et `source_hash`.
 
 ### Cache incrémental
 
@@ -142,6 +158,7 @@ Pour chaque bloc TikZ référencé dans les artefacts, le script compile le code
 | `difficulty` | INTEGER | Difficulté (1–5) |
 | `module` | TEXT | Module |
 | `content_json` | TEXT | Blocs de contenu sérialisés en JSON |
+| `source_path` | TEXT | Chemin relatif du `.tex` source depuis `content/exercises/` |
 | `source_hash` | TEXT | Hash SHA256 du fichier `.tex` |
 | `content_hash` | TEXT | Hash SHA256 des blocs sémantiques (Pipeline A) |
 | `summary` | TEXT | Résumé généré par LLM (Pipeline B) |
@@ -169,6 +186,7 @@ Table virtuelle FTS5 pour la recherche plein-texte. Champs indexés : `uuid`, `t
 
 1. Initialisation du schéma et migrations automatiques (ajout de colonnes manquantes)
 2. Chargement des exercices depuis le cache JSON
+   - Si un ancien cache ne contient pas `source_path`, il est reconstruit depuis son chemin sous `cache/exercises/`.
 3. Résolution des auteurs contre [content/authors.json](content/authors.json) :
    - Tentative par pseudo exact
    - Conversion "Nom, Prénom" → "Nom Prénom"
@@ -183,7 +201,7 @@ Table virtuelle FTS5 pour la recherche plein-texte. Champs indexés : `uuid`, `t
 
 Les exercices dont le `content_hash` a changé ont leur `indexed_at` mis à NULL pour déclencher une réindexation sémantique.
 
-Au démarrage, `build-db.js` charge aussi le **store Albert versionné** (`content/metadata/*.json`) et injecte ses données dans l'upsert si le `content_hash` correspond. Cela permet de reconstruire une base fraîche après `pnpm clean` sans rappeler l'API.
+Au démarrage, `build-db.js` charge aussi le **store Albert versionné** (`content/metadata/**/*.json`) et injecte ses données dans l'upsert si le `content_hash` correspond et si le `source_path` correspond quand il est présent. Cela permet de reconstruire une base fraîche après `pnpm clean` sans rappeler l'API.
 
 ---
 
@@ -191,19 +209,29 @@ Au démarrage, `build-db.js` charge aussi le **store Albert versionné** (`conte
 
 **Script de production :** [scripts/index-exercises.js](scripts/index-exercises.js)  
 **Librairie :** [src/lib/ia/summarize.js](src/lib/ia/summarize.js), [src/lib/ia/albert.js](src/lib/ia/albert.js)  
-**Store versionné :** [content/metadata/](content/metadata/) — un `.json` par exercice, commité dans git
+**Store versionné :** [content/metadata/](content/metadata/) — un `.json` par exercice, rangé selon le même chemin relatif que le `.tex`, commité dans git
 
 **Déclencheur :** Exercices avec `indexed_at IS NULL` (nouveaux ou contenu modifié)
 
 ### Versioning des métadonnées Albert
 
-Les appels LLM sont coûteux. Les métadonnées générées (`summary`, `concepts`, `methods`, `objects`) sont persistées dans `content/metadata/{uuid}.json` et commitées dans git. Elles survivent à `pnpm clean` et permettent de reconstruire la base sans rappeler l'API.
+Les appels LLM sont coûteux. Les métadonnées générées (`summary`, `concepts`, `methods`, `objects`) sont persistées dans `content/metadata/` selon l'arborescence de `source_path` et commitées dans git. Elles survivent à `pnpm clean` et permettent de reconstruire la base sans rappeler l'API.
+
+Le rangement suit maintenant l'arborescence du fichier primaire :
+
+| `source_path` | Métadonnée versionnée |
+|---|---|
+| `amscc/2F9q.tex` | `content/metadata/amscc/2F9q.json` |
+| `exo7/8-L3/0VzY.tex` | `content/metadata/exo7/8-L3/0VzY.json` |
+
+Les anciens fichiers plats `content/metadata/{uuid}.json` restent lisibles par compatibilité, mais les nouvelles générations utilisent l'arborescence miroir.
 
 Chaque fichier versionné contient :
 
 ```json
 {
   "uuid": "YBwt",
+  "source_path": "amscc/YBwt.tex",
   "summary": "L'exercice demande de...",
   "concepts": ["théorème central limite", "convergence en loi"],
   "methods": ["standardisation", "approximation gaussienne"],
@@ -214,7 +242,7 @@ Chaque fichier versionné contient :
 }
 ```
 
-Le `content_hash` permet à `build-db.js` de détecter si le fichier versionné est encore valide (contenu source inchangé). Si le contenu a changé, les métadonnées versionnées sont ignorées et l'exercice est marqué pour réindexation.
+Le `content_hash` permet à `build-db.js` de détecter si le fichier versionné est encore valide (contenu source inchangé). `source_path` évite de réutiliser une métadonnée déplacée ou ambiguë sur un mauvais fichier primaire. Si le contenu a changé, les métadonnées versionnées sont ignorées et l'exercice est marqué pour réindexation.
 
 Les **embeddings** ne sont pas versionnés (trop lourds, régénérables depuis le texte en base sans appel LLM chat).
 
@@ -241,7 +269,7 @@ Pour chaque exercice à indexer :
 
 3. **Parsing robuste du JSON** avec fallbacks (suppression de code fences Markdown, extraction entre accolades)
 
-4. **Sauvegarde versionnée** dans `content/metadata/{uuid}.json` (avec `content_hash`)
+4. **Sauvegarde versionnée** dans `content/metadata/{source_path sans extension}.json` (avec `source_path` et `content_hash`)
 
 5. **Mise à jour de la base** : `summary`, `concepts`, `methods`, `indexed_at`
 
@@ -275,7 +303,7 @@ La base est ouverte en **lecture seule** au runtime (mode WAL + memory mapping).
 # Construction incrémentale (usage normal)
 pnpm build:cache          # Parsing LaTeX → cache JSON
 pnpm build:tikz           # Compilation TikZ → SVG
-pnpm build:db             # Cache → SQLite (charge aussi content/metadata/*.json)
+pnpm build:db             # Cache → SQLite (charge aussi content/metadata/**/*.json)
 
 # Indexation sémantique Pipeline B
 pnpm index:exercises                        # Exercices non indexés (indexed_at IS NULL)
@@ -283,7 +311,7 @@ pnpm index:exercises:force                  # Réindexe tout
 node scripts/index-exercises.js --uuid UUID # Un seul exercice
 node scripts/index-exercises.js --limit 50  # Limiter à 50 exercices
 node scripts/index-exercises.js --dry-run   # Simuler sans écrire
-# Après exécution : commiter les fichiers content/metadata/*.json
+# Après exécution : commiter les fichiers content/metadata/**/*.json
 
 # Construction complète (premier run ou reset)
 pnpm build:cache:full     # Parsing complet sans cache
@@ -310,15 +338,16 @@ pnpm reset                      # clean + build:content:full
 ## 8. Flux de données complet
 
 ```
-/content/exercises/{dossier}/{uuid}.tex
+/content/exercises/{source_path}
           │
+          │ source_path conservé dans le cache et la DB
           ▼
   parse-latex.js ──── Pandoc (LaTeX → HTML)
           │           tikz2svg-utils.js (TikZ → SVG)
           │           cache-manager.js (hash incrémental)
           │
           ▼
-/cache/exercises/{dossier}/{uuid}.json
+/cache/exercises/{source_path sans extension}.json
 /static/artifacts/{uuid}.json
 /static/artifacts/tikz/{uuid}-{n}.svg
 /static/artifacts/images/
@@ -339,10 +368,10 @@ pnpm reset                      # clean + build:content:full
   Runtime SvelteKit                  Pipeline B
   src/lib/db/ (lecture seule)        scripts/index-exercises.js
   - Recherche FTS5                   - Résumé LLM (Albert Chat)
-  - Filtres auteur/niveau            - Sauvegarde content/metadata/{uuid}.json ← git
+  - Filtres auteur/niveau            - Sauvegarde content/metadata/{source_path sans extension}.json ← git
   - Pagination                       - Embedding (BAAI/bge-m3) → exercise_embeddings
 
-                                     content/metadata/{uuid}.json
+                                     content/metadata/{source_path sans extension}.json
                                      ↓ (chargé par build-db.js)
                                      Colonnes summary/concepts/methods/indexed_at
                                      restaurées sans rappeler l'API
@@ -364,6 +393,7 @@ pnpm reset                      # clean + build:content:full
 
 ### Migration de schéma
 - Les migrations de colonnes sont gérées manuellement dans `build-db.js` (fonction `runMigrations`). Il n'y a pas de framework de migration versionné — les évolutions de schéma doivent être ajoutées manuellement à cette fonction.
+- La colonne `source_path` est ajoutée automatiquement aux bases existantes. Pour les caches anciens, `build-db.js` la reconstruit depuis le chemin du JSON sous `cache/exercises/`.
 
 ### Dépendances externes requises
 - **Pandoc** : doit être installé sur le système pour la conversion LaTeX → HTML
@@ -387,6 +417,7 @@ scripts/
 │   ├── test-summarize.js       # Tests de résumé par UUID
 │   └── test-client.js          # Tests du client Albert
 └── utils/
+    ├── content-paths.js         # Racines et normalisation des chemins content/cache/metadata
     ├── cache-manager.js        # Gestion du cache incrémental
     ├── tex2html-utils.js       # Conversion LaTeX → HTML (Pandoc)
     ├── code2html-utils.js      # Blocs SaveVerbatim → HTML
@@ -407,6 +438,8 @@ src/lib/
 
 content/
 ├── exercises/                  # Sources .tex organisés par dossier
+├── images/                     # Images sources organisées par fournisseur/source
+├── metadata/                   # Métadonnées Albert versionnées, miroir de exercises/
 └── authors.json                # Référentiel des auteurs
 
 cache/exercises/                # Cache JSON des exercices parsés

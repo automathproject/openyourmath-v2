@@ -5,16 +5,14 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ALBERT_DIR = path.resolve(__dirname, '../../content/metadata');
+import { getMetadataPath, METADATA_ROOT } from './content-paths.js';
 
 /**
  * Sauvegarde les métadonnées Albert d'un exercice dans le store versionné.
  *
  * @param {string} uuid
  * @param {{
+ *   source_path?: string,
  *   summary: string,
  *   concepts: string[],
  *   methods: string[],
@@ -23,11 +21,13 @@ const ALBERT_DIR = path.resolve(__dirname, '../../content/metadata');
  *   model: string,
  *   indexed_at: string
  * }} data
+ * @param {{ sourcePath?: string }} options
  */
-export function saveAlbertMetadata(uuid, data) {
-  fs.mkdirSync(ALBERT_DIR, { recursive: true });
+export function saveAlbertMetadata(uuid, data, options = {}) {
+  const filePath = getMetadataPath(uuid, options.sourcePath || data.source_path || '');
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(
-    path.join(ALBERT_DIR, `${uuid}.json`),
+    filePath,
     JSON.stringify(data, null, 2) + '\n'
   );
 }
@@ -40,9 +40,34 @@ export function saveAlbertMetadata(uuid, data) {
  * @returns {object|null}
  */
 export function loadAlbertMetadata(uuid) {
-  const filePath = path.join(ALBERT_DIR, `${uuid}.json`);
+  const fileName = `${uuid}.json`;
+  const filePath = path.join(METADATA_ROOT, fileName);
   try {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch {
+    // Fallback récursif pour les métadonnées rangées selon source_path.
+  }
+
+  if (!fs.existsSync(METADATA_ROOT)) return null;
+
+  function find(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        const found = find(fullPath);
+        if (found) return found;
+      } else if (entry.isFile() && entry.name === fileName) {
+        return fullPath;
+      }
+    }
+    return null;
+  }
+
+  const nestedPath = find(METADATA_ROOT);
+  if (!nestedPath) return null;
+
+  try {
+    return JSON.parse(fs.readFileSync(nestedPath, 'utf8'));
   } catch {
     return null;
   }
@@ -56,18 +81,29 @@ export function loadAlbertMetadata(uuid) {
  */
 export function loadAllAlbertMetadata() {
   const result = new Map();
-  if (!fs.existsSync(ALBERT_DIR)) return result;
+  if (!fs.existsSync(METADATA_ROOT)) return result;
 
-  for (const file of fs.readdirSync(ALBERT_DIR)) {
-    if (!file.endsWith('.json')) continue;
-    const uuid = file.slice(0, -5);
-    try {
-      const data = JSON.parse(fs.readFileSync(path.join(ALBERT_DIR, file), 'utf8'));
-      result.set(uuid, data);
-    } catch {
-      // fichier corrompu : on l'ignore silencieusement
+  function scan(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        scan(fullPath);
+        continue;
+      }
+
+      if (!entry.isFile() || !entry.name.endsWith('.json')) continue;
+
+      const uuid = entry.name.slice(0, -5);
+      try {
+        const data = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+        result.set(uuid, data);
+      } catch {
+        // fichier corrompu : on l'ignore silencieusement
+      }
     }
   }
+
+  scan(METADATA_ROOT);
 
   return result;
 }
@@ -79,10 +115,22 @@ export function loadAllAlbertMetadata() {
  * @param {string} uuid
  */
 export function deleteAlbertMetadata(uuid) {
-  const filePath = path.join(ALBERT_DIR, `${uuid}.json`);
-  try {
-    fs.unlinkSync(filePath);
-  } catch {
-    // déjà absent
+  if (!fs.existsSync(METADATA_ROOT)) return;
+
+  function scan(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        scan(fullPath);
+      } else if (entry.isFile() && entry.name === `${uuid}.json`) {
+        try {
+          fs.unlinkSync(fullPath);
+        } catch {
+          // déjà absent
+        }
+      }
+    }
   }
+
+  scan(METADATA_ROOT);
 }

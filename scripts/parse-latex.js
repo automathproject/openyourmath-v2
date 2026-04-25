@@ -22,6 +22,12 @@ import {
 import { extractIncludegraphicsImages } from './utils/image-artifacts.js';
 import { CacheManager } from './utils/cache-manager.js';
 import { generatePreview } from './utils/previewUtils.js';
+import {
+  ARTIFACTS_ROOT,
+  CONTENT_ROOT,
+  EXERCISES_ROOT,
+  getExerciseSourcePath
+} from './utils/content-paths.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,13 +36,13 @@ const fsPromises = fs.promises;
 
 // Chemins de sortie
 const TIKZ_ASSETS_PUBLIC_PATH = '/artifacts/tikz';
-const ARTIFACTS_OUTPUT_DIR = path.resolve(__dirname, '../static/artifacts');
-const CONTENT_ROOT_DIR = path.resolve(__dirname, '../content');
+const ARTIFACTS_OUTPUT_DIR = ARTIFACTS_ROOT;
+const CONTENT_ROOT_DIR = CONTENT_ROOT;
 const IMAGES_PUBLIC_BASE_PATH = '/artifacts/images';
 
 const CONFIG = {
   content: {
-    inputDir: path.resolve(__dirname, '../content/exercises'),
+    inputDir: EXERCISES_ROOT,
     cacheDir: path.resolve(__dirname, '../cache/exercises')
   },
   commands: [
@@ -92,6 +98,7 @@ function generateExercisePreview(content) {
 async function parseLatexFile(filePath) {
   const latexContent = await fsPromises.readFile(filePath, 'utf8');
   const fileHash = await calculateFileHash(filePath);
+  const sourcePath = getExerciseSourcePath(filePath, CONFIG.content.inputDir);
   
   const mainData = {
     uuid: "",
@@ -116,6 +123,7 @@ async function parseLatexFile(filePath) {
       code: [], 
       video: null 
     },
+    source_path: sourcePath,
     source_hash: fileHash
   };
 
@@ -387,6 +395,7 @@ async function parseLatexFile(filePath) {
     preview: previewContent,
     content: mainData.content,
     artifacts: mainData.artifacts,
+    source_path: mainData.source_path,
     source_hash: mainData.source_hash
   };
 

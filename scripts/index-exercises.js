@@ -100,6 +100,7 @@ async function indexOne(db, row, stmts) {
     // 2. Versionner dans content/metadata/{uuid}.json
     saveAlbertMetadata(row.uuid, {
       uuid:         row.uuid,
+      source_path:  row.source_path || null,
       summary:      summaryObj.summary,
       concepts:     summaryObj.concepts,
       methods:      summaryObj.methods,
@@ -107,7 +108,7 @@ async function indexOne(db, row, stmts) {
       content_hash: contentHash,
       model:        summaryModel,
       indexed_at:   indexedAt
-    });
+    }, { sourcePath: row.source_path });
 
     // 3. Mettre à jour la base
     stmts.updateSummary.run(

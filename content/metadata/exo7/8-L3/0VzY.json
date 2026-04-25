@@ -1,0 +1,31 @@
+{
+  "uuid": "0VzY",
+  "source_path": "exo7/8-L3/0VzY.tex",
+  "summary": "L'exercice demande de montrer que l'application de translation à gauche par un élément d'un groupe fini est une bijection, se décomposant en cycles disjoints de longueur égale à l'ordre de l'élément. Ensuite, il faut prouver que l'application envoyant un élément sur sa translation à gauche est un morphisme de groupes injectif, établissant ainsi que tout groupe fini est isomorphe à un sous-groupe du groupe symétrique.",
+  "concepts": [
+    "action de groupe",
+    "bijection",
+    "cycle disjoint",
+    "ordre d'un élément",
+    "morphisme de groupes",
+    "isomorphisme de groupes",
+    "groupe symétrique",
+    "groupe fini"
+  ],
+  "methods": [
+    "décomposition en cycles",
+    "vérification des propriétés de morphisme",
+    "utilisation de l'ordre d'un élément",
+    "injection de groupes"
+  ],
+  "objects": [
+    "groupe fini",
+    "application de translation à gauche",
+    "groupe symétrique",
+    "bijection",
+    "morphisme de groupes"
+  ],
+  "content_hash": "7d7f1c58d7a3ae19411a83133053f85ae016ced095bb240a78590c87a69e53d4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T07:38:25.890Z"
+}

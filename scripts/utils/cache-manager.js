@@ -204,6 +204,7 @@ export class CacheManager {
     
     metadata.files[cacheKey] = {
       source_hash: data.source_hash,
+      source_path: data.source_path || null,
       created_at: data.created_at || new Date().toISOString(),
       updated_at: data.updated_at,
       uuid: data.uuid,

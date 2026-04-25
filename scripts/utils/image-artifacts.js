@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { getExerciseSourcePath, getSourceNameFromSourcePath } from './content-paths.js';
 
 const fsPromises = fs.promises;
 
@@ -70,8 +71,13 @@ function buildImagePathInfo(imagePath) {
 
 export async function resolveImagePath({ imagePath, sourceFilePath, contentRoot, logger = console }) {
   const exercisesDir = path.join(contentRoot, 'exercises');
-  const relativePath = path.relative(exercisesDir, sourceFilePath);
-  const sourceName = relativePath.split(path.sep)[0];
+  const sourcePath = getExerciseSourcePath(sourceFilePath, exercisesDir);
+  const sourceName = getSourceNameFromSourcePath(sourcePath);
+
+  if (!sourceName) {
+    if (logger?.warn) logger.warn(`⚠️  Cannot resolve source root for image: ${imagePath}`);
+    return null;
+  }
 
   const { rawFormat, baseFilename, segments } = buildImagePathInfo(imagePath);
 

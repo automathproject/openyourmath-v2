@@ -7,6 +7,7 @@ import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 import { generatePreview } from './utils/previewUtils.js';
 import { loadAllAlbertMetadata } from './utils/albert-store.js';
+import { CACHE_ROOT, normalizeContentRelativePath } from './utils/content-paths.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,7 +19,7 @@ let Database = null;
 /**
  * Configuration simple
  */
-const CACHE_DIR = path.resolve(__dirname, '../cache/exercises');
+const CACHE_DIR = CACHE_ROOT;
 const DB_PATH = path.resolve(__dirname, '../data/exercises.sqlite');
 const SCHEMA_PATH = path.resolve(__dirname, 'schema.sql'); 
 
@@ -192,6 +193,7 @@ function runMigrations(db) {
   const existing = new Set(db.prepare('PRAGMA table_info(exercises)').all().map(c => c.name));
   const toAdd = [
     ['content_hash', 'TEXT'],
+    ['source_path',   'TEXT'],
     ['summary',      'TEXT'],
     ['concepts',     'TEXT'],
     ['methods',      'TEXT'],
@@ -346,6 +348,11 @@ async function loadExercises(cacheDir) {
       if (!data.uuid || !data.title || !data.chapter || !Array.isArray(data.content)) {
         console.warn(`⚠️ Invalid exercise in ${path.basename(filePath)}`);
         continue;
+      }
+
+      if (!data.source_path) {
+        const cacheRelativePath = normalizeContentRelativePath(path.relative(CACHE_DIR, filePath));
+        data.source_path = cacheRelativePath.replace(/\.json$/i, '.tex');
       }
       
       exercises.push(data);
@@ -522,9 +529,9 @@ function insertExercises(db, exercises, authorsIdx) {
       uuid, title, chapter, subchapter, theme, level, difficulty, module,
       author, organization, license_code, license_url, video_id, created_at, updated_at, preview,
       hasIndication, hasSolution,
-      content_json, source_hash, content_hash,
+      content_json, source_path, source_hash, content_hash,
       summary, concepts, methods, objects, indexed_at
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(uuid) DO UPDATE SET
       title        = excluded.title,
       chapter      = excluded.chapter,
@@ -543,6 +550,7 @@ function insertExercises(db, exercises, authorsIdx) {
       hasIndication = excluded.hasIndication,
       hasSolution  = excluded.hasSolution,
       content_json = excluded.content_json,
+      source_path  = excluded.source_path,
       source_hash  = excluded.source_hash,
       content_hash = excluded.content_hash,
       summary    = COALESCE(excluded.summary,    exercises.summary),
@@ -606,7 +614,9 @@ function insertExercises(db, exercises, authorsIdx) {
 
         // Charger les métadonnées Albert versionnées si le hash correspond (contenu inchangé)
         const albertMeta = albertStore.get(exercise.uuid);
-        const hasValidAlbert = albertMeta?.content_hash === contentHash;
+        const hasValidAlbert =
+          albertMeta?.content_hash === contentHash &&
+          (!albertMeta.source_path || albertMeta.source_path === exercise.source_path);
         const albertSummary   = hasValidAlbert ? (albertMeta.summary    ?? null) : null;
         const albertConcepts  = hasValidAlbert ? JSON.stringify(albertMeta.concepts  ?? []) : null;
         const albertMethods   = hasValidAlbert ? JSON.stringify(albertMeta.methods   ?? []) : null;
@@ -633,6 +643,7 @@ function insertExercises(db, exercises, authorsIdx) {
           hasIndication,
           hasSolution,
           JSON.stringify(exercise.content),
+          exercise.source_path || null,
           exercise.source_hash || null,
           contentHash,
           albertSummary,
