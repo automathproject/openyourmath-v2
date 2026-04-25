@@ -1,6 +1,3 @@
-const ALBERT_BASE_URL = process.env.ALBERT_BASE_URL || 'https://albert.api.etalab.gouv.fr/v1';
-const ALBERT_API_KEY = process.env.ALBERT_API_KEY;
-
 export const MODELS = {
   embedding: 'BAAI/bge-m3',
   reranker: 'BAAI/bge-reranker-v2-m3',
@@ -12,18 +9,21 @@ export const MODELS = {
 export const EMBEDDING_DIMENSION = 1024;
 
 async function albertFetch(endpoint, body, method = 'POST') {
-  if (!ALBERT_API_KEY) throw new Error('ALBERT_API_KEY manquante');
+  const apiKey = process.env.ALBERT_API_KEY;
+  const baseUrl = process.env.ALBERT_BASE_URL || 'https://albert.api.etalab.gouv.fr/v1';
+
+  if (!apiKey) throw new Error('ALBERT_API_KEY manquante');
 
   const options = {
     method,
     headers: {
-      'Authorization': `Bearer ${ALBERT_API_KEY}`,
+      'Authorization': `Bearer ${apiKey}`,
       'Content-Type': 'application/json'
     }
   };
   if (body !== undefined) options.body = JSON.stringify(body);
 
-  const response = await fetch(`${ALBERT_BASE_URL}${endpoint}`, options);
+  const response = await fetch(`${baseUrl}${endpoint}`, options);
 
   if (!response.ok) {
     const text = await response.text();
