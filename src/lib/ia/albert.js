@@ -123,10 +123,21 @@ export async function withRetry(fn, { maxAttempts = 3, delayMs = 1000 } = {}) {
       return await fn();
     } catch (err) {
       lastErr = err;
+      // Quota journalier dépassé : inutile de relancer, l'API rejettera immédiatement
+      if (isQuotaExceeded(err)) throw err;
       const isTransient = /429|50[0-9]/.test(err.message);
       if (!isTransient || i === maxAttempts - 1) throw err;
       await new Promise(r => setTimeout(r, delayMs * (i + 1)));
     }
   }
   throw lastErr;
+}
+
+/**
+ * Détecte une erreur de quota journalier Albert (distinct d'un simple rate-limit).
+ * @param {Error} err
+ * @returns {boolean}
+ */
+export function isQuotaExceeded(err) {
+  return /requests per day exceeded/i.test(err?.message ?? '');
 }

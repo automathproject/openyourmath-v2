@@ -20,7 +20,7 @@ import { fileURLToPath } from 'url';
 import crypto from 'crypto';
 import { config as dotenvConfig } from 'dotenv';
 import { summarizeExercise, buildEmbeddingText } from '../src/lib/ia/summarize.js';
-import { embed, MODELS, withRetry } from '../src/lib/ia/albert.js';
+import { embed, MODELS, withRetry, isQuotaExceeded } from '../src/lib/ia/albert.js';
 import { getEmbeddingFromCache, saveEmbeddingCache } from '../src/lib/ia/embedding-cache.js';
 import { saveAlbertMetadata } from './utils/albert-store.js';
 
@@ -30,7 +30,8 @@ const require = createRequire(import.meta.url);
 
 dotenvConfig({ path: path.resolve(__dirname, '../.env') });
 
-const DB_PATH = path.resolve(__dirname, '../data/exercises.sqlite');
+const DB_PATH        = path.resolve(__dirname, '../data/exercises.sqlite');
+const ERRORS_LOG_PATH = path.resolve(__dirname, '../cache/index-errors.json');
 
 // --- CLI args ---
 const args = process.argv.slice(2);
@@ -195,8 +196,10 @@ async function main() {
     `)
   };
 
-  let ok = 0, errors = 0;
+  let ok = 0, errors = 0, quotaAtteint = false;
+  const journalErreurs = [];
   const startTime = Date.now();
+  const runAt = new Date().toISOString();
 
   for (let i = 0; i < toProcess.length; i++) {
     const row = toProcess[i];
@@ -208,18 +211,57 @@ async function main() {
       console.log('✅');
       ok++;
     } catch (err) {
+      if (isQuotaExceeded(err)) {
+        console.log('⏸️ ');
+        quotaAtteint = true;
+        break;
+      }
       console.log(`❌ ${err.message}`);
+      journalErreurs.push({
+        position: i + 1,
+        total:    toProcess.length,
+        uuid:     row.uuid,
+        title:    row.title ?? null,
+        message:  err.message,
+        at:       new Date().toISOString()
+      });
       errors++;
+    }
+  }
+
+  // Persister le journal d'erreurs
+  if (journalErreurs.length > 0) {
+    try {
+      fs.mkdirSync(path.dirname(ERRORS_LOG_PATH), { recursive: true });
+      fs.writeFileSync(
+        ERRORS_LOG_PATH,
+        JSON.stringify({ run_at: runAt, total: toProcess.length, erreurs: journalErreurs }, null, 2),
+        'utf-8'
+      );
+    } catch (writeErr) {
+      console.warn(`⚠️  Impossible d'écrire le journal d'erreurs : ${writeErr.message}`);
     }
   }
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log();
-  console.log(`🏁 Terminé en ${elapsed}s`);
-  console.log(`   ✅ ${ok} indexés   ❌ ${errors} erreurs`);
-  if (!DRY_RUN && ok > 0) {
-    console.log(`   📁 Métadonnées versionnées dans content/metadata/`);
-    console.log(`   → Pensez à commiter les fichiers content/metadata/*.json`);
+
+  if (quotaAtteint) {
+    const traites = ok + errors;
+    const restants = toProcess.length - traites;
+    console.log(`⏸️  Quota API journalier atteint après ${traites} exercice(s) (${elapsed}s)`);
+    if (ok > 0) console.log(`   ✅ ${ok} indexés avant la coupure`);
+    if (errors > 0) console.log(`   ❌ ${errors} erreurs  →  ${ERRORS_LOG_PATH}`);
+    console.log(`   ⏳ ${restants} exercice(s) restants — relancez demain :`);
+    console.log('   pnpm index:exercises');
+  } else {
+    console.log(`🏁 Terminé en ${elapsed}s`);
+    console.log(`   ✅ ${ok} indexés   ❌ ${errors} erreurs`);
+    if (errors > 0) console.log(`   📋 Journal d'erreurs : ${ERRORS_LOG_PATH}`);
+    if (!DRY_RUN && ok > 0) {
+      console.log(`   📁 Métadonnées versionnées dans content/metadata/`);
+      console.log(`   → Pensez à commiter les fichiers content/metadata/*.json`);
+    }
   }
 
   db.close();
