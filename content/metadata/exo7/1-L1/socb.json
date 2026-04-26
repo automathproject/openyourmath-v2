@@ -1,0 +1,26 @@
+{
+  "uuid": "socb",
+  "source_path": "exo7/1-L1/socb.tex",
+  "summary": "L'exercice demande de montrer qu'il est possible de payer n'importe quelle somme entière avec des pièces et billets de valeurs données, sous certaines contraintes. Il s'agit de déterminer la plus grande somme impossible à payer et de prouver qu'au-delà d'un certain seuil, toute somme peut être payée.",
+  "concepts": [
+    "algorithme d'Euclide",
+    "pgcd",
+    "principe des tiroirs",
+    "divisibilité dans Z",
+    "combinaison linéaire",
+    "théorème de Bézout"
+  ],
+  "methods": [
+    "calcul du pgcd",
+    "recherche de coefficients de Bézout",
+    "analyse de cas par valeurs successives"
+  ],
+  "objects": [
+    "entiers naturels",
+    "somme monétaire",
+    "combinaison linéaire d'entiers"
+  ],
+  "content_hash": "0201c464fd74735ffaa89ddac5336d79e2da3c500e76f9e6e2ef69850429f32e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:15.152Z"
+}

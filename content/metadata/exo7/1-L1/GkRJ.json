@@ -1,0 +1,28 @@
+{
+  "uuid": "GkRJ",
+  "source_path": "exo7/1-L1/GkRJ.tex",
+  "summary": "Résoudre deux équations diophantiennes linéaires à deux inconnues entières. Le premier cas demande de trouver des entiers x et y vérifiant 31x - 13y = 1, le second cas modifie le second membre en -1.",
+  "concepts": [
+    "équation diophantienne",
+    "algorithme d'Euclide",
+    "pgcd",
+    "théorème de Bézout",
+    "divisibilité dans Z",
+    "solution particulière"
+  ],
+  "methods": [
+    "algorithme d'Euclide étendu",
+    "remontée des coefficients",
+    "recherche de solutions particulières",
+    "résolution par combinaisons linéaires"
+  ],
+  "objects": [
+    "équation linéaire à coefficients entiers",
+    "pgcd de deux entiers",
+    "solution entière",
+    "système d'équations linéaires"
+  ],
+  "content_hash": "70757cc2f39c421fc20ce3f93bc93cf9ee961db30cb3c18c4a5da8890ab3d0bc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:19:07.579Z"
+}

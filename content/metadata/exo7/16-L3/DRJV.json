@@ -1,0 +1,31 @@
+{
+  "uuid": "DRJV",
+  "source_path": "exo7/16-L3/DRJV.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'un rayon réel r dans ]0,1[ tel que pour tout ρ < r, une certaine fonction m(ρ) soit positive. Ensuite, il s'agit de montrer l'unicité d'un zéro g(w) pour la fonction z ↦ f(z) - w dans un disque Dρ, et d'exprimer g(w) comme une série entière dont les coefficients sont donnés par des intégrales impliquant f et sa dérivée.",
+  "concepts": [
+    "fonction holomorphe",
+    "théorème des zéros",
+    "principe de l'argument",
+    "série entière",
+    "intégrale de contour",
+    "théorème de Cauchy",
+    "convergence uniforme"
+  ],
+  "methods": [
+    "définition de rayon de convergence",
+    "calcul de résidu",
+    "développement en série de Laurent",
+    "intégration complexe",
+    "théorème des accroissements finis"
+  ],
+  "objects": [
+    "fonction complexe",
+    "disque dans le plan complexe",
+    "série entière",
+    "intégrale de contour",
+    "zéro d'une fonction holomorphe"
+  ],
+  "content_hash": "375a95d8e48783b1ec3c5e4b736a0bb0a7ec186fc6090fb87a91b87750a06e90",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:33.779Z"
+}

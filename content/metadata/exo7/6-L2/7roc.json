@@ -1,0 +1,29 @@
+{
+  "uuid": "7roc",
+  "source_path": "exo7/6-L2/7roc.tex",
+  "summary": "Déterminer l'équation d'un cylindre de révolution et d'un cône de révolution donnés par leur axe, leur rayon ou leur angle au sommet. Les deux surfaces ont le même axe défini par une droite dans l'espace.",
+  "concepts": [
+    "équation cartésienne de surface",
+    "distance d'un point à une droite",
+    "produit vectoriel",
+    "produit scalaire",
+    "angle au sommet d'un cône",
+    "quadrique"
+  ],
+  "methods": [
+    "calcul de distance point-droite",
+    "utilisation du produit vectoriel",
+    "développement d'équation cartésienne",
+    "calcul d'angle entre vecteurs"
+  ],
+  "objects": [
+    "cylindre de révolution",
+    "cône de révolution",
+    "droite dans l'espace",
+    "vecteur directeur",
+    "point de l'espace"
+  ],
+  "content_hash": "f3807e76bfa554e54c5875d8e7bc3bb7177e197a3a17d155acda32fa6aedfa55",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:39:11.567Z"
+}

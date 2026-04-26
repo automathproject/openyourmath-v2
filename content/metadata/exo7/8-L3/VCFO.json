@@ -1,0 +1,29 @@
+{
+  "uuid": "VCFO",
+  "source_path": "exo7/8-L3/VCFO.tex",
+  "summary": "L'exercice demande de démontrer que la forme de Killing, définie comme la trace du produit d'une matrice et de la transposée d'une autre, est un produit scalaire sur l'espace des matrices réelles. Il faut ensuite montrer que cette forme reste invariante sous l'action du groupe orthogonal par conjugaison.",
+  "concepts": [
+    "produit scalaire",
+    "forme de Killing",
+    "action de groupe",
+    "groupe orthogonal",
+    "conjugaison",
+    "trace d'une matrice",
+    "invariance"
+  ],
+  "methods": [
+    "calcul de trace",
+    "propriétés des matrices orthogonales",
+    "invariance sous action de groupe",
+    "vérification des axiomes de produit scalaire"
+  ],
+  "objects": [
+    "matrice réelle",
+    "groupe matriciel",
+    "action par conjugaison",
+    "forme bilinéaire"
+  ],
+  "content_hash": "ef44dd97e7426c6b47af398bc725084a6b619c700a4888c7431367b8d4d88a4c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:05:00.937Z"
+}

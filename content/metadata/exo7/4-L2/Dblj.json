@@ -1,0 +1,25 @@
+{
+  "uuid": "Dblj",
+  "source_path": "exo7/4-L2/Dblj.tex",
+  "summary": "Trouver les entiers naturels x et y vérifiant l'équation 3x³ + xy + 4y³ = 349. L'exercice demande de déterminer les couples (x, y) satisfaisant cette relation arithmétique.",
+  "concepts": [
+    "équation diophantienne",
+    "majoration",
+    "racine cubique",
+    "résolution par énumération",
+    "entiers naturels"
+  ],
+  "methods": [
+    "majoration des variables",
+    "énumération des cas possibles",
+    "test des valeurs entières"
+  ],
+  "objects": [
+    "équation polynomiale en deux variables",
+    "entiers naturels",
+    "racine cubique"
+  ],
+  "content_hash": "5a7156af605a2f0b00fe6a7bb92e38c1fa89318d615f869389526c9040dc9b93",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:54.198Z"
+}

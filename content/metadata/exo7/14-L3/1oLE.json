@@ -1,0 +1,32 @@
+{
+  "uuid": "1oLE",
+  "source_path": "exo7/14-L3/1oLE.tex",
+  "summary": "L'exercice demande de démontrer une inégalité impliquant la convolution d'une fonction f avec une suite de noyaux φₙ, en utilisant l'inégalité de Hölder et le théorème de Tonelli. Il s'agit de montrer la convergence de φₙ * f vers f dans l'espace Lᵖ(ℝⁿ) sous certaines conditions.",
+  "concepts": [
+    "inégalité de Hölder",
+    "convolution",
+    "espace Lᵖ",
+    "théorème de Tonelli",
+    "continuité des translations dans Lᵖ",
+    "exposants conjugués",
+    "intégrale de Lebesgue",
+    "convergence dans Lᵖ"
+  ],
+  "methods": [
+    "application de l'inégalité de Hölder",
+    "utilisation du théorème de Tonelli",
+    "découpage d'intégrale",
+    "estimation de normes Lᵖ",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction f",
+    "noyaux φₙ",
+    "convolution φₙ * f",
+    "translation τᵧf",
+    "mesure dν(x) = |φₙ|(x)dx"
+  ],
+  "content_hash": "5b3482a2fdcf28d653ae3bc1665dc6c32db27488fda611d518b8ad25f6681bbc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:55.176Z"
+}

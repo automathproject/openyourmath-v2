@@ -1,0 +1,30 @@
+{
+  "uuid": "Vatm",
+  "source_path": "exo7/2-L1/Vatm.tex",
+  "summary": "L'exercice demande de déterminer la limite en +∞ de la fraction ((x^x)^x)/(x^(x^x)). L'énoncé manipule des expressions exponentielles et logarithmiques complexes.",
+  "concepts": [
+    "limite de fonctions réelles",
+    "croissance comparée",
+    "fonctions exponentielles",
+    "fonctions logarithmiques",
+    "limite infinie",
+    "comparaison de termes dominants",
+    "équivalents asymptotiques"
+  ],
+  "methods": [
+    "décomposition exponentielle",
+    "changement de variable",
+    "analyse de la croissance",
+    "comparaison de termes",
+    "utilisation de la continuité exponentielle"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "fonction logarithme",
+    "expression algébrique",
+    "limite infinie"
+  ],
+  "content_hash": "8c633c57b807f1fac32e8bb4d52c437ae5fb3f3590de1a7cb2c56d50c85b546e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:50.926Z"
+}

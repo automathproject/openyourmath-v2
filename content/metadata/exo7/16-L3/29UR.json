@@ -1,0 +1,28 @@
+{
+  "uuid": "29UR",
+  "source_path": "exo7/16-L3/29UR.tex",
+  "summary": "L'exercice demande de montrer que l'application $h_A$ associée à une matrice $A$ de $SL(2,\\mathbb{R})$ préserve le demi-plan de Poincaré $\\mathbb{H}$, puis d'établir que pour tout point $z$ de $\\mathbb{H}$, il existe une matrice $A$ telle que $h_A(i) = z$.",
+  "concepts": [
+    "demi-plan de Poincaré",
+    "groupe linéaire spécial",
+    "application conforme",
+    "partie imaginaire",
+    "déterminant",
+    "matrice 2x2"
+  ],
+  "methods": [
+    "calcul de la partie imaginaire",
+    "résolution de système linéaire",
+    "construction explicite de matrice",
+    "identification d'application"
+  ],
+  "objects": [
+    "demi-plan de Poincaré",
+    "matrice de SL(2,ℝ)",
+    "application $h_A$",
+    "nombre complexe $z$"
+  ],
+  "content_hash": "042747202ee2e8fee179a47acbbdfe6b534cabd5013c4f93626c8a87a407ae9c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:58.435Z"
+}

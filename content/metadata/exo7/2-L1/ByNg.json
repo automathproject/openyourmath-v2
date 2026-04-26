@@ -1,0 +1,25 @@
+{
+  "uuid": "ByNg",
+  "source_path": "exo7/2-L1/ByNg.tex",
+  "summary": "L'exercice demande d'étudier la continuité des fonctions f(x) = E(x)sin(x) et g(x) = E(x)sin(πx), où E(x) désigne la partie entière de x. Il s'agit d'analyser la continuité de ces fonctions en des points particuliers.",
+  "concepts": [
+    "fonction partie entière",
+    "continuité en un point",
+    "limite de fonction",
+    "fonction composée",
+    "sinus"
+  ],
+  "methods": [
+    "étude de continuité par limite",
+    "calcul de limites unilatérales",
+    "analyse de points de discontinuité"
+  ],
+  "objects": [
+    "fonction E(x)",
+    "fonction f(x) = E(x)sin(x)",
+    "fonction g(x) = E(x)sin(πx)"
+  ],
+  "content_hash": "2de2890ded29fceac9fc421a9b14fe9ce7fa7b8b074afe8ffac5a606392164cd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:27.894Z"
+}

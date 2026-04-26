@@ -1,0 +1,28 @@
+{
+  "uuid": "oqNz",
+  "source_path": "exo7/2-L1/oqNz.tex",
+  "summary": "L'exercice demande de démontrer la convexité d'une fonction définie comme la borne supérieure d'une famille de fonctions convexes, puis d'établir l'existence d'une plus grande fonction convexe minorant une fonction donnée. Enfin, il s'agit de prouver une inégalité intégrale pour une fonction croissante sur [0,1], en commençant par le cas des fonctions en escalier.",
+  "concepts": [
+    "fonction convexe",
+    "borne supérieure",
+    "fonction minorante",
+    "fonction en escalier",
+    "intégrale de Riemann",
+    "inégalité intégrale"
+  ],
+  "methods": [
+    "utilisation de la définition de convexité",
+    "construction de fonction convexe par borne supérieure",
+    "approximation par des fonctions en escalier",
+    "comparaison de fonctions convexes"
+  ],
+  "objects": [
+    "famille de fonctions convexes",
+    "fonction convexe majorante",
+    "fonction croissante",
+    "intégrale sur [0,1]"
+  ],
+  "content_hash": "4c28ed22538f7dd7d05475060f780a7b165910cb0fa719564355e4531fb4928f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:35:24.385Z"
+}

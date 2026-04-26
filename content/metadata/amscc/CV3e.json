@@ -1,0 +1,33 @@
+{
+  "uuid": "CV3e",
+  "source_path": "amscc/CV3e.tex",
+  "summary": "L'exercice demande de calculer le gradient d'une fonction linéaire définie sur l'espace des matrices, puis d'appliquer ce résultat à la régression des moindres carrés et à la rétropropagation du gradient dans un réseau de neurones simple.",
+  "concepts": [
+    "gradient matriciel",
+    "produit scalaire matriciel",
+    "différentielle",
+    "règle de la chaîne",
+    "produit extérieur",
+    "régression linéaire",
+    "moindres carrés",
+    "rétropropagation"
+  ],
+  "methods": [
+    "calcul de différentielle",
+    "identification du gradient",
+    "développement d'erreur quadratique",
+    "règle de composition",
+    "utilisation de la trace"
+  ],
+  "objects": [
+    "fonction linéaire sur les matrices",
+    "matrice de rang 1",
+    "erreur quadratique",
+    "résidu",
+    "réseau de neurones simple",
+    "gradient par rapport à une matrice"
+  ],
+  "content_hash": "e533494fa5793e65465b1d184e9c3801856a15fbeb9bc460b03f8ec62a3b9cf9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:37:01.784Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "7RMA",
+  "source_path": "exo7/1-L1/7RMA.tex",
+  "summary": "L'exercice demande de démontrer l'équivalence entre le fait que deux projecteurs $p$ et $q$ aient même base et la condition $p \\circ q = q$ et $q \\circ p = p$. Une seconde question demande une condition analogue pour que $p$ et $q$ aient même direction.",
+  "concepts": [
+    "projecteur",
+    "application linéaire",
+    "composition d'applications",
+    "base d'un espace vectoriel",
+    "direction d'un projecteur",
+    "idempotence",
+    "relation d'équivalence"
+  ],
+  "methods": [
+    "manipulation de la composition",
+    "utilisation des propriétés des projecteurs",
+    "détermination de la base d'un projecteur",
+    "analyse des noyaux et images"
+  ],
+  "objects": [
+    "projecteurs $p$ et $q$",
+    "base d'un espace vectoriel",
+    "direction d'un projecteur",
+    "applications linéaires"
+  ],
+  "content_hash": "7b1b8ea340dda70fe843154d952fbdae45fbdd975058cbafe7c0f1f47fc4aa6d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:10:05.096Z"
+}

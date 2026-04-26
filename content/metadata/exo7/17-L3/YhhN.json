@@ -1,0 +1,27 @@
+{
+  "uuid": "YhhN",
+  "source_path": "exo7/17-L3/YhhN.tex",
+  "summary": "L'exercice demande de prouver par récurrence que la factorisation LU d'une matrice A à diagonale strictement dominante préserve cette propriété pour les sous-matrices obtenues lors du processus de factorisation.",
+  "concepts": [
+    "matrice à diagonale strictement dominante",
+    "factorisation LU",
+    "récurrence",
+    "inégalité triangulaire",
+    "dominance diagonale"
+  ],
+  "methods": [
+    "factorisation LU",
+    "récurrence",
+    "inégalité triangulaire",
+    "calcul matriciel"
+  ],
+  "objects": [
+    "matrice carrée",
+    "sous-matrice",
+    "coefficient diagonal",
+    "coefficient hors-diagonale"
+  ],
+  "content_hash": "cb84f7f3ba10dc5276d438383162b1234c0bef9d8cdb7fa55dc0ef88398844ae",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:26:19.669Z"
+}

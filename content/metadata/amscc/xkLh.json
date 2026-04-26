@@ -1,0 +1,27 @@
+{
+  "uuid": "xkLh",
+  "source_path": "amscc/xkLh.tex",
+  "summary": "L'exercice demande d'expliquer graphiquement le fonctionnement d'un perceptron simple à deux entrées (x, y) et une sortie, en analysant les poids des connexions et les seuils des neurones. Il s'agit de décrire la transformation linéaire effectuée par ce réseau de neurones.",
+  "concepts": [
+    "application linéaire",
+    "fonction affine",
+    "réseau de neurones",
+    "perceptron",
+    "combinaison linéaire",
+    "seuil de décision"
+  ],
+  "methods": [
+    "analyse des poids synaptiques",
+    "calcul de la fonction de sortie",
+    "interprétation géométrique"
+  ],
+  "objects": [
+    "neurone artificiel",
+    "couche d'entrée",
+    "couche de sortie",
+    "fonction d'activation"
+  ],
+  "content_hash": "17482690c0b22f5a0866ded8e5e66fa6943b5eb7087e69ce713f111490429b01",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:33.113Z"
+}

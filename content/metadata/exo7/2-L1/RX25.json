@@ -1,0 +1,32 @@
+{
+  "uuid": "RX25",
+  "source_path": "exo7/2-L1/RX25.tex",
+  "summary": "Calculer des intégrales $I_n$ définies sur $[0, \frac{\\pi}{4}]$ de la fonction $\\tan^n x$, établir une relation de récurrence entre $I_n$ et $I_{n+2}$, puis exprimer $I_n$ en fonction de $n$. Montrer que $I_n$ tend vers 0 quand $n$ tend vers l'infini et en déduire les limites de deux suites alternées.",
+  "concepts": [
+    "intégrale de Riemann",
+    "relation de récurrence",
+    "limite de suite",
+    "convergence",
+    "somme alternée",
+    "fonction trigonométrique",
+    "intégration par parties",
+    "changement de variable"
+  ],
+  "methods": [
+    "intégration directe",
+    "décomposition en fractions",
+    "somme télescopique",
+    "encadrement d'intégrale",
+    "passage à la limite"
+  ],
+  "objects": [
+    "intégrale de $\\tan^n x$",
+    "suite $(I_n)$",
+    "somme alternée",
+    "fonction $\\tan x$",
+    "limite de suite"
+  ],
+  "content_hash": "2c8293db6e407f396a257d24ffa0d312e567ecd71cdcb3585caeb5f6c18b51ea",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:33:00.250Z"
+}

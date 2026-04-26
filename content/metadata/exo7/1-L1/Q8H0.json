@@ -1,0 +1,29 @@
+{
+  "uuid": "Q8H0",
+  "source_path": "exo7/1-L1/Q8H0.tex",
+  "summary": "L'exercice demande de vérifier qu'une application φ est un endomorphisme d'un espace vectoriel E de polynômes de degré ≤ n, puis de déterminer son noyau et son image. L'application φ est définie par φ(P) = P(X+1) - P(X).",
+  "concepts": [
+    "endomorphisme",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "polynôme constant",
+    "espace vectoriel de polynômes",
+    "linéarité"
+  ],
+  "methods": [
+    "vérification de la linéarité",
+    "détermination du noyau par annulation",
+    "calcul du degré d'un polynôme",
+    "application du théorème du rang"
+  ],
+  "objects": [
+    "application linéaire φ",
+    "espace vectoriel E de polynômes de degré ≤ n",
+    "polynôme constant",
+    "polynôme de degré ≤ n-1"
+  ],
+  "content_hash": "b786050c3746f20404560219ddf5066cb3856236f10b4eb0208c578a08186596",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:11:34.572Z"
+}

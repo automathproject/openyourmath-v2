@@ -1,0 +1,31 @@
+{
+  "uuid": "4TOK",
+  "source_path": "exo7/17-L3/4TOK.tex",
+  "summary": "L'exercice demande de démontrer que la matrice de Householder H(v) représente une symétrie par rapport à un hyperplan orthogonal à un vecteur v, puis d'en déduire que son déterminant vaut -1. Ensuite, il s'agit de montrer qu'une matrice orthogonale peut s'exprimer comme produit d'au plus n matrices de Householder, avec une interprétation géométrique.",
+  "concepts": [
+    "matrice de Householder",
+    "symétrie vectorielle",
+    "déterminant",
+    "matrice orthogonale",
+    "projection orthogonale",
+    "valeur propre",
+    "hyperplan orthogonal",
+    "décomposition en matrices élémentaires"
+  ],
+  "methods": [
+    "calcul de projection",
+    "analyse des valeurs propres",
+    "décomposition en matrices de Householder",
+    "propriétés des matrices orthogonales"
+  ],
+  "objects": [
+    "matrice de Householder",
+    "vecteur unitaire",
+    "sous-espace vectoriel orthogonal",
+    "matrice orthogonale",
+    "hyperplan"
+  ],
+  "content_hash": "05d808be9457dc5b99d8f35f36d96d41a4a3e6cd6a729ae825abf828d30827ba",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:22:12.099Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "EqnT",
+  "source_path": "exo7/1-L1/EqnT.tex",
+  "summary": "Calculer le pgcd de deux entiers naturels à l'aide de l'algorithme d'Euclide, puis déterminer une solution particulière d'une équation diophantienne associée. Enfin, trouver l'ensemble des solutions entières de plusieurs équations diophantiennes liées.",
+  "concepts": [
+    "algorithme d'Euclide",
+    "pgcd",
+    "équation diophantienne",
+    "théorème de Bézout",
+    "divisibilité dans Z",
+    "solution particulière",
+    "solution générale"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "détermination de coefficients de Bézout",
+    "résolution d'équation diophantienne",
+    "généralisation des solutions"
+  ],
+  "objects": [
+    "pgcd de deux entiers",
+    "équation linéaire à coefficients entiers",
+    "solution entière",
+    "couple (u,v) dans Z²"
+  ],
+  "content_hash": "cdf4aca4686200af49d2972928cf10811da094572a250b29f4ab92ef6022bef3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:56.936Z"
+}

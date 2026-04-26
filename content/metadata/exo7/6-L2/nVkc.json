@@ -1,0 +1,30 @@
+{
+  "uuid": "nVkc",
+  "source_path": "exo7/6-L2/nVkc.tex",
+  "summary": "Déterminer la tangente en un point M d'une ellipse définie par ses paramètres a, b et e, puis vérifier qu'elle est orthogonale au vecteur reliant M au foyer F.",
+  "concepts": [
+    "ellipse",
+    "tangente à une conique",
+    "vecteur directeur",
+    "orthogonalité",
+    "produit scalaire",
+    "foyer d'une ellipse",
+    "paramètres géométriques d'une ellipse"
+  ],
+  "methods": [
+    "calcul de vecteur directeur",
+    "utilisation du produit scalaire",
+    "vérification d'orthogonalité",
+    "paramétrisation de l'ellipse"
+  ],
+  "objects": [
+    "ellipse",
+    "tangente",
+    "vecteur directeur",
+    "vecteur foyer-point",
+    "point M"
+  ],
+  "content_hash": "08a800a737357b5eb5b642cc3236c0e3e92fc8e43a421b2ee7af1821e8da7cdf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:41:16.295Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "AT3h",
+  "source_path": "exo7/2-L1/AT3h.tex",
+  "summary": "L'exercice demande de montrer la convergence d'une intégrale impropre de la forme ∫(f(t+a)−f(t))dt de 0 à +∞, puis de calculer une intégrale spécifique de cette forme avec f(t)=arctan(t).",
+  "concepts": [
+    "intégrale impropre",
+    "convergence d'intégrale",
+    "fonction continue",
+    "limite en +∞",
+    "théorème de convergence dominée",
+    "propriété de Cauchy pour les intégrales"
+  ],
+  "methods": [
+    "comparaison d'intégrales",
+    "calcul de limite",
+    "linéarité de l'intégrale",
+    "changement de variable"
+  ],
+  "objects": [
+    "fonction continue positive",
+    "intégrale impropre",
+    "fonction arctangente",
+    "différence de fonctions"
+  ],
+  "content_hash": "57feafc01a1e863134899a0f7aa38b35fc9ef36e757951303d89810ddb667aa1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:31:04.495Z"
+}

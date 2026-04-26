@@ -1,0 +1,30 @@
+{
+  "uuid": "jk0G",
+  "source_path": "exo7/10-L3/jk0G.tex",
+  "summary": "L'exercice étudie les propriétés des factoriels modulo un nombre premier impair p, en établissant une relation entre (m!)^2 et -1 modulo p. Il explore ensuite les conditions pour lesquelles x² ≡ -1[p] admet une solution, en lien avec la congruence de p modulo 4.",
+  "concepts": [
+    "nombre premier",
+    "factorielle",
+    "arithmétique modulaire",
+    "inverses multiplicatifs",
+    "petit théorème de Fermat",
+    "corps fini",
+    "congruence",
+    "équation quadratique"
+  ],
+  "methods": [
+    "développement en produit",
+    "inversion modulaire",
+    "manipulation d'équations congruentielles",
+    "analyse de cas"
+  ],
+  "objects": [
+    "factorielle (p-1)!",
+    "nombre premier impair p",
+    "inverses multiplicatifs modulo p",
+    "équation x² ≡ -1[p]"
+  ],
+  "content_hash": "b928596d75e7318eef6ed3b8ad555cb995fbc16483748e750b149bb7df6375c0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:08:53.815Z"
+}

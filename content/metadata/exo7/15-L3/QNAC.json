@@ -1,0 +1,27 @@
+{
+  "uuid": "QNAC",
+  "source_path": "exo7/15-L3/QNAC.tex",
+  "summary": "L'exercice demande de décrire l'intersection d'un ensemble A avec une droite verticale d'équation x=α (où α est irrationnel), puis de prouver que A est connexe par arcs en montrant que deux points quelconques de A peuvent être reliés par une ligne polygonale.",
+  "concepts": [
+    "connexe par arcs",
+    "ensemble connexe",
+    "droite affine",
+    "intersection d'ensembles",
+    "topologie de R²",
+    "continuité des applications"
+  ],
+  "methods": [
+    "construction de lignes polygonales",
+    "preuve par construction explicite",
+    "utilisation de la densité des rationnels dans les réels"
+  ],
+  "objects": [
+    "ensemble A",
+    "droite verticale",
+    "points de R²",
+    "lignes polygonales"
+  ],
+  "content_hash": "4ddc74d872edfec4f2d4f8367c909f8ca6d6579868c030d6ff50d6e3c908385b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:42:46.505Z"
+}

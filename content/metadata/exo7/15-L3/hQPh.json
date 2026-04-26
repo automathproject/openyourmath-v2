@@ -1,0 +1,28 @@
+{
+  "uuid": "hQPh",
+  "source_path": "exo7/15-L3/hQPh.tex",
+  "summary": "L'exercice demande de prouver que deux fonctions continues sur un espace topologique qui coïncident sur un ensemble dense sont égales. Une seconde question demande de montrer qu'une fonction continue sur [-1,1] est nulle si toutes ses intégrales avec les monômes x^n sont nulles.",
+  "concepts": [
+    "continuité",
+    "densité",
+    "fonction nulle",
+    "intégrale de Riemann",
+    "espace topologique",
+    "fonction continue"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la densité",
+    "intégration par parties",
+    "approximation de fonctions"
+  ],
+  "objects": [
+    "fonction continue",
+    "ensemble dense",
+    "intégrale sur [-1,1]",
+    "monômes x^n"
+  ],
+  "content_hash": "c739765d295d24e100fc9cf603d597ef90cd51c61c5920cfcbad253792d6a91a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:49:23.373Z"
+}

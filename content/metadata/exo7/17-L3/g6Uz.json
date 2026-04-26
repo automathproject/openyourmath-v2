@@ -1,0 +1,31 @@
+{
+  "uuid": "g6Uz",
+  "source_path": "exo7/17-L3/g6Uz.tex",
+  "summary": "L'exercice demande de démontrer l'inversibilité d'une matrice G définie comme le produit d'une matrice V par sa transposée, puis d'établir des relations algébriques impliquant cette matrice. Il aborde ensuite la projection orthogonale dans un sous-espace vectoriel et calcule explicitement cette projection pour des vecteurs donnés.",
+  "concepts": [
+    "matrice inversible",
+    "produit matriciel",
+    "projection orthogonale",
+    "sous-espace vectoriel",
+    "déterminant",
+    "système linéaire",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "résolution de système linéaire",
+    "détermination de la matrice de projection",
+    "calcul de distance à un sous-espace"
+  ],
+  "objects": [
+    "matrice G",
+    "matrice V",
+    "vecteurs v_i",
+    "sous-espace H",
+    "vecteur X",
+    "matrice de projection P"
+  ],
+  "content_hash": "5d6346b3055d5927f08d9d6e35127d9775e6057520b63e3bc52477f4b0228409",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:09.558Z"
+}

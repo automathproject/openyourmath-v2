@@ -1,0 +1,29 @@
+{
+  "uuid": "Btrd",
+  "source_path": "exo7/6-L2/Btrd.tex",
+  "summary": "L'exercice demande de montrer qu'une forme différentielle ω n'est pas exacte en utilisant les dérivées partielles, puis de trouver un facteur intégrant ψ(x) permettant de rendre ψω exacte et d'en déduire la fonction f telle que ψω = df.",
+  "concepts": [
+    "forme différentielle",
+    "exactitude d'une forme différentielle",
+    "facteur intégrant",
+    "dérivées partielles",
+    "intégration partielle",
+    "équation aux dérivées partielles"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "résolution d'équation différentielle",
+    "intégration par rapport à une variable",
+    "vérification de l'exactitude"
+  ],
+  "objects": [
+    "forme différentielle ω",
+    "fonction P(x,y)",
+    "fonction Q(x,y)",
+    "fonction ψ(x)",
+    "fonction f(x,y)"
+  ],
+  "content_hash": "6d174b10121c6c0fcbb8e9e3cc3e18e347396beab4b2d0cb922aba0a3c4b3b17",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:05:59.125Z"
+}

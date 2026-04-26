@@ -1,0 +1,30 @@
+{
+  "uuid": "r3Ia",
+  "source_path": "exo7/10-L3/r3Ia.tex",
+  "summary": "L'exercice demande de montrer qu'un anneau intègre A est un corps si tout idéal principal non nul est maximal. On considère un élément non nul x de A et on étudie la suite décroissante d'idéaux (x^k).",
+  "concepts": [
+    "anneau intègre",
+    "idéal principal",
+    "idéal maximal",
+    "corps",
+    "élément inversible",
+    "suite décroissante d'idéaux",
+    "stationnarité"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la propriété d'anneau intègre",
+    "étude de la suite d'idéaux",
+    "déduction de l'existence d'un inverse"
+  ],
+  "objects": [
+    "idéal principal",
+    "élément non nul",
+    "suite d'idéaux",
+    "anneau A",
+    "élément inversible"
+  ],
+  "content_hash": "2c4b17cecd109d14052b070c3dfa634a22dde6bfa59b86d0e88542acb8b52ddd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:11.345Z"
+}

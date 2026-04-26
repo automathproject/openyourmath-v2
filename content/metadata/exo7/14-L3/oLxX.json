@@ -1,0 +1,32 @@
+{
+  "uuid": "oLxX",
+  "source_path": "exo7/14-L3/oLxX.tex",
+  "summary": "Calculer le réarrangement décroissant à symétrie sphérique d'une fonction donnée pour les dimensions 1 et 2, puis déterminer la norme L² de cette fonction dans ces dimensions.",
+  "concepts": [
+    "réarrangement symétrique décroissant",
+    "mesure de Lebesgue",
+    "intégrale de Lebesgue",
+    "symétrie sphérique",
+    "norme L²",
+    "fonction Bêta",
+    "fonction Gamma",
+    "mesure de volume en dimension n"
+  ],
+  "methods": [
+    "calcul de mesure de niveau",
+    "intégration en coordonnées polaires",
+    "changement de variable",
+    "utilisation des propriétés de symétrie",
+    "calcul d'intégrales à l'aide de la fonction Bêta"
+  ],
+  "objects": [
+    "fonction radiale",
+    "réarrangement décroissant",
+    "norme L²",
+    "intégrale sur ℝⁿ",
+    "mesure de volume sphérique"
+  ],
+  "content_hash": "d72c3f4e234727f58b90b1c5d3e3c238e6453205449134ddc284e57dfec6897b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:28:11.867Z"
+}

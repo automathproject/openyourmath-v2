@@ -1,0 +1,32 @@
+{
+  "uuid": "8fHj",
+  "source_path": "exo7/17-L3/8fHj.tex",
+  "summary": "L'exercice demande de montrer des relations entre l'image et le noyau d'une matrice A et de sa transposée, puis de déterminer les matrices de projection orthogonale sur ces espaces. Une application numérique consiste à calculer la décomposition en valeurs singulières d'une matrice donnée et les matrices de projection associées.",
+  "concepts": [
+    "décomposition en valeurs singulières",
+    "projection orthogonale",
+    "image d'une matrice",
+    "noyau d'une matrice",
+    "valeurs propres",
+    "vecteurs propres",
+    "orthogonalité",
+    "norme d'un vecteur"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "résolution d'équation caractéristique",
+    "normalisation de vecteurs",
+    "construction de base orthogonale",
+    "détermination de matrices de projection"
+  ],
+  "objects": [
+    "matrice",
+    "vecteurs propres",
+    "valeurs singulières",
+    "espaces vectoriels",
+    "projections orthogonales"
+  ],
+  "content_hash": "5317fac75826f3ec4d29b982940530bfec79f3be0e9bf26f555722bf33f93045",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:22:56.303Z"
+}

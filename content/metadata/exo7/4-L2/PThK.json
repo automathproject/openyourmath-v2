@@ -1,0 +1,28 @@
+{
+  "uuid": "PThK",
+  "source_path": "exo7/4-L2/PThK.tex",
+  "summary": "L'exercice demande de montrer qu'un entier naturel admet un multiple de la forme 11...10...0 (une suite de 1 suivie de 0) et, si l'entier est impair et non divisible par 5, qu'il divise un nombre de la forme 11...1. Le contexte utilise des nombres composés de chiffres 1 et 0.",
+  "concepts": [
+    "division euclidienne",
+    "principe des tiroirs",
+    "théorème de Gauss",
+    "arithmétique dans Z",
+    "multiples d'un entier",
+    "nombres premiers"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du principe des tiroirs",
+    "application du théorème de Gauss",
+    "analyse des restes de division"
+  ],
+  "objects": [
+    "nombre composé de chiffres 1",
+    "reste de division",
+    "multiple d'un entier",
+    "entier naturel"
+  ],
+  "content_hash": "43850ec05255695bb07b71e18e3d5c06f1ddd79cbb789355f49ca54347894c06",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:05.869Z"
+}

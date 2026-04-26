@@ -1,0 +1,28 @@
+{
+  "uuid": "Kv8O",
+  "source_path": "exo7/12-L3/Kv8O.tex",
+  "summary": "L'exercice demande de vérifier l'harmonicité d'une fonction de trois variables en coordonnées cylindriques, puis d'établir une condition nécessaire et suffisante pour qu'une famille de fonctions soit harmonique, liée à une équation différentielle de Bessel. Enfin, il s'agit de vérifier qu'une solution particulière satisfait cette équation pour une valeur spécifique de λ.",
+  "concepts": [
+    "fonction harmonique",
+    "coordonnées cylindriques",
+    "équation de Bessel",
+    "analyse en coordonnées curvilignes",
+    "équation aux dérivées partielles",
+    "solution d'équation différentielle"
+  ],
+  "methods": [
+    "calcul du laplacien en coordonnées cylindriques",
+    "résolution d'équation différentielle",
+    "vérification de condition d'harmonicité",
+    "substitution de solution particulière"
+  ],
+  "objects": [
+    "fonction de trois variables",
+    "équation différentielle de Bessel",
+    "solution particulière",
+    "coordonnées cylindriques (r, θ, z)"
+  ],
+  "content_hash": "77cc7dff413333bc1a05fd6e9470409425ed8d5873a2c6d3d327ed19d067b58d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:24:51.807Z"
+}

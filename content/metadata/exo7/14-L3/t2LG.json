@@ -1,0 +1,31 @@
+{
+  "uuid": "t2LG",
+  "source_path": "exo7/14-L3/t2LG.tex",
+  "summary": "L'exercice demande de montrer qu'un espace de Banach n'est pas séparable sous certaines conditions sur une famille d'ouverts disjoints non dénombrable. Il illustre ensuite cette propriété dans le cas de l'espace L∞(ℝⁿ) avec des boules centrées sur des indicateurs de boules unitaires.",
+  "concepts": [
+    "espace de Banach",
+    "espace séparable",
+    "famille d'ouverts disjoints",
+    "densité",
+    "norme infinie",
+    "indicatrice de partie",
+    "boule ouverte",
+    "injection"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "construction explicite de suite dense",
+    "utilisation de la norme infinie",
+    "argument de cardinalité"
+  ],
+  "objects": [
+    "espace de Banach",
+    "famille d'ouverts",
+    "suite dense",
+    "fonction indicatrice",
+    "boule de L∞(ℝⁿ)"
+  ],
+  "content_hash": "910e4451700e1c76fac078970ac886400a41d20e77baadf1082192017fc7149d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:28:52.407Z"
+}

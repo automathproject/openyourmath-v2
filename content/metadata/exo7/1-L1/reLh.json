@@ -1,0 +1,25 @@
+{
+  "uuid": "reLh",
+  "source_path": "exo7/1-L1/reLh.tex",
+  "summary": "L'exercice demande de déterminer si un entier naturel r ≥ 2 est premier en utilisant la divisibilité de a^r - 1 par a - 1 pour a = 2. Il explore aussi la réciproque de cette propriété.",
+  "concepts": [
+    "divisibilité dans Z",
+    "nombres premiers",
+    "critère de divisibilité",
+    "propriétés des puissances",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "utilisation de la relation de divisibilité",
+    "test de primalité"
+  ],
+  "objects": [
+    "entiers naturels",
+    "puissances d'entiers",
+    "diviseurs"
+  ],
+  "content_hash": "a196135f42868697847065632e1afbf0a24803e07eff21d18e4007b4b78f45d8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:10.008Z"
+}

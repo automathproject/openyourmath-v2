@@ -1,0 +1,30 @@
+{
+  "uuid": "bdzr",
+  "source_path": "exo7/1-L1/bdzr.tex",
+  "summary": "L'exercice demande de démontrer une caractérisation des triplets pythagoriciens primitifs et non primitifs dans ℕ³, puis d'étudier les propriétés de parité et de divisibilité de ces triplets. Il explore aussi la paramétrisation des solutions.",
+  "concepts": [
+    "nombres premiers entre eux",
+    "théorème de Gauss",
+    "identité de Pythagore",
+    "parité",
+    "divisibilité dans ℤ",
+    "pgcd",
+    "paramétrisation des triplets pythagoriciens"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "analyse de parité",
+    "construction de solutions paramétriques",
+    "utilisation de l'algorithme d'Euclide"
+  ],
+  "objects": [
+    "triplet pythagoricien",
+    "entiers naturels",
+    "pgcd",
+    "paramètres m et n",
+    "équation diophantienne"
+  ],
+  "content_hash": "fcd8a478480a55cd1b893a41ae505e982aec52f63bb8abc33218b8cfe4bc2414",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:25.076Z"
+}

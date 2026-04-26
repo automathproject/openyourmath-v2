@@ -1,0 +1,27 @@
+{
+  "uuid": "lbNh",
+  "source_path": "exo7/2-L1/lbNh.tex",
+  "summary": "L'exercice demande de prouver l'existence d'un réel a > 0 tel que la fonction f(x) soit majorée par 1/2 pour tout x dont la valeur absolue dépasse a. Il faut ensuite montrer que f est bornée et admet un maximum.",
+  "concepts": [
+    "limite d'une fonction",
+    "bornitude",
+    "maximum d'une fonction",
+    "continuité",
+    "théorème des valeurs intermédiaires",
+    "théorème de la limite infinie"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la limite",
+    "application du théorème des bornes atteintes"
+  ],
+  "objects": [
+    "fonction réelle",
+    "valeur absolue",
+    "majoration",
+    "maximum"
+  ],
+  "content_hash": "7b93550dc46879df7000a7cea2ab8d07d55d789e228d605949cdececd8ea434c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:47:24.732Z"
+}

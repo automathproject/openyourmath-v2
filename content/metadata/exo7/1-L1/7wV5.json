@@ -1,0 +1,24 @@
+{
+  "uuid": "7wV5",
+  "source_path": "exo7/1-L1/7wV5.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés sur une application linéaire f et son image f(F). La première partie suppose que l'image de F est incluse dans f(F) et demande de montrer l'égalité des ensembles. La seconde partie suppose que f est injective et que f(F) est inclus dans F.",
+  "concepts": [
+    "application linéaire",
+    "injectivité",
+    "image d'une application",
+    "inclusion d'ensembles",
+    "théorème du rang"
+  ],
+  "methods": [
+    "raisonnement par double inclusion",
+    "utilisation de la définition d'application injective"
+  ],
+  "objects": [
+    "application linéaire f",
+    "ensemble F",
+    "image f(F)"
+  ],
+  "content_hash": "7e89a8ec13d15d040edb4e4d03238c9015ebbfa17e02635ec67229560874aa2f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:10:16.051Z"
+}

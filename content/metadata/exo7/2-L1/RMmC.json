@@ -1,0 +1,32 @@
+{
+  "uuid": "RMmC",
+  "source_path": "exo7/2-L1/RMmC.tex",
+  "summary": "L'exercice demande d'abord de vérifier la continuité d'une fonction f sur ℝ, puis d'étudier la limite en +∞ d'une intégrale F(x) = ∫₀ˣ f(t) dt et de montrer qu'elle est égale à 2 fois la limite d'une série de Riemann. La fonction f est donnée comme un quotient impliquant une exponentielle.",
+  "concepts": [
+    "continuité d'une fonction",
+    "intégrale impropre",
+    "limite de fonction",
+    "croissance comparée",
+    "intégration par parties",
+    "série de Riemann",
+    "limite de suite",
+    "fonction continue par morceaux"
+  ],
+  "methods": [
+    "étude de la limite en un point",
+    "majoration d'une intégrale",
+    "développement en série entière",
+    "intégration par parties",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction continue sur ℝ",
+    "intégrale définie",
+    "série numérique",
+    "fonction exponentielle",
+    "fonction rationnelle"
+  ],
+  "content_hash": "42c9420ab1dcc39d160ff0a73b33e8bac62e93189c62ffc3cccb2a428a78e84d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:32:56.811Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "As2A",
+  "source_path": "exo7/17-L3/As2A.tex",
+  "summary": "L'exercice étudie les propriétés de convergence des méthodes itératives de Jacobi et Gauss-Seidel pour résoudre un système linéaire, en fonction du paramètre a. Il demande d'analyser la positivité définie d'une matrice, le rayon spectral de matrices d'itération, et de comparer les vitesses de convergence des deux méthodes.",
+  "concepts": [
+    "matrice définie positive",
+    "convergence des méthodes itératives",
+    "rayon spectral",
+    "méthode de Jacobi",
+    "méthode de Gauss-Seidel",
+    "spectre d'une matrice"
+  ],
+  "methods": [
+    "calcul du rayon spectral",
+    "analyse de la convergence",
+    "construction de matrices d'itération",
+    "comparaison de vitesses de convergence"
+  ],
+  "objects": [
+    "matrice d'itération de Jacobi",
+    "matrice d'itération de Gauss-Seidel",
+    "système linéaire",
+    "rayon spectral"
+  ],
+  "content_hash": "c866a561e7442215c494552847a14b0716f6994b560a3ed9edffc63bc49b2ed2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:12.192Z"
+}

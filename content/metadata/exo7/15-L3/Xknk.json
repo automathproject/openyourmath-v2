@@ -1,0 +1,32 @@
+{
+  "uuid": "Xknk",
+  "source_path": "exo7/15-L3/Xknk.tex",
+  "summary": "L'exercice demande de montrer que le plan de l'équateur d'une sphère est homéomorphe à ℝⁿ⁻¹, puis d'établir un homéomorphisme entre la sphère et ℝⁿ⁻¹ en explicitant une application et son inverse. Enfin, il s'agit d'en déduire un homéomorphisme entre le cercle ℝ¹ et la droite réelle achevée.",
+  "concepts": [
+    "homéomorphisme",
+    "stéréographie",
+    "topologie de la sphère",
+    "espace euclidien",
+    "continuité",
+    "bijection continue",
+    "inverse continue",
+    "droite réelle achevée"
+  ],
+  "methods": [
+    "construction explicite d'application",
+    "vérification de la continuité",
+    "calcul de l'inverse",
+    "utilisation de la projection stéréographique"
+  ],
+  "objects": [
+    "sphère ℝⁿ",
+    "plan ℝⁿ⁻¹",
+    "application h",
+    "application h⁻¹",
+    "cercle ℝ¹",
+    "droite réelle achevée"
+  ],
+  "content_hash": "375aa02c84856c15e23bc6379ca3bfccbf4a0e93763cd40465a3a1525ce4dfe8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:49:18.522Z"
+}

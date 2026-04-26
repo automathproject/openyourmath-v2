@@ -1,0 +1,28 @@
+{
+  "uuid": "DW5T",
+  "source_path": "exo7/16-L3/DW5T.tex",
+  "summary": "L'exercice demande de démontrer l'équivalence entre deux assertions liées à la fonction zêta de Riemann et au théorème des nombres premiers. La première assertion concerne la dérivée logarithmique de la fonction zêta, et la seconde porte sur l'équivalence asymptotique du nombre de nombres premiers inférieurs à x.",
+  "concepts": [
+    "fonction zêta de Riemann",
+    "dérivée logarithmique",
+    "théorème des nombres premiers",
+    "fonction multiplicative",
+    "équivalence asymptotique",
+    "diviseurs premiers"
+  ],
+  "methods": [
+    "développement en série",
+    "analyse asymptotique",
+    "utilisation de la fonction λ de Liouville",
+    "comparaison de sommes"
+  ],
+  "objects": [
+    "fonction zêta de Riemann",
+    "fonction λ de Liouville",
+    "nombre de nombres premiers",
+    "somme des λ(n)"
+  ],
+  "content_hash": "3ca8debc47b6dfedf0b7f110e679528e45de6165ddf06ed4012f8074ed43679a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:36.727Z"
+}

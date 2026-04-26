@@ -1,0 +1,30 @@
+{
+  "uuid": "v12I",
+  "source_path": "exo7/1-L1/v12I.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire q, définie comme la moyenne de conjugués d'une projection p par les éléments d'un groupe G, est un projecteur dont l'image est un sous-espace F invariant.",
+  "concepts": [
+    "application linéaire",
+    "projecteur",
+    "groupe",
+    "conjugaison",
+    "sous-espace invariant",
+    "image d'une application",
+    "inclusion d'espaces vectoriels"
+  ],
+  "methods": [
+    "calcul de conjugaison",
+    "vérification de l'idempotence",
+    "inclusion d'espaces vectoriels",
+    "utilisation de la linéarité"
+  ],
+  "objects": [
+    "application linéaire q",
+    "projection p",
+    "groupe G",
+    "sous-espace F",
+    "vecteur x"
+  ],
+  "content_hash": "741c8e0f17018af818f28b3bfaabaca72e5afc2d4b04bc9ab71f3f0128857b07",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:13.199Z"
+}

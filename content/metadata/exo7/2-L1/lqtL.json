@@ -1,0 +1,27 @@
+{
+  "uuid": "lqtL",
+  "source_path": "exo7/2-L1/lqtL.tex",
+  "summary": "L'exercice demande de démontrer la continuité de la fonction sinus en 0 puis sur l'ensemble des réels, puis d'en déduire la continuité de la fonction cosinus sur les réels.",
+  "concepts": [
+    "continuité en un point",
+    "continuité sur un intervalle",
+    "fonction sinus",
+    "fonction cosinus",
+    "limite de fonction",
+    "relation entre sinus et cosinus"
+  ],
+  "methods": [
+    "limite de fonctions trigonométriques",
+    "utilisation de la relation cos(x) = sin(x + π/2)",
+    "raisonnement par composition de fonctions"
+  ],
+  "objects": [
+    "fonction sinus",
+    "fonction cosinus",
+    "limite de fonction",
+    "valeur absolue"
+  ],
+  "content_hash": "aa4b7b102fe17cc0ff34d784cbf6b3d08c02fa6960f77e41f57e751cc25c493b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:47:29.869Z"
+}

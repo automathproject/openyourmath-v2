@@ -1,0 +1,27 @@
+{
+  "uuid": "AKnT",
+  "source_path": "amscc/AKnT.tex",
+  "summary": "L'exercice demande de concevoir un perceptron capable de classer des points dans un plan en deux catégories (bleus et rouges) séparées par une droite. Le graphique montre une séparation linéaire entre les deux classes.",
+  "concepts": [
+    "classification binaire",
+    "séparabilité linéaire",
+    "fonction d'activation",
+    "hyperplan de séparation",
+    "réseau de neurones artificiels",
+    "apprentissage supervisé"
+  ],
+  "methods": [
+    "détermination de l'hyperplan séparateur",
+    "calcul des poids du perceptron",
+    "application de la règle de décision linéaire"
+  ],
+  "objects": [
+    "perceptron",
+    "ensemble de points classés",
+    "fonction de décision linéaire",
+    "graphique de séparation"
+  ],
+  "content_hash": "36dd2b4898f213951e3a362299152cfad84744a076f1ff5084095ec9341dcd82",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:08.832Z"
+}

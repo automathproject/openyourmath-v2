@@ -1,0 +1,27 @@
+{
+  "uuid": "NEg6",
+  "source_path": "exo7/15-L3/NEg6.tex",
+  "summary": "L'exercice demande de démontrer qu'une application d est une distance sur un ensemble E, puis d'établir l'existence d'un recouvrement fini par des boules fermées de rayon ε pour tout ε > 0, et enfin de conclure que E est compact.",
+  "concepts": [
+    "distance",
+    "boule fermée",
+    "recouvrement",
+    "compacité",
+    "propriété de recouvrement fini",
+    "espace métrique"
+  ],
+  "methods": [
+    "vérification des axiomes de distance",
+    "construction de recouvrement fini",
+    "utilisation de la définition de la compacité"
+  ],
+  "objects": [
+    "distance d",
+    "ensemble E",
+    "boules fermées",
+    "recouvrement de E"
+  ],
+  "content_hash": "94fc2198d89e6d3fc800d683c5eb3fadb7d090532956c99a8650a770584ac0aa",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:37:57.363Z"
+}

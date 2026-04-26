@@ -1,0 +1,28 @@
+{
+  "uuid": "ZVRW",
+  "source_path": "exo7/2-L1/ZVRW.tex",
+  "summary": "L'exercice demande d'abord de prouver une inégalité encadrant la fonction logarithme naturel par des expressions polynomiales. Ensuite, il s'agit de calculer la limite d'un produit infini de termes exponentiels, en exploitant la première inégalité.",
+  "concepts": [
+    "inégalité de Taylor",
+    "fonction logarithme",
+    "limite de suites",
+    "produit infini",
+    "fonction exponentielle",
+    "somme de Riemann"
+  ],
+  "methods": [
+    "développement limité",
+    "comparaison de termes",
+    "passage à la limite",
+    "approximation exponentielle"
+  ],
+  "objects": [
+    "fonction ln(1+x)",
+    "produit de termes exponentiels",
+    "suite numérique",
+    "inégalité"
+  ],
+  "content_hash": "13980bb3e4f615cc00e0b3d9ad59e5f9173f6bff4d642260d4a02d2409c768a9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:33:46.699Z"
+}

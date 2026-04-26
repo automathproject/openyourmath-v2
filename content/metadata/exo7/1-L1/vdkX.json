@@ -1,0 +1,31 @@
+{
+  "uuid": "vdkX",
+  "source_path": "exo7/1-L1/vdkX.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de conservation de la liberté et de la génération par une application linéaire u entre espaces vectoriels, ainsi qu'une relation entre l'image de u et son noyau.",
+  "concepts": [
+    "application linéaire",
+    "famille libre",
+    "famille génératrice",
+    "base d'un espace vectoriel",
+    "image d'une application linéaire",
+    "noyau d'une application linéaire",
+    "théorème du rang",
+    "sous-espace supplémentaire"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition d'application linéaire",
+    "manipulation de familles de vecteurs",
+    "argument par dimension"
+  ],
+  "objects": [
+    "famille de vecteurs",
+    "application linéaire u",
+    "image de u",
+    "noyau de u",
+    "sous-espace vectoriel"
+  ],
+  "content_hash": "9c20db836fc7d304c4676117e6b328ed34524b59d25efd10fc2f93cb2515a58b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:18.850Z"
+}

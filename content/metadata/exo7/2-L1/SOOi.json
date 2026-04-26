@@ -1,0 +1,34 @@
+{
+  "uuid": "SOOi",
+  "source_path": "exo7/2-L1/SOOi.tex",
+  "summary": "L'exercice étudie la convergence de l'intégrale impropre ∫(sin t)/t dt de 0 à +∞. Il montre d'abord sa non-convergence absolue en utilisant une inégalité sur des intégrales partielles, puis sa convergence conditionnelle via la formule de la moyenne. Enfin, il calcule sa valeur exacte en introduisant une fonction auxiliaire dépendant d'un paramètre λ et en étudiant ses propriétés.",
+  "concepts": [
+    "intégrale impropre",
+    "convergence absolue",
+    "convergence conditionnelle",
+    "formule de la moyenne",
+    "théorème des valeurs intermédiaires",
+    "théorème de dérivation sous le signe intégral",
+    "fonction continue",
+    "fonction dérivable"
+  ],
+  "methods": [
+    "intégration par parties",
+    "critère de Cauchy",
+    "encadrement d'intégrales",
+    "limite uniforme",
+    "développement en série",
+    "calcul de limite"
+  ],
+  "objects": [
+    "intégrale de Dirichlet",
+    "fonction exponentielle",
+    "fonction sinus",
+    "fonction arctangente",
+    "fonction décroissante",
+    "intégrale généralisée"
+  ],
+  "content_hash": "6d75f27a954b2557ca01c3bceaff899f36b23eafc8cce4c84dc6597317ecea92",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:33:08.974Z"
+}

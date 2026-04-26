@@ -1,0 +1,28 @@
+{
+  "uuid": "08cg",
+  "source_path": "exo7/4-L2/08cg.tex",
+  "summary": "L'exercice demande d'exprimer (1+√2)^n sous la forme aₙ + bₙ√2 avec aₙ et bₙ entiers naturels, puis d'utiliser cette décomposition pour établir une relation entre aₙ et bₙ via le produit (1+√2)^n(1-√2)^n.",
+  "concepts": [
+    "formule du binôme de Newton",
+    "théorème de Bézout",
+    "entiers premiers entre eux",
+    "développement binomial",
+    "arithmétique dans Z",
+    "conjugaison algébrique"
+  ],
+  "methods": [
+    "développement binomial",
+    "séparation des termes pairs/impairs",
+    "calcul de produit conjugué",
+    "utilisation du théorème de Bézout"
+  ],
+  "objects": [
+    "expression binomiale (1+√2)^n",
+    "entiers naturels aₙ et bₙ",
+    "conjugué (1-√2)^n",
+    "relation diophantienne"
+  ],
+  "content_hash": "62df1d3644131e07f8eedb34da34d83b5755a07fe387a1106e243a15308290e3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:33.284Z"
+}

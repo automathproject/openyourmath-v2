@@ -1,0 +1,33 @@
+{
+  "uuid": "Lq60",
+  "source_path": "exo7/2-L1/Lq60.tex",
+  "summary": "L'exercice demande de démontrer une inégalité impliquant une fonction continue et strictement croissante f, son intégrale et son inverse, sur un intervalle [0,a]. Le contexte utilise des propriétés de continuité, dérivabilité et bijection.",
+  "concepts": [
+    "fonction continue",
+    "fonction strictement croissante",
+    "bijection",
+    "fonction réciproque",
+    "intégrale définie",
+    "dérivée",
+    "extremum d'une fonction",
+    "fonction de classe C^1"
+  ],
+  "methods": [
+    "étude des variations",
+    "calcul de dérivée",
+    "intégration",
+    "utilisation de la bijection",
+    "recherche d'extremum"
+  ],
+  "objects": [
+    "fonction f",
+    "fonction réciproque f⁻¹",
+    "intégrale de f",
+    "intégrale de f⁻¹",
+    "fonction g(y)",
+    "fonction h(x)"
+  ],
+  "content_hash": "fb9ba8c8f12304bc77f8e960e56589a0c23b0bfee9d796c71db0334276e36a74",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:32:22.034Z"
+}

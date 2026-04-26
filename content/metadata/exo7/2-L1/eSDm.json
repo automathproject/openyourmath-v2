@@ -1,0 +1,25 @@
+{
+  "uuid": "eSDm",
+  "source_path": "exo7/2-L1/eSDm.tex",
+  "summary": "Calculer une intégrale impropre de la forme ∫(1/x) dx entre 1 et +∞, en identifiant sa nature convergente ou divergente.",
+  "concepts": [
+    "intégrale impropre",
+    "convergence d'intégrale",
+    "fonction intégrable",
+    "limite de fonction",
+    "comparaison d'intégrales"
+  ],
+  "methods": [
+    "comparaison à une intégrale de référence",
+    "changement de variable",
+    "évaluation de limite"
+  ],
+  "objects": [
+    "fonction 1/x",
+    "intégrale de 1 à +∞",
+    "limite en +∞"
+  ],
+  "content_hash": "c737dd2c17e38945cf9858d081048fb20619f2ed41c6069c896c92df22a68329",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:34:11.888Z"
+}

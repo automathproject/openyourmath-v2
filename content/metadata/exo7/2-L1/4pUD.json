@@ -1,0 +1,27 @@
+{
+  "uuid": "4pUD",
+  "source_path": "exo7/2-L1/4pUD.tex",
+  "summary": "L'exercice demande de démontrer la continuité d'une fonction f sur un intervalle fermé [a, b], puis d'établir l'unicité de la solution de l'équation f(x) = x dans cet intervalle en utilisant une fonction auxiliaire g(x) = f(x) - x.",
+  "concepts": [
+    "continuité sur un intervalle fermé",
+    "théorème des valeurs intermédiaires",
+    "fonction continue",
+    "équation différentielle",
+    "unicité de la solution"
+  ],
+  "methods": [
+    "étude de la continuité",
+    "construction d'une fonction auxiliaire",
+    "application du théorème des valeurs intermédiaires",
+    "analyse des variations"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle fermé",
+    "fonction auxiliaire",
+    "solution d'équation"
+  ],
+  "content_hash": "6413d7acd3186cba24e17694f5b8ae89e331a82de618eb6bf6913f05a42a32e7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:43:43.384Z"
+}

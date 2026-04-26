@@ -1,0 +1,28 @@
+{
+  "uuid": "1JJt",
+  "source_path": "exo7/4-L2/1JJt.tex",
+  "summary": "L'exercice demande de démontrer qu'un entier de la forme 8n+7 ne peut pas s'écrire comme la somme de trois carrés d'entiers naturels. Il s'agit d'une question d'arithmétique dans l'anneau Z.",
+  "concepts": [
+    "division euclidienne",
+    "restes",
+    "somme de carrés",
+    "congruences",
+    "arithmétique modulaire",
+    "classes d'équivalence"
+  ],
+  "methods": [
+    "développement d'expression",
+    "analyse des cas",
+    "vérification exhaustive",
+    "utilisation des congruences"
+  ],
+  "objects": [
+    "entiers naturels",
+    "restes de division",
+    "somme de trois carrés",
+    "classes de congruence modulo 8"
+  ],
+  "content_hash": "091286fd6bdd6316a5376905f959be57a1d21d57a0a4c4bafd50df517c036e66",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:38.593Z"
+}

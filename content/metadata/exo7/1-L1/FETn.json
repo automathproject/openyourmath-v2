@@ -1,0 +1,27 @@
+{
+  "uuid": "FETn",
+  "source_path": "exo7/1-L1/FETn.tex",
+  "summary": "L'exercice demande de prouver que si un entier naturel n laisse un reste de 2 ou 3 dans la division euclidienne par 5, alors n² + 1 est divisible par 5. Il faut aussi montrer que n⁵ - n est divisible par 5 pour tout entier naturel n.",
+  "concepts": [
+    "division euclidienne",
+    "divisibilité",
+    "congruences",
+    "arithmétique modulaire",
+    "petit théorème de Fermat",
+    "théorème des restes chinois"
+  ],
+  "methods": [
+    "calcul de congruences",
+    "vérification par cas",
+    "utilisation du petit théorème de Fermat",
+    "factorisation"
+  ],
+  "objects": [
+    "entier naturel",
+    "reste de division",
+    "expression polynomiale"
+  ],
+  "content_hash": "4119a4b117d85fe39f2998b070cbd2afdecef4118719d90f90e2b933105eece9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:59.756Z"
+}

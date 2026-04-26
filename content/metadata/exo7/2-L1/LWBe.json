@@ -1,0 +1,28 @@
+{
+  "uuid": "LWBe",
+  "source_path": "exo7/2-L1/LWBe.tex",
+  "summary": "Calculer l'aire d'une ellipse de demi-axes a et b en se ramenant à l'intégrale ∫₀ᵃ b√(1−x²/a²) dx. L'exercice utilise la symétrie de l'ellipse pour ne calculer que l'aire d'un quadrant.",
+  "concepts": [
+    "aire d'une ellipse",
+    "intégrale définie",
+    "changement de variable",
+    "symétrie",
+    "fonction trigonométrique",
+    "identité trigonométrique"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration par parties",
+    "simplification trigonométrique",
+    "calcul d'intégrale"
+  ],
+  "objects": [
+    "ellipse",
+    "courbe paramétrée",
+    "intégrale à bornes",
+    "fonction racine carrée"
+  ],
+  "content_hash": "28d675e9ea399a526d78291e1a30d5d344a0dde2cc8ad66a0a96eaa32b83898f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:32:18.963Z"
+}

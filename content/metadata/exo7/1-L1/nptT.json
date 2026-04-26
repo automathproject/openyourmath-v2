@@ -1,0 +1,26 @@
+{
+  "uuid": "nptT",
+  "source_path": "exo7/1-L1/nptT.tex",
+  "summary": "Calculer 100^1000 modulo 13 en exploitant les propriétés de la congruence et en cherchant une règle générale pour les puissances successives.",
+  "concepts": [
+    "congruence modulo n",
+    "division euclidienne",
+    "propriétés des puissances en arithmétique modulaire",
+    "périodicité des puissances modulo n",
+    "théorème d'Euler-Fermat"
+  ],
+  "methods": [
+    "réduction modulo n",
+    "calcul de puissances successives",
+    "recherche de cycle de congruences",
+    "décomposition d'exposant"
+  ],
+  "objects": [
+    "entier naturel",
+    "puissance d'entier",
+    "congruence arithmétique"
+  ],
+  "content_hash": "a09a7c7be99bd01a5f2af959eeceee46383506553c91e31dd1bcc1f7b727ba8c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:05.218Z"
+}

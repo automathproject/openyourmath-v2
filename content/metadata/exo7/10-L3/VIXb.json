@@ -1,0 +1,26 @@
+{
+  "uuid": "VIXb",
+  "source_path": "exo7/10-L3/VIXb.tex",
+  "summary": "L'exercice demande de montrer que si 1 appartient à la somme de deux idéaux I et J dans un anneau, alors pour tout couple (n,m) d'entiers naturels, 1 appartient à la somme des puissances I^n et J^m.",
+  "concepts": [
+    "idéal d'un anneau",
+    "somme d'idéaux",
+    "binôme de Newton",
+    "puissance d'idéal",
+    "inclusion d'idéaux"
+  ],
+  "methods": [
+    "développement binomial",
+    "manipulation d'inclusions",
+    "utilisation de la relation 1 = x + y"
+  ],
+  "objects": [
+    "idéal",
+    "élément unité",
+    "puissance d'idéal",
+    "combinaison linéaire"
+  ],
+  "content_hash": "3e544575349f0f1f3db44308a09a1597f2bbf85b88db52d7ea0b17f92465cfba",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:07:52.564Z"
+}

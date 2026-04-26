@@ -1,0 +1,29 @@
+{
+  "uuid": "nIPx",
+  "source_path": "exo7/2-L1/nIPx.tex",
+  "summary": "L'exercice étudie la continuité d'une fonction définie sur les réels strictement positifs, qui vaut 1 en tout rationnel et 0 en tout irrationnel. Il demande de montrer que cette fonction est discontinue en tout rationnel et continue en tout irrationnel.",
+  "concepts": [
+    "continuité d'une fonction",
+    "limite d'une fonction",
+    "rationnels",
+    "irrationnels",
+    "densité des rationnels",
+    "densité des irrationnels",
+    "discontinuité"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la densité des rationnels",
+    "analyse des valeurs de la fonction",
+    "limite unilatérale"
+  ],
+  "objects": [
+    "fonction indicatrice des rationnels",
+    "réels strictement positifs",
+    "limite en un point",
+    "intervalle ouvert"
+  ],
+  "content_hash": "6dbd7b9747beb8f862022cb0e6fd98c8934b7a6a236b891be9de0722ad624013",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:47:37.500Z"
+}

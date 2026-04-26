@@ -1,0 +1,32 @@
+{
+  "uuid": "v6sX",
+  "source_path": "exo7/10-L3/v6sX.tex",
+  "summary": "L'exercice demande de caractériser les éléments inversibles, les diviseurs de zéro et les éléments nilpotents de l'anneau ℤ/36ℤ, puis d'identifier tous ses idéaux. Il aborde aussi des propriétés générales des anneaux et des polynômes inversibles dans ℤ/36ℤ[x].",
+  "concepts": [
+    "anneau quotient",
+    "élément inversible",
+    "diviseur de zéro",
+    "élément nilpotent",
+    "idéal principal",
+    "morphisme d'anneaux",
+    "polynôme inversible",
+    "corps"
+  ],
+  "methods": [
+    "utilisation du théorème de Bézout",
+    "caractérisation des idéaux par les diviseurs",
+    "réduction modulo un nombre premier",
+    "factorisation dans un anneau quotient"
+  ],
+  "objects": [
+    "ℤ/36ℤ",
+    "idéal de ℤ/36ℤ",
+    "polynôme à coefficients dans ℤ/36ℤ",
+    "élément inversible d'un anneau",
+    "diviseur de zéro",
+    "élément nilpotent"
+  ],
+  "content_hash": "d0a5f751666ae005c6d9acdea2925e6d6ef8d60a0d05e9a69bd8f755608ebf6a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:23.718Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "6utI",
+  "source_path": "exo7/2-L1/6utI.tex",
+  "summary": "Démontrer l'existence d'un point c dans un intervalle [a,b] vérifiant une égalité intégrale impliquant deux fonctions f et g, puis préciser la position de c si f ne s'annule pas. Application à la détermination d'une limite d'une intégrale dépendant d'un paramètre.",
+  "concepts": [
+    "intégrale de Riemann",
+    "théorème de la moyenne intégrale",
+    "continuité",
+    "limite de fonction",
+    "fonction continue"
+  ],
+  "methods": [
+    "application du théorème de la moyenne intégrale",
+    "calcul de limite",
+    "intégration par parties"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrale définie",
+    "point c dans un intervalle"
+  ],
+  "content_hash": "4722ff3411161b20da7c490c704354fea71f79217f488126f86ee27d43149109",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:30:38.575Z"
+}

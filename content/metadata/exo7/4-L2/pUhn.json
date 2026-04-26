@@ -1,0 +1,30 @@
+{
+  "uuid": "pUhn",
+  "source_path": "exo7/4-L2/pUhn.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés sur une suite récurrente : d'abord une relation entre trois termes consécutifs et leur produit, puis une formule de récurrence pour la suite et une propriété de divisibilité. Le contexte est l'arithmétique des entiers naturels.",
+  "concepts": [
+    "relation de récurrence",
+    "théorème de Bézout",
+    "théorème de Gauss",
+    "algorithme d'Euclide",
+    "pgcd",
+    "suite géométrique",
+    "division euclidienne",
+    "premiers entre eux"
+  ],
+  "methods": [
+    "récurrence",
+    "calcul algébrique",
+    "décomposition en facteurs",
+    "utilisation de la relation de récurrence"
+  ],
+  "objects": [
+    "suite récurrente",
+    "entiers naturels",
+    "pgcd",
+    "relation de récurrence"
+  ],
+  "content_hash": "a376dd14dc85fe1abd2eb4ded2c457e0c378abfc39b6d0d3ba2c7dee49d6b87e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:13.586Z"
+}

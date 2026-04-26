@@ -1,0 +1,31 @@
+{
+  "uuid": "IMRw",
+  "source_path": "exo7/16-L3/IMRw.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de bornes supérieures pour une fonction holomorphe dans un domaine Δ, en utilisant des majorations et des limites. Il explore les relations entre les valeurs de la fonction à l'intérieur du domaine et sur son bord.",
+  "concepts": [
+    "fonction holomorphe",
+    "borne supérieure",
+    "limite en module",
+    "domaine de définition",
+    "convergence uniforme",
+    "principe du maximum",
+    "continuité"
+  ],
+  "methods": [
+    "majoration",
+    "passage à la limite",
+    "utilisation du principe du maximum",
+    "estimation de bornes supérieures",
+    "manipulation de limites"
+  ],
+  "objects": [
+    "fonction f(z)",
+    "domaine Δ",
+    "bord ∂Δ",
+    "module |f(z)|",
+    "fonction g_n(z)"
+  ],
+  "content_hash": "38bd58e9cc24c40e0e94029920a9dbb217ab7b70f8a64786af1ab67ea2f15419",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:24:25.503Z"
+}

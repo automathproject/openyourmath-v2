@@ -1,0 +1,35 @@
+{
+  "uuid": "fBnr",
+  "source_path": "exo7/1-L1/fBnr.tex",
+  "summary": "Montrer des équivalences entre propriétés d'applications linéaires, notamment entre l'égalité des noyaux et images de f et f², et des conditions sur leur intersection ou leur somme. Établir des propriétés des projecteurs, y compris leurs relations avec leur complémentaire et les conditions pour que leur somme soit un projecteur.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application",
+    "image d'une application",
+    "projecteur",
+    "somme directe",
+    "endomorphisme",
+    "complémentaire d'un sous-espace",
+    "sous-espaces supplémentaires"
+  ],
+  "methods": [
+    "double inclusion",
+    "équivalence logique",
+    "utilisation des propriétés des projecteurs",
+    "décomposition en somme directe",
+    "manipulation d'équations vectorielles"
+  ],
+  "objects": [
+    "noyau de f",
+    "image de f",
+    "noyau de f²",
+    "image de f²",
+    "projecteur p",
+    "projecteur q",
+    "somme de projecteurs",
+    "complémentaire d'un sous-espace"
+  ],
+  "content_hash": "5f461ea8ff3cfde6e7080eac4ee87ca603485f3a985fa08dd9b92e03e291e9e1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:12:50.263Z"
+}

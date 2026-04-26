@@ -1,0 +1,27 @@
+{
+  "uuid": "UTCH",
+  "source_path": "exo7/6-L2/UTCH.tex",
+  "summary": "L'exercice demande de montrer qu'un champ vectoriel donné est un champ de gradient, d'en déterminer le potentiel scalaire associé en fixant sa valeur à l'origine, puis de calculer la circulation de ce champ le long d'une courbe entre deux points donnés.",
+  "concepts": [
+    "champ de gradient",
+    "forme différentielle exacte",
+    "potentiel scalaire",
+    "circulation d'un champ vectoriel",
+    "conditions de dérivabilité croisée",
+    "intégrale curviligne"
+  ],
+  "methods": [
+    "vérification des conditions de dérivabilité croisée",
+    "intégration pour déterminer le potentiel",
+    "calcul de l'intégrale curviligne"
+  ],
+  "objects": [
+    "champ vectoriel en 3D",
+    "forme différentielle",
+    "courbe dans l'espace",
+    "potentiel scalaire"
+  ],
+  "content_hash": "36fc4e99f6d91eae02481a2741e891944af9774ae78d422bbf43732dee261fd8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:06:25.650Z"
+}

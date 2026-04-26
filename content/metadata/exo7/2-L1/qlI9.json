@@ -1,0 +1,27 @@
+{
+  "uuid": "qlI9",
+  "source_path": "exo7/2-L1/qlI9.tex",
+  "summary": "L'exercice demande de démontrer la continuité d'une fonction en utilisant la notion de distance à un ensemble. Il s'agit de montrer que la fonction distance à un ensemble A est 1-Lipschitzienne sur ℝ².",
+  "concepts": [
+    "distance à un ensemble",
+    "fonction Lipschitzienne",
+    "continuité",
+    "inégalité triangulaire",
+    "minorant",
+    "fonction réelle"
+  ],
+  "methods": [
+    "utilisation de l'inégalité triangulaire",
+    "démonstration par minoration",
+    "échange de rôles des variables",
+    "comparaison de distances"
+  ],
+  "objects": [
+    "fonction distance",
+    "ensemble A",
+    "points de ℝ²"
+  ],
+  "content_hash": "0efe70e52c2c3e7a2d672631fdd858df79d2c8306e380e316323108e3d4f294a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:47:56.928Z"
+}

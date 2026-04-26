@@ -1,0 +1,28 @@
+{
+  "uuid": "mRME",
+  "source_path": "exo7/4-L2/mRME.tex",
+  "summary": "L'exercice demande d'établir la formule de Legendre pour l'exposant d'un nombre premier p dans la décomposition en facteurs premiers de n!, puis d'appliquer cette formule pour déterminer le nombre de zéros terminant l'écriture en base 10 de 1000!.",
+  "concepts": [
+    "formule de Legendre",
+    "décomposition en facteurs premiers",
+    "exposant d'un nombre premier",
+    "factorielle",
+    "arithmétique des entiers",
+    "nombre de zéros terminaux",
+    "puissance d'un nombre premier"
+  ],
+  "methods": [
+    "calcul de l'exposant d'un nombre premier dans n!",
+    "utilisation de la fonction partie entière",
+    "comparaison des exposants de 2 et 5 dans 1000!"
+  ],
+  "objects": [
+    "nombre premier p",
+    "facteur premier de n!",
+    "exposant de p dans n!",
+    "nombre de zéros terminaux de 1000!"
+  ],
+  "content_hash": "83985c3bdb3d9396cc210ace9bc796875483a5f40271b5341c028734702eac4e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:06.847Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "d1Qm",
+  "source_path": "exo7/10-L3/d1Qm.tex",
+  "summary": "L'exercice porte sur les propriétés d'un anneau A de caractéristique p, où p est un nombre premier. Il demande de démontrer des propriétés liées à l'endomorphisme de Frobenius F_p(a) = a^p, notamment son caractère d'endomorphisme d'anneaux, son identité sur le sous-anneau minimal, et son automorphisme dans le cas d'un anneau fini.",
+  "concepts": [
+    "anneau de caractéristique p",
+    "endomorphisme d'anneau",
+    "automorphisme d'anneau",
+    "sous-anneau minimal",
+    "propriété de Frobenius",
+    "élément nilpotent",
+    "puissance d'élément"
+  ],
+  "methods": [
+    "utilisation de la caractéristique d'un anneau",
+    "démonstration par linéarité",
+    "application de la formule du binôme",
+    "vérification des propriétés d'homomorphisme",
+    "étude des sous-anneaux"
+  ],
+  "objects": [
+    "anneau A",
+    "endomorphisme de Frobenius F_p",
+    "sous-anneau minimal A_0",
+    "élément a de A",
+    "nombre premier p"
+  ],
+  "content_hash": "407b6c04af81ec70bfc7fed2efd0c2092809ad4edd354981dbd86fecf8619ace",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:08:15.919Z"
+}

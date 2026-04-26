@@ -1,0 +1,28 @@
+{
+  "uuid": "eocp",
+  "source_path": "exo7/1-L1/eocp.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés équivalentes pour une application linéaire f : E → F. La première lie l'injectivité de f à la préservation des familles libres. La seconde lie la surjectivité de f à la transformation d'une famille génératrice de E en une famille génératrice de F.",
+  "concepts": [
+    "application linéaire",
+    "injectivité",
+    "surjectivité",
+    "famille libre",
+    "famille génératrice",
+    "espace vectoriel"
+  ],
+  "methods": [
+    "caractérisation de l'injectivité",
+    "caractérisation de la surjectivité",
+    "manipulation de familles de vecteurs"
+  ],
+  "objects": [
+    "application linéaire f",
+    "famille libre de E",
+    "famille génératrice de E",
+    "famille libre de F",
+    "famille génératrice de F"
+  ],
+  "content_hash": "fe57777c14c0facb2bb295fe03af43dbd7938e8abbdfcb016c3aeb4b7299c578",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:12:41.269Z"
+}

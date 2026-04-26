@@ -1,0 +1,32 @@
+{
+  "uuid": "0fdQ",
+  "source_path": "amscc/0fdQ.tex",
+  "summary": "L'exercice demande d'étudier un réseau de neurones à deux couches en exprimant les sorties des neurones, leurs dérivées partielles, et en appliquant la méthode du gradient pour l'apprentissage. Il mobilise des calculs de dérivées partielles et la rétropropagation.",
+  "concepts": [
+    "fonction sigmoïde",
+    "dérivée partielle",
+    "réseau de neurones",
+    "rétropropagation",
+    "gradient",
+    "erreur quadratique",
+    "méthode du gradient",
+    "chaîne de dérivées"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "règle de la chaîne",
+    "méthode du gradient à pas constant",
+    "apprentissage par descente de gradient"
+  ],
+  "objects": [
+    "fonction d'activation sigmoïde",
+    "sortie de neurone",
+    "poids synaptiques",
+    "bias",
+    "gradient de l'erreur",
+    "vecteur de paramètres"
+  ],
+  "content_hash": "fc4db10f1302ba110acde66066b2f4ac7f5b3e02d0832fc67bb202d256ae54c9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:50.829Z"
+}

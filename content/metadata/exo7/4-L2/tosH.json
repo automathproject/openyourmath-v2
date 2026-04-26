@@ -1,0 +1,29 @@
+{
+  "uuid": "tosH",
+  "source_path": "exo7/4-L2/tosH.tex",
+  "summary": "L'exercice demande de déterminer les éléments d'un groupe G donné, de calculer l'ordre de chacun, de vérifier si G est cyclique, puis d'énumérer ses sous-groupes et de construire leur treillis.",
+  "concepts": [
+    "groupe cyclique",
+    "ordre d'un élément",
+    "sous-groupe",
+    "treillis de sous-groupes",
+    "anneau Z/nZ",
+    "théorème des restes chinois",
+    "structure multiplicative"
+  ],
+  "methods": [
+    "calcul d'ordre d'élément",
+    "vérification de la cyclicité",
+    "énumération des sous-groupes",
+    "construction de treillis"
+  ],
+  "objects": [
+    "groupe multiplicatif",
+    "éléments inversibles",
+    "sous-groupes",
+    "treillis"
+  ],
+  "content_hash": "7010208e69db2563e63ccb13fdf89a76ed48c46321706e651bbc06a7cbef00b1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:27.108Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "iqMB",
+  "source_path": "exo7/16-L3/iqMB.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'une fonction continue sur la sphère de Riemann prolongeant une fonction donnée définie sur le plan complexe privé de k points, puis de déterminer les valeurs de ce prolongement en ces points et à l'infini. Il aborde ensuite le cas où les polynômes P et Q ont des zéros communs.",
+  "concepts": [
+    "fonction continue",
+    "sphère de Riemann",
+    "prolongement de fonction",
+    "point isolé",
+    "limite en un point",
+    "point à l'infini",
+    "zéros communs de polynômes"
+  ],
+  "methods": [
+    "construction explicite de prolongement",
+    "analyse de continuité",
+    "étude des limites",
+    "comparaison de polynômes"
+  ],
+  "objects": [
+    "fonction définie sur C privé de k points",
+    "sphère de Riemann",
+    "polynômes P et Q",
+    "zéros communs"
+  ],
+  "content_hash": "9efdec50602f7f9918d3d3387cae36dff5d5c31d68bc9b59c126c111adfd898b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:42.314Z"
+}

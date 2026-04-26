@@ -1,0 +1,26 @@
+{
+  "uuid": "9pSO",
+  "source_path": "exo7/4-L2/9pSO.tex",
+  "summary": "L'exercice demande de prouver deux propriétés sur une suite $(b_i)$ dans l'anneau $\\mathbb{Z}/n\\mathbb{Z}$ : d'abord que $b_p = 1$ pour un certain indice $p$, puis que si $b_0 \\ne 1$, il existe un indice $i$ tel que $b_i = n-1$.",
+  "concepts": [
+    "anneau quotient",
+    "théorème chinois",
+    "inversibilité",
+    "élément unité",
+    "congruences",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "manipulation de congruences",
+    "utilisation de l'unicité des solutions",
+    "recherche d'inverses multiplicatifs"
+  ],
+  "objects": [
+    "suite dans $\\mathbb{Z}/n\\mathbb{Z}$",
+    "élément de l'anneau $\\mathbb{Z}/n\\mathbb{Z}$",
+    "inverse multiplicatif"
+  ],
+  "content_hash": "9b7085f4531ac5cf8a14e7700a41003d745d5cbbf3f8f821697d956015153755",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:51.760Z"
+}

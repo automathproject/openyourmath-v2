@@ -1,0 +1,32 @@
+{
+  "uuid": "Ib1S",
+  "source_path": "exo7/8-L3/Ib1S.tex",
+  "summary": "L'exercice étudie les propriétés des classes doubles d'un sous-groupe H dans un groupe G. Il demande de prouver des relations entre ces classes, d'analyser leur cardinal et de déduire des conditions de distinction du sous-groupe H.",
+  "concepts": [
+    "relation d'équivalence",
+    "classes à gauche",
+    "classes à droite",
+    "action de groupe",
+    "sous-groupe distingué",
+    "cardinal d'un ensemble",
+    "transitivité d'une action",
+    "fixateur d'une action"
+  ],
+  "methods": [
+    "définition d'une relation d'équivalence",
+    "analyse des classes de conjugaison",
+    "calcul de cardinal",
+    "utilisation de la transitivité",
+    "preuve par contraposée"
+  ],
+  "objects": [
+    "sous-groupe H",
+    "groupe G",
+    "classes doubles HxH",
+    "élément x de G",
+    "fixateur H(x_iH)"
+  ],
+  "content_hash": "9f41cb8d01d2f8c4a6775af0b8ffecf0a300ab294a3ecea003629afe14cbaced",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:04:44.301Z"
+}

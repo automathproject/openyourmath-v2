@@ -1,0 +1,29 @@
+{
+  "uuid": "U01x",
+  "source_path": "exo7/15-L3/U01x.tex",
+  "summary": "L'exercice demande de montrer qu'on peut trouver n points et n voisinages dans un espace topologique X, avec des fonctions de J non nulles sur ces voisinages, puis de construire une fonction g de J ne s'annulant jamais pour aboutir à une contradiction.",
+  "concepts": [
+    "compacité",
+    "recouvrement ouvert",
+    "fonction continue",
+    "espace topologique",
+    "propriété de Baire",
+    "fonction non nulle",
+    "recouvrement fini"
+  ],
+  "methods": [
+    "construction par l'absurde",
+    "utilisation de la propriété de Baire",
+    "recouvrement par des voisinages",
+    "construction de fonction globale"
+  ],
+  "objects": [
+    "espace topologique X",
+    "fonctions de J",
+    "voisinages de points",
+    "fonction g de J"
+  ],
+  "content_hash": "e6715121a7309b75a88833d46e0b77124c9cbacc970e7b40d944463a57ce8abf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:38:05.597Z"
+}

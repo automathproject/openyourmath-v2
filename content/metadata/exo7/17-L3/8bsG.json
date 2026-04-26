@@ -1,0 +1,32 @@
+{
+  "uuid": "8bsG",
+  "source_path": "exo7/17-L3/8bsG.tex",
+  "summary": "L'exercice explore les propriétés des valeurs singulières d'une matrice, notamment leur relation avec les normes de la matrice, les valeurs propres de A*A et AA*, le déterminant, et le cas particulier des matrices hermitiennes.",
+  "concepts": [
+    "valeurs singulières",
+    "norme matricielle",
+    "décomposition en valeurs singulières",
+    "matrice hermitienne",
+    "valeurs propres",
+    "déterminant d'une matrice",
+    "semblance de matrices",
+    "matrice unitaire"
+  ],
+  "methods": [
+    "décomposition en valeurs singulières",
+    "calcul de norme de Frobenius",
+    "calcul de norme spectrale",
+    "diagonalisation de matrices hermitiennes",
+    "propriétés des matrices unitaires"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice hermitienne",
+    "valeurs singulières",
+    "valeurs propres",
+    "déterminant"
+  ],
+  "content_hash": "dcb30a24acd98f17b18ae58b6b887c34ac244bb05d35faf7d1550ccf3a3ba2cd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:22:49.545Z"
+}

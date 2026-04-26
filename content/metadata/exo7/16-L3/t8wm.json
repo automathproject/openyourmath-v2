@@ -1,0 +1,24 @@
+{
+  "uuid": "t8wm",
+  "source_path": "exo7/16-L3/t8wm.tex",
+  "summary": "L'exercice demande de montrer que la fonction φ(z) = (4z + 3)/(4 + 3z) est bornée par 1 en module sur le disque unité Δ. Le corrigé utilise le principe du maximum pour une fonction holomorphe.",
+  "concepts": [
+    "fonction holomorphe",
+    "principe du maximum",
+    "module d'une fonction complexe",
+    "disque unité",
+    "bornitude"
+  ],
+  "methods": [
+    "application du principe du maximum",
+    "calcul du module sur le bord du disque"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "disque unité Δ",
+    "module d'une fonction complexe"
+  ],
+  "content_hash": "46116412be974c46348ca2a6c54b0e076e6749d7ce1a1badeac970280cabea1b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:28:54.622Z"
+}

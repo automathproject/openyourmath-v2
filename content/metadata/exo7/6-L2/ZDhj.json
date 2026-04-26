@@ -1,0 +1,29 @@
+{
+  "uuid": "ZDhj",
+  "source_path": "exo7/6-L2/ZDhj.tex",
+  "summary": "L'exercice demande de déterminer si la droite (Oz) est tangente à une conique (C) définie comme l'ensemble des points M à distance R d'une droite (D) dans l'espace. La conique est donnée par une équation cartésienne obtenue via le produit vectoriel.",
+  "concepts": [
+    "distance d'un point à une droite dans l'espace",
+    "produit vectoriel",
+    "déterminant",
+    "tangence droite-conique",
+    "équation cartésienne de quadrique",
+    "produit mixte"
+  ],
+  "methods": [
+    "calcul de produit vectoriel",
+    "calcul de déterminant",
+    "résolution d'équation cartésienne",
+    "calcul de distance"
+  ],
+  "objects": [
+    "droite dans l'espace",
+    "conique",
+    "point M",
+    "vecteur directeur",
+    "matrice 3x3"
+  ],
+  "content_hash": "5fc09a45740431f7fd2b2a23e9bd3b6ec007db65328e07a7554337014936b382",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:40:36.098Z"
+}

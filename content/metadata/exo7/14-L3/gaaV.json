@@ -1,0 +1,33 @@
+{
+  "uuid": "gaaV",
+  "source_path": "exo7/14-L3/gaaV.tex",
+  "summary": "Calcul de l'intégrale de la fonction exponentielle $e^{-x^2}$ sur $\\mathbb{R}$. Puis, généralisation en dimension $n$ pour calculer l'aire de la sphère unité et le volume de la boule unité dans $\\mathbb{R}^n$ en utilisant la fonction Gamma.",
+  "concepts": [
+    "intégrale de Lebesgue",
+    "coordonnées polaires",
+    "changement de variable",
+    "fonction Gamma",
+    "aire de la sphère",
+    "volume de la boule",
+    "difféomorphisme",
+    "mesure de Lebesgue"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "intégration en coordonnées polaires",
+    "utilisation de la fonction Gamma",
+    "calcul d'aire et volume en dimension $n$"
+  ],
+  "objects": [
+    "intégrale impropre",
+    "fonction exponentielle",
+    "sphère unité",
+    "boule unité",
+    "fonction Gamma",
+    "mesure de Lebesgue"
+  ],
+  "content_hash": "3eebe5c452f19a17183d3e456d32351d800c753a97359cf4bf0ffcd0d84a06c3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:19.511Z"
+}

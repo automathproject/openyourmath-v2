@@ -1,0 +1,31 @@
+{
+  "uuid": "9Acu",
+  "source_path": "amscc/9Acu.tex",
+  "summary": "L'exercice demande de déterminer l'équivalent simple de six fonctions réelles en des points particuliers (0 ou +∞) en utilisant les développements limités ou les comportements asymptotiques.",
+  "concepts": [
+    "développement limité",
+    "équivalence de fonctions",
+    "limite de fonctions réelles",
+    "comportement asymptotique",
+    "continuité",
+    "développement en série de Taylor"
+  ],
+  "methods": [
+    "développement limité en 0",
+    "simplification des termes dominants",
+    "changement de variable",
+    "utilisation de la continuité",
+    "développement de sin(x) et cos(x)"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "fonction exponentielle",
+    "fonction logarithme",
+    "fonction trigonométrique",
+    "fonction polynomiale",
+    "fonction racine carrée"
+  ],
+  "content_hash": "a0199c329fc0441d9bd02c9713a854857e504b3d30af0c001322b9fc4ca94eb3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:10.180Z"
+}

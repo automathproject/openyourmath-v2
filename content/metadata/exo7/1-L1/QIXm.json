@@ -1,0 +1,30 @@
+{
+  "uuid": "QIXm",
+  "source_path": "exo7/1-L1/QIXm.tex",
+  "summary": "L'exercice demande d'étudier l'injectivité et la surjectivité d'une application linéaire φ définie sur un espace vectoriel E de dimension 3, en fonction d'un paramètre t. On doit déterminer pour quelles valeurs de t l'application est injective, surjective, ou bijective.",
+  "concepts": [
+    "application linéaire",
+    "injectivité",
+    "surjectivité",
+    "bijectivité",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "décomposition sur une base",
+    "résolution d'un système d'équations linéaires",
+    "calcul de la dimension du noyau",
+    "application du théorème du rang"
+  ],
+  "objects": [
+    "espace vectoriel de dimension 3",
+    "application linéaire φ",
+    "noyau de φ",
+    "image de φ"
+  ],
+  "content_hash": "8ea0b5c334637568a2aae63e6af7f037bb074b79984bac8f5a99ef5ff2262928",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:11:37.580Z"
+}

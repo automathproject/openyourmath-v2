@@ -1,0 +1,28 @@
+{
+  "uuid": "Yo4I",
+  "source_path": "exo7/2-L1/Yo4I.tex",
+  "summary": "L'exercice demande de montrer qu'une inégalité sur |x-1| implique une inégalité sur |x² + x - 2|, puis d'en déduire deux limites de fonctions en x=1.",
+  "concepts": [
+    "limite de fonction",
+    "continuité",
+    "inégalité",
+    "approximation affine",
+    "valeur absolue",
+    "fonction polynomiale"
+  ],
+  "methods": [
+    "développement limité",
+    "majoration",
+    "raisonnement par implication",
+    "évaluation de limite"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "limite de fonction",
+    "inégalité",
+    "valeur absolue"
+  ],
+  "content_hash": "f6adbbc152d6598607cd3095287b71c338f6edd428665c6df7312f7bac88cc73",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:46:13.138Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "LCmb",
+  "source_path": "exo7/17-L3/LCmb.tex",
+  "summary": "L'exercice demande de démontrer une identité vectorielle impliquant des produits scalaires et des matrices, puis d'en déduire des propriétés sur les valeurs propres d'une matrice B et la convergence de méthodes itératives. Il s'applique à des matrices définies positives et utilise des décompositions matricielles.",
+  "concepts": [
+    "produit scalaire",
+    "matrice définie positive",
+    "valeur propre",
+    "convergence de méthode itérative",
+    "décomposition matricielle",
+    "identité vectorielle",
+    "spectre d'une matrice"
+  ],
+  "methods": [
+    "manipulation algébrique de produits scalaires",
+    "utilisation de propriétés des matrices hermitiennes",
+    "raisonnement par l'absurde",
+    "analyse de la convergence de suites",
+    "décomposition de matrices"
+  ],
+  "objects": [
+    "matrice A",
+    "matrice B",
+    "vecteur propre",
+    "suite itérative",
+    "produit scalaire"
+  ],
+  "content_hash": "358f6871e7897115d3aa20f3051eaee306a84adb08a69035554a5163c96793b2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:24:55.354Z"
+}

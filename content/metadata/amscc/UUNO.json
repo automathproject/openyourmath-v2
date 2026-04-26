@@ -1,0 +1,30 @@
+{
+  "uuid": "UUNO",
+  "source_path": "amscc/UUNO.tex",
+  "summary": "L'exercice demande de modéliser le fonctionnement d'un réseau de neurones en définissant les dimensions des matrices de poids et des vecteurs de biais pour des opérations de traitement par lots (batch processing). Il aborde aussi le dimensionnement des matrices dans un réseau multicouche pour la classification d'images.",
+  "concepts": [
+    "produit matriciel",
+    "matrice de poids",
+    "vecteur de biais",
+    "réseau de neurones multicouche",
+    "traitement par lots",
+    "dimensionnement des matrices",
+    "activation neuronale"
+  ],
+  "methods": [
+    "calcul de dimensions de matrices",
+    "juxtaposition de vecteurs",
+    "broadcasting",
+    "propagation avant"
+  ],
+  "objects": [
+    "matrice de poids",
+    "vecteur d'entrée",
+    "vecteur de sortie",
+    "matrice d'activation",
+    "batch d'exemples"
+  ],
+  "content_hash": "2480cc990123ad1a3309ac8135db55f737cd038b7131efa7015a1c8c31fb4b78",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:29.747Z"
+}

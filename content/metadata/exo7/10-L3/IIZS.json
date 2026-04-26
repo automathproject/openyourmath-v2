@@ -1,0 +1,27 @@
+{
+  "uuid": "IIZS",
+  "source_path": "exo7/10-L3/IIZS.tex",
+  "summary": "L'exercice demande de calculer les restes de la division de 10^100 par 13 et par 19, puis par 247 (produit de 13 et 19). Il s'ensuit une démonstration de divisibilité de 10^99 + 1 par 247.",
+  "concepts": [
+    "arithmétique modulaire",
+    "théorème des restes chinois",
+    "division euclidienne",
+    "congruences",
+    "nombre premier",
+    "pgcd"
+  ],
+  "methods": [
+    "calcul de puissances modulo un nombre",
+    "application du théorème des restes chinois",
+    "simplification de congruences"
+  ],
+  "objects": [
+    "congruences",
+    "puissance entière",
+    "nombre premier",
+    "produit de nombres premiers"
+  ],
+  "content_hash": "46aac26d45ddbd789ce6935f4b802ddee030df467700917d25305e66796d2d17",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:07:35.358Z"
+}

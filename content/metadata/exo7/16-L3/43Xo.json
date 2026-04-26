@@ -1,0 +1,28 @@
+{
+  "uuid": "43Xo",
+  "source_path": "exo7/16-L3/43Xo.tex",
+  "summary": "L'exercice demande d'énoncer la formule de Cauchy pour les disques, puis de calculer trois intégrales complexes sur le bord d'un disque, et enfin de déterminer quelles fonctions parmi une liste donnée admettent une primitive holomorphe sur le plan complexe privé de zéro.",
+  "concepts": [
+    "formule de Cauchy",
+    "fonction holomorphe",
+    "série entière",
+    "rayon de convergence",
+    "primitive d'une fonction",
+    "intégrale sur un chemin fermé"
+  ],
+  "methods": [
+    "développement en série entière",
+    "calcul d'intégrale complexe",
+    "prolongement analytique",
+    "utilisation de la formule de Cauchy"
+  ],
+  "objects": [
+    "fonction sin(z)",
+    "intégrale sur le bord d'un disque",
+    "série entière de sin(z)/z",
+    "primitive holomorphe"
+  ],
+  "content_hash": "be3889bcb12fd8f639e70b8caa5344eb230b39cbde82f0a7be626f99d1a97404",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:22:08.455Z"
+}

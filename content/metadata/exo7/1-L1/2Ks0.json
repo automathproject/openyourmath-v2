@@ -1,0 +1,31 @@
+{
+  "uuid": "2Ks0",
+  "source_path": "exo7/1-L1/2Ks0.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire A_i X = b_i en déterminant la nature de son ensemble de solutions, une représentation paramétrique de ces solutions, ainsi qu'une base de l'image et du noyau de la matrice A_i.",
+  "concepts": [
+    "application linéaire",
+    "système linéaire",
+    "image d'une application",
+    "noyau d'une application",
+    "théorème du rang",
+    "espace vectoriel",
+    "dimension d'un espace"
+  ],
+  "methods": [
+    "résolution de système linéaire",
+    "recherche de base d'un espace",
+    "calcul de noyau",
+    "calcul d'image",
+    "représentation paramétrique des solutions"
+  ],
+  "objects": [
+    "matrice A_i",
+    "vecteur b_i",
+    "ensemble des solutions",
+    "base de l'image",
+    "base du noyau"
+  ],
+  "content_hash": "d879c56a27df55ecb357021a1c03d1afcafe952be8eaba7a64a251bebc4543e0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:47.494Z"
+}

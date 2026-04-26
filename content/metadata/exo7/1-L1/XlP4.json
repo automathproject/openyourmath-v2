@@ -1,0 +1,26 @@
+{
+  "uuid": "XlP4",
+  "source_path": "exo7/1-L1/XlP4.tex",
+  "summary": "L'exercice demande de décomposer un nombre entier en facteurs premiers, en identifiant les nombres premiers qui le composent.",
+  "concepts": [
+    "décomposition en facteurs premiers",
+    "nombre premier",
+    "divisibilité dans Z",
+    "algorithme d'Euclide",
+    "PGCD",
+    "PPCM"
+  ],
+  "methods": [
+    "division successive",
+    "recherche des diviseurs premiers",
+    "factorisation"
+  ],
+  "objects": [
+    "nombre entier",
+    "facteurs premiers",
+    "diviseurs"
+  ],
+  "content_hash": "12de3606fcb312e30b67e179d3a9c1899ab45822423d96885f947744fff38e21",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:07.050Z"
+}

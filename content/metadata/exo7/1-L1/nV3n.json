@@ -1,0 +1,31 @@
+{
+  "uuid": "nV3n",
+  "source_path": "exo7/1-L1/nV3n.tex",
+  "summary": "L'exercice demande de montrer qu'une application T est linéaire, de déterminer son image et son noyau, et d'étudier ses propriétés (injectivité, valeurs propres) dans des sous-espaces de polynômes. Il s'agit d'une application linéaire de l'espace des polynômes de degré ≤4 dans lui-même.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "valeur propre",
+    "sous-espace vectoriel",
+    "base d'un espace vectoriel",
+    "décomposition en somme directe"
+  ],
+  "methods": [
+    "vérification des propriétés de linéarité",
+    "calcul de matrice dans une base",
+    "détermination de noyau et image",
+    "recherche de valeurs propres",
+    "construction de base adaptée"
+  ],
+  "objects": [
+    "application linéaire T",
+    "espace vectoriel P4",
+    "sous-espaces O2 et O3",
+    "matrice d'application linéaire",
+    "vecteurs propres"
+  ],
+  "content_hash": "8af56c57bf10b70b576eb7f62fa1e1b6aaaec566359e2337f01062e0794fe539",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:13:19.015Z"
+}

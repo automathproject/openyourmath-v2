@@ -1,0 +1,28 @@
+{
+  "uuid": "Smhl",
+  "source_path": "exo7/16-L3/Smhl.tex",
+  "summary": "L'exercice demande de démontrer la connexité de l'image d'une fonction complexe par la valeur absolue, puis d'établir que si la valeur absolue de la fonction ne prend pas une certaine valeur, elle est soit toujours supérieure soit toujours inférieure à cette valeur. Enfin, il s'agit d'en déduire que la fonction est constante ou que son image par la valeur absolue atteint l'infini.",
+  "concepts": [
+    "fonction holomorphe",
+    "connexe",
+    "valeur absolue complexe",
+    "principe du maximum",
+    "fonction constante",
+    "infimum et supremum"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du principe du maximum",
+    "analyse des propriétés topologiques",
+    "démonstration par contraposée"
+  ],
+  "objects": [
+    "fonction complexe",
+    "ensemble image par la valeur absolue",
+    "valeur critique a",
+    "infimum et supremum de |f(z)|"
+  ],
+  "content_hash": "4e7420d6b459a6fd7c14f3a5c30e101106ede4eae8905276dfa0d3eba27e4a81",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:25:40.945Z"
+}

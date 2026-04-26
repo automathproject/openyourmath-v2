@@ -1,0 +1,28 @@
+{
+  "uuid": "U4rf",
+  "source_path": "exo7/4-L2/U4rf.tex",
+  "summary": "L'exercice demande de caractériser un morphisme f de l'anneau Z/15Z vers Z/18Z par l'image de l'élément unité, puis de déterminer les ordres possibles de cette image. Enfin, il s'agit d'en déduire la liste complète des morphismes de groupes entre ces deux anneaux.",
+  "concepts": [
+    "morphisme d'anneaux",
+    "théorème chinois",
+    "ordre d'un élément",
+    "structure de groupe multiplicatif",
+    "anneau quotient",
+    "diviseurs du module"
+  ],
+  "methods": [
+    "caractérisation par l'image de l'unité",
+    "détermination des ordres possibles",
+    "application du théorème chinois",
+    "classification des morphismes"
+  ],
+  "objects": [
+    "morphisme de groupes",
+    "élément unité",
+    "anneau Z/15Z",
+    "anneau Z/18Z"
+  ],
+  "content_hash": "05228a81f1913bddcb76dadb70d77bc9c37f80b78863335df1d52a6226fe0e96",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:24.772Z"
+}

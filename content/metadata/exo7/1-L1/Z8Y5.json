@@ -1,0 +1,25 @@
+{
+  "uuid": "Z8Y5",
+  "source_path": "exo7/1-L1/Z8Y5.tex",
+  "summary": "L'exercice demande de démontrer une formule de récurrence pour une application linéaire composée avec une autre, puis d'en déduire sa nilpotence. Ensuite, il s'agit de trouver un endomorphisme b tel que a∘b∘a = a pour un endomorphisme a donné, et d'en déduire l'indice de nilpotence d'une application φ.",
+  "concepts": [
+    "application linéaire",
+    "nilpotence",
+    "composition d'applications",
+    "indice de nilpotence",
+    "endomorphisme"
+  ],
+  "methods": [
+    "récurrence",
+    "composition d'applications",
+    "démonstration par construction"
+  ],
+  "objects": [
+    "application linéaire φ",
+    "endomorphisme a",
+    "endomorphisme b"
+  ],
+  "content_hash": "9eee6498bc091f0e57c056ae705f79d18ea2ee7578046d9a96d990a7e04ac881",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:12:24.352Z"
+}

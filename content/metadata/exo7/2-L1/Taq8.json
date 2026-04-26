@@ -1,0 +1,26 @@
+{
+  "uuid": "Taq8",
+  "source_path": "exo7/2-L1/Taq8.tex",
+  "summary": "L'exercice demande de démontrer la réciproque d'une propriété connue : si une fonction continue sur un intervalle est injective, alors elle est strictement monotone. La preuve s'appuie sur une démonstration par l'absurde.",
+  "concepts": [
+    "injectivité",
+    "continuité",
+    "théorème des valeurs intermédiaires",
+    "monotonie stricte",
+    "raisonnement par l'absurde",
+    "fonction continue sur un intervalle"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "application du théorème des valeurs intermédiaires",
+    "analyse de cas"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle",
+    "points de l'intervalle"
+  ],
+  "content_hash": "1db5d2a5da87b76ea2ac814acf1a6767d0f8e44ce773e892cba2c9ea39fcf31b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:39.721Z"
+}

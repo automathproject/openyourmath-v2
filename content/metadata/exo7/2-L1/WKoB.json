@@ -1,0 +1,25 @@
+{
+  "uuid": "WKoB",
+  "source_path": "exo7/2-L1/WKoB.tex",
+  "summary": "Calculer une intégrale impropre de la forme $I_n = \frac{1}{n} \times \frac{1}{1+x^2}$ sur $\\mathbb{R}^+$ en utilisant une relation de récurrence entre $I_n$ et $I_{n+1}$.",
+  "concepts": [
+    "intégrale impropre",
+    "relation de récurrence",
+    "intégrale de Riemann",
+    "fonction rationnelle",
+    "convergence d'intégrale"
+  ],
+  "methods": [
+    "intégration par parties",
+    "résolution d'équation de récurrence",
+    "changement de variable"
+  ],
+  "objects": [
+    "intégrale impropre",
+    "suite d'intégrales",
+    "fonction $1/(1+x^2)$"
+  ],
+  "content_hash": "04adb5871661617f5e7323efb1e44bea908c8188bda811a1493d00de3ac03279",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:33:33.848Z"
+}

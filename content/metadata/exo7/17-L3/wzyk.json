@@ -1,0 +1,30 @@
+{
+  "uuid": "wzyk",
+  "source_path": "exo7/17-L3/wzyk.tex",
+  "summary": "L'exercice étudie la convergence de deux suites de vecteurs définies par des itérations matricielles. Il demande de déterminer des conditions nécessaires et suffisantes de convergence, d'exprimer ces itérations sous forme matricielle, et de comparer les taux de convergence de deux algorithmes.",
+  "concepts": [
+    "convergence de suite de vecteurs",
+    "rayon spectral",
+    "valeur propre",
+    "matrice itérative",
+    "taux de convergence asymptotique",
+    "norme matricielle",
+    "équivalence d'itérations"
+  ],
+  "methods": [
+    "analyse des valeurs propres",
+    "construction de matrices de transition",
+    "comparaison des rayons spectraux",
+    "estimation du nombre d'itérations pour convergence"
+  ],
+  "objects": [
+    "suite de vecteurs",
+    "matrice carrée",
+    "vecteur propre",
+    "erreur d'itération",
+    "matrice de transition"
+  ],
+  "content_hash": "1683ec1ff047323942c4e3607b387c5ff9df7a31ada7a2a1601474ff1a85dd3a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:29:15.383Z"
+}

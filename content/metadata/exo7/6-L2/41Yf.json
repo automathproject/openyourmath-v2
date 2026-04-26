@@ -1,0 +1,27 @@
+{
+  "uuid": "41Yf",
+  "source_path": "exo7/6-L2/41Yf.tex",
+  "summary": "Calcul du volume d'un ellipsoïde à partir de ses demi-axes et de ses valeurs propres, en utilisant la relation entre le déterminant de la matrice associée et le volume.",
+  "concepts": [
+    "quadrique",
+    "ellipsoïde",
+    "valeurs propres",
+    "déterminant d'une matrice",
+    "volume d'un solide",
+    "géométrie différentielle"
+  ],
+  "methods": [
+    "calcul du déterminant",
+    "relation volume-valeurs propres",
+    "intégration de forme volume"
+  ],
+  "objects": [
+    "ellipsoïde",
+    "matrice associée à une quadrique",
+    "valeurs propres d'une matrice",
+    "volume"
+  ],
+  "content_hash": "4c5629dea7bd8cd628d4df8a2ff57821fd0740adc1667b33877d4b5825a53611",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:39:07.103Z"
+}

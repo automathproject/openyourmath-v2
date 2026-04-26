@@ -1,0 +1,28 @@
+{
+  "uuid": "REIp",
+  "source_path": "exo7/2-L1/REIp.tex",
+  "summary": "L'exercice demande de prouver la convergence de deux types de limites : celle d'une suite $\\frac{f(n)}{n}$ vers $a$ quand $n$ tend vers l'infini, et celle d'une fonction $\\frac{f(x)}{x}$ vers $a$ quand $x$ tend vers l'infini.",
+  "concepts": [
+    "limite de suite",
+    "limite de fonction",
+    "continuité",
+    "théorème des gendarmes",
+    "comparaison asymptotique",
+    "croissance comparée"
+  ],
+  "methods": [
+    "comparaison de termes",
+    "utilisation de la définition de la limite",
+    "majoration/minoration",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction réelle",
+    "limite infinie",
+    "rapport de fonctions"
+  ],
+  "content_hash": "86377ed374cc4fa926c2454ab54a794da8362dd4e805d044b04a0959ecf897c2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:26.142Z"
+}

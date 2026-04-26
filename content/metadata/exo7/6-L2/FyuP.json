@@ -1,0 +1,28 @@
+{
+  "uuid": "FyuP",
+  "source_path": "exo7/6-L2/FyuP.tex",
+  "summary": "L'exercice demande de vérifier qu'une forme différentielle associée à un champ vectoriel P est fermée, puis d'en déduire que P est un champ de gradients et de déterminer un potentiel. Enfin, il faut calculer la circulation de P le long d'un chemin paramétré γ.",
+  "concepts": [
+    "forme différentielle fermée",
+    "champ de gradients",
+    "potentiel scalaire",
+    "circulation d'un champ vectoriel",
+    "théorème de Stokes",
+    "différentielle exacte"
+  ],
+  "methods": [
+    "calcul des dérivées partielles croisées",
+    "intégration le long d'une courbe paramétrée",
+    "recherche d'une primitive",
+    "vérification de l'annulation des dérivées croisées"
+  ],
+  "objects": [
+    "forme différentielle",
+    "champ vectoriel",
+    "chemin paramétré",
+    "circulation"
+  ],
+  "content_hash": "266a466959da13f8d3bdcfc5814aaedee27288ff6576de8796bd75df791762a2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:06:08.880Z"
+}

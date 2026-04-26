@@ -1,0 +1,32 @@
+{
+  "uuid": "i3Mj",
+  "source_path": "exo7/11-L3/i3Mj.tex",
+  "summary": "L'exercice demande de calculer l'expression explicite d'une application F et de montrer qu'elle est bien définie entre les sphères S³ et S². Il s'intéresse ensuite au flot d'un champ de vecteurs X sur ℝ⁴, à sa complétude, et à la relation entre X et les espaces tangents aux sphères.",
+  "concepts": [
+    "champ de vecteurs",
+    "flot d'un champ de vecteurs",
+    "complétude d'un champ de vecteurs",
+    "espace tangent",
+    "application entre variétés",
+    "sphère en dimension supérieure",
+    "différentielle d'application"
+  ],
+  "methods": [
+    "calcul de flot",
+    "vérification de complétude",
+    "calcul de différentielle",
+    "restriction d'application",
+    "vérification de bien-définition"
+  ],
+  "objects": [
+    "champ de vecteurs X",
+    "application F",
+    "sphère S³",
+    "sphère S²",
+    "espace tangent T_m S³",
+    "espace tangent T_{F(m)} S²"
+  ],
+  "content_hash": "44b63665d0902ba1dab852bf8ff743e42741032496694b3278901c75f2d485cb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:37:19.025Z"
+}

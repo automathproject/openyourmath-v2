@@ -1,0 +1,26 @@
+{
+  "uuid": "GW9m",
+  "source_path": "exo7/1-L1/GW9m.tex",
+  "summary": "Trouver les solutions entières d'une équation de Bézout pour deux nombres entiers donnés, en utilisant leurs propriétés de pgcd.",
+  "concepts": [
+    "théorème de Bézout",
+    "pgcd",
+    "équation de Bézout",
+    "algorithme d'Euclide",
+    "divisibilité dans Z",
+    "nombres premiers entre eux"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "identité de Bézout",
+    "résolution d'équation diophantienne"
+  ],
+  "objects": [
+    "pgcd de deux entiers",
+    "solution particulière",
+    "équation linéaire à coefficients entiers"
+  ],
+  "content_hash": "eaacb8f9dda95d93de6ce0add6a74024f10e9322799ab04444c2b90eadd67b1d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:19:04.680Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "Oemy",
+  "source_path": "exo7/1-L1/Oemy.tex",
+  "summary": "L'exercice demande de démontrer l'équivalence entre une propriété sur les applications linéaires et la bijectivité d'une application linéaire f, puis de calculer la dimension d'un sous-espace d'applications linéaires vérifiant une condition spécifique.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "isomorphisme",
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "théorème du rang",
+    "supplémentaire d'un sous-espace"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la dimension",
+    "décomposition en sous-espaces",
+    "calcul de dimension de sous-espaces d'applications linéaires"
+  ],
+  "objects": [
+    "application linéaire f",
+    "sous-espace vectoriel A",
+    "noyau de f",
+    "image de f",
+    "supplémentaire de l'image de f"
+  ],
+  "content_hash": "599a7938ba0e95d51d1a4b14084fa85aebb74edf2d2ef9b1818da5a6480dab01",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:11:21.893Z"
+}

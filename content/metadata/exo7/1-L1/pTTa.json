@@ -1,0 +1,28 @@
+{
+  "uuid": "pTTa",
+  "source_path": "exo7/1-L1/pTTa.tex",
+  "summary": "L'exercice demande de démontrer qu'une application f est linéaire, puis de déterminer son noyau et son image. Le contexte est celui des applications linéaires en algèbre linéaire.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "espace vectoriel",
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "vérification des propriétés de linéarité",
+    "détermination du noyau",
+    "détermination de l'image",
+    "calcul de la dimension"
+  ],
+  "objects": [
+    "application linéaire f",
+    "noyau de f",
+    "image de f"
+  ],
+  "content_hash": "60bb944f5fac73525e08bdff8f52fbc4bb8faee3fb9106a0eb47033082c8d763",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:13:36.260Z"
+}

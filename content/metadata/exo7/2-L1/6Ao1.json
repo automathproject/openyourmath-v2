@@ -1,0 +1,31 @@
+{
+  "uuid": "6Ao1",
+  "source_path": "exo7/2-L1/6Ao1.tex",
+  "summary": "Trouver toutes les fonctions continues f sur ℝ telles que pour tout couple (x,y) ∈ ℝ², f(x)f(y) = F(x+y) - F(x-y), où F est une primitive de f. L'exercice demande de caractériser les solutions possibles de cette équation fonctionnelle.",
+  "concepts": [
+    "fonction continue",
+    "primitive",
+    "fonction paire",
+    "fonction impaire",
+    "équation différentielle linéaire",
+    "fonction sinus hyperbolique",
+    "fonction sinus",
+    "fonction affine"
+  ],
+  "methods": [
+    "dérivation",
+    "intégration",
+    "résolution d'équation différentielle",
+    "analyse de parité",
+    "utilisation de primitives"
+  ],
+  "objects": [
+    "fonction réelle",
+    "primitive F",
+    "équation fonctionnelle",
+    "équation différentielle y'' - λy = 0"
+  ],
+  "content_hash": "15b038a0a1f5e85c91287ee252f90cf6e2d6fedfd8c3f62f768e4206ce6dca5d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:30:30.215Z"
+}

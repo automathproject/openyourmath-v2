@@ -1,0 +1,26 @@
+{
+  "uuid": "lkQm",
+  "source_path": "exo7/2-L1/lkQm.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction continue sur un intervalle réel admet un point fixe si elle vérifie f(a) > a et f(b) < b pour certains a et b. Il généralise ce résultat à l'existence d'un point fixe pour l'itérée d'ordre k d'une fonction.",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "point fixe",
+    "fonction continue",
+    "itération de fonction",
+    "propriété de la somme télescopique"
+  ],
+  "methods": [
+    "raisonnement par somme télescopique",
+    "application du théorème des valeurs intermédiaires",
+    "analyse des itérées de fonction"
+  ],
+  "objects": [
+    "fonction réelle",
+    "point fixe",
+    "itérée de fonction",
+    "intervalle réel"
+  ],
+  "content_hash": "4dbf1689380892525d2652156adfb3ad5808f2be97ff0ff1e15b43fd95ac8a48",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:47:27.424Z"
+}

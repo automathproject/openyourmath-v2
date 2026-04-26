@@ -1,0 +1,27 @@
+{
+  "uuid": "z84h",
+  "source_path": "exo7/2-L1/z84h.tex",
+  "summary": "L'exercice demande de prouver l'intégrabilité des fonctions $ff''$ et $f'^2$ sur $\\mathbb{R}^+$, l'uniforme continuité de $f$, et sa limite nulle en $+\\infty$.",
+  "concepts": [
+    "intégrabilité",
+    "uniforme continuité",
+    "limite de fonction",
+    "inégalité de Cauchy-Schwarz",
+    "théorème de dérivation sous le signe intégral"
+  ],
+  "methods": [
+    "majoration",
+    "intégration par parties",
+    "étude de limite",
+    "utilisation de l'inégalité de Cauchy-Schwarz"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "fonction intégrable",
+    "fonction bornée",
+    "fonction lipschitzienne"
+  ],
+  "content_hash": "b7324ecfa30631e4340385c8c223745ba62f43ad52f43c91e4fa49fd48e4f0c6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:36:56.293Z"
+}

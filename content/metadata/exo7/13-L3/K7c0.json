@@ -1,0 +1,29 @@
+{
+  "uuid": "K7c0",
+  "source_path": "exo7/13-L3/K7c0.tex",
+  "summary": "L'exercice demande de calculer les projecteurs sur les sous-espaces propres et généralisés d'une matrice A, puis d'exprimer la puissance n-ième de A en utilisant ces projecteurs. Il aborde ensuite la décomposition polynomiale par rapport au polynôme minimal de A et son application à la résolution d'une équation différentielle linéaire.",
+  "concepts": [
+    "sous-espace propre",
+    "sous-espace généralisé",
+    "projecteur",
+    "polynôme minimal",
+    "décomposition spectrale",
+    "puissance de matrice",
+    "équation différentielle linéaire"
+  ],
+  "methods": [
+    "calcul de projecteurs",
+    "décomposition en sous-espaces",
+    "décomposition polynomiale",
+    "résolution d'équation différentielle linéaire"
+  ],
+  "objects": [
+    "matrice A",
+    "projecteurs p1 et p2",
+    "polynôme minimal P",
+    "fonction exponentielle de matrice e^{tA}"
+  ],
+  "content_hash": "ef4a9aeeabbfb9fe657231b291e2f496fd21ba92c1a2133012a287a1a657278d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:24:47.997Z"
+}

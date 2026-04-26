@@ -1,0 +1,28 @@
+{
+  "uuid": "tnka",
+  "source_path": "exo7/1-L1/tnka.tex",
+  "summary": "L'exercice demande de montrer l'existence d'un endomorphisme g vérifiant des conditions spécifiques sur un vecteur x, puis d'en déduire que l'ensemble Z est constitué des homothéties. Enfin, il s'agit de déterminer l'ensemble Z' des endomorphismes commutant avec tous les automorphismes.",
+  "concepts": [
+    "application linéaire",
+    "endomorphisme",
+    "automorphisme",
+    "famille libre",
+    "commutativité",
+    "homothétie",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "construction explicite d'application linéaire",
+    "utilisation de la liberté d'une famille",
+    "détermination d'un ensemble d'applications linéaires"
+  ],
+  "objects": [
+    "endomorphisme",
+    "automorphisme",
+    "vecteur",
+    "ensemble d'applications linéaires"
+  ],
+  "content_hash": "a02ee807553062e361997848341004dae813d90e68e4587ca4442b97aceb57f1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:04.745Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "rSBc",
+  "source_path": "exo7/4-L2/rSBc.tex",
+  "summary": "L'exercice demande de déterminer le PGCD de deux nombres de Fermat consécutifs F_n et F_m (avec n < m) et d'en déduire une propriété sur leur divisibilité.",
+  "concepts": [
+    "nombres de Fermat",
+    "plus grand commun diviseur",
+    "formule du binôme de Newton",
+    "parité",
+    "arithmétique dans Z",
+    "divisibilité"
+  ],
+  "methods": [
+    "développement binomial",
+    "analyse de parité",
+    "calcul de PGCD",
+    "réduction modulo"
+  ],
+  "objects": [
+    "nombres de Fermat",
+    "entiers naturels",
+    "PGCD"
+  ],
+  "content_hash": "f68f513e77966b9b85fbf36ef24104dbc44fe9b9c42df38957b0253b79211f8a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:21.575Z"
+}

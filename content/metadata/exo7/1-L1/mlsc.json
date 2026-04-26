@@ -1,0 +1,30 @@
+{
+  "uuid": "mlsc",
+  "source_path": "exo7/1-L1/mlsc.tex",
+  "summary": "L'exercice demande de montrer qu'une application f est linéaire, de déterminer sa matrice dans la base canonique de ℝ⁴, puis de vérifier l'appartenance de vecteurs donnés au noyau et à l'image de f.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "matrice d'une application linéaire",
+    "base canonique",
+    "espace vectoriel ℝ⁴",
+    "linéarité"
+  ],
+  "methods": [
+    "vérification des propriétés de linéarité",
+    "calcul de matrice associée",
+    "vérification d'appartenance au noyau",
+    "vérification d'appartenance à l'image"
+  ],
+  "objects": [
+    "application linéaire f",
+    "vecteurs de ℝ⁴",
+    "matrice 4x4",
+    "noyau de f",
+    "image de f"
+  ],
+  "content_hash": "5590c529162b3504b0e50996d81e2730874b94b1373e4400121c35435486bb71",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:13:12.366Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "E9gB",
+  "source_path": "exo7/1-L1/E9gB.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire f est un automorphisme, puis de décomposer l'espace E en somme directe de noyaux, et enfin d'en déduire l'existence d'une base de vecteurs propres associés aux valeurs propres 1 et 2.",
+  "concepts": [
+    "automorphisme",
+    "noyau d'une application linéaire",
+    "somme directe d'espaces vectoriels",
+    "valeur propre",
+    "vecteur propre",
+    "théorème du rang",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "détermination du noyau",
+    "décomposition en somme directe",
+    "diagonalisation",
+    "calcul de la dimension de l'image"
+  ],
+  "objects": [
+    "application linéaire",
+    "espace vectoriel",
+    "base de vecteurs propres",
+    "noyaux d'applications linéaires"
+  ],
+  "content_hash": "dd6b12a57d4b8adf9947122a3e9718340570d3e8e998617c8ad21367c9c25083",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:10:40.679Z"
+}

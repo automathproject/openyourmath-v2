@@ -1,0 +1,30 @@
+{
+  "uuid": "3v3b",
+  "source_path": "exo7/2-L1/3v3b.tex",
+  "summary": "L'exercice demande d'établir une relation de récurrence entre des intégrales $I_n$ et $I_{n+2}$, puis d'en déduire des expressions explicites pour $I_{2p}$ et $I_{2p+1}$. Il s'agit ensuite de montrer que la suite $(I_n)$ est décroissante et strictement positive, d'en déduire un équivalent asymptotique de $I_n$, et de calculer $nI_nI_{n+1}$.",
+  "concepts": [
+    "intégration par parties",
+    "relation de récurrence",
+    "équivalent asymptotique",
+    "suite numérique",
+    "factorielles",
+    "coefficient binomial"
+  ],
+  "methods": [
+    "intégration par parties",
+    "récurrence",
+    "calcul de limites",
+    "simplification algébrique",
+    "comparaison de termes"
+  ],
+  "objects": [
+    "suite d'intégrales $I_n$",
+    "factorielles",
+    "coefficient binomial",
+    "limite de suite",
+    "produit de termes"
+  ],
+  "content_hash": "a63ce3387fc66dc9eb54ada0898bff918ef7cc81c8e32c04ecffcb90530a93ac",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:30:05.128Z"
+}

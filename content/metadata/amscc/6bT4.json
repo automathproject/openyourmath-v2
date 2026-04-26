@@ -1,0 +1,29 @@
+{
+  "uuid": "6bT4",
+  "source_path": "amscc/6bT4.tex",
+  "summary": "L'exercice demande de montrer qu'un ensemble E est un sous-espace vectoriel de ℝ³, d'en déterminer la dimension et une base, puis d'étudier des relations d'inclusion et de somme directe avec d'autres sous-espaces.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel",
+    "somme directe d'espaces vectoriels",
+    "vecteurs libres",
+    "inclusion d'espaces vectoriels",
+    "espace engendré"
+  ],
+  "methods": [
+    "vérification des propriétés de sous-espace vectoriel",
+    "détermination d'une base par combinaison linéaire",
+    "décomposition en vecteurs libres",
+    "vérification de l'intersection triviale"
+  ],
+  "objects": [
+    "sous-espace vectoriel de ℝ³",
+    "base de sous-espace",
+    "espace engendré par un vecteur",
+    "somme directe de sous-espaces"
+  ],
+  "content_hash": "7d520c63308c6502479884d40e6eec2d9a3971d381a084aa5391610ec4bb458e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:29:35.643Z"
+}

@@ -1,0 +1,33 @@
+{
+  "uuid": "fgCQ",
+  "source_path": "exo7/2-L1/fgCQ.tex",
+  "summary": "L'exercice étudie la fonction f(x) = G(x)/(x-1) où G est une primitive d'une fonction g(t) = t²/√(1+t⁸). Il s'agit d'étudier la continuité, la dérivabilité et les variations de f, notamment autour du point x=1 et aux limites infinies.",
+  "concepts": [
+    "primitive d'une fonction",
+    "continuité",
+    "dérivabilité",
+    "développement limité",
+    "prolongement par continuité",
+    "variations de fonction",
+    "limite en l'infini",
+    "intégrale impropre"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "développement limité d'ordre 1",
+    "étude de signe",
+    "analyse de variations",
+    "calcul de limite",
+    "intégration par parties"
+  ],
+  "objects": [
+    "fonction G(x)",
+    "fonction g(t)",
+    "fonction f(x)",
+    "développement limité",
+    "intégrale définie"
+  ],
+  "content_hash": "067752d03830c2c2463db9550eb6a64decf4a79e668c3e99cde1a19d00db1c29",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:34:20.612Z"
+}

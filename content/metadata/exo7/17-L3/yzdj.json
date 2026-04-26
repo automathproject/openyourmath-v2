@@ -1,0 +1,28 @@
+{
+  "uuid": "yzdj",
+  "source_path": "exo7/17-L3/yzdj.tex",
+  "summary": "L'exercice étudie la convergence d'une suite de matrices $C_k$ vers l'inverse d'une matrice $(I-A)$, où $A$ est une matrice de rayon spectral $\\rho(A) < 1$. Il s'agit de montrer que cette convergence est uniforme.",
+  "concepts": [
+    "rayon spectral",
+    "inversibilité de matrice",
+    "norme subordonnée",
+    "convergence uniforme",
+    "matrice inversible",
+    "suite de matrices"
+  ],
+  "methods": [
+    "estimation de norme",
+    "développement en série",
+    "utilisation de l'inverse d'une matrice",
+    "majoration de termes"
+  ],
+  "objects": [
+    "matrice $I-A$",
+    "suite de matrices $C_k$",
+    "norme de matrice",
+    "rayon spectral"
+  ],
+  "content_hash": "759084fcdeb13bca9853631afd41e1203755a15e3edc5f2fb19ea341d883014f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:29:24.230Z"
+}

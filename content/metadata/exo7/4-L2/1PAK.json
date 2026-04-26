@@ -1,0 +1,28 @@
+{
+  "uuid": "1PAK",
+  "source_path": "exo7/4-L2/1PAK.tex",
+  "summary": "L'exercice demande de démontrer qu'un entier naturel p ≥ 2 est premier si (p-1)! ≡ -1 (mod p). L'énoncé suppose cette congruence et cherche à en déduire la primalité de p.",
+  "concepts": [
+    "théorème de Bézout",
+    "congruence",
+    "factorielles",
+    "nombres premiers",
+    "pgcd",
+    "arithmétique modulaire",
+    "divisibilité"
+  ],
+  "methods": [
+    "utilisation du théorème de Bézout",
+    "manipulation de congruences",
+    "analyse de la divisibilité"
+  ],
+  "objects": [
+    "entier naturel p",
+    "factorielles (p-1)!",
+    "congruence modulaire",
+    "pgcd"
+  ],
+  "content_hash": "58ef9836275bb4808dc57c6eeafe74fb8a150c345966a7c1829c14be0125d1f2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:43.065Z"
+}

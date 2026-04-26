@@ -1,0 +1,30 @@
+{
+  "uuid": "OecA",
+  "source_path": "exo7/2-L1/OecA.tex",
+  "summary": "L'exercice demande de caractériser l'existence d'une fonction g dont la dérivée seconde est f, et de montrer qu'une fonction f est affine si son intégrale pondérée par toute fonction g de dérivée seconde dans F s'annule.",
+  "concepts": [
+    "fonction dérivable",
+    "dérivée seconde",
+    "intégrale",
+    "fonction affine",
+    "équation différentielle",
+    "théorème de Taylor-Intégral",
+    "système linéaire"
+  ],
+  "methods": [
+    "intégration par parties",
+    "résolution de système linéaire",
+    "décomposition en série de Taylor",
+    "utilisation de conditions aux limites"
+  ],
+  "objects": [
+    "fonction f",
+    "fonction g",
+    "dérivée seconde",
+    "intégrale définie",
+    "système d'équations"
+  ],
+  "content_hash": "e9e7b584e677afc2deec1f9d7afdb2a4147a5d3df59166151eb455f089696079",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:32:43.907Z"
+}

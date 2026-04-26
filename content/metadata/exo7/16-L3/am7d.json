@@ -1,0 +1,28 @@
+{
+  "uuid": "am7d",
+  "source_path": "exo7/16-L3/am7d.tex",
+  "summary": "L'exercice demande de définir la notion de partie discrète d'un espace euclidien et de démontrer deux propriétés : l'intersection d'un compact avec une partie discrète et fermée est finie, et une fonction holomorphe non identiquement nulle admet un nombre fini de zéros dans un compact.",
+  "concepts": [
+    "partie discrète",
+    "compact",
+    "fermé",
+    "fonction holomorphe",
+    "zéro d'une fonction",
+    "connexe",
+    "ouvert"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des propriétés des compacts",
+    "application du théorème des zéros isolés"
+  ],
+  "objects": [
+    "partie de ℝⁿ",
+    "compact K",
+    "fonction holomorphe f",
+    "ensemble des zéros de f"
+  ],
+  "content_hash": "29e31a9df18a68026f8f76f84755156df027db36747fc2e3a747c387ead5bceb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:26:34.291Z"
+}

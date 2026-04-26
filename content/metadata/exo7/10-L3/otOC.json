@@ -1,0 +1,32 @@
+{
+  "uuid": "otOC",
+  "source_path": "exo7/10-L3/otOC.tex",
+  "summary": "L'exercice aborde la décomposition des polynômes à coefficients rationnels en un polynôme primitif à coefficients entiers et un scalaire rationnel, ainsi que les propriétés du PGCD dans les anneaux Z[x] et Q[x]. Il explore les relations entre divisibilité dans Z[x] et Q[x] et la structure des polynômes primitifs.",
+  "concepts": [
+    "polynôme primitif",
+    "anneau Z[x]",
+    "anneau Q[x]",
+    "PGCD dans un anneau",
+    "divisibilité dans Z[x]",
+    "divisibilité dans Q[x]",
+    "contenu d'un polynôme",
+    "décomposition de Gauss"
+  ],
+  "methods": [
+    "décomposition en polynôme primitif",
+    "calcul du PGCD dans Z[x]",
+    "utilisation du contenu d'un polynôme",
+    "factorisation dans Z[x]",
+    "comparaison de divisibilité entre Z[x] et Q[x]"
+  ],
+  "objects": [
+    "polynôme à coefficients rationnels",
+    "polynôme primitif",
+    "PGCD de polynômes",
+    "contenu d'un polynôme",
+    "diviseurs communs"
+  ],
+  "content_hash": "ea482575aef8d0e9622183344285dc83812d953deb757fba27132c89bc1e3646",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:02.005Z"
+}

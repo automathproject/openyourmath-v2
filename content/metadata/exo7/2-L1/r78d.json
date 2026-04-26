@@ -1,0 +1,27 @@
+{
+  "uuid": "r78d",
+  "source_path": "exo7/2-L1/r78d.tex",
+  "summary": "L'exercice demande de montrer deux inégalités impliquant une suite de fonctions $u_n(x)$ et une fonction $M(x)$, puis d'en déduire la convergence de $u_n(x)$ vers $M(x)$ lorsque $n$ tend vers l'infini. La continuité de $f$ est utilisée dans la démonstration.",
+  "concepts": [
+    "intégrale impropre",
+    "convergence de suites de fonctions",
+    "continuité",
+    "inégalités",
+    "limite de suite"
+  ],
+  "methods": [
+    "utilisation de la continuité",
+    "majoration",
+    "minoration",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite de fonctions $u_n(x)$",
+    "fonction $M(x)$",
+    "fonction $f$",
+    "limite"
+  ],
+  "content_hash": "9082a0c6f1fcca90c11e0858a49e392a21c5650c06fbed1b451a988d69cb23e0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:35:37.628Z"
+}

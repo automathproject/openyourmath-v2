@@ -1,0 +1,25 @@
+{
+  "uuid": "l4Yi",
+  "source_path": "exo7/2-L1/l4Yi.tex",
+  "summary": "L'exercice demande de linéariser une expression trigonométrique impliquant une somme infinie de termes en sin(α/3^n) et de déterminer sa limite lorsque n tend vers l'infini.",
+  "concepts": [
+    "développement limité",
+    "limite de suite",
+    "fonction sinus",
+    "linéarisation",
+    "continuité"
+  ],
+  "methods": [
+    "développement limité au premier ordre",
+    "approximation affine",
+    "passage à la limite"
+  ],
+  "objects": [
+    "somme infinie",
+    "fonction trigonométrique",
+    "suite numérique"
+  ],
+  "content_hash": "49320666f2efa7410d831322150c63dfd17015889f94dc5db3bdddb0c58ab5ef",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:47:22.150Z"
+}

@@ -1,0 +1,34 @@
+{
+  "uuid": "uFMW",
+  "source_path": "exo7/2-L1/uFMW.tex",
+  "summary": "L'exercice étudie l'erreur d'approximation de l'intégrale d'une fonction deux fois dérivable par la méthode des trapèzes. Il introduit une fonction auxiliaire φ(x) pour analyser les propriétés de l'erreur E, puis déduit une majoration de cette erreur en utilisant la borne M sur la dérivée seconde de f. Enfin, il applique ces résultats à une fonction spécifique sur [0,1] pour estimer le nombre d'intervalles nécessaires pour une précision donnée.",
+  "concepts": [
+    "fonction deux fois dérivable",
+    "erreur d'approximation",
+    "méthode des trapèzes",
+    "théorème de Rolle",
+    "théorème des accroissements finis",
+    "intégration",
+    "majoration d'erreur",
+    "convergence"
+  ],
+  "methods": [
+    "analyse des racines d'une fonction auxiliaire",
+    "application du théorème de Rolle",
+    "calcul de dérivées successives",
+    "intégration par parties",
+    "majoration d'intégrale",
+    "estimation de la précision d'une approximation"
+  ],
+  "objects": [
+    "fonction φ(x)",
+    "erreur d'approximation E",
+    "somme des trapèzes I_n",
+    "dérivée seconde f''",
+    "intervalle [a,b]",
+    "fonction f(x) = e^{-x^2}"
+  ],
+  "content_hash": "d7e55b8d34a8ce323696ea1d820d646fbbf8050711112dc08746b82a81b33d0d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:36:13.411Z"
+}

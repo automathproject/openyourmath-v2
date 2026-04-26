@@ -1,0 +1,25 @@
+{
+  "uuid": "ifB1",
+  "source_path": "exo7/4-L2/ifB1.tex",
+  "summary": "L'exercice demande de déterminer les entiers naturels x pour lesquels la somme des factoriels de 1 à x est un carré parfait. Il explore les propriétés arithmétiques des factoriels et des carrés parfaits.",
+  "concepts": [
+    "factorielle",
+    "carré parfait",
+    "chiffre des unités",
+    "divisibilité",
+    "propriétés arithmétiques des nombres"
+  ],
+  "methods": [
+    "analyse des chiffres des unités",
+    "vérification par énumération",
+    "utilisation des propriétés des carrés parfaits"
+  ],
+  "objects": [
+    "somme de factoriels",
+    "entiers naturels",
+    "chiffres des unités"
+  ],
+  "content_hash": "836aecec40531aefee3b8329d912a7c587012dce0cecc49adf955bf67257a0c2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:49.720Z"
+}

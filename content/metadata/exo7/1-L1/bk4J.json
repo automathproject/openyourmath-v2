@@ -1,0 +1,29 @@
+{
+  "uuid": "bk4J",
+  "source_path": "exo7/1-L1/bk4J.tex",
+  "summary": "L'exercice porte sur des propriétés d'applications linéaires dans un ensemble ℐ. Il demande de montrer des relations entre les images de ces applications et d'établir une égalité entre deux ensembles d'applications linéaires lorsque le rang d'une application est maximal.",
+  "concepts": [
+    "application linéaire",
+    "image d'une application",
+    "noyau d'une application",
+    "théorème du rang",
+    "somme d'espaces vectoriels",
+    "inclusion d'espaces vectoriels",
+    "rang d'une application"
+  ],
+  "methods": [
+    "manipulation d'inclusions d'espaces vectoriels",
+    "utilisation du théorème du rang",
+    "construction explicite d'applications linéaires",
+    "démonstration par inclusion réciproque"
+  ],
+  "objects": [
+    "ensemble d'applications linéaires ℐ",
+    "applications linéaires f, g, f1, f2, g1, g2",
+    "image d'une application",
+    "somme d'images d'applications"
+  ],
+  "content_hash": "b7b6e55515240dba4a1108b5359fbf4746c365cc816778f6713daf2cf40370d0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:12:29.899Z"
+}

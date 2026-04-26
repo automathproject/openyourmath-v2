@@ -1,0 +1,31 @@
+{
+  "uuid": "pD4D",
+  "source_path": "exo7/1-L1/pD4D.tex",
+  "summary": "L'exercice demande de montrer l'existence d'un vecteur x tel que la famille (x, u(x), ..., u^{p-1}(x)) soit libre pour un endomorphisme nilpotent u d'indice p. Il s'ensuit une démonstration de la nilpotence d'un endomorphisme et le calcul de son rang.",
+  "concepts": [
+    "endomorphisme nilpotent",
+    "indice de nilpotence",
+    "famille libre",
+    "théorème du rang",
+    "sous-espaces propres",
+    "dimension d'un espace vectoriel",
+    "inclusion stricte de sous-espaces"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la nilpotence",
+    "calcul de dimension de sous-espaces",
+    "application du théorème du rang",
+    "récurrence sur les dimensions"
+  ],
+  "objects": [
+    "endomorphisme nilpotent",
+    "famille de vecteurs",
+    "sous-espaces N_k",
+    "rang d'un endomorphisme",
+    "vecteur x"
+  ],
+  "content_hash": "6c64cf9578876611d4d45f6b205614174dc2c140e40d390e2f91cf460550fa15",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:13:33.966Z"
+}

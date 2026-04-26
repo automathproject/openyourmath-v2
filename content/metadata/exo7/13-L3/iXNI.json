@@ -1,0 +1,29 @@
+{
+  "uuid": "iXNI",
+  "source_path": "exo7/13-L3/iXNI.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice donnée est la résolvante d'un système linéaire d'équations différentielles, puis d'en déduire la solution d'un système non homogène. Ensuite, il s'agit de résoudre une équation différentielle du second ordre avec condition initiale en utilisant la méthode de variation de Lagrange.",
+  "concepts": [
+    "résolvante d'un système linéaire",
+    "équation différentielle linéaire",
+    "méthode de variation de Lagrange",
+    "condition initiale",
+    "solution générale",
+    "solution particulière"
+  ],
+  "methods": [
+    "calcul de la résolvante",
+    "variation des constantes",
+    "intégration",
+    "vérification de la solution"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "système d'équations différentielles",
+    "équation différentielle du second ordre",
+    "fonction continue",
+    "condition initiale"
+  ],
+  "content_hash": "22ad84b40828e95296173e10920202b4691f9ff1e481afea2d1f5f0950bcd060",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:39.298Z"
+}

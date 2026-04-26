@@ -1,0 +1,28 @@
+{
+  "uuid": "Nh1y",
+  "source_path": "exo7/15-L3/Nh1y.tex",
+  "summary": "Montrer que la norme d'une application linéaire bornée L, définie par l'intégrale d'une fonction sur ℝ, est égale à π. L'énoncé demande de déterminer la norme d'un opérateur linéaire en utilisant des propriétés de normes et d'intégrales.",
+  "concepts": [
+    "application linéaire bornée",
+    "norme d'opérateur",
+    "intégrale de Lebesgue",
+    "inégalité de Cauchy-Schwarz",
+    "norme de fonction",
+    "convergence d'intégrales impropres"
+  ],
+  "methods": [
+    "estimation d'intégrale",
+    "comparaison de normes",
+    "utilisation de la norme L²",
+    "calcul explicite d'une intégrale"
+  ],
+  "objects": [
+    "application linéaire",
+    "fonction intégrable",
+    "norme d'intégrale",
+    "fonction test"
+  ],
+  "content_hash": "6ebeae9677d8500423a475066b7f783d5155b24ec039663f7de87c67f7ef99cf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:06.889Z"
+}

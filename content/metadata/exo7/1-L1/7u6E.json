@@ -1,0 +1,30 @@
+{
+  "uuid": "7u6E",
+  "source_path": "exo7/1-L1/7u6E.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire donnée est un automorphisme d'algèbre et que la base canonique de K^n est invariante par cet automorphisme. Il s'agit ensuite d'en déduire l'existence d'une permutation σ dans S_n telle que φ = f_σ.",
+  "concepts": [
+    "automorphisme d'algèbre",
+    "base canonique",
+    "permutation",
+    "invariance par application linéaire",
+    "algèbre de matrices",
+    "isomorphisme d'algèbres",
+    "groupe symétrique"
+  ],
+  "methods": [
+    "étude des images des vecteurs de base",
+    "analyse des produits de vecteurs",
+    "utilisation des propriétés des automorphismes d'algèbre",
+    "identification de la structure de permutation"
+  ],
+  "objects": [
+    "automorphisme d'algèbre φ",
+    "base canonique de K^n",
+    "permutation σ",
+    "application linéaire f_σ",
+    "éléments e_i de la base canonique"
+  ],
+  "content_hash": "9f1364bc0373f6f11567269b2f7180f66522d73aa771140eb67939df191d05f6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:10:13.863Z"
+}

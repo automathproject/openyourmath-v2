@@ -1,0 +1,32 @@
+{
+  "uuid": "XB6Q",
+  "source_path": "exo7/16-L3/XB6Q.tex",
+  "summary": "L'exercice demande de montrer que les modules des coefficients d'une série entière d'une fonction f au voisinage de 0 sont majorés par M, puis d'utiliser ce résultat pour prouver l'existence d'un rayon ρ tel que la dérivée de g(z) = f(z) - z soit bornée par 1 dans le disque D(0,ρ), et enfin d'en déduire que f est injective sur ce disque.",
+  "concepts": [
+    "série entière",
+    "module d'un coefficient",
+    "majoration",
+    "fonction holomorphe",
+    "dérivée complexe",
+    "injection",
+    "théorème des accroissements finis",
+    "intégrale de fonction complexe"
+  ],
+  "methods": [
+    "développement en série entière",
+    "estimation de coefficients",
+    "calcul de dérivée",
+    "intégration complexe",
+    "application du théorème des accroissements finis"
+  ],
+  "objects": [
+    "fonction f",
+    "fonction g(z) = f(z) - z",
+    "disque ouvert D(0,ρ)",
+    "coefficient de série entière",
+    "dérivée g'(z)"
+  ],
+  "content_hash": "61554c7c0fe3f68edd4f80079aba919c893071defa8e1bd0a90d03dc31cfa7a7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:26:00.375Z"
+}

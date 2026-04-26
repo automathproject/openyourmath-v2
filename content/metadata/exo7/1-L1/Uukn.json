@@ -1,0 +1,26 @@
+{
+  "uuid": "Uukn",
+  "source_path": "exo7/1-L1/Uukn.tex",
+  "summary": "Montrer que si deux entiers a et b sont premiers entre eux, alors ab et a+b sont premiers entre eux. L'énoncé demande une preuve par l'absurde utilisant le lemme de Gauss.",
+  "concepts": [
+    "nombres premiers entre eux",
+    "lemme de Gauss",
+    "raisonnement par l'absurde",
+    "divisibilité dans Z",
+    "lemme d'Euclide",
+    "arithmétique élémentaire"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "application du lemme de Gauss",
+    "utilisation du lemme d'Euclide"
+  ],
+  "objects": [
+    "entiers premiers entre eux",
+    "produit de deux entiers",
+    "somme de deux entiers"
+  ],
+  "content_hash": "5a9d71de34f405de48a473753fcf6bd64eb12e62dc7cd633374d84aa1be97258",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:19:54.323Z"
+}

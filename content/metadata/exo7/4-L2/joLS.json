@@ -1,0 +1,29 @@
+{
+  "uuid": "joLS",
+  "source_path": "exo7/4-L2/joLS.tex",
+  "summary": "L'exercice demande de montrer qu'une équation du second degré admet une solution dans ℤ/pℤ si et seulement si son discriminant est un carré dans ℤ/pℤ. Il utilise ensuite cette propriété pour prouver qu'un certain élément est un carré dans ℤ/pℤ lorsque p ≡ 1 mod 3.",
+  "concepts": [
+    "théorème des racines",
+    "discriminant d'une équation du second degré",
+    "carré dans ℤ/pℤ",
+    "théorème chinois",
+    "corps fini",
+    "polynôme irréductible",
+    "racine primitive"
+  ],
+  "methods": [
+    "analyse du discriminant",
+    "factorisation dans ℤ/pℤ",
+    "utilisation des propriétés des corps finis",
+    "application du petit théorème de Fermat"
+  ],
+  "objects": [
+    "équation du second degré",
+    "discriminant",
+    "élément inversible de ℤ/pℤ",
+    "polynôme cyclotomique"
+  ],
+  "content_hash": "995c5f50033623df41c5068a2a8f61826d6b3997015c8aa38b63599d4e65b12d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:56.450Z"
+}

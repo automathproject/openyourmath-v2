@@ -1,0 +1,29 @@
+{
+  "uuid": "zdvM",
+  "source_path": "exo7/16-L3/zdvM.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'une distance minimale positive entre un compact K inclus dans le domaine Ω = ℂ − [1, +∞) et l'ensemble [1, +∞). Ensuite, il s'agit de prouver l'holomorphie d'une fonction F définie comme une intégrale d'une fonction f(z,t) par rapport à t sur ℝ+.",
+  "concepts": [
+    "fonction holomorphe",
+    "intégrale dépendant d'un paramètre",
+    "distance dans le plan complexe",
+    "compact",
+    "domaine d'holomorphie",
+    "continuité uniforme"
+  ],
+  "methods": [
+    "utilisation de la définition d'holomorphie",
+    "intégration terme à terme",
+    "majoration uniforme",
+    "continuité des fonctions holomorphes"
+  ],
+  "objects": [
+    "fonction complexe",
+    "intégrale de fonction complexe",
+    "compact dans ℂ",
+    "distance dans ℂ",
+    "domaine de définition"
+  ],
+  "content_hash": "46085f09f7da5fb8f070446233ae41a45bbddebf18236cb52362b5c1fbd94fae",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:29:27.396Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "mr4E",
+  "source_path": "exo7/6-L2/mr4E.tex",
+  "summary": "Trouver la longueur minimale de la corde AB d'une parabole définie par deux points paramétrés A et B, sous une contrainte donnée sur leurs paramètres.",
+  "concepts": [
+    "parabole",
+    "paramétrisation",
+    "distance entre deux points",
+    "optimisation",
+    "condition nécessaire du premier ordre"
+  ],
+  "methods": [
+    "calcul de distance",
+    "optimisation sous contrainte",
+    "détermination de points critiques"
+  ],
+  "objects": [
+    "parabole",
+    "points paramétrés",
+    "corde",
+    "paramètres réels"
+  ],
+  "content_hash": "3da85e4b3c5f7df574fce586a725b2d3ed2dcfb2210032b9e732bb48c9a60c36",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:41:10.623Z"
+}

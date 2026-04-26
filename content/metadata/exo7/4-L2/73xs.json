@@ -1,0 +1,29 @@
+{
+  "uuid": "73xs",
+  "source_path": "exo7/4-L2/73xs.tex",
+  "summary": "L'exercice demande de démontrer une équivalence entre le fait que deux entiers n et p soient premiers entre eux et l'existence d'un entier k tel que n^k soit congru à 1 modulo p. Une seconde question porte sur l'existence d'un multiple d'un entier impair non divisible par 5 s'écrivant avec des 1 en base 10.",
+  "concepts": [
+    "pgcd",
+    "théorème de Bézout",
+    "congruence",
+    "théorème des restes chinois",
+    "nombre premier",
+    "arithmétique modulaire",
+    "divisibilité"
+  ],
+  "methods": [
+    "manipulation de congruences",
+    "utilisation du théorème de Bézout",
+    "recherche d'exposant",
+    "construction de nombre à chiffres identiques"
+  ],
+  "objects": [
+    "entiers naturels",
+    "pgcd",
+    "congruence",
+    "nombre à chiffres identiques"
+  ],
+  "content_hash": "4aede771e625d97562d37fec6dae504aa1faf22a380a6f75f44d1d2812270b2d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:46.168Z"
+}

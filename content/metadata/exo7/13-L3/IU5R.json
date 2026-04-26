@@ -1,0 +1,28 @@
+{
+  "uuid": "IU5R",
+  "source_path": "exo7/13-L3/IU5R.tex",
+  "summary": "L'exercice demande de montrer la dérivabilité d'une application N(t) définie comme le produit scalaire d'une fonction vectorielle φ(t) avec elle-même, d'étudier la comparaison de N(t) et N(t₀) pour deux points de I, et de prouver que les solutions maximales d'une équation différentielle et d'un système différentiel sont définies sur ℝ.",
+  "concepts": [
+    "produit scalaire",
+    "dérivabilité des applications vectorielles",
+    "inégalités différentielles",
+    "solutions maximales d'équations différentielles",
+    "systèmes différentiels non linéaires",
+    "théorème de Cauchy-Lipschitz"
+  ],
+  "methods": [
+    "calcul de dérivée de produit scalaire",
+    "comparaison de fonctions",
+    "analyse des inégalités différentielles",
+    "étude de l'existence globale des solutions"
+  ],
+  "objects": [
+    "application N(t)",
+    "fonction vectorielle φ(t)",
+    "système différentiel non linéaire",
+    "solution maximale"
+  ],
+  "content_hash": "0eddce294453492e74dd6f442023cd6e87c98914c27f3d4858a339c7e61903fd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:24:29.302Z"
+}

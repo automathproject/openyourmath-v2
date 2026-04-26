@@ -1,0 +1,29 @@
+{
+  "uuid": "eTkW",
+  "source_path": "exo7/8-L3/eTkW.tex",
+  "summary": "L'exercice demande de montrer qu'une certaine forme de mots dans un groupe engendré par deux éléments n'est pas égale à l'élément neutre, puis d'en déduire que le groupe est libre. Il aborde aussi une généralisation et une application au groupe SL(2,ℤ) en utilisant des actions de groupe sur ℝ².",
+  "concepts": [
+    "action de groupe",
+    "groupe libre",
+    "élément neutre",
+    "sous-groupe engendré",
+    "conjugaison",
+    "domaine de définition",
+    "matrice de SL(2,ℤ)"
+  ],
+  "methods": [
+    "analyse de mots dans un groupe",
+    "utilisation de l'action de groupe",
+    "conjugaison",
+    "partition de l'espace"
+  ],
+  "objects": [
+    "groupe engendré par deux éléments",
+    "élément neutre",
+    "matrices A et B de SL(2,ℤ)",
+    "domaines délimités par les diagonales de ℝ²"
+  ],
+  "content_hash": "32d378a960a484e81037dcffc38308c0a299505da2b6ca94b5ef184a018863f3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:05:11.439Z"
+}

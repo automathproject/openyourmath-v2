@@ -1,0 +1,25 @@
+{
+  "uuid": "7tkq",
+  "source_path": "exo7/2-L1/7tkq.tex",
+  "summary": "L'exercice demande de déterminer les conditions sur une fonction f pour que l'intégrale de f sur [0,1] soit égale à l'intégrale de sa valeur absolue. Le corrigé montre que cela équivaut à ce que f soit de signe constant sur cet intervalle.",
+  "concepts": [
+    "intégrale de fonction",
+    "valeur absolue",
+    "fonction continue",
+    "intégrale nulle",
+    "signe d'une fonction"
+  ],
+  "methods": [
+    "linéarité de l'intégrale",
+    "comparaison d'intégrales",
+    "analyse de signe"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intégrale définie",
+    "valeur absolue d'une fonction"
+  ],
+  "content_hash": "ce20dd206a02049fbf5991f20fb4f65853727b0a429f3c729c15084575ea3014",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:30:46.659Z"
+}

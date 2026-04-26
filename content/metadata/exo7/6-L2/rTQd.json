@@ -1,0 +1,33 @@
+{
+  "uuid": "rTQd",
+  "source_path": "exo7/6-L2/rTQd.tex",
+  "summary": "Trouver une équation cartésienne d'une surface S définie comme l'ensemble des points M de l'espace tels que le cercle passant par M et centré sur la droite x=y=z coupe cette droite. La surface est ensuite analysée par diagonalisation de sa forme quadratique associée.",
+  "concepts": [
+    "équation cartésienne de surface",
+    "intersection de surfaces",
+    "forme quadratique",
+    "diagonalisation de matrice",
+    "valeurs propres",
+    "changement de repère",
+    "quadrique",
+    "hyperboloïde à une nappe"
+  ],
+  "methods": [
+    "résolution de système d'équations",
+    "élimination de paramètres",
+    "diagonalisation",
+    "changement de base",
+    "analyse des valeurs propres"
+  ],
+  "objects": [
+    "sphère",
+    "plan",
+    "cercle",
+    "droite de l'espace",
+    "matrice symétrique",
+    "repère orthonormé"
+  ],
+  "content_hash": "8836dc898c301f38d21d329b1a8481d7c3415b88e866795fca31c73cf35a7281",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:41:36.450Z"
+}

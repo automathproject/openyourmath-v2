@@ -1,0 +1,25 @@
+{
+  "uuid": "8Q3u",
+  "source_path": "exo7/1-L1/8Q3u.tex",
+  "summary": "L'exercice demande de déterminer si deux nombres entiers sont premiers entre eux en utilisant leur décomposition en facteurs premiers.",
+  "concepts": [
+    "nombres premiers",
+    "nombres premiers entre eux",
+    "décomposition en facteurs premiers",
+    "pgcd",
+    "théorème fondamental de l'arithmétique"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul du pgcd",
+    "vérification de l'égalité à 1"
+  ],
+  "objects": [
+    "entiers naturels",
+    "facteurs premiers",
+    "pgcd"
+  ],
+  "content_hash": "cba030b60364ec9d24d74b0f6643ac17aa77a7e72a0dcde1f9284ac7ca7652ca",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:19.826Z"
+}

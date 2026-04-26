@@ -1,0 +1,27 @@
+{
+  "uuid": "L2Up",
+  "source_path": "exo7/1-L1/L2Up.tex",
+  "summary": "L'exercice demande de calculer la somme itérée des chiffres du nombre 3^500, puis d'étudier la divisibilité parmi 51 nombres entre 1 et 100 pour montrer qu'au moins deux sont divisibles l'un par l'autre, et de construire un ensemble de 50 nombres sans cette propriété.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "principe des tiroirs",
+    "somme des chiffres",
+    "nombre premier",
+    "ensemble maximal sans divisibilité"
+  ],
+  "methods": [
+    "calcul de somme itérée",
+    "application du principe des tiroirs",
+    "construction d'ensemble sans divisibilité"
+  ],
+  "objects": [
+    "entiers naturels",
+    "somme des chiffres",
+    "ensemble de nombres",
+    "relation de divisibilité"
+  ],
+  "content_hash": "d61321ffb8c9881196a7d82ef21af393624ca3d0df6152c8c384259edcc10107",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:19:21.637Z"
+}

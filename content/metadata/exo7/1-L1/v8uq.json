@@ -1,0 +1,30 @@
+{
+  "uuid": "v8uq",
+  "source_path": "exo7/1-L1/v8uq.tex",
+  "summary": "L'exercice demande de démontrer par récurrence une identité arithmétique sur les puissances de 2, puis d'en déduire que les nombres de Fermat sont premiers entre eux, et enfin d'établir l'infinitude des nombres premiers.",
+  "concepts": [
+    "récurrence",
+    "nombres premiers",
+    "nombres premiers entre eux",
+    "principe des tiroirs",
+    "infinitude des nombres premiers",
+    "identité arithmétique",
+    "divisibilité"
+  ],
+  "methods": [
+    "récurrence mathématique",
+    "raisonnement par l'absurde",
+    "principe des tiroirs",
+    "décomposition en facteurs premiers",
+    "utilisation du théorème de Bézout"
+  ],
+  "objects": [
+    "nombres de Fermat",
+    "puissances de 2",
+    "diviseurs communs",
+    "suite de nombres"
+  ],
+  "content_hash": "03d0ea8a35abebe6c940db883f5a09ddb94b75c6fb40f0703380cba5377dae7c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:27.911Z"
+}

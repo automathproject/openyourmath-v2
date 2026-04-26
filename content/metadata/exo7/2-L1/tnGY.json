@@ -1,0 +1,29 @@
+{
+  "uuid": "tnGY",
+  "source_path": "exo7/2-L1/tnGY.tex",
+  "summary": "L'exercice demande de prouver la convergence d'une série $\\sum_{k=0}^\\(\\infty) f(k)$ et d'encadrer son reste $\\sum_{k=n}^\\(\\infty) f(k)$ à l'aide d'intégrales de $f$. Une application numérique est proposée avec la série $\\sum_{k=n}^\\(\\infty) \\frac{1}{k^\\alpha}$ pour $\\alpha > 1$.",
+  "concepts": [
+    "intégrale impropre",
+    "convergence de série",
+    "comparaison série-intégrale",
+    "équivalent asymptotique",
+    "fonction décroissante",
+    "critère de convergence"
+  ],
+  "methods": [
+    "comparaison série-intégrale",
+    "encadrement par intégrales",
+    "calcul d'équivalent",
+    "intégration de fonction puissance"
+  ],
+  "objects": [
+    "série numérique",
+    "fonction $f$",
+    "reste de série",
+    "intégrale impropre",
+    "fonction puissance"
+  ],
+  "content_hash": "72451ba4a977e58ddbc3cd619d1d38cb71a1f8e8c6831e18e37f494871499788",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:36:03.492Z"
+}

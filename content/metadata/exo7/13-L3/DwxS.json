@@ -1,0 +1,31 @@
+{
+  "uuid": "DwxS",
+  "source_path": "exo7/13-L3/DwxS.tex",
+  "summary": "L'exercice demande de calculer une puissance de matrice et d'exprimer la matrice exponentielle associée à une matrice symétrique. Il aborde ensuite la résolution d'une équation différentielle linéaire d'ordre 3 avec second membre, en cherchant une solution particulière sous forme d'intégrale. Enfin, il étudie les solutions 1-périodiques de cette équation sous des conditions initiales spécifiques.",
+  "concepts": [
+    "matrice symétrique",
+    "exponentielle de matrice",
+    "équation différentielle linéaire d'ordre 3",
+    "solution particulière",
+    "périodicité des solutions",
+    "intégrale de convolution",
+    "conditions initiales"
+  ],
+  "methods": [
+    "calcul de puissance de matrice",
+    "développement en série entière",
+    "méthode de variation de la constante",
+    "intégration par parties",
+    "analyse de la périodicité"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "fonction exponentielle",
+    "équation différentielle",
+    "solution particulière",
+    "fonction 1-périodique"
+  ],
+  "content_hash": "e8e0f264aad81007254c61287efa039f5d4164c5f9924c3783aaa3fc76b433e5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:43.362Z"
+}

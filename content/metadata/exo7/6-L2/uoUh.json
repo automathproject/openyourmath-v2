@@ -1,0 +1,28 @@
+{
+  "uuid": "uoUh",
+  "source_path": "exo7/6-L2/uoUh.tex",
+  "summary": "L'exercice demande d'étudier l'existence et le nombre de points M sur une parabole P distincts d'un point M0 donné, tels que la normale à P en M passe par M0. Dans le cas où deux solutions existent, il faut déterminer le lieu géométrique du centre de gravité du triangle formé par M0 et ces deux points.",
+  "concepts": [
+    "équation d'une parabole",
+    "normale à une courbe",
+    "discriminant d'une équation du second degré",
+    "centre de gravité",
+    "lieu géométrique"
+  ],
+  "methods": [
+    "paramétrisation d'une parabole",
+    "calcul de la normale",
+    "résolution d'équation quadratique",
+    "calcul de coordonnées du barycentre"
+  ],
+  "objects": [
+    "parabole",
+    "point",
+    "normale",
+    "triangle",
+    "centre de gravité"
+  ],
+  "content_hash": "dcc6f90810dbc4da25f9227ac66fe66eaff370215f25e5605e8f3f35986cf574",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:41:52.736Z"
+}

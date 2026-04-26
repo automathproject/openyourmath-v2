@@ -1,0 +1,27 @@
+{
+  "uuid": "62Wm",
+  "source_path": "exo7/1-L1/62Wm.tex",
+  "summary": "Montrer qu'une famille de vecteurs obtenus par itération d'une application linéaire nulle est libre, en utilisant la nullité de l'application à partir d'un certain rang.",
+  "concepts": [
+    "application linéaire",
+    "famille libre",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel",
+    "itération d'application",
+    "combinaison linéaire"
+  ],
+  "methods": [
+    "évaluation par itération d'application",
+    "réduction par annulation successive de coefficients",
+    "utilisation de la nullité d'une application"
+  ],
+  "objects": [
+    "famille de vecteurs",
+    "combinaison linéaire nulle",
+    "espace vectoriel de dimension finie",
+    "application linéaire nilpotente"
+  ],
+  "content_hash": "7a0406610b7b5e072c958d11e033e6af68638402bb9d87274e4fbac9e314a809",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:59.691Z"
+}

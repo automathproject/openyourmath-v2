@@ -1,0 +1,28 @@
+{
+  "uuid": "ixz9",
+  "source_path": "exo7/15-L3/ixz9.tex",
+  "summary": "L'exercice demande de démontrer l'existence de points limites dans deux ensembles disjoints K et F, en utilisant la compacité de K pour extraire des sous-suites convergentes.",
+  "concepts": [
+    "compacité",
+    "distance entre ensembles",
+    "fermeture d'un ensemble",
+    "convergence de suites",
+    "extraction de sous-suite",
+    "bornitude des suites"
+  ],
+  "methods": [
+    "extraction de sous-suite",
+    "utilisation de la compacité",
+    "majoration de normes",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite d'éléments de K",
+    "suite d'éléments de F",
+    "distance entre deux ensembles",
+    "sous-suite convergente"
+  ],
+  "content_hash": "b3382965dc8986f315ef0733e3f0e2777b7c405a177baa5c3354e0f4877faab3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:38:26.361Z"
+}

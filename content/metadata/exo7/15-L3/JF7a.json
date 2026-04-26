@@ -1,0 +1,29 @@
+{
+  "uuid": "JF7a",
+  "source_path": "exo7/15-L3/JF7a.tex",
+  "summary": "L'exercice étudie les propriétés de compacité et de précompacité de l'orbite d'une fonction périodique ou limite uniforme de fonctions périodiques. Il demande de montrer que l'orbite est compacte ou précompacte selon les hypothèses, puis d'en déduire l'uniforme continuité de la fonction.",
+  "concepts": [
+    "compacité",
+    "précompacité",
+    "limite uniforme",
+    "périodicité",
+    "uniforme continuité",
+    "suite convergente",
+    "valeur d'adhérence"
+  ],
+  "methods": [
+    "extraction de sous-suite convergente",
+    "étude des valeurs d'adhérence",
+    "démonstration par l'absurde",
+    "utilisation de la définition de l'uniforme continuité"
+  ],
+  "objects": [
+    "fonction périodique",
+    "orbite d'une fonction",
+    "suite de fonctions",
+    "fonction limite uniforme"
+  ],
+  "content_hash": "5a71cea3b6daae8e8cbe1869c3065298d31ccebabbe5cc2feec372a85da553bd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:37:46.060Z"
+}

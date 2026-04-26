@@ -1,0 +1,28 @@
+{
+  "uuid": "OUwa",
+  "source_path": "exo7/1-L1/OUwa.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés liées aux nombres premiers et à la divisibilité dans ℤ. D'abord, montrer qu'un nombre premier p ne divise pas un entier a non congru à 0 modulo p, et que leur pgcd est 1. Ensuite, prouver l'existence d'un inverse multiplicatif de a modulo p lorsque p est premier, et montrer qu'un tel inverse n'existe pas si p n'est pas premier.",
+  "concepts": [
+    "nombre premier",
+    "congruence modulo n",
+    "pgcd",
+    "inverse multiplicatif",
+    "divisibilité dans ℤ",
+    "théorème fondamental de l'arithmétique"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "utilisation des propriétés des nombres premiers",
+    "recherche d'inverse modulo n",
+    "décomposition en facteurs premiers"
+  ],
+  "objects": [
+    "entier relatif",
+    "nombre premier p",
+    "inverse de a modulo p",
+    "pgcd(a,p)"
+  ],
+  "content_hash": "e1d05bd59e2dee9a137a4b9a0c5209ee73ff709542a6de48734aa8f40c21cf44",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:19:29.172Z"
+}

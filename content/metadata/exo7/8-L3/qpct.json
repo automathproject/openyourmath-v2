@@ -1,0 +1,31 @@
+{
+  "uuid": "qpct",
+  "source_path": "exo7/8-L3/qpct.tex",
+  "summary": "L'exercice demande de démontrer que les orbites de l'action d'un sous-groupe H sur l'ensemble quotient G/H par translation à gauche sont des singletons, puis d'en déduire que H est un sous-groupe distingué de G.",
+  "concepts": [
+    "action de groupe",
+    "ensemble quotient",
+    "orbite",
+    "sous-groupe distingué",
+    "translation à gauche",
+    "relation d'équivalence",
+    "stabilisateur",
+    "théorème de l'orbite"
+  ],
+  "methods": [
+    "analyse des orbites",
+    "utilisation de la relation d'équivalence",
+    "détermination du stabilisateur",
+    "application du théorème de l'orbite"
+  ],
+  "objects": [
+    "sous-groupe H",
+    "groupe G",
+    "ensemble quotient G/H",
+    "orbites",
+    "éléments de G"
+  ],
+  "content_hash": "6f7f2440fb763ac1b7237d8368b651e63263a6af6d8d27cad1869a370c2513b7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:05:25.328Z"
+}

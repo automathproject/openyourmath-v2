@@ -1,0 +1,26 @@
+{
+  "uuid": "e9Uj",
+  "source_path": "exo7/1-L1/e9Uj.tex",
+  "summary": "L'exercice demande de prouver par récurrence sur y que 3^x ≡ 1 mod 2^y si et seulement si 2^{y-2} divise x, puis de trouver tous les couples (x, y) d'entiers naturels vérifiant 3^x = 2^y + 1.",
+  "concepts": [
+    "division euclidienne",
+    "congruence",
+    "récurrence",
+    "divisibilité",
+    "arithmétique modulaire",
+    "ordre multiplicatif"
+  ],
+  "methods": [
+    "récurrence sur un paramètre",
+    "manipulation de congruences",
+    "résolution d'équations diophantiennes"
+  ],
+  "objects": [
+    "entiers naturels",
+    "puissances de 2 et 3",
+    "équation diophantienne"
+  ],
+  "content_hash": "067c1ed8e71ababc65e791eedc29c0d72a1b1335ae576f575d40a310da6a434e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:33.376Z"
+}

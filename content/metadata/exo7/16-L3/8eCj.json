@@ -1,0 +1,29 @@
+{
+  "uuid": "8eCj",
+  "source_path": "exo7/16-L3/8eCj.tex",
+  "summary": "L'exercice demande de paramétrer le cercle unité dans le sens trigonométrique, puis de calculer une intégrale complexe le long de ce cercle pour deux fonctions différentes. Il interroge aussi l'existence de primitives pour ces fonctions sur le plan complexe privé de zéro.",
+  "concepts": [
+    "paramétrage de courbe",
+    "intégrale complexe",
+    "convergence uniforme",
+    "série de fonctions",
+    "fonction holomorphe",
+    "primitive d'une fonction complexe"
+  ],
+  "methods": [
+    "paramétrage par exponentielle complexe",
+    "intégration terme à terme",
+    "calcul d'intégrale sur un chemin fermé",
+    "analyse de la convergence d'une série"
+  ],
+  "objects": [
+    "cercle unité",
+    "fonction cosh(z)/z",
+    "fonction sinh(z)/z",
+    "intégrale sur un chemin fermé",
+    "plan complexe privé de zéro"
+  ],
+  "content_hash": "2465eebd7b480ed0e96227f053c99dc34a1c828d235f8bcc76b2545b032eb425",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:22:52.863Z"
+}

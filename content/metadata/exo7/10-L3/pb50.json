@@ -1,0 +1,29 @@
+{
+  "uuid": "pb50",
+  "source_path": "exo7/10-L3/pb50.tex",
+  "summary": "L'exercice demande de démontrer que l'anneau des polynômes à coefficients entiers est un anneau factoriel, puis d'étudier un idéal particulier pour montrer que cet anneau est non-principal. Enfin, il s'agit de prouver que l'idéal engendré par X est premier mais non maximal.",
+  "concepts": [
+    "anneau factoriel",
+    "idéal principal",
+    "idéal premier",
+    "idéal maximal",
+    "polynôme irréductible",
+    "division euclidienne dans les anneaux",
+    "critère de Gauss"
+  ],
+  "methods": [
+    "décomposition en facteurs irréductibles",
+    "construction d'un idéal non-principal",
+    "vérification des propriétés d'idéal",
+    "utilisation du lemme d'Euclide"
+  ],
+  "objects": [
+    "anneau Z[X]",
+    "idéal des polynômes à terme constant pair",
+    "idéal (X)",
+    "polynômes irréductibles"
+  ],
+  "content_hash": "59adb6eae8b531f54e1037af3cccbdbc61bd33fc47d34b3f5a624174403dbdef",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:05.119Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "vbLv",
+  "source_path": "exo7/16-L3/vbLv.tex",
+  "summary": "Soit une fonction holomorphe f non constante sur le plan complexe. On suppose que la valeur absolue de f ne prend jamais une certaine valeur α > 0. On doit démontrer que |f(z)| est soit toujours strictement inférieure à α, soit toujours strictement supérieure à α, puis en déduire que f est constante. Ensuite, pour f non constante, on doit montrer que l'infimum de |f(z)| est 0 et le supremum est +∞, et caractériser l'image de |f|.",
+  "concepts": [
+    "fonction holomorphe",
+    "module d'une fonction complexe",
+    "principe du maximum",
+    "théorème de Liouville",
+    "continuité des fonctions holomorphes",
+    "infimum et supremum"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du principe du maximum",
+    "analyse des valeurs extrêmes",
+    "caractérisation de l'image d'une fonction"
+  ],
+  "objects": [
+    "fonction complexe",
+    "module |f(z)|",
+    "ensemble image de |f|",
+    "infimum et supremum de |f(z)|"
+  ],
+  "content_hash": "031b2389c1c9aaf570ab4ae40c37684b3699eb0c178dbc3e5653bdc8220e412c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:29:09.666Z"
+}

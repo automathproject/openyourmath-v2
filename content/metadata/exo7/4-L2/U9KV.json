@@ -1,0 +1,28 @@
+{
+  "uuid": "U9KV",
+  "source_path": "exo7/4-L2/U9KV.tex",
+  "summary": "L'exercice demande de montrer que la partie entière de $(1+\\sqrt{3})^{2n+1}$ est divisible par $2^{n+1}$ pour tout entier naturel $n$. Il s'agit d'une étude arithmétique des puissances de nombres irrationnels conjugués.",
+  "concepts": [
+    "conjugaison algébrique",
+    "partie entière",
+    "divisibilité",
+    "suites récurrentes",
+    "nombres irrationnels",
+    "développement binomial"
+  ],
+  "methods": [
+    "décomposition en parties conjuguées",
+    "analyse de la parité",
+    "développement par récurrence",
+    "majoration d'expression"
+  ],
+  "objects": [
+    "puissance de nombre irrationnel",
+    "suite définie par récurrence",
+    "expression conjuguée",
+    "partie entière"
+  ],
+  "content_hash": "52b4c801d78e04788db38a1dd4d38f3b48cc46e0c6240b5b53c2baf543c89d54",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:27.740Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "kdLo",
+  "source_path": "exo7/1-L1/kdLo.tex",
+  "summary": "L'exercice demande de démontrer une congruence modulo a^m - 1, puis d'en déduire une relation entre le pgcd et les exposants, et enfin de déterminer une condition de divisibilité entre a^n - 1 et a^m - 1.",
+  "concepts": [
+    "division euclidienne",
+    "congruence",
+    "pgcd",
+    "algorithme d'Euclide",
+    "divisibilité dans Z",
+    "propriétés des exposants"
+  ],
+  "methods": [
+    "développement algébrique",
+    "application de l'algorithme d'Euclide",
+    "utilisation des propriétés de congruence"
+  ],
+  "objects": [
+    "entiers naturels",
+    "exposants",
+    "polynômes cyclotomiques"
+  ],
+  "content_hash": "a2e1d99afdf37c990d741eeeefc82236bb653f8ffb558deba162facdc044b151",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:56.955Z"
+}

@@ -1,0 +1,33 @@
+{
+  "uuid": "qw2r",
+  "source_path": "exo7/10-L3/qw2r.tex",
+  "summary": "L'exercice étudie les propriétés des anneaux de polynômes quotients par des idéaux principaux, en établissant des isomorphismes entre ces quotients et des anneaux plus simples. Il applique ces résultats pour caractériser les conditions sous lesquelles ces idéaux sont premiers ou maximaux.",
+  "concepts": [
+    "anneau quotient",
+    "idéal principal",
+    "morphisme d'anneaux",
+    "noyau d'un morphisme",
+    "image d'un morphisme",
+    "isomorphisme d'anneaux",
+    "idéal premier",
+    "idéal maximal"
+  ],
+  "methods": [
+    "définition de morphisme d'anneaux",
+    "calcul du noyau et de l'image",
+    "décomposition de polynômes",
+    "utilisation du théorème d'isomorphisme",
+    "caractérisation des idéaux premiers et maximaux"
+  ],
+  "objects": [
+    "anneau de polynômes A[X]",
+    "idéal (X)",
+    "anneau de polynômes A[X,Y]",
+    "idéal (X,Y)",
+    "anneau de polynômes A[X₁,...,Xₙ]",
+    "idéal (X₁,...,Xₙ)"
+  ],
+  "content_hash": "1d772bba78ab081883ce20197fab072093ab487199fc48d0339b78c9b8d03ec1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:08.901Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "04OG",
+  "source_path": "exo7/15-L3/04OG.tex",
+  "summary": "L'exercice demande de montrer que tout compact K de R^n est homéomorphe soit au segment [0,1] s'il est d'intérieur vide, soit au disque unité fermé s'il ne l'est pas, en utilisant une application spécifique p(x).",
+  "concepts": [
+    "compact",
+    "intérieur vide",
+    "homéomorphisme",
+    "disque unité fermé",
+    "segment [0,1]",
+    "continuité",
+    "infimum"
+  ],
+  "methods": [
+    "construction d'application",
+    "preuve par continuité",
+    "estimation de bornes",
+    "utilisation de l'infimum"
+  ],
+  "objects": [
+    "compact K",
+    "application p(x)",
+    "segment [0,1]",
+    "disque unité fermé"
+  ],
+  "content_hash": "8fceebabda076f4a284ac83af4fc1c03fb9c85f9c1546e63da83e5b2898cd4bd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:37:33.748Z"
+}

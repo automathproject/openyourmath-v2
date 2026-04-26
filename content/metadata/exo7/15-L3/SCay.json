@@ -1,0 +1,27 @@
+{
+  "uuid": "SCay",
+  "source_path": "exo7/15-L3/SCay.tex",
+  "summary": "L'exercice demande de démontrer que l'union d'une famille d'ensembles connexes par arcs, contenant tous un point commun, est elle-même connexe par arcs.",
+  "concepts": [
+    "connexe par arcs",
+    "famille d'ensembles",
+    "point commun",
+    "union d'ensembles",
+    "chemin continu",
+    "topologie"
+  ],
+  "methods": [
+    "construction de chemin continu",
+    "raisonnement par existence",
+    "utilisation de la définition de connexité par arcs"
+  ],
+  "objects": [
+    "famille d'ensembles (A_i)",
+    "point a",
+    "chemin γ",
+    "union ∪A_i"
+  ],
+  "content_hash": "bef07ac4f59d9db5d0ef20221a77ccd34b4cd70b80b8bad23c72a03400bc02a3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:42:48.590Z"
+}

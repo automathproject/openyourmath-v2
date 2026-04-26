@@ -1,0 +1,31 @@
+{
+  "uuid": "5ap3",
+  "source_path": "exo7/2-L1/5ap3.tex",
+  "summary": "L'exercice demande de calculer des intégrales de fonctions simples (polynômes et exponentielle) en utilisant la définition par les sommes de Riemann. Il illustre la convergence de ces sommes vers l'intégrale pour des fonctions continues.",
+  "concepts": [
+    "intégrale de Riemann",
+    "somme de Riemann",
+    "limite de suite",
+    "somme des entiers",
+    "somme des carrés d'entiers",
+    "somme géométrique",
+    "continuité",
+    "intégrabilité"
+  ],
+  "methods": [
+    "définition par les sommes de Riemann",
+    "calcul de limites de suites",
+    "développement polynomial",
+    "séparation de sommes",
+    "approximation de limite"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "fonction exponentielle",
+    "suite de Riemann",
+    "intégrale définie"
+  ],
+  "content_hash": "c8a95ee67f66b15e13af547e675119d88bc53f496770974ae1de71c88ef973b3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:30:24.443Z"
+}

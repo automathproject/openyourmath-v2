@@ -1,0 +1,28 @@
+{
+  "uuid": "b7iX",
+  "source_path": "exo7/8-L3/b7iX.tex",
+  "summary": "L'exercice demande d'appliquer la formule de Burnside pour calculer le nombre de façons distinctes de colorier les faces d'un tétraèdre régulier avec c couleurs, en tenant compte des symétries du groupe d'isométries directes du tétraèdre.",
+  "concepts": [
+    "formule de Burnside",
+    "action de groupe",
+    "groupe d'isométries",
+    "orbite",
+    "stabilisateur",
+    "groupe alterné A4",
+    "symétrie d'un tétraèdre régulier"
+  ],
+  "methods": [
+    "calcul du nombre d'orbites",
+    "détermination des éléments de groupe",
+    "application de la formule de Burnside"
+  ],
+  "objects": [
+    "tétraèdre régulier",
+    "groupe de déplacements",
+    "coloration des faces",
+    "orbites de l'action de groupe"
+  ],
+  "content_hash": "03954625949f86fc5096069d83b5e00cffccac818dfc8e1e162ee753fbe1af87",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:05:06.379Z"
+}

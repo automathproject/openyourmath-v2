@@ -1,0 +1,33 @@
+{
+  "uuid": "kMAd",
+  "source_path": "exo7/15-L3/kMAd.tex",
+  "summary": "L'exercice étudie une application f d'un espace compact X vers lui-même, avec une condition de contraction. Il demande de montrer que f admet un unique point fixe, que l'ensemble des points d'itération de f forme une suite décroissante de compacts non vides, et que cet ensemble est invariant et de diamètre nul.",
+  "concepts": [
+    "compacité",
+    "suite décroissante d'ensembles",
+    "point fixe",
+    "application contractante",
+    "invariance",
+    "diamètre d'un ensemble",
+    "convergence de suite",
+    "continuité"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "récurrence",
+    "utilisation de la compacité",
+    "construction de suite extraite convergente",
+    "argument de diamètre nul"
+  ],
+  "objects": [
+    "application f",
+    "espace compact X",
+    "suite d'ensembles X_n",
+    "ensemble Y",
+    "point fixe p",
+    "suite d'itérations x_n"
+  ],
+  "content_hash": "2d75af814133ea836ee79a329a647bb44628693fc0f3b8021a98fbaf44826684",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:38:29.443Z"
+}

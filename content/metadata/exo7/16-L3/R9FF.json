@@ -1,0 +1,27 @@
+{
+  "uuid": "R9FF",
+  "source_path": "exo7/16-L3/R9FF.tex",
+  "summary": "Montrer que 0 appartient à l'adhérence de l'image d'une fonction holomorphe f, puis déterminer cette adhérence. L'énoncé s'appuie sur des propriétés des fonctions holomorphes sur le plan complexe.",
+  "concepts": [
+    "fonction holomorphe",
+    "adhérence d'un ensemble",
+    "théorème de Liouville",
+    "image d'une fonction",
+    "plan complexe",
+    "fonction bornée"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "application du théorème de Liouville",
+    "analyse de l'image d'une fonction"
+  ],
+  "objects": [
+    "fonction holomorphe f",
+    "plan complexe C",
+    "disque ouvert Δ_r",
+    "image de f"
+  ],
+  "content_hash": "5ee8960f2c5732d5f4d51d13bcce74d1c6e884c5f502657a720fb1a45958d340",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:25:29.924Z"
+}

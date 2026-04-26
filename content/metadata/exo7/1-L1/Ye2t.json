@@ -1,0 +1,28 @@
+{
+  "uuid": "Ye2t",
+  "source_path": "exo7/1-L1/Ye2t.tex",
+  "summary": "Montrer que si un nombre de la forme aⁿ + 1 est premier, alors n doit être une puissance de 2. L'exercice utilise la contraposition et une factorisation polynomiale.",
+  "concepts": [
+    "nombres premiers",
+    "contraposition",
+    "factorisation polynomiale",
+    "divisibilité dans Z",
+    "puissance d'un entier",
+    "théorème de Fermat sur les nombres premiers"
+  ],
+  "methods": [
+    "raisonnement par contraposition",
+    "factorisation algébrique",
+    "choix stratégique de variable",
+    "analyse de divisibilité"
+  ],
+  "objects": [
+    "nombre de la forme aⁿ + 1",
+    "nombre premier",
+    "polynôme cyclotomique",
+    "facteur irréductible"
+  ],
+  "content_hash": "ef480117bfdbba52942940d1d2ad52a19e87586f5a4fb2406825b3a199285571",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:12.998Z"
+}

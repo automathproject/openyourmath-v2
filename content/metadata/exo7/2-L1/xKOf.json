@@ -1,0 +1,26 @@
+{
+  "uuid": "xKOf",
+  "source_path": "exo7/2-L1/xKOf.tex",
+  "summary": "On étudie la continuité d'une fonction liée à la distance parcourue par une personne en mouvement uniforme. L'exercice demande de montrer qu'il existe un intervalle de temps de 30 minutes pendant lequel la personne parcourt exactement 2 km.",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "continuité d'une fonction",
+    "fonction composée",
+    "égalité de fonctions",
+    "propriété des valeurs intermédiaires"
+  ],
+  "methods": [
+    "application du théorème des valeurs intermédiaires",
+    "construction d'une fonction auxiliaire",
+    "analyse des variations de fonction"
+  ],
+  "objects": [
+    "fonction continue",
+    "fonction auxiliaire",
+    "intervalle de temps",
+    "distance parcourue"
+  ],
+  "content_hash": "66f5125fe0cc4d9f3ce184024d80ef5887803b103e05d78aa271ee53bdf08a8c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:48:16.200Z"
+}

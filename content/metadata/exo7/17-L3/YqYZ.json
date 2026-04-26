@@ -1,0 +1,32 @@
+{
+  "uuid": "YqYZ",
+  "source_path": "exo7/17-L3/YqYZ.tex",
+  "summary": "L'exercice demande de démontrer des propriétés liées à la décomposition de Gram-Schmidt d'une matrice, puis de dériver et analyser l'algorithme correspondant, y compris sa version modifiée pour une meilleure stabilité numérique.",
+  "concepts": [
+    "orthonormalité",
+    "décomposition QR",
+    "algorithme de Gram-Schmidt",
+    "factorisation matricielle",
+    "espace vectoriel",
+    "produit scalaire",
+    "matrice triangulaire supérieure",
+    "stabilité numérique"
+  ],
+  "methods": [
+    "orthogonalisation de Gram-Schmidt",
+    "calcul récursif",
+    "factorisation sur place",
+    "calcul de norme",
+    "mise à jour matricielle"
+  ],
+  "objects": [
+    "matrice",
+    "vecteurs orthonormaux",
+    "matrice triangulaire",
+    "sous-espace vectoriel",
+    "produit scalaire"
+  ],
+  "content_hash": "4b41b223be9857e5053bbc4f733defa0016fb8e4d185b6b261a339ade8b93f97",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:26:22.593Z"
+}

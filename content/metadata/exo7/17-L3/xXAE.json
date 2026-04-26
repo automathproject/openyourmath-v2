@@ -1,0 +1,25 @@
+{
+  "uuid": "xXAE",
+  "source_path": "exo7/17-L3/xXAE.tex",
+  "summary": "L'exercice demande de prouver par récurrence que la matrice U obtenue par factorisation LU d'une matrice A est une matrice bande. Le contexte implique des matrices carrées et des propriétés de bandelettage.",
+  "concepts": [
+    "matrice bande",
+    "factorisation LU",
+    "récurrence",
+    "matrice triangulaire inférieure",
+    "propriété de bandelettage"
+  ],
+  "methods": [
+    "récurrence",
+    "factorisation LU",
+    "analyse des coefficients matriciels"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice bande",
+    "matrice triangulaire inférieure"
+  ],
+  "content_hash": "a6a33d028ee091fb3564ecf67a4fd67fe2100e63ded2f79fed1100d073fc17e4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:29:21.526Z"
+}

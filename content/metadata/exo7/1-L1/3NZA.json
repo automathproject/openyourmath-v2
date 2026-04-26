@@ -1,0 +1,30 @@
+{
+  "uuid": "3NZA",
+  "source_path": "exo7/1-L1/3NZA.tex",
+  "summary": "L'exercice demande de déterminer les entiers naturels n tels que 13 divise n² + n + 7, puis d'étudier les restes possibles de a² modulo 7 et d'établir une équivalence de divisibilité pour les sommes de carrés. Enfin, il s'agit de prouver qu'un entier de la forme 8k + 7 ne peut être exprimé comme somme de trois carrés.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "restes modulo n",
+    "équivalence de congruences",
+    "somme de carrés",
+    "théorème des restes chinois",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "résolution d'équation diophantienne",
+    "analyse des cas modulo n",
+    "preuve par contraposée",
+    "utilisation des propriétés des carrés modulo n"
+  ],
+  "objects": [
+    "entiers naturels",
+    "congruences",
+    "restes modulo 7",
+    "somme de trois carrés",
+    "entier de la forme 8k + 7"
+  ],
+  "content_hash": "6a417f4e23177e6ed30b52028f1552697cf57700947061ed59e3e26696e86805",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:53.158Z"
+}

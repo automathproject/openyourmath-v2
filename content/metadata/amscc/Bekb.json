@@ -1,0 +1,32 @@
+{
+  "uuid": "Bekb",
+  "source_path": "amscc/Bekb.tex",
+  "summary": "L'exercice demande de déterminer la fonction réalisée par un réseau de neurones à une entrée et une couche cachée, en analysant les poids des connexions entre les neurones.",
+  "concepts": [
+    "fonction réalisée par un réseau de neurones",
+    "fonction d'activation",
+    "couche cachée",
+    "poids synaptiques",
+    "fonction affine",
+    "fonction par morceaux",
+    "continuité",
+    "topologie"
+  ],
+  "methods": [
+    "calcul de la fonction de sortie",
+    "analyse des poids des connexions",
+    "composition de fonctions",
+    "évaluation de la fonction par morceaux"
+  ],
+  "objects": [
+    "réseau de neurones",
+    "fonction de la droite réelle vers la droite réelle",
+    "neurones d'entrée",
+    "neurones cachés",
+    "neurone de sortie",
+    "fonction par morceaux"
+  ],
+  "content_hash": "822d5ba70e62440f32f4453dd2922bed2063adef08fb14cd6d734389f58654b2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:15.346Z"
+}

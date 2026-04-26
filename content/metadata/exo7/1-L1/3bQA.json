@@ -1,0 +1,32 @@
+{
+  "uuid": "3bQA",
+  "source_path": "exo7/1-L1/3bQA.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés arithmétiques liées aux nombres premiers : d'abord que les coefficients binomiaux C_p^i sont divisibles par p pour 0 < i < p, puis que a^p - a est divisible par p pour tout entier naturel a non nul et tout nombre premier p.",
+  "concepts": [
+    "coefficient binomial",
+    "divisibilité",
+    "nombre premier",
+    "petit théorème de Fermat",
+    "lemme de Gauss",
+    "principe de récurrence",
+    "congruence modulo p",
+    "factorielle"
+  ],
+  "methods": [
+    "développement factoriel",
+    "raisonnement par récurrence",
+    "utilisation du lemme de Gauss",
+    "calcul de congruences",
+    "décomposition en coefficients binomiaux"
+  ],
+  "objects": [
+    "coefficient binomial C_p^i",
+    "entier naturel a",
+    "nombre premier p",
+    "expression a^p - a",
+    "factorielle i!"
+  ],
+  "content_hash": "96362aae1bb5155fa8e3ff655c2bc8cfc3fe8846863c45218e6dc19beb12e477",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:59.370Z"
+}

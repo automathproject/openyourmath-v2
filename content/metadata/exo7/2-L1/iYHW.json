@@ -1,0 +1,28 @@
+{
+  "uuid": "iYHW",
+  "source_path": "exo7/2-L1/iYHW.tex",
+  "summary": "Montrer que la limite d'une intégrale de la forme ∫₀¹ fⁿ(t) dt, où f est une fonction strictement croissante de [0,1] dans [0,1], tend vers 0 quand n tend vers l'infini.",
+  "concepts": [
+    "limite d'intégrale",
+    "fonction strictement croissante",
+    "inégalité intégrale",
+    "convergence vers 0",
+    "majoration d'intégrale",
+    "continuité d'une fonction"
+  ],
+  "methods": [
+    "découpage d'intégrale",
+    "majoration terme à terme",
+    "choix d'un paramètre α",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction f",
+    "intégrale ∫₀¹ fⁿ(t) dt",
+    "paramètre α",
+    "point x₀"
+  ],
+  "content_hash": "3cd6dd1a281a6c9d1e80c2d98d33b0f2547fdd195ba35cf452a30e15fef82fb9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:34:36.286Z"
+}

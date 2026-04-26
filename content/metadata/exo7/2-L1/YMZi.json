@@ -1,0 +1,28 @@
+{
+  "uuid": "YMZi",
+  "source_path": "exo7/2-L1/YMZi.tex",
+  "summary": "L'exercice demande de démontrer une inégalité sur la racine n-ième de la factorielle de n, en utilisant des propriétés de croissance de fonctions et des produits de termes entiers.",
+  "concepts": [
+    "factorielle",
+    "fonction polynomiale du second degré",
+    "croissance et décroissance de fonctions",
+    "inégalité",
+    "produit de termes entiers",
+    "limite inférieure"
+  ],
+  "methods": [
+    "analyse de la croissance d'une fonction",
+    "comparaison de produits",
+    "majoration",
+    "utilisation de propriétés des factorielles"
+  ],
+  "objects": [
+    "factorielle n!",
+    "fonction f(x) = x(n+1-x)",
+    "produit de termes k(n+1-k)",
+    "racine n-ième de n!"
+  ],
+  "content_hash": "ab449a0d7712581c4d8d1a183baa6a5de4f7dd6ff501ad08688bc1fcbff84c17",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:46:10.508Z"
+}

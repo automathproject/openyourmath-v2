@@ -1,0 +1,24 @@
+{
+  "uuid": "M9Ej",
+  "source_path": "exo7/1-L1/M9Ej.tex",
+  "summary": "L'exercice demande de calculer le PGCD de plusieurs nombres entiers donnés en les décomposant en facteurs premiers.",
+  "concepts": [
+    "décomposition en facteurs premiers",
+    "plus grand commun diviseur",
+    "arithmétique dans Z",
+    "divisibilité",
+    "algorithme d'Euclide"
+  ],
+  "methods": [
+    "décomposition en produits de facteurs premiers",
+    "identification des facteurs communs"
+  ],
+  "objects": [
+    "nombres entiers",
+    "facteurs premiers",
+    "PGCD"
+  ],
+  "content_hash": "ed974ff3c97cf8ff262f81586e94939c1b8ea2da4cca2a146b1403201e930f53",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:19:23.556Z"
+}

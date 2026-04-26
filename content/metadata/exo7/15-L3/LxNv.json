@@ -1,0 +1,28 @@
+{
+  "uuid": "LxNv",
+  "source_path": "exo7/15-L3/LxNv.tex",
+  "summary": "L'exercice demande de prouver la continuité d'une fonction g(x) = ∫₀¹ f(x,y) dy, où f est continue en x pour tout y ∈ [0,1]. Le contexte implique une fonction de deux variables et l'intégration sur un intervalle compact.",
+  "concepts": [
+    "continuité",
+    "compacité",
+    "recouvrement de compacts",
+    "intégrale dépendant d'un paramètre",
+    "continuité uniforme",
+    "propriété de Borel-Lebesgue"
+  ],
+  "methods": [
+    "recouvrement par des compacts",
+    "intégration par morceaux",
+    "majoration d'intégrale",
+    "construction de voisinage"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "intégrale dépendant d'un paramètre",
+    "intervalle compact",
+    "voisinage"
+  ],
+  "content_hash": "349b584e4b996fe7ce26bd5d3815578be611294da1e241b1274d5362be66af9d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:37:52.203Z"
+}

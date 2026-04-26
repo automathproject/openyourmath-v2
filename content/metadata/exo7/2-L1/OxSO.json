@@ -1,0 +1,24 @@
+{
+  "uuid": "OxSO",
+  "source_path": "exo7/2-L1/OxSO.tex",
+  "summary": "Calculer une intégrale impropre de la forme 1/x ∫₀ˣ t f(t) dt en utilisant une intégration par parties et une relation avec la fonction primitive F(x).",
+  "concepts": [
+    "intégrale impropre",
+    "fonction primitive",
+    "intégration par parties",
+    "relation de récurrence intégrale"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "décomposition en intégrales"
+  ],
+  "objects": [
+    "fonction primitive F(x)",
+    "intégrale dépendant d'un paramètre",
+    "fonction f(t)"
+  ],
+  "content_hash": "257b94eea01b28ff9dd5a1535954a6a50cd01cad8bc99000f90ce43f2dfc722b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:32:45.771Z"
+}

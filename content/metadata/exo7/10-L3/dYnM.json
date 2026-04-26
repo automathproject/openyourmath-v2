@@ -1,0 +1,32 @@
+{
+  "uuid": "dYnM",
+  "source_path": "exo7/10-L3/dYnM.tex",
+  "summary": "L'exercice demande de calculer le PGCD de deux polynômes à coefficients dans ℤ₂ en utilisant l'algorithme d'Euclide, de vérifier leur irréductibilité, de déterminer la cardinalité d'un anneau quotient, de trouver l'inverse d'un élément dans cet anneau, et de vérifier si cet anneau quotient est un corps.",
+  "concepts": [
+    "algèbre des polynômes",
+    "PGCD de polynômes",
+    "algorithme d'Euclide",
+    "irréductibilité des polynômes",
+    "anneau quotient",
+    "corps",
+    "idéal principal",
+    "projection canonique"
+  ],
+  "methods": [
+    "algorithme d'Euclide étendu",
+    "factorisation de polynômes",
+    "représentation linéaire du PGCD",
+    "calcul d'inverse dans un anneau quotient",
+    "vérification de l'intégrité d'un anneau"
+  ],
+  "objects": [
+    "polynômes sur ℤ₂",
+    "PGCD de polynômes",
+    "idéal principal",
+    "anneau quotient",
+    "élément inversible"
+  ],
+  "content_hash": "94f9ec72f79ca9d3f39fbb1cfbebc0d78fdd52b0071bfca1494b8a5305c9b6db",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:08:21.503Z"
+}

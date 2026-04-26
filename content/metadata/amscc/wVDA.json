@@ -1,0 +1,26 @@
+{
+  "uuid": "wVDA",
+  "source_path": "amscc/wVDA.tex",
+  "summary": "L'exercice demande de démontrer une inégalité liant l'erreur relative sur la solution d'un système linéaire à l'erreur relative sur le second membre, puis d'en déduire un encadrement de cette erreur relative.",
+  "concepts": [
+    "conditionnement d'une matrice",
+    "erreur relative",
+    "norme vectorielle",
+    "stabilité numérique",
+    "système linéaire"
+  ],
+  "methods": [
+    "majoration d'erreur",
+    "utilisation du conditionnement",
+    "propriétés des normes"
+  ],
+  "objects": [
+    "matrice",
+    "vecteur",
+    "erreur relative",
+    "conditionnement"
+  ],
+  "content_hash": "c36f6c0e52f3c748574e055482694b70129fd68373d5e3a5e1fd3a3f6d48c4b2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:05:45.565Z"
+}

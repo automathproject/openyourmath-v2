@@ -1,0 +1,29 @@
+{
+  "uuid": "ZQ6q",
+  "source_path": "exo7/4-L2/ZQ6q.tex",
+  "summary": "L'exercice demande de prouver deux propriétés liées aux nombres premiers : d'abord que pour un nombre premier p, p divise le coefficient binomial Cp^k pour tout k entre 1 et p-1, puis que pour tout entier naturel a non nul, ap est congru à a modulo p.",
+  "concepts": [
+    "nombre premier",
+    "coefficient binomial",
+    "théorème de Gauss",
+    "congruence modulo p",
+    "récurrence mathématique",
+    "arithmétique dans Z",
+    "divisibilité"
+  ],
+  "methods": [
+    "utilisation du théorème de Gauss",
+    "développement binomial",
+    "récurrence sur les entiers naturels",
+    "propriétés des congruences"
+  ],
+  "objects": [
+    "coefficient binomial Cp^k",
+    "entier naturel a",
+    "nombre premier p",
+    "congruence modulo p"
+  ],
+  "content_hash": "7862477106d1e737466625b2ed2dcf5c07cc480334ea3f102f9557e77fb863b1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:33.404Z"
+}

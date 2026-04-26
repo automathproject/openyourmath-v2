@@ -1,0 +1,28 @@
+{
+  "uuid": "5ciu",
+  "source_path": "exo7/1-L1/5ciu.tex",
+  "summary": "Résoudre deux systèmes de congruences linéaires dans Z pour trouver les solutions entières. Le premier système a deux congruences avec des modules 140 et 99, le second en a trois avec des modules 4, 3 et 5.",
+  "concepts": [
+    "système de congruences",
+    "théorème des restes chinois",
+    "arithmétique modulaire",
+    "pgcd",
+    "ppcm",
+    "algorithme d'Euclide"
+  ],
+  "methods": [
+    "algorithme d'Euclide étendu",
+    "résolution de congruences",
+    "calcul de pgcd",
+    "calcul de ppcm"
+  ],
+  "objects": [
+    "système de congruences",
+    "entiers relatifs",
+    "modules",
+    "solutions modulo un nombre"
+  ],
+  "content_hash": "265a042083c88cf5a4babaadbdf3e4a8e674e669e4d43f3ff365c83c316fcabb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:09.994Z"
+}

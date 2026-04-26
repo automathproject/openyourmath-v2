@@ -1,0 +1,31 @@
+{
+  "uuid": "IikC",
+  "source_path": "exo7/2-L1/IikC.tex",
+  "summary": "L'exercice demande de comparer une intégrale $I_n$ à une intégrale standard de $\\sin^n t$ sur $[0, \\pi/2]$, puis d'étudier la limite de $I_n$ quand $n$ tend vers l'infini en découpant l'intervalle d'intégration. Il s'agit ensuite d'établir une relation de récurrence entre $I_n$ et $I_{n+2}$, d'exprimer $I_{2k}$ et $I_{2k+1}$ en fonction de $k$, et de démontrer une relation entre $I_n$ et $I_{n-1}$ pour en déduire un équivalent asymptotique.",
+  "concepts": [
+    "intégrale de Wallis",
+    "relation de récurrence",
+    "limite de suite",
+    "équivalent asymptotique",
+    "intégrale de fonction trigonométrique",
+    "décomposition d'intervalle",
+    "convergence de suite"
+  ],
+  "methods": [
+    "décomposition d'intégrale",
+    "récurrence",
+    "comparaison d'intégrales",
+    "approximation asymptotique",
+    "calcul d'intégrale par parties"
+  ],
+  "objects": [
+    "intégrale $I_n$",
+    "fonction $\\sin^n t$",
+    "suite $(I_n)$",
+    "relation de récurrence",
+    "équivalent asymptotique"
+  ],
+  "content_hash": "eba7ab954ca6cd84c5d3b9c2867f327542debbeea5a6c149f0efe181ff2316b5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:31:59.301Z"
+}

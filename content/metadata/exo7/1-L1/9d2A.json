@@ -1,0 +1,32 @@
+{
+  "uuid": "9d2A",
+  "source_path": "exo7/1-L1/9d2A.tex",
+  "summary": "Cet exercice propose plusieurs questions sur les propriétés arithmétiques des entiers, notamment la divisibilité, le pgcd et le ppcm. Il aborde des cas concrets comme la divisibilité de puissances d'entiers ou de sommes de carrés.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "divisibilité",
+    "nombres premiers",
+    "algorithme d'Euclide",
+    "congruences",
+    "théorème de Bézout",
+    "nombres premiers entre eux"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "utilisation des propriétés du pgcd",
+    "calcul de congruences",
+    "application de l'algorithme d'Euclide",
+    "factorisation"
+  ],
+  "objects": [
+    "entiers",
+    "pgcd de deux entiers",
+    "somme de carrés",
+    "produit de nombres consécutifs",
+    "puissances d'entiers"
+  ],
+  "content_hash": "506a2c28913f20b25cb708f7763669dc26bb99b974bffe06131306d12cd63d07",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:28.919Z"
+}

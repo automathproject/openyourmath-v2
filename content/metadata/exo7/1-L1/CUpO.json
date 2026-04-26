@@ -1,0 +1,28 @@
+{
+  "uuid": "CUpO",
+  "source_path": "exo7/1-L1/CUpO.tex",
+  "summary": "L'exercice demande de démontrer une équivalence entre deux propriétés d'une application linéaire f : soit que f² = 0 et qu'il existe g tel que f∘g + g∘f = id_E, soit que Ker(f) = Im(f). Le contexte est purement algébrique, sans application concrète.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application",
+    "image d'une application",
+    "supplémentaire d'un sous-espace",
+    "projecteur",
+    "endomorphisme nilpotent"
+  ],
+  "methods": [
+    "décomposition en somme directe",
+    "construction explicite d'un endomorphisme",
+    "utilisation de la relation de Fredholm",
+    "définition d'un supplémentaire"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "endomorphisme",
+    "somme directe",
+    "projecteur"
+  ],
+  "content_hash": "61529fab7b58aae05c46d05ea04291bd8c5e6446e84ae489907da28441d4a7a7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:10:33.009Z"
+}

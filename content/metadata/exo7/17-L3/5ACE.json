@@ -1,0 +1,32 @@
+{
+  "uuid": "5ACE",
+  "source_path": "exo7/17-L3/5ACE.tex",
+  "summary": "L'exercice demande de déterminer la factorisation QR d'une matrice A en termes de matrices M, D et S. Il étudie ensuite le cas particulier où m=2, en définissant des matrices M1 et M2 pour annuler une composante d'un vecteur x et rendre M1DM1^T ou M2DM2^T diagonale, avec des contraintes sur les coefficients.",
+  "concepts": [
+    "factorisation QR",
+    "matrice orthogonale",
+    "matrice diagonale",
+    "produit matriciel",
+    "transposée d'une matrice",
+    "matrice triangulaire supérieure",
+    "décomposition en valeurs singulières"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "résolution de système linéaire",
+    "choix de paramètres pour annuler une composante",
+    "diagonalisation par transformation",
+    "utilisation de la propriété orthogonale"
+  ],
+  "objects": [
+    "matrice A",
+    "matrice M",
+    "matrice D",
+    "matrice S",
+    "vecteur x",
+    "matrices M1 et M2"
+  ],
+  "content_hash": "23bbb94c58656b34bbbd41822b105f263c578faa6c8fea8545a2cd6ec969b76d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:22:18.706Z"
+}

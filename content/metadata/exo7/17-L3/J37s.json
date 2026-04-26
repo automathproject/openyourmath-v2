@@ -1,0 +1,26 @@
+{
+  "uuid": "J37s",
+  "source_path": "exo7/17-L3/J37s.tex",
+  "summary": "L'exercice demande de démontrer deux inégalités relatives à la perturbation d'une matrice inversible A par une matrice δA. La première inégalité lie la norme de la différence des inverses à la condition de A et à la norme de δA. La seconde inégalité introduit un terme d'ordre supérieur.",
+  "concepts": [
+    "inversibilité des matrices",
+    "norme matricielle",
+    "conditionnement d'une matrice",
+    "perturbation matricielle",
+    "inégalité de norme"
+  ],
+  "methods": [
+    "décomposition matricielle",
+    "majoration de norme",
+    "utilisation du conditionnement"
+  ],
+  "objects": [
+    "matrice inversible",
+    "matrice de perturbation",
+    "inverse d'une matrice",
+    "norme matricielle"
+  ],
+  "content_hash": "cc285cf93634bf50d9615d5256357a8bd2bcba106576037234cb37316e46c814",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:24:37.887Z"
+}

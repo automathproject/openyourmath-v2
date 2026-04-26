@@ -1,0 +1,32 @@
+{
+  "uuid": "40J1",
+  "source_path": "exo7/1-L1/40J1.tex",
+  "summary": "L'exercice demande de démontrer trois inégalités ou égalités concernant les dimensions de l'image et du noyau d'applications linéaires composées. Il s'agit d'explorer les relations entre les propriétés de deux applications linéaires f et g.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "rang d'une application linéaire",
+    "composition d'applications linéaires",
+    "théorème du rang",
+    "dimension d'un espace vectoriel",
+    "inclusion d'espaces vectoriels"
+  ],
+  "methods": [
+    "calcul de dimension",
+    "utilisation du théorème du rang",
+    "démonstration par inclusion",
+    "manipulation d'espaces vectoriels"
+  ],
+  "objects": [
+    "application linéaire f",
+    "application linéaire g",
+    "composition f∘g",
+    "noyau Ker(f∘g)",
+    "image Im(f)",
+    "noyau Ker(g)"
+  ],
+  "content_hash": "a30fc3da3b2c8833cbd0a29cabdc10ca2510dc1c3b6c3ce8156d967e11955296",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:54.845Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "1dW1",
+  "source_path": "exo7/1-L1/1dW1.tex",
+  "summary": "L'exercice demande de déterminer le nombre de diviseurs de 15! en utilisant sa décomposition en facteurs premiers, sans calculer explicitement la valeur de 15!.",
+  "concepts": [
+    "décomposition en facteurs premiers",
+    "divisibilité dans Z",
+    "nombre de diviseurs d'un entier",
+    "factorielles",
+    "puissances d'un nombre premier",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul du nombre de diviseurs via les exposants des facteurs premiers"
+  ],
+  "objects": [
+    "factorielles",
+    "diviseurs d'un entier",
+    "exposants dans une décomposition en facteurs premiers"
+  ],
+  "content_hash": "e978b5d608ea353782cc997daee782ebb007466f83ae1834b962c1d3779db021",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:44.348Z"
+}

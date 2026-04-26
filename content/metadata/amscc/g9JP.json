@@ -1,0 +1,28 @@
+{
+  "uuid": "g9JP",
+  "source_path": "amscc/g9JP.tex",
+  "summary": "L'exercice demande d'étudier les propriétés d'un schéma numérique pour une équation différentielle. Il s'agit de montrer que la fonction associée est lipschitzienne, de prouver la zéro-stabilité, la consistance d'ordre au moins 2, et la convergence du schéma.",
+  "concepts": [
+    "lipschitzianité globale",
+    "théorème des accroissements finis",
+    "zéro-stabilité",
+    "consistance d'un schéma numérique",
+    "ordre de consistance",
+    "convergence de schéma numérique"
+  ],
+  "methods": [
+    "application du théorème des accroissements finis",
+    "estimation d'erreur",
+    "critère de consistance",
+    "analyse de stabilité"
+  ],
+  "objects": [
+    "fonction lipschitzienne",
+    "schéma numérique",
+    "équation différentielle",
+    "fonction de consistance"
+  ],
+  "content_hash": "7bc23a06a9d43d4ebb929e689143157c1cebf9f3bc264e7db2eba08d8085c9d4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:05:40.734Z"
+}

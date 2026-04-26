@@ -1,0 +1,30 @@
+{
+  "uuid": "gKcH",
+  "source_path": "exo7/16-L3/gKcH.tex",
+  "summary": "Calculer trois intégrales complexes : une intégrale d'une fonction méromorphe avec pôles simples, une intégrale d'une fonction holomorphe sur un chemin fermé, et une intégrale d'une fonction avec un pôle d'ordre 2. Les intégrales sont évaluées sur un chemin Γ avec des indices donnés pour les points w₁, w₂, w₃.",
+  "concepts": [
+    "théorème de Cauchy",
+    "indices de points par rapport à un chemin",
+    "fonction méromorphe",
+    "résidu d'une fonction",
+    "théorème de Cauchy pour les dérivées",
+    "fonction holomorphe",
+    "intégrale sur un chemin fermé"
+  ],
+  "methods": [
+    "calcul des résidus",
+    "application du théorème de Cauchy",
+    "évaluation des indices",
+    "calcul de la dérivée d'une fonction"
+  ],
+  "objects": [
+    "intégrale complexe",
+    "fonction méromorphe",
+    "fonction holomorphe",
+    "chemin fermé Γ",
+    "points w₁, w₂, w₃"
+  ],
+  "content_hash": "b2ecb0c940fbec196aa88dd5c3afdfc8806c37eb1d296b6746099b165e09c728",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:13.071Z"
+}

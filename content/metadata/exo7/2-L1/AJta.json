@@ -1,0 +1,26 @@
+{
+  "uuid": "AJta",
+  "source_path": "exo7/2-L1/AJta.tex",
+  "summary": "Soient deux fonctions continues de ℝ dans ℝ telles que pour tout x rationnel, f(x) < g(x). On demande de montrer que f ≤ g sur ℝ, puis que cette inégalité stricte n'est pas nécessairement vraie pour tout réel.",
+  "concepts": [
+    "continuité",
+    "densité des rationnels",
+    "inégalité fonctionnelle",
+    "propriété locale et globale",
+    "limite de fonctions"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la densité des rationnels",
+    "continuité et passage à la limite"
+  ],
+  "objects": [
+    "fonctions continues",
+    "inégalités",
+    "réels",
+    "rationnels"
+  ],
+  "content_hash": "1a2e961af470a88e0c965cd244651ded334d4d9c0faa87ddadb4513cad8fb765",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:12.511Z"
+}

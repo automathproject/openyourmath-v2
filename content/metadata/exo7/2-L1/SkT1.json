@@ -1,0 +1,30 @@
+{
+  "uuid": "SkT1",
+  "source_path": "exo7/2-L1/SkT1.tex",
+  "summary": "L'exercice demande de prouver que la fonction f est de classe C^∞ sur ℝ⁺* et en 0⁺, puis d'étudier la forme de ses dérivées successives f⁽ⁿ⁾(x) et de montrer que le polynôme Pₙ associé possède n-1 racines réelles positives.",
+  "concepts": [
+    "classe C^∞",
+    "dérivées successives",
+    "fonction polynomiale",
+    "racines réelles",
+    "limite en 0⁺",
+    "analyse asymptotique",
+    "théorème de Rolle",
+    "théorème des valeurs intermédiaires"
+  ],
+  "methods": [
+    "développement en série entière",
+    "calcul de dérivées successives",
+    "analyse de la croissance des polynômes",
+    "application du théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "fonction f",
+    "dérivées f⁽ⁿ⁾(x)",
+    "polynôme Pₙ",
+    "racines réelles positives"
+  ],
+  "content_hash": "d2ebc60943a0fc2b0d6a7ad2d31c0450e3340d094877f217ef72c7a999f04835",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:37.317Z"
+}

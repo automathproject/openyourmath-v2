@@ -1,0 +1,30 @@
+{
+  "uuid": "IfsT",
+  "source_path": "exo7/2-L1/IfsT.tex",
+  "summary": "L'exercice demande de montrer que la limite d'une suite d'intégrales $u_n = \\int_{0}^{1} t^n f(t) dt$ tend vers 0 quand $n$ tend vers l'infini, puis de déterminer un équivalent simple de $u_n$ dans deux cas : d'abord lorsque $f$ est de classe $C^1$ avec $f(1) \\neq 0$, puis lorsque $f$ est de classe $C^2$ avec $f(1) = 0$ et $f'(1) \\neq 0$.",
+  "concepts": [
+    "continuité uniforme",
+    "intégrale impropre",
+    "intégration par parties",
+    "équivalent asymptotique",
+    "convergence de suites",
+    "théorème fondamental du calcul intégral",
+    "classe de régularité $C^1$ et $C^2$"
+  ],
+  "methods": [
+    "majoration d'intégrale",
+    "intégration par parties",
+    "étude de la limite d'une suite",
+    "développement asymptotique",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "suite d'intégrales $u_n$",
+    "fonction de classe $C^1$ ou $C^2$",
+    "intégrale dépendant d'un paramètre",
+    "équivalent simple"
+  ],
+  "content_hash": "6baa3c146869f98eb853cfcd3190242b68f2332b9c94374e26ed32b3634aee21",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:31:51.996Z"
+}

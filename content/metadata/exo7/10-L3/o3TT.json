@@ -1,0 +1,28 @@
+{
+  "uuid": "o3TT",
+  "source_path": "exo7/10-L3/o3TT.tex",
+  "summary": "L'exercice demande de déterminer les isomorphismes d'anneaux finis pour plusieurs entiers et d'établir une relation entre leurs produits.",
+  "concepts": [
+    "anneau quotient",
+    "isomorphisme d'anneaux",
+    "décomposition en facteurs premiers",
+    "théorème chinois des restes",
+    "pgcd",
+    "produit d'anneaux"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "application du théorème chinois des restes",
+    "calcul du pgcd"
+  ],
+  "objects": [
+    "anneau Z/72Z",
+    "anneau Z/84Z",
+    "anneau Z/36Z",
+    "anneau Z/168Z",
+    "produit d'anneaux"
+  ],
+  "content_hash": "5a766fc0ad34074fb5f4711268fe3b6aa2e8658515df34742064682d8eade081",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:08:58.568Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "SaGe",
+  "source_path": "exo7/2-L1/SaGe.tex",
+  "summary": "L'exercice demande de démontrer l'intégrabilité de Riemann de deux fonctions définies sur [0,1] : la première vaut 1 sur les rationnels et 0 ailleurs, la seconde vaut 1/q pour les rationnels irréductibles p/q et 0 ailleurs.",
+  "concepts": [
+    "intégrale de Riemann",
+    "fonction indicatrice",
+    "densité des rationnels",
+    "subdivision d'un intervalle",
+    "somme supérieure et inférieure de Riemann",
+    "critère d'intégrabilité de Riemann"
+  ],
+  "methods": [
+    "calcul des sommes de Riemann",
+    "estimation des sommes supérieure et inférieure",
+    "utilisation de la densité des rationnels",
+    "argument par l'absurde"
+  ],
+  "objects": [
+    "fonction définie par morceaux",
+    "subdivision d'intervalle",
+    "somme supérieure de Riemann",
+    "somme inférieure de Riemann"
+  ],
+  "content_hash": "4f0e66618ebb244c3d6b507e34336e4492719590d999238dfe2bfcfa54259c11",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:33:11.616Z"
+}

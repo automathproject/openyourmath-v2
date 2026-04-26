@@ -1,0 +1,31 @@
+{
+  "uuid": "pupo",
+  "source_path": "exo7/15-L3/pupo.tex",
+  "summary": "L'exercice demande de prouver que l'ensemble T est compact et connexe, que l'image d'une fonction continue f:T→ℝ est un segment, puis de déterminer les points x∈T pour lesquels T\\{x} est connexe, et enfin de montrer que T n'est homéomorphe à aucune partie de ℝ.",
+  "concepts": [
+    "compact",
+    "connexe",
+    "fonction continue",
+    "image directe",
+    "segment",
+    "homéomorphisme",
+    "partie connexe de ℝ",
+    "fermé borné"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des propriétés des homéomorphismes",
+    "analyse des images de points par une application",
+    "application du théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "ensemble T",
+    "fonction continue f:T→ℝ",
+    "points cardinaux de T",
+    "partie de ℝ",
+    "segment compact"
+  ],
+  "content_hash": "1b4f2412f68b2065a20b4ed74bde3dfa9b66cd2b71176bb897ff93f8237809f3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:43:03.825Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "pivf",
+  "source_path": "exo7/2-L1/pivf.tex",
+  "summary": "L'exercice étudie les propriétés des fonctions continues sur [0,1] vérifiant f∘f = f. Il montre que l'ensemble des points fixes E_f est égal à l'image de [0,1] par f, et que E_f est un intervalle. Il caractérise également les fonctions continues satisfaisant f∘f = f.",
+  "concepts": [
+    "fonction continue",
+    "point fixe",
+    "image d'un intervalle",
+    "inclusion d'ensembles",
+    "fonction idempotente",
+    "théorème des valeurs intermédiaires"
+  ],
+  "methods": [
+    "raisonnement par inclusion",
+    "utilisation de la continuité",
+    "caractérisation des points fixes",
+    "construction explicite de fonctions"
+  ],
+  "objects": [
+    "fonction f : [0,1] → [0,1]",
+    "ensemble des points fixes E_f",
+    "intervalle [0,1]",
+    "image f([0,1])"
+  ],
+  "content_hash": "0a41ceffd16989d87dc040cf28e1c9e091b6a9c74a4fee39352e92612ab3525d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:47:54.470Z"
+}

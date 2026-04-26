@@ -1,0 +1,29 @@
+{
+  "uuid": "xs8z",
+  "source_path": "exo7/1-L1/xs8z.tex",
+  "summary": "L'exercice demande d'abord une condition nécessaire et suffisante pour qu'une équation diophantienne admette une solution, puis de déterminer toutes les solutions d'une telle équation à partir d'une solution particulière, et enfin de résoudre une équation diophantienne spécifique dans ℤ².",
+  "concepts": [
+    "équation diophantienne",
+    "théorème de Bézout",
+    "pgcd",
+    "ppcm",
+    "algorithme d'Euclide",
+    "solution particulière",
+    "solution générale"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "identité de Bézout",
+    "résolution d'équation diophantienne",
+    "expression des solutions générales"
+  ],
+  "objects": [
+    "équation linéaire à coefficients entiers",
+    "solution particulière",
+    "solution générale",
+    "pgcd de deux entiers"
+  ],
+  "content_hash": "6a722e01061c83c93dc72abdb1602c700a17d96386fd7a41a33fd3eb84aa3ef6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:43.912Z"
+}

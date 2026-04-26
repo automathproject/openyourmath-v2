@@ -1,0 +1,31 @@
+{
+  "uuid": "D82Z",
+  "source_path": "exo7/2-L1/D82Z.tex",
+  "summary": "L'exercice demande de montrer que le polynôme P_n et ses dérivées prennent des valeurs entières en 0 et a/b, puis d'étudier la limite d'une intégrale impliquant P_n et sin(t) lorsque n tend vers l'infini. Enfin, il propose de démontrer l'irrationalité de π par l'absurde.",
+  "concepts": [
+    "polynôme",
+    "dérivée",
+    "valeur entière",
+    "intégrale",
+    "limite de suite",
+    "irrationalité",
+    "méthode d'absurde"
+  ],
+  "methods": [
+    "calcul de dérivées successives",
+    "évaluation de polynômes",
+    "intégration par parties",
+    "étude de limite",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "polynôme P_n",
+    "dérivées de P_n",
+    "intégrale I_n",
+    "fonction sin(t)",
+    "nombre π"
+  ],
+  "content_hash": "7783e688fc21d5713ce10ceeea4e81e5d288436ee842668ef3c5383c9bed4b31",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:31:21.827Z"
+}

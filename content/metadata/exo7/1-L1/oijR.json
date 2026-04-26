@@ -1,0 +1,28 @@
+{
+  "uuid": "oijR",
+  "source_path": "exo7/1-L1/oijR.tex",
+  "summary": "L'exercice demande de démontrer deux inégalités fondamentales sur le rang des applications linéaires : d'abord que le rang de la somme de deux applications linéaires est inférieur ou égal à la somme de leurs rangs, puis que la différence des rangs de deux applications linéaires est majorée par le rang de leur somme.",
+  "concepts": [
+    "application linéaire",
+    "image d'une application linéaire",
+    "noyau d'une application linéaire",
+    "rang d'une application linéaire",
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "inégalité de rang"
+  ],
+  "methods": [
+    "démonstration par inclusion d'espaces vectoriels",
+    "utilisation de la formule de la dimension d'une somme de sous-espaces",
+    "manipulation d'inégalités dimensionnelles"
+  ],
+  "objects": [
+    "application linéaire",
+    "somme d'applications linéaires",
+    "image d'une application linéaire",
+    "rang d'une application linéaire"
+  ],
+  "content_hash": "861cb0f2cacc661713de836f03b6c58169393e06ab02b2d42d63054e80abb673",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:13:30.544Z"
+}

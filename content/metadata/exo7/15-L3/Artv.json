@@ -1,0 +1,29 @@
+{
+  "uuid": "Artv",
+  "source_path": "exo7/15-L3/Artv.tex",
+  "summary": "L'exercice demande de démontrer quatre propriétés topologiques liées à l'espace $X_\\infty$ : l'intersection d'un ensemble de $\\mathcal{T}_\\infty$ avec $X$ est un ouvert de $X$, $\\mathcal{T}_\\infty$ est une topologie sur $X_\\infty$, $X$ est dense dans $X_\\infty$, et $X_\\infty$ est compact.",
+  "concepts": [
+    "topologie",
+    "espace topologique",
+    "densité",
+    "compacité",
+    "ouverts",
+    "intersection d'ouverts",
+    "espace topologique compact"
+  ],
+  "methods": [
+    "définition de topologie",
+    "propriétés des ouverts",
+    "densité d'un sous-espace",
+    "critère de compacité"
+  ],
+  "objects": [
+    "espace $X_\\infty$",
+    "topologie $\\mathcal{T}_\\infty$",
+    "ensemble $A$",
+    "sous-espace $X$"
+  ],
+  "content_hash": "8de675b0d36cce5afdbbd6a9c10e726c4cec8fae3f97476cce097af095bc4bfb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:37:40.531Z"
+}

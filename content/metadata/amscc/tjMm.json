@@ -1,0 +1,27 @@
+{
+  "uuid": "tjMm",
+  "source_path": "amscc/tjMm.tex",
+  "summary": "L'exercice demande de proposer deux méthodes de Monte Carlo pour approcher numériquement l'intégrale d'une fonction composée sur l'intervalle [0,1]. La fonction intégrée est cos(x³)e⁻ˣ.",
+  "concepts": [
+    "intégrale de Riemann",
+    "espérance mathématique",
+    "loi uniforme",
+    "loi exponentielle",
+    "loi des grands nombres",
+    "convergence presque sûre",
+    "variable aléatoire indépendante et identiquement distribuée"
+  ],
+  "methods": [
+    "méthode de Monte Carlo",
+    "simulation de variables aléatoires",
+    "approximation par la moyenne empirique"
+  ],
+  "objects": [
+    "intégrale définie",
+    "fonction composée",
+    "suite de variables aléatoires"
+  ],
+  "content_hash": "5377e2191e69635b5d154685082ac03591a76598bdea25a17ded63d7c9ef2e61",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:36:00.507Z"
+}

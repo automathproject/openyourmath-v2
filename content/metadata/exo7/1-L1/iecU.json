@@ -1,0 +1,30 @@
+{
+  "uuid": "iecU",
+  "source_path": "exo7/1-L1/iecU.tex",
+  "summary": "L'exercice explore les propriétés des entiers selon leur forme modulo un nombre donné (5, 3, 4, 9, 7) en étudiant les conséquences de l'application de l'addition, de l'élévation au carré ou au cube. Il aborde aussi les relations entre les puissances et les congruences.",
+  "concepts": [
+    "division euclidienne",
+    "congruences",
+    "arithmétique modulaire",
+    "propriétés des puissances",
+    "théorème des restes chinois",
+    "divisibilité dans Z",
+    "classes d'équivalence"
+  ],
+  "methods": [
+    "calcul de congruences",
+    "manipulation d'équations diophantiennes",
+    "analyse des cas modulo n",
+    "vérification par contre-exemple"
+  ],
+  "objects": [
+    "entiers naturels",
+    "congruences linéaires",
+    "puissances d'entiers",
+    "classes de restes",
+    "nombres premiers"
+  ],
+  "content_hash": "ebcdb05d9f3a05f644fd3e378b165104bae9c7d33766d6664914b190b8318aed",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:52.075Z"
+}

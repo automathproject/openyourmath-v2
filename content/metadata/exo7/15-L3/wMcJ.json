@@ -1,0 +1,31 @@
+{
+  "uuid": "wMcJ",
+  "source_path": "exo7/15-L3/wMcJ.tex",
+  "summary": "L'exercice demande de montrer qu'une application bilinéaire bornée B est continue sur un produit d'espaces normés, en utilisant la définition de la continuité via une inégalité de contrôle de la norme. Il explore aussi la réciproque : si B est continue, elle est bornée.",
+  "concepts": [
+    "application linéaire bornée",
+    "continuité en un point",
+    "bilinéarité",
+    "norme d'une application",
+    "inégalité de contrôle",
+    "continuité uniforme",
+    "produit d'espaces normés"
+  ],
+  "methods": [
+    "définition de la continuité par epsilon-delta",
+    "majoration de la norme",
+    "choix de delta adapté",
+    "utilisation de la bilinéarité",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "application bilinéaire bornée",
+    "espace produit normé",
+    "norme d'un vecteur",
+    "point de continuité",
+    "constante de bornitude"
+  ],
+  "content_hash": "a5ff5bd5238755d8229c006088bafad15664e1312fb8830430ee5c2da1550e41",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:26.550Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "M8ER",
+  "source_path": "exo7/15-L3/M8ER.tex",
+  "summary": "L'exercice demande de montrer qu'un idéal propre J de l'espace C(X) de fonctions continues sur un espace topologique X a un ensemble de zéros commun non vide. Il explore les propriétés des zéros des fonctions de J et leur intersection, ainsi que la construction de fonctions dans J avec des propriétés spécifiques.",
+  "concepts": [
+    "idéal propre",
+    "fonction continue",
+    "ensemble des zéros",
+    "compacité",
+    "fermeture d'ensemble",
+    "topologie",
+    "convergence uniforme",
+    "adhérence d'un idéal"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "recouvrement par des voisinages",
+    "construction de fonctions auxiliaires",
+    "étude de la limite de suites de fonctions"
+  ],
+  "objects": [
+    "idéal de C(X)",
+    "ensemble des zéros d'une fonction",
+    "fermé de X",
+    "fonction positive",
+    "suite de fonctions"
+  ],
+  "content_hash": "b2ea0add90b623cdbc083e9830c7bd1236ff7af34c4b491a73f47b603f7ed889",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:37:55.150Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "0k5L",
+  "source_path": "exo7/2-L1/0k5L.tex",
+  "summary": "Montrer que l'intégrale de la fonction produit sin(λt)f(t) sur [a,b] tend vers 0 quand λ tend vers l'infini, d'abord pour f de classe C¹, puis pour f continue par morceaux.",
+  "concepts": [
+    "intégration par parties",
+    "limite d'intégrales",
+    "fonction continue par morceaux",
+    "fonction en escalier",
+    "linéarité de l'intégrale",
+    "additivité de l'intégrale",
+    "approximation de fonctions"
+  ],
+  "methods": [
+    "intégration par parties",
+    "approximation par des fonctions en escalier",
+    "estimation d'intégrales",
+    "utilisation de la linéarité de l'intégrale",
+    "raisonnement par densité"
+  ],
+  "objects": [
+    "fonction de classe C¹",
+    "fonction continue par morceaux",
+    "fonction en escalier",
+    "intégrale de sin(λt)f(t)",
+    "limite d'intégrale"
+  ],
+  "content_hash": "f315f225c3d674f7ce9b104f61c9c29334fe80091432a0ed0157f984a418a8ed",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:29:45.575Z"
+}

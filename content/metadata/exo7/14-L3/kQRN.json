@@ -1,0 +1,35 @@
+{
+  "uuid": "kQRN",
+  "source_path": "exo7/14-L3/kQRN.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble Ω est un ouvert de mesure nulle dans ℝⁿ, puis d'établir que S est un difféomorphisme entre Ω' et Ω. Ensuite, il s'agit de calculer le volume de la boule unité et l'aire de la sphère unité dans ℝ⁴ en utilisant les coordonnées sphériques.",
+  "concepts": [
+    "ensemble ouvert",
+    "mesure de Lebesgue",
+    "mesure nulle",
+    "difféomorphisme",
+    "coordonnées sphériques",
+    "intégrale multiple",
+    "changement de variable",
+    "volume en dimension supérieure",
+    "aire de la sphère"
+  ],
+  "methods": [
+    "détermination de l'image réciproque",
+    "calcul de la matrice jacobienne",
+    "vérification de la non-annulation du déterminant",
+    "formule du changement de variable",
+    "intégration par parties",
+    "décomposition en intégrales itérées"
+  ],
+  "objects": [
+    "ensemble Ω",
+    "application S",
+    "fonction borélienne positive",
+    "boule unité de ℝ⁴",
+    "sphère unité de ℝ⁴",
+    "mesure uniforme sur la sphère unité"
+  ],
+  "content_hash": "1881d35bca0328464d8ce7278f82c6136213ccff951704cf9cd3b0467c6b23e2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:56.007Z"
+}

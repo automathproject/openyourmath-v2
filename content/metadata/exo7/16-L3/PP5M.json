@@ -1,0 +1,28 @@
+{
+  "uuid": "PP5M",
+  "source_path": "exo7/16-L3/PP5M.tex",
+  "summary": "L'exercice demande d'énoncer le théorème de Rouché, puis de démontrer que tous les zéros d'un polynôme donné sont inclus dans un disque complexe de rayon 2, en appliquant rigoureusement ce théorème.",
+  "concepts": [
+    "théorème de Rouché",
+    "fonction holomorphe",
+    "zéro d'une fonction",
+    "multiplicité d'une racine",
+    "chemin fermé simple",
+    "ouvert étoilé",
+    "polynôme"
+  ],
+  "methods": [
+    "application du théorème de Rouché",
+    "estimation de module",
+    "vérification des hypothèses"
+  ],
+  "objects": [
+    "polynôme",
+    "disque complexe",
+    "fonction holomorphe",
+    "chemin fermé"
+  ],
+  "content_hash": "4c4dacc1cafbc24a9b09d64b1936b0af3ddec69fde3fac019c75393cdea6e319",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:25:27.320Z"
+}

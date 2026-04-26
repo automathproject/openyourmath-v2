@@ -1,0 +1,33 @@
+{
+  "uuid": "0Oum",
+  "source_path": "exo7/10-L3/0Oum.tex",
+  "summary": "L'exercice demande de démontrer que tout idéal d'un anneau quotient d'un anneau principal est principal, puis d'identifier tous les idéaux et les idéaux maximaux des anneaux ℤ/nℤ et ℚ[X]/(f).",
+  "concepts": [
+    "anneau principal",
+    "idéal principal",
+    "anneau quotient",
+    "idéal maximal",
+    "corps",
+    "division euclidienne dans ℤ",
+    "polynôme irréductible",
+    "théorème des restes chinois"
+  ],
+  "methods": [
+    "projection canonique",
+    "inversion d'image par un morphisme",
+    "calcul du pgcd",
+    "factorisation de polynômes",
+    "caractérisation des idéaux maximaux"
+  ],
+  "objects": [
+    "idéal de ℤ/nℤ",
+    "idéal de ℚ[X]/(f)",
+    "diviseur de n",
+    "facteur premier d'un polynôme",
+    "anneau quotient ℤ/nℤ",
+    "anneau quotient ℚ[X]/(f)"
+  ],
+  "content_hash": "2ba8ceebd5ba8f9d73f50073e1cf21b6d900941022d2b612ca96169a52c92244",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:06:51.301Z"
+}

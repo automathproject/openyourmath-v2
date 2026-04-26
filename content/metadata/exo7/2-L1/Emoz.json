@@ -1,0 +1,30 @@
+{
+  "uuid": "Emoz",
+  "source_path": "exo7/2-L1/Emoz.tex",
+  "summary": "L'exercice demande de montrer l'existence de solutions à l'équation de périodicité f(x+a)=f(x) pour certaines valeurs de a, puis d'en fournir un contre-exemple. Il s'applique ensuite à une situation concrète où un cycliste parcourt 20 km en une heure, pour démontrer l'existence ou non d'intervalles de temps spécifiques correspondant à des distances parcourues données.",
+  "concepts": [
+    "fonction continue",
+    "théorème des valeurs intermédiaires",
+    "périodicité",
+    "somme de fonctions",
+    "fonction définie par morceaux",
+    "équation fonctionnelle"
+  ],
+  "methods": [
+    "application du théorème des valeurs intermédiaires",
+    "construction de fonction témoin",
+    "analyse de la somme discrète",
+    "étude de la périodicité",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle de temps",
+    "distance parcourue",
+    "équation fonctionnelle",
+    "fonction périodique"
+  ],
+  "content_hash": "7c42b0ff563b8c8ed0716f2e28aea8738186838ab03965d8f91e2b89823421e7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:47.678Z"
+}

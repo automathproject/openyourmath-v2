@@ -1,0 +1,26 @@
+{
+  "uuid": "eTSf",
+  "source_path": "exo7/1-L1/eTSf.tex",
+  "summary": "Résoudre trois équations diophantiennes linéaires à deux inconnues entières. Les équations sont de la forme ax + by = c, avec des coefficients entiers.",
+  "concepts": [
+    "équation diophantienne",
+    "algorithme d'Euclide",
+    "pgcd",
+    "théorème de Bézout",
+    "divisibilité dans Z",
+    "solution entière"
+  ],
+  "methods": [
+    "algorithme d'Euclide étendu",
+    "recherche de solutions particulières",
+    "résolution d'équations linéaires"
+  ],
+  "objects": [
+    "équation linéaire à deux inconnues",
+    "entiers relatifs",
+    "pgcd de deux entiers"
+  ],
+  "content_hash": "90463a6620ecd7a7607b9ada6f0422cad77a2c46228badaef994ab9fbc0b6b4d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:36.109Z"
+}

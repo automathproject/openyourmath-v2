@@ -1,0 +1,29 @@
+{
+  "uuid": "mGAb",
+  "source_path": "exo7/2-L1/mGAb.tex",
+  "summary": "Calculer l'intégrale impropre de la fonction f(t) = (t-1)/ln(t) sur l'intervalle [0,1]. L'énoncé demande d'évaluer cette intégrale en exploitant ses propriétés de continuité et d'intégrabilité.",
+  "concepts": [
+    "intégrale impropre",
+    "continuité",
+    "prolongement par continuité",
+    "intégrabilité",
+    "changement de variable",
+    "inégalité d'intégrales",
+    "limite de fonction"
+  ],
+  "methods": [
+    "changement de variable",
+    "décomposition d'intégrale",
+    "encadrement d'intégrale",
+    "calcul de limite"
+  ],
+  "objects": [
+    "fonction de variable réelle",
+    "intégrale définie",
+    "intervalle borné",
+    "fonction composée"
+  ],
+  "content_hash": "eba539c5e92dcfc9c13564b813f4749af95c2820e49ce9883c6ee8ec964cf0b1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:34:55.382Z"
+}

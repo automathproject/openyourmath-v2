@@ -1,0 +1,25 @@
+{
+  "uuid": "oKnf",
+  "source_path": "exo7/2-L1/oKnf.tex",
+  "summary": "Calculer l'intégrale d'une fonction racine carrée sur un intervalle symétrique, en lien avec la géométrie du cercle.",
+  "concepts": [
+    "intégrale définie",
+    "aire sous une courbe",
+    "fonction paire",
+    "géométrie analytique",
+    "équation du cercle"
+  ],
+  "methods": [
+    "changement de variable trigonométrique",
+    "intégration par parties",
+    "symétrie de l'intégrande"
+  ],
+  "objects": [
+    "fonction $\\sqrt{R^2-x^2}$",
+    "intervalle symétrique $[-R, R]$",
+    "aire d'un demi-cercle"
+  ],
+  "content_hash": "505d686c9910336f5f5c2bc22df27369b014d49b05a68f894afb91b2ea25a535",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:35:21.438Z"
+}

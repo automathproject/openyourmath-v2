@@ -1,0 +1,28 @@
+{
+  "uuid": "ymr8",
+  "source_path": "exo7/10-L3/ymr8.tex",
+  "summary": "Résoudre deux systèmes de congruences linéaires à plusieurs équations, en exploitant la propriété d'entiers deux à deux premiers entre eux pour garantir l'unicité de la solution modulo le produit des moduli.",
+  "concepts": [
+    "système de congruences",
+    "théorème des restes chinois",
+    "pgcd",
+    "entiers premiers entre eux",
+    "arithmétique modulaire",
+    "unicité de la solution"
+  ],
+  "methods": [
+    "réduction successive des congruences",
+    "calcul de pgcd",
+    "vérification de la coprimalité",
+    "résolution par substitution"
+  ],
+  "objects": [
+    "système de congruences",
+    "entiers moduli",
+    "solution modulaire",
+    "produit de nombres premiers"
+  ],
+  "content_hash": "b2bf85e9e241419b332f13068f4890d332e387a00bf42aaed859fbc9026fa0ef",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:37.361Z"
+}

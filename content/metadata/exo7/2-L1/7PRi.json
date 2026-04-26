@@ -1,0 +1,27 @@
+{
+  "uuid": "7PRi",
+  "source_path": "exo7/2-L1/7PRi.tex",
+  "summary": "L'exercice demande de démontrer l'existence de points fixes ou de symétries pour des fonctions continues sous certaines conditions. La première question porte sur l'existence d'un point fixe pour une fonction continue dont l'image est incluse dans son domaine. La deuxième question traite de l'existence d'un point de symétrie pour une fonction continue sur [0,1] avec f(0)=f(1). La troisième question applique ces concepts à un problème de mouvement continu.",
+  "concepts": [
+    "continuité",
+    "point fixe",
+    "théorème des valeurs intermédiaires",
+    "fonction continue",
+    "symétrie fonctionnelle",
+    "théorème de Rolle"
+  ],
+  "methods": [
+    "construction d'une fonction auxiliaire",
+    "application du théorème des valeurs intermédiaires",
+    "analyse de symétrie"
+  ],
+  "objects": [
+    "fonction continue",
+    "point fixe",
+    "intervalle",
+    "fonction auxiliaire"
+  ],
+  "content_hash": "6588b4e94f4042b914fb0c23731a630f3692e6ca613f1937459cef6f7b7b2077",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:02.824Z"
+}

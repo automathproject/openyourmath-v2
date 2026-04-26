@@ -1,0 +1,30 @@
+{
+  "uuid": "Eh0e",
+  "source_path": "exo7/15-L3/Eh0e.tex",
+  "summary": "L'exercice demande de démontrer que l'image par une application propre d'un fermé de ℝⁿ est un fermé, puis d'établir l'équivalence entre la propriété d'être propre et la condition que la norme de f(x) tend vers l'infini quand la norme de x tend vers l'infini.",
+  "concepts": [
+    "application propre",
+    "fermé",
+    "compact",
+    "continuité",
+    "convergence de suites",
+    "caractérisation séquentielle de la fermeture",
+    "bornitude"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "extraction de sous-suite",
+    "utilisation de la caractérisation séquentielle des fermés",
+    "argument par contraposition"
+  ],
+  "objects": [
+    "application continue",
+    "fermé de ℝⁿ",
+    "suite convergente",
+    "boule fermée",
+    "image réciproque"
+  ],
+  "content_hash": "bde040131da467e0e7e9bdf22f6a6e1b20459e63d9034e962f037570ec2e64b1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:37:43.270Z"
+}

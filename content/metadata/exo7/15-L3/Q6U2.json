@@ -1,0 +1,28 @@
+{
+  "uuid": "Q6U2",
+  "source_path": "exo7/15-L3/Q6U2.tex",
+  "summary": "On considère un polynôme P à coefficients dans un corps K, avec des racines z₁, ..., zₙ. On suppose que P'(z) = 0 pour un z n'appartenant pas à l'ensemble des racines de P. Il faut montrer qu'il existe des réels λ₁(z), ..., λₙ(z) strictement positifs tels que la somme pondérée (z - zₖ) soit nulle.",
+  "concepts": [
+    "polynôme dérivé",
+    "racine d'un polynôme",
+    "théorème de Gauss-Lucas",
+    "conjugaison",
+    "corps commutatif",
+    "division euclidienne des polynômes"
+  ],
+  "methods": [
+    "manipulation algébrique",
+    "utilisation de la dérivée",
+    "conjugaison",
+    "théorème de Gauss-Lucas"
+  ],
+  "objects": [
+    "polynôme P",
+    "racines z₁, ..., zₙ",
+    "dérivée P'",
+    "somme pondérée"
+  ],
+  "content_hash": "d0d46e7c63322e4944b1bc24705ba00e7f64974b892909d4e10111ebdc42b2f0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:42:44.001Z"
+}

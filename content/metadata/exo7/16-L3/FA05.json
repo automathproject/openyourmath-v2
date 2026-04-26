@@ -1,0 +1,31 @@
+{
+  "uuid": "FA05",
+  "source_path": "exo7/16-L3/FA05.tex",
+  "summary": "L'exercice demande de fournir des exemples de fonctions complexes avec des propriétés spécifiques : une fonction indéfiniment dérivable mais non holomorphe, une fonction sans primitive sur un ouvert, un ouvert étoilé et un ouvert non étoilé. Les justifications reposent sur les équations de Cauchy-Riemann et les propriétés des intégrales sur des chemins fermés.",
+  "concepts": [
+    "fonction indéfiniment dérivable",
+    "fonction holomorphe",
+    "équations de Cauchy-Riemann",
+    "primitive d'une fonction complexe",
+    "ouvert étoilé",
+    "convexité",
+    "intégrale sur un chemin fermé",
+    "théorème de Cauchy"
+  ],
+  "methods": [
+    "vérification des équations de Cauchy-Riemann",
+    "calcul d'intégrale sur un cercle",
+    "paramétrisation d'un chemin",
+    "justification par convexité"
+  ],
+  "objects": [
+    "fonction complexe",
+    "ouvert de ℂ",
+    "primitive",
+    "chemin fermé",
+    "disque unité"
+  ],
+  "content_hash": "c8a47e7240cade9bb63c5e0d6ec7c132036465e416afe953bcbc39545798b597",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:24:00.318Z"
+}

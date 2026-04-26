@@ -1,0 +1,31 @@
+{
+  "uuid": "FZTC",
+  "source_path": "exo7/15-L3/FZTC.tex",
+  "summary": "L'exercice demande de démontrer que les ensembles ℤ et ℚ ne sont pas homéomorphes dans la topologie induite par ℝ, puis de construire des homéomorphismes entre certains intervalles. Enfin, il s'agit de montrer que deux ensembles en bijection ne sont pas nécessairement homéomorphes.",
+  "concepts": [
+    "topologie induite",
+    "homéomorphisme",
+    "densité",
+    "intervalle ouvert",
+    "bijection",
+    "continuité",
+    "topologie de ℝ"
+  ],
+  "methods": [
+    "construction explicite d'homéomorphisme",
+    "argument par densité",
+    "analyse des voisinages",
+    "comparaison des topologies"
+  ],
+  "objects": [
+    "ℤ",
+    "ℚ",
+    "ℝ",
+    "intervalle ouvert",
+    "ensemble dénombrable dense",
+    "fonction continue bijective"
+  ],
+  "content_hash": "7a4198f548a46e7dc2d4f3ae2ff72bf3fcfb5d8209e51a4a7292ffc0644dd49e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:48:50.382Z"
+}

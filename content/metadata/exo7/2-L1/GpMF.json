@@ -1,0 +1,29 @@
+{
+  "uuid": "GpMF",
+  "source_path": "exo7/2-L1/GpMF.tex",
+  "summary": "L'exercice demande de déterminer la forme générale d'une fonction continue f : ℝ → ℝ vérifiant f(x + y) = f(x)f(y) pour tout x, y ∈ ℝ, en exploitant ses propriétés de parité et de comportement sur ℕ.",
+  "concepts": [
+    "fonction exponentielle",
+    "fonction continue",
+    "fonction paire",
+    "équation fonctionnelle",
+    "densité des rationnels",
+    "récurrence",
+    "fonction multiplicative"
+  ],
+  "methods": [
+    "récurrence",
+    "densité des rationnels",
+    "analyse de la parité",
+    "résolution d'équation fonctionnelle"
+  ],
+  "objects": [
+    "fonction continue",
+    "fonction exponentielle",
+    "fonction multiplicative",
+    "équation fonctionnelle"
+  ],
+  "content_hash": "b2e4ed16855054db85e120c18f5d1664c27075d8554b9533dd7a686564c31761",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:55.054Z"
+}

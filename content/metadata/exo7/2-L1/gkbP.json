@@ -1,0 +1,29 @@
+{
+  "uuid": "gkbP",
+  "source_path": "exo7/2-L1/gkbP.tex",
+  "summary": "Calcul de quatre intégrales indéfinies en utilisant la technique du changement de variable. Les intégrales impliquent des fonctions trigonométriques, logarithmiques, exponentielles et des polynômes sous racine.",
+  "concepts": [
+    "changement de variable",
+    "intégrale indéfinie",
+    "fonction trigonométrique",
+    "fonction exponentielle",
+    "fonction logarithme",
+    "fonction racine carrée",
+    "primitive"
+  ],
+  "methods": [
+    "changement de variable",
+    "standardisation de forme",
+    "intégration directe",
+    "utilisation de la dérivée de arcsin"
+  ],
+  "objects": [
+    "intégrale de cosinus à puissance",
+    "intégrale de 1/(x ln x)",
+    "intégrale de 1/(3 + exp(-x))",
+    "intégrale de 1/sqrt(4x - x²)"
+  ],
+  "content_hash": "388dbdbb676d0737ceae65e7367ff5fb035df0228abe11227ff7df824ba233f6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:34:23.340Z"
+}

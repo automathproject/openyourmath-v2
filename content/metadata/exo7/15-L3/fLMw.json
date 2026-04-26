@@ -1,0 +1,29 @@
+{
+  "uuid": "fLMw",
+  "source_path": "exo7/15-L3/fLMw.tex",
+  "summary": "L'exercice demande de démontrer qu'une suite convergente issue de fermés décroissants a sa limite dans l'intersection de ces fermés, puis de vérifier que l'intersection de compacts décroissants non vides est non vide et possède une propriété d'absorption par les ouverts. Un exemple illustre le cas où l'intersection est vide.",
+  "concepts": [
+    "fermé",
+    "suite décroissante",
+    "convergence de suite",
+    "intersection d'ensembles",
+    "compact",
+    "propriété d'absorption",
+    "théorème de Bolzano-Weierstrass"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "extraction de sous-suite convergente",
+    "utilisation de la fermeture",
+    "argument de compacité"
+  ],
+  "objects": [
+    "suite de fermés",
+    "suite de compacts",
+    "intersection d'ensembles",
+    "ouvert contenant un compact"
+  ],
+  "content_hash": "e541c9457fbac91ba5e37ed7c7e5b0f1fac02c9665df38ee1d2ab51363300e10",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:38:21.240Z"
+}

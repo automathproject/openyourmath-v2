@@ -1,0 +1,30 @@
+{
+  "uuid": "gZ5r",
+  "source_path": "exo7/17-L3/gZ5r.tex",
+  "summary": "L'exercice porte sur les propriétés de la pseudo-inverse d'une matrice et ses relations avec les projections orthogonales. Il demande de démontrer des égalités impliquant la pseudo-inverse, notamment sa forme en décomposition spectrale et son rôle dans les projections sur les images de matrices.",
+  "concepts": [
+    "pseudo-inverse d'une matrice",
+    "décomposition en valeurs singulières",
+    "projection orthogonale",
+    "sous-espace vectoriel",
+    "matrice inversible",
+    "décomposition spectrale",
+    "orthogonalité"
+  ],
+  "methods": [
+    "décomposition en valeurs singulières",
+    "calcul de projection orthogonale",
+    "manipulation de matrices",
+    "utilisation de la décomposition spectrale"
+  ],
+  "objects": [
+    "matrice carrée régulière",
+    "pseudo-inverse",
+    "matrice de projection orthogonale",
+    "sous-espace image",
+    "sous-espace noyau"
+  ],
+  "content_hash": "16dc3b9114501c7f2e07d67a76edf9e00174d9296a2d8852a49e217174ea80b4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:16.160Z"
+}

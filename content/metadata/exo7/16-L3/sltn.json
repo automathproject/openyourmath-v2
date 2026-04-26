@@ -1,0 +1,25 @@
+{
+  "uuid": "sltn",
+  "source_path": "exo7/16-L3/sltn.tex",
+  "summary": "L'exercice demande de déterminer si une fonction réelle définie sur ℝ² privé de l'origine est harmonique. Il s'agit ensuite de vérifier l'existence d'une fonction holomorphe sur ℂ privé de 0 dont la partie réelle est cette fonction.",
+  "concepts": [
+    "fonction harmonique",
+    "équations de Cauchy-Riemann",
+    "fonction holomorphe",
+    "partie réelle d'une fonction holomorphe",
+    "analyse complexe"
+  ],
+  "methods": [
+    "vérification des équations de Cauchy-Riemann",
+    "coordonnées polaires",
+    "analyse de la partie réelle"
+  ],
+  "objects": [
+    "fonction réelle de deux variables",
+    "fonction holomorphe",
+    "partie réelle d'une fonction complexe"
+  ],
+  "content_hash": "7a5d2df6dadee10034b23a5ab603e0b292f0c440261f0f00b0aeae83d9fe6c2c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:28:48.967Z"
+}

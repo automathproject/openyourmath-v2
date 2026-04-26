@@ -1,0 +1,27 @@
+{
+  "uuid": "NA1y",
+  "source_path": "exo7/15-L3/NA1y.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés de fonctions continues ou uniformément continues. La première partie montre qu'une fonction continue sur [0,1] est 'presque lipschitzienne' avec un terme d'erreur ε. La seconde partie établit qu'une fonction uniformément continue sur ℝ vérifie une inégalité de type linéaire.",
+  "concepts": [
+    "continuité uniforme",
+    "continuité sur un intervalle",
+    "inégalité de Lipschitz",
+    "majoration de fonction",
+    "propriété locale/globale"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la continuité uniforme",
+    "construction de majoration",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle borné",
+    "constante de Lipschitz",
+    "inégalité fonctionnelle"
+  ],
+  "content_hash": "bff45e4ef5f787af16995060e9b942a3ef26979eacd8a2bc6c4fcd97397eee5a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:49:00.936Z"
+}

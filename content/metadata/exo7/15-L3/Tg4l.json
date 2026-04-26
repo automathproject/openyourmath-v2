@@ -1,0 +1,30 @@
+{
+  "uuid": "Tg4l",
+  "source_path": "exo7/15-L3/Tg4l.tex",
+  "summary": "L'exercice demande de démontrer trois propriétés fondamentales sur la connexité dans un espace topologique : la caractérisation par les applications continues à valeurs dans {0,1}, la connexité des parties intermédiaires entre une partie connexe et son adhérence, et la connexité de l'union d'une suite de parties connexes à intersection non vide.",
+  "concepts": [
+    "connexité",
+    "application continue",
+    "adhérence d'un ensemble",
+    "propriété topologique",
+    "union d'ensembles",
+    "suite d'ensembles",
+    "caractérisation des espaces connexes"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la caractérisation des espaces connexes",
+    "récurrence",
+    "passage à la limite"
+  ],
+  "objects": [
+    "espace topologique",
+    "partie connexe",
+    "application dans {0,1}",
+    "suite d'ensembles",
+    "adhérence d'un ensemble"
+  ],
+  "content_hash": "29f20629b18e1686f0b10115d1066f82a8de37129d59b7b70c3e1917d0a0f7e0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:42:53.446Z"
+}

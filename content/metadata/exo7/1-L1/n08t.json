@@ -1,0 +1,29 @@
+{
+  "uuid": "n08t",
+  "source_path": "exo7/1-L1/n08t.tex",
+  "summary": "Montrer qu'une application linéaire nilpotente d'indice p sur un espace vectoriel de dimension n est telle que p ≤ n. L'énoncé demande de prouver cette propriété en utilisant les concepts d'indice de nilpotence et de famille libre.",
+  "concepts": [
+    "application linéaire nilpotente",
+    "indice de nilpotence",
+    "famille libre",
+    "dimension d'un espace vectoriel",
+    "théorème de Cayley-Hamilton",
+    "polynôme minimal",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "preuve par l'absurde",
+    "utilisation de la définition de l'indice de nilpotence",
+    "construction d'une famille libre",
+    "application du théorème de Cayley-Hamilton"
+  ],
+  "objects": [
+    "application linéaire nilpotente",
+    "famille de vecteurs (f^k(x_0))",
+    "polynôme minimal",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "33d94cc590574bd1a9181a28a5b95a4f8465e58bdb4cc3f23841540c220e0959",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:13:15.329Z"
+}

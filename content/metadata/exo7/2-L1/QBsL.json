@@ -1,0 +1,25 @@
+{
+  "uuid": "QBsL",
+  "source_path": "exo7/2-L1/QBsL.tex",
+  "summary": "L'exercice demande de déterminer si une fonction continue vérifiant f(x) = f(x^(1/2^n)) pour tout n naturel et x > 0 est nécessairement constante sur [0, +∞[. Une contre-exemple est également fourni.",
+  "concepts": [
+    "continuité",
+    "limite de suite",
+    "fonction constante",
+    "fonction définie par morceaux",
+    "propriété de récurrence"
+  ],
+  "methods": [
+    "limite de suite",
+    "continuité en un point",
+    "construction de contre-exemple"
+  ],
+  "objects": [
+    "fonction réelle",
+    "suite numérique",
+    "fonction définie sur [0, +∞["
+  ],
+  "content_hash": "c68f3feb3bef2ee058f2d517c97167c7ab316f90d1616e787887113eafe7f01b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:20.734Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "8k2D",
+  "source_path": "amscc/8k2D.tex",
+  "summary": "L'exercice demande de calculer le polynôme caractéristique d'une matrice, d'en déduire ses valeurs propres et vecteurs propres, de prouver sa diagonalisabilité, puis d'exprimer sa puissance n-ième sous forme diagonalisée.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "vecteur propre",
+    "diagonalisation",
+    "matrice inversible",
+    "puissance de matrice"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "détermination des valeurs propres",
+    "recherche des vecteurs propres",
+    "diagonalisation par similarité"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrice diagonale"
+  ],
+  "content_hash": "bcb42e076354a2ec589018bf179ec6b51d4f88c1117507b5a6732135fb9aa648",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:10:20.697Z"
+}

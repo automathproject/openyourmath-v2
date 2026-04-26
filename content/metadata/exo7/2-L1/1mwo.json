@@ -1,0 +1,28 @@
+{
+  "uuid": "1mwo",
+  "source_path": "exo7/2-L1/1mwo.tex",
+  "summary": "L'exercice demande de montrer qu'une application φ définie sur un ensemble E de fonctions continues strictement positives n'est pas majorée, puis de prouver qu'elle est minorée, de trouver sa borne inférieure et de caractériser les fonctions de E qui l'atteignent.",
+  "concepts": [
+    "inégalité de Cauchy-Schwarz",
+    "fonction continue",
+    "fonction strictement positive",
+    "majoration",
+    "minoration",
+    "borne inférieure",
+    "fonction constante"
+  ],
+  "methods": [
+    "application de l'inégalité de Cauchy-Schwarz",
+    "recherche de borne inférieure",
+    "caractérisation des cas d'égalité"
+  ],
+  "objects": [
+    "application φ",
+    "fonction continue strictement positive",
+    "ensemble E de fonctions",
+    "borne inférieure"
+  ],
+  "content_hash": "b0e3222789df1f3c345f8ebe21f150bb5c9298e55f1c6dc044c36d1c46bdbc3e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:29:58.095Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "PVz2",
+  "source_path": "exo7/2-L1/PVz2.tex",
+  "summary": "L'exercice demande de justifier l'existence d'une fonction F(x) et de montrer qu'elle est négligeable devant 1/x à l'infini. Il s'agit ensuite de prouver l'égalité de deux intégrales impropres impliquant F(t) et tf(t).",
+  "concepts": [
+    "intégrale impropre",
+    "fonction négligeable",
+    "croissance comparée",
+    "convergence d'intégrale",
+    "primitive d'une fonction"
+  ],
+  "methods": [
+    "comparaison de croissances",
+    "intégration par parties",
+    "étude de la convergence d'intégrale"
+  ],
+  "objects": [
+    "fonction F(x)",
+    "intégrale impropre",
+    "fonction tf(t)"
+  ],
+  "content_hash": "fb566fdbd158499b225b63fc2c8fb97f00ae45b3cd5af1fd88b55260a3c8e48b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:32:50.781Z"
+}

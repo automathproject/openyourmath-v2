@@ -1,0 +1,27 @@
+{
+  "uuid": "tPb8",
+  "source_path": "amscc/tPb8.tex",
+  "summary": "L'exercice demande de modéliser un perceptron capable de classer des points bleus et rouges dans un plan, en trouvant une droite de séparation. Le contexte est une classification binaire représentée graphiquement.",
+  "concepts": [
+    "classification linéaire",
+    "perceptron",
+    "séparation de plans",
+    "fonction affine",
+    "espace vectoriel",
+    "droite affine"
+  ],
+  "methods": [
+    "détermination d'une équation de droite",
+    "analyse de séparation de classes",
+    "modélisation par fonction affine"
+  ],
+  "objects": [
+    "points dans le plan",
+    "droite de séparation",
+    "perceptron",
+    "fonction de classification"
+  ],
+  "content_hash": "695ee08741aa0bb68ba8ebccc462a8afb9ed20a25271acfd1e0b62255906cb0f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:02.088Z"
+}

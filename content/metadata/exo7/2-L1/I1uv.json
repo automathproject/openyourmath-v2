@@ -1,0 +1,30 @@
+{
+  "uuid": "I1uv",
+  "source_path": "exo7/2-L1/I1uv.tex",
+  "summary": "L'exercice demande de démontrer l'absence de limite de la fonction sin(1/x) en 0, puis la continuité de la fonction f(x) = x sin(1/x) en 0. Il s'appuie sur des propriétés de la fonction sinus et des inégalités impliquant des entiers.",
+  "concepts": [
+    "limite de fonction",
+    "continuité en un point",
+    "fonction sinus",
+    "inégalité",
+    "valeur absolue",
+    "densité des rationnels",
+    "propriété de l'oscillation"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la densité des rationnels",
+    "approximation par des entiers",
+    "définition de la continuité"
+  ],
+  "objects": [
+    "fonction sin(1/x)",
+    "fonction f(x) = x sin(1/x)",
+    "nombre réel ε",
+    "entier n",
+    "intervalle ]-ε,ε["
+  ],
+  "content_hash": "05dd3f9f5b5ada059b77aff55cceae8af6b166c6a7f6a68b9a014c7119f93ec0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:05.989Z"
+}

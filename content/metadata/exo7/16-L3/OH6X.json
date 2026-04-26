@@ -1,0 +1,29 @@
+{
+  "uuid": "OH6X",
+  "source_path": "exo7/16-L3/OH6X.tex",
+  "summary": "Trouver toutes les solutions complexes de deux équations : cosh(z) = 4i et z^i = -1. Le premier exercice porte sur la fonction cosinus hyperbolique, le second sur la puissance complexe.",
+  "concepts": [
+    "fonction cosinus hyperbolique",
+    "fonction exponentielle complexe",
+    "équation exponentielle",
+    "logarithme complexe",
+    "argument principal",
+    "périodicité des fonctions trigonométriques"
+  ],
+  "methods": [
+    "définition de la fonction cosinus hyperbolique",
+    "résolution d'équation quadratique",
+    "manipulation de l'exponentielle complexe",
+    "utilisation du logarithme complexe",
+    "recherche des solutions modulaires"
+  ],
+  "objects": [
+    "équation cosh(z) = 4i",
+    "équation z^i = -1",
+    "nombre complexe",
+    "solution complexe"
+  ],
+  "content_hash": "e52f94f6959e38bfc25d9f43311e1fd095c8692445e7b4f466bed4b65896b4df",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:25:21.298Z"
+}

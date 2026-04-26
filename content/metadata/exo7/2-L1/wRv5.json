@@ -1,0 +1,31 @@
+{
+  "uuid": "wRv5",
+  "source_path": "exo7/2-L1/wRv5.tex",
+  "summary": "Démontrer que la somme de deux fonctions Riemann-intégrables est Riemann-intégrable sur un intervalle borné, puis étendre ce résultat à la multiplication par un scalaire. Montrer également que l'intégrale préserve l'ordre des fonctions et que la limite uniforme de fonctions Riemann-intégrables est Riemann-intégrable.",
+  "concepts": [
+    "intégrabilité Riemann",
+    "somme de fonctions",
+    "multiplication par un scalaire",
+    "inégalités d'intégrales",
+    "limite uniforme",
+    "subdivision d'intervalle",
+    "somme inférieure et supérieure"
+  ],
+  "methods": [
+    "construction de subdivision fine",
+    "comparaison des sommes de Darboux",
+    "utilisation de l'inégalité triangulaire",
+    "passage à la limite uniforme",
+    "linéarité de l'intégrale"
+  ],
+  "objects": [
+    "fonctions Riemann-intégrables",
+    "subdivision d'intervalle",
+    "somme inférieure et supérieure",
+    "limite uniforme de fonctions",
+    "intégrale de fonctions"
+  ],
+  "content_hash": "74d3c92da15204a2fe9f0f93e0060dfb7521405a9dc13b3dbffcb30f1b10efe1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:36:33.195Z"
+}

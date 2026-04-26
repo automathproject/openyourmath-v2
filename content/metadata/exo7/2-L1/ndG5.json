@@ -1,0 +1,26 @@
+{
+  "uuid": "ndG5",
+  "source_path": "exo7/2-L1/ndG5.tex",
+  "summary": "Calculer une intégrale impropre de la forme $I_n = \frac{1}{n!} \\int_0^1 \frac{x^n \text{d}x}{1-x}$. L'énoncé demande d'exprimer cette intégrale en fonction de sommes et de factoriels.",
+  "concepts": [
+    "intégrale impropre",
+    "décomposition en éléments simples",
+    "factorielle",
+    "combinaisons",
+    "somme finie"
+  ],
+  "methods": [
+    "décomposition en éléments simples",
+    "intégration par parties",
+    "calcul de sommes combinatoires"
+  ],
+  "objects": [
+    "intégrale impropre",
+    "somme finie",
+    "factorielle",
+    "polynôme"
+  ],
+  "content_hash": "92e3ec6e79987103c13ad0d732a19cc65db2000793be9c57cf66c450e2e8ef01",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:35:12.118Z"
+}

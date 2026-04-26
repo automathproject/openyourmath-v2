@@ -1,0 +1,25 @@
+{
+  "uuid": "v530",
+  "source_path": "exo7/1-L1/v530.tex",
+  "summary": "L'exercice demande d'exprimer un entier naturel n comme somme de deux carrés d'entiers et d'étudier son reste dans la division euclidienne par 4, en analysant les cas de parité des entiers p et q.",
+  "concepts": [
+    "division euclidienne",
+    "parité",
+    "somme de carrés",
+    "arithmétique modulaire",
+    "restes de division"
+  ],
+  "methods": [
+    "distinction des cas de parité",
+    "calcul de restes",
+    "analyse modulaire"
+  ],
+  "objects": [
+    "entier naturel",
+    "somme de carrés",
+    "reste de division"
+  ],
+  "content_hash": "be372d306341a1c9f51c099d9974ea08117a56328e776ebf3f84959bacbc117b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:23.048Z"
+}

@@ -1,0 +1,22 @@
+{
+  "uuid": "2Axr",
+  "source_path": "exo7/2-L1/2Axr.tex",
+  "summary": "L'exercice demande de démontrer la continuité d'une fonction en un point particulier (x=0), en exploitant la limite d'une expression rationnelle impliquant la fonction sinus.",
+  "concepts": [
+    "continuité d'une fonction",
+    "limite de fonction",
+    "quotient de fonctions continues",
+    "limite de sin(x)/x"
+  ],
+  "methods": [
+    "évaluation de la limite en un point",
+    "utilisation de la définition de la continuité"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "point de discontinuité potentiel"
+  ],
+  "content_hash": "3d67521028dbab7c887c8110e019b0e116f5ae1d01d1b762d8c603f041096659",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:43:30.612Z"
+}

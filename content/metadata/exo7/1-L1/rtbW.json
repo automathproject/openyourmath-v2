@@ -1,0 +1,25 @@
+{
+  "uuid": "rtbW",
+  "source_path": "exo7/1-L1/rtbW.tex",
+  "summary": "L'exercice demande de déterminer pour quels entiers naturels n l'entier 7^n + 1 est divisible par 8, en utilisant les propriétés de la congruence modulo 8.",
+  "concepts": [
+    "divisibilité dans Z",
+    "congruence modulo n",
+    "division euclidienne",
+    "arithmétique modulaire",
+    "propriétés des puissances"
+  ],
+  "methods": [
+    "calcul de congruence",
+    "utilisation de la relation d'équivalence",
+    "analyse de parité"
+  ],
+  "objects": [
+    "entier naturel",
+    "puissance d'entier",
+    "reste de division euclidienne"
+  ],
+  "content_hash": "f26ecb7c6099e3318b5cfb2d812c93a3d63ecf49c9463714676b796fe8790435",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:12.350Z"
+}

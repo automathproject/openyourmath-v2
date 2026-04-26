@@ -1,0 +1,27 @@
+{
+  "uuid": "tplj",
+  "source_path": "exo7/1-L1/tplj.tex",
+  "summary": "L'exercice demande de déterminer une base du noyau et une base de l'image d'une application linéaire A. L'énoncé ne précise pas la dimension de l'espace ni la forme explicite de A.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "base d'un sous-espace vectoriel",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "détermination d'une base par résolution d'un système",
+    "utilisation du théorème du rang",
+    "calcul de la dimension du noyau et de l'image"
+  ],
+  "objects": [
+    "application linéaire A",
+    "noyau de A",
+    "image de A",
+    "bases de sous-espaces"
+  ],
+  "content_hash": "ca5a4844a38c34a06a8775dcb3b6975d6340815f275de57941ec539595729850",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:07.548Z"
+}

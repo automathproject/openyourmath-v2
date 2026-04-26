@@ -1,0 +1,30 @@
+{
+  "uuid": "UdQo",
+  "source_path": "exo7/15-L3/UdQo.tex",
+  "summary": "Montrer que l'application linéaire bornée f vérifie la relation f(λx) = λf(x) pour tout λ ∈ ℝ et x ∈ E, en procédant par étapes : d'abord pour λ ∈ ℕ, puis ℤ, ℚ, et enfin ℝ.",
+  "concepts": [
+    "application linéaire",
+    "bornitude",
+    "continuité",
+    "densité des rationnels dans les réels",
+    "propriété de linéarité",
+    "récurrence",
+    "limite de suite"
+  ],
+  "methods": [
+    "récurrence",
+    "densité des rationnels",
+    "passage à la limite",
+    "utilisation de la bornitude",
+    "décomposition en cas rationnel"
+  ],
+  "objects": [
+    "application linéaire bornée",
+    "suite de rationnels",
+    "boule unité",
+    "élément de l'espace vectoriel"
+  ],
+  "content_hash": "bc2354443e5575e58a61181807948d25170df646c7603ccfda247ef850a7a20e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:15.245Z"
+}

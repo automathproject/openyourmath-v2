@@ -1,0 +1,31 @@
+{
+  "uuid": "sw3M",
+  "source_path": "exo7/2-L1/sw3M.tex",
+  "summary": "L'exercice demande de montrer l'existence de la fonction g(t) pour tout t>0 et d'établir sa limite lorsque t tend vers 0+, en utilisant des propriétés d'intégrales impropres. Il explore différentes hypothèses sur la fonction f (monotone, C^1, C^2) et leurs implications sur le comportement de g(t).",
+  "concepts": [
+    "intégrale impropre",
+    "convergence",
+    "fonction monotone",
+    "fonction de classe C^1",
+    "fonction de classe C^2",
+    "développement asymptotique",
+    "théorème de convergence dominée"
+  ],
+  "methods": [
+    "encadrement d'intégrale",
+    "décomposition en série",
+    "changement de variable",
+    "intégration par parties",
+    "développement de Taylor"
+  ],
+  "objects": [
+    "fonction f",
+    "fonction g(t)",
+    "intégrale de 0 à +∞",
+    "partie fractionnaire",
+    "dérivées successives"
+  ],
+  "content_hash": "53f196e1c3fea371c1b7c951ffc8980871bbe765333c6c3c50059f808fff7a21",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:35:52.032Z"
+}

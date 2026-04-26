@@ -1,0 +1,28 @@
+{
+  "uuid": "9pZ3",
+  "source_path": "exo7/15-L3/9pZ3.tex",
+  "summary": "L'exercice demande de démontrer l'uniforme continuité d'une fonction f sur ℝ, puis d'établir que l'ensemble O_f est à la fois compact et connexe en utilisant une application spécifique.",
+  "concepts": [
+    "continuité uniforme",
+    "compact",
+    "connexe",
+    "application continue",
+    "topologie de ℝ",
+    "prolongement par continuité"
+  ],
+  "methods": [
+    "définition de continuité uniforme",
+    "critère de compacité",
+    "théorème de prolongement",
+    "construction d'application auxiliaire"
+  ],
+  "objects": [
+    "fonction f",
+    "ensemble O_f",
+    "application a → f_a",
+    "ℝ"
+  ],
+  "content_hash": "df89a2b6454deca240c9593ba42cbac84485ab4e1f9076304bb5f618a39979f1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:48:36.866Z"
+}

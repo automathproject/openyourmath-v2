@@ -1,0 +1,30 @@
+{
+  "uuid": "w9IN",
+  "source_path": "exo7/10-L3/w9IN.tex",
+  "summary": "On considère un entier a premier avec p. Si l'équation x² ≡ a mod p admet une solution, on doit montrer que a^{(p-1)/2} ≡ 1 mod p. Ensuite, on établit une condition nécessaire et suffisante pour que x² ≡ -1 mod p ait une solution, en fonction de p modulo 4.",
+  "concepts": [
+    "congruence quadratique",
+    "symbole de Legendre",
+    "petit théorème de Fermat",
+    "corps finis",
+    "racine primitive",
+    "théorème d'Euler",
+    "arithmétique modulaire",
+    "critère de résolubilité"
+  ],
+  "methods": [
+    "manipulation de congruences",
+    "utilisation du petit théorème de Fermat",
+    "analyse des puissances modulo p",
+    "décomposition en facteurs premiers"
+  ],
+  "objects": [
+    "entier a",
+    "nombre premier p",
+    "congruence quadratique",
+    "puissance modulo p"
+  ],
+  "content_hash": "5142e946b60afe730af5bac50568747e338809a621ac6abf3526120b50dadfb1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:29.811Z"
+}

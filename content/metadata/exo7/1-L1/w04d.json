@@ -1,0 +1,27 @@
+{
+  "uuid": "w04d",
+  "source_path": "exo7/1-L1/w04d.tex",
+  "summary": "L'exercice demande de déterminer une base de l'espace vectoriel ℂ, puis de montrer que tout endomorphisme de ℂ peut s'exprimer sous la forme f(z) = az + bz̅ avec a, b ∈ ℂ, et enfin de trouver les conditions nécessaires et suffisantes sur a et b pour que f soit bijectif.",
+  "concepts": [
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "endomorphisme",
+    "conjugaison complexe",
+    "bijectivité",
+    "norme complexe"
+  ],
+  "methods": [
+    "expression linéaire",
+    "analyse de la bijectivité",
+    "calcul de norme"
+  ],
+  "objects": [
+    "espace vectoriel ℂ",
+    "endomorphisme de ℂ",
+    "fonction linéaire complexe",
+    "conjugué complexe"
+  ],
+  "content_hash": "b74e4f61b35e767f65cf580cbefed98a657b089d3ade1cc6e4567668e785d96e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:21.554Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "dolf",
+  "source_path": "exo7/10-L3/dolf.tex",
+  "summary": "L'exercice demande de démontrer deux inclusions entre idéaux dans un anneau : d'abord que le produit de deux idéaux est inclus dans leur intersection, puis que le produit de leur somme et de leur intersection est inclus dans le produit des idéaux. Ensuite, il s'agit de montrer l'égalité entre l'intersection et le produit de deux idéaux étrangers.",
+  "concepts": [
+    "idéal",
+    "anneau",
+    "intersection d'idéaux",
+    "somme d'idéaux",
+    "produit d'idéaux",
+    "idéaux étrangers"
+  ],
+  "methods": [
+    "démonstration par inclusion",
+    "utilisation des propriétés des idéaux",
+    "manipulation des relations entre idéaux"
+  ],
+  "objects": [
+    "idéaux I et J",
+    "somme I+J",
+    "intersection I∩J",
+    "produit I·J"
+  ],
+  "content_hash": "58eab3f11e67610b2fa3584bde0b038a8f5ac730d176d77635af0be872783420",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:08:24.203Z"
+}

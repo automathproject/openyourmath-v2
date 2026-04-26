@@ -1,0 +1,25 @@
+{
+  "uuid": "wya7",
+  "source_path": "exo7/1-L1/wya7.tex",
+  "summary": "L'exercice demande de vérifier la validité de deux divisions euclidiennes en s'assurant que le reste est bien plus petit que le diviseur.",
+  "concepts": [
+    "division euclidienne",
+    "règle du reste",
+    "divisibilité dans Z",
+    "algorithme d'Euclide",
+    "inégalités arithmétiques"
+  ],
+  "methods": [
+    "vérification de la condition de reste",
+    "calcul de division euclidienne"
+  ],
+  "objects": [
+    "entiers naturels",
+    "diviseur",
+    "quotient",
+    "reste"
+  ],
+  "content_hash": "65e0d7193c823627668a4b08e4f6dcb3adbbca5c96b0e9ab907b402926646860",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:40.988Z"
+}

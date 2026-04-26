@@ -1,0 +1,25 @@
+{
+  "uuid": "SGe5",
+  "source_path": "exo7/2-L1/SGe5.tex",
+  "summary": "L'exercice demande de démontrer que si une fonction f est linéaire sur les rationnels (f(x) = ax pour tout x rationnel), alors elle est linéaire sur les réels sous deux hypothèses distinctes : la continuité de f ou la bornitude de f au voisinage de 0.",
+  "concepts": [
+    "densité des rationnels dans les réels",
+    "continuité",
+    "bornitude",
+    "fonction linéaire",
+    "prolongement de fonction"
+  ],
+  "methods": [
+    "raisonnement par densité",
+    "utilisation de la continuité",
+    "limite au voisinage d'un point"
+  ],
+  "objects": [
+    "fonction réelle",
+    "ensemble des rationnels",
+    "ensemble des réels"
+  ],
+  "content_hash": "a099fba316090cb06a4b5267ba2544a5e40f827ee56ca8d0662a44d09914b804",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:34.130Z"
+}

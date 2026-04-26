@@ -1,0 +1,29 @@
+{
+  "uuid": "8ufJ",
+  "source_path": "exo7/2-L1/8ufJ.tex",
+  "summary": "L'exercice demande de montrer que le produit xf(x) tend vers 0 quand x tend vers l'infini, puis d'étudier l'existence et le calcul d'une intégrale impropre impliquant une fonction f. La fonction f est supposée continue, positive, décroissante et intégrable sur [1, +∞[.",
+  "concepts": [
+    "intégrale impropre",
+    "fonction continue",
+    "fonction décroissante",
+    "fonction intégrable",
+    "limite de fonction",
+    "comparaison intégrale",
+    "intégrabilité"
+  ],
+  "methods": [
+    "comparaison par encadrement",
+    "intégration par parties",
+    "changement de variable",
+    "passage à la limite sous le signe intégral"
+  ],
+  "objects": [
+    "fonction f",
+    "intégrale impropre",
+    "produit xf(x)",
+    "différence f(x+1) - f(x)"
+  ],
+  "content_hash": "fe508b65a35c1859d7588d612ec4b9793e54ce237c6e273a9e2da10f99c3d37e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:30:49.756Z"
+}

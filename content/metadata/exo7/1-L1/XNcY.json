@@ -1,0 +1,25 @@
+{
+  "uuid": "XNcY",
+  "source_path": "exo7/1-L1/XNcY.tex",
+  "summary": "L'exercice demande de démontrer qu'un nombre de Mersenne Mn est premier implique que n est premier, puis de vérifier que M11 n'est pas premier.",
+  "concepts": [
+    "nombre premier",
+    "nombre de Mersenne",
+    "divisibilité dans Z",
+    "théorème de Gauss",
+    "factorisation en nombres premiers"
+  ],
+  "methods": [
+    "factorisation",
+    "vérification de primalité",
+    "utilisation des propriétés des nombres de Mersenne"
+  ],
+  "objects": [
+    "nombre de Mersenne",
+    "nombre premier",
+    "diviseurs"
+  ],
+  "content_hash": "f1dbb414e6300b5a03fd5ebb54c1e08c9dbe77a4ef0ec8900b9f73b9053c415c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:05.134Z"
+}

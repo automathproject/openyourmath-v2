@@ -1,0 +1,26 @@
+{
+  "uuid": "qZCd",
+  "source_path": "exo7/16-L3/qZCd.tex",
+  "summary": "L'exercice demande d'étudier l'image par une homographie de deux cercles du plan complexe, en déterminant si ces images sont des cercles ou des droites, et en calculant leurs centres et rayons lorsque c'est possible.",
+  "concepts": [
+    "homographie",
+    "symétrie par rapport à l'axe réel",
+    "conjugaison complexe",
+    "image d'un cercle par une homographie",
+    "point à l'infini"
+  ],
+  "methods": [
+    "calcul d'image de points spécifiques",
+    "vérification de la symétrie",
+    "détermination de l'image d'un cercle"
+  ],
+  "objects": [
+    "homographie",
+    "cercles du plan complexe",
+    "droites du plan complexe",
+    "points complexes"
+  ],
+  "content_hash": "4d00e84b16aead9d39029801439bd4079df65135a2a4c3aab9a37a0cea2e9451",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:28:37.868Z"
+}

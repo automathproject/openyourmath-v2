@@ -1,0 +1,28 @@
+{
+  "uuid": "YEmN",
+  "source_path": "exo7/1-L1/YEmN.tex",
+  "summary": "L'exercice demande de montrer qu'un diviseur premier p ≥ 3 de n² + 1 est congru à 1 modulo 4, puis d'en déduire l'infinitude des nombres premiers de la forme 4k + 1.",
+  "concepts": [
+    "nombres premiers",
+    "congruences",
+    "théorème des restes chinois",
+    "symbole de Legendre",
+    "théorème d'Euclide sur l'infinitude des nombres premiers",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "manipulation de congruences",
+    "utilisation du symbole de Legendre",
+    "raisonnement par l'absurde",
+    "généralisation par densité"
+  ],
+  "objects": [
+    "nombre premier",
+    "congruence modulaire",
+    "expression quadratique",
+    "forme arithmétique 4k+1"
+  ],
+  "content_hash": "009de5b7323729e0bcd34ee8f71cf1b7ceea9586ef4340afa1e7ce8c11045d07",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:10.061Z"
+}

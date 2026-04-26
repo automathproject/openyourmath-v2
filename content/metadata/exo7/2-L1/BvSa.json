@@ -1,0 +1,29 @@
+{
+  "uuid": "BvSa",
+  "source_path": "exo7/2-L1/BvSa.tex",
+  "summary": "L'exercice demande de déterminer toutes les fonctions continues sur [0,1] vérifiant |f(y) - f(x)| ≥ |y - x| pour tout x, y ∈ [0,1]. Il montre que les seules solutions sont l'identité et la fonction 1 - identité.",
+  "concepts": [
+    "continuité",
+    "inégalité triangulaire",
+    "fonction identité",
+    "fonction affine",
+    "valeur absolue",
+    "propriété contractante"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "démonstration par cas",
+    "utilisation de l'inégalité des accroissements finis",
+    "construction d'une fonction auxiliaire"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle [0,1]",
+    "valeur absolue",
+    "fonction identité",
+    "fonction affine"
+  ],
+  "content_hash": "d654be86fd7c113938a2e0af621fe0cab0e6467803d901c4aa949da698b00cf8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:22.855Z"
+}

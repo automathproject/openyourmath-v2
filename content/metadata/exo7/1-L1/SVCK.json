@@ -1,0 +1,29 @@
+{
+  "uuid": "SVCK",
+  "source_path": "exo7/1-L1/SVCK.tex",
+  "summary": "L'exercice demande de déterminer les restes modulo 8 des carrés de nombres impairs et pairs, puis d'étudier les propriétés modulo 8 de sommes de carrés et de produits de trois entiers impairs. Il conclut en prouvant que ces sommes ne peuvent être des carrés parfaits.",
+  "concepts": [
+    "division euclidienne",
+    "congruences",
+    "parité",
+    "carrés parfaits",
+    "arithmétique modulaire",
+    "raisonnement par l'absurde"
+  ],
+  "methods": [
+    "développement d'expression algébrique",
+    "discussion de cas",
+    "utilisation de congruences",
+    "raisonnement par contradiction"
+  ],
+  "objects": [
+    "entiers impairs",
+    "entiers pairs",
+    "somme de carrés",
+    "produit de trois entiers",
+    "restes modulo 8"
+  ],
+  "content_hash": "49118baed4d0458687883416e07192422676993242ed7723d78c77b4b807934a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:19:44.246Z"
+}

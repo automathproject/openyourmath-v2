@@ -1,0 +1,26 @@
+{
+  "uuid": "GHCq",
+  "source_path": "exo7/2-L1/GHCq.tex",
+  "summary": "L'exercice demande de montrer la monotonie de deux fonctions g et h, puis d'utiliser la continuité uniforme d'une fonction f pour prouver l'égalité de leurs limites en 0+. Enfin, il faut en déduire la convergence de f vers cette limite commune.",
+  "concepts": [
+    "continuité uniforme",
+    "limite de fonction",
+    "monotonie",
+    "fonction réelle",
+    "convergence"
+  ],
+  "methods": [
+    "étude de monotonie",
+    "utilisation de la continuité uniforme",
+    "calcul de limites"
+  ],
+  "objects": [
+    "fonction g",
+    "fonction h",
+    "fonction f",
+    "limites en 0+"
+  ],
+  "content_hash": "84dbcda72c1f569e2d17a74dd3ee5a93ab4aaaba347595f446f8b5893312f048",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:52.566Z"
+}

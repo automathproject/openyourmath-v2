@@ -1,0 +1,31 @@
+{
+  "uuid": "ReNe",
+  "source_path": "amscc/ReNe.tex",
+  "summary": "L'exercice demande d'établir les formules de propagation avant (forward pass) pour les sorties intermédiaires et finale d'un réseau de neurones à une couche cachée, puis d'appliquer l'algorithme de backpropagation pour calculer les dérivées partielles de l'erreur et les mises à jour des poids.",
+  "concepts": [
+    "réseau de neurones",
+    "fonction d'activation sigmoïde",
+    "algorithme de backpropagation",
+    "gradient",
+    "rétropropagation du gradient",
+    "fonction d'erreur quadratique",
+    "optimisation par descente de gradient"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "règle de la chaîne",
+    "propagation avant",
+    "propagation arrière",
+    "calcul de gradient local"
+  ],
+  "objects": [
+    "fonction d'erreur",
+    "poids synaptiques",
+    "sorties intermédiaires",
+    "sortie finale",
+    "neurones cachés"
+  ],
+  "content_hash": "1a2b45118ef0c07836b01fd0225335e626d7aa4725ffcc5c10b991cc2bb923ed",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:25:33.707Z"
+}

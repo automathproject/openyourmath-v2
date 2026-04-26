@@ -1,0 +1,31 @@
+{
+  "uuid": "x1a9",
+  "source_path": "exo7/14-L3/x1a9.tex",
+  "summary": "L'exercice demande de démontrer la continuité en moyenne p-ième des translations dans l'espace L^p(R^n) pour 1 ≤ p < ∞, en utilisant d'abord le cas des fonctions continues à support compact, puis en étendant par densité. La dernière question aborde le cas p = ∞.",
+  "concepts": [
+    "continuité uniforme",
+    "densité dans L^p",
+    "théorème de convergence dominée",
+    "translation d'une fonction",
+    "norme L^p",
+    "support compact",
+    "convergence en norme"
+  ],
+  "methods": [
+    "approximation par des fonctions continues",
+    "utilisation de la densité",
+    "interversion limite-intégrale",
+    "majoration par une fonction intégrable",
+    "passage à la limite dans L^p"
+  ],
+  "objects": [
+    "fonction continue à support compact",
+    "translation τ_hf",
+    "fonction indicatrice",
+    "norme L^p",
+    "boule de rayon M"
+  ],
+  "content_hash": "719fa65449f2b4c96dafc3a5932b084aad2163d2ab67c7c22c1fc3e1e3ca10c0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:29:19.439Z"
+}

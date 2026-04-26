@@ -1,0 +1,28 @@
+{
+  "uuid": "LS7q",
+  "source_path": "exo7/4-L2/LS7q.tex",
+  "summary": "L'exercice demande de prouver une congruence modulo 2^n pour un entier impair a et n ≥ 3, puis d'étudier la structure cyclique du groupe multiplicatif (Z/2^nZ)*.",
+  "concepts": [
+    "théorème des restes chinois",
+    "groupe multiplicatif d'un anneau",
+    "ordre d'un élément",
+    "congruence modulo 2^n",
+    "structure cyclique",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "récurrence",
+    "levée d'exposant",
+    "utilisation de l'ordre d'un élément",
+    "analyse de la structure de groupe"
+  ],
+  "objects": [
+    "entier impair",
+    "groupe (Z/2^nZ)*",
+    "congruence a^(2^{n-2}) ≡ 1 mod 2^n",
+    "élément générateur"
+  ],
+  "content_hash": "67cf7d410bfe0fe909ce8baf667a910c180105c8b1be3f59d407453e9bf445e4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:59.728Z"
+}

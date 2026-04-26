@@ -1,0 +1,27 @@
+{
+  "uuid": "GBCz",
+  "source_path": "exo7/4-L2/GBCz.tex",
+  "summary": "L'exercice demande de calculer les puissances successives d'un entier de la forme $u_n = 2^{n+1} + 1$ et d'exprimer les résultats en base 2, puis de combiner ces puissances pour obtenir une expression simplifiée.",
+  "concepts": [
+    "développement binomial",
+    "représentation binaire",
+    "calcul algébrique",
+    "simplification d'expressions",
+    "puissances de 2"
+  ],
+  "methods": [
+    "développement d'expression polynomiale",
+    "factorisation",
+    "réduction d'expressions",
+    "analyse de motifs binaires"
+  ],
+  "objects": [
+    "entier naturel",
+    "puissance entière",
+    "expression polynomiale",
+    "représentation binaire"
+  ],
+  "content_hash": "902e3a2afd5aabd9184e9578760b86a41d60672ba7690a65740ada936ac1aa99",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:56.779Z"
+}

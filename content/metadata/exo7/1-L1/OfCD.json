@@ -1,0 +1,27 @@
+{
+  "uuid": "OfCD",
+  "source_path": "exo7/1-L1/OfCD.tex",
+  "summary": "L'exercice demande de montrer que l'image d'une application linéaire p définie sur un groupe G est égale à un sous-espace vectoriel F invariant par G, en utilisant les propriétés de p.",
+  "concepts": [
+    "application linéaire",
+    "projecteur",
+    "sous-espace vectoriel",
+    "trace d'une matrice",
+    "rang d'une application linéaire",
+    "invariance par groupe"
+  ],
+  "methods": [
+    "calcul de trace",
+    "démonstration par inclusion réciproque",
+    "utilisation des propriétés des projecteurs"
+  ],
+  "objects": [
+    "application linéaire p",
+    "sous-espace vectoriel F",
+    "groupe G",
+    "matrice de p"
+  ],
+  "content_hash": "8cdc969c39cf72a561ebada8fdace4637d7fe7e1846db651bc1551e2a9b239d2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:11:24.116Z"
+}

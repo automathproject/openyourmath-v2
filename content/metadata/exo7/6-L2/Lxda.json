@@ -1,0 +1,29 @@
+{
+  "uuid": "Lxda",
+  "source_path": "exo7/6-L2/Lxda.tex",
+  "summary": "L'exercice demande d'étudier l'ensemble des points $(x, y)$ tels que $P(x) = P(y)$ où $P$ est un polynôme cubique donné. Il s'agit de déterminer la nature géométrique de cet ensemble, en particulier de montrer qu'il s'agit d'une ellipse sous certaines conditions.",
+  "concepts": [
+    "équation cartésienne de conique",
+    "changement de repère",
+    "forme canonique d'ellipse",
+    "excentricité d'une ellipse",
+    "discriminant de conique",
+    "transformation affine"
+  ],
+  "methods": [
+    "factorisation de polynôme",
+    "changement de variable",
+    "réduction de forme quadratique",
+    "calcul d'excentricité"
+  ],
+  "objects": [
+    "polynôme cubique",
+    "courbe algébrique",
+    "ellipse",
+    "droite",
+    "repère orthonormé"
+  ],
+  "content_hash": "92a6b9d20fd49188c917912e557b63aaf70426810eda45d765951b8eb84fba92",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:39:54.131Z"
+}

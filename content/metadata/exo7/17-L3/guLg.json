@@ -1,0 +1,29 @@
+{
+  "uuid": "guLg",
+  "source_path": "exo7/17-L3/guLg.tex",
+  "summary": "L'exercice porte sur les opérations élémentaires de lignes et colonnes sur des matrices, notamment les matrices de cisaillement (shearing matrices) et leur décomposition. Il demande d'étudier les effets de ces opérations, de représenter et décomposer certaines matrices, et de résoudre un système triangulaire inférieur.",
+  "concepts": [
+    "matrice de cisaillement",
+    "opération élémentaire de ligne",
+    "opération élémentaire de colonne",
+    "matrice triangulaire inférieure",
+    "inverse d'une matrice",
+    "décomposition matricielle",
+    "système linéaire triangulaire"
+  ],
+  "methods": [
+    "décomposition en produit de matrices élémentaires",
+    "calcul de l'inverse d'une matrice",
+    "résolution d'un système triangulaire inférieur",
+    "algorithme de substitution avant"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice de cisaillement",
+    "système linéaire",
+    "tableau de stockage"
+  ],
+  "content_hash": "33200814d3cb9a918a51a3bbc7c19aade4047febb3e52060e3949c1eb4a44373",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:22.584Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "glsm",
+  "source_path": "exo7/10-L3/glsm.tex",
+  "summary": "L'exercice demande de résoudre deux équations linéaires dans des structures algébriques différentes : une équation dans un corps et un système de congruences dans l'anneau ℤ/10ℤ.",
+  "concepts": [
+    "corps",
+    "anneau",
+    "inversibilité",
+    "congruence",
+    "système d'équations linéaires",
+    "division euclidienne"
+  ],
+  "methods": [
+    "inversion d'élément",
+    "résolution de congruences",
+    "simplification d'équation"
+  ],
+  "objects": [
+    "équation linéaire",
+    "congruence",
+    "élément inversible",
+    "système de congruences"
+  ],
+  "content_hash": "c57011827edacca861771bf2c7e0697c9cdead96991b5f341cdfbfb75d321773",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:08:42.952Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "CYOc",
+  "source_path": "exo7/1-L1/CYOc.tex",
+  "summary": "Calcul du PGCD de deux entiers naturels à l'aide de l'algorithme d'Euclide, en appliquant des divisions successives.",
+  "concepts": [
+    "algorithme d'Euclide",
+    "division euclidienne",
+    "PGCD",
+    "arithmétique dans Z",
+    "propriétés des entiers naturels"
+  ],
+  "methods": [
+    "division euclidienne",
+    "algorithme des restes successifs"
+  ],
+  "objects": [
+    "entiers naturels",
+    "couples d'entiers",
+    "suite de divisions"
+  ],
+  "content_hash": "ca2b43a21f39b2445ec2fd18da96ed37bf9678498f86abd13e7485afe11d7fc8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:44.034Z"
+}

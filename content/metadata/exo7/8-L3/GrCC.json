@@ -1,0 +1,31 @@
+{
+  "uuid": "GrCC",
+  "source_path": "exo7/8-L3/GrCC.tex",
+  "summary": "L'exercice demande de démontrer que la fonction de distance sur un groupe via son graphe de Cayley est bien une distance, d'en étudier les propriétés et d'en déduire des résultats sur l'action isométrique du groupe. Il aborde aussi la construction du graphe de Cayley d'un groupe libre et la preuve qu'il s'agit d'un arbre.",
+  "concepts": [
+    "action de groupe",
+    "graphe de Cayley",
+    "distance dans un groupe",
+    "groupe libre",
+    "arbre",
+    "isométrie",
+    "graphe sans lacet"
+  ],
+  "methods": [
+    "définition de distance",
+    "action isométrique",
+    "construction de graphe de Cayley",
+    "preuve par infimum",
+    "démonstration de propriété d'arbre"
+  ],
+  "objects": [
+    "graphe de Cayley",
+    "groupe libre",
+    "fonction de distance",
+    "sommets du graphe",
+    "chemin minimal"
+  ],
+  "content_hash": "a1bb3075a9a4f5a6d2485aa882dc02c32b1e81af69fb53dd679d401fbbefd2df",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:04:36.228Z"
+}

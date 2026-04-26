@@ -1,0 +1,28 @@
+{
+  "uuid": "Xznn",
+  "source_path": "exo7/13-L3/Xznn.tex",
+  "summary": "L'exercice demande de transformer une équation différentielle donnée en une forme standard à l'aide d'un changement de fonction, puis d'étudier les propriétés de la solution obtenue sous des hypothèses de bornes sur les normes de matrices impliquées. On utilise ensuite le lemme de Gronwall pour établir des bornes et la convergence de la solution.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "changement de fonction",
+    "norme matricielle",
+    "lemme de Gronwall",
+    "convergence de solutions",
+    "bornes uniformes"
+  ],
+  "methods": [
+    "changement de variable",
+    "estimation de normes",
+    "application du lemme de Gronwall",
+    "étude de la convergence"
+  ],
+  "objects": [
+    "solution d'équation différentielle",
+    "matrice de transformation",
+    "fonction bornée",
+    "intégrale convergente"
+  ],
+  "content_hash": "81a0edea420a5aadb88820c6ddb9cf1422ea82bbedcef82c7e8e458061c36774",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:26:08.856Z"
+}

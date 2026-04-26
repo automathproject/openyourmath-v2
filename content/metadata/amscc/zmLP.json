@@ -1,0 +1,33 @@
+{
+  "uuid": "zmLP",
+  "source_path": "amscc/zmLP.tex",
+  "summary": "Déterminer l'équivalent simple de diverses fonctions réelles en des points particuliers (0 ou +∞) en utilisant les développements limités ou les comportements asymptotiques.",
+  "concepts": [
+    "fonctions équivalentes",
+    "développement limité",
+    "limite de fonctions",
+    "comportement asymptotique",
+    "continuité",
+    "développement en série de Taylor",
+    "approximation affine",
+    "approximation quadratique"
+  ],
+  "methods": [
+    "développement limité",
+    "approximation des termes dominants",
+    "changement de variable",
+    "utilisation des développements connus (sin, cos, exp, ln)",
+    "comparaison des ordres de grandeur"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "fonction trigonométrique",
+    "fonction exponentielle",
+    "fonction logarithmique",
+    "fonction composée",
+    "racine carrée"
+  ],
+  "content_hash": "369516589c653c35af0ae682622268204c91dabe96a015fadb3726c96497a438",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:48:31.384Z"
+}

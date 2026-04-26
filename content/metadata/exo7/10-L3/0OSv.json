@@ -1,0 +1,32 @@
+{
+  "uuid": "0OSv",
+  "source_path": "exo7/10-L3/0OSv.tex",
+  "summary": "L'exercice demande de déterminer l'irréductibilité de deux polynômes à coefficients entiers en utilisant des critères d'irréductibilité. Le premier polynôme est traité par le critère d'Eisenstein, tandis que le second nécessite une analyse par réduction modulo des nombres premiers.",
+  "concepts": [
+    "critère d'Eisenstein",
+    "réduction modulo",
+    "polynôme irréductible",
+    "corps fini",
+    "factorisation de polynômes",
+    "anneau des polynômes sur Z",
+    "degré d'un polynôme",
+    "racine d'un polynôme"
+  ],
+  "methods": [
+    "application du critère d'Eisenstein",
+    "réduction modulo 2",
+    "réduction modulo 3",
+    "analyse des facteurs irréductibles",
+    "vérification des racines dans un corps fini"
+  ],
+  "objects": [
+    "polynôme unitaire",
+    "polynôme de degré 2004",
+    "polynôme de degré 6",
+    "réduction modulo 2 d'un polynôme",
+    "réduction modulo 3 d'un polynôme"
+  ],
+  "content_hash": "f069b3a16b596c75606b554ec556d89b76a354131171dcc079fe6696c8b936c1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:06:48.130Z"
+}

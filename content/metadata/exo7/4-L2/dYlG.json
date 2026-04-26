@@ -1,0 +1,28 @@
+{
+  "uuid": "dYlG",
+  "source_path": "exo7/4-L2/dYlG.tex",
+  "summary": "L'exercice demande de montrer qu'il n'existe aucun élément d'ordre 3 dans le groupe produit ℤ/2ℤ × ℤ/4ℤ, puis d'en déduire les morphismes de groupes de ℤ/3ℤ dans ce même groupe.",
+  "concepts": [
+    "groupe produit",
+    "ordre d'un élément",
+    "morphisme de groupes",
+    "théorème chinois",
+    "structure de groupe abélien fini",
+    "anneau ℤ/nℤ"
+  ],
+  "methods": [
+    "calcul de l'ordre d'un élément",
+    "analyse des sous-groupes cycliques",
+    "utilisation de la structure du groupe produit",
+    "détermination des morphismes de groupes"
+  ],
+  "objects": [
+    "groupe ℤ/2ℤ × ℤ/4ℤ",
+    "groupe ℤ/3ℤ",
+    "élément d'ordre 3",
+    "morphisme de groupes"
+  ],
+  "content_hash": "6002aa7d48069d0020db0259dc64486bc09df7ec3e23e3d2f7afaf9ff59eb083",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:40.836Z"
+}

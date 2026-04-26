@@ -1,0 +1,30 @@
+{
+  "uuid": "E6jw",
+  "source_path": "exo7/17-L3/E6jw.tex",
+  "summary": "L'exercice demande de décomposer une matrice A en produit LU, d'écrire l'itération de Gauss-Seidel pour un système linéaire, d'étudier la convergence de la suite itérative en utilisant la norme infinie, et de déterminer la matrice de Gauss-Seidel associée. Il aborde aussi la convergence de la méthode sous certaines conditions sur la matrice.",
+  "concepts": [
+    "décomposition LU",
+    "méthode de Gauss-Seidel",
+    "convergence de suites",
+    "norme infinie",
+    "matrice strictement diagonale dominante",
+    "itération linéaire"
+  ],
+  "methods": [
+    "décomposition LU",
+    "itération de Gauss-Seidel",
+    "analyse de convergence par normes",
+    "calcul de norme matricielle",
+    "résolution de système linéaire"
+  ],
+  "objects": [
+    "matrice carrée",
+    "système linéaire",
+    "suite itérative",
+    "matrice de Gauss-Seidel",
+    "erreur d'itération"
+  ],
+  "content_hash": "dec54c53d951e8224e661a3a7bf035963c6e34c4ac479eee9444b42684451ede",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:50.240Z"
+}

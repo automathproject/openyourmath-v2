@@ -1,0 +1,27 @@
+{
+  "uuid": "4aRh",
+  "source_path": "exo7/2-L1/4aRh.tex",
+  "summary": "L'exercice demande d'établir une formule de factorisation pour la différence de puissances n-èmes, puis d'en déduire une inégalité de majoration. Enfin, il s'agit de prouver la continuité de la fonction x ↦ x^n en utilisant cette inégalité, et de déterminer son domaine de définition.",
+  "concepts": [
+    "factorisation de x^n - y^n",
+    "inégalité de majoration",
+    "continuité en un point",
+    "limite de fonction",
+    "domaine de définition"
+  ],
+  "methods": [
+    "développement algébrique",
+    "majoration",
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la continuité"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "inégalité",
+    "limite",
+    "domaine de définition"
+  ],
+  "content_hash": "b8cbe57ebede45a2de5deb5811c9371cd2f3cbe0751e454c96e33d192d6c4d4a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:43:40.916Z"
+}

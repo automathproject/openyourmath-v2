@@ -1,0 +1,29 @@
+{
+  "uuid": "WTwm",
+  "source_path": "exo7/10-L3/WTwm.tex",
+  "summary": "L'exercice demande de montrer que l'image d'un idéal J par un morphisme de quotient est un idéal de l'anneau quotient A/I, puis d'établir un isomorphisme entre (A/I)/J̅ et A/(I+J) en utilisant un diagramme de morphismes.",
+  "concepts": [
+    "idéal d'un anneau",
+    "anneau quotient",
+    "morphisme d'anneaux",
+    "isomorphisme d'anneaux",
+    "noyau d'un morphisme",
+    "théorème d'isomorphisme"
+  ],
+  "methods": [
+    "vérification des propriétés d'idéal",
+    "construction de morphisme canonique",
+    "analyse du noyau",
+    "utilisation du théorème d'isomorphisme"
+  ],
+  "objects": [
+    "idéal J",
+    "anneau quotient A/I",
+    "idéal J̅",
+    "morphisme π",
+    "noyau de morphisme"
+  ],
+  "content_hash": "216400d3f6cd21848365ad01c23e53e285f61d953194fcac5d8aee5eb0956342",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:07:58.216Z"
+}

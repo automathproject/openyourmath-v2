@@ -1,0 +1,26 @@
+{
+  "uuid": "AX5X",
+  "source_path": "exo7/2-L1/AX5X.tex",
+  "summary": "L'exercice demande de montrer qu'un ensemble E_n, défini comme les points d'un intervalle ouvert où une certaine fonction δ dépasse 1/n, est fini pour tout entier naturel n non nul. Ensuite, il faut en déduire que l'ensemble des points de discontinuité d'une fonction f est au plus dénombrable.",
+  "concepts": [
+    "continuité d'une fonction",
+    "ensemble dénombrable",
+    "limite d'une fonction",
+    "propriété des ensembles finis",
+    "cardinalité des ensembles"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la continuité",
+    "argument par densité"
+  ],
+  "objects": [
+    "fonction δ",
+    "ensemble E_n",
+    "points de discontinuité",
+    "intervalle ouvert"
+  ],
+  "content_hash": "b108b2a38fe73867eb0f8b6ccfda3130b75364aa9d2acf8a48c2316da97529a0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:17.270Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "Bw4f",
+  "source_path": "exo7/15-L3/Bw4f.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire L définie par L(f) = f(0) n'est pas continue sur un espace de fonctions, et d'en déduire que son noyau n'est pas fermé.",
+  "concepts": [
+    "application linéaire bornée",
+    "continuité d'application linéaire",
+    "noyau d'une application linéaire",
+    "fermeture d'un sous-espace",
+    "norme d'une fonction",
+    "suite de fonctions"
+  ],
+  "methods": [
+    "construction de suite de contre-exemple",
+    "calcul de norme",
+    "évaluation de l'image d'une suite",
+    "utilisation de la caractérisation de la continuité linéaire"
+  ],
+  "objects": [
+    "application linéaire",
+    "espace de fonctions",
+    "suite de fonctions",
+    "noyau d'application linéaire",
+    "sous-espace fermé"
+  ],
+  "content_hash": "eff2ee049ffeea1c5f5b3472736c8da71b2567726dc07c2ef493d5b8ea7b5392",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:57.962Z"
+}

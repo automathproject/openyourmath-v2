@@ -1,0 +1,31 @@
+{
+  "uuid": "qSlN",
+  "source_path": "exo7/8-L3/qSlN.tex",
+  "summary": "L'exercice demande d'étudier l'action par translation d'un groupe sur l'ensemble quotient des classes modulo un sous-groupe, en analysant les propriétés induites par cette action.",
+  "concepts": [
+    "action de groupe",
+    "sous-groupe",
+    "ensemble quotient",
+    "morphisme de groupes",
+    "noyau d'un morphisme",
+    "groupe simple",
+    "groupe symétrique",
+    "indice d'un sous-groupe"
+  ],
+  "methods": [
+    "analyse de l'action par translation",
+    "étude du noyau d'un morphisme",
+    "comparaison des ordres de groupes",
+    "utilisation de la simplicité d'un groupe"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe H",
+    "ensemble quotient G/H",
+    "groupe des permutations Per(G/H)",
+    "groupe symétrique Sm"
+  ],
+  "content_hash": "be33f74742670794dc752c69481b25fcc7e7dcc4092936f16c68097266048368",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:05:22.492Z"
+}

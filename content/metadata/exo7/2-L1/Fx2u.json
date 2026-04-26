@@ -1,0 +1,28 @@
+{
+  "uuid": "Fx2u",
+  "source_path": "exo7/2-L1/Fx2u.tex",
+  "summary": "L'exercice étudie la convergence ponctuelle et uniforme d'une suite de fonctions définies par f_n(x) = n e^{-nx} sur l'intervalle ]0,1]. Il montre que cette suite converge ponctuellement vers la fonction nulle mais pas uniformément, en analysant les intégrales correspondantes.",
+  "concepts": [
+    "convergence ponctuelle",
+    "convergence uniforme",
+    "intégrale de Riemann",
+    "limite de fonctions",
+    "supremum",
+    "suite de fonctions"
+  ],
+  "methods": [
+    "calcul de limite de fonctions",
+    "calcul d'intégrale",
+    "comparaison de limites",
+    "analyse du supremum"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction définie par f_n(x) = n e^{-nx}",
+    "fonction nulle",
+    "intervalle ]0,1]"
+  ],
+  "content_hash": "a46915d24f4837c47fee356058a14e75cef8b0d57a6675a6b6e125bb67ac195d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:31:40.341Z"
+}

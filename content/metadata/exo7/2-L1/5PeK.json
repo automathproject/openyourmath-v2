@@ -1,0 +1,26 @@
+{
+  "uuid": "5PeK",
+  "source_path": "exo7/2-L1/5PeK.tex",
+  "summary": "L'exercice demande d'estimer l'intégrale d'une fonction f sur [a,b] en utilisant ses propriétés de dérivabilité et l'inégalité de Taylor-Lagrange, avec f(a) = f(b) = 0.",
+  "concepts": [
+    "inégalité de Taylor-Lagrange",
+    "primitive d'une fonction",
+    "classe C²",
+    "dérivée seconde",
+    "intégrale définie"
+  ],
+  "methods": [
+    "développement de Taylor",
+    "estimation d'erreur",
+    "utilisation de la dérivée seconde"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "primitive F",
+    "segment [a,b]",
+    "dérivée seconde F''"
+  ],
+  "content_hash": "ee2739da52388c51a8747a9f939e0b75092b8fd3ca2d97f6801deab68147297a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:30:21.495Z"
+}

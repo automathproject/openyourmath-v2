@@ -1,0 +1,32 @@
+{
+  "uuid": "i9go",
+  "source_path": "exo7/14-L3/i9go.tex",
+  "summary": "L'exercice demande de montrer que l'union de cubes dyadiques $\\Gamma_{j,m}$ recouvre $\\mathbb{R}^n$, que l'ensemble $\\mathcal{F}$ des fonctions à support compact et valeurs rationnelles est dénombrable, et que toute fonction continue à support compact peut être approchée en norme $L^p$ par des éléments de $\\mathcal{F}$. Il conclut en étendant ce résultat aux fonctions de $L^p(\\mathbb{R}^n)$.",
+  "concepts": [
+    "recouvrement de $\\mathbb{R}^n$",
+    "fonctions à support compact",
+    "norme $L^p$",
+    "approximation uniforme",
+    "densité dans $L^p$",
+    "fonctions indicatrices",
+    "intégrale de Lebesgue",
+    "dénombrabilité"
+  ],
+  "methods": [
+    "approximation par fonctions simples",
+    "moyenne sur des cubes",
+    "utilisation de la continuité",
+    "passage à la limite dans $L^p$",
+    "construction explicite de fonctions approchantes"
+  ],
+  "objects": [
+    "cubes dyadiques $\\Gamma_{j,m}$",
+    "fonctions de $\\mathcal{F}$",
+    "fonctions continues à support compact",
+    "fonctions de $L^p(\\mathbb{R}^n)$",
+    "indicatrices de cubes"
+  ],
+  "content_hash": "f5f87382b5be7ca1bc70b03c71596d79a6483aae218f3209ca342602da32ca2e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:36.344Z"
+}

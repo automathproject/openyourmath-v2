@@ -1,0 +1,32 @@
+{
+  "uuid": "CzBz",
+  "source_path": "exo7/16-L3/CzBz.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction F(z) est méromorphe sur ℂ, puis d'établir une relation entre F(z) et π/tan(πz) en utilisant une série connue. Ensuite, il s'agit de prouver qu'un produit infini de fonctions f_n(z) définit une fonction entière f, et d'établir une relation entre la dérivée logarithmique de f et celle d'une fonction g(z). Enfin, il faut déduire des décompositions en produits infinis des fonctions sh(z)/z, ch(z) et cos(z).",
+  "concepts": [
+    "fonction méromorphe",
+    "série de fonctions",
+    "produit infini",
+    "fonction entière",
+    "dérivée logarithmique",
+    "décomposition en produits infinis",
+    "fonctions trigonométriques hyperboliques",
+    "fonctions trigonométriques"
+  ],
+  "methods": [
+    "analyse des singularités",
+    "utilisation de séries connues",
+    "argument de parité",
+    "calcul de dérivée logarithmique",
+    "développement en produit infini"
+  ],
+  "objects": [
+    "fonction F(z)",
+    "fonction g(z)",
+    "produit infini f_n(z)",
+    "fonctions sh(z)/z, ch(z), cos(z)",
+    "série de termes en 1/(z-n)^2"
+  ],
+  "content_hash": "46bd783394531877e412ab4b850b91ab10c1fa057774a30a4d6eeaab3586ad4d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:26.732Z"
+}

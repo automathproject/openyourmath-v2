@@ -1,0 +1,28 @@
+{
+  "uuid": "Lq9p",
+  "source_path": "exo7/1-L1/Lq9p.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés fondamentales d'une application linéaire f : l'orthogonalité directe de son image et de son noyau (question 1), et l'égalité de l'image de f avec celle de sa composée f² (question 2) ainsi que l'égalité des noyaux de f et f² (question 3).",
+  "concepts": [
+    "application linéaire",
+    "image d'une application linéaire",
+    "noyau d'une application linéaire",
+    "somme directe d'espaces vectoriels",
+    "théorème du rang",
+    "composition d'applications linéaires"
+  ],
+  "methods": [
+    "décomposition en somme directe",
+    "calcul d'image",
+    "calcul de noyau",
+    "utilisation du théorème du rang"
+  ],
+  "objects": [
+    "application linéaire f",
+    "image Im f",
+    "noyau ker f",
+    "application linéaire f²"
+  ],
+  "content_hash": "768ba4be5f55888c8280bbadb6e4c09c2f480b366cebee25d8e6d45252262719",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:11:11.838Z"
+}

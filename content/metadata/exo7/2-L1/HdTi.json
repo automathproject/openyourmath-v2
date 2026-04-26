@@ -1,0 +1,30 @@
+{
+  "uuid": "HdTi",
+  "source_path": "exo7/2-L1/HdTi.tex",
+  "summary": "Montrer qu'un point c, défini comme la borne supérieure d'un ensemble E, est un point fixe d'une fonction f croissante sur [0,1]. L'exercice demande de prouver que f(c) ≤ c puis f(c) ≥ c.",
+  "concepts": [
+    "point fixe",
+    "borne supérieure",
+    "fonction croissante",
+    "limite de suite",
+    "propriétés de la borne supérieure",
+    "continuité",
+    "inégalité"
+  ],
+  "methods": [
+    "approche par suite",
+    "passage à la limite",
+    "utilisation des propriétés de la borne supérieure",
+    "raisonnement par inégalité"
+  ],
+  "objects": [
+    "fonction f",
+    "ensemble E",
+    "suite (x_n)",
+    "suite (t_n)",
+    "borne supérieure c"
+  ],
+  "content_hash": "fd1492019dc49e2c6457b63c370f3422966e0943946d49b206108cb6b5096bde",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:57.634Z"
+}

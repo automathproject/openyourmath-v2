@@ -1,0 +1,28 @@
+{
+  "uuid": "tqWF",
+  "source_path": "exo7/2-L1/tqWF.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés sur l'intégrale de la fonction f(t^n) sur [0,1]. D'abord, en utilisant la formule de la moyenne, montrer que l'intégrale de 0 à a de f(t^n) converge vers a*f(0) quand n tend vers l'infini. Ensuite, établir une majoration pour l'intégrale de a à 1 de f(t^n) et en déduire la convergence de l'intégrale totale vers f(0).",
+  "concepts": [
+    "formule de la moyenne",
+    "convergence d'intégrales",
+    "majoration d'intégrales",
+    "limite de fonctions",
+    "continuité uniforme",
+    "théorème de convergence dominée"
+  ],
+  "methods": [
+    "utilisation de la formule de la moyenne",
+    "majoration d'erreur",
+    "passage à la limite sous le signe intégrale",
+    "estimation uniforme"
+  ],
+  "objects": [
+    "fonction f(t^n)",
+    "intégrale sur [0,1]",
+    "limite d'intégrales",
+    "majoration d'erreur"
+  ],
+  "content_hash": "e8ba7817e7a07bb93c5f0ce92543ecef3518cef97e83a1bc619cb2952c717331",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:36:06.746Z"
+}

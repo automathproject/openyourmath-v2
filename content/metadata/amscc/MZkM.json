@@ -1,0 +1,28 @@
+{
+  "uuid": "MZkM",
+  "source_path": "amscc/MZkM.tex",
+  "summary": "L'exercice demande de décrire la fonction de décision réalisée par un perceptron à une couche cachée, avec des poids et biais spécifiques, pour une classification linéaire. Le réseau prend en entrée une variable x et produit une sortie F(x) via des combinaisons linéaires et des fonctions d'activation.",
+  "concepts": [
+    "classification linéaire",
+    "perceptron",
+    "fonction d'activation",
+    "réseau de neurones",
+    "combinaison linéaire",
+    "apprentissage supervisé"
+  ],
+  "methods": [
+    "calcul de la fonction de décision",
+    "application de la fonction d'activation",
+    "combinaison pondérée des entrées"
+  ],
+  "objects": [
+    "perceptron",
+    "couche cachée",
+    "fonction de sortie",
+    "poids synaptiques",
+    "biais"
+  ],
+  "content_hash": "809a31a035390c162a43c3f6cab9e7260ed73a5dee7287c97e110676896ffdd3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:25:09.758Z"
+}

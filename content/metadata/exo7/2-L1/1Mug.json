@@ -1,0 +1,31 @@
+{
+  "uuid": "1Mug",
+  "source_path": "exo7/2-L1/1Mug.tex",
+  "summary": "L'exercice étudie la continuité d'une fonction définie par morceaux sur l'intervalle [0,1], avec des cas distincts pour les rationnels et irrationnels. Il demande de montrer que cette fonction est discontinue en tout point de son domaine.",
+  "concepts": [
+    "fonction définie par morceaux",
+    "limite d'une fonction",
+    "continuité",
+    "involution",
+    "permutation",
+    "fonction discontinue",
+    "limite unilatérale",
+    "fonction sur un intervalle"
+  ],
+  "methods": [
+    "analyse des cas",
+    "calcul de limite",
+    "comparaison de limites",
+    "utilisation de la définition de continuité"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle [0,1]",
+    "rationnels",
+    "irrationnels",
+    "involution"
+  ],
+  "content_hash": "bb34d55a41f55e995e2e78f0acc7c83dc013b918d1fcfef891f77f8ce7ad8752",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:43:16.485Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "S7z8",
+  "source_path": "exo7/2-L1/S7z8.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés liées aux ensembles négligeables et à l'intégration de Riemann. D'abord, montrer qu'une réunion dénombrable d'ensembles négligeables est négligeable. Ensuite, prouver qu'une fonction bornée sur un intervalle est intégrable si et seulement si l'ensemble de ses points de discontinuité est négligeable.",
+  "concepts": [
+    "ensemble négligeable",
+    "intégrabilité au sens de Riemann",
+    "fonction bornée",
+    "continuité",
+    "réunion dénombrable",
+    "mesure de Lebesgue",
+    "théorème de caractérisation de l'intégrabilité"
+  ],
+  "methods": [
+    "raisonnement par densité",
+    "utilisation de la mesure de Lebesgue",
+    "caractérisation des ensembles négligeables",
+    "analyse des points de discontinuité"
+  ],
+  "objects": [
+    "fonction bornée",
+    "ensemble de points de discontinuité",
+    "intervalle borné",
+    "réunion dénombrable d'ensembles"
+  ],
+  "content_hash": "bdd3c9d4e3d0b2bda7953b435fca10ddff32a57638810ba1aaa3f46b226f8ba0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:33:04.938Z"
+}

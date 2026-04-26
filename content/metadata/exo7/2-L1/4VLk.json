@@ -1,0 +1,31 @@
+{
+  "uuid": "4VLk",
+  "source_path": "exo7/2-L1/4VLk.tex",
+  "summary": "L'exercice étudie une fonction f définie comme une primitive de e^{t^2} et demande de prouver ses propriétés (imparité, régularité, solution d'une équation différentielle), d'analyser son comportement asymptotique, et d'établir son tableau de variations.",
+  "concepts": [
+    "fonction impaire",
+    "classe C^∞",
+    "équation différentielle linéaire du premier ordre",
+    "limite en l'infini",
+    "fonction strictement décroissante",
+    "unicité d'une racine",
+    "tableau de variations"
+  ],
+  "methods": [
+    "intégration par parties",
+    "développement asymptotique",
+    "étude de la dérivée",
+    "comparaison de termes dominants",
+    "méthode des rectangles"
+  ],
+  "objects": [
+    "fonction primitive",
+    "fonction exponentielle",
+    "équation différentielle",
+    "limite de fonction",
+    "dérivée première"
+  ],
+  "content_hash": "5b07b63e4710512256241d3454f62fa2b7cedb6017fb0102b97e4425e8cc0788",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:30:10.839Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "tjG5",
+  "source_path": "exo7/15-L3/tjG5.tex",
+  "summary": "Montrer que deux parties disjointes d'un espace métrique, l'une compacte et l'autre fermée, sont à distance strictement positive l'une de l'autre. Puis fournir un contre-exemple où cette propriété échoue si les deux parties sont seulement fermées.",
+  "concepts": [
+    "compacité",
+    "fermeture",
+    "distance dans un espace métrique",
+    "disjoint",
+    "espace métrique",
+    "propriété topologique"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la compacité",
+    "construction de contre-exemple"
+  ],
+  "objects": [
+    "parties disjointes",
+    "espace métrique",
+    "distance entre ensembles"
+  ],
+  "content_hash": "3bb71120e6e4282b3672a01e96c8737944ec54beea5c5e74155e407d365986b0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:38:48.673Z"
+}

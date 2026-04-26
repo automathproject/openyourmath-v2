@@ -1,0 +1,30 @@
+{
+  "uuid": "ZkH5",
+  "source_path": "exo7/2-L1/ZkH5.tex",
+  "summary": "L'exercice demande de démontrer qu'une fonction continue sur un intervalle borné est constante si son intégrale sur cet intervalle est égale à la longueur de l'intervalle multipliée par sa valeur minimale. Il étend ensuite cette propriété pour prouver l'inégalité de Cauchy-Schwarz pour des fonctions complexes continues, déterminer les cas d'égalité, et montrer que la norme L² est bien une norme sur l'espace des fonctions continues.",
+  "concepts": [
+    "intégrale de Riemann",
+    "fonction continue",
+    "inégalité de Cauchy-Schwarz",
+    "norme",
+    "espace vectoriel normé",
+    "cas d'égalité dans une inégalité",
+    "fonction complexe"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "développement d'une norme",
+    "utilisation d'une fonction auxiliaire",
+    "application d'une propriété d'intégrale"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrale sur un intervalle borné",
+    "fonctions complexes",
+    "norme L²",
+    "espace C([a,b])"
+  ],
+  "content_hash": "c25fdfad7408d670e124c2694fab87e433ed520fb376d7b457ebb7d97d1154cc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:33:49.887Z"
+}

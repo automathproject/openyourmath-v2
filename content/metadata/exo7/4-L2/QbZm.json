@@ -1,0 +1,32 @@
+{
+  "uuid": "QbZm",
+  "source_path": "exo7/4-L2/QbZm.tex",
+  "summary": "L'exercice demande de montrer qu'un sous-groupe H de G, engendré par les éléments 12 et 20 modulo n, est en fait engendré par 4 modulo n, puis de déterminer son ordre. Il faut ensuite caractériser les générateurs de G et compter leur nombre, et enfin déterminer l'ordre de l'élément 15 modulo n.",
+  "concepts": [
+    "sous-groupe engendré",
+    "ordre d'un élément",
+    "générateur d'un groupe",
+    "théorème chinois",
+    "structure de Z/nZ",
+    "divisibilité dans Z/nZ",
+    "pgcd",
+    "ppcm"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul de pgcd",
+    "calcul de ppcm",
+    "caractérisation des générateurs",
+    "détermination de l'ordre d'un élément"
+  ],
+  "objects": [
+    "sous-groupe de Z/nZ",
+    "élément de Z/nZ",
+    "groupe multiplicatif Z/nZ*",
+    "générateurs de groupe",
+    "ordre d'un élément"
+  ],
+  "content_hash": "2a6867793977d23df5df3a724680a1a440a69046042b83a58bb72633f423a1c7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:12.755Z"
+}

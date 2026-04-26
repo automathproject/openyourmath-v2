@@ -1,0 +1,28 @@
+{
+  "uuid": "wxir",
+  "source_path": "exo7/1-L1/wxir.tex",
+  "summary": "L'exercice demande de démontrer que si trois entiers a, b, c sont deux à deux premiers entre eux, alors abc est premier avec tout entier d tel que d divise au moins l'un des trois.",
+  "concepts": [
+    "nombres premiers entre eux",
+    "divisibilité dans Z",
+    "pgcd",
+    "propriétés arithmétiques des entiers",
+    "théorème de Bézout",
+    "décomposition en facteurs premiers"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du pgcd",
+    "décomposition en facteurs premiers",
+    "application du théorème de Bézout"
+  ],
+  "objects": [
+    "entiers naturels",
+    "pgcd",
+    "diviseurs",
+    "produit d'entiers"
+  ],
+  "content_hash": "b5f97586a5fb3f6d30278225b30e54a18c7517fe57b40d7e1c0ea762c32a2c6c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:38.796Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "K6AQ",
+  "source_path": "exo7/1-L1/K6AQ.tex",
+  "summary": "L'exercice demande de déterminer une base du noyau et une base de l'image d'une application linéaire B. L'énoncé ne précise pas la dimension de l'espace ni la forme explicite de B.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "base d'un sous-espace vectoriel",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "détermination d'une base par résolution d'un système",
+    "utilisation du théorème du rang",
+    "calcul de la dimension du noyau et de l'image"
+  ],
+  "objects": [
+    "application linéaire B",
+    "noyau de B",
+    "image de B"
+  ],
+  "content_hash": "241102778ce57cc2ccc4842f85ae8f53fcd2e5fbb9bf51e70caf41def288d4dd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:11:00.042Z"
+}

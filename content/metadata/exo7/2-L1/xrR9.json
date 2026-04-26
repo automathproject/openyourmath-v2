@@ -1,0 +1,25 @@
+{
+  "uuid": "xrR9",
+  "source_path": "exo7/2-L1/xrR9.tex",
+  "summary": "Calculer une intégrale impropre de la forme $\\int_0^1 \\frac{\\ln x}{\\sqrt{x}} \\mathrm{d}x$. L'énoncé demande d'évaluer une intégrale impliquant une fonction logarithmique et racinaire.",
+  "concepts": [
+    "intégrale impropre",
+    "fonction logarithmique",
+    "fonction racinaire",
+    "changement de variable",
+    "primitive d'une fonction rationnelle"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration par parties",
+    "calcul de primitive"
+  ],
+  "objects": [
+    "fonction de la variable réelle",
+    "intégrale définie",
+    "fonction composée"
+  ],
+  "content_hash": "4360ff9db71db27d4e3c4391bad7abb034a93fa2bf9222970507db65a7fcc978",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:36:41.919Z"
+}

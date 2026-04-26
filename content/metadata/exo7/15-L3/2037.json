@@ -1,0 +1,30 @@
+{
+  "uuid": "2037",
+  "source_path": "exo7/15-L3/2037.tex",
+  "summary": "L'exercice demande de démontrer la connexité d'une partie A de ℝ², puis d'établir des relations d'inclusion entre l'image de A par une fonction g et l'image de I par la dérivée f', et enfin de prouver que f'(I) est un intervalle.",
+  "concepts": [
+    "connexité",
+    "connexe par arcs",
+    "théorème des accroissements finis",
+    "continuité",
+    "adhérence",
+    "intervalle",
+    "dérivée"
+  ],
+  "methods": [
+    "application du théorème des accroissements finis",
+    "utilisation de la définition de la dérivée",
+    "argument par connexité",
+    "inclusion d'ensembles"
+  ],
+  "objects": [
+    "partie connexe de ℝ²",
+    "fonction g(x,y)",
+    "dérivée f'(I)",
+    "ensemble A",
+    "intervalle I"
+  ],
+  "content_hash": "2c5f337b567d2de27ea372185e5ebb0a87e2045477355690bc9acb20df4c9af5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:42:12.972Z"
+}

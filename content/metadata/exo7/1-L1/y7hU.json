@@ -1,0 +1,29 @@
+{
+  "uuid": "y7hU",
+  "source_path": "exo7/1-L1/y7hU.tex",
+  "summary": "L'exercice demande de montrer que l'image d'une base de l'espace de départ par un isomorphisme est une base de l'espace d'arrivée. Il s'agit de prouver que cette image est à la fois libre et génératrice.",
+  "concepts": [
+    "isomorphisme",
+    "base d'un espace vectoriel",
+    "liberté d'une famille",
+    "génératrice d'un espace vectoriel",
+    "injectivité",
+    "surjectivité",
+    "théorème du rang"
+  ],
+  "methods": [
+    "preuve par contraposée",
+    "utilisation de la définition d'isomorphisme",
+    "démonstration de liberté",
+    "démonstration de génératrice"
+  ],
+  "objects": [
+    "application linéaire",
+    "famille de vecteurs",
+    "espace vectoriel de départ",
+    "espace vectoriel d'arrivée"
+  ],
+  "content_hash": "c7b890f5ab6ade32c8338138c3ee9850469ec4ffa2b671a5f571164b8c5ae66d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:37.699Z"
+}

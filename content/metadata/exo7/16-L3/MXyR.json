@@ -1,0 +1,27 @@
+{
+  "uuid": "MXyR",
+  "source_path": "exo7/16-L3/MXyR.tex",
+  "summary": "L'exercice demande de rappeler la définition de l'indice d'un point par rapport à un chemin fermé dans le plan complexe, puis de démontrer que cet indice peut s'exprimer comme une intégrale du dérivée d'une fonction angulaire, en utilisant un paramétrage spécifique du chemin.",
+  "concepts": [
+    "indice d'un point par rapport à un chemin",
+    "chemin fermé compact orienté",
+    "paramétrage d'un chemin",
+    "fonction de classe C^∞ par morceaux",
+    "intégrale d'une fonction dérivée",
+    "nombre de tours autour d'un point"
+  ],
+  "methods": [
+    "paramétrage polaire",
+    "calcul d'intégrale",
+    "analyse de la variation angulaire"
+  ],
+  "objects": [
+    "chemin fermé compact orienté",
+    "fonction angulaire",
+    "dérivée d'une fonction",
+    "intégrale sur un intervalle"
+  ],
+  "content_hash": "d046b7faf506f2d1d670f76364c2c8685214be2b639c0e3a3d1809f5daf9e101",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:25:06.891Z"
+}

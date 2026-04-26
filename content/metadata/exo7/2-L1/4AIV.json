@@ -1,0 +1,27 @@
+{
+  "uuid": "4AIV",
+  "source_path": "exo7/2-L1/4AIV.tex",
+  "summary": "Calculer deux intégrales définies sur l'intervalle [0, π/2] impliquant des fractions rationnelles de sin(x). La première intégrale est 1/(1+sin(x)), et la seconde est sin(x)/(1+sin(x)).",
+  "concepts": [
+    "changement de variable",
+    "intégrale définie",
+    "fonction trigonométrique",
+    "fraction rationnelle",
+    "décomposition d'intégrale",
+    "formules de Weierstrass"
+  ],
+  "methods": [
+    "changement de variable t = tan(x/2)",
+    "simplification d'expression",
+    "décomposition en intégrales partielles",
+    "calcul d'intégrale rationnelle"
+  ],
+  "objects": [
+    "intégrale de fonction trigonométrique",
+    "fraction rationnelle en sin(x)",
+    "variable de substitution t"
+  ],
+  "content_hash": "426c4ab6056ca8041b9b91f50eed0fdd3a0d71f1b90dcec61c4b5fb2d8fe46e6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:30:07.812Z"
+}

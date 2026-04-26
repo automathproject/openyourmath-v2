@@ -1,0 +1,28 @@
+{
+  "uuid": "h7bg",
+  "source_path": "exo7/14-L3/h7bg.tex",
+  "summary": "L'exercice demande de démontrer trois propriétés fondamentales d'une mesure extérieure : la nullité de la mesure de l'ensemble vide, la monotonie de la mesure et la σ-sous-additivité. Le contexte est purement théorique, sans application concrète.",
+  "concepts": [
+    "mesure extérieure",
+    "σ-sous-additivité",
+    "mesurabilité",
+    "monotonie",
+    "récurrence mathématique",
+    "décomposition d'ensembles"
+  ],
+  "methods": [
+    "raisonnement par récurrence",
+    "décomposition d'ensembles",
+    "utilisation de la σ-sous-additivité",
+    "manipulation d'inégalités de mesure"
+  ],
+  "objects": [
+    "mesure extérieure m_*",
+    "ensembles mesurables",
+    "suites d'ensembles",
+    "partitions d'ensembles"
+  ],
+  "content_hash": "3d950cd8b818de449b7115adc555483c6c2eec634fdf0e10e952dd92098cd43f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:25.407Z"
+}

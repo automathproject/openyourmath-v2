@@ -1,0 +1,24 @@
+{
+  "uuid": "4w0T",
+  "source_path": "exo7/1-L1/4w0T.tex",
+  "summary": "Trouver le PGCD de deux entiers naturels x et y, où x est impair et y = 2 - x, en utilisant l'algorithme d'Euclide.",
+  "concepts": [
+    "algorithme d'Euclide",
+    "PGCD",
+    "divisibilité dans Z",
+    "relation de Bézout",
+    "arithmétique élémentaire"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "division euclidienne",
+    "calcul de PGCD"
+  ],
+  "objects": [
+    "entiers naturels",
+    "PGCD de deux nombres"
+  ],
+  "content_hash": "6c7ab11b61226eeb1477868bbd9ba61ec9ea9db476dfacaa2dc87256dc95f9b9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:07.042Z"
+}

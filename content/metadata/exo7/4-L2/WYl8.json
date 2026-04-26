@@ -1,0 +1,25 @@
+{
+  "uuid": "WYl8",
+  "source_path": "exo7/4-L2/WYl8.tex",
+  "summary": "L'exercice demande de montrer qu'une application définie sur les entiers relatifs vers un produit de groupes quotients est un morphisme de groupes, puis de déterminer son noyau.",
+  "concepts": [
+    "morphisme de groupes",
+    "noyau d'un morphisme",
+    "groupe quotient",
+    "structure de groupe sur Z/nZ",
+    "théorème chinois"
+  ],
+  "methods": [
+    "vérification des propriétés de morphisme",
+    "détermination du noyau",
+    "utilisation de la structure de groupe"
+  ],
+  "objects": [
+    "application f: Z → Z/3Z × Z/5Z",
+    "groupe (Z, +)",
+    "groupe Z/3Z × Z/5Z"
+  ],
+  "content_hash": "a0da102cbcd6ca107305c8cb987b0711873cad554ef92333207ccedb6255637c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:30.328Z"
+}

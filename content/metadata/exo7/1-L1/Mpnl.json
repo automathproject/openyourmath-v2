@@ -1,0 +1,32 @@
+{
+  "uuid": "Mpnl",
+  "source_path": "exo7/1-L1/Mpnl.tex",
+  "summary": "L'exercice demande de déterminer l'unique application linéaire de ℝ³ dans ℝ² vérifiant trois conditions sur les images des vecteurs de la base canonique, puis de calculer l'image d'un vecteur spécifique et l'expression générale de l'application. Ensuite, il faut déterminer le noyau de cette application, en fournir une base, et donner un supplémentaire du noyau dans ℝ³ en vérifiant son isomorphisme avec l'image.",
+  "concepts": [
+    "application linéaire",
+    "image d'une application linéaire",
+    "noyau d'une application linéaire",
+    "théorème du rang",
+    "base d'un sous-espace vectoriel",
+    "supplémentaire d'un sous-espace vectoriel",
+    "isomorphisme d'espaces vectoriels"
+  ],
+  "methods": [
+    "détermination d'une application linéaire par ses images sur une base",
+    "calcul de l'image d'un vecteur",
+    "résolution d'un système linéaire",
+    "détermination du noyau par résolution d'équations",
+    "vérification de la linéarité",
+    "construction d'un supplémentaire"
+  ],
+  "objects": [
+    "application linéaire de ℝ³ dans ℝ²",
+    "vecteurs de la base canonique de ℝ³",
+    "noyau d'une application linéaire",
+    "supplémentaire d'un sous-espace vectoriel",
+    "système d'équations linéaires"
+  ],
+  "content_hash": "7141414cce500b0cd118f2dd8bbdd43a25cfd1b7892c57bb0b9a7d0555cc8a7b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:11:18.722Z"
+}

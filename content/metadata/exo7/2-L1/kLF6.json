@@ -1,0 +1,29 @@
+{
+  "uuid": "kLF6",
+  "source_path": "exo7/2-L1/kLF6.tex",
+  "summary": "L'exercice demande de prouver que toute fonction périodique et non constante n'admet pas de limite en +∞, puis que toute fonction croissante et majorée admet une limite finie en +∞.",
+  "concepts": [
+    "fonction périodique",
+    "limite de fonction",
+    "fonction croissante",
+    "majoration",
+    "supremum",
+    "raisonnement par l'absurde",
+    "propriétés des limites"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "construction de suites",
+    "utilisation de la définition de la limite",
+    "application des propriétés du supremum"
+  ],
+  "objects": [
+    "fonction périodique",
+    "fonction croissante",
+    "ensemble des valeurs atteintes",
+    "suites convergentes"
+  ],
+  "content_hash": "11915436589c247ebbfe1c07e8e66ec77abc7e63375bee6f6e610d7317d370a8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:47:20.153Z"
+}

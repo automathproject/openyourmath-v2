@@ -1,0 +1,27 @@
+{
+  "uuid": "bQfY",
+  "source_path": "exo7/16-L3/bQfY.tex",
+  "summary": "L'exercice utilise le théorème de Rouché pour comparer le nombre de zéros de deux polynômes P(z) et Q(z) dans le disque unité. Il exploite les propriétés des modules et des dérivées des polynômes.",
+  "concepts": [
+    "théorème de Rouché",
+    "module d'une fonction complexe",
+    "zéros d'une fonction holomorphe",
+    "polynôme",
+    "dérivée complexe",
+    "disque unité"
+  ],
+  "methods": [
+    "comparaison des modules",
+    "application du théorème de Rouché",
+    "calcul de la dérivée"
+  ],
+  "objects": [
+    "polynôme P(z)",
+    "polynôme Q(z)",
+    "fonction holomorphe",
+    "disque D(0,1)"
+  ],
+  "content_hash": "68ffa5adce5b8c8903d792cde2b9b0c9dc8e39f034240b499debacac867670a9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:26:43.251Z"
+}

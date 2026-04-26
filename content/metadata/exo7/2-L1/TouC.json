@@ -1,0 +1,25 @@
+{
+  "uuid": "TouC",
+  "source_path": "exo7/2-L1/TouC.tex",
+  "summary": "L'exercice demande de démontrer trois propriétés d'une fonction réelle : sa bornitude, l'existence d'un maximum ou d'un minimum absolu (sans garantie des deux), et sa continuité uniforme.",
+  "concepts": [
+    "continuité uniforme",
+    "bornitude des fonctions",
+    "maximum absolu",
+    "minimum absolu",
+    "théorème de Heine",
+    "fermeture d'un intervalle"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la continuité uniforme",
+    "application du théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle fermé borné"
+  ],
+  "content_hash": "8462ef2c0702969f41a18dc2f869153faece817bbcd69feec13d2233164f4454",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:41.836Z"
+}

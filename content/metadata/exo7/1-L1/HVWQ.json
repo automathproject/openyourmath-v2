@@ -1,0 +1,28 @@
+{
+  "uuid": "HVWQ",
+  "source_path": "exo7/1-L1/HVWQ.tex",
+  "summary": "L'exercice demande de déterminer la dimension du noyau d'une application linéaire surjective entre espaces vectoriels de dimensions 4 et 2, puis la dimension de l'image d'une application linéaire injective entre espaces vectoriels de dimensions 26 et 100. Enfin, il interroge sur l'existence d'une application linéaire bijective entre deux espaces vectoriels de dimensions différentes.",
+  "concepts": [
+    "application linéaire",
+    "surjectivité",
+    "injectivité",
+    "bijectivité",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul de dimension par le théorème du rang",
+    "utilisation des propriétés de surjectivité et injectivité"
+  ],
+  "objects": [
+    "application linéaire",
+    "espace vectoriel",
+    "noyau",
+    "image"
+  ],
+  "content_hash": "f44dd7b5cbba6f6df9cdcefdff4b724543afdc62e09c0de62f470ef01864adf4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:10:54.510Z"
+}

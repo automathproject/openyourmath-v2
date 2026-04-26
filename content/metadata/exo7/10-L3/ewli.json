@@ -1,0 +1,29 @@
+{
+  "uuid": "ewli",
+  "source_path": "exo7/10-L3/ewli.tex",
+  "summary": "L'exercice demande de démontrer des propriétés du nilradical d'un anneau A, notamment qu'il s'agit d'un idéal, qu'il est inclus dans tout idéal premier, et qu'il est l'intersection de tous les idéaux premiers de A. La dernière question utilise le théorème de Zorn pour établir une caractérisation du nilradical.",
+  "concepts": [
+    "nilradical",
+    "idéal",
+    "idéal premier",
+    "théorème de Zorn",
+    "intersection d'idéaux",
+    "anneau commutatif",
+    "radical d'un idéal"
+  ],
+  "methods": [
+    "utilisation du théorème de Zorn",
+    "manipulation d'idéaux",
+    "inclusion d'idéaux",
+    "caractérisation du nilradical"
+  ],
+  "objects": [
+    "nilradical Nil(A)",
+    "idéal premier P",
+    "élément x de A",
+    "intersection d'idéaux premiers"
+  ],
+  "content_hash": "4ae257010e8a033012521f81fa4edc10779cb2397833902b98433f1c4da39fdd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:08:31.699Z"
+}

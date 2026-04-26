@@ -1,0 +1,31 @@
+{
+  "uuid": "j7tq",
+  "source_path": "exo7/17-L3/j7tq.tex",
+  "summary": "L'exercice demande de déterminer des coefficients B et c pour une relation de récurrence sur une suite de matrices, puis de vérifier des relations algébriques impliquant des inverses de matrices. Il s'agit ensuite de prouver qu'une combinaison de matrices est définie positive et d'en déduire une condition de convergence d'une méthode itérative.",
+  "concepts": [
+    "matrice inversible",
+    "définie positive",
+    "convergence de méthode itérative",
+    "algèbre linéaire",
+    "produit matriciel",
+    "inégalité de Cauchy-Schwarz",
+    "norme matricielle"
+  ],
+  "methods": [
+    "calcul matriciel",
+    "manipulation algébrique",
+    "détermination de condition de convergence",
+    "utilisation de l'inégalité de Cauchy-Schwarz",
+    "factorisation de matrices"
+  ],
+  "objects": [
+    "suite de matrices",
+    "matrice A",
+    "matrice M",
+    "matrice N",
+    "matrice E"
+  ],
+  "content_hash": "c138d7710dea8ca1970e27cf4d9509264fc3d7529ab519ea6a238a20d6ec33c1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:45.388Z"
+}

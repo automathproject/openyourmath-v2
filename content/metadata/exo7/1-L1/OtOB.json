@@ -1,0 +1,30 @@
+{
+  "uuid": "OtOB",
+  "source_path": "exo7/1-L1/OtOB.tex",
+  "summary": "Montrer l'égalité entre l'intersection du noyau et de l'image d'une application linéaire et l'image du noyau de sa composée avec elle-même.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application",
+    "image d'une application",
+    "théorème du rang",
+    "double inclusion",
+    "composition d'applications",
+    "sous-espaces vectoriels"
+  ],
+  "methods": [
+    "inclusion réciproque",
+    "manipulation d'ensembles",
+    "utilisation de la définition du noyau",
+    "utilisation de la définition de l'image"
+  ],
+  "objects": [
+    "application linéaire f",
+    "noyau de f",
+    "image de f",
+    "noyau de f²",
+    "image de ker(f²)"
+  ],
+  "content_hash": "33e4d81bb0ba4ff7712fff14388a880c52b3cccdf2cc603aadbacb3b540d3355",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:11:26.707Z"
+}

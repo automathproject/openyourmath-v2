@@ -1,0 +1,32 @@
+{
+  "uuid": "aemf",
+  "source_path": "exo7/10-L3/aemf.tex",
+  "summary": "L'exercice demande de déterminer le cardinal de l'anneau quotient ℤ[√d]/(m) pour un entier m non nul, puis d'étudier la primalité de l'idéal principal engendré par 2 dans ℤ[√d].",
+  "concepts": [
+    "anneau quotient",
+    "idéal principal",
+    "primalité d'idéal",
+    "bijection entre ensembles",
+    "représentant unique de classe",
+    "isomorphisme d'anneaux",
+    "réduction modulo un idéal",
+    "division euclidienne dans ℤ"
+  ],
+  "methods": [
+    "détermination de représentants de classes",
+    "vérification de l'unicité des représentants",
+    "construction d'un isomorphisme d'anneaux",
+    "analyse de la primalité par contre-exemple",
+    "utilisation de la division euclidienne"
+  ],
+  "objects": [
+    "ℤ[√d]",
+    "ℤ[X]/(X² - d)",
+    "idéal principal (2)",
+    "éléments de ℤ[√d]",
+    "classes de congruence modulo m"
+  ],
+  "content_hash": "9834430e67364ae641073f4a1c09a9d0409b61dd73c5de58eab68b12b164e3b4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:08:05.155Z"
+}

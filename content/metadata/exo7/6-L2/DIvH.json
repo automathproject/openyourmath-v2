@@ -1,0 +1,32 @@
+{
+  "uuid": "DIvH",
+  "source_path": "exo7/6-L2/DIvH.tex",
+  "summary": "L'exercice demande de déterminer la nature géométrique d'une quadrique donnée par une équation cartésienne du second degré dans l'espace. Chaque équation représente une surface quadrique dont il faut identifier le type (paraboloïde, hyperboloïde, cylindre, etc.) après réduction.",
+  "concepts": [
+    "quadrique",
+    "forme quadratique",
+    "réduction d'une équation du second degré",
+    "valeurs propres",
+    "changement de repère",
+    "classification des coniques",
+    "matrice associée à une quadrique",
+    "équation réduite"
+  ],
+  "methods": [
+    "calcul des valeurs propres",
+    "diagonalisation de matrice",
+    "changement de variable",
+    "analyse de la signature",
+    "reconnaissance des formes canoniques"
+  ],
+  "objects": [
+    "équation cartésienne du second degré",
+    "matrice symétrique",
+    "valeurs propres",
+    "équation réduite de quadrique",
+    "surface quadrique"
+  ],
+  "content_hash": "5e5c010b55308891816602fd2b586f30dfc7e9e48cabc907da17e0edea1beab0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:39:26.810Z"
+}

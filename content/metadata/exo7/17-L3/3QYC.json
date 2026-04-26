@@ -1,0 +1,32 @@
+{
+  "uuid": "3QYC",
+  "source_path": "exo7/17-L3/3QYC.tex",
+  "summary": "Démontrer des inégalités entre différentes normes matricielles (normes p, norme de Frobenius) pour une matrice A d'ordre (m,n). Les questions portent sur les relations entre ces normes et les valeurs maximales des éléments de la matrice.",
+  "concepts": [
+    "normes matricielles",
+    "rayon spectral",
+    "trace d'une matrice",
+    "valeurs propres",
+    "norme de Frobenius",
+    "inégalités de normes",
+    "matrice hermitienne"
+  ],
+  "methods": [
+    "décomposition spectrale",
+    "calcul de la norme 2",
+    "utilisation de la norme infinie",
+    "majoration par la norme de Frobenius",
+    "construction de vecteurs tests"
+  ],
+  "objects": [
+    "matrice A",
+    "norme p",
+    "norme de Frobenius",
+    "rayon spectral",
+    "valeurs propres",
+    "trace"
+  ],
+  "content_hash": "3bd9590ee475f31275970053bed2c5e8cbe5d95635fb5fa77f09b7e4878c0c02",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:22:01.584Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "vPie",
+  "source_path": "exo7/1-L1/vPie.tex",
+  "summary": "L'exercice demande de déterminer les valeurs possibles du pgcd de différentes combinaisons d'entiers a et b, en exploitant leurs propriétés arithmétiques. Il explore les relations entre pgcd et opérations algébriques simples.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "algorithme d'Euclide",
+    "nombres premiers entre eux",
+    "divisibilité dans Z",
+    "propriétés arithmétiques des entiers"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "utilisation des propriétés du pgcd",
+    "manipulation d'équations diophantiennes"
+  ],
+  "objects": [
+    "pgcd de deux entiers",
+    "somme de deux entiers",
+    "produit de deux entiers",
+    "carrés de deux entiers"
+  ],
+  "content_hash": "02243c17081761ecdf6a766bf5bd2c5a0b993c78f8ac13638d70d322e79ca5f7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:30.780Z"
+}

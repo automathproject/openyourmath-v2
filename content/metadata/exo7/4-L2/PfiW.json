@@ -1,0 +1,30 @@
+{
+  "uuid": "PfiW",
+  "source_path": "exo7/4-L2/PfiW.tex",
+  "summary": "L'exercice demande de montrer qu'une application entre des anneaux quotients est un morphisme d'anneaux, puis d'en déduire une propriété sur la fonction d'Euler, et enfin de vérifier la nécessité d'une condition de coprimalité.",
+  "concepts": [
+    "morphisme d'anneaux",
+    "anneau quotient",
+    "théorème chinois",
+    "fonction d'Euler",
+    "coprimalité",
+    "structure d'anneau",
+    "homomorphisme"
+  ],
+  "methods": [
+    "vérification des propriétés de morphisme",
+    "utilisation du théorème chinois",
+    "calcul de la fonction d'Euler",
+    "preuve par contraposée"
+  ],
+  "objects": [
+    "application φ",
+    "anneau Z/(npZ)",
+    "produit d'anneaux (Z/nZ) × (Z/pZ)",
+    "entiers n et p",
+    "fonction d'Euler φ"
+  ],
+  "content_hash": "83be5c099ade939d5bcbc95d027b91a8aa9f71781c546c0c36b1efae45863291",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:09.064Z"
+}

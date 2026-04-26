@@ -1,0 +1,27 @@
+{
+  "uuid": "UE80",
+  "source_path": "exo7/1-L1/UE80.tex",
+  "summary": "L'exercice demande d'écrire l'ensemble des multiples d'une classe $\\bar x$ dans différents anneaux $\\mathbb{Z}/n\\mathbb{Z}$ pour $x$ variant de $0$ à $n-1$. Il propose ensuite de montrer l'équivalence de trois propositions relatives à l'inversibilité d'une classe et à son lien avec le pgcd. Enfin, il s'agit de déterminer si la classe de $18$ est inversible dans $\\mathbb{Z}/49\\mathbb{Z}$ et de trouver son inverse.",
+  "concepts": [
+    "anneau quotient",
+    "classe d'équivalence",
+    "inversibilité",
+    "pgcd",
+    "théorème de Bézout",
+    "générateur d'anneau"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "calcul de pgcd",
+    "recherche d'inverse par Bézout"
+  ],
+  "objects": [
+    "classe $\\bar x$",
+    "ensemble des multiples",
+    "anneau $\\mathbb{Z}/n\\mathbb{Z}$",
+    "pgcd(x, n)"
+  ],
+  "content_hash": "bef37075ff9499e47b77f1b7b82aed54d5de093aec9d9a837490f9228d098915",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:19:51.385Z"
+}

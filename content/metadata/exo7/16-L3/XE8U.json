@@ -1,0 +1,30 @@
+{
+  "uuid": "XE8U",
+  "source_path": "exo7/16-L3/XE8U.tex",
+  "summary": "L'exercice demande de démontrer la convergence d'une intégrale réelle, puis d'utiliser les techniques de l'analyse complexe (résidus, intégration sur un contour) pour calculer sa valeur. L'intégrale considérée est de la forme x^p/(1+x^n) sur [0, ∞).",
+  "concepts": [
+    "intégrale impropre",
+    "convergence d'intégrale",
+    "analyse complexe",
+    "théorème des résidus",
+    "singularités isolées",
+    "intégration sur un contour"
+  ],
+  "methods": [
+    "calcul de résidus",
+    "intégration par parties",
+    "passage à la limite",
+    "déformation de contour",
+    "théorème de Cauchy"
+  ],
+  "objects": [
+    "intégrale impropre",
+    "fonction complexe",
+    "contour d'intégration",
+    "singularités isolées",
+    "résidus"
+  ],
+  "content_hash": "7dd9f9ab76ef6efc109becae185550f6b341776368e6e0158fbee025761b1ac3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:26:03.447Z"
+}

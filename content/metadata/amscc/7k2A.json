@@ -1,0 +1,30 @@
+{
+  "uuid": "7k2A",
+  "source_path": "amscc/7k2A.tex",
+  "summary": "L'exercice demande de calculer le polynôme caractéristique d'une matrice A, d'en déterminer les valeurs propres, les sous-espaces propres associés, puis de montrer la diagonalisabilité de A. Il s'agit ensuite de trouver une matrice diagonale D semblable à A et une matrice de passage P, pour finalement exprimer An pour tout entier naturel n.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "sous-espace propre",
+    "diagonalisation",
+    "matrice semblable",
+    "puissance d'une matrice"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "détermination des sous-espaces propres",
+    "vérification de la diagonalisabilité",
+    "construction de la matrice de passage"
+  ],
+  "objects": [
+    "matrice carrée",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrice diagonale",
+    "matrice de passage"
+  ],
+  "content_hash": "7930b8e85660cd5e5708ca82634bf494f8ac08cfc1398e53ce9f382521e3218d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:10:07.842Z"
+}

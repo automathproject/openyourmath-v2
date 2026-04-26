@@ -1,0 +1,29 @@
+{
+  "uuid": "ujHh",
+  "source_path": "exo7/1-L1/ujHh.tex",
+  "summary": "L'exercice demande de démontrer que l'intersection de deux sous-groupes de ℤ est un sous-groupe de ℤ, puis de caractériser cette intersection dans des cas particuliers. Il étend ensuite la démonstration à une intersection finie de sous-groupes et fournit des exemples concrets à analyser.",
+  "concepts": [
+    "sous-groupe",
+    "intersection de sous-groupes",
+    "structure additive de ℤ",
+    "pgcd",
+    "sous-groupe engendré",
+    "propriétés des sous-groupes additifs",
+    "famille finie de sous-groupes"
+  ],
+  "methods": [
+    "utilisation des axiomes de sous-groupe",
+    "caractérisation par le pgcd",
+    "généralisation par récurrence",
+    "analyse des générateurs"
+  ],
+  "objects": [
+    "sous-groupes de ℤ",
+    "intersection de sous-groupes",
+    "sous-groupes engendrés par des entiers",
+    "famille finie de sous-groupes"
+  ],
+  "content_hash": "55b79a8cf164ca0badb5484d2e009485dcb4f36356670c94afe14c200aa5d6ec",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:20.826Z"
+}

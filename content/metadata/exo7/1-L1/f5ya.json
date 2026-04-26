@@ -1,0 +1,28 @@
+{
+  "uuid": "f5ya",
+  "source_path": "exo7/1-L1/f5ya.tex",
+  "summary": "L'exercice demande de montrer que la famille $(\\vec u, f(\\vec u), \\dots, f^{n-1}(\\vec u))$ forme une base de l'espace vectoriel $E$, puis d'établir que tout endomorphisme $g$ commute avec $f$ si et seulement si $g$ est un polynôme en $f$.",
+  "concepts": [
+    "base d'un espace vectoriel",
+    "famille libre",
+    "combinaison linéaire",
+    "endomorphisme",
+    "polynôme d'un endomorphisme",
+    "commutativité d'applications linéaires"
+  ],
+  "methods": [
+    "preuve par l'absurde",
+    "utilisation de la maximalité",
+    "détermination de relations de dépendance linéaire",
+    "construction de polynômes"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "endomorphisme",
+    "famille de vecteurs",
+    "polynôme"
+  ],
+  "content_hash": "7bb3bb739db163336eb9e2dce72337921c54a2864504a793726575aebbf30b62",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:12:46.740Z"
+}

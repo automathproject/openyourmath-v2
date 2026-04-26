@@ -1,0 +1,25 @@
+{
+  "uuid": "21s9",
+  "source_path": "exo7/1-L1/21s9.tex",
+  "summary": "L'exercice demande de démontrer que deux entiers non nuls consécutifs sont premiers entre eux, puis d'étendre cette propriété à des expressions polynomiales en montrant que pgcd((n+1)², n+2) = 1 pour tout entier naturel n.",
+  "concepts": [
+    "nombres premiers entre eux",
+    "pgcd",
+    "divisibilité dans Z",
+    "propriétés des entiers consécutifs",
+    "arithmétique élémentaire"
+  ],
+  "methods": [
+    "utilisation de la définition du pgcd",
+    "raisonnement par l'absurde",
+    "manipulation d'équations diophantiennes"
+  ],
+  "objects": [
+    "entiers consécutifs",
+    "pgcd de deux polynômes en n",
+    "diviseurs communs"
+  ],
+  "content_hash": "b1863a2d509b898e89d8dda3f48f2c49cd8cfe90ff60d669441de983f6ecfd53",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:46.957Z"
+}

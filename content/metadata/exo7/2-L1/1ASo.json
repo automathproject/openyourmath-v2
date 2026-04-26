@@ -1,0 +1,29 @@
+{
+  "uuid": "1ASo",
+  "source_path": "exo7/2-L1/1ASo.tex",
+  "summary": "On considère une fonction croissante f définie sur un intervalle [a, b] à valeurs dans [a, b]. On cherche à démontrer qu'elle admet au moins un point fixe, c'est-à-dire un réel c ∈ [a, b] tel que f(c) = c.",
+  "concepts": [
+    "continuité",
+    "fonction croissante",
+    "borne supérieure",
+    "théorème des gendarmes",
+    "point fixe",
+    "limite de suite",
+    "limite de fonction"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "passage à la limite",
+    "utilisation de la définition de borne supérieure",
+    "analyse des cas d'extrémité"
+  ],
+  "objects": [
+    "fonction croissante",
+    "intervalle borné",
+    "suite convergente",
+    "point fixe"
+  ],
+  "content_hash": "fc5ed13b688afb65e2c20ac372d8f0ea32aa679e2b422e9bacdb3db03c3182d2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:43:13.901Z"
+}

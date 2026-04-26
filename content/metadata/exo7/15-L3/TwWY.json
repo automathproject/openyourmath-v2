@@ -1,0 +1,30 @@
+{
+  "uuid": "TwWY",
+  "source_path": "exo7/15-L3/TwWY.tex",
+  "summary": "L'exercice demande de démontrer que la norme d'un vecteur dans ℝⁿ est égale à la borne supérieure des valeurs absolues des produits scalaires avec des vecteurs de norme inférieure ou égale à 1. Il s'ensuit une preuve d'isomorphisme isométrique entre l'espace des formes linéaires sur ℝⁿ et ℝⁿ lui-même.",
+  "concepts": [
+    "produit scalaire",
+    "norme euclidienne",
+    "supremum",
+    "forme linéaire",
+    "isomorphisme isométrique",
+    "espace vectoriel normé",
+    "application linéaire bornée"
+  ],
+  "methods": [
+    "utilisation de la définition de la norme",
+    "propriétés du produit scalaire",
+    "construction d'un isomorphisme",
+    "démonstration d'isométrie"
+  ],
+  "objects": [
+    "vecteur de ℝⁿ",
+    "forme linéaire",
+    "espace des formes linéaires",
+    "produit scalaire",
+    "norme"
+  ],
+  "content_hash": "cb199eebe79263bf7b71ae5b2eb097388a3689d1d050eaf6151598b91dea1e54",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:10.029Z"
+}

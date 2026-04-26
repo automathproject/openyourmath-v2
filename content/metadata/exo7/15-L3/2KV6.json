@@ -1,0 +1,32 @@
+{
+  "uuid": "2KV6",
+  "source_path": "exo7/15-L3/2KV6.tex",
+  "summary": "L'exercice étudie des applications linéaires bornées définies sur un ensemble compact K. Il demande de montrer que l'image de K par ces applications reste dans K, puis d'établir des propriétés d'intersection de ces images et d'en déduire l'existence d'un point fixe pour l'application u.",
+  "concepts": [
+    "application linéaire bornée",
+    "combinaison convexe",
+    "point fixe",
+    "continuité",
+    "compact",
+    "intersection d'ensembles",
+    "convergence",
+    "norme"
+  ],
+  "methods": [
+    "utilisation de la convexité",
+    "propriété d'intersection finie",
+    "passage à la limite",
+    "calcul de norme",
+    "composition d'applications"
+  ],
+  "objects": [
+    "ensemble compact K",
+    "application linéaire S_n",
+    "point fixe",
+    "intersection d'ensembles S_n(K)",
+    "norme d'un vecteur"
+  ],
+  "content_hash": "3ecf2a5f58ca474a492d42406b9a924196a6e977c51610ded439f7ad967be7c3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:52.461Z"
+}

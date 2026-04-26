@@ -1,0 +1,29 @@
+{
+  "uuid": "wBRI",
+  "source_path": "exo7/4-L2/wBRI.tex",
+  "summary": "L'exercice demande de démontrer une inégalité impliquant une intégrale $I_{n,n}$ en utilisant des techniques d'intégration par parties, de récurrence et de développement binomial. Il s'agit d'étudier les propriétés arithmétiques des dénominateurs de cette intégrale.",
+  "concepts": [
+    "intégration par parties",
+    "récurrence",
+    "formule du binôme",
+    "décomposition en facteurs premiers",
+    "ppmc",
+    "inégalité arithmétique",
+    "valeur absolue"
+  ],
+  "methods": [
+    "récurrence",
+    "intégration par parties",
+    "développement binomial",
+    "analyse des diviseurs premiers"
+  ],
+  "objects": [
+    "intégrale $I_{p,q}$",
+    "ppmc des dénominateurs",
+    "décomposition en facteurs premiers",
+    "nombre premier"
+  ],
+  "content_hash": "6a3e2f6b10682306c57514720d61e8e8e808f6519843a2ce8c6dd62897eaf8c9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:30.178Z"
+}

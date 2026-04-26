@@ -1,0 +1,26 @@
+{
+  "uuid": "a8Uf",
+  "source_path": "exo7/15-L3/a8Uf.tex",
+  "summary": "L'exercice demande de démontrer une inégalité liant la distance d'un point à un sous-espace fermé et sa norme, puis d'établir l'équivalence entre l'appartenance d'un point à ce sous-espace et l'annulation de cette distance.",
+  "concepts": [
+    "distance à un sous-espace",
+    "sous-espace fermé",
+    "norme d'un vecteur",
+    "équivalence de conditions",
+    "topologie des espaces vectoriels normés"
+  ],
+  "methods": [
+    "utilisation de la définition de la distance à un sous-espace",
+    "manipulation d'inégalités",
+    "raisonnement par double implication"
+  ],
+  "objects": [
+    "sous-espace fermé F",
+    "point x",
+    "distance d(x,F)",
+    "norme ∥x∥"
+  ],
+  "content_hash": "b561bbd115a3032ac515cc06440d5f0a3d25e5e03290289b4416be4b0ca13036",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:26:31.428Z"
+}

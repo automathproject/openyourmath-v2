@@ -1,0 +1,28 @@
+{
+  "uuid": "f9Ah",
+  "source_path": "exo7/2-L1/f9Ah.tex",
+  "summary": "Calculer l'intégrale d'une fonction sur l'intervalle [0,4] et déterminer la continuité et la dérivabilité de la fonction intégrale correspondante. L'énoncé implique l'analyse d'une fonction en escalier avec des discontinuités en certains points.",
+  "concepts": [
+    "intégrale de Riemann",
+    "fonction en escalier",
+    "fonction intégrale",
+    "continuité",
+    "dérivabilité",
+    "limites à droite et à gauche"
+  ],
+  "methods": [
+    "subdivision de l'intervalle d'intégration",
+    "calcul de l'intégrale par sommation",
+    "analyse des limites en points de discontinuité",
+    "détermination des dérivées à droite et à gauche"
+  ],
+  "objects": [
+    "fonction f(t)",
+    "fonction intégrale F(x)",
+    "intervalle [0,4]",
+    "points de discontinuité (x=0, x=1, x=2)"
+  ],
+  "content_hash": "1f2673881d0e9a029c5882a73466179de0cf2835143bbca994bdd01058ff726c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:34:17.431Z"
+}

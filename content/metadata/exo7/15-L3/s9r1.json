@@ -1,0 +1,29 @@
+{
+  "uuid": "s9r1",
+  "source_path": "exo7/15-L3/s9r1.tex",
+  "summary": "L'exercice demande de démontrer la compacité d'un ensemble Kε pour tout ε > 0, puis d'établir l'existence d'un ε > 0 tel que Kε soit contenu dans un ouvert U donné. L'énoncé suggère d'utiliser une fonction de distance.",
+  "concepts": [
+    "compacité",
+    "fonction de distance",
+    "ouverts",
+    "topologie",
+    "ensemble borné",
+    "continuité",
+    "convergence de suites"
+  ],
+  "methods": [
+    "utilisation de la définition séquentielle de la compacité",
+    "application du théorème de Heine-Borel",
+    "analyse de la fonction distance",
+    "recouvrement par des ouverts"
+  ],
+  "objects": [
+    "ensemble Kε",
+    "fonction distance",
+    "ouvert U",
+    "espace métrique"
+  ],
+  "content_hash": "b54c949d2bdb1f41d7bf2e77c3a5c0273626c9150c613f762f44768470c7855a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:38:46.565Z"
+}

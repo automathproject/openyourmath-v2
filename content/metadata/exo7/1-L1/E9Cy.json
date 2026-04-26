@@ -1,0 +1,30 @@
+{
+  "uuid": "E9Cy",
+  "source_path": "exo7/1-L1/E9Cy.tex",
+  "summary": "L'exercice étudie les propriétés arithmétiques des nombres de la forme 2^a - 1. Il demande de prouver que (2^a - 1) divise (2^{ab} - 1), puis que si 2^p - 1 est premier alors p est premier, et enfin de déterminer le PGCD de deux nombres de cette forme.",
+  "concepts": [
+    "divisibilité dans Z",
+    "nombres premiers",
+    "algorithme d'Euclide",
+    "contraposée",
+    "propriétés des nombres de Mersenne",
+    "PGCD",
+    "factorisation polynomiale"
+  ],
+  "methods": [
+    "factorisation",
+    "raisonnement par contraposition",
+    "algorithme d'Euclide",
+    "manipulation d'exposants",
+    "utilisation de la relation de Bézout"
+  ],
+  "objects": [
+    "nombres de la forme 2^a - 1",
+    "PGCD de deux entiers",
+    "nombres premiers",
+    "exposants entiers"
+  ],
+  "content_hash": "10dea5f75c2d5fa579f0115e254c9f58fd897638abdd46f2b95f1b3d20300f58",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:53.863Z"
+}

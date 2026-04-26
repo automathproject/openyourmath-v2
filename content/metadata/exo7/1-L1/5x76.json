@@ -1,0 +1,25 @@
+{
+  "uuid": "5x76",
+  "source_path": "exo7/1-L1/5x76.tex",
+  "summary": "L'exercice demande de déterminer le PGCD de deux nombres entiers a et b, puis d'en déduire le PGCD de a+b et m, où d est le PGCD de a et b.",
+  "concepts": [
+    "PGCD",
+    "algorithme d'Euclide",
+    "divisibilité dans Z",
+    "propriétés arithmétiques",
+    "relation de Bézout"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "décomposition en facteurs premiers",
+    "utilisation des propriétés du PGCD"
+  ],
+  "objects": [
+    "entiers naturels",
+    "PGCD",
+    "somme d'entiers"
+  ],
+  "content_hash": "a5358df89d384b1df6d373ede96e28a9cb663e9e03aaa55acc652a71d25dc0f6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:12.354Z"
+}

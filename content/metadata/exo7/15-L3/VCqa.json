@@ -1,0 +1,32 @@
+{
+  "uuid": "VCqa",
+  "source_path": "exo7/15-L3/VCqa.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés topologiques liées à la compacité : d'abord que deux compacts disjoints admettent des voisinages ouverts disjoints, puis qu'un compact contenu dans un ouvert admet un voisinage ouvert de rayon suffisant.",
+  "concepts": [
+    "compacité",
+    "voisinage ouvert",
+    "disjoint",
+    "topologie",
+    "continuité",
+    "fermeté",
+    "propriété locale",
+    "recouvrement ouvert"
+  ],
+  "methods": [
+    "recouvrement fini",
+    "construction de voisinages disjoints",
+    "raisonnement par l'absurde",
+    "extraction de sous-suite",
+    "convergence de suite"
+  ],
+  "objects": [
+    "compact",
+    "ouvert",
+    "voisinage",
+    "suite",
+    "point"
+  ],
+  "content_hash": "0ef919d1c095e33e1ef78f107d7262f25f6518cab1c8fd4f23805604d730a2b5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:38:08.053Z"
+}

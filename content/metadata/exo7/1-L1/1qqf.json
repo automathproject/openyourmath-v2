@@ -1,0 +1,29 @@
+{
+  "uuid": "1qqf",
+  "source_path": "exo7/1-L1/1qqf.tex",
+  "summary": "L'exercice demande de démontrer une inégalité sur les rangs de deux applications linéaires f et g, en utilisant des propriétés de leur image et noyau. Il exploite la relation entre l'image de f et le noyau de g.",
+  "concepts": [
+    "application linéaire",
+    "image d'une application",
+    "noyau d'une application",
+    "rang d'une application",
+    "théorème du rang",
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "utilisation du théorème du rang",
+    "analyse des inclusions d'espaces vectoriels",
+    "démonstration par double inégalité"
+  ],
+  "objects": [
+    "application linéaire f",
+    "application linéaire g",
+    "espace vectoriel E",
+    "image de f",
+    "noyau de g"
+  ],
+  "content_hash": "ea74ab57a81ab2e6d459bc4778910e003a9add984b19fe93636117b37d82e441",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:44.791Z"
+}

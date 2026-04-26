@@ -1,0 +1,27 @@
+{
+  "uuid": "zs1x",
+  "source_path": "exo7/2-L1/zs1x.tex",
+  "summary": "L'exercice demande de montrer qu'une courbe Γ admet une représentation paramétrique donnée dans un repère convenable, puis d'en déduire sa longueur L. Il s'agit d'une courbe 3D dont les projections sur les plans de coordonnées doivent être représentées.",
+  "concepts": [
+    "représentation paramétrique",
+    "longueur d'arc",
+    "intégrale de ligne",
+    "paramétrisation de courbe",
+    "calcul différentiel"
+  ],
+  "methods": [
+    "calcul de la dérivée paramétrique",
+    "intégration de la norme du vecteur dérivée",
+    "paramétrisation cartésienne",
+    "représentation des projections"
+  ],
+  "objects": [
+    "courbe paramétrique 3D",
+    "vecteur dérivée",
+    "intégrale de longueur",
+    "projections planes"
+  ],
+  "content_hash": "dcb6bc79a1757006cf3a5547b653812930ed0d27e79a519a59db5b9fd8fa19db",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:36:58.883Z"
+}

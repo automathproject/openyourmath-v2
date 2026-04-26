@@ -1,0 +1,27 @@
+{
+  "uuid": "F2vk",
+  "source_path": "exo7/17-L3/F2vk.tex",
+  "summary": "L'exercice demande de démontrer une formule pour le conditionnement d'une matrice 2x2 et de calculer les conditionnements p=1, 2, ∞ des matrices obtenues lors de l'élimination de Gauss pour un système linéaire, selon l'ordre des équations.",
+  "concepts": [
+    "conditionnement d'une matrice",
+    "norme matricielle",
+    "déterminant",
+    "élimination de Gauss",
+    "stabilité numérique",
+    "système linéaire"
+  ],
+  "methods": [
+    "calcul de normes matricielles",
+    "analyse de conditionnement",
+    "comparaison de procédures numériques"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "conditionnement p=1, 2, ∞",
+    "système linéaire 2x2",
+    "matrices intermédiaires d'élimination de Gauss"
+  ],
+  "content_hash": "24f1d7f5637a91b76e8f1ab88ecd41678fa5ff1bc490610972014f2b4cef6ddc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:56.751Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "H7s3",
+  "source_path": "amscc/H7s3.tex",
+  "summary": "L'exercice demande de calculer le polynôme caractéristique d'une matrice dépendant d'un paramètre, puis de déterminer pour quelles valeurs du paramètre la matrice est diagonalisable, et d'analyser le cas particulier où elle ne l'est pas.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "diagonalisation",
+    "vecteur propre",
+    "multiplicité algébrique",
+    "multiplicité géométrique"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "critère de diagonalisation",
+    "détermination des valeurs propres"
+  ],
+  "objects": [
+    "matrice carrée",
+    "paramètre scalaire",
+    "polynôme du second degré"
+  ],
+  "content_hash": "a629f01bb08c440bf4305365af9c04d607df6e93d37448827189d9faac5f9fcd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:10:51.594Z"
+}

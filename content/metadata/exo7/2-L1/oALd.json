@@ -1,0 +1,27 @@
+{
+  "uuid": "oALd",
+  "source_path": "exo7/2-L1/oALd.tex",
+  "summary": "Établir la convergence et calculer la valeur d'une intégrale impropre de la forme ∫(f(at) - f(t))/t dt de 0 à +∞, où f est une fonction continue avec des limites connues en 0 et +∞. Application au calcul d'une intégrale spécifique.",
+  "concepts": [
+    "intégrale impropre",
+    "changement de variable",
+    "limite de fonction",
+    "convergence d'intégrale",
+    "fonction continue"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration par parties",
+    "passage à la limite",
+    "linéarisation de l'intégrande"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrale impropre",
+    "limite de fonction",
+    "expression intégrale"
+  ],
+  "content_hash": "196776efc18fac9378ccd5dd8091a8be4cdd68500623bcb21e28f697e7e76ba9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:35:17.131Z"
+}

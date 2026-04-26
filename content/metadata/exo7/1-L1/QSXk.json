@@ -1,0 +1,28 @@
+{
+  "uuid": "QSXk",
+  "source_path": "exo7/1-L1/QSXk.tex",
+  "summary": "L'exercice demande de démontrer l'infinitude des nombres premiers de la forme 4k+3 en utilisant des propriétés arithmétiques et une preuve par l'absurde. Il explore les propriétés de ces nombres et leur produit.",
+  "concepts": [
+    "nombres premiers",
+    "divisibilité dans Z",
+    "congruences modulo 4",
+    "preuve par l'absurde",
+    "produit de nombres de forme 4k+1",
+    "infinitude des nombres premiers"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "développement algébrique",
+    "analyse de congruences",
+    "construction d'un contre-exemple"
+  ],
+  "objects": [
+    "nombres de la forme 4k+3",
+    "nombres de la forme 4k+1",
+    "produit de nombres premiers",
+    "entier a = 4p1...pn - 1"
+  ],
+  "content_hash": "0e3af868f37d76c24daa83e8a9de110010b98a8739fc78c28d4a93998c00fa69",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:19:34.783Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "G7dF",
+  "source_path": "exo7/15-L3/G7dF.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire L continue implique que son noyau H est un sous-espace fermé, puis d'établir une relation entre la distance d'un point a à H et la norme de L. La réciproque est également à démontrer, ainsi qu'une généralisation à des applications linéaires entre espaces normés.",
+  "concepts": [
+    "application linéaire bornée",
+    "sous-espace fermé",
+    "distance à un sous-espace",
+    "noyau d'une application linéaire",
+    "continuité des applications linéaires",
+    "norme d'une application linéaire",
+    "décomposition d'espace vectoriel"
+  ],
+  "methods": [
+    "décomposition en somme directe",
+    "calcul de norme d'application linéaire",
+    "utilisation de la distance à un sous-espace",
+    "argument par continuité",
+    "contre-exemple"
+  ],
+  "objects": [
+    "application linéaire L",
+    "sous-espace H",
+    "point a",
+    "espace vectoriel normé X",
+    "polynôme V"
+  ],
+  "content_hash": "801e289c1125c1663428f6c4ffc3ae6b9d042bea68e4691c45f2d2af18530524",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:01.379Z"
+}

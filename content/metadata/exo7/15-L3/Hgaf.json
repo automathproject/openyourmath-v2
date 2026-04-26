@@ -1,0 +1,29 @@
+{
+  "uuid": "Hgaf",
+  "source_path": "exo7/15-L3/Hgaf.tex",
+  "summary": "On considère une fonction f définie sur un intervalle [a,b] avec f(a)=f(b)=0. On étudie l'ensemble E des points où f atteint son maximum sur ]a,b[. On doit montrer que E est à la fois ouvert et fermé dans ]a,b[, puis en déduire que f est soit strictement négative soit identiquement nulle sur ]a,b[.",
+  "concepts": [
+    "convexité",
+    "ensemble ouvert",
+    "ensemble fermé",
+    "maximum d'une fonction",
+    "fonction continue",
+    "propriété topologique",
+    "intervalle"
+  ],
+  "methods": [
+    "analyse des ensembles ouverts/fermés",
+    "utilisation des propriétés de convexité",
+    "raisonnement par l'absurde",
+    "considération de la corde"
+  ],
+  "objects": [
+    "fonction convexe",
+    "intervalle réel",
+    "ensemble de points",
+    "maximum local"
+  ],
+  "content_hash": "9c416d235cd4e446de7b9e9fae6118834db0abfe9793bf2be8344548752a9615",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:42:28.924Z"
+}

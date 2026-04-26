@@ -1,0 +1,27 @@
+{
+  "uuid": "m1Ag",
+  "source_path": "exo7/2-L1/m1Ag.tex",
+  "summary": "L'exercice demande de déterminer la limite en +∞ de la moyenne géométrique de a^x et b^x, où a et b sont des réels positifs. Le corrigé montre que cette limite vaut le maximum des deux nombres a et b.",
+  "concepts": [
+    "limite de suite",
+    "inégalité",
+    "comparaison de termes",
+    "propriétés des puissances",
+    "continuité des fonctions exponentielles"
+  ],
+  "methods": [
+    "comparaison de termes",
+    "encadrement",
+    "limite de suites géométriques",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction exponentielle",
+    "moyenne géométrique",
+    "réels positifs"
+  ],
+  "content_hash": "1529213e866da69d2577433e8644d211923312459d7ac7a01bb0ca3bf500093f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:47:32.448Z"
+}

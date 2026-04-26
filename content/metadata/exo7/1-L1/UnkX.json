@@ -1,0 +1,30 @@
+{
+  "uuid": "UnkX",
+  "source_path": "exo7/1-L1/UnkX.tex",
+  "summary": "L'exercice demande de montrer qu'une condition sur les dimensions de deux sous-espaces vectoriels F et G d'un espace vectoriel E est à la fois nécessaire et suffisante pour qu'il existe un endomorphisme f de E tel que Ker(f) = F et Im(f) = G.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "supplémentaire d'un sous-espace",
+    "isomorphisme d'espaces vectoriels",
+    "endomorphisme",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang"
+  ],
+  "methods": [
+    "construction d'un supplémentaire",
+    "utilisation de la dimension pour prouver l'égalité de sous-espaces",
+    "définition d'un endomorphisme par restriction",
+    "calcul de noyau et image"
+  ],
+  "objects": [
+    "sous-espaces vectoriels F et G",
+    "espace vectoriel E",
+    "endomorphisme f",
+    "supplémentaire F' de F"
+  ],
+  "content_hash": "702b0714f5ed9cd58b60090529bdafae7a8a80fe3bc3e66f14ee0189a4de5281",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:11:50.671Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "qAIw",
+  "source_path": "amscc/qAIw.tex",
+  "summary": "Concevoir un réseau de neurones capable de représenter une fonction réelle F(x) définie par morceaux, avec des segments horizontaux et verticaux, et des points spécifiques marqués sur le graphe.",
+  "concepts": [
+    "réseau de neurones",
+    "fonction par morceaux",
+    "approximation de fonctions",
+    "topologie des espaces métriques",
+    "fonction continue",
+    "fonction affine"
+  ],
+  "methods": [
+    "conception de réseau de neurones",
+    "approximation de fonctions par morceaux",
+    "utilisation de couches cachées",
+    "activation par seuil"
+  ],
+  "objects": [
+    "fonction réelle",
+    "réseau de neurones",
+    "graphe de fonction",
+    "segments de droite"
+  ],
+  "content_hash": "45ed572aac571612163020d3adb88a1eb94e99365d0ae376c2f974c2694a08f6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:28:32.078Z"
+}

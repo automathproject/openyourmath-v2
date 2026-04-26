@@ -1,0 +1,28 @@
+{
+  "uuid": "q5ml",
+  "source_path": "exo7/16-L3/q5ml.tex",
+  "summary": "L'exercice demande de montrer que l'intégrale d'une fonction rationnelle sur un chemin semi-circulaire de rayon R tend vers 0 quand R tend vers l'infini, puis d'en déduire la valeur d'une intégrale réelle impropre.",
+  "concepts": [
+    "intégrale complexe",
+    "théorème de Jordan",
+    "intégrale impropre",
+    "fonction rationnelle",
+    "convergence d'intégrale",
+    "limite de fonction"
+  ],
+  "methods": [
+    "estimation d'intégrale complexe",
+    "passage à la limite",
+    "décomposition en éléments simples",
+    "intégration sur chemin semi-circulaire"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "chemin semi-circulaire",
+    "intégrale complexe",
+    "intégrale réelle impropre"
+  ],
+  "content_hash": "74f27e71fd87ecc9a407e940e26d317764bfcf2082f4293a1bb3856b29a26c06",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:28:29.675Z"
+}

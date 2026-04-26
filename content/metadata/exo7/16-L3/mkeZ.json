@@ -1,0 +1,29 @@
+{
+  "uuid": "mkeZ",
+  "source_path": "exo7/16-L3/mkeZ.tex",
+  "summary": "L'exercice demande de définir la branche principale du logarithme complexe et d'étudier la possibilité de définir un logarithme sur un domaine spécifique du plan complexe privé de certains ensembles. Il s'agit de préciser l'argument choisi dans la définition du logarithme sur deux sous-ensembles distincts.",
+  "concepts": [
+    "fonction logarithme complexe",
+    "détermination du logarithme",
+    "continuité des fonctions complexes",
+    "holomorphie",
+    "argument d'un nombre complexe",
+    "branche principale",
+    "plan complexe privé d'un ensemble"
+  ],
+  "methods": [
+    "définition par cas",
+    "vérification de la continuité",
+    "vérification de l'exponentielle inverse"
+  ],
+  "objects": [
+    "fonction complexe",
+    "ensemble C",
+    "ensemble U",
+    "ensemble V",
+    "plan complexe privé d'un ensemble"
+  ],
+  "content_hash": "f5e87cd56ac62fb8fb3e6015f0bc129d3283f1008133eef93ced93a6a6c75635",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:28:01.291Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "ouAD",
+  "source_path": "exo7/15-L3/ouAD.tex",
+  "summary": "L'exercice demande de justifier que l'ensemble A est non vide et est un intervalle, puis d'étudier la convergence d'une suite récurrente définie par une fonction continue. Enfin, il s'agit de montrer qu'un ensemble de valeurs d'adhérence est un intervalle et d'en déduire la non-bijectivité d'une application.",
+  "concepts": [
+    "compacité",
+    "valeurs d'adhérence",
+    "suite récurrente",
+    "fonction continue",
+    "intervalle",
+    "convergence de suite",
+    "application linéaire"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la continuité",
+    "étude des points fixes",
+    "calcul des moyennes partielles"
+  ],
+  "objects": [
+    "suite numérique",
+    "ensemble A",
+    "fonction f",
+    "suite de moyennes partielles",
+    "application f de l^∞ dans lui-même"
+  ],
+  "content_hash": "d1e95251ce613e7b2f894d42d524ab0b2949e2bd01c8f3a67cc91995023b7fd1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:38:42.112Z"
+}

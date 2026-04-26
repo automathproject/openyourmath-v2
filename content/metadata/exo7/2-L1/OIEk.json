@@ -1,0 +1,27 @@
+{
+  "uuid": "OIEk",
+  "source_path": "exo7/2-L1/OIEk.tex",
+  "summary": "L'exercice demande de déterminer un δ en fonction d'un ε donné pour prouver la continuité d'une fonction f en x₀=0, en évitant le point de discontinuité x=1/3. La fonction f est définie comme f(x) = (2x+3)/(3x-1).",
+  "concepts": [
+    "continuité d'une fonction en un point",
+    "limite de fonction",
+    "définition ε-δ de la continuité",
+    "domaine de définition",
+    "restriction de domaine"
+  ],
+  "methods": [
+    "définition ε-δ",
+    "manipulation d'inégalités",
+    "restriction de domaine pour éviter les singularités",
+    "minimisation pour déterminer δ"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "point de discontinuité",
+    "valeur ε",
+    "valeur δ"
+  ],
+  "content_hash": "fd585ccbf03dc212aa8a6baa1a093f29ccf8b414ca46578c6a93353273ab3e78",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:18.526Z"
+}

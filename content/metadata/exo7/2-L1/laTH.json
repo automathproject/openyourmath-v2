@@ -1,0 +1,29 @@
+{
+  "uuid": "laTH",
+  "source_path": "exo7/2-L1/laTH.tex",
+  "summary": "L'exercice demande de démontrer des inégalités encadrant une intégrale de produit de fonctions, puis d'établir l'existence d'un point c où l'intégrale peut s'exprimer comme un produit de la valeur de f en a et d'une intégrale de g. La fonction f est supposée de classe C^1 ou continue, et g n'est pas explicitement décrite.",
+  "concepts": [
+    "intégrale de Riemann",
+    "classe C^1",
+    "continuité uniforme",
+    "limite uniforme",
+    "théorème de la valeur moyenne intégrale",
+    "convergence uniforme",
+    "fonction décroissante"
+  ],
+  "methods": [
+    "approximation par des fonctions régulières",
+    "utilisation de la continuité",
+    "application du théorème de la valeur moyenne intégrale",
+    "passage à la limite uniforme"
+  ],
+  "objects": [
+    "fonction f",
+    "fonction g",
+    "intégrale de produit de fonctions",
+    "point c"
+  ],
+  "content_hash": "147c51539b6834e2df442b43896c815f7031be124ebbf8e163bf01b653d7af3b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:34:50.225Z"
+}

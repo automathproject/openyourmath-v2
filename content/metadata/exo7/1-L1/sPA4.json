@@ -1,0 +1,30 @@
+{
+  "uuid": "sPA4",
+  "source_path": "exo7/1-L1/sPA4.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire de ℝ² dans ℝ² est déterminée par ses valeurs sur les vecteurs de base, puis de calculer les matrices de transformations géométriques classiques (symétrie, projection, rotation, homothétie, symétrie centrale) dans la base canonique. La dernière question porte sur la linéarité des translations.",
+  "concepts": [
+    "application linéaire",
+    "base vectorielle",
+    "matrice d'une application linéaire",
+    "symétrie axiale",
+    "projection orthogonale",
+    "rotation",
+    "homothétie",
+    "symétrie centrale",
+    "translation"
+  ],
+  "methods": [
+    "calcul de l'image des vecteurs de base",
+    "construction de matrice à partir d'images",
+    "vérification de la linéarité"
+  ],
+  "objects": [
+    "espace vectoriel ℝ²",
+    "vecteurs de base (i, j)",
+    "matrices 2x2",
+    "transformations géométriques"
+  ],
+  "content_hash": "10f4e4bfc0d1450b235d0c8a2495d09583b824e6b316e9be48bebe5a1b3babb0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:13:57.103Z"
+}

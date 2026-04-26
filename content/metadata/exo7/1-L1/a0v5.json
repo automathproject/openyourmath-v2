@@ -1,0 +1,26 @@
+{
+  "uuid": "a0v5",
+  "source_path": "exo7/1-L1/a0v5.tex",
+  "summary": "L'exercice demande de déterminer une expression pour le produit de deux entiers naturels a et b en fonction de leur pgcd et de leur différence.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "algorithme d'Euclide",
+    "divisibilité dans Z",
+    "identité de Bézout",
+    "relation entre pgcd et ppcm"
+  ],
+  "methods": [
+    "calcul du pgcd",
+    "utilisation de l'identité de Bézout",
+    "factorisation par le pgcd"
+  ],
+  "objects": [
+    "entiers naturels",
+    "pgcd de deux entiers",
+    "différence de deux entiers"
+  ],
+  "content_hash": "be052278148e27c2d62a031b41ccae7b601b25c120798b33fb83beffee43c104",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:18.997Z"
+}

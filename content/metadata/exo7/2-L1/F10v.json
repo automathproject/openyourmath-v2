@@ -1,0 +1,28 @@
+{
+  "uuid": "F10v",
+  "source_path": "exo7/2-L1/F10v.tex",
+  "summary": "L'exercice demande d'étudier la suite $u_n = \\sqrt[n]{n}$ pour $n \\in \\mathbb{N}^*$ en analysant son comportement à l'infini et en déterminant sa valeur maximale. Il s'agit d'une étude de fonction via la fonction $f(x) = x^{1/x}$ définie sur $]0, +\\infty[$.",
+  "concepts": [
+    "limite de suite",
+    "fonction exponentielle",
+    "dérivation",
+    "extremum de fonction",
+    "croissance et décroissance de fonction",
+    "comparaison de suites"
+  ],
+  "methods": [
+    "dérivation",
+    "étude du signe de la dérivée",
+    "comparaison de termes",
+    "calcul de limite"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction réelle",
+    "dérivée",
+    "maximum de suite"
+  ],
+  "content_hash": "3d8b3d70a29d12358c9b1bd52a70e8b408c9444b203e51d7617ab0b1ba509880",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:50.382Z"
+}

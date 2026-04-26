@@ -1,0 +1,30 @@
+{
+  "uuid": "7oso",
+  "source_path": "exo7/17-L3/7oso.tex",
+  "summary": "L'exercice demande de démontrer des propriétés du nombre de conditionnement spectral d'une matrice, notamment son expression en termes de valeurs singulières, son comportement pour les matrices normales, et son invariance par multiplication à gauche ou à droite par une matrice orthogonale.",
+  "concepts": [
+    "valeur singulière",
+    "rayon spectral",
+    "matrice normale",
+    "invariance par multiplication",
+    "nombre de conditionnement spectral",
+    "autoadjoint",
+    "décomposition spectrale"
+  ],
+  "methods": [
+    "décomposition en valeurs singulières",
+    "calcul du rayon spectral",
+    "utilisation de la décomposition spectrale",
+    "propriétés des matrices orthogonales"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice inversible",
+    "matrice orthogonale",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "4f87e2ea9d79ad605cff01b4865dbc4bf4e3a2e922db92c31d5730348fa234b7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:22:41.621Z"
+}

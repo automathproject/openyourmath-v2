@@ -1,0 +1,29 @@
+{
+  "uuid": "CRkC",
+  "source_path": "exo7/17-L3/CRkC.tex",
+  "summary": "L'exercice demande d'exprimer une matrice G comme perturbation de la matrice identité I par des matrices de rang 1, puis de montrer que G est inversible et orthogonale. Il étudie ensuite l'action de G sur une matrice A et cherche à annuler certaines entrées de A via une transformation par G.",
+  "concepts": [
+    "matrice orthogonale",
+    "inversibilité",
+    "matrice de rang 1",
+    "produit matriciel",
+    "décomposition matricielle",
+    "action de groupe sur les matrices"
+  ],
+  "methods": [
+    "décomposition en vecteurs propres",
+    "calcul de l'inverse d'une matrice orthogonale",
+    "vérification de l'orthogonalité",
+    "résolution de système d'équations non linéaires"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice identité",
+    "vecteurs de la base canonique",
+    "matrice de transformation",
+    "système d'équations"
+  ],
+  "content_hash": "9de71432ec41ee3045531b21945dc479a79742141df35bf93584b53aa86e891d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:18.711Z"
+}

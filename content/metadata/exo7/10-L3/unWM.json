@@ -1,0 +1,32 @@
+{
+  "uuid": "unWM",
+  "source_path": "exo7/10-L3/unWM.tex",
+  "summary": "L'exercice demande de montrer que l'intersection d'un sous-anneau B et d'un idéal I est un idéal de B, que la somme B+I est un sous-anneau de A et que I est un idéal de ce sous-anneau. Ensuite, il faut prouver que l'anneau quotient B/(B∩I) est isomorphe à (B+I)/I en utilisant un diagramme de morphismes d'anneaux.",
+  "concepts": [
+    "idéal d'un anneau",
+    "sous-anneau",
+    "anneau quotient",
+    "isomorphisme d'anneaux",
+    "morphisme d'anneaux",
+    "projection canonique",
+    "diagramme commutatif"
+  ],
+  "methods": [
+    "vérification des propriétés d'idéal",
+    "construction de sous-anneau",
+    "utilisation du premier théorème d'isomorphisme",
+    "analyse du noyau d'un morphisme",
+    "construction de diagramme commutatif"
+  ],
+  "objects": [
+    "sous-anneau B",
+    "idéal I",
+    "anneau quotient B/(B∩I)",
+    "sous-anneau B+I",
+    "morphisme d'inclusion",
+    "projection canonique π"
+  ],
+  "content_hash": "e24f8ecc28df95062709ca57c60789fcb658f8c566578459cb074d1f36428612",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:09:17.650Z"
+}

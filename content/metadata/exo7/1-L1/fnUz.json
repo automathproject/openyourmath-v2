@@ -1,0 +1,28 @@
+{
+  "uuid": "fnUz",
+  "source_path": "exo7/1-L1/fnUz.tex",
+  "summary": "L'exercice demande de démontrer une condition nécessaire et suffisante pour qu'une équation linéaire à deux inconnues entières ait une solution, puis de résoudre trois équations spécifiques.",
+  "concepts": [
+    "pgcd",
+    "équation diophantienne",
+    "divisibilité dans Z",
+    "théorème de Bézout",
+    "algorithme d'Euclide",
+    "ppcm"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "recherche de solutions particulières",
+    "combinaison linéaire",
+    "division euclidienne"
+  ],
+  "objects": [
+    "équation linéaire à deux inconnues",
+    "entiers relatifs",
+    "pgcd",
+    "solution entière"
+  ],
+  "content_hash": "eaaadba2f14fbc338ddc4fe9c59213eb6d24e510f500123e99bcc2b716456c92",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:38.776Z"
+}

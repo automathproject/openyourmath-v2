@@ -1,0 +1,27 @@
+{
+  "uuid": "2oan",
+  "source_path": "exo7/1-L1/2oan.tex",
+  "summary": "Trouver des entiers x et y multiples respectifs de 14 et 15 qui vérifient une condition donnée, en utilisant les propriétés du pgcd et du ppcm.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "divisibilité dans Z",
+    "algorithme d'Euclide",
+    "nombres premiers entre eux",
+    "multiple commun"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul du pgcd",
+    "calcul du ppcm",
+    "résolution d'équation diophantienne"
+  ],
+  "objects": [
+    "entiers relatifs",
+    "pgcd de deux nombres",
+    "ppcm de deux nombres"
+  ],
+  "content_hash": "93a6addbb2a7ebf9d7c893368565791d0979ca2d2208cb6e5c024ba1474d5700",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:49.470Z"
+}

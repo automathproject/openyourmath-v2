@@ -1,0 +1,30 @@
+{
+  "uuid": "Crm9",
+  "source_path": "exo7/1-L1/Crm9.tex",
+  "summary": "Cet exercice demande de démontrer plusieurs propriétés du pgcd et du ppcm dans l'ensemble des entiers relatifs, en utilisant des relations entre ces fonctions et des opérations algébriques.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "divisibilité dans Z",
+    "nombres premiers entre eux",
+    "algorithme d'Euclide",
+    "propriétés multiplicatives du pgcd",
+    "relation entre pgcd et ppcm"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "utilisation des propriétés du pgcd",
+    "manipulation d'équations de divisibilité",
+    "application de l'algorithme d'Euclide"
+  ],
+  "objects": [
+    "entiers relatifs",
+    "pgcd de deux entiers",
+    "ppcm de deux entiers",
+    "produit d'entiers",
+    "puissance d'entiers"
+  ],
+  "content_hash": "92928bce94b59d626dcb417f34798469c1ab041b8b5350c1bd1a769830e5fe40",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:47.224Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "inSn",
+  "source_path": "exo7/1-L1/inSn.tex",
+  "summary": "L'exercice demande de démontrer deux équivalences concernant les applications linéaires : la première lie l'inclusion des noyaux à l'existence d'une application linéaire intermédiaire, la seconde caractérise l'injectivité d'une application linéaire par l'existence d'une application linéaire droite.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "injectivité",
+    "supplémentaire d'un sous-espace",
+    "théorème du rang",
+    "linéarité"
+  ],
+  "methods": [
+    "définition d'une application linéaire par morceaux",
+    "utilisation de la linéarité",
+    "construction explicite d'une application linéaire",
+    "décomposition en somme directe"
+  ],
+  "objects": [
+    "application linéaire",
+    "noyau",
+    "image",
+    "supplémentaire",
+    "vecteurs"
+  ],
+  "content_hash": "0e5facb0437e69cc57db31dd6881f97e0cf65ca47a351f9be92913360edaee3a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:13:00.706Z"
+}

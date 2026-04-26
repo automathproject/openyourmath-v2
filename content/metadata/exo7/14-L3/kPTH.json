@@ -1,0 +1,35 @@
+{
+  "uuid": "kPTH",
+  "source_path": "exo7/14-L3/kPTH.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire entre espaces de Hilbert est continue, puis d'en déduire l'existence d'une fonction g dans L² vérifiant une égalité d'intégrales. Ensuite, il s'agit de prouver des propriétés de mesure nulle pour certains ensembles et de montrer qu'une fonction h est bien définie, positive et appartient à L¹.",
+  "concepts": [
+    "espace de Hilbert",
+    "application linéaire continue",
+    "intégrale de Lebesgue",
+    "mesure de Lebesgue",
+    "convergence monotone",
+    "fonction mesurable",
+    "mesure nulle",
+    "théorème de Radon-Nikodym"
+  ],
+  "methods": [
+    "utilisation de la continuité de la mesure",
+    "application du théorème de convergence monotone",
+    "décomposition en suites croissantes",
+    "limite de mesures",
+    "définition de fonctions indicatrices"
+  ],
+  "objects": [
+    "fonction de carré intégrable",
+    "application linéaire",
+    "mesure α",
+    "mesure μ",
+    "mesure ν",
+    "fonction g",
+    "fonction h",
+    "ensembles de mesure nulle"
+  ],
+  "content_hash": "283c15297d8924d2d630a30ec32457094fe037d887cbdaa9918f342171bbbcda",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:27:52.057Z"
+}

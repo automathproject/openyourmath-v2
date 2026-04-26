@@ -1,0 +1,30 @@
+{
+  "uuid": "2WDi",
+  "source_path": "exo7/10-L3/2WDi.tex",
+  "summary": "Résolution d'équations linéaires et quadratiques dans des anneaux d'entiers modulo un nombre premier. Les questions demandent de trouver les solutions entières x et y satisfaisant les congruences données.",
+  "concepts": [
+    "anneau Z/nZ",
+    "congruence linéaire",
+    "système d'équations linéaires modulo n",
+    "équation quadratique modulo n",
+    "inverses multiplicatifs",
+    "théorème des restes chinois"
+  ],
+  "methods": [
+    "résolution par substitution",
+    "calcul d'inverse modulo n",
+    "discriminant",
+    "factorisation dans Z/nZ"
+  ],
+  "objects": [
+    "équation linéaire modulo n",
+    "système d'équations linéaires",
+    "équation quadratique",
+    "entiers modulo 13",
+    "entiers modulo 7",
+    "entiers modulo 17"
+  ],
+  "content_hash": "86a9b32a641452fdba68018273319f0c4aaf41276d79bfb29faa876537fa8bb3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:06:54.003Z"
+}

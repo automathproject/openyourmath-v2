@@ -1,0 +1,28 @@
+{
+  "uuid": "J471",
+  "source_path": "exo7/10-L3/J471.tex",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité de morphismes d'anneaux entre des anneaux quotients de ℤ, puis d'établir des conditions générales sur les entiers m et n pour qu'un tel morphisme existe.",
+  "concepts": [
+    "morphisme d'anneaux",
+    "anneau quotient",
+    "divisibilité",
+    "relation de divisibilité",
+    "structure d'anneau",
+    "unicité des morphismes"
+  ],
+  "methods": [
+    "utilisation du théorème d'isomorphisme",
+    "analyse des noyaux",
+    "vérification des propriétés de morphisme",
+    "étude des relations de congruence"
+  ],
+  "objects": [
+    "anneaux quotients ℤ/mℤ",
+    "morphismes d'anneaux",
+    "entiers positifs m et n",
+    "relations de divisibilité"
+  ],
+  "content_hash": "8d28d7f049843877779e7d45c5b47d7a9492b81b8dc920091cf5ec40a8c869b6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:07:42.853Z"
+}

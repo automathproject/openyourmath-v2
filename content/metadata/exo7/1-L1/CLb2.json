@@ -1,0 +1,26 @@
+{
+  "uuid": "CLb2",
+  "source_path": "exo7/1-L1/CLb2.tex",
+  "summary": "L'exercice demande de vérifier que la somme directe de deux sous-espaces vectoriels F et G est égale à l'espace vectoriel E, puis de déterminer l'expression de la symétrie par rapport à F de direction G appliquée à un vecteur X de coordonnées (x, y, z).",
+  "concepts": [
+    "somme directe d'espaces vectoriels",
+    "sous-espace vectoriel",
+    "symétrie vectorielle",
+    "application linéaire",
+    "matrice de passage"
+  ],
+  "methods": [
+    "vérification de la somme directe",
+    "calcul de la symétrie vectorielle",
+    "résolution de système d'équations linéaires"
+  ],
+  "objects": [
+    "sous-espaces vectoriels F et G",
+    "espace vectoriel E",
+    "vecteur X",
+    "matrice de symétrie"
+  ],
+  "content_hash": "5930d9e6c65782b4aabb67e3074bc036d498d07f37bc4e103424e631159c4a16",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:10:30.295Z"
+}

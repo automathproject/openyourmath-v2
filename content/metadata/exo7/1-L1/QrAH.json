@@ -1,0 +1,30 @@
+{
+  "uuid": "QrAH",
+  "source_path": "exo7/1-L1/QrAH.tex",
+  "summary": "L'exercice demande de démontrer l'équivalence entre deux propriétés d'une application linéaire f : l'égalité entre son noyau et son image, et la combinaison d'une condition sur son carré et une relation entre sa dimension et son rang.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "dimension d'un espace vectoriel",
+    "inclusion d'espaces vectoriels",
+    "égalité d'espaces vectoriels"
+  ],
+  "methods": [
+    "utilisation de la formule du rang",
+    "démonstration par double implication",
+    "inclusion d'espaces vectoriels",
+    "calcul de dimension"
+  ],
+  "objects": [
+    "application linéaire f",
+    "noyau de f",
+    "image de f",
+    "espace vectoriel E",
+    "rang de f"
+  ],
+  "content_hash": "a08d3708b67a6a3a98c63171bf1efa06e0afd6360bd032da544cdcbd820e3967",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:11:42.684Z"
+}

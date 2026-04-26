@@ -1,0 +1,25 @@
+{
+  "uuid": "Q5t8",
+  "source_path": "amscc/Q5t8.tex",
+  "summary": "L'exercice demande de déterminer les valeurs propres d'une matrice A, de prouver sa diagonalisabilité, puis de trouver une matrice B telle que B² = A. La matrice A est donnée comme diagonale.",
+  "concepts": [
+    "valeur propre",
+    "matrice diagonale",
+    "diagonalisation",
+    "racine carrée d'une matrice",
+    "matrice symétrique"
+  ],
+  "methods": [
+    "calcul des valeurs propres",
+    "vérification de la diagonalisabilité",
+    "construction de la racine carrée d'une matrice"
+  ],
+  "objects": [
+    "matrice diagonale",
+    "matrice 2x2",
+    "valeurs propres"
+  ],
+  "content_hash": "b306733f316f282a2a7b2836821ba6d9938255480dbc0b2f38e916b1958955cd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:11:31.472Z"
+}

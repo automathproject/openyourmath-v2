@@ -1,0 +1,25 @@
+{
+  "uuid": "BwWC",
+  "source_path": "exo7/2-L1/BwWC.tex",
+  "summary": "Trouver les entiers naturels k pour lesquels les intervalles ]ka, kb[ et ](k+1)a, (k+1)b[ ont une intersection non vide, puis déterminer la plus petite valeur A telle que l'union de ces intervalles à partir d'un certain k0 couvre ]A, +∞[.",
+  "concepts": [
+    "partie entière",
+    "inclusion d'intervalles",
+    "union d'intervalles",
+    "inégalité",
+    "limite supérieure"
+  ],
+  "methods": [
+    "manipulation d'inégalités",
+    "calcul de partie entière",
+    "analyse d'intersections d'intervalles"
+  ],
+  "objects": [
+    "intervalles réels",
+    "entiers naturels",
+    "valeur A"
+  ],
+  "content_hash": "ab8a1d59d70776d2d5ae99f2c3859352967b21d540c879d64f80f79a289841e3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:44:25.304Z"
+}

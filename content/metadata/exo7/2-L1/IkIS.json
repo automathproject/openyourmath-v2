@@ -1,0 +1,31 @@
+{
+  "uuid": "IkIS",
+  "source_path": "exo7/2-L1/IkIS.tex",
+  "summary": "L'exercice demande de montrer une relation de récurrence pour une suite d'intégrales $I_n$ définies sur $[0, \frac{\\pi}{2}]$ de $\\sin^{n+1}x$, puis d'expliciter $I_n$ selon la parité de $n$. Il s'ensuit des questions sur la décroissance de la suite, son comportement asymptotique, et une application à une intégrale de Wallis pour calculer $\\int_{-1}^1 (1-x^2)^n dx$.",
+  "concepts": [
+    "intégration par parties",
+    "relation de récurrence",
+    "intégrale de Wallis",
+    "comportement asymptotique",
+    "changement de variable",
+    "suite numérique",
+    "limite de suites"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "récurrence",
+    "approximation asymptotique",
+    "encadrement de suites"
+  ],
+  "objects": [
+    "suite d'intégrales $I_n$",
+    "fonction sinus",
+    "intégrale de Wallis",
+    "suite positive décroissante",
+    "polynôme en sinus"
+  ],
+  "content_hash": "025b8591ca8d95f9b1bb26207b23d576768eb7d4d6a1edfd82cbf8c8b582fd50",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:32:02.745Z"
+}

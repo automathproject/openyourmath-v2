@@ -1,0 +1,29 @@
+{
+  "uuid": "ElRu",
+  "source_path": "exo7/16-L3/ElRu.tex",
+  "summary": "L'exercice demande de montrer que l'application $h_A$ associée à une matrice $A$ de $SL(2,\\mathbb{R})$ envoie le demi-plan de Poincaré $\\mathbb{H}$ sur lui-même, puis d'établir que pour tout point $z$ de $\\mathbb{H}$, il existe une matrice $A$ telle que $h_A(i) = z$.",
+  "concepts": [
+    "demi-plan de Poincaré",
+    "groupe linéaire spécial",
+    "application conforme",
+    "partie imaginaire",
+    "matrice 2x2",
+    "action de groupe",
+    "isomorphisme"
+  ],
+  "methods": [
+    "calcul de partie imaginaire",
+    "construction explicite de matrice",
+    "vérification de déterminant",
+    "utilisation de la condition $Im(z) > 0$"
+  ],
+  "objects": [
+    "demi-plan de Poincaré",
+    "matrice de $SL(2,\\mathbb{R})$",
+    "application $h_A$",
+    "point $z$ du demi-plan"
+  ],
+  "content_hash": "9a5ba5e28522c5221d16442bcf52544c5ac707128cdaf2b8564b622930d1930c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:53.686Z"
+}

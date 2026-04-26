@@ -1,0 +1,28 @@
+{
+  "uuid": "OaIJ",
+  "source_path": "exo7/2-L1/OaIJ.tex",
+  "summary": "L'exercice demande d'abord de déterminer la valeur d'une limite L d'une fonction f(x) lorsque x tend vers l'infini, puis de fournir un exemple où cette limite n'existe pas. Enfin, il s'agit de prouver que si f est décroissante, alors xf(x) tend vers 0 en +∞.",
+  "concepts": [
+    "limite de fonction",
+    "intégrale impropre",
+    "fonction décroissante",
+    "comportement asymptotique",
+    "théorème de comparaison",
+    "limite infinie"
+  ],
+  "methods": [
+    "étude de limite",
+    "raisonnement par l'absurde",
+    "utilisation de la décroissance",
+    "comparaison de termes"
+  ],
+  "objects": [
+    "fonction réelle",
+    "limite en +∞",
+    "produit de fonctions",
+    "exemple de fonction"
+  ],
+  "content_hash": "af61eae742bb5ec49f9fc4ca24fca94884afea4b6c71f356f8e6f8c53e11ad2d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:32:41.384Z"
+}

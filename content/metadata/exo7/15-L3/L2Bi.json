@@ -1,0 +1,27 @@
+{
+  "uuid": "L2Bi",
+  "source_path": "exo7/15-L3/L2Bi.tex",
+  "summary": "L'exercice demande de montrer qu'un ensemble B ne peut être connexe s'il ne rencontre pas la frontière d'un ensemble A dans un espace topologique X. Il utilise la partition de X en intérieur, frontière et complémentaire de l'adhérence de A.",
+  "concepts": [
+    "connexe",
+    "adhérence",
+    "intérieur d'un ensemble",
+    "frontière d'un ensemble",
+    "partition d'un espace",
+    "contraposition"
+  ],
+  "methods": [
+    "raisonnement par contraposition",
+    "analyse de la partition d'un espace",
+    "utilisation des propriétés de la frontière"
+  ],
+  "objects": [
+    "ensemble connexe",
+    "frontière d'un ensemble",
+    "adhérence d'un ensemble",
+    "intérieur d'un ensemble"
+  ],
+  "content_hash": "ad14982a4bc055306537af18e72b374ee3cfb32ee33d25d98c6ec6220088be91",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:42:36.059Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "YaCz",
+  "source_path": "exo7/2-L1/YaCz.tex",
+  "summary": "Calculer une intégrale impropre de la forme ∫(0 à 1) dt/√(1-t²). L'énoncé demande d'évaluer cette intégrale qui présente une singularité en t=1.",
+  "concepts": [
+    "intégrale impropre",
+    "changement de variable",
+    "fonction trigonométrique inverse",
+    "primitive d'une fonction",
+    "limite de fonction"
+  ],
+  "methods": [
+    "changement de variable trigonométrique",
+    "calcul de primitive",
+    "évaluation de limite"
+  ],
+  "objects": [
+    "intégrale impropre",
+    "fonction rationnelle",
+    "fonction trigonométrique"
+  ],
+  "content_hash": "78792fffa7f775171b442e9cd4db220dc9aa032c8e87c8e24185cb9d953411d3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:33:42.108Z"
+}

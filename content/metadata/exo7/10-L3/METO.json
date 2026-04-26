@@ -1,0 +1,32 @@
+{
+  "uuid": "METO",
+  "source_path": "exo7/10-L3/METO.tex",
+  "summary": "L'exercice demande de démontrer des propriétés sur les idéaux premiers et maximaux dans le cadre d'homomorphismes d'anneaux. Il aborde l'image réciproque d'un idéal premier, la non-conservation des idéaux maximaux, et la réduction de polynômes modulo un entier.",
+  "concepts": [
+    "idéal premier",
+    "idéal maximal",
+    "homomorphisme d'anneaux",
+    "image réciproque",
+    "réduction de polynômes modulo un entier",
+    "anneau quotient",
+    "propriété de fermeture",
+    "maximalité"
+  ],
+  "methods": [
+    "utilisation de la définition d'idéal premier",
+    "contre-exemple",
+    "preuve par l'absurde",
+    "application de la surjectivité",
+    "réduction modulo un entier"
+  ],
+  "objects": [
+    "idéal de A",
+    "idéal de B",
+    "homomorphisme f",
+    "polynôme dans Z[X]",
+    "anneau Z_m[X]"
+  ],
+  "content_hash": "0cef7f015155180532e45cf05dde009b890b2024e0a72e7a26fdedfa64f22f9b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:07:48.084Z"
+}

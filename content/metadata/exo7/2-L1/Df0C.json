@@ -1,0 +1,28 @@
+{
+  "uuid": "Df0C",
+  "source_path": "exo7/2-L1/Df0C.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction bornée sur un intervalle implique que son intégrale est bornée par le produit de la borne supérieure et de la longueur de l'intervalle. Il s'ensuit la continuité de la fonction intégrale, puis sa dérivabilité en un point si la fonction originale y est continue.",
+  "concepts": [
+    "bornitude d'une fonction",
+    "intégrale bornée",
+    "continuité d'une fonction",
+    "dérivabilité",
+    "théorème fondamental de l'analyse",
+    "inégalité de l'intégrale"
+  ],
+  "methods": [
+    "utilisation de la borne supérieure",
+    "estimation d'intégrale",
+    "application du théorème fondamental de l'analyse",
+    "limite de la différence quotient"
+  ],
+  "objects": [
+    "fonction bornée",
+    "intégrale définie",
+    "fonction intégrale",
+    "point de continuité"
+  ],
+  "content_hash": "a5205759fc68cd4f53e9bc9e48d28e566bbacad22f72f5a4625c7ee212f405c7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:31:24.629Z"
+}

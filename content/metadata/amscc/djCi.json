@@ -1,0 +1,32 @@
+{
+  "uuid": "djCi",
+  "source_path": "amscc/djCi.tex",
+  "summary": "L'exercice demande de démontrer qu'un perceptron réalise l'opération logique ET sur trois variables binaires, puis d'étendre cette approche pour classer des points dans un triangle ou un polygone convexe à l'aide de réseaux de neurones. Le contexte implique des inégalités linéaires et des fonctions d'activation de type Heaviside.",
+  "concepts": [
+    "fonction d'activation Heaviside",
+    "perceptron",
+    "réseau de neurones à deux couches",
+    "classification binaire",
+    "inégalités linéaires",
+    "polygone convexe",
+    "intersection de demi-plans",
+    "fonction logique ET"
+  ],
+  "methods": [
+    "décomposition en inégalités linéaires",
+    "construction de réseaux de neurones",
+    "utilisation de la fonction Heaviside",
+    "combinaison logique de perceptrons"
+  ],
+  "objects": [
+    "perceptron",
+    "réseau de neurones",
+    "vecteur d'entrée",
+    "fonction de classification",
+    "polygone convexe",
+    "demi-plans"
+  ],
+  "content_hash": "108748843db1fd4a78f0dbbd6809658e8378c6d12215f87ce60ef55a824393ab",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:26:57.638Z"
+}

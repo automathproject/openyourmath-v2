@@ -1,0 +1,30 @@
+{
+  "uuid": "zGHD",
+  "source_path": "exo7/1-L1/zGHD.tex",
+  "summary": "L'exercice demande de déterminer des bases pour deux sous-espaces de ℝ³, de montrer que ℝ³ est la somme directe de ces sous-espaces, puis de calculer les matrices de projection et de symétrie associées dans différentes bases. Il s'agit d'appliquer les propriétés des applications linéaires et des bases en algèbre linéaire.",
+  "concepts": [
+    "somme directe de sous-espaces",
+    "application linéaire",
+    "projection orthogonale",
+    "symétrie par rapport à un sous-espace",
+    "matrice d'une application linéaire",
+    "base d'un espace vectoriel",
+    "endomorphisme"
+  ],
+  "methods": [
+    "détermination de bases",
+    "calcul de matrices de changement de base",
+    "vérification des propriétés algébriques",
+    "utilisation des propriétés de la projection et de la symétrie"
+  ],
+  "objects": [
+    "sous-espaces vectoriels de ℝ³",
+    "matrices de projection",
+    "matrices de symétrie",
+    "bases de ℝ³",
+    "endomorphismes de ℝ³"
+  ],
+  "content_hash": "07c5288c8acf1f9c89284fe3e25549d93f5ae8356c9d5013a21b7e141960edc0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:46.634Z"
+}

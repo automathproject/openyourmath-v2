@@ -1,0 +1,28 @@
+{
+  "uuid": "6TAL",
+  "source_path": "exo7/2-L1/6TAL.tex",
+  "summary": "L'exercice demande d'exprimer une fonction g(x) sous forme d'intégrale, puis d'en déduire sa régularité (classe C^p) et une majoration de sa dérivée p-ième.",
+  "concepts": [
+    "intégrale dépendant d'un paramètre",
+    "classe de régularité C^p",
+    "dérivation sous le signe intégral",
+    "majoration de dérivées",
+    "inégalité de Taylor",
+    "fonction dérivable"
+  ],
+  "methods": [
+    "dérivation sous le signe intégral",
+    "majoration de termes",
+    "utilisation de la formule de Taylor",
+    "estimation de bornes"
+  ],
+  "objects": [
+    "fonction g(x)",
+    "dérivées successives",
+    "intégrale paramétrique",
+    "bornes supérieures"
+  ],
+  "content_hash": "b580e3f4a16b1d483b6a7c81445581acebd134425b181ada167b7954c389a326",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:30:32.918Z"
+}

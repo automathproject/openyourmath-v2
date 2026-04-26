@@ -1,0 +1,31 @@
+{
+  "uuid": "ulsO",
+  "source_path": "exo7/2-L1/ulsO.tex",
+  "summary": "L'exercice demande de démontrer que l'intégrale d'une fonction positive sur un intervalle est strictement positive si la fonction est strictement positive en un point. Il en déduit que si une fonction continue positive a une intégrale nulle, elle est identiquement nulle. Ensuite, il montre qu'une fonction continue dont l'intégrale est nulle s'annule en au moins un point. Enfin, une application illustre ces résultats en prouvant l'existence d'un point d'intersection entre une fonction continue et la fonction identité.",
+  "concepts": [
+    "continuité",
+    "intégrale",
+    "positivité de l'intégrale",
+    "théorème des valeurs intermédiaires",
+    "linéarité de l'intégrale",
+    "contraposition",
+    "fonction identiquement nulle"
+  ],
+  "methods": [
+    "définition de la continuité",
+    "découpage de l'intégrale",
+    "calcul d'intégrale de fonction constante",
+    "raisonnement par contraposition",
+    "application du théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrale sur un intervalle",
+    "point d'annulation",
+    "fonction positive",
+    "fonction identité"
+  ],
+  "content_hash": "e0ae9f9be678b7c91d8dc9cac1fdfa3a44dc5765cebc98d309143c6650e60fff",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:36:19.312Z"
+}

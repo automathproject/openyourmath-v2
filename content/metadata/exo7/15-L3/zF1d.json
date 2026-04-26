@@ -1,0 +1,29 @@
+{
+  "uuid": "zF1d",
+  "source_path": "exo7/15-L3/zF1d.tex",
+  "summary": "L'exercice demande de prouver que la somme de Minkowski d'un compact et d'un fermé est fermée, puis de fournir un contre-exemple dans ℝ² où la somme de deux fermés n'est pas fermée.",
+  "concepts": [
+    "compacité",
+    "fermeture",
+    "somme de Minkowski",
+    "convergence de suites",
+    "caractérisation séquentielle de la fermeture",
+    "espace vectoriel normé"
+  ],
+  "methods": [
+    "caractérisation séquentielle de la fermeture",
+    "extraction de sous-suite",
+    "limite de suite",
+    "construction de contre-exemple"
+  ],
+  "objects": [
+    "ensemble compact",
+    "ensemble fermé",
+    "somme de Minkowski",
+    "suite convergente",
+    "espace ℝ²"
+  ],
+  "content_hash": "7fcedc0fc806a1f566e5c9a6d4f1740ba871ea679812ec0054dba4da055c27b2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:38:55.827Z"
+}

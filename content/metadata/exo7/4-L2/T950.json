@@ -1,0 +1,25 @@
+{
+  "uuid": "T950",
+  "source_path": "exo7/4-L2/T950.tex",
+  "summary": "L'exercice demande de montrer qu'une somme de cinq carrés d'entiers consécutifs ne peut jamais être un carré parfait.",
+  "concepts": [
+    "arithmétique dans Z",
+    "carré parfait",
+    "congruences",
+    "divisibilité",
+    "classes d'équivalence modulo 5"
+  ],
+  "methods": [
+    "développement d'expression algébrique",
+    "analyse par cas modulo 5",
+    "vérification de divisibilité"
+  ],
+  "objects": [
+    "entiers consécutifs",
+    "somme de carrés",
+    "expression polynomiale"
+  ],
+  "content_hash": "2ff1018b0a7f537df0fcb674b1b12cceeab5c909b3028816b7f03d22178c4f2f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:18.531Z"
+}

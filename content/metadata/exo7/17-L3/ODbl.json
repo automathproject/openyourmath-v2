@@ -1,0 +1,30 @@
+{
+  "uuid": "ODbl",
+  "source_path": "exo7/17-L3/ODbl.tex",
+  "summary": "L'exercice demande de retrouver la formule de Sherman-Morrison pour l'inverse d'une matrice perturbée de rang 1, puis de démontrer l'inversibilité de matrices particulières et d'en calculer l'inverse. Il aborde aussi le calcul récursif de l'inverse d'une matrice par blocs.",
+  "concepts": [
+    "formule de Sherman-Morrison",
+    "inversibilité de matrice",
+    "matrice par blocs",
+    "calcul récursif d'inverse",
+    "perturbation de rang 1",
+    "déterminant",
+    "système linéaire"
+  ],
+  "methods": [
+    "décomposition matricielle",
+    "calcul d'inverse par blocs",
+    "récurrence matricielle",
+    "manipulation algébrique de matrices"
+  ],
+  "objects": [
+    "matrice inversible",
+    "matrice par blocs",
+    "matrice de perturbation",
+    "suite de matrices",
+    "algorithme récursif"
+  ],
+  "content_hash": "970c8b4aad6978816835050bab4fd4b1f01f0cdcd092992eaa703aa2b8a369f9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:25:18.282Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "jJv7",
+  "source_path": "exo7/1-L1/jJv7.tex",
+  "summary": "L'exercice demande de démontrer deux relations dimensionnelles concernant une application linéaire f entre espaces vectoriels E et F. La première relation lie la dimension de l'image d'un sous-espace H de E à la dimension de H et de son intersection avec le noyau de f. La seconde relation lie la dimension de la préimage d'un sous-espace K de F à la dimension de l'intersection de K avec l'image de f et à la dimension du noyau de f.",
+  "concepts": [
+    "application linéaire",
+    "sous-espace vectoriel",
+    "image d'une application linéaire",
+    "noyau d'une application linéaire",
+    "théorème du rang",
+    "dimension d'un espace vectoriel",
+    "intersection de sous-espaces"
+  ],
+  "methods": [
+    "calcul de dimension",
+    "utilisation du théorème du rang",
+    "décomposition en somme directe"
+  ],
+  "objects": [
+    "sous-espace vectoriel H de E",
+    "sous-espace vectoriel K de F",
+    "noyau de f",
+    "image de f",
+    "préimage d'un sous-espace"
+  ],
+  "content_hash": "c0c7994eb83d7ba21d191a81140d96c30301577e58a0041ac505be142be5667a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:13:04.037Z"
+}

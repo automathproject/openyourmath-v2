@@ -1,0 +1,30 @@
+{
+  "uuid": "1mo8",
+  "source_path": "exo7/2-L1/1mo8.tex",
+  "summary": "L'exercice demande de déterminer la limite en +∞ de la fonction f(x)/x, où f est continue sur [a, +∞[ pour un certain a > 0. Deux cas sont envisagés : lorsque la limite est finie et lorsque la limite est infinie.",
+  "concepts": [
+    "limite de fonctions réelles",
+    "continuité sur un intervalle",
+    "limite infinie",
+    "limite finie",
+    "inégalité de convergence",
+    "bornitude des fonctions continues"
+  ],
+  "methods": [
+    "encadrement de la fonction",
+    "utilisation de la définition de la limite",
+    "approximation par des sommes",
+    "majoration/minoration de termes",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle borné",
+    "suite numérique",
+    "inégalité",
+    "limite"
+  ],
+  "content_hash": "15382963c25a82d82034431814a48d621cd5b8bba21f5a0bb5eab78ce913432b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:43:21.664Z"
+}

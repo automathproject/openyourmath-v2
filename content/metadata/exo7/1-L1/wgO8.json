@@ -1,0 +1,29 @@
+{
+  "uuid": "wgO8",
+  "source_path": "exo7/1-L1/wgO8.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire f est un endomorphisme d'un espace vectoriel E, puis d'établir l'équivalence entre la bijectivité de f et le fait que deux polynômes A et B soient premiers entre eux.",
+  "concepts": [
+    "endomorphisme",
+    "application linéaire",
+    "bijectivité",
+    "théorème de Bézout",
+    "lemme de Gauss",
+    "division euclidienne des polynômes",
+    "premiers entre eux"
+  ],
+  "methods": [
+    "vérification de la linéarité",
+    "utilisation de la division euclidienne",
+    "application du théorème de Bézout",
+    "application du lemme de Gauss"
+  ],
+  "objects": [
+    "polynôme",
+    "espace vectoriel",
+    "application linéaire",
+    "division euclidienne"
+  ],
+  "content_hash": "30da85ba77ed034711d13d89191a503ac6e6902cf6a44d11768cf9139da60def",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:30.523Z"
+}

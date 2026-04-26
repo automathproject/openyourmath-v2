@@ -1,0 +1,35 @@
+{
+  "uuid": "EVCx",
+  "source_path": "exo7/6-L2/EVCx.tex",
+  "summary": "L'exercice propose plusieurs équations de coniques (hyperbole, ellipse, parabole, cercle, point, ensemble vide) et demande d'identifier leurs propriétés géométriques (centre, sommets, foyers, directrices, etc.) en utilisant des changements de repère et des transformations affines.",
+  "concepts": [
+    "conique",
+    "hyperbole",
+    "ellipse",
+    "parabole",
+    "cercle",
+    "changement de repère",
+    "transformation affine",
+    "discriminant de conique",
+    "éléments métriques d'une conique"
+  ],
+  "methods": [
+    "changement de repère orthonormé",
+    "élimination du terme croisé xy",
+    "complétion du carré",
+    "identification des éléments affines",
+    "calcul des paramètres métriques"
+  ],
+  "objects": [
+    "équation cartésienne de conique",
+    "centre de conique",
+    "sommets",
+    "foyers",
+    "directrices",
+    "asymptotes",
+    "axe focal"
+  ],
+  "content_hash": "0aab8487ed3f68fe76afd75178ad4272539e49243027abc4564f6e3fc6ea03db",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:39:30.096Z"
+}

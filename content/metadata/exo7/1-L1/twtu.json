@@ -1,0 +1,28 @@
+{
+  "uuid": "twtu",
+  "source_path": "exo7/1-L1/twtu.tex",
+  "summary": "L'exercice étudie des applications linéaires f et g vérifiant fg - gf = af + bg, avec a ≠ 0 et a ≠ 1. Il demande de montrer des inclusions entre images et noyaux, puis de déterminer les valeurs possibles du couple (a, b) et de caractériser les cas correspondants.",
+  "concepts": [
+    "application linéaire",
+    "projecteur",
+    "image d'une application",
+    "noyau d'une application",
+    "commutativité",
+    "inclusion d'espaces vectoriels"
+  ],
+  "methods": [
+    "composition d'applications linéaires",
+    "manipulation algébrique d'équations",
+    "utilisation de propriétés des projecteurs",
+    "inclusion d'espaces vectoriels"
+  ],
+  "objects": [
+    "applications linéaires f et g",
+    "projecteurs",
+    "images Im(f) et Im(g)",
+    "noyaux Ker(f) et Ker(g)"
+  ],
+  "content_hash": "c2752fc888c72a26a467a192533a50da60b9b27a96ec85b894f1e475678a0474",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:10.477Z"
+}

@@ -1,0 +1,35 @@
+{
+  "uuid": "Oz1G",
+  "source_path": "exo7/6-L2/Oz1G.tex",
+  "summary": "L'exercice demande d'identifier et de caractériser la nature d'une conique donnée par une équation cartésienne du second degré, en déterminant son type (ellipse, parabole, hyperbole), son centre, ses axes, ses sommets, ses foyers et ses directrices. Plusieurs exemples sont fournis, couvrant les différents cas de coniques.",
+  "concepts": [
+    "conique",
+    "ellipse",
+    "parabole",
+    "hyperbole",
+    "discriminant d'une conique",
+    "changement de repère",
+    "valeurs propres d'une matrice",
+    "diagonalisation",
+    "équation réduite d'une conique"
+  ],
+  "methods": [
+    "calcul du discriminant",
+    "recherche des points critiques",
+    "diagonalisation de matrice",
+    "changement de base orthonormée",
+    "calcul des éléments caractéristiques d'une conique"
+  ],
+  "objects": [
+    "équation cartésienne du second degré",
+    "matrice associée à une forme quadratique",
+    "vecteurs propres",
+    "repère orthonormé",
+    "asymptotes",
+    "foyers",
+    "directrices"
+  ],
+  "content_hash": "0a0effa79330d00f3c2ab264c7cd8c2f97a2b0dd86071490e54d500a5454c337",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:40:02.045Z"
+}

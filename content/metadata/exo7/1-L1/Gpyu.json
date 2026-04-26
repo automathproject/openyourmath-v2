@@ -1,0 +1,32 @@
+{
+  "uuid": "Gpyu",
+  "source_path": "exo7/1-L1/Gpyu.tex",
+  "summary": "L'exercice demande de montrer qu'une application $f$ est linéaire, puis de déterminer son noyau et son image. Il applique ensuite le théorème du rang pour établir une relation dimensionnelle entre des sous-espaces vectoriels.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "somme de sous-espaces vectoriels",
+    "intersection de sous-espaces vectoriels",
+    "isomorphisme d'espaces vectoriels",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "définition d'application linéaire",
+    "calcul du noyau",
+    "calcul de l'image",
+    "utilisation du théorème du rang",
+    "construction d'isomorphisme"
+  ],
+  "objects": [
+    "application linéaire $f$",
+    "sous-espaces vectoriels $E_1$ et $E_2$",
+    "noyau de $f$",
+    "image de $f$",
+    "produit cartésien $E_1 \times E_2$"
+  ],
+  "content_hash": "ad7e62fc7e96bedd9c0fb992ede3a7aaae8f135599b24d831e106a994c7787ec",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:10:47.057Z"
+}

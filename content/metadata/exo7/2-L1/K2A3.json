@@ -1,0 +1,27 @@
+{
+  "uuid": "K2A3",
+  "source_path": "exo7/2-L1/K2A3.tex",
+  "summary": "L'exercice demande de démontrer qu'une fonction continue sur ℝ est bornée, en utilisant la définition de la limite en +∞ et les propriétés de continuité sur un intervalle fermé borné.",
+  "concepts": [
+    "limite d'une fonction en +∞",
+    "continuité sur un intervalle fermé borné",
+    "bornitude d'une fonction",
+    "théorème des bornes",
+    "définition ε-δ de la limite"
+  ],
+  "methods": [
+    "fixation d'un ε particulier",
+    "utilisation de la définition de la limite",
+    "application du théorème des bornes",
+    "comparaison de bornes"
+  ],
+  "objects": [
+    "fonction continue sur ℝ",
+    "intervalle fermé borné",
+    "limite en +∞",
+    "bornes inférieures et supérieures"
+  ],
+  "content_hash": "22676df09bc857d50b92d7f673c03b7a462305eca792355ee3fb13171f4da4c6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:13.195Z"
+}

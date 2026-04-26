@@ -1,0 +1,28 @@
+{
+  "uuid": "NdIl",
+  "source_path": "exo7/4-L2/NdIl.tex",
+  "summary": "L'exercice demande de calculer la somme des chiffres du nombre 4444^4444, puis d'itérer ce processus sur le résultat obtenu, et enfin de déterminer la valeur finale modulo 9.",
+  "concepts": [
+    "somme des chiffres d'un nombre",
+    "arithmétique modulaire",
+    "inégalité triangulaire",
+    "logarithme",
+    "congruence",
+    "propriétés des puissances modulo 9"
+  ],
+  "methods": [
+    "estimation par majoration",
+    "calcul de congruence",
+    "itération de la somme des chiffres",
+    "développement en base 10"
+  ],
+  "objects": [
+    "nombre entier",
+    "somme des chiffres",
+    "puissance entière",
+    "congruence modulo 9"
+  ],
+  "content_hash": "d610f3beee0e45209ea6ddbe07c2e5c3bc2a1710b8eecd254012148428bc6a15",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:02.554Z"
+}

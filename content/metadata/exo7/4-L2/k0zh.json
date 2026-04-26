@@ -1,0 +1,31 @@
+{
+  "uuid": "k0zh",
+  "source_path": "exo7/4-L2/k0zh.tex",
+  "summary": "L'exercice étudie les propriétés arithmétiques des triplets pythagoriciens (x, y, z) vérifiant x² + y² = z². Il demande de montrer que l'on peut se ramener au cas où x, y, z sont premiers entre eux, puis d'en déduire la forme générale de ces triplets.",
+  "concepts": [
+    "pgcd",
+    "nombres premiers entre eux",
+    "triplet pythagoricien",
+    "arithmétique dans Z",
+    "divisibilité",
+    "carré parfait",
+    "identité de Pythagore"
+  ],
+  "methods": [
+    "réduction au cas premier entre eux",
+    "analyse par l'absurde",
+    "décomposition en facteurs premiers",
+    "utilisation de l'identité de Pythagore",
+    "construction explicite de solutions"
+  ],
+  "objects": [
+    "triplet (x, y, z)",
+    "pgcd(x, y, z)",
+    "nombres entiers relatifs",
+    "carrés parfaits",
+    "formule paramétrique des triplets pythagoriciens"
+  ],
+  "content_hash": "90b1cabcfb6f4e1bca4a1b8e493df0a5637b512d80ede98568b23ed1398fcccb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:00.439Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "rrmA",
+  "source_path": "exo7/16-L3/rrmA.tex",
+  "summary": "L'exercice demande de montrer l'holomorphie d'une fonction complexe f(z) définie comme une série, puis d'étudier ses zéros dans des disques centrés en 0. Il s'agit d'analyser le comportement de f(z) et de ses racines en fonction d'un paramètre a.",
+  "concepts": [
+    "fonction holomorphe",
+    "série entière",
+    "zéros d'une fonction",
+    "disque dans le plan complexe",
+    "convergence uniforme",
+    "théorème de Rouché",
+    "principe de l'argument"
+  ],
+  "methods": [
+    "étude de la dérivabilité complexe",
+    "estimation de séries",
+    "application du théorème de Rouché",
+    "analyse des racines dans des disques"
+  ],
+  "objects": [
+    "fonction complexe f(z)",
+    "série infinie",
+    "zéros de f(z)",
+    "disque D(0,a^{2p})",
+    "paramètre a"
+  ],
+  "content_hash": "9d982b61bf34be263e8ac9792ace0d0c481e579c7beafc6f9619968a4c948d56",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:28:46.478Z"
+}

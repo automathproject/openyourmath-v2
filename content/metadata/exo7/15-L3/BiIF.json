@@ -1,0 +1,28 @@
+{
+  "uuid": "BiIF",
+  "source_path": "exo7/15-L3/BiIF.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction g(x) définie comme l'infimum d'un ensemble de fonctions f_y(x) est k-lipschitzienne, puis d'établir une condition pour l'unicité de ce prolongement.",
+  "concepts": [
+    "continuité uniforme",
+    "fonction lipschitzienne",
+    "infimum",
+    "prolongement de fonction",
+    "bornes inférieures",
+    "topologie métrique"
+  ],
+  "methods": [
+    "définition de fonction lipschitzienne",
+    "utilisation de l'infimum",
+    "preuve par construction",
+    "analyse des bornes"
+  ],
+  "objects": [
+    "fonction g(x)",
+    "ensemble de fonctions f_y(x)",
+    "prolongement k-lipschitzien",
+    "infimum d'un ensemble"
+  ],
+  "content_hash": "e3640918c268bd419a591a3a26edd135e3d3c0e909b5b5313ad45a0e322c1187",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:48:39.446Z"
+}

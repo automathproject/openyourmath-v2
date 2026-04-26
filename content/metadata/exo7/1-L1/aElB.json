@@ -1,0 +1,33 @@
+{
+  "uuid": "aElB",
+  "source_path": "exo7/1-L1/aElB.tex",
+  "summary": "L'exercice demande de démontrer l'équivalence entre la non-injectivité (resp. non-surjectivité) d'une application linéaire et le fait qu'elle soit nulle ou diviseur de zéro à gauche (resp. à droite).",
+  "concepts": [
+    "application linéaire",
+    "injectivité",
+    "surjectivité",
+    "noyau d'une application",
+    "image d'une application",
+    "théorème du rang",
+    "endomorphisme",
+    "projection vectorielle"
+  ],
+  "methods": [
+    "utilisation du noyau",
+    "utilisation de l'image",
+    "construction de projections",
+    "argument par l'absurde",
+    "utilisation de supplémentaires"
+  ],
+  "objects": [
+    "application linéaire",
+    "endomorphisme",
+    "noyau",
+    "image",
+    "projection",
+    "sous-espace vectoriel"
+  ],
+  "content_hash": "a1cd2079208db5cfe9544fe326f33e1f9fbb1298f59bd41a48e1718746c47729",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:12:26.847Z"
+}

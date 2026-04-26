@@ -1,0 +1,31 @@
+{
+  "uuid": "hLkm",
+  "source_path": "amscc/hLkm.tex",
+  "summary": "L'exercice étudie un schéma numérique pour résoudre une équation différentielle ordinaire. Il demande de prouver des propriétés de régularité, de développer un schéma d'ordre N, et de comparer sa précision avec d'autres méthodes comme Euler.",
+  "concepts": [
+    "équation différentielle ordinaire",
+    "développement de Taylor",
+    "consistance d'un schéma numérique",
+    "stabilité numérique",
+    "convergence d'un schéma",
+    "régularité des fonctions",
+    "ordre de consistance"
+  ],
+  "methods": [
+    "développement de Taylor",
+    "analyse de consistance",
+    "preuve de stabilité",
+    "construction de schéma d'ordre N",
+    "comparaison de méthodes numériques"
+  ],
+  "objects": [
+    "fonction de classe C^3",
+    "développement en série de Taylor",
+    "schéma numérique",
+    "équation différentielle autonome",
+    "solution exacte"
+  ],
+  "content_hash": "06b1f99a7060ea4a760f8b02d11ee36f81888926a1603245125705640359eda6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:05:43.637Z"
+}

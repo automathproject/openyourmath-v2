@@ -1,0 +1,27 @@
+{
+  "uuid": "CdiT",
+  "source_path": "exo7/8-L3/CdiT.tex",
+  "summary": "Déterminer le nombre d'orbites de l'action par conjugaison d'un groupe G sur ses sous-groupes, en utilisant la relation entre le cardinal de l'orbite d'un sous-groupe H et son normalisateur dans G.",
+  "concepts": [
+    "action de groupe",
+    "conjugaison",
+    "orbite",
+    "normalisateur d'un sous-groupe",
+    "théorème de Burnside",
+    "cardinal d'un ensemble quotient"
+  ],
+  "methods": [
+    "calcul du normalisateur",
+    "détermination des orbites",
+    "application de la formule des orbites"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe H",
+    "normalisateur Nor_G(H)",
+    "ensemble des sous-groupes de G"
+  ],
+  "content_hash": "f80d875a6859c0ccd29f68ea76a6eca056a1c525beee45088fe97c6183eda90b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:04:33.347Z"
+}

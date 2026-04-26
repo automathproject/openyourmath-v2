@@ -1,0 +1,24 @@
+{
+  "uuid": "kUNR",
+  "source_path": "exo7/1-L1/kUNR.tex",
+  "summary": "Trouver les entiers naturels x et y tels que x + y = 2, en utilisant les propriétés arithmétiques des entiers.",
+  "concepts": [
+    "division euclidienne",
+    "algorithme d'Euclide",
+    "pgcd",
+    "ppcm",
+    "entiers naturels",
+    "équations diophantiennes"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "résolution d'équations linéaires"
+  ],
+  "objects": [
+    "entiers naturels",
+    "équation x + y = 2"
+  ],
+  "content_hash": "89ed74d21477d209482f4980b89330f1e044d10ba74464c1672e6862a486845a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:54.288Z"
+}

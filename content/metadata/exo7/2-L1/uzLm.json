@@ -1,0 +1,31 @@
+{
+  "uuid": "uzLm",
+  "source_path": "exo7/2-L1/uzLm.tex",
+  "summary": "L'exercice demande de calculer l'intégrale impropre d'une fonction alternée en utilisant la partie entière. La fonction étudiée est f(x) = (-1)^E(x)/x, et l'intégrale est évaluée de 1 à l'infini.",
+  "concepts": [
+    "intégrale impropre",
+    "fonction continue par morceaux",
+    "localement intégrable",
+    "critère spécial aux séries alternées",
+    "formule de Stirling",
+    "convergence de séries",
+    "partie entière"
+  ],
+  "methods": [
+    "décomposition en intégrales sur des intervalles unitaires",
+    "estimation d'intégrales",
+    "telescopage de logarithmes",
+    "approximation asymptotique",
+    "calcul de limite de série"
+  ],
+  "objects": [
+    "fonction de la partie entière",
+    "série alternée",
+    "intégrale impropre",
+    "suite numérique",
+    "produit de factoriels"
+  ],
+  "content_hash": "95debb582530ebc598a268fca78e0f943a7e272a4be9a203dbc8a5524304b2ae",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:36:22.259Z"
+}

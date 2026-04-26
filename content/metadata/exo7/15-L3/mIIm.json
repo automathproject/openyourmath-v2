@@ -1,0 +1,32 @@
+{
+  "uuid": "mIIm",
+  "source_path": "exo7/15-L3/mIIm.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction continue d'un ensemble connexe dans {0,1} est nécessairement constante, en utilisant une fonction auxiliaire g définie sur ℝ et en étudiant sa constance locale autour des points rationnels et irrationnels.",
+  "concepts": [
+    "connexité",
+    "fonction continue",
+    "fonction localement constante",
+    "ensemble connexe",
+    "théorème des valeurs intermédiaires",
+    "topologie de ℝ",
+    "restriction de fonction",
+    "continuité"
+  ],
+  "methods": [
+    "étude de la constance locale",
+    "utilisation de la connexité",
+    "passage à la limite",
+    "définition de fonction auxiliaire",
+    "analyse des restrictions"
+  ],
+  "objects": [
+    "fonction f : B → {0,1}",
+    "fonction g : ℝ → {0,1}",
+    "ensemble B",
+    "points rationnels",
+    "points irrationnels"
+  ],
+  "content_hash": "15d778186b32330b88c4c8c9bf73f36a90ffab50e80b1cb9cfb025362a176cb5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:43:00.756Z"
+}

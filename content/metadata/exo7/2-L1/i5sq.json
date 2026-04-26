@@ -1,0 +1,29 @@
+{
+  "uuid": "i5sq",
+  "source_path": "exo7/2-L1/i5sq.tex",
+  "summary": "L'exercice demande de démontrer la continuité d'une fonction croissante sur un intervalle fermé [a, b]. Il s'agit d'étudier les limites à gauche et à droite en tout point de l'intervalle et d'exclure les discontinuités possibles.",
+  "concepts": [
+    "continuité d'une fonction",
+    "limite à gauche",
+    "limite à droite",
+    "fonction croissante",
+    "intervalle fermé",
+    "théorème des valeurs intermédiaires",
+    "propriétés des fonctions monotones"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "analyse des limites latérales",
+    "utilisation de la monotonie",
+    "inclusion d'intervalles"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle [a, b]",
+    "limites latérales",
+    "discontinuité"
+  ],
+  "content_hash": "49fb33001c5d2ab50799aae601b83b1477a543da8f40caeb9bec5f45254f84ac",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:47:05.736Z"
+}

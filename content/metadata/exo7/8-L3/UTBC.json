@@ -1,0 +1,31 @@
+{
+  "uuid": "UTBC",
+  "source_path": "exo7/8-L3/UTBC.tex",
+  "summary": "L'exercice étudie les propriétés des actions de groupes sur un ensemble, notamment la transitivité, la primitivité et la 2-transitivité. Il demande de démontrer des relations entre ces propriétés et d'analyser des exemples concrets comme l'action par translation d'un groupe cyclique.",
+  "concepts": [
+    "action de groupe",
+    "transitivité",
+    "primitivité",
+    "2-transitivité",
+    "fixateur d'un élément",
+    "partition d'ensemble",
+    "groupe cyclique",
+    "action transitive"
+  ],
+  "methods": [
+    "identification d'actions de groupes",
+    "utilisation de la transitivité",
+    "analyse de partitions d'ensembles",
+    "étude des fixateurs"
+  ],
+  "objects": [
+    "groupe G",
+    "ensemble X",
+    "élément x",
+    "partition X_i",
+    "groupe cyclique C"
+  ],
+  "content_hash": "3d4595bb289aedfef81311907222d4b7efe442fff138213731ec2984f97dacf0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:04:58.215Z"
+}

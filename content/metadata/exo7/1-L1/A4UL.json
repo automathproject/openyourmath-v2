@@ -1,0 +1,25 @@
+{
+  "uuid": "A4UL",
+  "source_path": "exo7/1-L1/A4UL.tex",
+  "summary": "L'exercice demande de déterminer le couple (a, b) parmi une liste de paires pour lequel le PGCD de a et b est maximal. L'énoncé implique de calculer le PGCD de plusieurs paires d'entiers.",
+  "concepts": [
+    "algorithme d'Euclide",
+    "plus grand commun diviseur",
+    "divisibilité dans Z",
+    "propriétés arithmétiques des entiers",
+    "décomposition en facteurs premiers"
+  ],
+  "methods": [
+    "calcul du PGCD",
+    "application de l'algorithme d'Euclide",
+    "décomposition en facteurs premiers"
+  ],
+  "objects": [
+    "entiers naturels",
+    "paires d'entiers",
+    "PGCD"
+  ],
+  "content_hash": "4ebb07e20cbc21500480f734eb8678a771d1651eb7c9eb8d1bc15e03ab0d5e9c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:31.501Z"
+}

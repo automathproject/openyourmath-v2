@@ -1,0 +1,31 @@
+{
+  "uuid": "RHWS",
+  "source_path": "exo7/2-L1/RHWS.tex",
+  "summary": "Calculer la limite en 0 d'une fonction de la forme (a^x + b^x)/2)^(1/x) où a et b sont des réels strictement positifs. L'énoncé demande de déterminer cette limite sans contexte concret supplémentaire.",
+  "concepts": [
+    "limite de fonctions",
+    "forme indéterminée",
+    "fonction exponentielle",
+    "fonction logarithme",
+    "équivalent de fonctions",
+    "limite de suites",
+    "continuité"
+  ],
+  "methods": [
+    "changement de variable",
+    "développement limité",
+    "utilisation d'équivalents",
+    "linéarisation du logarithme",
+    "linéarisation de l'exponentielle"
+  ],
+  "objects": [
+    "fonction réelle",
+    "limite en 0",
+    "fonction composée",
+    "fonction exponentielle",
+    "fonction logarithme"
+  ],
+  "content_hash": "829792d0506c9197e4ce7a5b95ddc051fb919a932cbdfc82a7bf280f67df4ca1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:29.089Z"
+}

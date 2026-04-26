@@ -1,0 +1,28 @@
+{
+  "uuid": "TptL",
+  "source_path": "exo7/15-L3/TptL.tex",
+  "summary": "L'exercice demande de montrer que pour tout réel x, on peut construire deux suites de rationnels, l'une croissante et l'autre décroissante, convergeant vers x. Il s'agit ensuite d'en déduire une propriété de continuité ou d'uniforme continuité d'une fonction f(x) positive et croissante pour x ≥ 0.",
+  "concepts": [
+    "continuité",
+    "suite convergente",
+    "densité des rationnels",
+    "fonction croissante",
+    "limite de suite",
+    "propriété de densité"
+  ],
+  "methods": [
+    "construction explicite de suites",
+    "passage à la limite",
+    "utilisation de la densité des rationnels",
+    "raisonnement par approximation"
+  ],
+  "objects": [
+    "fonction f(x)",
+    "suite (r_k)",
+    "suite (s_k)",
+    "réel x"
+  ],
+  "content_hash": "8a09179cdaa2733c91dcb877ee29c2b3142fa0adb752f776027fd8ef6de46ca4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:49:10.036Z"
+}

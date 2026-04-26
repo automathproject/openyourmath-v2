@@ -1,0 +1,29 @@
+{
+  "uuid": "iXsm",
+  "source_path": "exo7/15-L3/iXsm.tex",
+  "summary": "L'exercice étudie une application linéaire A de l'espace l∞ dans lui-même, injective, continue de norme 1, mais non surjective. Il demande de montrer que A admet un inverse à gauche qui n'est pas continu.",
+  "concepts": [
+    "application linéaire bornée",
+    "injectivité",
+    "continuité",
+    "norme d'opérateur",
+    "surjectivité",
+    "inverse à gauche",
+    "espace de Banach"
+  ],
+  "methods": [
+    "calcul de norme d'opérateur",
+    "vérification d'injectivité",
+    "construction d'inverse à gauche",
+    "estimation de norme"
+  ],
+  "objects": [
+    "application linéaire",
+    "espace l∞",
+    "suite bornée",
+    "inverse à gauche"
+  ],
+  "content_hash": "1ebf207fcd456c06be57ceb23064d80c6c0ba8abd1f6fb649f8474fe7aa306a1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:15:20.779Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "GRuB",
+  "source_path": "exo7/1-L1/GRuB.tex",
+  "summary": "L'exercice demande de déterminer si deux entiers x₀ et y₀ dont le pgcd est 1 sont uniques, en exploitant les propriétés de l'algorithme d'Euclide.",
+  "concepts": [
+    "pgcd",
+    "algorithme d'Euclide",
+    "divisibilité dans Z",
+    "entiers premiers entre eux",
+    "unicité des solutions"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "décomposition en facteurs premiers",
+    "propriétés des nombres premiers"
+  ],
+  "objects": [
+    "entiers relatifs",
+    "pgcd",
+    "couples d'entiers"
+  ],
+  "content_hash": "66c067ab465dfcadd4b911db4bb0cb4cca1eeb7ce60a9b782a5476fe8c5b9b65",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:19:02.099Z"
+}

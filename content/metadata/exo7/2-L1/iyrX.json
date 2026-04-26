@@ -1,0 +1,29 @@
+{
+  "uuid": "iyrX",
+  "source_path": "exo7/2-L1/iyrX.tex",
+  "summary": "L'exercice demande de résoudre l'équation $\\frac{x^2}{2} = \\frac{1}{x^2+1}$ puis de calculer l'aire entre les courbes représentatives de $y = \\frac{x^2}{2}$ et $y = \\frac{1}{x^2+1}$ sur l'intervalle $[-1, 1]$.",
+  "concepts": [
+    "intégrale définie",
+    "aire entre deux courbes",
+    "primitive d'une fonction",
+    "fonction polynomiale",
+    "fonction rationnelle",
+    "fonction trigonométrique inverse"
+  ],
+  "methods": [
+    "calcul de primitive",
+    "intégration par parties",
+    "résolution d'équation",
+    "évaluation d'intégrale définie"
+  ],
+  "objects": [
+    "courbe représentative",
+    "aire délimitée",
+    "fonction polynomiale",
+    "fonction rationnelle",
+    "intervalle de calcul"
+  ],
+  "content_hash": "0a1c441d22a76b707c8678229ba7f2b795568e1a2391f2600659a258493a26fd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:34:41.048Z"
+}

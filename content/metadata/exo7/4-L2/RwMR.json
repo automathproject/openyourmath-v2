@@ -1,0 +1,28 @@
+{
+  "uuid": "RwMR",
+  "source_path": "exo7/4-L2/RwMR.tex",
+  "summary": "L'exercice demande d'abord de lister les cubes dans l'anneau Z/13Z. Ensuite, il s'agit de montrer que 13 divise x, y et z pour des entiers vérifiant 5x³ + 11y³ + 13z³ = 0, puis de déterminer si cette équation a des solutions entières.",
+  "concepts": [
+    "anneau Z/nZ",
+    "théorème des restes chinois",
+    "divisibilité dans Z",
+    "carrés et cubes modulo n",
+    "équation diophantienne",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "calcul des puissances modulo n",
+    "analyse des congruences",
+    "utilisation du théorème des restes chinois",
+    "factorisation dans Z/nZ"
+  ],
+  "objects": [
+    "éléments de Z/13Z",
+    "équation 5x³ + 11y³ + 13z³ = 0",
+    "entiers relatifs",
+    "cubes modulo 13"
+  ],
+  "content_hash": "ec178da11c336e8dbfa4ed8d5350dc34b3507e0980b59de659b8330f9ed887e2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:16.442Z"
+}

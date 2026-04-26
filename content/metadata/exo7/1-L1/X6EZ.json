@@ -1,0 +1,27 @@
+{
+  "uuid": "X6EZ",
+  "source_path": "exo7/1-L1/X6EZ.tex",
+  "summary": "L'exercice demande de calculer le plus petit commun multiple (ppcm) de plusieurs paires ou triplets d'entiers, puis de démontrer deux propriétés fondamentales du ppcm : sa relation avec le pgcd et sa propriété associative.",
+  "concepts": [
+    "plus petit commun multiple",
+    "plus grand diviseur commun",
+    "relation entre pgcd et ppcm",
+    "associativité du ppcm",
+    "décomposition en facteurs premiers",
+    "algorithme d'Euclide"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "application de la relation pgcd-ppcm",
+    "définition récursive du ppcm"
+  ],
+  "objects": [
+    "entiers naturels",
+    "ppcm de deux entiers",
+    "ppcm de trois entiers",
+    "décomposition factorielle"
+  ],
+  "content_hash": "3286cfe20544b5ceb03819b411a34eba3305f988970327368fb5a9d829869c64",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:02.990Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "GL6U",
+  "source_path": "exo7/16-L3/GL6U.tex",
+  "summary": "L'exercice étudie le comportement d'une application holomorphe dans le disque unité Δ. Il demande de vérifier si l'application z ↦ 1/(z⁶ - 1) tend vers l'infini en module lorsque z tend vers i ou lorsque |z| tend vers 1. Ensuite, il explore les conditions sous lesquelles une fonction holomorphe f sans zéro dans Δ peut avoir |f(z)| tendant vers l'infini quand |z| tend vers 1, et conclut par une décomposition en produit d'un polynôme et d'une fonction holomorphe sans zéro.",
+  "concepts": [
+    "fonction holomorphe",
+    "principe du maximum",
+    "théorème des zéros isolés",
+    "singularité apparente",
+    "prolongement analytique",
+    "convergence en module",
+    "disque unité"
+  ],
+  "methods": [
+    "application du principe du maximum",
+    "décomposition en produit de fonctions",
+    "analyse des singularités",
+    "prolongement par continuité",
+    "étude des zéros d'une fonction holomorphe"
+  ],
+  "objects": [
+    "application holomorphe",
+    "disque unité Δ",
+    "polynôme unitaire",
+    "fonction sans zéro",
+    "module d'une fonction complexe"
+  ],
+  "content_hash": "8e275b19d5839cc2b57965b53d6bb8b9f828872c5b9226555a9cc73503455dae",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:24:09.902Z"
+}

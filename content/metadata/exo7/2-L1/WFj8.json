@@ -1,0 +1,29 @@
+{
+  "uuid": "WFj8",
+  "source_path": "exo7/2-L1/WFj8.tex",
+  "summary": "L'exercice demande de déterminer si trois fonctions définies sur ℝ* peuvent être prolongées par continuité en 0, et de justifier la réponse. Les fonctions sont f(x) = x sin(1/x), g(x) = (ln((e^x + e^-x)/2) - ln(1))/x, et h(x) = 1/(1-x) - 2/(1-x²).",
+  "concepts": [
+    "limite de fonction",
+    "prolongement par continuité",
+    "continuité",
+    "dérivabilité",
+    "taux d'accroissement",
+    "simplification d'expression"
+  ],
+  "methods": [
+    "encadrement",
+    "calcul de limite",
+    "définition de la dérivée",
+    "simplification algébrique",
+    "factorisation"
+  ],
+  "objects": [
+    "fonction réelle",
+    "limite en un point",
+    "taux d'accroissement",
+    "expression rationnelle"
+  ],
+  "content_hash": "a3206a7c060bf0d6559f611ebab56a8bc62bed9d506e5568b0d51e64dcfb80b4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:45:58.890Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "i1kX",
+  "source_path": "exo7/1-L1/i1kX.tex",
+  "summary": "Résoudre une équation diophantienne linéaire en trouvant une solution particulière à l'aide de l'algorithme d'Euclide, puis en déterminant l'ensemble des solutions générales.",
+  "concepts": [
+    "théorème de Bézout",
+    "algorithme d'Euclide",
+    "lemme de Gauss",
+    "divisibilité dans Z",
+    "équation diophantienne",
+    "pgcd",
+    "ppcm"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "recherche de solution particulière",
+    "expression de solution générale",
+    "manipulation d'équations"
+  ],
+  "objects": [
+    "équation diophantienne",
+    "entiers relatifs",
+    "pgcd",
+    "coefficients de Bézout"
+  ],
+  "content_hash": "c68533b59279448744f59f109bf2f9b33cdfa26302b28620fd71675ab608dca5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:20:46.183Z"
+}

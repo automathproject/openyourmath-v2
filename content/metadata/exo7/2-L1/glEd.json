@@ -1,0 +1,30 @@
+{
+  "uuid": "glEd",
+  "source_path": "exo7/2-L1/glEd.tex",
+  "summary": "L'exercice demande de démontrer que la limite d'une suite définie par l'intégrale de la puissance n-ième d'une fonction continue positive sur un segment converge vers le maximum de cette fonction. Il généralise ensuite le résultat à une intégrale pondérée par une autre fonction continue positive.",
+  "concepts": [
+    "continuité uniforme",
+    "maximum d'une fonction continue",
+    "croissance de l'intégrale",
+    "théorème de la limite par encadrements",
+    "convergence de suites",
+    "intégrale de fonctions continues"
+  ],
+  "methods": [
+    "encadrement de suites",
+    "utilisation de la continuité",
+    "passage à la limite",
+    "majoration/minoration d'intégrales",
+    "application du théorème de la limite par encadrements"
+  ],
+  "objects": [
+    "fonction continue sur un segment",
+    "suite définie par une intégrale",
+    "maximum d'une fonction",
+    "intégrale de puissance n-ième",
+    "fonction strictement positive"
+  ],
+  "content_hash": "7aa8afe989bd94bd84198ab67ee7aa14c2083041e9fcbedda30c61b25866c25d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:34:26.401Z"
+}

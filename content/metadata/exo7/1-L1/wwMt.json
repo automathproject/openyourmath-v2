@@ -1,0 +1,29 @@
+{
+  "uuid": "wwMt",
+  "source_path": "exo7/1-L1/wwMt.tex",
+  "summary": "Trouver deux entiers naturels a et b vérifiant des conditions données sur leur somme, leur somme de carrés et leur ppcm. L'énoncé propose une méthode de résolution basée sur la relation entre pgcd et ppcm.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "relation entre pgcd et ppcm",
+    "algorithme d'Euclide",
+    "divisibilité",
+    "nombre premier",
+    "décomposition en facteurs premiers"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul de pgcd",
+    "calcul de ppcm",
+    "résolution par cas"
+  ],
+  "objects": [
+    "entiers naturels",
+    "pgcd(a,b)",
+    "ppcm(a,b)",
+    "somme de carrés"
+  ],
+  "content_hash": "2050a0f34f4135f326a7a70a9a42509baec84a85d3ac34edd567ad87a73fd40c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:21:36.187Z"
+}

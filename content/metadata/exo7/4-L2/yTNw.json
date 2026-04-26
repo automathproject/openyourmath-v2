@@ -1,0 +1,28 @@
+{
+  "uuid": "yTNw",
+  "source_path": "exo7/4-L2/yTNw.tex",
+  "summary": "L'exercice demande de calculer une somme de produits de coefficients binomiaux modulo p², en utilisant des propriétés arithmétiques dans l'anneau Z/pZ. Il exploite des congruences et des inverses modulo p.",
+  "concepts": [
+    "théorème des restes chinois",
+    "congruences modulo p²",
+    "inverses multiplicatifs modulo p",
+    "permutation dans Z/pZ",
+    "coefficient binomial",
+    "anneau Z/nZ"
+  ],
+  "methods": [
+    "développement binomial",
+    "calcul de congruences",
+    "utilisation de la permutation des inverses",
+    "somme de termes congruents"
+  ],
+  "objects": [
+    "coefficient binomial",
+    "somme de coefficients binomiaux",
+    "inverses modulo p",
+    "congruences arithmétiques"
+  ],
+  "content_hash": "857b1c5ba284951fa11d9e4cd8ffe4250487b822203e998681217ce046a4a7a6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:17:37.182Z"
+}

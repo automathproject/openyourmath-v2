@@ -1,0 +1,27 @@
+{
+  "uuid": "6JIA",
+  "source_path": "exo7/1-L1/6JIA.tex",
+  "summary": "Trouver tous les couples d'entiers naturels (a, b) dont le pgcd est 18 et la somme est 360, en les listant par ordre croissant.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "algorithme d'Euclide",
+    "nombres premiers entre eux",
+    "décomposition en facteurs premiers",
+    "divisibilité dans Z"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "énumération des couples solutions",
+    "utilisation de la relation pgcd(a,b) = d × pgcd(a/d, b/d)"
+  ],
+  "objects": [
+    "entiers naturels",
+    "couples d'entiers",
+    "pgcd",
+    "somme d'entiers"
+  ],
+  "content_hash": "4e2b7515c7e02e03fc5ac5c2e48227537653f70b00494e4b607cd6a07d032d40",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:15.134Z"
+}

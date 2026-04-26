@@ -1,0 +1,28 @@
+{
+  "uuid": "gwoD",
+  "source_path": "exo7/2-L1/gwoD.tex",
+  "summary": "L'exercice demande de montrer l'existence d'une subdivision particulière de l'intervalle [a, b] où chaque intégrale élémentaire sur un sous-intervalle est égale à 1/n de l'intégrale totale, puis d'étudier la limite d'une somme de valeurs de la fonction en des points spécifiques lorsque n tend vers l'infini.",
+  "concepts": [
+    "intégrale définie",
+    "subdivision d'intervalle",
+    "fonction primitive",
+    "fonction réciproque",
+    "convergence de suites",
+    "intégrale de fonction composée"
+  ],
+  "methods": [
+    "utilisation de la fonction primitive",
+    "changement de variable",
+    "passage à la limite",
+    "calcul d'intégrale"
+  ],
+  "objects": [
+    "fonction intégrable",
+    "somme de Riemann",
+    "intervalle [a, b]",
+    "suite de points de subdivision"
+  ],
+  "content_hash": "b78452c0fcbd6b948642fc145c1b0fe326f9e4749632c202d31e11a65a78df78",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:34:29.032Z"
+}

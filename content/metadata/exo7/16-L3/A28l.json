@@ -1,0 +1,32 @@
+{
+  "uuid": "A28l",
+  "source_path": "exo7/16-L3/A28l.tex",
+  "summary": "L'exercice demande de montrer une expression complexe sous forme fractionnaire, d'en étudier la dérivabilité et d'établir une relation avec une intégrale sur un contour. Il utilise des propriétés des nombres complexes et des intégrales de fonctions complexes.",
+  "concepts": [
+    "fonction complexe",
+    "module d'un nombre complexe",
+    "partie réelle et imaginaire",
+    "dérivabilité des fonctions complexes",
+    "résidu d'une fonction",
+    "théorème des résidus",
+    "intégrale de contour"
+  ],
+  "methods": [
+    "calcul de module",
+    "décomposition en partie réelle et imaginaire",
+    "calcul de dérivée",
+    "paramétrisation de contour",
+    "calcul de résidu",
+    "application du théorème des résidus"
+  ],
+  "objects": [
+    "fonction complexe ξ(t)",
+    "contour C_r",
+    "intégrale de contour",
+    "résidu en 0",
+    "polynôme complexe"
+  ],
+  "content_hash": "a792d3468bc1e42577134cc107292502da3a04416f7863a5581da4f7bdbbe755",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:05.887Z"
+}

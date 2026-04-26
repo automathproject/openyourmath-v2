@@ -1,0 +1,29 @@
+{
+  "uuid": "5676",
+  "source_path": "exo7/4-L2/wjmV.tex",
+  "summary": "L'exercice demande de calculer les nombres de condition d'une matrice A selon différentes normes, puis de résoudre des systèmes linéaires Ax=b avec des perturbations sur le second membre. Il s'agit d'étudier la stabilité numérique des solutions par rapport aux perturbations.",
+  "concepts": [
+    "nombre de condition",
+    "norme matricielle",
+    "stabilité numérique",
+    "système linéaire",
+    "perturbation",
+    "erreur relative"
+  ],
+  "methods": [
+    "calcul de normes",
+    "résolution de systèmes linéaires",
+    "analyse d'erreur",
+    "comparaison théorique/empirique"
+  ],
+  "objects": [
+    "matrice",
+    "second membre",
+    "solution exacte",
+    "solution perturbée",
+    "erreur relative"
+  ],
+  "content_hash": "1a8904b680ee86391a94fb12de6d5f4d706bb6706f581c2275bba21c8de6c2ed",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:22:15.015Z"
+}

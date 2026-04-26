@@ -1,0 +1,27 @@
+{
+  "uuid": "eU7O",
+  "source_path": "exo7/15-L3/eU7O.tex",
+  "summary": "L'exercice demande de montrer qu'un sous-ensemble compact d'un espace muni de la topologie usuelle est aussi compact pour une autre topologie définie par une distance d, puis d'étendre cette propriété aux fermés. Il conclut en déduisant que les deux topologies sont identiques.",
+  "concepts": [
+    "compacité",
+    "topologie usuelle",
+    "topologie définie par une distance",
+    "fermé",
+    "continuité",
+    "équivalence de topologies"
+  ],
+  "methods": [
+    "utilisation de la définition de la compacité",
+    "passage au complémentaire",
+    "utilisation de la continuité d'une application"
+  ],
+  "objects": [
+    "sous-ensemble compact",
+    "fermé",
+    "espace topologique",
+    "distance"
+  ],
+  "content_hash": "aa22bc290b157e7084b9bd4f72731b679a3da51ba3bfdedae850f1dd088ad8ca",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:38:18.374Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "H37S",
+  "source_path": "exo7/16-L3/H37S.tex",
+  "summary": "L'exercice porte sur la fonction $\\mu(r)$ définie comme une intégrale dépendant d'une fonction $f$ et d'un rayon $r$. Il demande de montrer que $\\mu(r)$ tend vers $f(c)$ quand $r$ tend vers 0, puis que $\\mu$ est constante si $f'$ est continue. Enfin, il s'agit de démontrer le principe du maximum pour les fonctions holomorphes.",
+  "concepts": [
+    "limite de fonction",
+    "continuité de la dérivée",
+    "intégration sous le signe dérivée",
+    "principe du maximum",
+    "fonction holomorphe",
+    "supremum",
+    "connexion d'un ouvert"
+  ],
+  "methods": [
+    "dérivation sous le signe intégrale",
+    "analyse de la limite",
+    "utilisation du principe du maximum",
+    "étude des ensembles ouverts et fermés"
+  ],
+  "objects": [
+    "fonction $\\mu(r)$",
+    "fonction $f(z)$",
+    "ensemble $V$",
+    "disque $D(c,r)$",
+    "supremum $M$"
+  ],
+  "content_hash": "c3695fdbc1af0cdf0b220ee01ecdfa24736f42d9a9a9903cc8ff034e656346a1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:24:13.738Z"
+}

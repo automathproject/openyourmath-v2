@@ -1,0 +1,30 @@
+{
+  "uuid": "rqJP",
+  "source_path": "exo7/6-L2/rqJP.tex",
+  "summary": "L'exercice demande de démontrer une relation de développement de Taylor du premier ordre pour une fonction quadratique f, puis d'établir une condition nécessaire et suffisante pour qu'un point Ω soit un centre de symétrie d'une surface S définie par f. Enfin, il s'agit d'en déduire l'unicité du centre sous une condition sur les valeurs propres de la matrice associée à la forme quadratique q.",
+  "concepts": [
+    "développement de Taylor du premier ordre",
+    "gradient",
+    "forme quadratique",
+    "centre de symétrie",
+    "valeur propre",
+    "matrice associée à une forme quadratique",
+    "surface quadratique"
+  ],
+  "methods": [
+    "développement limité",
+    "calcul de gradient",
+    "analyse des conditions d'annulation",
+    "diagonalisation de matrice"
+  ],
+  "objects": [
+    "fonction quadratique",
+    "vecteur gradient",
+    "forme quadratique",
+    "surface quadratique",
+    "matrice symétrique"
+  ],
+  "content_hash": "cb8644f3386f03dcd71ac19b147c814584be269fa81b7059948cc0622d2bf11f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:41:39.375Z"
+}

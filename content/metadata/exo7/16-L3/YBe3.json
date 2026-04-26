@@ -1,0 +1,28 @@
+{
+  "uuid": "YBe3",
+  "source_path": "exo7/16-L3/YBe3.tex",
+  "summary": "On demande de montrer que deux fonctions holomorphes sans zéro dans un domaine D sont proportionnelles par un complexe de module 1, puis d'étudier la validité de cette conclusion si les fonctions peuvent s'annuler.",
+  "concepts": [
+    "fonction holomorphe",
+    "principe du maximum",
+    "théorème de l'application ouverte",
+    "connexion d'un domaine",
+    "module d'un nombre complexe",
+    "constante sur un domaine"
+  ],
+  "methods": [
+    "utilisation du principe du maximum",
+    "application du théorème de l'application ouverte",
+    "argument par connexité",
+    "analyse du module"
+  ],
+  "objects": [
+    "fonction holomorphe",
+    "domaine D",
+    "nombre complexe λ",
+    "disque unité"
+  ],
+  "content_hash": "0b0818edfada0eaf157b4a50b6950cf12aaf70b0d57acc2d159d1e832fa03ea8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:26:14.384Z"
+}

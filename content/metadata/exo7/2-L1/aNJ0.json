@@ -1,0 +1,29 @@
+{
+  "uuid": "aNJ0",
+  "source_path": "exo7/2-L1/aNJ0.tex",
+  "summary": "L'exercice demande de montrer que la fonction $\\tilde f$ appartient à l'ensemble $\\cal E$ et, sous l'hypothèse que $f$ est continue, de prouver que $\\tilde f$ est aussi continue. Il aborde la continuité des fonctions réelles et les propriétés des ensembles de fonctions.",
+  "concepts": [
+    "continuité d'une fonction",
+    "limite d'une fonction",
+    "fonction continue",
+    "ensemble de fonctions",
+    "propriété de continuité par composition",
+    "limite à gauche et à droite"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de continuité",
+    "analyse des limites unilatérales",
+    "construction d'une fonction témoin"
+  ],
+  "objects": [
+    "fonction $\\tilde f$",
+    "fonction $f$",
+    "ensemble $\\cal E$",
+    "point de discontinuité",
+    "limites unilatérales"
+  ],
+  "content_hash": "92186526a216767fa089d2944cd9f0c1f883af1ea97de13241301bd22cbfe91f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:46:20.585Z"
+}

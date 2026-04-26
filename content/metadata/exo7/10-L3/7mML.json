@@ -1,0 +1,33 @@
+{
+  "uuid": "7mML",
+  "source_path": "exo7/10-L3/7mML.tex",
+  "summary": "L'exercice étudie les propriétés d'inversibilité et d'irréductibilité dans l'anneau $\\mathbb{Z}[\\sqrt{d}]$. Il demande de déterminer les éléments inversibles, de prouver l'irréductibilité d'éléments de norme $\\pm p$ (où $p$ est premier), et d'analyser les diviseurs et idéaux dans $\\mathbb{Z}[\\sqrt{-5}]$.",
+  "concepts": [
+    "anneau",
+    "corps",
+    "inversibilité",
+    "irréductibilité",
+    "norme d'élément",
+    "idéal principal",
+    "anneau factoriel",
+    "pgcd",
+    "ppcm"
+  ],
+  "methods": [
+    "factorisation en irréductibles",
+    "calcul de norme",
+    "analyse des diviseurs",
+    "preuve par contradiction",
+    "utilisation de la norme pour l'irréductibilité"
+  ],
+  "objects": [
+    "élément de $\\mathbb{Z}[\\sqrt{d}]$",
+    "idéal de $\\mathbb{Z}[\\sqrt{-5}]$",
+    "norme d'élément",
+    "pgcd",
+    "ppcm"
+  ],
+  "content_hash": "15ea8e23a8d18f837abfdb832c3a6dbc618d40b38e0bbd8f8c8c984bcf994319",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:07:13.932Z"
+}

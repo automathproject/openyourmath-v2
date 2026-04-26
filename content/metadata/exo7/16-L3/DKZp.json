@@ -1,0 +1,28 @@
+{
+  "uuid": "DKZp",
+  "source_path": "exo7/16-L3/DKZp.tex",
+  "summary": "L'exercice demande d'exprimer le laplacien du module au carré d'une fonction holomorphe en fonction de sa dérivée, puis d'utiliser ce résultat pour montrer que des fonctions holomorphes dont la somme des modules au carré est constante sont nécessairement constantes.",
+  "concepts": [
+    "fonction holomorphe",
+    "identités de Cauchy-Riemann",
+    "laplacien",
+    "symétrie de Schwarz",
+    "connexe",
+    "dérivée identiquement nulle"
+  ],
+  "methods": [
+    "décomposition en partie réelle et imaginaire",
+    "calcul du laplacien",
+    "application des identités de Cauchy-Riemann",
+    "utilisation de la connexité"
+  ],
+  "objects": [
+    "fonction holomorphe",
+    "module au carré",
+    "famille finie de fonctions holomorphes",
+    "dérivée d'une fonction holomorphe"
+  ],
+  "content_hash": "dba77e77922775634aa55c017d6a6951c30c1521f46587bdce99cc7a1eea3b09",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:23:29.846Z"
+}

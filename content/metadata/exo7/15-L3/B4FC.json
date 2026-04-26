@@ -1,0 +1,29 @@
+{
+  "uuid": "B4FC",
+  "source_path": "exo7/15-L3/B4FC.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire L sur un espace vectoriel normé E est continue sur E si et seulement si elle est continue en 0. La démonstration s'appuie sur une preuve par l'absurde en construisant une suite.",
+  "concepts": [
+    "application linéaire bornée",
+    "continuité en un point",
+    "continuité uniforme",
+    "espace vectoriel normé",
+    "suite convergente",
+    "norme d'un vecteur",
+    "contraposée"
+  ],
+  "methods": [
+    "preuve par l'absurde",
+    "construction de suite",
+    "utilisation de la négation de la continuité",
+    "passage à la limite"
+  ],
+  "objects": [
+    "application linéaire",
+    "suite de vecteurs",
+    "espace vectoriel normé",
+    "norme"
+  ],
+  "content_hash": "c9f7feeb583bd824bf05582cb78eb74208478efe2bf828f562cb0a6b44d28505",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:14:55.188Z"
+}

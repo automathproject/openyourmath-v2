@@ -1,0 +1,29 @@
+{
+  "uuid": "yoqK",
+  "source_path": "exo7/8-L3/yoqK.tex",
+  "summary": "L'exercice demande de montrer qu'une permutation τ commute avec une permutation σ cyclique d'ordre n si et seulement si τ est soit l'identité, soit une puissance de σ.",
+  "concepts": [
+    "action de groupe",
+    "permutation",
+    "groupe symétrique",
+    "commutativité",
+    "invariance",
+    "injectivité",
+    "puissance d'un élément"
+  ],
+  "methods": [
+    "décomposition en cycles",
+    "utilisation de la commutativité",
+    "analyse de la restriction d'une permutation",
+    "calcul explicite des images"
+  ],
+  "objects": [
+    "permutation σ cyclique",
+    "permutation τ",
+    "ensemble I",
+    "complémentaire de I"
+  ],
+  "content_hash": "a537681bc959bc807b5d945ce78ef4128d1654354f4118dcee265b79c5370e56",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:05:35.630Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "7I6M",
+  "source_path": "exo7/1-L1/7I6M.tex",
+  "summary": "L'exercice demande de montrer qu'il n'existe pas d'entier n tel que 121 divise n² + 3n + 5. L'énoncé repose sur une congruence quadratique modulo 121.",
+  "concepts": [
+    "division euclidienne",
+    "congruence",
+    "théorème des restes chinois",
+    "divisibilité dans Z",
+    "racine carrée modulo un nombre premier",
+    "théorème de Gauss"
+  ],
+  "methods": [
+    "réduction modulo un nombre premier",
+    "analyse des solutions quadratiques",
+    "contradiction"
+  ],
+  "objects": [
+    "polynôme quadratique",
+    "congruence quadratique",
+    "entier relatif"
+  ],
+  "content_hash": "8f3c71f35339b5757f9dd5ae17ec9430fe064af2d7907e31dd69bcc4ad2cc48f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:18:17.760Z"
+}

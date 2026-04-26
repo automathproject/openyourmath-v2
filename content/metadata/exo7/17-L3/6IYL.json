@@ -1,0 +1,28 @@
+{
+  "uuid": "6IYL",
+  "source_path": "exo7/17-L3/6IYL.tex",
+  "summary": "L'exercice demande de démontrer une relation de récurrence pour les lignes de la matrice U dans une décomposition LU d'une matrice A, puis d'établir une majoration de la norme infinie de U en fonction de celle de A. La matrice A est définie explicitement par des conditions sur ses coefficients.",
+  "concepts": [
+    "décomposition LU",
+    "norme infinie",
+    "matrice triangulaire",
+    "récurrence",
+    "majoration",
+    "propriétés des matrices"
+  ],
+  "methods": [
+    "décomposition matricielle",
+    "récurrence sur les indices",
+    "calcul de norme",
+    "majoration itérative"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice triangulaire supérieure",
+    "matrice triangulaire inférieure",
+    "coefficient matriciel"
+  ],
+  "content_hash": "c64ba3906959f754504d627ba97df50c99c6812e9c727f041c3de95b06995652",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:22:33.544Z"
+}

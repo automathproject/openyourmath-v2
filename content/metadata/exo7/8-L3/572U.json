@@ -1,0 +1,31 @@
+{
+  "uuid": "572U",
+  "source_path": "exo7/8-L3/572U.tex",
+  "summary": "L'exercice étudie le groupe engendré par les permutations circulaires d'un ensemble à n éléments. Il demande de déterminer si ce groupe est égal au groupe alterné ou au groupe symétrique selon la parité de n.",
+  "concepts": [
+    "action de groupe",
+    "permutation circulaire",
+    "groupe alterné",
+    "groupe symétrique",
+    "signature d'une permutation",
+    "3-cycles",
+    "sous-groupe engendré",
+    "indice d'un sous-groupe"
+  ],
+  "methods": [
+    "décomposition en cycles",
+    "calcul de signature",
+    "inclusion de sous-groupes",
+    "utilisation de l'indice"
+  ],
+  "objects": [
+    "permutation circulaire",
+    "groupe PC_n",
+    "groupe alterné A_n",
+    "groupe symétrique S_n",
+    "3-cycles"
+  ],
+  "content_hash": "f98b6743dc01c61f0addff02b6734adf3912dd74218f0d0397813dc12a574399",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:04:02.759Z"
+}

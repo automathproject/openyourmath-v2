@@ -1,0 +1,28 @@
+{
+  "uuid": "5yTE",
+  "source_path": "exo7/15-L3/5yTE.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble A, défini comme le graphe de la fonction x ↦ sin(1/x) sur ℝ², est connexe et connexe par arcs. Ensuite, il faut déterminer l'adhérence de A et prouver sa connexité, puis montrer que cette adhérence n'est pas connexe par arcs.",
+  "concepts": [
+    "connexité",
+    "connexité par arcs",
+    "adhérence d'un ensemble",
+    "continuité",
+    "raisonnement par l'absurde",
+    "supremum d'un ensemble"
+  ],
+  "methods": [
+    "construction explicite d'un chemin",
+    "preuve par contradiction",
+    "analyse de la continuité",
+    "utilisation de la définition de l'adhérence"
+  ],
+  "objects": [
+    "ensemble connexe",
+    "graphe de fonction",
+    "chemin continu",
+    "adhérence d'un ensemble"
+  ],
+  "content_hash": "5cc873b6d1fd0f0e815853f95701dc0f45099eb14740a458aa3971bd5d253a93",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:42:18.482Z"
+}

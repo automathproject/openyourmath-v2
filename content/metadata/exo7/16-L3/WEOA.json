@@ -1,0 +1,34 @@
+{
+  "uuid": "WEOA",
+  "source_path": "exo7/16-L3/WEOA.tex",
+  "summary": "L'exercice demande de démontrer la formule de Green dans le cadre de l'analyse complexe, pour des fonctions dépendant de z et de sa conjuguée, et d'appliquer cette formule à des calculs d'intégrales le long de courbes fermées simples (cercle, carré, ellipse).",
+  "concepts": [
+    "formule de Green",
+    "fonction holomorphe",
+    "dérivée par rapport à la conjuguée",
+    "intégrale de contour",
+    "aire d'une région simplement connexe",
+    "fonction complexe",
+    "courbe fermée simple"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "théorème de Green-Riemann",
+    "paramétrisation de courbes",
+    "calcul d'aire par intégrale de contour"
+  ],
+  "objects": [
+    "fonction f(z, z̄)",
+    "courbe fermée simple C",
+    "ouvert connexe Ω",
+    "intégrale de contour",
+    "aire A",
+    "cercle",
+    "carré",
+    "ellipse"
+  ],
+  "content_hash": "6cb5dcb190fb8dfb210f39a4341efa3b9ad5f6aaa7d848c44570f66558af0cbe",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:25:54.230Z"
+}

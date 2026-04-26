@@ -1,0 +1,30 @@
+{
+  "uuid": "2tT9",
+  "source_path": "exo7/15-L3/2tT9.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble C n'est pas connexe par arcs en analysant un chemin γ reliant un point de A à un intervalle de l'axe réel. On étudie les propriétés du chemin en termes de module et d'argument, et on exploite une contradiction pour conclure.",
+  "concepts": [
+    "connexité",
+    "connexe par arcs",
+    "chemin continu",
+    "module d'un nombre complexe",
+    "argument d'un nombre complexe",
+    "continuité des fonctions",
+    "dénombrabilité"
+  ],
+  "methods": [
+    "analyse par contradiction",
+    "décomposition en module et argument",
+    "étude des propriétés des chemins continus",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "ensemble C",
+    "chemin γ",
+    "module r(t)",
+    "argument θ(t)",
+    "intervalle [1/2, 1]"
+  ],
+  "content_hash": "973b88d7acf4b9df7e749807e5a47e21be0e6e4670042b9c183a5b337d05ea1f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:42:15.662Z"
+}

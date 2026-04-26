@@ -1,0 +1,30 @@
+{
+  "uuid": "iwyf",
+  "source_path": "exo7/4-L2/iwyf.tex",
+  "summary": "L'exercice étudie une application f dans l'anneau Z/nZ, en démontrant qu'elle est une permutation, en calculant son ordre, et en analysant ses points fixes modulo 3. Il se termine par la résolution d'une équation quadratique dans Z/pZ.",
+  "concepts": [
+    "permutation",
+    "ordre d'un élément",
+    "points fixes",
+    "théorème des restes chinois",
+    "équation quadratique",
+    "anneau Z/nZ",
+    "congruence modulo 3"
+  ],
+  "methods": [
+    "calcul de l'ordre d'une permutation",
+    "analyse des points fixes",
+    "résolution d'équation quadratique",
+    "utilisation des propriétés de Z/pZ"
+  ],
+  "objects": [
+    "application f",
+    "élément de Z/nZ",
+    "équation quadratique",
+    "points fixes",
+    "ordre d'une permutation"
+  ],
+  "content_hash": "1d164b41ec079809913a087b9bab7ae9d7af50ee3681fc9a6293f6d2b5211072",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:16:52.943Z"
+}

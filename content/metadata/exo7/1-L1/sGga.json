@@ -1,0 +1,26 @@
+{
+  "uuid": "sGga",
+  "source_path": "exo7/1-L1/sGga.tex",
+  "summary": "L'exercice demande de démontrer des propriétés sur des suites de sous-espaces définis par itération d'une application linéaire : monotonie des suites pour l'inclusion, stabilité de certains sous-espaces, et implication entre égalités successives de sous-espaces.",
+  "concepts": [
+    "application linéaire",
+    "sous-espace vectoriel",
+    "stabilité par application",
+    "inclusion de sous-espaces",
+    "suite de sous-espaces"
+  ],
+  "methods": [
+    "raisonnement par inclusion",
+    "itération d'application",
+    "utilisation de la définition de noyau et image"
+  ],
+  "objects": [
+    "suite de sous-espaces (N_k)",
+    "suite de sous-espaces (I_k)",
+    "noyau d'une application itérée",
+    "image d'une application itérée"
+  ],
+  "content_hash": "b979093c11a204a10f4b904e17590e60cc446ccbadca9b2991f3894692cc673e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-04-25T21:13:53.781Z"
+}
