@@ -70,12 +70,28 @@ function loadExercisesToIndex(db) {
   if (uuidArg) {
     const row = db.prepare('SELECT * FROM exercises WHERE uuid = ?').get(uuidArg);
     if (!row) throw new Error(`Exercice introuvable : ${uuidArg}`);
-    return [row];
+    const hasEmb = !!db.prepare('SELECT 1 FROM exercise_embeddings WHERE uuid = ?').get(uuidArg);
+    return [{ ...row, _needsSummary: FORCE || !row.indexed_at, _needsEmbedding: FORCE || !hasEmb }];
   }
   if (FORCE) {
-    return db.prepare('SELECT * FROM exercises ORDER BY chapter, uuid').all();
+    return db.prepare('SELECT * FROM exercises ORDER BY chapter, uuid').all()
+      .map(row => ({ ...row, _needsSummary: true, _needsEmbedding: true }));
   }
-  return db.prepare('SELECT * FROM exercises WHERE indexed_at IS NULL ORDER BY chapter, uuid').all();
+
+  // Exercices sans résumé → réindexation complète (Albert Chat + Albert Embedding)
+  const sansSummary = db.prepare(
+    'SELECT * FROM exercises WHERE indexed_at IS NULL ORDER BY chapter, uuid'
+  ).all().map(row => ({ ...row, _needsSummary: true, _needsEmbedding: true }));
+
+  // Exercices avec résumé mais sans embedding → Albert Embedding seul
+  const sansEmbedding = db.prepare(`
+    SELECT e.* FROM exercises e
+    LEFT JOIN exercise_embeddings ee ON e.uuid = ee.uuid
+    WHERE e.indexed_at IS NOT NULL AND ee.uuid IS NULL
+    ORDER BY e.chapter, e.uuid
+  `).all().map(row => ({ ...row, _needsSummary: false, _needsEmbedding: true }));
+
+  return [...sansSummary, ...sansEmbedding];
 }
 
 const SEMANTIC_TYPES = new Set(['enonce', 'question', 'reponse', 'indication', 'hint', 'answer', 'solution', 'texte', 'text']);
@@ -89,17 +105,17 @@ function computeContentHash(contentArray) {
 async function indexOne(db, row, stmts) {
   const content = JSON.parse(row.content_json);
   const contentHash = computeContentHash(content);
+  let summaryObj;
 
-  // 1. Résumé LLM
-  const summaryModel = MODELS.chat;
-  const summaryObj = await withRetry(
-    () => summarizeExercise({ ...row, content }, { model: summaryModel }),
-    { maxAttempts: 3, delayMs: 2000 }
-  );
+  if (row._needsSummary) {
+    // 1a. Résumé via Albert Chat (LLM) — coûteux, une seule fois par contenu
+    const summaryModel = MODELS.chat;
+    summaryObj = await withRetry(
+      () => summarizeExercise({ ...row, content }, { model: summaryModel }),
+      { maxAttempts: 3, delayMs: 2000 }
+    );
+    const indexedAt = new Date().toISOString();
 
-  const indexedAt = new Date().toISOString();
-
-  if (!DRY_RUN) {
     // 2. Versionner dans content/metadata/{uuid}.json
     saveAlbertMetadata(row.uuid, {
       uuid:         row.uuid,
@@ -122,24 +138,35 @@ async function indexOne(db, row, stmts) {
       indexedAt,
       row.uuid
     );
-
-    // 4. Embedding — vérifie le cache local avant d'appeler l'API
-    const embeddingText = buildEmbeddingText(summaryObj);
-    let vector;
-    const cached = getEmbeddingFromCache(row.uuid, contentHash);
-    if (cached) {
-      process.stdout.write('(cache) ');
-      vector = cached.vector;
-    } else {
-      vector = await withRetry(
-        () => embed(embeddingText),
-        { maxAttempts: 3, delayMs: 1000 }
-      );
-      saveEmbeddingCache(row.uuid, vector, contentHash);
+  } else {
+    // 1b. Résumé déjà versionné — reconstituer depuis la base, aucun appel API
+    if (!row.summary) {
+      throw new Error(`Résumé absent en base pour ${row.uuid} malgré indexed_at renseigné`);
     }
-    const blob = Buffer.from(vector.buffer);
-    stmts.upsertEmbedding.run(row.uuid, blob, MODELS.embedding, vector.length);
+    summaryObj = {
+      summary:  row.summary,
+      concepts: JSON.parse(row.concepts || '[]'),
+      methods:  JSON.parse(row.methods  || '[]'),
+      objects:  JSON.parse(row.objects  || '[]')
+    };
   }
+
+  // 4. Embedding via Albert Embedding — vérifie le cache local avant d'appeler l'API
+  const embeddingText = buildEmbeddingText(summaryObj);
+  let vector;
+  const cached = getEmbeddingFromCache(row.uuid, contentHash);
+  if (cached) {
+    process.stdout.write('(cache) ');
+    vector = cached.vector;
+  } else {
+    vector = await withRetry(
+      () => embed(embeddingText),
+      { maxAttempts: 3, delayMs: 1000 }
+    );
+    saveEmbeddingCache(row.uuid, vector, contentHash);
+  }
+  const blob = Buffer.from(vector.buffer);
+  stmts.upsertEmbedding.run(row.uuid, blob, MODELS.embedding, vector.length);
 
   return summaryObj;
 }
@@ -165,13 +192,18 @@ async function main() {
     return;
   }
 
+  const nComplet    = toProcess.filter(r => r._needsSummary).length;
+  const nEmbedSeul  = toProcess.filter(r => !r._needsSummary).length;
   console.log(`📋 ${toProcess.length} exercice(s) à traiter`);
+  if (nComplet   > 0) console.log(`   - ${nComplet}  réindexation complète  (${MODELS.chat} + ${MODELS.embedding})`);
+  if (nEmbedSeul > 0) console.log(`   - ${nEmbedSeul}  embedding seul         (${MODELS.embedding})`);
   console.log();
 
   if (DRY_RUN) {
     for (const row of toProcess) {
-      const indexed = row.indexed_at ? `indexé le ${row.indexed_at.slice(0, 10)}` : 'non indexé';
-      console.log(`  ${row.uuid}  ${row.title?.slice(0, 60) ?? ''}  (${indexed})`);
+      const mode = row._needsSummary ? 'résumé+emb' : 'emb seul  ';
+      const etat = row.indexed_at ? `indexé le ${row.indexed_at.slice(0, 10)}` : 'non indexé';
+      console.log(`  [${mode}]  ${row.uuid}  ${row.title?.slice(0, 55) ?? ''}  (${etat})`);
     }
     console.log();
     console.log('ℹ️  Mode dry-run : aucun appel API, aucune écriture.');
@@ -196,20 +228,21 @@ async function main() {
     `)
   };
 
-  let ok = 0, errors = 0, quotaAtteint = false;
+  let okResume = 0, okEmbedSeul = 0, errors = 0, quotaAtteint = false;
   const journalErreurs = [];
   const startTime = Date.now();
   const runAt = new Date().toISOString();
 
   for (let i = 0; i < toProcess.length; i++) {
     const row = toProcess[i];
-    const num = `[${i + 1}/${toProcess.length}]`;
-    process.stdout.write(`${num} ${row.uuid} — ${row.title?.slice(0, 50) ?? ''}… `);
+    const num  = `[${i + 1}/${toProcess.length}]`;
+    const mode = row._needsSummary ? '' : '[emb] ';
+    process.stdout.write(`${num} ${mode}${row.uuid} — ${row.title?.slice(0, 50) ?? ''}… `);
 
     try {
       await indexOne(db, row, stmts);
       console.log('✅');
-      ok++;
+      if (row._needsSummary) okResume++; else okEmbedSeul++;
     } catch (err) {
       if (isQuotaExceeded(err)) {
         console.log('⏸️ ');
@@ -246,19 +279,22 @@ async function main() {
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log();
 
+  const ok = okResume + okEmbedSeul;
   if (quotaAtteint) {
     const traites = ok + errors;
     const restants = toProcess.length - traites;
     console.log(`⏸️  Quota API journalier atteint après ${traites} exercice(s) (${elapsed}s)`);
-    if (ok > 0) console.log(`   ✅ ${ok} indexés avant la coupure`);
-    if (errors > 0) console.log(`   ❌ ${errors} erreurs  →  ${ERRORS_LOG_PATH}`);
+    if (okResume    > 0) console.log(`   ✅ ${okResume} résumés générés    (${MODELS.chat})`);
+    if (okEmbedSeul > 0) console.log(`   ✅ ${okEmbedSeul} embeddings seuls    (${MODELS.embedding})`);
+    if (errors      > 0) console.log(`   ❌ ${errors} erreurs  →  ${ERRORS_LOG_PATH}`);
     console.log(`   ⏳ ${restants} exercice(s) restants — relancez demain :`);
     console.log('   pnpm index:exercises');
   } else {
     console.log(`🏁 Terminé en ${elapsed}s`);
-    console.log(`   ✅ ${ok} indexés   ❌ ${errors} erreurs`);
-    if (errors > 0) console.log(`   📋 Journal d'erreurs : ${ERRORS_LOG_PATH}`);
-    if (!DRY_RUN && ok > 0) {
+    if (okResume    > 0) console.log(`   ✅ ${okResume} résumés générés    (${MODELS.chat})`);
+    if (okEmbedSeul > 0) console.log(`   ✅ ${okEmbedSeul} embeddings seuls    (${MODELS.embedding})`);
+    if (errors      > 0) console.log(`   ❌ ${errors} erreurs  →  ${ERRORS_LOG_PATH}`);
+    if (okResume > 0) {
       console.log(`   📁 Métadonnées versionnées dans content/metadata/`);
       console.log(`   → Pensez à commiter les fichiers content/metadata/*.json`);
     }
