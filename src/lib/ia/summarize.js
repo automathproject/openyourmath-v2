@@ -175,7 +175,8 @@ function validateSummary(obj) {
  * @param {number} [options.maxTokens] - Limite de tokens en sortie (défaut: 800)
  * @returns {Promise<{summary: string, concepts: string[], methods: string[], objects: string[]}>}
  */
-export async function summarizeExercise(exercise, { model, maxTokens = 800 } = {}) {
+export async function summarizeExercise(exercise, { model, maxTokens = 800, chatFn } = {}) {
+  const callChat = chatFn ?? chat;
   const metadata = buildMetadata(exercise);
   const content = buildContent(exercise.content);
 
@@ -188,7 +189,7 @@ export async function summarizeExercise(exercise, { model, maxTokens = 800 } = {
     .replace('{{content}}', content);
 
   const rawResponse = await withRetry(
-    () => chat(prompt, { model, maxTokens, jsonMode: true, temperature: 0 }),
+    () => callChat(prompt, { model, maxTokens, jsonMode: true, temperature: 0 }),
     { maxAttempts: 3, delayMs: 1500 }
   );
 

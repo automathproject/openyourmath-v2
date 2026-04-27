@@ -21,6 +21,7 @@ import crypto from 'crypto';
 import { config as dotenvConfig } from 'dotenv';
 import { summarizeExercise, buildEmbeddingText } from '../src/lib/ia/summarize.js';
 import { embed, MODELS, withRetry, isQuotaExceeded } from '../src/lib/ia/albert.js';
+import { checkOllamaAvailable, ollamaChat, ollamaEmbed, OLLAMA_MODELS } from '../src/lib/ia/ollama.js';
 import { getEmbeddingFromCache, saveEmbeddingCache } from '../src/lib/ia/embedding-cache.js';
 import { saveAlbertMetadata } from './utils/albert-store.js';
 
@@ -102,16 +103,17 @@ function computeContentHash(contentArray) {
   return crypto.createHash('sha256').update(JSON.stringify(blocks)).digest('hex');
 }
 
-async function indexOne(db, row, stmts) {
+async function indexOne(db, row, stmts, providers) {
   const content = JSON.parse(row.content_json);
   const contentHash = computeContentHash(content);
   let summaryObj;
 
   if (row._needsSummary) {
-    // 1a. Résumé via Albert Chat (LLM) — coûteux, une seule fois par contenu
-    const summaryModel = MODELS.chat;
+    // 1a. Résumé via LLM — Ollama en priorité, Albert en fallback
+    const summaryModel = providers.chatModel;
+    const chatFn       = providers.chat;   // null → summarizeExercise utilisera albert.chat
     summaryObj = await withRetry(
-      () => summarizeExercise({ ...row, content }, { model: summaryModel }),
+      () => summarizeExercise({ ...row, content }, { model: summaryModel, chatFn }),
       { maxAttempts: 3, delayMs: 2000 }
     );
     const indexedAt = new Date().toISOString();
@@ -151,7 +153,7 @@ async function indexOne(db, row, stmts) {
     };
   }
 
-  // 4. Embedding via Albert Embedding — vérifie le cache local avant d'appeler l'API
+  // 4. Embedding — Ollama en priorité, Albert en fallback, cache local en premier
   const embeddingText = buildEmbeddingText(summaryObj);
   let vector;
   const cached = getEmbeddingFromCache(row.uuid, contentHash);
@@ -160,7 +162,7 @@ async function indexOne(db, row, stmts) {
     vector = cached.vector;
   } else {
     vector = await withRetry(
-      () => embed(embeddingText),
+      () => providers.embed(embeddingText),
       { maxAttempts: 3, delayMs: 1000 }
     );
     saveEmbeddingCache(row.uuid, vector, contentHash);
@@ -172,9 +174,32 @@ async function indexOne(db, row, stmts) {
 }
 
 async function main() {
-  console.log('🧠 Pipeline B — Indexation sémantique via Albert');
-  console.log(`   Modèle résumé  : ${MODELS.chat}`);
-  console.log(`   Modèle embedding : ${MODELS.embedding}`);
+  console.log('🧠 Pipeline B — Indexation sémantique');
+
+  // Détection Ollama (prioritaire) avec fallback Albert
+  const ollama = await checkOllamaAvailable();
+
+  const providers = {
+    chatModel: ollama.hasChat  ? OLLAMA_MODELS.chat      : MODELS.chat,
+    chat:      ollama.hasChat  ? ollamaChat               : null,
+    embed:     ollama.hasEmbed ? ollamaEmbed              : embed,
+    embedLabel: ollama.hasEmbed
+      ? `Ollama/${OLLAMA_MODELS.embedding}`
+      : `Albert/${MODELS.embedding}`
+  };
+
+  if (ollama.available) {
+    console.log('🦙 Ollama disponible');
+    const chatSrc  = ollama.hasChat  ? `✅ ${OLLAMA_MODELS.chat}`      : `❌ ${OLLAMA_MODELS.chat} absent → Albert (${MODELS.chat})`;
+    const embedSrc = ollama.hasEmbed ? `✅ ${OLLAMA_MODELS.embedding}` : `❌ ${OLLAMA_MODELS.embedding} absent → Albert (${MODELS.embedding})`;
+    console.log(`   Résumé    : ${chatSrc}`);
+    console.log(`   Embedding : ${embedSrc}`);
+  } else {
+    console.log(`⚡ Ollama non disponible → Albert API`);
+    console.log(`   Résumé    : ${MODELS.chat}`);
+    console.log(`   Embedding : ${MODELS.embedding}`);
+  }
+
   if (DRY_RUN) console.log('   (mode dry-run : aucune écriture)');
   if (FORCE)   console.log('   (mode force : réindexation complète)');
   if (uuidArg) console.log(`   (exercice unique : ${uuidArg})`);
@@ -240,7 +265,7 @@ async function main() {
     process.stdout.write(`${num} ${mode}${row.uuid} — ${row.title?.slice(0, 50) ?? ''}… `);
 
     try {
-      await indexOne(db, row, stmts);
+      await indexOne(db, row, stmts, providers);
       console.log('✅');
       if (row._needsSummary) okResume++; else okEmbedSeul++;
     } catch (err) {
@@ -284,15 +309,15 @@ async function main() {
     const traites = ok + errors;
     const restants = toProcess.length - traites;
     console.log(`⏸️  Quota API journalier atteint après ${traites} exercice(s) (${elapsed}s)`);
-    if (okResume    > 0) console.log(`   ✅ ${okResume} résumés générés    (${MODELS.chat})`);
-    if (okEmbedSeul > 0) console.log(`   ✅ ${okEmbedSeul} embeddings seuls    (${MODELS.embedding})`);
+    if (okResume    > 0) console.log(`   ✅ ${okResume} résumés générés    (${providers.chatModel})`);
+    if (okEmbedSeul > 0) console.log(`   ✅ ${okEmbedSeul} embeddings seuls    (${providers.embedLabel})`);
     if (errors      > 0) console.log(`   ❌ ${errors} erreurs  →  ${ERRORS_LOG_PATH}`);
     console.log(`   ⏳ ${restants} exercice(s) restants — relancez demain :`);
     console.log('   pnpm index:exercises');
   } else {
     console.log(`🏁 Terminé en ${elapsed}s`);
-    if (okResume    > 0) console.log(`   ✅ ${okResume} résumés générés    (${MODELS.chat})`);
-    if (okEmbedSeul > 0) console.log(`   ✅ ${okEmbedSeul} embeddings seuls    (${MODELS.embedding})`);
+    if (okResume    > 0) console.log(`   ✅ ${okResume} résumés générés    (${providers.chatModel})`);
+    if (okEmbedSeul > 0) console.log(`   ✅ ${okEmbedSeul} embeddings seuls    (${providers.embedLabel})`);
     if (errors      > 0) console.log(`   ❌ ${errors} erreurs  →  ${ERRORS_LOG_PATH}`);
     if (okResume > 0) {
       console.log(`   📁 Métadonnées versionnées dans content/metadata/`);
