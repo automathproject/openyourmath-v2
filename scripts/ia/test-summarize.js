@@ -3,6 +3,7 @@ import 'dotenv/config';
 import Database from 'better-sqlite3';
 import path from 'path';
 import { summarizeExercise, buildEmbeddingText } from '../../src/lib/ia/summarize.js';
+import { ollamaChat, checkOllamaAvailable, OLLAMA_MODELS } from '../../src/lib/ia/ollama.js';
 
 const DB_PATH = path.resolve('data/exercises.sqlite');
 
@@ -18,6 +19,14 @@ const TEST_UUIDS = [
 ];
 
 async function main() {
+  const ollama = await checkOllamaAvailable();
+  if (!ollama.available || !ollama.hasChat) {
+    console.error(`❌ Ollama indisponible ou modèle chat absent (${OLLAMA_MODELS.chat})`);
+    console.error(`   Modèles installés : ${(ollama.models ?? []).join(', ') || 'aucun'}`);
+    process.exit(1);
+  }
+  console.log(`✅ Ollama OK — modèle chat : ${OLLAMA_MODELS.chat}\n`);
+
   const db = new Database(DB_PATH, { readonly: true });
 
   for (const uuid of TEST_UUIDS) {
@@ -40,7 +49,7 @@ async function main() {
 
     const t0 = Date.now();
     try {
-      const summary = await summarizeExercise(exercise);
+      const summary = await summarizeExercise(exercise, { chatFn: ollamaChat });
       const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
 
       console.log(`\n⏱️  ${elapsed}s`);
