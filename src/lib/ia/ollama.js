@@ -13,8 +13,8 @@ import { EMBEDDING_DIMENSION } from './albert.js';
 const OLLAMA_BASE_URL = (process.env.OLLAMA_BASE_URL ?? 'http://localhost:11434').replace(/\/$/, '');
 
 export const OLLAMA_MODELS = {
-  chat:      process.env.OLLAMA_CHAT_MODEL  || 'mistral',
-  embedding: process.env.OLLAMA_EMBED_MODEL || 'bge-m3'
+  get chat()      { return process.env.OLLAMA_CHAT_MODEL  || 'mistral'; },
+  get embedding() { return process.env.OLLAMA_EMBED_MODEL || 'bge-m3'; }
 };
 
 /**
