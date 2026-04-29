@@ -1,0 +1,27 @@
+{
+  "uuid": "7TZZ",
+  "source_path": "exo7/4-L2/7TZZ.tex",
+  "summary": "Trouver les matrices inversibles P telles que l'application φ, définie comme la somme des carrés des coefficients d'une matrice A, soit invariante par conjugaison par P.",
+  "concepts": [
+    "trace d'une matrice",
+    "matrice orthogonale",
+    "matrice scalaire",
+    "conjugaison de matrices",
+    "matrice inversible",
+    "matrice symétrique"
+  ],
+  "methods": [
+    "calcul de trace",
+    "polarisation",
+    "conjugaison de matrices",
+    "analyse des conditions d'invariance"
+  ],
+  "objects": [
+    "matrice carrée",
+    "application quadratique",
+    "matrice de similitude"
+  ],
+  "content_hash": "2967871b0850d10d8c94ed072bc9a042cc2f2ff3a94761e56f223baa32dc5f7c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:03:14.864Z"
+}

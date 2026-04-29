@@ -1,0 +1,27 @@
+{
+  "uuid": "Scdk",
+  "source_path": "exo7/4-L2/Scdk.tex",
+  "summary": "L'exercice demande de montrer qu'un déterminant de fonctions dérivables est dérivable et de calculer sa dérivée. Ensuite, il propose une application pour calculer un déterminant spécifique d'une matrice particulière.",
+  "concepts": [
+    "déterminant",
+    "fonction dérivable",
+    "combinaison linéaire",
+    "développement par rapport à une colonne",
+    "récurrence",
+    "polynôme"
+  ],
+  "methods": [
+    "développement du déterminant",
+    "calcul de la dérivée d'un déterminant",
+    "récurrence",
+    "intégration"
+  ],
+  "objects": [
+    "matrice de fonctions dérivables",
+    "déterminant",
+    "polynôme"
+  ],
+  "content_hash": "c7bd98f0717bd470618b1f4023c259b50aae9bcdda6c338afb3af6548d38dfbe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:51:10.646Z"
+}

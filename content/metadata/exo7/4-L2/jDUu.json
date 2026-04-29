@@ -1,0 +1,26 @@
+{
+  "uuid": "jDUu",
+  "source_path": "exo7/4-L2/jDUu.tex",
+  "summary": "Résolution d'un système linéaire de 5 équations à 4 inconnues. L'énoncé demande de trouver les solutions possibles de ce système.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "espace des solutions",
+    "combinaison linéaire",
+    "inconnues libres"
+  ],
+  "methods": [
+    "réduction par lignes",
+    "calcul du rang",
+    "analyse de la cohérence"
+  ],
+  "objects": [
+    "matrice 5x4",
+    "vecteur colonne",
+    "système homogène",
+    "système non homogène"
+  ],
+  "content_hash": "befaa0604d99aac02c1957331aac45f900498157ec683ff8241ff362c909d30f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:06:04.916Z"
+}

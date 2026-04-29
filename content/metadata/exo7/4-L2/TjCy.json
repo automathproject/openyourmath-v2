@@ -1,0 +1,26 @@
+{
+  "uuid": "TjCy",
+  "source_path": "exo7/4-L2/TjCy.tex",
+  "summary": "L'exercice demande d'abord de lister les éléments distincts des ensembles de classes modulo 2, 3, 4 et 5. Ensuite, il s'agit de prouver que l'addition et la multiplication de classes préservent les classes modulo n. Enfin, il faut construire les tables d'addition et de multiplication pour l'ensemble des classes modulo 4.",
+  "concepts": [
+    "classe d'équivalence",
+    "relation d'équivalence",
+    "structure de groupe",
+    "structure d'anneau",
+    "congruence modulo n",
+    "lois de composition interne"
+  ],
+  "methods": [
+    "définition de classe d'équivalence",
+    "vérification de la fermeture",
+    "construction de tables de Cayley"
+  ],
+  "objects": [
+    "ensemble des classes modulo n",
+    "éléments de Z_n",
+    "tables d'addition et de multiplication"
+  ],
+  "content_hash": "00cb70bbd6e19af0a72e8340f1109442e7a34a399b7c17302634ce0133b861b4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:48:29.542Z"
+}

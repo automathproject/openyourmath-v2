@@ -1,0 +1,28 @@
+{
+  "uuid": "frvS",
+  "source_path": "exo7/4-L2/frvS.tex",
+  "summary": "Montrer qu'une famille de n formes linéaires sur un espace vectoriel de dimension n est liée si et seulement s'il existe un vecteur non nul annulé par toutes ces formes.",
+  "concepts": [
+    "famille libre de formes linéaires",
+    "préduale d'une base",
+    "isomorphisme d'espaces vectoriels",
+    "noyau d'une application linéaire",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "utilisation de la préduale",
+    "construction d'un isomorphisme",
+    "analyse du noyau",
+    "extraction d'une base à partir d'une famille liée"
+  ],
+  "objects": [
+    "famille de formes linéaires",
+    "espace vectoriel de dimension finie",
+    "application linéaire",
+    "vecteur non nul"
+  ],
+  "content_hash": "d71d6eeac1716b1ae4c7819d906414bfa2136fa0cffe64306931c628f67945ff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:42:51.190Z"
+}

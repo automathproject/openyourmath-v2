@@ -1,0 +1,26 @@
+{
+  "uuid": "jpge",
+  "source_path": "exo7/6-L2/jpge.tex",
+  "summary": "Dans un carré ABCD, un cercle passe par deux sommets consécutifs A et B et est tangent au côté opposé CD. L'exercice demande de prouver que le point de tangence est le milieu de CD, puis d'établir une relation entre la longueur du côté AB et le rayon r du cercle.",
+  "concepts": [
+    "géométrie affine",
+    "propriétés des carrés",
+    "tangente à une droite",
+    "théorème de Pythagore",
+    "relation de distance dans le plan"
+  ],
+  "methods": [
+    "utilisation des propriétés des carrés",
+    "calcul de distances",
+    "application du théorème de Pythagore"
+  ],
+  "objects": [
+    "carré",
+    "cercle",
+    "point de tangence",
+    "côté du carré"
+  ],
+  "content_hash": "c653c60ff8bab3f1c6cda24576a31073eeb44d6f4d538d56e664c92aaf6f16a4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:05:33.808Z"
+}

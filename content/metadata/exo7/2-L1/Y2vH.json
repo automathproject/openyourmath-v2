@@ -1,0 +1,25 @@
+{
+  "uuid": "Y2vH",
+  "source_path": "exo7/2-L1/Y2vH.tex",
+  "summary": "On considère une fonction uniformément continue sur ℝ et on définit une nouvelle fonction g(x) comme la borne supérieure de l'image de f sur l'intervalle [x, x+1]. On demande de montrer que g est continue, puis de généraliser le résultat à une fonction simplement continue.",
+  "concepts": [
+    "continuité uniforme",
+    "continuité",
+    "borne supérieure",
+    "fonction réelle",
+    "supremum"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la continuité",
+    "approximation par des points"
+  ],
+  "objects": [
+    "fonction définie sur ℝ",
+    "intervalle [x, x+1]",
+    "fonction g(x)"
+  ],
+  "content_hash": "2ea5190ae47b6000da22612c116c748c0ef07752acf4735800d40dab3619ea07",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:20:19.708Z"
+}

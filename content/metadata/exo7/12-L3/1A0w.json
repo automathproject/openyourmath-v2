@@ -1,0 +1,28 @@
+{
+  "uuid": "1A0w",
+  "source_path": "exo7/12-L3/1A0w.tex",
+  "summary": "On considère l'espace des fonctions continues sur [0,1] muni de la norme uniforme et une application dérivable de R dans R. On définit une application F qui compose une fonction de cet espace avec f. L'exercice demande de montrer que la différentielle de F en tout point est un opérateur linéaire de multiplication par la dérivée de f composée avec ce point, et que cette différentielle est continue.",
+  "concepts": [
+    "différentiabilité",
+    "norme uniforme",
+    "espace de Banach",
+    "opérateur linéaire",
+    "continuité",
+    "composition de fonctions",
+    "dérivée"
+  ],
+  "methods": [
+    "calcul de la différentielle",
+    "linéarisation",
+    "analyse de la continuité"
+  ],
+  "objects": [
+    "fonction continue",
+    "application dérivable",
+    "opérateur de multiplication",
+    "dérivée composée"
+  ],
+  "content_hash": "ae5f4d7fb325a3b1dbc14b2b0330b6f6ae955e0f9c06f598445c03926b0a15dc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:22:10.732Z"
+}

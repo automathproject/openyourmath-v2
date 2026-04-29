@@ -1,0 +1,26 @@
+{
+  "uuid": "iWnb",
+  "source_path": "exo7/1-L1/iWnb.tex",
+  "summary": "Calcul du pgcd et du ppcm de deux entiers, avec expression linéaire du pgcd. Contexte : nombres entiers 720 et 252.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "relation de Bézout",
+    "algorithme d'Euclide",
+    "arithmétique dans Z"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "décomposition en facteurs premiers",
+    "recherche de coefficients de Bézout"
+  ],
+  "objects": [
+    "entiers naturels",
+    "pgcd",
+    "ppcm",
+    "équation de Bézout"
+  ],
+  "content_hash": "a3f471e5e229b3955be84d3c63d0f3b0e25af587134a7484b6e05555a2cebd0a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:09:50.870Z"
+}

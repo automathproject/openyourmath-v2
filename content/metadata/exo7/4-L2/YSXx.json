@@ -1,0 +1,26 @@
+{
+  "uuid": "YSXx",
+  "source_path": "exo7/4-L2/YSXx.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de divisibilité dans l'anneau des polynômes à une indéterminée, en utilisant les relations entre les exposants et leurs diviseurs.",
+  "concepts": [
+    "division euclidienne dans ℤ",
+    "division euclidienne dans ℤ[X]",
+    "plus grand commun diviseur",
+    "polynôme cyclotomique",
+    "relation de Bézout"
+  ],
+  "methods": [
+    "division euclidienne",
+    "algèbre des polynômes",
+    "utilisation du théorème de Bézout"
+  ],
+  "objects": [
+    "polynôme X^d - 1",
+    "polynôme X^n - 1",
+    "polynôme X^r - 1",
+    "entiers naturels"
+  ],
+  "content_hash": "ee52407fa69a7a76ee60225a81214d77e593e13360b46e77866caeb750c17974",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:54:32.387Z"
+}

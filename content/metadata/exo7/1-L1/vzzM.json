@@ -1,0 +1,28 @@
+{
+  "uuid": "vzzM",
+  "source_path": "exo7/1-L1/vzzM.tex",
+  "summary": "L'exercice demande de trouver des entiers a et b tels que la suite définie par a_n = 25^n + 2^{3n+4} vérifie une relation de récurrence linéaire du second ordre. Ensuite, il faut en déduire que chaque terme de la suite est divisible par 17.",
+  "concepts": [
+    "relation de récurrence linéaire",
+    "divisibilité",
+    "suite définie par récurrence",
+    "arithmétique modulaire",
+    "polynôme caractéristique",
+    "racines d'un polynôme"
+  ],
+  "methods": [
+    "résolution d'équation de récurrence",
+    "calcul de coefficients de récurrence",
+    "vérification de divisibilité",
+    "utilisation de l'arithmétique modulaire"
+  ],
+  "objects": [
+    "suite numérique",
+    "relation de récurrence",
+    "coefficients entiers",
+    "diviseur commun"
+  ],
+  "content_hash": "86bac32ec744d9649fca2570bff1ca97a347795dac887874553bd5be5ed593b3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:52:01.708Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "kfbn",
+  "source_path": "exo7/4-L2/kfbn.tex",
+  "summary": "On considère une matrice réelle A de taille n×p. L'exercice demande de prouver que le déterminant de la matrice transposée de A multipliée par A est positif ou nul.",
+  "concepts": [
+    "produit scalaire",
+    "matrice transposée",
+    "déterminant",
+    "inégalité",
+    "espace euclidien",
+    "espace normé"
+  ],
+  "methods": [
+    "transposition de matrice",
+    "calcul de déterminant",
+    "propriétés des formes quadratiques"
+  ],
+  "objects": [
+    "matrice réelle",
+    "déterminant de matrice",
+    "produit scalaire"
+  ],
+  "content_hash": "e0a64c5b446056a38fb187cb8afe8551cbc9312540058d56b699c38834618e38",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:48:10.766Z"
+}

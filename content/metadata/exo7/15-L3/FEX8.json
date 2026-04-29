@@ -1,0 +1,29 @@
+{
+  "uuid": "FEX8",
+  "source_path": "exo7/15-L3/FEX8.tex",
+  "summary": "L'exercice demande de caractériser la frontière d'une partie d'un espace métrique en utilisant des suites convergentes et de calculer cette frontière dans un espace topologique spécifique.",
+  "concepts": [
+    "espace métrique",
+    "adhérence d'un ensemble",
+    "frontière d'un ensemble",
+    "suite convergente",
+    "topologie induite",
+    "intérieur d'un ensemble"
+  ],
+  "methods": [
+    "caractérisation par suites",
+    "analyse de convergence",
+    "comparaison de topologies"
+  ],
+  "objects": [
+    "espace métrique E",
+    "partie A de E",
+    "suite (x_n) dans A",
+    "suite (y_n) dans le complémentaire de A",
+    "frontière de A dans E",
+    "frontière de A dans ℝ"
+  ],
+  "content_hash": "d8aeeea4dd72eb644fcfa064f52628c2b386c511c9f93c14a7445fa14ff419d6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:22:33.304Z"
+}

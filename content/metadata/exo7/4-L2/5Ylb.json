@@ -1,0 +1,24 @@
+{
+  "uuid": "5Ylb",
+  "source_path": "exo7/4-L2/5Ylb.tex",
+  "summary": "L'exercice demande de déterminer comment obtenir une permutation donnée de la séquence 1234 en n'échangeant que deux chiffres à chaque étape. Il explore aussi la possibilité d'atteindre n'importe quelle permutation par ce procédé.",
+  "concepts": [
+    "permutation",
+    "groupe de permutation",
+    "génération de groupe",
+    "transposition",
+    "ordre d'un élément"
+  ],
+  "methods": [
+    "décomposition en transpositions",
+    "analyse des générateurs"
+  ],
+  "objects": [
+    "permutation de 4 éléments",
+    "groupe symétrique S4",
+    "transpositions"
+  ],
+  "content_hash": "6ae94d8aac2716100b91482100085155707763df13ff333657685b3455a60f83",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:19:14.707Z"
+}

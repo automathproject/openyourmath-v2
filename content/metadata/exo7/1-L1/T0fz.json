@@ -1,0 +1,23 @@
+{
+  "uuid": "T0fz",
+  "source_path": "exo7/1-L1/T0fz.tex",
+  "summary": "Soient trois entiers a, b, c avec pgcd(a,b)=1. Montrer que pgcd(a,bc)=pgcd(a,c).",
+  "concepts": [
+    "pgcd",
+    "algorithme d'Euclide",
+    "divisibilité dans Z",
+    "propriétés du pgcd",
+    "entiers premiers entre eux"
+  ],
+  "methods": [
+    "utilisation des propriétés du pgcd",
+    "décomposition en facteurs premiers"
+  ],
+  "objects": [
+    "entiers relatifs",
+    "pgcd"
+  ],
+  "content_hash": "85f9accd6deea6c9d43147756cb07209c55116808f2cee1a651ed67942d0b872",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:05:47.026Z"
+}

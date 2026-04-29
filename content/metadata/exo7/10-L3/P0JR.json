@@ -1,0 +1,25 @@
+{
+  "uuid": "P0JR",
+  "source_path": "exo7/10-L3/P0JR.tex",
+  "summary": "L'exercice demande de déterminer si les nombres 2 et 3 sont des carrés modulo 7, puis si 23 est un carré modulo 59.",
+  "concepts": [
+    "arithmétique modulaire",
+    "carré modulo un nombre premier",
+    "résidus quadratiques",
+    "théorème des restes chinois",
+    "corps finis"
+  ],
+  "methods": [
+    "test de carrés modulo",
+    "calcul des inverses modulaires",
+    "vérification des solutions"
+  ],
+  "objects": [
+    "entiers modulo 7",
+    "entiers modulo 59",
+    "carrés parfaits"
+  ],
+  "content_hash": "d8d338cce8cef84b3d1f8f50a5684d798b44bb547feca1cd9cfcd4b39b0a6ca4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:27:08.546Z"
+}

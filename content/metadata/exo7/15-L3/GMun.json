@@ -1,0 +1,33 @@
+{
+  "uuid": "GMun",
+  "source_path": "exo7/15-L3/GMun.tex",
+  "summary": "L'exercice demande de démontrer que la distance SNCF δ est une distance sur ℝ² plus fine que la distance euclidienne usuelle, puis d'étudier les propriétés topologiques de cette nouvelle distance.",
+  "concepts": [
+    "distance",
+    "espace métrique",
+    "topologie",
+    "distance euclidienne",
+    "distance fine",
+    "ouvert",
+    "adhérence",
+    "topologie induite",
+    "continuité"
+  ],
+  "methods": [
+    "vérification des axiomes de distance",
+    "étude des ouverts",
+    "calcul d'adhérence",
+    "analyse de la topologie induite"
+  ],
+  "objects": [
+    "distance δ",
+    "distance euclidienne",
+    "demi-plan H",
+    "droite vectorielle",
+    "cercle unité Γ",
+    "transformations géométriques"
+  ],
+  "content_hash": "d40b2b78e901524951cb4fabad6787221e5c00764c9f978e4bee558d996bc8ae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:23:35.618Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "V3JW",
+  "source_path": "exo7/1-L1/V3JW.tex",
+  "summary": "L'exercice demande de prouver l'existence d'une matrice colonne non colinéaire à son image par M, puis d'en déduire des propriétés de similarité de M avec des matrices spécifiques, notamment une matrice à diagonale nulle.",
+  "concepts": [
+    "matrice non scalaire",
+    "trace d'une matrice",
+    "similarité de matrices",
+    "colinéarité",
+    "matrice à diagonale nulle",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "réduction de matrice",
+    "construction explicite de vecteurs",
+    "décomposition de matrices"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice colonne",
+    "matrice de trace nulle"
+  ],
+  "content_hash": "75096b0fbb7504d7c94fbe3af7278b36bd8a8d8995e220490331446550a530e6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:01:40.817Z"
+}

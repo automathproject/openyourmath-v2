@@ -1,0 +1,25 @@
+{
+  "uuid": "J1Sh",
+  "source_path": "exo7/2-L1/J1Sh.tex",
+  "summary": "On considère une fonction dérivable en un point a avec une dérivée non nulle. On demande de montrer l'existence d'un voisinage de a où la fonction ne reprend pas sa valeur en a. Dans un second temps, si la dérivée est continue en a, on doit montrer que la fonction est injective sur un voisinage de a.",
+  "concepts": [
+    "dérivabilité",
+    "continuité de la dérivée",
+    "injectivité",
+    "voisinage d'un point",
+    "fonction réelle"
+  ],
+  "methods": [
+    "utilisation de la définition de la dérivée",
+    "raisonnement par l'absurde",
+    "théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "point a",
+    "voisinage V"
+  ],
+  "content_hash": "5dca774939b9c0de0e749ef58483088e787fe9bc6752c0adaac39a5ae9a51693",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:03:27.588Z"
+}

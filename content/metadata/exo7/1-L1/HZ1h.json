@@ -1,0 +1,27 @@
+{
+  "uuid": "HZ1h",
+  "source_path": "exo7/1-L1/HZ1h.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice A, définie à partir des racines n-ièmes de l'unité, est inversible et de calculer son inverse en étudiant le produit A*conjugué(A).",
+  "concepts": [
+    "racines de l'unité",
+    "matrice inversible",
+    "conjugaison complexe",
+    "produit matriciel",
+    "somme géométrique"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "somme de termes complexes",
+    "utilisation de la conjugaison",
+    "identification de cas particuliers"
+  ],
+  "objects": [
+    "matrice carrée",
+    "racines n-ièmes de l'unité",
+    "matrice identité",
+    "inverse d'une matrice"
+  ],
+  "content_hash": "62dcba806063e39bfc349ccf6c4b65076c27671755b74d4f277022fafe9cdd54",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:49:28.826Z"
+}

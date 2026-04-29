@@ -1,0 +1,26 @@
+{
+  "uuid": "mSfz",
+  "source_path": "exo7/4-L2/mSfz.tex",
+  "summary": "Calculer le déterminant d'une matrice carrée de taille n×n où tous les éléments de la diagonale valent 3 ou 4, et tous les autres éléments valent 1.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "récurrence",
+    "propriétés des déterminants",
+    "développement de Laplace",
+    "induction mathématique"
+  ],
+  "methods": [
+    "développement par rapport à une ligne ou une colonne",
+    "récurrence sur la taille de la matrice",
+    "calcul de déterminants par blocs"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant de matrice",
+    "suite récurrente"
+  ],
+  "content_hash": "601e27e91435c753456e46bf873d08e7403ccf0b3fc129621040b2dd88cc543d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:08:59.787Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "6cUO",
+  "source_path": "exo7/4-L2/6cUO.tex",
+  "summary": "Soient A et B deux matrices symétriques positives. Montrer que la trace du produit AB est comprise entre 0 et le produit des traces de A et B.",
+  "concepts": [
+    "matrice symétrique",
+    "matrice positive",
+    "trace d'une matrice",
+    "diagonalisation",
+    "endomorphisme auto-adjoint",
+    "produit de matrices"
+  ],
+  "methods": [
+    "diagonalisation",
+    "changement de base orthonormée",
+    "utilisation des valeurs propres"
+  ],
+  "objects": [
+    "matrices symétriques",
+    "trace de produit de matrices",
+    "valeurs propres"
+  ],
+  "content_hash": "8359881d7c11e57e6ba2243150e11238a73e0391a07b6bb9e6474eedd6108b90",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:02:29.442Z"
+}

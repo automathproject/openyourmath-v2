@@ -1,0 +1,26 @@
+{
+  "uuid": "blgW",
+  "source_path": "exo7/4-L2/blgW.tex",
+  "summary": "Dans un groupe multiplicatif, on considère un élément d'ordre np avec n et p premiers entre eux. L'exercice demande de prouver l'existence et l'unicité de deux éléments b et c dont les ordres sont respectivement n et p, et dont le produit donne l'élément initial.",
+  "concepts": [
+    "groupe multiplicatif",
+    "ordre d'un élément",
+    "divisibilité dans les entiers",
+    "formule de Bézout",
+    "unicité d'une décomposition",
+    "propriétés des groupes abéliens"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "utilisation de la formule de Bézout",
+    "construction explicite d'éléments de groupes"
+  ],
+  "objects": [
+    "élément d'un groupe",
+    "ordre d'un élément",
+    "décomposition en facteurs premiers"
+  ],
+  "content_hash": "429be64832780d649c17460f4d1e0b5e14e1f3944aeef2b271dc0340511d4278",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:00:15.390Z"
+}

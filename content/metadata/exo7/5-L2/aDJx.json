@@ -1,0 +1,25 @@
+{
+  "uuid": "aDJx",
+  "source_path": "exo7/5-L2/aDJx.tex",
+  "summary": "On étudie un système différentiel linéaire à coefficients continus et positifs. On doit montrer que si les coordonnées initiales d'une solution sont positives ou nulles, alors toutes les coordonnées restent positives ou nulles pour tout temps positif.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "solution d'une équation différentielle",
+    "continuité des coefficients",
+    "dépendance continue des solutions par rapport aux conditions initiales"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "analyse du temps minimal de violation",
+    "utilisation des propriétés de positivité des coefficients"
+  ],
+  "objects": [
+    "système différentiel linéaire",
+    "solution vectorielle",
+    "coordonnées de la solution",
+    "conditions initiales"
+  ],
+  "content_hash": "aba6eda0ae626a6d6ad0fe817511dc64d9f3fb8121c0282b9569dc15b2684549",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:35:04.589Z"
+}

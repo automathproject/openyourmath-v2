@@ -1,0 +1,23 @@
+{
+  "uuid": "stTX",
+  "source_path": "exo7/10-L3/stTX.tex",
+  "summary": "L'exercice demande de décomposer deux permutations données en produit de cycles à supports disjoints et d'en déduire leur signature.",
+  "concepts": [
+    "permutation",
+    "cycle",
+    "signature d'une permutation",
+    "groupe symétrique",
+    "décomposition en cycles disjoints"
+  ],
+  "methods": [
+    "décomposition en cycles disjoints",
+    "calcul de la signature"
+  ],
+  "objects": [
+    "permutation σ₁ ∈ S₇",
+    "permutation σ₂ ∈ S₉"
+  ],
+  "content_hash": "658e69849e46c0f78cc944716d3abbc39fd1f03d61e828f4e707735ae346c22c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:52:56.706Z"
+}

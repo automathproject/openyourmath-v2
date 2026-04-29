@@ -1,0 +1,27 @@
+{
+  "uuid": "Wth5",
+  "source_path": "exo7/1-L1/Wth5.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice triangulaire à diagonale nulle est nilpotente, puis d'étudier les propriétés d'une matrice nilpotente d'indice n pour en déduire sa similarité à une matrice triangulaire à diagonale nulle.",
+  "concepts": [
+    "matrice triangulaire",
+    "matrice nilpotente",
+    "endomorphisme",
+    "noyau d'un endomorphisme",
+    "base d'un espace vectoriel",
+    "similarité de matrices"
+  ],
+  "methods": [
+    "étude des noyaux itérés",
+    "construction explicite d'une base",
+    "détermination de la forme triangulaire"
+  ],
+  "objects": [
+    "matrice triangulaire à diagonale nulle",
+    "matrice nilpotente",
+    "endomorphisme associé",
+    "famille de vecteurs"
+  ],
+  "content_hash": "f5f0053c64da0ee3178167ebae71457c8453e0e805613abc7e7b9f4ff0bce7ac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:03:44.651Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "hCKw",
+  "source_path": "exo7/4-L2/hCKw.tex",
+  "summary": "Dans un espace euclidien de dimension 4, on cherche à déterminer une base orthonormale d'un sous-espace vectoriel engendré par deux vecteurs donnés, ainsi qu'un système d'équations pour son orthogonal.",
+  "concepts": [
+    "produit scalaire",
+    "base orthonormale",
+    "orthogonal d'un sous-espace",
+    "famille libre",
+    "norme d'un vecteur",
+    "projection orthogonale"
+  ],
+  "methods": [
+    "orthonormalisation de Gram-Schmidt",
+    "calcul de projection",
+    "vérification de linéaire indépendance"
+  ],
+  "objects": [
+    "sous-espace vectoriel",
+    "vecteurs de R^4",
+    "base orthonormale",
+    "équations cartésiennes"
+  ],
+  "content_hash": "b238e848b8122d5ad39e3cbd40f807ed72debddab77d84488934c4c767ca9637",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:45:30.079Z"
+}

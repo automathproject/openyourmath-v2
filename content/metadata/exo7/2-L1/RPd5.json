@@ -1,0 +1,25 @@
+{
+  "uuid": "RPd5",
+  "source_path": "exo7/2-L1/RPd5.tex",
+  "summary": "L'exercice demande de démontrer une inégalité entre deux fonctions impliquant le logarithme naturel et une puissance de x, puis d'en déduire la limite de cette fonction lorsque x tend vers l'infini.",
+  "concepts": [
+    "limite de fonctions",
+    "inégalité",
+    "fonction logarithme",
+    "fonction puissance",
+    "comparaison asymptotique"
+  ],
+  "methods": [
+    "comparaison de termes dominants",
+    "utilisation de la croissance comparée",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction ln(x)/x^α",
+    "inégalité",
+    "limite en +∞"
+  ],
+  "content_hash": "aee83caca19ae240df2383057e95986e158daaf81357d2f39d9d59fda52023b7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:18:10.001Z"
+}

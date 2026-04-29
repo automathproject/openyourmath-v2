@@ -1,0 +1,24 @@
+{
+  "uuid": "MEGt",
+  "source_path": "exo7/4-L2/MEGt.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice donnée définit un produit scalaire sur ℝ³ et de construire une base orthonormale pour ce produit scalaire. Il propose ensuite d'utiliser le procédé d'orthogonalisation de Schmidt pour transformer une base donnée en une base orthonormale.",
+  "concepts": [
+    "produit scalaire",
+    "base orthonormale",
+    "orthogonalisation de Schmidt",
+    "espace euclidien",
+    "matrice de Gram"
+  ],
+  "methods": [
+    "orthogonalisation de Schmidt",
+    "vérification de la définition d'un produit scalaire"
+  ],
+  "objects": [
+    "matrice symétrique définie positive",
+    "base de ℝ³",
+    "vecteurs orthogonaux"
+  ],
+  "content_hash": "00f8a7dc5384b9b44ccfddac41247eebd5f977760052b5ce1850c785d2fe5876",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:19:50.170Z"
+}

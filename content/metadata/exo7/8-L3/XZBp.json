@@ -1,0 +1,30 @@
+{
+  "uuid": "XZBp",
+  "source_path": "exo7/8-L3/XZBp.tex",
+  "summary": "L'exercice demande de calculer l'ordre d'un sous-groupe H engendré par le produit de deux matrices A et B dans le groupe GL(2,ℝ), puis de montrer que H est distingué dans G et de déterminer l'ordre de G en utilisant le théorème de Lagrange.",
+  "concepts": [
+    "groupe quotient",
+    "théorème de Lagrange",
+    "sous-groupe distingué",
+    "ordre d'un groupe",
+    "matrices de GL(2,ℝ)",
+    "génération de sous-groupe",
+    "conjugaison"
+  ],
+  "methods": [
+    "calcul explicite des puissances d'un élément",
+    "vérification de la distinction d'un sous-groupe",
+    "utilisation de la formule d'ordre pour les groupes",
+    "simplification des produits de matrices"
+  ],
+  "objects": [
+    "sous-groupe H",
+    "sous-groupe G",
+    "matrices A et B",
+    "groupe quotient G/H",
+    "élément AB"
+  ],
+  "content_hash": "27c4786d173386a0691755d868dfd28778a142834192e5e2b3cc0dec2c29fef0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:09:58.041Z"
+}

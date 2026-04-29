@@ -1,0 +1,31 @@
+{
+  "uuid": "FTz9",
+  "source_path": "exo7/4-L2/FTz9.tex",
+  "summary": "L'exercice demande si une structure euclidienne peut être définie sur ℝ² pour qu'un endomorphisme donné soit une rotation, puis généralise cette condition à des matrices carrées réelles de taille quelconque.",
+  "concepts": [
+    "structure euclidienne",
+    "endomorphisme",
+    "rotation",
+    "spectre d'une matrice",
+    "base orthonormale",
+    "matrice de rotation",
+    "application orthogonale",
+    "diagonalisation complexe"
+  ],
+  "methods": [
+    "calcul du spectre",
+    "construction de base orthonormale",
+    "analyse des valeurs propres",
+    "diagonalisation par blocs"
+  ],
+  "objects": [
+    "matrice carrée",
+    "endomorphisme",
+    "base canonique",
+    "spectre",
+    "valeurs propres"
+  ],
+  "content_hash": "42808c4f5c5ebb97dd1303eebc6f9e70ff6e20cbf44809e7161c0fc40d171867",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:11:49.960Z"
+}

@@ -1,0 +1,23 @@
+{
+  "uuid": "idPx",
+  "source_path": "exo7/2-L1/idPx.tex",
+  "summary": "Trouver une suite de fonctions en escaliers qui converge vers la valeur de la fonction en 0, en intégrant cette suite avec une fonction continue par morceaux.",
+  "concepts": [
+    "fonction continue par morceaux",
+    "fonction en escalier",
+    "intégrale de Riemann",
+    "convergence ponctuelle",
+    "limite de suite de fonctions"
+  ],
+  "methods": [
+    "approximation par fonctions en escaliers",
+    "évaluation en un point"
+  ],
+  "objects": [
+    "fonction définie sur [0,1]",
+    "suite de fonctions en escaliers"
+  ],
+  "content_hash": "a484c38f28f3bb1cc7b075777ded1ae39ed390f567937cda488919c482fa7a5c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:44:11.052Z"
+}

@@ -1,0 +1,22 @@
+{
+  "uuid": "IpFR",
+  "source_path": "exo7/5-L2/IpFR.tex",
+  "summary": "L'exercice demande si une fonction f de classe C^1 et un entier n existent tels que l'équation différentielle non linéaire y^(n) = f(y,t) admette les solutions y(t) = t et y(t) = sin(t) sur ℝ. La question se pose aussi pour une équation dépendant des dérivées successives.",
+  "concepts": [
+    "équation différentielle non linéaire",
+    "solution d'une équation différentielle",
+    "fonction de classe C^1",
+    "dérivée n-ième"
+  ],
+  "methods": [
+    "analyse de solutions particulières",
+    "existence de solutions"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "solution d'équation différentielle"
+  ],
+  "content_hash": "2dd1e2d667401d03fc943537b6a883544813c3ce5c047b5d0e7599541368096d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:23:27.289Z"
+}

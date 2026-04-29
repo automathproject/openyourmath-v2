@@ -1,0 +1,27 @@
+{
+  "uuid": "h39C",
+  "source_path": "exo7/1-L1/h39C.tex",
+  "summary": "Calculer la probabilité qu'au moins deux personnes partagent le même anniversaire dans un groupe de n personnes. Montrer que cette probabilité dépasse 1/2 pour n ≥ 23.",
+  "concepts": [
+    "principe des tiroirs",
+    "probabilité conditionnelle",
+    "inégalité logarithmique",
+    "approximation intégrale",
+    "calcul de probabilité"
+  ],
+  "methods": [
+    "calcul de probabilité par complémentaire",
+    "utilisation de l'inégalité de ln(1-x)",
+    "approximation par intégrale",
+    "résolution d'inéquation"
+  ],
+  "objects": [
+    "probabilité d'événement",
+    "produit de probabilités",
+    "somme de logarithmes",
+    "inéquation polynomiale"
+  ],
+  "content_hash": "873bf00f95389676ed88ccc3a7e75f823bbec8758cda6aa3fbf15f0621b63ff7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:47:50.330Z"
+}

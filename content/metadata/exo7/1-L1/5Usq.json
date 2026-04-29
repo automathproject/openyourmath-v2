@@ -1,0 +1,25 @@
+{
+  "uuid": "5Usq",
+  "source_path": "exo7/1-L1/5Usq.tex",
+  "summary": "Trouver le plus petit entier naturel n tel que le développement décimal de 1/n ait une période de longueur 5, c'est-à-dire que 1/n s'écrive 0,abcde abcde abcde... avec a,b,...,e ∈ {0,1,2,...,9}.",
+  "concepts": [
+    "division euclidienne",
+    "période d'un développement décimal",
+    "nombre premier",
+    "ordre d'un nombre",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "recherche de période minimale",
+    "calcul d'ordre",
+    "factorisation"
+  ],
+  "objects": [
+    "entier naturel",
+    "développement décimal",
+    "période"
+  ],
+  "content_hash": "bb49610348d113c2be19a13ed914dd1dd72b279396e980ac7a1851f872cdd5d9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:01:21.805Z"
+}

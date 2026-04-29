@@ -1,0 +1,25 @@
+{
+  "uuid": "7vwz",
+  "source_path": "exo7/2-L1/7vwz.tex",
+  "summary": "L'exercice demande de développer l'expression (1 - e^x)^n autour de 0 à l'ordre n+2 de deux manières différentes, puis d'en déduire la valeur de sommes de coefficients binomiaux pondérés par des puissances.",
+  "concepts": [
+    "développement limité",
+    "formule de Taylor",
+    "polynôme de Taylor",
+    "somme de coefficients binomiaux",
+    "notation o petit"
+  ],
+  "methods": [
+    "développement en série entière",
+    "comparaison de coefficients",
+    "approximation polynomiale"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "polynôme de Taylor",
+    "somme de coefficients binomiaux"
+  ],
+  "content_hash": "bb9ea94b2ac7dd3d3ba3044e6d2ff65e74ba9727ea08004bec0f0629c4274c2e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:25:01.113Z"
+}

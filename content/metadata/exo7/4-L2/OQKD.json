@@ -1,0 +1,26 @@
+{
+  "uuid": "OQKD",
+  "source_path": "exo7/4-L2/OQKD.tex",
+  "summary": "L'exercice demande de démontrer que l'union d'une suite croissante d'idéaux dans un anneau commutatif est elle-même un idéal, puis d'utiliser cette propriété pour montrer qu'un anneau principal ne peut pas être isomorphe à l'anneau des fonctions réelles.",
+  "concepts": [
+    "anneau commutatif",
+    "idéal",
+    "suite croissante d'idéaux",
+    "anneau principal",
+    "isomorphisme d'anneaux"
+  ],
+  "methods": [
+    "définition d'idéal",
+    "propriété de stabilité par union",
+    "caractérisation des anneaux principaux"
+  ],
+  "objects": [
+    "anneau commutatif A",
+    "suite d'idéaux (I_n)",
+    "idéal I",
+    "anneau des fonctions réelles R^R"
+  ],
+  "content_hash": "94625f964ce8e5553e628feb01a42ec0efe3376034100ea2d021cff89d180111",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:42:32.171Z"
+}

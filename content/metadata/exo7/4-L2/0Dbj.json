@@ -1,0 +1,23 @@
+{
+  "uuid": "0Dbj",
+  "source_path": "exo7/4-L2/0Dbj.tex",
+  "summary": "Calculer le signe d'une permutation en fonction du nombre de cycles disjoints et du nombre de points fixes.",
+  "concepts": [
+    "groupe de permutation",
+    "cycle disjoint",
+    "point fixe",
+    "signe d'une permutation"
+  ],
+  "methods": [
+    "décomposition en cycles disjoints",
+    "calcul du signe"
+  ],
+  "objects": [
+    "permutation",
+    "cycle",
+    "point fixe"
+  ],
+  "content_hash": "c43f458b76dd4fd49830fea9f2c83452c87527ee15a6e73337e88784bad815b2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:13:45.364Z"
+}

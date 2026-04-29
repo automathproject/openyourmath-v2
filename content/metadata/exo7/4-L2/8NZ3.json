@@ -1,0 +1,26 @@
+{
+  "uuid": "8NZ3",
+  "source_path": "exo7/4-L2/8NZ3.tex",
+  "summary": "L'exercice demande de montrer l'existence d'une matrice symétrique A et de polynômes Pi tels que chaque matrice symétrique Ai de la famille soit un polynôme en A, sous la condition que les matrices commutent deux à deux.",
+  "concepts": [
+    "matrice symétrique",
+    "commutativité des matrices",
+    "polynôme d'une matrice",
+    "endomorphisme auto-adjoint",
+    "espace euclidien",
+    "espace normé"
+  ],
+  "methods": [
+    "diagonalisation simultanée",
+    "théorème spectral",
+    "polynôme minimal"
+  ],
+  "objects": [
+    "famille de matrices symétriques",
+    "matrice symétrique",
+    "polynômes"
+  ],
+  "content_hash": "72c004b7b27bbc30af3abb21933f41d34aa8582da5ff910a2bd72a6cee85e8eb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:04:25.905Z"
+}

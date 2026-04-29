@@ -1,0 +1,25 @@
+{
+  "uuid": "Zc3q",
+  "source_path": "exo7/16-L3/Zc3q.tex",
+  "summary": "On considère un polynôme harmonique u(x,y) à deux variables réelles. On demande de montrer qu'une fonction complexe p(z) construite à partir de u est holomorphe et que sa partie réelle est u.",
+  "concepts": [
+    "fonction holomorphe",
+    "polynôme harmonique",
+    "partie réelle d'une fonction complexe",
+    "fonction à valeurs complexes",
+    "fonctions de deux variables réelles"
+  ],
+  "methods": [
+    "vérification des équations de Cauchy-Riemann",
+    "construction explicite de fonction holomorphe",
+    "utilisation de la condition de harmonicité"
+  ],
+  "objects": [
+    "polynôme harmonique u(x,y)",
+    "fonction complexe p(z)",
+    "partie réelle de p(z)"
+  ],
+  "content_hash": "cf930b84db5d9eea3e025988a13601f3e159ac59623bf0b650e41aff3ac89d50",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:36:34.955Z"
+}

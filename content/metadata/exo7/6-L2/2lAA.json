@@ -1,33 +1,33 @@
 {
   "uuid": "2lAA",
   "source_path": "exo7/6-L2/2lAA.tex",
-  "summary": "Déterminer la nature (hyperbole, parabole, ellipse) et les propriétés géométriques (foyers, directrices, asymptotes) d'une conique donnée en coordonnées polaires. Les exercices illustrent les transformations géométriques (rotation, symétrie) appliquées à ces coniques.",
+  "summary": "Étudier les propriétés géométriques de coniques définies par des équations polaires en repère orthonormé direct. Identifier la nature de la conique (hyperbole, parabole, ellipse) et déterminer ses éléments caractéristiques (foyers, directrices, sommets, asymptotes).",
   "concepts": [
-    "conique",
-    "équation polaire",
+    "équation polaire des coniques",
     "excentricité",
     "hyperbole",
     "parabole",
     "ellipse",
-    "transformation géométrique",
-    "symétrie centrale",
-    "rotation"
+    "foyer",
+    "directrice",
+    "asymptote",
+    "symétrie centrale"
   ],
   "methods": [
-    "identification de la nature d'une conique",
-    "calcul des foyers",
-    "détermination des directrices",
-    "transformation de coordonnées polaires",
-    "application de symétries"
+    "identification de la nature de la conique",
+    "calcul des éléments caractéristiques",
+    "transformation géométrique",
+    "symétrie centrale"
   ],
   "objects": [
-    "équation polaire d'une conique",
-    "foyers",
-    "directrices",
-    "asymptotes",
-    "conique transformée"
+    "conique",
+    "équation polaire",
+    "repère orthonormé direct",
+    "foyer",
+    "directrice",
+    "asymptote"
   ],
-  "content_hash": "4bf288752f9290d701183b8e4282ab48a114617801b3973a04850d9243bf4b7a",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:39:00.506Z"
+  "content_hash": "daeff5a7f36d4f1c09c0cd834bdc1e66e28940d5b22170e967bcab5838083c13",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:00:45.254Z"
 }

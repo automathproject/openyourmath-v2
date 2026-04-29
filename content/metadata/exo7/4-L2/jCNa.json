@@ -1,0 +1,25 @@
+{
+  "uuid": "jCNa",
+  "source_path": "exo7/4-L2/jCNa.tex",
+  "summary": "Montrer l'existence et l'unicité d'un polynôme P de degré au plus n passant par n+1 points donnés (xi, yi).",
+  "concepts": [
+    "interpolation polynomiale",
+    "unicité de la solution",
+    "polynôme de degré n",
+    "système linéaire",
+    "matrice de Vandermonde"
+  ],
+  "methods": [
+    "résolution de système linéaire",
+    "déterminant de Vandermonde",
+    "propriété d'interpolation"
+  ],
+  "objects": [
+    "polynôme",
+    "système linéaire",
+    "matrice de Vandermonde"
+  ],
+  "content_hash": "ff9f5ff35ae0b3092b08c0e263603a7aea0953788f5f919586187b400db20568",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:05:54.346Z"
+}

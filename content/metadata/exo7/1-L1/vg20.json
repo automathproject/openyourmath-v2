@@ -1,0 +1,28 @@
+{
+  "uuid": "vg20",
+  "source_path": "exo7/1-L1/vg20.tex",
+  "summary": "Soit deux applications linéaires f et g de L(E,F) où E et F sont des espaces vectoriels de dimension finie. On suppose que le rang de f+g est égal à la somme des rangs de f et g. On demande de montrer deux propriétés : que E est la somme de son noyau et de l'image de f, et que les images de f et g sont en intersection triviale.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "application linéaire",
+    "rang d'une application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "somme directe d'espaces vectoriels"
+  ],
+  "methods": [
+    "décomposition d'un espace vectoriel",
+    "utilisation du théorème du rang",
+    "manipulation de sous-espaces vectoriels"
+  ],
+  "objects": [
+    "applications linéaires f et g",
+    "espaces vectoriels E et F",
+    "noyau de f",
+    "image de f",
+    "image de g"
+  ],
+  "content_hash": "c260b527ab46612d969f79e7ae64b6be2183839f31a517e3f093202dffe28772",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:13:18.074Z"
+}

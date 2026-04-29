@@ -1,0 +1,24 @@
+{
+  "uuid": "imqn",
+  "source_path": "exo7/1-L1/imqn.tex",
+  "summary": "Calculer le cardinal de l'ensemble des couples d'ensembles (A,B) dont l'union est E, où E est un ensemble fini à n éléments.",
+  "concepts": [
+    "cardinal d'un ensemble",
+    "ensemble des parties",
+    "union d'ensembles",
+    "fonction caractéristique",
+    "principe de dénombrement"
+  ],
+  "methods": [
+    "double comptage",
+    "utilisation de la formule du cardinal d'une union"
+  ],
+  "objects": [
+    "ensemble fini",
+    "couple d'ensembles",
+    "ensemble des parties"
+  ],
+  "content_hash": "1f0b71030964d7ff661a417d165ea73a7d8c836602fadbcf79292257ece0ee2a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:48:26.737Z"
+}

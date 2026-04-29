@@ -1,0 +1,27 @@
+{
+  "uuid": "KToy",
+  "source_path": "exo7/1-L1/KToy.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des matrices à coefficients positifs et à lignes sommantes égales à 1 est stable par multiplication, puis de déterminer les matrices inversibles de cet ensemble dont l'inverse appartient aussi à cet ensemble.",
+  "concepts": [
+    "matrice à coefficients positifs",
+    "matrice sommante",
+    "stabilité par multiplication",
+    "inversibilité",
+    "matrice de permutation",
+    "produit matriciel"
+  ],
+  "methods": [
+    "analyse des coefficients",
+    "propriétés des matrices inversibles",
+    "identification des matrices de permutation"
+  ],
+  "objects": [
+    "matrice carrée",
+    "ensemble de matrices",
+    "matrice identité",
+    "coefficient matriciel"
+  ],
+  "content_hash": "44c6c53d20ea5f91ae6638a2a606c4c85160947f3686895747d425403056dcf5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:51:21.137Z"
+}

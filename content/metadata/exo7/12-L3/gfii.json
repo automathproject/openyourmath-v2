@@ -1,0 +1,30 @@
+{
+  "uuid": "gfii",
+  "source_path": "exo7/12-L3/gfii.tex",
+  "summary": "L'exercice demande de démontrer que l'application F, définie à partir d'une fonction f de classe C^1 avec une dérivée bornée, est un difféomorphisme de classe C^1 de ℝ² sur lui-même. On doit montrer que F est injective, que sa dérivée est un isomorphisme en tout point, et établir sa surjection.",
+  "concepts": [
+    "théorème d'inversion locale",
+    "difféomorphisme",
+    "application propre",
+    "théorème du point fixe",
+    "application injective",
+    "application surjective",
+    "différentiabilité",
+    "classe C^1"
+  ],
+  "methods": [
+    "étude de la dérivée",
+    "analyse de la surjectivité",
+    "utilisation du théorème du point fixe",
+    "étude des propriétés topologiques"
+  ],
+  "objects": [
+    "application F",
+    "fonction f",
+    "espace ℝ²",
+    "dérivée F'"
+  ],
+  "content_hash": "9190309c3bbb1fac1e9ebe631776afe5c5f030f1e3756d94e235372851d6a506",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:16:50.034Z"
+}

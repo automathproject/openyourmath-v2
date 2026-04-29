@@ -1,0 +1,27 @@
+{
+  "uuid": "tjh0",
+  "source_path": "exo7/6-L2/tjh0.tex",
+  "summary": "On considère quatre droites du plan affine s'écantant deux à deux en six points distincts. On définit une diagonale comme le segment reliant deux points d'intersection de deux paires de droites. L'exercice demande de prouver que les milieux des trois diagonales sont alignés.",
+  "concepts": [
+    "géométrie affine",
+    "droites affines",
+    "points d'intersection",
+    "alignement de points",
+    "milieu d'un segment"
+  ],
+  "methods": [
+    "choix d'un repère adapté",
+    "calcul des coordonnées",
+    "détermination des milieux",
+    "vérification de l'alignement"
+  ],
+  "objects": [
+    "droites affines",
+    "segments",
+    "points d'intersection",
+    "milieux de segments"
+  ],
+  "content_hash": "a195fcb1f20220da49392df42b868820056fb53ed5b700b76a4bca81568abf61",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:12:51.440Z"
+}

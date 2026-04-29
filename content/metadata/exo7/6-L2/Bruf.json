@@ -1,0 +1,27 @@
+{
+  "uuid": "Bruf",
+  "source_path": "exo7/6-L2/Bruf.tex",
+  "summary": "L'exercice demande de déterminer les valeurs des constantes a, b, c pour lesquelles un champ de vecteurs donné est irrotationnel, puis de trouver son potentiel si cela est possible. Le second champ étudié est plus complexe et dépend de la distance radiale r.",
+  "concepts": [
+    "champ de vecteurs",
+    "irrotationnel",
+    "potentiel scalaire",
+    "forme différentielle",
+    "analyse vectorielle",
+    "champ conservatif"
+  ],
+  "methods": [
+    "calcul du rotationnel",
+    "recherche de potentiel",
+    "analyse des conditions d'intégralité"
+  ],
+  "objects": [
+    "champ de vecteurs en R^3",
+    "coordonnées cartésiennes",
+    "potentiel scalaire",
+    "distance radiale"
+  ],
+  "content_hash": "fc668b169dd6e2e3bb6ebd88f6d19a6ad8a438c9ad804de74314292ca3815f52",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:44:22.210Z"
+}

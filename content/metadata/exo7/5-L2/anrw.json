@@ -1,0 +1,28 @@
+{
+  "uuid": "anrw",
+  "source_path": "exo7/5-L2/anrw.tex",
+  "summary": "On considère une fonction de classe C² sur le disque unité dont le laplacien est nul. On demande de montrer qu'une intégrale circulaire de cette fonction ne dépend pas du rayon, puis de calculer l'intégrale double sur un disque de rayon r.",
+  "concepts": [
+    "fonction harmonique",
+    "laplacien",
+    "intégrale circulaire",
+    "changement de variables polaires",
+    "équation différentielle linéaire",
+    "continuité"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration par parties",
+    "résolution d'équation différentielle",
+    "calcul de primitive"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "intégrale curviligne",
+    "intégrale double",
+    "disque unité"
+  ],
+  "content_hash": "41366b355708ff222a7a9276473eee3e992a8d007e3d16feb1c7fa2196ca820c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:09:48.288Z"
+}

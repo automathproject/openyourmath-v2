@@ -1,0 +1,25 @@
+{
+  "uuid": "5WE0",
+  "source_path": "exo7/12-L3/5WE0.tex",
+  "summary": "On considère une fonction continue de R² dans R dont la valeur absolue tend vers l'infini quand la norme du vecteur tend vers l'infini. On demande de montrer que cette fonction est minorée et atteint sa borne inférieure.",
+  "concepts": [
+    "continuité",
+    "borne inférieure",
+    "fonction minorée",
+    "limite en l'infini",
+    "norme euclidienne",
+    "espace métrique",
+    "théorème de Weierstrass"
+  ],
+  "methods": [
+    "étude des limites",
+    "application du théorème de Weierstrass"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "norme d'un vecteur"
+  ],
+  "content_hash": "f613661d3f3b211d8e257fe5655a1a4df342d22810cac9459b5a839b61eb4cac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:29:05.994Z"
+}

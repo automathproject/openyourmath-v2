@@ -1,0 +1,24 @@
+{
+  "uuid": "ZVTN",
+  "source_path": "exo7/5-L2/ZVTN.tex",
+  "summary": "On considère deux solutions y et z d'une équation différentielle linéaire du premier ordre avec une inégalité sur la dérivée de z. On demande de prouver que y(t) ≥ z(t) pour tout t ≥ 0.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "fonction exponentielle de matrice",
+    "inégalité différentielle",
+    "comparaison de solutions"
+  ],
+  "methods": [
+    "factorisation intégrale",
+    "comparaison de solutions",
+    "utilisation de l'inégalité de Grönwall"
+  ],
+  "objects": [
+    "solution d'équation différentielle",
+    "fonction exponentielle",
+    "inégalité différentielle"
+  ],
+  "content_hash": "099f796de5b1a61baa9e2df3e1a86bda756f313ac65b645c1acb13bd646704d4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:34:16.251Z"
+}

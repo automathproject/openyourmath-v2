@@ -1,0 +1,27 @@
+{
+  "uuid": "1l1K",
+  "source_path": "exo7/2-L1/1l1K.tex",
+  "summary": "Démontrer deux inégalités classiques : la première lie le développement limité de ln(1+x) à son expression exacte pour x>0, la seconde compare la fonction exponentielle à son développement limité du premier ordre pour tout x réel.",
+  "concepts": [
+    "fonction dérivée",
+    "croissance stricte",
+    "fonction strictement croissante",
+    "inégalité",
+    "développement limité",
+    "fonction exponentielle",
+    "fonction logarithme"
+  ],
+  "methods": [
+    "étude du signe de la dérivée",
+    "analyse de la croissance d'une fonction",
+    "comparaison de fonctions"
+  ],
+  "objects": [
+    "fonction f(x) = ln(1+x) - x + x²/2",
+    "fonction g(x) = e^x - x - 1",
+    "dérivée première"
+  ],
+  "content_hash": "17e377e242567a639011b7bd460ba589a1d5d1685928dd6874b6b2fe275a6dc4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:54:25.193Z"
+}

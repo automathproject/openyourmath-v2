@@ -1,0 +1,24 @@
+{
+  "uuid": "WCoH",
+  "source_path": "exo7/4-L2/WCoH.tex",
+  "summary": "Calculer le déterminant d'une matrice carrée d'ordre n avec une structure particulière de coefficients.",
+  "concepts": [
+    "déterminant",
+    "matrice triangulaire",
+    "propriétés des déterminants",
+    "réduction de matrice",
+    "induction mathématique"
+  ],
+  "methods": [
+    "développement par rapport à une ligne ou une colonne",
+    "réduction par opérations élémentaires",
+    "calcul récursif"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant d'ordre n"
+  ],
+  "content_hash": "0f6df0ab489fda2cd2bd214f929625f8eb9dfe5d577a351af23a3964ad9473ee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:53:08.080Z"
+}

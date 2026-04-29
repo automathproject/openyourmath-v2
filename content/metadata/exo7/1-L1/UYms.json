@@ -1,0 +1,28 @@
+{
+  "uuid": "UYms",
+  "source_path": "exo7/1-L1/UYms.tex",
+  "summary": "Montrer qu'un entier naturel non carré parfait n'a pas de racine carrée rationnelle. Déterminer une base d'un espace vectoriel sur ℚ engendré par des combinaisons linéaires de 1, √2, √3 et √6.",
+  "concepts": [
+    "nombre irrationnel",
+    "carré parfait",
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "famille génératrice",
+    "famille libre",
+    "décomposition en facteurs premiers"
+  ],
+  "methods": [
+    "contraposition",
+    "décomposition en facteurs premiers",
+    "vérification de linéarité",
+    "preuve par l'absurde"
+  ],
+  "objects": [
+    "racine carrée d'un entier",
+    "espace vectoriel sur ℚ",
+    "famille de vecteurs (1, √2, √3, √6)"
+  ],
+  "content_hash": "d326c0d3969dab5336ee5df01f6b09f032cae553092bdac3b8e827ed7172de39",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:53:55.818Z"
+}

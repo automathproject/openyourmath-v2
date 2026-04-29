@@ -1,0 +1,24 @@
+{
+  "uuid": "buFl",
+  "source_path": "exo7/1-L1/buFl.tex",
+  "summary": "Démontrer l'unicité de la décomposition d'un entier naturel n ≥ 1 sous la forme 2^p(2q+1) où p et q sont des entiers.",
+  "concepts": [
+    "principe de récurrence forte",
+    "décomposition en facteurs premiers",
+    "unicité de la factorisation",
+    "entiers naturels",
+    "divisibilité"
+  ],
+  "methods": [
+    "récurrence forte",
+    "décomposition en facteurs premiers",
+    "analyse par cas"
+  ],
+  "objects": [
+    "entier naturel",
+    "décomposition factorielle"
+  ],
+  "content_hash": "c27d314d359a5a967a57da536a79438ed5373fc97ced43fcd217723607cf4247",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:19:58.969Z"
+}

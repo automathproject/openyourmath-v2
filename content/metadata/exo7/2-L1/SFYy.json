@@ -1,0 +1,31 @@
+{
+  "uuid": "SFYy",
+  "source_path": "exo7/2-L1/SFYy.tex",
+  "summary": "Calculer des développements limités ou asymptotiques d'ordre n en un point a pour six fonctions différentes, incluant des fonctions trigonométriques, logarithmiques et algébriques.",
+  "concepts": [
+    "développement limité",
+    "développement asymptotique",
+    "fonction trigonométrique",
+    "fonction logarithmique",
+    "fonction algébrique",
+    "ordre de développement"
+  ],
+  "methods": [
+    "développement de Taylor",
+    "développement de Maclaurin",
+    "approximation de fonctions élémentaires",
+    "changement de variable"
+  ],
+  "objects": [
+    "fonction ln(cos x)",
+    "fonction (arctan x - x)/(sin x - x)",
+    "fonction ln(tan(x/2 + π/4))",
+    "fonction ln(sin x)",
+    "fonction (x^3 + x)^(1/3) - (x^3 - x)^(1/3)",
+    "fonction (1 + x)^(1/x)",
+    "fonction x(√(x^2 + √(x^4 + 1)) - x√2)"
+  ],
+  "content_hash": "a4f3a8652eac79c336d7bc2ab457f1fe94ad1544fe3ccf0d4983dbd4b608042c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:32:07.394Z"
+}

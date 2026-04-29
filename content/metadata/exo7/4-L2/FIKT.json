@@ -1,0 +1,27 @@
+{
+  "uuid": "FIKT",
+  "source_path": "exo7/4-L2/FIKT.tex",
+  "summary": "Trouver une base orthonormée de l'espace vectoriel ℝ₃[X] muni d'un produit scalaire défini par une intégrale sur l'intervalle [-1, 1].",
+  "concepts": [
+    "produit scalaire",
+    "base orthonormée",
+    "espace vectoriel normé",
+    "polynômes orthogonaux",
+    "intégrale de fonctions polynomiales",
+    "orthogonalité",
+    "normalisation"
+  ],
+  "methods": [
+    "orthogonalisation de Gram-Schmidt",
+    "calcul d'intégrales de polynômes",
+    "normalisation de vecteurs"
+  ],
+  "objects": [
+    "espace vectoriel ℝ₃[X]",
+    "polynômes de degré 3",
+    "produit scalaire défini par intégrale"
+  ],
+  "content_hash": "8d9c2159473785c53896176089f1576265aab071e5c0d8419f0538cff75f3a30",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:11:36.216Z"
+}

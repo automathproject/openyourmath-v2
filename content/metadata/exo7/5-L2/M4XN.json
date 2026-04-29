@@ -1,0 +1,26 @@
+{
+  "uuid": "M4XN",
+  "source_path": "exo7/5-L2/M4XN.tex",
+  "summary": "L'exercice demande de trouver les extrema de la fonction racine n-ième du produit de n variables positives sous la contrainte que leur somme est égale à n. Il s'agit ensuite d'en déduire l'inégalité entre la moyenne géométrique et la moyenne arithmétique.",
+  "concepts": [
+    "optimisation sous contrainte",
+    "inégalité arithmético-géométrique",
+    "extrema de fonctions",
+    "fonction de plusieurs variables",
+    "moyenne arithmétique",
+    "moyenne géométrique"
+  ],
+  "methods": [
+    "méthode des multiplicateurs de Lagrange",
+    "calcul de dérivées partielles",
+    "analyse des extrema"
+  ],
+  "objects": [
+    "fonction de plusieurs variables",
+    "contrainte d'égalité",
+    "moyennes"
+  ],
+  "content_hash": "a57af7abd3cd81a538581ba9854b6d4789e4a1e509bfa00a12edb5c3b95b040f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:57:45.294Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "a2xR",
+  "source_path": "exo7/2-L1/a2xR.tex",
+  "summary": "L'exercice demande de démontrer une inégalité pour une fonction de classe C² à dérivée seconde bornée, puis d'en déduire une propriété sur la dérivée première de cette fonction. Enfin, il s'agit de caractériser la fonction lorsque l'égalité est atteinte.",
+  "concepts": [
+    "développement limité",
+    "formule de Taylor",
+    "inégalité de Taylor-Lagrange",
+    "fonction convexe",
+    "condition nécessaire et suffisante"
+  ],
+  "methods": [
+    "développement de Taylor d'ordre 2",
+    "majoration de reste",
+    "discrimination d'un polynôme du second degré",
+    "analyse de cas d'égalité"
+  ],
+  "objects": [
+    "fonction de classe C²",
+    "dérivée seconde bornée",
+    "polynôme du second degré",
+    "condition d'égalité"
+  ],
+  "content_hash": "6cdeb0fbe75df79cd5fbaaec803abf8475ffcb8c409d3ef1d17a42a3bf53da5f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:34:18.001Z"
+}

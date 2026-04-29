@@ -1,0 +1,28 @@
+{
+  "uuid": "yYBe",
+  "source_path": "exo7/5-L2/yYBe.tex",
+  "summary": "L'exercice demande de montrer que la suite d'intégrales I_n tend vers 0 quand n tend vers l'infini, puis d'exprimer I_n en fonction de n, et enfin d'en déduire des relations trigonométriques et logarithmiques.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "suite numérique",
+    "limite de suite",
+    "séries alternées",
+    "fonction trigonométrique",
+    "intégration par parties"
+  ],
+  "methods": [
+    "passage à la limite",
+    "téléscopage",
+    "développement en série",
+    "calcul explicite d'intégrale"
+  ],
+  "objects": [
+    "suite d'intégrales",
+    "fonction tan^n",
+    "séries trigonométriques",
+    "séries logarithmiques"
+  ],
+  "content_hash": "5778d26ac368c5c8a0e06b0d6e541f8dec744af6720da51b17df6bf604cbf4ab",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:54:12.100Z"
+}

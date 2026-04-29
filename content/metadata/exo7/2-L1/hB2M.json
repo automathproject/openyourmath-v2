@@ -1,0 +1,26 @@
+{
+  "uuid": "hB2M",
+  "source_path": "exo7/2-L1/hB2M.tex",
+  "summary": "On considère une fonction infiniment dérivable dont toutes les dérivées successives sont strictement positives. On demande de montrer que le quotient de cette fonction par une puissance de x tend vers l'infini quand x tend vers l'infini.",
+  "concepts": [
+    "développement limité",
+    "formule de Taylor",
+    "croissance comparée",
+    "limite de fonctions",
+    "dérivées successives",
+    "fonction de classe C^∞"
+  ],
+  "methods": [
+    "comparaison de croissance",
+    "utilisation de Taylor-Lagrange",
+    "analyse des dérivées"
+  ],
+  "objects": [
+    "fonction infiniment dérivable",
+    "dérivées successives",
+    "quotient de fonctions"
+  ],
+  "content_hash": "3e0666ac681fcec82c32afe5ef2e54544f7fbefa2afe602202f5150124a0f148",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:37:41.575Z"
+}

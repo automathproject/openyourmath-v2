@@ -1,0 +1,26 @@
+{
+  "uuid": "PRBC",
+  "source_path": "exo7/2-L1/PRBC.tex",
+  "summary": "On considère une fonction continue sur [0,1] avec un nombre fini de zéros, vérifiant f(0)=0 et f(1)=1. On demande de montrer que l'intégrale de e^(nt)f(t) sur [0,1] tend vers l'infini quand n tend vers l'infini.",
+  "concepts": [
+    "continuité",
+    "intégrale de Riemann",
+    "limite de suite",
+    "fonction exponentielle",
+    "croissance exponentielle",
+    "théorème de la convergence dominée"
+  ],
+  "methods": [
+    "comparaison d'intégrales",
+    "estimation de majoration",
+    "analyse asymptotique"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrale dépendant d'un paramètre",
+    "suite de fonctions"
+  ],
+  "content_hash": "70cc63355edce3155fb037999a142cf2425bc1d5c59933ce5604e338b6c7abfe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:38:16.478Z"
+}

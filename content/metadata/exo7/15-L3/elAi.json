@@ -1,0 +1,27 @@
+{
+  "uuid": "elAi",
+  "source_path": "exo7/15-L3/elAi.tex",
+  "summary": "L'exercice demande de montrer qu'une distance particulière définie sur ℝ* induit la topologie usuelle et que l'espace ainsi muni est complet. Il généralise ensuite cette construction à un ouvert d'un espace complet.",
+  "concepts": [
+    "distance",
+    "topologie usuelle",
+    "espace métrique complet",
+    "espace de Banach",
+    "métrique équivalente",
+    "complétude"
+  ],
+  "methods": [
+    "vérification des axiomes de distance",
+    "comparaison de topologies",
+    "construction de métrique équivalente"
+  ],
+  "objects": [
+    "distance sur ℝ*",
+    "espace métrique (ℝ*, d)",
+    "ouvert d'un espace complet",
+    "métrique δ"
+  ],
+  "content_hash": "7349a62435b493cbfacb5ab6f4ab26dbf122f70df7cf3d358c7bca4c512c5190",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:11:41.910Z"
+}

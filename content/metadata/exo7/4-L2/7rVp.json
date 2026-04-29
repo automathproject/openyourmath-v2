@@ -1,0 +1,27 @@
+{
+  "uuid": "7rVp",
+  "source_path": "exo7/4-L2/7rVp.tex",
+  "summary": "L'exercice demande de déterminer si les nombres premiers 271 et 281 peuvent s'écrire comme somme de deux carrés d'entiers. Pour cela, il propose de trouver une racine c de -1 modulo le nombre premier considéré, puis de calculer le pgcd dans l'anneau des entiers de Gauss.",
+  "concepts": [
+    "nombre premier",
+    "somme de deux carrés",
+    "racine modulo un nombre premier",
+    "anneau des entiers de Gauss",
+    "algèbre commutative",
+    "théorème des restes chinois",
+    "division euclidienne dans les anneaux"
+  ],
+  "methods": [
+    "calcul de pgcd dans Z[i]",
+    "recherche de racines modulo un nombre premier",
+    "factorisation dans les anneaux de Gauss"
+  ],
+  "objects": [
+    "entiers de Gauss",
+    "pgcd dans Z[i]",
+    "racine de -1 modulo un nombre premier"
+  ],
+  "content_hash": "ca64ff2d975adfcddbe60a8e91b0dd91256a927a29f0dab72d4c0d78cab36afc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:21:49.693Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "Eex4",
+  "source_path": "exo7/4-L2/Eex4.tex",
+  "summary": "On considère deux matrices carrées réelles A et B vérifiant A² + B² = AB et AB - BA inversible. On doit montrer que 3 divise l'entier n, la taille des matrices.",
+  "concepts": [
+    "matrice carrée",
+    "inversibilité",
+    "relation matricielle",
+    "divisibilité",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "manipulation algébrique de matrices",
+    "utilisation de la trace",
+    "propriétés des polynômes caractéristiques"
+  ],
+  "objects": [
+    "matrices A et B",
+    "matrice AB - BA",
+    "entier n"
+  ],
+  "content_hash": "26ef3469ec2c4b037549bb6fb004016cab0110919c25731529abcdf4f450eb77",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:40:30.632Z"
+}

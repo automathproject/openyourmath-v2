@@ -1,0 +1,27 @@
+{
+  "uuid": "2p90",
+  "source_path": "exo7/4-L2/2p90.tex",
+  "summary": "L'exercice demande de démontrer que deux permutations spécifiques engendrent le groupe symétrique S₃ en utilisant une construction arborescente.",
+  "concepts": [
+    "groupe symétrique",
+    "générateur de groupe",
+    "permutation",
+    "sous-groupe engendré",
+    "arbre de Cayley",
+    "ordre d'un élément"
+  ],
+  "methods": [
+    "construction d'arbre de Cayley",
+    "vérification de l'engendrement",
+    "calcul de produits de permutations"
+  ],
+  "objects": [
+    "permutation (1,2)",
+    "permutation (1,2,3)",
+    "groupe symétrique S₃",
+    "arbre de Cayley"
+  ],
+  "content_hash": "fdfdc5d0fe86af19001d30f81f6c71990ac7b1c22c4064c4f90a7646aa7a1ee5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:15:36.380Z"
+}

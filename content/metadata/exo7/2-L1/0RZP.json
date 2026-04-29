@@ -1,0 +1,25 @@
+{
+  "uuid": "0RZP",
+  "source_path": "exo7/2-L1/0RZP.tex",
+  "summary": "On considère une fonction continue et strictement décroissante de [0,1] dans [0,1]. On doit montrer l'existence et l'unicité d'une suite (a_n) telle que f(a_n) = a_n^n, puis étudier cette suite.",
+  "concepts": [
+    "continuité",
+    "fonction strictement décroissante",
+    "théorème des valeurs intermédiaires",
+    "unicité de la solution",
+    "étude de suite"
+  ],
+  "methods": [
+    "application du théorème des valeurs intermédiaires",
+    "analyse de la monotonie",
+    "étude de la limite d'une suite"
+  ],
+  "objects": [
+    "fonction continue",
+    "suite (a_n)",
+    "fonction f"
+  ],
+  "content_hash": "8f33067371b928c0eb2b167b073c5e06eac1e28a4ddfcd7d5e9776fdc840b8d7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:12:45.821Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "jcxw",
+  "source_path": "exo7/4-L2/jcxw.tex",
+  "summary": "L'exercice demande de démontrer qu'une application définie par la trace du produit d'une matrice transposée avec une autre matrice est un produit scalaire sur l'espace des matrices carrées réelles, puis d'étudier si cette propriété se généralise aux matrices carrées complexes.",
+  "concepts": [
+    "produit scalaire",
+    "trace d'une matrice",
+    "matrice carrée",
+    "espace vectoriel normé",
+    "matrice transposée",
+    "base orthonormée",
+    "matrice élémentaire"
+  ],
+  "methods": [
+    "calcul de trace",
+    "définition de produit scalaire",
+    "vérification des propriétés de produit scalaire",
+    "contre-exemple"
+  ],
+  "objects": [
+    "matrice carrée réelle",
+    "matrice carrée complexe",
+    "application bilinéaire",
+    "base canonique"
+  ],
+  "content_hash": "d678294a917e4e437c6eafbe7f5107b0e658ded1f6a2dabc22b1d364a37d17f4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:47:21.641Z"
+}

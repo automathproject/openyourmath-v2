@@ -1,0 +1,25 @@
+{
+  "uuid": "FMSO",
+  "source_path": "exo7/4-L2/FMSO.tex",
+  "summary": "Résoudre un système linéaire homogène de trois équations à trois inconnues, suivant les valeurs d'un paramètre réel a.",
+  "concepts": [
+    "système linéaire homogène",
+    "rang d'une matrice",
+    "déterminant",
+    "valeur propre",
+    "espace des solutions"
+  ],
+  "methods": [
+    "calcul du déterminant",
+    "réduction de matrice",
+    "analyse des cas selon le paramètre"
+  ],
+  "objects": [
+    "matrice carrée 3x3",
+    "système d'équations linéaires",
+    "paramètre réel"
+  ],
+  "content_hash": "c89da6e008a0de8745c7b39f057ccca404e18cfbc0077259adb797d7f20a7590",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:41:02.583Z"
+}

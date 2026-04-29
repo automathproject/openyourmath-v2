@@ -1,0 +1,30 @@
+{
+  "uuid": "D16i",
+  "source_path": "exo7/15-L3/D16i.tex",
+  "summary": "Dans un espace vectoriel normé E, on considère un hyperplan affine L défini par une forme linéaire non nulle f. L'exercice demande de montrer une inégalité inférieure sur la norme des éléments de L, puis d'établir l'égalité exacte en construisant une suite spécifique dans la sphère unité.",
+  "concepts": [
+    "espace vectoriel normé",
+    "dual topologique",
+    "hyperplan affine",
+    "norme d'une forme linéaire",
+    "sphère unité",
+    "suite convergente",
+    "infimum"
+  ],
+  "methods": [
+    "construction explicite de suite",
+    "utilisation de la norme duale",
+    "majoration par la norme",
+    "passage à la limite"
+  ],
+  "objects": [
+    "espace vectoriel normé E",
+    "forme linéaire f",
+    "hyperplan affine L",
+    "suite (x_n)",
+    "sphère unité"
+  ],
+  "content_hash": "7a5ac5db58679497efb87960dfdd6c975182eee2146d2d608b6599581a6a5497",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:35:20.114Z"
+}

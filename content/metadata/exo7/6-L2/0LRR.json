@@ -1,0 +1,26 @@
+{
+  "uuid": "0LRR",
+  "source_path": "exo7/6-L2/0LRR.tex",
+  "summary": "On considère un quadrilatère convexe ABCD et les bissectrices intérieures en chacun de ses sommets. On note les points d'intersection de ces bissectrices et on doit montrer que ces points forment un quadrilatère inscriptible dans un cercle.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "bissectrice d'angle",
+    "quadrilatère convexe",
+    "cocyclicité",
+    "somme des angles d'un quadrilatère",
+    "critère de cocyclicité"
+  ],
+  "methods": [
+    "calcul d'angles",
+    "utilisation de la somme des angles d'un quadrilatère",
+    "application du critère de cocyclicité"
+  ],
+  "objects": [
+    "quadrilatère convexe",
+    "bissectrices intérieures",
+    "points d'intersection de bissectrices"
+  ],
+  "content_hash": "ae38454c3dbb9ff16ed929840a61656598f98c9bc9c0d79a61564a565c461696",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:17:47.868Z"
+}

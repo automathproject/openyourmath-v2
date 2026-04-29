@@ -1,0 +1,30 @@
+{
+  "uuid": "ECqk",
+  "source_path": "exo7/12-L3/ECqk.tex",
+  "summary": "L'exercice demande de montrer qu'une application dérivable sur ℝ avec une dérivée non nulle est un homéomorphisme sur son image et que son inverse est différentiable. Ensuite, il s'agit d'étudier un contre-exemple où la dérivée en 0 existe et n'est pas nulle, mais la fonction n'est pas inversible localement.",
+  "concepts": [
+    "théorème de Rolle",
+    "injectivité",
+    "continuité",
+    "connexité",
+    "extrémum local",
+    "théorème de l'inverse local",
+    "classe C^1"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "étude de la dérivée",
+    "analyse de la monotonie",
+    "utilisation du taux d'accroissement"
+  ],
+  "objects": [
+    "application dérivable",
+    "dérivée non nulle",
+    "homéomorphisme",
+    "inverse différentiable",
+    "fonction non inversible localement"
+  ],
+  "content_hash": "208c5747fe247410ddb1bbb8c3c2cab83bc7800cf7c442133a13467a4423b9d9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:14:08.586Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "lpOP",
+  "source_path": "exo7/15-L3/lpOP.tex",
+  "summary": "L'exercice demande de démontrer que la fonction D définie sur un espace métrique Y est une distance sous certaines conditions, puis d'établir que Y est complet si X est complet.",
+  "concepts": [
+    "espace métrique",
+    "distance",
+    "complétude",
+    "fermé",
+    "application surjective",
+    "inégalité triangulaire",
+    "topologie"
+  ],
+  "methods": [
+    "définition de distance",
+    "vérification des propriétés de distance",
+    "utilisation de la complétude"
+  ],
+  "objects": [
+    "espace métrique X",
+    "partie Y de X",
+    "application f",
+    "distance D"
+  ],
+  "content_hash": "7bb7ae5f8d91847e2829026028e8aca3f256f16c90e7e5e85dcc6e872c7f438d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:12:29.236Z"
+}

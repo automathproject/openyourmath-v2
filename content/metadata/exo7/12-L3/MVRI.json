@@ -1,0 +1,25 @@
+{
+  "uuid": "MVRI",
+  "source_path": "exo7/12-L3/MVRI.tex",
+  "summary": "L'exercice demande de montrer l'existence de la dérivée directionnelle d'une application différentiable en un point et de l'exprimer à l'aide de la différentielle. Ensuite, il s'agit de prouver qu'une fonction définie sur ℝ² est dérivable en (0,0) dans toutes les directions mais pas différentiable en ce point.",
+  "concepts": [
+    "différentiabilité",
+    "dérivée directionnelle",
+    "différentielle d'une application",
+    "limite",
+    "espace vectoriel normé"
+  ],
+  "methods": [
+    "calcul de la différentielle",
+    "étude des dérivées directionnelles",
+    "analyse des limites"
+  ],
+  "objects": [
+    "application entre espaces vectoriels normés",
+    "fonction de ℝ² dans ℝ",
+    "point critique"
+  ],
+  "content_hash": "c23cd1b2097a82fec41a642b0cf0298bf843643ac6687caf56fed72e53e62e36",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:25:32.083Z"
+}

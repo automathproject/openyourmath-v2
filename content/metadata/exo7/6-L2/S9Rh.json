@@ -1,0 +1,28 @@
+{
+  "uuid": "S9Rh",
+  "source_path": "exo7/6-L2/S9Rh.tex",
+  "summary": "Dans l'espace euclidien, on donne les coordonnées de trois points A, B et C. L'exercice demande de déterminer l'orthocentre, le centre de gravité, les centres des cercles circonscrit et inscrit du triangle ABC.",
+  "concepts": [
+    "géométrie affine",
+    "géométrie euclidienne",
+    "centre de gravité",
+    "orthocentre",
+    "cercle circonscrit",
+    "cercle inscrit",
+    "relation d'Euler"
+  ],
+  "methods": [
+    "calcul de barycentre",
+    "résolution de système d'équations linéaires",
+    "calcul de distances",
+    "utilisation de la relation d'Euler"
+  ],
+  "objects": [
+    "triangle dans l'espace",
+    "points de coordonnées",
+    "centres de cercles"
+  ],
+  "content_hash": "a8f6c43fa7d06e20f4630909d56aac702ff3fb765caeff4cbf962f9893dbd77a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:53:55.508Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "sBqV",
+  "source_path": "exo7/12-L3/sBqV.tex",
+  "summary": "L'exercice demande d'estimer l'erreur de la fonction f(x,y) = e^{-(x^2 + y^2)} en utilisant les approximations de Taylor pour des valeurs de x et y données avec une incertitude.",
+  "concepts": [
+    "différentielle d'ordre supérieur",
+    "formule de Taylor",
+    "approximation linéaire",
+    "erreur de mesure",
+    "fonction de deux variables",
+    "développement limité"
+  ],
+  "methods": [
+    "développement de Taylor",
+    "approximation par linéarisation",
+    "calcul des dérivées partielles",
+    "estimation d'erreur"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "variables x et y",
+    "incertitudes de mesure",
+    "développement limité"
+  ],
+  "content_hash": "aa84563958f6f1b02d553c42a970863a589e5ca338a9d2be55964a469967dd99",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:34:33.826Z"
+}

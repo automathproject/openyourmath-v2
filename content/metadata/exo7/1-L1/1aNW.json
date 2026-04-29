@@ -1,26 +1,26 @@
 {
   "uuid": "1aNW",
   "source_path": "exo7/1-L1/1aNW.tex",
-  "summary": "L'exercice demande de déterminer les relations d'inclusion entre des ensembles E_i définis par des propriétés arithmétiques sur les entiers naturels, puis d'exprimer l'intersection de deux de ces ensembles sous une forme canonique et de prouver son égalité avec un troisième ensemble.",
+  "summary": "L'exercice demande de déterminer les inclusions entre des ensembles E_i définis par des propriétés arithmétiques sur les entiers naturels, puis d'exprimer l'intersection de deux de ces ensembles sous une forme spécifique et de prouver son égalité avec un troisième ensemble.",
   "concepts": [
     "divisibilité dans Z",
     "division euclidienne",
+    "ensembles définis par propriétés arithmétiques",
     "inclusion d'ensembles",
     "intersection d'ensembles",
-    "propriétés arithmétiques",
-    "ensembles définis par conditions"
+    "propriétés des entiers naturels"
   ],
   "methods": [
-    "analyse des conditions d'appartenance",
+    "analyse des conditions de divisibilité",
     "comparaison d'ensembles",
-    "démonstration d'égalité d'ensembles"
+    "détermination d'intersections"
   ],
   "objects": [
     "ensembles d'entiers naturels",
-    "conditions arithmétiques",
-    "intersection d'ensembles"
+    "propriétés arithmétiques",
+    "conditions de divisibilité"
   ],
-  "content_hash": "0d6301b27295c12478843db9a5cbe3a915b651aa4de3116e743ea03774b15267",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:17:41.855Z"
+  "content_hash": "5a714b30909768c756170bc81416d11986ae6fe297ece895c76c33edff765082",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:41:03.292Z"
 }

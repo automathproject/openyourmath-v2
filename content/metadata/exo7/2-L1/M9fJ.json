@@ -1,0 +1,26 @@
+{
+  "uuid": "M9fJ",
+  "source_path": "exo7/2-L1/M9fJ.tex",
+  "summary": "On considère un polynôme réel de degré au moins 2. L'exercice demande de prouver que si ce polynôme a toutes ses racines réelles et simples, alors sa dérivée a aussi toutes ses racines réelles et simples. Une seconde question demande de montrer que si le polynôme est scindé sur ℝ, alors sa dérivée l'est aussi.",
+  "concepts": [
+    "théorème de Rolle",
+    "racine simple",
+    "racine multiple",
+    "polynôme scindé",
+    "multiplicité d'une racine",
+    "dérivée d'un polynôme"
+  ],
+  "methods": [
+    "factorisation",
+    "analyse des multiplicités",
+    "application du théorème de Rolle"
+  ],
+  "objects": [
+    "polynôme réel",
+    "racines réelles",
+    "dérivée d'un polynôme"
+  ],
+  "content_hash": "ff576bc415a1aa7f2a197112e527b2df942b4aed9bb66b1f43b4ec2a1d1c02f1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:05:27.397Z"
+}

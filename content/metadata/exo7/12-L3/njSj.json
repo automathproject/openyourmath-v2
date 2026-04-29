@@ -1,0 +1,26 @@
+{
+  "uuid": "njSj",
+  "source_path": "exo7/12-L3/njSj.tex",
+  "summary": "On étudie les extrema de la fonction f: ℝ² → ℝ définie par f(x,y) = xeᵧ + yeˣ. L'exercice demande de montrer que (-1,-1) est le seul point critique possible, puis d'utiliser des développements limités pour prouver que cette fonction n'a pas d'extremum en ce point.",
+  "concepts": [
+    "extremum",
+    "point critique",
+    "développement limité",
+    "fonction de plusieurs variables",
+    "gradient",
+    "hessienne"
+  ],
+  "methods": [
+    "calcul du gradient",
+    "développement limité au second ordre",
+    "analyse des points critiques"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "point critique",
+    "développement limité"
+  ],
+  "content_hash": "596904015239a2d26d88ca2c396a2d2dc098d8f23cf7e8028f71715cbfd58635",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:34:21.888Z"
+}

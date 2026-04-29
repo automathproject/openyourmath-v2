@@ -1,0 +1,25 @@
+{
+  "uuid": "Eosj",
+  "source_path": "exo7/4-L2/Eosj.tex",
+  "summary": "L'exercice demande de prouver une caractérisation des idéaux propres de l'anneau des polynômes K[X]. Il s'agit de montrer l'équivalence entre deux propriétés : un idéal est distinct de K[X] et cet idéal ne contient aucun polynôme constant non nul.",
+  "concepts": [
+    "idéal propre",
+    "anneau des polynômes",
+    "polynôme constant",
+    "inclusion d'idéaux",
+    "caractérisation des idéaux"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "utilisation de la définition d'idéal",
+    "analyse des éléments de l'idéal"
+  ],
+  "objects": [
+    "idéal de K[X]",
+    "polynôme constant",
+    "polynôme non constant"
+  ],
+  "content_hash": "8eee042693b7e482831074ff4674d80592fb5ecf0151fcb05faebc8e7803f7ac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:30:20.015Z"
+}

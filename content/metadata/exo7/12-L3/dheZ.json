@@ -1,0 +1,26 @@
+{
+  "uuid": "dheZ",
+  "source_path": "exo7/12-L3/dheZ.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction de la forme ρⁿP(t) est harmonique si et seulement si P(t) vérifie l'équation différentielle de Legendre. Ensuite, il faut vérifier l'existence et l'unicité de polynômes Pₙ(t) de degré n satisfaisant cette équation pour n=0 à 5.",
+  "concepts": [
+    "fonction harmonique",
+    "coordonnées sphériques",
+    "équation différentielle de Legendre",
+    "polynôme de Legendre",
+    "méthode des coefficients indéterminés",
+    "unicité de solution"
+  ],
+  "methods": [
+    "analyse de condition nécessaire et suffisante",
+    "calcul de polynômes solutions",
+    "méthode des coefficients indéterminés"
+  ],
+  "objects": [
+    "fonction ρⁿP(t)",
+    "équation différentielle (Dₙ)",
+    "polynôme Pₙ(t)"
+  ],
+  "content_hash": "05287fbbbc2014f48126e8e00f9d2d9ee08e0922e36cdafe9b5b7fd4656f4201",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:21:44.094Z"
+}

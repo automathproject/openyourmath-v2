@@ -1,0 +1,29 @@
+{
+  "uuid": "h1gq",
+  "source_path": "exo7/5-L2/h1gq.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction définie sur le produit de trois droites non parallèles admet un minimum unique, puis de déterminer ce minimum dans le cas particulier où les droites délimitent un triangle équilatéral.",
+  "concepts": [
+    "extremum local",
+    "forme quadratique",
+    "forme linéaire",
+    "définie positivité",
+    "continuité",
+    "point critique",
+    "convergence vers l'infini"
+  ],
+  "methods": [
+    "analyse des points critiques",
+    "étude de la forme quadratique",
+    "calcul de la forme linéaire",
+    "vérification de l'unicité du minimum"
+  ],
+  "objects": [
+    "fonction de plusieurs variables",
+    "droites affines",
+    "triplet de points",
+    "forme quadratique positive"
+  ],
+  "content_hash": "74db506ff3d09b9d76f3b2c0d1ced6ddfd25f08413ad91ac9601a4188485f82d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:13:33.778Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "B2ML",
+  "source_path": "exo7/4-L2/B2ML.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble des matrices 2x2 à coefficients égaux et non nuls forme un groupe abélien sous la multiplication matricielle.",
+  "concepts": [
+    "groupe",
+    "sous-groupe",
+    "groupe abélien",
+    "matrice carrée",
+    "élément neutre",
+    "inverse",
+    "associativité",
+    "commutativité"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "calcul matriciel",
+    "identification de l'élément neutre",
+    "recherche de l'inverse"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "ensemble de matrices",
+    "opération de multiplication"
+  ],
+  "content_hash": "5a6b8c0fc62788fdceb0484d1d6d17abcbc0648783c149223ac4dd669938f967",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:26:04.135Z"
+}

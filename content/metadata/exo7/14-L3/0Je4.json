@@ -1,0 +1,26 @@
+{
+  "uuid": "0Je4",
+  "source_path": "exo7/14-L3/0Je4.tex",
+  "summary": "L'exercice demande de démontrer l'égalité de l'intégrale de Lebesgue d'une somme infinie de fonctions mesurables positives et la somme des intégrales de ces fonctions. La seconde partie applique ce résultat pour établir une égalité impliquant la fonction Gamma d'Euler et la fonction zêta de Riemann.",
+  "concepts": [
+    "intégrale de Lebesgue",
+    "fonction mesurable positive",
+    "théorème de convergence monotone",
+    "fonction Gamma d'Euler",
+    "fonction zêta de Riemann",
+    "somme infinie de fonctions"
+  ],
+  "methods": [
+    "application du théorème de convergence monotone",
+    "changement de variable",
+    "intégration terme à terme"
+  ],
+  "objects": [
+    "suite de fonctions mesurables positives",
+    "fonction indicatrice",
+    "intégrale sur l'ensemble des réels positifs"
+  ],
+  "content_hash": "2b33c5f112d7ac5e715d8a6fb552342c07f6061ac00bac9248c9b8ae3589c17a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:01:12.703Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "a2q3",
+  "source_path": "exo7/1-L1/a2q3.tex",
+  "summary": "Montrer que pour tout entier naturel n, l'expression 3^(2n+1) + 2^(n+2) est divisible par 7.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "propriétés des puissances",
+    "induction mathématique",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "raisonnement par récurrence",
+    "calcul de congruences",
+    "simplification d'expressions exponentielles"
+  ],
+  "objects": [
+    "entier naturel",
+    "expression exponentielle",
+    "diviseur"
+  ],
+  "content_hash": "557092d2dfe90b5ed0559ee455947fd41d55877ea8542fbb3f9e4b31cb31c70e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:07:26.158Z"
+}

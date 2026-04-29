@@ -1,0 +1,26 @@
+{
+  "uuid": "jOPi",
+  "source_path": "exo7/1-L1/jOPi.tex",
+  "summary": "Calculer la trace d'un endomorphisme défini sur l'espace des matrices carrées de taille n, qui à une matrice X associe AX + XA.",
+  "concepts": [
+    "trace d'un endomorphisme",
+    "base canonique de l'espace des matrices",
+    "coordonnées d'un vecteur dans une base",
+    "trace d'une matrice",
+    "endomorphisme d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul des coordonnées d'un vecteur dans une base",
+    "développement d'une somme double",
+    "simplification d'une expression algébrique"
+  ],
+  "objects": [
+    "matrice carrée",
+    "endomorphisme de l'espace des matrices",
+    "trace d'un endomorphisme",
+    "base canonique de l'espace des matrices"
+  ],
+  "content_hash": "17616caf54e90f5134eb7e6d5592d4e386a35f75fb291a5c5d9c9049b0438ec2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:13:11.649Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "4bT7",
+  "source_path": "exo7/4-L2/4bT7.tex",
+  "summary": "Calculer une puissance modulo un entier en utilisant la méthode de l'exponentiation binaire. L'exercice demande d'appliquer cette technique pour déterminer 3^2025 modulo 50.",
+  "concepts": [
+    "arithmétique modulaire",
+    "exponentiation binaire",
+    "algèbre des anneaux",
+    "calcul modulo",
+    "décomposition binaire"
+  ],
+  "methods": [
+    "exponentiation rapide",
+    "élévation au carré successive",
+    "calcul modulo par décomposition"
+  ],
+  "objects": [
+    "puissance modulo",
+    "entier naturel",
+    "nombre binaire"
+  ],
+  "content_hash": "5f88c85e4fd3822dd5ab02a5c87c12475a7720b80850665ebf59fb6dfefcb73d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:18:38.596Z"
+}

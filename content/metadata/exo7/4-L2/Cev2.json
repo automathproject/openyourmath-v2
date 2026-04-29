@@ -1,0 +1,29 @@
+{
+  "uuid": "Cev2",
+  "source_path": "exo7/4-L2/Cev2.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice symétrique M est la matrice d'une rotation dans ℝ³ si et seulement si ses coefficients a, b, c sont solutions d'une équation cubique spécifique avec 0 ≤ k ≤ 4/27. Il faut ensuite déterminer explicitement les matrices M correspondantes ainsi que les axes et angles des rotations associées.",
+  "concepts": [
+    "matrice de rotation",
+    "groupe orthogonal spécial",
+    "polynôme caractéristique",
+    "racines réelles",
+    "fonctions trigonométriques",
+    "endomorphisme orthogonal"
+  ],
+  "methods": [
+    "calcul des coefficients symétriques",
+    "analyse des racines d'un polynôme",
+    "détermination des conditions de positivité",
+    "utilisation des propriétés des matrices orthogonales"
+  ],
+  "objects": [
+    "matrice symétrique 3x3",
+    "équation cubique",
+    "endomorphisme de ℝ³",
+    "axes de rotation",
+    "angles de rotation"
+  ],
+  "content_hash": "6aecccdf080272ca1319440ac91f81344cf5e3d5d006656b07b18d48febcb5d1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:08:41.888Z"
+}

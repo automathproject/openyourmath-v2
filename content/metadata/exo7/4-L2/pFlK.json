@@ -1,0 +1,25 @@
+{
+  "uuid": "pFlK",
+  "source_path": "exo7/4-L2/pFlK.tex",
+  "summary": "L'exercice demande de montrer l'équivalence entre deux propositions concernant une famille de fonctions : la liberté de la famille et l'existence d'un déterminant non nul pour une matrice construite à partir de ces fonctions évaluées en des points spécifiques.",
+  "concepts": [
+    "famille libre de fonctions",
+    "déterminant d'une matrice",
+    "récurrence mathématique",
+    "système d'équations linéaires",
+    "théorème de Cramer"
+  ],
+  "methods": [
+    "récurrence sur n",
+    "développement de déterminant",
+    "résolution de système de Cramer"
+  ],
+  "objects": [
+    "famille de fonctions",
+    "matrice carrée",
+    "système linéaire homogène"
+  ],
+  "content_hash": "ea0e5ebe60acae29bf2cdbd815810f866a2090d2a25dfe86accc15db44f11d52",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:10:57.075Z"
+}

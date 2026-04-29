@@ -1,0 +1,30 @@
+{
+  "uuid": "70mY",
+  "source_path": "exo7/4-L2/70mY.tex",
+  "summary": "L'exercice porte sur des questions de base en théorie des anneaux, notamment les propriétés des éléments dans des anneaux quotients de Z. Il aborde l'appartenance, les calculs d'éléments, l'injectivité des applications, les diviseurs de zéro et les puissances modulo.",
+  "concepts": [
+    "anneau quotient",
+    "diviseur de zéro",
+    "groupe multiplicatif",
+    "injection",
+    "arithmétique modulaire",
+    "nombre premier",
+    "puissance modulo"
+  ],
+  "methods": [
+    "calcul d'élément dans un anneau quotient",
+    "vérification d'injectivité",
+    "détermination des diviseurs de zéro",
+    "calcul de puissances modulo"
+  ],
+  "objects": [
+    "Z/nZ",
+    "élément de Z/nZ",
+    "application de Z/nZ vers Z/nZ",
+    "diviseur de zéro",
+    "groupe multiplicatif"
+  ],
+  "content_hash": "99b460d02bd561dd8b2ab8f144ccf4ad0ddfd35da70521253fb80b0557813a98",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:20:38.689Z"
+}

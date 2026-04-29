@@ -1,0 +1,26 @@
+{
+  "uuid": "dSlU",
+  "source_path": "exo7/14-L3/dSlU.tex",
+  "summary": "L'exercice demande de montrer que la convolution d'une fonction intégrable à support compact avec une fonction höldérienne est höldérienne, puis d'étendre ce résultat aux fonctions de classe C^k,α. Il généralise ensuite ces propriétés aux fonctions intégrables à support non compact et bornées.",
+  "concepts": [
+    "convolution",
+    "fonction höldérienne",
+    "fonction de classe C^k,α",
+    "intégrabilité",
+    "support compact",
+    "bornitude"
+  ],
+  "methods": [
+    "estimation de l'écart",
+    "dérivation sous le signe intégral",
+    "récurrence sur l'ordre de dérivabilité"
+  ],
+  "objects": [
+    "fonction intégrable",
+    "fonction höldérienne",
+    "convolution de fonctions"
+  ],
+  "content_hash": "79713b2810d9c17eb26634137074a32f360601c0b9c7594d0ab6e897ec36d6a0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:55:23.003Z"
+}

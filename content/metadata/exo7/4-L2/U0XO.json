@@ -1,29 +1,27 @@
 {
   "uuid": "U0XO",
   "source_path": "exo7/4-L2/U0XO.tex",
-  "summary": "Trouver tous les couples d'entiers (x, y) tels que x - y = 1 et xy = 72. L'exercice utilise les propriétés des diviseurs et des nombres premiers entre eux pour résoudre le problème.",
+  "summary": "Trouver tous les couples d'entiers (x, y) tels que x - y = 1 et xy = 72. L'exercice utilise les propriétés des nombres premiers entre eux et des diviseurs.",
   "concepts": [
     "pgcd",
     "ppcm",
     "nombres premiers entre eux",
     "diviseurs d'un entier",
-    "factorisation en nombres premiers",
-    "équations diophantiennes",
-    "arithmétique dans Z"
+    "équation diophantienne",
+    "factorisation en nombres premiers"
   ],
   "methods": [
     "décomposition en facteurs premiers",
-    "recherche des diviseurs consécutifs",
-    "résolution d'équations du second degré",
-    "utilisation des propriétés du pgcd et ppcm"
+    "résolution d'équation diophantienne",
+    "analyse des diviseurs consécutifs"
   ],
   "objects": [
     "entiers naturels",
     "couples d'entiers",
     "diviseurs",
-    "équations diophantiennes"
+    "équation linéaire"
   ],
-  "content_hash": "2328743d453a84e158c1d0e770262111fa67836c359034c59aca6fe8ce2eea77",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:16:21.727Z"
+  "content_hash": "dc8364795bc70cee57cb2b6a4406caa90e9b1611af46c2f1db2face15b06d8ac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:40:31.113Z"
 }

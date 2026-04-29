@@ -1,0 +1,24 @@
+{
+  "uuid": "ACHS",
+  "source_path": "exo7/2-L1/ACHS.tex",
+  "summary": "L'exercice demande de démontrer la deux fois dérivabilité d'une fonction convexe et dérivable en un point, à partir d'une condition sur son développement limité. On étudie aussi le cas où le développement limité inclut un terme quadratique.",
+  "concepts": [
+    "fonction convexe",
+    "développement limité",
+    "dérivabilité",
+    "taux d'accroissement",
+    "développement limité d'ordre 2"
+  ],
+  "methods": [
+    "comparaison des taux d'accroissement",
+    "analyse du développement limité"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "développement limité",
+    "taux d'accroissement"
+  ],
+  "content_hash": "c508fda9c4ad012ac2967a2cf5b0320b11d3c2e754e6a61524e6966ec5078323",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:25:54.813Z"
+}

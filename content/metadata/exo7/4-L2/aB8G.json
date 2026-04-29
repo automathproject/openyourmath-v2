@@ -1,0 +1,28 @@
+{
+  "uuid": "aB8G",
+  "source_path": "exo7/4-L2/aB8G.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble des nombres complexes à parties réelles et imaginaires entières forme un sous-anneau de ℂ, d'identifier ses éléments inversibles, et de prouver que cet anneau est principal en établissant une division euclidienne avec reste.",
+  "concepts": [
+    "sous-anneau",
+    "élément inversible",
+    "division euclidienne",
+    "anneau principal",
+    "norme dans ℂ",
+    "unicité de la division euclidienne"
+  ],
+  "methods": [
+    "vérification des axiomes d'anneau",
+    "identification des unités",
+    "algorithme de division euclidienne",
+    "construction d'idéal principal"
+  ],
+  "objects": [
+    "ensemble des nombres complexes à parties entières",
+    "éléments inversibles",
+    "quotient et reste de la division euclidienne",
+    "idéal principal"
+  ],
+  "content_hash": "bb2f90e709fbb8a840125e0519b4c26bcf16d2e8b2cc5d1dbb2f921f1d024b80",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:57:18.613Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "646Z",
+  "source_path": "exo7/15-L3/646Z.tex",
+  "summary": "Montrer l'équivalence entre la convergence d'une suite d'opérateurs linéaires continus dans l'espace des opérateurs bornés et la convergence uniforme de cette suite sur toute partie bornée de l'espace de départ.",
+  "concepts": [
+    "espace normé",
+    "espace métrique complet",
+    "espace de Banach",
+    "convergence uniforme",
+    "opérateur linéaire continu",
+    "norme d'opérateur",
+    "partie bornée"
+  ],
+  "methods": [
+    "utilisation de la définition de la norme d'opérateur",
+    "application de la convergence uniforme",
+    "choix de la sphère unité comme partie bornée"
+  ],
+  "objects": [
+    "suite d'opérateurs linéaires continus",
+    "partie bornée d'un espace normé",
+    "sphère unité"
+  ],
+  "content_hash": "3f3aa05b0239bc89fb4c234b04c956c9e03b9954b9686f4392043af6b5e630eb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:08:20.168Z"
+}

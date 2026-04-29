@@ -1,0 +1,29 @@
+{
+  "uuid": "7diN",
+  "source_path": "exo7/1-L1/7diN.tex",
+  "summary": "Soit E un espace vectoriel de dimension finie sur un corps K, et F₁, F₂, ..., Fₙ des sous-espaces vectoriels de E dont la somme est égale à E. Montrer qu'il existe des sous-espaces G₁, G₂, ..., Gₙ inclus respectivement dans F₁, F₂, ..., Fₙ tels que leur somme directe soit égale à E.",
+  "concepts": [
+    "somme directe",
+    "sous-espace vectoriel",
+    "dimension finie",
+    "espace vectoriel",
+    "somme de sous-espaces",
+    "théorème de décomposition",
+    "indépendance linéaire",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "construction de sous-espaces supplémentaires",
+    "utilisation de la dimension",
+    "décomposition en somme directe"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "sous-espaces vectoriels F₁, F₂, ..., Fₙ",
+    "sous-espaces G₁, G₂, ..., Gₙ",
+    "somme directe"
+  ],
+  "content_hash": "68cdc00f6b3151313d41e85672abcd2785a55af6be5c96bf679ae7ff5f6719c9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:39:19.653Z"
+}

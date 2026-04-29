@@ -1,0 +1,30 @@
+{
+  "uuid": "JszA",
+  "source_path": "exo7/4-L2/JszA.tex",
+  "summary": "L'exercice demande de montrer l'irréductibilité d'un polynôme sur un corps fini, puis d'étudier la structure de l'anneau quotient associé. Il explore les propriétés algébriques des éléments de cet anneau, notamment leurs opérations et leurs ordres multiplicatifs.",
+  "concepts": [
+    "irréductibilité d'un polynôme",
+    "corps fini",
+    "anneau quotient",
+    "élément primitif",
+    "ordre multiplicatif",
+    "algèbre sur un corps"
+  ],
+  "methods": [
+    "critère d'irréductibilité",
+    "construction d'anneau quotient",
+    "calcul de cardinal",
+    "détermination de l'ordre multiplicatif",
+    "table de puissances"
+  ],
+  "objects": [
+    "polynôme irréductible",
+    "corps $\\mathbb{F}_2$",
+    "anneau quotient $\\mathbb{F}_2[X]/(X^3+X+1)$",
+    "élément $\\alpha$",
+    "puissances de $\\alpha$"
+  ],
+  "content_hash": "94deb534af2ad6c9f1b6be7af176e2d27b2a95604bd99a1ea709792eadf1748c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:38:11.163Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "9NEp",
+  "source_path": "exo7/4-L2/9NEp.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble D des polynômes réels dont la dérivée en 0 est nulle n'est pas un idéal mais est un sous-anneau de ℝ[X], et que l'ensemble E des polynômes réels dont la valeur et la dérivée en 0 sont nulles n'est pas un sous-anneau mais est un idéal de ℝ[X], avec identification d'un générateur.",
+  "concepts": [
+    "anneau",
+    "idéal",
+    "sous-anneau",
+    "polynôme",
+    "dérivée",
+    "générateur d'idéal",
+    "structure algébrique"
+  ],
+  "methods": [
+    "vérification des propriétés d'idéal",
+    "vérification des propriétés de sous-anneau",
+    "identification de générateur"
+  ],
+  "objects": [
+    "ensemble de polynômes",
+    "dérivée de polynôme",
+    "anneau ℝ[X]"
+  ],
+  "content_hash": "49f7689932efa2a1d72cd2034116675b6ea7fc751ad299e4844ffeff0cc9f480",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:23:57.810Z"
+}

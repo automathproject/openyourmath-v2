@@ -1,0 +1,26 @@
+{
+  "uuid": "Updx",
+  "source_path": "exo7/6-L2/Updx.tex",
+  "summary": "On construit une suite de points par projections successives sur les côtés d'un triangle selon des directions parallèles aux autres côtés. On doit montrer que cette construction est périodique de période 6.",
+  "concepts": [
+    "géométrie affine",
+    "transformation affine",
+    "involution",
+    "projection parallèle",
+    "périodicité"
+  ],
+  "methods": [
+    "construction géométrique",
+    "analyse de périodicité",
+    "étude des propriétés affines"
+  ],
+  "objects": [
+    "triangle",
+    "points projetés",
+    "côtés d'un triangle",
+    "transformations géométriques"
+  ],
+  "content_hash": "2bccbc9c0832376e5b72bd1897410ee1b3164eeff1fe63d6f97b75ead4cf462a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:56:03.998Z"
+}

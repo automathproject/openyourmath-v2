@@ -1,0 +1,25 @@
+{
+  "uuid": "efgl",
+  "source_path": "exo7/2-L1/efgl.tex",
+  "summary": "On considère une fonction dérivable sur un intervalle [a, b]. On demande de montrer que sa dérivée est de signe constant si elle ne s'annule pas, puis que l'image de sa dérivée est un intervalle dans le cas général.",
+  "concepts": [
+    "dérivabilité",
+    "fonction dérivée",
+    "image d'une fonction",
+    "intervalle",
+    "continuité"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du théorème des valeurs intermédiaires",
+    "analyse du signe de la dérivée"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "dérivée",
+    "intervalle [a, b]"
+  ],
+  "content_hash": "95ff52b8a181883867c161f636978ebe8f2d020791112e63fcc484b8bb137283",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:14:25.622Z"
+}

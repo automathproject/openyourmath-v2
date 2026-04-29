@@ -1,0 +1,29 @@
+{
+  "uuid": "DDSi",
+  "source_path": "exo7/16-L3/DDSi.tex",
+  "summary": "L'exercice étudie une série entière L(z) et une fonction f(z) définie via la détermination principale du logarithme complexe. Il demande de montrer que f est définie dans un domaine U, de vérifier une relation de dérivation entre L et f, puis d'en déduire l'existence d'une primitive de f.",
+  "concepts": [
+    "série entière",
+    "détermination principale du logarithme complexe",
+    "domaine de définition d'une fonction",
+    "dérivation complexe",
+    "primitive d'une fonction",
+    "limite complexe"
+  ],
+  "methods": [
+    "analyse de convergence de série entière",
+    "calcul de dérivée",
+    "recherche de primitive",
+    "calcul de limite complexe"
+  ],
+  "objects": [
+    "série entière L(z)",
+    "fonction f(z)",
+    "domaine U",
+    "domaine D",
+    "nombre complexe z"
+  ],
+  "content_hash": "fcf1620c5bddd0eb6dc0b63d6c4f466aca296f7aa3d74090da0c1a46cfadab11",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:33:09.667Z"
+}

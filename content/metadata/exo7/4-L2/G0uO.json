@@ -1,0 +1,26 @@
+{
+  "uuid": "G0uO",
+  "source_path": "exo7/4-L2/G0uO.tex",
+  "summary": "L'exercice demande de déterminer le rang d'une matrice réelle dont les coefficients sont des cosinus d'un angle dépendant des indices, en fonction de la valeur de cet angle.",
+  "concepts": [
+    "rang d'une matrice",
+    "matrice réelle",
+    "cosinus",
+    "décomposition en facteurs",
+    "mineur d'une matrice",
+    "valeur propre"
+  ],
+  "methods": [
+    "décomposition en produit de matrices",
+    "calcul de mineur",
+    "analyse de cas"
+  ],
+  "objects": [
+    "matrice réelle",
+    "angle",
+    "mineur 2x2"
+  ],
+  "content_hash": "a345061d17dc7678fb1f77b1c26ac21a3afbe0c40021550ad1e41665eaf045af",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:41:52.040Z"
+}

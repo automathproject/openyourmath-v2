@@ -1,0 +1,29 @@
+{
+  "uuid": "07D2",
+  "source_path": "exo7/15-L3/07D2.tex",
+  "summary": "L'exercice demande de déterminer si l'espace réel muni de trois distances différentes est complet. Il s'agit d'étudier la complétude de ℝ avec des métriques non usuelles.",
+  "concepts": [
+    "espace métrique complet",
+    "suite de Cauchy",
+    "distance",
+    "convergence",
+    "continuité",
+    "fonction exponentielle",
+    "fonction logarithme"
+  ],
+  "methods": [
+    "étude de la complétude",
+    "comparaison de distances",
+    "analyse de la convergence",
+    "utilisation de propriétés des fonctions exponentielles et logarithmiques"
+  ],
+  "objects": [
+    "suite de Cauchy",
+    "distance définie par |x³ - y³|",
+    "distance définie par |exp(x) - exp(y)|",
+    "distance définie par log(1 + |x - y|)"
+  ],
+  "content_hash": "3d05862b97ce9d1f1d11c4a9924ac7960c065b4f2085872c41e10971dd1a4136",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:07:13.605Z"
+}

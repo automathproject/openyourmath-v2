@@ -1,0 +1,30 @@
+{
+  "uuid": "eTmW",
+  "source_path": "exo7/6-L2/eTmW.tex",
+  "summary": "L'exercice demande d'étudier une application affine dans un plan euclidien. On cherche d'abord les points fixes de cette application, puis on analyse le comportement du milieu des segments reliant chaque point à son image, et enfin on détermine si l'application est une isométrie.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "application affine",
+    "point fixe",
+    "isométrie",
+    "translation",
+    "symétrie orthogonale",
+    "droite affine"
+  ],
+  "methods": [
+    "résolution d'équation linéaire",
+    "calcul de milieu",
+    "analyse de transformation affine",
+    "détermination de la nature d'une isométrie"
+  ],
+  "objects": [
+    "plan affine euclidien",
+    "repère cartésien orthonormé",
+    "application affine",
+    "droite affine",
+    "milieu de segment"
+  ],
+  "content_hash": "dc0cc1563f74e76600725bed4e1245cd3fae8128c70426caac47c7c86c1b8c1c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:50:05.544Z"
+}

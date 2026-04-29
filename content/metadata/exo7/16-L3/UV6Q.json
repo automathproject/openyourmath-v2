@@ -1,0 +1,28 @@
+{
+  "uuid": "UV6Q",
+  "source_path": "exo7/16-L3/UV6Q.tex",
+  "summary": "Calculer une intégrale complexe le long d'un cercle de rayon R pour un polynôme sans zéros dans le plan complexe, et déterminer sa limite quand R tend vers l'infini.",
+  "concepts": [
+    "formule de Cauchy",
+    "intégrale complexe",
+    "polynôme sans zéros",
+    "théorème de Liouville",
+    "convergence d'intégrale",
+    "fonction holomorphe"
+  ],
+  "methods": [
+    "intégration complexe",
+    "changement de variable",
+    "limite de fonction",
+    "application de la formule de Cauchy"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "cercle γ_R",
+    "intégrale I_R",
+    "fonction f(z)"
+  ],
+  "content_hash": "a709814caba21cef2deec50f7078ea4274080ba5f0fa9e953e47825177234ba3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:36:42.379Z"
+}

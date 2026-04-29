@@ -1,0 +1,27 @@
+{
+  "uuid": "Ssee",
+  "source_path": "exo7/6-L2/Ssee.tex",
+  "summary": "Dans un plan affine euclidien muni d'un repère orthonormé, on donne les coordonnées de quatre points A, B, C et D. L'exercice demande de montrer que les droites (AB) et (CD) sont orthogonales et de trouver leur point d'intersection. Ensuite, il faut prouver l'existence d'une rotation qui permute ces points de manière cyclique et donner une représentation matricielle de cette rotation.",
+  "concepts": [
+    "géométrie affine",
+    "plan affine euclidien",
+    "repère orthonormé",
+    "droites orthogonales",
+    "rotation",
+    "matrice de rotation"
+  ],
+  "methods": [
+    "calcul de vecteurs directeurs",
+    "produit scalaire",
+    "détermination de l'angle de rotation",
+    "construction de la matrice de rotation"
+  ],
+  "objects": [
+    "points A, B, C, D",
+    "droites (AB) et (CD)",
+    "matrice de rotation"
+  ],
+  "content_hash": "d2f558d4bca5d016c7fe2e53e2e69abb1b31a72b61436094328b063b21aaef78",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:54:24.829Z"
+}

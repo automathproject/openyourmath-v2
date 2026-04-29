@@ -1,0 +1,25 @@
+{
+  "uuid": "4TNa",
+  "source_path": "exo7/15-L3/4TNa.tex",
+  "summary": "On étudie la composition de fonctions dans le cadre de la convergence uniforme. On considère une suite de fonctions réelles convergeant uniformément vers une fonction f sur ℝ, et une fonction g uniformément continue sur ℝ. On doit montrer que la suite des compositions g∘fₙ converge uniformément vers g∘f sur ℝ.",
+  "concepts": [
+    "convergence uniforme",
+    "composition de fonctions",
+    "uniforme continuité",
+    "limite de suite de fonctions",
+    "continuité"
+  ],
+  "methods": [
+    "composition de fonctions",
+    "passage à la limite sous le signe égal",
+    "utilisation de la définition de la convergence uniforme"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction réelle",
+    "fonction uniformément continue"
+  ],
+  "content_hash": "af3bd87adddf42a2e9407954bf7b2a8645dc3abf0ca00f427d430f2a5ea161d6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:28:43.269Z"
+}

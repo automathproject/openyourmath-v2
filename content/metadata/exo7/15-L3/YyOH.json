@@ -1,0 +1,28 @@
+{
+  "uuid": "YyOH",
+  "source_path": "exo7/15-L3/YyOH.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'un point réalisant la distance minimale d'un point à un compact, puis à un fermé. Il étudie ensuite la continuité de la fonction distance et en déduit une propriété de séparation pour les fermés disjoints, avec un contre-exemple.",
+  "concepts": [
+    "espace vectoriel normé",
+    "distance à une partie",
+    "compact",
+    "fermé",
+    "continuité",
+    "séparation des ensembles"
+  ],
+  "methods": [
+    "utilisation de la définition de la distance",
+    "application du théorème de Weierstrass",
+    "preuve par l'absurde",
+    "analyse de la continuité"
+  ],
+  "objects": [
+    "distance à une partie",
+    "fonction distance",
+    "ensembles disjoints",
+    "constante de séparation"
+  ],
+  "content_hash": "54e07a1d86f4401eecf300743589025fda144c2b3acd3836f0ab5228a8e0af47",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:19:34.135Z"
+}

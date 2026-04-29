@@ -1,0 +1,23 @@
+{
+  "uuid": "wbmQ",
+  "source_path": "exo7/1-L1/wbmQ.tex",
+  "summary": "Trouver une suite de 1000 entiers consécutifs qui ne sont pas premiers.",
+  "concepts": [
+    "nombres premiers",
+    "divisibilité",
+    "factorielles",
+    "conjecture de Bertrand",
+    "entiers consécutifs"
+  ],
+  "methods": [
+    "utilisation des factoriels",
+    "construction explicite de suite"
+  ],
+  "objects": [
+    "suite d'entiers",
+    "factorielles"
+  ],
+  "content_hash": "4839dd545679494d3d5cd23c3564305168224ea1dc048853d0d9a3bfb02aaf93",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:11:58.637Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "ROfY",
+  "source_path": "exo7/8-L3/ROfY.tex",
+  "summary": "L'exercice demande de démontrer que les sous-groupes de ℤ sont de la forme nℤ, de montrer que ces sous-groupes sont distingués, puis d'établir des isomorphismes entre ℤ/nℤ et deux autres groupes : les racines n-ième de l'unité et le groupe engendré par un cycle de longueur n dans SN. Enfin, il s'agit de prouver l'unicité du groupe monogène d'ordre n.",
+  "concepts": [
+    "sous-groupe",
+    "groupe quotient",
+    "isomorphisme de groupes",
+    "groupe cyclique",
+    "théorème de Lagrange",
+    "groupe monogène",
+    "racines n-ième de l'unité"
+  ],
+  "methods": [
+    "division euclidienne",
+    "construction de groupe quotient",
+    "démonstration d'isomorphisme",
+    "classification des groupes monogènes"
+  ],
+  "objects": [
+    "ℤ",
+    "nℤ",
+    "ℤ/nℤ",
+    "groupe des racines n-ième de l'unité",
+    "groupe engendré par un cycle de longueur n dans SN"
+  ],
+  "content_hash": "b9fb20878adda5979c42d7927c735b45cb3db209827db38c09ee63bb9157aaea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:09:40.324Z"
+}

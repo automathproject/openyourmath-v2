@@ -1,0 +1,29 @@
+{
+  "uuid": "oG8o",
+  "source_path": "exo7/1-L1/oG8o.tex",
+  "summary": "L'exercice étudie une famille d'ensembles S définie à partir d'une application f:E→F. Il demande de prouver plusieurs propriétés sur S, notamment sa stabilité par intersection et réunion, des relations entre ses éléments et des sous-ensembles de E, et l'existence d'une bijection entre S et l'image de f.",
+  "concepts": [
+    "application",
+    "image directe",
+    "image réciproque",
+    "stabilité par intersection",
+    "stabilité par réunion",
+    "bijection",
+    "ensemble stable"
+  ],
+  "methods": [
+    "manipulation d'ensembles",
+    "utilisation des propriétés des applications",
+    "preuve par double inclusion",
+    "construction explicite de bijection"
+  ],
+  "objects": [
+    "application f:E→F",
+    "famille d'ensembles S",
+    "sous-ensembles de E",
+    "image de f"
+  ],
+  "content_hash": "27f78d49fa8581286e156662d315110d18f148e830e37f51d8ae9fdd4a0d83d1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:20:42.223Z"
+}

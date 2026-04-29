@@ -1,0 +1,27 @@
+{
+  "uuid": "atPW",
+  "source_path": "exo7/4-L2/atPW.tex",
+  "summary": "L'exercice demande de caractériser les bases d'un groupe G = ℤ² en utilisant le déterminant et le plus grand commun diviseur. Il s'agit d'étudier les conditions nécessaires et suffisantes pour qu'une famille de vecteurs engendre ℤ².",
+  "concepts": [
+    "groupe abélien",
+    "base d'un groupe",
+    "déterminant",
+    "plus grand commun diviseur",
+    "groupe engendré",
+    "structure de ℤ²"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "utilisation du PGCD",
+    "génération de groupe"
+  ],
+  "objects": [
+    "famille de vecteurs",
+    "groupe ℤ²",
+    "base de ℤ²",
+    "vecteurs (a,a') et (b,b')"
+  ],
+  "content_hash": "f4a60c2ec6675c9866588052f9636e9142b8250cec2183c011cd0cda86ee889b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:58:36.237Z"
+}

@@ -1,32 +1,29 @@
 {
   "uuid": "Kzxb",
   "source_path": "exo7/8-L3/Kzxb.tex",
-  "summary": "L'exercice étudie les propriétés des actions de groupes, en particulier les conditions pour qu'une action soit primitive ou imprimitive. Il demande de déduire des relations entre sous-groupes (comme le fixateur d'un élément) et d'établir des isomorphismes entre ensembles quotients.",
+  "summary": "L'exercice demande de déduire que HK=G et que H/(H∩K) est isomorphe à G/K, en utilisant les propriétés des actions de groupe et des sous-groupes. Il s'appuie sur un contexte où H est un sous-groupe distingué de G et K est le fixateur d'un élément x∈X.",
   "concepts": [
     "action de groupe",
-    "action transitive",
-    "action primitive",
-    "action imprimitive",
-    "sous-groupe maximal",
+    "sous-groupe distingué",
     "fixateur d'un élément",
-    "théorème d'isomorphisme",
-    "sous-groupe distingué"
+    "sous-groupe maximal",
+    "isomorphisme de G-ensembles",
+    "théorème d'isomorphisme"
   ],
   "methods": [
-    "analyse de la transitivité",
-    "étude des sous-groupes",
-    "construction d'isomorphismes",
-    "utilisation du fixateur",
-    "application du théorème d'isomorphisme"
+    "utilisation de la transitivité",
+    "analyse des sous-groupes",
+    "construction de bijection",
+    "vérification de la compatibilité des actions"
   ],
   "objects": [
-    "sous-groupe",
-    "ensemble quotient",
-    "fixateur",
-    "action de groupe",
-    "orbite"
+    "sous-groupe H",
+    "sous-groupe K",
+    "ensemble X",
+    "classes d'équivalence",
+    "orbites"
   ],
-  "content_hash": "b7e0b98c0eeb7e37ffc1c5d27e9979c61f6a07efc75405039d91100f316a8ddd",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:04:49.938Z"
+  "content_hash": "de4c8db1bfbfeee5f76c103dbe76853a41603133ac558a525794c72ca5288ddd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:28:57.571Z"
 }

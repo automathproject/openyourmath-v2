@@ -1,0 +1,29 @@
+{
+  "uuid": "wpOR",
+  "source_path": "exo7/4-L2/wpOR.tex",
+  "summary": "L'exercice demande de montrer que l'application p définie par une intégrale est un produit scalaire sur l'espace des polynômes réels, puis de déterminer la projection orthogonale d'un polynôme de degré 4 sur le sous-espace des polynômes de degré ≤ 2.",
+  "concepts": [
+    "produit scalaire",
+    "norme induite",
+    "projection orthogonale",
+    "sous-espace vectoriel",
+    "orthogonalité",
+    "espace euclidien",
+    "espace normé",
+    "intégrale de polynômes"
+  ],
+  "methods": [
+    "vérification des propriétés du produit scalaire",
+    "calcul de projection orthogonale",
+    "minimisation de distance"
+  ],
+  "objects": [
+    "polynôme réel",
+    "sous-espace de polynômes de degré ≤ 2",
+    "polynôme de degré 4",
+    "intégrale sur [-1,1]"
+  ],
+  "content_hash": "fd4bbb215de3995265861f471dbf8debde5c55ba927768c9f489bf5af886b1e1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:01:18.765Z"
+}

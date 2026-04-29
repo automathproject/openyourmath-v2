@@ -1,0 +1,26 @@
+{
+  "uuid": "WqPL",
+  "source_path": "exo7/1-L1/WqPL.tex",
+  "summary": "L'exercice demande de trouver un polynôme de degré ≤ 4 interpolant 5 points donnés dans ℝ². Il propose ensuite de montrer que deux ensembles de polynômes forment des bases de ℕ₄ et de calculer les coordonnées du polynôme interpolateur dans ces bases.",
+  "concepts": [
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "polynôme interpolateur",
+    "dimension d'un espace vectoriel",
+    "famille génératrice",
+    "famille libre"
+  ],
+  "methods": [
+    "interpolation polynomiale",
+    "calcul de coordonnées dans une base",
+    "vérification de la liberté d'une famille"
+  ],
+  "objects": [
+    "polynôme de degré ≤ 4",
+    "base de ℕ₄",
+    "coordonnées d'un vecteur dans une base"
+  ],
+  "content_hash": "46592132aa539af6f38cddb5206c8f2a9b1a0fb7279314ece22dfafce785f38e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:56:06.552Z"
+}

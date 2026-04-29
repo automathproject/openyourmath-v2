@@ -1,0 +1,26 @@
+{
+  "uuid": "PGSw",
+  "source_path": "exo7/1-L1/PGSw.tex",
+  "summary": "L'exercice demande d'abord si l'ensemble des applications croissantes de ℝ dans ℝ est un espace vectoriel. Ensuite, il s'agit de montrer qu'un ensemble V, défini comme les différences de deux applications croissantes, est un sous-espace vectoriel.",
+  "concepts": [
+    "espace vectoriel",
+    "sous-espace vectoriel",
+    "application croissante",
+    "opérations usuelles",
+    "stabilité par addition",
+    "stabilité par multiplication scalaire"
+  ],
+  "methods": [
+    "vérification des axiomes d'espace vectoriel",
+    "construction explicite de combinaisons linéaires",
+    "analyse de la stabilité"
+  ],
+  "objects": [
+    "ensemble d'applications croissantes",
+    "sous-espace vectoriel V",
+    "fonctions de ℝ dans ℝ"
+  ],
+  "content_hash": "e8fc96818a9e092ef9f55742afa9823e55594f54a8749b9d33fc2af16393ce78",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:50:27.298Z"
+}

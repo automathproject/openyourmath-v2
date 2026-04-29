@@ -1,0 +1,27 @@
+{
+  "uuid": "RGpe",
+  "source_path": "exo7/16-L3/RGpe.tex",
+  "summary": "L'exercice étudie les propriétés de la fonction exponentielle et de la fonction logarithme complexe. Il demande d'identifier les valeurs de z pour lesquelles exp(z) appartient à C* (les complexes non nuls), de vérifier que exp et log sont des biholomorphismes réciproques, et d'examiner la validité de la relation log(zw) = log(z) + log(w) sous différentes conditions.",
+  "concepts": [
+    "fonction exponentielle complexe",
+    "fonction logarithme complexe",
+    "biholomorphisme",
+    "partie réelle d'un nombre complexe",
+    "ensemble C*",
+    "continuité holomorphe"
+  ],
+  "methods": [
+    "analyse de la condition Re(z) > 0",
+    "vérification de la bijectivité",
+    "étude de la relation fonctionnelle"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "fonction logarithme",
+    "nombre complexe",
+    "ensemble C*"
+  ],
+  "content_hash": "7f14016e8655eb7d6f38ac9a318dbf6055f262df9ea5de1b141a2a3782e9642e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:49:55.412Z"
+}

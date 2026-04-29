@@ -1,0 +1,25 @@
+{
+  "uuid": "XfSo",
+  "source_path": "exo7/4-L2/XfSo.tex",
+  "summary": "Calculer le déterminant d'une matrice carrée de taille 5x5 avec des zéros sur la diagonale et des coefficients non nuls hors diagonale. Généraliser le résultat à une matrice de dimension quelconque.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "propriété de linéarité",
+    "développement de Laplace",
+    "matrice antisymétrique"
+  ],
+  "methods": [
+    "développement par rapport à une ligne ou une colonne",
+    "réduction par récurrence",
+    "utilisation de la symétrie"
+  ],
+  "objects": [
+    "matrice 5x5",
+    "déterminant",
+    "coefficient d'une matrice"
+  ],
+  "content_hash": "f1a3a1db8929c995cfcf451d9e21664e4c715e2ba60fa0aeda91cf9327bc9701",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:55:26.231Z"
+}

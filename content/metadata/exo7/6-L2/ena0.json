@@ -1,0 +1,26 @@
+{
+  "uuid": "ena0",
+  "source_path": "exo7/6-L2/ena0.tex",
+  "summary": "Calculer la circulation d'un champ de vecteurs le long du bord d'un carré. Le champ est donné par deux formes différentielles en x et y.",
+  "concepts": [
+    "forme différentielle",
+    "champ de vecteurs",
+    "circulation",
+    "théorème de Green-Riemann",
+    "intégrale curviligne",
+    "champ conservatif"
+  ],
+  "methods": [
+    "intégration par parties",
+    "linéarisation",
+    "application du théorème de Green-Riemann"
+  ],
+  "objects": [
+    "champ de vecteurs",
+    "courbe fermée",
+    "intégrale de ligne"
+  ],
+  "content_hash": "e0ffb051dc7dfe5eb2d6358b325609a8030e982e00b09fb98cc0982e3bfae9eb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:47:12.732Z"
+}

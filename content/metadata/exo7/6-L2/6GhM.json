@@ -1,0 +1,31 @@
+{
+  "uuid": "6GhM",
+  "source_path": "exo7/6-L2/6GhM.tex",
+  "summary": "On considère un tétraèdre dont les quatre faces ont la même aire. On doit prouver que les arêtes opposées (non coplanaires) ont deux à deux la même longueur.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "aire d'un triangle",
+    "projection orthogonale",
+    "perpendicularité",
+    "perpendiculaire commune",
+    "retournement",
+    "isométrie"
+  ],
+  "methods": [
+    "calcul d'aire par base et hauteur",
+    "théorème de Pythagore",
+    "propriétés des milieux",
+    "utilisation des isométries",
+    "retournement géométrique"
+  ],
+  "objects": [
+    "tétraèdre",
+    "arêtes opposées",
+    "projections orthogonales",
+    "perpendiculaire commune",
+    "axe de retournement"
+  ],
+  "content_hash": "ece121b2258c53cdc3ce42409077863030828d63c7520bb49c1dc4a4fb98e1c2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:22:59.065Z"
+}

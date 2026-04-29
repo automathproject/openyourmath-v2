@@ -1,0 +1,27 @@
+{
+  "uuid": "Sclr",
+  "source_path": "amscc/Sclr.tex",
+  "summary": "L'exercice demande d'identifier l'inverse d'une matrice donnée parmi trois candidates en justifiant par calcul matriciel, puis d'utiliser cette inverse pour calculer des puissances de la matrice A et son inverse.",
+  "concepts": [
+    "inverse de matrice",
+    "matrice identité",
+    "puissance de matrice",
+    "unicité de l'inverse",
+    "conjugaison matricielle"
+  ],
+  "methods": [
+    "produit matriciel",
+    "vérification par multiplication",
+    "calcul de puissances de matrice",
+    "récurrence"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice inverse",
+    "matrice identité",
+    "puissances de matrice"
+  ],
+  "content_hash": "68a69b737dbd6e1e15be36eabdf4259bf85c975fbd16d7847a114e55ad65ac73",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:59:20.268Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "WWAa",
+  "source_path": "exo7/4-L2/WWAa.tex",
+  "summary": "L'exercice demande de montrer la convergence d'une intégrale I_n définie sur ℝ et d'en déterminer la valeur pour les indices impairs. Il s'agit ensuite de prouver qu'une forme bilinéaire φ est un produit scalaire, puis de construire une base orthonormale dans ℝ₂[X] en utilisant l'orthogonalisation de Schmidt.",
+  "concepts": [
+    "produit scalaire",
+    "orthonormalisation de Schmidt",
+    "convergence d'intégrale",
+    "espace euclidien",
+    "base orthonormale",
+    "forme bilinéaire"
+  ],
+  "methods": [
+    "intégration par parties",
+    "orthogonalisation de Gram-Schmidt",
+    "calcul de matrice associée à un produit scalaire"
+  ],
+  "objects": [
+    "intégrale impropre",
+    "polynôme de ℝ_n[X]",
+    "matrice de Gram",
+    "base orthonormale"
+  ],
+  "content_hash": "76d8b9c9887b21a92bc9f7afc6c8676d7521123b83215fa3e61d81efc496f202",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:32:15.357Z"
+}

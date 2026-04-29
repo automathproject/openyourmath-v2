@@ -1,0 +1,25 @@
+{
+  "uuid": "2HDw",
+  "source_path": "exo7/2-L1/2HDw.tex",
+  "summary": "L'exercice demande de démontrer la convergence ponctuelle et la continuité de la limite d'une suite de fonctions continues convergeant uniformément sur un intervalle. Ensuite, il s'agit de montrer que la limite d'une suite de fonctions lipschitziennes convergeant ponctuellement est elle-même lipschitzienne et que la convergence est uniforme.",
+  "concepts": [
+    "convergence uniforme",
+    "convergence ponctuelle",
+    "continuité",
+    "fonction bornée",
+    "fonction lipschitzienne"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la convergence uniforme",
+    "application de la propriété des fonctions lipschitziennes"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction limite",
+    "intervalle borné"
+  ],
+  "content_hash": "441dff8a742dd1ffb0c7a3f2d49b652c8798d826bf099e0222eabcc4bb0a79fa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:13:45.589Z"
+}

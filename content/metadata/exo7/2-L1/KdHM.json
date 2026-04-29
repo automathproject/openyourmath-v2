@@ -1,0 +1,26 @@
+{
+  "uuid": "KdHM",
+  "source_path": "exo7/2-L1/KdHM.tex",
+  "summary": "On considère une fonction continue sur [0,1] dont les intégrales avec les monômes x^k pour k=0 à n sont toutes nulles. On demande de prouver que cette fonction admet au moins n+1 zéros distincts dans l'intervalle ouvert ]0,1[.",
+  "concepts": [
+    "fonction continue",
+    "intégrale",
+    "zéros d'une fonction",
+    "polynôme de degré n",
+    "théorème de Rolle",
+    "théorème des valeurs intermédiaires"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des intégrales successives",
+    "application du théorème de Rolle"
+  ],
+  "objects": [
+    "fonction continue",
+    "monômes",
+    "zéros de fonction"
+  ],
+  "content_hash": "6b1c0cc581fc880053d967c9b434dde97b9a0e7acdd37c05cf0b8260261236e6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:35:41.310Z"
+}

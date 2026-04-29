@@ -1,0 +1,25 @@
+{
+  "uuid": "gdmr",
+  "source_path": "exo7/4-L2/gdmr.tex",
+  "summary": "L'exercice demande de déterminer la condition d'inversibilité de la matrice I + aM, où M est définie à partir de deux vecteurs X et Y indépendants.",
+  "concepts": [
+    "matrice inversible",
+    "vecteur propre",
+    "produit scalaire",
+    "déterminant",
+    "système linéaire"
+  ],
+  "methods": [
+    "détermination du noyau",
+    "résolution de système linéaire",
+    "calcul de condition d'inversibilité"
+  ],
+  "objects": [
+    "matrice n×n",
+    "vecteurs colonnes",
+    "produit tensoriel de vecteurs"
+  ],
+  "content_hash": "9c54e3a7666e586539569d3f64acc7ed6ead4fa8cb2b3bb35379ed772c480299",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:44:12.392Z"
+}

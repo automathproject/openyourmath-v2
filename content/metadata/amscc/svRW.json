@@ -1,0 +1,27 @@
+{
+  "uuid": "svRW",
+  "source_path": "amscc/svRW.tex",
+  "summary": "Calculer la trace et le déterminant d'une matrice 2x2 donnée, puis vérifier une relation matricielle impliquant ces quantités. En déduire l'inversibilité de la matrice et exprimer son inverse.",
+  "concepts": [
+    "trace d'une matrice",
+    "déterminant",
+    "inversibilité d'une matrice",
+    "matrice identité",
+    "relation matricielle"
+  ],
+  "methods": [
+    "calcul de trace",
+    "calcul de déterminant",
+    "vérification d'une égalité matricielle",
+    "inversion de matrice"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "trace",
+    "déterminant",
+    "matrice identité"
+  ],
+  "content_hash": "3067de652ebbe1957c34d9ab2641ade1a323343c07b36b89924cb141c3d56489",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:18:39.531Z"
+}

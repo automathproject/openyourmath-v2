@@ -1,0 +1,27 @@
+{
+  "uuid": "h9Gc",
+  "source_path": "exo7/12-L3/h9Gc.tex",
+  "summary": "On considère une application continue sur un ouvert borné de ℝⁿ, de classe C¹ dans l'ouvert, avec une différentielle inversible en tout point. On demande de prouver que la norme de cette application atteint son maximum sur le bord de l'ouvert.",
+  "concepts": [
+    "théorème des valeurs extrêmes",
+    "différentielle d'une application",
+    "inversibilité d'une matrice",
+    "fonction de classe C¹",
+    "maximum d'une fonction"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du théorème des valeurs extrêmes",
+    "analyse de la différentielle"
+  ],
+  "objects": [
+    "application continue",
+    "ouvert borné",
+    "différentielle inversible",
+    "norme d'une application",
+    "bord d'un ouvert"
+  ],
+  "content_hash": "154f5ffd92806f6b3380801a217a3886c3ee58bb86f79d81ff5fe490d957d031",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:17:03.839Z"
+}

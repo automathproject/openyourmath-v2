@@ -1,0 +1,27 @@
+{
+  "uuid": "kOVx",
+  "source_path": "amscc/kOVx.tex",
+  "summary": "L'exercice demande de justifier l'existence d'une matrice A vérifiant une équation matricielle donnée, puis de déterminer cette matrice A en utilisant le déterminant et l'inverse d'une matrice. Une seconde question demande de déterminer si une matrice B peut exister pour une autre équation matricielle, en utilisant la propriété du déterminant d'un produit.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "inversibilité d'une matrice",
+    "produit matriciel",
+    "propriété multiplicative du déterminant",
+    "matrice identité",
+    "méthode du pivot de Gauss"
+  ],
+  "methods": [
+    "calcul de l'inverse d'une matrice",
+    "utilisation de la propriété det(MN) = det(M)det(N)",
+    "résolution d'équation matricielle"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice inversible",
+    "matrice identité",
+    "déterminant"
+  ],
+  "content_hash": "7227fb2e9dcc9ddd0f131e265b53739971ab65fc1931c7cb4c66b3567087c323",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:07:17.222Z"
+}

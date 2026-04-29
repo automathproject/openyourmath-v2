@@ -1,30 +1,28 @@
 {
   "uuid": "JEdv",
   "source_path": "exo7/1-L1/JEdv.tex",
-  "summary": "L'exercice demande de déterminer le noyau et l'image d'une application linéaire u définie sur l'espace des polynômes de degré au plus n, puis de trouver une base dans laquelle la matrice de u est une matrice de décalage. L'application u est définie par u(P) = P(X+1) - P(X).",
+  "summary": "L'exercice demande de déterminer le noyau et l'image d'une application linéaire u définie sur l'espace des polynômes de degré au plus n, puis de trouver une base dans laquelle la matrice de u est une matrice de décalage.",
   "concepts": [
     "application linéaire",
     "noyau d'une application linéaire",
     "image d'une application linéaire",
     "théorème du rang",
-    "espace vectoriel des polynômes",
     "base d'un espace vectoriel",
     "matrice d'une application linéaire"
   ],
   "methods": [
-    "détermination du noyau par annulation",
-    "calcul de l'image par construction explicite",
-    "recherche de base adaptée",
-    "calcul de coefficients par identification"
+    "détermination du noyau",
+    "détermination de l'image",
+    "construction de base par récurrence",
+    "calcul de coefficients polynomiaux"
   ],
   "objects": [
-    "application linéaire u",
-    "polynôme de degré n",
-    "noyau de u",
-    "image de u",
-    "matrice de décalage"
+    "polynôme",
+    "espace vectoriel de polynômes",
+    "matrice de décalage",
+    "famille de polynômes échelonnés"
   ],
-  "content_hash": "d977498530bceb688f5cdf60de55725735d862a974524e1ba7eca06b225e0609",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:10:57.577Z"
+  "content_hash": "4f17209c395dea8feac3e67ddab3e9ad62019fce486742f86c1d26ce6e759d01",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:35:29.796Z"
 }

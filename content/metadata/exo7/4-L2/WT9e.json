@@ -1,0 +1,28 @@
+{
+  "uuid": "WT9e",
+  "source_path": "exo7/4-L2/WT9e.tex",
+  "summary": "L'exercice demande de montrer l'équivalence entre la diagonalisabilité d'un endomorphisme u et celle de l'application Φ_u qui à un endomorphisme v associe la composée v∘u. L'étude s'appuie sur les polynômes annulateurs et les spectres de u et Φ_u.",
+  "concepts": [
+    "diagonalisabilité",
+    "polynôme annulateur",
+    "spectre d'un endomorphisme",
+    "sous-espace propre",
+    "isomorphisme d'espaces vectoriels",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "étude des polynômes annulateurs",
+    "analyse du spectre",
+    "comparaison des sous-espaces propres",
+    "calcul de dimension"
+  ],
+  "objects": [
+    "endomorphisme",
+    "application linéaire",
+    "espace vectoriel de dimension finie",
+    "polynôme"
+  ],
+  "content_hash": "fc62df2a8865deff231795af5912e9f31111165f75e73936afa7a09908c7cbee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:58:11.023Z"
+}

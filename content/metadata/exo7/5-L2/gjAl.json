@@ -1,0 +1,24 @@
+{
+  "uuid": "gjAl",
+  "source_path": "exo7/5-L2/gjAl.tex",
+  "summary": "L'exercice demande de montrer qu'une équation de type $x^3 + y^3 - 3xy = 1$ définit implicitement une fonction $y = \\varphi(x)$ au voisinage de $0$ avec $\\varphi(0) = 1$, puis d'en donner le développement limité d'ordre 3 en $0$.",
+  "concepts": [
+    "fonction implicite",
+    "théorème des fonctions implicites",
+    "développement limité",
+    "dérivée partielle",
+    "fonction de plusieurs variables"
+  ],
+  "methods": [
+    "linéarisation",
+    "calcul des dérivées partielles",
+    "développement de Taylor"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "développement limité d'ordre 3"
+  ],
+  "content_hash": "3c015e637a8e46bcc7114442a0bac1ef6ab06b3c24e91d44a57aa73fcfa24fab",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:13:19.242Z"
+}

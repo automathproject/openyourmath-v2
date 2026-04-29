@@ -1,0 +1,26 @@
+{
+  "uuid": "kxTP",
+  "source_path": "exo7/6-L2/kxTP.tex",
+  "summary": "L'exercice étudie une construction géométrique récurrente de triangles équilatéraux à partir d'un triangle initial. Il demande de calculer l'aire, le périmètre et le diamètre des ensembles obtenus à chaque étape, puis de déterminer ces grandeurs pour l'ensemble final K.",
+  "concepts": [
+    "géométrie affine",
+    "construction récurrente",
+    "aire d'un triangle équilatéral",
+    "périmètre d'un triangle équilatéral",
+    "diamètre d'un ensemble",
+    "séries numériques"
+  ],
+  "methods": [
+    "calcul d'aire par récurrence",
+    "calcul de périmètre par récurrence",
+    "estimation de diamètre"
+  ],
+  "objects": [
+    "triangle équilatéral",
+    "ensemble géométrique",
+    "séries"
+  ],
+  "content_hash": "01d052b6a41cb69f301d912a7f32dec6e2f1490b9c99a7aa0bdad301bca448ca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:06:03.603Z"
+}

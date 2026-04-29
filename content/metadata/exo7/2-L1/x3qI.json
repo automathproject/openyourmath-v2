@@ -1,27 +1,28 @@
 {
   "uuid": "x3qI",
   "source_path": "exo7/2-L1/x3qI.tex",
-  "summary": "Montrer qu'une fonction Riemann-intégrable sur [a,b] a la même intégrale que sa version symétrique par rapport au milieu de l'intervalle. Calculer deux intégrales en utilisant cette propriété de symétrie.",
+  "summary": "Montrer une propriété d'invariance par symétrie pour les intégrales de fonctions Riemann-intégrables sur un intervalle [a,b]. Calculer deux intégrales spécifiques en utilisant cette propriété.",
   "concepts": [
-    "intégrabilité Riemann",
-    "symétrie d'intégrale",
+    "intégrale de Riemann",
+    "symétrie des intégrales",
     "changement de variable",
-    "intégration par parties",
-    "fonction de classe C¹"
+    "fonction de classe C^1",
+    "intégrale impropre",
+    "primitive"
   ],
   "methods": [
     "changement de variable",
+    "symétrisation",
     "intégration par parties",
-    "symétrisation d'intégrale",
-    "linéarisation de logarithme"
+    "linéarisation"
   ],
   "objects": [
-    "fonction Riemann-intégrable",
+    "fonction intégrable",
     "intégrale définie",
-    "fonction symétrique",
-    "fonction trigonométrique"
+    "fonction trigonométrique",
+    "logarithme"
   ],
-  "content_hash": "86978446ec6eb218a4a3fa4324c5cc87bb8dd70933f64159073b6ff2c059f946",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:36:35.526Z"
+  "content_hash": "b16043c653206db99319541a61dc5fb5cf7deaabaf6bb638ae6517a56b4413ac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:53:20.983Z"
 }

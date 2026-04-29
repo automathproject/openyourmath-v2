@@ -1,25 +1,25 @@
 {
   "uuid": "g7gd",
   "source_path": "exo7/6-L2/g7gd.tex",
-  "summary": "L'exercice demande de déterminer la condition pour qu'une forme différentielle soit exacte, puis de trouver une condition nécessaire sur les composantes P, Q, R pour qu'il existe un facteur intégrant lorsque la forme n'est pas exacte.",
+  "summary": "L'exercice demande d'abord la condition pour qu'une forme différentielle ω soit exacte. Ensuite, si ω n'est pas exacte, il s'agit de trouver un facteur intégrant λ tel que λω soit exacte, et d'en déduire une condition nécessaire sur les composantes P, Q, R de ω.",
   "concepts": [
-    "forme différentielle exacte",
+    "forme différentielle",
+    "exactitude d'une forme différentielle",
     "facteur intégrant",
-    "condition d'intégration",
-    "classe C^1",
-    "analyse vectorielle"
+    "condition nécessaire",
+    "classe C^1"
   ],
   "methods": [
+    "analyse de l'exactitude",
     "élimination de variables",
-    "analyse des conditions d'exactitude",
-    "manipulation algébrique"
+    "condition de compatibilité"
   ],
   "objects": [
-    "forme différentielle",
-    "champ de vecteurs",
-    "fonction scalaire λ"
+    "forme différentielle ω",
+    "facteur intégrant λ",
+    "composantes P, Q, R"
   ],
-  "content_hash": "782d28f08f54c70033d26f24dc893deeba25fb1557cbb93aafb8ac193fec51a0",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:06:30.193Z"
+  "content_hash": "c2b3927db65b9c494b051cd5e71a09be814d0b678d0e60455f8c3e74749136de",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:30:57.244Z"
 }

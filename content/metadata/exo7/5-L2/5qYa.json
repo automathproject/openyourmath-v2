@@ -1,0 +1,25 @@
+{
+  "uuid": "5qYa",
+  "source_path": "exo7/5-L2/5qYa.tex",
+  "summary": "Trouver le minimum d'une fonction de deux variables définie comme la somme des distances à deux points fixes dans le plan.",
+  "concepts": [
+    "extremum local",
+    "distance euclidienne",
+    "inégalité triangulaire",
+    "géométrie analytique",
+    "fonction de plusieurs variables"
+  ],
+  "methods": [
+    "géométrisation du problème",
+    "utilisation de l'inégalité triangulaire",
+    "analyse des conditions d'égalité"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "points dans le plan",
+    "segment de droite"
+  ],
+  "content_hash": "66676e3142e8c887ac259ed839627d2ac3b1e9acb8c84d0abb84650efdab8719",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:42:46.699Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "s3ot",
+  "source_path": "exo7/1-L1/s3ot.tex",
+  "summary": "L'exercice demande de déterminer le cardinal de l'ensemble des partitions d'un ensemble de cardinal nm en n parties de m éléments chacune, et de prouver que ce cardinal est donné par la formule (nm)!/(n!(m!)^n).",
+  "concepts": [
+    "partition d'un ensemble",
+    "cardinal d'un ensemble",
+    "factorielles",
+    "récurrence",
+    "dénombrement"
+  ],
+  "methods": [
+    "récurrence",
+    "calcul de factorielle",
+    "dénombrement par cas"
+  ],
+  "objects": [
+    "ensemble fini",
+    "partition d'ensemble",
+    "factorielles"
+  ],
+  "content_hash": "4fb8e98d238a851ff6cba6424d68b75c17e30d6c57092fc3fb48a41039fcaefb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:50:34.492Z"
+}

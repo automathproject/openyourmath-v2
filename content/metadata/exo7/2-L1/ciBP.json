@@ -1,0 +1,28 @@
+{
+  "uuid": "ciBP",
+  "source_path": "exo7/2-L1/ciBP.tex",
+  "summary": "Montrer une identité trigonométrique impliquant une somme de carrés de cotangentes d'angles spécifiques. L'exercice demande de prouver que la somme des carrés de cotangentes de certains angles est égale à n(n-1).",
+  "concepts": [
+    "fonctions circulaires inverses",
+    "polynôme minimal",
+    "racines d'un polynôme",
+    "symétrie des racines",
+    "fonction cotangente",
+    "identités trigonométriques"
+  ],
+  "methods": [
+    "construction de polynôme minimal",
+    "utilisation des propriétés de symétrie",
+    "calcul des coefficients binomiaux",
+    "analyse des racines distinctes"
+  ],
+  "objects": [
+    "somme de carrés de cotangentes",
+    "polynôme de degré p",
+    "coefficients binomiaux",
+    "angles trigonométriques"
+  ],
+  "content_hash": "4c97bc7f59249d5c2934f76a02931c3b5222bc708c417a661fe2ab3eec131cd4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:03:47.996Z"
+}

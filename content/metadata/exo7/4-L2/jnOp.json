@@ -1,0 +1,27 @@
+{
+  "uuid": "jnOp",
+  "source_path": "exo7/4-L2/jnOp.tex",
+  "summary": "L'exercice demande de démontrer que deux sous-ensembles A et B d'un groupe commutatif fini G sont des sous-groupes, puis d'établir que leur intersection est réduite à l'élément neutre et que leur produit est égal à G.",
+  "concepts": [
+    "groupe commutatif",
+    "sous-groupe",
+    "ordre d'un groupe",
+    "élément neutre",
+    "diviseurs dans les entiers"
+  ],
+  "methods": [
+    "utilisation de la relation de Bézout",
+    "vérification des axiomes de sous-groupe",
+    "analyse de l'intersection de sous-groupes",
+    "calcul du produit de sous-groupes"
+  ],
+  "objects": [
+    "groupe commutatif fini",
+    "sous-ensembles A et B",
+    "élément neutre e",
+    "entiers u et v"
+  ],
+  "content_hash": "5ea0545ea9649997d74f52e7e7ab909d8dad53a57981351adaf744724e4e0704",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:06:45.903Z"
+}

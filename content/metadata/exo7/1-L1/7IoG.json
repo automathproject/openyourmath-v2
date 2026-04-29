@@ -1,0 +1,25 @@
+{
+  "uuid": "7IoG",
+  "source_path": "exo7/1-L1/7IoG.tex",
+  "summary": "L'exercice demande de déterminer parmi quatre ensembles donnés ceux qui sont des sous-espaces vectoriels. Les ensembles sont définis par des conditions algébriques ou géométriques dans des espaces vectoriels classiques.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "espace vectoriel",
+    "intersection de sous-espaces vectoriels",
+    "fonction nulle",
+    "sous-groupe additif"
+  ],
+  "methods": [
+    "vérification de la stabilité par combinaison linéaire",
+    "vérification de l'inclusion de la fonction nulle",
+    "vérification de la stabilité par inverse additive"
+  ],
+  "objects": [
+    "ensemble de triplets réels",
+    "ensemble de fonctions réelles",
+    "ensemble de couples réels"
+  ],
+  "content_hash": "7249d00ab868ab2699af6805e9ab9ac8c2e312c81af2f233d56bb61cab4dfafa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:38:48.038Z"
+}

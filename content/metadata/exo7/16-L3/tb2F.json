@@ -1,0 +1,26 @@
+{
+  "uuid": "tb2F",
+  "source_path": "exo7/16-L3/tb2F.tex",
+  "summary": "Calculer l'intégrale I = ∫[−π,π] ln|re^{iθ}−a| dθ pour 0 < r < |a|. Vérifier l'existence de l'intégrale et utiliser la formule de Cauchy pour la déterminer.",
+  "concepts": [
+    "fonction holomorphe",
+    "détermination principale du logarithme",
+    "formule de Cauchy",
+    "intégrale complexe",
+    "convergence d'une intégrale"
+  ],
+  "methods": [
+    "définition d'une fonction holomorphe",
+    "application de la formule de Cauchy",
+    "analyse de la convergence d'une intégrale"
+  ],
+  "objects": [
+    "intégrale complexe",
+    "fonction complexe",
+    "détermination principale du logarithme",
+    "cercle dans le plan complexe"
+  ],
+  "content_hash": "f27830cdb066a212c75bb8ea5a78b030698d18c5d513d5b7856f566e8c1a3dd0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:46:12.651Z"
+}

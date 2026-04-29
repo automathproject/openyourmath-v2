@@ -1,0 +1,26 @@
+{
+  "uuid": "1f22",
+  "source_path": "exo7/1-L1/1f22.tex",
+  "summary": "L'exercice demande de caractériser matriciellement les éléments d'un ensemble de transformations linéaires dont l'image est incluse dans le vecteur d'une base donnée, puis de prouver que la somme directe de ces ensembles est égale à l'espace des endomorphismes de E.",
+  "concepts": [
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "endomorphisme",
+    "image d'un endomorphisme",
+    "somme directe d'espaces vectoriels",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "caractérisation matricielle",
+    "démonstration de somme directe"
+  ],
+  "objects": [
+    "espace vectoriel de dimension finie",
+    "base d'un espace vectoriel",
+    "ensemble d'endomorphismes",
+    "matrice d'un endomorphisme"
+  ],
+  "content_hash": "94eb9087a4afb6f56728b722c6fb52d0794f0a4d3a8db43067bb40f1caf1fb14",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:35:27.634Z"
+}

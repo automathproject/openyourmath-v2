@@ -1,0 +1,26 @@
+{
+  "uuid": "xkTa",
+  "source_path": "exo7/2-L1/xkTa.tex",
+  "summary": "On considère une fonction dérivable d'un intervalle unité dans lui-même vérifiant f∘f = f. On demande de prouver que f est soit constante soit l'identité.",
+  "concepts": [
+    "fonction dérivable",
+    "fonction idempotente",
+    "fonction constante",
+    "fonction identité",
+    "composition de fonctions",
+    "théorème des valeurs intermédiaires"
+  ],
+  "methods": [
+    "étude des points fixes",
+    "analyse des dérivées",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "fonction f",
+    "intervalle [0,1]",
+    "fonction composée f∘f"
+  ],
+  "content_hash": "99694dcaec31d2aafa5591e7efad4198a41d85a82495373131df41d64c0c2b28",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:24:16.182Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "VA9B",
+  "source_path": "exo7/6-L2/VA9B.tex",
+  "summary": "On construit une suite de polygones par transformation isobarycentrique des sommets. On demande de montrer que chaque sommet de la suite de polygones converge vers le centre de gravité du polygone initial.",
+  "concepts": [
+    "barycentre",
+    "isobarycentre",
+    "convergence de suite",
+    "centre de gravité",
+    "géométrie affine",
+    "transformation affine",
+    "limite de suite",
+    "propriété de contraction"
+  ],
+  "methods": [
+    "récurrence",
+    "calcul vectoriel",
+    "analyse de limite",
+    "propriété de contraction"
+  ],
+  "objects": [
+    "polygone",
+    "suite de polygones",
+    "sommets",
+    "vecteurs position"
+  ],
+  "content_hash": "56a7cc9991362a0ad629307175b0e1992cfd03c60f47c7220eb6542afcbc2d1d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:56:15.559Z"
+}

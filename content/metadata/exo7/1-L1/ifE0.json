@@ -1,0 +1,23 @@
+{
+  "uuid": "ifE0",
+  "source_path": "exo7/1-L1/ifE0.tex",
+  "summary": "Trouver deux entiers naturels dont la somme est 1008 et dont le plus grand commun diviseur est 24.",
+  "concepts": [
+    "plus grand commun diviseur",
+    "algorithme d'Euclide",
+    "diviseurs d'un entier",
+    "entiers naturels",
+    "arithmétique dans Z"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "utilisation des propriétés du pgcd"
+  ],
+  "objects": [
+    "entiers naturels",
+    "pgcd"
+  ],
+  "content_hash": "36e72c76ef32832eed6498d447c59afaad736b909b6a81dd43e08a99267af2a5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:09:59.717Z"
+}

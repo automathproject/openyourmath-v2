@@ -1,0 +1,32 @@
+{
+  "uuid": "xnJH",
+  "source_path": "exo7/4-L2/xnJH.tex",
+  "summary": "L'exercice porte sur l'étude de l'anneau ℤ[i√3] des nombres complexes de la forme a + bi√3 avec a, b entiers. Il demande de démontrer des propriétés algébriques de cet anneau, notamment sur le conjugué, la norme, la divisibilité et l'unicité de la factorisation.",
+  "concepts": [
+    "anneau",
+    "conjugué d'un élément",
+    "norme dans un anneau",
+    "élément inversible",
+    "nombre premier dans un anneau",
+    "lemme d'Euclide",
+    "factorisation unique"
+  ],
+  "methods": [
+    "calcul de conjugué",
+    "calcul de norme",
+    "recherche de couples de Bézout",
+    "factorisation d'éléments",
+    "vérification du lemme d'Euclide"
+  ],
+  "objects": [
+    "anneau ℤ[i√3]",
+    "élément a + bi√3",
+    "conjugué d'un élément",
+    "norme d'un élément",
+    "diviseurs de 1 + i√3",
+    "factorisations de 4"
+  ],
+  "content_hash": "d27b9f6ef932847ff4168b7ab58fc013d8cdd63049a98d367d53c040e7ce2922",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:23:03.305Z"
+}

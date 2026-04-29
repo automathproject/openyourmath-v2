@@ -1,0 +1,25 @@
+{
+  "uuid": "ZVps",
+  "source_path": "exo7/5-L2/ZVps.tex",
+  "summary": "On étudie une équation différentielle linéaire du second ordre à coefficients variables. On demande de montrer qu'une solution de cette équation est bornée au voisinage de l'infini.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "fonction de classe C^1",
+    "fonction strictement croissante",
+    "fonction strictement positive",
+    "bornitude des solutions"
+  ],
+  "methods": [
+    "étude de la fonction auxiliaire",
+    "analyse asymptotique",
+    "majoration"
+  ],
+  "objects": [
+    "solution d'équation différentielle",
+    "fonction auxiliaire z",
+    "fonction a(t)"
+  ],
+  "content_hash": "8701e7c02ef529eacb54d032dc03a5c9d7c7921211c5429b525ed08d4c9c622a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:34:27.190Z"
+}

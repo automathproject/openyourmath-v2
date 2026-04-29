@@ -1,0 +1,25 @@
+{
+  "uuid": "uvWZ",
+  "source_path": "exo7/16-L3/uvWZ.tex",
+  "summary": "L'exercice demande de démontrer que l'application linéaire fractionnaire associée à une matrice de SL(2,ℝ) préserve le demi-plan de Poincaré ℍ, puis de montrer que tout point de ℍ peut être atteint par une telle application partant de i.",
+  "concepts": [
+    "application linéaire fractionnaire",
+    "demi-plan de Poincaré",
+    "groupe SL(2,ℝ)",
+    "fonction holomorphe",
+    "action de groupe"
+  ],
+  "methods": [
+    "calcul matriciel",
+    "propriétés de préservation de domaine",
+    "construction explicite d'éléments"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "application rationnelle",
+    "demi-plan supérieur"
+  ],
+  "content_hash": "9d1cca06115270fdbc481f3608f714e2f567f7dc35928c67a4d5ada50770e49a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:43:49.993Z"
+}

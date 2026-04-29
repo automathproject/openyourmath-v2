@@ -1,0 +1,30 @@
+{
+  "uuid": "RgwX",
+  "source_path": "exo7/1-L1/RgwX.tex",
+  "summary": "L'exercice demande de montrer qu'un ensemble de polynômes de degré inférieur ou égal à n forme un sous-espace vectoriel et de déterminer une base pour cet espace. Ensuite, il s'agit d'étudier la linéarité, l'injectivité, la surjectivité et les noyaux de trois applications définies sur l'espace des polynômes, ainsi que leurs restrictions à l'espace des polynômes de degré n.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "base d'un espace vectoriel",
+    "application linéaire",
+    "injectivité",
+    "surjectivité",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire"
+  ],
+  "methods": [
+    "vérification des propriétés de sous-espace vectoriel",
+    "détermination d'une base",
+    "vérification de la linéarité",
+    "calcul de noyau et d'image",
+    "restriction d'application"
+  ],
+  "objects": [
+    "espace vectoriel de polynômes",
+    "polynôme de degré n",
+    "application linéaire",
+    "matrice d'application linéaire"
+  ],
+  "content_hash": "d65bb3bd75aec0e9cfa13b0dc91aa709b7091e063310c6775cd9f9c0bd967bc3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:58:17.098Z"
+}

@@ -1,33 +1,31 @@
 {
   "uuid": "rTQd",
   "source_path": "exo7/6-L2/rTQd.tex",
-  "summary": "Trouver une équation cartésienne d'une surface S définie comme l'ensemble des points M de l'espace tels que le cercle passant par M et centré sur la droite x=y=z coupe cette droite. La surface est ensuite analysée par diagonalisation de sa forme quadratique associée.",
+  "summary": "L'exercice demande de déterminer l'équation cartésienne de la surface de révolution obtenue en faisant tourner une droite donnée autour d'une autre droite dans l'espace. Le contexte géométrique implique des transformations et des intersections de surfaces.",
   "concepts": [
-    "équation cartésienne de surface",
-    "intersection de surfaces",
+    "surface de révolution",
+    "équation cartésienne",
+    "géométrie affine",
     "forme quadratique",
-    "diagonalisation de matrice",
     "valeurs propres",
-    "changement de repère",
-    "quadrique",
+    "diagonalisation",
     "hyperboloïde à une nappe"
   ],
   "methods": [
-    "résolution de système d'équations",
-    "élimination de paramètres",
-    "diagonalisation",
-    "changement de base",
-    "analyse des valeurs propres"
+    "rotation d'une droite autour d'une autre",
+    "intersection de surfaces",
+    "calcul de valeurs propres",
+    "diagonalisation de matrice",
+    "simplification d'équation"
   ],
   "objects": [
-    "sphère",
-    "plan",
-    "cercle",
-    "droite de l'espace",
+    "droite affine",
+    "surface de révolution",
     "matrice symétrique",
-    "repère orthonormé"
+    "forme quadratique",
+    "hyperboloïde"
   ],
-  "content_hash": "8836dc898c301f38d21d329b1a8481d7c3415b88e866795fca31c73cf35a7281",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:41:36.450Z"
+  "content_hash": "fb54c840a509b3437bf7a1f3389d769a761fce8b4e580b1063e9d518ad1e5eea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:09:20.862Z"
 }

@@ -1,0 +1,26 @@
+{
+  "uuid": "vGRr",
+  "source_path": "exo7/10-L3/vGRr.tex",
+  "summary": "L'exercice demande de prouver qu'un groupe d'ordre p²q (où p et q sont des nombres premiers) ne peut pas être simple, puis d'appliquer ce résultat pour montrer qu'un groupe d'ordre 63 n'est pas simple.",
+  "concepts": [
+    "groupe fini",
+    "groupe simple",
+    "ordre d'un groupe",
+    "théorème de Sylow",
+    "action de groupe",
+    "théorème de Cauchy"
+  ],
+  "methods": [
+    "analyse des sous-groupes de Sylow",
+    "utilisation des théorèmes de Sylow",
+    "action de groupe sur un ensemble"
+  ],
+  "objects": [
+    "groupe d'ordre p²q",
+    "groupe d'ordre 63",
+    "sous-groupes de Sylow"
+  ],
+  "content_hash": "6300468d0a782f32af1da932c5270bc1ab075be275a8a9cde87381d2da76d236",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:02:10.872Z"
+}

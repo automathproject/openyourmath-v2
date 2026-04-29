@@ -1,0 +1,27 @@
+{
+  "uuid": "jspm",
+  "source_path": "exo7/5-L2/jspm.tex",
+  "summary": "Calculer le volume de domaines définis par l'intersection de surfaces de révolution (cylindre, boule, cône) ou par rotation d'un disque autour d'une droite.",
+  "concepts": [
+    "intégrale multiple",
+    "coordonnées cylindriques",
+    "géométrie différentielle",
+    "symétrie de révolution",
+    "volume de révolution"
+  ],
+  "methods": [
+    "intégration en coordonnées cylindriques",
+    "changement de variables",
+    "calcul de volume par rotation"
+  ],
+  "objects": [
+    "cylindre de révolution",
+    "boule",
+    "cône de révolution",
+    "disque",
+    "tore de révolution"
+  ],
+  "content_hash": "44895e36560cf3f9683ed0325d04bbc9f83605bf3dc706b99e391acd919708e2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:46:56.295Z"
+}

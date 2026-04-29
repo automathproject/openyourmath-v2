@@ -1,0 +1,25 @@
+{
+  "uuid": "IyP3",
+  "source_path": "exo7/6-L2/IyP3.tex",
+  "summary": "On considère un plan P et une droite D formant un angle θ modulo π. L'exercice demande de montrer que pour toute droite Δ contenue dans P, l'angle entre D et Δ est supérieur ou égal à θ, et de déterminer les conditions d'égalité.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "angle entre deux droites",
+    "plan et droite dans l'espace",
+    "cosinus d'un angle",
+    "relation d'inclusion entre droites"
+  ],
+  "methods": [
+    "calcul d'angle entre droites",
+    "utilisation de la fonction cosinus",
+    "analyse de cas d'égalité"
+  ],
+  "objects": [
+    "plan",
+    "droite",
+    "angle"
+  ],
+  "content_hash": "7aa0001df163e8060f10a80e00c861fea35b288b08cadac077283579260e6e3a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:32:03.989Z"
+}

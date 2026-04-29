@@ -1,0 +1,26 @@
+{
+  "uuid": "FNXI",
+  "source_path": "exo7/2-L1/FNXI.tex",
+  "summary": "On considère deux fonctions continues sur un intervalle [a,b], l'une décroissante et l'autre bornée entre 0 et 1. On définit une fonction G comme l'intégrale de g à partir de a. L'exercice demande de démontrer une inégalité entre deux intégrales impliquant ces fonctions.",
+  "concepts": [
+    "intégrale de Riemann",
+    "fonction continue",
+    "fonction décroissante",
+    "inégalité intégrale",
+    "théorème de la moyenne",
+    "changement de variable"
+  ],
+  "methods": [
+    "intégration par parties",
+    "comparaison d'intégrales",
+    "utilisation de la décroissance"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrale définie",
+    "fonction G"
+  ],
+  "content_hash": "c111ecca955cc46318c092ee8c06fa5c575b4fc62783bf5c1b64ef8a0e262edd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:33:06.342Z"
+}

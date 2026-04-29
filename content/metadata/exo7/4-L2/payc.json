@@ -1,0 +1,30 @@
+{
+  "uuid": "payc",
+  "source_path": "exo7/4-L2/payc.tex",
+  "summary": "Déterminer le noyau d'une matrice 3x3 donnée. L'énoncé demande d'identifier l'ensemble des vecteurs solutions de l'équation matricielle Ax=0.",
+  "concepts": [
+    "noyau d'une matrice",
+    "système linéaire homogène",
+    "espace vectoriel",
+    "rang d'une matrice",
+    "combinaison linéaire",
+    "matrice augmentée",
+    "pivot de Gauss",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "réduction par lignes",
+    "pivot de Gauss",
+    "résolution de système linéaire",
+    "calcul de noyau"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "vecteur colonne",
+    "système linéaire homogène",
+    "noyau"
+  ],
+  "content_hash": "55aba7dbaa3a84f492c16dbea2aec0ea7ee63058394ad163c482abe8cc4034c6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:11:31.318Z"
+}

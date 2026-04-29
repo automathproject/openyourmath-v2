@@ -1,0 +1,25 @@
+{
+  "uuid": "DIEv",
+  "source_path": "exo7/4-L2/DIEv.tex",
+  "summary": "L'exercice demande de déterminer les conditions sur les paramètres a, b et c pour qu'un système linéaire de trois équations à trois inconnues ait au moins une solution, puis de vérifier si ce système peut avoir une solution unique.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "théorème de Rouché-Frobenius",
+    "incompatibilité d'un système",
+    "solution unique"
+  ],
+  "methods": [
+    "calcul du déterminant",
+    "réduction de matrice",
+    "analyse de la compatibilité"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "paramètres réels"
+  ],
+  "content_hash": "a5c1b6753c4596315c113275445dcf42579d1dc6cd4876be16a57d654adcd5b3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:38:44.513Z"
+}

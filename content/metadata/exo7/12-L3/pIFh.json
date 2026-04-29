@@ -1,0 +1,29 @@
+{
+  "uuid": "pIFh",
+  "source_path": "exo7/12-L3/pIFh.tex",
+  "summary": "L'exercice étudie un ensemble Ω de points du plan ℝ² pour lesquels l'itération d'une application F(x,y) = (x² + y², y²) converge vers l'origine. On demande de caractériser Ω par une propriété d'invariance sous F, puis d'étudier ses propriétés topologiques (intérieur, connexité).",
+  "concepts": [
+    "différentiabilité",
+    "convergence de suite",
+    "ensemble ouvert",
+    "connexité",
+    "application itérée",
+    "norme d'opérateur",
+    "propriété d'invariance"
+  ],
+  "methods": [
+    "étude de la convergence",
+    "calcul de la différentielle",
+    "estimation de la norme",
+    "analyse des propriétés topologiques"
+  ],
+  "objects": [
+    "application de ℝ² dans ℝ²",
+    "ensemble Ω",
+    "différentielle F'",
+    "suite itérée F^(k)"
+  ],
+  "content_hash": "2377a2f74cba35bf1dc46090784695bc49c707c600ce91b7e0ac86195569b6fe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:30:56.954Z"
+}

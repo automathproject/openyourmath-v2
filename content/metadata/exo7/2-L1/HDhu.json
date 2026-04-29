@@ -1,0 +1,27 @@
+{
+  "uuid": "HDhu",
+  "source_path": "exo7/2-L1/HDhu.tex",
+  "summary": "Montrer que le polynôme P_n, défini comme la n-ième dérivée de (1-t²)ⁿ, est de degré n avec des racines réelles, simples et comprises dans l'intervalle [-1,1].",
+  "concepts": [
+    "théorème de Rolle",
+    "dérivation successive",
+    "racines d'un polynôme",
+    "ordre d'une racine",
+    "polynôme de degré n",
+    "racines réelles simples"
+  ],
+  "methods": [
+    "application itérée du théorème de Rolle",
+    "dérivation multiple",
+    "analyse des racines"
+  ],
+  "objects": [
+    "polynôme P_n",
+    "fonction Q_n(t) = (1-t²)ⁿ",
+    "racines réelles",
+    "intervalle [-1,1]"
+  ],
+  "content_hash": "70b0ffab904979d5ee01171812e63b6130b64bc2e087a4504698ce4ddbb9fa0f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:02:28.904Z"
+}

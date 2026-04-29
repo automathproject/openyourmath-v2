@@ -258,6 +258,27 @@ async function main() {
   const startTime = Date.now();
   const runAt = new Date().toISOString();
 
+  function flushJournal() {
+    if (journalErreurs.length === 0) return;
+    try {
+      fs.mkdirSync(path.dirname(ERRORS_LOG_PATH), { recursive: true });
+      fs.writeFileSync(
+        ERRORS_LOG_PATH,
+        JSON.stringify({ run_at: runAt, total: toProcess.length, erreurs: journalErreurs }, null, 2),
+        'utf-8'
+      );
+    } catch (writeErr) {
+      console.warn(`⚠️  Impossible d'écrire le journal d'erreurs : ${writeErr.message}`);
+    }
+  }
+
+  process.once('SIGINT', () => {
+    console.log('\n⚠️  Interruption — journal sauvegardé.');
+    flushJournal();
+    db.close();
+    process.exit(130);
+  });
+
   for (let i = 0; i < toProcess.length; i++) {
     const row = toProcess[i];
     const num  = `[${i + 1}/${toProcess.length}]`;
@@ -284,20 +305,7 @@ async function main() {
         at:       new Date().toISOString()
       });
       errors++;
-    }
-  }
-
-  // Persister le journal d'erreurs
-  if (journalErreurs.length > 0) {
-    try {
-      fs.mkdirSync(path.dirname(ERRORS_LOG_PATH), { recursive: true });
-      fs.writeFileSync(
-        ERRORS_LOG_PATH,
-        JSON.stringify({ run_at: runAt, total: toProcess.length, erreurs: journalErreurs }, null, 2),
-        'utf-8'
-      );
-    } catch (writeErr) {
-      console.warn(`⚠️  Impossible d'écrire le journal d'erreurs : ${writeErr.message}`);
+      flushJournal();
     }
   }
 

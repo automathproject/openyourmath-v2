@@ -1,0 +1,25 @@
+{
+  "uuid": "Vg02",
+  "source_path": "exo7/4-L2/Vg02.tex",
+  "summary": "Calculer le déterminant d'une matrice complexe A de taille n×n, dépendant de paramètres a₀, ..., aₙ₋₁, et d'une variable x. La matrice A est une matrice de Toeplitz avec une structure particulière.",
+  "concepts": [
+    "déterminant",
+    "matrice de Toeplitz",
+    "développement de Laplace",
+    "déterminant par blocs",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "développement suivant une colonne",
+    "déterminant par blocs",
+    "calcul de polynôme caractéristique"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme",
+    "variable complexe"
+  ],
+  "content_hash": "03fd3ede9a05101eca5192902ffa0d3ddb67c572a5cd69f5bd4257a62080dda3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:52:58.793Z"
+}

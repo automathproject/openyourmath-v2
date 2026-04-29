@@ -1,0 +1,24 @@
+{
+  "uuid": "3MPH",
+  "source_path": "exo7/4-L2/3MPH.tex",
+  "summary": "L'exercice présente la table de multiplication d'un groupe fini à 4 éléments. Il demande de déterminer l'ordre de l'élément a, c'est-à-dire le plus petit entier k tel que a^k soit l'élément neutre.",
+  "concepts": [
+    "groupe fini",
+    "table de multiplication",
+    "ordre d'un élément",
+    "élément neutre",
+    "structure de groupe"
+  ],
+  "methods": [
+    "analyse de la table de multiplication",
+    "recherche de l'ordre par itération"
+  ],
+  "objects": [
+    "table de multiplication",
+    "élément a",
+    "élément neutre"
+  ],
+  "content_hash": "5e4875349b100cf7a3adbfd989fe196c911dde0b0cd087deceb2f67886e704be",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:16:50.156Z"
+}

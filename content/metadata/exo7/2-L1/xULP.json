@@ -1,28 +1,27 @@
 {
   "uuid": "xULP",
   "source_path": "exo7/2-L1/xULP.tex",
-  "summary": "L'exercice demande de montrer qu'une fonction croissante sur un intervalle borné est Riemann-intégrable en utilisant la notion de subdivision régulière.",
+  "summary": "Montrer qu'une fonction monotone sur un intervalle [a, b] est Riemann-intégrable en utilisant la définition de l'intégrale de Riemann.",
   "concepts": [
     "intégrabilité de Riemann",
-    "fonction croissante",
+    "fonction monotone",
     "subdivision d'un intervalle",
     "somme de Riemann",
-    "inégalité de Riemann",
-    "fonction décroissante"
+    "limite d'une suite",
+    "continuité"
   ],
   "methods": [
-    "construction de subdivision régulière",
+    "construction d'une subdivision régulière",
     "calcul des bornes inférieures et supérieures",
-    "estimation de l'erreur d'intégration",
-    "transformation de fonction"
+    "estimation de la différence entre sommes supérieure et inférieure"
   ],
   "objects": [
-    "fonction croissante",
-    "intervalle borné",
+    "fonction monotone",
+    "intervalle [a, b]",
     "subdivision régulière",
     "somme de Riemann"
   ],
-  "content_hash": "e70c1bce3973e2776a1640ddf867bb4789fa9c3610dcc3d7fe156f397211b390",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:36:37.809Z"
+  "content_hash": "65e09964a5b1fa450896631eb79e8ae7c33801febbcc88ee7a69f344010ea67d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:54:06.573Z"
 }

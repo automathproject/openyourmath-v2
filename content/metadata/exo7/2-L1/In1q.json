@@ -1,0 +1,25 @@
+{
+  "uuid": "In1q",
+  "source_path": "exo7/2-L1/In1q.tex",
+  "summary": "On considère une fonction convexe et dérivable f définie sur ℝ. On donne un développement limité de f en 0 et on demande de montrer que f est deux fois dérivable en 0 et d'exprimer sa dérivée seconde en 0 en fonction du coefficient c.",
+  "concepts": [
+    "fonction convexe",
+    "dérivabilité",
+    "développement limité",
+    "dérivée seconde",
+    "inégalité de convexité"
+  ],
+  "methods": [
+    "encadrement par les taux d'accroissements",
+    "utilisation de la convexité",
+    "calcul de la dérivée seconde"
+  ],
+  "objects": [
+    "fonction convexe dérivable",
+    "développement limité",
+    "dérivée seconde"
+  ],
+  "content_hash": "f5227d1a26c7ba0a5df662dd4812d5d01c65e9589ada04dedcb2eb62a1f658ca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:03:15.058Z"
+}

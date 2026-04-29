@@ -1,0 +1,26 @@
+{
+  "uuid": "zjJZ",
+  "source_path": "exo7/1-L1/zjJZ.tex",
+  "summary": "L'exercice demande de prouver qu'il n'existe pas deux entiers m et n dont la somme est 101 et dont le plus grand commun diviseur est 3.",
+  "concepts": [
+    "algèbre dans Z",
+    "plus grand commun diviseur",
+    "divisibilité",
+    "entiers naturels",
+    "algorithme d'Euclide",
+    "propriétés arithmétiques"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des propriétés du pgcd",
+    "analyse des diviseurs"
+  ],
+  "objects": [
+    "entiers naturels",
+    "pgcd",
+    "somme d'entiers"
+  ],
+  "content_hash": "115ecb0079e34858d778ae8d0e934359ebbea1515e41efc5c94aaa4df91b7609",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:12:27.807Z"
+}

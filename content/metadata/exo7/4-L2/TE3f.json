@@ -1,0 +1,27 @@
+{
+  "uuid": "TE3f",
+  "source_path": "exo7/4-L2/TE3f.tex",
+  "summary": "Dans un espace euclidien de dimension n, on considère deux hyperplans H et K avec leurs symétries associées s_H et s_K. L'exercice demande de prouver que ces symétries commutent si et seulement si H est égal à K ou si l'orthogonal de H est inclus dans K.",
+  "concepts": [
+    "espace euclidien",
+    "hyperplan",
+    "symétrie orthogonale",
+    "orthogonal d'un sous-espace",
+    "commutativité d'applications linéaires",
+    "produit scalaire"
+  ],
+  "methods": [
+    "manipulation de relations d'inclusion",
+    "utilisation des propriétés des symétries orthogonales",
+    "analyse de la commutativité"
+  ],
+  "objects": [
+    "espace euclidien",
+    "hyperplans",
+    "symétries orthogonales",
+    "sous-espaces orthogonaux"
+  ],
+  "content_hash": "c9c57a3dba9cdfbdc7edb79cadf5218dd2d7a85e53d8980d451ceba45a944e2e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:26:22.206Z"
+}

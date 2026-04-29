@@ -1,0 +1,27 @@
+{
+  "uuid": "CyXG",
+  "source_path": "exo7/1-L1/CyXG.tex",
+  "summary": "Calcul de sommes doubles sur des indices avec des contraintes d'ordre, en exploitant la représentation géométrique de la zone du plan couverte par ces indices.",
+  "concepts": [
+    "somme double",
+    "indice d'itération",
+    "contrainte d'ordre",
+    "représentation géométrique",
+    "symétrie des indices"
+  ],
+  "methods": [
+    "somme par lignes",
+    "somme par colonnes",
+    "somme par diagonales",
+    "changement de variable"
+  ],
+  "objects": [
+    "somme double",
+    "indices i et j",
+    "contraintes d'inégalité",
+    "variable k"
+  ],
+  "content_hash": "13957d348d7e0fd49f10ef8b1f1952e8662f449bbb62c5e05b48ef69c0e7ebed",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:07:38.039Z"
+}

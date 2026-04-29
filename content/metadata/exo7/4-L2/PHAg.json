@@ -1,0 +1,27 @@
+{
+  "uuid": "PHAg",
+  "source_path": "exo7/4-L2/PHAg.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des formes linéaires sur l'espace des matrices carrées est engendré par des formes linéaires associées à des matrices, puis d'établir des relations entre les ensembles de matrices symétriques et antisymétriques et leurs orthogonaux.",
+  "concepts": [
+    "forme linéaire",
+    "espace dual",
+    "orthogonal d'un sous-espace",
+    "matrice symétrique",
+    "matrice antisymétrique",
+    "trace d'une matrice"
+  ],
+  "methods": [
+    "utilisation de la trace",
+    "caractérisation de l'orthogonal",
+    "linéarité"
+  ],
+  "objects": [
+    "espace des matrices carrées",
+    "forme linéaire sur un espace de matrices",
+    "ensemble des matrices symétriques",
+    "ensemble des matrices antisymétriques"
+  ],
+  "content_hash": "68a32d3e1f301b923b555d8f22fdfb9e6b26e823ea718758622b24a8dfe0418d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:55:58.346Z"
+}

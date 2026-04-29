@@ -1,0 +1,27 @@
+{
+  "uuid": "h2lp",
+  "source_path": "exo7/10-L3/h2lp.tex",
+  "summary": "L'exercice demande de déterminer quels ensembles donnés forment des sous-groupes dans le groupe multiplicatif des entiers modulo 11.",
+  "concepts": [
+    "sous-groupe",
+    "groupe multiplicatif",
+    "entiers modulo n",
+    "élément neutre",
+    "inverse multiplicatif",
+    "fermeture"
+  ],
+  "methods": [
+    "vérification des propriétés de sous-groupe",
+    "identification de l'élément neutre",
+    "recherche d'inverses"
+  ],
+  "objects": [
+    "groupe multiplicatif Z/11Z",
+    "ensembles de nombres",
+    "élément neutre 1",
+    "inverses multiplicatifs"
+  ],
+  "content_hash": "c0672a30e0d89721e7a34a422e1a0701715928b6db26c3221072f5ac18a0646d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:52:20.132Z"
+}

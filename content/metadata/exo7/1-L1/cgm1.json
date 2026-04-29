@@ -1,0 +1,23 @@
+{
+  "uuid": "cgm1",
+  "source_path": "exo7/1-L1/cgm1.tex",
+  "summary": "L'exercice demande de calculer les produits de matrices AB puis (AB)C, puis BC puis A(BC), et d'observer une propriété sur ces produits.",
+  "concepts": [
+    "produit de matrices",
+    "associativité du produit matriciel",
+    "dimension de matrices",
+    "compatibilité des produits"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "vérification de la compatibilité des dimensions"
+  ],
+  "objects": [
+    "matrice 3x4",
+    "matrice 4x2",
+    "matrice 2x3"
+  ],
+  "content_hash": "6648fbb38216c2747c75fecef51beaf8f41bd0572895222880461d26992aeded",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:07:38.685Z"
+}

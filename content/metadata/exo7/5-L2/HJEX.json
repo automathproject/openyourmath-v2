@@ -1,0 +1,25 @@
+{
+  "uuid": "HJEX",
+  "source_path": "exo7/5-L2/HJEX.tex",
+  "summary": "L'exercice demande de montrer que les solutions d'une équation différentielle linéaire du second ordre sont de la forme H(x)e^{-x^2/2} où H est développable en série entière, puis de déterminer les valeurs de λ pour lesquelles H est un polynôme non nul.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "développement en série entière",
+    "fonction polynomiale",
+    "rayon de convergence",
+    "espace vectoriel de solutions"
+  ],
+  "methods": [
+    "méthode des coefficients indéterminés",
+    "analyse des termes de plus haut degré",
+    "détermination du rayon de convergence"
+  ],
+  "objects": [
+    "équation différentielle du second ordre",
+    "fonction H(x)",
+    "polynôme"
+  ],
+  "content_hash": "063c4877bea61079dd500f08bd6df9664ba5ad04582d4b184f3f20598ce9c891",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:22:46.123Z"
+}

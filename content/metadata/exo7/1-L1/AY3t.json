@@ -1,0 +1,25 @@
+{
+  "uuid": "AY3t",
+  "source_path": "exo7/1-L1/AY3t.tex",
+  "summary": "On définit une fonction f de [0,1] dans [0,1] qui échange les rationnels et irrationnels. On demande de prouver que la composée de f avec elle-même est l'application identité.",
+  "concepts": [
+    "fonction définie par cas",
+    "composition de fonctions",
+    "application identité",
+    "rationnel",
+    "irrationnel",
+    "inclusion d'ensembles"
+  ],
+  "methods": [
+    "étude par cas",
+    "vérification directe"
+  ],
+  "objects": [
+    "fonction de [0,1] dans [0,1]",
+    "ensemble des rationnels",
+    "ensemble des irrationnels"
+  ],
+  "content_hash": "77c6766449186d8c9d7d0f68e9798e30759ef84ba0267ea99d96a1f2dff5e20d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:16:02.443Z"
+}

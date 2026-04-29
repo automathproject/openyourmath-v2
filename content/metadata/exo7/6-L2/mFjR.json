@@ -1,0 +1,29 @@
+{
+  "uuid": "mFjR",
+  "source_path": "exo7/6-L2/mFjR.tex",
+  "summary": "Construire un octogone convexe régulier ayant un côté donné [AB]. L'indication précise que deux solutions existent et donne une condition angulaire sur le centre O.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "octogone régulier",
+    "angle au centre",
+    "angle inscrit",
+    "théorème de l'angle au centre",
+    "médiatrice d'un segment",
+    "construction géométrique"
+  ],
+  "methods": [
+    "construction géométrique",
+    "utilisation de la médiatrice",
+    "calcul d'angle central"
+  ],
+  "objects": [
+    "octogone régulier",
+    "segment [AB]",
+    "centre O",
+    "triangle isocèle rectangle",
+    "cercle"
+  ],
+  "content_hash": "3220bfa4b1603a09399c4885dff0b33c3a0a383186668bf6ea107e8ac9ed5b30",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:54:59.460Z"
+}

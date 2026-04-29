@@ -1,0 +1,28 @@
+{
+  "uuid": "OgJl",
+  "source_path": "exo7/4-L2/OgJl.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice symétrique définie comme le produit d'une matrice par sa transposée a des valeurs propres positives et de démontrer une égalité entre la somme de ces valeurs propres et la somme des carrés des coefficients de la matrice. Il demande ensuite de déterminer une condition nécessaire et suffisante pour qu'une matrice symétrique puisse s'exprimer comme produit d'une matrice par sa transposée, avec une application numérique.",
+  "concepts": [
+    "matrice symétrique",
+    "valeur propre",
+    "produit matriciel",
+    "transposée d'une matrice",
+    "inversibilité d'une matrice",
+    "condition nécessaire et suffisante"
+  ],
+  "methods": [
+    "diagonalisation",
+    "calcul de valeurs propres",
+    "analyse de la positivité des valeurs propres",
+    "condition de Cholesky"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice symétrique",
+    "valeurs propres",
+    "matrice inversible"
+  ],
+  "content_hash": "9298c3a0927c0e03dad9241b8c21913994cc28c6e7ba9ea1be7d3bf8df625470",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:55:18.084Z"
+}

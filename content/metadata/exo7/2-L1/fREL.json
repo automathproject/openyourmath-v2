@@ -1,0 +1,27 @@
+{
+  "uuid": "fREL",
+  "source_path": "exo7/2-L1/fREL.tex",
+  "summary": "L'exercice demande de montrer qu'il existe un difféomorphisme croissant C^1 entre deux polynômes non constants à coefficients dominants positifs si et seulement si leurs dérivées ont le même nombre de racines avec les mêmes multiplicités et que les valeurs des polynômes en ces points sont égales.",
+  "concepts": [
+    "difféomorphisme",
+    "polynôme",
+    "racine d'une fonction",
+    "multiplicité d'une racine",
+    "développement limité",
+    "continuité et dérivabilité"
+  ],
+  "methods": [
+    "analyse des racines de la dérivée",
+    "utilisation des développements limités",
+    "étude des limites",
+    "intégration de développements limités"
+  ],
+  "objects": [
+    "polynômes P et Q",
+    "racines des dérivées P' et Q'",
+    "difféomorphisme f"
+  ],
+  "content_hash": "caf5f4379506e56daacdcc07dec52c9a89077d83c13a2a04c9608ef0222f3105",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:36:51.681Z"
+}

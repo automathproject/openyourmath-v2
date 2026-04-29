@@ -1,0 +1,25 @@
+{
+  "uuid": "b1TB",
+  "source_path": "exo7/4-L2/b1TB.tex",
+  "summary": "Calculer le déterminant d'une matrice B obtenue en multipliant chaque élément de la matrice A par (-1)^(i+j), où i et j sont les indices de ligne et colonne.",
+  "concepts": [
+    "déterminant",
+    "permutation",
+    "signature d'une permutation",
+    "forme multilinéaire",
+    "matrice carrée"
+  ],
+  "methods": [
+    "développement du déterminant",
+    "manipulation de lignes et colonnes",
+    "utilisation des propriétés des déterminants"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "permutation"
+  ],
+  "content_hash": "77e220d48aeee198eac5368e41cbeba2a4df3c0fa423d858007806be10311e12",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:58:13.701Z"
+}

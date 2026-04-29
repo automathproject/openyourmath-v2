@@ -1,0 +1,25 @@
+{
+  "uuid": "0gkJ",
+  "source_path": "exo7/1-L1/0gkJ.tex",
+  "summary": "Montrer qu'un nombre premier n divise pas le coefficient binomial C(n,p) pour tout p dans {1,...,n-1}.",
+  "concepts": [
+    "nombre premier",
+    "coefficient binomial",
+    "divisibilité dans Z",
+    "arithmétique modulaire",
+    "théorème de Fermat",
+    "propriétés des nombres premiers"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des propriétés des coefficients binomiaux",
+    "arithmétique modulaire"
+  ],
+  "objects": [
+    "nombre premier n",
+    "coefficient binomial C(n,p)"
+  ],
+  "content_hash": "a14afe37c8a005bc9ee683e4af5def547069ba0af732d5d998dc261f1b048e1c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:59:48.448Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "Vid2",
+  "source_path": "exo7/4-L2/Vid2.tex",
+  "summary": "Soient deux matrices symétriques définies positives A et B. Montrer que le déterminant de leur somme est supérieur ou égal à la somme de leurs déterminants.",
+  "concepts": [
+    "matrice symétrique",
+    "matrice définie positive",
+    "déterminant",
+    "changement de base",
+    "valeurs propres",
+    "inégalité de Minkowski pour les déterminants"
+  ],
+  "methods": [
+    "diagonalisation",
+    "changement de variable",
+    "utilisation des valeurs propres"
+  ],
+  "objects": [
+    "matrices symétriques",
+    "déterminant",
+    "valeurs propres"
+  ],
+  "content_hash": "0bfa3dbfec17ca1c16ab186f746e3b46947ec53ba875aa1778de611d5c9ad994",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:30:44.120Z"
+}

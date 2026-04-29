@@ -1,0 +1,27 @@
+{
+  "uuid": "Qbu0",
+  "source_path": "exo7/6-L2/Qbu0.tex",
+  "summary": "L'exercice étudie une suite de polygones obtenus en prenant successivement les milieux des côtés. On demande de montrer que chaque sommet de la suite de polygones converge vers le barycentre du polygone initial.",
+  "concepts": [
+    "barycentre",
+    "convergence",
+    "suite de polygones",
+    "géométrie affine",
+    "milieu d'un segment",
+    "réduction de la distance"
+  ],
+  "methods": [
+    "expression récursive des sommets",
+    "calcul des coefficients barycentriques",
+    "analyse de la convergence"
+  ],
+  "objects": [
+    "polygone",
+    "suite de polygones",
+    "sommets",
+    "barycentre"
+  ],
+  "content_hash": "35b0256c876c03ebb0e331109908be2b9317e15d688e2190f27c01a9ac2432ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:52:20.251Z"
+}

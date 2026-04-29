@@ -1,0 +1,23 @@
+{
+  "uuid": "kwiG",
+  "source_path": "exo7/1-L1/kwiG.tex",
+  "summary": "On considère un ensemble de cardinal n muni d'une relation d'équivalence ayant k classes d'équivalence et r couples ordonnés en relation. On demande de montrer l'inégalité n² ≤ kr.",
+  "concepts": [
+    "relation d'équivalence",
+    "classe d'équivalence",
+    "cardinal d'un ensemble",
+    "inégalité combinatoire"
+  ],
+  "methods": [
+    "utilisation des propriétés des relations d'équivalence",
+    "comptage des couples ordonnés"
+  ],
+  "objects": [
+    "ensemble fini",
+    "relation binaire",
+    "classes de congruence"
+  ],
+  "content_hash": "f73d098d091fcc2bce9cba8fe3fc7996ec54616c32ee3710c1446c0da0a2e532",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:49:16.101Z"
+}

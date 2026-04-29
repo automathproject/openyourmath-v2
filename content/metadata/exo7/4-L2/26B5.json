@@ -1,0 +1,29 @@
+{
+  "uuid": "26B5",
+  "source_path": "exo7/4-L2/26B5.tex",
+  "summary": "L'exercice demande de déterminer les ordres possibles des éléments du groupe multiplicatif d'un corps fini, de compter le nombre d'éléments pour chaque ordre, et d'identifier tous les générateurs de ce groupe.",
+  "concepts": [
+    "groupe multiplicatif d'un corps fini",
+    "ordre d'un élément",
+    "générateur d'un groupe cyclique",
+    "corps fini",
+    "structure de groupe",
+    "théorème de Lagrange",
+    "diviseurs de l'ordre du groupe"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul des diviseurs",
+    "identification des générateurs",
+    "utilisation de la structure cyclique"
+  ],
+  "objects": [
+    "groupe multiplicatif",
+    "éléments du groupe",
+    "ordres des éléments",
+    "générateurs du groupe"
+  ],
+  "content_hash": "4642afa1a8634bc1869594952fc14184b8ca337aee707988be8284e83750a744",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:15:03.699Z"
+}

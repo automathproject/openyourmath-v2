@@ -1,33 +1,31 @@
 {
   "uuid": "ETmS",
   "source_path": "exo7/10-L3/ETmS.tex",
-  "summary": "L'exercice demande de montrer que l'anneau quotient ℤ₃[X]/X²+1 est un corps, noté ℤ₉, et d'en étudier les propriétés algébriques. Il s'agit ensuite d'analyser un automorphisme de corps d'ordre 2 et des relations entre des applications linéaires définies sur ℤ₉.",
+  "summary": "L'exercice demande de montrer que l'anneau quotient ℤ₃[X]/X²+1 est un corps, noté ℤ₉, et d'étudier ses propriétés structurelles. Il explore les bases de ℤ₉ comme espace vectoriel sur ℤ₃, les automorphismes de corps, et les formes hermitiennes sur un espace vectoriel sur ℤ₉.",
   "concepts": [
-    "corps fini",
     "anneau quotient",
+    "corps fini",
+    "espace vectoriel",
     "automorphisme de corps",
-    "espace vectoriel sur un corps",
-    "forme quadratique",
     "forme hermitienne",
-    "sous-espace totalement isotrope",
-    "cône isotrope"
+    "polarisation",
+    "sous-espace totalement isotrope"
   ],
   "methods": [
-    "construction d'un corps fini",
-    "vérification des axiomes de corps",
-    "calcul de l'ordre d'un automorphisme",
-    "détermination d'une base d'espace vectoriel",
-    "polarisation d'une forme quadratique"
+    "construction de base",
+    "calcul d'automorphisme",
+    "détermination de forme quadratique",
+    "polarisation de forme quadratique"
   ],
   "objects": [
     "anneau quotient ℤ₃[X]/X²+1",
+    "corps ℤ₉",
+    "base (1, ξ)",
     "automorphisme σ",
-    "applications ℓ₁ et ℓ₂",
-    "forme σ-hermitienne h",
-    "forme quadratique q",
-    "sous-espaces totalement isotropes"
+    "forme σ-hermitienne",
+    "forme quadratique"
   ],
-  "content_hash": "24c1cf303c79d835e400b30b62bdc39cc195dd82289e533394b63146cdba1ddb",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:07:27.579Z"
+  "content_hash": "7b428f988085c12a7c5a84ebd481a1b2dfa40f3891264acd4bd96d583b15a9a7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:32:31.609Z"
 }

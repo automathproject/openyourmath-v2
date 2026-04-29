@@ -1,0 +1,28 @@
+{
+  "uuid": "0yTD",
+  "source_path": "exo7/5-L2/0yTD.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction définie comme la norme euclidienne sur un espace vectoriel réel est différentiable en tout point hors de l'origine et de préciser sa différentielle. Il faut aussi prouver que cette fonction n'est pas différentiable en l'origine.",
+  "concepts": [
+    "différentiabilité",
+    "norme euclidienne",
+    "forme linéaire",
+    "inégalité de Cauchy-Schwarz",
+    "continuité",
+    "développement limité"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "approximation affine",
+    "utilisation de l'inégalité de Cauchy-Schwarz",
+    "analyse de la limite"
+  ],
+  "objects": [
+    "fonction de plusieurs variables",
+    "espace vectoriel euclidien",
+    "norme",
+    "différentielle"
+  ],
+  "content_hash": "cca0d7881b24b4cf72929b3c3c9eee86429f243b6a34519bff013a40e4ccf345",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:39:39.214Z"
+}

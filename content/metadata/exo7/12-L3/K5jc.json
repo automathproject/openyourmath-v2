@@ -1,0 +1,24 @@
+{
+  "uuid": "K5jc",
+  "source_path": "exo7/12-L3/K5jc.tex",
+  "summary": "L'exercice demande de montrer qu'une équation implicite définit une fonction $z = \\phi(x,y)$ au voisinage d'un point donné et de déterminer un développement limité de cette fonction à l'ordre 2.",
+  "concepts": [
+    "théorème des fonctions implicites",
+    "difféomorphisme",
+    "développement limité",
+    "fonction implicite",
+    "inversion locale"
+  ],
+  "methods": [
+    "linéarisation",
+    "calcul de jacobienne",
+    "développement de Taylor"
+  ],
+  "objects": [
+    "fonction de trois variables",
+    "développement limité d'ordre 2"
+  ],
+  "content_hash": "41df3fcb405a7a82a9bcb6ab4883e732d12d7b9f75dd5e9cc9888619d5ce04e7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:15:27.310Z"
+}

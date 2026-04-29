@@ -1,0 +1,26 @@
+{
+  "uuid": "f3Ya",
+  "source_path": "exo7/1-L1/f3Ya.tex",
+  "summary": "L'exercice demande de résoudre une équation diophantienne linéaire en trouvant tous les couples d'entiers (x, y) qui la satisfont, puis de compter ceux où x et y sont compris entre 0 et 4000.",
+  "concepts": [
+    "équation diophantienne",
+    "algèbre linéaire",
+    "divisibilité dans Z",
+    "théorème de Bézout",
+    "pgcd",
+    "algorithme d'Euclide"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "résolution d'équation diophantienne",
+    "recherche de solutions bornées"
+  ],
+  "objects": [
+    "équation linéaire à coefficients entiers",
+    "pgcd",
+    "solutions entières"
+  ],
+  "content_hash": "d0f13274675967fea0fd34eeac670b4a5428ccb5cce760ed2908953013685128",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:08:56.910Z"
+}

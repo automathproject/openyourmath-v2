@@ -1,0 +1,29 @@
+{
+  "uuid": "agSB",
+  "source_path": "exo7/4-L2/agSB.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des matrices M_{a,b} non nulles forme un groupe sous la multiplication matricielle et que l'application f définie par f(M_{a,b}) = a² + b² est un morphisme de groupes.",
+  "concepts": [
+    "groupe",
+    "loi de composition interne",
+    "élément neutre",
+    "élément inversé",
+    "associativité",
+    "morphisme de groupes",
+    "structure de groupe"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "détermination de l'élément neutre",
+    "recherche de l'inverse",
+    "vérification de la compatibilité du morphisme"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "ensemble de matrices",
+    "application définie sur un ensemble de matrices",
+    "groupe multiplicatif"
+  ],
+  "content_hash": "86b155d2b538d2c87d4a5ab32fde14e4cd95c677b607badfe0289367e9030ce4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:58:10.242Z"
+}

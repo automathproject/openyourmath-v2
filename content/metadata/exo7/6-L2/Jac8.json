@@ -1,0 +1,28 @@
+{
+  "uuid": "Jac8",
+  "source_path": "exo7/6-L2/Jac8.tex",
+  "summary": "Dans un triangle ABC non isocèle en A, les bissectrices intérieure et extérieure en A recoupent le cercle circonscrit respectivement en I et J. Montrer que I et J appartiennent à la médiatrice de [BC].",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "bissectrice d'angle",
+    "cercle circonscrit",
+    "médiatrice d'un segment",
+    "angles inscrits",
+    "propriétés des quadrilatères cycliques"
+  ],
+  "methods": [
+    "utilisation des angles inscrits",
+    "propriétés des bissectrices",
+    "symétrie par rapport à la médiatrice"
+  ],
+  "objects": [
+    "triangle",
+    "bissectrices intérieure et extérieure",
+    "cercle circonscrit",
+    "médiatrice de [BC]",
+    "points I et J"
+  ],
+  "content_hash": "7aabe23c40a141803b96a2df6901e2dd0c9d187a542ced9af193dcea1aa3245c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:32:19.399Z"
+}

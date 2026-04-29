@@ -1,0 +1,27 @@
+{
+  "uuid": "hXDA",
+  "source_path": "exo7/10-L3/hXDA.tex",
+  "summary": "L'exercice demande de démontrer que les ensembles $\\mathbb{Z}[i\\sqrt{3}]$ et $\\mathbb{Z}[i\\sqrt{5}]$ ne sont pas des anneaux factoriels.",
+  "concepts": [
+    "anneau factoriel",
+    "élément irréductible",
+    "décomposition unique",
+    "corps de nombres algébriques",
+    "anneau d'entiers",
+    "divisibilité dans les anneaux"
+  ],
+  "methods": [
+    "analyse des éléments irréductibles",
+    "contre-exemple de décomposition",
+    "utilisation de la norme dans les extensions quadratiques"
+  ],
+  "objects": [
+    "anneau $\\mathbb{Z}[i\\sqrt{3}]$",
+    "anneau $\\mathbb{Z}[i\\sqrt{5}]$",
+    "éléments irréductibles",
+    "décompositions en facteurs"
+  ],
+  "content_hash": "3995721ea5e69b3db79b94a6fd92e6942f81504ca90684bc7239e2d6e7eeb21a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:50:24.684Z"
+}

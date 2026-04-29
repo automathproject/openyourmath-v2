@@ -1,0 +1,26 @@
+{
+  "uuid": "FHHH",
+  "source_path": "exo7/15-L3/FHHH.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble D des réels de la forme p+q√2, avec p et q entiers, est dense dans ℝ. Il s'agit de prouver que tout intervalle non vide de ℝ contient un élément de D.",
+  "concepts": [
+    "densité d'un ensemble",
+    "stabilité par addition et multiplication",
+    "limite de suite",
+    "partie entière",
+    "topologie de ℝ"
+  ],
+  "methods": [
+    "approximation par des éléments de D",
+    "utilisation de la partie entière",
+    "étude de la convergence d'une suite"
+  ],
+  "objects": [
+    "ensemble D",
+    "intervalle de ℝ",
+    "suite (u^n)",
+    "entier m"
+  ],
+  "content_hash": "77efa82ee5ff80c13389b0a856569815cd9b5e81217feadcd36162fddb6fe74c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:22:46.635Z"
+}

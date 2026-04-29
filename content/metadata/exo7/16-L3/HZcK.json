@@ -1,0 +1,26 @@
+{
+  "uuid": "HZcK",
+  "source_path": "exo7/16-L3/HZcK.tex",
+  "summary": "L'exercice demande de déterminer les conditions sur les dérivées partielles des fonctions réelles P et Q pour que la fonction complexe f(z) = P(r, θ) + iQ(r, θ) soit holomorphe sur Ω = ℂ \\[0, +∞[. Il s'applique ensuite à montrer que la fonction logarithme complexe log z = log r + iθ est holomorphe sur Ω et à calculer sa dérivée.",
+  "concepts": [
+    "fonction holomorphe",
+    "dérivées partielles",
+    "conditions de Cauchy-Riemann",
+    "fonction logarithme complexe",
+    "forme exponentielle d'un complexe"
+  ],
+  "methods": [
+    "application des conditions de Cauchy-Riemann",
+    "calcul de dérivée complexe",
+    "vérification des conditions d'holomorphie"
+  ],
+  "objects": [
+    "fonction complexe",
+    "dérivées partielles",
+    "fonction logarithme",
+    "module et argument d'un complexe"
+  ],
+  "content_hash": "903f43dd1a6d73ac84d34a5b3669372f4a06ef7ffb21014c6c8d043f6d4b6b20",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:48:43.845Z"
+}

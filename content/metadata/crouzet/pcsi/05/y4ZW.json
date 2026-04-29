@@ -1,0 +1,29 @@
+{
+  "uuid": "y4ZW",
+  "source_path": "crouzet/pcsi/05/y4ZW.tex",
+  "summary": "L'exercice demande de montrer qu'une application f définie sur l'intervalle [0,1] est bijective, puis d'en déduire que [0,1] et ]0,1[ sont en bijection. L'application f modifie les fractions 1/n en 1/(n+1) et laisse inchangés les autres points.",
+  "concepts": [
+    "bijection",
+    "injectivité",
+    "surjectivité",
+    "raisonnement par cas",
+    "ensemble dénombrable",
+    "ensemble dense",
+    "partition d'ensemble"
+  ],
+  "methods": [
+    "raisonnement par disjonction de cas",
+    "preuve d'injectivité",
+    "preuve de surjectivité",
+    "utilisation de la partition d'un ensemble"
+  ],
+  "objects": [
+    "application définie sur un intervalle",
+    "ensemble des fractions 1/n",
+    "intervalle [0,1]",
+    "intervalle ]0,1["
+  ],
+  "content_hash": "7ba4492a40692ed0a6d70c683bb738fd3f4f29510acf2b69626cc483ff75a842",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:09:50.950Z"
+}

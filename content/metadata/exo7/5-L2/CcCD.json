@@ -1,0 +1,25 @@
+{
+  "uuid": "CcCD",
+  "source_path": "exo7/5-L2/CcCD.tex",
+  "summary": "Calculer la limite d'une intégrale de Riemann dépendant d'un paramètre lorsque le paramètre tend vers l'infini. L'intégrale fait intervenir la fonction sin(x) élevée à la puissance n divisée par x+2, sur l'intervalle [0, π/2].",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "limite de fonctions",
+    "convergence uniforme",
+    "intégrale impropre",
+    "fonction trigonométrique"
+  ],
+  "methods": [
+    "comparaison d'intégrales",
+    "majoration/minoration",
+    "théorème de convergence dominée"
+  ],
+  "objects": [
+    "intégrale paramétrique",
+    "fonction sin(x)",
+    "limite infinie"
+  ],
+  "content_hash": "1aec05c4b7653ac7fc077b3fa32f920aa37cf2c2bdf2ff0618952018f0c01bbf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:30:26.462Z"
+}

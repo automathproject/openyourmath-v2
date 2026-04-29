@@ -1,0 +1,24 @@
+{
+  "uuid": "tcjy",
+  "source_path": "exo7/2-L1/tcjy.tex",
+  "summary": "Montrer l'existence d'un point où la dérivée n-ième d'une fonction s'annule, sous des conditions de dérivabilité et d'annulation en n+1 points.",
+  "concepts": [
+    "théorème de Rolle",
+    "dérivabilité",
+    "continuité",
+    "changement de signe",
+    "dérivée n-ième"
+  ],
+  "methods": [
+    "application itérative du théorème de Rolle",
+    "analyse des changements de signe"
+  ],
+  "objects": [
+    "fonction n fois dérivable",
+    "dérivée n-ième continue",
+    "points d'annulation"
+  ],
+  "content_hash": "08f1fc429bae21f7a5a7e87cc4d6e72fb5d4aeb34f4f1d2d3b300225a67d4ea8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:21:48.987Z"
+}

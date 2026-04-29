@@ -1,0 +1,28 @@
+{
+  "uuid": "tYrP",
+  "source_path": "exo7/4-L2/tYrP.tex",
+  "summary": "Calculer les déterminants de plusieurs matrices carrées de tailles variées (2x2, 3x3, 4x4). L'exercice demande d'appliquer différentes méthodes de calcul selon la structure de la matrice.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "matrice carrée",
+    "matrice triangulaire",
+    "matrice diagonale",
+    "opérations élémentaires sur les lignes et colonnes",
+    "développement par rapport à une ligne ou une colonne"
+  ],
+  "methods": [
+    "règle de Sarrus",
+    "réduction à une matrice triangulaire ou diagonale",
+    "développement par rapport à une ligne ou une colonne",
+    "simplification par opérations sur les lignes ou colonnes"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "matrice 3x3",
+    "matrice 4x4",
+    "déterminant"
+  ],
+  "content_hash": "56bab0346d0c291d0d62a473a2b93e5ae0696576fc6af2ebb2b2bff952828b8b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:16:27.195Z"
+}

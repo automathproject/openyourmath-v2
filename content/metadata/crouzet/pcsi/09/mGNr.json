@@ -1,0 +1,22 @@
+{
+  "uuid": "mGNr",
+  "source_path": "crouzet/pcsi/09/mGNr.tex",
+  "summary": "L'exercice demande de démontrer par récurrence que la suite définie par u₀=1 et uₙ₊₁=√(2+uₙ) est bornée entre 0 et 2 et qu'elle est croissante.",
+  "concepts": [
+    "principe de récurrence",
+    "suite définie par récurrence",
+    "fonction croissante",
+    "bornes de suite"
+  ],
+  "methods": [
+    "récurrence forte",
+    "utilisation de la croissance de la racine carrée"
+  ],
+  "objects": [
+    "suite numérique",
+    "relation de récurrence"
+  ],
+  "content_hash": "990c35b8d7b325672ad0dcbe98a6a012fe6f0eb2a916d8e711b6d2af7871d795",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:34:33.427Z"
+}

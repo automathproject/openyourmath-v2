@@ -1,0 +1,27 @@
+{
+  "uuid": "Llxq",
+  "source_path": "exo7/16-L3/Llxq.tex",
+  "summary": "On étudie une fonction continue dans un secteur angulaire du plan complexe. On suppose que zf(z) tend vers une limite A quand |z| tend vers l'infini dans ce secteur. On demande de montrer que l'intégrale de f(z) le long d'un arc de cercle de rayon R tend vers 2iαA quand R tend vers l'infini.",
+  "concepts": [
+    "intégrale de fonction complexe",
+    "limite en module infini",
+    "continuité dans un secteur angulaire",
+    "formule de Cauchy",
+    "convergence uniforme",
+    "théorème de Goursat"
+  ],
+  "methods": [
+    "estimation d'intégrale",
+    "changement de variable",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction complexe",
+    "secteur angulaire",
+    "cercle de rayon R",
+    "intégrale curviligne"
+  ],
+  "content_hash": "8746d0e3230498080195f57a556c2eac5219022cd44ccc67eeb68bdcbe7e6885",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:34:40.761Z"
+}

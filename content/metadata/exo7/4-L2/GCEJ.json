@@ -1,0 +1,28 @@
+{
+  "uuid": "GCEJ",
+  "source_path": "exo7/4-L2/GCEJ.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des fonctions polynomiales de degré inférieur ou égal à k de R² dans R est un espace vectoriel de dimension finie et de déterminer sa dimension. Il étudie ensuite les bases du dual de ces espaces et établit des formules d'intégration sur un triangle pour des fonctions polynomiales de degré 1 et 2.",
+  "concepts": [
+    "espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "fonction polynomiale",
+    "dual d'un espace vectoriel",
+    "intégrale double",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul de dimension",
+    "construction de base duale",
+    "formule d'intégration par partition"
+  ],
+  "objects": [
+    "fonction polynomiale de R² dans R",
+    "espace vectoriel E_k",
+    "base duale",
+    "triangle ABC",
+    "intégrale sur un triangle"
+  ],
+  "content_hash": "c43f6370c21092763fe6cfa934910bfc8f55cbb5874deaaf91fbbe18772dbd87",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:51:56.197Z"
+}

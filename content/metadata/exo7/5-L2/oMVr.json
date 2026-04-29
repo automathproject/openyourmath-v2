@@ -1,0 +1,26 @@
+{
+  "uuid": "oMVr",
+  "source_path": "exo7/5-L2/oMVr.tex",
+  "summary": "Montrer que la norme L2 d'une solution d'une équation différentielle linéaire X' = AX, où A est une matrice symétrique définie positive, est une fonction croissante sur R.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "matrice symétrique définie positive",
+    "dérivée d'une fonction composée",
+    "inégalité de forme quadratique",
+    "norme L2"
+  ],
+  "methods": [
+    "calcul de la dérivée",
+    "utilisation de la définition de la dérivée",
+    "analyse de la positivité de la dérivée"
+  ],
+  "objects": [
+    "solution d'équation différentielle",
+    "fonction norme L2",
+    "matrice A",
+    "fonction g(t) = ||X(t)||_2^2"
+  ],
+  "content_hash": "d0cba2c160d624faed659d4c24062291ed713ec65576dc3373b2cab3cdb161cd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:46:12.658Z"
+}

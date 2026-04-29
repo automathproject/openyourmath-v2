@@ -1,0 +1,25 @@
+{
+  "uuid": "j9IH",
+  "source_path": "exo7/1-L1/j9IH.tex",
+  "summary": "Déterminer le nombre de mots distincts formés de 3 consonnes et 2 voyelles, en excluant ceux avec 3 consonnes consécutives.",
+  "concepts": [
+    "permutation",
+    "combinaison",
+    "principe de dénombrement",
+    "arrangement",
+    "cardinal d'un ensemble"
+  ],
+  "methods": [
+    "calcul de combinaisons",
+    "calcul de permutations",
+    "méthode de dénombrement par cas"
+  ],
+  "objects": [
+    "ensemble de voyelles",
+    "ensemble de consonnes",
+    "mot de longueur 5"
+  ],
+  "content_hash": "f76f8b95f69db8125efeed2252ec85f81d3795114e876eabab347229d35ea291",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:48:35.897Z"
+}

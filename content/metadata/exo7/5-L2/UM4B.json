@@ -1,0 +1,24 @@
+{
+  "uuid": "UM4B",
+  "source_path": "exo7/5-L2/UM4B.tex",
+  "summary": "Calculer l'aire d'un domaine délimité par une courbe d'équation x^(2/3) + y^(2/3) = a^(2/3) dans le plan.",
+  "concepts": [
+    "intégrale multiple",
+    "formule de Green",
+    "changement de variable",
+    "aire d'un domaine plan"
+  ],
+  "methods": [
+    "changement de coordonnées",
+    "intégration par parties",
+    "application de la formule de Green"
+  ],
+  "objects": [
+    "courbe algébrique",
+    "domaine plan",
+    "aire"
+  ],
+  "content_hash": "d5afef024ac18ff4ff2618c79b7316509a66eb5c069b21d2b1f65bd5013c2670",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:39:57.911Z"
+}

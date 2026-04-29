@@ -1,0 +1,25 @@
+{
+  "uuid": "yfRF",
+  "source_path": "exo7/2-L1/yfRF.tex",
+  "summary": "L'exercice demande de prouver que les dérivées intermédiaires d'une fonction de classe C^n bornée sur ℝ sont aussi bornées, en utilisant la formule de Taylor-Lagrange à l'ordre 2 pour le cas n=2 et une référence à un exercice précédent pour le cas général.",
+  "concepts": [
+    "formule de Taylor-Lagrange",
+    "dérivées bornées",
+    "fonction de classe C^n",
+    "bornitude des dérivées",
+    "développement limité"
+  ],
+  "methods": [
+    "application de la formule de Taylor-Lagrange",
+    "raisonnement par récurrence",
+    "utilisation de bornes supérieures"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "dérivées successives",
+    "polynôme de Taylor"
+  ],
+  "content_hash": "bad25831e6660476c3d0283ce1092e7f230609ac062d2df1b04b75cf275befb9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:44:27.267Z"
+}

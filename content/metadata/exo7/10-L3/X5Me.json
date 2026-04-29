@@ -1,0 +1,30 @@
+{
+  "uuid": "X5Me",
+  "source_path": "exo7/10-L3/X5Me.tex",
+  "summary": "L'exercice demande de déterminer si le groupe des isométries d'un polygone régulier à n côtés (n > 3) dans un plan euclidien est résoluble.",
+  "concepts": [
+    "groupe d'isométries",
+    "groupe dérivé",
+    "groupe résoluble",
+    "morphisme de groupes",
+    "rotation",
+    "symétrie orthogonale",
+    "isobarycentre"
+  ],
+  "methods": [
+    "analyse des propriétés des isométries",
+    "étude du déterminant des transformations",
+    "calcul du groupe dérivé",
+    "utilisation de la structure du groupe diédral"
+  ],
+  "objects": [
+    "groupe diédral D_{2n}",
+    "isométries affines",
+    "rotations",
+    "symétries orthogonales",
+    "isobarycentre"
+  ],
+  "content_hash": "16c57f9fea15e4a335e388ff7501c9fd86a2f980de2b2a4f15bd16be306e7c05",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:22:38.307Z"
+}

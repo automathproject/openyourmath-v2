@@ -1,0 +1,24 @@
+{
+  "uuid": "AvSg",
+  "source_path": "exo7/4-L2/AvSg.tex",
+  "summary": "Trouver toutes les matrices carrées réelles M telles que M fois la transposée de M fois M au carré soit égale à la matrice identité.",
+  "concepts": [
+    "matrice symétrique",
+    "matrice définie positive",
+    "diagonalisation",
+    "base orthonormale",
+    "matrice identité"
+  ],
+  "methods": [
+    "diagonalisation",
+    "examen de la forme diagonale"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice transposée",
+    "matrice identité"
+  ],
+  "content_hash": "04a4cab9d8b3298eba7a90fec3053b5e69911de8a60cc60163f7cbd391ac8c35",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:06:45.468Z"
+}

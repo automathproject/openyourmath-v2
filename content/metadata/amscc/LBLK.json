@@ -1,0 +1,30 @@
+{
+  "uuid": "LBLK",
+  "source_path": "amscc/LBLK.tex",
+  "summary": "L'exercice étudie la continuité, la différentiabilité et la classe C^1 d'une fonction de deux variables en un point. La fonction est définie par une expression rationnelle sauf en (0,0) où elle vaut 0.",
+  "concepts": [
+    "continuité en un point",
+    "dérivées partielles",
+    "différentiabilité",
+    "classe C^1",
+    "changement de coordonnées polaires",
+    "taux d'accroissement",
+    "limite de fonctions"
+  ],
+  "methods": [
+    "passage en coordonnées polaires",
+    "calcul de dérivées partielles",
+    "étude des taux d'accroissement",
+    "majoration de fonctions",
+    "étude des limites selon différents chemins"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "dérivées partielles",
+    "taux d'accroissement",
+    "coordonnées polaires"
+  ],
+  "content_hash": "0c1f242911204cf6630aa20c0c4da55e0992109a3839a4d13ce67dad7833347e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:04:59.942Z"
+}

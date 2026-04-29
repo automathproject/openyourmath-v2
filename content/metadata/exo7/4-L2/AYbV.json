@@ -1,0 +1,25 @@
+{
+  "uuid": "AYbV",
+  "source_path": "exo7/4-L2/AYbV.tex",
+  "summary": "On considère une matrice orthogonale A de taille n×n à coefficients réels. On note A_ij le cofacteur de A associé à la position (i,j). L'exercice demande de prouver que le déterminant de A est strictement positif si et seulement si tous les coefficients a_ij de A et leurs cofacteurs associés A_ij ont le même signe.",
+  "concepts": [
+    "matrice orthogonale",
+    "cofacteur",
+    "déterminant",
+    "signe d'un nombre réel",
+    "équivalence logique"
+  ],
+  "methods": [
+    "manipulation de matrices",
+    "calcul de déterminant",
+    "analyse de signe"
+  ],
+  "objects": [
+    "matrice orthogonale",
+    "cofacteur",
+    "déterminant"
+  ],
+  "content_hash": "b48379ef5edd7393edd97ba7a3fd7dc478ec0cef22c429e6aa66a3a40bdbfe1e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:49:14.686Z"
+}

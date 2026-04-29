@@ -1,0 +1,23 @@
+{
+  "uuid": "yo06",
+  "source_path": "exo7/5-L2/yo06.tex",
+  "summary": "Calcul de l'aire d'un domaine D délimité par une courbe d'équation polaire ρ = a(1 + cos θ), où a > 0.",
+  "concepts": [
+    "coordonnées polaires",
+    "intégrale multiple",
+    "aire en coordonnées polaires",
+    "changement de variables"
+  ],
+  "methods": [
+    "intégration en coordonnées polaires",
+    "changement de variable polaire"
+  ],
+  "objects": [
+    "courbe polaire",
+    "domaine D",
+    "aire"
+  ],
+  "content_hash": "5b38e7b4a818028b0796b526135f9a4935924ab03a240e107488e45e731f0928",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:54:21.376Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "jxh8",
+  "source_path": "exo7/4-L2/jxh8.tex",
+  "summary": "Calcul du déterminant d'une matrice carrée de taille n×n avec une structure particulière : des zéros au-dessus de la diagonale principale, des -1 juste en dessous, et des coefficients a_i dans la dernière colonne.",
+  "concepts": [
+    "déterminant",
+    "développement par bloc",
+    "développement par rapport à une colonne",
+    "matrice triangulaire",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "développement de Laplace",
+    "développement par blocs",
+    "réduction de taille"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "polynôme"
+  ],
+  "content_hash": "48ba25bd3f91df765620864bacb703a32ccb38bc57061bdb18f17cf0d796acde",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:06:40.942Z"
+}

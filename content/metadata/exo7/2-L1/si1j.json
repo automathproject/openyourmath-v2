@@ -1,0 +1,31 @@
+{
+  "uuid": "si1j",
+  "source_path": "exo7/2-L1/si1j.tex",
+  "summary": "L'exercice demande de trouver une fonction de classe C^1 bijective de ]0,+∞[ sur ]0,+∞[ dont la dérivée est l'inverse de la fonction, sous la forme x ↦ c x^m. Il faut ensuite étudier les propriétés de cette fonction, notamment sa limite en 0, sa régularité, et l'unicité de son point fixe.",
+  "concepts": [
+    "fonction bijective",
+    "dérivée",
+    "inverse d'une fonction",
+    "point fixe",
+    "théorème des accroissements finis",
+    "limite de fonction",
+    "difféomorphisme"
+  ],
+  "methods": [
+    "résolution d'équation différentielle",
+    "étude de la limite",
+    "analyse de la bijectivité",
+    "démonstration par l'absurde",
+    "utilisation du théorème des accroissements finis"
+  ],
+  "objects": [
+    "fonction de classe C^1",
+    "fonction bijective",
+    "point fixe",
+    "limite de fonction",
+    "difféomorphisme"
+  ],
+  "content_hash": "3f797d380adf54da2bcf4d7d5296a1b76bcb7c56cb48eab85b7e8228795535ea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:21:29.250Z"
+}

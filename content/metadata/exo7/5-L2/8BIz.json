@@ -1,0 +1,29 @@
+{
+  "uuid": "8BIz",
+  "source_path": "exo7/5-L2/8BIz.tex",
+  "summary": "L'exercice demande de trouver les coefficients a et b d'une droite d'ajustement linéaire y = ax + b qui minimise la somme des carrés des écarts entre les points observés (x_i, y_i) et la droite. Il s'agit d'un problème classique de régression linéaire simple.",
+  "concepts": [
+    "régression linéaire",
+    "minimisation",
+    "dérivée partielle",
+    "inégalité de Cauchy-Schwarz",
+    "moyenne arithmétique",
+    "écart quadratique moyen",
+    "fonction de coût"
+  ],
+  "methods": [
+    "optimisation",
+    "calcul des dérivées partielles",
+    "résolution d'un système linéaire",
+    "application de l'inégalité de Cauchy-Schwarz"
+  ],
+  "objects": [
+    "droite d'ajustement",
+    "somme des carrés des écarts",
+    "moyennes empiriques",
+    "coefficients de régression"
+  ],
+  "content_hash": "cd00ee8831864a529c77861217f2d84696f1bd3456bd38fbed866cfa060c7086",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:45:34.460Z"
+}

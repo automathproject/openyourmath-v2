@@ -1,0 +1,28 @@
+{
+  "uuid": "2n0l",
+  "source_path": "exo7/16-L3/2n0l.tex",
+  "summary": "L'exercice demande de prouver une formule produit pour la fonction sinus complexe, puis d'établir une formule similaire pour le sinus décalé. Il s'agit ensuite de montrer la robustesse de ces formules face à des variations des bornes du produit et d'en déduire une formule produit pour la fonction cosinus.",
+  "concepts": [
+    "fonction sinus complexe",
+    "fonction cosinus complexe",
+    "produit infini",
+    "convergence absolue",
+    "fonction entière",
+    "produit de Weierstrass"
+  ],
+  "methods": [
+    "développement en produit infini",
+    "limite de produits",
+    "manipulation de produits infinis",
+    "déplacement d'indices"
+  ],
+  "objects": [
+    "fonction sinus",
+    "fonction cosinus",
+    "produit infini",
+    "variable complexe"
+  ],
+  "content_hash": "c9e797cb0af36ecf8b7a3c102cd82617478f1f667814c82a4127ff91ec785224",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:13:33.714Z"
+}

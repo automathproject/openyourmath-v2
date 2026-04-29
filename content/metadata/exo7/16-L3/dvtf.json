@@ -1,0 +1,31 @@
+{
+  "uuid": "dvtf",
+  "source_path": "exo7/16-L3/dvtf.tex",
+  "summary": "Cet exercice demande de démontrer une version raffinée du lemme de Goursat pour une fonction holomorphe sur un ouvert sauf en un point intérieur d'un triangle. L'objectif est de montrer que l'intégrale de la fonction sur le bord du triangle est nulle.",
+  "concepts": [
+    "fonction holomorphe",
+    "intégrale complexe",
+    "lemme de Goursat",
+    "continuité",
+    "convergence d'intégrales",
+    "propriété de Cauchy",
+    "déformation de contour",
+    "limite d'intégrales"
+  ],
+  "methods": [
+    "déformation de contour",
+    "passage à la limite",
+    "analyse de cas particuliers",
+    "utilisation de la continuité",
+    "approximation par des triangles"
+  ],
+  "objects": [
+    "triangle dans un ouvert",
+    "fonction continue et holomorphe",
+    "intégrale sur le bord d'un triangle",
+    "segments dans le plan complexe"
+  ],
+  "content_hash": "8469ace4e0f1d0d1f4c109bd2a8823b0c6fd86205dadfdce799d046859cc9e48",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:39:31.884Z"
+}

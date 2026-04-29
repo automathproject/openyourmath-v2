@@ -1,0 +1,30 @@
+{
+  "uuid": "NpIn",
+  "source_path": "exo7/4-L2/NpIn.tex",
+  "summary": "L'exercice demande de déterminer si le nombre 613 est premier, s'il peut s'écrire comme somme de deux carrés, et de réaliser des calculs modulaires et des divisions dans l'anneau des entiers de Gauss.",
+  "concepts": [
+    "nombre premier",
+    "théorème des deux carrés",
+    "division euclidienne",
+    "anneau des entiers de Gauss",
+    "racine modulaire",
+    "norme dans Z[i]",
+    "pgcd dans Z[i]"
+  ],
+  "methods": [
+    "test de primalité par division",
+    "calcul modulo",
+    "division euclidienne dans Z[i]",
+    "calcul de pgcd dans Z[i]",
+    "décomposition en somme de deux carrés"
+  ],
+  "objects": [
+    "nombre entier",
+    "entier de Gauss",
+    "racine modulaire",
+    "pgcd dans Z[i]"
+  ],
+  "content_hash": "ba395083255fd5d5590cc8801d397642c2e9a4299e6881d54c95de24a91540b8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:42:12.086Z"
+}

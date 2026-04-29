@@ -1,0 +1,25 @@
+{
+  "uuid": "Cm2B",
+  "source_path": "exo7/15-L3/Cm2B.tex",
+  "summary": "On considère une application f de ℝ dans ℝ dont l'ensemble des points où |f(x)| > a est fini pour tout a > 0. On demande de montrer que l'ensemble des zéros de f est dense dans ℝ, puis de vérifier cette propriété sur un exemple concret.",
+  "concepts": [
+    "espace topologique",
+    "densité d'un ensemble",
+    "application continue",
+    "ensemble fini",
+    "propriété topologique"
+  ],
+  "methods": [
+    "argument par densité",
+    "analyse de la continuité",
+    "étude des ensembles de niveau"
+  ],
+  "objects": [
+    "application de ℝ dans ℝ",
+    "ensemble des zéros d'une fonction",
+    "ensemble fini"
+  ],
+  "content_hash": "38a3100e0c2f655ab469b05bd88c7e7f69a0e16f989d9fb4971e21b016a7ea6e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:21:52.720Z"
+}

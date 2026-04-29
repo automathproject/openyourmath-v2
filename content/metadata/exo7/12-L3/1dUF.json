@@ -1,0 +1,25 @@
+{
+  "uuid": "1dUF",
+  "source_path": "exo7/12-L3/1dUF.tex",
+  "summary": "Trouver le point du plan défini par l'équation 2x - y + z = 16 qui est le plus proche de l'origine (0,0,0).",
+  "concepts": [
+    "extremum sous contrainte",
+    "distance euclidienne",
+    "plan affine",
+    "optimisation",
+    "multiplicateurs de Lagrange"
+  ],
+  "methods": [
+    "méthode des multiplicateurs de Lagrange",
+    "calcul de gradient",
+    "résolution de système linéaire"
+  ],
+  "objects": [
+    "point du plan",
+    "distance à l'origine",
+    "fonction de Lagrange"
+  ],
+  "content_hash": "acb9d0172b65030cd8e69e384bdac791d71c577ece8ef89f75447215e2eeaf6d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:28:54.302Z"
+}

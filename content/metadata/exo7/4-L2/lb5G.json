@@ -1,0 +1,28 @@
+{
+  "uuid": "lb5G",
+  "source_path": "exo7/4-L2/lb5G.tex",
+  "summary": "L'exercice demande de déterminer si le nombre 101 est premier, de trouver une racine carrée de -1 modulo 101, de calculer le PGCD dans l'anneau des entiers de Gauss, et d'exprimer 101 comme somme de deux carrés.",
+  "concepts": [
+    "nombre premier",
+    "racine carrée modulo n",
+    "anneau des entiers de Gauss",
+    "somme de deux carrés",
+    "algèbre des nombres complexes",
+    "théorème des restes quadratiques"
+  ],
+  "methods": [
+    "test de primalité",
+    "calcul de PGCD dans Z[i]",
+    "recherche de racines carrées modulo n",
+    "factorisation dans Z[i]"
+  ],
+  "objects": [
+    "nombre premier 101",
+    "racine carrée de -1 modulo 101",
+    "PGCD dans Z[i]",
+    "somme de deux carrés"
+  ],
+  "content_hash": "77c5214f0c26a46897131d2f7d285fcc9e7b09982f0165f49f9d68682775e872",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:09:46.980Z"
+}

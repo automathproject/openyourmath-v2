@@ -1,0 +1,26 @@
+{
+  "uuid": "yG07",
+  "source_path": "exo7/4-L2/yG07.tex",
+  "summary": "L'exercice demande de déterminer les coefficients a, b, c d'une fonction f(x) = ae^x + bx + c en utilisant des conditions géométriques sur son graphe : passage par un point donné, tangente en ce point passant par un autre point, et existence d'une tangente horizontale en un point spécifique.",
+  "concepts": [
+    "fonction exponentielle",
+    "tangente à une courbe",
+    "condition de passage par un point",
+    "dérivée",
+    "tangente horizontale"
+  ],
+  "methods": [
+    "calcul de la dérivée",
+    "utilisation des conditions de passage",
+    "résolution d'un système linéaire"
+  ],
+  "objects": [
+    "fonction de la forme ae^x + bx + c",
+    "tangente à une courbe",
+    "point de passage",
+    "point d'abscisse"
+  ],
+  "content_hash": "9b8023db4e526453d39e2d5a501b0e314e958267c3bcb07d78604b91897a1c26",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:20:26.899Z"
+}

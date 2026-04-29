@@ -1,0 +1,26 @@
+{
+  "uuid": "nFBM",
+  "source_path": "exo7/15-L3/nFBM.tex",
+  "summary": "L'exercice demande de démontrer qu'une distance définie sur les entiers naturels est une métrique pour laquelle l'espace est complet, puis de construire une suite de boules fermées emboîtées avec des rayons non nuls et d'intersection vide.",
+  "concepts": [
+    "espace métrique",
+    "complétude",
+    "distance",
+    "boule fermée",
+    "suite emboîtée",
+    "intersection vide"
+  ],
+  "methods": [
+    "vérification des axiomes de distance",
+    "construction explicite de suites",
+    "analyse de la complétude"
+  ],
+  "objects": [
+    "distance sur ℕ",
+    "suite de boules fermées",
+    "entiers naturels"
+  ],
+  "content_hash": "2899a7592776be316b71caba8ea2991c1722cccfc2f5b25582b757728d9149f0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:12:53.827Z"
+}

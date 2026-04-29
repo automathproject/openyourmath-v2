@@ -1,0 +1,26 @@
+{
+  "uuid": "8b30",
+  "source_path": "exo7/10-L3/8b30.tex",
+  "summary": "On considère un polynôme à coefficients dans ℤ ou ℤ/pℤ. On doit montrer que ce polynôme est irréductible et que ses racines forment un ensemble stable par translation dans ℤ/pℤ.",
+  "concepts": [
+    "polynôme irréductible",
+    "corps fini",
+    "extension d'anneau",
+    "racine d'un polynôme",
+    "algèbre sur un corps",
+    "théorème de Frobenius"
+  ],
+  "methods": [
+    "réduction modulo p",
+    "analyse des racines",
+    "critère d'irréductibilité"
+  ],
+  "objects": [
+    "polynôme X^p - X - 1",
+    "racine a dans ℤ/pℤ",
+    "élément k dans ℤ/pℤ"
+  ],
+  "content_hash": "35adeb848c382b4f9de737d978101be96f4944c55164d3131ccc516d78d5f3e6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:23:58.557Z"
+}

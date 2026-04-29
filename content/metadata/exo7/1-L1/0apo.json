@@ -1,0 +1,25 @@
+{
+  "uuid": "0apo",
+  "source_path": "exo7/1-L1/0apo.tex",
+  "summary": "L'exercice demande de prouver qu'une application linéaire f sur un espace vectoriel de dimension finie est nilpotente si tout vecteur x est annulé par une puissance de f. Il faut aussi fournir un contre-exemple en dimension infinie.",
+  "concepts": [
+    "application linéaire",
+    "nilpotence",
+    "espace vectoriel de dimension finie",
+    "espace vectoriel de dimension infinie",
+    "puissance d'une application linéaire"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la dimension finie",
+    "construction explicite de contre-exemple"
+  ],
+  "objects": [
+    "application linéaire nilpotente",
+    "espace vectoriel",
+    "vecteur"
+  ],
+  "content_hash": "f2a14f9cc54ba26fed818f578085f51dd9ee4a3bb9b3868079e25643cba6424f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:51:16.134Z"
+}

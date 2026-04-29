@@ -1,0 +1,26 @@
+{
+  "uuid": "2pOR",
+  "source_path": "amscc/2pOR.tex",
+  "summary": "L'exercice demande de calculer le déterminant d'une matrice 3x3, de vérifier une relation matricielle impliquant cette matrice, puis d'en déduire son inversibilité et son inverse.",
+  "concepts": [
+    "déterminant",
+    "inversibilité",
+    "matrice inverse",
+    "calcul matriciel",
+    "relation matricielle"
+  ],
+  "methods": [
+    "développement par la colonne",
+    "calcul de puissances de matrice",
+    "vérification d'une relation matricielle"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "déterminant",
+    "matrice nulle",
+    "matrice identité"
+  ],
+  "content_hash": "830504063c39aebf0d224eb5eadc2156fea4518a652e53ef41628cdb78f981c4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:40:04.288Z"
+}

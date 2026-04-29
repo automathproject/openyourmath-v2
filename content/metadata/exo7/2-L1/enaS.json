@@ -1,0 +1,25 @@
+{
+  "uuid": "enaS",
+  "source_path": "exo7/2-L1/enaS.tex",
+  "summary": "Soit une fonction dérivable sur un intervalle ouvert. On montre l'existence d'un h > 0 tel que la fonction admette une valeur intermédiaire entre ses dérivées en deux points distincts.",
+  "concepts": [
+    "dérivabilité",
+    "limite de fonction",
+    "théorème des valeurs intermédiaires",
+    "théorème de Darboux",
+    "continuité"
+  ],
+  "methods": [
+    "passage à la limite",
+    "application du théorème des valeurs intermédiaires",
+    "utilisation du théorème des accroissements finis"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "intervalle ouvert",
+    "dérivée en un point"
+  ],
+  "content_hash": "b9e7828b44eac62b0440f340752574af77eb5d0f01a5d1bf1f20b5445a72bf28",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:14:37.982Z"
+}

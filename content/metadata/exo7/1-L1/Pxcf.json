@@ -1,30 +1,28 @@
 {
   "uuid": "Pxcf",
   "source_path": "exo7/1-L1/Pxcf.tex",
-  "summary": "L'exercice demande de démontrer l'équivalence entre deux propriétés d'une application linéaire : être une homothétie et que pour tout vecteur, la famille (x, f(x)) soit liée. Le contexte est purement algébrique, sans application concrète.",
+  "summary": "L'exercice demande de démontrer qu'une application linéaire est une homothétie si et seulement si pour tout vecteur de l'espace, le vecteur et son image par l'application forment une famille liée.",
   "concepts": [
     "application linéaire",
     "famille liée",
     "homothétie",
     "base d'un espace vectoriel",
-    "droite vectorielle",
-    "scalaire",
-    "famille libre"
+    "famille libre",
+    "famille liée",
+    "espace vectoriel"
   ],
   "methods": [
     "raisonnement par cas",
     "utilisation de la linéarité",
-    "décomposition vectorielle",
-    "unicité de l'expression dans une base"
+    "analyse de la liberté/liaison des familles"
   ],
   "objects": [
     "application linéaire",
     "vecteur",
     "famille de vecteurs",
-    "scalaire",
-    "droite vectorielle"
+    "espace vectoriel"
   ],
-  "content_hash": "11de92d9b83f46b8361631307d2d271c7a5755dc43da0785ba8f1a23ba7289a9",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:11:29.414Z"
+  "content_hash": "c41cd51747523d627735c4e4de5188714cbb27bd1db99ff0507ed6eaa11a5bfd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:36:25.954Z"
 }

@@ -1,0 +1,28 @@
+{
+  "uuid": "ZFob",
+  "source_path": "exo7/4-L2/ZFob.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés relatives à la matrice de Gram de vecteurs dans un espace euclidien : l'égalité du rang de la matrice de Gram avec le rang des vecteurs, et l'invariance du déterminant de la matrice de Gram sous une transformation linéaire spécifique des vecteurs.",
+  "concepts": [
+    "espace vectoriel euclidien",
+    "matrice de Gram",
+    "rang d'une matrice",
+    "déterminant d'une matrice",
+    "distance à un sous-espace vectoriel",
+    "produit scalaire"
+  ],
+  "methods": [
+    "manipulation de matrices",
+    "calcul de rang",
+    "calcul de déterminant",
+    "projection orthogonale"
+  ],
+  "objects": [
+    "matrice de Gram",
+    "vecteurs d'un espace euclidien",
+    "sous-espace vectoriel",
+    "distance minimale"
+  ],
+  "content_hash": "67b43dedc0705714804e88b0ff75a4cd8942b0315c79d3d14b49dd8254c16036",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:35:11.070Z"
+}

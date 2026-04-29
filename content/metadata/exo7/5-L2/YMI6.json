@@ -1,0 +1,32 @@
+{
+  "uuid": "YMI6",
+  "source_path": "exo7/5-L2/YMI6.tex",
+  "summary": "L'exercice demande de montrer que le spectre d'un opérateur K défini sur un espace de fonctions C² s'annulant aux bornes d'un intervalle est inclus dans ]-∞,0[. Il s'agit ensuite de construire un produit scalaire pour lequel les vecteurs propres associés à des valeurs propres distinctes sont orthogonaux. Enfin, on étudie l'existence et les propriétés d'une solution unique à une équation différentielle linéaire du second ordre avec conditions initiales.",
+  "concepts": [
+    "équation différentielle linéaire du second ordre",
+    "spectre d'un opérateur",
+    "vecteurs propres",
+    "valeurs propres",
+    "produit scalaire",
+    "convexité",
+    "intégrale impropre",
+    "fonction convexe"
+  ],
+  "methods": [
+    "analyse de convexité",
+    "intégration par parties",
+    "construction de produit scalaire",
+    "résolution d'équation différentielle linéaire",
+    "étude des zéros de fonctions"
+  ],
+  "objects": [
+    "opérateur K",
+    "fonction C²",
+    "solution unique d'équation différentielle",
+    "suite de zéros",
+    "produit scalaire"
+  ],
+  "content_hash": "a97c68e147438e8a841c33f3e902caf9a231f2fe73ac6a2db3c454cb1783d9d6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:33:25.298Z"
+}

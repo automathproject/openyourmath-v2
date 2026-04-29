@@ -1,0 +1,27 @@
+{
+  "uuid": "lrjM",
+  "source_path": "exo7/1-L1/lrjM.tex",
+  "summary": "On considère un espace vectoriel de dimension finie E et deux applications linéaires f et g. On suppose que E est la somme des images de f et g, ainsi que la somme des noyaux de f et g. On demande de montrer que ces sommes sont directes.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "application linéaire",
+    "image d'une application linéaire",
+    "noyau d'une application linéaire",
+    "somme directe",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "utilisation de la formule du rang",
+    "manipulation de dimensions",
+    "démonstration par l'absurde"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "applications linéaires f et g",
+    "images Im(f) et Im(g)",
+    "noyaux Ker(f) et Ker(g)"
+  ],
+  "content_hash": "b671fa97768f261b07c973b5879fb5283267707c0df752ade2125960dc4faa27",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:07:28.771Z"
+}

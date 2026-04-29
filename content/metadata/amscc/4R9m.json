@@ -1,30 +1,27 @@
 {
   "uuid": "4R9m",
   "source_path": "amscc/4R9m.tex",
-  "summary": "L'exercice demande de déterminer et de décrire les courbes de niveaux de trois fonctions de deux variables différentes. Il s'agit d'identifier la forme géométrique des ensembles de points où la fonction prend une valeur constante.",
+  "summary": "L'exercice demande de déterminer les courbes de niveaux de trois fonctions de deux variables et d'en esquisser une représentation graphique. Les fonctions étudiées sont $f(x,y) = x+y-1$, $f(x,y) = e^{y-x^2}$ et $f(x,y) = \\ln(x+2y)$.",
   "concepts": [
     "courbe de niveau",
     "fonction de deux variables",
     "équation cartésienne",
-    "géométrie analytique",
-    "domaine de définition",
-    "continuité",
-    "représentation graphique"
+    "représentation graphique",
+    "domaine de définition"
   ],
   "methods": [
     "résolution d'équation implicite",
     "analyse de cas",
-    "représentation paramétrique",
-    "identification de formes géométriques"
+    "représentation paramétrique"
   ],
   "objects": [
-    "fonction de deux variables",
-    "droite",
-    "parabole",
+    "fonction affine",
     "fonction exponentielle",
-    "fonction logarithmique"
+    "fonction logarithmique",
+    "droite",
+    "parabole"
   ],
-  "content_hash": "3c8972028557f0d670079d28b797971374b23f0a2ee8f00254dc0a8e4c1568a1",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:03:07.724Z"
+  "content_hash": "fdca407d8adfb7e6c7c3423bafda2542d45d9a283985348fa0ba512cfafd25f5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:42:20.556Z"
 }

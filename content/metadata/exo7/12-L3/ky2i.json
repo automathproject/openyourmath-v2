@@ -1,0 +1,31 @@
+{
+  "uuid": "ky2i",
+  "source_path": "exo7/12-L3/ky2i.tex",
+  "summary": "L'exercice demande de démontrer une inégalité de contrôle sur la différence entre une fonction et son approximation affine en un point, puis d'étudier la convergence uniforme d'une suite de fonctions injectives. Le contexte est celui des applications différentiables sur un ouvert convexe de ℝⁿ.",
+  "concepts": [
+    "différentiabilité",
+    "injectivité",
+    "différentielle",
+    "convergence uniforme",
+    "théorème des accroissements finis",
+    "continuité",
+    "limite de suite"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "extraction de sous-suite",
+    "contradiction",
+    "approximation affine",
+    "estimation de reste"
+  ],
+  "objects": [
+    "application de classe C¹",
+    "différentielle",
+    "suite de fonctions",
+    "compact",
+    "points distincts"
+  ],
+  "content_hash": "4bb3df5552690c76c4c60bd54e997f17aa3fb0684f282bdaca17cb6387f9a4b3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:30:16.604Z"
+}

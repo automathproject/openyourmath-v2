@@ -1,29 +1,25 @@
 {
   "uuid": "LCEJ",
   "source_path": "exo7/1-L1/LCEJ.tex",
-  "summary": "L'exercice demande de montrer qu'une application linéaire f est nilpotente si pour tout vecteur x de l'espace E, il existe un entier p tel que f^p(x) = 0. Le corrigé distingue deux cas et utilise une base de E pour prouver l'existence d'un entier p uniforme.",
+  "summary": "L'exercice demande de montrer qu'une application linéaire f est nilpotente en utilisant une base de l'espace vectoriel E et en exploitant la propriété que f^p(x) = 0 pour un certain p indépendant de x.",
   "concepts": [
     "application linéaire",
     "endomorphisme",
     "nilpotence",
     "base d'un espace vectoriel",
-    "propriété universelle",
-    "puissance d'endomorphisme",
-    "annulateur"
+    "propriété universelle"
   ],
   "methods": [
-    "raisonnement par base",
-    "utilisation de la définition de la nilpotence",
-    "comparaison de quantificateurs",
-    "calcul de puissance d'application linéaire"
+    "utilisation d'une base",
+    "maximisation d'entiers",
+    "itération d'applications linéaires"
   ],
   "objects": [
-    "endomorphisme nilpotent",
-    "base d'espace vectoriel",
-    "puissance d'application linéaire",
-    "vecteur de l'espace"
+    "application linéaire nilpotente",
+    "base d'un espace vectoriel",
+    "entier naturel non nul"
   ],
-  "content_hash": "9c73893a01c7e0e32e233876c3edfdebd52f49e1f8c84865d5466d4b253ffe54",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:11:06.554Z"
+  "content_hash": "368c4d4a3d255feafb4dec89f2e1d64816d6b39218e966b490211baa077dfc44",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:35:41.800Z"
 }

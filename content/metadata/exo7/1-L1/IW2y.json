@@ -1,0 +1,28 @@
+{
+  "uuid": "IW2y",
+  "source_path": "exo7/1-L1/IW2y.tex",
+  "summary": "L'exercice demande d'étudier les sous-espaces noyau de deux applications linéaires construites à partir d'une application linéaire f donnée dans une base de E, puis de montrer que la réunion des bases de ces noyaux forme une base de E et de déterminer les matrices de f et f² dans cette nouvelle base.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel",
+    "matrice d'une application linéaire",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "calcul de noyau",
+    "détermination de base",
+    "construction de matrice"
+  ],
+  "objects": [
+    "application linéaire f",
+    "sous-espace noyau",
+    "base de E",
+    "matrice de f",
+    "matrice de f²"
+  ],
+  "content_hash": "3b89b3647f9a7aa8d909f5456d99e00ed3cc980d3f4ed6ccbdea8390a29bc3a4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:50:08.760Z"
+}

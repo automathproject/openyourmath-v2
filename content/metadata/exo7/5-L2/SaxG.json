@@ -1,0 +1,25 @@
+{
+  "uuid": "SaxG",
+  "source_path": "exo7/5-L2/SaxG.tex",
+  "summary": "Calculer la limite d'une somme double de produits de valeurs d'une fonction continue sur [0,1], normalisée par n².",
+  "concepts": [
+    "intégrale multiple",
+    "fonction continue",
+    "limite de suite",
+    "intégrale de Riemann",
+    "convergence uniforme"
+  ],
+  "methods": [
+    "approximation par des sommes de Riemann",
+    "changement de variable",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction continue",
+    "somme double",
+    "limite de suite"
+  ],
+  "content_hash": "f930eb0a8de17ce3067265e8f0ea430c9cfa66229e04e14e793b52c0421f212d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:38:54.846Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "HuGe",
+  "source_path": "exo7/5-L2/HuGe.tex",
+  "summary": "L'exercice demande de calculer les gradients de deux fonctions de plusieurs variables définies par des distances euclidiennes, puis de trouver les points minimisant trois expressions différentes impliquant ces distances dans le plan.",
+  "concepts": [
+    "gradient",
+    "distance euclidienne",
+    "extremum local",
+    "isobarycentre",
+    "point de Fermat",
+    "fonction de plusieurs variables"
+  ],
+  "methods": [
+    "calcul de gradient",
+    "optimisation sous contrainte",
+    "géométrie plane"
+  ],
+  "objects": [
+    "fonction scalaire",
+    "point du plan",
+    "distance euclidienne"
+  ],
+  "content_hash": "cf2882138647983210714b80f2ea5c6ad40f16e11cfac55aabcaea743bb5cce4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:54:28.337Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "C9uB",
+  "source_path": "exo7/2-L1/C9uB.tex",
+  "summary": "L'exercice demande de prouver qu'une courbe logarithmique et sa version transformée par un facteur a ont une unique tangente commune, puis de montrer qu'elles sont homothétiques.",
+  "concepts": [
+    "fonction logarithme",
+    "tangente à une courbe",
+    "homothétie",
+    "dérivabilité",
+    "équation de tangente",
+    "transformation affine"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "condition de tangence commune",
+    "identification de centre et rapport d'homothétie"
+  ],
+  "objects": [
+    "courbe d'équation y = ln x",
+    "courbe d'équation y = a ln x",
+    "tangente commune",
+    "point d'abscisse α"
+  ],
+  "content_hash": "27821166154a197480e6563e322e3a7765e9c015c3208da7b5f310bdd8c4c163",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:59:52.478Z"
+}

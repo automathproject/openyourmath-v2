@@ -1,0 +1,31 @@
+{
+  "uuid": "VuTl",
+  "source_path": "amscc/VuTl.tex",
+  "summary": "L'exercice demande de démontrer des inégalités algébriques, puis d'utiliser ces résultats pour minorer une fonction de deux variables et montrer qu'elle est coercive. Ensuite, il s'agit de prouver que les ensembles de niveau de cette fonction sont compacts pour des valeurs suffisantes, d'en déduire l'existence d'un minimum global, et d'analyser les points critiques de la fonction.",
+  "concepts": [
+    "inégalités algébriques",
+    "fonction coercive",
+    "compact",
+    "théorème des valeurs extrémales",
+    "convexité",
+    "points critiques",
+    "minimum global"
+  ],
+  "methods": [
+    "analyse-synthèse",
+    "calcul de la matrice hessienne",
+    "étude des valeurs propres",
+    "détermination des points critiques",
+    "évaluation de la convexité"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "inégalités",
+    "matrice hessienne",
+    "points critiques",
+    "ensemble de niveau"
+  ],
+  "content_hash": "6fe18431c4ab045502b12ae6e856efa91f4829ef48c179eaa11d6c2eebc56e58",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:04:37.329Z"
+}

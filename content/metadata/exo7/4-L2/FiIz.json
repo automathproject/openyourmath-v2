@@ -1,0 +1,27 @@
+{
+  "uuid": "FiIz",
+  "source_path": "exo7/4-L2/FiIz.tex",
+  "summary": "Calculer le déterminant de matrices spécifiques. L'exercice demande d'évaluer des déterminants de matrices particulières avec des motifs définis.",
+  "concepts": [
+    "déterminant",
+    "matrice",
+    "opérations sur les lignes et colonnes",
+    "déterminant triangulaire",
+    "rang d'une matrice",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "opérations élémentaires sur les lignes et colonnes",
+    "développement par rapport à une ligne ou colonne",
+    "réduction de matrice",
+    "utilisation de la récurrence"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant de matrice",
+    "polynôme"
+  ],
+  "content_hash": "d7b67ee1785d0da2d97f915616b28096e24af907082a8327e26da3ce54eecfd4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:41:32.008Z"
+}

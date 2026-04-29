@@ -1,0 +1,25 @@
+{
+  "uuid": "A8eu",
+  "source_path": "exo7/4-L2/A8eu.tex",
+  "summary": "On considère l'espace vectoriel des matrices carrées réelles d'ordre n et une application linéaire définie par la multiplication à gauche par une matrice fixe A. On demande de montrer que cette application est un endomorphisme et d'exprimer son déterminant en fonction de celui de A.",
+  "concepts": [
+    "endomorphisme",
+    "déterminant d'une application linéaire",
+    "espace vectoriel de matrices",
+    "multiplication matricielle",
+    "déterminant d'une matrice"
+  ],
+  "methods": [
+    "calcul du déterminant d'une application linéaire",
+    "propriétés du déterminant",
+    "linéarité"
+  ],
+  "objects": [
+    "matrice carrée",
+    "application linéaire",
+    "espace vectoriel de matrices"
+  ],
+  "content_hash": "053f5afd20e90bb7978a9049936426f911c4522a2ab80e8285d368138b0104a8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:36:11.029Z"
+}

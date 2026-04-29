@@ -1,0 +1,29 @@
+{
+  "uuid": "Ddhi",
+  "source_path": "exo7/4-L2/Ddhi.tex",
+  "summary": "Dans un espace euclidien de dimension n, on considère p endomorphismes autoadjoints dont la somme des formes quadratiques associées est la norme au carré et dont la somme des rangs est n. On demande de prouver que la somme de ces endomorphismes est l'identité, que leurs images forment une somme directe égale à l'espace, et que ces endomorphismes sont des projecteurs orthogonaux.",
+  "concepts": [
+    "endomorphisme autoadjoint",
+    "forme quadratique",
+    "somme directe de sous-espaces",
+    "projecteur orthogonal",
+    "orthogonalité",
+    "rang d'un endomorphisme",
+    "espace euclidien"
+  ],
+  "methods": [
+    "décomposition en somme directe",
+    "utilisation de l'autoadjonction",
+    "analyse des noyaux et images",
+    "calcul de dimensions"
+  ],
+  "objects": [
+    "endomorphisme autoadjoint",
+    "forme quadratique",
+    "sous-espaces vectoriels",
+    "projecteur orthogonal"
+  ],
+  "content_hash": "b187b4ab6ef7ca86476f77bbfcbb20f2cbff3ac5e36b022646b9586b0fc38f60",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:10:31.964Z"
+}

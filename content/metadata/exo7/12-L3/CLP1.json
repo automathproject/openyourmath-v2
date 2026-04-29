@@ -1,0 +1,25 @@
+{
+  "uuid": "CLP1",
+  "source_path": "exo7/12-L3/CLP1.tex",
+  "summary": "L'exercice demande de démontrer une inégalité liant la différence entre l'application f et sa différentielle en un point a, pour deux points a et b d'un ouvert convexe Ω. L'application f est de classe C¹ et injective sur Ω, avec une différentielle injective en tout point de Ω.",
+  "concepts": [
+    "théorème des accroissements finis",
+    "différentiabilité",
+    "classe C¹",
+    "injectivité",
+    "différentielle",
+    "convexité"
+  ],
+  "methods": [
+    "application du théorème des accroissements finis",
+    "estimation de la différence entre f et sa différentielle"
+  ],
+  "objects": [
+    "application de classe C¹",
+    "différentielle d'une application",
+    "segment [a,b]"
+  ],
+  "content_hash": "2efe848fbd0159db6152998471f4cb5b941366b036b446bd22ff491e6a006651",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:23:47.777Z"
+}

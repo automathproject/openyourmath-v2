@@ -1,0 +1,27 @@
+{
+  "uuid": "inWS",
+  "source_path": "exo7/5-L2/inWS.tex",
+  "summary": "L'exercice demande de déterminer des conditions nécessaires et suffisantes sur les coefficients a, b et c pour qu'une équation différentielle linéaire du second ordre homogène ait toutes ses solutions tendant vers 0 à l'infini ou toutes ses solutions périodiques.",
+  "concepts": [
+    "équation différentielle linéaire du second ordre",
+    "solution fondamentale",
+    "racines complexes",
+    "racines réelles",
+    "stabilité asymptotique",
+    "périodicité des solutions"
+  ],
+  "methods": [
+    "analyse des racines du polynôme caractéristique",
+    "discrimination des racines",
+    "étude de la partie réelle des racines"
+  ],
+  "objects": [
+    "équation différentielle homogène",
+    "polynôme caractéristique",
+    "solutions générales",
+    "conditions sur les coefficients"
+  ],
+  "content_hash": "84d4503cedb372de3322b1fdca0fb43e1b1fe69726bc50a877717bdc82d37a9b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:41:03.967Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "qwMI",
+  "source_path": "exo7/2-L1/qwMI.tex",
+  "summary": "Étudier la position du graphe de la fonction ln(1+x+x²) par rapport à ses tangentes en x=0 et x=1. L'exercice demande d'analyser la position relative de la courbe et de ses tangentes en deux points spécifiques.",
+  "concepts": [
+    "développement limité",
+    "tangente à une courbe",
+    "position relative d'une courbe et de sa tangente",
+    "étude locale de fonctions",
+    "fonction logarithme",
+    "approximation polynomiale"
+  ],
+  "methods": [
+    "développement limité à l'ordre 2",
+    "changement de variable",
+    "identification des coefficients",
+    "étude du signe de la différence courbe-tangente"
+  ],
+  "objects": [
+    "fonction ln(1+x+x²)",
+    "tangente en x=0",
+    "tangente en x=1",
+    "développement limité"
+  ],
+  "content_hash": "2f0d16ba6037c93aba02eef783c4d92212d523d1415ce239f87e306f7b47f8be",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:41:45.960Z"
+}

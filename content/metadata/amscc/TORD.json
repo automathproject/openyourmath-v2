@@ -1,0 +1,23 @@
+{
+  "uuid": "TORD",
+  "source_path": "amscc/TORD.tex",
+  "summary": "Calculer le produit matriciel d'une matrice donnée avec sa transposée et inversement. L'exercice manipule une matrice 2x4.",
+  "concepts": [
+    "transposée d'une matrice",
+    "produit matriciel",
+    "matrice carrée",
+    "matrice rectangulaire"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "transposition de matrice"
+  ],
+  "objects": [
+    "matrice 2x4",
+    "matrice transposée",
+    "matrice carrée"
+  ],
+  "content_hash": "58395462e388778bd3963d68690636c1832718fde888ff50e393388a5dedff8f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:00:58.776Z"
+}

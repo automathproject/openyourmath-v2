@@ -1,0 +1,27 @@
+{
+  "uuid": "FatY",
+  "source_path": "exo7/6-L2/FatY.tex",
+  "summary": "L'exercice demande si, pour un nombre impair de points donnés dans le plan, il existe un polygone dont ces points sont les milieux des côtés. On commence par le cas n=3, puis on étudie le cas où n est pair, avec une condition nécessaire et suffisante pour n=4.",
+  "concepts": [
+    "symétrie centrale",
+    "composée de transformations",
+    "théorème de Varignon",
+    "géométrie affine euclidienne",
+    "milieu d'un segment",
+    "construction géométrique"
+  ],
+  "methods": [
+    "construction géométrique de points",
+    "analyse de transformations",
+    "discussion d'existence de solutions"
+  ],
+  "objects": [
+    "points du plan",
+    "polygone",
+    "symétries centrales",
+    "système linéaire"
+  ],
+  "content_hash": "5136facedd21d7b021d7a0f96cbdcf730bbef7917bdce48ebb6dd8fd80cbe52d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:29:17.545Z"
+}

@@ -1,0 +1,23 @@
+{
+  "uuid": "2LMS",
+  "source_path": "crouzet/pcsi/05/2LMS.tex",
+  "summary": "L'exercice demande de déterminer tous les sous-ensembles (ou parties) de deux ensembles finis donnés : {0, 1, 2} et {A, C, G, T}.",
+  "concepts": [
+    "ensemble",
+    "sous-ensemble",
+    "ensemble des parties",
+    "cardinal d'un ensemble",
+    "puissance d'un ensemble"
+  ],
+  "methods": [
+    "énumération exhaustive",
+    "calcul du nombre de sous-ensembles"
+  ],
+  "objects": [
+    "ensemble fini",
+    "sous-ensembles"
+  ],
+  "content_hash": "661e6fce2a89e0ff24e1308416b7a169e52d7ca58e1f9612fe1b4a37ba754c9b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:05:50.121Z"
+}

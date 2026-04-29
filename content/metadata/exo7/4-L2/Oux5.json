@@ -1,0 +1,29 @@
+{
+  "uuid": "Oux5",
+  "source_path": "exo7/4-L2/Oux5.tex",
+  "summary": "L'exercice demande de montrer que le cardinal du centre d'un groupe fini d'ordre p^k (p premier) est divisible par p, puis d'en déduire que tout groupe d'ordre p^2 est commutatif et de déterminer ses isomorphismes possibles.",
+  "concepts": [
+    "action de groupe",
+    "automorphisme intérieur",
+    "centre d'un groupe",
+    "groupe fini",
+    "groupe commutatif",
+    "isomorphisme de groupes",
+    "théorème de structure des groupes d'ordre p^2"
+  ],
+  "methods": [
+    "utilisation de l'action par automorphismes intérieurs",
+    "calcul du cardinal du centre",
+    "déduction par contraposée",
+    "classification des groupes d'ordre premier"
+  ],
+  "objects": [
+    "groupe fini",
+    "centre d'un groupe",
+    "groupe d'ordre p^2",
+    "automorphisme intérieur"
+  ],
+  "content_hash": "3a44379fc8b31719795cbc7b60f6526ce5f884786b618205771191428d0e228e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:43:10.533Z"
+}

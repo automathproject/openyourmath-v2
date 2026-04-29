@@ -1,0 +1,26 @@
+{
+  "uuid": "AyGh",
+  "source_path": "exo7/4-L2/AyGh.tex",
+  "summary": "L'exercice demande de démontrer que si un anneau commutatif intègre est fini, alors c'est un corps. Il faut aussi prouver que si cet anneau a un nombre fini d'idéaux, alors c'est un corps en utilisant les idéaux de la forme x^nA pour x non nul.",
+  "concepts": [
+    "anneau commutatif",
+    "anneau intègre",
+    "corps",
+    "idéal",
+    "structure algébrique finie",
+    "propriété de division"
+  ],
+  "methods": [
+    "utilisation des idéaux principaux",
+    "analyse des éléments inversibles",
+    "considération des idéaux maximaux"
+  ],
+  "objects": [
+    "anneau A",
+    "idéal I_n",
+    "élément x non nul"
+  ],
+  "content_hash": "6e8a15b1f65c5c71bbe5d0f39b5513321232d2e2b6588d2aa71b65c4ffa00238",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:25:51.992Z"
+}

@@ -1,33 +1,31 @@
 {
   "uuid": "q40o",
   "source_path": "exo7/6-L2/q40o.tex",
-  "summary": "L'exercice étudie deux propriétés géométriques liées aux paraboles et aux triangles. La première partie démontre que les projetés orthogonaux d'un point M sur les côtés d'un triangle ABC sont alignés si et seulement si M appartient au cercle circonscrit à ABC. La seconde partie caractérise le lieu des foyers des paraboles tangentes aux trois côtés d'un triangle, en montrant qu'il s'agit du cercle circonscrit privé des sommets.",
+  "summary": "L'exercice demande de prouver que les projetés orthogonaux d'un point M sur les côtés d'un triangle ABC sont alignés si et seulement si M appartient au cercle circonscrit à ABC. Il introduit ensuite le lieu des foyers des paraboles tangentes aux trois côtés d'un triangle.",
   "concepts": [
     "cercle circonscrit",
-    "projeté orthogonal",
     "alignement de points",
+    "projeté orthogonal",
     "parabole",
     "tangente à une parabole",
     "foyer d'une parabole",
-    "droite de Simson",
-    "directrice d'une parabole"
+    "droite de Simson"
   ],
   "methods": [
-    "utilisation des propriétés des cercles",
-    "alignement de points par colinéarité",
-    "construction géométrique de paraboles",
-    "symétrie orthogonale",
-    "projection orthogonale"
+    "utilisation de la condition d'alignement",
+    "propriétés des cercles",
+    "construction géométrique de parabole",
+    "symétrie orthogonale"
   ],
   "objects": [
     "triangle",
     "cercle circonscrit",
     "parabole",
-    "droite de Simson",
-    "projetés orthogonaux",
-    "foyer d'une parabole"
+    "foyer",
+    "tangente",
+    "projetés orthogonaux"
   ],
-  "content_hash": "bb6fe0fe496a249513e3cd1ee3cd98ddf1b89564844b302063a6c31b38d965a8",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:41:24.287Z"
+  "content_hash": "c463487b7ef77decaf93431b81940ba1076eb6733716ea117ce6843965af068d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:08:52.271Z"
 }

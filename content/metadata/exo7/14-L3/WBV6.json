@@ -1,0 +1,29 @@
+{
+  "uuid": "WBV6",
+  "source_path": "exo7/14-L3/WBV6.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction N(t) définie comme une intégrale de Lebesgue d'une norme Lp est dérivable et d'expliciter sa dérivée en t=0. Le contexte mathématique implique des fonctions de Lp(μ) avec 1<p<∞.",
+  "concepts": [
+    "intégrale de Lebesgue",
+    "espace Lp",
+    "dérivabilité",
+    "théorème des accroissements finis",
+    "convergence dominée",
+    "inégalité triangulaire",
+    "convexité de la fonction x^p"
+  ],
+  "methods": [
+    "dérivation sous le signe intégrale",
+    "majoration uniforme",
+    "utilisation de l'inégalité triangulaire",
+    "application du théorème de convergence dominée"
+  ],
+  "objects": [
+    "fonction N(t)",
+    "fonction φ(t)",
+    "fonction intégrable",
+    "norme Lp"
+  ],
+  "content_hash": "b37d3dcc5d231504e6474b6820cd8685a08f303b6364471173552b3488380b2d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:55:06.665Z"
+}

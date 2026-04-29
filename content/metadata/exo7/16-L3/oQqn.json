@@ -1,0 +1,28 @@
+{
+  "uuid": "oQqn",
+  "source_path": "exo7/16-L3/oQqn.tex",
+  "summary": "Calculer l'intégrale réelle I_a = ∫₀⁺∞ x^(a-1)/(1+x) dx en utilisant les propriétés des fonctions méromorphes et le théorème des résidus.",
+  "concepts": [
+    "fonction méromorphe",
+    "théorème des résidus",
+    "résidu d'une fonction",
+    "intégrale de contour",
+    "lemmes de Jordan",
+    "pôle d'une fonction"
+  ],
+  "methods": [
+    "calcul de résidu",
+    "intégration par parties",
+    "analyse asymptotique",
+    "limite de contour"
+  ],
+  "objects": [
+    "fonction complexe",
+    "contour d'intégration",
+    "intégrale impropre",
+    "pôle simple"
+  ],
+  "content_hash": "80d9c0a4cb0e1d6e1b90d0a11c26ed873ffafde8a3bee60c4d569e5bcb9c3cfe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:41:51.720Z"
+}

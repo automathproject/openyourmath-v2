@@ -1,0 +1,24 @@
+{
+  "uuid": "If44",
+  "source_path": "exo7/4-L2/If44.tex",
+  "summary": "L'exercice demande de trouver une base orthonormale d'un sous-espace de polynômes de degré n à coefficients réels, défini par la condition P(1) = 0, puis de calculer la distance d'un polynôme X à ce sous-espace.",
+  "concepts": [
+    "produit scalaire",
+    "base orthonormale",
+    "sous-espace vectoriel",
+    "distance dans un espace euclidien",
+    "polynôme"
+  ],
+  "methods": [
+    "orthonormalisation de Gram-Schmidt",
+    "calcul de projection orthogonale"
+  ],
+  "objects": [
+    "sous-espace de polynômes",
+    "polynôme X",
+    "base orthonormale"
+  ],
+  "content_hash": "b29e4a3dfe8baf98c5a7d332ec0ec8140e3f1bfdaae1b6fcd4a9c70e5aa84da2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:14:13.235Z"
+}

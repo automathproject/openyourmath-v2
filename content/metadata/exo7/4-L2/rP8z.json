@@ -1,0 +1,29 @@
+{
+  "uuid": "rP8z",
+  "source_path": "exo7/4-L2/rP8z.tex",
+  "summary": "L'exercice demande de déterminer le nombre d'éléments inversibles dans l'anneau ℤ/24ℤ, d'identifier la loi qui en fait un groupe, de vérifier si le groupe des inversibles de ℤ/17ℤ est cyclique et de compter ses générateurs, de calculer le nombre de générateurs d'un groupe cyclique d'ordre 91, et de décomposer deux permutations en cycles disjoints et en transpositions.",
+  "concepts": [
+    "élément inversible",
+    "groupe multiplicatif",
+    "groupe cyclique",
+    "ordre d'un élément",
+    "décomposition en cycles",
+    "transposition"
+  ],
+  "methods": [
+    "calcul du PGCD",
+    "détermination de la loi de groupe",
+    "vérification de la cyclicité",
+    "décomposition en cycles disjoints",
+    "décomposition en transpositions"
+  ],
+  "objects": [
+    "anneau ℤ/24ℤ",
+    "groupe des inversibles",
+    "permutation",
+    "groupe cyclique d'ordre 91"
+  ],
+  "content_hash": "21d088b91a72b2017830b948c95596dda4f44242c3862bcff963cdc5f5f350d5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:14:40.222Z"
+}

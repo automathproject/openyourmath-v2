@@ -1,0 +1,24 @@
+{
+  "uuid": "HWQn",
+  "source_path": "exo7/10-L3/HWQn.tex",
+  "summary": "Soit G un groupe fini abélien. Montrer que pour tout diviseur d de l'ordre de G, il existe un sous-groupe de G d'ordre d.",
+  "concepts": [
+    "groupe fini",
+    "groupe abélien",
+    "ordre d'un groupe",
+    "diviseur d'un entier",
+    "sous-groupe"
+  ],
+  "methods": [
+    "théorème de Cauchy pour les groupes abéliens",
+    "utilisation de la structure des groupes abéliens finis"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe de G",
+    "ordre d'un groupe"
+  ],
+  "content_hash": "569280b4c101d434025218e557e63e13b176ea0449144f7a0f8cf593b50ed23e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:57:25.295Z"
+}

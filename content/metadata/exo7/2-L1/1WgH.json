@@ -1,0 +1,31 @@
+{
+  "uuid": "1WgH",
+  "source_path": "exo7/2-L1/1WgH.tex",
+  "summary": "L'exercice demande de prouver une inégalité entre une combinaison pondérée de produits de réels positifs et une somme pondérée de ces réels, puis d'en déduire une inégalité entre la moyenne géométrique et la moyenne arithmétique.",
+  "concepts": [
+    "concavité",
+    "fonction logarithme",
+    "inégalité de Jensen",
+    "moyenne géométrique",
+    "moyenne arithmétique",
+    "convexité",
+    "inégalité de Hölder",
+    "inégalité de Cauchy-Schwarz"
+  ],
+  "methods": [
+    "utilisation de la dérivée seconde",
+    "application de l'inégalité de Jensen",
+    "changement de variable",
+    "démonstration par convexité"
+  ],
+  "objects": [
+    "fonction concave",
+    "produit de réels positifs",
+    "somme pondérée",
+    "moyenne géométrique",
+    "moyenne arithmétique"
+  ],
+  "content_hash": "316a3134142938e84631c3f967025e9017f47f4783e03c26c8d1056055600fb8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:54:57.337Z"
+}

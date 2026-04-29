@@ -1,0 +1,34 @@
+{
+  "uuid": "AP4y",
+  "source_path": "exo7/4-L2/AP4y.tex",
+  "summary": "L'exercice demande d'étudier l'irréductibilité du polynôme X²+1 dans l'anneau ℤ₃[X], puis d'analyser la structure de l'anneau quotient ℤ₃[X]/(X²+1). Il explore les propriétés algébriques des classes de polynômes dans cet anneau, notamment leurs relations et leurs ordres multiplicatifs.",
+  "concepts": [
+    "irréductibilité d'un polynôme",
+    "anneau quotient",
+    "classe d'équivalence de polynômes",
+    "ordre multiplicatif",
+    "corps fini",
+    "algèbre sur un corps fini",
+    "polynôme minimal",
+    "structure de groupe multiplicatif"
+  ],
+  "methods": [
+    "critère d'irréductibilité",
+    "calcul de classes de polynômes",
+    "détermination de l'ordre multiplicatif",
+    "calcul de puissances dans un anneau quotient",
+    "inversion dans un anneau"
+  ],
+  "objects": [
+    "polynôme X²+1",
+    "anneau ℤ₃[X]",
+    "anneau quotient ℤ₃[X]/(X²+1)",
+    "classe de polynôme α",
+    "élément a = α + 2",
+    "élément 2 + a",
+    "élément 1 + 2a"
+  ],
+  "content_hash": "105b7f25e5537271321f007cbba2175b5e26912fee18e8a0efe9ecbbe3d92f4b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:25:11.110Z"
+}

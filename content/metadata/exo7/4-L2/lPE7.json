@@ -1,0 +1,27 @@
+{
+  "uuid": "lPE7",
+  "source_path": "exo7/4-L2/lPE7.tex",
+  "summary": "Trouver le couple (a, b) qui minimise l'intégrale de la différence entre la fonction exponentielle et une fonction affine sur l'intervalle [0,1].",
+  "concepts": [
+    "optimisation",
+    "fonction exponentielle",
+    "fonction affine",
+    "intégrale",
+    "distance quadratique",
+    "projection orthogonale"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "recherche de minimum",
+    "intégration",
+    "méthode des moindres carrés"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "intégrale de fonction",
+    "distance quadratique"
+  ],
+  "content_hash": "fb3f33ea8ab14311de07f2450e5090f15c5ad8501b964c4228515828351119ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:49:19.164Z"
+}

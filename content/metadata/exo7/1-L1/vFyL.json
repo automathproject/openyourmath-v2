@@ -1,0 +1,27 @@
+{
+  "uuid": "vFyL",
+  "source_path": "exo7/1-L1/vFyL.tex",
+  "summary": "L'exercice demande de calculer le nombre de façons de disposer 2n personnes autour d'une table ronde, avec des contraintes spécifiques sur l'alternance des sexes et la non-séparation des couples.",
+  "concepts": [
+    "permutation circulaire",
+    "arrangement",
+    "combinaison",
+    "principe de dénombrement",
+    "groupes symétriques"
+  ],
+  "methods": [
+    "calcul de factorielle",
+    "application du principe multiplicatif",
+    "utilisation de contraintes d'alternance",
+    "décomposition en cas d'étude"
+  ],
+  "objects": [
+    "table ronde",
+    "groupes de personnes",
+    "couples",
+    "permutations"
+  ],
+  "content_hash": "044be7af9c71dbe763f12096d8c387c13df633dbeb26005de7e6a5ca536f13c0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:51:40.582Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "nHW1",
+  "source_path": "exo7/1-L1/nHW1.tex",
+  "summary": "L'exercice demande de démontrer le résultat de Hadamard pour une matrice carrée : si pour chaque ligne, la valeur absolue de l'élément diagonal est strictement supérieure à la somme des valeurs absolues des autres éléments de la ligne, alors la matrice est inversible. La démonstration est d'abord faite pour le cas n=2, puis généralisée par récurrence.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "déterminant",
+    "inégalité triangulaire",
+    "récurrence mathématique",
+    "matrice triangulaire",
+    "propriété diagonale dominante"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "récurrence forte",
+    "transformation de matrice",
+    "utilisation de l'inégalité triangulaire"
+  ],
+  "objects": [
+    "matrice carrée",
+    "élément diagonal",
+    "matrice triangulaire",
+    "déterminant"
+  ],
+  "content_hash": "c53b552eb80c481aff05373690795b04da2da10e1c8068b5fe0767357630daf7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:15:49.792Z"
+}

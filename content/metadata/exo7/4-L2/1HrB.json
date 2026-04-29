@@ -1,0 +1,28 @@
+{
+  "uuid": "1HrB",
+  "source_path": "exo7/4-L2/1HrB.tex",
+  "summary": "Dans un espace vectoriel euclidien de dimension finie, on cherche à démontrer l'existence et l'unicité d'un endomorphisme adjoint pour tout endomorphisme donné, puis à montrer que l'application qui à un endomorphisme associe son adjoint est un anti-isomorphisme involutif.",
+  "concepts": [
+    "forme bilinéaire symétrique",
+    "endomorphisme adjoint",
+    "anti-isomorphisme",
+    "involution",
+    "espace vectoriel euclidien",
+    "algèbre des endomorphismes"
+  ],
+  "methods": [
+    "construction de l'adjoint",
+    "démonstration d'unicité",
+    "vérification des propriétés d'anti-isomorphisme",
+    "preuve d'involution"
+  ],
+  "objects": [
+    "espace vectoriel de dimension finie",
+    "forme bilinéaire symétrique non dégénérée",
+    "endomorphisme",
+    "application linéaire"
+  ],
+  "content_hash": "1d8ba7b264abbc95e68188c05f2832755121419d57d94ed8d075486ea0e86e81",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:57:23.312Z"
+}

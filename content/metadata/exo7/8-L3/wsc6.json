@@ -1,0 +1,29 @@
+{
+  "uuid": "wsc6",
+  "source_path": "exo7/8-L3/wsc6.tex",
+  "summary": "L'exercice étudie les propriétés des éléments d'un groupe abélien dont les sous-groupes engendrés ont une intersection triviale. Il demande de prouver des relations entre les ordres de ces éléments et de déterminer la structure d'un groupe d'ordre 77.",
+  "concepts": [
+    "groupe cyclique",
+    "ordre d'un élément",
+    "sous-groupe engendré",
+    "groupe abélien",
+    "théorème de structure des groupes abéliens",
+    "divisibilité",
+    "nombre premier"
+  ],
+  "methods": [
+    "utilisation de la divisibilité",
+    "analyse des ordres d'éléments",
+    "application du théorème de structure des groupes abéliens",
+    "preuve par contradiction"
+  ],
+  "objects": [
+    "élément d'ordre fini",
+    "sous-groupe engendré",
+    "groupe abélien",
+    "groupe cyclique"
+  ],
+  "content_hash": "9990e713a719aa91d5abe03438d68801d3f54196172a69cb1f247665eaaa538f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:55:38.678Z"
+}

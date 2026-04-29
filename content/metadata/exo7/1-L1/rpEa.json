@@ -1,0 +1,26 @@
+{
+  "uuid": "rpEa",
+  "source_path": "exo7/1-L1/rpEa.tex",
+  "summary": "On considère un entier naturel a ≥ 2 et un entier naturel n ≥ 1 tels que aⁿ + 1 soit un nombre premier. On demande de prouver que n est une puissance de 2.",
+  "concepts": [
+    "nombre premier",
+    "divisibilité dans Z",
+    "propriétés des nombres premiers",
+    "arithmétique modulaire",
+    "théorème d'Euclide",
+    "théorème fondamental de l'arithmétique"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "analyse des diviseurs",
+    "utilisation des propriétés des nombres premiers"
+  ],
+  "objects": [
+    "entier naturel",
+    "nombre premier",
+    "puissance de 2"
+  ],
+  "content_hash": "b47ea6c36264d27ec12da3ebf39ca0af6b8c3b9a38ee5cf806105115b8ce076f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:11:00.183Z"
+}

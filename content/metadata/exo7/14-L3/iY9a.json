@@ -1,0 +1,27 @@
+{
+  "uuid": "iY9a",
+  "source_path": "exo7/14-L3/iY9a.tex",
+  "summary": "L'exercice demande de montrer qu'une suite de fonctions converge uniformément vers une fonction nulle sur ℝ, mais que la limite inférieure de leurs intégrales de Lebesgue est strictement inférieure à l'intégrale de la fonction limite. On doit ensuite vérifier si cela contredit le lemme de Fatou.",
+  "concepts": [
+    "convergence uniforme",
+    "intégrale de Lebesgue",
+    "lemme de Fatou",
+    "mesure de Lebesgue",
+    "fonction indicatrice",
+    "limite inférieure"
+  ],
+  "methods": [
+    "calcul d'intégrale",
+    "comparaison de limites",
+    "vérification des hypothèses d'un théorème"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction indicatrice",
+    "mesure de Lebesgue",
+    "intégrale"
+  ],
+  "content_hash": "64b56b94551ade8a679c58555940b53e136901cd589f8bcc744a6fc7a69d5633",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:02:02.894Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "5vyl",
+  "source_path": "exo7/4-L2/5vyl.tex",
+  "summary": "Calculer l'inverse de quatre matrices carrées de tailles différentes en utilisant deux méthodes distinctes.",
+  "concepts": [
+    "déterminant",
+    "matrice inversible",
+    "matrice triangulaire",
+    "matrice symétrique",
+    "matrice carrée"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "méthode de la comatrice",
+    "méthode de la triangulation",
+    "inversion de matrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice 4x4",
+    "matrice triangulaire",
+    "matrice symétrique"
+  ],
+  "content_hash": "981e0b34427a92e15de61aefe6bcd3dbdcb1fec4bce16c117cf550626fdb3940",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:32:17.859Z"
+}

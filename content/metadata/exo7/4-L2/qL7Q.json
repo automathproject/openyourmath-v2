@@ -1,0 +1,26 @@
+{
+  "uuid": "qL7Q",
+  "source_path": "exo7/4-L2/qL7Q.tex",
+  "summary": "Résolution d'un système linéaire de 5 inconnues et 4 équations. On demande de trouver les valeurs des variables x, y, z, t et u qui satisfont le système donné.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "espace des solutions",
+    "combinaison linéaire",
+    "indépendance linéaire"
+  ],
+  "methods": [
+    "réduction par lignes",
+    "calcul du rang",
+    "pivot de Gauss",
+    "résolution par substitution"
+  ],
+  "objects": [
+    "matrice 4x5",
+    "système d'équations linéaires",
+    "vecteur solution"
+  ],
+  "content_hash": "5bf4ea83cb2b50701bbfac4e43240fd32ede0685606b4972a2df1613d9f3388e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:12:43.363Z"
+}

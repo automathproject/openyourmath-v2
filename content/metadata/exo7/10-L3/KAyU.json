@@ -1,0 +1,27 @@
+{
+  "uuid": "KAyU",
+  "source_path": "exo7/10-L3/KAyU.tex",
+  "summary": "L'exercice demande d'écrire en coordonnées homogènes la projection d'un point A sur une droite (BC) dans un plan projectif P², puis de montrer que cette projection se prolonge en une bijection entre une quadrique projective non singulière passant par A et la droite (BC).",
+  "concepts": [
+    "géométrie projective",
+    "repère projectif",
+    "coordonnées homogènes",
+    "projection centrale",
+    "quadrique projective",
+    "bijection"
+  ],
+  "methods": [
+    "calcul de coordonnées homogènes",
+    "analyse de la projection",
+    "étude des propriétés bijectives"
+  ],
+  "objects": [
+    "plan projectif P²",
+    "repère projectif (A,B,C;D)",
+    "droite (BC)",
+    "quadrique projective non singulière"
+  ],
+  "content_hash": "219de36dca729a1c4c2733b46db2cdbaf148b80300974fd4cdd1bb49386f3b67",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:20:12.899Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "8BXq",
+  "source_path": "exo7/4-L2/8BXq.tex",
+  "summary": "Dans un espace vectoriel réel de dimension n, on considère un hyperplan défini par une équation linéaire. On construit une projection p comme moyenne des endomorphismes associés aux permutations du groupe symétrique Sn. L'exercice demande de prouver que p est une projection et de déterminer son image et son noyau.",
+  "concepts": [
+    "groupe symétrique",
+    "endomorphisme",
+    "projection",
+    "hyperplan",
+    "forme linéaire",
+    "noyau",
+    "espace vectoriel",
+    "permutation"
+  ],
+  "methods": [
+    "calcul de moyenne d'endomorphismes",
+    "utilisation de la structure de groupe",
+    "détermination de l'image et du noyau d'un endomorphisme",
+    "vérification de la propriété de projection"
+  ],
+  "objects": [
+    "espace vectoriel R^n",
+    "hyperplan H",
+    "endomorphisme f_σ",
+    "projection p",
+    "forme linéaire φ"
+  ],
+  "content_hash": "46dc026d9b9a69c0602d23ef85a778fcd94848fc5cbfcc274f59e60972e5e278",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:22:46.712Z"
+}

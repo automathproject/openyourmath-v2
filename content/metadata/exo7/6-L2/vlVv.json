@@ -1,0 +1,28 @@
+{
+  "uuid": "vlVv",
+  "source_path": "exo7/6-L2/vlVv.tex",
+  "summary": "Dans le plan affine ℝ², on considère un triangle ABC non aplati et trois couples de coefficients réels non tous nuls. On construit les barycentres A', B', C' associés à ces coefficients. L'exercice demande de prouver que A', B', C' sont alignés si et seulement si une condition algébrique sur les coefficients est vérifiée.",
+  "concepts": [
+    "barycentre",
+    "géométrie affine",
+    "alignement de points",
+    "condition nécessaire et suffisante",
+    "système d'équations linéaires",
+    "combinaison affine"
+  ],
+  "methods": [
+    "calcul de barycentre",
+    "résolution d'équation vectorielle",
+    "analyse de condition d'alignement",
+    "manipulation algébrique"
+  ],
+  "objects": [
+    "triangle dans le plan affine",
+    "barycentres",
+    "coefficients réels",
+    "vecteurs"
+  ],
+  "content_hash": "d3080a3351a39f27d89d8b5f8aaae275da8e28f8c0448b2caf9b96893ca92ad9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:14:49.997Z"
+}

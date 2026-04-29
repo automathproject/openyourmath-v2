@@ -1,0 +1,28 @@
+{
+  "uuid": "m4YZ",
+  "source_path": "exo7/4-L2/m4YZ.tex",
+  "summary": "Montrer qu'une matrice carrée complexe A est nulle si son déterminant vérifie une condition additive particulière pour toute matrice M.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "théorème de la base incomplète",
+    "matrice inversible",
+    "groupe linéaire général",
+    "propriété additive du déterminant"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "construction de matrice spécifique",
+    "utilisation de la base incomplète",
+    "analyse des colonnes"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "déterminant",
+    "matrice inversible",
+    "colonne de matrice"
+  ],
+  "content_hash": "ba3fca7e29774b8e116f1ba53cf56816a8e4a70e446a2fa1107f4ec5a771f5fb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:08:03.215Z"
+}

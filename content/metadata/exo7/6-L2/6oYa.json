@@ -1,0 +1,28 @@
+{
+  "uuid": "6oYa",
+  "source_path": "exo7/6-L2/6oYa.tex",
+  "summary": "L'exercice demande de déterminer le centre d'un cercle donné sans son centre, puis de tracer les tangentes à ce cercle depuis un point extérieur P, et enfin depuis un point P situé sur le cercle.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "médiatrice d'un segment",
+    "symétrie centrale",
+    "tangente à un cercle",
+    "propriétés des triangles rectangles",
+    "cercle circonscrit"
+  ],
+  "methods": [
+    "construction géométrique",
+    "utilisation des propriétés des médiatrices",
+    "construction des tangentes à un cercle"
+  ],
+  "objects": [
+    "cercle",
+    "point extérieur",
+    "point sur le cercle",
+    "cordes",
+    "médiatrices"
+  ],
+  "content_hash": "c042df7a067df878f56c3ce101f50da37331f0f20851073786db3dfe6eb098cc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:23:11.681Z"
+}

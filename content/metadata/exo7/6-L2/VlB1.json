@@ -1,0 +1,28 @@
+{
+  "uuid": "VlB1",
+  "source_path": "exo7/6-L2/VlB1.tex",
+  "summary": "L'exercice demande de déterminer l'enveloppe des droites (AB) pour une parabole donnée, sous la contrainte que l'aire du triangle ABC formé par les points A, B et C (intersection des tangentes en A et B) reste constante.",
+  "concepts": [
+    "parabole",
+    "tangente à une courbe",
+    "aire d'un triangle",
+    "enveloppe de droites",
+    "point milieu",
+    "équation de courbe"
+  ],
+  "methods": [
+    "calcul de l'aire d'un triangle",
+    "détermination de l'enveloppe d'une famille de droites",
+    "paramétrisation des points"
+  ],
+  "objects": [
+    "parabole",
+    "droites tangentes",
+    "triangle",
+    "point d'intersection",
+    "point milieu"
+  ],
+  "content_hash": "6024e996f87cdf4350158a0c583687000e813ab7c8e8542c1e68007bf4fd33b7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:56:26.668Z"
+}

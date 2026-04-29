@@ -1,0 +1,27 @@
+{
+  "uuid": "PB8G",
+  "source_path": "exo7/4-L2/PB8G.tex",
+  "summary": "Montrer que le déterminant d'une matrice carrée dont les coefficients sont dans {-1, 1} est divisible par 2^(n-1).",
+  "concepts": [
+    "déterminant",
+    "récurrence",
+    "propriétés des déterminants",
+    "divisibilité",
+    "matrice binaire",
+    "développement par colonne"
+  ],
+  "methods": [
+    "récurrence forte",
+    "changement de colonne",
+    "développement de déterminant",
+    "modulo"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "colonne de matrice"
+  ],
+  "content_hash": "a529184ddb0ddf10c66469b88296655c0cdb954744086b7408b4d8d546a1c14e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:48:29.716Z"
+}

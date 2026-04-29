@@ -1,0 +1,26 @@
+{
+  "uuid": "Slja",
+  "source_path": "crouzet/pcsi/10/Slja.tex",
+  "summary": "On étudie la suite $(u_n)$ définie par récurrence pour $n \\geq 2$ et on demande de montrer qu'elle est bornée, décroissante, convergente, puis d'expliciter sa limite.",
+  "concepts": [
+    "suite numérique",
+    "monotonie",
+    "bornes inférieure et supérieure",
+    "convergence",
+    "principe de récurrence",
+    "théorème de la limite monotone"
+  ],
+  "methods": [
+    "récurrence",
+    "calcul de différence finie",
+    "identification de la limite"
+  ],
+  "objects": [
+    "suite récurrente",
+    "terme général de suite",
+    "limite de suite"
+  ],
+  "content_hash": "092ffa294ada175ff775b8602e850ab6cc348aa2199f4dbbe537d4e2f7f9dbd7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:37:05.313Z"
+}

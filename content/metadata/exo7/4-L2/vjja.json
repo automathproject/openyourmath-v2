@@ -1,0 +1,25 @@
+{
+  "uuid": "vjja",
+  "source_path": "exo7/4-L2/vjja.tex",
+  "summary": "On considère deux matrices symétriques réelles A et B. On définit une fonction f qui associe à un réel t la plus grande valeur propre de la matrice A + tB. On demande de prouver que cette fonction est convexe.",
+  "concepts": [
+    "matrice symétrique",
+    "valeur propre",
+    "fonction convexe",
+    "borne supérieure",
+    "fonction affine",
+    "supremum"
+  ],
+  "methods": [
+    "utilisation de la caractérisation variationnelle des valeurs propres",
+    "analyse de la convexité par sup de fonctions convexes"
+  ],
+  "objects": [
+    "matrice symétrique réelle",
+    "fonction de la plus grande valeur propre",
+    "fonction affine"
+  ],
+  "content_hash": "ac2c8b66916af599d4045daffe193a5f6b6b83564daea6f1708b15867a28e8cf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:59:06.302Z"
+}

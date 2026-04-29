@@ -1,0 +1,28 @@
+{
+  "uuid": "LJDM",
+  "source_path": "exo7/1-L1/LJDM.tex",
+  "summary": "L'exercice demande de démontrer que deux sous-espaces vectoriels F et G de ℝ⁴ sont supplémentaires (F ∩ G = {0} et E = F ⊕ G) et de montrer qu'un troisième sous-espace G' ne satisfait pas cette condition. Il aborde également des propriétés liées à la somme directe, comme l'unicité de la décomposition et la liberté de la famille unie.",
+  "concepts": [
+    "somme directe",
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "famille libre",
+    "application linéaire",
+    "décomposition unique"
+  ],
+  "methods": [
+    "vérification de l'intersection triviale",
+    "calcul de dimension",
+    "décomposition en somme directe",
+    "construction d'applications linéaires"
+  ],
+  "objects": [
+    "sous-espaces vectoriels",
+    "vecteurs de ℝ⁴",
+    "famille libre",
+    "application linéaire"
+  ],
+  "content_hash": "a2f808801e944fe6337b5865bfb1c2ffc49328ef3a2f3b757e1e5e00416e603a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:47:28.082Z"
+}

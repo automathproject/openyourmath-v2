@@ -1,0 +1,27 @@
+{
+  "uuid": "dB9Q",
+  "source_path": "exo7/2-L1/dB9Q.tex",
+  "summary": "On définit une fonction f par morceaux sur ℝ, continue en 0. On demande de montrer que f est de classe C∞ en 0 et que toutes ses dérivées en 0 s'annulent.",
+  "concepts": [
+    "dérivabilité",
+    "classe C∞",
+    "dérivées successives",
+    "limite de fonctions",
+    "continuité",
+    "fonction exponentielle"
+  ],
+  "methods": [
+    "définition de la dérivabilité",
+    "calcul de limites",
+    "développement asymptotique",
+    "récurrence sur les dérivées"
+  ],
+  "objects": [
+    "fonction définie par morceaux",
+    "dérivées successives",
+    "limite de fonctions"
+  ],
+  "content_hash": "d44f972db639a408bd78277941d45d49e83fc50cfecc4ef469d96601814e22a3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:13:28.348Z"
+}

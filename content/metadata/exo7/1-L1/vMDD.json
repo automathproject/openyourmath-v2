@@ -1,0 +1,25 @@
+{
+  "uuid": "vMDD",
+  "source_path": "exo7/1-L1/vMDD.tex",
+  "summary": "L'exercice demande de calculer le PGCD de deux entiers relatifs et de trouver des coefficients entiers pour exprimer ce PGCD comme combinaison linéaire de ces entiers.",
+  "concepts": [
+    "PGCD",
+    "combinaison linéaire",
+    "algorithme d'Euclide",
+    "entiers relatifs",
+    "théorème de Bézout",
+    "arithmétique dans Z"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "calcul de coefficients de Bézout"
+  ],
+  "objects": [
+    "entiers relatifs",
+    "PGCD",
+    "coefficients entiers"
+  ],
+  "content_hash": "724d97e3ba8e4049d45dbaf150aa24f985a276cac7911cb2e594287f78d07293",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:11:40.360Z"
+}

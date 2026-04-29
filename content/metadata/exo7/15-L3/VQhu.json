@@ -1,0 +1,25 @@
+{
+  "uuid": "VQhu",
+  "source_path": "exo7/15-L3/VQhu.tex",
+  "summary": "Montrer qu'un fermé borné dans ℝⁿ est contenu dans une boule ouverte de rayon strictement plus petit que celui d'une boule initiale qui le contient.",
+  "concepts": [
+    "espace métrique",
+    "fermé",
+    "boule ouverte",
+    "distance",
+    "borné",
+    "supremum"
+  ],
+  "methods": [
+    "utilisation de la définition de la borne supérieure",
+    "propriété des fermés dans les espaces métriques"
+  ],
+  "objects": [
+    "fermé K",
+    "boule ouverte B(x₀, R)",
+    "distance d(x, x₀)"
+  ],
+  "content_hash": "140e1b9a72a366387dd446185d318915035afec8ba7640bdb74a577906018323",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:27:02.186Z"
+}

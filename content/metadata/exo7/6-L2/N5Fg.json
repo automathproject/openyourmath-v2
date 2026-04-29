@@ -6,21 +6,20 @@
     "hyperbole",
     "asymptotes",
     "excentricité",
-    "équation cartésienne",
     "repère orthonormé",
-    "conique"
+    "équation cartésienne",
+    "géométrie analytique"
   ],
   "methods": [
-    "analyse des asymptotes",
-    "calcul d'excentricité",
-    "utilisation de l'équation standard"
+    "analyse des conditions de perpendicularité",
+    "calcul de l'excentricité"
   ],
   "objects": [
     "hyperbole équilatère",
     "asymptotes",
     "excentricité"
   ],
-  "content_hash": "dc2d787920e11a28a2b113accea26d37f42090a23d0078403e0f88f5a08a21d0",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:39:56.058Z"
+  "content_hash": "92ef807f447b5ab63ddc86f273f5ac2b7b2bbc3c0e91216741d83f29c865d07f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:03:49.577Z"
 }

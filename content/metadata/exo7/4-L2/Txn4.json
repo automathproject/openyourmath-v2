@@ -1,0 +1,28 @@
+{
+  "uuid": "Txn4",
+  "source_path": "exo7/4-L2/Txn4.tex",
+  "summary": "Discuter et résoudre un système linéaire à quatre équations et quatre inconnues suivant les valeurs des paramètres réels λ, a, b, c, d.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "espace des solutions",
+    "dimension d'un espace vectoriel",
+    "matrice carrée",
+    "valeur propre"
+  ],
+  "methods": [
+    "réduction de système",
+    "opérations élémentaires sur les lignes",
+    "discussion de cas particuliers",
+    "calcul de solutions paramétriques"
+  ],
+  "objects": [
+    "système linéaire homogène",
+    "matrice associée",
+    "paramètres réels",
+    "espace des solutions"
+  ],
+  "content_hash": "fd9642941c5a6a0811bc2697297b3dff49ef9be3c4af57a5e72000955fc109ba",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:51:48.973Z"
+}

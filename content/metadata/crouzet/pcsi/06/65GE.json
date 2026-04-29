@@ -1,0 +1,27 @@
+{
+  "uuid": "65GE",
+  "source_path": "crouzet/pcsi/06/65GE.tex",
+  "summary": "Démontrer deux inégalités : la première pour toute réelle x, la seconde pour x dans l'intervalle ]0, π/2[. La première inégalité compare l'exponentielle à une fonction affine, la seconde compare le sinus à une fonction affine.",
+  "concepts": [
+    "fonction dérivable",
+    "tableau de variations",
+    "théorème de la bijection",
+    "minimum d'une fonction",
+    "croissance exponentielle"
+  ],
+  "methods": [
+    "étude de la dérivée première",
+    "analyse du signe de la dérivée",
+    "tableau de variations",
+    "recherche de point critique"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "fonction sinus",
+    "fonction affine",
+    "fonction dérivée"
+  ],
+  "content_hash": "e2fc25a00d768266ddb58211d9eec20f3a21ddb376f9f6f79817d6267d7fb1b4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:26:01.385Z"
+}

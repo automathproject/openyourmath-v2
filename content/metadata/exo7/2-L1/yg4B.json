@@ -1,0 +1,28 @@
+{
+  "uuid": "yg4B",
+  "source_path": "exo7/2-L1/yg4B.tex",
+  "summary": "L'exercice demande d'abord de calculer le second différentiel directionnel D²f(x) pour une fonction de classe C². Ensuite, pour une fonction quelconque avec f(a)=f(b)=f(c), il faut montrer l'existence d'un point x où D²f(x) ≤ 0. Enfin, sous l'hypothèse D²f(x) ≥ 0, on doit prouver la convexité de f en utilisant un polynôme interpolateur P.",
+  "concepts": [
+    "second différentiel directionnel",
+    "fonction convexe",
+    "polynôme interpolateur",
+    "théorème de Rolle",
+    "théorème des accroissements finis",
+    "maximalité locale"
+  ],
+  "methods": [
+    "interpolation polynomiale",
+    "calcul de dérivées",
+    "analyse de convexité",
+    "utilisation de conditions aux limites"
+  ],
+  "objects": [
+    "fonction réelle",
+    "polynôme de degré 2",
+    "second différentiel",
+    "points d'interpolation"
+  ],
+  "content_hash": "d07b246be9061558b0e3056579be9890927ae3a9ea74e01be540fbeb8b056190",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:25:12.982Z"
+}

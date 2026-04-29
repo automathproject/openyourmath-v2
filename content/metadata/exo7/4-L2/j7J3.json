@@ -1,0 +1,25 @@
+{
+  "uuid": "j7J3",
+  "source_path": "exo7/4-L2/j7J3.tex",
+  "summary": "L'exercice demande de montrer qu'une application entre des produits d'anneaux d'entiers modulo m et n est un isomorphisme, puis de déterminer son inverse, dans le cas où m et n sont premiers entre eux. Il s'agit ensuite de trouver un entier satisfaisant deux congruences données.",
+  "concepts": [
+    "relation de Bézout",
+    "isomorphisme d'anneaux",
+    "congruence",
+    "système de congruences",
+    "théorème chinois des restes"
+  ],
+  "methods": [
+    "utilisation de la relation de Bézout",
+    "vérification de l'isomorphisme",
+    "résolution de système de congruences"
+  ],
+  "objects": [
+    "anneaux d'entiers modulo m et n",
+    "application entre produits d'anneaux",
+    "entier solution de congruences"
+  ],
+  "content_hash": "0914bb3f60eddf9cd9bf6cf53ae9fd7b5b728daca84afd89192fc3fb8a457f2c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:06:31.801Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "jeuF",
+  "source_path": "exo7/5-L2/jeuF.tex",
+  "summary": "Calcul d'une intégrale double sur un domaine D défini par x ≥ 0, y ≥ 0 et x² + y² ≤ 1. L'intégrande est la fonction 4 - x² - y².",
+  "concepts": [
+    "intégrale double",
+    "changement de variables",
+    "intégration en coordonnées polaires",
+    "domaine d'intégration",
+    "fonction de deux variables"
+  ],
+  "methods": [
+    "changement de variables polaires",
+    "intégration par parties",
+    "linéarisation de l'intégrande"
+  ],
+  "objects": [
+    "intégrale double",
+    "domaine D",
+    "fonction 4 - x² - y²"
+  ],
+  "content_hash": "e4db524ed2317b5bf3cc82d79b7b1595017b6786eedad044897111f2da71451a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:46:45.862Z"
+}

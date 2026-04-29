@@ -1,0 +1,26 @@
+{
+  "uuid": "xQjg",
+  "source_path": "exo7/16-L3/xQjg.tex",
+  "summary": "L'exercice demande de démontrer que tout automorphisme du disque unité complexe est de la forme donnée en utilisant le lemme de Schwarz.",
+  "concepts": [
+    "automorphisme",
+    "disque unité",
+    "lemme de Schwarz",
+    "fonction holomorphe",
+    "module d'un nombre complexe",
+    "théorie des fonctions analytiques"
+  ],
+  "methods": [
+    "utilisation du lemme de Schwarz",
+    "analyse des propriétés des automorphismes",
+    "manipulation des fonctions rationnelles"
+  ],
+  "objects": [
+    "automorphisme du disque unité",
+    "fonction de la forme f(z) = e^(iθ)(z - a)/(1 - a̅z)",
+    "disque unité D = {z ∈ ℂ | |z| < 1}"
+  ],
+  "content_hash": "bd69979291e8fc41e45ae2327f54ee1dccc9fcce3e5f2464e9248700cc729f71",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:26:10.289Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "PI1u",
+  "source_path": "amscc/PI1u.tex",
+  "summary": "Trouver le maximum de la fonction f(x,y) = xy sous la contrainte définie par une ellipse dans le plan, avec a et b strictement positifs.",
+  "concepts": [
+    "optimisation sous contrainte",
+    "multiplicateurs de Lagrange",
+    "colinéarité des gradients",
+    "bornes d'une fonction continue sur un compact",
+    "extremum d'une fonction de deux variables"
+  ],
+  "methods": [
+    "colinéarité des gradients",
+    "résolution de système d'équations",
+    "calcul de valeurs extrêmes"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "ellipse",
+    "vecteurs gradients"
+  ],
+  "content_hash": "c1e61a458978418965eba4baa1757a0533cd8403d7e4b2e15d1dd68f3bb5c61a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:36:32.769Z"
+}

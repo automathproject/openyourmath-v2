@@ -1,0 +1,29 @@
+{
+  "uuid": "dddt",
+  "source_path": "exo7/10-L3/dddt.tex",
+  "summary": "L'exercice demande de prouver une relation de récurrence sur le nombre de polynômes unitaires irréductibles de degré n sur le corps fini F_q, puis d'en déduire les valeurs spécifiques pour certains degrés.",
+  "concepts": [
+    "polynôme irréductible",
+    "corps fini",
+    "fonction multiplicative",
+    "relation de récurrence",
+    "théorème de décomposition",
+    "polynôme unitaire",
+    "diviseur d'un entier"
+  ],
+  "methods": [
+    "décomposition en facteurs irréductibles",
+    "calcul explicite",
+    "récurrence",
+    "utilisation de la formule de Möbius"
+  ],
+  "objects": [
+    "polynôme unitaire",
+    "nombre de polynômes irréductibles",
+    "degré d'un polynôme",
+    "corps fini F_q"
+  ],
+  "content_hash": "8b6e1c2eb90acb4c64fcf762d6d907143fb594a25b55ba85010f9a330c291283",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:25:36.291Z"
+}

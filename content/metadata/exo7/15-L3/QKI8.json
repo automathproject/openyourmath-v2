@@ -1,0 +1,28 @@
+{
+  "uuid": "QKI8",
+  "source_path": "exo7/15-L3/QKI8.tex",
+  "summary": "L'exercice demande de montrer que le dual de l'espace l² est isométriquement isomorphe à l². Il s'agit de prouver la densité des suites nulles à partir d'un certain rang dans l², puis d'établir des inégalités normiques pour les formes linéaires continues sur l².",
+  "concepts": [
+    "dual topologique",
+    "isomorphisme isométrique",
+    "densité dans un espace de Banach",
+    "forme linéaire continue",
+    "norme dans les espaces de Banach",
+    "suite convergente"
+  ],
+  "methods": [
+    "approximation par des suites finies",
+    "calcul de norme de forme linéaire",
+    "inégalité de Cauchy-Schwarz",
+    "construction explicite d'isomorphisme"
+  ],
+  "objects": [
+    "espace l²",
+    "suite dans l²",
+    "forme linéaire sur l²",
+    "suite de coefficients (f(e_n))"
+  ],
+  "content_hash": "dc00afe7c387fc50783cfc6f5614c7ae371859b7f6745ecf3021c0dc0441510f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:36:00.069Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "5LR5",
+  "source_path": "exo7/4-L2/5LR5.tex",
+  "summary": "L'exercice demande de prouver que si le déterminant d'une matrice A ajoutée à toute matrice X est égal au déterminant de X seule, alors A est la matrice nulle. Ensuite, il faut montrer que deux matrices A et B vérifiant la même condition pour toute matrice X sont égales.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "égalité de matrices",
+    "propriété universelle",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "manipulation de déterminants",
+    "raisonnement par l'absurde",
+    "utilisation de matrices spécifiques"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "matrice nulle"
+  ],
+  "content_hash": "29a7b1a6de0ad8dcdde4f3cd38e179279dc337ef52bda6a7ba8f3a5114d236b9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:31:45.856Z"
+}

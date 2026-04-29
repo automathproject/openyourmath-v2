@@ -1,0 +1,28 @@
+{
+  "uuid": "vgrK",
+  "source_path": "exo7/4-L2/vgrK.tex",
+  "summary": "Résolution de deux systèmes linéaires : le premier système à trois variables avec des coefficients hyperboliques, le second système à n variables avec des puissances croissantes de 1 à n-1.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "combinaison linéaire",
+    "polynôme caractéristique",
+    "déterminant",
+    "opérateur différentiel"
+  ],
+  "methods": [
+    "réduction de système",
+    "opérateur de dérivation",
+    "méthode de récurrence",
+    "calcul de coefficients binomiaux"
+  ],
+  "objects": [
+    "système linéaire à trois variables",
+    "système linéaire à n variables",
+    "polynôme",
+    "opérateur T"
+  ],
+  "content_hash": "a5d4a8cdd277baf1d1828b31865daf07715b3e605c906f3250b3afabad5f1a5b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:19:10.623Z"
+}

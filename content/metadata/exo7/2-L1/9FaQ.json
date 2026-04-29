@@ -1,0 +1,24 @@
+{
+  "uuid": "9FaQ",
+  "source_path": "exo7/2-L1/9FaQ.tex",
+  "summary": "On considère une fonction continue sur un intervalle [a,b] et dérivable sur ]a,b]. On demande de montrer que si la limite de la dérivée en a existe, alors la fonction est dérivable en a.",
+  "concepts": [
+    "continuité",
+    "dérivabilité",
+    "limite de fonction",
+    "théorème de dérivabilité"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la dérivée",
+    "limite de la dérivée"
+  ],
+  "objects": [
+    "fonction continue",
+    "dérivée",
+    "intervalle"
+  ],
+  "content_hash": "60f2e7c313d84c6c7bc19e094a2a4dccb165a967c415d9cb16d3b37519b6b3dc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:58:23.459Z"
+}

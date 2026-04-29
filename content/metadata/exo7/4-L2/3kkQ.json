@@ -1,0 +1,27 @@
+{
+  "uuid": "3kkQ",
+  "source_path": "exo7/4-L2/3kkQ.tex",
+  "summary": "L'exercice demande de déterminer les éléments inversibles de l'anneau ℤ/12ℤ et d'identifier le groupe isomorphe au groupe des inversibles de cet anneau.",
+  "concepts": [
+    "élément inversible",
+    "groupe multiplicatif d'un anneau",
+    "isomorphisme de groupes",
+    "fonction indicatrice d'Euler",
+    "théorème chinois",
+    "ordre d'un élément"
+  ],
+  "methods": [
+    "calcul de la fonction indicatrice d'Euler",
+    "détermination des éléments inversibles",
+    "analyse de l'ordre des éléments",
+    "application du théorème chinois"
+  ],
+  "objects": [
+    "anneau ℤ/12ℤ",
+    "groupe (ℤ/12ℤ)×",
+    "groupe ℤ/2ℤ × ℤ/2ℤ"
+  ],
+  "content_hash": "6a4090d06afe463a7d879089a034b6454c45e90665871b7a061e02a93b3e5a2c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:17:17.317Z"
+}

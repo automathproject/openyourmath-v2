@@ -1,0 +1,27 @@
+{
+  "uuid": "bHir",
+  "source_path": "exo7/2-L1/bHir.tex",
+  "summary": "L'exercice demande de démontrer une inégalité liant la dérivée première d'une fonction de classe C² à ses valeurs aux bornes de l'intervalle et à sa dérivée seconde. Une application numérique est proposée avec la fonction sinus.",
+  "concepts": [
+    "développement limité",
+    "formule de Taylor",
+    "fonction de classe C²",
+    "inégalité de Taylor-Lagrange",
+    "continuité",
+    "dérivabilité"
+  ],
+  "methods": [
+    "majoration de dérivée",
+    "application de la formule de Taylor",
+    "utilisation de l'inégalité de Taylor-Lagrange"
+  ],
+  "objects": [
+    "fonction de classe C²",
+    "dérivée première",
+    "dérivée seconde",
+    "intervalle borné"
+  ],
+  "content_hash": "4c17de04fe782be4f95e5f298f85c2589336efc9b9597b01dd880dcdb5aab603",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:35:08.250Z"
+}

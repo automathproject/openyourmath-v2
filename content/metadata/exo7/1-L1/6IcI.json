@@ -1,29 +1,26 @@
 {
   "uuid": "6IcI",
   "source_path": "exo7/1-L1/6IcI.tex",
-  "summary": "L'exercice demande de démontrer que l'espace vectoriel E est la somme directe des noyaux des applications linéaires f-2Id et f-3Id, en utilisant les propriétés de f et son polynôme caractéristique.",
+  "summary": "L'exercice demande de démontrer que l'espace vectoriel E est la somme directe des noyaux des applications linéaires f-2Id et f-3Id, en utilisant les propriétés de f.",
   "concepts": [
     "application linéaire",
     "noyau d'une application linéaire",
     "somme directe d'espaces vectoriels",
-    "polynôme caractéristique",
     "théorème du rang",
     "endomorphisme"
   ],
   "methods": [
     "décomposition en noyaux",
-    "utilisation du polynôme caractéristique",
-    "démonstration par existence et unicité",
-    "calcul matriciel"
+    "utilisation de la relation fonctionnelle",
+    "vérification de l'orthogonalité"
   ],
   "objects": [
     "espace vectoriel",
-    "endomorphisme",
-    "noyau",
-    "somme directe",
-    "polynôme caractéristique"
+    "application linéaire",
+    "noyaux",
+    "endomorphisme"
   ],
-  "content_hash": "4829a5c2eec432fa3cace2723bf9ec4ead62c10b9648e498595119b571232af1",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:10:02.153Z"
+  "content_hash": "a08712dac0d59c30aedfd286ac9288dbd90f88259049b63bc57a4dbf84a00bbe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:34:46.217Z"
 }

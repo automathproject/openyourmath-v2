@@ -1,0 +1,22 @@
+{
+  "uuid": "AeA5",
+  "source_path": "exo7/1-L1/AeA5.tex",
+  "summary": "L'exercice demande de montrer que deux matrices carrées d'ordre 4 sont semblables en trouvant une matrice de passage inversible P telle que PB = AP.",
+  "concepts": [
+    "semblance de matrices",
+    "matrice inversible",
+    "changement de base",
+    "matrice de passage"
+  ],
+  "methods": [
+    "recherche de matrice de passage",
+    "vérification de l'inversibilité"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice de passage"
+  ],
+  "content_hash": "a136b1aefc2e11fe8a75d7a43ff2b25a80ad1c374e5a3c66a87ed6e7ae6adde8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:46:29.606Z"
+}

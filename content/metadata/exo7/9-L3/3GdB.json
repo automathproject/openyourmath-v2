@@ -1,0 +1,29 @@
+{
+  "uuid": "3GdB",
+  "source_path": "exo7/9-L3/3GdB.tex",
+  "summary": "L'exercice demande de démontrer des propriétés des homographies non-triviales dans le groupe M^+(2), notamment sur leurs points fixes et leurs classifications en types parabolique, elliptique, hyperbolique et strictement loxodromique.",
+  "concepts": [
+    "homographie",
+    "point fixe",
+    "conjugaison de groupes",
+    "trace d'une matrice",
+    "classification des éléments de PSL(2,C)",
+    "groupe linéaire projectif"
+  ],
+  "methods": [
+    "analyse des points fixes",
+    "calcul de trace",
+    "conjugaison d'éléments",
+    "classification par la trace carrée"
+  ],
+  "objects": [
+    "matrice de SL(2,C)",
+    "élément de M^+(2)",
+    "trace carrée",
+    "rotation complexe",
+    "translation complexe"
+  ],
+  "content_hash": "70db28aee6eac4f3133690425463e7356668a061ec06aedf2ed0de70707a1fe0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:05:20.977Z"
+}

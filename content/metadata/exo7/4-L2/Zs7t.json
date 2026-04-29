@@ -1,0 +1,28 @@
+{
+  "uuid": "Zs7t",
+  "source_path": "exo7/4-L2/Zs7t.tex",
+  "summary": "L'exercice demande de montrer que l'application intégrale α est une forme linéaire sur l'espace des polynômes réels de degré n, puis que les applications d'évaluation α_i en des points discrets sont aussi linéaires et forment une base du dual de cet espace. Enfin, il s'agit d'en déduire une relation entre l'intégrale d'un polynôme et ses valeurs en des points spécifiques.",
+  "concepts": [
+    "forme linéaire",
+    "espace dual",
+    "base d'un espace vectoriel",
+    "polynôme de degré n",
+    "intégrale d'une fonction",
+    "évaluation d'une fonction"
+  ],
+  "methods": [
+    "vérification des propriétés de linéarité",
+    "construction d'une base",
+    "utilisation du théorème de la base duale",
+    "décomposition en série linéaire"
+  ],
+  "objects": [
+    "application intégrale",
+    "applications d'évaluation",
+    "famille de formes linéaires",
+    "polynôme réel de degré n"
+  ],
+  "content_hash": "75311b8f13b3ad134dfb86e8b78f62498e44d4092af3ae9b603bb0f356319d19",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:59:15.217Z"
+}

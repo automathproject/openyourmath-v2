@@ -1,0 +1,26 @@
+{
+  "uuid": "xFbU",
+  "source_path": "exo7/4-L2/xFbU.tex",
+  "summary": "On considère trois matrices hermitiennes A, B et C = A + B. On note leurs valeurs propres respectives a_i, b_i et c_i. L'exercice demande de montrer que pour tout i, c_i ≥ a_i + b_n.",
+  "concepts": [
+    "matrice hermitienne",
+    "valeur propre",
+    "produit scalaire",
+    "base orthonormale propre",
+    "inégalité de min-max"
+  ],
+  "methods": [
+    "transformation de matrice",
+    "utilisation de bases propres",
+    "inégalité de min-max"
+  ],
+  "objects": [
+    "matrices hermitiennes",
+    "valeurs propres",
+    "vecteurs propres",
+    "produit scalaire"
+  ],
+  "content_hash": "ee8e81cb09ae65e2a4dfb8b52ceb5350bf47b04b0051f3273e4418583d6bfb7d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:02:49.927Z"
+}

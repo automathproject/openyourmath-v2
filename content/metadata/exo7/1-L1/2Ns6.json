@@ -1,0 +1,25 @@
+{
+  "uuid": "2Ns6",
+  "source_path": "exo7/1-L1/2Ns6.tex",
+  "summary": "Calculer le rang d'une matrice carrée 3x3 donnée.",
+  "concepts": [
+    "rang d'une matrice",
+    "matrice carrée",
+    "sous-espace vectoriel",
+    "combinaison linéaire",
+    "espace image",
+    "espace noyau"
+  ],
+  "methods": [
+    "réduction par lignes",
+    "pivot de Gauss",
+    "détermination des vecteurs de base"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "système d'équations linéaires"
+  ],
+  "content_hash": "cbaa09e722668c67919a0b11b6f395de334a5c61daa8edb081efc957b9f0cd94",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:39:20.556Z"
+}

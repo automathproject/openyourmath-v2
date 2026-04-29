@@ -1,0 +1,27 @@
+{
+  "uuid": "JoiK",
+  "source_path": "exo7/12-L3/JoiK.tex",
+  "summary": "L'exercice demande de trouver le triangle inscrit dans un cercle donné qui possède la plus grande aire possible.",
+  "concepts": [
+    "extremum lié",
+    "aire d'un triangle",
+    "géométrie différentielle",
+    "optimisation",
+    "fonction de plusieurs variables",
+    "contraintes d'optimisation"
+  ],
+  "methods": [
+    "méthode des multiplicateurs de Lagrange",
+    "calcul différentiel",
+    "optimisation sous contrainte"
+  ],
+  "objects": [
+    "triangle inscrit dans un cercle",
+    "aire maximale",
+    "fonction objectif",
+    "contrainte géométrique"
+  ],
+  "content_hash": "603c7664aeb6dc43ef0eecdce8d7b7b6e8d2e1dabcf76478582e595b0394c63e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:30:48.592Z"
+}

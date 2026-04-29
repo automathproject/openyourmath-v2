@@ -1,0 +1,28 @@
+{
+  "uuid": "GReD",
+  "source_path": "exo7/4-L2/GReD.tex",
+  "summary": "L'exercice demande de déterminer si différents ensembles munis de lois de composition données forment des groupes. Les ensembles considérés incluent ℝ\\{-1} avec une loi spécifique, un sous-ensemble de ℂ avec la multiplication usuelle, un ensemble de matrices diagonales non nulles, et l'ensemble des matrices symétriques réelles d'ordre 2 avec la multiplication matricielle.",
+  "concepts": [
+    "groupe",
+    "loi de composition interne",
+    "élément neutre",
+    "élément inversé",
+    "associativité",
+    "sous-groupe"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "recherche de l'élément neutre",
+    "recherche de l'inverse",
+    "vérification de la fermeture"
+  ],
+  "objects": [
+    "ensemble ℝ\\{-1}",
+    "ensemble de nombres complexes",
+    "matrices diagonales",
+    "matrices symétriques"
+  ],
+  "content_hash": "13d86da7a37198b6dc628cf79a7ead32dde7d939e4207a29370e6ab24eab452b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:32:45.338Z"
+}

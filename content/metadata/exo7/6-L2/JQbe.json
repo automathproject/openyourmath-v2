@@ -1,0 +1,26 @@
+{
+  "uuid": "JQbe",
+  "source_path": "exo7/6-L2/JQbe.tex",
+  "summary": "Dans un triangle ABC, on considère trois points P, Q, R sur les côtés AB, BC, CA respectivement. L'exercice demande de prouver que P, Q, R sont alignés si et seulement si le produit des rapports des segments est égal à 1. Ensuite, il faut montrer que les milieux P', Q', R' des segments PC, QA, RB sont aussi alignés.",
+  "concepts": [
+    "géométrie affine",
+    "alignement de points",
+    "rapports de segments",
+    "théorème de Menelaüs",
+    "milieux de segments"
+  ],
+  "methods": [
+    "calcul de rapports de segments",
+    "utilisation du théorème de Menelaüs",
+    "construction de milieux"
+  ],
+  "objects": [
+    "triangle",
+    "points sur les côtés",
+    "segments",
+    "milieux de segments"
+  ],
+  "content_hash": "9c86a7588427866b86f561342e5c09e1708b818f7571f2bd864f6bebdcf1f861",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:48:07.340Z"
+}

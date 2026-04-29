@@ -1,0 +1,31 @@
+{
+  "uuid": "o5At",
+  "source_path": "amscc/o5At.tex",
+  "summary": "Déterminer les extrémums locaux de deux fonctions de deux variables définies sur ℝ². Le premier exercice porte sur une fonction polynomiale de degré 3, et le second sur une fonction produit de monômes.",
+  "concepts": [
+    "extrémum local",
+    "point critique",
+    "point selle",
+    "maximum local",
+    "fonction de classe C¹",
+    "matrice hessienne",
+    "déterminant de matrice",
+    "dérivées partielles"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "recherche de points critiques",
+    "calcul de la matrice hessienne",
+    "analyse du déterminant de la hessienne",
+    "étude de la nature des points critiques"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "points critiques",
+    "matrice hessienne",
+    "déterminant de matrice"
+  ],
+  "content_hash": "f303eac09957500ba3ca30e720f34855d29875050f736d1562783be7c06f299f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:19:33.502Z"
+}

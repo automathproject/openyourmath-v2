@@ -1,0 +1,26 @@
+{
+  "uuid": "eXrS",
+  "source_path": "exo7/2-L1/eXrS.tex",
+  "summary": "On considère un polygone convexe à n côtés inscrit dans un cercle. L'exercice demande de prouver que son périmètre est maximal si et seulement si le polygone est régulier.",
+  "concepts": [
+    "polygone convexe",
+    "polygone régulier",
+    "périmètre maximal",
+    "géométrie euclidienne",
+    "optimisation géométrique",
+    "inégalité isopérimétrique"
+  ],
+  "methods": [
+    "symétrisation",
+    "utilisation des angles inscrits",
+    "comparaison des longueurs de côtés"
+  ],
+  "objects": [
+    "polygone convexe",
+    "cercle circonscrit",
+    "périmètre"
+  ],
+  "content_hash": "f6f3aad8159fe28c020977f61878a68950fac04bb093cc1fdc397a1b02f51a55",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:14:14.044Z"
+}

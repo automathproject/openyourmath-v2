@@ -1,0 +1,29 @@
+{
+  "uuid": "ukzB",
+  "source_path": "exo7/19-L3/ukzB.tex",
+  "summary": "L'exercice demande de calculer la fonction génératrice d'une variable aléatoire de loi de Poisson, puis son espérance et sa variance. Il étudie ensuite la somme de deux variables aléatoires indépendantes de lois de Poisson et déduit la loi de cette somme.",
+  "concepts": [
+    "loi de Poisson",
+    "fonction génératrice des moments",
+    "espérance",
+    "variance",
+    "indépendance de variables aléatoires",
+    "loi de la somme de variables aléatoires indépendantes",
+    "propriété de stabilité de la loi de Poisson"
+  ],
+  "methods": [
+    "calcul de la fonction génératrice",
+    "propriété de la fonction génératrice pour les lois de Poisson",
+    "calcul de l'espérance et de la variance à partir de la fonction génératrice"
+  ],
+  "objects": [
+    "variable aléatoire de loi de Poisson",
+    "fonction génératrice des moments",
+    "espérance",
+    "variance",
+    "somme de variables aléatoires indépendantes"
+  ],
+  "content_hash": "8f6d85f457a17fd5379fe5c8bbca5b088e31dfd082704fd2be0c717af7cfd93f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:35:04.806Z"
+}

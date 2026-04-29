@@ -1,0 +1,26 @@
+{
+  "uuid": "5mp6",
+  "source_path": "exo7/2-L1/5mp6.tex",
+  "summary": "Calcul de primitives de fonctions composées ou produits de fonctions à l'aide de l'intégration par parties.",
+  "concepts": [
+    "intégration par parties",
+    "primitive d'une fonction",
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "fonction logarithme",
+    "fonction polynomiale"
+  ],
+  "methods": [
+    "intégration par parties",
+    "décomposition en éléments simples"
+  ],
+  "objects": [
+    "primitive de e^x cos x",
+    "primitive de ln x / x^n",
+    "primitive de x Arctan x",
+    "primitive de (x^2 + x + 1) e^x"
+  ],
+  "content_hash": "9c7ea70bcd0f36e034ef34426fdbea0c32cedb88a4dde61839c72b0fdb63cbd0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:29:05.759Z"
+}

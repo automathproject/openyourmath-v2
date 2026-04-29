@@ -1,0 +1,31 @@
+{
+  "uuid": "HfER",
+  "source_path": "exo7/4-L2/HfER.tex",
+  "summary": "L'exercice porte sur l'utilisation de l'algorithme d'El Gamal dans le corps fini ℤ/19ℤ. Il demande de déterminer les ordres possibles des éléments de ce corps, de calculer des clés publiques à partir de clés privées, de chiffrer et déchiffrer des messages en utilisant cet algorithme.",
+  "concepts": [
+    "corps fini",
+    "groupe multiplicatif",
+    "ordre d'un élément",
+    "générateur de groupe",
+    "logarithme discret",
+    "isomorphisme de groupes",
+    "algorithme d'El Gamal"
+  ],
+  "methods": [
+    "calcul d'ordre d'un élément",
+    "calcul de puissance modulaire",
+    "inversion modulaire",
+    "chiffrement par clé publique",
+    "déchiffrement par clé privée"
+  ],
+  "objects": [
+    "corps ℤ/19ℤ",
+    "élément générateur",
+    "clé privée",
+    "clé publique",
+    "message chiffré"
+  ],
+  "content_hash": "2caae711163f0871e702d2278e24e5fbcb43ba8db715eef8fcddd13bb6192b89",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:35:08.118Z"
+}

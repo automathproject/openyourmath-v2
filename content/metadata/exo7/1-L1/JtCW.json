@@ -1,0 +1,27 @@
+{
+  "uuid": "JtCW",
+  "source_path": "exo7/1-L1/JtCW.tex",
+  "summary": "L'exercice demande de démontrer une bijection entre l'ensemble des parties d'un ensemble et le produit cartésien des ensembles des parties de deux sous-ensembles disjoints. Ensuite, il s'agit de prouver une identité combinatoire impliquant des coefficients binomiaux et d'en déduire une formule spécifique.",
+  "concepts": [
+    "bijection",
+    "ensemble des parties",
+    "partition d'un ensemble",
+    "coefficient binomial",
+    "identité combinatoire",
+    "dénombrement"
+  ],
+  "methods": [
+    "démonstration par bijection",
+    "calcul de coefficients binomiaux",
+    "utilisation de la formule du binôme de Newton"
+  ],
+  "objects": [
+    "ensemble non vide",
+    "partition d'un ensemble",
+    "coefficient binomial",
+    "somme de coefficients binomiaux"
+  ],
+  "content_hash": "8bf31645548d1b94e2fd8f316bf1d9ce42d29dc518690d6d753b54c9900c4def",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:41:39.083Z"
+}

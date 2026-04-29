@@ -1,0 +1,24 @@
+{
+  "uuid": "sKFJ",
+  "source_path": "exo7/2-L1/sKFJ.tex",
+  "summary": "On définit une fonction h(t) comme la borne supérieure de f(x) + t*g(x) pour x dans [a,b], où f et g sont continues. On demande de prouver la continuité de h.",
+  "concepts": [
+    "continuité d'une fonction",
+    "borne supérieure",
+    "fonction définie sur un intervalle",
+    "fonction réelle",
+    "supremum"
+  ],
+  "methods": [
+    "utilisation de la définition de continuité",
+    "analyse de la dépendance d'une fonction par rapport à un paramètre"
+  ],
+  "objects": [
+    "fonction h(t)",
+    "fonctions f et g continues",
+    "intervalle [a,b]"
+  ],
+  "content_hash": "984428d87750c2a3e21535a8526a4da255aa1ac5249e98129e7de79893e13d80",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:26:21.473Z"
+}

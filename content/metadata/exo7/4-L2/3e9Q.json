@@ -1,0 +1,28 @@
+{
+  "uuid": "3e9Q",
+  "source_path": "exo7/4-L2/3e9Q.tex",
+  "summary": "L'exercice demande de démontrer que φ est un produit scalaire sur l'espace E, puis d'étudier la décomposition orthogonale de E en sous-espaces V et W, et enfin de déterminer l'infimum d'une intégrale sur un sous-ensemble Eαβ de E.",
+  "concepts": [
+    "produit scalaire",
+    "espace vectoriel normé",
+    "sous-espaces supplémentaires orthogonaux",
+    "projection orthogonale",
+    "infimum",
+    "fonction continue dérivable"
+  ],
+  "methods": [
+    "vérification des propriétés du produit scalaire",
+    "décomposition en sous-espaces",
+    "calcul de projection orthogonale",
+    "optimisation sous contrainte"
+  ],
+  "objects": [
+    "espace de fonctions C^1",
+    "sous-espaces V et W",
+    "fonction f dans E",
+    "intégrale de fonction"
+  ],
+  "content_hash": "bbfdcc3f5792c72568d454b9205906b9177204d8cbe770c8bdff6a0706f7de8c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:59:42.587Z"
+}

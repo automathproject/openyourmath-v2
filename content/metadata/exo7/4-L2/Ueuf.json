@@ -1,0 +1,28 @@
+{
+  "uuid": "Ueuf",
+  "source_path": "exo7/4-L2/Ueuf.tex",
+  "summary": "L'exercice demande de factoriser le polynôme P = X⁴ + 1 en produits d'irréductibles dans les anneaux C[X], R[X] et Q[X], et de déterminer la forme des polynômes irréductibles dans ces anneaux.",
+  "concepts": [
+    "polynôme irréductible",
+    "factorisation",
+    "anneau de polynômes",
+    "corps de base",
+    "degré d'un polynôme",
+    "division euclidienne"
+  ],
+  "methods": [
+    "factorisation dans un anneau de polynômes",
+    "recherche de racines",
+    "division euclidienne",
+    "analyse de degré"
+  ],
+  "objects": [
+    "polynôme de degré 4",
+    "anneau C[X]",
+    "anneau R[X]",
+    "anneau Q[X]"
+  ],
+  "content_hash": "8c84cd5985340a16048412f9751ea4cc3e3dc32ab73f393362a1990a9481f1e0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:50:15.481Z"
+}

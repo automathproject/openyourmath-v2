@@ -1,0 +1,30 @@
+{
+  "uuid": "9g5V",
+  "source_path": "exo7/4-L2/9g5V.tex",
+  "summary": "L'exercice demande de déterminer le nombre d'inversions et la signature d'une permutation donnée dans le groupe symétrique S₁₂, puis de la décomposer en produit de transpositions, d'identifier ses orbites, et de calculer sa puissance 2005.",
+  "concepts": [
+    "groupe symétrique",
+    "permutation",
+    "inversion",
+    "signature",
+    "transposition",
+    "orbite",
+    "cycle",
+    "ordre d'un élément"
+  ],
+  "methods": [
+    "décomposition en transpositions",
+    "calcul de la signature",
+    "identification des orbites",
+    "calcul de la puissance d'une permutation"
+  ],
+  "objects": [
+    "permutation dans S₁₂",
+    "transpositions",
+    "orbites",
+    "cycles"
+  ],
+  "content_hash": "45a3efa588d572afd3bcaa82c01e54d6bef82a3588bb9d83408a823b6d54cea3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:24:26.130Z"
+}

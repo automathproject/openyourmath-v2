@@ -1,0 +1,23 @@
+{
+  "uuid": "RP8Y",
+  "source_path": "exo7/1-L1/RP8Y.tex",
+  "summary": "L'exercice demande de vérifier si deux fonctions polynomiales données, f(x) = 3x + 1 et g(x) = x² - 1, commutent, c'est-à-dire si la composée f∘g est égale à g∘f.",
+  "concepts": [
+    "composition de fonctions",
+    "fonction polynomiale",
+    "égalité de fonctions",
+    "contre-exemple"
+  ],
+  "methods": [
+    "vérification par contre-exemple",
+    "calcul de composée"
+  ],
+  "objects": [
+    "fonction polynomiale de degré 1",
+    "fonction polynomiale de degré 2",
+    "composée de fonctions"
+  ],
+  "content_hash": "74f6557aa36ac26cc91ee963993f3f166fbf77fbcda569dec92c36bf365c780f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:18:03.586Z"
+}

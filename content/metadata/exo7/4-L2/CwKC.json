@@ -1,0 +1,26 @@
+{
+  "uuid": "CwKC",
+  "source_path": "exo7/4-L2/CwKC.tex",
+  "summary": "L'exercice demande de déterminer les valeurs du paramètre m pour lesquelles un système linéaire homogène de 4 équations à 4 inconnues admet des solutions non triviales (différentes de la solution nulle).",
+  "concepts": [
+    "système linéaire homogène",
+    "solution triviale",
+    "solution non triviale",
+    "rang d'une matrice",
+    "déterminant",
+    "espace des solutions"
+  ],
+  "methods": [
+    "calcul du déterminant",
+    "analyse du rang",
+    "résolution de système linéaire"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice associée",
+    "paramètre m"
+  ],
+  "content_hash": "2baf97e7bf41d25ec39dd96341cfbbb342dc20a2a87040ce94f2ac4a49a0a15e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:38:33.119Z"
+}

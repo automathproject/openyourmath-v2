@@ -1,0 +1,26 @@
+{
+  "uuid": "iheU",
+  "source_path": "exo7/2-L1/iheU.tex",
+  "summary": "L'exercice demande de montrer la convergence de l'intégrale impropre I_n = ∫₀∞ tⁿ exp(-t²) dt pour un entier n ≥ 0, puis de la calculer en fonction de n, en utilisant la valeur connue I₀ = √π/2.",
+  "concepts": [
+    "intégrale impropre",
+    "convergence d'intégrale",
+    "fonction exponentielle",
+    "fonction polynomiale",
+    "intégration par parties",
+    "changement de variable"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "calcul de primitive"
+  ],
+  "objects": [
+    "intégrale impropre",
+    "fonction polynomiale",
+    "fonction exponentielle"
+  ],
+  "content_hash": "08acfa9d3214a39859a10f709232b9a9fcd67e1e1591f930b3006f18cc2e66c4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:44:23.610Z"
+}

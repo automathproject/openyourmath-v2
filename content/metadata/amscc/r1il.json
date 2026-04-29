@@ -1,0 +1,28 @@
+{
+  "uuid": "r1il",
+  "source_path": "amscc/r1il.tex",
+  "summary": "Calculer l'inverse de deux matrices carrées données en utilisant la méthode du pivot de Gauss. La première matrice est de taille 3x3 et la seconde est une matrice de taille 4x4 avec un paramètre a.",
+  "concepts": [
+    "inverse d'une matrice",
+    "méthode du pivot de Gauss",
+    "matrice identité",
+    "matrice carrée",
+    "algèbre linéaire",
+    "opérations élémentaires sur les lignes"
+  ],
+  "methods": [
+    "réduction par lignes",
+    "permutation de lignes",
+    "combinaison linéaire de lignes",
+    "algorithme de Gauss-Jordan"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice 4x4",
+    "matrice identité",
+    "matrice inversible"
+  ],
+  "content_hash": "ebc9d324ee56ffa1da855809261bae3a25b16144c4b0a7dddbc39b9e67b4225e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:17:35.356Z"
+}

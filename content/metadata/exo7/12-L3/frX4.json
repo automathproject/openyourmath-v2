@@ -1,0 +1,29 @@
+{
+  "uuid": "frX4",
+  "source_path": "exo7/12-L3/frX4.tex",
+  "summary": "L'exercice demande de démontrer la différentiabilité d'une application en un point à partir de conditions sur la limite de sa différentielle, puis d'établir un critère de continuité de la différentielle et enfin de prouver qu'une application vérifiant une condition de limite est de classe C^1.",
+  "concepts": [
+    "différentiabilité",
+    "théorème des accroissements finis",
+    "continuité",
+    "classe C^1",
+    "espace normé",
+    "application linéaire continue",
+    "limite de fonctions"
+  ],
+  "methods": [
+    "application du théorème des accroissements finis",
+    "étude de la limite de la différentielle",
+    "analyse de la continuité de la différentielle",
+    "construction d'une fonction auxiliaire"
+  ],
+  "objects": [
+    "application continue",
+    "différentielle",
+    "application linéaire continue",
+    "fonction auxiliaire"
+  ],
+  "content_hash": "2f6d2a91d40ac1962f14b55df4e6cd20f4672f5adaafbb10b7b197cb7d3acfcb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:29:02.802Z"
+}

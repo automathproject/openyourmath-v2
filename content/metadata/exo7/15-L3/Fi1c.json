@@ -1,0 +1,27 @@
+{
+  "uuid": "Fi1c",
+  "source_path": "exo7/15-L3/Fi1c.tex",
+  "summary": "On définit une fonction f sur les rationnels de [0,1] comme une série convergente. L'exercice demande de prouver la continuité de f et d'établir qu'elle ne peut être prolongée en une fonction continue sur tout l'intervalle [0,1].",
+  "concepts": [
+    "continuité",
+    "densité des rationnels",
+    "prolongement de fonction",
+    "série convergente",
+    "topologie de R",
+    "fonction définie sur un ensemble dense"
+  ],
+  "methods": [
+    "étude de la continuité",
+    "analyse de la limite",
+    "argument par l'absurde"
+  ],
+  "objects": [
+    "fonction définie sur Q ∩ [0,1]",
+    "série de termes positifs",
+    "intervalle [0,1]",
+    "bijection de N sur Q ∩ [0,1]"
+  ],
+  "content_hash": "c2f309d8cb31d2e8549695b84c351abc5bca6ce8dfff97f1f2d2b64637ac4bdd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:29:21.486Z"
+}

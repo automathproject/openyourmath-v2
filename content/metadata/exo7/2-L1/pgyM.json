@@ -1,0 +1,28 @@
+{
+  "uuid": "pgyM",
+  "source_path": "exo7/2-L1/pgyM.tex",
+  "summary": "Étudier la convergence ou la divergence de l'intégrale impropre $\\int_{0}^{\\infty}\\frac{\\sin t}{t^{\\alpha}}dt$ selon la valeur du paramètre réel $\\alpha$.",
+  "concepts": [
+    "intégrale impropre",
+    "convergence absolue",
+    "convergence conditionnelle",
+    "fonction oscillante",
+    "critère de comparaison",
+    "intégrale de Dirichlet"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "comparaison d'intégrales",
+    "analyse de la décroissance"
+  ],
+  "objects": [
+    "intégrale paramétrique",
+    "fonction sinus",
+    "puissance de variable",
+    "intervalle infini"
+  ],
+  "content_hash": "2de08a5d38be6451c1cf669f58e3613d510774258ba1dd33c1b403c46f863f16",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:47:34.513Z"
+}

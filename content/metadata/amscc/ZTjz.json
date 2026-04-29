@@ -1,0 +1,24 @@
+{
+  "uuid": "ZTjz",
+  "source_path": "amscc/ZTjz.tex",
+  "summary": "L'exercice demande de calculer le développement limité de la fonction ln(1+x) au voisinage de 0 à l'ordre 3, puis d'en déduire celui de (ln(1+x))^2 au même ordre.",
+  "concepts": [
+    "développement limité",
+    "fonction logarithme",
+    "ordre d'un développement limité",
+    "analyse asymptotique"
+  ],
+  "methods": [
+    "développement de Taylor",
+    "calcul de polynôme de Taylor",
+    "approximation d'ordre supérieur"
+  ],
+  "objects": [
+    "fonction ln(1+x)",
+    "développement limité d'ordre 3",
+    "polynôme de Taylor"
+  ],
+  "content_hash": "e27b67a06e4167d12f3b004ce2caf186b4bb1a3d810a860e24d797e7e1adf5f0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:33:49.130Z"
+}

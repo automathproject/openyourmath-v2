@@ -1,0 +1,28 @@
+{
+  "uuid": "QX44",
+  "source_path": "exo7/5-L2/QX44.tex",
+  "summary": "L'exercice étudie la solution maximale d'une équation différentielle non linéaire de type y' = x³ + y³ avec une condition initiale y(0) = a ≥ 0. Il demande de prouver que cette solution est strictement croissante sur [0, β[, que β est borné, et que y tend vers +∞ lorsque x tend vers β⁻.",
+  "concepts": [
+    "équation différentielle non linéaire",
+    "solution maximale",
+    "intervalle de définition",
+    "croissance d'une fonction",
+    "limite infinie",
+    "dérivées successives"
+  ],
+  "methods": [
+    "analyse des dérivées successives",
+    "raisonnement par connexité",
+    "comparaison de termes",
+    "étude de la croissance"
+  ],
+  "objects": [
+    "fonction solution d'équation différentielle",
+    "intervalle de définition",
+    "dérivée première",
+    "dérivées d'ordre supérieur"
+  ],
+  "content_hash": "2f4aa031a2330d94267a8f7d1031cd63ad880bbe5c3e918e289b37c2faf77dff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:28:05.988Z"
+}

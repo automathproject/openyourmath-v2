@@ -1,0 +1,26 @@
+{
+  "uuid": "IZXM",
+  "source_path": "exo7/4-L2/IZXM.tex",
+  "summary": "L'exercice demande de calculer le déterminant d'une matrice 5x5 donnée, de déterminer son inverse, et de montrer l'existence de sous-espaces vectoriels spécifiques dans ℝ⁵ avec certaines propriétés d'invariance sous l'action de la matrice.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "inverse d'une matrice",
+    "sous-espace vectoriel",
+    "décomposition en somme directe",
+    "invariance par application linéaire",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul direct du déterminant",
+    "recherche de vecteurs propres",
+    "construction explicite de sous-espaces"
+  ],
+  "objects": [
+    "matrice 5x5",
+    "sous-espaces vectoriels de ℝ⁵",
+    "vecteurs propres"
+  ],
+  "content_hash": "8337f8f575a6d8a255f7f2ab456fa487b3113dbe9d34f3874d18d45ba8a7932b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:43:40.125Z"
+}

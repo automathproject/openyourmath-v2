@@ -1,0 +1,31 @@
+{
+  "uuid": "VeJ3",
+  "source_path": "exo7/10-L3/VeJ3.tex",
+  "summary": "L'exercice demande de construire un groupe libre à partir d'un ensemble d'éléments appelés générateurs et d'introduire la notion de présentation d'un groupe. Il s'agit de définir une relation d'équivalence sur l'ensemble des mots formés par ces générateurs et de montrer que cette relation permet de définir une structure de groupe sur les classes d'équivalence.",
+  "concepts": [
+    "groupe libre",
+    "relation d'équivalence",
+    "classe d'équivalence",
+    "homomorphisme de groupes",
+    "isomorphisme de groupes",
+    "générateurs d'un groupe",
+    "présentation d'un groupe"
+  ],
+  "methods": [
+    "définition d'une relation d'équivalence",
+    "construction de classes d'équivalence",
+    "définition d'une loi de groupe",
+    "vérification des propriétés d'un groupe",
+    "prolongement d'une application en homomorphisme"
+  ],
+  "objects": [
+    "ensemble de générateurs",
+    "mot dans un alphabet",
+    "classe d'équivalence de mots",
+    "groupe libre",
+    "homomorphisme de groupes"
+  ],
+  "content_hash": "4283312868690797874b5f5e417de8330a23d2069bbbf7e93556767c6d53e141",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:51:01.568Z"
+}

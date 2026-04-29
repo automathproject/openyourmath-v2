@@ -1,0 +1,25 @@
+{
+  "uuid": "rBMH",
+  "source_path": "exo7/2-L1/rBMH.tex",
+  "summary": "On considère une fonction continue sur [0,1] avec f(0)=0. On demande de prouver que la limite d'une intégrale de f(t^n) tend vers 0 quand n tend vers l'infini. On généralise ensuite au cas où f(0) est quelconque.",
+  "concepts": [
+    "continuité",
+    "limite de fonctions",
+    "intégrale de Riemann",
+    "fonction puissance",
+    "théorème de convergence dominée"
+  ],
+  "methods": [
+    "passage à la limite sous le signe intégrale",
+    "comparaison de fonctions",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrale sur [0,1]",
+    "fonction puissance t^n"
+  ],
+  "content_hash": "66001e03d6a087f213835287d97b9671b346eba610c8462d443790de762b269c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:48:20.867Z"
+}

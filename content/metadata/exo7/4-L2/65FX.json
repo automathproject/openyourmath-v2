@@ -1,0 +1,28 @@
+{
+  "uuid": "65FX",
+  "source_path": "exo7/4-L2/65FX.tex",
+  "summary": "L'exercice demande de démontrer que la signature d'une permutation σ de {1,...,n} avec k orbites est égale à (-1)^{n-k}. Le contexte mathématique porte sur les propriétés des permutations et leur décomposition en cycles.",
+  "concepts": [
+    "signature d'une permutation",
+    "cycle de permutation",
+    "orbite d'une permutation",
+    "transposition",
+    "décomposition en cycles disjoints",
+    "récurrence mathématique"
+  ],
+  "methods": [
+    "décomposition en cycles disjoints",
+    "récurrence sur la longueur des cycles",
+    "calcul de la signature d'un cycle",
+    "utilisation des transpositions"
+  ],
+  "objects": [
+    "permutation",
+    "cycle de permutation",
+    "orbite",
+    "transposition"
+  ],
+  "content_hash": "2bd62bd1aa0ad6f31107b712f9a7068b69dc7ce19f4cbea12c55aceaf4bbee3d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:19:43.361Z"
+}

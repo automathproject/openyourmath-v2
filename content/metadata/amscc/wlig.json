@@ -1,0 +1,33 @@
+{
+  "uuid": "wlig",
+  "source_path": "amscc/wlig.tex",
+  "summary": "L'exercice demande de construire le Lagrangien associé à un problème d'optimisation sous contrainte, de déterminer ses points stationnaires, d'écrire l'équation de l'espace tangent en ces points, et de classer ces points comme minima ou maxima en étudiant la forme quadratique associée.",
+  "concepts": [
+    "optimisation sous contrainte",
+    "multiplicateurs de Lagrange",
+    "points stationnaires",
+    "espace tangent",
+    "forme quadratique",
+    "hessienne",
+    "minimum",
+    "maximum"
+  ],
+  "methods": [
+    "construction du Lagrangien",
+    "calcul des dérivées partielles",
+    "résolution de systèmes d'équations",
+    "analyse de la hessienne",
+    "classification des points critiques"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "contrainte d'égalité",
+    "Lagrangien",
+    "gradient",
+    "espace vectoriel tangent",
+    "forme quadratique"
+  ],
+  "content_hash": "5e4384752a54c1f3a17bfd8ca7d81f960a7d97610543eaa12a15d19e073fb025",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:38:18.799Z"
+}

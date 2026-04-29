@@ -1,0 +1,25 @@
+{
+  "uuid": "YsYJ",
+  "source_path": "exo7/15-L3/YsYJ.tex",
+  "summary": "L'exercice demande de démontrer que l'application linéaire L, définie sur l'espace vectoriel des fonctions continues sur [-1,1] avec une norme spécifique, est linéaire et de montrer qu'elle n'est pas continue en utilisant une suite de fonctions.",
+  "concepts": [
+    "espace vectoriel normé",
+    "application linéaire",
+    "continuité d'une application linéaire",
+    "fonction continue",
+    "norme sur un espace de fonctions",
+    "suite de fonctions"
+  ],
+  "methods": [
+    "vérification des propriétés de linéarité",
+    "étude de la continuité via une suite de fonctions"
+  ],
+  "objects": [
+    "espace vectoriel de fonctions continues",
+    "application linéaire L",
+    "suite de fonctions fn"
+  ],
+  "content_hash": "10c7bea701272bc827c00a8f586b258c03823bb4f41dda4d7e69b9d1576f2643",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:19:20.217Z"
+}

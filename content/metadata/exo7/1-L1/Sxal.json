@@ -1,0 +1,25 @@
+{
+  "uuid": "Sxal",
+  "source_path": "exo7/1-L1/Sxal.tex",
+  "summary": "L'exercice demande de calculer les restes des puissances de 4 divisées par 3, puis de formuler et démontrer par récurrence une propriété sur ces restes pour tout entier naturel n. Il s'agit d'étudier la divisibilité de l'expression 16^n + 4^n + 3 par 3.",
+  "concepts": [
+    "division euclidienne",
+    "récurrence",
+    "propriété arithmétique",
+    "divisibilité",
+    "congruences"
+  ],
+  "methods": [
+    "calcul de restes",
+    "formulation d'hypothèse",
+    "preuve par récurrence"
+  ],
+  "objects": [
+    "puissances de 4",
+    "entiers naturels",
+    "expression polynomiale"
+  ],
+  "content_hash": "8514c5030c3402a37310fa73f675456be335bf0af8d81090fd50cb65fe6cd2fb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:16:57.317Z"
+}

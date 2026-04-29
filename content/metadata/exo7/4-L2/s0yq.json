@@ -1,0 +1,28 @@
+{
+  "uuid": "s0yq",
+  "source_path": "exo7/4-L2/s0yq.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble A des fractions rationnelles à dénominateur impair est un sous-anneau de Q, puis d'identifier les éléments inversibles dans A, et enfin de montrer que les idéaux de A sont principaux engendrés par des puissances de 2.",
+  "concepts": [
+    "sous-anneau",
+    "élément inversible",
+    "idéal principal",
+    "structure de corps",
+    "division euclidienne",
+    "propriété d'anneau"
+  ],
+  "methods": [
+    "vérification des axiomes d'anneau",
+    "identification des unités",
+    "construction d'idéal principal",
+    "utilisation de la division euclidienne"
+  ],
+  "objects": [
+    "ensemble de fractions rationnelles",
+    "idéal de l'anneau",
+    "élément inversible",
+    "nombre de la forme 2^k"
+  ],
+  "content_hash": "58159249dd65ac490c1ef7f46702e57ce3104e4f83bba34c53c21df6e518493f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:15:28.831Z"
+}

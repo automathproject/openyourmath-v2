@@ -1,0 +1,25 @@
+{
+  "uuid": "Po88",
+  "source_path": "amscc/Po88.tex",
+  "summary": "L'exercice demande d'étudier la continuité d'une fonction de deux variables en un point en analysant ses restrictions à différentes droites et courbes passant par ce point.",
+  "concepts": [
+    "limite de fonction de plusieurs variables",
+    "continuité",
+    "restriction de fonction",
+    "limite selon un chemin",
+    "fonction définie par morceaux"
+  ],
+  "methods": [
+    "étude de la limite sur des droites",
+    "substitution dans une équation de courbe",
+    "comparaison de limites selon différents chemins"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "droite passant par l'origine",
+    "courbe paramétrée"
+  ],
+  "content_hash": "4f54acf078496513a7f0d53263e1d1ddca33a03a9f76ce545f49ffc526a1b825",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:00:25.471Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "6Igv",
+  "source_path": "exo7/5-L2/6Igv.tex",
+  "summary": "On considère une fonction de classe C¹ sur la boule unité de ℝⁿ atteignant son maximum en un point x. On doit montrer que le gradient de la fonction en ce point est colinéaire à x avec un coefficient positif.",
+  "concepts": [
+    "extremum local",
+    "gradient",
+    "colinéarité",
+    "développement limité",
+    "fonction de classe C¹",
+    "boule unité"
+  ],
+  "methods": [
+    "étude de la condition d'orthogonalité",
+    "développement limité d'ordre 1",
+    "analyse de la dérivée directionnelle"
+  ],
+  "objects": [
+    "fonction de plusieurs variables",
+    "gradient",
+    "boule unité",
+    "point critique"
+  ],
+  "content_hash": "6046642293a3b8eecddfe4e14f0af3466a4ad3d592b157590e6239afe08c2f36",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:43:10.962Z"
+}

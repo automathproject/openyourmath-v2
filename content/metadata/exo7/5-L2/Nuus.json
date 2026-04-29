@@ -1,0 +1,28 @@
+{
+  "uuid": "Nuus",
+  "source_path": "exo7/5-L2/Nuus.tex",
+  "summary": "On définit une fonction F(x) comme une intégrale de Riemann dépendant d'un paramètre x, impliquant une fonction continue f(t) et le terme |t-x|. L'exercice demande d'étudier la dérivabilité de F sur l'ensemble des réels.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "dérivabilité",
+    "fonction continue",
+    "classe C^1",
+    "continuité",
+    "dérivée à droite et à gauche"
+  ],
+  "methods": [
+    "décomposition de l'intégrale",
+    "calcul de dérivée",
+    "analyse des cas par intervalles",
+    "vérification de la continuité des dérivées"
+  ],
+  "objects": [
+    "fonction F(x)",
+    "intégrale paramétrique",
+    "fonction continue f(t)",
+    "terme |t-x|"
+  ],
+  "content_hash": "62a8c305a71a147a25be42fea4a2968631a9ac60076e809c43b8a1940c6fc816",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:35:27.476Z"
+}

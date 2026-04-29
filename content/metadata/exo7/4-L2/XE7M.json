@@ -1,0 +1,30 @@
+{
+  "uuid": "XE7M",
+  "source_path": "exo7/4-L2/XE7M.tex",
+  "summary": "Montrer l'existence d'une expression linéaire complexe pour une application ℝ-linéaire de ℂ dans ℂ, puis calculer la trace et le déterminant de cette application en fonction des coefficients complexes, et enfin déterminer la condition nécessaire et suffisante pour que cette application soit autoadjointe.",
+  "concepts": [
+    "espace vectoriel sur ℝ",
+    "espace euclidien",
+    "application linéaire",
+    "autoadjoint",
+    "trace d'un endomorphisme",
+    "déterminant d'un endomorphisme",
+    "produit scalaire"
+  ],
+  "methods": [
+    "décomposition en parties réelles et imaginaires",
+    "calcul de trace",
+    "calcul de déterminant",
+    "condition nécessaire et suffisante"
+  ],
+  "objects": [
+    "application ℝ-linéaire",
+    "nombre complexe",
+    "matrice d'endomorphisme",
+    "trace",
+    "déterminant"
+  ],
+  "content_hash": "8aa2af901fb93988de65529f6780b0360fa333394d17a3d9d2801722f4b58f06",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:33:13.029Z"
+}

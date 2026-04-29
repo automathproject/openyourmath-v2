@@ -1,0 +1,27 @@
+{
+  "uuid": "RWyD",
+  "source_path": "exo7/4-L2/RWyD.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés d'un sous-groupe G de Sn : d'abord que si G est d'ordre impair, il ne contient aucune permutation impaire, puis que si G contient au moins une permutation impaire, il en contient autant de paires que d'impaires.",
+  "concepts": [
+    "groupe de permutation",
+    "permutation paire",
+    "permutation impaire",
+    "signe d'une permutation",
+    "sous-groupe",
+    "ordre d'un groupe",
+    "théorème de Cauchy"
+  ],
+  "methods": [
+    "analyse du signe des permutations",
+    "utilisation de la structure de groupe",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "sous-groupe de Sn",
+    "permutation",
+    "groupe symétrique"
+  ],
+  "content_hash": "59604735a79379c67564f645696449d59a00b214a4b857bb4b637ec632fcf1ea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:47:13.784Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "bZ21",
+  "source_path": "exo7/2-L1/bZ21.tex",
+  "summary": "Calculer le développement limité d'ordre 3 en 0 de la fonction (tan x / x)^(1/x^2).",
+  "concepts": [
+    "développement limité",
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "ordre de développement",
+    "petit o"
+  ],
+  "methods": [
+    "développement limité de fonctions composées",
+    "approximation de Taylor",
+    "manipulation d'exposants"
+  ],
+  "objects": [
+    "fonction (tan x / x)^(1/x^2)",
+    "développement limité d'ordre 3",
+    "fonction en 0"
+  ],
+  "content_hash": "2e246fdede5a00e41b474327f0e426c5f9d44c30989365a842f1efdd3da4f727",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:35:18.834Z"
+}

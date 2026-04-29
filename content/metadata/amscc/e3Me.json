@@ -1,0 +1,23 @@
+{
+  "uuid": "e3Me",
+  "source_path": "amscc/e3Me.tex",
+  "summary": "L'exercice demande de déterminer la matrice B à partir de la matrice A et du produit AB, en utilisant l'inversibilité de A.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "matrice inverse",
+    "calcul matriciel",
+    "produit de matrices"
+  ],
+  "methods": [
+    "calcul de l'inverse par pivot de Gauss",
+    "résolution d'équation matricielle"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice rectangulaire",
+    "inverse d'une matrice"
+  ],
+  "content_hash": "ce3bb8cf04f04eeb0f0175d81b7466b5d4b1956f5d84fc84fab26550fb9e3b5f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:09:08.881Z"
+}

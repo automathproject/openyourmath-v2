@@ -1,0 +1,27 @@
+{
+  "uuid": "TbRd",
+  "source_path": "exo7/4-L2/TbRd.tex",
+  "summary": "L'exercice demande d'identifier la transformation linéaire de ℝ³ dont la matrice dans la base canonique est donnée, et de déterminer sa nature (projection, symétrie, etc.).",
+  "concepts": [
+    "espace euclidien",
+    "matrice d'une transformation linéaire",
+    "projection orthogonale",
+    "symétrie orthogonale",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "methods": [
+    "diagonalisation",
+    "calcul de valeurs propres",
+    "calcul de vecteurs propres",
+    "analyse de la matrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "transformation linéaire",
+    "base canonique"
+  ],
+  "content_hash": "8f577567be0e8dca4675aacc720b5179007c31d641d5b317cc58954bc0570596",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:27:02.253Z"
+}

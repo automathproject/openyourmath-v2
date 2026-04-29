@@ -1,0 +1,24 @@
+{
+  "uuid": "8lDy",
+  "source_path": "exo7/4-L2/8lDy.tex",
+  "summary": "L'exercice demande de déterminer s'il existe un polynôme A dans ℝ[X] tel que pour tout polynôme P dans ℝ[X], le produit scalaire de P et A soit égal à la valeur de P en 0, avec le produit scalaire défini comme l'intégrale de P(t)Q(t) de 0 à 1.",
+  "concepts": [
+    "produit scalaire",
+    "espace euclidien",
+    "polynôme",
+    "intégrale",
+    "fonctionnelle linéaire"
+  ],
+  "methods": [
+    "calcul d'intégrale",
+    "identification de polynôme"
+  ],
+  "objects": [
+    "polynôme",
+    "produit scalaire",
+    "intégrale"
+  ],
+  "content_hash": "4d217d187a79ba5d6902c0db22fbac86528b89c96c5caa4aa9aeaa761b59395f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:05:00.418Z"
+}

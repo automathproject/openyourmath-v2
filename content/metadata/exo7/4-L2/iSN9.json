@@ -1,0 +1,25 @@
+{
+  "uuid": "iSN9",
+  "source_path": "exo7/4-L2/iSN9.tex",
+  "summary": "Calculer le déterminant d'une matrice de taille n×n dont les coefficients sont de la forme a_i + b_j, où a_i et b_j sont des complexes donnés.",
+  "concepts": [
+    "déterminant",
+    "espace vectoriel",
+    "dimension d'un espace",
+    "linéaire combinaison",
+    "matrice"
+  ],
+  "methods": [
+    "réduction de matrice",
+    "calcul de déterminant 2x2",
+    "analyse de dépendance linéaire"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteurs colonnes",
+    "combinaison linéaire"
+  ],
+  "content_hash": "378e9088fbf2605a232cd17caa4053abba1d04ae1eab110e8cc2aae9c73a6444",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:04:43.295Z"
+}

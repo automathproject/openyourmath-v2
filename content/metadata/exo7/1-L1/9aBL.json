@@ -1,0 +1,27 @@
+{
+  "uuid": "9aBL",
+  "source_path": "exo7/1-L1/9aBL.tex",
+  "summary": "Montrer qu'une matrice carrée complexe est inversible sous une condition sur les valeurs absolues de ses coefficients diagonaux et hors-diagonaux.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "noyau d'une matrice",
+    "valeur absolue",
+    "matrice carrée complexe",
+    "absurdité",
+    "contradiction"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "analyse des coefficients diagonaux et hors-diagonaux",
+    "utilisation de la définition du noyau"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "vecteur du noyau",
+    "coefficient diagonal",
+    "coefficient hors-diagonal"
+  ],
+  "content_hash": "14b63c62cc937633c531fd22389293379148eef37a3be0dd531d8475d3807543",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:45:45.649Z"
+}

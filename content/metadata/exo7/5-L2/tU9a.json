@@ -1,0 +1,25 @@
+{
+  "uuid": "tU9a",
+  "source_path": "exo7/5-L2/tU9a.tex",
+  "summary": "L'exercice demande de prouver que la solution maximale d'une équation différentielle non linéaire du second ordre est définie sur tout ℝ et qu'elle est impaire. L'équation est y'' + sin(y) = 0 avec des conditions initiales données.",
+  "concepts": [
+    "équation différentielle non linéaire",
+    "solution maximale",
+    "intégrale première",
+    "fonction impaire",
+    "existence globale"
+  ],
+  "methods": [
+    "analyse de l'intégrale première",
+    "étude des conditions initiales",
+    "propriétés des fonctions impaires"
+  ],
+  "objects": [
+    "équation différentielle du second ordre",
+    "fonction y(t)",
+    "conditions initiales"
+  ],
+  "content_hash": "dd5b1067f11b99ca7f2a706284a288a775460489f84f0657ab76633903fe4d75",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:48:53.396Z"
+}

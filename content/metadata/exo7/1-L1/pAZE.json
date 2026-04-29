@@ -1,0 +1,25 @@
+{
+  "uuid": "pAZE",
+  "source_path": "exo7/1-L1/pAZE.tex",
+  "summary": "On considère une suite de trois applications entre ensembles. On demande de prouver que si les compositions g∘f et h∘g sont bijectives, alors chaque application f, g et h l'est également.",
+  "concepts": [
+    "bijection",
+    "composition d'applications",
+    "injection",
+    "surjection",
+    "application entre ensembles"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "utilisation des propriétés des bijections",
+    "analyse des compositions"
+  ],
+  "objects": [
+    "applications f, g, h",
+    "ensembles A, B, C, D",
+    "compositions g∘f et h∘g"
+  ],
+  "content_hash": "a1aaeb84439453338081d274da4ad88f8808ce58e3e7d949e5f8a28ded0c09f2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:21:28.382Z"
+}

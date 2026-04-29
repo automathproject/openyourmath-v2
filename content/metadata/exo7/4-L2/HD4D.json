@@ -1,0 +1,26 @@
+{
+  "uuid": "HD4D",
+  "source_path": "exo7/4-L2/HD4D.tex",
+  "summary": "L'exercice demande de représenter graphiquement quatre permutations données sous forme de tableaux, puis de les décomposer en produits de cycles à supports disjoints et en produits de transpositions. Il faut ensuite calculer la signature de chaque permutation et celle du produit des trois premières.",
+  "concepts": [
+    "permutation",
+    "cycle à supports disjoints",
+    "transposition",
+    "signature d'une permutation",
+    "groupe symétrique"
+  ],
+  "methods": [
+    "décomposition en cycles",
+    "calcul de signature",
+    "composition de permutations"
+  ],
+  "objects": [
+    "permutation",
+    "cycle",
+    "transposition",
+    "signature"
+  ],
+  "content_hash": "811996522d7093ca2e1e5a5e577b6ddbbebe4f2cab27bbe9851b7bbd58dd318e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:34:11.901Z"
+}

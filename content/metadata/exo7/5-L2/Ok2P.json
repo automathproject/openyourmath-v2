@@ -1,0 +1,24 @@
+{
+  "uuid": "Ok2P",
+  "source_path": "exo7/5-L2/Ok2P.tex",
+  "summary": "L'exercice demande de prouver l'existence et l'unicité d'un réel x dans l'intervalle [0, π] tel que l'intégrale de Riemann de cos(x sin θ) de 0 à π s'annule, puis d'en donner une valeur approchée.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "fonction continue",
+    "théorème des valeurs intermédiaires",
+    "unicité de la solution"
+  ],
+  "methods": [
+    "étude de la continuité",
+    "application du théorème des valeurs intermédiaires",
+    "méthode de dichotomie"
+  ],
+  "objects": [
+    "fonction intégrale",
+    "réel x",
+    "intervalle [0, π]"
+  ],
+  "content_hash": "f0ac01662c4772b9e79f194ba433e6c070338d26324ef071892e4504733bccc6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:35:50.581Z"
+}

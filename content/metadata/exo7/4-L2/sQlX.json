@@ -1,0 +1,27 @@
+{
+  "uuid": "sQlX",
+  "source_path": "exo7/4-L2/sQlX.tex",
+  "summary": "On considère un groupe fini G d'ordre 2n avec n ≥ 2, contenant deux sous-groupes H et H' d'ordre n dont l'intersection est réduite à l'élément neutre. On doit montrer que le complémentaire de H ∪ H' dans G est un singleton, puis étudier les propriétés de cet élément.",
+  "concepts": [
+    "groupe fini",
+    "sous-groupe",
+    "cardinal d'un groupe",
+    "élément neutre",
+    "partition d'un groupe",
+    "ordre d'un élément"
+  ],
+  "methods": [
+    "utilisation des propriétés des sous-groupes",
+    "analyse des relations de groupe",
+    "déduction par l'absurde"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupes H et H'",
+    "élément a",
+    "élément h"
+  ],
+  "content_hash": "144d0521d13ebc3a684f7f8ac1f5b7cbb32f48c41a9a13e212f389657f327146",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:15:51.770Z"
+}

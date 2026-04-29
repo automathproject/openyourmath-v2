@@ -1,0 +1,29 @@
+{
+  "uuid": "HVPX",
+  "source_path": "exo7/15-L3/HVPX.tex",
+  "summary": "L'exercice demande d'étudier la complétude de l'espace des fonctions continues sur un intervalle [a,b] muni de deux distances différentes : l'une définie par une fonction pondératrice non nulle, et l'autre par la norme L1.",
+  "concepts": [
+    "espace métrique complet",
+    "espace de Banach",
+    "suite de Cauchy",
+    "convergence uniforme",
+    "norme infinie",
+    "fonction continue",
+    "distance définie par une fonction pondératrice"
+  ],
+  "methods": [
+    "étude de la complétude d'un espace métrique",
+    "passage à la limite dans une suite de Cauchy",
+    "utilisation de la continuité uniforme",
+    "comparaison de normes"
+  ],
+  "objects": [
+    "espace des fonctions continues",
+    "distance pondérée",
+    "norme L1",
+    "suite de fonctions"
+  ],
+  "content_hash": "d999a80818243d4dba3872e67656fab64b5dd4506ee46a1c4b139642913522ac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:10:16.161Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "v5Gx",
+  "source_path": "exo7/4-L2/v5Gx.tex",
+  "summary": "Calculer le déterminant d'une matrice de Vandermonde définie par des puissances de nombres complexes. L'exercice demande d'exprimer ce déterminant comme un produit de différences de ces nombres.",
+  "concepts": [
+    "déterminant",
+    "matrice de Vandermonde",
+    "polynôme unitaire",
+    "récurrence",
+    "combinaison linéaire",
+    "propriété de déterminant"
+  ],
+  "methods": [
+    "réduction de ligne",
+    "développement suivant une ligne",
+    "récurrence forte",
+    "choix de polynôme"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme de degré n",
+    "déterminant de Vandermonde"
+  ],
+  "content_hash": "27bd6fd168f974bc16929694118759b64b7e9f17a5af7554a541be22fd0dc8c1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:18:57.769Z"
+}

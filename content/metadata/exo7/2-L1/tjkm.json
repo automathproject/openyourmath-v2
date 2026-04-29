@@ -1,0 +1,27 @@
+{
+  "uuid": "tjkm",
+  "source_path": "exo7/2-L1/tjkm.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés sur l'argument θ d'un nombre complexe non nul z = x + iy, écrit en forme polaire z = re^(iθ). La première partie montre que si x > 0, alors θ = Arctan(y/x). La seconde partie généralise cette relation pour θ ∈ ]-π, π[ et en déduit une formule pour θ lorsque z n'est pas un réel négatif ou nul.",
+  "concepts": [
+    "forme polaire d'un nombre complexe",
+    "argument d'un nombre complexe",
+    "fonction Arctan",
+    "identités trigonométriques",
+    "angle principal"
+  ],
+  "methods": [
+    "développement trigonométrique",
+    "simplification algébrique",
+    "utilisation de l'identité Arctan(tanθ) = θ",
+    "analyse de cas"
+  ],
+  "objects": [
+    "nombre complexe non nul",
+    "argument θ",
+    "forme polaire",
+    "fonction Arctan"
+  ],
+  "content_hash": "6194aa24336b32495fd72a7ef0eb65789ca0847e9c5b047b29d6d9a91480bbc9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:07:09.190Z"
+}

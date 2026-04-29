@@ -1,0 +1,25 @@
+{
+  "uuid": "1mF7",
+  "source_path": "exo7/5-L2/1mF7.tex",
+  "summary": "L'exercice demande de montrer que l'intervalle maximal de définition des solutions d'une équation différentielle non linéaire est ℝ, puis d'identifier les points d'inflexion des courbes solutions.",
+  "concepts": [
+    "équation différentielle non linéaire",
+    "unicité et prolongement maximal des solutions",
+    "points d'inflexion",
+    "fonction de classe C^∞",
+    "dérivée seconde"
+  ],
+  "methods": [
+    "étude de la bornitude de la dérivée première",
+    "analyse du signe de la dérivée seconde",
+    "résolution d'équation trigonométrique"
+  ],
+  "objects": [
+    "équation différentielle y' = sin(x + y)",
+    "courbes solutions",
+    "points d'inflexion"
+  ],
+  "content_hash": "4f49b9a2530c55e2ec1bafcd1a029a753fab722acc9ea25ae18ad34980cf7e39",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:13:11.916Z"
+}

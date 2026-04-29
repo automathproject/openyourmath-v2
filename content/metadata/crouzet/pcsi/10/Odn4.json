@@ -1,0 +1,29 @@
+{
+  "uuid": "Odn4",
+  "source_path": "crouzet/pcsi/10/Odn4.tex",
+  "summary": "L'exercice étudie une suite définie par une fonction quadratique et son comportement. On demande de mettre la fonction sous forme canonique, de montrer la stabilité d'un intervalle, de prouver que la suite reste dans cet intervalle, d'étudier le signe de la fonction moins son argument, d'analyser la monotonie de la suite, et enfin de démontrer sa convergence et de trouver sa limite.",
+  "concepts": [
+    "forme canonique d'une fonction quadratique",
+    "stabilité d'un intervalle",
+    "récurrence",
+    "limite de suite",
+    "théorème de la limite monotone",
+    "convergence de suite"
+  ],
+  "methods": [
+    "complétion du carré",
+    "démonstration par récurrence",
+    "étude de signe d'une fonction",
+    "analyse de la monotonie d'une suite",
+    "calcul de limite de suite"
+  ],
+  "objects": [
+    "fonction quadratique",
+    "suite définie par récurrence",
+    "intervalle stable",
+    "point fixe"
+  ],
+  "content_hash": "54beea22555860a9d1559734af1b07c1814c53eddf7c532a78cb44876f7cf79f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:36:23.489Z"
+}

@@ -1,29 +1,26 @@
 {
   "uuid": "UDKj",
   "source_path": "exo7/6-L2/UDKj.tex",
-  "summary": "L'exercice demande de déterminer la nature d'une courbe définie comme l'ensemble des points où une fonction polynomiale P(x) prend la même valeur en deux points distincts. Il s'agit d'étudier la réunion d'une droite et d'une conique, puis de caractériser cette conique comme une ellipse sous certaines conditions.",
+  "summary": "L'exercice demande de montrer que l'équation P(x)=P(y) dans un repère orthonormé représente généralement une droite et une ellipse d'excentricité fixe, où P est un polynôme de degré 3.",
   "concepts": [
     "changement de repère orthonormé",
     "équation cartésienne de conique",
-    "ellipse",
-    "équation réduite de conique",
-    "excentricité",
-    "discriminant de conique"
+    "excentricité d'une ellipse",
+    "réduction d'une forme quadratique",
+    "classification des coniques"
   ],
   "methods": [
     "changement de variable",
-    "analyse de discriminant",
-    "calcul d'excentricité",
-    "transformation de coordonnées"
+    "analyse des racines",
+    "calcul de l'excentricité"
   ],
   "objects": [
+    "polynôme de degré 3",
     "courbe algébrique",
-    "fonction polynomiale",
-    "conique",
     "ellipse",
-    "repère orthonormé"
+    "droite"
   ],
-  "content_hash": "f3252659cc2f7c6efdeaf429621351107cf710160c15158e96f30769242f38ea",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:40:18.786Z"
+  "content_hash": "cd2b27a3c393ed13ee385a5c19a748ac399e60711580e5544b01faa4b8b1d023",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:05:41.599Z"
 }

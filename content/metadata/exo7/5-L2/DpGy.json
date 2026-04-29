@@ -1,0 +1,25 @@
+{
+  "uuid": "DpGy",
+  "source_path": "exo7/5-L2/DpGy.tex",
+  "summary": "On considère une forme linéaire sur un espace euclidien et une fonction g définie comme le produit de cette forme linéaire et d'une exponentielle décroissante du carré de la norme. On demande de montrer que g admet un minimum et un maximum.",
+  "concepts": [
+    "forme linéaire",
+    "espace euclidien",
+    "extremum local",
+    "base orthonormale",
+    "coordonnées cartésiennes"
+  ],
+  "methods": [
+    "changement de base",
+    "optimisation sous contrainte",
+    "analyse des points critiques"
+  ],
+  "objects": [
+    "forme linéaire",
+    "fonction exponentielle",
+    "espace euclidien"
+  ],
+  "content_hash": "b5b0ab66f806d33c4701272f5f16818a471780eb76603dc2909f4af971ddd2e6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:51:47.039Z"
+}

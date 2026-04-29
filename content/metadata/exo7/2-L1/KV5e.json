@@ -1,0 +1,23 @@
+{
+  "uuid": "KV5e",
+  "source_path": "exo7/2-L1/KV5e.tex",
+  "summary": "L'exercice demande de déterminer les valeurs du paramètre réel k pour lesquelles l'origine est un extremum local de la fonction f(x) = (1-k)³x² + (1+k)x³.",
+  "concepts": [
+    "extremum local",
+    "dérivée première",
+    "dérivée seconde",
+    "condition nécessaire du premier ordre",
+    "condition suffisante du second ordre"
+  ],
+  "methods": [
+    "calcul de dérivées",
+    "analyse du signe de la dérivée seconde"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "paramètre réel"
+  ],
+  "content_hash": "cfad593b975f46314ed204aacab53a1c38dffbc669f4992c3160ef2bacb40c18",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:04:15.134Z"
+}

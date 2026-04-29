@@ -1,0 +1,26 @@
+{
+  "uuid": "4xrO",
+  "source_path": "exo7/1-L1/4xrO.tex",
+  "summary": "L'exercice demande de montrer que F (ensemble des fonctions affines) et G (ensemble des fonctions de classe C^1 nulles en 0 avec dérivée nulle en 0) sont des sous-espaces vectoriels de E (espace des fonctions de classe C^1), puis de prouver que E est la somme directe de F et G.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "somme directe",
+    "stabilité par combinaison linéaire",
+    "intersection triviale",
+    "dérivation linéaire"
+  ],
+  "methods": [
+    "vérification de la stabilité par combinaison linéaire",
+    "construction explicite de la décomposition",
+    "utilisation des conditions initiales et dérivées"
+  ],
+  "objects": [
+    "espace vectoriel de fonctions",
+    "sous-espaces vectoriels",
+    "fonctions affines",
+    "fonctions dérivables"
+  ],
+  "content_hash": "16ca205ec97ad802e20495df47fa0d0c96f44574a1aa70c6012be352adf02b2e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:36:53.771Z"
+}

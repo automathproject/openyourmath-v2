@@ -1,0 +1,25 @@
+{
+  "uuid": "dlcD",
+  "source_path": "exo7/4-L2/dlcD.tex",
+  "summary": "Étudier l'existence de solutions d'un système linéaire de 4 équations à 4 inconnues avec des paramètres réels a, b, c, d.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "comptabilité d'un système",
+    "matrice augmentée",
+    "espace des solutions"
+  ],
+  "methods": [
+    "calcul du déterminant",
+    "réduction par lignes",
+    "analyse de la compatibilité"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice 4x4",
+    "paramètres réels"
+  ],
+  "content_hash": "02c890209065c515752d0616d36d033252e1142c0f0d3853f68c735567dfcaae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:59:49.121Z"
+}

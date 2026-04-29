@@ -1,0 +1,29 @@
+{
+  "uuid": "qW1S",
+  "source_path": "exo7/4-L2/qW1S.tex",
+  "summary": "L'exercice demande de déterminer si un élément donné est inversible dans un anneau quotient et, si oui, de calculer le produit de cet élément avec son inverse. Il aborde aussi la recherche des diviseurs de zéro dans un autre anneau quotient.",
+  "concepts": [
+    "inversibilité dans un anneau quotient",
+    "diviseur de zéro",
+    "algèbre des anneaux",
+    "classe d'équivalence",
+    "algèbre modulaire",
+    "algèbre des nombres entiers",
+    "algèbre des congruences"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "calcul du pgcd",
+    "représentation des classes d'équivalence",
+    "identification des diviseurs de zéro"
+  ],
+  "objects": [
+    "classe d'équivalence dans Z/131Z",
+    "classe d'équivalence dans Z/16Z",
+    "inverse multiplicatif",
+    "diviseur de zéro"
+  ],
+  "content_hash": "59a3f8fbbbb4c3fa5d96d851012b87856c21fa3136be799e01fb4b622aa76c76",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:13:56.042Z"
+}

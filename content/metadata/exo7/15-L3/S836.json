@@ -1,0 +1,27 @@
+{
+  "uuid": "S836",
+  "source_path": "exo7/15-L3/S836.tex",
+  "summary": "On considère l'espace des fonctions continues sur l'intervalle [-1,1] muni de la norme uniforme. On définit une forme linéaire T comme une intégrale de produit de la fonction sin(πt) avec une fonction f de cet espace. On demande de vérifier la continuité de T et de calculer sa norme.",
+  "concepts": [
+    "espace vectoriel normé",
+    "forme linéaire",
+    "continuité d'une application linéaire",
+    "norme uniforme",
+    "intégrale de Riemann",
+    "norme d'une forme linéaire"
+  ],
+  "methods": [
+    "calcul de norme d'une forme linéaire",
+    "utilisation de la norme uniforme",
+    "intégration de fonctions continues"
+  ],
+  "objects": [
+    "espace C([-1,1])",
+    "forme linéaire T",
+    "fonction sin(πt)",
+    "intégrale sur [-1,1]"
+  ],
+  "content_hash": "22cc122c9cbcd5befcc754e7a5bb2e7c3ddc5030bda60866498f209987b69c93",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:58:43.431Z"
+}

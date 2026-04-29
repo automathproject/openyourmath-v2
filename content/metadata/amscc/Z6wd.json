@@ -1,0 +1,32 @@
+{
+  "uuid": "Z6wd",
+  "source_path": "amscc/Z6wd.tex",
+  "summary": "L'exercice demande de déterminer les points de $\\mathbb{R}^2$ qui minimisent la somme des distances au carré à un nuage de points donné, puis de trouver la droite de régression linéaire qui s'ajuste au mieux à ce nuage par la méthode des moindres carrés.",
+  "concepts": [
+    "optimisation",
+    "fonction de plusieurs variables",
+    "gradient",
+    "point critique",
+    "matrice hessienne",
+    "convexité",
+    "régression linéaire",
+    "méthode des moindres carrés"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "annulation du gradient",
+    "résolution de système linéaire",
+    "calcul de la matrice hessienne",
+    "analyse de la convexité"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "nuage de points",
+    "droite de régression",
+    "système d'équations linéaires",
+    "matrice hessienne"
+  ],
+  "content_hash": "c262335d41c7e539537746c9299b5b60473315694147ec7561689f3c4646d78e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:07:59.094Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "YJ65",
+  "source_path": "exo7/1-L1/YJ65.tex",
+  "summary": "On considère une application f d'un ensemble E dans lui-même. On définit des ensembles An comme les images itérées de A par f. On demande de montrer que l'union B de tous les An est stable par f et est le plus petit ensemble contenant A ayant cette propriété.",
+  "concepts": [
+    "application",
+    "image directe",
+    "itération d'application",
+    "stabilité par application",
+    "ensemble stable",
+    "inclusion d'ensembles"
+  ],
+  "methods": [
+    "raisonnement par inclusion",
+    "utilisation de la définition d'image directe",
+    "manipulation d'unions d'ensembles"
+  ],
+  "objects": [
+    "application f",
+    "ensemble A",
+    "ensembles An",
+    "ensemble B"
+  ],
+  "content_hash": "951c7280a376ddf46de3f729b456b29a643316bc45558335d5f7c536cc3cae6e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:19:05.976Z"
+}

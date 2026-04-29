@@ -1,0 +1,27 @@
+{
+  "uuid": "6pL1",
+  "source_path": "amscc/6pL1.tex",
+  "summary": "Calculer des probabilités liées à une variable aléatoire normale modélisant le diamètre d'une pièce industrielle, avec des questions sur la conformité, la taille excessive et des écarts par rapport à la moyenne.",
+  "concepts": [
+    "loi normale",
+    "centrage-réduction",
+    "symétrie de la loi normale",
+    "probabilité conditionnelle",
+    "écart-type",
+    "moyenne"
+  ],
+  "methods": [
+    "standardisation",
+    "utilisation de la table de la loi normale centrée réduite",
+    "calcul de probabilités conditionnelles",
+    "symétrie de la loi normale"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "intervalle de conformité",
+    "écart par rapport à la moyenne"
+  ],
+  "content_hash": "6c43500e2f371a668121601b856b5701d3afe92e2b88bb42d4d2e1d5d02444f9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:37:02.214Z"
+}

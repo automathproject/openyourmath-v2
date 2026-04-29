@@ -1,0 +1,28 @@
+{
+  "uuid": "5yi0",
+  "source_path": "exo7/6-L2/5yi0.tex",
+  "summary": "L'exercice demande de montrer que trois points donnés dans un repère orthonormé direct ne sont pas alignés, puis de déterminer l'équation cartésienne du plan qu'ils définissent. Ensuite, il s'agit de calculer les distances entre ces points pour déterminer la nature du triangle formé, et enfin de vérifier si un quatrième point est coplanaire avec les trois premiers.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "alignement de points",
+    "équation cartésienne d'un plan",
+    "distance entre points",
+    "coplanarité",
+    "triangle"
+  ],
+  "methods": [
+    "calcul de vecteurs",
+    "détermination d'équation de plan",
+    "calcul de distances",
+    "vérification de coplanarité"
+  ],
+  "objects": [
+    "points dans l'espace",
+    "vecteurs",
+    "plan",
+    "triangle"
+  ],
+  "content_hash": "1ab4560c3b984bd9fe371f303eedf690be5a379f5e8f517800fc280f7725b3c8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:22:44.579Z"
+}

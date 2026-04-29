@@ -1,0 +1,23 @@
+{
+  "uuid": "358R",
+  "source_path": "exo7/1-L1/358R.tex",
+  "summary": "On considère un ensemble E et trois parties A, B, C de E. On suppose que A ∪ B = A ∪ C et A ∩ B = A ∩ C. On demande de montrer que B = C.",
+  "concepts": [
+    "inclusion d'ensembles",
+    "égalité d'ensembles",
+    "union d'ensembles",
+    "intersection d'ensembles",
+    "parties d'un ensemble"
+  ],
+  "methods": [
+    "double inclusion",
+    "manipulation d'égalités ensemblistes"
+  ],
+  "objects": [
+    "ensemble",
+    "parties d'un ensemble"
+  ],
+  "content_hash": "8eb7b98d92897202241b389157e855c5a9982e767f7bd7d52b2a7639b3af0da8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:03:23.429Z"
+}

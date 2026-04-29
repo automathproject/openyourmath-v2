@@ -1,0 +1,25 @@
+{
+  "uuid": "Idhv",
+  "source_path": "exo7/1-L1/Idhv.tex",
+  "summary": "On considère une matrice carrée d'ordre n vérifiant une condition sur les éléments diagonaux et hors diagonaux. On demande de prouver que cette matrice est inversible.",
+  "concepts": [
+    "matrice carrée",
+    "inversibilité",
+    "éléments diagonaux",
+    "éléments hors diagonaux",
+    "condition nécessaire et suffisante",
+    "déterminant non nul"
+  ],
+  "methods": [
+    "utilisation de la condition de Diagonale strictement dominante",
+    "preuve par l'absurde"
+  ],
+  "objects": [
+    "matrice carrée d'ordre n",
+    "éléments diagonaux",
+    "éléments hors diagonaux"
+  ],
+  "content_hash": "aee975d05da50934a7e15b04cd3552288dc37f7b4a9978f7e014781fe8ae3a29",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:50:19.930Z"
+}

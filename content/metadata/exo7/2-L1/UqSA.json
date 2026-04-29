@@ -1,0 +1,27 @@
+{
+  "uuid": "UqSA",
+  "source_path": "exo7/2-L1/UqSA.tex",
+  "summary": "Simplifier des expressions impliquant des fonctions hyperboliques et leurs inverses, notamment $\\ch(\\Argsh x)$, $\\tanh(\\Argsh x)$, $\\sh(2\\Argsh x)$, $\\sh(\\Argch x)$, $\\tanh(\\Argch x)$, et $\\ch(3\\Argch x)$.",
+  "concepts": [
+    "fonctions hyperboliques",
+    "fonctions hyperboliques inverses",
+    "identités hyperboliques",
+    "relation fondamentale hyperbolique",
+    "propriétés algébriques des fonctions hyperboliques"
+  ],
+  "methods": [
+    "utilisation des identités hyperboliques",
+    "simplification d'expressions",
+    "substitution de variables"
+  ],
+  "objects": [
+    "fonction cosinus hyperbolique",
+    "fonction sinus hyperbolique",
+    "fonction tangente hyperbolique",
+    "fonction argument sinus hyperbolique",
+    "fonction argument cosinus hyperbolique"
+  ],
+  "content_hash": "4c23a83e2c576cd7fe349dac9ebb5f32336c2441e3883d8a9aa281d23d958a9e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:00:31.777Z"
+}

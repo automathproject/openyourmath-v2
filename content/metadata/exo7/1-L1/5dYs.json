@@ -1,0 +1,28 @@
+{
+  "uuid": "5dYs",
+  "source_path": "exo7/1-L1/5dYs.tex",
+  "summary": "Calculer une base de l'image et une base du noyau d'une application linéaire de R³ dans R⁵, puis déterminer son rang.",
+  "concepts": [
+    "application linéaire",
+    "image d'une application linéaire",
+    "noyau d'une application linéaire",
+    "théorème du rang",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul de la matrice associée",
+    "détermination des vecteurs de la base de l'image",
+    "détermination des vecteurs de la base du noyau",
+    "calcul du rang par la dimension de l'image"
+  ],
+  "objects": [
+    "application linéaire",
+    "vecteurs de R³",
+    "vecteurs de R⁵",
+    "matrice associée"
+  ],
+  "content_hash": "febdba0cfcfb2ee9c4b774cfecc7fdf1e0400f73e719e72866b6b4712ad480dd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:52:30.514Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "GZx4",
+  "source_path": "exo7/14-L3/GZx4.tex",
+  "summary": "L'exercice demande de montrer la convergence faible et forte d'une suite de fonctions dans les espaces L^p sur [0, +∞[. La suite de fonctions est définie par f_n(x) = 1/√n sur [n, 2n] et nulle ailleurs.",
+  "concepts": [
+    "convergence faible",
+    "convergence forte",
+    "espace L^p",
+    "densité des fonctions continues à support compact",
+    "convergence presque partout",
+    "norme L^p"
+  ],
+  "methods": [
+    "intégration sur un intervalle",
+    "utilisation de la densité",
+    "comparaison des normes",
+    "passage à la limite sous l'intégrale"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction indicatrice",
+    "fonction nulle",
+    "intervalle [0, +∞["
+  ],
+  "content_hash": "59bd62807e7b24de97a083f2564f2fa8ea4eec270b1bc08f1d78972f28a130ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:53:35.311Z"
+}

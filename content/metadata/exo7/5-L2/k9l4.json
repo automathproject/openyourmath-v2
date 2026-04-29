@@ -1,0 +1,28 @@
+{
+  "uuid": "k9l4",
+  "source_path": "exo7/5-L2/k9l4.tex",
+  "summary": "Trouver l'infimum d'une intégrale de carré de fonction sur un ensemble de fonctions C² vérifiant des conditions aux limites. L'intégrande est une combinaison linéaire de la fonction et de sa dérivée.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "inégalité de Cauchy-Schwarz",
+    "condition aux limites",
+    "infimum d'une intégrale",
+    "fonction de classe C²",
+    "intégrale de carré de fonction"
+  ],
+  "methods": [
+    "changement de variable",
+    "calcul de primitive",
+    "application de l'inégalité de Cauchy-Schwarz",
+    "résolution d'équation différentielle linéaire"
+  ],
+  "objects": [
+    "fonction C²",
+    "intégrale de carré de fonction",
+    "condition aux limites",
+    "équation différentielle linéaire"
+  ],
+  "content_hash": "a57347aaf265e4f129a58b39a57757c54cdf04c05ce348a661397bd0919d7738",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:42:50.134Z"
+}

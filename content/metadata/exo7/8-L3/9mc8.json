@@ -1,31 +1,30 @@
 {
   "uuid": "9mc8",
   "source_path": "exo7/8-L3/9mc8.tex",
-  "summary": "L'exercice demande de montrer qu'un sous-groupe H de Sn contenant une transposition est égal à Sn. Il s'agit de prouver que H agit 2-transitivement sur {1, ..., n} et contient toutes les transpositions, en utilisant des propriétés d'orbites et de fixateurs.",
+  "summary": "L'exercice demande de montrer qu'un sous-groupe primitif H de Sn contenant une transposition est égal à Sn. On étudie l'action de H et de son fixateur H1 sur l'ensemble {1, ..., n} pour en déduire des propriétés de transitivité.",
   "concepts": [
     "action de groupe",
     "sous-groupe primitif",
+    "transitivité",
+    "fixateur",
     "transposition",
     "orbite",
-    "fixateur",
-    "transitivité",
-    "2-transitivité",
-    "générateur de sous-groupe"
+    "groupe symétrique"
   ],
   "methods": [
-    "étude des orbites",
+    "étude de l'action de groupe",
+    "analyse des orbites",
     "utilisation du fixateur",
-    "conjugaison de transpositions",
-    "démonstration par transitivité"
+    "conjugaison de transpositions"
   ],
   "objects": [
     "sous-groupe de Sn",
-    "transposition (1 2)",
-    "fixateur H(1)",
-    "ensemble {1, ..., n}",
-    "orbite de 2 sous H"
+    "transposition",
+    "fixateur",
+    "orbite",
+    "groupe symétrique"
   ],
-  "content_hash": "bf4051b2388f8070b0bd3e5443659ab52fe2a97ed48a63be281b967004dc817a",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:04:25.115Z"
+  "content_hash": "63bca838ccb98139abbf77c8552134ac45d2fa9d78a86275fe2e71952881263f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:25:38.298Z"
 }

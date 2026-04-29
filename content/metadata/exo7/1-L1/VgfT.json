@@ -1,0 +1,25 @@
+{
+  "uuid": "VgfT",
+  "source_path": "exo7/1-L1/VgfT.tex",
+  "summary": "Démontrer que si deux entiers naturels non nuls a et b vérifient a^m et b^n premiers entre eux, alors a et b sont premiers entre eux.",
+  "concepts": [
+    "divisibilité dans Z",
+    "pgcd",
+    "nombres premiers entre eux",
+    "algorithme d'Euclide",
+    "propriétés des puissances"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "utilisation de l'algorithme d'Euclide",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "entiers naturels",
+    "puissances d'entiers",
+    "pgcd"
+  ],
+  "content_hash": "32d05da7c6cd1459bd5317e545fd9275ccd895ee749e8a9b3ef2750fd5ac917c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:06:26.209Z"
+}

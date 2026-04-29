@@ -1,0 +1,26 @@
+{
+  "uuid": "Vvxb",
+  "source_path": "exo7/4-L2/Vvxb.tex",
+  "summary": "L'exercice demande de montrer que la famille des formes linéaires d'évaluation en tout point réel engendre le dual d'un espace vectoriel engendré par des fonctions linéairement indépendantes. Ensuite, il s'agit d'en déduire l'existence de points réels permettant de former une matrice inversible.",
+  "concepts": [
+    "espace vectoriel",
+    "dual d'un espace vectoriel",
+    "famille génératrice",
+    "matrice inversible",
+    "déterminant",
+    "indépendance linéaire"
+  ],
+  "methods": [
+    "construction explicite de formes linéaires",
+    "calcul de déterminant",
+    "utilisation de l'indépendance linéaire"
+  ],
+  "objects": [
+    "espace vectoriel de fonctions",
+    "formes linéaires d'évaluation",
+    "matrice de termes $f_i(x_j)$"
+  ],
+  "content_hash": "89e97c0d849f60c969c9fdcfb07fbbc3ec2dc3af3edbb5c05331e203c605adb9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:57:55.042Z"
+}

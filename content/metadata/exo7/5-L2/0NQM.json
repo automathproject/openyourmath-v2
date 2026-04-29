@@ -1,0 +1,27 @@
+{
+  "uuid": "0NQM",
+  "source_path": "exo7/5-L2/0NQM.tex",
+  "summary": "Résoudre une équation différentielle non linéaire du premier ordre. L'équation donnée est x²(y' + y²) = xy - 1.",
+  "concepts": [
+    "équation différentielle non linéaire",
+    "équation différentielle du premier ordre",
+    "intégration",
+    "équation de Bernoulli",
+    "champ de vecteurs"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration par parties",
+    "intégration de fonctions rationnelles",
+    "résolution d'équation de Bernoulli"
+  ],
+  "objects": [
+    "équation différentielle",
+    "fonction y(x)",
+    "variable x",
+    "variable y"
+  ],
+  "content_hash": "057e428ad8e5e0966da120e314e5b1f5ef10c022b517a2e323b6a0d40c0c2e7c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:12:25.127Z"
+}

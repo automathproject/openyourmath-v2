@@ -1,0 +1,28 @@
+{
+  "uuid": "4F7H",
+  "source_path": "exo7/4-L2/4F7H.tex",
+  "summary": "L'exercice demande de montrer qu'une expression produit impliquant des entiers naturels strictement croissants est un entier naturel, en utilisant le calcul du déterminant d'une matrice de coefficients binomiaux.",
+  "concepts": [
+    "déterminant",
+    "base d'un espace vectoriel",
+    "combinaison linéaire",
+    "polynômes de degré donné",
+    "matrice de coefficients binomiaux",
+    "linéarité du déterminant"
+  ],
+  "methods": [
+    "réduction de matrice par lignes",
+    "calcul de déterminant",
+    "combinaison linéaire de lignes",
+    "utilisation de la base des polynômes de Falling Factorial"
+  ],
+  "objects": [
+    "matrice de coefficients binomiaux",
+    "produit de termes rationnels",
+    "polynômes de degré n-1",
+    "entiers naturels strictement croissants"
+  ],
+  "content_hash": "25b5287ea2e2a7093c63ede33fab95802ddc08aa2262a7a64ef4a4fd7c603ba9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:30:36.529Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "JOOM",
+  "source_path": "exo7/1-L1/JOOM.tex",
+  "summary": "L'exercice étudie une application linéaire φ d'un espace vectoriel E de dimension 3 dans lui-même, vérifiant φ²=0 et φ≠0. On demande de montrer des propriétés sur l'image et le noyau de φ, d'en déduire le rang r de φ, et de déterminer une base de E ainsi que la matrice de φ dans cette base.",
+  "concepts": [
+    "application linéaire",
+    "image d'une application linéaire",
+    "noyau d'une application linéaire",
+    "rang d'une application linéaire",
+    "base d'un espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "famille libre"
+  ],
+  "methods": [
+    "utilisation des relations entre image et noyau",
+    "calcul de dimension",
+    "construction explicite d'une base",
+    "détermination de la matrice d'une application linéaire dans une base"
+  ],
+  "objects": [
+    "espace vectoriel de dimension 3",
+    "application linéaire nilpotente",
+    "famille libre",
+    "base de l'espace vectoriel",
+    "matrice d'une application linéaire"
+  ],
+  "content_hash": "d339976a1ed92ca87da375e6cc6ca34622acc892cb980a97a33638cbafdf1100",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:50:48.601Z"
+}

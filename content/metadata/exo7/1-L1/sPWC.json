@@ -1,0 +1,24 @@
+{
+  "uuid": "sPWC",
+  "source_path": "exo7/1-L1/sPWC.tex",
+  "summary": "Déterminer le nombre de k-uplets strictement croissants d'entiers compris entre 1 et n.",
+  "concepts": [
+    "combinaison",
+    "arrangement",
+    "cardinal d'un ensemble fini",
+    "nombre de sous-ensembles",
+    "coefficient binomial"
+  ],
+  "methods": [
+    "formule des combinaisons",
+    "calcul factoriel"
+  ],
+  "objects": [
+    "k-uplet strictement croissant",
+    "ensemble d'entiers",
+    "coefficient binomial"
+  ],
+  "content_hash": "2b523247d1af1b31461088e1d2293b85eee9ad2a609f188eb5995ac027031c95",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:50:42.785Z"
+}

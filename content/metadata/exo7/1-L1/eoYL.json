@@ -1,0 +1,26 @@
+{
+  "uuid": "eoYL",
+  "source_path": "exo7/1-L1/eoYL.tex",
+  "summary": "Résoudre dans ℤ² quatre équations diophantiennes linéaires à deux inconnues. Chaque équation est de la forme ax + by = 1.",
+  "concepts": [
+    "équation diophantienne",
+    "algèbre linéaire",
+    "arithmétique dans ℤ",
+    "théorème de Bézout",
+    "pgcd",
+    "algorithme d'Euclide"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "identité de Bézout",
+    "résolution d'équation linéaire"
+  ],
+  "objects": [
+    "équation linéaire à deux inconnues",
+    "entiers relatifs",
+    "pgcd"
+  ],
+  "content_hash": "462b98ad336ed4ac0f673e963e25221d780ee673f077475a79671e6b514e6e20",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:08:32.906Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "F4PR",
+  "source_path": "exo7/15-L3/F4PR.tex",
+  "summary": "L'exercice demande de montrer qu'une nouvelle distance, construite à partir d'une distance existante sur un espace complet, définit une distance équivalente et que l'espace muni de cette nouvelle distance est complet.",
+  "concepts": [
+    "espace métrique complet",
+    "distance équivalente",
+    "topologie induite",
+    "complétude",
+    "distance sur un ouvert",
+    "convergence uniforme"
+  ],
+  "methods": [
+    "construction de distance",
+    "preuve de l'équivalence des distances",
+    "utilisation de la complétude de l'espace initial"
+  ],
+  "objects": [
+    "distance d",
+    "ouvert U",
+    "complémentaire F",
+    "fonction f(x,y)",
+    "distance δ(x,y)"
+  ],
+  "content_hash": "5434290f217a46340aef002bb6a342c24a1672c4aa979a9c5b76ff13390cb300",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:09:33.663Z"
+}

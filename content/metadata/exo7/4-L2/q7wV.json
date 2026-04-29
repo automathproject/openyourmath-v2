@@ -1,0 +1,28 @@
+{
+  "uuid": "q7wV",
+  "source_path": "exo7/4-L2/q7wV.tex",
+  "summary": "L'exercice demande de déterminer s'il existe n points M₁, ..., Mₙ dans le plan tels que chaque point Aₖ soit le milieu du segment [Mₖ, Mₖ₊₁], avec une condition cyclique pour Aₙ. L'énoncé se formule en termes géométriques mais se résout par des outils algébriques.",
+  "concepts": [
+    "système linéaire",
+    "déterminant",
+    "rang d'une matrice",
+    "système de Cramer",
+    "isobarycentre",
+    "condition de compatibilité"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "résolution de système linéaire",
+    "analyse de rang",
+    "construction de solutions paramétriques"
+  ],
+  "objects": [
+    "matrice circulante",
+    "système d'équations linéaires",
+    "points géométriques",
+    "isobarycentre"
+  ],
+  "content_hash": "d86316acad163ee3f5993052d0b65acaa135b0b65effe8403bf71081f0941bee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:12:32.169Z"
+}

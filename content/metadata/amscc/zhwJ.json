@@ -1,0 +1,30 @@
+{
+  "uuid": "zhwJ",
+  "source_path": "amscc/zhwJ.tex",
+  "summary": "L'exercice demande d'étudier les extrema d'une fonction de deux variables définie par f(x,y) = x ln(y) - y ln(x). On cherche à déterminer son ensemble de définition, ses points stationnaires et ses points extrémaux.",
+  "concepts": [
+    "fonction de plusieurs variables",
+    "ensemble de définition",
+    "points stationnaires",
+    "extremums locaux",
+    "matrice hessienne",
+    "point selle",
+    "dérivabilité",
+    "classe C²"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "étude des variations",
+    "analyse des points critiques",
+    "calcul du déterminant de la matrice hessienne"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "ensemble de définition",
+    "points stationnaires",
+    "matrice hessienne"
+  ],
+  "content_hash": "83b776b6a644cf4a555289024142abecf51ec32e98c8800f1199a45107d3edc5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:26:48.601Z"
+}

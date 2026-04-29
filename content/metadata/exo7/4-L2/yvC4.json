@@ -1,0 +1,28 @@
+{
+  "uuid": "yvC4",
+  "source_path": "exo7/4-L2/yvC4.tex",
+  "summary": "Trouver les coefficients a et b minimisant l'intégrale de la différence entre le polynôme x⁴ et le polynôme affine ax + b au carré sur l'intervalle [0,1]. Deux démonstrations sont demandées : une approche algébrique et une approche utilisant la projection orthogonale dans un espace de polynômes.",
+  "concepts": [
+    "produit scalaire",
+    "projection orthogonale",
+    "distance minimale",
+    "espace vectoriel de polynômes",
+    "orthonormalisation de Gram-Schmidt",
+    "minimisation de fonctionnelle"
+  ],
+  "methods": [
+    "développement algébrique",
+    "orthonormalisation",
+    "calcul de projection",
+    "minimisation par dérivées partielles"
+  ],
+  "objects": [
+    "polynôme de degré 4",
+    "polynôme affine",
+    "espace vectoriel de polynômes de degré ≤ 1",
+    "base orthonormale"
+  ],
+  "content_hash": "421c4825513b70c4f700b444ab7dc6cb21e2c8a6339855c3771f7edbe6f123ed",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:05:13.844Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "OfYK",
+  "source_path": "exo7/5-L2/OfYK.tex",
+  "summary": "L'exercice demande de montrer l'existence de fonctions g et h de classe C^∞ telles que f(x,y) = xg(x,y) + yh(x,y) pour une fonction f de classe C^∞ sur un ouvert convexe U contenant (0,0). Il explore aussi l'unicité de g et h et une généralisation à U non convexe.",
+  "concepts": [
+    "fonction de classe C^∞",
+    "dérivée partielle",
+    "intégrale de ligne",
+    "théorème de la dérivée partielle",
+    "fonction convexe",
+    "unicité des solutions"
+  ],
+  "methods": [
+    "intégration par rapport à un paramètre",
+    "développement en série",
+    "utilisation de la convexité",
+    "analyse de l'unicité"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "fonctions g et h",
+    "ouvert convexe",
+    "dérivées partielles"
+  ],
+  "content_hash": "ac148b62847be992f3f766143e7d12da84db5178bda38d787722ab6c23d0a616",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:59:28.212Z"
+}

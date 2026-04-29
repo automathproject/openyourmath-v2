@@ -1,0 +1,30 @@
+{
+  "uuid": "Xc6R",
+  "source_path": "amscc/Xc6R.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction d'efficacité de radar est continue sur un disque fermé, puis de trouver ses points critiques à l'intérieur du disque et d'étudier son comportement sur la frontière via une paramétrisation polaire. L'objectif final est de déterminer les points d'installation optimale et minimale du radar.",
+  "concepts": [
+    "continuité sur un compact",
+    "théorème des bornes atteintes",
+    "maximum et minimum globaux",
+    "points critiques",
+    "paramétrisation polaire",
+    "optimisation sur un compact"
+  ],
+  "methods": [
+    "étude de la continuité",
+    "calcul de dérivées partielles",
+    "annulation du gradient",
+    "substitution polaire",
+    "recherche d'extrema"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "disque fermé",
+    "points critiques",
+    "frontière de domaine",
+    "paramétrisation polaire"
+  ],
+  "content_hash": "5b46c7ce493871eacd7a909c01e3d4fce09130bbf673af33dd407437734cb26c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:12:20.598Z"
+}

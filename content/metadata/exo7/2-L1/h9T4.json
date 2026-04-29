@@ -1,0 +1,24 @@
+{
+  "uuid": "h9T4",
+  "source_path": "exo7/2-L1/h9T4.tex",
+  "summary": "Soient deux fonctions continues sur un intervalle [a, b]. Pour tout x dans [a, b], il existe un y dans [a, b] tel que f(x) = g(y). Montrer qu'il existe un point x dans [a, b] où f(x) = g(x).",
+  "concepts": [
+    "continuité",
+    "théorème des valeurs intermédiaires",
+    "fonction réelle",
+    "intervalle compact",
+    "image d'une fonction"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "fonctions continues",
+    "intervalle [a, b]",
+    "points d'intersection"
+  ],
+  "content_hash": "7fd7a318704db5127800fdafa226f5b3335dbc748f3da4bc0154e1f76f00081b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:22:59.650Z"
+}

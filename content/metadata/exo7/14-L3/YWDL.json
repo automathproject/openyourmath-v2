@@ -1,32 +1,30 @@
 {
   "uuid": "YWDL",
   "source_path": "exo7/14-L3/YWDL.tex",
-  "summary": "L'exercice demande de démontrer une relation de récurrence pour le volume d'une boule unité en dimension n, puis de calculer explicitement ces volumes et les aires des sphères associées pour de petites dimensions. Il mobilise des intégrales sur des ensembles géométriques et des changements de variables.",
+  "summary": "L'exercice propose une méthode de calcul du volume de la boule unité et de l'aire de la sphère en dimension n à l'aide d'intégrales. Il demande de démontrer une relation de récurrence entre les volumes en dimensions successives et de calculer explicitement ces volumes et aires pour de petites dimensions.",
   "concepts": [
-    "intégrale multiple",
+    "intégrale de Lebesgue",
     "changement de variable",
-    "relation de récurrence",
+    "intégration multiple",
+    "récurrence",
     "volume de la boule unité",
     "aire de la sphère",
-    "intégration par parties",
-    "formule de réduction"
+    "intégration par parties"
   ],
   "methods": [
-    "changement de variable trigonométrique",
+    "changement de variable",
     "intégration par parties",
-    "calcul explicite de volumes",
-    "calcul explicite d'aires",
+    "intégration multiple",
     "récurrence"
   ],
   "objects": [
-    "intégrale de Lebesgue",
     "boule unité",
     "sphère",
-    "volume",
-    "aire",
-    "fonction puissance de sinus"
+    "intégrale de fonction trigonométrique",
+    "volume en dimension n",
+    "aire de la sphère en dimension n-1"
   ],
-  "content_hash": "20bba73d5226f21dab71567f152706a89bb29263b5599d5cdf18493db94a0c21",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:26:17.432Z"
+  "content_hash": "cb6a80bd822d40f8ec106fe34a48b55e70660322961d55d118de78ca28faf503",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:20:35.850Z"
 }

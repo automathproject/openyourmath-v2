@@ -1,0 +1,28 @@
+{
+  "uuid": "AdEa",
+  "source_path": "exo7/6-L2/AdEa.tex",
+  "summary": "Montrer que pour un point M sur un cercle, le produit des distances de M aux droites (M1M2) et (M3M4) est égal au produit des distances de M aux droites (M1M3) et (M2M4).",
+  "concepts": [
+    "similitude directe",
+    "cocyclicité",
+    "angle orienté",
+    "projection orthogonale",
+    "conservation des angles par similitude",
+    "conservation des rapports de longueurs par similitude"
+  ],
+  "methods": [
+    "utilisation de similitudes",
+    "calcul d'angles orientés",
+    "projection orthogonale",
+    "conservation des propriétés par similitude"
+  ],
+  "objects": [
+    "points cocycliques",
+    "droites du plan",
+    "distances d'un point à une droite",
+    "similitude de centre M"
+  ],
+  "content_hash": "27a8889e33ce04da4feabb9dbfa9fdbe26d25197a611abaa6289d0c8545b7308",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:25:48.227Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "IA0e",
+  "source_path": "exo7/1-L1/IA0e.tex",
+  "summary": "L'exercice demande de montrer qu'un ensemble de matrices particulières forme un sous-espace vectoriel stable par multiplication et d'en calculer la dimension. Il faut ensuite déterminer le rang de ces matrices selon leurs paramètres et, lorsque possible, calculer leur inverse. Enfin, il s'agit de fournir des bases de matrices inversibles et de rang 1 dans cet ensemble.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "stabilité par multiplication",
+    "dimension d'un espace vectoriel",
+    "rang d'une matrice",
+    "inverse d'une matrice",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "vérification des propriétés de sous-espace vectoriel",
+    "calcul de rang",
+    "calcul d'inverse",
+    "construction de bases"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "sous-espace de matrices",
+    "base de matrices inversibles",
+    "base de matrices de rang 1"
+  ],
+  "content_hash": "03788a9c63374deebcee996ec451ccab50c5b3b6566cf4546ab80e3fb0955455",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:49:54.446Z"
+}

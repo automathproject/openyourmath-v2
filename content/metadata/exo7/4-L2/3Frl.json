@@ -1,0 +1,30 @@
+{
+  "uuid": "3Frl",
+  "source_path": "exo7/4-L2/3Frl.tex",
+  "summary": "L'exercice étudie un code binaire linéaire engendré par une matrice génératrice donnée. Il demande de déterminer l'alphabet, la longueur, la dimension, un polynôme générateur, le nombre de mots, la cyclicité, une matrice de contrôle, la distance du code, et de vérifier si un mot donné est un mot de code.",
+  "concepts": [
+    "code linéaire",
+    "code cyclique",
+    "polynôme générateur",
+    "matrice génératrice",
+    "matrice de contrôle",
+    "distance de Hamming",
+    "correction d'erreurs"
+  ],
+  "methods": [
+    "factorisation de polynômes",
+    "calcul de la distance minimale",
+    "vérification de mots de code",
+    "détection et correction d'erreurs"
+  ],
+  "objects": [
+    "matrice génératrice",
+    "polynôme générateur",
+    "matrice de contrôle",
+    "mot de code",
+    "erreur de transmission"
+  ],
+  "content_hash": "da0c70dc2420236d6e4fb067b2be09a08151d2a9bf01ef279d2466c0f0d9a3df",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:16:39.066Z"
+}

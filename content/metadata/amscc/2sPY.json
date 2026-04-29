@@ -1,0 +1,31 @@
+{
+  "uuid": "2sPY",
+  "source_path": "amscc/2sPY.tex",
+  "summary": "L'exercice demande de déterminer le déterminant d'une matrice à paramètre réel, puis d'en déduire les valeurs du paramètre pour lesquelles un système linéaire homogène admet des solutions non nulles et de résoudre ce système. Ensuite, il s'agit de trouver les solutions d'un système linéaire non homogène pour des valeurs spécifiques du paramètre.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "système linéaire homogène",
+    "système linéaire non homogène",
+    "rang d'une matrice",
+    "théorème de Cramer",
+    "système compatible déterminé",
+    "système compatible indéterminé"
+  ],
+  "methods": [
+    "développement par rapport à une ligne ou une colonne",
+    "calcul de déterminant",
+    "résolution par substitution",
+    "formules de Cramer"
+  ],
+  "objects": [
+    "matrice carrée 3x3",
+    "système linéaire à paramètre",
+    "déterminant",
+    "solution non nulle",
+    "solution unique",
+    "solution paramétrique"
+  ],
+  "content_hash": "bd7500d23593bcf7fc676c2e4fe8da1282028091e33f71b975b83e90a96bdad6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:29:24.545Z"
+}

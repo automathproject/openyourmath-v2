@@ -1,0 +1,28 @@
+{
+  "uuid": "jCnx",
+  "source_path": "exo7/12-L3/jCnx.tex",
+  "summary": "L'exercice demande de montrer l'existence d'une application implicite à partir d'une fonction de R³ dans R² en utilisant le théorème des fonctions implicites. La fonction est définie par des polynômes et un point spécifique est donné.",
+  "concepts": [
+    "théorème des fonctions implicites",
+    "différentiabilité",
+    "matrice jacobienne",
+    "déterminant",
+    "application C¹",
+    "système d'équations non linéaires"
+  ],
+  "methods": [
+    "calcul de la matrice jacobienne",
+    "évaluation en un point",
+    "calcul de déterminant",
+    "application du théorème des fonctions implicites"
+  ],
+  "objects": [
+    "fonction de R³ dans R²",
+    "point critique",
+    "intervalle",
+    "application implicite"
+  ],
+  "content_hash": "8da42668f951b9825244e9222acb231c57fd9d46014c56a64ff922f627757020",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:17:44.189Z"
+}

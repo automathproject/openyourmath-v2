@@ -1,0 +1,30 @@
+{
+  "uuid": "pvKO",
+  "source_path": "exo7/6-L2/pvKO.tex",
+  "summary": "L'exercice demande de décrire une symétrie affine dans un espace affine E par rapport à un sous-espace affine F parallèlement à un autre sous-espace affine G, puis d'étudier ses propriétés (bijectivité, noyau de transformations associées) et d'analyser le milieu du segment entre un point et son image par cette symétrie.",
+  "concepts": [
+    "espace affine",
+    "sous-espace affine",
+    "direction supplémentaire",
+    "symétrie affine",
+    "bijectivité",
+    "noyau d'une application linéaire",
+    "milieu d'un segment"
+  ],
+  "methods": [
+    "détermination de la symétrie affine",
+    "analyse de la bijectivité",
+    "calcul du noyau d'une application linéaire",
+    "détermination du milieu d'un segment"
+  ],
+  "objects": [
+    "espace affine E",
+    "sous-espaces affines F et G",
+    "symétrie s",
+    "point M",
+    "vecteur u de G"
+  ],
+  "content_hash": "4784652f15ae81cd0b931166b47062a96d2e00e9c5d1d4473c8413d13406ba90",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:09:58.234Z"
+}

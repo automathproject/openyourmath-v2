@@ -1,0 +1,26 @@
+{
+  "uuid": "1DSc",
+  "source_path": "exo7/4-L2/1DSc.tex",
+  "summary": "Calculer le déterminant d'une matrice dont les coefficients sont $\\sin(a_i+a_j)$ pour des réels $a_1,\\ldots,a_n$ donnés.",
+  "concepts": [
+    "déterminant",
+    "espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "linéaire combinaison",
+    "matrice carrée",
+    "système linéaire"
+  ],
+  "methods": [
+    "décomposition de colonnes",
+    "analyse de la dimension de l'espace engendré",
+    "calcul direct pour cas particulier"
+  ],
+  "objects": [
+    "matrice de taille $n\\times n$",
+    "colonnes d'une matrice",
+    "vecteurs $C$ et $S$"
+  ],
+  "content_hash": "3e2ac18d7843854ce65efb312aadfe2e2ae6e348e4a24c2ce7a84d2abc878767",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:28:13.237Z"
+}

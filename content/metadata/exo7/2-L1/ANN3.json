@@ -1,0 +1,27 @@
+{
+  "uuid": "ANN3",
+  "source_path": "exo7/2-L1/ANN3.tex",
+  "summary": "On considère une fonction C^1 sur un intervalle [a, b] à valeurs réelles avec f(a) = 0. On demande de prouver une inégalité liant l'intégrale de f² et celle de la dérivée de f au carré.",
+  "concepts": [
+    "fonction C^1",
+    "intégrale de Riemann",
+    "inégalité",
+    "dérivée",
+    "fonction à valeurs réelles"
+  ],
+  "methods": [
+    "intégration par parties",
+    "inégalité de Cauchy-Schwarz",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "fonction f",
+    "intervalle [a, b]",
+    "dérivée f'",
+    "intégrale de f²",
+    "intégrale de f'²"
+  ],
+  "content_hash": "d7d12d93c7d04e5b6e4603b734faf410c7d7e80ceae6decf28176644d7f35a6c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:31:17.078Z"
+}

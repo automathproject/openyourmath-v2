@@ -1,0 +1,33 @@
+{
+  "uuid": "bkxg",
+  "source_path": "exo7/10-L3/bkxg.tex",
+  "summary": "L'exercice demande de déterminer le centre de groupes linéaires spéciaux sur des corps finis et de calculer l'ordre de leurs groupes projectifs. Il aborde aussi la conjugaison de matrices et les propriétés des involutions dans ces groupes.",
+  "concepts": [
+    "groupe linéaire spécial",
+    "groupe projectif linéaire spécial",
+    "centre d'un groupe",
+    "ordre d'un groupe",
+    "conjugaison de matrices",
+    "involution",
+    "transvection",
+    "homothétie",
+    "théorème de Lagrange"
+  ],
+  "methods": [
+    "calcul de l'ordre d'un groupe",
+    "analyse des matrices de conjugaison",
+    "étude des valeurs propres",
+    "utilisation des propriétés des corps finis",
+    "détermination du centre d'un groupe"
+  ],
+  "objects": [
+    "matrice de SL(4,ℤ₂)",
+    "matrice de SL(3,ℤ₄)",
+    "groupe PSL(4,ℤ₂)",
+    "groupe PSL(3,ℤ₄)",
+    "homographie involutive"
+  ],
+  "content_hash": "4a8bfd9e8bb3d844b0c6890a7838cbf958d61a769e63acc5d432f8b47ff3b4ef",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:59:24.222Z"
+}

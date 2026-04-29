@@ -1,0 +1,28 @@
+{
+  "uuid": "uYBb",
+  "source_path": "exo7/4-L2/uYBb.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble des matrices de la forme M_{a,b} est un sous-groupe additif de M₂(ℝ) et que son complémentaire (sans la matrice nulle) est un sous-groupe multiplicatif de GL₂(ℝ).",
+  "concepts": [
+    "sous-groupe",
+    "groupe additif",
+    "groupe multiplicatif",
+    "matrice carrée",
+    "structure de groupe",
+    "isomorphisme"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "fermeture pour l'opération",
+    "existence d'élément neutre",
+    "existence d'inverse"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "ensemble de matrices",
+    "groupe additif",
+    "groupe multiplicatif"
+  ],
+  "content_hash": "df8b7d82bb1fcbf00f4479e3b076de066c504bc2e92428882377360838c15d0f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:18:50.912Z"
+}

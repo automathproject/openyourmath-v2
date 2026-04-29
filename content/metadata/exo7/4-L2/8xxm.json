@@ -1,0 +1,26 @@
+{
+  "uuid": "8xxm",
+  "source_path": "exo7/4-L2/8xxm.tex",
+  "summary": "Résoudre deux systèmes linéaires à deux équations et deux inconnues, suivant les valeurs du paramètre m.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "discriminant",
+    "solution unique",
+    "solution paramétrique",
+    "solution impossible"
+  ],
+  "methods": [
+    "calcul du déterminant",
+    "résolution par substitution",
+    "analyse des cas selon le paramètre"
+  ],
+  "objects": [
+    "système linéaire 2x2",
+    "paramètre m",
+    "matrice associée"
+  ],
+  "content_hash": "218856e34a754512505e20121cc1dc2e62ccfd7d85a9143c7183a77b61522136",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:35:12.739Z"
+}

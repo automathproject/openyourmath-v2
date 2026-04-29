@@ -1,0 +1,25 @@
+{
+  "uuid": "mZYL",
+  "source_path": "exo7/6-L2/mZYL.tex",
+  "summary": "Dans un triangle ABC, on considère un point M et les aires des triangles MBC, MCA et MAB. L'exercice demande de montrer l'équivalence entre l'égalité des aires et la position de M comme barycentre des sommets avec coefficients égaux, puis d'identifier tous les points du plan vérifiant cette égalité.",
+  "concepts": [
+    "barycentre",
+    "aire d'un triangle",
+    "enveloppe convexe",
+    "symétrie centrale",
+    "propriétés affines"
+  ],
+  "methods": [
+    "calcul de barycentre",
+    "utilisation des coordonnées barycentriques",
+    "symétrie par rapport à un point"
+  ],
+  "objects": [
+    "triangle",
+    "point dans le plan",
+    "aires de sous-triangles"
+  ],
+  "content_hash": "b187a0adffef6004dbc4ba8ed6bee016e7704c887f176105ae52e4f86bb7e7d6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:06:37.711Z"
+}

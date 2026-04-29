@@ -1,0 +1,27 @@
+{
+  "uuid": "TXZR",
+  "source_path": "exo7/15-L3/TXZR.tex",
+  "summary": "L'exercice étudie les propriétés des points fixes d'une application continue f dans un espace vectoriel normé, sous l'hypothèse que l'itérée fn est contractante. On doit montrer des relations entre les points fixes de f et ceux de fn, puis conclure sur l'unicité du point fixe de f.",
+  "concepts": [
+    "application contractante",
+    "point fixe",
+    "itération d'application",
+    "espace vectoriel normé",
+    "continuité",
+    "unicité du point fixe"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de point fixe",
+    "propriété de contraction"
+  ],
+  "objects": [
+    "application continue",
+    "point fixe",
+    "itérée d'application",
+    "espace vectoriel normé"
+  ],
+  "content_hash": "933d466d18c9800651546769b421648137e59462b7aebb664c4a0aab639f6b64",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:18:57.987Z"
+}

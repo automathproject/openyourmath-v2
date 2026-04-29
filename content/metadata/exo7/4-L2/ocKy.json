@@ -1,0 +1,26 @@
+{
+  "uuid": "ocKy",
+  "source_path": "exo7/4-L2/ocKy.tex",
+  "summary": "L'exercice demande de déterminer si trois groupes donnés sont isomorphes entre eux. Les groupes considérés sont Z/8Z, (Z/2Z) × (Z/4Z) et (Z/2Z)³.",
+  "concepts": [
+    "isomorphisme de groupes",
+    "anneau Z/nZ",
+    "théorème chinois",
+    "groupe cyclique",
+    "produit direct de groupes",
+    "ordre d'un élément"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "comparaison des ordres",
+    "vérification des isomorphismes"
+  ],
+  "objects": [
+    "groupes cycliques",
+    "groupes abéliens finis",
+    "éléments d'ordre donné"
+  ],
+  "content_hash": "4b380a2e36556cbdb2b044aa8449cde806da2f9224dc86d62758bf8461fff7c9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:59:17.217Z"
+}

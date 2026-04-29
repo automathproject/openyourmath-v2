@@ -1,0 +1,25 @@
+{
+  "uuid": "TAT7",
+  "source_path": "exo7/5-L2/TAT7.tex",
+  "summary": "L'exercice demande de déterminer le développement limité d'ordre 3 en x=1 d'une intégrale de Riemann dépendant d'un paramètre, où l'intégrande est une fonction logarithmique divisée par un polynôme du second degré.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "développement limité",
+    "dérivation sous l'intégrale",
+    "fonction composée",
+    "ordre d'un développement limité"
+  ],
+  "methods": [
+    "développement limité de Taylor",
+    "dérivation sous l'intégrale",
+    "approximation des petits o"
+  ],
+  "objects": [
+    "fonction intégrale",
+    "fonction logarithmique",
+    "polynôme du second degré"
+  ],
+  "content_hash": "d67f8e756da1e4f55e2fffced28ab8c5938ce7a904b800df37dc139510a22001",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:39:20.229Z"
+}

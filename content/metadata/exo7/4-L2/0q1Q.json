@@ -1,0 +1,31 @@
+{
+  "uuid": "0q1Q",
+  "source_path": "exo7/4-L2/0q1Q.tex",
+  "summary": "L'exercice demande de démontrer que l'application Φ_A, définie comme le déterminant d'une matrice produit AM, est n-linéaire et alternée. Il s'agit ensuite de montrer que Φ_A(M) = det(A)det(M) et d'en déduire la propriété multiplicative du déterminant.",
+  "concepts": [
+    "forme multilinéaire",
+    "forme alternée",
+    "déterminant",
+    "matrice carrée",
+    "linéarité",
+    "alternance",
+    "propriété multiplicative du déterminant"
+  ],
+  "methods": [
+    "définition de la linéarité",
+    "définition de l'alternance",
+    "calcul de déterminant",
+    "utilisation de matrices élémentaires",
+    "déduction par propriétés"
+  ],
+  "objects": [
+    "application Φ_A",
+    "matrice A",
+    "matrice M",
+    "vecteurs de la base canonique",
+    "matrice identité"
+  ],
+  "content_hash": "ab8929c5ebefa52247569387f99c20b8846a23a1e90aa60523e23436db2969b4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:27:25.639Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "wQvD",
+  "source_path": "exo7/6-L2/wQvD.tex",
+  "summary": "Dans un triangle ABC avec D projeté orthogonal de A sur BC, on construit des points E et F sur une droite passant par D tels que AE⊥BE et AF⊥CF. On montre que les droites AN et NM sont perpendiculaires, où M est le milieu de BC et N le milieu de EF.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "projeté orthogonal",
+    "perpendicularité",
+    "milieu d'un segment",
+    "similitude",
+    "cercle circonscrit"
+  ],
+  "methods": [
+    "construction géométrique",
+    "utilisation de propriétés de similitude",
+    "analyse de configurations orthogonales"
+  ],
+  "objects": [
+    "triangle",
+    "droites perpendiculaires",
+    "points milieux",
+    "cercle de diamètre"
+  ],
+  "content_hash": "5362f2e94afe24195bea7249bc3d6c6d3191710b1f6330e88b7da031608c4b37",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:02:16.177Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "PUSx",
+  "source_path": "exo7/4-L2/PUSx.tex",
+  "summary": "Calculer le déterminant de la comatrice d'une matrice carrée de format n.",
+  "concepts": [
+    "déterminant",
+    "comatrice",
+    "transposée d'une matrice",
+    "matrice inversible",
+    "matrice carrée",
+    "propriété du déterminant"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "utilisation de la relation entre matrice et sa comatrice",
+    "analyse des cas selon la valeur du déterminant"
+  ],
+  "objects": [
+    "matrice carrée",
+    "comatrice",
+    "déterminant"
+  ],
+  "content_hash": "d1a48985d85446a91005afe3d911f9e820f68aee326379dd6ed7bd9dcc6b93e2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:48:39.378Z"
+}

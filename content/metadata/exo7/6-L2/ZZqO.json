@@ -1,0 +1,28 @@
+{
+  "uuid": "ZZqO",
+  "source_path": "exo7/6-L2/ZZqO.tex",
+  "summary": "L'exercice demande de prouver une relation algébrique impliquant les distances d'un point M du cercle circonscrit d'un triangle ABC aux sommets A, B et C, ainsi que les longueurs des côtés et les angles du triangle. Ensuite, il s'agit d'en déduire les coordonnées barycentriques du centre de ce cercle.",
+  "concepts": [
+    "géométrie affine",
+    "cercle circonscrit",
+    "coordonnées barycentriques",
+    "relation métrique dans un triangle",
+    "loi des cosinus",
+    "propriétés des triangles"
+  ],
+  "methods": [
+    "utilisation des angles et longueurs",
+    "calcul de distances",
+    "détermination des coordonnées barycentriques"
+  ],
+  "objects": [
+    "triangle ABC",
+    "point M du cercle circonscrit",
+    "distances MA, MB, MC",
+    "angles α, β, γ",
+    "longueurs a, b, c"
+  ],
+  "content_hash": "b6d86dfb6d6528b0e314653d9beb79724a6a7c5094e0b4753d270c5f8830eb7d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:58:54.574Z"
+}

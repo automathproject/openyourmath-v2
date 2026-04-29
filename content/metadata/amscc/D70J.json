@@ -1,0 +1,23 @@
+{
+  "uuid": "D70J",
+  "source_path": "amscc/D70J.tex",
+  "summary": "On définit une fonction F(t) comme une composition de fonctions u(t) et h(x,y). L'exercice demande de vérifier la dérivabilité de F et d'exprimer sa dérivée en fonction de u(t) et u'(t).",
+  "concepts": [
+    "fonction de classe C^1",
+    "dérivabilité",
+    "composition de fonctions",
+    "dérivée partielle"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "règle de dérivation en chaîne"
+  ],
+  "objects": [
+    "fonction réelle d'une variable",
+    "fonction réelle de deux variables",
+    "fonction composée"
+  ],
+  "content_hash": "510107cdd940b285325c80408e4b0096f4a089e982d888358dd5af918b7a5c90",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:49:50.630Z"
+}

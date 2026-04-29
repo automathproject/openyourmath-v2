@@ -1,0 +1,27 @@
+{
+  "uuid": "Jyae",
+  "source_path": "exo7/2-L1/Jyae.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction définie par morceaux admet un développement limité d'ordre 2 en 0, puis de prouver qu'elle est dérivable sur ℝ, et enfin de démontrer que sa dérivée n'admet aucun développement limité en 0.",
+  "concepts": [
+    "développement limité",
+    "continuité",
+    "dérivabilité",
+    "limite",
+    "ordre de développement limité",
+    "fonction définie par morceaux"
+  ],
+  "methods": [
+    "approximation o(x^n)",
+    "développement limité d'ordre 1",
+    "développement limité d'ordre 2",
+    "étude de la dérivée"
+  ],
+  "objects": [
+    "fonction f(x)",
+    "dérivée f'(x)",
+    "développement limité"
+  ],
+  "content_hash": "965e0dd87b7bbea0f9e5f60db9b5f18eea124f34d568cbe04fffa2e0c3cf9876",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:28:09.830Z"
+}

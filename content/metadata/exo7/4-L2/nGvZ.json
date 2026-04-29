@@ -1,0 +1,26 @@
+{
+  "uuid": "nGvZ",
+  "source_path": "exo7/4-L2/nGvZ.tex",
+  "summary": "Dans un espace euclidien de dimension n, on considère un vecteur unitaire. L'exercice demande de montrer que la matrice de la projection orthogonale sur la droite engendrée par ce vecteur est donnée par U^tU, puis de trouver la matrice de la symétrie associée.",
+  "concepts": [
+    "espace euclidien",
+    "projection orthogonale",
+    "symétrie orthogonale",
+    "matrice d'un endomorphisme",
+    "base orthonormée",
+    "vecteur unitaire"
+  ],
+  "methods": [
+    "calcul de matrice d'un endomorphisme",
+    "utilisation des propriétés des matrices orthogonales"
+  ],
+  "objects": [
+    "espace euclidien",
+    "vecteur unitaire",
+    "matrice de projection",
+    "matrice de symétrie"
+  ],
+  "content_hash": "9f2adbcf0747805c4abe9d975b2647a62a7b3304b19a6236979eb479e8e03b75",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:51:42.018Z"
+}

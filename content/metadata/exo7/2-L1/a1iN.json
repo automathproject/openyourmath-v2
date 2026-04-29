@@ -1,29 +1,29 @@
 {
   "uuid": "a1iN",
   "source_path": "exo7/2-L1/a1iN.tex",
-  "summary": "Calcul d'intégrales impropres de fonctions rationnelles, trigonométriques ou exponentielles, avec détermination de leur convergence. Certaines intégrales impliquent des changements de variable ou des techniques avancées de calcul.",
+  "summary": "Calcul et étude de l'existence de plusieurs intégrales impropres de fonctions rationnelles, trigonométriques et exponentielles.",
   "concepts": [
     "intégrale impropre",
     "convergence d'intégrale",
+    "fonction rationnelle",
+    "fonction trigonométrique",
+    "fonction exponentielle",
     "changement de variable",
+    "intégration par parties"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration par parties",
+    "décomposition en éléments simples",
+    "comparaison d'intégrales"
+  ],
+  "objects": [
+    "intégrale impropre",
     "fonction rationnelle",
     "fonction trigonométrique",
     "fonction exponentielle"
   ],
-  "methods": [
-    "décomposition en éléments simples",
-    "intégration par parties",
-    "changement de variable",
-    "comparaison d'intégrales",
-    "intégration de fonctions trigonométriques"
-  ],
-  "objects": [
-    "intégrale de fonction rationnelle",
-    "intégrale de fonction exponentielle",
-    "intégrale de fonction trigonométrique",
-    "intégrale paramétrique"
-  ],
-  "content_hash": "cbfd7c00145912409d1eea79003303e33fca4752a990cfaef64108ee98ef3c1f",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:33:52.718Z"
+  "content_hash": "ca992f2972f8149f4404a760bad847985dba447dc868ba9102583fca845a08e0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:42:12.482Z"
 }

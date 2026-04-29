@@ -1,0 +1,25 @@
+{
+  "uuid": "FB9V",
+  "source_path": "exo7/1-L1/FB9V.tex",
+  "summary": "Démontrer que le pgcd d'un entier a avec le produit de plusieurs entiers b₁b₂...bₙ est égal à 1 si et seulement si le pgcd de a avec chaque entier bᵢ est égal à 1.",
+  "concepts": [
+    "pgcd",
+    "algorithme d'Euclide",
+    "propriété multiplicative du pgcd",
+    "récurrence mathématique",
+    "entiers premiers entre eux"
+  ],
+  "methods": [
+    "raisonnement par récurrence",
+    "utilisation des propriétés du pgcd",
+    "démonstration par équivalence"
+  ],
+  "objects": [
+    "entiers naturels",
+    "produit d'entiers",
+    "pgcd"
+  ],
+  "content_hash": "35cb2c902c2b476a660bb444344c91b636d386ceecb4b0044c7cadd7139af077",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:03:10.259Z"
+}

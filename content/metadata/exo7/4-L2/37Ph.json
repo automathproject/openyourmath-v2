@@ -1,0 +1,28 @@
+{
+  "uuid": "37Ph",
+  "source_path": "exo7/4-L2/37Ph.tex",
+  "summary": "Trouver toutes les fonctions continues d'un espace euclidien dans ℝ vérifiant la condition f(u+v) = f(u) + f(v) lorsque u et v sont orthogonaux.",
+  "concepts": [
+    "espace euclidien",
+    "fonction linéaire",
+    "fonction continue",
+    "produit scalaire",
+    "norme euclidienne",
+    "décomposition en partie paire et impaire"
+  ],
+  "methods": [
+    "décomposition en parties paires et impaires",
+    "linéarité",
+    "continuité",
+    "stabilité par combinaison linéaire"
+  ],
+  "objects": [
+    "fonction de ℝ dans ℝ",
+    "espace euclidien",
+    "produit scalaire",
+    "norme"
+  ],
+  "content_hash": "95e77dfdb7993af91d4651ace412a22b2519dd92459acd6814fbf1b4151cf60c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:59:14.529Z"
+}

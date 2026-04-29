@@ -1,0 +1,25 @@
+{
+  "uuid": "M52n",
+  "source_path": "exo7/4-L2/M52n.tex",
+  "summary": "Dans un espace euclidien, on considère une base et la base orthonormée obtenue par orthogonalisation de Schmidt. On demande de montrer une relation entre les coefficients diagonaux de la matrice de passage et la distance d'un vecteur de la base initiale au sous-espace engendré par les vecteurs précédents.",
+  "concepts": [
+    "orthogonalisation de Schmidt",
+    "base orthonormée",
+    "espace euclidien",
+    "matrice de passage",
+    "sous-espace vectoriel",
+    "distance d'un vecteur à un sous-espace"
+  ],
+  "methods": [
+    "orthogonalisation",
+    "calcul de distance vectorielle"
+  ],
+  "objects": [
+    "base de vecteurs",
+    "matrice de passage",
+    "sous-espace vectoriel"
+  ],
+  "content_hash": "891bbf0d8e11668f8ca201926ada2033b23656b10bddd39f36a59fccd2520b32",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:19:04.210Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "zVPT",
+  "source_path": "exo7/10-L3/zVPT.tex",
+  "summary": "L'exercice demande d'établir l'équivalence entre deux conditions concernant des éléments a et b d'une clôture algébrique d'un corps K. La première condition porte sur l'existence d'un automorphisme de la clôture préservant K et envoyant a sur b, tandis que la seconde condition concerne l'égalité des polynômes minimaux de a et b sur K.",
+  "concepts": [
+    "clôture algébrique",
+    "automorphisme de corps",
+    "polynôme minimal",
+    "extension de corps",
+    "corps de base",
+    "élément algébrique"
+  ],
+  "methods": [
+    "utilisation de la définition d'automorphisme",
+    "comparaison de polynômes minimaux",
+    "théorème de l'élément primitif"
+  ],
+  "objects": [
+    "corps K",
+    "clôture algébrique K̄",
+    "éléments a et b",
+    "polynôme minimal f(X)"
+  ],
+  "content_hash": "1059317cb762a29c761fd257279b6cc5a174263d963e02b4395bff59b5fc1a84",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:28:44.261Z"
+}

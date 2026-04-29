@@ -1,0 +1,28 @@
+{
+  "uuid": "CxF8",
+  "source_path": "exo7/5-L2/CxF8.tex",
+  "summary": "Résoudre une équation différentielle linéaire du second ordre à coefficients constants avec second membre exponentiel. L'équation est de la forme y'' - 3y' + 2y = e^x.",
+  "concepts": [
+    "équation différentielle linéaire du second ordre",
+    "polynôme caractéristique",
+    "solution générale",
+    "solution particulière",
+    "méthode de variation des constantes",
+    "équation homogène"
+  ],
+  "methods": [
+    "résolution de l'équation homogène associée",
+    "méthode de la solution particulière",
+    "méthode de la variation des constantes",
+    "calcul du polynôme caractéristique"
+  ],
+  "objects": [
+    "équation différentielle linéaire",
+    "solution générale",
+    "solution particulière",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "5b046d4bb2cb1ca28130a645cce16dda1ef0f70e7cb194d025a896ffaa535a7f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:20:20.652Z"
+}

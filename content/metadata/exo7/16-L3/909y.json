@@ -1,0 +1,28 @@
+{
+  "uuid": "909y",
+  "source_path": "exo7/16-L3/909y.tex",
+  "summary": "L'exercice demande de prouver l'existence et l'unicité d'une fonction analytique sur ℂ\\[-1,1] qui étend la fonction √(a²-1) définie pour a > 1.",
+  "concepts": [
+    "fonction analytique",
+    "fonction logarithme complexe",
+    "prolongement analytique",
+    "unicité de la solution",
+    "fonction exponentielle complexe",
+    "demi-plans complexes"
+  ],
+  "methods": [
+    "prolongement par continuité",
+    "calcul de limites",
+    "comparaison de fonctions analytiques",
+    "utilisation de la formule exponentielle"
+  ],
+  "objects": [
+    "fonction √(a²-1)",
+    "fonction Log",
+    "fonction exponentielle",
+    "demi-plans complexes"
+  ],
+  "content_hash": "620cf54b21c09946960df3f690ca65c410740f78538fa68600fc3ab6eabac779",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:47:37.423Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "EP63",
+  "source_path": "exo7/4-L2/EP63.tex",
+  "summary": "Calculer l'aire d'un parallélogramme et le volume d'un parallélépipède construits à partir de vecteurs donnés en utilisant le déterminant. Montrer que le volume d'un parallélépipède à sommets entiers est un entier.",
+  "concepts": [
+    "déterminant",
+    "parallélogramme",
+    "parallélépipède",
+    "volume",
+    "matrice carrée",
+    "valeur absolue",
+    "coefficient entier"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "développement par rapport à une ligne",
+    "propriété de conservation des entiers"
+  ],
+  "objects": [
+    "vecteurs de ℝ²",
+    "vecteurs de ℝ³",
+    "matrice 2x2",
+    "matrice 3x3"
+  ],
+  "content_hash": "9d580e2492149fe95e8edde6176a7e9146cf7e988cb4ee56b36517ae8498b8bd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:40:12.056Z"
+}

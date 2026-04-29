@@ -1,0 +1,28 @@
+{
+  "uuid": "Vgqx",
+  "source_path": "exo7/10-L3/Vgqx.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble [0,1[ muni de la loi de composition interne x*y = {x+y} forme un groupe, puis de montrer que l'intersection de cet ensemble avec les rationnels est un sous-groupe.",
+  "concepts": [
+    "groupe",
+    "sous-groupe",
+    "loi de composition interne",
+    "partie fractionnelle",
+    "structure algébrique",
+    "axiomes de groupe"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "identification de l'élément neutre",
+    "vérification de l'existence d'inverse",
+    "associativité"
+  ],
+  "objects": [
+    "ensemble [0,1[",
+    "loi de composition interne",
+    "partie fractionnelle",
+    "Q ∩ G"
+  ],
+  "content_hash": "643ee8f367782c28a4c073ce5592d98c360f30e45c1ca6602ce4e5e19567fb34",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:51:14.895Z"
+}

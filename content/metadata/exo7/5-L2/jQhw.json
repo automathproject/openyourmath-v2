@@ -1,0 +1,30 @@
+{
+  "uuid": "jQhw",
+  "source_path": "exo7/5-L2/jQhw.tex",
+  "summary": "L'exercice demande de montrer l'existence d'une suite dont la dérivée (ou le gradient) tend vers 0 pour une fonction minorée et de classe C^1 ou C^2. Le contexte est purement théorique, sans application concrète.",
+  "concepts": [
+    "fonction minorée",
+    "classe C^1",
+    "classe C^2",
+    "dérivée",
+    "gradient",
+    "équation différentielle autonome",
+    "solution maximale",
+    "fonction bornée"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "construction de suite",
+    "analyse de l'équation différentielle",
+    "étude de la dérivée de la fonction composée"
+  ],
+  "objects": [
+    "fonction réelle",
+    "suite de points",
+    "gradient",
+    "solution d'équation différentielle"
+  ],
+  "content_hash": "ec451bbffba2471269b00d38821d59c638d9e13842470ff9b43fc8ef1c57a27a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:41:17.036Z"
+}

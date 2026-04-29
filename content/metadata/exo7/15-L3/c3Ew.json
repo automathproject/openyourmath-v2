@@ -1,0 +1,26 @@
+{
+  "uuid": "c3Ew",
+  "source_path": "exo7/15-L3/c3Ew.tex",
+  "summary": "L'exercice demande de prouver que le graphe d'une application continue entre un espace et un espace séparé est fermé, et que l'application qui à x associe (x, f(x)) est un homéomorphisme. Il faut aussi fournir un contre-exemple où la réciproque n'est pas vraie en général, mais l'est si l'espace d'arrivée est compact.",
+  "concepts": [
+    "continuité",
+    "espace séparé",
+    "graphe d'une application",
+    "fermeture d'un ensemble",
+    "homéomorphisme",
+    "espace compact"
+  ],
+  "methods": [
+    "preuve directe",
+    "contre-exemple",
+    "utilisation des propriétés topologiques"
+  ],
+  "objects": [
+    "application continue",
+    "graphe d'une application",
+    "espace produit"
+  ],
+  "content_hash": "94771e8a51f52eba6a5d5b2f42f29d268c7913afa8c693923cceeac9ec324df2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:31:18.279Z"
+}

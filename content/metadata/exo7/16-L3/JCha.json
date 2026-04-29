@@ -1,0 +1,27 @@
+{
+  "uuid": "JCha",
+  "source_path": "exo7/16-L3/JCha.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction complexe définie par une exponentielle de logarithmes complexes se prolonge en une fonction continue sur un domaine donné, fournissant ainsi une racine carrée holomorphe d'un polynôme. Il s'agit d'étudier le prolongement de la fonction logarithme complexe.",
+  "concepts": [
+    "fonction logarithme complexe",
+    "prolongement analytique",
+    "fonction holomorphe",
+    "racine carrée complexe",
+    "domaine de définition",
+    "continuité complexe"
+  ],
+  "methods": [
+    "analyse de prolongement",
+    "étude de la continuité",
+    "construction de fonction holomorphe"
+  ],
+  "objects": [
+    "fonction complexe",
+    "domaine $\\Omega = \\mathbb{C}\\backslash [-1,1]$",
+    "racine carrée holomorphe",
+    "polynôme $z^2-1$"
+  ],
+  "content_hash": "dae0e77b8b1679cdb249e1ba3901025e8d484e83604aac9a29c715fb1e929c04",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:49:00.880Z"
+}

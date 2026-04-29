@@ -1,0 +1,28 @@
+{
+  "uuid": "aSCI",
+  "source_path": "exo7/1-L1/aSCI.tex",
+  "summary": "L'exercice demande de démontrer des propriétés algébriques des matrices magiques, c'est-à-dire des matrices carrées où les sommes des coefficients par ligne et par colonne sont constantes. On étudie notamment la structure de l'ensemble des matrices magiques comme sous-algèbre et sa décomposition en somme directe de sous-espaces vectoriels.",
+  "concepts": [
+    "matrice magique",
+    "sous-algèbre",
+    "morphisme d'algèbre",
+    "somme directe de sous-espaces vectoriels",
+    "stabilité d'un sous-espace par un endomorphisme",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "détermination de la stabilité d'un sous-espace",
+    "calcul de produit de matrices",
+    "décomposition en somme directe",
+    "calcul de la dimension d'un espace vectoriel"
+  ],
+  "objects": [
+    "matrice magique",
+    "sous-algèbre de matrices",
+    "sous-espaces vectoriels stables",
+    "endomorphisme associé à une matrice"
+  ],
+  "content_hash": "86f081a80af9b3558852d33846bdef12aa3a60e71a81a1c24e250dfba280ef9f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:05:28.549Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "A4BD",
+  "source_path": "exo7/4-L2/A4BD.tex",
+  "summary": "Calculer les déterminants de quatre matrices distinctes : une matrice symétrique à diagonale dominante, une matrice 3x3 avec des variables, une matrice de Vandermonde 4x4, et une matrice de Vandermonde générale nxn.",
+  "concepts": [
+    "déterminant",
+    "matrice symétrique",
+    "matrice de Vandermonde",
+    "diagonale dominante",
+    "propriétés des déterminants"
+  ],
+  "methods": [
+    "développement de Laplace",
+    "formule de la matrice de Vandermonde",
+    "simplification par symétrie",
+    "calcul de déterminant général"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "matrice 3x3",
+    "matrice de Vandermonde 4x4",
+    "matrice de Vandermonde nxn"
+  ],
+  "content_hash": "0c8845127ebb7dc31f1ae9b0b656ce3944c3c3473519fa77918d73795859c7a5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:35:58.618Z"
+}

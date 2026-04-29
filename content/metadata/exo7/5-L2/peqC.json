@@ -1,0 +1,25 @@
+{
+  "uuid": "peqC",
+  "source_path": "exo7/5-L2/peqC.tex",
+  "summary": "On considère deux fonctions y et z de classe C² vérifiant une inégalité différentielle linéaire du second ordre avec des conditions initiales. On doit montrer que y reste strictement inférieure à z pour tout x supérieur à a.",
+  "concepts": [
+    "équation différentielle linéaire du second ordre",
+    "conditions initiales",
+    "fonction de classe C²",
+    "inégalité différentielle",
+    "minimum local"
+  ],
+  "methods": [
+    "réduction au cas z=0",
+    "analyse des points critiques",
+    "étude des minima locaux"
+  ],
+  "objects": [
+    "fonctions y et z",
+    "coefficient p(x)",
+    "coefficient q(x)"
+  ],
+  "content_hash": "76d39aed0372d496b377d057d6c7355e81ed32931e78c097d4e39e6096650d98",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:46:57.533Z"
+}

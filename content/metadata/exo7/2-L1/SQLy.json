@@ -1,0 +1,27 @@
+{
+  "uuid": "SQLy",
+  "source_path": "exo7/2-L1/SQLy.tex",
+  "summary": "L'exercice demande de déterminer la partie principale d'une suite définie par une somme de fonctions sinus, lorsque n tend vers l'infini. Le contexte implique une approximation de la fonction sinus à l'aide de développements limités.",
+  "concepts": [
+    "développement limité",
+    "formule de Taylor-Laplace",
+    "théorème des gendarmes",
+    "intégrale impropre",
+    "approximation de fonctions"
+  ],
+  "methods": [
+    "approximation par développement limité",
+    "encadrement de fonctions",
+    "sommation de termes",
+    "comparaison asymptotique"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction sinus",
+    "somme de termes",
+    "intégrale"
+  ],
+  "content_hash": "bea15b3653918042f6ed92ab3ecfa1689b33a04c3a9f9bdee294397f665282f4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:32:21.314Z"
+}

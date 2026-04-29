@@ -1,0 +1,29 @@
+{
+  "uuid": "yAq4",
+  "source_path": "exo7/1-L1/yAq4.tex",
+  "summary": "On considère une application de ℕ² dans ℕ définie par f(x,y) = y + (x+y)(x+y+1)/2. L'exercice demande de prouver que cette application est bijective et de déterminer pour chaque n ∈ ℕ le couple (x,y) dont n est l'image.",
+  "concepts": [
+    "bijection",
+    "injection",
+    "surjection",
+    "application",
+    "entiers naturels",
+    "numérotation de ℕ²",
+    "nombres triangulaires"
+  ],
+  "methods": [
+    "détermination explicite de l'antécédent",
+    "preuve par double implication",
+    "utilisation de la partie entière",
+    "calcul de polynôme quadratique"
+  ],
+  "objects": [
+    "application f : ℕ² → ℕ",
+    "couple (x,y)",
+    "entier naturel n",
+    "nombres triangulaires"
+  ],
+  "content_hash": "6e5b28cd6528b777e4967e2fbd59df6cb8d12f24778b46c889e7f3967cf010c2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:23:00.082Z"
+}

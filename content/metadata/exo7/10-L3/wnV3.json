@@ -1,0 +1,26 @@
+{
+  "uuid": "wnV3",
+  "source_path": "exo7/10-L3/wnV3.tex",
+  "summary": "Soit G un groupe fini, H un sous-groupe distingué et p un nombre premier divisant l'indice de H dans G. On demande de montrer l'équivalence entre deux propriétés : Σ est un p-sous-groupe de Sylow de G/H et l'existence d'un p-sous-groupe de Sylow S de G tel que Σ = SH/H.",
+  "concepts": [
+    "groupe fini",
+    "sous-groupe distingué",
+    "p-sous-groupe de Sylow",
+    "indice d'un sous-groupe",
+    "théorèmes de Sylow"
+  ],
+  "methods": [
+    "utilisation des théorèmes de Sylow",
+    "analyse des sous-groupes distingués",
+    "manipulation des indices de sous-groupes"
+  ],
+  "objects": [
+    "groupe fini G",
+    "sous-groupe distingué H",
+    "p-sous-groupe de Sylow S",
+    "p-sous-groupe de Sylow Σ"
+  ],
+  "content_hash": "2b22f39ac7cf78e6c40f6d713bb727df642c145845e4f7eb64207ea5f2793587",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:02:35.107Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "wsft",
+  "source_path": "exo7/5-L2/wsft.tex",
+  "summary": "Calcul de l'intégrale triple de la fonction x² + y² sur un tore plein de rayons R et r, centré sur l'axe Oz.",
+  "concepts": [
+    "intégrale triple",
+    "coordonnées cylindriques",
+    "changement de variables",
+    "géométrie différentielle",
+    "intégration sur un domaine borné"
+  ],
+  "methods": [
+    "changement de coordonnées",
+    "intégration par parties",
+    "linéarisation de l'intégrande",
+    "calcul de l'intégrale sur un tore"
+  ],
+  "objects": [
+    "tore plein",
+    "fonction de trois variables",
+    "intégrale multiple",
+    "domaine de révolution"
+  ],
+  "content_hash": "d549300935d14249d018554064c2c03ecead6d7fbe5fd77097c908a76682a531",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:53:24.569Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "SeqE",
+  "source_path": "exo7/8-L3/SeqE.tex",
+  "summary": "L'exercice demande de calculer le cardinal du groupe linéaire général GL(n,K) sur un corps fini K à q éléments en utilisant une récurrence sur n et l'action du groupe des automorphismes de K^n sur l'espace vectoriel K^n.",
+  "concepts": [
+    "action de groupe",
+    "orbite",
+    "stabilisateur",
+    "récurrence",
+    "corps fini",
+    "groupe linéaire général"
+  ],
+  "methods": [
+    "récurrence sur n",
+    "calcul d'orbite",
+    "calcul de stabilisateur",
+    "utilisation de l'action de groupe"
+  ],
+  "objects": [
+    "groupe linéaire général GL(n,K)",
+    "espace vectoriel K^n",
+    "automorphismes de K^n",
+    "vecteur de base"
+  ],
+  "content_hash": "2131ade2f89d202de93f0b5d42ad636aa9ebe52f9a30ab934530bb922b4d3bbf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:43:01.107Z"
+}

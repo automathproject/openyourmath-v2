@@ -1,0 +1,26 @@
+{
+  "uuid": "AhZO",
+  "source_path": "exo7/2-L1/AhZO.tex",
+  "summary": "On considère une fonction dérivable sur un intervalle [a, b] avec des valeurs nulles en ses extrémités. L'exercice demande de prouver l'existence d'une tangente au graphe de cette fonction passant par un point donné en dehors de l'intervalle.",
+  "concepts": [
+    "dérivabilité",
+    "tangente à une courbe",
+    "fonction continue",
+    "théorème des valeurs intermédiaires",
+    "fonction auxiliaire"
+  ],
+  "methods": [
+    "construction de fonction auxiliaire",
+    "application du théorème des valeurs intermédiaires",
+    "analyse de la dérivée"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "tangente",
+    "graphe de fonction",
+    "point extérieur à l'intervalle"
+  ],
+  "content_hash": "9e58ff917e09b2883659a94bcd27fa046e205ffa87d9ebdd4d9f30ad13421fae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:59:16.383Z"
+}

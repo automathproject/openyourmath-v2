@@ -1,0 +1,25 @@
+{
+  "uuid": "CFND",
+  "source_path": "exo7/4-L2/CFND.tex",
+  "summary": "Calcul du déterminant d'une application linéaire définie sur l'espace des polynômes de degré n à coefficients réels. Deux cas considérés : u(P) = P + P' et u(P) = XP' + P(1).",
+  "concepts": [
+    "déterminant d'une application linéaire",
+    "espace vectoriel de polynômes",
+    "matrice de passage",
+    "base canonique",
+    "matrice d'une application linéaire"
+  ],
+  "methods": [
+    "calcul de la matrice d'une application linéaire",
+    "détermination d'une base adaptée",
+    "calcul du déterminant d'une matrice"
+  ],
+  "objects": [
+    "application linéaire",
+    "polynôme de degré n",
+    "matrice carrée"
+  ],
+  "content_hash": "a64461397d4af081fdee4af0df741e9502ff525665acafcf7501b564b9999e19",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:38:00.373Z"
+}

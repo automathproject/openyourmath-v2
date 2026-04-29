@@ -1,0 +1,28 @@
+{
+  "uuid": "GvFf",
+  "source_path": "exo7/4-L2/GvFf.tex",
+  "summary": "Montrer qu'un groupe dont tout élément non neutre est d'ordre 2 est commutatif, puis prouver qu'un groupe d'ordre pair contient au moins un élément d'ordre 2.",
+  "concepts": [
+    "groupe commutatif",
+    "ordre d'un élément",
+    "élément d'ordre 2",
+    "groupe d'ordre pair",
+    "involution",
+    "décomposition en classes d'involutions"
+  ],
+  "methods": [
+    "utilisation de la relation d'inverse",
+    "décomposition en paires d'éléments inverses",
+    "raisonnement par l'absurde",
+    "calcul de cardinal"
+  ],
+  "objects": [
+    "groupe fini",
+    "élément non neutre",
+    "ensemble des éléments d'ordre 2",
+    "ensemble des inverses"
+  ],
+  "content_hash": "7b6c8b1a62e11bb7530a0e1da934c6ce3381e04f05d83ad694c61f320519784f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:33:51.757Z"
+}

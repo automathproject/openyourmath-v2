@@ -1,0 +1,26 @@
+{
+  "uuid": "pYTz",
+  "source_path": "exo7/6-L2/pYTz.tex",
+  "summary": "Construire un triangle rectangle ABC en C avec AB = 2AC, en utilisant les propriétés géométriques des cercles et des diamètres.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "triangle rectangle",
+    "cercle circonscrit",
+    "milieu d'un segment",
+    "propriété du diamètre"
+  ],
+  "methods": [
+    "analyse-synthèse",
+    "construction géométrique",
+    "utilisation des propriétés des cercles"
+  ],
+  "objects": [
+    "points A, B, C",
+    "segment AB",
+    "milieu I de AB",
+    "cercles C et C'"
+  ],
+  "content_hash": "6fc1d96ff547bbea925ad6c84b1d52fbdfa2d81c63e7898223b6a7f196174454",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:56:28.782Z"
+}

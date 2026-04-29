@@ -1,0 +1,27 @@
+{
+  "uuid": "ZLvv",
+  "source_path": "exo7/5-L2/ZLvv.tex",
+  "summary": "L'exercice demande de vérifier une égalité entre une fonction g(x) définie par morceaux et une intégrale de Riemann dépendant d'un paramètre, puis d'en déduire la régularité de g. Ensuite, il généralise ce résultat à une fonction g_k(x) pour montrer qu'elle se prolonge en une fonction de classe C^∞ en 0.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "fonction de classe C^∞",
+    "développement de Taylor",
+    "prolongement de fonction",
+    "régularité des fonctions"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "développement en série de Taylor",
+    "analyse de la régularité"
+  ],
+  "objects": [
+    "fonction de classe C^∞",
+    "intégrale paramétrique",
+    "fonction g(x)",
+    "fonction g_k(x)"
+  ],
+  "content_hash": "3af5bc5c2d043330b501e385702b01fd9ad53b4fa4b0e4b3c99b503caf2a31d7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:41:40.883Z"
+}

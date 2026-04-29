@@ -1,0 +1,29 @@
+{
+  "uuid": "u4Tm",
+  "source_path": "exo7/15-L3/u4Tm.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des valeurs d'adhérence d'une suite dans [0,1] avec une différence tendant vers 0 est un intervalle fermé. Il généralise ensuite ce résultat à des suites récurrentes définies par une fonction continue et étudie les valeurs d'adhérence de la moyenne des termes d'une suite dans l'espace l∞.",
+  "concepts": [
+    "valeur d'adhérence",
+    "suite convergente",
+    "intervalle fermé",
+    "fonction continue",
+    "suite récurrente",
+    "espace métrique",
+    "espace topologique"
+  ],
+  "methods": [
+    "étude des valeurs d'adhérence",
+    "utilisation de la continuité",
+    "analyse des suites récurrentes"
+  ],
+  "objects": [
+    "suite numérique",
+    "intervalle de [0,1]",
+    "fonction continue",
+    "suite dans l∞",
+    "moyenne des termes d'une suite"
+  ],
+  "content_hash": "96a8b9f96402c29614dac09bdde9cb8eb3d8d60af50565115c9ddb6cfecdfc54",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:32:58.369Z"
+}

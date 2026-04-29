@@ -1,0 +1,28 @@
+{
+  "uuid": "9qB5",
+  "source_path": "amscc/9qB5.tex",
+  "summary": "L'exercice demande de justifier que le nombre de capteurs défectueux dans un lot suit une loi binomiale, d'en calculer l'espérance et la variance, puis d'approcher cette loi binomiale par une loi normale pour estimer une probabilité.",
+  "concepts": [
+    "loi binomiale",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "approximation normale de la loi binomiale",
+    "standardisation",
+    "fonction de répartition de la loi normale"
+  ],
+  "methods": [
+    "calcul de l'espérance et de la variance d'une loi binomiale",
+    "approximation par une loi normale",
+    "standardisation",
+    "utilisation de la table de la loi normale"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "variable aléatoire normale",
+    "espérance",
+    "variance"
+  ],
+  "content_hash": "2640661740684b1e484c320f8298cda8113e4a802d3736ee749a10168ba62b90",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:33:09.856Z"
+}

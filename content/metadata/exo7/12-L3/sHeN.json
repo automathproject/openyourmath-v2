@@ -1,0 +1,29 @@
+{
+  "uuid": "sHeN",
+  "source_path": "exo7/12-L3/sHeN.tex",
+  "summary": "L'exercice demande de démontrer que l'application f: ℝ² → ℝ² définie par f(x,y) = (x + a sin y, y + b sin x) est un difféomorphisme de ℝ² sur lui-même si |ab| < 1, et seulement un homéomorphisme si |ab| = 1.",
+  "concepts": [
+    "difféomorphisme",
+    "théorème d'inversion locale",
+    "théorème des fonctions implicites",
+    "application bijective",
+    "continuité",
+    "différentiabilité",
+    "inversibilité locale"
+  ],
+  "methods": [
+    "étude de la différentielle",
+    "calcul du jacobien",
+    "analyse des valeurs propres",
+    "continuité de l'inverse"
+  ],
+  "objects": [
+    "application de ℝ² dans ℝ²",
+    "jacobien",
+    "valeurs propres",
+    "inverse d'une application"
+  ],
+  "content_hash": "0666bf466b11bd4b0a99a8613b00034b106bdcb0f31bbef60d03c523d3043130",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:20:31.840Z"
+}

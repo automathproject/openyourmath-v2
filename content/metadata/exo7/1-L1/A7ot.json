@@ -1,0 +1,28 @@
+{
+  "uuid": "A7ot",
+  "source_path": "exo7/1-L1/A7ot.tex",
+  "summary": "L'exercice demande de démontrer qu'une relation d'ordre est définie sur un ensemble de paires (A, f) où A est un sous-ensemble non vide d'un ensemble E et f est une fonction de A dans E. Il s'agit ensuite de déterminer les conditions nécessaires et suffisantes pour qu'une partie de deux éléments soit majorée ou minorée, et d'identifier la borne supérieure ou inférieure correspondante.",
+  "concepts": [
+    "relation d'ordre",
+    "relation d'équivalence",
+    "ensemble ordonné",
+    "majorant",
+    "minorant",
+    "borne supérieure",
+    "borne inférieure"
+  ],
+  "methods": [
+    "définition d'une relation d'ordre",
+    "vérification des propriétés réflexivité, antisymétrie, transitivité",
+    "recherche de conditions nécessaires et suffisantes",
+    "identification de bornes"
+  ],
+  "objects": [
+    "ensemble E",
+    "paire (A, f)",
+    "partie de deux éléments de E"
+  ],
+  "content_hash": "8c8c7bb43174e4bd1d976f076534c718c434522eb7c35b151f3ead50cd664227",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:07:00.323Z"
+}

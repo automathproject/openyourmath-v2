@@ -1,0 +1,31 @@
+{
+  "uuid": "7USW",
+  "source_path": "exo7/1-L1/7USW.tex",
+  "summary": "L'exercice demande de prouver l'équivalence entre deux propriétés d'une matrice carrée réelle d'ordre 3 : l'annulation de son carré et une condition combinant son rang et sa trace.",
+  "concepts": [
+    "matrice carrée",
+    "noyau d'une matrice",
+    "image d'une matrice",
+    "rang d'une matrice",
+    "trace d'une matrice",
+    "semblable",
+    "famille libre",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "détermination du noyau et de l'image",
+    "construction d'une base adaptée",
+    "semblabilité de matrices",
+    "calcul de la trace"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "noyau",
+    "image",
+    "rang",
+    "trace"
+  ],
+  "content_hash": "16fda795933615d7e4388b220f87b054e3e46b86c07f4a1ae2feb9111eabab9f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:44:31.144Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "FN7m",
+  "source_path": "exo7/4-L2/FN7m.tex",
+  "summary": "Montrer qu'un groupe quelconque est isomorphe à un sous-groupe du groupe symétrique de ses éléments, en particulier pour les groupes finis d'ordre n isomorphes à un sous-groupe de Sn (théorème de Cayley).",
+  "concepts": [
+    "isomorphisme de groupes",
+    "groupe symétrique",
+    "permutation",
+    "morphisme de groupes",
+    "théorème de Cayley",
+    "injectivité"
+  ],
+  "methods": [
+    "construction d'application",
+    "vérification de la structure de groupe",
+    "démonstration d'injectivité"
+  ],
+  "objects": [
+    "groupe (G,×)",
+    "groupe symétrique (SG,∘)",
+    "application φ",
+    "permutation fx"
+  ],
+  "content_hash": "f31770fda53d5b7466da816c841422e3dae150c8aa6f62c2160eeea231de7c75",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:31:30.479Z"
+}

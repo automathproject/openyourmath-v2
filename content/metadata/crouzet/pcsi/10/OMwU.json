@@ -1,0 +1,28 @@
+{
+  "uuid": "OMwU",
+  "source_path": "crouzet/pcsi/10/OMwU.tex",
+  "summary": "On définit deux suites (uₙ) et (vₙ) par récurrence. On pose wₙ = uₙ - vₙ et tₙ = 5uₙ + 24vₙ. L'exercice demande de montrer que (wₙ) est géométrique, de déterminer sa limite, de prouver que (uₙ) est décroissante et (vₙ) croissante, puis que ces deux suites sont adjacentes. Enfin, on étudie la suite (tₙ) pour trouver les expressions explicites de (uₙ) et (vₙ) et leur limite commune.",
+  "concepts": [
+    "suite géométrique",
+    "limite de suite",
+    "suites adjacentes",
+    "convergence de suites",
+    "récurrence",
+    "calcul de limite"
+  ],
+  "methods": [
+    "calcul de raison d'une suite géométrique",
+    "étude de la monotonie d'une suite",
+    "démonstration de l'adjacence de deux suites",
+    "résolution d'équation linéaire"
+  ],
+  "objects": [
+    "suite récurrente",
+    "suite géométrique",
+    "suite adjacente",
+    "limite commune"
+  ],
+  "content_hash": "baf86a161b5ab2b0118c27a36badb1e4b5851ba0d519345baee85e348d9823c4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:36:01.838Z"
+}

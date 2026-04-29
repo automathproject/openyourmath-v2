@@ -1,0 +1,24 @@
+{
+  "uuid": "UKXI",
+  "source_path": "exo7/1-L1/UKXI.tex",
+  "summary": "Pour un entier naturel non nul n, montrer que parmi les trois produits n(n+1), n(n+2) et (n+1)(n+2), exactement deux sont divisibles par 3.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "congruences modulo 3",
+    "propriétés des entiers consécutifs",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "analyse par cas modulo 3",
+    "étude des restes de la division euclidienne"
+  ],
+  "objects": [
+    "entiers naturels",
+    "produits de nombres consécutifs",
+    "classes de congruence modulo 3"
+  ],
+  "content_hash": "89145a2541a6e27155f4263016eea3358faca53ed63192f4d53986155d777f4a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:05:58.471Z"
+}

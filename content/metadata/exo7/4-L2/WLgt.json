@@ -1,0 +1,26 @@
+{
+  "uuid": "WLgt",
+  "source_path": "exo7/4-L2/WLgt.tex",
+  "summary": "L'exercice demande de calculer les puissances successives de 2 modulo 9 et d'analyser la structure du groupe multiplicatif des inversibles modulo 9.",
+  "concepts": [
+    "arithmétique modulaire",
+    "groupe multiplicatif",
+    "ordre d'un élément",
+    "corps fini",
+    "anneau quotient",
+    "groupe cyclique"
+  ],
+  "methods": [
+    "calcul de puissances modulo",
+    "détermination de l'ordre d'un élément",
+    "factorisation en produit de cycles"
+  ],
+  "objects": [
+    "entiers modulo 9",
+    "groupe (ℤ/9ℤ)×",
+    "élément 2 dans ℤ/9ℤ"
+  ],
+  "content_hash": "fe9a91ac17a73413dd13bb71c56bf4134bd58ca5bab990aa9cc66d9b2eeb7a58",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:52:08.819Z"
+}

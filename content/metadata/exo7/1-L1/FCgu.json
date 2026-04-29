@@ -1,0 +1,25 @@
+{
+  "uuid": "FCgu",
+  "source_path": "exo7/1-L1/FCgu.tex",
+  "summary": "L'exercice demande de prouver l'existence et l'unicité d'une représentation en base b d'un entier naturel n compris entre 0 et b^p-1, où b est un entier naturel supérieur à 1 et p un entier naturel.",
+  "concepts": [
+    "représentation en base b",
+    "existence et unicité",
+    "entiers naturels",
+    "système de numération"
+  ],
+  "methods": [
+    "décomposition en base b",
+    "preuve par récurrence",
+    "utilisation des propriétés des puissances"
+  ],
+  "objects": [
+    "entier naturel n",
+    "base b",
+    "p-uplet (n₀, ..., n_{p-1})",
+    "somme pondérée"
+  ],
+  "content_hash": "593a3a5672b987c74e5af4249989381cf0a55781cc14ca08862b3b40bd63c8c6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:40:18.672Z"
+}

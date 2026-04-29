@@ -1,0 +1,28 @@
+{
+  "uuid": "VAXP",
+  "source_path": "exo7/16-L3/VAXP.tex",
+  "summary": "L'exercice demande de démontrer une égalité intégrale impliquant une fonction de classe C^1 sur un ouvert contenant 0, puis d'en déduire une limite pour une intégrale sur un contour circulaire.",
+  "concepts": [
+    "formule de Cauchy",
+    "intégrale de contour",
+    "dérivée partielle",
+    "fonction holomorphe",
+    "intégrale sur un disque",
+    "limite de Riemann"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "passage à la limite",
+    "utilisation de la formule de Cauchy"
+  ],
+  "objects": [
+    "fonction de classe C^1",
+    "intégrale sur un contour circulaire",
+    "dérivée partielle par rapport à la conjuguée",
+    "disque dans le plan complexe"
+  ],
+  "content_hash": "053104907476fb4d0f9cd3d7f2e10db569a181609fde33cb1b9c13d08e24fe8e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:37:06.847Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "uP9s",
+  "source_path": "exo7/4-L2/uP9s.tex",
+  "summary": "L'exercice demande de déterminer si l'élément 1 appartient au sous-groupe de (ℤ,+) engendré par {3,8}, puis d'identifier ce sous-groupe. Une question similaire est posée pour le sous-groupe engendré par {3,8,15}.",
+  "concepts": [
+    "sous-groupe engendré",
+    "groupe additif ℤ",
+    "combinaison linéaire",
+    "structure de groupe",
+    "sous-groupe additif",
+    "groupe cyclique",
+    "pgcd"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "combinaison d'entiers",
+    "recherche de générateurs"
+  ],
+  "objects": [
+    "sous-groupe de ℤ",
+    "ensemble de générateurs {3,8}",
+    "ensemble de générateurs {3,8,15}"
+  ],
+  "content_hash": "108ac32ab4490502ef6c88ca4b4aefea302139db72e80367948f8de3b41a7d38",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:18:36.972Z"
+}

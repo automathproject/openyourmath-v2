@@ -1,0 +1,27 @@
+{
+  "uuid": "Tll2",
+  "source_path": "exo7/8-L3/Tll2.tex",
+  "summary": "L'exercice demande de montrer qu'une application définie sur le groupe symétrique Sn vers l'ensemble des matrices carrées de taille n sur un corps K est un morphisme de groupes.",
+  "concepts": [
+    "groupe symétrique",
+    "morphisme de groupes",
+    "matrice de permutation",
+    "groupe linéaire général",
+    "corps commutatif",
+    "structure de groupe"
+  ],
+  "methods": [
+    "vérification des propriétés de morphisme",
+    "utilisation du symbole de Kronecker",
+    "définition d'application linéaire"
+  ],
+  "objects": [
+    "matrice de permutation",
+    "groupe symétrique Sn",
+    "groupe linéaire GLn(K)",
+    "application φ"
+  ],
+  "content_hash": "83a13c46e60222e6620606371a35152fe2607869360e6e5a7061e6a54f7c9bbb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:12:25.544Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "NEXX",
+  "source_path": "exo7/4-L2/NEXX.tex",
+  "summary": "L'exercice demande de montrer que l'application φ définie par une intégrale est un produit scalaire sur l'espace des polynômes réels, puis de prouver que les polynômes de Tchebychev forment une base orthogonale de cet espace, et enfin de déterminer la norme de ces polynômes.",
+  "concepts": [
+    "produit scalaire",
+    "espace préhilbertien",
+    "orthogonalité",
+    "base orthogonale",
+    "polynômes de Tchebychev",
+    "intégrabilité",
+    "norme d'un vecteur"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration par parties",
+    "utilisation des propriétés des polynômes de Tchebychev",
+    "détermination de la norme via intégration"
+  ],
+  "objects": [
+    "polynôme",
+    "produit scalaire φ",
+    "polynômes de Tchebychev (T_n)",
+    "espace E=ℝ[X]"
+  ],
+  "content_hash": "75d0c97d26830661ed10dfac021a67cc846973d972380f2fd74bd76fdc63d6fb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:21:14.630Z"
+}

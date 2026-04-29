@@ -1,0 +1,28 @@
+{
+  "uuid": "q9Y6",
+  "source_path": "exo7/15-L3/q9Y6.tex",
+  "summary": "Montrer qu'une fonction uniformément continue sur ℝ dont l'intégrale impropre converge tend vers 0 en +∞. Application à la fonction sin(x²) pour prouver qu'elle n'est pas uniformément continue.",
+  "concepts": [
+    "continuité uniforme",
+    "intégrale impropre",
+    "convergence de suite",
+    "changement de variable",
+    "intégration par parties",
+    "absurde"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "construction de suite",
+    "changement de variable",
+    "intégration par parties"
+  ],
+  "objects": [
+    "fonction uniformément continue",
+    "intégrale impropre",
+    "suite de Cauchy",
+    "fonction sin(x²)"
+  ],
+  "content_hash": "ebdd405715f00ae5ec0ae5a8e5d139317697eb7a1d09e5bd7aace4b92d03b25a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:33:01.682Z"
+}

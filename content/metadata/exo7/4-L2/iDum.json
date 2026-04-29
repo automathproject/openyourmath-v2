@@ -1,0 +1,29 @@
+{
+  "uuid": "iDum",
+  "source_path": "exo7/4-L2/iDum.tex",
+  "summary": "Diagonaliser une matrice symétrique 3x3 donnée. L'énoncé demande une diagonalisation rapide sans contexte supplémentaire.",
+  "concepts": [
+    "matrice symétrique",
+    "diagonalisation",
+    "valeurs propres",
+    "vecteurs propres",
+    "endomorphisme auto-adjoint",
+    "polynôme caractéristique",
+    "espace euclidien"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "détermination des vecteurs propres",
+    "diagonalisation"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrice diagonale"
+  ],
+  "content_hash": "4d55251538bd2f0e4b4ec89762efb6aad4b087d249efd18bdc2e709408495df8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:01:41.558Z"
+}

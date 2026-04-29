@@ -1,0 +1,26 @@
+{
+  "uuid": "DDMC",
+  "source_path": "exo7/15-L3/DDMC.tex",
+  "summary": "L'exercice demande de démontrer qu'un ensemble d'égalité de deux applications continues entre un espace topologique et un espace topologique séparé est un fermé, puis d'en déduire que si deux applications continues coïncident sur un sous-ensemble dense, elles coïncident sur tout l'espace.",
+  "concepts": [
+    "espace topologique",
+    "espace topologique séparé",
+    "sous-ensemble dense",
+    "application continue",
+    "fermé",
+    "coïncidence d'applications"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la densité",
+    "propriétés des ensembles fermés"
+  ],
+  "objects": [
+    "ensemble d'égalité",
+    "applications continues",
+    "sous-ensemble dense"
+  ],
+  "content_hash": "e05338ab40124de92ef8dde75c56a5beef18c6a59306da3840789af1c2869834",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:22:18.645Z"
+}

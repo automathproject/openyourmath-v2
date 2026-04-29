@@ -1,0 +1,26 @@
+{
+  "uuid": "deNJ",
+  "source_path": "exo7/12-L3/deNJ.tex",
+  "summary": "Trouver le minimum de la fonction f(x,y,z) = xy + 2yz + 2xz sur la surface S définie par g(x,y,z) = xyz - 32 = 0 dans ℝ³.",
+  "concepts": [
+    "extremum lié",
+    "optimisation sous contrainte",
+    "fonction de plusieurs variables",
+    "surface algébrique",
+    "gradient",
+    "multiplicateurs de Lagrange"
+  ],
+  "methods": [
+    "méthode des multiplicateurs de Lagrange",
+    "calcul de gradient",
+    "résolution de système d'équations"
+  ],
+  "objects": [
+    "fonction de trois variables",
+    "surface de contrainte",
+    "point critique"
+  ],
+  "content_hash": "1f3ae58ee91b2e0bf014991a4485b3883089842b852c6605e6188d5ae4632098",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:32:59.255Z"
+}

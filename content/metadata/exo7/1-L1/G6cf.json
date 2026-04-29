@@ -1,0 +1,28 @@
+{
+  "uuid": "G6cf",
+  "source_path": "exo7/1-L1/G6cf.tex",
+  "summary": "L'exercice demande de déterminer si quatre applications données sont injectives, surjectives ou bijectives. Les applications concernent des ensembles numériques (N, Z, R) et des espaces vectoriels (R²).",
+  "concepts": [
+    "injection",
+    "surjection",
+    "bijection",
+    "application réciproque",
+    "système d'équations linéaires",
+    "résolution d'équations"
+  ],
+  "methods": [
+    "vérification d'injectivité par antécédents",
+    "vérification de surjectivité par existence d'antécédents",
+    "exhibition d'une bijection réciproque",
+    "résolution de systèmes linéaires"
+  ],
+  "objects": [
+    "application de N dans N",
+    "application de Z dans Z",
+    "application de R² dans R²",
+    "application de R\\(1\\) dans R"
+  ],
+  "content_hash": "b5e2ad8317cbcf71c0294788cdc489d79a22807b3afcfdc01408d4db0d556f2a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:17:21.379Z"
+}

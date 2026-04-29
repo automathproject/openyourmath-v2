@@ -1,0 +1,29 @@
+{
+  "uuid": "V7z1",
+  "source_path": "exo7/1-L1/V7z1.tex",
+  "summary": "L'exercice étudie une famille de matrices A définies comme des combinaisons linéaires d'une matrice U (toutes entrées égales à 1) et de la matrice identité I. Il demande de prouver des propriétés algébriques de cette famille, notamment sa structure de sous-algèbre commutative, les conditions d'inversibilité de ses éléments, et de caractériser les matrices de A vérifiant Mn = I.",
+  "concepts": [
+    "sous-algèbre",
+    "matrice inversible",
+    "commutativité",
+    "matrice identité",
+    "matrice de rang 1",
+    "polynôme annulateur",
+    "racines d'un polynôme"
+  ],
+  "methods": [
+    "calcul de l'inverse d'une matrice",
+    "diagonalisation",
+    "résolution d'équation polynomiale",
+    "vérification de la commutativité"
+  ],
+  "objects": [
+    "matrice de type aU + bI",
+    "matrice identité",
+    "matrice U (toutes entrées égales à 1)",
+    "famille de matrices A"
+  ],
+  "content_hash": "8dc7a020998067be2bacb33d5243486ce6d45e7a8cc5a7f4a6c46bc31b156b05",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:01:59.537Z"
+}

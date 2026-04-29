@@ -1,0 +1,24 @@
+{
+  "uuid": "kE8E",
+  "source_path": "exo7/4-L2/kE8E.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble des polynômes à coefficients entiers dont la valeur en 0 est paire forme un idéal dans l'anneau des polynômes à coefficients entiers, puis de montrer que cet idéal est engendré par les polynômes 2 et X.",
+  "concepts": [
+    "idéal d'un anneau",
+    "polynôme à coefficients entiers",
+    "générateur d'idéal",
+    "structure de groupe",
+    "structure d'anneau"
+  ],
+  "methods": [
+    "vérification des propriétés d'idéal",
+    "démonstration de génération d'idéal"
+  ],
+  "objects": [
+    "idéal de Z[X]",
+    "polynôme constant",
+    "polynôme linéaire"
+  ],
+  "content_hash": "d1ab0acbf89e71d26d42e3e35b8dc79285e4d82df47b793b8c682835364fedd1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:07:06.527Z"
+}

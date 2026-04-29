@@ -1,0 +1,26 @@
+{
+  "uuid": "oiwk",
+  "source_path": "exo7/15-L3/oiwk.tex",
+  "summary": "L'exercice demande de déterminer la forme explicite d'une isométrie de ℝ dans ℝ, en montrant qu'elle est soit de la forme f(x) = a - x, soit f(x) = a + x, où a = f(0).",
+  "concepts": [
+    "isométrie",
+    "fonction affine",
+    "continuité",
+    "topologie de ℝ",
+    "distance euclidienne",
+    "propriété de conservation des distances"
+  ],
+  "methods": [
+    "réduction au cas particulier",
+    "analyse des conditions de conservation des distances",
+    "détermination de la forme fonctionnelle"
+  ],
+  "objects": [
+    "isométrie",
+    "fonction de ℝ dans ℝ",
+    "distance euclidienne"
+  ],
+  "content_hash": "89a5d15ce9a37cece8e089c02207aa5f0ca00eefd621178b21992746360f1d54",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:32:36.148Z"
+}

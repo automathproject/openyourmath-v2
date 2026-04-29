@@ -1,0 +1,29 @@
+{
+  "uuid": "a1aJ",
+  "source_path": "exo7/4-L2/a1aJ.tex",
+  "summary": "L'exercice demande de démontrer que l'algébricité d'un élément sur un corps est équivalente à la dimension finie de l'extension engendrée. Il étudie ensuite la stabilité de l'algébricité par addition et multiplication.",
+  "concepts": [
+    "corps",
+    "extension de corps",
+    "élément algébrique",
+    "dimension d'espace vectoriel",
+    "algébricité",
+    "stabilité par addition",
+    "stabilité par multiplication"
+  ],
+  "methods": [
+    "construction d'extension",
+    "utilisation de polynômes annulateurs",
+    "étude de dimension"
+  ],
+  "objects": [
+    "corps K et L",
+    "élément α",
+    "élément β",
+    "extension K[α]",
+    "extension K[α, β]"
+  ],
+  "content_hash": "f5a44d5ead55192cafe89c49aed93c2d729ef65761e156881883f1d4136b60a3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:56:39.815Z"
+}

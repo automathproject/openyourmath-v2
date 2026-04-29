@@ -1,0 +1,30 @@
+{
+  "uuid": "0VQv",
+  "source_path": "exo7/2-L1/0VQv.tex",
+  "summary": "L'exercice demande de développer à l'ordre 1/n² la n-ième racine positive xₙ de l'équation tan(x) = x. Il s'agit d'une étude asymptotique des solutions de cette équation trigonométrique.",
+  "concepts": [
+    "fonction tangente",
+    "fonction Arctangente",
+    "développement asymptotique",
+    "théorème des valeurs intermédiaires",
+    "fonction dérivable",
+    "limite de suite",
+    "équation trigonométrique"
+  ],
+  "methods": [
+    "développement limité",
+    "approximation asymptotique",
+    "théorème des valeurs intermédiaires",
+    "changement de variable",
+    "analyse de comportement en infinie"
+  ],
+  "objects": [
+    "racine de l'équation tan(x) = x",
+    "suite (xₙ)",
+    "fonction f(x) = tan(x) - x",
+    "intervalle Iₙ"
+  ],
+  "content_hash": "f9a31de5c81bab811991988d7372ced69f9024c0ac47f02ae511f210286d2415",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:53:11.594Z"
+}

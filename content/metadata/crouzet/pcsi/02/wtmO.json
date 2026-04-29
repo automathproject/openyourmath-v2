@@ -1,0 +1,28 @@
+{
+  "uuid": "wtmO",
+  "source_path": "crouzet/pcsi/02/wtmO.tex",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité de la division euclidienne dans l'ensemble des entiers relatifs, c'est-à-dire trouver deux entiers q et r tels que a = bq + r avec 0 ≤ r < |b|.",
+  "concepts": [
+    "division euclidienne",
+    "entiers relatifs",
+    "unicité",
+    "existence",
+    "principe du minimum",
+    "inégalité triangulaire"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du principe du minimum",
+    "manipulation d'inégalités",
+    "analyse de cas"
+  ],
+  "objects": [
+    "entiers relatifs",
+    "quotient",
+    "reste",
+    "ensemble des entiers naturels"
+  ],
+  "content_hash": "e22953b2b52d0d0e2dc5a4debb4629414dc59444bd9ba46edb16513b891e052a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:32:05.959Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "KYZn",
+  "source_path": "exo7/5-L2/KYZn.tex",
+  "summary": "Trouver le maximum du produit des distances d'un point intérieur M à un triangle ABC aux côtés de ce triangle. On modélise le problème en optimisant une fonction de deux variables définie sur un domaine triangulaire.",
+  "concepts": [
+    "extremum local",
+    "fonction de plusieurs variables",
+    "compact",
+    "théorème de Borel-Lebesgue",
+    "point critique",
+    "optimisation sous contrainte",
+    "aire d'un triangle"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "recherche de points critiques",
+    "analyse de la frontière d'un domaine",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "fonction polynomiale de deux variables",
+    "domaine triangulaire",
+    "point intérieur à un triangle",
+    "distances à des droites"
+  ],
+  "content_hash": "be2ff698ef6825a9b01b86e3818749b0d320fbfe84c263e4b6b335193a90330d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:56:14.903Z"
+}

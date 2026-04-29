@@ -1,0 +1,29 @@
+{
+  "uuid": "afRR",
+  "source_path": "exo7/8-L3/afRR.tex",
+  "summary": "L'exercice demande de démontrer que l'application déterminant est un morphisme de groupes et d'étudier les propriétés du noyau de cette application, ainsi que des sous-groupes spécifiques de matrices.",
+  "concepts": [
+    "morphisme de groupes",
+    "sous-groupe distingué",
+    "groupe quotient",
+    "théorème de Lagrange",
+    "matrice inversible",
+    "déterminant"
+  ],
+  "methods": [
+    "vérification des propriétés de morphisme",
+    "analyse du noyau d'un morphisme",
+    "construction de groupe quotient",
+    "identification de sous-groupes"
+  ],
+  "objects": [
+    "groupe linéaire GL_n(K)",
+    "sous-groupe spécial linéaire SL_n(K)",
+    "matrices diagonales",
+    "matrices triangulaires supérieures",
+    "centre d'un groupe Z(GL_n(K))"
+  ],
+  "content_hash": "c519551244a4eb9e53f26beb15638b509dc56e86af09c0d121e5a43b63d5f755",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:10:12.989Z"
+}

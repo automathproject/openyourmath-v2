@@ -1,0 +1,27 @@
+{
+  "uuid": "G5Km",
+  "source_path": "exo7/15-L3/G5Km.tex",
+  "summary": "L'exercice demande de démontrer que le diamètre d'une partie bornée d'un espace métrique est égal au diamètre de son adhérence, puis d'appliquer ce résultat pour calculer le diamètre de deux ensembles de fonctions continues sur [0,1] avec des contraintes spécifiques.",
+  "concepts": [
+    "espace métrique",
+    "partie bornée",
+    "adhérence d'un ensemble",
+    "supremum",
+    "distance",
+    "topologie"
+  ],
+  "methods": [
+    "utilisation de la définition du diamètre",
+    "comparaison des ensembles et de leurs adhérences",
+    "calcul de la distance entre fonctions"
+  ],
+  "objects": [
+    "partie bornée",
+    "adhérence d'un ensemble",
+    "fonction continue",
+    "distance uniforme"
+  ],
+  "content_hash": "fc71e57c7b120ef2f765bfef409678b1adbeb4e50e85184d7008111b05ecd079",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:23:13.906Z"
+}

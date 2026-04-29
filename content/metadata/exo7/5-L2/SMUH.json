@@ -1,0 +1,30 @@
+{
+  "uuid": "SMUH",
+  "source_path": "exo7/5-L2/SMUH.tex",
+  "summary": "Trouver toutes les fonctions dérivables sur l'intervalle ]0, +∞[ vérifiant une équation différentielle fonctionnelle donnée.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "espace vectoriel de solutions",
+    "système fondamental de solutions",
+    "wronskien",
+    "solution particulière",
+    "dérivabilité",
+    "équation différentielle fonctionnelle"
+  ],
+  "methods": [
+    "recherche de solutions de la forme x^α",
+    "calcul du wronskien",
+    "résolution d'équation différentielle linéaire",
+    "dérivation",
+    "identification des constantes"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "équation différentielle",
+    "solution particulière",
+    "système fondamental de solutions"
+  ],
+  "content_hash": "3c13c03d98e401d8707859da2102d53a284296e87383cb8827941ec773d7486c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:29:18.616Z"
+}

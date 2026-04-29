@@ -1,0 +1,22 @@
+{
+  "uuid": "323B",
+  "source_path": "exo7/4-L2/323B.tex",
+  "summary": "L'exercice demande de montrer que le déterminant d'une matrice 3x3 est divisible par 17, en exploitant la divisibilité de ses éléments par 17.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "propriétés des déterminants",
+    "divisibilité",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "opérations sur les lignes/colonnes",
+    "propriété multiplicative du déterminant"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "entiers naturels"
+  ],
+  "content_hash": "40e9b3ec2f73d6c9df39af7626b53fe4fbcfc3dc630ddb91e9224606724b9f95",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:29:51.245Z"
+}

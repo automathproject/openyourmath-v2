@@ -1,0 +1,26 @@
+{
+  "uuid": "iIik",
+  "source_path": "exo7/1-L1/iIik.tex",
+  "summary": "L'exercice demande de montrer qu'un sous-espace vectoriel G de R^n est un sous-espace vectoriel et que R^n est la somme directe de F (engendré par le vecteur u=(1,1,...,1)) et G.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "somme directe",
+    "noyau d'une forme linéaire",
+    "projection sur un sous-espace",
+    "décomposition d'un vecteur"
+  ],
+  "methods": [
+    "vérification des propriétés de sous-espace vectoriel",
+    "décomposition d'un vecteur en somme d'un vecteur de F et d'un vecteur de G",
+    "calcul de projection"
+  ],
+  "objects": [
+    "vecteur u=(1,1,...,1)",
+    "sous-espace vectoriel F",
+    "sous-espace vectoriel G",
+    "vecteur de R^n"
+  ],
+  "content_hash": "bf91f5ec7bf74e353dea8502cffaa5f5d18cbaa4e45a1816e71aa2b37064664f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:04:08.885Z"
+}

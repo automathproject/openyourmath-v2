@@ -1,0 +1,27 @@
+{
+  "uuid": "Zrdm",
+  "source_path": "exo7/5-L2/Zrdm.tex",
+  "summary": "Calculer les deux premiers termes du développement limité en 1/n de l'intégrale I_n définie comme l'intégrale de 0 à 1 de 1/(1+t^n) lorsque n tend vers l'infini.",
+  "concepts": [
+    "intégrale de Riemann",
+    "développement limité",
+    "asymptotique",
+    "intégrale dépendant d'un paramètre",
+    "changement de variable",
+    "intégrale convergente"
+  ],
+  "methods": [
+    "développement limité",
+    "changement de variable",
+    "intégration par parties",
+    "analyse asymptotique"
+  ],
+  "objects": [
+    "intégrale paramétrique",
+    "fonction de deux variables",
+    "développement asymptotique"
+  ],
+  "content_hash": "87e0dd4eedf192fb1590cb04b9e69c0d6eb9fbef82219db77977142d9e21834c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:41:52.939Z"
+}

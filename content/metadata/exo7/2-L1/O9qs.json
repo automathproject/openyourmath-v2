@@ -1,31 +1,29 @@
 {
   "uuid": "O9qs",
   "source_path": "exo7/2-L1/O9qs.tex",
-  "summary": "Calculer l'intégrale impropre de la fonction f(t) = ln(t)/(t-1) sur l'intervalle ]0,1[. L'exercice demande d'évaluer cette intégrale en utilisant deux méthodes distinctes : une approche manuelle sans théorème d'intégration terme à terme, et une approche utilisant un tel théorème.",
+  "summary": "Calculer l'intégrale impropre ∫₀¹ (ln t)/(t-1) dt en utilisant un développement de 1/(1-t). La fonction intégrande est continue et positive sur ]0,1[ et intégrable sur cet intervalle.",
   "concepts": [
     "intégrale impropre",
+    "développement en série entière",
     "convergence simple",
     "intégration terme à terme",
-    "continuité",
     "négligeabilité",
-    "série numérique",
-    "intégration par parties",
-    "théorème de convergence dominée"
+    "continuité uniforme",
+    "série numérique"
   ],
   "methods": [
-    "développement en série entière",
+    "développement en série",
     "intégration par parties",
-    "majoration d'intégrale",
-    "passage à la limite sous le signe intégral",
-    "théorème d'intégration terme à terme"
+    "théorème d'intégration terme à terme",
+    "majoration",
+    "limite de suite"
   ],
   "objects": [
-    "fonction de deux variables",
-    "série de fonctions",
-    "intégrale de fonction logarithmique",
-    "fonction continue sur un intervalle"
+    "fonction de variable réelle",
+    "série entière",
+    "intégrale de fonction"
   ],
-  "content_hash": "620cba9e052668aa97ee7094521a99a2e000f156131a471e637563128409d21e",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:32:33.833Z"
+  "content_hash": "dcb6cad93805392b0d2389bf2b5654d6f35fe753da53b0ee275c759faf6d82a5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:37:15.246Z"
 }

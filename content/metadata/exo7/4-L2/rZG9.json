@@ -1,0 +1,27 @@
+{
+  "uuid": "rZG9",
+  "source_path": "exo7/4-L2/rZG9.tex",
+  "summary": "On considère une matrice carrée de taille n à coefficients dans un corps K, vérifiant une condition sur les produits des éléments suivant les permutations. On demande de montrer que cette matrice est de rang 1.",
+  "concepts": [
+    "déterminant",
+    "rang d'une matrice",
+    "permutation",
+    "matrice carrée",
+    "corps commutatif",
+    "propriété multiplicative"
+  ],
+  "methods": [
+    "analyse des propriétés des mineurs",
+    "utilisation des permutations",
+    "étude des rang"
+  ],
+  "objects": [
+    "matrice carrée",
+    "permutation",
+    "rang de matrice",
+    "élément non nul"
+  ],
+  "content_hash": "b29f7d4c80bdc0bd069b2c733f7d13702660068a675ac88d5467dd3aba81d379",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:14:09.893Z"
+}

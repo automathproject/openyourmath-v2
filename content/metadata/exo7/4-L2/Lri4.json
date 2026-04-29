@@ -1,0 +1,28 @@
+{
+  "uuid": "Lri4",
+  "source_path": "exo7/4-L2/Lri4.tex",
+  "summary": "L'exercice demande de démontrer qu'une matrice complexe A admet une décomposition A=UT⁻ᵀU avec U unitaire et T triangulaire supérieure si et seulement si le spectre de AᵃA est inclus dans ℝ⁺.",
+  "concepts": [
+    "matrice unitaire",
+    "matrice triangulaire supérieure",
+    "spectre d'une matrice",
+    "valeurs propres réelles positives",
+    "semblance de matrices",
+    "décomposition polaire"
+  ],
+  "methods": [
+    "trigonalisation unitaire",
+    "récurrence sur la dimension",
+    "analyse des blocs de matrices",
+    "utilisation des propriétés des valeurs propres"
+  ],
+  "objects": [
+    "matrice complexe",
+    "matrice hermitienne",
+    "matrice triangulaire",
+    "vecteurs propres"
+  ],
+  "content_hash": "c236edac69493211abd32b0a0083765d77779bf06b88f44ecc2856c952a9ae28",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:18:41.210Z"
+}

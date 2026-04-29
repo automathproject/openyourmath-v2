@@ -1,0 +1,29 @@
+{
+  "uuid": "pTKx",
+  "source_path": "exo7/12-L3/pTKx.tex",
+  "summary": "L'exercice demande d'étudier les extremums locaux d'une fonction de deux variables et d'analyser son comportement sur un domaine compact. La fonction est définie par f(x,y) = x³ - 3x(1 + y²).",
+  "concepts": [
+    "extremum local",
+    "extremum lié",
+    "fonction de deux variables",
+    "domaine compact",
+    "théorème de Weierstrass",
+    "gradient",
+    "hessien"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "analyse du gradient",
+    "paramétrisation du cercle",
+    "optimisation sur un domaine fermé borné"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "domaine compact",
+    "extremums locaux",
+    "paramétrisation trigonométrique"
+  ],
+  "content_hash": "58a92e0809adca5fdebbb2e94f9305ff1ad957319c326276cba31cb0172919fe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:34:48.434Z"
+}

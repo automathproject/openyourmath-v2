@@ -1,0 +1,29 @@
+{
+  "uuid": "vXlA",
+  "source_path": "exo7/19-L3/vXlA.tex",
+  "summary": "L'exercice demande d'exprimer la fonction génératrice d'une variable aléatoire Y, définie comme une somme pondérée par une autre variable aléatoire N, en fonction des fonctions génératrices de N et de X1. Il faut ensuite exprimer l'espérance de Y en fonction des espérances de N et X1.",
+  "concepts": [
+    "fonction génératrice",
+    "variable aléatoire indépendante",
+    "intégrabilité",
+    "espérance mathématique",
+    "somme de variables aléatoires",
+    "théorème de Fubini-Tonelli"
+  ],
+  "methods": [
+    "composition de fonctions génératrices",
+    "inversion de sommes",
+    "calcul de dérivée de fonctions génératrices",
+    "utilisation de l'indépendance"
+  ],
+  "objects": [
+    "variable aléatoire Y",
+    "variable aléatoire N",
+    "suite de variables aléatoires (X_n)",
+    "fonction génératrice G_Y",
+    "espérance E(Y)"
+  ],
+  "content_hash": "d4e7b85a1c546e16447cfd02b4d7c4ec011566ca051b249131a6a1511c9bac1e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:35:47.291Z"
+}

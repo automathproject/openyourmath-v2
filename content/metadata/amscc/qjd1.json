@@ -1,0 +1,25 @@
+{
+  "uuid": "qjd1",
+  "source_path": "amscc/qjd1.tex",
+  "summary": "L'exercice demande de justifier que le déterminant d'une matrice 3x3 spécifique est nul en factorisant les lignes.",
+  "concepts": [
+    "déterminant",
+    "factorisation",
+    "matrice symétrique",
+    "rang d'une matrice",
+    "propriété des lignes linéairement dépendantes"
+  ],
+  "methods": [
+    "factorisation de lignes",
+    "calcul de déterminant",
+    "reconnaissance de lignes identiques"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "déterminant",
+    "lignes d'une matrice"
+  ],
+  "content_hash": "367de49a7445a89924aed9e62b697113299c31d49a9273e7707e637b2e8e338d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:13:33.770Z"
+}

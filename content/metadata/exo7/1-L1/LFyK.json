@@ -1,0 +1,26 @@
+{
+  "uuid": "LFyK",
+  "source_path": "exo7/1-L1/LFyK.tex",
+  "summary": "L'exercice demande de prouver deux propriétés sur les applications linéaires entre espaces vectoriels réels : l'inexistence d'une application linéaire surjective de ℝᵖ dans ℝᵏ lorsque p < q, et l'inexistence d'une application linéaire injective de ℝᵖ dans ℝᵏ lorsque q < p.",
+  "concepts": [
+    "application linéaire",
+    "surjectivité",
+    "injectivité",
+    "dimension d'un espace vectoriel",
+    "théorème du rang",
+    "espace vectoriel de dimension finie"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du théorème du rang",
+    "comparaison des dimensions"
+  ],
+  "objects": [
+    "application linéaire",
+    "espaces vectoriels ℝᵖ et ℝᵏ",
+    "image et noyau d'une application linéaire"
+  ],
+  "content_hash": "c03403302e6e0c9957c4f0625d2b643348ac52d19fb2a123a098f42eceb29261",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:54:33.096Z"
+}

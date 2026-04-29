@@ -1,0 +1,24 @@
+{
+  "uuid": "38OA",
+  "source_path": "exo7/1-L1/38OA.tex",
+  "summary": "Soient deux entiers naturels non nuls et premiers entre eux dont le produit est un carré parfait. Montrer que chacun de ces entiers est un carré parfait.",
+  "concepts": [
+    "nombres premiers entre eux",
+    "carré parfait",
+    "décomposition en facteurs premiers",
+    "unicité de la décomposition en facteurs premiers",
+    "divisibilité dans Z"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "analyse de l'exposant des facteurs premiers"
+  ],
+  "objects": [
+    "entiers naturels",
+    "produit de deux entiers",
+    "facteurs premiers"
+  ],
+  "content_hash": "79d415f4410e8d920e48b898f2065d60fca71e8dfce0c88f8bfeab971cccc77c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:00:28.397Z"
+}

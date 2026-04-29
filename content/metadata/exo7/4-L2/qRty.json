@@ -1,0 +1,25 @@
+{
+  "uuid": "qRty",
+  "source_path": "exo7/4-L2/qRty.tex",
+  "summary": "On considère une matrice carrée M d'ordre n et une matrice M' obtenue en remplaçant chaque colonne de M par la somme des autres colonnes. On demande de prouver une relation entre les déterminants de M et M'.",
+  "concepts": [
+    "déterminant de matrice",
+    "opérations sur les colonnes",
+    "propriétés des déterminants",
+    "relation de récurrence",
+    "matrice carrée"
+  ],
+  "methods": [
+    "développement par blocs",
+    "récurrence sur l'ordre de la matrice",
+    "manipulation des colonnes"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "colonnes de matrice"
+  ],
+  "content_hash": "914f41fa7e8dd9e39fa791237c655a5994de9db3ce16490b481e371ec2e8c2ef",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:13:07.619Z"
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "7435",
+  "source_path": "exo7/6-L2/VPCg.tex",
+  "summary": "L'exercice demande de déterminer les points stationnaires d'une fonction de deux variables et de préciser leur nature (maximum local, point selle). Il étudie également la courbe définie par f(x,y)=0 pour x≥0, et analyse la nature du point (-1,0) sur cette courbe.",
+  "concepts": [
+    "extremums locaux",
+    "points stationnaires",
+    "hessien",
+    "théorème des fonctions implicites",
+    "courbe définie implicitement",
+    "maximum local",
+    "point selle",
+    "fonction de classe C^1"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "analyse du hessien",
+    "théorème des fonctions implicites",
+    "étude de la courbe définie par une équation",
+    "analyse des points critiques"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "points stationnaires",
+    "courbe définie par f(x,y)=0",
+    "hessien",
+    "disque ouvert"
+  ],
+  "content_hash": "de04c0017c212ef13b41cdd0504d21b3080e25506140b7bab47d86455cf4ee52",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:44:03.873Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "Q2mh",
+  "source_path": "exo7/2-L1/Q2mh.tex",
+  "summary": "On considère une fonction K-lipschitzienne sur un intervalle [a, b]. L'exercice demande de majorer l'erreur d'approximation de l'intégrale de cette fonction par la méthode des rectangles.",
+  "concepts": [
+    "fonction lipschitzienne",
+    "intégrale de Riemann",
+    "approximation numérique",
+    "inégalité de majoration",
+    "méthode des rectangles"
+  ],
+  "methods": [
+    "approximation par la méthode des rectangles",
+    "utilisation de la lipschitzianité",
+    "calcul de l'erreur d'approximation"
+  ],
+  "objects": [
+    "fonction K-lipschitzienne",
+    "intégrale de Riemann",
+    "somme de Riemann"
+  ],
+  "content_hash": "d31fefbb3f15a3e53a7fa0109d274338611390eb95f96f701230a1ff8cd64eb6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:38:28.078Z"
+}

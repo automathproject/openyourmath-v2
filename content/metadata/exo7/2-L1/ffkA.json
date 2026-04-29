@@ -1,0 +1,28 @@
+{
+  "uuid": "ffkA",
+  "source_path": "exo7/2-L1/ffkA.tex",
+  "summary": "L'exercice demande de montrer que la somme harmonique Sn = Σ(1/k) de 1 à n tend vers l'infini quand n tend vers l'infini, en appliquant le théorème des accroissements finis à la fonction ln(x) sur l'intervalle [n, n+1].",
+  "concepts": [
+    "théorème des accroissements finis",
+    "fonction logarithme",
+    "somme harmonique",
+    "téléscopie",
+    "limite de suite",
+    "croissance comparée"
+  ],
+  "methods": [
+    "application du théorème des accroissements finis",
+    "majoration",
+    "téléscopie de somme",
+    "comparaison de croissance"
+  ],
+  "objects": [
+    "somme harmonique",
+    "fonction ln(x)",
+    "suite numérique",
+    "intervalle [n, n+1]"
+  ],
+  "content_hash": "4d2b167c4d4d0652a3b48d174ad9d4d1d92c04379196f1d1c444916f567a2cd9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:15:08.958Z"
+}

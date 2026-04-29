@@ -1,0 +1,25 @@
+{
+  "uuid": "yBfh",
+  "source_path": "exo7/2-L1/yBfh.tex",
+  "summary": "On considère une fonction continue positive sur les réels positifs dont l'intégrale du carré existe. On demande de montrer que l'intégrale de la fonction est un o(√x) en l'infini.",
+  "concepts": [
+    "intégrale impropre",
+    "fonction continue",
+    "croissance comparée",
+    "majoration",
+    "inégalité de Cauchy-Schwarz"
+  ],
+  "methods": [
+    "comparaison d'intégrales",
+    "utilisation de l'inégalité de Cauchy-Schwarz",
+    "majoration"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrale impropre",
+    "croissance comparée"
+  ],
+  "content_hash": "672205b02b6307f1e95bc1b8ff77767f009b720b9044c7a563582304689deee8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:54:16.728Z"
+}

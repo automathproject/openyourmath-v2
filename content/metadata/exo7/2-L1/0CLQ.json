@@ -1,0 +1,25 @@
+{
+  "uuid": "0CLQ",
+  "source_path": "exo7/2-L1/0CLQ.tex",
+  "summary": "L'exercice demande de démontrer une double inégalité pour la fonction logarithme naturel et d'en déduire la limite d'un produit de termes lorsque n tend vers l'infini.",
+  "concepts": [
+    "fonction logarithme",
+    "inégalité",
+    "limite de suite",
+    "produit infini",
+    "comparaison de fonctions"
+  ],
+  "methods": [
+    "encadrement",
+    "limite de produit",
+    "approximation affine"
+  ],
+  "objects": [
+    "fonction ln(1+x)",
+    "suite numérique",
+    "produit de termes"
+  ],
+  "content_hash": "59a7763fca2660b6f1fed3eb0705c3717762d0116d3d6b440da462ddb65089ee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:12:24.841Z"
+}

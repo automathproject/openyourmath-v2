@@ -1,0 +1,22 @@
+{
+  "uuid": "M1SN",
+  "source_path": "exo7/2-L1/M1SN.tex",
+  "summary": "On considère une fonction continue sur [0,1] dont l'intégrale vaut 1/2. On demande de prouver l'existence d'un point a dans ]0,1[ où la fonction prend la valeur a.",
+  "concepts": [
+    "fonction continue",
+    "intégrale de Riemann",
+    "théorème des valeurs intermédiaires",
+    "équation fonctionnelle"
+  ],
+  "methods": [
+    "application du TVI",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "fonction continue",
+    "point fixe"
+  ],
+  "content_hash": "a8ec02b670a5b29bc5c3daf4efebec0699b72b7ec8b334bb1ba990243b010fdf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:36:15.903Z"
+}

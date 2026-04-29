@@ -1,0 +1,27 @@
+{
+  "uuid": "2e1E",
+  "source_path": "exo7/9-L3/2e1E.tex",
+  "summary": "L'exercice demande de démontrer que toute homographie dans un espace projectif possède au moins un point fixe, puis d'établir une borne supérieure sur le nombre de points fixes pour certaines homographies.",
+  "concepts": [
+    "géométrie projective",
+    "homographie",
+    "point fixe",
+    "espace projectif",
+    "groupe linéaire projectif",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "analyse des points fixes",
+    "utilisation des propriétés des homographies",
+    "calcul de la cardinalité des ensembles"
+  ],
+  "objects": [
+    "homographie",
+    "espace projectif",
+    "point fixe",
+    "groupe PGL_n(C)"
+  ],
+  "content_hash": "a1a9ac2a0710bd9bf83153affafb44dfc15414cd42d25bde261591732ff28c91",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:08:03.421Z"
+}

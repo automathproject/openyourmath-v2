@@ -1,0 +1,24 @@
+{
+  "uuid": "g7pQ",
+  "source_path": "exo7/2-L1/g7pQ.tex",
+  "summary": "On considère une fonction continue et dérivable sur [a, +∞[ avec une limite finie en +∞ égale à f(a). On demande de prouver l'existence d'un point c > a où la dérivée s'annule.",
+  "concepts": [
+    "théorème de Rolle",
+    "limite de fonction",
+    "continuité",
+    "dérivabilité",
+    "théorème des accroissements finis"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "application du théorème de Rolle"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle semi-infini",
+    "dérivée"
+  ],
+  "content_hash": "2b663966474baa2d3984e5d21ba66f03defe1025fb97e6b1552e4176945fc825",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:15:30.436Z"
+}

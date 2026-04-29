@@ -1,0 +1,25 @@
+{
+  "uuid": "MMkK",
+  "source_path": "exo7/1-L1/MMkK.tex",
+  "summary": "Trouver tous les triplets d'entiers naturels (x, y, z) vérifiant l'équation x² + y² = 3z², et montrer que (0,0,0) est la seule solution.",
+  "concepts": [
+    "équation diophantienne",
+    "entiers naturels",
+    "solution triviale",
+    "divisibilité",
+    "parité"
+  ],
+  "methods": [
+    "analyse de cas",
+    "réduction modulo 3",
+    "argument de parité"
+  ],
+  "objects": [
+    "équation quadratique",
+    "triplet d'entiers",
+    "solution unique"
+  ],
+  "content_hash": "6c451707e1728d61f62cf642d9405540508bf36e0f7c1b04718a612286f6f2c9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:04:20.034Z"
+}

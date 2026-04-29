@@ -1,0 +1,28 @@
+{
+  "uuid": "BBvO",
+  "source_path": "exo7/1-L1/BBvO.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de composition d'applications entre ensembles. Il s'agit d'étudier les implications de l'injectivité et de la surjectivité de la composition de deux applications sur l'injectivité et la surjectivité des applications individuelles, ainsi que de caractériser la bijectivité de deux compositions successives.",
+  "concepts": [
+    "injectivité",
+    "surjectivité",
+    "bijectivité",
+    "composition d'applications",
+    "application réciproque",
+    "propriétés des applications"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "utilisation de la définition d'injectivité",
+    "utilisation de la définition de surjectivité",
+    "composition d'applications"
+  ],
+  "objects": [
+    "applications entre ensembles",
+    "ensembles A, B, C, D",
+    "composition g∘f",
+    "composition h∘g"
+  ],
+  "content_hash": "f45a33de4d2f9ced978fd29d8c5d58e969a6ccd638e2c11c59d23b64e225f2d7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:16:29.218Z"
+}

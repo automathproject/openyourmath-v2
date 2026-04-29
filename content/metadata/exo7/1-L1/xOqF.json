@@ -1,0 +1,28 @@
+{
+  "uuid": "xOqF",
+  "source_path": "exo7/1-L1/xOqF.tex",
+  "summary": "L'exercice demande de représenter graphiquement les majorants d'un couple donné dans un ensemble ordonné selon l'ordre lexicographique, puis de prouver qu'une partie non vide de cet ensemble admet une borne supérieure.",
+  "concepts": [
+    "relation d'ordre",
+    "ordre lexicographique",
+    "majorant",
+    "borne supérieure",
+    "ensemble ordonné",
+    "représentation graphique"
+  ],
+  "methods": [
+    "représentation graphique",
+    "preuve par construction",
+    "utilisation des propriétés de l'ordre lexicographique"
+  ],
+  "objects": [
+    "ensemble E = [-1, 1]^2",
+    "couple (a, b)",
+    "partie non vide A de E",
+    "majorants",
+    "borne supérieure"
+  ],
+  "content_hash": "cd9f8cd62301034aca9ff256530c22a7b7e5f59badf4f212f53d01db17274d28",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:31:28.100Z"
+}

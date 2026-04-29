@@ -1,0 +1,25 @@
+{
+  "uuid": "XNaF",
+  "source_path": "exo7/2-L1/XNaF.tex",
+  "summary": "On considère un polynôme réel non négatif et on définit un nouveau polynôme Q comme la somme du polynôme et de toutes ses dérivées. L'exercice demande de prouver que Q est également non négatif.",
+  "concepts": [
+    "polynôme réel",
+    "dérivée d'un polynôme",
+    "inégalité polynomiale",
+    "somme de polynômes",
+    "non-négativité"
+  ],
+  "methods": [
+    "analyse des dérivées",
+    "somme de polynômes",
+    "preuve par contradiction"
+  ],
+  "objects": [
+    "polynôme P",
+    "polynôme Q",
+    "dérivées successives"
+  ],
+  "content_hash": "69ab8ecacb6b828813364100dbad225a7b67f85f8ca2d87d48eb46098083f245",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:32:59.311Z"
+}

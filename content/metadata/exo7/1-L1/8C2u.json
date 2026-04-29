@@ -1,0 +1,28 @@
+{
+  "uuid": "8C2u",
+  "source_path": "exo7/1-L1/8C2u.tex",
+  "summary": "Soient E un espace vectoriel de dimension finie et f, g deux applications linéaires de E dans E. On suppose que la somme des noyaux de f et g est égale à E, et que la somme des images de f et g est égale à E. Montrer que ces deux sommes sont directes.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "somme directe",
+    "théorème du rang",
+    "dimension d'un espace vectoriel",
+    "espace vectoriel de dimension finie"
+  ],
+  "methods": [
+    "utilisation du théorème du rang",
+    "calcul de dimensions",
+    "manipulation de sommes directes"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "applications linéaires f et g",
+    "noyaux de f et g",
+    "images de f et g"
+  ],
+  "content_hash": "55e2aa5fcce5552ea4829d95f2b5d7a3ba4e1a4d05670e914e56ea846b85b703",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:53:22.301Z"
+}

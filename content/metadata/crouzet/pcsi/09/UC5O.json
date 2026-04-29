@@ -1,0 +1,25 @@
+{
+  "uuid": "UC5O",
+  "source_path": "crouzet/pcsi/09/UC5O.tex",
+  "summary": "L'exercice demande de prouver par récurrence que les termes d'une suite définie par récurrence sont bornés entre 1 et 3, puis de montrer que cette suite est croissante.",
+  "concepts": [
+    "principe de récurrence",
+    "bornes d'une suite",
+    "croissance d'une suite",
+    "fonction croissante",
+    "inégalité"
+  ],
+  "methods": [
+    "récurrence",
+    "hypothèse de récurrence",
+    "application de la fonction racine"
+  ],
+  "objects": [
+    "suite définie par récurrence",
+    "termes de suite",
+    "inégalités"
+  ],
+  "content_hash": "05e2a199aa90c2af2b66f11aed02aef7554fc76642b1df8c819c156e48c9bf6d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:33:42.197Z"
+}

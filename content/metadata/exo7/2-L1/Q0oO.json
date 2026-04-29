@@ -1,0 +1,26 @@
+{
+  "uuid": "Q0oO",
+  "source_path": "exo7/2-L1/Q0oO.tex",
+  "summary": "Soit une fonction f de classe C² sur [a,b] avec f(a)=f(b)=0. Montrer qu'il existe un point d dans ]a,b[ tel que f(c) s'exprime en fonction de f''(d).",
+  "concepts": [
+    "fonction de classe C²",
+    "théorème de Rolle",
+    "théorème des accroissements finis",
+    "dérivée seconde",
+    "fonction auxiliaire"
+  ],
+  "methods": [
+    "construction de fonction auxiliaire",
+    "application du théorème de Rolle",
+    "utilisation de la dérivée seconde"
+  ],
+  "objects": [
+    "fonction f",
+    "point c",
+    "point d",
+    "fonction g"
+  ],
+  "content_hash": "a7bcf833f8148c3e6c3e243d169d50d53381b835590eaca35497847a973f2a46",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:08:22.459Z"
+}

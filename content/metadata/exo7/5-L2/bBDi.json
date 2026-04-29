@@ -1,0 +1,24 @@
+{
+  "uuid": "bBDi",
+  "source_path": "exo7/5-L2/bBDi.tex",
+  "summary": "Calculer l'aire d'une région délimitée par une courbe définie par l'équation $(y-x)^2 = a^2 - x^2$.",
+  "concepts": [
+    "intégrale double",
+    "formule de Green",
+    "changement de variables",
+    "aire sous une courbe"
+  ],
+  "methods": [
+    "application de la formule de Green",
+    "intégration par parties",
+    "changement de coordonnées"
+  ],
+  "objects": [
+    "courbe paramétrée",
+    "région bornée",
+    "intégrale de ligne"
+  ],
+  "content_hash": "de3111b5608df21366297f04ebfe45ec17b54422886cdd8452aaf95815a15ce3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:42:42.785Z"
+}

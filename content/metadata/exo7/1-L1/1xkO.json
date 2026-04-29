@@ -1,0 +1,26 @@
+{
+  "uuid": "1xkO",
+  "source_path": "exo7/1-L1/1xkO.tex",
+  "summary": "Soit E un espace vectoriel et f, g deux applications linéaires de E dans E. Montrer l'égalité des ensembles f(Ker(g∘f)) et Ker g ∩ Im f.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "composition d'applications linéaires",
+    "inclusion d'ensembles"
+  ],
+  "methods": [
+    "manipulation d'ensembles",
+    "utilisation des propriétés des applications linéaires",
+    "démonstration par double inclusion"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "application linéaire",
+    "noyau",
+    "image"
+  ],
+  "content_hash": "a54660f2013c35e8905e29ba04cdb8e59165501371c25558152e1f8a606535ec",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:51:27.631Z"
+}

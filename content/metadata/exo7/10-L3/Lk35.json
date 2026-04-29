@@ -1,0 +1,25 @@
+{
+  "uuid": "Lk35",
+  "source_path": "exo7/10-L3/Lk35.tex",
+  "summary": "L'exercice demande de démontrer que l'intersection de deux sous-groupes d'un groupe G a un indice fini dans l'un des sous-groupes, puis dans le groupe G lui-même, et de généraliser ce résultat à un nombre fini de sous-groupes.",
+  "concepts": [
+    "sous-groupe",
+    "indice d'un sous-groupe",
+    "intersection de sous-groupes",
+    "groupe fini",
+    "théorème des indices"
+  ],
+  "methods": [
+    "utilisation des propriétés des indices",
+    "démonstration par l'absurde",
+    "généralisation par récurrence"
+  ],
+  "objects": [
+    "sous-groupes A et B",
+    "groupe G",
+    "intersection A ∩ B"
+  ],
+  "content_hash": "683041d81a7d9206d505329b0e5e83f45f420b8de46b2ff0205e51cd8da2c201",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:49:42.908Z"
+}

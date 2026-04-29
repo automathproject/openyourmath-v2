@@ -1,0 +1,28 @@
+{
+  "uuid": "8gc7",
+  "source_path": "exo7/1-L1/8gc7.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble des parties d'un ensemble E est une algèbre de parties de E, puis de montrer qu'une algèbre de parties est stable par intersection finie. Enfin, il s'agit de compter le nombre d'algèbres de parties pour des ensembles de cardinal 1, 2 ou 3.",
+  "concepts": [
+    "algèbre de parties",
+    "ensemble des parties",
+    "stabilité par union finie",
+    "stabilité par intersection finie",
+    "cardinal d'un ensemble",
+    "structure algébrique sur les ensembles"
+  ],
+  "methods": [
+    "vérification des propriétés d'une algèbre de parties",
+    "preuve par récurrence",
+    "énumération exhaustive"
+  ],
+  "objects": [
+    "ensemble E",
+    "algèbre de parties",
+    "ensemble des parties de E",
+    "intersection finie",
+    "union finie"
+  ],
+  "content_hash": "be3b3e3769f8533a3decb4131621bb51b1f003674b01cf4bb01bdd68ed0ca30b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:05:54.976Z"
+}

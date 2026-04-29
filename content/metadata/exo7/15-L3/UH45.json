@@ -1,0 +1,28 @@
+{
+  "uuid": "UH45",
+  "source_path": "exo7/15-L3/UH45.tex",
+  "summary": "L'exercice demande de démontrer que l'espace des applications linéaires continues entre un espace normé E et un espace de Banach F est lui-même un espace de Banach.",
+  "concepts": [
+    "espace normé",
+    "espace de Banach",
+    "suite de Cauchy",
+    "complétude",
+    "application linéaire continue",
+    "convergence uniforme"
+  ],
+  "methods": [
+    "construction de la limite point par point",
+    "vérification de la linéarité",
+    "passage à la limite dans les inégalités",
+    "utilisation de la définition de la norme sur les applications linéaires"
+  ],
+  "objects": [
+    "espace normé E",
+    "espace de Banach F",
+    "espace des applications linéaires continues 𝒫(E,F)",
+    "suite de Cauchy d'applications linéaires"
+  ],
+  "content_hash": "717faf9d0fec8305e03ac089e6e228b09670f1c8d7d2b3dc72330c741e90f536",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:10:54.260Z"
+}

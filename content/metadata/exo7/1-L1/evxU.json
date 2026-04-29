@@ -1,0 +1,25 @@
+{
+  "uuid": "evxU",
+  "source_path": "exo7/1-L1/evxU.tex",
+  "summary": "Trouver deux nombres entiers dont la somme est 581 et dont le rapport entre leur plus petit commun multiple et leur plus grand diviseur commun est 240.",
+  "concepts": [
+    "plus grand diviseur commun",
+    "plus petit commun multiple",
+    "relation entre pgcd et ppcm",
+    "algorithme d'Euclide",
+    "divisibilité dans Z"
+  ],
+  "methods": [
+    "calcul du pgcd",
+    "calcul du ppcm",
+    "résolution d'équations diophantiennes"
+  ],
+  "objects": [
+    "nombres entiers",
+    "pgcd",
+    "ppcm"
+  ],
+  "content_hash": "a1cb92f7fecd39fbb388d7ad91f304eee58acdc1f0b7082a7137f6b1df6d4ecf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:08:44.138Z"
+}

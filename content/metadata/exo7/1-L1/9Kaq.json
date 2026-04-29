@@ -1,0 +1,27 @@
+{
+  "uuid": "9Kaq",
+  "source_path": "exo7/1-L1/9Kaq.tex",
+  "summary": "On considère un espace vectoriel E de dimension n et une application linéaire f de E dans lui-même. On suppose que la famille f(x), ..., f^n(x) est libre. On demande de montrer que la famille x, f(x), ..., f^{n-1}(x) est une base de E, puis d'en déduire que f est bijective. Ensuite, sous l'hypothèse supplémentaire que f^n(x) = x, on doit déterminer la matrice de f dans la base x, f(x), ..., f^{n-1}(x).",
+  "concepts": [
+    "espace vectoriel",
+    "application linéaire",
+    "famille libre",
+    "base d'un espace vectoriel",
+    "bijectivité",
+    "matrice d'une application linéaire"
+  ],
+  "methods": [
+    "construction explicite d'une base",
+    "détermination de la bijectivité",
+    "calcul de matrice dans une base donnée"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "application linéaire f",
+    "famille x, f(x), ..., f^{n-1}(x)",
+    "matrice de f"
+  ],
+  "content_hash": "a2ed9766b239e2ea79b8a75edac1c515b9ff065297ffee793c987125ebf59db8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:45:22.196Z"
+}

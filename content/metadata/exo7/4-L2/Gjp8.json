@@ -1,0 +1,30 @@
+{
+  "uuid": "Gjp8",
+  "source_path": "exo7/4-L2/Gjp8.tex",
+  "summary": "On considère un endomorphisme f d'un espace vectoriel de dimension finie dont le polynôme caractéristique est irréductible. On demande de prouver qu'aucun endomorphisme g ne peut avoir un crochet de Lie [f,g] de rang 1.",
+  "concepts": [
+    "polynôme caractéristique",
+    "irréductibilité",
+    "crochet de Lie",
+    "rang d'un endomorphisme",
+    "sous-espace vectoriel monogène",
+    "base d'un espace vectoriel",
+    "polynôme minimal"
+  ],
+  "methods": [
+    "réduction par l'absurde",
+    "récurrence",
+    "utilisation de la base monogène",
+    "calcul du polynôme minimal"
+  ],
+  "objects": [
+    "endomorphisme",
+    "espace vectoriel de dimension finie",
+    "crochet de Lie",
+    "polynôme caractéristique",
+    "polynôme minimal"
+  ],
+  "content_hash": "e9b5fb1e1a779ef63d7e1bd8dd1282f5667411041bce84d2d17e3d418e734248",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:52:43.049Z"
+}

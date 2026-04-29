@@ -1,0 +1,28 @@
+{
+  "uuid": "D6SC",
+  "source_path": "exo7/6-L2/D6SC.tex",
+  "summary": "L'exercice demande d'exprimer l'aire d'un triangle en fonction de son périmètre et du rayon de son cercle inscrit, puis en fonction d'un côté et du rayon d'un cercle exinscrit. Enfin, il faut établir une relation entre les rayons des cercles inscrit et exinscrits.",
+  "concepts": [
+    "géométrie affine",
+    "aire d'un triangle",
+    "cercle inscrit",
+    "cercle exinscrit",
+    "périmètre",
+    "relation métrique dans un triangle"
+  ],
+  "methods": [
+    "partitionnement en triangles",
+    "calcul d'aire par sommation",
+    "relation entre rayons des cercles inscrit et exinscrit"
+  ],
+  "objects": [
+    "triangle",
+    "cercle inscrit",
+    "cercle exinscrit",
+    "rayons des cercles",
+    "périmètre"
+  ],
+  "content_hash": "64dac459cebc5a8f34693556fad0a91841a2557e4f1cb9d6e97fe13892f1277d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:42:30.901Z"
+}

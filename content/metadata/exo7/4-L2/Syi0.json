@@ -1,0 +1,30 @@
+{
+  "uuid": "Syi0",
+  "source_path": "exo7/4-L2/Syi0.tex",
+  "summary": "L'exercice porte sur l'utilisation de l'algorithme d'El Gamal dans le corps fini ℤ/19ℤ. Il demande de déterminer l'ordre d'un élément, de calculer des clés publiques, de chiffrer un message et de le déchiffrer.",
+  "concepts": [
+    "corps fini",
+    "élément primitif",
+    "ordre d'un élément",
+    "chiffrement asymétrique",
+    "algorithme d'El Gamal",
+    "clé publique",
+    "clé privée"
+  ],
+  "methods": [
+    "calcul de l'ordre d'un élément",
+    "exponentiation modulaire",
+    "chiffrement par El Gamal",
+    "déchiffrement par El Gamal"
+  ],
+  "objects": [
+    "corps ℤ/19ℤ",
+    "élément 15",
+    "clé privée",
+    "clé publique",
+    "message chiffré"
+  ],
+  "content_hash": "65c4ec9e10c7cf233f96583c213b97344a43152c0e6c7191d86d20ab0eaf7706",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:48:15.626Z"
+}

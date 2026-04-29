@@ -1,0 +1,29 @@
+{
+  "uuid": "168u",
+  "source_path": "exo7/1-L1/168u.tex",
+  "summary": "L'exercice demande de démontrer des propriétés sur les noyaux itérés d'une application linéaire φ. Il étudie les relations entre Ker(φ^p) et Ker(φ^{p-1}) pour p ≥ 1, puis généralise à Ker(φ^p) = Ker(φ^2) pour p ≥ 2. Enfin, il applique ces résultats à une application linéaire de ℝ³ pour déterminer une base et la matrice de φ dans cette base.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "matrice d'une application linéaire",
+    "propriétés des noyaux itérés"
+  ],
+  "methods": [
+    "raisonnement par récurrence",
+    "utilisation des propriétés des noyaux",
+    "détermination d'une base",
+    "calcul de matrice dans une base donnée"
+  ],
+  "objects": [
+    "application linéaire φ",
+    "noyaux itérés Ker(φ^p)",
+    "espace vectoriel ℝ³",
+    "base de ℝ³",
+    "matrice de φ"
+  ],
+  "content_hash": "20c6caf0ba0a6e5041945e79ed9bbd1566e84bb692309854713909282a4170e3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:38:20.152Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "FODt",
+  "source_path": "exo7/6-L2/FODt.tex",
+  "summary": "Calculer la distance d'un point donné à deux droites définies dans l'espace par des équations cartésiennes et paramétriques.",
+  "concepts": [
+    "géométrie affine",
+    "distance d'un point à une droite",
+    "équations cartésiennes d'une droite",
+    "représentation paramétrique d'une droite",
+    "produit scalaire",
+    "vecteur directeur"
+  ],
+  "methods": [
+    "calcul de la distance point-droite",
+    "utilisation du produit scalaire",
+    "détermination du vecteur directeur"
+  ],
+  "objects": [
+    "point dans l'espace",
+    "droites dans l'espace",
+    "vecteurs directeurs"
+  ],
+  "content_hash": "096213e436eb635ec9299f6fa7b903e9156d7a936ba1409ea81b94fcf7a2fd3c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:44:39.801Z"
+}

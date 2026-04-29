@@ -1,0 +1,25 @@
+{
+  "uuid": "MlDc",
+  "source_path": "exo7/1-L1/MlDc.tex",
+  "summary": "Montrer qu'une somme de n nombres impairs consécutifs (n ≥ 2) ne peut pas être un nombre premier.",
+  "concepts": [
+    "divisibilité",
+    "nombre premier",
+    "somme de nombres consécutifs",
+    "parité",
+    "arithmétique dans Z"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "analyse de la parité",
+    "utilisation de la divisibilité"
+  ],
+  "objects": [
+    "somme de nombres impairs consécutifs",
+    "nombre naturel",
+    "nombre premier"
+  ],
+  "content_hash": "1edcd37819baf9371635b18e3171fd3fce7cee8fbd1c46c6ba7f026b0abee417",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:04:40.031Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "Ses5",
+  "source_path": "exo7/4-L2/Ses5.tex",
+  "summary": "L'exercice demande de déterminer les conditions sur une matrice carrée A pour qu'il existe une matrice B telle que le produit AB soit égal à une matrice identité partielle Ip, où p ≤ n.",
+  "concepts": [
+    "rang d'une matrice",
+    "base canonique",
+    "sous-espace vectoriel",
+    "matrice identité",
+    "matrice carrée",
+    "produit matriciel"
+  ],
+  "methods": [
+    "analyse des colonnes d'une matrice",
+    "détermination du rang"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice identité partielle",
+    "vecteurs de la base canonique"
+  ],
+  "content_hash": "059ccf35a71e19d57466b2fd43ea6cebbae72f2d778219f66bf764d9e516e702",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:51:22.333Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "78ui",
+  "source_path": "exo7/4-L2/78ui.tex",
+  "summary": "Dans un espace vectoriel euclidien E, avec F et G deux sous-espaces supplémentaires, on étudie les propriétés du projecteur p de E d'axe F et de direction G. L'exercice demande de montrer que si F est orthogonal à G, alors la norme de la projection de tout vecteur x de E est inférieure ou égale à la norme de x.",
+  "concepts": [
+    "espace vectoriel euclidien",
+    "sous-espace vectoriel supplémentaire",
+    "projecteur orthogonal",
+    "orthogonalité",
+    "norme d'un vecteur"
+  ],
+  "methods": [
+    "décomposition en sous-espaces orthogonaux",
+    "utilisation de la norme",
+    "propriétés des projecteurs"
+  ],
+  "objects": [
+    "espace vectoriel euclidien",
+    "sous-espaces supplémentaires",
+    "projecteur",
+    "vecteur"
+  ],
+  "content_hash": "99a9259a544c92b235bf0f4bf11b4cf9361b793a8bc5dad1637e68a04aaa0e3d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:03:03.630Z"
+}

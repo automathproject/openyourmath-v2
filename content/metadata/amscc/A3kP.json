@@ -1,0 +1,27 @@
+{
+  "uuid": "A3kP",
+  "source_path": "amscc/A3kP.tex",
+  "summary": "L'exercice demande de déterminer les lois marginales d'un couple de variables aléatoires discrètes représentant des véhicules militaires, puis de vérifier leur indépendance, de calculer leurs espérances et la probabilité qu'une variable soit strictement supérieure à l'autre.",
+  "concepts": [
+    "loi marginale",
+    "indépendance de variables aléatoires",
+    "espérance d'une variable aléatoire",
+    "probabilité conjointe",
+    "linéarité de l'espérance"
+  ],
+  "methods": [
+    "sommation des probabilités conjointes",
+    "vérification de l'indépendance",
+    "calcul d'espérance par sommation",
+    "utilisation de la linéarité de l'espérance"
+  ],
+  "objects": [
+    "variables aléatoires discrètes",
+    "tableau de probabilités conjointes",
+    "lois marginales",
+    "espérances"
+  ],
+  "content_hash": "3c5a3f94cf7256953a00c5199156aadc4edafb1885ff3fa325e7052eedb5d21a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:39:32.388Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "Uijb",
+  "source_path": "amscc/Uijb.tex",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une solution positive à l'équation x = -ln(x) dans l'intervalle [1/10, 1], puis d'étudier la convergence d'une méthode itérative pour approcher cette solution.",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "point fixe",
+    "convergence globale du point fixe",
+    "méthode de Newton",
+    "inégalité des accroissements finis",
+    "fonction continue",
+    "fonction strictement croissante",
+    "fonction strictement décroissante"
+  ],
+  "methods": [
+    "application du théorème des valeurs intermédiaires",
+    "étude de la convergence d'une suite itérative",
+    "calcul de la dérivée",
+    "majoration du nombre d'itérations"
+  ],
+  "objects": [
+    "équation x = -ln(x)",
+    "fonction h(x) = x + ln(x)",
+    "fonction φ(x) = e^{-x}",
+    "suite itérative (x_k)"
+  ],
+  "content_hash": "f67f67ac962911d6801078b255d8dd8afd4f40d16bce61769a446008b19e34de",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:23:20.362Z"
+}

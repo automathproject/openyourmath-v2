@@ -1,0 +1,23 @@
+{
+  "uuid": "uQv6",
+  "source_path": "exo7/1-L1/uQv6.tex",
+  "summary": "Démontrer qu'un nombre premier p divise l'expression (p-1)! + 1.",
+  "concepts": [
+    "nombre premier",
+    "factorielle",
+    "divisibilité",
+    "théorème de Wilson",
+    "arithmétique dans Z"
+  ],
+  "methods": [
+    "preuve directe",
+    "utilisation du théorème de Wilson"
+  ],
+  "objects": [
+    "nombre premier p",
+    "factorielle (p-1)!"
+  ],
+  "content_hash": "ce72448159641242c56ab92675fe42ee17bdd7d795a7ea12d3e69c8e2068caa1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:11:07.104Z"
+}

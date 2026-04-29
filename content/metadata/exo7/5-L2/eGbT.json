@@ -1,0 +1,27 @@
+{
+  "uuid": "eGbT",
+  "source_path": "exo7/5-L2/eGbT.tex",
+  "summary": "L'exercice demande de montrer la convergence absolue des intégrales paramétriques F(x) et G(x) pour tout réel x, puis d'établir une relation entre F(x) et F(1). Ensuite, il s'agit de prouver que la fonction F-G est de classe C^1 sur ℝ et d'en déduire des propriétés de dérivabilité de G.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "convergence absolue",
+    "fonction de classe C^1",
+    "dérivabilité en un point",
+    "continuité de la dérivée"
+  ],
+  "methods": [
+    "étude de la convergence absolue",
+    "comparaison d'intégrales",
+    "dérivation sous le signe intégral",
+    "analyse des limites"
+  ],
+  "objects": [
+    "intégrale paramétrique",
+    "fonction réelle",
+    "fonction dérivable",
+    "point critique"
+  ],
+  "content_hash": "1a7a168b7a1844cfd586981469c9b841b182bbdd9ecc55f2bed93d2439bb5aad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:43:23.035Z"
+}

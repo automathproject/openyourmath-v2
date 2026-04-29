@@ -1,0 +1,25 @@
+{
+  "uuid": "YzdR",
+  "source_path": "exo7/5-L2/YzdR.tex",
+  "summary": "On définit une fonction g(x) comme une intégrale de Riemann dépendant d'un paramètre, et on demande de prouver qu'elle est l'unique solution d'une équation différentielle du second ordre avec conditions initiales nulles.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "équation différentielle linéaire du second ordre",
+    "conditions initiales",
+    "unicité de la solution",
+    "fonction continue"
+  ],
+  "methods": [
+    "intégration par parties",
+    "résolution d'équation différentielle",
+    "vérification des conditions initiales"
+  ],
+  "objects": [
+    "fonction g(x)",
+    "équation différentielle y'' + y = f(x)",
+    "conditions y(0) = y'(0) = 0"
+  ],
+  "content_hash": "20c5766f3ecf17aea798349121c762fea6eae5f50acd3669d9826f8fda336768",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:41:25.783Z"
+}

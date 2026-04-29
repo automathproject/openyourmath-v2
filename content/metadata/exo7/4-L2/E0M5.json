@@ -1,0 +1,24 @@
+{
+  "uuid": "E0M5",
+  "source_path": "exo7/4-L2/E0M5.tex",
+  "summary": "Soit E un espace vectoriel de dimension finie sur un corps K et f, g deux formes linéaires non nulles de E*. Montrer qu'il existe un vecteur u dans E tel que f(u) et g(u) soient tous deux non nuls.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "forme linéaire",
+    "dual d'un espace vectoriel",
+    "base d'un espace vectoriel",
+    "combinaison linéaire"
+  ],
+  "methods": [
+    "construction explicite de vecteur",
+    "utilisation de la base duale"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "formes linéaires f et g",
+    "vecteur u"
+  ],
+  "content_hash": "bbbb2c0a1d704fa21d6b456da56018787c215ee816a356e344d0f39be3d27b20",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:51:13.217Z"
+}

@@ -1,32 +1,31 @@
 {
   "uuid": "CzBz",
   "source_path": "exo7/16-L3/CzBz.tex",
-  "summary": "L'exercice demande de montrer qu'une fonction F(z) est méromorphe sur ℂ, puis d'établir une relation entre F(z) et π/tan(πz) en utilisant une série connue. Ensuite, il s'agit de prouver qu'un produit infini de fonctions f_n(z) définit une fonction entière f, et d'établir une relation entre la dérivée logarithmique de f et celle d'une fonction g(z). Enfin, il faut déduire des décompositions en produits infinis des fonctions sh(z)/z, ch(z) et cos(z).",
+  "summary": "L'exercice demande de démontrer une identité de produit infini reliant une fonction trigonométrique à une série infinie de termes rationnels. Il explore les propriétés de fonctions méromorphes et entières en utilisant des outils d'analyse complexe.",
   "concepts": [
     "fonction méromorphe",
-    "série de fonctions",
-    "produit infini",
     "fonction entière",
-    "dérivée logarithmique",
-    "décomposition en produits infinis",
-    "fonctions trigonométriques hyperboliques",
-    "fonctions trigonométriques"
+    "produit infini",
+    "fonction trigonométrique",
+    "développement en série",
+    "analyse complexe",
+    "identité trigonométrique"
   ],
   "methods": [
-    "analyse des singularités",
-    "utilisation de séries connues",
+    "développement en série de Fourier",
+    "calcul de résidus",
     "argument de parité",
-    "calcul de dérivée logarithmique",
-    "développement en produit infini"
+    "dérivation logarithmique",
+    "analyse asymptotique"
   ],
   "objects": [
-    "fonction F(z)",
-    "fonction g(z)",
-    "produit infini f_n(z)",
-    "fonctions sh(z)/z, ch(z), cos(z)",
-    "série de termes en 1/(z-n)^2"
+    "fonction $F(z)$",
+    "produit infini",
+    "fonction $\\sin(\\pi z)$",
+    "fonction $\\tan(\\pi z)$",
+    "fonction $f_n(z)$"
   ],
-  "content_hash": "46bd783394531877e412ab4b850b91ab10c1fa057774a30a4d6eeaab3586ad4d",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:23:26.732Z"
+  "content_hash": "afa6dffa02402467bdbd7bb5f51bd17bdaba643eae76367afcb78b4e50e2aace",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:15:58.393Z"
 }

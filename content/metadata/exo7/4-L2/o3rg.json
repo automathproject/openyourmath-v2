@@ -1,0 +1,25 @@
+{
+  "uuid": "o3rg",
+  "source_path": "exo7/4-L2/o3rg.tex",
+  "summary": "Trouver toutes les permutations ρ dans le groupe symétrique Sn qui commutent avec une permutation cyclique σ = (1 2 … n). L'énoncé suggère d'étudier le conjugué ρ∘σ∘ρ⁻¹.",
+  "concepts": [
+    "groupe symétrique",
+    "permutation cyclique",
+    "conjugaison",
+    "commutateur",
+    "groupe engendré"
+  ],
+  "methods": [
+    "étude des conjugués",
+    "analyse des puissances",
+    "recherche des éléments centralisateurs"
+  ],
+  "objects": [
+    "permutation cyclique",
+    "élément du groupe symétrique",
+    "conjugué"
+  ],
+  "content_hash": "4a842ff516674c4614bf941d88e6e7bfb9583ddb9f071b8e7c23f74ead3ca6bf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:11:33.477Z"
+}

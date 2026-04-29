@@ -1,0 +1,30 @@
+{
+  "uuid": "TsFn",
+  "source_path": "exo7/1-L1/TsFn.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble E des matrices de la forme aI + bJ, où J est une matrice vérifiant J² = I, est un espace vectoriel stable par multiplication. Ensuite, il s'agit de calculer les coefficients aₙ et bₙ tels que Aⁿ = aₙI + bₙJ pour toute matrice A ∈ E et tout entier n. Enfin, on définit une exponentielle de matrice e^A et on calcule e^{-A} ainsi que le produit e^{-A}e^A.",
+  "concepts": [
+    "espace vectoriel",
+    "stabilité par multiplication",
+    "algèbre de matrices",
+    "exponentielle de matrice",
+    "limite de suite",
+    "matrice inversible"
+  ],
+  "methods": [
+    "vérification des propriétés d'espace vectoriel",
+    "calcul de puissances de matrices",
+    "développement en série entière",
+    "calcul de limites de suites",
+    "inversion de matrices"
+  ],
+  "objects": [
+    "matrice J",
+    "matrice A",
+    "espace vectoriel E",
+    "suite de coefficients (aₙ, bₙ)",
+    "exponentielle de matrice e^A"
+  ],
+  "content_hash": "aa5c486a1cd513d0bcdaa8934ce1b5b3ac1f98fe6743fc346492f35edc3a3527",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:01:18.398Z"
+}

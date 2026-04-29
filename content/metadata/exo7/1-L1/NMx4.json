@@ -1,0 +1,27 @@
+{
+  "uuid": "NMx4",
+  "source_path": "exo7/1-L1/NMx4.tex",
+  "summary": "L'exercice demande de montrer qu'un espace vectoriel non nul ne peut pas être la réunion finie de sous-espaces vectoriels stricts. On traite d'abord le cas de deux sous-espaces, puis on généralise à n sous-espaces.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "réunion d'ensembles",
+    "inclusion d'espaces vectoriels",
+    "espace vectoriel non nul",
+    "combinaison linéaire",
+    "appartenance à un sous-espace"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "construction explicite d'éléments",
+    "utilisation de la linéarité"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "sous-espaces vectoriels F_i",
+    "vecteurs x et y",
+    "combinaison linéaire λx + y"
+  ],
+  "content_hash": "9dfa8fc3419e0f2da4f46431672638c1466d8d9ae8b390e137d1060b02a3bc89",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:48:54.587Z"
+}

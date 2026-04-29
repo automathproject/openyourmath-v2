@@ -1,31 +1,28 @@
 {
   "uuid": "VGpH",
   "source_path": "exo7/2-L1/VGpH.tex",
-  "summary": "Calculer l'intégrale impropre de la fonction logarithme du sinus sur l'intervalle [0, π/2]. L'exercice utilise des changements de variables et des propriétés trigonométriques pour simplifier l'expression.",
+  "summary": "Calcul de l'intégrale impropre I = ∫₀ᵖᵢ/₂ ln(sin x) dx par deux méthodes distinctes : une utilisant une intégrale auxiliaire J et une autre exploitant le produit Pₙ de sinus.",
   "concepts": [
     "intégrale impropre",
     "changement de variable",
-    "fonction logarithme",
-    "identités trigonométriques",
-    "limite de suite",
+    "produit de sinus",
     "intégration par parties",
-    "convergence d'intégrales"
+    "limite de suite",
+    "inégalité de Riemann"
   ],
   "methods": [
     "changement de variable",
-    "intégration par parties",
-    "approximation par sommes de Riemann",
-    "utilisation de polynômes unitaires",
-    "calcul de produit de sinus"
+    "approximation par somme de Riemann",
+    "passage à la limite",
+    "utilisation de polynômes unitaires"
   ],
   "objects": [
-    "fonction ln(sin x)",
     "intégrale impropre",
-    "suite P_n",
+    "produit de sinus",
     "subdivision d'intervalle",
-    "polynôme unitaire"
+    "fonction logarithme"
   ],
-  "content_hash": "5c008391ab7be49e351f4a754dca42ca944a9e126e58bee18c8708c20dd05872",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:33:29.328Z"
+  "content_hash": "d4729bde9e8a860eaa06b7ea8a6a0e1907e18e2f55e530a1777654d8f2bb9548",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:41:18.036Z"
 }

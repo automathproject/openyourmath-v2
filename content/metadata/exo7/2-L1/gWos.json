@@ -1,0 +1,26 @@
+{
+  "uuid": "gWos",
+  "source_path": "exo7/2-L1/gWos.tex",
+  "summary": "On considère une fonction dérivable sur ℝ vérifiant f(x)f'(x) ≥ 0 pour tout x réel. On demande de prouver que l'image réciproque de ℝ* par f est un intervalle.",
+  "concepts": [
+    "dérivabilité",
+    "fonction croissante",
+    "supremum",
+    "image réciproque",
+    "intervalle",
+    "changement de signe"
+  ],
+  "methods": [
+    "analyse par l'absurde",
+    "étude du signe de la dérivée",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "intervalle",
+    "image réciproque"
+  ],
+  "content_hash": "5f773ec3f52d44b140dd85321fe39f5b0374519a29643c4af2090ebb3220249f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:15:42.019Z"
+}

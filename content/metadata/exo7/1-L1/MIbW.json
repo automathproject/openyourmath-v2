@@ -1,0 +1,30 @@
+{
+  "uuid": "MIbW",
+  "source_path": "exo7/1-L1/MIbW.tex",
+  "summary": "Calculer le rang de deux matrices et déterminer une base du noyau et une base de l'image pour les applications linéaires associées.",
+  "concepts": [
+    "rang d'une matrice",
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "déterminant",
+    "colinéarité"
+  ],
+  "methods": [
+    "calcul de sous-déterminants",
+    "recherche de relations linéaires entre colonnes",
+    "utilisation du théorème du rang",
+    "construction de base de noyau et d'image"
+  ],
+  "objects": [
+    "matrice",
+    "application linéaire",
+    "noyau",
+    "image",
+    "vecteurs colonnes"
+  ],
+  "content_hash": "aeaa76ea7caa4856c084a248762e61f5a8e604eba1f205853f67c827d6a2d71d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:52:12.926Z"
+}

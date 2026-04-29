@@ -1,0 +1,35 @@
+{
+  "uuid": "RrKo",
+  "source_path": "amscc/RrKo.tex",
+  "summary": "L'exercice étudie la méthode d'Euler implicite pour résoudre des équations différentielles. Il demande de vérifier des propriétés de contractance, de stabilité et de convergence de cette méthode, ainsi que de simplifier le schéma dans le cas autonome.",
+  "concepts": [
+    "équation différentielle",
+    "méthode d'Euler implicite",
+    "application contractante",
+    "point fixe",
+    "méthode de Newton",
+    "consistance",
+    "stabilité",
+    "convergence",
+    "fonction lipschitzienne"
+  ],
+  "methods": [
+    "analyse de contractance",
+    "méthode de Newton",
+    "calcul de dérivées",
+    "estimation d'erreur",
+    "preuve de stabilité",
+    "preuve de convergence"
+  ],
+  "objects": [
+    "schéma numérique",
+    "fonction $f$",
+    "solution $y$",
+    "pas de discrétisation $h$",
+    "application $H_n$",
+    "fonction $g_R$"
+  ],
+  "content_hash": "fb50abec1693f6b895514bd608dbf4738923c88fc0695f58066a6a59ab1217ca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:29:00.801Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "Qe8D",
+  "source_path": "exo7/2-L1/Qe8D.tex",
+  "summary": "On considère une fonction continue sur un intervalle fermé borné. On demande de montrer que la borne supérieure de la fonction sur l'intervalle fermé est égale à celle sur l'intervalle ouvert correspondant.",
+  "concepts": [
+    "continuité",
+    "borne supérieure",
+    "intervalle fermé borné",
+    "intervalle ouvert",
+    "théorème des valeurs intermédiaires",
+    "théorème de la borne atteinte"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des propriétés de la continuité"
+  ],
+  "objects": [
+    "fonction continue",
+    "intervalle [a,b]",
+    "intervalle ]a,b["
+  ],
+  "content_hash": "d379e2b99b1a647da3b31766279a2f77e8d6ba7d1f0e048ee57e6aa6e021ca02",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:17:59.423Z"
+}

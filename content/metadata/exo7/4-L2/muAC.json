@@ -1,0 +1,30 @@
+{
+  "uuid": "muAC",
+  "source_path": "exo7/4-L2/muAC.tex",
+  "summary": "L'exercice demande de déterminer si une matrice particulière est positive et définie. La matrice est donnée sous forme générale avec des coefficients dépendant de n.",
+  "concepts": [
+    "matrice symétrique",
+    "valeurs propres",
+    "diagonalisation",
+    "trace d'une matrice",
+    "sous-espace propre",
+    "forme quadratique",
+    "matrice positive",
+    "matrice définie"
+  ],
+  "methods": [
+    "calcul de forme quadratique",
+    "analyse des valeurs propres",
+    "utilisation de la trace",
+    "diagonalisation"
+  ],
+  "objects": [
+    "matrice carrée",
+    "forme quadratique",
+    "valeurs propres",
+    "trace"
+  ],
+  "content_hash": "c000a35c4fdc22413dc99a009f60a62345b46150ac6967d61a18c032d5d10871",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:50:43.274Z"
+}

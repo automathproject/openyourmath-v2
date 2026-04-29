@@ -1,0 +1,26 @@
+{
+  "uuid": "pWdA",
+  "source_path": "amscc/pWdA.tex",
+  "summary": "Résoudre un système linéaire à coefficients complexes en trouvant les valeurs des variables x, y et z qui satisfont les trois équations données.",
+  "concepts": [
+    "système linéaire",
+    "coefficient complexe",
+    "rang d'une matrice",
+    "déterminant",
+    "résolution par substitution",
+    "opérations élémentaires sur les lignes"
+  ],
+  "methods": [
+    "réduction par pivot de Gauss",
+    "opérations sur les équations",
+    "résolution par substitution"
+  ],
+  "objects": [
+    "système linéaire à 3 équations et 3 inconnues",
+    "matrice augmentée",
+    "variables complexes"
+  ],
+  "content_hash": "81aa4d57bcb2ee33af49c63563cd28e493765b8bd131e25f70b61d9d62b6c165",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:11:19.477Z"
+}

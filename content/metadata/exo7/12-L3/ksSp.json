@@ -1,0 +1,30 @@
+{
+  "uuid": "ksSp",
+  "source_path": "exo7/12-L3/ksSp.tex",
+  "summary": "Calcul de la norme d'opérateurs linéaires continus définis sur différents espaces fonctionnels ou de suites, en utilisant des propriétés spécifiques de ces espaces.",
+  "concepts": [
+    "norme d'opérateur",
+    "espace de Banach",
+    "espace de suites",
+    "espace de fonctions continues",
+    "inégalité de Cauchy-Schwarz",
+    "limite de suites",
+    "intégrale de fonctions continues"
+  ],
+  "methods": [
+    "utilisation de la définition de la norme d'opérateur",
+    "majoration par la norme sup",
+    "construction de suites approchantes",
+    "application de l'inégalité de Cauchy-Schwarz"
+  ],
+  "objects": [
+    "opérateur de shift",
+    "opérateur de multiplication",
+    "opérateur d'intégration",
+    "suite convergente",
+    "fonction continue"
+  ],
+  "content_hash": "5ffbb410d9b4c65445f431bce778db4d98883725fae5e1417cb11aaec3fb1a22",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:30:01.274Z"
+}

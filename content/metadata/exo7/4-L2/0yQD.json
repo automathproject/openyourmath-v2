@@ -1,0 +1,28 @@
+{
+  "uuid": "0yQD",
+  "source_path": "exo7/4-L2/0yQD.tex",
+  "summary": "L'exercice demande de montrer que deux matrices spécifiques appartiennent au groupe linéaire général GL₂(ℝ) et de déterminer leurs ordres. Il s'agit ensuite de prouver une relation de commutation entre ces matrices et d'en déduire que l'ensemble G formé de leurs combinaisons linéaires est un groupe.",
+  "concepts": [
+    "groupe",
+    "matrice inversible",
+    "ordre d'un élément",
+    "groupe engendré",
+    "structure de groupe",
+    "sous-groupe"
+  ],
+  "methods": [
+    "calcul de produit de matrices",
+    "vérification d'inversibilité",
+    "détermination de l'ordre d'un élément",
+    "vérification des axiomes de groupe"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "groupe GL₂(ℝ)",
+    "élément de groupe",
+    "sous-groupe"
+  ],
+  "content_hash": "bd487cc9242093a4acd74da8943e7758487421fa9b26eced94c50452f76d5df3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:14:10.233Z"
+}

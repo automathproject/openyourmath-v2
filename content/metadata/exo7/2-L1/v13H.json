@@ -1,0 +1,24 @@
+{
+  "uuid": "v13H",
+  "source_path": "exo7/2-L1/v13H.tex",
+  "summary": "Montrer l'existence d'un point c dans un intervalle ouvert où la formule de Taylor-Lagrange d'ordre 3 pour une fonction trois fois dérivable s'applique.",
+  "concepts": [
+    "formule de Taylor-Lagrange",
+    "développement limité",
+    "continuité",
+    "dérivabilité",
+    "théorème des accroissements finis"
+  ],
+  "methods": [
+    "développement de Taylor",
+    "application du théorème de Taylor-Lagrange"
+  ],
+  "objects": [
+    "fonction trois fois dérivable",
+    "intervalle réel",
+    "point d'application du théorème"
+  ],
+  "content_hash": "35757f716051ddb11b1049eb1c98a9b4b6f2ab47b305b1f6a888ca1051cc45f1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:43:16.849Z"
+}

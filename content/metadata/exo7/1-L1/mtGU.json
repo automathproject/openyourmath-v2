@@ -1,0 +1,25 @@
+{
+  "uuid": "mtGU",
+  "source_path": "exo7/1-L1/mtGU.tex",
+  "summary": "L'exercice demande d'étudier la validité d'une implication récurrente et de déterminer pour quelles valeurs naturelles n la propriété 2^n > n^2 est vraie.",
+  "concepts": [
+    "raisonnement par récurrence",
+    "implication logique",
+    "propriété arithmétique",
+    "inégalité exponentielle",
+    "valeurs naturelles"
+  ],
+  "methods": [
+    "analyse d'implication",
+    "vérification directe",
+    "récurrence forte"
+  ],
+  "objects": [
+    "propriété P_n",
+    "valeurs de n",
+    "inégalité 2^n > n^2"
+  ],
+  "content_hash": "eb1c8e4fae281e285ec67f7de2c8f02a9eeb70689b720deadec28535e3e64a26",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:26:12.575Z"
+}

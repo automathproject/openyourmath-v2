@@ -1,0 +1,30 @@
+{
+  "uuid": "4tPm",
+  "source_path": "exo7/8-L3/4tPm.tex",
+  "summary": "L'exercice demande de décomposer deux permutations en produits de transpositions ou de cycles à supports disjoints, de calculer leur signature, leur ordre, et de déterminer certaines puissances et inverses.",
+  "concepts": [
+    "permutation",
+    "transposition",
+    "cycle à supports disjoints",
+    "signature d'une permutation",
+    "ordre d'une permutation",
+    "inverse d'une permutation"
+  ],
+  "methods": [
+    "décomposition en transpositions",
+    "décomposition en cycles",
+    "calcul de la signature",
+    "calcul de l'ordre",
+    "calcul de puissances de permutation",
+    "calcul de l'inverse d'une permutation"
+  ],
+  "objects": [
+    "permutation de S₈",
+    "permutation de S₁₁",
+    "transpositions",
+    "cycles"
+  ],
+  "content_hash": "0535e9a22b1c13afb0fda50944097011434f79ffcb773de5c909e56d7ddcbdcd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:53:38.990Z"
+}

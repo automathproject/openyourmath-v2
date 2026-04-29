@@ -1,0 +1,25 @@
+{
+  "uuid": "PZvF",
+  "source_path": "exo7/1-L1/PZvF.tex",
+  "summary": "Un groupe de N personnes se réunit. On demande de prouver qu'au moins deux personnes ont serré le même nombre de mains, en distinguant deux cas : tout le monde a serré au moins une main ou quelqu'un n'a serré aucune main.",
+  "concepts": [
+    "principe des tiroirs",
+    "fonction injective",
+    "ensemble fini",
+    "cardinal d'un ensemble",
+    "relation d'ordre"
+  ],
+  "methods": [
+    "raisonnement par cas",
+    "application du principe des tiroirs",
+    "analyse des valeurs possibles"
+  ],
+  "objects": [
+    "nombre de mains serrées",
+    "ensemble de personnes",
+    "valeurs discrètes"
+  ],
+  "content_hash": "f2485edf3d061e8181f99d5d5592c824d29ef448fd5f781645a3aa07b290edec",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:05:02.908Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "ZDXr",
+  "source_path": "exo7/2-L1/ZDXr.tex",
+  "summary": "L'exercice demande de déterminer un équivalent simple en 0+ d'une fonction itérée f_k(x) = x^(x^(...^x)) avec k occurrences de x, selon que k est pair ou impair.",
+  "concepts": [
+    "développement limité",
+    "équivalent",
+    "limite en 0+",
+    "fonction itérée",
+    "comparaison asymptotique"
+  ],
+  "methods": [
+    "analyse de cas par parité",
+    "approximation par développement limité",
+    "comparaison des ordres de grandeur"
+  ],
+  "objects": [
+    "fonction itérée",
+    "limite en 0+",
+    "équivalent simple"
+  ],
+  "content_hash": "c0811179f30b4dca1c7d2194aaa5955a916aa7144f6ef64263b0a5293c8ad6ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:33:37.364Z"
+}

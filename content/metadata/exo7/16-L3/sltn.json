@@ -1,25 +1,25 @@
 {
   "uuid": "sltn",
   "source_path": "exo7/16-L3/sltn.tex",
-  "summary": "L'exercice demande de déterminer si une fonction réelle définie sur ℝ² privé de l'origine est harmonique. Il s'agit ensuite de vérifier l'existence d'une fonction holomorphe sur ℂ privé de 0 dont la partie réelle est cette fonction.",
+  "summary": "L'exercice demande de déterminer si une fonction réelle donnée, définie sur ℝ² privé de l'origine, est harmonique sur son domaine de définition en utilisant les équations de Cauchy-Riemann en coordonnées polaires.",
   "concepts": [
-    "fonction harmonique",
     "équations de Cauchy-Riemann",
+    "fonction harmonique",
+    "coordonnées polaires",
     "fonction holomorphe",
-    "partie réelle d'une fonction holomorphe",
+    "fonction complexe",
     "analyse complexe"
   ],
   "methods": [
-    "vérification des équations de Cauchy-Riemann",
-    "coordonnées polaires",
-    "analyse de la partie réelle"
+    "utilisation des équations de Cauchy-Riemann",
+    "analyse de la condition d'holomorphie"
   ],
   "objects": [
-    "fonction réelle de deux variables",
-    "fonction holomorphe",
-    "partie réelle d'une fonction complexe"
+    "fonction réelle u(x,y) = log(x² + y²)",
+    "fonction complexe f = u + iv",
+    "domaine ℝ² - {(0,0)}"
   ],
-  "content_hash": "7a5d2df6dadee10034b23a5ab603e0b292f0c440261f0f00b0aeae83d9fe6c2c",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:28:48.967Z"
+  "content_hash": "7fc8c7b9dc1b2cfbb79b767adc5c86d7b5a51b6507226650cd6bc63e3cea22d8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:25:21.163Z"
 }

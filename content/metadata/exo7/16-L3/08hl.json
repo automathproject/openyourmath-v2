@@ -1,0 +1,29 @@
+{
+  "uuid": "08hl",
+  "source_path": "exo7/16-L3/08hl.tex",
+  "summary": "L'exercice demande de démontrer une relation fonctionnelle de la fonction Gamma sur un demi-plan complexe et d'en déduire une formule pour les entiers naturels. Il s'agit ensuite d'utiliser cette relation pour étendre la fonction Gamma à une fonction holomorphe sur le plan complexe privé des entiers négatifs.",
+  "concepts": [
+    "fonction Gamma",
+    "fonction holomorphe",
+    "relation fonctionnelle",
+    "extension de fonction",
+    "dérivation complexe",
+    "intégrale de contour",
+    "formule de Cauchy"
+  ],
+  "methods": [
+    "dérivation sous le signe intégral",
+    "utilisation de la formule de Cauchy",
+    "récurrence",
+    "extension par continuité"
+  ],
+  "objects": [
+    "fonction Gamma",
+    "demi-plan complexe",
+    "entiers naturels",
+    "fonction holomorphe"
+  ],
+  "content_hash": "1c1e89e8e23e202c0999ac8bc5602963a213558e7d4fe86a118560e95ad7fa9d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:29:58.114Z"
+}

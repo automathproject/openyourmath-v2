@@ -1,0 +1,27 @@
+{
+  "uuid": "TGd1",
+  "source_path": "exo7/4-L2/TGd1.tex",
+  "summary": "L'exercice demande de calculer le déterminant d'une matrice 3x3 dépendant d'un paramètre m, puis de déterminer pour quelles valeurs de m l'endomorphisme associé est un isomorphisme, et enfin de trouver une base du noyau de cet endomorphisme lorsque m=1.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "rang d'une matrice",
+    "endomorphisme",
+    "isomorphisme",
+    "noyau d'un endomorphisme",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "résolution d'équations polynomiales",
+    "analyse du rang",
+    "recherche de vecteurs propres"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "endomorphisme de ℝ³",
+    "noyau d'un endomorphisme"
+  ],
+  "content_hash": "af6b38b41b5499c5673bdf688571de20d45c86daeac7001bf483f94b465c6c46",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:51:35.968Z"
+}

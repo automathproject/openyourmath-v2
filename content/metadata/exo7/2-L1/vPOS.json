@@ -1,0 +1,25 @@
+{
+  "uuid": "vPOS",
+  "source_path": "exo7/2-L1/vPOS.tex",
+  "summary": "L'exercice demande de déterminer les fonctions continues sur [0,1] dont l'intégrale de la puissance n-ième ne prend qu'un nombre fini de valeurs lorsque n décrit les entiers naturels.",
+  "concepts": [
+    "intégrale de fonction continue",
+    "fonction continue",
+    "propriété d'intégrale",
+    "valeurs discrètes d'intégrale",
+    "fonction constante"
+  ],
+  "methods": [
+    "analyse des propriétés d'intégrale",
+    "étude des fonctions continues",
+    "comparaison des valeurs d'intégrale"
+  ],
+  "objects": [
+    "fonction continue f",
+    "intégrale de f^n",
+    "ensemble des entiers naturels"
+  ],
+  "content_hash": "491ea2cbf30e9746e4360aaaf4c540866b9cd0d2663b8116bdbaaa2aef763de9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:51:22.385Z"
+}

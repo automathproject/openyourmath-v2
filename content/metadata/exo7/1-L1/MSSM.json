@@ -1,0 +1,28 @@
+{
+  "uuid": "MSSM",
+  "source_path": "exo7/1-L1/MSSM.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice triangulaire particulière est inversible et de calculer son inverse en utilisant la méthode de Gauss.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "matrice triangulaire",
+    "nilpotence",
+    "décomposition matricielle",
+    "polynôme caractéristique",
+    "méthode de Gauss"
+  ],
+  "methods": [
+    "décomposition en matrices élémentaires",
+    "calcul de puissances de matrices",
+    "récurrence sur les puissances de matrices",
+    "formule explicite de l'inverse"
+  ],
+  "objects": [
+    "matrice triangulaire",
+    "matrice nilpotente",
+    "matrice identité",
+    "matrice inverse"
+  ],
+  "content_hash": "c568d83ce962e3c587466db5275b059a90c22df6ee3c6a2a809f3d0be5459039",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:52:39.919Z"
+}

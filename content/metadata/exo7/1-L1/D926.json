@@ -1,0 +1,26 @@
+{
+  "uuid": "D926",
+  "source_path": "exo7/1-L1/D926.tex",
+  "summary": "L'exercice demande de prouver deux propriétés sur les coefficients binomiaux pour n = 2^p : d'abord que kC_n^k = nC_{n-1}^{k-1}, puis d'en déduire que C_n^k est pair et C_{n-1}^k est impair pour certaines valeurs de k.",
+  "concepts": [
+    "coefficient binomial",
+    "combinaisons",
+    "parité",
+    "propriété arithmétique",
+    "binôme de Newton",
+    "relation de récurrence"
+  ],
+  "methods": [
+    "manipulation algébrique",
+    "induction mathématique",
+    "utilisation des propriétés des coefficients binomiaux"
+  ],
+  "objects": [
+    "coefficient binomial C_n^k",
+    "entier naturel",
+    "puissance de 2"
+  ],
+  "content_hash": "0edab9a96372732ea1602256493838142c4f5002d1ce128f1c50349017112e6e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:39:28.811Z"
+}

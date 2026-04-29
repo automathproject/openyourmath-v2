@@ -1,0 +1,25 @@
+{
+  "uuid": "14xY",
+  "source_path": "exo7/2-L1/14xY.tex",
+  "summary": "Trouver des réels a et b pour que l'expression sin(x) - (x + a x³)/(1 + b x²) soit un infiniment petit d'ordre maximal.",
+  "concepts": [
+    "développement limité",
+    "infiniment petit",
+    "ordre d'un infiniment petit",
+    "fonction trigonométrique",
+    "équivalent"
+  ],
+  "methods": [
+    "développement limité de sin(x)",
+    "comparaison des ordres",
+    "identification des coefficients"
+  ],
+  "objects": [
+    "fonction sin(x)",
+    "polynôme de Taylor",
+    "infiniment petit"
+  ],
+  "content_hash": "ed832fa86c8d8940d3748311f604744b410acbe7ec59eb72cda427b95faaecdb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:21:32.387Z"
+}

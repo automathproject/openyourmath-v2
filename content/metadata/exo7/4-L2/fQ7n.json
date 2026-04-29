@@ -1,0 +1,25 @@
+{
+  "uuid": "fQ7n",
+  "source_path": "exo7/4-L2/fQ7n.tex",
+  "summary": "On considère un groupe additif G et trois sous-groupes H, K, L de G vérifiant H inclus dans K, H intersection L égale K intersection L, et H plus L égal K plus L. On demande de démontrer que H est égal à K.",
+  "concepts": [
+    "groupe additif",
+    "sous-groupe",
+    "inclusion de sous-groupes",
+    "intersection de sous-groupes",
+    "somme de sous-groupes",
+    "égalité de sous-groupes"
+  ],
+  "methods": [
+    "manipulation des relations d'inclusion",
+    "utilisation des propriétés de l'intersection",
+    "analyse de la somme de sous-groupes"
+  ],
+  "objects": [
+    "groupe additif G",
+    "sous-groupes H, K, L"
+  ],
+  "content_hash": "35f95ee637097290330f9e9e37b259c05e564328b181572175c19304c383601e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:04:20.619Z"
+}

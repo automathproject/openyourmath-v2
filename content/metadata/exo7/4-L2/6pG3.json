@@ -1,0 +1,24 @@
+{
+  "uuid": "6pG3",
+  "source_path": "exo7/4-L2/6pG3.tex",
+  "summary": "Soit une application linéaire f d'un espace vectoriel E laissant stables deux sous-espaces vectoriels supplémentaires F et G. Démontrer que le déterminant de f est le produit des déterminants de ses restrictions à F et G.",
+  "concepts": [
+    "déterminant d'une application linéaire",
+    "sous-espace vectoriel",
+    "supplémentarité",
+    "stabilité par une application linéaire",
+    "restriction d'une application linéaire"
+  ],
+  "methods": [
+    "décomposition par sous-espaces supplémentaires",
+    "calcul de déterminant"
+  ],
+  "objects": [
+    "application linéaire",
+    "sous-espaces vectoriels supplémentaires",
+    "déterminant"
+  ],
+  "content_hash": "fa99d8f7d13d3e4d01ef31932b104d1cdd4213beca7844f8966ff678a3dc3b67",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:33:05.140Z"
+}

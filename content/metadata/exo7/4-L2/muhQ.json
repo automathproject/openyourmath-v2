@@ -1,0 +1,28 @@
+{
+  "uuid": "muhQ",
+  "source_path": "exo7/4-L2/muhQ.tex",
+  "summary": "L'exercice demande de calculer le déterminant de la puissance n-ième d'une matrice A, qui est la somme de la matrice identité I et d'une matrice N nilpotente. Il faut aussi déterminer les puissances de N, les rangs des matrices A^n et N^n, et exprimer A^n sous forme explicite pour tout entier n.",
+  "concepts": [
+    "déterminant de matrice",
+    "matrice nilpotente",
+    "puissance de matrice",
+    "rang de matrice",
+    "matrice inversible",
+    "matrice identité"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "calcul de puissances de matrice",
+    "détermination du rang",
+    "factorisation de matrice"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice nilpotente",
+    "matrice identité",
+    "puissance de matrice"
+  ],
+  "content_hash": "4af75ef41c217f50139dc39d7d3365597608beead66af63736d5735ac5fdc846",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:09:13.254Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "YdMM",
+  "source_path": "exo7/12-L3/YdMM.tex",
+  "summary": "On étudie une application différentiable d'un intervalle réel dans un espace vectoriel normé, vérifiant une inégalité de croissance sur sa dérivée. On doit montrer que si cette application s'annule en un point, elle s'annule identiquement sur tout l'intervalle.",
+  "concepts": [
+    "différentiabilité",
+    "inégalité de croissance",
+    "espace vectoriel normé",
+    "ensemble des zéros d'une fonction",
+    "propriété d'ouverture"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la différentiabilité",
+    "analyse de l'ensemble des zéros"
+  ],
+  "objects": [
+    "application différentiable",
+    "dérivée",
+    "ensemble des zéros"
+  ],
+  "content_hash": "8b4d80949bca8f7601a15e7d0adf5222680d4e90efc8fc1aa53829552ce4909d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:27:12.610Z"
+}

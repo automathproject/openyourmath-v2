@@ -1,0 +1,25 @@
+{
+  "uuid": "FNYN",
+  "source_path": "exo7/1-L1/FNYN.tex",
+  "summary": "On considère n entiers naturels non nuls. On définit bi comme le produit de tous les autres aj. L'exercice demande de prouver l'équivalence entre deux propriétés : que les aj soient deux à deux premiers entre eux, et que les bi soient premiers entre eux dans leur ensemble.",
+  "concepts": [
+    "pgcd",
+    "nombres premiers entre eux",
+    "algorithme d'Euclide",
+    "produit d'entiers",
+    "propriété d'équivalence"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "utilisation des propriétés du pgcd",
+    "manipulation d'inégalités"
+  ],
+  "objects": [
+    "entiers naturels non nuls",
+    "produits d'entiers",
+    "ensembles de nombres"
+  ],
+  "content_hash": "0325abe151cb9160ee219b9c4ff2de839a6eb1156c8211dc857573ab1a04664f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:03:21.968Z"
+}

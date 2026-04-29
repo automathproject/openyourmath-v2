@@ -1,0 +1,25 @@
+{
+  "uuid": "GAaX",
+  "source_path": "exo7/15-L3/GAaX.tex",
+  "summary": "L'exercice demande de démontrer l'égalité entre la norme opérateur d'une matrice et la borne supérieure d'un produit scalaire, puis d'en déduire une inégalité impliquant la somme des carrés des coefficients de la matrice.",
+  "concepts": [
+    "norme opérateur",
+    "norme euclidienne",
+    "produit scalaire",
+    "borne supérieure",
+    "inégalité de Cauchy-Schwarz"
+  ],
+  "methods": [
+    "utilisation de la définition de la norme opérateur",
+    "maximisation de produit scalaire",
+    "application de l'inégalité de Cauchy-Schwarz"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteur",
+    "produit scalaire"
+  ],
+  "content_hash": "238314c2c4084c3d7e2c59534b94a52bfc19ba85be1796a33205ff871538f833",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:58:28.635Z"
+}

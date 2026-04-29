@@ -1,0 +1,25 @@
+{
+  "uuid": "kb1d",
+  "source_path": "exo7/12-L3/kb1d.tex",
+  "summary": "L'exercice demande d'approximer la valeur de 1,05^1,02 avec une précision inférieure à 10^-2 en utilisant le développement de Taylor de la fonction f(x,y) = x^y.",
+  "concepts": [
+    "développement de Taylor",
+    "différentielle d'ordre supérieur",
+    "approximation polynomiale",
+    "fonction de plusieurs variables",
+    "erreur d'approximation"
+  ],
+  "methods": [
+    "développement de Taylor",
+    "approximation linéaire",
+    "calcul des dérivées partielles"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "développement limité",
+    "erreur d'approximation"
+  ],
+  "content_hash": "9f89779c7c73b5f3fb3939abfe80af1776107b7367e02596acdfa82cfcee0978",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:34:07.084Z"
+}

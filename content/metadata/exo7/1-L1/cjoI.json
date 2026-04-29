@@ -1,0 +1,32 @@
+{
+  "uuid": "cjoI",
+  "source_path": "exo7/1-L1/cjoI.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire définie sur les polynômes de degré au plus 2 est un endomorphisme, puis d'en déterminer la matrice, le rang, l'inversibilité, le noyau et l'image d'une transformation associée.",
+  "concepts": [
+    "application linéaire",
+    "endomorphisme",
+    "matrice d'une application linéaire",
+    "rang d'une matrice",
+    "inversibilité",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang"
+  ],
+  "methods": [
+    "vérification de la linéarité",
+    "calcul de l'image des vecteurs de base",
+    "méthode de Gauss",
+    "détermination du noyau",
+    "détermination de l'image"
+  ],
+  "objects": [
+    "polynôme de degré au plus 2",
+    "application linéaire",
+    "matrice carrée",
+    "noyau d'une application",
+    "image d'une application"
+  ],
+  "content_hash": "c6bed4a8c4256062ab1afc0d46ac18f0035f39494efee45ba46f2b34fdca2d00",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:08:08.090Z"
+}

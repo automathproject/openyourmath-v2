@@ -1,0 +1,31 @@
+{
+  "uuid": "HMcb",
+  "source_path": "exo7/15-L3/HMcb.tex",
+  "summary": "L'exercice demande de montrer qu'on peut extraire d'une suite de Cauchy dans un espace vectoriel normé une sous-suite telle que la série de ses différences successives soit normalement convergente, et d'en déduire que l'espace est complet si toute série normalement convergente converge.",
+  "concepts": [
+    "espace vectoriel normé",
+    "espace métrique complet",
+    "série normalement convergente",
+    "suite de Cauchy",
+    "convergence de série",
+    "sous-suite convergente",
+    "complétude"
+  ],
+  "methods": [
+    "extraction d'une sous-suite",
+    "construction récursive d'indices",
+    "majoration des normes",
+    "somme de séries",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite de Cauchy",
+    "série normalement convergente",
+    "sous-suite extraite",
+    "somme partielle de série",
+    "espace vectoriel normé"
+  ],
+  "content_hash": "e95f6cfee069deff42ae284bc8932d24a9cb754d4e946d02165ff92ffc863141",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:10:01.197Z"
+}

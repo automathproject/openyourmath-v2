@@ -1,0 +1,25 @@
+{
+  "uuid": "ekjp",
+  "source_path": "exo7/1-L1/ekjp.tex",
+  "summary": "Montrer que l'intersection de n-1 hyperplans dans un espace vectoriel de dimension n ≥ 3 est non triviale.",
+  "concepts": [
+    "dimension d'un espace vectoriel",
+    "hyperplan",
+    "intersection d'espaces vectoriels",
+    "récurrence",
+    "inégalité dimensionnelle"
+  ],
+  "methods": [
+    "récurrence",
+    "calcul de dimension d'intersection",
+    "utilisation de la formule de Grassmann"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "hyperplans",
+    "intersection d'hyperplans"
+  ],
+  "content_hash": "a0037823ef3498686761746458533ad22720221955150e04c983caf666541592",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:00:52.778Z"
+}

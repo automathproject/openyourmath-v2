@@ -1,0 +1,29 @@
+{
+  "uuid": "Kw75",
+  "source_path": "exo7/4-L2/Kw75.tex",
+  "summary": "On considère une matrice réelle A telle que A² = -I_n. L'exercice demande de montrer que la dimension n est paire, puis que A est semblable à une matrice A' de structure spécifique, et enfin que cette similitude peut être orthogonale si A est orthogonale.",
+  "concepts": [
+    "matrice carrée",
+    "déterminant",
+    "valeur propre",
+    "matrice diagonalisable",
+    "matrice orthogonale",
+    "sous-espace vectoriel",
+    "famille orthonormale"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "diagonalisation complexe",
+    "similitude de matrices",
+    "construction récursive de base orthonormale"
+  ],
+  "objects": [
+    "matrice A",
+    "matrice A'",
+    "sous-espace vectoriel F1",
+    "famille orthonormale (e_i, e'_i)"
+  ],
+  "content_hash": "a16f9b936cbe28bf54c03a7da8facba2e0e0699c92868b5d1002ae51d88eaf56",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:17:08.317Z"
+}

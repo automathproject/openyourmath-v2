@@ -1,0 +1,27 @@
+{
+  "uuid": "trSk",
+  "source_path": "exo7/6-L2/trSk.tex",
+  "summary": "Dans un cercle de diamètre [AB], deux points M et N sont placés sur le cercle. Les intersections des droites (MB) et (AN), puis (NB) et (AM) définissent les points P et Q. On demande de déterminer l'angle entre les droites (AB) et (PQ).",
+  "concepts": [
+    "géométrie affine",
+    "cercle circonscrit",
+    "orthocentre",
+    "triangle rectangle",
+    "propriétés des angles",
+    "hauteurs d'un triangle"
+  ],
+  "methods": [
+    "utilisation des propriétés des angles inscrits",
+    "identification de l'orthocentre",
+    "analyse des configurations géométriques"
+  ],
+  "objects": [
+    "segment de diamètre",
+    "points sur un cercle",
+    "droites intersectées",
+    "angle formé par deux droites"
+  ],
+  "content_hash": "08ae7bb023ece9d33cbab21f24338091f2cbf53f6259632c3284fddccc973641",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:13:32.816Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "yhQu",
+  "source_path": "exo7/15-L3/yhQu.tex",
+  "summary": "On considère un ensemble infini X muni d'une topologie particulière où les seuls ouverts sont l'ensemble vide et les parties de complémentaire fini. On doit montrer que toute application continue de X vers un espace séparé Y est nécessairement constante.",
+  "concepts": [
+    "topologie",
+    "espace séparé",
+    "application continue",
+    "fonction constante",
+    "ensemble infini",
+    "ouverts d'une topologie",
+    "complémentaire fini"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des propriétés des ouverts",
+    "analyse des limites"
+  ],
+  "objects": [
+    "ensemble X",
+    "espace Y",
+    "application continue"
+  ],
+  "content_hash": "26bbe4d5a815e3566fed27dae3f11d9251040ede2fedafed38f005e47b86a008",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:34:21.860Z"
+}

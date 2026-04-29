@@ -1,0 +1,23 @@
+{
+  "uuid": "oomR",
+  "source_path": "exo7/1-L1/oomR.tex",
+  "summary": "On donne deux entiers a et b dont les restes modulo 11 sont respectivement 7 et 2. On demande de déterminer le reste modulo 11 de l'expression a² - b².",
+  "concepts": [
+    "division euclidienne",
+    "restes modulo",
+    "arithmétique modulaire",
+    "propriétés des congruences"
+  ],
+  "methods": [
+    "calcul de congruences",
+    "simplification d'expressions modulo"
+  ],
+  "objects": [
+    "entiers",
+    "restes modulo",
+    "expression polynomiale"
+  ],
+  "content_hash": "6ba2554c01a69fa9526532946f59dca1a854cd07c3d01dd3da985855e0522177",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:10:37.931Z"
+}

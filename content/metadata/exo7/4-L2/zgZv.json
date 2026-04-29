@@ -1,0 +1,28 @@
+{
+  "uuid": "zgZv",
+  "source_path": "exo7/4-L2/zgZv.tex",
+  "summary": "L'exercice demande de démontrer des propriétés d'un groupe d'ordre 2n avec un sous-groupe d'indice 2, puis d'appliquer ces résultats au groupe des permutations paires A4 pour montrer qu'un 3-cycle peut s'écrire comme le carré d'une permutation paire et que A4 n'a pas de sous-groupe d'ordre 6.",
+  "concepts": [
+    "groupe d'ordre fini",
+    "sous-groupe d'indice deux",
+    "groupe de permutation",
+    "groupe alterné A4",
+    "3-cycle",
+    "permutation paire"
+  ],
+  "methods": [
+    "décomposition d'un groupe en classes à gauche",
+    "utilisation des propriétés des sous-groupes d'indice deux",
+    "analyse des éléments du groupe A4"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe H",
+    "élément g",
+    "3-cycle σ",
+    "permutation paire φ"
+  ],
+  "content_hash": "7b43390d3c31f8adf26b80d45a6a70ef7298e7deddd922a7a53e8bc9d696e74c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:25:24.043Z"
+}

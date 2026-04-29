@@ -1,0 +1,30 @@
+{
+  "uuid": "oPyj",
+  "source_path": "exo7/15-L3/oPyj.tex",
+  "summary": "L'exercice demande de démontrer que pour une fonction d'un espace topologique vers les réels, la continuité équivaut à ce que les préimages des intervalles ouverts de la forme ]-∞, λ[ et ]λ, +∞[ soient des ouverts. Une seconde question demande de montrer que la préimage d'un ouvert de ℝ par une fonction continue est un F_σ ouvert.",
+  "concepts": [
+    "continuité",
+    "espace topologique",
+    "préimage",
+    "ouvert",
+    "fermé",
+    "F_σ",
+    "union dénombrable",
+    "intersection dénombrable"
+  ],
+  "methods": [
+    "caractérisation de la continuité par les préimages d'ouverts",
+    "décomposition d'ouverts en unions dénombrables d'intervalles",
+    "utilisation de la densité des rationnels"
+  ],
+  "objects": [
+    "fonction continue",
+    "espace topologique",
+    "intervalle ouvert",
+    "préimage d'un ouvert",
+    "union dénombrable de fermés"
+  ],
+  "content_hash": "9c33c5a1d71e0a1bbb3cb9eee53737df63048f9c6b84fdc3385bc2abf4102511",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:32:23.970Z"
+}

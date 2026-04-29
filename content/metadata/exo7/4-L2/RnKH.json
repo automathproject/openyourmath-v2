@@ -1,0 +1,25 @@
+{
+  "uuid": "RnKH",
+  "source_path": "exo7/4-L2/RnKH.tex",
+  "summary": "L'exercice demande de prouver que l'application φ définie sur l'espace des polynômes réels de degré n est un produit scalaire, puis de construire une base orthonormée pour ce produit scalaire dans le cas particulier où n=2.",
+  "concepts": [
+    "produit scalaire",
+    "espace vectoriel normé",
+    "orthonormalisation",
+    "polynôme",
+    "intégration",
+    "base orthonormée"
+  ],
+  "methods": [
+    "vérification des propriétés d'un produit scalaire",
+    "orthonormalisation de Gram-Schmidt"
+  ],
+  "objects": [
+    "polynôme",
+    "produit scalaire",
+    "base orthonormée"
+  ],
+  "content_hash": "29042662a478da3dc04672dea5204e5cfffd36c6a5e26c767c693e85920ae8da",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:24:38.175Z"
+}

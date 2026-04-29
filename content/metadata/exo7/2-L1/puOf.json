@@ -1,0 +1,26 @@
+{
+  "uuid": "puOf",
+  "source_path": "exo7/2-L1/puOf.tex",
+  "summary": "Calculer la dérivée d'ordre n de trois fonctions trigonométriques : sin(x), sin²(x) et sin³(x) + cos³(x). L'indication suggère d'utiliser des linéarisations trigonométriques plutôt que la formule de Leibniz.",
+  "concepts": [
+    "dérivabilité",
+    "fonctions trigonométriques",
+    "dérivées successives",
+    "linéarisation trigonométrique",
+    "périodicité des dérivées"
+  ],
+  "methods": [
+    "linéarisation d'expressions trigonométriques",
+    "calcul de dérivées successives",
+    "utilisation de la périodicité modulo 4"
+  ],
+  "objects": [
+    "fonction sin(x)",
+    "fonction sin²(x)",
+    "fonction sin³(x) + cos³(x)",
+    "dérivées d'ordre n"
+  ],
+  "content_hash": "d93c3123b5f93702d3582edadd3f19f31050e3e5e2006dfdb7c9542f64e01879",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:20:08.814Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "GtXz",
+  "source_path": "exo7/2-L1/GtXz.tex",
+  "summary": "On définit une fonction f comme la somme infinie de termes de la forme |x - a_n|/3^n, où (a_n) est une suite bornée de réels. L'exercice demande de prouver que f est convexe et non dérivable aux points a_n.",
+  "concepts": [
+    "fonction convexe",
+    "dérivabilité",
+    "suite bornée",
+    "somme infinie",
+    "limite",
+    "inégalité"
+  ],
+  "methods": [
+    "étude de la dérivabilité",
+    "utilisation de la définition de la dérivée",
+    "majoration",
+    "analyse des points critiques"
+  ],
+  "objects": [
+    "fonction définie par une série",
+    "suite (a_n)",
+    "points a_n"
+  ],
+  "content_hash": "2d6d68d0c2b910cdde57aa4838ebe73cf14b46dca6ffa3beae7d3aa688015c8d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:02:03.353Z"
+}

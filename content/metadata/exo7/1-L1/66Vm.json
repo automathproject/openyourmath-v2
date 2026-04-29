@@ -1,0 +1,24 @@
+{
+  "uuid": "66Vm",
+  "source_path": "exo7/1-L1/66Vm.tex",
+  "summary": "L'exercice demande de déterminer si deux matrices données sont semblables, c'est-à-dire s'il existe une matrice de passage P permettant de les relier.",
+  "concepts": [
+    "semblance de matrices",
+    "matrice de passage",
+    "changement de base",
+    "matrice carrée",
+    "inversibilité"
+  ],
+  "methods": [
+    "recherche de matrice de passage",
+    "vérification de l'inversibilité",
+    "calcul de produit de matrices"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "matrice de passage"
+  ],
+  "content_hash": "f5c430b2c46bd9ed98bc5b308d2f8d84109147e12a649ad87daab988520b6fa2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:43:07.494Z"
+}

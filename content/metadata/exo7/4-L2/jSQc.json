@@ -1,0 +1,28 @@
+{
+  "uuid": "jSQc",
+  "source_path": "exo7/4-L2/jSQc.tex",
+  "summary": "L'exercice demande de calculer le déterminant d'une matrice particulière en fonction d'un paramètre λ et de déduire une expression explicite pour ce déterminant.",
+  "concepts": [
+    "déterminant",
+    "matrice",
+    "polynôme caractéristique",
+    "réduction de matrice",
+    "déterminant d'une matrice par blocs",
+    "valeurs propres"
+  ],
+  "methods": [
+    "développement par rapport à une ligne ou une colonne",
+    "réduction de matrice",
+    "calcul récursif de déterminant",
+    "formule de récurrence"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme caractéristique",
+    "déterminant",
+    "paramètre λ"
+  ],
+  "content_hash": "3661f83c14b6b3431c05b2c8285b50848ef3afe92b927c133cf78b75067604fc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:06:16.817Z"
+}

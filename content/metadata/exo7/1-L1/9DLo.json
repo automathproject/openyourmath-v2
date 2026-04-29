@@ -1,0 +1,25 @@
+{
+  "uuid": "9DLo",
+  "source_path": "exo7/1-L1/9DLo.tex",
+  "summary": "L'exercice demande de prouver qu'un entier naturel x divise un entier naturel y si x² divise y². Il propose ensuite une application pour démontrer l'irrationalité de √2 par l'absurde.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "nombre premier",
+    "nombre rationnel",
+    "raisonnement par l'absurde"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "analyse des diviseurs",
+    "preuve par contradiction"
+  ],
+  "objects": [
+    "entiers naturels",
+    "carrés d'entiers",
+    "nombre irrationnel"
+  ],
+  "content_hash": "abb3d8634decd6c3f0f6e1e54708102b0c382a37f9cbf8be3911e0b699fc78d6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:02:17.787Z"
+}

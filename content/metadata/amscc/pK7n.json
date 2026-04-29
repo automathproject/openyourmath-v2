@@ -1,0 +1,28 @@
+{
+  "uuid": "pK7n",
+  "source_path": "amscc/pK7n.tex",
+  "summary": "L'exercice demande de déterminer les points critiques d'une fonction de deux variables et d'analyser leur nature (minimum local ou point selle) à l'aide de la matrice hessienne.",
+  "concepts": [
+    "dérivées partielles",
+    "gradient",
+    "point critique",
+    "matrice hessienne",
+    "minimum local",
+    "point selle",
+    "extremums locaux"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "résolution de système d'équations",
+    "calcul du déterminant de la matrice hessienne",
+    "analyse de la nature des points critiques"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "gradient",
+    "matrice hessienne"
+  ],
+  "content_hash": "51eda3b978923f29a1164038a694696285368042a0f6fe5ce133b2fef68d3460",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:20:52.774Z"
+}

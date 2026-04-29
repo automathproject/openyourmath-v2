@@ -1,0 +1,32 @@
+{
+  "uuid": "T7Dh",
+  "source_path": "exo7/4-L2/T7Dh.tex",
+  "summary": "L'exercice demande d'identifier une application linéaire f dans un espace vectoriel euclidien de dimension 3, représentée par une matrice antisymétrique, puis de montrer que l'identité plus f est une bijection et de calculer son inverse. Enfin, il s'agit de prouver que la composée de l'identité moins f avec l'inverse de l'identité plus f est une rotation et de déterminer son axe et son angle.",
+  "concepts": [
+    "espace vectoriel euclidien",
+    "base orthonormée",
+    "application linéaire",
+    "matrice antisymétrique",
+    "produit vectoriel",
+    "produit scalaire",
+    "bijection",
+    "rotation",
+    "axe de rotation",
+    "angle de rotation"
+  ],
+  "methods": [
+    "identification de l'application linéaire",
+    "calcul de l'inverse d'une bijection",
+    "détermination de l'axe et de l'angle d'une rotation"
+  ],
+  "objects": [
+    "espace vectoriel euclidien de dimension 3",
+    "matrice antisymétrique",
+    "application linéaire f",
+    "bijection id_E + f",
+    "rotation g"
+  ],
+  "content_hash": "4094ba5aa8d103daef06b07fd4588f743fc7b153b5b9c254d9c832ee8a936212",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:26:07.193Z"
+}

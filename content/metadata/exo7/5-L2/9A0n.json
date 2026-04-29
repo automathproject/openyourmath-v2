@@ -1,0 +1,25 @@
+{
+  "uuid": "9A0n",
+  "source_path": "exo7/5-L2/9A0n.tex",
+  "summary": "L'exercice demande de montrer qu'une équation différentielle linéaire du second ordre admet des solutions non bornées sur l'intervalle [0, +∞[. On commence par prouver que le déterminant wronskien de deux solutions est constant.",
+  "concepts": [
+    "équation différentielle linéaire du second ordre",
+    "déterminant wronskien",
+    "solution bornée",
+    "intégrabilité",
+    "limite de fonction"
+  ],
+  "methods": [
+    "calcul du déterminant wronskien",
+    "analyse de la limite de la dérivée",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "fonction continue intégrable",
+    "solution d'équation différentielle",
+    "déterminant wronskien"
+  ],
+  "content_hash": "56daa1846c11440ccda649252997aee46baea75ff97c2121e35309358b4556e4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:18:05.182Z"
+}

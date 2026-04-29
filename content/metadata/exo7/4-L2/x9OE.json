@@ -1,0 +1,27 @@
+{
+  "uuid": "x9OE",
+  "source_path": "exo7/4-L2/x9OE.tex",
+  "summary": "L'exercice demande de diagonaliser une matrice 3x3 donnée et d'utiliser cette diagonalisation pour déterminer une base q-orthogonale, la signature d'une forme quadratique associée, et sa décomposition en carrés de formes linéaires indépendantes.",
+  "concepts": [
+    "diagonalisation de matrice",
+    "forme quadratique",
+    "base orthogonale",
+    "signature d'une forme quadratique",
+    "décomposition en carrés de formes linéaires"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "recherche des vecteurs propres",
+    "détermination de la signature"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "forme quadratique",
+    "base q-orthogonale",
+    "vecteurs propres"
+  ],
+  "content_hash": "33929e7a1a85b12af0253bc68bb88f3904d669314056e0a596b6a834cea83c52",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:02:22.186Z"
+}

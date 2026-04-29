@@ -1,0 +1,26 @@
+{
+  "uuid": "hXfB",
+  "source_path": "exo7/4-L2/hXfB.tex",
+  "summary": "Étudier l'existence de solutions d'un système linéaire de trois équations à trois inconnues, dépendant d'un paramètre m.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "système de Cramer",
+    "compatibilité d'un système",
+    "déterminant",
+    "valeurs singulières"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "analyse de cas",
+    "comparaison de rangs"
+  ],
+  "objects": [
+    "système linéaire à coefficients polynomiaux",
+    "matrice carrée 3x3",
+    "paramètre algébrique"
+  ],
+  "content_hash": "8304b9556681522cc8089e86aead2c55008a59a6cb917d5756237431e057ef54",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:03:45.779Z"
+}

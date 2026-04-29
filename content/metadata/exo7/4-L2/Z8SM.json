@@ -1,0 +1,28 @@
+{
+  "uuid": "Z8SM",
+  "source_path": "exo7/4-L2/Z8SM.tex",
+  "summary": "On considère un polynôme réel de degré inférieur ou égal à 3 dont l'intégrale du carré sur [-1,1] vaut 1. On demande de majorer sa norme infinie sur cet intervalle.",
+  "concepts": [
+    "produit scalaire",
+    "norme infinie",
+    "inégalité de Cauchy-Schwarz",
+    "polynôme orthogonal",
+    "intégrale de fonction polynomiale",
+    "espace euclidien"
+  ],
+  "methods": [
+    "construction de polynôme orthogonal",
+    "application de l'inégalité de Cauchy-Schwarz",
+    "calcul explicite de polynôme",
+    "maximisation de fonction"
+  ],
+  "objects": [
+    "polynôme de degré 3",
+    "fonction polynomiale",
+    "norme infinie",
+    "polynôme orthogonal"
+  ],
+  "content_hash": "d085deff7d03dc656be0dc4a17fc1faf8a70e5e764f9b6510e4a59e5e060188a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:34:55.602Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "GMf3",
+  "source_path": "exo7/9-L3/GMf3.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'une isométrie β dans le groupe des isométries de ℝ² telle que la conjugaison de la rotation R(a,α) par β appartienne au groupe spécial orthogonal SO(2). Il explore également la décomposition d'une rotation en deux translations et les conditions de conjugaison entre translations.",
+  "concepts": [
+    "isométrie euclidienne",
+    "rotation",
+    "translation",
+    "conjugaison d'isométries",
+    "groupe spécial orthogonal SO(2)",
+    "décomposition d'isométrie"
+  ],
+  "methods": [
+    "conjugaison d'isométries",
+    "décomposition en translations",
+    "analyse de conditions de conjugaison"
+  ],
+  "objects": [
+    "rotation R(a,α)",
+    "translation t_b",
+    "isométrie β",
+    "droite m",
+    "droite l"
+  ],
+  "content_hash": "af45357853c30279377ec6c202f8ab6056e7c71381b00914b7a2513888965912",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:56:15.592Z"
+}

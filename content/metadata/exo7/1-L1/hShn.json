@@ -1,0 +1,26 @@
+{
+  "uuid": "hShn",
+  "source_path": "exo7/1-L1/hShn.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice A, définie par des coefficients binomiaux, est inversible et de déterminer son inverse. L'indication suggère d'utiliser un endomorphisme sur l'espace des polynômes de degré n.",
+  "concepts": [
+    "matrice de passage",
+    "endomorphisme",
+    "base canonique",
+    "inversibilité",
+    "binôme de Newton",
+    "automorphisme"
+  ],
+  "methods": [
+    "détermination de la matrice d'un endomorphisme",
+    "utilisation de la formule du binôme de Newton",
+    "calcul de l'inverse d'une matrice"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme",
+    "endomorphisme de l'espace vectoriel des polynômes"
+  ],
+  "content_hash": "629b2950db0496eb525413fa6a58f591df3c8df2ce0b37b5b621bca0e2f042f3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:11:48.265Z"
+}

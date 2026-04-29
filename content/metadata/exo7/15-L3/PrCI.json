@@ -1,0 +1,27 @@
+{
+  "uuid": "PrCI",
+  "source_path": "exo7/15-L3/PrCI.tex",
+  "summary": "Montrer qu'une application ouverte d'un espace dans ℝⁿ conserve une propriété de bornitude locale pour les points intérieurs d'une partie.",
+  "concepts": [
+    "application ouverte",
+    "intérieur d'une partie",
+    "bornitude locale",
+    "topologie d'un espace vectoriel normé",
+    "continuité",
+    "uniforme continuité"
+  ],
+  "methods": [
+    "utilisation des propriétés des applications ouvertes",
+    "analyse des points intérieurs",
+    "comparaison des normes"
+  ],
+  "objects": [
+    "application f",
+    "espace X",
+    "partie A",
+    "point a"
+  ],
+  "content_hash": "bb67848b24122c105629f12557e79a143d0f68d132db68ffe8da5f683471c964",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:30:45.237Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "wfIh",
+  "source_path": "exo7/4-L2/wfIh.tex",
+  "summary": "L'exercice demande d'écrire la matrice d'un endomorphisme associé à une transposition dans la base canonique de ℝⁿ et de montrer que son déterminant vaut -1. Il faut ensuite prouver que la composition de deux tels endomorphismes correspond à la permutation composée et en déduire que le déterminant de l'endomorphisme associé à une permutation est égal à la signature de cette permutation.",
+  "concepts": [
+    "groupe de permutation",
+    "endomorphisme",
+    "transposition",
+    "déterminant",
+    "signature d'une permutation",
+    "composition de permutations",
+    "matrice d'un endomorphisme"
+  ],
+  "methods": [
+    "calcul de matrice dans une base",
+    "calcul de déterminant",
+    "propriété de la signature",
+    "composition d'applications linéaires"
+  ],
+  "objects": [
+    "endomorphisme de ℝⁿ",
+    "transposition",
+    "permutation",
+    "matrice carrée",
+    "base canonique"
+  ],
+  "content_hash": "2a0d602f3f78133ca3a377d625b1be3b39d6d2a42ef7ab380efff74f8e1d42ec",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:21:28.321Z"
+}

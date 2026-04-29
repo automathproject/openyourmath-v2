@@ -1,0 +1,28 @@
+{
+  "uuid": "hf9b",
+  "source_path": "exo7/5-L2/hf9b.tex",
+  "summary": "L'exercice étudie le comportement asymptotique d'une fonction φ(x) définie comme une intégrale de Riemann dépendant d'un paramètre x. On demande de montrer que φ(x) tend vers la valeur maximale de f lorsque x tend vers l'infini, puis vers une exponentielle d'intégrale de ln(f) lorsque x tend vers 0, sous une condition supplémentaire.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "limite de fonction",
+    "continuité",
+    "bornitude",
+    "approximation affine",
+    "théorème de convergence dominée"
+  ],
+  "methods": [
+    "approximation affine de l'exponentielle",
+    "estimation d'erreur d'intégrale",
+    "passage à la limite sous le signe intégrale",
+    "utilisation de la continuité uniforme"
+  ],
+  "objects": [
+    "fonction φ(x) définie par une intégrale paramétrique",
+    "fonction f continue positive",
+    "valeur maximale d'une fonction",
+    "exponentielle d'une intégrale"
+  ],
+  "content_hash": "4f7625ad9af173ac4c8d82858b803a3472dd7413619f08a4475963c1e31cc13e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:45:42.631Z"
+}

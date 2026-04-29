@@ -1,0 +1,27 @@
+{
+  "uuid": "TdrA",
+  "source_path": "exo7/1-L1/TdrA.tex",
+  "summary": "L'exercice demande de montrer l'équivalence de trois propriétés concernant un endomorphisme d'un espace vectoriel de dimension finie : le noyau de f est égal au noyau de f², l'image de f est égale à l'image de f², et l'espace E se décompose en somme directe du noyau et de l'image de f.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "endomorphisme",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "somme directe d'espaces vectoriels",
+    "décomposition d'un espace vectoriel"
+  ],
+  "methods": [
+    "utilisation de la caractérisation du noyau et de l'image",
+    "manipulation des inclusions",
+    "décomposition en somme directe"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "endomorphisme f",
+    "noyau ker f",
+    "image Im f"
+  ],
+  "content_hash": "24e14ab265982570171f2261f388b5299aea6a22805a5ac4ef0f36181a189478",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:53:26.224Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "AGDn",
+  "source_path": "amscc/AGDn.tex",
+  "summary": "Calculer le déterminant d'une matrice carrée d'ordre 4 à coefficients polynomiaux en deux variables réelles non nulles, en utilisant des opérations sur les lignes et colonnes pour simplifier l'expression.",
+  "concepts": [
+    "déterminant",
+    "opérations élémentaires sur les lignes et colonnes",
+    "factorisation",
+    "matrice carrée"
+  ],
+  "methods": [
+    "opérations sur les lignes et colonnes",
+    "factorisation",
+    "réduction de la taille de la matrice"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "déterminant",
+    "polynômes en deux variables"
+  ],
+  "content_hash": "48eac77704efe442683b50ee8afad4a805e45ba15c8d4c38c573929d1d5485aa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:36:37.214Z"
+}

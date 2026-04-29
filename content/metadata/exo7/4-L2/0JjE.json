@@ -1,0 +1,28 @@
+{
+  "uuid": "0JjE",
+  "source_path": "exo7/4-L2/0JjE.tex",
+  "summary": "L'exercice étudie une famille de vecteurs dans un espace euclidien où le produit scalaire de tout couple de vecteurs distincts est strictement négatif. On demande de prouver des propriétés sur la matrice de passage à la base de Schmidt et sur le rang de la famille.",
+  "concepts": [
+    "espace vectoriel euclidien",
+    "produit scalaire",
+    "famille libre",
+    "orthonormalisation de Schmidt",
+    "matrice de passage",
+    "rang d'une famille de vecteurs",
+    "récurrence"
+  ],
+  "methods": [
+    "orthonormalisation de Schmidt",
+    "récurrence sur la dimension",
+    "analyse des coefficients de matrice"
+  ],
+  "objects": [
+    "famille de vecteurs",
+    "base orthonormale",
+    "matrice de passage",
+    "vecteur retiré"
+  ],
+  "content_hash": "112a60cd3f820fa573a09f2adbe25efd73f05061b1fad90a2592790c4350dac5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:56:27.235Z"
+}

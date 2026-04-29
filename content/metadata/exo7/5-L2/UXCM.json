@@ -1,0 +1,25 @@
+{
+  "uuid": "UXCM",
+  "source_path": "exo7/5-L2/UXCM.tex",
+  "summary": "On cherche à encadrer les valeurs de la fonction f en x=-1 et x=1, où f est de classe C^1, vérifie f(0)=1 et satisfait l'inégalité f ≤ f' ≤ 2f.",
+  "concepts": [
+    "équation différentielle du premier ordre",
+    "fonction dérivable",
+    "inégalités différentielles",
+    "théorème de comparaison",
+    "croissance exponentielle"
+  ],
+  "methods": [
+    "comparaison de solutions",
+    "estimation par inégalités",
+    "utilisation de conditions initiales"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "inégalités différentielles",
+    "valeurs de fonction en points spécifiques"
+  ],
+  "content_hash": "f7780df2a13b9a2dcd71f31873fa7ba436c497e7e573be0ff45b2d360f4b8948",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:31:27.974Z"
+}

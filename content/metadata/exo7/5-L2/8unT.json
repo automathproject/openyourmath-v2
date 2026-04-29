@@ -1,0 +1,26 @@
+{
+  "uuid": "8unT",
+  "source_path": "exo7/5-L2/8unT.tex",
+  "summary": "L'exercice demande de prouver l'unicité de la solution d'une équation différentielle non linéaire du second ordre avec conditions aux limites, sous des hypothèses de croissance stricte sur la fonction F(x,y).",
+  "concepts": [
+    "équation différentielle non linéaire",
+    "conditions aux limites",
+    "unicité de la solution",
+    "théorème de Cauchy-Lipschitz",
+    "convexité",
+    "fonction strictement croissante"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "analyse de la convexité",
+    "comparaison de solutions"
+  ],
+  "objects": [
+    "fonction F(x,y)",
+    "solution d'équation différentielle",
+    "conditions aux limites"
+  ],
+  "content_hash": "3cc0a5594d8490752017904311372c6106cc081cbdf4d3fc2cf6a299de343391",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:17:52.510Z"
+}

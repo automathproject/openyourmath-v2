@@ -1,0 +1,27 @@
+{
+  "uuid": "bZZ6",
+  "source_path": "exo7/1-L1/bZZ6.tex",
+  "summary": "Calculer la puissance n-ième d'une matrice A de taille p×p, donnée sous forme explicite avec des 1 sur l'anti-diagonale et des 0 ailleurs.",
+  "concepts": [
+    "matrice carrée",
+    "endomorphisme",
+    "base canonique",
+    "puissance de matrice",
+    "matrice identité",
+    "parité d'un entier"
+  ],
+  "methods": [
+    "calcul de la puissance d'une matrice",
+    "étude de la périodicité",
+    "utilisation de la base canonique"
+  ],
+  "objects": [
+    "matrice p×p",
+    "endomorphisme de ℝᵖ",
+    "base canonique de ℝᵖ",
+    "matrice identité Iₚ"
+  ],
+  "content_hash": "07863a638b1514c0e0fe084b4510009515153c2e9db01b1710c5a99ecb4e2470",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:06:47.250Z"
+}

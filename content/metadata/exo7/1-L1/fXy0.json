@@ -1,0 +1,26 @@
+{
+  "uuid": "fXy0",
+  "source_path": "exo7/1-L1/fXy0.tex",
+  "summary": "L'exercice demande de montrer que pour un nombre premier p et un entier k compris entre 1 et p-1, p divise le coefficient binomial Cp^k. Ensuite, il faut en déduire que pour tout entier n, np est congru à n modulo p.",
+  "concepts": [
+    "nombre premier",
+    "coefficient binomial",
+    "divisibilité",
+    "congruence",
+    "arithmétique modulaire",
+    "théorème de Fermat"
+  ],
+  "methods": [
+    "raisonnement par divisibilité",
+    "utilisation des propriétés des coefficients binomiaux",
+    "développement binomial"
+  ],
+  "objects": [
+    "coefficient binomial Cp^k",
+    "nombre premier p",
+    "entier n"
+  ],
+  "content_hash": "8a4bf5fd56fafd1b4ecfe740d3784af07e74365937a618e23f38fd7b0f7638df",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:09:09.200Z"
+}

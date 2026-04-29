@@ -1,0 +1,28 @@
+{
+  "uuid": "kzF4",
+  "source_path": "amscc/kzF4.tex",
+  "summary": "L'exercice demande de justifier que la fonction f(x,y) = (x² + y²)e⁻ˣ est de classe C² sur ℝ², de trouver ses points critiques, puis d'identifier ses extrema locaux en utilisant la matrice hessienne.",
+  "concepts": [
+    "fonction de classe C²",
+    "dérivées partielles",
+    "points critiques",
+    "extrema locaux",
+    "matrice hessienne",
+    "convexité"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "résolution d'équations",
+    "analyse de la hessienne",
+    "étude des extrema"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "dérivées partielles premières",
+    "dérivées partielles secondes",
+    "matrice hessienne"
+  ],
+  "content_hash": "f2172dbe5ce3d6b27e0e1556ca03b028fb6725605570e4fc85f8bc44b65ddb54",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:37:58.694Z"
+}

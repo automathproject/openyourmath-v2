@@ -1,0 +1,25 @@
+{
+  "uuid": "8z7e",
+  "source_path": "exo7/2-L1/8z7e.tex",
+  "summary": "On étudie la limite d'une fonction réelle f(x) en l'infini. L'énoncé demande de montrer que f(x) croît plus vite que toute fonction affine |αx|, puis d'en déduire que f(x) - αx tend vers l'infini quand x tend vers l'infini.",
+  "concepts": [
+    "limite de fonction",
+    "comparaison de croissances",
+    "fonction réelle",
+    "inégalité",
+    "tendance infinie"
+  ],
+  "methods": [
+    "comparaison de limites",
+    "majoration",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "fonction réelle",
+    "fonction affine",
+    "variable réelle"
+  ],
+  "content_hash": "26133025d693d48804464f63264ec31acf9c00c68f372b56dc87321caccb6cae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:14:54.639Z"
+}

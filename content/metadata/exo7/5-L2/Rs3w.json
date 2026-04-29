@@ -1,0 +1,31 @@
+{
+  "uuid": "Rs3w",
+  "source_path": "exo7/5-L2/Rs3w.tex",
+  "summary": "L'exercice demande de déterminer la limite en 1 d'une intégrale dépendant d'un paramètre, puis d'étudier complètement la fonction définie par cette intégrale. L'intégrale considérée est de la forme ∫(x à x²) (1/ln t) dt.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "continuité uniforme",
+    "limite de fonction",
+    "dérivabilité",
+    "prolongement par continuité",
+    "croissance d'une fonction",
+    "comportement asymptotique"
+  ],
+  "methods": [
+    "encadrement d'intégrale",
+    "changement de variable",
+    "étude de la dérivée",
+    "analyse des limites",
+    "comparaison de termes"
+  ],
+  "objects": [
+    "fonction définie par une intégrale",
+    "limite de fonction",
+    "dérivée",
+    "intervalle de définition",
+    "comportement asymptotique"
+  ],
+  "content_hash": "2c69869b85aa562fd550ae4bcc11015e383e1f98917fc8d24d7a6d0413f0ea8d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:38:35.668Z"
+}

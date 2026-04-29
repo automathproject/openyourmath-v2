@@ -1,0 +1,26 @@
+{
+  "uuid": "EOEX",
+  "source_path": "exo7/5-L2/EOEX.tex",
+  "summary": "Trouver le minimum global de la fonction f(x,y) définie comme la somme des distances euclidiennes à deux points fixes A et B dans le plan, avec a un paramètre réel donné.",
+  "concepts": [
+    "distance euclidienne",
+    "minimum global",
+    "fonction de plusieurs variables",
+    "inégalité triangulaire",
+    "optimisation sans contrainte",
+    "géométrie analytique"
+  ],
+  "methods": [
+    "géométrisation du problème",
+    "calcul de distance",
+    "analyse des conditions d'égalité"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "points du plan",
+    "segment de droite"
+  ],
+  "content_hash": "7ee810d96c2cc45d6b0633e93e220d5e3f3084224e13a58962b4073d928940ea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:51:58.308Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "Aii6",
+  "source_path": "exo7/5-L2/Aii6.tex",
+  "summary": "L'exercice demande d'estimer l'erreur entre la solution exacte y et une approximation affine par morceaux z d'une équation différentielle non linéaire, sous des hypothèses de régularité sur la fonction f.",
+  "concepts": [
+    "équation différentielle non linéaire",
+    "approximation affine par morceaux",
+    "lipschitzianité",
+    "bornitude",
+    "estimation d'erreur",
+    "méthode d'Euler"
+  ],
+  "methods": [
+    "estimation d'erreur",
+    "majoration",
+    "récurrence",
+    "analyse de la discrétisation"
+  ],
+  "objects": [
+    "fonction continue affine par morceaux",
+    "solution exacte",
+    "approximation numérique",
+    "intervalle de discrétisation"
+  ],
+  "content_hash": "a44894b60b1fd174533729580a69e2e9861cdc42c8ac0453fcedd00cb0869c16",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:19:06.647Z"
+}

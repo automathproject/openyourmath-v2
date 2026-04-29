@@ -1,0 +1,27 @@
+{
+  "uuid": "CGPZ",
+  "source_path": "exo7/6-L2/CGPZ.tex",
+  "summary": "L'exercice demande de déduire la formule de Green en trois dimensions à partir de la formule générale de Stokes. Il s'agit ensuite d'en déduire une expression pour le volume d'un domaine V en fonction d'intégrales de surface.",
+  "concepts": [
+    "formule de Stokes",
+    "formule de Green",
+    "divergence d'un champ vectoriel",
+    "intégrale de surface",
+    "intégrale de volume",
+    "champ de vecteurs de classe C^1"
+  ],
+  "methods": [
+    "application de la formule de Stokes",
+    "calcul d'intégrales de surface",
+    "déduction de formules géométriques"
+  ],
+  "objects": [
+    "champ vectoriel",
+    "volume de R^3",
+    "surface de bord",
+    "vecteur normal"
+  ],
+  "content_hash": "e21aa18e3eed382f60249ae0d4da8a067a081b8f902b25c923bf7df60ede9da2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:44:35.301Z"
+}

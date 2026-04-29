@@ -1,0 +1,24 @@
+{
+  "uuid": "wjce",
+  "source_path": "exo7/6-L2/wjce.tex",
+  "summary": "Dans un triangle ABC, on considère trois points P, Q, R sur les côtés BC, AC et AB respectivement. On doit montrer que ces points sont alignés si et seulement si les rapports des segments PB/PC, QC/QA et RA/RB sont tous égaux à 1.",
+  "concepts": [
+    "géométrie affine",
+    "alignement de points",
+    "rapports de segments",
+    "théorème de Menelaüs",
+    "colinéarité"
+  ],
+  "methods": [
+    "calcul de rapports de segments",
+    "utilisation de la condition d'alignement"
+  ],
+  "objects": [
+    "triangle",
+    "points sur les côtés",
+    "segments"
+  ],
+  "content_hash": "3abafb6e96af3315df32589b062e4df8581af533667e2c49da47080ee4f1c8c0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:15:28.171Z"
+}

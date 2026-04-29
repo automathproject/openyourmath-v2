@@ -1,0 +1,30 @@
+{
+  "uuid": "acya",
+  "source_path": "amscc/acya.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire dépendant d'un paramètre réel m. Il faut écrire le système sous forme matricielle, calculer le déterminant de la matrice des coefficients, identifier les valeurs de m pour lesquelles le système n'a pas de solution unique, et résoudre le système pour les autres valeurs de m.",
+  "concepts": [
+    "système linéaire",
+    "matrice des coefficients",
+    "déterminant",
+    "rang d'une matrice",
+    "inversibilité d'une matrice",
+    "solution unique",
+    "solution infinie",
+    "solution sans solution"
+  ],
+  "methods": [
+    "écriture sous forme matricielle",
+    "calcul de déterminant",
+    "analyse de cas selon la valeur du paramètre",
+    "résolution de système linéaire"
+  ],
+  "objects": [
+    "système linéaire à 3 inconnues",
+    "matrice carrée 3x3",
+    "vecteur colonne des inconnues",
+    "vecteur colonne des constantes"
+  ],
+  "content_hash": "16c94b531266c91f9fdc34e1c72110a5662b7cfd02ded010ddb6e3238dacf78d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:57:09.482Z"
+}

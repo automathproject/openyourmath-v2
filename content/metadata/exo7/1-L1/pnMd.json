@@ -1,0 +1,27 @@
+{
+  "uuid": "pnMd",
+  "source_path": "exo7/1-L1/pnMd.tex",
+  "summary": "L'exercice demande de déterminer le plus grand terme du développement du binôme de Newton (a+b)^n pour des paramètres naturels n et réels strictement positifs a et b.",
+  "concepts": [
+    "binôme de Newton",
+    "terme général",
+    "coefficient binomial",
+    "suite unimodale",
+    "partie entière",
+    "inégalité"
+  ],
+  "methods": [
+    "calcul de terme général",
+    "comparaison de termes consécutifs",
+    "analyse de monotonie",
+    "calcul de partie entière"
+  ],
+  "objects": [
+    "développement binomial",
+    "suite de coefficients",
+    "terme maximal"
+  ],
+  "content_hash": "cd7c27776fc2410a34eeb2a3541d1a59be49735da55b67f9d559a84dbd95efb1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:50:02.257Z"
+}

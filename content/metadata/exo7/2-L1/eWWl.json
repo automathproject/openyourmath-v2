@@ -1,0 +1,25 @@
+{
+  "uuid": "eWWl",
+  "source_path": "exo7/2-L1/eWWl.tex",
+  "summary": "On considère une fonction dérivable sur ℝ vérifiant f(0)=f(a)=f'(0)=0. On demande de prouver qu'il existe un point distinct de l'origine où la tangente à la courbe passe par l'origine.",
+  "concepts": [
+    "théorème de Rolle",
+    "dérivabilité",
+    "continuité",
+    "fonction continue par morceaux",
+    "tangente à une courbe"
+  ],
+  "methods": [
+    "construction d'une fonction auxiliaire",
+    "application du théorème de Rolle",
+    "calcul de dérivée"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "tangente à une courbe",
+    "fonction auxiliaire"
+  ],
+  "content_hash": "8bcaa82b8aac1c469bd4a5425c0a1ef52556dc0ac4be8a2576cf2b57965194f9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:14:03.252Z"
+}

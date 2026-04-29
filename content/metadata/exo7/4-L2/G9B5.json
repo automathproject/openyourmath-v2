@@ -1,0 +1,28 @@
+{
+  "uuid": "G9B5",
+  "source_path": "exo7/4-L2/G9B5.tex",
+  "summary": "Résoudre trois systèmes linéaires à trois inconnues. Le premier système est homogène, le second est non homogène avec un second membre constant, et le troisième est non homogène avec des paramètres.",
+  "concepts": [
+    "système linéaire",
+    "système homogène",
+    "système non homogène",
+    "solution unique",
+    "solution triviale",
+    "méthode du pivot de Gauss",
+    "réduction par combinaisons linéaires"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "combinaisons linéaires de lignes",
+    "résolution de système triangulaire"
+  ],
+  "objects": [
+    "système linéaire à trois inconnues",
+    "second membre nul",
+    "second membre constant",
+    "second membre paramétré"
+  ],
+  "content_hash": "587d7d0e4071e98b66d563f2df05a3b78399f32387ae9e6580444c7acd56d2a4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:42:09.704Z"
+}

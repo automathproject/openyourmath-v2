@@ -1,0 +1,24 @@
+{
+  "uuid": "h2p9",
+  "source_path": "exo7/1-L1/h2p9.tex",
+  "summary": "Soit E un espace vectoriel sur un corps K. On considère trois sous-espaces vectoriels A, B et C de E vérifiant A ∩ B = A ∩ C, A + B = A + C et B ⊂ C. On demande de montrer que B = C.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "inclusion d'espaces vectoriels",
+    "somme d'espaces vectoriels",
+    "intersection d'espaces vectoriels",
+    "égalité de sous-espaces"
+  ],
+  "methods": [
+    "manipulation d'inclusions",
+    "utilisation des propriétés de la somme et de l'intersection",
+    "raisonnement par inclusion réciproque"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "sous-espaces vectoriels"
+  ],
+  "content_hash": "d070e06d0ccf38331b2f2eeb6a165fa7429a1ba7af782ed05bd74b174dc39a08",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:02:26.660Z"
+}

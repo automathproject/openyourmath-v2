@@ -1,0 +1,24 @@
+{
+  "uuid": "cngg",
+  "source_path": "exo7/15-L3/cngg.tex",
+  "summary": "L'exercice demande de prouver qu'une limite uniforme de fonctions en escalier sur [0,1] est une fonction réglée, c'est-à-dire qu'elle admet en tout point une limite à droite et une limite à gauche.",
+  "concepts": [
+    "limite uniforme",
+    "fonction en escalier",
+    "fonction réglée",
+    "limite à droite",
+    "limite à gauche",
+    "espace métrique"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la limite uniforme"
+  ],
+  "objects": [
+    "fonction définie sur un intervalle",
+    "suite de fonctions"
+  ],
+  "content_hash": "e220227e35d07a47a7d14190ece589419ee8f55621809ea11d74506cda589df9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:28:26.094Z"
+}

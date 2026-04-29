@@ -1,0 +1,22 @@
+{
+  "uuid": "HeBt",
+  "source_path": "exo7/1-L1/HeBt.tex",
+  "summary": "Trouver tous les entiers relatifs n pour lesquels l'expression n² + n + 7 est divisible par 13.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "équation diophantienne",
+    "congruences"
+  ],
+  "methods": [
+    "résolution d'équation modulo un nombre premier",
+    "test des valeurs possibles"
+  ],
+  "objects": [
+    "entier relatif",
+    "polynôme quadratique"
+  ],
+  "content_hash": "2f8dbfc95d705bbee0844c775852ddc9df663830e9e76ff1d524dcad6cc506e8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:03:37.498Z"
+}

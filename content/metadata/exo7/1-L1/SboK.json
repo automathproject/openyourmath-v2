@@ -1,0 +1,24 @@
+{
+  "uuid": "SboK",
+  "source_path": "exo7/1-L1/SboK.tex",
+  "summary": "L'exercice demande de démontrer qu'un système de trois vecteurs de ℝ³ constitue une base de cet espace vectoriel, puis de calculer les coordonnées d'un vecteur donné dans cette base.",
+  "concepts": [
+    "base d'un espace vectoriel",
+    "famille libre",
+    "famille génératrice",
+    "dimension d'un espace vectoriel",
+    "coordonnées dans une base"
+  ],
+  "methods": [
+    "détermination du rang d'une famille de vecteurs",
+    "calcul de coordonnées par résolution d'un système linéaire"
+  ],
+  "objects": [
+    "système de vecteurs",
+    "vecteur de ℝ³",
+    "matrice associée à une famille de vecteurs"
+  ],
+  "content_hash": "87cd360c680dad0d2144b75b0b9ca8a5c1fd1971ed697983ec617978e6f155b8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:52:33.331Z"
+}

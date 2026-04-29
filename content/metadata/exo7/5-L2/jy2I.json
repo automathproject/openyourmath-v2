@@ -1,0 +1,27 @@
+{
+  "uuid": "jy2I",
+  "source_path": "exo7/5-L2/jy2I.tex",
+  "summary": "Résoudre une équation différentielle du second ordre à coefficients variables et trouver toutes les fonctions de classe C^1 vérifiant une condition fonctionnelle spécifique.",
+  "concepts": [
+    "équation différentielle linéaire du second ordre",
+    "changement de variable",
+    "fonction de classe C^1",
+    "fonction de classe C^2",
+    "fonction de classe C^∞",
+    "solution générale d'équation différentielle"
+  ],
+  "methods": [
+    "changement de variable",
+    "dérivation",
+    "analyse des conditions de régularité",
+    "résolution d'équation différentielle linéaire"
+  ],
+  "objects": [
+    "fonction y(x)",
+    "fonction f(x)",
+    "équation différentielle x²y'' + y = 0"
+  ],
+  "content_hash": "169e682b9d8b2a70f2c84f807eb4b70529b653630125987f553561fb5c540fa0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:42:27.189Z"
+}

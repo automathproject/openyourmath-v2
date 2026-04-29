@@ -1,0 +1,26 @@
+{
+  "uuid": "MN6l",
+  "source_path": "exo7/1-L1/MN6l.tex",
+  "summary": "On considère une matrice A particulière de taille n×n et son commutant. L'exercice demande de montrer l'équivalence entre l'égalité de deux matrices du commutant et l'égalité de leur dernière colonne, puis d'en déduire une expression du commutant.",
+  "concepts": [
+    "commutant d'une matrice",
+    "algèbre de matrices",
+    "matrice de taille finie",
+    "structure d'algèbre",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "étude des propriétés du commutant",
+    "comparaison de matrices",
+    "construction explicite d'une algèbre"
+  ],
+  "objects": [
+    "matrice A",
+    "commutant de A",
+    "matrices M et N",
+    "algèbre K_{n-1}[A]"
+  ],
+  "content_hash": "7559c68dd2ca69c463da91c42df416b6a563a7d795f3498ebca9539bdfcdf7c2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:52:26.223Z"
+}

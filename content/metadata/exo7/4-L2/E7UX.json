@@ -1,0 +1,27 @@
+{
+  "uuid": "E7UX",
+  "source_path": "exo7/4-L2/E7UX.tex",
+  "summary": "L'exercice demande d'exprimer les coefficients d'une matrice représentant un endomorphisme orthogonal en fonction des vecteurs de la base orthonormale et de l'endomorphisme. Il s'agit ensuite de montrer l'existence d'un vecteur u tel que la somme des coefficients de la matrice soit égale au produit scalaire de u avec son image par l'endomorphisme, et d'en déduire une majoration de cette somme.",
+  "concepts": [
+    "espace vectoriel euclidien",
+    "endomorphisme orthogonal",
+    "matrice orthogonale",
+    "produit scalaire",
+    "base orthonormale",
+    "matrice d'un endomorphisme"
+  ],
+  "methods": [
+    "expression des coefficients de la matrice",
+    "utilisation du produit scalaire",
+    "majoration par la norme"
+  ],
+  "objects": [
+    "espace vectoriel euclidien",
+    "endomorphisme",
+    "matrice orthogonale",
+    "vecteur"
+  ],
+  "content_hash": "deb22879792b4721b9883b1b6901b5e2496c32501c892347816e372f12cc0bea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:51:28.983Z"
+}

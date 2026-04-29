@@ -1,33 +1,30 @@
 {
   "uuid": "A4g6",
   "source_path": "exo7/6-L2/A4g6.tex",
-  "summary": "L'exercice demande de déterminer l'équation d'une conique définie comme l'intersection d'une quadrique et d'un cône de sommet donné. Il traite deux cas : une sphère et un point extérieur, puis une quadrique générale et son point de contact.",
+  "summary": "Trouver l'équation d'un cône de sommet S circonscrit à une surface (S). Deux cas sont étudiés : une sphère et une quadrique générale.",
   "concepts": [
-    "quadrique",
+    "géométrie analytique",
     "cône de sommet",
+    "surface de second degré",
     "plan tangent",
     "courbe de contact",
-    "équation cartésienne",
-    "produit vectoriel",
-    "surface du second degré",
-    "hyperbole"
+    "quadrique",
+    "équation cartésienne"
   ],
   "methods": [
-    "calcul de produit vectoriel",
+    "calcul de distance",
+    "produit vectoriel",
     "équation du plan tangent",
-    "intersection de surfaces",
-    "dédoublement des termes",
-    "résolution d'équations cartésiennes"
+    "détermination de la directrice"
   ],
   "objects": [
-    "sphère",
     "cône",
+    "sphère",
     "quadrique",
     "plan tangent",
-    "courbe de contact",
-    "hyperbole"
+    "courbe de contact"
   ],
-  "content_hash": "f7c1a4897cb57dae651cbe24976401f8ea947c5c9c576218221afb8ba683ad41",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:39:14.408Z"
+  "content_hash": "806ca5cdb05225d3b54560cceec6a5451cde8dda4b5aa8928407dd6e44620904",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:01:43.415Z"
 }

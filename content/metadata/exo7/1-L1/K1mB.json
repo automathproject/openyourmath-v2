@@ -1,0 +1,26 @@
+{
+  "uuid": "K1mB",
+  "source_path": "exo7/1-L1/K1mB.tex",
+  "summary": "On considère un espace vectoriel E comme somme directe de sous-espaces vectoriels E₁, ..., Eₙ. On introduit un autre sous-espace F de E et on définit Fᵢ comme l'intersection de Eᵢ et F. L'exercice demande de montrer que la somme des Fᵢ est directe et de comparer F avec cette somme.",
+  "concepts": [
+    "somme directe",
+    "sous-espace vectoriel",
+    "intersection de sous-espaces",
+    "somme directe de sous-espaces",
+    "inclusion de sous-espaces"
+  ],
+  "methods": [
+    "définition de somme directe",
+    "utilisation de l'absurde",
+    "comparaison de dimensions"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "sous-espaces vectoriels",
+    "intersections de sous-espaces",
+    "somme de sous-espaces"
+  ],
+  "content_hash": "e5c92611a43ffaf9309fa1c17a0d10d52aec4566f2a74d9030297ac120eed7d3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:46:47.632Z"
+}

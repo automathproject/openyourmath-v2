@@ -1,0 +1,27 @@
+{
+  "uuid": "h7Pm",
+  "source_path": "exo7/6-L2/h7Pm.tex",
+  "summary": "Dans un triangle ABC, on construit deux cercles ayant pour diamètres les côtés BC et CA. Ces cercles définissent des points P, Q et R. L'exercice demande de prouver que les droites CR, BP et AQ sont concourantes.",
+  "concepts": [
+    "géométrie affine",
+    "cercle circonscrit",
+    "triangle rectangle",
+    "hauteurs d'un triangle",
+    "concourance de droites",
+    "orthocentre"
+  ],
+  "methods": [
+    "construction de cercles",
+    "propriété du triangle rectangle inscrit",
+    "démonstration de concourance"
+  ],
+  "objects": [
+    "triangle ABC",
+    "cercles C et C'",
+    "points P, Q, R",
+    "droites CR, BP, AQ"
+  ],
+  "content_hash": "703014e45785fb708f3b08d09f683309af0d652c580439170494165ac5769080",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:02:54.735Z"
+}

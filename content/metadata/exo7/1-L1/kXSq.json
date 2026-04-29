@@ -1,0 +1,25 @@
+{
+  "uuid": "kXSq",
+  "source_path": "exo7/1-L1/kXSq.tex",
+  "summary": "Calculer le déterminant d'une matrice identité plus une matrice nilpotente. Montrer que le déterminant d'une matrice inversible plus une matrice nilpotente est égal au déterminant de la matrice inversible, sous condition de commutation.",
+  "concepts": [
+    "matrice nilpotente",
+    "déterminant",
+    "commutation de matrices",
+    "matrice inversible",
+    "propriétés des matrices"
+  ],
+  "methods": [
+    "calcul du déterminant",
+    "utilisation de la nilpotence",
+    "étude du cas inversible"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice identité",
+    "matrice nilpotente"
+  ],
+  "content_hash": "8cd65b99793085186d410311aea5e4d3875af397b3d8a6ca1e371775a1f900a2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:14:14.696Z"
+}

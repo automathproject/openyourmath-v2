@@ -1,0 +1,26 @@
+{
+  "uuid": "liHh",
+  "source_path": "exo7/4-L2/liHh.tex",
+  "summary": "L'exercice demande d'évaluer la validité de deux assertions concernant un polynôme P dans un corps K. La première assertion concerne l'irréductibilité de P s'il n'a pas de racine dans K, et la seconde concerne l'absence de racines dans K pour un polynôme irréductible.",
+  "concepts": [
+    "corps",
+    "polynôme",
+    "racine d'un polynôme",
+    "irréductibilité dans un anneau",
+    "factorisation de polynômes",
+    "division euclidienne"
+  ],
+  "methods": [
+    "analyse de l'irréductibilité",
+    "recherche de racines",
+    "factorisation"
+  ],
+  "objects": [
+    "polynôme P",
+    "corps K",
+    "racine dans K"
+  ],
+  "content_hash": "fd1d9a54eda33351f2dd7ae98a5adfd6acc06ed07200937a50292f7c763afc72",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:09:58.895Z"
+}

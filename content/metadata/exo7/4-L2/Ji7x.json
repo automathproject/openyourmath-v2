@@ -1,0 +1,27 @@
+{
+  "uuid": "Ji7x",
+  "source_path": "exo7/4-L2/Ji7x.tex",
+  "summary": "Montrer que le déterminant d'une matrice de Vandermonde est égal au produit des différences de ses éléments diagonaux.",
+  "concepts": [
+    "déterminant",
+    "matrice de Vandermonde",
+    "récurrence",
+    "linéarité du déterminant",
+    "factorisation"
+  ],
+  "methods": [
+    "réduction de colonnes",
+    "développement par rapport à une ligne",
+    "factorisation",
+    "récurrence"
+  ],
+  "objects": [
+    "matrice de Vandermonde",
+    "déterminant",
+    "produit de différences",
+    "système linéaire"
+  ],
+  "content_hash": "5c575848be76f3cac44d447ca00f4f9b4b446f7f2f01108824db2373f32d8248",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:45:33.918Z"
+}

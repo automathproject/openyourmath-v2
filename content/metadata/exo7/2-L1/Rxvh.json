@@ -1,0 +1,27 @@
+{
+  "uuid": "Rxvh",
+  "source_path": "exo7/2-L1/Rxvh.tex",
+  "summary": "L'exercice étudie la fonction $f_n(x) = x \\cos^n x$ sur l'intervalle $\\left[0, \\frac{\\pi}{2}\\right]$. Il demande de prouver l'existence et l'unicité d'un point $x_n$ maximisant $f_n(x)$, puis d'étudier le comportement asymptotique de $x_n$ et de $f_n(x_n)$ lorsque $n$ tend vers l'infini.",
+  "concepts": [
+    "développement limité",
+    "maximum d'une fonction",
+    "équivalent asymptotique",
+    "limite de suite",
+    "fonction trigonométrique"
+  ],
+  "methods": [
+    "recherche de maximum",
+    "analyse asymptotique",
+    "développement limité",
+    "approximation"
+  ],
+  "objects": [
+    "fonction $f_n(x) = x \\cos^n x$",
+    "suite $x_n$",
+    "point critique",
+    "équivalent"
+  ],
+  "content_hash": "fe1410d8017d651fa4000661d97561a7ef9bad0ba697e829b67df8325195fceb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:31:47.120Z"
+}

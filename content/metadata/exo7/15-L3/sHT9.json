@@ -1,0 +1,28 @@
+{
+  "uuid": "sHT9",
+  "source_path": "exo7/15-L3/sHT9.tex",
+  "summary": "L'exercice demande de montrer que l'espace des suites réelles tendant vers 0 est fermé dans l'espace des suites réelles bornées, et que l'ensemble des suites nulles à partir d'un certain rang est dense dans cet espace mais pas dans l'espace des suites bornées.",
+  "concepts": [
+    "espace métrique",
+    "fermeture d'un ensemble",
+    "densité d'un ensemble",
+    "convergence de suites",
+    "distance uniforme",
+    "topologie induite"
+  ],
+  "methods": [
+    "utilisation de la définition de la convergence",
+    "majoration par l'inégalité triangulaire",
+    "construction explicite de suites approchantes",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "espace des suites bornées",
+    "espace des suites tendant vers 0",
+    "ensemble des suites nulles à partir d'un certain rang",
+    "distance uniforme"
+  ],
+  "content_hash": "3aaf740233a80abde5ba2620780f0e2f7bbe1d3f99ee501ee16cb30a001a99d7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:32:14.166Z"
+}

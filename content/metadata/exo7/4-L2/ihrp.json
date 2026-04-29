@@ -1,0 +1,25 @@
+{
+  "uuid": "ihrp",
+  "source_path": "exo7/4-L2/ihrp.tex",
+  "summary": "Étudier l'existence de solutions d'un système linéaire de trois équations à trois inconnues, avec un paramètre m. Le système est donné sous forme matricielle.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "système de Cramer",
+    "incompatibilité d'un système",
+    "matrice carrée"
+  ],
+  "methods": [
+    "calcul du déterminant",
+    "analyse de cas selon les valeurs du paramètre",
+    "comparaison des rangs"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice associée",
+    "paramètre m"
+  ],
+  "content_hash": "d7f16c40a7df0028ba4687151ed1b96e56361f3676db67359cf68b11cf9f2fea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:05:19.389Z"
+}

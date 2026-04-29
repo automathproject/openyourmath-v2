@@ -1,0 +1,25 @@
+{
+  "uuid": "UtIc",
+  "source_path": "exo7/4-L2/UtIc.tex",
+  "summary": "L'exercice demande de déterminer le rang d'une matrice 3x4 en fonction de paramètres réels a et b, et d'identifier les valeurs de a et b pour lesquelles le rang est exactement 2.",
+  "concepts": [
+    "rang d'une matrice",
+    "sous-espace vectoriel",
+    "indépendance linéaire",
+    "système linéaire",
+    "déterminant"
+  ],
+  "methods": [
+    "calcul de mineurs",
+    "réduction par lignes",
+    "analyse des sous-matrices"
+  ],
+  "objects": [
+    "matrice 3x4",
+    "paramètres réels",
+    "sous-matrices carrées"
+  ],
+  "content_hash": "4cf00898d399e75c3e487490ebe26c5c4be53485460b4f875753aea077580d6f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:52:25.377Z"
+}

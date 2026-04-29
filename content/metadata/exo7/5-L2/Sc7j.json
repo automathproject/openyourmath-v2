@@ -1,0 +1,26 @@
+{
+  "uuid": "Sc7j",
+  "source_path": "exo7/5-L2/Sc7j.tex",
+  "summary": "Calculer les deux premiers termes du développement limité pour n tendant vers l'infini de l'intégrale de Riemann dépendant d'un paramètre I_n = ∫₀¹ √(1 + tⁿ) dt.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "développement limité",
+    "asymptotique",
+    "intégration de fonctions continues",
+    "estimation d'erreur"
+  ],
+  "methods": [
+    "développement limité d'une intégrale",
+    "changement de variable",
+    "intégration directe",
+    "estimation d'erreur o(1/n)"
+  ],
+  "objects": [
+    "intégrale paramétrique",
+    "fonction √(1 + tⁿ)",
+    "développement limité"
+  ],
+  "content_hash": "2e0ad45ac484c56658f0edaa4a06b522a087c3cb985b67120eb4908af7869754",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:39:07.680Z"
+}

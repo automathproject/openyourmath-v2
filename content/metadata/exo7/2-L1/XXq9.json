@@ -1,0 +1,27 @@
+{
+  "uuid": "XXq9",
+  "source_path": "exo7/2-L1/XXq9.tex",
+  "summary": "L'exercice demande de prouver l'existence et l'unicité d'une fonction a(x) telle que l'intégrale de e^(t²) de x à a(x) vaut 1, puis de montrer que a est indéfiniment dérivable et que son graphe est symétrique par rapport à la deuxième bissectrice.",
+  "concepts": [
+    "fonction réciproque",
+    "intégrale définie",
+    "dérivabilité",
+    "symétrie de fonction",
+    "fonction indéfiniment dérivable",
+    "théorème des fonctions implicites"
+  ],
+  "methods": [
+    "changement de variable",
+    "inversion de fonction",
+    "calcul de dérivée",
+    "symétrie par rapport à la bissectrice"
+  ],
+  "objects": [
+    "fonction intégrale",
+    "fonction réciproque",
+    "graphe de fonction"
+  ],
+  "content_hash": "5bc2ec5f45df82acad095697debd3ea32653d6354f0b5a558fbee503976c3c1a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:11:55.247Z"
+}

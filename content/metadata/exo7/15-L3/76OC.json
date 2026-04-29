@@ -1,0 +1,28 @@
+{
+  "uuid": "76OC",
+  "source_path": "exo7/15-L3/76OC.tex",
+  "summary": "L'exercice demande de prouver que certaines propriétés de convergence de séries de nombres complexes impliquent que la suite $(u_n)$ appartient à des espaces $l^1$ ou $l^2$.",
+  "concepts": [
+    "convergence de séries",
+    "espaces $l^1$ et $l^2$",
+    "dualité dans les espaces de Banach",
+    "topologie faible",
+    "critère de convergence de séries",
+    "raisonnement par l'absurde"
+  ],
+  "methods": [
+    "analyse de convergence de séries",
+    "utilisation de la dualité",
+    "raisonnement par contradiction",
+    "application de critères de convergence"
+  ],
+  "objects": [
+    "suite de nombres complexes",
+    "série $\\sum u_nv_n$",
+    "espaces $l^1$ et $l^2$",
+    "suite bornée"
+  ],
+  "content_hash": "76372060d304a80a200cb5228d1c2bfb2fa32b86421501cc914c197812afd882",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:35:04.911Z"
+}

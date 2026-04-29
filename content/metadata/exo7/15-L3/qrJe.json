@@ -1,0 +1,30 @@
+{
+  "uuid": "qrJe",
+  "source_path": "exo7/15-L3/qrJe.tex",
+  "summary": "On définit une distance sur ℝ à partir d'une application injective f de ℝ dans ℝ². L'exercice demande de montrer que cette distance est complète si et seulement si l'image de f est un fermé dans ℝ².",
+  "concepts": [
+    "espace métrique complet",
+    "espace de Banach",
+    "distance induite",
+    "application injective",
+    "fermeture d'un ensemble",
+    "suite de Cauchy",
+    "convergence de suites",
+    "continuité"
+  ],
+  "methods": [
+    "raisonnement par double implication",
+    "caractérisation des fermés par les suites",
+    "passage à la limite",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "distance d",
+    "application f",
+    "suite de Cauchy",
+    "image de f"
+  ],
+  "content_hash": "0d9907af41ec7307d4bca6b7d2282c99ae782e98eed949ea2ba77539e1cfe528",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:13:34.572Z"
+}

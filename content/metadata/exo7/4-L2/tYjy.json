@@ -1,0 +1,24 @@
+{
+  "uuid": "tYjy",
+  "source_path": "exo7/4-L2/tYjy.tex",
+  "summary": "On considère une matrice réelle A telle que pour tout vecteur X, la trace de la matrice tXAX est positive. On demande de comparer les noyaux de A et de sa transposée.",
+  "concepts": [
+    "matrice symétrique",
+    "matrice antisymétrique",
+    "décomposition d'une matrice",
+    "noyau d'une matrice",
+    "transposée d'une matrice"
+  ],
+  "methods": [
+    "décomposition en symétrique et antisymétrique",
+    "comparaison des noyaux"
+  ],
+  "objects": [
+    "matrice carrée réelle",
+    "vecteur colonne",
+    "trace d'une matrice"
+  ],
+  "content_hash": "6fecbfd2e1fe83847687b7492df20e8596b20353d5761a8f97ef76f4a00c527e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:56:30.554Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "b06M",
+  "source_path": "exo7/6-L2/b06M.tex",
+  "summary": "L'exercice demande si, pour n points donnés dans le plan, il existe n autres points tels que chaque point initial soit le milieu du segment reliant deux points consécutifs de la seconde série, avec une condition cyclique.",
+  "concepts": [
+    "symétrie centrale",
+    "composition de transformations",
+    "translation",
+    "point invariant",
+    "géométrie affine"
+  ],
+  "methods": [
+    "analyse des transformations géométriques",
+    "composition de symétries centrales",
+    "étude des points fixes"
+  ],
+  "objects": [
+    "points du plan",
+    "symétries centrales",
+    "translations",
+    "vecteurs"
+  ],
+  "content_hash": "70b528280baf06c851dbc393276c9d21196da4ecd8fe08cc390ff4977acdb570",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:59:32.495Z"
+}

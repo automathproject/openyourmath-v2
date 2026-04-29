@@ -1,0 +1,29 @@
+{
+  "uuid": "aPyV",
+  "source_path": "exo7/5-L2/aPyV.tex",
+  "summary": "Calculer le volume de l'intérieur d'un ellipsoïde défini par une équation quadratique en trois variables.",
+  "concepts": [
+    "intégrale multiple",
+    "changement de variables",
+    "volume d'un ellipsoïde",
+    "valeurs propres d'une matrice",
+    "forme quadratique",
+    "déterminant d'une matrice",
+    "diagonalisation"
+  ],
+  "methods": [
+    "changement de variables",
+    "calcul du déterminant jacobien",
+    "utilisation des valeurs propres",
+    "formule du volume d'un ellipsoïde"
+  ],
+  "objects": [
+    "ellipsoïde",
+    "matrice",
+    "forme quadratique",
+    "intégrale triple"
+  ],
+  "content_hash": "b02d2744875efd32494c16615c91fe119394cb6b1115b7933dd35aee8ded4157",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:42:22.604Z"
+}

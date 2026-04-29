@@ -1,0 +1,28 @@
+{
+  "uuid": "rmMF",
+  "source_path": "exo7/5-L2/rmMF.tex",
+  "summary": "On considère une fonction définie comme le produit des distances d'un point M aux trois côtés d'un triangle ABC. L'exercice demande de prouver l'existence d'un maximum de cette fonction à l'intérieur du triangle et de caractériser géométriquement le point où ce maximum est atteint.",
+  "concepts": [
+    "compacité",
+    "coordonnées barycentriques",
+    "extremum local",
+    "fonction de plusieurs variables",
+    "géométrie du triangle",
+    "optimisation sous contrainte"
+  ],
+  "methods": [
+    "changement de coordonnées",
+    "analyse barycentrique",
+    "maximisation de produit",
+    "utilisation de la compacité"
+  ],
+  "objects": [
+    "triangle",
+    "fonction de distances",
+    "coordonnées barycentriques",
+    "point intérieur au triangle"
+  ],
+  "content_hash": "a14ed81f507db4c4e959ff05bb587cc2fad9e108f685d0bb1315c0f0a1495c77",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:21:39.751Z"
+}

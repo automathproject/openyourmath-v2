@@ -1,0 +1,27 @@
+{
+  "uuid": "Ac6y",
+  "source_path": "exo7/4-L2/Ac6y.tex",
+  "summary": "On considère une matrice symétrique réelle de taille n×n avec des valeurs propres données. L'exercice demande de prouver l'égalité entre la somme des carrés de tous ses coefficients et la somme des carrés de ses valeurs propres.",
+  "concepts": [
+    "matrice symétrique",
+    "valeurs propres",
+    "produit scalaire",
+    "orthogonalité",
+    "diagonalisation",
+    "norme de Frobenius"
+  ],
+  "methods": [
+    "diagonalisation",
+    "calcul de trace",
+    "utilisation de la base orthonormée de vecteurs propres"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "valeurs propres",
+    "vecteurs propres",
+    "base orthonormée"
+  ],
+  "content_hash": "d41d69632ab7bcd1696a8a4b49e7f7750342403ae01313ab94b3f36084a44296",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:06:25.607Z"
+}

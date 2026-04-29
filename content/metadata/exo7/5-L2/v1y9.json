@@ -1,0 +1,25 @@
+{
+  "uuid": "v1y9",
+  "source_path": "exo7/5-L2/v1y9.tex",
+  "summary": "L'exercice demande de déterminer l'équation du plan tangent à une surface définie par une équation de type z = f(x,y) en un point donné. Deux cas sont traités : une surface quadratique et une surface impliquant des fonctions trigonométriques et exponentielles.",
+  "concepts": [
+    "différentiabilité des fonctions de plusieurs variables",
+    "plan tangent",
+    "développement limité du premier ordre",
+    "dérivées partielles",
+    "équation cartésienne d'un plan"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "application du développement limité",
+    "linéarisation locale"
+  ],
+  "objects": [
+    "surface de niveau",
+    "fonction de deux variables",
+    "plan tangent"
+  ],
+  "content_hash": "372cbc5a05d8065c119cbd73495763a7aa74a252387f317b0e7514df13acb44b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:23:53.649Z"
+}

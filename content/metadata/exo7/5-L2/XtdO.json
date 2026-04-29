@@ -1,0 +1,28 @@
+{
+  "uuid": "XtdO",
+  "source_path": "exo7/5-L2/XtdO.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés : d'abord que une application de classe C^1 est affine si et seulement si sa différentielle est constante, puis que une fonction symétrique en trois variables vérifiant certaines conditions est identiquement nulle (lemme des tresses). Enfin, il s'agit de montrer qu'une application de classe C^2 est une isométrie si et seulement si sa différentielle est orthogonale en tout point.",
+  "concepts": [
+    "application affine",
+    "différentielle",
+    "espace vectoriel euclidien",
+    "application orthogonale",
+    "fonction symétrique",
+    "lemme des tresses"
+  ],
+  "methods": [
+    "caractérisation des applications affines",
+    "analyse des conditions de symétrie",
+    "utilisation des propriétés des applications orthogonales"
+  ],
+  "objects": [
+    "application de classe C^1",
+    "application de classe C^2",
+    "fonction de trois variables",
+    "différentielle constante",
+    "application orthogonale"
+  ],
+  "content_hash": "e204190c72c7116e677d3f5853eeb49313c85052a6a49d8ea76b4989d661f5f1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:07:18.496Z"
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "fLIk",
+  "source_path": "exo7/4-L2/fLIk.tex",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité d'une factorisation d'une matrice inversible en produit d'une matrice orthogonale et d'une matrice triangulaire supérieure à coefficients diagonaux positifs, puis d'appliquer ce résultat pour prouver une inégalité de Hadamard dans un espace vectoriel euclidien.",
+  "concepts": [
+    "matrice orthogonale",
+    "matrice triangulaire supérieure",
+    "décomposition QR",
+    "produit scalaire",
+    "norme euclidienne",
+    "déterminant",
+    "inégalité de Hadamard"
+  ],
+  "methods": [
+    "factorisation matricielle",
+    "unicité de la décomposition",
+    "application de la décomposition QR",
+    "calcul de déterminant",
+    "étude des cas d'égalité"
+  ],
+  "objects": [
+    "matrice inversible",
+    "matrice orthogonale",
+    "matrice triangulaire supérieure",
+    "espace vectoriel euclidien",
+    "vecteurs de base orthonormée",
+    "vecteurs quelconques"
+  ],
+  "content_hash": "5682e85352de992d7737ca48b71674185c995e87efd82f5d4f95198a7373f481",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:42:16.898Z"
+}

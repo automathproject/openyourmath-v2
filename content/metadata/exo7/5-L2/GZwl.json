@@ -1,0 +1,28 @@
+{
+  "uuid": "GZwl",
+  "source_path": "exo7/5-L2/GZwl.tex",
+  "summary": "L'exercice demande de déterminer deux limites impliquant des intégrales de Riemann dépendant d'un paramètre, où une fonction positive et continue atteint son maximum en un point intérieur. La première limite compare l'intégrale sur tout l'intervalle à celle sur un intervalle centré autour du maximum. La seconde limite introduit une fonction pondération.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "continuité",
+    "maximum d'une fonction",
+    "limite de suites",
+    "intégrale impropre",
+    "théorème de convergence dominée"
+  ],
+  "methods": [
+    "comparaison d'intégrales",
+    "analyse asymptotique",
+    "changement de variable",
+    "approximation locale"
+  ],
+  "objects": [
+    "fonction continue positive",
+    "intervalle de définition",
+    "point de maximum",
+    "fonction pondération"
+  ],
+  "content_hash": "fea00a36b2438f121464f227ad690e65cf1686bc928da77e9009f39925d986cf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:32:26.136Z"
+}

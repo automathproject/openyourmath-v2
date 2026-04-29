@@ -1,0 +1,28 @@
+{
+  "uuid": "PZ1V",
+  "source_path": "exo7/2-L1/PZ1V.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'une fonction ε(x) pour exprimer la dérivabilité d'une fonction f en 0, puis d'utiliser ce résultat pour calculer les limites de deux suites (uₙ) et (vₙ). Enfin, il s'agit de construire une suite (wₙ) vérifiant certaines conditions.",
+  "concepts": [
+    "dérivabilité",
+    "développement limité",
+    "limite de suite",
+    "continuité en un point",
+    "fonction dérivable",
+    "théorème des accroissements finis"
+  ],
+  "methods": [
+    "développement limité du premier ordre",
+    "approximation affine",
+    "calcul de limite de suite",
+    "construction explicite de suite"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "suite numérique",
+    "fonction ε(x)",
+    "développement limité"
+  ],
+  "content_hash": "53c787f9d8c5b34abe26eb645324dbab9b38b1f4cee593a4930227837ee0aa28",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:07:45.727Z"
+}

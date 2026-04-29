@@ -1,0 +1,26 @@
+{
+  "uuid": "QD3e",
+  "source_path": "exo7/4-L2/QD3e.tex",
+  "summary": "On considère un endomorphisme f de R³ tel que f² = 0. On demande de montrer l'existence d'une forme linéaire α et d'un vecteur v tels que f(x) = α(x)v pour tout x dans R³.",
+  "concepts": [
+    "endomorphisme",
+    "rang d'un endomorphisme",
+    "forme linéaire",
+    "espace dual",
+    "noyau d'un endomorphisme",
+    "nilpotence"
+  ],
+  "methods": [
+    "étude du rang",
+    "utilisation de la nilpotence",
+    "construction explicite de forme linéaire et vecteur"
+  ],
+  "objects": [
+    "endomorphisme de R³",
+    "forme linéaire",
+    "vecteur de R³"
+  ],
+  "content_hash": "a8aaeed1207332e3daec1b4d481aac441fba18ee102e96c5bf6b920a0b025d7a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:56:10.444Z"
+}

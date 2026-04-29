@@ -1,0 +1,29 @@
+{
+  "uuid": "eWW5",
+  "source_path": "exo7/2-L1/eWW5.tex",
+  "summary": "L'exercice demande de prouver une inégalité entre une fraction et une différence de logarithmes pour tout x > 0, puis d'en déduire une inégalité pour la somme des inverses des entiers jusqu'à n. Enfin, il s'agit de montrer qu'une suite définie comme la différence entre cette somme et le logarithme est décroissante et convergente.",
+  "concepts": [
+    "fonction logarithme",
+    "inégalité",
+    "somme des inverses",
+    "suite numérique",
+    "convergence",
+    "décroissance d'une suite",
+    "théorème des gendarmes"
+  ],
+  "methods": [
+    "comparaison de fonctions",
+    "téléscopage",
+    "étude de la monotonie",
+    "limite de suite"
+  ],
+  "objects": [
+    "fonction logarithme",
+    "somme des inverses",
+    "suite (u_n)",
+    "inégalité"
+  ],
+  "content_hash": "efd84972bf318002a9c0ec0040093d68a73be017aa9afcd6dd3838fd5c900b4e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:13:50.992Z"
+}

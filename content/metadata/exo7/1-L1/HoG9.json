@@ -1,0 +1,28 @@
+{
+  "uuid": "HoG9",
+  "source_path": "exo7/1-L1/HoG9.tex",
+  "summary": "Calculer la probabilité qu'au moins une personne tire son propre cadeau dans un problème de dérangement, et déterminer la limite de cette probabilité quand le nombre de personnes tend vers l'infini.",
+  "concepts": [
+    "dérangement",
+    "permutation",
+    "cardinal d'un ensemble",
+    "limite de suite",
+    "probabilité",
+    "fonction exponentielle"
+  ],
+  "methods": [
+    "calcul de cardinal",
+    "principe d'inclusion-exclusion",
+    "utilisation de la formule du dérangement",
+    "calcul de limite"
+  ],
+  "objects": [
+    "permutation",
+    "ensemble des dérangements",
+    "cardinal d'un ensemble",
+    "suite numérique"
+  ],
+  "content_hash": "1640d6b3136a522cb04d2f2ee44c05a4a35d98c90d8a3d1810e8406b5ff00976",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:41:05.164Z"
+}

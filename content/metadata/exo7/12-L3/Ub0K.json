@@ -1,0 +1,26 @@
+{
+  "uuid": "Ub0K",
+  "source_path": "exo7/12-L3/Ub0K.tex",
+  "summary": "On considère l'application $\\Psi$ définie sur $F \\times E$ et on demande de montrer que l'application $\\varphi$ qui à une matrice inversible $A$ associe son inverse $A^{-1}$ est différentiable en tout point de $F$ et de retrouver sa différentielle, en utilisant le théorème des fonctions implicites.",
+  "concepts": [
+    "théorème des fonctions implicites",
+    "différentiabilité",
+    "matrice inversible",
+    "espace vectoriel",
+    "application linéaire",
+    "différentielle"
+  ],
+  "methods": [
+    "application du théorème des fonctions implicites",
+    "calcul de la différentielle"
+  ],
+  "objects": [
+    "application $\\Psi$",
+    "application $\\varphi$",
+    "matrice inversible $A$",
+    "inverse $A^{-1}$"
+  ],
+  "content_hash": "9122c46145701e8c3d38be374a8024b9dcca2c2f33b33190affeeaccf513a197",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:16:34.135Z"
+}

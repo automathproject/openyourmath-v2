@@ -1,0 +1,24 @@
+{
+  "uuid": "7mIi",
+  "source_path": "amscc/7mIi.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice 3x3 donnée est inversible en calculant son déterminant, puis de calculer son inverse. Ensuite, il s'agit de résoudre un système linéaire de trois équations à trois inconnues.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "inversibilité d'une matrice",
+    "système linéaire",
+    "rang d'une matrice",
+    "matrice inverse"
+  ],
+  "methods": [
+    "calcul du déterminant par la méthode du développement",
+    "calcul de la matrice inverse"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "système linéaire de trois équations",
+    "inconnues x, y, z"
+  ],
+  "content_hash": "6140b26e2ed33c4fab3b514f6636f724c2cce09a15292f5270c337cfa7494918",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:34:16.507Z"
+}

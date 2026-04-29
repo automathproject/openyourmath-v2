@@ -1,0 +1,26 @@
+{
+  "uuid": "jALS",
+  "source_path": "exo7/1-L1/jALS.tex",
+  "summary": "Trouver tous les entiers naturels n pour lesquels 4^n est inférieur ou égal à n! (factorielle de n).",
+  "concepts": [
+    "factorielle",
+    "inégalité",
+    "entiers naturels",
+    "fonction exponentielle",
+    "fonction factorielle",
+    "comparaison de croissance"
+  ],
+  "methods": [
+    "comparaison directe",
+    "calcul explicite",
+    "analyse de croissance"
+  ],
+  "objects": [
+    "entiers naturels",
+    "factorielle",
+    "puissance de 4"
+  ],
+  "content_hash": "1df5b0ccc3593d45991898c00fded45046b6fff64e962788aa94feccd0d04724",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:23:05.232Z"
+}

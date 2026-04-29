@@ -1,0 +1,25 @@
+{
+  "uuid": "ajmt",
+  "source_path": "exo7/4-L2/ajmt.tex",
+  "summary": "L'exercice demande de déterminer l'inverse d'une matrice A particulière, définie par ses coefficients non nuls uniquement sur les diagonales adjacentes. La matrice est caractérisée par des conditions spécifiques sur ses éléments.",
+  "concepts": [
+    "déterminant",
+    "inversibilité de matrice",
+    "récurrence",
+    "système linéaire",
+    "matrice tridiagonale"
+  ],
+  "methods": [
+    "développement par blocs",
+    "récurrence",
+    "résolution de système linéaire"
+  ],
+  "objects": [
+    "matrice carrée",
+    "système d'équations linéaires",
+    "vecteurs colonnes"
+  ],
+  "content_hash": "94cd86c02f537729f236d793f4f455002c090e755b1f324bc9993d6c4a03a294",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:57:21.665Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "IHoL",
+  "source_path": "exo7/12-L3/IHoL.tex",
+  "summary": "Recherche des extrémums (minima et maxima) de cinq fonctions de deux variables définies sur ℝ². L'énoncé demande d'identifier les points critiques et de déterminer la nature de ces extrémums pour chaque fonction donnée.",
+  "concepts": [
+    "extrémum",
+    "fonction de deux variables",
+    "point critique",
+    "hessien",
+    "déterminant",
+    "gradient"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "analyse du hessien",
+    "recherche de points critiques",
+    "classification des extrémums"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "fonction exponentielle",
+    "fonction trigonométrique"
+  ],
+  "content_hash": "f9b0c55add699ed6432ba5bed80c39c79fb63c78cb763c79a22c090d3389eead",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:30:27.980Z"
+}

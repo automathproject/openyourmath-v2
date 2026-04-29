@@ -1,0 +1,26 @@
+{
+  "uuid": "PEig",
+  "source_path": "exo7/15-L3/PEig.tex",
+  "summary": "L'exercice demande de prouver qu'un ensemble défini à partir d'un ouvert d'un espace produit est un ouvert, puis de vérifier cette propriété sur un exemple concret dans ℝ².",
+  "concepts": [
+    "espace topologique produit",
+    "ouvert",
+    "continuité",
+    "topologie produit",
+    "projection",
+    "topologie de ℝ²"
+  ],
+  "methods": [
+    "raisonnement par définition",
+    "vérification par exemple"
+  ],
+  "objects": [
+    "ensemble A_x",
+    "ouvert O",
+    "espace produit X×Y",
+    "ensemble de ℝ²"
+  ],
+  "content_hash": "b0514b66fad0156fb2caa1dab76275e79ed464a6b1e425744d8ce06f68fe4ffe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:30:35.682Z"
+}

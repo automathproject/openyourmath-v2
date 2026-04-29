@@ -1,0 +1,26 @@
+{
+  "uuid": "CkuL",
+  "source_path": "exo7/4-L2/CkuL.tex",
+  "summary": "On considère deux matrices A et B de mêmes lignes et on les concatène en une matrice C. L'exercice demande de montrer l'équivalence entre le rang de C égal au rang de A et l'existence d'une matrice P telle que B soit le produit de A par P.",
+  "concepts": [
+    "rang d'une matrice",
+    "matrice bloc",
+    "produit matriciel",
+    "équivalence matricielle",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "manipulation de matrices",
+    "calcul de rang",
+    "décomposition matricielle"
+  ],
+  "objects": [
+    "matrice A",
+    "matrice B",
+    "matrice C",
+    "matrice P"
+  ],
+  "content_hash": "25e33655507d07415a4a0b9d65f3a308ecfa0ea2a5f7c637841cba2c9f0fd544",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:38:11.573Z"
+}

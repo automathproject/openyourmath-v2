@@ -1,0 +1,26 @@
+{
+  "uuid": "WYBV",
+  "source_path": "exo7/4-L2/WYBV.tex",
+  "summary": "On considère un groupe G où tout élément est son propre inverse. On demande de calculer le produit a*b*a⁻¹*b⁻¹ pour tout couple (a,b) de G² et de montrer que G est abélien.",
+  "concepts": [
+    "groupe",
+    "sous-groupe",
+    "élément d'ordre 2",
+    "groupe abélien",
+    "inverse d'un élément",
+    "propriété commutative"
+  ],
+  "methods": [
+    "calcul d'inverse",
+    "vérification de la commutativité",
+    "manipulation des relations de groupe"
+  ],
+  "objects": [
+    "groupe G",
+    "élément x de G",
+    "produit a*b*a⁻¹*b⁻¹"
+  ],
+  "content_hash": "2fab5fa078021106f358fb5f2bd64cbefa638397622e6d2c56a11de999a35be0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:52:43.385Z"
+}

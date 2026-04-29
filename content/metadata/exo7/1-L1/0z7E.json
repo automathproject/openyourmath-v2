@@ -1,0 +1,24 @@
+{
+  "uuid": "0z7E",
+  "source_path": "exo7/1-L1/0z7E.tex",
+  "summary": "Calculer l'inverse d'une matrice carrée 4x4 donnée. L'énoncé demande de déterminer la matrice inverse d'une matrice spécifique.",
+  "concepts": [
+    "inverse d'une matrice",
+    "matrice carrée",
+    "déterminant",
+    "matrice inversible",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "calcul du déterminant",
+    "méthode de Gauss-Jordan",
+    "inversion par blocs"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "matrice inversible"
+  ],
+  "content_hash": "527a0cce2cb964d79c502753f7c5d66dddc4dc43c82d9dd2acdfbd7e7b7dbb57",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:37:47.170Z"
+}

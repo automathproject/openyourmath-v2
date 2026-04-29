@@ -1,0 +1,26 @@
+{
+  "uuid": "r3px",
+  "source_path": "exo7/2-L1/r3px.tex",
+  "summary": "On étudie la fonction f(x) = x e^x définie sur [-1, +∞[ et à valeurs dans [-e⁻¹, +∞[. L'exercice demande de prouver que f est bijective et que son inverse vérifie une équivalence asymptotique en +∞.",
+  "concepts": [
+    "bijectivité",
+    "inverse d'une fonction",
+    "équivalent asymptotique",
+    "limite en +∞",
+    "fonction exponentielle"
+  ],
+  "methods": [
+    "étude de la monotonie",
+    "théorème de la bijection",
+    "développement limité",
+    "comparaison de limites"
+  ],
+  "objects": [
+    "fonction réelle",
+    "inverse d'une fonction",
+    "équivalent asymptotique"
+  ],
+  "content_hash": "38888f64ebdcec61595ea9c8d866f1e47546a78a94c82cb9325f8c8382faba93",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:41:59.199Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "Bn2D",
+  "source_path": "exo7/5-L2/Bn2D.tex",
+  "summary": "On considère une fonction de deux variables définie par f(x,y) = (x+y, xy). L'exercice demande de montrer que cette fonction induit un difféomorphisme de classe C^1 entre deux ouverts de R^2, puis de déterminer son inverse et de vérifier une propriété sur les matrices jacobiennes.",
+  "concepts": [
+    "difféomorphisme",
+    "fonction de classe C^1",
+    "matrice jacobienne",
+    "inverse d'une application",
+    "changement de variables",
+    "continuité différentielle"
+  ],
+  "methods": [
+    "calcul de la matrice jacobienne",
+    "vérification de l'injectivité et de la surjectivité",
+    "calcul de l'inverse d'une application",
+    "vérification de l'identité matricielle"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "matrices jacobiennes",
+    "ouverts de R^2",
+    "application f et son inverse f^{-1}"
+  ],
+  "content_hash": "a8d13cb6844d912851a6a2c2f3f415dca07671619e684421f4fa2302c31b1fc8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:48:27.505Z"
+}

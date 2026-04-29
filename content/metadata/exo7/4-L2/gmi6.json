@@ -1,0 +1,29 @@
+{
+  "uuid": "gmi6",
+  "source_path": "exo7/4-L2/gmi6.tex",
+  "summary": "L'exercice étudie un système linéaire à trois équations et trois inconnues dépendant d'un paramètre réel a. Il demande de déterminer, selon les valeurs de a, si le système n'a pas de solution, a une solution unique, ou a une infinité de solutions.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "matrice augmentée",
+    "théorème de Rouché-Frobenius",
+    "déterminant",
+    "inconnue libre",
+    "solution unique",
+    "solution infinie"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "réduction de matrice",
+    "analyse de rang",
+    "comparaison des rangs"
+  ],
+  "objects": [
+    "système linéaire à trois équations",
+    "matrice 3x3",
+    "paramètre réel"
+  ],
+  "content_hash": "463f407e01579f79a57c2ade5a57e6f01ccbd839d78b99ef94dca64c3b9c4dac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:03:11.145Z"
+}

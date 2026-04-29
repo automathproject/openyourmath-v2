@@ -1,0 +1,25 @@
+{
+  "uuid": "okkl",
+  "source_path": "exo7/12-L3/okkl.tex",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité d'une solution positive y(x) à l'équation F(x,y)=0 pour x proche de 0, puis de vérifier une relation sur la dérivée y'(x) sans la résoudre explicitement.",
+  "concepts": [
+    "théorème des fonctions implicites",
+    "existence et unicité locale",
+    "dérivée partielle",
+    "difféomorphisme local",
+    "fonction de classe C^1"
+  ],
+  "methods": [
+    "application du théorème des fonctions implicites",
+    "calcul de dérivées partielles",
+    "analyse de la condition de non-annulation du jacobien"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "équation implicite",
+    "dérivée partielle"
+  ],
+  "content_hash": "962d3c6f9c820126cf0bb855242c38e74e5e92efd7e9f7798a05c930c4967572",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:19:09.889Z"
+}

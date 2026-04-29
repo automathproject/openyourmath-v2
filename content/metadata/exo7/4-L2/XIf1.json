@@ -1,0 +1,27 @@
+{
+  "uuid": "XIf1",
+  "source_path": "exo7/4-L2/XIf1.tex",
+  "summary": "Trouver la valeur de x pour laquelle le produit de trois matrices ABC a un rang maximal, dans le cadre de l'étude des systèmes linéaires et des déterminants.",
+  "concepts": [
+    "rang d'une matrice",
+    "produit de matrices",
+    "système linéaire",
+    "déterminant",
+    "matrice inversible",
+    "réduction par lignes"
+  ],
+  "methods": [
+    "calcul du rang",
+    "réduction de Gauss",
+    "factorisation matricielle"
+  ],
+  "objects": [
+    "matrice 3x2",
+    "matrice 2x2",
+    "matrice 2x3",
+    "produit de matrices"
+  ],
+  "content_hash": "41c7f8f3090870ddb531c1af8dc6662ae2333509d7315d05901855c6c6167a12",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:54:31.340Z"
+}

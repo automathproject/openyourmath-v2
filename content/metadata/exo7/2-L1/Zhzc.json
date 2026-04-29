@@ -1,0 +1,24 @@
+{
+  "uuid": "Zhzc",
+  "source_path": "exo7/2-L1/Zhzc.tex",
+  "summary": "On considère une fonction continue non identiquement nulle sur un intervalle [a,b] dont les intégrales des produits avec les monômes t^k (pour k de 0 à n-1) s'annulent. On demande de prouver par récurrence que cette fonction change au moins n fois de signe sur l'intervalle ouvert.]a,b[.",
+  "concepts": [
+    "intégrale",
+    "fonction continue",
+    "changement de signe",
+    "récurrence",
+    "raisonnement par l'absurde"
+  ],
+  "methods": [
+    "récurrence",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrale",
+    "monômes"
+  ],
+  "content_hash": "2fb3cdbdf18f16a23a783467493e7eafa373af634114fe4ebe4cf4ddb8ec64e7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:41:56.071Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "RB17",
+  "source_path": "exo7/4-L2/RB17.tex",
+  "summary": "Déterminer les valeurs réelles non nulles de a, b, c pour qu'une matrice donnée soit la matrice d'une isométrie.",
+  "concepts": [
+    "isométrie",
+    "matrice orthogonale",
+    "produit scalaire",
+    "norme euclidienne",
+    "matrice symétrique"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "vérification de l'orthogonalité",
+    "résolution d'équations algébriques"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "réels non nuls"
+  ],
+  "content_hash": "566b2d8d1070d672b0f3491044a9a54372c38b40e99be96b87ae8e16ba380e51",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:24:13.084Z"
+}

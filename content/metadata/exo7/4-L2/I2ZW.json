@@ -1,0 +1,23 @@
+{
+  "uuid": "I2ZW",
+  "source_path": "exo7/4-L2/I2ZW.tex",
+  "summary": "Montrer l'existence d'une partie génératrice d'un groupe fini de cardinal n ayant au plus log₂(n) éléments.",
+  "concepts": [
+    "groupe fini",
+    "partie génératrice",
+    "cardinal d'un groupe",
+    "logarithme en base 2",
+    "minimalité d'une partie génératrice"
+  ],
+  "methods": [
+    "argument par minimalité",
+    "construction explicite d'éléments distincts"
+  ],
+  "objects": [
+    "groupe fini G",
+    "partie génératrice de cardinal minimal"
+  ],
+  "content_hash": "a58e3f1ad338668ba5dbf3375ad28f977e54f3ef69a34e8cd4c2be0a822cf7a5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:35:38.932Z"
+}

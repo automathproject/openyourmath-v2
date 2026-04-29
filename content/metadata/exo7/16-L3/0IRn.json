@@ -1,0 +1,29 @@
+{
+  "uuid": "0IRn",
+  "source_path": "exo7/16-L3/0IRn.tex",
+  "summary": "L'exercice demande de démontrer que si une fonction entière f vérifie |f(z)|=1 sur le cercle unité et n'a pas de zéros dans le disque unité fermé D, alors f est constante. Ensuite, si f a des zéros dans D, on doit montrer que f est de la forme kz^n avec |k|=1 et n∈ℕ.",
+  "concepts": [
+    "fonction entière",
+    "zéros d'une fonction holomorphe",
+    "disque unité",
+    "multiplicité d'un zéro",
+    "formule de Cauchy",
+    "théorème de Liouville",
+    "principe du maximum"
+  ],
+  "methods": [
+    "factorisation des zéros",
+    "construction de fonction auxiliaire",
+    "application de la formule de Cauchy",
+    "analyse de la croissance"
+  ],
+  "objects": [
+    "fonction entière f",
+    "disque unité fermé D",
+    "zéros a_j de f",
+    "fonction g(z) auxiliaire"
+  ],
+  "content_hash": "219ecedf7ab2d88a835d8ece013eb7c4e451a3887f041349994e412efe22f13b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:30:13.827Z"
+}

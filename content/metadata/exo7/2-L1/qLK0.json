@@ -1,0 +1,28 @@
+{
+  "uuid": "qLK0",
+  "source_path": "exo7/2-L1/qLK0.tex",
+  "summary": "On considère une fonction de classe C² sur un intervalle [a,b]. L'exercice demande de majorer l'écart entre la dérivée en un point et la pente de la corde [a,b], puis d'étudier le cas d'égalité de cette majoration.",
+  "concepts": [
+    "formule de Taylor",
+    "développement limité",
+    "majoration",
+    "fonction de classe C²",
+    "dérivée",
+    "pente de la corde",
+    "polynôme de degré 2"
+  ],
+  "methods": [
+    "développement de Taylor",
+    "analyse de cas d'égalité",
+    "majoration d'erreur"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "intervalle",
+    "dérivée première",
+    "dérivée seconde"
+  ],
+  "content_hash": "e0cd447271d894bbea97c64204ec0093c8b183f16fe8794bea2d6229b8e7e613",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:41:06.214Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "UWQd",
+  "source_path": "exo7/4-L2/UWQd.tex",
+  "summary": "L'exercice demande de montrer l'équivalence entre la diagonalisabilité d'une matrice D et celle de son image par un automorphisme Φ préservant le crochet de Lie.",
+  "concepts": [
+    "automorphisme d'algèbre de matrices",
+    "crochet de Lie",
+    "diagonalisabilité",
+    "annulateur scindé à racines simples",
+    "commutation de matrices",
+    "diagonalisation simultanée",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "étude de l'application X ↦ [D,X]",
+    "utilisation de polynômes annulateurs",
+    "diagonalisation simultanée de matrices commutantes",
+    "calcul de dérivées de polynômes"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "automorphisme d'algèbre de matrices",
+    "application linéaire X ↦ [D,X]",
+    "polynôme annulateur"
+  ],
+  "content_hash": "4cc60f0f27fa47a6c67d6e8ff065c4b329c2d7b17f4ce82ae50d53af70ec09ba",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:57:28.274Z"
+}

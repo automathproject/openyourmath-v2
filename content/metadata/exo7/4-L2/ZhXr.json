@@ -1,0 +1,26 @@
+{
+  "uuid": "ZhXr",
+  "source_path": "exo7/4-L2/ZhXr.tex",
+  "summary": "On considère deux matrices symétriques réelles A et B. On note λ et λ' leurs plus petites valeurs propres, et μ et μ' leurs plus grandes valeurs propres. On demande de montrer que toute valeur propre de la somme A+B est comprise entre λ+λ' et μ+μ'.",
+  "concepts": [
+    "matrice symétrique",
+    "valeur propre",
+    "spectre d'une matrice",
+    "endomorphisme auto-adjoint",
+    "espace euclidien",
+    "espace normé"
+  ],
+  "methods": [
+    "diagonalisation",
+    "propriétés spectrales des matrices symétriques",
+    "inégalités spectrales"
+  ],
+  "objects": [
+    "matrices symétriques réelles",
+    "valeurs propres",
+    "somme de matrices"
+  ],
+  "content_hash": "a7c8ccbe29b04f224c67c7672c2cfbabc85321783222ed165dd6061c1816281d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:36:19.734Z"
+}

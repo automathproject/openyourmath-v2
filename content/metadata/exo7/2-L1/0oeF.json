@@ -1,0 +1,28 @@
+{
+  "uuid": "0oeF",
+  "source_path": "exo7/2-L1/0oeF.tex",
+  "summary": "On étudie la dérivabilité d'une fonction F définie comme l'intégrale d'une fonction f continue et croissante sur ℝ⁺. On montre que si F(x) = x² + o(x), alors f(x) = 2x + o(√x).",
+  "concepts": [
+    "fonction convexe",
+    "dérivabilité",
+    "intégrale d'une fonction",
+    "croissance d'une fonction",
+    "développement asymptotique",
+    "inégalité de convexité"
+  ],
+  "methods": [
+    "développement asymptotique",
+    "inégalité de convexité",
+    "estimation d'erreur",
+    "limite en o"
+  ],
+  "objects": [
+    "fonction F",
+    "fonction f",
+    "intégrale",
+    "développement asymptotique"
+  ],
+  "content_hash": "36fc89b38f9272a19a2580d98a82a66db548e3052288b02fb8414e10fbf73998",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:54:02.029Z"
+}

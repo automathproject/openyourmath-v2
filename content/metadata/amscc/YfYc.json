@@ -1,0 +1,26 @@
+{
+  "uuid": "YfYc",
+  "source_path": "amscc/YfYc.tex",
+  "summary": "Calculer la limite d'une somme de Riemann associée à la fonction f(x) = x / (1 + x²) sur l'intervalle [0, 2].",
+  "concepts": [
+    "somme de Riemann",
+    "limite de suite",
+    "intégrale définie",
+    "fonction continue",
+    "passage à la limite"
+  ],
+  "methods": [
+    "changement de variable",
+    "reconnaissance de somme de Riemann",
+    "calcul d'intégrale"
+  ],
+  "objects": [
+    "somme de Riemann",
+    "fonction f(x) = x / (1 + x²)",
+    "intervalle [0, 2]",
+    "limite de suite"
+  ],
+  "content_hash": "44bea933145ee96659bbc53032be8eeb7c4f287c7999a3232966d8433c9aa24e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:55:24.326Z"
+}

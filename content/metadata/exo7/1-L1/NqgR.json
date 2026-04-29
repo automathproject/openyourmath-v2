@@ -1,0 +1,28 @@
+{
+  "uuid": "NqgR",
+  "source_path": "exo7/1-L1/NqgR.tex",
+  "summary": "L'exercice demande de montrer que si une matrice carrée A vérifie A² = αA + βIₙ, alors An est une combinaison linéaire de A et Iₙ pour tout n ∈ ℕ*. Il faut aussi prouver que si β ≠ 0, A est inversible et que A⁻¹ est une combinaison linéaire de A et Iₙ. Deux applications concrètes sont proposées.",
+  "concepts": [
+    "matrice carrée",
+    "combinaison linéaire",
+    "inversibilité",
+    "relation de récurrence",
+    "matrice Attila",
+    "matrice identité"
+  ],
+  "methods": [
+    "récurrence",
+    "calcul matriciel",
+    "inversibilité par déterminant",
+    "résolution d'équation matricielle"
+  ],
+  "objects": [
+    "matrice carrée A",
+    "matrice identité Iₙ",
+    "matrice Attila Jₙ",
+    "inverse A⁻¹"
+  ],
+  "content_hash": "71e9db78ba8a01f383c791b695b835c23b5a095965c2c9003ecf7c90f31a0051",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:54:50.356Z"
+}

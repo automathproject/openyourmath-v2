@@ -1,0 +1,24 @@
+{
+  "uuid": "fbox",
+  "source_path": "exo7/16-L3/fbox.tex",
+  "summary": "Montrer qu'une fonction continue sur un ouvert de ℂ, holomorphe hors d'une droite, est globalement holomorphe.",
+  "concepts": [
+    "fonction holomorphe",
+    "théorème de Morera",
+    "continuité",
+    "ouvert de ℂ",
+    "droite dans ℂ"
+  ],
+  "methods": [
+    "disjonction de cas",
+    "application du théorème de Morera"
+  ],
+  "objects": [
+    "fonction complexe",
+    "droite dans ℂ",
+    "triangle dans ℂ"
+  ],
+  "content_hash": "7f94dd89f7dccc2cd2886914c118b9d35c1430211690f48ac5f49023c6a4c29a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:40:28.828Z"
+}

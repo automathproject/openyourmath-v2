@@ -1,32 +1,30 @@
 {
   "uuid": "xpkj",
   "source_path": "exo7/6-L2/xpkj.tex",
-  "summary": "L'exercice étudie la transformation d'un cercle en une ellipse par une affinité géométrique. Il demande de déterminer l'image d'un cercle sous une affinité de base donnée et de rapport 1/2, et de montrer que cette image est une ellipse.",
+  "summary": "On étudie l'ensemble des points M obtenus en construisant une tangente à un cercle, en trouvant son intersection avec une autre tangente, puis en projetant orthogonalement un point du cercle sur cette intersection. L'objectif est de déterminer la nature géométrique de l'ensemble des points M.",
   "concepts": [
-    "affinité géométrique",
+    "équation paramétrique d'un cercle",
     "tangente à un cercle",
-    "paramétrisation d'une conique",
-    "transformation linéaire",
+    "affinité géométrique",
     "ellipse",
     "repère orthonormé",
-    "équation de droite"
+    "paramétrisation"
   ],
   "methods": [
-    "paramétrisation d'une courbe",
+    "choix d'un repère orthonormé",
     "calcul d'équation de tangente",
-    "détermination de points d'intersection",
-    "transformation affine",
-    "simplification trigonométrique"
+    "intersection de droites",
+    "projection orthogonale",
+    "transformation affine"
   ],
   "objects": [
     "cercle",
-    "ellipse",
-    "droite tangente",
-    "point d'intersection",
-    "repère orthonormé",
-    "affinité géométrique"
+    "tangente",
+    "point variable",
+    "droite",
+    "ellipse"
   ],
-  "content_hash": "e645765dda1359b0c87ceac440652682fe8a083267fdde8f5c64303861e15b30",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:42:00.839Z"
+  "content_hash": "54f0a7ed25450bbc3dadf5883057ec3b8d4b8b7730b0e86a6680feaf7ff808e5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:10:04.129Z"
 }

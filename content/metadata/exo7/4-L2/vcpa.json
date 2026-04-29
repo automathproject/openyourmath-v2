@@ -1,0 +1,27 @@
+{
+  "uuid": "vcpa",
+  "source_path": "exo7/4-L2/vcpa.tex",
+  "summary": "L'exercice demande de définir une distance sur ℝⁿ bornée par 1 et de déterminer si une fonction dérivée de cette distance peut être une norme. Il étudie ensuite la distance géodésique sur la sphère unité de ℝ³ et analyse si une fonction dérivée de cette distance peut être une norme.",
+  "concepts": [
+    "distance",
+    "norme",
+    "espace euclidien",
+    "sphère unité",
+    "distance géodésique",
+    "inégalité triangulaire"
+  ],
+  "methods": [
+    "définition de distance",
+    "vérification des propriétés de norme",
+    "analyse de la distance géodésique"
+  ],
+  "objects": [
+    "espace ℝⁿ",
+    "sphère unité de ℝ³",
+    "distance bornée",
+    "fonction dérivée de distance"
+  ],
+  "content_hash": "b332f72fcf07fac6c02125e51c8431df47b55a49142c6c4f547863542887463c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:58:55.115Z"
+}

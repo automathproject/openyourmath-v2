@@ -1,0 +1,28 @@
+{
+  "uuid": "M1T3",
+  "source_path": "exo7/6-L2/M1T3.tex",
+  "summary": "On étudie une transformation linéaire v dans un espace affine euclidien de dimension 3. L'exercice demande de montrer que v est une isométrie, de déterminer son type, et d'expliciter son axe et son vecteur de glissement.",
+  "concepts": [
+    "isométrie",
+    "espace affine euclidien",
+    "transformation linéaire",
+    "repère cartésien orthonormé",
+    "vecteur de glissement",
+    "axe de rotation"
+  ],
+  "methods": [
+    "calcul de la matrice associée",
+    "vérification de l'orthogonalité",
+    "détermination du centre de rotation",
+    "identification du vecteur de translation"
+  ],
+  "objects": [
+    "transformation linéaire",
+    "espace affine euclidien",
+    "repère cartésien orthonormé",
+    "matrice de transformation"
+  ],
+  "content_hash": "df8c77c36c18950c2259fff604f4d290e55818da0ff7ee6dfdc1b567616cd16e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:34:58.138Z"
+}

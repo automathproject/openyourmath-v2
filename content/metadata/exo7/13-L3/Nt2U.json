@@ -1,0 +1,25 @@
+{
+  "uuid": "Nt2U",
+  "source_path": "exo7/13-L3/Nt2U.tex",
+  "summary": "Calculer le laplacien d'une fonction composée g(x,y) = f(x² - y², 2xy) où f est une fonction de classe C², en exprimant le résultat en fonction du laplacien de f.",
+  "concepts": [
+    "fonction de classe C²",
+    "fonction composée",
+    "laplacien",
+    "changement de variables",
+    "dérivées partielles secondes"
+  ],
+  "methods": [
+    "calcul des dérivées partielles secondes",
+    "application de la formule du laplacien en coordonnées cartésiennes",
+    "changement de variables"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "laplacien",
+    "fonction composée"
+  ],
+  "content_hash": "76194edb70581d56a1ff9d66f148a71a35477b19bfa1bf18256188aef4af1773",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:10:56.919Z"
+}

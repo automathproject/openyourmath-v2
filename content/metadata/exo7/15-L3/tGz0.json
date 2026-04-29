@@ -1,0 +1,30 @@
+{
+  "uuid": "tGz0",
+  "source_path": "exo7/15-L3/tGz0.tex",
+  "summary": "L'exercice étudie la continuité d'une application linéaire sur l'espace des fonctions continues sur [0,1] muni de la norme infinie. Il demande de montrer l'équivalence entre la continuité de l'application et la finitude d'une norme associée, puis de calculer cette norme pour deux applications spécifiques.",
+  "concepts": [
+    "espace vectoriel normé",
+    "norme infinie",
+    "application linéaire",
+    "continuité",
+    "supremum",
+    "intégrale de fonctions continues",
+    "norme d'opérateur"
+  ],
+  "methods": [
+    "utilisation de la définition de la continuité",
+    "calcul de supremum",
+    "intégration de fonctions continues",
+    "comparaison de normes"
+  ],
+  "objects": [
+    "espace C[0,1]",
+    "application linéaire",
+    "norme infinie",
+    "intégrale",
+    "fonction continue"
+  ],
+  "content_hash": "2eb75d8b17cbd3db1d12afa055abc4393ea749d96f4f1f8f3e003a036c23ed84",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:21:36.573Z"
+}

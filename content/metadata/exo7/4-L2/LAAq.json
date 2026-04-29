@@ -1,0 +1,22 @@
+{
+  "uuid": "LAAq",
+  "source_path": "exo7/4-L2/LAAq.tex",
+  "summary": "Déterminer les valeurs du paramètre a pour lesquelles une matrice 3x3 donnée est inversible, puis calculer son inverse dans ce cas.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "déterminant",
+    "rang d'une matrice",
+    "système linéaire"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "inversion de matrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "paramètre réel"
+  ],
+  "content_hash": "e6e19992f418694d21354e71a29d313310c84c5d1ba58f8a15fd6e522601df81",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:46:06.556Z"
+}

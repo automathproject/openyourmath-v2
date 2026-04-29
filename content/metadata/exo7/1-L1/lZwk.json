@@ -1,0 +1,24 @@
+{
+  "uuid": "lZwk",
+  "source_path": "exo7/1-L1/lZwk.tex",
+  "summary": "Trouver la matrice d'une application linéaire définie sur l'espace des matrices carrées de taille n à coefficients complexes, qui à une matrice M associe le produit MA.",
+  "concepts": [
+    "application linéaire",
+    "matrice carrée",
+    "base canonique",
+    "espace vectoriel de matrices",
+    "transposée d'une matrice"
+  ],
+  "methods": [
+    "calcul de l'image des vecteurs de la base",
+    "remplissage coefficient par coefficient"
+  ],
+  "objects": [
+    "matrice carrée",
+    "application linéaire",
+    "base canonique de l'espace des matrices"
+  ],
+  "content_hash": "cb3feb1cea4e872c9b18a515e43fedaf3ac0bc8b4edda32a3cb5ebb81e1f45ea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:14:58.965Z"
+}

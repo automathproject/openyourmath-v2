@@ -1,0 +1,28 @@
+{
+  "uuid": "Wdl4",
+  "source_path": "exo7/5-L2/Wdl4.tex",
+  "summary": "Trouver une fonction de classe C² sur un intervalle I de ℝ à valeurs dans ℝ telle que la fonction g(x,y) = f(cos(2x)/ch(2y)) soit non constante et ait un laplacien nul sur un sous-ensemble maximal de ℝ².",
+  "concepts": [
+    "fonction harmonique",
+    "laplacien",
+    "dérivée partielle",
+    "fonction de classe C²",
+    "équation différentielle",
+    "fonction argument hyperbolique"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "résolution d'équation différentielle",
+    "simplification algébrique",
+    "analyse de domaine de définition"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "laplacien",
+    "fonction argument hyperbolique",
+    "équation différentielle"
+  ],
+  "content_hash": "dd1ad27cb7c8191e6d9074c0a8adf089ac728b3e46206a2a5c789c9549cfb8cc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:05:55.378Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "pto0",
+  "source_path": "exo7/4-L2/pto0.tex",
+  "summary": "Trouver trois réels α, β, γ tels que l'intégrale d'un polynôme de degré ≤ 3 entre 2 et 4 soit égale à une combinaison linéaire des valeurs du polynôme en 2, 3 et 4.",
+  "concepts": [
+    "intégrale d'un polynôme",
+    "combinaison linéaire",
+    "système linéaire",
+    "rang d'une matrice",
+    "équations linéaires",
+    "solution unique"
+  ],
+  "methods": [
+    "identification des coefficients",
+    "résolution de système linéaire",
+    "comparaison terme à terme"
+  ],
+  "objects": [
+    "polynôme de degré 3",
+    "intégrale définie",
+    "système d'équations linéaires"
+  ],
+  "content_hash": "43503672f4600a4ff02969127dfc9742ac50aa54881fa74fb2ea3177f81a14aa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:12:05.283Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "JXph",
+  "source_path": "exo7/4-L2/JXph.tex",
+  "summary": "On considère un ensemble de matrices carrées inversibles deux à deux distinctes, stable par multiplication. On demande de montrer que cet ensemble forme un sous-groupe du groupe linéaire général.",
+  "concepts": [
+    "groupe",
+    "sous-groupe",
+    "stabilité par produit",
+    "stabilité par passage à l'inverse",
+    "permutation",
+    "injection",
+    "ensemble fini",
+    "matrice identité"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "utilisation de la finitude pour l'injectivité",
+    "construction explicite de l'inverse"
+  ],
+  "objects": [
+    "matrices carrées inversibles",
+    "groupe linéaire général",
+    "application de permutation"
+  ],
+  "content_hash": "14e1bfdd6644c81efddd85c9fed0842ec657decb1726ae95198bedc14b2ba7f7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:37:39.604Z"
+}

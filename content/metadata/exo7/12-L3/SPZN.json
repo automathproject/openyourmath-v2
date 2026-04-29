@@ -1,0 +1,26 @@
+{
+  "uuid": "SPZN",
+  "source_path": "exo7/12-L3/SPZN.tex",
+  "summary": "L'exercice demande de montrer l'existence de solutions (x,y) pour un système d'équations non linéaires lorsque a et b sont proches de 1, puis d'étudier le comportement d'une suite (a_n,b_n) tendant vers (0,0) et vérifiant f(a_n,b_n)=0 pour une application f donnée.",
+  "concepts": [
+    "théorème d'inversion locale",
+    "difféomorphisme",
+    "fonction implicite",
+    "continuité",
+    "limite de suite",
+    "système d'équations non linéaires"
+  ],
+  "methods": [
+    "résolution de système d'équations",
+    "analyse de limite de suite",
+    "application du théorème d'inversion locale"
+  ],
+  "objects": [
+    "système d'équations non linéaires",
+    "suite numérique",
+    "application de R² dans R²"
+  ],
+  "content_hash": "376ba837f5f9cb93a12f67e596f4ba0396306de0052b9ad535b571ea540e0286",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:15:58.845Z"
+}

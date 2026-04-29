@@ -1,0 +1,28 @@
+{
+  "uuid": "F0dH",
+  "source_path": "exo7/19-L3/F0dH.tex",
+  "summary": "L'exercice demande de montrer que le maximum d'une suite de variables aléatoires indépendantes et identiquement distribuées selon une loi normale centrée réduite, normalisé par √(2ln n), converge vers 1 en probabilité.",
+  "concepts": [
+    "convergence en probabilité",
+    "loi normale centrée réduite",
+    "variable aléatoire maximale",
+    "intégrale de fonction exponentielle",
+    "inégalité de probabilité"
+  ],
+  "methods": [
+    "intégration par parties",
+    "estimation d'intégrale",
+    "analyse asymptotique",
+    "décomposition d'événement",
+    "utilisation de la fonction de répartition"
+  ],
+  "objects": [
+    "suite de variables aléatoires indépendantes",
+    "maximum de variables aléatoires",
+    "intégrale de fonction exponentielle",
+    "probabilité de convergence"
+  ],
+  "content_hash": "fb7197fe8b043ee58b411d5cfe64198939591604ebd352e5ebd1decdf4a73c67",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:38:53.512Z"
+}

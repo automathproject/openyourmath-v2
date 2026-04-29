@@ -1,0 +1,26 @@
+{
+  "uuid": "HRqF",
+  "source_path": "exo7/4-L2/HRqF.tex",
+  "summary": "On considère un espace vectoriel E sur un corps K. On suppose qu'il existe p formes linéaires f₁, ..., f_p telles que leur noyau intersecté est réduit au vecteur nul. On demande de montrer que la dimension de E est finie et inférieure ou égale à p.",
+  "concepts": [
+    "forme linéaire",
+    "noyau d'une application linéaire",
+    "dimension d'un espace vectoriel",
+    "espace vectoriel de dimension finie",
+    "théorème du rang",
+    "famille libre"
+  ],
+  "methods": [
+    "utilisation du théorème du rang",
+    "construction d'une famille libre",
+    "argument par l'absurde"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "forme linéaire",
+    "famille de vecteurs"
+  ],
+  "content_hash": "e34003826aba398655fcb43ffca34003f05ea75fa610812389a603be25de8fc6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:53:08.064Z"
+}

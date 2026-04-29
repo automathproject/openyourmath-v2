@@ -1,0 +1,28 @@
+{
+  "uuid": "BdaZ",
+  "source_path": "exo7/6-L2/BdaZ.tex",
+  "summary": "Dans le plan, on considère trois points non alignés A, B, C et trois points alignés P, Q, R situés respectivement sur les côtés AB, AC et BC. On construit des parallélogrammes BPIR, APJQ et CQKR. L'exercice demande de montrer que les points I, J, K sont alignés.",
+  "concepts": [
+    "géométrie affine",
+    "alignement de points",
+    "parallélogramme",
+    "repère affine",
+    "vecteurs coplanaires",
+    "théorème de Thalès"
+  ],
+  "methods": [
+    "utilisation d'un repère affine",
+    "calcul vectoriel",
+    "propriétés des parallélogrammes",
+    "alignement par déterminant"
+  ],
+  "objects": [
+    "points du plan",
+    "vecteurs",
+    "parallélogrammes",
+    "repère affine"
+  ],
+  "content_hash": "d9b81992db29aebf66b78a1265d70c9090bc69cad4f12f24e384e985b7b78ac1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:40:55.924Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "JLlE",
+  "source_path": "exo7/4-L2/JLlE.tex",
+  "summary": "Résoudre un système linéaire MX=U où M est une matrice carrée de taille n×n dont les colonnes sont formées par les puissances successives des entiers de 1 à n. Le contexte est purement algébrique, sans application concrète mentionnée.",
+  "concepts": [
+    "déterminant de Vandermonde",
+    "système de Cramer",
+    "formules de Cramer",
+    "développement par rapport à une colonne",
+    "linéarité du déterminant"
+  ],
+  "methods": [
+    "calcul de déterminant de Vandermonde",
+    "application des formules de Cramer",
+    "développement de déterminant",
+    "utilisation de la linéarité du déterminant"
+  ],
+  "objects": [
+    "matrice de Vandermonde",
+    "système linéaire",
+    "déterminant",
+    "coefficient binomial"
+  ],
+  "content_hash": "2b60e1bdc2e999c53fdd6f05d1e5fa2261b4ec472f8b193b6e306a2331e1c902",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:44:42.817Z"
+}

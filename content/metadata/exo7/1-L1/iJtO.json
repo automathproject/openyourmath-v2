@@ -1,0 +1,25 @@
+{
+  "uuid": "iJtO",
+  "source_path": "exo7/1-L1/iJtO.tex",
+  "summary": "Trouver des couples de nombres entiers divisibles par 3 dont le ppcm est 7560 et dont le pgcd, après augmentation de chaque nombre d'un tiers de sa valeur, est 84.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "algorithme d'Euclide",
+    "divisibilité dans Z",
+    "propriétés arithmétiques des entiers"
+  ],
+  "methods": [
+    "calcul du pgcd",
+    "calcul du ppcm",
+    "manipulation d'équations arithmétiques"
+  ],
+  "objects": [
+    "nombres entiers",
+    "pgcd",
+    "ppcm"
+  ],
+  "content_hash": "19bd0d086e53e2b4e055b069d1da4bbefe4aa7c77994702e84a0f0c5d9768df8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:09:39.886Z"
+}

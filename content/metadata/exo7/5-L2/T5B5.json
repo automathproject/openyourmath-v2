@@ -1,0 +1,25 @@
+{
+  "uuid": "T5B5",
+  "source_path": "exo7/5-L2/T5B5.tex",
+  "summary": "L'exercice demande de prouver que les tangentes aux courbes intégrales d'une équation différentielle linéaire du premier ordre au point d'abscisse x₀ sont parallèles ou concourantes.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "courbe intégrale",
+    "tangente à une courbe",
+    "point de concours",
+    "condition d'unicité de Cauchy-Lipschitz"
+  ],
+  "methods": [
+    "analyse des conditions initiales",
+    "calcul de la pente des tangentes",
+    "détermination du point de concours"
+  ],
+  "objects": [
+    "équation différentielle y' = a(x)y + b(x)",
+    "courbes intégrales",
+    "tangentes aux courbes intégrales"
+  ],
+  "content_hash": "2e59c92c75d99f90e86349a9f398fe41fcc89a80c8eef3b52425574a99060b96",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:29:43.690Z"
+}

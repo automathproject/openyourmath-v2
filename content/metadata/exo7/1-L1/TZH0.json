@@ -1,0 +1,32 @@
+{
+  "uuid": "TZH0",
+  "source_path": "exo7/1-L1/TZH0.tex",
+  "summary": "L'exercice étudie les propriétés d'injectivité, surjectivité et bijectivité d'une fonction définie par f(x) = 2x/(1+x²). Il demande de déterminer si la fonction est injective, surjective, puis de montrer que sa restriction à l'intervalle [-1,1] est une bijection.",
+  "concepts": [
+    "injectivité",
+    "surjectivité",
+    "bijectivité",
+    "fonction rationnelle",
+    "discriminant",
+    "équation du second degré",
+    "fonction dérivée",
+    "monotonie"
+  ],
+  "methods": [
+    "résolution d'équation",
+    "analyse du discriminant",
+    "étude des variations",
+    "calcul de la dérivée",
+    "recherche d'inverse"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle",
+    "équation polynomiale",
+    "fonction dérivée",
+    "inverse"
+  ],
+  "content_hash": "b3008e1f520e9959d926783ec398a9efe5c22bced29ba854ee655d8bfeb6fff8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:18:30.835Z"
+}

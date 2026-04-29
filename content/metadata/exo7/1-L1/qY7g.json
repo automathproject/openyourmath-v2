@@ -1,0 +1,30 @@
+{
+  "uuid": "qY7g",
+  "source_path": "exo7/1-L1/qY7g.tex",
+  "summary": "L'exercice demande de prouver des propriétés d'un endomorphisme u d'un espace vectoriel réel E tel que u² = -I. Il s'agit de montrer la bijectivité de u, puis l'indépendance linéaire de vecteurs spécifiques, et enfin d'établir une base particulière de E et la matrice de u dans cette base.",
+  "concepts": [
+    "endomorphisme",
+    "espace vectoriel",
+    "bijectivité",
+    "indépendance linéaire",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel",
+    "matrice d'un endomorphisme"
+  ],
+  "methods": [
+    "utilisation de la relation u² = -I",
+    "preuve par contradiction",
+    "construction explicite de base",
+    "calcul de matrice dans une base donnée"
+  ],
+  "objects": [
+    "endomorphisme u",
+    "espace vectoriel E",
+    "vecteurs x₁, ..., x_p",
+    "vecteurs u(x₁), ..., u(x_p)",
+    "matrice de u"
+  ],
+  "content_hash": "3413fbbc895552411ac51428ecf5f9c2b33d1197458c16dd821811b334f5e857",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:17:17.881Z"
+}

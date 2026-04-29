@@ -1,0 +1,29 @@
+{
+  "uuid": "n0yi",
+  "source_path": "exo7/4-L2/n0yi.tex",
+  "summary": "Montrer l'égalité des déterminants de deux matrices carrées construites à partir de deux matrices rectangulaires A et B, en commençant par le cas où A est de rang r.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "matrice rectangulaire",
+    "rang d'une matrice",
+    "matrice identité",
+    "produit matriciel"
+  ],
+  "methods": [
+    "réduction par le rang",
+    "calcul de déterminant",
+    "propriétés des déterminants"
+  ],
+  "objects": [
+    "matrice A",
+    "matrice B",
+    "matrice I_p",
+    "matrice I_q",
+    "matrice AB",
+    "matrice BA"
+  ],
+  "content_hash": "3a80e64a621c20dfa911e07cbb10c25cd8ed249040359cf2cceadf53677098f4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:09:25.346Z"
+}

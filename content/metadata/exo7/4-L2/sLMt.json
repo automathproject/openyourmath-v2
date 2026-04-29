@@ -1,0 +1,29 @@
+{
+  "uuid": "sLMt",
+  "source_path": "exo7/4-L2/sLMt.tex",
+  "summary": "Résoudre un système linéaire de deux équations à deux inconnues par quatre méthodes différentes : substitution, pivot de Gauss, inversion de matrice, et formules de Cramer. Comparer l'efficacité des méthodes pour des systèmes paramétrés.",
+  "concepts": [
+    "système linéaire",
+    "matrice inversible",
+    "déterminant",
+    "rang d'une matrice",
+    "formules de Cramer",
+    "méthode du pivot de Gauss",
+    "substitution"
+  ],
+  "methods": [
+    "substitution",
+    "pivot de Gauss",
+    "inversion de matrice",
+    "formules de Cramer"
+  ],
+  "objects": [
+    "système linéaire 2x2",
+    "matrice carrée 2x2",
+    "déterminant",
+    "inverse de matrice"
+  ],
+  "content_hash": "dd4151489c7a1d367a9413bc91f0c667a886a999bb90fe304bbe137e47b3d99e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:14:49.187Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "LtzA",
+  "source_path": "exo7/12-L3/LtzA.tex",
+  "summary": "L'exercice demande de démontrer que l'application définie par l'intégrale de la valeur absolue d'une fonction continue est une norme sur l'ensemble des fonctions continues sur [0,1], puis de montrer que cet ensemble n'est pas complet.",
+  "concepts": [
+    "norme",
+    "espace vectoriel normé",
+    "complétude",
+    "suite de Cauchy",
+    "convergence uniforme",
+    "convergence simple",
+    "fonction continue"
+  ],
+  "methods": [
+    "construction explicite de suite de Cauchy",
+    "calcul de norme",
+    "analyse de convergence"
+  ],
+  "objects": [
+    "fonction continue",
+    "suite de fonctions",
+    "norme L1",
+    "espace de fonctions"
+  ],
+  "content_hash": "096c15bb67d2fdaa746c0371ceeb49bb816c8066d114cf7bdd3e1331fe7637b8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:25:17.690Z"
+}

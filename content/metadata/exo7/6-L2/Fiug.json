@@ -1,0 +1,30 @@
+{
+  "uuid": "Fiug",
+  "source_path": "exo7/6-L2/Fiug.tex",
+  "summary": "L'exercice demande de démontrer que la puissance d'un point P par rapport à un cercle C, définie comme le produit scalaire des vecteurs PA et PB pour une droite D passant par P et intersectant C en A et B, est indépendante du choix de la droite D. Il explore ensuite les propriétés de cette puissance, notamment dans le cas d'une tangente et sa relation avec la distance du point au centre du cercle.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "puissance d'un point par rapport à un cercle",
+    "théorème de l'angle inscrit",
+    "théorème de Pythagore",
+    "cercles concentriques",
+    "produit scalaire de vecteurs"
+  ],
+  "methods": [
+    "utilisation du théorème de l'angle inscrit",
+    "comparaison de triangles semblables",
+    "application du théorème de Pythagore",
+    "calcul de distance"
+  ],
+  "objects": [
+    "cercle",
+    "point du plan",
+    "droite",
+    "vecteurs",
+    "tangente",
+    "centre du cercle"
+  ],
+  "content_hash": "c897f85b702cc76a581306ff6c0cffde5f05aeb7338cc2e00136a0b36db07644",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:29:37.932Z"
+}

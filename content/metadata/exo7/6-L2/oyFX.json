@@ -1,0 +1,29 @@
+{
+  "uuid": "oyFX",
+  "source_path": "exo7/6-L2/oyFX.tex",
+  "summary": "On considère une fonction continue concave et dérivable par morceaux, ainsi que deux courbes planes ayant les mêmes extrémités, l'une située au-dessus de l'autre. L'exercice demande de montrer que la longueur de la courbe supérieure est supérieure ou égale à celle de la courbe inférieure.",
+  "concepts": [
+    "concavité",
+    "fonction continue",
+    "fonction dérivable par morceaux",
+    "courbe rectifiable",
+    "longueur d'une courbe",
+    "inégalité de longueur"
+  ],
+  "methods": [
+    "subdivision d'intervalle",
+    "récurrence",
+    "comparaison de longueurs",
+    "utilisation de la concavité"
+  ],
+  "objects": [
+    "fonction réelle",
+    "courbe paramétrée",
+    "chemin continu",
+    "ligne brisée",
+    "élastique"
+  ],
+  "content_hash": "1880444f2b7e85f17b15035458e3939b3e56e42b850f79159cd8fd66c8102df2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:05:08.339Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "H0fC",
+  "source_path": "amscc/H0fC.tex",
+  "summary": "L'exercice demande d'étudier une fonction de coût de production de deux matériaux, en analysant son comportement sur un domaine triangulaire défini par des contraintes de production. Il s'agit de décrire le domaine, de justifier l'existence d'un minimum, de rechercher les points critiques intérieurs et d'étudier la fonction sur le bord du domaine.",
+  "concepts": [
+    "fonction de plusieurs variables",
+    "domaine de définition",
+    "théorème des valeurs extrêmes",
+    "points critiques",
+    "Hessien",
+    "minimum global",
+    "optimisation sous contraintes"
+  ],
+  "methods": [
+    "analyse des dérivées partielles",
+    "calcul du Hessien",
+    "substitution de variable",
+    "étude de la dérivée première",
+    "étude de la dérivée seconde"
+  ],
+  "objects": [
+    "fonction coût",
+    "domaine triangulaire",
+    "points critiques",
+    "contraintes de production",
+    "fonction d'une variable"
+  ],
+  "content_hash": "283d708774ee157ed455fee30a06ba342be382463e20a43e70c17e5afc729c17",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:53:31.374Z"
+}

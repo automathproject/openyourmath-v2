@@ -1,0 +1,24 @@
+{
+  "uuid": "jhUH",
+  "source_path": "exo7/2-L1/jhUH.tex",
+  "summary": "Démontrer l'existence d'un intervalle autour d'un point où la valeur absolue d'une fonction est bornée inférieurement par la moitié de sa limite positive en ce point.",
+  "concepts": [
+    "limite de fonction",
+    "continuité",
+    "valeur absolue",
+    "bornes inférieures",
+    "intervalle ouvert"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la limite"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle contenant un point",
+    "valeur absolue de la fonction"
+  ],
+  "content_hash": "560cd0ddcc696744c17fe263190531e1caf05960e2237b7eb6593c243cd40bd0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:23:41.750Z"
+}

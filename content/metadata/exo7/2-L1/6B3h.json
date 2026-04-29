@@ -1,0 +1,26 @@
+{
+  "uuid": "6B3h",
+  "source_path": "exo7/2-L1/6B3h.tex",
+  "summary": "Déterminer les conditions nécessaires et suffisantes sur les coefficients réels a₁, ..., aₙ pour que la somme Σₖ=₁ⁿ aₖ cotan(kx) admette une limite finie lorsque x tend vers 0.",
+  "concepts": [
+    "développement limité",
+    "limite de fonction",
+    "fonction cotangente",
+    "condition nécessaire et suffisante",
+    "somme finie",
+    "analyse asymptotique"
+  ],
+  "methods": [
+    "développement limité en 0",
+    "analyse des termes dominants",
+    "simplification algébrique"
+  ],
+  "objects": [
+    "somme de fonctions trigonométriques",
+    "limite de fonction",
+    "coefficient réel"
+  ],
+  "content_hash": "0515394edd8983b5f1cb223c3df9e6c417c7743ab7317381c8908052aed144b3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:23:18.864Z"
+}

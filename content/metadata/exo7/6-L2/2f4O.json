@@ -1,0 +1,26 @@
+{
+  "uuid": "2f4O",
+  "source_path": "exo7/6-L2/2f4O.tex",
+  "summary": "Dans un triangle ABC, on définit des points A1, B1, C1 comme barycentres pondérés des sommets. On montre que A2, intersection de (AA1) et (BB1), est le milieu de [B,B2], puis on compare les aires des triangles ABC et A2B2C2.",
+  "concepts": [
+    "barycentre",
+    "droites concourantes",
+    "milieu d'un segment",
+    "aire d'un triangle",
+    "géométrie affine"
+  ],
+  "methods": [
+    "calcul de barycentre",
+    "théorème de Thalès",
+    "calcul d'aire par déterminant"
+  ],
+  "objects": [
+    "triangle",
+    "points barycentriques",
+    "droites",
+    "segments"
+  ],
+  "content_hash": "3a001ba750725a0397c946dd652bbb0aa25a306b5bde9139869508d490056b12",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:36:15.022Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "5K10",
+  "source_path": "exo7/12-L3/5K10.tex",
+  "summary": "L'exercice demande de définir une sous-variété de dimension k dans R^n et d'énoncer le théorème des fonctions implicites. Il s'agit ensuite d'appliquer ce théorème pour démontrer qu'un ensemble M défini par f(x) = 0 est une sous-variété de dimension k = n - p.",
+  "concepts": [
+    "sous-variété",
+    "théorème des fonctions implicites",
+    "fonction de classe C^1",
+    "matrice jacobienne",
+    "rang d'une matrice",
+    "dimension d'un espace"
+  ],
+  "methods": [
+    "énoncé de théorème",
+    "application du théorème des fonctions implicites"
+  ],
+  "objects": [
+    "sous-variété M",
+    "fonction f",
+    "matrice jacobienne J(x)"
+  ],
+  "content_hash": "016df6f954a4bfa0212a7381685e81fdc2d72ca646405d71ee50ecaa5f88d6b9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:12:15.889Z"
+}

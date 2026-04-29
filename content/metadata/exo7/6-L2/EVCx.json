@@ -1,7 +1,7 @@
 {
   "uuid": "EVCx",
   "source_path": "exo7/6-L2/EVCx.tex",
-  "summary": "L'exercice propose plusieurs équations de coniques (hyperbole, ellipse, parabole, cercle, point, ensemble vide) et demande d'identifier leurs propriétés géométriques (centre, sommets, foyers, directrices, etc.) en utilisant des changements de repère et des transformations affines.",
+  "summary": "L'exercice demande de déterminer la nature et les éléments caractéristiques (centre, sommets, foyers, directrices, etc.) de différentes coniques définies par des équations cartésiennes dans un repère orthonormé. Les coniques étudiées incluent des hyperboles, des ellipses, des paraboles, des cercles, et des cas dégénérés.",
   "concepts": [
     "conique",
     "hyperbole",
@@ -9,27 +9,24 @@
     "parabole",
     "cercle",
     "changement de repère",
-    "transformation affine",
-    "discriminant de conique",
-    "éléments métriques d'une conique"
+    "éléments caractéristiques d'une conique",
+    "discriminant d'une conique"
   ],
   "methods": [
+    "réduction d'une équation conique",
     "changement de repère orthonormé",
     "élimination du terme croisé xy",
-    "complétion du carré",
-    "identification des éléments affines",
-    "calcul des paramètres métriques"
+    "identification des éléments affines et métriques",
+    "complétion du carré"
   ],
   "objects": [
-    "équation cartésienne de conique",
-    "centre de conique",
-    "sommets",
-    "foyers",
-    "directrices",
-    "asymptotes",
-    "axe focal"
+    "équation cartésienne d'une conique",
+    "repère orthonormé",
+    "centre d'une conique",
+    "sommets d'une conique",
+    "foyers d'une conique"
   ],
-  "content_hash": "0aab8487ed3f68fe76afd75178ad4272539e49243027abc4564f6e3fc6ea03db",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:39:30.096Z"
+  "content_hash": "7547b16abb4b6dc1dbbe0b8728ac34d9c513f1f762e32a57aa8e85882eabefff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:02:42.223Z"
 }

@@ -1,0 +1,27 @@
+{
+  "uuid": "PsWR",
+  "source_path": "exo7/15-L3/PsWR.tex",
+  "summary": "L'exercice demande de montrer une inégalité entre deux normes définies sur un espace vectoriel de fonctions continues et dérivables, puis d'en déduire la continuité de l'application identique entre ces espaces normés. Il utilise ensuite une suite de fonctions pour montrer qu'une autre application identique n'est pas continue.",
+  "concepts": [
+    "espace vectoriel normé",
+    "norme infinie",
+    "continuité d'application linéaire",
+    "inégalité de normes",
+    "convergence uniforme",
+    "fonction dérivable"
+  ],
+  "methods": [
+    "comparaison de normes",
+    "utilisation du théorème des accroissements finis",
+    "analyse de la continuité via des suites de fonctions"
+  ],
+  "objects": [
+    "espace vectoriel de fonctions continues et dérivables",
+    "normes N1 et N2",
+    "application identique",
+    "suite de fonctions fn(x) = x^n/n"
+  ],
+  "content_hash": "96e765bfaa684f4d4e914c61582c26f0cc6872abaf82108e81df36ab71c51c4a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:18:32.066Z"
+}

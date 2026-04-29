@@ -1,0 +1,28 @@
+{
+  "uuid": "63ti",
+  "source_path": "exo7/16-L3/63ti.tex",
+  "summary": "On considère une matrice de SL(2,ℝ) et l'application linéaire fractionnaire associée. On demande de montrer que cette application est définie sur le demi-plan de Poincaré et qu'elle réalise un biholomorphisme de ce demi-plan dans lui-même.",
+  "concepts": [
+    "demi-plan de Poincaré",
+    "application linéaire fractionnaire",
+    "biholomorphisme",
+    "matrice de SL(2,ℝ)",
+    "fonction holomorphe",
+    "automorphisme conforme"
+  ],
+  "methods": [
+    "vérification de la condition de Cauchy-Riemann",
+    "étude de la dérivée",
+    "inversibilité de l'application",
+    "propriétés des matrices de SL(2,ℝ)"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "application rationnelle",
+    "demi-plan supérieur",
+    "fonction de variable complexe"
+  ],
+  "content_hash": "bce4de41a7c330c4515cd1c6c39730cb7ef322bb9d4cc3cdff01d7bb0d6f6486",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:14:33.595Z"
+}

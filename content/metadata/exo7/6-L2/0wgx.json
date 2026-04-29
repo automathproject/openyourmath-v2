@@ -1,0 +1,29 @@
+{
+  "uuid": "0wgx",
+  "source_path": "exo7/6-L2/0wgx.tex",
+  "summary": "L'exercice étudie les propriétés de l'inversion dans le plan affine euclidien. Il demande de prouver que l'inversion est involutive, que ses points fixes forment un cercle, et d'analyser l'image de cercles et de droites par cette transformation.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "inversion géométrique",
+    "bijection involutive",
+    "point fixe",
+    "puissance d'un point par rapport à un cercle",
+    "homothétie"
+  ],
+  "methods": [
+    "démonstration par construction",
+    "utilisation de la puissance d'un point",
+    "application d'une homothétie",
+    "analyse des points fixes"
+  ],
+  "objects": [
+    "inversion",
+    "cercle",
+    "droite",
+    "point",
+    "centre d'inversion"
+  ],
+  "content_hash": "8a9cb89ef82f7705fd952c4b19105c05b4e6d6c44ccb787a37887bf5c05949ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:18:19.481Z"
+}

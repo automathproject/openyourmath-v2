@@ -1,0 +1,26 @@
+{
+  "uuid": "7h18",
+  "source_path": "exo7/2-L1/7h18.tex",
+  "summary": "Soient deux fonctions intégrables sur un intervalle [a, b], l'une monotone et l'autre positive. Montrer l'existence d'un point c tel que l'intégrale du produit des deux fonctions se décompose en une combinaison linéaire d'intégrales de la fonction positive.",
+  "concepts": [
+    "intégrabilité",
+    "fonction monotone",
+    "fonction positive",
+    "intégrale de Riemann",
+    "théorème de la valeur intermédiaire",
+    "décomposition d'intégrale"
+  ],
+  "methods": [
+    "définition d'une fonction auxiliaire",
+    "utilisation de la continuité",
+    "application du théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "fonction intégrable",
+    "intervalle borné",
+    "point c"
+  ],
+  "content_hash": "20b748c1e11e427f01717a5f4cdce534b6c7160775888e87ac76704ed068cf2d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:29:57.491Z"
+}

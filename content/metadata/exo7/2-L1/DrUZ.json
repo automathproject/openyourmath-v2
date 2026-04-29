@@ -1,0 +1,25 @@
+{
+  "uuid": "DrUZ",
+  "source_path": "exo7/2-L1/DrUZ.tex",
+  "summary": "On étudie une fonction deux fois dérivable sur [0, +∞[ dont la limite en +∞ est égale à sa valeur en 0. On demande de prouver l'existence d'un point c > 0 où la dérivée seconde s'annule.",
+  "concepts": [
+    "fonction deux fois dérivable",
+    "limite de fonction",
+    "dérivée seconde",
+    "théorème de Rolle",
+    "convexité"
+  ],
+  "methods": [
+    "étude de la dérivée seconde",
+    "application du théorème de Rolle",
+    "analyse des limites"
+  ],
+  "objects": [
+    "fonction réelle",
+    "dérivée seconde",
+    "point critique"
+  ],
+  "content_hash": "fe9748cf3d867f79ec3ed3d6c032bec3ef7a9728801b7e2718257484752e5f7d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:01:16.180Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "jvNk",
+  "source_path": "exo7/5-L2/jvNk.tex",
+  "summary": "Déterminer l'équation du plan tangent à une surface de niveau définie par une équation trigonométrique en trois variables au point donné. Identifier un vecteur normal à la surface en ce point et vérifier la cohérence avec une figure fournie.",
+  "concepts": [
+    "fonction de plusieurs variables",
+    "surface de niveau",
+    "plan tangent",
+    "vecteur normal",
+    "dérivées partielles"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "équation du plan tangent",
+    "évaluation en un point"
+  ],
+  "objects": [
+    "fonction f(x,y,z)",
+    "point (1, 1/6, 1)",
+    "vecteur (1, 12, 1)"
+  ],
+  "content_hash": "016c5a9504010461688f7406bb6c38f29e19e58f114754178b5d6742a70beef1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:15:06.532Z"
+}

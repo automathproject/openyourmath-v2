@@ -1,0 +1,27 @@
+{
+  "uuid": "SOiA",
+  "source_path": "exo7/15-L3/SOiA.tex",
+  "summary": "L'exercice demande de construire une topologie séparée sur l'ensemble ℝ ∪ {∞} en définissant une base d'ouverts spécifique, puis d'étendre cette construction à ℝ ∪ {+∞} ∪ {-∞}.",
+  "concepts": [
+    "topologie séparée",
+    "espace topologique",
+    "espace métrique",
+    "base d'ouverts",
+    "compactification d'Alexandrov",
+    "topologie de la droite réelle achevée"
+  ],
+  "methods": [
+    "construction explicite d'une topologie",
+    "définition de base d'ouverts",
+    "extension de topologie"
+  ],
+  "objects": [
+    "ℝ ∪ {∞}",
+    "ℝ ∪ {+∞} ∪ {-∞}",
+    "ouverts de ℝ",
+    "ensembles de la forme {x/|x|>a} ∪ {∞}"
+  ],
+  "content_hash": "9e74fbbc791db05bd2ecc62ade0a86b89e7540d11c0e1bc17dbbd669a2c2789b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:26:43.276Z"
+}

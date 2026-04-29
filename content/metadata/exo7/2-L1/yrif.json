@@ -1,0 +1,28 @@
+{
+  "uuid": "yrif",
+  "source_path": "exo7/2-L1/yrif.tex",
+  "summary": "Étude du comportement de la fonction f(x) = 1/x - 1/Arcsin(x) au voisinage de 0 pour déterminer l'existence d'une tangente.",
+  "concepts": [
+    "développement limité",
+    "continuité",
+    "dérivabilité",
+    "tangente",
+    "tangente d'inflexion",
+    "prolongement par continuité"
+  ],
+  "methods": [
+    "développement limité de Arcsin(x)",
+    "inversion de série",
+    "calcul de limite",
+    "analyse du signe"
+  ],
+  "objects": [
+    "fonction de une variable",
+    "développement limité",
+    "tangente",
+    "tangente d'inflexion"
+  ],
+  "content_hash": "5fa44860188e3886b85c51a3ce8818f3449a9b00a0c80437b600285100f275b6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:44:40.142Z"
+}

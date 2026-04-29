@@ -1,0 +1,25 @@
+{
+  "uuid": "SFsi",
+  "source_path": "exo7/2-L1/SFsi.tex",
+  "summary": "On considère une fonction continue sur [0,1] qui s'annule en intégrale contre toute fonction dérivable sur [0,1]. On demande de prouver que cette fonction est identiquement nulle.",
+  "concepts": [
+    "fonction continue",
+    "fonction dérivable",
+    "intégrale de Riemann",
+    "fonction nulle",
+    "espace vectoriel de fonctions"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la densité des polynômes",
+    "approximation de fonctions continues par des polynômes"
+  ],
+  "objects": [
+    "fonction f",
+    "fonction g",
+    "espace E([0,1], ℝ)"
+  ],
+  "content_hash": "30e541919327b2b7f708f52f42dedd4703d3acd86064703f7ad85b9525857aef",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:39:28.343Z"
+}

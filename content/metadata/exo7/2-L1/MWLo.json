@@ -1,0 +1,28 @@
+{
+  "uuid": "MWLo",
+  "source_path": "exo7/2-L1/MWLo.tex",
+  "summary": "On cherche à déterminer les coefficients a, b, c d'une fonction par morceaux définie par un polynôme du second degré pour x ≥ 0 et par la fonction exponentielle pour x < 0, afin que cette fonction soit de classe C² (et éventuellement C³) sur ℝ.",
+  "concepts": [
+    "fonction par morceaux",
+    "classe de régularité C²",
+    "classe de régularité C³",
+    "continuité",
+    "dérivabilité",
+    "continuité de la dérivée seconde",
+    "continuité de la dérivée troisième"
+  ],
+  "methods": [
+    "calcul de la dérivée première",
+    "calcul de la dérivée seconde",
+    "calcul de la dérivée troisième",
+    "égalité des dérivées aux points de raccord"
+  ],
+  "objects": [
+    "fonction par morceaux",
+    "polynôme du second degré",
+    "fonction exponentielle"
+  ],
+  "content_hash": "41da122c4c2fba4e244562f6aa90d97fb98609b48870ab4664a3ca0f02bacfb5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:06:09.202Z"
+}

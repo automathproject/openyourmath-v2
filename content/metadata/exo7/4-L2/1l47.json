@@ -1,0 +1,26 @@
+{
+  "uuid": "1l47",
+  "source_path": "exo7/4-L2/1l47.tex",
+  "summary": "Soit une matrice C de taille 2n×2n construite à partir de deux matrices carrées A et B de taille n×n. On demande de prouver que le déterminant de C est toujours positif ou nul.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "matrice bloc",
+    "opération sur les lignes/colonnes",
+    "module d'un nombre complexe",
+    "propriété multiplicative du déterminant"
+  ],
+  "methods": [
+    "transformation de lignes/colonnes",
+    "calcul de déterminant de matrice bloc",
+    "utilisation de nombres complexes"
+  ],
+  "objects": [
+    "matrice 2n×2n",
+    "matrice carrée n×n",
+    "matrice complexe"
+  ],
+  "content_hash": "1b6a5689b8d14c0980af166edc196b110d6809c85d92e9d4a3949fc82965132c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:28:26.594Z"
+}

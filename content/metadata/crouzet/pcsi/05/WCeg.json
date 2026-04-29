@@ -1,0 +1,30 @@
+{
+  "uuid": "WCeg",
+  "source_path": "crouzet/pcsi/05/WCeg.tex",
+  "summary": "Pour chaque application donnée, déterminer si elle est injective, surjective, bijective, et si possible trouver sa bijection réciproque.",
+  "concepts": [
+    "injectivité",
+    "surjectivité",
+    "bijectivité",
+    "application réciproque",
+    "système d'équations linéaires",
+    "fonction strictement croissante",
+    "limite de fonction"
+  ],
+  "methods": [
+    "résolution d'équations",
+    "analyse de la dérivée",
+    "calcul de limites",
+    "résolution de systèmes linéaires"
+  ],
+  "objects": [
+    "application de ℕ dans ℕ*",
+    "application de ℝ\\(5\\) dans ℝ\\(2\\)",
+    "application de ℝ dans ℝ+",
+    "application de ℝ dans ℝ",
+    "application de ℝ² dans ℝ²"
+  ],
+  "content_hash": "baffd7b99eaa8d1ae7e71c5de3b9ff42f160d2cf00eb5b392a42efddb323dba4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:07:11.260Z"
+}

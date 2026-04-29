@@ -1,0 +1,30 @@
+{
+  "uuid": "hGvI",
+  "source_path": "exo7/4-L2/hGvI.tex",
+  "summary": "L'exercice étudie les propriétés des morphismes de groupes définis sur le groupe multiplicatif d'un corps fini. Il demande de montrer des relations entre les noyaux et images de ces morphismes, et d'établir la cyclicité du groupe multiplicatif.",
+  "concepts": [
+    "corps fini",
+    "groupe multiplicatif",
+    "morphisme de groupe",
+    "noyau d'un morphisme",
+    "image d'un morphisme",
+    "ordre d'un élément",
+    "indicateur d'Euler",
+    "groupe cyclique"
+  ],
+  "methods": [
+    "étude des noyaux et images",
+    "récurrence sur les diviseurs",
+    "utilisation de l'indicateur d'Euler"
+  ],
+  "objects": [
+    "corps fini K",
+    "groupe multiplicatif K*",
+    "morphisme f_a",
+    "noyau Ker f_a",
+    "image Im(f_a)"
+  ],
+  "content_hash": "f0f903a9acc5bf38057942105aba7d3e3eb468aa57a874a289f8efbf4757aaae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:05:15.961Z"
+}

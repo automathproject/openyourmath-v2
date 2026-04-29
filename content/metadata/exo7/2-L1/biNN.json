@@ -1,0 +1,29 @@
+{
+  "uuid": "biNN",
+  "source_path": "exo7/2-L1/biNN.tex",
+  "summary": "L'exercice demande de fournir des exemples de fonctions avec des propriétés de continuité spécifiques : une fonction continue non lipschitzienne sur [0,1], une fonction continue en un seul point, une fonction discontinue sur les rationnels et continue sur les irrationnels, une fonction continue avec des valeurs irrationnelles sauf en 0 et sur les rationnels non nuls, et d'analyser la continuité d'une fonction vérifiant une condition de limite.",
+  "concepts": [
+    "continuité",
+    "fonction lipschitzienne",
+    "continuité en un point",
+    "discontinuité",
+    "rationnels",
+    "irrationnels",
+    "bijection",
+    "limite"
+  ],
+  "methods": [
+    "analyse des propriétés de continuité",
+    "construction d'exemples"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle [0,1]",
+    "rationnels",
+    "irrationnels",
+    "bijection"
+  ],
+  "content_hash": "b8b478135a115b546d934d5affc78bf00bddee181c931abf6cf9c90b2e767c79",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:20:41.647Z"
+}

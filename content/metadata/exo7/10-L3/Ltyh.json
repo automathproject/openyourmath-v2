@@ -1,0 +1,24 @@
+{
+  "uuid": "Ltyh",
+  "source_path": "exo7/10-L3/Ltyh.tex",
+  "summary": "L'exercice demande de décomposer trois permutations données en produit de transpositions. Les permutations sont données sous forme de tableaux à deux lignes pour des éléments de S₃, S₄ et S₅.",
+  "concepts": [
+    "permutation",
+    "groupe symétrique",
+    "transposition",
+    "décomposition en transpositions",
+    "parité d'une permutation"
+  ],
+  "methods": [
+    "décomposition en cycles",
+    "identification des transpositions"
+  ],
+  "objects": [
+    "permutation de S₃",
+    "permutation de S₄",
+    "permutation de S₅"
+  ],
+  "content_hash": "bcc517b5aaecae0523ed369e5dce00b34091b6f173b6b4b0294193829b9f6cce",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:49:52.608Z"
+}

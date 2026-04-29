@@ -1,0 +1,27 @@
+{
+  "uuid": "m4e1",
+  "source_path": "exo7/1-L1/m4e1.tex",
+  "summary": "L'exercice demande de prouver l'équivalence de trois propriétés concernant une application linéaire f de R^n dans R^n : la somme directe de l'image et du noyau, l'égalité de l'image de f avec celle de f², et l'égalité du noyau de f avec celui de f².",
+  "concepts": [
+    "application linéaire",
+    "image d'une application linéaire",
+    "noyau d'une application linéaire",
+    "somme directe de sous-espaces",
+    "théorème du rang",
+    "composition d'applications linéaires"
+  ],
+  "methods": [
+    "démonstration d'équivalence de propriétés",
+    "utilisation du théorème du rang",
+    "analyse des noyaux et images"
+  ],
+  "objects": [
+    "application linéaire f",
+    "image de f",
+    "noyau de f",
+    "sous-espaces vectoriels"
+  ],
+  "content_hash": "3153bac5d3194828cb0bffcfd2c82d0c0b7a702cab8b941f31aadf32c219cfb8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:56:57.358Z"
+}

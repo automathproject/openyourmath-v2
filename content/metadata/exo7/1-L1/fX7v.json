@@ -1,0 +1,27 @@
+{
+  "uuid": "fX7v",
+  "source_path": "exo7/1-L1/fX7v.tex",
+  "summary": "L'exercice demande de déterminer le rang d'une matrice par blocs en fonction du rang d'une matrice carrée donnée. La matrice par blocs est construite en répétant la matrice carrée donnée le long de sa diagonale.",
+  "concepts": [
+    "rang d'une matrice",
+    "matrice par blocs",
+    "matrice inversible",
+    "déterminant",
+    "équivalence de matrices",
+    "matrice identité"
+  ],
+  "methods": [
+    "réduction par blocs",
+    "calcul du déterminant",
+    "suppression de lignes et colonnes nulles"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice par blocs",
+    "matrice identité",
+    "matrice diagonale"
+  ],
+  "content_hash": "b20b1fa41e1e927d0de1640742e93a74a3b95e81a47a92059dd5b8aa73db16b7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:10:16.087Z"
+}

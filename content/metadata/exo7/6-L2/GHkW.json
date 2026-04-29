@@ -1,0 +1,27 @@
+{
+  "uuid": "GHkW",
+  "source_path": "exo7/6-L2/GHkW.tex",
+  "summary": "Déterminer la développante d'une courbe donnée par l'équation y = a ch(x/a), appelée chainette, et qui se rencontre elle-même pour x=0. La développante est la courbe enveloppe des tangentes à la courbe originale.",
+  "concepts": [
+    "courbe plane",
+    "développante",
+    "tangente",
+    "courbure",
+    "fonction hyperbolique",
+    "enveloppe de courbes"
+  ],
+  "methods": [
+    "calcul de l'enveloppe d'une famille de droites",
+    "paramétrisation de courbe",
+    "utilisation des fonctions hyperboliques"
+  ],
+  "objects": [
+    "chainette",
+    "développante",
+    "tangente",
+    "courbe plane"
+  ],
+  "content_hash": "1a93d16ceeaebf1ebc43eed5d77b3e8422c2410281c0edd1a512234c70d38be8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:47:48.859Z"
+}

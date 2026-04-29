@@ -1,0 +1,24 @@
+{
+  "uuid": "rueq",
+  "source_path": "exo7/4-L2/rueq.tex",
+  "summary": "Soit A un anneau fini commutatif intègre. Montrer que tout élément non nul de A est inversible, c'est-à-dire que A est un corps.",
+  "concepts": [
+    "anneau fini",
+    "anneau commutatif",
+    "anneau intègre",
+    "corps",
+    "inversibilité des éléments non nuls"
+  ],
+  "methods": [
+    "utilisation des propriétés d'intégrité",
+    "argument par l'absurde",
+    "analyse des éléments non nuls"
+  ],
+  "objects": [
+    "anneau A",
+    "élément non nul"
+  ],
+  "content_hash": "fe1bd6435c290fe415dcbe390a2afe6ac04c844975280c495622c1a5d4655624",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:15:01.737Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "oeGd",
+  "source_path": "exo7/16-L3/oeGd.tex",
+  "summary": "L'exercice étudie la série entière $\\sum_{k=0}^\\infty z^{2^k}$ : détermination de son rayon de convergence, comportement de sa somme $f(z)$ sur le cercle unité, et implications sur le prolongement analytique. Il explore aussi le rayon de convergence des séries de Taylor de $f$ en tout point de $D(0,1)$.",
+  "concepts": [
+    "rayon de convergence",
+    "série entière",
+    "fonction holomorphe",
+    "principe de prolongement analytique",
+    "série de Taylor",
+    "convergence radiale",
+    "densité dans le cercle unité"
+  ],
+  "methods": [
+    "étude du rayon de convergence",
+    "minoration par sommes partielles",
+    "analyse de la limite sur le cercle unité",
+    "application du principe de prolongement analytique",
+    "calcul du rayon de convergence des séries de Taylor"
+  ],
+  "objects": [
+    "série entière $\\sum_{k=0}^\\infty z^{2^k}$",
+    "fonction $f(z)$",
+    "cercle unité",
+    "ouvert $U$ connexe",
+    "série de Taylor de $f$ en $z_0$"
+  ],
+  "content_hash": "61d88ed4b842e7933bffbddd21edfcc93284116e79002f65e9c6f902c980864e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:42:13.288Z"
+}

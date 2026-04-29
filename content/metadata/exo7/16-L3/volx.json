@@ -1,0 +1,29 @@
+{
+  "uuid": "volx",
+  "source_path": "exo7/16-L3/volx.tex",
+  "summary": "L'exercice demande de déterminer les domaines de définition de deux fonctions complexes f et g, définies via des logarithmes complexes, et de montrer qu'elles sont des branches continues d'une même fonction racine cubique. Il explore ensuite la possibilité d'élargir ces domaines de définition.",
+  "concepts": [
+    "fonction logarithme complexe",
+    "détermination principale du logarithme",
+    "fonction exponentielle complexe",
+    "racine n-ième d'une fonction",
+    "branche d'une fonction multiforme",
+    "continuité complexe",
+    "domaine de définition"
+  ],
+  "methods": [
+    "analyse de la détermination principale",
+    "comparaison de branches de fonctions multiformes",
+    "étude de la continuité"
+  ],
+  "objects": [
+    "fonction complexe f",
+    "fonction complexe g",
+    "fonction racine cubique",
+    "domaine de définition Ω_f",
+    "domaine de définition Ω_g"
+  ],
+  "content_hash": "931c7ada0c648d71bec56f6797df6e39e4b1e0a8bc4f278e693b8aaea70a7c8e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:52:22.099Z"
+}

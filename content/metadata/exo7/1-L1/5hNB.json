@@ -1,0 +1,25 @@
+{
+  "uuid": "5hNB",
+  "source_path": "exo7/1-L1/5hNB.tex",
+  "summary": "L'exercice demande de montrer que deux matrices B et C sont égales à partir de leur produit avec une matrice A, puis d'étudier l'inversibilité de A. Ensuite, il s'agit de déterminer toutes les matrices F telles que le produit de A par F soit la matrice nulle.",
+  "concepts": [
+    "matrice",
+    "produit de matrices",
+    "inversibilité",
+    "système d'équations linéaires",
+    "noyau d'une application linéaire"
+  ],
+  "methods": [
+    "calcul de produit de matrices",
+    "résolution de système d'équations linéaires",
+    "étude de l'inversibilité"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice nulle",
+    "matrice F"
+  ],
+  "content_hash": "39c466e4da28a9b341ed96c17eb803c627155f380adf8470197bd7d6784ade2f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:42:32.499Z"
+}

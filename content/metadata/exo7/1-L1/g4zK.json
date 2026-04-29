@@ -1,0 +1,29 @@
+{
+  "uuid": "g4zK",
+  "source_path": "exo7/1-L1/g4zK.tex",
+  "summary": "Calculer le module et l'argument d'un nombre complexe élevé à une puissance, puis en déduire les valeurs de deux sommes alternées de coefficients binomiaux.",
+  "concepts": [
+    "nombre complexe",
+    "module d'un nombre complexe",
+    "argument d'un nombre complexe",
+    "formule du binôme",
+    "coefficient binomial",
+    "partie réelle",
+    "partie imaginaire"
+  ],
+  "methods": [
+    "décomposition en forme exponentielle",
+    "séparation en partie réelle et imaginaire",
+    "calcul de module et argument",
+    "utilisation de la formule du binôme"
+  ],
+  "objects": [
+    "nombre complexe (1+i)^n",
+    "somme de coefficients binomiaux alternés",
+    "partie réelle d'un nombre complexe",
+    "partie imaginaire d'un nombre complexe"
+  ],
+  "content_hash": "a57b367a3f604256f8b9ec053377f81577f20a5a25fce0ed343767064c55eddc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:47:12.823Z"
+}

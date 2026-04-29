@@ -1,0 +1,27 @@
+{
+  "uuid": "AvR9",
+  "source_path": "exo7/16-L3/AvR9.tex",
+  "summary": "L'exercice demande de prouver que le produit de deux séries entières converge vers le produit des fonctions qu'elles représentent, en utilisant le théorème sur les séries doubles. Il s'agit aussi d'étudier si le rayon de convergence du produit est toujours égal au minimum des rayons de convergence des séries initiales.",
+  "concepts": [
+    "séries entières",
+    "fonctions holomorphes",
+    "rayon de convergence",
+    "séries doubles",
+    "convergence absolue",
+    "théorème de Cauchy pour les séries entières"
+  ],
+  "methods": [
+    "utilisation du théorème des séries doubles",
+    "estimation des coefficients",
+    "comparaison de séries",
+    "analyse du rayon de convergence"
+  ],
+  "objects": [
+    "séries entières f(z) et g(z)",
+    "coefficient c_n",
+    "rayon de convergence R"
+  ],
+  "content_hash": "99f2d6f60ffa454c0765a48a2a118fc66d32a24a0fed15a66987af57ea9d42f0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:29:41.568Z"
+}

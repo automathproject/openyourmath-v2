@@ -1,0 +1,27 @@
+{
+  "uuid": "wnW0",
+  "source_path": "exo7/4-L2/wnW0.tex",
+  "summary": "Trouver toutes les matrices carrées A d'ordre n telles que pour toute matrice carrée B d'ordre n, le déterminant de A+B est égal à la somme des déterminants de A et B.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "matrice inversible",
+    "famille libre",
+    "base d'un espace vectoriel",
+    "matrice nulle"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de propriétés du déterminant",
+    "construction explicite de contre-exemple"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "matrice nulle",
+    "famille de vecteurs"
+  ],
+  "content_hash": "a49a1852f7270dad0df0d41418b7501323d005d127c96f8a00da5a30bd95655c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:20:02.169Z"
+}

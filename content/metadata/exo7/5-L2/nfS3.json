@@ -1,0 +1,29 @@
+{
+  "uuid": "nfS3",
+  "source_path": "exo7/5-L2/nfS3.tex",
+  "summary": "L'exercice demande de résoudre deux équations différentielles du premier ordre définies sur ℝ tout entier. La première équation est x²y' - y = 0, et la seconde est xy' + y - 1 = 0.",
+  "concepts": [
+    "équation différentielle linéaire homogène d'ordre 1",
+    "coefficient non constant",
+    "solution définie sur ℝ",
+    "prolongement par continuité",
+    "dérivabilité en un point",
+    "taux d'accroissement"
+  ],
+  "methods": [
+    "réduction à une équation standard",
+    "étude sur intervalles disjoints",
+    "recollement des solutions",
+    "analyse du taux d'accroissement",
+    "vérification de la dérivabilité"
+  ],
+  "objects": [
+    "équation différentielle du premier ordre",
+    "fonction solution",
+    "point de recollement",
+    "taux d'accroissement"
+  ],
+  "content_hash": "fb157c250f27d4b5161b6f4da47ab60c4bb273f787b331a26859265bea9a4f49",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:45:02.295Z"
+}

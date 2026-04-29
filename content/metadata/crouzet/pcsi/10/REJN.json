@@ -1,0 +1,27 @@
+{
+  "uuid": "REJN",
+  "source_path": "crouzet/pcsi/10/REJN.tex",
+  "summary": "L'exercice étudie la suite harmonique définie par la somme des inverses des entiers de 1 à n. Il demande de montrer qu'elle est croissante, d'établir l'existence de sa limite, puis de prouver par l'absurde que cette limite est infinie.",
+  "concepts": [
+    "suite numérique",
+    "croissance d'une suite",
+    "limite d'une suite",
+    "raisonnement par l'absurde",
+    "suite extraite",
+    "somme des inverses des entiers"
+  ],
+  "methods": [
+    "comparaison de termes consécutifs",
+    "majoration terme à terme",
+    "utilisation de la décroissance de la fonction inverse",
+    "raisonnement par contradiction"
+  ],
+  "objects": [
+    "suite harmonique",
+    "somme partielle",
+    "limite finie ou infinie"
+  ],
+  "content_hash": "c0b1ed4650d81ce6aa1dc971a48575e7314f77d06078a0e2aa982b356106a608",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:36:50.852Z"
+}

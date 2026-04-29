@@ -1,0 +1,23 @@
+{
+  "uuid": "u8nl",
+  "source_path": "exo7/1-L1/u8nl.tex",
+  "summary": "Démontrer que pour un nombre premier p, p divise le coefficient binomial Cp^k pour tout k compris entre 1 et p-1.",
+  "concepts": [
+    "nombre premier",
+    "coefficient binomial",
+    "divisibilité",
+    "binôme de Newton",
+    "combinaisons"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des propriétés des nombres premiers"
+  ],
+  "objects": [
+    "coefficient binomial Cp^k",
+    "nombre premier p"
+  ],
+  "content_hash": "8047d80b3361425e3c2ad4cb3896e5a62ac73d6098576f07a06f51802667d814",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:51:21.348Z"
+}

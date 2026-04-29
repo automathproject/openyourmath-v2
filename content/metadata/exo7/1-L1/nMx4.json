@@ -1,0 +1,29 @@
+{
+  "uuid": "nMx4",
+  "source_path": "exo7/1-L1/nMx4.tex",
+  "summary": "On définit une application linéaire Φ sur l'espace des matrices 2x2 réelles et on demande de prouver son linéarité, de déterminer sa matrice dans la base canonique, puis de calculer son noyau et son image.",
+  "concepts": [
+    "application linéaire",
+    "matrice d'une application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "base canonique",
+    "espace vectoriel des matrices carrées"
+  ],
+  "methods": [
+    "vérification de la linéarité",
+    "calcul de la matrice d'une application linéaire",
+    "détermination du noyau",
+    "détermination de l'image"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "application linéaire",
+    "base canonique",
+    "noyau",
+    "image"
+  ],
+  "content_hash": "b368e292cc3e0db4cc6d8261229266134143585518ac88cc296dd11c920d0af7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:16:14.052Z"
+}

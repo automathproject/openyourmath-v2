@@ -1,0 +1,27 @@
+{
+  "uuid": "VdPK",
+  "source_path": "exo7/4-L2/VdPK.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble des automorphismes d'un groupe G forme un groupe sous la composition et que l'application π:G→℘(G) définie par π(x)={f(x)|f∈H} pour un sous-groupe H de Aut(G) produit une partition de G.",
+  "concepts": [
+    "groupe",
+    "automorphisme",
+    "sous-groupe",
+    "loi de composition",
+    "partition d'un ensemble",
+    "structure algébrique"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "définition d'une partition",
+    "utilisation de la composition de fonctions"
+  ],
+  "objects": [
+    "groupe G",
+    "ensemble des automorphismes Aut(G)",
+    "sous-groupe H",
+    "application π"
+  ],
+  "content_hash": "bc47f9d7d002b19bc34dca0cc64395ed29b0accea433d52d1b586087d91f1949",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:51:23.564Z"
+}

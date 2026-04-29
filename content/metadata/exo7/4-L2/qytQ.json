@@ -1,0 +1,26 @@
+{
+  "uuid": "qytQ",
+  "source_path": "exo7/4-L2/qytQ.tex",
+  "summary": "L'exercice demande de trouver une racine carrée de -1 modulo 13, puis d'étudier le réseau engendré par deux vecteurs dans ℤ², en montrant que tous ses éléments ont une norme multiple de 13. Enfin, il s'agit de trouver deux entiers dont les carrés s'additionnent pour donner 13.",
+  "concepts": [
+    "racine carrée modulo un nombre premier",
+    "réseau dans ℤ²",
+    "norme d'un vecteur",
+    "somme de deux carrés"
+  ],
+  "methods": [
+    "recherche de racine carrée modulo p",
+    "génération de réseau",
+    "calcul de norme",
+    "recherche d'entiers vérifiant une équation diophantienne"
+  ],
+  "objects": [
+    "racine carrée de -1 modulo 13",
+    "réseau ℤ²",
+    "vecteurs générateurs",
+    "entiers x et y"
+  ],
+  "content_hash": "85e381f84b900deef359edc7103bc9b239a6eee366f800706c284b7c9c411e0f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:14:11.059Z"
+}

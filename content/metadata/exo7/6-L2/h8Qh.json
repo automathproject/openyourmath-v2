@@ -1,0 +1,29 @@
+{
+  "uuid": "h8Qh",
+  "source_path": "exo7/6-L2/h8Qh.tex",
+  "summary": "L'exercice demande de prouver qu'il n'existe pas de triangle équilatéral dont les sommets sont des points d'intersection des lignes d'une feuille quadrillée, c'est-à-dire des points à coordonnées entières dans un repère orthonormé.",
+  "concepts": [
+    "géométrie affine",
+    "repère orthonormé",
+    "coordonnées entières",
+    "triangle équilatéral",
+    "angle entre vecteurs",
+    "produit scalaire",
+    "déterminant",
+    "tangente d'un angle"
+  ],
+  "methods": [
+    "calcul de produit scalaire",
+    "calcul de déterminant",
+    "calcul de tangente d'un angle",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "points à coordonnées entières",
+    "vecteurs du plan",
+    "triangle équilatéral"
+  ],
+  "content_hash": "c03008d67b689f57063f091a131f506fe277940dced160681d356a9929de0118",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:03:10.635Z"
+}

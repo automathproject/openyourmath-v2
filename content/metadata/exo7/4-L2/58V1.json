@@ -1,0 +1,25 @@
+{
+  "uuid": "58V1",
+  "source_path": "exo7/4-L2/58V1.tex",
+  "summary": "Déterminer le rang de l'application linéaire qui à une matrice M de taille 2x2 associe le commutateur AM - MA.",
+  "concepts": [
+    "algèbre linéaire",
+    "application linéaire",
+    "rang d'une application",
+    "commutateur de matrices",
+    "espace vectoriel"
+  ],
+  "methods": [
+    "calcul du noyau",
+    "calcul de l'image",
+    "détermination du rang"
+  ],
+  "objects": [
+    "matrice carrée",
+    "application linéaire",
+    "commutateur de matrices"
+  ],
+  "content_hash": "f496589accc1712c90be840775078ed4521660a0c9e24d0a8c55944ab0c2274f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:31:11.906Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "2QlX",
+  "source_path": "exo7/2-L1/2QlX.tex",
+  "summary": "Calculer l'intégrale I = ∫[0,2π] ln|x - e^(it)| dt pour x réel différent de ±1 en utilisant les sommes de Riemann.",
+  "concepts": [
+    "intégrale de Riemann",
+    "somme de Riemann",
+    "fonction complexe",
+    "logarithme complexe",
+    "intégration sur un intervalle"
+  ],
+  "methods": [
+    "approximation par sommes de Riemann",
+    "linéarisation de l'intégrande",
+    "intégration par parties"
+  ],
+  "objects": [
+    "fonction logarithme",
+    "fonction exponentielle complexe",
+    "intégrale définie"
+  ],
+  "content_hash": "26d6d4f115840b2cfa659d11365bf4fd4c14db9fd7c50e2d17e50631297beddb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:28:25.111Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "PAzn",
+  "source_path": "amscc/PAzn.tex",
+  "summary": "L'exercice demande de calculer la dérivée d'une fonction composée g(t) = f(x+t, y+t) en utilisant la règle des chaînes, puis d'en déduire une condition sur les dérivées partielles de f.",
+  "concepts": [
+    "fonction différentiable",
+    "dérivée partielle",
+    "règle des chaînes",
+    "fonction constante",
+    "dérivée d'une fonction composée"
+  ],
+  "methods": [
+    "application de la règle des chaînes",
+    "calcul de dérivée partielle",
+    "utilisation de la constance d'une fonction"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "fonction composée",
+    "dérivée partielle"
+  ],
+  "content_hash": "5159c16c1a9ab877ed03bd435dd37ffcbab7dac52c34140db1905d0bd5277dd7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:00:12.083Z"
+}

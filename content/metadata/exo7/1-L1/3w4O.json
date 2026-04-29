@@ -1,0 +1,24 @@
+{
+  "uuid": "3w4O",
+  "source_path": "exo7/1-L1/3w4O.tex",
+  "summary": "Montrer par récurrence que la somme des puissances k-èmes des entiers de 1 à n est divisible par le nombre triangulaire n(n+1)/2, où k est un entier impair et n ≥ 1.",
+  "concepts": [
+    "récurrence",
+    "divisibilité",
+    "nombre triangulaire",
+    "somme de puissances"
+  ],
+  "methods": [
+    "récurrence forte",
+    "calcul de somme",
+    "division euclidienne"
+  ],
+  "objects": [
+    "somme de puissances",
+    "entier impair",
+    "nombre triangulaire"
+  ],
+  "content_hash": "33956d4f81e922cdbe35082eb27cfb3243d1b06c5199837f7fadad2d990ebd73",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:00:37.798Z"
+}

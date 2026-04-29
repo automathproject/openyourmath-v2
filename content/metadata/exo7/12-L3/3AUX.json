@@ -1,0 +1,30 @@
+{
+  "uuid": "3AUX",
+  "source_path": "exo7/12-L3/3AUX.tex",
+  "summary": "L'exercice demande de montrer que les fonctions f et g sont de classe C^1, de calculer leurs matrices jacobiennes en certains points, puis d'établir une propriété de contraction pour g sur un voisinage de l'origine.",
+  "concepts": [
+    "différentiabilité",
+    "classe de régularité C^1",
+    "classe de régularité C^∞",
+    "matrice jacobienne",
+    "point fixe",
+    "théorème du point fixe",
+    "continuité",
+    "accroissements finis"
+  ],
+  "methods": [
+    "calcul de la matrice jacobienne",
+    "composition de fonctions",
+    "application du théorème du point fixe",
+    "estimation de la norme d'une matrice"
+  ],
+  "objects": [
+    "fonction de ℝ² dans ℝ²",
+    "matrice jacobienne",
+    "boule fermée",
+    "point fixe"
+  ],
+  "content_hash": "e1bbc01c67956cf390bfa6327da2135940625d9429437a5bb23ea211a46d1306",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:22:37.767Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "Nce1",
+  "source_path": "exo7/4-L2/Nce1.tex",
+  "summary": "Soit un espace euclidien E et u un endomorphisme orthogonal de E. On définit v = id - u. L'exercice demande de montrer deux propriétés : d'abord que le noyau de v est orthogonal à l'image de v, puis que la limite d'une certaine moyenne des itérées de u est la projection orthogonale de x sur le noyau de v.",
+  "concepts": [
+    "espace euclidien",
+    "endomorphisme orthogonal",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "orthogonalité",
+    "projection orthogonale",
+    "limite de suite"
+  ],
+  "methods": [
+    "manipulation d'espaces vectoriels",
+    "utilisation de la définition d'orthogonalité",
+    "calcul de limite de suite",
+    "projection sur un sous-espace"
+  ],
+  "objects": [
+    "endomorphisme v",
+    "noyau de v",
+    "image de v",
+    "projection orthogonale",
+    "suite de moyennes"
+  ],
+  "content_hash": "f0155b3a25cef0671fca03c785dc814bd462aa48113f3f77b00b8c1e83714e6b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:55:02.528Z"
+}

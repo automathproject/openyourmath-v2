@@ -1,0 +1,31 @@
+{
+  "uuid": "ayRb",
+  "source_path": "exo7/4-L2/ayRb.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble des nombres complexes à parties réelles et imaginaires entières forme un anneau commutatif, puis d'identifier ses éléments inversibles.",
+  "concepts": [
+    "anneau commutatif",
+    "élément inversible",
+    "structure algébrique",
+    "lois de composition interne",
+    "nombres complexes gaussiens",
+    "propriétés de stabilité",
+    "associativité",
+    "commutativité",
+    "existence d'élément neutre"
+  ],
+  "methods": [
+    "vérification des axiomes d'anneau",
+    "identification des unités",
+    "calcul du produit inverse",
+    "détermination des éléments premiers"
+  ],
+  "objects": [
+    "ensemble $\\mathbb{Z}[i]$",
+    "nombres complexes à coefficients entiers",
+    "éléments inversibles",
+    "lois d'addition et de multiplication"
+  ],
+  "content_hash": "f7bdce1a1dec57d6929949ea1d73820d437d4db098e51a4bb9d8d7361c70bed8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:59:23.824Z"
+}

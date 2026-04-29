@@ -1,0 +1,25 @@
+{
+  "uuid": "lc39",
+  "source_path": "exo7/4-L2/lc39.tex",
+  "summary": "L'exercice demande de compléter une matrice donnée pour en faire une matrice orthogonale positive, puis d'interpréter géométriquement cette matrice comme une transformation linéaire dans ℝ³.",
+  "concepts": [
+    "matrice orthogonale",
+    "matrice positive",
+    "rotation vectorielle",
+    "base canonique",
+    "espace euclidien"
+  ],
+  "methods": [
+    "vérification de l'orthogonalité",
+    "calcul de l'angle de rotation",
+    "interprétation géométrique de matrices"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "espace vectoriel euclidien",
+    "base canonique de ℝ³"
+  ],
+  "content_hash": "17985a97823d45572315e4a2d656656f839cf0f8e925a6ae2f5db96c75930b71",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:49:44.644Z"
+}

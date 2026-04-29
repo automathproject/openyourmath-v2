@@ -1,0 +1,27 @@
+{
+  "uuid": "zKf7",
+  "source_path": "exo7/2-L1/zKf7.tex",
+  "summary": "On considère une fonction infiniment dérivable sur les réels positifs, nulle à partir de 1/2 et valant 1 en 0. On demande de prouver une inégalité sur la borne supérieure de ses dérivées successives.",
+  "concepts": [
+    "formule de Taylor-Lagrange",
+    "dérivées successives",
+    "fonction infiniment dérivable",
+    "borne supérieure",
+    "inégalité de croissance des dérivées"
+  ],
+  "methods": [
+    "application de la formule de Taylor-Lagrange",
+    "construction d'une fonction auxiliaire",
+    "analyse de la monotonie",
+    "évaluation des dérivées"
+  ],
+  "objects": [
+    "fonction de classe C^∞",
+    "dérivées successives",
+    "borne supérieure",
+    "fonction auxiliaire"
+  ],
+  "content_hash": "10729b0838a55d9ba0e7acbbe8aa74afa0ad976aafd12fa00b3c132d4e5a12c6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:45:07.120Z"
+}

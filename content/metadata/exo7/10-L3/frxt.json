@@ -1,0 +1,25 @@
+{
+  "uuid": "frxt",
+  "source_path": "exo7/10-L3/frxt.tex",
+  "summary": "Trouver un polynôme à coefficients entiers de degré minimal satisfaisant deux congruences modulo des puissances de polynômes.",
+  "concepts": [
+    "anneau des polynômes",
+    "congruence de polynômes",
+    "division euclidienne dans ℤ[x]",
+    "théorème des restes chinois pour les polynômes",
+    "idéal engendré par un polynôme"
+  ],
+  "methods": [
+    "calcul de polynômes interpolateurs",
+    "utilisation des conditions de congruence",
+    "recherche de degré minimal"
+  ],
+  "objects": [
+    "polynôme à coefficients entiers",
+    "congruences polynomiales",
+    "idéal polynomial"
+  ],
+  "content_hash": "a0ac13af3d743cfe31b83443ed6154c6775dcc9bbf407a85b94f9606b2ab2116",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:50:11.605Z"
+}

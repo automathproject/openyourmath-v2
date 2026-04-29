@@ -1,0 +1,29 @@
+{
+  "uuid": "j09b",
+  "source_path": "exo7/2-L1/j09b.tex",
+  "summary": "Calculer le développement limité en 0 de six fonctions différentes à des ordres variés.",
+  "concepts": [
+    "développement limité",
+    "fonction composée",
+    "fonction trigonométrique",
+    "fonction logarithmique",
+    "fonction exponentielle",
+    "ordre de développement"
+  ],
+  "methods": [
+    "développement limité de fonctions usuelles",
+    "composition de développements limités",
+    "calcul des coefficients de Taylor"
+  ],
+  "objects": [
+    "fonction ln(cos(x))",
+    "fonction tan(x)",
+    "fonction sin(tan(x))",
+    "fonction (ln(1+x))^2",
+    "fonction exp(sin(x))",
+    "fonction sin^6(x)"
+  ],
+  "content_hash": "cbdc2797a69ea7c2bec761c7882d325279c7bf66abe9675819fe4ca26bd212e3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:38:34.470Z"
+}

@@ -1,0 +1,23 @@
+{
+  "uuid": "gupO",
+  "source_path": "exo7/2-L1/gupO.tex",
+  "summary": "Trouver une fonction non constante vérifiant f(x) = f(x²) pour tout x réel, puis démontrer que si cette fonction est continue en 0 et 1, elle doit être constante.",
+  "concepts": [
+    "continuité",
+    "fonction réelle",
+    "fonction constante",
+    "fonction non constante",
+    "propriété fonctionnelle"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des hypothèses de continuité"
+  ],
+  "objects": [
+    "fonction définie sur ℝ",
+    "fonction continue en 0 et 1"
+  ],
+  "content_hash": "e71a4c4ba064f2011b561ca91af0dff2d1ed2ad23e4329b9d6975d749f61c979",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:22:47.990Z"
+}

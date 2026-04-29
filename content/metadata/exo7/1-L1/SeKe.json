@@ -1,0 +1,29 @@
+{
+  "uuid": "SeKe",
+  "source_path": "exo7/1-L1/SeKe.tex",
+  "summary": "L'exercice demande de montrer qu'une famille de trois vecteurs forme une base de ℝ³ et de calculer la matrice d'un endomorphisme donné dans cette nouvelle base.",
+  "concepts": [
+    "changement de base",
+    "matrice de passage",
+    "inversibilité",
+    "endomorphisme",
+    "base de ℝ³",
+    "matrice d'un endomorphisme"
+  ],
+  "methods": [
+    "calcul de l'inverse d'une matrice",
+    "vérification de l'inversibilité",
+    "calcul de la matrice de passage",
+    "calcul de la matrice d'un endomorphisme dans une nouvelle base"
+  ],
+  "objects": [
+    "matrice carrée",
+    "base canonique",
+    "vecteurs de ℝ³",
+    "matrice de passage",
+    "matrice d'un endomorphisme"
+  ],
+  "content_hash": "1ecd39f37e4a8c2ae58c8be8321abae21c4e97b7442676f852a99d4a29092cd6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:59:34.517Z"
+}

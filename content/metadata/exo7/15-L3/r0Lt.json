@@ -1,0 +1,29 @@
+{
+  "uuid": "r0Lt",
+  "source_path": "exo7/15-L3/r0Lt.tex",
+  "summary": "L'exercice demande de vérifier qu'une norme est bien définie sur l'espace des séries convergentes et que cet espace est complet. Ensuite, il s'agit de montrer que les normes sur l'espace des séries absolument convergentes ne sont pas équivalentes et que cet espace est dense dans l'espace des séries convergentes.",
+  "concepts": [
+    "espace métrique complet",
+    "espace de Banach",
+    "norme",
+    "densité",
+    "équivalence de normes",
+    "série convergente",
+    "série absolument convergente"
+  ],
+  "methods": [
+    "vérification des propriétés d'une norme",
+    "étude de la complétude",
+    "comparaison de normes",
+    "construction de suite dense"
+  ],
+  "objects": [
+    "espace des séries convergentes",
+    "espace l^1 des séries absolument convergentes",
+    "norme",
+    "série de terme général"
+  ],
+  "content_hash": "404e06d6c841ec88ee8d178dd2a25de01cc899ca040fecc0d254cf76ff8407d2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:13:48.535Z"
+}

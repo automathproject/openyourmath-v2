@@ -1,0 +1,28 @@
+{
+  "uuid": "FurF",
+  "source_path": "exo7/1-L1/FurF.tex",
+  "summary": "L'exercice demande de montrer l'existence de couples d'entiers strictement positifs (aₙ, bₙ) tels que (2+√3)ⁿ = aₙ + bₙ√3, puis de prouver que 3bₙ² = aₙ² - 1. Ensuite, il faut démontrer que la partie entière de (2+√3)ⁿ est un entier impair.",
+  "concepts": [
+    "binôme de Newton",
+    "développement binomial",
+    "nombre entier",
+    "partie entière",
+    "conjugué algébrique",
+    "identité remarquable"
+  ],
+  "methods": [
+    "développement binomial",
+    "manipulation algébrique",
+    "utilisation de conjugués",
+    "analyse de la partie entière"
+  ],
+  "objects": [
+    "expression binomiale",
+    "nombre algébrique",
+    "partie entière",
+    "couple d'entiers"
+  ],
+  "content_hash": "3432695be4c6f698d6e6dfd1087c6684f04cec135571fdc084923e8b063c991c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:40:36.128Z"
+}

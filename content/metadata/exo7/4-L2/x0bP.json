@@ -1,0 +1,25 @@
+{
+  "uuid": "x0bP",
+  "source_path": "exo7/4-L2/x0bP.tex",
+  "summary": "L'exercice demande de déterminer une base orthonormale d'un sous-espace vectoriel de ℝ⁴, puis la matrice du projecteur orthogonal sur ce sous-espace dans la base canonique, et enfin la distance d'un vecteur donné à ce sous-espace.",
+  "concepts": [
+    "espace vectoriel euclidien",
+    "base orthonormale",
+    "projecteur orthogonal",
+    "distance d'un vecteur à un sous-espace",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "orthonormalisation de Gram-Schmidt",
+    "calcul de la matrice de projection",
+    "calcul de la distance orthogonale"
+  ],
+  "objects": [
+    "sous-espace vectoriel F",
+    "vecteur (1,1,1,1)",
+    "base canonique de ℝ⁴"
+  ],
+  "content_hash": "920ad9642dc3eddbb2c80e09497612a6ccf89135fba754451dbc6d67f18f0859",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:01:33.584Z"
+}

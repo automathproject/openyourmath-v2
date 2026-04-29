@@ -1,0 +1,27 @@
+{
+  "uuid": "oog2",
+  "source_path": "exo7/4-L2/oog2.tex",
+  "summary": "L'exercice demande de démontrer l'égalité entre le sous-groupe engendré par deux entiers non tous nuls et la somme de leurs sous-groupes cycliques, en utilisant les propriétés des sous-groupes de (ℤ, +).",
+  "concepts": [
+    "sous-groupe engendré",
+    "sous-groupe cyclique",
+    "somme de sous-groupes",
+    "plus grand commun diviseur",
+    "structure de groupe abélien",
+    "inclusion de sous-groupes"
+  ],
+  "methods": [
+    "démonstration par inclusion",
+    "utilisation des propriétés de ℤ",
+    "manipulation des combinaisons linéaires"
+  ],
+  "objects": [
+    "sous-groupe de (ℤ, +)",
+    "entiers non tous nuls",
+    "somme de sous-groupes cycliques",
+    "pgcd"
+  ],
+  "content_hash": "3cbb3445758889c474dc5803cc60e1629c708495bfeefa8dce4ff0c71c065df1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:12:08.597Z"
+}

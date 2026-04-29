@@ -1,0 +1,25 @@
+{
+  "uuid": "VYNJ",
+  "source_path": "exo7/4-L2/VYNJ.tex",
+  "summary": "Calculer le déterminant d'une matrice tridiagonale de taille n×n avec des coefficients spécifiques en fonction de la taille n. Vérification d'une racine pour un polynôme donné.",
+  "concepts": [
+    "déterminant de matrice",
+    "matrice tridiagonale",
+    "polynôme caractéristique",
+    "racine d'un polynôme",
+    "réduction de matrice"
+  ],
+  "methods": [
+    "calcul de déterminant par récurrence",
+    "vérification de racine par substitution",
+    "développement de Laplace"
+  ],
+  "objects": [
+    "matrice tridiagonale",
+    "polynôme caractéristique",
+    "déterminant"
+  ],
+  "content_hash": "389b62c78a59d7ec2ceaa7caba84dbd7c31b94570bf964b83b68d208ef74df47",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:52:46.573Z"
+}

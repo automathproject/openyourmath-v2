@@ -1,0 +1,28 @@
+{
+  "uuid": "iuc7",
+  "source_path": "crouzet/pcsi/10/iuc7.tex",
+  "summary": "Déterminer la limite (si elle existe) de suites définies par des polynômes ou des fractions rationnelles lorsque n tend vers l'infini.",
+  "concepts": [
+    "limite de suite",
+    "indétermination",
+    "convergence",
+    "polynôme",
+    "fraction rationnelle",
+    "comparaison de croissance"
+  ],
+  "methods": [
+    "mise en facteur",
+    "standardisation",
+    "comparaison de termes dominants",
+    "règle de l'Hôpital"
+  ],
+  "objects": [
+    "suite numérique",
+    "polynôme",
+    "fraction rationnelle",
+    "termes dominants"
+  ],
+  "content_hash": "1db9b1923a01fccdbc568dd54541cd47fea11c1b9383e750abf317f1a7e1e418",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:38:25.136Z"
+}

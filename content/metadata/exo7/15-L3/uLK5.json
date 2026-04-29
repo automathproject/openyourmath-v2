@@ -1,0 +1,27 @@
+{
+  "uuid": "uLK5",
+  "source_path": "exo7/15-L3/uLK5.tex",
+  "summary": "On considère l'espace des fonctions continues sur [0,1] et une suite de points distincts convergente. On définit une forme linéaire continue sur cet espace et on doit montrer qu'elle atteint sa norme en aucun point de la boule unité.",
+  "concepts": [
+    "espace dual",
+    "topologie faible",
+    "forme linéaire continue",
+    "norme d'une forme linéaire",
+    "convergence de suite",
+    "espace de Banach"
+  ],
+  "methods": [
+    "construction explicite de forme linéaire",
+    "calcul de norme",
+    "analyse de convergence"
+  ],
+  "objects": [
+    "espace C([0,1])",
+    "suite de points",
+    "forme linéaire",
+    "boule unité"
+  ],
+  "content_hash": "9863d49f54bb6ba57a36e5892443e63fd04ef95f1b8f6fafd3dcb88f178d6877",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:36:28.246Z"
+}

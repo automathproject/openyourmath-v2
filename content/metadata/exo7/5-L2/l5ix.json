@@ -1,0 +1,27 @@
+{
+  "uuid": "l5ix",
+  "source_path": "exo7/5-L2/l5ix.tex",
+  "summary": "Résoudre une équation différentielle du second ordre non homogène sur l'intervalle ]0;π[ avec un second membre de la forme cotangente de x.",
+  "concepts": [
+    "équation différentielle linéaire du second ordre",
+    "méthode de variation de la constante",
+    "formules de Cramer",
+    "changement de variable",
+    "primitive d'une fonction rationnelle"
+  ],
+  "methods": [
+    "variation de la constante",
+    "calcul de déterminant",
+    "changement de variable pour intégration",
+    "résolution d'équation différentielle linéaire"
+  ],
+  "objects": [
+    "équation différentielle non homogène",
+    "fonction cotangente",
+    "solutions générales",
+    "primitives"
+  ],
+  "content_hash": "bc7f3fb1ad8799c341107d894e61ed2c48b7b1dc880125c7e0e354b679d421c4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:43:29.509Z"
+}

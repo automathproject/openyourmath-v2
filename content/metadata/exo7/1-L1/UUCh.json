@@ -1,0 +1,29 @@
+{
+  "uuid": "UUCh",
+  "source_path": "exo7/1-L1/UUCh.tex",
+  "summary": "Démontrer par des méthodes combinatoires trois identités classiques des coefficients binomiaux : égalité du nombre de parties paires et impaires d'un ensemble, relation entre coefficients binomiaux, et somme de carrés de coefficients binomiaux.",
+  "concepts": [
+    "coefficient binomial",
+    "ensemble fini",
+    "cardinal d'un ensemble",
+    "application bijective",
+    "application involutive",
+    "combinaison",
+    "binôme de Newton"
+  ],
+  "methods": [
+    "argument combinatoire",
+    "construction d'application bijective",
+    "double comptage",
+    "décomposition de cas"
+  ],
+  "objects": [
+    "coefficient binomial",
+    "partie d'un ensemble",
+    "ensemble fini",
+    "application"
+  ],
+  "content_hash": "87b81ccf860da0c6bbb7d4ea79050e6852b1d093569c8751409190c0d91b06bc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:44:19.993Z"
+}

@@ -1,7 +1,7 @@
 {
   "uuid": "srFD",
   "source_path": "exo7/1-L1/srFD.tex",
-  "summary": "L'exercice demande de caractériser les endomorphismes d'un espace vectoriel E qui commutent avec tous les endomorphismes de E. Il s'agit de montrer que ces endomorphismes sont nécessairement des homothéties et d'étudier le centre du groupe linéaire GL(E).",
+  "summary": "L'exercice demande de caractériser les endomorphismes d'un espace vectoriel E qui commutent avec tous les endomorphismes de E. Il s'agit de déterminer quels morphismes particuliers satisfont cette condition de commutation.",
   "concepts": [
     "groupe",
     "sous-groupe",
@@ -10,21 +10,20 @@
     "automorphisme",
     "symétrie vectorielle",
     "homothétie",
-    "commutativité"
+    "commutation d'applications linéaires"
   ],
   "methods": [
     "caractérisation par symétries",
-    "utilisation de la commutativité",
-    "analyse des propriétés d'invariance"
+    "analyse de la commutation",
+    "utilisation de la structure de groupe"
   ],
   "objects": [
     "espace vectoriel",
     "endomorphisme",
-    "groupe linéaire",
     "symétrie",
     "homothétie"
   ],
-  "content_hash": "4525294f276695d9cf5ec80a309c364768e1a04f849bc768a10176996f1ba366",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:13:59.805Z"
+  "content_hash": "ceb0db4ca2d21d027039627a73fff325b8c54b44219e922f45335fce9ffabc79",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:38:27.902Z"
 }

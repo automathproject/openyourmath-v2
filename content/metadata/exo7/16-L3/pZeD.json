@@ -1,0 +1,27 @@
+{
+  "uuid": "pZeD",
+  "source_path": "exo7/16-L3/pZeD.tex",
+  "summary": "L'exercice demande de montrer que les équations de Cauchy-Riemann pour l'holomorphie d'une fonction F par rapport aux coordonnées (x, y) se transforment en une équation similaire dans un nouveau système de coordonnées (a, b) où w = a + ib est une fonction holomorphe de z = x + iy.",
+  "concepts": [
+    "fonction holomorphe",
+    "équations de Cauchy-Riemann",
+    "changement de coordonnées",
+    "bijectivité",
+    "inversion de bijection holomorphe",
+    "différentiation partielle"
+  ],
+  "methods": [
+    "changement de variables",
+    "utilisation des équations de Cauchy-Riemann",
+    "identification de formes différentielles"
+  ],
+  "objects": [
+    "fonction complexe F",
+    "coordonnées (x, y)",
+    "coordonnées (a, b)",
+    "fonction holomorphe w = a + ib"
+  ],
+  "content_hash": "42dfe9eb4f62e4b73d098700662742f8b9d6894856d512e44a146896e68c701f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:44:11.405Z"
+}

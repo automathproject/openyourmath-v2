@@ -1,0 +1,27 @@
+{
+  "uuid": "BY9w",
+  "source_path": "exo7/4-L2/BY9w.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction exponentielle n'appartient pas à un sous-espace vectoriel de fonctions polynomiales, puis d'établir l'existence d'une suite de fonctions polynomiales convergeant vers cette fonction exponentielle, et enfin d'en déduire une propriété sur l'orthogonalité.",
+  "concepts": [
+    "produit scalaire usuel",
+    "sous-espace vectoriel",
+    "fonction exponentielle",
+    "convergence de suite",
+    "norme euclidienne",
+    "supplémentaire orthogonal"
+  ],
+  "methods": [
+    "démonstration par l'absurde",
+    "approximation polynomiale",
+    "convergence uniforme"
+  ],
+  "objects": [
+    "espace vectoriel de fonctions continues",
+    "sous-espace vectoriel de fonctions polynomiales",
+    "fonction exponentielle",
+    "suite de fonctions polynomiales"
+  ],
+  "content_hash": "b767fe75f55547182918849d56dfe0b1922144fbeb54bacac2370f8356a518ee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:07:33.000Z"
+}

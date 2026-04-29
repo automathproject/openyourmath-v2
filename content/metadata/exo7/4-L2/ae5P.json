@@ -1,0 +1,26 @@
+{
+  "uuid": "ae5P",
+  "source_path": "exo7/4-L2/ae5P.tex",
+  "summary": "On considère un groupe d'ordre pn avec p premier. On montre que l'intersection de deux sous-groupes d'ordre p est triviale, puis on en déduit que le nombre d'éléments d'ordre p est un multiple de p-1.",
+  "concepts": [
+    "théorème de Lagrange",
+    "sous-groupe",
+    "ordre d'un élément",
+    "groupe cyclique",
+    "groupe d'ordre fini"
+  ],
+  "methods": [
+    "utilisation de la divisibilité de l'ordre",
+    "analyse des sous-groupes engendrés",
+    "décomposition en union disjointe"
+  ],
+  "objects": [
+    "groupe d'ordre pn",
+    "sous-groupes d'ordre p",
+    "éléments d'ordre p",
+    "ensemble des éléments d'ordre p"
+  ],
+  "content_hash": "5e4f8420815c0914041271cd803e0088aa2212238dc4f34f8a7c40b3d6636579",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:57:54.876Z"
+}

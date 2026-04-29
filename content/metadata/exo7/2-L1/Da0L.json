@@ -1,0 +1,25 @@
+{
+  "uuid": "Da0L",
+  "source_path": "exo7/2-L1/Da0L.tex",
+  "summary": "L'exercice demande de prouver que les dérivées d'ordre k < n de la fonction f(t) = (t² - 1)ⁿ s'annulent en t = ±1, puis de calculer la dérivée d'ordre n en ces points. Enfin, il faut montrer que cette dérivée d'ordre n s'annule au moins n fois dans l'intervalle ]-1,1[.",
+  "concepts": [
+    "dérivée d'ordre n",
+    "fonction polynomiale",
+    "théorème de Rolle",
+    "dérivation successive",
+    "annulation de dérivées"
+  ],
+  "methods": [
+    "calcul de dérivées successives",
+    "application du théorème de Rolle",
+    "développement par récurrence"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "dérivées d'ordre k",
+    "intervalle ]-1,1["
+  ],
+  "content_hash": "1af09494e28c40f9827b694b80fdeeba6edfc0d7c36b029aec8a42b5cf7fe336",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:00:56.769Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "61wz",
+  "source_path": "exo7/4-L2/61wz.tex",
+  "summary": "L'exercice demande de prouver que le déterminant d'une matrice tridiagonale spécifique est strictement positif, où les éléments diagonaux sont positifs, les éléments au-dessus de la diagonale sont positifs, et ceux en dessous sont négatifs.",
+  "concepts": [
+    "déterminant",
+    "matrice tridiagonale",
+    "propriété de positivité",
+    "induction mathématique",
+    "matrice à coefficients réels"
+  ],
+  "methods": [
+    "développement de Laplace",
+    "induction sur la taille de la matrice",
+    "analyse des propriétés des mineurs"
+  ],
+  "objects": [
+    "matrice tridiagonale",
+    "éléments diagonaux",
+    "éléments hors diagonale"
+  ],
+  "content_hash": "3d835847597b3b23736a5e1ca242c4cafed8770d1ff7dc82a72d0011bcc5d9ab",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:32:30.071Z"
+}

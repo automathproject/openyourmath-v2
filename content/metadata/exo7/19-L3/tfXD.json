@@ -1,0 +1,25 @@
+{
+  "uuid": "tfXD",
+  "source_path": "exo7/19-L3/tfXD.tex",
+  "summary": "L'exercice demande de calculer la fonction génératrice d'une variable aléatoire binomiale et d'en déduire la loi de la somme de deux variables binomiales indépendantes.",
+  "concepts": [
+    "loi binomiale",
+    "fonction génératrice des moments",
+    "indépendance de variables aléatoires",
+    "convolution de lois",
+    "propriété de stabilité de la loi binomiale"
+  ],
+  "methods": [
+    "calcul de la fonction génératrice",
+    "utilisation de la formule du binôme",
+    "propriété multiplicative des fonctions génératrices"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "fonction génératrice",
+    "somme de variables aléatoires indépendantes"
+  ],
+  "content_hash": "714aad209b56bfe7a74976817a55e2be824ca69058cd0849902f243991078179",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:34:48.121Z"
+}

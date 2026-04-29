@@ -1,0 +1,24 @@
+{
+  "uuid": "DDlo",
+  "source_path": "exo7/1-L1/DDlo.tex",
+  "summary": "Déterminer le chiffre des unités d'une puissance élevée d'un nombre entier, en l'occurrence 1997^10.",
+  "concepts": [
+    "divisibilité",
+    "division euclidienne",
+    "chiffre des unités",
+    "puissance d'un entier",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "calcul modulo 10",
+    "propriétés des puissances"
+  ],
+  "objects": [
+    "nombre entier",
+    "puissance",
+    "chiffre des unités"
+  ],
+  "content_hash": "94ace5382e077b8e09c1ca85ebb73aeaff56d9e086f05c50c00b9a8e30be28bb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:02:47.646Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "VHrA",
+  "source_path": "exo7/6-L2/VHrA.tex",
+  "summary": "Dans un triangle direct non rectangle isocèle ABC, on construit des points P, Q, R tels que BCP, CAQ et ABR soient des triangles rectangles isocèles directs. On demande de montrer que les vecteurs AP et QR sont orthogonaux et de même norme, puis que les droites (AP), (BQ) et (CE) sont concourantes.",
+  "concepts": [
+    "similitude directe",
+    "rotation",
+    "orthocentre",
+    "point intérieur de Vecten",
+    "géométrie affine euclidienne",
+    "triangle isocèle rectangle"
+  ],
+  "methods": [
+    "composition de similitudes",
+    "utilisation de propriétés de rotation",
+    "analyse de concourance de droites"
+  ],
+  "objects": [
+    "triangle direct non rectangle isocèle",
+    "vecteurs orthogonaux",
+    "droites concourantes",
+    "similitudes géométriques"
+  ],
+  "content_hash": "bb135ec12dffefbb72de1b785f92d15f9f3f6fd5e15ef475dc904d96fb51eb6c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:41:56.996Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "hORY",
+  "source_path": "exo7/1-L1/hORY.tex",
+  "summary": "Montrer la formule de dimension pour la somme de deux sous-espaces vectoriels F et G d'un espace vectoriel E de dimension finie.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "théorème de la base incomplète",
+    "famille libre",
+    "famille génératrice",
+    "base d'un espace vectoriel",
+    "combinaison linéaire"
+  ],
+  "methods": [
+    "construction de base par complétion",
+    "manipulation de combinaisons linéaires",
+    "preuve de liberté d'une famille",
+    "preuve de génération d'un espace"
+  ],
+  "objects": [
+    "sous-espaces vectoriels F et G",
+    "intersection F ∩ G",
+    "somme F + G",
+    "base de sous-espace",
+    "combinaison linéaire nulle"
+  ],
+  "content_hash": "5647ab6891c4d923c096b1e1bd492e73fae1a346dcaeb6566442b739a8d50b5e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:03:11.155Z"
+}

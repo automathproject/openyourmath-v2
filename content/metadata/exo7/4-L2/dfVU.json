@@ -1,0 +1,32 @@
+{
+  "uuid": "dfVU",
+  "source_path": "exo7/4-L2/dfVU.tex",
+  "summary": "Trouver tous les endomorphismes de ℝ³ vérifiant la condition f(x∧y) = f(x)∧f(y) pour tout couple de vecteurs (x,y) de ℝ³.",
+  "concepts": [
+    "espace vectoriel euclidien",
+    "produit vectoriel",
+    "base orthonormée directe",
+    "automorphisme orthogonal",
+    "rotation vectorielle",
+    "famille libre",
+    "famille orthogonale",
+    "famille orthonormée"
+  ],
+  "methods": [
+    "linéarité",
+    "orthogonalité",
+    "norme vectorielle",
+    "base de changement de coordonnées",
+    "vérification par cas"
+  ],
+  "objects": [
+    "endomorphisme",
+    "vecteur",
+    "base orthonormée",
+    "rotation",
+    "produit vectoriel"
+  ],
+  "content_hash": "a240eef49050d19ca5967c7d097c072067223795d0527694fa28a59fe516f6f4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:40:54.782Z"
+}

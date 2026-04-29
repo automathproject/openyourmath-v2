@@ -1,0 +1,28 @@
+{
+  "uuid": "NDeY",
+  "source_path": "exo7/6-L2/NDeY.tex",
+  "summary": "L'exercice demande de démontrer une condition nécessaire et suffisante pour que trois points M, N, P situés respectivement sur les côtés d'un triangle ABC soient alignés. La condition implique un produit de rapports de longueurs égales à 1.",
+  "concepts": [
+    "géométrie affine",
+    "théorème de Thalès",
+    "homothétie",
+    "coordonnées cartésiennes",
+    "alignement de points",
+    "rapports de longueurs"
+  ],
+  "methods": [
+    "utilisation du théorème de Thalès",
+    "composition d'homothéties",
+    "calcul de coordonnées",
+    "déterminant pour alignement"
+  ],
+  "objects": [
+    "triangle ABC",
+    "points M, N, P",
+    "rapports de segments",
+    "droites (BC), (CA), (AB)"
+  ],
+  "content_hash": "9bd65e7d7663600a0ea12db5dbf031b0282f16efc3b4c91d590a68770c38afac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:49:34.773Z"
+}

@@ -1,26 +1,26 @@
 {
   "uuid": "avVb",
   "source_path": "exo7/10-L3/avVb.tex",
-  "summary": "Montrer qu'un élément non nul d'un anneau intègre fini est inversible en utilisant les propriétés d'injectivité et de finitude.",
+  "summary": "Montrer qu'un élément non nul d'un anneau intègre et fini admet un inverse à gauche, en utilisant les propriétés d'injectivité et de finitude.",
   "concepts": [
     "anneau intègre",
-    "inversibilité",
+    "inverse à gauche",
     "application linéaire",
     "injectivité",
-    "finitude",
-    "corps"
+    "finitude d'un ensemble",
+    "propriété d'anneau"
   ],
   "methods": [
-    "utilisation de l'injectivité",
-    "argument de finitude",
-    "construction d'un inverse"
+    "démonstration par injectivité",
+    "utilisation de la finitude",
+    "manipulation d'équations dans un anneau"
   ],
   "objects": [
-    "élément non nul",
-    "application de multiplication",
-    "unité de l'anneau"
+    "élément non nul d'un anneau",
+    "application linéaire",
+    "inverse à gauche"
   ],
-  "content_hash": "f0bae2bd918cf9f4279f61cc3a0753b15641a8f72292cd2a51e766ec079fee2c",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:08:06.843Z"
+  "content_hash": "19173403a5dedbeaeb52e8f9ab7b5add4621c174503396e8ff19b0fda8e04276",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:33:11.874Z"
 }

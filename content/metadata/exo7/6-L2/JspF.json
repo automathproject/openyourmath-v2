@@ -1,0 +1,25 @@
+{
+  "uuid": "JspF",
+  "source_path": "exo7/6-L2/JspF.tex",
+  "summary": "Deux cercles tangents en T et deux droites sécantes en T coupent ces cercles en A, A' et B, B'. Montrer que les droites AB et A'B' sont parallèles.",
+  "concepts": [
+    "théorème des angles inscrits",
+    "tangente à un cercle",
+    "homothétie",
+    "parallélisme"
+  ],
+  "methods": [
+    "cas limite du théorème des angles inscrits",
+    "utilisation de la tangente commune",
+    "application d'une homothétie"
+  ],
+  "objects": [
+    "cercles tangents",
+    "droites sécantes",
+    "points d'intersection",
+    "tangente commune"
+  ],
+  "content_hash": "a62063906f3f8f9abbfb0dbd4f2bdf44a3bd354a3f02547db52a8e4314c3493e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:32:43.608Z"
+}

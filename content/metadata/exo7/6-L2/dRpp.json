@@ -1,0 +1,27 @@
+{
+  "uuid": "dRpp",
+  "source_path": "exo7/6-L2/dRpp.tex",
+  "summary": "L'exercice demande de déterminer la forme générale d'une matrice de rotation vectorielle dans une base orthonormée directe du plan euclidien orienté et d'étudier son invariance par changement de base. Il s'agit ensuite de prouver l'existence et l'unicité d'une rotation centrée en un point qui envoie une demi-droite sur une autre, permettant de définir l'angle orienté entre deux demi-droites.",
+  "concepts": [
+    "géométrie affine",
+    "rotation vectorielle",
+    "base orthonormée directe",
+    "angle orienté",
+    "changement de base",
+    "isométrie"
+  ],
+  "methods": [
+    "détermination de matrice de rotation",
+    "analyse de l'invariance par changement de base",
+    "preuve d'existence et d'unicité d'une rotation"
+  ],
+  "objects": [
+    "matrice de rotation",
+    "demi-droites",
+    "plan euclidien orienté",
+    "angle orienté"
+  ],
+  "content_hash": "89e2a7c957f86f4ca5cb210e66f63b36cae524fb33a4d23afba2c78b83ad3662",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:01:14.034Z"
+}

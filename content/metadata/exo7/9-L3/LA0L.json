@@ -1,0 +1,24 @@
+{
+  "uuid": "LA0L",
+  "source_path": "exo7/9-L3/LA0L.tex",
+  "summary": "L'exercice demande de construire à la règle les images de points sous une homographie donnée, en utilisant les images de quatre points spécifiques. Il interroge aussi la nécessité d'avoir l'image d'un repère projectif complet.",
+  "concepts": [
+    "homographie",
+    "géométrie projective",
+    "repère projectif",
+    "construction géométrique",
+    "espace projectif"
+  ],
+  "methods": [
+    "construction à la règle",
+    "utilisation de propriétés projectives"
+  ],
+  "objects": [
+    "points de P²(ℝ)",
+    "homographie",
+    "repère projectif"
+  ],
+  "content_hash": "28b85ac45eeecc351a7f9edf4bc0da70bee32082819d5e0ecb5094ce7e844d47",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:09:51.094Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "UXXW",
+  "source_path": "exo7/4-L2/UXXW.tex",
+  "summary": "L'exercice demande de vérifier que certaines applications sont des formes linéaires sur l'espace des polynômes de degré n, puis d'étudier des propriétés de ces formes linéaires, notamment leur orthogonal et leur base. Il aborde aussi l'interpolation polynomiale.",
+  "concepts": [
+    "forme linéaire",
+    "espace dual",
+    "orthogonal d'un sous-espace",
+    "base duale",
+    "interpolation polynomiale",
+    "polynôme de Lagrange"
+  ],
+  "methods": [
+    "vérification des propriétés de linéarité",
+    "construction de base duale",
+    "théorème d'interpolation de Lagrange",
+    "calcul de coefficients d'interpolation"
+  ],
+  "objects": [
+    "espace vectoriel de polynômes",
+    "formes linéaires",
+    "famille génératrice",
+    "polynôme interpolateur"
+  ],
+  "content_hash": "04a31dedc8ce09cc7d5a56143a17a4abf460f551c7f630b227a1319335bb84a3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:52:14.695Z"
+}

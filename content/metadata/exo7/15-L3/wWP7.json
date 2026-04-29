@@ -1,0 +1,27 @@
+{
+  "uuid": "wWP7",
+  "source_path": "exo7/15-L3/wWP7.tex",
+  "summary": "L'exercice demande de démontrer que le carré unité fermé et le disque fermé dans ℝ² sont homéomorphes, c'est-à-dire qu'il existe une bijection continue entre ces deux ensembles dont la réciproque est également continue.",
+  "concepts": [
+    "homéomorphisme",
+    "continuité",
+    "bijection",
+    "topologie",
+    "espace métrique",
+    "déformation continue"
+  ],
+  "methods": [
+    "construction explicite d'application",
+    "vérification de la continuité",
+    "vérification de la bijectivité",
+    "vérification de la continuité de la réciproque"
+  ],
+  "objects": [
+    "carré unité fermé",
+    "disque fermé",
+    "application continue"
+  ],
+  "content_hash": "93fb62545d81fa899d10784e252c52ba9aa42724ebf231f5e18ed38b02a790dd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:34:10.158Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "XU3R",
+  "source_path": "exo7/2-L1/XU3R.tex",
+  "summary": "L'exercice demande de montrer que la fonction f(x) = x / (1 + |x|) est strictement croissante, puis d'établir l'existence et l'unicité d'un antécédent pour tout y dans l'intervalle ]-1, 1[.",
+  "concepts": [
+    "fonction réelle",
+    "croissance stricte",
+    "bijectivité",
+    "théorème des valeurs intermédiaires",
+    "continuité"
+  ],
+  "methods": [
+    "étude du signe de la dérivée",
+    "démonstration par l'absurde",
+    "application du théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle ouvert",
+    "antécédent"
+  ],
+  "content_hash": "ff136b0a136450974ca48a338f396fd758441fda9c772824c6b0ba49430f2723",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:19:55.709Z"
+}

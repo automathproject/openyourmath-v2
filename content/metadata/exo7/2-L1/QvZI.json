@@ -1,0 +1,25 @@
+{
+  "uuid": "QvZI",
+  "source_path": "exo7/2-L1/QvZI.tex",
+  "summary": "On considère une fonction deux fois dérivable sur un intervalle [a,b] avec g(a)=g(b)=0 et g''(x)≤0 sur ]a,b[. On demande de montrer que g(x)≥0 pour tout x∈]a,b[.",
+  "concepts": [
+    "fonction deux fois dérivable",
+    "concavité",
+    "théorème de Rolle",
+    "inégalité de Taylor-Lagrange",
+    "extremum local"
+  ],
+  "methods": [
+    "analyse de la dérivée seconde",
+    "application du théorème de Rolle",
+    "développement limité"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle",
+    "dérivée seconde"
+  ],
+  "content_hash": "e1985715e6e164d21aa9fbdd91c65b44f95a76b76f4c02c185bfe60110b66df8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:08:45.566Z"
+}

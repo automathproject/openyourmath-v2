@@ -1,0 +1,28 @@
+{
+  "uuid": "Gn1Y",
+  "source_path": "amscc/Gn1Y.tex",
+  "summary": "L'exercice demande de déterminer les points critiques d'une fonction de deux variables et d'analyser la nature de ces points critiques (extremums locaux ou globaux). La fonction étudiée est f(x,y) = x²y³ + (y-1)².",
+  "concepts": [
+    "fonction de plusieurs variables",
+    "point critique",
+    "extremum local",
+    "extremum global",
+    "hessienne",
+    "déterminant de la hessienne",
+    "dérivées partielles"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "analyse de la hessienne",
+    "détermination des points critiques",
+    "classification des points critiques"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "hessienne",
+    "dérivées partielles"
+  ],
+  "content_hash": "00e16a423ffa3a4ff47dbc970ed9a2d26f397c4b8a9fc40583160b764ed00e66",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:09:44.437Z"
+}

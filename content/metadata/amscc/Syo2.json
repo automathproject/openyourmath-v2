@@ -1,0 +1,27 @@
+{
+  "uuid": "Syo2",
+  "source_path": "amscc/Syo2.tex",
+  "summary": "L'exercice étudie les propriétés d'inversibilité d'une famille de matrices paramétrées M(a,b) = aU + bI3, où U est une matrice constante et I3 la matrice identité. Il demande de déterminer les conditions sur les paramètres a et b pour que M(a,b) soit inversible, et d'exprimer son inverse sous une forme spécifique.",
+  "concepts": [
+    "matrice inversible",
+    "déterminant",
+    "famille de matrices paramétrées",
+    "matrice identité",
+    "calcul matriciel",
+    "condition d'inversibilité"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "méthode du pivot de Gauss",
+    "factorisation",
+    "résolution d'équation matricielle"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice identité",
+    "famille de matrices paramétrées"
+  ],
+  "content_hash": "91d92d2707a7546421a5825121a76c016790951142b3e783aba435834997019a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:00:23.102Z"
+}

@@ -1,0 +1,22 @@
+{
+  "uuid": "vnQg",
+  "source_path": "exo7/2-L1/vnQg.tex",
+  "summary": "On considère une fonction convexe f et une fonction affine g définies sur ℝ⁺* telles que f(x) ≤ g(x) pour tout x > 0 et f(1) = g(1). On demande de montrer que f et g sont égales.",
+  "concepts": [
+    "fonction convexe",
+    "fonction affine",
+    "inégalité de convexité",
+    "égalité de fonctions"
+  ],
+  "methods": [
+    "utilisation de la définition de convexité",
+    "comparaison en un point"
+  ],
+  "objects": [
+    "fonction convexe",
+    "fonction affine"
+  ],
+  "content_hash": "fd3ba5c6ea75b3b356cb75577c6c8d85e8cd4e6f3016fdd67d99def8654187d7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:23:29.651Z"
+}

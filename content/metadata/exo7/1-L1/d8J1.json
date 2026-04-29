@@ -1,0 +1,29 @@
+{
+  "uuid": "d8J1",
+  "source_path": "exo7/1-L1/d8J1.tex",
+  "summary": "L'exercice étudie une matrice réelle à coefficients strictement positifs et introduit une relation d'ordre sur les vecteurs colonnes. Il demande de prouver que la valeur R, définie comme le supremum de certains rapports, est finie et atteinte en un vecteur X₀, puis d'établir des propriétés sur ce vecteur et ses relations avec les valeurs propres de la matrice.",
+  "concepts": [
+    "relation d'ordre sur les vecteurs",
+    "supremum",
+    "valeur propre",
+    "inégalité triangulaire",
+    "compacité",
+    "matrice réelle"
+  ],
+  "methods": [
+    "utilisation de la compacité",
+    "analyse des inégalités",
+    "construction de vecteurs auxiliaires",
+    "étude des valeurs propres"
+  ],
+  "objects": [
+    "matrice réelle à coefficients positifs",
+    "vecteur colonne",
+    "valeur R",
+    "vecteur X₀",
+    "valeur propre complexe"
+  ],
+  "content_hash": "87a6b44d002207b219c1a1b84ad58f57ca1b9873da748bb8dde60bf2cbf220d5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:08:44.951Z"
+}

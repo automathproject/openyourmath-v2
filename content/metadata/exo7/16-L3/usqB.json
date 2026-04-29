@@ -1,0 +1,24 @@
+{
+  "uuid": "usqB",
+  "source_path": "exo7/16-L3/usqB.tex",
+  "summary": "L'exercice demande de démontrer qu'un polynôme en deux variables complexes z et z̅ est holomorphe si et seulement si aucun de ses monômes ne contient la variable conjuguée z̅.",
+  "concepts": [
+    "fonction holomorphe",
+    "polynôme à deux variables complexes",
+    "variable complexe conjuguée",
+    "condition nécessaire et suffisante",
+    "analyse complexe"
+  ],
+  "methods": [
+    "analyse des monômes",
+    "étude des conditions de dérivabilité complexe"
+  ],
+  "objects": [
+    "polynôme P(z, z̅)",
+    "variable complexe z",
+    "variable complexe conjuguée z̅"
+  ],
+  "content_hash": "d57ebb67ba68db468953526aa9903ea7412dd85a198c94d617a2d9dfd656da3c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:43:37.901Z"
+}

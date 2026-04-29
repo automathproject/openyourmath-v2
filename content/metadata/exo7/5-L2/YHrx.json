@@ -1,0 +1,30 @@
+{
+  "uuid": "YHrx",
+  "source_path": "exo7/5-L2/YHrx.tex",
+  "summary": "L'exercice demande de montrer l'existence d'une solution de classe C^∞ pour une équation différentielle linéaire non homogène à coefficients variables, sous des conditions sur les valeurs propres d'une matrice A(0). L'étude commence par le cas simplifié où n=1 et A est constante.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "valeurs propres",
+    "partie réelle des valeurs propres",
+    "solution de classe C^∞",
+    "théorème de Cauchy-Lipschitz",
+    "intégrale convergente",
+    "contractance"
+  ],
+  "methods": [
+    "résolution par intégration",
+    "variation de la constante",
+    "méthode de contraction",
+    "analyse des parties réelles",
+    "prolongement de solution"
+  ],
+  "objects": [
+    "matrice à coefficients variables",
+    "fonction vectorielle",
+    "solution prolongeable",
+    "intégrale à paramètre"
+  ],
+  "content_hash": "ad2d3f61e4f3fd5a41ea2f47298f9370aa7e3ff57ba1aa48405883404adce6a1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:33:04.981Z"
+}

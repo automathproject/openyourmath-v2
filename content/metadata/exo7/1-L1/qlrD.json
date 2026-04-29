@@ -1,0 +1,25 @@
+{
+  "uuid": "qlrD",
+  "source_path": "exo7/1-L1/qlrD.tex",
+  "summary": "On considère une application f de l'ensemble des entiers naturels non nuls vers lui-même vérifiant une inégalité de récurrence. On doit prouver que la seule solution est l'identité sur cet ensemble.",
+  "concepts": [
+    "fonction injective",
+    "fonction strictement croissante",
+    "principe de récurrence",
+    "minimalité",
+    "fonction identité"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de l'inégalité donnée",
+    "analyse de la minimalité",
+    "démonstration par récurrence"
+  ],
+  "objects": [
+    "fonction définie sur ℕ*",
+    "entiers naturels non nuls"
+  ],
+  "content_hash": "545e7b0fe34e74873f4585e2bb7294dcfc5c274086401444d52cf9d60cce7227",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:27:52.707Z"
+}

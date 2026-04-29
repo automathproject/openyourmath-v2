@@ -1,0 +1,28 @@
+{
+  "uuid": "NoKL",
+  "source_path": "exo7/15-L3/NoKL.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble A des fonctions continues positives sur [0,1] est fermé dans l'espace C[0,1] muni de deux normes différentes (norme infinie et norme 1), et de calculer son intérieur dans chaque cas.",
+  "concepts": [
+    "espace vectoriel normé",
+    "norme infinie",
+    "norme 1",
+    "fermeture d'un ensemble",
+    "intérieur d'un ensemble",
+    "fonction continue",
+    "topologie induite"
+  ],
+  "methods": [
+    "caractérisation de la fermeture",
+    "calcul de l'intérieur",
+    "comparaison des topologies"
+  ],
+  "objects": [
+    "ensemble de fonctions continues",
+    "norme infinie",
+    "norme 1",
+    "fonction positive"
+  ],
+  "content_hash": "75d7c3920d1200e4638862526e773def5033bc933083ee9193d7916e4b3c6b3b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:17:53.362Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "66fn",
+  "source_path": "exo7/2-L1/66fn.tex",
+  "summary": "On étudie la limite d'une fonction croissante définie sur les réels positifs, avec une condition sur la différence de ses valeurs en x+1 et x. On demande de montrer que la limite de f(x)/x tend vers 0 en +∞.",
+  "concepts": [
+    "limite de fonction",
+    "fonction croissante",
+    "bornitude sur un segment",
+    "inégalités",
+    "ε-δ"
+  ],
+  "methods": [
+    "raisonnement par ε",
+    "sommation d'inégalités",
+    "utilisation de la monotonie"
+  ],
+  "objects": [
+    "fonction croissante",
+    "limite de fonction",
+    "segment d'intervalle"
+  ],
+  "content_hash": "423ee4e306e9a73c646da65d9de7314cc3290d4b998cfad0808febe9a739a49c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:14:07.331Z"
+}

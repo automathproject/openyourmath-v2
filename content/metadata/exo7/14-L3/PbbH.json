@@ -1,0 +1,26 @@
+{
+  "uuid": "PbbH",
+  "source_path": "exo7/14-L3/PbbH.tex",
+  "summary": "L'exercice demande de montrer que la suite (1 + x/n)^n est croissante et converge vers e^x, puis de calculer la limite d'une intégrale impliquant cette suite et une fonction exponentielle.",
+  "concepts": [
+    "suite numérique",
+    "convergence simple",
+    "fonction exponentielle",
+    "lemme de Fatou",
+    "convergence monotone",
+    "intégrale de Lebesgue"
+  ],
+  "methods": [
+    "développement binomial",
+    "comparaison terme à terme",
+    "passage à la limite sous l'intégrale"
+  ],
+  "objects": [
+    "suite (1 + x/n)^n",
+    "fonction e^(-bx)",
+    "intégrale de Lebesgue"
+  ],
+  "content_hash": "9dbe7201c3987b827444f1d436aa5b5ebe6c47cb8132c856199aae81d64787be",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:01:36.946Z"
+}

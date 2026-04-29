@@ -1,0 +1,26 @@
+{
+  "uuid": "2p2u",
+  "source_path": "exo7/5-L2/2p2u.tex",
+  "summary": "L'exercice demande de prouver des propriétés d'annulation de solutions d'équations différentielles linéaires du second ordre à coefficients variables. La première question concerne une équation de type y'' + a(x)y = 0, et la seconde une équation de type z'' - a(x)z = 0.",
+  "concepts": [
+    "équation différentielle linéaire du second ordre",
+    "convexité",
+    "solution d'équation différentielle",
+    "fonction continue",
+    "théorème des valeurs intermédiaires"
+  ],
+  "methods": [
+    "analyse de convexité",
+    "étude des zéros de fonctions",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "solution d'équation différentielle",
+    "fonction a(x)",
+    "fonction y(x)",
+    "fonction z(x)"
+  ],
+  "content_hash": "587f1fd19d23c523d28bd978bd1d3f6a7d9f5d8ea6fa0ec692845007a2010cf4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:14:46.366Z"
+}

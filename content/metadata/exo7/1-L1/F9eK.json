@@ -1,0 +1,31 @@
+{
+  "uuid": "F9eK",
+  "source_path": "exo7/1-L1/F9eK.tex",
+  "summary": "L'exercice demande de calculer le nombre de bijections ou d'applications d'un ensemble de 12 éléments dans lui-même vérifiant des propriétés de conservation de parité ou de divisibilité par 3.",
+  "concepts": [
+    "bijection",
+    "application",
+    "cardinal d'un ensemble",
+    "partition d'un ensemble",
+    "décomposition en facteurs premiers",
+    "permutation",
+    "fonction injective",
+    "fonction surjective"
+  ],
+  "methods": [
+    "décomposition en cas d'égalité",
+    "calcul de factorielle",
+    "utilisation de la formule du cardinal d'un produit cartésien",
+    "application du principe de dénombrement"
+  ],
+  "objects": [
+    "ensemble fini",
+    "bijection",
+    "application",
+    "partition",
+    "facteur premier"
+  ],
+  "content_hash": "b6f576c3d18d17471fcadd2e3857710de4e082b439a582083df8b4d50d639ac9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:40:06.446Z"
+}

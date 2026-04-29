@@ -1,0 +1,28 @@
+{
+  "uuid": "fhj4",
+  "source_path": "exo7/12-L3/fhj4.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction F, définie comme le rapport de la différence de deux applications g en deux points distincts, est de classe C^1 sur ℝ² et de calculer sa différentielle.",
+  "concepts": [
+    "différentiabilité",
+    "classe C^1",
+    "classe C^2",
+    "différentielle",
+    "matrice jacobienne",
+    "développement limité",
+    "continuité"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "utilisation du développement limité",
+    "prolongement par continuité",
+    "analyse des limites"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "fonction de classe C^2",
+    "matrice jacobienne"
+  ],
+  "content_hash": "3c3d7cde09daa1587b2a2fc232041295c5e0335007eec0c09c70870bdb5719d9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:28:47.060Z"
+}

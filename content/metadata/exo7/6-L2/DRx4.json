@@ -1,0 +1,26 @@
+{
+  "uuid": "DRx4",
+  "source_path": "exo7/6-L2/DRx4.tex",
+  "summary": "On considère une fonction de classe C¹ définie sur [0,1] à valeurs dans [0,1]². L'exercice demande de prouver que cette fonction ne peut pas être bijective.",
+  "concepts": [
+    "fonction de classe C¹",
+    "bijectivité",
+    "théorème du rang",
+    "dimension de l'espace de départ et d'arrivée",
+    "continuité",
+    "différentiabilité"
+  ],
+  "methods": [
+    "analyse de la dimension",
+    "application du théorème du rang",
+    "étude des propriétés de la fonction"
+  ],
+  "objects": [
+    "fonction f",
+    "intervalle [0,1]",
+    "espace [0,1]²"
+  ],
+  "content_hash": "aa876f40685069a10ed74c5211abbb6bd1651ddc8b7fe9e45007c312a75a00a8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:46:26.341Z"
+}

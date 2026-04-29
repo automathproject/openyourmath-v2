@@ -1,0 +1,25 @@
+{
+  "uuid": "j6aO",
+  "source_path": "exo7/5-L2/j6aO.tex",
+  "summary": "L'exercice demande de montrer que l'intégrale de Riemann I_n, définie comme l'intégrale de t^n ln(1+t^2) de 0 à 1, tend vers 0 lorsque n tend vers l'infini.",
+  "concepts": [
+    "intégrale de Riemann",
+    "convergence d'une suite",
+    "intégrale dépendant d'un paramètre",
+    "limite de suite",
+    "analyse réelle"
+  ],
+  "methods": [
+    "comparaison d'intégrales",
+    "estimation d'intégrales",
+    "étude de la convergence"
+  ],
+  "objects": [
+    "intégrale paramétrique",
+    "suite d'intégrales",
+    "fonction intégrande"
+  ],
+  "content_hash": "2258ec543554bee590e46eec9c894daf808eaed85fdda6d18d0ba037f6744138",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:46:12.499Z"
+}

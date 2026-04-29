@@ -1,0 +1,31 @@
+{
+  "uuid": "ZiSn",
+  "source_path": "exo7/4-L2/ZiSn.tex",
+  "summary": "L'exercice demande de montrer que le centre d'un groupe est un sous-groupe et d'étudier le centre du groupe alterné pour n ≥ 3. Il aborde aussi des propriétés spécifiques du centre dans le cas d'un groupe abélien.",
+  "concepts": [
+    "groupe",
+    "sous-groupe",
+    "centre d'un groupe",
+    "groupe abélien",
+    "groupe alterné",
+    "permutation",
+    "3-cycle",
+    "signature d'une permutation"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "analyse des propriétés de commutation",
+    "étude des permutations",
+    "utilisation de la signature"
+  ],
+  "objects": [
+    "groupe G",
+    "centre Z(G)",
+    "groupe alterné A_n",
+    "3-cycle (i,j,k)",
+    "permutation s"
+  ],
+  "content_hash": "48a3ed901fe0f263c0cabd9ce64c765684c1cb01198951a0ad4533a51d5aeb25",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:56:11.495Z"
+}

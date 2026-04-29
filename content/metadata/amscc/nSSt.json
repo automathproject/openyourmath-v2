@@ -1,0 +1,28 @@
+{
+  "uuid": "nSSt",
+  "source_path": "amscc/nSSt.tex",
+  "summary": "L'exercice demande de déterminer les dimensions optimales d'une boîte sans couvercle sous forme de parallélépipède rectangle pour minimiser la quantité de matière utilisée, tout en maintenant un volume constant de 0,5 m³.",
+  "concepts": [
+    "optimisation sous contrainte",
+    "extremum local",
+    "fonction de plusieurs variables",
+    "dérivées partielles",
+    "hessienne",
+    "point critique"
+  ],
+  "methods": [
+    "réduction de variables",
+    "calcul des dérivées partielles",
+    "analyse de la hessienne",
+    "vérification de l'extremum"
+  ],
+  "objects": [
+    "fonction de trois variables",
+    "contrainte d'égalité",
+    "aire des faces",
+    "volume"
+  ],
+  "content_hash": "a18e59cbed3fc99ddfd300ef2007eb7d2f164c446d849d43eca1dc374ce61c44",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:19:04.352Z"
+}

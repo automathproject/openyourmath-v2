@@ -1,0 +1,27 @@
+{
+  "uuid": "cLCp",
+  "source_path": "exo7/4-L2/cLCp.tex",
+  "summary": "On considère un espace vectoriel réel E et un endomorphisme u de E tel que u² = u. On définit l'ensemble R[u] comme l'ensemble des combinaisons linéaires de l'identité et de u. L'exercice demande de montrer que R[u] est une R-algèbre et de déterminer si c'est un corps.",
+  "concepts": [
+    "espace vectoriel",
+    "endomorphisme",
+    "algèbre sur un corps",
+    "corps",
+    "anneau",
+    "lois de composition interne"
+  ],
+  "methods": [
+    "vérification des axiomes d'algèbre",
+    "analyse des propriétés de l'endomorphisme u",
+    "étude de la structure de l'anneau"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "endomorphisme u",
+    "ensemble R[u]",
+    "R-algèbre"
+  ],
+  "content_hash": "0de59d9b7bfeaa3cc39cc60a00612760e954d977249d136259acd42cc580c4bc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:01:36.845Z"
+}

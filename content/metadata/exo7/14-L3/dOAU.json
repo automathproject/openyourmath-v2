@@ -1,0 +1,30 @@
+{
+  "uuid": "dOAU",
+  "source_path": "exo7/14-L3/dOAU.tex",
+  "summary": "L'exercice demande de prouver la commutativité du produit de convolution de deux fonctions intégrables et d'établir une inégalité de type norme pour ce produit.",
+  "concepts": [
+    "intégrale de Lebesgue",
+    "produit de convolution",
+    "théorème de Tonelli",
+    "théorème de Fubini",
+    "inégalité de Hölder",
+    "espace L^p",
+    "mesure de Lebesgue"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "utilisation de l'inégalité de Hölder",
+    "application du théorème de Fubini",
+    "application du théorème de Tonelli"
+  ],
+  "objects": [
+    "fonction intégrable",
+    "produit de convolution",
+    "norme L^p",
+    "mesure de Lebesgue"
+  ],
+  "content_hash": "ff99f9b8f99c993a6c5cb2042dc52cc7877f04e56fbec14a3d3909a36174c407",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:24:49.380Z"
+}

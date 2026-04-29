@@ -1,0 +1,27 @@
+{
+  "uuid": "8oHT",
+  "source_path": "exo7/4-L2/8oHT.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble K, composé de l'identité et de trois permutations spécifiques de l'ensemble E={1,2,3,4}, forme un sous-groupe du groupe symétrique S4.",
+  "concepts": [
+    "groupe",
+    "sous-groupe",
+    "groupe symétrique",
+    "permutation",
+    "composition de permutations",
+    "ordre d'un élément"
+  ],
+  "methods": [
+    "vérification des propriétés de sous-groupe",
+    "calcul de la composition de permutations",
+    "vérification de la stabilité par composition",
+    "vérification de la stabilité par passage à l'inverse"
+  ],
+  "objects": [
+    "permutation",
+    "groupe symétrique S4",
+    "sous-groupe K"
+  ],
+  "content_hash": "dee2e169f4f434fb5eb906763f99e7e1f15908a5993338247ff05879768d47db",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:23:28.358Z"
+}

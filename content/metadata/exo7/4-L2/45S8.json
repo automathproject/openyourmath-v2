@@ -1,0 +1,32 @@
+{
+  "uuid": "45S8",
+  "source_path": "exo7/4-L2/45S8.tex",
+  "summary": "L'exercice demande d'identifier la loi de groupe sur les inversibles d'un anneau quotient, de vérifier la cyclicité de ce groupe, de compter les générateurs d'un groupe cyclique, de décomposer des permutations en cycles disjoints et en transpositions, et d'analyser la symétrie d'un polynôme.",
+  "concepts": [
+    "groupe multiplicatif",
+    "corps fini",
+    "groupe cyclique",
+    "fonction indicatrice d'Euler",
+    "permutation",
+    "cycle disjoint",
+    "transposition",
+    "polynôme symétrique"
+  ],
+  "methods": [
+    "identification de la loi de groupe",
+    "application du théorème des corps finis",
+    "calcul du nombre de générateurs",
+    "décomposition en cycles disjoints",
+    "décomposition en transpositions",
+    "test de symétrie par transposition"
+  ],
+  "objects": [
+    "ensemble des inversibles de ℤ/17ℤ",
+    "groupe cyclique d'ordre 91",
+    "permutation",
+    "polynôme en quatre variables"
+  ],
+  "content_hash": "abbbc927d6cc850401193fec87ff01d04597d767afd68598e6559ebf2f2ee094",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:17:38.530Z"
+}

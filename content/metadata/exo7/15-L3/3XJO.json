@@ -1,0 +1,35 @@
+{
+  "uuid": "3XJO",
+  "source_path": "exo7/15-L3/3XJO.tex",
+  "summary": "L'exercice étudie les propriétés topologiques d'un sous-groupe G de ℝⁿ, en particulier lorsque 0 est isolé dans G. Il demande de montrer que tout point de G est isolé, que G est discret et fermé, puis d'identifier la forme de G dans le cas n=1. Enfin, il explore le cas où 0 est un point d'accumulation et déduit les sous-groupes fermés de ℝ.",
+  "concepts": [
+    "espace topologique",
+    "espace métrique",
+    "sous-groupe additif",
+    "point isolé",
+    "point d'accumulation",
+    "densité",
+    "fermeture",
+    "continuité",
+    "surjectivité"
+  ],
+  "methods": [
+    "utilisation de voisinages",
+    "raisonnement par l'absurde",
+    "construction d'application injective",
+    "limite de suite",
+    "infimum",
+    "division euclidienne",
+    "adhérence d'ensemble"
+  ],
+  "objects": [
+    "sous-groupe de ℝⁿ",
+    "voisinage de 0",
+    "suite convergente",
+    "application continue",
+    "cercle unité"
+  ],
+  "content_hash": "fe5e9a79f7b65d442998742d7f72da6f015eba19cc218da6706dc2e9fead8e63",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:17:55.852Z"
+}

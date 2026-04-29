@@ -1,0 +1,26 @@
+{
+  "uuid": "3pPc",
+  "source_path": "exo7/10-L3/3pPc.tex",
+  "summary": "Montrer l'existence et l'unicité d'un corps intermédiaire L entre k et K, de degré d sur k, où d est un diviseur du degré de l'extension K/k.",
+  "concepts": [
+    "corps finis",
+    "extension de corps",
+    "degré d'une extension",
+    "corps intermédiaire",
+    "théorème de l'élément primitif",
+    "théorème de l'existence des sous-extensions"
+  ],
+  "methods": [
+    "utilisation du théorème de l'élément primitif",
+    "analyse des diviseurs du degré de l'extension",
+    "construction explicite de l'extension intermédiaire"
+  ],
+  "objects": [
+    "corps finis k et K",
+    "corps intermédiaire L",
+    "degré d'extension"
+  ],
+  "content_hash": "ece48632ed9b440ff3908f1a4f763c79490277fbd4dea6aa4c477cf1038f0f90",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:26:31.592Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "tjqI",
+  "source_path": "exo7/6-L2/tjqI.tex",
+  "summary": "L'exercice demande de comparer les points de paramètres t et 1/t d'une courbe plane paramétrée, d'en déduire un domaine d'étude optimal, puis de représenter cette courbe. La courbe est définie par les fonctions x(t) = t ln t et y(t) = (ln t)/t pour t > 0.",
+  "concepts": [
+    "courbe paramétrée",
+    "symétrie par rapport à une droite",
+    "fonction de classe C^1",
+    "tableau de variations conjointes",
+    "asymptote",
+    "branche infinie"
+  ],
+  "methods": [
+    "analyse de symétrie",
+    "étude des variations",
+    "calcul de dérivées",
+    "étude des limites"
+  ],
+  "objects": [
+    "courbe plane paramétrée",
+    "fonctions x(t) et y(t)",
+    "tableau de variations",
+    "asymptote"
+  ],
+  "content_hash": "eead519867dc73bbd008cabdf85f858cd0a6882313445a4aded401c5f6c0153a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:09:32.797Z"
+}

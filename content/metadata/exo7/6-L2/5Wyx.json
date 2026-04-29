@@ -1,0 +1,27 @@
+{
+  "uuid": "5Wyx",
+  "source_path": "exo7/6-L2/5Wyx.tex",
+  "summary": "Dans un triangle direct ABC, on place des points P, Q, R sur les côtés respectifs. On doit prouver que les cercles circonscrits aux triangles ARQ, BPR et CQP sont concourants.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "cercle circonscrit",
+    "points cocycliques",
+    "angles de droites",
+    "inscription dans un cercle",
+    "théorème de l'angle au centre"
+  ],
+  "methods": [
+    "utilisation des angles de droites",
+    "preuve par égalité d'angles",
+    "analyse des configurations géométriques"
+  ],
+  "objects": [
+    "triangle direct",
+    "cercles circonscrits",
+    "points cocycliques",
+    "angles géométriques"
+  ],
+  "content_hash": "bce38077b1afa7d2025924e668dee099fde78ef90676a26355e1dfd84fe96f27",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:21:57.697Z"
+}

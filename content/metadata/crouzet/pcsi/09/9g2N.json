@@ -1,0 +1,27 @@
+{
+  "uuid": "9g2N",
+  "source_path": "crouzet/pcsi/09/9g2N.tex",
+  "summary": "L'exercice demande de démontrer que tous les termes d'une suite définie par une relation de récurrence sont strictement positifs, puis d'établir une récurrence linéaire d'ordre 2 pour une suite transformée et d'en déduire le terme général.",
+  "concepts": [
+    "récurrence double",
+    "récurrence linéaire d'ordre 2",
+    "équation caractéristique",
+    "solution générale d'une récurrence linéaire",
+    "fonction exponentielle",
+    "fonction logarithme"
+  ],
+  "methods": [
+    "récurrence",
+    "linéarisation d'une récurrence non linéaire",
+    "résolution d'équation caractéristique",
+    "calcul de termes initiaux"
+  ],
+  "objects": [
+    "suite récurrente",
+    "suite transformée par logarithme",
+    "équation de récurrence"
+  ],
+  "content_hash": "aece9728fba7fb0d39b770f98bfa7c4651eb51354fbbb11fb7265d4aa39ce515",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:32:43.446Z"
+}

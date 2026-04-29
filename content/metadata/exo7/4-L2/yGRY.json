@@ -1,0 +1,27 @@
+{
+  "uuid": "yGRY",
+  "source_path": "exo7/4-L2/yGRY.tex",
+  "summary": "Déterminer le cardinal de l'ensemble des matrices orthogonales à coefficients entiers. L'exercice demande de compter les matrices orthogonales dans l'ensemble des matrices carrées d'entiers.",
+  "concepts": [
+    "matrice orthogonale",
+    "matrice de permutation",
+    "déterminant",
+    "valeur absolue",
+    "coefficient entier",
+    "groupe orthogonal"
+  ],
+  "methods": [
+    "analyse des propriétés des colonnes et lignes",
+    "construction explicite des matrices",
+    "comptage des configurations possibles"
+  ],
+  "objects": [
+    "matrice orthogonale",
+    "matrice de permutation",
+    "coefficient entier",
+    "signe de coefficient"
+  ],
+  "content_hash": "43daf65c1c1da42f90a56bb1babaec4a1aa5db42b2e3483888a0d863ed7869d2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:03:38.099Z"
+}

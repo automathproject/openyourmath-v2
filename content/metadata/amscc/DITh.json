@@ -1,0 +1,27 @@
+{
+  "uuid": "DITh",
+  "source_path": "amscc/DITh.tex",
+  "summary": "L'exercice étudie une fonction différentiable de deux variables vérifiant une condition de périodicité. Il demande de calculer la dérivée d'une fonction auxiliaire, d'en déduire une relation entre les dérivées partielles de la fonction initiale, puis d'exprimer la fonction initiale comme une fonction d'une seule variable.",
+  "concepts": [
+    "fonction différentiable",
+    "dérivées partielles",
+    "règle des chaînes",
+    "fonction constante",
+    "changement de variables"
+  ],
+  "methods": [
+    "calcul de dérivée partielle",
+    "application de la règle des chaînes",
+    "changement de variable",
+    "démonstration par constance"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "dérivées partielles",
+    "fonction auxiliaire",
+    "fonction d'une variable"
+  ],
+  "content_hash": "b52b96e969d680682856f4f22e22b86caec36b57e04138fa422a97e4cda39bb6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:50:20.529Z"
+}

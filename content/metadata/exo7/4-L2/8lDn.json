@@ -1,0 +1,27 @@
+{
+  "uuid": "8lDn",
+  "source_path": "exo7/4-L2/8lDn.tex",
+  "summary": "L'exercice demande de prouver qu'une forme linéaire f est combinaison linéaire d'un ensemble de formes linéaires indépendantes f₁, ..., fₚ si et seulement si le noyau de f contient l'intersection des noyaux de f₁ à fₚ.",
+  "concepts": [
+    "forme linéaire",
+    "combinaison linéaire",
+    "noyau d'une forme linéaire",
+    "indépendance linéaire",
+    "système linéaire",
+    "rang d'une famille de formes linéaires",
+    "inclusion de sous-espaces vectoriels"
+  ],
+  "methods": [
+    "étude de système linéaire",
+    "analyse de noyaux",
+    "utilisation de l'indépendance linéaire"
+  ],
+  "objects": [
+    "formes linéaires",
+    "noyaux de formes linéaires",
+    "système linéaire homogène"
+  ],
+  "content_hash": "c8a0a22a6b398d5656d01ee6e99a28ee5f672bb44a81e4336b7becceafd5063c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:35:01.653Z"
+}

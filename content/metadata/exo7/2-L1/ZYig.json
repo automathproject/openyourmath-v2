@@ -1,0 +1,25 @@
+{
+  "uuid": "ZYig",
+  "source_path": "exo7/2-L1/ZYig.tex",
+  "summary": "L'exercice demande de calculer la partie de degré inférieur ou égal à 7 de la différence de deux compositions de polynômes, puis d'appliquer ce résultat pour déterminer le développement limité d'ordre 7 en 0 d'une expression impliquant des fonctions trigonométriques inverses.",
+  "concepts": [
+    "développement limité",
+    "composition de fonctions",
+    "équivalents",
+    "fonctions trigonométriques inverses",
+    "polynômes"
+  ],
+  "methods": [
+    "calcul de la différence de compositions",
+    "développement limité de fonctions composées",
+    "approximation des termes dominants"
+  ],
+  "objects": [
+    "polynômes P(X) et Q(X)",
+    "composition de polynômes",
+    "développement limité de arcsin(arctan x) - arctan(arcsin x)"
+  ],
+  "content_hash": "4234bdbe239edb2f098d6e20ce279e46af1aa35e184a6ce8100248342e38e0c5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:34:03.252Z"
+}

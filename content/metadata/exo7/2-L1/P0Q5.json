@@ -1,0 +1,24 @@
+{
+  "uuid": "P0Q5",
+  "source_path": "exo7/2-L1/P0Q5.tex",
+  "summary": "On considère une fonction dérivable sur un intervalle [a, b] avec des dérivées égales aux bornes. On demande de prouver l'existence d'un point c dans l'intervalle ouvert où la dérivée en c est égale à la pente de la sécante entre (a, f(a)) et (c, f(c)).",
+  "concepts": [
+    "dérivabilité",
+    "théorème des accroissements finis",
+    "fonction continue",
+    "fonction dérivable",
+    "pente de sécante"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "application du théorème des accroissements finis"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle fermé borné",
+    "point critique"
+  ],
+  "content_hash": "ac83d148b24b8a7c2b40e9066ddbdc3e0f8a918b878a586f99ffac1477371e65",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:07:11.274Z"
+}

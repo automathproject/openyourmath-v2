@@ -1,0 +1,35 @@
+{
+  "uuid": "jvao",
+  "source_path": "exo7/9-L3/jvao.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'isomorphismes entre des groupes classiques de matrices et des groupes de permutations, en utilisant l'action du groupe spécial linéaire sur les droites d'un espace vectoriel.",
+  "concepts": [
+    "géométrie projective",
+    "groupe linéaire général",
+    "groupe spécial linéaire",
+    "groupe projectif linéaire",
+    "action de groupe",
+    "isomorphisme de groupes",
+    "racines de l'unité dans un corps fini"
+  ],
+  "methods": [
+    "étude de l'action de groupe",
+    "comparaison des ordres de groupes",
+    "utilisation des propriétés des corps finis"
+  ],
+  "objects": [
+    "groupe SL(2,ℤ₂)",
+    "groupe PGL(2,ℤ₂)",
+    "groupe PSL(2,ℤ₂)",
+    "groupe S₃",
+    "groupe PGL(2,ℤ₃)",
+    "groupe PSL(2,ℤ₃)",
+    "groupe S₄",
+    "groupe A₄",
+    "groupe PGL(2,ℤ₄)",
+    "groupe PSL(2,ℤ₄)",
+    "groupe A₅"
+  ],
+  "content_hash": "90b7f5f8d80d782cbad8462b1dc40787d7b6582b5f88d70eb653f1b0eaa566f6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:12:56.167Z"
+}

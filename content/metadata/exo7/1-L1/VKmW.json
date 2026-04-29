@@ -1,0 +1,28 @@
+{
+  "uuid": "VKmW",
+  "source_path": "exo7/1-L1/VKmW.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés sur les entiers de la forme a^k-1 : le reste de la division euclidienne de a^m-1 par a^n-1, et le pgcd de a^m-1 et a^n-1, où m et n sont des entiers positifs avec m > n et a ≥ 2.",
+  "concepts": [
+    "division euclidienne",
+    "pgcd",
+    "algorithme d'Euclide",
+    "propriétés arithmétiques des entiers",
+    "restes de division",
+    "relation de divisibilité"
+  ],
+  "methods": [
+    "décomposition en facteurs",
+    "utilisation des propriétés du pgcd",
+    "manipulation d'expressions algébriques",
+    "application de l'algorithme d'Euclide"
+  ],
+  "objects": [
+    "entiers naturels",
+    "expressions de la forme a^k-1",
+    "pgcd de deux entiers",
+    "reste de division euclidienne"
+  ],
+  "content_hash": "825615e088bb95ac9b5543685ec56851178b2cf6d3b85956e5594bbff6deab77",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:06:15.427Z"
+}

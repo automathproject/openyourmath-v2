@@ -1,0 +1,28 @@
+{
+  "uuid": "ZOtv",
+  "source_path": "exo7/5-L2/ZOtv.tex",
+  "summary": "L'exercice étudie une suite de fonctions définies par récurrence sur l'intervalle [0,1] et demande de montrer la convergence uniforme de cette suite, puis d'analyser les propriétés de la fonction limite (régularité, concavité, bornes).",
+  "concepts": [
+    "convergence uniforme",
+    "fonction de classe C^∞",
+    "concavité",
+    "équation différentielle",
+    "intégration sous le signe somme",
+    "inégalité de comparaison"
+  ],
+  "methods": [
+    "récurrence",
+    "passage à la limite sous le signe intégral",
+    "étude de la dérivée seconde",
+    "majoration par série télescopique"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction limite",
+    "dérivée première",
+    "dérivée seconde"
+  ],
+  "content_hash": "f796dda0b3a44cadad269da632ba71c7f685c58ce12b66dfcc023441b98111be",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:34:05.348Z"
+}

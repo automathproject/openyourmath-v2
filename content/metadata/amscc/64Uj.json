@@ -1,0 +1,29 @@
+{
+  "uuid": "64Uj",
+  "source_path": "amscc/64Uj.tex",
+  "summary": "L'exercice demande de justifier l'existence et l'unicité locale d'une solution d'une équation différentielle, de prouver que cette solution est bornée, et d'analyser la convergence et l'ordre de consistance d'un schéma numérique proposé pour approcher cette solution.",
+  "concepts": [
+    "théorème de Cauchy-Lipschitz",
+    "existence et unicité locale de solution",
+    "bornitude de solution",
+    "consistance de schéma numérique",
+    "convergence de schéma numérique",
+    "ordre de consistance"
+  ],
+  "methods": [
+    "application du théorème de Cauchy-Lipschitz",
+    "estimation de bornitude",
+    "principe de prolongement",
+    "vérification de consistance",
+    "calcul de dérivée seconde"
+  ],
+  "objects": [
+    "équation différentielle",
+    "solution de classe C^1",
+    "schéma numérique",
+    "fonction f(t,y)"
+  ],
+  "content_hash": "37d4d288e20affbf91ec2ec3b1fd0ae0d4c859ff51e98262b45ba117cc573c8c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:16:34.162Z"
+}

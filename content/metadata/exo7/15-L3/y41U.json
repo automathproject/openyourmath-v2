@@ -1,0 +1,25 @@
+{
+  "uuid": "y41U",
+  "source_path": "exo7/15-L3/y41U.tex",
+  "summary": "On considère deux fonctions réelles continues sur un espace topologique compact X, avec f positive et strictement positive lorsque g est négative ou nulle. On demande de prouver l'existence d'une constante A > 0 telle que Af(x) + g(x) > 0 pour tout x dans X.",
+  "concepts": [
+    "continuité",
+    "espace topologique compact",
+    "raisonnement par l'absurde",
+    "propriété de compacité",
+    "fonction réelle"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "construction d'ensembles auxiliaires",
+    "utilisation de la compacité"
+  ],
+  "objects": [
+    "fonction réelle continue",
+    "espace topologique compact",
+    "constante positive"
+  ],
+  "content_hash": "d5816297ae51e658ce1d83a1db8578714b4eb2696a738737b18a0b2594e282c3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:00:13.542Z"
+}

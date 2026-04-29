@@ -1,0 +1,27 @@
+{
+  "uuid": "g8hB",
+  "source_path": "exo7/1-L1/g8hB.tex",
+  "summary": "L'exercice demande de déterminer le nombre de combinaisons de pièces de 10, 20 et 50 centimes permettant de former exactement 100 euros.",
+  "concepts": [
+    "équation diophantienne",
+    "fonction partie entière",
+    "somme de variables entières",
+    "résolution d'équation linéaire",
+    "dénombrement"
+  ],
+  "methods": [
+    "décomposition en cas",
+    "somme discrète",
+    "utilisation de la fonction partie entière",
+    "changement de variable"
+  ],
+  "objects": [
+    "pièces de monnaie",
+    "équation linéaire",
+    "variables entières",
+    "somme de solutions"
+  ],
+  "content_hash": "4c8d49f0982ca8ae1e4997cf8473591aba73d036fa0068b1efd5898067798603",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:47:25.138Z"
+}

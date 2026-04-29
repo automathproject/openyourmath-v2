@@ -1,0 +1,26 @@
+{
+  "uuid": "HSiH",
+  "source_path": "exo7/6-L2/HSiH.tex",
+  "summary": "L'exercice demande de démontrer qu'une droite paramétrée est tangente à un cercle si et seulement si la distance du centre du cercle à la droite est égale au rayon du cercle.",
+  "concepts": [
+    "géométrie affine",
+    "tangence",
+    "distance d'un point à une droite",
+    "paramétrisation d'une droite",
+    "cercle dans le plan"
+  ],
+  "methods": [
+    "calcul de distance",
+    "paramétrisation",
+    "analyse de l'intersection droite-cercle"
+  ],
+  "objects": [
+    "droite affine",
+    "cercle",
+    "point",
+    "rayon"
+  ],
+  "content_hash": "e1d3ac2b88db68ceba20265259819b4bb88e146c3086d24ebfda9f3ca14dc414",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:46:32.106Z"
+}

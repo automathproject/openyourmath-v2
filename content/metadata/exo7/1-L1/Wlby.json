@@ -1,0 +1,28 @@
+{
+  "uuid": "Wlby",
+  "source_path": "exo7/1-L1/Wlby.tex",
+  "summary": "L'exercice demande de montrer l'existence d'un vecteur x₀ dans un espace vectoriel E de dimension finie n, tel que la famille {x₀, f(x₀), ..., f^{q-1}(x₀)} soit libre, où f est un endomorphisme nilpotent d'indice de nilpotence q. Ensuite, il faut en déduire que q ≤ n.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "endomorphisme nilpotent",
+    "indice de nilpotence",
+    "famille libre",
+    "dimension d'un espace vectoriel",
+    "noyau d'un endomorphisme"
+  ],
+  "methods": [
+    "construction explicite d'un vecteur",
+    "utilisation de la nilpotence",
+    "calcul de dimension"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "endomorphisme f",
+    "vecteur x₀",
+    "famille de vecteurs {x₀, f(x₀), ..., f^{q-1}(x₀)}",
+    "noyau de f"
+  ],
+  "content_hash": "465bb239ca02d7cac3e09cb2e3c234451864cc7f024bf47b883a9f09ef833cae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:55:51.873Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "2PSS",
+  "source_path": "exo7/4-L2/2PSS.tex",
+  "summary": "On considère une matrice symétrique M de taille n×n à coefficients réels. On demande de prouver que sa comatrice est aussi symétrique, puis d'étudier la réciproque.",
+  "concepts": [
+    "matrice symétrique",
+    "comatrice",
+    "transposée d'une matrice",
+    "propriété de symétrie",
+    "endomorphisme auto-adjoint"
+  ],
+  "methods": [
+    "calcul de la comatrice",
+    "vérification de la symétrie",
+    "transposition de matrice"
+  ],
+  "objects": [
+    "matrice carrée",
+    "comatrice",
+    "matrice transposée"
+  ],
+  "content_hash": "4c315b593f5fdb25721f313f86fab9251290c877ba24b61f97e52ab2a598331e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:58:15.792Z"
+}

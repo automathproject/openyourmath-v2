@@ -1,0 +1,28 @@
+{
+  "uuid": "1hSC",
+  "source_path": "exo7/4-L2/1hSC.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de diagonalisation pour des matrices appartenant à des groupes spécifiques (GL_n(ℂ), U_n(ℂ), O_n(ℝ)). Il explore les spectres de ces matrices et leur structure diagonale par blocs.",
+  "concepts": [
+    "groupe compact",
+    "matrice unitaire",
+    "matrice orthogonale",
+    "spectre d'une matrice",
+    "diagonalisation",
+    "base orthonormée propre",
+    "matrice de rotation"
+  ],
+  "methods": [
+    "analyse du spectre",
+    "diagonalisation par blocs",
+    "utilisation des propriétés des groupes de matrices"
+  ],
+  "objects": [
+    "matrice de GL_n(ℂ)",
+    "matrice unitaire U_n(ℂ)",
+    "matrice orthogonale O_n(ℝ)",
+    "matrice de rotation"
+  ],
+  "content_hash": "e15c9afdcec78498c5bffbb73b23c424fd59f79b2e2ac5dea2746a3c3ec1fe05",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:58:06.087Z"
+}

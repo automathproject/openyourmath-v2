@@ -8,21 +8,21 @@
     "arithmétique modulaire",
     "divisibilité dans Z",
     "restes de division",
-    "propriétés des entiers naturels"
+    "algèbre des congruences"
   ],
   "methods": [
-    "décomposition en quotient et reste",
-    "calcul de partie entière",
-    "vérification par cas",
-    "réduction de cas par congruence"
+    "décomposition en cas selon les restes",
+    "vérification directe",
+    "manipulation algébrique d'expressions",
+    "utilisation de la division euclidienne"
   ],
   "objects": [
     "entier naturel",
-    "quotient de division euclidienne",
-    "reste de division",
-    "expression arithmétique"
+    "quotient et reste de division",
+    "expression rationnelle",
+    "partie entière"
   ],
-  "content_hash": "1682f5649712d745ad851623c231382d3c415024d967b9427c7dff18d2734f56",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:19:56.945Z"
+  "content_hash": "33203a05cc082f4428cd6bc9caff69b09d34143b3734284a3779c3873725ae60",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:41:46.486Z"
 }

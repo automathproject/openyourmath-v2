@@ -1,0 +1,28 @@
+{
+  "uuid": "ZSum",
+  "source_path": "exo7/5-L2/ZSum.tex",
+  "summary": "L'exercice demande de démontrer l'égalité entre le laplacien d'une fonction de deux variables en coordonnées cartésiennes et sa forme en coordonnées polaires. La fonction est définie sur ℝ² privé de l'origine et exprimée en coordonnées polaires.",
+  "concepts": [
+    "changement de variables",
+    "coordonnées polaires",
+    "différentielles secondes",
+    "fonction de classe C²",
+    "laplacien",
+    "dérivées partielles"
+  ],
+  "methods": [
+    "calcul différentiel",
+    "changement de coordonnées",
+    "identités trigonométriques",
+    "développement des dérivées partielles"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "coordonnées polaires (r, θ)",
+    "dérivées partielles secondes",
+    "laplacien"
+  ],
+  "content_hash": "8aefba6e5a89f93fc7d1332c84ee9f733492ba51cfd1af4943a74da4c7a72e12",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:08:56.467Z"
+}

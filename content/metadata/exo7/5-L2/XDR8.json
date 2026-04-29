@@ -1,0 +1,28 @@
+{
+  "uuid": "XDR8",
+  "source_path": "exo7/5-L2/XDR8.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction d'exponentielle de matrices est de classe C¹ et d'exprimer sa dérivée. Il explore ensuite l'injectivité locale de cette fonction, avec des exemples de suites de matrices ayant même exponentielle mais distinctes.",
+  "concepts": [
+    "dérivée partielle",
+    "fonction de classe C¹",
+    "exponentielle de matrices",
+    "injectivité locale",
+    "convergence de matrices",
+    "séries matricielles"
+  ],
+  "methods": [
+    "développement en série",
+    "calcul de dérivée directionnelle",
+    "analyse de convergence",
+    "construction explicite de contre-exemples"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "dérivée partielle",
+    "suite de matrices",
+    "exponentielle de matrices"
+  ],
+  "content_hash": "6c1e926c2c34b85a10f092b44f273525ad68e066420c15687ce138dfd9909384",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:06:46.530Z"
+}

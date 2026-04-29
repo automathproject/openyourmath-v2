@@ -1,0 +1,26 @@
+{
+  "uuid": "m64E",
+  "source_path": "exo7/4-L2/m64E.tex",
+  "summary": "Soit E un espace euclidien et f et g deux fonctions de E dans E. On suppose que pour tout couple (x, y) de E², le produit scalaire de f(x) par y est égal au produit scalaire de x par g(y). Montrer que f et g sont linéaires.",
+  "concepts": [
+    "produit scalaire",
+    "espace euclidien",
+    "fonction linéaire",
+    "linéarité",
+    "dualité",
+    "application adjointe"
+  ],
+  "methods": [
+    "utilisation de la définition du produit scalaire",
+    "vérification des propriétés de linéarité",
+    "analyse des conditions de dualité"
+  ],
+  "objects": [
+    "espace euclidien",
+    "fonctions de E dans E",
+    "produit scalaire"
+  ],
+  "content_hash": "d5912f906413e9d4c8db49ee9a215a5ce958d204fa7ae2b9677ff7485787f874",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:49:57.004Z"
+}

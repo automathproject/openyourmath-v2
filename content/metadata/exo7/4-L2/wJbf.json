@@ -1,0 +1,28 @@
+{
+  "uuid": "wJbf",
+  "source_path": "exo7/4-L2/wJbf.tex",
+  "summary": "Montrer qu'un endomorphisme d'un espace euclidien conservant l'orthogonalité est une similitude, c'est-à-dire qu'il existe un réel positif k tel que la norme de l'image de tout vecteur par cet endomorphisme est égale à k fois la norme du vecteur.",
+  "concepts": [
+    "endomorphisme",
+    "espace euclidien",
+    "orthogonalité",
+    "base orthonormée",
+    "automorphisme orthogonal",
+    "similitude",
+    "conservation de la norme"
+  ],
+  "methods": [
+    "raisonnement sur une base orthonormée",
+    "utilisation de la conservation de l'orthogonalité",
+    "analyse des normes des images des vecteurs de la base"
+  ],
+  "objects": [
+    "endomorphisme",
+    "espace euclidien",
+    "base orthonormée",
+    "vecteurs de la base"
+  ],
+  "content_hash": "06008755cde4acb746c0d1ef393299db7682870ebdfb6b197cb9f724431c6425",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:00:36.755Z"
+}

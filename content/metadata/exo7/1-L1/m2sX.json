@@ -1,0 +1,29 @@
+{
+  "uuid": "m2sX",
+  "source_path": "exo7/1-L1/m2sX.tex",
+  "summary": "On considère une fonction croissante de [0,1] dans [0,1] et on définit un ensemble A comme l'ensemble des points où la fonction est inférieure ou égale à sa variable. On demande de prouver que A est non vide, que l'image de A par f est incluse dans A, puis d'utiliser l'infimum de A pour montrer que f atteint son point fixe.",
+  "concepts": [
+    "relation d'ordre",
+    "infimum",
+    "point fixe",
+    "fonction croissante",
+    "ensemble défini par une condition",
+    "propriété d'inclusion",
+    "minoration"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de l'infimum",
+    "démonstration par inclusion",
+    "argument de point fixe"
+  ],
+  "objects": [
+    "fonction croissante",
+    "ensemble A",
+    "infimum de A",
+    "point fixe"
+  ],
+  "content_hash": "dbf03f6cd79484b96b6c49f63e3bffd3a16fa5617d1e3a836d7219bec4298c9a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:25:03.665Z"
+}

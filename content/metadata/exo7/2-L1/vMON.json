@@ -1,0 +1,25 @@
+{
+  "uuid": "vMON",
+  "source_path": "exo7/2-L1/vMON.tex",
+  "summary": "L'exercice demande de prouver l'existence de points a, b, c dans [0,1] où la dérivée d'une fonction f prend des valeurs intermédiaires u, v, w respectivement comprises entre f'(0) et p, f'(1) et p, f'(0) et f'(1). La fonction f est dérivable sur un intervalle I contenant [0,1].",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "dérivabilité",
+    "fonction continue",
+    "valeur intermédiaire",
+    "théorème de Rolle"
+  ],
+  "methods": [
+    "application du théorème des valeurs intermédiaires",
+    "étude de la dérivée",
+    "construction de fonctions auxiliaires"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "intervalle ouvert",
+    "valeurs intermédiaires de la dérivée"
+  ],
+  "content_hash": "fdf09db6e818e93468378a2eb33282b93d3f632dffed6d752623ad8716979202",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:22:57.879Z"
+}

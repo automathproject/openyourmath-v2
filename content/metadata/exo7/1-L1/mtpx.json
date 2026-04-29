@@ -1,0 +1,35 @@
+{
+  "uuid": "mtpx",
+  "source_path": "exo7/1-L1/mtpx.tex",
+  "summary": "L'exercice demande de déterminer la dimension d'un espace vectoriel V engendré par quatre vecteurs de ℝ⁴, de vérifier si ces vecteurs forment un système libre et générateur, de compléter une base de V en une base de ℝ⁴, de trouver des équations cartésiennes pour V, d'analyser un sous-espace H défini par une équation linéaire, et d'étudier les intersections et sommes d'espaces vectoriels.",
+  "concepts": [
+    "espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel",
+    "système libre",
+    "système générateur",
+    "équations cartésiennes",
+    "sous-espace vectoriel",
+    "intersection de sous-espaces vectoriels",
+    "somme de sous-espaces vectoriels",
+    "formule de Grassmann"
+  ],
+  "methods": [
+    "réduction de matrice",
+    "complétion de base",
+    "recherche de relations de dépendance linéaire",
+    "représentation paramétrique",
+    "calcul de rang de matrice",
+    "utilisation de la formule de Grassmann"
+  ],
+  "objects": [
+    "vecteurs de ℝ⁴",
+    "système de vecteurs",
+    "sous-espace vectoriel H",
+    "intersection V ∩ H",
+    "somme V + H"
+  ],
+  "content_hash": "41d0d70c79b8487624599c41655d93276cd4ee4dddd7639f0a11296f435dd4d4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:08:08.164Z"
+}

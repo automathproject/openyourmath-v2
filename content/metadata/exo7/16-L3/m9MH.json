@@ -1,0 +1,26 @@
+{
+  "uuid": "m9MH",
+  "source_path": "exo7/16-L3/m9MH.tex",
+  "summary": "On considère une fonction holomorphe non constante dans un ouvert connexe borné, continue sur son adhérence, dont le module est constant sur la frontière. On demande de prouver que cette fonction admet un zéro dans l'ouvert.",
+  "concepts": [
+    "fonction holomorphe",
+    "ouvert connexe",
+    "module d'une fonction complexe",
+    "zéro d'une fonction",
+    "théorème de Rouché",
+    "principe du maximum modulaire"
+  ],
+  "methods": [
+    "argument topologique",
+    "application du principe du maximum modulaire",
+    "analyse des propriétés de la frontière"
+  ],
+  "objects": [
+    "fonction complexe",
+    "ouvert borné",
+    "frontière d'un ouvert"
+  ],
+  "content_hash": "f3f890c6288b2d4772a08853cac7322bdfd654bcb34021640658c4ff78c70351",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:42:35.673Z"
+}

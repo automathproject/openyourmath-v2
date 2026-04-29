@@ -1,0 +1,27 @@
+{
+  "uuid": "ooHo",
+  "source_path": "exo7/10-L3/ooHo.tex",
+  "summary": "L'exercice demande de montrer que pour un p-groupe opérant sur un ensemble fini, le cardinal de l'ensemble est congru à celui de l'ensemble des points fixes modulo p. Il faut ensuite en déduire que le centre d'un p-groupe est non trivial.",
+  "concepts": [
+    "action de groupe",
+    "p-groupe",
+    "ensemble des points fixes",
+    "cardinal modulo p",
+    "centre d'un groupe",
+    "théorème de Cauchy"
+  ],
+  "methods": [
+    "utilisation de l'action de groupe",
+    "calcul de cardinal modulo p",
+    "démonstration par l'absurde"
+  ],
+  "objects": [
+    "p-groupe",
+    "ensemble fini",
+    "ensemble des points fixes",
+    "centre d'un groupe"
+  ],
+  "content_hash": "bad54ef02b675e5a75222d868ef250f37e83b6e5c75f5a9b1b3bd83f1c7bbbc6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:00:58.695Z"
+}

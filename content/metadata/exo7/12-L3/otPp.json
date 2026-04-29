@@ -1,0 +1,28 @@
+{
+  "uuid": "otPp",
+  "source_path": "exo7/12-L3/otPp.tex",
+  "summary": "L'exercice étudie un système d'équations non linéaires dans ℝ². Il demande de montrer l'existence et l'unicité locale des solutions sous des hypothèses de rang de la différentielle, puis d'analyser les cas où le rang est partiel ou nul.",
+  "concepts": [
+    "théorème d'inversion locale",
+    "difféomorphisme",
+    "rang d'une application différentielle",
+    "fonction de classe C¹",
+    "système d'équations non linéaires",
+    "unicité locale des solutions"
+  ],
+  "methods": [
+    "analyse du rang de la différentielle",
+    "application du théorème d'inversion locale",
+    "construction de difféomorphisme",
+    "réduction de dimension"
+  ],
+  "objects": [
+    "application de ℝ² dans ℝ²",
+    "système d'équations",
+    "différentielle d'une application",
+    "ouvert de ℝ²"
+  ],
+  "content_hash": "d1cbe257c83da96a6529fbca4214a8bfa4cfdd7060462cf1084154ded3296b7a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:19:38.337Z"
+}

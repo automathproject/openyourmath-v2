@@ -1,0 +1,28 @@
+{
+  "uuid": "X5Gv",
+  "source_path": "exo7/4-L2/X5Gv.tex",
+  "summary": "Calculer le déterminant d'une matrice de taille n×n dont les coefficients sont de la forme 1/(a_i + b_j), où a_i et b_j sont des nombres complexes deux à deux distincts. Étudier le cas particulier du déterminant de Hilbert où a_i = b_i = i.",
+  "concepts": [
+    "déterminant",
+    "matrice",
+    "polynôme",
+    "décomposition en éléments simples",
+    "relation de récurrence",
+    "van der Monde",
+    "déterminant de Hilbert"
+  ],
+  "methods": [
+    "transformation linéaire de lignes",
+    "développement par rapport à une ligne",
+    "calcul de limite",
+    "récurrence"
+  ],
+  "objects": [
+    "matrice de coefficients 1/(a_i + b_j)",
+    "polynôme R",
+    "déterminant de Hilbert"
+  ],
+  "content_hash": "fe402d08bbe2acf442f24dd9a22f9402b8fb54ec1e6053898d9d16151166f3fc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:54:20.986Z"
+}

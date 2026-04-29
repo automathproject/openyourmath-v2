@@ -1,0 +1,27 @@
+{
+  "uuid": "HkGj",
+  "source_path": "exo7/6-L2/HkGj.tex",
+  "summary": "Dans un carré direct ABCD, des points M et N sont placés sur les côtés AB et BC avec AM = BN. On montre que l'intersection H des droites AN et CM est l'orthocentre du triangle DMN.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "rotation géométrique",
+    "orthocentre",
+    "hauteur d'un triangle",
+    "carré direct",
+    "perpendicularité"
+  ],
+  "methods": [
+    "utilisation de la rotation",
+    "détermination des hauteurs",
+    "propriétés des carrés"
+  ],
+  "objects": [
+    "carré direct",
+    "points M et N",
+    "triangle DMN",
+    "droites AN et CM"
+  ],
+  "content_hash": "759c1ee90cc457183e1421054b8662c865e3ef7ac43be91af8d0764a752f38e3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:31:40.300Z"
+}

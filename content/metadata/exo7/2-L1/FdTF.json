@@ -1,0 +1,27 @@
+{
+  "uuid": "FdTF",
+  "source_path": "exo7/2-L1/FdTF.tex",
+  "summary": "L'exercice étudie la suite définie par u₀ ∈ ℝ et uₙ₊₁ = cos(uₙ) pour déterminer une valeur approchée à 10⁻⁵ près de l'unique solution réelle de l'équation cos(x) = x.",
+  "concepts": [
+    "suite numérique",
+    "convergence",
+    "point fixe",
+    "fonction cosinus",
+    "limite de suite",
+    "continuité"
+  ],
+  "methods": [
+    "méthode du point fixe",
+    "approximation numérique",
+    "itération",
+    "calcul de limite"
+  ],
+  "objects": [
+    "suite récurrente",
+    "fonction cosinus",
+    "solution de l'équation cos(x) = x"
+  ],
+  "content_hash": "8502be00b17fe77ddc7c46708860a636b3a1c1f54e6733632cf7c21b5e014584",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:16:06.268Z"
+}

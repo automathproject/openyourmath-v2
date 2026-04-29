@@ -1,0 +1,29 @@
+{
+  "uuid": "ljBb",
+  "source_path": "exo7/4-L2/ljBb.tex",
+  "summary": "L'exercice demande de calculer le produit scalaire de deux vecteurs dans une base orthonormée d'un espace euclidien de dimension 3. Ensuite, il s'agit de démontrer des inégalités impliquant un endomorphisme auto-adjoint et ses valeurs propres. Enfin, il faut montrer qu'une combinaison spécifique d'un endomorphisme et de son adjoint est auto-adjointe et établir une relation entre les valeurs propres.",
+  "concepts": [
+    "espace euclidien",
+    "base orthonormée",
+    "produit scalaire",
+    "endomorphisme auto-adjoint",
+    "valeur propre",
+    "norme d'un vecteur",
+    "adjoint d'un endomorphisme"
+  ],
+  "methods": [
+    "calcul du produit scalaire dans une base orthonormée",
+    "utilisation des valeurs propres pour majorer/minorer une forme quadratique",
+    "construction de l'adjoint d'un endomorphisme"
+  ],
+  "objects": [
+    "espace euclidien de dimension 3",
+    "vecteurs de l'espace",
+    "endomorphisme auto-adjoint",
+    "endomorphisme quelconque",
+    "valeurs propres"
+  ],
+  "content_hash": "23861b82c8d7ee140289d0687d80c3416980abe384664de78ce8753d10a024e0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:02:44.596Z"
+}

@@ -5,27 +5,24 @@
   "concepts": [
     "application linéaire bornée",
     "sous-espace fermé",
-    "distance à un sous-espace",
-    "noyau d'une application linéaire",
-    "continuité des applications linéaires",
+    "distance dans un espace normé",
     "norme d'une application linéaire",
-    "décomposition d'espace vectoriel"
+    "noyau d'une application linéaire",
+    "continuité des applications linéaires"
   ],
   "methods": [
-    "décomposition en somme directe",
+    "décomposition d'espace vectoriel",
     "calcul de norme d'application linéaire",
     "utilisation de la distance à un sous-espace",
-    "argument par continuité",
-    "contre-exemple"
+    "preuve par contraposée"
   ],
   "objects": [
     "application linéaire L",
     "sous-espace H",
-    "point a",
-    "espace vectoriel normé X",
-    "polynôme V"
+    "point a dans X",
+    "espace normé X"
   ],
-  "content_hash": "801e289c1125c1663428f6c4ffc3ae6b9d042bea68e4691c45f2d2af18530524",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:15:01.379Z"
+  "content_hash": "b36df77e9c7924e496886f384c72d6a65bd0d45b27a2deb4154084167f570dbb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:39:48.515Z"
 }

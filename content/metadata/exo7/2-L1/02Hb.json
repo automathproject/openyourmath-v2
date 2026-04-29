@@ -1,0 +1,25 @@
+{
+  "uuid": "02Hb",
+  "source_path": "exo7/2-L1/02Hb.tex",
+  "summary": "Calculer la limite d'une intégrale de la fonction e^t/(1+t^n) sur [0,1] quand n tend vers l'infini. Optionnellement, donner un développement limité en 1/n.",
+  "concepts": [
+    "intégrale impropre",
+    "limite de fonctions",
+    "développement limité",
+    "convergence uniforme",
+    "théorème de convergence dominée"
+  ],
+  "methods": [
+    "changement de variable",
+    "comparaison d'intégrales",
+    "approximation de fonctions"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "intégrale dépendant d'un paramètre",
+    "limite de suite"
+  ],
+  "content_hash": "240f1459201e3f067464ba1eb935d761c3c4d0e16a6bd366f6cbf5ac8156af94",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:27:02.206Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "rB1j",
+  "source_path": "amscc/rB1j.tex",
+  "summary": "Résoudre un système linéaire de quatre équations à quatre inconnues en utilisant des opérations sur les lignes pour le mettre sous forme triangulaire.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "méthode du pivot de Gauss",
+    "résolution par substitution",
+    "matrice augmentée",
+    "opérations élémentaires sur les lignes"
+  ],
+  "methods": [
+    "réduction par pivot de Gauss",
+    "substitution arrière",
+    "élimination de variables"
+  ],
+  "objects": [
+    "système linéaire à quatre inconnues",
+    "matrice augmentée",
+    "équations linéaires"
+  ],
+  "content_hash": "d700d1223a6da40f6a7aca6ea0d78f7898264f6440900e31021c42e7341e1b06",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:14:00.058Z"
+}

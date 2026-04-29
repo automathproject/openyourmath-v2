@@ -1,0 +1,24 @@
+{
+  "uuid": "KPH0",
+  "source_path": "exo7/1-L1/KPH0.tex",
+  "summary": "Soient deux entiers naturels non nuls a et b, et deux entiers naturels premiers entre eux m et n. On suppose que a^n = b^m. Montrer qu'il existe un entier naturel non nul c tel que a = c^m et b = c^n.",
+  "concepts": [
+    "nombres premiers entre eux",
+    "divisibilité dans Z",
+    "factorisation en nombres premiers",
+    "propriétés des puissances"
+  ],
+  "methods": [
+    "factorisation",
+    "utilisation du théorème de Gauss",
+    "analyse des exposants"
+  ],
+  "objects": [
+    "entiers naturels",
+    "puissances d'entiers",
+    "nombres premiers"
+  ],
+  "content_hash": "d6917b51824d7cddd3b806938c73cdbae9156f3cc6cf3fc167683d4614a3b1bf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:03:49.006Z"
+}

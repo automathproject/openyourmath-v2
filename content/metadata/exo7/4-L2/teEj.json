@@ -1,0 +1,29 @@
+{
+  "uuid": "teEj",
+  "source_path": "exo7/4-L2/teEj.tex",
+  "summary": "L'exercice demande de prouver que le déterminant d'une matrice par blocs de la forme A = [B D; 0 C] est égal au produit des déterminants de B et C, où B et C sont des matrices carrées.",
+  "concepts": [
+    "forme multilinéaire",
+    "forme alternée",
+    "déterminant",
+    "matrice par blocs",
+    "linéarité",
+    "alternance",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "utilisation de la base canonique",
+    "application de la définition du déterminant",
+    "propriété de multilinéarité",
+    "propriété d'alternance"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice par blocs",
+    "forme déterminant",
+    "espace vectoriel"
+  ],
+  "content_hash": "c77ffa17b02b4f600104b22d71f675e6e42fa7ed6e2cda60ca007b91ec9ff82f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:16:43.084Z"
+}

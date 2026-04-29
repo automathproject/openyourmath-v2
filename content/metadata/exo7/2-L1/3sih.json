@@ -1,0 +1,26 @@
+{
+  "uuid": "3sih",
+  "source_path": "exo7/2-L1/3sih.tex",
+  "summary": "Étude des branches infinies des fonctions f(x) = x² arctan(1/(1 + x²)) et g(x) = x √((x-1)/(3x + 1)) en utilisant les développements limités.",
+  "concepts": [
+    "développement limité",
+    "branche infinie",
+    "limite en l'infini",
+    "fonction composée",
+    "racine carrée",
+    "fonction rationnelle"
+  ],
+  "methods": [
+    "développement limité à l'ordre 1",
+    "approximation affine",
+    "simplification de termes dominants"
+  ],
+  "objects": [
+    "fonction f(x) = x² arctan(1/(1 + x²))",
+    "fonction g(x) = x √((x-1)/(3x + 1))",
+    "développement limité"
+  ],
+  "content_hash": "4ba7fa10dfd5246931569ec20fd89d075fcbec6cc8136ab6941aa636dde46f9f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:22:13.307Z"
+}

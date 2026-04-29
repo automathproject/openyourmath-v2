@@ -1,0 +1,27 @@
+{
+  "uuid": "ROI4",
+  "source_path": "exo7/4-L2/ROI4.tex",
+  "summary": "L'exercice demande de prouver que le déterminant d'une matrice bloc 2x2 composée de deux matrices carrées réelles A et B est un réel positif.",
+  "concepts": [
+    "déterminant de matrice",
+    "matrice bloc",
+    "nombre complexe",
+    "conjugaison complexe",
+    "module d'un complexe",
+    "propriété multiplicative du déterminant"
+  ],
+  "methods": [
+    "transformation de lignes/colonnes",
+    "simplification par opérations élémentaires",
+    "utilisation de la conjugaison",
+    "calcul du module"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice bloc",
+    "nombre complexe"
+  ],
+  "content_hash": "f42f8f4f99a2492fb736645506c625d490b3cec375ce5c54a5fec3a63260d85d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:50:13.764Z"
+}

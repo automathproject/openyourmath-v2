@@ -1,0 +1,33 @@
+{
+  "uuid": "BNSB",
+  "source_path": "exo7/4-L2/BNSB.tex",
+  "summary": "L'exercice étudie les propriétés d'un endomorphisme φ de l'espace des matrices symétriques réelles qui préserve les matrices définies positives. Il demande de montrer que φ est un isomorphisme, conserve les matrices positives, et préserve le polynôme caractéristique et le déterminant dans le cas n=2.",
+  "concepts": [
+    "espace vectoriel",
+    "sous-espace vectoriel",
+    "matrice symétrique",
+    "matrice définie positive",
+    "théorème du rang",
+    "continuité d'application linéaire",
+    "valeurs propres",
+    "polynôme caractéristique",
+    "déterminant"
+  ],
+  "methods": [
+    "utilisation de la surjectivité",
+    "limite de matrices",
+    "inclusion d'adhérence",
+    "conservation des valeurs propres",
+    "orthogonalisation"
+  ],
+  "objects": [
+    "endomorphisme",
+    "matrice symétrique",
+    "matrice définie positive",
+    "polynôme caractéristique",
+    "déterminant"
+  ],
+  "content_hash": "fc6bcfbace61df8e53e1b5afbf121896c32f87aa8cc948f3b9377247fcfa4e56",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:07:06.881Z"
+}

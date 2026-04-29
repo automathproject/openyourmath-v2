@@ -1,0 +1,28 @@
+{
+  "uuid": "a6Zg",
+  "source_path": "exo7/12-L3/a6Zg.tex",
+  "summary": "Trouver le volume maximal d'une boîte rectangulaire inscrite dans une sphère de rayon R. L'énoncé demande d'optimiser le volume sous contrainte géométrique.",
+  "concepts": [
+    "optimisation sous contrainte",
+    "multiplicateurs de Lagrange",
+    "points critiques",
+    "fonction de Lagrange",
+    "compact",
+    "maximum global"
+  ],
+  "methods": [
+    "méthode des multiplicateurs de Lagrange",
+    "résolution de système d'équations",
+    "analyse des points critiques",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "boîte rectangulaire",
+    "sphère",
+    "fonction volume",
+    "sous-variété"
+  ],
+  "content_hash": "e74012abe8b6c97b22bfac495b176d27cf6afd2fa5fbacff0b0c2da5bcc9b7d5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:33:33.392Z"
+}

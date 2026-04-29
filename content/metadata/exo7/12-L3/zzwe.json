@@ -1,0 +1,26 @@
+{
+  "uuid": "zzwe",
+  "source_path": "exo7/12-L3/zzwe.tex",
+  "summary": "L'exercice demande de prouver l'existence et l'unicité de solutions pour un système d'équations non linéaires en variables x et y dépendant d'un paramètre t, puis d'étudier la régularité et le développement limité de ces solutions.",
+  "concepts": [
+    "théorème des fonctions implicites",
+    "difféomorphisme",
+    "inversion locale",
+    "continuité",
+    "développement limité",
+    "fonction de classe C^∞"
+  ],
+  "methods": [
+    "linéarisation",
+    "application du théorème des fonctions implicites",
+    "calcul de développement limité"
+  ],
+  "objects": [
+    "système d'équations non linéaires",
+    "fonction vectorielle",
+    "solution paramétrique"
+  ],
+  "content_hash": "dd696c86143489a9e6133f0e76b657daea99702a35830e5fc862bdcd0be31eaa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:21:19.673Z"
+}

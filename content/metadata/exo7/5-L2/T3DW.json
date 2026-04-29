@@ -1,0 +1,26 @@
+{
+  "uuid": "T3DW",
+  "source_path": "exo7/5-L2/T3DW.tex",
+  "summary": "L'exercice demande d'appliquer le théorème des fonctions implicites à une courbe plane définie par une équation de deux variables au point (0,0), puis de déterminer la limite de y/x lorsque (x,y) tend vers (0,0) le long de cette courbe.",
+  "concepts": [
+    "théorème des fonctions implicites",
+    "fonction de deux variables",
+    "dérivées partielles",
+    "limite de fonction",
+    "courbe plane"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "application du théorème des fonctions implicites",
+    "détermination de la limite d'une fonction"
+  ],
+  "objects": [
+    "fonction f(x,y)",
+    "courbe C",
+    "point (0,0)",
+    "fonctions h et k"
+  ],
+  "content_hash": "c80fd28c5414c884e41896731431493acce9945b3cf77784f3d2e9e304d5e561",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:03:01.257Z"
+}

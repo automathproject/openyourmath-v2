@@ -1,0 +1,31 @@
+{
+  "uuid": "YOSM",
+  "source_path": "exo7/10-L3/YOSM.tex",
+  "summary": "L'exercice demande de démontrer des propriétés d'isomorphismes et d'actions de groupes sur des espaces vectoriels, en utilisant des matrices hermitiennes et des matrices anti-hermitiennes. Il explore les relations entre SU(2) et SO(3) via un homomorphisme.",
+  "concepts": [
+    "forme bilinéaire",
+    "isomorphisme d'espaces vectoriels",
+    "action de groupe",
+    "matrice hermitienne",
+    "matrice anti-hermitienne",
+    "groupe spécial unitaire SU(2)",
+    "groupe orthogonal spécial SO(3)",
+    "application exponentielle"
+  ],
+  "methods": [
+    "conjugaison de matrices",
+    "détermination du noyau d'un homomorphisme",
+    "diagonalisation de matrices unitaires",
+    "utilisation de la connexité de SU(2)"
+  ],
+  "objects": [
+    "espace vectoriel H₀ des matrices hermitiennes de trace nulle",
+    "espace vectoriel ℝ³",
+    "matrices de SU(2)",
+    "matrices de SO(3)",
+    "homomorphisme φ de SU(2) dans SO(3)"
+  ],
+  "content_hash": "37fbe5c72a06d109bfb048b2eaac1c614ab675fc30215306f7a4ead85e0d73d3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:23:36.254Z"
+}

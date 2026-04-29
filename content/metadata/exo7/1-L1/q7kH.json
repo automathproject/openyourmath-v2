@@ -1,0 +1,25 @@
+{
+  "uuid": "q7kH",
+  "source_path": "exo7/1-L1/q7kH.tex",
+  "summary": "Montrer par récurrence que pour tout entier naturel n, la formule du binôme de Newton s'applique à tout couple de réels a et b.",
+  "concepts": [
+    "formule du binôme de Newton",
+    "récurrence",
+    "propriété universelle",
+    "entier naturel",
+    "polynôme"
+  ],
+  "methods": [
+    "récurrence forte",
+    "initialisation",
+    "hérédité"
+  ],
+  "objects": [
+    "entier naturel",
+    "polynôme",
+    "coefficient binomial"
+  ],
+  "content_hash": "2bdc23d2ca8980cf385da0480deaacd828e4a3633dfb70c827dcaafa654f174b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:27:41.862Z"
+}

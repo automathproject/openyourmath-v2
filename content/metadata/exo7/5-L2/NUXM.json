@@ -1,0 +1,27 @@
+{
+  "uuid": "NUXM",
+  "source_path": "exo7/5-L2/NUXM.tex",
+  "summary": "Étudier le comportement de l'intégrale de Riemann dépendant d'un paramètre ∫₀⁺∞ (e⁻ᵗˣ)/(1+t²) dt en fonction de x.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "fonction de classe C^∞",
+    "limite de fonction",
+    "équation différentielle",
+    "intégration par parties",
+    "comportement asymptotique"
+  ],
+  "methods": [
+    "étude de limite",
+    "analyse de comportement asymptotique",
+    "intégration par parties",
+    "résolution d'équation différentielle"
+  ],
+  "objects": [
+    "fonction de x",
+    "intégrale paramétrique",
+    "équation différentielle"
+  ],
+  "content_hash": "b18c3ea02e100d468416e2b21a6b4b8d0438d5cf8c603a61d81ff365af0bfc27",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:35:11.375Z"
+}

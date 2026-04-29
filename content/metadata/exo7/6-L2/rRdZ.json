@@ -1,0 +1,27 @@
+{
+  "uuid": "rRdZ",
+  "source_path": "exo7/6-L2/rRdZ.tex",
+  "summary": "Dans l'espace, on considère deux plans parallèles distincts et trois points sur l'un d'eux. On construit des points sur l'autre plan via des droites passant par un point extérieur, ainsi que les milieux des segments formés par ces points. L'exercice demande de montrer que certaines droites construites sont parallèles ou concourantes.",
+  "concepts": [
+    "géométrie affine",
+    "homothétie",
+    "plan parallèle",
+    "droite affine",
+    "point d'intersection",
+    "milieu d'un segment"
+  ],
+  "methods": [
+    "construction géométrique",
+    "utilisation des propriétés des homothéties",
+    "analyse de la position relative des droites"
+  ],
+  "objects": [
+    "plans parallèles",
+    "points dans l'espace",
+    "droites affines",
+    "milieux de segments"
+  ],
+  "content_hash": "21bd1e54b2b99228d0452558b49a30781bdbc96915e33b1d32a45b355ee45373",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:11:24.393Z"
+}

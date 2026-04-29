@@ -1,0 +1,25 @@
+{
+  "uuid": "MfRw",
+  "source_path": "exo7/1-L1/MfRw.tex",
+  "summary": "L'exercice demande de prouver que la seule fonction f : ℕ → ℕ vérifiant ∀n ∈ ℕ, f(f(n)) < f(n+1) est l'identité sur ℕ. On utilise une démonstration par récurrence et des propriétés de minimalité.",
+  "concepts": [
+    "fonction injective",
+    "fonction strictement croissante",
+    "récurrence",
+    "minimalité",
+    "fonction identité"
+  ],
+  "methods": [
+    "récurrence",
+    "argument par minimalité",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "fonction de ℕ dans ℕ",
+    "entiers naturels",
+    "minimisation"
+  ],
+  "content_hash": "15f41bee4ad4355cb79a8214844bd4d2ef2c5fd43bd0e8e6be99205f08b6641f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:42:47.159Z"
+}

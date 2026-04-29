@@ -1,0 +1,29 @@
+{
+  "uuid": "iwFE",
+  "source_path": "amscc/iwFE.tex",
+  "summary": "L'exercice demande de construire un polynôme d'interpolation de degré 2 pour une fonction C^1 sur [-1,1] aux points -1, 0 et 1, puis d'utiliser ce polynôme pour approximer une intégrale par la méthode des rectangles, et enfin de déduire un schéma à deux pas implicite pour résoudre un problème de Cauchy.",
+  "concepts": [
+    "interpolation polynomiale",
+    "approximation d'intégrale",
+    "problème de Cauchy",
+    "changement de variable",
+    "schéma numérique implicite",
+    "polynôme d'interpolation"
+  ],
+  "methods": [
+    "interpolation de Lagrange",
+    "approximation par intégrale de polynôme",
+    "changement de variable pour intégrale",
+    "construction de schéma numérique"
+  ],
+  "objects": [
+    "fonction C^1",
+    "polynôme de degré 2",
+    "intégrale approchée",
+    "problème de Cauchy",
+    "schéma à deux pas"
+  ],
+  "content_hash": "4e1204ea7141832ffec196f78eb651f9a7487565d5135f1c0f047ea6f504bb32",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:23:37.517Z"
+}

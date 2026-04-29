@@ -1,0 +1,28 @@
+{
+  "uuid": "Yr8F",
+  "source_path": "exo7/4-L2/Yr8F.tex",
+  "summary": "On considère une forme quadratique Q sur un espace vectoriel réel E, dont la forme polaire φ est non dégénérée mais non définie. L'exercice demande de montrer que Q ne peut pas être de signe constant.",
+  "concepts": [
+    "forme quadratique",
+    "forme polaire",
+    "forme non dégénérée",
+    "forme non définie",
+    "inégalité de Cauchy-Schwarz",
+    "signature d'une forme quadratique",
+    "noyau d'une forme bilinéaire"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de l'inégalité de Cauchy-Schwarz",
+    "analyse de la dégénérescence"
+  ],
+  "objects": [
+    "forme quadratique Q",
+    "forme polaire φ",
+    "espace vectoriel E",
+    "vecteur non nul x₀"
+  ],
+  "content_hash": "6a091351c35ef4b9076e0ff86817260471766772a452a01cef84ba9e0d675a77",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:34:42.085Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "GOsL",
+  "source_path": "exo7/6-L2/GOsL.tex",
+  "summary": "L'exercice demande de déterminer les équations cartésiennes de plusieurs droites dans le plan : la droite passant par deux points donnés, la perpendiculaire à une droite donnée passant par un point, la parallèle à une autre droite donnée passant par le même point, et la médiatrice d'un segment avec vérification de parallélisme.",
+  "concepts": [
+    "géométrie affine",
+    "équation cartésienne d'une droite",
+    "parallélisme",
+    "perpendicularité",
+    "médiatrice d'un segment"
+  ],
+  "methods": [
+    "calcul de l'intersection de deux droites",
+    "détermination de l'équation d'une droite passant par deux points",
+    "détermination de l'équation d'une droite parallèle",
+    "détermination de l'équation d'une droite perpendiculaire",
+    "calcul de la médiatrice d'un segment"
+  ],
+  "objects": [
+    "droites du plan",
+    "points du plan",
+    "segment",
+    "médiatrice"
+  ],
+  "content_hash": "a587992d5bdd2b11f31613ad6f5a10941c4f7ea6aac49bc88ebeb766daa3a039",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:45:38.397Z"
+}

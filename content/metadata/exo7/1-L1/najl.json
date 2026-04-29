@@ -1,0 +1,26 @@
+{
+  "uuid": "najl",
+  "source_path": "exo7/1-L1/najl.tex",
+  "summary": "Montrer qu'une famille de fonctions exponentielles $f_\\alpha(x) = e^{\\alpha x}$ est libre dans l'espace vectoriel des fonctions réelles.",
+  "concepts": [
+    "famille libre",
+    "combinaison linéaire",
+    "limite de fonctions",
+    "factorisation",
+    "récurrence"
+  ],
+  "methods": [
+    "factorisation",
+    "passage à la limite",
+    "récurrence",
+    "analyse du terme dominant"
+  ],
+  "objects": [
+    "famille de fonctions exponentielles",
+    "combinaison linéaire de fonctions",
+    "fonction nulle"
+  ],
+  "content_hash": "99210913be1a50ced896f02761db1332b6dbc8c01e518c58350ebf10ab962e3c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:09:07.883Z"
+}

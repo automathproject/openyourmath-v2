@@ -1,0 +1,24 @@
+{
+  "uuid": "oXhV",
+  "source_path": "exo7/4-L2/oXhV.tex",
+  "summary": "On considère une matrice carrée inversible A et une matrice B obtenue en échangeant deux colonnes de A. On doit montrer que B est aussi inversible et déterminer la relation entre les inverses de A et B.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "opérations élémentaires sur les matrices",
+    "déterminant",
+    "rang d'une matrice",
+    "matrice inversée"
+  ],
+  "methods": [
+    "échange de colonnes",
+    "calcul de l'inverse d'une matrice",
+    "propriétés des opérations sur les matrices"
+  ],
+  "objects": [
+    "matrice carrée inversible",
+    "matrice obtenue par échange de colonnes"
+  ],
+  "content_hash": "8f465a332aed8c696f4cb8837952d82683529a2fa12e9bcc6d2e1c33f7c45333",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:10:43.345Z"
+}

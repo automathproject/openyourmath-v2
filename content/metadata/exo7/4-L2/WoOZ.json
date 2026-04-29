@@ -1,0 +1,32 @@
+{
+  "uuid": "WoOZ",
+  "source_path": "exo7/4-L2/WoOZ.tex",
+  "summary": "L'exercice étudie un endomorphisme orthogonal dans ℝ⁴ défini par une matrice donnée. Il demande de prouver sa diagonalisabilité dans une base orthonormée, d'identifier ses valeurs propres, de déterminer ses espaces propres et de construire une base orthonormée pour la diagonalisation.",
+  "concepts": [
+    "endomorphisme orthogonal",
+    "diagonalisabilité",
+    "valeur propre",
+    "espace propre",
+    "base orthonormée",
+    "procédé de Schmidt",
+    "orthogonalité",
+    "trace d'une matrice"
+  ],
+  "methods": [
+    "vérification de l'orthogonalité",
+    "détermination des valeurs propres",
+    "calcul de la trace",
+    "détermination des espaces propres",
+    "orthonormalisation de Gram-Schmidt"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "endomorphisme",
+    "espace vectoriel ℝ⁴",
+    "base orthonormée",
+    "espace propre"
+  ],
+  "content_hash": "fd3ea66b2c849eee09a2daec6c7cadbddbccaacaa769a7aeb3ec54a51eac4d4c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:58:29.056Z"
+}

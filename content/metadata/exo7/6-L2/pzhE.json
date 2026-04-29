@@ -1,0 +1,27 @@
+{
+  "uuid": "pzhE",
+  "source_path": "exo7/6-L2/pzhE.tex",
+  "summary": "L'exercice demande de déterminer les coordonnées des sommets d'un triangle défini par les équations de ses côtés, puis de trouver les milieux des segments formés par ces sommets, et enfin de vérifier la concourance des médianes du triangle.",
+  "concepts": [
+    "système d'équations linéaires",
+    "intersection de droites",
+    "milieu d'un segment",
+    "médiane d'un triangle",
+    "concourance des médianes"
+  ],
+  "methods": [
+    "résolution de système d'équations linéaires",
+    "calcul de coordonnées de milieu",
+    "équation de droite",
+    "calcul d'intersection de droites"
+  ],
+  "objects": [
+    "triangle",
+    "droites",
+    "points",
+    "médianes"
+  ],
+  "content_hash": "6c093de1b38f540e5f621b8961d2db3493487b9f8380781f2ddce4c9ed411ffa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:10:11.977Z"
+}

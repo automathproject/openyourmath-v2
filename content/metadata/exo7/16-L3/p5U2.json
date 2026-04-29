@@ -1,0 +1,25 @@
+{
+  "uuid": "p5U2",
+  "source_path": "exo7/16-L3/p5U2.tex",
+  "summary": "On considère une fonction continue définie sur un quart de plan complexe et un quart de cercle paramétré. On demande de montrer que si la borne supérieure de la fonction tend vers 0 à l'infini, alors une intégrale le long du quart de cercle tend aussi vers 0.",
+  "concepts": [
+    "fonction continue",
+    "borne supérieure",
+    "limite en l'infini",
+    "intégrale complexe",
+    "convergence uniforme"
+  ],
+  "methods": [
+    "estimation de l'intégrale",
+    "utilisation de la continuité",
+    "analyse de la limite"
+  ],
+  "objects": [
+    "fonction complexe",
+    "quart de cercle",
+    "intégrale curviligne"
+  ],
+  "content_hash": "b082125c76e1b73aff2700cc52c89a7c5b858170d09d799e43ac9b55d59dc185",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:23:50.967Z"
+}

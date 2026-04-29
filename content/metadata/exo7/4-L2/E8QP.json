@@ -1,0 +1,31 @@
+{
+  "uuid": "E8QP",
+  "source_path": "exo7/4-L2/E8QP.tex",
+  "summary": "L'exercice porte sur l'étude d'un code ternaire cyclique de longueur 9 associé au polynôme g=(X-1)^5 dans l'anneau F3[X]. Il demande d'analyser les propriétés du code, de déterminer sa matrice génératrice et de contrôle, et de corriger un mot reçu potentiellement erroné.",
+  "concepts": [
+    "anneau des polynômes",
+    "code cyclique",
+    "matrice génératrice",
+    "matrice de contrôle",
+    "distance de Hamming",
+    "correction d'erreurs",
+    "polynôme minimal"
+  ],
+  "methods": [
+    "factorisation de polynômes",
+    "calcul de dimension de code",
+    "construction de matrices génératrices",
+    "détermination de distance minimale",
+    "syndrome d'erreur"
+  ],
+  "objects": [
+    "polynôme X^9-1",
+    "polynôme g=(X-1)^5",
+    "code ternaire C",
+    "mot reçu r=121102210",
+    "matrice H"
+  ],
+  "content_hash": "af2b2edd3fb030eab7bde164cd10ad3886572baf0913a699bf7773028b163ce3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:29:05.800Z"
+}

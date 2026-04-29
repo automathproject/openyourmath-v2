@@ -1,0 +1,29 @@
+{
+  "uuid": "Ja5x",
+  "source_path": "exo7/2-L1/Ja5x.tex",
+  "summary": "L'exercice demande de montrer l'existence d'un θ dans ]0,1[ pour une égalité impliquant la dérivée de f en a+θh et a-θh, puis d'établir la limite d'une fonction φ(h) vers la dérivée seconde de f en a si celle-ci existe.",
+  "concepts": [
+    "dérivabilité",
+    "dérivée seconde",
+    "théorème des accroissements finis",
+    "limite de fonction",
+    "continuité",
+    "fonction dérivable"
+  ],
+  "methods": [
+    "développement limité",
+    "approximation affine",
+    "utilisation du théorème des accroissements finis",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "dérivée seconde",
+    "fonction φ(h)",
+    "nombre réel a",
+    "nombre réel h"
+  ],
+  "content_hash": "8e76c1e10d0e8a4083c8a2d4c66f69fbf76e4be5cef3a2909d01a85adecdd739",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:03:41.633Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "hYs1",
+  "source_path": "exo7/12-L3/hYs1.tex",
+  "summary": "On considère une fonction de classe C² à trois variables dont la matrice hessienne par rapport aux variables x et y est définie positive. On sait que la fonction atteint un minimum en (x₀, y₀) pour t=0. On demande de montrer que pour t voisin de 0, la fonction atteint son minimum en un point (x(t), y(t)) dépendant de t de manière C¹.",
+  "concepts": [
+    "extremum lié",
+    "matrice hessienne",
+    "définie positive",
+    "classe C²",
+    "classe C¹",
+    "continuité des solutions"
+  ],
+  "methods": [
+    "analyse des points critiques",
+    "théorème des fonctions implicites",
+    "linéarisation",
+    "stabilité des extrema"
+  ],
+  "objects": [
+    "fonction de plusieurs variables",
+    "matrice hessienne",
+    "point critique",
+    "solution paramétrée"
+  ],
+  "content_hash": "6b1140662e584fee9f757d4a916e18cc5bbc94e6358fb7188d157b7d174ff833",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:33:24.584Z"
+}

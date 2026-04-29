@@ -1,0 +1,29 @@
+{
+  "uuid": "psqU",
+  "source_path": "exo7/5-L2/psqU.tex",
+  "summary": "Calculer les coordonnées du centre d'inertie (centre de gravité) de trois domaines différents dans le plan. Le premier domaine est un quart d'ellipse, le second est une portion de disque définie par une condition linéaire sur y, et le troisième est une couronne circulaire.",
+  "concepts": [
+    "intégrale multiple",
+    "centre d'inertie",
+    "coordonnées cartésiennes",
+    "domaine borné",
+    "changement de variables",
+    "intégration sur un domaine"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "calcul des moments",
+    "intégration en coordonnées cartésiennes"
+  ],
+  "objects": [
+    "domaine plan",
+    "ellipse",
+    "disque",
+    "couronne circulaire",
+    "coordonnées (x,y)"
+  ],
+  "content_hash": "2c3a5fa0330ff33cfd5a6c5f7b77b78c2f5b38fcba2d22b92a620c4e90f01e58",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:50:26.807Z"
+}

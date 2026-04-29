@@ -1,0 +1,26 @@
+{
+  "uuid": "8dVL",
+  "source_path": "exo7/4-L2/8dVL.tex",
+  "summary": "L'exercice demande de déterminer les rangs de deux matrices A et B définies à partir de termes généraux x_i + y_j et (x_i + y_j)^2. Les matrices sont construites à partir de familles de scalaires x_i et y_j dans un corps K.",
+  "concepts": [
+    "rang d'une matrice",
+    "décomposition en produit de matrices",
+    "cardinal d'un ensemble",
+    "matrice de termes généraux",
+    "système linéaire"
+  ],
+  "methods": [
+    "décomposition en facteurs",
+    "analyse des vecteurs lignes/colonnes",
+    "calcul du rang par factorisation"
+  ],
+  "objects": [
+    "matrice A",
+    "matrice B",
+    "familles de scalaires x_i et y_j",
+    "produit de matrices"
+  ],
+  "content_hash": "044051dfb6d9cac6b4b598b2564530986d59da317f06609597e43956df06be93",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:34:47.940Z"
+}

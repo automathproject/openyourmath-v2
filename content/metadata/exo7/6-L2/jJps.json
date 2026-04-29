@@ -1,0 +1,25 @@
+{
+  "uuid": "jJps",
+  "source_path": "exo7/6-L2/jJps.tex",
+  "summary": "L'exercice demande d'étudier l'existence de points B₁, ..., Bₙ dans un espace affine Å tels que chaque point Aᵢ soit le milieu du segment reliant Bᵢ à Bᵢ₊₁ (avec Bₙ₊₁ = B₁).",
+  "concepts": [
+    "géométrie affine",
+    "milieu d'un segment",
+    "relation de récurrence",
+    "système d'équations linéaires",
+    "espace vectoriel associé"
+  ],
+  "methods": [
+    "résolution de système d'équations linéaires",
+    "utilisation de la relation de milieu",
+    "analyse de cas particuliers"
+  ],
+  "objects": [
+    "points dans un espace affine",
+    "segments",
+    "milieux"
+  ],
+  "content_hash": "a65e901e172ecf4e11f1262ac74c7f73fbddad00718c09632d5ab037bd9096f7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:05:21.031Z"
+}

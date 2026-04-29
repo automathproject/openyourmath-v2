@@ -1,0 +1,26 @@
+{
+  "uuid": "MPL7",
+  "source_path": "exo7/10-L3/MPL7.tex",
+  "summary": "Montrer qu'un élément appartenant à l'intersection des sous-anneaux A[x] et A[x⁻¹] est entier sur A.",
+  "concepts": [
+    "entier algébrique",
+    "extension d'anneau",
+    "sous-anneau",
+    "module sur un anneau",
+    "élément inversible"
+  ],
+  "methods": [
+    "construction de module",
+    "inclusion de modules",
+    "propriété d'entier algébrique"
+  ],
+  "objects": [
+    "sous-anneau A[x]",
+    "sous-anneau A[x⁻¹]",
+    "élément y",
+    "module M"
+  ],
+  "content_hash": "39ea1874ba47b01e2bf755bb624908203d2b22f8d14f004efb6f0d3eb92fa904",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:24:42.078Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "O2Xs",
+  "source_path": "exo7/12-L3/O2Xs.tex",
+  "summary": "Déterminer les extrema (minimum et maximum) de la fonction f(x,y,z) = x² + y² + z² + 2xyz définie sur ℝ³.",
+  "concepts": [
+    "extremum libre",
+    "fonction de plusieurs variables",
+    "gradient",
+    "hessien",
+    "critères du second ordre"
+  ],
+  "methods": [
+    "calcul du gradient",
+    "résolution d'un système linéaire",
+    "analyse de la matrice hessienne"
+  ],
+  "objects": [
+    "fonction de trois variables",
+    "gradient",
+    "matrice hessienne"
+  ],
+  "content_hash": "73421bb893e9f2df26f376e8a12e2a81023380826bf2b36d828cb87c956432fd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:31:26.706Z"
+}

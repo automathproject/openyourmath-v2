@@ -1,0 +1,25 @@
+{
+  "uuid": "YbjM",
+  "source_path": "exo7/4-L2/YbjM.tex",
+  "summary": "Soient G un groupe et x, y ∈ G des éléments qui commutent et d'ordres respectifs m et n premiers entre eux. Montrer que xy est d'ordre mn et que l'hypothèse de nombres premiers entre eux est indispensable.",
+  "concepts": [
+    "ordre d'un élément dans un groupe",
+    "commutativité",
+    "théorème de Gauss",
+    "divisibilité",
+    "groupe multiplicatif"
+  ],
+  "methods": [
+    "calcul d'ordre d'un produit d'éléments",
+    "utilisation de la divisibilité",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "éléments d'un groupe",
+    "ordre d'un élément",
+    "produit d'éléments"
+  ],
+  "content_hash": "67357c993d91a1ba93484723760e1389d078f8a2a074b4ef7793c37c719546e9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:54:45.344Z"
+}

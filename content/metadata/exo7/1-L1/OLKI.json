@@ -1,0 +1,25 @@
+{
+  "uuid": "OLKI",
+  "source_path": "exo7/1-L1/OLKI.tex",
+  "summary": "L'exercice demande de calculer les puissances successives d'une matrice B dérivée d'une matrice A donnée, puis d'établir une formule de récurrence pour B^n. Ensuite, il s'agit de développer (B+I_3)^n à l'aide de la formule du binôme et d'en déduire une expression pour A^n.",
+  "concepts": [
+    "matrice",
+    "puissance de matrice",
+    "formule de récurrence",
+    "formule du binôme",
+    "matrice identité"
+  ],
+  "methods": [
+    "calcul de puissances de matrice",
+    "développement binomial",
+    "récurrence"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "puissances de matrice",
+    "matrice identité"
+  ],
+  "content_hash": "b02838f46364a1c75df5517e836b9d3e282612c0cfaae6728488ea25861e3c03",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:56:02.766Z"
+}

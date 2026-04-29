@@ -1,0 +1,26 @@
+{
+  "uuid": "l8CR",
+  "source_path": "exo7/4-L2/l8CR.tex",
+  "summary": "On considère un espace euclidien E et un endomorphisme f de E tel que le produit scalaire de deux vecteurs orthogonaux reste orthogonal après application de f. On demande de montrer qu'il existe un réel positif α tel que f préserve le produit scalaire à un facteur multiplicatif près.",
+  "concepts": [
+    "espace euclidien",
+    "endomorphisme",
+    "produit scalaire",
+    "orthogonalité",
+    "norme",
+    "isométrie"
+  ],
+  "methods": [
+    "utilisation des propriétés du produit scalaire",
+    "argument par l'absurde",
+    "linéarité"
+  ],
+  "objects": [
+    "espace vectoriel euclidien",
+    "endomorphisme",
+    "produit scalaire"
+  ],
+  "content_hash": "1d9c8ecddd761e91a43d0c5343fda64e3026ff0dac76849d99e0fe2015e8369e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:48:37.678Z"
+}

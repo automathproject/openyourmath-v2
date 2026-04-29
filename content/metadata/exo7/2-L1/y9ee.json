@@ -1,0 +1,25 @@
+{
+  "uuid": "y9ee",
+  "source_path": "exo7/2-L1/y9ee.tex",
+  "summary": "L'exercice demande de simplifier l'expression arccos(1-2x²) et d'en trouver un équivalent lorsque x tend vers 0. Ensuite, il faut déterminer un équivalent de arccos(u) lorsque u tend vers 1 par valeurs inférieures.",
+  "concepts": [
+    "développement limité",
+    "équivalent",
+    "limite de fonction",
+    "fonction arccosinus",
+    "approximation locale"
+  ],
+  "methods": [
+    "développement limité d'ordre 1",
+    "comparaison de termes dominants",
+    "approximation affine"
+  ],
+  "objects": [
+    "fonction arccosinus",
+    "variable réelle",
+    "expression algébrique"
+  ],
+  "content_hash": "bca32e0db89b19c86a0e8bd11b19d39e48aabb197dedb3631e3df2bcc95d9056",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:44:00.946Z"
+}

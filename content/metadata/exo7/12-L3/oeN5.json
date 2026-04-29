@@ -1,0 +1,29 @@
+{
+  "uuid": "oeN5",
+  "source_path": "exo7/12-L3/oeN5.tex",
+  "summary": "On considère une application de classe C^1 sur un ouvert connexe d'un espace vectoriel de dimension finie, avec une condition de Lipschitz sur sa différentielle. On demande de montrer que l'application identité moins cette application est un difféomorphisme C^1.",
+  "concepts": [
+    "difféomorphisme",
+    "théorème d'inversion locale",
+    "application de classe C^1",
+    "différentielle",
+    "condition de Lipschitz",
+    "espace vectoriel de dimension finie",
+    "ouvert connexe"
+  ],
+  "methods": [
+    "étude de la différentielle",
+    "application du théorème d'inversion locale",
+    "analyse des conditions de régularité"
+  ],
+  "objects": [
+    "application f",
+    "différentielle Df",
+    "application identité Id",
+    "espace vectoriel E",
+    "ouvert connexe Ω"
+  ],
+  "content_hash": "33586f463017fd3ac13858b2315fb4160f00158b0042c69933852013ab5367c8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:18:57.552Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "grue",
+  "source_path": "exo7/5-L2/grue.tex",
+  "summary": "L'exercice demande de déterminer une condition nécessaire sur les coefficients p(t) et q(t) pour qu'une équation différentielle linéaire du second ordre admette deux solutions dont le produit est constant sur ℝ.",
+  "concepts": [
+    "équation différentielle linéaire du second ordre",
+    "solution fondamentale",
+    "condition nécessaire",
+    "fonction continue",
+    "fonction de classe C¹",
+    "théorème d'existence et d'unicité"
+  ],
+  "methods": [
+    "analyse des solutions particulières",
+    "calcul de dérivées",
+    "condition de compatibilité",
+    "vérification de conditions suffisantes"
+  ],
+  "objects": [
+    "équation différentielle",
+    "coefficient p(t)",
+    "coefficient q(t)",
+    "solution x(t)"
+  ],
+  "content_hash": "f12206db423efba459eac99da06da6595b796542915ed24c037b7def3c9967f3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:39:51.774Z"
+}

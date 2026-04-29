@@ -1,0 +1,29 @@
+{
+  "uuid": "EVk4",
+  "source_path": "exo7/4-L2/EVk4.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés : d'abord que pour toute partie A de E, A^2 = A, puis que le triplet (P(E), Δ, ∩) forme un anneau commutatif.",
+  "concepts": [
+    "différence symétrique",
+    "anneau commutatif",
+    "ensemble des parties",
+    "lois de composition interne",
+    "élément neutre",
+    "élément symétrique",
+    "associativité",
+    "commutativité"
+  ],
+  "methods": [
+    "vérification des axiomes d'anneau",
+    "manipulation des ensembles",
+    "démonstration par double inclusion"
+  ],
+  "objects": [
+    "ensemble E",
+    "ensemble des parties P(E)",
+    "différence symétrique Δ",
+    "intersection ∩"
+  ],
+  "content_hash": "bda4b39335b45b7356b366d64cb11b4921a4839fad2de7d5268d38f267a5bce1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:29:54.401Z"
+}

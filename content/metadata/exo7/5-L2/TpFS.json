@@ -1,0 +1,26 @@
+{
+  "uuid": "TpFS",
+  "source_path": "exo7/5-L2/TpFS.tex",
+  "summary": "On définit une fonction f(x,y) à partir d'une fonction F(u,v) via un changement de variables. On montre que l'équation aux dérivées partielles de Laplace sur F(u,v) implique la même équation sur f(x,y).",
+  "concepts": [
+    "changement de variables",
+    "équation aux dérivées partielles",
+    "opérateur de Laplace",
+    "dérivées partielles secondes",
+    "fonction de deux variables"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "changement de coordonnées",
+    "application de l'opérateur de Laplace"
+  ],
+  "objects": [
+    "fonction f(x,y)",
+    "fonction F(u,v)",
+    "changement de variables (u,v) = (x²-y², 2xy)",
+    "opérateur de Laplace"
+  ],
+  "content_hash": "38531d01d887b2b201c2e6e67ef08a54a16470c62ba7a37d6dbdd3bb49ed557f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:30:33.868Z"
+}

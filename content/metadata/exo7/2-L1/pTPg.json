@@ -1,0 +1,27 @@
+{
+  "uuid": "pTPg",
+  "source_path": "exo7/2-L1/pTPg.tex",
+  "summary": "L'exercice demande de déterminer le degré et le coefficient dominant d'une fonction dérivée L_n, puis de prouver que cette fonction admet n racines réelles simples toutes situées dans l'intervalle ]-1,1[.",
+  "concepts": [
+    "théorème de Rolle",
+    "racines d'un polynôme",
+    "dérivation",
+    "polynôme de degré n",
+    "factorisation",
+    "récurrence"
+  ],
+  "methods": [
+    "calcul de degré",
+    "calcul de coefficient dominant",
+    "théorème des valeurs intermédiaires",
+    "récurrence sur k"
+  ],
+  "objects": [
+    "polynôme dérivé",
+    "racines réelles",
+    "intervalle ]-1,1["
+  ],
+  "content_hash": "accf6df9fedc163fb3122c9eb7166d56f19292282fa9bc07c3e3ee037f274869",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:19:32.475Z"
+}

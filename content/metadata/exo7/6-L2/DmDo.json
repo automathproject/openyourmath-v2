@@ -1,0 +1,26 @@
+{
+  "uuid": "DmDo",
+  "source_path": "exo7/6-L2/DmDo.tex",
+  "summary": "L'exercice demande de démontrer que chaque région d'un diagramme de Voronoï est l'intersection de demi-plans définis par les médiatrices des segments reliant un point à tous les autres points. Il faut aussi dessiner le diagramme pour trois points formant un triangle équilatéral.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "diagramme de Voronoï",
+    "médiatrice d'un segment",
+    "intersection de demi-plans",
+    "géométrie du plan"
+  ],
+  "methods": [
+    "démonstration par intersection",
+    "construction géométrique",
+    "dessin de figure"
+  ],
+  "objects": [
+    "région de Voronoï",
+    "demi-plan",
+    "médiatrice",
+    "triangle équilatéral"
+  ],
+  "content_hash": "1ad43e8460227d62e67e5c5651585a1cb5b495f1b8ab02cd4177431bdb8aa0ca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:27:50.020Z"
+}

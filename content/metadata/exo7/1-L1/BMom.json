@@ -1,0 +1,25 @@
+{
+  "uuid": "BMom",
+  "source_path": "exo7/1-L1/BMom.tex",
+  "summary": "L'exercice demande de déterminer si une famille de fractions rationnelles forme une base de l'espace vectoriel des fractions rationnelles de degré ≤ 6, puis d'étudier le cas où le degré est ≤ 9.",
+  "concepts": [
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "fraction rationnelle",
+    "dimension d'un espace vectoriel",
+    "polynôme"
+  ],
+  "methods": [
+    "vérification de la liberté",
+    "vérification de la génération",
+    "calcul de la dimension"
+  ],
+  "objects": [
+    "fraction rationnelle",
+    "polynôme",
+    "base de fractions rationnelles"
+  ],
+  "content_hash": "0614d4b92c64e53e0b393c2e6892ffdab19b0fc1edff3278f25025684a9bde46",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:42:05.865Z"
+}

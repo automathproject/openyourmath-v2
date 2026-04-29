@@ -1,0 +1,29 @@
+{
+  "uuid": "akfc",
+  "source_path": "exo7/1-L1/akfc.tex",
+  "summary": "L'exercice demande de déterminer si des familles de vecteurs dans ℝ⁴ sont libres ou liées, et de fournir des relations de dépendance linéaire lorsque celles-ci existent.",
+  "concepts": [
+    "famille libre",
+    "famille liée",
+    "relation de dépendance linéaire",
+    "déterminant",
+    "rang d'une matrice",
+    "base d'un espace vectoriel",
+    "système de Cramer"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "réduction de matrice",
+    "méthode de Cramer",
+    "comparaison de rang"
+  ],
+  "objects": [
+    "vecteurs de ℝ⁴",
+    "matrice",
+    "famille de vecteurs",
+    "base canonique"
+  ],
+  "content_hash": "7591c01b1fc2ecd029a0dfaf3fdd283d6d885d0d22e789f0b30a35735c715f06",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:58:11.424Z"
+}

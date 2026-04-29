@@ -1,0 +1,30 @@
+{
+  "uuid": "YUNF",
+  "source_path": "amscc/YUNF.tex",
+  "summary": "L'exercice demande de déterminer le polynôme de degré 1 qui approche au mieux la fonction f(x) = x³ sur l'intervalle [-1, 1] au sens des moindres carrés, en minimisant l'erreur quadratique intégrée. Il s'agit de formuler ce problème comme un problème de moindres carrés de dimension finie et d'en étudier l'existence et l'unicité des solutions.",
+  "concepts": [
+    "optimisation quadratique",
+    "moindres carrés",
+    "approximation polynomiale",
+    "espace vectoriel normé",
+    "produit scalaire",
+    "minimisation de fonctionnelle",
+    "existence et unicité des solutions"
+  ],
+  "methods": [
+    "formulation de problème d'optimisation",
+    "calcul de l'intégrale de l'erreur quadratique",
+    "résolution d'un système linéaire",
+    "analyse de la matrice hessienne"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "polynôme d'approximation",
+    "erreur quadratique",
+    "paramètres a et b",
+    "espace vectoriel de dimension finie"
+  ],
+  "content_hash": "dbf28728f43f503d07faba116cd3300978c923c673ebad6d40d22409bd75150e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:32:17.507Z"
+}

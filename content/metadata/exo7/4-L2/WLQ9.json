@@ -1,0 +1,29 @@
+{
+  "uuid": "WLQ9",
+  "source_path": "exo7/4-L2/WLQ9.tex",
+  "summary": "Soit un espace vectoriel réel muni d'une norme vérifiant l'identité du parallélogramme. Montrer que cette norme est hilbertienne, c'est-à-dire associée à un produit scalaire.",
+  "concepts": [
+    "identité du parallélogramme",
+    "norme hilbertienne",
+    "produit scalaire",
+    "forme bilinéaire symétrique",
+    "forme définie positive",
+    "continuité des normes",
+    "densité des rationnels dans les réels"
+  ],
+  "methods": [
+    "construction explicite d'un produit scalaire",
+    "vérification des propriétés de bilinéarité",
+    "passage de la linéarité sur les rationnels à la linéarité sur les réels",
+    "utilisation de la continuité des normes"
+  ],
+  "objects": [
+    "espace vectoriel normé",
+    "produit scalaire",
+    "forme bilinéaire",
+    "suite de rationnels"
+  ],
+  "content_hash": "585abb15cc88e121685a027f7c2836f95581b52d52a283eaa7c915b619c60eb2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:31:29.173Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "tqqv",
+  "source_path": "exo7/10-L3/tqqv.tex",
+  "summary": "L'exercice demande de prouver que le produit de deux sous-groupes A et B d'un groupe G est lui-même un sous-groupe si et seulement si ce produit commute avec son inverse. On étudie aussi la relation entre ce produit et le sous-groupe engendré par A et B.",
+  "concepts": [
+    "sous-groupe",
+    "groupe engendré",
+    "produit de sous-groupes",
+    "commutativité",
+    "structure de groupe",
+    "élément neutre",
+    "inverse"
+  ],
+  "methods": [
+    "preuve par double implication",
+    "vérification des axiomes de sous-groupe",
+    "utilisation de la définition du groupe engendré"
+  ],
+  "objects": [
+    "sous-groupes A et B",
+    "produit AB",
+    "groupe G",
+    "sous-groupe engendré <A,B>"
+  ],
+  "content_hash": "ec217b18a2c91919d823a7bbb47584265bebd36aea50544979dd9e5c333a32ab",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:53:11.577Z"
+}

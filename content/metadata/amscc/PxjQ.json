@@ -1,0 +1,27 @@
+{
+  "uuid": "PxjQ",
+  "source_path": "amscc/PxjQ.tex",
+  "summary": "Déterminer la valeur de a pour laquelle la matrice M_a est inversible, puis calculer son inverse. La matrice M_a est donnée sous forme explicite.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "inversibilité d'une matrice",
+    "cofacteur",
+    "matrice transposée",
+    "matrice inverse"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "opérations sur les lignes",
+    "calcul des cofacteurs",
+    "transposition de matrice"
+  ],
+  "objects": [
+    "matrice carrée 3x3",
+    "déterminant",
+    "cofacteurs",
+    "matrice inverse"
+  ],
+  "content_hash": "d984e6fce44802bd56f750c284098d4db45f7afc7a9b3494a28b749fface754f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:49:09.956Z"
+}

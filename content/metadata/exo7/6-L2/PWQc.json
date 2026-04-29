@@ -1,0 +1,26 @@
+{
+  "uuid": "PWQc",
+  "source_path": "exo7/6-L2/PWQc.tex",
+  "summary": "On considère deux cercles sécants dans un plan affine euclidien. On cherche à déterminer la position d'une droite passant par un point d'intersection des cercles qui maximise la distance entre ses deux autres points d'intersection avec les cercles.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "projection affine",
+    "distance dans le plan",
+    "parallélisme",
+    "maximisation"
+  ],
+  "methods": [
+    "projection orthogonale",
+    "calcul de distance",
+    "analyse de configuration géométrique"
+  ],
+  "objects": [
+    "cercles sécants",
+    "droite",
+    "points d'intersection",
+    "segments"
+  ],
+  "content_hash": "96f8ee0887d9435ff83a2edf1ce4c7006c87ed0d6166b80dff266f3d6b604c45",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:37:25.027Z"
+}

@@ -1,0 +1,23 @@
+{
+  "uuid": "nxtt",
+  "source_path": "exo7/2-L1/nxtt.tex",
+  "summary": "Simplifier l'expression $\\frac{x}{2} - \\arcsin\\sqrt{\\frac{1+\\sin x}{2}}$ pour $x \\in [-\\pi,\\pi]$.",
+  "concepts": [
+    "fonction arcsinus",
+    "fonction sinus",
+    "intervalle de définition",
+    "fonction circulaire inverse"
+  ],
+  "methods": [
+    "simplification d'expression",
+    "analyse par cas",
+    "utilisation de propriétés trigonométriques"
+  ],
+  "objects": [
+    "expression trigonométrique",
+    "intervalle de valeurs"
+  ],
+  "content_hash": "c2fd73b6bae515a5fb76e18b7dc3da777ac0df22d6d9b159c720ad5401783e98",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:06:05.770Z"
+}

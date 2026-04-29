@@ -1,0 +1,25 @@
+{
+  "uuid": "6kjc",
+  "source_path": "exo7/1-L1/6kjc.tex",
+  "summary": "Trouver une expression simplifiée pour le produit $(1-\\frac{1}{4})(1-\\frac{1}{5})...(1-\\frac{1}{n})$ où $n$ est un entier naturel supérieur ou égal à 2.",
+  "concepts": [
+    "produit de fractions",
+    "simplification d'expression",
+    "récurrence",
+    "induction mathématique",
+    "propriétés des nombres entiers"
+  ],
+  "methods": [
+    "téléscopage",
+    "raisonnement par récurrence",
+    "factorisation"
+  ],
+  "objects": [
+    "produit de termes",
+    "expression algébrique",
+    "suite de fractions"
+  ],
+  "content_hash": "bd9f92d186b937e4e8a7304b3e7267fed49b33d59e22667f713456fd6926bac3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:05:22.275Z"
+}

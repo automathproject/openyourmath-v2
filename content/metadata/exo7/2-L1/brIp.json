@@ -1,29 +1,29 @@
 {
   "uuid": "brIp",
   "source_path": "exo7/2-L1/brIp.tex",
-  "summary": "L'exercice demande de démontrer que le supremum d'une fonction sur un intervalle ouvert est inférieur ou égal au supremum sur l'intervalle fermé correspondant. Il illustre cette propriété avec une fonction discontinue par morceaux et identifie l'hypothèse essentielle (continuité) pour sa validité.",
+  "summary": "L'exercice demande de démontrer que la borne supérieure d'une fonction continue sur un intervalle ouvert est égale à celle sur l'intervalle fermé correspondant. Il illustre ensuite par un contre-exemple où la continuité est absente.",
   "concepts": [
-    "supremum",
     "continuité",
-    "intervalle ouvert",
+    "borne supérieure",
     "intervalle fermé",
-    "bornes d'une fonction",
-    "convergence de suites",
-    "limite de fonction"
+    "intervalle ouvert",
+    "théorème des bornes atteintes",
+    "limite de suite",
+    "continuité en un point"
   ],
   "methods": [
-    "raisonnement par suites",
-    "utilisation de la continuité",
-    "comparaison de majorants",
-    "étude de cas par position du point extrémal"
+    "raisonnement par cas",
+    "étude de suite convergente",
+    "utilisation de la définition de la continuité",
+    "comparaison de bornes supérieures"
   ],
   "objects": [
-    "fonction réelle",
+    "fonction continue",
     "intervalle borné",
-    "suite convergente",
-    "point extrémal"
+    "suite de réels",
+    "borne supérieure"
   ],
-  "content_hash": "253c2616406790668f548513e58c20284e6e10ae4d826e5e76366ccd9e2a3718",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:46:36.066Z"
+  "content_hash": "69fda98ccb8f9cda5f4fbaba4733dd2fd9a03352aa8984b2841abd6e61020b8f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:20:57.496Z"
 }

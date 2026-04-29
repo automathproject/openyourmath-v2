@@ -1,0 +1,27 @@
+{
+  "uuid": "Rb7l",
+  "source_path": "exo7/5-L2/Rb7l.tex",
+  "summary": "L'exercice demande de montrer que la matrice jacobienne d'une isométrie dans ℝ² est constante et égale à la matrice de sa partie linéaire, puis d'établir une relation entre le laplacien d'une fonction et son image par cette isométrie.",
+  "concepts": [
+    "isométrie",
+    "matrice jacobienne",
+    "partie linéaire d'une application",
+    "fonction de classe C²",
+    "laplacien"
+  ],
+  "methods": [
+    "linéarisation d'une application",
+    "calcul de la matrice jacobienne",
+    "composition de fonctions",
+    "propriétés du laplacien"
+  ],
+  "objects": [
+    "isométrie",
+    "fonction de plusieurs variables",
+    "matrice jacobienne",
+    "laplacien"
+  ],
+  "content_hash": "9c8bc5d2ae3d27e158c65e3e98f12a248a448a8abf409e4a9844a14cf86b128a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:01:10.100Z"
+}

@@ -1,0 +1,23 @@
+{
+  "uuid": "CC7D",
+  "source_path": "exo7/4-L2/CC7D.tex",
+  "summary": "L'exercice demande de montrer l'équivalence de quatre propriétés d'un groupe (G,.) et d'en déduire que si tout élément est d'ordre 2, alors le groupe est abélien.",
+  "concepts": [
+    "groupe",
+    "groupe abélien",
+    "automorphisme",
+    "ordre d'un élément",
+    "inverse d'un élément"
+  ],
+  "methods": [
+    "manipulation des relations de groupe",
+    "utilisation des propriétés des automorphismes"
+  ],
+  "objects": [
+    "groupe (G,.)",
+    "application f définie par f(x) = x⁻¹"
+  ],
+  "content_hash": "732c71002c900d0aa00fb03a76d53d3715f5741aa6cf1a588082bc6ab9050a3f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:26:59.994Z"
+}

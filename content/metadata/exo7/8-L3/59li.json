@@ -1,0 +1,26 @@
+{
+  "uuid": "59li",
+  "source_path": "exo7/8-L3/59li.tex",
+  "summary": "L'exercice demande de démontrer que le centre d'un groupe est un sous-groupe distingué et que si le groupe quotient par son centre est monogène, alors le groupe initial est cyclique.",
+  "concepts": [
+    "sous-groupe distingué",
+    "groupe quotient",
+    "théorème de Lagrange",
+    "groupe cyclique",
+    "monogène",
+    "centre d'un groupe"
+  ],
+  "methods": [
+    "définition de sous-groupe distingué",
+    "analyse de la structure du groupe quotient",
+    "utilisation des propriétés du centre"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe Z(G)",
+    "groupe quotient G/Z(G)"
+  ],
+  "content_hash": "511d3c56a2669310f7eab0f409687b08d32a544d157b5e2a2192c1e8f02e276b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:08:31.316Z"
+}

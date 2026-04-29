@@ -1,0 +1,28 @@
+{
+  "uuid": "BSVj",
+  "source_path": "exo7/6-L2/BSVj.tex",
+  "summary": "On étudie une isométrie du plan qui préserve un triangle donné. L'exercice demande de prouver que cette isométrie permute les sommets du triangle, possède un point fixe, et n'est ni une translation ni une réflexion glissée.",
+  "concepts": [
+    "isométrie",
+    "barycentre",
+    "isobarycentre",
+    "point fixe",
+    "translation",
+    "réflexion glissée",
+    "géométrie affine euclidienne"
+  ],
+  "methods": [
+    "conservation des barycentres",
+    "analyse des points fixes",
+    "classification des isométries"
+  ],
+  "objects": [
+    "triangle",
+    "isométrie du plan",
+    "sommets d'un triangle",
+    "isobarycentre"
+  ],
+  "content_hash": "f9f1b83df577f22d8b7c11beeb2221d0ff3376ec677b335ea8ba3da1250925bb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:26:51.403Z"
+}

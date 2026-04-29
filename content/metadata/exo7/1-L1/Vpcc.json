@@ -1,0 +1,26 @@
+{
+  "uuid": "Vpcc",
+  "source_path": "exo7/1-L1/Vpcc.tex",
+  "summary": "L'exercice demande de prouver une propriété sur les coefficients nuls d'une matrice produit AB en fonction des coefficients nuls des matrices A et B, où A et B sont des matrices carrées avec des conditions spécifiques sur leurs coefficients.",
+  "concepts": [
+    "matrice carrée",
+    "produit de matrices",
+    "coefficient d'une matrice",
+    "indice de matrice",
+    "propriété de nullité"
+  ],
+  "methods": [
+    "analyse des indices",
+    "calcul du produit matriciel",
+    "utilisation des hypothèses de nullité"
+  ],
+  "objects": [
+    "matrice A",
+    "matrice B",
+    "matrice AB",
+    "coefficient c_{i,j}"
+  ],
+  "content_hash": "957e03c3208670f9904076e92b925ccd6ca523f24f4a369f710a4d705b66f0b6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:02:38.554Z"
+}

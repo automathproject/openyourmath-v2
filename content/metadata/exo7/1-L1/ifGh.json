@@ -1,0 +1,24 @@
+{
+  "uuid": "ifGh",
+  "source_path": "exo7/1-L1/ifGh.tex",
+  "summary": "Calculer l'inverse de deux matrices 3x3, l'une avec des fractions et l'autre avec des décimaux.",
+  "concepts": [
+    "inverse d'une matrice",
+    "méthode de Gauss",
+    "déterminant",
+    "matrice carrée",
+    "système linéaire"
+  ],
+  "methods": [
+    "élimination de Gauss",
+    "calcul du déterminant",
+    "inversion matricielle"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "inverse de matrice"
+  ],
+  "content_hash": "c0bf0d0e3bc8878e3f67ae9050d140ed2d1d16b4d881aa731b336fe67b13f5af",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:12:33.764Z"
+}

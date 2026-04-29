@@ -1,0 +1,23 @@
+{
+  "uuid": "kGG2",
+  "source_path": "exo7/2-L1/kGG2.tex",
+  "summary": "L'exercice demande d'établir des relations de récurrence entre des intégrales de la forme J_{n,p} = ∫₀^{π/2} sinⁿ t cosᵖ t dt, puis d'en déduire la valeur de ces intégrales.",
+  "concepts": [
+    "intégrale de Riemann",
+    "relation de récurrence",
+    "intégration par parties",
+    "fonctions trigonométriques"
+  ],
+  "methods": [
+    "intégration par parties",
+    "réduction d'indice",
+    "récurrence"
+  ],
+  "objects": [
+    "intégrale dépendant de deux paramètres",
+    "fonction produit de sin et cos"
+  ],
+  "content_hash": "46111e3f66cb0e53e39324f06bb19fadafea149df273fbef33e212556cd5d6f1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:45:12.874Z"
+}

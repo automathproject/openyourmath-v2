@@ -1,0 +1,26 @@
+{
+  "uuid": "shvE",
+  "source_path": "exo7/5-L2/shvE.tex",
+  "summary": "Trouver toutes les fonctions deux fois dérivables de ℝ dans ℝ satisfaisant l'équation différentielle f''(x) + f(-x) = x pour tout x réel.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "fonction dérivable",
+    "fonction paire/impaire",
+    "solution générale",
+    "problème de Cauchy"
+  ],
+  "methods": [
+    "décomposition en parties paires/impaire",
+    "résolution d'équation différentielle linéaire",
+    "méthode de variation de la constante"
+  ],
+  "objects": [
+    "fonction deux fois dérivable",
+    "équation différentielle du second ordre",
+    "solution particulière",
+    "solution homogène"
+  ],
+  "content_hash": "eb6a38c1b71c3ca6c3aff58a75f1659eff934dc10b0129a9901d964a27e04142",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:48:42.365Z"
+}

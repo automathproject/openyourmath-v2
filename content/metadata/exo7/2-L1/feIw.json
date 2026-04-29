@@ -1,0 +1,24 @@
+{
+  "uuid": "feIw",
+  "source_path": "exo7/2-L1/feIw.tex",
+  "summary": "On considère une fonction f définie sur les réels strictement positifs, croissante, et telle que la fonction x → f(x)/x soit décroissante. On demande de montrer que f est continue sur ℝ⁺*.",
+  "concepts": [
+    "continuité",
+    "fonction croissante",
+    "fonction décroissante",
+    "limite",
+    "théorème de la limite monotone"
+  ],
+  "methods": [
+    "étude de la monotonie",
+    "comparaison de limites",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "fonction réelle",
+    "fonction rationnelle"
+  ],
+  "content_hash": "2344a4727d7aec959a1df96c77442c04b4c52996645d1f1a02bf79bfdd32117e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:21:44.109Z"
+}

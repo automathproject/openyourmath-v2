@@ -1,0 +1,31 @@
+{
+  "uuid": "pSFT",
+  "source_path": "exo7/12-L3/pSFT.tex",
+  "summary": "L'exercice demande de démontrer des propriétés locales d'un difféomorphisme C^1 entre deux ouverts de R^n contenant 0, en utilisant sa différentielle en 0. Il s'agit d'établir des inégalités de proximité entre l'image de la boule fermée et son approximation affine, puis d'en déduire le comportement asymptotique du rapport des volumes.",
+  "concepts": [
+    "difféomorphisme",
+    "différentielle",
+    "théorème d'inversion locale",
+    "norme",
+    "boule fermée",
+    "limite",
+    "volume",
+    "déterminant"
+  ],
+  "methods": [
+    "approximation affine",
+    "estimation de distance",
+    "comparaison de volumes",
+    "passage à la limite"
+  ],
+  "objects": [
+    "difféomorphisme C^1",
+    "boule fermée",
+    "différentielle en 0",
+    "volume de la boule",
+    "déterminant de la différentielle"
+  ],
+  "content_hash": "fc5cd26f475bad1736718aefe8f7191696490d0d811dadd32eaad401935ecdc4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:19:53.141Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "QLUZ",
+  "source_path": "exo7/4-L2/QLUZ.tex",
+  "summary": "Calculer le déterminant d'une matrice symétrique particulière et en dériver une formule explicite pour tout entier naturel n. L'exercice demande de manipuler des déterminants de matrices dépendant d'un paramètre et d'utiliser des techniques de récurrence.",
+  "concepts": [
+    "déterminant",
+    "matrice symétrique",
+    "polynôme",
+    "récurrence",
+    "développement par rapport à une colonne",
+    "linéarité du déterminant"
+  ],
+  "methods": [
+    "développement de déterminant",
+    "récurrence",
+    "intégration",
+    "formule de Taylor"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme de degré n",
+    "déterminant de matrice"
+  ],
+  "content_hash": "478feecef2fb84f3c859a276f32e0c872f6f52018bdfa810f58b4637e40b7430",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:49:52.594Z"
+}

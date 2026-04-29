@@ -1,0 +1,26 @@
+{
+  "uuid": "YqWD",
+  "source_path": "exo7/15-L3/YqWD.tex",
+  "summary": "On considère l'ensemble des fonctions continues d'un compact B vers un compact C dans ℝⁿ, muni d'une distance uniforme. On demande de prouver que cette distance définit bien une métrique sur cet ensemble, puis que l'espace ainsi défini est complet.",
+  "concepts": [
+    "espace métrique",
+    "complétude",
+    "distance uniforme",
+    "fonction continue",
+    "compact",
+    "topologie métrique"
+  ],
+  "methods": [
+    "vérification des axiomes de distance",
+    "utilisation de la continuité uniforme",
+    "application du théorème de Heine"
+  ],
+  "objects": [
+    "ensemble de fonctions continues",
+    "distance uniforme",
+    "sous-ensembles compacts de ℝⁿ"
+  ],
+  "content_hash": "7bbc5969b96e01358ecba595e6fe03e2f39791f0b3548819c9a76e93af4ded87",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:11:18.827Z"
+}

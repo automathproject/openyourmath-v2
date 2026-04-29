@@ -1,0 +1,28 @@
+{
+  "uuid": "R0dj",
+  "source_path": "exo7/1-L1/R0dj.tex",
+  "summary": "L'exercice demande d'étudier la liberté de la famille de fonctions exponentielles $(f_a)_{a \\in \\mathbb{R}}$ définies par $f_a(x) = e^{a x}$ pour des réels $a$ et $x$.",
+  "concepts": [
+    "famille libre de vecteurs",
+    "déterminant de Vandermonde",
+    "système linéaire homogène",
+    "valeurs propres distinctes",
+    "polynôme à racines infinies"
+  ],
+  "methods": [
+    "limite de fonctions",
+    "dérivation",
+    "calcul de déterminant",
+    "résolution de système de Cramer",
+    "analyse des racines de polynômes"
+  ],
+  "objects": [
+    "fonctions exponentielles",
+    "système d'équations linéaires",
+    "polynôme",
+    "vecteurs propres"
+  ],
+  "content_hash": "35e0276eaeb71ee9998b4e935decdb5b42b4accc2870c9db6be2e9a3f8f60642",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:51:32.589Z"
+}

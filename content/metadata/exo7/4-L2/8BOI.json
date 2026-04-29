@@ -1,0 +1,28 @@
+{
+  "uuid": "8BOI",
+  "source_path": "exo7/4-L2/8BOI.tex",
+  "summary": "Soit A une matrice carrée réelle symétrique positive de format n. Montrer que 1 + la racine n-ième du déterminant de A est inférieure ou égale à la racine n-ième du déterminant de la matrice identité plus A.",
+  "concepts": [
+    "matrice symétrique réelle positive",
+    "valeurs propres",
+    "déterminant",
+    "convexité",
+    "fonction convexe",
+    "inégalité de Jensen"
+  ],
+  "methods": [
+    "diagonalisation",
+    "utilisation des valeurs propres",
+    "analyse de la convexité",
+    "calcul de dérivées"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "fonction convexe",
+    "valeurs propres"
+  ],
+  "content_hash": "215253429bafa76ced455ecf65e3c421488334609e37be544037a3becfd9bb4e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:04:14.251Z"
+}

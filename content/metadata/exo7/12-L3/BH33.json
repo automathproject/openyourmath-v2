@@ -1,0 +1,28 @@
+{
+  "uuid": "BH33",
+  "source_path": "exo7/12-L3/BH33.tex",
+  "summary": "L'exercice demande de prouver deux propriétés : d'abord qu'une fonction dérivable sur un intervalle ouvert avec une dérivée admettant une limite en un point de l'extrémité peut se prolonger par continuité et dérivabilité à gauche en ce point, puis que si la dérivée est croissante, la fonction est convexe sur l'intervalle.",
+  "concepts": [
+    "continuité",
+    "dérivabilité",
+    "limite de fonction",
+    "convexité",
+    "accroissements finis",
+    "taux d'accroissement"
+  ],
+  "methods": [
+    "utilisation des accroissements finis",
+    "étude de la limite de la dérivée",
+    "prolongement par continuité",
+    "démonstration de convexité"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle ouvert",
+    "dérivée croissante",
+    "taux d'accroissement"
+  ],
+  "content_hash": "53df8517b894fea4d188fb6c377490590cbc14b1efc57d3cae89171d9e043676",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:23:34.382Z"
+}

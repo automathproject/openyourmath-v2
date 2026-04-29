@@ -1,0 +1,31 @@
+{
+  "uuid": "mNpv",
+  "source_path": "amscc/mNpv.tex",
+  "summary": "L'exercice demande de démontrer la continuité et la différentiabilité de l'application produit scalaire dans un espace vectoriel, puis de calculer sa différentielle. Il aborde ensuite la différentiabilité d'une fonction composée impliquant une norme au carré et une fonction dérivable.",
+  "concepts": [
+    "produit scalaire",
+    "continuité",
+    "différentiabilité",
+    "différentielle",
+    "bilinéarité",
+    "inégalité de Cauchy-Schwarz",
+    "théorème de composition des différentielles",
+    "norme"
+  ],
+  "methods": [
+    "utilisation de l'inégalité de Cauchy-Schwarz",
+    "développement de la bilinéarité",
+    "calcul de la différentielle",
+    "application du théorème de composition des différentielles"
+  ],
+  "objects": [
+    "application bilinéaire",
+    "espace vectoriel",
+    "matrice",
+    "fonction composée",
+    "norme au carré"
+  ],
+  "content_hash": "5573c720cb7ed5f9fbbbd320ecba727881f6f479737d5264565d9545bcf9f1eb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:18:04.605Z"
+}

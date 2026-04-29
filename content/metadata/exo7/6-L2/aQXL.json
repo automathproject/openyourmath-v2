@@ -1,0 +1,30 @@
+{
+  "uuid": "aQXL",
+  "source_path": "exo7/6-L2/aQXL.tex",
+  "summary": "Dans un triangle ABC non isocèle en A, la bissectrice intérieure de l'angle BAC coupe le côté BC en A1 et le cercle circonscrit en A2. On considère D, le symétrique de B par rapport à cette bissectrice. L'exercice demande de justifier que D appartient à la droite AC, puis de montrer que les points A1, A2, C et D sont cocycliques, et enfin de prouver une relation de puissance entre les longueurs AA1, AA2, AB et AC.",
+  "concepts": [
+    "bissectrice d'un angle",
+    "cercle circonscrit",
+    "symétrie orthogonale",
+    "cocyclicité",
+    "puissance d'un point par rapport à un cercle",
+    "semblable",
+    "angles égaux"
+  ],
+  "methods": [
+    "réflexion orthogonale",
+    "preuve de cocyclicité par angles",
+    "utilisation de la puissance d'un point",
+    "comparaison de rapports de côtés"
+  ],
+  "objects": [
+    "triangle",
+    "bissectrice intérieure",
+    "cercle circonscrit",
+    "symétrique d'un point",
+    "points cocycliques"
+  ],
+  "content_hash": "c16c2c7940d865d8912efbbecbaa73c705d034950915d646d81cbcce600b6b55",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:45:56.523Z"
+}

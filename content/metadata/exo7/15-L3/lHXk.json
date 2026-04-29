@@ -1,0 +1,27 @@
+{
+  "uuid": "lHXk",
+  "source_path": "exo7/15-L3/lHXk.tex",
+  "summary": "L'exercice demande de montrer qu'une famille d'ensembles définis par des inégalités d'intégrales ou de suprema forme une base de topologie sur l'espace des fonctions continues réelles sur [0,1].",
+  "concepts": [
+    "espace topologique",
+    "base de topologie",
+    "fonction continue",
+    "intégrale de Lebesgue",
+    "norme uniforme",
+    "espace métrique"
+  ],
+  "methods": [
+    "définition de base de topologie",
+    "comparaison des topologies",
+    "utilisation de la norme L1 et de la norme infinie"
+  ],
+  "objects": [
+    "fonction continue",
+    "ensemble M(f,ε)",
+    "ensemble U(f,ε)",
+    "espace C([0,1])"
+  ],
+  "content_hash": "8631408fbaa3f20da013b13b7aa634ad4c45dabe41fe56d462aa468e90204342",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:30:20.901Z"
+}

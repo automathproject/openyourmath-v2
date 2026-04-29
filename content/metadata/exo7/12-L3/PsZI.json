@@ -1,0 +1,28 @@
+{
+  "uuid": "PsZI",
+  "source_path": "exo7/12-L3/PsZI.tex",
+  "summary": "L'exercice demande une condition suffisante pour qu'une fonction $f: \\mathbb{R}^3 \to \\mathbb{R}$ de classe $C^1$ définisse implicitement trois fonctions inverses locales $\\phi$, $\\chi$ et $\\psi$ permettant d'exprimer chaque variable en fonction des deux autres. Il s'agit d'appliquer le théorème des fonctions implicites en dimension 3.",
+  "concepts": [
+    "théorème des fonctions implicites",
+    "difféomorphisme local",
+    "fonction de classe $C^1$",
+    "condition de non-annulation du jacobien",
+    "système d'équations implicites",
+    "dérivées partielles"
+  ],
+  "methods": [
+    "analyse du jacobien",
+    "linéarisation locale",
+    "inversion de fonctions",
+    "calcul de dérivées partielles"
+  ],
+  "objects": [
+    "fonction de trois variables",
+    "système d'équations implicites",
+    "voisinages de points",
+    "fonctions inverses locales"
+  ],
+  "content_hash": "e95e804d59df235c5cfcb0393dc088737a6f1e33cff20905556ff99e6552645e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:15:44.476Z"
+}

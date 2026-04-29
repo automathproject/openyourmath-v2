@@ -1,0 +1,25 @@
+{
+  "uuid": "22ev",
+  "source_path": "exo7/2-L1/22ev.tex",
+  "summary": "Montrer la convergence d'une intégrale dépendant d'un paramètre n vers une intégrale indépendante de n, en utilisant un changement de variable.",
+  "concepts": [
+    "intégrale dépendant d'un paramètre",
+    "convergence d'intégrales",
+    "changement de variable",
+    "fonction continue",
+    "limite d'intégrales"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration par parties",
+    "analyse de la limite"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrale sur [0,1]",
+    "limite lorsque n tend vers l'infini"
+  ],
+  "content_hash": "a62bf1aeda148aad132257970be251778a7085b388b5ff69d02a85a4d3f197d8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:27:51.309Z"
+}

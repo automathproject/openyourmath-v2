@@ -1,0 +1,26 @@
+{
+  "uuid": "ukz2",
+  "source_path": "exo7/5-L2/ukz2.tex",
+  "summary": "On considère une fonction de deux variables C^1 sur un ouvert convexe O, dont les dérivées partielles en tout point de O s'annulent. On demande de montrer que cette fonction est constante sur O.",
+  "concepts": [
+    "fonction de plusieurs variables",
+    "dérivées partielles",
+    "convexité",
+    "fonction constante",
+    "théorème de Schwarz",
+    "différentiabilité C^1"
+  ],
+  "methods": [
+    "utilisation des dérivées partielles",
+    "application du théorème de Schwarz",
+    "intégration le long d'un chemin"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "ouvert convexe",
+    "dérivées partielles"
+  ],
+  "content_hash": "544bb307c5bada68a92396e35dc1f3e90e9f90d90003e4e2e30cd7d855f6b5f1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:23:32.393Z"
+}

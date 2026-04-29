@@ -1,0 +1,29 @@
+{
+  "uuid": "huJ6",
+  "source_path": "exo7/4-L2/huJ6.tex",
+  "summary": "L'exercice demande de démontrer que pour une matrice carrée M, la matrice N construite à partir des cofacteurs de M commute avec M et est proportionnelle à son déterminant. Il s'agit ensuite d'en déduire une méthode d'inversion de matrices et de l'appliquer à une matrice 4x4 donnée.",
+  "concepts": [
+    "déterminant",
+    "matrice cofacteur",
+    "inversion de matrice",
+    "commutativité",
+    "matrice identité",
+    "algèbre linéaire",
+    "propriétés des déterminants"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "construction de la matrice des cofacteurs",
+    "vérification de la commutativité",
+    "méthode d'inversion par déterminant"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice cofacteur",
+    "matrice identité",
+    "matrice 4x4"
+  ],
+  "content_hash": "a3a96a6d64248673cb7b4c756acfa6c2ca7fcbaf3767ac35ce0236ec0afda3f0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:04:13.210Z"
+}

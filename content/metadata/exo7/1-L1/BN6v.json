@@ -1,0 +1,25 @@
+{
+  "uuid": "BN6v",
+  "source_path": "exo7/1-L1/BN6v.tex",
+  "summary": "L'exercice demande de calculer le nombre de partitions d'un ensemble de pq éléments en p classes disjointes ayant chacune q éléments.",
+  "concepts": [
+    "partition d'un ensemble",
+    "combinaisons",
+    "factorielles",
+    "permutations",
+    "cardinal d'un ensemble"
+  ],
+  "methods": [
+    "calcul de coefficients binomiaux",
+    "simplification de produits de factoriels",
+    "correction des surcomptages par division par le nombre de permutations"
+  ],
+  "objects": [
+    "ensemble fini",
+    "classes disjointes",
+    "coefficient binomial"
+  ],
+  "content_hash": "7503f1e09a8cd114ab95d9cc52c040007a6ee0c4067617b22554051db13fcf54",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:38:51.833Z"
+}

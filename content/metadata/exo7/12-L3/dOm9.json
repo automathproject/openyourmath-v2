@@ -1,0 +1,28 @@
+{
+  "uuid": "dOm9",
+  "source_path": "exo7/12-L3/dOm9.tex",
+  "summary": "On considère une application bornée sur la boule unité d'un espace normé, vérifiant la condition d'additivité sans hypothèse de linéarité. On demande de prouver que cette application est linéaire continue.",
+  "concepts": [
+    "application linéaire",
+    "espace normé",
+    "continuité",
+    "additivité",
+    "densité des rationnels dans les réels",
+    "limite de suite"
+  ],
+  "methods": [
+    "récurrence",
+    "extension de la linéarité des rationnels aux réels",
+    "bornitude",
+    "passage à la limite"
+  ],
+  "objects": [
+    "application bornée",
+    "boule unité",
+    "espace normé",
+    "suite de rationnels"
+  ],
+  "content_hash": "3194c6bede189bdd518ff30cd2cc7845911bebb6aae534115fd5caf4c8aac57b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:28:21.703Z"
+}

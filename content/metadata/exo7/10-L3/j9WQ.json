@@ -1,0 +1,29 @@
+{
+  "uuid": "j9WQ",
+  "source_path": "exo7/10-L3/j9WQ.tex",
+  "summary": "L'exercice demande d'étudier la structure algébrique de deux ensembles munis d'opérations binaires : d'abord ℤ×ℤ avec une opération définie explicitement, puis un ensemble de matrices 2×2 avec une condition sur les coefficients, en vérifiant s'ils forment un monöide, un groupe et si l'opération est commutative.",
+  "concepts": [
+    "structure de groupe",
+    "structure de monöide",
+    "commutativité",
+    "opération binaire",
+    "matrice carrée",
+    "ensemble produit"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "calcul de l'élément neutre",
+    "vérification de l'existence d'inverse",
+    "test de commutativité"
+  ],
+  "objects": [
+    "ensemble ℤ×ℤ",
+    "ensemble de matrices 2×2",
+    "opération binaire",
+    "élément neutre",
+    "inverse"
+  ],
+  "content_hash": "24f3c3b98151003b1a3a4f99953da4db15a144a54bdab13ac2f49cfc71cd15c4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:52:36.669Z"
+}

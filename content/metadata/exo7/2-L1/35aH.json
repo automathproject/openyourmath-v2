@@ -1,0 +1,28 @@
+{
+  "uuid": "35aH",
+  "source_path": "exo7/2-L1/35aH.tex",
+  "summary": "L'exercice demande de montrer que deux fonctions définies à partir de la fonction arccosinus sont des polynômes. La première fonction est f_n(x) = cos(n arccos x), et la seconde est g_n(x) = sin(n arccos x) / sqrt(1 - x^2).",
+  "concepts": [
+    "fonction polynomiale",
+    "fonction circulaire inverse",
+    "fonction trigonométrique",
+    "composition de fonctions",
+    "identités trigonométriques",
+    "récurrence"
+  ],
+  "methods": [
+    "développement en série",
+    "identités trigonométriques",
+    "récurrence"
+  ],
+  "objects": [
+    "fonction f_n(x)",
+    "fonction g_n(x)",
+    "arccosinus",
+    "cosinus",
+    "sinus"
+  ],
+  "content_hash": "2c22b6df667fc6b609e471bdade87009734921fc1b1cbf72d50b368932b8017d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:54:38.587Z"
+}

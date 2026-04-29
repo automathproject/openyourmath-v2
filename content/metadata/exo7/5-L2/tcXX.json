@@ -1,0 +1,28 @@
+{
+  "uuid": "tcXX",
+  "source_path": "exo7/5-L2/tcXX.tex",
+  "summary": "Calculer le volume de la boule unité fermée de dimension n dans ℝⁿ, définie par l'ensemble des points dont la somme des carrés des coordonnées est inférieure ou égale à 1.",
+  "concepts": [
+    "intégrale multiple",
+    "changement de variable",
+    "intégrales de Wallis",
+    "récurrence",
+    "volume en dimension n",
+    "formule de la boule unité"
+  ],
+  "methods": [
+    "intégration par coordonnées sphériques",
+    "réduction de dimension",
+    "calcul d'intégrales trigonométriques",
+    "produit de suites"
+  ],
+  "objects": [
+    "boule unité fermée",
+    "intégrale multiple",
+    "suite de Wallis",
+    "volume en dimension n"
+  ],
+  "content_hash": "e681a6bb90db47d2f0fdf0d083bbb6fde3306317ba66dc6fc0fa9c29abfd4e44",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:52:34.161Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "8rcF",
+  "source_path": "exo7/4-L2/8rcF.tex",
+  "summary": "On considère un espace vectoriel de dimension finie et deux familles de vecteurs et de formes linéaires. On demande de montrer que si la matrice de Gram associée est inversible, alors ces deux familles sont des bases duales.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "famille libre",
+    "famille génératrice",
+    "dualité en algèbre linéaire",
+    "matrice de Gram",
+    "base duale"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "utilisation de la dualité",
+    "analyse de la matrice de passage"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "famille de vecteurs",
+    "famille de formes linéaires",
+    "matrice carrée"
+  ],
+  "content_hash": "69f2ae01f01691033d16bf5d660dfd6b67476aa8cea9197075d90e29bd7251eb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:48:40.813Z"
+}

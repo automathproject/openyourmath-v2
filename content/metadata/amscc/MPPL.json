@@ -1,0 +1,25 @@
+{
+  "uuid": "MPPL",
+  "source_path": "amscc/MPPL.tex",
+  "summary": "L'exercice demande de déterminer si quatre matrices données sont inversibles en calculant leur déterminant. Si c'est le cas, il faut déterminer leur matrice inverse.",
+  "concepts": [
+    "déterminant",
+    "matrice inversible",
+    "comatrice",
+    "calcul de cofacteurs",
+    "inversion de matrice"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "méthode de la comatrice",
+    "inversion par comatrice"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "matrice 3x3",
+    "matrice 4x4"
+  ],
+  "content_hash": "a2ba88b95cef32ea04a107949499bdf0be817abd73606c0428779ff9abdcbcf2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:46:40.984Z"
+}

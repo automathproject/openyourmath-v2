@@ -1,0 +1,29 @@
+{
+  "uuid": "qK03",
+  "source_path": "exo7/16-L3/qK03.tex",
+  "summary": "L'exercice demande de déterminer les domaines de définition de trois fonctions complexes définies à l'aide de la détermination principale du logarithme et de vérifier l'identité f_k(z)^2 = z^3 - 1 pour chacune d'elles. Il s'agit ensuite de montrer qu'on peut prolonger par continuité la fonction f_3 sur un ouvert plus grand.",
+  "concepts": [
+    "fonction logarithme complexe",
+    "détermination principale",
+    "fonction puissance complexe",
+    "prolongement par continuité",
+    "domaine de définition",
+    "fonction holomorphe",
+    "racine carrée complexe"
+  ],
+  "methods": [
+    "analyse de la détermination principale",
+    "vérification d'identité algébrique",
+    "étude de continuité",
+    "prolongement analytique"
+  ],
+  "objects": [
+    "fonction complexe",
+    "racine carrée complexe",
+    "fonction polynomiale",
+    "ouvert complexe"
+  ],
+  "content_hash": "3797bd47ac760e123a8145dc4059ca61ae459cb91885ba7b1cf25cc259d55ee9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:52:06.726Z"
+}

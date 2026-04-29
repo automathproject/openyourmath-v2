@@ -1,0 +1,27 @@
+{
+  "uuid": "e0p4",
+  "source_path": "exo7/5-L2/e0p4.tex",
+  "summary": "Calculer l'aire d'un domaine D dans le plan défini par des inégalités polynomiales en x et y, avec des paramètres p1, p2, q1, q2 strictement positifs.",
+  "concepts": [
+    "intégrale multiple",
+    "changement de variable",
+    "difféomorphisme",
+    "jacobien",
+    "domaine d'intégration",
+    "fonction de classe C^1"
+  ],
+  "methods": [
+    "changement de variable par difféomorphisme",
+    "calcul du jacobien",
+    "intégration sur un rectangle"
+  ],
+  "objects": [
+    "domaine D dans R²",
+    "application φ",
+    "jacobien",
+    "intégrale double"
+  ],
+  "content_hash": "6a141894df62e041796e9c3134101208f95a81a34a7a86bef4a6f26a43a9c3d3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:43:08.917Z"
+}

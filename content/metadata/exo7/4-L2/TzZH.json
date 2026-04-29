@@ -1,0 +1,27 @@
+{
+  "uuid": "TzZH",
+  "source_path": "exo7/4-L2/TzZH.tex",
+  "summary": "L'exercice demande de prouver que l'endomorphisme composé φ*∘φ est symétrique et que son spectre est inclus dans les réels positifs. Ensuite, il s'agit d'établir une inégalité pour tout vecteur x de l'espace euclidien E, reliant les valeurs propres de φ*∘φ aux normes de x et φ(x).",
+  "concepts": [
+    "endomorphisme auto-adjoint",
+    "symétrie d'un endomorphisme",
+    "valeurs propres",
+    "spectre d'un endomorphisme",
+    "espace euclidien",
+    "norme d'un vecteur"
+  ],
+  "methods": [
+    "utilisation de la définition de l'adjoint",
+    "calcul de valeurs propres",
+    "inégalité de Rayleigh"
+  ],
+  "objects": [
+    "endomorphisme φ",
+    "endomorphisme φ*∘φ",
+    "vecteur x",
+    "valeurs propres λ et μ"
+  ],
+  "content_hash": "98d1f25c98312caf236f0b41a731320deb134b275ce71abac73dfec73f634735",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:56:52.641Z"
+}

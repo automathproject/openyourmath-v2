@@ -1,0 +1,27 @@
+{
+  "uuid": "wuKD",
+  "source_path": "exo7/5-L2/wuKD.tex",
+  "summary": "L'exercice demande de prouver l'existence et l'unicité d'une solution π-périodique pour une équation différentielle linéaire d'ordre 4 avec second membre |sin x|.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "solution périodique",
+    "développement en série de Fourier",
+    "convergence de série",
+    "classe de régularité C^4",
+    "unicité de solution"
+  ],
+  "methods": [
+    "développement en série de Fourier",
+    "analyse de la solution de l'équation homogène",
+    "étude de la convergence de série"
+  ],
+  "objects": [
+    "équation différentielle d'ordre 4",
+    "fonction périodique",
+    "solution particulière",
+    "solution générale"
+  ],
+  "content_hash": "ccb436350b1a54b78d1c5effeaeaad9dee5189435ab5737febebb269af465e7c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:51:23.146Z"
+}

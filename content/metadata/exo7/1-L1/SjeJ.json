@@ -1,0 +1,30 @@
+{
+  "uuid": "SjeJ",
+  "source_path": "exo7/1-L1/SjeJ.tex",
+  "summary": "On considère une matrice A d'ordre n sur un corps K telle que Ak est la matrice identité pour un certain k non nul. On définit B comme la somme des puissances de A de 0 à k-1. On associe à A et B des endomorphismes u et v de K^n. L'exercice demande de prouver des relations entre les noyaux et images de u-id et v, puis d'en déduire une relation entre la trace de B et son rang.",
+  "concepts": [
+    "matrice inversible",
+    "endomorphisme",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "somme directe",
+    "trace d'une matrice",
+    "rang d'une matrice"
+  ],
+  "methods": [
+    "décomposition en somme directe",
+    "calcul de trace",
+    "utilisation de la relation de projection",
+    "manipulation d'espaces vectoriels"
+  ],
+  "objects": [
+    "matrice A",
+    "matrice B",
+    "endomorphisme u",
+    "endomorphisme v",
+    "sous-espaces vectoriels"
+  ],
+  "content_hash": "baa5f275f713b351639441d14a8c786e9bcbc07ab66aa47b2fb44c27d32c17a7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:59:53.412Z"
+}

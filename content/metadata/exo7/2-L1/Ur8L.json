@@ -1,23 +1,24 @@
 {
   "uuid": "Ur8L",
   "source_path": "exo7/2-L1/Ur8L.tex",
-  "summary": "On cherche à montrer qu'une équation de la forme f(x) = x admet au moins une solution dans un intervalle [a, b] où f est continue, avec f(a) ≥ a et f(b) ≤ b.",
+  "summary": "Montrer l'existence d'un point fixe pour une fonction continue définie sur un intervalle borné et à valeurs dans cet intervalle.",
   "concepts": [
     "théorème des valeurs intermédiaires",
-    "continuité d'une fonction",
-    "solution d'une équation",
-    "intervalle fermé borné"
+    "continuité",
+    "point fixe",
+    "fonction bornée",
+    "intervalle borné"
   ],
   "methods": [
     "application du théorème des valeurs intermédiaires",
-    "analyse des bornes de l'intervalle"
+    "construction d'une fonction auxiliaire"
   ],
   "objects": [
     "fonction continue",
-    "équation f(x) = x",
-    "intervalle [a, b]"
+    "intervalle [a, b]",
+    "fonction auxiliaire g(x) = f(x) - x"
   ],
-  "content_hash": "718fd34ce73fccd5c02838ff5b4324f1ac02090917323ffb70d57ca9f7bd01d1",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:45:46.277Z"
+  "content_hash": "301aa521f9b59ccbc29f5e61378a41d1b4b4aad35fa3e9ee19c5be6686109969",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:18:27.605Z"
 }

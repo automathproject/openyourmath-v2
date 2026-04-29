@@ -1,0 +1,26 @@
+{
+  "uuid": "qRNy",
+  "source_path": "exo7/9-L3/qRNy.tex",
+  "summary": "L'exercice demande de démontrer qu'une application g1 dans SO(3) est un retournement si et seulement si elle est conjuguée à un retournement g par un élément f de SO(3), avec l'axe de g1 étant l'image de l'axe de g par f.",
+  "concepts": [
+    "groupe orthogonal spécial SO(3)",
+    "conjugaison d'applications linéaires",
+    "rotation vectorielle",
+    "isométrie",
+    "groupe de Lie"
+  ],
+  "methods": [
+    "conjugaison d'applications",
+    "analyse des propriétés de transformations linéaires",
+    "utilisation des propriétés du groupe SO(3)"
+  ],
+  "objects": [
+    "application linéaire",
+    "axe de rotation",
+    "groupe SO(3)",
+    "retournement"
+  ],
+  "content_hash": "82704c9e6cffa88a9fbc7750312288876857ea08a757a39f0ab570f1c04c5d03",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:07:11.643Z"
+}

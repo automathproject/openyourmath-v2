@@ -1,0 +1,31 @@
+{
+  "uuid": "4NhO",
+  "source_path": "exo7/15-L3/4NhO.tex",
+  "summary": "L'exercice demande de démontrer que certaines propriétés topologiques et métriques sont vérifiées dans un espace ultramétrique. Il s'agit notamment de montrer que des boules ouvertes et fermées sont à la fois ouvertes et fermées, et que des boules ayant un point commun ont des inclusions spécifiques.",
+  "concepts": [
+    "espace métrique",
+    "distance ultramétrique",
+    "boule ouverte",
+    "boule fermée",
+    "topologie",
+    "inégalité ultramétrique",
+    "distance entre ensembles"
+  ],
+  "methods": [
+    "utilisation de l'inégalité ultramétrique",
+    "preuve par contradiction",
+    "analyse des cas d'égalité et d'inégalité",
+    "manipulation des distances",
+    "inclusion de boules"
+  ],
+  "objects": [
+    "espace métrique (E,d)",
+    "boules ouvertes et fermées",
+    "distance d",
+    "points x, y, z",
+    "centres de boules a, b, c"
+  ],
+  "content_hash": "5e3947bbfb7625f1e5397a349f4f938132657b0e3f2999f122b60bf756052f83",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:18:16.057Z"
+}

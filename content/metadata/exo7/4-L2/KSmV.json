@@ -1,0 +1,23 @@
+{
+  "uuid": "KSmV",
+  "source_path": "exo7/4-L2/KSmV.tex",
+  "summary": "L'exercice demande de prouver que le déterminant d'une matrice 3x3 donnée est divisible par 17, sans effectuer de calcul explicite.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "propriétés des déterminants",
+    "divisibilité",
+    "matrice carrée"
+  ],
+  "methods": [
+    "développement par rapport à une ligne ou une colonne",
+    "propriété de linéarité du déterminant",
+    "évaluation par substitution"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "déterminant"
+  ],
+  "content_hash": "f1666e1d885e1153439ad700ef00d57bc9cb574b3b09c959338eb94f6c2875ea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:45:58.365Z"
+}

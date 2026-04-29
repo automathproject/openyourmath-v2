@@ -1,0 +1,28 @@
+{
+  "uuid": "Mt6L",
+  "source_path": "exo7/4-L2/Mt6L.tex",
+  "summary": "L'exercice demande de factoriser le nombre 221 en produits de nombres premiers, puis de déterminer les solutions entières d'une équation polynomiale modulo 221.",
+  "concepts": [
+    "factorisation en nombres premiers",
+    "théorème chinois",
+    "lemme d'Euclide",
+    "congruences",
+    "arithmétique modulaire",
+    "équation polynomiale"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "résolution de congruences",
+    "application du théorème chinois",
+    "utilisation du lemme d'Euclide"
+  ],
+  "objects": [
+    "nombre entier",
+    "équation polynomiale",
+    "congruences modulo 221",
+    "facteurs premiers"
+  ],
+  "content_hash": "fab7d43f21f82149596979b34b1e63862ce1147194bea662bd0ef06164b6af8b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:41:24.007Z"
+}

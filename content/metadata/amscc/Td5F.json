@@ -1,0 +1,25 @@
+{
+  "uuid": "Td5F",
+  "source_path": "amscc/Td5F.tex",
+  "summary": "L'exercice demande d'étudier la continuité et l'existence des dérivées partielles d'une fonction de deux variables en un point particulier. La fonction est définie par $f(x,y) = y^2 \\ln|x|$ sauf en $(0,0)$ où elle vaut 0.",
+  "concepts": [
+    "continuité en un point",
+    "dérivées partielles",
+    "limite de suite",
+    "fonction de deux variables",
+    "indétermination de la forme 0×∞"
+  ],
+  "methods": [
+    "étude de la continuité par suite",
+    "calcul de dérivées partielles",
+    "limite de quotient différentiel"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "suite convergente",
+    "dérivée partielle"
+  ],
+  "content_hash": "e8e8f31b16233b01a226930f1ccaa27f0d8475e5b9db16b55aa9afe10b633721",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:11:40.178Z"
+}

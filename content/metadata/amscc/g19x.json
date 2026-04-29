@@ -1,0 +1,27 @@
+{
+  "uuid": "g19x",
+  "source_path": "amscc/g19x.tex",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité de la solution d'un système linéaire tridiagonal, puis d'étudier la convergence d'une méthode itérative pour résoudre ce système.",
+  "concepts": [
+    "système linéaire",
+    "matrice tridiagonale",
+    "inversibilité",
+    "norme infinie",
+    "convergence de méthode itérative",
+    "méthode de Jacobi"
+  ],
+  "methods": [
+    "majoration de norme",
+    "analyse de convergence",
+    "optimisation de paramètre"
+  ],
+  "objects": [
+    "système linéaire tridiagonal",
+    "matrice carrée",
+    "vecteur solution",
+    "suite itérative"
+  ],
+  "content_hash": "dbd8a58e703677c002f9114a5c1c67a21a948068db8858dd6c99973d80a22d26",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:10:46.314Z"
+}

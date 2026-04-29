@@ -1,0 +1,30 @@
+{
+  "uuid": "uz69",
+  "source_path": "exo7/4-L2/uz69.tex",
+  "summary": "Résoudre un système linéaire MX = U où M est une matrice de Vandermonde et U un vecteur colonne spécifique. Le contexte est purement algébrique.",
+  "concepts": [
+    "système de Cramer",
+    "déterminant de Vandermonde",
+    "formules de Cramer",
+    "matrice de Vandermonde",
+    "développement par blocs",
+    "n-linéarité",
+    "coefficient binomial"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "développement selon une colonne",
+    "simplification par n-linéarité",
+    "application des formules de Cramer"
+  ],
+  "objects": [
+    "système linéaire",
+    "matrice de Vandermonde",
+    "vecteur colonne",
+    "déterminant",
+    "coefficient binomial"
+  ],
+  "content_hash": "80f99e5cd0479bfad58d91b693b1328b11641a8d3174bbbae116da2ab7dc7a64",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:18:44.392Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "axTV",
+  "source_path": "exo7/2-L1/axTV.tex",
+  "summary": "Trouver des coefficients réels a et b pour que la différence entre cos(x) et une fraction rationnelle soit un o(x^n) en 0 avec n maximal.",
+  "concepts": [
+    "développement limité",
+    "équivalent",
+    "ordre de grandeur",
+    "approximation polynomiale",
+    "fonction trigonométrique",
+    "fraction rationnelle"
+  ],
+  "methods": [
+    "développement limité de cos(x)",
+    "développement limité de fraction rationnelle",
+    "annulation de coefficients",
+    "approximation polynomiale"
+  ],
+  "objects": [
+    "fonction cos(x)",
+    "fraction rationnelle",
+    "développement limité",
+    "coefficient de Taylor"
+  ],
+  "content_hash": "ebe171c5654201abbafc23d2097e32a6ad9760ca1a78b00d063ab17bacb51db9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:34:55.679Z"
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "6TSn",
+  "source_path": "amscc/6TSn.tex",
+  "summary": "L'exercice étudie deux méthodes de recherche d'une clé parmi 10. La méthode A consiste à essayer les clés dans un ordre fixe, tandis que la méthode B utilise un tirage aléatoire avec remise. On calcule les probabilités associées à ces méthodes, notamment la probabilité d'essayer plus de 8 clés et la probabilité conditionnelle d'utiliser la méthode B après 8 échecs.",
+  "concepts": [
+    "probabilité uniforme",
+    "loi géométrique",
+    "probabilité conditionnelle",
+    "théorème de Bayes",
+    "probabilités totales",
+    "variable aléatoire discrète",
+    "permutation",
+    "équiprobabilité"
+  ],
+  "methods": [
+    "calcul de probabilité élémentaire",
+    "modélisation par loi géométrique",
+    "application du théorème de Bayes",
+    "calcul de probabilités totales",
+    "calcul de somme infinie"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "permutation",
+    "événement",
+    "loi géométrique",
+    "probabilité conditionnelle"
+  ],
+  "content_hash": "b9d7a0ba3e83f5618e3a5e2b8750c04d2d249c2bbb84b319d9effc30bafb9287",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:37:33.371Z"
+}

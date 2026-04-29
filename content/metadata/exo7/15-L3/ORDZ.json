@@ -1,0 +1,28 @@
+{
+  "uuid": "ORDZ",
+  "source_path": "exo7/15-L3/ORDZ.tex",
+  "summary": "L'exercice demande de montrer que M est un ouvert de ℝ² et que V est un espace vectoriel, puis de calculer la dimension de V pour trois fonctions f(x,y) différentes, avec une analyse particulière pour la dernière fonction en fonction du paramètre t.",
+  "concepts": [
+    "continuité",
+    "espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "fonction dérivable",
+    "ouvert d'un espace métrique",
+    "structure algébrique"
+  ],
+  "methods": [
+    "analyse de la continuité",
+    "vérification des propriétés d'espace vectoriel",
+    "calcul de dimension",
+    "étude des ensembles de niveau"
+  ],
+  "objects": [
+    "fonction continue",
+    "ensemble M",
+    "espace vectoriel V",
+    "fonctions f(x,y)"
+  ],
+  "content_hash": "7f534cd9a9276348593cf6216d798b403bb4aa8968095bdd79b06cbb9432ff8f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:25:50.671Z"
+}

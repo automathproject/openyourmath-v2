@@ -1,0 +1,26 @@
+{
+  "uuid": "7J9f",
+  "source_path": "exo7/4-L2/7J9f.tex",
+  "summary": "Calculer le déterminant d'une matrice 3x3 dépendant d'un paramètre réel et déterminer pour quelles valeurs du paramètre la matrice est inversible. Calculer ensuite l'inverse de la matrice lorsque celle-ci est inversible.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "inversibilité d'une matrice",
+    "comatrice",
+    "matrice carrée",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "développement par cofacteur",
+    "calcul de l'inverse d'une matrice",
+    "calcul de la comatrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "déterminant",
+    "comatrice",
+    "matrice inverse"
+  ],
+  "content_hash": "3fd59731269d04dabd4d5692cba8e8fcae594eb2440f616b7d6b1824778e0eee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:33:30.910Z"
+}

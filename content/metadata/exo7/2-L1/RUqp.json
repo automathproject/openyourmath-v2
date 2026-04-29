@@ -1,0 +1,25 @@
+{
+  "uuid": "RUqp",
+  "source_path": "exo7/2-L1/RUqp.tex",
+  "summary": "On considère une fonction continue sur [0, π] vérifiant deux conditions d'intégrales nulles impliquant les fonctions cosinus et sinus. On demande de prouver que cette fonction s'annule au moins deux fois dans l'intervalle ouvert ]0, π[.",
+  "concepts": [
+    "intégrale de Riemann",
+    "fonction continue",
+    "annulation d'une fonction",
+    "théorème des valeurs intermédiaires",
+    "fonctions trigonométriques"
+  ],
+  "methods": [
+    "intégration par parties",
+    "analyse des annulations",
+    "utilisation des propriétés des fonctions trigonométriques"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrales trigonométriques",
+    "intervalle [0, π]"
+  ],
+  "content_hash": "1ad08c417a25aa062f9615689175f7011e092417c43f02fb25dcf095c6637a01",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:39:05.523Z"
+}

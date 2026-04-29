@@ -1,0 +1,24 @@
+{
+  "uuid": "Y6YS",
+  "source_path": "exo7/4-L2/Y6YS.tex",
+  "summary": "Soient deux matrices carrées A et B définies par B = (-1)^(i+j) * A. Montrer que le déterminant de B est égal à celui de A.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "permutation",
+    "signature d'une permutation",
+    "matrice carrée",
+    "propriété multiplicative du déterminant"
+  ],
+  "methods": [
+    "développement par les permutations",
+    "changement de signe de lignes et colonnes"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "permutation"
+  ],
+  "content_hash": "7e957c3bafb82a182437f5e02a966be675f2fe7f6a28b231e8dbac73d5c5c98e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:55:48.561Z"
+}

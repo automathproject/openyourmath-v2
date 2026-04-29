@@ -1,0 +1,30 @@
+{
+  "uuid": "G4xy",
+  "source_path": "exo7/6-L2/G4xy.tex",
+  "summary": "L'exercice demande de construire un carré de même centre, aux côtés parallèles et d'aire deux fois plus petite qu'un carré donné. La question préliminaire consiste à montrer qu'un carré circonscrit à un cercle a une aire deux fois plus grande qu'un carré inscrit dans le même cercle.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "carré inscrit",
+    "carré circonscrit",
+    "aire d'un carré",
+    "relation d'aire entre carrés inscrits et circonscrits",
+    "rotation géométrique",
+    "symétrie centrale"
+  ],
+  "methods": [
+    "construction géométrique",
+    "utilisation des propriétés des carrés et des cercles",
+    "calcul d'aire",
+    "analyse des relations métriques"
+  ],
+  "objects": [
+    "carré",
+    "cercle inscrit",
+    "cercle circonscrit",
+    "diagonales d'un carré",
+    "points d'intersection"
+  ],
+  "content_hash": "23a0d1ce0d939c19585a62e3a2a55c89ab922d4559a39a804896c37ebfccc0f3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:30:09.526Z"
+}

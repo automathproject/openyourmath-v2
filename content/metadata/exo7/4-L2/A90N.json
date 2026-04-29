@@ -1,0 +1,29 @@
+{
+  "uuid": "A90N",
+  "source_path": "exo7/4-L2/A90N.tex",
+  "summary": "Résoudre dans l'ensemble des matrices carrées réelles de taille n l'équation M égale à sa comatrice, pour n ≥ 2.",
+  "concepts": [
+    "déterminant",
+    "comatrice",
+    "rang d'une matrice",
+    "matrice orthogonale",
+    "matrice inversible",
+    "matrice symétrique définie positive"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "manipulation de matrices",
+    "utilisation de la comatrice",
+    "analyse de cas par le rang",
+    "propriétés des matrices orthogonales"
+  ],
+  "objects": [
+    "matrice carrée",
+    "comatrice",
+    "matrice identité",
+    "matrice orthogonale positive"
+  ],
+  "content_hash": "e653996b265d627a33fc62a3a939ef3fedbde66a86adc1467729c62aa7780221",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:36:24.142Z"
+}

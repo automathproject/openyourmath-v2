@@ -1,0 +1,28 @@
+{
+  "uuid": "NgMU",
+  "source_path": "exo7/4-L2/NgMU.tex",
+  "summary": "On considère une matrice symétrique définie par ses éléments $a_{ij} = a_i a_j$. L'exercice demande de montrer que cette matrice est diagonalisable et de déterminer ses éléments propres.",
+  "concepts": [
+    "matrice symétrique",
+    "diagonalisation",
+    "valeur propre",
+    "vecteur propre",
+    "orthogonalité",
+    "produit scalaire",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "décomposition en produit de matrices",
+    "calcul de noyau",
+    "identification de valeurs propres"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "vecteur propre",
+    "valeur propre",
+    "sous-espace orthogonal"
+  ],
+  "content_hash": "2695d7e7505c726fcb55309aff69dca7a7cadab0fcba991f77970117ec82d294",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:22:18.165Z"
+}

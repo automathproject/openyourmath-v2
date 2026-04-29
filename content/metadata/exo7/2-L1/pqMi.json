@@ -1,0 +1,23 @@
+{
+  "uuid": "pqMi",
+  "source_path": "exo7/2-L1/pqMi.tex",
+  "summary": "On considère une fonction dérivable sur ℝ dont la dérivée tend vers une limite ℓ en +∞. On demande de montrer que le rapport de la fonction par sa variable tend aussi vers ℓ en +∞, puis de chercher un contre-exemple à la réciproque.",
+  "concepts": [
+    "limite de fonction",
+    "dérivabilité",
+    "limite de suite",
+    "théorème de l'hôpital"
+  ],
+  "methods": [
+    "comparaison de limites",
+    "analyse asymptotique"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "limite de dérivée",
+    "rapport fonction/variable"
+  ],
+  "content_hash": "f37c58729d278a5dd6147e4d27c33ae7480a881273f08b4f7f374d4c865aed6e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:19:54.216Z"
+}

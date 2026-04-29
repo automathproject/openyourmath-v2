@@ -1,0 +1,24 @@
+{
+  "uuid": "kgkI",
+  "source_path": "exo7/4-L2/kgkI.tex",
+  "summary": "Calculer le produit de trois transpositions $(ab)(bc)(ab)$ dans le groupe symétrique $\\mathcal{S}_n$ et en déduire que ce groupe est engendré par les transpositions $(1,i)$ pour $2 \\leq i \\leq n$.",
+  "concepts": [
+    "groupe symétrique",
+    "transposition",
+    "générateur de groupe",
+    "permutation",
+    "ordre d'un élément"
+  ],
+  "methods": [
+    "calcul de produit de transpositions",
+    "décomposition en transpositions"
+  ],
+  "objects": [
+    "transpositions",
+    "permutations",
+    "groupe symétrique $\\mathcal{S}_n$"
+  ],
+  "content_hash": "017bd03e276b7ae6edc6a610926c3891e92ef034b60ba4b45a67bcc2a2113df9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:07:41.713Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "hWbv",
+  "source_path": "exo7/4-L2/hWbv.tex",
+  "summary": "L'exercice demande de déterminer les conditions sur des points complexes du plan pour qu'il existe un polygone à n sommets dont chaque côté a un point donné comme milieu.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "symétrie centrale",
+    "isométrie plane",
+    "composition d'isométries",
+    "translation"
+  ],
+  "methods": [
+    "résolution de système linéaire",
+    "analyse de cas par parité de n",
+    "utilisation de propriétés géométriques"
+  ],
+  "objects": [
+    "points complexes",
+    "polygone",
+    "milieux de segments"
+  ],
+  "content_hash": "9bba9e8890dca6508ba19a977b45d3ab350ea197088c8af65fda224d804ea4dc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:03:35.225Z"
+}

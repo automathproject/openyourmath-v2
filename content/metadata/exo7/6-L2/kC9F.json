@@ -1,30 +1,27 @@
 {
   "uuid": "kC9F",
   "source_path": "exo7/6-L2/kC9F.tex",
-  "summary": "L'exercice étudie une surface du second degré symétrique en x, y et z, et montre qu'elle admet une équation cartésienne particulière. Il prouve ensuite que cette surface est une surface de révolution autour d'une droite donnée.",
+  "summary": "Démontrer qu'une équation du second degré symétrique en x, y et z représente une surface de révolution autour d'un axe donné.",
   "concepts": [
-    "symétrie d'une fonction",
-    "polynôme symétrique",
+    "symétrie des polynômes",
     "fonctions symétriques élémentaires",
-    "quadrique",
+    "équation cartésienne",
     "surface de révolution",
-    "rotation isométrie",
-    "équation cartésienne"
+    "invariance par rotation",
+    "isométrie"
   ],
   "methods": [
-    "décomposition en polynômes symétriques",
-    "analyse de symétrie",
-    "utilisation de propriétés des rotations",
-    "transformation d'équation"
+    "analyse des symétries",
+    "réécriture en termes de polynômes symétriques",
+    "utilisation des propriétés des rotations"
   ],
   "objects": [
-    "surface du second degré",
-    "fonction symétrique",
-    "droite d'axe de révolution",
-    "rotation",
-    "coordonnées cartésiennes"
+    "équation du second degré",
+    "surface quadratique",
+    "axe de révolution",
+    "rotation"
   ],
-  "content_hash": "0624086db7ef37bd0e238ae34f75b493e5e319ebb4b01758b03711f71ca37d86",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:41:08.898Z"
+  "content_hash": "b8d71228af87e287891d1233b8c753ab98230e5ae18b7e3db420722cb9040fae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:07:39.142Z"
 }

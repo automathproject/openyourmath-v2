@@ -1,0 +1,28 @@
+{
+  "uuid": "suvx",
+  "source_path": "exo7/6-L2/suvx.tex",
+  "summary": "Dans un triangle équilatéral ABC de côté a, on construit des points B' et L sur la médiane BB', puis une droite d orthogonale à BB' passant par L. On cherche la longueur BM où M est l'intersection de d avec le cercle de diamètre BB'.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "triangle équilatéral",
+    "médiane",
+    "droite orthogonale",
+    "cercle de diamètre",
+    "distance dans le plan"
+  ],
+  "methods": [
+    "calcul de distance",
+    "utilisation de propriétés géométriques",
+    "construction de points remarquables"
+  ],
+  "objects": [
+    "triangle équilatéral",
+    "médiane",
+    "droite orthogonale",
+    "cercle de diamètre",
+    "point d'intersection"
+  ],
+  "content_hash": "4192cbc2ae361d8a1e23e0266880902bd51c9303e7bb2c2a66b03df3afc521a5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:58:58.526Z"
+}

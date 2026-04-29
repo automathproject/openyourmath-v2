@@ -1,0 +1,26 @@
+{
+  "uuid": "qKO8",
+  "source_path": "exo7/1-L1/qKO8.tex",
+  "summary": "Montrer qu'à partir d'un certain rang, tout entier naturel peut s'exprimer comme une combinaison linéaire de deux entiers premiers entre eux.",
+  "concepts": [
+    "nombres premiers entre eux",
+    "combinaison linéaire",
+    "théorème de Bézout",
+    "divisibilité dans Z",
+    "pgcd",
+    "ensemble des entiers naturels"
+  ],
+  "methods": [
+    "utilisation du théorème de Bézout",
+    "raisonnement par l'absurde",
+    "propriétés des nombres premiers entre eux"
+  ],
+  "objects": [
+    "entiers naturels",
+    "combinaison linéaire",
+    "pgcd"
+  ],
+  "content_hash": "0d2fee6e8d257c173b160f54febe792e67d03a0f02f03a4a3591e59a1ce7dbc1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:10:48.506Z"
+}

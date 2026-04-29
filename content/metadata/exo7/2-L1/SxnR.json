@@ -1,0 +1,25 @@
+{
+  "uuid": "SxnR",
+  "source_path": "exo7/2-L1/SxnR.tex",
+  "summary": "On considère deux fonctions positives sur ℝ⁺ dont l'une est négligeable devant l'autre à l'infini. On suppose que l'intégrale de la première n'existe pas et on demande de montrer que l'intégrale de la seconde est négligeable devant celle de la première quand x tend vers l'infini.",
+  "concepts": [
+    "intégrale impropre",
+    "comparaison asymptotique",
+    "fonction positive",
+    "croissance comparée",
+    "limite en l'infini"
+  ],
+  "methods": [
+    "comparaison d'intégrales",
+    "utilisation de la relation o()",
+    "analyse de la croissance des fonctions"
+  ],
+  "objects": [
+    "fonction positive",
+    "intégrale impropre",
+    "relation de négligeabilité"
+  ],
+  "content_hash": "532d1632ac87dc38d2f76fe0833178f4da01aafd49f66beccbeba43c0af00d8f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:40:28.394Z"
+}

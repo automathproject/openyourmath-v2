@@ -1,0 +1,30 @@
+{
+  "uuid": "kvoX",
+  "source_path": "exo7/12-L3/kvoX.tex",
+  "summary": "L'exercice demande de vérifier l'injectivité d'une application f définie sur un ensemble Ω de triplets de racines ordonnées d'un polynôme cubique normé, puis d'étudier la jacobienne de cette application pour conclure sur son caractère difféomorphique.",
+  "concepts": [
+    "théorème d'inversion locale",
+    "difféomorphisme",
+    "matrice jacobienne",
+    "inversibilité",
+    "polynôme de degré 3",
+    "fonction de classe C^1",
+    "injectivité"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "analyse de la matrice jacobienne",
+    "étude de l'inversibilité",
+    "calcul de la dérivée de l'inverse"
+  ],
+  "objects": [
+    "polynôme de degré 3",
+    "matrice jacobienne",
+    "matrice diagonale",
+    "application f",
+    "ensemble Ω"
+  ],
+  "content_hash": "c4d60568b561319b27d5cb5962723e40921995ef0a48001f423b6b623da6357b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:18:28.276Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "WLzW",
+  "source_path": "exo7/4-L2/WLzW.tex",
+  "summary": "Calculer le déterminant d'une matrice A dont les coefficients sont de la forme 1/(a_i + b_j), en généralisant la méthode utilisée pour le déterminant de Vandermonde. Le cas particulier où a_i = b_i = i est également traité.",
+  "concepts": [
+    "déterminant",
+    "matrice de Vandermonde",
+    "décomposition en éléments simples",
+    "pôles simples",
+    "déterminant de Hilbert",
+    "factorielles",
+    "produit de termes"
+  ],
+  "methods": [
+    "développement selon une colonne",
+    "décomposition en éléments simples",
+    "réduction par récurrence",
+    "calcul de limite",
+    "simplification de produits"
+  ],
+  "objects": [
+    "matrice A",
+    "déterminant Δ_n",
+    "déterminant de Vandermonde",
+    "déterminant de Hilbert H_n",
+    "polynôme R"
+  ],
+  "content_hash": "0a5f654aacd36a101655e9c97e15fc19bdd71308fdc7a830780f7b67bfd5fa4b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:53:35.584Z"
+}

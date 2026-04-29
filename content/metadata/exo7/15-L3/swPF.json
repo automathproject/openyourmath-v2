@@ -1,0 +1,30 @@
+{
+  "uuid": "swPF",
+  "source_path": "exo7/15-L3/swPF.tex",
+  "summary": "L'exercice demande de montrer que l'union des espaces de fonctions lipschitziennes de constantes variables contient les fonctions de classe C^1 mais pas la fonction racine carrée. Il étudie ensuite la complétude de ces espaces pour différentes normes.",
+  "concepts": [
+    "espace métrique complet",
+    "espace de Banach",
+    "fonction lipschitzienne",
+    "norme uniforme",
+    "convergence uniforme",
+    "classe C^1",
+    "complétude"
+  ],
+  "methods": [
+    "étude de la complétude",
+    "construction de suite convergente",
+    "définition de norme",
+    "analyse des propriétés des fonctions"
+  ],
+  "objects": [
+    "fonction lipschitzienne",
+    "espace de fonctions continues",
+    "fonction racine carrée",
+    "suite de fonctions",
+    "norme uniforme"
+  ],
+  "content_hash": "2f2afd323763735880e09dec2b1431f7c4fd1fe8d69082498880193a525fd1e8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:14:02.832Z"
+}

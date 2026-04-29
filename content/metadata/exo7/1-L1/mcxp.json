@@ -1,0 +1,27 @@
+{
+  "uuid": "mcxp",
+  "source_path": "exo7/1-L1/mcxp.tex",
+  "summary": "L'exercice demande de déterminer une base d'un sous-espace vectoriel engendré par quatre vecteurs de ℝ⁴ et de trouver un supplémentaire de ce sous-espace dans ℝ⁴.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "base d'un espace vectoriel",
+    "supplémentaire d'un sous-espace",
+    "dimension d'un espace vectoriel",
+    "combinaison linéaire"
+  ],
+  "methods": [
+    "réduction d'un système générateur",
+    "calcul de déterminant",
+    "pivot de Gauss",
+    "construction d'une base libre"
+  ],
+  "objects": [
+    "vecteurs de ℝ⁴",
+    "sous-espace vectoriel",
+    "base",
+    "supplémentaire"
+  ],
+  "content_hash": "156d9596f7be3b16b3eb55bb50b3bbbad144cb41483c06bee31e354620a3207d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:07:40.587Z"
+}

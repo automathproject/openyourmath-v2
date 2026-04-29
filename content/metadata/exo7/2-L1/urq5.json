@@ -1,0 +1,27 @@
+{
+  "uuid": "urq5",
+  "source_path": "exo7/2-L1/urq5.tex",
+  "summary": "L'exercice demande de démontrer une inégalité pour la dérivée d'une fonction de classe C² à partir de la formule de Taylor-Lagrange, puis d'en déduire que la dérivée est bornée et que la limite de la dérivée tend vers 0 quand la fonction tend vers 0 à l'infini.",
+  "concepts": [
+    "formule de Taylor-Lagrange",
+    "bornes supérieures",
+    "limite de fonctions",
+    "dérivée bornée",
+    "continuité et dérivabilité"
+  ],
+  "methods": [
+    "majoration",
+    "optimisation de fonction",
+    "choix de paramètre optimal",
+    "application de théorèmes de limites"
+  ],
+  "objects": [
+    "fonction de classe C²",
+    "dérivée première",
+    "dérivée seconde",
+    "fonction auxiliaire φ(h)"
+  ],
+  "content_hash": "5de789fb87f1ce94cbde9b0fec8c8f914ff0b92fc776a28c5e2a34b8767cfb4b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:43:07.416Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "udmT",
+  "source_path": "exo7/1-L1/udmT.tex",
+  "summary": "Résoudre un système de congruences dans ℤ, en cherchant d'abord une solution particulière.",
+  "concepts": [
+    "arithmétique modulaire",
+    "système de congruences",
+    "théorème des restes chinois",
+    "divisibilité dans ℤ",
+    "pgcd",
+    "ppcm"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "recherche de solution particulière",
+    "vérification de congruences"
+  ],
+  "objects": [
+    "système de congruences",
+    "entiers relatifs",
+    "congruences modulo 6 et modulo 9"
+  ],
+  "content_hash": "c1b513be01b0470033b8e187d7e6584afb029741a21adeca37fa43b841af7e83",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:11:29.722Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "l5vP",
+  "source_path": "exo7/2-L1/l5vP.tex",
+  "summary": "On considère une fonction continue sur un intervalle [a, b] qui s'annule en intégrale contre toute fonction en escalier. On demande de prouver que cette fonction est identiquement nulle.",
+  "concepts": [
+    "intégrale de Riemann",
+    "fonction continue",
+    "fonction en escalier",
+    "linéarité de l'intégrale",
+    "densité des fonctions en escalier"
+  ],
+  "methods": [
+    "approximation de fonctions continues par des fonctions en escalier",
+    "raisonnement par l'absurde",
+    "utilisation de la linéarité de l'intégrale"
+  ],
+  "objects": [
+    "fonction continue",
+    "fonction en escalier",
+    "intégrale"
+  ],
+  "content_hash": "e93e38984a2b5b0a4581ffe083ff80b76b0fd54f6169b569e048ba0a41e12959",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:45:46.221Z"
+}

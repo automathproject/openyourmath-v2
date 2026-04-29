@@ -1,0 +1,26 @@
+{
+  "uuid": "KkE7",
+  "source_path": "exo7/12-L3/KkE7.tex",
+  "summary": "On considère un sous-espace vectoriel de fonctions différentiables bornées sur [0,1] avec une dérivée uniformément bornée. On demande de montrer la compacité de la boule unité de cet espace et de caractériser l'espace.",
+  "concepts": [
+    "espace vectoriel normé",
+    "différentiabilité",
+    "compacité",
+    "boule unité",
+    "continuité uniforme",
+    "théorème d'Ascoli"
+  ],
+  "methods": [
+    "majoration de la dérivée",
+    "application du théorème d'Ascoli",
+    "analyse de la compacité"
+  ],
+  "objects": [
+    "sous-espace vectoriel de fonctions",
+    "boule unité",
+    "fonctions différentiables"
+  ],
+  "content_hash": "e4f28214d4a934e2f18095f74ec40aa5dc3adf5cae6d73c64e0cc4622f92f80f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:24:35.981Z"
+}

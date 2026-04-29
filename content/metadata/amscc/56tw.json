@@ -1,0 +1,33 @@
+{
+  "uuid": "56tw",
+  "source_path": "amscc/56tw.tex",
+  "summary": "L'exercice demande d'étudier les points critiques d'une fonction de deux variables et de déterminer leur nature (maximum, point selle). Il s'agit ensuite de tracer la courbe définie par l'équation f(x,y)=0 pour x≥0, en analysant ses propriétés qualitatives (tangente, inflexion). Enfin, il faut montrer qu'un point particulier est isolé sur la courbe.",
+  "concepts": [
+    "points critiques",
+    "maximum local",
+    "point selle",
+    "fonction de deux variables",
+    "continuité",
+    "dérivabilité",
+    "point isolé",
+    "inflexion"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "matrice hessienne",
+    "analyse de la courbure",
+    "tracé de courbe",
+    "étude de continuité",
+    "démonstration d'isolation"
+  ],
+  "objects": [
+    "fonction f(x,y)",
+    "points stationnaires",
+    "courbe de niveau",
+    "disque ouvert",
+    "tangente verticale"
+  ],
+  "content_hash": "68c89f36d5bddc924ce13ede9611f5f5e8afefb4c5cfaafaae2c1069389167e3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:56:51.580Z"
+}

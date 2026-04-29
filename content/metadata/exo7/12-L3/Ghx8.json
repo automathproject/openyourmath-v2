@@ -1,0 +1,33 @@
+{
+  "uuid": "Ghx8",
+  "source_path": "exo7/12-L3/Ghx8.tex",
+  "summary": "L'exercice demande de démontrer que l'application φ de ℝ² dans ℝ² est un difféomorphisme en étudiant sa différentiabilité, l'inversibilité de sa jacobienne, son injectivité, et la lipschitzianité de son inverse. Il conclut en calculant la différentielle de l'inverse de φ en un point spécifique.",
+  "concepts": [
+    "théorème de l'inverse local",
+    "difféomorphisme",
+    "jacobienne",
+    "inversibilité de matrice",
+    "continuité uniforme",
+    "complétude",
+    "connexe",
+    "fermeture d'ouvert"
+  ],
+  "methods": [
+    "calcul de jacobienne",
+    "inversibilité de matrice",
+    "démonstration d'injectivité",
+    "utilisation des accroissements finis",
+    "étude de la lipschitzianité",
+    "calcul de la différentielle inverse"
+  ],
+  "objects": [
+    "application de ℝ² dans ℝ²",
+    "jacobienne",
+    "différentielle",
+    "suite de Cauchy",
+    "point critique"
+  ],
+  "content_hash": "475712c5b68621bc1a5c5f532268fda34ae3485ecb508afeb76104d5d5ee37fc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:14:47.523Z"
+}

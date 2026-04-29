@@ -1,0 +1,26 @@
+{
+  "uuid": "nwP4",
+  "source_path": "exo7/10-L3/nwP4.tex",
+  "summary": "On considère un groupe fini d'ordre p²q, où p et q sont deux nombres premiers distincts vérifiant p² ≢ 1 mod q et q ≢ 1 mod p. On demande de prouver que ce groupe est abélien.",
+  "concepts": [
+    "groupe fini",
+    "ordre d'un groupe",
+    "théorème de Sylow",
+    "groupe abélien",
+    "nombres premiers",
+    "théorème de Cauchy"
+  ],
+  "methods": [
+    "analyse des sous-groupes de Sylow",
+    "utilisation des conditions sur les nombres premiers",
+    "classification des groupes finis"
+  ],
+  "objects": [
+    "groupe fini G",
+    "sous-groupes de Sylow",
+    "nombres premiers p et q"
+  ],
+  "content_hash": "adc184ff8aa9c6af7f1624ace4788457a201f3b2695b107171996747040dcb19",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:00:37.442Z"
+}

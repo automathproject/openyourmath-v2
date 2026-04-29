@@ -1,0 +1,31 @@
+{
+  "uuid": "uYQY",
+  "source_path": "exo7/4-L2/uYQY.tex",
+  "summary": "L'exercice demande de prouver une congruence modulo un nombre premier p pour le déterminant d'une matrice circulaire à coefficients entiers. La matrice est définie par des coefficients a_j-i mod p.",
+  "concepts": [
+    "déterminant de matrice",
+    "arithmétique modulaire",
+    "permutation circulaire",
+    "caractéristique p",
+    "groupe symétrique",
+    "action de groupe",
+    "congruence"
+  ],
+  "methods": [
+    "développement du déterminant",
+    "calcul de puissance de matrice",
+    "utilisation de la caractéristique p",
+    "analyse des orbites de permutations",
+    "commutation de permutations"
+  ],
+  "objects": [
+    "matrice circulaire",
+    "nombre premier",
+    "permutation",
+    "cycle",
+    "groupe symétrique"
+  ],
+  "content_hash": "e826cd6b46e9f9497d2f7fc16663f15b615b243332c465a902087d6f4345c6fa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:18:06.823Z"
+}

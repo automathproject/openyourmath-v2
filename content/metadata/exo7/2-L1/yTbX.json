@@ -1,0 +1,30 @@
+{
+  "uuid": "yTbX",
+  "source_path": "exo7/2-L1/yTbX.tex",
+  "summary": "Montrer l'unicité de la solution de l'équation Argsh(x) + Argch(x) = 1 et la déterminer. L'exercice demande d'étudier la fonction f(x) = Argsh(x) + Argch(x) sur son domaine de définition.",
+  "concepts": [
+    "fonction hyperbolique inverse",
+    "continuité",
+    "monotonie",
+    "théorème des valeurs intermédiaires",
+    "fonction strictement croissante",
+    "limite infinie",
+    "identités hyperboliques"
+  ],
+  "methods": [
+    "tableau de variations",
+    "étude de la monotonie",
+    "application du théorème des valeurs intermédiaires",
+    "utilisation des identités hyperboliques",
+    "résolution d'équation"
+  ],
+  "objects": [
+    "fonction Argsh(x)",
+    "fonction Argch(x)",
+    "fonction f(x) = Argsh(x) + Argch(x)",
+    "solution unique de l'équation"
+  ],
+  "content_hash": "a26377a44fcecc171a8d92dc292e2964f5a070ba98bbc1a1b9537a25cfa35966",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:08:29.415Z"
+}

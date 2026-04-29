@@ -1,0 +1,28 @@
+{
+  "uuid": "3Lcl",
+  "source_path": "exo7/12-L3/3Lcl.tex",
+  "summary": "L'exercice étudie une application F de R² dans R² et un ensemble Ω défini comme l'ensemble des points p tels que la suite F^k(p) converge vers (0,0). On demande de caractériser Ω, de montrer que (0,0) est dans son intérieur et que Ω est connexe.",
+  "concepts": [
+    "différentiabilité",
+    "convergence de suite",
+    "norme d'opérateur",
+    "intérieur d'un ensemble",
+    "connexion d'un ensemble",
+    "homogénéité d'une application"
+  ],
+  "methods": [
+    "calcul de la différentielle",
+    "estimation de la norme d'une matrice",
+    "utilisation de la continuité",
+    "argument d'homogénéité"
+  ],
+  "objects": [
+    "application de R² dans R²",
+    "suite itérée",
+    "ensemble Ω",
+    "point critique (0,0)"
+  ],
+  "content_hash": "ac35030128d2d555847dd99870a425aaa60d64891249e7db3c36f4a9c942ac86",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:22:51.649Z"
+}

@@ -1,34 +1,29 @@
 {
   "uuid": "P6Td",
   "source_path": "exo7/6-L2/P6Td.tex",
-  "summary": "Calculer l'intégrale d'une forme différentielle le long d'un contour fermé, puis en déduire la valeur d'une intégrale impliquant la fonction sinus sur cosinus. Enfin, déterminer la valeur d'une intégrale impropre en faisant tendre les bornes vers 0 et l'infini.",
+  "summary": "Calculer l'intégrale d'une forme différentielle le long d'un contour orienté, puis en déduire la valeur d'une intégrale impliquant la fonction sinus sur cosinus. Le contexte utilise un contour spécifique dans le plan.",
   "concepts": [
-    "forme différentielle",
-    "forme exacte",
-    "forme fermée",
+    "forme différentielle exacte",
+    "forme différentielle fermée",
     "théorème de Schwarz",
-    "intégrale curviligne",
-    "intégrale impropre",
-    "théorème de continuité des intégrales à paramètres",
-    "convergence d'intégrales"
+    "intégrale de ligne",
+    "continuité des intégrales à paramètres",
+    "convergence d'intégrales impropres"
   ],
   "methods": [
     "calcul des dérivées partielles",
     "vérification de l'exactitude d'une forme différentielle",
-    "décomposition d'un contour en arcs",
-    "calcul d'intégrales curvilignes",
-    "limite d'intégrales",
-    "théorème de Fubini"
+    "théorème de Green",
+    "changement de variable",
+    "étude de la limite d'intégrales"
   ],
   "objects": [
     "forme différentielle",
-    "contour fermé",
-    "intégrale curviligne",
+    "contour orienté",
     "intégrale impropre",
-    "fonction sinus sur cosinus",
-    "fonction exponentielle"
+    "fonction continue par morceaux"
   ],
-  "content_hash": "5fc8f9200ea3927faa3f10b55b67bf70e705f8cc603c1b8414c763bc593948d5",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:06:20.236Z"
+  "content_hash": "968f416b16ef5f5b5b3dc173c31848f3c9d4adafbeeebf06432c0911f319a87a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:29:59.963Z"
 }

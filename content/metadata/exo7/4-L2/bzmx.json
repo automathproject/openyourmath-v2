@@ -1,0 +1,26 @@
+{
+  "uuid": "bzmx",
+  "source_path": "exo7/4-L2/bzmx.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés d'un anneau A de caractéristique finie n : d'abord que nx = 0 pour tout x dans A, puis que si A est intègre, n est un nombre premier. Enfin, si A est intègre et commutatif, il faut montrer que l'application x ↦ x^n est un morphisme d'anneau.",
+  "concepts": [
+    "caractéristique d'un anneau",
+    "groupe additif",
+    "ordre d'un élément",
+    "anneau intègre",
+    "nombre premier",
+    "morphisme d'anneau"
+  ],
+  "methods": [
+    "démonstration par définition",
+    "utilisation des propriétés des anneaux intègres",
+    "application de la caractéristique"
+  ],
+  "objects": [
+    "anneau",
+    "élément d'un anneau",
+    "morphisme d'anneau"
+  ],
+  "content_hash": "86e90e70d063b23ff681e106f1d34e853c8e5b5a00281ba917bfeca4e5c9214f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:00:58.760Z"
+}

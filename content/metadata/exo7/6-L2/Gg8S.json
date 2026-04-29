@@ -1,0 +1,34 @@
+{
+  "uuid": "Gg8S",
+  "source_path": "exo7/6-L2/Gg8S.tex",
+  "summary": "L'exercice demande de calculer l'angle BAC d'un triangle ABC donné par les coordonnées de ses sommets, puis son aire, son isobarycentre, son orthocentre, le centre de son cercle circonscrit et une équation de ce cercle. Enfin, il faut déterminer les équations des bissectrices de l'angle BAC et de la bissectrice intérieure à l'angle A.",
+  "concepts": [
+    "géométrie affine",
+    "produit scalaire",
+    "déterminant",
+    "isobarycentre",
+    "orthocentre",
+    "cercle circonscrit",
+    "bissectrice d'angle",
+    "relation d'Euler"
+  ],
+  "methods": [
+    "calcul de distance",
+    "calcul de cosinus d'angle",
+    "calcul d'aire par déterminant",
+    "résolution de systèmes d'équations",
+    "utilisation de la relation d'Euler",
+    "calcul de distance d'un point à une droite"
+  ],
+  "objects": [
+    "triangle ABC",
+    "vecteurs AB et AC",
+    "isobarycentre G",
+    "orthocentre H",
+    "centre du cercle circonscrit Ω",
+    "bissectrices d'angle"
+  ],
+  "content_hash": "3e755d2d900181056eb1ce1560acb9a473e9a22d779bc9a2f0ae28b15b152166",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:46:10.909Z"
+}

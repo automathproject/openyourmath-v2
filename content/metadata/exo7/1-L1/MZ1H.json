@@ -1,0 +1,26 @@
+{
+  "uuid": "MZ1H",
+  "source_path": "exo7/1-L1/MZ1H.tex",
+  "summary": "Montrer qu'un entier x suffisamment grand peut s'exprimer comme combinaison linéaire de deux entiers naturels premiers entre eux a et b.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "nombres premiers entre eux",
+    "combinaison linéaire",
+    "algorithme d'Euclide",
+    "divisibilité dans Z"
+  ],
+  "methods": [
+    "utilisation du théorème de Bézout",
+    "algorithme d'Euclide étendu",
+    "propriétés des nombres premiers entre eux"
+  ],
+  "objects": [
+    "entiers naturels",
+    "combinaison linéaire",
+    "pgcd"
+  ],
+  "content_hash": "a445691c430f18ee7a69847026674caae69656b67ca1605c7bbacf2c0fd70494",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:04:30.856Z"
+}

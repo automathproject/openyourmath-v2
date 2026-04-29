@@ -1,0 +1,23 @@
+{
+  "uuid": "0CXv",
+  "source_path": "exo7/4-L2/0CXv.tex",
+  "summary": "Un piéton effectue un aller-retour sur un tapis roulant de 300 mètres. On connaît les temps mis pour chaque trajet. Il faut déterminer les vitesses du piéton et du tapis roulant.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "résolution de système"
+  ],
+  "methods": [
+    "méthode d'élimination de Gauss",
+    "calcul de déterminant",
+    "résolution par substitution"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice associée",
+    "vecteurs vitesses"
+  ],
+  "content_hash": "8d33f26bd4c0208c44f39b04e64358116c69bf20b121ce4e0d87c67a291c68a8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:26:59.374Z"
+}

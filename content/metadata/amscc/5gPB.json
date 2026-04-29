@@ -1,0 +1,27 @@
+{
+  "uuid": "5gPB",
+  "source_path": "amscc/5gPB.tex",
+  "summary": "L'exercice demande d'étudier la consistance du schéma numérique de Leapfrog pour résoudre une équation différentielle ordinaire. Il s'agit de justifier l'existence d'un point ξ_n et de développer en série de Taylor-Lagrange la fonction f pour montrer la consistance du schéma.",
+  "concepts": [
+    "équation différentielle ordinaire",
+    "développement de Taylor-Lagrange",
+    "consistance d'un schéma numérique",
+    "ordre de consistance",
+    "fonction de deux variables",
+    "développement limité"
+  ],
+  "methods": [
+    "développement de Taylor-Lagrange",
+    "analyse de consistance",
+    "approximation d'ordre 1"
+  ],
+  "objects": [
+    "équation différentielle",
+    "fonction f(t, y(t))",
+    "développement limité de Taylor",
+    "schéma de Leapfrog"
+  ],
+  "content_hash": "1e342bad964be25c7a5dd25979396898fc5caa3f27064a07aaab49ddbb5ed0e5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:16:07.390Z"
+}

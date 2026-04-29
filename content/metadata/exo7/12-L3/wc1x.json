@@ -1,0 +1,26 @@
+{
+  "uuid": "wc1x",
+  "source_path": "exo7/12-L3/wc1x.tex",
+  "summary": "L'exercice demande de démontrer que l'application f est injective, que son image est fermée, et que sa différentielle est inversible en tout point, pour en déduire que l'image de f est un ouvert-fermé de R^n.",
+  "concepts": [
+    "application de classe C^1",
+    "inversibilité de la différentielle",
+    "injectivité",
+    "ensemble fermé",
+    "ouvert-fermé",
+    "théorème d'inversion locale"
+  ],
+  "methods": [
+    "utilisation de l'inégalité de Lipschitz",
+    "étude de la différentielle",
+    "argument topologique sur les ouverts-fermés"
+  ],
+  "objects": [
+    "application f de R^n dans R^n",
+    "différentielle f'(x)",
+    "image f(R^n)"
+  ],
+  "content_hash": "07de486380a50ab00633263455151b7d35ffafba7d936684cebd9e645def7ae1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:21:06.986Z"
+}

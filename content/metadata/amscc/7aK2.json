@@ -1,0 +1,29 @@
+{
+  "uuid": "7aK2",
+  "source_path": "amscc/7aK2.tex",
+  "summary": "L'exercice demande d'identifier la loi de probabilité adaptée à différentes situations concrètes et de préciser ses paramètres. Les contextes incluent un tir sur cible, des pannes de drones, un choix d'instant aléatoire, et un contrôle de conformité de pièces.",
+  "concepts": [
+    "loi de Bernoulli",
+    "loi binomiale",
+    "loi uniforme",
+    "loi géométrique",
+    "variable aléatoire",
+    "probabilité de succès",
+    "essais indépendants"
+  ],
+  "methods": [
+    "identification de loi de probabilité",
+    "détermination des paramètres"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "variable aléatoire continue",
+    "nombre de succès",
+    "nombre de pannes",
+    "instant aléatoire",
+    "rang de premier échec"
+  ],
+  "content_hash": "0508d53b04f77f0ce6e594e8c424e76da2ea06d93925282e22c1fe8b337506ff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:37:16.873Z"
+}

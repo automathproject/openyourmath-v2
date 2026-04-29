@@ -1,0 +1,28 @@
+{
+  "uuid": "vk71",
+  "source_path": "exo7/4-L2/vk71.tex",
+  "summary": "On étudie la diagonalisabilité d'une matrice réelle A vérifiant A³ = tA A, d'abord dans Mₙ(ℝ) puis dans Mₙ(ℂ). L'énoncé demande d'analyser cette propriété sous deux aspects algébriques distincts.",
+  "concepts": [
+    "matrice symétrique",
+    "diagonalisabilité",
+    "polynôme annulateur",
+    "décomposition en sous-espaces",
+    "valeurs propres complexes",
+    "endomorphisme auto-adjoint"
+  ],
+  "methods": [
+    "factorisation de polynôme",
+    "décomposition spectrale",
+    "analyse des noyaux",
+    "utilisation de polynômes annulateurs"
+  ],
+  "objects": [
+    "matrice réelle",
+    "polynôme scindé",
+    "sous-espaces vectoriels",
+    "rotation plane"
+  ],
+  "content_hash": "4f60767de928a435e90e79bc0fba7a2dd5cb516f0191ae376970488e4bc61feb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:59:19.983Z"
+}

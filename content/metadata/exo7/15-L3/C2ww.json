@@ -1,0 +1,27 @@
+{
+  "uuid": "C2ww",
+  "source_path": "exo7/15-L3/C2ww.tex",
+  "summary": "L'exercice demande de déterminer les conditions sur une application f de ℝ dans ℝⁿ pour que la distance δ(x,y) = d(f(x),f(y)) définisse une distance sur ℝ équivalente topologiquement à la distance usuelle.",
+  "concepts": [
+    "distance euclidienne",
+    "distance équivalente",
+    "topologie",
+    "application continue",
+    "application injective",
+    "espace métrique",
+    "espace topologique"
+  ],
+  "methods": [
+    "analyse de la continuité",
+    "vérification de l'injectivité",
+    "comparaison des topologies"
+  ],
+  "objects": [
+    "application f",
+    "distance δ",
+    "distance euclidienne d"
+  ],
+  "content_hash": "7d30c86d4d082d6a9a77157e59cc25fdee93d2e5d279f41517e7bf7fa6396b40",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:21:29.876Z"
+}

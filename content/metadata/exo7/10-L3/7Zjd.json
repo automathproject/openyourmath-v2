@@ -1,0 +1,30 @@
+{
+  "uuid": "7Zjd",
+  "source_path": "exo7/10-L3/7Zjd.tex",
+  "summary": "L'exercice demande de montrer qu'une application est un automorphisme involutif d'un corps fini, puis d'analyser la sesquilinéarité de trois formes bilinéaires définies sur un espace vectoriel de dimension 3 sur ce corps.",
+  "concepts": [
+    "automorphisme de corps",
+    "forme bilinéaire",
+    "forme sesquilinéaire",
+    "caractéristique d'un corps",
+    "involutivité",
+    "morphisme de corps",
+    "injectivité",
+    "rang d'une forme bilinéaire"
+  ],
+  "methods": [
+    "vérification de la linéarité",
+    "utilisation de la formule du binôme",
+    "preuve d'injectivité par cardinalité",
+    "classification par le rang"
+  ],
+  "objects": [
+    "application σ",
+    "corps fini ℝ₂₅",
+    "espace vectoriel ℝ₂₅³",
+    "formes bilinéaires f₁, f₂, f₃"
+  ],
+  "content_hash": "6477ecaa839e5d6377583a31755d036857d6262e1b95c7050581f7495a945b04",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:16:47.579Z"
+}

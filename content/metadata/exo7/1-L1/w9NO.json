@@ -1,0 +1,25 @@
+{
+  "uuid": "w9NO",
+  "source_path": "exo7/1-L1/w9NO.tex",
+  "summary": "L'exercice demande de prouver que pour un vecteur donné dans un sous-espace H, l'ensemble engendré par des vecteurs obtenus en ajoutant ce vecteur à une base d'un autre sous-espace K est un supplémentaire de H. Il faut aussi montrer que ces supplémentaires sont distincts pour des vecteurs différents.",
+  "concepts": [
+    "somme directe d'espaces vectoriels",
+    "base d'un espace vectoriel",
+    "supplémentaire d'un sous-espace",
+    "indépendance linéaire",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "construction explicite de base",
+    "vérification de la somme directe",
+    "comparaison de sous-espaces"
+  ],
+  "objects": [
+    "somme directe de sous-espaces",
+    "base de sous-espace",
+    "vecteur supplémentaire"
+  ],
+  "content_hash": "7b7a648446243a102dbfbf0e356d1d7bea9134727156636575b8ce4122c6712c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:13:31.982Z"
+}

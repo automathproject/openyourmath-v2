@@ -1,28 +1,30 @@
 {
   "uuid": "dpSR",
   "source_path": "exo7/2-L1/dpSR.tex",
-  "summary": "L'exercice demande de calculer des limites de sommes de Riemann pour des fonctions spécifiques, en utilisant la théorie de l'intégrale de Riemann. Il illustre la convergence des sommes de Riemann vers l'intégrale d'une fonction intégrable.",
+  "summary": "Montrer l'égalité entre l'intégrale moyenne d'une fonction intégrable et une limite de sommes de Riemann. En déduire trois limites de sommes spécifiques.",
   "concepts": [
-    "intégrale de Riemann",
+    "intégrabilité au sens de Riemann",
     "somme de Riemann",
-    "intégrabilité de Riemann",
-    "limite de suite",
-    "convergence des sommes de Riemann",
-    "fonction intégrable"
+    "limite de suites",
+    "intégrale définie",
+    "subdivision d'un intervalle",
+    "inégalités de Darboux",
+    "convergence des sommes de Riemann"
   ],
   "methods": [
-    "somme de Riemann",
-    "limite de suite",
-    "comparaison des sommes inférieure et supérieure",
-    "calcul de limite de somme"
+    "construction de subdivision presque régulière",
+    "calcul des sommes inférieures et supérieures",
+    "passage à la limite",
+    "application du théorème fondamental du calcul intégral"
   ],
   "objects": [
-    "somme de Riemann",
     "fonction intégrable",
-    "suite numérique",
-    "limite de suite"
+    "somme de Riemann",
+    "subdivision d'intervalle",
+    "somme de termes trigonométriques",
+    "somme de termes logarithmiques"
   ],
-  "content_hash": "e09f81e196d6309ee322fa9d68053bf56d7a83807ac514623bd8b2fea8bbc312",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:34:06.952Z"
+  "content_hash": "62b884f29a98f27d4a07f1f62d41442abe2a1a8b50045355988060168efb8458",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:42:55.542Z"
 }

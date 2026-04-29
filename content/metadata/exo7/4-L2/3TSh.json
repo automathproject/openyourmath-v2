@@ -1,0 +1,25 @@
+{
+  "uuid": "3TSh",
+  "source_path": "exo7/4-L2/3TSh.tex",
+  "summary": "Soit M une matrice carrée complexe et λ une valeur propre de M. Montrer que la partie réelle de λ est comprise entre la plus grande et la plus petite valeur propre de la matrice (M + M*)/2.",
+  "concepts": [
+    "valeur propre",
+    "matrice hermitienne",
+    "partie réelle d'un nombre complexe",
+    "spectre d'une matrice",
+    "matrice carrée complexe"
+  ],
+  "methods": [
+    "diagonalisation",
+    "propriétés des valeurs propres",
+    "analyse des matrices hermitiennes"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "valeur propre",
+    "matrice hermitienne"
+  ],
+  "content_hash": "292151697fdbfb9bed835ca15dc2bd977fe624bee3ea1e55d57afc89bb6c707c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:59:27.209Z"
+}

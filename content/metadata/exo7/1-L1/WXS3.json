@@ -1,0 +1,32 @@
+{
+  "uuid": "WXS3",
+  "source_path": "exo7/1-L1/WXS3.tex",
+  "summary": "L'exercice demande de démontrer la formule du crible pour la cardinalité d'une union de parties d'un ensemble fini, puis d'appliquer cette formule pour compter le nombre de dérangements (permutations sans point fixe) et étudier la probabilité associée dans le problème des chapeaux.",
+  "concepts": [
+    "formule du crible",
+    "permutation",
+    "dérangement",
+    "point fixe",
+    "probabilité",
+    "convergence",
+    "intégration par parties",
+    "récurrence"
+  ],
+  "methods": [
+    "utilisation de la fonction indicatrice",
+    "calcul de cardinal d'intersections",
+    "approximation par série",
+    "intégration par parties",
+    "récurrence"
+  ],
+  "objects": [
+    "ensemble fini",
+    "parties d'un ensemble",
+    "permutation",
+    "dérangement",
+    "probabilité"
+  ],
+  "content_hash": "6df03cdb2ca0da1570b6dfd2bae636d64c6e6499acf85742e59a8c4a36c021ce",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:44:49.728Z"
+}

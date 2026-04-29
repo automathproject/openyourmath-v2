@@ -1,0 +1,26 @@
+{
+  "uuid": "cyEC",
+  "source_path": "exo7/5-L2/cyEC.tex",
+  "summary": "On étudie une application de ℝ³ dans ℝ³ définie par coordonnées explicites. L'exercice demande de montrer que cette application est un C¹-difféomorphisme sur un ouvert à déterminer.",
+  "concepts": [
+    "difféomorphisme",
+    "application C¹",
+    "application injective",
+    "application surjective",
+    "application de classe C¹",
+    "théorème d'inversion locale"
+  ],
+  "methods": [
+    "calcul du jacobien",
+    "inversion de système d'équations",
+    "analyse de la bijectivité"
+  ],
+  "objects": [
+    "application de ℝ³ dans ℝ³",
+    "ouvert de ℝ³",
+    "coordonnées explicites"
+  ],
+  "content_hash": "2d9348f0187d161081f8e4fcba6ade968ad827051851fe62aba809835852ff15",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:10:23.886Z"
+}

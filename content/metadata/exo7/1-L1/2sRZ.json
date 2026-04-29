@@ -1,0 +1,25 @@
+{
+  "uuid": "2sRZ",
+  "source_path": "exo7/1-L1/2sRZ.tex",
+  "summary": "Montrer qu'un entier relatif n vérifie l'une des trois propriétés suivantes : 8 divise n², ou 8 divise n²-1, ou 8 divise n²-4.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "congruences modulo 8",
+    "propriétés des carrés",
+    "entier relatif"
+  ],
+  "methods": [
+    "raisonnement par cas",
+    "analyse modulo 8",
+    "décomposition en facteurs"
+  ],
+  "objects": [
+    "entier relatif",
+    "carré d'entier",
+    "congruences"
+  ],
+  "content_hash": "f8b90d1a0ee08559a20953cc57428f57eeb0f96cc63d517a00ec3f3d1e50605c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:00:08.050Z"
+}

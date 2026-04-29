@@ -1,0 +1,26 @@
+{
+  "uuid": "13ds",
+  "source_path": "exo7/2-L1/13ds.tex",
+  "summary": "Calculer deux limites d'intégrales impliquant un paramètre tendant vers l'infini. La première intégrale fait intervenir une fonction exponentielle et une fonction rationnelle, la seconde une fonction continue et un terme polynomial dépendant du paramètre.",
+  "concepts": [
+    "intégrale dépendant d'un paramètre",
+    "limite d'intégrale",
+    "fonction continue",
+    "convergence uniforme",
+    "théorème de convergence dominée"
+  ],
+  "methods": [
+    "changement de variable",
+    "comparaison d'intégrales",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "intégrale impropre",
+    "fonction exponentielle",
+    "fonction polynomiale",
+    "fonction continue"
+  ],
+  "content_hash": "1b80cf12193867b549250ac7b824986d225f4cac090ff1984907321927a6e05f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:27:14.816Z"
+}

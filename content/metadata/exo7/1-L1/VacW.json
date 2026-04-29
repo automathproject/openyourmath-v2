@@ -1,0 +1,25 @@
+{
+  "uuid": "VacW",
+  "source_path": "exo7/1-L1/VacW.tex",
+  "summary": "L'exercice demande de vérifier une relation polynomiale impliquant une matrice A et l'identité I, puis d'exprimer An en fonction d'un polynôme Pn défini par des conditions spécifiques.",
+  "concepts": [
+    "polynôme annulateur",
+    "valeurs propres",
+    "matrice carrée",
+    "polynôme minimal",
+    "diagonalisation"
+  ],
+  "methods": [
+    "calcul matriciel",
+    "vérification d'identité polynomiale",
+    "interpolation polynomiale"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme de degré 2",
+    "puissance de matrice"
+  ],
+  "content_hash": "a471b94e84d3c01fac7a87fe206658e337943cbe922f182cacdf762d86a3647f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:02:10.261Z"
+}

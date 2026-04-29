@@ -1,0 +1,27 @@
+{
+  "uuid": "OTk2",
+  "source_path": "exo7/2-L1/OTk2.tex",
+  "summary": "On considère une fonction infiniment dérivable vérifiant des conditions sur ses dérivées en 0 et leur bornitude. On demande de montrer que cette fonction est identiquement nulle sur un intervalle centré en 0, puis sur tout ℝ.",
+  "concepts": [
+    "développement limité",
+    "formule de Taylor",
+    "fonction infiniment dérivable",
+    "dérivées successives",
+    "bornitude des dérivées",
+    "fonction nulle"
+  ],
+  "methods": [
+    "utilisation de la formule de Taylor",
+    "analyse des dérivées en un point",
+    "majoration des restes"
+  ],
+  "objects": [
+    "fonction de classe C^∞",
+    "dérivées successives",
+    "intervalle de nullité",
+    "fonction nulle"
+  ],
+  "content_hash": "ae65022832ada19543c213c1b4f3187072c2f3d932295c53f8639bd1519cbb69",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:29:55.159Z"
+}

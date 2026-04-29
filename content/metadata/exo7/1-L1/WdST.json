@@ -1,0 +1,30 @@
+{
+  "uuid": "WdST",
+  "source_path": "exo7/1-L1/WdST.tex",
+  "summary": "L'exercice demande de calculer les dimensions des espaces vectoriels F et G engendrés respectivement par des familles de vecteurs dans ℝ⁴, ainsi que les dimensions de leur intersection et de leur somme directe.",
+  "concepts": [
+    "espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "famille libre",
+    "famille génératrice",
+    "somme directe d'espaces vectoriels",
+    "intersection d'espaces vectoriels",
+    "inclusion d'espaces vectoriels"
+  ],
+  "methods": [
+    "calcul de la dimension d'un espace vectoriel engendré",
+    "vérification de l'indépendance linéaire",
+    "utilisation de la formule de dimension pour la somme directe",
+    "recherche d'une relation linéaire entre vecteurs"
+  ],
+  "objects": [
+    "vecteurs de ℝ⁴",
+    "espace vectoriel F",
+    "espace vectoriel G",
+    "intersection F ∩ G",
+    "somme directe F + G"
+  ],
+  "content_hash": "628dde012a16bb586b6f9a59e0d79b83a18f97d84a365f46321653a133da22a4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:55:34.348Z"
+}

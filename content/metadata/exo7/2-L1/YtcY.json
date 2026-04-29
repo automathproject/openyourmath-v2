@@ -1,0 +1,23 @@
+{
+  "uuid": "YtcY",
+  "source_path": "exo7/2-L1/YtcY.tex",
+  "summary": "On considère une fonction continue sur [0,1] à valeurs dans [a,b] avec a<0<b et d'intégrale nulle sur [0,1]. On demande de prouver une inégalité sur l'intégrale de son carré.",
+  "concepts": [
+    "intégrale d'une fonction continue",
+    "inégalité de Cauchy-Schwarz",
+    "fonction à valeurs dans un intervalle",
+    "intégrale sur un segment"
+  ],
+  "methods": [
+    "utilisation d'une inégalité classique",
+    "intégration de fonction composée"
+  ],
+  "objects": [
+    "fonction continue",
+    "intégrale de fonction",
+    "intervalle de valeurs"
+  ],
+  "content_hash": "aef0790cac20e6de2965d9cc3a999ff3782d8a85b7caedfcd3e49d92b93dabd1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:41:45.079Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "F3gh",
+  "source_path": "exo7/4-L2/F3gh.tex",
+  "summary": "L'exercice demande de démontrer par récurrence que le déterminant d'une matrice carrée avec des éléments diagonaux impairs et des éléments hors diagonale pairs est impair, puis d'en déduire l'inversibilité de cette matrice.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "récurrence",
+    "inversibilité",
+    "propriétés des nombres pairs et impairs"
+  ],
+  "methods": [
+    "récurrence",
+    "calcul de déterminant",
+    "analyse des propriétés des matrices"
+  ],
+  "objects": [
+    "matrice carrée",
+    "éléments diagonaux",
+    "éléments hors diagonale"
+  ],
+  "content_hash": "81707289201c13207a76499c543d87d6374107f4f667e29d9dfa11f3b811f261",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:40:52.677Z"
+}

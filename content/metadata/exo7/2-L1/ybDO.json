@@ -1,33 +1,29 @@
 {
   "uuid": "ybDO",
   "source_path": "exo7/2-L1/ybDO.tex",
-  "summary": "L'exercice demande de démontrer l'intégrabilité de la fonction f'² sur ℝ et d'établir une relation entre les intégrales de f'², f² et f''², en utilisant des techniques d'intégration par parties et des inégalités.",
+  "summary": "L'exercice demande de montrer l'intégrabilité de la dérivée seconde d'une fonction et d'établir une inégalité entre les intégrales de ses carrés. La fonction est de classe C² et vérifie certaines conditions d'intégrabilité.",
   "concepts": [
     "intégrale impropre",
-    "intégration par parties",
     "inégalité de Cauchy-Schwarz",
     "intégrabilité",
-    "fonction continue",
-    "famille liée",
-    "fonction hyperbolique",
-    "fonction trigonométrique"
+    "fonction de classe C²",
+    "limite de fonction",
+    "intégration par parties",
+    "inégalité de Cauchy-Schwarz"
   ],
   "methods": [
     "intégration par parties",
-    "utilisation d'inégalités",
-    "analyse de limites",
-    "raisonnement par l'absurde",
-    "application de l'inégalité de Cauchy-Schwarz"
+    "utilisation de l'inégalité de Cauchy-Schwarz",
+    "analyse des limites",
+    "utilisation de l'inégalité de Cauchy-Schwarz"
   ],
   "objects": [
-    "fonction f",
-    "fonction f'",
-    "fonction f''",
-    "fonction f'²",
-    "fonction f²",
-    "fonction ff'"
+    "fonction de classe C²",
+    "dérivée seconde",
+    "intégrale impropre",
+    "fonction intégrable"
   ],
-  "content_hash": "107c368c75297a621da944552b55057720570e8976c9a30886f3640d9d02b9ac",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:36:49.906Z"
+  "content_hash": "28fbd8beabd6eafb45665d387d97f1a7da22cdd1e0a4d70ea639c3ae4f75c1fe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:54:57.391Z"
 }

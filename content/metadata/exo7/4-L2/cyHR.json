@@ -1,0 +1,25 @@
+{
+  "uuid": "cyHR",
+  "source_path": "exo7/4-L2/cyHR.tex",
+  "summary": "On considère une matrice complexe dont les coefficients sont bornés en module par 1. On demande de prouver que le déterminant de cette matrice est aussi borné en module par 1.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "module d'un nombre complexe",
+    "propriété des coefficients d'une matrice",
+    "inégalité de Hadamard",
+    "matrice complexe"
+  ],
+  "methods": [
+    "bornage du déterminant",
+    "utilisation des propriétés des nombres complexes",
+    "application des inégalités matricielles"
+  ],
+  "objects": [
+    "matrice complexe",
+    "coefficient d'une matrice",
+    "déterminant"
+  ],
+  "content_hash": "3e5b9358f72a14709eeee354b69694a3b0f6ccedb30625b9ac7d628f3652e627",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:58:55.322Z"
+}

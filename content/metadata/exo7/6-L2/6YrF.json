@@ -1,0 +1,27 @@
+{
+  "uuid": "6YrF",
+  "source_path": "exo7/6-L2/6YrF.tex",
+  "summary": "L'exercice demande de construire géométriquement un point P à partir d'un cercle unité, d'un point A sur ce cercle, et d'un diamètre D perpendiculaire à OA. Pour un point M variable sur le cercle (hors A), on définit N comme l'intersection de D et de la droite AM, puis P tel que le vecteur AP soit égal au vecteur MN.",
+  "concepts": [
+    "cercle unité",
+    "diamètre",
+    "vecteurs",
+    "géométrie plane",
+    "construction géométrique",
+    "propriétés des angles"
+  ],
+  "methods": [
+    "construction de points par intersection",
+    "utilisation de vecteurs",
+    "analyse de configurations géométriques"
+  ],
+  "objects": [
+    "cercle",
+    "diamètre",
+    "points M, N, P",
+    "vecteurs AP et MN"
+  ],
+  "content_hash": "7099f5897be12a932392f6f9e50df73c902fc354f3894b809222c2326fc09815",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:42:44.582Z"
+}

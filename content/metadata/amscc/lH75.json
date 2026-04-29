@@ -1,0 +1,29 @@
+{
+  "uuid": "lH75",
+  "source_path": "amscc/lH75.tex",
+  "summary": "L'exercice demande de déterminer les points critiques d'une fonction polynomiale de deux variables, d'analyser leur nature (minimum, maximum, point selle) et d'étudier l'existence d'extremums globaux sur ℝ².",
+  "concepts": [
+    "fonction polynomiale",
+    "dérivées partielles",
+    "point critique",
+    "matrice hessienne",
+    "extremum local",
+    "extremum global",
+    "forme canonique"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "résolution de système linéaire",
+    "analyse de la matrice hessienne",
+    "écriture sous forme canonique"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "gradient",
+    "matrice hessienne",
+    "point critique"
+  ],
+  "content_hash": "54cf063173c1bef5eb7d97510acfe5875945a69bdd2911ac49d4eefaca94a6af",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:17:48.214Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "cYRu",
+  "source_path": "exo7/1-L1/cYRu.tex",
+  "summary": "L'exercice demande de calculer le nombre de façons de placer des parenthèses pour additionner n réels en ne faisant que des additions de deux nombres à chaque étape. Il s'agit de déterminer les valeurs initiales t₂, t₃, t₄ et de trouver une relation de récurrence pour la suite tₙ.",
+  "concepts": [
+    "suite récurrente",
+    "relation de récurrence",
+    "dénombrement",
+    "parenthésage",
+    "combinaatoire",
+    "arbre de récurrence"
+  ],
+  "methods": [
+    "calcul explicite",
+    "récurrence",
+    "décomposition en sous-problèmes"
+  ],
+  "objects": [
+    "suite numérique",
+    "nombre de parenthésages",
+    "somme de réels"
+  ],
+  "content_hash": "0b7b7fe506fe1a6b5873f2a10fdd39d8a44164d0512bc1feff6a42d2fe196d5d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:46:27.289Z"
+}

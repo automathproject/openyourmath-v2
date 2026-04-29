@@ -1,0 +1,25 @@
+{
+  "uuid": "j23n",
+  "source_path": "exo7/4-L2/j23n.tex",
+  "summary": "Calculer les déterminants de six matrices carrées de taille 3x3. Les matrices présentent des coefficients entiers et des structures variées.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "matrice carrée",
+    "calcul matriciel",
+    "propriétés des déterminants",
+    "développement par rapport à une ligne ou une colonne"
+  ],
+  "methods": [
+    "développement de Laplace",
+    "réduction par lignes",
+    "calcul direct"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "coefficient matriciel",
+    "déterminant"
+  ],
+  "content_hash": "bc97194210d26043b8a99b33dfdf4e6237799b16ea3725aaa4e902e52ce22bac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:05:43.633Z"
+}

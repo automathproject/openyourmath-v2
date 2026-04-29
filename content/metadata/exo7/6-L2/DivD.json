@@ -1,0 +1,26 @@
+{
+  "uuid": "DivD",
+  "source_path": "exo7/6-L2/DivD.tex",
+  "summary": "On considère une ellipse avec ses sommets A et A'. Pour un point M de l'ellipse, on construit les points P et P' d'intersection des tangentes en M avec les tangentes en A et A'. On doit prouver que le cercle de diamètre [P,P'] passe par les foyers de l'ellipse.",
+  "concepts": [
+    "ellipse",
+    "tangente à une conique",
+    "foyers d'une ellipse",
+    "propriété projective des coniques",
+    "cercle de diamètre"
+  ],
+  "methods": [
+    "utilisation des propriétés des tangentes",
+    "géométrie projective",
+    "construction de cercles"
+  ],
+  "objects": [
+    "ellipse",
+    "tangentes",
+    "foyers",
+    "cercle"
+  ],
+  "content_hash": "ebadc68107867f960195b43862d4b539bf6761642d57b3fe6fdd788e95871435",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:02:10.019Z"
+}

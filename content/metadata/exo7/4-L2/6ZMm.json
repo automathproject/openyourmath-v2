@@ -1,0 +1,28 @@
+{
+  "uuid": "6ZMm",
+  "source_path": "exo7/4-L2/6ZMm.tex",
+  "summary": "L'exercice demande de décomposer deux permutations de S10 en produits de cycles à supports disjoints, de calculer leur signature, leur ordre et une décomposition en produit de transpositions. Il s'agit ensuite de calculer les puissances 1998 de ces permutations.",
+  "concepts": [
+    "groupe symétrique",
+    "cycle à supports disjoints",
+    "signature d'une permutation",
+    "ordre d'une permutation",
+    "transposition",
+    "décomposition en cycles"
+  ],
+  "methods": [
+    "décomposition en cycles",
+    "calcul de l'ordre d'une permutation",
+    "calcul de la signature",
+    "calcul de puissances de permutations"
+  ],
+  "objects": [
+    "permutation",
+    "cycle",
+    "transposition",
+    "groupe symétrique S10"
+  ],
+  "content_hash": "4da46e8affb1d209ed6be828644be51a113f7cf3d79f8c17bb6acdd9ddc13d80",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:20:10.552Z"
+}

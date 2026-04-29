@@ -1,0 +1,28 @@
+{
+  "uuid": "ooGJ",
+  "source_path": "exo7/12-L3/ooGJ.tex",
+  "summary": "L'exercice demande de montrer l'existence d'un rayon α > 0 tel que toute matrice A de M_n(ℝ) vérifiant ||A - I|| < α possède une racine carrée dans l'espace des matrices.",
+  "concepts": [
+    "théorème d'inversion locale",
+    "difféomorphisme local",
+    "fonction différentiable",
+    "norme matricielle",
+    "racine carrée de matrice",
+    "continuité des applications linéaires"
+  ],
+  "methods": [
+    "linéarisation",
+    "application du théorème d'inversion locale",
+    "étude de la différentielle",
+    "analyse de la norme matricielle"
+  ],
+  "objects": [
+    "matrice carrée",
+    "application quadratique",
+    "norme de matrice",
+    "racine carrée matricielle"
+  ],
+  "content_hash": "b7abe751986d867043f2b4a866b5eec9f92fafca21a1dc12ade4110e1555b814",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:19:23.377Z"
+}

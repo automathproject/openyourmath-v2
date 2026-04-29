@@ -1,0 +1,25 @@
+{
+  "uuid": "hiSs",
+  "source_path": "exo7/1-L1/hiSs.tex",
+  "summary": "Soit deux matrices carrées A et B de taille n×n à coefficients complexes. On suppose que pour toute matrice X de même taille, le produit AXB est nul. Montrer que A ou B est la matrice nulle.",
+  "concepts": [
+    "matrice carrée",
+    "matrice nulle",
+    "produit de matrices",
+    "propriété universelle",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de matrices élémentaires",
+    "propriété de linéarité"
+  ],
+  "objects": [
+    "matrices A et B",
+    "matrice X",
+    "produit AXB"
+  ],
+  "content_hash": "68ea5664dbe01ac20bdd6dbff13185ad8d4311aad140a287f6fd0a6459c60e9f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:11:59.044Z"
+}

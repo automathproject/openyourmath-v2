@@ -1,0 +1,25 @@
+{
+  "uuid": "lhsg",
+  "source_path": "exo7/4-L2/lhsg.tex",
+  "summary": "L'exercice demande de déterminer le rang d'une matrice carrée d'ordre 3 dépendant d'un paramètre λ et, si le rang est inférieur à 3, d'exprimer une relation de dépendance linéaire entre ses lignes.",
+  "concepts": [
+    "rang d'une matrice",
+    "dépendance linéaire",
+    "matrice carrée",
+    "paramètre",
+    "système linéaire"
+  ],
+  "methods": [
+    "calcul du déterminant",
+    "réduction par combinaisons linéaires",
+    "analyse des cas particuliers"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "paramètre λ",
+    "relations de dépendance linéaire"
+  ],
+  "content_hash": "1684d80dfbf2a2871a08d624c6264ab569dc2399880e4fac9a3855b8d10eb9a5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:07:50.628Z"
+}

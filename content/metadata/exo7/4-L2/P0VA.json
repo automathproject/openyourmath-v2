@@ -1,0 +1,25 @@
+{
+  "uuid": "P0VA",
+  "source_path": "exo7/4-L2/P0VA.tex",
+  "summary": "L'exercice demande de développer un polynôme P(i+j) par la formule de Taylor, d'exprimer une matrice A comme produit de deux matrices, et d'en déduire son déterminant.",
+  "concepts": [
+    "développement de Taylor",
+    "déterminant d'une matrice",
+    "polynôme",
+    "matrice carrée",
+    "formule de Leibniz pour le déterminant"
+  ],
+  "methods": [
+    "développement en série de Taylor",
+    "factorisation de matrice",
+    "calcul de déterminant par blocs"
+  ],
+  "objects": [
+    "polynôme de degré n-1",
+    "matrice carrée de taille n",
+    "déterminant"
+  ],
+  "content_hash": "e6735ad6fb5754bca0c566ee0bb851a6784e7e0369afc40acc7c3a7419169864",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:48:18.545Z"
+}

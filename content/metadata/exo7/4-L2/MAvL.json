@@ -1,0 +1,22 @@
+{
+  "uuid": "MAvL",
+  "source_path": "exo7/4-L2/MAvL.tex",
+  "summary": "L'exercice demande de montrer que pour deux matrices carrées réelles commutant, le déterminant de la somme de leurs carrés est non négatif, puis de trouver un contre-exemple où cette propriété n'est pas vérifiée.",
+  "concepts": [
+    "commutativité des matrices",
+    "déterminant d'une matrice",
+    "matrices carrées réelles",
+    "propriétés des matrices"
+  ],
+  "methods": [
+    "calcul explicite de déterminant",
+    "construction de contre-exemple"
+  ],
+  "objects": [
+    "matrices 2x2",
+    "déterminant de somme de carrés de matrices"
+  ],
+  "content_hash": "4cb2666b685860742adbb147c733cef05e77d3ea34dee96a825e856b7d752eca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:46:26.648Z"
+}

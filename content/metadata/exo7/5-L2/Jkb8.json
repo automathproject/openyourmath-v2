@@ -1,0 +1,28 @@
+{
+  "uuid": "Jkb8",
+  "source_path": "exo7/5-L2/Jkb8.tex",
+  "summary": "Calcul de l'intégrale paramétrique $\\int_{0}^{+\\infty}e^{-t^2}\\ch(tx)\\;dt$ pour $x\\in\\mathbb{R}$ en utilisant le théorème de dérivation des intégrales à paramètres et une intégration par parties.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "théorème de dérivation des intégrales à paramètres",
+    "intégration par parties",
+    "fonction intégrable",
+    "croissances comparées",
+    "fonction de classe $C^1$"
+  ],
+  "methods": [
+    "dérivation sous le signe intégrale",
+    "intégration par parties",
+    "analyse des croissances comparées",
+    "résolution d'équation différentielle"
+  ],
+  "objects": [
+    "intégrale paramétrique",
+    "fonction exponentielle",
+    "fonction hyperbolique cosinus",
+    "fonction dérivée partielle"
+  ],
+  "content_hash": "27abaff4bb23ca8c8afa8e2a187935b51a34d13b1c047143931f41902b8f0425",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:33:24.950Z"
+}

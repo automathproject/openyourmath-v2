@@ -1,0 +1,24 @@
+{
+  "uuid": "d0zw",
+  "source_path": "exo7/6-L2/d0zw.tex",
+  "summary": "L'exercice demande de déterminer si l'isobarycentre de quatre points A, B, C, D d'un plan affine est le centre de gravité du triangle formé par A, B et le milieu I du segment [C, D].",
+  "concepts": [
+    "isobarycentre",
+    "centre de gravité",
+    "milieu d'un segment",
+    "géométrie affine",
+    "barycentre pondéré"
+  ],
+  "methods": [
+    "calcul de barycentre",
+    "utilisation des coordonnées barycentriques"
+  ],
+  "objects": [
+    "points d'un plan affine",
+    "segment",
+    "triangle"
+  ],
+  "content_hash": "be69df6652e414e977c64537f88e417886a8d15e2565b03df36c7ccdf5917a6b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:00:32.413Z"
+}

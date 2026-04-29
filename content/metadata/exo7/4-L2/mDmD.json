@@ -1,0 +1,29 @@
+{
+  "uuid": "mDmD",
+  "source_path": "exo7/4-L2/mDmD.tex",
+  "summary": "L'exercice demande de vérifier que l'application α_M définie par la trace d'une matrice est un élément de l'espace dual de l'espace des matrices carrées. Ensuite, il s'agit d'étudier l'injectivité et la surjectivité d'une application φ qui associe à une matrice sa forme linéaire α_M, et d'en déduire une caractérisation des formes linéaires sur cet espace.",
+  "concepts": [
+    "espace vectoriel",
+    "espace dual",
+    "forme linéaire",
+    "trace d'une matrice",
+    "injectivité",
+    "surjectivité",
+    "isomorphisme"
+  ],
+  "methods": [
+    "vérification de l'appartenance à l'espace dual",
+    "étude de l'injectivité",
+    "étude de la surjectivité",
+    "caractérisation des formes linéaires"
+  ],
+  "objects": [
+    "matrice carrée",
+    "application linéaire",
+    "forme linéaire",
+    "espace dual"
+  ],
+  "content_hash": "c75f17cd65e83ac1f6e41427c462e955e17b3bd3fcc769eddafbdfb836d697bd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:08:38.081Z"
+}

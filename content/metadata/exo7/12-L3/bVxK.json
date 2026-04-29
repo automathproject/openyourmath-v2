@@ -1,0 +1,32 @@
+{
+  "uuid": "bVxK",
+  "source_path": "exo7/12-L3/bVxK.tex",
+  "summary": "Calculer la différentielle d'une fonction g(x,y) définie comme la norme au carré de f(x,y)-a, où f est une application différentiable propre et à différentielle injective. Montrer que g atteint son minimum en un point x0 et en déduire la surjectivité de f.",
+  "concepts": [
+    "différentiabilité",
+    "propreté d'une application",
+    "injectivité",
+    "surjectivité",
+    "minimum global",
+    "continuité",
+    "compacité",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul de la différentielle",
+    "utilisation de la matrice jacobienne",
+    "analyse des dérivées partielles",
+    "argument de compacité",
+    "projection sur une base"
+  ],
+  "objects": [
+    "application différentiable",
+    "fonction scalaire",
+    "matrice jacobienne",
+    "point critique",
+    "base de ℝ²"
+  ],
+  "content_hash": "714198d9c491ca1b985d887925fb574e217032bf33899f935e2ee26cbcdbd581",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:28:07.830Z"
+}

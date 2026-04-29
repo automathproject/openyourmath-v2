@@ -1,0 +1,26 @@
+{
+  "uuid": "W7Yv",
+  "source_path": "exo7/4-L2/W7Yv.tex",
+  "summary": "L'exercice demande de montrer qu'une application de ℝ dans ℂ* est un homomorphisme de groupes, puis de déterminer son noyau et son image. On étudie aussi son injectivité.",
+  "concepts": [
+    "homomorphisme de groupes",
+    "noyau d'un morphisme",
+    "image d'un morphisme",
+    "injectivité",
+    "groupe multiplicatif des complexes",
+    "groupe additif des réels"
+  ],
+  "methods": [
+    "vérification de la compatibilité avec la loi de groupe",
+    "calcul du noyau",
+    "détermination de l'image"
+  ],
+  "objects": [
+    "application exponentielle complexe",
+    "groupe (ℝ, +)",
+    "groupe (ℂ*, ×)"
+  ],
+  "content_hash": "ae38ec1ccd57295a3e3a739552037a377e9b35725de2a5d5c6be27035b981b57",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:51:37.171Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "WIg3",
+  "source_path": "exo7/5-L2/WIg3.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des polynômes à coefficients réels de degré n avec des racines réelles simples est ouvert dans l'espace des polynômes de degré n, puis de prouver qu'une application associant à chaque polynôme de cet ensemble ses racines triées est de classe C^∞.",
+  "concepts": [
+    "espace vectoriel normé",
+    "topologie des espaces vectoriels",
+    "fonction de classe C^∞",
+    "racines réelles simples",
+    "polynôme à coefficients réels"
+  ],
+  "methods": [
+    "continuité",
+    "différentiabilité",
+    "dérivées partielles",
+    "analyse des racines"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "ensemble de polynômes",
+    "application des racines"
+  ],
+  "content_hash": "8c22165cb29aa2528a5aaf36eac4cf32ceefab18a2d0da75a7ca6d1b927b5d56",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:04:59.924Z"
+}

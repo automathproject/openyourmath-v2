@@ -1,0 +1,24 @@
+{
+  "uuid": "8CL0",
+  "source_path": "exo7/4-L2/8CL0.tex",
+  "summary": "Soit A une matrice orthogonale réelle. Montrer que tous ses coefficients sont bornés en valeur absolue par 1 et que la valeur absolue de la somme de ses coefficients est bornée par n.",
+  "concepts": [
+    "matrice orthogonale",
+    "propriétés des matrices orthogonales",
+    "bornes sur les coefficients",
+    "somme des coefficients"
+  ],
+  "methods": [
+    "utilisation des propriétés de l'orthogonalité",
+    "calcul de la norme des coefficients",
+    "estimation de la somme des coefficients"
+  ],
+  "objects": [
+    "matrice orthogonale",
+    "coefficients de matrice",
+    "somme des coefficients"
+  ],
+  "content_hash": "2b69a87c21a8d57bf87df219d9ddc203528c5acba8eae618c5a7a7a2df528570",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:48:29.050Z"
+}

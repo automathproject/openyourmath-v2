@@ -1,0 +1,30 @@
+{
+  "uuid": "TsmC",
+  "source_path": "exo7/6-L2/TsmC.tex",
+  "summary": "Dans un triangle équilatéral direct ABC, on construit des parallèles à ses côtés passant par un point P extérieur. L'exercice demande de prouver que certains quadrilatères formés sont inscriptibles, d'établir des égalités d'angles, et de déterminer une condition d'alignement des points U, V, W.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "triangle équilatéral direct",
+    "quadrilatère inscriptible",
+    "angles inscrits",
+    "parallélisme",
+    "condition d'alignement",
+    "relation de Chasles"
+  ],
+  "methods": [
+    "utilisation des angles orientés",
+    "propriétés des quadrilatères cycliques",
+    "parallélisme et égalité d'angles",
+    "condition nécessaire et suffisante"
+  ],
+  "objects": [
+    "triangle équilatéral ABC",
+    "point P extérieur",
+    "points U, V, W",
+    "quadrilatères APUW et PCVW",
+    "angles orientés"
+  ],
+  "content_hash": "3df0c794b9a2ed0d12aedeaf1a3b311c03e06cb1bed99e2ae5e119a4f117e4b8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:40:24.527Z"
+}

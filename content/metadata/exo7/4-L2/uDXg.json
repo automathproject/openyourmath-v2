@@ -1,0 +1,30 @@
+{
+  "uuid": "uDXg",
+  "source_path": "exo7/4-L2/uDXg.tex",
+  "summary": "Soit E un espace vectoriel réel de dimension quelconque, avec deux familles de vecteurs et une forme bilinéaire symétrique positive. Montrer une inégalité entre le carré du déterminant d'une matrice de produits scalaires et le produit de deux déterminants de matrices de produits scalaires.",
+  "concepts": [
+    "forme bilinéaire symétrique positive",
+    "déterminant de matrice",
+    "sous-espace vectoriel",
+    "projection orthogonale",
+    "valeurs propres",
+    "matrice symétrique positive"
+  ],
+  "methods": [
+    "décomposition de matrice",
+    "projection orthogonale",
+    "utilisation de valeurs propres",
+    "inversion de matrice",
+    "limite"
+  ],
+  "objects": [
+    "espace vectoriel réel",
+    "famille de vecteurs",
+    "matrice de produits scalaires",
+    "matrice carrée",
+    "matrice rectangulaire"
+  ],
+  "content_hash": "7f395219e2394d41a1ccca270f72ed1d8fbed9d15c31deb4d265915cb2e9bde7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:56:46.529Z"
+}

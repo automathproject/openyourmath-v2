@@ -1,0 +1,27 @@
+{
+  "uuid": "aQav",
+  "source_path": "exo7/4-L2/aQav.tex",
+  "summary": "L'exercice demande de démontrer que le produit cartésien ℤ × ℤ peut être muni d'une structure d'anneau et que l'ensemble des polynômes réels à une indéterminée ℝ[X] forme un anneau, avec un idéal particulier associé à une valeur réelle a.",
+  "concepts": [
+    "structure d'anneau",
+    "produit cartésien",
+    "polynôme à coefficients réels",
+    "idéal d'un anneau",
+    "lois de composition interne",
+    "élément neutre",
+    "opposé"
+  ],
+  "methods": [
+    "définition des lois de composition",
+    "vérification des axiomes d'anneau",
+    "construction d'un idéal"
+  ],
+  "objects": [
+    "ℤ × ℤ",
+    "ℝ[X]",
+    "idéal I_a"
+  ],
+  "content_hash": "4de4d8ddb4998f68f40d417e16f8b135058b5f0596d8482c17c28d213ee36fee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:57:41.308Z"
+}

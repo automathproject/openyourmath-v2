@@ -1,0 +1,28 @@
+{
+  "uuid": "mrlN",
+  "source_path": "exo7/5-L2/mrlN.tex",
+  "summary": "L'exercice demande de montrer que la convolution de deux fonctions continues et T-périodiques est définie, continue et T-périodique, puis de prouver la commutativité de cette opération.",
+  "concepts": [
+    "intégrale dépendant d'un paramètre",
+    "continuité uniforme",
+    "périodicité",
+    "théorème de continuité des intégrales à paramètres",
+    "loi interne",
+    "commutativité"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration par parties",
+    "majoration",
+    "périodisation"
+  ],
+  "objects": [
+    "fonction continue",
+    "fonction périodique",
+    "convolution",
+    "espace vectoriel de fonctions"
+  ],
+  "content_hash": "5228b62015cfeac3dd63a643e54a70a138a845c44b0711780b703a8ff229f9f5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:48:06.800Z"
+}

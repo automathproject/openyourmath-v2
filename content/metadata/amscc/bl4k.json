@@ -1,0 +1,25 @@
+{
+  "uuid": "bl4k",
+  "source_path": "amscc/bl4k.tex",
+  "summary": "Calcul des déterminants de deux matrices carrées de tailles différentes en utilisant des opérations sur les lignes ou les colonnes pour les simplifier.",
+  "concepts": [
+    "déterminant",
+    "opérations élémentaires sur les lignes",
+    "opérations élémentaires sur les colonnes",
+    "matrice triangulaire",
+    "propriétés multiplicatives du déterminant"
+  ],
+  "methods": [
+    "réduction par opérations sur les lignes",
+    "réduction par opérations sur les colonnes",
+    "développement par blocs"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "matrice 5x5",
+    "déterminant"
+  ],
+  "content_hash": "06dcc9e1488e426528f76709d6cb67e333a1482e2722f7779e7f51424f63fc66",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:58:27.390Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "Jp3l",
+  "source_path": "exo7/15-L3/Jp3l.tex",
+  "summary": "On considère l'espace métrique des fonctions continues sur [0,1] muni de la distance uniforme. On doit montrer que l'application qui à une fonction associe son maximum sur [0,1] est 1-lipschitzienne.",
+  "concepts": [
+    "espace métrique",
+    "distance uniforme",
+    "application lipschitzienne",
+    "fonction continue",
+    "maximum d'une fonction"
+  ],
+  "methods": [
+    "étude de la lipschitzianité",
+    "utilisation de la définition de la distance uniforme"
+  ],
+  "objects": [
+    "espace de fonctions continues",
+    "application maximum",
+    "distance uniforme"
+  ],
+  "content_hash": "9036e5304c8f610df125f2c72a8def1870f686d2795ab526e395a4903cc7caef",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:24:34.501Z"
+}

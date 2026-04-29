@@ -1,0 +1,25 @@
+{
+  "uuid": "exrn",
+  "source_path": "exo7/4-L2/exrn.tex",
+  "summary": "L'exercice étudie le rang d'une matrice carrée 4x4 dépendant d'un paramètre réel a, puis analyse la compatibilité et la résolution d'un système linéaire associé. Le système est de Cramer pour certaines valeurs de a.",
+  "concepts": [
+    "rang d'une matrice",
+    "système linéaire",
+    "système de Cramer",
+    "compatibilité d'un système",
+    "déterminant d'une matrice"
+  ],
+  "methods": [
+    "calcul du rang",
+    "analyse de la compatibilité",
+    "résolution par les formules de Cramer"
+  ],
+  "objects": [
+    "matrice carrée 4x4",
+    "système linéaire homogène",
+    "déterminant"
+  ],
+  "content_hash": "bab80bf9936ac14b94f766cf8ba7bc85eceb96a623640c4a4519a17db809e077",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:00:59.782Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "QDHm",
+  "source_path": "exo7/16-L3/QDHm.tex",
+  "summary": "On considère une fonction holomorphe f sur un ouvert Ω, avec u et v ses parties réelle et imaginaire. On suppose que les dérivées partielles secondes de u et v existent et sont continues sur Ω. On demande de montrer que u (et v) est harmonique.",
+  "concepts": [
+    "fonction holomorphe",
+    "partie réelle et imaginaire d'une fonction",
+    "dérivées partielles secondes",
+    "fonction harmonique",
+    "équation de Laplace"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "application des conditions de Cauchy-Riemann",
+    "vérification de l'équation de Laplace"
+  ],
+  "objects": [
+    "fonction holomorphe",
+    "partie réelle d'une fonction",
+    "partie imaginaire d'une fonction",
+    "dérivées partielles secondes"
+  ],
+  "content_hash": "3834753eeae4cea6360293c38a8bcfcd7781b096596a3aa63a74fd79e7c617a1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:34:34.773Z"
+}

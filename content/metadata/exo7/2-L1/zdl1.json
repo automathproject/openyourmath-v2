@@ -1,0 +1,25 @@
+{
+  "uuid": "zdl1",
+  "source_path": "exo7/2-L1/zdl1.tex",
+  "summary": "On considère une fonction dérivable à l'ordre n et on définit une nouvelle fonction g(x) = f(x²). L'exercice demande de montrer l'existence de coefficients a_{n,k} vérifiant une relation de récurrence et de les calculer explicitement.",
+  "concepts": [
+    "fonction dérivable à l'ordre n",
+    "relation de récurrence",
+    "développement par dérivées successives",
+    "coefficient binomial",
+    "formule de Leibniz pour la dérivée d'une fonction composée"
+  ],
+  "methods": [
+    "développement en série de Taylor",
+    "calcul de dérivées successives",
+    "résolution de relation de récurrence linéaire"
+  ],
+  "objects": [
+    "fonction composée",
+    "dérivées successives",
+    "coefficient a_{n,k}"
+  ],
+  "content_hash": "20d18a1f7073ac1c8ea1ab5b7044129f61bf766e05c4756257189f502faa2f1c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:25:46.809Z"
+}

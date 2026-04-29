@@ -1,0 +1,28 @@
+{
+  "uuid": "e2zP",
+  "source_path": "exo7/14-L3/e2zP.tex",
+  "summary": "L'exercice demande de démontrer l'inclusion stricte des espaces L^p dans les espaces L^q pour q < p, en utilisant des exemples de fonctions spécifiques dans le cas de la boule unité de R^n.",
+  "concepts": [
+    "espace L^p",
+    "mesure de Lebesgue",
+    "inclusion d'espaces",
+    "inégalité de Hölder",
+    "fonction intégrable",
+    "norme L^p"
+  ],
+  "methods": [
+    "découpage d'intégrale",
+    "application de l'inégalité de Hölder",
+    "analyse de convergence d'intégrales",
+    "comparaison de normes"
+  ],
+  "objects": [
+    "boule unité de R^n",
+    "fonction f_α(x) = |x|^(-α)",
+    "espace L^p(Ω)",
+    "espace L^q(Ω)"
+  ],
+  "content_hash": "08dc728c9c4ab6fdc6518f43629838c56e41efda5cb415bd271da699f96d7b25",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:55:40.715Z"
+}

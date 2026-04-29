@@ -1,0 +1,24 @@
+{
+  "uuid": "BqDh",
+  "source_path": "exo7/1-L1/BqDh.tex",
+  "summary": "Démontrer la relation de récurrence sur les coefficients binomiaux C_n^p = C_{n-1}^p + C_{n-1}^{p-1} pour 1 ≤ p ≤ n-1.",
+  "concepts": [
+    "coefficient binomial",
+    "relation de récurrence",
+    "combinaisons",
+    "binôme de Newton",
+    "dénombrement"
+  ],
+  "methods": [
+    "raisonnement combinatoire",
+    "définition des coefficients binomiaux",
+    "récurrence"
+  ],
+  "objects": [
+    "coefficient binomial",
+    "combinaisons"
+  ],
+  "content_hash": "1432585b653367d332ea1a5f5c93268a9463f0513209641d2da743f1363e2a58",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:39:01.101Z"
+}

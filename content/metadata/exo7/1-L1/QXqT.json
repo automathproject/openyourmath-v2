@@ -1,0 +1,27 @@
+{
+  "uuid": "QXqT",
+  "source_path": "exo7/1-L1/QXqT.tex",
+  "summary": "Calcul de deux sommes impliquant des coefficients binomiaux. La première somme porte sur k multiplié par le coefficient binomial C_n^k, et la seconde sur le coefficient binomial divisé par k+1.",
+  "concepts": [
+    "coefficient binomial",
+    "binôme de Newton",
+    "combinaisons",
+    "somme discrète",
+    "formule de récurrence",
+    "identités combinatoires"
+  ],
+  "methods": [
+    "identités sur les coefficients binomiaux",
+    "changement d'indice",
+    "téléscopage",
+    "utilisation de la formule du binôme"
+  ],
+  "objects": [
+    "coefficient binomial C_n^k",
+    "somme discrète",
+    "indice k"
+  ],
+  "content_hash": "c1e97ede0eb90ef8c8b521c84c3ae2244210e33fde22c9cc449f06572a51f45d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:43:32.281Z"
+}

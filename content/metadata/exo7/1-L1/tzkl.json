@@ -1,0 +1,24 @@
+{
+  "uuid": "tzkl",
+  "source_path": "exo7/1-L1/tzkl.tex",
+  "summary": "Démontrer par récurrence que la factorielle d'un entier naturel k divise le produit de k entiers consécutifs.",
+  "concepts": [
+    "principe de récurrence",
+    "factorielle",
+    "divisibilité",
+    "entiers naturels",
+    "propriété universelle"
+  ],
+  "methods": [
+    "récurrence forte",
+    "initialisation",
+    "hérédité"
+  ],
+  "objects": [
+    "factorielle",
+    "produit d'entiers consécutifs"
+  ],
+  "content_hash": "73d5855a517823457e106fe0eb26cf7262cf06d14bfb59714e775f51059876a3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:30:07.555Z"
+}

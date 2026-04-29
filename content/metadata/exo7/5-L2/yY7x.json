@@ -1,0 +1,29 @@
+{
+  "uuid": "yY7x",
+  "source_path": "exo7/5-L2/yY7x.tex",
+  "summary": "On considère une fonction u définie sur un ouvert borné Ω de ℝ², continue sur son adhérence et de classe C² sur Ω. L'exercice demande de montrer que si le laplacien de u est strictement positif, alors le maximum de u sur l'adhérence de Ω est atteint sur le bord de Ω. On généralise ensuite le résultat au cas où le laplacien est seulement non négatif, puis on applique ce résultat à un anneau pour obtenir une inégalité de type moyenne logarithmique.",
+  "concepts": [
+    "laplacien",
+    "maximum d'une fonction",
+    "fonction harmonique",
+    "principe du maximum",
+    "fonction de classe C²",
+    "inégalité de moyenne logarithmique"
+  ],
+  "methods": [
+    "construction de fonction auxiliaire",
+    "passage à la limite",
+    "utilisation du principe du maximum",
+    "approximation par des fonctions strictement sous-harmoniques"
+  ],
+  "objects": [
+    "fonction de plusieurs variables",
+    "ouvert borné de ℝ²",
+    "laplacien",
+    "maximum sur un ensemble",
+    "fonction logarithmique"
+  ],
+  "content_hash": "ef0910fd152dacd573c2ebf970d9f1adea05d629dfb850081bcb443067091cf7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:26:19.706Z"
+}

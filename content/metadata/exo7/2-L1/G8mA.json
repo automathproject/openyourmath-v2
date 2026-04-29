@@ -1,0 +1,28 @@
+{
+  "uuid": "G8mA",
+  "source_path": "exo7/2-L1/G8mA.tex",
+  "summary": "On considère une fonction de classe C¹ sur ℝ dont la limite en +∞ de la somme de la fonction et de sa dérivée est nulle. On demande de montrer que la fonction et sa dérivée tendent vers 0 en +∞.",
+  "concepts": [
+    "limite de fonction",
+    "dérivabilité",
+    "fonction de classe C¹",
+    "intégration",
+    "inégalité",
+    "limite d'une suite"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration",
+    "encadrement",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction réelle",
+    "dérivée",
+    "fonction exponentielle",
+    "intégrale"
+  ],
+  "content_hash": "3f5a632b49d02e21eb6a9a6d41ca19099fbfe90bde71f71d1e0a445b74b780bc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:01:51.050Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "eVaz",
+  "source_path": "exo7/10-L3/eVaz.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble des multiples de 5 dans l'anneau Z/10Z forme un anneau isomorphe à Z/2Z, tout en montrant que cet ensemble n'est pas un sous-anneau de Z/10Z.",
+  "concepts": [
+    "anneau quotient",
+    "isomorphisme d'anneaux",
+    "sous-anneau",
+    "structure d'anneau",
+    "homomorphisme d'anneaux",
+    "théorème d'isomorphisme"
+  ],
+  "methods": [
+    "construction explicite d'isomorphisme",
+    "vérification des propriétés d'anneau",
+    "analyse de la structure de sous-ensemble"
+  ],
+  "objects": [
+    "Z/10Z",
+    "Z/2Z",
+    "multiples de 5 dans Z/10Z"
+  ],
+  "content_hash": "50c377c30839390311903742a98e1f521a1695eebde527670f933bedcc0560b7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:50:00.444Z"
+}

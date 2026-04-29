@@ -1,0 +1,23 @@
+{
+  "uuid": "MO1t",
+  "source_path": "exo7/2-L1/MO1t.tex",
+  "summary": "L'exercice définit une fonction f qui échange les deux premières décimales d'un nombre réel dans l'intervalle [0,1] et demande de montrer que cette fonction est continue par morceaux, puis de calculer son intégrale sur [0,1].",
+  "concepts": [
+    "fonction définie sur un intervalle",
+    "continuité par morceaux",
+    "intégrale de Riemann",
+    "fonction à valeurs réelles"
+  ],
+  "methods": [
+    "étude de la continuité par morceaux",
+    "calcul d'intégrale"
+  ],
+  "objects": [
+    "fonction f",
+    "intervalle [0,1]",
+    "nombre réel"
+  ],
+  "content_hash": "7a8be572b1a7a91364b1ffd91f07c807925579516953be435efbe6b86ec56d80",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:36:26.886Z"
+}

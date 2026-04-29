@@ -1,0 +1,25 @@
+{
+  "uuid": "47vV",
+  "source_path": "exo7/1-L1/47vV.tex",
+  "summary": "L'exercice demande de prouver qu'un entier construit comme le produit de nombres premiers plus un n'est divisible par aucun de ces nombres premiers, puis d'utiliser ce résultat pour démontrer par l'absurde l'infinitude des nombres premiers.",
+  "concepts": [
+    "raisonnement par contraposition",
+    "raisonnement par l'absurde",
+    "nombres premiers",
+    "divisibilité",
+    "infinitude des nombres premiers"
+  ],
+  "methods": [
+    "contraposition",
+    "raisonnement par l'absurde",
+    "construction d'un entier spécifique"
+  ],
+  "objects": [
+    "nombres premiers",
+    "entier N",
+    "produit de nombres premiers"
+  ],
+  "content_hash": "e0e95ad4d0460e21d8daee42b116a331d2c48c9e40fd8d3ddb51350c62cb9c5a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:04:07.652Z"
+}

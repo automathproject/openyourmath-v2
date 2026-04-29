@@ -1,28 +1,28 @@
 {
   "uuid": "PMwZ",
   "source_path": "exo7/2-L1/PMwZ.tex",
-  "summary": "L'exercice étudie l'intégrabilité d'une fonction de la forme $f(x) = \\frac{1}{x^a \\ln^b x}$ sur l'intervalle $[2, +\\infty[$. Il demande de déterminer les conditions sur les paramètres $a$ et $b$ pour que l'intégrale impropre converge.",
+  "summary": "Étudier l'existence de quatre intégrales impropres en déterminant les conditions sur les paramètres réels a et b pour lesquelles ces intégrales convergent.",
   "concepts": [
     "intégrale impropre",
-    "croissances comparées",
+    "convergence d'intégrale",
+    "théorèmes de croissances comparées",
+    "changement de variable",
     "intégrabilité",
-    "changement de variable",
-    "comportement asymptotique",
-    "théorème de comparaison"
-  ],
-  "methods": [
-    "comparaison de fonctions",
-    "changement de variable",
-    "étude de limites",
-    "intégration par parties"
-  ],
-  "objects": [
-    "fonction rationnelle",
-    "intégrale impropre",
-    "paramètres réels",
     "comportement asymptotique"
   ],
-  "content_hash": "e78d8510c5b1d58fe209572705a0f9f71df40b43a793416712c922f3e10e7b07",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:32:48.578Z"
+  "methods": [
+    "analyse de comportement asymptotique",
+    "changement de variable",
+    "comparaison de fonctions",
+    "étude de limites"
+  ],
+  "objects": [
+    "intégrale de Bertrand",
+    "fonction trigonométrique",
+    "fonction exponentielle",
+    "fonction rationnelle"
+  ],
+  "content_hash": "c3e20fc3675874891749f7a581341860613a594b66e9596be218884d147cd905",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:38:03.299Z"
 }

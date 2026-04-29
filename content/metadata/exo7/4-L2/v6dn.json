@@ -1,0 +1,28 @@
+{
+  "uuid": "v6dn",
+  "source_path": "exo7/4-L2/v6dn.tex",
+  "summary": "Soient A et B deux matrices carrées réelles symétriques positives. Montrer que det(A) + det(B) ≤ det(A+B).",
+  "concepts": [
+    "matrice symétrique",
+    "matrice définie positive",
+    "valeurs propres",
+    "déterminant",
+    "produit de matrices",
+    "espace vectoriel"
+  ],
+  "methods": [
+    "diagonalisation",
+    "changement de base",
+    "utilisation de la factorisation de Cholesky",
+    "inégalité de Minkowski pour les déterminants"
+  ],
+  "objects": [
+    "matrices symétriques réelles positives",
+    "déterminant de matrice",
+    "valeurs propres",
+    "matrice identité"
+  ],
+  "content_hash": "1bea49c8769ee5975e07143ca14a8cab376762f10c957a413574180196cd7945",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:57:50.663Z"
+}

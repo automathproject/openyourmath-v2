@@ -1,0 +1,26 @@
+{
+  "uuid": "MOkD",
+  "source_path": "exo7/2-L1/MOkD.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'un point c dans l'intervalle ]a,b[ où la n-ième dérivée d'une fonction f s'annule, sous deux conditions distinctes : d'abord lorsque f s'annule en n+1 points distincts, puis lorsque f et ses dérivées successives jusqu'à l'ordre n-1 s'annulent aux extrémités de l'intervalle.",
+  "concepts": [
+    "théorème de Rolle",
+    "dérivabilité",
+    "fonction n fois dérivable",
+    "annulation de dérivées",
+    "théorème des accroissements finis"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "application du théorème de Rolle",
+    "utilisation des dérivées successives"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "dérivée n-ième",
+    "intervalle [a,b]",
+    "point d'annulation"
+  ],
+  "content_hash": "d061eb706897d00d3b1c8c8cc6507edd2444540169a49d9d606d6e490d804c4b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:05:54.649Z"
+}

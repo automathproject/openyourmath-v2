@@ -1,0 +1,26 @@
+{
+  "uuid": "02L2",
+  "source_path": "exo7/15-L3/02L2.tex",
+  "summary": "L'exercice demande de démontrer qu'un sous-ensemble A d'un produit d'espaces métriques est compact si et seulement si A est fermé et ses projections sur chaque facteur sont compactes.",
+  "concepts": [
+    "compacité",
+    "espace métrique",
+    "produit d'espaces métriques",
+    "projection",
+    "fermeture d'un ensemble",
+    "théorème de Tychonoff"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "utilisation des propriétés des projections",
+    "application des critères de compacité"
+  ],
+  "objects": [
+    "produit d'espaces métriques",
+    "sous-ensemble compact",
+    "projections"
+  ],
+  "content_hash": "8eb1fe6aea4ca83b906497995e71486632564948a27ee33757246cdfd9847d08",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:55:53.788Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "mMIV",
+  "source_path": "exo7/4-L2/mMIV.tex",
+  "summary": "Calculer le rang de deux matrices carrées 3x3 dépendant d'un paramètre réel t. Les matrices M_t et N_t sont données avec des éléments dépendant de t.",
+  "concepts": [
+    "rang d'une matrice",
+    "matrice carrée",
+    "paramètre réel",
+    "déterminant",
+    "sous-matrice"
+  ],
+  "methods": [
+    "développement de Laplace",
+    "calcul de déterminant",
+    "analyse de sous-matrices"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "paramètre réel t",
+    "sous-matrices 2x2"
+  ],
+  "content_hash": "b4eda9e226934a21b3cc9e60ad40f3efe7dff4834027feb2589298f733b3bf77",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:08:48.346Z"
+}

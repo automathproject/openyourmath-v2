@@ -1,0 +1,31 @@
+{
+  "uuid": "S8kg",
+  "source_path": "amscc/S8kg.tex",
+  "summary": "L'exercice demande de déterminer la courbe de niveau 0 d'une fonction de deux variables, de vérifier sa continuité en un point, d'étudier l'existence et le calcul de ses dérivées partielles en ce point, et d'examiner sa différentiabilité et sa régularité de classe C^1 en ce point.",
+  "concepts": [
+    "fonction de deux variables",
+    "courbe de niveau",
+    "continuité",
+    "dérivées partielles",
+    "différentiabilité",
+    "classe C^1",
+    "coordonnées polaires"
+  ],
+  "methods": [
+    "résolution d'équation",
+    "passage en coordonnées polaires",
+    "calcul de limite",
+    "définition des dérivées partielles",
+    "test de différentiabilité"
+  ],
+  "objects": [
+    "fonction définie par morceaux",
+    "point critique",
+    "dérivées partielles",
+    "approximation linéaire",
+    "taux d'accroissement"
+  ],
+  "content_hash": "04b1ec90da716266c98a41919fc68e9e0bc6f0f79931004fbff2983e1940beee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:02:24.221Z"
+}

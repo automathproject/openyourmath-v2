@@ -1,0 +1,26 @@
+{
+  "uuid": "SIeP",
+  "source_path": "exo7/4-L2/SIeP.tex",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité d'une factorisation triangulaire supérieure pour une matrice symétrique définie positive, puis d'en déduire une inégalité sur son déterminant.",
+  "concepts": [
+    "matrice symétrique",
+    "matrice définie positive",
+    "factorisation de Cholesky",
+    "déterminant",
+    "matrice triangulaire supérieure",
+    "unicité"
+  ],
+  "methods": [
+    "factorisation triangulaire",
+    "détermination des coefficients diagonaux",
+    "comparaison terme à terme"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "matrice triangulaire supérieure",
+    "déterminant"
+  ],
+  "content_hash": "d30b2b254f586c27704aa07c6c589bb816409a9bb8902abe98ff1ba057775b72",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:25:01.724Z"
+}

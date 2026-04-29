@@ -1,0 +1,28 @@
+{
+  "uuid": "YHNn",
+  "source_path": "exo7/4-L2/YHNn.tex",
+  "summary": "Soit une matrice réelle symétrique représentant une forme quadratique. On suppose que tous ses mineurs principaux sont non nuls. Montrer que la signature de la forme quadratique est déterminée par le nombre de changements de signe dans la suite des mineurs principaux.",
+  "concepts": [
+    "forme quadratique",
+    "matrice symétrique",
+    "mineurs principaux",
+    "signature d'une forme quadratique",
+    "déterminant",
+    "base orthogonale",
+    "récurrence"
+  ],
+  "methods": [
+    "récurrence",
+    "construction de base orthogonale",
+    "calcul de déterminants"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "mineurs principaux",
+    "forme quadratique",
+    "base orthogonale"
+  ],
+  "content_hash": "f889d58da452f94b7680bd21ea60949d68727bd03be51617a48e066746924d07",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:34:17.319Z"
+}

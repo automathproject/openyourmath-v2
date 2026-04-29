@@ -1,0 +1,27 @@
+{
+  "uuid": "iui9",
+  "source_path": "exo7/5-L2/iui9.tex",
+  "summary": "L'exercice demande de montrer la continuité et la différentiabilité d'une application T définie sur un espace de fonctions continues, en utilisant une norme basée sur l'intégrale du carré de la fonction.",
+  "concepts": [
+    "continuité d'une application",
+    "différentiabilité",
+    "norme sur un espace de fonctions",
+    "intégrale de fonctions continues",
+    "développement de Taylor d'ordre 2",
+    "inégalité de Lipschitz"
+  ],
+  "methods": [
+    "estimation d'erreur de développement de Taylor",
+    "utilisation de l'inégalité de Cauchy-Schwarz",
+    "calcul de la différentielle"
+  ],
+  "objects": [
+    "espace de fonctions continues",
+    "norme L2",
+    "application T",
+    "fonction φ de classe C²"
+  ],
+  "content_hash": "ce24def73a6ef32f25f44f51145d68fcde9057e1430ed3208a96bfad882b7fc2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:14:32.965Z"
+}

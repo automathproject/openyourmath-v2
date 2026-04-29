@@ -1,0 +1,28 @@
+{
+  "uuid": "va1U",
+  "source_path": "exo7/1-L1/va1U.tex",
+  "summary": "L'exercice demande d'exprimer les polynômes 1, X et X² comme combinaisons linéaires de P₀, P₁ et P₂, puis de calculer les dimensions des sous-espaces vectoriels F et G engendrés respectivement par {P₀, P₁} et {P₂, P₃}. Il faut aussi vérifier la relation de dimension pour la somme et l'intersection de ces sous-espaces.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "somme de sous-espaces vectoriels",
+    "intersection de sous-espaces vectoriels",
+    "combinaison linéaire",
+    "base d'un espace vectoriel",
+    "relation de Grassmann"
+  ],
+  "methods": [
+    "calcul de dimension",
+    "expression de polynômes en base",
+    "vérification de la relation de Grassmann"
+  ],
+  "objects": [
+    "polynômes de degré 2",
+    "sous-espaces vectoriels F et G",
+    "somme F+G",
+    "intersection F∩G"
+  ],
+  "content_hash": "33a2ed3376d1e968618dde84dcd9ce4e043b60db53acf0c5366453576f16a647",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:13:01.949Z"
+}

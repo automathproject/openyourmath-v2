@@ -1,0 +1,25 @@
+{
+  "uuid": "8uGz",
+  "source_path": "exo7/1-L1/8uGz.tex",
+  "summary": "L'exercice demande d'examiner la validité d'un critère de divisibilité par 7 présenté dans un ancien texte. Le critère consiste à séparer un nombre en unités et dizaines, puis à calculer la différence entre le double des unités et les dizaines, en répétant l'opération jusqu'à obtenir zéro ou sept.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "critère de divisibilité",
+    "algorithme de divisibilité",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "décomposition en unités et dizaines",
+    "itération d'une opération arithmétique",
+    "vérification de la divisibilité"
+  ],
+  "objects": [
+    "nombre entier",
+    "critère de divisibilité",
+    "algorithme de réduction"
+  ],
+  "content_hash": "6543fbac9d79038d551065719a724ca2c095ae62bf43fcbf1d210d9586f77589",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:02:05.647Z"
+}

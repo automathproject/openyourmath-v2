@@ -1,0 +1,29 @@
+{
+  "uuid": "1p4e",
+  "source_path": "exo7/15-L3/1p4e.tex",
+  "summary": "L'exercice demande de définir une norme sur un sous-espace de dimension finie B d'un espace de Banach E, où A est un sous-espace fermé tel que A ∩ B = {0}. Il s'agit ensuite de déduire une inégalité de séparation et de montrer que la somme directe A ⊕ B est fermée.",
+  "concepts": [
+    "espace de Banach",
+    "sous-espace fermé",
+    "dimension finie",
+    "somme directe",
+    "norme",
+    "distance à un sous-espace",
+    "inégalité de séparation"
+  ],
+  "methods": [
+    "définition de norme",
+    "utilisation de la distance à un sous-espace",
+    "preuve d'inégalité",
+    "démonstration de fermeture"
+  ],
+  "objects": [
+    "sous-espace A",
+    "sous-espace B",
+    "somme directe A ⊕ B",
+    "norme [.] sur B"
+  ],
+  "content_hash": "15bb878a25e11edde51b350d469904bbc01b8d46a346495cbac8ee44e584323c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:07:54.607Z"
+}

@@ -1,29 +1,29 @@
 {
   "uuid": "Lxda",
   "source_path": "exo7/6-L2/Lxda.tex",
-  "summary": "L'exercice demande d'étudier l'ensemble des points $(x, y)$ tels que $P(x) = P(y)$ où $P$ est un polynôme cubique donné. Il s'agit de déterminer la nature géométrique de cet ensemble, en particulier de montrer qu'il s'agit d'une ellipse sous certaines conditions.",
+  "summary": "L'exercice demande de montrer que l'équation P(x) = P(y) pour un polynôme cubique P à coefficients réels représente généralement la réunion d'une droite et d'une ellipse d'excentricité fixe dans un repère orthonormé.",
   "concepts": [
-    "équation cartésienne de conique",
+    "polynôme de degré 3",
+    "courbe algébrique",
+    "droite affine",
+    "ellipse",
+    "excentricité",
     "changement de repère",
-    "forme canonique d'ellipse",
-    "excentricité d'une ellipse",
-    "discriminant de conique",
-    "transformation affine"
+    "équation cartésienne de conique"
   ],
   "methods": [
-    "factorisation de polynôme",
+    "factorisation",
     "changement de variable",
-    "réduction de forme quadratique",
+    "réduction d'équation",
     "calcul d'excentricité"
   ],
   "objects": [
     "polynôme cubique",
-    "courbe algébrique",
-    "ellipse",
-    "droite",
-    "repère orthonormé"
+    "courbe d'équation P(x) = P(y)",
+    "droite y = x",
+    "ellipse dans un repère orthonormé"
   ],
-  "content_hash": "92a6b9d20fd49188c917912e557b63aaf70426810eda45d765951b8eb84fba92",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:39:54.131Z"
+  "content_hash": "47f588908f65a840ad0171234898ed8aced6433722fde981a87e95b29cad1139",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:03:39.180Z"
 }

@@ -1,0 +1,28 @@
+{
+  "uuid": "xAng",
+  "source_path": "exo7/4-L2/xAng.tex",
+  "summary": "L'exercice demande de démontrer que l'application définie par la trace de la transposée d'une matrice multipliée par une autre est un produit scalaire sur l'espace des matrices carrées réelles. Ensuite, il faut montrer que la norme associée satisfait l'inégalité de submultiplicité et établir une inégalité liant la trace d'une matrice à sa norme.",
+  "concepts": [
+    "produit scalaire",
+    "norme submultiplicative",
+    "trace d'une matrice",
+    "inégalité de Cauchy-Schwarz",
+    "espace vectoriel normé",
+    "matrice carrée réelle"
+  ],
+  "methods": [
+    "définition de produit scalaire",
+    "calcul de trace",
+    "inégalité de submultiplicité",
+    "majoration de trace par norme"
+  ],
+  "objects": [
+    "matrice carrée réelle",
+    "produit scalaire",
+    "norme associée",
+    "trace de matrice"
+  ],
+  "content_hash": "4905ae86661ba0da563c95bdd3a53dae6a83a88d7908170ec0fe52a6aa3c335f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:02:37.354Z"
+}

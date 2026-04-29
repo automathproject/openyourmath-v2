@@ -1,0 +1,31 @@
+{
+  "uuid": "icQG",
+  "source_path": "exo7/4-L2/icQG.tex",
+  "summary": "On étudie un endomorphisme φ défini sur l'espace des endomorphismes d'un espace vectoriel E de dimension finie n, en utilisant un projecteur p de rang r. On cherche à déterminer si φ est diagonalisable et à caractériser ses valeurs propres et les dimensions des sous-espaces propres associés.",
+  "concepts": [
+    "projecteur",
+    "diagonalisation",
+    "valeur propre",
+    "sous-espace propre",
+    "commutativité d'endomorphismes",
+    "matrice par blocs",
+    "spectre d'un endomorphisme"
+  ],
+  "methods": [
+    "décomposition en sous-espaces stables",
+    "calcul de matrice dans une base adaptée",
+    "analyse des valeurs propres",
+    "détermination des dimensions des sous-espaces propres"
+  ],
+  "objects": [
+    "espace vectoriel de dimension finie",
+    "projecteur",
+    "endomorphisme",
+    "matrice par blocs",
+    "valeurs propres",
+    "sous-espaces propres"
+  ],
+  "content_hash": "f5df6887970b80c052f7a393f0893af976cb2f3d1bb20d59cb05968c9e48b56e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:01:58.772Z"
+}

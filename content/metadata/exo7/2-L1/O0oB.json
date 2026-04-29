@@ -1,0 +1,24 @@
+{
+  "uuid": "O0oB",
+  "source_path": "exo7/2-L1/O0oB.tex",
+  "summary": "On considère une fonction dérivable sur un intervalle infini, tendant vers sa valeur en un point fini. On demande de prouver l'existence d'un point où sa dérivée s'annule.",
+  "concepts": [
+    "théorème des accroissements finis",
+    "limite de fonction",
+    "fonction dérivable",
+    "continuité",
+    "théorème de Rolle"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "application du théorème de Rolle"
+  ],
+  "objects": [
+    "fonction de classe C^1",
+    "limite infinie",
+    "dérivée"
+  ],
+  "content_hash": "61e03bea0073de28e2725af903e7dadc1d4510b8dd047eb722e1794591b4f529",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:06:59.452Z"
+}

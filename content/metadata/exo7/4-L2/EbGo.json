@@ -1,0 +1,29 @@
+{
+  "uuid": "EbGo",
+  "source_path": "exo7/4-L2/EbGo.tex",
+  "summary": "Dans un espace vectoriel euclidien de dimension n, on considère une famille de p vecteurs dite obtusangle (tous les produits scalaires entre vecteurs distincts sont strictement négatifs). On demande de prouver que p ≤ n + 1.",
+  "concepts": [
+    "espace vectoriel euclidien",
+    "produit scalaire",
+    "famille libre",
+    "hyperplan orthogonal",
+    "projection orthogonale",
+    "récurrence",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "récurrence",
+    "projection orthogonale",
+    "manipulation de produits scalaires",
+    "preuve par l'absurde"
+  ],
+  "objects": [
+    "famille de vecteurs",
+    "produit scalaire",
+    "hyperplan orthogonal",
+    "projection orthogonale"
+  ],
+  "content_hash": "b2663bf492f25be4a08452db7d4dba41796d845b494453f44db465801a685a3e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:11:22.091Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "BiPN",
+  "source_path": "exo7/4-L2/BiPN.tex",
+  "summary": "L'exercice demande de prouver par récurrence sur n que n fonctions d'un ensemble E vers un corps K forment une famille libre dans K^E si et seulement s'il existe n éléments de E pour lesquels la matrice des valeurs de ces fonctions a un déterminant non nul.",
+  "concepts": [
+    "famille libre",
+    "récurrence",
+    "déterminant",
+    "matrice de valeurs",
+    "espace vectoriel de fonctions",
+    "indépendance linéaire"
+  ],
+  "methods": [
+    "récurrence sur n",
+    "calcul de déterminant",
+    "analyse de l'indépendance linéaire"
+  ],
+  "objects": [
+    "famille de fonctions",
+    "matrice carrée",
+    "éléments de l'ensemble E"
+  ],
+  "content_hash": "bf972135f32854dedabe22b32a7d2ee125f32640b899dcaaf69edbfb11154101",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:37:48.675Z"
+}

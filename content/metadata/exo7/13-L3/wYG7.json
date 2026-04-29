@@ -1,0 +1,27 @@
+{
+  "uuid": "wYG7",
+  "source_path": "exo7/13-L3/wYG7.tex",
+  "summary": "On considère une équation différentielle $x'(t) = f(t,x(t))$ avec condition initiale $x(t_0) = x_0$, où $f$ est une application bornée de classe $C^1$. On suppose que la solution maximale $\\varphi$ est définie sur un intervalle $I \\subset \\Rr$. L'exercice demande de montrer que $\\varphi$ est en fait définie sur tout $\\Rr$.",
+  "concepts": [
+    "équation différentielle ordinaire",
+    "solution maximale",
+    "théorème d'existence et d'unicité de Cauchy-Lipschitz",
+    "continuité uniforme",
+    "limite de fonction",
+    "bornitude"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "étude de la bornitude",
+    "passage à la limite"
+  ],
+  "objects": [
+    "équation différentielle",
+    "solution maximale",
+    "application bornée",
+    "intervalle de définition"
+  ],
+  "content_hash": "acbfe9919c7a2d4dc19949e8da346543cf1f312768ebe49da88b9d7f2a00068d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:25:56.799Z"
+}

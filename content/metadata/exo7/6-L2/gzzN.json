@@ -1,0 +1,30 @@
+{
+  "uuid": "gzzN",
+  "source_path": "exo7/6-L2/gzzN.tex",
+  "summary": "L'exercice demande de déterminer si quatre points donnés définissent un repère dans l'espace, puis de trouver les formules de changement de repère entre ce repère et le repère canonique.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "repère de l'espace",
+    "changement de repère",
+    "coordonnées cartésiennes",
+    "vecteurs de base",
+    "linéarité",
+    "injection"
+  ],
+  "methods": [
+    "calcul de vecteurs",
+    "vérification de linéarité",
+    "détermination de la matrice de passage",
+    "résolution de systèmes linéaires"
+  ],
+  "objects": [
+    "points de l'espace",
+    "vecteurs",
+    "repère canonique",
+    "repère défini par quatre points",
+    "coordonnées"
+  ],
+  "content_hash": "2073396ab0d6bea8b64fee841f9fa1b91764d88b3c665cc9f6cdcd48172b321f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:51:24.265Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "cBL1",
+  "source_path": "exo7/2-L1/cBL1.tex",
+  "summary": "Simplifier l'expression $\\arccos(\\cos x) - \\frac{1}{2}\\arccos(\\cos 2x)$ pour $x \\in [0,2\\pi]$.",
+  "concepts": [
+    "fonction circulaire inverse",
+    "fonction cosinus",
+    "fonction arccosinus",
+    "périodicité",
+    "symétrie"
+  ],
+  "methods": [
+    "simplification d'expression",
+    "analyse par intervalles",
+    "utilisation des propriétés des fonctions circulaires inverses"
+  ],
+  "objects": [
+    "fonction arccosinus",
+    "fonction cosinus",
+    "intervalle de définition"
+  ],
+  "content_hash": "3a8483febfa5fa1f58581b85b28bcd0569219aef36286dea5a49f9d4a7a0a352",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:03:16.528Z"
+}

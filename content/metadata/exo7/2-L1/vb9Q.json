@@ -1,0 +1,24 @@
+{
+  "uuid": "vb9Q",
+  "source_path": "exo7/2-L1/vb9Q.tex",
+  "summary": "On considère une fonction continue sur ℝ dont la restriction aux rationnels est strictement croissante. On demande de prouver que la fonction est strictement croissante sur ℝ.",
+  "concepts": [
+    "continuité",
+    "fonction strictement croissante",
+    "densité des rationnels",
+    "propriété locale impliquant une propriété globale",
+    "fonction définie sur ℝ"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la densité des rationnels",
+    "argument par continuité"
+  ],
+  "objects": [
+    "fonction réelle",
+    "ensemble des rationnels"
+  ],
+  "content_hash": "b0f9f50f00ac9e92763c82a292a60a0ef66a1de52372bd081d7f5704287599c8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:27:50.794Z"
+}

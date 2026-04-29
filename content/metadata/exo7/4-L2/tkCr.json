@@ -1,0 +1,26 @@
+{
+  "uuid": "tkCr",
+  "source_path": "exo7/4-L2/tkCr.tex",
+  "summary": "Résoudre deux systèmes linéaires à deux équations et deux inconnues, suivant les valeurs du paramètre réel m. Le premier système (S1) et le second système (S2) sont à analyser séparément.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "solution unique",
+    "solution infinie",
+    "solution impossible",
+    "déterminant d'une matrice"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "analyse de compatibilité",
+    "résolution par substitution ou combinaison linéaire"
+  ],
+  "objects": [
+    "système linéaire à deux équations",
+    "paramètre réel",
+    "matrice associée"
+  ],
+  "content_hash": "77b16fe83ec750e1bf35e5bff576e38b7d7f16a4847e360ef02f0b73f61d5482",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:16:54.210Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "RcLX",
+  "source_path": "exo7/16-L3/RcLX.tex",
+  "summary": "L'exercice demande de démontrer une formule intégrale impliquant deux fonctions holomorphes sur un ouvert connexe contenant le disque unité fermé, en utilisant un chemin paramétré par l'exponentielle complexe.",
+  "concepts": [
+    "fonction holomorphe",
+    "intégrale complexe",
+    "disque unité",
+    "connexe",
+    "formule de Cauchy",
+    "paramétrisation exponentielle"
+  ],
+  "methods": [
+    "intégration complexe",
+    "utilisation de la formule de Cauchy",
+    "analyse de cas selon la position de a"
+  ],
+  "objects": [
+    "fonction holomorphe f",
+    "fonction holomorphe g",
+    "chemin γ(t) = e^{it}",
+    "disque unité fermé"
+  ],
+  "content_hash": "5bc43481d269ec1e668fad0a1b2bf2023f00fb9463bb5e2090e892647d23d65e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:36:07.738Z"
+}

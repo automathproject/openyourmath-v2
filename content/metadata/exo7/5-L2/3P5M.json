@@ -1,0 +1,27 @@
+{
+  "uuid": "3P5M",
+  "source_path": "exo7/5-L2/3P5M.tex",
+  "summary": "On cherche le minimum d'une fonction définie sur le produit de trois droites formant un triangle équilatéral, qui associe à trois points la somme des distances entre eux. On doit déterminer ce minimum et les triplets de points où il est atteint.",
+  "concepts": [
+    "extremum local",
+    "fonction de plusieurs variables",
+    "géométrie du triangle équilatéral",
+    "optimisation sous contraintes géométriques",
+    "condition de minimalité"
+  ],
+  "methods": [
+    "analyse des variations",
+    "calcul de dérivée",
+    "utilisation de la géométrie des triangles",
+    "recherche de points critiques"
+  ],
+  "objects": [
+    "fonction de trois variables",
+    "points sur des droites",
+    "triangle équilatéral",
+    "somme de distances"
+  ],
+  "content_hash": "2fbbc1a1fb36658bfd511c435a8c2cad074ae02475656dc0bb808e805966ab42",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:41:55.672Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "RA4E",
+  "source_path": "exo7/2-L1/RA4E.tex",
+  "summary": "L'exercice demande de démontrer une égalité impliquant une fonction exponentielle et son inverse en utilisant la formule de Taylor sur l'intervalle [0,1]. Il s'agit ensuite d'en déduire que les coefficients a, b et c sont tous nuls.",
+  "concepts": [
+    "formule de Taylor",
+    "développement limité",
+    "fonction exponentielle",
+    "théorème des accroissements finis",
+    "somme infinie",
+    "limite de suite"
+  ],
+  "methods": [
+    "application de la formule de Taylor",
+    "développement en série entière",
+    "analyse de la limite",
+    "utilisation de la relation donnée"
+  ],
+  "objects": [
+    "fonction φ(x) = ae^x + ce^{-x}",
+    "coefficients a, b, c",
+    "nombre θ_n ∈ ]0,1["
+  ],
+  "content_hash": "b234196d7aaa7e09cbcf4f962435fb493dc66abc838003c755760555c0694a02",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:31:12.379Z"
+}

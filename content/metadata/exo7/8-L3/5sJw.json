@@ -1,33 +1,31 @@
 {
   "uuid": "5sJw",
   "source_path": "exo7/8-L3/5sJw.tex",
-  "summary": "L'exercice étudie les actions de groupe sur des ensembles quotients et les propriétés des morphismes entre ces ensembles. Il explore notamment la compatibilité des applications avec l'action de groupe, les conditions d'isomorphisme entre ensembles quotients, et la relation entre les fixateurs et les sous-groupes conjugués.",
+  "summary": "L'exercice étudie les actions de groupe sur des ensembles quotients et les propriétés des morphismes entre ces ensembles. Il explore les conditions sous lesquelles deux ensembles quotients sont isomorphes comme G-ensembles.",
   "concepts": [
     "action de groupe",
     "ensemble quotient",
     "sous-groupe conjugué",
-    "fixateur d'un point",
     "isomorphisme de G-ensembles",
+    "orbite",
+    "fixateur d'un point",
     "classe à gauche",
-    "morphisme compatible avec une action",
-    "transitivité d'une action"
+    "compatible avec l'action de G"
   ],
   "methods": [
-    "définition d'une action de groupe",
-    "vérification de la compatibilité d'une application avec une action",
-    "utilisation des sous-groupes conjugués",
-    "construction d'un isomorphisme de G-ensembles",
-    "analyse des orbites"
+    "vérification de la compatibilité avec l'action de G",
+    "construction d'isomorphismes",
+    "analyse des conditions d'inclusion de sous-groupes conjugués",
+    "étude des propriétés des applications définies sur les ensembles quotients"
   ],
   "objects": [
-    "G-ensemble",
-    "ensemble quotient G/H",
-    "sous-groupe H de G",
-    "application compatible avec une action",
-    "fixateur d'un point x",
-    "orbite d'un point"
+    "G-ensembles",
+    "ensembles quotients",
+    "sous-groupes conjugués",
+    "classes à gauche",
+    "applications compatibles avec l'action de G"
   ],
-  "content_hash": "3f531126db4691f20ad55cdbe4d86698a583143adabbe64d322b2b1d075e5cbb",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:04:06.440Z"
+  "content_hash": "ce9120dbb545475bdf59f2be1128f008e6c4b31912badff2053aba9212cff55f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:25:20.899Z"
 }

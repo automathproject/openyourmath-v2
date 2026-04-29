@@ -1,0 +1,25 @@
+{
+  "uuid": "t1t3",
+  "source_path": "exo7/6-L2/t1t3.tex",
+  "summary": "Dans un triangle ABC, on considère trois points P, Q, R sur les côtés (BC), (AC) et (AB) respectivement. L'exercice demande de montrer que les droites (AP), (BQ) et (CR) sont concourantes ou parallèles si et seulement si un produit de rapports de longueurs est égal à -1.",
+  "concepts": [
+    "géométrie affine",
+    "théorème de Ceva",
+    "concourance de droites",
+    "rapports de longueurs",
+    "parallélisme"
+  ],
+  "methods": [
+    "calcul de rapports de longueurs",
+    "application du théorème de Ceva",
+    "analyse de configurations géométriques"
+  ],
+  "objects": [
+    "triangle",
+    "droites concourantes",
+    "points sur les côtés d'un triangle"
+  ],
+  "content_hash": "0e8c1f89c680bef501c29ec490722113fec0c35a5ab96951a0783008fcebbe14",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:12:24.488Z"
+}

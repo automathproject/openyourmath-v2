@@ -1,0 +1,27 @@
+{
+  "uuid": "1N5H",
+  "source_path": "exo7/10-L3/1N5H.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble K de matrices 3x3, paramétrées par un réel x différent de 1/2, forme un groupe commutatif sous la multiplication matricielle.",
+  "concepts": [
+    "groupe",
+    "groupe abélien",
+    "élément neutre",
+    "inverse",
+    "associativité",
+    "commutativité"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "calcul de produit de matrices",
+    "identification de l'élément neutre",
+    "recherche de l'inverse"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "ensemble de matrices",
+    "opération de multiplication"
+  ],
+  "content_hash": "9f5f466f9c3a588439aea5d4b548cf032dfc0ce192d55741d63233f4484f90f8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:48:02.593Z"
+}

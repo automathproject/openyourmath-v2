@@ -1,0 +1,32 @@
+{
+  "uuid": "xzkb",
+  "source_path": "exo7/16-L3/xzkb.tex",
+  "summary": "L'exercice demande de prouver une formule de Taylor avec reste intégral pour une fonction n+1 fois dérivable au sens complexe, puis d'utiliser cette formule pour montrer que la fonction exponentielle complexe est infiniment dérivable et s'exprime comme une série entière. Le contexte est purement théorique, sans application concrète.",
+  "concepts": [
+    "fonction holomorphe",
+    "développement en série entière",
+    "formule de Taylor avec reste intégral",
+    "dérivabilité complexe",
+    "rayon de convergence",
+    "théorème des séries doubles",
+    "fonction exponentielle complexe"
+  ],
+  "methods": [
+    "développement de Taylor",
+    "changement de variable",
+    "intégration par parties",
+    "récurrence",
+    "calcul de rayon de convergence",
+    "manipulation de séries doubles"
+  ],
+  "objects": [
+    "fonction dérivable au sens complexe",
+    "développement en série entière",
+    "reste intégral de Lagrange",
+    "fonction exponentielle",
+    "série entière"
+  ],
+  "content_hash": "d071b9cc1687fb5adb9881e41769085ab06c7764a15270b9652502d07736e7ee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:45:33.817Z"
+}

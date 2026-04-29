@@ -1,0 +1,28 @@
+{
+  "uuid": "mQAV",
+  "source_path": "exo7/1-L1/mQAV.tex",
+  "summary": "L'exercice demande de démontrer une relation de récurrence sur le nombre de partitions d'un ensemble à n éléments en k classes, puis de calculer le nombre de surjections d'un ensemble à n éléments sur un ensemble à p éléments en utilisant ces partitions.",
+  "concepts": [
+    "partition d'un ensemble",
+    "relation de récurrence",
+    "surjection",
+    "cardinal d'un ensemble",
+    "bijection",
+    "combinaatoire"
+  ],
+  "methods": [
+    "raisonnement par cas",
+    "construction explicite",
+    "calcul de factorielle",
+    "utilisation de tableaux de valeurs"
+  ],
+  "objects": [
+    "nombre de partitions",
+    "ensemble fini",
+    "surjection",
+    "partition en classes"
+  ],
+  "content_hash": "ac166e0ddb2c0651ce86812e02d139629974577746e40fb38a8e6652c8e0f4d7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:49:39.538Z"
+}

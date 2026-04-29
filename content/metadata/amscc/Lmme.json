@@ -1,0 +1,28 @@
+{
+  "uuid": "Lmme",
+  "source_path": "amscc/Lmme.tex",
+  "summary": "L'exercice demande de démontrer une formule pour le laplacien d'une fonction de n variables dépendant d'une fonction g d'une variable, puis de déterminer les fonctions g pour lesquelles ce laplacien s'annule.",
+  "concepts": [
+    "laplacien",
+    "fonction de plusieurs variables",
+    "règle de composition",
+    "équation différentielle linéaire",
+    "dérivée partielle",
+    "règle des chaînes"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "règle de composition",
+    "résolution d'équation différentielle linéaire",
+    "sommation de dérivées partielles"
+  ],
+  "objects": [
+    "fonction de n variables",
+    "laplacien",
+    "fonction g",
+    "équation différentielle"
+  ],
+  "content_hash": "56d27b30fd522194609a8a23bb9448d150230a17686fb3276bd05f8eb960227d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:57:16.081Z"
+}

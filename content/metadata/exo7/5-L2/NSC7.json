@@ -1,0 +1,24 @@
+{
+  "uuid": "NSC7",
+  "source_path": "exo7/5-L2/NSC7.tex",
+  "summary": "On considère une fonction différentiable de plusieurs variables. On demande de montrer une inégalité liant la variation de la fonction à la norme du gradient et à la distance entre deux points.",
+  "concepts": [
+    "différentiabilité",
+    "gradient",
+    "inégalité de Lipschitz",
+    "norme euclidienne",
+    "fonction de plusieurs variables"
+  ],
+  "methods": [
+    "utilisation du théorème des accroissements finis",
+    "majoration par la norme du gradient"
+  ],
+  "objects": [
+    "fonction différentiable",
+    "gradient",
+    "points de l'espace euclidien"
+  ],
+  "content_hash": "42d9273a5cac6655837c823c488f41f144993379408c15db23c4328f477bc684",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:58:21.504Z"
+}

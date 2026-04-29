@@ -1,0 +1,30 @@
+{
+  "uuid": "trcG",
+  "source_path": "crouzet/pcsi/09/trcG.tex",
+  "summary": "L'exercice demande de déterminer l'expression explicite de suites définies par récurrence, en fonction de l'indice n. Les suites sont de différents types : arithmético-géométriques, arithmétiques, ou récurrentes linéaires d'ordre 2.",
+  "concepts": [
+    "suite arithmético-géométrique",
+    "suite arithmétique",
+    "suite récurrente linéaire d'ordre 2",
+    "équation caractéristique",
+    "solution générale d'une équation de récurrence",
+    "solution particulière d'une équation de récurrence",
+    "système linéaire"
+  ],
+  "methods": [
+    "recherche de solution particulière",
+    "recherche de solution générale",
+    "résolution d'équation caractéristique",
+    "résolution de système linéaire",
+    "transformation en suite géométrique"
+  ],
+  "objects": [
+    "suite numérique",
+    "équation de récurrence",
+    "solution explicite",
+    "système d'équations"
+  ],
+  "content_hash": "1cb633bb119f5f356a951d5f6302644175b9e0764c2b6581ff346142df2bde9e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:34:51.962Z"
+}

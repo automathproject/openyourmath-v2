@@ -1,0 +1,28 @@
+{
+  "uuid": "K23W",
+  "source_path": "exo7/2-L1/K23W.tex",
+  "summary": "L'exercice demande de déterminer l'équivalent simple, lorsque n tend vers l'infini, de deux expressions impliquant la fonction fn(x) = (1 + x/n)^n. La première expression est fn(a+b) - fn(a)fn(b), et la seconde est e^{-a}fn(a) - 1 + a²/2n.",
+  "concepts": [
+    "développement limité",
+    "fonction exponentielle",
+    "équivalent asymptotique",
+    "limite de suite",
+    "développement de Taylor",
+    "approximation de ln(1+x)",
+    "ordre de grandeur o(1/n)"
+  ],
+  "methods": [
+    "développement limité de ln(1+x)",
+    "approximation exponentielle",
+    "manipulation algébrique",
+    "comparaison des termes dominants"
+  ],
+  "objects": [
+    "suite de fonctions fn(x)",
+    "expression fn(a+b) - fn(a)fn(b)",
+    "expression e^{-a}fn(a) - 1 + a²/2n"
+  ],
+  "content_hash": "920d077935a3814aec4600194647faf21fd4cfaa02f661c2c972c46d7968b149",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:28:27.824Z"
+}

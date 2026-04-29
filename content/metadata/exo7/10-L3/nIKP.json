@@ -1,0 +1,26 @@
+{
+  "uuid": "nIKP",
+  "source_path": "exo7/10-L3/nIKP.tex",
+  "summary": "L'exercice demande de prouver qu'un nombre premier p ≠ 2 admet -1 comme carré modulo p si et seulement si p est congru à 1 modulo 4.",
+  "concepts": [
+    "corps finis",
+    "théorème des restes quadratiques",
+    "extension de corps",
+    "corps cyclotomique",
+    "congruences",
+    "théorème de Gauss sur les sommes de Legendre"
+  ],
+  "methods": [
+    "analyse des racines primitives",
+    "utilisation des caractères quadratiques",
+    "décomposition en facteurs irréductibles"
+  ],
+  "objects": [
+    "nombre premier",
+    "carré modulo p",
+    "corps des entiers modulo p"
+  ],
+  "content_hash": "937db86c407935aeefdaeb30d3880d25decbed34e2bbbaa3240bd4febde22ffb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:27:44.090Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "ZPbs",
+  "source_path": "exo7/10-L3/ZPbs.tex",
+  "summary": "On considère une matrice carrée complexe de taille 4x4. On demande de montrer son inversibilité sans effectuer de calcul explicite.",
+  "concepts": [
+    "forme bilinéaire",
+    "matrice carrée",
+    "inversibilité",
+    "déterminant",
+    "produit scalaire hermitien",
+    "valeurs propres"
+  ],
+  "methods": [
+    "utilisation de la forme bilinéaire",
+    "analyse des propriétés de la matrice",
+    "argument par symétrie ou antisymétrie"
+  ],
+  "objects": [
+    "matrice complexe",
+    "forme bilinéaire",
+    "déterminant"
+  ],
+  "content_hash": "ba2686515c66ab95004128c8cf34e7c0814d6ac9228ee0666803687bcbd66e78",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:24:15.499Z"
+}

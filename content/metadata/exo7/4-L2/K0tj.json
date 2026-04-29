@@ -1,0 +1,28 @@
+{
+  "uuid": "K0tj",
+  "source_path": "exo7/4-L2/K0tj.tex",
+  "summary": "Montrer l'existence de deux matrices orthogonales U et V telles que la transposée de U multipliée par M et V soit diagonale, pour M inversible et non inversible. Calcul explicite de U et V pour une matrice M donnée.",
+  "concepts": [
+    "matrice orthogonale",
+    "matrice diagonale",
+    "symétrie définie positive",
+    "décomposition spectrale",
+    "compacité des groupes orthogonaux",
+    "limite de matrices"
+  ],
+  "methods": [
+    "diagonalisation",
+    "décomposition en valeurs singulières",
+    "convergence de suites de matrices",
+    "résolution d'équations matricielles"
+  ],
+  "objects": [
+    "matrice inversible",
+    "matrice symétrique",
+    "matrice orthogonale",
+    "matrice diagonale"
+  ],
+  "content_hash": "25c5da6b431ef72afbd11cce873afd0b87d54783557028a78d87977e36e18d51",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:15:39.938Z"
+}

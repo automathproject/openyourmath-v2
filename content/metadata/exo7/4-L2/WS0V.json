@@ -1,0 +1,28 @@
+{
+  "uuid": "WS0V",
+  "source_path": "exo7/4-L2/WS0V.tex",
+  "summary": "L'exercice demande de démontrer que le centre d'un groupe est un sous-groupe et de caractériser les groupes commutatifs par l'égalité entre le groupe et son centre. Il s'applique ensuite à calculer le centre d'un groupe spécifique.",
+  "concepts": [
+    "groupe",
+    "sous-groupe",
+    "groupe commutatif",
+    "centre d'un groupe",
+    "élément central",
+    "propriété de stabilité",
+    "élément neutre",
+    "inverse"
+  ],
+  "methods": [
+    "vérification des axiomes de sous-groupe",
+    "caractérisation des groupes commutatifs",
+    "calcul explicite des éléments centraux"
+  ],
+  "objects": [
+    "groupe G",
+    "centre Z(G)",
+    "groupe symétrique σ₃"
+  ],
+  "content_hash": "67dbe06bbabb63ec9f349c23edb3827efafd00391ce65d076e65c395b1fdb1c3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:52:20.948Z"
+}

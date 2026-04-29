@@ -1,0 +1,31 @@
+{
+  "uuid": "uDN9",
+  "source_path": "exo7/4-L2/uDN9.tex",
+  "summary": "L'exercice demande d'étudier l'irréductibilité de polynômes dans l'anneau $\\mathbb{F}_2[X]$, de lister les polynômes irréductibles de degrés 2 et 3, d'en trouver un de degré 4, et d'établir une relation de Bézout entre deux polynômes donnés.",
+  "concepts": [
+    "polynôme irréductible",
+    "anneau de polynômes",
+    "corps fini",
+    "relation de Bézout",
+    "algèbre sur un corps",
+    "division euclidienne dans les polynômes",
+    "critères d'irréductibilité"
+  ],
+  "methods": [
+    "réduction modulo un nombre premier",
+    "factorisation de polynômes",
+    "algorithme d'Euclide",
+    "recherche de racines dans un corps fini",
+    "vérification de l'irréductibilité"
+  ],
+  "objects": [
+    "polynôme de degré 4",
+    "polynôme de degré 2",
+    "polynôme de degré 3",
+    "relation de Bézout",
+    "anneau $\\mathbb{F}_2[X]$"
+  ],
+  "content_hash": "069c2e8c338e224519b3e002b8725b24e42b0abb8dd6822b36ff48a54c66abf1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:18:22.814Z"
+}

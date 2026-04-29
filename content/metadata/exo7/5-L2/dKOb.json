@@ -1,0 +1,26 @@
+{
+  "uuid": "dKOb",
+  "source_path": "exo7/5-L2/dKOb.tex",
+  "summary": "L'exercice demande de montrer que toute solution réelle de l'équation différentielle du premier ordre y'+e^{x^2}y=0 tend vers 0 en +∞, puis d'étudier la bornitude des solutions de l'équation du second ordre y''+e^{x^2}y=0.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "équation différentielle linéaire du second ordre",
+    "fonction auxiliaire",
+    "bornitude des solutions",
+    "limite de fonction"
+  ],
+  "methods": [
+    "factor intégrant",
+    "étude de la dérivée",
+    "majoration",
+    "analyse de la croissance"
+  ],
+  "objects": [
+    "solution d'équation différentielle",
+    "fonction auxiliaire",
+    "primitive d'intégrale"
+  ],
+  "content_hash": "62fb1e66ffd9792e8a3a9cfc02fca0a0064ee451bb61045f9020043fbb015b6a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:37:49.099Z"
+}

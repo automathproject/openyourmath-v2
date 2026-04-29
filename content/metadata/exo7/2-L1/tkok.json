@@ -1,0 +1,25 @@
+{
+  "uuid": "tkok",
+  "source_path": "exo7/2-L1/tkok.tex",
+  "summary": "Calculer la limite d'une intégrale de la puissance n-ième d'une fonction continue strictement croissante définie sur [0,1] avec f(0)=0 et f(1)=1.",
+  "concepts": [
+    "fonction continue",
+    "fonction strictement croissante",
+    "intégrale de Riemann",
+    "limite de suite",
+    "convergence uniforme"
+  ],
+  "methods": [
+    "comparaison d'intégrales",
+    "majoration/minoration",
+    "utilisation de la croissance stricte"
+  ],
+  "objects": [
+    "fonction f",
+    "puissance n-ième de fonction",
+    "intégrale sur [0,1]"
+  ],
+  "content_hash": "a0ee6291c5138ce04f61bfcf8c06de78c5b5e35070f6b35ef615aa9db22dc8b8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:50:07.903Z"
+}

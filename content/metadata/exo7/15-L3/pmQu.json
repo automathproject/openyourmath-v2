@@ -1,14 +1,14 @@
 {
   "uuid": "pmQu",
   "source_path": "exo7/15-L3/pmQu.tex",
-  "summary": "L'exercice demande de montrer qu'une norme est bien définie et que deux applications linéaires U et V sont continues. Il s'agit d'étudier les propriétés de continuité et de bornitude de ces applications dans un espace vectoriel normé.",
+  "summary": "L'exercice demande de montrer qu'une norme est bien définie et que deux applications linéaires U et V sont continues. Le contexte porte sur des polynômes et leurs normes.",
   "concepts": [
     "norme",
     "application linéaire",
     "continuité",
     "bornitude",
-    "espace vectoriel normé",
-    "supremum"
+    "espace normé",
+    "polynôme"
   ],
   "methods": [
     "calcul de norme d'opérateur",
@@ -16,12 +16,11 @@
     "comparaison de normes"
   ],
   "objects": [
-    "application linéaire U",
-    "application linéaire V",
+    "application linéaire",
     "polynôme",
-    "boule unité"
+    "norme d'opérateur"
   ],
-  "content_hash": "51624c84fa23bf40eab11bdec68007df411562e264d204e02d94a63b2b4106bb",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:15:23.234Z"
+  "content_hash": "6663bc96f42164cab455d8efff073f19535b04ad65024ad30292c25e74761256",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:40:14.009Z"
 }

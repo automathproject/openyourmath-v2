@@ -1,0 +1,26 @@
+{
+  "uuid": "TySC",
+  "source_path": "exo7/6-L2/TySC.tex",
+  "summary": "Dans un espace affine de dimension 3, on considère trois droites parallèles à un même plan mais deux à deux non coplanaires. On doit montrer l'existence et l'unicité d'une droite passant par un point donné et rencontrant les deux autres droites, puis que ces droites sont toutes parallèles à un même plan.",
+  "concepts": [
+    "espace affine",
+    "droites parallèles",
+    "plan affine",
+    "coplanarité",
+    "repérage dans l'espace"
+  ],
+  "methods": [
+    "analyse de coplanarité",
+    "construction de repère",
+    "étude de parallélisme"
+  ],
+  "objects": [
+    "espace affine de dimension 3",
+    "droites parallèles",
+    "plan affine",
+    "point d'intersection"
+  ],
+  "content_hash": "d2ed7f58fd25a0303ff0d756eee40ddd2697898b993a1c1417b7cab8b662f7c9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:55:19.227Z"
+}

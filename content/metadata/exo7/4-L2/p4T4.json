@@ -1,0 +1,26 @@
+{
+  "uuid": "p4T4",
+  "source_path": "exo7/4-L2/p4T4.tex",
+  "summary": "L'exercice demande de démontrer une relation entre le nombre d'orbites d'une permutation et celui de sa composition avec une transposition. Il s'applique ensuite à déterminer le nombre minimal de transpositions nécessaires pour obtenir un n-cycle.",
+  "concepts": [
+    "groupe de permutation",
+    "orbite d'une permutation",
+    "transposition",
+    "cycle d'une permutation",
+    "composition de permutations"
+  ],
+  "methods": [
+    "analyse des cycles",
+    "décomposition en cycles disjoints",
+    "comptage des orbites"
+  ],
+  "objects": [
+    "permutation",
+    "transposition",
+    "n-cycle",
+    "orbite"
+  ],
+  "content_hash": "53e2ad8113ba19837c48db23dd5bb8cf4064eac212b823715d1f827754630e7e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:12:30.675Z"
+}

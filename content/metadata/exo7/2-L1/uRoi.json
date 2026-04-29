@@ -1,0 +1,29 @@
+{
+  "uuid": "uRoi",
+  "source_path": "exo7/2-L1/uRoi.tex",
+  "summary": "Montrer qu'une fonction définie par morceaux, nulle en 0 et exponentielle ailleurs, est de classe C^∞ sur ℝ. L'énoncé demande de prouver la régularité infinie d'une fonction en utilisant des propriétés de dérivabilité.",
+  "concepts": [
+    "dérivabilité",
+    "classe C^∞",
+    "récurrence",
+    "théorèmes de croissances comparées",
+    "limite de fonction",
+    "continuité",
+    "dérivées successives"
+  ],
+  "methods": [
+    "récurrence",
+    "calcul de dérivées successives",
+    "étude de la limite",
+    "utilisation des théorèmes de croissances comparées"
+  ],
+  "objects": [
+    "fonction définie par morceaux",
+    "dérivées successives",
+    "polynôme",
+    "limite"
+  ],
+  "content_hash": "82f98d4bc0c7d1ba468b225d13407c4d0129f5ccfa808f0a32b1c94b247c79a0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:22:31.678Z"
+}

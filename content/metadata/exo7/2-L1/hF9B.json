@@ -1,30 +1,29 @@
 {
   "uuid": "hF9B",
   "source_path": "exo7/2-L1/hF9B.tex",
-  "summary": "L'exercice étudie le comportement asymptotique de trois intégrales impropres lorsque des paramètres tendent vers des valeurs critiques. Il s'agit d'analyser les équivalents de ces intégrales en utilisant des techniques de comparaison et d'intégration par parties.",
+  "summary": "L'exercice demande d'établir des équivalents asymptotiques pour trois intégrales impropres différentes. La première concerne un produit d'une exponentielle et d'une intégrale gaussienne, la deuxième porte sur une intégrale de cosinus sur x, et la troisième traite d'une intégrale rationnelle.",
   "concepts": [
     "intégrale impropre",
-    "comportement asymptotique",
-    "équivalent de fonctions",
+    "équivalent asymptotique",
     "théorème de sommation des relations de comparaison",
     "intégration par parties",
     "continuité",
     "intégrabilité"
   ],
   "methods": [
-    "comparaison asymptotique",
+    "comparaison d'intégrales",
+    "développement asymptotique",
     "intégration par parties",
-    "développement limité",
     "estimation d'erreur",
-    "changement de variable"
+    "prolongement par continuité"
   ],
   "objects": [
-    "fonction exponentielle",
-    "fonction trigonométrique",
-    "intégrale de type Dirichlet",
-    "fonction rationnelle"
+    "intégrale gaussienne",
+    "fonction cosinus",
+    "fonction rationnelle",
+    "équivalent asymptotique"
   ],
-  "content_hash": "6f93329112956759f5ddfa70bfdd97895c8c92b824bc03e7e457ccc3d7aaf2dc",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:34:31.917Z"
+  "content_hash": "94deaba0c88b4d034c3eafcffb589e22ac3e99a3ec3342b81b78a8e96884e707",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:43:42.341Z"
 }

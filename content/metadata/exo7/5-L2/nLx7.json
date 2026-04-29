@@ -1,0 +1,24 @@
+{
+  "uuid": "nLx7",
+  "source_path": "exo7/5-L2/nLx7.tex",
+  "summary": "L'exercice demande de résoudre deux équations différentielles du premier ordre à coefficients variables. La première équation est $(1+x^2)y'-xy = 0$ et la seconde est $y'+y\\tan x = 0$ définie sur l'intervalle $]\\frac{\\pi}{2},\\frac{3\\pi}{2}[$.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "coefficient variable",
+    "solution réelle",
+    "équation différentielle séparable",
+    "facteur intégrant"
+  ],
+  "methods": [
+    "intégration directe",
+    "séparation des variables",
+    "calcul du facteur intégrant"
+  ],
+  "objects": [
+    "équation différentielle",
+    "fonction solution"
+  ],
+  "content_hash": "db1e87b83decbf6fb21e62636155d2856b08f4664311824e53210a9484972c35",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:44:44.802Z"
+}

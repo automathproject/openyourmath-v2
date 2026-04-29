@@ -1,0 +1,26 @@
+{
+  "uuid": "PtnI",
+  "source_path": "exo7/4-L2/PtnI.tex",
+  "summary": "L'exercice demande s'il existe un polynôme A dans ℝ[X] tel que pour tout polynôme P dans ℝ[X], l'intégrale de P(t)A(t) de 0 à 1 soit égale à P(0).",
+  "concepts": [
+    "produit scalaire",
+    "polynôme",
+    "intégrale",
+    "fonction continue",
+    "racine de polynôme",
+    "inégalité de Cauchy-Schwarz"
+  ],
+  "methods": [
+    "intégration",
+    "analyse des racines",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "polynôme",
+    "intégrale de polynôme",
+    "fonction continue"
+  ],
+  "content_hash": "8f4eb2f06970c8db7099b83d723cbc2129565aaba7e416b4e551c2102d08969b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:23:30.458Z"
+}

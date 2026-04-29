@@ -1,0 +1,28 @@
+{
+  "uuid": "dJoJ",
+  "source_path": "exo7/16-L3/dJoJ.tex",
+  "summary": "L'exercice demande de montrer que le nombre de zéros d'un polynôme à l'intérieur du cercle unité est lié à la variation de l'argument du polynôme sur ce cercle, puis d'établir une propriété sur les zéros de la partie réelle du polynôme.",
+  "concepts": [
+    "théorème de d'Alembert",
+    "factorisation de polynômes",
+    "indice d'une racine",
+    "argument d'une fonction complexe",
+    "zéros de fonctions holomorphes",
+    "formule de Cauchy"
+  ],
+  "methods": [
+    "factorisation en facteurs de degré 1",
+    "étude de l'indice",
+    "analyse de la variation de l'argument",
+    "étude des zéros de la partie réelle"
+  ],
+  "objects": [
+    "polynôme complexe",
+    "cercle unité",
+    "argument d'une fonction complexe",
+    "zéros de polynômes"
+  ],
+  "content_hash": "79b4dd09dc060033ebe73c4eab1ddd2e7ebe323794a4235e5aec231871f7457e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:39:15.952Z"
+}

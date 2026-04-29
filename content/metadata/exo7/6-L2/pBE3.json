@@ -1,0 +1,29 @@
+{
+  "uuid": "pBE3",
+  "source_path": "exo7/6-L2/pBE3.tex",
+  "summary": "On considère deux triangles ABC et A'B'C' dans le plan. On suppose que les parallèles à AB, BC et CA passant respectivement par C', A' et B' sont concourantes. On doit montrer que les parallèles à A'B', B'C' et C'A' passant par C, A et B sont également concourantes.",
+  "concepts": [
+    "géométrie affine",
+    "parallélisme",
+    "concourance",
+    "théorème de Desargues",
+    "configuration projective",
+    "homothétie",
+    "centralité"
+  ],
+  "methods": [
+    "construction de parallèles",
+    "analyse de configurations",
+    "utilisation de propriétés affines",
+    "raisonnement par symétrie"
+  ],
+  "objects": [
+    "triangles",
+    "droites parallèles",
+    "points de concourance",
+    "configurations géométriques"
+  ],
+  "content_hash": "975030bbd79e43d20d2db38ab7980c2800c99a0efdc7bd472e70827f93e4a338",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:08:30.333Z"
+}

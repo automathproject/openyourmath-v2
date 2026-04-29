@@ -1,0 +1,27 @@
+{
+  "uuid": "iRzC",
+  "source_path": "exo7/4-L2/iRzC.tex",
+  "summary": "L'exercice demande de factoriser une matrice tridiagonale en produit d'une matrice triangulaire inférieure et d'une matrice triangulaire supérieure, puis d'en déduire la solution d'un système linéaire.",
+  "concepts": [
+    "matrice tridiagonale",
+    "décomposition LU",
+    "système linéaire",
+    "unicité de la factorisation",
+    "rang de matrice",
+    "matrice triangulaire"
+  ],
+  "methods": [
+    "factorisation LU",
+    "résolution de système triangulaire",
+    "calcul de déterminant"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice triangulaire inférieure",
+    "matrice triangulaire supérieure",
+    "système linéaire"
+  ],
+  "content_hash": "0a8b78e3fd19d74b36d135d02475e70d2d9faea795c098449dac52e130733f14",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:04:33.060Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "4EN1",
+  "source_path": "exo7/4-L2/4EN1.tex",
+  "summary": "L'exercice demande de déterminer l'ordre d'un élément dans le groupe quotient ℤ/nℤ, puis de montrer que deux éléments engendrent le même sous-groupe, et enfin d'identifier tous les sous-groupes de ce groupe quotient.",
+  "concepts": [
+    "groupe quotient",
+    "ordre d'un élément",
+    "sous-groupe engendré",
+    "structure de groupe",
+    "division euclidienne",
+    "pgcd"
+  ],
+  "methods": [
+    "calcul de l'ordre d'un élément",
+    "détermination des sous-groupes",
+    "utilisation du pgcd",
+    "analyse de la structure de groupe"
+  ],
+  "objects": [
+    "groupe ℤ/nℤ",
+    "élément k",
+    "pgcd k et n",
+    "sous-groupe engendré"
+  ],
+  "content_hash": "1ba930955574ce64e5b841cd3d337b9412d403a0fca2a906ca638ab3fd0d526c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:18:05.511Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "fWAb",
+  "source_path": "exo7/4-L2/fWAb.tex",
+  "summary": "L'exercice demande de démontrer une formule de calcul de déterminant pour une matrice par blocs 2x2, sous l'hypothèse que deux matrices C et D commutent, d'abord lorsque D est inversible puis en généralisant au cas où D n'est pas inversible.",
+  "concepts": [
+    "déterminant de matrice",
+    "matrice par blocs",
+    "commutativité de matrices",
+    "polynôme caractéristique",
+    "inversibilité de matrice",
+    "déterminant de produit de matrices"
+  ],
+  "methods": [
+    "calcul par blocs",
+    "utilisation de l'inverse",
+    "polynôme en une variable",
+    "limite de polynômes"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice inversible",
+    "matrice par blocs 2x2",
+    "polynôme en x"
+  ],
+  "content_hash": "dae2327d4983a71f66a5c056edf9d8b4c1efe62b571d3e1a496f3319705449bb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:02:04.064Z"
+}

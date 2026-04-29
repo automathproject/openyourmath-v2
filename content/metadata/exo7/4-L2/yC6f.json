@@ -1,0 +1,28 @@
+{
+  "uuid": "yC6f",
+  "source_path": "exo7/4-L2/yC6f.tex",
+  "summary": "Trouver le couple (a, b) qui minimise l'intégrale de la fonction x² multipliée par le carré de la distance entre ln(x) et la droite affine ax + b, sur l'intervalle [0,1].",
+  "concepts": [
+    "optimisation",
+    "distance point-droite",
+    "fonctionnelle",
+    "intégrale de Riemann",
+    "projection orthogonale",
+    "minimisation sous contrainte"
+  ],
+  "methods": [
+    "calcul variationnel",
+    "méthode des multiplicateurs de Lagrange",
+    "intégration par parties",
+    "développement en série de Fourier"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "intégrale dépendant d'un paramètre",
+    "distance minimale",
+    "fonctionnelle quadratique"
+  ],
+  "content_hash": "22a2c7b0878f6cbe3a6cd02fd60dbbdd90237dca23ccb0fe9750ff01c2fc83cc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:03:26.539Z"
+}

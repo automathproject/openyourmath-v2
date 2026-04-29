@@ -1,0 +1,30 @@
+{
+  "uuid": "jNUi",
+  "source_path": "exo7/8-L3/jNUi.tex",
+  "summary": "L'exercice demande de montrer que le groupe dérivé D(G) est distingué dans G et que le groupe quotient G/D(G) est commutatif. Il généralise ensuite cette propriété à tout sous-groupe distingué H de G.",
+  "concepts": [
+    "groupe dérivé",
+    "sous-groupe distingué",
+    "groupe quotient",
+    "commutativité",
+    "théorème de Lagrange",
+    "générateurs d'un groupe",
+    "classes d'équivalence"
+  ],
+  "methods": [
+    "manipulation des relations de conjugaison",
+    "démonstration par générateurs",
+    "utilisation des propriétés des groupes quotients",
+    "analyse des classes d'équivalence"
+  ],
+  "objects": [
+    "groupe G",
+    "groupe dérivé D(G)",
+    "sous-groupe distingué H",
+    "groupe quotient G/D(G)",
+    "éléments de la forme ghg⁻¹h⁻¹"
+  ],
+  "content_hash": "55378c36940a3ab0a410a50542cae56342f4393282611efe9b53079e86ad86d3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:11:20.385Z"
+}

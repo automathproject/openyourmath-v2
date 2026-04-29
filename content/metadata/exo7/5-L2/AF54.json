@@ -1,0 +1,26 @@
+{
+  "uuid": "AF54",
+  "source_path": "exo7/5-L2/AF54.tex",
+  "summary": "L'exercice demande d'abord si une fonction g:ℝ²→ℝ peut avoir pour différentielle une forme différentielle donnée. Ensuite, il cherche les fonctions b:ℝ²→ℝ permettant l'existence d'une telle fonction g, et détermine les formes possibles de g.",
+  "concepts": [
+    "forme différentielle",
+    "différentielle exacte",
+    "équation différentielle partielle",
+    "intégration partielle",
+    "fonction de deux variables"
+  ],
+  "methods": [
+    "calcul de la différentielle seconde",
+    "résolution d'équation différentielle partielle",
+    "intégration par parties"
+  ],
+  "objects": [
+    "forme différentielle de degré 1",
+    "forme différentielle de degré 2",
+    "fonction g:ℝ²→ℝ",
+    "fonction b:ℝ²→ℝ"
+  ],
+  "content_hash": "d18f9da6512027a2892805e225cda856f7aca4c8ae568014f566ea93fe8e9cd7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:47:20.321Z"
+}

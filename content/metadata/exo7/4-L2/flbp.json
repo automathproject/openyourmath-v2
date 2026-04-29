@@ -1,0 +1,22 @@
+{
+  "uuid": "flbp",
+  "source_path": "exo7/4-L2/flbp.tex",
+  "summary": "Calculer le signe d'une permutation σ qui envoie les entiers de 1 à 2n sur une suite alternée d'entiers pairs et impairs.",
+  "concepts": [
+    "permutation",
+    "signe d'une permutation",
+    "inversion",
+    "récurrence"
+  ],
+  "methods": [
+    "comptage des inversions",
+    "récurrence"
+  ],
+  "objects": [
+    "permutation",
+    "signe"
+  ],
+  "content_hash": "d4a1e8195aa292f85fc4f2331fc6986e954ce2832f097fb7777d49f3db79d91b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:04:40.780Z"
+}

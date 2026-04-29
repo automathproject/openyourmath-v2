@@ -1,0 +1,26 @@
+{
+  "uuid": "6MCc",
+  "source_path": "exo7/4-L2/6MCc.tex",
+  "summary": "L'exercice demande d'exprimer une matrice M de taille n×n, dont les coefficients sont (x_i + y_j)^k avec k ≤ n-1, comme produit de deux matrices et d'en calculer le déterminant.",
+  "concepts": [
+    "déterminant de produit de matrices",
+    "décomposition matricielle",
+    "propriétés des déterminants",
+    "polynôme de Vandermonde",
+    "coefficient binomial",
+    "signe de permutation"
+  ],
+  "methods": [
+    "décomposition matricielle",
+    "calcul de déterminant par bloc",
+    "utilisation des propriétés multiplicatives des déterminants"
+  ],
+  "objects": [
+    "matrice carrée",
+    "coefficient binomial",
+    "polynôme de Vandermonde"
+  ],
+  "content_hash": "bd4e244b0d20d04ce3590317904d0ad29d9c16c4ff1ab7942b9e2fc794e91ef0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:32:42.886Z"
+}

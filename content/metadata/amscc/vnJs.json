@@ -1,0 +1,26 @@
+{
+  "uuid": "vnJs",
+  "source_path": "amscc/vnJs.tex",
+  "summary": "Calculer les déterminants de plusieurs matrices de tailles différentes, dont certaines sont triangulaires. L'exercice demande d'appliquer des techniques de simplification pour obtenir des matrices triangulaires ou de développer par rapport à une ligne ou une colonne.",
+  "concepts": [
+    "déterminant de matrice",
+    "matrice triangulaire",
+    "développement par rapport à une ligne ou une colonne",
+    "combinaisons linéaires de lignes ou colonnes",
+    "propriétés multiplicatives du déterminant"
+  ],
+  "methods": [
+    "triangulation par combinaisons linéaires",
+    "développement de Laplace",
+    "calcul du produit des termes diagonaux pour les matrices triangulaires"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "matrice 3x3",
+    "matrice 4x4",
+    "matrice triangulaire"
+  ],
+  "content_hash": "9e1ef1f8f572f3334e6fe4ee1c931bc82aa3b9e194a38c467e7cf1ab41fb5663",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:19:38.441Z"
+}

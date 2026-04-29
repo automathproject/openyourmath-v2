@@ -1,0 +1,29 @@
+{
+  "uuid": "p9A6",
+  "source_path": "exo7/4-L2/p9A6.tex",
+  "summary": "L'exercice demande de déterminer les générateurs de l'anneau Z/nZ sous l'addition, c'est-à-dire les éléments dont les puissances engendrent le groupe additif Z/nZ.",
+  "concepts": [
+    "groupe additif",
+    "générateur d'un groupe",
+    "anneau Z/nZ",
+    "structure additive",
+    "théorème chinois",
+    "divisibilité",
+    "pgcd",
+    "nombre premier"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "analyse des diviseurs",
+    "identification des éléments générateurs"
+  ],
+  "objects": [
+    "élément générateur",
+    "groupe additif (Z/nZ, +)",
+    "nombre entier n",
+    "facteurs premiers de n"
+  ],
+  "content_hash": "52168c7729456ffdd8e507262999a1c8d7eec7f6d253c33c3aff7c3428bd2e72",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:59:28.654Z"
+}

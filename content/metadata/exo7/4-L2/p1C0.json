@@ -1,0 +1,34 @@
+{
+  "uuid": "p1C0",
+  "source_path": "exo7/4-L2/p1C0.tex",
+  "summary": "L'exercice étudie les propriétés d'un endomorphisme s d'un espace euclidien E tel que s² = Id. Il demande de montrer la décomposition de E en somme directe de noyaux, l'équivalence de trois propriétés liées à l'orthogonalité, et des résultats sur les symétries et le centre du groupe orthogonal.",
+  "concepts": [
+    "espace euclidien",
+    "endomorphisme orthogonal",
+    "symétrie orthogonale",
+    "décomposition en somme directe",
+    "orthogonalité de sous-espaces",
+    "groupe orthogonal",
+    "centre d'un groupe",
+    "application linéaire"
+  ],
+  "methods": [
+    "décomposition de noyaux",
+    "équivalence de propriétés",
+    "conjugaison d'endomorphismes",
+    "stabilité de droites vectorielles",
+    "analyse du centre d'un groupe"
+  ],
+  "objects": [
+    "endomorphisme s",
+    "espace euclidien E",
+    "sous-espaces Ker(s-Id) et Ker(s+Id)",
+    "symétrie s_F",
+    "application f",
+    "groupe orthogonal O(E)",
+    "centre Z(O(E))"
+  ],
+  "content_hash": "ef7945625ecb7d8cbe2e49f0ee42f8642151c072c2cf42b758ab362b94509026",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:03:49.261Z"
+}

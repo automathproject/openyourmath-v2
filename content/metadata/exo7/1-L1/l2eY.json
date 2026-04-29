@@ -1,0 +1,24 @@
+{
+  "uuid": "l2eY",
+  "source_path": "exo7/1-L1/l2eY.tex",
+  "summary": "Montrer qu'un entier au septième puissance est congru à lui-même modulo 42 pour tout entier naturel.",
+  "concepts": [
+    "divisibilité",
+    "congruence",
+    "arithmétique modulaire",
+    "théorème des restes chinois",
+    "petit théorème de Fermat"
+  ],
+  "methods": [
+    "factorisation",
+    "analyse modulo 2, 3 et 7",
+    "combinaison de congruences"
+  ],
+  "objects": [
+    "entier naturel",
+    "congruence modulo 42"
+  ],
+  "content_hash": "6ec846a9fd91efd11619ad33af440f4c7a5a32d7e76d492859f90c959fa62cbc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:10:19.465Z"
+}

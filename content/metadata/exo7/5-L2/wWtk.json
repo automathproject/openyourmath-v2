@@ -1,0 +1,27 @@
+{
+  "uuid": "wWtk",
+  "source_path": "exo7/5-L2/wWtk.tex",
+  "summary": "Trouver une fonction non constante de classe C² définie sur l'intervalle ]-1,1[ telle que la fonction g(x,y) = f(cos(2x)/ch(2y)) ait un laplacien nul sur un ensemble à préciser.",
+  "concepts": [
+    "fonction harmonique",
+    "laplacien",
+    "différentielle seconde",
+    "fonction de classe C²",
+    "équation différentielle",
+    "fonction hyperbolique",
+    "fonction non constante"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "résolution d'équation différentielle",
+    "analyse de laplacien"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "fonction de classe C²",
+    "équation différentielle ordinaire"
+  ],
+  "content_hash": "d921b14ad08293093962799ab7ccf50920720a481fd8737ce93c93f706ccbaa8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:25:08.131Z"
+}

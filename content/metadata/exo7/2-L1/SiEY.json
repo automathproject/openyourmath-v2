@@ -1,0 +1,28 @@
+{
+  "uuid": "SiEY",
+  "source_path": "exo7/2-L1/SiEY.tex",
+  "summary": "L'exercice demande de prouver une inégalité impliquant des logarithmes et de démontrer une propriété de concavité de la fonction logarithme. Il utilise une fonction auxiliaire définie par interpolation linéaire entre deux points.",
+  "concepts": [
+    "théorème des accroissements finis",
+    "concavité",
+    "dérivée première",
+    "dérivée seconde",
+    "théorème des valeurs intermédiaires",
+    "fonction logarithme"
+  ],
+  "methods": [
+    "application du théorème des accroissements finis",
+    "étude de la dérivée seconde",
+    "analyse de la monotonie",
+    "utilisation du théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "fonction logarithme",
+    "fonction auxiliaire",
+    "dérivée d'une fonction composée",
+    "intervalle ouvert"
+  ],
+  "content_hash": "077e5631b2ceb63e46ed48e78ce4424cdd1286185b489c7556d0ad7dd1119161",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:09:34.622Z"
+}

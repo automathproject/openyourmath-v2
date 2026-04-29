@@ -1,0 +1,26 @@
+{
+  "uuid": "OwR1",
+  "source_path": "exo7/4-L2/OwR1.tex",
+  "summary": "L'exercice demande d'étudier la liberté de la famille de formes linéaires $(f_a, f_b, f_c, \\varphi)$ définies sur l'espace $\\mathbb{R}_3[X]$, où $f_a, f_b, f_c$ sont des évaluations en des points distincts et $\\varphi$ est une intégration sur un intervalle.",
+  "concepts": [
+    "forme linéaire",
+    "famille libre",
+    "déterminant",
+    "matrice",
+    "espace vectoriel de polynômes"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "construction de matrice",
+    "analyse de linéarité"
+  ],
+  "objects": [
+    "forme linéaire",
+    "polynôme de degré 3",
+    "matrice carrée",
+    "famille de formes linéaires"
+  ],
+  "content_hash": "e53d64c53879170536c74734fbc1af655fb8bcb1eec718f28737d388ddfb623e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:55:32.848Z"
+}

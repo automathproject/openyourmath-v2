@@ -1,0 +1,28 @@
+{
+  "uuid": "cCHV",
+  "source_path": "exo7/15-L3/cCHV.tex",
+  "summary": "L'exercice demande de vérifier que la projection stéréographique de S¹ sur ℝ ∪ {∞} est un homéomorphisme, puis d'en déduire que ℝ ∪ {∞} et ℝ ∪ {+∞} ∪ {-∞} ne sont pas homéomorphes.",
+  "concepts": [
+    "projection stéréographique",
+    "homéomorphisme",
+    "topologie de la droite réelle étendue",
+    "connexité",
+    "compactification d'Alexandrov",
+    "topologie de la sphère"
+  ],
+  "methods": [
+    "vérification de la bijectivité",
+    "vérification de la continuité",
+    "vérification de la continuité de l'application réciproque",
+    "comparaison de propriétés topologiques"
+  ],
+  "objects": [
+    "projection stéréographique",
+    "sphère unité S¹",
+    "droite réelle étendue ℝ ∪ {∞}",
+    "droite réelle avec deux points à l'infini ℝ ∪ {+∞} ∪ {-∞}"
+  ],
+  "content_hash": "6fd538a1fc753329ee23efce22bc0dc58a4d646b9f26407657bfc9a1876cb676",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:11:31.155Z"
+}

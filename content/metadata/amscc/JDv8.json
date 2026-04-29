@@ -1,0 +1,29 @@
+{
+  "uuid": "JDv8",
+  "source_path": "amscc/JDv8.tex",
+  "summary": "L'exercice demande de résoudre un système linéaire de trois équations à trois inconnues pour différentes valeurs du paramètre m. On étudie les cas m=0, m=1 et m≠0,1 en déterminant les conditions d'existence et d'unicité des solutions.",
+  "concepts": [
+    "système linéaire",
+    "matrice carrée",
+    "rang d'une matrice",
+    "déterminant",
+    "inversibilité",
+    "solution unique",
+    "solution paramétrique"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "résolution par substitution",
+    "inversion de matrice",
+    "analyse de cas"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice 3x3",
+    "paramètre réel",
+    "solution générale"
+  ],
+  "content_hash": "c8fc2416fb126fd95122038162ee8adb654563c634644eeba918cb5f46f28f8f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:44:27.395Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "SuAx",
+  "source_path": "exo7/1-L1/SuAx.tex",
+  "summary": "Trouver tous les points à coordonnées entières (x, y, z) vérifiant l'équation 6x + 10y + 15z = 1997. Compter le nombre de solutions dans ℕ³.",
+  "concepts": [
+    "équation diophantienne",
+    "pgcd",
+    "algorithme d'Euclide",
+    "divisibilité dans ℤ",
+    "système d'équations linéaires"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "résolution d'équation diophantienne",
+    "analyse de cas modulo"
+  ],
+  "objects": [
+    "équation linéaire à coefficients entiers",
+    "coordonnées entières",
+    "solution dans ℕ³"
+  ],
+  "content_hash": "52efd9fe05f437a31cb182ccd4c87479aad3d55bd55e3d1cf62bfe61e9087a02",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:05:37.296Z"
+}

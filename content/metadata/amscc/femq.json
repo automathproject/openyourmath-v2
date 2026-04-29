@@ -1,0 +1,27 @@
+{
+  "uuid": "femq",
+  "source_path": "amscc/femq.tex",
+  "summary": "L'exercice demande de déterminer si plusieurs matrices données sont inversibles et, le cas échéant, de calculer leur inverse. Les matrices sont de différentes dimensions et certaines dépendent d'un paramètre complexe.",
+  "concepts": [
+    "déterminant",
+    "matrice inversible",
+    "matrice diagonale",
+    "matrice carrée",
+    "calcul de déterminant",
+    "inversibilité"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "inversibilité par déterminant",
+    "calcul d'inverse de matrice"
+  ],
+  "objects": [
+    "matrice diagonale",
+    "matrice carrée",
+    "matrice non carrée",
+    "matrice paramétrée"
+  ],
+  "content_hash": "5610c2b6bb55b4daf80d8222ecd8551c27dd6fa1d4b88601b49f7af8e0865e9c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:02:18.750Z"
+}

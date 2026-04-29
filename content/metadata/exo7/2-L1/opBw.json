@@ -1,0 +1,25 @@
+{
+  "uuid": "opBw",
+  "source_path": "exo7/2-L1/opBw.tex",
+  "summary": "On considère une fonction dérivable sur un intervalle [a, b] s'annulant en ses extrémités et dont les dérivées en ces points sont strictement positives. On demande de prouver l'existence d'un point intérieur où la fonction s'annule à nouveau et où sa dérivée est négative ou nulle.",
+  "concepts": [
+    "fonction dérivable",
+    "théorème de Rolle",
+    "théorème des valeurs intermédiaires",
+    "extremum local",
+    "dérivée en un point"
+  ],
+  "methods": [
+    "analyse des variations",
+    "recherche d'extremum",
+    "application du théorème de Rolle"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle fermé borné",
+    "point critique"
+  ],
+  "content_hash": "fd0b18a58507704e9b79bc1d7cd9f357e296f7056a81897b903eff0534832403",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:19:09.032Z"
+}

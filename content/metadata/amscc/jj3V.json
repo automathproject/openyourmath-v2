@@ -1,0 +1,28 @@
+{
+  "uuid": "jj3V",
+  "source_path": "amscc/jj3V.tex",
+  "summary": "L'exercice demande de calculer un intervalle de confiance pour la moyenne du taux de cholestérol des employés d'une entreprise, à partir d'un échantillon de 100 observations. Il s'agit d'estimer la moyenne et l'écart-type de la population à partir des données de l'échantillon.",
+  "concepts": [
+    "intervalle de confiance",
+    "estimation ponctuelle",
+    "loi normale centrée réduite",
+    "moyenne échantillon",
+    "variance échantillon",
+    "estimation sans biais"
+  ],
+  "methods": [
+    "calcul de la moyenne échantillon",
+    "calcul de la variance échantillon",
+    "standardisation",
+    "lecture de table de la loi normale"
+  ],
+  "objects": [
+    "moyenne échantillon",
+    "écart-type échantillon",
+    "intervalle de confiance",
+    "taux de cholestérol"
+  ],
+  "content_hash": "b4d8d15354a5455b5a166731a9a2d9aa0d8870bbed3adc1b2c8e761bed9f8a29",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:23:12.662Z"
+}

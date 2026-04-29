@@ -1,0 +1,26 @@
+{
+  "uuid": "T5sn",
+  "source_path": "exo7/1-L1/T5sn.tex",
+  "summary": "Montrer une inégalité sur les rangs de deux applications linéaires et de leur somme dans des espaces vectoriels de dimension finie.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "application linéaire",
+    "rang d'une application linéaire",
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "inégalité des dimensions"
+  ],
+  "methods": [
+    "inclusion d'espaces vectoriels",
+    "utilisation de la dimension de la somme de sous-espaces",
+    "manipulation d'inégalités"
+  ],
+  "objects": [
+    "espaces vectoriels E et F",
+    "applications linéaires f et g",
+    "somme d'applications linéaires f+g"
+  ],
+  "content_hash": "5df39c350d3b725c0eb1675dfb05320b86f23b4769c8dbb571ad2b3337828aed",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:52:46.600Z"
+}

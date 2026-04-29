@@ -1,0 +1,29 @@
+{
+  "uuid": "yCBn",
+  "source_path": "exo7/4-L2/yCBn.tex",
+  "summary": "L'exercice demande de déterminer si deux ensembles de matrices carrées sont des groupes pour la multiplication matricielle. Le premier ensemble est l'intersection de GL(2,ℝ) avec les matrices à coefficients entiers, et le second est l'ensemble des matrices 2x2 à coefficients entiers de déterminant égal à 1.",
+  "concepts": [
+    "groupe",
+    "sous-groupe",
+    "matrice inversible",
+    "déterminant",
+    "structure algébrique",
+    "propriétés de fermeture",
+    "élément neutre",
+    "élément symétrique"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "calcul de déterminant",
+    "construction explicite de l'inverse"
+  ],
+  "objects": [
+    "matrice carrée",
+    "ensemble de matrices",
+    "matrice identité",
+    "matrice inverse"
+  ],
+  "content_hash": "dd4bd865dd4642cb4d846d4d455a7346d2025c60b490a81ec6f761b30265b3f5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:24:00.041Z"
+}

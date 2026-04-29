@@ -1,0 +1,30 @@
+{
+  "uuid": "d5V5",
+  "source_path": "exo7/15-L3/d5V5.tex",
+  "summary": "L'exercice demande de démontrer que deux normes définies sur un espace vectoriel de fonctions C¹ sur [0,1] avec f(0)=0 sont équivalentes. La première norme combine les normes infinies de la fonction et de sa dérivée, tandis que la seconde utilise la norme infinie de la somme de la fonction et de sa dérivée.",
+  "concepts": [
+    "espace vectoriel normé",
+    "norme",
+    "équivalence de normes",
+    "fonction de classe C¹",
+    "norme infinie",
+    "intégration par parties",
+    "inégalité triangulaire"
+  ],
+  "methods": [
+    "définition de norme",
+    "preuve d'équivalence de normes",
+    "intégration par parties",
+    "utilisation de l'inégalité triangulaire"
+  ],
+  "objects": [
+    "espace vectoriel de fonctions",
+    "norme N",
+    "norme N'",
+    "fonction f",
+    "dérivée f'"
+  ],
+  "content_hash": "79eb9bd2223153bcd9c15b0d563c66bc9e21bf744b4cad802edd8394485f7aa2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:20:36.857Z"
+}

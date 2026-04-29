@@ -1,0 +1,28 @@
+{
+  "uuid": "asFO",
+  "source_path": "exo7/4-L2/asFO.tex",
+  "summary": "Résoudre un système linéaire de n équations à n inconnues complexes où les coefficients sont donnés par des fractions rationnelles. Le contexte implique des nombres complexes deux à deux distincts et des conditions sur les sommes de ces nombres.",
+  "concepts": [
+    "fraction rationnelle",
+    "polynôme unitaire",
+    "divisibilité de polynômes",
+    "limite de fonction",
+    "système linéaire",
+    "décomposition en éléments simples"
+  ],
+  "methods": [
+    "réduction au même dénominateur",
+    "calcul de limite",
+    "détermination des coefficients par identification",
+    "utilisation des racines distinctes"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "fraction rationnelle",
+    "système linéaire",
+    "nombres complexes distincts"
+  ],
+  "content_hash": "d23db9c992210949eefb7c96479da38bc199dd192c20cf6782a110462d4b9b8b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:57:52.306Z"
+}

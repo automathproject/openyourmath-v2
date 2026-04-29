@@ -1,0 +1,26 @@
+{
+  "uuid": "viAI",
+  "source_path": "exo7/1-L1/viAI.tex",
+  "summary": "Trouver tous les entiers naturels non nuls n qui divisent simultanément 2k+1 et 9k+4 pour un entier k donné.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "entiers naturels",
+    "entiers relatifs",
+    "PGCD",
+    "PPCM"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "utilisation des propriétés de divisibilité",
+    "résolution d'équations diophantiennes"
+  ],
+  "objects": [
+    "entiers naturels",
+    "entiers relatifs",
+    "diviseurs communs"
+  ],
+  "content_hash": "aeb1cdd766a571226d5a4966b2e38c382a0297a8ca4016e02a02b9dd1c161d1d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:11:51.411Z"
+}

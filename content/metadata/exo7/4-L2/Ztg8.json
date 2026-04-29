@@ -1,0 +1,29 @@
+{
+  "uuid": "Ztg8",
+  "source_path": "exo7/4-L2/Ztg8.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de rang de matrices et de trouver une décomposition en produit de deux matrices pour une matrice donnée. Il aborde aussi le cas particulier des matrices symétriques.",
+  "concepts": [
+    "rang d'une matrice",
+    "matrice carrée",
+    "matrice rectangulaire",
+    "sous-matrice",
+    "espace vectoriel engendré",
+    "inversibilité",
+    "décomposition matricielle"
+  ],
+  "methods": [
+    "analyse des lignes et colonnes indépendantes",
+    "construction de sous-matrices carrées",
+    "utilisation de la transposée",
+    "détermination de l'espace vectoriel engendré"
+  ],
+  "objects": [
+    "matrice A",
+    "matrices B et C",
+    "sous-matrices B' et C'",
+    "matrice symétrique"
+  ],
+  "content_hash": "c11caf2bce0e2eed651683395bd4eea826691384155c5b796ed58011e6b0e362",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:56:51.474Z"
+}

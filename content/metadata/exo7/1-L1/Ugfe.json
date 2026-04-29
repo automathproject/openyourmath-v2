@@ -1,0 +1,25 @@
+{
+  "uuid": "Ugfe",
+  "source_path": "exo7/1-L1/Ugfe.tex",
+  "summary": "L'exercice demande de déterminer le rang d'une matrice carrée d'ordre n dont les coefficients sont donnés par la formule i + j + ij. L'énoncé ne fournit pas de contexte concret.",
+  "concepts": [
+    "rang d'une matrice",
+    "colinéarité",
+    "sous-espace vectoriel",
+    "combinaison linéaire",
+    "déterminant"
+  ],
+  "methods": [
+    "décomposition en vecteurs",
+    "calcul de déterminant",
+    "analyse de colinéarité"
+  ],
+  "objects": [
+    "matrice carrée",
+    "colonnes de matrice",
+    "vecteurs"
+  ],
+  "content_hash": "34a67134e2598e6530953573cb16c651729a7b69090fdbde84cee2885413983e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:01:29.187Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "9ydb",
+  "source_path": "exo7/16-L3/9ydb.tex",
+  "summary": "Trouver le plus grand domaine de définition Ω et les fonctions holomorphes f = u + iv à partir de leur partie réelle u ou imaginaire v données.",
+  "concepts": [
+    "fonction holomorphe",
+    "partie réelle",
+    "partie imaginaire",
+    "domaine de définition",
+    "conditions de Cauchy-Riemann",
+    "fonction harmonique"
+  ],
+  "methods": [
+    "vérification des conditions de Cauchy-Riemann",
+    "intégration pour déterminer la partie conjuguée",
+    "analyse de la régularité"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "partie réelle u",
+    "partie imaginaire v"
+  ],
+  "content_hash": "babd8bac969e79be9473cecaa02253ebe5949fec00106c9b50c164c4ce4e5e84",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:29:25.598Z"
+}

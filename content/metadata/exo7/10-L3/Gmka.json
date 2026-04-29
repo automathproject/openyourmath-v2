@@ -1,0 +1,26 @@
+{
+  "uuid": "Gmka",
+  "source_path": "exo7/10-L3/Gmka.tex",
+  "summary": "L'exercice demande d'écrire tous les éléments d'un groupe G engendré par deux éléments x et y vérifiant les relations x² = y³ = e et xy = yx, puis de construire sa table de multiplication.",
+  "concepts": [
+    "groupe fini",
+    "groupe engendré",
+    "relation de groupe",
+    "ordre d'un élément",
+    "table de multiplication"
+  ],
+  "methods": [
+    "énumération des éléments",
+    "vérification des relations",
+    "construction de la table de Cayley"
+  ],
+  "objects": [
+    "groupe G",
+    "éléments x et y",
+    "éléments du groupe",
+    "table de multiplication"
+  ],
+  "content_hash": "bd98ac7113e1a23d7ffffa3e7b60b72bda305019f5aef3ff07344697a27ebf98",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:48:46.852Z"
+}

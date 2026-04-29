@@ -1,0 +1,26 @@
+{
+  "uuid": "dem8",
+  "source_path": "exo7/15-L3/dem8.tex",
+  "summary": "On considère une suite de polynômes convergeant uniformément sur [0,1] vers une fonction non polynomiale. On demande de prouver que le degré des polynômes tend vers l'infini.",
+  "concepts": [
+    "convergence uniforme",
+    "polynôme",
+    "degré d'un polynôme",
+    "fonction continue",
+    "espace métrique",
+    "espace topologique"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la convergence uniforme",
+    "analyse du degré des polynômes"
+  ],
+  "objects": [
+    "suite de polynômes",
+    "fonction limite",
+    "degré des polynômes"
+  ],
+  "content_hash": "2bdc1a03173cd3a418ec23e553273b6b7096103dcb3a875b090efff1d5415d1d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:28:51.684Z"
+}

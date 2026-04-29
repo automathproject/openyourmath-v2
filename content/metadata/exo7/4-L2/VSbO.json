@@ -1,0 +1,27 @@
+{
+  "uuid": "VSbO",
+  "source_path": "exo7/4-L2/VSbO.tex",
+  "summary": "On considère un espace euclidien de dimension finie et un endomorphisme autoadjoint. On définit un ensemble X comme l'ensemble des vecteurs x tels que le produit scalaire de f(x) par x est inférieur ou égal à 1. On demande de montrer que X est compact si et seulement si toutes les valeurs propres de f sont strictement positives.",
+  "concepts": [
+    "endomorphisme autoadjoint",
+    "valeur propre",
+    "produit scalaire",
+    "espace euclidien",
+    "compacité",
+    "spectre d'un endomorphisme"
+  ],
+  "methods": [
+    "diagonalisation",
+    "analyse des valeurs propres",
+    "utilisation de la définition de la compacité"
+  ],
+  "objects": [
+    "espace euclidien",
+    "endomorphisme autoadjoint",
+    "ensemble de vecteurs",
+    "valeurs propres"
+  ],
+  "content_hash": "28d821c36fd40513020c2f5e0dd5c8eda593ed10ae620679ebd554d65b894cde",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:57:41.766Z"
+}

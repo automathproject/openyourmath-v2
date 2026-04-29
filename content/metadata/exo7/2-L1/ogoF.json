@@ -1,0 +1,28 @@
+{
+  "uuid": "ogoF",
+  "source_path": "exo7/2-L1/ogoF.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction définie par morceaux est de classe C^∞ et que toutes ses dérivées successives en 0 s'annulent.",
+  "concepts": [
+    "continuité",
+    "dérivabilité",
+    "classe C^∞",
+    "limite de fonctions",
+    "taux d'accroissement",
+    "dérivées successives",
+    "polynôme"
+  ],
+  "methods": [
+    "étude de la limite",
+    "calcul du taux d'accroissement",
+    "récurrence sur les dérivées",
+    "analyse de la continuité des dérivées"
+  ],
+  "objects": [
+    "fonction définie par morceaux",
+    "dérivées successives",
+    "polynôme"
+  ],
+  "content_hash": "f16ae12d2b5dd8a1c9e2517c2bd5c78b46fca1ca318ddf57b12a4d60b81881c9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:18:57.296Z"
+}

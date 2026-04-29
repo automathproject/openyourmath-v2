@@ -1,0 +1,28 @@
+{
+  "uuid": "JnE3",
+  "source_path": "exo7/5-L2/JnE3.tex",
+  "summary": "Trouver une unique fonction vectorielle C^1 solution d'une équation différentielle non linéaire dans R^3 avec condition initiale donnée.",
+  "concepts": [
+    "équation différentielle non linéaire",
+    "théorème de Cauchy-Lipschitz",
+    "bijectivité",
+    "injective",
+    "uniforme continuité",
+    "limite finie"
+  ],
+  "methods": [
+    "linéarisation",
+    "inversion d'application",
+    "étude de la norme",
+    "application du théorème de Cauchy-Lipschitz"
+  ],
+  "objects": [
+    "fonction vectorielle",
+    "vecteur de R^3",
+    "application linéaire",
+    "produit vectoriel"
+  ],
+  "content_hash": "f04819c2f47b74f42b179e4de171aebfe44d1c30639d4bb3e8ed3ec6166147c6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:24:06.089Z"
+}

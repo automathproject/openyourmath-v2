@@ -1,0 +1,27 @@
+{
+  "uuid": "8IL1",
+  "source_path": "exo7/5-L2/8IL1.tex",
+  "summary": "Montrer qu'une application de ℝ² dans ℝ² définie par (x,y) ↦ (eˣ - eʸ, x + y) est un C¹-difféomorphisme de ℝ² sur lui-même.",
+  "concepts": [
+    "difféomorphisme",
+    "bijection",
+    "classe C¹",
+    "jacobien",
+    "inversibilité locale",
+    "théorème d'inversibilité locale"
+  ],
+  "methods": [
+    "calcul de jacobien",
+    "résolution d'équations implicites",
+    "analyse de la bijectivité",
+    "vérification de l'inversibilité"
+  ],
+  "objects": [
+    "application de ℝ² dans ℝ²",
+    "jacobien",
+    "équations différentielles implicites"
+  ],
+  "content_hash": "def74ce46cf2b87f1b35c3a917bb7b59eddfedf40a3dbc3be02e319039ae4dad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:46:09.959Z"
+}

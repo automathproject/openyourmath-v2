@@ -1,0 +1,31 @@
+{
+  "uuid": "PcQm",
+  "source_path": "exo7/2-L1/PcQm.tex",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité de solutions pour l'équation tan(x) = x dans des intervalles spécifiques, puis d'établir une relation entre x_n et arctan(x_n), et enfin de déterminer un développement limité de x_n en fonction de n à l'ordre 2.",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "fonction continue et dérivable",
+    "fonction strictement croissante",
+    "développement limité",
+    "fonction réciproque",
+    "limite de fonction",
+    "bijection"
+  ],
+  "methods": [
+    "étude de la dérivée",
+    "théorème des valeurs intermédiaires",
+    "développement limité d'ordre 2",
+    "approximation de fonctions trigonométriques",
+    "manipulation d'équations trigonométriques"
+  ],
+  "objects": [
+    "équation tan(x) = x",
+    "solution x_n",
+    "fonction f(x) = tan(x) - x",
+    "développement limité de x_n",
+    "fonction arctan"
+  ],
+  "content_hash": "593d49571130ad4b969c5a9bba831190aa338b970a04f4c94585ae5b82017762",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:30:34.227Z"
+}

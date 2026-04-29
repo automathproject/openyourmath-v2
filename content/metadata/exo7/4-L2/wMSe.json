@@ -1,0 +1,27 @@
+{
+  "uuid": "wMSe",
+  "source_path": "exo7/4-L2/wMSe.tex",
+  "summary": "L'exercice demande de déterminer les matrices de la projection orthogonale et de la symétrie orthogonale par rapport à un plan P dans ℝ⁴, puis de calculer la distance d'un vecteur quelconque à ce plan P.",
+  "concepts": [
+    "projection orthogonale",
+    "symétrie orthogonale",
+    "distance d'un point à un plan",
+    "base orthonormée",
+    "structure euclidienne",
+    "matrice d'une application linéaire"
+  ],
+  "methods": [
+    "calcul du projecteur orthogonal",
+    "calcul de la symétrie orthogonale",
+    "calcul de la norme euclidienne"
+  ],
+  "objects": [
+    "plan dans ℝ⁴",
+    "vecteur de ℝ⁴",
+    "matrice 4x4",
+    "base orthonormée"
+  ],
+  "content_hash": "4288d5d9c8bf9f3f962b2ca42539d1bd6b72f02ce2633464acfd4ab4bb82d5bf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:00:52.764Z"
+}

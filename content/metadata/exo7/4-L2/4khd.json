@@ -1,0 +1,30 @@
+{
+  "uuid": "4khd",
+  "source_path": "exo7/4-L2/4khd.tex",
+  "summary": "Dans un espace euclidien de dimension n, on considère deux sous-espaces vectoriels F et G de même dimension. L'exercice demande de montrer l'existence d'une isométrie u qui envoie F sur G, puis de renforcer ce résultat en exigeant que u échange F et G.",
+  "concepts": [
+    "espace euclidien",
+    "sous-espace vectoriel",
+    "isométrie",
+    "orthogonalité",
+    "récurrence",
+    "symétrie orthogonale",
+    "orthogonal d'un vecteur"
+  ],
+  "methods": [
+    "récurrence sur la dimension",
+    "maximisation du produit scalaire",
+    "construction explicite d'isométrie",
+    "complétion d'endomorphisme"
+  ],
+  "objects": [
+    "espace euclidien",
+    "sous-espaces vectoriels",
+    "isométrie",
+    "vecteurs unitaires",
+    "orthogonal d'un vecteur"
+  ],
+  "content_hash": "02ebf0f1cbf67d47c3c9d423a14e1e85441da621fb2a36c1116980218c614b26",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:00:36.920Z"
+}

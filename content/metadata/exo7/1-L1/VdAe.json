@@ -1,0 +1,30 @@
+{
+  "uuid": "VdAe",
+  "source_path": "exo7/1-L1/VdAe.tex",
+  "summary": "Dans l'espace vectoriel E = Kn, on considère deux sous-espaces F (vecteurs dont la somme des coordonnées est nulle) et G (vecteurs proportionnels à (1,...,1)). L'exercice demande de montrer que F est un sous-espace vectoriel, que F et G sont supplémentaires dans E, et de préciser les projecteurs associés.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "hyperplan",
+    "somme directe",
+    "forme linéaire",
+    "noyau d'une application linéaire",
+    "dimension d'un espace vectoriel",
+    "projecteur"
+  ],
+  "methods": [
+    "utilisation du noyau d'une forme linéaire",
+    "calcul de dimension",
+    "décomposition en somme directe",
+    "calcul de projecteur"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "sous-espace vectoriel",
+    "vecteur",
+    "forme linéaire",
+    "projecteur"
+  ],
+  "content_hash": "692a2f263f5871242a273d86152903f516d185762a361c09a88106bfb8346137",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:55:02.846Z"
+}

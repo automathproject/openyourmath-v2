@@ -1,0 +1,29 @@
+{
+  "uuid": "jVkw",
+  "source_path": "exo7/4-L2/jVkw.tex",
+  "summary": "L'exercice demande de montrer l'équivalence de trois assertions concernant une matrice M(a,b,c) : être une matrice de rotation, appartenir à un cercle spécifique dans R³, et être les racines d'un polynôme de forme donnée avec un paramètre λ borné.",
+  "concepts": [
+    "matrice de rotation",
+    "espace vectoriel euclidien",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "trace d'une matrice",
+    "groupe de rotations"
+  ],
+  "methods": [
+    "calcul de la transposée",
+    "détermination des conditions d'équivalence",
+    "étude des racines d'un polynôme",
+    "analyse des valeurs propres"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme cubique",
+    "sphère unité",
+    "plan affine",
+    "groupe SO(3)"
+  ],
+  "content_hash": "e4394d657b91a309e31bb46de9cb9899fef41368a2613cad0ec9920411fa2a9d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:47:06.416Z"
+}

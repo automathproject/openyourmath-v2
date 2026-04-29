@@ -1,0 +1,27 @@
+{
+  "uuid": "sfwb",
+  "source_path": "exo7/2-L1/sfwb.tex",
+  "summary": "L'exercice demande de montrer l'existence d'une limite p pour une fonction convexe dérivable, puis d'établir que f(x)/x et f'(x) admettent une même limite finie m en +∞, et enfin de prouver que f(x) - mx - p tend vers 0 en +∞.",
+  "concepts": [
+    "fonction convexe",
+    "dérivabilité",
+    "limite de fonction",
+    "croissance comparée",
+    "inégalité de convexité"
+  ],
+  "methods": [
+    "étude de la décroissance",
+    "changement de variable",
+    "comparaison de limites",
+    "utilisation de l'inégalité de convexité"
+  ],
+  "objects": [
+    "fonction convexe dérivable",
+    "limite p",
+    "limite m",
+    "fonction f(x) - xf'(x)"
+  ],
+  "content_hash": "620dca5999109c1e7a0f0186381c5d5005a86ab4127b64234b63d72a95ee65c1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:21:10.650Z"
+}

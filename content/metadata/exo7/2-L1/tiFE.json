@@ -1,0 +1,28 @@
+{
+  "uuid": "tiFE",
+  "source_path": "exo7/2-L1/tiFE.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'un point c dans un intervalle ouvert où le rapport des dérivées de deux fonctions est égal au rapport des variations de ces fonctions. Il s'agit ensuite d'appliquer ce résultat pour établir une limite à l'aide de la règle de l'Hôpital.",
+  "concepts": [
+    "théorème de Rolle",
+    "règle de l'Hôpital",
+    "dérivabilité",
+    "limite de fonction",
+    "continuité",
+    "théorème des accroissements finis"
+  ],
+  "methods": [
+    "application du théorème de Rolle",
+    "choix d'un paramètre λ",
+    "calcul de limite",
+    "utilisation de la règle de l'Hôpital"
+  ],
+  "objects": [
+    "fonctions dérivables",
+    "rapport de variations",
+    "limite de rapport de dérivées",
+    "point d'application du théorème de Rolle"
+  ],
+  "content_hash": "83f7ebcf5f68bcb3aa88d50b6c909193192feb82623cb86d94f872bc95d9a384",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:22:03.997Z"
+}

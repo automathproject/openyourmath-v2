@@ -1,0 +1,30 @@
+{
+  "uuid": "2pLt",
+  "source_path": "exo7/4-L2/2pLt.tex",
+  "summary": "L'exercice demande de démontrer plusieurs propriétés des matrices triangulaires supérieures : conservation de la forme par produit, formule du déterminant, caractérisation par l'inclusion d'espaces engendrés, et stabilité par inversion.",
+  "concepts": [
+    "matrice triangulaire supérieure",
+    "déterminant",
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "application linéaire",
+    "inclusion d'espaces vectoriels",
+    "inverse d'une matrice"
+  ],
+  "methods": [
+    "calcul direct de produit de matrices",
+    "formule de Leibniz pour le déterminant",
+    "caractérisation par les images des vecteurs de la base",
+    "inversion de matrices"
+  ],
+  "objects": [
+    "matrice carrée",
+    "espace vectoriel",
+    "base",
+    "application linéaire",
+    "sous-espaces vectoriels"
+  ],
+  "content_hash": "73b74e00a8216ea71114bda82fb4cf20b6f40a319edd4cf18f1177c16345c8d8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:29:02.991Z"
+}

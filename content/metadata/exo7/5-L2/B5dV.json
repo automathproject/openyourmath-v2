@@ -1,0 +1,29 @@
+{
+  "uuid": "B5dV",
+  "source_path": "exo7/5-L2/B5dV.tex",
+  "summary": "On étudie une application φ de ℝ² dans ℝ² définie à partir de deux fonctions f et g de classe C¹. On doit montrer que φ est un C¹-difféomorphisme sur son image et, sous une condition supplémentaire sur g, que cette image est ℝ².",
+  "concepts": [
+    "théorème d'inversion locale",
+    "difféomorphisme",
+    "inversion de fonctions",
+    "théorème du point fixe",
+    "lipschitzianité",
+    "déterminant jacobien",
+    "inégalité triangulaire"
+  ],
+  "methods": [
+    "calcul de déterminant jacobien",
+    "inversion de fonctions",
+    "application du théorème du point fixe",
+    "estimation de lipschitzianité"
+  ],
+  "objects": [
+    "application de ℝ² dans ℝ²",
+    "fonction de classe C¹",
+    "déterminant jacobien",
+    "fonction lipschitzienne"
+  ],
+  "content_hash": "a6b8908c23b906f73ed7861cfa469a3a3f2741f26d263a16e978266d13acd4e8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:47:59.910Z"
+}

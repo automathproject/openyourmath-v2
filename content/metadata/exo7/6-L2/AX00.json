@@ -1,0 +1,27 @@
+{
+  "uuid": "AX00",
+  "source_path": "exo7/6-L2/AX00.tex",
+  "summary": "Dans un triangle ABC avec AB = 2 BC, on compare les angles formés par un point M divisant AC dans le rapport 2:1. L'énoncé demande de comparer les angles ABM et MBC.",
+  "concepts": [
+    "géométrie affine",
+    "médiane d'un triangle",
+    "centre de gravité",
+    "triangle isocèle",
+    "bissectrice d'angle",
+    "symétrie"
+  ],
+  "methods": [
+    "construction géométrique auxiliaire",
+    "utilisation des propriétés des triangles isocèles",
+    "application des propriétés du centre de gravité"
+  ],
+  "objects": [
+    "triangle",
+    "segment",
+    "point",
+    "angles"
+  ],
+  "content_hash": "9188fd591cf64ad5eca07be69279b7006b9b26ab0b4ec912d77d3d45b405bffa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:40:15.890Z"
+}

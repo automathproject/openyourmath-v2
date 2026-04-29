@@ -1,0 +1,25 @@
+{
+  "uuid": "4hoX",
+  "source_path": "exo7/1-L1/4hoX.tex",
+  "summary": "L'exercice demande de prouver qu'un entier p est premier si et seulement si il n'a pas de diviseurs inférieurs ou égaux à sa racine carrée.",
+  "concepts": [
+    "nombre premier",
+    "diviseur",
+    "racine carrée",
+    "arithmétique dans Z",
+    "propriété nécessaire et suffisante",
+    "théorème de base de l'arithmétique"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "utilisation de la borne √p",
+    "vérification des diviseurs"
+  ],
+  "objects": [
+    "entier naturel",
+    "diviseur propre"
+  ],
+  "content_hash": "39f0572b09b147c1cbf359806f69332e8acc1172da47f2e25f229834ee7039d1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:00:59.049Z"
+}

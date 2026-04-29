@@ -1,0 +1,27 @@
+{
+  "uuid": "CbOS",
+  "source_path": "exo7/4-L2/CbOS.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble des morphismes d'un groupe additif dans lui-même forme un anneau avec les opérations d'addition et de composition. Ensuite, il s'agit de montrer que pour un groupe cyclique fini, cet ensemble est isomorphe à l'anneau des entiers modulo n.",
+  "concepts": [
+    "morphisme de groupe",
+    "structure d'anneau",
+    "isomorphisme d'anneaux",
+    "groupe additif",
+    "groupe cyclique",
+    "anneau des entiers modulo n"
+  ],
+  "methods": [
+    "vérification des axiomes d'anneau",
+    "construction explicite d'isomorphisme",
+    "utilisation de la structure de groupe abélien"
+  ],
+  "objects": [
+    "ensemble de morphismes",
+    "groupe additif",
+    "anneau",
+    "isomorphisme"
+  ],
+  "content_hash": "7c063f92a42dcfe939b304fcc8b8259c2f9ee8cba25034831f998648f763de7a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:27:34.287Z"
+}

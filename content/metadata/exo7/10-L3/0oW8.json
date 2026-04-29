@@ -1,0 +1,26 @@
+{
+  "uuid": "0oW8",
+  "source_path": "exo7/10-L3/0oW8.tex",
+  "summary": "Déterminer les nombres premiers p et q pour lesquels l'extension de corps ℚ(√p) est incluse dans ℚ(∛q).",
+  "concepts": [
+    "extension de corps",
+    "nombre premier",
+    "degré d'extension",
+    "corps de décomposition",
+    "polynôme minimal",
+    "théorème de l'élément primitif"
+  ],
+  "methods": [
+    "analyse du degré d'extension",
+    "comparaison des polynômes minimaux",
+    "utilisation des propriétés des racines primitives"
+  ],
+  "objects": [
+    "extension de corps ℚ(√p)",
+    "extension de corps ℚ(∛q)",
+    "nombres premiers p et q"
+  ],
+  "content_hash": "5f1b0379ff17493b6c3d5b0e9ca079315f6aa0e9c4c1c842127ba46f035776cf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:25:59.097Z"
+}

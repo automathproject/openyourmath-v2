@@ -1,0 +1,26 @@
+{
+  "uuid": "ATZI",
+  "source_path": "exo7/4-L2/ATZI.tex",
+  "summary": "L'exercice demande de trouver les solutions d'un système linéaire de 4 équations à 4 inconnues. Le contexte est purement algébrique.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "espace des solutions",
+    "paramétrisation des solutions",
+    "combinaison linéaire"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "réduction par opérations élémentaires",
+    "choix de paramètres libres"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "variables libres",
+    "variables liées"
+  ],
+  "content_hash": "04267751cd9f94f45fe11665e215cf1474dbbbce431b677b10adc14302284c85",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:36:48.536Z"
+}

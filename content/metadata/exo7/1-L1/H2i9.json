@@ -1,27 +1,27 @@
 {
   "uuid": "H2i9",
   "source_path": "exo7/1-L1/H2i9.tex",
-  "summary": "L'exercice demande de montrer qu'une fonction réelle se décompose en une somme de fonctions paire et impaire, puis de caractériser le projecteur sur l'espace des fonctions paires avec direction l'espace des fonctions impaires.",
+  "summary": "L'exercice demande de démontrer que toute fonction réelle peut se décomposer en une somme d'une fonction paire et d'une fonction impaire, et d'identifier le projecteur sur l'espace des fonctions paires.",
   "concepts": [
     "fonction paire",
     "fonction impaire",
     "somme directe d'espaces vectoriels",
     "projecteur",
-    "noyau d'une application linéaire",
-    "application linéaire"
+    "décomposition de fonctions",
+    "espace vectoriel"
   ],
   "methods": [
     "décomposition en partie paire et impaire",
-    "vérification des propriétés d'un projecteur",
-    "caractérisation du noyau"
+    "vérification des propriétés de projecteur",
+    "utilisation de la définition de noyau"
   ],
   "objects": [
     "fonction réelle",
     "espace des fonctions paires",
     "espace des fonctions impaires",
-    "projecteur sur un sous-espace"
+    "projecteur"
   ],
-  "content_hash": "2c243766829387b8f266627ab12fe55d4e5fd7f0622d2ca66892c4139ee8530d",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:10:49.502Z"
+  "content_hash": "7da17ff4749318542596594643c4e946ca7cf71a66a16d23166c0f2c210483a1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:35:12.864Z"
 }

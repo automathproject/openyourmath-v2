@@ -1,0 +1,25 @@
+{
+  "uuid": "bWhy",
+  "source_path": "exo7/15-L3/bWhy.tex",
+  "summary": "On considère une application bijective uniformément continue entre deux espaces métriques, dont l'inverse est continue. On demande de montrer que la complétude de l'espace d'arrivée implique celle de l'espace de départ.",
+  "concepts": [
+    "complétude",
+    "application uniformément continue",
+    "application bijective",
+    "application continue",
+    "espace métrique"
+  ],
+  "methods": [
+    "transfert de propriétés topologiques",
+    "utilisation de la complétude",
+    "argument par contradiction"
+  ],
+  "objects": [
+    "application bijective",
+    "espaces métriques",
+    "suite de Cauchy"
+  ],
+  "content_hash": "ed45082277551ea8fb56e3a7826d8d7e7df740e367fe10fac7d47dbb0626328c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:31:04.609Z"
+}

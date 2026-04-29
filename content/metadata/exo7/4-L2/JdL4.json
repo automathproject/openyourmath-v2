@@ -1,0 +1,25 @@
+{
+  "uuid": "JdL4",
+  "source_path": "exo7/4-L2/JdL4.tex",
+  "summary": "Calculer le déterminant d'une matrice 4x4 dépendant d'un paramètre m, puis déterminer le rang de cette matrice selon les valeurs de m.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "rang d'une matrice",
+    "matrice carrée",
+    "propriétés des déterminants",
+    "système linéaire"
+  ],
+  "methods": [
+    "développement par cofacteur",
+    "simplification algébrique",
+    "analyse des valeurs propres"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "paramètre réel",
+    "rang de matrice"
+  ],
+  "content_hash": "c704d85fb4e63aba9f4bff89f837ac75b8acca27d2c6434e3e533858fe681861",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:45:20.960Z"
+}

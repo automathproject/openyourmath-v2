@@ -1,0 +1,32 @@
+{
+  "uuid": "4CI9",
+  "source_path": "amscc/4CI9.tex",
+  "summary": "L'exercice demande de construire un exemple de fonction de deux variables homogène de degré 2 et de vérifier que ses dérivées partielles sont homogènes de degré 1. Il explore ensuite les propriétés des dérivées partielles des fonctions homogènes, notamment la relation d'Euler et une généralisation pour les dérivées secondes.",
+  "concepts": [
+    "fonction homogène",
+    "degré d'homogénéité",
+    "dérivées partielles",
+    "relation d'Euler",
+    "théorème de Schwarz",
+    "différentiabilité",
+    "classe C^1",
+    "classe C^2"
+  ],
+  "methods": [
+    "règle des chaînes",
+    "calcul de dérivées partielles",
+    "vérification d'homogénéité",
+    "application de la relation d'Euler",
+    "utilisation du théorème de Schwarz"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "dérivées partielles premières",
+    "dérivées partielles secondes",
+    "relation d'Euler",
+    "fonction homogène de degré α"
+  ],
+  "content_hash": "008f597502426c5c7fa1d8da09fad452aa8614d11bd194913b46ca61df1abc0b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:56:16.918Z"
+}

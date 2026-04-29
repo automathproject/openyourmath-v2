@@ -1,0 +1,27 @@
+{
+  "uuid": "bBRh",
+  "source_path": "exo7/1-L1/bBRh.tex",
+  "summary": "Dans un espace vectoriel de dimension 3, on considère un endomorphisme f tel que f² ≠ 0 et f³ = 0. On montre que (x₀, f(x₀), f²(x₀)) forme une base et que l'ensemble des endomorphismes commutant avec f est un sous-espace vectoriel de base (id, f, f²).",
+  "concepts": [
+    "espace vectoriel",
+    "dimension",
+    "endomorphisme",
+    "base d'un espace vectoriel",
+    "commutativité d'endomorphismes",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "construction explicite de base",
+    "vérification de linéaire indépendance",
+    "vérification de génération"
+  ],
+  "objects": [
+    "espace vectoriel de dimension 3",
+    "endomorphisme nilpotent",
+    "base de l'espace vectoriel",
+    "sous-espace vectoriel d'endomorphismes"
+  ],
+  "content_hash": "7f54c6b90fe7648e549e1a453836b74ff42da32e1c9e359425158a5c18e4a9c1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:58:41.159Z"
+}

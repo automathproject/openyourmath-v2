@@ -1,0 +1,28 @@
+{
+  "uuid": "ydCE",
+  "source_path": "exo7/4-L2/ydCE.tex",
+  "summary": "L'exercice demande d'abord si 281 peut s'écrire comme somme de deux carrés. Ensuite, il propose de factoriser 280, de trouver une racine c de -1 modulo 281, et enfin de calculer le pgcd de 281 et c+i dans l'anneau des entiers de Gauss.",
+  "concepts": [
+    "nombre premier",
+    "somme de deux carrés",
+    "racine modulo un nombre premier",
+    "anneau des entiers de Gauss",
+    "pgcd dans un anneau",
+    "norme d'un entier de Gauss"
+  ],
+  "methods": [
+    "factorisation",
+    "calcul de pgcd",
+    "calcul de norme",
+    "décomposition en facteurs premiers"
+  ],
+  "objects": [
+    "nombre premier 281",
+    "entier de Gauss",
+    "racine carrée modulo 281",
+    "pgcd dans Z[i]"
+  ],
+  "content_hash": "e41495b94119a04ed0c2f0a24b6cad6659d7d04c2d72481517943a52ecd91dea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:24:24.596Z"
+}

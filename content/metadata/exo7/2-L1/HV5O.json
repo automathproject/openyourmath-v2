@@ -1,0 +1,27 @@
+{
+  "uuid": "HV5O",
+  "source_path": "exo7/2-L1/HV5O.tex",
+  "summary": "L'exercice demande d'étudier la fonction f(x) = x^5 - 5x + 1 sur ℝ et d'en déduire que l'équation x^5 - 5x + 1 = 0 admet trois solutions réelles.",
+  "concepts": [
+    "fonction polynomiale",
+    "théorème des accroissements finis",
+    "théorème de Rolle",
+    "nombre dérivé",
+    "continuité",
+    "racines réelles"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "analyse du signe de la dérivée",
+    "application du théorème des accroissements finis",
+    "recherche de racines"
+  ],
+  "objects": [
+    "fonction polynomiale de degré 5",
+    "équation algébrique",
+    "solutions réelles"
+  ],
+  "content_hash": "05e04c5dbb7fa24cddadb7f16873a29831177a164696803ed8ccc14ef98efa32",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:02:42.502Z"
+}

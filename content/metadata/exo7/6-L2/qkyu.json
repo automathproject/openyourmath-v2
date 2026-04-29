@@ -1,0 +1,36 @@
+{
+  "uuid": "qkyu",
+  "source_path": "exo7/6-L2/qkyu.tex",
+  "summary": "L'exercice étudie la cycloïde générée par un point lié à un cercle roulant sans glisser sur l'axe Ox. Il demande de déterminer les coordonnées du point, de caractériser la courbe, d'analyser sa tangente, sa normale et son rayon de courbure, puis d'étudier la vitesse du point en mouvement.",
+  "concepts": [
+    "cycloïde",
+    "paramétrisation de courbe",
+    "tangente à une courbe",
+    "vecteur tangent unitaire",
+    "vecteur normal unitaire",
+    "rayon de courbure",
+    "centre de courbure",
+    "vitesse tangentielle",
+    "vecteur vitesse",
+    "vecteur rotation"
+  ],
+  "methods": [
+    "paramétrisation cartésienne",
+    "calcul de dérivées",
+    "normalisation de vecteur",
+    "calcul de rayon de courbure",
+    "décomposition de vecteur vitesse",
+    "produit vectoriel"
+  ],
+  "objects": [
+    "cercle roulant",
+    "point M lié à la circonférence",
+    "vecteur tangent",
+    "vecteur normal",
+    "vecteur vitesse",
+    "centre de courbure"
+  ],
+  "content_hash": "f6f29d2fc90ca9ea0008cb5bad8f0ed0a4bb1ee854968185fe34c6a00eca136a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:06:16.558Z"
+}

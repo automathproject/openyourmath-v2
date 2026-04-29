@@ -1,0 +1,24 @@
+{
+  "uuid": "GDSM",
+  "source_path": "exo7/2-L1/GDSM.tex",
+  "summary": "Calculer la limite d'une intégrale dépendant d'un paramètre lorsque ce paramètre tend vers 0 par valeurs positives. L'intégrande est une fonction trigonométrique et hyperbolique avec logarithme.",
+  "concepts": [
+    "intégrale dépendant d'un paramètre",
+    "limite de fonction",
+    "fonction trigonométrique",
+    "fonction hyperbolique",
+    "fonction logarithme"
+  ],
+  "methods": [
+    "changement de variable",
+    "développement limité",
+    "comparaison de termes dominants"
+  ],
+  "objects": [
+    "intégrale impropre",
+    "fonction de variable réelle"
+  ],
+  "content_hash": "d1a469248dfec5ed9a8dd8e621f92f708ff7a899f5bc16675dbb0b2f87ebd3b2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:33:27.937Z"
+}

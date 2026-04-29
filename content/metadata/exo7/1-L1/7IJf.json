@@ -1,0 +1,26 @@
+{
+  "uuid": "7IJf",
+  "source_path": "exo7/1-L1/7IJf.tex",
+  "summary": "Dans l'espace vectoriel des polynômes réels de degré au plus n, montrer qu'une famille de polynômes définis par P_k = X^k(1-X)^{n-k} forme une base.",
+  "concepts": [
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "famille libre",
+    "dimension d'un espace vectoriel",
+    "valuation d'un polynôme",
+    "matrice inversible"
+  ],
+  "methods": [
+    "détermination de la dimension",
+    "vérification de la liberté d'une famille",
+    "inversibilité d'une matrice triangulaire"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "famille de polynômes",
+    "matrice carrée"
+  ],
+  "content_hash": "cd71f3ab9110b7ff47d2faceb47a3203395dda5b1a46ac7844adbed60c20f1d1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:38:35.265Z"
+}

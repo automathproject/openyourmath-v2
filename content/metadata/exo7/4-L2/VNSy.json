@@ -1,0 +1,26 @@
+{
+  "uuid": "VNSy",
+  "source_path": "exo7/4-L2/VNSy.tex",
+  "summary": "L'exercice demande de déterminer les ordres possibles des éléments du groupe multiplicatif d'un corps fini à 41 éléments, de compter le nombre d'éléments pour chaque ordre, et d'identifier un générateur de ce groupe.",
+  "concepts": [
+    "groupe multiplicatif d'un corps fini",
+    "ordre d'un élément",
+    "groupe cyclique",
+    "théorème de Lagrange",
+    "groupe abélien",
+    "générateur d'un groupe"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul des diviseurs",
+    "identification des éléments primitifs"
+  ],
+  "objects": [
+    "groupe (ℤ/41ℤ)×",
+    "éléments du groupe",
+    "générateur du groupe"
+  ],
+  "content_hash": "d3aaca26d21f6d6dbcb548edc4461659547788a86fa70fcf1ab60fe0ca2f2997",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:51:00.498Z"
+}

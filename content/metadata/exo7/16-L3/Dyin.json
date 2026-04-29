@@ -1,30 +1,29 @@
 {
   "uuid": "Dyin",
   "source_path": "exo7/16-L3/Dyin.tex",
-  "summary": "L'exercice demande de montrer que l'image d'une application holomorphe non constante du plan complexe rencontre tous les disques ouverts non vides. Il en déduit que toute application holomorphe de ℂ dans le demi-plan supérieur ℍ est constante, puis étudie une application spécifique h et son image sur le demi-plan de Poincaré.",
+  "summary": "Montrer que l'image d'une application holomorphe non constante du plan complexe rencontre tous les disques ouverts non vides. En déduire que toute application holomorphe de ℂ dans le demi-plan de Poincaré ℍ est constante. Étudier une application spécifique h et son image du demi-plan de Poincaré.",
   "concepts": [
     "application holomorphe",
     "théorème de Liouville",
+    "demi-plan de Poincaré",
     "disque ouvert",
-    "demi-plan supérieur",
-    "image d'une application",
     "injectivité",
-    "partie bornée"
+    "module d'une fonction holomorphe",
+    "image d'une application"
   ],
   "methods": [
     "raisonnement par l'absurde",
-    "composition d'applications",
+    "composition de fonctions",
     "calcul de module",
     "utilisation de l'injectivité"
   ],
   "objects": [
     "application holomorphe",
     "disque ouvert",
-    "demi-plan supérieur",
-    "application h",
-    "demi-plan de Poincaré"
+    "demi-plan de Poincaré",
+    "fonction h"
   ],
-  "content_hash": "7f417171d0081a7b890f51fec2de07acb249e06a6659abb48b930f74d1fb3002",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:23:46.672Z"
+  "content_hash": "0bf3404f8cdf3a047534379f556eeab470037768e0a2a94c60e38b4751ef4d24",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:16:42.185Z"
 }

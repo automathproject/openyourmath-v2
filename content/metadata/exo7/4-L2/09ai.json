@@ -1,0 +1,29 @@
+{
+  "uuid": "09ai",
+  "source_path": "exo7/4-L2/09ai.tex",
+  "summary": "L'exercice demande de déterminer le nombre d'éléments inversibles dans l'anneau ℤ/24ℤ, de trouver un isomorphisme entre cet anneau et un groupe produit, et d'analyser la structure cyclique du groupe des inversibles.",
+  "concepts": [
+    "fonction indicatrice d'Euler",
+    "théorème des restes chinois",
+    "groupe cyclique",
+    "groupe produit",
+    "élément inversible",
+    "isomorphisme de groupes",
+    "ordre d'un élément"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul de la fonction φ",
+    "détermination des générateurs",
+    "analyse de la structure du groupe"
+  ],
+  "objects": [
+    "anneau ℤ/24ℤ",
+    "groupe des inversibles",
+    "groupe produit ℤ/3ℤ × ℤ/8ℤ",
+    "éléments d'ordre 2"
+  ],
+  "content_hash": "67df4280375976abe83ed4ae9d98d7335f4312b60029f7cf29842a04a078bd1b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:13:38.016Z"
+}

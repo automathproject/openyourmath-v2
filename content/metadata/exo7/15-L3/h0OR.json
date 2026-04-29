@@ -1,0 +1,26 @@
+{
+  "uuid": "h0OR",
+  "source_path": "exo7/15-L3/h0OR.tex",
+  "summary": "L'exercice demande de vérifier que la distance d définie sur l'espace des fonctions continues de ℝ dans ℂ est une métrique pour laquelle l'espace est complet, puis de montrer que la convergence pour cette métrique équivaut à la convergence uniforme sur tout compact de ℝ.",
+  "concepts": [
+    "espace métrique",
+    "complétude",
+    "convergence uniforme",
+    "espace de Banach",
+    "distance",
+    "topologie"
+  ],
+  "methods": [
+    "vérification des axiomes de distance",
+    "étude de la complétude",
+    "comparaison de topologies"
+  ],
+  "objects": [
+    "fonction continue",
+    "distance définie par série",
+    "espace C(ℝ, ℂ)"
+  ],
+  "content_hash": "ad5843262325041ec60c9f6dbc6b48da59f4ca6a215f4222cc3f79b190fd8ba1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:12:07.140Z"
+}

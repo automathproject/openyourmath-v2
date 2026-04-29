@@ -1,0 +1,27 @@
+{
+  "uuid": "noxz",
+  "source_path": "exo7/4-L2/noxz.tex",
+  "summary": "L'exercice demande de calculer le déterminant d'une matrice tridiagonale spécifique en fonction des déterminants des matrices de taille inférieure, puis de démontrer une formule explicite pour ce déterminant. On étudie aussi le cas particulier où le paramètre a vaut 1.",
+  "concepts": [
+    "déterminant de matrice",
+    "matrice tridiagonale",
+    "relation de récurrence",
+    "calcul de déterminant par blocs",
+    "limite de suite"
+  ],
+  "methods": [
+    "développement de Laplace",
+    "récurrence",
+    "calcul de déterminant par blocs",
+    "résolution d'équation de récurrence linéaire"
+  ],
+  "objects": [
+    "matrice tridiagonale",
+    "déterminant",
+    "suite récurrente",
+    "relation de récurrence"
+  ],
+  "content_hash": "6a60d51ad7bd76e0142b461e70f50912978e2a8a060939a13ea9194411ccdf60",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:10:09.523Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "nnKf",
+  "source_path": "exo7/1-L1/nnKf.tex",
+  "summary": "Soit E un K-espace vectoriel de dimension finie n. On considère deux endomorphismes f et g de E tels que f+g est inversible et fg=0. Montrer que la somme des rangs de f et g est égale à n.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "endomorphisme",
+    "rang d'un endomorphisme",
+    "inversibilité",
+    "relation de rang-nulité"
+  ],
+  "methods": [
+    "utilisation de la relation de rang-nulité",
+    "manipulation d'endomorphismes",
+    "propriétés des noyaux"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "endomorphismes f et g",
+    "rang de f",
+    "rang de g"
+  ],
+  "content_hash": "d5b8cc124ea1b216778c7d12e18512563198f9affdcfdf83d784498cd250a062",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:09:30.757Z"
+}

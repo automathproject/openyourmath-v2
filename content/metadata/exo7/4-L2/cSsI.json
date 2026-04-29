@@ -1,0 +1,27 @@
+{
+  "uuid": "cSsI",
+  "source_path": "exo7/4-L2/cSsI.tex",
+  "summary": "L'exercice demande de prouver qu'une matrice réelle A est diagonalisable si et seulement s'il existe une matrice symétrique réelle définie positive S telle que la transposée de A soit conjuguée par S.",
+  "concepts": [
+    "diagonalisation",
+    "matrice symétrique",
+    "matrice définie positive",
+    "conjugaison de matrices",
+    "endomorphisme auto-adjoint",
+    "transposée de matrice",
+    "matrice inversible"
+  ],
+  "methods": [
+    "conjugaison de matrices",
+    "décomposition spectrale",
+    "utilisation de la positivité définie"
+  ],
+  "objects": [
+    "matrice réelle",
+    "matrice symétrique",
+    "matrice inversible"
+  ],
+  "content_hash": "8c4f3a72b937c5cfc927f87f7e01d6a04a51e0fb31b8cb7fc0b0cd1631cd8f57",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:38:57.894Z"
+}

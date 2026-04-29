@@ -1,0 +1,28 @@
+{
+  "uuid": "WHLU",
+  "source_path": "exo7/6-L2/WHLU.tex",
+  "summary": "Dans un rectangle ABCD et un point M du plan, on construit des projetés orthogonaux C', D' et M' ainsi qu'une intersection I. L'exercice demande de prouver l'alignement des points M, M' et I.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "projeté orthogonal",
+    "translation",
+    "alignement de points",
+    "droites du plan",
+    "intersection de droites"
+  ],
+  "methods": [
+    "utilisation des propriétés des translations",
+    "analyse des configurations géométriques",
+    "démonstration par alignement"
+  ],
+  "objects": [
+    "rectangle",
+    "points du plan",
+    "projetés orthogonaux",
+    "droites",
+    "intersection"
+  ],
+  "content_hash": "01e0cb89436022fa3869e9e0579fce74e177f31fe9f968403f23024b0ad8d934",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:43:28.931Z"
+}

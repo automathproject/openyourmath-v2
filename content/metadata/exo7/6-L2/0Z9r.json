@@ -1,0 +1,29 @@
+{
+  "uuid": "0Z9r",
+  "source_path": "exo7/6-L2/0Z9r.tex",
+  "summary": "L'exercice demande de démontrer que trois points donnés ne sont pas alignés et que quatre points ne sont pas coplanaires dans un repère orthonormé direct. Il s'agit ensuite de déterminer l'équation cartésienne d'un plan passant par trois points, de calculer la distance d'un point à ce plan, et de donner une représentation paramétrique de l'intersection de deux plans.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "alignement de points",
+    "coplanarité",
+    "équation cartésienne d'un plan",
+    "distance d'un point à un plan",
+    "représentation paramétrique d'une droite"
+  ],
+  "methods": [
+    "calcul de vecteurs",
+    "déterminant pour l'alignement",
+    "produit mixte pour la coplanarité",
+    "équation de plan par trois points",
+    "formule de distance point-plan",
+    "intersection de deux plans"
+  ],
+  "objects": [
+    "points dans l'espace",
+    "plan cartésien",
+    "droite d'intersection"
+  ],
+  "content_hash": "5fae1aa0fc7732fdab15511e956c40252042b9e544bf8d6b681cfda1bd5505a0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:18:04.809Z"
+}

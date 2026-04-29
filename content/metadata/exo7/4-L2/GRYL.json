@@ -1,0 +1,28 @@
+{
+  "uuid": "GRYL",
+  "source_path": "exo7/4-L2/GRYL.tex",
+  "summary": "Calculer le déterminant d'une matrice circulaire de taille n×n à coefficients complexes. La matrice est définie par une permutation cyclique de ses éléments.",
+  "concepts": [
+    "déterminant de matrice",
+    "matrice circulaire",
+    "racines de l'unité",
+    "matrice de Vandermonde",
+    "inversibilité",
+    "produit de matrices"
+  ],
+  "methods": [
+    "développement par blocs",
+    "utilisation des racines de l'unité",
+    "simplification algébrique",
+    "calcul de produit de matrices"
+  ],
+  "objects": [
+    "matrice circulaire",
+    "matrice de Vandermonde",
+    "racines n-ièmes de l'unité",
+    "déterminant"
+  ],
+  "content_hash": "6b2a4399882bbc517dd8e9ebd5897fdf53ee82b63d3957dca4f241e05de601b3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:42:32.768Z"
+}

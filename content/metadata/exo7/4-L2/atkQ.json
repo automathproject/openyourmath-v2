@@ -1,0 +1,27 @@
+{
+  "uuid": "atkQ",
+  "source_path": "exo7/4-L2/atkQ.tex",
+  "summary": "L'exercice demande de déterminer le cardinal du groupe des matrices inversibles de taille 2x2 à coefficients dans le corps F2 et d'en déduire son isomorphisme avec l'un des deux groupes d'ordre 6 possibles.",
+  "concepts": [
+    "groupe linéaire général",
+    "corps fini",
+    "ordre d'un groupe",
+    "isomorphisme de groupes",
+    "groupe cyclique",
+    "groupe symétrique"
+  ],
+  "methods": [
+    "calcul du cardinal d'un groupe",
+    "classification des groupes d'ordre fini",
+    "comparaison de structures de groupes"
+  ],
+  "objects": [
+    "matrice inversible",
+    "groupe GL2(F2)",
+    "groupe cyclique Z/6Z",
+    "groupe symétrique S3"
+  ],
+  "content_hash": "f075063b8f00ba84c5fa4e9497e6d3c149627da2205c2d9d3d1ba89602fd5dbf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:58:48.599Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "alG6",
+  "source_path": "exo7/12-L3/alG6.tex",
+  "summary": "Trouver les extrema de la fonction f(x,y,z) = 5x + y - 3z sur l'intersection d'un plan et d'une sphère unité dans ℝ³.",
+  "concepts": [
+    "extremum lié",
+    "optimisation sous contrainte",
+    "géométrie différentielle",
+    "fonction de plusieurs variables",
+    "contrainte d'égalité",
+    "méthode des multiplicateurs de Lagrange"
+  ],
+  "methods": [
+    "méthode des multiplicateurs de Lagrange",
+    "calcul de gradient",
+    "résolution de système d'équations"
+  ],
+  "objects": [
+    "fonction de trois variables",
+    "plan affine",
+    "sphère unité",
+    "contrainte linéaire"
+  ],
+  "content_hash": "0b3febf32ee27fb94d9ec0d94323c8d9527911b3ea4c28b0ae6ed933bba49a30",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:32:48.106Z"
+}

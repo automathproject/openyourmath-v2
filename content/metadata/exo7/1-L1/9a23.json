@@ -1,0 +1,28 @@
+{
+  "uuid": "9a23",
+  "source_path": "exo7/1-L1/9a23.tex",
+  "summary": "L'exercice demande de prouver qu'un endomorphisme f d'un espace vectoriel E de dimension n vérifiant f² = -Id est inversible, que n est pair, et que E se décompose en une somme directe de sous-espaces stables de dimension 2.",
+  "concepts": [
+    "endomorphisme",
+    "espace vectoriel",
+    "dimension",
+    "sous-espace stable",
+    "décomposition en somme directe",
+    "inversibilité",
+    "paire"
+  ],
+  "methods": [
+    "utilisation de la condition f² = -Id",
+    "décomposition en sous-espaces stables",
+    "preuve par contradiction",
+    "argument dimensionnel"
+  ],
+  "objects": [
+    "endomorphisme f",
+    "espace vectoriel E",
+    "sous-espaces stables de dimension 2"
+  ],
+  "content_hash": "375ce696564395804f320574a762c958c3c8719115ca72700c80f4b9aabd623e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:41:26.895Z"
+}

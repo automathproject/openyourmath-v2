@@ -1,0 +1,27 @@
+{
+  "uuid": "q7k0",
+  "source_path": "exo7/9-L3/q7k0.tex",
+  "summary": "Dans un plan projectif réel muni d'un repère projectif, on considère trois points A', B', C' construits sur les côtés du triangle ABC. Les droites AA', BB' et CC' sont concourantes en I. On demande de montrer analytiquement que les points P, Q et R, définis comme intersections de certaines droites, sont alignés.",
+  "concepts": [
+    "géométrie projective",
+    "plan projectif",
+    "repère projectif",
+    "alignement de points",
+    "concurrency de droites",
+    "théorème de Desargues"
+  ],
+  "methods": [
+    "coordonnées homogènes",
+    "calcul analytique",
+    "utilisation de la condition d'alignement"
+  ],
+  "objects": [
+    "triangle ABC",
+    "points A', B', C'",
+    "droites AA', BB', CC'",
+    "points P, Q, R"
+  ],
+  "content_hash": "617001bde9ba2ac4f0f561cd1c9bcb3845dbc932c15b1c31a58e5f260007a567",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:14:11.191Z"
+}

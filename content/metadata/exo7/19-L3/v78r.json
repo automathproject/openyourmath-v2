@@ -1,0 +1,32 @@
+{
+  "uuid": "v78r",
+  "source_path": "exo7/19-L3/v78r.tex",
+  "summary": "L'exercice étudie le temps d'attente $T_n$ pour obtenir $n$ succès dans une suite de variables aléatoires de Bernoulli indépendantes. Il demande de montrer que $T_1$ est fini presque sûrement, de déterminer sa loi et son espérance, puis d'étendre ces résultats aux variables $T_n$ et aux différences $T_{n+1}-T_n$.",
+  "concepts": [
+    "variable aléatoire de Bernoulli",
+    "indépendance",
+    "loi géométrique",
+    "espérance mathématique",
+    "probabilité conditionnelle",
+    "loi binomiale",
+    "théorème de récurrence",
+    "somme de variables aléatoires indépendantes"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "formule des probabilités totales",
+    "séries dérivées",
+    "récurrence mathématique",
+    "calcul de coefficient binomial"
+  ],
+  "objects": [
+    "suite de variables aléatoires indépendantes",
+    "temps d'arrêt",
+    "variable aléatoire de Bernoulli",
+    "loi géométrique",
+    "loi binomiale"
+  ],
+  "content_hash": "ff513ad95ae484a08cc139c8d1c087ae6db6f6b4661229bbc71630fdaa05f773",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:35:28.945Z"
+}

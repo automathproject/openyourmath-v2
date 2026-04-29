@@ -1,0 +1,26 @@
+{
+  "uuid": "SmJH",
+  "source_path": "exo7/4-L2/SmJH.tex",
+  "summary": "L'exercice demande de décomposer une forme quadratique en combinaison linéaire de carrés de formes linéaires indépendantes, puis de déterminer son rang et sa signature selon les valeurs d'un paramètre réel. Il étudie aussi pour quelles valeurs du paramètre la forme bilinéaire associée définit un produit scalaire.",
+  "concepts": [
+    "forme quadratique",
+    "forme bilinéaire symétrique",
+    "produit scalaire",
+    "rang d'une forme quadratique",
+    "signature d'une forme quadratique",
+    "décomposition en carrés de formes linéaires"
+  ],
+  "methods": [
+    "décomposition diagonale",
+    "analyse des valeurs propres",
+    "calcul de la signature"
+  ],
+  "objects": [
+    "forme quadratique sur ℝ³",
+    "forme bilinéaire symétrique",
+    "paramètre réel"
+  ],
+  "content_hash": "245b1eceaaf7dd0a9248929b24863b903bc8ba512ebeccad10f8a0ed31c874c3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:25:36.520Z"
+}

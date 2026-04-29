@@ -1,0 +1,28 @@
+{
+  "uuid": "LHli",
+  "source_path": "exo7/10-L3/LHli.tex",
+  "summary": "L'exercice demande d'écrire une base de l'extension ℚ[i, √2] sur ℚ, puis de déterminer la matrice de l'application linéaire associée à l'élément α = i + √2 dans cette base. Enfin, il s'agit de retrouver le polynôme minimal de α dans ℚ[X] à la fois via cette matrice et par calcul direct.",
+  "concepts": [
+    "extension d'anneau",
+    "base d'un espace vectoriel",
+    "polynôme minimal",
+    "algèbre de corps",
+    "matrice de représentation",
+    "élément algébrique"
+  ],
+  "methods": [
+    "détermination de base",
+    "calcul de matrice de représentation",
+    "détermination du polynôme minimal",
+    "calcul direct de polynôme minimal"
+  ],
+  "objects": [
+    "extension ℚ[i, √2]",
+    "élément α = i + √2",
+    "matrice de l'application linéaire",
+    "polynôme minimal"
+  ],
+  "content_hash": "b8973a9e956c21ee8bddacdc3edb6b5d3e15ba3741c074534950823a32663c12",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:24:31.856Z"
+}

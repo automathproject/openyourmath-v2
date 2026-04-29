@@ -1,0 +1,27 @@
+{
+  "uuid": "gor7",
+  "source_path": "exo7/8-L3/gor7.tex",
+  "summary": "L'exercice demande de décomposer le groupe-produit (ℤ/4ℤ) × (ℤ/4ℤ) en classes à gauche modulo le sous-groupe engendré par (3̅, 2̅) et de décrire le groupe-quotient G/H.",
+  "concepts": [
+    "groupe quotient",
+    "théorème de Lagrange",
+    "classes à gauche",
+    "sous-groupe engendré",
+    "groupe-produit",
+    "structure de groupe abélien"
+  ],
+  "methods": [
+    "décomposition en classes à gauche",
+    "description explicite des classes",
+    "calcul des représentants des classes"
+  ],
+  "objects": [
+    "groupe (ℤ/4ℤ) × (ℤ/4ℤ)",
+    "sous-groupe H engendré par (3̅, 2̅)",
+    "classes à gauche modulo H",
+    "groupe-quotient G/H"
+  ],
+  "content_hash": "66019cd0883b3539b9a3763228a28fd2193ee4c9f681f4b34c3b968bf343470b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:11:03.003Z"
+}

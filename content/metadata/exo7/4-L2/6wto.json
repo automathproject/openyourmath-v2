@@ -1,0 +1,28 @@
+{
+  "uuid": "6wto",
+  "source_path": "exo7/4-L2/6wto.tex",
+  "summary": "Résoudre un système linéaire de 4 équations à 4 inconnues (x, y, z, t) avec des paramètres réels a et μ. Le système est symétrique avec des coefficients dépendant de a et des termes constants dépendant de μ.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "matrice carrée",
+    "déterminant",
+    "valeurs propres",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "résolution de système linéaire",
+    "analyse de cas selon paramètres",
+    "factorisation de polynôme"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice 4x4",
+    "paramètres réels",
+    "polynôme de degré 4"
+  ],
+  "content_hash": "30adfd926311c7efb1ecc610746ae5f12f33ff813aa109ae4486eed1d0e09e3c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:33:17.742Z"
+}

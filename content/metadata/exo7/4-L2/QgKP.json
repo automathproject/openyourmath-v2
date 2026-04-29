@@ -1,0 +1,30 @@
+{
+  "uuid": "QgKP",
+  "source_path": "exo7/4-L2/QgKP.tex",
+  "summary": "L'exercice demande de décomposer une permutation donnée en produit de cycles à supports disjoints, de déterminer son ordre, d'écrire sa puissance sixième, son inverse, et de la décomposer en un nombre minimal de transpositions.",
+  "concepts": [
+    "permutation",
+    "cycle",
+    "ordre d'une permutation",
+    "puissance d'une permutation",
+    "inverse d'une permutation",
+    "transposition"
+  ],
+  "methods": [
+    "décomposition en cycles",
+    "calcul de l'ordre",
+    "calcul de la puissance",
+    "calcul de l'inverse",
+    "décomposition en transpositions"
+  ],
+  "objects": [
+    "permutation",
+    "cycles disjoints",
+    "puissance de permutation",
+    "inverse de permutation",
+    "transpositions"
+  ],
+  "content_hash": "61d19e7334dcd1d0408934d695ce54761e8ae40303037c2a95ab464e9d7853f5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:46:26.149Z"
+}

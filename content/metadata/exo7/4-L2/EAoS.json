@@ -1,0 +1,26 @@
+{
+  "uuid": "EAoS",
+  "source_path": "exo7/4-L2/EAoS.tex",
+  "summary": "Dans un espace vectoriel de dimension finie, montrer l'existence d'une forme linéaire distinguant deux vecteurs distincts, puis prouver que l'ensemble des formes linéaires ayant cette propriété est l'espace dual tout entier.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "espace dual",
+    "forme linéaire",
+    "sous-espace vectoriel",
+    "distinction de vecteurs",
+    "théorème de séparation affine"
+  ],
+  "methods": [
+    "utilisation de la base duale",
+    "argument par contradiction",
+    "construction explicite de forme linéaire"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "forme linéaire f",
+    "sous-espace vectoriel V de E*"
+  ],
+  "content_hash": "ce076eb9d167e74a6d18c3f9613387e5c47dd070c8a45ca971f691642643cd6e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:51:40.451Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "bkES",
+  "source_path": "exo7/4-L2/bkES.tex",
+  "summary": "L'exercice demande de déterminer le nombre d'éléments d'un corps quotient, de lister ses éléments et sa table de multiplication, puis de réaliser des opérations de multiplication et d'inversion dans cet anneau quotient.",
+  "concepts": [
+    "corps fini",
+    "anneau quotient",
+    "polynôme irréductible",
+    "algèbre sur un corps",
+    "division euclidienne des polynômes",
+    "inversion dans un anneau"
+  ],
+  "methods": [
+    "réduction modulo un polynôme",
+    "calcul de représentants canoniques",
+    "multiplication de polynômes",
+    "recherche d'inverse"
+  ],
+  "objects": [
+    "corps $\\mathbb{F}_2[X]/(X^3+X+1)$",
+    "anneau quotient $\\mathbb{F}_2[X]/(X^2+X+1)$",
+    "polynômes de $\\mathbb{F}_2[X]$",
+    "éléments de l'anneau quotient"
+  ],
+  "content_hash": "b47bff594e303b6639f1054cf30db41e3d5a19ff469da502bd213154422e32b8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:00:01.491Z"
+}

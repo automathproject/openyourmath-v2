@@ -1,0 +1,22 @@
+{
+  "uuid": "56TE",
+  "source_path": "exo7/2-L1/56TE.tex",
+  "summary": "On considère une fonction uniformément continue sur ℝ⁺ dont la suite (f(xn)) converge vers 0 pour tout x ≥ 0. On demande de montrer que la limite de f(x) en +∞ est 0.",
+  "concepts": [
+    "continuité uniforme",
+    "limite de fonction",
+    "suite numérique",
+    "convergence"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la continuité uniforme"
+  ],
+  "objects": [
+    "fonction réelle",
+    "suite (f(xn))"
+  ],
+  "content_hash": "73baa043f05b2bb6be6352f3a65dec0092e76cab6fa43c74a57a57b474319695",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:13:54.778Z"
+}

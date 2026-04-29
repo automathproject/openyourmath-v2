@@ -1,0 +1,27 @@
+{
+  "uuid": "Vsoj",
+  "source_path": "exo7/1-L1/Vsoj.tex",
+  "summary": "L'exercice demande de montrer par récurrence que la puissance p-ième d'une matrice A peut s'exprimer comme une combinaison linéaire de deux matrices U et V avec des coefficients λ^p et μ^p. Ensuite, il s'agit de prouver que les vecteurs propres de A sont aussi vecteurs propres de U et V avec des valeurs propres spécifiques.",
+  "concepts": [
+    "relation de récurrence",
+    "vecteur propre",
+    "valeur propre",
+    "matrice inversible",
+    "polynôme annulateur",
+    "décomposition matricielle"
+  ],
+  "methods": [
+    "récurrence",
+    "diagonalisation",
+    "calcul de polynôme caractéristique",
+    "manipulation algébrique"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteur propre",
+    "polynôme annulateur"
+  ],
+  "content_hash": "30c4588fc29aef81404269a7a88c5ef54dc254b79b47eefb87bdb298799c0d34",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:02:53.485Z"
+}

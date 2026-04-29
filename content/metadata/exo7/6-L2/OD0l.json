@@ -1,0 +1,29 @@
+{
+  "uuid": "OD0l",
+  "source_path": "exo7/6-L2/OD0l.tex",
+  "summary": "Dans un plan affine euclidien orienté, on considère deux points distincts O et A. On définit deux rotations r et ρ de centres respectifs O et A et d'angle 2π/3. On demande de montrer que le groupe G engendré par ces rotations ne contient que des translations et des rotations d'angles ±2π/3, d'expliciter une relation entre les vecteurs OA, OB et OC, et de déterminer les translations spécifiques dans G.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "rotation dans le plan",
+    "groupe d'isométries",
+    "translation",
+    "angle de rotation",
+    "groupe engendré par des isométries"
+  ],
+  "methods": [
+    "étude des transformations géométriques",
+    "analyse des propriétés de conservation",
+    "calcul des images par transformation",
+    "détermination des vecteurs de translation"
+  ],
+  "objects": [
+    "plan affine euclidien",
+    "rotation",
+    "vecteurs OA, OB, OC",
+    "groupe d'isométries G",
+    "translations"
+  ],
+  "content_hash": "ebe98c3b661b9f8bc98e51cf2dd437496f48fb5df4e889693e0c872cb95f0af8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:36:27.438Z"
+}

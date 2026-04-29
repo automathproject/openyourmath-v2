@@ -1,0 +1,28 @@
+{
+  "uuid": "lpAd",
+  "source_path": "exo7/5-L2/lpAd.tex",
+  "summary": "L'exercice étudie des applications bornées et de classe C^1 sur ℝ à valeurs dans ℝ^3, vérifiant certaines relations différentielles et une condition d'intégrale bornée. On demande de montrer la convergence de suites définies par des moyennes temporelles de ces applications.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "intégrale de fonction vectorielle",
+    "inégalité de Cauchy-Schwarz",
+    "convergence de suite",
+    "changement de variable dans les intégrales",
+    "fonction bornée"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement d'ordre d'intégration",
+    "majoration par Cauchy-Schwarz",
+    "analyse asymptotique"
+  ],
+  "objects": [
+    "suite numérique",
+    "application vectorielle",
+    "intégrale impropre",
+    "moyenne temporelle"
+  ],
+  "content_hash": "060d28c56fc868faab1fc5fce3287dede5336efda3209b5da915c4b7dd587d44",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:44:17.893Z"
+}

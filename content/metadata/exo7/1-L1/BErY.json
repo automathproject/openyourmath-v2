@@ -1,29 +1,26 @@
 {
   "uuid": "BErY",
   "source_path": "exo7/1-L1/BErY.tex",
-  "summary": "L'exercice demande de prouver des propriétés sur le pgcd de suites d'entiers relatifs définies par récurrence, en utilisant l'algorithme d'Euclide. Il s'agit de montrer la stabilité du pgcd, la décroissance d'une suite et l'existence de coefficients de Bézout.",
+  "summary": "L'exercice demande de démontrer des propriétés sur le pgcd de deux suites d'entiers relatifs et d'établir l'existence de coefficients de Bézout pour le pgcd de deux entiers relatifs.",
   "concepts": [
-    "algorithme d'Euclide",
     "pgcd",
-    "coefficients de Bézout",
-    "suite récurrente",
-    "divisibilité dans Z",
-    "relation de récurrence",
-    "propriété de stabilité"
+    "ppcm",
+    "algorithme d'Euclide",
+    "identité de Bézout",
+    "suite d'entiers",
+    "divisibilité dans Z"
   ],
   "methods": [
     "récurrence",
-    "calcul de pgcd",
-    "utilisation des relations de divisibilité",
-    "construction explicite de coefficients"
+    "algorithme d'Euclide",
+    "calcul de coefficients de Bézout"
   ],
   "objects": [
     "suite d'entiers",
     "pgcd de deux entiers",
-    "coefficients de Bézout",
-    "relation de récurrence linéaire"
+    "coefficients de Bézout"
   ],
-  "content_hash": "8992bd4962c3fea96d4503a25a7b7eed7131697152bf7b46b11504bfc1998296",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:18:34.694Z"
+  "content_hash": "32f9ffba6b23853089e96081cd139c03ec186d95de127242fd8ae0129bdf7af6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:41:15.244Z"
 }

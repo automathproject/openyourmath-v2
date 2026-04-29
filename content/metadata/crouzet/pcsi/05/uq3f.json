@@ -1,0 +1,28 @@
+{
+  "uuid": "uq3f",
+  "source_path": "crouzet/pcsi/05/uq3f.tex",
+  "summary": "L'exercice demande de déterminer la différence symétrique d'un ensemble avec lui-même et avec l'ensemble vide, puis de prouver des propriétés algébriques de cette opération.",
+  "concepts": [
+    "différence symétrique",
+    "ensemble vide",
+    "union disjointe",
+    "complémentaire d'un ensemble",
+    "lois de De Morgan",
+    "inclusion d'ensembles",
+    "double inclusion"
+  ],
+  "methods": [
+    "définition par cas",
+    "double inclusion",
+    "utilisation des lois de De Morgan"
+  ],
+  "objects": [
+    "ensemble",
+    "parties d'un ensemble",
+    "différence symétrique",
+    "complémentaire d'un ensemble"
+  ],
+  "content_hash": "0b11613d25a4dc1980d61071239d85693d0ab5f50587ca3bf0757ac90173250c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:09:17.764Z"
+}

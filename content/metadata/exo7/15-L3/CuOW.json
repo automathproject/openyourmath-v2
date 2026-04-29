@@ -1,0 +1,29 @@
+{
+  "uuid": "CuOW",
+  "source_path": "exo7/15-L3/CuOW.tex",
+  "summary": "L'exercice demande de montrer qu'un espace de suites réelles nulles à partir d'un certain rang n'est pas complet pour une métrique donnée, puis de trouver un espace de suites plus grand qui soit complet et dans lequel l'espace initial est dense. Enfin, il demande d'analyser le cas où la métrique est remplacée par la norme uniforme.",
+  "concepts": [
+    "espace métrique complet",
+    "espace de Banach",
+    "suite de Cauchy",
+    "convergence dans un espace métrique",
+    "densité d'un espace dans un autre",
+    "norme uniforme"
+  ],
+  "methods": [
+    "construction d'une suite de Cauchy",
+    "analyse de la convergence",
+    "utilisation de la définition de la complétude",
+    "approximation de suites par tronquage"
+  ],
+  "objects": [
+    "espace de suites réelles",
+    "métrique ρ",
+    "espace Y de toutes les suites",
+    "suite x^p",
+    "suite x^∞"
+  ],
+  "content_hash": "fc687344aca8324e507c95d6584ab326917f370dff525e519e5ce9dd30e3017e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:09:20.604Z"
+}

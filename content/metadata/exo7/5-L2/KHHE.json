@@ -1,0 +1,29 @@
+{
+  "uuid": "KHHE",
+  "source_path": "exo7/5-L2/KHHE.tex",
+  "summary": "L'exercice demande de trouver les points critiques d'une fonction de deux variables et de déterminer leur nature (minimum, maximum, point selle). Il faut ensuite établir l'équation du plan tangent au graphe de la fonction en un point donné et tracer la droite d'intersection de ce plan avec le plan xOy.",
+  "concepts": [
+    "extremums locaux",
+    "points critiques",
+    "plan tangent",
+    "fonction de deux variables",
+    "dérivées partielles",
+    "hessien",
+    "forme quadratique"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "analyse du hessien",
+    "détermination de la nature des points critiques",
+    "équation du plan tangent"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "points critiques",
+    "plan tangent",
+    "droite d'intersection"
+  ],
+  "content_hash": "d9016bd682196ee8368b440ba10df47d174d10756e8e52ea5afaa04dc76f9b52",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:55:57.375Z"
+}

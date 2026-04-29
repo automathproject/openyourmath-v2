@@ -1,0 +1,26 @@
+{
+  "uuid": "az1w",
+  "source_path": "exo7/1-L1/az1w.tex",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité de l'écriture d'un entier naturel N en base b, avec b ≥ 2, sous forme de combinaison linéaire des puissances de b avec des coefficients a_i appartenant à {0, 1, ..., b-1} et le coefficient dominant a_n non nul.",
+  "concepts": [
+    "principe de récurrence",
+    "unicité de la représentation",
+    "base de numération",
+    "entier naturel",
+    "combinaison linéaire"
+  ],
+  "methods": [
+    "raisonnement par récurrence",
+    "décomposition en base",
+    "algorithme de division euclidienne"
+  ],
+  "objects": [
+    "entier naturel",
+    "système de numération",
+    "puissances de b",
+    "coefficients de base"
+  ],
+  "content_hash": "da90a944a932d59851e457c94bf9b54eca2ff360da72751704ddba4fdbb158e5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:19:36.639Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "MRF5",
+  "source_path": "exo7/4-L2/MRF5.tex",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité d'une matrice symétrique définie positive B telle que B² = A, où A est une matrice symétrique définie positive donnée. Il faut ensuite calculer explicitement B pour une matrice A spécifique.",
+  "concepts": [
+    "matrice symétrique",
+    "matrice définie positive",
+    "endomorphisme auto-adjoint",
+    "racine carrée matricielle",
+    "diagonalisation",
+    "valeurs propres"
+  ],
+  "methods": [
+    "diagonalisation",
+    "calcul des valeurs propres",
+    "construction explicite de la racine carrée"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "matrice définie positive",
+    "racine carrée matricielle"
+  ],
+  "content_hash": "98911b64c9d52b1dd1041ce5f1df05d884706b58110ac16358ecbd8a36ef8803",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:20:02.081Z"
+}

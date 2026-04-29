@@ -1,0 +1,26 @@
+{
+  "uuid": "OvRb",
+  "source_path": "exo7/5-L2/OvRb.tex",
+  "summary": "On définit une fonction f sur ℝ² privé de la diagonale (x,x) par f(x,y) = (sin x - sin y)/(x-y). L'exercice demande si cette fonction peut être prolongée en une fonction continue sur tout ℝ².",
+  "concepts": [
+    "continuité",
+    "prolongement de fonction",
+    "fonction de deux variables",
+    "limite",
+    "continuité en un point",
+    "fonction rationnelle"
+  ],
+  "methods": [
+    "limite de fonctions",
+    "prolongement par continuité",
+    "analyse de cas limites"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "fonction rationnelle",
+    "limite de fonction"
+  ],
+  "content_hash": "bb41df4c37276eafafdea3580e0471409760ddaea7aaf0dd59e4bd57a10b7482",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:59:47.958Z"
+}

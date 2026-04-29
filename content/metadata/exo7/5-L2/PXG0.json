@@ -1,0 +1,29 @@
+{
+  "uuid": "PXG0",
+  "source_path": "exo7/5-L2/PXG0.tex",
+  "summary": "L'exercice demande de montrer la convergence d'une intégrale multiple $\\Lambda_n(\\psi)$ vers $\\psi$ évaluée en l'espérance de $f$ lorsque $n$ tend vers l'infini, pour une fonction $f$ positive et intégrable sur $[0,1]$ et une fonction $\\psi$ continue.",
+  "concepts": [
+    "intégrale multiple",
+    "convergence ponctuelle",
+    "espérance d'une fonction",
+    "théorème de Stone-Weierstrass",
+    "polynômes",
+    "approximation uniforme",
+    "densité des polynômes"
+  ],
+  "methods": [
+    "approximation polynomiale",
+    "développement en monômes",
+    "linéarité de l'intégrale",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction continue positive",
+    "intégrale multiple",
+    "espérance",
+    "polynôme"
+  ],
+  "content_hash": "73e199d2680a61758a85b3c5111519dd5bffba41444b3344bdb83a7c06fa26b0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:37:22.855Z"
+}

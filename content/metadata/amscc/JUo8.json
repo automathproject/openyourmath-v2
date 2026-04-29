@@ -1,0 +1,28 @@
+{
+  "uuid": "JUo8",
+  "source_path": "amscc/JUo8.tex",
+  "summary": "Résolution de deux systèmes linéaires à paramètres réels λ et m, en distinguant les cas selon les valeurs de ces paramètres.",
+  "concepts": [
+    "système linéaire",
+    "déterminant",
+    "formules de Cramer",
+    "rang d'une matrice",
+    "solution unique",
+    "solution paramétrique",
+    "incompatibilité"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "réduction de matrice",
+    "formules de Cramer",
+    "analyse de cas"
+  ],
+  "objects": [
+    "système linéaire à paramètres",
+    "matrice carrée",
+    "solution vectorielle"
+  ],
+  "content_hash": "99ec4f8695da0c83ed0258f9427cac04f28076c654982d0f4808fae5462cd1f2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:44:56.882Z"
+}

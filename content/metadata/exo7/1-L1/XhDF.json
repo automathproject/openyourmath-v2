@@ -1,0 +1,28 @@
+{
+  "uuid": "XhDF",
+  "source_path": "exo7/1-L1/XhDF.tex",
+  "summary": "L'exercice demande de démontrer une équivalence entre la composition de deux endomorphismes et l'inclusion de l'image de l'un dans le noyau de l'autre, puis de déterminer les matrices de ces endomorphismes dans une base donnée, et enfin d'établir une condition sur le noyau pour l'existence d'un endomorphisme non nul vérifiant la composition nulle.",
+  "concepts": [
+    "endomorphisme",
+    "espace vectoriel de dimension finie",
+    "composition d'applications linéaires",
+    "image d'un endomorphisme",
+    "noyau d'un endomorphisme",
+    "matrice d'un endomorphisme",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "démonstration d'équivalence",
+    "calcul de matrices dans une base",
+    "analyse de conditions sur le noyau"
+  ],
+  "objects": [
+    "endomorphismes u et v",
+    "espace vectoriel E",
+    "base (e₁, ..., eₙ)",
+    "matrices de u, v et u∘v"
+  ],
+  "content_hash": "05a7a84154847356765a5392d8251092ae4d119eb00469cb7b58711d53e303c6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:04:40.540Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "iG1S",
+  "source_path": "exo7/12-L3/iG1S.tex",
+  "summary": "On étudie la différentiabilité de la fonction distance à un sous-espace fermé dans ℝⁿ. L'exercice demande de montrer une inégalité sur la norme de la différentielle et d'en déduire l'unicité d'un point particulier.",
+  "concepts": [
+    "différentiabilité",
+    "fonction lipschitzienne",
+    "distance à un sous-espace",
+    "norme d'un opérateur linéaire",
+    "différentielle d'une fonction composée",
+    "raisonnement par l'absurde"
+  ],
+  "methods": [
+    "calcul de la différentielle",
+    "utilisation de la lipschitzianité",
+    "formule de la différentielle d'une composition",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "fonction distance",
+    "sous-espace fermé",
+    "différentielle",
+    "vecteur tangent"
+  ],
+  "content_hash": "e7e1146a2f47a0ffb47b2c178263e4073da334863952c33f38c0a26dfb00c52a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:29:20.371Z"
+}

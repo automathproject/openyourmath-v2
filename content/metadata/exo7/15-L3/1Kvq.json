@@ -1,0 +1,25 @@
+{
+  "uuid": "1Kvq",
+  "source_path": "exo7/15-L3/1Kvq.tex",
+  "summary": "On considère un espace topologique compact X et n fonctions continues réelles séparant les points de X. On demande de montrer que X est homéomorphe à une partie de ℝⁿ.",
+  "concepts": [
+    "espace topologique compact",
+    "fonction continue",
+    "séparation des points",
+    "homéomorphisme",
+    "espace euclidien ℝⁿ"
+  ],
+  "methods": [
+    "utilisation de la compacité",
+    "construction d'application bijective continue",
+    "injection dans ℝⁿ"
+  ],
+  "objects": [
+    "espace topologique X",
+    "fonctions continues f₁, f₂, ..., fₙ",
+    "partie de ℝⁿ"
+  ],
+  "content_hash": "21c799f1c4a1db162f8a0b27915db75b45fb28d7fa8d4ae92cb923f095eae405",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:56:04.930Z"
+}

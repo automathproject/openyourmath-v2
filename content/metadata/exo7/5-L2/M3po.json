@@ -1,0 +1,30 @@
+{
+  "uuid": "M3po",
+  "source_path": "exo7/5-L2/M3po.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire définie par une combinaison de polynômes est un endomorphisme, puis de déterminer ses valeurs propres et vecteurs propres pour trois cas particuliers de polynômes A.",
+  "concepts": [
+    "endomorphisme",
+    "valeur propre",
+    "vecteur propre",
+    "polynôme",
+    "espace vectoriel",
+    "application linéaire",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "diagonalisation",
+    "recherche de valeurs propres",
+    "recherche de vecteurs propres",
+    "analyse de cas particuliers"
+  ],
+  "objects": [
+    "polynôme A",
+    "polynôme P",
+    "polynôme Q",
+    "endomorphisme Φ",
+    "espace vectoriel ℝ_{2n}[X]"
+  ],
+  "content_hash": "f09955aa2b4ad4dfbd4fa7dcfda50d15fa447aa51456b6ebb512a857c9a8c617",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:25:17.414Z"
+}

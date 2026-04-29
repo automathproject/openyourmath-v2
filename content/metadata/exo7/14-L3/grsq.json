@@ -1,0 +1,26 @@
+{
+  "uuid": "grsq",
+  "source_path": "exo7/14-L3/grsq.tex",
+  "summary": "L'exercice demande de montrer que la suite de fonctions fn converge uniformément vers f, mais que l'intégrale de f n'est pas égale à la limite des intégrales de fn, et d'analyser si cela contredit le théorème de convergence monotone.",
+  "concepts": [
+    "convergence uniforme",
+    "intégrale de Lebesgue",
+    "théorème de convergence monotone",
+    "fonction indicatrice",
+    "mesure",
+    "espace mesuré"
+  ],
+  "methods": [
+    "comparaison d'intégrales",
+    "analyse de la monotonie",
+    "calcul de limite de suite de fonctions"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction indicatrice",
+    "intégrale de Lebesgue"
+  ],
+  "content_hash": "8fe6ff12ad830448fff7ee390faf2381aa4f5302c4d6ec3cdce5cc2701f86f2c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:01:49.381Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "E7RW",
+  "source_path": "amscc/E7RW.tex",
+  "summary": "Résoudre un système linéaire sous-déterminé (3 équations, 4 inconnues) avec un paramètre réel. Le système est étudié selon les valeurs du paramètre.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "combinaison linéaire",
+    "espace solution",
+    "paramètre"
+  ],
+  "methods": [
+    "réduction par combinaisons linéaires",
+    "analyse de compatibilité",
+    "expression des solutions libres"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "paramètre réel"
+  ],
+  "content_hash": "2ee9a0067cd1628476f5236443151dee6581e6d79755396a182194776e59600d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:39:29.393Z"
+}

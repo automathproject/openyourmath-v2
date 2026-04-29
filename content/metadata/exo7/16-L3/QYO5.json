@@ -1,0 +1,27 @@
+{
+  "uuid": "QYO5",
+  "source_path": "exo7/16-L3/QYO5.tex",
+  "summary": "Trouver l'unique transformation bijective analytique du premier quadrant du plan complexe qui échange les points 1+i et 2+2i. On utilise la bijection z ↦ z² pour transformer le problème dans le demi-plan supérieur.",
+  "concepts": [
+    "automorphisme",
+    "bijection analytique",
+    "premier quadrant",
+    "demi-plan supérieur",
+    "transformation conforme",
+    "fonction holomorphe"
+  ],
+  "methods": [
+    "changement de variable",
+    "transformation de Möbius",
+    "symétrie dans le demi-plan supérieur"
+  ],
+  "objects": [
+    "automorphisme du premier quadrant",
+    "points complexes 1+i et 2+2i",
+    "fonction z ↦ z²",
+    "demi-plan supérieur"
+  ],
+  "content_hash": "24aabd3ffc51d6aa1da967f3a0da6107238d7c26d382f2dd65275d285476375a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:19:31.955Z"
+}

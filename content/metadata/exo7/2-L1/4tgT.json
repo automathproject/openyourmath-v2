@@ -1,0 +1,25 @@
+{
+  "uuid": "4tgT",
+  "source_path": "exo7/2-L1/4tgT.tex",
+  "summary": "L'exercice demande d'appliquer le théorème des accroissements finis à la fonction ln(ln(x)) sur un intervalle [k, k+1] pour démontrer la divergence de la série de terme général 1/(k ln k).",
+  "concepts": [
+    "théorème des accroissements finis",
+    "fonction logarithme",
+    "série numérique",
+    "divergence de série",
+    "dérivabilité"
+  ],
+  "methods": [
+    "application du théorème des accroissements finis",
+    "estimation de dérivée",
+    "analyse de convergence"
+  ],
+  "objects": [
+    "fonction ln(ln(x))",
+    "série de terme général 1/(k ln k)",
+    "intervalle [k, k+1]"
+  ],
+  "content_hash": "6f71768065179c6d68b5f56d8deb0b5f51d5f45d931523e472b8886dc7603280",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:56:29.636Z"
+}

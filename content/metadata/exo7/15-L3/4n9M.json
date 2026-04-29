@@ -1,0 +1,26 @@
+{
+  "uuid": "4n9M",
+  "source_path": "exo7/15-L3/4n9M.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des matrices inversibles est un ouvert dense dans l'espace des matrices carrées d'ordre n, muni d'une distance spécifique. Pour n=2, il faut déterminer si certains sous-ensembles de matrices sont ouverts, fermés, ou ni l'un ni l'autre.",
+  "concepts": [
+    "espace métrique",
+    "distance sur les matrices",
+    "matrice inversible",
+    "ouvert dense",
+    "valeurs propres",
+    "topologie des espaces de matrices"
+  ],
+  "methods": [
+    "étude des propriétés topologiques",
+    "analyse des valeurs propres",
+    "caractérisation des ouverts et fermés"
+  ],
+  "objects": [
+    "matrices carrées",
+    "ensemble des matrices inversibles",
+    "sous-ensembles de matrices"
+  ],
+  "content_hash": "f22b896fafea945efbfdb6e2669154063084e644ac7193cae1eb9500e18957a0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:18:40.189Z"
+}

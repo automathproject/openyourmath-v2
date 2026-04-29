@@ -1,0 +1,30 @@
+{
+  "uuid": "AX8D",
+  "source_path": "exo7/4-L2/AX8D.tex",
+  "summary": "L'exercice demande de démontrer qu'une relation définie sur un groupe fini est une relation d'équivalence et d'identifier la classe d'équivalence de l'élément neutre. Ensuite, il s'agit de montrer que toute classe d'équivalence est équipotente à un sous-groupe donné et d'en déduire le théorème de Lagrange sur la divisibilité du cardinal du groupe par celui du sous-groupe.",
+  "concepts": [
+    "relation d'équivalence",
+    "classe d'équivalence",
+    "théorème de Lagrange",
+    "groupe fini",
+    "sous-groupe",
+    "cardinal d'un ensemble",
+    "équipotence"
+  ],
+  "methods": [
+    "définition d'une relation d'équivalence",
+    "identification de la classe de l'élément neutre",
+    "démonstration d'équipotence",
+    "application du théorème de Lagrange"
+  ],
+  "objects": [
+    "groupe fini G",
+    "sous-groupe H",
+    "relation d'équivalence ~",
+    "élément neutre e",
+    "classe d'équivalence"
+  ],
+  "content_hash": "c699bde5e2ca38b10f3682480533b7bf00f37cfd1e61f22c136db89417a72fd0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:25:39.982Z"
+}

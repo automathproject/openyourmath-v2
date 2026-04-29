@@ -1,0 +1,27 @@
+{
+  "uuid": "U3cX",
+  "source_path": "exo7/2-L1/U3cX.tex",
+  "summary": "On définit une fonction φ(x,y) sur un ensemble E de couples d'éléments de [a,b] avec x < y. On demande de montrer que l'image de E par φ est un intervalle, puis d'en déduire que l'image de la dérivée de f sur [a,b] est un intervalle.",
+  "concepts": [
+    "dérivabilité",
+    "image d'un ensemble",
+    "intervalle",
+    "fonction de deux variables",
+    "continuité",
+    "théorème des valeurs intermédiaires"
+  ],
+  "methods": [
+    "étude de la continuité",
+    "application du théorème des valeurs intermédiaires",
+    "analyse de l'image d'une fonction"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "ensemble de couples",
+    "fonction de deux variables",
+    "image d'un ensemble"
+  ],
+  "content_hash": "cd118ddf3d80f53110f46b282e10441de875c9db89088e7cb0957e9246ccba64",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:10:07.179Z"
+}

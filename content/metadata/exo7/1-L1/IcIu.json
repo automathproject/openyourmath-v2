@@ -1,0 +1,26 @@
+{
+  "uuid": "IcIu",
+  "source_path": "exo7/1-L1/IcIu.tex",
+  "summary": "On considère deux applications linéaires u et v vérifiant u² = u et vu = 0. On demande de montrer l'égalité entre l'image de u+v et la somme des images de u et v.",
+  "concepts": [
+    "application linéaire",
+    "image d'une application linéaire",
+    "noyau d'une application linéaire",
+    "théorème du rang",
+    "projection",
+    "somme directe"
+  ],
+  "methods": [
+    "décomposition en somme directe",
+    "utilisation des propriétés des projecteurs",
+    "manipulation des noyaux et images"
+  ],
+  "objects": [
+    "applications linéaires u et v",
+    "image de u+v",
+    "somme des images de u et v"
+  ],
+  "content_hash": "dd54610090d5e3d4f48bb9795bae2168ea67e98ec7e3fe4a494dc095d160d14f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:54:17.839Z"
+}

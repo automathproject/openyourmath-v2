@@ -1,0 +1,27 @@
+{
+  "uuid": "Jw2M",
+  "source_path": "amscc/Jw2M.tex",
+  "summary": "L'exercice demande de déterminer les points critiques d'une fonction de deux variables et d'identifier les éventuels extremums locaux. La fonction étudiée est f(x,y) = xy(x+y-1).",
+  "concepts": [
+    "dérivées partielles",
+    "gradient",
+    "point critique",
+    "matrice hessienne",
+    "extremum local",
+    "point selle",
+    "minimum local"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "résolution de système d'équations",
+    "analyse du discriminant hessien"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "points critiques",
+    "matrice hessienne"
+  ],
+  "content_hash": "b1a5ea8fe6b1e6d214ca6a18de938afc2162c10ec097044129237517aafa8f0b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:10:09.844Z"
+}

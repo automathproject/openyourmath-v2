@@ -1,0 +1,27 @@
+{
+  "uuid": "numD",
+  "source_path": "exo7/12-L3/numD.tex",
+  "summary": "Détermination des extremums d'une fonction de deux variables sur un carré unité. La fonction est définie par f(x, y) = xy(1 - x² - y²).",
+  "concepts": [
+    "extremum d'une fonction de deux variables",
+    "optimisation sur un domaine fermé borné",
+    "conditions de premier ordre",
+    "conditions de second ordre",
+    "théorème des accroissements finis"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "résolution d'un système d'équations",
+    "analyse des hessiennes",
+    "comparaison des valeurs aux points critiques et sur la frontière"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "domaine fermé borné",
+    "points critiques",
+    "hessienne"
+  ],
+  "content_hash": "923995732f989833ea1f5aa3f37b4e616f05ddeac90aa55a4e4252bfc6bde2e1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:34:34.161Z"
+}

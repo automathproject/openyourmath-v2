@@ -1,0 +1,27 @@
+{
+  "uuid": "04Pe",
+  "source_path": "exo7/4-L2/04Pe.tex",
+  "summary": "Montrer l'équivalence entre la non-inversibilité d'une matrice A et l'existence d'une matrice inversible P telle que PA soit nilpotente.",
+  "concepts": [
+    "matrice inversible",
+    "matrice nilpotente",
+    "rang d'une matrice",
+    "déterminant",
+    "polynôme caractéristique",
+    "valeurs propres"
+  ],
+  "methods": [
+    "diagonalisation",
+    "réduction de Jordan",
+    "calcul du déterminant",
+    "étude des valeurs propres"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice inversible",
+    "matrice nilpotente"
+  ],
+  "content_hash": "30aac9c9009021b3014f83b52cca133de225781cc92e6cca740e0f7ac262ef9e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:26:49.521Z"
+}

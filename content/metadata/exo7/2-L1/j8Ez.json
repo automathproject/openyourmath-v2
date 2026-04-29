@@ -1,0 +1,23 @@
+{
+  "uuid": "j8Ez",
+  "source_path": "exo7/2-L1/j8Ez.tex",
+  "summary": "Soient deux fonctions continues sur un intervalle [a, b] avec f(x) > g(x) > 0 pour tout x dans [a, b]. Montrer l'existence d'un réel k > 1 tel que f soit strictement supérieur à k fois g.",
+  "concepts": [
+    "continuité",
+    "fonction réelle",
+    "inégalité",
+    "existence"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la borne inférieure"
+  ],
+  "objects": [
+    "fonctions continues",
+    "intervalle borné",
+    "réel strictement positif"
+  ],
+  "content_hash": "1d02c50745a72ad8e1dfeb9cda9da0153adf31a01bdfd582e368097508b014a3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:23:20.578Z"
+}

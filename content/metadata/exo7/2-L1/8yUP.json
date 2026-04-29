@@ -1,0 +1,24 @@
+{
+  "uuid": "8yUP",
+  "source_path": "exo7/2-L1/8yUP.tex",
+  "summary": "Calculer la limite d'une somme de valeurs d'une fonction dérivable sur [0,1] avec f(0)=0, lorsque le nombre de termes tend vers l'infini.",
+  "concepts": [
+    "fonction dérivable",
+    "limite de suite",
+    "somme de Riemann",
+    "intégrale de Riemann",
+    "théorème fondamental de l'analyse"
+  ],
+  "methods": [
+    "approximation par intégrale",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction continue et dérivable",
+    "somme de Riemann",
+    "limite de suite"
+  ],
+  "content_hash": "d6f11c50c36298552c058b37a44fa9fd45889247393ebf8074f8e02c81bce42b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:57:55.856Z"
+}

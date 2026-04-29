@@ -1,0 +1,28 @@
+{
+  "uuid": "NNAA",
+  "source_path": "exo7/1-L1/NNAA.tex",
+  "summary": "On considère un espace vectoriel E comme somme directe de sous-espaces vectoriels E₁, ..., Eₙ. On définit des endomorphismes u₁, ..., uₙ sur chacun de ces sous-espaces. L'exercice demande de montrer l'existence et l'unicité d'un endomorphisme u sur E qui restreint à uᵢ sur chaque Eᵢ, puis d'établir des relations sur le noyau et l'image de u.",
+  "concepts": [
+    "somme directe d'espaces vectoriels",
+    "endomorphisme",
+    "restriction d'application linéaire",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "unicité d'un morphisme"
+  ],
+  "methods": [
+    "construction par restriction",
+    "démonstration d'existence et d'unicité",
+    "décomposition d'espaces vectoriels"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "sous-espaces vectoriels",
+    "endomorphisme",
+    "noyau",
+    "image"
+  ],
+  "content_hash": "7e9aafe27f9fb20a5702de87db6025804cb08ba159065dfad65b8bd187af83ef",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:49:12.077Z"
+}

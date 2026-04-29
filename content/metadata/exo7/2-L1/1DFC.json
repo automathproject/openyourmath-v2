@@ -1,0 +1,28 @@
+{
+  "uuid": "1DFC",
+  "source_path": "exo7/2-L1/1DFC.tex",
+  "summary": "Trouver les coefficients a et b réels tels que la fonction f, définie par morceaux sur R+ avec une racine carrée sur [0,1] et un polynôme du second degré sur ]1,+∞[, soit dérivable sur R+*.",
+  "concepts": [
+    "continuité",
+    "dérivabilité",
+    "limite",
+    "taux d'accroissement",
+    "fonction par morceaux",
+    "fonction polynomiale"
+  ],
+  "methods": [
+    "calcul de limite",
+    "condition de continuité",
+    "égalité des dérivées latérales",
+    "calcul de dérivée"
+  ],
+  "objects": [
+    "fonction définie par morceaux",
+    "polynôme du second degré",
+    "racine carrée",
+    "taux d'accroissement"
+  ],
+  "content_hash": "cfd4385a4d15bba19c1f985e197169803e8cc292fca9d02c4bd650990c7a754d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:54:27.494Z"
+}

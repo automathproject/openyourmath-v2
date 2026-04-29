@@ -1,0 +1,28 @@
+{
+  "uuid": "1TEn",
+  "source_path": "exo7/5-L2/1TEn.tex",
+  "summary": "Trouver le point intérieur M d'un triangle ABC qui maximise le produit des distances de M aux trois côtés du triangle. L'énoncé admet l'existence de ce maximum.",
+  "concepts": [
+    "extremum local",
+    "fonction de plusieurs variables",
+    "continuité",
+    "théorème des valeurs intermédiaires",
+    "point critique",
+    "dérivées partielles"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "recherche de points critiques",
+    "optimisation sous contrainte",
+    "analyse des conditions aux limites"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "triangle",
+    "aire de triangle",
+    "point intérieur"
+  ],
+  "content_hash": "af90a00cf6a318be288b058208bf32c36d14872e4b82c7ce6c570f427b71a164",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:40:29.568Z"
+}

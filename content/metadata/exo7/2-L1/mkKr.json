@@ -1,0 +1,25 @@
+{
+  "uuid": "mkKr",
+  "source_path": "exo7/2-L1/mkKr.tex",
+  "summary": "On étudie le comportement en 0+ d'une fonction dérivable deux fois vérifiant une condition sur sa dérivée seconde. On utilise la formule de Taylor-Lagrange pour analyser la limite de xf'(x).",
+  "concepts": [
+    "formule de Taylor-Lagrange",
+    "développement limité",
+    "limite de fonction",
+    "dérivée seconde",
+    "condition de croissance"
+  ],
+  "methods": [
+    "application de la formule de Taylor-Lagrange",
+    "analyse de limite",
+    "estimation de reste"
+  ],
+  "objects": [
+    "fonction de classe C²",
+    "dérivée seconde",
+    "développement limité d'ordre 2"
+  ],
+  "content_hash": "71d8e0abdbe0ad142c2d511b9c5543ce4529242f23c98f30b5cec56719e3eebf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:39:56.668Z"
+}

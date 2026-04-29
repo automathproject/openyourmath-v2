@@ -1,0 +1,28 @@
+{
+  "uuid": "qNXq",
+  "source_path": "exo7/15-L3/qNXq.tex",
+  "summary": "L'exercice étudie une application F de ℝ⁺ dans ℂ² définie par F(x) = (exp(2iπx), exp(2iπx√2)). On demande de montrer que F est continue et injective, puis que l'adhérence de son image γ est S¹×S¹, et enfin que l'inverse de F n'est continue en aucun point de γ.",
+  "concepts": [
+    "continuité",
+    "injectivité",
+    "adhérence",
+    "topologie des espaces métriques",
+    "espace produit",
+    "sphère unité"
+  ],
+  "methods": [
+    "étude de la continuité",
+    "vérification de l'injectivité",
+    "calcul de l'adhérence",
+    "analyse de la continuité de l'inverse"
+  ],
+  "objects": [
+    "application de ℝ⁺ dans ℂ²",
+    "courbe γ",
+    "sphère unité S¹",
+    "espace produit ℂ²"
+  ],
+  "content_hash": "309dccf4b9b81657cd44d62161136610dd0d6c56deef5c97e2699605ae6939c5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:33:32.310Z"
+}

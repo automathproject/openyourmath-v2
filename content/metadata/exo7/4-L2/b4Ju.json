@@ -1,0 +1,31 @@
+{
+  "uuid": "b4Ju",
+  "source_path": "exo7/4-L2/b4Ju.tex",
+  "summary": "Dans un espace euclidien, on cherche à montrer l'existence et l'unicité d'un endomorphisme w vérifiant l'équation u∘w + w∘u = v, où u et v sont des endomorphismes auto-adjoints, u étant défini positif. On étudie ensuite les propriétés de w selon que v est défini positif ou non.",
+  "concepts": [
+    "endomorphisme auto-adjoint",
+    "définie positivité",
+    "valeurs propres",
+    "base propre",
+    "matrice diagonale",
+    "symétrie d'une matrice",
+    "produit scalaire"
+  ],
+  "methods": [
+    "diagonalisation",
+    "changement de base",
+    "calcul matriciel",
+    "résolution d'équation matricielle",
+    "analyse des valeurs propres"
+  ],
+  "objects": [
+    "espace euclidien",
+    "endomorphisme",
+    "matrice symétrique",
+    "base orthonormale",
+    "matrice diagonale"
+  ],
+  "content_hash": "fd4fa947e2fe64be71c29cb7e789e5946cbb0a9af832e95bf6187657fe7fbc53",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:38:05.172Z"
+}

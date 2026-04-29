@@ -1,0 +1,27 @@
+{
+  "uuid": "4Fju",
+  "source_path": "exo7/1-L1/4Fju.tex",
+  "summary": "L'exercice demande de prouver qu'entre deux nombres relatifs n et p, soit leur produit np est pair, soit leur différence de carrés n² - p² est divisible par 8.",
+  "concepts": [
+    "divisibilité",
+    "parité",
+    "nombre pair",
+    "nombre impair",
+    "arithmétique modulaire",
+    "propriétés des carrés"
+  ],
+  "methods": [
+    "raisonnement par cas",
+    "analyse de parité",
+    "factorisation",
+    "calcul modulo 8"
+  ],
+  "objects": [
+    "nombres relatifs",
+    "produit de nombres",
+    "différence de carrés"
+  ],
+  "content_hash": "e1415e2645d4cbebd574521b2257f456fecb690d44a8a8d9a393fc8f7498c52a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:00:48.514Z"
+}

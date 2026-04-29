@@ -1,0 +1,31 @@
+{
+  "uuid": "rWEK",
+  "source_path": "exo7/1-L1/rWEK.tex",
+  "summary": "Montrer qu'une matrice à diagonale strictement dominante est inversible en démontrant que son noyau est réduit au vecteur nul.",
+  "concepts": [
+    "matrice inversible",
+    "noyau d'une matrice",
+    "diagonale strictement dominante",
+    "inversibilité",
+    "matrice carrée",
+    "propriété spectrale",
+    "algèbre linéaire",
+    "matrice à coefficients complexes"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "analyse du noyau",
+    "utilisation de la définition de la diagonale strictement dominante",
+    "comparaison des normes"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteur colonne",
+    "noyau d'une matrice",
+    "coefficient diagonal",
+    "coefficient hors diagonale"
+  ],
+  "content_hash": "0ad16e9e9d35ce5f1c73d95810e2d3adc058afa9ff1adaab8dc6e8e5854d581a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:17:49.679Z"
+}

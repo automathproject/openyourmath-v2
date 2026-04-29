@@ -1,0 +1,24 @@
+{
+  "uuid": "Lc75",
+  "source_path": "exo7/4-L2/Lc75.tex",
+  "summary": "Calcul des déterminants de trois matrices 4x4 spécifiques avec des structures particulières de zéros.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "matrice triangulaire",
+    "développement de Laplace",
+    "propriétés des déterminants"
+  ],
+  "methods": [
+    "développement par rapport à une ligne ou colonne",
+    "utilisation des zéros pour simplifier le calcul",
+    "recours aux propriétés des matrices triangulaires"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "déterminant",
+    "élément non nul"
+  ],
+  "content_hash": "1ad0387bfc7ac753b12492efd27bb82c04abf0f05da2c81267ddd4116c5c857f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:46:16.066Z"
+}

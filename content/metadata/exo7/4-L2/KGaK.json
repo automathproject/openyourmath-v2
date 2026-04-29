@@ -1,0 +1,29 @@
+{
+  "uuid": "KGaK",
+  "source_path": "exo7/4-L2/KGaK.tex",
+  "summary": "L'exercice demande d'écrire les tables d'opération dans l'anneau ℤ/6ℤ, de montrer qu'un groupe d'ordre premier est cyclique, de démontrer que le noyau d'un morphisme d'anneaux commutatifs est un idéal, et de vérifier si une application entre anneaux est bien définie.",
+  "concepts": [
+    "anneau quotient",
+    "groupe cyclique",
+    "morphisme d'anneaux",
+    "idéal",
+    "noyau d'un morphisme",
+    "groupe d'ordre premier"
+  ],
+  "methods": [
+    "construction des tables d'opération",
+    "utilisation du théorème de Lagrange",
+    "détermination du noyau",
+    "vérification de la bien-définition d'une application"
+  ],
+  "objects": [
+    "anneau ℤ/6ℤ",
+    "groupe d'ordre premier",
+    "morphisme d'anneaux",
+    "idéal",
+    "application ℤ/10ℤ → ℤ/3ℤ"
+  ],
+  "content_hash": "d1713fb64a3544e6c750321923c8ea889b7981c68f0dfd1757465d2ee2edfe11",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:38:55.099Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "nK0X",
+  "source_path": "exo7/19-L3/nK0X.tex",
+  "summary": "L'exercice demande de montrer, en utilisant le lemme de Borel-Cantelli, que la probabilité que la suite de variables aléatoires exponentielles indépendantes dépasse un seuil logarithmique tend vers 0 ou 1 selon le paramètre α. Ensuite, il s'agit d'en déduire la convergence presque sûre d'un quotient impliquant ces variables.",
+  "concepts": [
+    "lemme de Borel-Cantelli",
+    "convergence presque sûre",
+    "variable aléatoire exponentielle",
+    "série de Riemann",
+    "limsup",
+    "liminf",
+    "probabilité",
+    "indépendance"
+  ],
+  "methods": [
+    "calcul de probabilité d'événement",
+    "analyse de série de Riemann",
+    "manipulation de limsup/liminf",
+    "construction d'ensembles de mesure nulle"
+  ],
+  "objects": [
+    "suite de variables aléatoires indépendantes",
+    "événements indépendants",
+    "limsup d'événements",
+    "quotient de variables aléatoires"
+  ],
+  "content_hash": "f6579c6f300a20c79251c565d5debe119383d5c64a5856cef4a6580ab3212572",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:39:12.946Z"
+}

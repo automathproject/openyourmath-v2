@@ -1,0 +1,25 @@
+{
+  "uuid": "A3yy",
+  "source_path": "exo7/4-L2/A3yy.tex",
+  "summary": "Calculer le déterminant d'une matrice carrée d'ordre n dont les coefficients sont donnés par (a+i+j)², où a est un nombre complexe et i,j sont les indices des lignes et colonnes.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "espace vectoriel",
+    "dimension d'un espace",
+    "linéaire dépendance"
+  ],
+  "methods": [
+    "décomposition des colonnes",
+    "analyse de la dimension de l'espace engendré",
+    "calcul direct pour petits cas"
+  ],
+  "objects": [
+    "matrice carrée",
+    "colonnes d'une matrice",
+    "espace vectoriel engendré"
+  ],
+  "content_hash": "14643868fdebdae9f4a011903c841acf2126babcf65d0039f3973e65c587bb8a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:35:43.474Z"
+}

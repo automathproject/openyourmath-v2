@@ -1,0 +1,25 @@
+{
+  "uuid": "roUr",
+  "source_path": "exo7/1-L1/roUr.tex",
+  "summary": "L'exercice demande de démontrer que deux ensembles définis par des intersections et unions d'intervalles sont eux-mêmes des intervalles, puis de calculer ces intervalles.",
+  "concepts": [
+    "ensemble",
+    "intervalle",
+    "intersection",
+    "union",
+    "limite de suites d'intervalles"
+  ],
+  "methods": [
+    "calcul explicite d'intersection",
+    "calcul explicite d'union",
+    "analyse des bornes"
+  ],
+  "objects": [
+    "ensemble I",
+    "ensemble J",
+    "intervalles bornés"
+  ],
+  "content_hash": "be74b5bb808f07f56c3af67357fcd3f8cbe380eb5f39488acccaddfad2a1b332",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:28:13.428Z"
+}

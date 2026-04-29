@@ -1,0 +1,24 @@
+{
+  "uuid": "ak5Q",
+  "source_path": "exo7/16-L3/ak5Q.tex",
+  "summary": "Soit f(z) = u + iv une fonction holomorphe dans un ouvert connexe Ω. Montrer que les courbes de niveau de la partie réelle u et de la partie imaginaire v de f sont orthogonales.",
+  "concepts": [
+    "fonction holomorphe",
+    "partie réelle et imaginaire d'une fonction complexe",
+    "courbes de niveau",
+    "orthogonalité des courbes",
+    "dérivée complexe"
+  ],
+  "methods": [
+    "utilisation des conditions de Cauchy-Riemann",
+    "analyse des tangentes aux courbes de niveau"
+  ],
+  "objects": [
+    "fonction complexe holomorphe",
+    "courbes de niveau",
+    "tangentes aux courbes"
+  ],
+  "content_hash": "65c933d655b16f32b2b7d4546315f344c7d4595e9b5d2c84877c6221549bc650",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:36:46.259Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "64je",
+  "source_path": "exo7/15-L3/64je.tex",
+  "summary": "L'exercice demande de démontrer que l'espace des fonctions entre deux espaces topologiques, muni de la topologie compacte-ouverte, est un espace de Hausdorff si et seulement si l'espace d'arrivée est de Hausdorff.",
+  "concepts": [
+    "espace topologique",
+    "espace de Hausdorff",
+    "topologie compacte-ouverte",
+    "sous-base d'une topologie",
+    "fonction continue",
+    "espace quotient"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "utilisation de la définition de la topologie compacte-ouverte",
+    "analyse des propriétés de séparation"
+  ],
+  "objects": [
+    "espace de fonctions",
+    "sous-ensembles compacts",
+    "ouverts d'un espace topologique"
+  ],
+  "content_hash": "f1e6ec32919865bacbd8402b7da931ae56e2c50f41cafc89e222bfe5f0ed03c0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:19:43.112Z"
+}

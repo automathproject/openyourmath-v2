@@ -1,0 +1,27 @@
+{
+  "uuid": "ihXb",
+  "source_path": "exo7/4-L2/ihXb.tex",
+  "summary": "L'exercice demande de démontrer l'équivalence entre le résultant de deux polynômes non nuls et leur plus grand commun diviseur égal à 1. Il applique ensuite ce résultat pour déterminer la condition nécessaire et suffisante pour qu'un polynôme quartique ait une racine multiple.",
+  "concepts": [
+    "résultant de deux polynômes",
+    "plus grand commun diviseur de polynômes",
+    "racine multiple",
+    "polynôme unitaire",
+    "algèbre des polynômes"
+  ],
+  "methods": [
+    "détermination du résultant",
+    "analyse du PGCD",
+    "application du théorème de Bézout",
+    "calcul de condition nécessaire et suffisante"
+  ],
+  "objects": [
+    "polynômes à coefficients dans un corps",
+    "résultant",
+    "PGCD de polynômes",
+    "racine multiple"
+  ],
+  "content_hash": "aabb29a31f5e3a2988e87f103e537eaa270fc4c177f23d9adb9d2af460f7b037",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:05:08.755Z"
+}

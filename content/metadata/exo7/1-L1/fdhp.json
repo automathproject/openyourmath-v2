@@ -1,0 +1,27 @@
+{
+  "uuid": "fdhp",
+  "source_path": "exo7/1-L1/fdhp.tex",
+  "summary": "Dans un espace vectoriel de dimension 3, on considère un endomorphisme dont le carré est nul. On demande de montrer l'existence d'une forme linéaire et d'un vecteur tels que l'endomorphisme s'exprime comme un produit de la forme linéaire par le vecteur.",
+  "concepts": [
+    "endomorphisme",
+    "espace vectoriel de dimension finie",
+    "forme linéaire",
+    "produit tensoriel",
+    "noyau d'un endomorphisme",
+    "rang d'un endomorphisme"
+  ],
+  "methods": [
+    "décomposition en rang 1",
+    "utilisation du noyau",
+    "calcul de la dimension de l'image"
+  ],
+  "objects": [
+    "endomorphisme nilpotent",
+    "espace vectoriel",
+    "forme linéaire",
+    "vecteur"
+  ],
+  "content_hash": "471bde465c92069f8f27a1a5edab602817c0bd1b3c9c25f7d4ddc0e0ab829a0d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:56:30.769Z"
+}

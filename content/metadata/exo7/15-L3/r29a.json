@@ -1,0 +1,31 @@
+{
+  "uuid": "r29a",
+  "source_path": "exo7/15-L3/r29a.tex",
+  "summary": "L'exercice étudie les propriétés de séparation des espaces métriques en utilisant la fonction distance à un ensemble. Il demande de démontrer qu'un espace métrique possède une propriété forte de séparation via des ouverts disjoints, l'équivalence avec l'existence d'une fonction continue prenant des valeurs spécifiques sur des fermés disjoints, et le prolongement d'une fonction continue définie sur des fermés disjoints.",
+  "concepts": [
+    "espace métrique",
+    "fermé",
+    "ouvert",
+    "fonction lipschitzienne",
+    "propriété de séparation",
+    "fonction continue",
+    "Gδ",
+    "Fσ",
+    "distance à un ensemble"
+  ],
+  "methods": [
+    "utilisation de la fonction distance",
+    "démonstration de séparation par ouverts",
+    "construction de fonction continue",
+    "prolongement de fonction continue"
+  ],
+  "objects": [
+    "espace métrique",
+    "fermés disjoints",
+    "fonction distance",
+    "fonction continue"
+  ],
+  "content_hash": "c62f7ef1266a503931e783534235659eae4dd6268cf58f7d0b630d097b41c9fd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:33:47.877Z"
+}

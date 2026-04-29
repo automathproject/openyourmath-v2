@@ -1,0 +1,27 @@
+{
+  "uuid": "eiIm",
+  "source_path": "exo7/4-L2/eiIm.tex",
+  "summary": "L'exercice demande de compléter une matrice A d'un système linéaire homogène en une matrice B inversible et de montrer que les colonnes supplémentaires de la comatrice de B forment une base des solutions du système. Un exemple numérique illustre la méthode.",
+  "concepts": [
+    "système linéaire homogène",
+    "rang d'une matrice",
+    "matrice inversible",
+    "comatrice",
+    "espace des solutions",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "complétion de matrice",
+    "calcul de comatrice",
+    "construction de base"
+  ],
+  "objects": [
+    "matrice A",
+    "matrice B",
+    "comatrice de B",
+    "système linéaire homogène"
+  ],
+  "content_hash": "f3d46bdcd7917700c3a95707e880fd79a9e951e24d9fa042c9919fa44d73ef69",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:00:35.631Z"
+}

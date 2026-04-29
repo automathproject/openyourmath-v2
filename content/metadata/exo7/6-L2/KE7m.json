@@ -1,31 +1,27 @@
 {
   "uuid": "KE7m",
   "source_path": "exo7/6-L2/KE7m.tex",
-  "summary": "Trouver l'équation cartésienne d'une parabole passant par deux points donnés et dont les tangentes en ces points sont les axes (Ox) et (Oy). L'exercice utilise une forme standard de l'équation des coniques et impose des conditions sur les coefficients.",
+  "summary": "Trouver l'équation cartésienne d'une parabole tangente aux axes (Ox) et (Oy) respectivement en (1,0) et (0,2).",
   "concepts": [
-    "équation cartésienne des coniques",
+    "équation cartésienne de conique",
     "tangente à une courbe",
     "changement de repère",
-    "forme canonique de la parabole",
-    "système d'équations linéaires",
-    "condition de tangence",
-    "réduction des coniques"
+    "parabole",
+    "courbe du second degré",
+    "système d'équations"
   ],
   "methods": [
-    "substitution de points",
-    "calcul de tangente",
-    "résolution de système linéaire",
+    "résolution de système d'équations",
     "changement de variable",
-    "identification de forme canonique"
+    "vérification de la nature d'une conique"
   ],
   "objects": [
     "parabole",
-    "équation du second degré",
+    "équation cartésienne",
     "tangente",
-    "système d'équations",
-    "changement de repère"
+    "système d'équations"
   ],
-  "content_hash": "64e518950231110fac017dcb4432153350bc07d4e0ad4d6bc4826a11f037ccd6",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:39:48.812Z"
+  "content_hash": "a063d2c42292311fe0a15b962da753afaa6ad89fd4e7b3d6a536ce89a1cb6ff6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:03:23.519Z"
 }

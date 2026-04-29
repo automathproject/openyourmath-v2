@@ -1,0 +1,25 @@
+{
+  "uuid": "L1XB",
+  "source_path": "exo7/5-L2/L1XB.tex",
+  "summary": "Calculer les matrices hessiennes de deux fonctions de plusieurs variables : sin(xyz) et sin²(y/x).",
+  "concepts": [
+    "différentiation partielle",
+    "matrice hessienne",
+    "dérivées secondes",
+    "fonction de plusieurs variables",
+    "calcul différentiel"
+  ],
+  "methods": [
+    "calcul des dérivées partielles premières",
+    "calcul des dérivées partielles secondes",
+    "construction de la matrice hessienne"
+  ],
+  "objects": [
+    "fonction sin(xyz)",
+    "fonction sin²(y/x)",
+    "matrice hessienne"
+  ],
+  "content_hash": "21388076ae4799731837d9139965e4c196b95340c7bf968d4eae47e08bd26a01",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:56:42.606Z"
+}

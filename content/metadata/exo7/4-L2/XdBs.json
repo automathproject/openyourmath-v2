@@ -1,0 +1,29 @@
+{
+  "uuid": "XdBs",
+  "source_path": "exo7/4-L2/XdBs.tex",
+  "summary": "L'exercice demande de résoudre un système linéaire de trois équations à trois inconnues réelles, puis d'étudier l'existence de solutions pour un système similaire avec quatre équations. Enfin, il propose de résoudre ce dernier système dans le corps ℤ/5ℤ.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "corps fini",
+    "résolution de système",
+    "inconnues réelles",
+    "inconnues dans ℤ/5ℤ"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "calcul du rang",
+    "résolution par substitution",
+    "résolution dans un corps fini"
+  ],
+  "objects": [
+    "système linéaire 3x3",
+    "système linéaire 4x3",
+    "matrice augmentée",
+    "inconnues réelles",
+    "inconnues dans ℤ/5ℤ"
+  ],
+  "content_hash": "3da0c58c8fb49f2309356f9cf3f72c962cbba0fb5b212a03332cebb6aeb15df8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:54:54.551Z"
+}

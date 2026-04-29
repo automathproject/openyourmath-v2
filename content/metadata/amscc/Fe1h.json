@@ -1,0 +1,25 @@
+{
+  "uuid": "Fe1h",
+  "source_path": "amscc/Fe1h.tex",
+  "summary": "Calculer le déterminant d'une matrice 3x3 spécifique et montrer qu'il est égal au produit de différences de ses éléments.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "opérations sur les colonnes",
+    "développement par blocs",
+    "propriétés des déterminants"
+  ],
+  "methods": [
+    "réduction par soustraction de colonnes",
+    "développement de Laplace",
+    "factorisation"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "déterminant de Vandermonde",
+    "colonnes d'une matrice"
+  ],
+  "content_hash": "8157eb96b9b41c2b10f634493547b4dcdef587baec91c65d8b4c691cc5f78dce",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:41:14.112Z"
+}

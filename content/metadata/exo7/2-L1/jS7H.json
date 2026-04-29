@@ -1,0 +1,26 @@
+{
+  "uuid": "jS7H",
+  "source_path": "exo7/2-L1/jS7H.tex",
+  "summary": "L'exercice demande de démontrer l'unicité et la convergence d'un paramètre θ_h dans la formule de Taylor-Lagrange pour une fonction de classe C^(n+1), lorsque la dérivée d'ordre n+1 en a est non nulle.",
+  "concepts": [
+    "formule de Taylor-Lagrange",
+    "développement limité",
+    "classe de régularité C^(n+1)",
+    "convergence de suite",
+    "unicité de solution",
+    "dérivées successives"
+  ],
+  "methods": [
+    "analyse de la formule de Taylor",
+    "étude de la limite",
+    "utilisation de la dérivabilité"
+  ],
+  "objects": [
+    "fonction de classe C^(n+1)",
+    "paramètre θ_h",
+    "dérivées successives"
+  ],
+  "content_hash": "92693a2e517d3c62de09ef370b02b6a6d2f0635860e7c2c3ee7199f8e2507e71",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:38:58.318Z"
+}

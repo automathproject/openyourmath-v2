@@ -1,0 +1,27 @@
+{
+  "uuid": "75S7",
+  "source_path": "exo7/15-L3/75S7.tex",
+  "summary": "L'exercice demande de démontrer qu'une distance entre fermés non vides d'un espace métrique borné définit une métrique sur l'ensemble de ces fermés, et que l'application qui associe à un point son singleton est une isométrie.",
+  "concepts": [
+    "espace métrique",
+    "métrique bornée",
+    "fermé non vide",
+    "distance entre ensembles",
+    "isométrie",
+    "continuité uniforme"
+  ],
+  "methods": [
+    "définition de distance",
+    "vérification des propriétés de métrique",
+    "analyse des applications injectives"
+  ],
+  "objects": [
+    "espace métrique borné",
+    "ensemble des fermés non vides",
+    "fonction distance",
+    "singleton"
+  ],
+  "content_hash": "5eee2347113bd78101732085051e0da5fdaebeb4591ad526dff176b52fa9a671",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:28:54.810Z"
+}

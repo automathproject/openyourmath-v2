@@ -1,0 +1,27 @@
+{
+  "uuid": "M6bM",
+  "source_path": "exo7/4-L2/M6bM.tex",
+  "summary": "Montrer qu'une matrice réelle A est symétrique définie positive si et seulement si elle s'écrit comme le produit d'une matrice B par sa transposée.",
+  "concepts": [
+    "matrice symétrique",
+    "matrice définie positive",
+    "produit de matrices",
+    "transposée d'une matrice",
+    "endomorphisme auto-adjoint",
+    "forme quadratique"
+  ],
+  "methods": [
+    "factorisation matricielle",
+    "calcul de produit matriciel",
+    "vérification de symétrie",
+    "analyse des valeurs propres"
+  ],
+  "objects": [
+    "matrice carrée réelle",
+    "matrice inversible",
+    "matrice symétrique"
+  ],
+  "content_hash": "de9241c26acc06874ca434f60208f1887a671ba432cb641d20502b7fcf0fd86a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:19:14.244Z"
+}

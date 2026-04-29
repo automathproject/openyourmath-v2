@@ -1,0 +1,30 @@
+{
+  "uuid": "fall",
+  "source_path": "exo7/4-L2/fall.tex",
+  "summary": "L'exercice demande de démontrer que la projection orthogonale d'un point sur un sous-espace vectoriel d'un espace euclidien est le point de ce sous-espace le plus proche du point. Il applique ensuite ce résultat à un problème d'approximation de la fonction exponentielle par des polynômes de degré 1 et 2 sur l'intervalle [-1,1].",
+  "concepts": [
+    "espace euclidien",
+    "projection orthogonale",
+    "sous-espace vectoriel",
+    "base orthonormée",
+    "produit scalaire",
+    "norme euclidienne",
+    "minimisation de distance"
+  ],
+  "methods": [
+    "décomposition vectorielle",
+    "calcul de produit scalaire",
+    "orthonormalisation de Gram-Schmidt",
+    "approximation par polynômes"
+  ],
+  "objects": [
+    "sous-espace vectoriel",
+    "base orthonormée",
+    "fonction exponentielle",
+    "polynôme de degré 1",
+    "polynôme de degré 2"
+  ],
+  "content_hash": "2ac9e0b23ed39b7a26d4e143e8a4dba64b4ce8a5163025dbb05cd43d2c462355",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:42:36.404Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "0PDb",
+  "source_path": "exo7/4-L2/0PDb.tex",
+  "summary": "L'exercice demande de prouver qu'un déterminant symétrique réel d'ordre impair, avec des coefficients entiers et des éléments diagonaux pairs, est nécessairement pair.",
+  "concepts": [
+    "déterminant",
+    "matrice symétrique",
+    "permutation",
+    "parité",
+    "signe d'une permutation",
+    "somme de termes"
+  ],
+  "methods": [
+    "développement du déterminant",
+    "analyse des permutations",
+    "paires de permutations inverses",
+    "identification des éléments diagonaux"
+  ],
+  "objects": [
+    "déterminant",
+    "matrice symétrique",
+    "permutation",
+    "termes du développement"
+  ],
+  "content_hash": "d1cc37c5ed945f524556cfcd816103d333627499a64fb7559e0eb0edc0757cfe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:27:10.150Z"
+}

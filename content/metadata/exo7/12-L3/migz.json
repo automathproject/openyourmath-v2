@@ -1,0 +1,25 @@
+{
+  "uuid": "migz",
+  "source_path": "exo7/12-L3/migz.tex",
+  "summary": "Trouver le point p du plan Σ dans ℝ³ qui minimise la distance à un point donné (1,0,0). Le plan Σ est défini par l'équation x + y = z.",
+  "concepts": [
+    "extremum lié",
+    "distance euclidienne",
+    "plan affine",
+    "optimisation sous contrainte",
+    "fonction de Lagrange"
+  ],
+  "methods": [
+    "méthode des multiplicateurs de Lagrange",
+    "calcul de gradient",
+    "résolution de système linéaire"
+  ],
+  "objects": [
+    "plan affine",
+    "point dans ℝ³",
+    "distance euclidienne"
+  ],
+  "content_hash": "2f321f7ecccc839b007134fb70ffe23c622406ad0bb9bb8385fe5cb640883bbd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:33:55.016Z"
+}

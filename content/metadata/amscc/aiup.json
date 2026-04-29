@@ -1,0 +1,34 @@
+{
+  "uuid": "aiup",
+  "source_path": "amscc/aiup.tex",
+  "summary": "L'exercice demande d'étudier une fonction de deux variables définie par f(x,y) = x³ + y³ - 3xy - 1. Il s'agit de trouver ses points critiques, d'analyser leur nature, de représenter ses lignes de niveau, d'étudier ses limites à l'infini, et de déterminer ses extrema globaux sur un domaine fermé borné D.",
+  "concepts": [
+    "fonction de plusieurs variables",
+    "point critique",
+    "point selle",
+    "minimum local",
+    "maximum global",
+    "minimum global",
+    "théorème des valeurs intermédiaires",
+    "continuité",
+    "domaine fermé borné"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "résolution de système d'équations",
+    "calcul de la matrice hessienne",
+    "analyse des lignes de niveau",
+    "étude des limites",
+    "optimisation sur un domaine fermé borné"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "points critiques",
+    "domaine D",
+    "lignes de niveau",
+    "matrice hessienne"
+  ],
+  "content_hash": "38dd8e359cad15b462d66b075dfcc761bd74b2a1f735acaccdb149bb6cd3b560",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:09:34.316Z"
+}

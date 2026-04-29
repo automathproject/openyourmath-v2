@@ -1,0 +1,28 @@
+{
+  "uuid": "Zf20",
+  "source_path": "exo7/12-L3/Zf20.tex",
+  "summary": "L'exercice demande de démontrer la différentiabilité de trois applications définies sur l'algèbre des matrices carrées et de calculer leurs différentielles. La première application associe à une matrice son déterminant, la deuxième élève une matrice à la puissance n, et la troisième associe à une matrice inversible sa matrice inverse.",
+  "concepts": [
+    "différentiabilité",
+    "algèbre des matrices",
+    "déterminant",
+    "matrice inversible",
+    "ouvert d'un espace normé",
+    "différentielle d'une application"
+  ],
+  "methods": [
+    "calcul de la différentielle",
+    "linéarisation",
+    "utilisation de la norme matricielle"
+  ],
+  "objects": [
+    "application linéaire",
+    "matrice carrée",
+    "déterminant",
+    "matrice inversible",
+    "puissance de matrice"
+  ],
+  "content_hash": "f6d148ed94c952b8ac49a36c45ce7811e4f54e1d34a69b593e7623f3d82668d2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:27:49.394Z"
+}

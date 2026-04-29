@@ -1,0 +1,26 @@
+{
+  "uuid": "tj3H",
+  "source_path": "exo7/1-L1/tj3H.tex",
+  "summary": "L'exercice demande de déterminer le nombre de régions délimitées par n droites en position générale (aucune parallèle, aucune trois concourantes) dans le plan. Il commence par des cas particuliers (3 et 4 droites) puis généralise par récurrence.",
+  "concepts": [
+    "récurrence",
+    "position générale de droites",
+    "relation de récurrence",
+    "induction mathématique",
+    "propriété géométrique"
+  ],
+  "methods": [
+    "raisonnement par récurrence",
+    "calcul explicite pour cas particuliers",
+    "démonstration par récurrence forte"
+  ],
+  "objects": [
+    "droites en position générale",
+    "régions du plan",
+    "nombre de régions Rₙ",
+    "relation de récurrence"
+  ],
+  "content_hash": "42e2b916c53a9becfbc0bb97361257e56e7913e5083d5fe2e5dcd79a38a729cc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:29:43.040Z"
+}

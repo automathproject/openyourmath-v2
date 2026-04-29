@@ -1,0 +1,26 @@
+{
+  "uuid": "hOY7",
+  "source_path": "exo7/5-L2/hOY7.tex",
+  "summary": "L'exercice demande de démontrer deux inégalités de type reste dans le développement de Taylor du premier ordre pour une fonction de classe C² à dérivées secondes bornées, en utilisant la dérivée au point A puis au milieu du segment [A,B].",
+  "concepts": [
+    "développement de Taylor du premier ordre",
+    "dérivée partielle",
+    "convexité",
+    "bornitude des dérivées secondes",
+    "inégalité de Taylor-Lagrange"
+  ],
+  "methods": [
+    "application du théorème de Taylor-Lagrange",
+    "utilisation de la convexité",
+    "estimation des restes"
+  ],
+  "objects": [
+    "fonction de classe C²",
+    "ouvert convexe",
+    "dérivée partielle seconde",
+    "segment [A,B]"
+  ],
+  "content_hash": "61c0d7fa00e00b9351c139ad07ac6e8860a48735911616e811899e0d43881fb8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:14:07.366Z"
+}

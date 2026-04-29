@@ -1,0 +1,25 @@
+{
+  "uuid": "9UPP",
+  "source_path": "exo7/1-L1/9UPP.tex",
+  "summary": "Soit E un espace vectoriel de dimension finie et φ, ψ deux applications linéaires de E dans lui-même telles que φ ∘ ψ = id_E. Montrer que ψ ∘ φ = id_E.",
+  "concepts": [
+    "application linéaire",
+    "composition d'applications linéaires",
+    "identité",
+    "espace vectoriel de dimension finie",
+    "inversibilité"
+  ],
+  "methods": [
+    "utilisation de la linéarité",
+    "propriétés de l'identité",
+    "composition d'applications"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "application linéaire",
+    "identité"
+  ],
+  "content_hash": "3ae2dfe8a459ab0e0b138627159ffab67cd6c941ef0a75dc9204fd10176a6a71",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:53:43.085Z"
+}

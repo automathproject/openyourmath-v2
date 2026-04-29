@@ -1,0 +1,30 @@
+{
+  "uuid": "ryqe",
+  "source_path": "exo7/1-L1/ryqe.tex",
+  "summary": "Calculer l'inverse de plusieurs matrices carrées de tailles variées, en utilisant la méthode de Gauss et en vérifiant l'existence de l'inverse via le déterminant.",
+  "concepts": [
+    "inverse d'une matrice",
+    "déterminant",
+    "matrice carrée",
+    "méthode de Gauss",
+    "matrice triangulaire",
+    "matrice symétrique"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "méthode de Gauss-Jordan",
+    "inversion de matrice",
+    "réduction par lignes"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "matrice 3x3",
+    "matrice 3x3 complexe",
+    "matrice 4x4",
+    "matrice triangulaire inférieure",
+    "matrice de Hilbert"
+  ],
+  "content_hash": "df9ac51e53963c163132fd9d6d9f0797ee4c9202f97de0c0568352257e9c1612",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:18:11.917Z"
+}

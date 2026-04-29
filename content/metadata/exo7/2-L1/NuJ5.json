@@ -1,0 +1,29 @@
+{
+  "uuid": "NuJ5",
+  "source_path": "exo7/2-L1/NuJ5.tex",
+  "summary": "Résoudre l'équation x^y = y^x où x et y sont des entiers positifs non nuls. L'énoncé demande de trouver tous les couples d'entiers vérifiant cette relation.",
+  "concepts": [
+    "fonction exponentielle",
+    "fonction logarithme",
+    "fonction dérivée",
+    "croissance et décroissance d'une fonction",
+    "équation différentielle",
+    "analyse de fonction"
+  ],
+  "methods": [
+    "transformation exponentielle",
+    "étude de fonction",
+    "calcul de dérivée",
+    "analyse des variations",
+    "résolution d'équation"
+  ],
+  "objects": [
+    "fonction f(x) = ln(x)/x",
+    "entiers positifs",
+    "équation x^y = y^x",
+    "intervalle [1, +∞["
+  ],
+  "content_hash": "6631b0f3c3ab1d42ea429167b65a09a94c9005e358224eb4b1798da09bbde666",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:59:55.414Z"
+}

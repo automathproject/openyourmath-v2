@@ -1,0 +1,30 @@
+{
+  "uuid": "0b18",
+  "source_path": "exo7/5-L2/0b18.tex",
+  "summary": "L'exercice demande d'étudier l'existence et de calculer l'intégrale paramétrique $\\int_{0}^{1}\\frac{t-1}{\\ln t}t^x\\;dt$ pour $x \\in \\mathbb{R}$. Il s'agit d'une intégrale de Riemann dépendant d'un paramètre.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "intégrabilité",
+    "dérivation sous le signe intégrale",
+    "théorème de Leibniz",
+    "continuité par morceaux",
+    "limite de fonctions",
+    "prolongement par continuité"
+  ],
+  "methods": [
+    "étude des limites en 0 et 1",
+    "dérivation sous l'intégrale",
+    "calcul de primitive",
+    "utilisation du théorème de Leibniz",
+    "majoration de l'intégrale"
+  ],
+  "objects": [
+    "fonction intégrable",
+    "intégrale paramétrique",
+    "fonction dérivée partielle",
+    "fonction bornée"
+  ],
+  "content_hash": "6c974d83aec0abb6720887540b94c633bd8af065a0c0cdc9c550d14e7d356422",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:25:58.044Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "9gOT",
+  "source_path": "exo7/10-L3/9gOT.tex",
+  "summary": "L'exercice demande de montrer qu'un sous-groupe d'indice fini dans un groupe contient les puissances d'un nombre fini d'éléments du groupe, et de prouver que le groupe des nombres rationnels n'a pas de sous-groupe d'indice fini autre que lui-même.",
+  "concepts": [
+    "sous-groupe d'indice fini",
+    "action de groupe",
+    "orbite",
+    "stabilisateur",
+    "théorème de Lagrange",
+    "groupe quotient",
+    "groupe abélien"
+  ],
+  "methods": [
+    "utilisation de l'action par translation à gauche",
+    "analyse des orbites",
+    "comparaison des cardinaux",
+    "argument par l'absurde"
+  ],
+  "objects": [
+    "sous-groupe H de G",
+    "groupe G",
+    "groupe des nombres rationnels ℚ",
+    "puissances d'éléments"
+  ],
+  "content_hash": "38d68bfa5a2f54ee5e54dd67a53a55a68d20e86e2e68d6321961f1d75c9f37fd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:48:25.317Z"
+}

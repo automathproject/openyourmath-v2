@@ -1,0 +1,26 @@
+{
+  "uuid": "EzNZ",
+  "source_path": "exo7/4-L2/EzNZ.tex",
+  "summary": "L'exercice demande de démontrer l'irréductibilité du polynôme X² + 4 dans l'anneau Z[X] et sa réductibilité dans l'anneau Z/2Z[X].",
+  "concepts": [
+    "anneau",
+    "polynôme irréductible",
+    "polynôme réductible",
+    "divisibilité",
+    "corps des entiers modulo 2",
+    "anneau des polynômes"
+  ],
+  "methods": [
+    "critère d'irréductibilité d'Eisenstein",
+    "réduction modulo un nombre premier",
+    "factorisation dans un anneau quotient"
+  ],
+  "objects": [
+    "polynôme X² + 4",
+    "anneau Z[X]",
+    "anneau Z/2Z[X]"
+  ],
+  "content_hash": "4c5856f0faddf9b157b158a3e192ea2545f895896a2b3eba16b107de6447723c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:30:43.119Z"
+}

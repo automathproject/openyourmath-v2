@@ -1,0 +1,36 @@
+{
+  "uuid": "QRgR",
+  "source_path": "exo7/4-L2/QRgR.tex",
+  "summary": "Étudier trois endomorphismes de l'espace euclidien ℝ³ représentés par des matrices A pour déterminer s'ils sont des rotations ou des réflexions, et dans le cas des rotations, identifier leur axe et leur angle.",
+  "concepts": [
+    "espace euclidien",
+    "endomorphisme",
+    "matrice orthogonale",
+    "rotation",
+    "réflexion",
+    "axe de rotation",
+    "angle de rotation",
+    "produit scalaire",
+    "produit vectoriel",
+    "déterminant"
+  ],
+  "methods": [
+    "calcul de la norme des colonnes",
+    "calcul du produit scalaire des colonnes",
+    "calcul du produit vectoriel des colonnes",
+    "résolution d'un système linéaire",
+    "détermination de l'axe de rotation",
+    "calcul de l'angle de rotation",
+    "détermination du signe de l'angle"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "vecteur propre",
+    "système d'équations linéaires",
+    "plan orthogonal",
+    "vecteur unitaire"
+  ],
+  "content_hash": "cfe66b9dfa91cae338e31f35cf80dea3ad2a9be1dca28f1119663d970f0a91e9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:24:04.089Z"
+}

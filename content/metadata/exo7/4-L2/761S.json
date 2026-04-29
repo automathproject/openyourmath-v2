@@ -1,0 +1,32 @@
+{
+  "uuid": "761S",
+  "source_path": "exo7/4-L2/761S.tex",
+  "summary": "Dans un espace euclidien, on étudie un endomorphisme défini par une combinaison linéaire d'un vecteur unitaire et d'un vecteur quelconque. L'exercice demande de montrer que cet endomorphisme est un isomorphisme, de déterminer son inverse, de prouver qu'il est auto-adjoint, de déterminer pour quelles valeurs du paramètre il est orthogonal et d'interpréter géométriquement cette transformation, et enfin de déterminer ses valeurs et vecteurs propres.",
+  "concepts": [
+    "endomorphisme",
+    "isomorphisme",
+    "adjoint d'un endomorphisme",
+    "endomorphisme auto-adjoint",
+    "endomorphisme orthogonal",
+    "valeur propre",
+    "vecteur propre",
+    "symétrie orthogonale"
+  ],
+  "methods": [
+    "calcul du produit scalaire",
+    "inversibilité d'un endomorphisme",
+    "caractérisation de l'adjoint",
+    "détermination des valeurs propres",
+    "détermination des vecteurs propres"
+  ],
+  "objects": [
+    "espace euclidien",
+    "endomorphisme",
+    "vecteur unitaire",
+    "produit scalaire",
+    "hyperplan orthogonal"
+  ],
+  "content_hash": "89f7ca170b0a2f6e9f55ea770d1852dbc3c94128a7b698d8411bf7588d4513bc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:47:58.669Z"
+}

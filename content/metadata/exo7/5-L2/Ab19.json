@@ -1,0 +1,25 @@
+{
+  "uuid": "Ab19",
+  "source_path": "exo7/5-L2/Ab19.tex",
+  "summary": "On étudie un système d'équations différentielles linéaires Y' = AY avec A continue et à coefficients positifs. On montre que la solution X(t) partant d'un vecteur initial X₀ à composantes positives conserve cette propriété pour tout t ≥ 0.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "convergence uniforme",
+    "fonction continue",
+    "système dynamique",
+    "positivité des solutions"
+  ],
+  "methods": [
+    "méthode de Picard",
+    "intégration de fonctions vectorielles",
+    "analyse de la positivité des solutions"
+  ],
+  "objects": [
+    "matrice continue",
+    "vecteur initial",
+    "solution d'équation différentielle"
+  ],
+  "content_hash": "5ea5700edda3c63258c568c529d41e9594b77435fa4659a6a966c9585fbf4293",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:18:54.492Z"
+}

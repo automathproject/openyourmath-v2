@@ -1,0 +1,32 @@
+{
+  "uuid": "2Ts4",
+  "source_path": "exo7/4-L2/2Ts4.tex",
+  "summary": "L'exercice demande de montrer que l'application φ définie par une intégrale est un produit scalaire sur l'espace des polynômes réels. Il s'agit ensuite de déterminer les coefficients d'une famille de polynômes hₙ, de prouver que cette famille est une base orthogonale de l'espace préhilbertien (E, φ), et enfin de déterminer la norme des hₙ pour obtenir une base orthonormée.",
+  "concepts": [
+    "produit scalaire",
+    "espace préhilbertien",
+    "base orthogonale",
+    "base orthonormale",
+    "intégrabilité",
+    "théorème de croissances comparées",
+    "polynôme",
+    "forme bilinéaire"
+  ],
+  "methods": [
+    "intégration par parties",
+    "formule de Leibniz",
+    "récurrence",
+    "calcul de dérivée",
+    "utilisation de la fonction Gamma"
+  ],
+  "objects": [
+    "polynôme",
+    "famille de polynômes",
+    "produit scalaire φ",
+    "base orthogonale (hₙ)",
+    "base orthonormale"
+  ],
+  "content_hash": "64d70b7e8e1ab7b37582797d987e4da2b141a37801f3575c8f35d6d40782054b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:58:37.936Z"
+}

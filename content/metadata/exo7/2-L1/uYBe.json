@@ -1,0 +1,25 @@
+{
+  "uuid": "uYBe",
+  "source_path": "exo7/2-L1/uYBe.tex",
+  "summary": "Calculer la limite d'une somme discrète lorsque n tend vers l'infini. La somme est composée de termes rationnels dépendant de n et k.",
+  "concepts": [
+    "somme discrète",
+    "limite de suite",
+    "intégrale de Riemann",
+    "convergence",
+    "passage de la somme à l'intégrale"
+  ],
+  "methods": [
+    "approximation par intégrale",
+    "changement de variable",
+    "estimation d'erreur"
+  ],
+  "objects": [
+    "somme de termes rationnels",
+    "limite infinie",
+    "fonction continue"
+  ],
+  "content_hash": "17fe1b9b107ff14c9c88f3015031301bd6a672ebb1010cc1e594a4e04bc2cba1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:50:40.067Z"
+}

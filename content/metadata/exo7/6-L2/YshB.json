@@ -1,0 +1,26 @@
+{
+  "uuid": "YshB",
+  "source_path": "exo7/6-L2/YshB.tex",
+  "summary": "L'exercice demande de décrire les régions d'une droite et d'un triangle en utilisant les coordonnées barycentriques dans leurs repères respectifs. Pour la droite, il s'agit des trois régions découpées par les points A et B. Pour le triangle, il s'agit des sept régions découpées par les droites portant les côtés du triangle ABC.",
+  "concepts": [
+    "géométrie affine",
+    "coordonnées barycentriques",
+    "droite affine",
+    "triangle affine",
+    "repère affine",
+    "partition de l'espace"
+  ],
+  "methods": [
+    "utilisation des coordonnées barycentriques",
+    "analyse des régions découpées"
+  ],
+  "objects": [
+    "droite affine",
+    "triangle affine",
+    "points A, B, C",
+    "repère affine"
+  ],
+  "content_hash": "6016d6c58a4318b14c47a6b4ccbbf4005faf84158f53b3f4ab8dfbf869f95728",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:58:20.417Z"
+}

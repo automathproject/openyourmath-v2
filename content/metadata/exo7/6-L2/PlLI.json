@@ -1,0 +1,30 @@
+{
+  "uuid": "PlLI",
+  "source_path": "exo7/6-L2/PlLI.tex",
+  "summary": "L'exercice demande de démontrer deux identités vectorielles sous les conditions de la formule de Green : la première relie l'intégrale du gradient d'une fonction scalaire sur un volume à une intégrale de surface, et la seconde relie l'intégrale du rotationnel d'un champ vectoriel sur un volume à une intégrale de surface.",
+  "concepts": [
+    "formule de Green",
+    "gradient",
+    "rotationnel",
+    "intégrale de surface",
+    "intégrale de volume",
+    "champ vectoriel",
+    "fonction différentiable"
+  ],
+  "methods": [
+    "intégration par parties",
+    "théorème de Stokes",
+    "théorème de la divergence"
+  ],
+  "objects": [
+    "champ vectoriel",
+    "fonction scalaire",
+    "volume",
+    "surface",
+    "gradient",
+    "rotationnel"
+  ],
+  "content_hash": "155218c81129e8c664d2ac0e99766f2952e4f26e3c2ac36694ae74e6a666e704",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:45:34.272Z"
+}

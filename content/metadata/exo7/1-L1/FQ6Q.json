@@ -1,0 +1,33 @@
+{
+  "uuid": "FQ6Q",
+  "source_path": "exo7/1-L1/FQ6Q.tex",
+  "summary": "L'exercice demande d'inverser plusieurs matrices carrées de tailles variables en utilisant la méthode de Gauss. Les matrices présentent des structures spécifiques comme des matrices à diagonale nulle, des matrices à diagonale constante, ou des matrices avec des motifs particuliers.",
+  "concepts": [
+    "matrice carrée",
+    "inversibilité",
+    "méthode de Gauss",
+    "déterminant",
+    "matrice diagonale",
+    "matrice symétrique",
+    "matrice circulante",
+    "matrice de Toeplitz"
+  ],
+  "methods": [
+    "calcul de l'inverse par blocs",
+    "manipulation de lignes",
+    "élimination de Gauss",
+    "formule de l'inverse",
+    "diagonalisation"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice à diagonale nulle",
+    "matrice à diagonale constante",
+    "matrice circulante",
+    "matrice de Toeplitz",
+    "matrice symétrique"
+  ],
+  "content_hash": "a1d633419e9c3418054e0fe52fa2127728285703663ae385a2985fec478d4c98",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:48:31.320Z"
+}

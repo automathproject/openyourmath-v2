@@ -1,0 +1,29 @@
+{
+  "uuid": "JzOK",
+  "source_path": "exo7/4-L2/JzOK.tex",
+  "summary": "L'exercice demande de déterminer la cardinalité du groupe symétrique S₃, d'en lister tous les éléments et d'établir sa table de multiplication pour en déduire tous ses sous-groupes. Il s'appuie ensuite sur un triangle équilatéral pour montrer que ses isométries préservant le triangle forment un groupe isomorphe à S₃.",
+  "concepts": [
+    "groupe symétrique",
+    "isomorphisme de groupes",
+    "isométrie",
+    "permutation",
+    "sous-groupe",
+    "cardinal d'un groupe",
+    "loi de composition interne"
+  ],
+  "methods": [
+    "construction explicite des éléments d'un groupe",
+    "détermination des sous-groupes",
+    "application d'un isomorphisme",
+    "analyse des permutations induites"
+  ],
+  "objects": [
+    "groupe S₃",
+    "triangle équilatéral",
+    "isométries préservant un triangle",
+    "application φ de G dans S₃"
+  ],
+  "content_hash": "dccd0a9ccf1f273d707e9602b3c38687d0d2439cc7c6bc85b426c6c4dd11d345",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:38:27.793Z"
+}

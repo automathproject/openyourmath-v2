@@ -1,0 +1,26 @@
+{
+  "uuid": "mLb5",
+  "source_path": "exo7/1-L1/mLb5.tex",
+  "summary": "L'exercice demande d'évaluer la validité de quatre propositions logiques concernant la distance entre des points des ensembles F1 et F2 dans le plan réel. F1 est le demi-plan inférieur et F2 est une région définie par xy ≥ 1 et x ≥ 0.",
+  "concepts": [
+    "logique des quantificateurs",
+    "distance dans le plan",
+    "ensembles de points",
+    "disjointedness",
+    "négation de propositions"
+  ],
+  "methods": [
+    "analyse de cas",
+    "construction explicite de points",
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la distance"
+  ],
+  "objects": [
+    "ensembles de points dans ℝ²",
+    "distance entre points",
+    "quantificateurs universels et existentiels"
+  ],
+  "content_hash": "2e451ca8e303aaabbd3d948ad98fa14ff0647fe18654273e0d4cd3021b696393",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:25:29.771Z"
+}

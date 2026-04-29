@@ -88,6 +88,7 @@ function buildContent(contentArray) {
 
     switch (type) {
       case 'texte':
+      case 'text':
         sections.push(`ÉNONCÉ :\n${latex}`);
         break;
       case 'question':
@@ -146,6 +147,22 @@ function parseSummaryJson(text) {
 }
 
 /**
+ * Normalise les champs tableau avant validation.
+ * Les modèles locaux retournent parfois une string CSV au lieu d'un tableau.
+ */
+function normalizeSummary(obj) {
+  if (!obj || typeof obj !== 'object') return obj;
+  for (const field of ['concepts', 'methods', 'objects']) {
+    if (typeof obj[field] === 'string') {
+      obj[field] = obj[field].split(',').map(s => s.trim()).filter(Boolean);
+    } else if (!Array.isArray(obj[field])) {
+      obj[field] = [];
+    }
+  }
+  return obj;
+}
+
+/**
  * Valide la structure du JSON retourné par le LLM.
  */
 function validateSummary(obj) {
@@ -188,13 +205,15 @@ export async function summarizeExercise(exercise, { model, maxTokens = 800, chat
     .replace('{{metadata}}', metadata)
     .replace('{{content}}', content);
 
-  const rawResponse = await withRetry(
-    () => callChat(prompt, { model, maxTokens, jsonMode: true, temperature: 0 }),
+  const parsed = await withRetry(
+    async () => {
+      const raw = await callChat(prompt, { model, maxTokens, jsonMode: true, temperature: 0 });
+      return validateSummary(normalizeSummary(parseSummaryJson(raw)));
+    },
     { maxAttempts: 3, delayMs: 1500 }
   );
 
-  const parsed = parseSummaryJson(rawResponse);
-  return validateSummary(parsed);
+  return parsed;
 }
 
 /**

@@ -1,0 +1,28 @@
+{
+  "uuid": "ilek",
+  "source_path": "exo7/10-L3/ilek.tex",
+  "summary": "Soit G un groupe et K un sous-groupe fini distingué. On demande de montrer que tout p-sous-groupe de Sylow distingué de K est distingué dans G.",
+  "concepts": [
+    "groupe fini",
+    "sous-groupe distingué",
+    "p-sous-groupe de Sylow",
+    "théorème de Sylow",
+    "conjugaison",
+    "action de groupe",
+    "orbite"
+  ],
+  "methods": [
+    "analyse des actions de groupe",
+    "utilisation des théorèmes de Sylow",
+    "étude des stabilisateurs",
+    "conjugaison des sous-groupes"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe K",
+    "p-sous-groupe de Sylow de K"
+  ],
+  "content_hash": "17929abe0924a00358f98bf33bcc7994736808ccb6dcf57acd51fca0c0c9be78",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:00:00.451Z"
+}

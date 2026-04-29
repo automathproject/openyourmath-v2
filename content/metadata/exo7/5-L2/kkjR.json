@@ -1,0 +1,29 @@
+{
+  "uuid": "kkjR",
+  "source_path": "exo7/5-L2/kkjR.tex",
+  "summary": "On étudie une application φ de ℝ² dans ℝ² définie à partir d'une fonction f de classe C¹ et k-lipschitzienne avec k<1. On demande de montrer que φ est un C¹-difféomorphisme de ℝ² sur ℝ².",
+  "concepts": [
+    "difféomorphisme",
+    "fonction de classe C¹",
+    "application lipschitzienne",
+    "inversibilité locale",
+    "théorème d'inversion locale",
+    "continuité de la dérivée",
+    "matrice jacobienne"
+  ],
+  "methods": [
+    "calcul de la matrice jacobienne",
+    "inversibilité de la matrice jacobienne",
+    "application du théorème d'inversion locale",
+    "vérification de la continuité de la dérivée"
+  ],
+  "objects": [
+    "fonction de plusieurs variables",
+    "application φ",
+    "fonction f",
+    "matrice jacobienne"
+  ],
+  "content_hash": "504ac67aa68b602e85982c9bf8698677f37a482beb570cddf2fa9ca4bda4ef0c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:15:44.002Z"
+}

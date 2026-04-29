@@ -1,0 +1,24 @@
+{
+  "uuid": "5ESR",
+  "source_path": "exo7/4-L2/5ESR.tex",
+  "summary": "On considère une matrice carrée réelle dont les coefficients sont compris entre 0 et 1 et dont la somme des coefficients de chaque ligne est inférieure ou égale à 1. On demande de montrer que le déterminant de cette matrice a une valeur absolue strictement inférieure à 1.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "valeur absolue",
+    "inégalité matricielle",
+    "propriétés des coefficients"
+  ],
+  "methods": [
+    "majoration de déterminant",
+    "analyse des coefficients"
+  ],
+  "objects": [
+    "matrice réelle",
+    "coefficient matriciel",
+    "somme de coefficients"
+  ],
+  "content_hash": "30732bca6cb3f6f987b79f920e83a95f90da9a8208f080b2c1aaa4716e8bfd07",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:31:33.925Z"
+}

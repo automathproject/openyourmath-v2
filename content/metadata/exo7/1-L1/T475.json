@@ -1,0 +1,22 @@
+{
+  "uuid": "T475",
+  "source_path": "exo7/1-L1/T475.tex",
+  "summary": "L'exercice demande de prouver que deux matrices données sont semblables, c'est-à-dire qu'elles représentent le même endomorphisme dans des bases différentes.",
+  "concepts": [
+    "semblance de matrices",
+    "changement de base",
+    "matrice de passage",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul de matrice inverse",
+    "vérification de la relation de similarité"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice de passage"
+  ],
+  "content_hash": "bf45976d4a562a43364ab13eb304d50e647229808165aa6a6d2a93467b5c4785",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:00:31.426Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "oo1Q",
+  "source_path": "exo7/2-L1/oo1Q.tex",
+  "summary": "L'exercice demande d'étudier la fonction f(x) = ln(1+x) - x, de trouver un équivalent simple de f en 0, et d'analyser le comportement d'une suite (x_n) telle que f(x_n) = o(1/n).",
+  "concepts": [
+    "développement limité",
+    "équivalent de fonctions",
+    "limite de suites",
+    "notation o petit",
+    "fonction logarithme"
+  ],
+  "methods": [
+    "développement limité d'ordre 1",
+    "comparaison de termes dominants",
+    "analyse asymptotique"
+  ],
+  "objects": [
+    "fonction réelle",
+    "suite numérique",
+    "équivalent en 0"
+  ],
+  "content_hash": "ce6ee60ca8a95ae2312457034ec065875b126ab6a26277c24c2935dfe42a5fcb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:40:53.467Z"
+}

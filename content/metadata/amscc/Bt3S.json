@@ -1,0 +1,30 @@
+{
+  "uuid": "Bt3S",
+  "source_path": "amscc/Bt3S.tex",
+  "summary": "L'exercice demande de déterminer les points critiques d'une fonction de deux variables et d'identifier si elle admet des extremums locaux (maximums ou minimums). La fonction étudiée est f(x,y) = xy e^{-(x^2+y^2)}.",
+  "concepts": [
+    "fonction de plusieurs variables",
+    "point critique",
+    "extremum local",
+    "maximum local",
+    "minimum local",
+    "point selle",
+    "matrice hessienne",
+    "déterminant de la hessienne"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "résolution de système d'équations",
+    "analyse de la hessienne",
+    "critères de la hessienne"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "dérivées partielles",
+    "matrice hessienne",
+    "points critiques"
+  ],
+  "content_hash": "f797209694968b88dc8cd0a809b9f3e31f910d08225a840a1c117ba64e688713",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:09:15.640Z"
+}

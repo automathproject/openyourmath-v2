@@ -1,0 +1,25 @@
+{
+  "uuid": "63J6",
+  "source_path": "exo7/4-L2/63J6.tex",
+  "summary": "L'exercice demande de montrer qu'un ensemble de matrices commutant avec une matrice donnée forme un sous-espace vectoriel et d'en déterminer une base. Ensuite, il faut prouver que cet ensemble est une R-algèbre pour les lois usuelles.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "algèbre sur un corps",
+    "commutativité de matrices",
+    "structure de R-algèbre",
+    "matrices 2x2"
+  ],
+  "methods": [
+    "vérification des propriétés de sous-espace vectoriel",
+    "détermination d'une base",
+    "vérification des axiomes d'algèbre"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "ensemble de matrices commutant avec une matrice donnée",
+    "sous-espace vectoriel de M2(R)"
+  ],
+  "content_hash": "0fd43d017062494d2e432cb50a943c2dc1472ca6495932d0d1a52344d34c699b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:19:28.156Z"
+}

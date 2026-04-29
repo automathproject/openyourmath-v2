@@ -1,30 +1,27 @@
 {
   "uuid": "jcpH",
   "source_path": "exo7/6-L2/jcpH.tex",
-  "summary": "L'exercice consiste à déterminer les éléments caractéristiques (sommet, axe, foyer, directrice) d'une parabole définie par une équation cartésienne dans un repère orthonormé, après avoir effectué des changements de repère pour simplifier l'équation.",
+  "summary": "L'exercice demande de montrer qu'une courbe définie par l'intersection d'un plan et d'une surface quadratique dans ℝ³ est une parabole, puis de déterminer ses éléments caractéristiques (sommet, axe, foyer, directrice).",
   "concepts": [
-    "changement de repère",
+    "conique",
     "parabole",
+    "changement de repère",
     "équation cartésienne",
-    "géométrie analytique",
-    "repère orthonormé",
-    "transformation affine",
-    "conique"
+    "géométrie affine",
+    "géométrie projective"
   ],
   "methods": [
-    "changement de variable",
-    "simplification d'équation",
-    "calcul de coordonnées",
+    "changement de repère",
+    "réduction d'équation",
     "identification des éléments caractéristiques"
   ],
   "objects": [
-    "parabole",
-    "repère orthonormé",
-    "équation cartésienne",
-    "coordonnées de points",
-    "axe de symétrie"
+    "courbe plane",
+    "plan",
+    "surface quadratique",
+    "parabole"
   ],
-  "content_hash": "4be4d6e79db28ab2e974d3a1b19e59e67ed6276c500be5a405362e92dc0dfa37",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:41:06.208Z"
+  "content_hash": "1000736be9b11a12a06228f7ca9622e586bad454310e9adfc56edcd7bebb1012",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:07:27.448Z"
 }

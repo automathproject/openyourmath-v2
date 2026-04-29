@@ -1,0 +1,32 @@
+{
+  "uuid": "WRNh",
+  "source_path": "exo7/4-L2/WRNh.tex",
+  "summary": "L'exercice demande de montrer que l'application Φ définie par une intégrale pondérée est un produit scalaire sur ℝ[X], puis d'établir l'existence d'une base orthonormale avec des polynômes de degré croissant, et enfin de prouver que chaque polynôme de cette base a n racines réelles simples.",
+  "concepts": [
+    "produit scalaire",
+    "orthonormalisation",
+    "base orthonormale",
+    "polynôme orthogonal",
+    "racines réelles simples",
+    "espace vectoriel normé",
+    "fonction continue positive",
+    "orthogonalité"
+  ],
+  "methods": [
+    "intégration",
+    "définition de produit scalaire",
+    "orthonormalisation de Gram-Schmidt",
+    "analyse des racines de polynômes",
+    "orthogonalité dans un espace de polynômes"
+  ],
+  "objects": [
+    "fonction continue positive",
+    "polynômes",
+    "base orthonormale",
+    "racines réelles simples",
+    "espace ℝ[X]"
+  ],
+  "content_hash": "044f981bb1288e9611d41d19a941ff024a8d108d14198aa45f134bdfebe161d2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:31:47.528Z"
+}

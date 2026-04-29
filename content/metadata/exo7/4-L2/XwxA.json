@@ -1,0 +1,28 @@
+{
+  "uuid": "XwxA",
+  "source_path": "exo7/4-L2/XwxA.tex",
+  "summary": "L'exercice demande de déterminer les ordres possibles des éléments du groupe multiplicatif d'un corps fini, de compter le nombre d'éléments de chaque ordre, et d'identifier un générateur de ce groupe.",
+  "concepts": [
+    "groupe multiplicatif d'un corps fini",
+    "ordre d'un élément",
+    "groupe cyclique",
+    "petit théorème de Fermat",
+    "théorème de Lagrange",
+    "générateur d'un groupe"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul d'ordres possibles",
+    "comptage d'éléments par ordre",
+    "identification de générateurs"
+  ],
+  "objects": [
+    "groupe (ℤ/53ℤ)×",
+    "éléments du groupe",
+    "ordres des éléments",
+    "générateur du groupe"
+  ],
+  "content_hash": "572cc079c241a61cc562e4a3b9d23cd8b88679c3f60abb44b447fcaad366c22f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:54:05.796Z"
+}

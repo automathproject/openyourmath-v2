@@ -1,0 +1,27 @@
+{
+  "uuid": "wJDR",
+  "source_path": "exo7/15-L3/wJDR.tex",
+  "summary": "L'exercice demande de démontrer qu'une distance spécifique définit une métrique sur l'ensemble des fermés non vides d'un espace métrique borné, et que l'application qui associe à un point son singleton est une isométrie.",
+  "concepts": [
+    "espace métrique",
+    "métrique bornée",
+    "fermé d'un espace topologique",
+    "distance de Hausdorff",
+    "isométrie",
+    "fonction bornée"
+  ],
+  "methods": [
+    "définition d'une métrique",
+    "preuve d'isométrie",
+    "utilisation de la borne supérieure"
+  ],
+  "objects": [
+    "espace métrique borné",
+    "ensemble des fermés non vides",
+    "fonction distance à un ensemble",
+    "singleton"
+  ],
+  "content_hash": "567e27ce98e4548bf38d4c2673dae309d54f0f93e2be0b8c04cecf5e21e5749b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:34:04.080Z"
+}

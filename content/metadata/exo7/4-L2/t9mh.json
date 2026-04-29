@@ -1,0 +1,26 @@
+{
+  "uuid": "t9mh",
+  "source_path": "exo7/4-L2/t9mh.tex",
+  "summary": "L'exercice demande de démontrer la dérivabilité d'une fonction définie comme le déterminant d'une matrice 2x2 à coefficients fonctions dérivables, puis de généraliser ce résultat à des matrices nxn. Une application numérique est proposée pour calculer un déterminant 3x3 spécifique.",
+  "concepts": [
+    "déterminant",
+    "fonction dérivable",
+    "dérivée d'une fonction composée",
+    "matrice carrée",
+    "propriété de linéarité du déterminant"
+  ],
+  "methods": [
+    "développement par rapport à une ligne ou une colonne",
+    "règle de Leibniz pour les déterminants",
+    "calcul différentiel",
+    "généralisation par récurrence"
+  ],
+  "objects": [
+    "matrice 2x2 à coefficients fonctions",
+    "déterminant de matrice",
+    "matrice 3x3"
+  ],
+  "content_hash": "e04c88403614275dfc2f92efa8994966080fcaf105cdf7eab4e59b63719816ac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:15:22.540Z"
+}

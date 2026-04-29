@@ -1,0 +1,28 @@
+{
+  "uuid": "MTgO",
+  "source_path": "exo7/4-L2/MTgO.tex",
+  "summary": "L'exercice demande d'identifier les éléments de l'anneau des entiers modulo un nombre premier impair qui sont leur propre inverse, puis de démontrer le théorème de Wilson.",
+  "concepts": [
+    "anneau des entiers modulo n",
+    "groupe multiplicatif d'un anneau",
+    "inverse multiplicatif",
+    "théorème de Wilson",
+    "nombre premier",
+    "congruence"
+  ],
+  "methods": [
+    "calcul d'inverse multiplicatif",
+    "démonstration par double implication",
+    "utilisation de la factorielle",
+    "propriétés des nombres premiers"
+  ],
+  "objects": [
+    "élément d'un groupe multiplicatif",
+    "entier naturel",
+    "factorielles",
+    "congruences modulo n"
+  ],
+  "content_hash": "a578b85a6da73679c82a1b9ad77852c30fd61c5386d1b43c8a5433d2413da376",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:41:10.459Z"
+}

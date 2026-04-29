@@ -1,0 +1,27 @@
+{
+  "uuid": "bhUS",
+  "source_path": "exo7/5-L2/bhUS.tex",
+  "summary": "L'exercice demande de montrer que si y est solution d'une équation différentielle linéaire du premier ordre à coefficients T-périodiques, alors la fonction z(x) = y(x+T) est aussi solution. Ensuite, il faut en déduire l'existence et l'unicité d'une solution T-périodique sous une condition d'intégrale.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "solution particulière",
+    "solution homogène",
+    "périodicité",
+    "intégrale d'une fonction continue",
+    "unicité de la solution"
+  ],
+  "methods": [
+    "résolution d'équation différentielle linéaire",
+    "méthode de variation de la constante",
+    "analyse de la périodicité",
+    "calcul d'intégrale"
+  ],
+  "objects": [
+    "fonction périodique",
+    "solution d'équation différentielle",
+    "intégrale sur un intervalle"
+  ],
+  "content_hash": "9468f9e6f566863af0786620ebdb7b780b9c27252cf10e9116a8e798a4d9f539",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:36:58.551Z"
+}

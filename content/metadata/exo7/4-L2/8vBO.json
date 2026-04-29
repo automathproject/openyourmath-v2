@@ -1,0 +1,29 @@
+{
+  "uuid": "8vBO",
+  "source_path": "exo7/4-L2/8vBO.tex",
+  "summary": "L'exercice demande de démontrer que pour un endomorphisme normal u dans un espace vectoriel hermitien E, si F est un sous-espace propre de u, alors F⊥ est stable par u. Il faut ensuite en déduire que u est diagonalisable en base orthonormale et vérifier si la réciproque est vraie. Une seconde question demande de montrer l'équivalence entre cinq propriétés liées à la normalité de u.",
+  "concepts": [
+    "endomorphisme normal",
+    "espace vectoriel hermitien",
+    "sous-espace propre",
+    "orthogonalité",
+    "diagonalisation",
+    "base orthonormale",
+    "commutativité d'opérateurs"
+  ],
+  "methods": [
+    "utilisation de la définition de normalité",
+    "analyse de la stabilité des sous-espaces",
+    "diagonalisation",
+    "preuve d'équivalence de propriétés"
+  ],
+  "objects": [
+    "endomorphisme",
+    "sous-espace vectoriel",
+    "sous-espace orthogonal",
+    "polynôme d'endomorphisme"
+  ],
+  "content_hash": "94d6650003abfac2c6711fec13ae6046d384948f95fbc30d88d3e0580a6cda4c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:05:18.246Z"
+}

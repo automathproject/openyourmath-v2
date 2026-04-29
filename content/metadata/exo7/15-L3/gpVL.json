@@ -1,0 +1,25 @@
+{
+  "uuid": "gpVL",
+  "source_path": "exo7/15-L3/gpVL.tex",
+  "summary": "L'exercice demande de déterminer les valeurs d'adhérence des fonctions f(x) = sin(1/x) et g(x) = (1/x)sin(1/x) lorsque x tend vers 0.",
+  "concepts": [
+    "valeur d'adhérence",
+    "limite d'une fonction",
+    "fonction continue",
+    "topologie de R",
+    "ensemble des valeurs d'adhérence"
+  ],
+  "methods": [
+    "étude des suites extraites",
+    "analyse des oscillations",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction sin(1/x)",
+    "fonction (1/x)sin(1/x)",
+    "valeurs d'adhérence"
+  ],
+  "content_hash": "5ece1a742546992060d51a74632ae2920eaf4b55f33d8bae91672fe8937c48f4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:59:06.284Z"
+}

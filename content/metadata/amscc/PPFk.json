@@ -1,0 +1,29 @@
+{
+  "uuid": "PPFk",
+  "source_path": "amscc/PPFk.tex",
+  "summary": "L'exercice demande d'étudier une fonction de deux variables définie par $f(x,y) = 4 - \\sqrt{1+x^2+y^2}$. Il s'agit de déterminer son ensemble de définition, ses lignes de niveau, ses dérivées partielles, sa matrice hessienne, ses points critiques et la nature de ces points.",
+  "concepts": [
+    "fonction de deux variables",
+    "dérivées partielles",
+    "matrice hessienne",
+    "points critiques",
+    "extremum local",
+    "extremum global",
+    "lignes de niveau"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "calcul de dérivées partielles secondes",
+    "résolution de système d'équations",
+    "analyse de la matrice hessienne"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "matrice hessienne",
+    "points critiques",
+    "lignes de niveau"
+  ],
+  "content_hash": "0e7dc1447dbb3be436c3a06220b2c5e21580f1ba1f59713febef4baa1ee585ff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:07:31.150Z"
+}

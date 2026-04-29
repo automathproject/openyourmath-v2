@@ -1,0 +1,25 @@
+{
+  "uuid": "Ag5y",
+  "source_path": "exo7/6-L2/Ag5y.tex",
+  "summary": "L'exercice demande de déterminer si des systèmes de formules définissent bien un changement de repère dans l'espace euclidien, et si c'est le cas, de trouver le changement de repère inverse.",
+  "concepts": [
+    "changement de repère",
+    "matrice de passage",
+    "inversibilité",
+    "géométrie affine euclidienne",
+    "système d'équations linéaires"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "inversion de matrice",
+    "résolution de système linéaire"
+  ],
+  "objects": [
+    "système de coordonnées",
+    "matrice 3x3",
+    "vecteur translation"
+  ],
+  "content_hash": "a6cd04bdbfce7d0ca51db3b3d8c15a4149c89cb0991d0918d628fd8803e600e6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:26:00.518Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "0wIy",
+  "source_path": "exo7/4-L2/0wIy.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés équivalentes pour une matrice symétrique réelle : si elle est définie positive, alors tous les déterminants de ses sous-matrices principales sont strictement positifs, et réciproquement.",
+  "concepts": [
+    "matrice symétrique",
+    "matrice définie positive",
+    "déterminant de sous-matrice principale",
+    "décomposition de Cholesky",
+    "récurrence mathématique"
+  ],
+  "methods": [
+    "décomposition en blocs",
+    "calcul de déterminant",
+    "récurrence sur la dimension",
+    "construction explicite de matrice triangulaire"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "sous-matrice principale",
+    "matrice triangulaire supérieure inversible",
+    "déterminant"
+  ],
+  "content_hash": "60080f6f7ea58c2bae70d0b0b9b0adc99fb4af42f30a079b25e5d4eb632d3470",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:56:51.109Z"
+}

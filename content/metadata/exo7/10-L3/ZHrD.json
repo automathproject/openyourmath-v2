@@ -1,0 +1,30 @@
+{
+  "uuid": "ZHrD",
+  "source_path": "exo7/10-L3/ZHrD.tex",
+  "summary": "Montrer l'isomorphisme entre un groupe donné par une présentation spécifique et le groupe ℤⁿ.",
+  "concepts": [
+    "présentation d'un groupe",
+    "groupe abélien",
+    "isomorphisme de groupes",
+    "groupe libre",
+    "relation de commutation",
+    "groupe cyclique",
+    "groupe abélien libre",
+    "théorème de structure des groupes abéliens libres"
+  ],
+  "methods": [
+    "utilisation des relations de commutation",
+    "construction explicite d'un isomorphisme",
+    "analyse des générateurs et relations",
+    "comparaison des propriétés algébriques"
+  ],
+  "objects": [
+    "groupe G",
+    "groupe ℤⁿ",
+    "générateurs x₁, ..., xₙ",
+    "relations de commutation [xᵢ, xⱼ]"
+  ],
+  "content_hash": "d97a1dca3bead05e03f4ce38d3f789c1d638a58daf24df3423ac47a74d3d80f8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:51:49.625Z"
+}

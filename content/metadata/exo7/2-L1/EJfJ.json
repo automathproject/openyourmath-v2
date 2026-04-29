@@ -1,0 +1,25 @@
+{
+  "uuid": "EJfJ",
+  "source_path": "exo7/2-L1/EJfJ.tex",
+  "summary": "On considère une fonction convexe définie sur ℝ et trois réels x < y < z. On demande de prouver que le déterminant d'une matrice 3x3 construite à partir de ces points est strictement positif.",
+  "concepts": [
+    "fonction convexe",
+    "déterminant",
+    "inégalité",
+    "matrice",
+    "algorithme de calcul de déterminant"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "propriété de convexité",
+    "inégalité des accroissements finis"
+  ],
+  "objects": [
+    "fonction convexe",
+    "matrice 3x3",
+    "réels x, y, z"
+  ],
+  "content_hash": "0f69366744f40b82d9ce8b38efb3f82cff3c0670b2f961413e896194e2973627",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:01:26.662Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "MdCO",
+  "source_path": "exo7/4-L2/MdCO.tex",
+  "summary": "Calcul du déterminant d'une matrice carrée de taille n×n où les éléments diagonaux valent a et les autres b, avec a ≠ b.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "propriété de symétrie",
+    "réduction de matrice",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "développement par rapport à une ligne ou colonne",
+    "réduction par soustraction de lignes",
+    "utilisation de la récurrence"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "déterminant de taille n×n",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "f688d59824ca66af68209e059b61b53bee5c484c0b96c8bbcf4ef7b286bd640d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:46:50.647Z"
+}

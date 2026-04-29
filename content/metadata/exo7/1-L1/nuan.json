@@ -1,32 +1,32 @@
 {
   "uuid": "nuan",
   "source_path": "exo7/1-L1/nuan.tex",
-  "summary": "L'exercice demande de démontrer l'équivalence de trois conditions pour un endomorphisme f de ℝ² : l'égalité entre le noyau et l'image de f, la condition f²=0 avec rang(f)=n/2, et l'existence d'un endomorphisme g tel que f∘g + g∘f = Id. Une seconde question demande de construire une base spécifique lorsque Ker(f) = Im(f).",
+  "summary": "L'exercice demande de démontrer une équivalence entre trois conditions pour un endomorphisme de ℝ² : l'égalité entre le noyau et l'image, l'annulation de la composée et une condition sur le rang, et l'existence d'un endomorphisme g vérifiant une relation spécifique avec f.",
   "concepts": [
     "endomorphisme",
     "noyau d'une application linéaire",
     "image d'une application linéaire",
     "théorème du rang",
-    "supplémentaire d'un sous-espace",
+    "supplémentaire d'un sous-espace vectoriel",
     "base d'un espace vectoriel",
-    "décomposition en somme directe",
-    "condition nécessaire et suffisante"
+    "famille libre",
+    "famille génératrice"
   ],
   "methods": [
     "décomposition en somme directe",
-    "construction explicite d'un endomorphisme",
-    "utilisation du théorème du rang",
-    "vérification sur une base",
-    "construction de base adaptée"
+    "construction explicite d'une base",
+    "utilisation de la liberté d'une famille",
+    "définition d'un endomorphisme par ses images sur une base"
   ],
   "objects": [
-    "endomorphisme de ℝ²",
-    "noyau d'un endomorphisme",
-    "image d'un endomorphisme",
-    "base d'un espace vectoriel",
-    "supplémentaire d'un sous-espace"
+    "endomorphisme f",
+    "endomorphisme g",
+    "noyau de f",
+    "image de f",
+    "supplémentaire de Ker f",
+    "base de ℝ²"
   ],
-  "content_hash": "ba5beb8605d643270492399ec219c7f05e4e747f05a2f6cf7d2a7041b9c90c41",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:13:24.968Z"
+  "content_hash": "f108bd33bab21da8d8cce06908ae67409c8dc28a767f98b55a7999d4b7799ec4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:37:45.688Z"
 }

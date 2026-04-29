@@ -1,0 +1,29 @@
+{
+  "uuid": "qDYy",
+  "source_path": "exo7/4-L2/qDYy.tex",
+  "summary": "L'exercice demande de montrer qu'une famille de quatre formes linéaires est une base de l'espace dual d'un espace vectoriel de polynômes de degré 3 à coefficients réels, puis de déterminer la base duale correspondante.",
+  "concepts": [
+    "espace vectoriel",
+    "espace dual",
+    "forme linéaire",
+    "base d'un espace vectoriel",
+    "polynôme de degré 3",
+    "racine d'un polynôme",
+    "ordre d'une racine"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "résolution d'équations polynomiales",
+    "détermination de conditions sur les racines",
+    "vérification de la liberté d'une famille de formes linéaires"
+  ],
+  "objects": [
+    "polynôme de ℝ₃[X]",
+    "forme linéaire sur ℝ₃[X]",
+    "base de l'espace dual",
+    "base préduale"
+  ],
+  "content_hash": "5d341f2892bae8cb70200d6e0a651ebc6011f987ae0a9d591f48db18d88acd59",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:54:50.628Z"
+}

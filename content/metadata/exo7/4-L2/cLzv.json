@@ -1,0 +1,28 @@
+{
+  "uuid": "cLzv",
+  "source_path": "exo7/4-L2/cLzv.tex",
+  "summary": "L'exercice demande de prouver que les coefficients diagonaux d'une matrice symétrique réelle positive sont positifs et que si l'un d'eux est nul, alors toute la ligne et la colonne correspondantes sont nulles. Ensuite, il s'agit de montrer qu'une matrice par blocs symétrique positive est diagonalisable sous certaines conditions.",
+  "concepts": [
+    "matrice symétrique",
+    "matrice positive",
+    "diagonalisation",
+    "inégalité de Cauchy-Schwarz",
+    "semblable",
+    "orthogonal"
+  ],
+  "methods": [
+    "utilisation de l'inégalité de Cauchy-Schwarz",
+    "réduction de matrice par blocs",
+    "renumérotation de lignes et colonnes",
+    "inversion de matrice"
+  ],
+  "objects": [
+    "matrice symétrique réelle positive",
+    "matrice par blocs",
+    "matrice diagonale",
+    "matrice orthogonale"
+  ],
+  "content_hash": "a1a7244dc2c1bb1291205505b96cea5c46ab51eddedfc64566f4821ca43cab57",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:38:20.038Z"
+}

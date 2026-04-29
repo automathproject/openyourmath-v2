@@ -1,0 +1,26 @@
+{
+  "uuid": "KWsw",
+  "source_path": "exo7/4-L2/KWsw.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés sur les permutations : d'abord que le conjugué d'un k-cycle est encore un k-cycle, puis que deux permutations sont conjuguées si et seulement si leurs cycles à supports disjoints ont les mêmes longueurs.",
+  "concepts": [
+    "groupe de permutation",
+    "conjugaison dans un groupe",
+    "cycle dans une permutation",
+    "décomposition en cycles disjoints",
+    "relation d'équivalence"
+  ],
+  "methods": [
+    "décomposition en cycles disjoints",
+    "conjugaison de permutations",
+    "analyse des supports de cycles"
+  ],
+  "objects": [
+    "permutation",
+    "k-cycle",
+    "conjugué d'une permutation",
+    "cycles disjoints"
+  ],
+  "content_hash": "84970f1654ca9a86217a910e7983bfb6c7933f1f75ac60df70e90b5e9c615d0e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:39:20.080Z"
+}

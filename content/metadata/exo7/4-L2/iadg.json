@@ -1,0 +1,25 @@
+{
+  "uuid": "iadg",
+  "source_path": "exo7/4-L2/iadg.tex",
+  "summary": "Résolution d'un système linéaire de trois équations à trois inconnues. Le système est donné sous forme matricielle avec des paramètres.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "déterminant",
+    "matrice carrée",
+    "inversion de matrice"
+  ],
+  "methods": [
+    "méthode de Cramer",
+    "résolution par substitution",
+    "calcul de déterminant"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice 3x3",
+    "inconnues réelles"
+  ],
+  "content_hash": "d9c3d3bbe666e77b64664338fee9499cccb2836dda7fb4e5c01022ce095e5541",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:04:53.144Z"
+}

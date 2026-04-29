@@ -1,0 +1,28 @@
+{
+  "uuid": "FnEz",
+  "source_path": "exo7/15-L3/FnEz.tex",
+  "summary": "L'exercice demande de montrer que l'intersection de deux progressions arithmétiques dans ℕ* est soit vide, soit une autre progression arithmétique de même nature. Ensuite, il faut en déduire que cette famille d'ensembles forme une base de topologie sur ℕ* et décrire les ouverts associés. Enfin, il faut prouver que cette topologie est séparée.",
+  "concepts": [
+    "topologie",
+    "espace topologique",
+    "base de topologie",
+    "topologie séparée",
+    "progression arithmétique",
+    "pgcd",
+    "ppcm"
+  ],
+  "methods": [
+    "définition de base de topologie",
+    "preuve de séparation",
+    "analyse d'intersection d'ensembles"
+  ],
+  "objects": [
+    "progression arithmétique",
+    "famille d'ensembles",
+    "ℕ*",
+    "intersection d'ensembles"
+  ],
+  "content_hash": "0a71ff130b1d5ad70977525c5b7331bfe1acd093332418327ad1fdb508adef16",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:23:01.280Z"
+}

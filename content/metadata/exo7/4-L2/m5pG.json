@@ -1,0 +1,28 @@
+{
+  "uuid": "m5pG",
+  "source_path": "exo7/4-L2/m5pG.tex",
+  "summary": "L'exercice demande de montrer qu'un anneau quotient est un corps et de déterminer son cardinal. Il étudie ensuite les propriétés d'éléments spécifiques dans ce corps, notamment leurs puissances et leurs ordres multiplicatifs.",
+  "concepts": [
+    "corps fini",
+    "anneau quotient",
+    "élément primitif",
+    "ordre multiplicatif",
+    "polynôme irréductible",
+    "théorème de structure des corps finis"
+  ],
+  "methods": [
+    "vérification des axiomes de corps",
+    "calcul d'ordre multiplicatif",
+    "évaluation de polynômes",
+    "utilisation des propriétés des corps finis"
+  ],
+  "objects": [
+    "corps $\\mathbb{F}_{25}$",
+    "élément non nul de $\\mathbb{F}_{25}$",
+    "polynôme $X^2+2X+1$",
+    "polynôme $X^2+3X+3$"
+  ],
+  "content_hash": "60558473e23f40a2ddb7ff8ecdd33368867042a9d7ddf90f7223a92bae192b6d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:10:13.528Z"
+}

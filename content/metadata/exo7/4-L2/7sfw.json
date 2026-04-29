@@ -1,0 +1,30 @@
+{
+  "uuid": "7sfw",
+  "source_path": "exo7/4-L2/7sfw.tex",
+  "summary": "L'exercice demande de démontrer les formules de la projection orthogonale et de la symétrie orthogonale par rapport à un hyperplan dans un espace euclidien, puis d'appliquer ces résultats pour déterminer la matrice de la symétrie orthogonale par rapport à un plan donné dans ℝ³.",
+  "concepts": [
+    "espace euclidien",
+    "projection orthogonale",
+    "symétrie orthogonale",
+    "hyperplan orthogonal",
+    "produit scalaire",
+    "norme d'un vecteur",
+    "matrice de transformation"
+  ],
+  "methods": [
+    "calcul de projection orthogonale",
+    "calcul de symétrie orthogonale",
+    "détermination de matrice dans une base"
+  ],
+  "objects": [
+    "espace euclidien E",
+    "vecteur u",
+    "hyperplan H",
+    "projection p",
+    "symétrie s",
+    "plan Π dans ℝ³"
+  ],
+  "content_hash": "9b510704b6158bd44369ff90033f022878b6e004a2f4598d217a4927fb4f8c6f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:03:45.466Z"
+}

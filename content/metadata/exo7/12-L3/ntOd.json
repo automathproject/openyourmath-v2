@@ -1,0 +1,28 @@
+{
+  "uuid": "ntOd",
+  "source_path": "exo7/12-L3/ntOd.tex",
+  "summary": "L'exercice demande de montrer que la norme de la différentielle de l'application F:ℝ²→ℝ² est bornée par √2, puis d'en déduire la convergence d'une suite récurrente définie par F et d'en trouver la limite.",
+  "concepts": [
+    "différentiabilité",
+    "norme d'une application linéaire",
+    "théorème du point fixe",
+    "contraction",
+    "suite récurrente",
+    "convergence"
+  ],
+  "methods": [
+    "calcul de la différentielle",
+    "majoration de norme",
+    "application du théorème du point fixe",
+    "étude de la contraction"
+  ],
+  "objects": [
+    "application F:ℝ²→ℝ²",
+    "différentielle DF(x,y)",
+    "suite récurrente (xₙ, yₙ)",
+    "point fixe"
+  ],
+  "content_hash": "8253b667ba9281c51c7367844fa615a9d6d5b7b5169b78697304060b5675a971",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:30:31.767Z"
+}

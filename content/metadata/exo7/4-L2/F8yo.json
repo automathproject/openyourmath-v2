@@ -1,0 +1,25 @@
+{
+  "uuid": "F8yo",
+  "source_path": "exo7/4-L2/F8yo.tex",
+  "summary": "L'exercice demande de démontrer qu'un ensemble défini par des exponentielles complexes est un sous-groupe du groupe multiplicatif des complexes. Il explore ensuite les propriétés de cet ensemble pour différentes valeurs du paramètre λ et analyse l'application associée comme morphisme.",
+  "concepts": [
+    "sous-groupe",
+    "groupe multiplicatif des complexes",
+    "exponentielle complexe",
+    "morphisme de groupes",
+    "structure algébrique"
+  ],
+  "methods": [
+    "vérification des axiomes de sous-groupe",
+    "analyse de l'application exponentielle",
+    "identification des sous-groupes classiques"
+  ],
+  "objects": [
+    "ensemble S_λ",
+    "application t ↦ exp(iλt)",
+    "groupe (ℂ, ×)"
+  ],
+  "content_hash": "3ecf4a65465458fa56731e05a85e90b2d529ac50b69ad3a0e154b311063a7a8e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:31:06.924Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "18V3",
+  "source_path": "exo7/4-L2/18V3.tex",
+  "summary": "Soit G un groupe fini de cardinal impair. Montrer que pour tout élément x de G, il existe un unique élément y de G tel que x est le carré de y.",
+  "concepts": [
+    "groupe fini",
+    "cardinal impair",
+    "élément d'ordre impair",
+    "unicité de la racine carrée",
+    "théorème de Lagrange",
+    "sous-groupe engendré"
+  ],
+  "methods": [
+    "utilisation de la structure de groupe",
+    "analyse des ordres des éléments",
+    "argument par l'absurde",
+    "utilisation de la divisibilité dans les groupes"
+  ],
+  "objects": [
+    "groupe fini G",
+    "élément x de G",
+    "élément y de G"
+  ],
+  "content_hash": "509f6f1a7d2ef2cd814fece542355075e9efd8c00741a394b0388ca20c607a3b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:14:22.564Z"
+}

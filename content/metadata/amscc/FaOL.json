@@ -1,0 +1,23 @@
+{
+  "uuid": "FaOL",
+  "source_path": "amscc/FaOL.tex",
+  "summary": "L'exercice demande de vérifier si l'égalité A² - B² = (A + B)(A - B) est vraie pour deux matrices données A et B, puis de déterminer une condition nécessaire et suffisante pour que cette égalité soit vérifiée.",
+  "concepts": [
+    "produit matriciel",
+    "commutativité des matrices",
+    "identité matricielle",
+    "matrice carrée"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "vérification d'égalité matricielle",
+    "condition nécessaire et suffisante"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "matrices A et B"
+  ],
+  "content_hash": "e4b52b51365ba606db5dd7e5e72f56b4641661b929ee2b24533b45b09073ea0b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:48:52.140Z"
+}

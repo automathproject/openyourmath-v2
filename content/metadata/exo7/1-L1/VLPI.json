@@ -1,0 +1,28 @@
+{
+  "uuid": "VLPI",
+  "source_path": "exo7/1-L1/VLPI.tex",
+  "summary": "L'exercice demande de montrer l'existence d'un entier n₀ tel que pour tout n ≥ n₀, le noyau de φⁿ soit stable, puis d'en déduire la stabilité de l'image de φⁿ à partir de n₀. L'étude porte sur les propriétés des itérations d'une application linéaire en dimension finie.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "espace vectoriel de dimension finie",
+    "itération d'application linéaire",
+    "stabilisation de suites d'espaces vectoriels"
+  ],
+  "methods": [
+    "récurrence",
+    "utilisation du théorème du rang",
+    "analyse de la croissance des dimensions des noyaux et images"
+  ],
+  "objects": [
+    "application linéaire φ",
+    "noyau Kₙ",
+    "image Iₙ",
+    "espace vectoriel E"
+  ],
+  "content_hash": "c47ed1aced87e5d9fd5f150c46c84596d240d224b86e262143dbf6200d995250",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:55:20.278Z"
+}

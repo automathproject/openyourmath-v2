@@ -1,0 +1,25 @@
+{
+  "uuid": "ssQL",
+  "source_path": "exo7/2-L1/ssQL.tex",
+  "summary": "On considère une fonction continue sur [0,1] vérifiant f(0)=f(1). On demande de montrer qu'il existe pour tout entier naturel n non nul un réel x_n dans [0,1-1/n] tel que f(x_n + 1/n) = f(x_n).",
+  "concepts": [
+    "continuité",
+    "fonction réelle",
+    "théorème des valeurs intermédiaires",
+    "propriété de Darboux",
+    "fonction périodique"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du théorème des valeurs intermédiaires",
+    "construction explicite de suite"
+  ],
+  "objects": [
+    "fonction continue",
+    "intervalle [0,1]",
+    "suite (x_n)"
+  ],
+  "content_hash": "3107edfdfd9e8a97e15592ea6ff10e899a4856e455dd3927841db9e319e35ba8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:26:44.234Z"
+}

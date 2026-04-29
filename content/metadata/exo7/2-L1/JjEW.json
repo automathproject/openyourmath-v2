@@ -1,0 +1,25 @@
+{
+  "uuid": "JjEW",
+  "source_path": "exo7/2-L1/JjEW.tex",
+  "summary": "On étudie une fonction continue sur [0,1] et une suite de fonctions g_n définies par la différence f(x+1/n)-f(x). On doit montrer que si g_n est strictement positive sur un intervalle, alors f(1)>f(0). Ensuite, si f(0)=f(1), on doit prouver que g_n s'annule au moins une fois sur un intervalle donné.",
+  "concepts": [
+    "continuité",
+    "fonction dérivable",
+    "théorème des valeurs intermédiaires",
+    "fonction monotone",
+    "limite de suite"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du théorème des valeurs intermédiaires",
+    "analyse de la monotonie"
+  ],
+  "objects": [
+    "fonction continue",
+    "suite de fonctions",
+    "intervalle de définition"
+  ],
+  "content_hash": "d9df9ac9286ff10276980b2e5f54609acab038515658a6f0a449956c48a661ff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:04:04.932Z"
+}

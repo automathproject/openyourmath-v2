@@ -1,0 +1,24 @@
+{
+  "uuid": "GkQ1",
+  "source_path": "exo7/2-L1/GkQ1.tex",
+  "summary": "Montrer qu'une fonction continue sur un intervalle fermé borné admet une majoration de sa variation par une constante multipliée par la distance entre deux points plus un epsilon arbitrairement petit.",
+  "concepts": [
+    "continuité uniforme",
+    "fonction continue sur un intervalle compact",
+    "majoration de la variation",
+    "inégalité de Lipschitz locale"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la continuité uniforme",
+    "majoration de la dérivée"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle fermé borné",
+    "epsilon-delta"
+  ],
+  "content_hash": "86c3b1d7a5490bd7b3c918aa3328d7bc964fbec9f9a88981bc08ea391e9205ac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:16:30.679Z"
+}

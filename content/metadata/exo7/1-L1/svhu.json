@@ -1,0 +1,27 @@
+{
+  "uuid": "svhu",
+  "source_path": "exo7/1-L1/svhu.tex",
+  "summary": "Soit E un K-espace vectoriel de dimension finie n. On considère deux endomorphismes f et g de E. L'exercice demande de démontrer deux inégalités sur les rangs de f, g et de leur composée f∘g.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "endomorphisme",
+    "rang d'une application linéaire",
+    "composée d'applications linéaires",
+    "noyau d'une application linéaire",
+    "théorème du rang"
+  ],
+  "methods": [
+    "détermination du noyau",
+    "utilisation du théorème du rang",
+    "analyse des restrictions d'applications"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "endomorphismes f et g",
+    "composée f∘g",
+    "noyau de h"
+  ],
+  "content_hash": "a196336cc9db9136a1ca4a5aa4b6060dfd8cc496169cfab99057e2a9d56d262f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:11:46.173Z"
+}

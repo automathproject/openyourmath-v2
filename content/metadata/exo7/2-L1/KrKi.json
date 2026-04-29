@@ -1,0 +1,25 @@
+{
+  "uuid": "KrKi",
+  "source_path": "exo7/2-L1/KrKi.tex",
+  "summary": "Montrer une inégalité entre le produit de deux intégrales et une intégrale de produit de fonctions croissantes. L'indication suggère d'utiliser une somme de Riemann discrète comme étape intermédiaire.",
+  "concepts": [
+    "intégrale de Riemann",
+    "somme de Riemann",
+    "inégalité de Cauchy-Schwarz",
+    "fonction croissante",
+    "intégrale d'une fonction positive"
+  ],
+  "methods": [
+    "approximation par des sommes de Riemann",
+    "passage à la limite",
+    "utilisation de l'indication discrète"
+  ],
+  "objects": [
+    "fonctions croissantes",
+    "intégrales de fonctions",
+    "produit de fonctions"
+  ],
+  "content_hash": "c4643ececf7629d0a51e609425f9a7caa539ea5abdd1ace2f674bba888c3a45e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:35:54.381Z"
+}

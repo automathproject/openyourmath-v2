@@ -1,0 +1,27 @@
+{
+  "uuid": "KYNN",
+  "source_path": "exo7/4-L2/KYNN.tex",
+  "summary": "L'exercice demande de trouver une base orthonormée d'un sous-espace vectoriel F de dimension 4 défini par deux équations linéaires, puis de déterminer la matrice de la projection orthogonale sur F dans une base orthonormée donnée, et enfin de calculer la distance d'un vecteur de la base à ce sous-espace.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "base orthonormée",
+    "projection orthogonale",
+    "distance d'un point à un sous-espace",
+    "espace euclidien",
+    "matrice de projection"
+  ],
+  "methods": [
+    "orthogonalisation de Gram-Schmidt",
+    "calcul de la distance minimale",
+    "construction de la matrice de projection"
+  ],
+  "objects": [
+    "sous-espace vectoriel F",
+    "base orthonormée B",
+    "vecteur e1",
+    "matrice de projection orthogonale"
+  ],
+  "content_hash": "2ad5f12497830cd3c2d05945e2046fb83e0ef68708e0978794ed528c9e177168",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:16:08.369Z"
+}

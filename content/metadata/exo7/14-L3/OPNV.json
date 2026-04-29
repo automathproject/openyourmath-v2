@@ -1,0 +1,28 @@
+{
+  "uuid": "OPNV",
+  "source_path": "exo7/14-L3/OPNV.tex",
+  "summary": "L'exercice demande de montrer la convergence faible et forte d'une suite de fonctions dans les espaces L^p, avec un focus sur les propriétés de convergence dans L^2 et L^p pour p<2.",
+  "concepts": [
+    "convergence faible",
+    "convergence forte",
+    "espace L^p",
+    "densité des fonctions continues à support compact",
+    "norme L^2",
+    "intégrale de Lebesgue"
+  ],
+  "methods": [
+    "intégration par parties",
+    "utilisation de la densité",
+    "calcul de norme",
+    "convergence presque partout"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction indicatrice",
+    "fonction continue à support compact",
+    "norme L^p"
+  ],
+  "content_hash": "4933456b123bdcf3439f881439e06902d1dd2e4811915588568c0e853a0d83e7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:54:16.988Z"
+}

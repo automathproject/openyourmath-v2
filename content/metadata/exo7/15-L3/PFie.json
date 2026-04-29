@@ -1,0 +1,29 @@
+{
+  "uuid": "PFie",
+  "source_path": "exo7/15-L3/PFie.tex",
+  "summary": "L'exercice demande de montrer qu'un espace vectoriel de fonctions continues munie d'une norme particulière n'est pas complet en étudiant une suite de fonctions spécifiques.",
+  "concepts": [
+    "espace vectoriel normé",
+    "complétude",
+    "suite de Cauchy",
+    "fonction continue",
+    "intégrale de fonctions continues",
+    "limite uniforme",
+    "convergence dans l'espace L1"
+  ],
+  "methods": [
+    "étude de la convergence d'une suite de fonctions",
+    "calcul de la norme L1",
+    "analyse des propriétés de limite",
+    "démonstration par l'absurde"
+  ],
+  "objects": [
+    "espace vectoriel de fonctions continues",
+    "suite de fonctions définies par morceaux",
+    "norme L1",
+    "fonction limite"
+  ],
+  "content_hash": "b20b1dae812bf1aebfa61aa14279813464ef3bdb4514f0ec72de0ef30e1d98bc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:18:17.344Z"
+}

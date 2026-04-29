@@ -1,0 +1,25 @@
+{
+  "uuid": "NUTD",
+  "source_path": "exo7/5-L2/NUTD.tex",
+  "summary": "L'exercice demande de trouver les points critiques d'une fonction de deux variables et de déterminer leur nature (minimum local, maximum local ou point selle). La fonction étudiée est f(x,y) = sin(x) + y² - 2y + 1.",
+  "concepts": [
+    "extremum local",
+    "point critique",
+    "hessien",
+    "détermination de la nature des points critiques",
+    "fonction de deux variables"
+  ],
+  "methods": [
+    "calcul du gradient",
+    "calcul du hessien",
+    "analyse des valeurs propres du hessien"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "points critiques",
+    "hessien"
+  ],
+  "content_hash": "ff7871d363b5cbb832037a039f43080237b895edc795c825ffa6cd1aad857a06",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:58:33.072Z"
+}

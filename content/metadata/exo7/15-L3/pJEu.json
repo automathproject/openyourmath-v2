@@ -1,0 +1,25 @@
+{
+  "uuid": "pJEu",
+  "source_path": "exo7/15-L3/pJEu.tex",
+  "summary": "L'exercice demande de démontrer qu'un espace métrique séparable ne peut contenir qu'une collection dénombrable d'ouverts deux à deux disjoints, puis d'appliquer ce résultat pour montrer que l'espace des fonctions continues bornées sur ℝ, muni de la convergence uniforme, n'est pas séparable.",
+  "concepts": [
+    "espace topologique séparable",
+    "espace métrique",
+    "convergence uniforme",
+    "densité dénombrable",
+    "collection dénombrable d'ouverts disjoints"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la séparabilité",
+    "application de la métrique de convergence uniforme"
+  ],
+  "objects": [
+    "espace des fonctions continues bornées",
+    "métrique de convergence uniforme",
+    "collection d'ouverts deux à deux disjoints"
+  ],
+  "content_hash": "6923c26bb9050b39a6c30412902fea574232edb62c47a2034649deed6d7ea5f8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:31:09.333Z"
+}

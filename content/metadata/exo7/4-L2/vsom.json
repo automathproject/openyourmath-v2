@@ -1,0 +1,28 @@
+{
+  "uuid": "vsom",
+  "source_path": "exo7/4-L2/vsom.tex",
+  "summary": "L'exercice demande de montrer qu'une forme Q définie sur l'espace des polynômes réels est une forme quadratique, puis de déterminer sa signature en étudiant ses restrictions à des sous-espaces de polynômes pairs et impairs.",
+  "concepts": [
+    "forme quadratique",
+    "forme bilinéaire symétrique",
+    "sous-espace vectoriel supplémentaire",
+    "définie positive",
+    "définie négative",
+    "orthogonalité",
+    "signature d'une forme quadratique"
+  ],
+  "methods": [
+    "décomposition en polynômes pairs et impairs",
+    "étude de la restriction d'une forme quadratique",
+    "calcul de la signature"
+  ],
+  "objects": [
+    "espace vectoriel de polynômes",
+    "forme quadratique",
+    "sous-espaces vectoriels pairs et impairs",
+    "base orthonormale"
+  ],
+  "content_hash": "5c01684b6a5c1242c8784ae1960eec30e3159f8548a5193bbf6bac1245a77eef",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:59:36.621Z"
+}

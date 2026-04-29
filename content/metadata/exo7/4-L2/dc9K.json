@@ -1,0 +1,26 @@
+{
+  "uuid": "dc9K",
+  "source_path": "exo7/4-L2/dc9K.tex",
+  "summary": "Soit E un espace vectoriel de dimension finie et A une sous-algèbre de L(E). Montrer que si f est un élément de A et bijective, alors son inverse f⁻¹ appartient aussi à A.",
+  "concepts": [
+    "sous-algèbre",
+    "espace vectoriel de dimension finie",
+    "application linéaire bijective",
+    "inverse d'une application linéaire",
+    "structure de corps",
+    "algèbre de matrices"
+  ],
+  "methods": [
+    "étude de l'application composée",
+    "propriétés des algèbres de matrices",
+    "inversibilité dans les algèbres"
+  ],
+  "objects": [
+    "sous-algèbre de L(E)",
+    "application linéaire bijective",
+    "inverse d'une application linéaire"
+  ],
+  "content_hash": "6ba382bf0db7c9b85816cbaba86fb04f37de0ff1103f5418f6bf0c7973926c55",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:02:40.482Z"
+}

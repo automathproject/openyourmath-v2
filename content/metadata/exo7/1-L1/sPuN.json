@@ -1,0 +1,25 @@
+{
+  "uuid": "sPuN",
+  "source_path": "exo7/1-L1/sPuN.tex",
+  "summary": "Soit E un espace vectoriel et p une projection. Montrer que pour tout λ dans K à {-1}, l'application linéaire id_E + λp est un isomorphisme de E.",
+  "concepts": [
+    "application linéaire",
+    "projection",
+    "isomorphisme",
+    "espace vectoriel",
+    "endomorphisme"
+  ],
+  "methods": [
+    "détermination du noyau",
+    "détermination de l'image",
+    "bijectivité"
+  ],
+  "objects": [
+    "projection",
+    "isomorphisme",
+    "espace vectoriel"
+  ],
+  "content_hash": "6fad0560f8eaeb0db1aec9f1c2ce2e532e7a1d64b46078b6287264bf13471cf9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:57:43.441Z"
+}

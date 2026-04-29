@@ -1,0 +1,27 @@
+{
+  "uuid": "ROFa",
+  "source_path": "exo7/1-L1/ROFa.tex",
+  "summary": "Calculer le périmètre d'un rectangle dont les côtés a et b sont des entiers avec aire 3024 m² et pgcd(a,b)=6. Déterminer le nombre de solutions possibles.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "algorithme d'Euclide",
+    "diviseurs d'un entier",
+    "nombre premier",
+    "factorisation en nombres premiers"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul du pgcd",
+    "énumération des diviseurs"
+  ],
+  "objects": [
+    "entiers naturels",
+    "dimensions d'un rectangle",
+    "aire d'un rectangle",
+    "périmètre d'un rectangle"
+  ],
+  "content_hash": "79728ff5cf2f516bab79615adcb9b63bd7fab12a9f2e7fcfb29a8c10d1aa9e55",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:05:16.083Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "6OND",
+  "source_path": "exo7/4-L2/6OND.tex",
+  "summary": "L'exercice demande de démontrer l'équivalence entre le fait qu'une matrice ait un rang égal à 1 et l'existence d'une colonne et d'une ligne non nulles dont le produit donne la matrice.",
+  "concepts": [
+    "rang d'une matrice",
+    "matrice de rang 1",
+    "produit de matrices",
+    "espace vectoriel",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "décomposition en rang 1",
+    "manipulation de matrices",
+    "utilisation des propriétés du rang"
+  ],
+  "objects": [
+    "matrice carrée",
+    "colonne non nulle",
+    "ligne non nulle"
+  ],
+  "content_hash": "e898a0185163e9f8fa6632fd465470c990500a0cb34bf02fbd31762f501171df",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:32:53.700Z"
+}

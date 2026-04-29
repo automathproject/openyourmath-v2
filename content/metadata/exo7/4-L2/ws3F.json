@@ -1,0 +1,26 @@
+{
+  "uuid": "ws3F",
+  "source_path": "exo7/4-L2/ws3F.tex",
+  "summary": "Calculer des produits de matrices spécifiques dans le groupe linéaire général GL(2,ℝ) et déterminer si le sous-groupe des matrices diagonales inversibles est distingué. Vérifier aussi si la trace est un morphisme de groupes.",
+  "concepts": [
+    "groupe linéaire général",
+    "matrice inversible",
+    "sous-groupe distingué",
+    "morphisme de groupes",
+    "trace d'une matrice",
+    "conjugaison de matrices"
+  ],
+  "methods": [
+    "calcul de l'inverse d'une matrice",
+    "multiplication de matrices",
+    "vérification de la stabilité par conjugaison"
+  ],
+  "objects": [
+    "matrices 2x2",
+    "sous-groupe des matrices diagonales inversibles",
+    "trace d'une matrice"
+  ],
+  "content_hash": "69551b9ea3a8f77e95a5e5c59be88c779bd80739ad457d60611ed7ccff4b4e10",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T02:21:42.751Z"
+}

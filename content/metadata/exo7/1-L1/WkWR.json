@@ -1,0 +1,24 @@
+{
+  "uuid": "WkWR",
+  "source_path": "exo7/1-L1/WkWR.tex",
+  "summary": "L'exercice demande de calculer le nombre de chemins distincts pour aller d'un point (0,0) à un point (p,q) en se déplaçant uniquement vers la droite ou vers le haut, avec p et q des entiers naturels donnés.",
+  "concepts": [
+    "combinaisons",
+    "anagrammes",
+    "coefficient binomial",
+    "déplacement sur un réseau",
+    "cardinal d'un ensemble fini"
+  ],
+  "methods": [
+    "calcul de coefficient binomial",
+    "énumération des permutations"
+  ],
+  "objects": [
+    "chemin sur un réseau",
+    "mot codant un chemin",
+    "coefficient binomial C_{p+q}^q"
+  ],
+  "content_hash": "7c451cbbe0a7da3bfff3e308a900a438db63c19b595d02b406ebd1231972fdf1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:45:00.961Z"
+}

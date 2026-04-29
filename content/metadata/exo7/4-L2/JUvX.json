@@ -1,0 +1,29 @@
+{
+  "uuid": "JUvX",
+  "source_path": "exo7/4-L2/JUvX.tex",
+  "summary": "L'exercice demande de montrer qu'un élément est inversible dans l'anneau ℤ/nℤ si et seulement si son représentant et n sont premiers entre eux. Ensuite, pour n=10, il s'agit de lister les éléments inversibles et de déterminer l'ordre d'un élément spécifique ainsi que la cyclicité du groupe.",
+  "concepts": [
+    "inversibilité dans un anneau",
+    "élément inversible",
+    "premiers entre eux",
+    "groupe multiplicatif",
+    "ordre d'un élément",
+    "groupe cyclique",
+    "anneau quotient"
+  ],
+  "methods": [
+    "utilisation du théorème de Bézout",
+    "détermination des éléments inversibles",
+    "calcul de l'ordre d'un élément",
+    "vérification de la cyclicité"
+  ],
+  "objects": [
+    "élément de ℤ/nℤ",
+    "groupe des éléments inversibles",
+    "ordre d'un élément",
+    "groupe cyclique"
+  ],
+  "content_hash": "98cd51e8f2034a1fed453689ded0a9ad2c1c81387bf7ea279d0b2c57ef542987",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:37:26.352Z"
+}

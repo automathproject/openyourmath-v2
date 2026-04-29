@@ -1,0 +1,30 @@
+{
+  "uuid": "5VJg",
+  "source_path": "exo7/19-L3/5VJg.tex",
+  "summary": "L'exercice demande de montrer que la loi exponentielle est une loi sans mémoire, c'est-à-dire que la probabilité conditionnelle P(X>t+s|X>t) est égale à P(X>s). La première question traite le cas d'une variable aléatoire exponentielle, et la seconde question inverse l'implication pour montrer qu'une variable aléatoire positive avec une densité continue vérifiant cette propriété suit nécessairement une loi exponentielle.",
+  "concepts": [
+    "loi exponentielle",
+    "probabilité conditionnelle",
+    "loi sans mémoire",
+    "fonction de survie",
+    "fonction de répartition",
+    "densité de probabilité",
+    "équation différentielle"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "intégration",
+    "dérivation",
+    "résolution d'équation différentielle",
+    "analyse asymptotique"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "fonction de survie",
+    "fonction de répartition",
+    "densité de probabilité"
+  ],
+  "content_hash": "a37d476df47cdea5d0c8b18f47d2cbd3952f431dd1491e0050fae04b1f51dea0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:33:28.436Z"
+}

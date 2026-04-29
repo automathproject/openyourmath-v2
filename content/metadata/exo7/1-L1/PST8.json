@@ -1,0 +1,27 @@
+{
+  "uuid": "PST8",
+  "source_path": "exo7/1-L1/PST8.tex",
+  "summary": "On considère deux applications linéaires f et g. L'exercice demande de démontrer deux inclusions concernant les noyaux et images de ces applications et de leur composition.",
+  "concepts": [
+    "application linéaire",
+    "composition d'applications",
+    "noyau d'une application",
+    "image d'une application",
+    "inclusion d'espaces vectoriels",
+    "théorème du rang"
+  ],
+  "methods": [
+    "démonstration par inclusion",
+    "utilisation des propriétés des applications linéaires"
+  ],
+  "objects": [
+    "application linéaire f",
+    "application linéaire g",
+    "composition g ∘ f",
+    "noyau ker(f)",
+    "image Im(f)"
+  ],
+  "content_hash": "7fbf69456038252636bceadbe96bef963a72b93d27dc18e7bdf54772d730a940",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:54:43.472Z"
+}

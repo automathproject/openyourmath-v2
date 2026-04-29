@@ -1,0 +1,30 @@
+{
+  "uuid": "M4z1",
+  "source_path": "exo7/4-L2/M4z1.tex",
+  "summary": "L'exercice demande de déterminer la cardinalité du groupe symétrique S₃, de prouver l'absence d'élément d'ordre 6, d'identifier les sous-groupes d'ordre 3 et 2, puis de lister tous les sous-groupes de S₃.",
+  "concepts": [
+    "groupe symétrique",
+    "ordre d'un élément",
+    "sous-groupe",
+    "transposition",
+    "permutation circulaire",
+    "groupe commutatif",
+    "théorème de Cauchy"
+  ],
+  "methods": [
+    "calcul de cardinal d'un groupe",
+    "raisonnement par l'absurde",
+    "identification des sous-groupes cycliques",
+    "vérification de l'ordre des éléments"
+  ],
+  "objects": [
+    "groupe S₃",
+    "élément de S₃",
+    "sous-groupe d'ordre 3",
+    "sous-groupe d'ordre 2",
+    "transpositions"
+  ],
+  "content_hash": "3b56f4af9cc5a0a5941d27386eb5fefa51aa1ba561607c86e2ea6669036aa849",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:40:20.827Z"
+}

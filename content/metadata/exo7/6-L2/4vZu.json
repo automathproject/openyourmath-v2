@@ -1,32 +1,30 @@
 {
   "uuid": "4vZu",
   "source_path": "exo7/6-L2/4vZu.tex",
-  "summary": "Démontrer l'inégalité isopérimétrique pour les courbes fermées planes, à savoir que l'aire A délimitée par une courbe de longueur L vérifie A ≤ L²/(4π), avec égalité si et seulement si la courbe est un cercle. L'exercice utilise des outils d'analyse vectorielle et de théorie des courbes.",
+  "summary": "L'exercice demande de démontrer l'inégalité isopérimétrique pour les courbes fermées régulières, c'est-à-dire que l'aire délimitée par une courbe fermée de longueur donnée est maximale lorsque la courbe est un cercle.",
   "concepts": [
-    "inégalité isopérimétrique",
-    "courbe régulière",
-    "paramétrisation normale",
-    "décomposition en série de Fourier",
+    "théorème de Parseval",
     "formule de Green-Riemann",
+    "développement en série de Fourier",
     "théorème de Dirichlet",
-    "homothétie",
-    "aire d'une courbe paramétrée"
+    "inégalité isopérimétrique",
+    "paramétrisation normale",
+    "homothétie"
   ],
   "methods": [
-    "décomposition en série de Fourier",
+    "développement en série de Fourier",
     "calcul de coefficients de Fourier",
-    "application de la formule de Parseval",
-    "utilisation de la formule de Green-Riemann",
+    "utilisation de l'inégalité de Cauchy-Schwarz",
     "analyse des conditions d'égalité"
   ],
   "objects": [
-    "courbe fermée",
-    "paramétrisation normale",
+    "courbe fermée régulière",
+    "arc de classe C^1",
     "coefficients de Fourier",
     "aire délimitée",
-    "homothétie de courbe"
+    "longueur de courbe"
   ],
-  "content_hash": "bd06f3fd19785d0e4f68550d961fbded2ef75e9ae909519962bbce932d682e54",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:05:54.083Z"
+  "content_hash": "9f6b6a6f4b0c541400d054c88cbf156b424150ac6138e717538a310b2ccd0710",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:29:37.497Z"
 }

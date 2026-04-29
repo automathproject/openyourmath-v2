@@ -1,0 +1,32 @@
+{
+  "uuid": "1JZa",
+  "source_path": "exo7/10-L3/1JZa.tex",
+  "summary": "L'exercice demande de démontrer le théorème de Burnside pour un groupe fini agissant sur un ensemble fini, puis d'appliquer ce théorème à un sous-groupe fini de SO(3) agissant sur la sphère unité. Il s'agit d'étudier les propriétés des points fixes et des orbites sous cette action.",
+  "concepts": [
+    "action de groupe",
+    "orbite",
+    "stabilisateur",
+    "théorème de Burnside",
+    "groupe fini",
+    "sous-groupe de SO(3)",
+    "sphère unité",
+    "points fixes"
+  ],
+  "methods": [
+    "calcul de cardinaux de points fixes",
+    "analyse des stabilisateurs",
+    "application du théorème de Burnside",
+    "démonstration par contradiction"
+  ],
+  "objects": [
+    "groupe fini G",
+    "ensemble fini E",
+    "sous-groupe de SO(3)",
+    "sphère unité",
+    "orbites",
+    "stabilisateurs"
+  ],
+  "content_hash": "72ee1917f410f1fd080c2f0cf9d07820c2e67522a146d8c0278762b152b07ed0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:14:19.285Z"
+}

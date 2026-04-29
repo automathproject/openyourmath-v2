@@ -1,0 +1,31 @@
+{
+  "uuid": "ywv3",
+  "source_path": "exo7/5-L2/ywv3.tex",
+  "summary": "L'exercice demande de déterminer le domaine de définition d'une fonction intégrale dépendant d'un paramètre, d'étudier sa continuité et sa monotonie, puis de calculer une intégrale spécifique pour en déduire des équivalents et les limites de la fonction aux bornes de son domaine.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "domaine de définition",
+    "continuité uniforme",
+    "monotonie",
+    "théorème de convergence dominée",
+    "théorème central limite",
+    "équivalents asymptotiques",
+    "limites de fonctions"
+  ],
+  "methods": [
+    "domination locale",
+    "changement de variable",
+    "développement en série entière",
+    "comparaison série-intégrale",
+    "estimation d'erreur"
+  ],
+  "objects": [
+    "fonction intégrale",
+    "intégrale paramétrique",
+    "série entière",
+    "limites aux bornes"
+  ],
+  "content_hash": "b6f992b0329983535b782caf008a52cfb8896b9f7d6781680d56debb011384e1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:54:38.115Z"
+}

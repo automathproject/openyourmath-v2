@@ -1,0 +1,30 @@
+{
+  "uuid": "dHJT",
+  "source_path": "exo7/6-L2/dHJT.tex",
+  "summary": "L'exercice demande de calculer l'aire d'un triangle défini par trois points dans le plan, puis de déterminer les coordonnées de son orthocentre, de son centre du cercle circonscrit et de son centre de gravité. Enfin, il faut vérifier l'alignement de ces trois points et une relation vectorielle spécifique.",
+  "concepts": [
+    "géométrie affine",
+    "triangle",
+    "orthocentre",
+    "centre du cercle circonscrit",
+    "centre de gravité",
+    "alignement de points",
+    "relation vectorielle"
+  ],
+  "methods": [
+    "calcul d'aire par déterminant",
+    "calcul de coordonnées de points remarquables",
+    "vérification d'alignement",
+    "calcul vectoriel"
+  ],
+  "objects": [
+    "triangle dans le plan",
+    "points A, B, C",
+    "orthocentre H",
+    "centre du cercle circonscrit Ω",
+    "centre de gravité G"
+  ],
+  "content_hash": "732d59afac8469bbe83726fbee3d4032951f6ef35b8d883118404e12bb265d73",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:00:57.259Z"
+}

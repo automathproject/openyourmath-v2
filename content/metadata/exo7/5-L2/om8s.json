@@ -1,0 +1,25 @@
+{
+  "uuid": "om8s",
+  "source_path": "exo7/5-L2/om8s.tex",
+  "summary": "On définit une fonction φ(a) comme une intégrale de Riemann dépendant d'un paramètre a, avec une exponentielle décroissante. L'exercice demande de montrer que φ est de classe C∞ sur ]0,+∞[ puis continue en 0.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "intégration par parties",
+    "continuité",
+    "classe C∞",
+    "convergence d'intégrale"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "estimation d'intégrale"
+  ],
+  "objects": [
+    "fonction définie par intégrale",
+    "fonction exponentielle",
+    "fonction continue"
+  ],
+  "content_hash": "268c7d646d5f549c43e0b69041d6b076a74fc318f4652a259e7cadc1f349791d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:49:59.405Z"
+}

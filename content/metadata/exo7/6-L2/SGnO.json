@@ -1,28 +1,27 @@
 {
   "uuid": "SGnO",
   "source_path": "exo7/6-L2/SGnO.tex",
-  "summary": "Trouver l'équation cartésienne d'une parabole passant par deux points donnés et dont les tangentes en ces points sont les axes (Ox) et (Oy).",
+  "summary": "Trouver l'équation cartésienne d'une parabole tangente aux axes (Ox) et (Oy) respectivement en (1,0) et (0,2).",
   "concepts": [
     "équation cartésienne de conique",
-    "tangente à une parabole",
-    "condition de passage par un point",
+    "tangente à un axe",
+    "condition de tangence",
     "forme canonique de parabole",
-    "système d'équations linéaires"
+    "système d'équations"
   ],
   "methods": [
-    "détermination des coefficients par passage par des points",
-    "calcul d'équation de tangente",
+    "analyse des conditions de tangence",
     "résolution de système d'équations",
-    "normalisation de coefficients"
+    "détermination des coefficients",
+    "vérification des solutions"
   ],
   "objects": [
     "parabole",
-    "tangente",
-    "équation cartésienne",
-    "points de passage",
-    "axes de coordonnées"
+    "axes de coordonnées",
+    "points de tangence",
+    "équation cartésienne"
   ],
-  "content_hash": "3446ca3c1c29028e9bf5362c1e250ae95ecb433eb24c71abdb1828fa4bd0d86e",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:40:07.244Z"
+  "content_hash": "671d631431e1d22f600b4cc160453b7aa016925c47722df592126f209f466fa0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:05:15.559Z"
 }

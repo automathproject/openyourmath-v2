@@ -1,0 +1,25 @@
+{
+  "uuid": "t0jE",
+  "source_path": "exo7/12-L3/t0jE.tex",
+  "summary": "L'exercice demande d'étudier les points critiques de la fonction f(x,y) = x² - xy² définie sur ℝ², en particulier le point (0,0). Il faut montrer que c'est le seul point critique, qu'il n'est pas un extremum local, mais que f admet un minimum local en (0,0) sur toute droite passant par ce point.",
+  "concepts": [
+    "point critique",
+    "extremum local",
+    "restriction de fonction",
+    "minimum local",
+    "fonction de plusieurs variables"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "analyse des points critiques",
+    "étude des restrictions linéaires"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "point critique",
+    "droite affine"
+  ],
+  "content_hash": "18d79c940c805e6acfb73df5432cff6dce794d598b6f1a92ed2e117d18223ba4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:35:00.631Z"
+}

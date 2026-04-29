@@ -1,0 +1,27 @@
+{
+  "uuid": "fBaU",
+  "source_path": "exo7/2-L1/fBaU.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'un point c dans un intervalle ouvert où la fonction f admet une dérivée d'ordre n+1, en utilisant le théorème de Rolle appliqué à une fonction auxiliaire g construite à partir de f.",
+  "concepts": [
+    "théorème de Rolle",
+    "dérivabilité",
+    "fonction continue",
+    "fonction dérivable",
+    "développement de Taylor",
+    "théorème des accroissements finis"
+  ],
+  "methods": [
+    "construction de fonction auxiliaire",
+    "application du théorème de Rolle",
+    "calcul de dérivée",
+    "résolution d'équation"
+  ],
+  "objects": [
+    "fonction dérivable n+1 fois",
+    "intervalle réel",
+    "point d'application du théorème de Rolle"
+  ],
+  "content_hash": "87997d62a8299249e1651c525f8cecc01e6349002c95c05ef1307c84045c18a4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:14:54.731Z"
+}

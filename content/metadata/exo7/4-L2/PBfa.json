@@ -1,0 +1,26 @@
+{
+  "uuid": "PBfa",
+  "source_path": "exo7/4-L2/PBfa.tex",
+  "summary": "Montrer que l'intersection des sous-groupes engendrés par deux générateurs d'un groupe appartient au centre de ce groupe.",
+  "concepts": [
+    "groupe",
+    "sous-groupe engendré",
+    "centre d'un groupe",
+    "commutativité",
+    "groupe abélien",
+    "générateurs d'un groupe"
+  ],
+  "methods": [
+    "décomposition en générateurs",
+    "vérification de la commutativité",
+    "utilisation de la définition du centre"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupes <a> et <b>",
+    "élément h de l'intersection"
+  ],
+  "content_hash": "14b17eb2e8bde42d70538d1d44b4311242bdc86e96e1891fd2f1e832cd97b70f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:43:57.501Z"
+}

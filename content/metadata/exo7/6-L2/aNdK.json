@@ -1,0 +1,30 @@
+{
+  "uuid": "aNdK",
+  "source_path": "exo7/6-L2/aNdK.tex",
+  "summary": "Reconstruire un carré effacé en utilisant des rotations et translations, à partir de quatre points placés sur ses côtés. L'exercice demande de retrouver les propriétés géométriques du carré à partir de transformations géométriques.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "rotation",
+    "translation",
+    "droite d'appui",
+    "centre d'un carré",
+    "angle au centre"
+  ],
+  "methods": [
+    "construction géométrique",
+    "rotation de centre et d'angle donnés",
+    "translation de vecteur donné",
+    "construction de perpendiculaire",
+    "projection orthogonale"
+  ],
+  "objects": [
+    "carré",
+    "points sur les côtés d'un carré",
+    "segments",
+    "droites d'appui",
+    "vecteurs"
+  ],
+  "content_hash": "3509cbe83c1257bb4a545dd1508d13e180f5234fe7c9dd6080f74bae93dc26af",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:45:35.153Z"
+}

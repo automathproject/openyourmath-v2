@@ -1,0 +1,25 @@
+{
+  "uuid": "1BAy",
+  "source_path": "exo7/4-L2/1BAy.tex",
+  "summary": "Calculer le déterminant d'une matrice carrée de taille n×n avec une structure particulière, puis démontrer une formule de récurrence pour ce déterminant.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "récurrence",
+    "développement par rapport à une ligne ou colonne",
+    "relation de récurrence"
+  ],
+  "methods": [
+    "développement de déterminant",
+    "récurrence",
+    "calcul de déterminant de matrice triangulaire"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "relation de récurrence"
+  ],
+  "content_hash": "9c2ea641adc41a0fc4c9b3117bf56e9d0be090dc85434fb758b3793bb031c73d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:28:00.909Z"
+}

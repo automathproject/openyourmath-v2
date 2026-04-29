@@ -1,0 +1,26 @@
+{
+  "uuid": "OVJp",
+  "source_path": "exo7/4-L2/OVJp.tex",
+  "summary": "L'exercice demande de démontrer que la fonction N_p, définie comme la p-ième racine de la somme des valeurs absolues des composantes d'un vecteur au p-ième pouvoir, est une norme sur ℝⁿ. Il faut aussi étudier la limite de cette norme lorsque p tend vers l'infini et montrer qu'elle définit une autre norme, notée N_∞. Enfin, il s'agit de visualiser les boules unitaires associées à ces normes dans ℝ².",
+  "concepts": [
+    "norme",
+    "espace vectoriel normé",
+    "limite de fonctions",
+    "inégalité de Hölder",
+    "boule unitaire"
+  ],
+  "methods": [
+    "démonstration des propriétés de norme",
+    "étude de limite",
+    "visualisation géométrique"
+  ],
+  "objects": [
+    "norme Lp",
+    "norme L∞",
+    "vecteur de ℝⁿ",
+    "boule unitaire"
+  ],
+  "content_hash": "6b770382355567c86dee429b68426c6c3f34c44064e476b37143cbe9529c957a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:22:45.232Z"
+}

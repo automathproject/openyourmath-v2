@@ -1,0 +1,30 @@
+{
+  "uuid": "7KE4",
+  "source_path": "exo7/4-L2/7KE4.tex",
+  "summary": "L'exercice demande de démontrer que dans un groupe, les translations à droite et à gauche sont des bijections, puis de montrer la réciproque : si une loi associative admet des translations bijectives, alors la structure est un groupe.",
+  "concepts": [
+    "groupe",
+    "sous-groupe",
+    "loi de composition interne",
+    "associativité",
+    "bijection",
+    "élément neutre",
+    "symétrique"
+  ],
+  "methods": [
+    "démonstration par existence et unicité",
+    "utilisation des propriétés des bijections",
+    "construction de l'élément neutre",
+    "construction du symétrique"
+  ],
+  "objects": [
+    "ensemble muni d'une loi interne",
+    "translation à droite",
+    "translation à gauche",
+    "élément neutre",
+    "symétrique"
+  ],
+  "content_hash": "46513ded8a09ba66faf03b76ee5c1455624c35299d51be0fcb72e0b8bfba8a2c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:21:12.562Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "Q0eT",
+  "source_path": "exo7/4-L2/Q0eT.tex",
+  "summary": "Calculer le déterminant d'une matrice circulaire A de taille n×n à coefficients complexes, en utilisant les propriétés d'une matrice P liée aux racines n-èmes de l'unité.",
+  "concepts": [
+    "matrice circulaire",
+    "racines de l'unité",
+    "déterminant",
+    "matrice de permutation",
+    "produit matriciel",
+    "propriétés des matrices unitaires"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "utilisation des propriétés des racines de l'unité",
+    "développement par blocs",
+    "linéarité du déterminant"
+  ],
+  "objects": [
+    "matrice circulaire",
+    "matrice P",
+    "racines n-èmes de l'unité",
+    "déterminant de matrice"
+  ],
+  "content_hash": "d1a02bedb176e0709cc24dd9e188a4ffbf074b1382374ba8ac2bb2cbe90c842a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:49:27.785Z"
+}

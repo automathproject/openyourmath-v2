@@ -1,0 +1,33 @@
+{
+  "uuid": "HjEH",
+  "source_path": "exo7/12-L3/HjEH.tex",
+  "summary": "Montrer l'existence d'un point dans un fermé non vide d'un espace vectoriel de dimension finie qui minimise la distance à un point donné. Application à l'ensemble des matrices réelles 2x2 de déterminant 1 pour trouver la matrice la plus proche de la matrice nulle.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "fermé",
+    "distance dans un espace vectoriel",
+    "compacité",
+    "fonction continue",
+    "extremum lié",
+    "gradient",
+    "condition de Lagrange"
+  ],
+  "methods": [
+    "utilisation de la compacité",
+    "recherche de minimum de distance",
+    "calcul de gradient",
+    "application des conditions de Lagrange"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "fermé",
+    "point",
+    "distance",
+    "matrice",
+    "déterminant",
+    "fonction de distance"
+  ],
+  "content_hash": "89c6a1b87a8592174a63b92841510d9780293d2471326fc70ae8266dd3e3ee36",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:30:15.637Z"
+}

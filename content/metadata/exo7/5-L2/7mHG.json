@@ -1,0 +1,26 @@
+{
+  "uuid": "7mHG",
+  "source_path": "exo7/5-L2/7mHG.tex",
+  "summary": "L'exercice demande de prolonger une fonction g(x,y) définie par une intégrale dépendant d'un paramètre en une fonction continue sur ℝ², puis de montrer qu'elle est de classe C¹ sous une condition de dérivabilité supplémentaire.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "continuité d'une fonction",
+    "dérivabilité",
+    "prolongement de fonction",
+    "fonction de classe C¹",
+    "limite de fonction"
+  ],
+  "methods": [
+    "changement de variable dans une intégrale",
+    "calcul de dérivée partielle",
+    "étude de limite"
+  ],
+  "objects": [
+    "fonction continue",
+    "fonction dérivable",
+    "intégrale paramétrique"
+  ],
+  "content_hash": "3debbe7770a2a8231d3aa6222e0ec2c2486a1084dd578aac95500e7727c61150",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:28:42.291Z"
+}

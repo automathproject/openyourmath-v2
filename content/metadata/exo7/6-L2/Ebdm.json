@@ -1,32 +1,30 @@
 {
   "uuid": "Ebdm",
   "source_path": "exo7/6-L2/Ebdm.tex",
-  "summary": "L'exercice étudie l'intersection d'un cylindre parabolique avec un plan non perpendiculaire à son axe, aboutissant à une parabole. Il demande de déterminer les éléments caractéristiques (sommet, foyer, directrice) de cette parabole dans différents repères orthonormés.",
+  "summary": "L'exercice demande de montrer qu'une courbe définie par l'intersection d'un cylindre parabolique et d'un plan non perpendiculaire est une parabole, puis de déterminer ses éléments caractéristiques (sommet, axe, foyer, directrice).",
   "concepts": [
-    "changement de repère",
     "conique",
     "parabole",
-    "équation cartésienne",
-    "géométrie affine",
-    "transformation linéaire",
+    "changement de repère",
+    "intersection de surfaces",
+    "équation cartésienne de conique",
     "paramètre d'une parabole",
-    "éléments caractéristiques d'une parabole"
+    "foyer et directrice"
   ],
   "methods": [
-    "changement de base",
+    "changement de repère orthonormé",
     "simplification d'équation",
     "identification de conique",
-    "calcul de coordonnées dans un repère",
-    "transformation affine"
+    "calcul des éléments caractéristiques"
   ],
   "objects": [
     "cylindre parabolique",
     "plan",
+    "courbe d'intersection",
     "parabole",
-    "repère orthonormé",
-    "équation cartésienne de conique"
+    "repère orthonormé"
   ],
-  "content_hash": "e9a614364f3a714dcf6472c05370f9530b60074e15dc51de2292af9d9ff835fa",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:39:33.208Z"
+  "content_hash": "d98608b93269bd30a441dc97b3338597302869fc2d5016d5fce8f96596105162",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:03:05.553Z"
 }

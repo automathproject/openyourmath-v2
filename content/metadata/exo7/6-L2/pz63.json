@@ -1,0 +1,30 @@
+{
+  "uuid": "pz63",
+  "source_path": "exo7/6-L2/pz63.tex",
+  "summary": "L'exercice demande de déterminer les six isométries du plan laissant invariant un triangle équilatéral, puis d'étudier le groupe de ces isométries en établissant un morphisme injectif vers le groupe symétrique S₃ et en prouvant sa bijectivité.",
+  "concepts": [
+    "isométrie",
+    "groupe d'isométries",
+    "groupe symétrique S₃",
+    "morphisme de groupes",
+    "barycentre",
+    "permutation",
+    "groupe alterné A₃",
+    "groupe cyclique Z/3Z"
+  ],
+  "methods": [
+    "composition d'isométries",
+    "invariance par barycentre",
+    "association d'isométries à des permutations",
+    "détermination d'un isomorphisme"
+  ],
+  "objects": [
+    "triangle équilatéral",
+    "groupe d'isométries",
+    "sommets du triangle",
+    "permutations des sommets"
+  ],
+  "content_hash": "7cb12941f0c202179d5d430de349e570c3cb5f360f54a208b00ee49d6e853603",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:56:58.463Z"
+}

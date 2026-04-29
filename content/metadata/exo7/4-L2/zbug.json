@@ -1,0 +1,24 @@
+{
+  "uuid": "zbug",
+  "source_path": "exo7/4-L2/zbug.tex",
+  "summary": "On considère un endomorphisme u d'un espace euclidien E. On suppose que u vérifie la condition de symétrie (u(x)|y) = (x|u(y)) pour tous vecteurs x et y de E. On demande de montrer que u est linéaire.",
+  "concepts": [
+    "produit scalaire",
+    "endomorphisme",
+    "symétrie",
+    "linéarité",
+    "espace euclidien"
+  ],
+  "methods": [
+    "vérification des propriétés de linéarité",
+    "utilisation de la condition de symétrie"
+  ],
+  "objects": [
+    "endomorphisme",
+    "vecteurs",
+    "produit scalaire"
+  ],
+  "content_hash": "8f792160a25a0907b6384ef546a33bb02b7ef6fc530eedda9f73a9c2182e143e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:06:34.081Z"
+}

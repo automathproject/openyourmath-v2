@@ -1,0 +1,27 @@
+{
+  "uuid": "gqbE",
+  "source_path": "exo7/15-L3/gqbE.tex",
+  "summary": "L'exercice demande de démontrer la complétude de l'espace des fonctions continues sur [0,1] avec la norme uniforme et de montrer qu'il ne l'est pas avec la norme L1. Il faut aussi prouver qu'un espace de suites réelles nulles à partir d'un certain rang n'est pas complet avec la norme uniforme et trouver un espace complet contenant cet espace comme sous-espace dense.",
+  "concepts": [
+    "espace métrique complet",
+    "espace de Banach",
+    "norme uniforme",
+    "norme L1",
+    "sous-espace dense",
+    "complétude"
+  ],
+  "methods": [
+    "construction de suite de Cauchy",
+    "limite uniforme",
+    "inclusion dense"
+  ],
+  "objects": [
+    "espace C([0,1])",
+    "espace des suites réelles nulles à partir d'un certain rang",
+    "norme uniforme",
+    "norme L1"
+  ],
+  "content_hash": "09f60b9645a7684f8580b7341506e417d2ab52e2077e9eb57e9dfa136ec2a238",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:11:55.294Z"
+}

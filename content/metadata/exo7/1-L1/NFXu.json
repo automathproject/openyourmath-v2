@@ -1,0 +1,26 @@
+{
+  "uuid": "NFXu",
+  "source_path": "exo7/1-L1/NFXu.tex",
+  "summary": "Trouver tous les couples d'entiers naturels (x, y) vérifiant l'équation linéaire 77x + 105y = 2401.",
+  "concepts": [
+    "algèbre linéaire",
+    "équation diophantienne",
+    "pgcd",
+    "algorithme d'Euclide",
+    "divisibilité dans Z",
+    "combinaison linéaire"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "résolution d'équation diophantienne",
+    "recherche de solutions entières"
+  ],
+  "objects": [
+    "équation linéaire à deux inconnues",
+    "entiers naturels",
+    "pgcd"
+  ],
+  "content_hash": "01c2a9ed45a88032b94273b85ec1044a5d09c7260235d1799d9ccc310ea95de0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:04:50.851Z"
+}

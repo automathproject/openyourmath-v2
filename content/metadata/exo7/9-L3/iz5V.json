@@ -1,0 +1,27 @@
+{
+  "uuid": "iz5V",
+  "source_path": "exo7/9-L3/iz5V.tex",
+  "summary": "Montrer qu'une rotation dans SO(3) associée à un quaternion unitaire est une rotation d'angle double autour d'un axe donné.",
+  "concepts": [
+    "groupe orthogonal",
+    "quaternion unitaire",
+    "rotation vectorielle",
+    "groupe spécial orthogonal",
+    "isomorphisme entre SU(2) et SO(3)",
+    "représentation des quaternions"
+  ],
+  "methods": [
+    "décomposition en parties réelle et imaginaire",
+    "calcul de l'action d'un quaternion sur un vecteur",
+    "vérification des propriétés de rotation"
+  ],
+  "objects": [
+    "quaternion unitaire",
+    "rotation vectorielle",
+    "axe de rotation",
+    "angle de rotation"
+  ],
+  "content_hash": "a2edcca2a8ba340b8aa837acbc991bc8f881d6c5b93e940a8cb139efc9de8d94",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:06:09.868Z"
+}

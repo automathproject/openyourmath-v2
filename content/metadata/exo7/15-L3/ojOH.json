@@ -1,0 +1,28 @@
+{
+  "uuid": "ojOH",
+  "source_path": "exo7/15-L3/ojOH.tex",
+  "summary": "L'exercice demande de démontrer des propriétés sur des ensembles construits itérativement dans un espace vectoriel normé, puis d'étudier les isométries entre espaces vectoriels normés. Il explore la structure des isométries et leur linéarité.",
+  "concepts": [
+    "espace vectoriel normé",
+    "isométrie",
+    "diamètre d'un ensemble",
+    "suite d'ensembles",
+    "point fixe",
+    "linéarité"
+  ],
+  "methods": [
+    "construction itérative d'ensembles",
+    "analyse de la convergence",
+    "étude des propriétés des isométries",
+    "démonstration par contradiction"
+  ],
+  "objects": [
+    "ensemble B_n",
+    "isométrie f",
+    "espace l^∞_n",
+    "application f: l^∞_n → l^∞_{n+1}"
+  ],
+  "content_hash": "8fd90647df712f0b27afd7c821ed2a159ad18641de8ec43eb4f2f334b262a4bf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:36:15.692Z"
+}

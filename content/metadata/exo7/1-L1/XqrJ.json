@@ -1,0 +1,28 @@
+{
+  "uuid": "XqrJ",
+  "source_path": "exo7/1-L1/XqrJ.tex",
+  "summary": "L'exercice demande de montrer que l'application f définie sur les parties d'un ensemble E est une bijection, puis d'étudier les cardinaux des ensembles de parties de cardinal pair et impair lorsque E est fini, et enfin de calculer une somme alternée de coefficients binomiaux.",
+  "concepts": [
+    "bijection",
+    "cardinal d'un ensemble",
+    "partie d'un ensemble",
+    "coefficient binomial",
+    "somme alternée",
+    "binôme de Newton",
+    "combinaison"
+  ],
+  "methods": [
+    "définition d'une bijection",
+    "calcul de cardinal",
+    "utilisation des propriétés des coefficients binomiaux"
+  ],
+  "objects": [
+    "ensemble E",
+    "application f",
+    "parties de E",
+    "coefficient binomial C_n^k"
+  ],
+  "content_hash": "2f366ec9d8cd6856e322a638e5e46b53522f1c7463081b6325aea1af6f892766",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:45:24.995Z"
+}

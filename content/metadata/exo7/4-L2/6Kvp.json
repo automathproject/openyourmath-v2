@@ -1,0 +1,28 @@
+{
+  "uuid": "6Kvp",
+  "source_path": "exo7/4-L2/6Kvp.tex",
+  "summary": "L'exercice demande de diagonaliser deux matrices carrées d'ordre 3 dans une base orthonormée. Les matrices sont données explicitement avec leurs coefficients.",
+  "concepts": [
+    "endomorphisme auto-adjoint",
+    "diagonalisation",
+    "base orthonormée",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrice symétrique",
+    "espace euclidien"
+  ],
+  "methods": [
+    "calcul des valeurs propres",
+    "calcul des vecteurs propres",
+    "construction de la matrice de passage",
+    "diagonalisation"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice diagonale",
+    "matrice de passage"
+  ],
+  "content_hash": "cccef20dedd6504a992dd92bbc1ae246e3434ee729953d6ad96ed59857e0da7b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:01:59.646Z"
+}

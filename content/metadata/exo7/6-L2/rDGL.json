@@ -1,0 +1,25 @@
+{
+  "uuid": "rDGL",
+  "source_path": "exo7/6-L2/rDGL.tex",
+  "summary": "Calculer les aires de deux régions délimitées par une ligne brisée polygonale à angles de 45 degrés inscrite dans un cercle, avec les extrémités A et E formant un diamètre.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "angle inscrit",
+    "aire d'un polygone",
+    "symétrie centrale",
+    "propriétés des angles dans un cercle"
+  ],
+  "methods": [
+    "décomposition en triangles",
+    "calcul d'aire par addition",
+    "utilisation de la symétrie"
+  ],
+  "objects": [
+    "ligne brisée polygonale",
+    "cercle",
+    "régions délimitées par une ligne brisée"
+  ],
+  "content_hash": "c1edf4a8590c5dec48df898a307046a490eeda309fc633c8be85e6c5ea699be3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:57:57.008Z"
+}

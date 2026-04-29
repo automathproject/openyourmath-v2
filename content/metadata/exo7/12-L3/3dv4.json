@@ -1,0 +1,26 @@
+{
+  "uuid": "3dv4",
+  "source_path": "exo7/12-L3/3dv4.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'une fonction y(x) positive solution de l'équation F(x,y)=0 pour x proche de 0, puis de vérifier une relation sur la dérivée y'(x) sans la résoudre explicitement.",
+  "concepts": [
+    "théorème des fonctions implicites",
+    "difféomorphisme",
+    "inversion locale",
+    "fonction de classe C^1",
+    "dérivée partielle",
+    "solution implicite"
+  ],
+  "methods": [
+    "application du théorème des fonctions implicites",
+    "calcul de dérivées partielles",
+    "vérification de conditions d'inversion"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "solution implicite",
+    "dérivée d'une fonction implicite"
+  ],
+  "content_hash": "4680aa6c2f2271df12a37277caf95fefa6ec77789456ba36e231bcaad68c337c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:12:01.146Z"
+}

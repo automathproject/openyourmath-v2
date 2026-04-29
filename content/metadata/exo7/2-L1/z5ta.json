@@ -1,0 +1,28 @@
+{
+  "uuid": "z5ta",
+  "source_path": "exo7/2-L1/z5ta.tex",
+  "summary": "L'exercice demande de calculer le développement limité en 0 pour deux fonctions définies par morceaux, puis d'en tirer des conclusions. La première fonction est exponentielle pour x>0 et nulle pour x≤0, la seconde est un produit de x³ et sin(1/x) avec une condition en 0.",
+  "concepts": [
+    "développement limité",
+    "fonction définie par morceaux",
+    "continuité",
+    "dérivabilité",
+    "ordre de développement limité",
+    "fonction exponentielle",
+    "fonction trigonométrique"
+  ],
+  "methods": [
+    "calcul de dérivées successives",
+    "comparaison de termes dominants",
+    "analyse de comportement asymptotique"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "développement limité d'ordre n",
+    "fonction définie par morceaux"
+  ],
+  "content_hash": "5e07067a87336dce526fb223d2429d50e80cbfb78c94b4f75a8f67e1a11bbaaf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:44:53.735Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "K1Xo",
+  "source_path": "exo7/12-L3/K1Xo.tex",
+  "summary": "L'exercice demande une condition suffisante pour qu'une équation de la forme f(x,y,z)=0 puisse être résolue localement en exprimant x, y et z comme fonctions de classe C^1 des deux autres variables. Il s'agit d'appliquer le théorème des fonctions implicites en dimension 3.",
+  "concepts": [
+    "théorème des fonctions implicites",
+    "difféomorphisme local",
+    "application de classe C^1",
+    "condition de non-annulation du jacobien",
+    "système d'équations implicites"
+  ],
+  "methods": [
+    "analyse des conditions de différentiabilité",
+    "application du théorème des fonctions implicites",
+    "construction de voisinages adaptés"
+  ],
+  "objects": [
+    "fonction de trois variables",
+    "équation implicite",
+    "système de fonctions inverses locales"
+  ],
+  "content_hash": "c98a67295e34e5b066bad274fca881859dde595f608bba19c616c753375f7e42",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:15:17.509Z"
+}

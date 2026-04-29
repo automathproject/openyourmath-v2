@@ -1,0 +1,28 @@
+{
+  "uuid": "Xf6S",
+  "source_path": "exo7/4-L2/Xf6S.tex",
+  "summary": "Calculer les déterminants de trois matrices spécifiques : une matrice avec des éléments répétitifs, une matrice avec des 1 et des 0, et une matrice avec des éléments a et b. L'exercice demande d'évaluer ces déterminants en utilisant des techniques algébriques.",
+  "concepts": [
+    "déterminant",
+    "matrice triangulaire",
+    "opérations élémentaires sur les lignes",
+    "opérations élémentaires sur les colonnes",
+    "développement par rapport à une ligne ou une colonne",
+    "matrice de Toeplitz"
+  ],
+  "methods": [
+    "réduction par opérations sur les lignes",
+    "réduction par opérations sur les colonnes",
+    "développement de Laplace",
+    "triangularisation"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "matrice triangulaire supérieure",
+    "matrice triangulaire inférieure"
+  ],
+  "content_hash": "65d569eaf536c919641ee662d68d698c1359f3fe9d1346d4ec782b0820d504aa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:55:13.647Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "itex",
+  "source_path": "exo7/2-L1/itex.tex",
+  "summary": "Calcul des développements limités d'ordre 3 de trois fonctions différentes en des points spécifiques : √x en 1, e^√x en 1, et ln(sin x) en π/3.",
+  "concepts": [
+    "développement limité",
+    "formule de Taylor",
+    "changement de variable",
+    "développement limité de ln(1+v)",
+    "développement limité de sin x",
+    "développement limité de cos x"
+  ],
+  "methods": [
+    "application de la formule de Taylor",
+    "changement de variable",
+    "substitution de développement limité",
+    "calcul des dérivées successives",
+    "développement limité de fonctions composées"
+  ],
+  "objects": [
+    "fonction √x",
+    "fonction e^√x",
+    "fonction ln(sin x)",
+    "développement limité d'ordre 3"
+  ],
+  "content_hash": "b6eb0a27b10269f10f9b934180e4726dd80f319b9161da1b97259f9751fd1754",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:38:02.664Z"
+}

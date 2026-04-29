@@ -1,0 +1,25 @@
+{
+  "uuid": "24aw",
+  "source_path": "exo7/2-L1/24aw.tex",
+  "summary": "L'exercice demande de démontrer que la limite en +∞ d'une fonction continue par morceaux ou uniformément continue sur ℝ⁺, dont l'intégrale impropre converge, est nécessairement nulle.",
+  "concepts": [
+    "intégrale impropre",
+    "limite de fonction",
+    "continuité par morceaux",
+    "continuité uniforme",
+    "convergence d'intégrale"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de l'intégrale impropre",
+    "propriétés des fonctions continues"
+  ],
+  "objects": [
+    "fonction continue par morceaux",
+    "fonction uniformément continue",
+    "intégrale impropre"
+  ],
+  "content_hash": "660439dd95131998016b0b26cd1ecc150049e074a7f323edf900509707def489",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:28:02.563Z"
+}

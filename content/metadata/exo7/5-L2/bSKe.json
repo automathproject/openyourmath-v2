@@ -1,0 +1,31 @@
+{
+  "uuid": "bSKe",
+  "source_path": "exo7/5-L2/bSKe.tex",
+  "summary": "Trouver toutes les applications continues de ℝ dans ℝ vérifiant pour tout couple (x, y) ∈ ℝ² l'équation fonctionnelle f(x)f(y) = ∫[x-y, x+y] f(t) dt.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "fonction continue",
+    "fonction impaire",
+    "fonction dérivable",
+    "équation différentielle du second ordre",
+    "fonctions trigonométriques",
+    "fonctions hyperboliques"
+  ],
+  "methods": [
+    "dérivation sous l'intégrale",
+    "résolution d'équation différentielle linéaire",
+    "analyse de la parité",
+    "intégration de fonctions trigonométriques",
+    "intégration de fonctions hyperboliques"
+  ],
+  "objects": [
+    "fonction continue",
+    "équation différentielle",
+    "fonction impaire",
+    "fonction dérivable",
+    "intégrale"
+  ],
+  "content_hash": "5def390729baa231a016a367c275812c4a407628e0cb5c792aa32ff41f857a58",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:36:42.034Z"
+}

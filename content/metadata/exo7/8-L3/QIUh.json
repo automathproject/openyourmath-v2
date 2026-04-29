@@ -1,0 +1,28 @@
+{
+  "uuid": "QIUh",
+  "source_path": "exo7/8-L3/QIUh.tex",
+  "summary": "L'exercice demande de démontrer des propriétés structurelles de l'ensemble produit HK de deux sous-groupes H et K d'un groupe G, où K est distingué. Il s'agit de montrer que HK est un sous-groupe, que H et K sont des sous-groupes de KH, et d'établir un isomorphisme entre H/(K∩H) et (HK)/K.",
+  "concepts": [
+    "sous-groupe distingué",
+    "groupe quotient",
+    "théorème de Lagrange",
+    "isomorphisme de groupes",
+    "noyau d'un morphisme",
+    "image d'un morphisme"
+  ],
+  "methods": [
+    "restriction d'application",
+    "calcul de noyau",
+    "calcul d'image",
+    "démonstration d'isomorphisme"
+  ],
+  "objects": [
+    "sous-groupes H et K",
+    "ensemble produit HK",
+    "groupe quotient (HK)/K",
+    "morphisme φ"
+  ],
+  "content_hash": "8432ec5854c63f0a1b7d1b5a530f2749624caf22c9a4ef80947348acb0946f95",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:09:21.371Z"
+}

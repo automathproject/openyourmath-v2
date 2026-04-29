@@ -1,0 +1,27 @@
+{
+  "uuid": "jMBB",
+  "source_path": "exo7/6-L2/jMBB.tex",
+  "summary": "L'exercice étudie une suite de points construite par itération d'une similitude directe dans le plan. Il demande de tracer une figure et d'analyser la géométrie des triangles formés par ces points, ainsi que la longueur d'une spirale polyédrale formée par leur union.",
+  "concepts": [
+    "similitude directe",
+    "suite de points",
+    "géométrie affine euclidienne",
+    "triangles semblables",
+    "spirale polyédrale",
+    "longueur de courbe"
+  ],
+  "methods": [
+    "itération de transformation géométrique",
+    "analyse de similarité de triangles",
+    "calcul de longueur de spirale"
+  ],
+  "objects": [
+    "suite de points (B_n)",
+    "similitude directe s",
+    "triangles AB_nB_{n+1}",
+    "spirale polyédrale S"
+  ],
+  "content_hash": "8fe709a4083b78efaf282a704fef0b9229f69f734172823a52393b6afab60b8b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:53:14.960Z"
+}

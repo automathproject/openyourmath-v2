@@ -1,0 +1,25 @@
+{
+  "uuid": "q2U2",
+  "source_path": "exo7/6-L2/q2U2.tex",
+  "summary": "On considère une application affine f d'un plan dans lui-même telle que f^3 est l'identité mais f n'est pas l'identité. On doit montrer que si un point A n'est pas fixe par f, alors A, f(A) et f^2(A) ne sont pas alignés, puis en déduire que f est le produit de deux symétries.",
+  "concepts": [
+    "application affine",
+    "symétrie",
+    "composition d'applications",
+    "géométrie affine",
+    "isométrie"
+  ],
+  "methods": [
+    "étude des points fixes",
+    "analyse des propriétés de composition",
+    "utilisation des symétries"
+  ],
+  "objects": [
+    "application affine",
+    "points du plan",
+    "symétries"
+  ],
+  "content_hash": "5dbe9d3a19926ddda8d5eae6691d3959ae3c6753e0078d75804f1a05078878a1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:10:24.369Z"
+}

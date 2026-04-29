@@ -1,0 +1,27 @@
+{
+  "uuid": "1Vry",
+  "source_path": "exo7/15-L3/1Vry.tex",
+  "summary": "L'exercice demande de démontrer que les applications N_p définies pour p ≥ 1 sont des normes sur ℝⁿ en utilisant la convexité de x^p. Il s'agit ensuite de montrer la convergence de N_p vers la norme infinie lorsque p tend vers l'infini, et d'établir des inégalités entre ces normes.",
+  "concepts": [
+    "norme sur un espace vectoriel",
+    "convexité d'une fonction",
+    "limite de suites de normes",
+    "inégalités entre normes",
+    "boule unité"
+  ],
+  "methods": [
+    "utilisation de la convexité",
+    "passage à la limite",
+    "comparaison de normes",
+    "démonstration d'inégalités"
+  ],
+  "objects": [
+    "norme N_p",
+    "norme infinie N_∞",
+    "espace vectoriel normé ℝⁿ",
+    "boules unités"
+  ],
+  "content_hash": "f257e11c8bf8ab639deb0587169f002c810f89d8bb9fecff256bdbcbb249e0ed",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:14:57.437Z"
+}

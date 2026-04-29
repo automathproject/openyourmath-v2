@@ -1,0 +1,28 @@
+{
+  "uuid": "toBJ",
+  "source_path": "exo7/6-L2/toBJ.tex",
+  "summary": "L'exercice demande de démontrer que le quadrilatère formé par les milieux des côtés d'un quadrilatère convexe est un parallélogramme, puis de montrer que l'aire du quadrilatère initial est le double de celle du parallélogramme formé par les milieux.",
+  "concepts": [
+    "géométrie affine",
+    "milieux des côtés",
+    "parallélogramme",
+    "aire d'un quadrilatère",
+    "barycentres",
+    "théorème de Thalès"
+  ],
+  "methods": [
+    "utilisation des barycentres",
+    "application du théorème de Thalès",
+    "calcul d'aire par complémentaire",
+    "calcul d'aire par diagonales"
+  ],
+  "objects": [
+    "quadrilatère convexe",
+    "parallélogramme",
+    "milieux des côtés",
+    "diagonales"
+  ],
+  "content_hash": "595c2006f5648ea1e868ff79099813110260d06dce2295af06d73057e46e327c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:13:05.966Z"
+}

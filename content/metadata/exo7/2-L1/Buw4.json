@@ -1,0 +1,27 @@
+{
+  "uuid": "Buw4",
+  "source_path": "exo7/2-L1/Buw4.tex",
+  "summary": "Calcul de deux limites d'intégrales impropres. La première limite concerne une intégrale de la fonction tan(t)/t² entre a et 3a lorsque a tend vers 0+. La seconde limite porte sur une intégrale de la fonction (x^n - x^(2n))/(1-x) entre 0 et 1 lorsque n tend vers l'infini.",
+  "concepts": [
+    "intégrale impropre",
+    "limite de fonction",
+    "fonction rationnelle",
+    "fonction trigonométrique",
+    "fonction polynomiale"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration par parties",
+    "comparaison de termes dominants",
+    "développement limité"
+  ],
+  "objects": [
+    "intégrale de fonction rationnelle",
+    "limite d'intégrale",
+    "fonction tan(t)/t²",
+    "fonction (x^n - x^(2n))/(1-x)"
+  ],
+  "content_hash": "9c9e3631802c593443713b031c025433ea9d3d534ad34cd04da0bccfa291f4ce",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:31:55.080Z"
+}

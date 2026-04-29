@@ -1,0 +1,29 @@
+{
+  "uuid": "EKVC",
+  "source_path": "exo7/5-L2/EKVC.tex",
+  "summary": "L'exercice demande de montrer qu'une solution maximale d'une équation différentielle non linéaire y' = f(t,y) est définie sur tout l'intervalle J, sous des conditions de croissance sur la fonction f.",
+  "concepts": [
+    "équation différentielle non linéaire",
+    "solution maximale",
+    "théorème de Cauchy-Arzelà",
+    "théorème des bouts",
+    "continuité",
+    "inégalité de croissance",
+    "prolongement de solution"
+  ],
+  "methods": [
+    "majoration de norme",
+    "intégration d'équation différentielle",
+    "prolongement de solution",
+    "utilisation de l'inégalité de croissance"
+  ],
+  "objects": [
+    "solution d'équation différentielle",
+    "fonction continue",
+    "norme de vecteur",
+    "primitive de fonction"
+  ],
+  "content_hash": "d16883a7632d0f7dd4055673a4ab5542ad6aa6433c23019115fc26df9323fc7d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:21:10.920Z"
+}

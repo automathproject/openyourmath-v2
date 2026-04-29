@@ -1,0 +1,23 @@
+{
+  "uuid": "BB1r",
+  "source_path": "exo7/4-L2/BB1r.tex",
+  "summary": "Comparer les déterminants de deux matrices carrées de taille n×n, l'une étant obtenue en multipliant chaque coefficient de l'autre par (-1) à la puissance de la somme de ses indices.",
+  "concepts": [
+    "déterminant",
+    "matrice carrée",
+    "forme multilinéaire",
+    "propriété des déterminants",
+    "invariance par transformation"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "comparaison de matrices"
+  ],
+  "objects": [
+    "matrice n×n",
+    "coefficient de matrice"
+  ],
+  "content_hash": "a811a7c98c0a5bbca19b1d74a191c6c55b5d40d98537709a9e77159bcc318f31",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:37:26.567Z"
+}

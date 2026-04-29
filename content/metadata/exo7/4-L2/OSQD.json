@@ -1,0 +1,26 @@
+{
+  "uuid": "OSQD",
+  "source_path": "exo7/4-L2/OSQD.tex",
+  "summary": "L'exercice demande d'établir une relation de Bézout entre deux polynômes dans ℝ[X] et de déterminer si un polynôme est inversible dans un anneau quotient, en utilisant la relation de Bézout trouvée.",
+  "concepts": [
+    "relation de Bézout",
+    "polynômes premiers entre eux",
+    "inversibilité dans un anneau quotient",
+    "anneau quotient",
+    "algèbre des polynômes",
+    "division euclidienne des polynômes"
+  ],
+  "methods": [
+    "division euclidienne des polynômes",
+    "calcul de relation de Bézout",
+    "vérification de l'inversibilité"
+  ],
+  "objects": [
+    "polynômes de ℝ[X]",
+    "relation de Bézout",
+    "classe d'un polynôme dans un anneau quotient"
+  ],
+  "content_hash": "89a79e58a744863c402739f4250ff11b4e0f6234fb404208b1623b5fe2988575",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:42:45.636Z"
+}

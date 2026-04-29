@@ -1,0 +1,27 @@
+{
+  "uuid": "AgJ3",
+  "source_path": "exo7/4-L2/AgJ3.tex",
+  "summary": "Calculer trois déterminants de matrices 4x4 et 5x5 avec des structures particulières, puis généraliser le calcul pour un déterminant nxn d'un type similaire.",
+  "concepts": [
+    "déterminant",
+    "matrice",
+    "propriétés des déterminants",
+    "développement par rapport à une ligne ou colonne",
+    "généralisation de formule"
+  ],
+  "methods": [
+    "développement de Laplace",
+    "simplification par opérations sur lignes/colonnes",
+    "recherche de motifs récurrents",
+    "généralisation par récurrence"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "structure de matrice",
+    "formule générale"
+  ],
+  "content_hash": "0e2691754c61a58906caf3aeb5f5f09b5969b2790396e9e1b3fbfa511101318a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:37:17.358Z"
+}

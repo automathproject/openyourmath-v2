@@ -1,0 +1,26 @@
+{
+  "uuid": "1HP8",
+  "source_path": "exo7/1-L1/1HP8.tex",
+  "summary": "Calculer l'inverse de deux matrices carrées particulières : une matrice triangulaire inférieure unitaire et une matrice de Toeplitz triangulaire inférieure.",
+  "concepts": [
+    "matrice triangulaire",
+    "matrice unitaire",
+    "matrice de Toeplitz",
+    "inversibilité",
+    "déterminant",
+    "matrice identité"
+  ],
+  "methods": [
+    "calcul de l'inverse d'une matrice",
+    "propriétés des matrices triangulaires",
+    "vérification par produit matriciel"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice triangulaire inférieure",
+    "matrice identité"
+  ],
+  "content_hash": "48267931420f5580ce6b5af3ac83c30cbc4429d06059deae9d6efdd5857d7b91",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:38:42.907Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "WUcJ",
+  "source_path": "exo7/1-L1/WUcJ.tex",
+  "summary": "L'exercice demande de montrer que la famille de polynômes (X-a)^p forme une base de l'espace vectoriel des polynômes de degré n à coefficients réels, puis d'exprimer tout polynôme P de ce type comme combinaison linéaire de ces polynômes.",
+  "concepts": [
+    "base d'un espace vectoriel",
+    "polynôme de degré n",
+    "espace vectoriel",
+    "combinaison linéaire",
+    "famille génératrice",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "vérification de la liberté",
+    "expression de polynôme par ses dérivées",
+    "utilisation de la base canonique"
+  ],
+  "objects": [
+    "polynôme de la forme (X-a)^p",
+    "polynôme de degré n",
+    "famille de polynômes",
+    "sous-espace vectoriel"
+  ],
+  "content_hash": "d9058e9a0148e33ac785609688f31a3b4e80f0e59aff10419b6e254e6d31ccf7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:55:16.680Z"
+}

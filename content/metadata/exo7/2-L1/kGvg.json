@@ -1,0 +1,26 @@
+{
+  "uuid": "kGvg",
+  "source_path": "exo7/2-L1/kGvg.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés d'une fonction concave définie sur [0, +∞[ : d'abord que la fonction x ↦ f(x)/x est décroissante sur ]0, +∞[, puis que la fonction satisfait l'inégalité f(x+y) ≤ f(x) + f(y) pour tout x, y ≥ 0.",
+  "concepts": [
+    "fonction concave",
+    "inégalité de convexité",
+    "propriété de décroissance",
+    "inégalité triangulaire",
+    "fonction définie sur un intervalle"
+  ],
+  "methods": [
+    "utilisation de la définition de la concavité",
+    "manipulation d'inégalités",
+    "comparaison de termes",
+    "réarrangement d'inégalités"
+  ],
+  "objects": [
+    "fonction concave",
+    "fonction x ↦ f(x)/x",
+    "inégalité f(x+y) ≤ f(x) + f(y)"
+  ],
+  "content_hash": "c912d45da2e1db3d362728e40b175fae4cb9d318a8eb6d94fd33b6961077d58f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:17:24.123Z"
+}

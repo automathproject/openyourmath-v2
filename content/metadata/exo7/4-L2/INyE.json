@@ -1,0 +1,26 @@
+{
+  "uuid": "INyE",
+  "source_path": "exo7/4-L2/INyE.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice obtenue par la méthode du pivot conserve la propriété de diagonale dominante, puis d'en déduire l'inversibilité de la matrice initiale.",
+  "concepts": [
+    "matrice à diagonale dominante",
+    "méthode du pivot",
+    "inversibilité d'une matrice",
+    "rang d'une matrice",
+    "déterminant"
+  ],
+  "methods": [
+    "réduction par pivot",
+    "analyse de la diagonale dominante",
+    "détermination de l'inversibilité"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "sous-matrice",
+    "élément diagonal",
+    "somme des éléments hors diagonale"
+  ],
+  "content_hash": "12faef285d807a0f2a6663fdc48337d858decd8cb4f2c3cf2daea26bb9e6901c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:43:25.877Z"
+}

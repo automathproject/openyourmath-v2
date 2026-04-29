@@ -1,0 +1,28 @@
+{
+  "uuid": "VbQK",
+  "source_path": "exo7/6-L2/VbQK.tex",
+  "summary": "L'exercice demande de prouver que deux segments sont perpendiculaires et de même longueur, puis de démontrer qu'un quadrilatère formé par les milieux des côtés de deux triangles est un carré.",
+  "concepts": [
+    "rotation dans le plan",
+    "géométrie affine euclidienne",
+    "théorème de Varignon",
+    "théorème de Thalès",
+    "parallélogramme",
+    "carré"
+  ],
+  "methods": [
+    "utilisation des propriétés des rotations",
+    "application du théorème de Varignon",
+    "application du théorème de Thalès",
+    "calcul vectoriel"
+  ],
+  "objects": [
+    "triangles isocèles rectangles",
+    "segments",
+    "milieux de segments",
+    "quadrilatère"
+  ],
+  "content_hash": "18ef424192cc5efa9e52f65617da41cf1a001e0f4d92016d0cacd873abe29822",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:43:02.821Z"
+}

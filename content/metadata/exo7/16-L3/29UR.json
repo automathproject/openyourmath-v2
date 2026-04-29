@@ -1,28 +1,27 @@
 {
   "uuid": "29UR",
   "source_path": "exo7/16-L3/29UR.tex",
-  "summary": "L'exercice demande de montrer que l'application $h_A$ associée à une matrice $A$ de $SL(2,\\mathbb{R})$ préserve le demi-plan de Poincaré $\\mathbb{H}$, puis d'établir que pour tout point $z$ de $\\mathbb{H}$, il existe une matrice $A$ telle que $h_A(i) = z$.",
+  "summary": "L'exercice demande de montrer que l'application linéaire fractionnaire associée à une matrice de SL(2,ℝ) préserve le demi-plan de Poincaré ℍ, puis de prouver qu'elle permet d'envoyer i sur tout point de ℍ.",
   "concepts": [
+    "application linéaire fractionnaire",
     "demi-plan de Poincaré",
-    "groupe linéaire spécial",
-    "application conforme",
+    "matrice de SL(2,ℝ)",
     "partie imaginaire",
-    "déterminant",
-    "matrice 2x2"
+    "conjugaison complexe",
+    "déterminant d'une matrice"
   ],
   "methods": [
     "calcul de la partie imaginaire",
-    "résolution de système linéaire",
-    "construction explicite de matrice",
-    "identification d'application"
+    "manipulation d'équations complexes",
+    "choix d'une matrice spécifique"
   ],
   "objects": [
-    "demi-plan de Poincaré",
-    "matrice de SL(2,ℝ)",
-    "application $h_A$",
-    "nombre complexe $z$"
+    "matrice 2x2",
+    "application fractionnaire",
+    "demi-plan ℍ",
+    "nombre complexe"
   ],
-  "content_hash": "042747202ee2e8fee179a47acbbdfe6b534cabd5013c4f93626c8a87a407ae9c",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:21:58.435Z"
+  "content_hash": "853aaf091ce930c05a474e12c8e16cfbc97fb8f27c12125729353a624ff5c9bd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:13:07.043Z"
 }

@@ -1,0 +1,24 @@
+{
+  "uuid": "19jO",
+  "source_path": "exo7/2-L1/19jO.tex",
+  "summary": "Calculer la dérivée n-ième de deux fonctions : t^(n-1) ln(t) et t^(n-1) exp(1/t). L'énoncé suggère de tester pour n=1, 2, 3.",
+  "concepts": [
+    "dérivation",
+    "fonction composée",
+    "dérivée n-ième",
+    "fonction exponentielle",
+    "fonction logarithme"
+  ],
+  "methods": [
+    "dérivation récurrente",
+    "changement de variable",
+    "calcul de dérivées successives"
+  ],
+  "objects": [
+    "fonction de variable réelle",
+    "dérivée d'ordre n"
+  ],
+  "content_hash": "23c5f27fb677c3d1d5e1a471be37ed44a96571d236d80352c4ff5607f2ff79dd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:54:12.951Z"
+}

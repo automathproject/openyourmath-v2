@@ -1,0 +1,28 @@
+{
+  "uuid": "EUFr",
+  "source_path": "exo7/1-L1/EUFr.tex",
+  "summary": "On considère un sous-groupe fini G de GLₙ(ℝ) tel que la somme des traces de ses éléments est nulle. On demande de montrer que la somme des matrices de G est la matrice nulle.",
+  "concepts": [
+    "sous-groupe fini",
+    "trace d'une matrice",
+    "permutation",
+    "matrice idempotente",
+    "rang d'une matrice",
+    "matrice de projection"
+  ],
+  "methods": [
+    "utilisation de la trace",
+    "construction d'une application bijective",
+    "calcul de la somme de matrices",
+    "propriétés des matrices idempotentes"
+  ],
+  "objects": [
+    "sous-groupe de GLₙ(ℝ)",
+    "matrice carrée",
+    "trace de matrice",
+    "matrice de projection"
+  ],
+  "content_hash": "b284fbcab068b8bae5380f85aa0ff35a55dd9e11b6cef93a383f5b9fe068ca46",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:47:58.377Z"
+}

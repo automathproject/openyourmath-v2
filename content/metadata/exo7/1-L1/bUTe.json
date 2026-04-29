@@ -1,0 +1,24 @@
+{
+  "uuid": "bUTe",
+  "source_path": "exo7/1-L1/bUTe.tex",
+  "summary": "On considère une matrice M de taille n×n à coefficients réels telle que M-I_n soit nilpotente. On demande de prouver que M est inversible.",
+  "concepts": [
+    "nilpotence",
+    "inversibilité",
+    "matrice carrée",
+    "matrice identité",
+    "propriétés des matrices"
+  ],
+  "methods": [
+    "utilisation de la nilpotence",
+    "détermination de l'inversibilité"
+  ],
+  "objects": [
+    "matrice M",
+    "matrice identité I_n",
+    "puissance de matrice"
+  ],
+  "content_hash": "8e87ba9a6266db95a3fa8ac56b76d8346ccf97967dcb8902213dce9a8c6169aa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:06:21.217Z"
+}

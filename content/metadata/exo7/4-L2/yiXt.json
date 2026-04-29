@@ -1,0 +1,28 @@
+{
+  "uuid": "yiXt",
+  "source_path": "exo7/4-L2/yiXt.tex",
+  "summary": "On cherche à majorer la valeur absolue d'un polynôme de degré 3 sur l'intervalle [-1,1], sous la contrainte que son intégrale sur cet intervalle soit égale à 1. L'exercice demande aussi d'identifier les cas d'égalité.",
+  "concepts": [
+    "produit scalaire",
+    "base orthonormée",
+    "inégalité de Cauchy-Schwarz",
+    "polynôme de degré 3",
+    "espace vectoriel normé",
+    "orthogonalisation de Gram-Schmidt"
+  ],
+  "methods": [
+    "orthonormalisation de la base canonique",
+    "calcul des coefficients de projection",
+    "application de l'inégalité de Cauchy-Schwarz",
+    "analyse des cas d'égalité"
+  ],
+  "objects": [
+    "polynôme de degré 3",
+    "base orthonormée de R3[X]",
+    "produit scalaire sur R3[X]",
+    "valeur absolue maximale d'un polynôme"
+  ],
+  "content_hash": "097bbff681743199b33920b99d884e1dffc7e10d2d921ca131c0c041e3ebd1e2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:04:55.110Z"
+}

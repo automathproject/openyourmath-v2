@@ -1,0 +1,26 @@
+{
+  "uuid": "UR06",
+  "source_path": "exo7/5-L2/UR06.tex",
+  "summary": "L'exercice demande de minimiser le temps de parcours d'un rayon lumineux suivant une ligne brisée AMB dans le plan, avec des vitesses différentes sur chaque segment. Le contexte est une application de l'optique géométrique.",
+  "concepts": [
+    "extremum local",
+    "fonction de plusieurs variables",
+    "optimisation",
+    "géométrie analytique",
+    "loi de Snell-Descartes"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "condition de minimalité",
+    "trigonométrie"
+  ],
+  "objects": [
+    "points dans le plan",
+    "vecteurs",
+    "angles",
+    "fonction de temps de parcours"
+  ],
+  "content_hash": "3b4ad39506132fc5cbbe7f71153ab46370e0706a25a3c22a1dc1726e99139820",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:03:35.193Z"
+}

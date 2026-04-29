@@ -1,0 +1,25 @@
+{
+  "uuid": "A6VV",
+  "source_path": "exo7/2-L1/A6VV.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction composée impliquant le logarithme et la fonction hyperbolique cosinus admet un développement limité généralisé à tout ordre en l'infini. Ensuite, il s'agit d'en déduire le développement limité d'une autre fonction hyperbolique élevée à une puissance variable.",
+  "concepts": [
+    "développement limité généralisé",
+    "fonction hyperbolique",
+    "fonction logarithme",
+    "développement de Taylor",
+    "asymptotique"
+  ],
+  "methods": [
+    "changement de variable",
+    "développement limité",
+    "approximation de Taylor"
+  ],
+  "objects": [
+    "fonction $\frac{1}{x}\\ln(\text{ch }x)$",
+    "fonction $(\text{ch }x)^{1/x}$",
+    "développement asymptotique"
+  ],
+  "content_hash": "4a38cd9d0ff958ffa5d62f49ac4ec6d0f3e77a328c3ad220af6055b2d04ca189",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:25:43.733Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "WYNM",
+  "source_path": "exo7/4-L2/WYNM.tex",
+  "summary": "L'exercice demande de vérifier qu'une forme bilinéaire définie par une intégrale est un produit scalaire sur l'espace des polynômes réels de degré n, puis de montrer qu'un endomorphisme donné est auto-adjoint pour ce produit scalaire, et enfin de déterminer ses valeurs propres et une base propre.",
+  "concepts": [
+    "produit scalaire",
+    "endomorphisme auto-adjoint",
+    "valeurs propres",
+    "base propre",
+    "intégration par parties",
+    "polynômes orthogonaux"
+  ],
+  "methods": [
+    "intégration par parties",
+    "calcul de valeurs propres",
+    "diagonalisation",
+    "vérification des propriétés d'un produit scalaire"
+  ],
+  "objects": [
+    "produit scalaire sur ℝₙ[X]",
+    "endomorphisme Φ",
+    "polynômes de ℝₙ[X]",
+    "valeurs propres de Φ"
+  ],
+  "content_hash": "c3322bdc035781b867c5191395f14c6fe802996bdc460175367c08062ff7e054",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:32:39.934Z"
+}

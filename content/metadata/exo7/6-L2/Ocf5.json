@@ -1,0 +1,27 @@
+{
+  "uuid": "Ocf5",
+  "source_path": "exo7/6-L2/Ocf5.tex",
+  "summary": "Dans un triangle rectangle ABC en A, avec H le pied de la hauteur issue de A, montrer que AH² = HB·HC.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "triangle rectangle",
+    "hauteur",
+    "puissance d'un point",
+    "triangles semblables",
+    "rapports de longueurs"
+  ],
+  "methods": [
+    "utilisation de la puissance d'un point",
+    "comparaison de triangles semblables",
+    "symétrie par rapport à un segment"
+  ],
+  "objects": [
+    "triangle rectangle",
+    "hauteur",
+    "cercle circonscrit",
+    "symétrique d'un point"
+  ],
+  "content_hash": "d05061d9f8d951fd4d412e0d94d177b367cccdbb3d026dd92509bf82915dd7a9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:36:48.799Z"
+}

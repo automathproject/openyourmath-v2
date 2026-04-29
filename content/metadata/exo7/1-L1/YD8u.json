@@ -1,0 +1,23 @@
+{
+  "uuid": "YD8u",
+  "source_path": "exo7/1-L1/YD8u.tex",
+  "summary": "Trouver tous les entiers positifs a tels que a^10 + 1 soit divisible par 10.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "arithmétique modulaire",
+    "chiffres de fin de nombre",
+    "critères de divisibilité"
+  ],
+  "methods": [
+    "analyse des restes modulo 10",
+    "énumération des cas possibles"
+  ],
+  "objects": [
+    "entiers positifs",
+    "nombre divisible par 10"
+  ],
+  "content_hash": "1d9b3e01fbe11feb40afdc861f25f27cdc6197aa841347a07b01306ed49b60ee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:07:15.445Z"
+}

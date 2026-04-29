@@ -1,0 +1,25 @@
+{
+  "uuid": "0akd",
+  "source_path": "exo7/2-L1/0akd.tex",
+  "summary": "L'exercice demande de prouver deux équivalents asymptotiques de fonctions lorsque f tend vers 0 en un point a : ln(1 + f) équivalent à f et e^f - 1 équivalent à f.",
+  "concepts": [
+    "limite de fonctions",
+    "équivalence asymptotique",
+    "fonction logarithme",
+    "fonction exponentielle",
+    "développement limité"
+  ],
+  "methods": [
+    "développement limité",
+    "comparaison de limites",
+    "utilisation de la définition d'équivalence asymptotique"
+  ],
+  "objects": [
+    "fonction ln(1 + f)",
+    "fonction e^f - 1",
+    "limite en un point"
+  ],
+  "content_hash": "d005a803bd61631088506318a4b5844d0e4f0e1f866535bddd7bd2cfe63379c0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:13:10.050Z"
+}

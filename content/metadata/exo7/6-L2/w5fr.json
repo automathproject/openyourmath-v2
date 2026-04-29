@@ -1,0 +1,27 @@
+{
+  "uuid": "w5fr",
+  "source_path": "exo7/6-L2/w5fr.tex",
+  "summary": "Dans un triangle ABC avec son cercle circonscrit C de centre O, on considère le point A' diamétralement opposé à A et la hauteur AH issue de A. On montre que la droite DA', où D est le second point d'intersection de AH avec C, est parallèle à BC.",
+  "concepts": [
+    "géométrie affine",
+    "cercle circonscrit",
+    "hauteur d'un triangle",
+    "angle droit",
+    "parallélisme",
+    "propriété des triangles"
+  ],
+  "methods": [
+    "utilisation des propriétés des angles inscrits",
+    "démonstration par parallélisme",
+    "analyse des configurations géométriques"
+  ],
+  "objects": [
+    "triangle",
+    "cercle circonscrit",
+    "hauteur",
+    "droites parallèles"
+  ],
+  "content_hash": "c1ce2231871d5f111c6d2a8997dddbb3f971c6d92ecfddfe5a93d00bfbc82e60",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:15:03.312Z"
+}

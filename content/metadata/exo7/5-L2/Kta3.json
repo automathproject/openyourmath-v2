@@ -1,0 +1,29 @@
+{
+  "uuid": "Kta3",
+  "source_path": "exo7/5-L2/Kta3.tex",
+  "summary": "L'exercice demande de démontrer une inégalité intégrale pour une fonction de classe C^1 s'annulant en 0 et π, puis d'étudier l'unicité de la solution d'une équation différentielle linéaire avec conditions aux limites.",
+  "concepts": [
+    "relation de Parseval",
+    "fonction impaire",
+    "périodicité",
+    "équation différentielle linéaire",
+    "conditions aux limites",
+    "unicité de la solution",
+    "théorème de Cauchy-Lipschitz"
+  ],
+  "methods": [
+    "prolongement périodique",
+    "application de la relation de Parseval",
+    "intégration par parties",
+    "analyse de l'espace des solutions"
+  ],
+  "objects": [
+    "fonction de classe C^1",
+    "fonction de classe C^2",
+    "équation différentielle linéaire",
+    "conditions aux limites"
+  ],
+  "content_hash": "cc88e409507c1f51a58a599c37849ce80cf33a111e0ef825e43fca827dda5a2c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:24:43.130Z"
+}

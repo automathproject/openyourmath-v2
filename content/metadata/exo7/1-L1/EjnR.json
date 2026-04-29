@@ -1,0 +1,25 @@
+{
+  "uuid": "EjnR",
+  "source_path": "exo7/1-L1/EjnR.tex",
+  "summary": "L'exercice demande de calculer le plus grand commun diviseur de deux entiers donnés et de trouver une combinaison linéaire de ces entiers qui donne ce pgcd.",
+  "concepts": [
+    "algorithme d'Euclide",
+    "plus grand commun diviseur",
+    "combinaison linéaire",
+    "identité de Bézout",
+    "arithmétique dans Z"
+  ],
+  "methods": [
+    "algorithme d'Euclide étendu",
+    "calcul de pgcd",
+    "recherche de coefficients de Bézout"
+  ],
+  "objects": [
+    "entiers naturels",
+    "pgcd",
+    "combinaison linéaire"
+  ],
+  "content_hash": "88930d73a5b718e495cef0a7254950f07b5c619eb52a3b2690a1df78c5102b47",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:02:58.067Z"
+}

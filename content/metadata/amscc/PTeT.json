@@ -1,0 +1,32 @@
+{
+  "uuid": "PTeT",
+  "source_path": "amscc/PTeT.tex",
+  "summary": "L'exercice demande de construire un intervalle de confiance à 95% pour la différence de taux de détection entre deux systèmes de détection d'intrusion, en utilisant des données empiriques sur des attaques détectées.",
+  "concepts": [
+    "intervalle de confiance",
+    "différence de proportions",
+    "théorème central limite",
+    "loi binomiale",
+    "loi normale",
+    "estimateur sans biais",
+    "variance d'un estimateur",
+    "approximation gaussienne"
+  ],
+  "methods": [
+    "estimation ponctuelle",
+    "calcul de variance",
+    "standardisation",
+    "approximation normale",
+    "construction d'intervalle de confiance"
+  ],
+  "objects": [
+    "proportion",
+    "variable de Bernoulli",
+    "somme de variables aléatoires indépendantes",
+    "intervalle de confiance",
+    "écart-type"
+  ],
+  "content_hash": "209edccd3f10c31dabb8cf22324af8492989d08674641c87893720ded8e1840f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:22:56.048Z"
+}

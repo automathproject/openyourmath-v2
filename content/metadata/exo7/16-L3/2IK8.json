@@ -1,0 +1,30 @@
+{
+  "uuid": "2IK8",
+  "source_path": "exo7/16-L3/2IK8.tex",
+  "summary": "L'exercice demande de définir une détermination continue de la fonction √(1−z²) sur l'ensemble U = ℂ /−1,1] avec une condition initiale spécifique, puis d'étudier la limite de cette fonction sur des points particuliers et de prouver qu'elle est bijective sur son ensemble de définition.",
+  "concepts": [
+    "fonction logarithme complexe",
+    "détermination continue",
+    "fonction Arg",
+    "limite complexe",
+    "bijection",
+    "fonction racine carrée complexe",
+    "continuité complexe"
+  ],
+  "methods": [
+    "définition par prolongement analytique",
+    "étude de limite unilatérale",
+    "vérification de la bijectivité",
+    "utilisation de la condition initiale"
+  ],
+  "objects": [
+    "fonction √(1−z²)",
+    "ensemble U = ℂ /−1,1]",
+    "fonction Arg(z+1)",
+    "fonction Arg(z-1)",
+    "limite complexe"
+  ],
+  "content_hash": "14bf6e8bd94a704d619268d528277df6c21ad424ef34dffc1764850562c0927c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:47:00.543Z"
+}

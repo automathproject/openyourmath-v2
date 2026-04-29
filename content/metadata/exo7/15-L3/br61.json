@@ -1,0 +1,26 @@
+{
+  "uuid": "br61",
+  "source_path": "exo7/15-L3/br61.tex",
+  "summary": "On considère une suite double d'un espace métrique et on suppose que chaque suite extraite converge vers une suite principale qui converge elle-même vers une limite. On demande de montrer l'existence d'une sous-suite diagonale qui converge directement vers cette limite.",
+  "concepts": [
+    "suite double",
+    "espace métrique",
+    "convergence de suite",
+    "sous-suite",
+    "limite de suite",
+    "topologie des espaces métriques"
+  ],
+  "methods": [
+    "extraction de sous-suite",
+    "diagonalisation",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite double",
+    "sous-suite diagonale",
+    "limite"
+  ],
+  "content_hash": "aed037a45e2d9253640e72743fd1b6c1b91e2c6cef8b990a28f9ae5fc2ef788f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:27:45.429Z"
+}

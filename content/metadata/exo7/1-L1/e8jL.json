@@ -1,0 +1,28 @@
+{
+  "uuid": "e8jL",
+  "source_path": "exo7/1-L1/e8jL.tex",
+  "summary": "Calculer le déterminant de matrices symétriques particulières pour des tailles 2 et 3, puis généraliser pour tout entier n ≥ 2 en utilisant la méthode du pivot de Gauss. Déterminer ensuite les valeurs de x pour lesquelles ces matrices sont inversibles.",
+  "concepts": [
+    "déterminant de matrice",
+    "inversibilité de matrice",
+    "méthode du pivot de Gauss",
+    "matrice triangulaire",
+    "propriétés des matrices symétriques",
+    "calcul de déterminant"
+  ],
+  "methods": [
+    "réduction par lignes",
+    "opérations élémentaires sur les lignes",
+    "factorisation de déterminant",
+    "calcul de déterminant par blocs"
+  ],
+  "objects": [
+    "matrice carrée",
+    "déterminant",
+    "matrice triangulaire",
+    "valeurs propres"
+  ],
+  "content_hash": "7eaa6e2d91ddfb6e2711151109f7b129369976b93e3d21defc34b727219547b9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:09:39.676Z"
+}

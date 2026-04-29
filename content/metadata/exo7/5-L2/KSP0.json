@@ -1,0 +1,29 @@
+{
+  "uuid": "KSP0",
+  "source_path": "exo7/5-L2/KSP0.tex",
+  "summary": "L'exercice demande d'étudier une intégrale de Riemann dépendant d'un paramètre, en déterminant son domaine de définition, sa continuité et sa dérivabilité, puis en calculant son expression explicite.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "continuité d'une fonction",
+    "dérivabilité d'une fonction",
+    "intégrale impropre",
+    "fonction exponentielle",
+    "fonction hyperbolique"
+  ],
+  "methods": [
+    "étude de continuité",
+    "étude de dérivabilité",
+    "calcul d'intégrale impropre",
+    "intégration par parties",
+    "calcul de limite"
+  ],
+  "objects": [
+    "intégrale paramétrique",
+    "fonction $I(a)$",
+    "fonction hyperbolique sinh",
+    "fonction exponentielle"
+  ],
+  "content_hash": "449d0cfdfeb50be7baa5cf80721d7bd3e7cf6de53f992b7f8ef4a471e142c622",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:33:55.128Z"
+}

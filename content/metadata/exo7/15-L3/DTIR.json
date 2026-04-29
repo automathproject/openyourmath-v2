@@ -1,0 +1,30 @@
+{
+  "uuid": "DTIR",
+  "source_path": "exo7/15-L3/DTIR.tex",
+  "summary": "L'exercice demande de démontrer qu'une application linéaire φ sur un espace vectoriel normé E est continue si et seulement si sa norme N(φ) est finie, puis de montrer que N(φ) définit une norme sur l'espace des formes linéaires continues. Ensuite, il s'agit de calculer cette norme pour une forme linéaire ψ spécifique et de vérifier l'existence d'une fonction f réalisant l'égalité de la norme.",
+  "concepts": [
+    "espace vectoriel normé",
+    "application linéaire continue",
+    "norme d'une application linéaire",
+    "supremum",
+    "intégrale de fonctions continues",
+    "théorème de représentation de Riesz",
+    "continuité des formes linéaires"
+  ],
+  "methods": [
+    "utilisation de la définition de la continuité",
+    "calcul de la norme d'une application linéaire",
+    "application du théorème de représentation de Riesz",
+    "maximisation sous contrainte"
+  ],
+  "objects": [
+    "espace vectoriel des fonctions continues",
+    "application linéaire",
+    "norme infinie",
+    "forme linéaire continue",
+    "fonction intégrale"
+  ],
+  "content_hash": "48d2153a83982b4d42d78639d7a67ecb6ccf409338d7bd5febc5f8b065d03110",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:16:05.497Z"
+}

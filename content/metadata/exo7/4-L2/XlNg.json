@@ -1,0 +1,29 @@
+{
+  "uuid": "XlNg",
+  "source_path": "exo7/4-L2/XlNg.tex",
+  "summary": "Dans un espace euclidien de dimension n, on considère une isométrie u et la transformation v = id_E - u. L'exercice demande de montrer que le noyau de v est orthogonal à l'image de v, puis d'établir la convergence d'une moyenne de puissances de u vers la projection orthogonale sur le noyau de v.",
+  "concepts": [
+    "espace euclidien",
+    "isométrie",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "orthogonalité",
+    "projection orthogonale",
+    "convergence de suite"
+  ],
+  "methods": [
+    "décomposition en somme directe",
+    "utilisation de la relation de projection",
+    "étude de la limite de suites"
+  ],
+  "objects": [
+    "espace euclidien",
+    "isométrie",
+    "endomorphisme",
+    "projection orthogonale",
+    "suite de vecteurs"
+  ],
+  "content_hash": "f34eeee78c64309d0a45fa939cff5dd6eb979d6f4b92625666f50a04ef52a96c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:34:04.748Z"
+}

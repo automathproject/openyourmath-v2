@@ -1,0 +1,29 @@
+{
+  "uuid": "E7go",
+  "source_path": "exo7/1-L1/E7go.tex",
+  "summary": "Montrer qu'une famille de polynômes de degrés distincts forme une base de l'espace vectoriel des polynômes de degré inférieur ou égal à n. Puis exprimer un polynôme donné sous deux formes différentes en utilisant des bases spécifiques.",
+  "concepts": [
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "famille libre",
+    "famille génératrice",
+    "polynôme",
+    "combinaison linéaire",
+    "degré d'un polynôme"
+  ],
+  "methods": [
+    "preuve par l'absurde",
+    "récurrence descendante",
+    "identification des coefficients",
+    "calcul de coefficients"
+  ],
+  "objects": [
+    "polynôme",
+    "famille de polynômes",
+    "combinaison linéaire de polynômes",
+    "coefficient de polynôme"
+  ],
+  "content_hash": "3481a4c0a4644573430ae03a5dbbc71e11d3cb66701457ab490db772442b4a11",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T21:43:33.341Z"
+}

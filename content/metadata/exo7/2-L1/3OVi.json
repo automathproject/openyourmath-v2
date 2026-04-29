@@ -1,0 +1,27 @@
+{
+  "uuid": "3OVi",
+  "source_path": "exo7/2-L1/3OVi.tex",
+  "summary": "L'exercice demande d'exprimer les fonctions hyperboliques ch(nx) et sh(nx) comme polynômes en ch(x) et sh(x), puis de calculer spécifiquement ch(3x) et sh(3x) en fonction de ch(x) et sh(x). Enfin, il s'agit d'en déduire l'expression de tanh(3x) en fonction de tanh(x).",
+  "concepts": [
+    "fonctions hyperboliques",
+    "polynômes",
+    "relations de récurrence",
+    "fonctions circulaires inverses",
+    "fonctions hyperboliques inverses"
+  ],
+  "methods": [
+    "développement en série",
+    "identités hyperboliques",
+    "substitution algébrique",
+    "calcul de polynômes"
+  ],
+  "objects": [
+    "fonctions hyperboliques ch(nx) et sh(nx)",
+    "polynômes en ch(x) et sh(x)",
+    "tanh(3x)",
+    "tanh(x)"
+  ],
+  "content_hash": "1c65e15edb975513b17ea04efcf1be793ed6fd85aaa09a4323cf525a382f7c20",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:55:03.927Z"
+}

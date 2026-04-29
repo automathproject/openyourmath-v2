@@ -1,0 +1,26 @@
+{
+  "uuid": "qupP",
+  "source_path": "exo7/1-L1/qupP.tex",
+  "summary": "On considère un espace vectoriel de dimension finie et une famille de projecteurs dont la somme vaut l'identité. On demande de prouver deux propriétés : l'égalité de la trace et du rang de chaque projecteur, puis la décomposition de l'espace en somme directe des images des projecteurs.",
+  "concepts": [
+    "projecteur",
+    "trace d'une matrice",
+    "rang d'une matrice",
+    "somme directe d'espaces vectoriels",
+    "identité d'un espace vectoriel",
+    "espace vectoriel de dimension finie"
+  ],
+  "methods": [
+    "calcul de trace",
+    "calcul de rang",
+    "utilisation des propriétés des projecteurs"
+  ],
+  "objects": [
+    "projecteurs",
+    "espace vectoriel",
+    "matrices"
+  ],
+  "content_hash": "8cc7b8be3b4d424179969656bb75af262bed75d76f8343d77c4497f6e5b90e89",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:10:30.209Z"
+}

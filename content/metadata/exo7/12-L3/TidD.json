@@ -1,0 +1,25 @@
+{
+  "uuid": "TidD",
+  "source_path": "exo7/12-L3/TidD.tex",
+  "summary": "On considère une application différentiable d'un ouvert d'un espace de Banach dans ℝ, vérifiant une inégalité de croissance sur sa différentielle. On demande de majorer la valeur de l'application en fonction de sa valeur en un point et de la distance à ce point.",
+  "concepts": [
+    "espace de Banach",
+    "application différentiable",
+    "différentielle",
+    "inégalité de croissance",
+    "majoration"
+  ],
+  "methods": [
+    "utilisation de la différentielle",
+    "intégration le long d'un chemin",
+    "inégalité exponentielle"
+  ],
+  "objects": [
+    "application de U dans ℝ",
+    "différentielle d'une application",
+    "distance dans un espace de Banach"
+  ],
+  "content_hash": "43073ebd70f82b74c75fde43a87984ed506406a2d1c0c7e559c6e266aeb90c32",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:27:00.378Z"
+}

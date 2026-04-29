@@ -1,0 +1,22 @@
+{
+  "uuid": "W1Nn",
+  "source_path": "exo7/1-L1/W1Nn.tex",
+  "summary": "Montrer que pour tout entier positif n, 49 divise l'expression 2^(3n+3) - 7n - 8.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "récurrence",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "récurrence forte",
+    "calcul modulo"
+  ],
+  "objects": [
+    "entier naturel",
+    "expression polynomiale"
+  ],
+  "content_hash": "64972a494acee0cebdb4d76cc049fd05d15bc47fc7a356d59117adf8be4afbd1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T14:06:44.504Z"
+}

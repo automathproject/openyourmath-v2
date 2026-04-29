@@ -1,0 +1,28 @@
+{
+  "uuid": "9Bvj",
+  "source_path": "exo7/2-L1/9Bvj.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'un point c dans un intervalle ouvert où le rapport des dérivées de deux fonctions f et g est égal au rapport des variations de ces fonctions. Il applique ensuite ce résultat pour calculer une limite en utilisant la règle de l'Hôpital.",
+  "concepts": [
+    "théorème de Rolle",
+    "règle de l'Hôpital",
+    "limite de fonctions",
+    "dérivabilité",
+    "continuité",
+    "fonctions continues et dérivables"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "application du théorème de Rolle",
+    "calcul de dérivées",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonctions f et g",
+    "intervalle [a, b]",
+    "point c",
+    "limite de rapport de fonctions"
+  ],
+  "content_hash": "e7d22fc28e82a12853d2c218f431de7b3df3d5657d5d5de52a6cfcfb1a6bd4e3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:58:13.425Z"
+}

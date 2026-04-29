@@ -1,0 +1,26 @@
+{
+  "uuid": "ds89",
+  "source_path": "exo7/4-L2/ds89.tex",
+  "summary": "Résoudre un système linéaire de 5 équations à 6 inconnues. Le système est donné sous forme développée avec des coefficients entiers.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "espace des solutions",
+    "combinaison linéaire",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "réduction par pivot de Gauss",
+    "calcul du rang",
+    "résolution de système sous-determined"
+  ],
+  "objects": [
+    "matrice augmentée",
+    "système homogène",
+    "variables libres",
+    "variables pivot"
+  ],
+  "content_hash": "bec1a5df92c8312c811f7889c95a8bafe27455ad708b41fd61274cbab9fdd244",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:59:59.113Z"
+}

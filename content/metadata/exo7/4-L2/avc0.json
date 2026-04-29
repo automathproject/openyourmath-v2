@@ -1,0 +1,25 @@
+{
+  "uuid": "avc0",
+  "source_path": "exo7/4-L2/avc0.tex",
+  "summary": "L'exercice demande de discuter la nature des ensembles de solutions de trois systèmes linéaires sans les résoudre explicitement.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "ensemble de solutions",
+    "incompatibilité d'un système",
+    "indétermination d'un système",
+    "théorème de Rouché-Capelli"
+  ],
+  "methods": [
+    "analyse du rang",
+    "comparaison des rangs"
+  ],
+  "objects": [
+    "système linéaire à trois équations",
+    "matrice augmentée",
+    "matrice des coefficients"
+  ],
+  "content_hash": "684ced14b1d9b5c5f58ed2f1e1dc985bc76933a3971bcfe5ca99dcf2788021cb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:58:02.197Z"
+}

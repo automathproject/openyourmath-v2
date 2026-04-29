@@ -1,0 +1,32 @@
+{
+  "uuid": "Xqjl",
+  "source_path": "exo7/6-L2/Xqjl.tex",
+  "summary": "L'exercice demande de construire les points d'intersection d'un cercle et d'une droite dans le plan euclidien, en utilisant uniquement un compas. Deux cas sont considérés : lorsque le centre du cercle n'appartient pas à la droite et lorsque le centre appartient à la droite.",
+  "concepts": [
+    "géométrie affine euclidienne",
+    "inversion",
+    "symétrie",
+    "puissance d'un point",
+    "médiatrice",
+    "perpendicularité",
+    "construction géométrique au compas"
+  ],
+  "methods": [
+    "construction géométrique au compas seul",
+    "utilisation de l'inversion",
+    "symétrie par rapport à une droite",
+    "construction de la médiatrice",
+    "construction de la perpendiculaire"
+  ],
+  "objects": [
+    "cercle",
+    "droite",
+    "points d'intersection",
+    "symétrique d'un point",
+    "triangle équilatéral",
+    "médiatrice d'un segment"
+  ],
+  "content_hash": "9ccde317d6b71af992787cbfc8d063b404a5315a5918184697b9bc84cf084998",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T03:44:22.154Z"
+}

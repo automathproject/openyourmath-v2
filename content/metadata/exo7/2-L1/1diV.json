@@ -1,0 +1,27 @@
+{
+  "uuid": "1diV",
+  "source_path": "exo7/2-L1/1diV.tex",
+  "summary": "On étudie la convergence uniforme d'une suite de fonctions convexes vers une fonction continue. L'exercice demande de montrer l'existence d'un entier p tel que la fonction limite f satisfait une condition de Lipschitz uniforme, puis d'utiliser la convexité pour encadrer les fonctions de la suite.",
+  "concepts": [
+    "convergence uniforme",
+    "fonction convexe",
+    "continuité",
+    "subdivision d'un intervalle",
+    "inégalité de Lipschitz"
+  ],
+  "methods": [
+    "encadrement par des fonctions affines",
+    "utilisation de la définition de la convexité",
+    "preuve par l'absurde",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction limite",
+    "subdivision de l'intervalle",
+    "fonctions affines"
+  ],
+  "content_hash": "0af9f284afb9b75640605d3e7b8d444d5407a152c2c9a2790235bed113fa1592",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:55:10.556Z"
+}

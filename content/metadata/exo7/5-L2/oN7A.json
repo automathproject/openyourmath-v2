@@ -1,0 +1,31 @@
+{
+  "uuid": "oN7A",
+  "source_path": "exo7/5-L2/oN7A.tex",
+  "summary": "L'exercice demande de montrer que deux fonctions définies par des intégrales dépendant d'un paramètre sont de classe C^1 sur ℝ, d'en déterminer leurs dérivées, puis de prouver que leur somme est constante. Enfin, il s'agit de déterminer une limite et d'en déduire une intégrale impropre classique.",
+  "concepts": [
+    "intégrale de Riemann dépendant d'un paramètre",
+    "théorème de Leibniz",
+    "classe C^1",
+    "dérivation sous le signe intégrale",
+    "intégrale impropre",
+    "limite de fonction",
+    "constante"
+  ],
+  "methods": [
+    "dérivation sous le signe intégrale",
+    "changement de variable",
+    "estimation d'intégrale",
+    "calcul de limite",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "fonction définie par une intégrale",
+    "dérivée d'une fonction",
+    "somme de fonctions",
+    "limite de fonction",
+    "intégrale impropre"
+  ],
+  "content_hash": "16f9d6b646a562486bef27776cc22fbc90ea940069c1a2748e831c3ba845daee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:49:18.573Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "E8RA",
+  "source_path": "exo7/1-L1/E8RA.tex",
+  "summary": "On considère un ensemble de matrices 3x3 dépendant d'un paramètre réel x. L'exercice demande de prouver que cet ensemble forme un groupe pour la multiplication matricielle.",
+  "concepts": [
+    "groupe",
+    "structure algébrique",
+    "lois de composition interne",
+    "élément neutre",
+    "symétrie",
+    "associativité"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "calcul matriciel",
+    "identification de l'élément neutre",
+    "recherche de l'inverse"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "ensemble de matrices",
+    "paramètre réel"
+  ],
+  "content_hash": "841fc1af2382e1b99f9df6a7212ca303003ee7dfc449113db291b3b151743e10",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T05:47:44.694Z"
+}

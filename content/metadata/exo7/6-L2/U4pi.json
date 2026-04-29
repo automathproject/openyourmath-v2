@@ -1,0 +1,26 @@
+{
+  "uuid": "U4pi",
+  "source_path": "exo7/6-L2/U4pi.tex",
+  "summary": "L'exercice demande de montrer qu'un ensemble de points du plan défini par une équation est un arc paramétré et de trouver une représentation paramétrique de cet arc. L'ensemble est défini par 0 < x < 2 et x = 2sin(y/x).",
+  "concepts": [
+    "courbe paramétrée",
+    "arc paramétré",
+    "représentation paramétrique",
+    "équation cartésienne",
+    "géométrie différentielle",
+    "fonction trigonométrique"
+  ],
+  "methods": [
+    "élimination de paramètres",
+    "paramétrisation explicite",
+    "analyse de la relation entre x et y"
+  ],
+  "objects": [
+    "ensemble de points du plan",
+    "équation cartésienne",
+    "fonction sin(y/x)"
+  ],
+  "content_hash": "8f496aeba24ecb31a68339df80eae6963be3a101b574ee85cb8f5d77995dc2a2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:55:50.900Z"
+}

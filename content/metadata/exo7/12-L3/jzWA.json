@@ -1,0 +1,27 @@
+{
+  "uuid": "jzWA",
+  "source_path": "exo7/12-L3/jzWA.tex",
+  "summary": "On considère une application F de classe C^1 sur ℝ² avec F(0,0)=0 et une dérivée partielle non nulle en (0,0). On compose F avec une application φ de ℝ³ dans ℝ² et on étudie l'équation f(x,y,z)=0 où f=F∘φ. L'objectif est de montrer que cette équation définit localement une fonction implicite z=ψ(x,y) vérifiant une condition sur ses dérivées partielles.",
+  "concepts": [
+    "théorème des fonctions implicites",
+    "application de classe C^1",
+    "dérivée partielle",
+    "fonction implicite",
+    "difféomorphisme local",
+    "composition d'applications"
+  ],
+  "methods": [
+    "application du théorème des fonctions implicites",
+    "calcul de dérivées partielles",
+    "composition de fonctions"
+  ],
+  "objects": [
+    "application F",
+    "application φ",
+    "fonction implicite z=ψ(x,y)",
+    "équation f(x,y,z)=0"
+  ],
+  "content_hash": "12a2c4d4dae6284663c29f1837ff50b2255b90079a36afeeb4d81bbde8351718",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:18:01.006Z"
+}

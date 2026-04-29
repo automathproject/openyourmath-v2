@@ -1,0 +1,28 @@
+{
+  "uuid": "eu7r",
+  "source_path": "exo7/4-L2/eu7r.tex",
+  "summary": "L'exercice demande d'exprimer une forme quadratique dans une base canonique et une autre base, puis de déterminer son rang et sa signature. La forme quadratique est donnée par sa matrice dans la base canonique.",
+  "concepts": [
+    "forme quadratique",
+    "base canonique",
+    "forme polaire",
+    "rang d'une matrice",
+    "signature d'une forme quadratique",
+    "changement de base"
+  ],
+  "methods": [
+    "calcul de l'expression analytique d'une forme quadratique",
+    "vérification de la linéarité d'une base",
+    "changement de base pour une forme quadratique",
+    "détermination du rang et de la signature"
+  ],
+  "objects": [
+    "matrice d'une forme quadratique",
+    "base canonique",
+    "forme polaire",
+    "base transformée"
+  ],
+  "content_hash": "56f7b13cc440bc9da21c18ccc37119a2fcb03f56866adb35bd08e43daf8351cc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:41:48.954Z"
+}

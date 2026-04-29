@@ -1,0 +1,28 @@
+{
+  "uuid": "1J4h",
+  "source_path": "exo7/2-L1/1J4h.tex",
+  "summary": "Calculer les sommes $C_n = \\sum_{k=1}^n \text{ch}(kx)$ et $S_n = \\sum_{k=1}^n \text{sh}(kx)$ pour un réel $x$ fixé et $n \\in \\mathbb{N}^*$.",
+  "concepts": [
+    "fonctions hyperboliques",
+    "somme de termes de suite géométrique",
+    "identités hyperboliques",
+    "formules d'Euler pour les fonctions hyperboliques",
+    "cas particulier $x=0$"
+  ],
+  "methods": [
+    "utilisation des identités hyperboliques",
+    "calcul de sommes géométriques",
+    "manipulation algébrique",
+    "simplification exponentielle",
+    "traitement des cas particuliers"
+  ],
+  "objects": [
+    "somme de fonctions hyperboliques",
+    "suite géométrique",
+    "exponentielle complexe",
+    "fonctions hyperboliques inverses"
+  ],
+  "content_hash": "827ac35d7bee14539edbfe24ecdc0e840227e14191e7420c9414aeeb1ccd8ba0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T23:54:02.063Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "GVZp",
+  "source_path": "exo7/12-L3/GVZp.tex",
+  "summary": "L'exercice demande de démontrer que l'application f est un difféomorphisme de classe C1 en utilisant des propriétés de son différentiel. On étudie d'abord l'inégalité impliquée par la condition donnée sur le différentiel, puis on en déduit que f est à la fois ouverte et fermée.",
+  "concepts": [
+    "différentiabilité",
+    "difféomorphisme",
+    "application ouverte",
+    "application fermée",
+    "inégalité de coercivité",
+    "théorème d'inversion locale",
+    "isomorphisme"
+  ],
+  "methods": [
+    "étude de la dérivée",
+    "utilisation de l'inégalité de coercivité",
+    "démonstration par l'absurde",
+    "application du théorème d'inversion locale"
+  ],
+  "objects": [
+    "application C1",
+    "différentiel",
+    "produit scalaire",
+    "suite de Cauchy"
+  ],
+  "content_hash": "49e28930ee600c1ef5664c77a15a3940d097410ffb50d1aedde3810436767e39",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T16:14:24.688Z"
+}

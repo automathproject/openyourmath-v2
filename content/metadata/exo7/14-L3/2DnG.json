@@ -1,0 +1,29 @@
+{
+  "uuid": "2DnG",
+  "source_path": "exo7/14-L3/2DnG.tex",
+  "summary": "Calculer la convolution de deux fonctions exponentielles de normes au carré dans ℝⁿ. Les fonctions sont définies par des exponentielles de normes au carré pondérées par des coefficients positifs.",
+  "concepts": [
+    "convolution de fonctions",
+    "intégrale de Lebesgue",
+    "mesure de Lebesgue",
+    "invariance par translation",
+    "norme euclidienne",
+    "intégrale multiple",
+    "théorème de Fubini"
+  ],
+  "methods": [
+    "changement de variable",
+    "complétion du carré",
+    "intégration par parties",
+    "utilisation de propriétés de la mesure de Lebesgue"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "norme au carré",
+    "convolution de fonctions",
+    "intégrale sur ℝⁿ"
+  ],
+  "content_hash": "c793413d3a2b8032d785bdad85337d318c3ac3cda012f8cbe4cb4ba05a6c7682",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:24:02.678Z"
+}

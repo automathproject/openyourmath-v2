@@ -1,0 +1,26 @@
+{
+  "uuid": "F1GB",
+  "source_path": "exo7/4-L2/F1GB.tex",
+  "summary": "L'exercice demande d'identifier les éléments inversibles de l'anneau ℤ/11ℤ, de déterminer un générateur du groupe des inversibles et d'exprimer chaque élément comme puissance de ce générateur.",
+  "concepts": [
+    "groupe multiplicatif",
+    "élément inversible",
+    "groupe cyclique",
+    "générateur de groupe",
+    "anneau quotient",
+    "ordre d'un élément"
+  ],
+  "methods": [
+    "calcul de l'inverse multiplicatif",
+    "détermination de l'ordre d'un élément",
+    "vérification de la génération du groupe"
+  ],
+  "objects": [
+    "anneau ℤ/11ℤ",
+    "groupe (ℤ/11ℤ)*",
+    "élément générateur"
+  ],
+  "content_hash": "6f2f1f3d8054c9a39fb38f6df1322295e2fa76db60834265ba335ba01225b429",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:30:55.517Z"
+}

@@ -1,33 +1,31 @@
 {
   "uuid": "eyii",
   "source_path": "exo7/6-L2/eyii.tex",
-  "summary": "L'exercice demande de démontrer que les projetés orthogonaux d'un point M sur les côtés d'un triangle ABC sont alignés si et seulement si M appartient au cercle circonscrit à ABC. Il étudie ensuite le lieu des foyers des paraboles tangentes aux trois côtés d'un triangle, en utilisant la droite de Simson.",
+  "summary": "L'exercice demande de démontrer que les projetés orthogonaux d'un point M sur les côtés d'un triangle ABC sont alignés si et seulement si M appartient au cercle circonscrit à ABC. Il introduit ensuite le concept de parabole tangente aux trois côtés d'un triangle et le lieu des foyers de telles paraboles.",
   "concepts": [
     "cercle circonscrit",
-    "droite de Simson",
+    "alignement de points",
+    "projeté orthogonal",
     "parabole",
     "tangente à une parabole",
-    "projeté orthogonal",
-    "alignement de points",
     "foyer d'une parabole",
-    "directrice d'une parabole"
+    "directrice d'une parabole",
+    "droite de Simson"
   ],
   "methods": [
-    "utilisation de la condition d'alignement",
-    "propriétés des cercles de diamètre",
-    "construction géométrique de parabole",
-    "symétrie orthogonale",
-    "médiatrice d'un segment"
+    "utilisation des propriétés des cercles",
+    "alignement de points par produit scalaire",
+    "construction géométrique de paraboles",
+    "symétrie orthogonale"
   ],
   "objects": [
     "triangle",
     "cercle circonscrit",
-    "parabole",
-    "droite de Simson",
     "projetés orthogonaux",
-    "foyer d'une parabole"
+    "parabole",
+    "droite de Simson"
   ],
-  "content_hash": "92ae4b19b9fe4b62a5c97c7f695bbe6adfd97f64816efcda8c11bf0051f19e66",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:40:55.530Z"
+  "content_hash": "02e9f8a3bd4d0f33fe9aaa29513e3a6c6cf4b6ef82dbd98625afb28f1b5858de",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:07:01.422Z"
 }

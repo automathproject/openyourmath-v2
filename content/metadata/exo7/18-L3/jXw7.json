@@ -1,0 +1,26 @@
+{
+  "uuid": "jXw7",
+  "source_path": "exo7/18-L3/jXw7.tex",
+  "summary": "On considère une fonction convexe de classe C² sur ℝ. L'exercice demande de montrer que sa dérivée admet une limite dans ℝ̅ en +∞, puis d'en déduire que le rapport f(x)/x admet une limite en +∞.",
+  "concepts": [
+    "fonction convexe",
+    "classe C²",
+    "limite dans ℝ̅",
+    "développement de Taylor à l'ordre 1",
+    "croissance des fonctions convexes"
+  ],
+  "methods": [
+    "utilisation de la convexité",
+    "développement de Taylor",
+    "étude de la limite de la dérivée",
+    "estimation par des ε"
+  ],
+  "objects": [
+    "fonction convexe",
+    "dérivée première",
+    "rapport f(x)/x"
+  ],
+  "content_hash": "5438ac00dc609f354a64666e53759e64273fc8e7df7f247d03298794af7b8bfe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:37:42.121Z"
+}

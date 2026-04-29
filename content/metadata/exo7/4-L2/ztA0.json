@@ -1,0 +1,30 @@
+{
+  "uuid": "ztA0",
+  "source_path": "exo7/4-L2/ztA0.tex",
+  "summary": "L'exercice modélise un trajet cycliste avec des segments en montée, descente et plat, en utilisant des vitesses différentes pour chaque type de segment. Il demande de déterminer la distance totale, l'altitude et la différence d'altitude entre deux villes, puis d'analyser un second cycliste avec des vitesses différentes.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "équations linéaires",
+    "modélisation géométrique",
+    "vitesse moyenne",
+    "distance",
+    "altitude"
+  ],
+  "methods": [
+    "résolution de système linéaire",
+    "analyse de cas",
+    "calcul de distances",
+    "calcul d'altitudes"
+  ],
+  "objects": [
+    "trajet cycliste",
+    "segments de trajet",
+    "vitesses",
+    "distances",
+    "altitudes"
+  ],
+  "content_hash": "2de9021c2c47c23d0ee232de2c5afeb93c91c15e93239bd5c8876f7e83b7d2c4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T18:21:00.561Z"
+}

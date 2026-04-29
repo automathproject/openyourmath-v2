@@ -1,0 +1,30 @@
+{
+  "uuid": "sfRx",
+  "source_path": "amscc/sfRx.tex",
+  "summary": "L'exercice modélise une colline par une fonction d'altitude et étudie les propriétés géométriques et analytiques des lignes de niveau. Il demande de calculer l'altitude en un point, de déterminer l'équation d'une ligne de niveau, et d'analyser l'orthogonalité entre le gradient et le vecteur tangent à cette ligne.",
+  "concepts": [
+    "fonction de plusieurs variables",
+    "ligne de niveau",
+    "gradient",
+    "orthogonalité",
+    "produit scalaire",
+    "dérivée partielle",
+    "règle de la chaîne"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "substitution de variables",
+    "calcul de produit scalaire",
+    "dérivation de fonction composée"
+  ],
+  "objects": [
+    "fonction d'altitude",
+    "ligne de niveau",
+    "vecteur gradient",
+    "vecteur vitesse",
+    "paramétrage de courbe"
+  ],
+  "content_hash": "94deed44209602e8a140fd7124313fcbdb1b649f5224a86a557d376328cbd09d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T00:13:46.932Z"
+}

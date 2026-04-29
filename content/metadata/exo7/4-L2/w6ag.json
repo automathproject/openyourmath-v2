@@ -1,0 +1,25 @@
+{
+  "uuid": "w6ag",
+  "source_path": "exo7/4-L2/w6ag.tex",
+  "summary": "On considère l'ensemble des fonctions continues positives sur un intervalle [a,b] et une application Φ définie comme l'intégrale du produit de la fonction par l'intégrale de son inverse. On demande de prouver que le minimum de Φ est (b-a)² et de déterminer les fonctions qui l'atteignent.",
+  "concepts": [
+    "espace vectoriel normé",
+    "fonction continue",
+    "intégrale de Riemann",
+    "inégalité de Cauchy-Schwarz",
+    "optimisation de fonctionnelle"
+  ],
+  "methods": [
+    "calcul de minimum de fonctionnelle",
+    "utilisation de l'inégalité de Cauchy-Schwarz",
+    "intégration de fonctions continues"
+  ],
+  "objects": [
+    "fonction continue positive",
+    "application intégrale",
+    "minimum de fonctionnelle"
+  ],
+  "content_hash": "93b27e53b1ce7fd834bb149e5ad07139ee1aaff68350eac84de765198a24dc7d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T20:59:59.977Z"
+}

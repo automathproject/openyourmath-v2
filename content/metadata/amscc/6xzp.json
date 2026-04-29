@@ -1,0 +1,30 @@
+{
+  "uuid": "6xzp",
+  "source_path": "amscc/6xzp.tex",
+  "summary": "L'exercice demande de déterminer le maximum de la fonction f(x,y) = x² + y² sous la contrainte x⁴ + y⁴ = 1. Il s'agit d'une optimisation sous contrainte utilisant les multiplicateurs de Lagrange.",
+  "concepts": [
+    "optimisation sous contrainte",
+    "multiplicateurs de Lagrange",
+    "compact",
+    "continuité",
+    "bornes d'une fonction",
+    "dérivée directionnelle",
+    "gradient",
+    "colinéarité de vecteurs"
+  ],
+  "methods": [
+    "analyse des points critiques",
+    "calcul de gradient",
+    "colinéarité des gradients",
+    "résolution de système d'équations"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "contrainte d'égalité",
+    "vecteur tangent",
+    "point critique"
+  ],
+  "content_hash": "517b8e9c15caefac06daaefd9a97b3460c5ff2806fe129eee29bafc811971ce3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T22:35:38.545Z"
+}

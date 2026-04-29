@@ -1,0 +1,25 @@
+{
+  "uuid": "rIUX",
+  "source_path": "exo7/2-L1/rIUX.tex",
+  "summary": "On considère une fonction g définie sur un intervalle [a,b] et approchable uniformément par des fonctions continues par morceaux. On demande de montrer qu'elle peut aussi être approchable uniformément par des fonctions en escalier.",
+  "concepts": [
+    "approximation uniforme",
+    "fonction continue par morceaux",
+    "fonction en escalier",
+    "densité dans un espace de fonctions",
+    "topologie uniforme"
+  ],
+  "methods": [
+    "approximation par fonctions simples",
+    "construction explicite de fonctions en escalier"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle compact",
+    "fonction continue par morceaux",
+    "fonction en escalier"
+  ],
+  "content_hash": "7b42647b8f0d178e1c14742ba0965efed410d1fce24234a20b1d16fccac823ce",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T15:25:53.430Z"
+}

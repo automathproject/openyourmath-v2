@@ -1,0 +1,29 @@
+{
+  "uuid": "Pe4s",
+  "source_path": "exo7/5-L2/Pe4s.tex",
+  "summary": "L'exercice étudie les propriétés de l'application dérivée D sur l'espace des solutions d'une équation différentielle linéaire du second ordre. Il demande d'analyser si D peut être une homothétie, de déterminer les conditions sur p et q pour que D ne soit pas un isomorphisme, et d'étudier les propriétés algébriques de D.",
+  "concepts": [
+    "équation différentielle linéaire du second ordre",
+    "espace vectoriel de solutions",
+    "application linéaire",
+    "isomorphisme",
+    "homothétie",
+    "polynôme caractéristique",
+    "valeurs propres"
+  ],
+  "methods": [
+    "analyse des propriétés d'une application linéaire",
+    "calcul du polynôme caractéristique",
+    "détermination des valeurs propres",
+    "factorisation d'opérateur"
+  ],
+  "objects": [
+    "équation différentielle y'' + p y' + q y = 0",
+    "application dérivée D",
+    "espace des solutions S",
+    "valeurs complexes r1 et r2"
+  ],
+  "content_hash": "81b1f2c6631ff330ab8255d1ec202eac04c0e07f4b42d77ad4d2f1e109a7893e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:27:20.410Z"
+}

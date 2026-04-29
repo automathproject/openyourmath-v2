@@ -1,0 +1,23 @@
+{
+  "uuid": "MKRV",
+  "source_path": "exo7/2-L1/MKRV.tex",
+  "summary": "On considère une fonction dérivable sur un intervalle de la forme [a, +∞[ dont la limite en +∞ est égale à sa valeur en a. On demande de prouver l'existence d'un point où la dérivée s'annule.",
+  "concepts": [
+    "limite de fonction",
+    "dérivabilité",
+    "théorème des valeurs intermédiaires",
+    "continuité",
+    "fonction dérivable"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "fonction dérivable",
+    "intervalle [a, +∞["
+  ],
+  "content_hash": "f64ead17167aea3667fa607338a05406590f32d6d3eaaab4aba8af86cf94ac2c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:05:38.692Z"
+}

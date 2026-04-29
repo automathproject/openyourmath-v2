@@ -1,0 +1,29 @@
+{
+  "uuid": "AcJl",
+  "source_path": "amscc/AcJl.tex",
+  "summary": "Calcul du déterminant d'une matrice 3x3 à coefficients dépendant d'un paramètre réel, puis résolution d'un système linéaire associé par les formules de Cramer.",
+  "concepts": [
+    "déterminant",
+    "système linéaire",
+    "rang",
+    "formules de Cramer",
+    "matrice carrée",
+    "opérations élémentaires sur les lignes",
+    "opérations élémentaires sur les colonnes"
+  ],
+  "methods": [
+    "développement par rapport à une ligne ou une colonne",
+    "réduction de matrice",
+    "calcul de déterminant",
+    "résolution par Cramer"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "système linéaire",
+    "déterminant",
+    "solution unique"
+  ],
+  "content_hash": "1354d272755d0da14db55cecf8553bf454407026cf353df3a742252df6edabf3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:37:03.240Z"
+}

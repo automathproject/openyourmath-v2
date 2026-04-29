@@ -1,29 +1,27 @@
 {
   "uuid": "VmGq",
   "source_path": "exo7/1-L1/VmGq.tex",
-  "summary": "L'exercice demande d'exprimer une application linéaire de ℝ² dans ℝ² sous forme matricielle, puis de montrer l'équivalence entre cette représentation et une expression complexe utilisant les conjugués. Il s'agit de relier les formes algébriques et géométriques des applications linéaires dans le plan.",
+  "summary": "L'exercice demande d'exprimer une application linéaire de ℝ² dans ℝ² sous forme matricielle, puis de montrer l'équivalence entre cette forme et une expression complexe utilisant les conjugués. Le contexte est la représentation des applications linéaires dans le plan complexe.",
   "concepts": [
     "application linéaire",
-    "matrice d'une application linéaire",
+    "matrice d'application linéaire",
     "nombre complexe",
     "conjugaison complexe",
     "endomorphisme",
-    "isomorphisme ℝ² ↔ ℂ",
-    "forme algébrique d'une application linéaire"
+    "isomorphisme ℝ² ↔ ℂ"
   ],
   "methods": [
+    "représentation matricielle",
     "décomposition en parties réelles et imaginaires",
-    "identification des coefficients",
-    "passage de ℝ² à ℂ",
-    "calcul matriciel"
+    "identification des coefficients"
   ],
   "objects": [
     "application linéaire de ℝ²",
-    "matrice 2x2",
-    "nombre complexe z = x + iy",
-    "conjugué d'un nombre complexe"
+    "nombre complexe z",
+    "conjugué complexe",
+    "matrice 2x2"
   ],
-  "content_hash": "6049ac77407121b00a601ee7c82425962236d576d221fe16b3e6e3a482a33b77",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:11:56.815Z"
+  "content_hash": "4b426de4ee7555da60166680d4324f4e4cbcf4bb829623de82de221842394ec1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T13:36:41.427Z"
 }

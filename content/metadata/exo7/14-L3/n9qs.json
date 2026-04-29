@@ -1,0 +1,28 @@
+{
+  "uuid": "n9qs",
+  "source_path": "exo7/14-L3/n9qs.tex",
+  "summary": "L'exercice demande de prouver deux propriétés d'une famille de fonctions gaussiennes en dimension n. D'abord, de montrer que l'intégrale de Lebesgue de chaque fonction sur ℝⁿ vaut 1. Ensuite, de démontrer que l'intégrale de ces fonctions sur les complémentaires de boules centrées en 0 tend vers 0 quand le paramètre t tend vers 0.",
+  "concepts": [
+    "intégrale de Lebesgue",
+    "fonction gaussienne",
+    "théorème de Fubini",
+    "intégrale impropre",
+    "convergence en mesure",
+    "changement de variable"
+  ],
+  "methods": [
+    "décomposition en intégrales itérées",
+    "changement de variable",
+    "approximation de l'intégrale",
+    "passage à la limite sous le signe intégral"
+  ],
+  "objects": [
+    "fonction de densité de probabilité",
+    "intégrale sur ℝⁿ",
+    "boule de rayon δ",
+    "famille de fonctions paramétrée"
+  ],
+  "content_hash": "c23d04b8448153dcecd4d621621ca35d6a78c4bf991184fe6ec9b80800b34949",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T04:25:21.504Z"
+}

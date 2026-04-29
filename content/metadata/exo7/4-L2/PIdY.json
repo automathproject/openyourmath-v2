@@ -1,0 +1,26 @@
+{
+  "uuid": "PIdY",
+  "source_path": "exo7/4-L2/PIdY.tex",
+  "summary": "Dans un groupe multiplicatif G, on considère deux éléments a et b d'ordres respectifs α et β, premiers entre eux, et qui commutent. On demande de déterminer l'ordre de l'élément ab.",
+  "concepts": [
+    "ordre d'un élément",
+    "groupe multiplicatif",
+    "commutativité",
+    "pgcd",
+    "divisibilité dans Z",
+    "propriétés des groupes abéliens"
+  ],
+  "methods": [
+    "calcul de l'ordre d'un produit d'éléments",
+    "utilisation de la condition de commutation",
+    "application du théorème de Bézout"
+  ],
+  "objects": [
+    "élément d'un groupe",
+    "ordre d'un élément",
+    "produit d'éléments"
+  ],
+  "content_hash": "ff98571adc8aeacfaec7fba026bd2f4c76136edec4607e5de38900e8ddba82fc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T01:44:09.676Z"
+}

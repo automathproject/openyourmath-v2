@@ -1,0 +1,29 @@
+{
+  "uuid": "7Jo3",
+  "source_path": "crouzet/pcsi/05/7Jo3.tex",
+  "summary": "L'exercice demande de démontrer la dénombrabilité de plusieurs ensembles : les entiers naturels non nuls, les entiers relatifs, le produit cartésien de deux ensembles dénombrables, et les nombres rationnels. Il utilise des bijections explicites pour établir ces résultats.",
+  "concepts": [
+    "dénombrabilité",
+    "bijection",
+    "injection",
+    "surjection",
+    "ensemble quotient",
+    "théorème de Cantor-Schröder-Bernstein"
+  ],
+  "methods": [
+    "construction explicite de bijection",
+    "utilisation de la composition de fonctions",
+    "réduction à un cas connu",
+    "argument par cas"
+  ],
+  "objects": [
+    "ensemble dénombrable",
+    "ensemble infini",
+    "bijection",
+    "injection",
+    "nombre rationnel"
+  ],
+  "content_hash": "3e58a625a1b4dbb5e241dae1e283866f8580bbd55bd901148aa829e2a14303ea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T19:06:06.994Z"
+}

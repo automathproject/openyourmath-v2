@@ -1,0 +1,25 @@
+{
+  "uuid": "zsn3",
+  "source_path": "exo7/2-L1/zsn3.tex",
+  "summary": "Montrer une inégalité pour une somme de fractions de variables positives. L'énoncé demande de prouver que la somme des rapports cycliques de variables positives est supérieure ou égale au nombre de termes.",
+  "concepts": [
+    "inégalité arithmético-géométrique",
+    "fonction convexe",
+    "optimisation sous contrainte",
+    "majoration",
+    "somme de fractions"
+  ],
+  "methods": [
+    "changement de variable",
+    "application de l'inégalité arithmético-géométrique",
+    "minimisation"
+  ],
+  "objects": [
+    "suite de variables positives",
+    "somme de rapports cycliques",
+    "inégalité à prouver"
+  ],
+  "content_hash": "bf206a2915b96eb12c79b877330551f5bea9ed44801475c40d0d449d984591ee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-28T17:25:58.007Z"
+}
