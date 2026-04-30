@@ -72,9 +72,17 @@ Contient pour chaque auteur : pseudo, prénom, nom, email, organisation, code li
 **Fichier :** `.env`
 
 ```env
+# Ollama — LLM local (prioritaire pour chat et embedding)
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_CHAT_MODEL=mistral-small3.2:24b
+OLLAMA_EMBED_MODEL=bge-m3
+
+# Albert — fallback si Ollama indisponible
 ALBERT_API_KEY=sk-...
 ALBERT_BASE_URL=https://albert.api.etalab.gouv.fr/v1
 ```
+
+Ollama est interrogé en priorité au démarrage de `index-exercises.js`. Si le service répond et que les modèles sont installés, Albert n'est pas sollicité.
 
 ---
 
@@ -208,7 +216,7 @@ Au démarrage, `build-db.js` charge aussi le **store Albert versionné** (`conte
 ## 5. Étape 4 — Indexation sémantique (Pipeline B)
 
 **Script de production :** [scripts/index-exercises.js](scripts/index-exercises.js)  
-**Librairie :** [src/lib/ia/summarize.js](src/lib/ia/summarize.js), [src/lib/ia/albert.js](src/lib/ia/albert.js)  
+**Librairie :** [src/lib/ia/summarize.js](src/lib/ia/summarize.js), [src/lib/ia/ollama.js](src/lib/ia/ollama.js), [src/lib/ia/albert.js](src/lib/ia/albert.js)  
 **Store versionné :** [content/metadata/](content/metadata/) — un `.json` par exercice, rangé selon le même chemin relatif que le `.tex`, commité dans git
 
 **Déclencheur :** Exercices avec `indexed_at IS NULL` (nouveaux ou contenu modifié)
@@ -244,12 +252,21 @@ Chaque fichier versionné contient :
 
 Le `content_hash` permet à `build-db.js` de détecter si le fichier versionné est encore valide (contenu source inchangé). `source_path` évite de réutiliser une métadonnée déplacée ou ambiguë sur un mauvais fichier primaire. Si le contenu a changé, les métadonnées versionnées sont ignorées et l'exercice est marqué pour réindexation.
 
-Les embeddings sont stockés dans `cache/embeddings/{uuid}.json` (exclu de Git).
-Ce cache local est synchronisé manuellement entre machines via rsync pour
-éviter de régénérer 8634 embeddings à chaque clone du repo.
-Voir [docs/embeddings-sync.md](docs/embeddings-sync.md) pour le workflow détaillé.
+Les embeddings sont stockés dans `cache/embeddings/{uuid}.json` (exclu de Git) et dans la table `exercise_embeddings` de la DB.
+Voir [docs/embeddings-sync.md](docs/embeddings-sync.md) pour le workflow multi-machines.
 
-### Modèles Albert utilisés
+### Fournisseurs LLM : Ollama (prioritaire) + Albert (fallback)
+
+Au démarrage, `index-exercises.js` interroge Ollama via `checkOllamaAvailable()` :
+
+| Condition | Chat (résumé) | Embedding |
+|---|---|---|
+| Ollama disponible + modèle installé | Ollama (`OLLAMA_CHAT_MODEL`) | Ollama (`OLLAMA_EMBED_MODEL`) |
+| Ollama indisponible ou modèle absent | Albert (`Mistral-Small-3.2-24B`) | Albert (`BAAI/bge-m3`) |
+
+Les modèles sont configurés dans `.env`. Les vecteurs produits par `bge-m3` via Ollama et via Albert sont identiques (même modèle).
+
+**Modèles Albert de référence :**
 
 | Usage | Modèle |
 |---|---|
@@ -261,28 +278,43 @@ Voir [docs/embeddings-sync.md](docs/embeddings-sync.md) pour le workflow détail
 
 Pour chaque exercice à indexer :
 
-1. **Construction du contexte LLM** :
-   - Bloc métadonnées : titre, niveau, module, chapitre, thème
-   - Bloc contenu : ÉNONCÉ (`texte`), QUESTION (`question`), INDICATION (`indication`/`hint`), CORRIGÉ (`reponse`/`solution`/`answer`)
+1. **Construction du contexte LLM** avec budget prioritaire (8 000 caractères max) :
+   - Ordre de remplissage : ÉNONCÉ → QUESTIONS → CORRIGÉS (tronqués à 3 000 chars chacun) → INDICATIONS
+   - Les questions sont toujours incluses en entier ; les corrigés et indications sont écrêtés si le budget est épuisé
 
-2. **Appel à l'API Albert Chat** (température 0, max 800 tokens) :
+2. **Appel LLM** (température 0, max 800 tokens, mode JSON) :
    - Le prompt demande un JSON avec : `summary` (2-3 phrases), `concepts[]` (3-8 items), `methods[]` (2-5 items), `objects[]` (2-5 items)
-   - Vocabulaire mathématique français exigé
-   - Règle : pas d'abréviations, formulations complètes
+   - Vocabulaire mathématique français exigé, pas d'abréviations ni de LaTeX dans les listes
 
-3. **Parsing robuste du JSON** avec fallbacks (suppression de code fences Markdown, extraction entre accolades)
+3. **Parsing robuste du JSON** avec fallbacks (suppression de code fences Markdown, extraction entre accolades) et normalisation des champs (une string CSV est convertie en tableau)
 
-4. **Sauvegarde versionnée** dans `content/metadata/{source_path sans extension}.json` (avec `source_path` et `content_hash`)
+4. **Retry** : 3 tentatives sur l'ensemble appel + parsing + validation — couvre les erreurs réseau, les 429/5xx et les réponses mal formées des modèles locaux
 
-5. **Mise à jour de la base** : `summary`, `concepts`, `methods`, `indexed_at`
+5. **Sauvegarde versionnée** dans `content/metadata/{source_path sans extension}.json`
 
-6. **Génération de l'embedding** :
+6. **Mise à jour de la base** : `summary`, `concepts`, `methods`, `indexed_at`
+
+7. **Génération de l'embedding** :
    - Texte concaténé : résumé + "Concepts: [...]" + "Méthodes: [...]" + "Objets: [...]"
-   - Stocké en Float32Array dans `exercise_embeddings` (non versionné)
+   - Stocké en Float32Array dans `exercise_embeddings` + `cache/embeddings/{uuid}.json`
 
-**Retry :** 3 tentatives avec backoff exponentiel pour les erreurs 429 et 5xx.
+### Journal d'erreurs
 
-**Scripts de test :** [scripts/ia/test-albert.js](scripts/ia/test-albert.js), [scripts/ia/test-summarize.js](scripts/ia/test-summarize.js)
+Les erreurs non-quota sont persistées dans `cache/index-errors.json` après chaque échec (pas seulement en fin de run). Le fichier est également écrit si le processus est interrompu par `Ctrl+C`. Format :
+
+```json
+{
+  "run_at": "2026-04-29T10:00:00.000Z",
+  "total": 8580,
+  "erreurs": [
+    { "position": 148, "uuid": "C6J8", "title": "exo7 323", "message": "...", "at": "..." }
+  ]
+}
+```
+
+Les exercices en erreur gardent `indexed_at IS NULL` et sont automatiquement repris au prochain `pnpm index:exercises`.
+
+**Scripts de test :** [scripts/ia/test-albert.js](scripts/ia/test-albert.js), [scripts/ia/test-summarize.js](scripts/ia/test-summarize.js) (utilise Ollama par défaut)
 
 ---
 
@@ -315,6 +347,7 @@ node scripts/index-exercises.js --uuid UUID # Un seul exercice
 node scripts/index-exercises.js --limit 50  # Limiter à 50 exercices
 node scripts/index-exercises.js --dry-run   # Simuler sans écrire
 # Après exécution : commiter les fichiers content/metadata/**/*.json
+# En cas d'erreurs : consulter cache/index-errors.json
 
 # Construction complète (premier run ou reset)
 pnpm build:cache:full     # Parsing complet sans cache
@@ -329,6 +362,11 @@ pnpm dev:full             # = build:content + pnpm dev
 
 # Statistiques
 pnpm build:stats          # Compte .tex, .json cache, exercices en DB
+
+# Cache embeddings
+pnpm cache:embeddings:restore   # Reconstruit cache/embeddings/ depuis la DB (utile sur nouvelle machine)
+pnpm cache:embeddings:stats     # Statistiques du cache local
+pnpm cache:embeddings:check     # Rapport détaillé avec incohérences cache ↔ DB
 
 # Maintenance
 pnpm authors:add-exo7-license   # Mise à jour licences auteurs
@@ -412,13 +450,16 @@ scripts/
 ├── parse-latex.js              # Étape 1 : parsing LaTeX → cache JSON
 ├── build-db.js                 # Étape 3 : cache → SQLite
 ├── build-tikz.js               # Étape 2 : TikZ → SVG
+├── index-exercises.js          # Pipeline B : résumés LLM + embeddings
 ├── schema.sql                  # Schéma de la base de données
 ├── analyze_chapters.js         # Analyse de la structure des chapitres
 ├── update-authors-licenses.js  # Mise à jour des licences auteurs
 ├── ia/
 │   ├── test-albert.js          # Tests de l'API Albert
-│   ├── test-summarize.js       # Tests de résumé par UUID
-│   └── test-client.js          # Tests du client Albert
+│   ├── test-summarize.js       # Test de résumé sur UUIDs précis (Ollama par défaut)
+│   ├── test-client.js          # Tests du client Albert
+│   ├── cache-stats.js          # Statistiques du cache d'embeddings
+│   └── restore-embedding-cache.js  # Reconstruit cache/embeddings/ depuis la DB
 └── utils/
     ├── content-paths.js         # Racines et normalisation des chemins content/cache/metadata
     ├── cache-manager.js        # Gestion du cache incrémental
@@ -433,7 +474,9 @@ scripts/
 src/lib/
 ├── ia/
 │   ├── albert.js               # Client API Albert (chat, embedding, rerank)
-│   └── summarize.js            # Résumé LLM + génération embedding
+│   ├── ollama.js               # Client Ollama local (interface compatible albert.js)
+│   ├── summarize.js            # Résumé LLM + génération embedding (Ollama ou Albert)
+│   └── embedding-cache.js      # Lecture/écriture du cache local cache/embeddings/
 └── db/
     ├── connection.js           # Connexion SQLite singleton (lecture seule)
     ├── queries.js              # Requêtes FTS5, filtres, pagination

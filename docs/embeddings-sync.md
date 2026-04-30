@@ -2,10 +2,10 @@
 
 ## Principe
 
-Les embeddings vectoriels (BAAI/bge-m3, 1024 dims) sont stockés dans
-`cache/embeddings/{uuid}.json` — exclus de Git mais synchronisables manuellement
-via `rsync`. Comme ils sont déterministes, il suffit de les transférer une fois
-pour qu'une nouvelle machine évite de régénérer 8 000+ appels API.
+Les embeddings vectoriels (BAAI/bge-m3, 1024 dims) sont stockés à deux endroits :
+
+- **`data/exercises.sqlite`** (table `exercise_embeddings`) — source de vérité, baked dans l'image Docker
+- **`cache/embeddings/{uuid}.json`** — cache local exclu de Git, utilisé par `index-exercises.js` pour éviter de rappeler l'API
 
 ```
 cache/embeddings/
@@ -19,32 +19,35 @@ cache/embeddings/
 Chaque fichier de cache contient le `content_hash` (SHA256 des blocs sémantiques
 de l'exercice). Lors du chargement, ce hash est comparé à celui en base :
 - **Correspondance** → embedding utilisé tel quel
-- **Divergence** → cache ignoré, l'API Albert sera rappelée au prochain `pnpm index:exercises`
+- **Divergence** → cache ignoré, l'embedding sera recalculé au prochain `pnpm index:exercises`
 
 Cela garantit qu'un exercice modifié ne réutilisera pas un embedding périmé.
 
-## Workflow : première installation / nouveau clone
+## Workflow recommandé : nouvelle machine
+
+La DB contient déjà tous les vecteurs. Le script `cache:embeddings:restore` les exporte
+vers `cache/embeddings/` sans aucun appel API :
 
 ```bash
-# Sur la machine source (celle qui a déjà les embeddings) :
-rsync -avz --progress \
-  cache/embeddings/ \
-  user@machine-cible:~/openyourmath-v2/cache/embeddings/
+# 1. Récupérer la DB depuis la machine de référence
+rsync -avz machine1:~/openyourmath-v2/data/exercises.sqlite data/
 
-# Sur la machine cible, reconstruire la base (les embeddings seront restaurés) :
-pnpm build:db
+# 2. Reconstruire le cache local depuis la DB
+pnpm cache:embeddings:restore
+
+# 3. Lancer l'indexation — les exercices déjà embeddés sont skippés
+pnpm index:exercises
 ```
 
-`pnpm build:db` appelle automatiquement `restoreEmbeddingsFromCache()` qui repeupled
-la table `exercise_embeddings` depuis le cache local.
+## Alternative : rsync du cache
 
-## Workflow : mise à jour incrémentale
+Si la DB n'est pas transférable (trop grosse, accès restreint) :
 
 ```bash
 # Synchroniser uniquement les fichiers nouveaux ou modifiés
 rsync -avz --progress --update \
-  cache/embeddings/ \
-  user@machine-cible:~/openyourmath-v2/cache/embeddings/
+  machine1:~/openyourmath-v2/cache/embeddings/ \
+  cache/embeddings/
 ```
 
 ## Vérifier l'état du cache
@@ -62,7 +65,7 @@ Exemple de sortie :
 
 📁 8634 fichier(s) en cache
    ✅ Valides       : 8634
-   💾 Taille totale : 134.2 Mo
+   💾 Taille totale : 68 Mo
 
 📊 Comparaison cache ↔ base SQLite :
    En cache          : 8634
@@ -74,14 +77,14 @@ Exemple de sortie :
 
 | Artefact | Versionné Git | Cache local | Régénérable |
 |---|---|---|---|
-| `content/metadata/{uuid}.json` | ✅ oui | — | Via Albert Chat (LLM) |
-| `cache/embeddings/{uuid}.json` | ❌ non | ✅ oui | Via Albert Embedding |
-| `data/exercises.sqlite` | ❌ non | — | Via `pnpm build:db` |
+| `content/metadata/**/*.json` | ✅ oui | — | Via LLM (Ollama ou Albert) |
+| `cache/embeddings/{uuid}.json` | ❌ non | ✅ oui | Via `pnpm cache:embeddings:restore` (depuis DB) ou Ollama/Albert |
+| `data/exercises.sqlite` | ❌ non | — | Via `pnpm build:db` + `pnpm index:exercises` |
 
 ## Régénération complète sans cache
 
-Si le cache est absent ou corrompu, `pnpm index:exercises` rappelle l'API Albert
-pour chaque exercice indexé. Le cache est reconstruit automatiquement à la volée.
+Si le cache est absent ou corrompu, `pnpm index:exercises` recalcule les embeddings
+via Ollama (si disponible) ou Albert. Le cache est reconstruit automatiquement à la volée.
 
 ```bash
 pnpm index:exercises          # régénère seulement les exercices sans indexed_at
