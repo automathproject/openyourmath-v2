@@ -1,31 +1,20 @@
 {
   "uuid": "rlK5",
   "source_path": "exo7/2-L1/rlK5.tex",
-  "summary": "L'exercice demande d'étudier la convergence d'intégrales impropres de la forme ∫(sin x)/x^a dx, ∫e^(ix²) dx, ∫x³ sin(x⁸) dx, ∫cos(eˣ) dx et ∫1/(1+x³ sin²x) dx. Il s'agit d'analyser la convergence de ces intégrales en utilisant des techniques d'intégration par parties, changements de variables et comparaisons.",
+  "summary": "Étudier la convergence de six intégrales impropres impliquant des fonctions trigonométriques et exponentielles sur l'intervalle [0, +∞[.",
   "concepts": [
     "intégrale impropre",
     "convergence d'intégrale",
-    "intégration par parties",
     "changement de variable",
-    "comparaison de fonctions",
+    "intégration par parties",
     "intégrabilité",
-    "limite de fonction"
+    "fonction continue",
+    "comparaison série-intégrale",
+    "concavité de la fonction sinus"
   ],
-  "methods": [
-    "intégration par parties",
-    "changement de variable",
-    "comparaison de fonctions",
-    "étude de la limite",
-    "décomposition en série"
-  ],
-  "objects": [
-    "intégrale impropre",
-    "fonction trigonométrique",
-    "fonction exponentielle",
-    "fonction rationnelle",
-    "fonction composée"
-  ],
-  "content_hash": "260263f4ddae4ac02b0febd0cba3e038510748a2251b7b4908d0157af737ee19",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:35:46.380Z"
+  "methods": [],
+  "objects": [],
+  "content_hash": "466e52b88e02515ebb57ef906093e2c40d2d173e745db2ea28baff6cc07471b0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T11:32:33.544Z"
 }

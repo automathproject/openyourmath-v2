@@ -128,6 +128,50 @@ function buildContent(contentArray) {
 }
 
 /**
+ * Tente de réparer un JSON tronqué par la limite de tokens.
+ * Ferme les strings, tableaux et objets ouverts pour obtenir un JSON valide.
+ * Retourne null si la réparation échoue ou si l'objet résultant est inutilisable.
+ *
+ * @param {string} text - JSON potentiellement tronqué, commençant par '{'
+ * @returns {object|null}
+ */
+function repairTruncatedJson(text) {
+  const stack = [];
+  let inString = false;
+  let escape = false;
+  let lastSafePos = 0; // dernière position où l'on était hors d'une string
+
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (escape) { escape = false; continue; }
+    if (ch === '\\' && inString) { escape = true; continue; }
+    if (ch === '"') {
+      inString = !inString;
+      if (!inString) lastSafePos = i + 1;
+      continue;
+    }
+    if (inString) continue;
+    if (ch === '{' || ch === '[') { stack.push(ch); lastSafePos = i + 1; }
+    else if (ch === '}' || ch === ']') { stack.pop(); lastSafePos = i + 1; }
+    else if (ch === ',' || ch === ':') { lastSafePos = i + 1; }
+  }
+
+  if (stack.length === 0) return null; // pas tronqué ou déjà géré
+
+  // Tronquer après la dernière valeur complète, puis fermer les structures
+  let repaired = text.slice(0, lastSafePos).trimEnd().replace(/,\s*$/, '');
+  for (let i = stack.length - 1; i >= 0; i--) {
+    repaired += stack[i] === '{' ? '}' : ']';
+  }
+
+  try {
+    return JSON.parse(repaired);
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Parse de manière robuste la sortie JSON du LLM.
  * Gère les cas où le LLM ajoute des backticks ou du texte parasite malgré les instructions.
  *
@@ -158,7 +202,18 @@ function parseSummaryJson(text) {
   const end = cleaned.lastIndexOf('}');
   if (start !== -1 && end !== -1 && end > start) {
     const extracted = cleaned.slice(start, end + 1);
-    return JSON.parse(extracted);
+    try {
+      return JSON.parse(extracted);
+    } catch {
+      // Peut-être tronqué — on tente une réparation
+    }
+  }
+
+  // Tentative de réparation d'un JSON tronqué par la limite de tokens.
+  // On ferme les structures ouvertes pour obtenir un objet parseable.
+  if (start !== -1) {
+    const repaired = repairTruncatedJson(cleaned.slice(start));
+    if (repaired !== null) return repaired;
   }
 
   throw new Error(`Impossible de parser la réponse LLM comme JSON :\n${text.slice(0, 300)}`);
@@ -210,7 +265,7 @@ function validateSummary(obj) {
  * @param {number} [options.maxTokens] - Limite de tokens en sortie (défaut: 800)
  * @returns {Promise<{summary: string, concepts: string[], methods: string[], objects: string[]}>}
  */
-export async function summarizeExercise(exercise, { model, maxTokens = 800, chatFn } = {}) {
+export async function summarizeExercise(exercise, { model, maxTokens = 1200, chatFn } = {}) {
   const callChat = chatFn ?? chat;
   const metadata = buildMetadata(exercise);
   const content = buildContent(exercise.content);
