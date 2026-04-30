@@ -1,35 +1,34 @@
 {
   "uuid": "Oz1G",
   "source_path": "exo7/6-L2/Oz1G.tex",
-  "summary": "L'exercice demande d'identifier et de caractériser la nature d'une conique donnée par une équation cartésienne du second degré, en déterminant son type (ellipse, parabole, hyperbole), son centre, ses axes, ses sommets, ses foyers et ses directrices. Plusieurs exemples sont fournis, couvrant les différents cas de coniques.",
+  "summary": "Étudier les propriétés géométriques de plusieurs coniques définies par des équations cartésiennes en repère orthonormé, incluant leur nature (ellipse, parabole, hyperbole), leur centre, leurs asymptotes, et leurs éléments caractéristiques.",
   "concepts": [
     "conique",
     "ellipse",
     "parabole",
     "hyperbole",
     "discriminant d'une conique",
+    "réduction de forme quadratique",
+    "valeurs propres et vecteurs propres",
     "changement de repère",
-    "valeurs propres d'une matrice",
-    "diagonalisation",
-    "équation réduite d'une conique"
+    "équation réduite"
   ],
   "methods": [
     "calcul du discriminant",
-    "recherche des points critiques",
     "diagonalisation de matrice",
-    "changement de base orthonormée",
-    "calcul des éléments caractéristiques d'une conique"
+    "recherche de points critiques",
+    "étude des directions asymptotiques",
+    "changement de variables",
+    "calcul de paramètres géométriques"
   ],
   "objects": [
-    "équation cartésienne du second degré",
-    "matrice associée à une forme quadratique",
-    "vecteurs propres",
+    "forme quadratique",
+    "matrice associée à une conique",
     "repère orthonormé",
-    "asymptotes",
-    "foyers",
-    "directrices"
+    "équation cartésienne",
+    "points caractéristiques (centre, sommet, foyers)"
   ],
-  "content_hash": "0a0effa79330d00f3c2ab264c7cd8c2f97a2b0dd86071490e54d500a5454c337",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:40:02.045Z"
+  "content_hash": "2c8badb546f39014473197d22379da6c16134c81898b3c274f23bcc78817e01d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T09:46:38.154Z"
 }

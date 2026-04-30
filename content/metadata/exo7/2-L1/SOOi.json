@@ -1,34 +1,33 @@
 {
   "uuid": "SOOi",
   "source_path": "exo7/2-L1/SOOi.tex",
-  "summary": "L'exercice étudie la convergence de l'intégrale impropre ∫(sin t)/t dt de 0 à +∞. Il montre d'abord sa non-convergence absolue en utilisant une inégalité sur des intégrales partielles, puis sa convergence conditionnelle via la formule de la moyenne. Enfin, il calcule sa valeur exacte en introduisant une fonction auxiliaire dépendant d'un paramètre λ et en étudiant ses propriétés.",
+  "summary": "L'exercice demande de montrer que l'intégrale impropre $\\int_{0}^{+\\infty} \\frac{\\sin t}{t} dt$ n'est pas absolument convergente, puis d'établir sa convergence conditionnelle. Il utilise ensuite des techniques d'analyse pour calculer sa valeur exacte.",
   "concepts": [
     "intégrale impropre",
     "convergence absolue",
     "convergence conditionnelle",
-    "formule de la moyenne",
     "théorème des valeurs intermédiaires",
-    "théorème de dérivation sous le signe intégral",
-    "fonction continue",
-    "fonction dérivable"
+    "critère de Cauchy",
+    "formule de la moyenne",
+    "continuité uniforme",
+    "dérivabilité"
   ],
   "methods": [
     "intégration par parties",
-    "critère de Cauchy",
+    "changement de variable",
     "encadrement d'intégrales",
-    "limite uniforme",
-    "développement en série",
+    "utilisation de la formule de la moyenne",
+    "étude de la convergence uniforme",
     "calcul de limite"
   ],
   "objects": [
     "intégrale de Dirichlet",
-    "fonction exponentielle",
-    "fonction sinus",
-    "fonction arctangente",
     "fonction décroissante",
-    "intégrale généralisée"
+    "primitive",
+    "fonction exponentielle",
+    "fonction sinus"
   ],
-  "content_hash": "6d75f27a954b2557ca01c3bceaff899f36b23eafc8cce4c84dc6597317ecea92",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:33:08.974Z"
+  "content_hash": "3ea03d45f8c6d0b4ff80698512b754447bef7ba7129184c8bbee464df07088a0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T09:44:17.060Z"
 }

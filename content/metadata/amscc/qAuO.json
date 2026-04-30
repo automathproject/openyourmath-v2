@@ -1,0 +1,32 @@
+{
+  "uuid": "qAuO",
+  "source_path": "amscc/qAuO.tex",
+  "summary": "L'exercice demande de comparer l'homogénéité des notes de deux IUT en utilisant des tests statistiques. Il s'agit de calculer des coefficients de variation, de formuler et réaliser un test d'égalité des variances (test de Fisher), d'interpréter les résultats et de construire un intervalle de confiance pour le rapport des variances.",
+  "concepts": [
+    "test d'hypothèses",
+    "test de Fisher",
+    "égalité des variances",
+    "coefficient de variation",
+    "intervalle de confiance",
+    "loi de Fisher",
+    "p-valeur",
+    "hypothèse nulle"
+  ],
+  "methods": [
+    "calcul du coefficient de variation",
+    "formulation des hypothèses statistiques",
+    "calcul de la statistique de test de Fisher",
+    "détermination de la région critique",
+    "construction d'un intervalle de confiance pour un rapport de variances"
+  ],
+  "objects": [
+    "écart-type empirique",
+    "moyenne échantillonnale",
+    "rapport de variances",
+    "statistique de Fisher",
+    "intervalle de confiance"
+  ],
+  "content_hash": "352a4be10ea00f9d12964b7e6de74919f94b92bc423c448e8773da729f17a68c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T10:01:34.038Z"
+}

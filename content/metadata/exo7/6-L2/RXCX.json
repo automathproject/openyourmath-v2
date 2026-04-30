@@ -1,32 +1,23 @@
 {
   "uuid": "RXCX",
   "source_path": "exo7/6-L2/RXCX.tex",
-  "summary": "L'exercice demande de déterminer si une forme différentielle donnée est exacte sur un ouvert de ℝ², puis d'en trouver les primitives si elle l'est. Il aborde aussi la recherche d'un facteur intégrant pour une forme non exacte.",
+  "summary": "L'exercice demande de déterminer si des formes différentielles données sont exactes. Si c'est le cas, il faut trouver leurs primitives. Sinon, il faut chercher un facteur intégrant spécifique.",
   "concepts": [
     "forme différentielle exacte",
     "forme différentielle fermée",
     "théorème de Schwarz",
     "primitive d'une forme différentielle",
     "facteur intégrant",
-    "classe C¹",
-    "ouvert étoilé",
-    "convexité"
+    "classe C^1",
+    "ouvert étoilé"
   ],
-  "methods": [
-    "calcul des dérivées partielles",
-    "vérification des conditions d'exactitude",
-    "recherche de primitives",
-    "intégration par parties",
-    "résolution d'équations différentielles"
-  ],
+  "methods": [],
   "objects": [
-    "forme différentielle",
-    "fonction de classe C¹",
-    "ouvert étoilé",
-    "primitive",
+    "formes différentielles",
+    "primitives",
     "facteur intégrant"
   ],
-  "content_hash": "64b94f62e2cb8d38c2f52a284cd32a3e80dcfa6552eb7cd739a04479ead8b2a2",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:06:23.180Z"
+  "content_hash": "9b5e75bde7f5d0865612bbbba23470a03c2b27d6a5434eef2c99ca24be7beacb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T09:43:21.429Z"
 }

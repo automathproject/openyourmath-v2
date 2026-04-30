@@ -1,0 +1,31 @@
+{
+  "uuid": "ALFK",
+  "source_path": "exo7/1-L1/ALFK.tex",
+  "summary": "Déterminer le rang de six matrices différentes en fonction de paramètres variables. L'exercice demande d'analyser la structure linéaire de matrices de tailles variées avec des éléments dépendant de paramètres.",
+  "concepts": [
+    "rang d'une matrice",
+    "opérations élémentaires sur les lignes/colonnes",
+    "inversibilité d'une matrice",
+    "système linéaire",
+    "matrice symétrique",
+    "matrice circulante"
+  ],
+  "methods": [
+    "réduction par le pivot de Gauss",
+    "manipulation de lignes/colonnes",
+    "analyse de cas",
+    "calcul de déterminant",
+    "comparaison de vecteurs colonnes"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice 3x3",
+    "matrice 4x4",
+    "matrice circulante",
+    "matrice symétrique",
+    "paramètres variables"
+  ],
+  "content_hash": "659652fdd0bad0fbebb32167f329afc203cdde604af59d350b14499716a3b883",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T09:56:46.611Z"
+}

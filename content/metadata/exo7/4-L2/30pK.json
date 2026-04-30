@@ -1,0 +1,31 @@
+{
+  "uuid": "30pK",
+  "source_path": "exo7/4-L2/30pK.tex",
+  "summary": "Résoudre et discuter des systèmes linéaires à paramètres en fonction des valeurs des paramètres. Les systèmes sont de dimensions variables (3x3, 4x4) et certains incluent des conditions spécifiques sur les coefficients.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "théorème de Cramer",
+    "déterminant",
+    "inconnues principales",
+    "compatibilité d'un système",
+    "espace des solutions"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "formules de Cramer",
+    "réduction de système",
+    "choix d'inconnues principales",
+    "condition de compatibilité"
+  ],
+  "objects": [
+    "système linéaire à paramètres",
+    "matrice carrée",
+    "déterminant principal",
+    "inconnues principales",
+    "espace des solutions"
+  ],
+  "content_hash": "244eed539bf12bef14ea5db49f9f6383f2e614012c93705bd12dd181719d0f75",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T09:49:00.269Z"
+}

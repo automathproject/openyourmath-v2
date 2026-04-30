@@ -1,0 +1,30 @@
+{
+  "uuid": "DkOf",
+  "source_path": "amscc/DkOf.tex",
+  "summary": "L'exercice demande de tester si le nombre d'entretiens d'embauche obtenus par des demandeurs d'emploi suit une loi de Poisson, en utilisant un test du chi-deux avec un seuil de significativité de 5%. Les données observées sont fournies sous forme de tableau d'effectifs.",
+  "concepts": [
+    "test d'adéquation du chi-deux",
+    "loi de Poisson",
+    "hypothèse nulle",
+    "hypothèse alternative",
+    "test bilatéral",
+    "effectifs observés",
+    "effectifs théoriques",
+    "seuil de significativité"
+  ],
+  "methods": [
+    "estimation du paramètre lambda",
+    "calcul des probabilités de Poisson",
+    "calcul de la statistique du chi-deux",
+    "comparaison avec la valeur critique"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "tableau de fréquences",
+    "statistique de test",
+    "valeur critique"
+  ],
+  "content_hash": "a05943245c40ca58c1b89348787aaf57939c31c26311ce19203e6f21842e60d2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T10:00:36.113Z"
+}

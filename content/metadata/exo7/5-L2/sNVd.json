@@ -1,0 +1,35 @@
+{
+  "uuid": "sNVd",
+  "source_path": "exo7/5-L2/sNVd.tex",
+  "summary": "Résoudre plusieurs systèmes d'équations différentielles linéaires à coefficients constants, avec ou sans second membre, en déterminant les solutions générales ou particulières. Certains systèmes incluent des conditions initiales.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "système d'équations différentielles",
+    "diagonalisation de matrice",
+    "valeurs propres",
+    "vecteurs propres",
+    "espace affine",
+    "solution générale",
+    "solution particulière",
+    "variation de la constante"
+  ],
+  "methods": [
+    "diagonalisation",
+    "changement de base",
+    "méthode de variation de la constante",
+    "résolution du système homogène associé",
+    "calcul de polynôme caractéristique",
+    "détermination des solutions réelles à partir des solutions complexes"
+  ],
+  "objects": [
+    "système d'équations différentielles",
+    "matrice carrée",
+    "vecteur propre",
+    "valeur propre",
+    "solution affine",
+    "solution particulière"
+  ],
+  "content_hash": "4b52d3469204e8a917c041d38cc3cf280cfda173b77d471135169822bfaa805d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T09:53:05.987Z"
+}

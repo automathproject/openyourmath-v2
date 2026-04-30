@@ -1,31 +1,28 @@
 {
   "uuid": "wRv5",
   "source_path": "exo7/2-L1/wRv5.tex",
-  "summary": "Démontrer que la somme de deux fonctions Riemann-intégrables est Riemann-intégrable sur un intervalle borné, puis étendre ce résultat à la multiplication par un scalaire. Montrer également que l'intégrale préserve l'ordre des fonctions et que la limite uniforme de fonctions Riemann-intégrables est Riemann-intégrable.",
+  "summary": "L'exercice demande de démontrer quatre propriétés fondamentales des fonctions intégrables au sens de Riemann : l'additivité, l'homogénéité, l'ordre et la stabilité par limite uniforme.",
   "concepts": [
-    "intégrabilité Riemann",
-    "somme de fonctions",
-    "multiplication par un scalaire",
-    "inégalités d'intégrales",
-    "limite uniforme",
-    "subdivision d'intervalle",
-    "somme inférieure et supérieure"
+    "intégrabilité au sens de Riemann",
+    "subdivision d'un intervalle",
+    "somme inférieure et supérieure de Riemann",
+    "limite uniforme de fonctions",
+    "inégalités de Riemann",
+    "théorème de l'intégrale de Riemann"
   ],
   "methods": [
-    "construction de subdivision fine",
-    "comparaison des sommes de Darboux",
+    "construction de subdivisions fines",
+    "manipulation des sommes de Riemann",
     "utilisation de l'inégalité triangulaire",
-    "passage à la limite uniforme",
-    "linéarité de l'intégrale"
+    "passage à la limite uniforme"
   ],
   "objects": [
-    "fonctions Riemann-intégrables",
-    "subdivision d'intervalle",
-    "somme inférieure et supérieure",
-    "limite uniforme de fonctions",
-    "intégrale de fonctions"
+    "fonction intégrable au sens de Riemann",
+    "subdivision d'un intervalle",
+    "somme inférieure et supérieure de Riemann",
+    "suite de fonctions convergeant uniformément"
   ],
-  "content_hash": "74d3c92da15204a2fe9f0f93e0060dfb7521405a9dc13b3dbffcb30f1b10efe1",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:36:33.195Z"
+  "content_hash": "a0bcebe36e526b1c5f52c970eb926a934519eee123cf48942a3616a8cea9b112",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T09:46:06.877Z"
 }

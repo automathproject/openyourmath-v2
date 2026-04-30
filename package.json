@@ -29,6 +29,7 @@
     "authors:add-exo7-license": "node scripts/update-authors-licenses.js",
     "index:exercises": "node scripts/index-exercises.js",
     "index:exercises:force": "node scripts/index-exercises.js --force",
+    "cache:embeddings:restore": "node scripts/ia/restore-embedding-cache.js",
     "cache:embeddings:stats": "node scripts/ia/cache-stats.js",
     "cache:embeddings:check": "node scripts/ia/cache-stats.js --verbose",
     "test": "vitest",

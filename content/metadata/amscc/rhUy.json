@@ -1,0 +1,32 @@
+{
+  "uuid": "rhUy",
+  "source_path": "amscc/rhUy.tex",
+  "summary": "Comparaison des consommations moyennes de chauffage entre deux régions A et B à l'aide d'un test de Welch pour moyennes indépendantes avec variances inégales. Analyse descriptive préalable incluant calculs de différences de moyennes et coefficients de variation.",
+  "concepts": [
+    "test de Student",
+    "test de Welch",
+    "test de Fisher",
+    "intervalle de confiance",
+    "hypothèse nulle",
+    "test bilatéral",
+    "loi de Student",
+    "loi de Fisher"
+  ],
+  "methods": [
+    "test d'égalité des variances",
+    "calcul de la statistique de test",
+    "calcul des degrés de liberté de Welch-Satterthwaite",
+    "construction d'intervalle de confiance",
+    "analyse descriptive des données"
+  ],
+  "objects": [
+    "moyennes échantillonnales",
+    "variances empiriques",
+    "coefficient de variation",
+    "statistique t de Student",
+    "statistique F de Fisher"
+  ],
+  "content_hash": "eb5cf539748dbe3936068259e5e73a318f7080158d361786bfe58fce90a003d9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T10:01:58.629Z"
+}

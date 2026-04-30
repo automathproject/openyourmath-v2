@@ -1,0 +1,33 @@
+{
+  "uuid": "td23",
+  "source_path": "amscc/td23.tex",
+  "summary": "L'exercice demande de construire un estimateur de la variance d'une loi normale centrée, d'en étudier la loi, puis de construire différents intervalles de confiance pour le paramètre inconnu. Il aborde aussi la comparaison entre intervalles de confiance non asymptotiques et asymptotiques, ainsi que la construction d'un test d'hypothèse.",
+  "concepts": [
+    "loi normale",
+    "estimateur sans biais",
+    "loi du chi-deux",
+    "intervalle de confiance",
+    "théorème central limite",
+    "test d'hypothèse",
+    "convergence en loi",
+    "fonction de répartition"
+  ],
+  "methods": [
+    "méthode des moments",
+    "standardisation",
+    "approximation gaussienne",
+    "construction d'intervalle de confiance par quantiles",
+    "calcul de la p-valeur",
+    "comparaison d'intervalles de confiance"
+  ],
+  "objects": [
+    "estimateur de la variance",
+    "variable aléatoire de loi normale",
+    "intervalle de confiance",
+    "test statistique",
+    "fonction quantile"
+  ],
+  "content_hash": "44cd34593964d5fa335118199632b4fce6ed0234b4b9ba5d685497aabb81dd9d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T10:02:25.393Z"
+}

@@ -1,0 +1,15 @@
+{
+  "uuid": "mK7w",
+  "source_path": "amscc/mK7w.tex",
+  "summary": "L'exercice demande de construire un réseau de neurones à propagation avant pour détecter si un point appartient à un triangle donné du plan. Il s'agit de déterminer les équations des droites formant les côtés du triangle, de caractériser les demi-plans contenant le triangle, et de concevoir une architecture de réseau de neurones utilisant des fonctions d'activation Heaviside pour implémenter la fonction indicatrice du triangle.",
+  "concepts": [
+    "détection de points dans un triangle",
+    "combinaison logique de détecteurs",
+    "architecture multi-couches de réseaux de neurones"
+  ],
+  "methods": [],
+  "objects": [],
+  "content_hash": "c578255889c5c2900083b36a4bb670d21868c0e6ea0026965d35bc225cce6396",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T09:59:28.507Z"
+}

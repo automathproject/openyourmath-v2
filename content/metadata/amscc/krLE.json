@@ -1,0 +1,32 @@
+{
+  "uuid": "krLE",
+  "source_path": "amscc/krLE.tex",
+  "summary": "L'exercice demande d'analyser une fonction de deux variables définie sur un domaine borné de ℝ², d'identifier son domaine de définition parmi des graphiques, d'étudier l'existence d'extremums globaux et locaux, et de déterminer les valeurs de ces extremums.",
+  "concepts": [
+    "extremums locaux",
+    "extremums globaux",
+    "continuité",
+    "fermeture d'un ensemble",
+    "bornitude d'un ensemble",
+    "points critiques",
+    "matrice hessienne",
+    "conditions du second ordre"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "résolution de systèmes d'équations",
+    "analyse des variations de fonctions",
+    "application du théorème des valeurs extrêmes",
+    "étude de la matrice hessienne"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "domaine borné",
+    "points critiques",
+    "extremums globaux",
+    "extremums locaux"
+  ],
+  "content_hash": "a58c5ca92ad86682475a0c11eb6aa1dc52e3bd8207f7c8f7007d74a7202032c4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T09:53:58.844Z"
+}

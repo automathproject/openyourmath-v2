@@ -1,0 +1,34 @@
+{
+  "uuid": "QeZr",
+  "source_path": "amscc/QeZr.tex",
+  "summary": "L'exercice demande d'analyser la précision d'un système d'arme en testant si une section d'infanterie respecte un standard de dispersion des impacts de tir. Il combine des tests d'hypothèses sur la variance, des intervalles de confiance, et des comparaisons statistiques entre sections.",
+  "concepts": [
+    "test d'hypothèses sur une variance",
+    "loi du chi-deux",
+    "intervalle de confiance pour un écart-type",
+    "test de normalité",
+    "test de comparaison de variances",
+    "statistique descriptive",
+    "valeurs aberrantes",
+    "test unilatéral"
+  ],
+  "methods": [
+    "calcul de la statistique de test chi-deux",
+    "détermination de la région critique",
+    "construction d'un intervalle de confiance",
+    "analyse des quartiles et de l'écart interquartile",
+    "critère de Tukey pour les valeurs aberrantes",
+    "test de Student pour la moyenne"
+  ],
+  "objects": [
+    "écart-type",
+    "variance",
+    "moyenne",
+    "distribution normale",
+    "intervalle de confiance",
+    "statistique de test chi-deux"
+  ],
+  "content_hash": "b71fb74dd6834e280839888efa948c1d7d3b154a6cd59ec4963309de6c1f2db3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T10:01:06.968Z"
+}

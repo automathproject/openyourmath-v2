@@ -1,0 +1,26 @@
+{
+  "uuid": "fsT2",
+  "source_path": "amscc/fsT2.tex",
+  "summary": "L'exercice porte sur des boulons dont le diamètre suit une loi normale. Il demande de déterminer des lois dérivées (moyenne empirique, somme de carrés centrés), de calculer des probabilités et des intervalles de confiance pour le diamètre moyen.",
+  "concepts": [
+    "loi normale",
+    "moyenne empirique",
+    "variance empirique",
+    "loi du chi-deux",
+    "loi de Student",
+    "théorème de Fisher",
+    "quantiles"
+  ],
+  "methods": [],
+  "objects": [
+    "boulons",
+    "diamètre",
+    "écart-type",
+    "variance",
+    "moyenne",
+    "intervalle de confiance"
+  ],
+  "content_hash": "6485b4ed017c07695fac10fb71671e06cfc8379f73e5fc681b7e78c03870f113",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-30T10:07:53.194Z"
+}
