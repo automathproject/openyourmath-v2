@@ -219,19 +219,55 @@ function parseSummaryJson(text) {
   throw new Error(`Impossible de parser la réponse LLM comme JSON :\n${text.slice(0, 300)}`);
 }
 
+// Alias de champs que les modèles locaux utilisent parfois à la place des noms attendus.
+const SUMMARY_ALIASES  = ['contexte', 'description', 'présentation', 'presentation', 'texte'];
+const CONCEPTS_ALIASES = ['concepts_clés', 'concepts_cles', 'notions', 'théorèmes', 'theoremes'];
+const METHODS_ALIASES  = ['méthodes', 'methodes', 'techniques', 'approches'];
+const OBJECTS_ALIASES  = ['objets_mathématiques', 'objets_mathematiques', 'éléments', 'elements'];
+
 /**
- * Normalise les champs tableau avant validation.
- * Les modèles locaux retournent parfois une string CSV au lieu d'un tableau.
+ * Normalise les champs avant validation.
+ * Gère les alias de noms, les tableaux sérialisés en string CSV,
+ * et les summary imbriqués en objet.
  */
 function normalizeSummary(obj) {
   if (!obj || typeof obj !== 'object') return obj;
-  for (const field of ['concepts', 'methods', 'objects']) {
+
+  // Résolution des alias pour summary
+  if (!obj.summary) {
+    for (const alias of SUMMARY_ALIASES) {
+      if (typeof obj[alias] === 'string' && obj[alias].trim().length >= 10) {
+        obj.summary = obj[alias];
+        break;
+      }
+    }
+  }
+
+  // Si summary est un objet imbriqué, extraire la première valeur string trouvée
+  if (obj.summary && typeof obj.summary === 'object') {
+    const val = Object.values(obj.summary).find(v => typeof v === 'string' && v.trim().length >= 10);
+    obj.summary = val ?? '';
+  }
+
+  // Résolution des alias pour les tableaux
+  for (const [field, aliases] of [
+    ['concepts', CONCEPTS_ALIASES],
+    ['methods',  METHODS_ALIASES],
+    ['objects',  OBJECTS_ALIASES],
+  ]) {
+    if (!Array.isArray(obj[field]) && !obj[field]) {
+      for (const alias of aliases) {
+        if (obj[alias]) { obj[field] = obj[alias]; break; }
+      }
+    }
+    // String CSV → tableau
     if (typeof obj[field] === 'string') {
       obj[field] = obj[field].split(',').map(s => s.trim()).filter(Boolean);
     } else if (!Array.isArray(obj[field])) {
       obj[field] = [];
     }
   }
+
   return obj;
 }
 
