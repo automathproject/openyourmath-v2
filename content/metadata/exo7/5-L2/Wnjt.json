@@ -1,0 +1,26 @@
+{
+  "uuid": "Wnjt",
+  "source_path": "exo7/5-L2/Wnjt.tex",
+  "summary": "L'exercice demande de démontrer que l'application linéaire L, qui associe à une suite convergente sa limite, est continue et de calculer sa norme dans l'espace des suites réelles convergentes muni de la norme sup.",
+  "concepts": [
+    "espace vectoriel normé",
+    "suite convergente",
+    "application linéaire",
+    "continuité",
+    "norme d'une application linéaire",
+    "topologie des espaces vectoriels normés"
+  ],
+  "methods": [
+    "définition de la continuité",
+    "calcul de la norme d'une application linéaire",
+    "utilisation de la norme sup"
+  ],
+  "objects": [
+    "application linéaire L",
+    "suite convergente",
+    "espace des suites réelles convergentes"
+  ],
+  "content_hash": "0515df64d82a2a1094da0066370cd2c43cedc172c1333bff2d62970614ec4918",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:57:46.799Z"
+}

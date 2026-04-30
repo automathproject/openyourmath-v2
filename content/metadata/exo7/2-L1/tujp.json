@@ -1,0 +1,26 @@
+{
+  "uuid": "tujp",
+  "source_path": "exo7/2-L1/tujp.tex",
+  "summary": "Calculer la limite d'une suite de moyennes de parties entières de multiples d'un réel x. L'énoncé demande d'évaluer le comportement asymptotique de cette moyenne.",
+  "concepts": [
+    "partie entière",
+    "suite numérique",
+    "limite infinie",
+    "moyenne arithmétique",
+    "convergence simple",
+    "théorème des gendarmes"
+  ],
+  "methods": [
+    "encadrement",
+    "approximation par des inégalités",
+    "utilisation de la linéarité de la limite"
+  ],
+  "objects": [
+    "suite de parties entières",
+    "moyenne de termes",
+    "limite de suite"
+  ],
+  "content_hash": "31b29beca11756f43ba8eac4cd7a9e552d5152ffd51b113e04c0c6bcc2862a84",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:38:59.252Z"
+}

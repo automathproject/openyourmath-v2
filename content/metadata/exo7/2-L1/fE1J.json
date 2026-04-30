@@ -1,0 +1,25 @@
+{
+  "uuid": "fE1J",
+  "source_path": "exo7/2-L1/fE1J.tex",
+  "summary": "Montrer qu'une suite définie par un terme alterné et un terme décroissant vers 0 n'est pas convergente.",
+  "concepts": [
+    "convergence de suite",
+    "sous-suite",
+    "limite de suite",
+    "théorème de la limite des sous-suites",
+    "raisonnement par l'absurde"
+  ],
+  "methods": [
+    "extraction de sous-suites",
+    "application du théorème de la limite des sous-suites",
+    "raisonnement par contradiction"
+  ],
+  "objects": [
+    "suite numérique",
+    "sous-suite",
+    "limite"
+  ],
+  "content_hash": "37032d7a5c0727d75474ad3403aee09016be391e351eab6d2a15ab92dc1392e2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:59:43.788Z"
+}

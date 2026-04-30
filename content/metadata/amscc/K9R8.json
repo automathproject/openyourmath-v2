@@ -1,0 +1,28 @@
+{
+  "uuid": "K9R8",
+  "source_path": "amscc/K9R8.tex",
+  "summary": "L'exercice demande de déterminer la loi de la somme de deux variables aléatoires indépendantes suivant chacune une loi normale centrée réduite.",
+  "concepts": [
+    "loi normale",
+    "variable aléatoire indépendante",
+    "densité de probabilité",
+    "intégrale impropre",
+    "convolution de densités",
+    "propriété de stabilité de la loi normale"
+  ],
+  "methods": [
+    "calcul de densité de somme",
+    "changement de variable",
+    "intégration par parties",
+    "simplification exponentielle"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "somme de variables aléatoires",
+    "densité de probabilité",
+    "intégrale"
+  ],
+  "content_hash": "4c2fedb3135940a186fc387020a53891f75ec0c41d75fecf1a6f926ec0a02a7e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:45:12.768Z"
+}

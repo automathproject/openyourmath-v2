@@ -1,0 +1,28 @@
+{
+  "uuid": "P9tc",
+  "source_path": "amscc/P9tc.tex",
+  "summary": "L'exercice demande d'évaluer la probabilité qu'une erreur finale, somme de 1 million d'erreurs d'arrondi indépendantes uniformes, soit inférieure à une certaine valeur absolue. Le contexte est celui des erreurs d'arrondi dans les calculs informatiques.",
+  "concepts": [
+    "théorème central limite",
+    "loi uniforme",
+    "espérance mathématique",
+    "écart-type",
+    "variable aléatoire indépendante",
+    "standardisation"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de l'espérance",
+    "calcul de l'écart-type"
+  ],
+  "objects": [
+    "somme de variables aléatoires indépendantes",
+    "erreur d'arrondi",
+    "variable aléatoire uniforme",
+    "variable aléatoire gaussienne"
+  ],
+  "content_hash": "3c6aa97af9a4f9adb4cfa6ecd48791510ea389802fbe460a57deb2fb657d9047",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:49:00.800Z"
+}

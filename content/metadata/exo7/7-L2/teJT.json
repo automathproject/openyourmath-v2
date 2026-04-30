@@ -1,0 +1,25 @@
+{
+  "uuid": "teJT",
+  "source_path": "exo7/7-L2/teJT.tex",
+  "summary": "On considère deux variables aléatoires U et V de même loi, à valeurs dans {1, ..., N}. On définit X = U - V et Y = U + V, et on demande de déterminer la covariance entre X et Y.",
+  "concepts": [
+    "covariance",
+    "espérance mathématique",
+    "moments d'une variable aléatoire",
+    "loi de probabilité",
+    "variable aléatoire discrète"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "linéarité de l'espérance",
+    "calcul de la covariance"
+  ],
+  "objects": [
+    "variables aléatoires indépendantes",
+    "espérance conditionnelle",
+    "produit de variables aléatoires"
+  ],
+  "content_hash": "4636838fd1acdafa9c68451208b4c6eb02b26ce86ef2df566a043350eb086bf3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:42:05.299Z"
+}

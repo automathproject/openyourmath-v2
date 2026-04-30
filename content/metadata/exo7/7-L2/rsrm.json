@@ -1,0 +1,21 @@
+{
+  "uuid": "rsrm",
+  "source_path": "exo7/7-L2/rsrm.tex",
+  "summary": "Calculer le nombre total de bises échangées entre 30 personnes où chaque personne fait 2 bises à toutes les autres.",
+  "concepts": [
+    "combinaisons",
+    "nombre de combinaisons de 2 éléments",
+    "principe de dénombrement"
+  ],
+  "methods": [
+    "calcul de combinaisons",
+    "application du coefficient binomial"
+  ],
+  "objects": [
+    "ensemble de personnes",
+    "paires de personnes"
+  ],
+  "content_hash": "48ea7e5329c9af5ffaa817a71c474ade90b59a3c30bb011b808ae62572af4472",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:40:44.502Z"
+}

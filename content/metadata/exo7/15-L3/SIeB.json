@@ -1,0 +1,24 @@
+{
+  "uuid": "SIeB",
+  "source_path": "exo7/15-L3/SIeB.tex",
+  "summary": "L'exercice demande de vérifier la continuité d'un opérateur A défini sur l'espace des fonctions continues sur [0,1] et de calculer sa norme opérateur. Il pose ensuite la question de l'existence de solutions non nulles à l'équation Af=f.",
+  "concepts": [
+    "continuité uniforme",
+    "norme opérateur",
+    "théorème du point fixe de Banach",
+    "espace de Banach",
+    "opérateur linéaire continu"
+  ],
+  "methods": [
+    "calcul de norme d'opérateur",
+    "application du théorème du point fixe"
+  ],
+  "objects": [
+    "opérateur A",
+    "espace C([0,1])",
+    "fonction continue"
+  ],
+  "content_hash": "c03c12d5a9b46179c5083b56f4a4ebe802da0b3aaa263a0d93c9989e39c1366c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:30:45.493Z"
+}

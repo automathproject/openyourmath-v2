@@ -1,0 +1,26 @@
+{
+  "uuid": "r3ax",
+  "source_path": "amscc/r3ax.tex",
+  "summary": "L'exercice demande d'identifier la loi de probabilité d'une variable aléatoire discrète dans différentes situations d'expériences répétées et de calculer son espérance.",
+  "concepts": [
+    "loi binomiale",
+    "loi géométrique",
+    "variable aléatoire discrète",
+    "espérance mathématique",
+    "probabilité indépendante",
+    "expérience de Bernoulli"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "identification de la loi de probabilité"
+  ],
+  "objects": [
+    "variable aléatoire",
+    "nombre de succès",
+    "nombre de lancers",
+    "nombre de demandes"
+  ],
+  "content_hash": "bfe7ff61a42416f14f066da8efae3dd6b8de863d43d0ec5b96427cbdd46a8480",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:40:26.316Z"
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "b1T2",
+  "source_path": "amscc/b1T2.tex",
+  "summary": "L'exercice étudie la résolution d'un système linéaire AX=b avec une matrice tridiagonale A à l'aide de la méthode itérative de Jacobi. Il demande d'exprimer la suite des itérés, d'analyser la convergence de la méthode et de calculer le rayon spectral de la matrice B associée.",
+  "concepts": [
+    "matrice tridiagonale",
+    "valeurs propres",
+    "méthode de Jacobi",
+    "convergence de méthode itérative",
+    "rayon spectral",
+    "norme matricielle",
+    "erreur d'itération",
+    "matrice symétrique"
+  ],
+  "methods": [
+    "décomposition matricielle A=M-N",
+    "calcul de norme infinie",
+    "calcul de rayon spectral",
+    "analyse de convergence",
+    "récurrence sur l'erreur"
+  ],
+  "objects": [
+    "matrice tridiagonale",
+    "suite d'itérés",
+    "erreur d'itération",
+    "matrice B",
+    "norme induite"
+  ],
+  "content_hash": "22165868e6718abae35093991b341fb9702b03a42123f1e7ab778c75df91ec78",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:39:40.946Z"
+}

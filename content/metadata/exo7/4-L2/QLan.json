@@ -1,0 +1,29 @@
+{
+  "uuid": "QLan",
+  "source_path": "exo7/4-L2/QLan.tex",
+  "summary": "Réduire trois matrices carrées sous leur forme de Jordan. Les matrices sont données sans contexte particulier.",
+  "concepts": [
+    "réduction de Jordan",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "blocs de Jordan",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "détermination des valeurs propres",
+    "diagonalisation",
+    "construction des blocs de Jordan"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice 4x4",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "f2d39bedb200553119622ec9e664b2de384bb42a8f7dd82faf85c9a85c1561d4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:42:53.185Z"
+}

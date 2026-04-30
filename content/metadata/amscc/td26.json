@@ -1,0 +1,27 @@
+{
+  "uuid": "td26",
+  "source_path": "amscc/td26.tex",
+  "summary": "L'exercice étudie une variable aléatoire exponentielle translatée et son échantillon i.i.d. Il demande de montrer la transformation exponentielle standard, de déterminer la fonction de répartition du minimum de l'échantillon, d'étudier sa convergence en moyenne quadratique et de construire un intervalle de confiance pour le paramètre θ.",
+  "concepts": [
+    "variable aléatoire exponentielle",
+    "échantillon i.i.d.",
+    "fonction de répartition",
+    "convergence en moyenne quadratique",
+    "intervalle de confiance",
+    "paramètre inconnu"
+  ],
+  "methods": [
+    "transformation de variable aléatoire",
+    "calcul de fonction de répartition",
+    "étude de convergence",
+    "construction d'intervalle de confiance"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle translatée",
+    "minimum d'échantillon",
+    "paramètre θ"
+  ],
+  "content_hash": "e1a20c9b3984bfceb00204dcb0ade04330d5b8abb54d13aae04a7c32dd17b446",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:58:27.078Z"
+}

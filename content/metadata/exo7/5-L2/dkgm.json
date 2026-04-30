@@ -1,0 +1,30 @@
+{
+  "uuid": "dkgm",
+  "source_path": "exo7/5-L2/dkgm.tex",
+  "summary": "L'exercice demande de prouver la convergence uniforme d'une suite de fonctions de classe C^p sur un intervalle [a,b], sous des conditions sur la convergence uniforme de leurs dérivées p-èmes et la convergence en certains points distincts.",
+  "concepts": [
+    "convergence uniforme",
+    "fonction de classe C^p",
+    "polynôme de Lagrange",
+    "formule de Taylor-intégrale",
+    "matrice de Vandermonde",
+    "primitive d'une fonction"
+  ],
+  "methods": [
+    "construction de polynôme interpolateur",
+    "réduction par soustraction",
+    "formule de Taylor-intégrale",
+    "résolution de système linéaire",
+    "formules de Cramer"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "dérivée p-ème",
+    "polynôme de Lagrange",
+    "fonction bornée",
+    "matrice de Vandermonde"
+  ],
+  "content_hash": "549931eb51ad7e023d2e19ad787ddea27e08991d6b1a2260d27a241ee70bd268",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:58:59.182Z"
+}

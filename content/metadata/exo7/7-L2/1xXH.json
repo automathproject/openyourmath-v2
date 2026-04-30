@@ -1,0 +1,27 @@
+{
+  "uuid": "1xXH",
+  "source_path": "exo7/7-L2/1xXH.tex",
+  "summary": "Calcul de probabilités pour une variable aléatoire normale représentant l'épaisseur d'une plaque de tôle, puis détermination de la loi, de l'espérance et de la variance de la somme de 20 telles variables indépendantes.",
+  "concepts": [
+    "loi normale",
+    "espérance",
+    "variance",
+    "variable aléatoire",
+    "somme de variables aléatoires indépendantes",
+    "standardisation"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de probabilités avec la loi normale",
+    "linéarité de l'espérance",
+    "additivité de la variance"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "somme de variables aléatoires indépendantes",
+    "épaisseur de plaque"
+  ],
+  "content_hash": "9aaafe398edbbb63ca31a396b9d894af1c9c1357b26be449c6c129930fbd4574",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:13:50.478Z"
+}

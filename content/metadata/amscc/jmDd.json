@@ -1,0 +1,30 @@
+{
+  "uuid": "jmDd",
+  "source_path": "amscc/jmDd.tex",
+  "summary": "L'exercice demande de déterminer la loi de probabilité d'une variable aléatoire X représentant le temps de fonctionnement d'une machine composée de trois alternateurs indépendants à durée de vie exponentielle, puis de calculer son espérance. Il aborde ensuite la probabilité conditionnelle de fonctionnement après un temps t.",
+  "concepts": [
+    "loi exponentielle",
+    "variable aléatoire",
+    "fonction de répartition",
+    "densité de probabilité",
+    "espérance mathématique",
+    "probabilité conditionnelle",
+    "indépendance"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "détermination de la densité de probabilité",
+    "calcul d'espérance par intégration",
+    "utilisation de la mémoire sans âge"
+  ],
+  "objects": [
+    "variable aléatoire à densité",
+    "durée de vie exponentielle",
+    "fonction de répartition",
+    "densité de probabilité",
+    "espérance"
+  ],
+  "content_hash": "5fd87dcc44be7559a4ba2d78be74d41797f50b09bdb7d799e0d86107c0564eef",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:04:14.906Z"
+}

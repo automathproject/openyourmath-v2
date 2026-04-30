@@ -1,0 +1,31 @@
+{
+  "uuid": "iqzN",
+  "source_path": "exo7/11-L3/iqzN.tex",
+  "summary": "L'exercice étudie une application entre la sphère unité et un cylindre dans ℝ³. Il demande de visualiser géométriquement cette application, de calculer la première forme fondamentale de la sphère et du cylindre, et d'analyser les propriétés différentielles de l'application (difféomorphisme, isométrie). Enfin, il propose de calculer l'aire d'une portion de sphère entre deux grands cercles.",
+  "concepts": [
+    "sphère unité",
+    "cylindre",
+    "paramétrage local",
+    "première forme fondamentale",
+    "difféomorphisme local",
+    "isométrie locale",
+    "conservation des aires",
+    "aire d'une surface"
+  ],
+  "methods": [
+    "paramétrisation en coordonnées polaires",
+    "calcul de la première forme fondamentale",
+    "analyse des propriétés différentielles",
+    "calcul d'aire de surface"
+  ],
+  "objects": [
+    "application f",
+    "sphère unité ℱ",
+    "cylindre ℱ",
+    "paramétrage local F",
+    "application G = f ∘ F"
+  ],
+  "content_hash": "a4ebbeaa212408a955970482827fa769b6d20879ecf0708faef16b5885f87ef2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:24:27.573Z"
+}

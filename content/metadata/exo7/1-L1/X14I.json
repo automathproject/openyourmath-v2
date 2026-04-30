@@ -1,0 +1,27 @@
+{
+  "uuid": "X14I",
+  "source_path": "exo7/1-L1/X14I.tex",
+  "summary": "L'exercice demande de montrer qu'un polynôme à coefficients réels a moins de racines strictement positives distinctes que de changements de signe dans sa suite de coefficients. Il demande ensuite de prouver qu'un polynôme nul sur un ensemble fini est identiquement nul.",
+  "concepts": [
+    "polynôme à coefficients réels",
+    "racines strictement positives",
+    "changement de signe",
+    "polynôme identiquement nul",
+    "récurrence",
+    "développement en série entière"
+  ],
+  "methods": [
+    "récurrence sur le cardinal de l'ensemble des exposants",
+    "factorisation du terme de plus bas degré",
+    "déivation du quotient",
+    "analyse des parties réelle et imaginaire"
+  ],
+  "objects": [
+    "polynôme",
+    "suite de coefficients",
+    "racines strictement positives"
+  ],
+  "content_hash": "f52d0bc5354fed70f59a79bc776db9ca37abf5fdaeb9a80e06947bbb86561d21",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:03:01.661Z"
+}

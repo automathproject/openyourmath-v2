@@ -1,0 +1,28 @@
+{
+  "uuid": "nSDY",
+  "source_path": "amscc/nSDY.tex",
+  "summary": "L'exercice demande de modéliser une expérience aléatoire avec un dé à 6 faces truqué, puis de calculer diverses probabilités d'événements associés. On travaille avec des probabilités discrètes et des événements définis sur l'univers des résultats du dé.",
+  "concepts": [
+    "probabilité discrète",
+    "événement",
+    "univers d'une expérience aléatoire",
+    "probabilité conditionnelle",
+    "événements incompatibles",
+    "loi de probabilité"
+  ],
+  "methods": [
+    "calcul de probabilité par sommation",
+    "utilisation de la formule de la probabilité de l'union",
+    "calcul de la probabilité de l'événement complémentaire",
+    "vérification de l'additivité des probabilités"
+  ],
+  "objects": [
+    "dé à 6 faces",
+    "événements A et B",
+    "événements incompatibles C et D",
+    "probabilités des faces"
+  ],
+  "content_hash": "2e97d8fef6f6a8604abad24a90662507a7eb36a0fb364e8ba242414709fa5d1a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:38:46.392Z"
+}

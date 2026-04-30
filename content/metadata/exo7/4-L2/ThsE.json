@@ -1,0 +1,31 @@
+{
+  "uuid": "ThsE",
+  "source_path": "exo7/4-L2/ThsE.tex",
+  "summary": "L'exercice demande de calculer les valeurs propres d'une matrice 3x3 et de déterminer si l'endomorphisme associé est diagonalisable. Il propose ensuite de calculer des puissances de la matrice en utilisant différentes méthodes, dont la formule du binôme de Newton et les polynômes annulateurs.",
+  "concepts": [
+    "valeur propre",
+    "diagonalisation",
+    "polynôme annulateur",
+    "sous-espace vectoriel",
+    "base d'un espace vectoriel",
+    "matrice de passage",
+    "formule du binôme de Newton"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "détermination de la diagonalisabilité",
+    "calcul de puissances de matrice",
+    "division euclidienne de polynômes",
+    "construction de base adaptée"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "endomorphisme",
+    "polynôme annulateur",
+    "vecteur propre",
+    "sous-espace vectoriel"
+  ],
+  "content_hash": "9bdfcaf701072a760b275c4544b962b4d11b2e8770cd9a65cadfccbbae371ced",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:47:33.576Z"
+}

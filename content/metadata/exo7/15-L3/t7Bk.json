@@ -1,0 +1,27 @@
+{
+  "uuid": "t7Bk",
+  "source_path": "exo7/15-L3/t7Bk.tex",
+  "summary": "L'exercice demande de montrer que deux fonctions de ℝ² dans ℝ² sont de classe C¹, de calculer leurs matrices jacobiennes, puis d'appliquer le théorème du point fixe de Banach pour prouver l'existence et l'unicité d'un point fixe.",
+  "concepts": [
+    "théorème du point fixe de Banach",
+    "classe C¹",
+    "matrice jacobienne",
+    "norme d'une matrice",
+    "boule fermée",
+    "point fixe"
+  ],
+  "methods": [
+    "calcul de la matrice jacobienne",
+    "application du théorème du point fixe",
+    "estimation de la norme d'une matrice"
+  ],
+  "objects": [
+    "fonction de ℝ² dans ℝ²",
+    "matrice jacobienne",
+    "boule fermée",
+    "point fixe"
+  ],
+  "content_hash": "ba3580ffc239a3b52b16900adbf83ae34dfac8f4c5b95418587ed8d81a184b6a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:32:35.092Z"
+}

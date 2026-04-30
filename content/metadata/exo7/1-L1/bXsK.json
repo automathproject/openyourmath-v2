@@ -1,0 +1,26 @@
+{
+  "uuid": "bXsK",
+  "source_path": "exo7/1-L1/bXsK.tex",
+  "summary": "Trouver une condition nécessaire et suffisante sur les coefficients p et q d'un polynôme P(X) = X^5 + pX + q pour que deux de ses racines complexes aient pour somme 1.",
+  "concepts": [
+    "racine d'un polynôme",
+    "divisibilité de polynômes",
+    "condition nécessaire et suffisante",
+    "polynôme irréductible",
+    "algèbre linéaire",
+    "système d'équations"
+  ],
+  "methods": [
+    "division euclidienne de polynômes",
+    "calcul de pgcd",
+    "résolution de système d'équations"
+  ],
+  "objects": [
+    "polynôme de degré 5",
+    "racines complexes",
+    "polynôme quadratique"
+  ],
+  "content_hash": "f1b9acbd28e7dd8f243b0a3afd1e4284d77722ea06aa9c0d6706097fc676de4b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:08:42.597Z"
+}

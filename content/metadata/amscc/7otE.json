@@ -1,0 +1,30 @@
+{
+  "uuid": "7otE",
+  "source_path": "amscc/7otE.tex",
+  "summary": "L'exercice demande d'analyser la précision d'un sondage en comparant deux échantillons de tailles différentes, puis de construire un intervalle de confiance pour une proportion observée dans un référendum. Il aborde aussi la question de la taille d'échantillon nécessaire pour une précision donnée.",
+  "concepts": [
+    "intervalle de confiance",
+    "estimation par intervalle",
+    "précision d'un sondage",
+    "taille d'échantillon",
+    "niveau de confiance",
+    "proportion observée",
+    "loi binomiale",
+    "approximation normale"
+  ],
+  "methods": [
+    "calcul d'intervalle de confiance",
+    "standardisation",
+    "approximation gaussienne",
+    "formule de la longueur d'intervalle de confiance"
+  ],
+  "objects": [
+    "proportion",
+    "échantillon aléatoire simple",
+    "taille de population",
+    "intervalle de confiance"
+  ],
+  "content_hash": "e83171290b0db64bfa6a26b95f568dc1cc30158351afe93504a4699234e56280",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:34:21.102Z"
+}

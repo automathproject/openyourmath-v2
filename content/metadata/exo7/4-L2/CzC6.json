@@ -1,0 +1,28 @@
+{
+  "uuid": "CzC6",
+  "source_path": "exo7/4-L2/CzC6.tex",
+  "summary": "L'exercice demande de déterminer si une matrice complexe A, de structure particulière, est diagonalisable. La matrice dépend de n paramètres complexes a₁ à aₙ.",
+  "concepts": [
+    "diagonalisation",
+    "valeur propre",
+    "multiplicité d'une valeur propre",
+    "trace d'une matrice",
+    "rang d'une matrice",
+    "système d'équations linéaires"
+  ],
+  "methods": [
+    "calcul de la trace",
+    "analyse de la multiplicité des valeurs propres",
+    "résolution de système d'équations",
+    "étude de la diagonalisabilité"
+  ],
+  "objects": [
+    "matrice carrée",
+    "valeurs propres",
+    "polynôme caractéristique",
+    "sous-espace propre"
+  ],
+  "content_hash": "006ba389ed90a54b8a6e4adefd942052522aba4911095146d40e3d22ba46ace6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:24:00.093Z"
+}

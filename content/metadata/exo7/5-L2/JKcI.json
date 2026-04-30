@@ -1,0 +1,27 @@
+{
+  "uuid": "JKcI",
+  "source_path": "exo7/5-L2/JKcI.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés sur les points fixes des fonctions continues de [0,1] dans [0,1]. D'abord que l'ensemble des points fixes est fermé et non vide, puis que tout fermé non vide de [0,1] est l'ensemble des points fixes d'une telle fonction.",
+  "concepts": [
+    "continuité",
+    "point fixe",
+    "ensemble fermé",
+    "ensemble non vide",
+    "distance dans un espace métrique",
+    "fonction continue"
+  ],
+  "methods": [
+    "construction explicite de fonction",
+    "utilisation de la continuité",
+    "analyse des points fixes"
+  ],
+  "objects": [
+    "fonction continue",
+    "ensemble de points fixes",
+    "intervalle [0,1]",
+    "fermé non vide"
+  ],
+  "content_hash": "66b354237bb3f1982404b8b2bebcf282fb0bf8532623d9c33d1efd63be432b92",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:44:54.638Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "kzan",
+  "source_path": "amscc/kzan.tex",
+  "summary": "Étudier le comportement asymptotique en loi de la suite de variables aléatoires (Y_n) définie comme une somme pondérée de variables i.i.d. normales centrées réduites.",
+  "concepts": [
+    "convergence en loi",
+    "fonction caractéristique",
+    "loi normale",
+    "variable aléatoire indépendante",
+    "variable aléatoire identiquement distribuée",
+    "espérance",
+    "variance"
+  ],
+  "methods": [
+    "calcul de fonction caractéristique",
+    "standardisation",
+    "approximation gaussienne",
+    "étude de la limite"
+  ],
+  "objects": [
+    "suite de variables aléatoires",
+    "variable aléatoire normale",
+    "fonction caractéristique"
+  ],
+  "content_hash": "05849045297f349a2325ad189bdb9caede68142fe77232a0c388252b39a33056",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:05:03.082Z"
+}

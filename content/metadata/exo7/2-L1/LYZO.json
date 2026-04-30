@@ -1,0 +1,27 @@
+{
+  "uuid": "LYZO",
+  "source_path": "exo7/2-L1/LYZO.tex",
+  "summary": "L'exercice demande de calculer la puissance n-ième d'une matrice A donnée et d'en déduire les expressions explicites des suites (uₙ) et (vₙ) définies par une relation de récurrence linéaire. Le contexte utilise une représentation matricielle des suites.",
+  "concepts": [
+    "matrice",
+    "suite récurrente linéaire",
+    "formule du binôme de Newton",
+    "combinaison linéaire",
+    "suite géométrique",
+    "suite constante"
+  ],
+  "methods": [
+    "diagonalisation",
+    "calcul de puissance de matrice",
+    "résolution de système linéaire",
+    "combinaison linéaire de suites"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "suite numérique",
+    "vecteur colonne"
+  ],
+  "content_hash": "ab6e2133f882f15ceeae5c0fe280e2ef1776f5c2163ab85c849d9dbbee65f4d7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:14:12.451Z"
+}

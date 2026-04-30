@@ -1,0 +1,28 @@
+{
+  "uuid": "xB9Y",
+  "source_path": "exo7/1-L1/xB9Y.tex",
+  "summary": "L'exercice demande de démontrer que la famille des polynômes U_p forme une base de K[X], puis d'étudier les propriétés de l'opérateur différence Δ et ses applications. Il explore aussi les conditions pour qu'un polynôme prenne des valeurs entières en tous les entiers et caractérise les fonctions polynomiales via l'opérateur différence.",
+  "concepts": [
+    "base d'un espace vectoriel",
+    "opérateur différence",
+    "polynôme de Newton",
+    "décomposition polynomiale",
+    "valeurs entières des polynômes",
+    "fonction polynomiale"
+  ],
+  "methods": [
+    "décomposition en base de polynômes",
+    "calcul des différences finies",
+    "caractérisation des polynômes entiers",
+    "utilisation de l'opérateur différence"
+  ],
+  "objects": [
+    "polynôme U_p",
+    "opérateur Δ",
+    "polynôme P",
+    "fonction f"
+  ],
+  "content_hash": "58206c8caeddf2cc6d805f4a0b59362c8b681541f08c254c4fa8ced06c862662",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:31:34.500Z"
+}

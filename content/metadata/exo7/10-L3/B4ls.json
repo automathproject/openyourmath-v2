@@ -1,0 +1,25 @@
+{
+  "uuid": "B4ls",
+  "source_path": "exo7/10-L3/B4ls.tex",
+  "summary": "L'exercice demande de déterminer les conditions sous lesquelles le polynôme X^n - a^n, où a est un élément non nul d'un corps de caractéristique p > 0, n'a pas de racines multiples, et d'analyser la multiplicité des racines du polynôme X^p - a^p.",
+  "concepts": [
+    "corps de caractéristique p",
+    "racine d'un polynôme",
+    "multiplicité d'une racine",
+    "polynôme irréductible",
+    "théorème de décomposition des polynômes"
+  ],
+  "methods": [
+    "analyse des racines multiples",
+    "décomposition en facteurs irréductibles",
+    "utilisation de la caractéristique du corps"
+  ],
+  "objects": [
+    "polynôme X^n - a^n",
+    "polynôme X^p - a^p",
+    "racine a"
+  ],
+  "content_hash": "5a876ff43d79ce38ef0519eb102990b3560e85d5fc1b4695a6278b1bd6db926b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:20:03.716Z"
+}

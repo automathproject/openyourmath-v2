@@ -1,0 +1,27 @@
+{
+  "uuid": "rXRB",
+  "source_path": "exo7/8-L3/rXRB.tex",
+  "summary": "Déterminer le nombre de p-sous-groupes de Sylow dans le groupe symétrique Sp pour un nombre premier p.",
+  "concepts": [
+    "théorème de Sylow",
+    "p-sous-groupe de Sylow",
+    "groupe symétrique",
+    "ordre d'un groupe",
+    "élément d'ordre p",
+    "théorème de Wilson"
+  ],
+  "methods": [
+    "calcul de l'ordre d'un sous-groupe",
+    "identification des p-cycles",
+    "utilisation des congruences modulo p"
+  ],
+  "objects": [
+    "p-sous-groupe de Sylow",
+    "groupe symétrique Sp",
+    "élément d'ordre p",
+    "p-cycle"
+  ],
+  "content_hash": "3ca1ac21ca4de4a4e3f87de1b377f7399b02221234c14a060a6831837c5bd064",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:00:00.311Z"
+}

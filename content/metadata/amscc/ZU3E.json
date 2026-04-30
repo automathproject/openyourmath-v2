@@ -1,0 +1,28 @@
+{
+  "uuid": "ZU3E",
+  "source_path": "amscc/ZU3E.tex",
+  "summary": "L'exercice demande d'approximer la probabilité qu'une variable aléatoire de Poisson de paramètre 16 prenne des valeurs entre 10 et 22, en utilisant trois méthodes différentes : l'inégalité de Bienaymé-Tchebychev, une table de répartition de la loi de Poisson, et une approximation par la loi normale via le théorème central limite.",
+  "concepts": [
+    "loi de Poisson",
+    "inégalité de Bienaymé-Tchebychev",
+    "théorème central limite",
+    "espérance",
+    "variance",
+    "approximation normale",
+    "fonction de répartition"
+  ],
+  "methods": [
+    "minoration par inégalité",
+    "approximation par table de répartition",
+    "standardisation",
+    "approximation gaussienne"
+  ],
+  "objects": [
+    "variable aléatoire de Poisson",
+    "somme de variables aléatoires indépendantes",
+    "loi normale centrée réduite"
+  ],
+  "content_hash": "b3aabac768b30c72e6d2cf71bc99677f94adc9c637e8c0365afea1635bc0c2b9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:32:02.833Z"
+}

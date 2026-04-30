@@ -76,33 +76,51 @@ function buildMetadata(exercise) {
  * @param {Array} contentArray - Tableau de blocs issu de exercise.content
  * @returns {string}
  */
+// Budget total de caractères envoyés au LLM.
+// Les modèles locaux produisent des réponses dégradées au-delà.
+const MAX_TOTAL_CONTENT_CHARS = 8000;
+// Limite par bloc corrigé individuel (les calculs détaillés n'apportent rien à l'indexation).
+const MAX_REPONSE_CHARS = 3000;
+
 function buildContent(contentArray) {
   if (!Array.isArray(contentArray)) return '';
 
-  const sections = [];
+  // Classer les blocs par priorité : énoncé > questions > corrigés > indications.
+  // Quand le budget est dépassé, les blocs de faible priorité sont écartés en premier.
+  const buckets = { enonce: [], question: [], reponse: [], indication: [] };
 
   for (const block of contentArray) {
     const type = (block?.type || '').toLowerCase();
-    const latex = block?.latex || '';
-    if (!latex.trim()) continue;
+    const latex = (block?.latex || '').trim();
+    if (!latex) continue;
 
-    switch (type) {
-      case 'texte':
-      case 'text':
-        sections.push(`ÉNONCÉ :\n${latex}`);
-        break;
-      case 'question':
-        sections.push(`QUESTION :\n${latex}`);
-        break;
-      case 'indication':
-      case 'hint':
-        sections.push(`INDICATION :\n${latex}`);
-        break;
-      case 'reponse':
-      case 'solution':
-      case 'answer':
-        sections.push(`CORRIGÉ (révèle les outils mobilisés) :\n${latex}`);
-        break;
+    if (type === 'texte' || type === 'text') {
+      buckets.enonce.push(`ÉNONCÉ :\n${latex}`);
+    } else if (type === 'question') {
+      buckets.question.push(`QUESTION :\n${latex}`);
+    } else if (type === 'reponse' || type === 'solution' || type === 'answer') {
+      const truncated = latex.length > MAX_REPONSE_CHARS
+        ? latex.slice(0, MAX_REPONSE_CHARS) + '\n[...corrigé tronqué]'
+        : latex;
+      buckets.reponse.push(`CORRIGÉ (révèle les outils mobilisés) :\n${truncated}`);
+    } else if (type === 'indication' || type === 'hint') {
+      buckets.indication.push(`INDICATION :\n${latex}`);
+    }
+  }
+
+  const sections = [];
+  let budget = MAX_TOTAL_CONTENT_CHARS;
+
+  for (const group of [buckets.enonce, buckets.question, buckets.reponse, buckets.indication]) {
+    for (const section of group) {
+      if (budget <= 0) break;
+      if (section.length > budget) {
+        sections.push(section.slice(0, budget) + '\n[...tronqué]');
+        budget = 0;
+      } else {
+        sections.push(section);
+        budget -= section.length;
+      }
     }
   }
 

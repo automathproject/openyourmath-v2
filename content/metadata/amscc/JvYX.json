@@ -1,0 +1,26 @@
+{
+  "uuid": "JvYX",
+  "source_path": "amscc/JvYX.tex",
+  "summary": "L'exercice demande d'exprimer la fonction de répartition d'une variable aléatoire Y, définie comme une transformation logarithmique d'une variable uniforme X, puis d'en déduire la loi suivie par Y.",
+  "concepts": [
+    "fonction de répartition",
+    "loi uniforme",
+    "loi exponentielle",
+    "transformation de variable aléatoire",
+    "densité de probabilité",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "transformation de variable",
+    "calcul de probabilité conditionnelle",
+    "reconnaissance de loi à partir de la fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire uniforme",
+    "variable aléatoire transformée",
+    "fonction de répartition"
+  ],
+  "content_hash": "c19b187f14a6283075395baacba9c7e91b4871052bd3e587c3faf378611dff62",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:45:00.826Z"
+}

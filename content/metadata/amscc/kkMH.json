@@ -1,0 +1,26 @@
+{
+  "uuid": "kkMH",
+  "source_path": "amscc/kkMH.tex",
+  "summary": "L'exercice demande de déterminer la loi de la somme de deux variables aléatoires indépendantes suivant chacune une loi normale centrée réduite.",
+  "concepts": [
+    "loi normale",
+    "densité de probabilité",
+    "variable aléatoire indépendante",
+    "somme de variables aléatoires",
+    "intégrale de Gauss",
+    "théorème de convolution"
+  ],
+  "methods": [
+    "calcul de densité par convolution",
+    "changement de variable",
+    "intégration par parties"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "somme de variables aléatoires",
+    "densité de probabilité"
+  ],
+  "content_hash": "4c2fedb3135940a186fc387020a53891f75ec0c41d75fecf1a6f926ec0a02a7e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:04:37.344Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "ElLK",
+  "source_path": "exo7/1-L1/ElLK.tex",
+  "summary": "Soit un polynôme réel P(x) toujours non négatif. On demande de prouver que la somme infinie S(x) = P(x) + P'(x) + P''(x) + ... est aussi toujours non négative.",
+  "concepts": [
+    "polynôme réel",
+    "dérivée",
+    "somme infinie de polynômes",
+    "minimum d'une fonction",
+    "croissance à l'infini",
+    "inégalité polynomiale"
+  ],
+  "methods": [
+    "analyse des limites",
+    "recherche de minimum",
+    "utilisation de la dérivée"
+  ],
+  "objects": [
+    "polynôme P(x)",
+    "somme infinie S(x)",
+    "dérivée Q'(x)"
+  ],
+  "content_hash": "5e258342a21757f6eb5de0ef2e2308a9cffc60ab9bd94122287f61bb5379d202",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:43:00.025Z"
+}

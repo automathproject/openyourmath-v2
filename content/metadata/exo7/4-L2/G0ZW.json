@@ -1,0 +1,27 @@
+{
+  "uuid": "G0ZW",
+  "source_path": "exo7/4-L2/G0ZW.tex",
+  "summary": "L'exercice demande de prouver l'équivalence entre l'absence de valeurs propres communes à deux matrices carrées complexes et l'inversibilité d'une matrice construite à partir de leur polynôme caractéristique.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "spectre d'une matrice",
+    "inversibilité d'une matrice",
+    "déterminant d'un produit de matrices",
+    "théorème de Cayley-Hamilton"
+  ],
+  "methods": [
+    "factorisation du polynôme caractéristique",
+    "analyse de l'inversibilité",
+    "calcul du déterminant d'un produit"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "matrice inversible"
+  ],
+  "content_hash": "251111f6a83cdb0b7af33e26d134629ac741ed57df2c636e8c8eb725a5570897",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:29:56.869Z"
+}

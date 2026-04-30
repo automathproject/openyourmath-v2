@@ -1,0 +1,25 @@
+{
+  "uuid": "ag5V",
+  "source_path": "exo7/5-L2/ag5V.tex",
+  "summary": "L'exercice demande de déterminer le domaine de définition de la fonction zêta de Riemann, puis de prouver qu'elle est de classe C^∞ sur ce domaine. Ensuite, il faut montrer que cette fonction tend vers 1 quand x tend vers l'infini et qu'elle tend vers l'infini quand x tend vers 1 par valeurs supérieures.",
+  "concepts": [
+    "fonction zêta de Riemann",
+    "domaine de définition",
+    "classe C^∞",
+    "limite de fonction",
+    "comparaison série-intégrale"
+  ],
+  "methods": [
+    "étude de convergence de série",
+    "dérivation de fonction",
+    "majoration par intégrale"
+  ],
+  "objects": [
+    "série de fonctions",
+    "fonction zêta",
+    "limite de fonction"
+  ],
+  "content_hash": "7323a68f5099985dddce664a783a2e612e8515dd05a78a4012a5b3c4ab8a58f9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:58:08.864Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "jI8R",
+  "source_path": "amscc/jI8R.tex",
+  "summary": "Démontrer que la fonction de répartition d'une variable aléatoire quelconque est croissante et continue à droite sur ℝ.",
+  "concepts": [
+    "fonction de répartition",
+    "variable aléatoire",
+    "mesure de probabilité",
+    "théorème de continuité décroissante",
+    "inclusion d'événements",
+    "convergence de suites"
+  ],
+  "methods": [
+    "comparaison d'événements",
+    "utilisation de la croissance d'une mesure de probabilité",
+    "extraction de sous-suite",
+    "application du théorème de continuité décroissante"
+  ],
+  "objects": [
+    "fonction de répartition",
+    "variable aléatoire",
+    "suite décroissante",
+    "événements"
+  ],
+  "content_hash": "1ca021f9e7e0a853a52799ef912860454bfbbc76b97b111c15535d26ec51857c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:03:45.322Z"
+}

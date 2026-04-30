@@ -1,0 +1,26 @@
+{
+  "uuid": "y9mx",
+  "source_path": "amscc/y9mx.tex",
+  "summary": "L'exercice demande d'exprimer l'espérance et l'espérance du carré d'une variable aléatoire Y, puis d'étudier le biais de deux estimateurs Z et T de p², où X suit une loi de Bernoulli.",
+  "concepts": [
+    "loi de Bernoulli",
+    "loi binomiale",
+    "espérance mathématique",
+    "variance",
+    "biais d'un estimateur",
+    "estimateur sans biais"
+  ],
+  "methods": [
+    "calcul d'espérance",
+    "calcul de variance",
+    "calcul de biais"
+  ],
+  "objects": [
+    "variable aléatoire de Bernoulli",
+    "échantillon",
+    "estimateur"
+  ],
+  "content_hash": "a6d84100fabd37dbeeceb7ebf2681e7d40be42abfa4bd82bac6dd79dbfea9f49",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:00:55.634Z"
+}

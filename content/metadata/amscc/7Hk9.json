@@ -1,0 +1,31 @@
+{
+  "uuid": "7Hk9",
+  "source_path": "amscc/7Hk9.tex",
+  "summary": "L'exercice demande de vérifier qu'une fonction définie sur un triangle dans le plan est une densité de probabilité, puis de déterminer les densités marginales des variables aléatoires X et Y, de calculer leur covariance et d'étudier leur indépendance.",
+  "concepts": [
+    "densité de probabilité",
+    "variable aléatoire à densité",
+    "loi conjointe",
+    "densité marginale",
+    "covariance",
+    "indépendance de variables aléatoires",
+    "intégrale double"
+  ],
+  "methods": [
+    "intégration sur un domaine triangulaire",
+    "calcul de densité marginale par intégration",
+    "calcul d'espérance",
+    "calcul de covariance",
+    "vérification d'indépendance par covariance"
+  ],
+  "objects": [
+    "densité conjointe",
+    "densité marginale",
+    "variable aléatoire X",
+    "variable aléatoire Y",
+    "triangle dans le plan"
+  ],
+  "content_hash": "b3600dcbd40ab67d6895af22fcf1d0a65100ea38f3dfa0b9eedff9ae2058f88e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:26:14.292Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "09Go",
+  "source_path": "exo7/5-L2/09Go.tex",
+  "summary": "On considère une suite décroissante d'ensembles fermés bornés non vides de ℝ². On demande de prouver que l'intersection de tous ces ensembles est non vide.",
+  "concepts": [
+    "suite décroissante d'ensembles",
+    "ensemble fermé borné",
+    "intersection d'ensembles",
+    "théorème de Cantor",
+    "théorème de Baire",
+    "topologie de ℝ²"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation du théorème de Cantor",
+    "argument de compacité"
+  ],
+  "objects": [
+    "suite d'ensembles (Kₙ)",
+    "intersection ∩Kₙ",
+    "ℝ²"
+  ],
+  "content_hash": "677b0d784949ec18023b99e34cdecec96ef314e18d4e0090da000b3c49996062",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:33:13.065Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "Pi9a",
+  "source_path": "exo7/4-L2/Pi9a.tex",
+  "summary": "L'exercice demande de montrer l'existence d'une base de vecteurs propres communs à deux endomorphismes qui commutent, puis d'en déduire une expression polynomiale de l'un en fonction de l'autre.",
+  "concepts": [
+    "commutativité des endomorphismes",
+    "valeur propre",
+    "vecteur propre",
+    "base de vecteurs propres",
+    "polynôme annulateur",
+    "réduction d'endomorphisme"
+  ],
+  "methods": [
+    "diagonalisation simultanée",
+    "utilisation de la commutativité",
+    "construction de base commune"
+  ],
+  "objects": [
+    "endomorphismes commutants",
+    "base de vecteurs propres communs",
+    "polynôme en un endomorphisme"
+  ],
+  "content_hash": "9a1e3cbb8d38ae9c6e84c1c57c04a6490c30c441c71c0650ccccf7891f86c87a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:41:44.571Z"
+}

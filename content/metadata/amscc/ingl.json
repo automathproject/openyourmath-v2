@@ -1,0 +1,30 @@
+{
+  "uuid": "ingl",
+  "source_path": "amscc/ingl.tex",
+  "summary": "L'exercice demande de déterminer la fonction de répartition d'une variable aléatoire représentant la durée de vie d'une lampe, puis d'étudier la loi de variables aléatoires modélisant le fonctionnement d'appareils composés de ces lampes. Le contexte implique des lampes indépendantes avec une durée de vie exponentielle.",
+  "concepts": [
+    "variable aléatoire à densité",
+    "fonction de répartition",
+    "loi exponentielle",
+    "indépendance",
+    "minimisation de variables aléatoires",
+    "maximisation de variables aléatoires",
+    "produit de convolution"
+  ],
+  "methods": [
+    "intégration par parties",
+    "calcul de probabilité conditionnelle",
+    "utilisation de l'indépendance",
+    "calcul de la fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire de durée de vie",
+    "fonction de répartition",
+    "variable aléatoire de temps de fonctionnement",
+    "somme de variables aléatoires",
+    "maximum de variables aléatoires"
+  ],
+  "content_hash": "3b2640cb666522a83e8948de7b956e3b6100548e24860a766bc5dd07b0f91e3f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:02:17.910Z"
+}

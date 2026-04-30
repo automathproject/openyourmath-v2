@@ -1,0 +1,26 @@
+{
+  "uuid": "pwub",
+  "source_path": "exo7/4-L2/pwub.tex",
+  "summary": "L'exercice étudie une suite de points dans le plan définie par une relation de récurrence linéaire. Il demande de montrer que les points sont alignés, d'étudier leur comportement à l'infini et de déterminer la limite du rapport des coordonnées.",
+  "concepts": [
+    "diagonalisation de matrice",
+    "suite récurrente linéaire",
+    "alignement de points",
+    "limite de suite",
+    "polynôme caractéristique",
+    "valeurs propres"
+  ],
+  "methods": [
+    "diagonalisation",
+    "analyse asymptotique",
+    "calcul de rapport de coordonnées"
+  ],
+  "objects": [
+    "suite de points dans le plan",
+    "matrice de récurrence",
+    "coordonnées (x_n, y_n)"
+  ],
+  "content_hash": "3eca8ef34bf621a6ddde197592ba9241fa4a2161f5525ec6835379958824426a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:16:19.480Z"
+}

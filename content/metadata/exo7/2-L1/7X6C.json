@@ -1,0 +1,25 @@
+{
+  "uuid": "7X6C",
+  "source_path": "exo7/2-L1/7X6C.tex",
+  "summary": "Étude de la suite récurrente définie par u₀ ∈ [0,1] et uₙ₊₁ = uₙ². On demande un équivalent de uₙ quand n tend vers l'infini.",
+  "concepts": [
+    "suite récurrente",
+    "convergence de suite",
+    "équivalent asymptotique",
+    "limite de suite",
+    "fonction contractante"
+  ],
+  "methods": [
+    "analyse de la récurrence",
+    "comparaison de termes",
+    "estimation d'erreur"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction quadratique",
+    "intervalle borné"
+  ],
+  "content_hash": "730d68b127c8c41a062cd9c15f830c233d0d9b51eece7ea2926649a3bf3790a5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:05:07.346Z"
+}

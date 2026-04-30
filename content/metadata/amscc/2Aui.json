@@ -1,0 +1,28 @@
+{
+  "uuid": "2Aui",
+  "source_path": "amscc/2Aui.tex",
+  "summary": "L'exercice étudie deux variables aléatoires discrètes X et Y définies à partir d'un tirage sans remise de trois boules dans une urne contenant des boules de trois couleurs différentes. On demande de déterminer leurs lois, leurs espérances, leur loi conjointe, leur indépendance, et des propriétés de transformations de ces variables.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi hypergéométrique",
+    "espérance d'une variable aléatoire",
+    "loi conjointe",
+    "indépendance de variables aléatoires",
+    "transformation de variable aléatoire"
+  ],
+  "methods": [
+    "calcul de loi hypergéométrique",
+    "calcul d'espérance",
+    "construction de tableau de loi conjointe",
+    "test d'indépendance par factorisation"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "loi hypergéométrique",
+    "tableau de loi conjointe",
+    "variable aléatoire transformée"
+  ],
+  "content_hash": "de12b902dc06df4750bab982c9d4270d03c64d50264c1a687eb5cb5f8d23e3ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:14:08.647Z"
+}

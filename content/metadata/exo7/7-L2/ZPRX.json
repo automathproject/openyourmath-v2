@@ -1,0 +1,25 @@
+{
+  "uuid": "ZPRX",
+  "source_path": "exo7/7-L2/ZPRX.tex",
+  "summary": "Calcul du nombre de combinaisons possibles pour choisir 6 numéros parmi 49, puis détermination de la probabilité qu'une grille gagnante comporte 2 nombres consécutifs.",
+  "concepts": [
+    "combinaison",
+    "probabilité conditionnelle",
+    "probabilité discrète",
+    "arrangement",
+    "problème de points et cloisons"
+  ],
+  "methods": [
+    "calcul de coefficient binomial",
+    "méthode des points et cloisons",
+    "comptage par astuce combinatoire"
+  ],
+  "objects": [
+    "combinaison de 6 numéros parmi 49",
+    "grille de Loto",
+    "nombres consécutifs"
+  ],
+  "content_hash": "f4b19eed19811917d8df13892345368afb90215357a5d3841a481d8dbcda56ff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:31:46.226Z"
+}

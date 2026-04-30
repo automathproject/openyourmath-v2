@@ -1,0 +1,26 @@
+{
+  "uuid": "EOnD",
+  "source_path": "amscc/EOnD.tex",
+  "summary": "L'exercice demande d'analyser un échantillon de nombres générés par un simulateur de loi géométrique pour estimer le paramètre p et tester la conformité du simulateur. On utilise les données pour calculer une estimation ponctuelle de p et réaliser des tests d'hypothèses avec différents niveaux de risque.",
+  "concepts": [
+    "loi géométrique",
+    "espérance d'une variable aléatoire",
+    "estimation ponctuelle",
+    "test d'hypothèses",
+    "risque de première espèce",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "estimation par la méthode des moments",
+    "test du chi-deux",
+    "calcul de l'espérance empirique"
+  ],
+  "objects": [
+    "échantillon de nombres",
+    "paramètre p",
+    "variable aléatoire géométrique"
+  ],
+  "content_hash": "61ddfdadbe04fd0a28f3f4cd77cb7cc0348a31ce7ff2e6de6d138861bebae4db",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:37:42.701Z"
+}

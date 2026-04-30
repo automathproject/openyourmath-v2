@@ -1,0 +1,27 @@
+{
+  "uuid": "Qb5b",
+  "source_path": "exo7/11-L3/Qb5b.tex",
+  "summary": "On étudie une courbe plane paramétrée par la longueur d'arc, restant dans un disque de rayon r. On montre que la dérivée seconde de la courbe au point de contact avec le disque est colinéaire au vecteur position, puis que la courbure en ce point vérifie une inégalité.",
+  "concepts": [
+    "courbe paramétrée par la longueur d'arc",
+    "courbure",
+    "colinéarité",
+    "dérivation de fonction vectorielle",
+    "propriété géométrique locale"
+  ],
+  "methods": [
+    "dérivation de norme au carré",
+    "calcul de dérivée seconde",
+    "analyse de colinéarité",
+    "estimation de courbure"
+  ],
+  "objects": [
+    "courbe plane",
+    "vecteur position",
+    "dérivée seconde",
+    "courbure"
+  ],
+  "content_hash": "664c3edf20d655bc41c14732c32a8685440ae95672dc1be2bb561d6abcd4d257",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:19:19.571Z"
+}

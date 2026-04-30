@@ -1,0 +1,29 @@
+{
+  "uuid": "6PPC",
+  "source_path": "exo7/1-L1/6PPC.tex",
+  "summary": "L'exercice demande de prouver l'irréductibilité du polynôme X³+2 dans l'anneau ℚ[X], puis de le factoriser dans ℝ[X] et ℂ[X].",
+  "concepts": [
+    "irréductibilité dans ℚ[X]",
+    "factorisation dans ℝ[X]",
+    "factorisation dans ℂ[X]",
+    "polynôme unitaire",
+    "racines complexes",
+    "théorème des racines complexes",
+    "corps de rupture"
+  ],
+  "methods": [
+    "critère d'Eisenstein",
+    "recherche de racines rationnelles",
+    "division euclidienne",
+    "conjugaison des racines complexes"
+  ],
+  "objects": [
+    "polynôme de degré 3",
+    "racines cubiques",
+    "éléments de ℚ",
+    "éléments de ℂ"
+  ],
+  "content_hash": "26ac68910ad009e0d635fee79e2507208132e74f775533cf265a49786a1b5705",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:34:54.128Z"
+}

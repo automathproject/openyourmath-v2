@@ -1,0 +1,30 @@
+{
+  "uuid": "atds",
+  "source_path": "exo7/5-L2/atds.tex",
+  "summary": "L'exercice demande de prouver l'égalité d'une fonction rationnelle avec une série de Fourier, d'analyser le mode de convergence de cette série, puis de résoudre une équation intégrale impliquant cette série pour des fonctions périodiques.",
+  "concepts": [
+    "série de Fourier",
+    "convergence normale",
+    "coefficient de Fourier",
+    "fonction périodique",
+    "intégrale de convolution",
+    "fonction continue par morceaux",
+    "somme d'une série trigonométrique"
+  ],
+  "methods": [
+    "développement en série entière",
+    "permutation série-intégrale",
+    "calcul des coefficients de Fourier",
+    "résolution d'équation intégrale"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "série trigonométrique",
+    "fonction périodique",
+    "coefficient de Fourier",
+    "intégrale de convolution"
+  ],
+  "content_hash": "d4ec248ac51cabf17376e590fee5b66630ee7e42790cb05e8f3d7c91420a397b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:26:27.860Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "0uqI",
+  "source_path": "amscc/0uqI.tex",
+  "summary": "Un usager de train fraude en voyageant en première classe avec un billet de seconde classe. On cherche le montant minimum d'amende α pour qu'il soit financièrement perdant avec une probabilité supérieure à 95%.",
+  "concepts": [
+    "loi binomiale",
+    "espérance",
+    "variance",
+    "théorème central limite",
+    "approximation gaussienne",
+    "fonction de répartition"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de quantile"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "loi normale centrée réduite",
+    "amende α"
+  ],
+  "content_hash": "a60a9b1efa2d4c71ac787e8f135b7a4615828f24a03ceefeb9953c7ebf0fe8ac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:35:31.191Z"
+}

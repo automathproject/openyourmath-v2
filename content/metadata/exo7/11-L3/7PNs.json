@@ -1,0 +1,27 @@
+{
+  "uuid": "7PNs",
+  "source_path": "exo7/11-L3/7PNs.tex",
+  "summary": "L'exercice demande de démontrer qu'un ensemble Q défini par une condition quadratique dans ℝⁿ est une sous-variété et de déterminer son plan tangent. L'ensemble Q est défini par l'équation <u(x),x> = 1 où u est un opérateur linéaire symétrique.",
+  "concepts": [
+    "sous-variété",
+    "opérateur linéaire symétrique",
+    "forme quadratique",
+    "différentielle",
+    "rang maximal",
+    "plan tangent"
+  ],
+  "methods": [
+    "calcul de la différentielle",
+    "détermination du rang",
+    "condition de sous-variété"
+  ],
+  "objects": [
+    "opérateur linéaire u",
+    "forme quadratique <u(x),x>",
+    "ensemble Q",
+    "plan tangent T_xQ"
+  ],
+  "content_hash": "91cdbc256f66539e649ce95d2018ac960620fb24860e28c8cb4978e405d4dcb6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:13:12.135Z"
+}

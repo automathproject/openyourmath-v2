@@ -1,0 +1,30 @@
+{
+  "uuid": "aRzj",
+  "source_path": "amscc/aRzj.tex",
+  "summary": "L'exercice demande de déterminer un estimateur du paramètre θ d'une loi de densité donnée en utilisant la méthode du maximum de vraisemblance, puis d'étudier le biais de cet estimateur.",
+  "concepts": [
+    "maximum de vraisemblance",
+    "log-vraisemblance",
+    "estimateur",
+    "biais d'un estimateur",
+    "espérance mathématique",
+    "intégrale de Riemann",
+    "changement de variable"
+  ],
+  "methods": [
+    "calcul de la log-vraisemblance",
+    "optimisation de la fonction de vraisemblance",
+    "calcul de l'espérance",
+    "intégration par changement de variable"
+  ],
+  "objects": [
+    "densité de probabilité",
+    "échantillon aléatoire",
+    "estimateur de maximum de vraisemblance",
+    "biais",
+    "espérance"
+  ],
+  "content_hash": "4691a1ce46083cc8da6db497fdab2e1a4cb3f8fc4e404688d2b7e78d9178618b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:45:06.030Z"
+}

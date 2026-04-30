@@ -1,0 +1,26 @@
+{
+  "uuid": "kD5f",
+  "source_path": "exo7/1-L1/kD5f.tex",
+  "summary": "L'exercice demande de démontrer que deux polynômes élevés à des puissances positives restent premiers entre eux si les polynômes initiaux le sont, et d'étendre ce résultat à la somme et au produit de ces polynômes.",
+  "concepts": [
+    "polynôme premier entre eux",
+    "pgcd de polynômes",
+    "propriété multiplicative",
+    "propriété additive",
+    "divisibilité dans les polynômes"
+  ],
+  "methods": [
+    "utilisation du pgcd",
+    "propriété de l'exponentiation",
+    "manipulation algébrique"
+  ],
+  "objects": [
+    "polynômes P et Q",
+    "puissances de polynômes",
+    "somme de polynômes",
+    "produit de polynômes"
+  ],
+  "content_hash": "319660439fc95961245cc0e02f5ae185e601f1c790ab2c458caf91faf81016e2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:17:44.371Z"
+}

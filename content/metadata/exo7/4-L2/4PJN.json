@@ -1,0 +1,28 @@
+{
+  "uuid": "4PJN",
+  "source_path": "exo7/4-L2/4PJN.tex",
+  "summary": "Trouver les matrices carrées réelles vérifiant deux conditions : idempotence (A² = A) et trace nulle.",
+  "concepts": [
+    "matrice idempotente",
+    "trace d'une matrice",
+    "polynôme annulateur",
+    "réduction d'endomorphisme",
+    "valeurs propres",
+    "sous-espace stable"
+  ],
+  "methods": [
+    "calcul de trace",
+    "diagonalisation",
+    "utilisation du polynôme minimal",
+    "décomposition en sous-espaces propres"
+  ],
+  "objects": [
+    "matrice carrée réelle",
+    "polynôme annulateur",
+    "valeurs propres",
+    "sous-espaces propres"
+  ],
+  "content_hash": "377081f89de5b9c0b271a79edb031dc799d62749d79c21593a94aa3ca0b482fe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:13:19.861Z"
+}

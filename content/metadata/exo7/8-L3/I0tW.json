@@ -1,0 +1,33 @@
+{
+  "uuid": "I0tW",
+  "source_path": "exo7/8-L3/I0tW.tex",
+  "summary": "Déterminer les sous-groupes de Sylow du groupe alterné A₅, en identifiant les 5-Sylow, 3-Sylow et 2-Sylow et en comptant leur nombre.",
+  "concepts": [
+    "théorème de Sylow",
+    "sous-groupes de Sylow",
+    "groupe alterné",
+    "ordre d'un groupe",
+    "cyclicité des groupes",
+    "conjugaison de groupes",
+    "morphisme de groupes",
+    "groupe abélien"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "comptage des éléments d'ordre",
+    "analyse des intersections de sous-groupes",
+    "utilisation des théorèmes de Sylow",
+    "construction explicite des sous-groupes"
+  ],
+  "objects": [
+    "sous-groupes de Sylow",
+    "groupe alterné A₅",
+    "éléments d'ordre 2, 3 et 5",
+    "5-cycles",
+    "3-cycles",
+    "produits de deux transpositions"
+  ],
+  "content_hash": "628d850421fe757abf903bf3a88e9fc70d5b72f8de8895dba5b36e538ae26209",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:54:40.669Z"
+}

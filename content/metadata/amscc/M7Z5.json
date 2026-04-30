@@ -1,0 +1,29 @@
+{
+  "uuid": "M7Z5",
+  "source_path": "amscc/M7Z5.tex",
+  "summary": "L'exercice demande de tester l'existence d'une différence significative entre les moyennes des scores d'un test d'habileté spatio-cognitivo-émotive pour des hommes et des femmes, au seuil de 5%, en supposant des variances égales.",
+  "concepts": [
+    "test d'hypothèse",
+    "moyenne échantillon",
+    "variance",
+    "écart-type",
+    "intervalle de confiance",
+    "seuil de signification",
+    "hypothèse nulle"
+  ],
+  "methods": [
+    "test de Student",
+    "calcul de la statistique t",
+    "comparaison de moyennes",
+    "hypothèse de variances égales"
+  ],
+  "objects": [
+    "moyenne des hommes",
+    "moyenne des femmes",
+    "écarts-types",
+    "échantillons indépendants"
+  ],
+  "content_hash": "020b1f5bd20669014f23f54c21f01ad340ff91d5d8fe7e62135a1e248d727446",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:40:33.663Z"
+}

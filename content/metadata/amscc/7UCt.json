@@ -1,0 +1,28 @@
+{
+  "uuid": "7UCt",
+  "source_path": "amscc/7UCt.tex",
+  "summary": "L'exercice demande de déterminer le nombre maximal de réservations à accepter pour un vol militaire afin que la probabilité d'avoir plus de 300 soldats présents soit inférieure à 10%, chaque soldat ayant une probabilité de 10% de ne pas se présenter.",
+  "concepts": [
+    "loi binomiale",
+    "approximation normale de la loi binomiale",
+    "théorème de Moivre-Laplace",
+    "variable aléatoire normale",
+    "probabilité conditionnelle",
+    "convergence en loi"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "résolution d'équation quadratique",
+    "calcul de probabilité"
+  ],
+  "objects": [
+    "loi binomiale",
+    "variable aléatoire normale",
+    "équation quadratique",
+    "probabilité conditionnelle"
+  ],
+  "content_hash": "e9fa4f354fe5c43c60279dc86adcd90e124376d75c44f91c610b84e0b1818afd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:40:00.972Z"
+}

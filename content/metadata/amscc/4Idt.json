@@ -1,0 +1,27 @@
+{
+  "uuid": "4Idt",
+  "source_path": "amscc/4Idt.tex",
+  "summary": "L'exercice demande de démontrer des inégalités de probabilité pour une variable aléatoire de loi de Poisson en utilisant les inégalités de Markov et de Bienaymé-Tchebychev, puis de comparer leur efficacité pour des valeurs grandes du paramètre.",
+  "concepts": [
+    "inégalité de Markov",
+    "inégalité de Bienaymé-Tchebychev",
+    "espérance mathématique",
+    "écart-type",
+    "loi de Poisson",
+    "variable aléatoire discrète"
+  ],
+  "methods": [
+    "application de l'inégalité de Markov",
+    "application de l'inégalité de Bienaymé-Tchebychev",
+    "calcul d'espérance",
+    "comparaison d'inégalités"
+  ],
+  "objects": [
+    "variable aléatoire de loi de Poisson",
+    "paramètre λ",
+    "probabilité conditionnelle"
+  ],
+  "content_hash": "38cdfb0852e4d31d88a2017cdb0b69a7da4c22bbbe9eb6216c258fc14b5fc7ef",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:15:47.184Z"
+}

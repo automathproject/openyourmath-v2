@@ -1,0 +1,31 @@
+{
+  "uuid": "BA22",
+  "source_path": "amscc/BA22.tex",
+  "summary": "L'exercice demande de calculer des statistiques descriptives (moyenne et écart-type) à partir d'un échantillon de données, d'estimer sans biais la moyenne et l'écart-type de la population, de construire un intervalle de confiance pour la moyenne de la population avec un niveau de confiance de 95%, et de réaliser un test d'hypothèse pour comparer la moyenne observée à une valeur donnée.",
+  "concepts": [
+    "estimation ponctuelle sans biais",
+    "intervalle de confiance",
+    "test d'hypothèse",
+    "loi de Student",
+    "variance",
+    "moyenne",
+    "écart-type"
+  ],
+  "methods": [
+    "calcul de la moyenne échantillon",
+    "calcul de l'écart-type échantillon",
+    "estimation sans biais de la variance",
+    "construction d'un intervalle de confiance pour petite taille d'échantillon",
+    "test de conformité pour une moyenne"
+  ],
+  "objects": [
+    "échantillon de données",
+    "moyenne de la population",
+    "écart-type de la population",
+    "intervalle de confiance",
+    "hypothèses statistiques"
+  ],
+  "content_hash": "8261fad081174f3c727f868ac4633573a87042d52069b04c2de19789a50c81dc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:35:58.350Z"
+}

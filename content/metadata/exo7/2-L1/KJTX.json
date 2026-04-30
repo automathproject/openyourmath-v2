@@ -1,0 +1,25 @@
+{
+  "uuid": "KJTX",
+  "source_path": "exo7/2-L1/KJTX.tex",
+  "summary": "On considère une suite décroissante à termes positifs dont la série converge. On demande de montrer que la limite de n*u_n tend vers 0 quand n tend vers l'infini.",
+  "concepts": [
+    "série numérique",
+    "suite décroissante",
+    "convergence d'une série",
+    "limite de suite",
+    "critère de comparaison"
+  ],
+  "methods": [
+    "encadrement de somme partielle",
+    "manipulation d'ε",
+    "utilisation de la décroissance"
+  ],
+  "objects": [
+    "suite numérique",
+    "série numérique",
+    "termes positifs"
+  ],
+  "content_hash": "720c0fa01715942f1e84bdadfc81d8a9979ca0c10f3c31587803f996638cf6bd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:11:48.038Z"
+}

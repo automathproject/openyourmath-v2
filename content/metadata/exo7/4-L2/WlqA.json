@@ -1,0 +1,28 @@
+{
+  "uuid": "WlqA",
+  "source_path": "exo7/4-L2/WlqA.tex",
+  "summary": "Montrer que toute matrice carrée de trace nulle est semblable à une matrice dont la diagonale est nulle. L'énoncé demande de prouver une propriété de similarité entre matrices.",
+  "concepts": [
+    "trace d'une matrice",
+    "similarité de matrices",
+    "homothétie vectorielle",
+    "base d'un espace vectoriel",
+    "matrice par blocs",
+    "déterminant d'une matrice"
+  ],
+  "methods": [
+    "récurrence sur la dimension",
+    "construction explicite de base adaptée",
+    "calcul de trace",
+    "similarité de matrices"
+  ],
+  "objects": [
+    "matrice carrée",
+    "endomorphisme",
+    "famille libre",
+    "matrice de diagonale nulle"
+  ],
+  "content_hash": "30120eab1f15d10475d7940a6bc1d458f60885f1baa5e3eac06322b59f7223ea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:51:38.479Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "aRuq",
+  "source_path": "exo7/7-L2/aRuq.tex",
+  "summary": "L'exercice étudie la fréquence d'apparition de pile lors de 10 lancers d'une pièce équilibrée. Il demande de déterminer la loi de cette fréquence, puis de calculer des probabilités associées à différents intervalles de valeurs.",
+  "concepts": [
+    "variable aléatoire binomiale",
+    "loi de probabilité discrète",
+    "intervalle de confiance",
+    "test d'ajustement"
+  ],
+  "methods": [
+    "calcul de probabilités pour une loi binomiale",
+    "approximation par la loi binomiale",
+    "comparaison d'intervalles de probabilité"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "fréquence d'apparition",
+    "nombre de succès dans une série d'essais"
+  ],
+  "content_hash": "a42cd9eeed68c95046fad91f7cfde48bbcbf74a2fccc50cbf2995afa16076cca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:32:16.301Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "tLhR",
+  "source_path": "exo7/8-L3/tLhR.tex",
+  "summary": "L'exercice demande de trouver une disposition possible pour planter 10 arbres en 5 rangées de 4 arbres alignés, puis de déterminer le nombre minimal d'arbres nécessaires pour former 6 rangées de 5 arbres alignés. La généralisation est également requise.",
+  "concepts": [
+    "graphe",
+    "configuration géométrique",
+    "problème de couverture",
+    "combinaatoire discrète",
+    "théorème des tiroirs"
+  ],
+  "methods": [
+    "énumération",
+    "modélisation graphique",
+    "recherche de configuration optimale"
+  ],
+  "objects": [
+    "ensemble de points",
+    "rangées d'arbres",
+    "disposition géométrique"
+  ],
+  "content_hash": "0d34f21da95eb9addd70a3f23c8c8febe3a89fac741f79b33f079d5e3f55c99d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:17:01.945Z"
+}

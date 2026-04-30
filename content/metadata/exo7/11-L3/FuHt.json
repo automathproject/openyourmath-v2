@@ -1,0 +1,29 @@
+{
+  "uuid": "FuHt",
+  "source_path": "exo7/11-L3/FuHt.tex",
+  "summary": "L'exercice étudie une application f de ℝ² dans ℝ³ définie par des coordonnées sphériques modifiées et son image T. Il demande de montrer que T est l'union de rotations d'une courbe C, d'analyser l'injectivité de f modulo 2π, et de prouver que T est une sous-variété de ℝ³.",
+  "concepts": [
+    "sous-variété",
+    "application injective",
+    "rotation dans ℝ³",
+    "topologie induite",
+    "paramétrisation locale",
+    "difféomorphisme local"
+  ],
+  "methods": [
+    "analyse de l'injectivité",
+    "étude des rotations",
+    "vérification des conditions de sous-variété",
+    "paramétrisation explicite"
+  ],
+  "objects": [
+    "application f: ℝ² → ℝ³",
+    "courbe C",
+    "ensemble T",
+    "rotation Rθ",
+    "ouverts de ℝ² et T"
+  ],
+  "content_hash": "2dc211955ac55578c53271083db56dcbf4ba76300ddc790f1d7ad3c71d227c25",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:16:02.483Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "vXcC",
+  "source_path": "exo7/4-L2/vXcC.tex",
+  "summary": "L'exercice étudie les propriétés d'un endomorphisme f d'un espace vectoriel E de dimension n. Il explore deux cas : le premier où pour tout sous-espace vectoriel D de dimension 1, il existe un vecteur x dans D tel que E est engendré par la famille (x, f(x), f²(x), ...), et le second où un tel vecteur x existe directement dans E. On demande de déduire des propriétés sur E et f dans le premier cas, et de prouver des résultats sur les valeurs propres et la nilpotence de f dans le second cas.",
+  "concepts": [
+    "polynôme minimal",
+    "endomorphisme diagonalisable",
+    "valeurs propres distinctes",
+    "endomorphisme nilpotent",
+    "dimension d'un espace vectoriel",
+    "homothétie vectorielle",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "analyse du polynôme minimal",
+    "diagonalisation",
+    "étude des valeurs propres",
+    "propriétés des endomorphismes nilpotents"
+  ],
+  "objects": [
+    "endomorphisme",
+    "espace vectoriel",
+    "polynôme annulateur",
+    "sous-espace vectoriel de dimension 1"
+  ],
+  "content_hash": "bec3dad3704b8dbf0f04141a3b2602f7d3dcaa2b7a0fe73ef172c29984271f68",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:25:16.361Z"
+}

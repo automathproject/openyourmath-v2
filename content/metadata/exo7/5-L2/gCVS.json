@@ -1,0 +1,30 @@
+{
+  "uuid": "gCVS",
+  "source_path": "exo7/5-L2/gCVS.tex",
+  "summary": "L'exercice demande de montrer l'existence d'une suite de polynômes à coefficients entiers naturels dont les dérivées successives de la fonction tangente sont composées, puis d'établir le développement en série entière de la tangente et de calculer ses premiers coefficients.",
+  "concepts": [
+    "développement en série entière",
+    "fonction dérivable",
+    "polynôme à coefficients entiers",
+    "rayon de convergence",
+    "formule de Taylor-Laplace",
+    "fonction impaire",
+    "fonction hyperbolique"
+  ],
+  "methods": [
+    "récurrence",
+    "formule de Leibniz",
+    "formule de Taylor-Laplace",
+    "comparaison série intégrale",
+    "identification de fonction composée"
+  ],
+  "objects": [
+    "fonction tangente",
+    "suite de polynômes",
+    "coefficient de série entière",
+    "fonction hyperbolique tangente"
+  ],
+  "content_hash": "72cef8b440a6b6ac5bf6ffbe37cf9b0b45f9d833d79573f9bfaeb2283cfe45a7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:49:34.322Z"
+}

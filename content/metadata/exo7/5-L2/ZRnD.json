@@ -1,0 +1,32 @@
+{
+  "uuid": "ZRnD",
+  "source_path": "exo7/5-L2/ZRnD.tex",
+  "summary": "L'exercice demande d'étudier la convergence d'une série numérique de terme général u_n et de calculer sa somme. La série est définie à partir d'une suite u_n impliquant une somme de termes rationnels.",
+  "concepts": [
+    "série numérique",
+    "série entière",
+    "convergence absolue",
+    "critère spécial aux séries alternées",
+    "rayon de convergence",
+    "convergence uniforme",
+    "fonction continue",
+    "développement en série entière"
+  ],
+  "methods": [
+    "critère de convergence des séries alternées",
+    "majoration de reste de série alternée",
+    "calcul de rayon de convergence",
+    "développement en série entière",
+    "intégration de séries entières"
+  ],
+  "objects": [
+    "série numérique de terme général u_n",
+    "série entière",
+    "fonction f(x)",
+    "fonction k(X)",
+    "rayon de convergence"
+  ],
+  "content_hash": "bf765a72a9f46ec436b7d4e1b5dec6fbf0f31ef41289c7fd9a75caf86370f3ea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:47:22.283Z"
+}

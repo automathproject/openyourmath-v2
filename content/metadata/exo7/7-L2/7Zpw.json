@@ -1,0 +1,27 @@
+{
+  "uuid": "7Zpw",
+  "source_path": "exo7/7-L2/7Zpw.tex",
+  "summary": "L'exercice modélise le nombre de plaques inutilisables dans un échantillon de 2000 plaques de tôle avec une proportion de défauts de 0.1%. Il demande de déterminer la loi de probabilité suivie par cette variable aléatoire et de calculer des probabilités associées.",
+  "concepts": [
+    "loi de Poisson",
+    "approximation par la loi normale",
+    "théorème central limite",
+    "correction de continuité",
+    "variable aléatoire discrète",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "approximation de Poisson",
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de probabilités cumulées"
+  ],
+  "objects": [
+    "variable aléatoire de comptage",
+    "proportion de défauts",
+    "loi de probabilité discrète"
+  ],
+  "content_hash": "75f312b4d3aeef140369918c881757f5f3476fb68a8db80ffc78f040a28e9450",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:17:46.223Z"
+}

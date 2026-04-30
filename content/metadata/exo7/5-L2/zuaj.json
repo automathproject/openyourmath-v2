@@ -1,0 +1,28 @@
+{
+  "uuid": "zuaj",
+  "source_path": "exo7/5-L2/zuaj.tex",
+  "summary": "On considère un espace vectoriel normé de polynômes complexes de degré borné, avec une suite de polynômes convergeant vers un polynôme ayant des racines simples. On demande de montrer que pour un grand n, la suite de polynômes a au moins une racine dans un disque fermé centré sur une racine du polynôme limite.",
+  "concepts": [
+    "espace vectoriel normé",
+    "convergence uniforme",
+    "théorème du point fixe",
+    "racine simple",
+    "continuité",
+    "contraction"
+  ],
+  "methods": [
+    "équivalence des normes en dimension finie",
+    "construction de fonction contractante",
+    "estimation de bornes",
+    "application du théorème du point fixe"
+  ],
+  "objects": [
+    "polynôme complexe",
+    "suite de polynômes",
+    "disque fermé",
+    "racine de polynôme"
+  ],
+  "content_hash": "b1aa3e157abbc332c4d3583ce73f2739b6f15399722dbbd42417f7a9ceda6896",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:19:51.392Z"
+}

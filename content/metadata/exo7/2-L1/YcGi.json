@@ -1,0 +1,26 @@
+{
+  "uuid": "YcGi",
+  "source_path": "exo7/2-L1/YcGi.tex",
+  "summary": "L'exercice demande d'exprimer la dérivée d'ordre k d'une suite en fonction de ses termes consécutifs, puis de démontrer qu'une suite est polynomiale si et seulement si sa dérivée d'un certain ordre est identiquement nulle.",
+  "concepts": [
+    "suite récurrente",
+    "dérivée discrète",
+    "suite polynomiale",
+    "combinaisons",
+    "binôme de Newton",
+    "récurrence"
+  ],
+  "methods": [
+    "définition récursive",
+    "calcul de combinaison",
+    "raisonnement par équivalence"
+  ],
+  "objects": [
+    "suite de réels",
+    "dérivée discrète",
+    "suite polynomiale"
+  ],
+  "content_hash": "81e86e2aeb2a79463552132d693c644f50b453d925aecbc891d21a6931ef4c2b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:22:31.540Z"
+}

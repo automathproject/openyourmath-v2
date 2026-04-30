@@ -1,0 +1,25 @@
+{
+  "uuid": "uTVH",
+  "source_path": "exo7/8-L3/uTVH.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des matrices 2x2 à coefficients entiers et de déterminant 1 forme un sous-groupe, puis d'étudier l'ordre de deux matrices spécifiques et de leur produit.",
+  "concepts": [
+    "sous-groupe",
+    "ordre d'un élément",
+    "matrice inversible",
+    "déterminant",
+    "groupe multiplicatif"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "calcul de l'ordre d'une matrice",
+    "produit de matrices"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "groupe des matrices inversibles",
+    "sous-groupe SL₂(ℤ)"
+  ],
+  "content_hash": "aec5bfdce789532b32c3219a7366b5afb2a125e8858f3bc3829a1449a2bae768",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:17:13.582Z"
+}

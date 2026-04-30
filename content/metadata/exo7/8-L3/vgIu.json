@@ -1,0 +1,28 @@
+{
+  "uuid": "vgIu",
+  "source_path": "exo7/8-L3/vgIu.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés sur le produit de deux sous-groupes d'un groupe. La première partie concerne la condition pour que le produit soit un sous-groupe, et la seconde partie établit une formule pour l'ordre du produit de deux sous-groupes finis.",
+  "concepts": [
+    "sous-groupe",
+    "ordre d'un élément",
+    "produit de sous-groupes",
+    "inclusion de sous-groupes",
+    "inverse d'un élément",
+    "cardinal d'un ensemble"
+  ],
+  "methods": [
+    "manipulation d'inclusions",
+    "utilisation de l'inverse",
+    "décomposition d'éléments",
+    "comptage d'éléments distincts"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupes H et K",
+    "ensemble HK",
+    "intersection H ∩ K"
+  ],
+  "content_hash": "0dd34a13e25d6fcaebf431e505bbbe14c78a5941c335f69e92aa34a028bbee58",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:17:49.906Z"
+}

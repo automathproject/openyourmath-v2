@@ -1,0 +1,25 @@
+{
+  "uuid": "eBSR",
+  "source_path": "exo7/7-L2/eBSR.tex",
+  "summary": "L'exercice demande de calculer la probabilité qu'un enfant pris au hasard ait une réaction positive à un test, puis la probabilité qu'un enfant ayant une réaction positive soit atteint par une maladie M. Le contexte implique une population avec une certaine prévalence de la maladie et des probabilités conditionnelles de résultats de test.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "probabilité conjointe",
+    "formule de Bayes",
+    "événements indépendants",
+    "probabilité totale"
+  ],
+  "methods": [
+    "décomposition de la probabilité totale",
+    "calcul de probabilité conditionnelle",
+    "application de la formule de Bayes"
+  ],
+  "objects": [
+    "événements aléatoires",
+    "probabilités conditionnelles",
+    "probabilités conjointes"
+  ],
+  "content_hash": "9cc0546df23373a9d5859d64913683244394162e99f448b5242f3ee395d8f2c9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:34:14.904Z"
+}

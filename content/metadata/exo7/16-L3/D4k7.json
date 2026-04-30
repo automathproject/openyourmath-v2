@@ -1,0 +1,29 @@
+{
+  "uuid": "D4k7",
+  "source_path": "exo7/16-L3/D4k7.tex",
+  "summary": "L'exercice demande d'étudier le comportement d'un lacet γ dans le plan complexe en traversant une demi-droite Δ issue de l'origine. On définit des traversées directes ou rétrogrades selon le signe de la partie imaginaire de γ aux points d'intersection. L'objectif est de relier ces traversées à l'indice de γ autour de l'origine.",
+  "concepts": [
+    "théorème des résidus",
+    "fonction Log complexe",
+    "argument d'un nombre complexe",
+    "indice d'un lacet",
+    "demi-droite dans le plan complexe",
+    "variation de l'argument"
+  ],
+  "methods": [
+    "analyse des points d'intersection",
+    "étude des signes de la partie imaginaire",
+    "calcul de la variation de l'argument",
+    "relation entre indice et traversées"
+  ],
+  "objects": [
+    "lacet dans le plan complexe",
+    "demi-droite Δ",
+    "points d'intersection t_j",
+    "fonction Log(γ(t))",
+    "indice Ind(γ,0)"
+  ],
+  "content_hash": "4b40bfd7cd9e2479e4da095ba18764575e91251a8cd2f4771347e187176031b6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:10:12.318Z"
+}

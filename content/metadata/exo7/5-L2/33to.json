@@ -1,0 +1,30 @@
+{
+  "uuid": "33to",
+  "source_path": "exo7/5-L2/33to.tex",
+  "summary": "L'exercice demande de construire une fonction f de classe C^∞ sur ℝ à partir d'une suite complexe (a_n) et de montrer que cette fonction est bien définie, de classe C^∞ et vérifie f^(n)(0) = n! a_n pour tout entier n.",
+  "concepts": [
+    "développement en série entière",
+    "fonction de classe C^∞",
+    "développement limité",
+    "convergence uniforme",
+    "dérivation",
+    "intégration"
+  ],
+  "methods": [
+    "construction de fonction par intégration",
+    "estimation de normes infinies",
+    "analyse de convergence de séries",
+    "calcul de dérivées successives",
+    "utilisation de fonctions de troncature"
+  ],
+  "objects": [
+    "suite complexe",
+    "fonction de troncature",
+    "fonction dérivable à l'infini",
+    "série entière",
+    "dérivées successives"
+  ],
+  "content_hash": "00a466f5f4034fb02f94de81c5a6d534fe10b558e04bfcaf7babe2d426519926",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:33:28.503Z"
+}

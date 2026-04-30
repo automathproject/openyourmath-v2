@@ -1,0 +1,25 @@
+{
+  "uuid": "q4Kf",
+  "source_path": "exo7/11-L3/q4Kf.tex",
+  "summary": "Calculer la longueur d'une portion d'hélice définie par un paramétrage donné dans ℝ³, puis déterminer un nouveau paramétrage de cette hélice utilisant la longueur d'arc comme paramètre.",
+  "concepts": [
+    "paramétrage de courbe",
+    "longueur d'arc",
+    "changement de paramétrage",
+    "géométrie différentielle",
+    "courbe régulière"
+  ],
+  "methods": [
+    "calcul de la dérivée",
+    "intégration de la norme du vecteur tangent",
+    "reparamétrisation par la longueur d'arc"
+  ],
+  "objects": [
+    "courbe paramétrée dans ℝ³",
+    "vecteur tangent",
+    "fonction de longueur d'arc"
+  ],
+  "content_hash": "133330f8ec2fb1cc2449b2d4e5d4fa224801135d748c78373e18d25a8d81d201",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:26:02.653Z"
+}

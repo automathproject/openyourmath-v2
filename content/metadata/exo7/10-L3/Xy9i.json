@@ -1,0 +1,27 @@
+{
+  "uuid": "Xy9i",
+  "source_path": "exo7/10-L3/Xy9i.tex",
+  "summary": "L'exercice demande de démontrer l'irréductibilité du polynôme X²+1 dans l'anneau des polynômes à coefficients rationnels, puis sa réductibilité dans l'anneau des polynômes à coefficients dans le corps fini à 5 éléments.",
+  "concepts": [
+    "irréductibilité d'un polynôme",
+    "réductibilité d'un polynôme",
+    "corps fini",
+    "anneau de polynômes",
+    "corps des nombres rationnels",
+    "critère d'irréductibilité"
+  ],
+  "methods": [
+    "critère d'Eisenstein",
+    "recherche de racines dans un corps fini",
+    "factorisation dans un anneau de polynômes"
+  ],
+  "objects": [
+    "polynôme quadratique",
+    "anneau Q[X]",
+    "corps F₅",
+    "racines d'un polynôme"
+  ],
+  "content_hash": "1fe04ea5c1d75c03a9c2ac1b8826b284cc82b76667378dd86ec3702426ba5a96",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:23:56.314Z"
+}

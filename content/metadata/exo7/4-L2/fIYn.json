@@ -1,0 +1,28 @@
+{
+  "uuid": "fIYn",
+  "source_path": "exo7/4-L2/fIYn.tex",
+  "summary": "L'exercice demande de déterminer si trois matrices données sont diagonalisables ou triangularisables, et de les réduire si possible.",
+  "concepts": [
+    "diagonalisation",
+    "triangularisation",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "critère de diagonalisabilité"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "recherche des vecteurs propres",
+    "réduction de matrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "6dad0a65f347f0dd6745ea3ecf7b630ade18edf838c6e4a4c8c2d34e439c2f7c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:02:41.019Z"
+}

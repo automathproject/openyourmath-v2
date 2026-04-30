@@ -1,0 +1,30 @@
+{
+  "uuid": "kR9v",
+  "source_path": "amscc/kR9v.tex",
+  "summary": "L'exercice demande d'associer quatre noyaux de convolution 2D à leurs rôles respectifs (lissage, détection de contours) et d'analyser leurs propriétés sur des zones uniformes d'images.",
+  "concepts": [
+    "filtre de convolution",
+    "lissage d'image",
+    "détection de contours",
+    "opérateur laplacien",
+    "filtre de Sobel",
+    "normalisation de filtre",
+    "passe-bas",
+    "passe-haut"
+  ],
+  "methods": [
+    "analyse de noyau de convolution",
+    "calcul de somme de coefficients",
+    "interprétation géométrique de filtres",
+    "convolution discrète"
+  ],
+  "objects": [
+    "noyau de convolution 3x3",
+    "image numérique",
+    "zones uniformes",
+    "contours d'image"
+  ],
+  "content_hash": "ea973885b679ced285bc2bf89d6ecddd83a5a1957ed728d1a179ea0e3c5d3208",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:34:58.579Z"
+}

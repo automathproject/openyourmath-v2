@@ -1,0 +1,31 @@
+{
+  "uuid": "GOQs",
+  "source_path": "exo7/1-L1/GOQs.tex",
+  "summary": "Décomposer en éléments simples dans $C(X)$ des fractions rationnelles impliquant des polynômes à racines multiples ou complexes. Les énoncés concernent des fractions avec des dénominateurs de la forme $X^n-1$, $(X-1)(X^n-1)$, produits de facteurs linéaires, ou $X^{2n}+1$.",
+  "concepts": [
+    "fraction rationnelle",
+    "décomposition en éléments simples",
+    "racines complexes",
+    "pôles simples et multiples",
+    "polynôme scindé",
+    "racines de l'unité",
+    "limite de fonctions rationnelles"
+  ],
+  "methods": [
+    "factorisation de polynômes",
+    "calcul des coefficients de décomposition",
+    "limite pour déterminer les coefficients",
+    "utilisation des racines de l'unité",
+    "décomposition en fractions partielles"
+  ],
+  "objects": [
+    "fraction rationnelle",
+    "polynôme à racines simples",
+    "racines complexes",
+    "coefficients de décomposition",
+    "limites de fonctions"
+  ],
+  "content_hash": "738cc0779d3c881cc86257cd8e2e85cf3b0dc81548ad716f2a7f294125d40892",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:44:48.700Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "ulOe",
+  "source_path": "exo7/5-L2/ulOe.tex",
+  "summary": "On définit une série entière b(z) à partir d'une série entière a(z) de rayon de convergence infini et d'un paramètre ρ > 0. On demande de prouver l'existence et l'unicité des coefficients b_n, puis de déterminer le rayon de convergence de b(z).",
+  "concepts": [
+    "série entière",
+    "rayon de convergence",
+    "produit de séries entières",
+    "convergence de séries",
+    "unicité des coefficients"
+  ],
+  "methods": [
+    "développement en série",
+    "analyse asymptotique",
+    "estimation des coefficients"
+  ],
+  "objects": [
+    "série entière a(z)",
+    "série entière b(z)",
+    "coefficient b_n",
+    "paramètre ρ"
+  ],
+  "content_hash": "7d2142f49034c99536159a6a4dae89c23bd259896394b78b41959c7ce50daca7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:55:31.025Z"
+}

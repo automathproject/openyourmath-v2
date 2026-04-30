@@ -1,0 +1,26 @@
+{
+  "uuid": "6er6",
+  "source_path": "amscc/6er6.tex",
+  "summary": "L'exercice demande de déterminer le niveau de stock initial pour satisfaire la demande dans 90% des cas, où la demande suit une loi normale de moyenne 5000 et d'écart-type 1000.",
+  "concepts": [
+    "loi normale",
+    "variable aléatoire",
+    "écart-type",
+    "moyenne",
+    "probabilité",
+    "standardisation",
+    "quantile"
+  ],
+  "methods": [
+    "standardisation",
+    "lecture de table de loi normale centrée réduite"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "niveau de stock",
+    "demande saisonnière"
+  ],
+  "content_hash": "fbfbdee48aa1aad9399ab1603a5f679e85d1ec2d2ad9a123cbd5f88ad2e3f441",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:39:09.853Z"
+}

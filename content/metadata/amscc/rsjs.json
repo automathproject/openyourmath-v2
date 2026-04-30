@@ -1,0 +1,30 @@
+{
+  "uuid": "rsjs",
+  "source_path": "amscc/rsjs.tex",
+  "summary": "Trouver les coefficients d'une parabole qui minimise la somme des carrés des distances à un nuage de points donné. Formuler ce problème comme une minimisation quadratique en exprimant la fonction objectif sous forme quadratique.",
+  "concepts": [
+    "régression parabolique",
+    "minimisation quadratique",
+    "projection orthogonale",
+    "sous-espace vectoriel",
+    "matrice définie positive",
+    "convexité stricte",
+    "noyau d'une matrice"
+  ],
+  "methods": [
+    "réduction de la somme des carrés en norme euclidienne",
+    "développement de la forme quadratique",
+    "analyse de la positivité définie d'une matrice",
+    "étude du noyau d'une matrice"
+  ],
+  "objects": [
+    "nuage de points",
+    "parabole",
+    "matrice symétrique",
+    "vecteur résidu",
+    "fonctionnelle quadratique"
+  ],
+  "content_hash": "3a93cd375b221d04047cde0311e3a3efcef9b1b21a10ddcf27ee84a145bb59e2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:09:48.074Z"
+}

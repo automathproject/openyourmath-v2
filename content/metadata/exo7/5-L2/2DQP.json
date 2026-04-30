@@ -1,0 +1,26 @@
+{
+  "uuid": "2DQP",
+  "source_path": "exo7/5-L2/2DQP.tex",
+  "summary": "L'exercice demande de démontrer l'équivalence entre la convergence uniforme sur ℝ de la série ∑aₙsin(nx) et la condition limite n aₙ → 0. La suite (aₙ) est décroissante de limite nulle.",
+  "concepts": [
+    "convergence uniforme",
+    "critère de Cauchy",
+    "inégalité trigonométrique",
+    "transformation d'Abel",
+    "série trigonométrique"
+  ],
+  "methods": [
+    "critère de convergence uniforme de Cauchy",
+    "transformation d'Abel",
+    "inégalité trigonométrique",
+    "choix de point spécifique"
+  ],
+  "objects": [
+    "série de fonctions",
+    "suite décroissante",
+    "fonction sinus"
+  ],
+  "content_hash": "42c5a217442d73cb681fc784b28de363aa05395db395bb21f919a61cedcfaf86",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:16:46.572Z"
+}

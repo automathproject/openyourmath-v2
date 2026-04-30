@@ -1,0 +1,29 @@
+{
+  "uuid": "HvSs",
+  "source_path": "amscc/HvSs.tex",
+  "summary": "L'exercice modélise le poids de pièces fabriquées par une machine et étudie les propriétés statistiques de la moyenne et de la somme des poids dans des échantillons. Il applique le théorème central limite pour approcher la loi de variables liées à ces échantillons par des lois normales.",
+  "concepts": [
+    "théorème central limite",
+    "loi normale",
+    "espérance mathématique",
+    "variance",
+    "variable aléatoire",
+    "approximation gaussienne",
+    "indépendance statistique"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "approximation par la loi normale"
+  ],
+  "objects": [
+    "variable aléatoire",
+    "poids moyen d'un échantillon",
+    "poids total d'un échantillon",
+    "différence de poids entre échantillons"
+  ],
+  "content_hash": "ce81272696df513f1456a46d176ecd9d97fce6433e783dd0c5f27afdc081240b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:43:59.195Z"
+}

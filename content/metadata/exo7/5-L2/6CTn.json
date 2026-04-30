@@ -1,0 +1,30 @@
+{
+  "uuid": "6CTn",
+  "source_path": "exo7/5-L2/6CTn.tex",
+  "summary": "L'exercice étudie une application continue entre deux espaces vectoriels normés, avec une condition de sous-additivité bornée. On demande d'abord de montrer que l'application est linéaire lorsque la borne est nulle, puis d'analyser le cas général où la borne est strictement positive en construisant une suite d'applications et en étudiant sa convergence.",
+  "concepts": [
+    "espace vectoriel normé",
+    "complétude",
+    "application linéaire",
+    "continuité",
+    "sous-additivité",
+    "convergence uniforme",
+    "limite d'applications"
+  ],
+  "methods": [
+    "récurrence",
+    "densité des rationnels",
+    "téléscopage",
+    "limite uniforme",
+    "unicité par linéarité"
+  ],
+  "objects": [
+    "application continue",
+    "suite d'applications",
+    "application linéaire continue",
+    "application bornée"
+  ],
+  "content_hash": "480d386f6e4e93483eff481cdd65c82e4dc81eca178f671acf45df48bcea1840",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:37:02.072Z"
+}

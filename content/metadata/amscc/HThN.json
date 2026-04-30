@@ -1,0 +1,28 @@
+{
+  "uuid": "HThN",
+  "source_path": "amscc/HThN.tex",
+  "summary": "Calculer des probabilités liées à la divisibilité d'un nombre entier par ses diviseurs premiers, puis démontrer l'indépendance de ces événements et déterminer le nombre d'entiers premiers avec n.",
+  "concepts": [
+    "probabilité discrète",
+    "divisibilité",
+    "événements indépendants",
+    "indicatrice d'Euler",
+    "nombre premier",
+    "définition de la probabilité",
+    "multiplication des probabilités"
+  ],
+  "methods": [
+    "calcul de probabilité par comptage",
+    "utilisation de la définition de l'indépendance",
+    "calcul de l'indicatrice d'Euler"
+  ],
+  "objects": [
+    "événements de divisibilité",
+    "diviseurs premiers",
+    "entiers naturels",
+    "indicatrice d'Euler"
+  ],
+  "content_hash": "22c75060291321bd04d74cf6c58d9234c15fb2835fa82975f87553076b3c600f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:23:11.156Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "dQp4",
+  "source_path": "exo7/2-L1/dQp4.tex",
+  "summary": "Étude de la convergence d'une série numérique dont le terme général dépend du nombre de chiffres de l'entier k. La série est exprimée en fonction d'un paramètre a > 0.",
+  "concepts": [
+    "série numérique",
+    "convergence de série",
+    "fonction exponentielle",
+    "nombre de chiffres d'un entier",
+    "somme de termes"
+  ],
+  "methods": [
+    "regroupement de termes",
+    "calcul de somme géométrique",
+    "analyse de la croissance des termes"
+  ],
+  "objects": [
+    "suite p_k",
+    "série à termes positifs",
+    "paramètre a"
+  ],
+  "content_hash": "b2677e1b73268acae42324b7a7ea47d36be351aee4eb1b8a06732f5182150a10",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:26:09.331Z"
+}

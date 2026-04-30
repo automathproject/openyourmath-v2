@@ -1,0 +1,25 @@
+{
+  "uuid": "ZUyQ",
+  "source_path": "exo7/2-L1/ZUyQ.tex",
+  "summary": "On étudie la convergence d'une suite bornée $(x_n)$ vérifiant une condition limite impliquant $x_n$ et $x_{2n}$. L'objectif est de démontrer que la suite converge vers $\\frac{2}{3}$.",
+  "concepts": [
+    "suite bornée",
+    "convergence de suite",
+    "limite de suite",
+    "relation de récurrence implicite",
+    "théorème de la limite gendarme"
+  ],
+  "methods": [
+    "passage à la limite",
+    "utilisation de la bornitude",
+    "manipulation algébrique de la condition limite"
+  ],
+  "objects": [
+    "suite $(x_n)$",
+    "suite $(x_{2n})$",
+    "limite $\\frac{2}{3}$"
+  ],
+  "content_hash": "3c6ee257bbfd7a6c103c1f355ca432589539439519350d46558bb9572fd83b31",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:23:15.982Z"
+}

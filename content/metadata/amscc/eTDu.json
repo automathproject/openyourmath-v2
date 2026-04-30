@@ -1,0 +1,31 @@
+{
+  "uuid": "eTDu",
+  "source_path": "amscc/eTDu.tex",
+  "summary": "L'exercice propose deux méthodes de Monte Carlo pour estimer π/4 en utilisant des variables aléatoires uniformes. Il demande de déterminer les lois, les espérances, les variances et la convergence presque sûre des estimateurs construits.",
+  "concepts": [
+    "loi forte des grands nombres",
+    "estimateur sans biais",
+    "convergence presque sûre",
+    "loi de Bernoulli",
+    "théorème de transfert",
+    "espérance conditionnelle",
+    "variance d'un estimateur"
+  ],
+  "methods": [
+    "calcul d'espérance",
+    "calcul de variance",
+    "intégration de fonction",
+    "application de la loi forte des grands nombres",
+    "comparaison de variances"
+  ],
+  "objects": [
+    "variable aléatoire de Bernoulli",
+    "variable aléatoire uniforme",
+    "estimateur de Monte Carlo",
+    "suite de variables aléatoires",
+    "fonction indicatrice"
+  ],
+  "content_hash": "02e110b91b5dfbf27fb6508931772e9418a35313b63c934d249c5d9a2d7ca9a4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:59:32.104Z"
+}

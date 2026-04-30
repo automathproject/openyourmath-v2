@@ -1,0 +1,29 @@
+{
+  "uuid": "2se1",
+  "source_path": "exo7/5-L2/2se1.tex",
+  "summary": "L'exercice demande de montrer la convergence uniforme sur ℝ⁺ d'une suite de fonctions définies par morceaux vers la fonction exponentielle décroissante, puis d'utiliser cette suite pour calculer l'intégrale de Gauss.",
+  "concepts": [
+    "convergence simple",
+    "convergence uniforme",
+    "intégrabilité",
+    "intégrale de Gauss",
+    "inégalité de convexité",
+    "intégrales de Wallis"
+  ],
+  "methods": [
+    "étude de la dérivée",
+    "recherche de maximum",
+    "changement de variable",
+    "approximation asymptotique",
+    "estimation d'erreur d'intégration"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction exponentielle",
+    "intégrale impropre",
+    "bornes supérieures"
+  ],
+  "content_hash": "541266049b85f7b2af555886be370d206d34e639b9f3e11d7f149949ee1d83ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:45:45.993Z"
+}

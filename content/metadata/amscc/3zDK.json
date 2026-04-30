@@ -1,0 +1,26 @@
+{
+  "uuid": "3zDK",
+  "source_path": "amscc/3zDK.tex",
+  "summary": "L'exercice demande d'effectuer un test du chi-carré pour déterminer si les fréquences observées des premiers chiffres de prix dans un supermarché sont compatibles avec la loi de Benford, avec un risque de première espèce de 5%.",
+  "concepts": [
+    "loi de Benford",
+    "test du chi-carré",
+    "risque de première espèce",
+    "fréquences observées",
+    "fréquences attendues",
+    "hypothèse nulle"
+  ],
+  "methods": [
+    "test d'ajustement",
+    "calcul de la statistique de chi-carré",
+    "comparaison des fréquences"
+  ],
+  "objects": [
+    "fréquences des premiers chiffres",
+    "distribution de Benford",
+    "tableau de fréquences"
+  ],
+  "content_hash": "0412e1d382c7dc6f6e604ff2db00f044c52ccd67296c0b2ecfbcac09c68672bc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:31:14.978Z"
+}

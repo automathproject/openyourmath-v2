@@ -1,0 +1,31 @@
+{
+  "uuid": "ZT9T",
+  "source_path": "amscc/ZT9T.tex",
+  "summary": "L'exercice étudie une variable aléatoire réelle à densité paramétrée et ses propriétés, puis généralise à une suite de variables aléatoires indépendantes et identiquement distribuées. Il demande de vérifier les conditions pour que la fonction soit une densité, de calculer des espérances, des covariances et de montrer la convergence en loi.",
+  "concepts": [
+    "densité de probabilité",
+    "espérance mathématique",
+    "loi de Bernoulli",
+    "loi binomiale",
+    "covariance",
+    "convergence en loi",
+    "variable aléatoire indépendante et identiquement distribuée"
+  ],
+  "methods": [
+    "intégration",
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "calcul de la covariance",
+    "utilisation de la loi binomiale"
+  ],
+  "objects": [
+    "variable aléatoire réelle",
+    "densité de probabilité",
+    "espérance",
+    "covariance",
+    "suite de variables aléatoires"
+  ],
+  "content_hash": "d9ca8163ec5697d6b1e6ed900467df838497d8a8145da3e89904d36cf1a01bf3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:54:51.131Z"
+}

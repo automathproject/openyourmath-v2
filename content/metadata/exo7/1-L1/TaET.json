@@ -1,0 +1,25 @@
+{
+  "uuid": "TaET",
+  "source_path": "exo7/1-L1/TaET.tex",
+  "summary": "Exprimer le tangent d'un angle multiple nx en fonction du tangent de l'angle x, où n est un entier naturel et x un réel.",
+  "concepts": [
+    "formule de tangente multiple",
+    "relation de récurrence",
+    "polynôme de Chebyshev",
+    "développement en série",
+    "fonction trigonométrique"
+  ],
+  "methods": [
+    "développement par récurrence",
+    "identités trigonométriques",
+    "calcul de coefficients binomiaux"
+  ],
+  "objects": [
+    "angle multiple",
+    "fonction tangent",
+    "polynôme de degré n"
+  ],
+  "content_hash": "3ad64aa8e195dfe465986d4f47b659926619229194508b25ec931b584610f445",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:47:40.196Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "PFgW",
+  "source_path": "exo7/4-L2/PFgW.tex",
+  "summary": "On considère une matrice 2x2 réelle dont la somme des coefficients de chaque colonne vaut 1. L'exercice demande de prouver une propriété linéaire sur les vecteurs transformés par cette matrice, d'identifier un vecteur propre et sa valeur propre, puis d'étudier la diagonalisabilité de la matrice selon la valeur propre.",
+  "concepts": [
+    "matrice carrée",
+    "vecteur propre",
+    "valeur propre",
+    "diagonalisation",
+    "polynôme caractéristique",
+    "endomorphisme",
+    "base vectorielle"
+  ],
+  "methods": [
+    "calcul matriciel",
+    "identification de vecteur propre",
+    "analyse de diagonalisabilité",
+    "changement de base"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "vecteur de ℝ²",
+    "vecteur propre",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "024ee6533adfb281b995367e70a5fd384185df42da54f5b8f5fee0b7a216e40c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:40:21.722Z"
+}

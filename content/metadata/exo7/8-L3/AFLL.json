@@ -1,0 +1,33 @@
+{
+  "uuid": "AFLL",
+  "source_path": "exo7/8-L3/AFLL.tex",
+  "summary": "L'exercice étudie les isométries conservant un polygone régulier à n côtés et détermine la structure du groupe diédral Dₙ. Il applique les théorèmes de Sylow pour analyser les sous-groupes de Dₙ, notamment pour n impair et n=6.",
+  "concepts": [
+    "groupe diédral",
+    "isométrie",
+    "action de groupe",
+    "théorème de Sylow",
+    "sous-groupe de Sylow",
+    "conjugaison de sous-groupes",
+    "stabilisateur d'un point",
+    "seconde formule des classes"
+  ],
+  "methods": [
+    "analyse des isométries",
+    "calcul du cardinal d'un groupe",
+    "détermination des sous-groupes de Sylow",
+    "vérification de la conjugaison des sous-groupes",
+    "utilisation de la seconde formule des classes"
+  ],
+  "objects": [
+    "groupe diédral Dₙ",
+    "polygone régulier",
+    "sommets du polygone",
+    "symétries orthogonales",
+    "rotations",
+    "sous-groupes de Sylow"
+  ],
+  "content_hash": "9167cbff4e0ad8f1384e8df9486c40d63dac13d3f8b7c813f935c999bba98162",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:52:03.611Z"
+}

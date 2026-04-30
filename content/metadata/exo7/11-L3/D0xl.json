@@ -1,0 +1,30 @@
+{
+  "uuid": "D0xl",
+  "source_path": "exo7/11-L3/D0xl.tex",
+  "summary": "L'exercice demande de démontrer qu'un cylindre dans ℝ³ est une surface régulière, de paramétrer cette surface, de calculer sa première forme fondamentale, de déterminer un champ de vecteurs normaux unitaires, de calculer les symboles de Christoffel, et d'analyser si certaines courbes sur le cylindre sont des géodésiques.",
+  "concepts": [
+    "surface régulière",
+    "paramétrage de surface",
+    "première forme fondamentale",
+    "champ de vecteurs normaux",
+    "symboles de Christoffel",
+    "géodésique"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "calcul de matrice de la première forme fondamentale",
+    "détermination de vecteurs normaux",
+    "calcul des symboles de Christoffel",
+    "analyse de courbes géodésiques"
+  ],
+  "objects": [
+    "cylindre dans ℝ³",
+    "paramétrage F",
+    "base tangentielle (Xθ, Xh)",
+    "courbe paramétrée c",
+    "vecteur vitesse"
+  ],
+  "content_hash": "d6e6a2952879296ce6c3b11746dbd990f62e620b18c679d8902ef2c09b9f3f36",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:15:35.106Z"
+}

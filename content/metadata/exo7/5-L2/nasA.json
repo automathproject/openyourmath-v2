@@ -1,0 +1,28 @@
+{
+  "uuid": "nasA",
+  "source_path": "exo7/5-L2/nasA.tex",
+  "summary": "On considère l'espace des matrices carrées réelles de taille n muni d'une norme particulière. On doit démontrer la continuité d'une application linéaire (la trace) et déterminer sa norme subordonnée.",
+  "concepts": [
+    "application linéaire",
+    "continuité",
+    "norme subordonnée",
+    "trace d'une matrice",
+    "inégalité triangulaire",
+    "norme matricielle",
+    "espace vectoriel normé"
+  ],
+  "methods": [
+    "majoration de la trace par la somme des éléments diagonaux",
+    "utilisation de l'inégalité triangulaire",
+    "évaluation sur une matrice particulière"
+  ],
+  "objects": [
+    "matrice carrée",
+    "norme sur un espace de matrices",
+    "application linéaire",
+    "trace d'une matrice"
+  ],
+  "content_hash": "a1585ee08bb23f30bb74cbf61a019b8db3bdb6dc74a78d95d3b086e41ded547e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:08:44.863Z"
+}

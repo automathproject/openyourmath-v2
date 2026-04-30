@@ -1,0 +1,31 @@
+{
+  "uuid": "ySw3",
+  "source_path": "exo7/5-L2/ySw3.tex",
+  "summary": "L'exercice demande de déterminer les normes matricielles associées aux normes vectorielles 1 et infinie sur l'espace des matrices carrées réelles. Il s'agit d'exprimer ces normes en fonction des normes des colonnes ou des lignes de la matrice.",
+  "concepts": [
+    "norme matricielle",
+    "norme vectorielle",
+    "norme 1",
+    "norme infinie",
+    "application linéaire",
+    "continuité",
+    "espace vectoriel normé",
+    "inégalité de Cauchy-Schwarz"
+  ],
+  "methods": [
+    "majoration",
+    "construction d'un vecteur extrémal",
+    "utilisation de la définition de la norme subordonnée",
+    "calcul de maximum"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteur colonne",
+    "norme subordonnée",
+    "colonnes d'une matrice",
+    "lignes d'une matrice"
+  ],
+  "content_hash": "4892439252273bb5e6348279814b6f9ab18949328472c1fc2429c87112055b5a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:18:02.042Z"
+}

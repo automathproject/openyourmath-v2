@@ -1,0 +1,24 @@
+{
+  "uuid": "Npla",
+  "source_path": "exo7/7-L2/Npla.tex",
+  "summary": "L'exercice demande de calculer le nombre total de classements possibles de 20 personnes sans ex-aequo, puis avec exactement 2 personnes classées ex-aequo.",
+  "concepts": [
+    "combinaisons",
+    "permutations",
+    "principe de dénombrement",
+    "arrangements"
+  ],
+  "methods": [
+    "calcul de combinaisons",
+    "calcul de factorielle",
+    "décomposition en cas"
+  ],
+  "objects": [
+    "classement de personnes",
+    "ex-aequo",
+    "nombre de permutations"
+  ],
+  "content_hash": "1cce958a76a9ff834bb2e1aac23eda8b14f612f8b3482c3d5bd7cd0e35ee8b01",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:25:48.704Z"
+}

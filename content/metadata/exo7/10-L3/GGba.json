@@ -1,0 +1,27 @@
+{
+  "uuid": "GGba",
+  "source_path": "exo7/10-L3/GGba.tex",
+  "summary": "Soit G un sous-groupe du groupe symétrique Sn contenant une permutation impaire. Montrer que GA_n = S_n et en déduire que G contient au moins un sous-groupe distingué d'indice 2.",
+  "concepts": [
+    "groupe symétrique",
+    "permutation impaire",
+    "sous-groupe distingué",
+    "indice d'un sous-groupe",
+    "action de groupe",
+    "théorème de Cauchy"
+  ],
+  "methods": [
+    "utilisation de la structure de Sn",
+    "analyse des sous-groupes distingués",
+    "application du théorème de Cauchy"
+  ],
+  "objects": [
+    "groupe symétrique Sn",
+    "sous-groupe G",
+    "permutation impaire",
+    "sous-groupe distingué"
+  ],
+  "content_hash": "bc3cb6d41fec1ea1867c17168008b213bc73cc59af298967b676850fb5c3e47d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:07:39.941Z"
+}

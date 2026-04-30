@@ -1,0 +1,26 @@
+{
+  "uuid": "gVKh",
+  "source_path": "exo7/8-L3/gVKh.tex",
+  "summary": "Montrer qu'un nombre premier p divisant 2^(2^n)+1 est de la forme k*2^(n+1)+1 en étudiant l'ordre de 2 dans le groupe multiplicatif Z/pZ.",
+  "concepts": [
+    "groupe multiplicatif d'un corps fini",
+    "ordre d'un élément",
+    "théorème de Lagrange",
+    "divisibilité dans les anneaux",
+    "corps finis"
+  ],
+  "methods": [
+    "calcul de l'ordre d'un élément",
+    "utilisation de la structure du groupe multiplicatif",
+    "application du théorème de Lagrange"
+  ],
+  "objects": [
+    "nombre premier",
+    "groupe multiplicatif Z/pZ",
+    "ordre d'un élément",
+    "puissance de 2"
+  ],
+  "content_hash": "c8ffd455e265f9a37d636fb061b4a91c23d2eddb2e65dfad7ce0cb5db85adb34",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:15:25.544Z"
+}

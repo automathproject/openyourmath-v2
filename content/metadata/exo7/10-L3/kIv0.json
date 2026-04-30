@@ -1,0 +1,26 @@
+{
+  "uuid": "kIv0",
+  "source_path": "exo7/10-L3/kIv0.tex",
+  "summary": "L'exercice demande d'écrire la table de multiplication d'un groupe d'ordre 4 où chaque élément est d'ordre 2, puis de montrer l'isomorphisme de ce groupe avec le produit cartésien de deux groupes cycliques d'ordre 2, et enfin de classifier tous les groupes d'ordre 4.",
+  "concepts": [
+    "groupe d'ordre fini",
+    "isomorphisme de groupes",
+    "groupe abélien",
+    "groupe cyclique",
+    "produit direct de groupes",
+    "classification des groupes d'ordre 4"
+  ],
+  "methods": [
+    "construction de la table de multiplication",
+    "vérification des propriétés d'isomorphisme",
+    "analyse des sous-groupes"
+  ],
+  "objects": [
+    "groupe K",
+    "groupe (ℤ/2ℤ × ℤ/2ℤ, +)",
+    "groupe ℤ/4ℤ"
+  ],
+  "content_hash": "fef4896b1f25e49ed23781e6281fdc7f87c5a497290b583c8e5d3dbe194c1a20",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:09:53.382Z"
+}

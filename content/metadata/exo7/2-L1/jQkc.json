@@ -1,0 +1,26 @@
+{
+  "uuid": "jQkc",
+  "source_path": "exo7/2-L1/jQkc.tex",
+  "summary": "On définit deux suites (y_n) et (z_n) à partir d'une suite bornée (x_n) de réels. On demande de montrer que ces deux suites convergent, puis que la convergence de (x_n) est équivalente à celle de (y_n) et (z_n) vers la même limite.",
+  "concepts": [
+    "suite bornée",
+    "supremum",
+    "infimum",
+    "convergence de suite",
+    "limite d'une suite",
+    "équivalence de convergence"
+  ],
+  "methods": [
+    "étude de la monotonie",
+    "encadrement de suite",
+    "limite supérieure et inférieure"
+  ],
+  "objects": [
+    "suite de réels",
+    "suite (y_n)",
+    "suite (z_n)"
+  ],
+  "content_hash": "ec5a22b959041582db8aaded5d422b4bb9e04991ff0153f8c6335646fabc5ef0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:31:02.272Z"
+}

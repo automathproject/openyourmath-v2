@@ -1,0 +1,28 @@
+{
+  "uuid": "Iou6",
+  "source_path": "exo7/4-L2/Iou6.tex",
+  "summary": "L'exercice demande de déterminer la matrice d'un endomorphisme donné par son action sur une base, puis d'étudier les noyaux de deux polynômes de l'endomorphisme pour construire une nouvelle base de l'espace vectoriel.",
+  "concepts": [
+    "endomorphisme",
+    "matrice d'application linéaire",
+    "noyau d'un endomorphisme",
+    "polynôme annulateur",
+    "base d'un espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "réduction d'endomorphisme"
+  ],
+  "methods": [
+    "calcul de matrice dans une base",
+    "détermination de noyau",
+    "construction de base par réunion"
+  ],
+  "objects": [
+    "espace vectoriel de dimension 3",
+    "endomorphisme",
+    "matrice carrée 3x3",
+    "noyaux de polynômes d'endomorphisme"
+  ],
+  "content_hash": "0fb4a75eebcbf724f1b976bb429b622ab5d49b48e91f7fd6263a128e7acdb517",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:32:59.766Z"
+}

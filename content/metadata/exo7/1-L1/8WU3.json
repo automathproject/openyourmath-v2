@@ -1,0 +1,23 @@
+{
+  "uuid": "8WU3",
+  "source_path": "exo7/1-L1/8WU3.tex",
+  "summary": "Trouver le reste de la division euclidienne d'un polynôme P par (X-a)(X-b) connaissant les restes des divisions de P par (X-a) et (X-b).",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "reste de la division",
+    "polynôme",
+    "racine d'un polynôme"
+  ],
+  "methods": [
+    "utilisation du théorème du reste",
+    "calcul du reste par interpolation"
+  ],
+  "objects": [
+    "polynôme P",
+    "polynôme (X-a)(X-b)",
+    "reste de la division"
+  ],
+  "content_hash": "e78fd60acd005aeee44db51b8ec1fb768ad8ef2d6b9810698c35eba1f171f8fa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:36:58.035Z"
+}

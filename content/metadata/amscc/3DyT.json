@@ -1,0 +1,23 @@
+{
+  "uuid": "3DyT",
+  "source_path": "amscc/3DyT.tex",
+  "summary": "L'exercice demande de majorer la probabilité qu'une variable aléatoire discrète modélisant le nombre de camions livrés quotidiennement prenne une valeur inférieure ou égale à 60, dans un contexte de gestion logistique de stocks.",
+  "concepts": [
+    "inégalité de Bienaymé-Tchebychev",
+    "espérance",
+    "écart-type",
+    "variable aléatoire discrète",
+    "majoration de probabilité"
+  ],
+  "methods": [
+    "application de l'inégalité de Bienaymé-Tchebychev"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "espérance",
+    "écart-type"
+  ],
+  "content_hash": "8c9f02720ea46f655e5620a460a167efe5d20f5ecec6efae217b1b1b16a2d42e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:14:48.745Z"
+}

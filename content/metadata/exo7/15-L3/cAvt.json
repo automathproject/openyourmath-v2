@@ -1,0 +1,30 @@
+{
+  "uuid": "cAvt",
+  "source_path": "exo7/15-L3/cAvt.tex",
+  "summary": "On considère une application dérivable d'un intervalle fermé borné de ℝ dans lui-même, avec une dérivée de module strictement inférieur à 1. On définit une suite récurrente à partir d'un point initial et on demande de montrer l'existence et l'unicité d'un point fixe, ainsi que la convergence de la suite vers ce point fixe.",
+  "concepts": [
+    "théorème du point fixe de Banach",
+    "contraction",
+    "suite récurrente",
+    "point fixe",
+    "convergence",
+    "unicité du point fixe",
+    "application contractante",
+    "intervalle fermé borné"
+  ],
+  "methods": [
+    "itération de la fonction",
+    "estimation de la distance",
+    "étude de la limite",
+    "utilisation de la dérivée"
+  ],
+  "objects": [
+    "application dérivable",
+    "suite récurrente",
+    "point fixe",
+    "intervalle fermé borné"
+  ],
+  "content_hash": "5b6789bce3f1645db2f71b1f79d424926c05c27419d66d1d82de05e4ad2b6a5a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:31:14.011Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "3Df7",
+  "source_path": "amscc/3Df7.tex",
+  "summary": "Estimer les paramètres μ et σ d'une loi normale modélisant le nombre de chargeurs consommés par mission, puis déterminer le nombre minimal de chargeurs à emporter pour couvrir 95% des situations avec correction de continuité.",
+  "concepts": [
+    "loi normale",
+    "quantiles",
+    "correction de continuité",
+    "estimation de paramètres",
+    "probabilité conditionnelle",
+    "standardisation"
+  ],
+  "methods": [
+    "standardisation",
+    "correction de continuité",
+    "calcul de quantiles",
+    "résolution de système d'équations"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "quantiles de la loi normale centrée réduite",
+    "nombre de chargeurs"
+  ],
+  "content_hash": "90fb99f08444f22ce70051ef1def7ee4d4d870c3b895cbc1a549a909df2c2bbd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:44:57.304Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "BmxQ",
+  "source_path": "exo7/4-L2/BmxQ.tex",
+  "summary": "L'exercice demande de démontrer que le terme constant et le coefficient du terme de degré 1 du polynôme caractéristique d'un endomorphisme sont respectivement égaux au déterminant et à la trace de cet endomorphisme.",
+  "concepts": [
+    "polynôme caractéristique",
+    "déterminant d'un endomorphisme",
+    "trace d'un endomorphisme",
+    "valeur propre",
+    "vecteur propre",
+    "réduction d'endomorphisme"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "propriétés des valeurs propres",
+    "relation de Cayley-Hamilton"
+  ],
+  "objects": [
+    "endomorphisme",
+    "polynôme annulateur",
+    "matrice carrée"
+  ],
+  "content_hash": "a87b69dc12857830179d6414801d3749e001e345a11a585e61161090f92b5a96",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:23:02.907Z"
+}

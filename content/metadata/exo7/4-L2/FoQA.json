@@ -1,0 +1,28 @@
+{
+  "uuid": "FoQA",
+  "source_path": "exo7/4-L2/FoQA.tex",
+  "summary": "L'exercice demande de modéliser une suite réelle par un système linéaire matriciel, puis de diagonaliser la matrice associée pour exprimer la suite en fonction des conditions initiales.",
+  "concepts": [
+    "équation de récurrence linéaire",
+    "matrice de passage",
+    "diagonalisation",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "methods": [
+    "construction de matrice associée",
+    "calcul de polynôme caractéristique",
+    "diagonalisation",
+    "résolution de système linéaire"
+  ],
+  "objects": [
+    "suite récurrente",
+    "matrice 3x3",
+    "vecteurs propres",
+    "valeurs propres"
+  ],
+  "content_hash": "26619a6218d746d99b927ecd21c5c1d35f73575ee7bff2dcdd63ff329bbed916",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:28:59.017Z"
+}

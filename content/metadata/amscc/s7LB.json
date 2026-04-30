@@ -1,0 +1,29 @@
+{
+  "uuid": "s7LB",
+  "source_path": "amscc/s7LB.tex",
+  "summary": "L'exercice demande de tester l'adéquation d'une variable aléatoire à une loi de Poisson, avec et sans spécification du paramètre, à partir de 150 tirages indépendants.",
+  "concepts": [
+    "test d'adéquation",
+    "loi de Poisson",
+    "hypothèse nulle",
+    "test du chi-deux",
+    "fréquences observées",
+    "fréquences théoriques",
+    "niveau de signification"
+  ],
+  "methods": [
+    "calcul des fréquences observées",
+    "calcul des fréquences théoriques",
+    "calcul de la statistique de test",
+    "comparaison avec la loi du chi-deux"
+  ],
+  "objects": [
+    "variable aléatoire",
+    "tirages indépendants",
+    "loi de Poisson",
+    "statistique de test"
+  ],
+  "content_hash": "5734429a393d6859d0c6875919eb0315dd13840534f60fa5a1a34eb5a3d5845d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:55:15.581Z"
+}

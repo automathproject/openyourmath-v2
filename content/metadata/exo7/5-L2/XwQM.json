@@ -1,0 +1,26 @@
+{
+  "uuid": "XwQM",
+  "source_path": "exo7/5-L2/XwQM.tex",
+  "summary": "On considère une fonction continue, paire et 2π-périodique, concave sur [0,2π]. On demande de montrer que ses coefficients de Fourier trigonométriques a_k sont négatifs pour k ≥ 1.",
+  "concepts": [
+    "fonction périodique",
+    "fonction paire",
+    "concavité",
+    "coefficient de Fourier",
+    "intégrale de Riemann",
+    "décomposition en somme"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "décomposition en intervalles"
+  ],
+  "objects": [
+    "fonction continue",
+    "coefficient de Fourier",
+    "intégrale trigonométrique"
+  ],
+  "content_hash": "058e3ae54a4de966ba0cc44d39369adf4490a49bfac68a4461e8c7bfc053d0ca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:25:28.685Z"
+}

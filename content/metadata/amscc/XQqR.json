@@ -1,0 +1,26 @@
+{
+  "uuid": "XQqR",
+  "source_path": "amscc/XQqR.tex",
+  "summary": "L'exercice demande de déterminer une fonction G permettant à une méthode d'intégration numérique d'être consistante d'ordre 2, en améliorant la méthode d'Euler explicite.",
+  "concepts": [
+    "consistance d'une méthode numérique",
+    "ordre de convergence",
+    "équation différentielle",
+    "développement de Taylor",
+    "théorème de consistance"
+  ],
+  "methods": [
+    "analyse de consistance",
+    "développement de Taylor",
+    "calcul de dérivées partielles"
+  ],
+  "objects": [
+    "méthode numérique",
+    "fonction G",
+    "fonction H",
+    "équation différentielle"
+  ],
+  "content_hash": "57b1e547b714748293dd2c72a1e50b976bb87c7e198d936ea9b671e0b1d54089",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:37:24.648Z"
+}

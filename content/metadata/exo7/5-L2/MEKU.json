@@ -1,0 +1,26 @@
+{
+  "uuid": "MEKU",
+  "source_path": "exo7/5-L2/MEKU.tex",
+  "summary": "L'exercice demande de démontrer qu'une semi-norme sur l'espace des matrices carrées complexes est soit identiquement nulle, soit une norme, sous une condition multiplicative.",
+  "concepts": [
+    "semi-norme",
+    "norme",
+    "espace vectoriel normé",
+    "matrice carrée complexe",
+    "rang d'une matrice",
+    "inégalité triangulaire"
+  ],
+  "methods": [
+    "réduction de matrice",
+    "argument par l'absurde",
+    "utilisation de la condition multiplicative"
+  ],
+  "objects": [
+    "semi-norme",
+    "matrice carrée complexe",
+    "rang d'une matrice"
+  ],
+  "content_hash": "79c64674d837119dbf86cc16e77b629577ef6f2cb0acc35349f1c706fce3347f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:46:42.442Z"
+}

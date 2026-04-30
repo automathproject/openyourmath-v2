@@ -1,0 +1,27 @@
+{
+  "uuid": "f4qb",
+  "source_path": "amscc/f4qb.tex",
+  "summary": "L'exercice demande de construire des intervalles de confiance pour la moyenne et l'écart type d'une loi normale à partir de 15 tirages indépendants.",
+  "concepts": [
+    "intervalle de confiance",
+    "moyenne d'une loi normale",
+    "écart type d'une loi normale",
+    "estimation ponctuelle",
+    "niveau de confiance",
+    "loi normale"
+  ],
+  "methods": [
+    "estimation par intervalle",
+    "calcul de l'intervalle de confiance pour la moyenne",
+    "calcul de l'intervalle de confiance pour l'écart type"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "échantillon indépendant",
+    "moyenne empirique",
+    "écart type empirique"
+  ],
+  "content_hash": "c3fd9cae1b280b12f0c886cbd562b8bcde4a0a05a6d7ba95da3a41f92be20762",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:48:16.155Z"
+}

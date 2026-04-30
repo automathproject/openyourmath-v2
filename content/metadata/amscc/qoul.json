@@ -1,0 +1,25 @@
+{
+  "uuid": "qoul",
+  "source_path": "amscc/qoul.tex",
+  "summary": "Calcul de probabilités pour des variables aléatoires suivant une loi normale centrée réduite ou non, en utilisant des tables de valeurs. Les questions portent sur l'encadrement de probabilités et la détermination d'un intervalle de confiance.",
+  "concepts": [
+    "loi normale centrée réduite",
+    "fonction de répartition",
+    "standardisation",
+    "symétrie de la loi normale",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "standardisation",
+    "utilisation de tables de valeurs",
+    "calcul de probabilités à partir de la fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "fonction de répartition",
+    "intervalle de probabilité"
+  ],
+  "content_hash": "877c23b5b48198c15c761cb62eae861722d47a548b5f492a612cd3a28dcc4355",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:07:20.050Z"
+}

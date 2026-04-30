@@ -1,0 +1,26 @@
+{
+  "uuid": "pzZH",
+  "source_path": "exo7/4-L2/pzZH.tex",
+  "summary": "On considère une matrice carrée d'ordre 2 dont le carré est diagonalisable et dont la trace est non nulle. On demande de montrer que cette matrice est diagonalisable dans le corps des nombres complexes.",
+  "concepts": [
+    "diagonalisation",
+    "valeur propre",
+    "trace d'une matrice",
+    "polynôme annulateur",
+    "matrice semblable",
+    "racine simple"
+  ],
+  "methods": [
+    "analyse des valeurs propres",
+    "utilisation de la trace",
+    "étude du polynôme annulateur"
+  ],
+  "objects": [
+    "matrice carrée d'ordre 2",
+    "polynôme scindé",
+    "matrice diagonale"
+  ],
+  "content_hash": "349681f1501341c881a3a96a7a5312a96659462548c091ab1dceee99aad6a1f9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:16:30.698Z"
+}

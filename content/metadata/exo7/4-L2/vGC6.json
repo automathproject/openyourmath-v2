@@ -1,0 +1,25 @@
+{
+  "uuid": "vGC6",
+  "source_path": "exo7/4-L2/vGC6.tex",
+  "summary": "L'exercice demande de déterminer si une matrice donnée est diagonalisable et de trouver toutes les paires de matrices qui commutent avec cette matrice.",
+  "concepts": [
+    "diagonalisation",
+    "polynôme annulateur",
+    "commutativité des matrices",
+    "algèbre linéaire",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche de matrices inversibles",
+    "vérification de la commutativité"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "polynôme annulateur",
+    "paires de matrices commutantes"
+  ],
+  "content_hash": "15ebf9ebd650e53bef031412f2a2ab749f35d5916930554257812bf1f5c44fcf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:24:56.673Z"
+}

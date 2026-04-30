@@ -1,0 +1,33 @@
+{
+  "uuid": "nP4w",
+  "source_path": "amscc/nP4w.tex",
+  "summary": "L'exercice demande de montrer que maximiser la log-vraisemblance d'un échantillon issu d'une loi de Laplace revient à minimiser la somme des valeurs absolues des écarts à un paramètre θ. Il étudie ensuite les propriétés de convexité et de dérivabilité de cette somme pour identifier le minimiseur, qui s'avère être la médiane empirique.",
+  "concepts": [
+    "loi de Laplace",
+    "vraisemblance",
+    "log-vraisemblance",
+    "médiane empirique",
+    "convexité",
+    "dérivabilité",
+    "minimum global",
+    "statistiques d'ordre"
+  ],
+  "methods": [
+    "maximisation de la vraisemblance",
+    "minimisation de la somme des valeurs absolues",
+    "étude de la convexité",
+    "calcul de la dérivée",
+    "analyse des variations de fonction"
+  ],
+  "objects": [
+    "variables aléatoires i.i.d.",
+    "densité de probabilité",
+    "fonction de vraisemblance",
+    "somme des valeurs absolues",
+    "statistiques d'ordre",
+    "médiane empirique"
+  ],
+  "content_hash": "a0bd1d5e5ab10f54c4877f94929bde4d48b79deacf70e34fbd045b73faddf028",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:51:22.710Z"
+}

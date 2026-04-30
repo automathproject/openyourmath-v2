@@ -1,0 +1,26 @@
+{
+  "uuid": "alNi",
+  "source_path": "amscc/alNi.tex",
+  "summary": "L'exercice demande d'appliquer le théorème central limite pour déterminer la distribution d'une variable aléatoire somme de variables indépendantes et identiquement distribuées, puis de calculer une probabilité associée.",
+  "concepts": [
+    "théorème central limite",
+    "loi normale",
+    "moyenne d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "standardisation",
+    "approximation gaussienne"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de probabilité"
+  ],
+  "objects": [
+    "variable aléatoire somme",
+    "variable aléatoire centrée réduite",
+    "loi normale"
+  ],
+  "content_hash": "9ae93af684d0c1460bc1f8f163fad16d6576d947b3348dda1a9525ae1d00ff74",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:56:02.303Z"
+}

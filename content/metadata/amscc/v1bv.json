@@ -1,0 +1,31 @@
+{
+  "uuid": "v1bv",
+  "source_path": "amscc/v1bv.tex",
+  "summary": "L'exercice demande de construire et analyser des estimateurs du paramètre q d'une loi uniforme sur [0, q] à partir d'un échantillon. Il couvre plusieurs méthodes d'estimation (méthode des moments, maximum de vraisemblance) et leurs propriétés (consistance, normalité asymptotique, intervalles de confiance).",
+  "concepts": [
+    "loi uniforme",
+    "méthode des moments",
+    "maximum de vraisemblance",
+    "consistance",
+    "normalité asymptotique",
+    "intervalle de confiance",
+    "théorème central limite",
+    "loi exponentielle"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "théorème de continuité",
+    "lemme de Slutsky",
+    "calcul de quantile"
+  ],
+  "objects": [
+    "échantillon de loi uniforme",
+    "estimateur",
+    "statistique d'ordre",
+    "risque quadratique"
+  ],
+  "content_hash": "56686872604ff534949111b6c7dc0e67a09c884eb9aed6c3e927df4ed7550b88",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:59:50.452Z"
+}

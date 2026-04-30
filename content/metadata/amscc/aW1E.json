@@ -1,0 +1,29 @@
+{
+  "uuid": "aW1E",
+  "source_path": "amscc/aW1E.tex",
+  "summary": "L'exercice demande d'estimer la moyenne et l'écart-type d'un temps de trajet supposé normalement distribué, puis de tester une hypothèse sur cette moyenne à l'aide d'un test statistique.",
+  "concepts": [
+    "loi normale",
+    "estimation ponctuelle",
+    "test d'hypothèse",
+    "risque de première espèce",
+    "risque de seconde espèce",
+    "région critique",
+    "variable de décision"
+  ],
+  "methods": [
+    "estimation de la moyenne et de l'écart-type",
+    "test bilatéral",
+    "calcul de la région critique",
+    "calcul du risque de seconde espèce"
+  ],
+  "objects": [
+    "échantillon de temps de trajet",
+    "moyenne empirique",
+    "écart-type empirique",
+    "hypothèses statistiques"
+  ],
+  "content_hash": "f56ad2d639a4dd4936d03c0bd90e585de3f78aed4549f8d904e85c633cb26c9d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:45:38.253Z"
+}

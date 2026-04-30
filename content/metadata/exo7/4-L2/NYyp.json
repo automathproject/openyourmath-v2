@@ -1,0 +1,26 @@
+{
+  "uuid": "NYyp",
+  "source_path": "exo7/4-L2/NYyp.tex",
+  "summary": "Trouver une condition nécessaire et suffisante sur les complexes a et b pour que la matrice M, de structure antisymétrique avec a et b sur les anti-diagonales, soit diagonalisable.",
+  "concepts": [
+    "diagonalisation",
+    "matrice antisymétrique",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "critère de diagonalisabilité"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "analyse des valeurs propres",
+    "vérification de la multiplicité des valeurs propres"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme annulateur",
+    "valeurs propres complexes"
+  ],
+  "content_hash": "7741aae0fd57d4ace6f4152808dc3e66c87a11a30e2a1ad87eb8ed056014906b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:38:37.828Z"
+}

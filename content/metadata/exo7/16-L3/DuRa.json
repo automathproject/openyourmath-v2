@@ -1,0 +1,29 @@
+{
+  "uuid": "DuRa",
+  "source_path": "exo7/16-L3/DuRa.tex",
+  "summary": "L'exercice demande d'exprimer la somme des résidus d'une fraction rationnelle en fonction des coefficients des polynômes P et Q, puis de montrer qu'une intégrale complexe est solution d'une équation différentielle donnée avec des conditions initiales spécifiques.",
+  "concepts": [
+    "théorème des résidus",
+    "polynôme",
+    "racine d'un polynôme",
+    "intégrale complexe",
+    "équation différentielle linéaire",
+    "condition initiale",
+    "développement en série entière"
+  ],
+  "methods": [
+    "calcul de résidus",
+    "intégration complexe",
+    "résolution d'équation différentielle",
+    "utilisation des conditions initiales"
+  ],
+  "objects": [
+    "polynôme P(z)",
+    "polynôme Q(z)",
+    "intégrale sur un contour Γ_R",
+    "équation différentielle d'ordre n"
+  ],
+  "content_hash": "edcb315408d8ea218ffadad62598c41698892db754908f1a63b5e43764cfa125",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:10:38.740Z"
+}

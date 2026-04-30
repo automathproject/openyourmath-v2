@@ -1,0 +1,27 @@
+{
+  "uuid": "vnDH",
+  "source_path": "exo7/5-L2/vnDH.tex",
+  "summary": "L'exercice demande de prouver la continuité de la fonction distance à un ensemble A dans ℝⁿ, puis d'établir une condition équivalente à l'égalité des fonctions distances à deux ensembles A et B, et enfin de démontrer une égalité impliquant la distance de Hausdorff entre A et B.",
+  "concepts": [
+    "distance à un ensemble",
+    "continuité",
+    "fermeture d'un ensemble",
+    "distance de Hausdorff",
+    "inégalité triangulaire",
+    "bornes supérieure et inférieure"
+  ],
+  "methods": [
+    "utilisation de l'inégalité triangulaire",
+    "manipulation de bornes supérieures",
+    "restriction de domaine",
+    "symétrisation des inégalités"
+  ],
+  "objects": [
+    "fonction distance à un ensemble",
+    "parties de ℝⁿ",
+    "distance de Hausdorff"
+  ],
+  "content_hash": "348e32f199967765a6f96488d0b382c60c3ffe01979675d3a48ab04a4ed0d3bc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:16:27.848Z"
+}

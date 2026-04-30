@@ -1,0 +1,29 @@
+{
+  "uuid": "bOga",
+  "source_path": "amscc/bOga.tex",
+  "summary": "L'exercice demande d'identifier le domaine de définition d'une densité conjointe de deux variables aléatoires, de déterminer la constante de normalisation pour que cette densité soit valide, d'en déduire les lois marginales, de calculer la covariance entre les deux variables et d'étudier leur indépendance.",
+  "concepts": [
+    "densité conjointe",
+    "loi marginale",
+    "covariance",
+    "indépendance de variables aléatoires",
+    "intégrale double",
+    "fonction indicatrice",
+    "théorème de Fubini"
+  ],
+  "methods": [
+    "calcul d'intégrale",
+    "normalisation de densité",
+    "calcul de covariance",
+    "vérification d'indépendance"
+  ],
+  "objects": [
+    "densité conjointe",
+    "loi marginale",
+    "covariance",
+    "variables aléatoires"
+  ],
+  "content_hash": "67957d31c744de80398faea7d878f7db7c2128e29dd069b9db7239b429a46a07",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:56:52.834Z"
+}

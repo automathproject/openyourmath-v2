@@ -1,0 +1,26 @@
+{
+  "uuid": "dHzJ",
+  "source_path": "amscc/dHzJ.tex",
+  "summary": "Calculer la probabilité qu'un paquet de 100 feuilles cartonnées ait une épaisseur totale comprise entre 49 et 51 cm, en modélisant l'épaisseur de chaque feuille par une variable aléatoire d'espérance 5 mm et d'écart type 0,4 mm.",
+  "concepts": [
+    "théorème central limite",
+    "loi normale",
+    "espérance",
+    "écart type",
+    "variable aléatoire indépendante",
+    "approximation gaussienne"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de probabilité par la loi normale"
+  ],
+  "objects": [
+    "somme de variables aléatoires indépendantes",
+    "variable aléatoire normale",
+    "variable aléatoire centrée réduite"
+  ],
+  "content_hash": "ceb3a78ad18620fbea670458e3b2e9c3194002e9f856294b91b69e5d782a072d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:57:55.428Z"
+}

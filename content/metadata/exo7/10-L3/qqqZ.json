@@ -1,0 +1,27 @@
+{
+  "uuid": "qqqZ",
+  "source_path": "exo7/10-L3/qqqZ.tex",
+  "summary": "L'exercice demande de montrer qu'un polynôme donné est irréductible dans l'anneau des polynômes à coefficients dans ℤ[√(-3)] mais réductible dans l'anneau des polynômes à coefficients dans son corps de fractions, et d'expliquer la contradiction apparente avec le corollaire du lemme de Gauss.",
+  "concepts": [
+    "lemme de Gauss",
+    "corps de fractions",
+    "polynôme irréductible",
+    "réduction modulo un nombre premier",
+    "racine d'un polynôme",
+    "anneau d'entiers algébriques",
+    "polynôme primitif"
+  ],
+  "methods": [
+    "recherche de racines",
+    "réduction modulo un nombre premier",
+    "analyse de la divisibilité dans un anneau"
+  ],
+  "objects": [
+    "polynôme quadratique",
+    "corps de fractions",
+    "anneau ℤ[√(-3)]"
+  ],
+  "content_hash": "9725dd14ca12f4ff0a1091229a871df86c8868ec022696c1784b216b066010ca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:27:05.562Z"
+}

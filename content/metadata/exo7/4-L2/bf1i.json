@@ -1,0 +1,29 @@
+{
+  "uuid": "bf1i",
+  "source_path": "exo7/4-L2/bf1i.tex",
+  "summary": "L'exercice demande de déterminer si trois matrices données sont diagonalisables ou triangularisables sur les corps réels et complexes. Pour celles qui sont diagonalisables, il faut trouver une matrice diagonale semblable.",
+  "concepts": [
+    "diagonalisation",
+    "triangularisation",
+    "valeurs propres",
+    "vecteurs propres",
+    "polynôme caractéristique",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "détermination des vecteurs propres",
+    "critères de diagonalisation"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice diagonale",
+    "matrice triangulaire",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "d3db490e4e3f0e58560efb316d8c815562be16458a0ed708cfb14cf0c23f14b4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:58:03.253Z"
+}

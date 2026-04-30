@@ -1,0 +1,25 @@
+{
+  "uuid": "DoSL",
+  "source_path": "exo7/8-L3/DoSL.tex",
+  "summary": "Dans un groupe multiplicatif, on considère deux éléments a et b. On doit montrer que si le produit ab a un ordre fini, alors le produit ba a aussi un ordre fini et que cet ordre est le même que celui de ab.",
+  "concepts": [
+    "groupe multiplicatif",
+    "ordre d'un élément",
+    "élément inversible",
+    "loi de composition interne",
+    "propriété commutative"
+  ],
+  "methods": [
+    "manipulation d'équations dans un groupe",
+    "utilisation de l'ordre d'un élément",
+    "inversion d'éléments"
+  ],
+  "objects": [
+    "élément ab",
+    "élément ba",
+    "ordre d'un élément"
+  ],
+  "content_hash": "0175cbba866db1bc17711aa1e7d0942d8a73f9045662210fddb97f1acaf859a7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:12:29.414Z"
+}

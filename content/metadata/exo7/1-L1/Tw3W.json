@@ -1,0 +1,28 @@
+{
+  "uuid": "Tw3W",
+  "source_path": "exo7/1-L1/Tw3W.tex",
+  "summary": "L'exercice demande de montrer que les polynômes P_n définis par P_n = (1/n!) * ∏(k=1 à n)(X+k) appartiennent à l'ensemble E des polynômes à coefficients entiers, puis que toute combinaison linéaire à coefficients entiers de ces P_n appartient aussi à E, et enfin que E est exactement l'ensemble de ces combinaisons linéaires.",
+  "concepts": [
+    "polynôme à coefficients entiers",
+    "base d'un espace vectoriel",
+    "combinaison linéaire",
+    "coefficient binomial",
+    "valeur d'un polynôme en un point",
+    "récurrence"
+  ],
+  "methods": [
+    "évaluation de polynômes",
+    "développement en base polynomiale",
+    "récurrence forte",
+    "calcul de coefficients binomiaux"
+  ],
+  "objects": [
+    "polynôme P_n",
+    "ensemble E de polynômes à coefficients entiers",
+    "combinaison linéaire à coefficients entiers",
+    "coefficient binomial"
+  ],
+  "content_hash": "617b16a5952120e8df74d037695ae548c57139b3b4ec340563d9330d38c84451",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:01:01.861Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "wk1K",
+  "source_path": "exo7/1-L1/wk1K.tex",
+  "summary": "Trouver un polynôme de degré 5 vérifiant deux conditions de divisibilité par des puissances de polynômes. Le polynôme P(X) doit satisfaire P(X)+10 divisible par (X+2)^3 et P(X)-10 divisible par (X-2)^3.",
+  "concepts": [
+    "racine d'un polynôme",
+    "multiplicité d'une racine",
+    "développement de Taylor",
+    "polynôme de degré donné",
+    "conditions de divisibilité"
+  ],
+  "methods": [
+    "calcul de dérivées successives",
+    "détermination de la forme générale",
+    "résolution d'un système d'équations"
+  ],
+  "objects": [
+    "polynôme de degré 5",
+    "racines multiples",
+    "dérivées premières et secondes"
+  ],
+  "content_hash": "db8d5132dae63489a51e1dc2fa9e4445038885a272d481746c08e752681fe9f3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:30:54.200Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "8h0r",
+  "source_path": "exo7/5-L2/8h0r.tex",
+  "summary": "L'exercice demande de trouver un équivalent asymptotique d'une somme de produits de coefficients de Fourier lorsque les indices tendent vers l'infini. Les coefficients sont définis par une intégrale double impliquant une fonction exponentielle complexe.",
+  "concepts": [
+    "séries de Fourier",
+    "coefficients de Fourier",
+    "convergence normale",
+    "intégrale de Riemann",
+    "fonction périodique",
+    "équivalent asymptotique"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "somme partielle de Fourier",
+    "approximation d'intégrale"
+  ],
+  "objects": [
+    "coefficient de Fourier",
+    "fonction périodique",
+    "somme de produits de coefficients",
+    "intégrale double"
+  ],
+  "content_hash": "c9dcff5558a7413ce415f6b4e77ce702cf76573f68b3efdae22e94f241771832",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:18:38.523Z"
+}

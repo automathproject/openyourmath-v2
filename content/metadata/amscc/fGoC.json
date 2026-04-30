@@ -1,0 +1,28 @@
+{
+  "uuid": "fGoC",
+  "source_path": "amscc/fGoC.tex",
+  "summary": "L'exercice demande de déterminer l'espérance et la variance d'une variable aléatoire Y_n, somme de variables de Pareto, puis de construire un estimateur sans biais du paramètre b à partir de Y_n et d'une autre variable Z_n, minimum de l'échantillon.",
+  "concepts": [
+    "loi de Pareto",
+    "espérance mathématique",
+    "variance",
+    "estimateur sans biais",
+    "fonction de répartition",
+    "indépendance de variables aléatoires"
+  ],
+  "methods": [
+    "calcul d'espérance par intégration",
+    "calcul de variance",
+    "détermination d'estimateur sans biais",
+    "calcul de fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire de Pareto",
+    "échantillon de variables aléatoires indépendantes",
+    "somme de variables aléatoires",
+    "minimum d'un échantillon"
+  ],
+  "content_hash": "4eb6d04f51edf4cb37f665f4e504234150d8840136231c2b09720ea42cdeafe8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:48:33.081Z"
+}

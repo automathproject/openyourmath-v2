@@ -1,0 +1,28 @@
+{
+  "uuid": "T2ik",
+  "source_path": "exo7/2-L1/T2ik.tex",
+  "summary": "Montrer que les sous-groupes du groupe additif des réels sont soit de la forme aℤ (où a est un réel positif), soit denses dans ℝ. Le corrigé utilise la borne inférieure d'une partie non vide minorée de ℝ.",
+  "concepts": [
+    "sous-groupe additif",
+    "densité dans ℝ",
+    "borne inférieure",
+    "partie minorée",
+    "limite de suite",
+    "continuité"
+  ],
+  "methods": [
+    "utilisation de la borne inférieure",
+    "démonstration par cas",
+    "approximation par éléments du sous-groupe",
+    "limite de suite"
+  ],
+  "objects": [
+    "sous-groupe de (ℝ,+)",
+    "réels positifs",
+    "entiers relatifs",
+    "fonction périodique"
+  ],
+  "content_hash": "fcaadcdf403a5226bb2a16db534f596fdd2d5f632e6c544047d834cbd507d477",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:54:19.636Z"
+}

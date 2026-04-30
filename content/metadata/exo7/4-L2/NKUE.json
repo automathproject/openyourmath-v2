@@ -1,0 +1,28 @@
+{
+  "uuid": "NKUE",
+  "source_path": "exo7/4-L2/NKUE.tex",
+  "summary": "On considère une matrice carrée réelle d'ordre 3 vérifiant A³ = -A et A ≠ 0. On demande de montrer que cette matrice est semblable à une matrice spécifique donnée.",
+  "concepts": [
+    "polynôme annulateur",
+    "matrice semblable",
+    "réduction d'endomorphisme",
+    "valeurs propres",
+    "vecteurs propres",
+    "algèbre linéaire",
+    "matrice carrée"
+  ],
+  "methods": [
+    "recherche de polynôme minimal",
+    "diagonalisation",
+    "calcul de puissances de matrices",
+    "comparaison de matrices"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme annulateur",
+    "matrice semblable"
+  ],
+  "content_hash": "5ea8fb96b5fd62c782a8be6f85285a6fa5c9ca6fffdddacdd4cf63f9450cf9e6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:38:16.322Z"
+}

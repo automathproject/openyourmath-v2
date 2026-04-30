@@ -1,0 +1,26 @@
+{
+  "uuid": "zWPy",
+  "source_path": "exo7/8-L3/zWPy.tex",
+  "summary": "L'exercice demande de déterminer le cardinal du groupe linéaire général GL(n, ℤp) en comptant le nombre de bases de ℤpⁿ, puis de montrer qu'un ensemble spécifique de matrices forme un p-sous-groupe de Sylow de ce groupe.",
+  "concepts": [
+    "théorème de Sylow",
+    "groupe linéaire général",
+    "p-sous-groupe de Sylow",
+    "cardinal d'un groupe",
+    "base d'un espace vectoriel",
+    "corps fini"
+  ],
+  "methods": [
+    "comptage des bases",
+    "analyse des sous-groupes",
+    "application du théorème de Sylow"
+  ],
+  "objects": [
+    "groupe GL(n, ℤp)",
+    "matrices triangulaires supérieures strictes",
+    "espace vectoriel ℤpⁿ"
+  ],
+  "content_hash": "5e3e1f5a4c96729723807a4a9aab840c2b989b06de42d5cc26e9b32e2302090e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:02:01.200Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "KH1N",
+  "source_path": "exo7/4-L2/KH1N.tex",
+  "summary": "L'exercice demande de diagonaliser des matrices spécifiques et d'étudier les propriétés de diagonalisation d'applications linéaires associées à ces matrices. Il explore aussi les conditions sous lesquelles ces applications sont diagonalisables.",
+  "concepts": [
+    "diagonalisation de matrice",
+    "valeur propre",
+    "vecteur propre",
+    "nilpotence",
+    "trace d'une matrice",
+    "polynôme annulateur",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "diagonalisation",
+    "utilisation de la trace",
+    "étude de la nilpotence",
+    "application de la réciproque de la diagonalisation"
+  ],
+  "objects": [
+    "matrice carrée",
+    "application linéaire",
+    "vecteur propre nilpotent",
+    "matrice diagonale",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "26fe87a64705f30860503fc4388b76710575500d9429d9a5134375f2227c6fbc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:33:44.072Z"
+}

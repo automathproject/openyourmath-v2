@@ -1,0 +1,25 @@
+{
+  "uuid": "3JIX",
+  "source_path": "exo7/6-L2/3JIX.tex",
+  "summary": "L'exercice demande de démontrer qu'une surface définie par z = f(x,y) est de révolution si et seulement si sa normale en tout point est parallèle ou sécante à l'axe Oz.",
+  "concepts": [
+    "surface paramétrée",
+    "normale à une surface",
+    "surface de révolution",
+    "coordonnées polaires",
+    "dérivées partielles"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "changement de coordonnées",
+    "analyse de condition nécessaire et suffisante"
+  ],
+  "objects": [
+    "surface d'équation z = f(x,y)",
+    "normale à une surface",
+    "axe Oz"
+  ],
+  "content_hash": "eafc6d974922c36bfaf15ef624733abacab2d2a13c9b18e8b399b5e4b726ada5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:07:33.549Z"
+}

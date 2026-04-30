@@ -1,0 +1,30 @@
+{
+  "uuid": "AecI",
+  "source_path": "exo7/4-L2/AecI.tex",
+  "summary": "L'exercice demande de déterminer l'existence et les formes des endomorphismes v et h dans un espace vectoriel de dimension 3, sous des conditions de commutation spécifiques avec un endomorphisme u donné. Il explore aussi les propriétés algébriques de ces endomorphismes.",
+  "concepts": [
+    "commutativité d'endomorphismes",
+    "polynôme minimal",
+    "trace d'un endomorphisme",
+    "noyau d'un endomorphisme",
+    "stabilité d'un sous-espace",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "détermination de noyau",
+    "vérification de stabilité",
+    "calcul de commutateur",
+    "utilisation de relations de récurrence"
+  ],
+  "objects": [
+    "endomorphisme de R^n",
+    "matrice 3x3",
+    "polynôme annulateur",
+    "trace d'endomorphisme",
+    "noyau d'endomorphisme"
+  ],
+  "content_hash": "c50e14c46a2d4e699c2d68cb12c283f88cea715275d02f9e2085de82c84d1d07",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:20:26.124Z"
+}

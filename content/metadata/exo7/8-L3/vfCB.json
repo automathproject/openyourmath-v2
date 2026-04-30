@@ -1,0 +1,25 @@
+{
+  "uuid": "vfCB",
+  "source_path": "exo7/8-L3/vfCB.tex",
+  "summary": "L'exercice demande si un échiquier peut être entièrement recouvert de dominos, à l'exception de deux cases extrêmes (haut gauche et bas droite) ou de deux cases quelconques. Il s'agit d'un problème de pavage avec contraintes.",
+  "concepts": [
+    "groupe symétrique",
+    "permutation",
+    "parité",
+    "couverture de graphe",
+    "problème de pavage"
+  ],
+  "methods": [
+    "analyse de parité",
+    "considération des couleurs",
+    "argument par contradiction"
+  ],
+  "objects": [
+    "échiquier",
+    "dominos",
+    "cases de l'échiquier"
+  ],
+  "content_hash": "ba44974769b19f0d6efd0727474850f63505f53ec5cab98429031fc4f7775d16",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:17:35.706Z"
+}

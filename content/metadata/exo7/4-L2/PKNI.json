@@ -1,0 +1,31 @@
+{
+  "uuid": "PKNI",
+  "source_path": "exo7/4-L2/PKNI.tex",
+  "summary": "L'exercice demande de démontrer que 1 et 2 sont des valeurs propres d'un endomorphisme de ℝ⁴ donné par une matrice, puis de déterminer ses vecteurs propres. Ensuite, il s'agit de trouver des vecteurs satisfaisant des relations spécifiques avec l'endomorphisme et de prouver qu'une base formée de ces vecteurs permet de diagonaliser la matrice.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "sous-espace propre",
+    "diagonalisation",
+    "matrice de passage",
+    "rang d'une matrice",
+    "déterminant",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "résolution de systèmes linéaires",
+    "vérification de la base",
+    "construction de matrice dans une nouvelle base"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteurs propres",
+    "sous-espace vectoriel",
+    "base de ℝ⁴",
+    "endomorphisme"
+  ],
+  "content_hash": "7e410737c9a271fdf64153217e8cd829ba3b5fa8bf21c81080bdf76df04b6025",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:40:55.019Z"
+}

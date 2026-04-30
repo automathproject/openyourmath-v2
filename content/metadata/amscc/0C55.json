@@ -1,0 +1,30 @@
+{
+  "uuid": "0C55",
+  "source_path": "amscc/0C55.tex",
+  "summary": "L'exercice demande d'analyser des données sur les troubles musculo-squelettiques (TMS) chez les militaires pour déterminer si les différences de prévalence entre femmes et hommes sont significatives. Il utilise des tests d'indépendance du χ² et un test de comparaison de proportions avec un risque de première espèce de 5%.",
+  "concepts": [
+    "test d'indépendance du χ²",
+    "comparaison de proportions",
+    "risque de première espèce",
+    "loi normale centrée réduite",
+    "statistique de test",
+    "hypothèse nulle",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "calcul de la statistique χ²",
+    "calcul de la statistique Z",
+    "comparaison de valeurs critiques",
+    "test de significativité"
+  ],
+  "objects": [
+    "proportion",
+    "fréquence observée",
+    "fréquence attendue",
+    "échantillon",
+    "variable de décision"
+  ],
+  "content_hash": "e0e2e2317ae91f8c85698235965cc6617695038c55a97efcd915a882d2d59f13",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:28:40.113Z"
+}

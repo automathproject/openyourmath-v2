@@ -1,0 +1,27 @@
+{
+  "uuid": "4sEr",
+  "source_path": "exo7/4-L2/4sEr.tex",
+  "summary": "Soit E un K-espace vectoriel de dimension finie et f un endomorphisme de E. On suppose que f² est diagonalisable. On demande de montrer que f est diagonalisable si et seulement si Ker(f) = Ker(f²).",
+  "concepts": [
+    "diagonalisation d'endomorphisme",
+    "polynôme annulateur",
+    "espace vectoriel de dimension finie",
+    "endomorphisme",
+    "noyau d'un endomorphisme",
+    "propriété de diagonalisation"
+  ],
+  "methods": [
+    "utilisation du polynôme minimal",
+    "analyse des noyaux",
+    "comparaison des noyaux"
+  ],
+  "objects": [
+    "espace vectoriel E",
+    "endomorphisme f",
+    "endomorphisme f²",
+    "noyaux Ker(f) et Ker(f²)"
+  ],
+  "content_hash": "a80c7516ad2af30c89803d2899dc1a34f70f1bcbed626a737a549e4b96d7de34",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:13:56.445Z"
+}

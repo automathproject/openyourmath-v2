@@ -1,0 +1,25 @@
+{
+  "uuid": "xvmB",
+  "source_path": "exo7/5-L2/xvmB.tex",
+  "summary": "L'exercice demande de démontrer que la fonction f(x) = x / max(1, ||x||) est 2-lipschitzienne dans un espace vectoriel normé.",
+  "concepts": [
+    "fonction lipschitzienne",
+    "espace vectoriel normé",
+    "norme",
+    "inégalité triangulaire",
+    "projection sur une boule unité"
+  ],
+  "methods": [
+    "estimation de distance",
+    "découpage en cas",
+    "utilisation de l'inégalité triangulaire"
+  ],
+  "objects": [
+    "fonction de norme",
+    "boule unité",
+    "espace vectoriel normé"
+  ],
+  "content_hash": "0cd5d23565ce4025c82438c9ae3d1feb1973f1641c8f603b6d286bff5164ed3f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:17:26.066Z"
+}

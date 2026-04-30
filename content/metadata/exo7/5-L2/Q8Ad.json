@@ -1,0 +1,28 @@
+{
+  "uuid": "Q8Ad",
+  "source_path": "exo7/5-L2/Q8Ad.tex",
+  "summary": "L'exercice demande de montrer la convergence d'une série de matrices et d'exprimer son somme comme l'inverse d'une matrice. Il s'agit ensuite d'établir une inégalité sur la norme de la différence entre cette inverse et une autre matrice.",
+  "concepts": [
+    "série de matrices",
+    "convergence absolue",
+    "complétude des espaces de dimension finie",
+    "inversibilité des matrices",
+    "norme sous-multiplicative",
+    "limite de suite de matrices"
+  ],
+  "methods": [
+    "majoration de la norme d'une puissance de matrice",
+    "utilisation de la continuité de l'application linéaire",
+    "calcul de la somme d'une série de matrices",
+    "estimation de la norme d'une série de matrices"
+  ],
+  "objects": [
+    "matrice carrée",
+    "série de matrices",
+    "norme matricielle",
+    "inverse d'une matrice"
+  ],
+  "content_hash": "fb90b21bc5a43951f4f52e81d7027af5982e6e8eb7164b209505c5e707823b46",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:55:09.847Z"
+}

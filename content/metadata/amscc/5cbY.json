@@ -1,0 +1,29 @@
+{
+  "uuid": "5cbY",
+  "source_path": "amscc/5cbY.tex",
+  "summary": "L'exercice demande d'estimer la moyenne et l'écart-type d'une population à partir d'un échantillon, de construire un intervalle de confiance pour la moyenne, et de déterminer si une usine respecte une réglementation basée sur cet intervalle. Une question supplémentaire demande de calculer la taille d'échantillon nécessaire pour une précision donnée.",
+  "concepts": [
+    "estimation ponctuelle",
+    "estimation sans biais",
+    "intervalle de confiance",
+    "loi de Student",
+    "loi normale",
+    "quantile",
+    "marge d'erreur"
+  ],
+  "methods": [
+    "calcul de l'écart-type corrigé",
+    "construction d'intervalle de confiance",
+    "utilisation de la loi normale",
+    "résolution d'inéquation"
+  ],
+  "objects": [
+    "moyenne échantillon",
+    "écart-type échantillon",
+    "taille d'échantillon",
+    "teneur en polluant"
+  ],
+  "content_hash": "03b618c7bc66803cc9cc8f65db5c225cf42decc5bf2527ec1051eeef6f518beb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:32:21.459Z"
+}

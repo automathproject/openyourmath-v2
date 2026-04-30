@@ -1,0 +1,28 @@
+{
+  "uuid": "Ae9K",
+  "source_path": "amscc/Ae9K.tex",
+  "summary": "L'exercice modélise la durée de marche journalière par une loi normale et demande d'estimer l'écart-type à partir d'un percentile donné. Il utilise ensuite cette modélisation pour déterminer la loi de la distance parcourue et calculer des probabilités associées.",
+  "concepts": [
+    "loi normale",
+    "quantile",
+    "transformation affine",
+    "standardisation",
+    "score réduit",
+    "fonction de répartition"
+  ],
+  "methods": [
+    "calcul de percentile",
+    "standardisation",
+    "transformation affine de variable aléatoire",
+    "calcul de probabilité conditionnelle"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "distance parcourue",
+    "durée de marche",
+    "quantile d'ordre 0,90"
+  ],
+  "content_hash": "24cc5e303f621620cdf1fc9b62da93bf6b8a24dded3daad0fa655371d368ad92",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:45:12.545Z"
+}

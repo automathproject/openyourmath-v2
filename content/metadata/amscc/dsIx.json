@@ -1,0 +1,28 @@
+{
+  "uuid": "dsIx",
+  "source_path": "amscc/dsIx.tex",
+  "summary": "L'exercice demande de construire un estimateur du paramètre λ d'une loi puissance à l'aide de la méthode du maximum de vraisemblance, puis de déterminer un intervalle de confiance unilatéral pour ce paramètre en utilisant une propriété de loi du χ².",
+  "concepts": [
+    "loi puissance",
+    "maximum de vraisemblance",
+    "intervalle de confiance",
+    "quantile",
+    "loi du χ²",
+    "estimation ponctuelle",
+    "vraisemblance"
+  ],
+  "methods": [
+    "méthode du maximum de vraisemblance",
+    "construction d'intervalle de confiance unilatéral",
+    "utilisation de la loi du χ²"
+  ],
+  "objects": [
+    "paramètre λ",
+    "échantillon (X₁,...,Xₙ)",
+    "estimateur λ̂ₙ",
+    "quantile q_{α,n}"
+  ],
+  "content_hash": "c4603ae1af09db532d42cceda20c53bf0ee2444eeafb7919f7b046eed31c3ffe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:48:03.105Z"
+}

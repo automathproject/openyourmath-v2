@@ -1,0 +1,26 @@
+{
+  "uuid": "DrSs",
+  "source_path": "exo7/2-L1/DrSs.tex",
+  "summary": "L'exercice demande de prouver que la somme infinie des fonctions Arctan(1/(k²+k+1)) converge vers π/2. On utilise la tangente de la somme partielle sn.",
+  "concepts": [
+    "somme de séries numériques",
+    "convergence de séries",
+    "fonction Arctan",
+    "fonction Tangente",
+    "récurrence",
+    "encadrement de séries"
+  ],
+  "methods": [
+    "calcul de la tangente de la somme partielle",
+    "récurrence",
+    "encadrement de séries"
+  ],
+  "objects": [
+    "somme infinie de fonctions Arctan",
+    "somme partielle sn",
+    "fonction Tangente"
+  ],
+  "content_hash": "ea8f4dd295975f151c40669d35ac714fbdc7e2225df903783a345d74e0190f33",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:06:21.110Z"
+}

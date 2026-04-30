@@ -1,0 +1,28 @@
+{
+  "uuid": "8cFR",
+  "source_path": "exo7/5-L2/8cFR.tex",
+  "summary": "Calculer l'exponentielle d'une matrice carrée donnée en fonction d'un paramètre réel. L'exercice demande d'exploiter les propriétés algébriques de la matrice pour exprimer cette exponentielle sous forme explicite.",
+  "concepts": [
+    "théorème de Cayley-Hamilton",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "exponentielle de matrice",
+    "division euclidienne de polynômes",
+    "décomposition spectrale"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "décomposition en série entière",
+    "utilisation de la formule de Taylor matricielle",
+    "résolution de systèmes linéaires"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme caractéristique",
+    "exponentielle de matrice",
+    "système d'équations linéaires"
+  ],
+  "content_hash": "6fff7f60e15d922030a81665614efc274353a5ea146252e52f45471ef01106d4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:49:21.031Z"
+}

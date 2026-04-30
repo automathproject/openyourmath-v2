@@ -1,0 +1,28 @@
+{
+  "uuid": "WiUV",
+  "source_path": "exo7/16-L3/WiUV.tex",
+  "summary": "Résoudre l'équation cos z = a où a est un réel strictement supérieur à 1. Calculer le sinus des solutions et en déduire la valeur d'une intégrale impliquant cette équation.",
+  "concepts": [
+    "fonction cosinus complexe",
+    "fonction hyperbolique",
+    "pôle d'une fonction",
+    "théorème des résidus",
+    "résidu d'une fonction",
+    "intégrale de fonction complexe"
+  ],
+  "methods": [
+    "décomposition en parties réelles et imaginaires",
+    "calcul de résidu",
+    "théorème des résidus",
+    "intégration complexe"
+  ],
+  "objects": [
+    "équation cos z = a",
+    "intégrale I_a",
+    "fonction f(z)",
+    "pôles de f(z)"
+  ],
+  "content_hash": "b5ce3dc0b92eedd78339315663dea437f4c54ef6dc16cd1399d5b0c63c8a139d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:17:02.580Z"
+}

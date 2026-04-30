@@ -1,0 +1,25 @@
+{
+  "uuid": "XB5t",
+  "source_path": "exo7/1-L1/XB5t.tex",
+  "summary": "Effectuer la division euclidienne de deux polynômes complexes. Le premier cas est un polynôme du second degré divisé par un polynôme du premier degré, et le second cas est un polynôme du troisième degré divisé par un polynôme du premier degré.",
+  "concepts": [
+    "division euclidienne dans C[X]",
+    "polynôme complexe",
+    "algèbre linéaire",
+    "arithmétique des polynômes",
+    "division polynomiale"
+  ],
+  "methods": [
+    "algorithme de la division euclidienne",
+    "calcul du quotient et du reste",
+    "manipulation des nombres complexes"
+  ],
+  "objects": [
+    "polynôme de degré 2",
+    "polynôme de degré 3",
+    "polynôme de degré 1"
+  ],
+  "content_hash": "0d71c54b0fc4071ba2a3551ca95b89e209744c9bd3f274f25a646e6307fd15f6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:03:13.800Z"
+}

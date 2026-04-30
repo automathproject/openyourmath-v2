@@ -1,0 +1,27 @@
+{
+  "uuid": "jpaC",
+  "source_path": "exo7/5-L2/jpaC.tex",
+  "summary": "L'exercice demande d'étudier l'existence et la continuité d'une fonction définie comme une série de Fourier d'une fraction rationnelle à coefficients complexes, sans pôle entier. On doit ensuite montrer que cette fonction est de classe C^∞ sur ℝ\\(2πℤ\\)",
+  "concepts": [
+    "série de Fourier",
+    "fraction rationnelle",
+    "convergence uniforme",
+    "continuité",
+    "régularité des fonctions",
+    "développement en série entière"
+  ],
+  "methods": [
+    "décomposition en parties principales",
+    "séparation des termes singuliers",
+    "étude de la régularité par dérivation terme à terme"
+  ],
+  "objects": [
+    "fraction rationnelle",
+    "série trigonométrique",
+    "fonction périodique",
+    "fonction de classe C^∞"
+  ],
+  "content_hash": "d2abb8cb2329bce7b5c965fdc4ce6087dfeded1191722d57245f01a72302bb01",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:28:35.027Z"
+}

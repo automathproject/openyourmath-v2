@@ -1,0 +1,29 @@
+{
+  "uuid": "JKRX",
+  "source_path": "exo7/4-L2/JKRX.tex",
+  "summary": "On considère un polynôme P de C[X] avec P(0)=0 et P'(0)≠0, et un endomorphisme f d'un espace vectoriel E de dimension finie sur C tel que P(f)=0. On demande de montrer que Ker(f)=Ker(f²) puis d'en déduire que E=Ker(f)⊕Im(f).",
+  "concepts": [
+    "polynôme annulateur",
+    "endomorphisme",
+    "espace vectoriel de dimension finie",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "somme directe d'espaces vectoriels",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "utilisation du polynôme annulateur",
+    "décomposition en somme directe",
+    "propriétés du noyau et de l'image"
+  ],
+  "objects": [
+    "polynôme P",
+    "endomorphisme f",
+    "espace vectoriel E",
+    "noyau Ker(f)",
+    "image Im(f)"
+  ],
+  "content_hash": "4022a19ceb110d0cfbe51d802f94b3c0c2b13099c2d760ec280503ae0cdf97cd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:33:29.000Z"
+}

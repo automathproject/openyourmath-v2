@@ -1,0 +1,30 @@
+{
+  "uuid": "z9Rf",
+  "source_path": "exo7/2-L1/z9Rf.tex",
+  "summary": "L'exercice demande de démontrer que tout morphisme de corps de ℝ dans ℝ est l'identité sur ℚ, puis de montrer que cette application est croissante pour en déduire qu'elle est nécessairement l'identité sur ℝ.",
+  "concepts": [
+    "morphisme de corps",
+    "corps ordonné",
+    "application croissante",
+    "identité",
+    "rationnels",
+    "réels",
+    "propriétés de ℝ"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des propriétés des rationnels",
+    "montrer qu'une application est croissante",
+    "déduction par continuité"
+  ],
+  "objects": [
+    "morphisme de corps",
+    "application croissante",
+    "fonction identité",
+    "ensemble ℚ",
+    "ensemble ℝ"
+  ],
+  "content_hash": "d14b4e348a2eee9dbbb6eaa2f325816e319c43f822caa36c440456a0e764e5a2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:07:27.700Z"
+}

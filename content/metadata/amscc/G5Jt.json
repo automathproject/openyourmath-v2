@@ -1,0 +1,32 @@
+{
+  "uuid": "G5Jt",
+  "source_path": "amscc/G5Jt.tex",
+  "summary": "On étudie deux variables aléatoires discrètes définies sur un tirage sans remise de boules numérotées dans une urne. La première variable X représente le rang d'apparition de la première boule blanche, et la seconde Y le rang du premier numéro 1. L'exercice demande d'analyser les propriétés de ces variables, notamment leur indépendance et leurs lois de probabilité.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi de probabilité",
+    "indépendance de variables aléatoires",
+    "probabilité conditionnelle",
+    "formule de Bayes",
+    "loi uniforme",
+    "loi marginale",
+    "loi jointe"
+  ],
+  "methods": [
+    "calcul de probabilités conditionnelles",
+    "application de la formule de Bayes",
+    "comparaison de probabilités jointes et marginales",
+    "calcul de loi de probabilité",
+    "construction de tableau de contingence"
+  ],
+  "objects": [
+    "variable aléatoire discrète X",
+    "variable aléatoire discrète Y",
+    "urne avec boules numérotées",
+    "tirage sans remise",
+    "couple de variables aléatoires (X,Y)"
+  ],
+  "content_hash": "fccbea535f5e5154d82a7bad03fc69a5e5bd072c97729f0cc4bc03e2e7b0d963",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:22:17.212Z"
+}

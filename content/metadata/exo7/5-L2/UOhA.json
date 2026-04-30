@@ -1,0 +1,25 @@
+{
+  "uuid": "UOhA",
+  "source_path": "exo7/5-L2/UOhA.tex",
+  "summary": "L'exercice demande de déterminer la limite simple des fonctions $f_n(x) = n^\\alpha x(1-x)^n$ définies sur [0,1] et d'étudier la convergence uniforme de cette suite de fonctions.",
+  "concepts": [
+    "convergence simple",
+    "convergence uniforme",
+    "norme infinie",
+    "limite de fonctions",
+    "suite de fonctions"
+  ],
+  "methods": [
+    "étude de la norme infinie",
+    "approximation asymptotique",
+    "analyse de la limite ponctuelle"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction définie sur un intervalle",
+    "norme infinie"
+  ],
+  "content_hash": "c2ef361cf5166c65a08f70061e80a2dcd4d7af2a1645052d7d26a36f578c969b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:56:56.050Z"
+}

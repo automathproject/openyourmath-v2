@@ -1,0 +1,25 @@
+{
+  "uuid": "0dEe",
+  "source_path": "exo7/7-L2/0dEe.tex",
+  "summary": "On tire une ampoule au hasard parmi la production hebdomadaire de deux usines. On demande la probabilité que l'ampoule soit non défectueuse, puis la probabilité qu'une ampoule défectueuse provienne de l'usine A.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "probabilité totale",
+    "événements indépendants",
+    "probabilité conjointe",
+    "probabilité marginale"
+  ],
+  "methods": [
+    "formule de Bayes",
+    "loi des probabilités totales",
+    "calcul de probabilités conditionnelles"
+  ],
+  "objects": [
+    "ampoules défectueuses",
+    "production hebdomadaire",
+    "usines A et B"
+  ],
+  "content_hash": "ec9599a78f9675ebb75fe3f3f8d4ca1b4d6151eadc90b81bf4100d410cf4ba95",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:13:13.524Z"
+}

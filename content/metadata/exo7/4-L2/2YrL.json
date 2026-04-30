@@ -1,0 +1,26 @@
+{
+  "uuid": "2YrL",
+  "source_path": "exo7/4-L2/2YrL.tex",
+  "summary": "L'exercice demande si le polynôme X⁴ + X³ + 2X² + X + 1 peut être le polynôme minimal d'une matrice de M₅(ℝ).",
+  "concepts": [
+    "polynôme minimal",
+    "valeur propre",
+    "racine d'un polynôme",
+    "factorisation de polynôme",
+    "matrice carrée réelle",
+    "endomorphisme"
+  ],
+  "methods": [
+    "factorisation de polynôme",
+    "analyse des racines réelles",
+    "propriétés des valeurs propres"
+  ],
+  "objects": [
+    "polynôme de degré 4",
+    "matrice 5x5",
+    "polynôme annulateur"
+  ],
+  "content_hash": "7bf9632fcef142df88bbec204f0f9af057eb2434c2b608aa6c798fbb59aaa1ee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:10:51.811Z"
+}

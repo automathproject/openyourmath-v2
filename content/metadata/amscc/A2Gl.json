@@ -1,0 +1,29 @@
+{
+  "uuid": "A2Gl",
+  "source_path": "amscc/A2Gl.tex",
+  "summary": "L'exercice demande d'estimer le paramètre λ d'une loi de Poisson à partir d'un échantillon en utilisant la méthode du maximum de vraisemblance. Il s'agit de trouver la valeur de λ qui maximise la fonction de vraisemblance.",
+  "concepts": [
+    "loi de Poisson",
+    "maximum de vraisemblance",
+    "fonction de vraisemblance",
+    "estimateur",
+    "log-vraisemblance",
+    "dérivation",
+    "optimisation"
+  ],
+  "methods": [
+    "maximisation de la vraisemblance",
+    "logarithme de la vraisemblance",
+    "dérivation par rapport au paramètre",
+    "résolution d'équation"
+  ],
+  "objects": [
+    "échantillon de variables aléatoires",
+    "paramètre λ",
+    "fonction de vraisemblance",
+    "estimateur du maximum de vraisemblance"
+  ],
+  "content_hash": "1a692a0eca9a735aea2b134a6af5cb6fec49efd037f536341496661a939dc732",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:35:36.618Z"
+}

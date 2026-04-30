@@ -1,0 +1,28 @@
+{
+  "uuid": "6K6K",
+  "source_path": "exo7/4-L2/6K6K.tex",
+  "summary": "L'exercice demande de diagonaliser une matrice symétrique 4x4 à coefficients réels. La matrice présente une structure particulière avec des permutations de variables.",
+  "concepts": [
+    "matrice symétrique",
+    "diagonalisation",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "changement de base"
+  ],
+  "methods": [
+    "recherche de valeurs propres",
+    "recherche de vecteurs propres",
+    "calcul de polynôme caractéristique",
+    "diagonalisation"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "e8a034da916ba7cd57329841e97b7f372792b1b224dc2a15cd8fae996000b7f9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:15:15.080Z"
+}

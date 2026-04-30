@@ -1,0 +1,28 @@
+{
+  "uuid": "VSFv",
+  "source_path": "exo7/8-L3/VSFv.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés liées aux groupes et aux entiers premiers entre eux. La première partie porte sur un élément d'un groupe vérifiant une condition sur ses puissances, et la seconde sur l'isomorphisme entre des groupes cycliques.",
+  "concepts": [
+    "sous-groupe distingué",
+    "isomorphisme de groupes",
+    "groupes cycliques",
+    "entiers premiers entre eux",
+    "élément neutre",
+    "cardinal d'un groupe",
+    "injectivité"
+  ],
+  "methods": [
+    "utilisation du théorème de Bézout",
+    "vérification de l'injectivité",
+    "comparaison des cardinaux"
+  ],
+  "objects": [
+    "groupe G",
+    "élément z",
+    "groupes μ_m, μ_n, μ_mn",
+    "application φ"
+  ],
+  "content_hash": "492b7965372e1212d785956e6d99db4103ec9aa4ca00c66b8bf2b7c2c941bd85",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:59:50.527Z"
+}

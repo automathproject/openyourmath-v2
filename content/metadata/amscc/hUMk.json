@@ -1,0 +1,30 @@
+{
+  "uuid": "hUMk",
+  "source_path": "amscc/hUMk.tex",
+  "summary": "L'exercice demande de construire un estimateur du maximum de vraisemblance pour un paramètre θ, puis d'étudier les propriétés statistiques de cet estimateur en utilisant des transformations de variables aléatoires et des lois exponentielles et gamma.",
+  "concepts": [
+    "maximum de vraisemblance",
+    "loi exponentielle",
+    "loi Gamma",
+    "estimateur sans biais",
+    "espérance mathématique",
+    "variable aléatoire indépendante et identiquement distribuée",
+    "fonction de répartition"
+  ],
+  "methods": [
+    "transformation de variable aléatoire",
+    "calcul de l'espérance",
+    "vérification de l'absence de biais",
+    "simulation de variable aléatoire exponentielle"
+  ],
+  "objects": [
+    "estimateur du maximum de vraisemblance",
+    "variable aléatoire exponentielle",
+    "somme de variables aléatoires i.i.d.",
+    "paramètre θ",
+    "variable aléatoire uniforme"
+  ],
+  "content_hash": "d24283520044581533fbb2afdfa8c716c683b07a863f2b168195247182592e3c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:49:08.856Z"
+}

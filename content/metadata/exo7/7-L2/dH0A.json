@@ -1,0 +1,24 @@
+{
+  "uuid": "dH0A",
+  "source_path": "exo7/7-L2/dH0A.tex",
+  "summary": "L'exercice demande de déterminer la loi de probabilité du nombre de transistors défectueux dans un lot de 100, où chaque transistor a une probabilité indépendante de 3% d'être défectueux. Il demande aussi de calculer l'espérance de cette variable aléatoire et d'interpréter son sens concret.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi binomiale",
+    "espérance mathématique",
+    "probabilité indépendante",
+    "schéma de Bernoulli"
+  ],
+  "methods": [
+    "calcul de l'espérance d'une loi binomiale",
+    "identification de la loi binomiale"
+  ],
+  "objects": [
+    "variable aléatoire de comptage",
+    "lot de transistors",
+    "probabilité de défaillance"
+  ],
+  "content_hash": "39a783679c586a8c530d2cb7a8c008af751e4eb4ad79fe6de3eb76e10c556377",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:33:47.426Z"
+}

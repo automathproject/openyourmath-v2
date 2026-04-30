@@ -1,0 +1,28 @@
+{
+  "uuid": "XcaD",
+  "source_path": "exo7/4-L2/XcaD.tex",
+  "summary": "L'exercice demande de fournir des exemples de matrices 2x2 réelles et d'analyser leur diagonalisabilité dans les corps réels et complexes. Le premier exemple doit être diagonalisable sur les complexes mais pas sur les réels, et le second exemple doit ne pas être diagonalisable dans aucun des deux corps.",
+  "concepts": [
+    "diagonalisation",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "corps de diagonalisation",
+    "matrice non diagonalisable",
+    "racines complexes conjuguées",
+    "racine double"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "analyse des valeurs propres",
+    "comparaison des corps de diagonalisation"
+  ],
+  "objects": [
+    "matrice 2x2 réelle",
+    "polynôme caractéristique",
+    "valeurs propres complexes",
+    "racine double"
+  ],
+  "content_hash": "6f36bb27089931e70434668691eb7a7e7c53cb01f39aa037d4e268435ba9e370",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:53:01.455Z"
+}

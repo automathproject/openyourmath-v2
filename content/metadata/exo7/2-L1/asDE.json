@@ -1,0 +1,25 @@
+{
+  "uuid": "asDE",
+  "source_path": "exo7/2-L1/asDE.tex",
+  "summary": "On considère une suite définie par itération d'une fonction continue. On demande de prouver l'équivalence entre la convergence de la suite et la convergence vers 0 de la distance entre termes consécutifs.",
+  "concepts": [
+    "suite définie par itération",
+    "fonction continue",
+    "convergence de suite",
+    "bornitude de suite",
+    "distance entre termes consécutifs"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "analyse des cas stationnaires",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction continue",
+    "distance euclidienne"
+  ],
+  "content_hash": "d94560bed492a035e896951155cd09debc9b0b4ef837127f9db74e155b0174e1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:24:02.814Z"
+}

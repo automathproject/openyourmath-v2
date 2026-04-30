@@ -1,0 +1,27 @@
+{
+  "uuid": "wjwa",
+  "source_path": "amscc/wjwa.tex",
+  "summary": "Démontrer que le saut d'une fonction de répartition en un point de discontinuité est égal à la probabilité que la variable aléatoire prenne cette valeur exacte.",
+  "concepts": [
+    "fonction de répartition",
+    "point de discontinuité",
+    "limite à gauche",
+    "théorème de continuité décroissante",
+    "probabilité d'un singleton",
+    "variable aléatoire continue"
+  ],
+  "methods": [
+    "passage à la limite",
+    "utilisation de la décroissance d'une suite d'événements",
+    "calcul de probabilité d'un intervalle"
+  ],
+  "objects": [
+    "fonction de répartition",
+    "variable aléatoire",
+    "saut de discontinuité",
+    "suite d'événements décroissante"
+  ],
+  "content_hash": "873b0ec6abf55e57e64ba4609ac680ace80373743f468b877084f8a20876f697",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:10:56.925Z"
+}

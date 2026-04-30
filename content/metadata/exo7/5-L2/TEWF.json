@@ -1,0 +1,26 @@
+{
+  "uuid": "TEWF",
+  "source_path": "exo7/5-L2/TEWF.tex",
+  "summary": "L'exercice demande de montrer qu'un ensemble A du plan, défini comme l'ensemble des points (t, sin(1/t)) avec t>0, n'est ni ouvert ni fermé, puis de déterminer son adhérence.",
+  "concepts": [
+    "ensemble ouvert",
+    "ensemble fermé",
+    "adhérence d'un ensemble",
+    "convergence de suite",
+    "limite de suite",
+    "topologie du plan"
+  ],
+  "methods": [
+    "analyse de voisinages",
+    "construction explicite de l'adhérence",
+    "utilisation de suites convergentes"
+  ],
+  "objects": [
+    "ensemble de points du plan",
+    "suite de points",
+    "disque ouvert"
+  ],
+  "content_hash": "b2633c822c34e543481009a3bfc9eeec569ebe18058c52a648c4875c8874e6b7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:53:19.038Z"
+}

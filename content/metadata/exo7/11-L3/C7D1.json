@@ -1,0 +1,31 @@
+{
+  "uuid": "C7D1",
+  "source_path": "exo7/11-L3/C7D1.tex",
+  "summary": "Calculer la torsion d'une courbe paramétrée dans ℝ³ et déterminer si cette courbe est plane.",
+  "concepts": [
+    "courbure",
+    "torsion",
+    "vecteur vitesse",
+    "vecteur accélération",
+    "vecteur normal unitaire",
+    "vecteur binormal",
+    "formules de Frenet",
+    "paramétrage par la longueur d'arc"
+  ],
+  "methods": [
+    "calcul de la norme d'un vecteur",
+    "calcul du produit vectoriel",
+    "détermination de la torsion via le vecteur binormal",
+    "vérification de la planéité d'une courbe"
+  ],
+  "objects": [
+    "courbe paramétrée dans ℝ³",
+    "vecteur vitesse",
+    "vecteur accélération",
+    "vecteur normal unitaire",
+    "vecteur binormal"
+  ],
+  "content_hash": "08d6a3a3ca13308eee5caac7d1b6a363c563aed0255c63e18b899a3d9c9b638c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:15:06.290Z"
+}

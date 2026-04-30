@@ -1,0 +1,27 @@
+{
+  "uuid": "wmEJ",
+  "source_path": "exo7/1-L1/wmEJ.tex",
+  "summary": "On considère un ensemble de matrices inversibles stables par multiplication. On doit montrer que la trace de leur somme est un entier divisible par le nombre de matrices.",
+  "concepts": [
+    "trace d'une matrice",
+    "rang d'une matrice",
+    "matrice idempotente",
+    "stabilité par multiplication",
+    "matrice inversible",
+    "matrice réelle"
+  ],
+  "methods": [
+    "utilisation de la trace comme rang",
+    "propriété d'idempotence",
+    "somme de matrices"
+  ],
+  "objects": [
+    "matrices inversibles",
+    "ensemble de matrices",
+    "trace de matrice",
+    "rang de matrice"
+  ],
+  "content_hash": "2bd7970aef6172197e59419a2a0a0578e96522e6689d819e85f47afb19229c56",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:21:01.519Z"
+}

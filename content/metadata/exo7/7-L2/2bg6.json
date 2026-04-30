@@ -1,0 +1,25 @@
+{
+  "uuid": "2bg6",
+  "source_path": "exo7/7-L2/2bg6.tex",
+  "summary": "Un présentateur tire au hasard une personne parmi 35 hommes, 40 femmes et 25 enfants. Chaque groupe tire une boule dans une urne spécifique avec des probabilités différentes de tirer une boule noire. On demande la probabilité que la boule noire ait été tirée par un homme, une femme ou un enfant, puis la meilleure prédiction pour minimiser l'erreur.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "loi de probabilité jointe",
+    "théorème de Bayes",
+    "probabilité a posteriori",
+    "probabilité a priori"
+  ],
+  "methods": [
+    "calcul de probabilités conditionnelles",
+    "application du théorème de Bayes",
+    "comparaison de probabilités"
+  ],
+  "objects": [
+    "urne avec boules",
+    "boule noire",
+    "personne tirée au hasard"
+  ],
+  "content_hash": "4ae271550f14ff6b72befb7aa8c3a131fc1514caf561b9554b99a2c0058532a1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:14:22.653Z"
+}

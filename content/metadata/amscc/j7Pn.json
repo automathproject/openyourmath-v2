@@ -1,0 +1,26 @@
+{
+  "uuid": "j7Pn",
+  "source_path": "amscc/j7Pn.tex",
+  "summary": "Calculer l'espérance et la variance d'une variable aléatoire suivant une loi uniforme sur un intervalle [a; b].",
+  "concepts": [
+    "loi uniforme",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "intégrale de fonction densité",
+    "formule de Huygens"
+  ],
+  "methods": [
+    "calcul d'espérance par intégration",
+    "calcul de variance par intégration",
+    "application de la formule de Huygens"
+  ],
+  "objects": [
+    "variable aléatoire à densité",
+    "fonction densité",
+    "espérance",
+    "variance"
+  ],
+  "content_hash": "822016f1fc4e8544ef124f41fec34e0de009e5a858b84862297edbcde7ee02b0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:03:32.661Z"
+}

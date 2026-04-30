@@ -1,0 +1,26 @@
+{
+  "uuid": "Nfbm",
+  "source_path": "exo7/2-L1/Nfbm.tex",
+  "summary": "L'exercice demande de déterminer les suites convergentes qui vérifient l'équation de récurrence linéaire d'ordre 2 donnée par 2u_{n+2} = 7u_{n+1} - 3u_n.",
+  "concepts": [
+    "équation de récurrence linéaire",
+    "suite récurrente",
+    "convergence de suite",
+    "valeur propre",
+    "vecteur propre",
+    "solution générale"
+  ],
+  "methods": [
+    "résolution d'équation de récurrence linéaire",
+    "calcul du polynôme caractéristique",
+    "diagonalisation"
+  ],
+  "objects": [
+    "suite récurrente linéaire",
+    "polynôme caractéristique",
+    "valeurs propres"
+  ],
+  "content_hash": "4ed365913801b1dfb50f0a253122171e8ba4978aa7bc659e82124473846d97ab",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:15:24.183Z"
+}

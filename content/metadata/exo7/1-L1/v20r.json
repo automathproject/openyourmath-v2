@@ -1,0 +1,25 @@
+{
+  "uuid": "v20r",
+  "source_path": "exo7/1-L1/v20r.tex",
+  "summary": "Factoriser le polynôme $X^8 + X^4 + 1$ dans l'ensemble des nombres réels.",
+  "concepts": [
+    "polynôme",
+    "racine complexe",
+    "factorisation",
+    "polynôme irréductible",
+    "corps des réels"
+  ],
+  "methods": [
+    "substitution",
+    "factorisation par groupes",
+    "identification des racines"
+  ],
+  "objects": [
+    "polynôme de degré 8",
+    "polynôme de degré 4",
+    "racines cubiques de l'unité"
+  ],
+  "content_hash": "4a7daeb55247991bb72510b63e74bc9c3d86c44884ba0dfbb7d345eb595428bc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:28:37.312Z"
+}

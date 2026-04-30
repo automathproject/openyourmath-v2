@@ -1,0 +1,27 @@
+{
+  "uuid": "XhZo",
+  "source_path": "exo7/2-L1/XhZo.tex",
+  "summary": "On considère une suite bornée dans ℝᵈ dont la différence entre termes consécutifs tend vers 0. On demande de prouver que l'ensemble des valeurs d'adhérence A est non vide, compact et connexe.",
+  "concepts": [
+    "suite bornée",
+    "valeurs d'adhérence",
+    "ensemble compact",
+    "ensemble connexe",
+    "convergence de suite",
+    "topologie de ℝᵈ"
+  ],
+  "methods": [
+    "étude des valeurs d'adhérence",
+    "raisonnement par l'absurde",
+    "utilisation de la bornitude",
+    "analyse de la connexité"
+  ],
+  "objects": [
+    "suite dans ℝᵈ",
+    "ensemble A",
+    "parties disjointes fermées"
+  ],
+  "content_hash": "f4785ed0a31069e00ed8396d6a3fb64204caf42a42c173f1b697bccbcc17d54d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:21:51.582Z"
+}

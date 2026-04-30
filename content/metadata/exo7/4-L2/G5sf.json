@@ -1,0 +1,28 @@
+{
+  "uuid": "G5sf",
+  "source_path": "exo7/4-L2/G5sf.tex",
+  "summary": "Montrer qu'une matrice carrée est nilpotente si et seulement si la trace de toutes ses puissances est nulle.",
+  "concepts": [
+    "matrice nilpotente",
+    "trace d'une matrice",
+    "valeur propre",
+    "polynôme caractéristique",
+    "théorème de Cayley-Hamilton",
+    "somme de Newton",
+    "fonctions élémentaires symétriques"
+  ],
+  "methods": [
+    "utilisation des valeurs propres",
+    "combinaisons linéaires de polynômes",
+    "formules de Newton"
+  ],
+  "objects": [
+    "matrice carrée",
+    "trace de puissance de matrice",
+    "valeurs propres",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "e88a18025947e15cf890a638ea84ce1b1ad080de443cec9315aa06ef4e47c58b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:30:20.970Z"
+}

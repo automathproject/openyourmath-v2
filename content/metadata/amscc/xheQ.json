@@ -1,0 +1,36 @@
+{
+  "uuid": "xheQ",
+  "source_path": "amscc/xheQ.tex",
+  "summary": "L'exercice demande de déterminer les lois de plusieurs variables aléatoires, de vérifier l'absence de biais de deux estimateurs et de comparer leur efficacité, puis d'utiliser des tables de valeurs pour trouver un seuil de probabilité pour une variable suivant une loi du chi2 et une loi de Student.",
+  "concepts": [
+    "loi normale",
+    "loi du chi2",
+    "loi de Student",
+    "estimateur sans biais",
+    "efficacité d'un estimateur",
+    "espérance mathématique",
+    "variance",
+    "linéarité de l'espérance",
+    "indépendance de variables aléatoires"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "comparaison de variances",
+    "standardisation",
+    "utilisation de tables de valeurs",
+    "reconnaissance de lois statistiques"
+  ],
+  "objects": [
+    "variable aléatoire",
+    "estimateur",
+    "espérance",
+    "variance",
+    "loi normale centrée réduite",
+    "loi du chi2",
+    "loi de Student"
+  ],
+  "content_hash": "cbd9db00a1e06f576ffd0a63b3abc0600303431a74c2a88a52a7d0653c9c54a5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:00:42.975Z"
+}

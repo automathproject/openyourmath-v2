@@ -1,0 +1,25 @@
+{
+  "uuid": "z0hC",
+  "source_path": "amscc/z0hC.tex",
+  "summary": "L'exercice demande de calculer les produits de matrices AB et AC, puis d'en déduire l'inversibilité de la matrice A. Il manipule des matrices carrées de taille 3x3.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "produit de matrices",
+    "matrice carrée",
+    "démonstration par l'absurde",
+    "propriété d'injectivité"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "raisonnement par contraposée",
+    "vérification de l'inversibilité"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "produit de matrices",
+    "inverse d'une matrice"
+  ],
+  "content_hash": "f3388da90dd829446e2f26433cfce6303c81da230e340a1c038a98267783f09b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:22:57.075Z"
+}

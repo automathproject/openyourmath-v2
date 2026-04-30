@@ -1,0 +1,27 @@
+{
+  "uuid": "FKpl",
+  "source_path": "amscc/FKpl.tex",
+  "summary": "L'exercice demande de démontrer que deux estimateurs de la moyenne sont sans biais et de comparer leur efficacité. On considère trois variables aléatoires indépendantes de même moyenne et variance.",
+  "concepts": [
+    "estimateur sans biais",
+    "espérance mathématique",
+    "variance",
+    "efficacité d'un estimateur",
+    "indépendance de variables aléatoires",
+    "loi de probabilité"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "comparaison de variances"
+  ],
+  "objects": [
+    "variables aléatoires indépendantes",
+    "estimateurs de la moyenne",
+    "espérance d'un estimateur",
+    "variance d'un estimateur"
+  ],
+  "content_hash": "796c8713fce77ac15cf705cf91de98b8354058f3f3fcca3f6bc2bd4ceb82ca4b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:38:30.081Z"
+}

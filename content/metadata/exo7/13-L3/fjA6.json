@@ -1,0 +1,25 @@
+{
+  "uuid": "fjA6",
+  "source_path": "exo7/13-L3/fjA6.tex",
+  "summary": "L'exercice demande de démontrer la convergence de la matrice $\\Big(I+\\frac{A}{n}\\Big)^n$ vers $e^A$ lorsque $n$ tend vers l'infini, en majorant la différence entre ces deux matrices. Il s'agit ensuite de retrouver la valeur du déterminant de $e^A$.",
+  "concepts": [
+    "convergence matricielle",
+    "déterminant d'une matrice exponentielle",
+    "matrice exponentielle",
+    "norme matricielle",
+    "limite de matrices"
+  ],
+  "methods": [
+    "majoration de la différence",
+    "développement en série entière",
+    "calcul du déterminant"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice exponentielle",
+    "déterminant"
+  ],
+  "content_hash": "426efb475fcbe42c696a3fadcfc93208b500e4e3ba0da6be7fc1cd32634842cc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:14:02.219Z"
+}

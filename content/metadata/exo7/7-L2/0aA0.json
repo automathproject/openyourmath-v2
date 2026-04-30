@@ -1,0 +1,25 @@
+{
+  "uuid": "0aA0",
+  "source_path": "exo7/7-L2/0aA0.tex",
+  "summary": "Calcul de la probabilité qu'un joueur tirant simultanément cinq boules dans une urne gagne exactement 10 euros, en considérant les différentes combinaisons de boules rouges, vertes et blanches.",
+  "concepts": [
+    "probabilité d'un événement",
+    "combinaisons",
+    "événements incompatibles",
+    "loi de probabilité uniforme",
+    "calcul de probabilité conditionnelle"
+  ],
+  "methods": [
+    "calcul de coefficients binomiaux",
+    "décomposition en cas disjoints",
+    "utilisation de la formule des probabilités totales"
+  ],
+  "objects": [
+    "urne avec boules de couleurs",
+    "combinaisons de boules",
+    "événements A et B"
+  ],
+  "content_hash": "830e534bcc4ce48246bf17c2e79645197b4b7a5e2d2b4be8340c925514f9618e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:13:02.125Z"
+}

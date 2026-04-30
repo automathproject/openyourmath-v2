@@ -1,0 +1,28 @@
+{
+  "uuid": "rSsq",
+  "source_path": "exo7/4-L2/rSsq.tex",
+  "summary": "Diagonaliser des matrices carrées de taille 3x3 en trouvant leurs matrices de passage et leurs matrices diagonales associées.",
+  "concepts": [
+    "diagonalisation",
+    "valeurs propres",
+    "vecteurs propres",
+    "polynôme caractéristique",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "calcul des valeurs propres",
+    "calcul des vecteurs propres",
+    "détermination de la matrice de passage",
+    "construction de la matrice diagonale"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrice de passage",
+    "matrice diagonale"
+  ],
+  "content_hash": "be542e921c30d92c2e9c2b993e39ceeddcf9dc55ba0e84cf49678df22581712b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:18:21.535Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "RpZE",
+  "source_path": "exo7/7-L2/RpZE.tex",
+  "summary": "L'exercice demande de déterminer la loi de probabilité d'une variable aléatoire représentant le nombre de clients se présentant parmi 30 réservations, puis de construire un intervalle de confiance pour estimer le nombre de clients à prévoir.",
+  "concepts": [
+    "loi binomiale",
+    "espérance",
+    "écart-type",
+    "intervalle de confiance",
+    "fréquence",
+    "estimation par intervalle"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de l'écart-type",
+    "approximation normale de la binomiale",
+    "construction d'un intervalle de confiance"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "fréquence observée",
+    "intervalle de confiance"
+  ],
+  "content_hash": "904f405b5006e8517a4f0c9b89612ae33d3b2472d58a174e16aaa8f6d7ea7bec",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:41:49.580Z"
+}

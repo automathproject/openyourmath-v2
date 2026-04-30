@@ -1,0 +1,30 @@
+{
+  "uuid": "aYzL",
+  "source_path": "amscc/aYzL.tex",
+  "summary": "L'exercice demande d'étudier la convergence d'une suite de variables aléatoires définie par une méthode de Monte Carlo pour approximer une intégrale. Il s'agit de démontrer la convergence presque sûre de cette suite et d'analyser ses propriétés statistiques.",
+  "concepts": [
+    "loi forte des grands nombres",
+    "théorème central limite",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "convergence presque sûre",
+    "théorème de transfert",
+    "loi normale centrée réduite"
+  ],
+  "methods": [
+    "approximation par Monte Carlo",
+    "calcul d'espérance",
+    "calcul de variance",
+    "standardisation",
+    "approximation gaussienne"
+  ],
+  "objects": [
+    "suite de variables aléatoires",
+    "intégrale",
+    "variable aléatoire uniforme",
+    "variable aléatoire gaussienne"
+  ],
+  "content_hash": "59aba39dd563f57e4083c56ba85fe129853c1a66d2667d30be4b47de7a59872d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:55:50.049Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "vqha",
+  "source_path": "exo7/10-L3/vqha.tex",
+  "summary": "L'exercice demande de prouver l'irréductibilité de deux polynômes dans ℤ[X] en utilisant des réductions modulo 2 et modulo 3.",
+  "concepts": [
+    "réduction modulo un nombre premier",
+    "polynôme irréductible",
+    "décomposition en facteurs irréductibles",
+    "corps fini",
+    "degré d'un polynôme",
+    "polynôme unitaire"
+  ],
+  "methods": [
+    "réduction modulo 2",
+    "réduction modulo 3",
+    "analyse des racines dans ℤ/3ℤ",
+    "comparaison des degrés"
+  ],
+  "objects": [
+    "polynôme de degré 5",
+    "polynôme de degré 4",
+    "factorisation triviale"
+  ],
+  "content_hash": "b075ef2abdf36bc3600238ef6de71bb0d0bff2f70ea802ffe6c27a4dafa884e0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:28:25.783Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "if79",
+  "source_path": "exo7/7-L2/if79.tex",
+  "summary": "L'exercice demande de construire un intervalle de confiance pour le paramètre λ d'une loi exponentielle modélisant des retards de train, à partir d'une moyenne empirique sur 400 jours.",
+  "concepts": [
+    "loi exponentielle",
+    "théorème central limite",
+    "intervalle de confiance",
+    "espérance",
+    "écart-type",
+    "estimateur"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul d'intervalle de confiance"
+  ],
+  "objects": [
+    "paramètre λ",
+    "retard moyen",
+    "variable aléatoire exponentielle"
+  ],
+  "content_hash": "b4249b08d51777d65c78c07810b9f29be35718fec41281d96c97ecb9230eb22a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:49:38.730Z"
+}

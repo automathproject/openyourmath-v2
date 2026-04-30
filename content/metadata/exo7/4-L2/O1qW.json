@@ -1,0 +1,28 @@
+{
+  "uuid": "O1qW",
+  "source_path": "exo7/4-L2/O1qW.tex",
+  "summary": "Déterminer le commutant d'une matrice donnée, c'est-à-dire l'ensemble des matrices qui commutent avec elle. L'exercice porte sur une matrice 3x3 spécifique.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeurs propres",
+    "diagonalisation",
+    "sous-espaces propres",
+    "commutant d'une matrice",
+    "matrice diagonalisable"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "diagonalisation",
+    "analyse des sous-espaces propres",
+    "vérification de la commutation"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "commutant",
+    "polynôme caractéristique",
+    "sous-espaces propres"
+  ],
+  "content_hash": "b63d08d69ee844e2669e9b8fc0f3bae647df32ba8fd5d5ee42bb8b136471f98d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:39:13.398Z"
+}

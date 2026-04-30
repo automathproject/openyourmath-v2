@@ -1,0 +1,27 @@
+{
+  "uuid": "rafr",
+  "source_path": "exo7/2-L1/rafr.tex",
+  "summary": "L'exercice demande d'exprimer une suite définie par un produit de nombres impairs sur un produit de nombres pairs en utilisant des factorielles, puis d'étudier la convergence de cette suite et d'une suite dérivée.",
+  "concepts": [
+    "factorielles",
+    "convergence de suite",
+    "limite infinie",
+    "produit de termes",
+    "suite définie par récurrence"
+  ],
+  "methods": [
+    "réécriture en termes de factorielles",
+    "étude de la limite",
+    "comparaison de suites",
+    "utilisation de l'inégalité de Cauchy"
+  ],
+  "objects": [
+    "suite $u_n$",
+    "suite $v_n$",
+    "limite $\\alpha$",
+    "produit de termes"
+  ],
+  "content_hash": "98968f6c47faca559cb88c1d7017113ec57c63ace14d9429175fb4666c78dc38",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:36:05.345Z"
+}

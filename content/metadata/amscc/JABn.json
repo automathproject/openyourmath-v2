@@ -1,0 +1,27 @@
+{
+  "uuid": "JABn",
+  "source_path": "amscc/JABn.tex",
+  "summary": "L'exercice demande de tester l'indépendance entre deux caractères qualitatifs (groupe sanguin et facteur Rhésus) à partir d'un tableau de contingence.",
+  "concepts": [
+    "test d'indépendance du Khi-deux",
+    "tableau de contingence",
+    "caractères qualitatifs",
+    "hypothèse d'indépendance",
+    "statistique de test",
+    "loi du Khi-deux",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "calcul de la statistique de test",
+    "comparaison avec la loi du Khi-deux",
+    "test d'hypothèse"
+  ],
+  "objects": [
+    "tableau de contingence",
+    "caractères qualitatifs",
+    "effectifs observés"
+  ],
+  "content_hash": "b4a237dab40e3e7568979bc6c988a3d189e29488acf1f727b285c30b1252653b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:39:37.430Z"
+}

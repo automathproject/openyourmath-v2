@@ -1,0 +1,28 @@
+{
+  "uuid": "99Xf",
+  "source_path": "amscc/99Xf.tex",
+  "summary": "Un joueur effectue des parties de pile ou face indépendantes avec probabilité p d'obtenir pile. Il peut choisir entre deux jeux avec des règles différentes. L'objectif est de comparer les probabilités de gagner entre les deux jeux.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi binomiale",
+    "probabilité conditionnelle",
+    "indépendance de variables aléatoires",
+    "théorème des probabilités totales",
+    "variable de Bernoulli"
+  ],
+  "methods": [
+    "décomposition de probabilités",
+    "utilisation de l'indépendance",
+    "calcul de probabilités conditionnelles",
+    "comparaison de probabilités"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "variable aléatoire de Bernoulli",
+    "probabilité de gain",
+    "nombre de succès"
+  ],
+  "content_hash": "780e30f26ff020fc7b2c22a365de1718b5ca29dc66864b8b3579bc9e3da8e9d9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:18:41.656Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "Dtzq",
+  "source_path": "exo7/2-L1/Dtzq.tex",
+  "summary": "L'exercice étudie une suite définie par récurrence à partir d'une fonction polynomiale. Il demande de montrer l'existence et l'unicité d'une solution à une équation polynomiale dans un intervalle donné, puis d'étudier les propriétés de convergence de la suite vers cette solution.",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "fonction strictement croissante",
+    "convergence d'une suite",
+    "limite d'une suite",
+    "équation polynomiale",
+    "récurrence"
+  ],
+  "methods": [
+    "étude de la dérivée",
+    "calcul de limite",
+    "raisonnement par récurrence",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "suite définie par récurrence",
+    "solution unique d'une équation",
+    "intervalle de convergence"
+  ],
+  "content_hash": "6d39f311c00601af9e8a431a17b6381730294d3f238f39c723afb07a1d25c32b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:08:36.180Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "qCG8",
+  "source_path": "exo7/7-L2/qCG8.tex",
+  "summary": "L'exercice demande de modéliser le nombre de personnes se présentant au guichet entre 10h et 11h par une variable aléatoire, puis de calculer les probabilités pour différentes valeurs de cette variable, notamment la probabilité qu'au moins 10 personnes se présentent.",
+  "concepts": [
+    "loi binomiale",
+    "loi de Poisson",
+    "approximation de Poisson",
+    "variable aléatoire discrète",
+    "processus de Poisson",
+    "espérance d'une variable aléatoire"
+  ],
+  "methods": [
+    "approximation par la loi de Poisson",
+    "calcul de probabilités à partir d'une loi de Poisson",
+    "calcul de somme de probabilités"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "loi binomiale",
+    "loi de Poisson",
+    "espérance"
+  ],
+  "content_hash": "5eb02d9ccc5fe27aa8a10d14f30327037d94127c5e8772b05a809cdab4897eeb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:40:02.502Z"
+}

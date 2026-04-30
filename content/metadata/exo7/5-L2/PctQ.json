@@ -1,0 +1,30 @@
+{
+  "uuid": "PctQ",
+  "source_path": "exo7/5-L2/PctQ.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de la distance d'un point à un ensemble dans un espace normé, notamment l'existence d'un point réalisant cette distance lorsque l'ensemble est compact ou fermé, la continuité de la fonction distance, et l'existence d'une distance minimale entre deux ensembles disjoints.",
+  "concepts": [
+    "espace normé",
+    "distance d'un point à un ensemble",
+    "compact",
+    "fermé",
+    "continuité",
+    "disjoint",
+    "infimum"
+  ],
+  "methods": [
+    "utilisation de la définition de la distance",
+    "application du théorème des valeurs intermédiaires",
+    "argument par l'absurde",
+    "continuité de la fonction distance"
+  ],
+  "objects": [
+    "espace normé",
+    "ensemble compact",
+    "ensemble fermé",
+    "fonction distance",
+    "ensembles disjoints"
+  ],
+  "content_hash": "d78b2120aeea47f361f267c8278a5b9fd9e3f44cb600c0ccd07574accd991583",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:50:15.330Z"
+}

@@ -1,0 +1,35 @@
+{
+  "uuid": "Rz9w",
+  "source_path": "amscc/Rz9w.tex",
+  "summary": "Pour chaque série numérique donnée, déterminer si elle est absolument convergente, semi-convergente, divergente ou grossièrement divergente en appliquant divers critères de convergence.",
+  "concepts": [
+    "série numérique",
+    "convergence absolue",
+    "semi-convergence",
+    "divergence",
+    "critère des séries alternées",
+    "critère de Cauchy",
+    "développement limité",
+    "série de Riemann",
+    "série de Bertrand"
+  ],
+  "methods": [
+    "comparaison à la série harmonique",
+    "standardisation",
+    "décomposition en éléments simples",
+    "calcul de limite",
+    "développement limité du cosinus",
+    "critère de Cauchy",
+    "critère des séries alternées"
+  ],
+  "objects": [
+    "série de terme général $u_n$",
+    "suite $\\left(\\frac{\\ln n}{n}\\right)$",
+    "série de Bertrand",
+    "série de Riemann",
+    "développement limité"
+  ],
+  "content_hash": "e5a45686e3866ef1317328d627a755e0274fd51ae53cf9c9daf20ce503599156",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:18:34.360Z"
+}

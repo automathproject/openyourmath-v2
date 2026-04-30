@@ -1,0 +1,28 @@
+{
+  "uuid": "pZnD",
+  "source_path": "exo7/16-L3/pZnD.tex",
+  "summary": "Montrer l'existence et l'unicité d'une solution complexe à l'équation e^z = cz dans un demi-plan défini par Re(z) < 1, sous la condition |c| > e.",
+  "concepts": [
+    "théorème des résidus",
+    "fonction holomorphe",
+    "équation fonctionnelle",
+    "convergence uniforme",
+    "théorème de Rouché",
+    "principe de l'argument"
+  ],
+  "methods": [
+    "analyse de singularités",
+    "estimation de modules",
+    "théorème des zéros de fonctions holomorphes",
+    "comparaison de fonctions"
+  ],
+  "objects": [
+    "fonction exponentielle complexe",
+    "équation e^z = cz",
+    "demi-plan complexe",
+    "singularités"
+  ],
+  "content_hash": "7dca983be9a7d4379abbdf80a3147463994cf15ed5dd1518e670da650bfd0247",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:22:57.778Z"
+}

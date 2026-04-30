@@ -1,0 +1,26 @@
+{
+  "uuid": "zXLh",
+  "source_path": "exo7/10-L3/zXLh.tex",
+  "summary": "Trouver le PGCD de deux polynômes de la forme x^n - 1 et x^m - 1 dans l'anneau Z[x]. L'exercice demande de déterminer le plus grand diviseur commun de ces deux polynômes.",
+  "concepts": [
+    "PGCD de polynômes",
+    "racines de l'unité",
+    "théorème de Gauss",
+    "divisibilité dans Z[x]",
+    "racines simples",
+    "polynômes cyclotomiques"
+  ],
+  "methods": [
+    "factorisation de polynômes",
+    "analyse des racines complexes",
+    "utilisation des propriétés arithmétiques des exposants"
+  ],
+  "objects": [
+    "polynômes de la forme x^k - 1",
+    "racines n-ièmes et m-ièmes de l'unité",
+    "PGCD dans Z[x]"
+  ],
+  "content_hash": "e20f418ae621b4b71218e78abb15c1e91d9177815e66378f958f8c935b0c437f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:29:51.050Z"
+}

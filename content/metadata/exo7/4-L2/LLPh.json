@@ -1,0 +1,29 @@
+{
+  "uuid": "LLPh",
+  "source_path": "exo7/4-L2/LLPh.tex",
+  "summary": "L'exercice demande de déterminer le nombre de chemins de longueur n sur les arêtes d'un cube de côté 1, entre deux points donnés. Le corrigé utilise une approche matricielle pour modéliser le problème.",
+  "concepts": [
+    "réduction d'endomorphisme",
+    "polynôme annulateur",
+    "diagonalisation",
+    "matrice de transition",
+    "relation de récurrence",
+    "valeurs propres"
+  ],
+  "methods": [
+    "modélisation matricielle",
+    "diagonalisation",
+    "calcul de valeurs propres",
+    "résolution de relation de récurrence"
+  ],
+  "objects": [
+    "matrice de transition",
+    "vecteur de chemins",
+    "cube",
+    "arêtes",
+    "sommets"
+  ],
+  "content_hash": "928e73fd07d691facedab63e10e207cf7df03a972a04b6d737582d5122077b3b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:35:59.535Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "7JTd",
+  "source_path": "amscc/7JTd.tex",
+  "summary": "On considère une variable aléatoire X dont la fonction de répartition F est continue et strictement croissante. On définit Y = F(X) et on demande de démontrer que Y suit une loi uniforme sur [0;1].",
+  "concepts": [
+    "fonction de répartition",
+    "loi uniforme",
+    "variable aléatoire à densité",
+    "transformation de variable aléatoire",
+    "continuité",
+    "croissance stricte"
+  ],
+  "methods": [
+    "calcul de fonction de répartition",
+    "utilisation de la croissance stricte",
+    "propriétés des fonctions de répartition"
+  ],
+  "objects": [
+    "variable aléatoire X",
+    "fonction de répartition F",
+    "variable aléatoire Y"
+  ],
+  "content_hash": "427f09c105bad4683c686b9862e6f10bb9ae7d60193c4456d14a59a801bb3cef",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:39:45.239Z"
+}

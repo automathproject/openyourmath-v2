@@ -1,0 +1,26 @@
+{
+  "uuid": "dXNn",
+  "source_path": "amscc/dXNn.tex",
+  "summary": "L'exercice demande de construire un estimateur du paramètre a d'une loi de probabilité discrète sur N, en utilisant la méthode du maximum de vraisemblance, puis de déterminer le biais de cet estimateur.",
+  "concepts": [
+    "maximum de vraisemblance",
+    "estimateur",
+    "biais d'un estimateur",
+    "espérance d'une variable aléatoire",
+    "loi de probabilité discrète",
+    "fonction de vraisemblance"
+  ],
+  "methods": [
+    "maximisation de la vraisemblance",
+    "calcul de l'espérance",
+    "détermination du biais"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "paramètre de loi",
+    "estimateur sans biais"
+  ],
+  "content_hash": "f1c9d6e39eced5f34d2e5c4d8fb83ceec8d6529c24348ed97365c776e617a1af",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:47:47.697Z"
+}

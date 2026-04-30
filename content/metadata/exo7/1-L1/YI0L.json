@@ -1,0 +1,25 @@
+{
+  "uuid": "YI0L",
+  "source_path": "exo7/1-L1/YI0L.tex",
+  "summary": "On cherche le polynôme unitaire dont les racines sont les sommes deux à deux des racines d'un polynôme donné. L'énoncé fournit un polynôme de degré 3 et ses racines.",
+  "concepts": [
+    "polynôme unitaire",
+    "racines d'un polynôme",
+    "relation de Newton",
+    "polynôme minimal",
+    "symétrie des racines"
+  ],
+  "methods": [
+    "transformation de polynôme",
+    "calcul des sommes de racines",
+    "construction explicite de polynôme"
+  ],
+  "objects": [
+    "polynôme de degré 3",
+    "somme de racines",
+    "racines deux à deux"
+  ],
+  "content_hash": "b8283080a60f8451bdde6e15baed77406cc769043f2df781d63873be2dc34606",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:04:24.208Z"
+}

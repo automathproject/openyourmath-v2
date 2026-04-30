@@ -1,0 +1,27 @@
+{
+  "uuid": "zbwb",
+  "source_path": "exo7/1-L1/zbwb.tex",
+  "summary": "L'exercice demande de montrer qu'un polynôme P_n est divisible par (X-1) et (X-2), puis par leur produit, et d'exprimer le quotient correspondant sous une forme développée.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "critère de divisibilité",
+    "polynôme",
+    "quotient de division",
+    "factorisation"
+  ],
+  "methods": [
+    "évaluation du polynôme",
+    "décomposition en facteurs",
+    "calcul de quotient"
+  ],
+  "objects": [
+    "polynôme P_n",
+    "polynôme (X-1)",
+    "polynôme (X-2)",
+    "quotient Q_1",
+    "quotient Q_2"
+  ],
+  "content_hash": "726be42f875375da9289b2f97e25cd82d746987039c5e78f94a653bcd7dda65d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:33:59.408Z"
+}

@@ -1,0 +1,33 @@
+{
+  "uuid": "vi5M",
+  "source_path": "exo7/4-L2/vi5M.tex",
+  "summary": "L'exercice demande de vérifier la non-diagonalisabilité d'une matrice 3x3 donnée, de déterminer le noyau d'une puissance de cette matrice, de montrer sa similarité à une matrice triangulaire par blocs, et de calculer ses puissances successives.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres",
+    "diagonalisation",
+    "théorème de Cayley-Hamilton",
+    "décomposition des noyaux",
+    "matrice triangulaire par blocs",
+    "formule du binôme de Newton"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "détermination des valeurs propres",
+    "calcul de noyau de matrice",
+    "similarité de matrices",
+    "décomposition en matrices diagonale et nilpotente",
+    "calcul de puissances de matrices"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme annulateur",
+    "noyau de matrice",
+    "matrice triangulaire par blocs",
+    "puissances de matrice"
+  ],
+  "content_hash": "1b78aff83ab7819ec1c5edb7e2a6aca62b0d435b7e5b8bd9c9762f679401ccc4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:25:50.419Z"
+}

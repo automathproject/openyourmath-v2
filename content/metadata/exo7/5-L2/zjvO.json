@@ -1,0 +1,32 @@
+{
+  "uuid": "zjvO",
+  "source_path": "exo7/5-L2/zjvO.tex",
+  "summary": "Étude complète de la fonction f définie comme la somme d'une série de fonctions fn(t) = Arctan(nt)/n². L'exercice demande d'analyser le domaine de définition, la parité, les limites, la continuité, la dérivabilité (notamment l'absence de dérivabilité en 0) et l'allure du graphe de f.",
+  "concepts": [
+    "série de fonctions",
+    "convergence normale",
+    "convergence uniforme",
+    "théorème d'interversion des limites",
+    "continuité uniforme",
+    "dérivation terme à terme",
+    "théorème des accroissements finis",
+    "fonction impaire"
+  ],
+  "methods": [
+    "étude de la convergence absolue",
+    "vérification de la parité",
+    "analyse de la continuité par convergence uniforme",
+    "dérivation terme à terme",
+    "étude de la dérivabilité en un point"
+  ],
+  "objects": [
+    "série de fonctions",
+    "fonction définie par une série",
+    "fonction impaire",
+    "limite de fonction",
+    "dérivée de fonction"
+  ],
+  "content_hash": "b211ccf01652f531a96d56ddcd5b72a2209c6a4415af6763afba24c2c101fbcf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:07:09.272Z"
+}

@@ -1,0 +1,33 @@
+{
+  "uuid": "OND9",
+  "source_path": "exo7/4-L2/OND9.tex",
+  "summary": "L'exercice demande de déterminer et factoriser le polynôme caractéristique d'une matrice 3x3, puis d'en déduire les valeurs propres et les sous-espaces propres associés. Enfin, il s'agit de démontrer la diagonalisabilité de la matrice et de trouver une matrice de passage pour la diagonaliser.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeurs propres",
+    "sous-espaces propres",
+    "diagonalisation",
+    "matrice inversible",
+    "multiplicité d'une valeur propre",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "factorisation de polynôme",
+    "résolution de systèmes linéaires",
+    "construction de base de sous-espaces propres",
+    "vérification de diagonalisabilité",
+    "construction de matrice de passage"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "sous-espaces propres",
+    "matrice diagonale",
+    "matrice de passage"
+  ],
+  "content_hash": "5ed3d55bd1290bc3757229543300a0df5ac25f0e094e2428c468f4cb71e3c1df",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:39:52.004Z"
+}

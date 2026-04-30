@@ -1,0 +1,30 @@
+{
+  "uuid": "SslJ",
+  "source_path": "exo7/13-L3/SslJ.tex",
+  "summary": "L'exercice demande de déterminer les conditions nécessaires et suffisantes pour qu'une matrice 2x2 soit diagonalisable, semi-simple ou nilpotente.",
+  "concepts": [
+    "matrice carrée",
+    "diagonalisation",
+    "matrice semi-simple",
+    "matrice nilpotente",
+    "valeurs propres",
+    "vecteurs propres",
+    "polynôme caractéristique",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "analyse des valeurs propres",
+    "détermination de la multiplicité des valeurs propres",
+    "vérification de la diagonalisabilité"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "valeurs propres",
+    "vecteurs propres",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "83a8413758914a38cda7498b9caf57177aea31f8cb94f40a646ae62500a853a0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:13:13.842Z"
+}

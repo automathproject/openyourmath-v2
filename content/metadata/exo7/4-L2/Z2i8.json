@@ -1,0 +1,27 @@
+{
+  "uuid": "Z2i8",
+  "source_path": "exo7/4-L2/Z2i8.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire u définie sur l'espace des polynômes de degré 2 à coefficients réels est bien définie et linéaire, puis de déterminer ses valeurs propres et de la diagonaliser si possible.",
+  "concepts": [
+    "endomorphisme",
+    "espace vectoriel",
+    "linéarité",
+    "valeur propre",
+    "diagonalisation",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "vérification de la linéarité",
+    "calcul des valeurs propres",
+    "recherche de vecteurs propres",
+    "diagonalisation"
+  ],
+  "objects": [
+    "application linéaire",
+    "polynôme de degré 2",
+    "matrice de passage"
+  ],
+  "content_hash": "81f0e84cbefa18d79d5f65ad440f28fd600795fbdb509913d5836c382550f2d6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:55:04.557Z"
+}

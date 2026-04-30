@@ -1,0 +1,30 @@
+{
+  "uuid": "HJky",
+  "source_path": "amscc/HJky.tex",
+  "summary": "L'exercice modélise le poids total de n adultes indépendants par une somme de variables aléatoires normales et calcule les probabilités de surcharge de l'ascenseur pour n=5 et n=6. Il demande ensuite de déterminer le nombre maximal de personnes autorisées en respectant une contrainte de sécurité.",
+  "concepts": [
+    "loi normale",
+    "théorème central limite",
+    "espérance d'une somme de variables aléatoires",
+    "variance d'une somme de variables indépendantes",
+    "standardisation",
+    "fonction de répartition"
+  ],
+  "methods": [
+    "linéarité de l'espérance",
+    "calcul de l'écart-type d'une somme de variables indépendantes",
+    "standardisation",
+    "consultation de tables de la loi normale centrée réduite",
+    "calcul de probabilité conditionnelle"
+  ],
+  "objects": [
+    "somme de variables aléatoires indépendantes et identiquement distribuées",
+    "variable aléatoire normale",
+    "variable aléatoire centrée réduite",
+    "espérance",
+    "écart-type"
+  ],
+  "content_hash": "97a9d1e851f172fad308fb4db535ba288ace1372cefcf1a4c907ce7383eb179a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:43:41.005Z"
+}

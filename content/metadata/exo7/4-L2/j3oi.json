@@ -1,0 +1,24 @@
+{
+  "uuid": "j3oi",
+  "source_path": "exo7/4-L2/j3oi.tex",
+  "summary": "On considère une matrice M de taille 2n×2n construite à partir d'une matrice A inversible de taille n×n. L'exercice demande de prouver que M est diagonalisable si et seulement si A l'est, en exploitant les sous-espaces propres de M en fonction de ceux de A.",
+  "concepts": [
+    "diagonalisation",
+    "sous-espace propre",
+    "polynôme annulateur",
+    "matrice inversible",
+    "endomorphisme"
+  ],
+  "methods": [
+    "analyse des sous-espaces propres",
+    "utilisation de la structure de la matrice M"
+  ],
+  "objects": [
+    "matrice carrée",
+    "sous-espace vectoriel",
+    "valeur propre"
+  ],
+  "content_hash": "b78a2ca584105b1c116bf7341942fa4ac394633d159b0243c2e18d087410cce9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:07:49.971Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "YRLt",
+  "source_path": "exo7/7-L2/YRLt.tex",
+  "summary": "L'exercice demande d'identifier la loi exacte et ses paramètres pour trois variables aléatoires discrètes : le nombre annuel d'accidents à un carrefour, le nombre de garçons dans une famille de 6 enfants, et le nombre de femmes dans une délégation de 6 personnes tirées au hasard dans un groupe de 21 personnes.",
+  "concepts": [
+    "loi binomiale",
+    "loi de Poisson",
+    "loi hypergéométrique",
+    "espérance",
+    "variance",
+    "approximation de loi"
+  ],
+  "methods": [
+    "identification de loi de probabilité",
+    "calcul de paramètres",
+    "approximation de loi binomiale par loi de Poisson"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "nombre d'accidents",
+    "nombre d'enfants",
+    "nombre de femmes dans un échantillon"
+  ],
+  "content_hash": "fcfd565e8bb5ba0b568ea0b25b830498bf06d8383b6071b9774ce34a58f0a9cb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:30:49.292Z"
+}

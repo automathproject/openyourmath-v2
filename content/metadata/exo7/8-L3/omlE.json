@@ -1,0 +1,27 @@
+{
+  "uuid": "omlE",
+  "source_path": "exo7/8-L3/omlE.tex",
+  "summary": "Soit G un groupe d'ordre p³ où p est un nombre premier. Montrer que si G n'est pas commutatif, alors le centre Z(G) est égal au sous-groupe dérivé D(G) et que ce sous-groupe est d'ordre p.",
+  "concepts": [
+    "sous-groupe distingué",
+    "sous-groupe dérivé",
+    "centre d'un groupe",
+    "groupe abélien",
+    "groupe d'ordre fini",
+    "p-groupe",
+    "théorème de structure des p-groupes"
+  ],
+  "methods": [
+    "analyse de l'ordre du centre",
+    "utilisation de théorèmes de structure",
+    "comparaison des sous-groupes"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe Z(G)",
+    "sous-groupe D(G)"
+  ],
+  "content_hash": "5ace721bb62cee3f56bf2faeac0082315e98a55cf77d9fb5e2a80955fef233ae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:04:30.030Z"
+}

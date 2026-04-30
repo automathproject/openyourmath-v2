@@ -1,0 +1,29 @@
+{
+  "uuid": "z544",
+  "source_path": "exo7/4-L2/z544.tex",
+  "summary": "L'exercice demande de vérifier si une application linéaire définie sur un espace de polynômes est un endomorphisme, puis d'étudier ses propriétés d'injectivité et de surjectivité. Ensuite, il s'agit de déterminer ses valeurs propres, vecteurs propres et une base de diagonalisation.",
+  "concepts": [
+    "endomorphisme",
+    "espace vectoriel de polynômes",
+    "valeurs propres",
+    "vecteurs propres",
+    "diagonalisation",
+    "injectivité",
+    "surjectivité"
+  ],
+  "methods": [
+    "vérification de la linéarité",
+    "calcul de valeurs propres",
+    "recherche de vecteurs propres",
+    "construction de base diagonalisante"
+  ],
+  "objects": [
+    "application linéaire",
+    "polynôme",
+    "espace vectoriel",
+    "matrice de passage"
+  ],
+  "content_hash": "32b4ccdc222ce1a2f7c5cd94ede977c3de52e0077498dddd333438dfffb52273",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:31:30.573Z"
+}

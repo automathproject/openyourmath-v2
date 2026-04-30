@@ -1,0 +1,28 @@
+{
+  "uuid": "VgHv",
+  "source_path": "exo7/4-L2/VgHv.tex",
+  "summary": "L'exercice demande de déterminer deux valeurs propres et un vecteur propre de la matrice A, ainsi que deux sous-espaces stables associés à l'endomorphisme f défini par A. La matrice B est donnée mais n'est pas directement utilisée dans les questions posées.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "sous-espace stable",
+    "endomorphisme",
+    "matrice carrée",
+    "réduction d'endomorphisme",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche de racines du polynôme caractéristique",
+    "détermination des vecteurs propres associés"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "matrice 3x3",
+    "endomorphisme associé à une matrice",
+    "sous-espaces stables"
+  ],
+  "content_hash": "bab95c105c3e42c6dab486a30a057ef377456407a9e1ba2cf992b3f35cda5008",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:49:48.049Z"
+}

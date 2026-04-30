@@ -1,0 +1,30 @@
+{
+  "uuid": "noZt",
+  "source_path": "exo7/4-L2/noZt.tex",
+  "summary": "L'exercice demande de déterminer le noyau, l'image, les sous-espaces propres, les valeurs propres et la diagonalisabilité d'un endomorphisme u de ℝⁿ défini par une matrice A dont les coefficients sont les produits des composantes d'un vecteur non nul a. On doit aussi calculer le polynôme caractéristique de u.",
+  "concepts": [
+    "endomorphisme",
+    "matrice d'un endomorphisme",
+    "noyau et image",
+    "sous-espaces propres",
+    "valeurs propres",
+    "diagonalisation",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "calcul de noyau et image",
+    "détermination des sous-espaces propres",
+    "recherche des valeurs propres",
+    "calcul du polynôme caractéristique"
+  ],
+  "objects": [
+    "endomorphisme de ℝⁿ",
+    "matrice A",
+    "vecteur a",
+    "sous-espaces propres",
+    "valeurs propres"
+  ],
+  "content_hash": "8f5832c7dfc4205c7dd1fb4fde5a8234977ad6601ad2c195c753ada26869fb35",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:13:36.357Z"
+}

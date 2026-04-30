@@ -1,0 +1,29 @@
+{
+  "uuid": "J50Z",
+  "source_path": "amscc/J50Z.tex",
+  "summary": "L'exercice demande de résoudre numériquement une équation différentielle modélisant l'évolution d'une concentration chimique, en utilisant la méthode d'Euler implicite avec différents pas de temps. Il faut aussi résoudre analytiquement l'équation et comparer les solutions approchées et exactes graphiquement.",
+  "concepts": [
+    "équation différentielle",
+    "méthode d'Euler implicite",
+    "résolution numérique",
+    "solution exacte",
+    "analyse numérique",
+    "stabilité numérique"
+  ],
+  "methods": [
+    "discrétisation",
+    "schéma implicite",
+    "calcul itératif",
+    "résolution analytique",
+    "comparaison graphique"
+  ],
+  "objects": [
+    "équation différentielle du premier ordre",
+    "solution approchée",
+    "solution exacte",
+    "pas de discrétisation"
+  ],
+  "content_hash": "2fc8be92f5c054ef502b3ec31ac84be04f277ddc6b60f37bdf6b4d6ed1184e23",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:37:13.007Z"
+}

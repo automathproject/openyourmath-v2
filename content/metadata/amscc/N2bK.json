@@ -1,0 +1,26 @@
+{
+  "uuid": "N2bK",
+  "source_path": "amscc/N2bK.tex",
+  "summary": "L'exercice demande de déterminer le reste de la division euclidienne du polynôme P_n(X) = X^n + X + 1 par le polynôme D(X) = (X-1)^2 et de montrer que ce reste est de la forme linéaire αX + β.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "degré d'un polynôme",
+    "restes de division",
+    "dérivation de polynômes",
+    "évaluation de polynômes"
+  ],
+  "methods": [
+    "évaluation en un point",
+    "dérivation",
+    "manipulation algébrique"
+  ],
+  "objects": [
+    "polynôme P_n(X)",
+    "polynôme D(X)",
+    "reste R(X)",
+    "quotient Q_n(X)"
+  ],
+  "content_hash": "d6e07f62673a31be6f8a0c69c1999106292de34d82c7490eb2a050de05ff1e2e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:34:26.326Z"
+}

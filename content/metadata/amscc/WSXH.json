@@ -1,0 +1,25 @@
+{
+  "uuid": "WSXH",
+  "source_path": "amscc/WSXH.tex",
+  "summary": "L'exercice demande de tester l'hypothèse selon laquelle l'épaisseur des couches sensibles de pellicules photographiques suit une loi normale, à partir d'un échantillon de 616 pellicules.",
+  "concepts": [
+    "test d'ajustement",
+    "loi normale",
+    "hypothèse statistique",
+    "échantillonnage",
+    "statistique descriptive"
+  ],
+  "methods": [
+    "test du chi-deux",
+    "analyse des fréquences observées",
+    "comparaison avec une loi théorique"
+  ],
+  "objects": [
+    "épaisseur des pellicules",
+    "classes d'épaisseur",
+    "fréquences observées"
+  ],
+  "content_hash": "89e36b695ec89bdbc46dc7cb64ebede4c03e153948cfced02fea1781dafa2e6f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:43:23.922Z"
+}

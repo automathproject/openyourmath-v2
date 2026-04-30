@@ -1,0 +1,26 @@
+{
+  "uuid": "DE0m",
+  "source_path": "exo7/7-L2/DE0m.tex",
+  "summary": "L'exercice demande de déterminer la loi de la variable aléatoire Z définie comme le minimum de n variables aléatoires indépendantes et identiquement distribuées selon une loi exponentielle de paramètre 1.",
+  "concepts": [
+    "variable aléatoire exponentielle",
+    "indépendance",
+    "fonction de répartition",
+    "densité de probabilité",
+    "loi du minimum"
+  ],
+  "methods": [
+    "calcul de la fonction de répartition",
+    "utilisation de l'indépendance",
+    "transformation de la fonction de répartition"
+  ],
+  "objects": [
+    "variables aléatoires indépendantes",
+    "fonction de répartition",
+    "densité de probabilité",
+    "loi exponentielle"
+  ],
+  "content_hash": "8af5ea1894e19d7d9a1eb2c64518d4aaff26beaafea6607edfa22411f0935a1d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:42:46.525Z"
+}

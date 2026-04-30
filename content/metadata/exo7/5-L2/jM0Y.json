@@ -1,0 +1,27 @@
+{
+  "uuid": "jM0Y",
+  "source_path": "exo7/5-L2/jM0Y.tex",
+  "summary": "On considère une fonction continue d'un intervalle unité dans lui-même et une suite d'itérées de cette fonction. On suppose que la différence entre termes consécutifs tend vers 0 et on demande de montrer que la suite converge vers un point fixe de la fonction.",
+  "concepts": [
+    "continuité",
+    "point fixe",
+    "valeur d'adhérence",
+    "convergence de suite",
+    "fonction itérée",
+    "théorème de Brouwer"
+  ],
+  "methods": [
+    "analyse des valeurs d'adhérence",
+    "utilisation de la continuité",
+    "étude de la limite de la différence"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction continue",
+    "point fixe",
+    "intervalle unité"
+  ],
+  "content_hash": "4351d02b31388172d2f38552b5b758e12c241811edc3687656ba118eebbcaaaa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:05:13.243Z"
+}

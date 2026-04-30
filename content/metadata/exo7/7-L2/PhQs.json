@@ -1,0 +1,25 @@
+{
+  "uuid": "PhQs",
+  "source_path": "exo7/7-L2/PhQs.tex",
+  "summary": "Calcul de probabilités dans le cadre du loto : probabilité d'avoir 6 bons numéros principaux, puis 5 bons numéros parmi les 6 principaux, et enfin 5 bons numéros principaux et le bon numéro complémentaire.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "combinaisons",
+    "loi uniforme discrète",
+    "événements indépendants",
+    "espace probabilisé fini"
+  ],
+  "methods": [
+    "calcul de combinaisons",
+    "formule de la probabilité conditionnelle",
+    "décomposition de l'événement"
+  ],
+  "objects": [
+    "numéros principaux",
+    "numéro complémentaire",
+    "combinaisons de numéros"
+  ],
+  "content_hash": "7d21b4359dcc84ee407aada85f41aa5a87974806293a0008ad6606a795520376",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:26:14.329Z"
+}

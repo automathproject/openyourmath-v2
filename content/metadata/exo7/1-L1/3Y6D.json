@@ -1,0 +1,27 @@
+{
+  "uuid": "3Y6D",
+  "source_path": "exo7/1-L1/3Y6D.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'une fraction rationnelle G_n définie en un point a, pour exprimer un développement polynomial d'une fraction rationnelle F autour de a.",
+  "concepts": [
+    "fraction rationnelle",
+    "développement de Taylor",
+    "dérivation",
+    "polynôme de Taylor",
+    "convergence des séries formelles"
+  ],
+  "methods": [
+    "développement en série",
+    "calcul des dérivées successives",
+    "factorisation",
+    "manipulation algébrique"
+  ],
+  "objects": [
+    "fraction rationnelle F",
+    "point a",
+    "fraction G_n",
+    "dérivées successives F^(k)(a)"
+  ],
+  "content_hash": "1f4a0761295f1029688ece25043a7b6e0b53d9dcbd30b7f38be370d5f5ec1ad2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:33:07.488Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "9F2e",
+  "source_path": "amscc/9F2e.tex",
+  "summary": "L'exercice demande de déterminer la valeur d'un paramètre a dans la loi jointe d'un couple de variables aléatoires discrètes, puis d'analyser les propriétés de ce couple (lois marginales, espérance, variance, indépendance). Il étudie ensuite les transformations linéaires de ces variables et leurs propriétés.",
+  "concepts": [
+    "loi jointe",
+    "loi marginale",
+    "espérance",
+    "variance",
+    "indépendance de variables aléatoires",
+    "transformation linéaire de variables aléatoires"
+  ],
+  "methods": [
+    "calcul de probabilités marginales",
+    "calcul d'espérance",
+    "calcul de variance",
+    "test d'indépendance"
+  ],
+  "objects": [
+    "couple de variables aléatoires discrètes",
+    "tableau de loi jointe",
+    "variables aléatoires transformées"
+  ],
+  "content_hash": "530bdebd12a83c1a86222e71de9552c294bb0a36684b23f90a1555f5ab990a1f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:18:56.165Z"
+}

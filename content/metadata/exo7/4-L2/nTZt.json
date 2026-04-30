@@ -1,0 +1,28 @@
+{
+  "uuid": "nTZt",
+  "source_path": "exo7/4-L2/nTZt.tex",
+  "summary": "On considère un endomorphisme f de R^3 dont le spectre est réduit à un unique élément λ et dont le noyau associé à λ a une dimension 2. On demande de montrer l'existence d'une base de R^3 dans laquelle la matrice de f est de type Jordan.",
+  "concepts": [
+    "réduction de Jordan",
+    "spectre d'un endomorphisme",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "base de Jordan",
+    "endomorphisme nilpotent"
+  ],
+  "methods": [
+    "changement de base",
+    "analyse du spectre",
+    "construction explicite de base",
+    "utilisation de la dimension du noyau"
+  ],
+  "objects": [
+    "endomorphisme de R^3",
+    "matrice de Jordan",
+    "sous-espace stable",
+    "base de vecteurs propres"
+  ],
+  "content_hash": "020ccc0d26db49d8896e85157e7fa179e07c9b2185d1ea067c649dca39d2880e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:13:02.009Z"
+}

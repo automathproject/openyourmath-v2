@@ -1,0 +1,25 @@
+{
+  "uuid": "V3qf",
+  "source_path": "exo7/14-L3/V3qf.tex",
+  "summary": "L'exercice demande de calculer la limite d'une intégrale de Lebesgue où la fonction intégrée est le produit d'une fonction intégrable et d'une puissance croissante de la fonction cosinus. Le contexte est purement théorique, sans application concrète.",
+  "concepts": [
+    "théorème de convergence dominée de Lebesgue",
+    "intégrale de Lebesgue",
+    "convergence presque partout",
+    "fonction intégrable",
+    "fonction bornée"
+  ],
+  "methods": [
+    "application directe du théorème de convergence dominée",
+    "majoration de la fonction intégrée",
+    "passage à la limite sous le signe intégral"
+  ],
+  "objects": [
+    "fonction intégrable",
+    "puissance de fonction trigonométrique",
+    "intégrale de Lebesgue"
+  ],
+  "content_hash": "d830560271ad2280b3ce8883459ad7862544e4b255b0c2e178d1bb2fe25c2671",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:03:26.596Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "cLt6",
+  "source_path": "amscc/cLt6.tex",
+  "summary": "L'exercice demande d'interpréter un test d'hypothèse pour détecter une éventuelle falsification de données comptables en analysant la proportion de montants commençant par le chiffre 6. On utilise la loi de Benford pour comparer cette proportion à une valeur théorique.",
+  "concepts": [
+    "test d'hypothèse",
+    "proportion",
+    "loi de Benford",
+    "risque de première espèce",
+    "test unilatéral droit",
+    "variable aléatoire de décision",
+    "zone de rejet",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "test du chi-deux",
+    "standardisation",
+    "calcul de la statistique de test",
+    "comparaison avec la zone critique"
+  ],
+  "objects": [
+    "proportion de montants commençant par 6",
+    "fréquence empirique",
+    "variable aléatoire normale",
+    "statistique de test"
+  ],
+  "content_hash": "1dca9e50d7db40e2bbc37d66cbe3ea159c8624c9a15b89cc0dea1000391e32dc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:47:34.820Z"
+}

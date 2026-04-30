@@ -1,0 +1,27 @@
+{
+  "uuid": "aTRB",
+  "source_path": "exo7/1-L1/aTRB.tex",
+  "summary": "Trouver tous les polynômes complexes qui sont divisibles par leur dérivée. L'exercice demande de caractériser ces polynômes sans utiliser de contexte concret.",
+  "concepts": [
+    "polynôme",
+    "dérivée de polynôme",
+    "racine de polynôme",
+    "décomposition en facteurs irréductibles",
+    "pôle de fraction rationnelle",
+    "division euclidienne dans C[X]"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul de dérivée",
+    "analyse des pôles",
+    "division polynomiale"
+  ],
+  "objects": [
+    "polynôme complexe",
+    "dérivée de polynôme",
+    "racine multiple"
+  ],
+  "content_hash": "a44fe831bc0af9049cc5bc7455b5a5d6f197429dce8cad6aa9a2884da4a6a131",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:06:08.707Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "a1ba",
+  "source_path": "amscc/a1ba.tex",
+  "summary": "L'exercice demande de tester l'hypothèse d'une distribution uniforme des tirages d'un générateur de nombres aléatoires à partir de 200 observations. Il s'agit de déterminer si certains nombres apparaissent significativement plus souvent que d'autres avec un seuil de confiance de 95%.",
+  "concepts": [
+    "test d'ajustement",
+    "loi uniforme",
+    "hypothèse nulle",
+    "seuil de signification",
+    "statistique de test",
+    "test du chi-deux"
+  ],
+  "methods": [
+    "test du chi-deux d'ajustement",
+    "calcul de la statistique de test",
+    "comparaison avec la loi du chi-deux",
+    "détermination de la région critique"
+  ],
+  "objects": [
+    "tableau de fréquences",
+    "distribution observée",
+    "distribution attendue",
+    "statistique de test"
+  ],
+  "content_hash": "3c6ee40fed1a72aa1519b4cab3b94769600a6b149ce843bc15451b466fe9f040",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:44:50.821Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "GZJC",
+  "source_path": "exo7/1-L1/GZJC.tex",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité d'un polynôme P_n à coefficients entiers vérifiant une relation fonctionnelle pour tout entier naturel n, puis d'étudier ses propriétés (degré, coefficient dominant, racines). Il introduit aussi une transformation P → P̃ sur les polynômes complexes.",
+  "concepts": [
+    "polynôme à coefficients entiers",
+    "relation fonctionnelle",
+    "existence et unicité",
+    "racines d'un polynôme",
+    "transformation linéaire",
+    "polynôme récursif",
+    "trigonométrie"
+  ],
+  "methods": [
+    "récurrence",
+    "détermination des racines",
+    "analyse de transformation",
+    "calcul de degré et coefficient dominant"
+  ],
+  "objects": [
+    "polynôme P_n",
+    "polynôme P̃",
+    "racines u_k",
+    "relation fonctionnelle"
+  ],
+  "content_hash": "41cd426fdee591a6422b9ce0992cf0c63e81a566bf8764c1ad0998a16d902eca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:45:13.840Z"
+}

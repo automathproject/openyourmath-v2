@@ -1,0 +1,27 @@
+{
+  "uuid": "wm2t",
+  "source_path": "exo7/4-L2/wm2t.tex",
+  "summary": "Montrer que deux endomorphismes d'un espace vectoriel complexe de dimension finie non nulle qui commutent sont simultanément trigonalisables.",
+  "concepts": [
+    "endomorphisme",
+    "espace vectoriel de dimension finie",
+    "valeur propre",
+    "sous-espace propre",
+    "commutativité",
+    "trigonalisation",
+    "récurrence"
+  ],
+  "methods": [
+    "construction de base",
+    "calcul par blocs",
+    "trigonalisation simultanée"
+  ],
+  "objects": [
+    "endomorphismes",
+    "vecteur propre commun",
+    "matrices triangulaires supérieures"
+  ],
+  "content_hash": "d71cded47e157fd50d61d541714612b9fc929a3041e4787c9049ccfdbd2b8423",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:27:57.199Z"
+}

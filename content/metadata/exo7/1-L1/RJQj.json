@@ -1,0 +1,29 @@
+{
+  "uuid": "RJQj",
+  "source_path": "exo7/1-L1/RJQj.tex",
+  "summary": "L'exercice demande de montrer que le nombre de racines d'un polynôme réel non nul dans un intervalle [α, β] (hors racines de P) a même parité que V(α) - V(β) et que cette différence est non négative, où V(x) compte les changements de signe dans la suite des dérivées successives de P en x.",
+  "concepts": [
+    "polynôme réel",
+    "racine de polynôme",
+    "dérivée successive",
+    "changement de signe",
+    "multiplicité d'une racine",
+    "théorème de Rolle",
+    "fonction dérivable"
+  ],
+  "methods": [
+    "analyse des variations de signe",
+    "comparaison des signes des dérivées",
+    "étude des racines multiples",
+    "raisonnement par continuité"
+  ],
+  "objects": [
+    "polynôme P",
+    "dérivées successives de P",
+    "intervalle [α, β]",
+    "fonction V(x)"
+  ],
+  "content_hash": "7b325f0bb671fe4d40d3281947af14a034f937b68c66b3363f0a46370ca9a140",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:58:07.249Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "xiLU",
+  "source_path": "exo7/15-L3/xiLU.tex",
+  "summary": "Montrer que l'ensemble des nombres rationnels ℚ n'est pas un ensemble de type Gδ dans ℝ, c'est-à-dire qu'il ne peut pas s'écrire comme une intersection dénombrable d'ouverts de ℝ.",
+  "concepts": [
+    "ensemble de type Gδ",
+    "ensemble dénombrable",
+    "topologie de ℝ",
+    "propriété de Baire",
+    "densité des rationnels",
+    "complémentaire d'un ensemble"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "construction d'une suite d'ouverts",
+    "utilisation de la densité des rationnels"
+  ],
+  "objects": [
+    "ensemble des nombres rationnels ℚ",
+    "ouverts de ℝ",
+    "complémentaire d'un ensemble dénombrable"
+  ],
+  "content_hash": "e2d63c4aef3b06e715ccdf834af265a069397d0a4f260ece567c692e7a2a9e44",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:44:19.997Z"
+}

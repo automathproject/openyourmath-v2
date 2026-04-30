@@ -1,0 +1,30 @@
+{
+  "uuid": "YAQ0",
+  "source_path": "exo7/11-L3/YAQ0.tex",
+  "summary": "L'exercice demande de calculer la différentielle de la fonction déterminant en un point de l'espace des matrices réelles, puis d'utiliser ce résultat pour montrer que le groupe spécial linéaire est une sous-variété de dimension n²-1.",
+  "concepts": [
+    "déterminant",
+    "différentielle de Fréchet",
+    "sous-variété",
+    "espace tangent",
+    "groupe spécial linéaire",
+    "trace d'une matrice",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "développement limité",
+    "calcul de la différentielle",
+    "utilisation du polynôme caractéristique",
+    "linéarisation"
+  ],
+  "objects": [
+    "fonction déterminant",
+    "matrice carrée",
+    "espace des matrices réelles",
+    "groupe spécial linéaire",
+    "espace tangent"
+  ],
+  "content_hash": "6b5bc9d9e4ec411ac59390608c0d6edef366f0c7620a143f8de22bd5db0ec2f0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:21:43.201Z"
+}

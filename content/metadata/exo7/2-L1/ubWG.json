@@ -1,0 +1,26 @@
+{
+  "uuid": "ubWG",
+  "source_path": "exo7/2-L1/ubWG.tex",
+  "summary": "Déterminer les bornes supérieure et inférieure d'un ensemble A défini par une suite u_n dont le terme général dépend de la parité de n.",
+  "concepts": [
+    "borne supérieure",
+    "borne inférieure",
+    "suite numérique",
+    "convergence",
+    "majorant",
+    "minorant"
+  ],
+  "methods": [
+    "étude de la parité",
+    "analyse des sous-suites",
+    "limite de suite"
+  ],
+  "objects": [
+    "suite u_n",
+    "ensemble A",
+    "sous-suites (u_{2k}) et (u_{2k+1})"
+  ],
+  "content_hash": "0cde9e38fb90bbe47d5a761b4ca7e8e9e86c5cb9af5c79e4585c29da61c7efb0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:05:06.646Z"
+}

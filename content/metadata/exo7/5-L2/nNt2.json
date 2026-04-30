@@ -1,0 +1,25 @@
+{
+  "uuid": "nNt2",
+  "source_path": "exo7/5-L2/nNt2.tex",
+  "summary": "L'exercice demande de prouver l'égalité entre une intégrale de la fonction t^t sur [0,1] et une série infinie à l'aide d'un développement en série entière, puis d'en calculer la valeur numérique commune avec une précision de 10^-5.",
+  "concepts": [
+    "développement en série entière",
+    "fonction exponentielle",
+    "intégrale d'une fonction",
+    "convergence de série",
+    "approximation numérique"
+  ],
+  "methods": [
+    "développement en série de Taylor",
+    "calcul de somme de série",
+    "évaluation numérique"
+  ],
+  "objects": [
+    "fonction t^t",
+    "série entière",
+    "intégrale définie"
+  ],
+  "content_hash": "10f5566f8c752e7dfbd12092e63944556e210e996bd34712214af3fe04caa7cd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:52:29.824Z"
+}

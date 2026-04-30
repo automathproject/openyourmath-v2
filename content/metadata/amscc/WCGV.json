@@ -1,0 +1,31 @@
+{
+  "uuid": "WCGV",
+  "source_path": "amscc/WCGV.tex",
+  "summary": "L'exercice demande de calculer des probabilités liées à des prélèvements de circuits imprimés, dont 1% sont défectueux. Il aborde différentes situations : absence de défectueux, présence de deux défectueux, rang du premier défectueux, et approximation d'une loi hypergéométrique par une loi binomiale.",
+  "concepts": [
+    "loi binomiale",
+    "loi géométrique",
+    "loi hypergéométrique",
+    "approximation de la loi hypergéométrique par la loi binomiale",
+    "probabilité conditionnelle",
+    "échantillonnage",
+    "variable aléatoire discrète"
+  ],
+  "methods": [
+    "calcul de probabilité exacte",
+    "approximation de probabilité",
+    "utilisation de la formule de la loi binomiale",
+    "utilisation de la formule de la loi géométrique",
+    "utilisation de la formule de la loi hypergéométrique"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "variable aléatoire géométrique",
+    "variable aléatoire hypergéométrique",
+    "échantillon",
+    "circuit imprimé défectueux"
+  ],
+  "content_hash": "e6f18489e8968430764b3ac7f7b3256443e915e796bc6469eeaf44849cb30047",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:30:05.337Z"
+}

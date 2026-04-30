@@ -1,0 +1,31 @@
+{
+  "uuid": "dtEc",
+  "source_path": "exo7/5-L2/dtEc.tex",
+  "summary": "L'exercice demande de démontrer deux égalités entre une intégrale et une série infinie : l'intégrale de la fonction x^{-x} de 0 à 1 est égale à la somme des termes 1/n^n, et l'intégrale de la fonction x^{x} de 0 à 1 est égale à la somme des termes (-1)^n/n^n.",
+  "concepts": [
+    "fonction continue",
+    "intégrale sur un segment",
+    "série de fonctions",
+    "convergence normale",
+    "convergence uniforme",
+    "théorème d'intégration terme à terme",
+    "fonction Gamma"
+  ],
+  "methods": [
+    "développement en série entière",
+    "changement de variable",
+    "intégration par parties",
+    "récurrence",
+    "calcul d'intégrale à paramètre"
+  ],
+  "objects": [
+    "fonction x^{-x}",
+    "fonction x^{x}",
+    "série numérique",
+    "intégrale impropre",
+    "fonction Gamma"
+  ],
+  "content_hash": "9c23e2acf43671fa7ae2bfe68cbece9d189617781566694f3e1920c28064a2fd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:59:19.968Z"
+}

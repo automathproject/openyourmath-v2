@@ -1,0 +1,25 @@
+{
+  "uuid": "gLXG",
+  "source_path": "amscc/gLXG.tex",
+  "summary": "Montrer qu'un polynôme P_n(X) est divisible par un autre polynôme Q(X) en utilisant la propriété que les racines de Q(X) sont aussi des racines de P_n(X).",
+  "concepts": [
+    "racine d'un polynôme",
+    "divisibilité des polynômes",
+    "factorisation de polynômes",
+    "polynôme irréductible",
+    "propriété des racines"
+  ],
+  "methods": [
+    "vérification des racines",
+    "factorisation par les racines",
+    "décomposition en facteurs irréductibles"
+  ],
+  "objects": [
+    "polynôme P_n(X)",
+    "polynôme Q(X)",
+    "racines de polynômes"
+  ],
+  "content_hash": "ee87d71d3d817ce78e398842a54d21a0321c8b20bcb5e5ef8286348fe7d97c65",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:14:12.495Z"
+}

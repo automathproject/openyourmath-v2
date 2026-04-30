@@ -1,0 +1,28 @@
+{
+  "uuid": "7uLb",
+  "source_path": "exo7/5-L2/7uLb.tex",
+  "summary": "L'exercice demande de démontrer une égalité impliquant la fonction valeur absolue du sinus et une série de Fourier. Il s'agit de montrer que la valeur absolue du sinus d'un réel x peut être exprimée comme une série infinie de termes en sin²(nx).",
+  "concepts": [
+    "série de Fourier",
+    "fonction périodique",
+    "convergence uniforme",
+    "fonction paire",
+    "développement en série",
+    "coefficient de Fourier"
+  ],
+  "methods": [
+    "calcul des coefficients de Fourier",
+    "intégration par parties",
+    "utilisation de la parité",
+    "somme de séries"
+  ],
+  "objects": [
+    "fonction |sin x|",
+    "série trigonométrique",
+    "coefficient de Fourier",
+    "fonction périodique 2π-périodique"
+  ],
+  "content_hash": "8a0787b683460a4262968771cf9e15d0f9d703e830c8a6d76c20c8c529c8c0f7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:18:11.904Z"
+}

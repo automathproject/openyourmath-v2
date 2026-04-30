@@ -1,0 +1,32 @@
+{
+  "uuid": "J7Sl",
+  "source_path": "amscc/J7Sl.tex",
+  "summary": "L'exercice demande de déterminer la valeur de k pour qu'une fonction donnée soit une densité de probabilité, puis d'étudier une variable aléatoire X de densité f. On calcule sa fonction de répartition, des probabilités conditionnelles, son espérance et sa variance, et enfin on déduit la densité de probabilité d'une variable Y = X².",
+  "concepts": [
+    "densité de probabilité",
+    "fonction de répartition",
+    "espérance",
+    "variance",
+    "variable aléatoire transformée",
+    "intégrale de probabilité",
+    "théorème de transfert"
+  ],
+  "methods": [
+    "intégration par parties",
+    "calcul d'espérance",
+    "calcul de variance",
+    "détermination de fonction de répartition",
+    "transformation de variable aléatoire"
+  ],
+  "objects": [
+    "fonction densité",
+    "variable aléatoire réelle",
+    "fonction de répartition",
+    "espérance mathématique",
+    "variance",
+    "variable aléatoire transformée"
+  ],
+  "content_hash": "92d229c3274acf433703630e21dfac2cafdab63539c6a4ca48a8f01786a9bfaa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:44:32.788Z"
+}

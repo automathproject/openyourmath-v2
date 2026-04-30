@@ -1,0 +1,27 @@
+{
+  "uuid": "aISA",
+  "source_path": "exo7/5-L2/aISA.tex",
+  "summary": "On considère une fonction continue et injective définie sur une partie compacte d'un espace vectoriel normé. On demande de prouver la continuité de son application réciproque et de fournir un contre-exemple où la compacité de l'ensemble de départ est nécessaire.",
+  "concepts": [
+    "continuité",
+    "injectivité",
+    "compacité",
+    "espace vectoriel normé",
+    "application réciproque",
+    "topologie"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la continuité",
+    "construction d'un contre-exemple"
+  ],
+  "objects": [
+    "fonction continue",
+    "ensemble compact",
+    "application réciproque",
+    "espace vectoriel normé"
+  ],
+  "content_hash": "c86421794f199cb463a0f4b9c27e93078711624709043c8527e63e38d34e625d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:00:06.172Z"
+}

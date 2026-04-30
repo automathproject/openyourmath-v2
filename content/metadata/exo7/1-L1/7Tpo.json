@@ -1,0 +1,26 @@
+{
+  "uuid": "7Tpo",
+  "source_path": "exo7/1-L1/7Tpo.tex",
+  "summary": "On considère deux polynômes non constants U et V dans K[X]. On définit une famille de polynômes P_k = U^k V^{n-k} pour k variant de 0 à n. L'exercice demande de montrer que cette famille est libre dans deux cas : lorsque U et V sont premiers entre eux, puis lorsque (U,V) est une famille libre.",
+  "concepts": [
+    "polynôme",
+    "famille libre",
+    "divisibilité dans K[X]",
+    "pgcd de polynômes",
+    "relation linéaire",
+    "algèbre des polynômes"
+  ],
+  "methods": [
+    "détermination de la liberté d'une famille",
+    "utilisation du pgcd",
+    "analyse des relations linéaires"
+  ],
+  "objects": [
+    "polynômes U et V",
+    "famille (P_0, ..., P_n)",
+    "relation linéaire"
+  ],
+  "content_hash": "d737075a85b843f4bf19f7854ee62bb6db7dbf239974d7c1f5a73a327d5d54df",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:35:50.746Z"
+}

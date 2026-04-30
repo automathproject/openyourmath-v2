@@ -1,0 +1,27 @@
+{
+  "uuid": "z6rN",
+  "source_path": "exo7/5-L2/z6rN.tex",
+  "summary": "Calculer la somme d'une série entière de terme général $\\frac{1}{n}\\cos\\left(\\frac{2n\\pi}{3}\\right)x^n$ pour $x$ dans l'intervalle $]-1,1[$.",
+  "concepts": [
+    "série entière",
+    "rayon de convergence",
+    "fonction dérivable",
+    "partie réelle d'un nombre complexe",
+    "intégration de fonctions"
+  ],
+  "methods": [
+    "développement en série entière",
+    "calcul de la dérivée d'une série entière",
+    "intégration terme à terme",
+    "manipulation de nombres complexes"
+  ],
+  "objects": [
+    "série entière",
+    "fonction dérivable",
+    "nombre complexe",
+    "intégrale"
+  ],
+  "content_hash": "a7dc70ecdb25ecc60dc64b0319b7a7e20f6010c3d677720fef5ce222fc00ef7b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:57:28.143Z"
+}

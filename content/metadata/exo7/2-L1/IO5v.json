@@ -1,0 +1,24 @@
+{
+  "uuid": "IO5v",
+  "source_path": "exo7/2-L1/IO5v.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés des suites de Cauchy : d'abord que toute sous-suite extraite d'une suite de Cauchy est aussi une suite de Cauchy, puis qu'on peut extraire une sous-suite vérifiant une inégalité de décroissance exponentielle.",
+  "concepts": [
+    "suite de Cauchy",
+    "sous-suite",
+    "convergence",
+    "propriété de Cauchy",
+    "extraction de sous-suite"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de suite de Cauchy",
+    "construction explicite de sous-suite"
+  ],
+  "objects": [
+    "suite numérique",
+    "sous-suite numérique"
+  ],
+  "content_hash": "837345ef62bf87c0783c946b864fbb891c608cad9fbce7578ba5d012bfd02d4a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:12:03.172Z"
+}

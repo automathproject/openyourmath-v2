@@ -1,0 +1,29 @@
+{
+  "uuid": "f3Fg",
+  "source_path": "exo7/4-L2/f3Fg.tex",
+  "summary": "L'exercice demande de prouver que deux matrices A et B ont les mêmes valeurs propres pour leurs produits AB et BA, puis d'étendre cette propriété au polynôme caractéristique sous certaines conditions.",
+  "concepts": [
+    "valeurs propres",
+    "polynôme caractéristique",
+    "théorème de Cayley-Hamilton",
+    "inversibilité",
+    "matrices carrées",
+    "matrices blocs",
+    "déterminant"
+  ],
+  "methods": [
+    "comparaison de polynômes",
+    "construction de matrices blocs",
+    "vérification d'égalité matricielle",
+    "inversibilité de matrices"
+  ],
+  "objects": [
+    "matrices carrées",
+    "polynôme caractéristique",
+    "matrices blocs",
+    "matrice inversible"
+  ],
+  "content_hash": "1a300cafc96f75cd468381bdc8ceff9f6ea9f954add4e7278380dad8e3202622",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:02:29.856Z"
+}

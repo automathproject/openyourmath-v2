@@ -1,0 +1,28 @@
+{
+  "uuid": "GFrG",
+  "source_path": "amscc/GFrG.tex",
+  "summary": "Calculer le nombre total de paramètres d'un réseau de neurones entièrement connecté en détaillant par couche, puis évaluer l'impact du changement de taille de la couche cachée ou de la dimension d'entrée.",
+  "concepts": [
+    "réseau de neurones entièrement connecté",
+    "couche cachée",
+    "fonction d'activation ReLU",
+    "paramètres d'un réseau de neurones",
+    "dimension d'entrée",
+    "aplatissement de données"
+  ],
+  "methods": [
+    "calcul des poids et biais par couche",
+    "comparaison de configurations",
+    "analyse de l'impact des dimensions"
+  ],
+  "objects": [
+    "réseau de neurones",
+    "couche d'entrée",
+    "couche cachée",
+    "couche de sortie",
+    "image aplatie"
+  ],
+  "content_hash": "62493236b0e804896bd2e04a037402f7f6c3a4e66f6d23b0bc8b6815b5081933",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:32:40.265Z"
+}

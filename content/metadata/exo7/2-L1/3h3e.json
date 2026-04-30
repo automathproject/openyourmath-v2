@@ -1,0 +1,23 @@
+{
+  "uuid": "3h3e",
+  "source_path": "exo7/2-L1/3h3e.tex",
+  "summary": "Montrer une inégalité entre deux produits de sommes de carrés de réels. L'énoncé demande de prouver que (a²+b²)(c²+d²) ≥ (ac+bd)².",
+  "concepts": [
+    "inégalité arithmético-géométrique",
+    "identité remarquable",
+    "produit de sommes de carrés"
+  ],
+  "methods": [
+    "développement algébrique",
+    "application de l'inégalité AM-GM",
+    "utilisation d'identité remarquable"
+  ],
+  "objects": [
+    "réels positifs",
+    "produits de sommes de carrés",
+    "inégalité à prouver"
+  ],
+  "content_hash": "d2e02b5b3ff83e7a6d515347d53ccf87dc33151cebcadb44ce4d188807af1688",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:46:14.927Z"
+}

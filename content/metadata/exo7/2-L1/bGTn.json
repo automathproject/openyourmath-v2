@@ -1,0 +1,29 @@
+{
+  "uuid": "bGTn",
+  "source_path": "exo7/2-L1/bGTn.tex",
+  "summary": "Étudier la convergence de la série de terme général u_n = (1! + 2! + ... + n!) / (n + p)! selon les valeurs de p ∈ ℕ. L'énoncé demande d'analyser le comportement asymptotique de la série en fonction du paramètre p.",
+  "concepts": [
+    "série numérique",
+    "série à termes positifs",
+    "convergence grossière",
+    "comparaison série à termes positifs",
+    "série de Riemann",
+    "équivalence asymptotique",
+    "majoration"
+  ],
+  "methods": [
+    "comparaison directe",
+    "majoration",
+    "équivalence asymptotique",
+    "critère de Riemann"
+  ],
+  "objects": [
+    "série numérique",
+    "terme général",
+    "factorielles",
+    "paramètre p"
+  ],
+  "content_hash": "e1958803172be1408a55d403bd258ce3007d9a65be6f9190a875e80c4514978b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:23:50.247Z"
+}

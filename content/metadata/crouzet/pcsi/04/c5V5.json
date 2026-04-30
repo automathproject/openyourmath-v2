@@ -1,0 +1,29 @@
+{
+  "uuid": "c5V5",
+  "source_path": "crouzet/pcsi/04/c5V5.tex",
+  "summary": "Résoudre six systèmes linéaires à coefficients réels, certains homogènes et d'autres non homogènes, en déterminant leur ensemble de solutions.",
+  "concepts": [
+    "système linéaire",
+    "méthode du pivot de Gauss",
+    "système de Cramer",
+    "système homogène",
+    "système non homogène",
+    "inconnue auxiliaire"
+  ],
+  "methods": [
+    "élimination de Gauss",
+    "pivot de Gauss",
+    "résolution par substitution",
+    "analyse de compatibilité"
+  ],
+  "objects": [
+    "système linéaire 3x3",
+    "système linéaire 4x4",
+    "solution unique",
+    "solution infinie",
+    "solution vide"
+  ],
+  "content_hash": "6e7e47e7d76ee584a846da3f4091aa2151bbe384e2898647d117bbdd29f49fe6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:15:26.030Z"
+}

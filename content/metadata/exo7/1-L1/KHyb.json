@@ -1,0 +1,25 @@
+{
+  "uuid": "KHyb",
+  "source_path": "exo7/1-L1/KHyb.tex",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité d'une décomposition d'un polynôme P de degré n en une somme de polynômes P_i de degré strictement inférieur à celui de A, multipliés par des puissances successives de A.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "unicité de la division euclidienne",
+    "degré d'un polynôme",
+    "polynôme unitaire",
+    "algèbre des polynômes"
+  ],
+  "methods": [
+    "décomposition polynomiale",
+    "utilisation du degré",
+    "argument d'unicité"
+  ],
+  "objects": [
+    "polynôme A",
+    "polynôme P",
+    "polynômes P_i"
+  ],
+  "content_hash": "5af6058d03dc1ac8b77e85789df3e9541e3f733946ee544ca71a8315d49835ba",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:49:40.809Z"
+}

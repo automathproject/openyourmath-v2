@@ -1,0 +1,31 @@
+{
+  "uuid": "qDVH",
+  "source_path": "exo7/1-L1/qDVH.tex",
+  "summary": "Factoriser des polynômes dans les anneaux ℝ[X] et ℂ[X]. Les polynômes incluent des expressions comme X^3-3, X^12-1, X^6+1, et X^9+X^6+X^3+1, ainsi que des polynômes à coefficients complexes.",
+  "concepts": [
+    "racine d'un polynôme",
+    "factorisation dans ℝ[X]",
+    "factorisation dans ℂ[X]",
+    "racines complexes conjuguées",
+    "polynôme irréductible",
+    "racines n-ièmes de l'unité",
+    "polynôme cyclotomique",
+    "changement de variable"
+  ],
+  "methods": [
+    "recherche des racines réelles",
+    "recherche des racines complexes",
+    "groupement des facteurs conjugués",
+    "factorisation par substitution",
+    "utilisation des racines de l'unité"
+  ],
+  "objects": [
+    "polynôme à coefficients réels",
+    "polynôme à coefficients complexes",
+    "racines complexes",
+    "polynôme cyclotomique"
+  ],
+  "content_hash": "e2d9d9f68430dd2900f6ea0dcd2f0319219296f85483bcc9d4e10ac299bfc45e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:24:20.030Z"
+}

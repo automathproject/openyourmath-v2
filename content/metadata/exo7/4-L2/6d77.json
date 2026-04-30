@@ -1,0 +1,26 @@
+{
+  "uuid": "6d77",
+  "source_path": "exo7/4-L2/6d77.tex",
+  "summary": "Soit une matrice carrée réelle A dont les valeurs propres sont réelles et vérifiant Ap = I pour un certain p ≥ 1. Montrer que A² = I.",
+  "concepts": [
+    "polynôme annulateur",
+    "valeurs propres réelles",
+    "diagonalisation sur le corps des complexes",
+    "dimension d'un espace propre",
+    "conservation de la dimension sur les réels"
+  ],
+  "methods": [
+    "diagonalisation",
+    "analyse des valeurs propres",
+    "utilisation du polynôme minimal"
+  ],
+  "objects": [
+    "matrice carrée réelle",
+    "valeurs propres",
+    "polynôme annulateur",
+    "espace propre"
+  ],
+  "content_hash": "94dbcde24bdd2601652c9994cee3f805a39b916abe8ad802739a5fe295924af0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:15:38.027Z"
+}

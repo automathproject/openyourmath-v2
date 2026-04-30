@@ -1,0 +1,31 @@
+{
+  "uuid": "4iSJ",
+  "source_path": "amscc/4iSJ.tex",
+  "summary": "L'exercice demande d'estimer la variance d'une erreur de classification d'images et de tester des hypothèses sur cette variance. On travaille avec deux échantillons de 25 images, avec des erreurs supposées normalement distribuées.",
+  "concepts": [
+    "intervalle de confiance",
+    "test d'hypothèse",
+    "loi normale",
+    "estimateur non biaisé",
+    "variance",
+    "espérance mathématique",
+    "loi du chi-deux"
+  ],
+  "methods": [
+    "estimation par intervalle de confiance",
+    "test de Student",
+    "calcul de l'estimateur de variance non biaisé",
+    "détermination de la loi d'une variable aléatoire",
+    "test de Fisher-Snedecor"
+  ],
+  "objects": [
+    "erreur de classification",
+    "variance",
+    "échantillon",
+    "estimateur de variance non biaisé",
+    "quotient de variances"
+  ],
+  "content_hash": "caeacce5f12c6200de8807ab15b50c01cc9a3f75dd8fb26ce57fce57908cb2e9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:31:31.290Z"
+}

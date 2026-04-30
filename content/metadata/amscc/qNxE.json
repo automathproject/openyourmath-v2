@@ -1,0 +1,30 @@
+{
+  "uuid": "qNxE",
+  "source_path": "amscc/qNxE.tex",
+  "summary": "L'exercice demande de calculer des probabilités conditionnelles pour des variables aléatoires Rademacher et uniforme, puis de déterminer la fonction de répartition et la loi de Laplace d'une variable construite à partir de ces variables.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "variable aléatoire continue",
+    "loi de Rademacher",
+    "loi uniforme",
+    "fonction de répartition",
+    "loi de Laplace",
+    "théorème des probabilités totales",
+    "densité de probabilité"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "application du théorème des probabilités totales",
+    "détermination de la fonction de répartition",
+    "dérivation de la fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire Rademacher",
+    "variable aléatoire uniforme",
+    "variable aléatoire U",
+    "fonction de répartition de U"
+  ],
+  "content_hash": "39360065d2424cb44c9b38e5786d087cb270ef506f10984f33943c25e3d80a27",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:07:06.598Z"
+}

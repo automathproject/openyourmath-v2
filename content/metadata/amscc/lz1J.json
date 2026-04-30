@@ -1,0 +1,32 @@
+{
+  "uuid": "lz1J",
+  "source_path": "amscc/lz1J.tex",
+  "summary": "Calculer l'espérance, la variance et la loi d'une variable aléatoire normale centrée réduite à partir de sa densité de probabilité, en utilisant des changements de variable et des intégrations par parties.",
+  "concepts": [
+    "loi normale",
+    "variable aléatoire à densité",
+    "espérance mathématique",
+    "variance",
+    "changement de variable affine",
+    "intégration par parties",
+    "fonction de répartition",
+    "loi normale centrée réduite"
+  ],
+  "methods": [
+    "changement de variable affine",
+    "intégration par parties",
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "détermination de la loi d'une variable aléatoire transformée"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "espérance",
+    "variance",
+    "fonction de densité de probabilité",
+    "fonction de répartition"
+  ],
+  "content_hash": "86724f668a5fca67f1afbb410333de3cf792e85a45e3455c0db2137e0039ed18",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:05:19.591Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "okaM",
+  "source_path": "exo7/2-L1/okaM.tex",
+  "summary": "Soit un nombre rationnel positif a dont la racine carrée n'est pas rationnelle. Montrer qu'il existe une constante C > 0 telle que pour tout rationnel r = p/q, la distance entre r et √a est majorée par C/q².",
+  "concepts": [
+    "nombre rationnel",
+    "nombre irrationnel",
+    "racine carrée",
+    "inégalité",
+    "majoration",
+    "minoration",
+    "valeur absolue"
+  ],
+  "methods": [
+    "majoration",
+    "minoration",
+    "manipulation d'inégalités",
+    "utilisation de la définition de la valeur absolue"
+  ],
+  "objects": [
+    "nombre rationnel a",
+    "racine carrée √a",
+    "rationnel r = p/q",
+    "constante C"
+  ],
+  "content_hash": "9e75aef0e1b8ae551f74fc71037ea30a99d3f0a801137dcc7bab13db56b66145",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:02:26.647Z"
+}

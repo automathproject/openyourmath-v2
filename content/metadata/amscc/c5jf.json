@@ -1,0 +1,23 @@
+{
+  "uuid": "c5jf",
+  "source_path": "amscc/c5jf.tex",
+  "summary": "Générer une table de probabilités et un diagramme en bâtons pour une loi binomiale $\\mathcal{B}(n;p)$ avec mise à jour automatique des paramètres.",
+  "concepts": [
+    "loi binomiale",
+    "probabilité cumulative",
+    "représentation graphique"
+  ],
+  "methods": [
+    "calcul de probabilités binomiales",
+    "mise en forme conditionnelle",
+    "création de graphiques dynamiques"
+  ],
+  "objects": [
+    "tableur",
+    "table de probabilités",
+    "diagramme en bâtons"
+  ],
+  "content_hash": "a58c62502ba30c9f17da29bb4aa1f34e82287b391f0ff5919dc451044351fd1a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:47:05.035Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "MgBt",
+  "source_path": "exo7/5-L2/MgBt.tex",
+  "summary": "L'exercice demande de déterminer la limite simple d'une suite de fonctions définies par morceaux, puis d'étudier la convergence uniforme de cette suite sur des intervalles spécifiques. La suite de fonctions est définie par (1 - x/n)^n pour x ≤ n et 0 pour x > n.",
+  "concepts": [
+    "convergence simple",
+    "convergence uniforme",
+    "limite de fonctions",
+    "fonction exponentielle",
+    "suite de fonctions"
+  ],
+  "methods": [
+    "étude de la limite ponctuelle",
+    "comparaison terme à terme",
+    "critère de Cauchy pour la convergence uniforme"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction définie par morceaux",
+    "segment d'intervalle",
+    "fonction exponentielle"
+  ],
+  "content_hash": "2b1a1acf58a7da2b34d30c05c30e83df46f08fcb88bf87fb5c5103ce53f9c99e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:54:10.067Z"
+}

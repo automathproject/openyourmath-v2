@@ -1,0 +1,27 @@
+{
+  "uuid": "L9Tu",
+  "source_path": "amscc/L9Tu.tex",
+  "summary": "L'exercice demande de calculer une étape de descente de gradient pour un modèle linéaire simple avec un seul exemple d'entraînement, puis d'interpréter la mise à jour des paramètres obtenue.",
+  "concepts": [
+    "modèle linéaire",
+    "fonction de coût quadratique moyenne",
+    "gradient",
+    "taux d'apprentissage",
+    "descente de gradient",
+    "mise à jour des paramètres"
+  ],
+  "methods": [
+    "calcul de prédiction",
+    "calcul de gradient",
+    "mise à jour des paramètres par descente de gradient"
+  ],
+  "objects": [
+    "modèle linéaire",
+    "paramètres w et b",
+    "fonction de coût J",
+    "gradient du coût"
+  ],
+  "content_hash": "5d1561dcf3708a44a260ad6ebae9cb76d9ae63d7c4f2c51b3b66559eb12eb8ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:33:10.794Z"
+}

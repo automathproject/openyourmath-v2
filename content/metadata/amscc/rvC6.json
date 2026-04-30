@@ -1,0 +1,25 @@
+{
+  "uuid": "rvC6",
+  "source_path": "amscc/rvC6.tex",
+  "summary": "L'exercice demande de construire graphiquement les premières itérations de la méthode de la corde pour résoudre l'équation f(x)=0 avec f(x)=x² et x₀=1. Il s'agit ensuite d'identifier la méthode générale dont la méthode de la corde est un cas particulier et d'en déduire son ordre minimal de convergence.",
+  "concepts": [
+    "méthode de point fixe",
+    "convergence d'une suite",
+    "ordre de convergence",
+    "fonction dérivée",
+    "équation non linéaire"
+  ],
+  "methods": [
+    "construction graphique d'itérations",
+    "analyse de convergence",
+    "détermination de l'ordre de convergence"
+  ],
+  "objects": [
+    "suite définie par récurrence",
+    "fonction quadratique",
+    "droite tangente"
+  ],
+  "content_hash": "3c8b3cc9d7bf80d3757ea44758aff836ab33b6d8137360a81be866bea21db148",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:26:16.125Z"
+}

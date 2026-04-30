@@ -1,0 +1,28 @@
+{
+  "uuid": "XeOH",
+  "source_path": "exo7/4-L2/XeOH.tex",
+  "summary": "L'exercice demande de déterminer les conditions nécessaires pour qu'une matrice donnée soit diagonalisable et, si ces conditions sont remplies, de fournir une base de vecteurs propres pour cette matrice.",
+  "concepts": [
+    "diagonalisation",
+    "valeur propre",
+    "vecteur propre",
+    "polynôme annulateur",
+    "matrice diagonalisable",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "détermination des vecteurs propres",
+    "vérification de la diagonalisabilité"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "e9ed2009fec7209e1f8f6775df7afad6a5dd34567fc9a9afcecf02c3385d41ae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:53:22.483Z"
+}

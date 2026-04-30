@@ -1,0 +1,26 @@
+{
+  "uuid": "bfLr",
+  "source_path": "exo7/7-L2/bfLr.tex",
+  "summary": "L'exercice demande de calculer le nombre total de grilles-réponses possibles pour un QCM de 10 questions à 4 choix chacune, puis de déterminer la probabilité de répondre correctement à au moins 6 questions en répondant au hasard.",
+  "concepts": [
+    "probabilité discrète",
+    "loi binomiale",
+    "combinaisons",
+    "événements indépendants",
+    "calcul de probabilités"
+  ],
+  "methods": [
+    "calcul de combinaisons",
+    "calcul de probabilités conditionnelles",
+    "somme de probabilités"
+  ],
+  "objects": [
+    "QCM",
+    "grille-réponses",
+    "réponses correctes",
+    "réponses incorrectes"
+  ],
+  "content_hash": "f6d51404562ce6fe729df9a0bbe085160172f692203e5f2b898347db4c82343d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:33:07.899Z"
+}

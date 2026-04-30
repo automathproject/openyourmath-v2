@@ -1,0 +1,26 @@
+{
+  "uuid": "DnxY",
+  "source_path": "amscc/DnxY.tex",
+  "summary": "L'exercice demande d'estimer le prix moyen et la variance du carburant E10 en France à partir d'un échantillon. Il s'agit d'abord d'une estimation ponctuelle sans biais, puis d'une estimation par intervalle de confiance pour deux niveaux de confiance différents.",
+  "concepts": [
+    "estimation ponctuelle",
+    "estimateur sans biais",
+    "intervalle de confiance",
+    "loi normale",
+    "moyenne empirique",
+    "variance empirique"
+  ],
+  "methods": [
+    "estimation de la moyenne empirique",
+    "estimation de la variance empirique",
+    "calcul d'intervalle de confiance"
+  ],
+  "objects": [
+    "prix moyen",
+    "variance",
+    "échantillon"
+  ],
+  "content_hash": "c00c62702193387a8077d25af285006aefb550f895dc46d8c348fde943902c8c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:37:14.772Z"
+}

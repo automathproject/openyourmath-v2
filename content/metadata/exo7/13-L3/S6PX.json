@@ -1,0 +1,28 @@
+{
+  "uuid": "S6PX",
+  "source_path": "exo7/13-L3/S6PX.tex",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une solution à une équation différentielle non linéaire au voisinage d'un point, puis d'expliciter cette solution sous certaines conditions. L'équation étudiée est de type $x x'' = (x')^2 +1$.",
+  "concepts": [
+    "théorème de Cauchy-Lipschitz",
+    "équation différentielle non linéaire",
+    "existence et unicité des solutions",
+    "difféomorphisme",
+    "fonction réciproque",
+    "changement de variable"
+  ],
+  "methods": [
+    "application du théorème de Cauchy-Lipschitz",
+    "changement de variable",
+    "calcul de dérivée",
+    "résolution d'équation différentielle"
+  ],
+  "objects": [
+    "équation différentielle",
+    "solution unique",
+    "fonction réciproque",
+    "fonction dérivée"
+  ],
+  "content_hash": "b014094d4bd526b4c82d5e552501b91653433395d5a56ea3eccd452bef11a6de",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:45:14.235Z"
+}

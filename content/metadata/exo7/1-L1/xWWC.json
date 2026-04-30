@@ -1,0 +1,28 @@
+{
+  "uuid": "xWWC",
+  "source_path": "exo7/1-L1/xWWC.tex",
+  "summary": "L'exercice demande de montrer l'inversibilité d'une matrice spécifique et d'en déduire la structure vectorielle du groupe linéaire général. Il manipule des matrices particulières dans un espace vectoriel de matrices.",
+  "concepts": [
+    "matrice inversible",
+    "groupe linéaire général",
+    "espace vectoriel de matrices",
+    "base canonique",
+    "matrice identité",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "calcul de l'inverse d'une matrice",
+    "vérification de l'inversibilité",
+    "analyse de la structure algébrique"
+  ],
+  "objects": [
+    "matrice E_ij",
+    "matrice F_ij",
+    "matrice identité I",
+    "groupe linéaire GL_n(K)",
+    "espace vectoriel M_n(K)"
+  ],
+  "content_hash": "dca4ee87dcc4cf706bce781cdfac648f74578dd34e76b9549b78c81642ef906c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:21:40.509Z"
+}

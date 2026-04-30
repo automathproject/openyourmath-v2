@@ -1,0 +1,25 @@
+{
+  "uuid": "Rl0k",
+  "source_path": "exo7/4-L2/Rl0k.tex",
+  "summary": "L'exercice demande de déterminer le spectre d'une matrice B de taille 2n×2n construite à partir d'une matrice A de taille n×n, en fonction du spectre de A.",
+  "concepts": [
+    "polynôme caractéristique",
+    "spectre d'une matrice",
+    "déterminant",
+    "blocs de matrices",
+    "valeurs propres"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "décomposition en blocs",
+    "factorisation de polynômes"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme caractéristique",
+    "spectre de matrice"
+  ],
+  "content_hash": "993489b8aa24d09e21870833c3940c1ea68682578ad6326152535aa1454937ed",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:45:15.925Z"
+}

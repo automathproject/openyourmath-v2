@@ -1,0 +1,33 @@
+{
+  "uuid": "X7o5",
+  "source_path": "amscc/X7o5.tex",
+  "summary": "Calculer l'espérance d'une variable aléatoire de Pareto, puis estimer son paramètre par la méthode du maximum de vraisemblance. Étudier les propriétés asymptotiques de l'estimateur.",
+  "concepts": [
+    "loi de Pareto",
+    "espérance d'une variable aléatoire",
+    "maximum de vraisemblance",
+    "loi exponentielle",
+    "loi forte des grands nombres",
+    "convergence en loi",
+    "loi normale centrée réduite",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "calcul d'espérance par intégration",
+    "détermination de l'estimateur du maximum de vraisemblance",
+    "transformation de variable aléatoire",
+    "linéarité de l'espérance",
+    "calcul de variance",
+    "théorème central limite"
+  ],
+  "objects": [
+    "variable aléatoire de Pareto",
+    "estimateur de maximum de vraisemblance",
+    "variable aléatoire exponentielle",
+    "suite de variables aléatoires",
+    "intervalle de confiance"
+  ],
+  "content_hash": "92b064f1ca6c7508a67ad8d35a730f3727fc64e95bd1de2713a482126345dc96",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:52:50.517Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "S4CT",
+  "source_path": "exo7/11-L3/S4CT.tex",
+  "summary": "L'exercice demande de déterminer les déplacements de l'espace ℝ³ qui conservent l'image d'une application F: ℝ² → ℝ³, puis de montrer que cette image est l'ensemble d'équation y² = x²(1−x), et enfin de vérifier si cette image est une surface régulière de ℝ³.",
+  "concepts": [
+    "application différentielle",
+    "invariance par transformation",
+    "équation cartésienne de surface",
+    "régularité de surface",
+    "projection sur un plan",
+    "graphe de fonction"
+  ],
+  "methods": [
+    "analyse de symétrie",
+    "vérification d'inclusion d'ensemble",
+    "étude de régularité locale",
+    "projection orthogonale"
+  ],
+  "objects": [
+    "application F: ℝ² → ℝ³",
+    "ensemble d'équation y² = x²(1−x)",
+    "surface régulière",
+    "points critiques"
+  ],
+  "content_hash": "ebe425d19687700135d19b2acdabe10009ed62d05dae0a73c2522ba0c6bd2e49",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:19:52.343Z"
+}

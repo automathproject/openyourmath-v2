@@ -1,0 +1,23 @@
+{
+  "uuid": "Gkru",
+  "source_path": "exo7/7-L2/Gkru.tex",
+  "summary": "Calculer la probabilité qu'un avion trimoteur puisse voler, sachant que le moteur central de type A ou les deux moteurs d'ailes de type B doivent fonctionner. Les pannes des moteurs sont indépendantes avec des probabilités p et q respectivement.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "événement indépendant",
+    "probabilité conjointe",
+    "événement contraire"
+  ],
+  "methods": [
+    "calcul direct de probabilité",
+    "utilisation de l'événement contraire"
+  ],
+  "objects": [
+    "moteur de type A",
+    "moteur de type B",
+    "probabilité de panne"
+  ],
+  "content_hash": "80a15a9c27e41f7d68d08ade6a929263472336c85b16f240c196d5fddf6bb628",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:22:42.070Z"
+}

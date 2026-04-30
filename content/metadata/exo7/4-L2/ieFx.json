@@ -1,0 +1,28 @@
+{
+  "uuid": "ieFx",
+  "source_path": "exo7/4-L2/ieFx.tex",
+  "summary": "L'exercice étudie l'application linéaire φ_A définie par φ_A(B) = AB pour une matrice A complexe. Il demande de montrer que φ_A est diagonalisable si et seulement si A l'est, en utilisant des propriétés des polynômes annulateurs.",
+  "concepts": [
+    "endomorphisme",
+    "matrice carrée",
+    "application linéaire",
+    "polynôme annulateur",
+    "diagonalisation",
+    "algèbre linéaire",
+    "propriété de diagonalisation"
+  ],
+  "methods": [
+    "calcul de puissance d'application linéaire",
+    "utilisation de polynômes",
+    "étude de la diagonalisabilité"
+  ],
+  "objects": [
+    "matrice A",
+    "application φ_A",
+    "polynôme P",
+    "matrice B"
+  ],
+  "content_hash": "7c342c51b39f4013c751093b2756386256167e526e1663ed7543456483a16a52",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:06:22.551Z"
+}

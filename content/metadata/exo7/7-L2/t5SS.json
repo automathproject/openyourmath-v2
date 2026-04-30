@@ -1,0 +1,27 @@
+{
+  "uuid": "t5SS",
+  "source_path": "exo7/7-L2/t5SS.tex",
+  "summary": "L'exercice demande d'étudier l'indépendance de deux événements A et B dans une famille de n enfants, en analysant les cas particuliers n=2 et n=3 puis en généralisant.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "indépendance d'événements",
+    "espace probabilisé fini",
+    "loi uniforme discrète",
+    "généralisation par récurrence"
+  ],
+  "methods": [
+    "énumération des cas équiprobables",
+    "calcul de probabilités élémentaires",
+    "comparaison P(A∩B) et P(A)P(B)",
+    "généralisation par induction"
+  ],
+  "objects": [
+    "événements aléatoires",
+    "espace des possibles",
+    "probabilités marginales",
+    "probabilité conjointe"
+  ],
+  "content_hash": "9aea17053b43950e2abb215d817deb621450dd7c41b867d99faf71d9d91ca78f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:40:58.394Z"
+}

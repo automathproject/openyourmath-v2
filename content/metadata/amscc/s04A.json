@@ -1,0 +1,27 @@
+{
+  "uuid": "s04A",
+  "source_path": "amscc/s04A.tex",
+  "summary": "L'exercice demande de déterminer le nombre maximal de réservations pour un vol de 300 places afin que la probabilité de surnombre soit inférieure à 1%, en modélisant les désistements de passagers par une loi binomiale approchée par une loi normale.",
+  "concepts": [
+    "loi binomiale",
+    "approximation normale",
+    "théorème central limite",
+    "probabilité conditionnelle",
+    "variable aléatoire",
+    "loi normale"
+  ],
+  "methods": [
+    "approximation gaussienne",
+    "standardisation",
+    "résolution d'équation quadratique",
+    "calcul de probabilité"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "loi normale centrée réduite",
+    "équation quadratique"
+  ],
+  "content_hash": "a4350e479bed2e9e032942caee0994e76932194b6cd0028106da379a38355b11",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:07:57.455Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "mkqr",
+  "source_path": "exo7/5-L2/mkqr.tex",
+  "summary": "On considère une suite bornée dans un espace vectoriel normé de dimension finie dont la différence entre termes consécutifs tend vers 0. On demande de montrer que l'ensemble des valeurs d'adhérence de cette suite est connexe.",
+  "concepts": [
+    "espace vectoriel normé",
+    "suite bornée",
+    "valeurs d'adhérence",
+    "connexité",
+    "distance entre ensembles"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la continuité de la norme",
+    "analyse de la distance entre fermés disjoints"
+  ],
+  "objects": [
+    "suite dans un evn",
+    "ensemble des valeurs d'adhérence",
+    "fermés disjoints"
+  ],
+  "content_hash": "a3f94b960e3f586cd064b9e9963fc4b8d7bc390244e4035ed06993a9ea05f04c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:07:53.436Z"
+}

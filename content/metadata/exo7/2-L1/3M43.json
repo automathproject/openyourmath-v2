@@ -1,0 +1,27 @@
+{
+  "uuid": "3M43",
+  "source_path": "exo7/2-L1/3M43.tex",
+  "summary": "L'exercice demande de déterminer un équivalent asymptotique de la suite $u_n = \\sum_{k=1}^{2n} (-1)^k \frac{\\sqrt{k}}{2}$ lorsque $n$ tend vers l'infini.",
+  "concepts": [
+    "série numérique",
+    "équivalent asymptotique",
+    "comparaison série-intégrale",
+    "convergence",
+    "règle de Cauchy",
+    "règle de Raabe-Duhamel"
+  ],
+  "methods": [
+    "regroupement de termes",
+    "comparaison à une intégrale",
+    "estimation d'intégrale",
+    "équivalent de série alternée"
+  ],
+  "objects": [
+    "suite numérique",
+    "série alternée",
+    "fonction intégrable"
+  ],
+  "content_hash": "a36920e372124e675142691cc3309fce55886f46c0d817052962026cefc6ccec",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:00:14.810Z"
+}

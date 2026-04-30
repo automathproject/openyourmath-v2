@@ -1,0 +1,27 @@
+{
+  "uuid": "Ha4d",
+  "source_path": "exo7/2-L1/Ha4d.tex",
+  "summary": "On étudie la convergence d'une suite définie par récurrence et de séries associées. La suite est donnée par u₀ ∈ ]0,1[ et uₙ₊₁ = uₙ - uₙ². On demande de montrer la convergence de la suite et de ses séries associées.",
+  "concepts": [
+    "suite numérique",
+    "convergence de suite",
+    "série numérique",
+    "série à termes positifs",
+    "critère de comparaison",
+    "limite de suite"
+  ],
+  "methods": [
+    "étude de la monotonie",
+    "recherche de point fixe",
+    "comparaison de séries"
+  ],
+  "objects": [
+    "suite récurrente",
+    "série de terme général uₙ²",
+    "série de terme général uₙ",
+    "série de terme général ln(uₙ₊₁/uₙ)"
+  ],
+  "content_hash": "0da7b23b6722fb012955a7ff2e2f2d8f6fc03b2daef2b81c38cba005b605a999",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:09:08.332Z"
+}

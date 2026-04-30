@@ -1,0 +1,25 @@
+{
+  "uuid": "Bf5M",
+  "source_path": "amscc/Bf5M.tex",
+  "summary": "Un candidat répond au hasard à 10 questions à choix multiples avec une seule bonne réponse par question. On étudie la loi de la variable aléatoire X comptant le nombre de réponses exactes, son espérance, sa variance et la probabilité d'avoir moins de 8 bonnes réponses.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi binomiale",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "calcul de probabilité par la loi binomiale"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "nombre de succès",
+    "probabilité de réussite"
+  ],
+  "content_hash": "a08b4f899516a99a171fb331a5bc69e14c176c52e4cf7089b0f6edee77f918f7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:20:11.765Z"
+}

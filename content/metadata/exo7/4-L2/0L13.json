@@ -1,0 +1,26 @@
+{
+  "uuid": "0L13",
+  "source_path": "exo7/4-L2/0L13.tex",
+  "summary": "L'exercice demande de diagonaliser deux matrices en base orthonormale. La première matrice A a une structure particulière avec des zéros et des coefficients a_i, tandis que la seconde matrice B est une matrice à diagonale et sous-diagonale constantes.",
+  "concepts": [
+    "diagonalisation",
+    "base orthonormale",
+    "matrice symétrique",
+    "produit scalaire",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "methods": [
+    "recherche des valeurs propres",
+    "recherche des vecteurs propres",
+    "construction de base orthonormale"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "matrice tridiagonale",
+    "matrice de produit scalaire"
+  ],
+  "content_hash": "43c06e0e29db9a5fd5f70739ab10871f33d829f7c7feb051a4e8a75fb36311be",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:08:35.972Z"
+}

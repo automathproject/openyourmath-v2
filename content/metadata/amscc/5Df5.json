@@ -1,0 +1,27 @@
+{
+  "uuid": "5Df5",
+  "source_path": "amscc/5Df5.tex",
+  "summary": "L'exercice demande de déterminer le nombre minimal de repas à préparer pour satisfaire la demande avec une probabilité de 99%, en utilisant les propriétés d'une variable aléatoire normale dont les paramètres sont partiellement connus.",
+  "concepts": [
+    "loi normale",
+    "standardisation",
+    "quantiles de la loi normale",
+    "probabilité conditionnelle",
+    "écart-type",
+    "moyenne"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de quantiles",
+    "résolution de système d'équations linéaires"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "probabilité conditionnelle",
+    "écart-type",
+    "moyenne"
+  ],
+  "content_hash": "c6319c9a6aa3e8476f36f67e26e1be343ac00ab32dc419dd6b7fe33db8356919",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:38:04.870Z"
+}

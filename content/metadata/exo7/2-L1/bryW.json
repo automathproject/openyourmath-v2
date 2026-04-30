@@ -1,0 +1,27 @@
+{
+  "uuid": "bryW",
+  "source_path": "exo7/2-L1/bryW.tex",
+  "summary": "L'exercice demande d'étudier la suite définie par la somme des termes ln(k)/k de 2 à n. Il s'agit d'abord de trouver un équivalent de cette suite en l'infini, puis d'analyser la convergence de la suite obtenue en retranchant l'équivalent trouvé, et enfin de donner un équivalent de la différence entre cette suite et sa limite.",
+  "concepts": [
+    "comparaison série-intégrale",
+    "équivalent asymptotique",
+    "convergence de suite",
+    "intégrale impropre",
+    "développement asymptotique"
+  ],
+  "methods": [
+    "comparaison série-intégrale",
+    "approximation d'intégrale",
+    "étude de la différence entre suite et équivalent",
+    "calcul d'équivalent asymptotique"
+  ],
+  "objects": [
+    "suite numérique",
+    "somme de termes logarithmiques",
+    "intégrale de fonction logarithmique",
+    "différence entre suite et limite"
+  ],
+  "content_hash": "990f5a2cdd46acc51b636e6888f51f2b77ec6902cdd1a00af59bc36950c32aeb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:24:27.441Z"
+}

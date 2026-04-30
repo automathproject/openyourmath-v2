@@ -1,0 +1,24 @@
+{
+  "uuid": "vePj",
+  "source_path": "exo7/2-L1/vePj.tex",
+  "summary": "On considère n réels positifs dont le produit vaut 1. On cherche à déterminer si leur somme admet une valeur minimale et, si oui, quelle est cette valeur et dans quel cas elle est atteinte.",
+  "concepts": [
+    "inégalité arithmético-géométrique",
+    "produit de réels positifs",
+    "somme de réels positifs",
+    "minimisation sous contrainte"
+  ],
+  "methods": [
+    "application de l'inégalité AM-GM",
+    "calcul de la moyenne arithmétique",
+    "calcul de la moyenne géométrique"
+  ],
+  "objects": [
+    "réels positifs",
+    "produit de réels",
+    "somme de réels"
+  ],
+  "content_hash": "a2c70715d93438759cf1fad58e7ff0d9f89c04d0cbcab201643e2faa271d7866",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:05:49.334Z"
+}

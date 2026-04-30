@@ -1,0 +1,25 @@
+{
+  "uuid": "5CKt",
+  "source_path": "exo7/5-L2/5CKt.tex",
+  "summary": "L'exercice demande de prouver que l'intérieur de l'adhérence de deux ouverts disjoints d'un espace vectoriel normé sont disjoints, puis de fournir un contre-exemple lorsque les ensembles ne sont pas ouverts.",
+  "concepts": [
+    "espace vectoriel normé",
+    "ouvert",
+    "adhérence",
+    "intérieur d'un ensemble",
+    "espace métrique",
+    "topologie"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des propriétés des ouverts et de l'adhérence"
+  ],
+  "objects": [
+    "ouverts disjoints",
+    "adhérence d'un ensemble",
+    "intérieur d'un ensemble"
+  ],
+  "content_hash": "97ba589b498f61548ebb7e0bc455016e804874b4b80d6a53efeef145eb6128ca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:36:20.915Z"
+}

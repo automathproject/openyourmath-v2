@@ -1,0 +1,30 @@
+{
+  "uuid": "9BfR",
+  "source_path": "exo7/11-L3/9BfR.tex",
+  "summary": "L'exercice demande de déterminer si la courbure moyenne d'une surface paramétrée est partout nulle. La surface est définie par une application différentiable de ℝ² dans ℝ³.",
+  "concepts": [
+    "surface paramétrée",
+    "courbure moyenne",
+    "endomorphisme de Weingarten",
+    "champ de vecteurs normaux",
+    "différentiabilité",
+    "rang d'une application linéaire",
+    "surface régulière"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "détermination du rang de l'application différentielle",
+    "calcul du champ de vecteurs normaux",
+    "calcul de la demi-trace de l'endomorphisme de Weingarten"
+  ],
+  "objects": [
+    "application différentiable",
+    "surface paramétrée",
+    "endomorphisme de Weingarten",
+    "champ de vecteurs normaux",
+    "matrice de Weingarten"
+  ],
+  "content_hash": "0b0e751d50c4e4f943890a4d995964832a13176d48654cbc0abccda09d02918d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:14:03.747Z"
+}

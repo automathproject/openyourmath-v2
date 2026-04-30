@@ -1,0 +1,26 @@
+{
+  "uuid": "pL3m",
+  "source_path": "amscc/pL3m.tex",
+  "summary": "Calculer la taille de sortie d'une convolution 2D en utilisant la formule donnée, pour différentes configurations de taille d'entrée, noyau, padding et stride. Identifier le type de padding permettant de conserver la taille de l'entrée.",
+  "concepts": [
+    "convolution 2D",
+    "padding",
+    "stride",
+    "taille de sortie",
+    "fonction partie entière",
+    "réseaux de neurones"
+  ],
+  "methods": [
+    "application de formule",
+    "calcul algébrique",
+    "identification de cas particuliers"
+  ],
+  "objects": [
+    "matrice d'entrée",
+    "noyau de convolution",
+    "taille de sortie"
+  ],
+  "content_hash": "0b8a61bb1585d4cf9f19f058346aec1ea216cc7b83c1fed2c2ac20e451f25a65",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:36:42.696Z"
+}

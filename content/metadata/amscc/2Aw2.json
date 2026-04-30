@@ -1,0 +1,25 @@
+{
+  "uuid": "2Aw2",
+  "source_path": "amscc/2Aw2.tex",
+  "summary": "L'exercice demande de déterminer le nombre minimal de plats de risotto à prévoir pour qu'il n'en manque pas avec une probabilité supérieure à 90%, en modélisant la situation par une loi binomiale approchée par une loi normale.",
+  "concepts": [
+    "loi binomiale",
+    "loi normale",
+    "théorème central limite",
+    "approximation gaussienne",
+    "standardisation"
+  ],
+  "methods": [
+    "approximation gaussienne",
+    "standardisation",
+    "calcul de quantile"
+  ],
+  "objects": [
+    "loi binomiale",
+    "loi normale",
+    "variable aléatoire discrète"
+  ],
+  "content_hash": "3f604f2ace15dc9c6abc9cefac09a07fef53777c35d993d576a4fd3e33abf7b4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:30:22.557Z"
+}

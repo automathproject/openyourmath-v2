@@ -1,0 +1,25 @@
+{
+  "uuid": "3eFi",
+  "source_path": "exo7/5-L2/3eFi.tex",
+  "summary": "L'exercice demande de déterminer un équivalent au voisinage de 0 de deux séries de fonctions impliquant des fonctions hyperboliques. La première série est S₁(x) = Σ(1/sh(nx)) et la seconde S₂(x) = Σ(1/sh²(nx)).",
+  "concepts": [
+    "équivalent de fonctions",
+    "fonction hyperbolique",
+    "intégrale impropre",
+    "développement asymptotique",
+    "convergence normale"
+  ],
+  "methods": [
+    "comparaison d'intégrales",
+    "développement asymptotique",
+    "étude de la convergence normale"
+  ],
+  "objects": [
+    "série de fonctions",
+    "fonction hyperbolique sinus",
+    "intégrale de fonction hyperbolique"
+  ],
+  "content_hash": "4834be906e71ae48cd345f74658809052e556240faed7583f31b4273cf15c679",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:46:24.589Z"
+}

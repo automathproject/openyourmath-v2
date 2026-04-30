@@ -1,0 +1,25 @@
+{
+  "uuid": "pLGG",
+  "source_path": "exo7/1-L1/pLGG.tex",
+  "summary": "Soit P un polynôme non constant. On demande de prouver que P(X) - X divise P(P(X)) - X.",
+  "concepts": [
+    "polynôme",
+    "division euclidienne",
+    "factorisation",
+    "algèbre des polynômes",
+    "propriété de divisibilité"
+  ],
+  "methods": [
+    "factorisation",
+    "développement de polynôme",
+    "division euclidienne"
+  ],
+  "objects": [
+    "polynôme P",
+    "polynôme P(P(X))",
+    "polynôme P(X) - X"
+  ],
+  "content_hash": "12c5b7dd6a8a7e1f7294b0f98216e553e729a25ef2fbd836267ef32f473443b7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:22:36.430Z"
+}

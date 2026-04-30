@@ -1,0 +1,24 @@
+{
+  "uuid": "fsNf",
+  "source_path": "exo7/7-L2/fsNf.tex",
+  "summary": "On tire une urne au hasard parmi deux urnes contenant des boules noires et blanches en proportions différentes. Après avoir tiré une boule blanche, on cherche la probabilité que cette boule provienne de la première urne.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "formule de Bayes",
+    "probabilité a posteriori",
+    "probabilité a priori",
+    "partition d'un espace probabilisé"
+  ],
+  "methods": [
+    "application de la formule de Bayes",
+    "calcul de probabilités conditionnelles"
+  ],
+  "objects": [
+    "urne",
+    "boule blanche",
+    "événements conditionnels"
+  ],
+  "content_hash": "d007f547e5ea9482b1bcd8ae989ceed7d8891b21ec6ecbc44b9393e26ed704af",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:35:26.990Z"
+}

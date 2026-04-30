@@ -1,0 +1,29 @@
+{
+  "uuid": "uGsH",
+  "source_path": "amscc/uGsH.tex",
+  "summary": "Vérifier qu'une fonction donnée est une densité de probabilité, puis calculer des probabilités, l'espérance et la variance d'une variable aléatoire associée définie sur l'intervalle [0, 2].",
+  "concepts": [
+    "densité de probabilité",
+    "espérance",
+    "variance",
+    "intégrale de probabilité",
+    "variable aléatoire continue",
+    "calcul d'intégrales"
+  ],
+  "methods": [
+    "intégration",
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "vérification des conditions de densité"
+  ],
+  "objects": [
+    "fonction densité de probabilité",
+    "variable aléatoire continue",
+    "intervalle de définition",
+    "espérance",
+    "variance"
+  ],
+  "content_hash": "ea475c8bda306693cafe79cb4a1c1b0cc8ba57c75defd974267bd49589b163e4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:09:04.620Z"
+}

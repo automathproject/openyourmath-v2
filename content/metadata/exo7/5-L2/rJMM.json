@@ -1,0 +1,26 @@
+{
+  "uuid": "rJMM",
+  "source_path": "exo7/5-L2/rJMM.tex",
+  "summary": "L'exercice demande de prouver qu'un plan euclidien ne peut pas être exprimé comme l'union de cercles disjoints non réduits à un point. L'indication suggère d'utiliser un argument par l'absurde en construisant une suite de disques emboîtés.",
+  "concepts": [
+    "théorème des fermés emboîtés",
+    "espace complet",
+    "union d'ensembles",
+    "disque fermé",
+    "cercles disjoints"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "construction de suite emboîtée",
+    "utilisation du théorème des fermés emboîtés"
+  ],
+  "objects": [
+    "plan euclidien",
+    "cercles",
+    "disques fermés",
+    "suite de disques"
+  ],
+  "content_hash": "303a5c899467a3619b80b0094e85394f775dbce45b7e7053d98de04639537cd8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:12:21.581Z"
+}

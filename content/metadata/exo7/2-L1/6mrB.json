@@ -1,0 +1,26 @@
+{
+  "uuid": "6mrB",
+  "source_path": "exo7/2-L1/6mrB.tex",
+  "summary": "On définit une suite de rationnels par récurrence à partir d'un rationnel x ∈ ℚ, 0 < x < 1. On montre que cette suite est toujours finie et que sa décomposition en fractions unitaires satisfait une condition de croissance stricte.",
+  "concepts": [
+    "suite numérique",
+    "nombre rationnel",
+    "décomposition en fractions unitaires",
+    "récurrence",
+    "inégalité stricte",
+    "propriété de terminaison"
+  ],
+  "methods": [
+    "raisonnement par récurrence",
+    "manipulation d'inégalités",
+    "analyse de la décroissance des numérateurs"
+  ],
+  "objects": [
+    "suite de rationnels",
+    "fractions unitaires",
+    "entiers naturels"
+  ],
+  "content_hash": "7f7ab275dc218fb47f1927c32ce37096769dd20466e1e4bf9382bdc72e45a401",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:47:14.989Z"
+}

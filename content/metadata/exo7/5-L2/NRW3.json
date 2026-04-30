@@ -1,0 +1,30 @@
+{
+  "uuid": "NRW3",
+  "source_path": "exo7/5-L2/NRW3.tex",
+  "summary": "L'exercice demande de démontrer des propriétés topologiques de sous-ensembles de l'espace des matrices carrées complexes : densité et caractère ouvert pour l'ensemble des matrices inversibles, densité de l'ensemble des matrices diagonalisables, et détermination de l'intérieur de cet ensemble.",
+  "concepts": [
+    "espace vectoriel normé",
+    "topologie de la norme",
+    "densité d'un ensemble",
+    "ouvert d'un espace topologique",
+    "matrice inversible",
+    "matrice diagonalisable",
+    "valeur propre",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "limite de matrices",
+    "conjugaison de matrices",
+    "étude des valeurs propres",
+    "analyse de la frontière d'un ensemble"
+  ],
+  "objects": [
+    "espace des matrices carrées complexes",
+    "ensemble des matrices inversibles",
+    "ensemble des matrices diagonalisables",
+    "valeurs propres multiples"
+  ],
+  "content_hash": "d551e4ca7d94b9d45f4d2ed20783e6571d2d63c03aa2def0f5b5d29f73ebf009",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:47:52.761Z"
+}

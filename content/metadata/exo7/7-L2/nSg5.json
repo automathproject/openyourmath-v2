@@ -1,0 +1,25 @@
+{
+  "uuid": "nSg5",
+  "source_path": "exo7/7-L2/nSg5.tex",
+  "summary": "On jette un dé 180 fois et on note X le nombre de sorties du 4. On demande la loi de X et la probabilité que X soit compris entre 29 et 32.",
+  "concepts": [
+    "loi binomiale",
+    "approximation d'une loi binomiale par une loi normale",
+    "espérance",
+    "écart-type",
+    "standardisation"
+  ],
+  "methods": [
+    "approximation gaussienne",
+    "correction de continuité",
+    "calcul de probabilité"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "loi normale",
+    "intervalle de confiance"
+  ],
+  "content_hash": "188665c1046da93beed23866d2faf4a6ac4974c5233cc402df093c67e915a450",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:38:58.358Z"
+}

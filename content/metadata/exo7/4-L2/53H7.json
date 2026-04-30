@@ -1,0 +1,29 @@
+{
+  "uuid": "53H7",
+  "source_path": "exo7/4-L2/53H7.tex",
+  "summary": "On considère une matrice carrée réelle A vérifiant une relation polynomiale. On doit prouver que son rang est un entier pair.",
+  "concepts": [
+    "diagonalisation",
+    "valeurs propres",
+    "polynôme annulateur",
+    "polynôme caractéristique",
+    "sous-espace propre",
+    "multiplicité d'une valeur propre",
+    "matrice réelle"
+  ],
+  "methods": [
+    "factorisation de polynôme",
+    "diagonalisation dans C",
+    "calcul de multiplicité",
+    "relation entre rang et noyau"
+  ],
+  "objects": [
+    "matrice carrée réelle",
+    "polynôme annulateur",
+    "valeurs propres complexes",
+    "rang de matrice"
+  ],
+  "content_hash": "8b644a5006cde76db85be165f8ab8498647ef06d3f15e9f6242070edd64d352d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:14:37.966Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "qEYG",
+  "source_path": "exo7/1-L1/qEYG.tex",
+  "summary": "L'exercice étudie un ensemble de polynômes unitaires à coefficients entiers de degré n dont toutes les racines ont un module égal à 1. Il demande de prouver que cet ensemble est fini, puis de montrer une propriété sur les racines au carré de ces polynômes, et enfin d'en déduire que les racines sont des racines de l'unité.",
+  "concepts": [
+    "polynôme unitaire",
+    "racine de module 1",
+    "racine de l'unité",
+    "ensemble fini",
+    "coefficient entier",
+    "bornitude des coefficients",
+    "polynôme réciproque"
+  ],
+  "methods": [
+    "bornitude des coefficients",
+    "construction de polynôme réciproque",
+    "propriété des racines de l'unité"
+  ],
+  "objects": [
+    "polynôme unitaire",
+    "racines de module 1",
+    "polynôme réciproque"
+  ],
+  "content_hash": "5e14a9060e40badc63d6cd3804e9c3553cd8fcad135744d95fd12cf9aa950e81",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:24:34.311Z"
+}

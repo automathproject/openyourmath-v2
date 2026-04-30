@@ -1,0 +1,30 @@
+{
+  "uuid": "uift",
+  "source_path": "exo7/10-L3/uift.tex",
+  "summary": "Montrer que deux polynômes définis par des produits de facteurs linéaires et une constante sont irréductibles dans ℚ[X]. Le premier polynôme est de la forme (x-a₁)...(x-aₙ)-1 et le second (x-a₁)²...(x-aₙ)²+1, où les aᵢ sont des entiers deux à deux distincts.",
+  "concepts": [
+    "irréductibilité dans ℤ[X]",
+    "irréductibilité dans ℚ[X]",
+    "polynôme unitaire",
+    "contenu d'un polynôme",
+    "théorème des valeurs intermédiaires",
+    "division euclidienne des polynômes",
+    "racine d'un polynôme"
+  ],
+  "methods": [
+    "réduction au cas ℤ[X]",
+    "analyse des valeurs en points distincts",
+    "étude des degrés",
+    "utilisation du contenu d'un polynôme",
+    "contradiction"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "polynôme unitaire",
+    "racines entières distinctes",
+    "polynôme irréductible"
+  ],
+  "content_hash": "1e944c3dc8545bc44181bfb10c9dbf198d20576f2c3a3d5183a8b3490a76e092",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:28:01.709Z"
+}

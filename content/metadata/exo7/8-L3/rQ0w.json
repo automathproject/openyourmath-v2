@@ -1,0 +1,25 @@
+{
+  "uuid": "rQ0w",
+  "source_path": "exo7/8-L3/rQ0w.tex",
+  "summary": "Montrer que pour un entier impair n non divisible par 3, l'expression n² - 1 est divisible par 24.",
+  "concepts": [
+    "divisibilité",
+    "nombre premier",
+    "factorisation",
+    "arithmétique modulaire",
+    "propriétés des entiers impairs"
+  ],
+  "methods": [
+    "factorisation",
+    "analyse des facteurs premiers",
+    "utilisation des congruences"
+  ],
+  "objects": [
+    "entier impair",
+    "expression polynomiale",
+    "diviseur"
+  ],
+  "content_hash": "b2e705e2efaa121d51ccb54160f77a76deaa65d344cbcc2553dc190aff862f99",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:16:33.224Z"
+}

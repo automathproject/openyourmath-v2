@@ -1,0 +1,31 @@
+{
+  "uuid": "rDZG",
+  "source_path": "exo7/11-L3/rDZG.tex",
+  "summary": "L'exercice demande de déterminer les plans tangents et un champ de vecteurs normaux unitaires au paraboloïde hyperbolique défini par l'équation z = y² - x² au voisinage du point A(0,0,0). Ensuite, il s'agit de calculer l'application de Weingarten en ce point et d'en déduire la courbure de Gauss ainsi que les directions principales.",
+  "concepts": [
+    "sous-variété",
+    "plan tangent",
+    "champ de vecteurs normaux",
+    "application de Weingarten",
+    "courbure de Gauss",
+    "directions principales",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul du plan tangent",
+    "détermination du champ de vecteurs normaux",
+    "calcul de l'application de Weingarten",
+    "diagonalisation",
+    "calcul des valeurs propres"
+  ],
+  "objects": [
+    "paraboloïde hyperbolique",
+    "point A(0,0,0)",
+    "vecteurs tangents",
+    "vecteurs normaux",
+    "matrice de Weingarten"
+  ],
+  "content_hash": "741e57a37a7b5c885171c47f59a9baf07820398d3c5bb89a43052589a5ad99eb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:26:21.677Z"
+}

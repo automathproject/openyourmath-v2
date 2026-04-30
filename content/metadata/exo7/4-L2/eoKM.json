@@ -1,0 +1,28 @@
+{
+  "uuid": "eoKM",
+  "source_path": "exo7/4-L2/eoKM.tex",
+  "summary": "Montrer une congruence modulo un nombre premier p pour la trace d'une puissance p-ième d'une matrice à coefficients entiers.",
+  "concepts": [
+    "polynôme caractéristique",
+    "théorème de Cayley-Hamilton",
+    "trace d'une matrice",
+    "congruence modulo un nombre premier",
+    "algèbre sur un corps fini",
+    "déterminant d'une matrice"
+  ],
+  "methods": [
+    "manipulation de polynômes matriciels",
+    "comparaison de coefficients",
+    "réduction modulo p",
+    "utilisation de l'indéterminée"
+  ],
+  "objects": [
+    "matrice carrée à coefficients entiers",
+    "trace d'une matrice",
+    "polynôme caractéristique",
+    "corps fini Z/pZ"
+  ],
+  "content_hash": "83b4708d949173f050f9dd3bb4ca6af657ac656c1f300f01f2df38bf9194eb5d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:01:36.755Z"
+}

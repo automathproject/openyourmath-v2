@@ -1,0 +1,31 @@
+{
+  "uuid": "iifM",
+  "source_path": "exo7/4-L2/iifM.tex",
+  "summary": "L'exercice demande de déterminer les valeurs de paramètres a et b pour lesquelles une matrice donnée admet une décomposition de Dunford spécifique. Il étudie ensuite les sous-espaces propres et caractéristiques de cette matrice, et cherche une décomposition en une partie diagonalisable et une partie nilpotente commutant entre elles.",
+  "concepts": [
+    "décomposition de Dunford",
+    "matrice nilpotente",
+    "valeurs propres",
+    "sous-espaces propres",
+    "sous-espaces caractéristiques",
+    "matrice diagonalisable",
+    "commutation de matrices"
+  ],
+  "methods": [
+    "calcul de puissances de matrices",
+    "vérification de nilpotence",
+    "commutation de matrices",
+    "détermination de noyaux",
+    "décomposition matricielle"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "sous-espaces propres",
+    "sous-espaces caractéristiques",
+    "matrice nilpotente",
+    "matrice diagonalisable"
+  ],
+  "content_hash": "8a15583aa304d694021d78bd1aa76feae92c5db4fb3977a43faeb596ce7ed9a3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:07:14.541Z"
+}

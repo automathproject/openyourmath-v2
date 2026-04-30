@@ -1,0 +1,26 @@
+{
+  "uuid": "CXqm",
+  "source_path": "exo7/5-L2/CXqm.tex",
+  "summary": "Calculer une intégrale impliquant des fonctions logarithmes en utilisant une série entière et une égalité admise.",
+  "concepts": [
+    "série entière",
+    "intégrale impropre",
+    "développement en série de Taylor",
+    "convergence uniforme",
+    "permutation série-intégrale"
+  ],
+  "methods": [
+    "développement en série de ln(1-t)",
+    "intégration terme à terme",
+    "téléscopage",
+    "utilisation d'une égalité connue"
+  ],
+  "objects": [
+    "intégrale de fonction logarithme",
+    "série de termes rationnels",
+    "fonction ln(t)ln(1-t)"
+  ],
+  "content_hash": "4a6cf581e7ec6d3e18d8c3f3cd7c78d4536fb8d59496c07ae81ba17e809eb50b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:38:15.065Z"
+}

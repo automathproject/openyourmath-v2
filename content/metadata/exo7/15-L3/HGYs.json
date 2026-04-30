@@ -1,0 +1,29 @@
+{
+  "uuid": "HGYs",
+  "source_path": "exo7/15-L3/HGYs.tex",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une fonction point fixe d'un opérateur T défini par une intégrale, en utilisant le théorème du point fixe de Banach. L'opérateur agit sur l'espace des fonctions C^1 sur [0,1] muni d'une norme spécifique.",
+  "concepts": [
+    "théorème du point fixe de Banach",
+    "espace de Banach",
+    "contraction",
+    "complétude",
+    "fonction C^1",
+    "norme infinie",
+    "intégrale"
+  ],
+  "methods": [
+    "étude de la contraction",
+    "calcul de l'opérateur itéré",
+    "utilisation de la complétude",
+    "résolution d'équation fonctionnelle"
+  ],
+  "objects": [
+    "opérateur T",
+    "fonction point fixe",
+    "espace X = (C^1([0,1]), N)",
+    "intégrale à paramètre"
+  ],
+  "content_hash": "604ee6e37790f3cf60db4ac2a890960fcddd119d540141032835f6022bd1652d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:30:17.203Z"
+}

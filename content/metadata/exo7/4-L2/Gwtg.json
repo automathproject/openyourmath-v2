@@ -1,0 +1,29 @@
+{
+  "uuid": "Gwtg",
+  "source_path": "exo7/4-L2/Gwtg.tex",
+  "summary": "Montrer que deux matrices nilpotentes complexes sont semblables si l'une est le double de l'autre. L'exercice mobilise la notion de similarité entre matrices et la nilpotence.",
+  "concepts": [
+    "matrice nilpotente",
+    "similarité de matrices",
+    "endomorphisme nilpotent",
+    "décomposition en sous-espaces",
+    "induction mathématique",
+    "isomorphisme d'espaces vectoriels",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "décomposition en sous-espaces",
+    "induction sur la dimension",
+    "construction explicite d'un isomorphisme",
+    "vérification de l'injectivité"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "endomorphisme nilpotent",
+    "sous-espaces vectoriels",
+    "isomorphisme"
+  ],
+  "content_hash": "75e6cedd98361b6d48ae58623ea78aa52ac7cc5a4b73b856e7265ad7fe809db4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:30:57.212Z"
+}

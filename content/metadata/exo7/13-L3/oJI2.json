@@ -1,0 +1,30 @@
+{
+  "uuid": "oJI2",
+  "source_path": "exo7/13-L3/oJI2.tex",
+  "summary": "L'exercice étudie une équation différentielle non linéaire avec une fonction f(t,x) définie par morceaux. Il demande d'analyser la continuité et la lipschitzianité de f, puis de transformer l'équation pour résoudre un problème de valeurs initiales en t=0.",
+  "concepts": [
+    "continuité",
+    "lipschitzianité",
+    "équation différentielle",
+    "solution maximale",
+    "théorème de Cauchy-Lipschitz",
+    "changement de variable",
+    "intégration"
+  ],
+  "methods": [
+    "analyse de continuité",
+    "test de lipschitzianité",
+    "changement de fonction inconnue",
+    "intégration par parties",
+    "résolution d'équation différentielle"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "solution d'équation différentielle",
+    "intervalle de définition",
+    "condition initiale"
+  ],
+  "content_hash": "b203c2653707bfe296613779c5e170b00fdfd6d679352af1290fd45e02eec61d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:47:29.170Z"
+}

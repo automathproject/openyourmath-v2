@@ -1,0 +1,32 @@
+{
+  "uuid": "j7Wm",
+  "source_path": "exo7/11-L3/j7Wm.tex",
+  "summary": "L'exercice demande de représenter l'image d'une application paramétrée et de montrer que cette image forme une surface régulière dans ℝ³. Il nécessite ensuite de calculer la courbure de Gauss de cette surface et d'évaluer une intégrale de cette courbure sur la surface.",
+  "concepts": [
+    "surface régulière",
+    "paramétrage",
+    "courbure de Gauss",
+    "première forme fondamentale",
+    "endomorphisme de Weingarten",
+    "intégration sur une variété",
+    "champ de vecteurs normaux"
+  ],
+  "methods": [
+    "calcul du rang de l'application différentielle",
+    "détermination de la matrice de la première forme fondamentale",
+    "calcul du champ de vecteurs normaux",
+    "détermination des valeurs propres de l'endomorphisme de Weingarten",
+    "intégration sur un domaine paramétré"
+  ],
+  "objects": [
+    "application paramétrée",
+    "surface régulière",
+    "courbure de Gauss",
+    "champ de vecteurs normaux",
+    "endomorphisme de Weingarten",
+    "intégrale sur une variété"
+  ],
+  "content_hash": "d83a64b8980f39ab6cd246aebd1040b9c4f0ea29b6f6786003c5a9b888c941b1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:24:47.841Z"
+}

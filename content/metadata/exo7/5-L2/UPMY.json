@@ -1,0 +1,29 @@
+{
+  "uuid": "UPMY",
+  "source_path": "exo7/5-L2/UPMY.tex",
+  "summary": "L'exercice demande d'étudier la convergence simple, normale et uniforme de la série de fonctions définie par f_n(x) = (x e^{-nx}) / ln(n) sur R+. Il faut aussi analyser la régularité de la fonction somme S(x) = Σ f_n(x), notamment sa dérivabilité et le comportement de x^k S(x) à l'infini.",
+  "concepts": [
+    "convergence simple",
+    "convergence normale",
+    "convergence uniforme",
+    "série de fonctions",
+    "classe C^1",
+    "dérivabilité",
+    "comportement asymptotique"
+  ],
+  "methods": [
+    "critère de convergence normale",
+    "critère de convergence uniforme",
+    "étude de la dérivabilité",
+    "analyse asymptotique"
+  ],
+  "objects": [
+    "série de fonctions",
+    "fonction somme",
+    "intervalle de convergence",
+    "fonction dérivée"
+  ],
+  "content_hash": "e97e1d6dc6904fa64025e66812254c09c4ec5b24771efd64f3d9e29c474247b3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:57:12.958Z"
+}

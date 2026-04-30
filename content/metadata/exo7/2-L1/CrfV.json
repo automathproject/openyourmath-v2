@@ -1,0 +1,22 @@
+{
+  "uuid": "CrfV",
+  "source_path": "exo7/2-L1/CrfV.tex",
+  "summary": "Démontrer par récurrence sur n que pour tout n ≥ 2, l'inégalité (1 + x)^n > 1 + nx est vraie pour x > -1 et x ≠ 0.",
+  "concepts": [
+    "principe de récurrence",
+    "inégalité",
+    "fonction polynomiale",
+    "propriétés des réels"
+  ],
+  "methods": [
+    "récurrence forte",
+    "développement binomial"
+  ],
+  "objects": [
+    "inégalité polynomiale",
+    "variable réelle"
+  ],
+  "content_hash": "fd5428de88f0b9f3e4f7bbb451fd2f14e44b3f47c102ad21dbc03ea6222e45fd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:48:30.671Z"
+}

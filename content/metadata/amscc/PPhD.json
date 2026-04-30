@@ -1,0 +1,29 @@
+{
+  "uuid": "PPhD",
+  "source_path": "amscc/PPhD.tex",
+  "summary": "L'exercice étudie une variable aléatoire absolument continue définie par sa densité sur l'intervalle [-1,1]. Il demande de déterminer la constante de normalisation k, la fonction de répartition, une probabilité conditionnelle, l'espérance et la variance, puis d'étudier la variable transformée Y=X².",
+  "concepts": [
+    "variable aléatoire absolument continue",
+    "densité de probabilité",
+    "fonction de répartition",
+    "probabilité conditionnelle",
+    "espérance mathématique",
+    "variance",
+    "théorème de transfert"
+  ],
+  "methods": [
+    "intégration",
+    "calcul de probabilité conditionnelle",
+    "détermination de densité par transformation"
+  ],
+  "objects": [
+    "variable aléatoire à densité",
+    "fonction de répartition",
+    "espérance",
+    "variance",
+    "variable transformée"
+  ],
+  "content_hash": "03b975e38f92f2a178386d905b14a05ba0009c732d927e99d5b564feb73e6788",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:49:18.477Z"
+}

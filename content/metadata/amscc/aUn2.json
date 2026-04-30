@@ -1,0 +1,30 @@
+{
+  "uuid": "aUn2",
+  "source_path": "amscc/aUn2.tex",
+  "summary": "L'exercice demande de tester l'hypothèse que l'épaisseur moyenne des pièces métalliques est conforme à l'objectif de 5 mm, à partir d'un échantillon de 50 pièces, en utilisant un intervalle de confiance à 99%. Il s'agit d'un test d'hypothèses bilatéral avec une hypothèse nulle de moyenne égale à 5 mm.",
+  "concepts": [
+    "test d'hypothèses",
+    "intervalle de confiance",
+    "hypothèse nulle",
+    "risque de première espèce",
+    "loi normale",
+    "statistique de test"
+  ],
+  "methods": [
+    "calcul de la moyenne échantillonnale",
+    "calcul de la variance échantillonnale",
+    "standardisation",
+    "test bilatéral",
+    "lecture de table de la loi normale"
+  ],
+  "objects": [
+    "échantillon",
+    "moyenne échantillonnale",
+    "variance échantillonnale",
+    "statistique de test Z",
+    "valeur critique"
+  ],
+  "content_hash": "411e01ccb0b9cb330592f70bb29d14d7324c8d553e88ed82bb2ab81476ee1d52",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:45:24.958Z"
+}

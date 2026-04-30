@@ -1,0 +1,28 @@
+{
+  "uuid": "twbJ",
+  "source_path": "exo7/4-L2/twbJ.tex",
+  "summary": "L'exercice demande de déterminer le noyau d'une application linéaire T définie sur ℝ³, de calculer sa matrice A dans une base donnée, puis d'étudier cette application dans une nouvelle base formée par des combinaisons linéaires des vecteurs initiaux.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "base d'un espace vectoriel",
+    "matrice d'une application linéaire",
+    "changement de base",
+    "inversibilité d'une matrice"
+  ],
+  "methods": [
+    "calcul de noyau",
+    "calcul de matrice d'application linéaire",
+    "vérification de l'inversibilité d'une matrice",
+    "calcul de matrice de passage"
+  ],
+  "objects": [
+    "application linéaire",
+    "matrice carrée",
+    "base de ℝ³",
+    "vecteurs de ℝ³"
+  ],
+  "content_hash": "ce862db799c6c8a3fb953e2079fb3001c7614b73e598b3a3925eb94a541363aa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:22:21.919Z"
+}

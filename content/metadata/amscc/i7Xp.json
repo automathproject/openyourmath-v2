@@ -1,0 +1,28 @@
+{
+  "uuid": "i7Xp",
+  "source_path": "amscc/i7Xp.tex",
+  "summary": "L'exercice demande de calculer la taille de la carte de sortie d'une convolution 2D avec un noyau 2x2 en mode valid, puis de déterminer les coefficients de cette carte de sortie en appliquant la convolution à la main. Enfin, il demande d'interpréter intuitivement le rôle du noyau utilisé.",
+  "concepts": [
+    "convolution 2D",
+    "mode valid",
+    "stride",
+    "padding",
+    "produit scalaire",
+    "détection de motifs"
+  ],
+  "methods": [
+    "calcul de taille de sortie",
+    "renversement de noyau",
+    "extraction de fenêtres",
+    "calcul de produits scalaires"
+  ],
+  "objects": [
+    "matrice d'image",
+    "noyau de convolution",
+    "carte de sortie",
+    "fenêtres d'extraction"
+  ],
+  "content_hash": "bbc4573c6b8767ef66b48ae6214d4ca054896a4d2b18f69c1c914ef875cb783a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:34:42.022Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "fjjC",
+  "source_path": "exo7/7-L2/fjjC.tex",
+  "summary": "On lance deux dés à 6 faces. Déterminer la loi de la variable aléatoire donnant le maximum des deux chiffres obtenus.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi de probabilité",
+    "espace probabilisé fini",
+    "probabilité conditionnelle",
+    "indépendance"
+  ],
+  "methods": [
+    "énumération des cas",
+    "calcul de probabilités élémentaires",
+    "construction de la loi de probabilité"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "dés à 6 faces",
+    "maximum de deux variables"
+  ],
+  "content_hash": "a396c4873e68092c4d54913ab0fd0b11e1b342d81b3b60a39eefb3b36d4d2c4b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:35:15.526Z"
+}

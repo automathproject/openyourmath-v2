@@ -1,0 +1,26 @@
+{
+  "uuid": "TWcS",
+  "source_path": "exo7/5-L2/TWcS.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction F, définie comme une somme sur les entiers de la fonction f translatée, est bien définie, de classe C^1 et 2π-périodique. Ensuite, il s'agit d'en déduire la formule sommatoire de Poisson.",
+  "concepts": [
+    "séries de Fourier",
+    "fonction périodique",
+    "croissance à l'infini",
+    "convergence uniforme",
+    "formule sommatoire de Poisson",
+    "transformée de Fourier"
+  ],
+  "methods": [
+    "étude de la convergence uniforme",
+    "dérivation terme à terme",
+    "utilisation des propriétés de la transformée de Fourier"
+  ],
+  "objects": [
+    "fonction complexe",
+    "somme sur les entiers",
+    "transformée de Fourier"
+  ],
+  "content_hash": "f3e8f0db34bfd82ad7e1183d681a5dc563488fb099f3d3e52c6e2400c64d0e51",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:24:23.081Z"
+}

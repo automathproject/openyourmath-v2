@@ -1,0 +1,30 @@
+{
+  "uuid": "bFmu",
+  "source_path": "exo7/1-L1/bFmu.tex",
+  "summary": "Trouver tous les polynômes P tels que P+1 soit divisible par (X-1)^4 et P-1 par (X+1)^4. L'exercice demande de déterminer une solution particulière P0 en utilisant soit la relation de Bézout, soit la dérivée du polynôme.",
+  "concepts": [
+    "division euclidienne",
+    "relation de Bézout",
+    "racine de multiplicité",
+    "polynôme dérivé",
+    "primitivation",
+    "divisibilité polynomiale"
+  ],
+  "methods": [
+    "relation de Bézout",
+    "calcul de dérivée",
+    "recherche de polynôme minimal",
+    "primitivation",
+    "vérification des conditions de divisibilité"
+  ],
+  "objects": [
+    "polynôme P",
+    "polynôme P0",
+    "(X-1)^4",
+    "(X+1)^4",
+    "polynômes A et B"
+  ],
+  "content_hash": "95be68f106419e6c593476cb6198f6eb0618b501d229bc8a28e7b1fbe723461b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:08:04.766Z"
+}

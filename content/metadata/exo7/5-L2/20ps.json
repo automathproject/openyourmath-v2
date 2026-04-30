@@ -1,0 +1,26 @@
+{
+  "uuid": "20ps",
+  "source_path": "exo7/5-L2/20ps.tex",
+  "summary": "Dans l'espace vectoriel normé ℝ[X] muni d'une norme particulière, on étudie la suite de polynômes Pₙ = 1 + X + X²/2 + ... + Xⁿ/n. L'exercice demande de montrer que cette suite est de Cauchy mais ne converge pas.",
+  "concepts": [
+    "suite de Cauchy",
+    "convergence dans un espace vectoriel normé",
+    "norme sur un espace de polynômes",
+    "topologie des espaces vectoriels normés",
+    "suite de polynômes"
+  ],
+  "methods": [
+    "étude de la norme",
+    "analyse de la convergence",
+    "vérification de la condition de Cauchy"
+  ],
+  "objects": [
+    "suite de polynômes",
+    "espace vectoriel normé ℝ[X]",
+    "norme max",
+    "polynôme Pₙ"
+  ],
+  "content_hash": "dd47cd8c97f101fcc8640f1a594464fc834acd35cfd203b7845e481230636937",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:34:19.293Z"
+}

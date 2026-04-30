@@ -1,0 +1,30 @@
+{
+  "uuid": "wWVI",
+  "source_path": "exo7/4-L2/wWVI.tex",
+  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3 dépendant d'un paramètre réel m, d'en déduire ses valeurs propres, puis de déterminer pour quelles valeurs de m la matrice est diagonalisable et de trouver son polynôme minimal.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "diagonalisation",
+    "sous-espace propre",
+    "polynôme minimal",
+    "dimension d'un espace vectoriel",
+    "matrice diagonalisable"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "factorisation de polynôme",
+    "analyse de sous-espace propre",
+    "détermination de polynôme minimal"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "sous-espace propre",
+    "polynôme minimal"
+  ],
+  "content_hash": "2c3a50e3b02de765d90081fc106c069e4f115bf6ec41c5abf6dcc858b3d74ada",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:27:30.839Z"
+}

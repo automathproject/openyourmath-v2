@@ -1,0 +1,27 @@
+{
+  "uuid": "1QpY",
+  "source_path": "exo7/8-L3/1QpY.tex",
+  "summary": "Soit G un groupe et A une partie non vide de G. On définit N(A) comme l'ensemble des éléments g de G qui conjuguent A en lui-même, et C(A) comme l'ensemble des éléments g de G qui commutent avec tous les éléments de A. L'exercice demande de montrer que N(A) et C(A) sont des sous-groupes de G et que C(A) est un sous-groupe distingué de N(A).",
+  "concepts": [
+    "sous-groupe",
+    "sous-groupe distingué",
+    "conjugaison",
+    "commutateur",
+    "centralisateur",
+    "normalisateur"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "inclusion de sous-groupes",
+    "propriétés de conjugaison"
+  ],
+  "objects": [
+    "groupe G",
+    "partie A de G",
+    "ensemble N(A)",
+    "ensemble C(A)"
+  ],
+  "content_hash": "78f3727ec5f2d0e7179ad6d87de2b92912677b96c838ea710536453cb792f54a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:52:30.183Z"
+}

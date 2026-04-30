@@ -1,0 +1,27 @@
+{
+  "uuid": "wIkm",
+  "source_path": "exo7/4-L2/wIkm.tex",
+  "summary": "Montrer qu'un polynôme d'un endomorphisme est inversible si et seulement si ce polynôme et le polynôme caractéristique de l'endomorphisme sont premiers entre eux.",
+  "concepts": [
+    "polynôme caractéristique",
+    "théorème de Bézout",
+    "théorème de Cayley-Hamilton",
+    "valeur propre",
+    "inversibilité d'un endomorphisme",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "utilisation du théorème de Bézout",
+    "analyse des valeurs propres",
+    "calcul de déterminant"
+  ],
+  "objects": [
+    "endomorphisme",
+    "polynôme",
+    "polynôme caractéristique",
+    "matrice d'un endomorphisme"
+  ],
+  "content_hash": "21eb2c0c8ce884ffe7bf9c1a05dfe4f3b03eb9827d78c16364d5e894e4b63553",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:27:03.648Z"
+}

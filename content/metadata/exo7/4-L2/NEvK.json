@@ -1,0 +1,25 @@
+{
+  "uuid": "NEvK",
+  "source_path": "exo7/4-L2/NEvK.tex",
+  "summary": "L'exercice demande de déterminer les valeurs propres complexes d'une matrice M de taille 3x3 réelle, distincte de la matrice identité, vérifiant M³ = I. Il faut ensuite montrer que M est semblable à une matrice donnée.",
+  "concepts": [
+    "polynôme annulateur",
+    "valeur propre",
+    "matrice semblable",
+    "racines de l'unité",
+    "réduction d'endomorphisme"
+  ],
+  "methods": [
+    "calcul des valeurs propres",
+    "diagonalisation",
+    "semblabilité de matrices"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme annulateur",
+    "valeurs propres complexes"
+  ],
+  "content_hash": "0af20181d17f583e8034e74e5c325391df6bf379eeff0a309f6ed5fd2ced272a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:38:04.700Z"
+}

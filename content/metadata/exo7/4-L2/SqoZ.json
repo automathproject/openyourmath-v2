@@ -1,0 +1,25 @@
+{
+  "uuid": "SqoZ",
+  "source_path": "exo7/4-L2/SqoZ.tex",
+  "summary": "On considère une matrice réelle A vérifiant A³ = A + I. On demande de montrer que son déterminant est strictement positif.",
+  "concepts": [
+    "polynôme annulateur",
+    "diagonalisation sur le corps des complexes",
+    "valeur propre",
+    "multiplicité d'une valeur propre",
+    "déterminant"
+  ],
+  "methods": [
+    "recherche de polynôme annulateur",
+    "diagonalisation",
+    "analyse des valeurs propres"
+  ],
+  "objects": [
+    "matrice carrée réelle",
+    "polynôme annulateur",
+    "valeurs propres complexes"
+  ],
+  "content_hash": "d6d9a89f427538cd55b1ef2e7fb92ec0e74382ed10dedd56a938ac15f14fa410",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:46:57.372Z"
+}

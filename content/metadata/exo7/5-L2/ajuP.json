@@ -1,0 +1,28 @@
+{
+  "uuid": "ajuP",
+  "source_path": "exo7/5-L2/ajuP.tex",
+  "summary": "L'exercice étudie une base orthonormée mobile de ℝ³ dépendant d'un paramètre t. Il demande de montrer que la matrice des dérivées des vecteurs de la base est antisymétrique, puis d'en déduire l'existence d'un vecteur Ω(t) tel que les dérivées des vecteurs de la base sont le produit vectoriel avec Ω(t). Enfin, il s'agit de montrer la régularité de Ω et d'exprimer la dérivée seconde des vecteurs de la base.",
+  "concepts": [
+    "base orthonormée",
+    "matrice antisymétrique",
+    "produit vectoriel",
+    "dérivée seconde",
+    "régularité des fonctions vectorielles",
+    "champ de vecteurs"
+  ],
+  "methods": [
+    "détermination de la structure d'une matrice",
+    "utilisation du produit vectoriel",
+    "calcul de dérivée seconde",
+    "analyse de la régularité"
+  ],
+  "objects": [
+    "base orthonormée mobile",
+    "matrice de dérivées",
+    "vecteur Ω(t)",
+    "vecteurs de la base e₁, e₂, e₃"
+  ],
+  "content_hash": "e057d46cce2d18d19fb56c534a3043619ace05fd252a99543d53c2fda4f7706b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:00:36.173Z"
+}

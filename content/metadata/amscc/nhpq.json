@@ -1,0 +1,28 @@
+{
+  "uuid": "nhpq",
+  "source_path": "amscc/nhpq.tex",
+  "summary": "L'exercice demande d'estimer la proportion de radios fonctionnant sans défaillance à partir d'un échantillon de 150 radios, en utilisant un estimateur de fréquence empirique et des intervalles de confiance pour différents niveaux de confiance. Il demande ensuite de déterminer la taille d'échantillon nécessaire pour réduire l'amplitude de l'intervalle de confiance.",
+  "concepts": [
+    "estimateur sans biais",
+    "fréquence empirique",
+    "intervalle de confiance",
+    "proportion",
+    "erreur de première espèce",
+    "loi binomiale"
+  ],
+  "methods": [
+    "estimation par intervalle de confiance",
+    "calcul de la fréquence empirique",
+    "approximation gaussienne",
+    "formule de l'amplitude de l'intervalle de confiance"
+  ],
+  "objects": [
+    "proportion de radios fonctionnelles",
+    "échantillon de radios",
+    "intervalle de confiance",
+    "taille d'échantillon"
+  ],
+  "content_hash": "3455df4dda9bc1a7922929620fa4b0ce07fe46a68d282afc396bd93f7ac5ba66",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:51:54.938Z"
+}

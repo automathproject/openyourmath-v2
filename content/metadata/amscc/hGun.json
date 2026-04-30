@@ -1,0 +1,29 @@
+{
+  "uuid": "hGun",
+  "source_path": "amscc/hGun.tex",
+  "summary": "L'exercice demande de déterminer la loi de la somme de n variables exponentielles indépendantes et identiquement distribuées en utilisant la transformée de Laplace, puis de vérifier que cette somme suit une loi gamma.",
+  "concepts": [
+    "transformée de Laplace",
+    "loi exponentielle",
+    "loi gamma",
+    "densité de probabilité",
+    "variable aléatoire absolument continue",
+    "indépendance",
+    "identiquement distribuées"
+  ],
+  "methods": [
+    "calcul de la transformée de Laplace",
+    "changement de variable",
+    "intégration par parties",
+    "vérification de la normalisation d'une densité"
+  ],
+  "objects": [
+    "transformée de Laplace",
+    "somme de variables exponentielles",
+    "densité de probabilité",
+    "variable aléatoire gamma"
+  ],
+  "content_hash": "3d2af1fbe0024e160d9a7b328e660fa918fb38587fec42b5ce338fa8e0ea10ae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:01:29.228Z"
+}

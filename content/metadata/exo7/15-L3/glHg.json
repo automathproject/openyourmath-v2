@@ -1,0 +1,28 @@
+{
+  "uuid": "glHg",
+  "source_path": "exo7/15-L3/glHg.tex",
+  "summary": "L'exercice demande de démontrer l'équicontinuité d'une famille de fonctions différentiables à dérivée bornée, puis d'extraire une sous-suite convergente d'applications lipschitziennes dans ℝⁿ.",
+  "concepts": [
+    "théorème des accroissements finis",
+    "équicontinuité",
+    "théorème d'Ascoli",
+    "procédé diagonal de Cantor",
+    "compacité",
+    "convergence simple"
+  ],
+  "methods": [
+    "application du théorème des accroissements finis",
+    "restriction à un compact",
+    "extraction de sous-suite convergente",
+    "utilisation de la compacité"
+  ],
+  "objects": [
+    "famille de fonctions différentiables",
+    "suite d'applications lipschitziennes",
+    "boule fermée dans ℝⁿ",
+    "sous-suite convergente"
+  ],
+  "content_hash": "93c8f82cdd1887a7d3d45df087131cd1644210c414699db77577e83684393333",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:49:08.853Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "ekys",
+  "source_path": "exo7/4-L2/ekys.tex",
+  "summary": "L'exercice demande de démontrer des propriétés d'un endomorphisme f d'un espace vectoriel de dimension finie, en utilisant son polynôme annulateur f⁴ = f² + f. On doit montrer des relations entre les noyaux et l'image de f.",
+  "concepts": [
+    "polynôme annulateur",
+    "endomorphisme",
+    "espace vectoriel de dimension finie",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "somme directe de sous-espaces"
+  ],
+  "methods": [
+    "décomposition en noyaux",
+    "utilisation du polynôme annulateur",
+    "inclusion d'espaces vectoriels"
+  ],
+  "objects": [
+    "endomorphisme f",
+    "espace vectoriel E",
+    "noyau ker(f³ - f - Id)",
+    "image Im f"
+  ],
+  "content_hash": "5cfdeb1e659aa23b40861504557da5e05a158f86626854ff5182156610706d96",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:01:24.559Z"
+}

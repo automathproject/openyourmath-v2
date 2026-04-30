@@ -1,0 +1,25 @@
+{
+  "uuid": "AibI",
+  "source_path": "exo7/1-L1/AibI.tex",
+  "summary": "Trouver les entiers naturels n pour lesquels le polynôme (X+1)^n - X^n - 1 est divisible par X^2 + X + 1.",
+  "concepts": [
+    "racine d'un polynôme",
+    "divisibilité de polynômes",
+    "racines complexes",
+    "polynôme irréductible",
+    "corps des nombres complexes"
+  ],
+  "methods": [
+    "évaluation d'un polynôme en une racine",
+    "utilisation des racines cubites de l'unité",
+    "analyse des congruences modulo 6"
+  ],
+  "objects": [
+    "polynôme unitaire",
+    "racines complexes",
+    "entier naturel"
+  ],
+  "content_hash": "1b38114f6aa53abf105b9dd857b317825dc2707372908c17fe82b7fc98156d89",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:39:38.239Z"
+}

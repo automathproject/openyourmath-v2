@@ -1,0 +1,25 @@
+{
+  "uuid": "sL68",
+  "source_path": "exo7/1-L1/sL68.tex",
+  "summary": "Démontrer que le polynôme 1 + X + X^n admet uniquement des racines simples.",
+  "concepts": [
+    "racine d'un polynôme",
+    "multiplicité d'une racine",
+    "polynôme irréductible",
+    "factorisation",
+    "corps de rupture"
+  ],
+  "methods": [
+    "définition de la multiplicité",
+    "utilisation de la dérivée",
+    "factorisation dans un corps algébriquement clos"
+  ],
+  "objects": [
+    "polynôme unitaire",
+    "racine simple",
+    "racine multiple"
+  ],
+  "content_hash": "41e03cc6093220e0e7509f6b6adca0092811f6033de86f257ab23f87f878e48c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:26:33.465Z"
+}

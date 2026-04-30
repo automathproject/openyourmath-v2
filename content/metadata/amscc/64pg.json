@@ -1,0 +1,32 @@
+{
+  "uuid": "64pg",
+  "source_path": "amscc/64pg.tex",
+  "summary": "L'exercice porte sur l'estimation de la proportion p de personnes ayant une opinion favorable dans un sondage utilisant un protocole de confidentialité. Il demande d'exprimer la probabilité q de réponse 'oui', de calculer l'espérance et la variance d'un estimateur Tn, de démontrer ses propriétés et de construire un intervalle de confiance pour p.",
+  "concepts": [
+    "théorème des probabilités totales",
+    "estimateur sans biais",
+    "convergence en loi",
+    "théorème central limite",
+    "intervalle de confiance",
+    "variable de Bernoulli",
+    "espérance mathématique",
+    "variance"
+  ],
+  "methods": [
+    "calcul de probabilité totale",
+    "linéarité de l'espérance",
+    "calcul de variance",
+    "approximation gaussienne",
+    "construction d'intervalle de confiance"
+  ],
+  "objects": [
+    "variable aléatoire de Bernoulli",
+    "proportion p",
+    "estimateur Tn",
+    "loi normale centrée réduite",
+    "intervalle de confiance"
+  ],
+  "content_hash": "ba642a9a1a72774717b5e8cbbdc04a0f689cb2218ef2c93980c74f32379e3b75",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:32:43.285Z"
+}

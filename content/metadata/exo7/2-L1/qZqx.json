@@ -1,0 +1,26 @@
+{
+  "uuid": "qZqx",
+  "source_path": "exo7/2-L1/qZqx.tex",
+  "summary": "On considère une énumération des rationnels et des intervalles centrés sur chaque rationnel. On doit montrer qu'il existe des réels qui ne sont pas couverts par l'union de ces intervalles.",
+  "concepts": [
+    "énumération des rationnels",
+    "union dénombrable d'intervalles",
+    "théorème des fermés emboîtés",
+    "ensemble compact",
+    "densité des rationnels"
+  ],
+  "methods": [
+    "construction d'un ensemble complémentaire",
+    "application du théorème des fermés emboîtés",
+    "analyse de la mesure de Lebesgue"
+  ],
+  "objects": [
+    "suite des rationnels",
+    "union d'intervalles",
+    "ensemble complémentaire",
+    "intervalle réel"
+  ],
+  "content_hash": "37b7812171b69245abd7275a98835d358c527763e64c1de823d8ad756669b73b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:33:58.397Z"
+}

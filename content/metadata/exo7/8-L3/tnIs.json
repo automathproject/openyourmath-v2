@@ -1,0 +1,27 @@
+{
+  "uuid": "tnIs",
+  "source_path": "exo7/8-L3/tnIs.tex",
+  "summary": "L'exercice demande de décrire un 2-Sylow du groupe linéaire général GL₃(ℤ₂), puis de montrer qu'une sous-algèbre spécifique est un 7-Sylow de ce groupe en utilisant des propriétés de polynômes minimaux. Enfin, il s'agit de déterminer un 3-Sylow de GL₃(ℤ₂) à l'aide d'une matrice donnée.",
+  "concepts": [
+    "théorème de Sylow",
+    "sous-groupe de Sylow",
+    "polynôme minimal",
+    "irréductibilité",
+    "groupe linéaire général",
+    "corps fini"
+  ],
+  "methods": [
+    "analyse de la structure de groupe",
+    "étude des polynômes minimaux",
+    "détermination des sous-groupes de Sylow"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "sous-groupe de GL₃(ℤ₂)",
+    "polynôme minimal",
+    "sous-algèbre"
+  ],
+  "content_hash": "3b791b91ac722d4b27fb3b4a441a025498a9afda21cb53ce752ac24a11223644",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:00:53.919Z"
+}

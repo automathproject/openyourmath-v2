@@ -1,0 +1,25 @@
+{
+  "uuid": "CtEt",
+  "source_path": "exo7/7-L2/CtEt.tex",
+  "summary": "Calcul des probabilités d'événements liés au tirage simultané de 3 ampoules dans un lot de 15 contenant 5 défectueuses. Les événements concernent la présence de 0, 1, 2 ou 3 ampoules défectueuses.",
+  "concepts": [
+    "loi hypergéométrique",
+    "probabilité conditionnelle",
+    "variable aléatoire discrète",
+    "combinaisons",
+    "tirage sans remise"
+  ],
+  "methods": [
+    "calcul de coefficients binomiaux",
+    "formule de la probabilité d'un événement complémentaire",
+    "application directe de la loi hypergéométrique"
+  ],
+  "objects": [
+    "tirage simultané",
+    "événements mutuellement exclusifs",
+    "probabilités élémentaires"
+  ],
+  "content_hash": "d351486817621fc80b8600694a108e26bd702511c204a761b97b74dd0388476d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:21:14.582Z"
+}

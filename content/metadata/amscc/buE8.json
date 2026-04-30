@@ -1,0 +1,28 @@
+{
+  "uuid": "buE8",
+  "source_path": "amscc/buE8.tex",
+  "summary": "L'exercice demande d'estimer le paramètre λ d'une loi de Poisson à partir d'un échantillon de taille 6 en utilisant la méthode du maximum de vraisemblance, puis de généraliser cet estimateur et d'en déterminer le biais.",
+  "concepts": [
+    "loi de Poisson",
+    "maximum de vraisemblance",
+    "estimateur",
+    "biais d'un estimateur",
+    "moyenne empirique",
+    "fonction de vraisemblance",
+    "log-vraisemblance"
+  ],
+  "methods": [
+    "maximisation de la vraisemblance",
+    "calcul de la moyenne empirique",
+    "détermination du biais"
+  ],
+  "objects": [
+    "variable aléatoire de Poisson",
+    "échantillon",
+    "paramètre λ",
+    "estimateur de λ"
+  ],
+  "content_hash": "6e51414b548ddf0ef5b9c11122d6f3c39f17728cf236e75116488d6a450a6443",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:46:05.265Z"
+}

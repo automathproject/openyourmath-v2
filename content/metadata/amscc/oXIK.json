@@ -1,0 +1,24 @@
+{
+  "uuid": "oXIK",
+  "source_path": "amscc/oXIK.tex",
+  "summary": "Calculer la fonction de répartition et la loi des variables aléatoires max et min de n variables exponentielles indépendantes et identiquement distribuées.",
+  "concepts": [
+    "variable aléatoire exponentielle",
+    "indépendance",
+    "fonction de répartition",
+    "densité de probabilité",
+    "loi de probabilité"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "dérivation de la fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire max",
+    "variable aléatoire min",
+    "variables aléatoires exponentielles iid"
+  ],
+  "content_hash": "3f41e891ed5149f27fb531a088c1c44f275567f036c3e9170430d51547519524",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:06:49.751Z"
+}

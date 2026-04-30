@@ -1,0 +1,32 @@
+{
+  "uuid": "iboj",
+  "source_path": "amscc/iboj.tex",
+  "summary": "L'exercice demande de construire un intervalle de confiance pour une proportion de pièces défectueuses dans un lot, puis de déterminer la taille d'échantillon nécessaire pour obtenir un intervalle de confiance d'amplitude donnée.",
+  "concepts": [
+    "intervalle de confiance",
+    "proportion",
+    "loi normale centrée réduite",
+    "niveau de confiance",
+    "marge d'erreur",
+    "estimation ponctuelle",
+    "risque statistique",
+    "amplitude d'intervalle"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de la fréquence observée",
+    "détermination de la valeur critique",
+    "calcul des bornes de l'intervalle de confiance",
+    "optimisation de la taille d'échantillon"
+  ],
+  "objects": [
+    "proportion de pièces défectueuses",
+    "taille d'échantillon",
+    "intervalle de confiance",
+    "valeur critique",
+    "marge d'erreur"
+  ],
+  "content_hash": "821b49d5ec5e1ccc8363b7fb1a1732dbf8ed1adabdcb9ff5401bc067da3d8d4d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:49:27.751Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "qcsF",
+  "source_path": "exo7/10-L3/qcsF.tex",
+  "summary": "L'exercice demande de prouver que l'idéal (x, n) dans l'anneau Z[x] n'est pas principal pour n > 1, puis d'établir que A[x] est principal si et seulement si A est un corps.",
+  "concepts": [
+    "idéal principal",
+    "anneau intègre",
+    "corps",
+    "division euclidienne",
+    "polynôme irréductible",
+    "inversibilité"
+  ],
+  "methods": [
+    "réduction à l'absurde",
+    "division euclidienne",
+    "analyse des termes constants",
+    "utilisation de la minimalité du degré"
+  ],
+  "objects": [
+    "idéal (x, n)",
+    "anneau Z[x]",
+    "polynôme générateur",
+    "élément inversible"
+  ],
+  "content_hash": "eab60e967edc5f29ada22049189c76371e1ac2b01db88319fdb53e3cdba1561e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:26:49.255Z"
+}

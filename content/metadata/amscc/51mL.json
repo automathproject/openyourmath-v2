@@ -1,0 +1,26 @@
+{
+  "uuid": "51mL",
+  "source_path": "amscc/51mL.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction donnée est une densité de probabilité, puis de l'exprimer à l'aide d'une fonction indicatrice, et enfin de calculer des probabilités associées à une variable aléatoire définie par cette densité.",
+  "concepts": [
+    "densité de probabilité",
+    "fonction indicatrice",
+    "intégrale de fonction",
+    "variable aléatoire continue",
+    "calcul de probabilité"
+  ],
+  "methods": [
+    "vérification de positivité",
+    "calcul d'intégrale",
+    "utilisation de la fonction indicatrice",
+    "calcul de probabilité par intégration"
+  ],
+  "objects": [
+    "fonction définie par morceaux",
+    "variable aléatoire",
+    "intervalle de définition"
+  ],
+  "content_hash": "fe6bd6eb9b7ef967c2aa6e66a96cb47c9cbeb7912fd92ad666d2527c101f9848",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:37:42.616Z"
+}

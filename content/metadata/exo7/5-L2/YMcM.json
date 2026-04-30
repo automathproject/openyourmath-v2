@@ -1,0 +1,32 @@
+{
+  "uuid": "YMcM",
+  "source_path": "exo7/5-L2/YMcM.tex",
+  "summary": "L'exercice étudie l'ensemble Ω des vecteurs σ ∈ ℝⁿ tels que le polynôme unitaire Pσ associé ait n racines réelles distinctes. Il demande de déterminer si Ω est ouvert ou fermé, puis l'image de la fermeture de Ω par une application f qui à σ associe Pσ.",
+  "concepts": [
+    "espace vectoriel normé",
+    "connexion",
+    "isométrie bicontinue",
+    "polynôme scindé",
+    "matrice compagnon",
+    "trigonalisation",
+    "convergence de polynômes",
+    "racines réelles distinctes"
+  ],
+  "methods": [
+    "étude de la continuité",
+    "utilisation de la matrice compagnon",
+    "méthode de Schmidt",
+    "convergence de matrices",
+    "analyse des polynômes unitaires"
+  ],
+  "objects": [
+    "polynôme unitaire",
+    "ensemble Ω",
+    "application f",
+    "matrice orthogonale",
+    "polynôme scindé sur ℝ"
+  ],
+  "content_hash": "a365c4307944695530a3f89536bfe1726922929b19dccd7304cab2e6f5b1e361",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:58:17.861Z"
+}

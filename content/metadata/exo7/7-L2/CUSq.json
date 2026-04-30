@@ -1,0 +1,23 @@
+{
+  "uuid": "CUSq",
+  "source_path": "exo7/7-L2/CUSq.tex",
+  "summary": "Calculer le taux global de patients soulagés de leur migraine selon le médicament pris (aspirine ou médicament M), puis déterminer la probabilité qu'un patient ait pris de l'aspirine sachant qu'il est soulagé.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "probabilité jointe",
+    "loi de probabilité totale",
+    "formule de Bayes"
+  ],
+  "methods": [
+    "calcul de probabilité totale",
+    "application de la formule de Bayes"
+  ],
+  "objects": [
+    "probabilité conditionnelle",
+    "probabilité jointe",
+    "événements indépendants"
+  ],
+  "content_hash": "2d249293f4edfe5d99bf7cf3810a43866002c0acf7cb7cd40a6c30c19f45cfb5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:20:51.341Z"
+}

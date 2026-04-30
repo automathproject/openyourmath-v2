@@ -1,0 +1,25 @@
+{
+  "uuid": "D6oe",
+  "source_path": "exo7/1-L1/D6oe.tex",
+  "summary": "Montrer que deux polynômes complexes donnés sont premiers entre eux.",
+  "concepts": [
+    "polynôme",
+    "pgcd",
+    "divisibilité",
+    "racine commune",
+    "algèbre linéaire",
+    "polynôme irréductible"
+  ],
+  "methods": [
+    "calcul du pgcd",
+    "évaluation de polynômes",
+    "théorème de Bézout"
+  ],
+  "objects": [
+    "polynôme complexe",
+    "pgcd de polynômes"
+  ],
+  "content_hash": "ccde20e94169f7e65e9d596bec43ec9760bec92a887a405b1aee8da3409ce080",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:41:52.696Z"
+}

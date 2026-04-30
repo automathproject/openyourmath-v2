@@ -1,0 +1,30 @@
+{
+  "uuid": "NCVL",
+  "source_path": "amscc/NCVL.tex",
+  "summary": "L'exercice demande de déterminer le reste de la division euclidienne du polynôme X^n par X^3 + X^2 + X + 1 pour tout entier naturel n. Il s'agit d'exploiter les racines du diviseur pour exprimer le reste sous forme quadratique.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "racine d'un polynôme",
+    "factorisation de polynôme",
+    "nombre complexe",
+    "polynôme unitaire",
+    "conjugaison complexe"
+  ],
+  "methods": [
+    "recherche de racine évidente",
+    "factorisation par racine évidente",
+    "utilisation du théorème de d'Alembert-Gauss",
+    "système d'équations linéaires",
+    "résolution de système sur les complexes"
+  ],
+  "objects": [
+    "polynôme monique",
+    "racine complexe",
+    "reste quadratique",
+    "système d'équations linéaires",
+    "polynôme diviseur"
+  ],
+  "content_hash": "21b6d6f1d4444b901198139ed942a5ad74e0d8198a9563e7695d2aed91065295",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:54:08.223Z"
+}

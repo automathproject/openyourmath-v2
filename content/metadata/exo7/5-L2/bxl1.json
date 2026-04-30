@@ -1,0 +1,28 @@
+{
+  "uuid": "bxl1",
+  "source_path": "exo7/5-L2/bxl1.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice 3x3 est diagonalisable avec trois valeurs propres réelles, d'en déterminer les parties entières, puis d'exprimer la trace de ses puissances successives et d'étudier la convergence d'une série entière associée.",
+  "concepts": [
+    "diagonalisation",
+    "valeur propre",
+    "polynôme caractéristique",
+    "théorème de Cayley-Hamilton",
+    "rayon de convergence",
+    "série entière"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "application du théorème des valeurs intermédiaires",
+    "résolution d'équation récurrente linéaire",
+    "calcul de la somme d'une série entière"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "trace d'une matrice",
+    "série entière",
+    "équation récurrente linéaire"
+  ],
+  "content_hash": "32244352878d2741466fbd2eaefefbd7866af4f3560f413f61cbcdeca004f9ef",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:48:25.063Z"
+}

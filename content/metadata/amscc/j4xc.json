@@ -1,0 +1,29 @@
+{
+  "uuid": "j4xc",
+  "source_path": "amscc/j4xc.tex",
+  "summary": "L'exercice demande de déterminer le paramètre λ pour qu'une fonction donnée soit la densité d'une variable aléatoire absolument continue X, puis de calculer des probabilités spécifiques et les moments (espérance et variance) de cette variable.",
+  "concepts": [
+    "densité de probabilité",
+    "variable aléatoire absolument continue",
+    "probabilité conditionnelle",
+    "espérance mathématique",
+    "variance",
+    "intégrale de fonction"
+  ],
+  "methods": [
+    "intégration sur un intervalle",
+    "calcul de probabilité conditionnelle",
+    "calcul d'espérance",
+    "calcul de variance",
+    "théorème de transfert"
+  ],
+  "objects": [
+    "fonction densité",
+    "variable aléatoire",
+    "espérance",
+    "variance"
+  ],
+  "content_hash": "68771883c4cc94fdcd3221a98f8ade4509e6d826f9f49c4c98d7f3956206502f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:03:20.972Z"
+}

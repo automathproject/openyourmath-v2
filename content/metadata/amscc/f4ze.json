@@ -1,0 +1,32 @@
+{
+  "uuid": "f4ze",
+  "source_path": "amscc/f4ze.tex",
+  "summary": "L'exercice demande de déterminer les coefficients d'une série entière solution d'une équation différentielle linéaire du premier ordre, sous condition initiale, puis de trouver le rayon de convergence de cette série. Il propose ensuite de résoudre directement l'équation différentielle pour obtenir une expression alternative de la solution.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "séries entières",
+    "coefficient binomial généralisé",
+    "rayon de convergence",
+    "intégration",
+    "variables séparables",
+    "condition initiale"
+  ],
+  "methods": [
+    "développement en série entière",
+    "règle de d'Alembert",
+    "intégration",
+    "séparation des variables",
+    "calcul de coefficients récursifs",
+    "résolution d'équation différentielle"
+  ],
+  "objects": [
+    "équation différentielle",
+    "série entière",
+    "fonction solution",
+    "coefficients de série",
+    "rayon de convergence"
+  ],
+  "content_hash": "0ecbd90de7d00d2fb9b2197e5ca21999fc06b8af2c465d93a8212e2f034e1074",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:48:57.416Z"
+}

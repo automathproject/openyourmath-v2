@@ -1,0 +1,25 @@
+{
+  "uuid": "uRLD",
+  "source_path": "exo7/7-L2/uRLD.tex",
+  "summary": "Calcul de la probabilité conditionnelle que les deux dés montrent un nombre pair, sachant qu'au moins un des deux dés montre un nombre pair.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "événements indépendants",
+    "probabilité d'un événement",
+    "espace probabilisé fini",
+    "loi uniforme discrète"
+  ],
+  "methods": [
+    "formule des probabilités conditionnelles",
+    "calcul de probabilités par dénombrement",
+    "utilisation de la définition de l'indépendance"
+  ],
+  "objects": [
+    "dés à 6 faces",
+    "événements aléatoires",
+    "probabilités conditionnelles"
+  ],
+  "content_hash": "ef3453330674b168d91d77ddfe51101adb60ca4e7e66fcdf77939c01791ce3e5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:42:15.750Z"
+}

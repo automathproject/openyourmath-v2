@@ -1,0 +1,26 @@
+{
+  "uuid": "WLtG",
+  "source_path": "exo7/5-L2/WLtG.tex",
+  "summary": "L'exercice demande d'étudier la convergence de la série de fonctions définie par $f(x) = \\sum_{n=0}^\\infty f_n(x)$ avec $f_n(x) = \frac{(-1)^n \\cos^n x}{n+1}$, puis de montrer la convergence de la série de terme général $u_n = \\int_{0}^{\\pi/2} f_n(x) dx$ et d'exprimer la somme $\\sum_{n=0}^\\\\infty u_n$ sous forme d'une intégrale.",
+  "concepts": [
+    "convergence uniforme",
+    "convergence simple",
+    "convergence absolue",
+    "théorème de convergence monotone",
+    "intégrale de fonction"
+  ],
+  "methods": [
+    "étude de la convergence des séries de fonctions",
+    "théorème de convergence monotone",
+    "intégration terme à terme",
+    "calcul d'intégrale"
+  ],
+  "objects": [
+    "série de fonctions",
+    "intégrale de fonction",
+    "terme général d'une série"
+  ],
+  "content_hash": "5cec93b34a1c3ea678d752d8e94e5928a1394ed9ac022c841d99dcfb2a1ca68a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:57:39.874Z"
+}

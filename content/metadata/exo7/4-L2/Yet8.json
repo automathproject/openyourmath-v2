@@ -1,0 +1,28 @@
+{
+  "uuid": "Yet8",
+  "source_path": "exo7/4-L2/Yet8.tex",
+  "summary": "L'exercice demande de calculer le déterminant d'une matrice B à l'aide d'une récurrence, d'en déduire les valeurs de θ pour lesquelles ce déterminant s'annule, puis d'utiliser ce résultat pour déterminer les valeurs propres d'une matrice A. On étudie ensuite les valeurs propres des matrices 2In + A et 2In - A.",
+  "concepts": [
+    "déterminant de matrice",
+    "récurrence",
+    "valeurs propres",
+    "polynôme caractéristique",
+    "identités trigonométriques",
+    "spectre d'une matrice"
+  ],
+  "methods": [
+    "développement par rapport à une ligne",
+    "récurrence mathématique",
+    "calcul de polynôme caractéristique",
+    "identités trigonométriques"
+  ],
+  "objects": [
+    "matrice tridiagonale",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "déterminant"
+  ],
+  "content_hash": "94fe02eaa1955423e0bdcd21a3eb3e2568834b510f70637c5ce1f9e2652e4df0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:54:40.225Z"
+}

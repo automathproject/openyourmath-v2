@@ -1,0 +1,27 @@
+{
+  "uuid": "ysCa",
+  "source_path": "exo7/4-L2/ysCa.tex",
+  "summary": "L'exercice étudie un endomorphisme u d'un espace vectoriel E de dimension finie sur les complexes, vérifiant u³ = u² avec des conditions supplémentaires. On doit analyser ses valeurs propres, sa diagonalisabilité, et la structure de E.",
+  "concepts": [
+    "polynôme annulateur",
+    "valeur propre",
+    "diagonalisabilité",
+    "sous-espace stable",
+    "décomposition en somme directe",
+    "endomorphisme"
+  ],
+  "methods": [
+    "analyse des conditions sur les puissances de l'endomorphisme",
+    "décomposition de l'espace vectoriel",
+    "restriction d'un endomorphisme"
+  ],
+  "objects": [
+    "endomorphisme",
+    "espace vectoriel de dimension finie",
+    "polynôme annulateur",
+    "sous-espaces Im(u²) et Ker(u²)"
+  ],
+  "content_hash": "a94262710947eb3348490b7a600719e51bf1553f92a4ccb18517d2cab3a8bbfc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:31:17.154Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "8X7R",
+  "source_path": "exo7/4-L2/8X7R.tex",
+  "summary": "Calculer la puissance n-ième d'une matrice donnée pour tout entier relatif n en utilisant trois méthodes différentes.",
+  "concepts": [
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "théorème de Cayley-Hamilton",
+    "décomposition spectrale",
+    "binôme de Newton",
+    "trace d'une matrice",
+    "rang d'une matrice"
+  ],
+  "methods": [
+    "décomposition en matrices élémentaires",
+    "diagonalisation",
+    "division euclidienne de polynômes",
+    "calcul de polynôme caractéristique",
+    "utilisation de la formule du binôme"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme caractéristique",
+    "base de vecteurs propres"
+  ],
+  "content_hash": "f5e0a233c6edca65727a4dea9355486f8d041cb17396b2bed3ee45f84331c1c3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:17:53.577Z"
+}

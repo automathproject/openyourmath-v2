@@ -1,0 +1,25 @@
+{
+  "uuid": "4Aky",
+  "source_path": "exo7/5-L2/4Aky.tex",
+  "summary": "L'exercice demande de déterminer la limite simple des fonctions $f_n(x) = \\frac{x^n e^{-x}}{n!}$ sur $\\mathbb{R}^+$ et de montrer la convergence uniforme. Ensuite, il faut calculer la limite d'une intégrale impliquant ces fonctions.",
+  "concepts": [
+    "convergence simple",
+    "convergence uniforme",
+    "formule de Stirling",
+    "intégrale impropre",
+    "limite de fonctions"
+  ],
+  "methods": [
+    "approximation asymptotique",
+    "comparaison de termes dominants",
+    "calcul d'intégrale"
+  ],
+  "objects": [
+    "fonction de variable réelle",
+    "suite de fonctions",
+    "intégrale"
+  ],
+  "content_hash": "746492f9a90de3d360837c7b29dbc277fdad63ebf43679c3c24984691e678045",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:47:03.450Z"
+}

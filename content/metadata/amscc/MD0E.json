@@ -1,0 +1,25 @@
+{
+  "uuid": "MD0E",
+  "source_path": "amscc/MD0E.tex",
+  "summary": "Calculer la probabilité d'avoir au moins une personne mesurant plus de 1,90m dans des populations de 100 et 300 personnes, en utilisant une loi de Poisson de paramètre λ = n/80.",
+  "concepts": [
+    "loi de Poisson",
+    "probabilité discrète",
+    "variable aléatoire discrète",
+    "espérance d'une loi de Poisson",
+    "fonction de masse de probabilité"
+  ],
+  "methods": [
+    "calcul de probabilité complémentaire",
+    "utilisation de la formule de la loi de Poisson",
+    "approximation exponentielle"
+  ],
+  "objects": [
+    "variable aléatoire de Poisson",
+    "population de taille n",
+    "nombre de personnes mesurant plus de 1,90m"
+  ],
+  "content_hash": "eda9249753b36bc6e5317ab5bdb327945f87a70440731deab41c8a452108bcfe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:25:23.010Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "RPTM",
+  "source_path": "exo7/5-L2/RPTM.tex",
+  "summary": "L'exercice étudie la convergence simple et uniforme d'une suite de fonctions définie par récurrence. On cherche d'abord la limite simple, puis on analyse la convergence uniforme sur ℝ⁺ et sur des intervalles [a, +∞[ avec a > 0.",
+  "concepts": [
+    "convergence simple",
+    "convergence uniforme",
+    "suite de fonctions",
+    "accroissements finis",
+    "limite de fonctions",
+    "bornitude"
+  ],
+  "methods": [
+    "analyse de la limite simple",
+    "étude de la convergence uniforme",
+    "utilisation des accroissements finis",
+    "majoration récursive"
+  ],
+  "objects": [
+    "suite de fonctions (fₙ)",
+    "limite simple ℓ",
+    "intervalle [a, +∞["
+  ],
+  "content_hash": "5384817c5b78feda995a8f7214798b8a29b84b6ca8204d62d5e085b16fab5da7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:55:50.451Z"
+}

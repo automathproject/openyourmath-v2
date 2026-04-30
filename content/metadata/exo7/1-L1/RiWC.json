@@ -1,0 +1,27 @@
+{
+  "uuid": "RiWC",
+  "source_path": "exo7/1-L1/RiWC.tex",
+  "summary": "Démontrer qu'une famille de polynômes obtenus par translations successives d'un polynôme P de degré n forme une base de l'espace vectoriel K_n[X].",
+  "concepts": [
+    "opérateur de différence finie",
+    "théorème des degrés étagés",
+    "base d'un espace vectoriel",
+    "espace vectoriel des polynômes de degré n",
+    "famille libre",
+    "famille génératrice"
+  ],
+  "methods": [
+    "utilisation de l'opérateur de différence finie",
+    "calcul des différences itérées",
+    "application du théorème des degrés étagés"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "famille de polynômes",
+    "espace vectoriel K_n[X]",
+    "opérateur de différence finie"
+  ],
+  "content_hash": "6269cbbb339ff8771d55618cd624736461824c482df6594bcda7da3b14631668",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:58:34.411Z"
+}

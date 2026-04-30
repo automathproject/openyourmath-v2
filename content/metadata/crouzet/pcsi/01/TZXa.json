@@ -1,0 +1,25 @@
+{
+  "uuid": "TZXa",
+  "source_path": "crouzet/pcsi/01/TZXa.tex",
+  "summary": "Déterminer toutes les fonctions dérivables sur ℝ vérifiant l'équation fonctionnelle f(x+y) = f(x) + f(y) pour tous réels x et y.",
+  "concepts": [
+    "équation fonctionnelle",
+    "fonction dérivable",
+    "fonction affine",
+    "raisonnement par analyse et synthèse",
+    "primitive d'une fonction constante"
+  ],
+  "methods": [
+    "analyse et synthèse",
+    "dérivation par rapport à une variable",
+    "recherche de primitives"
+  ],
+  "objects": [
+    "fonction f: ℝ → ℝ",
+    "fonction dérivée f'",
+    "fonction constante"
+  ],
+  "content_hash": "abb816424cd02bf490f99fac6f358a78af507db1ed4a430ebb421ab15cef30a0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:29:02.762Z"
+}

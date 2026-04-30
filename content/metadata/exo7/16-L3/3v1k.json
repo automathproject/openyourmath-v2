@@ -1,0 +1,28 @@
+{
+  "uuid": "3v1k",
+  "source_path": "exo7/16-L3/3v1k.tex",
+  "summary": "L'exercice demande de déterminer le nombre de zéros (comptés avec multiplicité) de plusieurs polynômes dans des domaines spécifiques du plan complexe, en utilisant le théorème des résidus.",
+  "concepts": [
+    "théorème des résidus",
+    "zéros d'un polynôme",
+    "multiplicité d'un zéro",
+    "fonction holomorphe",
+    "intégrale de contour",
+    "principe de l'argument",
+    "domaine simplement connexe"
+  ],
+  "methods": [
+    "calcul du nombre de zéros par intégrale de contour",
+    "application du théorème des résidus",
+    "analyse de la variation de l'argument"
+  ],
+  "objects": [
+    "polynôme",
+    "zéros dans un disque",
+    "zéros dans une couronne",
+    "fonction complexe"
+  ],
+  "content_hash": "e9eb433a6acc41379b1c4ad3df0be45c2286838de9303e5e24acbdf06f4bf54c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:06:20.082Z"
+}

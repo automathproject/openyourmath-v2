@@ -1,0 +1,23 @@
+{
+  "uuid": "SBSF",
+  "source_path": "exo7/1-L1/SBSF.tex",
+  "summary": "On donne un polynôme de degré 3 avec ses racines. On demande de calculer la somme des cubes de ces racines.",
+  "concepts": [
+    "racine d'un polynôme",
+    "relation de Newton",
+    "polynôme irréductible",
+    "somme des puissances des racines"
+  ],
+  "methods": [
+    "utilisation des relations de Newton",
+    "calcul de sommes symétriques"
+  ],
+  "objects": [
+    "polynôme de degré 3",
+    "racines d'un polynôme",
+    "somme des cubes des racines"
+  ],
+  "content_hash": "d5d8d845d794daa6a6a5fb6557595ea05890717357794e634aaf49ace5e68cad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:59:01.370Z"
+}

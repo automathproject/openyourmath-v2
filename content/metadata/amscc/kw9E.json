@@ -1,0 +1,26 @@
+{
+  "uuid": "kw9E",
+  "source_path": "amscc/kw9E.tex",
+  "summary": "L'exercice étudie la suite définie par un_n = sin(1/n) - ln(1 + 1/n) et demande d'en calculer la limite, de déterminer son développement limité d'ordre 2, et d'en déduire la convergence de la série associée.",
+  "concepts": [
+    "limite de suite",
+    "développement limité",
+    "série numérique",
+    "série à termes positifs",
+    "critère d'équivalence pour les séries",
+    "comparaison asymptotique"
+  ],
+  "methods": [
+    "développement limité de Taylor-Young",
+    "comparaison de séries",
+    "approximation par équivalent"
+  ],
+  "objects": [
+    "suite numérique",
+    "développement limité",
+    "série de Riemann"
+  ],
+  "content_hash": "eb5e60dd3bc7b7989d0d327549049cf3201539621a4af37cf5cb7eedd1bca091",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:31:35.495Z"
+}

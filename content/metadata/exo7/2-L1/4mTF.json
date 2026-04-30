@@ -1,0 +1,28 @@
+{
+  "uuid": "4mTF",
+  "source_path": "exo7/2-L1/4mTF.tex",
+  "summary": "L'exercice demande de prouver la convergence de la série numérique dont le terme général est 1/(n*P(n)), où P(n) est le plus grand diviseur premier de n.",
+  "concepts": [
+    "série numérique",
+    "diviseur premier",
+    "convergence absolue",
+    "majoration",
+    "induction mathématique",
+    "constante d'Euler"
+  ],
+  "methods": [
+    "découpage par cas selon le plus grand diviseur premier",
+    "majoration par produit infini",
+    "récurrence forte",
+    "comparaison avec une série convergente"
+  ],
+  "objects": [
+    "série numérique",
+    "suite des nombres premiers",
+    "terme général de série",
+    "majoration"
+  ],
+  "content_hash": "1d80bba5e980dea6a679be240dfdaf14f48f1824720a6e40e9fc898d9446097c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:00:37.673Z"
+}

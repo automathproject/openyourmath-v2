@@ -1,0 +1,27 @@
+{
+  "uuid": "P9Nj",
+  "source_path": "exo7/1-L1/P9Nj.tex",
+  "summary": "Trouver des entiers a et b tels que le polynôme aX^(n+1) - bX^n + 1 soit divisible par (X-1)^2. Calculer ensuite le quotient de cette division.",
+  "concepts": [
+    "division euclidienne de polynômes",
+    "racine double",
+    "polynôme annulateur",
+    "théorème de la racine",
+    "théorème du facteur",
+    "valeur propre"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "évaluation de polynôme",
+    "résolution système linéaire",
+    "division polynomiale"
+  ],
+  "objects": [
+    "polynôme de degré n+1",
+    "polynôme (X-1)^2",
+    "quotient de polynômes"
+  ],
+  "content_hash": "01dde9eec4e226ed78e3a304824869344b51e256fe8573303d7a79f3f0281248",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:55:30.605Z"
+}

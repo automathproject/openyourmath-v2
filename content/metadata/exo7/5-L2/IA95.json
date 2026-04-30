@@ -1,0 +1,25 @@
+{
+  "uuid": "IA95",
+  "source_path": "exo7/5-L2/IA95.tex",
+  "summary": "On considère une suite décroissante de boules fermées dans un espace vectoriel normé de dimension finie, avec des rayons tendant vers 0. On doit montrer l'existence d'une limite commune pour les centres de ces boules, la convergence de la suite des centres vers cette limite, et que l'intersection de toutes les boules est réduite à ce point limite.",
+  "concepts": [
+    "espace vectoriel normé",
+    "boule fermée",
+    "suite décroissante pour l'inclusion",
+    "convergence de suite",
+    "intersection d'ensembles"
+  ],
+  "methods": [
+    "passage à la sous-suite",
+    "utilisation de la compacité",
+    "argument de limite commune"
+  ],
+  "objects": [
+    "suite de boules fermées",
+    "suite de centres",
+    "point limite"
+  ],
+  "content_hash": "8cdb39edd190b6de3d9c044990657bca4a770717f3745906eb99fe96407a1aac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:43:16.681Z"
+}

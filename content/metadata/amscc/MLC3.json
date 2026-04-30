@@ -1,0 +1,26 @@
+{
+  "uuid": "MLC3",
+  "source_path": "amscc/MLC3.tex",
+  "summary": "L'exercice étudie l'impact du taux d'apprentissage (learning rate) sur la mise à jour d'un paramètre dans l'algorithme de descente de gradient. Il demande de calculer la nouvelle valeur du paramètre pour différents taux d'apprentissage et d'analyser le comportement de la divergence.",
+  "concepts": [
+    "descente de gradient",
+    "taux d'apprentissage",
+    "hyperparamètre",
+    "convergence",
+    "divergence",
+    "optimisation"
+  ],
+  "methods": [
+    "mise à jour des paramètres",
+    "calcul de gradient",
+    "analyse de stabilité"
+  ],
+  "objects": [
+    "paramètre",
+    "gradient",
+    "coût"
+  ],
+  "content_hash": "e5848b30c1d1a30bfa27215ee42cc5c746e9767595507fdcccfdc00932402ba7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:33:22.664Z"
+}

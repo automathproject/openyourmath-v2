@@ -1,0 +1,25 @@
+{
+  "uuid": "tbrE",
+  "source_path": "exo7/2-L1/tbrE.tex",
+  "summary": "Soit une suite de n nombres réels entre -1 et 1 dont la somme est nulle. Montrer que la valeur absolue de la somme pondérée par les indices est inférieure ou égale à la partie entière de n²/4.",
+  "concepts": [
+    "inégalité",
+    "somme pondérée",
+    "partie entière",
+    "majoration",
+    "cas par cas"
+  ],
+  "methods": [
+    "découpage en cas pairs et impairs",
+    "majoration terme à terme",
+    "réécriture de la somme pondérée"
+  ],
+  "objects": [
+    "suite numérique",
+    "somme de nombres réels",
+    "partie entière"
+  ],
+  "content_hash": "045b249432ec027d2863e8fbe3dcea15a475dc2439ac08778d96babe1e2b3069",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:04:25.268Z"
+}

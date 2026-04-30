@@ -1,0 +1,31 @@
+{
+  "uuid": "6lUg",
+  "source_path": "exo7/4-L2/6lUg.tex",
+  "summary": "L'exercice demande de déterminer une matrice A telle que la suite de Fibonacci puisse être exprimée comme une puissance de cette matrice appliquée à un vecteur initial. Il s'agit ensuite d'étudier les propriétés spectrales de cette matrice et d'en déduire une formule explicite pour les termes de la suite de Fibonacci.",
+  "concepts": [
+    "suite récurrente linéaire",
+    "matrice de passage",
+    "valeur propre",
+    "vecteur propre",
+    "polynôme caractéristique",
+    "diagonalisation",
+    "formule explicite"
+  ],
+  "methods": [
+    "réduction de matrice",
+    "calcul de polynôme caractéristique",
+    "diagonalisation",
+    "décomposition spectrale",
+    "équivalent asymptotique"
+  ],
+  "objects": [
+    "suite de Fibonacci",
+    "matrice 2x2",
+    "vecteur propre",
+    "valeurs propres",
+    "base de vecteurs propres"
+  ],
+  "content_hash": "3fa4075dbeafdc4df702905ffe4da49c661b02411368c6ebd76b5cf1252da0f0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:16:00.036Z"
+}

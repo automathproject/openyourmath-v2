@@ -1,0 +1,28 @@
+{
+  "uuid": "jbD2",
+  "source_path": "exo7/8-L3/jbD2.tex",
+  "summary": "L'exercice demande de montrer que l'intersection d'un sous-groupe distingué H avec un p-Sylow P de G est un p-Sylow de H, et que le quotient HP/H est un p-Sylow de G/H.",
+  "concepts": [
+    "sous-groupe distingué",
+    "p-Sylow",
+    "ordre d'un groupe",
+    "théorème de Sylow",
+    "quotient de groupes",
+    "isomorphisme de groupes"
+  ],
+  "methods": [
+    "calcul d'ordre de sous-groupes",
+    "utilisation des propriétés des p-Sylow",
+    "analyse des relations d'ordre dans les groupes"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe distingué H",
+    "p-Sylow P",
+    "intersection H ∩ P",
+    "quotient HP/H"
+  ],
+  "content_hash": "9689fdb0bffffad0955d63a127c1222141bcfebd1d58eca7581e101f48d18f95",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:58:40.369Z"
+}

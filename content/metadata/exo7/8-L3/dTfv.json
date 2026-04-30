@@ -1,0 +1,28 @@
+{
+  "uuid": "dTfv",
+  "source_path": "exo7/8-L3/dTfv.tex",
+  "summary": "L'exercice demande de montrer que le cardinal du produit HK de deux sous-groupes H et K d'un groupe G, avec H ∩ K = {e_G}, est égal au produit des cardinaux de H et K. Ensuite, il s'agit d'en déduire des propriétés sur les sous-groupes d'ordre premier dans un groupe d'ordre pq avec p > q.",
+  "concepts": [
+    "sous-groupe distingué",
+    "cardinal d'un ensemble",
+    "produit de sous-groupes",
+    "automorphisme de groupe",
+    "ordre d'un élément",
+    "théorème de Lagrange"
+  ],
+  "methods": [
+    "démonstration par bijection",
+    "utilisation de l'ordre d'un sous-groupe",
+    "analyse des intersections de sous-groupes",
+    "application du théorème de Lagrange"
+  ],
+  "objects": [
+    "groupe fini",
+    "sous-groupes H et K",
+    "produit HK",
+    "sous-groupe d'ordre premier"
+  ],
+  "content_hash": "79414e20a86cace7d6449a9710a578a6c6a6c0815467941126461b00da921ea9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:01:31.550Z"
+}

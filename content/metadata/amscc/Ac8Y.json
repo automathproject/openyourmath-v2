@@ -1,0 +1,30 @@
+{
+  "uuid": "Ac8Y",
+  "source_path": "amscc/Ac8Y.tex",
+  "summary": "Calculer l'espérance et la variance d'une variable aléatoire Y définie comme l'exponentielle d'une variable normale X. Déterminer ensuite la fonction densité de Y lorsque X suit une loi normale centrée réduite.",
+  "concepts": [
+    "loi normale",
+    "variable aléatoire à densité",
+    "espérance mathématique",
+    "variance",
+    "théorème de transfert",
+    "fonction de répartition",
+    "densité de probabilité"
+  ],
+  "methods": [
+    "standardisation",
+    "changement de variable",
+    "intégration par parties",
+    "linéarité de l'espérance",
+    "théorème de Koenig-Huygens"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "variable aléatoire exponentielle",
+    "fonction de répartition",
+    "densité de probabilité"
+  ],
+  "content_hash": "cd828413154f17b3e119b1f40e38394dd3bc65152f158802be4f3988eafe1670",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:41:02.926Z"
+}

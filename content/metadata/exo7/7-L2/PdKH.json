@@ -1,0 +1,27 @@
+{
+  "uuid": "PdKH",
+  "source_path": "exo7/7-L2/PdKH.tex",
+  "summary": "L'exercice demande de déterminer la loi exacte d'une variable aléatoire binomiale représentant le nombre de réservations confirmées pour un vol, puis de calculer le nombre maximal de billets à vendre pour garantir une probabilité de 95% que tous les passagers puissent embarquer, en utilisant une approximation normale.",
+  "concepts": [
+    "loi binomiale",
+    "approximation normale",
+    "espérance",
+    "variance",
+    "intervalle de confiance",
+    "test d'hypothèses"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de quantiles"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "espérance",
+    "écart-type",
+    "inéquation"
+  ],
+  "content_hash": "2b60cc43e360b0187b48be75ff9a6116d70a52323f7b56fcad1e28c49ef29fb5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:40:47.665Z"
+}

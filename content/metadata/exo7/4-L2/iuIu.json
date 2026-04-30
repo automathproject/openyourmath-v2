@@ -1,0 +1,29 @@
+{
+  "uuid": "iuIu",
+  "source_path": "exo7/4-L2/iuIu.tex",
+  "summary": "L'exercice demande de déterminer si trois matrices données sont diagonalisables et, si c'est le cas, de les réduire par diagonalisation.",
+  "concepts": [
+    "diagonalisation",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "critère de diagonalisation",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "détermination des vecteurs propres",
+    "construction de la matrice diagonale"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrice diagonale"
+  ],
+  "content_hash": "5eb473f55640eadc5eca80f247ca0fc4901da6912de77bd15fa761d00a09009b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:07:37.960Z"
+}

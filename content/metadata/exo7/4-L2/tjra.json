@@ -1,0 +1,30 @@
+{
+  "uuid": "tjra",
+  "source_path": "exo7/4-L2/tjra.tex",
+  "summary": "L'exercice demande de déterminer si deux matrices carrées réelles de taille 3x3 sont trigonalisables, puis de les réduire et de déterminer leur polynôme minimal. Il s'agit d'appliquer les techniques de réduction des endomorphismes.",
+  "concepts": [
+    "trigonalisation",
+    "diagonalisation",
+    "polynôme minimal",
+    "valeurs propres",
+    "vecteurs propres",
+    "sous-espace stable",
+    "réduction d'endomorphisme"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "détermination des sous-espaces propres",
+    "construction de la forme trigonale"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres",
+    "sous-espaces stables"
+  ],
+  "content_hash": "66d5e96628755adc13d5e5ecb5a73a83576b670e4f19eb9294459b7c02ce537a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:21:31.129Z"
+}

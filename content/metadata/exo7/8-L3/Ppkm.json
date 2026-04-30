@@ -1,0 +1,25 @@
+{
+  "uuid": "Ppkm",
+  "source_path": "exo7/8-L3/Ppkm.tex",
+  "summary": "Montrer qu'un élément x^{n-1} appartient au centre d'un groupe G, sous l'hypothèse que l'application x → x^n est un automorphisme de G.",
+  "concepts": [
+    "automorphisme de groupe",
+    "centre d'un groupe",
+    "commutativité",
+    "surjectivité",
+    "sous-groupe distingué"
+  ],
+  "methods": [
+    "manipulation d'équations de groupe",
+    "utilisation de la surjectivité",
+    "analyse de la commutativité"
+  ],
+  "objects": [
+    "groupe G",
+    "élément x^{n-1}",
+    "automorphisme x → x^n"
+  ],
+  "content_hash": "d0cf3bd2690f7669522e2a028eb902a55be729664faec030ba43857e93af771e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:58:13.722Z"
+}

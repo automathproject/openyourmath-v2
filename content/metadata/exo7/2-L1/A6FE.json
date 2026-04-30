@@ -1,0 +1,28 @@
+{
+  "uuid": "A6FE",
+  "source_path": "exo7/2-L1/A6FE.tex",
+  "summary": "L'exercice étudie une suite récurrente définie par une relation de récurrence rationnelle et demande de montrer que cette suite est de signe constant à partir d'un certain rang, puis d'étudier la convergence d'une suite transformée et d'en déduire les conditions de convergence d'une série associée.",
+  "concepts": [
+    "suite récurrente",
+    "convergence de suite",
+    "série numérique",
+    "relation de récurrence",
+    "signe constant",
+    "transformée logarithmique"
+  ],
+  "methods": [
+    "étude asymptotique",
+    "comparaison de termes",
+    "téléscopage",
+    "somme de série"
+  ],
+  "objects": [
+    "suite $(u_n)$",
+    "suite $(v_n)$",
+    "série $\\sum u_n$",
+    "relation de récurrence"
+  ],
+  "content_hash": "7b2c80103f3821c2582ad187191e8e18acc32be0f3074e65fc879794eccf51d2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:03:32.968Z"
+}

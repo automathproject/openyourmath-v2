@@ -1,0 +1,26 @@
+{
+  "uuid": "f1E9",
+  "source_path": "exo7/1-L1/f1E9.tex",
+  "summary": "On considère le polynôme P(X) = (X+1)^n - (X-1)^n où n est un entier naturel non nul. On demande de déterminer son degré et de le factoriser dans l'ensemble des polynômes à coefficients complexes.",
+  "concepts": [
+    "polynôme",
+    "degré d'un polynôme",
+    "factorisation",
+    "polynôme à coefficients complexes",
+    "binôme de Newton",
+    "racines complexes"
+  ],
+  "methods": [
+    "développement binomial",
+    "factorisation par racines",
+    "identification des racines"
+  ],
+  "objects": [
+    "polynôme P(X)",
+    "entier naturel n",
+    "racines complexes"
+  ],
+  "content_hash": "6e5a014bc12078116f3d125e007a0c40eb739e6e002e86194b750fbcbbf771ce",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:12:43.088Z"
+}

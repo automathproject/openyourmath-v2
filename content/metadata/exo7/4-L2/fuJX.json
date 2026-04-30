@@ -1,0 +1,27 @@
+{
+  "uuid": "fuJX",
+  "source_path": "exo7/4-L2/fuJX.tex",
+  "summary": "Trouver toutes les suites complexes vérifiant une relation de récurrence linéaire d'ordre 3. Montrer que les solutions réelles sont de la forme donnée avec des paramètres réels.",
+  "concepts": [
+    "relation de récurrence linéaire",
+    "polynôme caractéristique",
+    "racines complexes",
+    "diagonalisation",
+    "espace vectoriel des suites"
+  ],
+  "methods": [
+    "résolution de relation de récurrence",
+    "calcul des racines du polynôme caractéristique",
+    "décomposition en valeurs propres",
+    "expression des solutions générales"
+  ],
+  "objects": [
+    "suite récurrente",
+    "polynôme annulateur",
+    "racines complexes",
+    "solution générale"
+  ],
+  "content_hash": "74148fe15914c557e611718e334a12e2e15200c957749bf498f7bccf4f5efa5c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:03:23.098Z"
+}

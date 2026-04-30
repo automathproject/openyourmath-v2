@@ -1,0 +1,27 @@
+{
+  "uuid": "nT2w",
+  "source_path": "amscc/nT2w.tex",
+  "summary": "Calculer la taille de sortie d'une convolution d'image avec différents strides, analyser le déplacement du noyau, et déterminer l'impact sur la résolution spatiale. L'exercice utilise une image 6x6 et un noyau 3x3 avec padding 1.",
+  "concepts": [
+    "convolution discrète",
+    "stride",
+    "padding",
+    "sous-échantillonnage",
+    "résolution spatiale",
+    "aliasing"
+  ],
+  "methods": [
+    "calcul de taille de sortie",
+    "analyse de déplacement de noyau",
+    "formule de convolution"
+  ],
+  "objects": [
+    "image",
+    "noyau moyenneur",
+    "taille de sortie",
+    "stride"
+  ],
+  "content_hash": "b08afa4d66801b9149da8c14258a97889707fb63735b4c74ba8f1d256013001b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:36:29.084Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "dYjG",
+  "source_path": "exo7/1-L1/dYjG.tex",
+  "summary": "Trouver le reste de la division d'un polynôme P par X⁴-1, connaissant les restes de ses divisions par X²+1 et X²-1.",
+  "concepts": [
+    "division euclidienne de polynômes",
+    "polynôme unitaire",
+    "racine d'un polynôme",
+    "algèbre linéaire",
+    "polynôme scindé"
+  ],
+  "methods": [
+    "division euclidienne",
+    "identification des coefficients",
+    "utilisation des relations de Bézout"
+  ],
+  "objects": [
+    "polynôme P",
+    "polynômes diviseurs",
+    "reste de division"
+  ],
+  "content_hash": "2e7538bebab79793cb9e4a1b16175a9940a4c5dc17599d2bce425d3bad98af74",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:10:56.143Z"
+}

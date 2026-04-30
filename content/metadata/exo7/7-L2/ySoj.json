@@ -1,0 +1,22 @@
+{
+  "uuid": "ySoj",
+  "source_path": "exo7/7-L2/ySoj.tex",
+  "summary": "Calculer la probabilité que Madame Michel et Monsieur Lustucru se croisent au marché, en modélisant leurs heures d'arrivée par des lois uniformes.",
+  "concepts": [
+    "loi uniforme",
+    "probabilité conditionnelle",
+    "modélisation probabiliste",
+    "variable aléatoire continue"
+  ],
+  "methods": [
+    "calcul d'intersection d'intervalles",
+    "calcul de probabilité géométrique"
+  ],
+  "objects": [
+    "variable aléatoire d'arrivée",
+    "intervalle de temps"
+  ],
+  "content_hash": "39deec978b4f19ee954d9ef3bb6bdda2ec818eeb3b2a0f8c525469b512d06405",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:11:59.159Z"
+}

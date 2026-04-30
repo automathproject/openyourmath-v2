@@ -1,0 +1,25 @@
+{
+  "uuid": "SPBL",
+  "source_path": "exo7/2-L1/SPBL.tex",
+  "summary": "L'exercice demande de prouver la convergence de deux suites dérivées d'une suite convergente : la suite des inverses et la suite des racines carrées. La suite de base est non nulle et converge vers une limite non nulle.",
+  "concepts": [
+    "convergence de suite",
+    "limite de suite",
+    "fonction continue",
+    "inverse d'un nombre",
+    "racine carrée"
+  ],
+  "methods": [
+    "passage à la limite",
+    "utilisation de la continuité"
+  ],
+  "objects": [
+    "suite numérique",
+    "limite de suite",
+    "fonction inverse",
+    "fonction racine carrée"
+  ],
+  "content_hash": "80087de5b34ac4264fcefedb8d0d1f3170eb08fe37310a33cc4a251f8fc01075",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:18:30.886Z"
+}

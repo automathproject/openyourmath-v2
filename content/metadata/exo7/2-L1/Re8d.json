@@ -1,0 +1,25 @@
+{
+  "uuid": "Re8d",
+  "source_path": "exo7/2-L1/Re8d.tex",
+  "summary": "L'exercice demande de montrer qu'un nombre décimal construit à partir des chiffres des unités des coefficients binomiaux C_n^k est rationnel, en exploitant la périodicité de la suite de ces chiffres.",
+  "concepts": [
+    "nombre rationnel",
+    "périodicité des suites",
+    "coefficient binomial",
+    "chiffre des unités",
+    "divisibilité"
+  ],
+  "methods": [
+    "étude de la périodicité",
+    "calcul de coefficient binomial",
+    "analyse de la divisibilité"
+  ],
+  "objects": [
+    "suite numérique",
+    "coefficient binomial C_n^k",
+    "chiffre des unités"
+  ],
+  "content_hash": "1309dc945f8dc3e256b3e3eda95c4efe207b79ac952e57154958c3b52babbfe7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:53:38.833Z"
+}

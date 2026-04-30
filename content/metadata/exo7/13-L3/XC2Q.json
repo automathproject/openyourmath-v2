@@ -1,0 +1,27 @@
+{
+  "uuid": "XC2Q",
+  "source_path": "exo7/13-L3/XC2Q.tex",
+  "summary": "L'exercice demande de déterminer les valeurs propres d'une matrice carrée donnée, puis de trouver un système de solutions pour l'équation différentielle linéaire x' = Ax, où A est une matrice à coefficients constants.",
+  "concepts": [
+    "valeurs propres",
+    "vecteurs propres",
+    "équation différentielle linéaire",
+    "système linéaire",
+    "matrice carrée",
+    "diagonalisation"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "résolution d'équation algébrique",
+    "construction de solutions exponentielles"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice 2x2",
+    "matrice 4x4",
+    "système de solutions"
+  ],
+  "content_hash": "e2b3819c9d1f553b08727b49729d010ac64657a77ca24aa78717b69d055650fd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:13:26.466Z"
+}

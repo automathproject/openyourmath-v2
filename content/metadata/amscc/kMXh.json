@@ -1,0 +1,26 @@
+{
+  "uuid": "kMXh",
+  "source_path": "amscc/kMXh.tex",
+  "summary": "L'exercice demande de déterminer la loi de la variable aléatoire X, sachant que le couple (X,Y) suit une loi uniforme sur le disque unité centré en (0,0).",
+  "concepts": [
+    "loi uniforme",
+    "densité conjointe",
+    "densité marginale",
+    "intégration conditionnelle",
+    "fonction indicatrice"
+  ],
+  "methods": [
+    "intégration conditionnelle",
+    "changement de variable",
+    "calcul d'intégrale"
+  ],
+  "objects": [
+    "variable aléatoire à densité",
+    "disque unité",
+    "densité conjointe",
+    "densité marginale"
+  ],
+  "content_hash": "c9c738edceaac97128a308c1197bd0240b3bc3751a114870239241110d0791b3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:04:26.084Z"
+}

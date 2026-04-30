@@ -1,0 +1,28 @@
+{
+  "uuid": "gyMl",
+  "source_path": "exo7/5-L2/gyMl.tex",
+  "summary": "L'exercice demande de montrer la convergence d'une moyenne arithmétique de valeurs d'une fonction périodique vers son intégrale moyenne, d'abord pour une fonction de classe C^1, puis pour une fonction continue. Il s'ensuit une étude de la nature d'une série impliquant des sinus carrés.",
+  "concepts": [
+    "série de Fourier",
+    "fonction périodique",
+    "intégrale moyenne",
+    "densité des polynômes trigonométriques",
+    "convergence de séries",
+    "transformation d'Abel"
+  ],
+  "methods": [
+    "développement en série de Fourier",
+    "approximation par polynômes trigonométriques",
+    "estimation asymptotique",
+    "transformation d'Abel"
+  ],
+  "objects": [
+    "fonction 1-périodique",
+    "moyenne arithmétique",
+    "série de sinus carrés",
+    "polynômes trigonométriques"
+  ],
+  "content_hash": "5647d7ce7d7e90d3a88665d106106c332dca301e402394808ba6edfcfa62f30d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:27:34.156Z"
+}

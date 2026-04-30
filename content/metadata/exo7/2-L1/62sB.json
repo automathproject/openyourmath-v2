@@ -1,0 +1,24 @@
+{
+  "uuid": "62sB",
+  "source_path": "exo7/2-L1/62sB.tex",
+  "summary": "On considère une suite de réels strictement positifs convergeant vers 0. On demande de montrer l'existence d'une bijection permettant de réordonner cette suite pour qu'elle converge vers 0 de manière strictement décroissante.",
+  "concepts": [
+    "convergence de suite",
+    "bijection",
+    "réordonnancement de suite",
+    "suite strictement décroissante",
+    "propriété de limite"
+  ],
+  "methods": [
+    "construction explicite de bijection",
+    "utilisation de la convergence de la suite originale"
+  ],
+  "objects": [
+    "suite de réels strictement positifs",
+    "bijection de ℕ vers ℕ",
+    "suite réordonnée"
+  ],
+  "content_hash": "7e2951d2fd48b876fdf1f4cf5cad557e6fc6647f103c575cb916085beee52021",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:04:12.485Z"
+}

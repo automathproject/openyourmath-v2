@@ -1,0 +1,26 @@
+{
+  "uuid": "udja",
+  "source_path": "exo7/4-L2/udja.tex",
+  "summary": "L'exercice demande de déterminer les valeurs propres et les vecteurs propres d'une matrice 3x3 donnée, puis de calculer la puissance n-ième de cette matrice pour tout entier naturel n.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "polynôme caractéristique",
+    "diagonalisation",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "résolution d'équation polynomiale",
+    "diagonalisation de matrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "valeurs propres",
+    "vecteurs propres",
+    "puissance de matrice"
+  ],
+  "content_hash": "53d43933efe77e7d738691e4636bdc72d0d10e7b7f00a5af906aabf62f71d88d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:23:36.312Z"
+}

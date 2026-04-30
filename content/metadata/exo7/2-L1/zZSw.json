@@ -1,0 +1,28 @@
+{
+  "uuid": "zZSw",
+  "source_path": "exo7/2-L1/zZSw.tex",
+  "summary": "Trouver tous les couples de nombres rationnels strictement positifs (x, y) tels que x < y et x^y = y^x. L'énoncé demande de montrer l'existence d'entiers naturels m et n vérifiant certaines conditions algébriques sur les décompositions en facteurs premiers.",
+  "concepts": [
+    "nombres rationnels",
+    "décomposition en facteurs premiers",
+    "pgcd",
+    "puissances entières",
+    "équation exponentielle",
+    "arithmétique des nombres entiers"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "analyse des exposants",
+    "comparaison d'entiers",
+    "utilisation du théorème de Bézout"
+  ],
+  "objects": [
+    "couple de nombres rationnels",
+    "exposants entiers",
+    "facteurs premiers",
+    "entiers naturels"
+  ],
+  "content_hash": "8c129ba965494aa43cfdc635c36896fb9fb1d72aa5f650edfaecf9050de938fe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:07:43.722Z"
+}

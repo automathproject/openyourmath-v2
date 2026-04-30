@@ -1,0 +1,26 @@
+{
+  "uuid": "SgPn",
+  "source_path": "exo7/2-L1/SgPn.tex",
+  "summary": "On considère une suite de réels strictement positifs, décroissante et de limite nulle. On demande de montrer que la série de terme général (a_n - a_{n+1})/a_n diverge.",
+  "concepts": [
+    "suite numérique",
+    "série numérique",
+    "limite de suite",
+    "intégrale impropre",
+    "comparaison série-intégrale",
+    "divergence de série"
+  ],
+  "methods": [
+    "méthode des rectangles",
+    "comparaison terme à terme",
+    "étude de la limite du terme général"
+  ],
+  "objects": [
+    "suite décroissante",
+    "série de terme général",
+    "intégrale de fonction 1/t"
+  ],
+  "content_hash": "fe968ecbcc751e0362b664e0b31be2531ab563448c0cc1958fd287f7d5b61d1f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:18:45.705Z"
+}

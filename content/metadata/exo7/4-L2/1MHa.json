@@ -1,0 +1,29 @@
+{
+  "uuid": "1MHa",
+  "source_path": "exo7/4-L2/1MHa.tex",
+  "summary": "L'exercice étudie une matrice réelle A telle que A² = -I. Il demande de montrer que la dimension n de l'espace est paire, de calculer les spectres réels et complexes de A, et de démontrer la structure de A par blocs diagonaux.",
+  "concepts": [
+    "matrice carrée",
+    "polynôme annulateur",
+    "spectre d'une matrice",
+    "diagonalisation",
+    "sous-espace propre",
+    "conjugaison complexe",
+    "semblable"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "analyse des valeurs propres",
+    "construction de base de sous-espace propre",
+    "réduction par blocs"
+  ],
+  "objects": [
+    "matrice réelle",
+    "valeurs propres",
+    "sous-espaces propres",
+    "blocs diagonaux"
+  ],
+  "content_hash": "8bb356c730df4e0bdd1e18333bdb73b75ec3e063510f591da05f26b408c95257",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:09:15.301Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "KXMd",
+  "source_path": "exo7/7-L2/KXMd.tex",
+  "summary": "Calcul de la probabilité d'obtenir exactement 2 dames et 3 trèfles en tirant simultanément 6 cartes dans un jeu de 32 cartes.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "loi binomiale",
+    "combinaisons",
+    "probabilité discrète",
+    "tirage sans remise"
+  ],
+  "methods": [
+    "calcul de coefficients binomiaux",
+    "formule de probabilité classique"
+  ],
+  "objects": [
+    "jeu de cartes",
+    "tirage simultané",
+    "cartes spécifiques"
+  ],
+  "content_hash": "829db44d3da54b6eaf59ab7a1788a505ef3250439267ec6938356a615fd74e74",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:24:54.364Z"
+}

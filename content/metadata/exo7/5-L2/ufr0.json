@@ -1,0 +1,26 @@
+{
+  "uuid": "ufr0",
+  "source_path": "exo7/5-L2/ufr0.tex",
+  "summary": "On considère une suite définie par une fonction k-lipschitzienne dans un espace vectoriel normé de dimension finie. On demande de montrer que cette suite est de Cauchy et que sa limite est l'unique solution d'une équation fixe.",
+  "concepts": [
+    "espace vectoriel normé",
+    "fonction lipschitzienne",
+    "suite de Cauchy",
+    "point fixe",
+    "convergence dans un evn",
+    "contraction"
+  ],
+  "methods": [
+    "estimation de distance",
+    "critère de Cauchy",
+    "unicité du point fixe"
+  ],
+  "objects": [
+    "suite vectorielle",
+    "fonction k-lipschitzienne",
+    "point fixe"
+  ],
+  "content_hash": "d4fa6745e1cf5d5bb953a08a3432d65028b8e756082776074f283c4fbdf3cc2a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:14:33.119Z"
+}

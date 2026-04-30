@@ -1,0 +1,29 @@
+{
+  "uuid": "KaeJ",
+  "source_path": "exo7/4-L2/KaeJ.tex",
+  "summary": "Montrer que pour deux endomorphismes commutants u et v, avec v nilpotent, le déterminant de u+v est égal à celui de u.",
+  "concepts": [
+    "endomorphisme",
+    "commutativité",
+    "nilpotence",
+    "polynôme caractéristique",
+    "valeur propre",
+    "déterminant",
+    "théorème de Cayley-Hamilton"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "utilisation de la nilpotence",
+    "déterminant de matrices",
+    "commutativité des endomorphismes"
+  ],
+  "objects": [
+    "endomorphisme",
+    "espace vectoriel de dimension finie",
+    "polynôme caractéristique",
+    "déterminant"
+  ],
+  "content_hash": "ad209f9e4ab508bd604d6f3602565cd2ada922765e84a8643abb5a65d9a6d8fb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:34:15.655Z"
+}

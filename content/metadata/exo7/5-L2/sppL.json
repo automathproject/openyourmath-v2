@@ -1,0 +1,29 @@
+{
+  "uuid": "sppL",
+  "source_path": "exo7/5-L2/sppL.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de stabilité des ensembles ouverts et fermés par intersection et union, pour un nombre fini d'ensembles, et d'illustrer la perte de ces propriétés dans le cas infini.",
+  "concepts": [
+    "ensemble ouvert",
+    "ensemble fermé",
+    "topologie",
+    "intersection",
+    "union",
+    "stabilité par intersection",
+    "stabilité par union",
+    "nombre fini d'ensembles"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "utilisation de la définition d'ouvert",
+    "utilisation de la définition de fermé",
+    "contre-exemple"
+  ],
+  "objects": [
+    "ensembles ouverts",
+    "ensembles fermés",
+    "suites infinies d'ensembles"
+  ],
+  "content_hash": "e0ccf26c3c9c9f5addeaf93f598a9d17a243b9ea7dd85d6aff0def4a5a8ce2e6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:13:38.567Z"
+}

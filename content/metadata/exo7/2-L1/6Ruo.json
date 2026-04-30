@@ -1,0 +1,24 @@
+{
+  "uuid": "6Ruo",
+  "source_path": "exo7/2-L1/6Ruo.tex",
+  "summary": "On considère deux suites strictement positives et on donne une relation d'inégalité entre leurs rapports successifs. On demande de montrer que la convergence vers 0 de l'une implique celle de l'autre.",
+  "concepts": [
+    "suite numérique",
+    "convergence de suite",
+    "inégalité",
+    "limite de suite",
+    "suite strictement positive"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la limite"
+  ],
+  "objects": [
+    "suite (a_n)",
+    "suite (b_n)",
+    "rapport de termes consécutifs"
+  ],
+  "content_hash": "cb4675dabb3a3f6e94f416dcb1d685021fe7dfbf6373d7ea90bed7a5b60b6873",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:04:31.969Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "GvsU",
+  "source_path": "exo7/5-L2/GvsU.tex",
+  "summary": "On considère une suite de fonctions (f_n) convergeant uniformément vers une fonction f, et une fonction g continue. On demande de prouver que la composée g ∘ f_n converge uniformément vers g ∘ f.",
+  "concepts": [
+    "convergence uniforme",
+    "continuité",
+    "composition de fonctions",
+    "limite de suite de fonctions",
+    "théorème de composition des limites"
+  ],
+  "methods": [
+    "raisonnement par epsilon-delta",
+    "utilisation de la définition de la convergence uniforme",
+    "application du théorème de composition des limites"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction continue",
+    "fonction composée"
+  ],
+  "content_hash": "f9947cd6e887d6c6063d1f9a95cfd0a44c83f023c6ab452c58709a93668657e2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:50:54.959Z"
+}

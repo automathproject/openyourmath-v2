@@ -1,0 +1,25 @@
+{
+  "uuid": "0uu5",
+  "source_path": "exo7/7-L2/0uu5.tex",
+  "summary": "Calculer la probabilité d'avoir au moins une personne mesurant plus de 1.90m dans un échantillon de 100 et 300 personnes, en utilisant une loi de Poisson.",
+  "concepts": [
+    "loi de Poisson",
+    "variable aléatoire discrète",
+    "probabilité d'événement rare",
+    "approximation de Poisson",
+    "espérance d'une loi de Poisson"
+  ],
+  "methods": [
+    "approximation par la loi de Poisson",
+    "calcul de probabilité complémentaire",
+    "utilisation de la fonction exponentielle"
+  ],
+  "objects": [
+    "variable aléatoire de comptage",
+    "paramètre de Poisson",
+    "probabilité d'au moins un succès"
+  ],
+  "content_hash": "009cad8d4298fc963ce3f1dfc32e654b76d7d4fa1fca5bed638cb375c2c606c1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:13:37.192Z"
+}

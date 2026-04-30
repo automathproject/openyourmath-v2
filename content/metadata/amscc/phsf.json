@@ -1,0 +1,28 @@
+{
+  "uuid": "phsf",
+  "source_path": "amscc/phsf.tex",
+  "summary": "L'exercice demande de modéliser une expérience aléatoire avec un dé à 6 faces en définissant l'univers des résultats possibles, puis d'analyser les probabilités des événements associés. On étudie notamment la probabilité de résultats impairs, de résultats supérieurs ou égaux à 3, et la compatibilité d'événements.",
+  "concepts": [
+    "probabilité discrète",
+    "événement",
+    "univers d'une expérience aléatoire",
+    "événements incompatibles",
+    "probabilité conditionnelle",
+    "loi de probabilité"
+  ],
+  "methods": [
+    "calcul de probabilité élémentaire",
+    "utilisation des propriétés des événements",
+    "calcul de probabilité d'union",
+    "calcul de probabilité d'intersection"
+  ],
+  "objects": [
+    "dé à 6 faces",
+    "événements A et B",
+    "événements C et D incompatibles",
+    "probabilités des résultats"
+  ],
+  "content_hash": "c98f12c26a7caa154dda04effba6137d0cbd20bb922b6b9e8262dcc8a9a3029a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:39:36.657Z"
+}

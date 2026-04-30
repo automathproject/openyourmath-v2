@@ -1,0 +1,26 @@
+{
+  "uuid": "BZWM",
+  "source_path": "amscc/BZWM.tex",
+  "summary": "L'exercice demande de prouver la convergence d'une série à termes positifs définie par une suite explicite. La suite est donnée par un rapport entre un polynôme et une factorielle.",
+  "concepts": [
+    "série à termes positifs",
+    "convergence de série",
+    "règle de d'Alembert",
+    "suite numérique",
+    "limite de suite",
+    "croissance factorielle"
+  ],
+  "methods": [
+    "calcul de quotient de termes consécutifs",
+    "application de la règle de d'Alembert",
+    "simplification algébrique"
+  ],
+  "objects": [
+    "suite $(u_n)$",
+    "série $\\sum_{n\\geq 1} u_n$",
+    "quotient $\\frac{u_{n+1}}{u_n}$"
+  ],
+  "content_hash": "941ca96d4cfa524fb8faa8b3a685ff37df1c21d32fb2ec772dfa476f50cf3e6a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:05:07.068Z"
+}

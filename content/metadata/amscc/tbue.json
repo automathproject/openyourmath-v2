@@ -1,0 +1,31 @@
+{
+  "uuid": "tbue",
+  "source_path": "amscc/tbue.tex",
+  "summary": "Déterminer l'estimateur du maximum de vraisemblance pour un paramètre de translation θ dans trois cas de densités différentes : loi normale, loi de Laplace et une densité uniforme sur un intervalle.",
+  "concepts": [
+    "vraisemblance",
+    "maximum de vraisemblance",
+    "densité de probabilité",
+    "modèle de translation",
+    "médiane empirique",
+    "moyenne empirique",
+    "optimisation"
+  ],
+  "methods": [
+    "maximisation de la vraisemblance",
+    "minimisation des carrés",
+    "minimisation des valeurs absolues",
+    "optimisation sous contrainte"
+  ],
+  "objects": [
+    "densité de probabilité",
+    "paramètre de translation",
+    "vraisemblance",
+    "log-vraisemblance",
+    "médiane empirique",
+    "moyenne empirique"
+  ],
+  "content_hash": "ced39edb34c8b633c2c9e4e86926f0a61666cfa478cf61ca17ea8dbb041bd027",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:55:47.171Z"
+}

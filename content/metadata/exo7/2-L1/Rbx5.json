@@ -1,0 +1,27 @@
+{
+  "uuid": "Rbx5",
+  "source_path": "exo7/2-L1/Rbx5.tex",
+  "summary": "L'exercice demande de calculer l'infimum sur l'intervalle ]0,π[ de la fonction qui associe à chaque α la borne supérieure des valeurs absolues de sin(nα) pour n ∈ ℕ. Il s'agit d'étudier le comportement de la suite sin(nα) pour α variant dans ]0,π[.",
+  "concepts": [
+    "borne supérieure",
+    "infimum",
+    "suite trigonométrique",
+    "fonction de deux variables",
+    "majoration",
+    "minimisation"
+  ],
+  "methods": [
+    "analyse de cas",
+    "comparaison d'intervalles",
+    "utilisation de la périodicité",
+    "majoration par une valeur constante"
+  ],
+  "objects": [
+    "fonction f(α)",
+    "suite sin(nα)",
+    "intervalle ]0,π["
+  ],
+  "content_hash": "5793a2e5a6d0a60ca723b35b1e56ae49a0257a505c51a210ddedd3814f9ed25a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:17:59.359Z"
+}

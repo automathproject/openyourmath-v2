@@ -1,0 +1,29 @@
+{
+  "uuid": "ihUM",
+  "source_path": "exo7/4-L2/ihUM.tex",
+  "summary": "Soient f et g deux endomorphismes d'un espace vectoriel de dimension finie vérifiant fg - gf = f. Montrer que f est nilpotent.",
+  "concepts": [
+    "endomorphisme",
+    "espace vectoriel de dimension finie",
+    "nilpotence",
+    "polynôme minimal",
+    "valeur propre",
+    "polynôme annulateur",
+    "décomposition en éléments simples"
+  ],
+  "methods": [
+    "utilisation de la linéarité des polynômes",
+    "identification des polynômes",
+    "étude des valeurs propres",
+    "manipulation algébrique des endomorphismes"
+  ],
+  "objects": [
+    "endomorphisme f",
+    "endomorphisme g",
+    "polynôme minimal Q_f",
+    "polynôme annulateur"
+  ],
+  "content_hash": "f430b1224314f7c1978648562395f1541c6c5a3c068b6bde8bd77a36938f4b84",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:06:37.541Z"
+}

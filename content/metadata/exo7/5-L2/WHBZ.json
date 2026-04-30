@@ -1,0 +1,25 @@
+{
+  "uuid": "WHBZ",
+  "source_path": "exo7/5-L2/WHBZ.tex",
+  "summary": "On considère une suite à valeurs dans {-1,1} et une fonction définie par une série entière. On suppose que toutes ses dérivées sont bornées par 1 en valeur absolue et on demande de déterminer cette fonction.",
+  "concepts": [
+    "série entière",
+    "développement limité",
+    "dérivées successives",
+    "bornes supérieures",
+    "fonction exponentielle"
+  ],
+  "methods": [
+    "développement limité",
+    "analyse des conditions de bornes",
+    "comparaison de termes consécutifs"
+  ],
+  "objects": [
+    "suite (a_n)",
+    "fonction f(x)",
+    "dérivées f^(p)(x)"
+  ],
+  "content_hash": "5c129e0ff076a398cd9c1c879c8de2df8d270949fc0b2ee862c96966ebdb6e92",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:45:35.280Z"
+}

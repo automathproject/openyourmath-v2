@@ -1,0 +1,25 @@
+{
+  "uuid": "WbIl",
+  "source_path": "exo7/2-L1/WbIl.tex",
+  "summary": "Montrer la réciproque du théorème de Césaro, c'est-à-dire que la limite d'une suite (uₙ) est l lorsque la suite (vₙ) converge vers l et que la différence uₙ₊₁ - uₙ est O(1/n), dans le cas où (uₙ) est croissante.",
+  "concepts": [
+    "théorème de Césaro",
+    "convergence de suites",
+    "croissance d'une suite",
+    "notation O",
+    "limite de suites"
+  ],
+  "methods": [
+    "analyse asymptotique",
+    "comparaison de suites",
+    "utilisation de la croissance"
+  ],
+  "objects": [
+    "suite numérique",
+    "suite récurrente",
+    "différence de suites"
+  ],
+  "content_hash": "0edfac64fc99accb9ca9b64de82bbd9955a8099a9180611f1b1eb8c3adcaf6f0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:21:19.915Z"
+}

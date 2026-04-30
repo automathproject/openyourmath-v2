@@ -1,0 +1,25 @@
+{
+  "uuid": "fHsQ",
+  "source_path": "exo7/2-L1/fHsQ.tex",
+  "summary": "On définit une suite $u_n$ comme le cosinus d'un angle dépendant de $n$ et d'un entier $q \\geq 2$. L'exercice demande de montrer la périodicité de cette suite et d'en déduire qu'elle n'a pas de limite.",
+  "concepts": [
+    "périodicité des suites",
+    "convergence des suites",
+    "raisonnement par l'absurde",
+    "sous-suites",
+    "cosinus"
+  ],
+  "methods": [
+    "calcul d'angle",
+    "analyse de sous-suites",
+    "contradiction"
+  ],
+  "objects": [
+    "suite numérique",
+    "angle",
+    "sous-suite"
+  ],
+  "content_hash": "ef99cd236435d7efb75abfff3c77500b5c12fce3f559c79bee3fe9e098c32a02",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:27:48.478Z"
+}

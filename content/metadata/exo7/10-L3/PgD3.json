@@ -1,0 +1,26 @@
+{
+  "uuid": "PgD3",
+  "source_path": "exo7/10-L3/PgD3.tex",
+  "summary": "Calculer le résultant de paires de polynômes donnés, avec des cas spécifiques et un cas général à coefficients variables.",
+  "concepts": [
+    "résultant de polynômes",
+    "polynôme unitaire",
+    "polynôme à coefficients réels",
+    "algèbre linéaire",
+    "déterminant",
+    "système d'équations linéaires"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "élimination de Gauss",
+    "développement de la formule du résultant"
+  ],
+  "objects": [
+    "polynôme de degré 3",
+    "polynôme de degré 4",
+    "polynôme quadratique général"
+  ],
+  "content_hash": "0ddb984d91a49d15c9116c7a621b80ff4b65ff473b6e4f9c57bd9bfc613ae0d2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:22:40.699Z"
+}

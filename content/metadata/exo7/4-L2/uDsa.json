@@ -1,0 +1,27 @@
+{
+  "uuid": "uDsa",
+  "source_path": "exo7/4-L2/uDsa.tex",
+  "summary": "L'exercice demande de représenter dans un plan l'ensemble des couples (a, b) pour lesquels la puissance m-ième d'une matrice A tend vers la matrice nulle lorsque m tend vers l'infini. La matrice A est donnée sous une forme spécifique en fonction de a et b.",
+  "concepts": [
+    "réduction d'endomorphisme",
+    "diagonalisation",
+    "spectre d'une matrice",
+    "convergence matricielle",
+    "polynôme annulateur",
+    "blocs de Jordan"
+  ],
+  "methods": [
+    "diagonalisation par blocs",
+    "changement de base",
+    "calcul du spectre"
+  ],
+  "objects": [
+    "matrice carrée",
+    "spectre d'une matrice",
+    "puissance de matrice",
+    "ensemble de couples (a, b)"
+  ],
+  "content_hash": "eaaeb5026efb591cd501eb0b337d901b39c797f79c12367aaa5d6037cc928f37",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:22:56.438Z"
+}

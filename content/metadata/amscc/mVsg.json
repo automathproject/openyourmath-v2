@@ -1,0 +1,32 @@
+{
+  "uuid": "mVsg",
+  "source_path": "amscc/mVsg.tex",
+  "summary": "L'exercice demande de réaliser un test d'hypothèse pour comparer la consommation d'oxygène entre une population de contrôle et une population de malades (Parkinson). Il s'agit de décider si la moyenne de la consommation est significativement plus faible chez les malades, en utilisant un échantillon de taille 15 et un risque de première espèce de 5%. Plusieurs questions portent sur la décision du test, la moyenne critique, et les erreurs de première et deuxième espèce.",
+  "concepts": [
+    "test d'hypothèse",
+    "hypothèse nulle",
+    "hypothèse alternative",
+    "risque de première espèce",
+    "risque de deuxième espèce",
+    "puissance d'un test",
+    "loi de Student",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "calcul de la statistique de test",
+    "comparaison avec la zone de rejet",
+    "calcul de la moyenne critique",
+    "calcul de l'erreur de deuxième espèce",
+    "calcul de la puissance du test"
+  ],
+  "objects": [
+    "moyenne empirique",
+    "écart-type",
+    "variable aléatoire normale",
+    "statistique de Student",
+    "moyenne critique"
+  ],
+  "content_hash": "3f98d3396ac0e0f5b463e7038e4efae237d248bf7f6eeef69a661bd7a80ff5d5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:50:44.082Z"
+}

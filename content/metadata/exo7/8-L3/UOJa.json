@@ -1,0 +1,28 @@
+{
+  "uuid": "UOJa",
+  "source_path": "exo7/8-L3/UOJa.tex",
+  "summary": "On considère un groupe d'ordre p²q où p et q sont des nombres premiers. Sous certaines conditions sur la divisibilité, on doit montrer que ce groupe est abélien.",
+  "concepts": [
+    "théorème de Sylow",
+    "groupes d'ordre fini",
+    "sous-groupes de Sylow",
+    "groupes abéliens",
+    "produit direct de groupes",
+    "commutateur"
+  ],
+  "methods": [
+    "analyse des sous-groupes de Sylow",
+    "utilisation des conditions de divisibilité",
+    "étude des commutateurs",
+    "démonstration par contradiction"
+  ],
+  "objects": [
+    "groupe d'ordre p²q",
+    "p-Sylow",
+    "q-Sylow",
+    "commutateur"
+  ],
+  "content_hash": "2f288ea8e86a7e1e9ca110c666c37cee976a22af95bf4194919a83aff8831936",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:56:43.440Z"
+}

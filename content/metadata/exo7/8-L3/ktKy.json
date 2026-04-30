@@ -1,0 +1,29 @@
+{
+  "uuid": "ktKy",
+  "source_path": "exo7/8-L3/ktKy.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés liées à l'action d'un p-groupe sur un ensemble fini. D'abord, montrer que le nombre de points fixes de cette action est congru modulo p au cardinal de l'ensemble. Ensuite, en appliquant cette propriété à une action du groupe sur lui-même, prouver que le centre d'un p-groupe non trivial est non trivial.",
+  "concepts": [
+    "action de groupe",
+    "points fixes",
+    "théorème de Sylow",
+    "p-groupe",
+    "théorème de Burnside",
+    "centre d'un groupe",
+    "congruence modulo p"
+  ],
+  "methods": [
+    "utilisation des théorèmes de Sylow",
+    "analyse des actions de groupe",
+    "calcul de points fixes",
+    "application du théorème de Burnside"
+  ],
+  "objects": [
+    "p-groupe",
+    "ensemble fini",
+    "action de groupe",
+    "centre d'un groupe"
+  ],
+  "content_hash": "5cf68d5d4c6fe01a0b603880c256a9bf069e6f7e989f8e23b1485b162d4fa242",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:59:12.056Z"
+}

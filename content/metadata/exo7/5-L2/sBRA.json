@@ -1,0 +1,26 @@
+{
+  "uuid": "sBRA",
+  "source_path": "exo7/5-L2/sBRA.tex",
+  "summary": "On considère une suite récurrente définie par une application linéaire dans un espace vectoriel normé de dimension finie. On suppose que cette suite converge et on demande de montrer que sa limite est un vecteur propre de l'application linéaire.",
+  "concepts": [
+    "espace vectoriel normé",
+    "application linéaire",
+    "vecteur propre",
+    "suite convergente",
+    "relation de récurrence",
+    "topologie des espaces vectoriels normés"
+  ],
+  "methods": [
+    "étude de la convergence d'une suite",
+    "utilisation de la définition d'un vecteur propre"
+  ],
+  "objects": [
+    "suite récurrente",
+    "application linéaire",
+    "espace vectoriel normé de dimension finie",
+    "vecteur propre"
+  ],
+  "content_hash": "fc3ae2e3d43206c34fc17b8859a250e928c6710a55ffbe522186676cb452134f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:13:26.805Z"
+}

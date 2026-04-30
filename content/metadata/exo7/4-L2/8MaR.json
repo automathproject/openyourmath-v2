@@ -1,0 +1,29 @@
+{
+  "uuid": "8MaR",
+  "source_path": "exo7/4-L2/8MaR.tex",
+  "summary": "Calculer le déterminant d'une matrice par blocs et déterminer ses éléments propres. Étudier la diagonalisabilité de cette matrice en fonction de celle d'une matrice donnée.",
+  "concepts": [
+    "matrice par blocs",
+    "déterminant",
+    "valeur propre",
+    "sous-espace propre",
+    "diagonalisabilité",
+    "polynôme caractéristique",
+    "semblabilité de matrices"
+  ],
+  "methods": [
+    "calcul de déterminant par opérations sur les lignes",
+    "diagonalisation de matrice",
+    "étude des sous-espaces propres",
+    "utilisation de la semblabilité"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "matrice par blocs",
+    "vecteur propre",
+    "sous-espace propre"
+  ],
+  "content_hash": "5e4300efc98fae66a252a5d75ad7039cf8b6be0f6efb2cc43f563908bfa7664b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:17:18.484Z"
+}

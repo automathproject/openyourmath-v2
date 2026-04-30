@@ -1,0 +1,29 @@
+{
+  "uuid": "AIFJ",
+  "source_path": "exo7/7-L2/AIFJ.tex",
+  "summary": "Calculer la densité de probabilité de la variable aléatoire Z, somme de deux variables aléatoires indépendantes X et Y uniformes sur [0,1].",
+  "concepts": [
+    "densité de probabilité",
+    "variable aléatoire uniforme",
+    "indépendance",
+    "fonction de répartition",
+    "convolution de densités",
+    "mesure de Lebesgue"
+  ],
+  "methods": [
+    "calcul de la fonction de répartition",
+    "dérivation par morceaux",
+    "convolution de densités",
+    "changement de variable",
+    "intégration sur un domaine"
+  ],
+  "objects": [
+    "variable aléatoire uniforme",
+    "fonction de répartition",
+    "densité de probabilité",
+    "somme de variables aléatoires"
+  ],
+  "content_hash": "70862cbb6a1b6eb3a1f76678285e401546069f4b255b1b6368bfb605c5571727",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:40:46.905Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "mdL0",
+  "source_path": "exo7/4-L2/mdL0.tex",
+  "summary": "L'exercice demande de déterminer le rang d'une matrice M définie comme le produit d'une matrice colonne C par sa transposée, puis d'en déduire son polynôme caractéristique et sa diagonalisabilité.",
+  "concepts": [
+    "polynôme caractéristique",
+    "théorème de Cayley-Hamilton",
+    "rang d'une matrice",
+    "diagonalisabilité",
+    "valeurs propres",
+    "espace propre"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "analyse des valeurs propres",
+    "détermination du rang"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "polynôme annulateur",
+    "espace vectoriel"
+  ],
+  "content_hash": "3406faafec43f7dc8a4cb1e0a816b4cad846d49c6d3dc6161bd23c8f4626ceff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:11:11.921Z"
+}

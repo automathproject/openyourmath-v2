@@ -1,0 +1,27 @@
+{
+  "uuid": "iQqS",
+  "source_path": "amscc/iQqS.tex",
+  "summary": "L'exercice demande d'appliquer le théorème central limite pour modéliser le poids total de passagers d'avion et calculer des probabilités associées, puis d'estimer une proportion avec un intervalle de confiance.",
+  "concepts": [
+    "théorème central limite",
+    "loi normale",
+    "espérance",
+    "variance",
+    "écart type",
+    "intervalle de confiance",
+    "proportion"
+  ],
+  "methods": [
+    "approximation gaussienne",
+    "standardisation",
+    "calcul d'intervalle de confiance"
+  ],
+  "objects": [
+    "variable aléatoire",
+    "poids total de passagers",
+    "proportion de passagers avec bagage en soute"
+  ],
+  "content_hash": "b07e211dd17de4e51247da39ac9d39c4b7318d204d0cace113132e7aa7753cdd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:01:56.628Z"
+}

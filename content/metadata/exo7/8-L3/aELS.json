@@ -1,0 +1,27 @@
+{
+  "uuid": "aELS",
+  "source_path": "exo7/8-L3/aELS.tex",
+  "summary": "L'exercice demande de déterminer les sous-groupes de Sylow du groupe cyclique Z/24Z. Il s'agit d'appliquer le théorème de Sylow pour identifier les sous-groupes d'ordre maximal p^k où p est un nombre premier.",
+  "concepts": [
+    "théorème de Sylow",
+    "sous-groupes de Sylow",
+    "groupe cyclique",
+    "ordre d'un groupe",
+    "nombre premier",
+    "divisibilité"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "identification des sous-groupes d'ordre p^k",
+    "application du théorème de Sylow"
+  ],
+  "objects": [
+    "groupe cyclique Z/24Z",
+    "sous-groupes de Sylow",
+    "nombre premier",
+    "facteurs premiers de 24"
+  ],
+  "content_hash": "4e6a97109f5f6d6e55213a34edc66a8c4d8c8922e745f3168b3b0f6b078a25cd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:57:55.419Z"
+}

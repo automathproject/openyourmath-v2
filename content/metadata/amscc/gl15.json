@@ -1,0 +1,25 @@
+{
+  "uuid": "gl15",
+  "source_path": "amscc/gl15.tex",
+  "summary": "L'exercice demande de déterminer la loi suivie par une somme de variables de Bernoulli, puis d'en déduire l'espérance et la variance de la proportion échantillonnée. Il utilise ensuite l'inégalité de Bienaymé-Tchebychev pour estimer la précision d'un sondage.",
+  "concepts": [
+    "loi binomiale",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "inégalité de Bienaymé-Tchebychev",
+    "approximation de proportion"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "application de l'inégalité de Bienaymé-Tchebychev"
+  ],
+  "objects": [
+    "somme de variables de Bernoulli",
+    "proportion échantillonnée",
+    "variable aléatoire binomiale"
+  ],
+  "content_hash": "db031314b6d74bdd19be1298917c9a535a9cf7d26f1c3662f368d6e6d842366c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:35:53.819Z"
+}

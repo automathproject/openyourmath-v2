@@ -1,0 +1,29 @@
+{
+  "uuid": "lruw",
+  "source_path": "exo7/5-L2/lruw.tex",
+  "summary": "L'exercice demande de démontrer trois propriétés de la somme de Minkowski de deux parties non vides d'un espace vectoriel normé : l'ouverture de A+B si A ou B est ouvert, la non-fermeture nécessaire de A+B lorsque A et B sont fermés, et la compacité de A+B lorsque A et B sont compacts.",
+  "concepts": [
+    "espace vectoriel normé",
+    "partie ouverte",
+    "partie fermée",
+    "partie compacte",
+    "somme de Minkowski",
+    "topologie d'un espace vectoriel normé",
+    "continuité"
+  ],
+  "methods": [
+    "utilisation des propriétés de la norme",
+    "application des définitions topologiques",
+    "argument par l'absurde"
+  ],
+  "objects": [
+    "parties d'un espace vectoriel normé",
+    "somme de Minkowski",
+    "ensemble ouvert",
+    "ensemble fermé",
+    "ensemble compact"
+  ],
+  "content_hash": "ac4d1a4cfeab2f2087a60c2af42385a944b4d0e6ba1a54d32e1dc4e6851722ff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:07:01.971Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "xBhn",
+  "source_path": "exo7/1-L1/xBhn.tex",
+  "summary": "L'exercice étudie un sous-ensemble de matrices formant un groupe multiplicatif et analyse les propriétés des endomorphismes associés. On demande de montrer que l'endomorphisme associé à l'élément neutre est une projection, puis d'en déduire des propriétés structurelles du groupe.",
+  "concepts": [
+    "groupe multiplicatif",
+    "endomorphisme associé à une matrice",
+    "projection",
+    "isomorphisme de groupes",
+    "rang d'une matrice",
+    "groupe linéaire général"
+  ],
+  "methods": [
+    "analyse des propriétés de l'élément neutre",
+    "restriction d'endomorphisme",
+    "étude de l'image et du noyau",
+    "construction d'isomorphisme"
+  ],
+  "objects": [
+    "matrice carrée",
+    "endomorphisme de K^n",
+    "sous-espace vectoriel",
+    "groupe de matrices"
+  ],
+  "content_hash": "e7fe573692443d8609491a7a3488511cc47bea62279cf5c17eff3310532892d1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:21:15.520Z"
+}

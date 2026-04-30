@@ -1,0 +1,25 @@
+{
+  "uuid": "f7iS",
+  "source_path": "exo7/1-L1/f7iS.tex",
+  "summary": "Trouver le reste de la division euclidienne d'un polynôme P par un polynôme de degré 2. Le corrigé utilise une méthode de calcul algébrique pour déterminer ce reste.",
+  "concepts": [
+    "division euclidienne",
+    "polynôme",
+    "algèbre linéaire",
+    "calcul algébrique",
+    "interpolation polynomiale"
+  ],
+  "methods": [
+    "division polynomiale",
+    "calcul de reste",
+    "interpolation de Lagrange"
+  ],
+  "objects": [
+    "polynôme P",
+    "polynôme (X-a)(X-b)",
+    "reste de division"
+  ],
+  "content_hash": "d1ce17907c5c45b8beb7146984de1aea4a17bc1e0ad921e2d77f2bbc4a6365ae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:12:54.524Z"
+}

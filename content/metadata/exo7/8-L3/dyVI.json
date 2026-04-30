@@ -1,0 +1,30 @@
+{
+  "uuid": "dyVI",
+  "source_path": "exo7/8-L3/dyVI.tex",
+  "summary": "L'exercice étudie les propriétés d'un groupe simple d'ordre 60 en utilisant le théorème de Sylow. Il demande de prouver plusieurs assertions sur les sous-groupes et les Sylow du groupe.",
+  "concepts": [
+    "théorème de Sylow",
+    "groupe simple",
+    "sous-groupe normal",
+    "centralisateur",
+    "action de groupe",
+    "conjugaison",
+    "groupe alterné"
+  ],
+  "methods": [
+    "analyse des ordres de sous-groupes",
+    "utilisation des prédictions du théorème de Sylow",
+    "étude des centralisateurs",
+    "action par conjugaison"
+  ],
+  "objects": [
+    "groupe d'ordre 60",
+    "sous-groupes d'ordre 20, 12, 4",
+    "2-Sylow",
+    "3-Sylow",
+    "5-Sylow"
+  ],
+  "content_hash": "61af7e207914fed36c639b5ac2e66c67a675a12e47c67a18cca10acef95ca7f6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:58:12.051Z"
+}

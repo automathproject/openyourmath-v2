@@ -1,0 +1,28 @@
+{
+  "uuid": "o5kO",
+  "source_path": "exo7/1-L1/o5kO.tex",
+  "summary": "Montrer l'équivalence entre la positivité d'un polynôme réel sur les réels positifs et l'existence d'un entier naturel tel que le produit du polynôme avec (X+1) à cet exposant ait des coefficients strictement positifs.",
+  "concepts": [
+    "polynôme réel",
+    "positivité sur un intervalle",
+    "polynôme irréductible",
+    "coefficient binomial",
+    "discriminant",
+    "limite de suite"
+  ],
+  "methods": [
+    "réduction au cas irréductible",
+    "développement binomial",
+    "analyse de discriminant",
+    "choix d'un entier adapté"
+  ],
+  "objects": [
+    "polynôme P",
+    "entier naturel ℓ",
+    "coefficient binomial C",
+    "discriminant"
+  ],
+  "content_hash": "a309165a39f3759855dbaae16bd22d74ecb803aa5f06d95595d2c3da6a3eae96",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:21:22.218Z"
+}

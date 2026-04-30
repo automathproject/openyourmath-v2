@@ -1,0 +1,30 @@
+{
+  "uuid": "LGKF",
+  "source_path": "exo7/1-L1/LGKF.tex",
+  "summary": "L'exercice demande de montrer qu'un polynôme P à deux racines distinctes, dont la dérivée seconde divise P, a toutes ses racines simples. La première partie traite le cas des polynômes complexes, la seconde le cas des polynômes réels.",
+  "concepts": [
+    "polynôme",
+    "racine d'un polynôme",
+    "multiplicité d'une racine",
+    "dérivée d'un polynôme",
+    "division de polynômes",
+    "scindé sur ℝ",
+    "enveloppe convexe"
+  ],
+  "methods": [
+    "décomposition en éléments simples",
+    "analyse des multiplicités",
+    "comparaison des termes",
+    "identification des éléments de première espèce",
+    "barycentre"
+  ],
+  "objects": [
+    "polynôme P",
+    "racines α₁, ..., αₚ",
+    "dérivée seconde P''",
+    "dérivée première P'"
+  ],
+  "content_hash": "b5fdbdf4f0ddbaa19f377e48743ac2451b0c6fd591051b23fcae389d6d01c5cf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:51:56.148Z"
+}

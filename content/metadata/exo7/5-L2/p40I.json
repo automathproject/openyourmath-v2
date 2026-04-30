@@ -1,0 +1,26 @@
+{
+  "uuid": "p40I",
+  "source_path": "exo7/5-L2/p40I.tex",
+  "summary": "On étudie la convergence d'une suite de matrices et on montre que si cette suite converge, alors la matrice identité moins A est inversible et sa matrice inverse est la limite de la suite.",
+  "concepts": [
+    "convergence de suite de matrices",
+    "inversibilité de matrice",
+    "matrice identité",
+    "puissance de matrice",
+    "topologie des espaces vectoriels normés"
+  ],
+  "methods": [
+    "étude de la convergence d'une suite",
+    "calcul de l'inverse d'une matrice",
+    "manipulation algébrique de matrices"
+  ],
+  "objects": [
+    "suite de matrices",
+    "matrice carrée",
+    "matrice identité",
+    "matrice inversible"
+  ],
+  "content_hash": "a11e4a70f9c825cd5c3fb4af631bace2963adf354dbfdcf0e9baf6dbddc3f784",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:10:24.061Z"
+}

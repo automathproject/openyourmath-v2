@@ -1,0 +1,28 @@
+{
+  "uuid": "drby",
+  "source_path": "amscc/drby.tex",
+  "summary": "L'exercice modélise le temps d'attente à une caisse de supermarché par une variable aléatoire exponentielle. Il demande de vérifier une probabilité, de calculer et interpréter une probabilité conditionnelle, puis d'étudier la loi d'une variable binomiale associée à plusieurs caisses indépendantes.",
+  "concepts": [
+    "loi exponentielle",
+    "probabilité conditionnelle",
+    "absence de mémoire",
+    "variable aléatoire binomiale",
+    "intégrale de la densité exponentielle",
+    "calcul de probabilités"
+  ],
+  "methods": [
+    "calcul d'intégrale",
+    "propriété d'absence de mémoire",
+    "calcul de probabilité conditionnelle",
+    "calcul de probabilité binomiale"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "variable aléatoire binomiale",
+    "probabilité conditionnelle",
+    "intégrale de densité"
+  ],
+  "content_hash": "0b642ea268634f4e14422babc6599eed177ec0a7dc7b2c4552f4940b47946972",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:58:32.302Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "GHA9",
+  "source_path": "exo7/5-L2/GHA9.tex",
+  "summary": "L'exercice demande de prouver que trois normes définies sur le produit cartésien de deux espaces vectoriels normés sont effectivement des normes et qu'elles sont deux à deux équivalentes, sans supposer la dimension finie. Ensuite, il s'agit de montrer la continuité d'une application linéaire spécifique dans le cas où les deux espaces sont identiques.",
+  "concepts": [
+    "espace vectoriel normé",
+    "norme",
+    "équivalence de normes",
+    "continuité",
+    "produit cartésien d'espaces vectoriels"
+  ],
+  "methods": [
+    "vérification des propriétés des normes",
+    "comparaison des normes",
+    "étude de la continuité des applications linéaires"
+  ],
+  "objects": [
+    "normes sur un produit cartésien",
+    "application linéaire",
+    "espaces vectoriels normés"
+  ],
+  "content_hash": "98c9a80f91aa5a5074530a00dfba97e83a2148bd62f0e21017f8055ceb1bb5c5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:41:52.010Z"
+}

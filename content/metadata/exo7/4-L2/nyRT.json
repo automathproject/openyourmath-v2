@@ -1,0 +1,26 @@
+{
+  "uuid": "nyRT",
+  "source_path": "exo7/4-L2/nyRT.tex",
+  "summary": "L'exercice demande de déterminer une condition nécessaire et suffisante pour qu'un endomorphisme diagonalisable admette une racine carrée, puis de compter le nombre exact de telles racines carrées. Une application numérique avec une matrice 3x3 est proposée pour illustrer le concept.",
+  "concepts": [
+    "diagonalisation",
+    "polynôme annulateur",
+    "racine carrée d'un endomorphisme",
+    "espace vectoriel de dimension finie",
+    "valeurs propres",
+    "matrice diagonalisable"
+  ],
+  "methods": [
+    "diagonalisation",
+    "calcul des valeurs propres",
+    "construction explicite de la racine carrée"
+  ],
+  "objects": [
+    "endomorphisme diagonalisable",
+    "matrice 3x3",
+    "racine carrée d'une matrice"
+  ],
+  "content_hash": "52f178d01a0a250d5f256d65ea9039c4b3594d5fb630a87f01ec371d3f581c7f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:14:01.742Z"
+}

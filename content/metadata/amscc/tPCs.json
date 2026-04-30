@@ -1,0 +1,26 @@
+{
+  "uuid": "tPCs",
+  "source_path": "amscc/tPCs.tex",
+  "summary": "L'exercice étudie la convergence d'une méthode itérative pour résoudre un système linéaire Ax=b, où A est une matrice symétrique définie positive. Il demande de déterminer les conditions sur le paramètre σ pour garantir la convergence et d'optimiser la vitesse de convergence.",
+  "concepts": [
+    "matrice symétrique définie positive",
+    "rayon spectral",
+    "valeurs propres",
+    "convergence de méthode itérative",
+    "spectre d'une matrice",
+    "matrice d'itération"
+  ],
+  "methods": [
+    "analyse du rayon spectral",
+    "optimisation de la vitesse de convergence",
+    "comparaison de valeurs propres"
+  ],
+  "objects": [
+    "système linéaire",
+    "suite itérative",
+    "matrice d'itération"
+  ],
+  "content_hash": "7b2d0e96df252daebf134d814e429f72b7db43d40ddb16d1dc78d36a7a681258",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:39:55.607Z"
+}

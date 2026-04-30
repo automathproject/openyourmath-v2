@@ -1,0 +1,29 @@
+{
+  "uuid": "5FLs",
+  "source_path": "amscc/5FLs.tex",
+  "summary": "L'exercice demande de réaliser un test d'indépendance du khi-deux pour étudier la liaison entre le fait d'être fumeur et d'avoir un cancer de la gorge, à partir d'un tableau de contingence observé sur 1000 personnes.",
+  "concepts": [
+    "test d'indépendance du khi-deux",
+    "hypothèse nulle",
+    "tableau de contingence",
+    "probabilité conjointe",
+    "risque de première espèce",
+    "loi du khi-deux",
+    "degré de liberté"
+  ],
+  "methods": [
+    "calcul des effectifs théoriques sous H0",
+    "calcul de la statistique du khi-deux",
+    "comparaison avec la table du khi-deux",
+    "rejet de l'hypothèse nulle"
+  ],
+  "objects": [
+    "tableau de contingence",
+    "effectifs observés",
+    "effectifs théoriques",
+    "statistique du khi-deux"
+  ],
+  "content_hash": "3a8f1f1913f6f1a80318e7f622f5d5e405ab54d0b792856dfe2e20c58679cfa1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:31:47.896Z"
+}

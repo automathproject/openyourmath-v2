@@ -1,0 +1,28 @@
+{
+  "uuid": "lZgZ",
+  "source_path": "exo7/2-L1/lZgZ.tex",
+  "summary": "On considère une suite réelle (uₙ) et la suite (vₙ) définie comme la moyenne des termes de (uₙ) jusqu'à l'indice n. L'exercice demande de montrer que si (uₙ) converge vers ℓ, alors (vₙ) converge aussi vers ℓ, et d'examiner la réciproque. Ensuite, il s'agit de prouver que si (uₙ) est bornée, alors (vₙ) l'est aussi, avec étude de la réciproque. Enfin, il faut montrer que si (uₙ) est croissante, alors (vₙ) l'est également.",
+  "concepts": [
+    "convergence de suite",
+    "suite bornée",
+    "suite croissante",
+    "moyenne arithmétique",
+    "limite de suite",
+    "inégalité triangulaire",
+    "définition de la convergence"
+  ],
+  "methods": [
+    "approximation par découpage",
+    "utilisation de la définition ε-δ",
+    "calcul de différence de termes consécutifs",
+    "majoration terme à terme"
+  ],
+  "objects": [
+    "suite réelle",
+    "moyenne des termes d'une suite",
+    "suite extraite"
+  ],
+  "content_hash": "f358e491630e7291160b086165f0d445263fea146a6c6c6248100146f1e1f4ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:32:58.950Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "yF3L",
+  "source_path": "exo7/2-L1/yF3L.tex",
+  "summary": "On étudie la convergence d'une suite définie par récurrence et on détermine sa limite. La suite est donnée par u₀=0 et ∀n≥1, uₙ₊₁=√(6+uₙ).",
+  "concepts": [
+    "suite définie par récurrence",
+    "convergence d'une suite",
+    "limite d'une suite",
+    "suite croissante",
+    "suite majorée",
+    "théorème de la limite monotone"
+  ],
+  "methods": [
+    "étude de la monotonie",
+    "recherche d'une borne supérieure",
+    "application du théorème de la limite monotone"
+  ],
+  "objects": [
+    "suite numérique",
+    "limite"
+  ],
+  "content_hash": "40077e100f9c103d1f1adf186c39a1a03060bf2a074f111c2786bf0a815259b9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:43:18.539Z"
+}

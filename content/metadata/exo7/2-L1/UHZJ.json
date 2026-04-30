@@ -1,0 +1,24 @@
+{
+  "uuid": "UHZJ",
+  "source_path": "exo7/2-L1/UHZJ.tex",
+  "summary": "Soient deux réels strictement positifs x et y avec x ≤ y. On définit trois moyennes : arithmétique m, géométrique g, et harmonique h. L'exercice demande de prouver l'inégalité x ≤ h ≤ g ≤ m ≤ y.",
+  "concepts": [
+    "inégalités entre moyennes",
+    "moyenne arithmétique",
+    "moyenne géométrique",
+    "moyenne harmonique",
+    "inégalité de la moyenne arithmétique et géométrique"
+  ],
+  "methods": [
+    "comparaison directe",
+    "développement algébrique",
+    "utilisation de l'inégalité de la moyenne arithmétique et géométrique"
+  ],
+  "objects": [
+    "moyennes arithmétique, géométrique et harmonique",
+    "réels strictement positifs"
+  ],
+  "content_hash": "3f5b6f32f3509fb06b960145063c9c17902f15cc751f4087b96edb0912dfe3b4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:54:52.922Z"
+}

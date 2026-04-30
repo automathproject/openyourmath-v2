@@ -1,0 +1,29 @@
+{
+  "uuid": "6VBf",
+  "source_path": "exo7/13-L3/6VBf.tex",
+  "summary": "L'exercice étudie une solution non triviale d'un système linéaire à coefficients constants et introduit la quantité γ définie comme la limite supérieure du logarithme de la norme de cette solution. Il demande de montrer que γ est indépendant du choix de la norme, puis qu'il est fini sous une hypothèse de bornitude des coefficients, et enfin de caractériser γ dans le cas d'une matrice constante diagonalisable.",
+  "concepts": [
+    "système linéaire à coefficients constants",
+    "solution non triviale",
+    "limite supérieure",
+    "norme d'un vecteur",
+    "inégalité de Gronwall",
+    "matrice constante diagonalisable",
+    "valeur propre",
+    "partie réelle"
+  ],
+  "methods": [
+    "analyse de la dépendance à la norme",
+    "application de l'inégalité de Gronwall",
+    "diagonalisation de matrice"
+  ],
+  "objects": [
+    "système différentiel linéaire",
+    "solution φ(t)",
+    "matrice A(t)",
+    "quantité γ"
+  ],
+  "content_hash": "69dba50220b44ac0727efe26f67e1e95a26bf1699b1c1459b76d7b1f47ca92f6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:11:37.104Z"
+}

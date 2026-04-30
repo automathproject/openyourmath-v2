@@ -1,0 +1,29 @@
+{
+  "uuid": "UhhP",
+  "source_path": "exo7/4-L2/UhhP.tex",
+  "summary": "Montrer l'existence et l'unicité d'une décomposition d'un endomorphisme en une partie diagonalisable et une partie nilpotente, sous l'hypothèse que son polynôme caractéristique est scindé.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "sous-espace caractéristique",
+    "théorème de décomposition des noyaux",
+    "endomorphisme diagonalisable",
+    "endomorphisme nilpotent",
+    "décomposition additive"
+  ],
+  "methods": [
+    "décomposition en sous-espaces caractéristiques",
+    "construction de la partie diagonalisable",
+    "construction de la partie nilpotente",
+    "preuve d'unicité par commutation"
+  ],
+  "objects": [
+    "endomorphisme",
+    "polynôme annulateur",
+    "sous-espace vectoriel",
+    "homothétie"
+  ],
+  "content_hash": "b970e66b992ad7f21ba3b0259aa39df848a4201f5491d64d75b290608a914c94",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:48:35.696Z"
+}

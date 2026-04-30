@@ -1,0 +1,27 @@
+{
+  "uuid": "zkcr",
+  "source_path": "exo7/16-L3/zkcr.tex",
+  "summary": "Calculer la transformée de Laplace de trois fonctions différentes : une fonction sinus, une fonction exponentielle et une fonction cosinus. La dernière question demande d'expliquer pourquoi une formule standard ne s'applique pas à cette fonction.",
+  "concepts": [
+    "transformée de Laplace",
+    "fonction sinus",
+    "fonction exponentielle",
+    "fonction cosinus",
+    "fonction indicatrice",
+    "décalage temporel"
+  ],
+  "methods": [
+    "calcul direct de transformée de Laplace",
+    "utilisation de propriétés de linéarité",
+    "analyse de conditions de validité"
+  ],
+  "objects": [
+    "fonction $F(t) = a \\sin(\\omega t)$",
+    "fonction $F(t) = a(1 - e^{-bt})$",
+    "fonction $F(t) = a \\cos(bt - k)$",
+    "fonction indicatrice"
+  ],
+  "content_hash": "e90db141467e9667975cd600a06a3651b563df880c8a05b6ced0af08321f5d1a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:23:31.213Z"
+}

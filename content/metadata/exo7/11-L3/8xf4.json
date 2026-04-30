@@ -1,0 +1,29 @@
+{
+  "uuid": "8xf4",
+  "source_path": "exo7/11-L3/8xf4.tex",
+  "summary": "L'exercice demande de déterminer pour quelles valeurs de λ l'ensemble Sλ défini par l'équation x₁² + x₂² - x₃² = λ est une sous-variété de ℝ³, puis de représenter graphiquement Sλ en fonction de λ. Ensuite, il s'agit d'exprimer l'espace tangent TxSλ en utilisant la forme bilinéaire B.",
+  "concepts": [
+    "sous-variété",
+    "espace tangent",
+    "forme bilinéaire",
+    "rang d'une matrice",
+    "fonction de classe C¹",
+    "théorème du rang constant",
+    "cône tangent"
+  ],
+  "methods": [
+    "calcul du jacobien",
+    "analyse du rang du jacobien",
+    "caractérisation de l'espace tangent",
+    "utilisation de la condition de sous-variété"
+  ],
+  "objects": [
+    "ensemble Sλ",
+    "forme bilinéaire B",
+    "jacobien de F",
+    "espace tangent TxSλ"
+  ],
+  "content_hash": "155bc786618e8f6dd256e3b082b9d3c8d57dbc8b899d6d96c32bc3e8dfa014ea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:13:46.887Z"
+}

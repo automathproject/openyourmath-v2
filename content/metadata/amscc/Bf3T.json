@@ -1,0 +1,29 @@
+{
+  "uuid": "Bf3T",
+  "source_path": "amscc/Bf3T.tex",
+  "summary": "L'exercice demande de calculer des probabilités conditionnelles pour des charges de soldats (fighting load, approach load, emergency load) modélisées par une loi normale, en utilisant des pourcentages doctrinaux et des intervalles cibles. Il implique la standardisation et l'utilisation de quantiles de la loi normale.",
+  "concepts": [
+    "loi normale",
+    "standardisation",
+    "quantiles",
+    "probabilité conditionnelle",
+    "intervalle de confiance",
+    "distribution gaussienne",
+    "transformations linéaires de variables aléatoires"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de quantiles",
+    "transformation linéaire de variable aléatoire",
+    "utilisation de la fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "charges de soldats",
+    "intervalle de confiance",
+    "quantile"
+  ],
+  "content_hash": "8da5794e536a07e30fa653cf82a01e3e077f448aa3b5fc7a85f24575559bd528",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:45:30.943Z"
+}

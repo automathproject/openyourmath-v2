@@ -1,0 +1,26 @@
+{
+  "uuid": "zry0",
+  "source_path": "exo7/5-L2/zry0.tex",
+  "summary": "L'exercice demande de montrer qu'une partie bornée de la droite réelle ayant un seul point d'accumulation est dénombrable, puis que la suite formée par les éléments de cette partie converge vers ce point d'accumulation.",
+  "concepts": [
+    "point d'accumulation",
+    "ensemble dénombrable",
+    "suite convergente",
+    "partie bornée de ℝ",
+    "topologie de la droite réelle",
+    "convergence d'une suite"
+  ],
+  "methods": [
+    "argument par l'absurde",
+    "utilisation de la définition de point d'accumulation",
+    "construction explicite de suite"
+  ],
+  "objects": [
+    "ensemble A",
+    "point d'accumulation a",
+    "suite (x_n)"
+  ],
+  "content_hash": "c4899306d5786c4a81cd350bda7ba16442bf55e173a9c774a7be7fb1085a885b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:19:33.816Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "HovQ",
+  "source_path": "exo7/2-L1/HovQ.tex",
+  "summary": "L'exercice demande d'étudier la convergence et de calculer la somme éventuelle de deux séries numériques de terme général donné. La première série est définie par un polynôme au numérateur et une factorielle au dénominateur, tandis que la seconde série implique une factorielle au numérateur et un produit de termes linéaires au dénominateur.",
+  "concepts": [
+    "série numérique",
+    "convergence de série",
+    "somme de série",
+    "développement en série",
+    "comparaison de termes",
+    "limite de suite"
+  ],
+  "methods": [
+    "décomposition en éléments simples",
+    "téléscopage",
+    "comparaison asymptotique",
+    "calcul de limite",
+    "réarrangement algébrique"
+  ],
+  "objects": [
+    "série de terme général polynomial/factoriel",
+    "suite de sommes partielles",
+    "produit de termes linéaires",
+    "factorielle"
+  ],
+  "content_hash": "eb759765f19aaad2233079f89521f23d589676f84b3c895ec2e899c30eeb55d7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:09:25.766Z"
+}

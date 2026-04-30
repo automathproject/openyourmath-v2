@@ -1,0 +1,27 @@
+{
+  "uuid": "sB4q",
+  "source_path": "amscc/sB4q.tex",
+  "summary": "L'exercice demande de vérifier la séparabilité d'un noyau gaussien 3x3 en trouvant ses vecteurs de décomposition, puis de comparer la complexité algorithmique de l'application directe du noyau versus deux convolutions 1D successives. Enfin, il s'agit de tester la séparabilité d'un noyau Sobel.",
+  "concepts": [
+    "produit extérieur",
+    "convolution 1D",
+    "convolution 2D",
+    "complexité algorithmique",
+    "rang d'une matrice",
+    "séparabilité d'un noyau"
+  ],
+  "methods": [
+    "décomposition en produit extérieur",
+    "comparaison de complexités",
+    "vérification de proportionnalité des lignes"
+  ],
+  "objects": [
+    "noyau gaussien",
+    "noyau Sobel",
+    "vecteurs colonne et ligne",
+    "matrice de convolution"
+  ],
+  "content_hash": "158ea707bb187689b54fce629439b87a36b7119427abe9c221a5560f23288aa4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:36:58.892Z"
+}

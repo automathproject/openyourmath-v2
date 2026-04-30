@@ -1,0 +1,31 @@
+{
+  "uuid": "sgck",
+  "source_path": "amscc/sgck.tex",
+  "summary": "L'exercice étudie un système linéaire paramétré par un réel λ. Il demande d'écrire la matrice et le vecteur associés, de calculer le déterminant en fonction de λ, et d'analyser l'existence et l'unicité des solutions selon les valeurs de λ.",
+  "concepts": [
+    "système linéaire",
+    "matrice associée",
+    "déterminant",
+    "théorème de Cramer",
+    "solution unique",
+    "solution infinie",
+    "incompatibilité",
+    "paramètre"
+  ],
+  "methods": [
+    "développement du déterminant",
+    "calcul de racines d'un polynôme",
+    "analyse de compatibilité",
+    "résolution par substitution"
+  ],
+  "objects": [
+    "système linéaire 3x3",
+    "matrice carrée",
+    "vecteur colonne",
+    "polynôme du second degré",
+    "ensemble de solutions"
+  ],
+  "content_hash": "3cf5ae3a5beff586c5feb565277b2fabf9155117ada109d5fd4dc0cf4be94600",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:15:44.835Z"
+}

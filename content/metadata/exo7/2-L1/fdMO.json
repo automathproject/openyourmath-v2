@@ -1,0 +1,28 @@
+{
+  "uuid": "fdMO",
+  "source_path": "exo7/2-L1/fdMO.tex",
+  "summary": "Étude de la convergence de quatre séries à termes positifs, en utilisant la convergence de la série de référence ∑aₙ.",
+  "concepts": [
+    "série numérique",
+    "série à termes positifs",
+    "convergence absolue",
+    "comparaison de séries",
+    "critère de convergence de Cauchy"
+  ],
+  "methods": [
+    "comparaison terme à terme",
+    "utilisation de la convergence de la série de référence",
+    "majoration",
+    "minoration"
+  ],
+  "objects": [
+    "suite de réels strictement positifs",
+    "série ∑aₙ²",
+    "série ∑(aₙ/(1+aₙ))",
+    "série ∑aₙa_{2n}",
+    "série ∑(√aₙ/n)"
+  ],
+  "content_hash": "73226e4f3fbbd8e1ec4d4fe1f02bfd60c77f7c1913109191cb1902da3e9f18de",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:27:34.501Z"
+}

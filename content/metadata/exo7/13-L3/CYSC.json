@@ -1,0 +1,27 @@
+{
+  "uuid": "CYSC",
+  "source_path": "exo7/13-L3/CYSC.tex",
+  "summary": "Résolution d'un système linéaire d'équations différentielles à coefficients constants en utilisant les valeurs propres de la matrice associée, puis par calcul de la matrice puissance et exponentielle de matrice.",
+  "concepts": [
+    "système linéaire d'équations différentielles",
+    "valeurs propres",
+    "matrice exponentielle",
+    "matrice puissance",
+    "équation différentielle linéaire"
+  ],
+  "methods": [
+    "diagonalisation",
+    "calcul de valeurs propres",
+    "calcul de la matrice exponentielle",
+    "résolution par exponentielle de matrice"
+  ],
+  "objects": [
+    "système linéaire",
+    "matrice A",
+    "vecteurs propres",
+    "valeurs propres"
+  ],
+  "content_hash": "19c50ef6f26503cb4dc18024999c69c09ef84559470acbbd930119cd3b500c8c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:11:47.529Z"
+}

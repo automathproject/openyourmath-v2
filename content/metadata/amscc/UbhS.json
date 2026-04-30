@@ -1,0 +1,29 @@
+{
+  "uuid": "UbhS",
+  "source_path": "amscc/UbhS.tex",
+  "summary": "L'exercice étudie deux variables aléatoires discrètes X et Y représentant respectivement le nombre de boules rouges et jaunes tirées sans remise dans une urne contenant 6 boules rouges et 8 jaunes. Il demande d'en déterminer les lois, les espérances, les variances et d'étudier leur indépendance.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi de probabilité",
+    "espérance",
+    "variance",
+    "indépendance de variables aléatoires",
+    "tirage sans remise",
+    "loi hypergéométrique"
+  ],
+  "methods": [
+    "calcul de loi hypergéométrique",
+    "calcul d'espérance",
+    "calcul de variance",
+    "test d'indépendance"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "loi de probabilité",
+    "espérance",
+    "variance"
+  ],
+  "content_hash": "22c4d7a44fb93ba8565b59c19392faf539f19bbb46c016af2ddb0355f9a778ed",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:29:04.087Z"
+}

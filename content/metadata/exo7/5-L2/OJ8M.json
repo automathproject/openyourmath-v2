@@ -1,0 +1,27 @@
+{
+  "uuid": "OJ8M",
+  "source_path": "exo7/5-L2/OJ8M.tex",
+  "summary": "On considère une fonction 1-lipschitzienne d'un compact convexe vers lui-même. On demande de prouver l'existence d'un point fixe en utilisant une suite de fonctions auxiliaires.",
+  "concepts": [
+    "compact convexe",
+    "fonction lipschitzienne",
+    "point fixe",
+    "suite auxiliaire",
+    "valeur d'adhérence",
+    "stabilité par application"
+  ],
+  "methods": [
+    "construction de suite auxiliaire",
+    "limite de suite",
+    "utilisation de la compacité",
+    "argument de point fixe"
+  ],
+  "objects": [
+    "fonction 1-lipschitzienne",
+    "compact convexe",
+    "suite de points"
+  ],
+  "content_hash": "5baecfec1a7c44db14fabff9c725ce0760727dd5e03cdaaff1ee99830bddd8bd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:49:06.686Z"
+}

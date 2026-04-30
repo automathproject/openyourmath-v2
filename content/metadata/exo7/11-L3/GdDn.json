@@ -1,0 +1,27 @@
+{
+  "uuid": "GdDn",
+  "source_path": "exo7/11-L3/GdDn.tex",
+  "summary": "L'exercice étudie une courbe plane paramétrée par la longueur d'arc, restant dans un disque de rayon r. Il demande de montrer que la courbure en un point extrémal est supérieure ou égale à 1/r.",
+  "concepts": [
+    "courbure d'une courbe plane",
+    "paramétrisation par la longueur d'arc",
+    "colinéarité vectorielle",
+    "dérivée seconde",
+    "maximum d'une fonction"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "utilisation de la condition de maximum",
+    "colinéarité vectorielle",
+    "inégalité de courbure"
+  ],
+  "objects": [
+    "courbe plane",
+    "vecteur tangent",
+    "vecteur normal",
+    "cercle de rayon r"
+  ],
+  "content_hash": "a82e3eb0b874d6a0dac96394111fa0a2de3c30c957257fa4c2ef2602b646c0c9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:16:27.571Z"
+}

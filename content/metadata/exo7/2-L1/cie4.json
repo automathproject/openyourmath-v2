@@ -1,0 +1,29 @@
+{
+  "uuid": "cie4",
+  "source_path": "exo7/2-L1/cie4.tex",
+  "summary": "L'exercice étudie les propriétés d'une suite définie par récurrence $u_{n+1} = f(u_n)$ où $f$ est une fonction de $[0,1]$ dans $[0,1]$. Il demande d'évaluer la validité de plusieurs affirmations concernant la monotonie, la convergence et la continuité de $f$ et de la suite $(u_n)$.",
+  "concepts": [
+    "suite définie par récurrence",
+    "fonction croissante",
+    "fonction monotone",
+    "convergence de suite",
+    "point fixe",
+    "continuité en un point",
+    "bornitude de suite"
+  ],
+  "methods": [
+    "analyse de la monotonie",
+    "étude de la convergence",
+    "utilisation de la définition de point fixe",
+    "application du théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction réelle",
+    "point fixe",
+    "limite de suite"
+  ],
+  "content_hash": "99df551263afef898edd953f21a3903fb89e83553c9f41d16a14ce72bdcf4875",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:25:27.593Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "D4ma",
+  "source_path": "exo7/8-L3/D4ma.tex",
+  "summary": "L'exercice demande de démontrer que T est un sous-groupe de GL₂(ℝ) et que U est un sous-groupe distingué de T, où T et U sont des ensembles de matrices particulières.",
+  "concepts": [
+    "sous-groupe",
+    "sous-groupe distingué",
+    "groupe linéaire général",
+    "structure de groupe",
+    "matrice inversible",
+    "opérations matricielles"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "test de stabilité par conjugaison",
+    "calcul de produit de matrices",
+    "vérification de l'élément neutre et de l'inverse"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "ensemble de matrices",
+    "groupe GL₂(ℝ)",
+    "sous-groupe T",
+    "sous-groupe U"
+  ],
+  "content_hash": "198ceb2534876fe77063f1eb8dddf94e2ebdc597b008ab32fc7699d15a985800",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:55:32.720Z"
+}

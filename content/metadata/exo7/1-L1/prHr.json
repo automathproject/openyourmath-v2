@@ -1,0 +1,27 @@
+{
+  "uuid": "prHr",
+  "source_path": "exo7/1-L1/prHr.tex",
+  "summary": "Trouver des polynômes réels P et Q premiers entre eux vérifiant P² + Q² = (X² + 1)², puis en déduire l'existence d'une infinité de solutions entières non proportionnelles à l'équation x² + y² = z².",
+  "concepts": [
+    "polynôme premier entre eux",
+    "identité algébrique",
+    "équation diophantienne",
+    "divisibilité dans ℤ",
+    "factorisation",
+    "théorème de Bézout"
+  ],
+  "methods": [
+    "factorisation de polynômes",
+    "recherche de solutions entières",
+    "utilisation de l'identité remarquable",
+    "algèbre des polynômes"
+  ],
+  "objects": [
+    "polynômes réels",
+    "équation x² + y² = z²",
+    "solutions entières non proportionnelles"
+  ],
+  "content_hash": "1e6b244d9b8ddd0f311c69da4fde4f35401fc24fbd8f54abf224f1ec1090b291",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:23:48.779Z"
+}

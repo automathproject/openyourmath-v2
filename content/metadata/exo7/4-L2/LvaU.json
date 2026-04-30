@@ -1,0 +1,31 @@
+{
+  "uuid": "LvaU",
+  "source_path": "exo7/4-L2/LvaU.tex",
+  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3 dépendant d'un paramètre réel α, puis d'en déduire les valeurs propres, leur multiplicité, les conditions de diagonalisabilité de la matrice et son polynôme minimal selon les valeurs de α.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "multiplicité d'une valeur propre",
+    "diagonalisation",
+    "polynôme minimal",
+    "sous-espace propre",
+    "discriminant"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "factorisation de polynôme",
+    "calcul de racines",
+    "analyse de cas",
+    "vérification de diagonalisabilité"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "sous-espace propre",
+    "polynôme minimal"
+  ],
+  "content_hash": "4f3a5f012a7d4cf764ec14881d899cfbda0e61c458b10df3d1a6fe307e6a884a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:36:54.350Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "5lim",
+  "source_path": "exo7/16-L3/5lim.tex",
+  "summary": "Calcul des intégrales de Fresnel semi-convergentes $\\int_0^\\infty \\cos(x^2)dx$ et $\\int_0^\\infty \\sin(x^2)dx$ en utilisant le théorème des résidus et un contour adapté dans le plan complexe.",
+  "concepts": [
+    "théorème des résidus",
+    "fonction holomorphe",
+    "intégrale de contour",
+    "changement de variable",
+    "limite d'intégrale",
+    "convergence d'intégrale"
+  ],
+  "methods": [
+    "intégration complexe",
+    "estimation d'intégrale",
+    "décomposition en partie réelle et imaginaire",
+    "changement de variable trigonométrique"
+  ],
+  "objects": [
+    "intégrale de Fresnel",
+    "fonction exponentielle complexe",
+    "contour d'intégration",
+    "limite d'intégrale"
+  ],
+  "content_hash": "3d01c7216d1f8d3377a14593f0c78ac451fb23efbc69e1046189703511704df3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:07:13.971Z"
+}

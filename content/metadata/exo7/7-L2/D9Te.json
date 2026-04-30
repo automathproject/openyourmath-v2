@@ -1,0 +1,25 @@
+{
+  "uuid": "D9Te",
+  "source_path": "exo7/7-L2/D9Te.tex",
+  "summary": "Calculer la probabilité qu'un paquet de 10 crêpes ait une épaisseur totale comprise entre 6.3 mm et 6.6 mm, chaque crêpe ayant une épaisseur normale de moyenne 0.6 mm et écart-type 0.1 mm.",
+  "concepts": [
+    "loi normale",
+    "variable aléatoire",
+    "somme de variables aléatoires indépendantes",
+    "approximation gaussienne",
+    "standardisation"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de probabilité par la loi normale"
+  ],
+  "objects": [
+    "variable aléatoire",
+    "épaisseur totale d'un paquet de crêpes",
+    "loi normale"
+  ],
+  "content_hash": "db5c38e31e16da3aa8b7278522b55a085c0068acd254333a585d22d47c21fae5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:21:27.522Z"
+}

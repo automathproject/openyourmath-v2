@@ -1,0 +1,27 @@
+{
+  "uuid": "Jliz",
+  "source_path": "exo7/2-L1/Jliz.tex",
+  "summary": "On étudie la convergence d'une suite réelle bornée vérifiant une relation de récurrence implicite. L'objectif est de montrer que cette suite tend vers 0.",
+  "concepts": [
+    "valeur d'adhérence",
+    "ensemble stable",
+    "application invariante",
+    "convergence de suite",
+    "limite de suite",
+    "bornitude"
+  ],
+  "methods": [
+    "analyse des valeurs d'adhérence",
+    "stabilité par application",
+    "invariance d'ensemble",
+    "étude de la borne supérieure et inférieure"
+  ],
+  "objects": [
+    "suite réelle bornée",
+    "application f(x) = x + x²",
+    "ensemble des valeurs d'adhérence"
+  ],
+  "content_hash": "724248598b3f7a8cfbdc034910d8b5e12bb475660cfc02fe4deb2491175f3560",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:13:21.276Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "jkeq",
+  "source_path": "exo7/4-L2/jkeq.tex",
+  "summary": "L'exercice étudie un endomorphisme Tα défini sur l'espace des polynômes réels à une variable, paramétré par un réel α. Il demande de montrer que la restriction de Tα à l'espace des polynômes de degré n est un endomorphisme, puis pour n=3, de déterminer sa matrice, ses valeurs propres, les conditions sur α pour des valeurs propres multiples, et des vecteurs propres associés.",
+  "concepts": [
+    "endomorphisme",
+    "espace vectoriel de polynômes",
+    "restriction d'application",
+    "valeur propre",
+    "multiplicité d'une valeur propre",
+    "diagonalisation",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "calcul de matrice d'endomorphisme",
+    "recherche de valeurs propres",
+    "détermination de vecteurs propres",
+    "analyse de multiplicité"
+  ],
+  "objects": [
+    "endomorphisme Tα",
+    "espace Rn[X]",
+    "matrice de Tα",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "7628c65de4975cecf8ed5d70fc12c7e1e3c6f3292c6c21d4f791ccce3f45f8eb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:08:49.975Z"
+}

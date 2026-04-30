@@ -1,0 +1,25 @@
+{
+  "uuid": "G562",
+  "source_path": "exo7/1-L1/G562.tex",
+  "summary": "L'exercice demande de démontrer que trois polynômes du second degré sont premiers entre eux dans leur ensemble, mais pas deux à deux.",
+  "concepts": [
+    "pgcd de polynômes",
+    "polynômes premiers entre eux",
+    "algèbre des polynômes",
+    "divisibilité dans ℝ[X]",
+    "critère de Bézout"
+  ],
+  "methods": [
+    "calcul de pgcd",
+    "vérification de Bézout",
+    "analyse des combinaisons linéaires"
+  ],
+  "objects": [
+    "polynômes du second degré",
+    "éléments de ℝ[X]",
+    "pgcd"
+  ],
+  "content_hash": "f9dc884d20d702998320075c2db463bfdce9502dfb08243805f8ee78296a73a8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:44:15.022Z"
+}

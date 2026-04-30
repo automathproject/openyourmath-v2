@@ -1,0 +1,32 @@
+{
+  "uuid": "p7QA",
+  "source_path": "amscc/p7QA.tex",
+  "summary": "L'exercice demande d'étudier un processus industriel modélisé par une variable aléatoire exponentielle. Il s'agit de déterminer un estimateur du paramètre de la loi exponentielle, d'en analyser les propriétés, de construire un intervalle de confiance pour ce paramètre et pour l'espérance, et de tester la conformité aux normes industrielles.",
+  "concepts": [
+    "loi exponentielle",
+    "maximum de vraisemblance",
+    "estimateur sans biais",
+    "biais d'un estimateur",
+    "intervalle de confiance",
+    "loi du chi-deux",
+    "espérance mathématique",
+    "inégalité de Jensen"
+  ],
+  "methods": [
+    "calcul de la fonction de vraisemblance",
+    "méthode du maximum de vraisemblance",
+    "calcul de la moyenne empirique",
+    "inversion d'intervalle de confiance",
+    "test d'hypothèse"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "échantillon aléatoire",
+    "estimateur du paramètre",
+    "intervalle de confiance",
+    "espérance mathématique"
+  ],
+  "content_hash": "04cf27ed2e82be23dc43c75b01c7f42d8b415a551448f96695517f0edb2b7da2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:27:18.146Z"
+}

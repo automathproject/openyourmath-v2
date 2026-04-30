@@ -1,0 +1,27 @@
+{
+  "uuid": "FIjf",
+  "source_path": "exo7/4-L2/FIjf.tex",
+  "summary": "L'exercice demande de déterminer si parmi quatre matrices spécifiques, deux matrices distinctes peuvent être semblables. Les matrices sont définies par des paramètres a et b.",
+  "concepts": [
+    "semblance de matrices",
+    "rang d'une matrice",
+    "polynôme annulateur",
+    "endomorphisme",
+    "matrice carrée",
+    "valeurs propres"
+  ],
+  "methods": [
+    "calcul du rang",
+    "comparaison de polynômes caractéristiques",
+    "analyse de la nilpotence"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "matrice identité",
+    "polynôme minimal",
+    "sous-espace propre"
+  ],
+  "content_hash": "601bb8be1e5734c7a85c20ef82b60f56a1a649a630401cfca4ccd9d98aeab277",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:28:02.709Z"
+}

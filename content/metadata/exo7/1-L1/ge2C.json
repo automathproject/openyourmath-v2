@@ -1,0 +1,26 @@
+{
+  "uuid": "ge2C",
+  "source_path": "exo7/1-L1/ge2C.tex",
+  "summary": "L'exercice demande de montrer que j est racine d'un polynôme donné, de déterminer son ordre de multiplicité, et d'en déduire une conséquence liée à la parité du polynôme. Il s'agit ensuite de décomposer ce polynôme en facteurs irréductibles dans les corps des complexes et des réels.",
+  "concepts": [
+    "racine d'un polynôme",
+    "multiplicité d'une racine",
+    "polynôme irréductible",
+    "corps des complexes",
+    "corps des réels",
+    "parité d'une fonction"
+  ],
+  "methods": [
+    "vérification de racine",
+    "décomposition en facteurs irréductibles",
+    "analyse de la parité"
+  ],
+  "objects": [
+    "polynôme de degré 8",
+    "racine complexe j",
+    "facteurs irréductibles"
+  ],
+  "content_hash": "8f7afcc551ed957b269d1705cdd0c3a78600b49e70d7cb1c3e5bd39886493e18",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:14:25.560Z"
+}

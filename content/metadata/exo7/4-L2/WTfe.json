@@ -1,0 +1,26 @@
+{
+  "uuid": "WTfe",
+  "source_path": "exo7/4-L2/WTfe.tex",
+  "summary": "Soit A une matrice carrée complexe de taille 2x2 de trace non nulle. Montrer que toute matrice M qui commute avec A² commute aussi avec A.",
+  "concepts": [
+    "commutativité de matrices",
+    "trace d'une matrice",
+    "polynôme annulateur",
+    "théorème de Cayley-Hamilton",
+    "algèbre linéaire",
+    "matrices carrées complexes"
+  ],
+  "methods": [
+    "utilisation du théorème de Cayley-Hamilton",
+    "calcul de polynôme minimal",
+    "propriétés de commutativité"
+  ],
+  "objects": [
+    "matrice 2x2 complexe",
+    "polynôme annulateur",
+    "trace de matrice"
+  ],
+  "content_hash": "36f4c2b242177adbc73761e9cd03143ea74efca977d3d018b43d85ee41bc1421",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:50:51.275Z"
+}

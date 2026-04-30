@@ -1,0 +1,24 @@
+{
+  "uuid": "f7hD",
+  "source_path": "exo7/2-L1/f7hD.tex",
+  "summary": "On définit une suite $v_n$ à partir d'une série convergente $\\sum u_n$. On demande de montrer que $v_n$ tend vers 0 et que la série $\\sum v_n$ converge, en déterminant sa valeur.",
+  "concepts": [
+    "série numérique",
+    "convergence de suite",
+    "critère de Césaro",
+    "somme partielle"
+  ],
+  "methods": [
+    "critère de Césaro",
+    "téléscopage",
+    "calcul de somme partielle"
+  ],
+  "objects": [
+    "suite $v_n$",
+    "série $\\sum u_n$",
+    "somme partielle"
+  ],
+  "content_hash": "cc6b169e44b21462be11ea1dd54a18accbd67a1e1552157e4839e432609f5509",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:26:48.424Z"
+}

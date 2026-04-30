@@ -1,0 +1,26 @@
+{
+  "uuid": "XMb9",
+  "source_path": "exo7/1-L1/XMb9.tex",
+  "summary": "Calculer la somme des puissances p-ième des racines n-ième de l'unité. Montrer que les coefficients d'un polynôme de degré inférieur à n-1 sont bornés par sa valeur maximale sur le groupe des racines n-ième de l'unité.",
+  "concepts": [
+    "racines n-ième de l'unité",
+    "polynôme à coefficients complexes",
+    "somme sur un groupe fini",
+    "bornes des coefficients d'un polynôme",
+    "valeur maximale d'une fonction"
+  ],
+  "methods": [
+    "somme sur les éléments d'un groupe",
+    "utilisation des propriétés des racines de l'unité",
+    "bornes des coefficients via intégrales ou sommes"
+  ],
+  "objects": [
+    "groupe des racines n-ième de l'unité",
+    "polynôme de degré n-1",
+    "coefficients d'un polynôme",
+    "valeur maximale d'une fonction"
+  ],
+  "content_hash": "49f295f3098516ed38e6a50f14a3df95a28e212e8228f00150b0dc0747247c8b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:49:33.289Z"
+}

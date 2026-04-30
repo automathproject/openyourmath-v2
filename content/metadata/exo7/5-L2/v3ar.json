@@ -1,0 +1,25 @@
+{
+  "uuid": "v3ar",
+  "source_path": "exo7/5-L2/v3ar.tex",
+  "summary": "On considère l'application qui à une matrice carrée d'ordre n associe son polynôme caractéristique. On demande de montrer que cette application est continue.",
+  "concepts": [
+    "espace vectoriel normé",
+    "polynôme caractéristique",
+    "continuité d'une application",
+    "norme matricielle",
+    "topologie produit"
+  ],
+  "methods": [
+    "étude de la continuité",
+    "utilisation de la norme subordonnée",
+    "comparaison des normes"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme caractéristique",
+    "application linéaire"
+  ],
+  "content_hash": "28b4e22039399573a5ba178a7b2b6011b938cfdc8c67b017a909b395e0d1a337",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:15:04.702Z"
+}

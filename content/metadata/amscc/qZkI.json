@@ -1,0 +1,25 @@
+{
+  "uuid": "qZkI",
+  "source_path": "amscc/qZkI.tex",
+  "summary": "On modélise le nombre de moteurs en panne dans deux avions par des variables aléatoires binomiales et on compare les probabilités que chaque vol se termine bien selon un critère de moitié de moteurs fonctionnels.",
+  "concepts": [
+    "loi binomiale",
+    "probabilité conditionnelle",
+    "événement indépendant",
+    "variable aléatoire discrète",
+    "calcul de probabilité"
+  ],
+  "methods": [
+    "modélisation par loi binomiale",
+    "calcul de probabilité élémentaire",
+    "comparaison d'inégalités"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "probabilité de succès",
+    "événement de vol réussi"
+  ],
+  "content_hash": "ac01c503cee60ec530ad1be44344ec105725260fbc91feaeb679dfe38c250312",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:40:15.204Z"
+}

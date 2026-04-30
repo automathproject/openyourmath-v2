@@ -1,0 +1,25 @@
+{
+  "uuid": "s2L1",
+  "source_path": "exo7/2-L1/s2L1.tex",
+  "summary": "L'exercice demande de déterminer le nombre d'entiers naturels à n chiffres exactement ne contenant pas la séquence '13' dans leur écriture décimale. Il s'agit ensuite d'exprimer cette quantité Tn en fonction de n.",
+  "concepts": [
+    "suite récurrente linéaire",
+    "relation de récurrence",
+    "solution d'une équation de récurrence",
+    "racines caractéristiques",
+    "formule explicite"
+  ],
+  "methods": [
+    "résolution d'équation de récurrence linéaire",
+    "calcul des racines caractéristiques",
+    "méthode de résolution par cas d'équation de récurrence"
+  ],
+  "objects": [
+    "suite récurrente",
+    "équation de récurrence linéaire",
+    "solution générale"
+  ],
+  "content_hash": "48b39e48f6a51b8d904fd698caf37f753183b27ce095fb70f0025124deee4889",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:36:49.073Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "Vn9T",
+  "source_path": "exo7/2-L1/Vn9T.tex",
+  "summary": "Montrer que si le rapport successif d'une suite de réels strictement positifs converge, alors la racine nième de cette suite converge vers la même limite. Étudier la réciproque et appliquer le résultat à des exemples concrets.",
+  "concepts": [
+    "convergence de suites",
+    "racine nième d'une suite",
+    "rapport successif de suite",
+    "limite de suite",
+    "encadrement de suite",
+    "théorème des gendarmes"
+  ],
+  "methods": [
+    "encadrement de suite",
+    "théorème des gendarmes",
+    "construction d'un contre-exemple",
+    "calcul de rapport successif",
+    "approximation de logarithme"
+  ],
+  "objects": [
+    "suite de réels strictement positifs",
+    "racine nième de suite",
+    "rapport successif de suite",
+    "factorielles",
+    "coefficients binomiaux"
+  ],
+  "content_hash": "aaee8b23675159fd234f511459fd0838340eec0c2547c16015df9757bf899cd7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:20:49.005Z"
+}

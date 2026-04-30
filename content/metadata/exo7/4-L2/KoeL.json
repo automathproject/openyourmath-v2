@@ -1,0 +1,27 @@
+{
+  "uuid": "KoeL",
+  "source_path": "exo7/4-L2/KoeL.tex",
+  "summary": "L'exercice demande de calculer la transposée d'une matrice donnée et de déterminer si cette matrice est diagonalisable. Ensuite, il s'agit de trouver une matrice orthogonale P permettant de diagonaliser A.",
+  "concepts": [
+    "transposée d'une matrice",
+    "diagonalisation",
+    "matrice orthogonale",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "methods": [
+    "calcul de la transposée",
+    "recherche des valeurs propres",
+    "recherche des vecteurs propres",
+    "construction de la matrice de passage"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice orthogonale",
+    "matrice diagonale"
+  ],
+  "content_hash": "80324dd12617b2761d20b03daa226457ff295895fa40f845a89ee4cff1e19913",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:35:12.932Z"
+}

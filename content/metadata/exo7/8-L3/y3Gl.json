@@ -1,0 +1,25 @@
+{
+  "uuid": "y3Gl",
+  "source_path": "exo7/8-L3/y3Gl.tex",
+  "summary": "Montrer qu'un entier positif divise toujours la valeur de la fonction indicatrice d'Euler en un nombre de la forme 2^n-1.",
+  "concepts": [
+    "fonction indicatrice d'Euler",
+    "ordre d'un élément dans un groupe",
+    "divisibilité",
+    "groupe multiplicatif des entiers modulo n",
+    "théorème de Lagrange"
+  ],
+  "methods": [
+    "calcul de l'ordre d'un élément",
+    "utilisation des propriétés de congruence",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "entier naturel",
+    "fonction indicatrice d'Euler",
+    "groupe multiplicatif modulo n"
+  ],
+  "content_hash": "d0478e78259f75fa50d877a795f39c620cfc460551350110005c8c3b0dc14975",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:18:01.144Z"
+}

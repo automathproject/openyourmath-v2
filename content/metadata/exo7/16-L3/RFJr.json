@@ -1,0 +1,28 @@
+{
+  "uuid": "RFJr",
+  "source_path": "exo7/16-L3/RFJr.tex",
+  "summary": "Calculer l'intégrale de Wallis W_n = ∫₀^(π/2) cos^(2n)θ dθ en utilisant la méthode des résidus de l'analyse complexe.",
+  "concepts": [
+    "théorème des résidus",
+    "développement en série de Laurent",
+    "résidu d'une fonction",
+    "intégrale de contour",
+    "binôme de Newton",
+    "pôle d'une fonction"
+  ],
+  "methods": [
+    "changement de variable",
+    "développement en série de Laurent",
+    "calcul de résidu",
+    "formule du binôme"
+  ],
+  "objects": [
+    "intégrale de Wallis",
+    "fonction complexe",
+    "cercle trigonométrique",
+    "développement en série"
+  ],
+  "content_hash": "410e59918f48eb1d11527ad6a38d34cbdc1ce787053a05f1b9a212b1f6795c10",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:14:46.346Z"
+}

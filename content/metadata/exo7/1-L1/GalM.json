@@ -1,0 +1,27 @@
+{
+  "uuid": "GalM",
+  "source_path": "exo7/1-L1/GalM.tex",
+  "summary": "Trouver tous les polynômes réels de degré impair 2n-1 tels que P(X)+1 soit divisible par (X-1)^n et P(X)-1 soit divisible par (X+1)^n.",
+  "concepts": [
+    "division euclidienne de polynômes",
+    "développement limité",
+    "division suivant les puissances croissantes",
+    "polynôme de degré donné",
+    "divisibilité de polynômes"
+  ],
+  "methods": [
+    "développement limité",
+    "division euclidienne",
+    "division suivant les puissances croissantes",
+    "calcul de coefficients par développement limité"
+  ],
+  "objects": [
+    "polynôme réel",
+    "polynôme de degré 2n-1",
+    "polynôme (X-1)^n",
+    "polynôme (X+1)^n"
+  ],
+  "content_hash": "5ea3914ed4c084a2a87be60a0cd15c9eeeb418cfdc2d2aff4750978a1f716118",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:45:40.424Z"
+}

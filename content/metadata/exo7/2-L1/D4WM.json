@@ -1,0 +1,23 @@
+{
+  "uuid": "D4WM",
+  "source_path": "exo7/2-L1/D4WM.tex",
+  "summary": "On définit une suite u_n comme somme de produits de termes de trois séries absolument convergentes. On demande de montrer que la série de terme général u_n converge vers le produit des sommes de ces trois séries.",
+  "concepts": [
+    "série absolument convergente",
+    "convergence d'une série",
+    "produit de séries",
+    "somme de séries"
+  ],
+  "methods": [
+    "somme de produits de termes",
+    "manipulation de sommes multiples"
+  ],
+  "objects": [
+    "suite u_n",
+    "séries a_n, b_n, c_n",
+    "produit ABC"
+  ],
+  "content_hash": "bd6cf01bdc3ed341801b539ac9c663fda69aa90dedbacfacdec3965d8d3d3e76",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:05:34.865Z"
+}

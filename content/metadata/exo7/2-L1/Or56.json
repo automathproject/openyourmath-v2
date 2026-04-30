@@ -1,0 +1,25 @@
+{
+  "uuid": "Or56",
+  "source_path": "exo7/2-L1/Or56.tex",
+  "summary": "L'exercice demande de prouver qu'il existe un nombre fini d'entiers n pour lesquels 2^n² est strictement inférieur au factoriel de 4n.",
+  "concepts": [
+    "factorielle",
+    "croissance exponentielle",
+    "comparaison de suites",
+    "majoration",
+    "limite de suites"
+  ],
+  "methods": [
+    "comparaison terme à terme",
+    "majoration",
+    "analyse asymptotique"
+  ],
+  "objects": [
+    "suite exponentielle",
+    "suite factorielle",
+    "entiers naturels"
+  ],
+  "content_hash": "273f86a68d8209e0770f86d5cf9ddccb203742b2fa2785c0911f26694ff1adfa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:15:53.097Z"
+}

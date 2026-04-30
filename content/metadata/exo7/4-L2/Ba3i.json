@@ -1,0 +1,24 @@
+{
+  "uuid": "Ba3i",
+  "source_path": "exo7/4-L2/Ba3i.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés liées aux valeurs propres d'une matrice inversible : d'abord que toute valeur propre est non nulle, puis que l'inverse de la matrice a pour valeur propre l'inverse de celle de la matrice originale.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "inversibilité d'une matrice",
+    "noyau d'un endomorphisme",
+    "injectivité"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "manipulation matricielle"
+  ],
+  "objects": [
+    "matrice carrée inversible",
+    "valeur propre réelle",
+    "vecteur propre"
+  ],
+  "content_hash": "f9cd612118e8ca6026ba3f7bc8c00efcde3e9924146e185599401527b271f437",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:22:49.746Z"
+}

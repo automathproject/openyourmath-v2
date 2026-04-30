@@ -1,0 +1,29 @@
+{
+  "uuid": "KS1b",
+  "source_path": "exo7/4-L2/KS1b.tex",
+  "summary": "L'exercice demande de déterminer les images successives d'une base canonique par un endomorphisme donné, puis d'en déduire les puissances de sa matrice associée. Il s'agit ensuite de trouver un polynôme annulateur non nul, de montrer l'unicité de ce polynôme de degré inférieur ou égal à 3, et enfin de prouver la diagonalisabilité de l'endomorphisme et de déterminer ses valeurs propres.",
+  "concepts": [
+    "polynôme annulateur",
+    "endomorphisme",
+    "matrice associée",
+    "valeurs propres",
+    "diagonalisabilité",
+    "base canonique",
+    "puissances de matrice"
+  ],
+  "methods": [
+    "calcul de puissances de matrice",
+    "détermination de polynôme annulateur",
+    "preuve de diagonalisabilité",
+    "calcul de valeurs propres"
+  ],
+  "objects": [
+    "endomorphisme de ℂ⁴",
+    "matrice 4x4",
+    "base canonique",
+    "polynôme minimal"
+  ],
+  "content_hash": "914304e6d0603f71b22e7b9e8a2aa8229bf78a2a1988a155de57e6007629da0c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:34:01.804Z"
+}

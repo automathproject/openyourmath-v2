@@ -1,0 +1,28 @@
+{
+  "uuid": "pVWg",
+  "source_path": "exo7/1-L1/pVWg.tex",
+  "summary": "Simplifier des sommes de puissances paires de cosinus de termes en progression arithmétique avec des angles décalés de π/(2p). L'exercice généralise des cas particuliers pour p=2 et p=3.",
+  "concepts": [
+    "formules de trigonométrie",
+    "somme de cosinus",
+    "puissance de cosinus",
+    "symétrie des angles",
+    "identités trigonométriques",
+    "coefficient binomial"
+  ],
+  "methods": [
+    "développement en série de cosinus",
+    "utilisation de relations de récurrence",
+    "simplification par symétrie",
+    "calcul de somme finie"
+  ],
+  "objects": [
+    "somme de cosinus",
+    "puissance de cosinus",
+    "angle réel",
+    "coefficient binomial"
+  ],
+  "content_hash": "56318caf7003d931defae681f5b4cce7abb02704e3c49a26296736b317c012d0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:01:33.678Z"
+}

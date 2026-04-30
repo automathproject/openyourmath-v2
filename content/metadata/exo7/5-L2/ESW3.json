@@ -1,0 +1,29 @@
+{
+  "uuid": "ESW3",
+  "source_path": "exo7/5-L2/ESW3.tex",
+  "summary": "L'exercice demande de montrer une inégalité liant le rayon spectral d'un endomorphisme à la limite d'une suite de normes itérées, puis d'étudier le cas d'égalité lorsque l'endomorphisme est diagonalisable et le cas général.",
+  "concepts": [
+    "rayon spectral",
+    "norme subordonnée",
+    "endomorphisme diagonalisable",
+    "théorème des gendarmes",
+    "théorème du rayon spectral",
+    "espace vectoriel normé",
+    "spectre d'un endomorphisme"
+  ],
+  "methods": [
+    "comparaison de suites",
+    "utilisation de la diagonalisation",
+    "décomposition spectrale",
+    "majoration par des normes itérées"
+  ],
+  "objects": [
+    "endomorphisme",
+    "norme sur les applications linéaires",
+    "suite de normes",
+    "rayon spectral"
+  ],
+  "content_hash": "75fad8d3d059b731b9e2dc81f4ebfe6396fd141698588c4e177a6052c8480fa5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:40:16.036Z"
+}

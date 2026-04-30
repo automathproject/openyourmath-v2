@@ -1,0 +1,25 @@
+{
+  "uuid": "yrbf",
+  "source_path": "exo7/2-L1/yrbf.tex",
+  "summary": "L'exercice étudie une suite définie par une relation de récurrence non linéaire. Il demande de montrer que cette suite est de Cauchy, puis d'estimer le nombre de termes nécessaires pour approcher sa limite avec une précision donnée.",
+  "concepts": [
+    "suite de Cauchy",
+    "convergence",
+    "relation de récurrence",
+    "limite de suite",
+    "approximation numérique"
+  ],
+  "methods": [
+    "estimation d'erreur",
+    "calcul itératif",
+    "majoration de différence"
+  ],
+  "objects": [
+    "suite récurrente",
+    "nombre réel",
+    "précision d'approximation"
+  ],
+  "content_hash": "1673926306242f0b5d101e675548e5ee00086f36971c41dc2dd118210b447433",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:44:12.690Z"
+}

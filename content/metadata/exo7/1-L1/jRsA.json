@@ -1,0 +1,25 @@
+{
+  "uuid": "jRsA",
+  "source_path": "exo7/1-L1/jRsA.tex",
+  "summary": "Trouver deux polynômes U et V tels que UX^n + V(1-X)^m = 1, avec des conditions de degré sur U et V.",
+  "concepts": [
+    "polynôme",
+    "degré d'un polynôme",
+    "binôme de Newton",
+    "développement binomial",
+    "algèbre des polynômes"
+  ],
+  "methods": [
+    "développement binomial",
+    "réécriture algébrique",
+    "analyse du degré"
+  ],
+  "objects": [
+    "polynôme U",
+    "polynôme V",
+    "expression polynomiale"
+  ],
+  "content_hash": "72712e15c542a34f02960ce0e088f4a72ae1d80efbe1183cd9a24d050724dd5a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:17:21.961Z"
+}

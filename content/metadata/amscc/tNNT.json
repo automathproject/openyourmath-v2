@@ -1,0 +1,27 @@
+{
+  "uuid": "tNNT",
+  "source_path": "amscc/tNNT.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction donnée est une densité de probabilité, puis de déterminer la fonction de répartition et la densité de la variable aléatoire Y = X² à partir de celle de X.",
+  "concepts": [
+    "densité de probabilité",
+    "fonction de répartition",
+    "variable aléatoire à densité",
+    "intégrale de fonction",
+    "changement de variable",
+    "loi exponentielle"
+  ],
+  "methods": [
+    "intégration",
+    "calcul de probabilité conditionnelle",
+    "dérivation de fonction de répartition"
+  ],
+  "objects": [
+    "fonction de densité",
+    "variable aléatoire",
+    "fonction de répartition",
+    "densité de probabilité"
+  ],
+  "content_hash": "d152b9206b605bdea519e40f1eb38d3e0f5c5a6e2c21c5528bc6a9ef70f5dea7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:08:10.573Z"
+}

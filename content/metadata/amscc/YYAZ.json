@@ -1,0 +1,25 @@
+{
+  "uuid": "YYAZ",
+  "source_path": "amscc/YYAZ.tex",
+  "summary": "Calculer la probabilité qu'un composant électronique soit réellement défectueux, sachant qu'il a été déclaré défectueux par un testeur imparfait. Le contexte implique un lot de composants avec un taux de défectuosité connu et des probabilités de bonnes/mauvaises détections du testeur.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "théorème de Bayes",
+    "probabilité conjointe",
+    "événements indépendants",
+    "probabilité marginale"
+  ],
+  "methods": [
+    "formule de Bayes",
+    "calcul de probabilités conditionnelles",
+    "application de la loi des probabilités totales"
+  ],
+  "objects": [
+    "événement défectueux",
+    "événement test positif",
+    "probabilité conditionnelle"
+  ],
+  "content_hash": "6b6da155468b5d07e0dcfe704775b458bf69b30dcc085e660ef59fcef4e1e41f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:31:04.704Z"
+}

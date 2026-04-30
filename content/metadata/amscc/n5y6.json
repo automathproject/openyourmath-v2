@@ -1,0 +1,26 @@
+{
+  "uuid": "n5y6",
+  "source_path": "amscc/n5y6.tex",
+  "summary": "L'exercice demande de déterminer le nombre minimal de rations alimentaires à préparer quotidiennement pour satisfaire la demande avec une probabilité de 99%, sachant que cette demande suit une loi normale dont les paramètres sont estimés à partir de données historiques.",
+  "concepts": [
+    "loi normale",
+    "standardisation",
+    "quantiles",
+    "probabilité conditionnelle",
+    "écart-type",
+    "moyenne"
+  ],
+  "methods": [
+    "standardisation",
+    "résolution d'équation linéaire",
+    "utilisation de tables de la loi normale"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "nombre de rations",
+    "probabilité"
+  ],
+  "content_hash": "207f132c6c47c2a34df7adf333c7b223ee6ae32dff13002c4d09e022d45334ba",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:05:44.696Z"
+}

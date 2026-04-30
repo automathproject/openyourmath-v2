@@ -1,0 +1,31 @@
+{
+  "uuid": "90sE",
+  "source_path": "exo7/5-L2/90sE.tex",
+  "summary": "Calcul du rayon de convergence et de la somme de la série entière $\\sum_{n=1}^{+\\infty}\\frac{1}{nC_{2n}^n}x^n$. L'énoncé demande de déterminer le rayon de convergence puis d'exprimer la somme de la série sous forme close.",
+  "concepts": [
+    "série entière",
+    "rayon de convergence",
+    "règle de d'Alembert",
+    "équation différentielle",
+    "fonction génératrice",
+    "fonction Arccos",
+    "fonction Argch"
+  ],
+  "methods": [
+    "critère de d'Alembert",
+    "résolution d'équation différentielle linéaire",
+    "détermination de primitives",
+    "analyse de limites",
+    "somme de séries entières"
+  ],
+  "objects": [
+    "série entière",
+    "fonction génératrice",
+    "équation différentielle",
+    "fonction Arccos",
+    "fonction Argch"
+  ],
+  "content_hash": "6934ade78ced466368562c3dfa799e96c092f93fb0ad22942d43b55672e496c3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:36:27.874Z"
+}

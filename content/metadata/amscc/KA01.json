@@ -1,0 +1,30 @@
+{
+  "uuid": "KA01",
+  "source_path": "amscc/KA01.tex",
+  "summary": "L'exercice demande de calculer l'effet de matrices de permutation sur un vecteur, d'interpréter ces effets, de déterminer le déterminant de ces matrices, de calculer des produits de matrices de permutation et de résoudre un problème d'application concrète de décodage de message.",
+  "concepts": [
+    "matrice de permutation",
+    "déterminant",
+    "produit matriciel",
+    "permutation circulaire",
+    "transposition",
+    "matrice identité",
+    "inverse d'une matrice",
+    "groupe symétrique"
+  ],
+  "methods": [
+    "développement par une ligne ou colonne",
+    "calcul de produit matriciel",
+    "calcul de puissance de matrice",
+    "application de permutation inverse"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteur colonne",
+    "matrice 3x3",
+    "permutation"
+  ],
+  "content_hash": "a1f074f45ccf74af0575a9f0602295e37311ef9b1fff9b7848959f8021dd7ffb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:24:39.655Z"
+}

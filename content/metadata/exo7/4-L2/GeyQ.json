@@ -1,0 +1,26 @@
+{
+  "uuid": "GeyQ",
+  "source_path": "exo7/4-L2/GeyQ.tex",
+  "summary": "On considère une matrice A antisymétrique par blocs et on demande de montrer qu'elle est diagonalisable.",
+  "concepts": [
+    "diagonalisation",
+    "spectre d'une matrice",
+    "endomorphisme",
+    "symétrie",
+    "polynôme annulateur",
+    "matrice antisymétrique"
+  ],
+  "methods": [
+    "calcul des valeurs propres",
+    "analyse du polynôme caractéristique",
+    "utilisation des propriétés de symétrie"
+  ],
+  "objects": [
+    "matrice carrée",
+    "endomorphisme de R^n",
+    "base canonique"
+  ],
+  "content_hash": "b10ef1be8dfb8de89a835c0c4bc1ea76da95aa38ee907aead7e585c7312473d5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:30:31.166Z"
+}

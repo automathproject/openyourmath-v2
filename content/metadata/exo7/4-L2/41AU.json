@@ -1,0 +1,31 @@
+{
+  "uuid": "41AU",
+  "source_path": "exo7/4-L2/41AU.tex",
+  "summary": "L'exercice étudie une relation de récurrence linéaire définie par une matrice A et sa transformation B=5A. Il demande d'analyser les propriétés spectrales de B (valeurs propres, diagonalisabilité) et d'en déduire le comportement asymptotique des suites générées par cette relation.",
+  "concepts": [
+    "matrice de récurrence",
+    "valeur propre",
+    "espace propre",
+    "multiplicité d'une valeur propre",
+    "trace d'une matrice",
+    "polynôme annulateur",
+    "convergence de suite de matrices",
+    "limite de suite de matrices"
+  ],
+  "methods": [
+    "calcul de trace",
+    "analyse de multiplicité algébrique et géométrique",
+    "détermination de polynôme annulateur",
+    "calcul de limite de suite de matrices",
+    "diagonalisation"
+  ],
+  "objects": [
+    "matrice de récurrence",
+    "suite de matrices",
+    "vecteur propre",
+    "polynôme annulateur"
+  ],
+  "content_hash": "711801f9fe98e281e9fa5b8a0e4da479d467a3bb5c0b23cca00a70e4ca509118",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:12:25.130Z"
+}

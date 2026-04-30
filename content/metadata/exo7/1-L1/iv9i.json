@@ -1,0 +1,28 @@
+{
+  "uuid": "iv9i",
+  "source_path": "exo7/1-L1/iv9i.tex",
+  "summary": "L'exercice demande de construire un isomorphisme entre l'espace vectoriel ℂⁿ⁺¹ et l'espace des polynômes de degré ≤ n, puis d'étudier une application linéaire σ sur ℂⁿ⁺¹ et son action sur l'espace des polynômes modulo Xⁿ⁺¹−1. Enfin, il s'agit de caractériser les sous-espaces stables par σ.",
+  "concepts": [
+    "isomorphisme d'espaces vectoriels",
+    "application linéaire",
+    "division euclidienne de polynômes",
+    "stabilité d'un sous-espace vectoriel",
+    "pgcd de polynômes",
+    "relation de Bézout"
+  ],
+  "methods": [
+    "construction explicite d'isomorphisme",
+    "vérification de linéarité",
+    "multiplication modulaire de polynômes",
+    "utilisation du pgcd"
+  ],
+  "objects": [
+    "espace vectoriel ℂⁿ⁺¹",
+    "espace des polynômes de degré ≤ n",
+    "application σ",
+    "sous-espace vectoriel stable"
+  ],
+  "content_hash": "02383d2bb7cef235af1d0dac01bc508c287d537d6be50ea7ea695121621d66d9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:16:39.607Z"
+}

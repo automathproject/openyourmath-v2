@@ -1,0 +1,27 @@
+{
+  "uuid": "o6hc",
+  "source_path": "exo7/5-L2/o6hc.tex",
+  "summary": "L'exercice demande de démontrer que tout ouvert de ℝ peut être exprimé comme une réunion d'intervalles ouverts disjoints. On considère un ouvert U de ℝ et on définit pour chaque x ∈ U un ensemble C(x) comme l'union de deux intervalles.",
+  "concepts": [
+    "ouvert de ℝ",
+    "intervalle ouvert",
+    "réunion d'ensembles",
+    "infimum",
+    "supremum",
+    "disjointedness"
+  ],
+  "methods": [
+    "utilisation de la définition d'ouvert",
+    "analyse des bornes inférieures et supérieures",
+    "preuve par contradiction"
+  ],
+  "objects": [
+    "ensemble C(x)",
+    "ouvert U",
+    "infimum de C(x)",
+    "supremum de C(x)"
+  ],
+  "content_hash": "8c71b4feb6de48ae06eef2d63b218d5be9c3c551fd810b51ad55daa7b3dffff6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:09:20.331Z"
+}

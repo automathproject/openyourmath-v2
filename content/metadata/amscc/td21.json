@@ -1,0 +1,25 @@
+{
+  "uuid": "td21",
+  "source_path": "amscc/td21.tex",
+  "summary": "L'exercice demande de comparer deux estimateurs de la moyenne d'un échantillon i.i.d., en montrant d'abord qu'ils sont sans biais, puis en choisissant le meilleur estimateur au sens du risque quadratique.",
+  "concepts": [
+    "estimateur sans biais",
+    "espérance mathématique",
+    "variance",
+    "écart quadratique moyen",
+    "risque quadratique",
+    "échantillon i.i.d."
+  ],
+  "methods": [
+    "calcul de l'espérance d'un estimateur",
+    "comparaison des écarts quadratiques moyens"
+  ],
+  "objects": [
+    "estimateur de la moyenne",
+    "échantillon i.i.d.",
+    "paramètre inconnu"
+  ],
+  "content_hash": "90969a18f74ba75e855a76c94bdad0480d9e1a33753540264a86602fa00c3c6b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:55:59.657Z"
+}

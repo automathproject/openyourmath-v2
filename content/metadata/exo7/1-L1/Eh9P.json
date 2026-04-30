@@ -1,0 +1,26 @@
+{
+  "uuid": "Eh9P",
+  "source_path": "exo7/1-L1/Eh9P.tex",
+  "summary": "Montrer que deux polynômes donnés sont premiers entre eux en trouvant des polynômes U et V tels que UP + VQ = 1.",
+  "concepts": [
+    "polynômes premiers entre eux",
+    "algèbre des polynômes",
+    "division euclidienne",
+    "identité de Bézout",
+    "anneau des polynômes",
+    "PGCD de polynômes"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "identité de Bézout",
+    "calcul de combinaisons linéaires"
+  ],
+  "objects": [
+    "polynômes",
+    "combinaisons linéaires",
+    "identité de Bézout"
+  ],
+  "content_hash": "4dd76a585bd7ccb77615cc449e776362eaa654aa1f0e2cccc6ded7895f6098ab",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:42:34.925Z"
+}

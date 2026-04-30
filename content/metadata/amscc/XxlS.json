@@ -1,0 +1,33 @@
+{
+  "uuid": "XxlS",
+  "source_path": "amscc/XxlS.tex",
+  "summary": "L'exercice demande de montrer que la fonctionnelle quadratique J est de classe C^1, de calculer son gradient, puis de prouver qu'elle est strictement convexe et coercive, et enfin d'établir la convergence géométrique de la méthode de gradient sous certaines conditions sur le pas.",
+  "concepts": [
+    "fonctionnelle quadratique",
+    "classe C^1",
+    "gradient",
+    "convexité stricte",
+    "coercivité",
+    "valeurs propres",
+    "méthode de gradient",
+    "convergence géométrique"
+  ],
+  "methods": [
+    "calcul de différentielle",
+    "identification du gradient",
+    "utilisation de la symétrie de la matrice",
+    "inégalité de Cauchy-Schwarz",
+    "quotient de Rayleigh",
+    "majoration de l'erreur"
+  ],
+  "objects": [
+    "fonctionnelle J",
+    "matrice symétrique définie positive A",
+    "vecteur b",
+    "suite récurrente (u_k)",
+    "gradient ∇J(v)"
+  ],
+  "content_hash": "ce2c92fb8133b0080b0286db1f54737adb860448dd709b94e4b77253f0c5902f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:38:05.840Z"
+}

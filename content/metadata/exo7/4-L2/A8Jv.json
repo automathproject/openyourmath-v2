@@ -1,0 +1,28 @@
+{
+  "uuid": "A8Jv",
+  "source_path": "exo7/4-L2/A8Jv.tex",
+  "summary": "Trouver une matrice B différente de A et -A telle que B² = A, où A est une matrice 3x3 donnée.",
+  "concepts": [
+    "réduction d'endomorphisme",
+    "polynôme annulateur",
+    "diagonalisation",
+    "matrice inversible",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "methods": [
+    "diagonalisation",
+    "calcul de polynôme caractéristique",
+    "recherche de valeurs propres",
+    "construction de matrice de passage"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice diagonale",
+    "matrice de passage",
+    "polynôme annulateur"
+  ],
+  "content_hash": "be6de4dd05bdfd87de2472ead4cf12d6630af7705dde74a8dbc2aaffd3d7a752",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:19:33.278Z"
+}

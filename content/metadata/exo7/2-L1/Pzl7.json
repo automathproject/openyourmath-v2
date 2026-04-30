@@ -1,0 +1,25 @@
+{
+  "uuid": "Pzl7",
+  "source_path": "exo7/2-L1/Pzl7.tex",
+  "summary": "Trouver la valeur minimale de l'expression (1 + 1/a)(1 + 1/b) pour deux réels positifs a et b vérifiant a + b = 8, et déterminer les valeurs de a et b pour lesquelles cette valeur minimale est atteinte.",
+  "concepts": [
+    "inégalité arithmético-géométrique",
+    "majoration",
+    "minoration",
+    "produit de deux réels positifs",
+    "optimisation sous contrainte"
+  ],
+  "methods": [
+    "développement algébrique",
+    "application de l'inégalité AM-GM",
+    "utilisation de contraintes"
+  ],
+  "objects": [
+    "réels positifs",
+    "expression algébrique",
+    "produit ab"
+  ],
+  "content_hash": "9469d07d17da918f176edc5c148e662dbeadcc8b449809c304b97108f4bbf18a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:52:49.902Z"
+}

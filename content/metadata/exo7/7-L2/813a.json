@@ -1,0 +1,29 @@
+{
+  "uuid": "813a",
+  "source_path": "exo7/7-L2/813a.tex",
+  "summary": "L'exercice demande de réaliser un test d'indépendance du khi-deux pour étudier la liaison entre le tabagisme et le cancer de la gorge sur une population de 1000 personnes, à partir d'un tableau de contingence observé.",
+  "concepts": [
+    "test d'indépendance du khi-deux",
+    "tableau de contingence",
+    "hypothèse nulle",
+    "risque de première espèce",
+    "distribution du khi-deux",
+    "probabilité conditionnelle",
+    "indépendance statistique"
+  ],
+  "methods": [
+    "calcul des effectifs théoriques sous hypothèse d'indépendance",
+    "calcul de la statistique du khi-deux",
+    "comparaison avec la loi du khi-deux",
+    "rejet de l'hypothèse nulle"
+  ],
+  "objects": [
+    "tableau de contingence",
+    "effectifs observés",
+    "effectifs théoriques",
+    "statistique du khi-deux"
+  ],
+  "content_hash": "b85a7acef9a1b51feb06e01476df9cc3f5aa0aaf74fa6d8b5c901b83ea8fa74d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:34:37.460Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "x8fv",
+  "source_path": "exo7/4-L2/x8fv.tex",
+  "summary": "L'exercice demande de montrer que 1 est valeur propre d'une matrice A à coefficients dans [0,1] avec des lignes sommant à 1, puis d'étudier les propriétés des autres valeurs propres de A.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "matrice stochastique",
+    "spectre d'une matrice",
+    "inégalité triangulaire",
+    "disque dans le plan complexe"
+  ],
+  "methods": [
+    "recherche de vecteur propre associé",
+    "utilisation de l'inégalité triangulaire",
+    "analyse géométrique des valeurs propres"
+  ],
+  "objects": [
+    "matrice carrée réelle",
+    "vecteur propre",
+    "valeur propre",
+    "disque dans le plan complexe"
+  ],
+  "content_hash": "6f5e85c1fe1870e436aca1eafa05b24827672bb6aef867b19ebc1a071a55cc8a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:28:25.863Z"
+}

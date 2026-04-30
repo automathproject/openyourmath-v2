@@ -1,0 +1,27 @@
+{
+  "uuid": "owgc",
+  "source_path": "exo7/5-L2/owgc.tex",
+  "summary": "On considère un espace vectoriel normé E, un compact convexe K de E, et une application 1-lipschitzienne f de K dans K. On demande de prouver que f admet un point fixe.",
+  "concepts": [
+    "espace vectoriel normé",
+    "compact convexe",
+    "application lipschitzienne",
+    "point fixe",
+    "contraction",
+    "valeur d'adhérence"
+  ],
+  "methods": [
+    "construction de suite itérative",
+    "utilisation du théorème du point fixe de Banach",
+    "passage à la limite"
+  ],
+  "objects": [
+    "espace vectoriel normé",
+    "compact convexe",
+    "application 1-lipschitzienne",
+    "suite de points fixes"
+  ],
+  "content_hash": "33f4e7db92bec572c25109ef8480736a9dbf2df045aadcc786a607379a46d916",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:09:59.295Z"
+}

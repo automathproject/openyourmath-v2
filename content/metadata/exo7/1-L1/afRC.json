@@ -1,0 +1,25 @@
+{
+  "uuid": "afRC",
+  "source_path": "exo7/1-L1/afRC.tex",
+  "summary": "Soit un polynôme complexe P de degré n vérifiant P(0)=1 et P(1)=0. Montrer que la borne supérieure de |P(z)| pour |z|=1 est supérieure ou égale à 1+1/n.",
+  "concepts": [
+    "polynôme complexe",
+    "module d'un nombre complexe",
+    "racines de l'unité",
+    "inégalité de borne supérieure",
+    "valeur maximale d'une fonction"
+  ],
+  "methods": [
+    "utilisation des racines de l'unité",
+    "somme de valeurs du polynôme en points particuliers",
+    "analyse de la borne supérieure"
+  ],
+  "objects": [
+    "polynôme P",
+    "nombre complexe z",
+    "racines de l'unité w_k"
+  ],
+  "content_hash": "78c30eeab1b9463e455833ea4be48ff6daf6f52fbabab15a807d1228a5757ec0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:06:37.029Z"
+}

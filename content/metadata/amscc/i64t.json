@@ -1,0 +1,28 @@
+{
+  "uuid": "i64t",
+  "source_path": "amscc/i64t.tex",
+  "summary": "L'exercice demande de vérifier qu'une fonction définie sur un triangle de R² est une densité de probabilité, puis d'en déduire les lois marginales des variables aléatoires X et Y, de calculer leur covariance et d'étudier leur indépendance.",
+  "concepts": [
+    "densité de probabilité",
+    "loi conjointe",
+    "loi marginale",
+    "covariance",
+    "indépendance de variables aléatoires",
+    "intégration sur un domaine"
+  ],
+  "methods": [
+    "intégration sur un domaine triangulaire",
+    "calcul de loi marginale",
+    "calcul de covariance",
+    "test d'indépendance"
+  ],
+  "objects": [
+    "densité conjointe",
+    "variables aléatoires bidimensionnelles",
+    "lois marginales",
+    "covariance"
+  ],
+  "content_hash": "9e3b7ecf82ed6b91fdb32c7248586408b705e5882ce58651ddfad3e18154a39c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:01:42.175Z"
+}

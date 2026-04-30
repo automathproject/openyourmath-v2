@@ -1,0 +1,27 @@
+{
+  "uuid": "V18k",
+  "source_path": "exo7/7-L2/V18k.tex",
+  "summary": "L'exercice modélise un jeu de hasard où les probabilités de gagner ou perdre une partie dépendent du résultat de la partie précédente. Il demande d'établir des relations de récurrence entre les probabilités de gagner et de perdre à chaque étape, puis de résoudre ces relations pour exprimer ces probabilités en fonction de l'étape.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "chaîne de Markov",
+    "relation de récurrence",
+    "limite d'une suite",
+    "matrice de transition"
+  ],
+  "methods": [
+    "formule des probabilités totales",
+    "résolution de système linéaire",
+    "calcul de limite de suite",
+    "diagonalisation de matrice"
+  ],
+  "objects": [
+    "probabilité conditionnelle",
+    "suite de probabilités",
+    "matrice de transition",
+    "système d'équations linéaires"
+  ],
+  "content_hash": "72d66767055c4f59e524dc25753f530118a38fc028570f1e58029f37500e3590",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:29:29.334Z"
+}

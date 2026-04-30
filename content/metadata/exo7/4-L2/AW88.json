@@ -1,0 +1,27 @@
+{
+  "uuid": "AW88",
+  "source_path": "exo7/4-L2/AW88.tex",
+  "summary": "L'exercice demande de déterminer les valeurs des paramètres a, b et c pour lesquelles deux matrices données sont diagonalisables. Les matrices sont de taille 3x3 et présentent des structures triangulaires ou symétriques.",
+  "concepts": [
+    "diagonalisation",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrice triangulaire",
+    "matrice symétrique"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "analyse des valeurs propres",
+    "vérification de la diagonalisabilité"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "3f68ae98e7780ca0920db46bcc764c363e24a93dd2d60c8b5d1eb3b86822de51",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:20:10.374Z"
+}

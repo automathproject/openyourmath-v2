@@ -1,0 +1,28 @@
+{
+  "uuid": "TiBd",
+  "source_path": "exo7/5-L2/TiBd.tex",
+  "summary": "L'exercice demande de montrer la continuité de deux endomorphismes, Δ et C, définis sur l'espace vectoriel ℓ^∞(ℂ) des suites bornées, et de calculer leur norme. L'endomorphisme Δ est défini comme la différence successive des termes d'une suite, tandis que C est défini comme la moyenne pondérée des termes d'une suite.",
+  "concepts": [
+    "espace vectoriel normé",
+    "suite bornée",
+    "endomorphisme",
+    "continuité",
+    "norme matricielle",
+    "norme infinie",
+    "bornitude"
+  ],
+  "methods": [
+    "majoration de norme",
+    "recherche de norme exacte",
+    "utilisation de suite témoin"
+  ],
+  "objects": [
+    "espace ℓ^∞(ℂ)",
+    "endomorphisme Δ",
+    "endomorphisme C",
+    "suite bornée"
+  ],
+  "content_hash": "b480658d71a32413fc3bcdeaf12f2bc75fcb7573bff693c15a32aafc22a40f4e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:54:02.683Z"
+}

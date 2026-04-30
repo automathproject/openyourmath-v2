@@ -1,0 +1,27 @@
+{
+  "uuid": "y5Rl",
+  "source_path": "exo7/2-L1/y5Rl.tex",
+  "summary": "L'exercice demande d'étudier la limite d'une suite définie par une relation de récurrence non linéaire et de déterminer les limites possibles. Il introduit ensuite une transformation de la suite pour en déduire sa limite.",
+  "concepts": [
+    "suite récurrente",
+    "limite de suite",
+    "équation quadratique",
+    "racines réelles",
+    "convergence",
+    "relation de récurrence non linéaire"
+  ],
+  "methods": [
+    "analyse de la convergence",
+    "transformation de suite",
+    "étude des racines"
+  ],
+  "objects": [
+    "suite $(u_n)$",
+    "suite $(v_n)$",
+    "équation $x^2 = ax + b$",
+    "racines $\\alpha$ et $\\beta$"
+  ],
+  "content_hash": "2123a6a3fc7824eb7bbef1983d2656d473301e5e06db3b2f2b3b3b2e3c154e15",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:42:56.104Z"
+}

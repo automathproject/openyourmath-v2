@@ -1,0 +1,29 @@
+{
+  "uuid": "kzhU",
+  "source_path": "exo7/4-L2/kzhU.tex",
+  "summary": "L'exercice étudie un endomorphisme vérifiant f² = Id. Il demande de démontrer que ses seules valeurs propres possibles sont 1 et -1, de montrer qu'il admet toujours une valeur propre, et de prouver que si 1 et -1 sont valeurs propres, alors l'espace est somme directe des sous-espaces propres correspondants. Une interprétation géométrique est demandée dans le cas n=2.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "sous-espace propre",
+    "somme directe",
+    "endomorphisme",
+    "polynôme annulateur",
+    "décomposition spectrale"
+  ],
+  "methods": [
+    "détermination des valeurs propres",
+    "décomposition en sous-espaces propres",
+    "analyse des cas d'existence des valeurs propres",
+    "interprétation géométrique"
+  ],
+  "objects": [
+    "endomorphisme",
+    "vecteurs propres",
+    "sous-espaces propres",
+    "espace vectoriel"
+  ],
+  "content_hash": "d5e20207d91999fdae0d4a614282737f00d338551c99f093555761e684a9dea4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:10:22.214Z"
+}

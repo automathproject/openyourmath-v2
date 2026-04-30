@@ -1,0 +1,25 @@
+{
+  "uuid": "ogqd",
+  "source_path": "exo7/8-L3/ogqd.tex",
+  "summary": "L'exercice demande de prouver deux propriétés sur les sous-groupes d'un groupe G. La première partie concerne les conditions pour que l'union de deux sous-groupes H et K soit elle-même un sous-groupe. La seconde partie déduit qu'un groupe ne peut être la réunion de deux sous-groupes propres.",
+  "concepts": [
+    "sous-groupe",
+    "inclusion de sous-groupes",
+    "union de sous-groupes",
+    "sous-groupe propre",
+    "structure de groupe"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "manipulation d'éléments",
+    "inclusion réciproque"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupes H et K",
+    "union H ∪ K"
+  ],
+  "content_hash": "4277f3847385fddc822ba150746cee14785a1933e0d37307c85a6e4d08aa6d9e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:16:24.495Z"
+}

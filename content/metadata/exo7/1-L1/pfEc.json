@@ -1,0 +1,28 @@
+{
+  "uuid": "pfEc",
+  "source_path": "exo7/1-L1/pfEc.tex",
+  "summary": "Montrer qu'un polynôme de degré 4 à coefficients complexes a ses racines formant un parallélogramme dans le plan complexe si et seulement si sa dérivée première et sa dérivée troisième ont une racine commune.",
+  "concepts": [
+    "polynôme à coefficients complexes",
+    "racines complexes",
+    "parallélogramme dans le plan complexe",
+    "polynôme bicarré",
+    "dérivée d'un polynôme",
+    "condition nécessaire et suffisante"
+  ],
+  "methods": [
+    "analyse des racines",
+    "transformation par translation",
+    "intégration successive",
+    "condition d'annulation commune"
+  ],
+  "objects": [
+    "polynôme de degré 4",
+    "dérivées première et troisième",
+    "racine commune",
+    "centre du parallélogramme"
+  ],
+  "content_hash": "737f2d347c4c00900188e3bf23d0d2e9f13549166c9eda0eeb3de511483474eb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:23:20.106Z"
+}

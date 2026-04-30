@@ -1,0 +1,31 @@
+{
+  "uuid": "mJRz",
+  "source_path": "exo7/1-L1/mJRz.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des polynômes réels s'exprimant comme somme de deux carrés de polynômes est stable par multiplication et de caractériser cet ensemble comme les polynômes réels non négatifs sur ℝ. Une application numérique consiste à décomposer un polynôme donné en somme de deux carrés de polynômes à coefficients entiers.",
+  "concepts": [
+    "polynôme à coefficients réels",
+    "polynôme à coefficients entiers",
+    "polynôme irréductible sur ℚ[i]",
+    "conjugaison complexe",
+    "forme quadratique",
+    "stabilité par multiplication",
+    "polynôme non négatif sur ℝ"
+  ],
+  "methods": [
+    "factorisation",
+    "décomposition en facteurs irréductibles",
+    "utilisation de l'algorithme d'Euclide",
+    "calcul de conjugué",
+    "résolution d'équations diophantiennes"
+  ],
+  "objects": [
+    "polynôme de degré 4",
+    "polynôme à coefficients entiers",
+    "polynôme irréductible sur ℚ[i]",
+    "forme quadratique",
+    "conjugué complexe"
+  ],
+  "content_hash": "ea3d2a3d121d9c9d647702c23b35e4aa58a26e46edcd9cf469e2aff6d0e7cebf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:19:58.117Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "bE4A",
+  "source_path": "exo7/15-L3/bE4A.tex",
+  "summary": "L'exercice étudie un ensemble H de fonctions C^1 sur ℝ vérifiant une condition d'intégrale bornée. Il demande de prouver des propriétés de ces fonctions : limite infinie, borne uniforme, équicontinuité et bornitude, puis d'analyser une suite spécifique dans H.",
+  "concepts": [
+    "espace de Banach",
+    "fonction continue",
+    "intégrale de Lebesgue",
+    "équicontinuité",
+    "bornitude",
+    "théorème d'Ascoli",
+    "convergence uniforme",
+    "espace métrique"
+  ],
+  "methods": [
+    "étude de la limite infinie",
+    "estimation de la norme infinie",
+    "analyse de la continuité uniforme",
+    "construction de contre-exemple"
+  ],
+  "objects": [
+    "ensemble de fonctions H",
+    "fonction φ",
+    "suite de fonctions f_n",
+    "espace C_0(ℝ)"
+  ],
+  "content_hash": "2691159971e256c759c4a03492e3e01d4423b5eb54fab516aacc21ae2adf6f66",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:48:03.777Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "Qsth",
+  "source_path": "exo7/10-L3/Qsth.tex",
+  "summary": "Montrer qu'un polynôme donné est irréductible dans l'anneau des polynômes à coefficients rationnels.",
+  "concepts": [
+    "critère d'Eisenstein",
+    "polynôme irréductible",
+    "anneau des polynômes",
+    "réduction modulo un nombre premier",
+    "polynôme primitif",
+    "unicité de la factorisation"
+  ],
+  "methods": [
+    "application du critère d'Eisenstein",
+    "réduction modulo un nombre premier",
+    "analyse des coefficients"
+  ],
+  "objects": [
+    "polynôme à coefficients entiers",
+    "polynôme unitaire",
+    "polynôme primitif"
+  ],
+  "content_hash": "e02b9db99cea6ac0065a076195ca61efc2cba4c3abb616ccfb2ff4841b240383",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:23:12.509Z"
+}

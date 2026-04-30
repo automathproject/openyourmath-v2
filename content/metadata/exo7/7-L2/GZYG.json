@@ -1,0 +1,27 @@
+{
+  "uuid": "GZYG",
+  "source_path": "exo7/7-L2/GZYG.tex",
+  "summary": "L'exercice modélise une politique de natalité où les femmes arrêtent d'avoir des enfants après la naissance d'un garçon. On demande la loi de la variable aléatoire X représentant le nombre de filles par femme, puis l'espérance de X et de Y (nombre de garçons), pour évaluer l'efficacité de la règle.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi de probabilité",
+    "espérance mathématique",
+    "probabilité conditionnelle",
+    "modélisation probabiliste"
+  ],
+  "methods": [
+    "calcul de probabilité",
+    "calcul d'espérance",
+    "somme discrète",
+    "analyse de cas"
+  ],
+  "objects": [
+    "variable aléatoire X (nombre de filles)",
+    "variable aléatoire Y (nombre de garçons)",
+    "loi de X",
+    "espérance de X et Y"
+  ],
+  "content_hash": "3f7738b4755475d3c8fffee0f9d8705a4517dcbf40acbb83b7a332e92a3da08e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:22:31.200Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "kbkt",
+  "source_path": "exo7/5-L2/kbkt.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction continue sur un espace vectoriel normé de dimension finie, tendant vers l'infini en norme infinie, admet un minimum. Il illustre ensuite ce résultat par un exemple d'approximation polynomiale.",
+  "concepts": [
+    "espace vectoriel normé",
+    "dimension finie",
+    "fonction continue",
+    "infimum",
+    "minimum d'une fonction",
+    "topologie des evn"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la continuité",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction continue",
+    "espace vectoriel normé",
+    "polynôme de meilleure approximation"
+  ],
+  "content_hash": "a2fc1dcb0f43ab5811ed84a8e72b40ef4af853b1d1524ee44c2fd38cd1647160",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:06:17.242Z"
+}

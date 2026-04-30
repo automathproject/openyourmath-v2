@@ -1,0 +1,23 @@
+{
+  "uuid": "b7BD",
+  "source_path": "exo7/7-L2/b7BD.tex",
+  "summary": "L'exercice demande de calculer l'espérance du nombre de boules rouges tirées dans deux scénarios : avec remise et sans remise. Le contexte est une urne contenant 10 boules rouges et 5 boules blanches.",
+  "concepts": [
+    "espérance d'une variable aléatoire",
+    "tirage avec remise",
+    "tirage sans remise",
+    "loi binomiale",
+    "loi hypergéométrique"
+  ],
+  "methods": [
+    "calcul direct de l'espérance",
+    "utilisation de la linéarité de l'espérance"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "nombre de boules rouges tirées"
+  ],
+  "content_hash": "7020ed7084258248eced0b9ac1e5a7a83406509c60f6f5ee83ed2f6abea60df9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:32:55.344Z"
+}

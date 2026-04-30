@@ -1,0 +1,28 @@
+{
+  "uuid": "H9R3",
+  "source_path": "exo7/2-L1/H9R3.tex",
+  "summary": "Calculer la limite d'une somme de termes positifs lorsque n tend vers l'infini, où chaque terme est l'inverse de la somme des carrés des entiers de 1 à k.",
+  "concepts": [
+    "somme de carrés",
+    "décomposition en éléments simples",
+    "séries divergentes",
+    "limite de suites",
+    "fonction harmonique",
+    "constante d'Euler-Mascheroni"
+  ],
+  "methods": [
+    "décomposition en fractions partielles",
+    "téléscopage",
+    "approximation logarithmique",
+    "comparaison asymptotique"
+  ],
+  "objects": [
+    "somme de termes positifs",
+    "somme de carrés",
+    "fonction harmonique",
+    "limite infinie"
+  ],
+  "content_hash": "cbf3e5b291d8dfd2c74b0bf564a126b65721e145f2b3534173d257c9b5e1846e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:08:53.537Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "tUCz",
+  "source_path": "exo7/1-L1/tUCz.tex",
+  "summary": "L'exercice demande de construire des exemples d'applications linéaires non nulles de ℝ² dans lui-même dont le carré est nul. Ensuite, pour un vecteur x non dans le noyau, il faut montrer que {x, φ(x)} forme une base de ℝ² et déterminer la matrice de φ dans cette base.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "base d'un espace vectoriel",
+    "matrice d'une application linéaire",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "construction explicite d'application linéaire",
+    "vérification de la linéarité",
+    "détermination d'une base",
+    "calcul de matrice dans une base donnée"
+  ],
+  "objects": [
+    "application linéaire de ℝ² dans ℝ²",
+    "vecteur non nul",
+    "base de ℝ²",
+    "matrice carrée"
+  ],
+  "content_hash": "741e8cbe1203138ac5b7348ed3dfc142d3939785870f414b0c14d462a0696610",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:19:21.103Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "m6xz",
+  "source_path": "exo7/7-L2/m6xz.tex",
+  "summary": "L'exercice demande de déterminer la loi de probabilité du nombre d'appels reçus en 4 minutes, d'approcher cette loi par une loi de Poisson, et de construire un intervalle de confiance pour le nombre moyen d'appels en 4 minutes.",
+  "concepts": [
+    "loi binomiale",
+    "loi de Poisson",
+    "intervalle de confiance",
+    "approximation de la loi binomiale par la loi de Poisson",
+    "probabilité d'événement rare",
+    "estimation par intervalle"
+  ],
+  "methods": [
+    "approximation de Poisson",
+    "calcul de l'espérance et de la variance",
+    "construction d'intervalle de confiance"
+  ],
+  "objects": [
+    "nombre d'appels",
+    "loi binomiale",
+    "loi de Poisson",
+    "intervalle de confiance"
+  ],
+  "content_hash": "efc65180998e8fa8778fd42f92a546f8aec9f7966b395a6edcf11cd27e9b944e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:50:23.527Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "fU9E",
+  "source_path": "amscc/fU9E.tex",
+  "summary": "L'exercice demande de vérifier qu'une fonction donnée définit une densité de probabilité pour un couple de variables aléatoires continues, puis de calculer plusieurs probabilités conditionnelles et marginales associées.",
+  "concepts": [
+    "densité de probabilité",
+    "intégrale double",
+    "théorème de Fubini",
+    "probabilité conditionnelle",
+    "probabilité marginale",
+    "fonction indicatrice"
+  ],
+  "methods": [
+    "intégration par parties",
+    "calcul d'intégrale",
+    "application de la définition de la probabilité"
+  ],
+  "objects": [
+    "fonction de densité conjointe",
+    "variables aléatoires continues",
+    "intégrale sur ℝ²"
+  ],
+  "content_hash": "91d4b236a566e173f48a07da99e602e018ba42754adc14e5aae8237458b3c180",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:59:44.003Z"
+}

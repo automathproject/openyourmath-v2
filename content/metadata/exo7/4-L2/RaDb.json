@@ -1,0 +1,28 @@
+{
+  "uuid": "RaDb",
+  "source_path": "exo7/4-L2/RaDb.tex",
+  "summary": "L'exercice demande de montrer qu'un polynôme donné est un polynôme annulateur d'une matrice diagonale et d'en déduire son polynôme minimal. Il demande ensuite de calculer explicitement une expression polynomiale pour une matrice carrée et d'en déduire son polynôme minimal.",
+  "concepts": [
+    "polynôme annulateur",
+    "polynôme minimal",
+    "matrice diagonale",
+    "trace d'une matrice",
+    "déterminant d'une matrice",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul de polynôme annulateur",
+    "détermination du polynôme minimal",
+    "calcul de trace",
+    "calcul de déterminant"
+  ],
+  "objects": [
+    "matrice diagonale",
+    "polynôme",
+    "matrice carrée",
+    "polynôme minimal"
+  ],
+  "content_hash": "cf8f9c97bb8cdd273c3a6a0407c7c2292c9bea9d200601162530c6ea8c1e5181",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:45:05.236Z"
+}

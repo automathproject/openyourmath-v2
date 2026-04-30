@@ -1,0 +1,27 @@
+{
+  "uuid": "9SGT",
+  "source_path": "exo7/16-L3/9SGT.tex",
+  "summary": "Calculer les valeurs des intégrales semi-convergentes de cosinus et sinus sur [0, ∞) avec un exposant a dans le dénominateur, en utilisant la fonction Gamma. Prouver que ces intégrales ne sont pas absolument convergentes.",
+  "concepts": [
+    "intégrale semi-convergente",
+    "fonction Gamma",
+    "convergence absolue",
+    "intégrale de Fourier",
+    "fonction complexe"
+  ],
+  "methods": [
+    "transformation de Mellin",
+    "prolongement analytique",
+    "analyse de convergence",
+    "utilisation des propriétés de la fonction Gamma"
+  ],
+  "objects": [
+    "intégrale impropre",
+    "fonction Gamma",
+    "fonction trigonométrique",
+    "exposant fractionnaire"
+  ],
+  "content_hash": "e8dbcdefa1384ad3a8c61d8cfdaacade42218dd19438b342e899858f36aa82f8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:08:23.886Z"
+}

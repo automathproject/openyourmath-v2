@@ -1,0 +1,23 @@
+{
+  "uuid": "ua2m",
+  "source_path": "exo7/1-L1/ua2m.tex",
+  "summary": "On cherche le polynôme unitaire dont les racines sont les carrés des racines d'un polynôme unitaire donné de degré 3.",
+  "concepts": [
+    "racines d'un polynôme",
+    "polynôme unitaire",
+    "relation de réciprocité",
+    "polynôme minimal"
+  ],
+  "methods": [
+    "transformation des racines",
+    "calcul des coefficients par les relations de Newton"
+  ],
+  "objects": [
+    "polynôme de degré 3",
+    "racines d'un polynôme",
+    "coefficient d'un polynôme"
+  ],
+  "content_hash": "4fcc42ad015597b19e5f7df0552d053075a0bc6d412130437961786c26db3507",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:28:28.684Z"
+}

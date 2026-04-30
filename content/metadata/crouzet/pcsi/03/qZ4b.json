@@ -1,0 +1,25 @@
+{
+  "uuid": "qZ4b",
+  "source_path": "crouzet/pcsi/03/qZ4b.tex",
+  "summary": "L'exercice demande de démontrer une formule de factorisation pour la différence de puissances x^n - y^n, puis d'en déduire une formule similaire pour la somme de puissances x^n + y^n lorsque n est impair.",
+  "concepts": [
+    "factorisation de polynômes",
+    "changement de variable",
+    "somme de termes",
+    "puissances de réels",
+    "parité d'un entier"
+  ],
+  "methods": [
+    "développement de somme",
+    "changement d'indice de sommation",
+    "remplacement de variable"
+  ],
+  "objects": [
+    "réels x et y",
+    "entier naturel n",
+    "somme de termes exponentiels"
+  ],
+  "content_hash": "5771af889730fd47cc2e06e857bc144943e63883e633d8985dc365efe5e94ca3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:51:00.329Z"
+}

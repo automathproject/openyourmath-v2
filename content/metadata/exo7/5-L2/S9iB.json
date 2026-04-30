@@ -1,0 +1,28 @@
+{
+  "uuid": "S9iB",
+  "source_path": "exo7/5-L2/S9iB.tex",
+  "summary": "L'exercice demande de calculer la série de Fourier d'une fonction périodique définie par morceaux, puis d'utiliser cette série pour déterminer la valeur de sommes infinies de termes en 1/n^4 et 1/n^2.",
+  "concepts": [
+    "série de Fourier",
+    "fonction périodique",
+    "coefficient de Fourier",
+    "intégration de fonctions paires",
+    "séries numériques",
+    "convergence de séries"
+  ],
+  "methods": [
+    "calcul des coefficients de Fourier",
+    "intégration par parties",
+    "parité des fonctions",
+    "séparation des cas"
+  ],
+  "objects": [
+    "fonction 2π-périodique",
+    "coefficient de Fourier",
+    "somme infinie",
+    "intégrale définie"
+  ],
+  "content_hash": "33d964580bb4ad198e1b36b1e53fe0539f4fb3dc7e9059a7edf8e6b621b41f8a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:24:10.015Z"
+}

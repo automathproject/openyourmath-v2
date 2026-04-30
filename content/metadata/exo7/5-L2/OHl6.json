@@ -1,0 +1,27 @@
+{
+  "uuid": "OHl6",
+  "source_path": "exo7/5-L2/OHl6.tex",
+  "summary": "On considère un ensemble A construit à partir d'un nombre irrationnel a et de combinaisons linéaires entières. On demande de prouver que A est dense dans ℝ, puis d'appliquer ce résultat pour montrer que tout réel de [-1,1] est valeur d'adhérence de la suite (sin n).",
+  "concepts": [
+    "densité d'un ensemble",
+    "nombre irrationnel",
+    "valeur d'adhérence",
+    "suite trigonométrique",
+    "topologie de ℝ",
+    "ensemble dense"
+  ],
+  "methods": [
+    "construction d'ensemble dense",
+    "utilisation de la densité",
+    "analyse des valeurs d'adhérence"
+  ],
+  "objects": [
+    "ensemble A",
+    "suite (sin n)",
+    "intervalle [-1,1]",
+    "nombre irrationnel a"
+  ],
+  "content_hash": "353d29e964fdff290102cc56b10d4df87b49ac7f05a91fb7756e3cca13d8b07c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:48:54.850Z"
+}

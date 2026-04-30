@@ -1,0 +1,26 @@
+{
+  "uuid": "qUCI",
+  "source_path": "exo7/5-L2/qUCI.tex",
+  "summary": "L'exercice demande de montrer que N_p est une norme sur l'espace E des fonctions continues et bornées de ℝ dans ℝ, puis d'étudier la continuité de l'application P_c qui évalue une fonction en un point c, et enfin de prouver que deux normes N_p et N_q avec p ≠ q ne sont pas équivalentes.",
+  "concepts": [
+    "espace vectoriel normé",
+    "norme",
+    "continuité",
+    "équivalence de normes",
+    "convergence uniforme",
+    "fonction continue bornée"
+  ],
+  "methods": [
+    "vérification des propriétés d'une norme",
+    "étude de la continuité d'une application linéaire",
+    "comparaison de normes"
+  ],
+  "objects": [
+    "fonction continue bornée",
+    "norme N_p",
+    "application d'évaluation P_c"
+  ],
+  "content_hash": "26f7f661d1ad201a3066f12f9d605c8124821152c9913c4f8a43d027cf371d7f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:11:16.174Z"
+}

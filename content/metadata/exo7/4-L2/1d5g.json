@@ -1,0 +1,26 @@
+{
+  "uuid": "1d5g",
+  "source_path": "exo7/4-L2/1d5g.tex",
+  "summary": "Caractériser les polynômes P tels que pour toute matrice A de taille n×n à coefficients complexes, si P(A) = 0 alors la trace de A est un entier.",
+  "concepts": [
+    "polynôme annulateur",
+    "trace d'une matrice",
+    "racine d'un polynôme",
+    "matrice diagonale",
+    "congruence modulo 1",
+    "condition nécessaire et suffisante"
+  ],
+  "methods": [
+    "analyse des racines du polynôme",
+    "construction de contre-exemples",
+    "utilisation de matrices diagonales"
+  ],
+  "objects": [
+    "polynôme à coefficients complexes",
+    "matrice carrée complexe",
+    "trace d'une matrice"
+  ],
+  "content_hash": "b8525f3bb2edbd43185a920e8c9bc8e913994b429520b10c4961de4c6800eeb3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:09:36.454Z"
+}

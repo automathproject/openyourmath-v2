@@ -1,0 +1,31 @@
+{
+  "uuid": "KunL",
+  "source_path": "exo7/5-L2/KunL.tex",
+  "summary": "On considère l'espace des fonctions continues sur [0,1] muni d'une norme L1. On définit un endomorphisme T comme une intégration partielle et on demande de prouver sa continuité et de déterminer sa norme.",
+  "concepts": [
+    "application linéaire continue",
+    "norme matricielle",
+    "intégrale de fonctions continues",
+    "inégalité de Cauchy-Schwarz",
+    "continuité uniforme",
+    "norme L1",
+    "endomorphisme"
+  ],
+  "methods": [
+    "inégalité triangulaire",
+    "calcul de norme",
+    "construction de suite témoin",
+    "dérivation sous l'intégrale",
+    "analyse de cas limite"
+  ],
+  "objects": [
+    "espace de fonctions continues",
+    "norme L1",
+    "endomorphisme T",
+    "suite de fonctions",
+    "intégrale partielle"
+  ],
+  "content_hash": "25c2de1b3ecc71daca97461da5da776b256f7f669e0aa55df5acc5f46cc97d18",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:45:23.176Z"
+}

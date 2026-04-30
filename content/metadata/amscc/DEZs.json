@@ -1,0 +1,35 @@
+{
+  "uuid": "DEZs",
+  "source_path": "amscc/DEZs.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction donnée est une densité de probabilité, puis de calculer l'espérance et la variance d'une variable aléatoire, d'en déduire des propriétés d'un estimateur, d'approximer sa loi via le théorème central limite, et de construire un intervalle de confiance pour un paramètre.",
+  "concepts": [
+    "densité de probabilité",
+    "espérance mathématique",
+    "variance",
+    "estimateur sans biais",
+    "convergence d'estimateur",
+    "théorème central limite",
+    "intervalle de confiance",
+    "inégalité de Bienaymé-Tchebichev"
+  ],
+  "methods": [
+    "intégration",
+    "calcul de moments",
+    "linéarité de l'espérance",
+    "formule de Koenig-Huygens",
+    "standardisation",
+    "approximation gaussienne",
+    "inégalité de concentration"
+  ],
+  "objects": [
+    "densité de probabilité paramétrique",
+    "variable aléatoire indépendante et identiquement distribuée",
+    "espérance",
+    "variance",
+    "estimateur",
+    "intervalle de confiance"
+  ],
+  "content_hash": "ace7d7a4079c1fb5b7b63862ffbce78469a53673931fe226d200fc8b8ace2154",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:36:23.241Z"
+}

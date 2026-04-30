@@ -1,0 +1,28 @@
+{
+  "uuid": "Ua6q",
+  "source_path": "exo7/4-L2/Ua6q.tex",
+  "summary": "L'exercice demande de déterminer si une matrice 3x3 donnée est diagonalisable et, si c'est le cas, de l'écrire sous une forme simplifiée (diagonale ou triangulaire).",
+  "concepts": [
+    "diagonalisation",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "critère de diagonalisation",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "recherche des vecteurs propres",
+    "vérification de la diagonalisabilité"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "ce698a1a18fcb9a4ab2c20df6673900cf053d29fb69618772c76b6ba14d08c98",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:48:19.175Z"
+}

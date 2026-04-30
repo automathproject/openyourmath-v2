@@ -1,0 +1,30 @@
+{
+  "uuid": "UnvD",
+  "source_path": "exo7/4-L2/UnvD.tex",
+  "summary": "L'exercice demande de déterminer toutes les droites et plans vectoriels stables par un endomorphisme donné de ℝ³, en étudiant notamment le polynôme caractéristique de sa restriction à ces sous-espaces.",
+  "concepts": [
+    "endomorphisme",
+    "sous-espace stable",
+    "polynôme caractéristique",
+    "matrice d'endomorphisme",
+    "réduction d'endomorphisme",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "recherche de valeurs propres",
+    "détermination de sous-espaces propres",
+    "analyse de stabilité"
+  ],
+  "objects": [
+    "endomorphisme de ℝ³",
+    "matrice 3x3",
+    "sous-espaces vectoriels",
+    "droites vectorielles",
+    "plans vectoriels"
+  ],
+  "content_hash": "4da8477d592bca4a73af7b71ac9f3e9806ae406d89351434757e3741948d295f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:48:49.109Z"
+}

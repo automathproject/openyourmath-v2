@@ -1,0 +1,29 @@
+{
+  "uuid": "BlVz",
+  "source_path": "exo7/5-L2/BlVz.tex",
+  "summary": "L'exercice demande de démontrer l'équivalence entre la nilpotence d'une matrice complexe et l'adhérence de la matrice nulle à l'ensemble de ses conjuguées.",
+  "concepts": [
+    "nilpotence",
+    "matrice triangulaire",
+    "convergence matricielle",
+    "polynôme caractéristique",
+    "continuité du polynôme caractéristique",
+    "topologie des espaces vectoriels normés",
+    "sémantique des matrices"
+  ],
+  "methods": [
+    "triangulation de matrices",
+    "conjugaison de matrices",
+    "limite de matrices",
+    "analyse du polynôme caractéristique"
+  ],
+  "objects": [
+    "matrice complexe",
+    "matrice nilpotente",
+    "matrice nulle",
+    "conjuguées de matrices"
+  ],
+  "content_hash": "043671df523b2ca56768de6a024030eaab1c2ca7319af12d038dd45f7408dda3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:39:04.783Z"
+}

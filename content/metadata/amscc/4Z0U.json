@@ -1,0 +1,28 @@
+{
+  "uuid": "4Z0U",
+  "source_path": "amscc/4Z0U.tex",
+  "summary": "L'exercice étudie le gain algébrique d'un joueur dans un salon de jeux simplifié avec une roulette. Il demande d'analyser la loi de la variable aléatoire associée, son espérance et son écart-type, puis d'approximer la loi de la moyenne empirique pour un grand nombre de mises indépendantes.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi de probabilité",
+    "espérance mathématique",
+    "écart-type",
+    "loi normale",
+    "théorème central limite",
+    "approximation gaussienne"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de l'écart-type",
+    "standardisation",
+    "approximation gaussienne"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "moyenne empirique",
+    "variable aléatoire gaussienne"
+  ],
+  "content_hash": "44008ac8b1aaf790dee8e226feb250a94df9aeb82ae45d001aa752252b8dc69d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:16:02.108Z"
+}

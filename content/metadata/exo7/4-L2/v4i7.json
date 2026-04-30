@@ -1,0 +1,26 @@
+{
+  "uuid": "v4i7",
+  "source_path": "exo7/4-L2/v4i7.tex",
+  "summary": "On considère un endomorphisme inversible u d'un espace vectoriel complexe de dimension finie, dont le carré u² est diagonalisable. On demande de prouver que u lui-même est diagonalisable.",
+  "concepts": [
+    "diagonalisation",
+    "polynôme annulateur",
+    "espace vectoriel de dimension finie",
+    "endomorphisme inversible",
+    "spectre d'un endomorphisme",
+    "critère de diagonalisation"
+  ],
+  "methods": [
+    "utilisation du polynôme minimal",
+    "analyse du spectre",
+    "propriétés des endomorphismes diagonalisables"
+  ],
+  "objects": [
+    "endomorphisme inversible",
+    "espace vectoriel complexe",
+    "polynôme annulateur"
+  ],
+  "content_hash": "e2aea6e77655a28ab155ad4ffe7a3cea33a5595e9adb2b347889b9542909ee6c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:24:31.597Z"
+}

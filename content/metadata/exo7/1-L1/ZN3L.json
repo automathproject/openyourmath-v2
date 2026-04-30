@@ -1,0 +1,25 @@
+{
+  "uuid": "ZN3L",
+  "source_path": "exo7/1-L1/ZN3L.tex",
+  "summary": "Trouver les nombres complexes z pour lesquels le triangle formé par les points d'affixes z, z² et z³ est rectangle en z.",
+  "concepts": [
+    "nombre complexe",
+    "affixe d'un point",
+    "triangle rectangle",
+    "module d'un nombre complexe",
+    "argument d'un nombre complexe"
+  ],
+  "methods": [
+    "calcul d'affixes",
+    "condition de rectangle",
+    "utilisation de la condition d'orthogonalité"
+  ],
+  "objects": [
+    "nombre complexe z",
+    "points d'affixes z, z², z³",
+    "triangle rectangle"
+  ],
+  "content_hash": "fa09ba7a67c3cc3e2d7326865d7fd6d9f64f3f0b1384a352c99c89ae3645e161",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:50:20.462Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "KZaC",
+  "source_path": "exo7/1-L1/KZaC.tex",
+  "summary": "Trouver tous les polynômes complexes P(X) vérifiant l'équation fonctionnelle P(X²) = P(X-1)P(X+1). L'exercice demande de déterminer les polynômes solutions d'une équation fonctionnelle spécifique.",
+  "concepts": [
+    "racine de polynôme",
+    "module d'un nombre complexe",
+    "polynôme irréductible",
+    "équation fonctionnelle",
+    "polynôme unitaire",
+    "polynôme constant"
+  ],
+  "methods": [
+    "analyse des racines",
+    "comparaison des modules",
+    "décomposition en facteurs irréductibles",
+    "vérification des cas particuliers"
+  ],
+  "objects": [
+    "polynôme complexe",
+    "racine complexe",
+    "module maximal"
+  ],
+  "content_hash": "5a2167b56dca9671063c8b42fd0b1614340016978153e59a83618539b6f6275e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:50:17.411Z"
+}

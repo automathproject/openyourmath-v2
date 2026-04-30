@@ -1,0 +1,28 @@
+{
+  "uuid": "Q4hp",
+  "source_path": "exo7/5-L2/Q4hp.tex",
+  "summary": "L'exercice demande de démontrer l'équivalence entre la continuité d'une forme linéaire et la fermeture de son noyau, puis d'établir une relation entre la valeur absolue de la forme linéaire en un point et sa norme multipliée par la distance de ce point au noyau.",
+  "concepts": [
+    "forme linéaire continue",
+    "noyau d'une application linéaire",
+    "fermeture d'un sous-espace",
+    "distance à un sous-espace",
+    "norme d'une forme linéaire",
+    "topologie des espaces vectoriels normés"
+  ],
+  "methods": [
+    "utilisation de la définition de la continuité",
+    "étude des ensembles ouverts",
+    "calcul de distance dans un espace vectoriel normé",
+    "majoration par la norme"
+  ],
+  "objects": [
+    "forme linéaire",
+    "noyau d'une forme linéaire",
+    "espace vectoriel normé",
+    "sous-espace fermé"
+  ],
+  "content_hash": "63a3712df6013dbdce6519294f3df0434212ee759d07cc5a4776337f0162081f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:50:58.864Z"
+}

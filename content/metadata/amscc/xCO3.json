@@ -1,0 +1,29 @@
+{
+  "uuid": "xCO3",
+  "source_path": "amscc/xCO3.tex",
+  "summary": "L'exercice demande de déterminer la constante de normalisation k pour qu'une fonction donnée soit une densité de probabilité jointe de deux variables aléatoires (X,Y), puis d'en déduire les densités marginales, leurs fonctions caractéristiques, et d'étudier l'indépendance des variables.",
+  "concepts": [
+    "densité de probabilité jointe",
+    "densité marginale",
+    "fonction caractéristique",
+    "indépendance de variables aléatoires",
+    "théorème de transfert",
+    "loi uniforme",
+    "intégration multiple"
+  ],
+  "methods": [
+    "normalisation de densité",
+    "calcul de densité marginale par intégration",
+    "calcul de fonction caractéristique",
+    "vérification d'indépendance"
+  ],
+  "objects": [
+    "densité de probabilité jointe",
+    "densités marginales",
+    "fonction caractéristique",
+    "variables aléatoires (X,Y)"
+  ],
+  "content_hash": "05c860314e64723f8b38426f7a62d8abef6450c771a2c24aca5d1677bc79418d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:11:26.591Z"
+}

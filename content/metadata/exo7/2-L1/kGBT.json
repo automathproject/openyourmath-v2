@@ -1,0 +1,25 @@
+{
+  "uuid": "kGBT",
+  "source_path": "exo7/2-L1/kGBT.tex",
+  "summary": "L'exercice étudie deux suites définies par des relations de récurrence imbriquées, l'une avec des racines carrées de termes croissants jusqu'à n, l'autre similaire mais avec 2n au lieu de n. On demande de prouver leur convergence et d'établir une inégalité entre la limite et le terme général.",
+  "concepts": [
+    "suite définie par récurrence",
+    "convergence de suite",
+    "limite de suite",
+    "inégalité de suite",
+    "racine carrée imbriquée"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "majoration de terme",
+    "utilisation de l'indication algébrique"
+  ],
+  "objects": [
+    "suite u_n",
+    "suite v_n",
+    "limite λ"
+  ],
+  "content_hash": "b21902c834517376dcdca33ff8e529eb45ada777027fd152461aff692a3b2bd3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:31:14.822Z"
+}

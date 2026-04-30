@@ -1,0 +1,25 @@
+{
+  "uuid": "7jzR",
+  "source_path": "exo7/7-L2/7jzR.tex",
+  "summary": "Calcul de la probabilité de trouver au moins un centenaire parmi un échantillon de 100 ou 200 personnes, avec une proportion connue de centenaires dans la population.",
+  "concepts": [
+    "loi de Poisson",
+    "probabilité d'événement rare",
+    "espérance d'une variable aléatoire",
+    "approximation par la loi de Poisson",
+    "variable aléatoire discrète"
+  ],
+  "methods": [
+    "approximation par la loi de Poisson",
+    "calcul de probabilité complémentaire",
+    "utilisation de la fonction exponentielle"
+  ],
+  "objects": [
+    "variable aléatoire de comptage",
+    "proportion dans une population",
+    "espérance d'une loi de Poisson"
+  ],
+  "content_hash": "b10da213356de89a1f382318780f00cd64de3ef2a722ca833bdc6e3cfbd69eb5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:17:58.056Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "YWvk",
+  "source_path": "exo7/4-L2/YWvk.tex",
+  "summary": "Calculer la puissance n-ième d'une matrice 3x3 réelle et étendre la formule obtenue aux entiers relatifs. Montrer la validité de cette extension.",
+  "concepts": [
+    "réduction d'endomorphisme",
+    "polynôme annulateur",
+    "diagonalisation",
+    "matrice inversible",
+    "puissance de matrice",
+    "extension aux entiers relatifs"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "diagonalisation",
+    "formule de la puissance n-ième",
+    "vérification par récurrence",
+    "extension par continuité"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme annulateur",
+    "puissance de matrice",
+    "entiers naturels",
+    "entiers relatifs"
+  ],
+  "content_hash": "f2c385c56997317d11a7e7d4295856a6142a1f944def3eef89683746fcd468f5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:54:12.702Z"
+}

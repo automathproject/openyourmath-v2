@@ -1,0 +1,28 @@
+{
+  "uuid": "r2IH",
+  "source_path": "exo7/1-L1/r2IH.tex",
+  "summary": "L'exercice demande de démontrer la linéarité d'une application Δ définie sur l'espace des polynômes de degré n, puis d'étudier son noyau, d'évaluer cette application sur des polynômes spécifiques, et enfin de résoudre un problème de somme de carrés d'entiers naturels.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "polynôme de degré n",
+    "polynôme de degré n-1",
+    "somme de carrés d'entiers naturels"
+  ],
+  "methods": [
+    "vérification de la linéarité",
+    "détermination du noyau",
+    "évaluation de polynômes",
+    "résolution d'équation polynomiale"
+  ],
+  "objects": [
+    "application Δ",
+    "polynômes de ℝₙ[X]",
+    "polynômes de ℝₙ₋₁[X]",
+    "polynômes Hₖ",
+    "somme de carrés"
+  ],
+  "content_hash": "325213ee119d3b04d902aa5142baebee58128d1a246a4e436e01542649e0e445",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:25:11.397Z"
+}

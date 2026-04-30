@@ -1,0 +1,26 @@
+{
+  "uuid": "M8st",
+  "source_path": "exo7/1-L1/M8st.tex",
+  "summary": "L'exercice demande de déterminer l'existence d'un polynôme de degré 7 vérifiant deux conditions de divisibilité par des puissances de (X-1) et (X+1).",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "racines multiples",
+    "polynôme de degré donné",
+    "divisibilité polynomiale",
+    "théorème factor",
+    "polynôme unitaire"
+  ],
+  "methods": [
+    "factorisation",
+    "analyse des racines",
+    "vérification des conditions de divisibilité"
+  ],
+  "objects": [
+    "polynôme de degré 7",
+    "polynôme (X-1)^4",
+    "polynôme (X+1)^4"
+  ],
+  "content_hash": "e2e628c90b7c9f75b850686b529b530196aae38e80c20215807c4f411b5c62b6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:52:49.500Z"
+}

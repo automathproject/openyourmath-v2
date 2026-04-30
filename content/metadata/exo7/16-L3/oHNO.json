@@ -1,0 +1,30 @@
+{
+  "uuid": "oHNO",
+  "source_path": "exo7/16-L3/oHNO.tex",
+  "summary": "L'exercice demande de démontrer qu'une fonction entière bornée par un polynôme est nécessairement un polynôme de degré au plus n, en utilisant trois approches différentes : une formule intégrale de Cauchy, les dérivées de la fonction en 0, et le théorème de Liouville.",
+  "concepts": [
+    "fonction entière",
+    "polynôme",
+    "formule intégrale de Cauchy",
+    "théorème de Liouville",
+    "développement de Taylor",
+    "dérivée n-ième",
+    "bornitude des fonctions entières"
+  ],
+  "methods": [
+    "formule intégrale de Cauchy",
+    "développement de Taylor",
+    "théorème de Liouville",
+    "estimation des intégrales",
+    "analyse des zéros"
+  ],
+  "objects": [
+    "fonction entière",
+    "polynôme de degré n",
+    "dérivée n+1-ième",
+    "fonction g(z) = (f(z) - P(z))/z^{n+1}"
+  ],
+  "content_hash": "75756dfaaaeae1b230ceaa8c8e5d0049ce4b75279254c70482a1d46e981e568d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:22:30.120Z"
+}

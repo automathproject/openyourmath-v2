@@ -1,0 +1,28 @@
+{
+  "uuid": "25sM",
+  "source_path": "exo7/1-L1/25sM.tex",
+  "summary": "L'exercice demande de calculer les polynômes interpolateurs de Lagrange et de démontrer l'unicité du polynôme de degré inférieur ou égal à n vérifiant des conditions d'interpolation données. Une application numérique illustre la méthode.",
+  "concepts": [
+    "polynôme interpolateur de Lagrange",
+    "unicité du polynôme d'interpolation",
+    "degré d'un polynôme",
+    "interpolation polynomiale",
+    "polynôme de degré n",
+    "conditions d'interpolation"
+  ],
+  "methods": [
+    "calcul de produit de fractions",
+    "démonstration par l'absurde",
+    "interpolation de Lagrange",
+    "calcul de polynômes spécifiques"
+  ],
+  "objects": [
+    "polynômes interpolateurs de Lagrange",
+    "polynôme P(X)",
+    "points d'interpolation (a_i, b_i)",
+    "polynôme de degré inférieur ou égal à n"
+  ],
+  "content_hash": "c23d9033b07dbfed767dc1129cf7856dbd44aabe9d6ea3099491882711440b03",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:32:09.355Z"
+}

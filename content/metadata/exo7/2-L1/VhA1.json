@@ -1,0 +1,26 @@
+{
+  "uuid": "VhA1",
+  "source_path": "exo7/2-L1/VhA1.tex",
+  "summary": "L'exercice demande de déterminer les limites de trois suites d'intégrales lorsque n tend vers l'infini. La première suite implique une intégrale de la fonction Arcsin élevée à la puissance n, la deuxième une intégrale de x^n/(1+x), et la troisième une intégrale de n*sin(x)/(x+n).",
+  "concepts": [
+    "théorème des gendarmes",
+    "croissances comparées",
+    "intégrale impropre",
+    "limite de suite",
+    "inégalité triangulaire"
+  ],
+  "methods": [
+    "encadrement d'intégrale",
+    "comparaison de termes",
+    "approximation d'intégrale"
+  ],
+  "objects": [
+    "suite d'intégrales",
+    "fonction Arcsin",
+    "fonction polynomiale",
+    "fonction trigonométrique"
+  ],
+  "content_hash": "d55635846b29c326972b7265e098894739b91f2e214a9339046f1096516c4cf2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:20:25.138Z"
+}

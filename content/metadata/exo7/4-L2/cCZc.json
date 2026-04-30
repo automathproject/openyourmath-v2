@@ -1,0 +1,27 @@
+{
+  "uuid": "cCZc",
+  "source_path": "exo7/4-L2/cCZc.tex",
+  "summary": "L'exercice demande de démontrer qu'une matrice donnée est diagonalisable et de trouver une matrice de passage P telle que P⁻¹AP soit diagonale.",
+  "concepts": [
+    "diagonalisation",
+    "valeur propre",
+    "multiplicité d'une valeur propre",
+    "sous-espace propre",
+    "polynôme caractéristique",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "détermination des sous-espaces propres",
+    "construction de la matrice de passage"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "sous-espace propre",
+    "valeurs propres",
+    "matrice diagonale"
+  ],
+  "content_hash": "d99a0385145dd575157bfce71e30e176045b792ac6200a3ccae00df918e4c0d2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:59:03.248Z"
+}

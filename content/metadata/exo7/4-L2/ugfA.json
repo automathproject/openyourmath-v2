@@ -1,0 +1,26 @@
+{
+  "uuid": "ugfA",
+  "source_path": "exo7/4-L2/ugfA.tex",
+  "summary": "L'exercice demande de démontrer une équivalence entre deux propriétés spectrales de deux matrices complexes A et B, puis d'appliquer ce résultat à une situation concrète où AP = PB.",
+  "concepts": [
+    "spectre d'une matrice",
+    "polynôme caractéristique",
+    "théorème de Cayley-Hamilton",
+    "valeur propre",
+    "inversibilité d'une matrice",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "manipulation de polynômes matriciels",
+    "utilisation du théorème de Cayley-Hamilton",
+    "analyse des valeurs propres"
+  ],
+  "objects": [
+    "matrices carrées complexes",
+    "polynôme caractéristique",
+    "valeurs propres communes"
+  ],
+  "content_hash": "94c03764bb25972ffb9e8ca425514ad87ed4dcc010acd6ac555d4187141f5293",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:23:47.205Z"
+}

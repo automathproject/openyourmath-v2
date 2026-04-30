@@ -1,0 +1,28 @@
+{
+  "uuid": "JPjn",
+  "source_path": "amscc/JPjn.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction donnée est une densité de probabilité d'une variable aléatoire, puis de déterminer sa fonction de répartition, son espérance et la probabilité d'un événement spécifique.",
+  "concepts": [
+    "densité de probabilité",
+    "fonction de répartition",
+    "espérance d'une variable aléatoire",
+    "intégrabilité",
+    "continuité par morceaux",
+    "support compact"
+  ],
+  "methods": [
+    "intégration",
+    "intégration par parties",
+    "calcul de probabilité par intégrale",
+    "utilisation de la fonction de répartition"
+  ],
+  "objects": [
+    "fonction de densité",
+    "variable aléatoire à densité",
+    "fonction de répartition",
+    "espérance"
+  ],
+  "content_hash": "282e06091472691f0a71e72478c87820f3fa29344265419ddd9fab3d955f376c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:44:48.628Z"
+}

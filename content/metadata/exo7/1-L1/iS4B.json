@@ -1,0 +1,24 @@
+{
+  "uuid": "iS4B",
+  "source_path": "exo7/1-L1/iS4B.tex",
+  "summary": "On cherche le reste de la division euclidienne d'un polynôme P par un polynôme du second degré, connaissant les restes de P par deux polynômes du premier degré.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "théorème du reste",
+    "polynôme du premier degré",
+    "polynôme du second degré"
+  ],
+  "methods": [
+    "application du théorème du reste",
+    "calcul de reste de division"
+  ],
+  "objects": [
+    "polynôme P",
+    "polynôme X-1",
+    "polynôme X+5",
+    "polynôme X² + 4X -5"
+  ],
+  "content_hash": "c5da1fb7f9c8a39c5d06a41829f3347d9089116d225cefa4e9001625c99e781f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:16:11.376Z"
+}

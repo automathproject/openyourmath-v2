@@ -1,0 +1,28 @@
+{
+  "uuid": "RyRJ",
+  "source_path": "exo7/4-L2/RyRJ.tex",
+  "summary": "L'exercice étudie une famille de matrices complexes particulières et demande de déterminer leur rang, leur polynôme caractéristique, et leurs propriétés de diagonalisabilité. On considère des matrices symétriques avec une structure spécifique où seuls les éléments de la première ligne et de la première colonne sont non nuls.",
+  "concepts": [
+    "rang d'une matrice",
+    "polynôme caractéristique",
+    "diagonalisation",
+    "valeurs propres",
+    "polynôme annulateur",
+    "matrice symétrique"
+  ],
+  "methods": [
+    "calcul du rang",
+    "calcul du polynôme caractéristique",
+    "récurrence",
+    "analyse des valeurs propres"
+  ],
+  "objects": [
+    "matrice complexe",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "matrice symétrique"
+  ],
+  "content_hash": "642e2fd78e2f0197462f5aa1546692bd1dff011848675b1e13664299697659fa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:45:55.099Z"
+}

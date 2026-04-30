@@ -1,0 +1,29 @@
+{
+  "uuid": "53o1",
+  "source_path": "exo7/1-L1/53o1.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble des nombres complexes à parties réelles et imaginaires entières est stable par addition et multiplication, d'identifier les éléments inversibles de cet ensemble, de montrer qu'il permet d'approximer tout nombre complexe avec une précision inférieure à 1, et d'établir l'existence d'une division euclidienne dans cet ensemble.",
+  "concepts": [
+    "anneau",
+    "élément inversible",
+    "division euclidienne",
+    "module d'un nombre complexe",
+    "partie entière",
+    "approximation par des entiers",
+    "stabilité par addition et multiplication"
+  ],
+  "methods": [
+    "calcul du module",
+    "approximation par les entiers les plus proches",
+    "utilisation de la division euclidienne",
+    "vérification de l'inversibilité"
+  ],
+  "objects": [
+    "nombres complexes à parties entières",
+    "éléments inversibles",
+    "division euclidienne",
+    "module d'un nombre complexe"
+  ],
+  "content_hash": "781a625205562fd6966a48e6f9d5b5cdd23a2654f4da37fffeb3f246e8c433d4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:30:24.583Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "fF5x",
+  "source_path": "exo7/13-L3/fF5x.tex",
+  "summary": "L'exercice demande de montrer que la suite de fonctions (yₙ) définie par récurrence converge vers la solution de l'équation différentielle y' = y² avec condition initiale y(0) = 1, d'abord sur [0,1[, puis sur ]-1,1[ en utilisant des propriétés de suites adjacentes.",
+  "concepts": [
+    "équation différentielle",
+    "solution maximale",
+    "suite de fonctions",
+    "convergence uniforme",
+    "suites adjacentes",
+    "majoration",
+    "croissance d'une suite"
+  ],
+  "methods": [
+    "construction par récurrence",
+    "majoration",
+    "étude de la convergence",
+    "analyse des suites adjacentes"
+  ],
+  "objects": [
+    "suite de fonctions (yₙ)",
+    "équation différentielle y' = y²",
+    "intervalle [0,1[",
+    "intervalle ]-1,1["
+  ],
+  "content_hash": "1dcc744b56ed6870703a5109ce3a26be8113afa1661425e5f938880a77bcd466",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:46:15.176Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "GqTh",
+  "source_path": "exo7/5-L2/GqTh.tex",
+  "summary": "L'exercice demande de déterminer le rayon de convergence et la somme de la série entière associée à la suite des intégrales W_n définies par l'intégrale de cos^n(t) de 0 à π/2.",
+  "concepts": [
+    "série entière",
+    "rayon de convergence",
+    "intégrale impropre",
+    "convergence uniforme",
+    "théorème d'intégration terme à terme",
+    "règle de d'Alembert",
+    "changement de variable"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "intégration terme à terme",
+    "approximation asymptotique"
+  ],
+  "objects": [
+    "intégrale de cos^n(t)",
+    "série entière",
+    "fonction de variable complexe",
+    "changement de variable trigonométrique"
+  ],
+  "content_hash": "6a74b6703c0bde4cbe2806863d1711fb33c62ee526c9b2908d09a554e5ceb8a1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:39:16.403Z"
+}

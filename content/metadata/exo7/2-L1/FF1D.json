@@ -1,0 +1,31 @@
+{
+  "uuid": "FF1D",
+  "source_path": "exo7/2-L1/FF1D.tex",
+  "summary": "L'exercice étudie la série numérique S(t) = Σ(t^n)/(1+t^n) et demande de déterminer son domaine de convergence, d'en établir une expression alternative, d'analyser la convergence uniforme d'une suite de fonctions associée, et de calculer son développement en série entière. L'exercice explore les propriétés arithmétiques des coefficients de ce développement.",
+  "concepts": [
+    "série numérique",
+    "convergence absolue",
+    "convergence uniforme",
+    "critère des séries alternées",
+    "développement en série entière",
+    "fonction génératrice",
+    "diviseurs d'un entier"
+  ],
+  "methods": [
+    "interversion de sommes",
+    "majoration de reste",
+    "calcul de dérivée",
+    "interversion de limite et somme",
+    "analyse des diviseurs"
+  ],
+  "objects": [
+    "série entière",
+    "fonction génératrice",
+    "suite de fonctions",
+    "coefficient de série",
+    "nombre de diviseurs"
+  ],
+  "content_hash": "4a6e1cc3a3edb23be2699b4e603aca4531042cdef57853d331857db681133818",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:07:13.422Z"
+}

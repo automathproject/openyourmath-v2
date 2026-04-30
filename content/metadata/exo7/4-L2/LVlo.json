@@ -1,0 +1,29 @@
+{
+  "uuid": "LVlo",
+  "source_path": "exo7/4-L2/LVlo.tex",
+  "summary": "L'exercice demande de déterminer les valeurs propres d'une matrice tridiagonale spécifique de taille n×n à coefficients réels. La matrice présente une structure symétrique avec des 1 sur la diagonale principale et des -1 sur les diagonales adjacentes, sauf aux extrémités.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "matrice tridiagonale",
+    "relation de récurrence",
+    "équation caractéristique",
+    "diagonalisation",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "résolution d'équation polynomiale",
+    "analyse de récurrence",
+    "transformation d'équation"
+  ],
+  "objects": [
+    "matrice tridiagonale",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "relation de récurrence"
+  ],
+  "content_hash": "77d94ef7e4414560e0bbb67c3d50d10e494a7c7705805e3557ecddcca6790423",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:36:34.997Z"
+}

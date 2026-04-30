@@ -1,0 +1,26 @@
+{
+  "uuid": "GmNP",
+  "source_path": "amscc/GmNP.tex",
+  "summary": "L'exercice étudie une suite de variables aléatoires définies comme l'inverse d'un temps d'arrêt dans un processus de Bernoulli. Il demande de montrer que la variable transformée suit une loi géométrique, d'en déterminer la fonction caractéristique, puis d'établir la convergence en loi de cette suite vers une loi usuelle.",
+  "concepts": [
+    "loi de Bernoulli",
+    "temps d'arrêt",
+    "loi géométrique",
+    "fonction caractéristique",
+    "convergence en loi",
+    "processus de Bernoulli"
+  ],
+  "methods": [
+    "calcul de fonction caractéristique",
+    "identification de loi",
+    "étude de la convergence en loi"
+  ],
+  "objects": [
+    "suite de variables aléatoires",
+    "variable aléatoire géométrique",
+    "fonction caractéristique"
+  ],
+  "content_hash": "8e73afad664a6622a6542a8a5c61012130b738aaf285a51f4037efe06aea9e1f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:43:20.831Z"
+}

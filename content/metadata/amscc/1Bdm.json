@@ -1,0 +1,30 @@
+{
+  "uuid": "1Bdm",
+  "source_path": "amscc/1Bdm.tex",
+  "summary": "L'exercice demande de tester une hypothèse sur la moyenne d'une loi normale à partir d'un échantillon de 13 trajets, avec un risque de première espèce de 5%. Il s'agit ensuite d'étudier graphiquement la puissance du test en fonction de différentes valeurs alternatives.",
+  "concepts": [
+    "test d'hypothèse",
+    "loi normale",
+    "moyenne d'une loi normale",
+    "risque de première espèce",
+    "puissance d'un test",
+    "hypothèse nulle",
+    "hypothèse alternative"
+  ],
+  "methods": [
+    "test de Student",
+    "calcul de la statistique de test",
+    "comparaison avec la valeur critique",
+    "analyse graphique de la puissance"
+  ],
+  "objects": [
+    "échantillon de temps de trajet",
+    "moyenne empirique",
+    "écart-type empirique",
+    "valeur critique",
+    "puissance du test"
+  ],
+  "content_hash": "c95bc4e4b10ad7eac7fc6f4619a8fd5fff4022374ce23c3170ec88dc65a6fad0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:30:10.321Z"
+}

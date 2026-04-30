@@ -1,0 +1,30 @@
+{
+  "uuid": "upkw",
+  "source_path": "exo7/2-L1/upkw.tex",
+  "summary": "Étudier la convergence de la série de terme général u_n/(S_n)^α, où (u_n) est une suite de réels strictement positifs et S_n = u_0 + ... + u_n, en fonction du paramètre α > 0.",
+  "concepts": [
+    "série numérique",
+    "série à termes positifs",
+    "convergence de série",
+    "comparaison de séries",
+    "intégrale impropre",
+    "série télescopique",
+    "croissance des suites"
+  ],
+  "methods": [
+    "comparaison terme à terme",
+    "intégration discrète",
+    "majoration",
+    "étude de la limite du terme général",
+    "téléscopage"
+  ],
+  "objects": [
+    "suite numérique",
+    "série numérique",
+    "terme général",
+    "intégrale discrète"
+  ],
+  "content_hash": "475915ea7dfba23d6bcddaf77d84555ec58be0a92da5071798c95793bd8a60ba",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:36:13.849Z"
+}

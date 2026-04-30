@@ -1,0 +1,26 @@
+{
+  "uuid": "GYfU",
+  "source_path": "exo7/5-L2/GYfU.tex",
+  "summary": "L'exercice demande de montrer la continuité d'une fonction définie par une série de fonctions, puis d'étudier la lipschitzianité de la fonction distance à l'ensemble des entiers et d'en déduire des propriétés pour la fonction initiale. Enfin, il faut prouver que cette fonction n'est dérivable en aucun point.",
+  "concepts": [
+    "convergence normale",
+    "continuité",
+    "lipschitzianité",
+    "dérivabilité",
+    "taux d'accroissement",
+    "distance à un ensemble"
+  ],
+  "methods": [
+    "étude de la convergence normale",
+    "analyse du taux d'accroissement",
+    "preuve par l'absurde"
+  ],
+  "objects": [
+    "fonction définie par une série",
+    "fonction distance à ℤ",
+    "taux d'accroissement"
+  ],
+  "content_hash": "d2d126effa2429967d6751ef3a939aa4628c8d239b6f8ddbff7904faa777a1d3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:50:44.315Z"
+}

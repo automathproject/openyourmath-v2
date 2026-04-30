@@ -1,0 +1,31 @@
+{
+  "uuid": "qqXM",
+  "source_path": "exo7/5-L2/qqXM.tex",
+  "summary": "L'exercice demande de prolonger une fonction de classe C² sur [0,1] avec des conditions aux limites nulles en une fonction impaire et 2-périodique, puis d'établir une inégalité liant la norme infinie de la fonction à la norme L² de sa dérivée seconde.",
+  "concepts": [
+    "fonction impaire",
+    "périodicité",
+    "série de Fourier",
+    "inégalité de Cauchy-Schwarz",
+    "normes de fonctions",
+    "intégration par parties",
+    "fonction de classe C²"
+  ],
+  "methods": [
+    "prolongement de fonction",
+    "décomposition en série de Fourier",
+    "application de l'inégalité de Cauchy-Schwarz",
+    "calcul de norme L²",
+    "intégration par parties"
+  ],
+  "objects": [
+    "fonction de classe C²",
+    "dérivée seconde",
+    "norme infinie",
+    "norme L²",
+    "fonction périodique"
+  ],
+  "content_hash": "dc6199e8b92031445aaaaf8b206da0c4b1f307be2ec9bd347dbaaf920059ae6d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:30:07.427Z"
+}

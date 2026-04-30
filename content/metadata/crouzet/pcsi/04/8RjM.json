@@ -1,0 +1,26 @@
+{
+  "uuid": "8RjM",
+  "source_path": "crouzet/pcsi/04/8RjM.tex",
+  "summary": "Résoudre trois systèmes linéaires à coefficients réels et variables paramétrées par a, b, c et d. Le premier système a une unique solution, le second nécessite une disjonction de cas selon les valeurs des paramètres, et le troisième combine plusieurs conditions de compatibilité.",
+  "concepts": [
+    "système linéaire",
+    "méthode du pivot de Gauss",
+    "disjonction de cas",
+    "solution unique",
+    "solution infinie",
+    "incompatibilité"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "résolution par substitution",
+    "analyse de cas"
+  ],
+  "objects": [
+    "système linéaire 3x3",
+    "système linéaire 4x4",
+    "variables paramétrées"
+  ],
+  "content_hash": "70f483b5988a14de2137823e0222ad5d428e0e0b1edbcafe36750de73791a1af",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:14:57.024Z"
+}

@@ -1,0 +1,23 @@
+{
+  "uuid": "5CNf",
+  "source_path": "exo7/1-L1/5CNf.tex",
+  "summary": "Calculer le reste de la division euclidienne de deux polynômes. Le premier polynôme est X^n + X + 1 et le second est (X-1)^2.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "polynôme unitaire",
+    "degré d'un polynôme",
+    "algèbre des polynômes",
+    "règle de la division"
+  ],
+  "methods": [
+    "division euclidienne",
+    "calcul du reste"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "polynôme quadratique"
+  ],
+  "content_hash": "b9cdf127cc31b959a1b439ac535413ef526261cdca8dae22bd49417abb48803d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:34:25.172Z"
+}

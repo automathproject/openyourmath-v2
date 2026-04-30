@@ -1,0 +1,26 @@
+{
+  "uuid": "j2Tn",
+  "source_path": "exo7/8-L3/j2Tn.tex",
+  "summary": "L'exercice demande de démontrer que le groupe des commutateurs D(G) est un sous-groupe distingué de G et que le quotient G/D(G) est abélien. Il faut aussi montrer que D(G) est le plus petit sous-groupe distingué de G rendant le quotient abélien.",
+  "concepts": [
+    "sous-groupe distingué",
+    "groupe quotient",
+    "groupe abélien",
+    "groupe des commutateurs",
+    "propriété universelle"
+  ],
+  "methods": [
+    "vérification de la normalité",
+    "construction du groupe quotient",
+    "démonstration de minimalité"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe D(G)",
+    "éléments de la forme xyx⁻¹y⁻¹",
+    "groupe quotient G/D(G)"
+  ],
+  "content_hash": "49b53d672468dc2e93e1742df57e21c0199d908e9b9c11c4662f8ba97867530f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:02:47.988Z"
+}

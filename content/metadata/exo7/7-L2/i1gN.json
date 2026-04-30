@@ -1,0 +1,30 @@
+{
+  "uuid": "i1gN",
+  "source_path": "exo7/7-L2/i1gN.tex",
+  "summary": "Calculer la probabilité qu'un couple n'ait aucun animal domestique, puis déterminer la loi de probabilité du nombre total d'animaux, son espérance et son écart-type. Établir la loi conjointe de deux variables aléatoires discrètes et vérifier leur indépendance.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "probabilité conjointe",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "loi de probabilité conjointe",
+    "indépendance de variables aléatoires"
+  ],
+  "methods": [
+    "calcul de probabilité conjointe",
+    "calcul d'espérance",
+    "calcul de variance",
+    "construction de tableau de probabilités conjointes",
+    "test d'indépendance"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "probabilité conditionnelle",
+    "espérance",
+    "écart-type",
+    "loi de probabilité conjointe"
+  ],
+  "content_hash": "ed341bcde2186e91a8744a538982223fc29b6104412e4286c972c537a34e3edc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:36:45.199Z"
+}

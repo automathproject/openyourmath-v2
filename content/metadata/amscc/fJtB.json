@@ -1,0 +1,30 @@
+{
+  "uuid": "fJtB",
+  "source_path": "amscc/fJtB.tex",
+  "summary": "L'exercice étudie trois estimateurs d'une espérance μ à partir d'un échantillon. Il demande de vérifier leur absence de biais, de calculer leurs variances, de déterminer l'estimateur le plus efficace parmi ceux sans biais, puis d'analyser leur erreur quadratique moyenne.",
+  "concepts": [
+    "estimateur sans biais",
+    "convergence en probabilité",
+    "variance d'un estimateur",
+    "erreur quadratique moyenne",
+    "biais d'un estimateur",
+    "linéarité de l'espérance",
+    "indépendance et identicité de distribution"
+  ],
+  "methods": [
+    "calcul d'espérance",
+    "calcul de variance",
+    "comparaison d'efficacité",
+    "développement algébrique"
+  ],
+  "objects": [
+    "estimateur",
+    "espérance",
+    "variance",
+    "erreur quadratique moyenne",
+    "biais"
+  ],
+  "content_hash": "641548fb95e5664c822df2cfcdc9be37766b5ae26865dddedb476cd7dd74426b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:26:55.797Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "3Zh9",
+  "source_path": "exo7/4-L2/3Zh9.tex",
+  "summary": "L'exercice demande de trigonaliser trois matrices réelles A, B et C, puis de déterminer leur polynôme minimal. Les matrices sont données sous forme explicite.",
+  "concepts": [
+    "trigonalisation",
+    "polynôme minimal",
+    "valeurs propres",
+    "vecteurs propres",
+    "algèbre linéaire",
+    "matrices carrées"
+  ],
+  "methods": [
+    "recherche des valeurs propres",
+    "recherche des vecteurs propres",
+    "construction de la matrice trigonale",
+    "calcul du polynôme minimal"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice 5x5",
+    "matrice 4x4",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "2d800e411a249d3eb4e57874bf31b956a8fa6c4ee05672730c037dfcf235db62",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:11:41.695Z"
+}

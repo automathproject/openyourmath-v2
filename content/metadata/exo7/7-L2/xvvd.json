@@ -1,0 +1,27 @@
+{
+  "uuid": "xvvd",
+  "source_path": "exo7/7-L2/xvvd.tex",
+  "summary": "Calculer des probabilités conditionnelles dans un problème de tirage aléatoire de bottes parmi celles de quatre personnes. Les bottes sont mélangées et D'Artagnan en prend deux au hasard.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "tirage sans remise",
+    "espace probabilisé fini",
+    "loi uniforme discrète",
+    "événement indépendant",
+    "combinaisons"
+  ],
+  "methods": [
+    "calcul de probabilité par dénombrement",
+    "utilisation de la formule des probabilités conditionnelles",
+    "comptage des cas favorables"
+  ],
+  "objects": [
+    "tirage aléatoire de bottes",
+    "paire de bottes",
+    "pieds droits/gauches",
+    "bottes de quatre personnes"
+  ],
+  "content_hash": "b1cb6ee1e8ab3a4ef88c26fc2d12114ecd20532deb50d319da5f753576d5e742",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:44:14.213Z"
+}

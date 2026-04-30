@@ -1,0 +1,27 @@
+{
+  "uuid": "0Lmc",
+  "source_path": "exo7/5-L2/0Lmc.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction définie comme une série de sinus est bien définie sur ℝ, périodique et continue hors des multiples de 2π. Ensuite, il s'agit de calculer une limite d'intégrale et d'en déduire que la fonction n'a pas de développement en série de Fourier.",
+  "concepts": [
+    "série de Fourier",
+    "périodicité",
+    "continuité",
+    "limite d'intégrale",
+    "formule de Parseval",
+    "convergence uniforme"
+  ],
+  "methods": [
+    "étude de la convergence de série",
+    "calcul de limite",
+    "intégration par parties",
+    "analyse de la périodicité"
+  ],
+  "objects": [
+    "fonction définie par une série",
+    "intégrale impropre",
+    "limite de fonction"
+  ],
+  "content_hash": "810f976078add8f7ed6b5744df9c8e1a6418ad094c2a032d4f31e80154622257",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:16:11.693Z"
+}

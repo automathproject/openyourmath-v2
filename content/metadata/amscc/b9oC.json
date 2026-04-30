@@ -1,0 +1,27 @@
+{
+  "uuid": "b9oC",
+  "source_path": "amscc/b9oC.tex",
+  "summary": "Calcul de probabilités pour une pièce usinée dont les cotes x et y suivent des lois normales. Détermination de la probabilité de conformité en utilisant l'indépendance des variables aléatoires.",
+  "concepts": [
+    "loi normale",
+    "variable aléatoire",
+    "centrage-réduction",
+    "fonction de répartition",
+    "indépendance",
+    "probabilité conjointe"
+  ],
+  "methods": [
+    "standardisation",
+    "utilisation de la table de la loi normale",
+    "calcul de probabilité conjointe pour variables indépendantes"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "intervalle de conformité",
+    "écart-type",
+    "moyenne"
+  ],
+  "content_hash": "3a807bafd1ae3bc6ab864a5c2264b6d0183e1f888fc3a4412005cb7366fd6026",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:56:31.727Z"
+}

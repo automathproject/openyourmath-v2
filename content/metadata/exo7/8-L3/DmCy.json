@@ -1,0 +1,33 @@
+{
+  "uuid": "DmCy",
+  "source_path": "exo7/8-L3/DmCy.tex",
+  "summary": "L'exercice étudie les propriétés d'un groupe d'ordre 399 en appliquant le théorème de Sylow. Il demande de prouver l'unicité et la normalité de certains sous-groupes, puis d'analyser la structure du groupe comme produit semi-direct.",
+  "concepts": [
+    "théorème de Sylow",
+    "sous-groupes de Sylow",
+    "produit semi-direct",
+    "groupe cyclique",
+    "fonction indicatrice d'Euler",
+    "section d'une suite exacte",
+    "isomorphisme de groupes",
+    "normalité d'un sous-groupe"
+  ],
+  "methods": [
+    "calcul du nombre de Sylow",
+    "utilisation du lemme chinois",
+    "analyse de la structure de groupe",
+    "preuve par contradiction",
+    "construction de l'isomorphisme"
+  ],
+  "objects": [
+    "groupe d'ordre 399",
+    "19-Sylow",
+    "7-Sylow",
+    "sous-groupe cyclique d'ordre 133",
+    "3-Sylow",
+    "produit semi-direct"
+  ],
+  "content_hash": "d6ee11a9ed0c4d2d68735f7fea4093372597120a190d0b032ed3d6cb26c9f37a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:53:30.523Z"
+}

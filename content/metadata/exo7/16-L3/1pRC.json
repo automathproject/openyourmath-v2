@@ -1,0 +1,25 @@
+{
+  "uuid": "1pRC",
+  "source_path": "exo7/16-L3/1pRC.tex",
+  "summary": "L'exercice demande de montrer que la fonction complexe φ(z) = (4z + 3)/(4 + 3z) a une valeur absolue égale à 1 pour tout θ réel lorsque z = e^(iθ), puis d'en déduire que pour tout z de module strictement inférieur à 1, la valeur absolue de φ(z) est strictement inférieure à 1.",
+  "concepts": [
+    "fonction complexe",
+    "module d'un nombre complexe",
+    "principe du maximum",
+    "convergence uniforme",
+    "continuité sur un disque"
+  ],
+  "methods": [
+    "calcul de module",
+    "substitution trigonométrique",
+    "application du principe du maximum"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "nombre complexe",
+    "disque unité"
+  ],
+  "content_hash": "7796b305e355419090c4d4aeb13a104c3c249dd98a6c03d60630d4ded2e532f4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:05:27.861Z"
+}

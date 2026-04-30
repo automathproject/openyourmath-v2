@@ -1,0 +1,28 @@
+{
+  "uuid": "LIno",
+  "source_path": "exo7/13-L3/LIno.tex",
+  "summary": "Déterminer les valeurs du paramètre k pour lesquelles l'origine est un point de puits (attracteur) pour des systèmes différentiels linéaires à coefficients constants donnés.",
+  "concepts": [
+    "système linéaire à coefficients constants",
+    "stabilité des points d'équilibre",
+    "valeurs propres",
+    "matrice",
+    "puits (attracteur)",
+    "analyse des systèmes dynamiques"
+  ],
+  "methods": [
+    "calcul des valeurs propres",
+    "analyse de la stabilité",
+    "diagonalisation",
+    "étude des solutions fondamentales"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "matrice 3x3",
+    "système différentiel linéaire",
+    "point d'équilibre"
+  ],
+  "content_hash": "922e307e1e7dc0a92f121f4d5a70fc15ba0776ea3ecd2612ea680d882229fbdc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:12:11.613Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "ndVm",
+  "source_path": "exo7/4-L2/ndVm.tex",
+  "summary": "L'exercice demande de déterminer pour quelles valeurs du paramètre réel a une matrice donnée est diagonalisable, puis de trouver une base de vecteurs propres lorsque c'est possible. Il aborde aussi la résolution d'un système différentiel linéaire associé selon la diagonalisabilité de la matrice.",
+  "concepts": [
+    "diagonalisation de matrice",
+    "valeurs propres",
+    "vecteurs propres",
+    "sous-espaces propres",
+    "polynôme caractéristique",
+    "système différentiel linéaire",
+    "solution générale"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "détermination des sous-espaces propres",
+    "intégration directe de système différentiel",
+    "construction de base de solutions"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "valeurs propres réelles",
+    "vecteurs propres",
+    "système différentiel linéaire",
+    "solution générale"
+  ],
+  "content_hash": "745767225533f3eabfd8c4a4ebb1d5bafe9655443c2b82e3771381d3443bbc7e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:13:21.398Z"
+}

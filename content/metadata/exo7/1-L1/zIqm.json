@@ -1,0 +1,29 @@
+{
+  "uuid": "zIqm",
+  "source_path": "exo7/1-L1/zIqm.tex",
+  "summary": "L'exercice étudie une application linéaire f de R³ dans R³ vérifiant f³ = -f et f ≠ 0. Il demande de prouver des propriétés sur les noyaux de f et f²+I, d'analyser la non-existence de valeurs propres pour certains vecteurs, et de déterminer des dimensions et une base adaptée.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "valeur propre",
+    "base d'un espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "matrice d'une application linéaire"
+  ],
+  "methods": [
+    "analyse des noyaux",
+    "recherche de valeurs propres",
+    "construction de base adaptée",
+    "calcul de dimension"
+  ],
+  "objects": [
+    "application linéaire f",
+    "noyau Ker(f)",
+    "noyau Ker(f²+I)",
+    "vecteur x",
+    "base ε"
+  ],
+  "content_hash": "afc5e52eb0a74b21050f09300ec9925408d59902bdf8dbdea1789ebefc6be552",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:23:24.900Z"
+}

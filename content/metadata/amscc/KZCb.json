@@ -1,0 +1,28 @@
+{
+  "uuid": "KZCb",
+  "source_path": "amscc/KZCb.tex",
+  "summary": "L'exercice demande de déterminer la valeur de a pour que fn soit une densité de probabilité, puis d'étudier les moments, la convergence en loi et en probabilité de la suite de variables aléatoires (Xn) dont chaque terme admet pour densité fn.",
+  "concepts": [
+    "densité de probabilité",
+    "convergence en loi",
+    "convergence en probabilité",
+    "fonction de répartition",
+    "moment d'une variable aléatoire",
+    "intégrale de Riemann",
+    "changement de variable"
+  ],
+  "methods": [
+    "calcul d'intégrale",
+    "étude de la limite de fonctions",
+    "comparaison de fonctions de répartition"
+  ],
+  "objects": [
+    "densité de variable aléatoire",
+    "suite de variables aléatoires",
+    "fonction de répartition",
+    "variable aléatoire identiquement nulle"
+  ],
+  "content_hash": "b830c795048a4f9cfee39b083573754aac425e8dd68bfda4c6d7b93390793e92",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:46:02.649Z"
+}

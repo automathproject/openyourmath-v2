@@ -1,0 +1,32 @@
+{
+  "uuid": "5Q8c",
+  "source_path": "amscc/5Q8c.tex",
+  "summary": "L'exercice demande d'étudier une application linéaire de ℝ³ dans ℝ³ en déterminant sa matrice dans la base canonique, son polynôme caractéristique, ses valeurs propres et ses sous-espaces propres, puis de montrer sa diagonalisabilité et de trouver une base de vecteurs propres.",
+  "concepts": [
+    "application linéaire",
+    "matrice d'une application linéaire",
+    "polynôme caractéristique",
+    "valeur propre",
+    "sous-espace propre",
+    "diagonalisation",
+    "base de vecteurs propres"
+  ],
+  "methods": [
+    "calcul de matrice dans une base",
+    "calcul de polynôme caractéristique",
+    "recherche de valeurs propres",
+    "détermination de sous-espaces propres",
+    "vérification de diagonalisabilité"
+  ],
+  "objects": [
+    "application linéaire",
+    "matrice",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "sous-espaces propres",
+    "base de vecteurs propres"
+  ],
+  "content_hash": "5dabe22ab790b693f2ce4a70257cc78beff4507a601edf7a8968edf71e85bb85",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:08:12.708Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "zM7U",
+  "source_path": "exo7/5-L2/zM7U.tex",
+  "summary": "L'exercice demande d'étudier la convergence d'une série de fonctions définie par $u_n(x) = (-1)^n \\ln(1 + \frac{x}{n(1+x)})$ sur $\\mathbb{R}^+$. Il faut montrer la convergence simple, majorer le reste pour prouver la convergence uniforme, et vérifier la convergence normale.",
+  "concepts": [
+    "série de fonctions",
+    "convergence simple",
+    "convergence uniforme",
+    "convergence normale",
+    "majoration du reste",
+    "critère de convergence absolue"
+  ],
+  "methods": [
+    "majoration terme à terme",
+    "étude de la convergence uniforme",
+    "analyse de la convergence normale"
+  ],
+  "objects": [
+    "série de fonctions",
+    "fonction $u_n(x)$",
+    "reste de la série",
+    "fonction $f(x)$"
+  ],
+  "content_hash": "82bee027fda124ff4a14c529e8aa935fb834ba5a5f398c6bad9f8da77b52bc40",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:06:44.613Z"
+}

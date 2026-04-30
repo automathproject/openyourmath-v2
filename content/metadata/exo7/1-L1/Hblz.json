@@ -1,0 +1,27 @@
+{
+  "uuid": "Hblz",
+  "source_path": "exo7/1-L1/Hblz.tex",
+  "summary": "Trouver deux polynômes réels premiers entre eux dont la somme des carrés est égale au carré de (X²+1).",
+  "concepts": [
+    "polynôme irréductible",
+    "polynôme premier entre eux",
+    "identité polynomiale",
+    "racine complexe",
+    "division euclidienne",
+    "PGCD"
+  ],
+  "methods": [
+    "décomposition en polynômes de degré inférieur",
+    "identification des coefficients",
+    "vérification de l'irréductibilité",
+    "calcul du PGCD"
+  ],
+  "objects": [
+    "polynôme de degré 2",
+    "polynôme de degré 4",
+    "racines complexes"
+  ],
+  "content_hash": "99674c4c8e53b3a5aa59f209cf67163b0c32d5c253fa1dbeb840644d6bb5ba7d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:46:53.877Z"
+}

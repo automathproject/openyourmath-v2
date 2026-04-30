@@ -1,0 +1,32 @@
+{
+  "uuid": "DzNC",
+  "source_path": "exo7/4-L2/DzNC.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des matrices carrées de format 2 à coefficients entiers et de déterminant 1 forme un groupe sous la multiplication. Ensuite, il s'agit de prouver que tout élément de cet ensemble vérifiant Ap = I2 pour un certain p naturel non nul satisfait A12 = I2.",
+  "concepts": [
+    "groupe",
+    "sous-groupe",
+    "matrice inversible",
+    "diagonalisation",
+    "valeurs propres",
+    "racines de l'unité",
+    "trace d'une matrice",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "diagonalisation dans C",
+    "analyse des valeurs propres",
+    "calcul de la trace",
+    "utilisation des propriétés des racines de l'unité"
+  ],
+  "objects": [
+    "matrice carrée",
+    "groupe multiplicatif",
+    "polynôme annulateur",
+    "valeurs propres complexes",
+    "trace"
+  ],
+  "content_hash": "9bc0adeaded0df82b19358cd2d785a0aeb1f8c3f5d50fa10378fc0fa8c80df39",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:25:26.391Z"
+}

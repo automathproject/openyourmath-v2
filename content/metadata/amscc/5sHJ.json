@@ -1,0 +1,27 @@
+{
+  "uuid": "5sHJ",
+  "source_path": "amscc/5sHJ.tex",
+  "summary": "Calculer l'espérance de gain d'un joueur au loto en fonction du nombre de bons numéros trouvés, avec des gains spécifiques pour 3, 4, 5 et 6 numéros corrects.",
+  "concepts": [
+    "loi hypergéométrique",
+    "espérance mathématique",
+    "variable aléatoire discrète",
+    "tirage sans remise",
+    "probabilité conditionnelle",
+    "combinatoire"
+  ],
+  "methods": [
+    "calcul de probabilités par loi hypergéométrique",
+    "calcul d'espérance discrète",
+    "utilisation de coefficients binomiaux"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "tableau de gains",
+    "coefficient binomial",
+    "espérance de gain"
+  ],
+  "content_hash": "96227c259281535dd5fababbd6ec18dd8afdbc5911bf631e32c41cbaa07215e5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:16:16.633Z"
+}

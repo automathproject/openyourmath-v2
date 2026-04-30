@@ -1,0 +1,26 @@
+{
+  "uuid": "buop",
+  "source_path": "exo7/1-L1/buop.tex",
+  "summary": "Montrer l'irréductibilité d'un polynôme à coefficients entiers sous des conditions de divisibilité par un nombre premier.",
+  "concepts": [
+    "polynôme irréductible",
+    "divisibilité dans Z[X]",
+    "coefficient dominant",
+    "factorisation de polynômes",
+    "nombre premier",
+    "congruences modulo un nombre premier"
+  ],
+  "methods": [
+    "réduction modulo un nombre premier",
+    "analyse des coefficients",
+    "contradiction"
+  ],
+  "objects": [
+    "polynôme à coefficients entiers",
+    "factorisation en produits de polynômes",
+    "coefficient constant"
+  ],
+  "content_hash": "3e8b1bd16bc08baafb725ad5f448007d69fb222e1a2487034503e1836106e08c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:09:30.797Z"
+}

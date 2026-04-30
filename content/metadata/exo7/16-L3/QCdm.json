@@ -1,0 +1,27 @@
+{
+  "uuid": "QCdm",
+  "source_path": "exo7/16-L3/QCdm.tex",
+  "summary": "L'exercice demande de vérifier que la fonction sin(z) ne s'annule jamais sur l'ouvert U complémentaire de πℤ, puis de déterminer le rayon de convergence du développement en série de Taylor de la fonction f(z) = 1/sin(z) en tout point z₀ ∈ U.",
+  "concepts": [
+    "fonction analytique",
+    "série de Taylor",
+    "rayon de convergence",
+    "zéros d'une fonction",
+    "fonction exponentielle complexe",
+    "distance dans ℂ"
+  ],
+  "methods": [
+    "développement en série exponentielle",
+    "calcul de distance minimale",
+    "analyse des zéros"
+  ],
+  "objects": [
+    "fonction sin(z)",
+    "fonction f(z) = 1/sin(z)",
+    "ensemble U = ℂ \\piℤ",
+    "point z₀ ∈ U"
+  ],
+  "content_hash": "cecd8f4cff3b91e4d5766b3f57a4e755fe24aac842aa2855fc90aa6cfc7ef635",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:14:24.771Z"
+}

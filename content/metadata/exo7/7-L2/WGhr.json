@@ -1,0 +1,22 @@
+{
+  "uuid": "WGhr",
+  "source_path": "exo7/7-L2/WGhr.tex",
+  "summary": "L'exercice demande de majorer la probabilité qu'une variable aléatoire de Poisson de paramètre λ=10² dépasse sa valeur maximale de 10³, dans le contexte d'un détecteur de particules radioactives.",
+  "concepts": [
+    "loi de Poisson",
+    "espérance",
+    "variance",
+    "inégalité de Bienaymé-Tchebychev",
+    "probabilité continue"
+  ],
+  "methods": [
+    "majoration par l'inégalité de Bienaymé-Tchebychev"
+  ],
+  "objects": [
+    "variable aléatoire de Poisson",
+    "probabilité de dépassement"
+  ],
+  "content_hash": "aedead005839acaef65118d15e7d8e872f7946b67a82a2c8303a9f331f0da8d2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:52:18.134Z"
+}

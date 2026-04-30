@@ -1,0 +1,27 @@
+{
+  "uuid": "6kRC",
+  "source_path": "exo7/1-L1/6kRC.tex",
+  "summary": "Calculer le produit de termes de la forme (z^k + conjugué(z)^k) pour k allant de 1 à n, où z est un nombre complexe donné en forme polaire.",
+  "concepts": [
+    "nombre complexe",
+    "module d'un nombre complexe",
+    "argument d'un nombre complexe",
+    "conjugué d'un nombre complexe",
+    "forme polaire",
+    "formule d'Euler",
+    "cosinus de multiples angles"
+  ],
+  "methods": [
+    "expression en forme polaire",
+    "utilisation de la formule d'Euler",
+    "factorisation de produits"
+  ],
+  "objects": [
+    "nombre complexe z",
+    "conjugué de z",
+    "produit de termes complexes"
+  ],
+  "content_hash": "e34985f0d5fd38f41de82158a130c1c110b2f410d0baa096b1707d6e42d1b721",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:33:04.211Z"
+}

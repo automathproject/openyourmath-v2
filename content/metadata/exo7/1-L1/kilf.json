@@ -1,0 +1,28 @@
+{
+  "uuid": "kilf",
+  "source_path": "exo7/1-L1/kilf.tex",
+  "summary": "L'exercice demande de résoudre l'équation z^n = 1 et d'exprimer ses racines sous forme exponentielle. Il utilise ensuite ces résultats pour déterminer les racines d'un polynôme de degré n-1 et calculer une somme de puissances de racines primitives.",
+  "concepts": [
+    "racine n-ième d'un nombre complexe",
+    "polynôme cyclotomique",
+    "racines de l'unité",
+    "somme géométrique",
+    "nombre complexe",
+    "forme exponentielle"
+  ],
+  "methods": [
+    "factorisation",
+    "somme géométrique",
+    "résolution d'équation polynomiale",
+    "utilisation de la forme exponentielle"
+  ],
+  "objects": [
+    "racines n-ième de l'unité",
+    "polynôme de degré n-1",
+    "somme de puissances de racines primitives",
+    "nombre complexe"
+  ],
+  "content_hash": "6a359e2c3e4505fc1fc932631f271720cf2559fb146a4e797c49367ff8c84f38",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:58:18.723Z"
+}

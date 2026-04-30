@@ -1,0 +1,26 @@
+{
+  "uuid": "BaOm",
+  "source_path": "exo7/8-L3/BaOm.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés sur les p-Sylow d'un groupe G de cardinal p^d*m où p est premier et m n'est pas multiple de p : d'abord que le nombre de p-Sylow divise m, puis que G possède un sous-groupe d'ordre p^i pour tout i entre 0 et d.",
+  "concepts": [
+    "théorème de Sylow",
+    "p-Sylow",
+    "ordre d'un groupe",
+    "sous-groupe",
+    "cardinal d'un groupe",
+    "divisibilité"
+  ],
+  "methods": [
+    "utilisation des théorèmes de Sylow",
+    "analyse de la structure des groupes finis",
+    "démonstration par l'absurde"
+  ],
+  "objects": [
+    "groupe fini",
+    "p-Sylow",
+    "sous-groupe d'ordre p^i"
+  ],
+  "content_hash": "1a4a6a2cf1fab08571e12b568e413c8d4856faf1f8717a6f50888b674337d624",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:52:38.397Z"
+}

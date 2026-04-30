@@ -1,0 +1,28 @@
+{
+  "uuid": "uR8M",
+  "source_path": "exo7/5-L2/uR8M.tex",
+  "summary": "L'exercice demande de déterminer un équivalent simple de la fonction f(x) = Σ e^{-x√n} pour x > 0 lorsque x tend vers 0 par valeurs positives. La fonction f(x) est définie comme une série infinie de termes exponentiels.",
+  "concepts": [
+    "série de fonctions",
+    "convergence de série",
+    "équivalent asymptotique",
+    "intégrale impropre",
+    "fonction Gamma",
+    "croissances comparées"
+  ],
+  "methods": [
+    "comparaison série-intégrale",
+    "changement de variable",
+    "encadrement",
+    "calcul de limite"
+  ],
+  "objects": [
+    "série de fonctions",
+    "fonction exponentielle",
+    "intégrale",
+    "fonction Gamma"
+  ],
+  "content_hash": "6833cc97d4ea78c6eb51cbe51ce8c1f60988aee0eb6d92a0e9f566dfb70d931d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:04:43.323Z"
+}

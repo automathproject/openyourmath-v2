@@ -1,0 +1,25 @@
+{
+  "uuid": "BGJz",
+  "source_path": "amscc/BGJz.tex",
+  "summary": "L'exercice demande de démontrer qu'une variable aléatoire Y, obtenue par transformation affine d'une variable aléatoire absolument continue X, est elle-même absolument continue et d'exprimer sa densité en fonction de celle de X.",
+  "concepts": [
+    "variable aléatoire absolument continue",
+    "densité de probabilité",
+    "théorème d'identification de densité",
+    "théorème de transfert",
+    "changement de variable"
+  ],
+  "methods": [
+    "identification de densité",
+    "changement de variable",
+    "calcul d'espérance conditionnelle"
+  ],
+  "objects": [
+    "variable aléatoire transformée",
+    "densité de probabilité",
+    "fonction de répartition"
+  ],
+  "content_hash": "114af2d41f94fe84468288a0f63c8ce8a74b61f90acabbd574097ea1bb6d0534",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:42:04.705Z"
+}

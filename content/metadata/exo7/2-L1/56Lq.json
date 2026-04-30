@@ -1,0 +1,30 @@
+{
+  "uuid": "56Lq",
+  "source_path": "exo7/2-L1/56Lq.tex",
+  "summary": "Étudier la convergence et la monotonie des suites définies par $u_n=\\left(1+\\frac{1}{n}\\right)^n$ et $v_n=\\left(1+\\frac{1}{n}\\right)^{n+1}$.",
+  "concepts": [
+    "suite numérique",
+    "convergence",
+    "monotonie",
+    "fonction dérivable",
+    "limite de fonction",
+    "croissance comparée",
+    "suite adjacente"
+  ],
+  "methods": [
+    "étude de la dérivée",
+    "comparaison de termes consécutifs",
+    "analyse de la limite",
+    "étude de la monotonie"
+  ],
+  "objects": [
+    "suite $u_n$",
+    "suite $v_n$",
+    "fonction $f(x)$",
+    "dérivée $f'(x)$",
+    "dérivée seconde $f''(x)$"
+  ],
+  "content_hash": "ed7022cd388169f4c8f4757ff46922b9c9354968eb95e4bab59a89b2e90f2280",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:03:20.659Z"
+}

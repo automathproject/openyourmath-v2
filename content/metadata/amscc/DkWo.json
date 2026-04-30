@@ -1,0 +1,30 @@
+{
+  "uuid": "DkWo",
+  "source_path": "amscc/DkWo.tex",
+  "summary": "L'exercice demande d'évaluer si un traitement a réduit significativement la taille des tumeurs chez des souris, en comparant deux échantillons (témoins et traitées) via leurs moyennes et écarts-types.",
+  "concepts": [
+    "test d'hypothèse",
+    "intervalle de confiance",
+    "comparaison de moyennes",
+    "écart-type",
+    "hypothèse nulle",
+    "p-value",
+    "test de Student",
+    "statistique de test"
+  ],
+  "methods": [
+    "test bilatéral",
+    "calcul de statistique de test",
+    "comparaison de moyennes échantillonnales",
+    "interprétation de la p-value"
+  ],
+  "objects": [
+    "moyenne échantillonnale",
+    "écart-type échantillonnal",
+    "taille de tumeur",
+    "échantillon indépendant"
+  ],
+  "content_hash": "9917775f0f28b71f099637d009b95b582c8def31e2079c612ac0c9bde0c07ade",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:37:02.614Z"
+}

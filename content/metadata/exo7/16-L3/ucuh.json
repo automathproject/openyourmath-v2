@@ -1,0 +1,26 @@
+{
+  "uuid": "ucuh",
+  "source_path": "exo7/16-L3/ucuh.tex",
+  "summary": "L'exercice étudie une fonction complexe définie sur un domaine D = ℂ - [0,1]. Il demande d'abord si D est un ouvert étoilé, puis si une fonction F = log(1-1/z) est bien définie et continue sur D, et enfin de montrer que l'intégrale de f le long de tout chemin orienté Γ dans D est nulle.",
+  "concepts": [
+    "fonction holomorphe",
+    "intégrale de fonction complexe",
+    "ouvert étoilé",
+    "continuité d'une fonction complexe",
+    "définition de domaine de fonction complexe"
+  ],
+  "methods": [
+    "analyse de la continuité",
+    "étude de la définition d'une fonction complexe",
+    "intégration de fonction complexe"
+  ],
+  "objects": [
+    "fonction complexe",
+    "domaine complexe",
+    "chemin orienté",
+    "intégrale complexe"
+  ],
+  "content_hash": "474716f7a57ab26245a0dde202815cf56e02fced0073f90ee993b02d175255fd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:26:48.940Z"
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "SQHP",
+  "source_path": "exo7/5-L2/SQHP.tex",
+  "summary": "L'exercice demande de prolonger une forme linéaire définie sur un hyperplan d'un espace vectoriel normé de dimension finie, en conservant sa norme. Il aborde ensuite la complétude de l'espace des suites sommables et la construction d'une famille dénombrable de sous-espaces vectoriels de dimensions finies dont la réunion est dense.",
+  "concepts": [
+    "espace vectoriel normé",
+    "hyperplan",
+    "forme linéaire",
+    "norme d'une forme linéaire",
+    "prolongement d'une forme linéaire",
+    "complétude",
+    "sous-espace vectoriel de dimension finie",
+    "densité"
+  ],
+  "methods": [
+    "construction par récurrence de prolongements",
+    "utilisation de la complétude",
+    "construction de suites de Cauchy",
+    "interversion de limites",
+    "majoration de suites"
+  ],
+  "objects": [
+    "espace vectoriel normé de dimension finie",
+    "hyperplan",
+    "forme linéaire",
+    "suite sommable",
+    "sous-espace vectoriel de dimension finie"
+  ],
+  "content_hash": "267b4573e1ab7482a66ba18e8c772104e146a74e691e775a0c6f036b931190d4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:53:08.111Z"
+}

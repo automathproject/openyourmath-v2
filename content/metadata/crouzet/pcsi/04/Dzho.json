@@ -1,0 +1,27 @@
+{
+  "uuid": "Dzho",
+  "source_path": "crouzet/pcsi/04/Dzho.tex",
+  "summary": "L'exercice demande de déterminer pour quelles valeurs d'un paramètre λ quatre systèmes linéaires homogènes sont de Cramer, puis de résoudre ces systèmes dans les cas où ils le sont.",
+  "concepts": [
+    "système linéaire homogène",
+    "système de Cramer",
+    "pivot de Gauss",
+    "déterminant",
+    "rang d'une matrice"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "calcul de déterminant",
+    "réduction de matrice",
+    "résolution de système linéaire"
+  ],
+  "objects": [
+    "système linéaire à paramètre",
+    "matrice carrée",
+    "pivot",
+    "déterminant"
+  ],
+  "content_hash": "db2741d34c3bc8d4355b2409cbdc08d96610d369b7c9bb1e4e47ebd85307f13f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:15:12.072Z"
+}

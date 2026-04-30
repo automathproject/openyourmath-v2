@@ -1,0 +1,33 @@
+{
+  "uuid": "Qpma",
+  "source_path": "exo7/10-L3/Qpma.tex",
+  "summary": "Démontrer la structure des idéaux premiers dans l'anneau ℤ[x], en analysant leur intersection avec ℤ et en étudiant les cas selon cette intersection. L'exercice explore les différentes formes possibles de ces idéaux premiers.",
+  "concepts": [
+    "idéal premier",
+    "anneau quotient",
+    "polynôme primitif",
+    "réduction modulo un nombre premier",
+    "irréductibilité dans ℤ[x]",
+    "maximalité d'un idéal",
+    "théorème des restes chinois",
+    "division euclidienne dans ℚ[x]"
+  ],
+  "methods": [
+    "analyse par cas",
+    "réduction modulo p",
+    "division euclidienne",
+    "étude des contenus des polynômes",
+    "utilisation de la primitivité",
+    "preuve par contradiction"
+  ],
+  "objects": [
+    "idéal premier de ℤ[x]",
+    "polynôme irréductible",
+    "polynôme primitif",
+    "intersection d'idéaux",
+    "anneau ℤ_p[x]"
+  ],
+  "content_hash": "9d63fcb7fd17cea45e684d8aa7f78dd02020d5eaa263b158d9d7625d2496024b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:23:01.459Z"
+}

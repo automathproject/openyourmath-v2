@@ -1,0 +1,29 @@
+{
+  "uuid": "SSaf",
+  "source_path": "exo7/11-L3/SSaf.tex",
+  "summary": "L'exercice demande de calculer les longueurs de deux courbes : une courbe plane C' projetée sur le plan z=0, et sa courbe correspondante C tracée sur une surface donnée. Il s'agit ensuite de comparer ces longueurs.",
+  "concepts": [
+    "paramétrisation de courbe",
+    "vecteur vitesse",
+    "norme d'un vecteur",
+    "intégrale de longueur d'arc",
+    "changement de variable",
+    "fonctions hyperboliques"
+  ],
+  "methods": [
+    "calcul de vecteur vitesse",
+    "intégration de norme de vecteur",
+    "changement de variable hyperbolique",
+    "comparaison d'intégrales"
+  ],
+  "objects": [
+    "courbe paramétrée",
+    "surface",
+    "projection orthogonale",
+    "vecteur vitesse",
+    "intégrale de longueur"
+  ],
+  "content_hash": "4b67cc82ca872c59626357dfbbbf899ba707e4a02fc1bb9040a46e544d956083",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:20:19.081Z"
+}

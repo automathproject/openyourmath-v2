@@ -1,0 +1,26 @@
+{
+  "uuid": "CZRp",
+  "source_path": "exo7/7-L2/CZRp.tex",
+  "summary": "Calcul des probabilités de trouver la bonne clé parmi 8 au premier, troisième, cinquième et huitième essai, en utilisant des permutations fictives.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "permutation",
+    "probabilité uniforme",
+    "essais indépendants",
+    "loi discrète"
+  ],
+  "methods": [
+    "énumération des cas favorables",
+    "calcul de factorielle",
+    "raisonnement par symétrie"
+  ],
+  "objects": [
+    "clé correcte",
+    "clés incorrectes",
+    "permutations de clés",
+    "essais successifs"
+  ],
+  "content_hash": "db560c9384f5eb966cd7b2ce94b1670ea40af3168fb7baecd6fb5ffb1ac47d61",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:21:02.230Z"
+}

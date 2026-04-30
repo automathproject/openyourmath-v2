@@ -1,0 +1,29 @@
+{
+  "uuid": "jemd",
+  "source_path": "amscc/jemd.tex",
+  "summary": "L'exercice demande d'exprimer la fonction de vraisemblance pour un échantillon de variables aléatoires suivant une loi géométrique, puis d'estimer le paramètre p par la méthode du maximum de vraisemblance.",
+  "concepts": [
+    "loi géométrique",
+    "fonction de vraisemblance",
+    "maximum de vraisemblance",
+    "estimateur",
+    "probabilité discrète",
+    "dérivation",
+    "optimisation"
+  ],
+  "methods": [
+    "calcul de la vraisemblance",
+    "maximisation de la vraisemblance",
+    "calcul de dérivée",
+    "résolution d'équation"
+  ],
+  "objects": [
+    "variable aléatoire géométrique",
+    "échantillon",
+    "paramètre p",
+    "fonction de vraisemblance"
+  ],
+  "content_hash": "9f249f5287cea7e06c1dc25ecc9ad02181e52ea9a7ff8d4565e6a2c98e5e3f96",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:37:20.504Z"
+}

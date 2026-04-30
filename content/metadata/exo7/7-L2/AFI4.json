@@ -1,0 +1,26 @@
+{
+  "uuid": "AFI4",
+  "source_path": "exo7/7-L2/AFI4.tex",
+  "summary": "Calculer des probabilités élémentaires pour des événements spécifiques lors du lancer de trois dés non pipés. Les événements concernent des combinaisons précises de résultats ou des sommes de points.",
+  "concepts": [
+    "probabilité élémentaire",
+    "événement indépendant",
+    "loi uniforme discrète",
+    "dénombrement des combinaisons",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "calcul de probabilité par dénombrement",
+    "utilisation de la multiplication des probabilités indépendantes",
+    "énumération des cas favorables"
+  ],
+  "objects": [
+    "dés non pipés",
+    "résultats de dés",
+    "somme de points",
+    "combinaisons de résultats"
+  ],
+  "content_hash": "c010b6dfaf0fb4ec9e8885d04873a9929a2bb4547f32494e46f779324c4b87ff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:19:18.585Z"
+}

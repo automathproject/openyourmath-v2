@@ -1,0 +1,25 @@
+{
+  "uuid": "HH9A",
+  "source_path": "exo7/4-L2/HH9A.tex",
+  "summary": "Calculer le déterminant d'une matrice complexe de la forme I + (x_i y_j) où x_i et y_j sont des complexes. L'énoncé demande d'exprimer ce déterminant en fonction des produits x_i y_i.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "trace d'une matrice",
+    "rang d'une matrice",
+    "théorème de Cayley-Hamilton"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "détermination des valeurs propres",
+    "utilisation de la trace"
+  ],
+  "objects": [
+    "matrice complexe",
+    "polynôme caractéristique",
+    "déterminant"
+  ],
+  "content_hash": "989844bf1e743eab47197c2e8e78ca015237525d596a177da35b7913bb1769a8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:31:59.969Z"
+}

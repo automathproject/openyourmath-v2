@@ -1,0 +1,27 @@
+{
+  "uuid": "Wilv",
+  "source_path": "exo7/4-L2/Wilv.tex",
+  "summary": "Trouver un polynôme annulateur de degré minimal pour une matrice 3x3 donnée, puis utiliser ce polynôme pour calculer l'inverse de la matrice, ainsi que ses puissances 3 et 5.",
+  "concepts": [
+    "polynôme annulateur",
+    "matrice inversible",
+    "puissance de matrice",
+    "réduction d'endomorphisme",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "division euclidienne de polynômes",
+    "calcul de l'inverse d'une matrice",
+    "calcul de puissances de matrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme annulateur",
+    "inverse de matrice",
+    "puissances de matrice"
+  ],
+  "content_hash": "f56502751f3b4302654f9b91a80f0756579049da721e31d88abd1e045f1b967e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:51:24.408Z"
+}

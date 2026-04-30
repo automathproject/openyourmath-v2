@@ -1,0 +1,22 @@
+{
+  "uuid": "wXFc",
+  "source_path": "exo7/1-L1/wXFc.tex",
+  "summary": "Trouver deux matrices carrées d'ordre 2 à coefficients réels dont le produit dans un sens est nul tandis que le produit dans l'autre sens ne l'est pas.",
+  "concepts": [
+    "matrice carrée",
+    "produit de matrices",
+    "matrice nulle",
+    "non-commutativité du produit matriciel"
+  ],
+  "methods": [
+    "calcul explicite de produit matriciel",
+    "vérification de la nullité"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "matrice nulle"
+  ],
+  "content_hash": "60b3e8fd80f63bb02a4f30c8e69b1b23bbeed8e90f9589ca51851041c165efaa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:20:50.185Z"
+}

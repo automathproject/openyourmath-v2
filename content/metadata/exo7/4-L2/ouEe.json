@@ -1,0 +1,27 @@
+{
+  "uuid": "ouEe",
+  "source_path": "exo7/4-L2/ouEe.tex",
+  "summary": "Soit un espace vectoriel de dimension finie et un endomorphisme admettant un polynôme annulateur non constant. On suppose que la dérivée de ce polynôme en 0 est non nulle. Montrer que le noyau et l'image de l'endomorphisme sont supplémentaires.",
+  "concepts": [
+    "polynôme annulateur",
+    "endomorphisme",
+    "dimension finie",
+    "somme directe d'espaces vectoriels",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "dérivée d'un polynôme"
+  ],
+  "methods": [
+    "analyse des racines du polynôme annulateur",
+    "étude de la bijectivité",
+    "utilisation de la dérivée du polynôme"
+  ],
+  "objects": [
+    "espace vectoriel de dimension finie",
+    "endomorphisme",
+    "polynôme annulateur"
+  ],
+  "content_hash": "5172f1ca1edcaf915b1656a3d739ec299e5b0a74b783ff801475d1114d717ba2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:15:36.877Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "KPgD",
+  "source_path": "exo7/2-L1/KPgD.tex",
+  "summary": "L'exercice étudie les propriétés d'une suite réelle positive décroissante dont la série converge. Il demande de prouver que la suite n*u_n tend vers 0, puis que certaines séries associées convergent et ont même somme. Enfin, il applique ces résultats au calcul de sommes impliquant des puissances de r.",
+  "concepts": [
+    "série numérique",
+    "suite réelle positive décroissante",
+    "convergence de série",
+    "critère de Cauchy",
+    "somme de série",
+    "téléscopage"
+  ],
+  "methods": [
+    "téléscopage",
+    "comparaison de séries",
+    "changement de variable",
+    "calcul de somme de série"
+  ],
+  "objects": [
+    "suite numérique",
+    "série numérique",
+    "somme de série",
+    "puissance de r"
+  ],
+  "content_hash": "e584a7d4896da52c9ee5ebfc8d619982113939b1ff2e275d7979dc28e2e62ced",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:12:02.373Z"
+}

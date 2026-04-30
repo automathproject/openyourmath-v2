@@ -1,0 +1,26 @@
+{
+  "uuid": "N8Hv",
+  "source_path": "exo7/5-L2/N8Hv.tex",
+  "summary": "On considère une application qui à un n-uplet de réels associe le polynôme de degré au plus n-1 interpolant ces valeurs. On demande de montrer la continuité de cette application et de son inverse.",
+  "concepts": [
+    "interpolation polynomiale",
+    "continuité d'application",
+    "espace vectoriel normé",
+    "polynôme de degré n-1",
+    "application linéaire",
+    "topologie produit"
+  ],
+  "methods": [
+    "utilisation de la norme infinie",
+    "inversion de matrice",
+    "continuité des applications linéaires continues"
+  ],
+  "objects": [
+    "polynôme interpolateur",
+    "n-uplet de réels",
+    "application linéaire"
+  ],
+  "content_hash": "5f7e4f16d2b8a06dcbf47681b7dc9ee50823dd6b05e3b08ca397cabf8fb91408",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:47:37.974Z"
+}

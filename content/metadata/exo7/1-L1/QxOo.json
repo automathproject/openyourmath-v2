@@ -1,0 +1,25 @@
+{
+  "uuid": "QxOo",
+  "source_path": "exo7/1-L1/QxOo.tex",
+  "summary": "Montrer qu'un polynôme P est divisible par le produit de deux polynômes de la forme (X-a)^m et (X-b)^n, où a et b sont des complexes distincts et m, n des entiers naturels.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "racine d'un polynôme",
+    "multiplicité d'une racine",
+    "polynôme scindé",
+    "factorisation de polynômes"
+  ],
+  "methods": [
+    "factorisation",
+    "utilisation des racines",
+    "analyse des multiplicités"
+  ],
+  "objects": [
+    "polynôme P",
+    "racines complexes",
+    "polynômes (X-a)^m et (X-b)^n"
+  ],
+  "content_hash": "31e2b0a0c516c9cfb75e0431910f6fa632106bb5691e9cd12d99661effb6f04f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:57:09.105Z"
+}

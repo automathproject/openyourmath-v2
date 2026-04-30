@@ -1,0 +1,32 @@
+{
+  "uuid": "Ocbl",
+  "source_path": "amscc/Ocbl.tex",
+  "summary": "L'exercice étudie la convergence de la suite de variables aléatoires M_n, définie comme le maximum de n variables uniformes indépendantes sur [0,1]. Il demande de démontrer d'abord la convergence en probabilité de M_n vers 1, puis d'en déduire la convergence presque sûre et en loi. Enfin, il étudie la convergence en loi d'une transformation de M_n vers une loi exponentielle.",
+  "concepts": [
+    "convergence en probabilité",
+    "convergence presque sûre",
+    "convergence en loi",
+    "fonction de répartition",
+    "loi exponentielle",
+    "variables aléatoires indépendantes",
+    "variables aléatoires identiquement distribuées",
+    "théorème de la limite presque sûre"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "étude de la fonction de répartition",
+    "utilisation de l'indépendance",
+    "limite de suites réelles",
+    "transformation de variable aléatoire"
+  ],
+  "objects": [
+    "suite de variables aléatoires",
+    "maximum de variables aléatoires",
+    "variable aléatoire uniforme",
+    "variable aléatoire exponentielle",
+    "fonction de répartition"
+  ],
+  "content_hash": "5672eeb69fcd2a4ef69429d398dd57f127c183edcedfa2279590f34a88350c81",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:48:46.303Z"
+}

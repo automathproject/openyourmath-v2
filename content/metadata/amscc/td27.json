@@ -1,0 +1,32 @@
+{
+  "uuid": "td27",
+  "source_path": "amscc/td27.tex",
+  "summary": "L'exercice demande d'estimer la probabilité qu'aucune ampoule ne soit défaillante dans une chaîne de fabrication, en utilisant deux méthodes différentes. La première méthode utilise la proportion empirique de jours sans défaillance, tandis que la seconde suppose que le nombre de défaillances suit une loi de Poisson.",
+  "concepts": [
+    "estimateur sans biais",
+    "risque quadratique",
+    "loi limite",
+    "intervalle de confiance",
+    "loi de Poisson",
+    "biais d'un estimateur",
+    "variance d'un estimateur",
+    "équivalent asymptotique"
+  ],
+  "methods": [
+    "estimation par proportion empirique",
+    "calcul du risque quadratique",
+    "construction d'intervalle de confiance",
+    "calcul du biais",
+    "calcul de la variance",
+    "analyse asymptotique"
+  ],
+  "objects": [
+    "estimateur de la probabilité de non-défaillance",
+    "nombre de jours sans défaillance",
+    "moyenne empirique des défaillances",
+    "variable aléatoire de Poisson"
+  ],
+  "content_hash": "0c582383e685789f3188f2108354d2861a9e64cdb599cb31cd6b3b5aaff4ccc1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:58:44.501Z"
+}

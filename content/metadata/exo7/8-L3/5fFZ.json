@@ -1,0 +1,29 @@
+{
+  "uuid": "5fFZ",
+  "source_path": "exo7/8-L3/5fFZ.tex",
+  "summary": "L'exercice demande de démontrer que les transpositions d'un homomorphisme de groupes de $\\mathcal{S}_n$ vers un groupe abélien ont toutes la même image, puis de prouver que si le groupe cible est $\\{1, -1\\}$, l'homomorphisme est soit la signature soit une application constante. Ensuite, il s'agit de montrer qu'un sous-groupe $G$ d'indice 2 dans $\\mathcal{S}_n$ est distingué et qu'il est égal à $\\mathcal{A}_n$.",
+  "concepts": [
+    "homomorphisme de groupes",
+    "sous-groupe distingué",
+    "groupe abélien",
+    "transposition",
+    "signature",
+    "indice d'un sous-groupe",
+    "groupe alterné"
+  ],
+  "methods": [
+    "utilisation du noyau d'un homomorphisme",
+    "démonstration par l'absurde",
+    "analyse des propriétés des transpositions",
+    "application de la formule du rang"
+  ],
+  "objects": [
+    "homomorphisme $f : \\mathcal{S}_n \\to A$",
+    "sous-groupe $G$ d'indice 2",
+    "groupe symétrique $\\mathcal{S}_n$",
+    "groupe alterné $\\mathcal{A}_n$"
+  ],
+  "content_hash": "9aaee0101f703b337e5052ac46870806bc32a3dc0f2ecdf4bb7155641d6f9219",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:53:47.864Z"
+}

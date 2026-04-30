@@ -1,0 +1,28 @@
+{
+  "uuid": "bXCC",
+  "source_path": "amscc/bXCC.tex",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité d'un zéro d'une fonction non linéaire sur un intervalle donné, puis d'étudier les propriétés de convergence d'une suite itérative associée à ce zéro.",
+  "concepts": [
+    "fonction strictement croissante",
+    "point fixe",
+    "convergence d'une suite",
+    "ordre de convergence",
+    "fonction lipschitzienne",
+    "algorithme de Newton"
+  ],
+  "methods": [
+    "théorème des valeurs intermédiaires",
+    "étude de la dérivée",
+    "analyse de la convergence locale",
+    "calcul de la constante de Lipschitz"
+  ],
+  "objects": [
+    "fonction non linéaire",
+    "suite itérative",
+    "point fixe",
+    "intervalle de recherche"
+  ],
+  "content_hash": "474a8bca1c5bbff64d86bef0cb7dd4e40ce770cf11d9dd8f6443dd2dfd1625e0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:25:42.065Z"
+}

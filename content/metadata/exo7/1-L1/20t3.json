@@ -1,0 +1,26 @@
+{
+  "uuid": "20t3",
+  "source_path": "exo7/1-L1/20t3.tex",
+  "summary": "L'exercice demande de calculer les restes de trois divisions euclidiennes de polynômes. Les divisions concernent des polynômes de haut degré par des polynômes de degré 2 ou 3.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "polynôme unitaire",
+    "degré d'un polynôme",
+    "reste de la division euclidienne",
+    "algèbre des polynômes"
+  ],
+  "methods": [
+    "calcul du reste par substitution",
+    "utilisation des racines du diviseur",
+    "développement binomial"
+  ],
+  "objects": [
+    "polynôme de degré 50",
+    "polynôme de degré 2",
+    "polynôme de degré 3",
+    "racines carrées"
+  ],
+  "content_hash": "c84e8a350dd8d9404731f3c03c91fb7df3f0489d36b7cd6b14ae7774a2f3a1fd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:31:52.218Z"
+}

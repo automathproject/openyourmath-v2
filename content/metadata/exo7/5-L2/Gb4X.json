@@ -1,0 +1,24 @@
+{
+  "uuid": "Gb4X",
+  "source_path": "exo7/5-L2/Gb4X.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés équivalentes pour un point z dans un espace métrique complexe : l'appartenance à l'intérieur de A et l'existence d'une boule ouverte autour de z incluse dans A ; l'appartenance à l'adhérence de A et l'intersection de toute boule ouverte autour de z avec A.",
+  "concepts": [
+    "espace métrique",
+    "intérieur d'un ensemble",
+    "adhérence d'un ensemble",
+    "boule ouverte",
+    "topologie d'un espace métrique"
+  ],
+  "methods": [
+    "raisonnement par équivalence",
+    "utilisation des définitions topologiques"
+  ],
+  "objects": [
+    "ensemble A",
+    "point z",
+    "boule B(z, ε)"
+  ],
+  "content_hash": "5f884e633c58771666c51cf2d11c5f0989f736ace87131df30c6c38204a8061d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:42:15.037Z"
+}

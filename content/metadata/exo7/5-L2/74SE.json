@@ -1,0 +1,25 @@
+{
+  "uuid": "74SE",
+  "source_path": "exo7/5-L2/74SE.tex",
+  "summary": "L'exercice demande de démontrer qu'un ensemble défini comme l'intérieur d'un sous-ensemble de ℝ² est le plus grand ouvert contenu dans cet ensemble.",
+  "concepts": [
+    "intérieur d'un ensemble",
+    "adhérence d'un ensemble",
+    "ensemble ouvert",
+    "complémentaire d'un ensemble",
+    "topologie de ℝ²"
+  ],
+  "methods": [
+    "manipulation des complémentaires",
+    "utilisation des propriétés de l'adhérence",
+    "démonstration par inclusion"
+  ],
+  "objects": [
+    "ensemble E",
+    "intérieur Int(E)",
+    "adhérence d'un ensemble"
+  ],
+  "content_hash": "a9dd39ad0f132bda4cfe9b170cc5f75b96a8225e25dc8b15b03091eba332f962",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:37:43.505Z"
+}

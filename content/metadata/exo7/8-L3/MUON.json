@@ -1,0 +1,31 @@
+{
+  "uuid": "MUON",
+  "source_path": "exo7/8-L3/MUON.tex",
+  "summary": "L'exercice demande de démontrer des propriétés liées aux sous-groupes distingués et aux automorphismes internes d'un groupe. Il s'agit d'étudier l'ordre des éléments dans le quotient, la structure des automorphismes internes, et les propriétés spécifiques d'un sous-groupe distingué d'ordre premier.",
+  "concepts": [
+    "sous-groupe distingué",
+    "ordre d'un élément",
+    "automorphisme de groupe",
+    "morphisme de groupes",
+    "centre d'un groupe",
+    "groupe quotient",
+    "automorphisme interne"
+  ],
+  "methods": [
+    "démonstration par propriétés des groupes",
+    "utilisation de la surjection canonique",
+    "analyse des automorphismes",
+    "étude des noyaux de morphismes",
+    "restriction d'applications"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe distingué H",
+    "application τ_x",
+    "groupe quotient G/H",
+    "automorphisme interne"
+  ],
+  "content_hash": "7c2d6d82cd2e8d5af8a67204b7777ed193dc1fdfe360baeee80466dafd66b526",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:57:26.871Z"
+}

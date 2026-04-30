@@ -1,0 +1,29 @@
+{
+  "uuid": "h9Zv",
+  "source_path": "exo7/8-L3/h9Zv.tex",
+  "summary": "L'exercice demande de prouver que le produit HK de deux sous-groupes H et K d'un groupe G est un sous-groupe de G si et seulement si HK = KH. Il faut ensuite en déduire que si H est distingué dans G, alors HK est un sous-groupe de G. Dans une seconde partie, on suppose que H et K commutent et on étudie l'homomorphisme de groupes défini par f(h,k) = hk.",
+  "concepts": [
+    "sous-groupe distingué",
+    "produit de sous-groupes",
+    "homomorphisme de groupes",
+    "noyau d'un homomorphisme",
+    "image d'un homomorphisme",
+    "isomorphisme de groupes"
+  ],
+  "methods": [
+    "preuve par double inclusion",
+    "utilisation de la condition de sous-groupe",
+    "vérification des propriétés d'homomorphisme",
+    "calcul du noyau",
+    "calcul de l'image"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupes H et K",
+    "produit HK",
+    "application f : H × K → G"
+  ],
+  "content_hash": "8cad66531718819098975ded4b0fc001fbae9add628ec220296e1bf776dcaca8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:02:11.446Z"
+}

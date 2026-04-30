@@ -1,0 +1,29 @@
+{
+  "uuid": "BE7r",
+  "source_path": "exo7/8-L3/BE7r.tex",
+  "summary": "Montrer qu'il n'existe pas de groupe simple d'ordre p²q où p et q sont des nombres premiers. L'énoncé demande d'utiliser les théorèmes de Sylow pour analyser les sous-groupes de Sylow et aboutir à une contradiction.",
+  "concepts": [
+    "théorèmes de Sylow",
+    "groupe simple",
+    "sous-groupes de Sylow",
+    "action par conjugaison",
+    "morphisme injectif",
+    "ordre d'un groupe",
+    "nombre de Sylow"
+  ],
+  "methods": [
+    "analyse des sous-groupes de Sylow",
+    "action de groupe sur un ensemble",
+    "étude des morphismes injectifs",
+    "élimination des cas particuliers"
+  ],
+  "objects": [
+    "groupe d'ordre p²q",
+    "p-Sylow",
+    "q-Sylow",
+    "morphisme G → S_q"
+  ],
+  "content_hash": "ac7257cb34962d70e24d03e1a59fceae7f618896a7321482886af406643a014e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:52:22.458Z"
+}

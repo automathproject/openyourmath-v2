@@ -1,0 +1,28 @@
+{
+  "uuid": "BVSH",
+  "source_path": "exo7/7-L2/BVSH.tex",
+  "summary": "L'exercice demande de calculer des probabilités conditionnelles sur des pièces de monnaie avec des proportions de fausses pièces différentes, puis d'étudier une variable aléatoire binomiale modélisant le nombre de pièces fausses dans un lot de 1000 pièces de un euro, avec une approximation normale.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "loi binomiale",
+    "espérance d'une variable aléatoire",
+    "écart-type",
+    "approximation normale d'une loi binomiale",
+    "standardisation"
+  ],
+  "methods": [
+    "formule de Bayes",
+    "calcul de probabilité totale",
+    "approximation gaussienne",
+    "standardisation"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "probabilité conditionnelle",
+    "espérance",
+    "écart-type"
+  ],
+  "content_hash": "fceb9d4fdb0235001ee222f28534d15223f53ae77ffce2f4076da5bfe23fa8c8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:19:58.975Z"
+}

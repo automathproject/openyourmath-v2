@@ -1,0 +1,33 @@
+{
+  "uuid": "ETap",
+  "source_path": "exo7/4-L2/ETap.tex",
+  "summary": "L'exercice demande d'étudier un endomorphisme de ℝ² défini par une matrice. On cherche ses vecteurs propres, valeurs propres, et on calcule sa matrice dans une base de vecteurs propres. On explore aussi la relation entre ces matrices et le calcul de puissances de la matrice initiale.",
+  "concepts": [
+    "endomorphisme",
+    "vecteur propre",
+    "valeur propre",
+    "base de vecteurs propres",
+    "diagonalisation",
+    "matrice inversible",
+    "puissance de matrice"
+  ],
+  "methods": [
+    "calcul de vecteurs propres",
+    "calcul de valeurs propres",
+    "vérification de base",
+    "diagonalisation",
+    "calcul de matrice inversée",
+    "calcul de puissance de matrice"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteur propre",
+    "valeur propre",
+    "base de ℝ²",
+    "matrice diagonale",
+    "matrice de passage"
+  ],
+  "content_hash": "b3515ca2a70e61e650ede39f25891c4aac534dfc73ab911e03f45d30829fc7fc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:27:00.309Z"
+}

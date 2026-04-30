@@ -1,0 +1,28 @@
+{
+  "uuid": "nIiz",
+  "source_path": "exo7/4-L2/nIiz.tex",
+  "summary": "L'exercice demande de déterminer les valeurs propres de deux matrices, d'étudier leur diagonalisabilité et triangularisabilité, puis de calculer l'inverse d'une des matrices à l'aide de son polynôme caractéristique.",
+  "concepts": [
+    "valeur propre",
+    "matrice triangulaire",
+    "polynôme caractéristique",
+    "diagonalisabilité",
+    "triangularisabilité",
+    "rang d'une matrice",
+    "noyau d'un endomorphisme"
+  ],
+  "methods": [
+    "calcul des valeurs propres d'une matrice triangulaire",
+    "calcul du polynôme caractéristique",
+    "étude de la diagonalisabilité par le rang du noyau",
+    "calcul de l'inverse d'une matrice via son polynôme caractéristique"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme caractéristique",
+    "inverse d'une matrice"
+  ],
+  "content_hash": "a54c68fb996b07e9b9b4a6c7c6d2aad2bbc8a773f1df967f1f5b824724d23aa1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:12:47.994Z"
+}

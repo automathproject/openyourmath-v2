@@ -1,0 +1,26 @@
+{
+  "uuid": "SMpG",
+  "source_path": "exo7/5-L2/SMpG.tex",
+  "summary": "L'exercice demande de prouver que la somme de Minkowski de deux parties d'un espace vectoriel normé, où l'une est compacte et l'autre fermée, est fermée.",
+  "concepts": [
+    "espace vectoriel normé",
+    "partie compacte",
+    "partie fermée",
+    "somme de Minkowski",
+    "topologie",
+    "fermeture d'un ensemble"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la fermeture",
+    "propriétés des ensembles compacts"
+  ],
+  "objects": [
+    "espace vectoriel normé",
+    "parties A et B",
+    "somme de Minkowski A+B"
+  ],
+  "content_hash": "c6ae00bfd5864bdb65c1a57909fedd4f823f8cd472d08afd20ccc1676dc13563",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:52:37.740Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "F2zh",
+  "source_path": "exo7/5-L2/F2zh.tex",
+  "summary": "On considère une fonction continue de ℝᵈ dans ℝ dont les limites aux infinis sont +∞. On demande de prouver que cette fonction admet un minimum.",
+  "concepts": [
+    "continuité",
+    "limite infinie",
+    "minimum global",
+    "fonction de plusieurs variables",
+    "topologie de ℝᵈ",
+    "théorème des valeurs intermédiaires",
+    "bornes inférieures"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "construction de suite",
+    "utilisation de la continuité",
+    "application du théorème de Weierstrass"
+  ],
+  "objects": [
+    "fonction continue",
+    "limites infinies",
+    "minimum global"
+  ],
+  "content_hash": "2d997b5e480b47e995a84ad2accc90d9c5b04f84e64ab558ab52abdbb9596a3e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:40:47.334Z"
+}

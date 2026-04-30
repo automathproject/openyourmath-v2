@@ -1,0 +1,27 @@
+{
+  "uuid": "M22u",
+  "source_path": "exo7/5-L2/M22u.tex",
+  "summary": "Calculer le développement en série de Fourier d'une fonction exponentielle périodique, puis exploiter cette série pour évaluer des sommes infinies impliquant des termes rationnels.",
+  "concepts": [
+    "série de Fourier",
+    "fonction périodique",
+    "intégrale de fonction exponentielle",
+    "somme infinie",
+    "convergence dominée",
+    "limite de fonction"
+  ],
+  "methods": [
+    "calcul des coefficients de Fourier",
+    "identité de Parseval",
+    "passage à la limite sous le signe somme"
+  ],
+  "objects": [
+    "fonction exponentielle périodique",
+    "coefficients de Fourier",
+    "somme de termes rationnels",
+    "limite de suite"
+  ],
+  "content_hash": "1db39b7254c7b00ca366ee4b0988f33bc47add5541ea5e6d96c01ab95b884776",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:23:14.381Z"
+}

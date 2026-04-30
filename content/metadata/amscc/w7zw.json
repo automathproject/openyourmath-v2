@@ -1,0 +1,33 @@
+{
+  "uuid": "w7zw",
+  "source_path": "amscc/w7zw.tex",
+  "summary": "L'exercice demande de vérifier qu'une densité de probabilité paramétrique est bien normalisée, puis de calculer l'espérance et la variance d'une variable aléatoire associée. Il étudie ensuite les propriétés d'un estimateur sans biais et convergent, applique le théorème central limite pour une approximation gaussienne, et construit un intervalle de confiance à partir d'une inégalité de concentration.",
+  "concepts": [
+    "densité de probabilité",
+    "espérance mathématique",
+    "variance",
+    "estimateur sans biais",
+    "convergence d'un estimateur",
+    "théorème central limite",
+    "inégalité de Bienaymé-Tchebychev",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "intégration",
+    "calcul de moments",
+    "formule de Koenig-Huygens",
+    "standardisation",
+    "approximation gaussienne",
+    "inégalité de concentration"
+  ],
+  "objects": [
+    "densité de probabilité paramétrique",
+    "variable aléatoire indépendante et identiquement distribuée",
+    "espérance et variance d'une variable aléatoire",
+    "estimateur sans biais",
+    "intervalle de confiance"
+  ],
+  "content_hash": "2708bd3e06b00892dd8537dac38582af42e8946d40227fc8445f1751e59acd86",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:00:20.439Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "MWWz",
+  "source_path": "amscc/MWWz.tex",
+  "summary": "L'exercice modélise les latences aléatoires de drones par des variables uniformes et étudie la convergence en loi de leur somme vers une loi normale. Il applique ensuite cette convergence pour déterminer une probabilité d'écart.",
+  "concepts": [
+    "théorème central limite",
+    "convergence en loi",
+    "loi normale centrée réduite",
+    "variable aléatoire uniforme",
+    "espérance et variance",
+    "fonction caractéristique",
+    "approximation gaussienne"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de l'espérance et de la variance",
+    "utilisation des tables de la loi normale",
+    "approximation par la loi normale"
+  ],
+  "objects": [
+    "somme de variables aléatoires iid",
+    "variable aléatoire uniforme",
+    "loi normale centrée réduite",
+    "fonction caractéristique"
+  ],
+  "content_hash": "67e0138b889bffbce86537c42e1e57ef8be1b5de76ca6955ec6bb59da6cdecc0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:47:18.270Z"
+}

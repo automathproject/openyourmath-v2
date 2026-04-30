@@ -1,0 +1,26 @@
+{
+  "uuid": "XKwm",
+  "source_path": "amscc/XKwm.tex",
+  "summary": "Déterminer l'ordre de multiplicité de la racine 1 du polynôme P(X) = X^5 - 5X^4 + 14X^3 - 22X^2 + 17X - 5 et en déduire sa factorisation.",
+  "concepts": [
+    "racine d'un polynôme",
+    "multiplicité d'une racine",
+    "factorisation de polynôme",
+    "polynôme irréductible",
+    "division euclidienne",
+    "dérivées successives"
+  ],
+  "methods": [
+    "division euclidienne successive",
+    "évaluation des dérivées successives",
+    "factorisation par racines"
+  ],
+  "objects": [
+    "polynôme de degré 5",
+    "racine multiple",
+    "polynôme irréductible du second degré"
+  ],
+  "content_hash": "57589df64f5ecff8fcbde72aa966e2d87e99d7f2ba6c3aac8eb64fd1dbe33a8b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:03:30.159Z"
+}

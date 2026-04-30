@@ -1,0 +1,25 @@
+{
+  "uuid": "0IuB",
+  "source_path": "exo7/4-L2/0IuB.tex",
+  "summary": "On considère une matrice A de taille n×n à coefficients complexes vérifiant A^n = I et dont les puissances successives forment une famille libre. On demande de montrer que la trace de A est nulle.",
+  "concepts": [
+    "matrice diagonalisable",
+    "valeur propre",
+    "polynôme annulateur",
+    "racine n-ième de l'unité",
+    "trace d'une matrice"
+  ],
+  "methods": [
+    "diagonalisation",
+    "calcul des valeurs propres",
+    "somme des racines"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme annulateur",
+    "valeurs propres"
+  ],
+  "content_hash": "f82177f849e1e5253276d6e3a64b99bd0e03e2de40c00dc1c90b94779bac926c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:08:23.290Z"
+}

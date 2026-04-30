@@ -1,0 +1,26 @@
+{
+  "uuid": "H6oe",
+  "source_path": "exo7/5-L2/H6oe.tex",
+  "summary": "L'exercice demande de démontrer que l'ensemble des valeurs d'adhérence d'une suite réelle est l'intersection des adhérences des ensembles An définis comme les suites extraites à partir d'un certain rang, et d'en déduire que cet ensemble est fermé et compact non vide si la suite est bornée.",
+  "concepts": [
+    "valeur d'adhérence",
+    "adhérence d'un ensemble",
+    "suite réelle",
+    "ensemble fermé",
+    "ensemble compact",
+    "suite bornée"
+  ],
+  "methods": [
+    "démonstration par définition",
+    "utilisation de la propriété de l'adhérence",
+    "application du théorème de Bolzano-Weierstrass"
+  ],
+  "objects": [
+    "suite réelle",
+    "ensemble An",
+    "ensemble V"
+  ],
+  "content_hash": "fbb61943a4bf4ef192eb8eae815ebb3d33c28043534423f646b343da15277bb5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:42:42.452Z"
+}

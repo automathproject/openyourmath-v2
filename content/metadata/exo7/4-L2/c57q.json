@@ -1,0 +1,23 @@
+{
+  "uuid": "c57q",
+  "source_path": "exo7/4-L2/c57q.tex",
+  "summary": "On considère une matrice inversible diagonalisable A et une matrice B telles que B^p = A. On demande de montrer que B est diagonalisable, puis d'étudier si la conclusion persiste lorsque A n'est pas inversible.",
+  "concepts": [
+    "diagonalisation",
+    "polynôme annulateur",
+    "matrice inversible",
+    "matrice nilpotente",
+    "contre-exemple"
+  ],
+  "methods": [
+    "étude de polynôme annulateur",
+    "construction de contre-exemple"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "puissance de matrice"
+  ],
+  "content_hash": "816aaa6d0df6fe1a80758d7953062bbca40722d3682e0fe564151abc07283523",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:58:48.799Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "Z5WW",
+  "source_path": "exo7/7-L2/Z5WW.tex",
+  "summary": "L'exercice demande de construire un intervalle de confiance à 95% pour la proportion de personnes à soigner pour un problème de cholestérol élevé dans un échantillon de 10 000 personnes, à partir d'un taux moyen connu.",
+  "concepts": [
+    "intervalle de confiance",
+    "proportion",
+    "loi binomiale",
+    "approximation gaussienne",
+    "niveau de confiance",
+    "estimation par intervalle"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de l'écart-type",
+    "utilisation de la table de la loi normale"
+  ],
+  "objects": [
+    "proportion",
+    "échantillon",
+    "intervalle de confiance",
+    "taux moyen"
+  ],
+  "content_hash": "14da07059d93b808c690f08642de2ae45c507af9982d5d0d5a5bebba339722f1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:44:37.085Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "Rhyk",
+  "source_path": "exo7/1-L1/Rhyk.tex",
+  "summary": "Trouver tous les polynômes P vérifiant la relation fonctionnelle P(X²) = P(X)P(X+1). L'exercice demande de déterminer la forme générale de ces polynômes.",
+  "concepts": [
+    "racine d'un polynôme",
+    "polynôme irréductible",
+    "relation fonctionnelle",
+    "module d'un nombre complexe",
+    "polynôme unitaire",
+    "décomposition en facteurs irréductibles"
+  ],
+  "methods": [
+    "analyse des racines",
+    "itération des conditions",
+    "étude du module",
+    "décomposition en facteurs"
+  ],
+  "objects": [
+    "polynôme",
+    "racine complexe",
+    "relation fonctionnelle"
+  ],
+  "content_hash": "9547f4db7011cae864ac07d19826fa87acd7fd7fde784dd76bc067cd71411773",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:58:21.533Z"
+}

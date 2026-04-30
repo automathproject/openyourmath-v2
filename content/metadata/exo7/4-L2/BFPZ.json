@@ -1,0 +1,31 @@
+{
+  "uuid": "BFPZ",
+  "source_path": "exo7/4-L2/BFPZ.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des endomorphismes commutant avec un endomorphisme u ayant n valeurs propres distinctes est un espace vectoriel, puis d'en décrire la structure et la dimension.",
+  "concepts": [
+    "endomorphisme",
+    "valeur propre",
+    "espace propre",
+    "commutativité",
+    "sous-espace vectoriel",
+    "matrice diagonale",
+    "polynôme annulateur",
+    "famille libre"
+  ],
+  "methods": [
+    "utilisation de la base de vecteurs propres",
+    "calcul de déterminant",
+    "système de Cramer",
+    "diagonalisation"
+  ],
+  "objects": [
+    "endomorphisme u",
+    "espace vectoriel E",
+    "ensemble Com",
+    "vecteurs propres",
+    "espaces propres"
+  ],
+  "content_hash": "7d4f08f1ab72c0a374f681c887990d08b251b5fef0a4a9d3b01e8e007521e711",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:21:53.447Z"
+}

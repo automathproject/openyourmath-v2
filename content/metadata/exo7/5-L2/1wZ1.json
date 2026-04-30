@@ -1,0 +1,27 @@
+{
+  "uuid": "1wZ1",
+  "source_path": "exo7/5-L2/1wZ1.tex",
+  "summary": "L'exercice demande de déterminer la borne supérieure du rapport des normes de la matrice produit AB sur le produit des normes de A et B, pour différentes normes matricielles (1, 2, ∞) sur les matrices carrées complexes.",
+  "concepts": [
+    "norme matricielle",
+    "norme sous-multiplicative",
+    "inégalité de Cauchy-Schwarz",
+    "supremum",
+    "matrice carrée complexe",
+    "produit de matrices"
+  ],
+  "methods": [
+    "calcul de norme matricielle",
+    "majoration par l'inégalité de Cauchy-Schwarz",
+    "construction d'un exemple optimal"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "norme matricielle",
+    "produit de matrices",
+    "supremum"
+  ],
+  "content_hash": "d3ce62f8a919dd6060714366a4055f40773b4469a1ffb687184b4eb278d7d8c0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:34:06.558Z"
+}

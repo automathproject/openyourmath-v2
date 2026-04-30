@@ -1,0 +1,29 @@
+{
+  "uuid": "j7XI",
+  "source_path": "exo7/4-L2/j7XI.tex",
+  "summary": "L'exercice demande de démontrer l'équivalence entre la condition f²=0 et Im(f) ⊂ Ker(f) pour un endomorphisme f d'un espace vectoriel E de dimension n. Il explore ensuite les propriétés de f sous cette condition, notamment la construction d'une base adaptée et la forme de sa matrice dans cette base.",
+  "concepts": [
+    "endomorphisme",
+    "image d'un endomorphisme",
+    "noyau d'un endomorphisme",
+    "rang d'un endomorphisme",
+    "base d'un espace vectoriel",
+    "matrice d'un endomorphisme",
+    "supplémentaire d'un sous-espace vectoriel"
+  ],
+  "methods": [
+    "détermination du noyau",
+    "détermination de l'image",
+    "construction de base adaptée",
+    "calcul de matrice dans une base donnée"
+  ],
+  "objects": [
+    "espace vectoriel de dimension finie",
+    "endomorphisme",
+    "matrice carrée",
+    "base d'un espace vectoriel"
+  ],
+  "content_hash": "bf46386c03e78a22beb561de31ead050397a0ca667ea7a361ffa27ffbe3006fd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:08:07.338Z"
+}

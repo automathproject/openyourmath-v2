@@ -1,0 +1,29 @@
+{
+  "uuid": "edJk",
+  "source_path": "exo7/4-L2/edJk.tex",
+  "summary": "On considère une matrice nilpotente A de taille n×n avec An=0 et An−1≠0. On montre qu'une famille de vecteurs construite à partir de A et d'un vecteur x0 non nul forme une base de ℝⁿ, puis on détermine la forme de A dans cette base. Application numérique avec une matrice 3×3 spécifique.",
+  "concepts": [
+    "matrice nilpotente",
+    "base d'un espace vectoriel",
+    "polynôme annulateur",
+    "réduction d'endomorphisme",
+    "diagonalisation",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "construction de base par récurrence",
+    "calcul de puissances de matrice",
+    "recherche de polynôme minimal",
+    "changement de base"
+  ],
+  "objects": [
+    "matrice nilpotente",
+    "vecteur propre",
+    "base de ℝⁿ",
+    "polynôme annulateur",
+    "endomorphisme"
+  ],
+  "content_hash": "bf06ebd3986e1647a19e4d023b02e994f4c7e97db0f4a11fbc7e8394fdfae836",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:01:09.964Z"
+}

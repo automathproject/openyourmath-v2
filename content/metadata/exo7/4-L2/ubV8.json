@@ -1,0 +1,33 @@
+{
+  "uuid": "ubV8",
+  "source_path": "exo7/4-L2/ubV8.tex",
+  "summary": "L'exercice demande de calculer les valeurs propres et une base de vecteurs propres d'une matrice symétrique 3x3 dépendant d'un paramètre réel. Il faut ensuite déterminer le rang de cette matrice selon les valeurs du paramètre, son inverse lorsque cela est possible, et son noyau et image lorsqu'elle n'est pas inversible.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "polynôme caractéristique",
+    "matrice symétrique",
+    "rang d'une matrice",
+    "inversibilité d'une matrice",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "résolution d'équation polynomiale",
+    "diagonalisation",
+    "détermination du noyau",
+    "détermination de l'image"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "valeurs propres",
+    "vecteurs propres",
+    "polynôme caractéristique",
+    "noyau",
+    "image"
+  ],
+  "content_hash": "5c0e9b7d4dfc24db3dfa55effb1afe7d8d328b40090be5be9dfba644cab52230",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:23:25.783Z"
+}

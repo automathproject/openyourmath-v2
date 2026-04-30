@@ -1,0 +1,26 @@
+{
+  "uuid": "eJoT",
+  "source_path": "exo7/1-L1/eJoT.tex",
+  "summary": "L'exercice demande de déterminer le PGCD des polynômes (X^n - 1) et (X - 1)^n pour un entier positif n. Pour n=3, il faut démontrer l'existence d'un couple de polynômes (U, V) vérifiant une relation de Bézout et en donner un exemple.",
+  "concepts": [
+    "polynôme",
+    "PGCD de polynômes",
+    "relation de Bézout",
+    "algèbre des polynômes",
+    "divisibilité des polynômes"
+  ],
+  "methods": [
+    "algorithme d'Euclide étendu",
+    "décomposition en facteurs premiers",
+    "calcul de PGCD",
+    "vérification de la relation de Bézout"
+  ],
+  "objects": [
+    "polynôme (X^n - 1)",
+    "polynôme (X - 1)^n",
+    "couple de polynômes (U, V)"
+  ],
+  "content_hash": "bfe4c5286463122e79af2ab965270f51ea724b60aff7e3ac16ee3df6d7f63efa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:11:23.389Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "7A8q",
+  "source_path": "exo7/1-L1/7A8q.tex",
+  "summary": "On considère une application Φ définie sur des polynômes et on demande de démontrer l'équivalence entre le fait que A et B soient premiers entre eux et que Φ soit bijective.",
+  "concepts": [
+    "division euclidienne",
+    "polynômes premiers entre eux",
+    "bijectivité d'une application",
+    "degré d'un polynôme",
+    "algèbre des polynômes"
+  ],
+  "methods": [
+    "utilisation du PGCD",
+    "construction explicite d'applications inverses",
+    "propriétés des polynômes"
+  ],
+  "objects": [
+    "polynômes A et B",
+    "application Φ",
+    "espace vectoriel K[X]"
+  ],
+  "content_hash": "422120ea86c2ecf2c7b2e92a6a3d5b31884955ca4ed60a8154116dd024b29461",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:35:16.545Z"
+}

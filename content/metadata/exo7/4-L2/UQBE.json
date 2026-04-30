@@ -1,0 +1,30 @@
+{
+  "uuid": "UQBE",
+  "source_path": "exo7/4-L2/UQBE.tex",
+  "summary": "L'exercice demande de démontrer que les vecteurs propres d'une matrice B = P(A) sont les mêmes que ceux de A, avec des valeurs propres transformées par le polynôme P. Il s'agit d'une propriété fondamentale en réduction d'endomorphisme.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "polynôme annulateur",
+    "déterminant",
+    "forme multilinéaire",
+    "décomposition polynomiale",
+    "endomorphisme"
+  ],
+  "methods": [
+    "décomposition polynomiale",
+    "calcul de déterminant",
+    "propriétés des valeurs propres",
+    "utilisation de la multilinéarité du déterminant"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme",
+    "vecteur propre",
+    "valeur propre",
+    "déterminant"
+  ],
+  "content_hash": "291aee33ff230baf16977a625eba7bf0b8aa094c32b291a2bba507ce721754ab",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:47:50.339Z"
+}

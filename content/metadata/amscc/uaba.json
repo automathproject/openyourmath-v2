@@ -1,0 +1,28 @@
+{
+  "uuid": "uaba",
+  "source_path": "amscc/uaba.tex",
+  "summary": "L'exercice demande de vérifier qu'une fonction donnée est une densité de probabilité, puis d'étudier la loi, l'espérance et la variance d'une transformation exponentielle de la variable aléatoire, et enfin d'approximer la loi d'une somme normalisée de ces transformations.",
+  "concepts": [
+    "densité de probabilité",
+    "variable aléatoire indépendante et identiquement distribuée",
+    "loi exponentielle",
+    "espérance",
+    "variance",
+    "théorème central limite",
+    "approximation gaussienne"
+  ],
+  "methods": [
+    "intégration",
+    "standardisation",
+    "approximation gaussienne"
+  ],
+  "objects": [
+    "densité de probabilité",
+    "variable aléatoire",
+    "transformation exponentielle",
+    "somme de variables aléatoires"
+  ],
+  "content_hash": "d098e899f432a283878d4aeab88f624f971078e0f45c5d582905514e8b32c44f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:10:09.707Z"
+}

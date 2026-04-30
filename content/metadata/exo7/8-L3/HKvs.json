@@ -1,0 +1,27 @@
+{
+  "uuid": "HKvs",
+  "source_path": "exo7/8-L3/HKvs.tex",
+  "summary": "Soit G un groupe et H un sous-groupe distingué de G. On suppose que H admet un unique p-Sylow S pour un nombre premier p. Montrer que S est distingué dans G.",
+  "concepts": [
+    "sous-groupe distingué",
+    "p-Sylow",
+    "théorème de Sylow",
+    "conjugaison de sous-groupes",
+    "ordre d'un groupe",
+    "nombre premier"
+  ],
+  "methods": [
+    "conjugaison",
+    "analyse des p-Sylows",
+    "utilisation de l'unicité"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe distingué H",
+    "p-Sylow S",
+    "nombre premier p"
+  ],
+  "content_hash": "c9d277d219811ceea87ee677cd2b77dae464420130951330aa1ce40dc2bc464a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:54:07.494Z"
+}

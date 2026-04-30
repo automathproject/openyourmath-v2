@@ -1,0 +1,27 @@
+{
+  "uuid": "OAWR",
+  "source_path": "exo7/2-L1/OAWR.tex",
+  "summary": "On étudie le comportement asymptotique d'une suite réelle positive $(u_n)$ définie par une relation de récurrence impliquant un terme principal et un terme négligeable. L'objectif est de montrer que cette suite est équivalente à une suite de la forme $\\frac{A}{n^\\alpha}$ pour un certain $A > 0$.",
+  "concepts": [
+    "suite numérique",
+    "comportement asymptotique",
+    "équivalence de suites",
+    "relation de récurrence",
+    "notation O petit",
+    "développement asymptotique"
+  ],
+  "methods": [
+    "analyse asymptotique",
+    "comparaison de suites",
+    "utilisation de la notation O petit"
+  ],
+  "objects": [
+    "suite réelle positive",
+    "relation de récurrence",
+    "terme principal",
+    "terme négligeable"
+  ],
+  "content_hash": "01c9123b80386e840095995329c19c6b1c86149e668c2060db82acf650e8135f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:14:33.990Z"
+}

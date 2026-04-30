@@ -1,0 +1,30 @@
+{
+  "uuid": "w4TW",
+  "source_path": "amscc/w4TW.tex",
+  "summary": "L'exercice demande de déterminer l'estimateur du maximum de vraisemblance pour le paramètre d'une loi exponentielle à partir d'un échantillon. Il s'agit de calculer la vraisemblance, la log-vraisemblance, sa dérivée, et de vérifier que l'estimateur obtenu est bien un maximum.",
+  "concepts": [
+    "maximum de vraisemblance",
+    "vraisemblance",
+    "log-vraisemblance",
+    "loi exponentielle",
+    "estimateur sans biais",
+    "espérance mathématique",
+    "dérivée seconde"
+  ],
+  "methods": [
+    "calcul de la vraisemblance",
+    "calcul de la log-vraisemblance",
+    "dérivation",
+    "étude du signe de la dérivée seconde",
+    "calcul de l'espérance"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "échantillon indépendant",
+    "estimateur du maximum de vraisemblance",
+    "moyenne empirique"
+  ],
+  "content_hash": "fb06036b1185d3a4042ce83b5f3a74c35df1621492785b9682ed00058becde31",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:10:44.430Z"
+}

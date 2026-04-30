@@ -1,0 +1,27 @@
+{
+  "uuid": "ugTt",
+  "source_path": "exo7/2-L1/ugTt.tex",
+  "summary": "On étudie la suite définie par u₀ = π/2 et u_{n+1} = sin(u_n). On demande de montrer qu'elle est strictement positive, décroissante et de limite nulle, puis de déterminer un équivalent simple de u_n en utilisant le lemme de Césaro.",
+  "concepts": [
+    "suite numérique",
+    "fonction sinus",
+    "limite de suite",
+    "continuité",
+    "développement limité",
+    "lemme de Césaro"
+  ],
+  "methods": [
+    "récurrence",
+    "étude de la monotonie",
+    "développement limité",
+    "application du lemme de Césaro"
+  ],
+  "objects": [
+    "suite récurrente",
+    "fonction sinus",
+    "développement limité"
+  ],
+  "content_hash": "0d9b75dc51a65477dabe3b31ca62c553482f5eecc1645b4a4a63dfc12d1aec29",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:39:45.869Z"
+}

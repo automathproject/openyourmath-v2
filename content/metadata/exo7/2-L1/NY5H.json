@@ -1,0 +1,25 @@
+{
+  "uuid": "NY5H",
+  "source_path": "exo7/2-L1/NY5H.tex",
+  "summary": "L'exercice demande de montrer que si une suite décroissante de réels strictement positifs a une série convergente, alors son terme général est o(1/n). Il faut aussi construire un contre-exemple où la série converge mais où n*u_n ne tend pas vers 0.",
+  "concepts": [
+    "série numérique convergente",
+    "suite décroissante",
+    "limite d'une suite",
+    "notation o petit",
+    "extraction de suite"
+  ],
+  "methods": [
+    "comparaison de sommes partielles",
+    "étude de suites extraites",
+    "utilisation de la décroissance"
+  ],
+  "objects": [
+    "suite numérique",
+    "série numérique",
+    "terme général o(1/n)"
+  ],
+  "content_hash": "463a619c77b1ec03b993ed2a065b036baf7f26d4ac52f421ab2e6f3003b0c64a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:14:21.897Z"
+}

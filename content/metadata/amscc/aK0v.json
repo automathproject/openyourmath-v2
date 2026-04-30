@@ -1,0 +1,25 @@
+{
+  "uuid": "aK0v",
+  "source_path": "amscc/aK0v.tex",
+  "summary": "L'exercice demande de déterminer les lois marginales d'un couple de variables aléatoires à densité donnée et de vérifier leur indépendance. Il s'agit ensuite de calculer l'espérance du produit des variables et le produit de leurs espérances.",
+  "concepts": [
+    "densité de probabilité conjointe",
+    "loi marginale",
+    "indépendance de variables aléatoires",
+    "espérance mathématique",
+    "théorème de transfert"
+  ],
+  "methods": [
+    "intégration multiple",
+    "calcul d'espérance",
+    "vérification d'indépendance"
+  ],
+  "objects": [
+    "variable aléatoire à densité",
+    "couple de variables aléatoires",
+    "fonction indicatrice"
+  ],
+  "content_hash": "21e526094c946aa0b275c438162efb2fc8ee637095bc7861715ba9bb3e5b44a9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:55:30.270Z"
+}

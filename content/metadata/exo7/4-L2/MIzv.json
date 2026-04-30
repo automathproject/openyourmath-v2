@@ -1,0 +1,32 @@
+{
+  "uuid": "MIzv",
+  "source_path": "exo7/4-L2/MIzv.tex",
+  "summary": "L'exercice demande de calculer le produit d'une matrice par sa transposée, de déterminer son déterminant, d'étudier la diagonalisabilité d'une matrice spécifique, et de résoudre un système récurent linéaire en utilisant la diagonalisation de cette matrice.",
+  "concepts": [
+    "matrice",
+    "transposée d'une matrice",
+    "déterminant",
+    "polynôme caractéristique",
+    "valeur propre",
+    "diagonalisation",
+    "système récurent linéaire",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "calcul de déterminant",
+    "étude de signe",
+    "diagonalisation sur les complexes",
+    "résolution de système récurent"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "polynôme caractéristique",
+    "vecteurs propres",
+    "matrice de passage",
+    "système récurent linéaire"
+  ],
+  "content_hash": "20315752667c97b52f13884083608f8c1301818dc1b4e2b02935c2275592f26e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:37:28.049Z"
+}

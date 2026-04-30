@@ -1,0 +1,31 @@
+{
+  "uuid": "XFPE",
+  "source_path": "exo7/7-L2/XFPE.tex",
+  "summary": "L'exercice demande de tester l'hypothèse selon laquelle deux lots de boulons proviennent de la même population, en comparant leurs taux de résistance à la rupture au seuil de 5%.",
+  "concepts": [
+    "test d'hypothèse",
+    "loi binomiale",
+    "loi normale",
+    "variable de Bernoulli",
+    "estimation de paramètre",
+    "intervalle de confiance",
+    "hypothèse nulle"
+  ],
+  "methods": [
+    "approximation normale de la loi binomiale",
+    "calcul de la variance",
+    "standardisation",
+    "test du chi-deux",
+    "comparaison de fréquences"
+  ],
+  "objects": [
+    "fréquence observée",
+    "taux de résistance",
+    "différence de proportions",
+    "variable aléatoire binomiale",
+    "échantillon indépendant"
+  ],
+  "content_hash": "61509b0d4a9a623f55989c252a2cb16f95faf48d25a6ef95eb38911c9d3df568",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:43:37.959Z"
+}

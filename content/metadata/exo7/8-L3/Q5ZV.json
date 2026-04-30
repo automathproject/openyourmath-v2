@@ -1,0 +1,33 @@
+{
+  "uuid": "Q5ZV",
+  "source_path": "exo7/8-L3/Q5ZV.tex",
+  "summary": "L'exercice étudie un groupe simple d'ordre 60 en utilisant les théorèmes de Sylow. Il demande de montrer l'existence de 6 5-Sylow, d'établir un morphisme injectif vers S6, et d'en déduire que le groupe est isomorphe à A5.",
+  "concepts": [
+    "théorèmes de Sylow",
+    "action de groupe",
+    "morphisme injectif",
+    "sous-groupe distingué",
+    "groupe alterné",
+    "groupe symétrique",
+    "isomorphisme de groupes",
+    "fixateur d'une action"
+  ],
+  "methods": [
+    "calcul du nombre de Sylow",
+    "analyse de l'action par conjugaison",
+    "étude du noyau d'un morphisme",
+    "utilisation de la simplicité du groupe",
+    "comparaison des structures de groupes"
+  ],
+  "objects": [
+    "groupe simple d'ordre 60",
+    "5-Sylow",
+    "morphisme vers S6",
+    "sous-groupe A6",
+    "action de A6 sur les classes à gauche",
+    "fixateur de la classe neutre"
+  ],
+  "content_hash": "1a55fcd898d753d0bd648d7828f8fa883195d51324bd50d25b02841676e8ff74",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:56:16.366Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "BU6H",
+  "source_path": "exo7/4-L2/BU6H.tex",
+  "summary": "L'exercice demande de montrer qu'une famille de vecteurs forme une base d'un espace vectoriel et de déterminer la matrice d'un endomorphisme dans cette base. Il s'agit ensuite de prouver qu'un polynôme annulateur spécifique annule cet endomorphisme et de donner une condition pour sa diagonalisabilité.",
+  "concepts": [
+    "polynôme annulateur",
+    "endomorphisme",
+    "base d'un espace vectoriel",
+    "matrice d'un endomorphisme",
+    "diagonalisabilité",
+    "rang d'un endomorphisme",
+    "noyau d'un endomorphisme"
+  ],
+  "methods": [
+    "construction explicite d'une base",
+    "calcul de la matrice d'un endomorphisme",
+    "vérification d'un polynôme annulateur",
+    "condition nécessaire et suffisante pour la diagonalisabilité"
+  ],
+  "objects": [
+    "espace vectoriel de dimension finie",
+    "endomorphisme",
+    "base de vecteurs",
+    "matrice de l'endomorphisme",
+    "polynôme annulateur"
+  ],
+  "content_hash": "5137ded131eb071d7c184dc6c8c0af2f54c24cdd53150ba6c2e50aee6aaab178",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:22:12.093Z"
+}

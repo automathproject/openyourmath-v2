@@ -1,0 +1,28 @@
+{
+  "uuid": "Rs3r",
+  "source_path": "exo7/16-L3/Rs3r.tex",
+  "summary": "L'exercice demande de calculer une intégrale réelle en utilisant le théorème des résidus. La fonction intégrée est une fraction rationnelle en z² + a² multipliée par la détermination principale du logarithme complexe.",
+  "concepts": [
+    "théorème des résidus",
+    "détermination principale du logarithme complexe",
+    "intégration complexe",
+    "contour d'intégration",
+    "singularités isolées",
+    "fonction méromorphe"
+  ],
+  "methods": [
+    "intégration sur un contour évitant un axe",
+    "calcul des résidus",
+    "formule de Cauchy pour les résidus",
+    "passage à la limite sur les rayons du contour"
+  ],
+  "objects": [
+    "fonction rationnelle en z² + a²",
+    "détermination principale du logarithme complexe",
+    "contour Γε,R",
+    "intégrale réelle à calculer"
+  ],
+  "content_hash": "86d3fffb6101797adb8802a1fc8e20a1a88409fad094743733edf5a60aca4df8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:14:59.868Z"
+}

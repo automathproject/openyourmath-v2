@@ -1,0 +1,26 @@
+{
+  "uuid": "WIpu",
+  "source_path": "exo7/4-L2/WIpu.tex",
+  "summary": "Calculer le déterminant d'une matrice 3x3 et déterminer pour quelles valeurs d'un paramètre réel la matrice est inversible. Calculer l'inverse de cette matrice lorsque c'est possible.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "inversibilité d'une matrice",
+    "comatrice",
+    "transposée d'une matrice",
+    "calcul matriciel"
+  ],
+  "methods": [
+    "développement par rapport à une colonne",
+    "calcul de l'inverse d'une matrice",
+    "calcul de la comatrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "paramètre réel",
+    "comatrice",
+    "matrice inverse"
+  ],
+  "content_hash": "d638b91ea413b6794f2c1594ff496ab677892615b5e7f45500d4d5ae4f8a917e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:50:39.342Z"
+}

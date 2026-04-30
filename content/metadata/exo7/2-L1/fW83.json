@@ -1,0 +1,25 @@
+{
+  "uuid": "fW83",
+  "source_path": "exo7/2-L1/fW83.tex",
+  "summary": "Étude de la convergence d'une série numérique définie par une somme de termes dépendant d'un paramètre α > 0. Le terme général uₙ est une somme de fractions impliquant des puissances de k et (n-k).",
+  "concepts": [
+    "série numérique",
+    "convergence de série",
+    "fonction zêta de Riemann",
+    "comparaison de séries",
+    "critère de convergence"
+  ],
+  "methods": [
+    "comparaison terme à terme",
+    "utilisation de la fonction zêta",
+    "analyse des cas α > 1 et α < 1"
+  ],
+  "objects": [
+    "terme général uₙ",
+    "somme de fractions",
+    "paramètre α"
+  ],
+  "content_hash": "dc1219c2e70c281f9919fa95f5e07c857831ab49d25edd4c53576d7709bf7dc8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:27:22.630Z"
+}

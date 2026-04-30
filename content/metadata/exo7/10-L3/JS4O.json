@@ -1,0 +1,30 @@
+{
+  "uuid": "JS4O",
+  "source_path": "exo7/10-L3/JS4O.tex",
+  "summary": "L'exercice demande de montrer qu'un anneau quotient est un corps en utilisant l'irréductibilité d'un polynôme, puis de calculer l'inverse d'un élément et d'un polynôme dans cet anneau quotient.",
+  "concepts": [
+    "idéal principal",
+    "anneau quotient",
+    "corps",
+    "polynôme irréductible",
+    "anneau principal",
+    "idéal maximal",
+    "algèbre d'Euclide",
+    "division euclidienne"
+  ],
+  "methods": [
+    "réduction modulo un nombre premier",
+    "critère d'irréductibilité",
+    "algorithme d'Euclide",
+    "calcul d'inverse dans un anneau quotient"
+  ],
+  "objects": [
+    "polynôme",
+    "idéal",
+    "anneau quotient",
+    "élément inversible"
+  ],
+  "content_hash": "f4d9c97061b3412749115fbd037610cd2c707a389671f3e59a71f7594df7d0ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:22:10.440Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "fwcn",
+  "source_path": "exo7/10-L3/fwcn.tex",
+  "summary": "L'exercice étudie les propriétés des idéaux principaux dans un anneau factoriel. Il demande de prouver une équivalence entre l'intersection de deux idéaux principaux et leur produit, ainsi que de montrer que l'idéal engendré par deux éléments est principal si et seulement si leur pgcd est un générateur.",
+  "concepts": [
+    "anneau factoriel",
+    "idéal principal",
+    "pgcd dans un anneau",
+    "ppcm dans un anneau",
+    "divisibilité dans les anneaux",
+    "idéal engendré par un élément"
+  ],
+  "methods": [
+    "manipulation d'idéaux",
+    "utilisation de la définition de pgcd",
+    "utilisation de la définition de ppcm",
+    "raisonnement par inclusion d'idéaux"
+  ],
+  "objects": [
+    "idéal principal",
+    "pgcd de deux éléments",
+    "ppcm de deux éléments",
+    "idéal engendré par deux éléments"
+  ],
+  "content_hash": "fc045c3f7d80c1a201e037a315a4dc60cfa21cde48ef730dfc63a92f637f9f63",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:25:07.585Z"
+}

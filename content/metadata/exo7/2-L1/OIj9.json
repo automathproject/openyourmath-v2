@@ -1,0 +1,25 @@
+{
+  "uuid": "OIj9",
+  "source_path": "exo7/2-L1/OIj9.tex",
+  "summary": "On considère une série absolument convergente dont la somme des termes de tout rang multiple d'un entier k est nulle. On demande de montrer que tous les termes de la série sont nuls.",
+  "concepts": [
+    "série absolument convergente",
+    "convergence de suite",
+    "principe des tiroirs",
+    "divisibilité dans les entiers",
+    "somme de termes d'une série"
+  ],
+  "methods": [
+    "séparation des termes selon leur parité",
+    "élimination successive des multiples",
+    "convergence vers la limite"
+  ],
+  "objects": [
+    "série numérique",
+    "termes de la série",
+    "suite des nombres premiers"
+  ],
+  "content_hash": "0ccd769c19d060532b3e1b753ebddf5b70339249c3dd0e049afba4764e11f62a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:14:44.953Z"
+}

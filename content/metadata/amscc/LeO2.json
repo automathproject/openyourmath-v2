@@ -1,0 +1,28 @@
+{
+  "uuid": "LeO2",
+  "source_path": "amscc/LeO2.tex",
+  "summary": "L'exercice demande de déterminer la loi de probabilité d'une variable aléatoire associée à un dé truqué où la probabilité d'obtenir une face est proportionnelle à son numéro, puis de calculer l'espérance de cette variable et celle de sa réciproque.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi de probabilité",
+    "espérance mathématique",
+    "proportionnalité",
+    "somme de probabilités",
+    "transformation de variable aléatoire"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "utilisation de la somme des probabilités",
+    "calcul d'espérance par définition",
+    "transformation de variable"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "dé truqué",
+    "espérance",
+    "variable transformée"
+  ],
+  "content_hash": "1766b7107eab06bda46ccddc8870f8a8d3918051596b0fda810d5471447310b7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:25:10.010Z"
+}

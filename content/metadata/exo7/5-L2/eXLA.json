@@ -1,0 +1,28 @@
+{
+  "uuid": "eXLA",
+  "source_path": "exo7/5-L2/eXLA.tex",
+  "summary": "L'exercice demande de déterminer un équivalent simple de la fonction f(x) = Σx^(n²) pour x ∈ ]-1,1[ lorsque x tend vers 1. La fonction est définie comme une série de fonctions et l'objectif est d'analyser son comportement asymptotique.",
+  "concepts": [
+    "série de fonctions",
+    "convergence absolue",
+    "équivalent asymptotique",
+    "intégrale impropre",
+    "changement de variable",
+    "fonction décroissante"
+  ],
+  "methods": [
+    "encadrement par intégrales",
+    "changement de variable",
+    "calcul d'intégrale gaussienne",
+    "analyse de limite"
+  ],
+  "objects": [
+    "série numérique",
+    "fonction définie par une série",
+    "intégrale de fonction exponentielle",
+    "limite de fonction"
+  ],
+  "content_hash": "620bb878c5a21e2002993f3e893322371371c7af958dafb8857b01b104f39186",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:00:12.250Z"
+}

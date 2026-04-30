@@ -1,0 +1,22 @@
+{
+  "uuid": "R7OO",
+  "source_path": "exo7/7-L2/R7OO.tex",
+  "summary": "Calculer la probabilité de gagner au moins un lot dans une loterie où 4 billets parmi 300 sont gagnants, en achetant 10 billets.",
+  "concepts": [
+    "probabilité d'un événement",
+    "événement complémentaire",
+    "combinaisons",
+    "probabilité discrète"
+  ],
+  "methods": [
+    "calcul de probabilité par complémentaire",
+    "utilisation des coefficients binomiaux"
+  ],
+  "objects": [
+    "combinaison de billets",
+    "événement gagnant"
+  ],
+  "content_hash": "e1b77274192f551215410360987f7c2b2da2764bc1132dee62ac8a6fbf362213",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:26:58.648Z"
+}

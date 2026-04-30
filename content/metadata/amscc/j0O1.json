@@ -1,0 +1,29 @@
+{
+  "uuid": "j0O1",
+  "source_path": "amscc/j0O1.tex",
+  "summary": "L'exercice demande de démontrer que la fonction donnée est une densité de probabilité, d'établir sa fonction de répartition, de simuler une variable aléatoire suivant la loi de Pareto, et d'étudier l'existence de son espérance. Il mobilise la loi de Pareto et ses propriétés.",
+  "concepts": [
+    "densité de probabilité",
+    "fonction de répartition",
+    "loi de Pareto",
+    "espérance d'une variable aléatoire",
+    "loi uniforme",
+    "loi forte des grands nombres",
+    "intégrale impropre"
+  ],
+  "methods": [
+    "intégration",
+    "changement de variable",
+    "simulation de variable aléatoire",
+    "approximation par la loi forte des grands nombres"
+  ],
+  "objects": [
+    "fonction de densité",
+    "variable aléatoire de Pareto",
+    "variable aléatoire uniforme",
+    "espérance mathématique"
+  ],
+  "content_hash": "7ecffae9cab576ab5400f9a6b85fb9899b713ffd4a77b850b44758de381c2393",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:02:36.635Z"
+}

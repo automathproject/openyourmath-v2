@@ -1,0 +1,26 @@
+{
+  "uuid": "1V30",
+  "source_path": "exo7/10-L3/1V30.tex",
+  "summary": "L'exercice demande de prouver qu'un entier n ≥ 2 est premier si et seulement si tout groupe d'ordre n possède exactement deux sous-groupes. Il s'agit d'une caractérisation des nombres premiers via la structure des groupes finis.",
+  "concepts": [
+    "nombre premier",
+    "groupe fini",
+    "ordre d'un groupe",
+    "sous-groupe",
+    "théorème de Cauchy",
+    "classification des groupes finis"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "utilisation des propriétés des groupes cycliques",
+    "analyse des sous-groupes propres"
+  ],
+  "objects": [
+    "groupe d'ordre n",
+    "sous-groupe",
+    "nombre premier"
+  ],
+  "content_hash": "00a8faa5592cb0dab6b5ae7d759539037825ff0f3943df1edd76264c80f1ffa1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:06:38.033Z"
+}

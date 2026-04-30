@@ -1,0 +1,28 @@
+{
+  "uuid": "AHy2",
+  "source_path": "exo7/2-L1/AHy2.tex",
+  "summary": "Étude de la suite $(u_n)$ définie comme l'unique racine positive de l'équation $x^n + x - 1 = 0$. On cherche à déterminer les propriétés de convergence et de croissance de cette suite.",
+  "concepts": [
+    "suite numérique",
+    "racine d'équation",
+    "fonction continue",
+    "fonction strictement croissante",
+    "bijectivité",
+    "limite de suite",
+    "convergence"
+  ],
+  "methods": [
+    "étude de la dérivée",
+    "théorème des valeurs intermédiaires",
+    "analyse de la croissance",
+    "étude de la limite"
+  ],
+  "objects": [
+    "suite $(u_n)$",
+    "fonction $f_n(x) = x^n + x - 1$",
+    "racine positive"
+  ],
+  "content_hash": "49daa8259d7c31b28bba675eedaa85b312fe2b7a3427fed50d7d2b4c140641ee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:06:37.775Z"
+}

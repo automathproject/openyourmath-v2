@@ -1,0 +1,30 @@
+{
+  "uuid": "1hSN",
+  "source_path": "exo7/4-L2/1hSN.tex",
+  "summary": "Soient deux endomorphismes u et v d'un espace vectoriel complexe de dimension finie non nulle, vérifiant uv - vu = αu + βv. Montrer que u et v partagent un vecteur propre commun.",
+  "concepts": [
+    "espace vectoriel de dimension finie",
+    "endomorphisme",
+    "valeur propre",
+    "vecteur propre",
+    "sous-espace stable",
+    "commutativité d'endomorphismes",
+    "nilpotence",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "restriction d'endomorphisme",
+    "recherche de vecteur propre dans un noyau",
+    "analyse de polynôme caractéristique",
+    "utilisation de la nilpotence"
+  ],
+  "objects": [
+    "endomorphisme",
+    "vecteur propre commun",
+    "sous-espace propre",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "802c5c92b34f60ae6a7a9cf463e49bea76225ba8c688ab53d28ace6c00a0682a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:09:53.774Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "3j5V",
+  "source_path": "exo7/2-L1/3j5V.tex",
+  "summary": "L'exercice demande de prouver une égalité entre la somme de la partie entière de a, a+1, ..., a+b-1 et la partie entière de a, pour a entier et b naturel non nul, puis pour a réel et b naturel non nul.",
+  "concepts": [
+    "partie entière",
+    "division euclidienne",
+    "somme de termes consécutifs",
+    "propriétés des entiers naturels",
+    "valeur absolue"
+  ],
+  "methods": [
+    "décomposition en cas selon le reste",
+    "somme de termes arithmétiques",
+    "utilisation de la définition de la partie entière"
+  ],
+  "objects": [
+    "partie entière d'un nombre réel",
+    "somme de parties entières",
+    "entier naturel",
+    "réel"
+  ],
+  "content_hash": "a8de95f711d23347decaec08ce8b4e6f84e5a5340a01d42d4ce877d336f4a9b8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:46:27.280Z"
+}

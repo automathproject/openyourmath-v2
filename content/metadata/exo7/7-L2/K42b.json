@@ -1,0 +1,30 @@
+{
+  "uuid": "K42b",
+  "source_path": "exo7/7-L2/K42b.tex",
+  "summary": "L'exercice demande de calculer la moyenne et l'écart-type d'un échantillon de taux de cholestérol, d'estimer ces paramètres pour l'ensemble de la population, de déterminer un intervalle de confiance pour la moyenne, et de calculer la taille minimale d'échantillon pour réduire l'amplitude de l'intervalle de confiance.",
+  "concepts": [
+    "estimation ponctuelle",
+    "intervalle de confiance",
+    "moyenne échantillon",
+    "écart-type échantillon",
+    "loi normale",
+    "correction de Bessel"
+  ],
+  "methods": [
+    "calcul de moyenne empirique",
+    "calcul d'écart-type empirique",
+    "standardisation",
+    "approximation gaussienne",
+    "formule de l'intervalle de confiance"
+  ],
+  "objects": [
+    "échantillon",
+    "moyenne",
+    "écart-type",
+    "intervalle de confiance",
+    "taille d'échantillon"
+  ],
+  "content_hash": "76d52b78e8da1b0e8967eb150b5541879123efbcca3ac7f84e21a9e744654f91",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:40:08.692Z"
+}

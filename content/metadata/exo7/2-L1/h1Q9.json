@@ -1,0 +1,25 @@
+{
+  "uuid": "h1Q9",
+  "source_path": "exo7/2-L1/h1Q9.tex",
+  "summary": "L'exercice demande d'étudier la convergence des suites $(v_{2n})$ et $(v_{2n+1})$ définies par une somme de termes $u_k$, et de montrer la convergence de $(v_n)$. Il faut ensuite calculer la limite $\\ell = \\lim_{n\\to\\infty} v_n$ avec une précision de $10^{-5}$.",
+  "concepts": [
+    "convergence de suite",
+    "somme de termes",
+    "limite infinie",
+    "suite définie par récurrence",
+    "théorème de convergence des séries alternées"
+  ],
+  "methods": [
+    "étude de la convergence par encadrement",
+    "calcul de limite",
+    "approximation numérique"
+  ],
+  "objects": [
+    "suite numérique",
+    "somme de termes",
+    "limite infinie"
+  ],
+  "content_hash": "0cbf61bed0af9e771dbaadf86c00b1103e7936956817dc6787a2d86c50005159",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:29:02.028Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "HBeI",
+  "source_path": "exo7/4-L2/HBeI.tex",
+  "summary": "L'exercice étudie les propriétés d'un endomorphisme u d'un espace vectoriel E selon l'exposant p du terme constant dans son polynôme minimal P. Il demande de caractériser u lorsque p=0, puis de démontrer des décompositions de E pour p=1 et p quelconque.",
+  "concepts": [
+    "polynôme minimal",
+    "endomorphisme",
+    "isomorphisme",
+    "décomposition en somme directe",
+    "théorème du rang",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "polynômes premiers entre eux"
+  ],
+  "methods": [
+    "factorisation de polynômes",
+    "utilisation du polynôme minimal",
+    "décomposition en somme directe",
+    "application du théorème du rang"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "endomorphisme",
+    "polynôme minimal",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme"
+  ],
+  "content_hash": "7f8ee6f6029eb62f6b699c3f59bfd4d054c9d8baaf20fea59f3dad01a1433e2d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:31:47.177Z"
+}

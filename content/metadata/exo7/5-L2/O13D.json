@@ -1,0 +1,28 @@
+{
+  "uuid": "O13D",
+  "source_path": "exo7/5-L2/O13D.tex",
+  "summary": "Dans un espace vectoriel normé réel, on considère l'ensemble C des combinaisons convexes de n vecteurs donnés. L'exercice demande de montrer que pour tout vecteur x, il existe un élément c de C qui minimise la distance à x, puis d'en déduire que C est fermé.",
+  "concepts": [
+    "espace vectoriel normé",
+    "combinaison convexe",
+    "distance dans un espace normé",
+    "fermeture d'un ensemble",
+    "récurrence",
+    "continuité d'une application"
+  ],
+  "methods": [
+    "récurrence",
+    "minimisation de distance",
+    "étude de la continuité",
+    "utilisation de la 1-lipschitzianité"
+  ],
+  "objects": [
+    "espace vectoriel normé",
+    "ensemble convexe",
+    "distance",
+    "vecteur"
+  ],
+  "content_hash": "8328634d877f9eb820cafaa40449e305517647398bac1f49425376e7c9965365",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:48:33.793Z"
+}

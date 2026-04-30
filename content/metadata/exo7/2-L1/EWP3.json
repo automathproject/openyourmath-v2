@@ -1,0 +1,24 @@
+{
+  "uuid": "EWP3",
+  "source_path": "exo7/2-L1/EWP3.tex",
+  "summary": "L'exercice demande de démontrer la convergence d'une série numérique et d'en calculer une valeur approchée précise. La série est de la forme (n*sin(0.4/n))^n.",
+  "concepts": [
+    "série numérique",
+    "convergence de série",
+    "critère de convergence",
+    "approximation numérique"
+  ],
+  "methods": [
+    "comparaison de séries",
+    "calcul numérique itératif",
+    "estimation d'erreur"
+  ],
+  "objects": [
+    "série infinie",
+    "terme général de série",
+    "somme partielle"
+  ],
+  "content_hash": "03e55d02c97b772768aa0ed87ddb95f12b30650759800a9d18b92847f2e3e98a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:06:55.398Z"
+}

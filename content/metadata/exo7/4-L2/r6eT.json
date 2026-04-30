@@ -1,0 +1,29 @@
+{
+  "uuid": "r6eT",
+  "source_path": "exo7/4-L2/r6eT.tex",
+  "summary": "Diagonaliser plusieurs matrices carrées de taille 4x4 en trouvant leurs matrices de passage et leurs matrices diagonales associées.",
+  "concepts": [
+    "diagonalisation",
+    "valeurs propres",
+    "vecteurs propres",
+    "polynôme caractéristique",
+    "algèbre linéaire",
+    "matrices carrées"
+  ],
+  "methods": [
+    "calcul des valeurs propres",
+    "calcul des vecteurs propres",
+    "détermination de la matrice de passage",
+    "construction de la matrice diagonale"
+  ],
+  "objects": [
+    "matrices 4x4",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrices de passage",
+    "matrices diagonales"
+  ],
+  "content_hash": "7f53f2210bda2cfe60d85402ee538928f83ce429a5f3574fd47d98daa4153b66",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:17:55.163Z"
+}

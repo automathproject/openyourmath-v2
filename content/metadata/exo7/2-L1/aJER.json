@@ -1,0 +1,27 @@
+{
+  "uuid": "aJER",
+  "source_path": "exo7/2-L1/aJER.tex",
+  "summary": "On étudie une suite récurrente linéaire d'ordre 2 définie par u_{n+1} = u_n + u_{n-1} avec u_0 et u_1 strictement positifs. On demande de montrer l'existence de la limite de u_{n+1}/u_n et de la déterminer, puis d'étudier les suites adjacentes a_{2n} et a_{2n+1}.",
+  "concepts": [
+    "suite récurrente linéaire",
+    "équation caractéristique",
+    "solution générale d'une suite récurrente",
+    "limite de suite",
+    "suites adjacentes",
+    "nombre d'or"
+  ],
+  "methods": [
+    "résolution d'équation caractéristique",
+    "détermination des coefficients par conditions initiales",
+    "étude de la limite d'un rapport de suites",
+    "démonstration de l'adjacence de suites"
+  ],
+  "objects": [
+    "suite récurrente d'ordre 2",
+    "rapport de suites",
+    "suites adjacentes"
+  ],
+  "content_hash": "258b0699998b41b305a8a77814555d5681b88785f49eb304c0ebfc6efeda2c04",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:23:52.204Z"
+}

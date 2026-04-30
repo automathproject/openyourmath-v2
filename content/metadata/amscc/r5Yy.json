@@ -1,0 +1,28 @@
+{
+  "uuid": "r5Yy",
+  "source_path": "amscc/r5Yy.tex",
+  "summary": "L'exercice demande de construire un estimateur convergent et centré pour le paramètre λ d'une loi de Poisson, puis de tester l'hypothèse nulle λ=1 contre l'alternative λ>1 à partir d'un échantillon de 100 clients.",
+  "concepts": [
+    "loi de Poisson",
+    "estimateur convergent",
+    "estimateur centré",
+    "test d'hypothèses",
+    "risque de première espèce",
+    "hypothèse nulle",
+    "hypothèse alternative"
+  ],
+  "methods": [
+    "estimation par la moyenne empirique",
+    "test du rapport de vraisemblance",
+    "comparaison graphique de distributions"
+  ],
+  "objects": [
+    "loi de Poisson",
+    "paramètre λ",
+    "échantillon de clients",
+    "histogramme des effectifs"
+  ],
+  "content_hash": "747fcacccf50dec0f797f4023210deaef2658735c77a0aca00f03f242683119d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:54:32.966Z"
+}

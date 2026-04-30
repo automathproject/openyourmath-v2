@@ -1,0 +1,25 @@
+{
+  "uuid": "w8E4",
+  "source_path": "exo7/1-L1/w8E4.tex",
+  "summary": "On considère un polynôme à coefficients entiers prenant la valeur 7 pour au moins quatre entiers distincts. On demande de prouver que ce polynôme ne peut jamais prendre la valeur 14 pour un entier.",
+  "concepts": [
+    "polynôme à coefficients entiers",
+    "racine d'un polynôme",
+    "valeur d'un polynôme",
+    "divisibilité dans ℤ[X]",
+    "théorème des racines"
+  ],
+  "methods": [
+    "utilisation de la relation de divisibilité",
+    "argument par l'absurde",
+    "évaluation de polynômes"
+  ],
+  "objects": [
+    "polynôme P ∈ ℤ[X]",
+    "valeurs entières de P",
+    "racines de P-7"
+  ],
+  "content_hash": "27da3d57f1157cd76233dc1e74aae9c0253e212144d1d9ba5d9496a3be919c71",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:30:01.552Z"
+}

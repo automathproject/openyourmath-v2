@@ -1,0 +1,26 @@
+{
+  "uuid": "AsfT",
+  "source_path": "exo7/4-L2/AsfT.tex",
+  "summary": "Calculer le polynôme minimal d'une matrice 3x3 donnée et en déduire son inverse ainsi que ses puissances A³ et A⁵.",
+  "concepts": [
+    "polynôme minimal",
+    "matrice carrée",
+    "endomorphisme",
+    "réduction d'endomorphisme",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "division euclidienne de polynômes",
+    "calcul de puissances de matrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme minimal",
+    "inverse de matrice",
+    "puissances de matrice"
+  ],
+  "content_hash": "152a037c1ebdca5a8a2fe7a0cbae952f2c888f5ed18f5f93be2f6631d8ca7cbf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:20:37.906Z"
+}

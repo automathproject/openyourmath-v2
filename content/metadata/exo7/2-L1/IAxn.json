@@ -1,0 +1,31 @@
+{
+  "uuid": "IAxn",
+  "source_path": "exo7/2-L1/IAxn.tex",
+  "summary": "L'exercice demande de déterminer la forme explicite d'une suite récurrente linéaire d'ordre 2 ou supérieur, en fonction de son indice et de ses premiers termes. Plusieurs cas sont traités, incluant des équations homogènes, non homogènes avec second membre constant ou polynomial, et des suites à coefficients complexes.",
+  "concepts": [
+    "suite récurrente linéaire",
+    "équation caractéristique",
+    "solution générale",
+    "solution particulière",
+    "racine simple",
+    "racine double",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "résolution d'équation caractéristique",
+    "méthode de variation des constantes",
+    "détermination de solutions particulières",
+    "calcul de coefficients par identification",
+    "traitement des racines complexes"
+  ],
+  "objects": [
+    "suite récurrente",
+    "polynôme caractéristique",
+    "solution générale",
+    "solution particulière",
+    "second membre polynomial"
+  ],
+  "content_hash": "7da850df97819db7546f331a638bd82e098af7c882a616b73ce18fa91623319d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:11:38.556Z"
+}

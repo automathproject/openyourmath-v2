@@ -1,0 +1,28 @@
+{
+  "uuid": "dfIx",
+  "source_path": "exo7/15-L3/dfIx.tex",
+  "summary": "L'exercice demande de démontrer l'équicontinuité d'une suite d'opérateurs intégraux bornés et d'en déduire l'existence d'une sous-suite convergente dans l'espace des fonctions continues sur un intervalle.",
+  "concepts": [
+    "continuité uniforme",
+    "théorème d'Ascoli",
+    "compact",
+    "espace de Banach",
+    "équicontinuité",
+    "opérateur intégral"
+  ],
+  "methods": [
+    "utilisation de la continuité uniforme",
+    "application du théorème d'Ascoli",
+    "estimation d'intégrales",
+    "extraction de sous-suite convergente"
+  ],
+  "objects": [
+    "fonction continue",
+    "suite bornée",
+    "opérateur K",
+    "intervalle compact"
+  ],
+  "content_hash": "552ea6a2983355a119dec168aa2ef18da49357ae046284e4adb6aa1c71d0849f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:48:45.371Z"
+}

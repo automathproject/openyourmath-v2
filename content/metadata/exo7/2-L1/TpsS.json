@@ -1,0 +1,31 @@
+{
+  "uuid": "TpsS",
+  "source_path": "exo7/2-L1/TpsS.tex",
+  "summary": "L'exercice étudie la convergence et la somme d'une série construite en alternant des blocs de termes positifs et négatifs, à partir de la série connue convergeant vers ln(2). On analyse la somme partielle de cette nouvelle série.",
+  "concepts": [
+    "série numérique",
+    "convergence de série",
+    "somme de série",
+    "fonction logarithme",
+    "constante d'Euler-Mascheroni",
+    "somme partielle",
+    "suite extraite"
+  ],
+  "methods": [
+    "décomposition en blocs",
+    "comparaison de termes",
+    "estimation d'erreur",
+    "limite de suite",
+    "calcul de somme partielle"
+  ],
+  "objects": [
+    "série alternée",
+    "suite de sommes partielles",
+    "blocs de termes positifs/négatifs",
+    "constante ln(2)",
+    "constante γ"
+  ],
+  "content_hash": "b92309e0ba78da1e88131b040c7b02e2ccefbb29690cb22e1999d3f47a871e43",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:19:35.496Z"
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "D0OG",
+  "source_path": "exo7/4-L2/D0OG.tex",
+  "summary": "L'exercice demande de déterminer le noyau et l'image d'une application linéaire définie par une matrice 3x3, puis d'étudier sa diagonalisation en calculant son polynôme caractéristique, ses valeurs propres, et une base de vecteurs propres.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeurs propres",
+    "diagonalisation",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "vecteurs propres",
+    "matrice semblable"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "recherche de valeurs propres",
+    "vérification de diagonalisabilité",
+    "construction de base de vecteurs propres"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "application linéaire",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres",
+    "noyau",
+    "image"
+  ],
+  "content_hash": "711fddbbe87772203381a531f539a500fff5684c7b0ac5fa200d92a763ec6f32",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:24:25.820Z"
+}

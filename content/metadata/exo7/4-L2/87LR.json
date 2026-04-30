@@ -1,0 +1,24 @@
+{
+  "uuid": "87LR",
+  "source_path": "exo7/4-L2/87LR.tex",
+  "summary": "L'exercice demande de déterminer le polynôme caractéristique de trois matrices carrées de tailles différentes. Les matrices sont symétriques et ont des coefficients spécifiques.",
+  "concepts": [
+    "polynôme caractéristique",
+    "matrice carrée",
+    "déterminant",
+    "valeur propre",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "développement de Laplace"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "matrice 3x3",
+    "matrice 4x4"
+  ],
+  "content_hash": "ac2c94caa9342a9bce171472cfb488a8b6c3e37f0b7629c1b09fa5908ccf394d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:16:48.972Z"
+}

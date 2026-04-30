@@ -1,0 +1,30 @@
+{
+  "uuid": "oPq6",
+  "source_path": "exo7/4-L2/oPq6.tex",
+  "summary": "L'exercice demande de démontrer que l'existence d'une matrice A telle que A² = -Iₙ implique que la dimension n de l'espace vectoriel E est paire. Il explore ensuite les propriétés de l'endomorphisme f associé à cette matrice.",
+  "concepts": [
+    "matrice carrée",
+    "endomorphisme",
+    "déterminant",
+    "sous-espace vectoriel",
+    "base d'un espace vectoriel",
+    "stabilité par endomorphisme",
+    "indépendance linéaire"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "manipulation de vecteurs",
+    "démonstration par l'absurde",
+    "construction de base"
+  ],
+  "objects": [
+    "matrice A",
+    "endomorphisme f",
+    "vecteurs x₁ et x₂",
+    "sous-espace vectoriel F",
+    "base B"
+  ],
+  "content_hash": "eae802e2d95f590eb2af2faca07f58ba0a8e22e96a5c1176a0cbe07238c25e1b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:14:39.634Z"
+}

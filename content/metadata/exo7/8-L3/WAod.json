@@ -1,0 +1,30 @@
+{
+  "uuid": "WAod",
+  "source_path": "exo7/8-L3/WAod.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de sous-groupes distingués dans un p-groupe d'ordre p^r, en utilisant une suite de sous-groupes distingués et en exploitant le centre non trivial du p-groupe.",
+  "concepts": [
+    "p-groupe",
+    "sous-groupe distingué",
+    "centre d'un groupe",
+    "groupe quotient",
+    "image réciproque",
+    "récurrence",
+    "ordre d'un élément"
+  ],
+  "methods": [
+    "récurrence sur l'ordre du groupe",
+    "utilisation du centre non trivial",
+    "construction de sous-groupes distingués",
+    "passage au quotient"
+  ],
+  "objects": [
+    "p-groupe",
+    "sous-groupe distingué",
+    "centre d'un groupe",
+    "groupe quotient",
+    "suite de sous-groupes"
+  ],
+  "content_hash": "a61ed5ce155222379ff9bbd8b064a1d0bba93a37df0f08374cf24b3f0ed5ee08",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:57:29.852Z"
+}

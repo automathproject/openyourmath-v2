@@ -1,0 +1,27 @@
+{
+  "uuid": "6NIK",
+  "source_path": "amscc/6NIK.tex",
+  "summary": "L'exercice demande de déterminer la loi d'une variable aléatoire représentant le nombre d'abonnés connectés à un instant donné, puis d'approcher cette loi par une loi normale pour estimer le nombre de connexions simultanées que le point d'accès doit gérer pour que la probabilité de saturation soit inférieure à 2.5%.",
+  "concepts": [
+    "loi binomiale",
+    "loi normale",
+    "approximation de la loi binomiale par la loi normale",
+    "espérance d'une variable aléatoire",
+    "écart-type d'une variable aléatoire",
+    "standardisation"
+  ],
+  "methods": [
+    "approximation gaussienne",
+    "standardisation",
+    "calcul de quantiles"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "variable aléatoire normale",
+    "espérance",
+    "écart-type"
+  ],
+  "content_hash": "5d45a82bd182a27820f1f4d5f9e71171f947569150d85f3937978f01d1a90e21",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:16:44.674Z"
+}

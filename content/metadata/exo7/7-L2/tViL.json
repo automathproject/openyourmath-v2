@@ -1,0 +1,30 @@
+{
+  "uuid": "tViL",
+  "source_path": "exo7/7-L2/tViL.tex",
+  "summary": "L'exercice demande de calculer des probabilités conditionnelles liées à l'état de machines industrielles (en panne ou hors d'usage) et d'étudier une variable aléatoire binomiale modélisant le nombre de machines en panne parmi un échantillon.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "loi binomiale",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "écart-type d'une variable aléatoire",
+    "formule de Bayes"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "application de la loi binomiale",
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "calcul de l'écart-type"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "probabilité conditionnelle",
+    "espérance",
+    "variance",
+    "écart-type"
+  ],
+  "content_hash": "f6c81ab7627af5b7e6ab2dccd8b502a4fe1b49a000623962da975c2544f48afa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:41:40.350Z"
+}

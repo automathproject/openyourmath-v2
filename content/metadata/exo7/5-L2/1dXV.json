@@ -1,0 +1,31 @@
+{
+  "uuid": "1dXV",
+  "source_path": "exo7/5-L2/1dXV.tex",
+  "summary": "L'exercice demande d'exprimer la n-ième dérivée de la fonction tangente en fonction de ses dérivées précédentes, puis d'étudier la convergence de la série de Taylor de la tangente en 0. Il s'agit ensuite de montrer que la somme de cette série vérifie l'équation différentielle de la tangente et d'en déduire son identité avec la fonction tangente. Enfin, il faut prouver que le rayon de convergence est exactement π/2.",
+  "concepts": [
+    "séries entières",
+    "rayon de convergence",
+    "équation différentielle",
+    "dérivées successives",
+    "convergence absolue",
+    "convergence uniforme",
+    "fonction analytique"
+  ],
+  "methods": [
+    "développement en série de Taylor",
+    "calcul de dérivées successives",
+    "majoration des termes",
+    "résolution d'équation différentielle",
+    "étude de la convergence"
+  ],
+  "objects": [
+    "fonction tangente",
+    "n-ième dérivée de la tangente",
+    "série de Taylor de la tangente",
+    "somme de la série de Taylor",
+    "rayon de convergence"
+  ],
+  "content_hash": "26931f3e5e65200d98f57496bd04a06297a3aa28dd7dc3a5d924e1e4cc86a3a8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:32:28.860Z"
+}

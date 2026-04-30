@@ -1,0 +1,31 @@
+{
+  "uuid": "bLgf",
+  "source_path": "exo7/1-L1/bLgf.tex",
+  "summary": "L'exercice demande de montrer que l'application σ : x ↦ x^p est un morphisme de corps sur un corps K de caractéristique p, puis d'établir une condition nécessaire et suffisante pour que σ soit surjectif.",
+  "concepts": [
+    "morphisme de corps",
+    "caractéristique d'un corps",
+    "polynôme irréductible",
+    "dérivée d'un polynôme",
+    "algèbre sur un corps",
+    "corps commutatif",
+    "factorisation de polynômes"
+  ],
+  "methods": [
+    "vérification des propriétés de morphisme",
+    "analyse de la dérivée",
+    "factorisation de polynômes",
+    "algorithme d'Euclide",
+    "unicité de la décomposition en facteurs irréductibles"
+  ],
+  "objects": [
+    "corps K",
+    "polynôme P",
+    "application σ",
+    "dérivée P'",
+    "facteur irréductible Q"
+  ],
+  "content_hash": "6e4420c2c31ae1c9cfb4a19412df1540d12256997353094c1b6c543ccc56f6bf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:08:21.565Z"
+}

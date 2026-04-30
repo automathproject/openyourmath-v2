@@ -1,0 +1,29 @@
+{
+  "uuid": "eAeu",
+  "source_path": "exo7/5-L2/eAeu.tex",
+  "summary": "Calculer deux intégrales impliquant la fonction ln(x)/(1+x²) : une sur l'intervalle [0,1] et une sur [0,+∞[. L'énoncé demande d'évaluer ces intégrales en exploitant leurs propriétés.",
+  "concepts": [
+    "intégrabilité",
+    "intégration terme à terme",
+    "intégration par parties",
+    "changement de variable",
+    "convergence de série numérique",
+    "fonction continue"
+  ],
+  "methods": [
+    "développement en série",
+    "majoration",
+    "intégration par parties",
+    "changement de variable",
+    "étude de l'intégrabilité"
+  ],
+  "objects": [
+    "intégrale impropre",
+    "fonction ln(x)/(1+x²)",
+    "série numérique",
+    "fonction continue"
+  ],
+  "content_hash": "7b13e51a26882e118f59062e1e2fa59e15c249f8ed48feaa4da256a73e5da1a0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:59:39.629Z"
+}

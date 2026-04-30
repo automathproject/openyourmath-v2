@@ -1,0 +1,26 @@
+{
+  "uuid": "tgl8",
+  "source_path": "exo7/10-L3/tgl8.tex",
+  "summary": "Trouver le PGCD de deux polynômes dans ℤ₂[x] et exprimer ce PGCD comme combinaison linéaire des polynômes initiaux.",
+  "concepts": [
+    "algèbre sur un corps fini",
+    "polynôme irréductible",
+    "algorithme d'Euclide étendu",
+    "division euclidienne dans ℤ₂[x]",
+    "PGCD dans un anneau"
+  ],
+  "methods": [
+    "division euclidienne",
+    "algorithme d'Euclide",
+    "combinaison linéaire",
+    "représentation du PGCD"
+  ],
+  "objects": [
+    "polynôme à coefficients dans ℤ₂",
+    "PGCD de polynômes",
+    "combinaison linéaire de polynômes"
+  ],
+  "content_hash": "abf926d2e32beba77920668863e0465c3b0eb30c79d149793de25df8fd94efba",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:27:38.113Z"
+}

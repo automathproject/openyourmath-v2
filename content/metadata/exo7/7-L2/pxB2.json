@@ -1,0 +1,24 @@
+{
+  "uuid": "pxB2",
+  "source_path": "exo7/7-L2/pxB2.tex",
+  "summary": "Calculer la proportion de billes rejetées en raison d'un diamètre hors des tolérances acceptables, où l'erreur de diamètre suit une loi normale centrée avec un écart-type donné.",
+  "concepts": [
+    "loi normale",
+    "standardisation",
+    "fonction de répartition",
+    "probabilité conditionnelle",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de probabilité par la fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "intervalle de tolérance",
+    "proportion de rejet"
+  ],
+  "content_hash": "c33b6f7523f4a893d62f814803e288df5f1a2a585ae2acd4987962c1a4217a2c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:39:46.610Z"
+}

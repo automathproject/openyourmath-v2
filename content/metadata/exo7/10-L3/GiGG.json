@@ -1,0 +1,25 @@
+{
+  "uuid": "GiGG",
+  "source_path": "exo7/10-L3/GiGG.tex",
+  "summary": "Montrer qu'un polynôme f(x^n) divisible par (x-1) est aussi divisible par (x^n-1) dans un anneau A.",
+  "concepts": [
+    "divisibilité dans un anneau",
+    "polynôme",
+    "racine d'un polynôme",
+    "factorisation",
+    "anneau commutatif"
+  ],
+  "methods": [
+    "factorisation",
+    "division euclidienne",
+    "utilisation de la racine évidente"
+  ],
+  "objects": [
+    "polynôme à coefficients dans un anneau",
+    "racine",
+    "diviseur"
+  ],
+  "content_hash": "ec5f729cfaf2ac58846b6600ae4404972610c34882002f012d75edf475757de8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:21:20.169Z"
+}

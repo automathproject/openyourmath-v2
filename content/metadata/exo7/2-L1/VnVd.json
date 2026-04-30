@@ -1,0 +1,24 @@
+{
+  "uuid": "VnVd",
+  "source_path": "exo7/2-L1/VnVd.tex",
+  "summary": "L'exercice demande de démontrer deux propriétés sur la borne supérieure d'une partie majorée de ℝ. La première partie montre que la suppression d'un élément strictement inférieur à la borne supérieure ne change pas cette borne. La seconde partie établit que si la borne supérieure diminue après suppression d'un élément, alors cet élément était la borne supérieure.",
+  "concepts": [
+    "borne supérieure",
+    "partie majorée de ℝ",
+    "supremum",
+    "ensemble infini",
+    "propriété de l'ordre total"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la borne supérieure"
+  ],
+  "objects": [
+    "partie majorée de ℝ",
+    "élément de la partie",
+    "borne supérieure"
+  ],
+  "content_hash": "aa53337ab78cd76d8b5af482e3b0e06f9720112ccff5b36f98b11e62bfbbf201",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:55:56.260Z"
+}

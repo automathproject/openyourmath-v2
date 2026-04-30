@@ -1,0 +1,27 @@
+{
+  "uuid": "B746",
+  "source_path": "exo7/4-L2/B746.tex",
+  "summary": "L'exercice demande d'écrire la matrice d'une application linéaire dans l'espace vectoriel des polynômes de degré 3 à coefficients réels, puis de déterminer si cette application est diagonalisable. L'application est définie par une transformation spécifique des polynômes.",
+  "concepts": [
+    "espace vectoriel",
+    "application linéaire",
+    "matrice d'une application linéaire",
+    "vecteur propre",
+    "diagonalisation",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "calcul de la matrice d'une application linéaire",
+    "recherche de vecteurs propres",
+    "calcul du polynôme caractéristique"
+  ],
+  "objects": [
+    "espace vectoriel ℝ₃[X]",
+    "application linéaire u",
+    "matrice A",
+    "vecteurs propres"
+  ],
+  "content_hash": "61f1fdbd7c22bddfa4fa5991161e8c94c1492df92a66b742f510ee3a771a116d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:21:04.550Z"
+}

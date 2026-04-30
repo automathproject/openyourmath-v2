@@ -1,0 +1,25 @@
+{
+  "uuid": "miiX",
+  "source_path": "exo7/5-L2/miiX.tex",
+  "summary": "On considère un espace vectoriel réel de dimension finie et un sous-espace vectoriel propre. On demande de montrer que le complémentaire de ce sous-espace est connexe si et seulement si la codimension est au moins 2, puis d'étendre la question aux espaces vectoriels complexes.",
+  "concepts": [
+    "espace vectoriel normé",
+    "sous-espace vectoriel propre",
+    "connexité",
+    "codimension",
+    "espace vectoriel complexe"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "analyse de la codimension",
+    "comparaison des cas réels et complexes"
+  ],
+  "objects": [
+    "espace vectoriel de dimension finie",
+    "sous-espace vectoriel propre",
+    "complémentaire d'un sous-espace"
+  ],
+  "content_hash": "2e1556432aa9019b182040d9bedead378de22907d6c37a2a8700ffee8c59da03",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:07:40.375Z"
+}

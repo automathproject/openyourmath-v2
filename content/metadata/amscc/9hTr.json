@@ -1,0 +1,29 @@
+{
+  "uuid": "9hTr",
+  "source_path": "amscc/9hTr.tex",
+  "summary": "L'exercice demande de calculer le temps d'attente moyen pour deux personnes dans des files d'attente indépendantes, de déterminer les densités de probabilité des variables transformées X² et -Y, et de calculer la probabilité que la différence d'attente entre les deux personnes soit inférieure à 1 minute.",
+  "concepts": [
+    "loi exponentielle",
+    "espérance d'une variable aléatoire",
+    "densité de probabilité",
+    "transformation de variable aléatoire",
+    "intégration sur un domaine",
+    "indépendance de variables aléatoires"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "identification de densité",
+    "changement de variable",
+    "intégration multiple",
+    "décomposition de domaine d'intégration"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "densité de probabilité",
+    "espérance mathématique",
+    "intégrale double"
+  ],
+  "content_hash": "fb44c737c60e4fdefc1d255b97cbe2c1d51526466264c6d160c2c3089865169b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:40:18.359Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "xHqM",
+  "source_path": "exo7/2-L1/xHqM.tex",
+  "summary": "L'exercice demande de démontrer que pour tout entier naturel n non nul, l'expression (1 + 1/n)^n est strictement inférieure à 3, en utilisant uniquement les opérations d'addition et de multiplication, sans recourir au logarithme népérien.",
+  "concepts": [
+    "développement binomial",
+    "majoration",
+    "inégalité arithmético-géométrique",
+    "récurrence",
+    "somme de termes"
+  ],
+  "methods": [
+    "développement en série",
+    "majoration terme à terme",
+    "récurrence forte",
+    "calcul de coefficient binomial"
+  ],
+  "objects": [
+    "coefficient binomial",
+    "suite numérique",
+    "somme finie",
+    "terme général"
+  ],
+  "content_hash": "d3002d6c54148a3bb7b26bf8a82ad51cfe2260c7f52f12a0af4cb6a6bca407f7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:42:02.424Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "5sS2",
+  "source_path": "amscc/5sS2.tex",
+  "summary": "L'exercice demande de déterminer le degré d'un polynôme associé au déterminant de Vandermonde et d'identifier ses racines évidentes pour en déduire son expression complète.",
+  "concepts": [
+    "déterminant de Vandermonde",
+    "polynôme",
+    "racine d'un polynôme",
+    "développement par colonne",
+    "factorisation",
+    "déterminant"
+  ],
+  "methods": [
+    "développement de déterminant",
+    "identification de racines évidentes",
+    "factorisation de polynôme",
+    "calcul de déterminant 3x3"
+  ],
+  "objects": [
+    "déterminant 4x4",
+    "polynôme P(x)",
+    "racines a, b, c",
+    "coefficient k"
+  ],
+  "content_hash": "072d5a81f0ef6d51a0186f2101cf7c4b1d990af817bed9e107c87e89d1bcd195",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:34:39.837Z"
+}

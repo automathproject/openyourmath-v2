@@ -1,0 +1,25 @@
+{
+  "uuid": "eIUU",
+  "source_path": "exo7/2-L1/eIUU.tex",
+  "summary": "On considère une fonction continue f de R^d dans R^d et une suite définie par récurrence x_{n+1} = f(x_n). On suppose que la suite des différences ||x_n - x_{n+1}|| converge vers 0. On demande de montrer que si a est un point d'adhérence de la suite (x_n), alors f(a) = a.",
+  "concepts": [
+    "fonction continue",
+    "suite définie par récurrence",
+    "point d'adhérence",
+    "limite de suite",
+    "convergence uniforme"
+  ],
+  "methods": [
+    "utilisation de la définition de continuité",
+    "analyse des points d'adhérence",
+    "passage à la limite"
+  ],
+  "objects": [
+    "fonction continue",
+    "suite récurrente",
+    "point d'adhérence"
+  ],
+  "content_hash": "8bc8f720d7d710ee5338126604cfd82b167e938f20f8ed37573f8fbd1b51e121",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:27:05.868Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "g6Rl",
+  "source_path": "amscc/g6Rl.tex",
+  "summary": "L'exercice demande de déterminer la loi de probabilité de l'épaisseur totale d'un paquet de 36 lames de carton, puis d'approcher cette loi et de calculer une probabilité spécifique en utilisant le théorème central limite.",
+  "concepts": [
+    "loi normale",
+    "théorème central limite",
+    "espérance",
+    "écart-type",
+    "somme de variables aléatoires indépendantes et identiquement distribuées",
+    "standardisation"
+  ],
+  "methods": [
+    "calcul de l'espérance et de l'écart-type d'une somme de variables aléatoires",
+    "approximation par la loi normale",
+    "standardisation",
+    "utilisation de tables de la loi normale"
+  ],
+  "objects": [
+    "variable aléatoire d'épaisseur d'une lame",
+    "somme de variables aléatoires i.i.d.",
+    "variable aléatoire d'épaisseur totale d'un paquet",
+    "variable aléatoire d'épaisseur moyenne"
+  ],
+  "content_hash": "9aedbd895306aa7ccaf43bfa8f958f910f1d4014e98971754427901087ffb5f8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:42:54.305Z"
+}

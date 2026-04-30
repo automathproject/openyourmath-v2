@@ -1,0 +1,27 @@
+{
+  "uuid": "igQp",
+  "source_path": "exo7/1-L1/igQp.tex",
+  "summary": "Calculer le produit de cosinus d'angles en progression géométrique et déterminer la limite d'une somme de logarithmes de ces cosinus. L'exercice utilise une identité trigonométrique clé.",
+  "concepts": [
+    "identité trigonométrique",
+    "limite de suite",
+    "fonction sinus",
+    "fonction cosinus",
+    "produit infini",
+    "limite de fonction"
+  ],
+  "methods": [
+    "téléscopage",
+    "identité sin(2x)",
+    "développement en produit",
+    "limite standard sin(x)/x"
+  ],
+  "objects": [
+    "produit de cosinus",
+    "somme de logarithmes",
+    "angle dans ]0,π["
+  ],
+  "content_hash": "c09acbb2381e2ef555dee61df42a4c3e67dd264b520f76ae76e492b1ffe5fa01",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:56:48.114Z"
+}

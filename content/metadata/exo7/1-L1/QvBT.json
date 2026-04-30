@@ -1,0 +1,27 @@
+{
+  "uuid": "QvBT",
+  "source_path": "exo7/1-L1/QvBT.tex",
+  "summary": "Trouver les racines d'un polynôme de degré 4 en utilisant une condition sur le produit de deux racines. On introduit un polynôme auxiliaire Q(X) = X^4P(5/X) pour appliquer l'algorithme d'Euclide.",
+  "concepts": [
+    "racine d'un polynôme",
+    "polynôme irréductible sur ℝ",
+    "algorithme d'Euclide",
+    "division euclidienne de polynômes",
+    "factorisation de polynômes",
+    "racines complexes"
+  ],
+  "methods": [
+    "calcul du PGCD",
+    "factorisation par le PGCD",
+    "résolution d'équations du second degré"
+  ],
+  "objects": [
+    "polynôme de degré 4",
+    "polynôme auxiliaire",
+    "racines complexes",
+    "racines réelles"
+  ],
+  "content_hash": "03fbf019fcc243846bbfd0df570aa1f999ef612dd0d5fd7c5f787b29deb05e57",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:56:57.432Z"
+}

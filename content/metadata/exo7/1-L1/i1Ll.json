@@ -1,0 +1,28 @@
+{
+  "uuid": "i1Ll",
+  "source_path": "exo7/1-L1/i1Ll.tex",
+  "summary": "On étudie une fraction rationnelle F=P/Q irréductible et une fraction rationnelle G telle que G(F(X))=X. On montre que P divise (a₀-b₀X) et Q divise (aₙ-bₙX) pour G écrite sous forme générale, puis on en déduit la forme de F et l'expression de G.",
+  "concepts": [
+    "fraction rationnelle",
+    "polynôme irréductible",
+    "lemme de Gauss",
+    "bijection réciproque",
+    "degré d'un polynôme",
+    "polynôme premier entre eux"
+  ],
+  "methods": [
+    "manipulation algébrique",
+    "division de polynômes",
+    "utilisation du lemme de Gauss",
+    "inversion de fonction"
+  ],
+  "objects": [
+    "fraction rationnelle F",
+    "fraction rationnelle G",
+    "polynômes P et Q",
+    "polynômes A et B"
+  ],
+  "content_hash": "e6f22fa23028de026010d489cd36e5cf31651ca14a5a67244db2121d55a2f3f8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:16:00.969Z"
+}

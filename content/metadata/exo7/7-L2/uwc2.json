@@ -1,0 +1,25 @@
+{
+  "uuid": "uwc2",
+  "source_path": "exo7/7-L2/uwc2.tex",
+  "summary": "Calculer la probabilité qu'un oiseau soit touché par au moins un des trois tireurs indépendants avec leurs probabilités de succès respectives.",
+  "concepts": [
+    "probabilité d'événement complémentaire",
+    "indépendance d'événements",
+    "probabilité conditionnelle",
+    "probabilité discrète",
+    "événements indépendants",
+    "probabilité de l'union d'événements"
+  ],
+  "methods": [
+    "calcul de la probabilité de l'événement complémentaire",
+    "multiplication des probabilités d'événements indépendants"
+  ],
+  "objects": [
+    "événements indépendants",
+    "probabilités de succès",
+    "événement complémentaire"
+  ],
+  "content_hash": "531618d5b2d8cf6b4a8ee0e8f6dfac8e0d84024a3d4243a632b7943b10a7bccd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:42:27.191Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "2bko",
+  "source_path": "exo7/5-L2/2bko.tex",
+  "summary": "L'exercice demande de déterminer le rayon de convergence d'une série entière dont le terme général est x^n sin(1/√n), puis d'étudier la convergence de la fonction associée en x = ±R, et enfin de calculer sa limite en R^-.",
+  "concepts": [
+    "série entière",
+    "rayon de convergence",
+    "convergence absolue",
+    "convergence simple",
+    "série alternée",
+    "limite supérieure",
+    "fonction croissante"
+  ],
+  "methods": [
+    "critère de Cauchy",
+    "critère de Leibniz",
+    "étude de la limite supérieure"
+  ],
+  "objects": [
+    "série entière",
+    "fonction définie par une série entière",
+    "rayon de convergence"
+  ],
+  "content_hash": "eba04520ea2a029ae4176a81800d6beea5589434d31b47cffaf67d1d5f99a626",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:32:50.766Z"
+}

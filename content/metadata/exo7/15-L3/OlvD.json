@@ -1,0 +1,28 @@
+{
+  "uuid": "OlvD",
+  "source_path": "exo7/15-L3/OlvD.tex",
+  "summary": "L'exercice demande de résoudre une équation intégrale de Fredholm en utilisant le théorème du point fixe de Banach. Il s'agit de montrer l'existence et l'unicité d'une solution continue et la dépendance continue de cette solution par rapport à une fonction donnée.",
+  "concepts": [
+    "théorème du point fixe de Banach",
+    "espace complet",
+    "application contractante",
+    "convergence uniforme",
+    "équation intégrale de Fredholm",
+    "dépendance continue"
+  ],
+  "methods": [
+    "estimation de la norme infinie",
+    "itération de l'opérateur",
+    "majoration de l'intégrale",
+    "utilisation de l'hypothèse de contraction"
+  ],
+  "objects": [
+    "fonction continue",
+    "opérateur intégral",
+    "suite d'itérées",
+    "norme infinie"
+  ],
+  "content_hash": "873e93a2056bf5a06e29f9c2018925dd199ec1cf310a2bea03b2c105571b2a66",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:30:33.887Z"
+}

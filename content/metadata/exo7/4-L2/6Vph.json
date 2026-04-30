@@ -1,0 +1,28 @@
+{
+  "uuid": "6Vph",
+  "source_path": "exo7/4-L2/6Vph.tex",
+  "summary": "Trouver toutes les matrices réelles 3x3 dont le carré est égal à une matrice donnée A. L'exercice porte sur la résolution d'une équation matricielle.",
+  "concepts": [
+    "réduction d'endomorphisme",
+    "polynôme annulateur",
+    "racine carrée d'une matrice",
+    "matrice diagonale",
+    "matrice triangulaire",
+    "valeurs propres"
+  ],
+  "methods": [
+    "diagonalisation",
+    "résolution d'équation matricielle",
+    "calcul de polynôme caractéristique",
+    "détermination des valeurs propres"
+  ],
+  "objects": [
+    "matrice carrée",
+    "racine carrée de matrice",
+    "polynôme annulateur",
+    "valeurs propres"
+  ],
+  "content_hash": "b3804744094c56589c9fcf42c2b9af4d28d1ed9e0ccb39fe0c66ebe1c253fca4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:15:26.426Z"
+}

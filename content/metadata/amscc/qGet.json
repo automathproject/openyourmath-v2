@@ -1,0 +1,28 @@
+{
+  "uuid": "qGet",
+  "source_path": "amscc/qGet.tex",
+  "summary": "L'exercice demande d'étudier la convergence de la méthode de point fixe pour résoudre l'équation ℓ = ℓ - (1/4)cos(ℓ) sur l'intervalle [0, π]. Il s'agit de montrer la convergence pour tout point de départ x₀ ∈ [0, π], d'estimer la vitesse de convergence et de déterminer le nombre d'itérations nécessaires pour atteindre une précision donnée.",
+  "concepts": [
+    "méthode de point fixe",
+    "convergence d'une suite",
+    "théorème des accroissements finis",
+    "contrôle de l'incrément",
+    "vitesse de convergence",
+    "critère d'arrêt"
+  ],
+  "methods": [
+    "analyse de la dérivée",
+    "récurrence",
+    "estimation d'erreur",
+    "calcul d'itérations"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction φ",
+    "point fixe ℓ",
+    "intervalle [0, π]"
+  ],
+  "content_hash": "4cc8cb09cc03607263250ed1075aafb9c82c3b058dbc1385fbbff72a6a4927aa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:26:00.088Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "XwpB",
+  "source_path": "exo7/8-L3/XwpB.tex",
+  "summary": "L'exercice demande de déterminer si l'entier 374 divise l'ordre du groupe Z/374Z, et si ce groupe possède des éléments d'ordre 374 et 187. Il s'agit aussi de trouver tous les diviseurs de 374 et de vérifier l'existence de sous-groupes d'ordre correspondant dans Z/374Z.",
+  "concepts": [
+    "groupe cyclique",
+    "ordre d'un élément",
+    "sous-groupe distingué",
+    "théorème de Lagrange",
+    "diviseur d'ordre",
+    "structure des groupes abéliens finis"
+  ],
+  "methods": [
+    "factorisation d'entiers",
+    "détermination des diviseurs",
+    "vérification de l'existence d'éléments d'ordre donné",
+    "application du théorème de Lagrange"
+  ],
+  "objects": [
+    "groupe Z/374Z",
+    "élément d'ordre",
+    "sous-groupe d'ordre",
+    "diviseurs de 374"
+  ],
+  "content_hash": "592414908b37e8d09448362906e303a47c625cf84aa529e101764d17aeeedf20",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:00:07.618Z"
+}

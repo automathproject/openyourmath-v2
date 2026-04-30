@@ -1,0 +1,26 @@
+{
+  "uuid": "5eFT",
+  "source_path": "exo7/4-L2/5eFT.tex",
+  "summary": "Déterminer les valeurs des paramètres complexes (a, b, c) pour lesquelles une matrice 4x4 donnée est diagonalisable, sans effectuer explicitement la réduction de la matrice.",
+  "concepts": [
+    "diagonalisation",
+    "valeurs propres",
+    "vecteurs propres",
+    "polynôme caractéristique",
+    "critère de diagonalisation"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "analyse des multiplicités algébrique et géométrique",
+    "critère de diagonalisation"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "d384c45f17485c2780e5c0948be85d5a67e15493c8927ae74f374d8fc2194182",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:14:48.398Z"
+}

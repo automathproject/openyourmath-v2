@@ -1,0 +1,27 @@
+{
+  "uuid": "Stxj",
+  "source_path": "amscc/Stxj.tex",
+  "summary": "Développer en série entière la fonction ln(x²-5x+6) sur son intervalle de définition. L'énoncé demande de trouver une représentation en série entière d'une fonction logarithmique.",
+  "concepts": [
+    "séries entières",
+    "rayon de convergence",
+    "développement en série entière",
+    "fonction logarithmique",
+    "convergence absolue",
+    "règle de d'Alembert"
+  ],
+  "methods": [
+    "décomposition en facteurs",
+    "linéarisation de logarithmes",
+    "développement de ln(1-x)",
+    "somme de séries"
+  ],
+  "objects": [
+    "fonction de variable réelle",
+    "série entière",
+    "intervalle de convergence"
+  ],
+  "content_hash": "a26284c1c8672ae9c091b191eac2ab3fd08cf8fd5947e0a6acb2dc362f929378",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:44:13.175Z"
+}

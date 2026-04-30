@@ -1,0 +1,26 @@
+{
+  "uuid": "ptxH",
+  "source_path": "amscc/ptxH.tex",
+  "summary": "Calculer l'espérance et la variance d'une proportion de dyslexiques parmi n jeunes examinés, puis déterminer le nombre minimal d'examinés pour que cette proportion soit dans un intervalle donné avec une probabilité supérieure à 0.9.",
+  "concepts": [
+    "loi binomiale",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "inégalité de Bienaymé-Tchebychev",
+    "proportion",
+    "variable aléatoire"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "application de l'inégalité de Bienaymé-Tchebychev"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "proportion de dyslexiques",
+    "intervalle de confiance"
+  ],
+  "content_hash": "0076cb13a69c95050aa18070ef2f6e40c746bad3129afe0ea2073ba66f785190",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:53:05.365Z"
+}

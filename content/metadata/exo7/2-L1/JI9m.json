@@ -1,0 +1,25 @@
+{
+  "uuid": "JI9m",
+  "source_path": "exo7/2-L1/JI9m.tex",
+  "summary": "L'exercice demande de déterminer si on peut empiler 100 pièces de monnaie de sorte que la dernière soit en porte à faux, c'est-à-dire que sa projection ne rencontre pas celle de la première pièce.",
+  "concepts": [
+    "série numérique",
+    "somme infinie",
+    "convergence",
+    "déport maximal",
+    "projection géométrique"
+  ],
+  "methods": [
+    "calcul de somme géométrique",
+    "estimation de convergence",
+    "analyse de condition de porte-à-faux"
+  ],
+  "objects": [
+    "suite de pièces empilées",
+    "déport entre pièces",
+    "projection sur plan horizontal"
+  ],
+  "content_hash": "76712895082f970aac1bd2e376cedc97aad185b07d3e49e06cbb10c7cd7ef550",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:10:57.342Z"
+}

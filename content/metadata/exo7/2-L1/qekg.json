@@ -1,0 +1,24 @@
+{
+  "uuid": "qekg",
+  "source_path": "exo7/2-L1/qekg.tex",
+  "summary": "Montrer l'égalité de deux sommes pour tout entier naturel non nul n : une somme alternée de termes en 1/(k+1) et une somme de termes en 1/k.",
+  "concepts": [
+    "récurrence",
+    "somme alternée",
+    "somme de Riemann",
+    "identité de Catalan"
+  ],
+  "methods": [
+    "récurrence forte",
+    "téléscopage",
+    "manipulation algébrique de sommes"
+  ],
+  "objects": [
+    "somme finie",
+    "terme général de somme",
+    "entier naturel"
+  ],
+  "content_hash": "fc49748644c56e55047ef7aeabdcdaeec74d9013b545a3cc6ad403b6b3d9074e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:02:45.163Z"
+}

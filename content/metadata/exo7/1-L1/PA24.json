@@ -1,0 +1,27 @@
+{
+  "uuid": "PA24",
+  "source_path": "exo7/1-L1/PA24.tex",
+  "summary": "L'exercice demande de prouver qu'un triangle est équilatéral direct si et seulement si ses affixes vérifient une relation algébrique donnée. Il généralise ensuite ce résultat à une configuration de points sur un cercle.",
+  "concepts": [
+    "rotation dans le plan complexe",
+    "affixe d'un point",
+    "triangle équilatéral direct",
+    "repère orthonormé direct",
+    "relation algébrique sur les affixes",
+    "milieu d'un segment"
+  ],
+  "methods": [
+    "utilisation des propriétés des racines cubiques de l'unité",
+    "calcul algébrique sur les affixes",
+    "géométrie dans le plan complexe"
+  ],
+  "objects": [
+    "triangle ABC",
+    "affixes a, b, c",
+    "points sur un cercle",
+    "milieux M, N, P"
+  ],
+  "content_hash": "7fcf78013e766107934aa715c140b06e95b46c4066945c7fe76b3e94052bd052",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:44:49.715Z"
+}

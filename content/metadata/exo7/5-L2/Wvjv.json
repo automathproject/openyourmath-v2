@@ -1,0 +1,26 @@
+{
+  "uuid": "Wvjv",
+  "source_path": "exo7/5-L2/Wvjv.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction définie par une série de fonctions exponentielles est de classe C^∞ sur ℝ mais ne possède pas de développement en série entière autour de 0.",
+  "concepts": [
+    "séries entières",
+    "développement en série entière",
+    "classe C^∞",
+    "rayon de convergence",
+    "dérivabilité",
+    "convergence uniforme"
+  ],
+  "methods": [
+    "étude du rayon de convergence",
+    "calcul des dérivées successives",
+    "estimation des termes de la série"
+  ],
+  "objects": [
+    "fonction définie par une série",
+    "dérivées successives",
+    "rayon de convergence"
+  ],
+  "content_hash": "ffc1c366606b15c6564c65dc8e8cded64553a19f47d446d6b674ace7025e32a9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:45:46.778Z"
+}

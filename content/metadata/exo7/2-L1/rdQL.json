@@ -1,0 +1,25 @@
+{
+  "uuid": "rdQL",
+  "source_path": "exo7/2-L1/rdQL.tex",
+  "summary": "Montrer une égalité impliquant la partie entière et une somme de parties entières décalées. L'énoncé demande de prouver une relation entre la partie entière d'un multiple et une somme de parties entières de termes uniformément espacés.",
+  "concepts": [
+    "partie entière",
+    "division euclidienne",
+    "entiers naturels",
+    "propriétés arithmétiques",
+    "somme de parties entières"
+  ],
+  "methods": [
+    "décomposition en cas d'entiers pairs et impairs",
+    "utilisation de la définition de la partie entière",
+    "analyse des entiers compris dans un intervalle"
+  ],
+  "objects": [
+    "partie entière d'un réel",
+    "somme de parties entières",
+    "entiers naturels"
+  ],
+  "content_hash": "525e2386c67b28ea40870b40ef605ff742f8527ebd39a2bc98651aec464aa68c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:03:45.710Z"
+}

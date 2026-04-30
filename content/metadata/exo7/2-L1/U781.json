@@ -1,0 +1,25 @@
+{
+  "uuid": "U781",
+  "source_path": "exo7/2-L1/U781.tex",
+  "summary": "Calculer la partie entière de la somme des inverses des puissances 2/3 des entiers de 1 à 10^9.",
+  "concepts": [
+    "série numérique",
+    "convergence d'une série",
+    "intégrale généralisée",
+    "comparaison série-intégrale",
+    "fonction puissance"
+  ],
+  "methods": [
+    "comparaison terme à terme",
+    "approximation par intégrale",
+    "estimation d'erreur"
+  ],
+  "objects": [
+    "somme de termes de la forme k^(-2/3)",
+    "partie entière",
+    "série de Riemann"
+  ],
+  "content_hash": "8336d3dd18170a7185072f1e1153427f2d021379967955ceaf75662807f52f06",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:19:55.757Z"
+}

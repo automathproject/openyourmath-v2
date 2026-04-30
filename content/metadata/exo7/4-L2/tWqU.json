@@ -1,0 +1,26 @@
+{
+  "uuid": "tWqU",
+  "source_path": "exo7/4-L2/tWqU.tex",
+  "summary": "Soit E un espace vectoriel de dimension finie sur un corps K et u un endomorphisme diagonalisable de E. On demande de montrer que si F est un sous-espace vectoriel stable par u, alors la restriction de u à F est diagonalisable.",
+  "concepts": [
+    "endomorphisme diagonalisable",
+    "sous-espace vectoriel stable",
+    "restriction d'endomorphisme",
+    "diagonalisation",
+    "algèbre linéaire",
+    "espace vectoriel de dimension finie"
+  ],
+  "methods": [
+    "utilisation de la diagonalisation",
+    "propriétés des sous-espaces stables",
+    "restriction d'endomorphisme"
+  ],
+  "objects": [
+    "endomorphisme u",
+    "sous-espace vectoriel F",
+    "espace vectoriel E"
+  ],
+  "content_hash": "b24a64190311b2145708137a6c92142e8129f04895a59553855faea4d0cca5fd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:20:58.093Z"
+}

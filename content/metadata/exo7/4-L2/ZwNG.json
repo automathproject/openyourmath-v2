@@ -1,0 +1,26 @@
+{
+  "uuid": "ZwNG",
+  "source_path": "exo7/4-L2/ZwNG.tex",
+  "summary": "Trouver toutes les matrices carrées d'ordre 3 à coefficients complexes dont le cube est semblable au quatrième puissance. L'étude se fait selon le nombre de valeurs propres distinctes de la matrice.",
+  "concepts": [
+    "semblance de matrices",
+    "valeurs propres",
+    "racines primitives",
+    "polynôme annulateur",
+    "réduction d'endomorphisme",
+    "matrice diagonale"
+  ],
+  "methods": [
+    "diagonalisation",
+    "étude des valeurs propres",
+    "calcul des racines primitives"
+  ],
+  "objects": [
+    "matrice carrée 3x3",
+    "valeurs propres distinctes",
+    "racines primitives de l'unité"
+  ],
+  "content_hash": "eacaefbdb8f9b42044d175d6f0c7968fc75118239ca8a923e68469c743b61d68",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:55:56.967Z"
+}

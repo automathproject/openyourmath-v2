@@ -1,0 +1,25 @@
+{
+  "uuid": "V4sO",
+  "source_path": "exo7/2-L1/V4sO.tex",
+  "summary": "Soient trois réels positifs a, b et c. Montrer qu'au moins l'un des trois réels a(1-b), b(1-c), c(1-a) est inférieur ou égal à 1/4.",
+  "concepts": [
+    "inégalité",
+    "majoration",
+    "produit de réels",
+    "fonction quadratique",
+    "maximum de fonction"
+  ],
+  "methods": [
+    "analyse par cas",
+    "majoration",
+    "utilisation de l'inégalité quadratique"
+  ],
+  "objects": [
+    "réels positifs",
+    "produit de trois réels",
+    "fonction x(1-x)"
+  ],
+  "content_hash": "7e8a682c0a3433d43e6183ef04a47c6b6600a57ae63ee4704273b1672e777d8f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:55:31.094Z"
+}

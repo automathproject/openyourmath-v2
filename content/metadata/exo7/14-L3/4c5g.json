@@ -1,0 +1,29 @@
+{
+  "uuid": "4c5g",
+  "source_path": "exo7/14-L3/4c5g.tex",
+  "summary": "L'exercice demande de prouver qu'une suite de fonctions convergeant en mesure admet une sous-suite convergeant presque partout. On travaille dans un espace mesuré.",
+  "concepts": [
+    "convergence en mesure",
+    "convergence presque partout",
+    "sous-suite",
+    "mesure de Lebesgue",
+    "σ-additivité",
+    "continuité de la mesure",
+    "ensemble de mesure nulle"
+  ],
+  "methods": [
+    "construction explicite de sous-suite",
+    "utilisation de la σ-additivité",
+    "passage à la limite dans les inégalités",
+    "construction par récurrence des indices"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "espace mesuré",
+    "ensemble mesurable",
+    "sous-suite de fonctions"
+  ],
+  "content_hash": "b08a10138d52a10e9ce5379e88f471086734c927972c927a073fef329801012e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:02:31.146Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "MXao",
+  "source_path": "amscc/MXao.tex",
+  "summary": "L'exercice demande de déterminer la constante de normalisation d'une fonction de densité de probabilité définie par morceaux, puis d'en déduire la fonction de répartition, l'espérance, la variance, une probabilité conditionnelle, et la loi d'une variable aléatoire transformée.",
+  "concepts": [
+    "fonction de densité de probabilité",
+    "fonction de répartition",
+    "espérance",
+    "variance",
+    "probabilité conditionnelle",
+    "variable aléatoire transformée"
+  ],
+  "methods": [
+    "intégration",
+    "calcul de probabilité conditionnelle",
+    "détermination de la densité par dérivation"
+  ],
+  "objects": [
+    "fonction définie par morceaux",
+    "variable aléatoire absolument continue",
+    "fonction de répartition",
+    "espérance",
+    "variance"
+  ],
+  "content_hash": "4eed9a40c879de647cf88bc9bbd3720948b6ea72f727234e78fca75aa08e21bf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:47:37.077Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "XwA0",
+  "source_path": "amscc/XwA0.tex",
+  "summary": "L'exercice demande d'évaluer si la commande ALEA.ENTRE.BORNES(1;8) simule correctement un tirage uniforme en utilisant un test du χ² et une simulation de 500 tirages. Il s'agit de vérifier l'hypothèse d'uniformité à l'aide d'un test statistique.",
+  "concepts": [
+    "test du χ²",
+    "hypothèse d'uniformité",
+    "p-valeur",
+    "simulation Monte Carlo",
+    "loi uniforme discrète",
+    "test d'ajustement"
+  ],
+  "methods": [
+    "test d'homogénéité",
+    "calcul de la p-valeur",
+    "construction d'histogramme",
+    "simulation de variables aléatoires"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "tableau de fréquences observées",
+    "fréquences théoriques",
+    "statistique de test"
+  ],
+  "content_hash": "5295dad4dc6f4381f28ae9d1cb810bd92fb9edf90c2507b2d2ce21b981a7eb5e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:44:10.001Z"
+}

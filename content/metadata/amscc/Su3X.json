@@ -1,0 +1,30 @@
+{
+  "uuid": "Su3X",
+  "source_path": "amscc/Su3X.tex",
+  "summary": "L'exercice demande d'approximer une intégrale I par des méthodes de simulation de Monte Carlo. Il utilise des variables aléatoires normales et uniformes pour estimer l'intégrale via la loi forte des grands nombres.",
+  "concepts": [
+    "loi forte des grands nombres",
+    "théorème de transfert",
+    "densité de probabilité",
+    "fonction de répartition",
+    "théorème de simulation par inversion de la fonction de répartition",
+    "variable aléatoire indépendante et identiquement distribuée",
+    "espérance mathématique"
+  ],
+  "methods": [
+    "simulation de Monte Carlo",
+    "identification de loi",
+    "calcul d'espérance",
+    "intégration par parties"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "variable aléatoire uniforme",
+    "suite de variables aléatoires iid",
+    "densité de probabilité",
+    "fonction de répartition"
+  ],
+  "content_hash": "1d58053e0400f18c21686fea275ece5bcfdc4a057b9c7cb4bb1ab6647ddf4ce6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:50:36.389Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "tCEz",
+  "source_path": "amscc/tCEz.tex",
+  "summary": "L'exercice demande de trouver le développement en série entière de la fonction ln(1-u) et d'en déduire celui de ln(1+x+x²) en utilisant une relation algébrique entre les polynômes.",
+  "concepts": [
+    "séries entières",
+    "rayon de convergence",
+    "développement en série entière",
+    "fonction logarithme",
+    "factorisation de polynômes"
+  ],
+  "methods": [
+    "développement en série entière standard",
+    "factorisation",
+    "manipulation algébrique de séries"
+  ],
+  "objects": [
+    "fonction ln(1-u)",
+    "fonction ln(1+x+x²)",
+    "polynôme (1-x³)",
+    "polynôme (1+x+x²)"
+  ],
+  "content_hash": "249ac3407d5aabc8a9448634e80f299558c8ec5b9f8f25cb3b91ee4e53152bf3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:54:36.473Z"
+}

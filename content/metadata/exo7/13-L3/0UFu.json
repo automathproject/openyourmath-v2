@@ -1,0 +1,25 @@
+{
+  "uuid": "0UFu",
+  "source_path": "exo7/13-L3/0UFu.tex",
+  "summary": "Résolution d'un système d'équations différentielles linéaires à coefficients constants du second ordre. On cherche les solutions des équations couplées x' = -y et y'' = -x - y + y'.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "système d'équations différentielles",
+    "coefficient constant",
+    "ordre d'une équation différentielle",
+    "solution générale"
+  ],
+  "methods": [
+    "réduction d'ordre",
+    "méthode de variation de la constante",
+    "résolution par substitution"
+  ],
+  "objects": [
+    "système d'équations différentielles",
+    "fonctions x(t) et y(t)",
+    "dérivées premières et secondes"
+  ],
+  "content_hash": "0f46827615c39cde5d39f8ade14e12ac3a46116b8a1dc9dd70ba19ac2de15019",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:10:55.660Z"
+}

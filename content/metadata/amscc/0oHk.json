@@ -1,0 +1,27 @@
+{
+  "uuid": "0oHk",
+  "source_path": "amscc/0oHk.tex",
+  "summary": "Calculer des probabilités pour différentes lois de probabilité (normale, exponentielle, Poisson) en utilisant les formules d'un tableur.",
+  "concepts": [
+    "loi normale",
+    "loi exponentielle",
+    "loi de Poisson",
+    "fonction de répartition",
+    "quantile",
+    "standardisation"
+  ],
+  "methods": [
+    "calcul de probabilité avec tableur",
+    "standardisation",
+    "calcul de quantile",
+    "utilisation de la symétrie de la loi normale"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "variable aléatoire exponentielle",
+    "variable aléatoire de Poisson"
+  ],
+  "content_hash": "5078427f6f036d8e0bdbff09e89c8dd07cd688793db4374b1f4c3fdd1c4f6d55",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:29:23.555Z"
+}

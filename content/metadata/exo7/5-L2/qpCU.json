@@ -1,0 +1,26 @@
+{
+  "uuid": "qpCU",
+  "source_path": "exo7/5-L2/qpCU.tex",
+  "summary": "Montrer qu'une fonction continue sur un intervalle est identiquement nulle à partir de l'annulation de son produit de convolution avec une fonction cosinus.",
+  "concepts": [
+    "transformée de Fourier",
+    "produit de convolution",
+    "fonction périodique",
+    "coefficient de Fourier",
+    "fonction paire",
+    "unicité de la représentation de Fourier"
+  ],
+  "methods": [
+    "extension périodique",
+    "calcul des coefficients de Fourier",
+    "utilisation de la formule de Parseval"
+  ],
+  "objects": [
+    "fonction continue",
+    "fonction cosinus",
+    "coefficient de Fourier"
+  ],
+  "content_hash": "88ee36002fb25d8ca51a6ac669038f421a0203828d927a48d917ed253c1dba96",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:29:50.571Z"
+}

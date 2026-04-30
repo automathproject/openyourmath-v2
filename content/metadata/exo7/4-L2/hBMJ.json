@@ -1,0 +1,31 @@
+{
+  "uuid": "hBMJ",
+  "source_path": "exo7/4-L2/hBMJ.tex",
+  "summary": "L'exercice demande de déterminer si une matrice 3x3 donnée est diagonalisable ou triangularisable, puis d'effectuer explicitement sa réduction.",
+  "concepts": [
+    "polynôme caractéristique",
+    "diagonalisation",
+    "triangularisation",
+    "valeurs propres",
+    "vecteurs propres",
+    "sous-espace propre",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "détermination des valeurs propres",
+    "calcul des noyaux",
+    "construction de la matrice de passage",
+    "réduction de Jordan"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrice de passage"
+  ],
+  "content_hash": "48fbdc8c1dccf1e4141b361f0871e009d72e6d601b74b6788a99d034ad43efa5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:05:10.256Z"
+}

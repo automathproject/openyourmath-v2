@@ -1,0 +1,25 @@
+{
+  "uuid": "vMAi",
+  "source_path": "exo7/2-L1/vMAi.tex",
+  "summary": "On étudie les limites de suites définies par récurrence à partir d'une suite bornée. On montre d'abord que la limite de la suite des différences secondes est nulle, puis que la suite des différences premières converge vers zéro.",
+  "concepts": [
+    "suite bornée",
+    "suite convergente",
+    "limite de suite",
+    "différence finie",
+    "convergence vers zéro"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la bornitude",
+    "étude de la limite d'une suite récurrente"
+  ],
+  "objects": [
+    "suite bornée",
+    "suite des différences premières",
+    "suite des différences secondes"
+  ],
+  "content_hash": "18130ffa56aa0f7d71e228928668c5ea966d3e9d24327656510193cf5314bf8e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:40:09.830Z"
+}

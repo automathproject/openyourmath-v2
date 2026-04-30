@@ -1,0 +1,25 @@
+{
+  "uuid": "c4eb",
+  "source_path": "exo7/14-L3/c4eb.tex",
+  "summary": "Trouver un exemple de fonction définie sur ℝ à valeurs dans ℝ qui est intégrable au sens de Lebesgue mais pas au sens de Riemann.",
+  "concepts": [
+    "intégrabilité au sens de Lebesgue",
+    "intégrabilité au sens de Riemann",
+    "fonction indicatrice",
+    "mesure de Lebesgue",
+    "somme inférieure",
+    "somme supérieure"
+  ],
+  "methods": [
+    "comparaison des définitions d'intégrales",
+    "utilisation de la fonction de Dirichlet"
+  ],
+  "objects": [
+    "fonction intégrable",
+    "fonction non intégrable",
+    "fonction indicatrice de ℚ"
+  ],
+  "content_hash": "7145a9fb2ce1083b65aefcd61f98920edce154976633a778893f224e3284a53a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:03:50.678Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "0U2g",
+  "source_path": "amscc/0U2g.tex",
+  "summary": "L'exercice demande de tester l'indépendance entre deux variables catégorielles (couleur des cheveux et couleur des yeux) pour les femmes et les hommes séparément, puis entre le sexe et la couleur des yeux ou des cheveux. Les données proviennent d'un sondage sur 592 étudiants.",
+  "concepts": [
+    "test du chi-deux d'indépendance",
+    "hypothèse d'indépendance",
+    "tableau de contingence",
+    "loi du chi-deux",
+    "risque de première espèce",
+    "zone de rejet",
+    "effectifs théoriques"
+  ],
+  "methods": [
+    "calcul de la statistique du chi-deux",
+    "comparaison avec la zone de rejet",
+    "construction de tableaux d'effectifs adaptés"
+  ],
+  "objects": [
+    "tableau de contingence",
+    "statistique du chi-deux",
+    "effectifs observés",
+    "effectifs théoriques"
+  ],
+  "content_hash": "39be148457e3d30eb3d075eb932d0ab1ef871772fc34b09c34f89def817c24ff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:28:57.686Z"
+}

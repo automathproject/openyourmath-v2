@@ -1,0 +1,25 @@
+{
+  "uuid": "SGbX",
+  "source_path": "exo7/1-L1/SGbX.tex",
+  "summary": "Soit un polynôme réel dont toutes les racines sont réelles. On demande de démontrer que les racines de sa dérivée sont aussi réelles, puis d'en déduire que les racines de P² + a² sont simples pour tout réel a non nul.",
+  "concepts": [
+    "polynôme réel",
+    "racine réelle",
+    "dérivée d'un polynôme",
+    "racine simple",
+    "factorisation de polynômes"
+  ],
+  "methods": [
+    "étude des racines d'un polynôme",
+    "analyse des racines de la dérivée",
+    "factorisation"
+  ],
+  "objects": [
+    "polynôme P",
+    "dérivée P'",
+    "polynôme P² + a²"
+  ],
+  "content_hash": "f105de966d9a36b2929024542a2a2632b0438119670c817972e6415452876cf0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:59:12.419Z"
+}

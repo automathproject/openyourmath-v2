@@ -1,0 +1,25 @@
+{
+  "uuid": "q9oo",
+  "source_path": "exo7/15-L3/q9oo.tex",
+  "summary": "Montrer l'existence et l'unicité d'un point fixe pour une application f définie sur un espace métrique complet, sous l'hypothèse qu'une de ses itérées est strictement contractante.",
+  "concepts": [
+    "théorème du point fixe de Banach",
+    "application strictement contractante",
+    "espace métrique complet",
+    "itération d'application",
+    "unicité du point fixe"
+  ],
+  "methods": [
+    "composition d'applications",
+    "raisonnement par unicité",
+    "utilisation de l'hypothèse de contraction"
+  ],
+  "objects": [
+    "application f",
+    "espace métrique complet X",
+    "point fixe"
+  ],
+  "content_hash": "e6ba4011eea8293608c0a2ad5e435bd4fa37df4952b7e3793b2474e0d0b7f3f8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:32:21.166Z"
+}

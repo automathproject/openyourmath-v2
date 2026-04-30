@@ -1,0 +1,32 @@
+{
+  "uuid": "7H9k",
+  "source_path": "amscc/7H9k.tex",
+  "summary": "L'exercice demande de construire un estimateur du paramètre θ d'une densité à l'aide de la méthode du maximum de vraisemblance, puis d'étudier les propriétés de cet estimateur. Il utilise une transformation exponentielle pour simplifier l'analyse.",
+  "concepts": [
+    "maximum de vraisemblance",
+    "estimateur sans biais",
+    "convergence en moyenne quadratique",
+    "loi exponentielle",
+    "loi forte des grands nombres",
+    "transformation de variable aléatoire",
+    "espérance mathématique",
+    "variance"
+  ],
+  "methods": [
+    "maximisation de la vraisemblance",
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "application de la loi forte des grands nombres",
+    "simulation de variables aléatoires exponentielles"
+  ],
+  "objects": [
+    "variable aléatoire absolument continue",
+    "fonction de densité",
+    "échantillon aléatoire",
+    "estimateur du maximum de vraisemblance",
+    "variable aléatoire exponentielle"
+  ],
+  "content_hash": "7da59d4b87dea61d83b84d47434ffcf033f1fe9503c569bd6d19f2330b9edaf9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:33:49.102Z"
+}

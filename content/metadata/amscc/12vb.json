@@ -1,0 +1,34 @@
+{
+  "uuid": "12vb",
+  "source_path": "amscc/12vb.tex",
+  "summary": "L'exercice demande d'estimer un paramètre θ d'une loi discrète à partir d'un échantillon, en utilisant la méthode des moments et le maximum de vraisemblance. Il étudie ensuite la consistance de l'estimateur et sa loi limite.",
+  "concepts": [
+    "méthode des moments",
+    "maximum de vraisemblance",
+    "consistance d'un estimateur",
+    "loi limite",
+    "théorème central limite",
+    "Delta-méthode",
+    "loi forte des grands nombres",
+    "concavité d'une fonction"
+  ],
+  "methods": [
+    "égalité des moments empiriques et théoriques",
+    "calcul de la fonction de vraisemblance",
+    "annulation de la dérivée première",
+    "calcul de la dérivée seconde",
+    "application du théorème de l'application continue",
+    "application de la Delta-méthode"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "estimateur ponctuel",
+    "log-vraisemblance",
+    "espérance conditionnelle",
+    "variance conditionnelle",
+    "échantillon aléatoire"
+  ],
+  "content_hash": "7299f5d764b92cf2607641532178d5b89afad87afe152fd52a40ab5022d51ebe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:29:51.458Z"
+}

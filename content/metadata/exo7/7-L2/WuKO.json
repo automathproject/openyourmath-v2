@@ -1,0 +1,25 @@
+{
+  "uuid": "WuKO",
+  "source_path": "exo7/7-L2/WuKO.tex",
+  "summary": "L'exercice demande de déterminer la loi de probabilité d'une variable aléatoire discrète représentant le nombre de clients qui se présentent après réservation dans un avion de 20 places, avec un taux d'absence de 25%. Il faut aussi calculer l'espérance, l'écart-type et la probabilité d'une valeur spécifique de cette variable.",
+  "concepts": [
+    "loi binomiale",
+    "variable aléatoire discrète",
+    "espérance",
+    "écart-type",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de l'écart-type",
+    "calcul de probabilité par formule binomiale"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "nombre de succès",
+    "probabilité de succès"
+  ],
+  "content_hash": "3c65e72230d786e70cceed80eec4a774a6f85ab0e3c0c0178298bb6e3c06d70c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:30:19.061Z"
+}

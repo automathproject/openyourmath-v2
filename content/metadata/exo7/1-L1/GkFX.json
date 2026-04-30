@@ -1,0 +1,24 @@
+{
+  "uuid": "GkFX",
+  "source_path": "exo7/1-L1/GkFX.tex",
+  "summary": "Factoriser un polynôme de degré 4 à coefficients entiers dans l'ensemble des polynômes complexes.",
+  "concepts": [
+    "racine d'un polynôme",
+    "théorème des racines rationnelles",
+    "factorisation dans ℂ[X]",
+    "polynôme irréductible sur ℚ"
+  ],
+  "methods": [
+    "recherche des racines rationnelles",
+    "division polynomiale",
+    "factorisation en produit de polynômes irréductibles"
+  ],
+  "objects": [
+    "polynôme de degré 4",
+    "racine rationnelle",
+    "polynôme irréductible"
+  ],
+  "content_hash": "0f5c39aac511e01462c55a3e2325c9b999812352a998ff4bcf1b43567c7618fb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:45:51.707Z"
+}

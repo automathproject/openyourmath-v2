@@ -1,0 +1,25 @@
+{
+  "uuid": "c4R1",
+  "source_path": "amscc/c4R1.tex",
+  "summary": "Un mage doit décider quel sort invoquer contre une créature dans les marais maudits, en utilisant les probabilités conditionnelles pour évaluer la nature de la créature après un signal de vigie.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "théorème de Bayes",
+    "probabilité a priori",
+    "probabilité a posteriori",
+    "événement indépendant"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "application du théorème de Bayes",
+    "interprétation probabiliste"
+  ],
+  "objects": [
+    "événement aléatoire",
+    "probabilité conditionnelle",
+    "signal d'observation"
+  ],
+  "content_hash": "cb48b4072e34d5ff70635f19c30e596214877264b8ce2875828c3ad81e6a2435",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:33:18.753Z"
+}

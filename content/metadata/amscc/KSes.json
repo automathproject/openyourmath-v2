@@ -1,0 +1,32 @@
+{
+  "uuid": "KSes",
+  "source_path": "amscc/KSes.tex",
+  "summary": "L'exercice demande de modéliser une intégrale par des espérances de variables aléatoires normales ou uniformes, puis d'utiliser la méthode de Monte Carlo pour l'approximer et construire des intervalles de confiance. Il explore la convergence presque sûre et la loi faible des grands nombres.",
+  "concepts": [
+    "loi normale",
+    "loi uniforme",
+    "espérance d'une variable aléatoire",
+    "théorème de transfert",
+    "loi forte des grands nombres",
+    "théorème central limite",
+    "intervalle de confiance asymptotique",
+    "convergence presque sûre"
+  ],
+  "methods": [
+    "méthode de Monte Carlo",
+    "standardisation",
+    "approximation gaussienne",
+    "calcul d'espérance",
+    "construction d'intervalle de confiance"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "variable aléatoire uniforme",
+    "fonction indicatrice",
+    "suite de variables i.i.d.",
+    "intégrale de fonction densité"
+  ],
+  "content_hash": "2dca057970d44dd68980d426dd1cb97050bd51399344e02a839b308c80e2fee4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:45:46.813Z"
+}

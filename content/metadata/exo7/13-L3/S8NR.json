@@ -1,0 +1,28 @@
+{
+  "uuid": "S8NR",
+  "source_path": "exo7/13-L3/S8NR.tex",
+  "summary": "L'exercice demande de classifier et d'esquisser les portraits de phase des équations différentielles linéaires $x' = Ax$ où $A$ est une matrice carrée réelle de taille 2x2 ayant zéro comme valeur propre.",
+  "concepts": [
+    "valeur propre",
+    "matrice carrée",
+    "équation différentielle linéaire",
+    "portrait de phase",
+    "classification des systèmes dynamiques",
+    "stabilité des points d'équilibre"
+  ],
+  "methods": [
+    "diagonalisation",
+    "analyse des valeurs propres",
+    "construction du portrait de phase",
+    "classification des cas critiques"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "système linéaire",
+    "vecteur propre",
+    "espace de phase"
+  ],
+  "content_hash": "349164ac4b7ea0209fbd5c9af2c297c6c7f106d4d0684296fda925ac851ea8e0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:13:02.093Z"
+}

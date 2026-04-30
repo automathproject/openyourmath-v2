@@ -1,0 +1,25 @@
+{
+  "uuid": "Q5bi",
+  "source_path": "exo7/5-L2/Q5bi.tex",
+  "summary": "On considère deux suites de fonctions continues définies sur des intervalles, convergeant uniformément vers des fonctions limites. On demande de prouver que la composée de ces suites converge uniformément vers la composée des fonctions limites.",
+  "concepts": [
+    "convergence uniforme",
+    "continuité uniforme",
+    "composition de fonctions",
+    "inégalité triangulaire",
+    "limite de fonctions"
+  ],
+  "methods": [
+    "utilisation de l'inégalité triangulaire",
+    "argument par contrôle des écarts",
+    "application de la continuité uniforme"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction composée",
+    "intervalle"
+  ],
+  "content_hash": "b1636c286abf39571e0c8a6f5a78a3edb01c41a8eddf472842d7c57ed0118a14",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:54:53.272Z"
+}

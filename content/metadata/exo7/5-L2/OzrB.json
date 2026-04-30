@@ -1,0 +1,27 @@
+{
+  "uuid": "OzrB",
+  "source_path": "exo7/5-L2/OzrB.tex",
+  "summary": "On considère une suite de fonctions continues convexes définies sur un intervalle compact et convergeant simplement vers une fonction continue. On demande de prouver que cette convergence est en fait uniforme.",
+  "concepts": [
+    "convergence simple",
+    "convergence uniforme",
+    "continuité",
+    "convexité",
+    "théorème d'Ascoli",
+    "compacité de [a,b]"
+  ],
+  "methods": [
+    "encadrement par les cordes",
+    "subdivision régulière",
+    "utilisation de la convexité",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction continue",
+    "intervalle compact"
+  ],
+  "content_hash": "2b39e1421bc9eb25d5d48ebc7b48dc2bf9d4bd7eaf66250d048ae6593088912e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:54:33.413Z"
+}

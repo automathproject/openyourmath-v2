@@ -1,0 +1,26 @@
+{
+  "uuid": "WmhB",
+  "source_path": "exo7/4-L2/WmhB.tex",
+  "summary": "L'exercice demande de démontrer que tout vecteur propre d'une matrice B est aussi vecteur propre d'une matrice A, et que A peut s'exprimer comme un polynôme de B, sous les conditions que A et B commutent et que B a des valeurs propres distinctes.",
+  "concepts": [
+    "commutativité de matrices",
+    "valeur propre",
+    "vecteur propre",
+    "polynôme annulateur",
+    "réduction d'endomorphisme",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "utilisation de la commutativité",
+    "diagonalisation",
+    "polynôme minimal"
+  ],
+  "objects": [
+    "matrices carrées",
+    "vecteurs propres",
+    "polynôme de matrices"
+  ],
+  "content_hash": "bdf6ea7e1e14f09a70eca4087d41728324b760491372553cfb7d8f843c82d10b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:51:50.686Z"
+}

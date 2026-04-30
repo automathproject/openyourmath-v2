@@ -1,0 +1,29 @@
+{
+  "uuid": "gCWF",
+  "source_path": "exo7/2-L1/gCWF.tex",
+  "summary": "L'exercice demande d'abord de définir la partie entière d'un réel x par encadrement. Ensuite, il s'agit d'étudier la suite (u_n) définie par la moyenne des parties entières de kx pour k variant de 1 à n, en encadrant n²u_n, puis d'en déduire la convergence de (u_n) et sa limite. Enfin, on utilise cette convergence pour démontrer la densité des rationnels dans les réels.",
+  "concepts": [
+    "partie entière",
+    "suite numérique",
+    "convergence",
+    "théorème des gendarmes",
+    "densité des rationnels dans les réels",
+    "encadrement d'une fonction"
+  ],
+  "methods": [
+    "encadrement par inégalités",
+    "sommation d'inégalités",
+    "calcul de somme arithmétique",
+    "application du théorème des gendarmes"
+  ],
+  "objects": [
+    "partie entière E(x)",
+    "suite (u_n)",
+    "somme arithmétique",
+    "réel x",
+    "rationnel"
+  ],
+  "content_hash": "53c65d2e1c4b23f54ab27726304d83e81ae41970aac240ce254a42a64ba170a1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:00:03.772Z"
+}

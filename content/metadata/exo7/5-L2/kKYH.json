@@ -1,0 +1,27 @@
+{
+  "uuid": "kKYH",
+  "source_path": "exo7/5-L2/kKYH.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire définie sur un espace de suites bornées est continue et de calculer sa norme, puis d'étudier la stabilité de cet espace par l'application et de calculer la norme de la restriction de l'application à un sous-espace de suites sommables.",
+  "concepts": [
+    "espace vectoriel normé",
+    "suite bornée",
+    "suite sommable",
+    "application linéaire",
+    "continuité",
+    "norme d'une application linéaire",
+    "stabilité d'un sous-espace"
+  ],
+  "methods": [
+    "calcul de norme d'application linéaire",
+    "étude de la continuité",
+    "restriction d'application"
+  ],
+  "objects": [
+    "espace de suites bornées",
+    "sous-espace de suites sommables",
+    "application linéaire"
+  ],
+  "content_hash": "ce91724e127e2a945d7ecd593af956aa94daa4ff4dc29d4d418f681e4107ab17",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:05:53.874Z"
+}

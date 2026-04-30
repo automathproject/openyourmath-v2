@@ -1,0 +1,27 @@
+{
+  "uuid": "KBi8",
+  "source_path": "amscc/KBi8.tex",
+  "summary": "L'exercice demande de déterminer la loi de la variable aléatoire Y = X², où X est une variable aléatoire absolument continue de densité f(x) = 1/2 sur l'intervalle [-1, 1].",
+  "concepts": [
+    "variable aléatoire absolument continue",
+    "densité de probabilité",
+    "fonction de répartition",
+    "transformation de variable aléatoire",
+    "densité conditionnelle"
+  ],
+  "methods": [
+    "calcul de fonction de répartition",
+    "intégration par parties",
+    "changement de variable",
+    "dérivation sous l'intégrale"
+  ],
+  "objects": [
+    "variable aléatoire X",
+    "variable aléatoire Y = X²",
+    "densité f(x)",
+    "fonction de répartition F_Y(t)"
+  ],
+  "content_hash": "50db5d94b9ccc72d50b2dbadfadeceb33fe9b7a6c2211e8dde897fe51e81539c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:45:26.596Z"
+}

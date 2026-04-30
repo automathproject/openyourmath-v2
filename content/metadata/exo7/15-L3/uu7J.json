@@ -1,0 +1,26 @@
+{
+  "uuid": "uu7J",
+  "source_path": "exo7/15-L3/uu7J.tex",
+  "summary": "L'exercice demande de prouver l'existence et l'unicité d'une fonction continue h sur [0,1] vérifiant h(0)=0 et h'(t)=cos(th(t)) pour tout t dans [0,1], en utilisant un opérateur de contraction.",
+  "concepts": [
+    "théorème du point fixe de Banach",
+    "contraction",
+    "espace métrique",
+    "intégrale de fonctions continues",
+    "différentiabilité",
+    "unicité de la solution"
+  ],
+  "methods": [
+    "construction d'un opérateur de contraction",
+    "application du théorème du point fixe",
+    "démonstration d'existence et d'unicité"
+  ],
+  "objects": [
+    "fonction continue sur [0,1]",
+    "opérateur T",
+    "intégrale de fonction"
+  ],
+  "content_hash": "cfc13455d577a0749f4be6f0bef05a5a9f18ef73aa899ba76caffbf49a78bdfa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:32:48.066Z"
+}

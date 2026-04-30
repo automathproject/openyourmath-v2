@@ -1,0 +1,32 @@
+{
+  "uuid": "zvcK",
+  "source_path": "exo7/13-L3/zvcK.tex",
+  "summary": "L'exercice demande de résoudre un système différentiel linéaire à coefficients constants en appliquant différentes méthodes de résolution. Il s'agit de trouver les solutions du système X'(t) = A.X(t) en utilisant des techniques variées comme la triangulation de la matrice A, la forme de Dunford, le théorème de Cayley-Hamilton, la décomposition en sous-espaces caractéristiques, et l'identification de solutions sous forme polynomiale-exponentielle.",
+  "concepts": [
+    "système différentiel linéaire",
+    "matrice à coefficients constants",
+    "forme triangulaire",
+    "forme de Dunford",
+    "théorème de Cayley-Hamilton",
+    "sous-espaces caractéristiques",
+    "décomposition spectrale",
+    "exponentielle de matrice"
+  ],
+  "methods": [
+    "changement de base",
+    "décomposition en sous-espaces caractéristiques",
+    "calcul de l'exponentielle de matrice",
+    "utilisation du théorème de Cayley-Hamilton",
+    "identification de solutions polynomiale-exponentielle"
+  ],
+  "objects": [
+    "matrice A",
+    "système différentiel X'(t) = A.X(t)",
+    "sous-espaces caractéristiques",
+    "solution X(t)",
+    "exponentielle de matrice e^{tA}"
+  ],
+  "content_hash": "bfcecf0e3a77db1334b5fe97c506bc9e804d30667ecbe60c9ef0207231cda37b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:14:33.130Z"
+}

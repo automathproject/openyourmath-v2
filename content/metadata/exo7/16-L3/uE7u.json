@@ -1,0 +1,29 @@
+{
+  "uuid": "uE7u",
+  "source_path": "exo7/16-L3/uE7u.tex",
+  "summary": "L'exercice étudie la fonction holomorphe f(z) = cos(z) et demande d'analyser son image sur des droites verticales et horizontales, de déterminer un ouvert maximal où la restriction de f est injective, de trouver le domaine de définition maximal pour la fonction réciproque arccos, et de vérifier la forme de certaines branches de arccos.",
+  "concepts": [
+    "fonction holomorphe",
+    "image d'une fonction",
+    "injective",
+    "fonction réciproque",
+    "branche de fonction multiforme",
+    "fonction Log"
+  ],
+  "methods": [
+    "analyse de l'image d'une fonction",
+    "détermination d'un ouvert maximal d'injectivité",
+    "recherche de domaine de définition maximal",
+    "vérification de forme de branches"
+  ],
+  "objects": [
+    "fonction cos(z)",
+    "droite x=c",
+    "droite y=c",
+    "fonction arccos",
+    "branches de arccos"
+  ],
+  "content_hash": "159b062c3dbc19d42c628f53163a04f6484df3d773fea83ba1daad22e678f017",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:26:20.980Z"
+}

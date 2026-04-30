@@ -1,0 +1,31 @@
+{
+  "uuid": "9iIv",
+  "source_path": "amscc/9iIv.tex",
+  "summary": "L'exercice demande d'étudier et de comparer deux estimateurs de la moyenne d'une population normale, en analysant leur biais et leur efficacité. Il aborde également la loi de variables construites à partir de l'échantillon.",
+  "concepts": [
+    "loi normale",
+    "estimateur sans biais",
+    "efficacité d'un estimateur",
+    "loi du chi-deux",
+    "théorème de Fisher",
+    "loi de Student",
+    "espérance mathématique",
+    "variance"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "comparaison d'estimateurs",
+    "utilisation des tables de loi du chi-deux",
+    "standardisation"
+  ],
+  "objects": [
+    "échantillon aléatoire",
+    "estimateur de la moyenne",
+    "variable aléatoire de chi-deux",
+    "variable aléatoire de Student"
+  ],
+  "content_hash": "c8415f510c24731d81b92540826e803007a17d03faedf3d504f041134bfb52ba",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:35:21.242Z"
+}

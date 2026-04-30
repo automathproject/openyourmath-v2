@@ -1,0 +1,26 @@
+{
+  "uuid": "uPmr",
+  "source_path": "amscc/uPmr.tex",
+  "summary": "L'exercice demande de déterminer la moyenne d'une loi normale modélisant la température à Rennes en janvier, connaissant sa probabilité de dépasser 2°C. Ensuite, il faut calculer la probabilité que la température soit inférieure ou égale à 0°C avec cette moyenne.",
+  "concepts": [
+    "loi normale",
+    "standardisation",
+    "fonction de répartition",
+    "centrage-réduction",
+    "lecture inverse de table"
+  ],
+  "methods": [
+    "standardisation",
+    "lecture inverse de table de loi normale centrée réduite",
+    "calcul de probabilité conditionnelle"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "écart-type",
+    "moyenne",
+    "probabilité conditionnelle"
+  ],
+  "content_hash": "7597a65f1e34c4e2a5036cf312339edd36950f09f2fd4fb4da50b02c0026e195",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:09:18.140Z"
+}

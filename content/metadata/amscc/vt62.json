@@ -1,0 +1,26 @@
+{
+  "uuid": "vt62",
+  "source_path": "amscc/vt62.tex",
+  "summary": "L'exercice propose quatre affirmations vraies-fausses sur les propriétés des matrices carrées inversibles, notamment concernant la transposée, la somme avec sa transposée, et la similarité avec la matrice identité.",
+  "concepts": [
+    "matrice carrée",
+    "inversibilité",
+    "transposée d'une matrice",
+    "produit matriciel",
+    "similarité de matrices",
+    "matrice identité"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "vérification de l'inversibilité",
+    "contre-exemple"
+  ],
+  "objects": [
+    "matrice carrée",
+    "transposée d'une matrice",
+    "matrice identité"
+  ],
+  "content_hash": "28473f55b98304697de0eba8a6c6d98dc60c096b4473cc102a1ff9bdbe55b083",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:20:23.817Z"
+}

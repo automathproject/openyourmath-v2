@@ -1,0 +1,29 @@
+{
+  "uuid": "vnXU",
+  "source_path": "amscc/vnXU.tex",
+  "summary": "L'exercice demande de calculer une probabilité liée à une variable aléatoire log-normale en utilisant sa transformation normale sous-jacente, puis d'exprimer sa fonction de répartition et d'en déduire sa densité de probabilité.",
+  "concepts": [
+    "variable aléatoire log-normale",
+    "fonction de répartition",
+    "densité de probabilité",
+    "standardisation",
+    "loi normale centrée réduite",
+    "transformation exponentielle",
+    "dérivation de fonction composée"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de probabilité à partir de la fonction de répartition",
+    "dérivation de la fonction de répartition",
+    "expression de la densité de probabilité"
+  ],
+  "objects": [
+    "variable aléatoire X",
+    "fonction de répartition F_X",
+    "densité de probabilité f",
+    "fonction de répartition Φ de la loi normale centrée réduite"
+  ],
+  "content_hash": "771be899c9bde099de1f108ceae24511c667304ebc2013b2f4e0b1dd38b1db1d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:10:26.875Z"
+}

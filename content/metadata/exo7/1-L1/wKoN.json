@@ -1,0 +1,30 @@
+{
+  "uuid": "wKoN",
+  "source_path": "exo7/1-L1/wKoN.tex",
+  "summary": "L'exercice demande de montrer qu'une famille de vecteurs forme une base de ℝ² et de déterminer la matrice d'un endomorphisme dans cette nouvelle base. Ensuite, il s'agit de calculer les puissances de cette matrice et d'en déduire l'ensemble des suites réelles vérifiant un système de récurrence linéaire.",
+  "concepts": [
+    "base d'un espace vectoriel",
+    "matrice de passage",
+    "endomorphisme",
+    "matrice inversible",
+    "puissance d'une matrice",
+    "système de récurrence linéaire",
+    "matrice diagonale"
+  ],
+  "methods": [
+    "calcul du déterminant",
+    "inversion de matrice",
+    "changement de base",
+    "calcul de puissance de matrice",
+    "résolution de système de récurrence"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteurs de ℝ²",
+    "suite récurrente linéaire",
+    "matrice diagonale"
+  ],
+  "content_hash": "1d23f32cbcd11b5de9a5c04491ad4f9578d27b11217959bf31b2e5e17a1ad16c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:20:41.236Z"
+}

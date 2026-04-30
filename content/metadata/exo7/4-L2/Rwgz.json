@@ -1,0 +1,27 @@
+{
+  "uuid": "Rwgz",
+  "source_path": "exo7/4-L2/Rwgz.tex",
+  "summary": "L'exercice demande de montrer que si λ est une valeur propre d'un endomorphisme u vérifiant P(u) = 0, alors P(λ) = 0. Ensuite, il s'agit de caractériser les matrices M vérifiant P(M) = 0 avec P scindé à racines simples et de déterminer le nombre de matrices diagonales associées.",
+  "concepts": [
+    "valeur propre",
+    "polynôme annulateur",
+    "diagonalisation",
+    "matrice inversible",
+    "matrice diagonale",
+    "racine d'un polynôme"
+  ],
+  "methods": [
+    "utilisation de la définition de valeur propre",
+    "factorisation de polynôme",
+    "décomposition en facteurs linéaires"
+  ],
+  "objects": [
+    "endomorphisme",
+    "polynôme scindé",
+    "matrice carrée",
+    "valeurs propres distinctes"
+  ],
+  "content_hash": "91bdc9c822941db26f3fe738abd3c341938b2e5706c27c293a0a57db11deab35",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:45:41.563Z"
+}

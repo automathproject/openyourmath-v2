@@ -1,0 +1,25 @@
+{
+  "uuid": "R6XJ",
+  "source_path": "amscc/R6XJ.tex",
+  "summary": "Déterminer tous les polynômes réels de degré 5 ayant une racine d'ordre 3 et les factoriser. Le polynôme est donné sous forme explicite avec deux paramètres réels.",
+  "concepts": [
+    "racine d'un polynôme",
+    "multiplicité d'une racine",
+    "factorisation dans ℝ[X]",
+    "polynôme irréductible",
+    "décomposition en facteurs irréductibles"
+  ],
+  "methods": [
+    "calcul des dérivées successives",
+    "résolution d'équations polynomiales",
+    "factorisation de polynômes"
+  ],
+  "objects": [
+    "polynôme de degré 5",
+    "racine multiple",
+    "polynôme irréductible"
+  ],
+  "content_hash": "b3ddd5ba4dc5096d904d8651819a108c7db2b09bc28bd8bb58893da1b87d85b0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:57:48.617Z"
+}

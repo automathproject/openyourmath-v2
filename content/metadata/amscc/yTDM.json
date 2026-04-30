@@ -1,0 +1,27 @@
+{
+  "uuid": "yTDM",
+  "source_path": "amscc/yTDM.tex",
+  "summary": "L'exercice demande de déterminer la loi de la variable aléatoire Y = X², où X est une variable aléatoire absolument continue de densité f(x) = 1/2 sur l'intervalle [-1, 1].",
+  "concepts": [
+    "variable aléatoire absolument continue",
+    "densité de probabilité",
+    "fonction de répartition",
+    "changement de variable",
+    "loi de probabilité"
+  ],
+  "methods": [
+    "calcul de la fonction de répartition",
+    "intégration",
+    "dérivation",
+    "changement d'intervalle d'intégration"
+  ],
+  "objects": [
+    "variable aléatoire X",
+    "variable aléatoire Y = X²",
+    "densité de probabilité f(x)",
+    "fonction de répartition F_Y(t)"
+  ],
+  "content_hash": "1f8afbfbe59eecf549bf5cb9243edfc1926e85f199ef451166ee1b468b90dc7e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:12:13.036Z"
+}

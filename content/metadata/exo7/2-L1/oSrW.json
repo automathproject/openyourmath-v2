@@ -1,0 +1,28 @@
+{
+  "uuid": "oSrW",
+  "source_path": "exo7/2-L1/oSrW.tex",
+  "summary": "On étudie la convergence d'une suite définie par récurrence non linéaire. La suite est donnée par u₁ = √2 et uₙ = √(2 - uₙ₋₁). L'objectif est de montrer sa convergence en analysant les sous-suites (u₂ₙ) et (u₂ₙ₊₁).",
+  "concepts": [
+    "suite définie par récurrence",
+    "convergence de suite",
+    "sous-suite",
+    "limite de suite",
+    "suite monotone",
+    "suite bornée"
+  ],
+  "methods": [
+    "étude des sous-suites",
+    "théorème de la suite extraite",
+    "raisonnement par récurrence",
+    "analyse de la monotonie",
+    "recherche de bornes"
+  ],
+  "objects": [
+    "suite numérique",
+    "sous-suite paire",
+    "sous-suite impaire"
+  ],
+  "content_hash": "6e985549bcd6bae75c32f8bd78c68d8e8affd2d7e4bf92758ff6c7e4c5522cab",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:34:51.563Z"
+}

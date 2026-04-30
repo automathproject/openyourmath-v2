@@ -1,0 +1,30 @@
+{
+  "uuid": "Xvzc",
+  "source_path": "amscc/Xvzc.tex",
+  "summary": "L'exercice demande d'estimer le taux moyen de glucose dans une population de patients diabétiques à l'aide d'un intervalle de confiance, en utilisant un échantillon fourni. Il s'agit de calculer des intervalles de confiance à 95% et 99% pour la moyenne, puis de vérifier si ces intervalles contiennent la valeur réelle de la moyenne.",
+  "concepts": [
+    "intervalle de confiance",
+    "moyenne empirique",
+    "écart type",
+    "niveau de confiance",
+    "estimation ponctuelle",
+    "loi normale",
+    "quantile de la loi normale"
+  ],
+  "methods": [
+    "formule de l'intervalle de confiance pour la moyenne",
+    "calcul des quantiles",
+    "standardisation",
+    "comparaison des intervalles"
+  ],
+  "objects": [
+    "moyenne d'un échantillon",
+    "écart type d'un échantillon",
+    "taille de l'échantillon",
+    "intervalle de confiance",
+    "valeur réelle de la moyenne"
+  ],
+  "content_hash": "c34a474d0cf49569def81cfc31b4e18c16345e61b83cf7dc387f79282b3903a9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:43:55.460Z"
+}

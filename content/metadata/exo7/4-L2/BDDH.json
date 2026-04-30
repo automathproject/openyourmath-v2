@@ -1,0 +1,29 @@
+{
+  "uuid": "BDDH",
+  "source_path": "exo7/4-L2/BDDH.tex",
+  "summary": "L'exercice demande de déterminer les valeurs propres d'une matrice 2x2 donnée et les sous-espaces propres associés. Ensuite, il s'agit de trouver une matrice inversible P permettant de diagonaliser A par conjugaison.",
+  "concepts": [
+    "valeur propre",
+    "sous-espace propre",
+    "diagonalisation",
+    "polynôme caractéristique",
+    "matrice inversible",
+    "conjugaison de matrices"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "résolution d'équation polynomiale",
+    "détermination des vecteurs propres",
+    "construction de la matrice de passage"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "valeurs propres",
+    "sous-espaces propres",
+    "matrice diagonale",
+    "matrice de passage"
+  ],
+  "content_hash": "d1d89ac734a785d6f4589218341d3b05a47f1621e07d748e59d6cf2fc4c31483",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:21:36.959Z"
+}

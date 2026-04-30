@@ -1,0 +1,24 @@
+{
+  "uuid": "vCPG",
+  "source_path": "exo7/1-L1/vCPG.tex",
+  "summary": "Démontrer qu'un polynôme de la forme X - a divise un polynôme de la forme X^n - a^n pour tout réel a et tout entier naturel n non nul.",
+  "concepts": [
+    "divisibilité des polynômes",
+    "racine d'un polynôme",
+    "polynôme irréductible",
+    "factorisation",
+    "algèbre des polynômes"
+  ],
+  "methods": [
+    "factorisation",
+    "utilisation du théorème de la racine",
+    "division euclidienne des polynômes"
+  ],
+  "objects": [
+    "polynôme X - a",
+    "polynôme X^n - a^n"
+  ],
+  "content_hash": "711d18fef8a2aef4b57b043189fc948d485f6375aa99581217729d409c16ee5d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:28:58.990Z"
+}

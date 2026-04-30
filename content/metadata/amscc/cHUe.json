@@ -1,0 +1,26 @@
+{
+  "uuid": "cHUe",
+  "source_path": "amscc/cHUe.tex",
+  "summary": "L'exercice demande de réaliser un test d'indépendance du chi-carré pour évaluer l'influence du milieu socio-professionnel des parents sur le type d'étude des enfants, à partir d'un tableau de contingence. Le risque de première espèce est fixé à 5%.",
+  "concepts": [
+    "test du chi-carré",
+    "tableau de contingence",
+    "hypothèse d'indépendance",
+    "risque de première espèce",
+    "p-valeur",
+    "statistique de test"
+  ],
+  "methods": [
+    "calcul de la statistique de test",
+    "comparaison avec la loi du chi-carré",
+    "détermination de la p-valeur"
+  ],
+  "objects": [
+    "tableau de contingence",
+    "catégories socio-professionnelles",
+    "types de cursus"
+  ],
+  "content_hash": "c7651b5e41da1e131c42b346f616ba7dfd573696a213371471588a97e1fb1b31",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:47:19.465Z"
+}

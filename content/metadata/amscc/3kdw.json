@@ -1,0 +1,32 @@
+{
+  "uuid": "3kdw",
+  "source_path": "amscc/3kdw.tex",
+  "summary": "L'exercice étudie des estimateurs de la moyenne d'une loi normale et leurs propriétés (biais, efficacité) à partir d'un échantillon de taille 5. Il aborde aussi les lois de variables construites à partir de ces estimateurs et de statistiques associées.",
+  "concepts": [
+    "loi normale",
+    "estimateur sans biais",
+    "efficacité d'un estimateur",
+    "loi du chi-deux",
+    "loi de Student",
+    "espérance conditionnelle",
+    "variance conditionnelle",
+    "théorème de Fisher"
+  ],
+  "methods": [
+    "calcul d'espérance",
+    "calcul de variance",
+    "comparaison d'estimateurs",
+    "standardisation",
+    "construction de statistique de Student"
+  ],
+  "objects": [
+    "échantillon aléatoire",
+    "estimateurs de la moyenne",
+    "statistique du chi-deux",
+    "statistique de Student",
+    "variable aléatoire normale"
+  ],
+  "content_hash": "688c5c9053677a12b72373a24cfdf7aed8cb63e36671db52b71031cee33d7cd4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:30:59.989Z"
+}

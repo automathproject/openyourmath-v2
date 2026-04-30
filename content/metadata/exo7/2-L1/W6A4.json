@@ -1,0 +1,25 @@
+{
+  "uuid": "W6A4",
+  "source_path": "exo7/2-L1/W6A4.tex",
+  "summary": "Étude de la suite définie par la relation de récurrence $u_{n+1}= (1-u_n)^2$ en fonction de la valeur initiale $u_0$.",
+  "concepts": [
+    "suite récurrente",
+    "convergence de suite",
+    "point fixe",
+    "stabilité",
+    "analyse qualitative"
+  ],
+  "methods": [
+    "étude de la convergence",
+    "recherche de points fixes",
+    "analyse des cas initiaux"
+  ],
+  "objects": [
+    "suite numérique",
+    "relation de récurrence non linéaire",
+    "valeur initiale"
+  ],
+  "content_hash": "837f73a74364ae053d2229d459e858a0e3778b6238a00fef5d2454dcfc71906e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:21:07.336Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "B430",
+  "source_path": "exo7/1-L1/B430.tex",
+  "summary": "Trouver une condition nécessaire et suffisante pour que la famille de polynômes (X+zi)^n pour i=0 à k forme une base de l'espace vectoriel C_n[X] des polynômes complexes de degré ≤ n.",
+  "concepts": [
+    "base d'un espace vectoriel",
+    "matrice de Vandermonde",
+    "famille libre",
+    "famille génératrice",
+    "espace vectoriel de polynômes"
+  ],
+  "methods": [
+    "analyse de la matrice de passage",
+    "utilisation de la matrice de Vandermonde"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "famille de polynômes",
+    "espace vectoriel C_n[X]"
+  ],
+  "content_hash": "235349c6339b48a2b362f9dced6ba013d817e445aab5f5d5d59573e9cca8972b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:40:01.212Z"
+}

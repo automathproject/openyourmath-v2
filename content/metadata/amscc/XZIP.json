@@ -1,0 +1,31 @@
+{
+  "uuid": "XZIP",
+  "source_path": "amscc/XZIP.tex",
+  "summary": "L'exercice demande de travailler avec des variables aléatoires exponentielles pour modéliser le temps de passage en caisse de clients. Il s'agit de vérifier des propriétés de densité, de calculer des espérances et variances, de déterminer des fonctions de répartition, et d'étudier des probabilités conditionnelles dans un contexte de file d'attente.",
+  "concepts": [
+    "variable aléatoire exponentielle",
+    "densité de probabilité",
+    "espérance",
+    "variance",
+    "fonction de répartition",
+    "probabilité conditionnelle",
+    "indépendance de variables aléatoires"
+  ],
+  "methods": [
+    "intégration par parties",
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "détermination de la fonction de répartition",
+    "calcul de probabilité conditionnelle"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "densité de probabilité",
+    "fonction de répartition",
+    "espérance",
+    "variance"
+  ],
+  "content_hash": "b0b0957d84589b9d562986dd3586f8a8265ef02bc74194d3af4aeede38201978",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:53:11.216Z"
+}

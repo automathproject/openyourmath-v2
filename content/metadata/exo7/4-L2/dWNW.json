@@ -1,0 +1,26 @@
+{
+  "uuid": "dWNW",
+  "source_path": "exo7/4-L2/dWNW.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de stabilité et de décomposition d'espaces propres pour deux endomorphismes diagonalisables qui commutent, et d'en déduire qu'ils sont diagonalisables simultanément dans une même base.",
+  "concepts": [
+    "endomorphisme diagonalisable",
+    "valeur propre",
+    "espace propre",
+    "commutativité d'endomorphismes",
+    "somme directe d'espaces vectoriels",
+    "base de vecteurs propres communs"
+  ],
+  "methods": [
+    "décomposition en espaces propres",
+    "analyse de stabilité d'espaces",
+    "utilisation de la commutativité"
+  ],
+  "objects": [
+    "endomorphismes u et v",
+    "espaces propres F_i et G_j",
+    "intersections H_ij"
+  ],
+  "content_hash": "9598b828b678b5f29b0bd3c2bb08ab7a7fe5f095b2e1584cc76f2595ac02ca04",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:59:58.163Z"
+}

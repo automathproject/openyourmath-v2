@@ -1,0 +1,25 @@
+{
+  "uuid": "2yZD",
+  "source_path": "exo7/8-L3/2yZD.tex",
+  "summary": "Soit G un groupe fini avec deux sous-groupes H et K. On suppose que H est distingué dans G, que |H| et |G/H| sont premiers entre eux et |H|=|K|. Montrer que H=K.",
+  "concepts": [
+    "sous-groupe distingué",
+    "ordre d'un groupe",
+    "pgcd",
+    "surjection canonique",
+    "théorème de Lagrange"
+  ],
+  "methods": [
+    "utilisation de la surjection canonique",
+    "calcul de pgcd",
+    "comparaison des ordres"
+  ],
+  "objects": [
+    "groupe fini",
+    "sous-groupes",
+    "ordre d'un sous-groupe"
+  ],
+  "content_hash": "c4d68df0221aef891062c93cb3bb0673715dd1ad7da7b84296107bbb09396b38",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:53:05.799Z"
+}

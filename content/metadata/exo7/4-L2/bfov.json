@@ -1,0 +1,29 @@
+{
+  "uuid": "bfov",
+  "source_path": "exo7/4-L2/bfov.tex",
+  "summary": "L'exercice demande de déterminer les valeurs des suites réelles (xₙ), (yₙ) et (zₙ) définies par un système de relations de récurrence linéaires. On cherche une expression explicite des termes en fonction des conditions initiales x₀, y₀ et z₀.",
+  "concepts": [
+    "système de récurrence linéaire",
+    "espace vectoriel",
+    "matrice de transition",
+    "valeurs propres",
+    "vecteurs propres",
+    "diagonalisation",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "résolution de système de récurrence",
+    "diagonalisation de matrice",
+    "calcul de polynôme caractéristique",
+    "décomposition en vecteurs propres"
+  ],
+  "objects": [
+    "suite récurrente",
+    "matrice 3x3",
+    "vecteur propre",
+    "valeur propre"
+  ],
+  "content_hash": "9714a5793db56d59639f28c6348e58cf721e2582ab0c56f10771bd1962d39ed6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:58:18.246Z"
+}

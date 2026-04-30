@@ -1,0 +1,23 @@
+{
+  "uuid": "YAQM",
+  "source_path": "exo7/1-L1/YAQM.tex",
+  "summary": "Effectuer la division euclidienne de deux polynômes donnés. Le premier cas utilise des polynômes à coefficients entiers, le second cas introduit des coefficients trigonométriques.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "polynôme unitaire",
+    "degré d'un polynôme",
+    "algèbre des polynômes"
+  ],
+  "methods": [
+    "division euclidienne",
+    "calcul du quotient et du reste"
+  ],
+  "objects": [
+    "polynôme de degré 5",
+    "polynôme de degré 2",
+    "polynôme avec coefficients trigonométriques"
+  ],
+  "content_hash": "085f720fa577f8ef1334d53150f7bb4b9f85230738c0d1087ce3b17fd520893e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:04:11.552Z"
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "FH8I",
+  "source_path": "amscc/FH8I.tex",
+  "summary": "L'exercice demande de prouver la convergence de la méthode de descente de gradient pour une fonction de classe C² avec des dérivées secondes bornées. On utilise le développement de Taylor-Lagrange et des propriétés de contraction pour établir la décroissance de la suite et la convergence vers un point critique unique.",
+  "concepts": [
+    "fonction de classe C²",
+    "développement de Taylor-Lagrange",
+    "point critique",
+    "suite de Cauchy",
+    "complétude de ℝ",
+    "théorème des accroissements finis",
+    "convergence de suite"
+  ],
+  "methods": [
+    "développement de Taylor-Lagrange",
+    "calcul de dérivées",
+    "inégalité des accroissements finis",
+    "raisonnement par récurrence",
+    "somme de série géométrique",
+    "limite de suite"
+  ],
+  "objects": [
+    "fonction f",
+    "suite (x_n)",
+    "fonction g",
+    "dérivée seconde f''",
+    "dérivée première f'"
+  ],
+  "content_hash": "78cdc6a017d187fcef9be793ef98ee586b183072b00678d769d1d9d28746aaf1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:38:49.635Z"
+}

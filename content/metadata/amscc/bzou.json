@@ -1,0 +1,34 @@
+{
+  "uuid": "bzou",
+  "source_path": "amscc/bzou.tex",
+  "summary": "Un chercheur en psychologie cognitive compare l'efficacité de 5 méthodes d'apprentissage sur la mémorisation de mots. Il analyse les scores de rappel de 30 étudiants répartis en 5 groupes. L'exercice demande de formuler des hypothèses statistiques, calculer des statistiques descriptives, réaliser une ANOVA à un facteur et interpréter la taille d'effet.",
+  "concepts": [
+    "analyse de variance (ANOVA)",
+    "hypothèses statistiques",
+    "moyenne",
+    "variance",
+    "taille d'effet",
+    "test d'hypothèses",
+    "comparaison de moyennes",
+    "modèle linéaire"
+  ],
+  "methods": [
+    "calcul de moyenne",
+    "calcul de variance",
+    "calcul des sommes de carrés",
+    "calcul de la statistique F",
+    "calcul de la taille d'effet (η²)",
+    "interprétation des résultats statistiques"
+  ],
+  "objects": [
+    "moyennes par groupe",
+    "variances par groupe",
+    "somme des carrés inter-groupe",
+    "somme des carrés intra-groupe",
+    "statistique F",
+    "taille d'effet (η²)"
+  ],
+  "content_hash": "b7611d20a1073ea57a28d549a92891a70621b89ddbaeaeb04a2671e499c790af",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:46:52.223Z"
+}

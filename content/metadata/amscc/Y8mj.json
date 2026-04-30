@@ -1,0 +1,27 @@
+{
+  "uuid": "Y8mj",
+  "source_path": "amscc/Y8mj.tex",
+  "summary": "L'exercice demande de déterminer des conditions sur un paramètre réel a pour qu'une matrice donnée soit symétrique définie positive, puis d'étudier la convergence de méthodes itératives (Jacobi et Gauss-Seidel) pour résoudre un système linéaire.",
+  "concepts": [
+    "matrice symétrique définie positive",
+    "valeurs propres",
+    "rayon spectral",
+    "convergence de méthodes itératives",
+    "méthode de Jacobi",
+    "méthode de Gauss-Seidel",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "calcul des valeurs propres",
+    "analyse du rayon spectral",
+    "conditions de convergence des méthodes itératives"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme caractéristique",
+    "système linéaire"
+  ],
+  "content_hash": "75fddf60d6552d5b64f8c4190abb88c796569cff29d1ec63162c7a4157eaa879",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:39:03.749Z"
+}

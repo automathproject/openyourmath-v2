@@ -1,0 +1,25 @@
+{
+  "uuid": "dl60",
+  "source_path": "exo7/16-L3/dl60.tex",
+  "summary": "L'exercice demande de calculer la transformée de Laplace d'une fonction en escalier définie par morceaux, puis d'étudier sa limite lorsque le paramètre ε tend vers 0.",
+  "concepts": [
+    "transformée de Laplace",
+    "fonction en escalier",
+    "limite de fonctions",
+    "fonction définie par morceaux",
+    "convergence simple"
+  ],
+  "methods": [
+    "calcul de transformée de Laplace",
+    "passage à la limite sous le signe d'intégrale",
+    "intégration par parties"
+  ],
+  "objects": [
+    "fonction F_ε",
+    "transformée de Laplace de F_ε",
+    "limite de transformée de Laplace"
+  ],
+  "content_hash": "98def934870407a9f87e3c7b8a10c6972aedfacb4db9e4e35231c06254e23f49",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:22:26.551Z"
+}

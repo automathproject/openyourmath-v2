@@ -1,0 +1,25 @@
+{
+  "uuid": "wjYQ",
+  "source_path": "exo7/7-L2/wjYQ.tex",
+  "summary": "Un candidat a révisé 60 sujets parmi 100. On tire au hasard 3 sujets. Calculer les probabilités que le candidat ait révisé 3, exactement 2 ou aucun des 3 sujets tirés.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi binomiale",
+    "combinaisons",
+    "probabilité conditionnelle",
+    "échantillonnage sans remise"
+  ],
+  "methods": [
+    "calcul de probabilités par dénombrement",
+    "utilisation des coefficients binomiaux",
+    "formule de la probabilité conditionnelle"
+  ],
+  "objects": [
+    "variable aléatoire de Bernoulli",
+    "ensemble de sujets révisés",
+    "tirage aléatoire sans remise"
+  ],
+  "content_hash": "513df38e6b704aaa49d254e09ade5fe9bc83e627ab2cfdc5b3e453e0b2554da0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:43:33.938Z"
+}

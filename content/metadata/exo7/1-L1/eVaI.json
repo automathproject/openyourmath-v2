@@ -1,0 +1,22 @@
+{
+  "uuid": "eVaI",
+  "source_path": "exo7/1-L1/eVaI.tex",
+  "summary": "Trouver les conditions sur les coefficients réels a, b, c pour que le polynôme X⁴ + aX² + bX + c soit divisible par X² + X + 1.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "polynôme divisible",
+    "polynôme nul",
+    "coefficient d'un polynôme"
+  ],
+  "methods": [
+    "division euclidienne",
+    "calcul du reste"
+  ],
+  "objects": [
+    "polynôme de degré 4",
+    "polynôme de degré 2"
+  ],
+  "content_hash": "d178fabdfce13000453f630f07bcb67d0cb6dedc8834d6b4ee22f6f6be1fe36c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:11:45.348Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "spfV",
+  "source_path": "exo7/13-L3/spfV.tex",
+  "summary": "L'exercice demande de démontrer qu'une solution d'une équation différentielle non linéaire du premier ordre peut s'exprimer sous forme implicite et de déterminer son intervalle de définition maximal, sous des hypothèses de continuité et de discrétion des zéros de g.",
+  "concepts": [
+    "équation différentielle non linéaire",
+    "solution maximale",
+    "forme implicite",
+    "continuité",
+    "discrétion des zéros",
+    "théorème de Cauchy-Lipschitz",
+    "existence et unicité des solutions"
+  ],
+  "methods": [
+    "analyse des zéros de la fonction g",
+    "intégration par séparation des variables",
+    "détermination de l'intervalle de définition maximal"
+  ],
+  "objects": [
+    "équation différentielle y' = f(x)g(y)",
+    "fonctions réelles continues f et g",
+    "intervalle de définition"
+  ],
+  "content_hash": "b11ced61021edf8bf4eeb390a943431a91e56dbab3132832e36fbbacd3abae5b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:47:43.633Z"
+}

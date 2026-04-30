@@ -1,0 +1,28 @@
+{
+  "uuid": "y3WJ",
+  "source_path": "exo7/2-L1/y3WJ.tex",
+  "summary": "On considère une suite réelle et sa suite des moyennes partielles. L'exercice demande de montrer que la convergence de la série des carrés des termes de la suite implique la convergence de la série des carrés des moyennes partielles, avec une majoration de la somme infinie.",
+  "concepts": [
+    "série numérique",
+    "suite numérique",
+    "moyenne partielle",
+    "inégalité de Cauchy-Schwarz",
+    "convergence de série",
+    "majoration"
+  ],
+  "methods": [
+    "majoration",
+    "inégalité de Cauchy-Schwarz",
+    "téléscopage",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite réelle",
+    "suite des moyennes partielles",
+    "somme partielle",
+    "série de termes positifs"
+  ],
+  "content_hash": "bfcbd5b96d29058c0f038f1bd854788a55cae8f2e922dc9b77815a859301d92c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:40:17.994Z"
+}

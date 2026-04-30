@@ -1,0 +1,27 @@
+{
+  "uuid": "wGOx",
+  "source_path": "exo7/2-L1/wGOx.tex",
+  "summary": "L'exercice définit deux suites récurrentes (uₙ) et (vₙ) et demande de montrer par récurrence que leurs termes sont strictement positifs, puis qu'elles sont décroissantes et convergent vers des limites ℓ et ℓ'. On doit enfin prouver que ℓℓ' = 0 et déterminer ces limites.",
+  "concepts": [
+    "suite récurrente",
+    "récurrence",
+    "convergence de suite",
+    "limite de suite",
+    "inégalité",
+    "monotonie"
+  ],
+  "methods": [
+    "récurrence forte",
+    "étude de la monotonie",
+    "calcul de limite",
+    "analyse de la différence de suites"
+  ],
+  "objects": [
+    "suite numérique",
+    "terme de suite",
+    "limite de suite"
+  ],
+  "content_hash": "ba71dfb68ce14ed7edc4511de57c4b7fc0b8c32b1482b734141658b19b61c0df",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:41:20.123Z"
+}

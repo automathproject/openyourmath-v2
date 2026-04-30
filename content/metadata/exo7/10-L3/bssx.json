@@ -1,0 +1,28 @@
+{
+  "uuid": "bssx",
+  "source_path": "exo7/10-L3/bssx.tex",
+  "summary": "Trouver tous les polynômes irréductibles de degrés 2 et 3 à coefficients dans le corps ℤ₃, puis décomposer trois polynômes donnés en facteurs irréductibles dans ℤ₃[X].",
+  "concepts": [
+    "polynôme irréductible",
+    "corps fini",
+    "polynôme unitaire",
+    "factorisation",
+    "racine d'un polynôme",
+    "algèbre linéaire sur un corps"
+  ],
+  "methods": [
+    "recherche des racines",
+    "factorisation par racines",
+    "vérification de l'irréductibilité",
+    "décomposition en facteurs irréductibles"
+  ],
+  "objects": [
+    "polynôme de degré 2",
+    "polynôme de degré 3",
+    "polynôme de degré 4",
+    "corps ℤ₃"
+  ],
+  "content_hash": "37adae8094b8c18f745484280f43767a142cf0178f5c4c32ab172aaa58b14634",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:24:34.629Z"
+}

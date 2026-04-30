@@ -1,0 +1,26 @@
+{
+  "uuid": "QFsj",
+  "source_path": "exo7/1-L1/QFsj.tex",
+  "summary": "On considère un polynôme à coefficients entiers P et deux entiers strictement positifs a et b premiers entre eux. On sait que P(a/b) = 0. L'exercice demande de montrer deux propriétés : d'abord que a divise le coefficient constant de P, puis que pour tout entier k, a - kb divise P(k).",
+  "concepts": [
+    "polynôme à coefficients entiers",
+    "racine rationnelle",
+    "divisibilité dans Z",
+    "coefficient constant",
+    "propriété de divisibilité"
+  ],
+  "methods": [
+    "substitution de variable",
+    "utilisation du théorème des racines rationnelles",
+    "factorisation de polynôme"
+  ],
+  "objects": [
+    "polynôme P",
+    "entiers a et b",
+    "coefficient constant",
+    "entier k"
+  ],
+  "content_hash": "ffad0b56e96685de989de8c9a5b1df90222f1fe7bf685419912a02c22fb374f7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:56:18.921Z"
+}

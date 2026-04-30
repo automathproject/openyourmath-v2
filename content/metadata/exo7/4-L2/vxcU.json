@@ -1,0 +1,28 @@
+{
+  "uuid": "vxcU",
+  "source_path": "exo7/4-L2/vxcU.tex",
+  "summary": "Résoudre un système différentiel linéaire homogène d'équations à coefficients constants. La matrice A est donnée explicitement.",
+  "concepts": [
+    "système différentiel linéaire",
+    "matrice de coefficients",
+    "réduction d'endomorphisme",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "espace vectoriel"
+  ],
+  "methods": [
+    "diagonalisation",
+    "calcul des valeurs propres",
+    "calcul des vecteurs propres",
+    "résolution par exponentielle de matrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "système différentiel",
+    "vecteur solution"
+  ],
+  "content_hash": "b6d48f5580f0276753b49d959de518d9e3921b37ebe4563434d54eaf1e73859f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:26:27.502Z"
+}

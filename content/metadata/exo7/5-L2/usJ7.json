@@ -1,0 +1,23 @@
+{
+  "uuid": "usJ7",
+  "source_path": "exo7/5-L2/usJ7.tex",
+  "summary": "On considère une suite de matrices inversibles convergeant vers une matrice A. On montre que A est inversible et que son inverse est la limite des inverses des matrices de la suite.",
+  "concepts": [
+    "convergence de matrices",
+    "inversibilité",
+    "limite de suite de matrices",
+    "continuité de l'application inverse"
+  ],
+  "methods": [
+    "passage à la limite",
+    "utilisation de la continuité de l'application inverse"
+  ],
+  "objects": [
+    "suite de matrices",
+    "matrice inversible",
+    "limite de suite de matrices"
+  ],
+  "content_hash": "69bbdec4dd7bbe353ba44973674c666e985a041654d0212d34e0465c3b62d9e0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:14:43.117Z"
+}

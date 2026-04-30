@@ -1,0 +1,26 @@
+{
+  "uuid": "5GAP",
+  "source_path": "exo7/11-L3/5GAP.tex",
+  "summary": "Trouver les extrema de la fonction φ(x,y,z)=xy sur l'ellipsoïde de ℝ³ définie par x²+y²+3z²=1.",
+  "concepts": [
+    "extremum de fonction",
+    "sous-variété",
+    "optimisation sous contrainte",
+    "géométrie différentielle",
+    "fonction de plusieurs variables",
+    "méthode des multiplicateurs de Lagrange"
+  ],
+  "methods": [
+    "méthode des multiplicateurs de Lagrange",
+    "calcul de gradient",
+    "résolution de système d'équations"
+  ],
+  "objects": [
+    "fonction de trois variables",
+    "ellipsoïde",
+    "contrainte d'équation"
+  ],
+  "content_hash": "e1a74799caff727d63d987781547120875cbc371e47cb1aac3f4aa76e42e5ce6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:12:47.135Z"
+}

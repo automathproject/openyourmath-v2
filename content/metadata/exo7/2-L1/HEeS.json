@@ -1,0 +1,25 @@
+{
+  "uuid": "HEeS",
+  "source_path": "exo7/2-L1/HEeS.tex",
+  "summary": "L'exercice étudie la convergence de la suite moyenne v_n = (u_1 + ... + u_n)/n en fonction de la convergence de la suite u_n. Il demande de prouver deux implications et de fournir un contre-exemple.",
+  "concepts": [
+    "convergence de suite",
+    "limite de suite",
+    "suite moyenne",
+    "théorème de la limite des moyennes",
+    "divergence de suite"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la limite",
+    "construction de contre-exemple"
+  ],
+  "objects": [
+    "suite réelle",
+    "suite moyenne",
+    "limite finie ou infinie"
+  ],
+  "content_hash": "d9a8a3a16a65ca81e2f152f6ca7a3f64495e89753f914419620e1be40e932bd6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:10:28.420Z"
+}

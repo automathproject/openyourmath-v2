@@ -1,0 +1,27 @@
+{
+  "uuid": "RyaI",
+  "source_path": "exo7/5-L2/RyaI.tex",
+  "summary": "Calculer le logarithme matriciel d'une matrice identité plus un multiple d'une matrice donnée, en déterminant le domaine de convergence de la série associée.",
+  "concepts": [
+    "polynôme caractéristique",
+    "décomposition spectrale",
+    "série entière de matrices",
+    "convergence de série entière",
+    "logarithme matriciel"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "division euclidienne de polynômes",
+    "développement en série entière",
+    "évaluation en racines"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme caractéristique",
+    "série entière de matrices",
+    "logarithme matriciel"
+  ],
+  "content_hash": "e357e0548c2458f7dd94b47d31631c12021edf9dc635acdf965f9333d336e147",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:56:09.295Z"
+}

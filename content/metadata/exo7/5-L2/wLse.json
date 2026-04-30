@@ -1,0 +1,27 @@
+{
+  "uuid": "wLse",
+  "source_path": "exo7/5-L2/wLse.tex",
+  "summary": "L'exercice demande de montrer l'existence d'un entier naturel p₀ à partir duquel la somme partielle d'une série de matrices A^k/k! est inversible dans GLₙ(ℝ).",
+  "concepts": [
+    "suite de matrices",
+    "série de matrices",
+    "exponentielle de matrice",
+    "déterminant",
+    "continuité du déterminant",
+    "limite de matrices",
+    "matrice inversible"
+  ],
+  "methods": [
+    "limite de suites de matrices",
+    "continuité du déterminant",
+    "exponentielle de matrice"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "somme partielle de série de matrices",
+    "déterminant de matrice"
+  ],
+  "content_hash": "76083f57f81d8f0746b460693121a1a5db5c7bc2dbdcc07c30ab1e136db84c0b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:05:42.471Z"
+}

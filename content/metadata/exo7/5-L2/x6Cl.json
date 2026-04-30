@@ -1,0 +1,30 @@
+{
+  "uuid": "x6Cl",
+  "source_path": "exo7/5-L2/x6Cl.tex",
+  "summary": "On étudie la régularité et le développement en série entière de la fonction fα(x) = Σ e^{-n^α} e^{inx}. L'exercice demande de montrer que fα est C∞ et de déterminer une condition nécessaire et suffisante sur α pour que fα soit développable en série entière sur ℝ.",
+  "concepts": [
+    "développement en série entière",
+    "fonction C∞",
+    "permutation de séries",
+    "convergence absolue",
+    "rayon de convergence",
+    "fonction analytique",
+    "dérivation terme à terme"
+  ],
+  "methods": [
+    "dérivation terme à terme",
+    "permutation de sommes",
+    "estimation de termes généraux",
+    "analyse asymptotique",
+    "étude de la convergence"
+  ],
+  "objects": [
+    "fonction de variable complexe",
+    "série entière",
+    "dérivées successives",
+    "terme général de série"
+  ],
+  "content_hash": "a3423977223a9d321a43136d78c711dd9ab8ab4d8ef501198a322625d3f02765",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:56:32.438Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "bPo3",
+  "source_path": "amscc/bPo3.tex",
+  "summary": "L'exercice demande de comparer deux probabilités liées à une variable aléatoire uniforme sur [0,1] : la probabilité que sa racine carrée soit inférieure à 0.4 et la probabilité que son carré soit supérieur à 0.7.",
+  "concepts": [
+    "variable aléatoire uniforme",
+    "densité de probabilité",
+    "fonction de densité",
+    "calcul de probabilité",
+    "intégrale de fonction constante",
+    "comparaison de probabilités"
+  ],
+  "methods": [
+    "calcul d'intégrale",
+    "transformation de variable",
+    "comparaison numérique"
+  ],
+  "objects": [
+    "variable aléatoire uniforme",
+    "racine carrée",
+    "carré",
+    "intervalle de probabilité"
+  ],
+  "content_hash": "b0f2d949b676c66f2ab9e68ae60eadefc69b4db8d55c501ca422599ec656d25f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:57:05.754Z"
+}

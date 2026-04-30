@@ -1,0 +1,27 @@
+{
+  "uuid": "UhL0",
+  "source_path": "exo7/5-L2/UhL0.tex",
+  "summary": "L'exercice demande de montrer que la fonction h, définie comme une intégrale de convolution de deux fonctions périodiques continues, est elle-même périodique et continue, puis de calculer ses coefficients de Fourier exponentiels en fonction de ceux de f et g. Ensuite, pour g fixée, il s'agit de déterminer les valeurs et vecteurs propres de l'opérateur f ↦ h.",
+  "concepts": [
+    "convolution",
+    "périodicité",
+    "continuité",
+    "coefficient de Fourier exponentiel",
+    "valeur propre",
+    "vecteur propre",
+    "opérateur linéaire"
+  ],
+  "methods": [
+    "calcul de coefficients de Fourier",
+    "analyse spectrale",
+    "diagonalisation"
+  ],
+  "objects": [
+    "fonction périodique",
+    "coefficient de Fourier",
+    "opérateur linéaire"
+  ],
+  "content_hash": "7da03928ecdfaa7ebd4739c1d63d8a7ea55aef2ca545d521282d9fa17e98c25f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:25:05.067Z"
+}

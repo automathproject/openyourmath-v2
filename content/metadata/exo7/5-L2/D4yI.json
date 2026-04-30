@@ -1,0 +1,28 @@
+{
+  "uuid": "D4yI",
+  "source_path": "exo7/5-L2/D4yI.tex",
+  "summary": "L'exercice demande de calculer le coefficient de Fourier c₀ d'une fonction périodique C², puis les coefficients c''ₙ de sa dérivée seconde. En utilisant la formule de Parseval, il faut démontrer que tous les coefficients cₙ sont nuls pour |n| ≥ 2, et en déduire la forme explicite de la fonction.",
+  "concepts": [
+    "séries de Fourier",
+    "coefficient de Fourier",
+    "formule de Parseval",
+    "fonction périodique",
+    "dérivée seconde",
+    "théorème de Parseval",
+    "fonction trigonométrique"
+  ],
+  "methods": [
+    "calcul des coefficients de Fourier",
+    "application de la formule de Parseval",
+    "détermination de la forme explicite d'une fonction"
+  ],
+  "objects": [
+    "fonction 2π-périodique",
+    "coefficient de Fourier",
+    "dérivée seconde",
+    "fonction cosinus"
+  ],
+  "content_hash": "9ac58ce339e8acc3c1fab4284f490111044852562998957093b236ced04481cd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:20:01.055Z"
+}

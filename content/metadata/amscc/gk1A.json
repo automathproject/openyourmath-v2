@@ -1,0 +1,28 @@
+{
+  "uuid": "gk1A",
+  "source_path": "amscc/gk1A.tex",
+  "summary": "L'exercice demande de calculer des intervalles de confiance pour l'espérance d'une variable aléatoire normale à partir d'un échantillon de 7 observations de prix. On utilise d'abord les estimateurs classiques pour l'espérance et l'écart-type, puis on construit des intervalles de confiance symétriques aux seuils de 90% et 99% en utilisant la loi de Student.",
+  "concepts": [
+    "loi normale",
+    "intervalle de confiance",
+    "loi de Student",
+    "estimation ponctuelle",
+    "variance corrigée",
+    "distribution échantillonnage"
+  ],
+  "methods": [
+    "estimation par la moyenne échantillonnale",
+    "estimation de la variance corrigée",
+    "calcul des intervalles de confiance",
+    "utilisation de la loi de Student"
+  ],
+  "objects": [
+    "échantillon de taille 7",
+    "espérance",
+    "écart-type",
+    "intervalle de confiance"
+  ],
+  "content_hash": "dfb739a8651b4f11e440203d46803ccbfc1d154523d67f2f21c47c4166c53993",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:48:49.476Z"
+}

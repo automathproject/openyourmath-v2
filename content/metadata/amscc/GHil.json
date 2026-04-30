@@ -1,0 +1,31 @@
+{
+  "uuid": "GHil",
+  "source_path": "amscc/GHil.tex",
+  "summary": "L'exercice étudie une variable aléatoire réelle à densité paramétrée et des suites de variables aléatoires indépendantes et identiquement distribuées. Il demande de vérifier les conditions pour que la fonction soit une densité, de calculer des espérances, des covariances et de montrer la convergence en loi.",
+  "concepts": [
+    "densité de probabilité",
+    "espérance mathématique",
+    "loi de Bernoulli",
+    "loi binomiale",
+    "covariance",
+    "convergence en loi",
+    "variable aléatoire indépendante"
+  ],
+  "methods": [
+    "intégration",
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "calcul de la covariance",
+    "utilisation de la loi binomiale"
+  ],
+  "objects": [
+    "variable aléatoire à densité",
+    "suite de variables aléatoires",
+    "espérance",
+    "covariance",
+    "loi binomiale"
+  ],
+  "content_hash": "cb70c9ed34d7608b1728d3981812fb9ed155c017a7d4db8332cac8b74a1c4a32",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:43:08.321Z"
+}

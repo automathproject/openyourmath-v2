@@ -1,0 +1,26 @@
+{
+  "uuid": "4Y00",
+  "source_path": "exo7/4-L2/4Y00.tex",
+  "summary": "On étudie un endomorphisme f_t défini comme l'identité plus un multiple d'un endomorphisme f idempotent. On cherche les valeurs de t pour lesquelles f_t est inversible et on calcule son inverse.",
+  "concepts": [
+    "endomorphisme",
+    "idempotence",
+    "inversibilité",
+    "polynôme annulateur",
+    "algèbre linéaire",
+    "espace vectoriel de dimension finie"
+  ],
+  "methods": [
+    "calcul de polynôme annulateur",
+    "inversibilité d'endomorphisme",
+    "calcul d'inverse"
+  ],
+  "objects": [
+    "endomorphisme f_t",
+    "endomorphisme f",
+    "espace vectoriel E"
+  ],
+  "content_hash": "97749a7da174a757817e3c3c509938097bd9f417b1d0fbb6b252ffaff83485f1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:13:31.799Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "SBeE",
+  "source_path": "exo7/8-L3/SBeE.tex",
+  "summary": "L'exercice étudie les sous-groupes distingués dans les groupes linéaires GL(2,k) et SL(2,k) sur un corps k. Il demande de démontrer l'existence d'un scalaire non nul a avec a²≠1, d'analyser des cas particuliers, et de déterminer les sous-groupes distingués de ces groupes.",
+  "concepts": [
+    "sous-groupe distingué",
+    "automorphisme intérieur",
+    "transvection",
+    "groupe linéaire général",
+    "groupe spécial linéaire",
+    "conjugaison",
+    "corps fini"
+  ],
+  "methods": [
+    "conjugaison d'éléments",
+    "analyse de cas particuliers",
+    "détermination de sous-groupes distingués",
+    "calcul matriciel"
+  ],
+  "objects": [
+    "matrice de GL(2,k)",
+    "transvection",
+    "automorphisme intérieur",
+    "sous-groupe distingué"
+  ],
+  "content_hash": "567822fd62ab40f36154fea6f85de3046d7acd68114900db4c99b72870240a4a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:58:44.665Z"
+}

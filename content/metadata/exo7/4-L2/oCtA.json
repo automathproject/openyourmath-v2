@@ -1,0 +1,25 @@
+{
+  "uuid": "oCtA",
+  "source_path": "exo7/4-L2/oCtA.tex",
+  "summary": "L'exercice demande de prouver que toute matrice compagnon est semblable à sa transposée, puis d'en déduire que pour toute matrice carrée M, M et sa transposée sont semblables.",
+  "concepts": [
+    "semblance de matrices",
+    "matrice compagnon",
+    "transposée d'une matrice",
+    "réduction de Jordan",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "semblance par blocs",
+    "utilisation de la structure de Jordan",
+    "comparaison des polynômes caractéristiques"
+  ],
+  "objects": [
+    "matrice compagnon",
+    "matrice carrée",
+    "transposée d'une matrice"
+  ],
+  "content_hash": "0257416b70e95e68e48c332fa679c9a5b05d8ae9b95156bbec2436c12e52479e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:14:21.463Z"
+}

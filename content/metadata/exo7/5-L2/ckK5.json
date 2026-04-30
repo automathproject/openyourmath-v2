@@ -1,0 +1,30 @@
+{
+  "uuid": "ckK5",
+  "source_path": "exo7/5-L2/ckK5.tex",
+  "summary": "L'exercice demande de vérifier qu'une application linéaire définie par le produit vectoriel appartient à l'espace des matrices antisymétriques, puis de montrer la réciproque : toute matrice antisymétrique est définie par un produit vectoriel avec un vecteur unique.",
+  "concepts": [
+    "produit vectoriel",
+    "matrice antisymétrique",
+    "endomorphisme",
+    "application linéaire",
+    "isomorphisme",
+    "dimension d'un espace vectoriel",
+    "injectivité",
+    "bilinéarité"
+  ],
+  "methods": [
+    "vérification de l'antisymétrie",
+    "utilisation de la dimension d'un espace vectoriel",
+    "démonstration d'injectivité",
+    "linéarité"
+  ],
+  "objects": [
+    "vecteur de ℝ³",
+    "application linéaire",
+    "matrice antisymétrique",
+    "espace vectoriel ℝ³"
+  ],
+  "content_hash": "bb09df8b81f1037b6e24424ade56880e884436f652386cc9f36c660eda5caa58",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:58:40.521Z"
+}

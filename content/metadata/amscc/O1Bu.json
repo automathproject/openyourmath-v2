@@ -1,0 +1,27 @@
+{
+  "uuid": "O1Bu",
+  "source_path": "amscc/O1Bu.tex",
+  "summary": "Calcul des probabilités de sortie d'un réseau multiclasse à l'aide de la fonction softmax, puis évaluation de la perte d'entropie croisée catégorielle pour une classe cible donnée.",
+  "concepts": [
+    "fonction softmax",
+    "entropie croisée catégorielle",
+    "probabilités de sortie",
+    "perte de classification",
+    "normalisation exponentielle"
+  ],
+  "methods": [
+    "calcul de probabilités conditionnelles",
+    "approximation numérique",
+    "vérification de somme de probabilités",
+    "évaluation de perte"
+  ],
+  "objects": [
+    "scores bruts",
+    "probabilités de classe",
+    "perte CCE",
+    "réseau multiclasse"
+  ],
+  "content_hash": "df6ff105bee14c0be324ead3ba01af4a61c9159083ccc2bd2122d8a86916631f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:33:35.519Z"
+}

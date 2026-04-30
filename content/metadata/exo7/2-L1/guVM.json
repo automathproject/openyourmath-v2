@@ -1,0 +1,29 @@
+{
+  "uuid": "guVM",
+  "source_path": "exo7/2-L1/guVM.tex",
+  "summary": "On étudie la suite définie par une relation de récurrence et on montre qu'elle converge vers √a. L'exercice demande de prouver des propriétés intermédiaires (inégalité, décroissance) et d'appliquer la méthode à un calcul numérique de √10.",
+  "concepts": [
+    "suite récurrente",
+    "convergence",
+    "limite de suite",
+    "inégalité",
+    "récurrence",
+    "majoration"
+  ],
+  "methods": [
+    "réduction au même dénominateur",
+    "calcul de quotient",
+    "passage à la limite",
+    "raisonnement par récurrence",
+    "calcul numérique itératif"
+  ],
+  "objects": [
+    "suite (u_n)",
+    "relation de récurrence",
+    "limite ℓ",
+    "erreur d'approximation"
+  ],
+  "content_hash": "c2f9dc169409bab4a10334444488f3927e1601631356e089a75b7e908706d0e7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:28:47.505Z"
+}

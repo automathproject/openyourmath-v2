@@ -1,0 +1,29 @@
+{
+  "uuid": "1Wjh",
+  "source_path": "exo7/15-L3/1Wjh.tex",
+  "summary": "L'exercice demande de vérifier la continuité d'une fonction F et la contractance d'un opérateur T, puis d'étudier les propriétés d'un point fixe h de T. On doit montrer une inégalité par récurrence et prouver l'existence d'une suite avec une limite infinie.",
+  "concepts": [
+    "théorème du point fixe de Banach",
+    "continuité uniforme",
+    "contractance",
+    "point fixe",
+    "limite de suite",
+    "dérivabilité"
+  ],
+  "methods": [
+    "vérification de la continuité",
+    "calcul de la constante de Lipschitz",
+    "récurrence",
+    "étude de la limite"
+  ],
+  "objects": [
+    "fonction continue",
+    "opérateur contractant",
+    "point fixe",
+    "suite numérique",
+    "fonction nulle part dérivable"
+  ],
+  "content_hash": "257b94ac5db69c7cb577c700a64cb0254011d436a5e084aa2c2a8f8a12470c86",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:29:32.929Z"
+}

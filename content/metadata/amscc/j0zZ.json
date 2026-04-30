@@ -1,0 +1,32 @@
+{
+  "uuid": "j0zZ",
+  "source_path": "amscc/j0zZ.tex",
+  "summary": "L'exercice modélise la répartition de cuivre et de zinc dans un alliage par un couple de variables aléatoires (X,Y) à densité conjointe donnée. Il demande de calculer la constante de normalisation, de déterminer les lois marginales, de vérifier l'indépendance des variables et de trouver la loi de la somme X+Y.",
+  "concepts": [
+    "densité conjointe",
+    "loi marginale",
+    "indépendance de variables aléatoires",
+    "théorème d'identification",
+    "changement de variables",
+    "intégrale multiple",
+    "fonction indicatrice"
+  ],
+  "methods": [
+    "normalisation de densité",
+    "intégration par parties",
+    "calcul de densité marginale",
+    "vérification d'indépendance",
+    "changement de variable pour intégrale double",
+    "calcul de Jacobien"
+  ],
+  "objects": [
+    "variable aléatoire à densité",
+    "densité conjointe",
+    "loi marginale",
+    "variable aléatoire somme",
+    "domaine d'intégration"
+  ],
+  "content_hash": "227081ad89296f82602d10aba8b85e90b22ceb745bd4a5c285a425b9a7d9e7dc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:03:04.352Z"
+}

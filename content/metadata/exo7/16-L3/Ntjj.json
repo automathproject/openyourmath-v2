@@ -1,0 +1,31 @@
+{
+  "uuid": "Ntjj",
+  "source_path": "exo7/16-L3/Ntjj.tex",
+  "summary": "L'exercice demande de montrer qu'une intégrale complexe impliquant un polynôme et une fonction rationnelle est indépendante du rayon R pour R>1, puis d'en déduire sa valeur constante en faisant tendre R vers l'infini. Enfin, il s'agit de prouver une relation entre le coefficient dominant du polynôme et une somme sur les racines de l'unité.",
+  "concepts": [
+    "théorème des résidus",
+    "intégrale complexe",
+    "polynôme",
+    "racines de l'unité",
+    "convergence d'intégrale",
+    "fonction méromorphe",
+    "singularités isolées"
+  ],
+  "methods": [
+    "calcul de résidus",
+    "développement en série de Laurent",
+    "évaluation en points particuliers",
+    "limite d'intégrale",
+    "somme sur les racines de l'unité"
+  ],
+  "objects": [
+    "polynôme de degré 4",
+    "fonction rationnelle",
+    "intégrale sur un cercle",
+    "racines de l'unité",
+    "coefficient dominant"
+  ],
+  "content_hash": "ac17a7784ac66f8bcf85fc532fdc99b413b1646492c113a5184e829060e2c1f4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:13:47.420Z"
+}

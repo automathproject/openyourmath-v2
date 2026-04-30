@@ -1,0 +1,26 @@
+{
+  "uuid": "h9oy",
+  "source_path": "exo7/8-L3/h9oy.tex",
+  "summary": "L'exercice demande de démontrer que deux groupes de matrices 3x3 triangulaires supérieures sont résolubles : le groupe de Heisenberg avec des coefficients diagonaux égaux à 1, et le groupe des matrices triangulaires supérieures inversibles avec des coefficients diagonaux non nuls.",
+  "concepts": [
+    "groupe résoluble",
+    "sous-groupe dérivé",
+    "suite de sous-groupes dérivés",
+    "matrice triangulaire supérieure",
+    "groupe de Heisenberg",
+    "inversibilité"
+  ],
+  "methods": [
+    "calcul du sous-groupe dérivé",
+    "construction de la suite de sous-groupes dérivés",
+    "vérification de la résolution"
+  ],
+  "objects": [
+    "groupe de matrices 3x3",
+    "groupe de Heisenberg",
+    "groupe des matrices triangulaires supérieures inversibles"
+  ],
+  "content_hash": "7440dade3d5b7e2dd93bceb8a839b949cd01f5b7133a581fe8bdc4bcb8a5ab39",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:02:25.591Z"
+}

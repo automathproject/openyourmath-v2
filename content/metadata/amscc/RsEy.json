@@ -1,0 +1,26 @@
+{
+  "uuid": "RsEy",
+  "source_path": "amscc/RsEy.tex",
+  "summary": "L'exercice demande de déterminer la loi d'une variable aléatoire transformée linéairement à partir d'une loi normale centrée réduite, puis de calculer sa fonction caractéristique. Il s'applique ensuite à une somme de variables aléatoires indépendantes et identiquement distribuées suivant une loi normale pour en déduire la loi de la somme et calculer une probabilité.",
+  "concepts": [
+    "loi normale",
+    "fonction caractéristique",
+    "variable aléatoire indépendante",
+    "variable aléatoire identiquement distribuée",
+    "loi de la somme de variables aléatoires",
+    "transformation linéaire de variable aléatoire"
+  ],
+  "methods": [
+    "calcul de fonction caractéristique",
+    "détermination de la loi d'une transformation linéaire",
+    "approximation gaussienne"
+  ],
+  "objects": [
+    "variable aléatoire normale centrée réduite",
+    "somme de variables aléatoires",
+    "fonction caractéristique"
+  ],
+  "content_hash": "52653b96b6012299ee81dc92f9a481cbd5511c438d2a23316853dc3e7cca41af",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:50:01.048Z"
+}

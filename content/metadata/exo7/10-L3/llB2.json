@@ -1,0 +1,27 @@
+{
+  "uuid": "llB2",
+  "source_path": "exo7/10-L3/llB2.tex",
+  "summary": "Montrer que deux paires de groupes ne sont pas isomorphes : (ℤ, +) et (ℤ[X], +) ; (ℚ, +) et (ℚ[i], +).",
+  "concepts": [
+    "isomorphisme de groupes",
+    "groupe additif",
+    "groupe des polynômes",
+    "corps des nombres complexes",
+    "corps des nombres rationnels",
+    "structure algébrique"
+  ],
+  "methods": [
+    "comparaison des propriétés algébriques",
+    "analyse des éléments inversibles",
+    "étude des sous-groupes"
+  ],
+  "objects": [
+    "groupe (ℤ, +)",
+    "groupe (ℤ[X], +)",
+    "groupe (ℚ, +)",
+    "groupe (ℚ[i], +)"
+  ],
+  "content_hash": "212a25b6e6be48ac849ebab9cb6f2efcf5540afd468bce86cf8039bd8b6629ce",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:10:06.704Z"
+}

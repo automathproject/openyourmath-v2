@@ -1,0 +1,26 @@
+{
+  "uuid": "tqAb",
+  "source_path": "exo7/1-L1/tqAb.tex",
+  "summary": "Décomposer une fraction rationnelle en éléments simples. La fraction donnée est de degré 5 au numérateur et de degré 5 au dénominateur, avec des facteurs irréductibles cubiques et quadratiques.",
+  "concepts": [
+    "fraction rationnelle",
+    "décomposition en éléments simples",
+    "division euclidienne de polynômes",
+    "changement de variable",
+    "polynôme irréductible"
+  ],
+  "methods": [
+    "division suivant les puissances décroissantes",
+    "division suivant les puissances croissantes",
+    "identification des coefficients par multiplication partielle"
+  ],
+  "objects": [
+    "fraction rationnelle",
+    "polynôme de degré 5",
+    "facteurs irréductibles",
+    "coefficients de décomposition"
+  ],
+  "content_hash": "4a1537648f0ebfd325bdbeaac59179c2e4c3a92189dabebcf124fd066ad1cef6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:28:07.467Z"
+}

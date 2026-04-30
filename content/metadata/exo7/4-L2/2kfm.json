@@ -1,0 +1,27 @@
+{
+  "uuid": "2kfm",
+  "source_path": "exo7/4-L2/2kfm.tex",
+  "summary": "Soit un espace vectoriel de dimension finie et un endomorphisme diagonalisable. Pour une valeur propre, on définit le sous-espace propre et l'image de l'endomorphisme moins la valeur propre fois l'identité. L'exercice demande de montrer que la somme directe de ces deux sous-espaces est égale à l'espace vectoriel entier.",
+  "concepts": [
+    "endomorphisme diagonalisable",
+    "valeur propre",
+    "sous-espace propre",
+    "somme directe d'espaces vectoriels",
+    "image d'un endomorphisme",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "décomposition spectrale",
+    "utilisation du noyau et de l'image",
+    "propriétés des endomorphismes diagonalisables"
+  ],
+  "objects": [
+    "espace vectoriel de dimension finie",
+    "endomorphisme",
+    "sous-espace propre",
+    "image d'un endomorphisme"
+  ],
+  "content_hash": "55d121be836efbb27912c921adf79eb6662e0af068e041a0e56a3f2728816a60",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:11:07.417Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "td25",
+  "source_path": "amscc/td25.tex",
+  "summary": "L'exercice étudie les propriétés statistiques de l'estimateur du maximum $X^{(n)}$ pour un paramètre $\\theta$ dans un modèle de densité exponentielle. Il demande d'analyser la convergence, la consistance, la construction d'intervalles de confiance et de tests d'hypothèses pour ce paramètre.",
+  "concepts": [
+    "densité de probabilité",
+    "échantillon i.i.d.",
+    "estimateur du maximum",
+    "convergence en probabilité",
+    "consistance forte",
+    "intervalle de confiance",
+    "test d'hypothèses"
+  ],
+  "methods": [
+    "calcul de la densité de la variable maximale",
+    "calcul des moments",
+    "étude de la convergence",
+    "construction d'intervalle de confiance",
+    "calcul de la p-valeur"
+  ],
+  "objects": [
+    "variable aléatoire maximale",
+    "paramètre $\\theta$",
+    "échantillon i.i.d.",
+    "estimateur $X^{(n)}$",
+    "intervalle de confiance"
+  ],
+  "content_hash": "ec5e91fb8cc006e2f868182c79e3a3b85c83c84a59f2918c4f5e970b5da65982",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:58:12.395Z"
+}

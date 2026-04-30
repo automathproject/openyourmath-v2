@@ -1,0 +1,26 @@
+{
+  "uuid": "ANSC",
+  "source_path": "exo7/1-L1/ANSC.tex",
+  "summary": "L'exercice demande de démontrer que le polynôme minimal d'un nombre algébrique est irréductible dans ℚ[X] et que ce nombre est une racine simple de ce polynôme. Il aborde aussi le cas où la multiplicité d'une racine dépasse la moitié du degré du polynôme.",
+  "concepts": [
+    "nombre algébrique",
+    "polynôme minimal",
+    "racine simple",
+    "irréductibilité dans ℚ[X]",
+    "multiplicité d'une racine",
+    "polynôme unitaire"
+  ],
+  "methods": [
+    "décomposition en facteurs irréductibles",
+    "analyse de la multiplicité des racines",
+    "utilisation du polynôme minimal"
+  ],
+  "objects": [
+    "polynôme à coefficients rationnels",
+    "racine complexe",
+    "polynôme unitaire"
+  ],
+  "content_hash": "289552a383e8688318ee853ddf992ecad1b22d0063343af9cddc7904ba6f26d4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:39:13.731Z"
+}

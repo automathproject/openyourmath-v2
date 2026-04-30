@@ -1,0 +1,25 @@
+{
+  "uuid": "Xe3n",
+  "source_path": "exo7/4-L2/Xe3n.tex",
+  "summary": "L'exercice demande de déterminer le commutant d'une matrice 3x3 donnée, c'est-à-dire l'ensemble des matrices qui commutent avec elle.",
+  "concepts": [
+    "matrice diagonalisable",
+    "valeurs propres",
+    "commutant d'une matrice",
+    "polynôme annulateur",
+    "algèbre des endomorphismes"
+  ],
+  "methods": [
+    "diagonalisation",
+    "calcul des valeurs propres",
+    "construction de l'algèbre des polynômes"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "commutant",
+    "polynôme en une matrice"
+  ],
+  "content_hash": "cd9d00b1957585c5f6d8d51abd868a9d1d6e158172591c0c8f2e4de15115dd3a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:53:10.901Z"
+}

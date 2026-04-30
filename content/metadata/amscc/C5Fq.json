@@ -1,0 +1,31 @@
+{
+  "uuid": "C5Fq",
+  "source_path": "amscc/C5Fq.tex",
+  "summary": "L'exercice demande de calculer les lois marginales d'un couple de variables aléatoires (X,Y) suivant une loi normale centrée réduite, de déterminer leur indépendance, puis d'étudier la loi de la distance R au centre. Il aborde aussi la simulation de cette loi normale bidimensionnelle.",
+  "concepts": [
+    "loi normale centrée réduite",
+    "densité de probabilité",
+    "loi marginale",
+    "indépendance de variables aléatoires",
+    "loi de Rayleigh",
+    "loi exponentielle",
+    "loi uniforme",
+    "changement de variables polaires"
+  ],
+  "methods": [
+    "intégration",
+    "changement de variables",
+    "identification de densité",
+    "simulation de variables aléatoires"
+  ],
+  "objects": [
+    "variable aléatoire bidimensionnelle",
+    "distance au centre",
+    "coordonnées polaires",
+    "fonction de répartition",
+    "densité de probabilité"
+  ],
+  "content_hash": "bdb1c0b85f439d7b6d08b099f49ff3a87ecc5c34eb051845e98c93c3823d76c4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:42:24.139Z"
+}

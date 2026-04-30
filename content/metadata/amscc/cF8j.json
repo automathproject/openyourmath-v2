@@ -1,0 +1,29 @@
+{
+  "uuid": "cF8j",
+  "source_path": "amscc/cF8j.tex",
+  "summary": "L'exercice étudie l'empilement de deux couches de convolution successives avec des noyaux 3x3, padding nul et stride 1. Il demande de calculer la taille des sorties intermédiaires et finales, le champ réceptif, et de comparer l'efficacité paramétrique avec une unique convolution 5x5.",
+  "concepts": [
+    "couche de convolution",
+    "champ réceptif",
+    "taille de sortie",
+    "nombre de paramètres",
+    "architecture de réseau de neurones",
+    "stride",
+    "padding"
+  ],
+  "methods": [
+    "calcul de taille de sortie",
+    "calcul de champ réceptif",
+    "comparaison d'architectures",
+    "comptage de paramètres"
+  ],
+  "objects": [
+    "noyau de convolution",
+    "image d'entrée",
+    "sortie de couche",
+    "pixel de sortie"
+  ],
+  "content_hash": "df270ac9c7dd551df1369dc005cc2a748912efab22b3d91b4953e125796e1dd4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:33:51.412Z"
+}

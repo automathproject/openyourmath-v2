@@ -1,0 +1,29 @@
+{
+  "uuid": "Eei5",
+  "source_path": "exo7/7-L2/Eei5.tex",
+  "summary": "L'exercice demande de déterminer le nombre d'essais nécessaires pour estimer la durée de vie moyenne d'un dispositif électronique avec une marge d'erreur maximale de ±50 heures puis ±20 heures, pour un niveau de confiance de 95%. La durée de vie suit une loi normale avec un écart-type connu.",
+  "concepts": [
+    "intervalle de confiance",
+    "loi normale",
+    "marge d'erreur",
+    "niveau de confiance",
+    "estimation ponctuelle",
+    "variable aléatoire normale",
+    "standardisation"
+  ],
+  "methods": [
+    "calcul de la taille d'échantillon",
+    "approximation gaussienne",
+    "standardisation",
+    "calcul de l'intervalle de confiance"
+  ],
+  "objects": [
+    "durée de vie moyenne",
+    "écart-type connu",
+    "variable aléatoire normale",
+    "intervalle de confiance"
+  ],
+  "content_hash": "ccbb37efbd0605d45e29af4bb65fe878f8ea03918a65b2da4e5ea69ee3a75a8d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:38:17.112Z"
+}

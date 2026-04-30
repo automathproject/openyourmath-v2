@@ -1,0 +1,26 @@
+{
+  "uuid": "xSwR",
+  "source_path": "exo7/1-L1/xSwR.tex",
+  "summary": "Calculer l'inverse d'une matrice particulière dont les coefficients sont des coefficients binomiaux. La matrice est définie par des coefficients binomiaux disposés de manière spécifique.",
+  "concepts": [
+    "matrice inversible",
+    "endomorphisme",
+    "base canonique",
+    "formule du binôme de Newton",
+    "automorphisme",
+    "réciproque d'un endomorphisme"
+  ],
+  "methods": [
+    "méthode de Gauss",
+    "calcul de la matrice inverse",
+    "utilisation de la formule du binôme de Newton"
+  ],
+  "objects": [
+    "matrice de coefficients binomiaux",
+    "endomorphisme de l'espace des polynômes",
+    "base canonique de ℝₙ[X]"
+  ],
+  "content_hash": "17a2e0981c3009e3987deeada947ad29da640fcb3a044010a7ebc0df02790956",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:21:28.396Z"
+}

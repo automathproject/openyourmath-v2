@@ -1,0 +1,25 @@
+{
+  "uuid": "oh0f",
+  "source_path": "exo7/4-L2/oh0f.tex",
+  "summary": "L'exercice demande de prouver l'équivalence entre la diagonalisabilité d'une matrice M et celle de l'application φ_M définie par N ↦ MN, en utilisant le polynôme minimal.",
+  "concepts": [
+    "diagonalisabilité",
+    "polynôme minimal",
+    "endomorphisme",
+    "matrice carrée",
+    "algèbre linéaire",
+    "réduction d'endomorphisme"
+  ],
+  "methods": [
+    "utilisation du polynôme minimal",
+    "analyse de la diagonalisabilité"
+  ],
+  "objects": [
+    "matrice M",
+    "application linéaire φ_M",
+    "polynôme minimal"
+  ],
+  "content_hash": "75bbd1ec0bc9982d9caefd8c23f7ec511eb6355b904428ac114104962a96e99b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:14:49.373Z"
+}

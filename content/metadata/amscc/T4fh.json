@@ -1,0 +1,25 @@
+{
+  "uuid": "T4fh",
+  "source_path": "amscc/T4fh.tex",
+  "summary": "L'exercice demande de calculer l'espérance et l'espérance du carré d'une variable binomiale, puis d'analyser le biais de deux estimateurs de la probabilité au carré dans un cadre de Bernoulli.",
+  "concepts": [
+    "loi binomiale",
+    "espérance mathématique",
+    "variance",
+    "biais d'un estimateur",
+    "estimateur sans biais"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "calcul du biais"
+  ],
+  "objects": [
+    "variable binomiale",
+    "estimateur",
+    "espérance du carré"
+  ],
+  "content_hash": "f3330a4034ebdef9bc9f1c3020129562bb4bd68b62e5814ee282ba06509b1713",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:42:26.889Z"
+}

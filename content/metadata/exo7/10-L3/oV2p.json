@@ -1,0 +1,25 @@
+{
+  "uuid": "oV2p",
+  "source_path": "exo7/10-L3/oV2p.tex",
+  "summary": "Trouver le PGCD de deux polynômes donnés dans les anneaux Z/3Z[x] et Z/5Z[x].",
+  "concepts": [
+    "PGCD de polynômes",
+    "anneaux de polynômes",
+    "algèbre sur un corps fini",
+    "division euclidienne des polynômes",
+    "algèbre linéaire",
+    "théorie des nombres"
+  ],
+  "methods": [
+    "algorithme d'Euclide étendu",
+    "réduction modulo un nombre premier",
+    "calcul de PGCD"
+  ],
+  "objects": [
+    "polynômes à coefficients entiers",
+    "anneaux Z/3Z[x] et Z/5Z[x]"
+  ],
+  "content_hash": "ab89127ce865fac37f5805c519316ca07776fcb55776e00f9e2fa60c9a0fe463",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:26:11.672Z"
+}

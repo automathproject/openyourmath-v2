@@ -1,0 +1,25 @@
+{
+  "uuid": "8sF7",
+  "source_path": "exo7/1-L1/8sF7.tex",
+  "summary": "Montrer qu'un polynôme donné est divisible par un autre polynôme donné et calculer le quotient pour une valeur spécifique de n.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "polynôme unitaire",
+    "racine d'un polynôme",
+    "algèbre des polynômes",
+    "division polynomiale"
+  ],
+  "methods": [
+    "division euclidienne",
+    "calcul de quotient",
+    "vérification de divisibilité"
+  ],
+  "objects": [
+    "polynôme (X-1)^(n+2) + X^(2n+1)",
+    "polynôme X^2 - X + 1",
+    "quotient de division"
+  ],
+  "content_hash": "a26b522aecb60f5fd5eea07369ae2dc65b9cb6836a3a10f66b0a845f1eb394a0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:37:46.271Z"
+}

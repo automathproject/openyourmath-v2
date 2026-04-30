@@ -1,0 +1,28 @@
+{
+  "uuid": "5OY1",
+  "source_path": "exo7/10-L3/5OY1.tex",
+  "summary": "L'exercice demande de montrer qu'un polynôme donné est primitif et irréductible dans l'anneau des polynômes à coefficients dans un anneau d'entiers algébriques, mais pas irréductible dans l'anneau des polynômes à coefficients dans le corps de fractions associé. Il interroge aussi sur la cohérence avec les théorèmes du cours.",
+  "concepts": [
+    "polynôme primitif",
+    "polynôme irréductible",
+    "anneau d'entiers algébriques",
+    "corps de fractions",
+    "réductibilité dans les extensions de corps",
+    "théorème de Gauss"
+  ],
+  "methods": [
+    "critère d'irréductibilité d'Eisenstein",
+    "analyse des facteurs dans les extensions de corps",
+    "comparaison des propriétés dans différents anneaux"
+  ],
+  "objects": [
+    "polynôme $X^2 - X + 1$",
+    "anneau $A = \\mathbb{Z}[i \\sqrt{3}]$",
+    "corps de fractions $K$",
+    "anneau $A[X]$",
+    "anneau $K[X]$"
+  ],
+  "content_hash": "0e1c5e9eae18f98191056366646b26b58df5b46fb82657273318c65662782455",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:18:57.458Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "gsn9",
+  "source_path": "amscc/gsn9.tex",
+  "summary": "L'exercice demande de vérifier qu'une fonction donnée définit bien une densité de probabilité pour une variable aléatoire, puis de déterminer sa fonction de répartition. Il utilise ensuite cette fonction de répartition pour calculer une probabilité spécifique.",
+  "concepts": [
+    "densité de probabilité",
+    "fonction de répartition",
+    "variable aléatoire continue",
+    "intégrale de fonction",
+    "loi exponentielle",
+    "calcul de probabilité"
+  ],
+  "methods": [
+    "intégration",
+    "calcul de primitive",
+    "évaluation d'intégrale impropre",
+    "utilisation de la fonction de répartition"
+  ],
+  "objects": [
+    "fonction densité",
+    "fonction de répartition",
+    "variable aléatoire exponentielle",
+    "intégrale"
+  ],
+  "content_hash": "5bba4aec393a7e2cafe1e9601e1dc52ae48e7b804cd304835291519d71c7336b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:01:12.984Z"
+}

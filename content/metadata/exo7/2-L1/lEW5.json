@@ -1,0 +1,25 @@
+{
+  "uuid": "lEW5",
+  "source_path": "exo7/2-L1/lEW5.tex",
+  "summary": "L'exercice étudie une suite $u_n$ définie par une racine imbriquée et demande de montrer que la suite $\\frac{u_n}{\\sqrt{n}}$ est bornée, puis de déterminer ses limites aux infinis.",
+  "concepts": [
+    "suite numérique",
+    "bornes supérieures et inférieures",
+    "limite de suite",
+    "inégalité de comparaison",
+    "convergence"
+  ],
+  "methods": [
+    "encadrement par récurrence",
+    "comparaison de suites",
+    "calcul de limite"
+  ],
+  "objects": [
+    "suite $u_n$",
+    "suite $\\frac{u_n}{\\sqrt{n}}$",
+    "suite $u_n - \\sqrt{n}$"
+  ],
+  "content_hash": "5f70c8067f6b53c5a360058df9d190626894c2ec4a477684d015bd0fd39afe00",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:32:34.664Z"
+}

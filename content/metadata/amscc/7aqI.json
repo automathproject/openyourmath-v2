@@ -1,0 +1,28 @@
+{
+  "uuid": "7aqI",
+  "source_path": "amscc/7aqI.tex",
+  "summary": "L'exercice demande de vérifier, avec un intervalle de confiance de 95%, si les distributions des résultats du test de Binet chez des enfants américains et allemands sont cohérentes avec celle obtenue par Binet chez des enfants français.",
+  "concepts": [
+    "test du chi-deux",
+    "hypothèse nulle",
+    "erreur de première espèce",
+    "loi du chi-deux",
+    "intervalle de confiance",
+    "fréquences relatives",
+    "distribution de probabilité"
+  ],
+  "methods": [
+    "calcul des effectifs théoriques",
+    "comparaison des effectifs observés et théoriques",
+    "test d'adéquation du chi-deux"
+  ],
+  "objects": [
+    "tableau de fréquences",
+    "effectifs observés",
+    "effectifs théoriques",
+    "variable aléatoire de décision"
+  ],
+  "content_hash": "140b3d77db5135e0edda20c944b565a4d69c3a8ba79b288067dcb3625acc5343",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:34:04.656Z"
+}

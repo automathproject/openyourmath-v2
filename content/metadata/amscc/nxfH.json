@@ -1,0 +1,33 @@
+{
+  "uuid": "nxfH",
+  "source_path": "amscc/nxfH.tex",
+  "summary": "L'exercice étudie la convergence de suites de variables aléatoires définies à partir d'une variable aléatoire à densité paramétrée. Il demande de calculer l'espérance et la variance de cette variable, puis d'analyser la convergence en probabilité et en loi de différentes suites construites à partir de moyennes empiriques.",
+  "concepts": [
+    "variable aléatoire à densité",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "loi faible des grands nombres",
+    "convergence en probabilité",
+    "théorème central limite",
+    "convergence en loi",
+    "loi normale"
+  ],
+  "methods": [
+    "calcul d'espérance par intégration",
+    "calcul de variance",
+    "standardisation",
+    "application de la loi faible des grands nombres",
+    "application du théorème central limite",
+    "propriété de Slutsky"
+  ],
+  "objects": [
+    "variable aléatoire à densité",
+    "suite de variables aléatoires indépendantes",
+    "moyenne empirique",
+    "suite de variables aléatoires convergente en probabilité",
+    "suite de variables aléatoires convergente en loi"
+  ],
+  "content_hash": "58ea56b28c8e3ea21a6430b7498ea4264630f9b93de1d25d5c0d0ca746c106d8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:06:07.816Z"
+}

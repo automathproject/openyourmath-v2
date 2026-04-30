@@ -1,0 +1,25 @@
+{
+  "uuid": "JHnB",
+  "source_path": "amscc/JHnB.tex",
+  "summary": "L'exercice demande de déterminer quel poison parmi trois a la plus grande probabilité d'avoir été ingéré, sachant qu'un signe clinique spécifique est observé chez le patient.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "formule de Bayes",
+    "probabilité totale",
+    "événements indépendants",
+    "théorème de la probabilité conditionnelle"
+  ],
+  "methods": [
+    "calcul de probabilités conditionnelles",
+    "application de la formule des probabilités totales",
+    "comparaison de probabilités"
+  ],
+  "objects": [
+    "probabilités a priori",
+    "probabilités conditionnelles",
+    "événements"
+  ],
+  "content_hash": "7b2b9e1ecd323b69796122507a4124e60f1e8bbc15c89272bc8f59e3b5fee65a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:24:06.235Z"
+}

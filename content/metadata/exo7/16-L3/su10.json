@@ -1,0 +1,32 @@
+{
+  "uuid": "su10",
+  "source_path": "exo7/16-L3/su10.tex",
+  "summary": "L'exercice demande de prouver l'inversion locale d'une fonction holomorphe en utilisant le théorème de Rouché, sans recourir au théorème d'inversion locale dans ℝ². On étudie une fonction f holomorphe en 0 avec f(0) = 0 et f'(0) = 1, pour montrer l'existence d'un voisinage où f est bijective et que son inverse est holomorphe.",
+  "concepts": [
+    "théorème de Rouché",
+    "inversion locale",
+    "fonction holomorphe",
+    "continuité",
+    "bijectivité",
+    "théorème des résidus",
+    "développement en série de Taylor",
+    "convergence uniforme"
+  ],
+  "methods": [
+    "développement en série de Taylor",
+    "estimation des restes",
+    "théorème de Rouché",
+    "analyse des singularités",
+    "continuité de l'inverse"
+  ],
+  "objects": [
+    "fonction holomorphe",
+    "voisinage d'un point",
+    "disque complexe",
+    "inverse d'une fonction",
+    "équation f(z) = α"
+  ],
+  "content_hash": "9b3642b140697a47460c8d88316ee07cf18d4dd5f892e46f93891f2fc182b011",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:24:45.541Z"
+}

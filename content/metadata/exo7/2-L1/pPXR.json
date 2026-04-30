@@ -1,0 +1,31 @@
+{
+  "uuid": "pPXR",
+  "source_path": "exo7/2-L1/pPXR.tex",
+  "summary": "L'exercice demande de prouver une équivalence asymptotique pour une suite réelle de limite nulle, en utilisant des relations entre les termes de la suite. Il explore aussi un contre-exemple où une condition similaire ne conduit pas à la même conclusion.",
+  "concepts": [
+    "suite équivalente",
+    "suite négligeable",
+    "limite de suite",
+    "équivalence asymptotique",
+    "relation de récurrence",
+    "analyse asymptotique",
+    "majoration"
+  ],
+  "methods": [
+    "définition de suite équivalente",
+    "définition de suite négligeable",
+    "téléscopage",
+    "majoration",
+    "choix de epsilon",
+    "construction de suite auxiliaire"
+  ],
+  "objects": [
+    "suite réelle",
+    "suite auxiliaire",
+    "terme général de suite",
+    "relation de récurrence"
+  ],
+  "content_hash": "9706cc24425f04aeff057e93e0170b285a5c3d98fc4ba05677a8847d48faf9ee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:35:28.005Z"
+}

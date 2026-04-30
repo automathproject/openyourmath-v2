@@ -1,0 +1,28 @@
+{
+  "uuid": "ckKK",
+  "source_path": "exo7/13-L3/ckKK.tex",
+  "summary": "L'exercice demande de prouver qu'une matrice A est semi-simple et que son polynôme caractéristique est une puissance de λ² + b², sous l'hypothèse que toutes les solutions de l'équation différentielle x' = Ax sont périodiques de même période.",
+  "concepts": [
+    "semi-simplicité d'une matrice",
+    "polynôme caractéristique",
+    "équation différentielle linéaire",
+    "périodicité des solutions",
+    "valeurs propres complexes",
+    "diagonalisation",
+    "système linéaire à coefficients constants"
+  ],
+  "methods": [
+    "analyse des valeurs propres",
+    "étude de la périodicité des solutions",
+    "diagonalisation de matrices"
+  ],
+  "objects": [
+    "matrice carrée réelle",
+    "équation différentielle linéaire",
+    "solutions périodiques",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "ab862be20d555d83a150b75b0e38ff02afc9e3b3abd867aa2661a3d42c5a14ca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:13:50.097Z"
+}

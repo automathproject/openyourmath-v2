@@ -1,0 +1,29 @@
+{
+  "uuid": "nEP1",
+  "source_path": "exo7/10-L3/nEP1.tex",
+  "summary": "L'exercice demande de déterminer si plusieurs idéaux de l'anneau ℤ[x] sont principaux, premiers ou maximaux. Il s'agit d'analyser des idéaux engendrés par des polynômes et des entiers.",
+  "concepts": [
+    "idéal principal",
+    "idéal premier",
+    "idéal maximal",
+    "polynôme irréductible",
+    "quotient d'anneaux",
+    "anneau intègre",
+    "corps"
+  ],
+  "methods": [
+    "réduction modulo un nombre premier",
+    "analyse du degré des polynômes",
+    "factorisation dans ℤ₅[x]",
+    "utilisation de la division euclidienne"
+  ],
+  "objects": [
+    "idéal de ℤ[x]",
+    "polynôme à coefficients entiers",
+    "quotient d'anneaux",
+    "élément irréductible"
+  ],
+  "content_hash": "a1a9b5125406a2b5f7adbe80198c3be13a424262bb5b3102a59cead41b7019bd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:26:00.540Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "Vss4",
+  "source_path": "amscc/Vss4.tex",
+  "summary": "L'exercice demande de déterminer la loi d'une variable aléatoire représentant le nombre de pièces fausses dans un échantillon de 1000 pièces d'un euro, puis d'utiliser le théorème central limite pour approcher cette loi par une loi normale et estimer certaines probabilités.",
+  "concepts": [
+    "loi binomiale",
+    "espérance",
+    "écart-type",
+    "inégalité de Bienaymé-Tchebychev",
+    "théorème central limite",
+    "loi normale",
+    "standardisation"
+  ],
+  "methods": [
+    "calcul de l'espérance et de l'écart-type d'une loi binomiale",
+    "application de l'inégalité de Bienaymé-Tchebychev",
+    "approximation par la loi normale",
+    "standardisation"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "somme de variables aléatoires indépendantes",
+    "loi normale centrée réduite",
+    "variable aléatoire standardisée"
+  ],
+  "content_hash": "2313795ac0e223d46845f638bdceb9fb7efcfade92a6616b43bad4db9727451a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:52:06.794Z"
+}

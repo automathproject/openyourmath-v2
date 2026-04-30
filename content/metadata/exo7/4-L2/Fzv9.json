@@ -1,0 +1,32 @@
+{
+  "uuid": "Fzv9",
+  "source_path": "exo7/4-L2/Fzv9.tex",
+  "summary": "L'exercice étudie la commutation de deux matrices M et A dans Mₙ(ℝ), où M a n valeurs propres distinctes. Il demande de montrer que tout vecteur propre de M est aussi vecteur propre de A, puis d'établir une relation polynomiale entre les valeurs propres de M et celles de A.",
+  "concepts": [
+    "matrices commutatives",
+    "valeurs propres distinctes",
+    "vecteurs propres",
+    "déterminant de Vandermonde",
+    "système de Cramer",
+    "diagonalisation",
+    "polynôme annulateur",
+    "matrice de passage"
+  ],
+  "methods": [
+    "récurrence",
+    "calcul de déterminant",
+    "résolution de système linéaire",
+    "diagonalisation de matrice",
+    "utilisation de la matrice de passage"
+  ],
+  "objects": [
+    "matrices M et A",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrices diagonales M' et A'",
+    "polynôme en valeurs propres"
+  ],
+  "content_hash": "6af528fe7e663708455ec0e649f9a70c948818da679b4fd7274c09fcc0c866db",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:29:34.017Z"
+}

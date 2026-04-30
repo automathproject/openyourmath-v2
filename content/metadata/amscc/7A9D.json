@@ -1,0 +1,34 @@
+{
+  "uuid": "7A9D",
+  "source_path": "amscc/7A9D.tex",
+  "summary": "L'exercice étudie les propriétés de la loi de Gumbel, notamment sa densité et sa fonction de répartition. Il demande de calculer des limites, de vérifier que la densité est bien normalisée, de transformer une variable exponentielle en variable de Gumbel, et d'étudier la convergence de suites de variables aléatoires liées à des maxima.",
+  "concepts": [
+    "loi de Gumbel",
+    "fonction de répartition",
+    "densité de probabilité",
+    "variable aléatoire exponentielle",
+    "convergence en loi",
+    "fonction de survie",
+    "limite de suite de fonctions",
+    "indépendance de variables aléatoires"
+  ],
+  "methods": [
+    "calcul de limites",
+    "intégration par parties",
+    "transformation de variable",
+    "calcul de fonction de répartition",
+    "dérivation de fonction de répartition",
+    "convergence simple de fonctions"
+  ],
+  "objects": [
+    "fonction de répartition G(x)",
+    "densité de probabilité g(x)",
+    "variable aléatoire exponentielle X",
+    "variable aléatoire Z = -ln(X)",
+    "suite de variables aléatoires M_n",
+    "suite de variables aléatoires Z_n"
+  ],
+  "content_hash": "f9387c80e98187dfb93d4dfdef197b25c571103d0d9ead63a6467492983d4b4a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:39:32.568Z"
+}

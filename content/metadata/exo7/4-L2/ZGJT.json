@@ -1,0 +1,26 @@
+{
+  "uuid": "ZGJT",
+  "source_path": "exo7/4-L2/ZGJT.tex",
+  "summary": "Calculer la puissance d'une matrice carrée et vérifier une relation polynomiale entre cette matrice et l'identité. En déduire l'inversibilité de la matrice et exprimer son inverse.",
+  "concepts": [
+    "polynôme annulateur",
+    "inversibilité d'une matrice",
+    "relation de récurrence matricielle",
+    "matrice identité",
+    "calcul de puissance matricielle"
+  ],
+  "methods": [
+    "calcul de produit matriciel",
+    "vérification d'une relation polynomiale",
+    "détermination de l'inverse d'une matrice"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme annulateur",
+    "matrice identité",
+    "inverse d'une matrice"
+  ],
+  "content_hash": "6e95aec59c87e57da12d5121b5894ca0d531d602dc976a38ed2e79d9717a6f91",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:55:16.812Z"
+}

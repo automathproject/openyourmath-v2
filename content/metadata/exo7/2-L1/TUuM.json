@@ -1,0 +1,25 @@
+{
+  "uuid": "TUuM",
+  "source_path": "exo7/2-L1/TUuM.tex",
+  "summary": "L'exercice demande de déterminer les limites de deux suites : la première est une fraction où le numérateur est n élevé à la puissance ln(n) et le dénominateur est ln(n) élevé à la puissance n, et la seconde est la racine n-ième de n au carré.",
+  "concepts": [
+    "limite de suite",
+    "croissance comparée",
+    "fonction logarithme",
+    "fonction exponentielle",
+    "comparaison asymptotique"
+  ],
+  "methods": [
+    "changement de variable",
+    "approximation logarithmique",
+    "comparaison de termes dominants"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction composée",
+    "racine n-ième"
+  ],
+  "content_hash": "0c7624d62a2790e2fc68419bc3b6a1347bb54aee8064bee584cb9946b69cfb0b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:19:11.698Z"
+}

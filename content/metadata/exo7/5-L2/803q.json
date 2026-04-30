@@ -1,0 +1,26 @@
+{
+  "uuid": "803q",
+  "source_path": "exo7/5-L2/803q.tex",
+  "summary": "On considère une série entière de rayon R>0. L'exercice demande de prouver une égalité entre une somme de termes |a_n|²r²n et une intégrale de |f(re^(iθ))|² sur [0,2π].",
+  "concepts": [
+    "série entière",
+    "rayon de convergence",
+    "fonction complexe",
+    "intégrale de fonction complexe",
+    "module d'une fonction complexe",
+    "formule de Parseval"
+  ],
+  "methods": [
+    "développement en série entière",
+    "intégration complexe",
+    "utilisation de la formule de Parseval"
+  ],
+  "objects": [
+    "série entière f(z)",
+    "fonction complexe f",
+    "intégrale sur le cercle de rayon r"
+  ],
+  "content_hash": "e679a1a84c301bdc16c11c6a0f9fe743a4895fd8fc58ba96ebb5a6fc8de094ca",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:36:07.878Z"
+}

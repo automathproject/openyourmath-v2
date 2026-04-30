@@ -1,0 +1,26 @@
+{
+  "uuid": "PPoO",
+  "source_path": "amscc/PPoO.tex",
+  "summary": "L'exercice modélise un jeu de tirage de boules colorées dans une urne avec des gains/pertes associés. Il demande de construire un arbre pondéré des éventualités, d'établir la loi de probabilité de la variable aléatoire X représentant le gain, de calculer son espérance, puis de déterminer un gain modifiant l'espérance pour la rendre nulle.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "variable aléatoire discrète",
+    "arbre pondéré",
+    "espérance mathématique",
+    "loi de probabilité"
+  ],
+  "methods": [
+    "construction d'arbre pondéré",
+    "calcul de probabilités conditionnelles",
+    "détermination de la loi de probabilité",
+    "calcul d'espérance"
+  ],
+  "objects": [
+    "urne avec boules colorées",
+    "variable aléatoire de gain",
+    "arbre des éventualités"
+  ],
+  "content_hash": "33eed1e45071d10cb072dcf0f15814018467a7953178f3a0f37f165443505904",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:26:03.149Z"
+}

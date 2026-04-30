@@ -1,0 +1,26 @@
+{
+  "uuid": "sQpu",
+  "source_path": "exo7/1-L1/sQpu.tex",
+  "summary": "L'exercice demande de réaliser la division euclidienne du polynôme P = sin(a)X^n - sin(na)X + sin((n-1)a) par le polynôme Q = X^2 - 2Xcos(a) + 1, avec a réel donné.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "racines d'un polynôme",
+    "polynômes à coefficients réels",
+    "formules trigonométriques",
+    "somme géométrique complexe"
+  ],
+  "methods": [
+    "factorisation de polynômes",
+    "évaluation de polynômes",
+    "manipulation d'exponentielles complexes",
+    "somme de séries trigonométriques"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "polynôme de degré 2",
+    "racines complexes conjuguées"
+  ],
+  "content_hash": "9ddcb1bb948136c5aa9e6e17003893b2c778ed1b10bb46f54e36bb9e98ef5d71",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:26:50.170Z"
+}

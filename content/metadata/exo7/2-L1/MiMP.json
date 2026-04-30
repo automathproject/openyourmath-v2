@@ -1,0 +1,27 @@
+{
+  "uuid": "MiMP",
+  "source_path": "exo7/2-L1/MiMP.tex",
+  "summary": "Étude de la nature (convergence absolue, semi-convergence, divergence) d'une série numérique de terme général u_n = (1 + (-1)^n n^α) / n^{2α} selon les valeurs du paramètre réel α.",
+  "concepts": [
+    "série numérique",
+    "convergence absolue",
+    "critère spécial aux séries alternées",
+    "comparaison de termes généraux",
+    "équivalent asymptotique",
+    "semi-convergence"
+  ],
+  "methods": [
+    "comparaison de termes généraux",
+    "critère spécial aux séries alternées",
+    "étude de la limite du terme général",
+    "analyse des cas selon les valeurs du paramètre"
+  ],
+  "objects": [
+    "série numérique",
+    "terme général",
+    "paramètre réel"
+  ],
+  "content_hash": "b065328cde19cb59514173ec6199ffe52497f4ded0364093a77f7830c843d4ba",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:13:39.615Z"
+}

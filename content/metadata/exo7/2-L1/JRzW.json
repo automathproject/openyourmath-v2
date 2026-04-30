@@ -1,0 +1,25 @@
+{
+  "uuid": "JRzW",
+  "source_path": "exo7/2-L1/JRzW.tex",
+  "summary": "Étudier la convergence et le comportement asymptotique de deux suites définies par récurrence impliquant la fonction cosinus. La première suite est définie par u₀ = a et uₙ₊₁ = cos(uₙ), tandis que la seconde est définie par uₙ = cos itérée n fois.",
+  "concepts": [
+    "suite définie par récurrence",
+    "convergence d'une suite",
+    "limite d'une suite",
+    "fonction cosinus",
+    "point fixe"
+  ],
+  "methods": [
+    "étude de la monotonie",
+    "recherche de point fixe",
+    "analyse de la convergence"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction cosinus",
+    "point fixe"
+  ],
+  "content_hash": "7226f22ab2efec97459e361b1a831091721c058b63e1f4a06151224b9b87876a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:13:10.619Z"
+}

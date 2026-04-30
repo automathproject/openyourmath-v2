@@ -1,0 +1,31 @@
+{
+  "uuid": "f63Q",
+  "source_path": "amscc/f63Q.tex",
+  "summary": "Un joueur effectue plusieurs parties successives d'un jeu avec des probabilités de gain dépendant du résultat de la partie précédente. On demande de calculer les probabilités de gain et de perte pour les premières parties, puis d'établir une relation de récurrence et matricielle pour ces probabilités, et enfin d'étudier la convergence de la suite des probabilités de gain.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "formule des probabilités totales",
+    "suite géométrique",
+    "limite de suite",
+    "relation de récurrence",
+    "matrice de transition",
+    "probabilité de transition"
+  ],
+  "methods": [
+    "calcul de probabilités conditionnelles",
+    "décomposition de probabilités",
+    "résolution de relation de récurrence",
+    "calcul de limite de suite",
+    "manipulation matricielle"
+  ],
+  "objects": [
+    "probabilité de gain",
+    "probabilité de perte",
+    "suite de probabilités",
+    "matrice de transition",
+    "suite géométrique"
+  ],
+  "content_hash": "efa3be1b8199694a1f4ce6ddf8327e0acda8d5b8c1286b3d3d5fdf9ffcc2ed53",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:35:06.052Z"
+}

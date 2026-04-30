@@ -1,0 +1,31 @@
+{
+  "uuid": "R3ps",
+  "source_path": "amscc/R3ps.tex",
+  "summary": "L'exercice étudie une combinaison de deux variables aléatoires exponentielles indépendantes. Il demande de déterminer des probabilités simples, la densité conjointe du couple, puis la loi de la variable U = X/(X+Y) en utilisant des intégrales multiples et le théorème de Fubini.",
+  "concepts": [
+    "variable aléatoire exponentielle",
+    "indépendance",
+    "densité conjointe",
+    "fonction de répartition",
+    "loi uniforme",
+    "intégrale multiple",
+    "théorème de Fubini"
+  ],
+  "methods": [
+    "calcul de probabilités élémentaires",
+    "produit de densités",
+    "intégration par parties",
+    "changement de variable",
+    "détermination de la loi par la fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "densité conjointe",
+    "fonction de répartition",
+    "loi uniforme",
+    "intégrale double"
+  ],
+  "content_hash": "d351c87cf768f1bf28f095ae22a3570788728be274d607dc5622f08cf974d202",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:49:47.208Z"
+}

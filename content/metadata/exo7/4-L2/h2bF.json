@@ -1,0 +1,28 @@
+{
+  "uuid": "h2bF",
+  "source_path": "exo7/4-L2/h2bF.tex",
+  "summary": "L'exercice demande de montrer que l'application ρ, qui associe à un polynôme P son reste dans la division euclidienne par (X²-1), est linéaire, idempotente (ρ²=ρ) et diagonalisable, puis de déterminer une base de vecteurs propres pour ρ.",
+  "concepts": [
+    "application linéaire",
+    "division euclidienne",
+    "idempotence",
+    "diagonalisation",
+    "vecteurs propres",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "vérification des propriétés linéaires",
+    "calcul de l'image d'un polynôme",
+    "recherche de vecteurs propres",
+    "diagonalisation"
+  ],
+  "objects": [
+    "application linéaire",
+    "polynôme",
+    "base de vecteurs propres",
+    "espace vectoriel ℝ₄[X]"
+  ],
+  "content_hash": "c7e60fe4b9af55618c5a7a93d125365c626f8b9d71eed8e663345aff382f4ae9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:04:55.626Z"
+}

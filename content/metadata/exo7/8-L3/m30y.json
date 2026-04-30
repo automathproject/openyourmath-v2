@@ -1,0 +1,28 @@
+{
+  "uuid": "m30y",
+  "source_path": "exo7/8-L3/m30y.tex",
+  "summary": "Dans un groupe abélien, on considère deux éléments d'ordres finis et on étudie l'ordre de leur produit. L'exercice demande de montrer que cet ordre est fini et divise le ppcm des ordres des éléments, puis d'établir une égalité lorsque les ordres sont premiers entre eux.",
+  "concepts": [
+    "groupe abélien",
+    "ordre d'un élément",
+    "ppcm",
+    "pgcd",
+    "divisibilité",
+    "propriétés des groupes"
+  ],
+  "methods": [
+    "utilisation du ppcm",
+    "manipulation des ordres",
+    "démonstration par divisibilité",
+    "utilisation de la condition de coprimalité"
+  ],
+  "objects": [
+    "élément d'un groupe",
+    "ordre d'un élément",
+    "ppcm des ordres",
+    "produit d'éléments"
+  ],
+  "content_hash": "0d5bd9ee8cbb2565573b2a0af528f09ff3b9a2124292d6b7568f28c23f4172c1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:16:12.047Z"
+}

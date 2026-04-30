@@ -1,0 +1,34 @@
+{
+  "uuid": "1Lj3",
+  "source_path": "amscc/1Lj3.tex",
+  "summary": "Calculer l'espérance et la variance de variables aléatoires uniformes indépendantes, puis déterminer la densité de probabilité de leur maximum. Comparer les variances de deux transformations de ces variables.",
+  "concepts": [
+    "variable aléatoire uniforme",
+    "espérance mathématique",
+    "variance",
+    "fonction de répartition",
+    "densité de probabilité",
+    "maximum de variables aléatoires",
+    "linéarité de l'espérance",
+    "indépendance"
+  ],
+  "methods": [
+    "calcul d'espérance par intégration",
+    "calcul de variance",
+    "propriété de la fonction de répartition du maximum",
+    "détermination de densité par dérivation",
+    "transformation linéaire de variable aléatoire"
+  ],
+  "objects": [
+    "variable aléatoire uniforme",
+    "espérance",
+    "variance",
+    "fonction de répartition",
+    "densité de probabilité",
+    "maximum de variables aléatoires",
+    "variable aléatoire transformée"
+  ],
+  "content_hash": "bb895fcaaf3a39f8698998939c5162c12482a02cbdb1376f88c2cbe95180c8de",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:35:51.466Z"
+}

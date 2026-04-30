@@ -1,0 +1,33 @@
+{
+  "uuid": "DbLP",
+  "source_path": "exo7/1-L1/DbLP.tex",
+  "summary": "Montrer qu'un polynôme réel non négatif sur ℝ peut s'écrire comme la somme de deux carrés de polynômes réels. L'énoncé demande une décomposition spécifique du polynôme P.",
+  "concepts": [
+    "polynôme à coefficients réels",
+    "racine réelle",
+    "racine complexe",
+    "décomposition en facteurs irréductibles",
+    "polynôme unitaire",
+    "produit de polynômes",
+    "limite de polynôme",
+    "changement de signe"
+  ],
+  "methods": [
+    "analyse des racines réelles et complexes",
+    "décomposition en facteurs premiers",
+    "développement de polynômes complexes",
+    "identification de polynômes conjugués",
+    "construction explicite de polynômes R et S"
+  ],
+  "objects": [
+    "polynôme P",
+    "polynôme A",
+    "polynôme Q1",
+    "polynôme Q2",
+    "polynômes B et C",
+    "polynômes R et S"
+  ],
+  "content_hash": "0e4b282a4952f9c924122fb9437287517225648893e0ecfd11287373a13ec97a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:42:23.222Z"
+}

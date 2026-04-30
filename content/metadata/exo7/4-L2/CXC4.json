@@ -1,0 +1,23 @@
+{
+  "uuid": "CXC4",
+  "source_path": "exo7/4-L2/CXC4.tex",
+  "summary": "L'exercice demande d'expliquer pourquoi une matrice donnée n'est pas diagonalisable, sans effectuer de calculs explicites.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "diagonalisation",
+    "matrice inversible",
+    "endomorphisme"
+  ],
+  "methods": [
+    "analyse du polynôme caractéristique",
+    "argument par l'absurde"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "polynôme annulateur"
+  ],
+  "content_hash": "6a654e28ab6658fe5020ecb26e3076108ed2a6195459b44df28cae0ea909d79f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:23:35.157Z"
+}

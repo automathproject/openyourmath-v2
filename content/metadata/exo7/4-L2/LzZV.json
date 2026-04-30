@@ -1,0 +1,27 @@
+{
+  "uuid": "LzZV",
+  "source_path": "exo7/4-L2/LzZV.tex",
+  "summary": "Soit un endomorphisme f d'un espace vectoriel de dimension finie avec des conditions sur les dimensions des noyaux de f et f². On cherche à montrer qu'un entier k divisant d existe si f est une puissance k-ième d'un autre endomorphisme g.",
+  "concepts": [
+    "théorème du rang",
+    "noyau d'un endomorphisme",
+    "dimension d'un espace vectoriel",
+    "polynôme annulateur",
+    "réduction d'endomorphisme",
+    "espace vectoriel de dimension finie"
+  ],
+  "methods": [
+    "application du théorème du rang",
+    "analyse des noyaux itérés",
+    "relation de récurrence sur les dimensions"
+  ],
+  "objects": [
+    "endomorphisme",
+    "espace vectoriel",
+    "noyau",
+    "dimension"
+  ],
+  "content_hash": "b9acff2339bceae98d889824295f7aec13dbfb46c61f7d7d4b241386b65fb028",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:37:09.004Z"
+}

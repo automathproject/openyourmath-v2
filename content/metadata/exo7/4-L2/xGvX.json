@@ -1,0 +1,29 @@
+{
+  "uuid": "xGvX",
+  "source_path": "exo7/4-L2/xGvX.tex",
+  "summary": "L'exercice demande de montrer qu'une valeur propre spécifique d'une matrice donnée est (t-1) sans calculer son polynôme caractéristique, puis de déterminer l'espace propre associé et d'analyser la multiplicité de cette valeur propre pour en déduire le spectre de la matrice et sa diagonalisabilité.",
+  "concepts": [
+    "valeur propre",
+    "espace propre",
+    "multiplicité d'une valeur propre",
+    "spectre d'une matrice",
+    "diagonalisation",
+    "polynôme caractéristique",
+    "matrice symétrique"
+  ],
+  "methods": [
+    "recherche de vecteur propre",
+    "analyse de multiplicité",
+    "détermination du spectre",
+    "vérification de diagonalisabilité"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "valeur propre (t-1)",
+    "espace propre associé",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "6e376a9444b877b6c8ccffa9192d1e1fb57fbf264cff7bdb26b71e5df9acc1ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:28:39.999Z"
+}

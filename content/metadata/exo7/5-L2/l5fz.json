@@ -1,0 +1,27 @@
+{
+  "uuid": "l5fz",
+  "source_path": "exo7/5-L2/l5fz.tex",
+  "summary": "Dans un espace vectoriel normé complet, on considère une application f telle que f∘f est contractante. On demande de prouver l'existence et l'unicité d'un point fixe pour f.",
+  "concepts": [
+    "espace vectoriel normé",
+    "complétude",
+    "application contractante",
+    "point fixe",
+    "théorème du point fixe de Banach",
+    "suite convergente"
+  ],
+  "methods": [
+    "itération fonctionnelle",
+    "construction de suites",
+    "convergence de suites",
+    "unicité du point fixe"
+  ],
+  "objects": [
+    "espace vectoriel normé complet",
+    "application f",
+    "point fixe"
+  ],
+  "content_hash": "677fb0bf85d472f513dea19994729ea486f07632e2b38243ef8eebf219a7da1d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:06:28.549Z"
+}

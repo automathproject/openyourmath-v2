@@ -1,0 +1,26 @@
+{
+  "uuid": "I54c",
+  "source_path": "amscc/I54c.tex",
+  "summary": "L'exercice demande de calculer les valeurs normalisées de deux exemples à l'aide de la normalisation standard, puis d'analyser l'impact de l'oubli de cette normalisation sur le gradient et la vitesse de convergence de la descente de gradient.",
+  "concepts": [
+    "normalisation standard",
+    "gradient",
+    "descente de gradient",
+    "vitesse de convergence",
+    "écart-type",
+    "moyenne"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de gradient",
+    "analyse de convergence"
+  ],
+  "objects": [
+    "valeurs normalisées",
+    "gradient",
+    "taux d'apprentissage"
+  ],
+  "content_hash": "3a036822ca33ee124c57055292b47e8d11645a7402fe813c8a97257ae6940b65",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:32:51.718Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "485v",
+  "source_path": "exo7/4-L2/485v.tex",
+  "summary": "L'exercice demande de montrer que la limite d'une puissance croissante d'une matrice diagonalisable tend vers la matrice nulle, puis d'en déduire l'inversibilité d'une matrice et l'expression de son inverse comme série infinie.",
+  "concepts": [
+    "diagonalisation",
+    "rayon spectral",
+    "limite de matrices",
+    "inversibilité",
+    "série de matrices"
+  ],
+  "methods": [
+    "utilisation des valeurs propres",
+    "calcul de limite de suite de matrices",
+    "développement en série entière"
+  ],
+  "objects": [
+    "matrice diagonalisable",
+    "rayon spectral",
+    "matrice identité",
+    "série infinie de matrices"
+  ],
+  "content_hash": "0fe7bf0904e784324d707393cd1bfbb6c0d12cb69298c9d9d1d9459ff60bfa00",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:12:49.673Z"
+}

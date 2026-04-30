@@ -1,0 +1,27 @@
+{
+  "uuid": "SxwI",
+  "source_path": "exo7/7-L2/SxwI.tex",
+  "summary": "On modélise le nombre de pièces défectueuses dans un lot de 1000 par une variable aléatoire X. L'exercice demande de déterminer la loi de X, son espérance et son écart-type, puis d'approcher cette loi par une loi normale pour calculer une probabilité spécifique, avec et sans correction de continuité.",
+  "concepts": [
+    "loi binomiale",
+    "espérance d'une variable aléatoire",
+    "écart-type d'une variable aléatoire",
+    "approximation par la loi normale",
+    "correction de continuité",
+    "loi de Poisson"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de probabilités"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "espérance",
+    "écart-type",
+    "intervalle de confiance"
+  ],
+  "content_hash": "2cf6ee72e8ceffc9e6b238c5ac69216c228d6a8861b3c814d5064b495eb60a41",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:27:43.174Z"
+}

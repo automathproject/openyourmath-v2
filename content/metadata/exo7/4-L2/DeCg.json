@@ -1,0 +1,29 @@
+{
+  "uuid": "DeCg",
+  "source_path": "exo7/4-L2/DeCg.tex",
+  "summary": "L'exercice demande de calculer les puissances A² et A³ d'une matrice A, puis d'utiliser un polynôme annulateur pour montrer que A est diagonalisable. Il faut ensuite déterminer les valeurs propres de A et leurs multiplicités sans calculer explicitement le polynôme caractéristique.",
+  "concepts": [
+    "diagonalisation",
+    "polynôme annulateur",
+    "valeur propre",
+    "multiplicité d'une valeur propre",
+    "polynôme caractéristique",
+    "scindé à racines simples",
+    "rang d'une matrice"
+  ],
+  "methods": [
+    "calcul de puissances de matrice",
+    "recherche de polynôme annulateur",
+    "détermination des valeurs propres par résolution de systèmes",
+    "calcul de noyau d'un endomorphisme"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "bc12169aeb6342ce258a26b43874fbd4ac1aa68985aa0b485a9bb501c372dd84",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:24:56.146Z"
+}

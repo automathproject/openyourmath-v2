@@ -1,0 +1,26 @@
+{
+  "uuid": "0Uc2",
+  "source_path": "exo7/8-L3/0Uc2.tex",
+  "summary": "Soit G un p-groupe et H un sous-groupe distingué de G. Montrer que l'intersection de H avec le centre de G n'est pas réduite à l'élément neutre.",
+  "concepts": [
+    "sous-groupe distingué",
+    "action de groupe",
+    "orbite",
+    "point fixe",
+    "p-groupe",
+    "centre d'un groupe"
+  ],
+  "methods": [
+    "action par conjugaison",
+    "analyse des orbites",
+    "cardinal divisible par p"
+  ],
+  "objects": [
+    "p-groupe G",
+    "sous-groupe distingué H",
+    "centre Z(G)"
+  ],
+  "content_hash": "09097a268fe2b4aabcf48ed683da26c7ec571ac17e5363836f191bdfefe22e74",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:50:11.171Z"
+}

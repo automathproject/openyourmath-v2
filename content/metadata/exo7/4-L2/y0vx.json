@@ -1,0 +1,25 @@
+{
+  "uuid": "y0vx",
+  "source_path": "exo7/4-L2/y0vx.tex",
+  "summary": "L'exercice demande de prouver l'inversibilité de la matrice I-N, où N est une matrice nilpotente, et d'exprimer son inverse en fonction de N.",
+  "concepts": [
+    "matrice nilpotente",
+    "inversibilité",
+    "polynôme annulateur",
+    "propriété de nilpotence",
+    "matrice identité"
+  ],
+  "methods": [
+    "développement en série finie",
+    "vérification de l'inverse",
+    "utilisation de la nilpotence"
+  ],
+  "objects": [
+    "matrice nilpotente",
+    "matrice identité",
+    "inverse de matrice"
+  ],
+  "content_hash": "d48215b053b4c51524f1a6fe9920a10dae3682be49f3282bdc7fd794aa1b12a2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:29:34.796Z"
+}

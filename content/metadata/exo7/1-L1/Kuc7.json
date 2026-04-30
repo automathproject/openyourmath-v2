@@ -1,0 +1,30 @@
+{
+  "uuid": "Kuc7",
+  "source_path": "exo7/1-L1/Kuc7.tex",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité d'un polynôme P_n ∈ K[X] vérifiant P_n(X) + P_n(X+1) = 2X^n, puis d'établir des relations de récurrence et des propriétés de symétrie pour ces polynômes.",
+  "concepts": [
+    "polynôme",
+    "isomorphisme d'espaces vectoriels",
+    "relation de récurrence",
+    "décomposition sur une base",
+    "symétrie des polynômes",
+    "base de polynômes"
+  ],
+  "methods": [
+    "définition d'un isomorphisme",
+    "calcul de la dérivée",
+    "décomposition de Taylor",
+    "substitution de variable",
+    "vérification par récurrence"
+  ],
+  "objects": [
+    "polynôme P_n",
+    "polynôme P_n'",
+    "polynôme P_{n-1}",
+    "base (P_k)_{k ∈ ℕ}",
+    "polynôme Q_n"
+  ],
+  "content_hash": "cb0314b4d9096145307e2602277e3836b235a6d6c86aeca938bc34355651fc6e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:51:13.354Z"
+}

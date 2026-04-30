@@ -1,0 +1,31 @@
+{
+  "uuid": "VaWp",
+  "source_path": "exo7/16-L3/VaWp.tex",
+  "summary": "L'exercice demande de calculer des intégrales impropres de la forme ∫₀⁺∞ xⁿ R(xᵖ) dx en utilisant la méthode des résidus, avec une fonction R sans pôle réel. Il illustre cette technique sur des exemples concrets comme ∫₀⁺∞ x / (1 + x⁸) dx et ∫₀⁺∞ x / (1 + x²ᵖ) dx.",
+  "concepts": [
+    "intégrale impropre",
+    "théorème des résidus",
+    "fonction méromorphe",
+    "pôle complexe",
+    "lemme de Jordan",
+    "somme des résidus",
+    "intégration complexe"
+  ],
+  "methods": [
+    "intégration sur un contour",
+    "calcul des résidus",
+    "changement de variable",
+    "analyse des pôles complexes",
+    "évaluation des intégrales par résidus"
+  ],
+  "objects": [
+    "intégrale de fonction rationnelle",
+    "fonction méromorphe",
+    "contour d'intégration",
+    "pôles complexes",
+    "intégrale impropre"
+  ],
+  "content_hash": "21b30ce12a8c6f183d7b8adf0bcb3d1dfac5dee4233b6f65b2d59831b8d4e046",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:16:47.962Z"
+}

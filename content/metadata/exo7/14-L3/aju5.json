@@ -1,0 +1,32 @@
+{
+  "uuid": "aju5",
+  "source_path": "exo7/14-L3/aju5.tex",
+  "summary": "Cet exercice demande de démontrer le théorème de Plancherel en utilisant la transformée de Fourier et des propriétés d'intégration. On étudie des fonctions appartenant à l'intersection des espaces L¹ et L².",
+  "concepts": [
+    "transformée de Fourier",
+    "théorème de Plancherel",
+    "espace L¹",
+    "espace L²",
+    "produit scalaire",
+    "convergence dans L²",
+    "intégrale de Lebesgue",
+    "fonction gaussienne"
+  ],
+  "methods": [
+    "approximation par régularisation",
+    "passage à la limite sous l'intégrale",
+    "utilisation de la densité des fonctions régulières",
+    "calcul explicite de transformée de Fourier",
+    "continuité du produit scalaire dans L²"
+  ],
+  "objects": [
+    "fonction dans L¹ ∩ L²",
+    "transformée de Fourier",
+    "fonction gaussienne",
+    "produit scalaire",
+    "famille de fonctions sε"
+  ],
+  "content_hash": "67c19df882f21eeacf3c912b65ba25b8967e8ccf76a88b43a3e04133bc66a57b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:24:01.832Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "yADQ",
+  "source_path": "exo7/4-L2/yADQ.tex",
+  "summary": "Trouver les sous-espaces stables d'un endomorphisme de ℝ³ donné par une matrice carrée 3×3, dans trois cas distincts de matrices. L'exercice demande d'identifier les droites et plans stables pour chaque matrice.",
+  "concepts": [
+    "sous-espace stable",
+    "valeur propre",
+    "vecteur propre",
+    "diagonalisation",
+    "polynôme caractéristique",
+    "théorème de Cayley-Hamilton",
+    "endomorphisme diagonalisable"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "recherche de vecteurs propres",
+    "détermination de sous-espaces propres",
+    "application du théorème de Cayley-Hamilton"
+  ],
+  "objects": [
+    "matrice 3×3",
+    "sous-espace vectoriel",
+    "droite stable",
+    "plan stable",
+    "endomorphisme de ℝ³"
+  ],
+  "content_hash": "a4c1d24e983350215b1475affb6aaefe7aa9bb6d6ee2671195fb42873c869ed5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:30:17.557Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "YIXX",
+  "source_path": "amscc/YIXX.tex",
+  "summary": "L'exercice demande de déterminer la loi du couple (X+Y, X-Y) à partir de la densité conjointe donnée de (X,Y). Le contexte implique un changement de variables pour transformer la densité.",
+  "concepts": [
+    "densité conjointe",
+    "théorème de transfert",
+    "changement de variables",
+    "loi conjointe",
+    "densité de probabilité",
+    "intégrale multiple",
+    "matrice jacobienne",
+    "bijection"
+  ],
+  "methods": [
+    "changement de variable",
+    "calcul de la matrice jacobienne",
+    "intégration par changement de variables",
+    "identification de la densité"
+  ],
+  "objects": [
+    "couple de variables aléatoires",
+    "densité de probabilité",
+    "fonction indicatrice",
+    "loi conjointe",
+    "intégrale"
+  ],
+  "content_hash": "106ad575484290619e423b91795fd11cd5f77615aa300b7d7f4ba64532ba5893",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:53:54.562Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "vgll",
+  "source_path": "exo7/5-L2/vgll.tex",
+  "summary": "L'exercice demande de prouver que la somme de Minkowski de deux parties d'un espace vectoriel normé est ouverte lorsque l'une des parties est ouverte. On commence par traiter le cas particulier où l'autre partie est un singleton.",
+  "concepts": [
+    "espace vectoriel normé",
+    "partie ouverte",
+    "somme de Minkowski",
+    "continuité",
+    "topologie",
+    "adhérence"
+  ],
+  "methods": [
+    "raisonnement par cas",
+    "utilisation de la définition de l'ouverture",
+    "propriété de la somme de Minkowski"
+  ],
+  "objects": [
+    "espace vectoriel normé",
+    "parties de l'espace vectoriel",
+    "singleton"
+  ],
+  "content_hash": "9fd677d36bf6e8f97360c328e686233b0eeea797727848b587386fef4a4b3618",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:16:12.607Z"
+}

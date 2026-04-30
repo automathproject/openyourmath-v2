@@ -1,0 +1,31 @@
+{
+  "uuid": "co8b",
+  "source_path": "exo7/10-L3/co8b.tex",
+  "summary": "L'exercice demande de prouver l'irréductibilité de plusieurs polynômes sur le corps des rationnels. Il aborde des cas généraux et spécifiques, incluant des polynômes de la forme X^n - a et des exemples concrets.",
+  "concepts": [
+    "irréductibilité de polynômes",
+    "corps des rationnels",
+    "polynôme à coefficients entiers",
+    "critère d'Eisenstein",
+    "théorème de Gauss",
+    "factorisation dans Q[X]",
+    "polynôme cyclotomique"
+  ],
+  "methods": [
+    "application du critère d'Eisenstein",
+    "réduction modulo un nombre premier",
+    "utilisation du théorème de Gauss",
+    "analyse des racines rationnelles",
+    "substitution pour simplifier le polynôme"
+  ],
+  "objects": [
+    "polynôme irréductible",
+    "polynôme de degré n",
+    "polynôme à coefficients entiers",
+    "polynôme de la forme X^n - a",
+    "polynôme cyclotomique"
+  ],
+  "content_hash": "bee126a789813d121a1bebeb692edda12b0fdc0d22d456126d73e4c775bcbe56",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:24:51.001Z"
+}

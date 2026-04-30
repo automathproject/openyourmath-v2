@@ -1,0 +1,30 @@
+{
+  "uuid": "Zmuc",
+  "source_path": "exo7/1-L1/Zmuc.tex",
+  "summary": "Montrer que les racines de la dérivée d'un polynôme complexe sont des barycentres à coefficients positifs des racines du polynôme original, c'est-à-dire qu'elles appartiennent à l'enveloppe convexe des racines de ce polynôme.",
+  "concepts": [
+    "polynôme complexe",
+    "racine d'un polynôme",
+    "dérivée d'un polynôme",
+    "enveloppe convexe",
+    "barycentre",
+    "conjugaison complexe",
+    "module complexe"
+  ],
+  "methods": [
+    "décomposition en facteurs irréductibles",
+    "calcul de la dérivée",
+    "manipulation algébrique",
+    "conjugaison complexe",
+    "calcul de barycentre"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "racines complexes",
+    "dérivée d'un polynôme",
+    "barycentre pondéré"
+  ],
+  "content_hash": "78b933d7833769ec5d0c6d7c6dccfa885c7dcffa67871b5f5b17d16f0a8f2c98",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:05:03.377Z"
+}

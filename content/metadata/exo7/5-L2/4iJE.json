@@ -1,0 +1,26 @@
+{
+  "uuid": "4iJE",
+  "source_path": "exo7/5-L2/4iJE.tex",
+  "summary": "L'exercice demande d'étudier la convergence simple puis uniforme d'une suite de fonctions définies par $f_n(x) = \\frac{nx}{1+n^2x^2}$ sur $\\mathbb{R}^+$ puis sur $[\\alpha,+\\infty[$, pour $\\alpha > 0$.",
+  "concepts": [
+    "convergence simple",
+    "convergence uniforme",
+    "convergence normale",
+    "suite de fonctions",
+    "limite de fonctions"
+  ],
+  "methods": [
+    "étude de la limite ponctuelle",
+    "critère de Cauchy",
+    "majoration uniforme",
+    "comparaison de termes"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "fonction rationnelle",
+    "intervalle de convergence"
+  ],
+  "content_hash": "b27517dcbe94726cf713cd85f6f92b6548aee5a556003154568632f717c45311",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:47:15.909Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "UsA2",
+  "source_path": "exo7/2-L1/UsA2.tex",
+  "summary": "On considère une suite bornée vérifiant une condition de sommabilité pour tout entier p ≥ 2. On demande de prouver que tous les termes de la suite sont nuls.",
+  "concepts": [
+    "suite bornée",
+    "série numérique",
+    "intégrale impropre",
+    "inégalité de comparaison",
+    "convergence absolue"
+  ],
+  "methods": [
+    "majoration terme à terme",
+    "comparaison série-intégrale",
+    "utilisation de l'intégrale de Riemann"
+  ],
+  "objects": [
+    "suite (a_n)",
+    "série de termes (a_n/n^p)",
+    "intégrale de fonction puissance"
+  ],
+  "content_hash": "16c5af3fa9a0328c80bee2c7df84515046adff14a298793120a6276893f6380e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:20:15.863Z"
+}

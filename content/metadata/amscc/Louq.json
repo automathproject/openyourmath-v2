@@ -1,0 +1,27 @@
+{
+  "uuid": "Louq",
+  "source_path": "amscc/Louq.tex",
+  "summary": "L'exercice demande de déterminer la loi de la variable aléatoire 2X à partir de la fonction de répartition, sachant que X suit une loi uniforme sur [0;1].",
+  "concepts": [
+    "fonction de répartition",
+    "loi uniforme",
+    "densité de probabilité",
+    "variable aléatoire continue",
+    "changement de variable",
+    "fonction indicatrice"
+  ],
+  "methods": [
+    "calcul de fonction de répartition",
+    "intégration",
+    "dérivation de fonction de répartition",
+    "identification de loi uniforme"
+  ],
+  "objects": [
+    "variable aléatoire uniforme",
+    "fonction de répartition",
+    "densité de probabilité"
+  ],
+  "content_hash": "85b778997ecfc6587dd04cc1c68bc24da50e48813954f7150f75f8bbbdc164b1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:46:39.300Z"
+}

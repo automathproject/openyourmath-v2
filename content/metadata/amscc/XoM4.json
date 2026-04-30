@@ -1,0 +1,29 @@
+{
+  "uuid": "XoM4",
+  "source_path": "amscc/XoM4.tex",
+  "summary": "L'exercice demande de calculer l'espérance et la variance d'une variable aléatoire transformée linéairement, puis d'utiliser l'inégalité de Bienaymé-Tchebychev pour déterminer une borne inférieure de probabilité. Ensuite, il s'agit de calculer des probabilités pour une variable normale en utilisant la standardisation et les tables de la loi normale centrée réduite.",
+  "concepts": [
+    "espérance mathématique",
+    "variance",
+    "inégalité de Bienaymé-Tchebychev",
+    "loi normale",
+    "standardisation",
+    "fonction de répartition"
+  ],
+  "methods": [
+    "linéarité de l'espérance",
+    "propriétés de la variance",
+    "standardisation",
+    "utilisation de tables de loi normale"
+  ],
+  "objects": [
+    "variable aléatoire",
+    "espérance",
+    "variance",
+    "intervalle de confiance",
+    "fonction de répartition"
+  ],
+  "content_hash": "d4c151fa068161f68f2342bad0d897edd21cc609a93c4918b7a8ef18962c467e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:53:39.331Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "eLeg",
+  "source_path": "exo7/1-L1/eLeg.tex",
+  "summary": "Trouver tous les polynômes U et V de ℝ[X] tels que AU+BV soit un pgcd de A et B, avec A et B donnés sous forme explicite.",
+  "concepts": [
+    "polynôme",
+    "pgcd de polynômes",
+    "algèbre des polynômes",
+    "division euclidienne",
+    "algèbre linéaire",
+    "théorème de Bézout"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "division polynomiale",
+    "combinaison linéaire",
+    "identification des diviseurs"
+  ],
+  "objects": [
+    "polynômes de degré 4",
+    "pgcd",
+    "combinaison linéaire de polynômes"
+  ],
+  "content_hash": "c631abc4362cc993f4421f9870d6b4e9c75593a00989015f2a2b7016b259eb5e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:11:35.666Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "iN7D",
+  "source_path": "exo7/13-L3/iN7D.tex",
+  "summary": "On considère deux fonctions continues et positives sur un intervalle. On donne une inégalité intégrale impliquant ces fonctions et une constante. On demande de démontrer une majoration exponentielle de l'une des fonctions.",
+  "concepts": [
+    "inégalité intégrale",
+    "fonction continue",
+    "fonction positive",
+    "majoration exponentielle",
+    "théorème de Grönwall-Bellman",
+    "équation différentielle ordinaire"
+  ],
+  "methods": [
+    "intégration",
+    "majoration",
+    "comparaison de fonctions"
+  ],
+  "objects": [
+    "fonction u(t)",
+    "fonction v(t)",
+    "constante C",
+    "intégrale"
+  ],
+  "content_hash": "a2e4fe61c2615c94cac1ea6dfdc70e17bb8135c9afaf55ff3571c6437ea3f0e6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:46:17.228Z"
+}

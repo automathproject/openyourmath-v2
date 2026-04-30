@@ -1,0 +1,29 @@
+{
+  "uuid": "dMOc",
+  "source_path": "amscc/dMOc.tex",
+  "summary": "L'exercice demande de déterminer les paramètres μ et σ d'une loi normale modélisant l'heure d'arrivée de soldats pour une cérémonie, puis d'utiliser cette loi pour trouver l'heure d'ouverture des portes et le nombre de soldats ayant manqué le début de la cérémonie en cas de retard.",
+  "concepts": [
+    "loi normale",
+    "fonction de répartition",
+    "standardisation",
+    "lecture inverse dans la table de la loi normale centrée réduite",
+    "probabilité conditionnelle",
+    "écart-type",
+    "espérance"
+  ],
+  "methods": [
+    "standardisation",
+    "lecture inverse dans la table de la loi normale centrée réduite",
+    "calcul de probabilité conditionnelle",
+    "résolution de système d'équations"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "fonction de répartition",
+    "table de la loi normale centrée réduite",
+    "système d'équations"
+  ],
+  "content_hash": "f166f97277bc05f95b60f0c644189dad1193daf629bfd4a1831c733e5a1ed140",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:58:12.906Z"
+}

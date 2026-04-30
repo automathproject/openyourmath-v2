@@ -1,0 +1,29 @@
+{
+  "uuid": "DLOg",
+  "source_path": "exo7/4-L2/DLOg.tex",
+  "summary": "L'exercice demande de réduire une matrice donnée en étudiant sa diagonalisabilité ou triangularisabilité, puis d'utiliser cette réduction pour déterminer les solutions d'un système d'équations différentielles linéaires à coefficients constants avec conditions initiales.",
+  "concepts": [
+    "réduction d'endomorphisme",
+    "diagonalisabilité",
+    "triangularisabilité",
+    "polynôme annulateur",
+    "système d'équations différentielles linéaires",
+    "conditions initiales",
+    "matrice de passage"
+  ],
+  "methods": [
+    "recherche des valeurs propres",
+    "recherche des vecteurs propres",
+    "triangularisation",
+    "résolution de système d'équations différentielles linéaires"
+  ],
+  "objects": [
+    "matrice carrée",
+    "système d'équations différentielles",
+    "conditions initiales",
+    "fonctions dérivables"
+  ],
+  "content_hash": "9d90252e0edc12d2cbd1dd4779e4a502b718024636f5e049292f3ff0660bf655",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:24:40.081Z"
+}

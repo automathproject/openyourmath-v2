@@ -1,0 +1,26 @@
+{
+  "uuid": "Nge3",
+  "source_path": "exo7/5-L2/Nge3.tex",
+  "summary": "Dans un espace vectoriel normé complet, on considère une suite décroissante de boules fermées dont les rayons ne tendent pas vers 0. On demande de montrer que l'intersection de ces boules est une boule fermée.",
+  "concepts": [
+    "espace vectoriel normé complet",
+    "suite de Cauchy",
+    "boule fermée",
+    "convergence",
+    "topologie"
+  ],
+  "methods": [
+    "étude de la convergence des centres",
+    "inclusion des boules",
+    "utilisation de la décroissance des rayons"
+  ],
+  "objects": [
+    "suite de boules fermées",
+    "centres des boules",
+    "rayons des boules",
+    "intersection des boules"
+  ],
+  "content_hash": "cbdc7ff94983d7a664e99dec75ac7e0a7686b5f97e656fa2fc6e3b798e25b3f7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:48:04.232Z"
+}

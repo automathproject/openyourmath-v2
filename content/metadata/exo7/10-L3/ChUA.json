@@ -1,0 +1,29 @@
+{
+  "uuid": "ChUA",
+  "source_path": "exo7/10-L3/ChUA.tex",
+  "summary": "Montrer l'isomorphisme entre deux quotients d'anneaux de polynômes, l'un modulo un idéal engendré par un entier et un polynôme, l'autre modulo un idéal engendré par la réduction du polynôme modulo cet entier. Le contexte implique des propriétés algébriques des polynômes et des anneaux de polynômes.",
+  "concepts": [
+    "anneau de polynômes",
+    "idéal engendré",
+    "réduction modulo un entier",
+    "isomorphisme d'anneaux",
+    "quotient d'anneau",
+    "algèbre commutative",
+    "polynôme irréductible",
+    "corps fini"
+  ],
+  "methods": [
+    "réduction modulo un idéal",
+    "construction d'isomorphisme",
+    "utilisation de propriétés d'irréductibilité"
+  ],
+  "objects": [
+    "polynôme à coefficients entiers",
+    "idéal dans Z[x]",
+    "idéal dans Z_m[x]",
+    "quotient d'anneau"
+  ],
+  "content_hash": "72490472988eb167f38a7122bd53c1ced8b12fe06397e580636215e4725e70c8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:20:57.596Z"
+}

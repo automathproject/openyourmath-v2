@@ -1,0 +1,23 @@
+{
+  "uuid": "MbGl",
+  "source_path": "exo7/1-L1/MbGl.tex",
+  "summary": "Montrer qu'un polynôme de la forme X^(2^p) + X^(2^{p-1}) + 1 divise un autre polynôme de la forme X^(2^n) + X^(2^{n-1}) + 1 lorsque p ≤ n.",
+  "concepts": [
+    "division de polynômes",
+    "racines de polynômes",
+    "polynômes irréductibles",
+    "propriétés des exposants"
+  ],
+  "methods": [
+    "factorisation",
+    "division euclidienne de polynômes",
+    "utilisation des racines"
+  ],
+  "objects": [
+    "polynômes de la forme X^(2^k) + X^(2^{k-1}) + 1",
+    "exposants entiers"
+  ],
+  "content_hash": "6de7d4e0acee6ebf50ad3b810b8405f3dec8759c3ed59399dc35d4f2dcea829a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:53:13.656Z"
+}

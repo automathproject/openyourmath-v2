@@ -1,0 +1,27 @@
+{
+  "uuid": "5DYb",
+  "source_path": "exo7/5-L2/5DYb.tex",
+  "summary": "On considère une série entière de rayon R > 0 avec a₀ = 1. L'exercice demande de montrer l'existence et l'unicité d'une suite (bₙ) vérifiant une relation de convolution discrète avec la suite (aₙ), puis de prouver que la série entière associée à (bₙ) a un rayon de convergence strictement positif.",
+  "concepts": [
+    "série entière",
+    "rayon de convergence",
+    "convolution discrète",
+    "récurrence",
+    "inégalité de Cauchy",
+    "développement en série entière"
+  ],
+  "methods": [
+    "récurrence forte",
+    "majoration terme à terme",
+    "estimation de la croissance des coefficients"
+  ],
+  "objects": [
+    "suite (aₙ)",
+    "suite (bₙ)",
+    "série entière associée à (bₙ)",
+    "rayon de convergence R"
+  ],
+  "content_hash": "76e0aa2bbd278986964019afc96becd3c9d35fe6eb5dd996ff5badeaa71b69f3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:34:47.045Z"
+}

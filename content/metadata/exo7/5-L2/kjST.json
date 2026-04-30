@@ -1,0 +1,30 @@
+{
+  "uuid": "kjST",
+  "source_path": "exo7/5-L2/kjST.tex",
+  "summary": "Calculer la somme d'une série entière pour x dans ]-1,1[ et en déduire les valeurs des sommes pour x=1 et x=-1.",
+  "concepts": [
+    "série entière",
+    "rayon de convergence",
+    "convergence normale",
+    "continuité des séries entières",
+    "séries télescopiques",
+    "fonction logarithme",
+    "fonction Arctangente"
+  ],
+  "methods": [
+    "développement en série entière",
+    "limite de fonction",
+    "téléscopage",
+    "changement de variable",
+    "évaluation en points particuliers"
+  ],
+  "objects": [
+    "série entière",
+    "fonction définie par une série entière",
+    "somme de termes rationnels",
+    "limites aux bornes de l'intervalle"
+  ],
+  "content_hash": "ee297d7d66a88d1b072018e1d5b780f8946c76535d3a246cf7cd99af56812ce8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:51:39.137Z"
+}

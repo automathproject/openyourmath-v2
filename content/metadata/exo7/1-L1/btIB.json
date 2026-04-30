@@ -1,0 +1,30 @@
+{
+  "uuid": "btIB",
+  "source_path": "exo7/1-L1/btIB.tex",
+  "summary": "L'exercice étudie une transformation géométrique plane définie par une application affine complexe et analyse les propriétés de la suite de points obtenue par itération de cette transformation. On cherche notamment à déterminer la nature de la transformation, la distance entre points itérés et les conditions d'alignement.",
+  "concepts": [
+    "similitude directe",
+    "géométrie complexe",
+    "suite géométrique",
+    "alignement de points",
+    "argument d'un nombre complexe",
+    "transformation affine"
+  ],
+  "methods": [
+    "calcul d'affixe",
+    "itération de transformation",
+    "calcul de distance",
+    "résolution d'inéquation logarithmique",
+    "analyse d'alignement par argument"
+  ],
+  "objects": [
+    "points du plan complexe",
+    "affixes complexes",
+    "suite de points itérés",
+    "distance entre points",
+    "disque de centre et rayon donnés"
+  ],
+  "content_hash": "67417c7683356780b7b22a405cec5519864b34118c2a14bec9a1b0ef9433eea3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:52:29.023Z"
+}

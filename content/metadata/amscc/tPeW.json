@@ -1,0 +1,32 @@
+{
+  "uuid": "tPeW",
+  "source_path": "amscc/tPeW.tex",
+  "summary": "L'exercice modélise le nombre d'abonnés connectés simultanément à un point d'accès Internet à 16h. Il demande de déterminer la loi de cette variable aléatoire, son espérance et son écart-type, puis d'utiliser l'inégalité de Bienaymé-Tchebychev pour estimer une probabilité d'intervalle. Enfin, il propose d'approcher cette loi par une loi normale pour répondre à une question de dimensionnement.",
+  "concepts": [
+    "loi binomiale",
+    "espérance d'une variable aléatoire",
+    "écart-type",
+    "inégalité de Bienaymé-Tchebychev",
+    "théorème central limite",
+    "approximation normale",
+    "variable centrée-réduite",
+    "fonction de répartition"
+  ],
+  "methods": [
+    "calcul de l'espérance et de la variance d'une loi binomiale",
+    "application de l'inégalité de Bienaymé-Tchebychev",
+    "standardisation",
+    "approximation par la loi normale",
+    "utilisation de tables de la loi normale"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "espérance",
+    "écart-type",
+    "intervalle de confiance",
+    "variable centrée-réduite"
+  ],
+  "content_hash": "bf35f1fca8738f4ba8ada375d932a19fc757a66a0c2732faae29d2d40acd5f5d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:41:24.932Z"
+}

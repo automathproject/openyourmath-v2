@@ -1,0 +1,25 @@
+{
+  "uuid": "MmHX",
+  "source_path": "exo7/2-L1/MmHX.tex",
+  "summary": "L'exercice demande de déterminer un équivalent asymptotique de la somme des carrés des logarithmes des entiers de 1 à n, puis d'étudier la convergence de la série de terme général l'inverse de cette somme.",
+  "concepts": [
+    "équivalent asymptotique",
+    "série numérique",
+    "convergence de série",
+    "intégrale impropre",
+    "comparaison de séries"
+  ],
+  "methods": [
+    "comparaison série-intégrale",
+    "équivalent de Riemann",
+    "théorème de comparaison pour les séries"
+  ],
+  "objects": [
+    "somme de logarithmes",
+    "série de terme général",
+    "fonction logarithme"
+  ],
+  "content_hash": "7e1a913e954b376973dba1adf2c3945c4b1ab2c3320795f8bf43488f3323af0a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:13:49.775Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "gsAD",
+  "source_path": "exo7/4-L2/gsAD.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de vecteurs propres d'une matrice hermitienne et d'en déduire une conclusion sur le déterminant d'une matrice. On travaille avec une matrice A dans M_n(C) et ses valeurs propres.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "matrice hermitienne",
+    "déterminant",
+    "polynôme caractéristique",
+    "théorème de Cayley-Hamilton",
+    "indépendance linéaire"
+  ],
+  "methods": [
+    "manipulation de vecteurs propres",
+    "analyse de valeurs propres",
+    "détermination de l'indépendance linéaire",
+    "calcul de déterminant"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "vecteur propre",
+    "valeur propre",
+    "matrice identité"
+  ],
+  "content_hash": "50706c7fa388207d26727b7dda746cd3cf0fb97137437adeb658af469af40c9b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:04:31.414Z"
+}

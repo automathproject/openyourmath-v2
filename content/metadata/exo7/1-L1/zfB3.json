@@ -1,0 +1,31 @@
+{
+  "uuid": "zfB3",
+  "source_path": "exo7/1-L1/zfB3.tex",
+  "summary": "L'exercice demande de montrer l'unicité de la décomposition d'un polynôme de degré 2 dans une base donnée, puis d'exprimer plusieurs polynômes sous cette forme. Ensuite, il s'agit de prouver qu'une application linéaire définie sur cet espace est bien linéaire, d'en déterminer le noyau et l'image, et d'en écrire les matrices dans deux bases différentes.",
+  "concepts": [
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "matrice d'une application linéaire",
+    "changement de base"
+  ],
+  "methods": [
+    "décomposition dans une base",
+    "vérification des propriétés d'une application linéaire",
+    "calcul de noyau et d'image",
+    "écriture de matrices dans une base",
+    "calcul de matrice de passage"
+  ],
+  "objects": [
+    "polynôme de degré 2",
+    "base canonique",
+    "application linéaire",
+    "matrice d'application linéaire",
+    "matrice de passage"
+  ],
+  "content_hash": "f70241bf59dc15b75a7655f4e5a1d1efab5932b16730a1a7a4cc8321853ce230",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:24:09.477Z"
+}

@@ -1,0 +1,21 @@
+{
+  "uuid": "P47M",
+  "source_path": "exo7/1-L1/P47M.tex",
+  "summary": "Trouver un polynôme de degré inférieur ou égal à 2 passant par trois points donnés (1, -2), (-2, 3) et (0, -1).",
+  "concepts": [
+    "interpolation polynomiale",
+    "polynôme de Lagrange",
+    "degré d'un polynôme",
+    "conditions d'interpolation"
+  ],
+  "methods": [
+    "formule d'interpolation de Lagrange"
+  ],
+  "objects": [
+    "polynôme de degré 2",
+    "points d'interpolation"
+  ],
+  "content_hash": "8f1c292ba82911f3c56e62c6355fca02b806cc25e99871dd0e8f0ba68f278e69",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:55:09.752Z"
+}

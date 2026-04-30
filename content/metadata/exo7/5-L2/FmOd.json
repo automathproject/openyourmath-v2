@@ -1,0 +1,26 @@
+{
+  "uuid": "FmOd",
+  "source_path": "exo7/5-L2/FmOd.tex",
+  "summary": "L'exercice demande de prouver l'existence d'un couple de points (a,b) appartenant respectivement à deux parties compactes non vides de ℝⁿ, qui minimise la distance entre ces parties. Une seconde partie généralise le résultat en supposant seulement l'une des parties compacte et l'autre fermée.",
+  "concepts": [
+    "espace vectoriel normé",
+    "compacité",
+    "fermeture",
+    "distance",
+    "minimisation",
+    "topologie des espaces vectoriels normés"
+  ],
+  "methods": [
+    "argument par l'absurde",
+    "utilisation de la continuité de la distance",
+    "application du théorème de Weierstrass"
+  ],
+  "objects": [
+    "parties compactes",
+    "parties fermées",
+    "distance entre ensembles"
+  ],
+  "content_hash": "0d3771fff592ec8ae9e3863b3dca7b78b409d7ace24b820982785818045739e1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:41:37.580Z"
+}

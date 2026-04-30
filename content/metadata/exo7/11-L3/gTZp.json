@@ -1,0 +1,30 @@
+{
+  "uuid": "gTZp",
+  "source_path": "exo7/11-L3/gTZp.tex",
+  "summary": "L'exercice demande de démontrer qu'une courbe plane fermée, simple, convexe et régulière possède au moins trois coins, c'est-à-dire des points où la dérivée de la courbure s'annule. La démonstration s'appuie sur des propriétés de continuité et de dérivabilité de la courbure.",
+  "concepts": [
+    "courbe régulière",
+    "courbure",
+    "continuité",
+    "dérivée",
+    "théorème des valeurs intermédiaires",
+    "intégration par parties",
+    "formule de Frenet"
+  ],
+  "methods": [
+    "analyse des extrema",
+    "intégration par parties",
+    "raisonnement par l'absurde",
+    "utilisation de la formule de Frenet"
+  ],
+  "objects": [
+    "courbe plane fermée",
+    "fonction courbure",
+    "vecteur tangent",
+    "vecteur normal",
+    "coin"
+  ],
+  "content_hash": "0b73faee9348d07c5309caac177e8f50b2ac67fc6e1a473b754af9d0af05a2f9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:23:42.914Z"
+}

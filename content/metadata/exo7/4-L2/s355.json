@@ -1,0 +1,28 @@
+{
+  "uuid": "s355",
+  "source_path": "exo7/4-L2/s355.tex",
+  "summary": "L'exercice demande de déterminer la dimension du commutant d'une matrice carrée complexe et d'en donner une base, en étudiant d'abord le cas n=2 puis le cas général pour n∈ℕ*.",
+  "concepts": [
+    "commutant d'une matrice",
+    "diagonalisation",
+    "valeurs propres",
+    "multiplicité d'une valeur propre",
+    "convergence de matrices",
+    "famille orthonormale"
+  ],
+  "methods": [
+    "similitude de matrices",
+    "calcul de dimension d'espace vectoriel",
+    "construction de base orthonormale",
+    "passage à la limite"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "commutant",
+    "suite de matrices diagonalisables",
+    "famille orthonormale de matrices"
+  ],
+  "content_hash": "865f8575c4fcb29232ad1289d58d9a60e0b3e95adea253c31e5d2c3d5b08dc75",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:20:06.510Z"
+}

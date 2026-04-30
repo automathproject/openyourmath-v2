@@ -1,0 +1,30 @@
+{
+  "uuid": "f0YJ",
+  "source_path": "exo7/4-L2/f0YJ.tex",
+  "summary": "L'exercice demande de montrer que les matrices élémentaires $F_{ij}$ forment une base de l'espace vectoriel des matrices carrées d'ordre $n$ sur un corps commutatif $K$, puis d'étudier l'endomorphisme $\\Phi$ défini par $\\Phi(X)=\\alpha XD + \\beta DX$ où $D$ est une matrice diagonale. On doit déterminer si $\\Phi$ est diagonalisable et calculer son polynôme caractéristique.",
+  "concepts": [
+    "base d'un espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "endomorphisme diagonalisable",
+    "valeur propre",
+    "polynôme caractéristique",
+    "matrice diagonale",
+    "famille génératrice",
+    "famille libre"
+  ],
+  "methods": [
+    "détermination d'une base",
+    "calcul de valeurs propres",
+    "diagonalisation d'endomorphisme",
+    "calcul de polynôme caractéristique"
+  ],
+  "objects": [
+    "espace vectoriel de matrices carrées",
+    "matrices élémentaires $F_{ij}$",
+    "endomorphisme $\\Phi$",
+    "matrice diagonale $D$"
+  ],
+  "content_hash": "84d252c9763b8b36a66bcc55807484dd6dc70d20136f4560f7b611d688867a55",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:02:07.256Z"
+}

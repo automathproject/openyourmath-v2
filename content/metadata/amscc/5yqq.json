@@ -1,0 +1,31 @@
+{
+  "uuid": "5yqq",
+  "source_path": "amscc/5yqq.tex",
+  "summary": "L'exercice étudie la durée de vie d'un système de communication militaire composé de trois émetteurs-récepteurs indépendants suivant une loi exponentielle. On demande de montrer une égalité entre événements, d'en déduire la fonction de répartition de la variable aléatoire X mesurant le temps de fonctionnement du système, de prouver que X suit une loi de densité donnée, de calculer son espérance, et d'étudier une probabilité conditionnelle.",
+  "concepts": [
+    "loi exponentielle",
+    "fonction de répartition",
+    "probabilité conditionnelle",
+    "espérance d'une variable aléatoire",
+    "loi à densité",
+    "indépendance de variables aléatoires",
+    "théorème de transfert"
+  ],
+  "methods": [
+    "calcul de probabilités conjointes",
+    "dérivation de la fonction de répartition",
+    "intégration par parties",
+    "calcul d'espérance par intégrale",
+    "limite de probabilités"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "fonction de répartition",
+    "densité de probabilité",
+    "espérance",
+    "probabilité conditionnelle"
+  ],
+  "content_hash": "aec788be5970291edaaf28a6c52265df0661203c361d1ba3a3b9d0cf9cbf6f94",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:38:29.496Z"
+}

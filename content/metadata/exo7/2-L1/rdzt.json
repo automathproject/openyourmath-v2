@@ -1,0 +1,25 @@
+{
+  "uuid": "rdzt",
+  "source_path": "exo7/2-L1/rdzt.tex",
+  "summary": "L'exercice modélise le mouvement d'un ivrogne dont les pas décroissent en longueur. Il demande si, au bout d'un certain temps, l'ivrogne reste à moins d'un mètre d'une position fixe, pour deux lois de décroissance différentes des pas.",
+  "concepts": [
+    "convergence d'une suite",
+    "somme de Riemann",
+    "limite d'une suite",
+    "distance euclidienne",
+    "mouvement brownien"
+  ],
+  "methods": [
+    "calcul de somme infinie",
+    "analyse de la décroissance des termes",
+    "comparaison de séries"
+  ],
+  "objects": [
+    "suite de pas décroissants",
+    "position finale",
+    "distance maximale"
+  ],
+  "content_hash": "97c267c840cd510bf16c13a41c8558e86531ac5cf8c2ea9b543654df87c97dde",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:36:16.911Z"
+}

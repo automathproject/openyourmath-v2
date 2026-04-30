@@ -1,0 +1,25 @@
+{
+  "uuid": "SQCX",
+  "source_path": "exo7/1-L1/SQCX.tex",
+  "summary": "Montrer qu'un polynôme du second degré divise un polynôme de degré n+1, puis déterminer le quotient de cette division.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "racine d'un polynôme",
+    "polynôme irréductible",
+    "polynôme unitaire",
+    "relation de récurrence"
+  ],
+  "methods": [
+    "division de proche en proche",
+    "identification du quotient",
+    "vérification par substitution"
+  ],
+  "objects": [
+    "polynôme du second degré",
+    "polynôme de degré n+1",
+    "quotient de division"
+  ],
+  "content_hash": "4060188d8aadba36a86c87363e58dc2ef5426305f2750cd8307ff86b5ec78549",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:59:32.883Z"
+}

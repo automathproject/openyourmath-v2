@@ -1,0 +1,29 @@
+{
+  "uuid": "z2ZN",
+  "source_path": "amscc/z2ZN.tex",
+  "summary": "L'exercice demande de vérifier qu'une fonction donnée définit une densité de probabilité, puis d'étudier les propriétés d'une variable aléatoire associée, notamment l'absence de moment d'ordre 1, le calcul de sa fonction de répartition, et la détermination de la loi d'une transformation de cette variable.",
+  "concepts": [
+    "densité de probabilité",
+    "variable aléatoire continue",
+    "moment d'une variable aléatoire",
+    "fonction de répartition",
+    "loi uniforme",
+    "intégrale impropre",
+    "fonction arctangente"
+  ],
+  "methods": [
+    "intégration par primitives",
+    "comparaison asymptotique",
+    "calcul de fonction de répartition",
+    "transformation de variable aléatoire"
+  ],
+  "objects": [
+    "fonction densité",
+    "variable aléatoire X",
+    "fonction de répartition",
+    "variable aléatoire Y"
+  ],
+  "content_hash": "a562c6b76cffce1eb3641453f7f263cee7406dca7db69a0aa55c68343b137427",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:12:29.593Z"
+}

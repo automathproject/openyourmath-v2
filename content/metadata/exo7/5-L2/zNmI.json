@@ -1,0 +1,27 @@
+{
+  "uuid": "zNmI",
+  "source_path": "exo7/5-L2/zNmI.tex",
+  "summary": "Montrer qu'un sous-ensemble convexe et dense d'un espace vectoriel normé de dimension finie est égal à l'espace entier.",
+  "concepts": [
+    "espace vectoriel normé",
+    "convexité",
+    "densité",
+    "dimension finie",
+    "hyperplan",
+    "équivalence des normes"
+  ],
+  "methods": [
+    "récurrence sur la dimension",
+    "décomposition en somme directe",
+    "construction explicite de suites"
+  ],
+  "objects": [
+    "espace vectoriel normé",
+    "sous-espace convexe",
+    "hyperplan",
+    "suites convergentes"
+  ],
+  "content_hash": "e7a572723a251c3474dd060e9597293227fd92a0db983edc71906f6de3e28193",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:18:44.872Z"
+}

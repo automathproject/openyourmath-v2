@@ -1,0 +1,30 @@
+{
+  "uuid": "Kush",
+  "source_path": "amscc/Kush.tex",
+  "summary": "L'exercice demande de déterminer les coefficients de Fourier d'une fonction impaire et périodique, puis d'utiliser la série de Fourier obtenue pour calculer des sommes infinies de nombres rationnels.",
+  "concepts": [
+    "séries de Fourier",
+    "fonction périodique",
+    "fonction impaire",
+    "théorème de Dirichlet",
+    "formule de Parseval",
+    "intégrale de fonction périodique",
+    "somme infinie"
+  ],
+  "methods": [
+    "calcul des coefficients de Fourier",
+    "intégration",
+    "application du théorème de Dirichlet",
+    "application de la formule de Parseval",
+    "découpage de somme"
+  ],
+  "objects": [
+    "fonction périodique impaire",
+    "coefficient de Fourier",
+    "série de Fourier",
+    "somme infinie"
+  ],
+  "content_hash": "c3216e2ef5049fd4e483c0b65b92182b237ff29a2403b7efd37467646580bf88",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:22:47.636Z"
+}

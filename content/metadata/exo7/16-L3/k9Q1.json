@@ -1,0 +1,28 @@
+{
+  "uuid": "k9Q1",
+  "source_path": "exo7/16-L3/k9Q1.tex",
+  "summary": "L'exercice demande de déterminer la série de Taylor de la fonction Log(z) en tout point z₀ d'un domaine Ω, ainsi que son rayon de convergence. Il interroge ensuite sur l'égalité entre la somme de cette série et la fonction Log(z) dans le disque de convergence.",
+  "concepts": [
+    "fonction holomorphe",
+    "série de Taylor",
+    "rayon de convergence",
+    "prolongement analytique",
+    "connexion d'un ouvert",
+    "théorème d'unicité de la série de Taylor"
+  ],
+  "methods": [
+    "développement en série entière",
+    "calcul de dérivée",
+    "somme d'une série entière",
+    "analyse de la convergence"
+  ],
+  "objects": [
+    "fonction Log(z)",
+    "disque de convergence",
+    "série entière",
+    "domaine Ω"
+  ],
+  "content_hash": "695f6f18465045811c842a27416e03b8f50db87c395958c636cfd7ecbd3a8db8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:21:01.497Z"
+}

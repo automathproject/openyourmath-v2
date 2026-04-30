@@ -1,0 +1,25 @@
+{
+  "uuid": "sBAF",
+  "source_path": "exo7/2-L1/sBAF.tex",
+  "summary": "On étudie la convergence d'une suite définie comme la moyenne arithmétique des termes d'une suite convergente vers 0. L'objectif est de montrer que cette moyenne tend aussi vers 0.",
+  "concepts": [
+    "convergence de suite",
+    "moyenne arithmétique",
+    "somme de termes de suite",
+    "limite de suite",
+    "inégalité triangulaire"
+  ],
+  "methods": [
+    "séparation de la somme",
+    "choix de N en fonction de ε",
+    "utilisation de la définition de la limite"
+  ],
+  "objects": [
+    "suite numérique",
+    "somme de termes de suite",
+    "moyenne arithmétique"
+  ],
+  "content_hash": "a35c22f38af93d0b9518ae56abdf4f00e3b11a23530742405e7315bf5d21503f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:37:01.452Z"
+}

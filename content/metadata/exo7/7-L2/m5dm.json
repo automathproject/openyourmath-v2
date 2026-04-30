@@ -1,0 +1,27 @@
+{
+  "uuid": "m5dm",
+  "source_path": "exo7/7-L2/m5dm.tex",
+  "summary": "L'exercice demande de déterminer un intervalle de confiance à 95% pour la proportion d'électeurs favorables à un candidat, à partir d'un échantillon de 1000 électeurs.",
+  "concepts": [
+    "loi binomiale",
+    "approximation gaussienne",
+    "intervalle de confiance",
+    "variable aléatoire de Bernoulli",
+    "écart-type",
+    "loi normale standard"
+  ],
+  "methods": [
+    "approximation gaussienne",
+    "standardisation",
+    "estimation par la fréquence observée"
+  ],
+  "objects": [
+    "proportion inconnue",
+    "variable aléatoire de Bernoulli",
+    "fréquence d'échantillon",
+    "intervalle de confiance"
+  ],
+  "content_hash": "face45648b4661cdb8b13bfe0dd766503168424adf3f2d93a63b1722498684f6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:50:08.895Z"
+}

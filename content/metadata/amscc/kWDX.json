@@ -1,0 +1,28 @@
+{
+  "uuid": "kWDX",
+  "source_path": "amscc/kWDX.tex",
+  "summary": "L'exercice étudie la fiabilité d'un système électronique composé de n composants en série, chacun ayant une durée de vie exponentielle de paramètre λ=1. Il demande de calculer la fiabilité individuelle de chaque composant, la fiabilité globale du système, et le temps moyen de bon fonctionnement.",
+  "concepts": [
+    "loi exponentielle",
+    "espérance d'une variable aléatoire",
+    "indépendance de variables aléatoires",
+    "fiabilité d'un système",
+    "probabilité conditionnelle",
+    "loi du produit"
+  ],
+  "methods": [
+    "calcul de la fonction de survie",
+    "calcul de l'espérance",
+    "utilisation de l'indépendance",
+    "intégration pour la fonction de survie"
+  ],
+  "objects": [
+    "durée de vie d'un composant",
+    "fiabilité d'un composant",
+    "fiabilité d'un système",
+    "espérance de la durée de vie"
+  ],
+  "content_hash": "76dafc791abe20189ab6be569f20b6128a2298ff1c2ca2fa3e53e2e2f7d3938c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:38:04.490Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "w6lF",
+  "source_path": "exo7/10-L3/w6lF.tex",
+  "summary": "L'exercice demande de prouver qu'un polynôme à coefficients entiers n'a pas de racine entière dans deux cas : lorsque les valeurs du polynôme en 0 et 1 sont impaires, et lorsque les valeurs du polynôme en 0 à n-1 ne sont pas divisibles par n.",
+  "concepts": [
+    "réduction modulo n",
+    "polynôme à coefficients entiers",
+    "racine entière",
+    "anneau quotient Z/nZ",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "réduction modulo 2",
+    "réduction modulo n",
+    "analyse des valeurs du polynôme"
+  ],
+  "objects": [
+    "polynôme P ∈ Z[x]",
+    "entiers naturels",
+    "racines entières"
+  ],
+  "content_hash": "91d3b7f1eaa239ad7cf1a5535228039b73438a48b16fe06f2b83396f8b3f23a7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:28:38.528Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "TQuA",
+  "source_path": "exo7/5-L2/TQuA.tex",
+  "summary": "L'exercice demande de démontrer qu'une partie ouverte de ℂ est connexe si et seulement si tout couple de points de cette partie peut être joint par une ligne polygonale incluse dans la partie.",
+  "concepts": [
+    "connexité",
+    "partie ouverte",
+    "espace topologique",
+    "segment de droite",
+    "ligne polygonale",
+    "propriété de séparation",
+    "connexe par arcs"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la connexité de l'intervalle [0,1]",
+    "construction d'ouverts disjoints",
+    "analyse des ensembles α et β"
+  ],
+  "objects": [
+    "partie P de ℂ",
+    "points a et b",
+    "ligne polygonale",
+    "ouverts A et B",
+    "segment [ab]",
+    "ensemble A et P-A"
+  ],
+  "content_hash": "c77be917590da384718a5fa765b4c87c5b9d0ede504fcf9101df71439c23f09a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:53:46.496Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "Qs4I",
+  "source_path": "exo7/4-L2/Qs4I.tex",
+  "summary": "On étudie la diagonalisabilité d'une matrice A de taille n×n à coefficients réels définis par a_ij = i/j. L'exercice demande d'analyser les propriétés spectrales de cette matrice particulière.",
+  "concepts": [
+    "rang d'une matrice",
+    "valeur propre",
+    "multiplicité d'une valeur propre",
+    "trace d'une matrice",
+    "théorème de Cayley-Hamilton",
+    "diagonalisabilité"
+  ],
+  "methods": [
+    "calcul du rang",
+    "calcul de la trace",
+    "analyse des sous-espaces propres",
+    "application du théorème de Cayley-Hamilton"
+  ],
+  "objects": [
+    "matrice carrée",
+    "valeur propre nulle",
+    "sous-espace propre"
+  ],
+  "content_hash": "cd28a606baa3ec4266aa3b398fa6e6e1b4638c9910f01b8f248e3666f9029cbd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:43:43.774Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "VX6N",
+  "source_path": "exo7/7-L2/VX6N.tex",
+  "summary": "L'exercice demande de construire un intervalle de confiance pour la moyenne du poids des passagers à partir d'un échantillon, puis d'estimer la probabilité qu'un avion dépasse sa capacité maximale de décollage en combinant les poids des passagers et des bagages.",
+  "concepts": [
+    "intervalle de confiance",
+    "théorème central limite",
+    "loi normale",
+    "estimation ponctuelle",
+    "variance",
+    "espérance mathématique",
+    "approximation gaussienne"
+  ],
+  "methods": [
+    "estimation par la moyenne échantillonnale",
+    "standardisation",
+    "approximation de la somme de variables aléatoires indépendantes",
+    "calcul de probabilité à partir de la loi normale"
+  ],
+  "objects": [
+    "variable aléatoire",
+    "moyenne échantillonnale",
+    "écart-type",
+    "somme de variables aléatoires indépendantes",
+    "loi normale centrée réduite"
+  ],
+  "content_hash": "afe1967e481393fd73e559be4546bf015787aa9b21a500af52cfcdd38579ebff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:43:12.944Z"
+}

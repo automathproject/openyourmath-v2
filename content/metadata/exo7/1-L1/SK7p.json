@@ -1,0 +1,25 @@
+{
+  "uuid": "SK7p",
+  "source_path": "exo7/1-L1/SK7p.tex",
+  "summary": "Trouver deux polynômes réels A et B tels que leur combinaison linéaire avec X³+1 et X²+X+1 donne le polynôme constant 1.",
+  "concepts": [
+    "algèbre des polynômes",
+    "division euclidienne",
+    "identité de Bézout",
+    "polynôme unitaire",
+    "pgcd de polynômes"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "combinaison linéaire",
+    "identité de Bézout"
+  ],
+  "objects": [
+    "polynômes réels",
+    "pgcd de polynômes",
+    "combinaison linéaire"
+  ],
+  "content_hash": "12e71cb54e8bea07b6b8f2032312c24ff34182c32ce725871d9978c95446c158",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:59:22.852Z"
+}

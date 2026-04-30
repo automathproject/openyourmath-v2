@@ -1,0 +1,29 @@
+{
+  "uuid": "IF57",
+  "source_path": "exo7/5-L2/IF57.tex",
+  "summary": "L'exercice demande de démontrer que le produit cartésien de deux boules ouvertes est un ouvert dans un espace euclidien de dimension supérieure. Il généralise ensuite ce résultat à des ouverts quelconques dans des espaces de dimensions différentes.",
+  "concepts": [
+    "produit cartésien d'ouverts",
+    "boule ouverte",
+    "espace euclidien",
+    "topologie",
+    "distance à un bord",
+    "inclusion d'ouverts",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "raisonnement par la définition d'ouvert",
+    "construction explicite de boules ouvertes",
+    "utilisation de la distance au bord",
+    "inclusion d'ensembles"
+  ],
+  "objects": [
+    "boules ouvertes",
+    "produit cartésien d'ensembles",
+    "points dans un espace euclidien",
+    "ouverts dans R^n"
+  ],
+  "content_hash": "a1a3e6982afd2127ef201df78f43b7ab2b24b5b85adaef7688a87fb86c1275ce",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:43:31.565Z"
+}

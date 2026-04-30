@@ -1,0 +1,33 @@
+{
+  "uuid": "eFy7",
+  "source_path": "amscc/eFy7.tex",
+  "summary": "L'exercice étudie la loi d'une variable aléatoire Y définie comme le produit d'une variable normale centrée réduite X et d'une variable uniforme discrète U. Il demande de montrer que Y suit la même loi que X en utilisant la formule des probabilités totales, puis d'étudier la covariance entre X et Y et de calculer des moments d'ordre supérieur de X.",
+  "concepts": [
+    "loi normale centrée réduite",
+    "variable aléatoire discrète uniforme",
+    "formule des probabilités totales",
+    "symétrie de la loi normale",
+    "espérance mathématique",
+    "covariance",
+    "moment d'ordre supérieur",
+    "intégration par parties"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "utilisation de l'indépendance",
+    "calcul d'espérance",
+    "calcul de covariance",
+    "évaluation d'intégrales"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "variable aléatoire uniforme discrète",
+    "fonction de répartition",
+    "espérance",
+    "covariance",
+    "moment d'ordre 4"
+  ],
+  "content_hash": "ec5642795e6c37e0e0681011345a9c6c773e99991863005f02d8427b217beb55",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:59:14.138Z"
+}

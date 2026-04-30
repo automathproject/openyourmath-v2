@@ -1,0 +1,31 @@
+{
+  "uuid": "LlDR",
+  "source_path": "exo7/5-L2/LlDR.tex",
+  "summary": "On étudie une série entière f(z) = Σa_n z^n avec a_0=0 et a_1=1, injective et de rayon de convergence 1. On doit montrer des propriétés de f(z) dans le disque unité D et dans le demi-plan supérieur Ω⁺.",
+  "concepts": [
+    "série entière",
+    "rayon de convergence",
+    "fonction injective",
+    "partie imaginaire",
+    "connexe",
+    "développement limité",
+    "intégration terme à terme"
+  ],
+  "methods": [
+    "conjugaison complexe",
+    "analyse de la partie imaginaire",
+    "développement limité",
+    "intégration terme à terme",
+    "majoration"
+  ],
+  "objects": [
+    "série entière",
+    "fonction complexe",
+    "disque unité",
+    "demi-plan supérieur",
+    "coefficient de série entière"
+  ],
+  "content_hash": "526bc86560ecc835fbbeab920d6159e054ac3f8ec3dffa0d3d2b9059e9ba53a9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:40:56.467Z"
+}

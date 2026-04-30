@@ -1,0 +1,25 @@
+{
+  "uuid": "uFXe",
+  "source_path": "crouzet/pcsi/03/uFXe.tex",
+  "summary": "L'exercice demande d'exprimer les plus grands entiers naturels m et p vérifiant respectivement 2m ≤ n et 2p + 1 ≤ n, puis d'en déduire la valeur de la somme alternée de k de 1 à n.",
+  "concepts": [
+    "partie entière",
+    "somme alternée",
+    "séparation termes pairs/impairs",
+    "cas d'égalité",
+    "parité"
+  ],
+  "methods": [
+    "séparation des cas",
+    "changement d'indice de sommation",
+    "simplification algébrique"
+  ],
+  "objects": [
+    "entier naturel",
+    "somme discrète",
+    "partie entière"
+  ],
+  "content_hash": "432d78025a438e71e351b2524afac8bf15cfa64bbbaa8a00035f2b8a704cb09a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:51:25.318Z"
+}

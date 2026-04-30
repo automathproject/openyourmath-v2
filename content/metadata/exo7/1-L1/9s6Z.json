@@ -1,0 +1,25 @@
+{
+  "uuid": "9s6Z",
+  "source_path": "exo7/1-L1/9s6Z.tex",
+  "summary": "Trouver une condition nécessaire et suffisante sur les complexes p et q pour que le polynôme X^8 + X^4 + 1 divise X^{8n} + pX^{4n} + q, où n est un entier naturel non nul.",
+  "concepts": [
+    "racine de l'unité",
+    "polynôme irréductible",
+    "division euclidienne de polynômes",
+    "racine complexe",
+    "polynôme cyclotomique"
+  ],
+  "methods": [
+    "factorisation",
+    "substitution de racines",
+    "utilisation des racines de l'unité"
+  ],
+  "objects": [
+    "polynôme à coefficients complexes",
+    "racine primitive",
+    "polynôme cyclotomique"
+  ],
+  "content_hash": "2f6d45db8cf62001d5291e9c1d87281ef7ea489da9058302516a4e27e7654692",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:38:49.947Z"
+}

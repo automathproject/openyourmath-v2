@@ -1,0 +1,25 @@
+{
+  "uuid": "35Nx",
+  "source_path": "exo7/7-L2/35Nx.tex",
+  "summary": "Un transporteur aérien accepte 23 réservations pour 20 sièges, sachant que 25% des réservations ne se présentent pas. On modélise la variable aléatoire X comme le nombre de clients qui viennent après réservation et on calcule sa loi et son espérance. On cherche ensuite la probabilité que toutes les personnes ayant réservé aient un siège disponible.",
+  "concepts": [
+    "loi binomiale",
+    "variable aléatoire discrète",
+    "espérance d'une variable aléatoire",
+    "probabilité conditionnelle",
+    "modélisation probabiliste"
+  ],
+  "methods": [
+    "calcul de l'espérance d'une loi binomiale",
+    "calcul de probabilités par complémentaire",
+    "approximation de probabilités"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "espérance",
+    "probabilité conditionnelle"
+  ],
+  "content_hash": "750b878bda41fb3ac5f89122673d4567420e8551f7e734f09b8b57f1b7a2914d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:14:37.294Z"
+}

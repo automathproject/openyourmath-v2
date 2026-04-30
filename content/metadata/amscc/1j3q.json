@@ -1,0 +1,29 @@
+{
+  "uuid": "1j3q",
+  "source_path": "amscc/1j3q.tex",
+  "summary": "L'exercice demande de montrer que le temps avant la première défaillance d'un système en parallèle, défini comme le minimum de deux durées de vie exponentielles indépendantes, suit lui-même une loi exponentielle avec un paramètre modifié.",
+  "concepts": [
+    "loi exponentielle",
+    "fonction de survie",
+    "indépendance de variables aléatoires",
+    "minimum de variables aléatoires",
+    "fonction de répartition",
+    "probabilité conditionnelle",
+    "durée de vie"
+  ],
+  "methods": [
+    "calcul de fonction de répartition",
+    "utilisation de l'indépendance",
+    "calcul de probabilité conjointe",
+    "identification de loi exponentielle"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "durée de vie",
+    "minimum de variables aléatoires",
+    "fonction de survie"
+  ],
+  "content_hash": "9070d66853c5420250be2761f817eca8bd94aead7355d5437e6c52d33770ae9e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:36:41.861Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "6AFS",
+  "source_path": "exo7/8-L3/6AFS.tex",
+  "summary": "Soit G un groupe d'ordre impair. Montrer que l'application f(x) = x² est une bijection de G sur lui-même et en déduire que l'équation x² = e a une unique solution.",
+  "concepts": [
+    "groupe fini",
+    "ordre d'un élément",
+    "bijection",
+    "application injective",
+    "application surjective",
+    "théorème de Lagrange"
+  ],
+  "methods": [
+    "utilisation de l'ordre du groupe",
+    "preuve par contraposée",
+    "analyse de l'image d'une application"
+  ],
+  "objects": [
+    "groupe d'ordre impair",
+    "application f(x) = x²",
+    "élément neutre e"
+  ],
+  "content_hash": "6bfaae5cf1fd98aa5fd737b2f8073c59f669ab7767ddb350cebc358a73d74bd2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:10:58.936Z"
+}

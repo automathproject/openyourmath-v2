@@ -1,0 +1,24 @@
+{
+  "uuid": "PveS",
+  "source_path": "exo7/2-L1/PveS.tex",
+  "summary": "Résoudre dans ℝ l'équation √(x + 2√(x - 1)) + √(x - 2√(x - 1)) = 1. L'énoncé demande de trouver les valeurs réelles de x qui satisfont cette équation impliquant des racines carrées imbriquées.",
+  "concepts": [
+    "équation",
+    "racine carrée",
+    "domaine de définition",
+    "valeur absolue",
+    "système d'équations"
+  ],
+  "methods": [
+    "changement de variable",
+    "analyse de cas",
+    "résolution d'équation"
+  ],
+  "objects": [
+    "équation à radicaux",
+    "fonction composée"
+  ],
+  "content_hash": "67d7d23cdeef3466b6c1632f93f8a8978e515dc95df95c0232caa3f2e1a760ac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:52:36.569Z"
+}

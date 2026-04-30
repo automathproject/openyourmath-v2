@@ -1,0 +1,27 @@
+{
+  "uuid": "0aT2",
+  "source_path": "exo7/4-L2/0aT2.tex",
+  "summary": "L'exercice demande de diagonaliser une matrice symétrique particulière de taille n×n sur un corps K, avec une structure spécifique de blocs 1 et 0.",
+  "concepts": [
+    "diagonalisation",
+    "matrice symétrique",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrice de passage",
+    "matrice diagonale"
+  ],
+  "methods": [
+    "recherche des valeurs propres",
+    "recherche des vecteurs propres",
+    "construction de la matrice de passage"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "matrice de passage",
+    "matrice diagonale"
+  ],
+  "content_hash": "9e730cd2bb22b6deb32a540e2d197da632feed374b5e37490e672e492a6f4ffd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:08:47.518Z"
+}

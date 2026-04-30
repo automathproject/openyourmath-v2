@@ -1,0 +1,23 @@
+{
+  "uuid": "QAcw",
+  "source_path": "exo7/1-L1/QAcw.tex",
+  "summary": "On cherche à calculer la somme des puissances septièmes des racines d'un polynôme donné.",
+  "concepts": [
+    "racine d'un polynôme",
+    "relation de récurrence",
+    "polynôme minimal",
+    "somme de puissances de racines"
+  ],
+  "methods": [
+    "réduction modulo polynôme",
+    "calcul de puissances successives",
+    "utilisation des relations de récurrence"
+  ],
+  "objects": [
+    "racines d'un polynôme cubique",
+    "somme de puissances de racines"
+  ],
+  "content_hash": "d5107a2afb5bd54fd25b46954a95861d7ed75984e5c3ae08514c950b376da91c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:56:05.928Z"
+}

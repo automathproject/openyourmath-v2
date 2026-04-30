@@ -1,0 +1,27 @@
+{
+  "uuid": "JuCo",
+  "source_path": "amscc/JuCo.tex",
+  "summary": "On tire successivement deux boules avec remise dans une urne choisie au hasard entre deux urnes de compositions différentes. On étudie l'indépendance des événements 'boule blanche au premier tirage' et 'boule blanche au second tirage'.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "indépendance de variables aléatoires",
+    "tirage avec remise",
+    "probabilité discrète",
+    "loi binomiale",
+    "espaces probabilisés"
+  ],
+  "methods": [
+    "calcul de probabilités conjointes",
+    "vérification de l'indépendance",
+    "utilisation de la formule des probabilités composées"
+  ],
+  "objects": [
+    "urne",
+    "boules noires et blanches",
+    "événements B1 et B2",
+    "tirage successif avec remise"
+  ],
+  "content_hash": "5e40298242aa342c8d2df24bdc9c3b07410c4083c96d006ae308223344b9876b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:24:32.223Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "H2MA",
+  "source_path": "exo7/2-L1/H2MA.tex",
+  "summary": "On considère une suite $(u_n)_{n\backslash ge 1}$ telle que la série $\backslash sum_{n\backslash ge 1} n u_n$ converge. Montrer que la série $\backslash sum_{n\backslash ge 1} u_n$ converge.",
+  "concepts": [
+    "série numérique",
+    "convergence de série",
+    "somme partielle",
+    "manipulation algébrique de sommes"
+  ],
+  "methods": [
+    "réécriture de somme",
+    "téléscopage",
+    "comparaison de séries"
+  ],
+  "objects": [
+    "suite numérique",
+    "série numérique",
+    "somme partielle"
+  ],
+  "content_hash": "26d4a28228ae3be299f6c8a3ea6282425dd160dad4885bb85f4fa7cebb042f92",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:08:39.101Z"
+}

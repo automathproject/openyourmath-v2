@@ -1,0 +1,32 @@
+{
+  "uuid": "zhq8",
+  "source_path": "amscc/zhq8.tex",
+  "summary": "L'exercice demande de déterminer la loi de probabilité d'une variable aléatoire définie comme le carré d'une variable normale centrée réduite, puis d'étendre ce résultat à la somme de carrés de variables normales indépendantes et identiquement distribuées.",
+  "concepts": [
+    "loi Gamma",
+    "fonction de répartition",
+    "fonction génératrice des moments",
+    "variable aléatoire normale centrée réduite",
+    "densité de probabilité",
+    "loi du chi-deux",
+    "indépendance statistique",
+    "identicalité de distribution"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration par parties",
+    "calcul de fonction génératrice",
+    "symétrie de la loi normale",
+    "reconnaissance de densité Gamma"
+  ],
+  "objects": [
+    "variable aléatoire Gamma",
+    "variable aléatoire normale centrée réduite",
+    "somme de variables aléatoires indépendantes",
+    "fonction de répartition",
+    "fonction génératrice des moments"
+  ],
+  "content_hash": "0ccaa015eb90e7541148fec6bb3037b692180ad40fc6455dacce749c8ad5333a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:12:48.603Z"
+}

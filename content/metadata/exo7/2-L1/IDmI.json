@@ -1,0 +1,25 @@
+{
+  "uuid": "IDmI",
+  "source_path": "exo7/2-L1/IDmI.tex",
+  "summary": "On définit une suite $u_n$ comme la somme des inverses des factoriels de 0 à n. L'exercice demande de prouver la convergence de cette suite puis d'approcher numériquement sa limite, notée e.",
+  "concepts": [
+    "suite numérique",
+    "convergence",
+    "factorielle",
+    "limite infinie",
+    "approximation numérique"
+  ],
+  "methods": [
+    "étude de la monotonie",
+    "limite d'une suite",
+    "calcul itératif"
+  ],
+  "objects": [
+    "suite définie par récurrence",
+    "nombre e",
+    "somme de termes"
+  ],
+  "content_hash": "4214c2d167e3ed5dc9b6ed3cbeb17b358b215e029bb62072ef98c372c1ead68f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:11:51.378Z"
+}

@@ -1,0 +1,23 @@
+{
+  "uuid": "AS6p",
+  "source_path": "amscc/AS6p.tex",
+  "summary": "L'exercice demande de montrer la convergence d'une série numérique et de calculer sa somme. La série est définie par le terme général u_n = 5/(4^n).",
+  "concepts": [
+    "série numérique",
+    "série géométrique",
+    "convergence absolue",
+    "somme d'une série"
+  ],
+  "methods": [
+    "reconnaissance de la forme géométrique",
+    "calcul de la somme d'une série géométrique"
+  ],
+  "objects": [
+    "terme général d'une série",
+    "série géométrique",
+    "raison d'une série"
+  ],
+  "content_hash": "4896b30975312a8f56e4bce28b25693e2cb9f2f0a916d8466744a2e8f520aedd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:04:27.078Z"
+}

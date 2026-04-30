@@ -1,0 +1,26 @@
+{
+  "uuid": "Fva4",
+  "source_path": "exo7/1-L1/Fva4.tex",
+  "summary": "Démontrer l'irréductibilité du polynôme 1 + (X-1)²(X-3)² dans l'anneau ℚ[X].",
+  "concepts": [
+    "irréductibilité dans ℚ[X]",
+    "racines complexes",
+    "module d'un nombre complexe",
+    "partie réelle d'un nombre complexe",
+    "polynôme à coefficients rationnels",
+    "factorisation sur ℝ"
+  ],
+  "methods": [
+    "calcul explicite des racines",
+    "analyse de la factorisation sur ℝ",
+    "vérification de l'irréductibilité"
+  ],
+  "objects": [
+    "polynôme de degré 6",
+    "racines complexes conjuguées",
+    "facteurs quadratiques irrationnels"
+  ],
+  "content_hash": "ad88166b125df3e28e5b561ea61404f50641e21279f7621bba29e2a1c4cc335d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:43:52.329Z"
+}

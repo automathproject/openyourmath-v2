@@ -1,0 +1,26 @@
+{
+  "uuid": "uR6d",
+  "source_path": "amscc/uR6d.tex",
+  "summary": "L'exercice demande de prouver un équivalent asymptotique de la fonction e^{x^2} - cos(x) au voisinage de 0, puis d'étudier la convergence d'une série numérique dont le terme général est construit à partir de cette fonction.",
+  "concepts": [
+    "développement limité",
+    "équivalent asymptotique",
+    "série numérique",
+    "convergence de série",
+    "comparaison de séries",
+    "série de Riemann"
+  ],
+  "methods": [
+    "développement limité d'ordre 2",
+    "soustraction terme à terme",
+    "comparaison avec une série de Riemann"
+  ],
+  "objects": [
+    "fonction e^{x^2} - cos(x)",
+    "terme général de série",
+    "série de Riemann"
+  ],
+  "content_hash": "4c513a79522c40466de3fd7a0f144c60498856314b47d9ac05312a618b769ce4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:35:50.071Z"
+}

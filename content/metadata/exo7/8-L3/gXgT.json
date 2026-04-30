@@ -1,0 +1,30 @@
+{
+  "uuid": "gXgT",
+  "source_path": "exo7/8-L3/gXgT.tex",
+  "summary": "L'exercice demande de démontrer des propriétés d'une application définie sur un produit de groupes cycliques vers un groupe fini G, puis d'en déduire l'existence d'un élément d'ordre p et d'un p-Sylow dans G.",
+  "concepts": [
+    "théorème de Sylow",
+    "homomorphisme de groupes",
+    "groupe cyclique",
+    "ordre d'un élément",
+    "groupe quotient",
+    "récurrence sur l'ordre d'un groupe",
+    "groupe abélien simple"
+  ],
+  "methods": [
+    "démonstration d'homomorphisme",
+    "preuve de surjectivité",
+    "raisonnement par récurrence",
+    "construction de groupe quotient"
+  ],
+  "objects": [
+    "groupe fini",
+    "application entre groupes",
+    "élément d'ordre p",
+    "p-Sylow",
+    "groupe abélien"
+  ],
+  "content_hash": "59648fde91dafd376bb3498e18ca5e60fb48a18c81f903564661284d7923d96f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:58:26.024Z"
+}

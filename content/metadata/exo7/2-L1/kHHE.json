@@ -1,0 +1,28 @@
+{
+  "uuid": "kHHE",
+  "source_path": "exo7/2-L1/kHHE.tex",
+  "summary": "L'exercice demande de calculer deux limites de suites liées à une somme de termes en racine carrée inverse, puis de comparer trois expressions pour démontrer la convergence d'une suite spécifique.",
+  "concepts": [
+    "suite numérique",
+    "limite de suite",
+    "convergence",
+    "comparaison de termes",
+    "somme de termes"
+  ],
+  "methods": [
+    "comparaison de termes",
+    "calcul de limite",
+    "démonstration de convergence"
+  ],
+  "objects": [
+    "suite $u_n$",
+    "suite $u_{2n} - u_n$",
+    "suite $u_n - 2 \\sqrt{n}$",
+    "termes $\frac{1}{\\sqrt{k}}$",
+    "termes $\\sqrt{k+1} - \\sqrt{k}$",
+    "termes $\\sqrt{k} - \\sqrt{k-1}$"
+  ],
+  "content_hash": "853ef12c90d63944286d97c719af9d9454dd36f9894c9c8fbebabef0ab4c4633",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:31:39.867Z"
+}

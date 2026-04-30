@@ -1,0 +1,26 @@
+{
+  "uuid": "eLhp",
+  "source_path": "exo7/5-L2/eLhp.tex",
+  "summary": "On considère une fonction périodique de moyenne nulle et de classe C². On doit montrer que la fonction g = f + f'' s'annule au moins quatre fois sur un intervalle de période.",
+  "concepts": [
+    "fonction périodique",
+    "moyenne nulle",
+    "classe C²",
+    "polynôme trigonométrique",
+    "orthogonalité",
+    "racine de fonction"
+  ],
+  "methods": [
+    "analyse des coefficients de Fourier",
+    "contradiction",
+    "étude des signes"
+  ],
+  "objects": [
+    "fonction g",
+    "fonction f",
+    "polynôme trigonométrique"
+  ],
+  "content_hash": "529881b157c27c0e01d2435cfa3538225e1b9b606b603995ab122ed3c15cbcf5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:27:02.548Z"
+}

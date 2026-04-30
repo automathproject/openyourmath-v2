@@ -1,0 +1,24 @@
+{
+  "uuid": "w5n0",
+  "source_path": "exo7/4-L2/w5n0.tex",
+  "summary": "L'exercice demande d'écrire la matrice associée à un système linéaire tridiagonal et de calculer son déterminant en fonction des déterminants des systèmes de taille inférieure.",
+  "concepts": [
+    "matrice tridiagonale",
+    "déterminant",
+    "récurrence",
+    "polynôme caractéristique",
+    "réduction d'endomorphisme"
+  ],
+  "methods": [
+    "calcul de déterminant par récurrence",
+    "résolution de système linéaire"
+  ],
+  "objects": [
+    "matrice carrée",
+    "système d'équations linéaires",
+    "déterminant de matrice"
+  ],
+  "content_hash": "864145253375e8bd2c9256dafc4913b3ad29e8d7b4520961700b3983b3c8003f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:26:38.700Z"
+}

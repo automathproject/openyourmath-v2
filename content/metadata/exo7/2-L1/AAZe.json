@@ -1,0 +1,27 @@
+{
+  "uuid": "AAZe",
+  "source_path": "exo7/2-L1/AAZe.tex",
+  "summary": "L'exercice demande de montrer la convergence d'une série de terme général Arctan(n+a) - Arctan(n) et de déterminer la limite d'une somme infinie S(a) lorsque a tend vers l'infini.",
+  "concepts": [
+    "série numérique",
+    "convergence de série",
+    "limite de suite",
+    "fonction Arctan",
+    "comparaison de séries"
+  ],
+  "methods": [
+    "comparaison terme à terme",
+    "développement asymptotique",
+    "limite de suite",
+    "somme de termes"
+  ],
+  "objects": [
+    "série de terme général Arctan(n+a) - Arctan(n)",
+    "somme infinie S(a)",
+    "limite de suite",
+    "fonction Arctan"
+  ],
+  "content_hash": "a4568ddea1a596a11b636c4f490180c7824114c93b823d6c06b204e01044fe92",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:03:53.138Z"
+}

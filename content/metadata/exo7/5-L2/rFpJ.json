@@ -1,0 +1,28 @@
+{
+  "uuid": "rFpJ",
+  "source_path": "exo7/5-L2/rFpJ.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction composée de l'arcsinus et d'un terme rationnel admet un développement en série entière au voisinage de 0, d'en déterminer le rayon de convergence, puis d'en déduire une équation différentielle vérifiée par cette fonction et d'expliciter les coefficients de son développement. Enfin, il s'agit de trouver le développement en série entière de l'arcsinus au carré.",
+  "concepts": [
+    "séries entières",
+    "rayon de convergence",
+    "équation différentielle linéaire d'ordre 1",
+    "développement en série entière",
+    "intégration terme à terme",
+    "coefficient binomial"
+  ],
+  "methods": [
+    "détermination du rayon de convergence par limite",
+    "résolution d'équation différentielle",
+    "calcul de coefficients par récurrence",
+    "intégration de séries entières"
+  ],
+  "objects": [
+    "fonction composée",
+    "série entière",
+    "équation différentielle",
+    "coefficient binomial"
+  ],
+  "content_hash": "cd82b0ec1d9d27871a05f0d48985a89d71ab7fe241bf2fc37d45f8773b6bc279",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:53:53.594Z"
+}

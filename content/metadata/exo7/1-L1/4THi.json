@@ -1,0 +1,25 @@
+{
+  "uuid": "4THi",
+  "source_path": "exo7/1-L1/4THi.tex",
+  "summary": "Trouver la condition sur les coefficients p et q d'un polynôme cubique complexe dont les racines sont les affixes de trois points A, B, C, pour que ces points forment un triangle isocèle avec AB = AC = 2BC.",
+  "concepts": [
+    "racines d'un polynôme",
+    "affixe d'un point",
+    "triangle isocèle",
+    "condition nécessaire et suffisante",
+    "géométrie dans le plan complexe"
+  ],
+  "methods": [
+    "calcul des distances entre points",
+    "utilisation des propriétés des racines",
+    "résolution d'équation polynomiale"
+  ],
+  "objects": [
+    "polynôme cubique",
+    "points du plan complexe",
+    "triangle"
+  ],
+  "content_hash": "b75ed7d40cde790c76709701c490ee8ed62f3d5b8e1193eaeab9b25bbe7f6374",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:33:52.566Z"
+}

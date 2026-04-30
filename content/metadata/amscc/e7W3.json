@@ -1,0 +1,32 @@
+{
+  "uuid": "e7W3",
+  "source_path": "amscc/e7W3.tex",
+  "summary": "L'exercice étudie la transformation d'une variable aléatoire exponentielle en une variable discrète par la fonction partie entière. Il demande de déterminer la loi de cette nouvelle variable, sa fonction de répartition et les espérances des variables transformées.",
+  "concepts": [
+    "loi exponentielle",
+    "loi géométrique",
+    "variable aléatoire discrète",
+    "fonction de répartition",
+    "espérance mathématique",
+    "intégration",
+    "somme infinie",
+    "théorème de transfert"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "intégration",
+    "somme infinie",
+    "linéarité de l'espérance",
+    "formule de l'espérance d'une loi géométrique"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "variable aléatoire discrète",
+    "partie entière",
+    "fonction de répartition",
+    "espérance"
+  ],
+  "content_hash": "684b553778bdba7a7ed1c65543cd24b62f4680bf7d93524478ebd8e91c7cb55d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:58:51.915Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "UlZ3",
+  "source_path": "exo7/1-L1/UlZ3.tex",
+  "summary": "Soit un polynôme P à coefficients entiers, un entier n, et p = P(n). On demande de montrer que p divise P(n+p).",
+  "concepts": [
+    "polynôme à coefficients entiers",
+    "divisibilité dans Z",
+    "formule de Taylor",
+    "dérivée d'ordre k",
+    "coefficient binomial"
+  ],
+  "methods": [
+    "développement en série de Taylor",
+    "évaluation de polynômes",
+    "utilisation de la divisibilité"
+  ],
+  "objects": [
+    "polynôme P",
+    "entier n",
+    "valeur p = P(n)"
+  ],
+  "content_hash": "97ce1834fc5300e5a99ff3980180f7fe8202b58d637b79cb17c4ca5e568dd776",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:01:34.756Z"
+}

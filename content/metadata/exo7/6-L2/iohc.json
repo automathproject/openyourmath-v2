@@ -1,0 +1,29 @@
+{
+  "uuid": "iohc",
+  "source_path": "exo7/6-L2/iohc.tex",
+  "summary": "L'exercice demande de déterminer l'équation du plan tangent à une surface paramétrée en un point donné, puis de trouver une condition sur la fonction paramétrant la surface pour que le plan tangent coupe l'axe Oz en un point fixe le long d'une ligne θ constante. Un exemple de surface est également donné.",
+  "concepts": [
+    "surface paramétrée",
+    "plan tangent",
+    "fonction de classe C^1",
+    "équation cartésienne",
+    "condition nécessaire et suffisante",
+    "dérivée partielle"
+  ],
+  "methods": [
+    "calcul des dérivées partielles",
+    "détermination de l'équation du plan tangent",
+    "résolution d'une équation aux dérivées partielles",
+    "analyse de condition géométrique"
+  ],
+  "objects": [
+    "surface paramétrée",
+    "plan tangent",
+    "axe Oz",
+    "fonction f(ρ,θ)",
+    "point M(ρ,θ)"
+  ],
+  "content_hash": "daae8580dc60e8548797a204f682e31f666d699611c085c2956f58ac603eeb65",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:09:35.160Z"
+}

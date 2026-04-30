@@ -1,0 +1,22 @@
+{
+  "uuid": "p2C6",
+  "source_path": "exo7/10-L3/p2C6.tex",
+  "summary": "Déterminer le reste de la division euclidienne du polynôme (x-2)^m + (x-1)^n - 1 par (x-1)(x-2) dans ℤ[x], pour n, m ≥ 2.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "degré d'un polynôme",
+    "évaluation d'un polynôme",
+    "polynôme unitaire"
+  ],
+  "methods": [
+    "évaluation en les racines",
+    "résolution d'un système linéaire"
+  ],
+  "objects": [
+    "polynôme à coefficients entiers",
+    "reste de degré inférieur ou égal à 1"
+  ],
+  "content_hash": "8f5f305a48fbd2e0c15aeb5290e0ec9cfd919fae59fb6b69bf3d31ad3be61390",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:26:34.986Z"
+}

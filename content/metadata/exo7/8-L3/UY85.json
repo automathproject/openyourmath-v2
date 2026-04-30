@@ -1,0 +1,30 @@
+{
+  "uuid": "UY85",
+  "source_path": "exo7/8-L3/UY85.tex",
+  "summary": "Montrer qu'un groupe d'ordre 2p (p ≥ 3 premier) contient un unique sous-groupe d'ordre p, distingué, et déterminer si le groupe est cyclique ou non commutatif.",
+  "concepts": [
+    "théorème de Sylow",
+    "sous-groupe distingué",
+    "automorphisme de groupe",
+    "groupe cyclique",
+    "groupe non commutatif",
+    "groupe diédral",
+    "ordre d'un élément",
+    "conjugaison"
+  ],
+  "methods": [
+    "analyse des automorphismes",
+    "conjugaison par un élément d'ordre 2",
+    "construction explicite d'isomorphisme",
+    "utilisation des relations de groupe"
+  ],
+  "objects": [
+    "groupe d'ordre 2p",
+    "sous-groupe d'ordre p",
+    "automorphisme d'ordre 2",
+    "générateurs s et t"
+  ],
+  "content_hash": "1337dd466a609b1b9791b1c2a20951f17a7a3aea8ec5fcfd014c090963163deb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:57:12.866Z"
+}

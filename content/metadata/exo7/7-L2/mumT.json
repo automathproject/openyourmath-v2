@@ -1,0 +1,26 @@
+{
+  "uuid": "mumT",
+  "source_path": "exo7/7-L2/mumT.tex",
+  "summary": "L'exercice demande de tester l'hypothèse d'un tirage uniforme sur les chiffres 0 à 9 à partir de 1000 tirages observés, en utilisant un test du chi-deux au niveau de signification de 5%.",
+  "concepts": [
+    "test d'hypothèses",
+    "loi uniforme discrète",
+    "test du chi-deux",
+    "approximation par la loi du chi-deux",
+    "niveau de signification",
+    "hypothèse nulle"
+  ],
+  "methods": [
+    "calcul de la statistique du chi-deux",
+    "approximation de la loi du chi-deux",
+    "comparaison avec la table de la loi du chi-deux"
+  ],
+  "objects": [
+    "fréquences observées",
+    "statistique de test",
+    "loi du chi-deux"
+  ],
+  "content_hash": "d56f48c6cbc25bae2c48bc7692c808b143509bb99463cbdd0e790a64c49e3bc1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:50:58.662Z"
+}

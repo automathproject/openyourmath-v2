@@ -1,0 +1,33 @@
+{
+  "uuid": "ttM3",
+  "source_path": "exo7/4-L2/ttM3.tex",
+  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3, de déterminer ses sous-espaces propres et caractéristiques, de trouver une base de réduction et une matrice de passage pour mettre la matrice sous forme de Jordan, puis d'appliquer la décomposition de Dunford et de calculer l'exponentielle de la matrice de Jordan obtenue.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeurs propres",
+    "sous-espaces propres",
+    "sous-espaces caractéristiques",
+    "réduction de Jordan",
+    "décomposition de Dunford",
+    "exponentielle de matrice"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "résolution de systèmes linéaires",
+    "construction de base de réduction",
+    "décomposition en partie diagonale et nilpotente",
+    "calcul de l'exponentielle de matrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme caractéristique",
+    "sous-espaces propres",
+    "sous-espaces caractéristiques",
+    "matrice de Jordan",
+    "matrice diagonale",
+    "matrice nilpotente"
+  ],
+  "content_hash": "a8b0a625d0a559f014817080674460da3faaaa3ea16ab38d281e2379e3c88529",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:21:55.557Z"
+}

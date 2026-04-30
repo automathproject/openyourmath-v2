@@ -1,0 +1,25 @@
+{
+  "uuid": "kJNH",
+  "source_path": "exo7/10-L3/kJNH.tex",
+  "summary": "Dans un corps commutatif, montrer l'existence de polynômes U et V tels que UP + VQ = 1 avec des degrés strictement inférieurs à ceux de Q et P respectivement, pour deux polynômes premiers entre eux.",
+  "concepts": [
+    "algèbre des polynômes",
+    "polynômes premiers entre eux",
+    "identité de Bézout",
+    "corps commutatif",
+    "degré d'un polynôme"
+  ],
+  "methods": [
+    "algorithme d'Euclide étendu",
+    "identité de Bézout",
+    "division euclidienne des polynômes"
+  ],
+  "objects": [
+    "polynômes",
+    "corps commutatif",
+    "identité linéaire"
+  ],
+  "content_hash": "668475ff7fe61882e1e6d6f2061bc17ac1640f3b243c4028be0371979360c9b7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:25:32.130Z"
+}

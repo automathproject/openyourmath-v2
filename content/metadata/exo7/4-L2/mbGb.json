@@ -1,0 +1,30 @@
+{
+  "uuid": "mbGb",
+  "source_path": "exo7/4-L2/mbGb.tex",
+  "summary": "On considère un endomorphisme f d'un espace vectoriel E et un vecteur a tels que la famille (a, f(a), ..., f^(n-1)(a)) forme une base de E. On doit montrer que tout polynôme annulateur non nul de f a un degré supérieur ou égal à n, puis en déduire que le polynôme minimal de f est (à un signe près) son polynôme caractéristique.",
+  "concepts": [
+    "polynôme annulateur",
+    "polynôme minimal",
+    "polynôme caractéristique",
+    "base d'un espace vectoriel",
+    "endomorphisme",
+    "degré d'un polynôme",
+    "raisonnement par l'absurde"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la base pour exprimer les vecteurs",
+    "comparaison des degrés"
+  ],
+  "objects": [
+    "endomorphisme",
+    "vecteur",
+    "base d'un espace vectoriel",
+    "polynôme annulateur",
+    "polynôme minimal",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "499dc9ec575896431139b929833b7e998763326b10b9715a6274ef679fac676c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:11:00.630Z"
+}

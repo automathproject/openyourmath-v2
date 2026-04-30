@@ -1,0 +1,24 @@
+{
+  "uuid": "LOkt",
+  "source_path": "exo7/5-L2/LOkt.tex",
+  "summary": "On considère une suite de fonctions continues convergeant uniformément vers une fonction continue et une suite de points convergeant vers un point. On demande de montrer la convergence de l'image des points par les fonctions vers l'image du point limite, puis de fournir un contre-exemple en convergence simple.",
+  "concepts": [
+    "convergence uniforme",
+    "convergence simple",
+    "continuité",
+    "limite de suite",
+    "limite de fonction"
+  ],
+  "methods": [
+    "passage à la limite",
+    "construction de contre-exemple"
+  ],
+  "objects": [
+    "suite de fonctions",
+    "suite de points",
+    "fonction limite"
+  ],
+  "content_hash": "e9a521ca6613639b5880d5c5663d6228b7b2ce161899dee1bf6920040a4a6f0d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:52:42.700Z"
+}

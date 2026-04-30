@@ -1,0 +1,25 @@
+{
+  "uuid": "tWgY",
+  "source_path": "exo7/7-L2/tWgY.tex",
+  "summary": "Calcul de l'espérance et de la variance d'une variable aléatoire représentant le résultat d'un dé à 6 faces, puis application de ces résultats pour déterminer l'espérance et la variance de la somme de deux dés indépendants.",
+  "concepts": [
+    "espérance d'une variable aléatoire discrète",
+    "variance d'une variable aléatoire discrète",
+    "indépendance de variables aléatoires",
+    "loi uniforme discrète"
+  ],
+  "methods": [
+    "calcul direct de l'espérance",
+    "calcul direct de la variance",
+    "linéarité de l'espérance",
+    "additivité de la variance pour variables indépendantes"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "somme de variables aléatoires indépendantes",
+    "dé à 6 faces"
+  ],
+  "content_hash": "2767b57412ff7aa4385fb79b7b35361725b16d7918b9e4e3f99a42d172dba867",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:41:53.692Z"
+}

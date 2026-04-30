@@ -1,0 +1,28 @@
+{
+  "uuid": "jH2u",
+  "source_path": "exo7/4-L2/jH2u.tex",
+  "summary": "L'exercice demande d'étudier les propriétés d'une matrice A, notamment les inclusions des noyaux de ses puissances successives, de déterminer des vecteurs spécifiques pour décomposer des espaces vectoriels, et de trouver la matrice de passage vers une nouvelle base. L'objectif est de comprendre la structure de l'endomorphisme associé à A.",
+  "concepts": [
+    "noyau d'un endomorphisme",
+    "somme directe d'espaces vectoriels",
+    "famille libre",
+    "base d'un espace vectoriel",
+    "matrice de passage",
+    "décomposition d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul de noyau",
+    "détermination de vecteurs générateurs",
+    "vérification de linéaire indépendance",
+    "construction de base adaptée"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteurs propres",
+    "noyaux de puissances de matrice",
+    "base de l'espace vectoriel"
+  ],
+  "content_hash": "10f18f38bd445500a65a1e04077509c61ef8c2c71da6d9735e0866209d7e5fc9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:08:24.270Z"
+}

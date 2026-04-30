@@ -1,0 +1,22 @@
+{
+  "uuid": "SHuB",
+  "source_path": "exo7/5-L2/SHuB.tex",
+  "summary": "On considère deux suites dans un espace vectoriel normé. On suppose que la différence entre ces suites tend vers 0 et que l'une des suites est de Cauchy. On demande de montrer que l'autre suite est aussi de Cauchy.",
+  "concepts": [
+    "espace vectoriel normé",
+    "suite de Cauchy",
+    "convergence de suite",
+    "topologie des espaces vectoriels normés"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de l'inégalité triangulaire"
+  ],
+  "objects": [
+    "suite dans un evn",
+    "différence de suites"
+  ],
+  "content_hash": "2fc2d761732b0e1e1156283d331161901c1cefb030c62f2085644cb34e62072c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:52:26.119Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "xQe9",
+  "source_path": "amscc/xQe9.tex",
+  "summary": "L'exercice demande d'exprimer la fonction de répartition d'une variable aléatoire Y transformée à partir d'une variable uniforme X, puis d'en déduire la loi suivie par Y. Il aborde aussi la simulation de cette loi.",
+  "concepts": [
+    "fonction de répartition",
+    "loi uniforme",
+    "loi exponentielle",
+    "transformation de variable aléatoire",
+    "simulation de loi de probabilité"
+  ],
+  "methods": [
+    "transformation de variable",
+    "reconnaissance de loi par fonction de répartition",
+    "simulation par transformation inverse"
+  ],
+  "objects": [
+    "variable aléatoire uniforme",
+    "variable aléatoire exponentielle",
+    "fonction de répartition",
+    "commande de simulation"
+  ],
+  "content_hash": "877cc03489c1a5396af987be36a91211d8f3eff88ab370603c055e320eb92853",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:11:40.113Z"
+}

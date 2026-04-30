@@ -1,0 +1,24 @@
+{
+  "uuid": "msma",
+  "source_path": "exo7/4-L2/msma.tex",
+  "summary": "Trouver une matrice carrée A vérifiant une équation polynomiale donnée. L'exercice demande de construire une matrice spécifique à partir de son polynôme caractéristique.",
+  "concepts": [
+    "polynôme caractéristique",
+    "théorème de Cayley-Hamilton",
+    "matrice compagnon",
+    "réduction d'endomorphisme",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "construction de matrice compagnon",
+    "vérification de l'équation polynomiale"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme caractéristique",
+    "matrice compagnon"
+  ],
+  "content_hash": "72fe7b03bbaf64b3d86224fb85c4aa42a979abb0fb2d5f8cd286193031897099",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:11:21.791Z"
+}

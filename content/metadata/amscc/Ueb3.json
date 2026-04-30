@@ -1,0 +1,23 @@
+{
+  "uuid": "Ueb3",
+  "source_path": "amscc/Ueb3.tex",
+  "summary": "L'exercice demande de majorer la probabilité qu'une variable aléatoire discrète représentant le nombre de sodas vendus par jour soit inférieure ou égale à 60, connaissant son espérance et son écart-type.",
+  "concepts": [
+    "inégalité de Bienaymé-Tchebychev",
+    "espérance",
+    "écart-type",
+    "variable aléatoire discrète",
+    "majoration de probabilité"
+  ],
+  "methods": [
+    "application de l'inégalité de Bienaymé-Tchebychev"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "espérance",
+    "écart-type"
+  ],
+  "content_hash": "b4d00fa1edd59e941aa233e1c23c72af9d461437f15a56ae5cce1e6f340d167f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:29:14.486Z"
+}

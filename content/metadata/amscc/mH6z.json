@@ -1,0 +1,29 @@
+{
+  "uuid": "mH6z",
+  "source_path": "amscc/mH6z.tex",
+  "summary": "L'exercice demande de calculer une convolution 2D avec padding same en utilisant le noyau de Sobel X, antisymétrique par rotation de 180 degrés. On applique ce filtre à une matrice image donnée et on interprète les résultats pour détecter des contours verticaux.",
+  "concepts": [
+    "convolution 2D",
+    "padding same",
+    "noyau antisymétrique",
+    "dérivée partielle",
+    "détection de contours",
+    "filtre de Sobel",
+    "produit scalaire de matrices"
+  ],
+  "methods": [
+    "renversement de noyau",
+    "calcul de convolution",
+    "extraction de fenêtres",
+    "interprétation des résultats"
+  ],
+  "objects": [
+    "matrice image",
+    "noyau de convolution",
+    "fenêtre glissante",
+    "coefficient de sortie"
+  ],
+  "content_hash": "60b5ddb11844926bf98f5188af8abe7807dab2a95dd917869df2e62d8caec72f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:35:16.148Z"
+}

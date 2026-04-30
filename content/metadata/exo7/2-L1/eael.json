@@ -1,0 +1,28 @@
+{
+  "uuid": "eael",
+  "source_path": "exo7/2-L1/eael.tex",
+  "summary": "L'exercice demande de prouver que si un polynôme à coefficients entiers admet une racine rationnelle réduite, alors le numérateur divise le terme constant et le dénominateur divise le coefficient dominant. Ensuite, il s'agit d'appliquer ce résultat pour montrer que √2 + √3 n'est pas rationnel.",
+  "concepts": [
+    "racine rationnelle d'un polynôme",
+    "lemme de Gauss",
+    "polynôme minimal",
+    "nombre algébrique",
+    "divisibilité dans Z",
+    "polynôme à coefficients entiers"
+  ],
+  "methods": [
+    "multiplication par le dénominateur commun",
+    "factorisation",
+    "raisonnement par l'absurde",
+    "calcul de polynôme minimal"
+  ],
+  "objects": [
+    "polynôme à coefficients entiers",
+    "racine rationnelle",
+    "nombre irrationnel",
+    "polynôme de degré 4"
+  ],
+  "content_hash": "ca0ce2722fabb220b4d413cb3c9063bcfd9efb38d1cf18a39d7a2239ed271cd6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:59:30.601Z"
+}

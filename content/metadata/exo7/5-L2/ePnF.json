@@ -1,0 +1,32 @@
+{
+  "uuid": "ePnF",
+  "source_path": "exo7/5-L2/ePnF.tex",
+  "summary": "L'exercice demande de montrer l'équivalence de trois propositions concernant une matrice complexe : le spectre contenu dans le disque unité ouvert, la convergence vers zéro de la suite des puissances de la matrice, et la convergence de la série des puissances de la matrice.",
+  "concepts": [
+    "spectre d'une matrice",
+    "valeurs propres",
+    "matrice diagonalisable",
+    "matrice nilpotente",
+    "décomposition de Dunford",
+    "convergence de matrices",
+    "suite de matrices",
+    "série de matrices"
+  ],
+  "methods": [
+    "utilisation de la décomposition de Dunford",
+    "analyse des valeurs propres",
+    "binôme de Newton",
+    "diagonalisation",
+    "étude de la convergence"
+  ],
+  "objects": [
+    "matrice complexe",
+    "suite de matrices",
+    "série de matrices",
+    "vecteur propre",
+    "matrice diagonale"
+  ],
+  "content_hash": "4fe815d5c8f93eb5462904a7f93fca3741aaaa70294668598de1151b6411754d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:59:56.687Z"
+}

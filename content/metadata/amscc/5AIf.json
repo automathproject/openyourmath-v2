@@ -1,0 +1,25 @@
+{
+  "uuid": "5AIf",
+  "source_path": "amscc/5AIf.tex",
+  "summary": "L'exercice demande de déterminer le niveau de stock nécessaire pour satisfaire une demande modélisée par une loi normale, avec une probabilité de 90%.",
+  "concepts": [
+    "loi normale",
+    "fonction de répartition",
+    "standardisation",
+    "quantile",
+    "probabilité continue"
+  ],
+  "methods": [
+    "standardisation",
+    "utilisation de la table de la loi normale centrée réduite"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "écart-type",
+    "moyenne",
+    "quantile"
+  ],
+  "content_hash": "9081419e9bc4e5f74d4daa405c332eafa0992f18d123a5135f3714f1edc405b5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:37:52.449Z"
+}

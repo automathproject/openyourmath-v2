@@ -1,0 +1,26 @@
+{
+  "uuid": "bkil",
+  "source_path": "exo7/1-L1/bkil.tex",
+  "summary": "L'exercice demande de démontrer qu'un polynôme réel non négatif peut s'exprimer comme la somme de deux carrés de polynômes réels, en utilisant sa factorisation dans les complexes.",
+  "concepts": [
+    "polynôme réel",
+    "factorisation dans ℂ[X]",
+    "racines complexes",
+    "polynôme non négatif",
+    "décomposition en facteurs irréductibles",
+    "module d'un nombre complexe"
+  ],
+  "methods": [
+    "factorisation dans ℂ[X]",
+    "identité remarquable",
+    "décomposition en somme de carrés"
+  ],
+  "objects": [
+    "polynôme P ∈ ℝ[X]",
+    "polynômes S et T ∈ ℝ[X]",
+    "racines complexes"
+  ],
+  "content_hash": "a9275d0ad05ecc6c981a1067dab7d27a395d351f6195ed7cc86964c0b779d89f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:09:05.131Z"
+}

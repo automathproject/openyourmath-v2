@@ -1,0 +1,25 @@
+{
+  "uuid": "qgLL",
+  "source_path": "exo7/2-L1/qgLL.tex",
+  "summary": "L'exercice demande de démontrer le théorème d'encadrement pour une suite (u_n) encadrée par deux suites convergentes (v_n) et (w_n), puis d'en déduire la convergence de (u_n) lorsque v = w. Ensuite, il s'agit de montrer la convergence de la suite des moyennes v_n d'une suite convergente (u_n).",
+  "concepts": [
+    "convergence de suite",
+    "théorème d'encadrement",
+    "limite de suite",
+    "moyenne arithmétique",
+    "propriété de la limite"
+  ],
+  "methods": [
+    "encadrement de suite",
+    "utilisation de la définition de la limite",
+    "calcul de moyenne arithmétique"
+  ],
+  "objects": [
+    "suite numérique",
+    "suite convergente",
+    "moyenne arithmétique"
+  ],
+  "content_hash": "67d0d895f6d36670462e2c341f6d0210edb8a249201ab05a795e3a734bd68d55",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:35:42.446Z"
+}

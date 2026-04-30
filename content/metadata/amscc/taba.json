@@ -1,0 +1,30 @@
+{
+  "uuid": "taba",
+  "source_path": "amscc/taba.tex",
+  "summary": "L'exercice demande de déterminer les racines complexes d'un polynôme de degré 4 avec leurs multiplicités, puis d'effectuer la division euclidienne de ce polynôme par un autre polynôme, et enfin d'en déduire une égalité de fractions rationnelles.",
+  "concepts": [
+    "racine d'un polynôme",
+    "multiplicité d'une racine",
+    "division euclidienne des polynômes",
+    "factorisation de polynômes",
+    "dérivée d'un polynôme",
+    "fraction rationnelle"
+  ],
+  "methods": [
+    "calcul des racines par évaluation",
+    "calcul des dérivées successives",
+    "factorisation par racines",
+    "division euclidienne",
+    "décomposition en éléments simples"
+  ],
+  "objects": [
+    "polynôme de degré 4",
+    "racines complexes",
+    "polynôme dérivé",
+    "polynôme carré",
+    "fraction rationnelle"
+  ],
+  "content_hash": "e3a0e26a2795e758c47811928648d121168f3240977b2e3ed8ea3df630e521f0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:27:52.319Z"
+}

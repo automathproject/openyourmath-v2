@@ -1,0 +1,31 @@
+{
+  "uuid": "O5Wz",
+  "source_path": "amscc/O5Wz.tex",
+  "summary": "Calculer l'espérance et la probabilité de dépassement pour des variables exponentielles indépendantes modélisant des temps entre pannes. Étudier la variable maximale de ces temps et son espérance.",
+  "concepts": [
+    "loi exponentielle",
+    "espérance d'une variable exponentielle",
+    "fonction de répartition",
+    "indépendance de variables aléatoires",
+    "variable aléatoire maximale",
+    "densité de probabilité"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de probabilité de dépassement",
+    "utilisation de l'indépendance",
+    "calcul de la fonction de répartition",
+    "dérivation pour obtenir la densité",
+    "intégration par parties"
+  ],
+  "objects": [
+    "variables aléatoires exponentielles",
+    "temps entre pannes",
+    "variable aléatoire maximale",
+    "fonction densité",
+    "espérance"
+  ],
+  "content_hash": "efc7de7e879895d569f7d9e6a7d8a4e62970ff5f0c4b657af7dca583fc249149",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:48:24.097Z"
+}

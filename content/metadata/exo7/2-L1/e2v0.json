@@ -1,0 +1,31 @@
+{
+  "uuid": "e2v0",
+  "source_path": "exo7/2-L1/e2v0.tex",
+  "summary": "L'exercice étudie la convergence d'une série alternée réarrangée. On définit une permutation σ des entiers positifs avec des propriétés spécifiques et on analyse son effet sur la somme partielle de la série v_n = u(σ(n)) où u(n) = (-1)^n/n.",
+  "concepts": [
+    "série alternée",
+    "permutation",
+    "convergence absolue",
+    "convergence conditionnelle",
+    "constante d'Euler",
+    "limite de suite",
+    "somme partielle"
+  ],
+  "methods": [
+    "réarrangement de série",
+    "calcul de limite",
+    "décomposition en séries",
+    "utilisation de la constante d'Euler",
+    "récurrence"
+  ],
+  "objects": [
+    "permutation σ",
+    "suite u(n)",
+    "série v_n",
+    "somme partielle s_n",
+    "fonction f(n)"
+  ],
+  "content_hash": "8a510852fea3ac194d7a8ed44efff82c33f7458f8c39f87fb8ebfb11afb71d69",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:26:37.883Z"
+}

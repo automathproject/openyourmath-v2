@@ -1,0 +1,27 @@
+{
+  "uuid": "Qlag",
+  "source_path": "exo7/4-L2/Qlag.tex",
+  "summary": "L'exercice demande de montrer l'équivalence de quatre propriétés concernant une matrice B commuant avec une matrice A ayant des valeurs propres simples, puis de déterminer l'ensemble des matrices commutant avec A dans le cas où A est une matrice 3x3 diagonalisable avec une valeur propre double.",
+  "concepts": [
+    "commutant d'une matrice",
+    "valeurs propres simples",
+    "diagonalisation",
+    "polynôme annulateur",
+    "base de vecteurs propres",
+    "matrice diagonalisable"
+  ],
+  "methods": [
+    "utilisation des bases de vecteurs propres",
+    "construction de polynômes annulateurs",
+    "diagonalisation de matrices"
+  ],
+  "objects": [
+    "matrice carrée",
+    "commutant d'une matrice",
+    "polynôme de degré n-1",
+    "base de vecteurs propres commune"
+  ],
+  "content_hash": "f539dfaa0a482fdf7874a3e8e54b5d09462294c4de88fe37306205bb8f67e686",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:43:31.806Z"
+}

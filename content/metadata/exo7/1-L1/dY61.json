@@ -1,0 +1,24 @@
+{
+  "uuid": "dY61",
+  "source_path": "exo7/1-L1/dY61.tex",
+  "summary": "Trouver le reste de la division euclidienne du polynôme (X+1)^n - X^n - 1 par X^2 + X + 1.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "racines cubiques de l'unité",
+    "congruences modulo 3",
+    "polynôme unitaire"
+  ],
+  "methods": [
+    "substitution des racines",
+    "calcul de reste",
+    "analyse par cas modulo"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "polynôme diviseur de degré 2",
+    "racine complexe primitive"
+  ],
+  "content_hash": "f4f5d462f0d73488f472b92bfb85a32df07aaf851c63e5b4d37071d4d7a7843e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:10:44.993Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "vDn3",
+  "source_path": "exo7/4-L2/vDn3.tex",
+  "summary": "L'exercice demande de déterminer la dimension d'un sous-espace propre associé à une valeur propre d'une matrice, puis de montrer une propriété de génération de ce sous-espace. Il illustre ces concepts avec un exemple de diagonalisation d'une matrice 3x3.",
+  "concepts": [
+    "valeur propre",
+    "sous-espace propre",
+    "rang d'une matrice",
+    "polynôme caractéristique",
+    "théorème de Cayley-Hamilton",
+    "comatrice",
+    "transposée d'une matrice"
+  ],
+  "methods": [
+    "calcul du rang",
+    "détermination de la dimension d'un sous-espace propre",
+    "utilisation de la comatrice",
+    "diagonalisation de matrice"
+  ],
+  "objects": [
+    "matrice carrée",
+    "sous-espace propre",
+    "comatrice",
+    "matrice transposée"
+  ],
+  "content_hash": "102e857c3fe8293cfdc1fa09674361887ec090883b7a93d1f5f02707137a1c2d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:24:45.544Z"
+}

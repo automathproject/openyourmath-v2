@@ -1,0 +1,28 @@
+{
+  "uuid": "40kf",
+  "source_path": "exo7/7-L2/40kf.tex",
+  "summary": "L'exercice modélise la recherche de deux lettres dans une pile de n feuilles. On définit deux variables aléatoires X₁ et X₂ représentant le nombre de feuilles retirées pour trouver respectivement la première et la deuxième lettre. On demande de décrire l'espace des résultats, les lois des variables et leur somme Z = X₁ + X₂ + 2.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi de probabilité",
+    "espace probabilisé",
+    "probabilité équiprobable",
+    "indépendance",
+    "loi conjointe"
+  ],
+  "methods": [
+    "énumération des cas",
+    "calcul de probabilités conditionnelles",
+    "détermination de la loi conjointe",
+    "somme de variables aléatoires"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "espace des résultats",
+    "loi de probabilité",
+    "événement"
+  ],
+  "content_hash": "1dcb3066ed04cdb37f07bd3503583ca1286e9ef3ade294a7b2488585c2470465",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:15:33.102Z"
+}

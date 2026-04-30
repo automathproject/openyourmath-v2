@@ -1,0 +1,30 @@
+{
+  "uuid": "Folr",
+  "source_path": "exo7/4-L2/Folr.tex",
+  "summary": "Déterminer le polynôme minimal d'une matrice carrée 3x3 donnée. L'exercice porte sur la réduction d'endomorphisme et l'étude des polynômes annulateurs.",
+  "concepts": [
+    "polynôme minimal",
+    "matrice carrée",
+    "réduction d'endomorphisme",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "algèbre linéaire",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "détermination des valeurs propres",
+    "factorisation du polynôme caractéristique",
+    "identification du polynôme minimal"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme caractéristique",
+    "polynôme minimal",
+    "valeurs propres"
+  ],
+  "content_hash": "bf61820c61c8d2bfbb7bede59b862574fd70d9006adf143c2598eef2963f513f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:29:11.940Z"
+}

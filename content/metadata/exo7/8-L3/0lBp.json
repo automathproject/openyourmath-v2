@@ -1,0 +1,28 @@
+{
+  "uuid": "0lBp",
+  "source_path": "exo7/8-L3/0lBp.tex",
+  "summary": "Soit G un groupe et f un morphisme de groupes de G dans un groupe abélien A. On suppose que le noyau N(f) de f est résoluble. On demande de montrer que le groupe dérivé D(G) de G est inclus dans le noyau de f, puis que G est résoluble.",
+  "concepts": [
+    "groupe dérivé",
+    "morphisme de groupes",
+    "groupe abélien",
+    "noyau d'un morphisme",
+    "groupe résoluble",
+    "sous-groupe distingué"
+  ],
+  "methods": [
+    "étude du groupe dérivé",
+    "analyse des noyaux de morphismes",
+    "propriétés des groupes résolubles"
+  ],
+  "objects": [
+    "groupe G",
+    "morphisme f",
+    "groupe abélien A",
+    "noyau N(f)",
+    "groupe dérivé D(G)"
+  ],
+  "content_hash": "ba624f49726741f82950b52a069ac2b189b5616b886a9c1e95a7f07503005d71",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:52:14.672Z"
+}

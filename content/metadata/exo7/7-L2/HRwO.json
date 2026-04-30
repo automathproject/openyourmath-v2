@@ -1,0 +1,25 @@
+{
+  "uuid": "HRwO",
+  "source_path": "exo7/7-L2/HRwO.tex",
+  "summary": "Calculer le nombre minimal de barres de chocolat à acheter pour avoir une probabilité supérieure à 80% puis 90% d'obtenir une figurine spécifique parmi cinq possibles.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "événements indépendants",
+    "probabilité de succès",
+    "loi binomiale",
+    "probabilité complémentaire"
+  ],
+  "methods": [
+    "calcul de probabilité de non-événement",
+    "résolution d'inéquation exponentielle",
+    "approximation par inégalités"
+  ],
+  "objects": [
+    "probabilité de succès",
+    "nombre d'essais",
+    "probabilité seuil"
+  ],
+  "content_hash": "9a7f8898ac3a11397b94c8f775bf9a2701f97d0b8d112f5aa8a22bf09de8a638",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:22:54.609Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "IrPh",
+  "source_path": "exo7/1-L1/IrPh.tex",
+  "summary": "Montrer que deux polynômes à coefficients rationnels sont premiers entre eux si et seulement s'ils n'ont pas de racine commune dans les complexes.",
+  "concepts": [
+    "polynôme irréductible",
+    "racine d'un polynôme",
+    "PGCD de polynômes",
+    "corps des nombres complexes",
+    "corps des nombres rationnels",
+    "polynômes premiers entre eux"
+  ],
+  "methods": [
+    "décomposition en facteurs irréductibles",
+    "utilisation du théorème de Bézout",
+    "analyse des racines communes"
+  ],
+  "objects": [
+    "polynômes à coefficients rationnels",
+    "racines complexes",
+    "PGCD"
+  ],
+  "content_hash": "7084e0bc8bdb7cf45c8957f61052042cb8e9c70067a1bba9dcfb73469d15ccaf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:47:52.215Z"
+}

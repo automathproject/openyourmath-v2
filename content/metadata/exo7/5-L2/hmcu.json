@@ -1,0 +1,27 @@
+{
+  "uuid": "hmcu",
+  "source_path": "exo7/5-L2/hmcu.tex",
+  "summary": "L'exercice demande de majorer l'erreur de troncature de la série entière de la fonction exponentielle pour tout entier naturel N et tout z dans le disque unité.",
+  "concepts": [
+    "série entière",
+    "fonction exponentielle",
+    "majoration d'erreur",
+    "disque unité",
+    "convergence uniforme",
+    "théorème de Taylor-Lagrange"
+  ],
+  "methods": [
+    "majoration de reste",
+    "utilisation du développement en série entière",
+    "estimation de terme général"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "série de Taylor",
+    "disque unité",
+    "erreur de troncature"
+  ],
+  "content_hash": "43e187f03c41dc72a97a3d8b0d240e7c2f8af66beb1e29c2491a7b1c0676cf35",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:49:57.703Z"
+}

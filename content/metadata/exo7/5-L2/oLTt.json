@@ -1,0 +1,26 @@
+{
+  "uuid": "oLTt",
+  "source_path": "exo7/5-L2/oLTt.tex",
+  "summary": "L'exercice demande de démontrer que l'adhérence d'une partie A d'un espace vectoriel normé est l'ensemble des limites de suites convergentes d'éléments de A. Ensuite, dans le cas particulier où E est ℝ, il s'agit de montrer que si A est bornée, alors la borne supérieure de A appartient à son adhérence.",
+  "concepts": [
+    "adhérence d'un ensemble",
+    "suite convergente",
+    "espace vectoriel normé",
+    "borne supérieure",
+    "ensemble borné",
+    "topologie d'un espace vectoriel normé"
+  ],
+  "methods": [
+    "construction de suite convergente",
+    "utilisation de la définition de l'adhérence",
+    "passage à la limite"
+  ],
+  "objects": [
+    "partie d'un espace vectoriel normé",
+    "suite d'éléments de A",
+    "borne supérieure de A"
+  ],
+  "content_hash": "3e550f6895feecee47b70c8e0a10a9cd6b8c62d8a76e4213f296c035fe2ecb3d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:09:34.413Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "URum",
+  "source_path": "exo7/4-L2/URum.tex",
+  "summary": "L'exercice demande de déterminer les valeurs propres et une base de vecteurs propres d'une matrice diagonale donnée, puis d'identifier les matrices B telles que l'exponentielle de B égale A, en utilisant les propriétés de diagonalisation et de commutation.",
+  "concepts": [
+    "matrice diagonale",
+    "valeurs propres",
+    "vecteurs propres",
+    "exponentielle de matrice",
+    "commutation de matrices",
+    "diagonalisation"
+  ],
+  "methods": [
+    "identification des valeurs propres par diagonalisation",
+    "vérification de la commutation",
+    "calcul de l'exponentielle de matrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "base canonique de ℝ³",
+    "vecteurs propres",
+    "matrice exponentielle"
+  ],
+  "content_hash": "8ac8ac91722032ace3eda4e17009d5bf097627f014dbe55b3e86203ebcac6019",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:48:06.911Z"
+}

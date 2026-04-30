@@ -1,0 +1,27 @@
+{
+  "uuid": "5UHv",
+  "source_path": "exo7/15-L3/5UHv.tex",
+  "summary": "L'exercice demande de démontrer des propriétés sur des ensembles $B_n$ définis récursivement dans un espace vectoriel normé, puis d'utiliser ces propriétés pour montrer qu'une isométrie linéaire préserve les milieux.",
+  "concepts": [
+    "espace vectoriel normé",
+    "isométrie",
+    "point fixe",
+    "diamètre d'un ensemble",
+    "suite d'ensembles emboîtés",
+    "limite d'ensembles"
+  ],
+  "methods": [
+    "récurrence",
+    "démonstration par l'absurde",
+    "utilisation de la définition d'isométrie"
+  ],
+  "objects": [
+    "ensemble $B_n$",
+    "suite d'ensembles",
+    "isométrie linéaire",
+    "milieu de deux points"
+  ],
+  "content_hash": "ce451caae53d56c4abd74069065c834fd767393ae4a160b626a14a0115101404",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:29:59.213Z"
+}

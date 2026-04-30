@@ -1,0 +1,27 @@
+{
+  "uuid": "IaDc",
+  "source_path": "exo7/2-L1/IaDc.tex",
+  "summary": "L'exercice demande d'étudier une suite définie par une relation de récurrence homographique. Il faut transformer cette relation selon le nombre de points fixes de la transformation homographique associée, puis calculer explicitement le terme général de la suite dans chaque cas.",
+  "concepts": [
+    "relation de récurrence",
+    "transformation homographique",
+    "point fixe",
+    "suite récurrente",
+    "convergence de suite",
+    "limite de suite"
+  ],
+  "methods": [
+    "transformation de relation de récurrence",
+    "calcul de points fixes",
+    "linéarisation de suite récurrente",
+    "calcul explicite de terme général"
+  ],
+  "objects": [
+    "suite récurrente homographique",
+    "points fixes",
+    "relation de récurrence non linéaire"
+  ],
+  "content_hash": "e9a66a1162a99dc2f9af4bd29b70c973117a045bc2718025bd90703e58677bad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:12:16.103Z"
+}

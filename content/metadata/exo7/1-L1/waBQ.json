@@ -1,0 +1,28 @@
+{
+  "uuid": "waBQ",
+  "source_path": "exo7/1-L1/waBQ.tex",
+  "summary": "L'exercice demande de montrer que deux polynômes sont premiers entre eux, puis de déterminer leur PGCD et de trouver des polynômes U et V vérifiant une relation linéaire. Ensuite, il s'agit de trouver un polynôme P de degré minimal satisfaisant des conditions de restes spécifiques lors de divisions euclidiennes.",
+  "concepts": [
+    "polynôme premier entre eux",
+    "PGCD de polynômes",
+    "division euclidienne de polynômes",
+    "algèbre des polynômes",
+    "théorème de Bézout",
+    "restes de division"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "identité de Bézout",
+    "calcul de reste",
+    "recherche de degré minimal"
+  ],
+  "objects": [
+    "polynômes",
+    "PGCD",
+    "restes de division",
+    "polynôme P"
+  ],
+  "content_hash": "4ab1773c50410a0ff1db33cc33a52b34da68afa1c4c66affa629c4522c0f6ec4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:30:38.761Z"
+}

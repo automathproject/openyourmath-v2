@@ -1,0 +1,26 @@
+{
+  "uuid": "65Es",
+  "source_path": "exo7/7-L2/65Es.tex",
+  "summary": "L'exercice demande de déterminer le nombre de personnes à soigner dans une population de 10 000, dont le taux de cholestérol suit une loi normale, en utilisant les proportions données pour différentes plages de taux.",
+  "concepts": [
+    "loi normale",
+    "standardisation",
+    "table de la loi normale centrée réduite",
+    "moyenne et écart-type",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "standardisation",
+    "interpolation dans la table de Gauss",
+    "résolution de système d'équations"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "moyenne",
+    "écart-type",
+    "population"
+  ],
+  "content_hash": "2b75ab88808c891a622245f571606f7c04793b801a51eff02aff68e79a111a0c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:16:29.200Z"
+}

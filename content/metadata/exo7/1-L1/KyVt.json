@@ -1,0 +1,22 @@
+{
+  "uuid": "KyVt",
+  "source_path": "exo7/1-L1/KyVt.tex",
+  "summary": "Trouver des coefficients complexes λ et μ tels que le polynôme X² + X + 1 soit un diviseur du polynôme X⁵ + λX³ + μX² + 1.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "racine d'un polynôme",
+    "polynôme irréductible",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "identification des racines",
+    "calcul des coefficients"
+  ],
+  "objects": [
+    "polynôme de degré 2",
+    "polynôme de degré 5"
+  ],
+  "content_hash": "928975efe7378a79d3f636ec000bb25fc63a30698e22d41492055e5a702daf4f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:51:23.043Z"
+}

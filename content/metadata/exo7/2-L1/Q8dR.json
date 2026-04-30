@@ -1,0 +1,25 @@
+{
+  "uuid": "Q8dR",
+  "source_path": "exo7/2-L1/Q8dR.tex",
+  "summary": "Déterminer les valeurs réelles de a et b pour lesquelles la série de terme général ln(n) + a*ln(n+1) + b*ln(n+2) converge, puis calculer la somme de cette série.",
+  "concepts": [
+    "série numérique",
+    "convergence de série",
+    "somme de série",
+    "système d'équations linéaires",
+    "fonction logarithme"
+  ],
+  "methods": [
+    "résolution de système linéaire",
+    "téléscopage",
+    "étude de la convergence"
+  ],
+  "objects": [
+    "série de terme général",
+    "fonction logarithme",
+    "système d'équations"
+  ],
+  "content_hash": "550a82f186e86f3c11a00a571ed69236b1f57ca05e88a32b4f4ddd5744876849",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:17:13.153Z"
+}

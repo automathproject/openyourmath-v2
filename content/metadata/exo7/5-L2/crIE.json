@@ -1,0 +1,25 @@
+{
+  "uuid": "crIE",
+  "source_path": "exo7/5-L2/crIE.tex",
+  "summary": "On étudie une suite réelle bornée et deux suites complexes associées. On suppose que le rapport de deux paramètres est irrationnel et que les suites complexes convergent. On demande de montrer que la suite réelle converge.",
+  "concepts": [
+    "suite réelle bornée",
+    "suite complexe",
+    "convergence de suite",
+    "nombre irrationnel",
+    "topologie de la droite réelle"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la densité des nombres irrationnels",
+    "analyse des suites complexes"
+  ],
+  "objects": [
+    "suite réelle (x_n)",
+    "suites complexes (e^{iux_n}) et (e^{ivx_n})",
+    "paramètres u et v"
+  ],
+  "content_hash": "f2e867be8ea51724244aff6154120a732aec27bb7279c9284bb51617fd45183f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:01:10.049Z"
+}

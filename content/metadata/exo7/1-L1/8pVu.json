@@ -1,0 +1,28 @@
+{
+  "uuid": "8pVu",
+  "source_path": "exo7/1-L1/8pVu.tex",
+  "summary": "Soit P un polynôme à coefficients entiers et n un entier. On note m = P(n). L'exercice demande de montrer que pour tout entier k, m divise P(n + km), puis de prouver qu'il n'existe pas de polynôme non constant à coefficients entiers tel que P(n) soit premier pour tout entier n.",
+  "concepts": [
+    "polynôme à coefficients entiers",
+    "divisibilité dans Z",
+    "nombre premier",
+    "racine d'un polynôme",
+    "factorisation de polynômes",
+    "arithmétique des polynômes"
+  ],
+  "methods": [
+    "utilisation de la relation de divisibilité",
+    "factorisation",
+    "analyse des racines",
+    "preuve par l'absurde"
+  ],
+  "objects": [
+    "polynôme P",
+    "entier n",
+    "entier k",
+    "valeur m = P(n)"
+  ],
+  "content_hash": "928de66edffed84aef1410f4de8c46135b26a63eb340bb396d1ce57a254c1888",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:37:34.090Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "6yTT",
+  "source_path": "exo7/5-L2/6yTT.tex",
+  "summary": "L'exercice demande de déterminer les rayons de convergence des séries entières associées aux suites (aₙ) et (bₙ), puis d'étudier la nature de ces séries en fonction de x.",
+  "concepts": [
+    "rayon de convergence",
+    "série entière",
+    "critère de convergence d'Abel",
+    "développement limité",
+    "convergence absolue",
+    "convergence simple"
+  ],
+  "methods": [
+    "critère de Cauchy",
+    "linéarisation du cosinus",
+    "regroupement par paquets",
+    "développement limité de sin(aₙ)"
+  ],
+  "objects": [
+    "suite (aₙ)",
+    "suite (bₙ)",
+    "série entière",
+    "fonction cosinus",
+    "fonction sinus"
+  ],
+  "content_hash": "e794b49490075e281559fd2cb23e14638e3329fdab599a32a367979aa514b41d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:35:43.924Z"
+}

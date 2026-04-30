@@ -1,0 +1,26 @@
+{
+  "uuid": "R0SQ",
+  "source_path": "amscc/R0SQ.tex",
+  "summary": "L'exercice demande de déterminer la loi de la somme de deux variables aléatoires indépendantes uniformes sur [0;1]. Il s'agit de trouver la densité de probabilité de cette somme.",
+  "concepts": [
+    "variable aléatoire indépendante",
+    "loi uniforme",
+    "densité de probabilité",
+    "intégrale de convolution",
+    "fonction indicatrice",
+    "loi triangulaire"
+  ],
+  "methods": [
+    "calcul de densité par convolution",
+    "intégration conditionnelle",
+    "analyse par cas"
+  ],
+  "objects": [
+    "variable aléatoire uniforme",
+    "somme de variables aléatoires",
+    "densité de probabilité"
+  ],
+  "content_hash": "9d5d22c8b7739b041cc44e5854530013886e6b3db19b5152938c77179112d160",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:49:29.344Z"
+}

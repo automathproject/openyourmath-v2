@@ -1,0 +1,25 @@
+{
+  "uuid": "vvj9",
+  "source_path": "exo7/2-L1/vvj9.tex",
+  "summary": "L'exercice demande de montrer que la partie entière de la suite x_n = (√3 + 1)^(2n+1) est égale à x_n - y_n, où y_n = (√3 - 1)^(2n+1), puis d'en déduire que 2^(n+1) divise cette partie entière.",
+  "concepts": [
+    "suite récurrente linéaire",
+    "partie entière",
+    "convergence",
+    "divisibilité",
+    "propriétés des nombres irrationnels"
+  ],
+  "methods": [
+    "manipulation algébrique",
+    "analyse de la croissance des suites",
+    "utilisation des propriétés des nombres conjugués"
+  ],
+  "objects": [
+    "suite numérique",
+    "partie entière d'une suite",
+    "nombre irrationnel"
+  ],
+  "content_hash": "8281ec18f4ddc9546d9f91027a891ca6f3ad0b252ff891c1043c67b12558e6c4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:40:41.702Z"
+}

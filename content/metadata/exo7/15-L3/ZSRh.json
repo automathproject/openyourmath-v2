@@ -1,0 +1,28 @@
+{
+  "uuid": "ZSRh",
+  "source_path": "exo7/15-L3/ZSRh.tex",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité de la solution d'un système linéaire et non linéaire en utilisant le théorème du point fixe. Le système linéaire est défini par une matrice A avec une condition sur la somme des carrés de ses coefficients.",
+  "concepts": [
+    "théorème du point fixe",
+    "système d'équations linéaires",
+    "système d'équations non linéaires",
+    "existence et unicité de solution",
+    "matrice carrée",
+    "déterminant"
+  ],
+  "methods": [
+    "application du théorème du point fixe",
+    "analyse de la condition de contraction",
+    "résolution de système linéaire",
+    "résolution de système non linéaire"
+  ],
+  "objects": [
+    "matrice A",
+    "système linéaire",
+    "système non linéaire",
+    "solution unique"
+  ],
+  "content_hash": "fd560ebfe22c5c246aa236d60396ee3887456ff5357bacedf93a95db3a536f8a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:30:58.548Z"
+}

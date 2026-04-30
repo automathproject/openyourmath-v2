@@ -1,0 +1,28 @@
+{
+  "uuid": "b99X",
+  "source_path": "exo7/1-L1/b99X.tex",
+  "summary": "L'exercice demande de déterminer si le pgcd de deux polynômes complexes A et B est égal à 1 si et seulement si le pgcd de A+B et AB est égal à 1, et si le pgcd de A et B est égal au pgcd de A+B et AB.",
+  "concepts": [
+    "polynôme",
+    "pgcd de polynômes",
+    "algèbre commutative",
+    "division euclidienne",
+    "algèbre sur un corps",
+    "propriétés des polynômes"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "division polynomiale",
+    "factorisation",
+    "analyse des racines"
+  ],
+  "objects": [
+    "polynômes complexes",
+    "pgcd",
+    "somme de polynômes",
+    "produit de polynômes"
+  ],
+  "content_hash": "b3bcaceb66332b7d4a8f57f5cd73fe921e6da79c771684fd42bbe099ec9e60b7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:07:46.154Z"
+}

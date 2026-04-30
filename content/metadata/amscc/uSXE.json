@@ -1,0 +1,30 @@
+{
+  "uuid": "uSXE",
+  "source_path": "amscc/uSXE.tex",
+  "summary": "L'exercice demande d'estimer la moyenne et la variance d'une loi normale à partir d'un échantillon de 7 observations, puis de construire un intervalle de confiance pour la moyenne lorsque la variance est inconnue.",
+  "concepts": [
+    "loi normale",
+    "moyenne empirique",
+    "variance empirique",
+    "intervalle de confiance",
+    "estimation ponctuelle",
+    "estimation par intervalle",
+    "loi de Student"
+  ],
+  "methods": [
+    "estimation de la moyenne",
+    "estimation de la variance",
+    "calcul de l'intervalle de confiance pour une moyenne",
+    "utilisation de la loi de Student"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "échantillon",
+    "moyenne empirique",
+    "variance empirique",
+    "intervalle de confiance"
+  ],
+  "content_hash": "4ab237b7754007949644edc3e4bd9796a642fc3c2f1a8f809ad54f19fd5a2877",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:59:29.946Z"
+}

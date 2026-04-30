@@ -1,0 +1,25 @@
+{
+  "uuid": "ad69",
+  "source_path": "amscc/ad69.tex",
+  "summary": "Un exercice sur une marche aléatoire discrète dans un carré ABCD avec centre O. Une puce saute entre les points A, B, C, D, O avec des contraintes de mouvement. On demande de calculer des probabilités conditionnelles et de démontrer une relation de récurrence pour la probabilité d'être en O après n sauts.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "marche aléatoire",
+    "probabilité de transition",
+    "relation de récurrence",
+    "symétrie dans les probabilités"
+  ],
+  "methods": [
+    "calcul de probabilités équiprobables",
+    "démonstration par récurrence",
+    "utilisation des symétries"
+  ],
+  "objects": [
+    "saut aléatoire",
+    "probabilité de position",
+    "événement conditionnel"
+  ],
+  "content_hash": "bcee948f0b53f65da22789af781765dc4e4100995a18fb40cd02f7311638442e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:32:29.751Z"
+}

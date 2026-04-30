@@ -1,0 +1,27 @@
+{
+  "uuid": "L0Jp",
+  "source_path": "exo7/11-L3/L0Jp.tex",
+  "summary": "L'exercice demande de déterminer des conditions sur les fonctions α et β pour que l'image de deux applications différentes soit une sous-variété de ℝ³. La première application est linéaire en x, et la seconde introduit une dépendance en cosinus et sinus de y.",
+  "concepts": [
+    "sous-variété",
+    "application différentiable",
+    "espace tangent",
+    "condition de sous-variété",
+    "immersion",
+    "différentiabilité"
+  ],
+  "methods": [
+    "calcul du rang de la différentielle",
+    "analyse des conditions d'immersion",
+    "étude de la différentielle"
+  ],
+  "objects": [
+    "application φ : ℝ → ℝ³",
+    "application f : ℝ² → ℝ³",
+    "espace tangent T_p 𝒮",
+    "espace tangent T_p 𝒞"
+  ],
+  "content_hash": "e4e1b49d07ef3fb96e06349919bc108bd41bd8e1ba50c8ea66deebacbe20e012",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:17:41.090Z"
+}

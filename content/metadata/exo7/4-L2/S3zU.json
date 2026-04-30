@@ -1,0 +1,27 @@
+{
+  "uuid": "S3zU",
+  "source_path": "exo7/4-L2/S3zU.tex",
+  "summary": "L'exercice demande de montrer l'existence d'une matrice antisymétrique Q telle que A, une matrice orthogonale, s'exprime comme (I+Q)⁻¹(I−Q) ou (I−Q)(I+Q)⁻¹, et d'étudier la réciproque.",
+  "concepts": [
+    "matrice orthogonale",
+    "matrice antisymétrique",
+    "valeur propre",
+    "polynôme annulateur",
+    "matrice inversible",
+    "groupe orthogonal spécial"
+  ],
+  "methods": [
+    "factorisation matricielle",
+    "propriétés des matrices antisymétriques",
+    "inversion de matrices",
+    "analyse des valeurs propres"
+  ],
+  "objects": [
+    "matrice A",
+    "matrice Q",
+    "matrice identité I"
+  ],
+  "content_hash": "d54d565fe0f434cd96d5da9045f62bfab400f893e4b0fb867c0018578dcac710",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:46:09.285Z"
+}

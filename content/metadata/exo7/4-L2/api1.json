@@ -1,0 +1,28 @@
+{
+  "uuid": "api1",
+  "source_path": "exo7/4-L2/api1.tex",
+  "summary": "L'exercice demande de déterminer les conditions sur les réels α et β pour que la matrice A soit diagonalisable. Ensuite, pour α=0 et β=0, il faut vérifier une relation matricielle et en déduire des expressions pour An et (A+I)⁻¹.",
+  "concepts": [
+    "diagonalisation",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres",
+    "matrice inversible"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "vérification de la diagonalisabilité",
+    "calcul de puissances de matrice",
+    "inversion de matrice"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "polynôme annulateur",
+    "puissance de matrice",
+    "matrice inversible"
+  ],
+  "content_hash": "0ea5e16c06932a93e0393efb18685f737909c4247ae21252af3feb7a37a1c0da",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:57:20.029Z"
+}

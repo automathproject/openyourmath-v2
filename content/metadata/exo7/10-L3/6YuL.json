@@ -1,0 +1,28 @@
+{
+  "uuid": "6YuL",
+  "source_path": "exo7/10-L3/6YuL.tex",
+  "summary": "L'exercice demande de déterminer quels polynômes parmi une liste donnée sont irréductibles dans l'anneau ℚ[X]. Il s'agit d'identifier l'irréductibilité de polynômes de degrés 3, 4 et 6.",
+  "concepts": [
+    "irréductibilité dans ℚ[X]",
+    "polynôme unitaire",
+    "critère d'Eisenstein",
+    "factorisation de polynômes",
+    "anneau de polynômes",
+    "degré d'un polynôme"
+  ],
+  "methods": [
+    "application du critère d'Eisenstein",
+    "recherche de racines rationnelles",
+    "factorisation par identification",
+    "test de divisibilité par des polynômes irréductibles"
+  ],
+  "objects": [
+    "polynôme de degré 3",
+    "polynôme de degré 4",
+    "polynôme de degré 6",
+    "polynôme unitaire"
+  ],
+  "content_hash": "8fea3fb24f28f61f4ee968f83145b9e49e6450b113325ac82879fddb2c7add46",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:19:12.258Z"
+}

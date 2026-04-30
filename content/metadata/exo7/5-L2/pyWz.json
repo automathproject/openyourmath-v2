@@ -1,0 +1,28 @@
+{
+  "uuid": "pyWz",
+  "source_path": "exo7/5-L2/pyWz.tex",
+  "summary": "L'exercice demande de démontrer que le graphe d'une application continue entre espaces vectoriels normés est fermé, puis d'établir la réciproque sous une condition de compacité, et enfin de fournir un contre-exemple sans cette condition.",
+  "concepts": [
+    "espace vectoriel normé",
+    "application continue",
+    "graphe d'une application",
+    "fermeture d'un ensemble",
+    "compacité",
+    "réciproque d'une implication"
+  ],
+  "methods": [
+    "raisonnement par contraposée",
+    "utilisation de la définition de la continuité",
+    "argument par l'absurde",
+    "construction de contre-exemple"
+  ],
+  "objects": [
+    "application entre espaces vectoriels",
+    "graphe d'une application",
+    "ensemble compact",
+    "ensemble fermé"
+  ],
+  "content_hash": "5b09b09955646c4d6685430c289190b5ce816ebae88af84d634ff4e17a94c85c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:11:01.649Z"
+}

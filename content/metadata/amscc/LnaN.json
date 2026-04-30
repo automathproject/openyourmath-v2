@@ -1,0 +1,26 @@
+{
+  "uuid": "LnaN",
+  "source_path": "amscc/LnaN.tex",
+  "summary": "Calculer des probabilités et quantiles d'une variable aléatoire normale, puis déterminer une transformation linéaire pour ajuster sa distribution.",
+  "concepts": [
+    "loi normale",
+    "espérance",
+    "variance",
+    "standardisation",
+    "transformation linéaire de variable aléatoire",
+    "quantile"
+  ],
+  "methods": [
+    "standardisation",
+    "centrage-réduction",
+    "calcul de probabilités à partir de tables normales"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "transformation affine",
+    "quantile"
+  ],
+  "content_hash": "9d898495df2f20b4d0edfd865de3cc41efb5d5ca5d42c065378debb7116be004",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:46:27.846Z"
+}

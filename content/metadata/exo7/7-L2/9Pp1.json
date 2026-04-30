@@ -1,0 +1,25 @@
+{
+  "uuid": "9Pp1",
+  "source_path": "exo7/7-L2/9Pp1.tex",
+  "summary": "L'exercice demande d'évaluer le risque d'erreur associé à la prédiction de la victoire du non dans un référendum, à partir des résultats d'un sondage sur un échantillon de 10 000 personnes.",
+  "concepts": [
+    "test d'hypothèse",
+    "intervalle de confiance",
+    "proportion",
+    "échantillonnage",
+    "risque d'erreur de première espèce"
+  ],
+  "methods": [
+    "calcul de proportion",
+    "test du chi-deux",
+    "approximation gaussienne"
+  ],
+  "objects": [
+    "proportion",
+    "échantillon",
+    "test statistique"
+  ],
+  "content_hash": "30fc7e9e0fa55a18fb966c779101821427a8c161f44e734b45f1fd125bb6b773",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:35:02.457Z"
+}

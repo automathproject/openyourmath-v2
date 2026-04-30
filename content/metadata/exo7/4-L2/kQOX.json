@@ -1,0 +1,27 @@
+{
+  "uuid": "kQOX",
+  "source_path": "exo7/4-L2/kQOX.tex",
+  "summary": "Résoudre un système différentiel linéaire d'équations à trois variables. Trouver toutes les solutions vérifiant des conditions initiales données.",
+  "concepts": [
+    "système différentiel linéaire",
+    "matrice associée",
+    "valeurs propres",
+    "vecteurs propres",
+    "espace vectoriel",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "diagonalisation",
+    "résolution par exponentielle de matrice",
+    "calcul de valeurs propres",
+    "calcul de vecteurs propres"
+  ],
+  "objects": [
+    "système différentiel",
+    "matrice 3x3",
+    "conditions initiales"
+  ],
+  "content_hash": "c923fd3dbfa264e2341bd7ca285654a8356b9755bcf901fc442a2ade633991e3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:09:12.614Z"
+}

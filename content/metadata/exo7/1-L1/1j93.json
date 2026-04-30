@@ -1,0 +1,25 @@
+{
+  "uuid": "1j93",
+  "source_path": "exo7/1-L1/1j93.tex",
+  "summary": "L'exercice demande de trouver des polynômes A₀, A₁, A₂ tels que A₀Q₀ + A₁Q₁ + A₂Q₂ = 1 en utilisant la décomposition en éléments simples d'une fraction rationnelle. Il s'agit ensuite d'en déduire des propriétés sur les polynômes Q₁, Q₂ et Q₃.",
+  "concepts": [
+    "décomposition en éléments simples",
+    "relation de Bézout",
+    "polynômes premiers entre eux",
+    "pgcd de polynômes",
+    "fraction rationnelle"
+  ],
+  "methods": [
+    "décomposition en éléments simples",
+    "identification des coefficients",
+    "vérification de l'identité polynomiale"
+  ],
+  "objects": [
+    "polynômes",
+    "fraction rationnelle",
+    "relation de Bézout"
+  ],
+  "content_hash": "5baad57106859f822373b3739d8e5eb4110d4303405a612a3bfbb066bb8d85e7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:31:26.785Z"
+}

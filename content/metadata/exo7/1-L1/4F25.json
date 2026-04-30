@@ -1,0 +1,27 @@
+{
+  "uuid": "4F25",
+  "source_path": "exo7/1-L1/4F25.tex",
+  "summary": "Factoriser deux polynômes dans l'ensemble des polynômes réels. Le premier polynôme est X^6 + 1, et le second est X^9 + X^6 + X^3 + 1.",
+  "concepts": [
+    "factorisation de polynômes",
+    "racines complexes",
+    "polynômes irréductibles sur ℝ",
+    "conjugaison complexe",
+    "polynômes cyclotomiques"
+  ],
+  "methods": [
+    "recherche de racines évidentes",
+    "factorisation par groupes",
+    "utilisation de la conjugaison complexe",
+    "décomposition en facteurs irréductibles"
+  ],
+  "objects": [
+    "polynôme de degré 6",
+    "polynôme de degré 9",
+    "racines cubiques de l'unité",
+    "racines de l'unité"
+  ],
+  "content_hash": "6bd20c3893cb987a73dd5ebf5dbbacc3f029071d69c482192b5b957f7757ca6c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:33:31.832Z"
+}

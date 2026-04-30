@@ -1,0 +1,25 @@
+{
+  "uuid": "aen3",
+  "source_path": "exo7/5-L2/aen3.tex",
+  "summary": "L'exercice demande de démontrer qu'une application définie sur ℝ² est une norme, puis de représenter graphiquement la boule unité associée.",
+  "concepts": [
+    "norme",
+    "espace vectoriel normé",
+    "boule unité",
+    "inégalité triangulaire",
+    "continuité",
+    "topologie"
+  ],
+  "methods": [
+    "vérification des propriétés d'une norme",
+    "représentation graphique"
+  ],
+  "objects": [
+    "norme sur ℝ²",
+    "boule unité",
+    "application (x,y) ↦ supₜ |x+ty|/(1+t+t²)"
+  ],
+  "content_hash": "09fbdc71085b0166d94bded921cbf46e49bbacd9e5e6968427e25ec34eaf6110",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:00:16.943Z"
+}

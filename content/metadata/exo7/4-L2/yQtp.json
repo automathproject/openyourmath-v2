@@ -1,0 +1,26 @@
+{
+  "uuid": "yQtp",
+  "source_path": "exo7/4-L2/yQtp.tex",
+  "summary": "Trouver une matrice carrée inversible P permettant de diagonaliser trois matrices A données par similitude, et écrire la matrice diagonale B obtenue.",
+  "concepts": [
+    "diagonalisation",
+    "valeur propre",
+    "vecteur propre",
+    "polynôme annulateur",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "recherche de valeurs propres",
+    "recherche de vecteurs propres",
+    "construction de matrice de passage"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice diagonale",
+    "matrice inversible"
+  ],
+  "content_hash": "ef0b0dbf059d324c966b312f904b0ebae4e0f04378311fe447584866a8d8c3be",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:30:49.872Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "KyPP",
+  "source_path": "exo7/4-L2/KyPP.tex",
+  "summary": "L'exercice demande de trigonaliser deux matrices réelles 3x3 données. Il s'agit de trouver une matrice triangulaire similaire à chacune des matrices proposées.",
+  "concepts": [
+    "trigonalisation",
+    "matrice similaire",
+    "valeurs propres",
+    "vecteurs propres",
+    "polynôme caractéristique",
+    "réduction d'endomorphisme"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "recherche des vecteurs propres",
+    "construction de la matrice de passage"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice triangulaire",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "40f6093d24502856fb683dd91f9111fcbda8cf0ba379c2878f03dc4182270edb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:35:33.673Z"
+}

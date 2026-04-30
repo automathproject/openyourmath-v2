@@ -1,0 +1,29 @@
+{
+  "uuid": "PtXD",
+  "source_path": "amscc/PtXD.tex",
+  "summary": "Étude d'une suite récurrente définie par $u_{n+1} = u_n + \frac{1}{n^a u_n}$ et analyse de sa convergence. On examine la monotonie, la majoration, et l'équivalent de la suite pour déterminer les valeurs de $a$ pour lesquelles la série associée converge.",
+  "concepts": [
+    "suite numérique",
+    "suite récurrente",
+    "monotonie",
+    "convergence",
+    "série télescopique",
+    "série de Riemann",
+    "équivalent de suites"
+  ],
+  "methods": [
+    "étude de la monotonie",
+    "téléscopage",
+    "comparaison de séries",
+    "approximation par équivalent"
+  ],
+  "objects": [
+    "suite $(u_n)$",
+    "série $\\sum (u_{n+1} - u_n)$",
+    "somme partielle $S_N$",
+    "limite finie $\\ell$"
+  ],
+  "content_hash": "af687bb0b39fab67017b874e3f921ba8218d9dd12b0bfd11389a638f8d95ecfa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:16:49.900Z"
+}

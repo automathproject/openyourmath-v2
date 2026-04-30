@@ -1,0 +1,25 @@
+{
+  "uuid": "AeqM",
+  "source_path": "exo7/2-L1/AeqM.tex",
+  "summary": "L'exercice demande de prouver la convergence de la somme partielle d'une famille sommable vers la somme totale lorsque les parties indexées forment une suite croissante couvrant l'ensemble d'indices. Il s'agit ensuite d'en déduire une propriété de décomposition de la somme sur une partition dénombrable.",
+  "concepts": [
+    "famille sommable",
+    "suite croissante de parties",
+    "convergence de suites",
+    "partition dénombrable",
+    "somme sur un ensemble dénombrable"
+  ],
+  "methods": [
+    "passage à la limite dans les inégalités",
+    "utilisation de la définition de la sommabilité",
+    "décomposition de la somme sur une partition"
+  ],
+  "objects": [
+    "famille d'éléments sommable",
+    "suite de parties de l'ensemble d'indices",
+    "partition dénombrable de l'ensemble d'indices"
+  ],
+  "content_hash": "c1f9ca2611937e8888c0b44ad3f229471d67f93bfdc3c1f73f7c74483fc092b5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:04:44.187Z"
+}

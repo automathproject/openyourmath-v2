@@ -1,0 +1,27 @@
+{
+  "uuid": "LAt1",
+  "source_path": "exo7/1-L1/LAt1.tex",
+  "summary": "Soit P un polynôme non constant à coefficients entiers. On note E l'ensemble des diviseurs premiers d'au moins un P(n) pour n entier. Montrer que E est infini.",
+  "concepts": [
+    "polynôme à coefficients entiers",
+    "diviseur premier",
+    "valeur d'un polynôme",
+    "contraste par l'absurde",
+    "formule de Taylor",
+    "valuation p-adique"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la formule de Taylor",
+    "analyse de la valuation p-adique",
+    "étude des valeurs prises par un polynôme"
+  ],
+  "objects": [
+    "polynôme non constant",
+    "ensemble de diviseurs premiers",
+    "valeurs entières d'un polynôme"
+  ],
+  "content_hash": "c80ec08f0ab72fa15f5da11142db0d5f5d0e180c28890c9be64482e36a32fc24",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:51:37.345Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "6sta",
+  "source_path": "exo7/13-L3/6sta.tex",
+  "summary": "L'exercice demande de démontrer des propriétés de convergence des solutions d'équations différentielles linéaires et perturbées. Il s'agit d'étudier le comportement asymptotique des solutions sous certaines hypothèses sur la matrice A et la fonction g.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "matrice diagonalisable",
+    "valeurs propres",
+    "partie réelle d'un nombre complexe",
+    "convergence de suite",
+    "norme d'un vecteur",
+    "exponentielle de matrice"
+  ],
+  "methods": [
+    "estimation de norme",
+    "diagonalisation de matrice",
+    "analyse asymptotique",
+    "utilisation de la norme maximale"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteur complexe",
+    "solution d'équation différentielle",
+    "fonction exponentielle de matrice"
+  ],
+  "content_hash": "7bd879e9afc16c05c1ac05a97d845ff6a99003a0694dc298b17559ba6fd9b1cc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:43:30.831Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "PTeM",
+  "source_path": "exo7/4-L2/PTeM.tex",
+  "summary": "L'exercice demande de déterminer si deux matrices données de taille 4x4 sur le corps des complexes admettent une racine carrée.",
+  "concepts": [
+    "réduction de Jordan",
+    "polynôme annulateur",
+    "valeurs propres",
+    "algèbre linéaire",
+    "matrices carrées",
+    "racine carrée de matrice"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "analyse des valeurs propres",
+    "décomposition de Jordan"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "polynôme annulateur",
+    "valeurs propres",
+    "blocs de Jordan"
+  ],
+  "content_hash": "6c6b5bf1c0fd90722f3b96bf2bd56f3d67dbc89e79a643f5167b3ce0e6b9f0b2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:41:32.041Z"
+}

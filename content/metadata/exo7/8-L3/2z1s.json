@@ -1,0 +1,24 @@
+{
+  "uuid": "2z1s",
+  "source_path": "exo7/8-L3/2z1s.tex",
+  "summary": "Démontrer une identité combinatoire par dénombrement d'ensembles de parties. L'énoncé propose de compter les parties de cardinal p obtenues en combinant des parties d'un ensemble et de son complémentaire.",
+  "concepts": [
+    "combinaisons",
+    "dénombrement",
+    "parties d'un ensemble",
+    "cardinal d'un ensemble",
+    "identité combinatoire"
+  ],
+  "methods": [
+    "dénombrement par cas",
+    "utilisation des coefficients binomiaux"
+  ],
+  "objects": [
+    "coefficient binomial",
+    "partie d'un ensemble",
+    "ensemble fini"
+  ],
+  "content_hash": "72a4cd2efdaf4a7cee933e44f0e66827858da963167148348694dda68fff8c47",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:10:46.517Z"
+}

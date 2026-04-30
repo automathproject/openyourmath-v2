@@ -1,0 +1,27 @@
+{
+  "uuid": "CZ75",
+  "source_path": "exo7/5-L2/CZ75.tex",
+  "summary": "Développer en série entière la fonction f(x) = √(x + √(1 + x²)). L'énoncé demande de trouver une représentation sous forme de série entière pour cette fonction composée.",
+  "concepts": [
+    "séries entières",
+    "rayon de convergence",
+    "équation différentielle",
+    "théorème d'unicité de Cauchy-Lipschitz",
+    "développement en série entière"
+  ],
+  "methods": [
+    "résolution d'équation différentielle",
+    "développement en série formelle",
+    "calcul des coefficients de la série",
+    "utilisation de la substitution hyperbolique"
+  ],
+  "objects": [
+    "fonction composée",
+    "série entière",
+    "coefficient de la série",
+    "rayon de convergence"
+  ],
+  "content_hash": "88428f6199b3d343f991b5bab1248c93d7146cbf4dfb3d2b067e5f19e69d01bf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:38:27.651Z"
+}

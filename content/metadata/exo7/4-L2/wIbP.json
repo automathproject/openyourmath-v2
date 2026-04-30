@@ -1,0 +1,27 @@
+{
+  "uuid": "wIbP",
+  "source_path": "exo7/4-L2/wIbP.tex",
+  "summary": "L'exercice demande de montrer qu'un polynôme spécifique admet une unique racine positive, puis d'appliquer ce résultat à une matrice particulière pour prouver l'existence d'une unique valeur propre réelle strictement positive.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "racine d'un polynôme",
+    "fonction strictement croissante",
+    "théorème des valeurs intermédiaires",
+    "matrice carrée"
+  ],
+  "methods": [
+    "étude de la croissance d'une fonction",
+    "application du théorème des valeurs intermédiaires",
+    "calcul du polynôme caractéristique"
+  ],
+  "objects": [
+    "polynôme P_n",
+    "matrice A",
+    "racine positive",
+    "valeur propre réelle"
+  ],
+  "content_hash": "19f908a8e90938e367a3d97a1e370d49c9128c41e528420ba0895c9668cd2685",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:26:50.415Z"
+}

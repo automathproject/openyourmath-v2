@@ -1,0 +1,28 @@
+{
+  "uuid": "pO3p",
+  "source_path": "exo7/1-L1/pO3p.tex",
+  "summary": "L'exercice demande de prouver que pour un polynôme P à coefficients entiers relatifs et un entier n, P(n+km) est divisible par m=P(n) pour tout entier k. Ensuite, il s'agit de montrer qu'il n'existe pas de polynôme non constant à coefficients entiers qui prend des valeurs premières pour tout entier n.",
+  "concepts": [
+    "polynôme à coefficients entiers",
+    "divisibilité",
+    "nombre premier",
+    "racine d'un polynôme",
+    "polynôme constant",
+    "développement de polynôme"
+  ],
+  "methods": [
+    "développement binomial",
+    "analyse de divisibilité",
+    "argument par l'absurde",
+    "étude des racines"
+  ],
+  "objects": [
+    "polynôme P",
+    "entier n",
+    "entier k",
+    "valeur m=P(n)"
+  ],
+  "content_hash": "30c09a874ecc5dcc3f8f974dde01b0c8aae73ca848d19e5e72257aceac3f6749",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:22:51.683Z"
+}

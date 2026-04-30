@@ -1,0 +1,26 @@
+{
+  "uuid": "xltz",
+  "source_path": "exo7/7-L2/xltz.tex",
+  "summary": "On lance deux dés à 6 faces. On demande de décrire l'ensemble des résultats possibles et la probabilité associée, puis de calculer la probabilité d'événements spécifiques : obtenir un double, au plus un nombre pair, exactement un nombre pair, ou deux nombres qui se suivent.",
+  "concepts": [
+    "probabilité élémentaire",
+    "espace probabilisé",
+    "événement élémentaire",
+    "probabilité conditionnelle",
+    "loi uniforme discrète",
+    "indépendance"
+  ],
+  "methods": [
+    "calcul de probabilité par dénombrement",
+    "utilisation de la formule des probabilités totales",
+    "énumération des cas favorables"
+  ],
+  "objects": [
+    "dés à 6 faces",
+    "ensemble des résultats possibles",
+    "événements composés"
+  ],
+  "content_hash": "8e414f77c962ba1859e99e57b0a9f536536010871c201c64dcfd577f512c86dc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:43:47.875Z"
+}

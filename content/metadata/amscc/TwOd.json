@@ -1,0 +1,34 @@
+{
+  "uuid": "TwOd",
+  "source_path": "amscc/TwOd.tex",
+  "summary": "L'exercice demande de déterminer la constante de normalisation d'une densité conjointe de deux variables aléatoires, puis d'étudier leurs propriétés statistiques (moments, variance, covariance, indépendance).",
+  "concepts": [
+    "densité de probabilité conjointe",
+    "loi marginale",
+    "espérance mathématique",
+    "variance",
+    "covariance",
+    "indépendance de variables aléatoires",
+    "théorème de transfert",
+    "intégration multiple"
+  ],
+  "methods": [
+    "normalisation de densité",
+    "calcul de densité marginale",
+    "calcul d'espérance",
+    "calcul de variance",
+    "calcul de covariance",
+    "intégration par parties"
+  ],
+  "objects": [
+    "densité conjointe",
+    "variables aléatoires à densité",
+    "lois marginales",
+    "espérance",
+    "variance",
+    "covariance"
+  ],
+  "content_hash": "ab9706b4e32e025864ddc3ea8895ecaeeba0ac8c39d64abad35eb3602f6e7fae",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:51:34.550Z"
+}

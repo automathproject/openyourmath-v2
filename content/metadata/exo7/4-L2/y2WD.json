@@ -1,0 +1,28 @@
+{
+  "uuid": "y2WD",
+  "source_path": "exo7/4-L2/y2WD.tex",
+  "summary": "L'exercice demande de calculer le déterminant d'une matrice 4x4 donnée, puis de déterminer son polynôme caractéristique en utilisant des propriétés algébriques, et enfin de prouver que cette matrice est diagonalisable sur le corps des nombres complexes.",
+  "concepts": [
+    "polynôme caractéristique",
+    "matrice symétrique",
+    "diagonalisation",
+    "polynôme scindé",
+    "racines simples",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "calcul de polynôme caractéristique",
+    "utilisation de la transposée",
+    "vérification de diagonalisabilité"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "polynôme annulateur",
+    "polynôme caractéristique",
+    "racines du polynôme"
+  ],
+  "content_hash": "7a9bda5d0be6ef66ecaeab56e36d77b31763738c98ce30ce7e84832d80134521",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:29:48.127Z"
+}

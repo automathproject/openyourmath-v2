@@ -1,0 +1,27 @@
+{
+  "uuid": "mzco",
+  "source_path": "exo7/4-L2/mzco.tex",
+  "summary": "L'exercice demande de montrer que si un polynôme annulateur d'un endomorphisme s'annule en cet endomorphisme, alors il s'annule aussi en l'endomorphisme induit sur un sous-espace stable. On en déduit la diagonalisabilité de l'endomorphisme induit si l'endomorphisme original est diagonalisable. Application à la recherche des sous-espaces stables d'un endomorphisme donné par une matrice 3x3.",
+  "concepts": [
+    "sous-espace stable",
+    "polynôme annulateur",
+    "endomorphisme diagonalisable",
+    "matrice d'endomorphisme",
+    "sous-espace vectoriel",
+    "induction d'endomorphisme"
+  ],
+  "methods": [
+    "utilisation de polynôme annulateur",
+    "diagonalisation",
+    "recherche de sous-espaces stables"
+  ],
+  "objects": [
+    "endomorphisme",
+    "sous-espace vectoriel",
+    "matrice 3x3",
+    "polynôme annulateur"
+  ],
+  "content_hash": "4e1016ce35884f75ff2b127fe5c02e518159776c9b5e6ff773f0fe3a0c39c13a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:11:53.875Z"
+}

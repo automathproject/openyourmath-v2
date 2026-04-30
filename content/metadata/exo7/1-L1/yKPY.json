@@ -1,0 +1,27 @@
+{
+  "uuid": "yKPY",
+  "source_path": "exo7/1-L1/yKPY.tex",
+  "summary": "L'exercice demande d'étudier une suite de nombres complexes définie par une relation de récurrence linéaire. On cherche d'abord le point fixe de l'application définissant la suite, puis on étudie la suite des différences entre les termes et la valeur fixe.",
+  "concepts": [
+    "suite récurrente",
+    "point fixe",
+    "convergence de suite",
+    "nombres complexes",
+    "module d'un nombre complexe",
+    "somme infinie"
+  ],
+  "methods": [
+    "recherche de point fixe",
+    "calcul de limite de suite",
+    "calcul de somme infinie"
+  ],
+  "objects": [
+    "suite complexe",
+    "application linéaire",
+    "point fixe",
+    "suite des différences"
+  ],
+  "content_hash": "b56626fea2ec6f8b95682880975e3d3169581222d1f40449070999852db893a6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:08:11.491Z"
+}

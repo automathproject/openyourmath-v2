@@ -1,0 +1,22 @@
+{
+  "uuid": "dLlx",
+  "source_path": "exo7/1-L1/dLlx.tex",
+  "summary": "Trouver les polynômes à coefficients dans ℚ₃[X] divisibles par X+1 et dont les restes des divisions par X+2, X+3 et X+4 sont égaux.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "polynôme unitaire",
+    "racine d'un polynôme",
+    "restes de division"
+  ],
+  "methods": [
+    "théorème du reste",
+    "identification des coefficients"
+  ],
+  "objects": [
+    "polynôme à coefficients rationnels",
+    "diviseur de polynôme"
+  ],
+  "content_hash": "1babf5b0a15d7eb89ca7c518a7badb44d02de8ced4b849a8ce315cab4f1e94ec",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:10:34.188Z"
+}

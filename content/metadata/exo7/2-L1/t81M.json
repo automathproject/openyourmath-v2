@@ -1,0 +1,25 @@
+{
+  "uuid": "t81M",
+  "source_path": "exo7/2-L1/t81M.tex",
+  "summary": "On étudie une suite réelle $(u_n)$ telle que les séries $\\sum |u_n|$ et $\\sum n|u_n|$ convergent. On définit $v_n = \\sum_{k=n}^\\infty u_k$ et on demande de montrer que $nv_n \\to 0$ lorsque $n\\to\\infty$, puis que $\\sum_{n=1}^\\infty v_n = \\sum_{n=1}^\\infty nu_n$.",
+  "concepts": [
+    "série absolument convergente",
+    "convergence de série",
+    "somme partielle",
+    "critère de convergence",
+    "limite de suite"
+  ],
+  "methods": [
+    "comparaison de séries",
+    "manipulation algébrique de sommes infinies",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite réelle",
+    "série numérique",
+    "somme partielle"
+  ],
+  "content_hash": "22a739974883f3f27c2fbf159938e7e61822361c15065f2e062bff402704a6e9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:34:45.882Z"
+}

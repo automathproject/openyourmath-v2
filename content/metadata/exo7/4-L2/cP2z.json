@@ -1,0 +1,26 @@
+{
+  "uuid": "cP2z",
+  "source_path": "exo7/4-L2/cP2z.tex",
+  "summary": "On considère une matrice M de taille n×n sur le corps des complexes, vérifiant M^p = I pour un certain entier p. On doit montrer que toute racine p-ième de l'unité ω est soit une valeur propre de M, soit satisfait une relation polynomiale spécifique.",
+  "concepts": [
+    "racine de l'unité",
+    "valeur propre",
+    "polynôme annulateur",
+    "matrice inversible",
+    "algèbre linéaire sur les complexes",
+    "relation de récurrence polynomiale"
+  ],
+  "methods": [
+    "manipulation de polynômes",
+    "utilisation de la relation M^p = I",
+    "analyse des racines de l'unité"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "racine p-ième de l'unité",
+    "polynôme annulateur"
+  ],
+  "content_hash": "43c56a1e732e01b2d4505e6cb184bd300d7d0964a91d78f2306bee60dff5fe6b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:59:17.290Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "nEkp",
+  "source_path": "amscc/nEkp.tex",
+  "summary": "L'exercice demande de calculer le nombre de paramètres d'un réseau de neurones à une couche cachée en fonction du nombre de neurones cachés et du nombre de variables d'entrée, puis d'interpréter la différence entre deux architectures.",
+  "concepts": [
+    "réseau de neurones",
+    "couche cachée",
+    "paramètres d'un modèle",
+    "régression multiple",
+    "architecture de réseau",
+    "calcul de poids et biais"
+  ],
+  "methods": [
+    "calcul de paramètres par couche",
+    "comparaison d'architectures",
+    "application numérique"
+  ],
+  "objects": [
+    "réseau de neurones 3 → h → 1",
+    "réseau de neurones 1 → h → 1",
+    "nombre de paramètres",
+    "variables d'entrée"
+  ],
+  "content_hash": "69a73d9b548fbd03a57651709f6ac670fcc2a35d0370055d0789c707baa460c0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:36:15.605Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "nox5",
+  "source_path": "exo7/4-L2/nox5.tex",
+  "summary": "L'exercice demande de déterminer les valeurs propres et les vecteurs propres d'une matrice particulière de taille n×n, en distinguant deux cas selon que les premiers n-1 coefficients sont nuls ou non.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "rang d'une matrice",
+    "espace propre",
+    "polynôme caractéristique",
+    "matrice diagonale"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "détermination des espaces propres",
+    "analyse de la structure de la matrice"
+  ],
+  "objects": [
+    "matrice n×n",
+    "valeurs propres",
+    "vecteurs propres",
+    "espace propre"
+  ],
+  "content_hash": "5ccc13d35b0563f100ccde5aa27347d06603bb0b88e17505413fd13e628d2046",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:13:48.181Z"
+}

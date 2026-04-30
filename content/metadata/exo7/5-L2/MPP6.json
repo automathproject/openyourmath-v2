@@ -1,0 +1,27 @@
+{
+  "uuid": "MPP6",
+  "source_path": "exo7/5-L2/MPP6.tex",
+  "summary": "Montrer que la borne supérieure de la valeur absolue d'un polynôme complexe sur un ouvert borné de ℂ est atteinte sur le bord de cet ouvert.",
+  "concepts": [
+    "continuité",
+    "borne supérieure",
+    "fermeture d'un ouvert",
+    "frontière d'un ouvert",
+    "polynôme complexe",
+    "intégration complexe"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "développement en série de Taylor",
+    "intégration sur un cercle"
+  ],
+  "objects": [
+    "polynôme complexe",
+    "ouvert borné de ℂ",
+    "frontière d'un ouvert",
+    "valeur absolue d'un polynôme"
+  ],
+  "content_hash": "92b77d60242d69f0dd5ab41c2dc3f244163f1695c76e20169815e61c0af269cb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:47:03.669Z"
+}

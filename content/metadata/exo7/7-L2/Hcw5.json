@@ -1,0 +1,29 @@
+{
+  "uuid": "Hcw5",
+  "source_path": "exo7/7-L2/Hcw5.tex",
+  "summary": "L'exercice demande de tester l'hypothèse d'une répartition uniforme de la fréquentation d'un élan parmi quatre types de végétation dans son domaine vital, à partir de données observées.",
+  "concepts": [
+    "test d'hypothèse",
+    "répartition uniforme",
+    "statistique d'observation",
+    "loi du chi-deux",
+    "test du chi-deux",
+    "hypothèse nulle",
+    "hypothèse alternative"
+  ],
+  "methods": [
+    "calcul des fréquences observées",
+    "calcul des fréquences théoriques",
+    "calcul de la statistique de test",
+    "comparaison avec la loi du chi-deux"
+  ],
+  "objects": [
+    "tableau de contingence",
+    "fréquences observées",
+    "fréquences théoriques",
+    "statistique de test"
+  ],
+  "content_hash": "68c3e66ca1c124b917c81c389d9172b0a815e4a68f6a9b25a4293a15d3ca978b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:39:06.474Z"
+}

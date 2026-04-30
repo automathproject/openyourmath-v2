@@ -1,0 +1,24 @@
+{
+  "uuid": "33gw",
+  "source_path": "exo7/1-L1/33gw.tex",
+  "summary": "On considère une famille de polynômes définis par P_k = (X-a)^k(X-b)^{n-k} avec a ≠ b dans un corps K. L'exercice demande de prouver que cette famille est libre.",
+  "concepts": [
+    "famille libre",
+    "polynôme",
+    "corps commutatif",
+    "base d'un espace vectoriel",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "détermination de linéarité",
+    "utilisation de la définition de famille libre"
+  ],
+  "objects": [
+    "polynôme",
+    "famille de polynômes",
+    "espace vectoriel"
+  ],
+  "content_hash": "ac2ffcaa249f27fc298540f8bcb89f9c6b58c1d5a7fba84ebaa989be5ddeab11",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:32:41.432Z"
+}

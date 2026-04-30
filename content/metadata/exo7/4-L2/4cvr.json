@@ -1,0 +1,26 @@
+{
+  "uuid": "4cvr",
+  "source_path": "exo7/4-L2/4cvr.tex",
+  "summary": "On considère trois matrices carrées complexes A, B et C vérifiant AC = CB et de rang r. On demande de montrer que A et B partagent au moins r valeurs propres communes.",
+  "concepts": [
+    "polynôme annulateur",
+    "valeur propre",
+    "rang d'une matrice",
+    "décomposition en blocs de Jordan",
+    "matrice triangulaire",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "décomposition en blocs de Jordan",
+    "triangularisation",
+    "comparaison des polynômes caractéristiques"
+  ],
+  "objects": [
+    "matrices carrées complexes",
+    "valeurs propres communes",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "d23936fce5a6e8a694519e9241dffd10c496cb9552a48cefadbae4ea4e44d1d9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:13:42.848Z"
+}

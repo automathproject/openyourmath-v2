@@ -1,0 +1,28 @@
+{
+  "uuid": "RrlK",
+  "source_path": "exo7/4-L2/RrlK.tex",
+  "summary": "L'exercice demande de comparer les valeurs propres d'une matrice A et d'une matrice M construite à partir de A, puis de déterminer sous quelle condition sur A la matrice M est diagonalisable.",
+  "concepts": [
+    "valeurs propres",
+    "matrice bloc",
+    "diagonalisation",
+    "polynôme annulateur",
+    "récurrence",
+    "linéarité"
+  ],
+  "methods": [
+    "comparaison de valeurs propres",
+    "construction de polynôme",
+    "récurrence sur les polynômes",
+    "linéarité des polynômes"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme",
+    "matrice bloc",
+    "valeurs propres"
+  ],
+  "content_hash": "ded3d0ac4140da49e392415c2c200adda19f24c07f9b35374945ed340d0bf776",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:45:26.950Z"
+}

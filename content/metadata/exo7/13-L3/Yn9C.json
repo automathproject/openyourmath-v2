@@ -1,0 +1,28 @@
+{
+  "uuid": "Yn9C",
+  "source_path": "exo7/13-L3/Yn9C.tex",
+  "summary": "L'exercice demande de démontrer la continuité du flot de solutions d'une équation différentielle par rapport à la condition initiale, en utilisant une inégalité de croissance exponentielle. On applique ensuite ce résultat à l'équation x' = x² sur ℝ.",
+  "concepts": [
+    "théorème de Cauchy-Lipschitz",
+    "flot de solutions",
+    "condition initiale",
+    "continuité",
+    "inégalité de croissance exponentielle",
+    "équation différentielle"
+  ],
+  "methods": [
+    "estimation de l'écart entre solutions",
+    "application du théorème de Cauchy-Lipschitz",
+    "vérification sur un exemple concret"
+  ],
+  "objects": [
+    "équation différentielle x' = f(x)",
+    "solutions x₁ et x₂",
+    "condition initiale x(t₀) = x₀",
+    "intervalle de définition [t₀, t₁]",
+    "exemple x' = x²"
+  ],
+  "content_hash": "0ff801a0d92d55d9409d97468ddda2c8779abc04bdabe650b0b89f0810bcbad9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:45:29.645Z"
+}

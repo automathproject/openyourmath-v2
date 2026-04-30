@@ -1,0 +1,26 @@
+{
+  "uuid": "rVaz",
+  "source_path": "amscc/rVaz.tex",
+  "summary": "L'exercice demande d'appliquer le critère de D'Alembert à deux séries numériques définies par leurs termes généraux u_n et v_n, puis de conclure sur leur nature (convergence ou divergence).",
+  "concepts": [
+    "critère de D'Alembert",
+    "série numérique",
+    "convergence de série",
+    "divergence de série",
+    "comparaison de séries",
+    "série de Riemann"
+  ],
+  "methods": [
+    "calcul de limite de rapport de termes consécutifs",
+    "approximation asymptotique",
+    "comparaison avec série de Riemann"
+  ],
+  "objects": [
+    "série numérique",
+    "terme général de série",
+    "suite numérique"
+  ],
+  "content_hash": "8fc24cf188c7edffb6d38f0e898df6cb095a0c98e872ea55cfae38bb8062d0d5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:34:19.705Z"
+}

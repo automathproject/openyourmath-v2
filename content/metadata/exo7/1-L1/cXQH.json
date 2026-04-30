@@ -1,0 +1,28 @@
+{
+  "uuid": "cXQH",
+  "source_path": "exo7/1-L1/cXQH.tex",
+  "summary": "On considère un polynôme complexe P de degré d dont toutes les racines ont un module strictement inférieur à 1. On définit un nouveau polynôme Q en combinant P et son conjugué. L'exercice demande de montrer que toutes les racines de Q ont un module égal à 1.",
+  "concepts": [
+    "polynôme complexe",
+    "racine de polynôme",
+    "module d'un nombre complexe",
+    "conjugaison complexe",
+    "argument d'un nombre complexe",
+    "détermination continue de l'argument"
+  ],
+  "methods": [
+    "analyse des racines de polynôme",
+    "utilisation de la conjugaison",
+    "étude de l'argument",
+    "détermination continue"
+  ],
+  "objects": [
+    "polynôme P",
+    "polynôme Q",
+    "racines de module 1",
+    "conjugué d'un polynôme"
+  ],
+  "content_hash": "3276f49e279d863e0e79675080042dc8f3409f9821a8d48abf2831f90a673f16",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:10:00.587Z"
+}

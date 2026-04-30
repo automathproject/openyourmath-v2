@@ -1,0 +1,28 @@
+{
+  "uuid": "EfwX",
+  "source_path": "exo7/4-L2/EfwX.tex",
+  "summary": "L'exercice demande d'établir une relation entre une matrice J et son carré J², puis d'en déduire les valeurs propres de J ainsi que leurs multiplicités. Enfin, il s'agit de déterminer le polynôme caractéristique de J.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "polynôme caractéristique",
+    "matrice carrée",
+    "multiplicité d'une valeur propre",
+    "relation de récurrence matricielle"
+  ],
+  "methods": [
+    "calcul de puissance de matrice",
+    "détermination des valeurs propres",
+    "calcul de multiplicité algébrique",
+    "construction du polynôme caractéristique"
+  ],
+  "objects": [
+    "matrice J",
+    "matrice J²",
+    "valeurs propres",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "44d67e3697b2ea4c4747dee7a28d2f2b0271aae64ae56d80286851233e879b5f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:27:13.188Z"
+}

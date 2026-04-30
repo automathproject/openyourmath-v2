@@ -1,0 +1,25 @@
+{
+  "uuid": "BEXR",
+  "source_path": "exo7/1-L1/BEXR.tex",
+  "summary": "Trouver des coefficients réels a, b, c, d tels que pour tout polynôme P de degré 3, l'intégrale de P entre -1 et 1 soit égale à d fois la somme de P évalué en a, b et c.",
+  "concepts": [
+    "polynôme de degré 3",
+    "intégrale de polynôme",
+    "formule de quadrature",
+    "interpolation polynomiale",
+    "fonction polynomiale"
+  ],
+  "methods": [
+    "méthode des coefficients indéterminés",
+    "calcul d'intégrale de polynôme",
+    "résolution de système linéaire"
+  ],
+  "objects": [
+    "polynôme de degré 3",
+    "intégrale définie",
+    "système d'équations linéaires"
+  ],
+  "content_hash": "0cce629d160dda841ac4640a37a6dabae9a1c16ce3e5a5420b36008de5df3585",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:40:13.709Z"
+}

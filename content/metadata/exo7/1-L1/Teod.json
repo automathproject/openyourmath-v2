@@ -1,0 +1,29 @@
+{
+  "uuid": "Teod",
+  "source_path": "exo7/1-L1/Teod.tex",
+  "summary": "Montrer l'existence de polynômes P₀, ..., Pₙ dans ℤₙ[X] formant une base orthogonale pour l'intégrale de tᵢPⱼ(t) de 0 à 1, avec condition de Kronecker δᵢⱼ.",
+  "concepts": [
+    "polynôme",
+    "base orthogonale",
+    "intégrale",
+    "fraction rationnelle",
+    "décomposition en éléments simples",
+    "coefficient binomial",
+    "factorielles"
+  ],
+  "methods": [
+    "décomposition en éléments simples",
+    "calcul de coefficients",
+    "utilisation de la formule de Kronecker",
+    "manipulation de polynômes"
+  ],
+  "objects": [
+    "polynôme Pₙ",
+    "fraction rationnelle F(X)",
+    "coefficient binomial",
+    "intégrale"
+  ],
+  "content_hash": "6ffde3192c36ccd7d2794d28c86a30ff69f3fa98939be73adbf20882706dbd66",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:00:12.199Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "4yNG",
+  "source_path": "exo7/4-L2/4yNG.tex",
+  "summary": "L'exercice demande de montrer que deux matrices Y et D commutent, puis d'en déduire que Y est diagonale et de déterminer explicitement Y, où D est une matrice diagonale donnée.",
+  "concepts": [
+    "commutativité des matrices",
+    "matrice diagonale",
+    "polynôme annulateur",
+    "réduction d'endomorphisme",
+    "diagonalisation"
+  ],
+  "methods": [
+    "calcul de produit de matrices",
+    "vérification de la commutativité",
+    "diagonalisation"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice diagonale",
+    "matrice Y"
+  ],
+  "content_hash": "92610f495607521cec23810110914ab830e04f1de39694aaf6da9904200793d8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:14:07.662Z"
+}

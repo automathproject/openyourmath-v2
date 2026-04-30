@@ -1,0 +1,30 @@
+{
+  "uuid": "tj8T",
+  "source_path": "exo7/5-L2/tj8T.tex",
+  "summary": "L'exercice demande de démontrer qu'une application N définie sur un espace vectoriel réel est une norme si et seulement si l'ensemble B des éléments de norme inférieure ou égale à 1 est convexe. Il faut aussi montrer que si N vérifie une inégalité supplémentaire, alors c'est une norme.",
+  "concepts": [
+    "espace vectoriel normé",
+    "norme",
+    "convexité",
+    "inégalité de Minkowski",
+    "propriété de norme",
+    "topologie des espaces vectoriels"
+  ],
+  "methods": [
+    "preuve par convexité",
+    "utilisation de barycentres",
+    "approximation dyadique",
+    "récurrence sur les entiers naturels",
+    "limite de suites"
+  ],
+  "objects": [
+    "application N",
+    "ensemble B",
+    "éléments de l'espace vectoriel",
+    "barycentres",
+    "suites dyadiques"
+  ],
+  "content_hash": "43d2d8e4b57a17badf00ba9999c94f87d384ec0de58d33c8b242de7f92551d1d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:14:07.894Z"
+}

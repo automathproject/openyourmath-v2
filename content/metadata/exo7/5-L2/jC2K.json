@@ -1,0 +1,27 @@
+{
+  "uuid": "jC2K",
+  "source_path": "exo7/5-L2/jC2K.tex",
+  "summary": "L'exercice demande de démontrer une inégalité intégrale pour des fonctions périodiques dérivables, puis d'appliquer ce résultat à calculer une aire maximale pour un arc fermé simple.",
+  "concepts": [
+    "séries de Fourier",
+    "inégalité de Cauchy-Schwarz",
+    "abscisse curviligne",
+    "paramétrisation d'une courbe",
+    "aire d'un domaine plan",
+    "fonctions périodiques"
+  ],
+  "methods": [
+    "développement en série de Fourier",
+    "application d'inégalité algébrique",
+    "paramétrisation par abscisse curviligne",
+    "calcul d'intégrale"
+  ],
+  "objects": [
+    "fonctions périodiques dérivables",
+    "arc de classe C^1",
+    "domaine plan limité par une courbe"
+  ],
+  "content_hash": "54557df67e5fb477832b6a26bbb7d309d614989886bde587d1c3eb2ccfa9104f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:28:20.778Z"
+}

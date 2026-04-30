@@ -1,0 +1,27 @@
+{
+  "uuid": "V44u",
+  "source_path": "amscc/V44u.tex",
+  "summary": "L'exercice demande de calculer des probabilités liées à une variable aléatoire suivant une loi de Poisson, puis d'approcher cette loi par une loi normale pour estimer des probabilités dans un contexte logistique.",
+  "concepts": [
+    "loi de Poisson",
+    "loi normale",
+    "approximation de Poisson par la loi normale",
+    "correction de continuité",
+    "standardisation",
+    "table de répartition"
+  ],
+  "methods": [
+    "calcul de probabilité discrète",
+    "approximation gaussienne",
+    "standardisation",
+    "correction de continuité"
+  ],
+  "objects": [
+    "variable aléatoire de Poisson",
+    "variable aléatoire normale",
+    "table de répartition"
+  ],
+  "content_hash": "ea69625c52f722a302f36a14129e0c64810e213bf8ae06ed5bbaaba3777d0856",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:51:48.406Z"
+}

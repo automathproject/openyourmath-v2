@@ -1,0 +1,26 @@
+{
+  "uuid": "KowJ",
+  "source_path": "amscc/KowJ.tex",
+  "summary": "L'exercice demande de déterminer la loi du nombre d'employés téléphonant à un instant donné, d'approcher cette loi par une loi normale, et d'estimer le nombre de lignes nécessaires pour limiter la probabilité de saturation à 2,5%.",
+  "concepts": [
+    "loi binomiale",
+    "loi normale",
+    "théorème central limite",
+    "approximation gaussienne",
+    "standardisation",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "approximation de la loi binomiale par une loi normale",
+    "standardisation",
+    "lecture inverse de table normale"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "variable aléatoire normale",
+    "nombre d'employés téléphonant"
+  ],
+  "content_hash": "c4f89497f1fab32ca6942a1c82fb7c6db81d288e6ebb41f056338af39cfc408b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:46:16.715Z"
+}

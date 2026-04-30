@@ -1,0 +1,24 @@
+{
+  "uuid": "rf0B",
+  "source_path": "amscc/rf0B.tex",
+  "summary": "Déterminer les conditions nécessaires sur les réels x et y pour qu'il existe une probabilité sur un ensemble Ω = {a, b, c} vérifiant P({a, b}) = x et P({b, c}) = y.",
+  "concepts": [
+    "probabilité",
+    "mesure de probabilité",
+    "axiomes de la probabilité",
+    "ensemble fini",
+    "fonction de probabilité"
+  ],
+  "methods": [
+    "vérification des axiomes de la probabilité",
+    "analyse des conditions de cohérence"
+  ],
+  "objects": [
+    "ensemble fini",
+    "événements",
+    "probabilités d'événements"
+  ],
+  "content_hash": "b1054ac0a3234136209b432346d11c50133a9906be3a7faab160478c80eecb6f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:40:36.909Z"
+}

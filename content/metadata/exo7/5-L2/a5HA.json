@@ -1,0 +1,29 @@
+{
+  "uuid": "a5HA",
+  "source_path": "exo7/5-L2/a5HA.tex",
+  "summary": "On considère un espace vectoriel normé réel (E,‖‖) et une partie K de E convexe, bornée, symétrique par rapport à l'origine et contenant 0 dans son intérieur. On définit une fonction n(x) comme l'infimum des valeurs absolues de λ tels que x ∈ λK. L'exercice demande de montrer que n est une norme équivalente à la norme initiale.",
+  "concepts": [
+    "espace vectoriel normé",
+    "partie convexe",
+    "partie bornée",
+    "symétrie par rapport à l'origine",
+    "intérieur d'une partie",
+    "norme équivalente",
+    "infimum"
+  ],
+  "methods": [
+    "définition d'une norme",
+    "comparaison de normes",
+    "utilisation de la convexité",
+    "utilisation de la bornitude"
+  ],
+  "objects": [
+    "espace vectoriel normé",
+    "partie K",
+    "fonction n(x)",
+    "norme initiale"
+  ],
+  "content_hash": "fefa12f563ea03137b8039f7b273cfbbfe107c6baa23d2bcbfeb434df3ce950b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:59:53.392Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "tIOs",
+  "source_path": "exo7/16-L3/tIOs.tex",
+  "summary": "L'exercice demande de calculer des intégrales complexes le long d'un chemin fermé pour des fonctions de type 1/(z - z_j) et 1/(z - z_j)^2, et d'identifier le nom des quantités obtenues. Le contexte est un chemin fermé dans le plan complexe.",
+  "concepts": [
+    "théorème des résidus",
+    "intégrales complexes",
+    "singularités isolées",
+    "pôles simples",
+    "pôles d'ordre supérieur",
+    "fonctions méromorphes"
+  ],
+  "methods": [
+    "calcul des résidus",
+    "théorème de Cauchy",
+    "décomposition en éléments simples",
+    "évaluation des résidus"
+  ],
+  "objects": [
+    "chemin fermé paramétré",
+    "intégrales de type A_j et B_j",
+    "points z_j",
+    "fonctions rationnelles"
+  ],
+  "content_hash": "6acdbc21d362751849594f4ca4559e4fd659d8c952776d1a3293ec8127319fc8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:25:10.741Z"
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "wrPE",
+  "source_path": "amscc/wrPE.tex",
+  "summary": "L'exercice demande de détecter une anomalie dans les temps de réponse d'un serveur web en calculant des statistiques descriptives, un intervalle de confiance et un test d'hypothèses unilatéral pour une moyenne. Le contexte est la surveillance d'une attaque par déni de service (DDoS).",
+  "concepts": [
+    "test d'hypothèses",
+    "intervalle de confiance",
+    "loi normale",
+    "risque de première espèce",
+    "risque de deuxième espèce",
+    "statistique de test",
+    "quantile de Student",
+    "puissance d'un test"
+  ],
+  "methods": [
+    "calcul de moyenne empirique",
+    "calcul d'écart-type empirique",
+    "construction d'intervalle de confiance",
+    "test unilatéral",
+    "calcul de probabilité sous hypothèse alternative"
+  ],
+  "objects": [
+    "moyenne empirique",
+    "écart-type empirique",
+    "intervalle de confiance",
+    "statistique de test",
+    "hypothèses statistiques"
+  ],
+  "content_hash": "aac515b7d7905fe9b804bd4f00bf5fdd06cab03e64364e5834dea91887d79f6b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:42:37.590Z"
+}

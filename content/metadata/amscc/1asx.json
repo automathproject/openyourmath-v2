@@ -1,0 +1,29 @@
+{
+  "uuid": "1asx",
+  "source_path": "amscc/1asx.tex",
+  "summary": "Calculer la probabilité que le poids total de 100 passagers dépasse 7,3 tonnes, en utilisant une approximation normale. Estimer la proportion de passagers avec un bagage en soute via un intervalle de confiance à 95% à partir d'un échantillon de 40 passagers.",
+  "concepts": [
+    "loi normale",
+    "théorème central limite",
+    "standardisation",
+    "intervalle de confiance",
+    "proportion",
+    "échantillonnage",
+    "approximation gaussienne"
+  ],
+  "methods": [
+    "approximation normale",
+    "standardisation",
+    "calcul d'intervalle de confiance",
+    "estimation par fréquence observée"
+  ],
+  "objects": [
+    "somme de variables aléatoires indépendantes",
+    "proportion",
+    "variable aléatoire normale centrée réduite",
+    "échantillon de taille finie"
+  ],
+  "content_hash": "a60b790805b2eccb86b5be78f1a4395f933f64efb12ea042b706be89ac706f29",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:36:08.180Z"
+}

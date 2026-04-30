@@ -1,0 +1,29 @@
+{
+  "uuid": "ikTv",
+  "source_path": "exo7/4-L2/ikTv.tex",
+  "summary": "Démontrer que le déterminant de l'exponentielle d'une matrice carrée est égal à l'exponentielle de sa trace, dans quatre cas de figure distincts.",
+  "concepts": [
+    "trace d'une matrice",
+    "déterminant",
+    "exponentielle de matrice",
+    "matrice diagonalisable",
+    "matrice triangulaire supérieure",
+    "matrice trigonalisable",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "propriété de la trace sous conjugaison",
+    "diagonalisation",
+    "trigonalisation",
+    "calcul de déterminant"
+  ],
+  "objects": [
+    "matrice carrée",
+    "trace",
+    "déterminant",
+    "exponentielle de matrice"
+  ],
+  "content_hash": "6c29dcaad78d6d2a466c807c6b84ff55175c82dbf6f271b25e9e988e1b5cbe49",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:07:26.396Z"
+}

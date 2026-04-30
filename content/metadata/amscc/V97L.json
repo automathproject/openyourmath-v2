@@ -1,0 +1,27 @@
+{
+  "uuid": "V97L",
+  "source_path": "amscc/V97L.tex",
+  "summary": "Étude d'une variable aléatoire discrète X représentant le nombre de lancers pairs d'un dé équilibré en n parties. Calcul de sa loi, espérance, variance, et application du théorème central limite pour estimer la probabilité d'un gain limité.",
+  "concepts": [
+    "variable aléatoire de Bernoulli",
+    "loi binomiale",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "théorème central limite",
+    "standardisation"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "approximation gaussienne",
+    "standardisation"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "loi binomiale",
+    "variable aléatoire normalisée"
+  ],
+  "content_hash": "b3251da21d3008d1fb60be8824c7fbfb55a72968a9c1dc2e13a805e664ae6fb8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:29:44.323Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "ym3Q",
+  "source_path": "exo7/1-L1/ym3Q.tex",
+  "summary": "L'exercice demande de montrer que l'ensemble des polynômes multiples d'un polynôme P donné forme un sous-espace vectoriel et d'en déterminer la dimension. Ensuite, il s'agit de prouver une décomposition en somme directe de l'espace des polynômes de degré ≤ n en utilisant deux polynômes P et Q sans racine commune, et enfin d'en déduire l'existence de polynômes U et V vérifiant UP + VQ = 1.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "somme directe d'espaces vectoriels",
+    "polynôme sans racine commune",
+    "algèbre des polynômes"
+  ],
+  "methods": [
+    "décomposition en somme directe",
+    "utilisation du théorème de Bézout",
+    "calcul de dimension"
+  ],
+  "objects": [
+    "polynôme",
+    "sous-espace vectoriel",
+    "espace vectoriel de polynômes de degré ≤ n",
+    "polynômes U et V"
+  ],
+  "content_hash": "9cef92bd4670e484825715aaf870e8259b0243b9ace7b7a606a8d351dbaa8da6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:32:58.866Z"
+}

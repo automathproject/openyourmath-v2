@@ -1,0 +1,29 @@
+{
+  "uuid": "RQf1",
+  "source_path": "exo7/5-L2/RQf1.tex",
+  "summary": "On étudie une fonction vectorielle f de classe C^1 à valeurs non nulles dans ℝ³, avec la condition que f(t) et sa dérivée f'(t) soient linéairement dépendantes. On définit g(t) comme la normalisation de f(t) et on demande de prouver que g est de classe C^1, que sa dérivée est orthogonale et colinéaire à g(t), puis d'en déduire que f(t) conserve une direction constante.",
+  "concepts": [
+    "fonction vectorielle",
+    "classe C^1",
+    "famille liée",
+    "normalisation",
+    "orthogonalité",
+    "colinéarité",
+    "direction constante"
+  ],
+  "methods": [
+    "dérivation de fonctions vectorielles",
+    "normalisation de vecteurs",
+    "preuve d'orthogonalité",
+    "analyse de direction"
+  ],
+  "objects": [
+    "fonction vectorielle f",
+    "fonction g",
+    "vecteur dérivée f'",
+    "vecteur normalisé g(t)"
+  ],
+  "content_hash": "1c16a99b3bdc4b1f8725ce99f614391e98d935b3f91685ffe4ed37b9a9fe7388",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:52:04.473Z"
+}

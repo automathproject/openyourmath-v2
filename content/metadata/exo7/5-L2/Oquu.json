@@ -1,0 +1,25 @@
+{
+  "uuid": "Oquu",
+  "source_path": "exo7/5-L2/Oquu.tex",
+  "summary": "Montrer l'existence d'une constante k > 0 telle que pour toute paire de matrices A et B, la norme de leur produit AB soit majorée par k fois le produit des normes de A et B.",
+  "concepts": [
+    "norme sur un espace vectoriel",
+    "norme sous-multiplicative",
+    "norme équivalente",
+    "espace vectoriel de dimension finie",
+    "continuité des applications linéaires"
+  ],
+  "methods": [
+    "utilisation de normes équivalentes",
+    "majoration par une norme sous-multiplicative",
+    "construction d'une nouvelle norme sous-multiplicative"
+  ],
+  "objects": [
+    "norme sur l'espace des matrices",
+    "matrices réelles",
+    "produit de matrices"
+  ],
+  "content_hash": "f7e97044b0968ddd947202164530162b0516cd9324c92f6e9b14fec3af8405dd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:49:59.939Z"
+}

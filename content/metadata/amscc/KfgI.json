@@ -1,0 +1,29 @@
+{
+  "uuid": "KfgI",
+  "source_path": "amscc/KfgI.tex",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une racine réelle d'une fonction exponentielle, puis d'étudier la convergence locale de quatre méthodes de point fixe pour approcher cette racine.",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "fonction strictement croissante",
+    "convergence locale",
+    "ordre de convergence",
+    "point fixe attractif",
+    "point fixe répulsif",
+    "méthode de point fixe"
+  ],
+  "methods": [
+    "étude de la dérivée",
+    "analyse de la convergence locale",
+    "application du théorème de convergence globale",
+    "calcul de la dérivée première"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "racine réelle",
+    "suite de point fixe",
+    "intervalle de convergence"
+  ],
+  "content_hash": "e04cdb350f05acbd2ac8ff7f1da34602efb3feac22efc6fe3eb1c182013643f1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:13:49.295Z"
+}

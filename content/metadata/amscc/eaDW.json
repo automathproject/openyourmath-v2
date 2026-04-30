@@ -1,0 +1,27 @@
+{
+  "uuid": "eaDW",
+  "source_path": "amscc/eaDW.tex",
+  "summary": "L'exercice demande de déterminer la loi de probabilité d'une variable aléatoire représentant le nombre de terminaux en communication active, puis d'utiliser une approximation normale pour estimer le nombre maximal de connexions supportables avec une probabilité de saturation inférieure à 2.5%.",
+  "concepts": [
+    "loi binomiale",
+    "espérance d'une variable aléatoire",
+    "écart-type d'une variable aléatoire",
+    "approximation de la loi binomiale par la loi normale",
+    "standardisation",
+    "quantile de la loi normale"
+  ],
+  "methods": [
+    "calcul de l'espérance et de la variance d'une loi binomiale",
+    "approximation gaussienne",
+    "standardisation",
+    "utilisation de tables de la loi normale"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "variable aléatoire normalisée",
+    "nombre maximal de connexions"
+  ],
+  "content_hash": "92e60f25c9257a914182a136e1f2cad329d54f32bf36f2f93d5a757b294890b0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:34:41.555Z"
+}

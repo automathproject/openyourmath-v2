@@ -1,0 +1,31 @@
+{
+  "uuid": "ePQp",
+  "source_path": "exo7/4-L2/ePQp.tex",
+  "summary": "L'exercice demande de vérifier l'expression du polynôme caractéristique d'une matrice carrée d'ordre 3 et d'utiliser cette propriété pour montrer qu'un vecteur construit à partir de lignes non proportionnelles d'une matrice est un vecteur propre associé à une valeur propre donnée.",
+  "concepts": [
+    "polynôme caractéristique",
+    "valeur propre",
+    "vecteur propre",
+    "trace d'une matrice",
+    "déterminant",
+    "théorème de Cayley-Hamilton",
+    "produit vectoriel",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul de trace",
+    "calcul de déterminant",
+    "construction de vecteur propre",
+    "utilisation du polynôme caractéristique"
+  ],
+  "objects": [
+    "matrice carrée d'ordre 3",
+    "polynôme caractéristique",
+    "valeur propre",
+    "vecteur propre",
+    "lignes d'une matrice"
+  ],
+  "content_hash": "e7800857a089fa474a261c2fc4edca2c49ce885ef1e91c9f3bb7d05c1b5bd1ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:00:42.801Z"
+}

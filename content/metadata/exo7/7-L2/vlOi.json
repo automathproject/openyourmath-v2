@@ -1,0 +1,27 @@
+{
+  "uuid": "vlOi",
+  "source_path": "exo7/7-L2/vlOi.tex",
+  "summary": "L'exercice demande de déterminer la loi de probabilité d'une variable aléatoire représentant le nombre de voix pour un candidat dans des lots de bulletins de vote, puis d'approcher cette loi par une loi normale ou de Poisson selon les paramètres.",
+  "concepts": [
+    "loi binomiale",
+    "approximation normale",
+    "loi de Poisson",
+    "espérance",
+    "écart-type",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "approximation gaussienne",
+    "standardisation",
+    "calcul de probabilités par sommation"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "variable aléatoire de Poisson",
+    "bulletins de vote",
+    "probabilité de succès"
+  ],
+  "content_hash": "97d0cb6fbdb45d39e9a62087bcee3f6eaa57e6503a2b593d656d21467c7e5110",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:43:08.116Z"
+}

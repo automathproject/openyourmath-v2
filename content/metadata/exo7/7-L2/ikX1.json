@@ -1,0 +1,32 @@
+{
+  "uuid": "ikX1",
+  "source_path": "exo7/7-L2/ikX1.tex",
+  "summary": "L'exercice demande de tester l'influence de rejets chimiques sur la proportion de plages atteintes par des algues toxiques, en comparant la proportion observée (20%) à la proportion théorique (10%) avec un risque α=0.05.",
+  "concepts": [
+    "test d'hypothèse",
+    "loi binomiale",
+    "intervalle de confiance",
+    "approximation normale de la binomiale",
+    "hypothèse nulle",
+    "risque de première espèce",
+    "proportion observée",
+    "statistique d'échantillonnage"
+  ],
+  "methods": [
+    "approximation gaussienne",
+    "calcul d'intervalle de confiance",
+    "test de proportion",
+    "standardisation",
+    "comparaison avec la zone de rejet"
+  ],
+  "objects": [
+    "variable de Bernoulli",
+    "loi binomiale",
+    "moyenne d'échantillon",
+    "fréquence observée",
+    "proportion théorique"
+  ],
+  "content_hash": "060c3037d9a559ffc8f68395d1dd783107671f13307c6a501ee50ffe50fab223",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:49:56.217Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "w8BX",
+  "source_path": "exo7/2-L1/w8BX.tex",
+  "summary": "On étudie une suite réelle définie par récurrence avec u₀=1 et u_{n+1}=√(1+u_n). On demande de montrer que cette suite est croissante et majorée, puis de déterminer sa limite ℓ vérifiant ℓ²-ℓ-1=0.",
+  "concepts": [
+    "suite définie par récurrence",
+    "suite croissante",
+    "suite majorée",
+    "convergence d'une suite",
+    "limite d'une suite",
+    "équation du second degré"
+  ],
+  "methods": [
+    "raisonnement par récurrence",
+    "étude de la monotonie",
+    "recherche de majoration",
+    "résolution d'équation"
+  ],
+  "objects": [
+    "suite réelle",
+    "relation de récurrence",
+    "limite ℓ"
+  ],
+  "content_hash": "b8d81889ed7a5ddfb2b99c17ed3b3cab6f3d1aea63d434083735988c8c6bcad4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:41:07.592Z"
+}

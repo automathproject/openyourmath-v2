@@ -1,0 +1,29 @@
+{
+  "uuid": "N7a6",
+  "source_path": "exo7/15-L3/N7a6.tex",
+  "summary": "L'exercice demande de montrer que les ensembles F_p définis dans l'espace l² sont fermés et d'intérieur vide, puis d'en déduire que l'espace l¹ est de première catégorie dans l'espace l².",
+  "concepts": [
+    "théorème de Baire",
+    "espace de Banach",
+    "espace de Hilbert",
+    "fermeture d'un ensemble",
+    "intérieur d'un ensemble",
+    "première catégorie de Baire",
+    "inclusion d'espaces vectoriels normés"
+  ],
+  "methods": [
+    "utilisation du théorème de Baire",
+    "analyse de la fermeture d'un ensemble",
+    "étude de l'intérieur d'un ensemble",
+    "démonstration par l'absurde"
+  ],
+  "objects": [
+    "espace l¹",
+    "espace l²",
+    "ensemble F_p",
+    "suite (a_n)"
+  ],
+  "content_hash": "5701a1d16176071b7797ac4dcab013bc9b81f035187f73b23ecd5c478009148b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:43:25.247Z"
+}

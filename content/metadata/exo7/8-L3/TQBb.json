@@ -1,0 +1,26 @@
+{
+  "uuid": "TQBb",
+  "source_path": "exo7/8-L3/TQBb.tex",
+  "summary": "Dans un groupe fini commutatif, on considère l'intersection de tous ses sous-groupes propres maximaux. On doit montrer que cette intersection est exactement l'ensemble des éléments tels que leur suppression dans un système générateur de G laisse encore G engendré.",
+  "concepts": [
+    "groupe fini commutatif",
+    "sous-groupe propre maximal",
+    "intersection de sous-groupes",
+    "générateur d'un groupe",
+    "maximalité"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la maximalitité",
+    "inclusion de sous-groupes"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupes maximaux G_i",
+    "élément a",
+    "partie génératrice S"
+  ],
+  "content_hash": "34eb2858cbdf09a14897ff6c0e89ed7be89351356bc53ed2ac257b8179708f90",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:13:40.380Z"
+}

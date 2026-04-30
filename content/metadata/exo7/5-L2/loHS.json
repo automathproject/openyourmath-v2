@@ -1,0 +1,28 @@
+{
+  "uuid": "loHS",
+  "source_path": "exo7/5-L2/loHS.tex",
+  "summary": "Développer la fonction |sin x| en série de Fourier et utiliser cette série pour étudier la convergence d'une intégrale impliquant f(t)|sin nt| lorsque n tend vers l'infini.",
+  "concepts": [
+    "série de Fourier",
+    "fonction périodique",
+    "convergence uniforme",
+    "intégrale de Riemann",
+    "fonction continue",
+    "théorème de convergence dominée"
+  ],
+  "methods": [
+    "développement en série de Fourier",
+    "calcul des coefficients de Fourier",
+    "passage à la limite sous le signe intégrale",
+    "utilisation de la convergence uniforme"
+  ],
+  "objects": [
+    "fonction |sin x|",
+    "fonction continue f",
+    "intégrale de f(t)|sin nt|",
+    "série trigonométrique"
+  ],
+  "content_hash": "d14abfb16876e35ea45d92780fa2537e06fa1897c296d743ffbed1849a9dca08",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:29:02.156Z"
+}

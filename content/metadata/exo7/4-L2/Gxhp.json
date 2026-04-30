@@ -1,0 +1,27 @@
+{
+  "uuid": "Gxhp",
+  "source_path": "exo7/4-L2/Gxhp.tex",
+  "summary": "L'exercice demande de diagonaliser une matrice carrée 3x3 donnée en trouvant une matrice inversible P et une matrice diagonale D telles que A = P D P⁻¹.",
+  "concepts": [
+    "diagonalisation",
+    "valeurs propres",
+    "vecteurs propres",
+    "polynôme caractéristique",
+    "polynôme annulateur",
+    "endomorphisme"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "recherche des vecteurs propres",
+    "construction de la matrice de passage"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice diagonale",
+    "matrice inversible"
+  ],
+  "content_hash": "12ccf2a04a7f68a54cdf95053f1695bea242243bd2af3ca01a7ae5faa7ff76cb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:31:09.503Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "Iaqz",
+  "source_path": "exo7/5-L2/Iaqz.tex",
+  "summary": "L'exercice demande d'établir la convergence simple sur ℝ d'une série de fonctions définie par f(x) = Σ (sin x)² / (ch nx) pour n allant de 0 à l'infini, puis de montrer que cette convergence est uniforme sur ℝ\\[-α, α] pour tout α > 0, et d'en déduire des propriétés de la fonction f.",
+  "concepts": [
+    "série de fonctions",
+    "convergence simple",
+    "convergence uniforme",
+    "fonction hyperbolique",
+    "fonction trigonométrique"
+  ],
+  "methods": [
+    "critère de convergence simple",
+    "critère de convergence uniforme",
+    "comparaison de séries"
+  ],
+  "objects": [
+    "série de fonctions",
+    "fonction f(x)",
+    "intervalle ℝ\\[-α, α]"
+  ],
+  "content_hash": "cdf944ec9e593b9fd2ac9f215b7314dbee883ce21e554f8a9bd9f9175a4374aa",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:51:33.423Z"
+}

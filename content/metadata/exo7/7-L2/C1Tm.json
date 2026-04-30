@@ -1,0 +1,26 @@
+{
+  "uuid": "C1Tm",
+  "source_path": "exo7/7-L2/C1Tm.tex",
+  "summary": "On étudie la probabilité d'erreur de transmission d'un message binaire (0 ou 1) codé en blocs de 5 bits identiques. L'énoncé demande de calculer la probabilité de recevoir une majorité de 1 lorsque le bloc émis est 00000, puis lorsque le bloc émis est 11111.",
+  "concepts": [
+    "loi binomiale",
+    "variable aléatoire discrète",
+    "probabilité conditionnelle",
+    "événement complémentaire",
+    "majorité"
+  ],
+  "methods": [
+    "calcul de probabilité par dénombrement",
+    "utilisation de la loi binomiale",
+    "calcul de probabilité d'un événement composé",
+    "calcul de probabilité par complémentaire"
+  ],
+  "objects": [
+    "variable aléatoire de comptage d'erreurs",
+    "bloc de bits",
+    "majorité de 1 dans un bloc"
+  ],
+  "content_hash": "f69a606b3f48b09310eee2f2d97a7ee71e43e3db3a1655efafce7f39d919d969",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:20:28.373Z"
+}

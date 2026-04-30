@@ -1,0 +1,26 @@
+{
+  "uuid": "vbrN",
+  "source_path": "exo7/5-L2/vbrN.tex",
+  "summary": "Calculer la limite d'une suite de matrices lorsque l'entier p tend vers l'infini. L'exercice demande d'exprimer cette limite en fonction de l'exponentielle de la matrice A.",
+  "concepts": [
+    "exponentielle de matrice",
+    "norme sous-multiplicative",
+    "convergence de suites de matrices",
+    "développement en série entière",
+    "limite de suites"
+  ],
+  "methods": [
+    "comparaison terme à terme",
+    "estimation d'erreur",
+    "développement de Taylor",
+    "utilisation de la norme matricielle"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "suite de matrices",
+    "exponentielle de matrice"
+  ],
+  "content_hash": "72ede64a8be087b0c7cdbed53855c03ae9e815f13ff6e6699f6f00b45dd38ac6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:05:11.065Z"
+}

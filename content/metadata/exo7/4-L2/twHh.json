@@ -1,0 +1,27 @@
+{
+  "uuid": "twHh",
+  "source_path": "exo7/4-L2/twHh.tex",
+  "summary": "Calculer le déterminant d'une matrice symétrique particulière de taille n×n avec des éléments a sur la diagonale et b hors diagonale.",
+  "concepts": [
+    "valeur propre",
+    "trace d'une matrice",
+    "rang d'une matrice",
+    "noyau d'un endomorphisme",
+    "polynôme caractéristique",
+    "déterminant"
+  ],
+  "methods": [
+    "calcul de valeurs propres",
+    "utilisation de la trace",
+    "analyse du rang",
+    "factorisation du déterminant"
+  ],
+  "objects": [
+    "matrice symétrique",
+    "polynôme annulateur",
+    "endomorphisme"
+  ],
+  "content_hash": "61a5e7908ebdb792e1ec3111e1a156869f30e8fe91d59d2339440660db19b61c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:22:06.369Z"
+}

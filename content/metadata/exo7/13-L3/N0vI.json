@@ -1,0 +1,26 @@
+{
+  "uuid": "N0vI",
+  "source_path": "exo7/13-L3/N0vI.tex",
+  "summary": "On considère un sous-espace vectoriel E de ℝⁿ et une matrice A préservant E. On doit montrer que si x(t) est une solution de l'équation différentielle x' = Ax avec une condition initiale x(t₀) ∈ E, alors x(t) ∈ E pour tout t ∈ ℝ.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "matrice préservant un sous-espace",
+    "équation différentielle linéaire",
+    "solution d'une équation différentielle",
+    "condition initiale"
+  ],
+  "methods": [
+    "linéarité de l'équation différentielle",
+    "propriété de préservation d'un sous-espace",
+    "unicité de la solution"
+  ],
+  "objects": [
+    "sous-espace vectoriel E",
+    "matrice A",
+    "solution x(t)",
+    "condition initiale x(t₀)"
+  ],
+  "content_hash": "a3394259c27e9c5903927658fd51841d84a9a6d7a5e2167f0e80cad606016c52",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:12:25.508Z"
+}

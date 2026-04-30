@@ -1,0 +1,28 @@
+{
+  "uuid": "WCeR",
+  "source_path": "exo7/4-L2/WCeR.tex",
+  "summary": "L'exercice demande de démontrer des propriétés des projecteurs dans un espace vectoriel. Il s'agit d'abord de montrer que l'application 1-p est un projecteur si p l'est, puis d'établir que l'image et le noyau de p se somment directement pour donner l'espace vectoriel E. Ensuite, dans le cas réel, on étudie les relations entre deux projecteurs p et q dont la somme est aussi un projecteur.",
+  "concepts": [
+    "projecteur",
+    "espace vectoriel",
+    "somme directe",
+    "image d'un endomorphisme",
+    "noyau d'un endomorphisme",
+    "endomorphisme"
+  ],
+  "methods": [
+    "manipulation algébrique",
+    "démonstration par double inclusion",
+    "utilisation des propriétés des projecteurs"
+  ],
+  "objects": [
+    "projecteur",
+    "espace vectoriel",
+    "endomorphisme",
+    "image",
+    "noyau"
+  ],
+  "content_hash": "dcf2e04acdcb7444b38f9122218b30bfd368d0a64bbaf10ae1742f3633a17427",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:50:27.363Z"
+}

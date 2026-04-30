@@ -1,0 +1,29 @@
+{
+  "uuid": "d4sm",
+  "source_path": "amscc/d4sm.tex",
+  "summary": "L'exercice demande de vérifier qu'une fonction donnée définit bien une densité de probabilité, de déterminer la fonction de répartition associée, d'étudier l'existence de l'espérance en fonction d'un paramètre, et de déterminer la loi d'une variable aléatoire transformée.",
+  "concepts": [
+    "densité de probabilité",
+    "fonction de répartition",
+    "espérance mathématique",
+    "variable aléatoire absolument continue",
+    "loi de Pareto",
+    "intégrale impropre"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "calcul de fonction de répartition",
+    "transformation de variable aléatoire"
+  ],
+  "objects": [
+    "fonction de densité",
+    "variable aléatoire",
+    "espérance",
+    "fonction de répartition",
+    "variable aléatoire transformée"
+  ],
+  "content_hash": "c089da65fab6002c748c84e07a73293a0220dd70a225d6fbe95f17dc89a3eed5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:57:40.891Z"
+}

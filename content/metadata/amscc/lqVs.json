@@ -1,0 +1,32 @@
+{
+  "uuid": "lqVs",
+  "source_path": "amscc/lqVs.tex",
+  "summary": "L'exercice demande de résoudre un système linéaire de trois équations à trois inconnues en utilisant la méthode de Jacobi et la méthode de Gauss-Seidel. Il faut justifier la convergence de ces méthodes et calculer plusieurs itérations.",
+  "concepts": [
+    "système linéaire",
+    "matrice à diagonale strictement dominante",
+    "méthode de Jacobi",
+    "méthode de Gauss-Seidel",
+    "matrice symétrique définie positive",
+    "valeurs propres",
+    "polynôme caractéristique",
+    "convergence de méthodes itératives"
+  ],
+  "methods": [
+    "décomposition matricielle",
+    "calcul d'itérations",
+    "vérification de la symétrie et de la positivité définie",
+    "calcul du polynôme caractéristique",
+    "analyse des valeurs propres"
+  ],
+  "objects": [
+    "système linéaire 3x3",
+    "matrice A",
+    "vecteur b",
+    "itérations de Jacobi",
+    "itérations de Gauss-Seidel"
+  ],
+  "content_hash": "8ea300b0d70957d0d8b9570df9e05a1350e5c60dd9ba7048d072042100752733",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:38:25.057Z"
+}

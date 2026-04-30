@@ -1,0 +1,28 @@
+{
+  "uuid": "Sgvr",
+  "source_path": "exo7/8-L3/Sgvr.tex",
+  "summary": "L'exercice demande de démontrer que le groupe diédral D6 est isomorphe au produit direct du groupe des racines carrées de l'unité d'ordre 2 et du groupe symétrique S3.",
+  "concepts": [
+    "isomorphisme de groupes",
+    "produit direct de groupes",
+    "lemme chinois",
+    "action par conjugaison",
+    "groupe diédral",
+    "groupe symétrique",
+    "groupe cyclique"
+  ],
+  "methods": [
+    "application du lemme chinois",
+    "analyse de l'action par conjugaison",
+    "utilisation de l'isomorphisme classique Z/3Z × Z/2Z ≃ S3"
+  ],
+  "objects": [
+    "groupe diédral D6",
+    "groupe μ2",
+    "groupe S3",
+    "produit direct de groupes"
+  ],
+  "content_hash": "121d1a46df4a2c22377fce44a9f960f7acef83938b386c67fb6a43878a998920",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:56:29.415Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "xTI2",
+  "source_path": "amscc/xTI2.tex",
+  "summary": "L'exercice demande de vérifier qu'une fonction donnée définit une densité de probabilité et de calculer la probabilité qu'une variable aléatoire associée prenne des valeurs dans un intervalle spécifique.",
+  "concepts": [
+    "densité de probabilité",
+    "fonction indicatrice",
+    "intégrale de fonction",
+    "variable aléatoire continue",
+    "mesure de probabilité"
+  ],
+  "methods": [
+    "intégration sur un intervalle",
+    "vérification de positivité",
+    "calcul de probabilité par intégration"
+  ],
+  "objects": [
+    "fonction indicatrice",
+    "variable aléatoire",
+    "intervalle de définition"
+  ],
+  "content_hash": "695938a704bf7290b92b2cdf1fd4ad7477c1db567c19e3964be82936397d9849",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:11:50.621Z"
+}

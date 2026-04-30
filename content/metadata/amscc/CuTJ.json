@@ -1,0 +1,24 @@
+{
+  "uuid": "CuTJ",
+  "source_path": "amscc/CuTJ.tex",
+  "summary": "L'exercice demande de déterminer les restes des divisions euclidiennes d'un polynôme P par (X+1) et (X-1), sachant que le reste de la division de P par (X²-1) est (X+1).",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "factorisation",
+    "algèbre des polynômes",
+    "reste de division"
+  ],
+  "methods": [
+    "factorisation",
+    "décomposition polynomiale",
+    "calcul de reste"
+  ],
+  "objects": [
+    "polynôme réel",
+    "division euclidienne",
+    "reste de division"
+  ],
+  "content_hash": "0758bc75af8457d4f5b98e6210678a07fbdef9de941cc902449749991935d2ab",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:41:44.343Z"
+}

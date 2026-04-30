@@ -1,0 +1,28 @@
+{
+  "uuid": "Jiv8",
+  "source_path": "amscc/Jiv8.tex",
+  "summary": "L'exercice demande de déterminer les lois de variables aléatoires construites à partir de sommes de carrés de variables normales centrées réduites, et de calculer des quantiles associés. Il mobilise les lois du chi2, de Student et de Fisher.",
+  "concepts": [
+    "loi du chi2",
+    "loi de Student",
+    "loi de Fisher",
+    "variable aléatoire normale",
+    "indépendance",
+    "quantile",
+    "loi de probabilité"
+  ],
+  "methods": [
+    "calcul de quantile",
+    "standardisation",
+    "transformation de variable aléatoire"
+  ],
+  "objects": [
+    "variable aléatoire normale centrée réduite",
+    "variable aléatoire de chi2",
+    "variable aléatoire de Student",
+    "variable aléatoire de Fisher"
+  ],
+  "content_hash": "774c436f342c63261e9bea731cd2603c8045b590a3f3cdabedeffeb410ac0722",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:39:51.566Z"
+}

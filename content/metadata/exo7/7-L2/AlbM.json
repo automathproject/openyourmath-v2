@@ -1,0 +1,26 @@
+{
+  "uuid": "AlbM",
+  "source_path": "exo7/7-L2/AlbM.tex",
+  "summary": "L'exercice demande de calculer l'espérance et certaines probabilités d'une variable aléatoire binomiale modélisant le nombre de lampes défectueuses dans un échantillon de taille 15.",
+  "concepts": [
+    "variable aléatoire binomiale",
+    "espérance d'une variable aléatoire",
+    "probabilité conditionnelle",
+    "loi de Bernoulli",
+    "échantillonnage aléatoire"
+  ],
+  "methods": [
+    "calcul de l'espérance d'une loi binomiale",
+    "calcul de probabilités par la formule binomiale",
+    "utilisation des coefficients binomiaux"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "échantillon de taille 15",
+    "probabilité de succès",
+    "nombre de lampes défectueuses"
+  ],
+  "content_hash": "a8d87b0b4160cfd0955b2586abc881c59cd033c5fdad357883c4531b9799e310",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:19:32.338Z"
+}

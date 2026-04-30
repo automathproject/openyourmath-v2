@@ -1,0 +1,28 @@
+{
+  "uuid": "YuII",
+  "source_path": "amscc/YuII.tex",
+  "summary": "L'exercice demande de tester l'hypothèse que la variance d'un échantillon de masses mesurées par une nouvelle balance est conforme à une variance de référence σ₀² = 4 g², au risque de 5%. Les données sont distribuées selon une loi normale.",
+  "concepts": [
+    "test d'hypothèses sur une variance",
+    "loi du chi-deux",
+    "échantillon normal",
+    "variance d'un échantillon",
+    "risque de première espèce",
+    "statistique de test"
+  ],
+  "methods": [
+    "calcul de la variance empirique",
+    "construction de la statistique de test",
+    "comparaison avec la loi du chi-deux",
+    "prise de décision statistique"
+  ],
+  "objects": [
+    "échantillon de masses",
+    "variance de référence",
+    "statistique de test",
+    "loi normale"
+  ],
+  "content_hash": "4bc55bbab121736af2036c098e3d9c57d26be9f5eb202fa627c61baeecc65311",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:44:24.638Z"
+}

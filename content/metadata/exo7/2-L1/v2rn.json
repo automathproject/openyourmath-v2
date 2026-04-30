@@ -1,0 +1,27 @@
+{
+  "uuid": "v2rn",
+  "source_path": "exo7/2-L1/v2rn.tex",
+  "summary": "L'exercice demande de prouver la convergence d'une série numérique de terme général 1/(n ln² n), puis d'estimer l'erreur de troncature et de déterminer le nombre de termes nécessaires pour une approximation précise à 10⁻³ près.",
+  "concepts": [
+    "série numérique",
+    "convergence d'une série",
+    "erreur de troncature",
+    "approximation numérique",
+    "comparaison de séries"
+  ],
+  "methods": [
+    "comparaison à une intégrale",
+    "estimation d'erreur",
+    "calcul de somme partielle",
+    "approximation par encadrement"
+  ],
+  "objects": [
+    "série de terme général 1/(n ln² n)",
+    "somme partielle Sₙ",
+    "somme infinie S",
+    "erreur de troncature"
+  ],
+  "content_hash": "ff01421a447eba3dbabbee56886447fdb327c74e5b1b4df2e6cb371bdaeb7c1c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:36:50.961Z"
+}

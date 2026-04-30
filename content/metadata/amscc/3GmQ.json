@@ -1,0 +1,32 @@
+{
+  "uuid": "3GmQ",
+  "source_path": "amscc/3GmQ.tex",
+  "summary": "L'exercice demande de déterminer le taux critique de pièces défectueuses pour un test d'hypothèse sur une proportion, avec un risque de première espèce fixé à 1%. Il s'agit ensuite d'appliquer ce test à un échantillon pour prendre une décision et calculer le risque de seconde espèce.",
+  "concepts": [
+    "test d'hypothèse",
+    "proportion",
+    "risque de première espèce",
+    "risque de seconde espèce",
+    "loi normale",
+    "variable aléatoire standardisée",
+    "zone de rejet",
+    "hypothèse nulle",
+    "hypothèse alternative"
+  ],
+  "methods": [
+    "test de conformité d'une proportion",
+    "standardisation",
+    "calcul de la zone de rejet",
+    "calcul de la proportion critique",
+    "évaluation de la décision"
+  ],
+  "objects": [
+    "proportion de pièces défectueuses",
+    "échantillon de pièces",
+    "variable de décision Z",
+    "taux critique de pièces défectueuses"
+  ],
+  "content_hash": "4dd37f098bb12296af0c638e0fd84961ace960961b0668da186bb7bbb92a76c3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:30:40.611Z"
+}

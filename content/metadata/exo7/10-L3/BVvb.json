@@ -1,0 +1,30 @@
+{
+  "uuid": "BVvb",
+  "source_path": "exo7/10-L3/BVvb.tex",
+  "summary": "Montrer qu'un polynôme primitif de degré positif sur un anneau factoriel est irréductible si son coefficient dominant n'est pas divisible par un élément irréductible π et si sa réduction modulo π est irréductible dans l'anneau quotient A/(π).",
+  "concepts": [
+    "polynôme primitif",
+    "anneau factoriel",
+    "élément irréductible",
+    "anneau quotient",
+    "réduction modulo un idéal",
+    "irréductibilité dans un anneau",
+    "coefficient dominant",
+    "degré d'un polynôme"
+  ],
+  "methods": [
+    "réduction modulo un idéal",
+    "analyse du degré",
+    "utilisation du PGCD",
+    "factorisation dans un anneau"
+  ],
+  "objects": [
+    "polynôme f",
+    "élément π",
+    "coefficient dominant",
+    "factorisation f=gh"
+  ],
+  "content_hash": "8f32e5c33d34c4e29b587f7a41e777405573fd929f298cfb86484b3cb922072f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:20:18.370Z"
+}

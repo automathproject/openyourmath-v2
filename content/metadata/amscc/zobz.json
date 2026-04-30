@@ -1,0 +1,33 @@
+{
+  "uuid": "zobz",
+  "source_path": "amscc/zobz.tex",
+  "summary": "L'exercice demande de proposer des estimateurs pour un paramètre θ à partir d'un échantillon issu d'une loi exponentielle tronquée, puis de déterminer la loi de l'estimateur du maximum de vraisemblance et d'en déduire un intervalle de confiance. Il aborde ensuite la construction et l'analyse de tests d'hypothèses concernant θ, notamment un test de niveau α.",
+  "concepts": [
+    "maximum de vraisemblance",
+    "intervalle de confiance",
+    "test d'hypothèses",
+    "puissance d'un test",
+    "taille d'un test",
+    "loi exponentielle",
+    "estimation paramétrique",
+    "fonction de vraisemblance"
+  ],
+  "methods": [
+    "estimation par maximum de vraisemblance",
+    "construction d'intervalle de confiance",
+    "construction de test statistique",
+    "calcul de la puissance d'un test",
+    "analyse de la taille d'un test"
+  ],
+  "objects": [
+    "échantillon aléatoire",
+    "paramètre θ",
+    "estimateur θ̂_n",
+    "intervalle de confiance",
+    "test statistique",
+    "fonction puissance"
+  ],
+  "content_hash": "c65f7ebd44fa458d46146d06d781fa9da9bd010c0703679c12d41d67f4e3b6bd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:01:13.767Z"
+}

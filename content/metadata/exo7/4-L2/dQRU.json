@@ -1,0 +1,28 @@
+{
+  "uuid": "dQRU",
+  "source_path": "exo7/4-L2/dQRU.tex",
+  "summary": "On considère un endomorphisme f d'un espace vectoriel réel E de dimension finie vérifiant f³ + f² + f = 0. On note F l'image de f. L'exercice demande de montrer que F est un sous-espace stable par f, puis que l'intersection du noyau de f avec F est réduite au vecteur nul, et enfin d'en déduire que la restriction de f à F est un automorphisme.",
+  "concepts": [
+    "sous-espace stable",
+    "endomorphisme",
+    "polynôme annulateur",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "automorphisme",
+    "dimension finie"
+  ],
+  "methods": [
+    "utilisation de la relation de récurrence polynomiale",
+    "analyse de la stabilité",
+    "étude de l'intersection de noyaux et images"
+  ],
+  "objects": [
+    "endomorphisme f",
+    "espace vectoriel E",
+    "sous-espace F",
+    "restriction g de f à F"
+  ],
+  "content_hash": "d5e41e3a9d6b44212fa7c4a5d56b390bb3572979cd2eab3027a5c0cbcdb5a229",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:59:34.018Z"
+}

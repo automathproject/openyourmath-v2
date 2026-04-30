@@ -1,0 +1,28 @@
+{
+  "uuid": "Rqkp",
+  "source_path": "exo7/7-L2/Rqkp.tex",
+  "summary": "Calculer la probabilité qu'un passager soit contrôlé entre 60 et 80 fois dans l'année avec une loi binomiale approchée par une loi normale. Déterminer l'amende minimale pour que la probabilité de perte soit supérieure à 75%.",
+  "concepts": [
+    "loi binomiale",
+    "approximation normale",
+    "variable aléatoire",
+    "probabilité conditionnelle",
+    "espérance",
+    "écart-type"
+  ],
+  "methods": [
+    "approximation gaussienne",
+    "standardisation",
+    "calcul de probabilité conditionnelle",
+    "lecture de table"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "loi normale",
+    "amende",
+    "coût des voyages"
+  ],
+  "content_hash": "04cf54f2820de123f34ff2dfa39d006b84d3dae27cf8e5bfacf8c41dbdc6472f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:27:12.104Z"
+}

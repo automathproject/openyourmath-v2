@@ -1,0 +1,32 @@
+{
+  "uuid": "ycEr",
+  "source_path": "amscc/ycEr.tex",
+  "summary": "L'exercice demande de développer et d'analyser la fonction de risque quadratique dans un problème de régression linéaire simple, en calculant son gradient, son point critique unique et sa hessienne pour montrer qu'il s'agit d'un minimum.",
+  "concepts": [
+    "régression linéaire",
+    "optimisation",
+    "fonction quadratique",
+    "gradient",
+    "point critique",
+    "hessienne",
+    "inégalité de Cauchy-Schwarz",
+    "système linéaire"
+  ],
+  "methods": [
+    "développement algébrique",
+    "calcul de dérivées partielles",
+    "résolution de système linéaire",
+    "analyse de la hessienne",
+    "application de l'inégalité de Cauchy-Schwarz"
+  ],
+  "objects": [
+    "fonction de risque quadratique",
+    "coefficients de régression",
+    "gradient",
+    "hessienne",
+    "vecteur de variables"
+  ],
+  "content_hash": "6a91670f2b5ff72f96f00797a7545d69d31d348d5d42e81ff8813e841226f300",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:10:06.023Z"
+}

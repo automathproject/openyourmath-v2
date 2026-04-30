@@ -1,0 +1,28 @@
+{
+  "uuid": "8mM7",
+  "source_path": "amscc/8mM7.tex",
+  "summary": "On lance 720 fois un dé équilibré et on étudie la probabilité que le nombre 6 apparaisse entre 100 et 140 fois. L'exercice utilise l'inégalité de Bienaymé-Tchebytchev et une approximation par la loi normale pour estimer cette probabilité.",
+  "concepts": [
+    "loi binomiale",
+    "espérance",
+    "variance",
+    "inégalité de Bienaymé-Tchebytchev",
+    "théorème central limite",
+    "approximation normale",
+    "variable aléatoire binomiale"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul d'espérance",
+    "calcul de variance"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "nombre d'apparitions d'un événement",
+    "intervalle de confiance"
+  ],
+  "content_hash": "ca7c66f3efec3eeca16c6a97c2e453e6d191ac487c68f9ea3da84b905c81b010",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:18:25.992Z"
+}

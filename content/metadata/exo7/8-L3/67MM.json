@@ -1,0 +1,28 @@
+{
+  "uuid": "67MM",
+  "source_path": "exo7/8-L3/67MM.tex",
+  "summary": "On considère un groupe fini G et son plus petit facteur premier p de l'ordre de G. On étudie un sous-groupe H de G d'indice p > 1. L'exercice demande de prouver deux propriétés : que les orbites de l'action de H sur G/H par translation à gauche sont singletons, puis que H est distingué dans G.",
+  "concepts": [
+    "action de groupe",
+    "orbite",
+    "sous-groupe distingué",
+    "théorème de Sylow",
+    "groupe fini",
+    "indice d'un sous-groupe",
+    "translation à gauche"
+  ],
+  "methods": [
+    "analyse des orbites",
+    "preuve par contradiction",
+    "utilisation des propriétés des actions de groupe"
+  ],
+  "objects": [
+    "groupe fini G",
+    "sous-groupe H",
+    "ensemble quotient G/H",
+    "orbites de l'action de H"
+  ],
+  "content_hash": "333e67a05fad7179805f7593fc16728bb3f4f77d386db76c9650a1cb346cb61f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:50:58.930Z"
+}

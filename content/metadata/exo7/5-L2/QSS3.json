@@ -1,0 +1,29 @@
+{
+  "uuid": "QSS3",
+  "source_path": "exo7/5-L2/QSS3.tex",
+  "summary": "Montrer l'existence d'une fonction périodique continue définissant un compact convexe en coordonnées polaires et prouver qu'elle s'annule au moins deux fois sur un intervalle. Étudier les propriétés du centre de gravité de ce compact.",
+  "concepts": [
+    "compact convexe",
+    "continuité",
+    "périodicité",
+    "intégrale",
+    "centre de gravité",
+    "coordonnées polaires",
+    "fonction définie implicitement"
+  ],
+  "methods": [
+    "analyse des points d'annulation",
+    "intégration par parties",
+    "utilisation des propriétés de convexité",
+    "changement de variable"
+  ],
+  "objects": [
+    "fonction périodique",
+    "compact convexe",
+    "centre de gravité",
+    "segments de diamètre"
+  ],
+  "content_hash": "82b446f5ce3fbf94cca7878bb4ecb38bf21cc229da277356b2216da02cbc0152",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:51:38.917Z"
+}

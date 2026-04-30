@@ -1,0 +1,29 @@
+{
+  "uuid": "uaCN",
+  "source_path": "amscc/uaCN.tex",
+  "summary": "L'exercice demande de déterminer l'écart-type d'une loi normale modélisant le retard d'un bus, puis d'en déduire des probabilités conditionnelles. Il étudie ensuite une variable binomiale comptant les jours de retard acceptable et une variable géométrique modélisant le premier jour de retard inacceptable.",
+  "concepts": [
+    "loi normale",
+    "probabilité conditionnelle",
+    "loi binomiale",
+    "loi géométrique",
+    "standardisation",
+    "espérance",
+    "variance"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de probabilité conditionnelle",
+    "calcul d'espérance et variance pour loi binomiale",
+    "modélisation par loi géométrique"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "variable aléatoire binomiale",
+    "variable aléatoire géométrique",
+    "probabilité conditionnelle"
+  ],
+  "content_hash": "140afe594989308974b95e36c5a3912253b3a135c67e2b781aa0ef3d6a2e09c3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:09:56.564Z"
+}

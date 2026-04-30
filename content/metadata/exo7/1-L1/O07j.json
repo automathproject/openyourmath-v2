@@ -1,0 +1,26 @@
+{
+  "uuid": "O07j",
+  "source_path": "exo7/1-L1/O07j.tex",
+  "summary": "On considère deux polynômes P et Q à coefficients dans un corps K. On suppose que X² + X + 1 divise P(X³) + XQ(X³). On demande de montrer que P(1) = Q(1) = 0, puis d'étudier la réciproque.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "racines d'un polynôme",
+    "polynôme annulateur",
+    "corps commutatif",
+    "algèbre des polynômes"
+  ],
+  "methods": [
+    "évaluation de polynômes",
+    "utilisation des racines",
+    "factorisation",
+    "manipulation d'équations polynomiales"
+  ],
+  "objects": [
+    "polynômes à coefficients dans un corps",
+    "racines de polynômes",
+    "diviseur de polynômes"
+  ],
+  "content_hash": "a6d8ed50b2c0923902b5d2cb279bdf3bb57b267599006524a9ac8c753addc46c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:54:33.297Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "n8Zq",
+  "source_path": "exo7/2-L1/n8Zq.tex",
+  "summary": "Montrer que l'ensemble des réels de la forme uₙ = sin(ln(n)) est dense dans l'intervalle [-1, 1]. L'exercice demande de prouver une propriété de densité d'un ensemble de réels définis par une fonction trigonométrique.",
+  "concepts": [
+    "densité d'un ensemble",
+    "fonction sinus",
+    "logarithme naturel",
+    "inégalité classique ln(1+x) < x",
+    "approximation de fonctions"
+  ],
+  "methods": [
+    "approximation par des valeurs discrètes",
+    "utilisation de l'inégalité ln(1+x) < x",
+    "estimation d'erreur",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction sinus",
+    "logarithme naturel",
+    "intervalle [-1, 1]"
+  ],
+  "content_hash": "2388db5226190848973c97ff563b62bf2161d74df04d7542f32c293c0137fc52",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:33:49.912Z"
+}

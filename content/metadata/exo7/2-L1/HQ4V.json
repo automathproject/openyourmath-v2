@@ -1,0 +1,24 @@
+{
+  "uuid": "HQ4V",
+  "source_path": "exo7/2-L1/HQ4V.tex",
+  "summary": "On considère une suite de réels strictement positifs convergeant vers 0. L'exercice demande de montrer qu'il existe une infinité d'indices n pour lesquels x_n est le maximum de la suite à partir de n, puis le minimum de la suite jusqu'à n.",
+  "concepts": [
+    "suite numérique",
+    "convergence",
+    "sous-suite",
+    "maximum d'une suite",
+    "minimum d'une suite",
+    "valeur d'adhérence"
+  ],
+  "methods": [
+    "construction d'une sous-suite",
+    "analyse des valeurs extrêmes"
+  ],
+  "objects": [
+    "suite de réels strictement positifs",
+    "suite des minima partiels"
+  ],
+  "content_hash": "f947d1355a0232e4bbcc4e62d3330412f111a89ddca221b24452c0fc77f4d975",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:11:02.138Z"
+}

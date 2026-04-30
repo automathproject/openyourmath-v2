@@ -1,0 +1,25 @@
+{
+  "uuid": "guLY",
+  "source_path": "exo7/2-L1/guLY.tex",
+  "summary": "Étude de la convergence d'une série à termes positifs de terme général u_n = (a^n * 2^√n) / (2^√n + b^n), où a et b sont des réels strictement positifs. L'indication suggère d'analyser les équivalents selon les valeurs de b.",
+  "concepts": [
+    "série numérique",
+    "termes positifs",
+    "convergence de série",
+    "équivalent asymptotique",
+    "comparaison de séries"
+  ],
+  "methods": [
+    "comparaison directe",
+    "recherche d'équivalent",
+    "analyse des cas selon les valeurs de paramètres"
+  ],
+  "objects": [
+    "terme général de série",
+    "fonction exponentielle",
+    "fonction racine carrée"
+  ],
+  "content_hash": "edf15ad8def4be25897d70d57bfc74f63608baa0f0f65c6fc2bbc324a78651c7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:28:10.728Z"
+}

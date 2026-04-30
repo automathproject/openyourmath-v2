@@ -1,0 +1,29 @@
+{
+  "uuid": "OzHh",
+  "source_path": "exo7/13-L3/OzHh.tex",
+  "summary": "L'exercice étudie les propriétés des solutions d'un système linéaire à coefficients constants. Il demande de montrer que si un sous-espace est invariant par l'opérateur, les solutions issues de ce sous-espace y restent. Il explore aussi les cas où l'opérateur est nilpotent, possède une valeur propre de partie réelle négative, ou garantit des solutions bornées.",
+  "concepts": [
+    "système linéaire à coefficients constants",
+    "sous-espace invariant",
+    "valeur propre",
+    "partie réelle d'une valeur propre",
+    "solution bornée",
+    "nilpotence",
+    "stabilité asymptotique"
+  ],
+  "methods": [
+    "analyse de sous-espaces invariants",
+    "étude des valeurs propres",
+    "limite de solutions",
+    "condition de bornitude"
+  ],
+  "objects": [
+    "opérateur linéaire",
+    "sous-espace vectoriel",
+    "solution d'un système différentiel",
+    "valeur propre"
+  ],
+  "content_hash": "0f7e7f4c9c743d0954b3dbe63a9b770fab49319c6ffac74b4d65b1235fa9dbce",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:12:50.225Z"
+}

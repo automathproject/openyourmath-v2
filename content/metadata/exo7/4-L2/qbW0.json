@@ -1,0 +1,27 @@
+{
+  "uuid": "qbW0",
+  "source_path": "exo7/4-L2/qbW0.tex",
+  "summary": "Résoudre deux systèmes différentiels linéaires à trois équations. Le premier système est de dimension 3 avec des termes croisés entre x, y et z. Le second système présente également des interactions entre les trois variables.",
+  "concepts": [
+    "système différentiel linéaire",
+    "matrice associée",
+    "valeurs propres",
+    "vecteurs propres",
+    "diagonalisation",
+    "espace vectoriel"
+  ],
+  "methods": [
+    "résolution par diagonalisation",
+    "calcul des valeurs propres",
+    "calcul des vecteurs propres",
+    "méthode d'intégration"
+  ],
+  "objects": [
+    "système différentiel",
+    "matrice 3x3",
+    "variables différentielles"
+  ],
+  "content_hash": "ac2818c0c2538363da913fcee1cde254d2ed71b0b1bc614e6b7cd40180a9b6a9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:17:14.906Z"
+}

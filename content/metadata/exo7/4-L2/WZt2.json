@@ -1,0 +1,25 @@
+{
+  "uuid": "WZt2",
+  "source_path": "exo7/4-L2/WZt2.tex",
+  "summary": "On considère une matrice carrée A dont la somme des coefficients par ligne est constante et égale à S. On demande de prouver que S est une valeur propre de A. Même question pour la somme des coefficients par colonne.",
+  "concepts": [
+    "valeur propre",
+    "vecteur propre",
+    "matrice carrée",
+    "polynôme annulateur",
+    "endomorphisme",
+    "espace vectoriel"
+  ],
+  "methods": [
+    "recherche de vecteur propre",
+    "calcul de polynôme caractéristique"
+  ],
+  "objects": [
+    "matrice carrée",
+    "vecteur propre associé à une valeur propre",
+    "polynôme caractéristique"
+  ],
+  "content_hash": "320105b17e72cbd499be2f1a22108541a7e503e43074e6370a152e5bfaa780df",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:51:11.839Z"
+}

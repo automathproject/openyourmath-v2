@@ -1,0 +1,30 @@
+{
+  "uuid": "SNTm",
+  "source_path": "exo7/4-L2/SNTm.tex",
+  "summary": "L'exercice demande d'étudier une application linéaire Δ définie sur l'espace vectoriel des polynômes réels et son comportement sur les sous-espaces de polynômes de degré borné. On doit déterminer le degré de ΔP, les valeurs propres de sa restriction Δ₂ sur E₂, et analyser la diagonalisabilité et l'isomorphisme de Δ₂.",
+  "concepts": [
+    "espace vectoriel",
+    "sous-espace vectoriel",
+    "application linéaire",
+    "valeur propre",
+    "diagonalisation",
+    "polynôme annulateur",
+    "endomorphisme"
+  ],
+  "methods": [
+    "restriction d'application",
+    "calcul de valeurs propres",
+    "analyse de diagonalisabilité",
+    "vérification d'isomorphisme"
+  ],
+  "objects": [
+    "espace vectoriel des polynômes",
+    "sous-espace E_n",
+    "application Δ",
+    "restriction Δ₂",
+    "polynômes propres"
+  ],
+  "content_hash": "804e567f4504431e8bffafef95a90e22bf0f758a5b167735e48b218c6956f17e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:46:24.037Z"
+}

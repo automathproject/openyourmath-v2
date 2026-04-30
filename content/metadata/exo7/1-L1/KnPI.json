@@ -1,0 +1,26 @@
+{
+  "uuid": "KnPI",
+  "source_path": "exo7/1-L1/KnPI.tex",
+  "summary": "L'exercice étudie une transformation du plan complexe identifié à ℂ. On cherche d'abord le domaine de définition de la transformation f(z) = (z - i)/(z + i). Ensuite, on calcule le module de f(z) pour z dans le demi-plan supérieur y > 0, et on déduit l'image de ce demi-plan par f.",
+  "concepts": [
+    "fonction complexe",
+    "module d'un nombre complexe",
+    "transformation géométrique",
+    "domaine de définition",
+    "image réciproque"
+  ],
+  "methods": [
+    "calcul de module",
+    "analyse de transformation",
+    "résolution d'inéquation"
+  ],
+  "objects": [
+    "nombre complexe",
+    "demi-plan",
+    "transformation affine",
+    "module complexe"
+  ],
+  "content_hash": "e189b24beebc544ee9473c89b37a7ac14cee784b281d4c1fb94300bf1934241d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:41:11.529Z"
+}

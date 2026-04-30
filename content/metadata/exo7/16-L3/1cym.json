@@ -1,0 +1,27 @@
+{
+  "uuid": "1cym",
+  "source_path": "exo7/16-L3/1cym.tex",
+  "summary": "L'exercice demande de justifier la formule intégrale de Cauchy pour une fonction holomorphe dans un rectangle, d'abord via le théorème des résidus puis directement à partir du théorème de Cauchy-Goursat. Il faut aussi déterminer la valeur de l'intégrale lorsque le point z est à l'extérieur du rectangle.",
+  "concepts": [
+    "théorème des résidus",
+    "formule intégrale de Cauchy",
+    "théorème de Cauchy-Goursat",
+    "fonction holomorphe",
+    "indice d'un lacet",
+    "intégrale de contour"
+  ],
+  "methods": [
+    "justification par le théorème des résidus",
+    "application du théorème de Cauchy-Goursat",
+    "calcul de l'indice d'un lacet"
+  ],
+  "objects": [
+    "rectangle dans le plan complexe",
+    "fonction holomorphe",
+    "intégrale de contour",
+    "point z intérieur ou extérieur au rectangle"
+  ],
+  "content_hash": "de816f7b582fb2104c6e578873441202c40f56f6d1538533c05c8dade533de01",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:05:15.181Z"
+}

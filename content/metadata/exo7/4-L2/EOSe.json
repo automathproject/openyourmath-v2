@@ -1,0 +1,30 @@
+{
+  "uuid": "EOSe",
+  "source_path": "exo7/4-L2/EOSe.tex",
+  "summary": "Calcul des valeurs propres d'une matrice 3x3 et détermination de la diagonalisabilité d'un endomorphisme. Calcul de puissances de matrice et démonstration d'une relation de récurrence.",
+  "concepts": [
+    "valeur propre",
+    "polynôme annulateur",
+    "matrice diagonalisable",
+    "déterminant",
+    "binôme de Newton",
+    "récurrence"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "développement par rapport à une colonne",
+    "calcul de puissances de matrice",
+    "développement binomial",
+    "récurrence"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "endomorphisme",
+    "polynôme annulateur",
+    "matrice identité",
+    "matrice nulle"
+  ],
+  "content_hash": "08a275c2d9d6d39d5bdbd0c749d4df621bc460dbeb8a6ff4b15553424dda0367",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:26:42.807Z"
+}

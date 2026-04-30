@@ -1,0 +1,27 @@
+{
+  "uuid": "bz11",
+  "source_path": "amscc/bz11.tex",
+  "summary": "L'exercice demande de tester l'adéquation d'une loi binomiale au nombre de garçons dans des familles de 7 enfants, à partir de données observées sur 1883 familles. Il s'agit de vérifier si ces données suivent une loi binomiale avec un paramètre p, au risque d'erreur de 5%.",
+  "concepts": [
+    "test d'adéquation du chi-deux",
+    "loi binomiale",
+    "hypothèse nulle",
+    "risque d'erreur de première espèce",
+    "statistique de test",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "calcul de la statistique de test",
+    "comparaison avec la loi du chi-deux",
+    "estimation du paramètre p"
+  ],
+  "objects": [
+    "tableau de fréquences",
+    "nombre de garçons",
+    "loi binomiale",
+    "paramètre p"
+  ],
+  "content_hash": "e64d9f614990d555213692552c87d9d9674d71d9ff34605e2d3ce1fbf87c3eeb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:46:19.714Z"
+}

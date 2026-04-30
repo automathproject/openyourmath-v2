@@ -1,0 +1,28 @@
+{
+  "uuid": "G20r",
+  "source_path": "exo7/1-L1/G20r.tex",
+  "summary": "L'exercice demande de prouver qu'un polynôme donné admet une racine multiple, puis d'appliquer cette propriété pour déterminer les racines d'un autre polynôme spécifique.",
+  "concepts": [
+    "racine multiple",
+    "polynôme",
+    "décomposition en facteurs irréductibles",
+    "racine d'un polynôme",
+    "divisibilité de polynômes",
+    "théorème de Rolle",
+    "théorème de D'Alembert-Gauss"
+  ],
+  "methods": [
+    "factorisation",
+    "recherche de racines évidentes",
+    "division euclidienne de polynômes",
+    "utilisation du théorème de Rolle"
+  ],
+  "objects": [
+    "polynôme de degré n+2",
+    "racine multiple",
+    "polynôme 3X^5-5X^4+5X-3"
+  ],
+  "content_hash": "281a5e51778e9ba243cb3ef507916fd1b4537ed6556a6a06d862bea3356b57f5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:44:05.736Z"
+}

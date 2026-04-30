@@ -1,0 +1,26 @@
+{
+  "uuid": "A7xv",
+  "source_path": "exo7/4-L2/A7xv.tex",
+  "summary": "Soit une matrice carrée A de taille n sur un corps K. On demande de prouver que le polynôme caractéristique et le polynôme minimal de A ont les mêmes facteurs irréductibles.",
+  "concepts": [
+    "polynôme caractéristique",
+    "polynôme minimal",
+    "facteurs irréductibles",
+    "matrice carrée",
+    "corps commutatif",
+    "algèbre linéaire"
+  ],
+  "methods": [
+    "décomposition en facteurs irréductibles",
+    "division euclidienne de polynômes",
+    "propriétés des polynômes annulateurs"
+  ],
+  "objects": [
+    "matrice carrée",
+    "polynôme caractéristique",
+    "polynôme minimal"
+  ],
+  "content_hash": "d6a6e19a5bb11be10d1ac70bf496f9366e4cb101e95e65a679fdc61c329b42d6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:19:21.633Z"
+}

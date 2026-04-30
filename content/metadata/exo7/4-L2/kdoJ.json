@@ -1,0 +1,30 @@
+{
+  "uuid": "kdoJ",
+  "source_path": "exo7/4-L2/kdoJ.tex",
+  "summary": "Trouver toutes les suites complexes (xₙ), (yₙ), (zₙ) vérifiant un système de récurrence linéaire à trois équations. Chercher ensuite la solution particulière correspondant à des conditions initiales données.",
+  "concepts": [
+    "diagonalisation de matrice",
+    "racines de l'unité",
+    "polynôme caractéristique",
+    "système linéaire",
+    "espace vectoriel complexe",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "methods": [
+    "diagonalisation",
+    "résolution de système linéaire",
+    "calcul de polynôme caractéristique",
+    "décomposition en valeurs propres"
+  ],
+  "objects": [
+    "suite récurrente",
+    "matrice 3x3",
+    "racines cubiques de l'unité",
+    "vecteur propre",
+    "valeur propre"
+  ],
+  "content_hash": "a993dad1a757540246972e2cd3c5551fadc2a145279a270a919306218f6bbe7c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:09:48.035Z"
+}

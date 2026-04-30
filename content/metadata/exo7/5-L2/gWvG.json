@@ -1,0 +1,25 @@
+{
+  "uuid": "gWvG",
+  "source_path": "exo7/5-L2/gWvG.tex",
+  "summary": "On considère une matrice A dans Mn(C) dont la suite des puissances (Ak) converge vers une matrice P. On demande de prouver que P est une matrice de projection.",
+  "concepts": [
+    "convergence de suite de matrices",
+    "matrice de projection",
+    "espace vectoriel normé",
+    "topologie des matrices",
+    "limite de suite de matrices"
+  ],
+  "methods": [
+    "étude de la limite de suite de matrices",
+    "propriétés des matrices de projection",
+    "algorithme de projection"
+  ],
+  "objects": [
+    "suite de matrices",
+    "matrice de projection",
+    "matrice carrée complexe"
+  ],
+  "content_hash": "7d4b001f2e0b26eb38a1860dd4ade7a2bc62af556c77f114907d9aa488c7bf6f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:03:32.119Z"
+}

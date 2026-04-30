@@ -1,0 +1,25 @@
+{
+  "uuid": "SxMf",
+  "source_path": "amscc/SxMf.tex",
+  "summary": "L'exercice demande d'analyser des données de temps de trajet pour calculer des statistiques descriptives (moyenne, variance) et d'explorer une différence potentielle entre les vendredis et les autres jours.",
+  "concepts": [
+    "moyenne empirique",
+    "variance empirique",
+    "estimateur sans biais",
+    "analyse exploratoire de données"
+  ],
+  "methods": [
+    "calcul de moyenne",
+    "calcul de variance corrigée",
+    "filtrage de données conditionnel"
+  ],
+  "objects": [
+    "jeu de données",
+    "temps de trajet",
+    "moyenne empirique",
+    "variance empirique"
+  ],
+  "content_hash": "49b0aa20306b283db390fa104cfc68b79a52ab3256a644eff6e6a1bed2b4faff",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:42:15.060Z"
+}

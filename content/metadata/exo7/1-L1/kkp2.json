@@ -1,0 +1,25 @@
+{
+  "uuid": "kkp2",
+  "source_path": "exo7/1-L1/kkp2.tex",
+  "summary": "Démontrer qu'une racine entière d'un polynôme à coefficients entiers divise le terme constant. Appliquer ce résultat pour déterminer si deux polynômes donnés ont des racines entières.",
+  "concepts": [
+    "racine d'un polynôme",
+    "divisibilité dans ℤ",
+    "polynôme à coefficients entiers",
+    "théorème des racines rationnelles",
+    "décomposition en facteurs irréductibles"
+  ],
+  "methods": [
+    "test des diviseurs du terme constant",
+    "évaluation du polynôme",
+    "vérification des racines candidates"
+  ],
+  "objects": [
+    "polynôme à coefficients entiers",
+    "racine entière",
+    "terme constant"
+  ],
+  "content_hash": "c551b55ec78490e837f658d98637253ca5fe494fcfe9bb0f67b34938083c910a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:18:16.870Z"
+}

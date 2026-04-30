@@ -1,0 +1,26 @@
+{
+  "uuid": "l3IO",
+  "source_path": "exo7/1-L1/l3IO.tex",
+  "summary": "Montrer l'irréductibilité du polynôme (X-a₁)...(X-aₙ) - 1 dans ℤ[X] où les aᵢ sont des entiers distincts. La seconde question demande de prouver l'irréductibilité de (X-a₁)...(X-aₙ) + 1 avec n impair.",
+  "concepts": [
+    "polynôme irréductible",
+    "factorisation dans ℤ[X]",
+    "racine d'un polynôme",
+    "valeur absolue",
+    "croissance des polynômes"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "analyse des valeurs en points particuliers",
+    "comparaison des degrés",
+    "répartition des facteurs"
+  ],
+  "objects": [
+    "polynôme à coefficients entiers",
+    "racines distinctes",
+    "produit de facteurs linéaires"
+  ],
+  "content_hash": "858998bb232b7697be5c239b1d78e78db166ea6206a40db4e9ae57f12ab8635a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:18:43.453Z"
+}

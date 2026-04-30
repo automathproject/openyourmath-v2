@@ -1,0 +1,24 @@
+{
+  "uuid": "dRbq",
+  "source_path": "amscc/dRbq.tex",
+  "summary": "L'exercice demande de déterminer la loi de probabilité d'une variable aléatoire représentant le nombre de tentatives nécessaires pour obtenir un standard téléphonique occupé avec une probabilité de 0,6. Il s'agit ensuite de calculer l'espérance et une probabilité conditionnelle associée.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi géométrique",
+    "espérance d'une variable aléatoire",
+    "probabilité conditionnelle",
+    "schéma de Bernoulli"
+  ],
+  "methods": [
+    "calcul de l'espérance d'une loi géométrique",
+    "calcul de probabilité cumulative"
+  ],
+  "objects": [
+    "variable aléatoire géométriquement distribuée",
+    "probabilité de succès",
+    "nombre de tentatives"
+  ],
+  "content_hash": "eb87e8277d450b4e8614342b98efc7b0fb9b17a22764d3dbcd0a4f57924f8a9d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:33:59.891Z"
+}

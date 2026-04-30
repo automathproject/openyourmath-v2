@@ -1,0 +1,26 @@
+{
+  "uuid": "1xSa",
+  "source_path": "exo7/1-L1/1xSa.tex",
+  "summary": "L'exercice demande de vérifier que deux polynômes P et Q sont premiers entre eux, puis de trouver des polynômes U et V tels que UP + VQ = 1 en utilisant la division suivant les puissances croissantes.",
+  "concepts": [
+    "polynôme irréductible",
+    "division euclidienne",
+    "algèbre des polynômes",
+    "identité de Bézout",
+    "division suivant les puissances croissantes"
+  ],
+  "methods": [
+    "division euclidienne",
+    "identité de Bézout",
+    "division suivant les puissances croissantes"
+  ],
+  "objects": [
+    "polynôme P",
+    "polynôme Q",
+    "polynôme U",
+    "polynôme V"
+  ],
+  "content_hash": "f4b0da58ce35c87f885595b8c17a42d15cf3f3da7b80e4e6383616427c1264ce",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:31:39.005Z"
+}

@@ -1,0 +1,32 @@
+{
+  "uuid": "ot53",
+  "source_path": "exo7/4-L2/ot53.tex",
+  "summary": "L'exercice demande de déterminer pour quelles valeurs du paramètre réel a une matrice donnée est diagonalisable, puis de calculer sa puissance n-ième lorsque cela est possible. Il s'inscrit dans le cadre de l'étude des suites récurrentes linéaires d'ordre 2.",
+  "concepts": [
+    "diagonalisation de matrice",
+    "polynôme caractéristique",
+    "valeurs propres",
+    "vecteurs propres",
+    "discriminant",
+    "suite récurrente linéaire",
+    "puissance de matrice"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "calcul de discriminant",
+    "diagonalisation",
+    "calcul de vecteurs propres",
+    "calcul de puissance de matrice",
+    "récurrence"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "suite récurrente",
+    "vecteur propre",
+    "matrice diagonale",
+    "matrice inversible"
+  ],
+  "content_hash": "c29ddd0de04662eb84c67a02ec9c566802472d04e2b52a50530123e0b86b5c1c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:15:21.682Z"
+}

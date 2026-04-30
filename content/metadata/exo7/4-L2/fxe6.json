@@ -1,0 +1,28 @@
+{
+  "uuid": "fxe6",
+  "source_path": "exo7/4-L2/fxe6.tex",
+  "summary": "L'exercice demande de diagonaliser quatre matrices carrées de dimensions différentes lorsque cela est possible.",
+  "concepts": [
+    "diagonalisation",
+    "valeurs propres",
+    "vecteurs propres",
+    "polynôme caractéristique",
+    "algèbre linéaire",
+    "matrices carrées"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "détermination des vecteurs propres",
+    "vérification de diagonalisabilité"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice 4x4",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "content_hash": "72fd81625682e959b39a6eb76564dc03967aeb2943162083bcdd373d1537e40a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:03:33.906Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "6GaZ",
+  "source_path": "exo7/7-L2/6GaZ.tex",
+  "summary": "On cherche la probabilité qu'une corde choisie au hasard dans un cercle passe à l'intérieur d'un triangle équilatéral inscrit, ou équivalemment soit plus longue que le côté de ce triangle.",
+  "concepts": [
+    "probabilité géométrique",
+    "symétrie",
+    "uniformité",
+    "mesure de probabilité",
+    "géométrie du cercle"
+  ],
+  "methods": [
+    "modélisation géométrique",
+    "analyse de symétrie",
+    "calcul d'aire",
+    "calcul d'angle"
+  ],
+  "objects": [
+    "corde dans un cercle",
+    "triangle équilatéral inscrit",
+    "point au hasard dans un disque",
+    "angle au hasard"
+  ],
+  "content_hash": "5146471a354fe90ab4aae346b1dc45dc0c16667de55ea06d075dda2df70e1656",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:38:58.241Z"
+}

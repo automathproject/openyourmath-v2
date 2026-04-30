@@ -1,0 +1,33 @@
+{
+  "uuid": "qyPc",
+  "source_path": "amscc/qyPc.tex",
+  "summary": "L'exercice demande de simuler des variables aléatoires suivant des lois de Rademacher, Laplace et géométrique à partir d'une variable uniforme sur [0;1]. Il s'agit de déterminer les fonctions de répartition et les densités de probabilité associées, puis de prouver que certaines transformations de variables suivent les lois attendues.",
+  "concepts": [
+    "loi de Rademacher",
+    "loi de Laplace",
+    "loi géométrique",
+    "fonction de répartition",
+    "densité de probabilité",
+    "théorème des probabilités totales",
+    "variable aléatoire indépendante",
+    "loi uniforme"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "théorème des probabilités totales",
+    "détermination de la fonction de répartition",
+    "dérivation de la fonction de répartition",
+    "intégration pour calculer une probabilité"
+  ],
+  "objects": [
+    "variable aléatoire uniforme",
+    "variable aléatoire de Rademacher",
+    "variable aléatoire de Laplace",
+    "variable aléatoire géométrique",
+    "fonction indicatrice",
+    "partie entière"
+  ],
+  "content_hash": "53dfbc3350877deff10990ae6b840b410a7c3f697ea8fc5b261946c77a0c3f32",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:07:42.410Z"
+}

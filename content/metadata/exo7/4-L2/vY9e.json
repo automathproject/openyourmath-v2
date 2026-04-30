@@ -1,0 +1,28 @@
+{
+  "uuid": "vY9e",
+  "source_path": "exo7/4-L2/vY9e.tex",
+  "summary": "Trouver une matrice A dans M_n(R) dont la comatrice est une matrice donnée de rang 1. L'énoncé demande de déterminer une matrice A vérifiant une condition spécifique sur sa comatrice.",
+  "concepts": [
+    "comatrice",
+    "rang d'une matrice",
+    "produit matriciel",
+    "famille libre",
+    "orthogonalité",
+    "produit scalaire"
+  ],
+  "methods": [
+    "détermination du rang",
+    "écriture matricielle",
+    "multiplication matricielle",
+    "orthogonalisation"
+  ],
+  "objects": [
+    "matrice carrée",
+    "comatrice",
+    "vecteurs colonnes",
+    "matrice de rang 1"
+  ],
+  "content_hash": "d35c9c925303c859e0bbb5a76588b4b0fd4e861a04fc52dfb83014febb4048e5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:25:28.638Z"
+}

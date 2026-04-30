@@ -1,0 +1,29 @@
+{
+  "uuid": "YgQF",
+  "source_path": "exo7/8-L3/YgQF.tex",
+  "summary": "L'exercice demande de démontrer l'existence d'un plus petit élément dans un ensemble ordonné et d'utiliser cette propriété pour construire une bijection entre deux ensembles munis d'injections.",
+  "concepts": [
+    "ensemble ordonné",
+    "application croissante",
+    "plus petit élément",
+    "partition d'un ensemble",
+    "bijection",
+    "injection",
+    "théorème de Cantor-Bernstein"
+  ],
+  "methods": [
+    "utilisation de l'ordre par inclusion",
+    "construction d'une intersection",
+    "démonstration par croissance",
+    "définition d'une bijection par morceaux"
+  ],
+  "objects": [
+    "ensemble des parties d'un ensemble",
+    "application croissante",
+    "partition de X",
+    "bijection entre X et Y"
+  ],
+  "content_hash": "b41309a209bae327367d15d86ff8b702d0ea68f796639a6fc3287c266e028ba2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:14:16.092Z"
+}

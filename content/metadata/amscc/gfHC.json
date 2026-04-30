@@ -1,0 +1,24 @@
+{
+  "uuid": "gfHC",
+  "source_path": "amscc/gfHC.tex",
+  "summary": "Déterminer une probabilité sur un ensemble fini Ω = {1, 2, ..., n} telle que la probabilité de l'événement {1, 2, ..., k} soit proportionnelle à k².",
+  "concepts": [
+    "probabilité discrète",
+    "mesure de probabilité",
+    "proportionnalité",
+    "événement élémentaire",
+    "ensemble fini"
+  ],
+  "methods": [
+    "calcul de coefficient de proportionnalité",
+    "définition axiomatique de la probabilité"
+  ],
+  "objects": [
+    "ensemble fini Ω",
+    "événement {1, 2, ..., k}",
+    "coefficient de proportionnalité α"
+  ],
+  "content_hash": "8ea8c87828b85d982b62b4365e01042e2a75487bef5ffe426c820c28db48229d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:35:37.741Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "Lmvw",
+  "source_path": "exo7/1-L1/Lmvw.tex",
+  "summary": "Trouver l'ensemble des polynômes complexes P tels que pour chaque i, l'image réciproque de y_i par P soit exactement {x_i}, où les x_i et y_i sont des complexes distincts.",
+  "concepts": [
+    "polynôme à coefficients complexes",
+    "racine d'un polynôme",
+    "coefficient dominant",
+    "degré d'un polynôme",
+    "image réciproque"
+  ],
+  "methods": [
+    "analyse des racines",
+    "comparaison des degrés",
+    "développement de polynômes"
+  ],
+  "objects": [
+    "polynôme P",
+    "ensemble E",
+    "racines x_i",
+    "valeurs y_i"
+  ],
+  "content_hash": "a2eea7d99e86fe74b676cf3d77ff9abf1f44480b19c7c1a9c1818a13a217d253",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:52:27.719Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "6Pjh",
+  "source_path": "exo7/1-L1/6Pjh.tex",
+  "summary": "Déterminer pour quels entiers naturels n le polynôme (1+X⁴)ⁿ - Xⁿ est divisible par 1+X+X² dans ℝ[X].",
+  "concepts": [
+    "division euclidienne de polynômes",
+    "racine d'un polynôme",
+    "congruence arithmétique",
+    "polynôme irréductible",
+    "algèbre sur un corps"
+  ],
+  "methods": [
+    "factorisation",
+    "substitution de racines",
+    "calcul de congruences"
+  ],
+  "objects": [
+    "polynôme à coefficients réels",
+    "racine complexe primitive",
+    "entier naturel"
+  ],
+  "content_hash": "77e340c09a8034ecf28b984fa4b80dbd624e3c1c127bad574b2fbe862c0160ee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:35:04.506Z"
+}

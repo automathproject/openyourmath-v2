@@ -1,0 +1,27 @@
+{
+  "uuid": "2W4z",
+  "source_path": "exo7/2-L1/2W4z.tex",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une solution a_n dans [0,1] pour l'équation Σx^k = 1, puis d'étudier les propriétés de la suite (a_n) : décroissance, minoration par 1/2, et convergence vers 1/2.",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "fonction strictement croissante",
+    "suite décroissante",
+    "suite minorée",
+    "convergence de suite",
+    "théorème des gendarmes"
+  ],
+  "methods": [
+    "étude de fonction",
+    "calcul de dérivée",
+    "utilisation de la définition de la limite",
+    "composition de fonctions"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "suite numérique",
+    "solution d'équation"
+  ],
+  "content_hash": "b10e518f46d25932be93179e871c45050774ef2ff48c5d640746a2a02d477ffe",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:02:28.222Z"
+}

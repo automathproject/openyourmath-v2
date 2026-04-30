@@ -1,0 +1,29 @@
+{
+  "uuid": "fol5",
+  "source_path": "exo7/13-L3/fol5.tex",
+  "summary": "L'exercice demande de transformer une équation différentielle du troisième ordre en un système d'équations différentielles du premier ordre sous forme canonique, puis d'étudier les solutions maximales de ce système avec des conditions initiales données.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "système d'équations différentielles",
+    "solution maximale",
+    "théorème de Cauchy-Lipschitz",
+    "fonction lipschitzienne",
+    "convexité",
+    "concavité"
+  ],
+  "methods": [
+    "réduction d'ordre",
+    "application du théorème de Cauchy-Lipschitz",
+    "analyse de la dérivée",
+    "étude de la convexité/concavité"
+  ],
+  "objects": [
+    "équation différentielle du troisième ordre",
+    "système d'équations différentielles du premier ordre",
+    "solution maximale",
+    "fonction exponentielle"
+  ],
+  "content_hash": "b5ab0abd82c44c0d7d55b6b957d5b70516d0a731da169886ce9b8446854cb770",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:46:31.404Z"
+}

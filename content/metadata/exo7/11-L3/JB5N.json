@@ -1,0 +1,28 @@
+{
+  "uuid": "JB5N",
+  "source_path": "exo7/11-L3/JB5N.tex",
+  "summary": "L'exercice demande de montrer qu'une application définie sur le plan privé de l'origine est un difféomorphisme local en chaque point, puis d'étudier si elle est un difféomorphisme global.",
+  "concepts": [
+    "difféomorphisme",
+    "application différentiable",
+    "voisinage",
+    "application bijective",
+    "continuité",
+    "dérivabilité"
+  ],
+  "methods": [
+    "étude de la bijectivité locale",
+    "inversibilité locale",
+    "calcul de la différentielle",
+    "théorème d'inversion locale"
+  ],
+  "objects": [
+    "application de R² dans R²",
+    "point critique",
+    "voisinage d'un point",
+    "application f(x,y) = (x²-y², 2xy)"
+  ],
+  "content_hash": "ea90381232efb4297794c9512e9631a6e049b61b90721a15914247b9877c63d0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:17:05.863Z"
+}

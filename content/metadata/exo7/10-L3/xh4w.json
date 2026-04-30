@@ -1,0 +1,25 @@
+{
+  "uuid": "xh4w",
+  "source_path": "exo7/10-L3/xh4w.tex",
+  "summary": "Soit un polynôme à coefficients entiers et une racine rationnelle. Montrer que cette racine peut s'écrire sous forme irréductible et que le dénominateur divise le coefficient dominant, le numérateur divise le terme constant.",
+  "concepts": [
+    "polynôme à coefficients entiers",
+    "racine rationnelle",
+    "forme irréductible d'une fraction",
+    "divisibilité dans Z",
+    "théorème de Gauss"
+  ],
+  "methods": [
+    "réduction au même dénominateur",
+    "analyse des diviseurs",
+    "utilisation du théorème de Gauss"
+  ],
+  "objects": [
+    "polynôme unitaire",
+    "racine rationnelle",
+    "fraction irréductible"
+  ],
+  "content_hash": "83c44618844a6a17b392b3ead3ef2f6d7f1c5f3664735f30bf35f5f627de2b14",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:29:23.925Z"
+}

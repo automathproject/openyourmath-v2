@@ -1,0 +1,25 @@
+{
+  "uuid": "G01F",
+  "source_path": "exo7/4-L2/G01F.tex",
+  "summary": "L'exercice demande si une matrice A inversible égale à son inverse est diagonalisable, puis de calculer son exponentielle matricielle.",
+  "concepts": [
+    "diagonalisation",
+    "polynôme annulateur",
+    "exponentielle matricielle",
+    "matrice inversible",
+    "matrice diagonale"
+  ],
+  "methods": [
+    "calcul de polynôme annulateur",
+    "décomposition spectrale",
+    "séries entières de matrices"
+  ],
+  "objects": [
+    "matrice carrée complexe",
+    "exponentielle matricielle",
+    "polynôme annulateur"
+  ],
+  "content_hash": "b720363f92e3820ee1bf818b587e67c9635810167ac6c58df9ac7cb0ac827120",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:29:43.850Z"
+}

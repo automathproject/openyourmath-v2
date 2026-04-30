@@ -1,0 +1,26 @@
+{
+  "uuid": "zIHz",
+  "source_path": "exo7/5-L2/zIHz.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction définie par morceaux, égale à 1 en 0 et à sin(x)/x ailleurs, est de classe C^∞ sur ℝ.",
+  "concepts": [
+    "développement en série entière",
+    "classe C^∞",
+    "fonction définie par morceaux",
+    "convergence de série entière",
+    "dérivabilité",
+    "continuité"
+  ],
+  "methods": [
+    "développement en série de Taylor",
+    "analyse des dérivées successives",
+    "comparaison de séries"
+  ],
+  "objects": [
+    "fonction sin(x)/x",
+    "série entière",
+    "dérivées successives"
+  ],
+  "content_hash": "21343dcd0414a87bfcbe602fdd75e9181c1abe858e618d826733f9c02432dcd0",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:57:39.100Z"
+}

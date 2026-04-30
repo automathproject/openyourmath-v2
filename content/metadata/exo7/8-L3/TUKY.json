@@ -1,0 +1,26 @@
+{
+  "uuid": "TUKY",
+  "source_path": "exo7/8-L3/TUKY.tex",
+  "summary": "Soit un morphisme de groupes finis entre G et H. On considère un sous-groupe G' de G dont l'ordre est premier avec l'ordre de H. On demande de montrer que G' est inclus dans le noyau de f.",
+  "concepts": [
+    "morphisme de groupes",
+    "sous-groupe",
+    "noyau d'un morphisme",
+    "ordre d'un groupe",
+    "nombre premier",
+    "théorème de Lagrange"
+  ],
+  "methods": [
+    "utilisation du théorème de Lagrange",
+    "analyse des ordres de groupes",
+    "propriétés des noyaux"
+  ],
+  "objects": [
+    "morphisme de groupes",
+    "sous-groupe",
+    "noyau"
+  ],
+  "content_hash": "00adaeee40944d201f1da7028339fb417c83d9a0a0fad214f4715244a2e9f305",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:58:57.936Z"
+}

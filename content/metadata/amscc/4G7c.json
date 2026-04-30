@@ -1,0 +1,26 @@
+{
+  "uuid": "4G7c",
+  "source_path": "amscc/4G7c.tex",
+  "summary": "L'exercice demande de déterminer si un réseau de neurones entièrement linéaire avec une couche cachée de 3 neurones est équivalent à un neurone simple. Il s'agit d'étudier l'expressivité des fonctions linéaires composées.",
+  "concepts": [
+    "fonction linéaire",
+    "composition de fonctions",
+    "réseau de neurones",
+    "expressivité des modèles",
+    "fonction affine",
+    "matrice de poids"
+  ],
+  "methods": [
+    "analyse de la composition de fonctions linéaires",
+    "simplification algébrique",
+    "comparaison de modèles"
+  ],
+  "objects": [
+    "réseau de neurones 1→3→1",
+    "neurone simple 1→1",
+    "fonctions d'activation linéaires"
+  ],
+  "content_hash": "6b9343fba2709643b4f4c983b770f4d066b7c63f7adc45ee66d5406827262df6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:32:25.409Z"
+}

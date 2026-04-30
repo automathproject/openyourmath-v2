@@ -1,0 +1,25 @@
+{
+  "uuid": "oGBE",
+  "source_path": "exo7/10-L3/oGBE.tex",
+  "summary": "L'exercice demande de prouver que deux permutations données sont conjuguées dans le groupe symétrique S6.",
+  "concepts": [
+    "groupe symétrique",
+    "conjugaison de permutations",
+    "permutation",
+    "groupe engendré",
+    "ordre d'une permutation"
+  ],
+  "methods": [
+    "décomposition en cycles",
+    "calcul de l'inverse d'une permutation",
+    "vérification de la conjugaison"
+  ],
+  "objects": [
+    "permutation σ",
+    "permutation τ",
+    "groupe S6"
+  ],
+  "content_hash": "2303e008c65142f2291596a5b008ff747512c22f93cbd4cfe0311363b2aa8875",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:10:16.121Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "EKCM",
+  "source_path": "exo7/4-L2/EKCM.tex",
+  "summary": "Résoudre dans l'espace des matrices 3x3 à coefficients complexes l'équation matricielle X² = A, où A est une matrice donnée de rang 1.",
+  "concepts": [
+    "réduction d'endomorphisme",
+    "valeurs propres",
+    "polynôme caractéristique",
+    "nilpotence",
+    "matrice de passage",
+    "commutation de matrices",
+    "sous-espaces stables"
+  ],
+  "methods": [
+    "calcul de polynôme caractéristique",
+    "réduction de matrice",
+    "détermination de sous-espaces propres",
+    "construction de base adaptée",
+    "calcul de matrice de passage"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme annulateur",
+    "sous-espaces vectoriels",
+    "matrice nilpotente",
+    "matrice de passage"
+  ],
+  "content_hash": "c1180a34e2bf4dbdaf581910b76568a584860361072dd091820eda553dafe765",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:26:28.167Z"
+}

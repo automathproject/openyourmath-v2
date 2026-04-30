@@ -1,0 +1,27 @@
+{
+  "uuid": "xtyw",
+  "source_path": "amscc/xtyw.tex",
+  "summary": "L'exercice demande d'établir la fonction de vraisemblance pour un échantillon de variables aléatoires suivant une loi uniforme sur [0, θ], puis de déterminer l'estimateur du maximum de vraisemblance du paramètre θ. Il aborde ensuite la correction du biais de cet estimateur et une application numérique avec des mesures de corrosion.",
+  "concepts": [
+    "loi uniforme",
+    "fonction de vraisemblance",
+    "estimateur du maximum de vraisemblance",
+    "biais d'un estimateur",
+    "espérance mathématique",
+    "statistique d'ordre"
+  ],
+  "methods": [
+    "calcul de la vraisemblance",
+    "étude de la monotonie d'une fonction",
+    "correction du biais d'un estimateur"
+  ],
+  "objects": [
+    "variable aléatoire uniforme",
+    "échantillon indépendant",
+    "estimateur biaisé",
+    "estimateur sans biais"
+  ],
+  "content_hash": "030c3422792bf04de706a1f1f435df0b56f077e899226556f22798606b849d88",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:27:59.823Z"
+}

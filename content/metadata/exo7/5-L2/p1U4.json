@@ -1,0 +1,26 @@
+{
+  "uuid": "p1U4",
+  "source_path": "exo7/5-L2/p1U4.tex",
+  "summary": "L'exercice demande d'étudier si les solutions de l'équation u² = id dans l'espace des endomorphismes de ℝⁿ sont isolées. Il s'agit de déterminer si ces solutions peuvent être approchées par d'autres endomorphismes vérifiant la même équation.",
+  "concepts": [
+    "espace vectoriel normé",
+    "endomorphisme",
+    "valeur propre",
+    "convergence uniforme",
+    "topologie des espaces vectoriels normés",
+    "symétrie linéaire"
+  ],
+  "methods": [
+    "analyse des valeurs propres",
+    "construction de suite convergente",
+    "étude de la distance entre endomorphismes"
+  ],
+  "objects": [
+    "endomorphisme de ℝⁿ",
+    "suite d'endomorphismes",
+    "base propre"
+  ],
+  "content_hash": "b4c8df67d63b5480e2d239498968393f37c24c4e85f0546d03bf2c1986148c1e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:10:12.613Z"
+}

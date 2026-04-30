@@ -1,0 +1,28 @@
+{
+  "uuid": "f5at",
+  "source_path": "exo7/5-L2/f5at.tex",
+  "summary": "L'exercice étudie les propriétés d'une intersection décroissante de compacts non vides dans un espace vectoriel normé. Il demande de prouver que cette intersection est non vide, qu'elle est contenue dans tout ouvert la contenant, et que son diamètre est la limite des diamètres des compacts.",
+  "concepts": [
+    "espace vectoriel normé",
+    "suite décroissante de compacts",
+    "intersection de compacts",
+    "diamètre d'un ensemble",
+    "convergence de suites",
+    "topologie des espaces vectoriels normés"
+  ],
+  "methods": [
+    "extraction de sous-suites",
+    "passage à la limite",
+    "utilisation de la définition du diamètre",
+    "argument par l'absurde"
+  ],
+  "objects": [
+    "suite de compacts (K_n)",
+    "intersection K",
+    "boules fermées",
+    "diamètre δ(K)"
+  ],
+  "content_hash": "949c141bce9d777d12a9207dface66bff85b7c42686dd09336e6d02102e9dace",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:02:37.811Z"
+}

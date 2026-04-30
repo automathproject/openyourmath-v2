@@ -1,0 +1,25 @@
+{
+  "uuid": "bdkr",
+  "source_path": "exo7/15-L3/bdkr.tex",
+  "summary": "L'exercice demande de montrer que tout ouvert d'un espace topologique de Baire, muni de la topologie induite, est encore un espace de Baire. On considère une suite d'ouverts denses dans cet ouvert et on doit prouver une propriété d'intersection non vide.",
+  "concepts": [
+    "espace de Baire",
+    "topologie induite",
+    "ensemble dense",
+    "théorème de Baire",
+    "intersection d'ouverts"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la densité",
+    "argumentation par intersection non vide"
+  ],
+  "objects": [
+    "suite d'ouverts denses",
+    "ouvert de l'espace topologique",
+    "complémentaire d'un fermé"
+  ],
+  "content_hash": "6d44613969936f57760b47b451803ae275f50b36071ce1fc72d106828530575e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:43:38.473Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "8IyW",
+  "source_path": "exo7/5-L2/8IyW.tex",
+  "summary": "Trouver un ensemble A de ℝ tel que les sept ensembles dérivés (intérieur, adhérence, etc.) soient deux à deux distincts.",
+  "concepts": [
+    "adhérence",
+    "intérieur d'un ensemble",
+    "ensemble ouvert",
+    "ensemble fermé",
+    "topologie de ℝ",
+    "construction explicite d'ensembles"
+  ],
+  "methods": [
+    "construction par union d'intervalles et de points",
+    "calcul de l'intérieur",
+    "calcul de l'adhérence"
+  ],
+  "objects": [
+    "ensemble de ℝ",
+    "intervalles",
+    "points isolés",
+    "nombres rationnels"
+  ],
+  "content_hash": "805876459bdf8aec48cda2b5344f0766540fd655b6e9c331bd5dd66cf60b80de",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:38:19.545Z"
+}

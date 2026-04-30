@@ -1,0 +1,30 @@
+{
+  "uuid": "oi0P",
+  "source_path": "exo7/16-L3/oi0P.tex",
+  "summary": "Calculer deux intégrales réelles impliquant des polynômes de degré pair élevé au dénominateur, en utilisant le théorème des résidus appliqué à des intégrales sur des demi-cercles dans le plan complexe.",
+  "concepts": [
+    "théorème des résidus",
+    "intégration complexe",
+    "fonction méromorphe",
+    "singularité isolée",
+    "pôle d'ordre fini",
+    "convergence uniforme",
+    "changement de variable complexe"
+  ],
+  "methods": [
+    "intégration sur un contour fermé",
+    "décomposition en éléments simples",
+    "calcul des résidus",
+    "évaluation des pôles",
+    "passage à la limite"
+  ],
+  "objects": [
+    "intégrale de fonction rationnelle",
+    "demi-cercle dans le plan complexe",
+    "fonction $1/(1+z^{2n})$",
+    "fonction $1/(1+x^2)^n$"
+  ],
+  "content_hash": "05f97ad4113e301968ff9e9cd70ae226c43f13a729f278ece6e12f0c2386ce85",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:22:44.839Z"
+}

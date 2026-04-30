@@ -1,0 +1,26 @@
+{
+  "uuid": "iOuZ",
+  "source_path": "exo7/2-L1/iOuZ.tex",
+  "summary": "On étudie les valeurs d'adhérence d'une suite complexe de la forme e^(i*h(n)) où h est une fonction croissante tendant vers l'infini avec une différence tendant vers 0. On doit montrer que l'ensemble des valeurs d'adhérence est exactement le cercle trigonométrique.",
+  "concepts": [
+    "valeurs d'adhérence",
+    "suite complexe",
+    "fonction croissante",
+    "limite infinie",
+    "cercle trigonométrique",
+    "convergence de suites"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition des valeurs d'adhérence",
+    "analyse des propriétés de la fonction h"
+  ],
+  "objects": [
+    "suite e^(i*h(n))",
+    "fonction h",
+    "cercle trigonométrique"
+  ],
+  "content_hash": "f717dc3c46e651c4f36cf7f055535f1a95e07c4bcffeaf43aec5827f644afea4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:29:48.627Z"
+}

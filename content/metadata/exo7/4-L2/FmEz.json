@@ -1,0 +1,24 @@
+{
+  "uuid": "FmEz",
+  "source_path": "exo7/4-L2/FmEz.tex",
+  "summary": "Soit E un K-espace vectoriel de dimension finie et u un endomorphisme diagonalisable de E. Montrer l'existence d'endomorphismes ui vérifiant une relation polynomiale spécifique pour tout polynôme P.",
+  "concepts": [
+    "endomorphisme diagonalisable",
+    "valeur propre",
+    "polynôme annulateur",
+    "espace vectoriel de dimension finie",
+    "algèbre des endomorphismes"
+  ],
+  "methods": [
+    "décomposition spectrale",
+    "utilisation des polynômes interpolateurs"
+  ],
+  "objects": [
+    "endomorphisme",
+    "polynôme",
+    "valeurs propres"
+  ],
+  "content_hash": "fa4552fe17eb4efced385ba1398fa9b5605c9bd55b7a5722ed965e319d4fd61b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:28:47.038Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "IC6C",
+  "source_path": "amscc/IC6C.tex",
+  "summary": "L'exercice demande d'analyser la nature de convergence de plusieurs séries numériques, dont une série alternée et une série de Riemann, puis d'étudier la convergence de leur somme.",
+  "concepts": [
+    "série numérique",
+    "série à termes de signe non constant",
+    "série alternée",
+    "série de Riemann",
+    "convergence absolue",
+    "convergence semi-convergente",
+    "inégalité triangulaire"
+  ],
+  "methods": [
+    "critère spécial des séries alternées",
+    "étude de la convergence absolue",
+    "somme de séries convergentes",
+    "application de l'inégalité triangulaire"
+  ],
+  "objects": [
+    "série $\\sum_{n\\geq 1} \\frac{(-1)^n}{n}$",
+    "série $\\sum_{n\\geq 1} \\frac{1}{n^2}$",
+    "série $\\sum_{n\\geq 1} \\Big(\\frac{(-1)^n}{n} +\\frac{1}{n^2}\\Big)$"
+  ],
+  "content_hash": "8506e138b2481229daa88469c6d1f92a058e20d65b0de03d0ac0423331c694f6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:10:26.873Z"
+}

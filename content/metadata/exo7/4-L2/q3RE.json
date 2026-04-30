@@ -1,0 +1,29 @@
+{
+  "uuid": "q3RE",
+  "source_path": "exo7/4-L2/q3RE.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice donnée est diagonalisable et d'en déduire tous les sous-espaces stables d'un endomorphisme associé. Le contexte mathématique porte sur un endomorphisme de ℝ³ défini par une matrice spécifique.",
+  "concepts": [
+    "diagonalisation",
+    "sous-espace stable",
+    "endomorphisme",
+    "matrice",
+    "polynôme annulateur",
+    "valeurs propres",
+    "vecteurs propres"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "recherche des valeurs propres",
+    "recherche des vecteurs propres",
+    "critère de diagonalisation"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "endomorphisme de ℝ³",
+    "sous-espace stable",
+    "polynôme annulateur"
+  ],
+  "content_hash": "fda20c94ef6946ab3d114d1aef4789f985e0cd14e32a5f0717f2d5505269a594",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:16:44.262Z"
+}

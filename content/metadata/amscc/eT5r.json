@@ -1,0 +1,28 @@
+{
+  "uuid": "eT5r",
+  "source_path": "amscc/eT5r.tex",
+  "summary": "L'exercice demande de démontrer formellement l'équivariance par translation de la convolution discrète 2D et d'analyser l'impact du max pooling sur cette propriété. Il illustre ensuite la différence entre équivariance et invariance par translation.",
+  "concepts": [
+    "convolution discrète",
+    "translation d'image",
+    "équivariance",
+    "invariance",
+    "max pooling",
+    "représentation d'objets"
+  ],
+  "methods": [
+    "changement de variable",
+    "comparaison d'expressions",
+    "analyse de cas 1D",
+    "distinction conceptuelle"
+  ],
+  "objects": [
+    "image discrète",
+    "fonction de translation",
+    "signal 1D",
+    "fenêtre de pooling"
+  ],
+  "content_hash": "7f1aef4ba5acf3006e307c115f86f570f72198c074554fe428d00e5297267626",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:34:07.091Z"
+}

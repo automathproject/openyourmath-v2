@@ -1,0 +1,31 @@
+{
+  "uuid": "C7xP",
+  "source_path": "amscc/C7xP.tex",
+  "summary": "L'exercice modélise la vitesse de marche d'un soldat en terrain cross-country par une loi normale, avec une moyenne dépendant de la charge transportée. Il demande de déduire la perte de vitesse par tranche de poids, de calculer des probabilités de distance parcourue, et d'évaluer la faisabilité d'objectifs de marche en fonction de la charge.",
+  "concepts": [
+    "loi normale",
+    "espérance conditionnelle",
+    "écart-type",
+    "quantiles",
+    "probabilité conditionnelle",
+    "modélisation statistique",
+    "variable aléatoire"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de probabilité",
+    "calcul de quantiles",
+    "résolution d'inéquation",
+    "approximation gaussienne"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "vitesse de marche",
+    "charge transportée",
+    "distance parcourue",
+    "espérance conditionnelle"
+  ],
+  "content_hash": "5ccce5bf880af30dfd68a23d9e1326617b68218f9c53996b07191b333c08ebf3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:45:51.134Z"
+}

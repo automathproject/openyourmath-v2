@@ -1,0 +1,28 @@
+{
+  "uuid": "TlCn",
+  "source_path": "exo7/7-L2/TlCn.tex",
+  "summary": "L'exercice modélise une élection avec N individus ayant voté pour A ou B. On étudie la loi de variables indicatrices associées à l'interrogation aléatoire de k individus, ainsi que des propriétés statistiques de leur somme.",
+  "concepts": [
+    "variable aléatoire indicatrice",
+    "espérance",
+    "variance",
+    "matrice de covariance",
+    "loi binomiale",
+    "échantillonnage aléatoire"
+  ],
+  "methods": [
+    "calcul d'espérance",
+    "calcul de variance",
+    "détermination de loi binomiale",
+    "calcul de covariance"
+  ],
+  "objects": [
+    "variable indicatrice",
+    "somme de variables aléatoires",
+    "échantillon aléatoire",
+    "matrice de covariance"
+  ],
+  "content_hash": "799e5ac71a65dab48c17dba2a09acfc61052f8e8ede7e295cc3827c2cd9788ac",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:28:07.420Z"
+}

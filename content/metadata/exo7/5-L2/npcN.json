@@ -1,0 +1,27 @@
+{
+  "uuid": "npcN",
+  "source_path": "exo7/5-L2/npcN.tex",
+  "summary": "Montrer que l'exponentielle d'une matrice réelle est un polynôme en cette matrice.",
+  "concepts": [
+    "théorème de Cayley-Hamilton",
+    "division euclidienne de polynômes",
+    "sous-espace vectoriel de dimension finie",
+    "convergence dans un espace vectoriel normé",
+    "exponentielle de matrice",
+    "polynôme en une matrice"
+  ],
+  "methods": [
+    "division euclidienne",
+    "théorème de Cayley-Hamilton",
+    "limite dans un espace vectoriel normé"
+  ],
+  "objects": [
+    "matrice carrée réelle",
+    "polynôme caractéristique",
+    "exponentielle de matrice",
+    "sous-espace vectoriel"
+  ],
+  "content_hash": "a6d391edbaca1d88f8dc2e6ec0d183a9469af3a4fbde48ebcfcea5c4e67697af",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:03:03.951Z"
+}

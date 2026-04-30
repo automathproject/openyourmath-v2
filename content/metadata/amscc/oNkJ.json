@@ -1,0 +1,27 @@
+{
+  "uuid": "oNkJ",
+  "source_path": "amscc/oNkJ.tex",
+  "summary": "L'exercice demande de déterminer la fonction de répartition d'une variable aléatoire Y définie comme la maximum entre 1 et une variable X uniforme sur [0,2], puis d'analyser la nature de Y (discrète ou absolument continue).",
+  "concepts": [
+    "fonction de répartition",
+    "variable aléatoire uniforme",
+    "variable aléatoire discrète",
+    "variable aléatoire absolument continue",
+    "densité de probabilité",
+    "continuité de la fonction de répartition"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "analyse de cas",
+    "limite de la fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire Y",
+    "variable aléatoire X",
+    "fonction de répartition F_Y",
+    "fonction de répartition F_X"
+  ],
+  "content_hash": "24b91becd5c397c36e76b576803eb8463876e1496ec7b51b56d40bb4b4cd8c02",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:06:23.221Z"
+}

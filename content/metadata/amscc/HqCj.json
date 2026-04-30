@@ -1,0 +1,31 @@
+{
+  "uuid": "HqCj",
+  "source_path": "amscc/HqCj.tex",
+  "summary": "L'exercice demande de choisir des tests d'hypothèses pour vérifier la conformité de la teneur en thiomersal dans un vaccin, en priorisant soit la prévention de la contamination bactérienne soit la toxicité du thiomersal. Il s'agit ensuite d'estimer la moyenne par un intervalle de confiance, de réaliser un test unilatéral et de calculer la puissance d'un test.",
+  "concepts": [
+    "test d'hypothèses",
+    "hypothèse nulle",
+    "hypothèse alternative",
+    "risque de première espèce",
+    "risque de seconde espèce",
+    "puissance d'un test",
+    "intervalle de confiance",
+    "loi normale",
+    "distribution de Student"
+  ],
+  "methods": [
+    "choix de test en fonction des risques",
+    "estimation par intervalle de confiance",
+    "calcul de la puissance d'un test",
+    "utilisation de la table de la loi normale centrée réduite"
+  ],
+  "objects": [
+    "moyenne d'un échantillon",
+    "valeur critique",
+    "puissance d'un test",
+    "intervalle de confiance"
+  ],
+  "content_hash": "ba0624d3eec5b4088d7e24d9d4796d3b9955b5ede53276534929d8ff10adf98a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:39:25.096Z"
+}

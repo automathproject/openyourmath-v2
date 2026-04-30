@@ -1,0 +1,27 @@
+{
+  "uuid": "32ec",
+  "source_path": "amscc/32ec.tex",
+  "summary": "Deux joueurs A et B lancent un poids. On connaît les pourcentages de leurs lancers au-delà et en deçà de certaines distances. L'exercice demande de déterminer les paramètres des lois normales modélisant leurs performances, puis d'étudier la différence de ces lois et la probabilité que A gagne.",
+  "concepts": [
+    "loi normale",
+    "standardisation",
+    "invariance par translation",
+    "invariance par dilatation",
+    "loi de la différence de variables aléatoires indépendantes"
+  ],
+  "methods": [
+    "standardisation",
+    "lecture de table de loi normale",
+    "calcul de paramètres par résolution d'équations",
+    "calcul de la loi d'une différence de variables aléatoires indépendantes"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "paramètres de loi normale",
+    "différence de variables aléatoires",
+    "probabilité conditionnelle"
+  ],
+  "content_hash": "fb24f154373f9fbdc18ea81cdb98e0964dd8e8dcb4254deafcfcf640bc12bee8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:37:18.858Z"
+}

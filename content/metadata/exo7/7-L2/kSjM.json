@@ -1,0 +1,28 @@
+{
+  "uuid": "kSjM",
+  "source_path": "exo7/7-L2/kSjM.tex",
+  "summary": "L'exercice demande de calculer les probabilités conditionnelles d'une personne d'être malade ou saine, sachant que son test de dépistage de l'hépatite est positif ou négatif. Le contexte est un test médical avec des taux de faux positifs et vrais positifs donnés.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "théorème de Bayes",
+    "probabilité conjointe",
+    "probabilité marginale",
+    "probabilité a priori",
+    "probabilité a posteriori"
+  ],
+  "methods": [
+    "formule de Bayes",
+    "calcul de probabilité conjointe",
+    "calcul de probabilité totale"
+  ],
+  "objects": [
+    "test de dépistage",
+    "maladie",
+    "personne saine",
+    "personne malade",
+    "résultat du test"
+  ],
+  "content_hash": "7d83e81c5f4900c44e446f9c0bbb4056a3757c673534e1facc2c567966482236",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:37:47.707Z"
+}

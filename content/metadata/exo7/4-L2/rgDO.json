@@ -1,0 +1,32 @@
+{
+  "uuid": "rgDO",
+  "source_path": "exo7/4-L2/rgDO.tex",
+  "summary": "L'exercice étudie un endomorphisme u d'un espace vectoriel E de dimension finie n. Il demande de montrer que le sous-espace F engendré par les itérés de u appliqués à un vecteur non nul x0 est stable par u, puis d'établir l'existence d'un polynôme annulateur P0 pour u restreint à F, et enfin de déduire la forme de la matrice de u dans une base adaptée.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "famille libre",
+    "famille liée",
+    "polynôme annulateur",
+    "matrice compagnon",
+    "réduction d'endomorphisme",
+    "base d'un espace vectoriel",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "combinaison linéaire",
+    "récurrence",
+    "division euclidienne",
+    "construction de base",
+    "restriction d'endomorphisme"
+  ],
+  "objects": [
+    "endomorphisme",
+    "sous-espace vectoriel",
+    "famille de vecteurs",
+    "polynôme",
+    "matrice compagnon"
+  ],
+  "content_hash": "4a9a0d5866c558cb42be31c27a25df64a1e701e2525a79d47aa4fed0aeb99d94",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:19:21.596Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "MVjk",
+  "source_path": "exo7/7-L2/MVjk.tex",
+  "summary": "L'exercice modélise la probabilité qu'un fumeur arrête de fumer chaque jour, en utilisant des probabilités conditionnelles. Il demande de calculer la probabilité de fumer le jour suivant en fonction de celle du jour présent, puis d'étudier la limite de cette probabilité.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "système complet d'événements",
+    "limite de suite",
+    "théorème du point fixe",
+    "suite récurrente",
+    "convergence"
+  ],
+  "methods": [
+    "formule des probabilités totales",
+    "résolution d'équation de point fixe",
+    "étude de la convergence d'une suite"
+  ],
+  "objects": [
+    "probabilité conditionnelle",
+    "suite récurrente",
+    "événements complémentaires"
+  ],
+  "content_hash": "7a2ad2a5da370e646f371e64bdb153fcb396456f525ccb0fc4df57ca8854ba94",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:25:39.036Z"
+}

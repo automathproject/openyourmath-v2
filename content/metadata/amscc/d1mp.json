@@ -1,0 +1,30 @@
+{
+  "uuid": "d1mp",
+  "source_path": "amscc/d1mp.tex",
+  "summary": "L'exercice demande de démontrer que la somme de deux variables aléatoires indépendantes de lois de Poisson est elle-même une loi de Poisson, puis d'appliquer ce résultat pour modéliser le nombre d'unités militaires circulant sur une route principale en utilisant le théorème central limite pour une approximation normale.",
+  "concepts": [
+    "loi de Poisson",
+    "fonction caractéristique",
+    "théorème central limite",
+    "convergence en loi",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "unicité de la transformation caractéristique"
+  ],
+  "methods": [
+    "calcul de fonction caractéristique",
+    "application du théorème central limite",
+    "standardisation",
+    "approximation gaussienne"
+  ],
+  "objects": [
+    "variables aléatoires indépendantes",
+    "somme de variables aléatoires",
+    "loi normale centrée réduite",
+    "espérance mathématique",
+    "variance"
+  ],
+  "content_hash": "16b7d096d3c1b81080bd357d1b517bd18d0e804c35cc7b9207d06b2381f7d717",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:35:18.345Z"
+}

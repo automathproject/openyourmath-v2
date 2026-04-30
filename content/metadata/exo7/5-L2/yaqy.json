@@ -1,0 +1,25 @@
+{
+  "uuid": "yaqy",
+  "source_path": "exo7/5-L2/yaqy.tex",
+  "summary": "Dans un espace vectoriel normé de dimension finie, on considère deux suites de vecteurs colinéaires entre eux, qui convergent respectivement vers deux vecteurs. On demande de prouver que ces vecteurs limites sont colinéaires.",
+  "concepts": [
+    "espace vectoriel normé",
+    "colinéarité",
+    "convergence de suite",
+    "dimension finie",
+    "base d'un espace vectoriel",
+    "raisonnement par l'absurde"
+  ],
+  "methods": [
+    "complétion en une base",
+    "argument par contradiction"
+  ],
+  "objects": [
+    "suite de vecteurs",
+    "vecteurs colinéaires",
+    "espace vectoriel de dimension finie"
+  ],
+  "content_hash": "27064a8a423f1de36887897d8f9ca7e4a2b7a2d8400a2d4d63e021c7f1f1146e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T17:18:13.629Z"
+}

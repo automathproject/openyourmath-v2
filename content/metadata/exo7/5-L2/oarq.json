@@ -1,0 +1,32 @@
+{
+  "uuid": "oarq",
+  "source_path": "exo7/5-L2/oarq.tex",
+  "summary": "L'exercice étudie l'opérateur de dérivation D défini sur un espace de fonctions continues 2π-périodiques à moyenne nulle. Il demande de prouver que D est une bijection, d'analyser sa continuité et celle de son inverse, et d'étudier son restriction à un sous-espace.",
+  "concepts": [
+    "fonction continue",
+    "périodicité",
+    "moyenne nulle",
+    "opérateur de dérivation",
+    "bijection",
+    "continuité d'opérateur",
+    "spectre d'opérateur",
+    "norme L²"
+  ],
+  "methods": [
+    "analyse de la périodicité",
+    "calcul de primitives",
+    "étude de la continuité",
+    "calcul de norme d'opérateur",
+    "restriction d'opérateur"
+  ],
+  "objects": [
+    "espace de fonctions continues",
+    "opérateur de dérivation",
+    "sous-espace de fonctions",
+    "norme L²",
+    "spectre d'opérateur"
+  ],
+  "content_hash": "ec81e82b7d47e6e2106e14dc225b786cc6275f18a16d70df3478868e121aeebd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:29:19.420Z"
+}

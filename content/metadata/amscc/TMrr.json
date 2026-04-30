@@ -1,0 +1,29 @@
+{
+  "uuid": "TMrr",
+  "source_path": "amscc/TMrr.tex",
+  "summary": "L'exercice demande de déterminer la loi du couple (X+Y, X-Y) à partir de la densité conjointe donnée de (X,Y). Le contexte mathématique implique un changement de variable pour exprimer la nouvelle densité.",
+  "concepts": [
+    "densité conjointe",
+    "théorème de transfert",
+    "changement de variable",
+    "densité de probabilité",
+    "loi conjointe",
+    "intégration sur un domaine"
+  ],
+  "methods": [
+    "changement de variable",
+    "calcul de matrice jacobienne",
+    "intégration sur un domaine transformé",
+    "détermination de la densité conjointe"
+  ],
+  "objects": [
+    "couple de variables aléatoires",
+    "fonction densité",
+    "changement de variable",
+    "matrice jacobienne",
+    "domaine d'intégration"
+  ],
+  "content_hash": "ae22b456d871b7c8c5411bd2422e7d1f104207909ca642b0aaab5e1fe1e689a8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:51:17.764Z"
+}

@@ -1,0 +1,23 @@
+{
+  "uuid": "kr5o",
+  "source_path": "exo7/1-L1/kr5o.tex",
+  "summary": "On considère trois polynômes A, B et P dans K[X], avec P non constant. On suppose que la composée A∘P divise la composée B∘P et on doit montrer que A divise B.",
+  "concepts": [
+    "division euclidienne dans K[X]",
+    "composée de polynômes",
+    "divisibilité dans K[X]",
+    "polynôme non constant",
+    "algèbre des polynômes"
+  ],
+  "methods": [
+    "manipulation de divisibilité",
+    "utilisation de la division euclidienne"
+  ],
+  "objects": [
+    "polynômes de K[X]",
+    "composées de polynômes"
+  ],
+  "content_hash": "6606417cb2e1640d131573cd2c808befbe0feb50c320f2623aca28c2a280e338",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:18:27.869Z"
+}

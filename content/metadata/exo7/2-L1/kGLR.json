@@ -1,0 +1,26 @@
+{
+  "uuid": "kGLR",
+  "source_path": "exo7/2-L1/kGLR.tex",
+  "summary": "On considère une suite définie par une relation de récurrence dans un intervalle et une fonction continue. On demande de montrer que si la différence entre deux termes consécutifs tend vers 0, alors la suite converge.",
+  "concepts": [
+    "suite définie par récurrence",
+    "fonction continue",
+    "point fixe",
+    "valeur d'adhérence",
+    "convergence de suite",
+    "théorème des valeurs intermédiaires"
+  ],
+  "methods": [
+    "analyse des points fixes",
+    "étude des valeurs d'adhérence",
+    "raisonnement par contradiction"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction continue",
+    "intervalle"
+  ],
+  "content_hash": "f00eea3436ca644c20496c5a9c37d4a43e7cab9a69164026868f8d93ebcca92a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:31:25.865Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "jNul",
+  "source_path": "exo7/5-L2/jNul.tex",
+  "summary": "L'exercice demande de déterminer le domaine de définition d'une série de fonctions et d'étudier sa continuité. Il s'agit d'une série entière dont on doit analyser le comportement au voisinage de 1.",
+  "concepts": [
+    "série entière",
+    "convergence de série",
+    "continuité de fonction",
+    "développement en série entière",
+    "estimation d'erreur"
+  ],
+  "methods": [
+    "développement asymptotique",
+    "estimation d'erreur",
+    "sommation de série",
+    "analyse de comportement limite"
+  ],
+  "objects": [
+    "série de fonctions",
+    "fonction $S(t)$",
+    "développement en série entière de $\\ln(1-t)$"
+  ],
+  "content_hash": "d94960a25e7bf56a9633e4520eaa8c372d7ae2890f006f6f487dee5c0da7bbdb",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:01:41.290Z"
+}

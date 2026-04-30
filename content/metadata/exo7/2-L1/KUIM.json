@@ -1,0 +1,23 @@
+{
+  "uuid": "KUIM",
+  "source_path": "exo7/2-L1/KUIM.tex",
+  "summary": "On définit une suite (y_n) à partir d'une suite (x_n) et d'un paramètre α. L'exercice demande de prouver l'équivalence entre la convergence vers 0 de (x_n) et celle de (y_n).",
+  "concepts": [
+    "suite numérique",
+    "convergence de suite",
+    "relation d'équivalence",
+    "limite de suite"
+  ],
+  "methods": [
+    "raisonnement par implication double",
+    "analyse de la définition de la limite"
+  ],
+  "objects": [
+    "suite (x_n)",
+    "suite (y_n)",
+    "paramètre α"
+  ],
+  "content_hash": "5c30a1b0334e34700b019a8d8e0545fb4c11a9473d595ca624af9202eae0d6d7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:13:30.178Z"
+}

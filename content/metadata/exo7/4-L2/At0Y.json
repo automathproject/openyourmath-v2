@@ -1,0 +1,30 @@
+{
+  "uuid": "At0Y",
+  "source_path": "exo7/4-L2/At0Y.tex",
+  "summary": "L'exercice demande de montrer l'inversibilité de la matrice D si C est inversible, d'exprimer l'inverse de D en fonction de A, B et C⁻¹, et d'en déduire que les matrices AB et BA ont les mêmes valeurs propres non nulles.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "valeur propre",
+    "polynôme annulateur",
+    "matrice carrée",
+    "matrice identité",
+    "produit matriciel",
+    "endomorphisme"
+  ],
+  "methods": [
+    "manipulation matricielle",
+    "résolution d'équation matricielle",
+    "calcul de l'inverse d'une matrice",
+    "comparaison des valeurs propres"
+  ],
+  "objects": [
+    "matrice A",
+    "matrice B",
+    "matrice C",
+    "matrice D",
+    "matrice identité"
+  ],
+  "content_hash": "e47d245060376a15e7c044600a706c0d4571cfaddd1aa21219a08681af498fd9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:20:52.095Z"
+}

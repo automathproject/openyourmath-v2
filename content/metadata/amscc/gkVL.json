@@ -1,0 +1,34 @@
+{
+  "uuid": "gkVL",
+  "source_path": "amscc/gkVL.tex",
+  "summary": "Calcul de la propagation avant et de la rétropropagation du gradient dans un réseau de neurones de régression avec une couche cachée de deux neurones utilisant la fonction d'activation ReLU. L'exercice demande de calculer les préactivations, les activations, la prédiction, le coût, et les gradients des paramètres du réseau.",
+  "concepts": [
+    "réseau de neurones",
+    "fonction d'activation ReLU",
+    "propagation avant",
+    "rétropropagation du gradient",
+    "fonction de coût",
+    "descente de gradient",
+    "neurone mort",
+    "gradient"
+  ],
+  "methods": [
+    "calcul de préactivation",
+    "calcul d'activation",
+    "calcul de prédiction",
+    "calcul de coût",
+    "calcul de gradient",
+    "analyse de gradient nul"
+  ],
+  "objects": [
+    "matrice de poids",
+    "biais",
+    "préactivation",
+    "activation",
+    "gradient",
+    "neurone caché"
+  ],
+  "content_hash": "9f64b55e15c55f9803077ec8e588cc14208daef913627566d6e6ce1268b056ce",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:34:25.830Z"
+}

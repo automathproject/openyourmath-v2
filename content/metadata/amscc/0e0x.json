@@ -1,0 +1,27 @@
+{
+  "uuid": "0e0x",
+  "source_path": "amscc/0e0x.tex",
+  "summary": "L'exercice demande d'estimer l'espérance et la variance d'une variable aléatoire normale à partir d'un échantillon de 20 individus, puis de construire un intervalle de confiance pour l'espérance au risque de 1%.",
+  "concepts": [
+    "loi normale",
+    "espérance mathématique",
+    "variance",
+    "estimateur",
+    "intervalle de confiance",
+    "loi de Student"
+  ],
+  "methods": [
+    "estimation ponctuelle",
+    "estimation de la variance corrigée",
+    "calcul de l'intervalle de confiance"
+  ],
+  "objects": [
+    "échantillon",
+    "variable aléatoire normale",
+    "estimateur de l'espérance",
+    "estimateur de la variance"
+  ],
+  "content_hash": "33783ca5c8f85615875ea0d41638ac61dcf114d07798a29378d201052b5ad34d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:29:11.606Z"
+}

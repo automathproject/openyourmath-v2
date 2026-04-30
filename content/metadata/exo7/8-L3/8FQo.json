@@ -1,0 +1,29 @@
+{
+  "uuid": "8FQo",
+  "source_path": "exo7/8-L3/8FQo.tex",
+  "summary": "L'exercice demande de démontrer que NH est un sous-groupe de G, puis de montrer que la fonction φ : N × H → G est une bijection sous certaines conditions, et enfin de prouver que N × H muni d'une loi de groupe spécifique est isomorphe à G.",
+  "concepts": [
+    "sous-groupe distingué",
+    "produit de sous-groupes",
+    "bijection",
+    "isomorphisme de groupes",
+    "loi de groupe",
+    "cardinal d'un groupe"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "utilisation de la condition d'intersection triviale",
+    "construction explicite de bijection",
+    "définition d'une loi de groupe sur un produit cartésien"
+  ],
+  "objects": [
+    "sous-groupe distingué N",
+    "sous-groupe H",
+    "produit NH",
+    "application φ",
+    "groupe G"
+  ],
+  "content_hash": "d0057e84c2f54aca1e35a46a5e7ef7ad4c1d0831e77b5b56a568e11f2aa12ce4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:54:03.551Z"
+}

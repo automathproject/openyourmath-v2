@@ -1,0 +1,27 @@
+{
+  "uuid": "IsdB",
+  "source_path": "exo7/4-L2/IsdB.tex",
+  "summary": "L'exercice demande de montrer qu'une application linéaire entre un espace de suites vérifiant une relation de récurrence et ℝ³ est un isomorphisme, puis d'utiliser cette propriété pour déterminer une base de l'espace des suites.",
+  "concepts": [
+    "espace vectoriel",
+    "isomorphisme d'espaces vectoriels",
+    "relation de récurrence linéaire",
+    "base d'un espace vectoriel",
+    "endomorphisme",
+    "matrice associée"
+  ],
+  "methods": [
+    "vérification des propriétés d'isomorphisme",
+    "utilisation de la relation de récurrence",
+    "construction explicite de base"
+  ],
+  "objects": [
+    "espace de suites",
+    "application linéaire",
+    "matrice 3x3",
+    "endomorphisme de ℝ³"
+  ],
+  "content_hash": "c2712eb37184b1edf39c03767d93a2e8077df226d4fd0b120ce7048a420dc8a4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:33:12.418Z"
+}

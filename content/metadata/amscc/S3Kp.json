@@ -1,0 +1,27 @@
+{
+  "uuid": "S3Kp",
+  "source_path": "amscc/S3Kp.tex",
+  "summary": "L'exercice demande d'étudier la loi de la moyenne d'échantillon de variables aléatoires représentant le poids de pièces usinées, puis de calculer la probabilité que la différence de poids entre deux échantillons de 1000 pièces soit supérieure à 2 grammes.",
+  "concepts": [
+    "théorème central limite",
+    "loi normale",
+    "variable aléatoire indépendante et identiquement distribuée",
+    "espérance",
+    "écart-type",
+    "approximation gaussienne",
+    "standardisation"
+  ],
+  "methods": [
+    "approximation par la loi normale",
+    "standardisation",
+    "calcul de probabilité à partir d'une loi normale"
+  ],
+  "objects": [
+    "moyenne d'échantillon",
+    "différence de moyennes d'échantillons",
+    "variable aléatoire gaussienne"
+  ],
+  "content_hash": "bf65429ad2c96b4fb9f5456822f633fcb2ac3f7b8de68c0e8cebac4442ec1696",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:50:17.877Z"
+}

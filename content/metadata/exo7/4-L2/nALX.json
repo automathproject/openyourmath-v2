@@ -1,0 +1,27 @@
+{
+  "uuid": "nALX",
+  "source_path": "exo7/4-L2/nALX.tex",
+  "summary": "Comparer les polynômes caractéristiques de deux matrices rectangulaires AB et BA de formats différents. L'énoncé demande une analyse des propriétés algébriques de ces matrices.",
+  "concepts": [
+    "polynôme caractéristique",
+    "matrice carrée",
+    "matrice rectangulaire",
+    "complétion de matrice",
+    "calcul par blocs",
+    "théorème de Cayley-Hamilton"
+  ],
+  "methods": [
+    "complétion de matrice",
+    "calcul par blocs",
+    "comparaison de polynômes caractéristiques"
+  ],
+  "objects": [
+    "matrice rectangulaire",
+    "polynôme caractéristique",
+    "matrices carrées",
+    "blocs de matrices"
+  ],
+  "content_hash": "6ca38208e47faa8062a90e7707cf9e0c9f9e4945cd5f08d14fcfbe90051d2a9c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:12:06.189Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "V4oE",
+  "source_path": "exo7/8-L3/V4oE.tex",
+  "summary": "L'exercice demande de démontrer qu'un groupe d'ordre pqr, où p, q, r sont des nombres premiers avec p > q > r, est résoluble. On étudie les sous-groupes de Sylow et leurs propriétés pour aboutir à cette conclusion.",
+  "concepts": [
+    "groupe d'ordre fini",
+    "sous-groupe de Sylow",
+    "groupe résoluble",
+    "sous-groupe distingué",
+    "théorème de Sylow",
+    "action de groupe",
+    "nombre de sous-groupes de Sylow"
+  ],
+  "methods": [
+    "analyse des sous-groupes de Sylow",
+    "utilisation des théorèmes de Sylow",
+    "décomposition en sous-groupes normaux",
+    "preuve par contradiction"
+  ],
+  "objects": [
+    "groupe d'ordre pqr",
+    "sous-groupes de Sylow d'ordre p, q, r",
+    "sous-groupe distingué"
+  ],
+  "content_hash": "977b4fac71bb7626a658fef203a5482349b4b31bb3fbaed6ef1d19b882ff3852",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:59:37.050Z"
+}

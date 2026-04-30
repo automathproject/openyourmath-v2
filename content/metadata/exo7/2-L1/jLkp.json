@@ -1,0 +1,27 @@
+{
+  "uuid": "jLkp",
+  "source_path": "exo7/2-L1/jLkp.tex",
+  "summary": "On étudie une série numérique convergente à termes positifs décroissants. On demande de montrer deux propriétés asymptotiques : la convergence de nu_n vers 0 et une estimation de la somme de 1/u_k pour u_k ≥ 1/n.",
+  "concepts": [
+    "série numérique",
+    "convergence",
+    "termes positifs décroissants",
+    "comparaison de séries",
+    "estimation asymptotique",
+    "o-notation"
+  ],
+  "methods": [
+    "comparaison terme à terme",
+    "estimation par somme partielle",
+    "utilisation de la décroissance"
+  ],
+  "objects": [
+    "série numérique (u_n)",
+    "termes positifs décroissants",
+    "somme partielle",
+    "estimation o(n²)"
+  ],
+  "content_hash": "ad9180402d1de378d7a031fb62bad8d9145ab8ac2ce8d1586baf4b74884d6e73",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:29:19.166Z"
+}

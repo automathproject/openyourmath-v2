@@ -1,0 +1,26 @@
+{
+  "uuid": "QV4l",
+  "source_path": "exo7/15-L3/QV4l.tex",
+  "summary": "L'exercice demande de déterminer pour quelles valeurs de α ≥ 0 la fonction f(x) = cos(x^α) est uniformément continue. Ensuite, il s'agit d'étudier la convergence uniforme sur les compacts de ℝ⁺ d'une suite de fonctions fₙ(x) = f(x + n).",
+  "concepts": [
+    "continuité uniforme",
+    "convergence uniforme",
+    "théorème d'Ascoli",
+    "fonction continue",
+    "espace métrique",
+    "suite de fonctions"
+  ],
+  "methods": [
+    "étude de la continuité uniforme",
+    "application du théorème d'Ascoli",
+    "analyse de la convergence uniforme sur les compacts"
+  ],
+  "objects": [
+    "fonction cos(x^α)",
+    "suite de fonctions fₙ(x)",
+    "compacts de ℝ⁺"
+  ],
+  "content_hash": "9c6789b1fefb7b7e98e73853679f8b431d90ef718793799cfcf41ab936bdfaab",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:47:21.957Z"
+}

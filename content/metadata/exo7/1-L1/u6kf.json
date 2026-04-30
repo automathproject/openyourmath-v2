@@ -1,0 +1,33 @@
+{
+  "uuid": "u6kf",
+  "source_path": "exo7/1-L1/u6kf.tex",
+  "summary": "L'exercice demande d'écrire la matrice d'une application linéaire donnée dans une base, de déterminer son noyau, puis d'étudier cette application dans une nouvelle base définie par des combinaisons linéaires des vecteurs de la base initiale.",
+  "concepts": [
+    "application linéaire",
+    "matrice d'une application linéaire",
+    "noyau d'une application linéaire",
+    "base d'un espace vectoriel",
+    "changement de base",
+    "matrice de passage",
+    "inversibilité d'une matrice"
+  ],
+  "methods": [
+    "calcul de matrice par colonnes",
+    "résolution de système linéaire",
+    "pivot de Gauss",
+    "calcul de noyau",
+    "changement de base",
+    "calcul d'inverse de matrice"
+  ],
+  "objects": [
+    "application linéaire",
+    "matrice carrée",
+    "base vectorielle",
+    "vecteurs générateurs",
+    "noyau d'une application",
+    "matrice de passage"
+  ],
+  "content_hash": "ace04b8681d6e4c5d88abf29e84582987381d4d62336c1e610b83bbadd09d293",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:19:42.450Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "BiNt",
+  "source_path": "exo7/8-L3/BiNt.tex",
+  "summary": "L'exercice demande de démontrer que tout sous-groupe contenu dans le centre d'un groupe est distingué, puis que si le groupe quotient est cyclique, le groupe initial est égal à son centre.",
+  "concepts": [
+    "sous-groupe distingué",
+    "centre d'un groupe",
+    "groupe quotient",
+    "groupe cyclique",
+    "générateur d'un groupe"
+  ],
+  "methods": [
+    "utilisation de la définition du sous-groupe distingué",
+    "analyse des propriétés du centre",
+    "étude des groupes cycliques"
+  ],
+  "objects": [
+    "groupe G",
+    "sous-groupe H",
+    "centre Z(G)",
+    "groupe quotient G/H"
+  ],
+  "content_hash": "be0d29a757b15bfcba380ff89dfd2c164b86718ceb919e0dff31e76edf68642a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:55:18.948Z"
+}

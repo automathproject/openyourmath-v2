@@ -1,0 +1,30 @@
+{
+  "uuid": "hWFx",
+  "source_path": "amscc/hWFx.tex",
+  "summary": "L'exercice porte sur deux variables aléatoires discrètes X et Y définies par une loi conjointe donnée sous forme de tableau. Il demande de déterminer la valeur d'un paramètre a pour que la loi soit valide, d'identifier les lois marginales, de vérifier l'indépendance des variables, de calculer leurs espérances, et d'étudier une transformation de ces variables.",
+  "concepts": [
+    "loi conjointe",
+    "loi marginale",
+    "indépendance de variables aléatoires",
+    "espérance mathématique",
+    "variable aléatoire discrète",
+    "transformation de variables aléatoires"
+  ],
+  "methods": [
+    "calcul de probabilité totale",
+    "détermination de lois marginales",
+    "test d'indépendance",
+    "calcul d'espérance",
+    "transformation de variables"
+  ],
+  "objects": [
+    "tableau de loi conjointe",
+    "paramètre a",
+    "espérance E(X)",
+    "espérance E(Y)",
+    "variable aléatoire transformée"
+  ],
+  "content_hash": "512f977feef3a3fcf45e8b66a51c638331a4f199a2e27fc5cc016c587d807b92",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:36:27.849Z"
+}

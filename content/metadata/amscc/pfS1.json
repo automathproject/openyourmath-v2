@@ -1,0 +1,33 @@
+{
+  "uuid": "pfS1",
+  "source_path": "amscc/pfS1.tex",
+  "summary": "L'exercice demande de déterminer la loi suivie par différentes combinaisons linéaires d'un échantillon de variables aléatoires normales indépendantes, d'étudier leurs propriétés (biais, efficacité) et d'appliquer des théorèmes statistiques pour identifier des lois spécifiques (normale, chi-deux, Student).",
+  "concepts": [
+    "loi normale",
+    "espérance mathématique",
+    "variance",
+    "biais d'un estimateur",
+    "efficacité d'un estimateur",
+    "loi du chi-deux",
+    "loi de Student",
+    "théorème de Fisher"
+  ],
+  "methods": [
+    "linéarité de l'espérance",
+    "calcul de variance pour combinaisons linéaires",
+    "standardisation",
+    "calcul de probabilité pour loi normale",
+    "identification de loi du chi-deux",
+    "identification de loi de Student"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "estimateur",
+    "somme de variables aléatoires indépendantes",
+    "moyenne empirique",
+    "écart-type empirique"
+  ],
+  "content_hash": "9e883f0b01d0cff4926f8b3c3c4a680c9ad4e22c37b8d82a0eabe9aa26fcdb67",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:52:50.350Z"
+}

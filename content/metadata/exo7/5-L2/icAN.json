@@ -1,0 +1,27 @@
+{
+  "uuid": "icAN",
+  "source_path": "exo7/5-L2/icAN.tex",
+  "summary": "L'exercice demande d'exprimer une moyenne des sommes partielles de Fourier d'une fonction continue périodique comme un produit de convolution, puis de montrer que la suite des noyaux de convolution constitue une suite d'approximations de la mesure de Dirac.",
+  "concepts": [
+    "série de Fourier",
+    "convolution",
+    "mesure de Dirac",
+    "convergence uniforme",
+    "somme partielle de Fourier",
+    "fonction périodique",
+    "noyau de convolution"
+  ],
+  "methods": [
+    "produit de convolution",
+    "approximation de la mesure de Dirac",
+    "moyenne des sommes partielles"
+  ],
+  "objects": [
+    "fonction 2π-périodique continue",
+    "somme de Fourier",
+    "suite de noyaux de convolution"
+  ],
+  "content_hash": "76a3c27cddc86928a0d84c6fd72b4e2ef7643624aa19b168be2d382badf6921a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T14:27:56.474Z"
+}

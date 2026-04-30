@@ -1,0 +1,33 @@
+{
+  "uuid": "td20",
+  "source_path": "amscc/td20.tex",
+  "summary": "L'exercice porte sur la loi Gamma et ses propriétés. Il demande de vérifier que cette loi est bien une loi de probabilité, de calculer son espérance et sa variance, d'étudier la densité de la variable aléatoire au carré d'une loi normale centrée réduite, et d'analyser la somme de variables aléatoires indépendantes suivant une loi Gamma ou une loi normale.",
+  "concepts": [
+    "loi Gamma",
+    "densité de probabilité",
+    "fonction caractéristique",
+    "espérance mathématique",
+    "variance",
+    "loi normale centrée réduite",
+    "loi du chi-deux",
+    "variables aléatoires indépendantes"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration",
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "fonction caractéristique",
+    "récurrence"
+  ],
+  "objects": [
+    "densité de probabilité",
+    "fonction caractéristique",
+    "espérance mathématique",
+    "variance",
+    "somme de variables aléatoires"
+  ],
+  "content_hash": "eeb21b1b27e0c91d936c3d427d684df023993ce95510672642cb3d7ca5f93aea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:08:48.164Z"
+}

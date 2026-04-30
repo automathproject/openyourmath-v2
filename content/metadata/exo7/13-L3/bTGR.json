@@ -1,0 +1,27 @@
+{
+  "uuid": "bTGR",
+  "source_path": "exo7/13-L3/bTGR.tex",
+  "summary": "L'exercice demande de montrer l'injectivité d'une application linéaire sur un espace de polynômes, puis d'en déduire l'unicité d'une solution polynomiale pour une équation différentielle du second ordre. Ensuite, il s'agit de trouver une solution particulière pour une fonction continue quelconque et d'étudier la bornitude des solutions sous une condition sur f.",
+  "concepts": [
+    "équation différentielle linéaire du second ordre",
+    "espace vectoriel de polynômes",
+    "application linéaire injective",
+    "solution polynomiale",
+    "solution particulière",
+    "bornitude des solutions"
+  ],
+  "methods": [
+    "étude de l'injectivité",
+    "calcul de solution particulière par intégration",
+    "analyse de la bornitude des solutions"
+  ],
+  "objects": [
+    "polynôme de degré n",
+    "fonction continue sur ℝ",
+    "solution maximale",
+    "intégrale de convolution"
+  ],
+  "content_hash": "b970ef9a5b04247376d7d87baf251a5b622c66243f442f479a9da532657b2b28",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:45:32.023Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "DVbe",
+  "source_path": "exo7/2-L1/DVbe.tex",
+  "summary": "On étudie la convergence d'une suite récurrente définie par une fonction continue croissante ou décroissante. On montre la monotonie de la suite et on déduit sa convergence vers un point fixe de la fonction.",
+  "concepts": [
+    "suite récurrente",
+    "fonction continue",
+    "point fixe",
+    "monotonie",
+    "convergence",
+    "composition de fonctions",
+    "fonction croissante",
+    "fonction décroissante"
+  ],
+  "methods": [
+    "raisonnement par récurrence",
+    "étude de la monotonie",
+    "passage à la limite",
+    "résolution d'équation de point fixe"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction définie sur un intervalle",
+    "point fixe"
+  ],
+  "content_hash": "8dce4cc09d1b255cc927029cc3f0a11f694f8e771b7cbd22f3999a655102681a",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:07:55.329Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "u0CT",
+  "source_path": "exo7/16-L3/u0CT.tex",
+  "summary": "L'exercice demande de montrer l'existence d'une fonction continue g telle que γ(t) = e^g(t) avec une condition sur la variation de g, puis d'établir l'homotopie entre deux lacets dans ℂ\\(0\\) en utilisant la notion d'indice. La seconde question porte sur l'homotopie de la concaténation de deux lacets circulaires.",
+  "concepts": [
+    "indice d'un lacet",
+    "homotopie",
+    "fonction exponentielle complexe",
+    "variation de l'argument",
+    "lacet dans ℂ\\(0\\)",
+    "théorème des résidus"
+  ],
+  "methods": [
+    "calcul de l'indice",
+    "construction de fonction continue",
+    "démonstration d'homotopie",
+    "concatenation de lacets"
+  ],
+  "objects": [
+    "lacet γ",
+    "fonction g",
+    "lacet c_N",
+    "lacet c_M",
+    "lacet c_{N+M}"
+  ],
+  "content_hash": "a6809a875876cf20cc2e4ebd9f1c811a3eee6b45d3330feb902f34ccef9aad6b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:26:05.383Z"
+}

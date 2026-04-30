@@ -1,0 +1,29 @@
+{
+  "uuid": "3WGA",
+  "source_path": "amscc/3WGA.tex",
+  "summary": "Un joueur tire 5 boules avec remise dans une urne contenant 2 boules noires et 8 boules blanches. On définit une variable aléatoire X représentant le nombre de points obtenus selon le nombre de boules blanches tirées. L'exercice demande de déterminer la loi de probabilité de X, puis son espérance et sa variance.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi de probabilité",
+    "espérance",
+    "variance",
+    "tirage avec remise",
+    "combinaisons",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "calcul de probabilités par dénombrement",
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "utilisation des coefficients binomiaux"
+  ],
+  "objects": [
+    "variable aléatoire X",
+    "urne avec boules noires et blanches",
+    "tirage de 5 boules",
+    "tableau de loi de probabilité"
+  ],
+  "content_hash": "b1de66854397025f074822bdeb6f8bdbcbe327b9f21b509728d4dcefab5cb128",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:15:18.535Z"
+}

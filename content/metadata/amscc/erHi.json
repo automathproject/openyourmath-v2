@@ -1,0 +1,25 @@
+{
+  "uuid": "erHi",
+  "source_path": "amscc/erHi.tex",
+  "summary": "Montrer qu'un polynôme donné, somme de termes factoriels, n'a pas de racine multiple. L'indication suggère un raisonnement par l'absurde en supposant l'existence d'une racine commune au polynôme et sa dérivée.",
+  "concepts": [
+    "racine multiple",
+    "polynôme",
+    "dérivée d'un polynôme",
+    "raisonnement par l'absurde",
+    "décomposition en facteurs irréductibles"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "calcul de la dérivée",
+    "évaluation d'un polynôme"
+  ],
+  "objects": [
+    "polynôme",
+    "dérivée d'un polynôme",
+    "racine"
+  ],
+  "content_hash": "157127a19085edf891066d3e91b0722e6ef2615376c17288253b96c2a0f5e694",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:12:23.189Z"
+}

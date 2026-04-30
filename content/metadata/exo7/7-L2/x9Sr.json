@@ -1,0 +1,25 @@
+{
+  "uuid": "x9Sr",
+  "source_path": "exo7/7-L2/x9Sr.tex",
+  "summary": "L'exercice demande d'estimer la probabilité qu'une variable aléatoire représentant la production quotidienne d'une usine dépasse 75 pièces, d'abord avec l'espérance connue, puis en utilisant l'écart-type pour affiner l'estimation.",
+  "concepts": [
+    "inégalité de Markov",
+    "inégalité de Bienaymé-Tchebychev",
+    "espérance",
+    "écart-type",
+    "variable aléatoire",
+    "loi faible des grands nombres"
+  ],
+  "methods": [
+    "application de l'inégalité de Markov",
+    "application de l'inégalité de Bienaymé-Tchebychev"
+  ],
+  "objects": [
+    "variable aléatoire de production",
+    "espérance",
+    "écart-type"
+  ],
+  "content_hash": "d47fa6510661d75f769dee8bc8b6a93b93d0c714bf27b99f3922320a4c9ad211",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:11:08.892Z"
+}

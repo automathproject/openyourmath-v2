@@ -1,0 +1,26 @@
+{
+  "uuid": "omrM",
+  "source_path": "exo7/4-L2/omrM.tex",
+  "summary": "L'exercice demande de montrer qu'une matrice A de taille 3x3 avec valeurs propres 1, -2 et 2 peut s'écrire comme combinaison linéaire de A², A et I pour toute puissance n, puis de déterminer les coefficients de cette combinaison.",
+  "concepts": [
+    "valeurs propres",
+    "polynôme annulateur",
+    "diagonalisation",
+    "polynôme caractéristique",
+    "endomorphisme",
+    "réduction d'endomorphisme"
+  ],
+  "methods": [
+    "décomposition spectrale",
+    "calcul de coefficients par interpolation",
+    "utilisation des valeurs propres"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "polynôme quadratique",
+    "puissance de matrice"
+  ],
+  "content_hash": "b40a5a8ca7b0dc93a1fc2176b4da4a9a80d26e0bdc0d9403bd98cf46689f3811",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:15:02.227Z"
+}

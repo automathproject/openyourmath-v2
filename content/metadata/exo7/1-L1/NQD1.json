@@ -1,0 +1,28 @@
+{
+  "uuid": "NQD1",
+  "source_path": "exo7/1-L1/NQD1.tex",
+  "summary": "Déterminer tous les idéaux J de l'anneau ℝ[X] contenant strictement l'idéal I(P) engendré par un polynôme P donné, pour trois cas de figure spécifiques.",
+  "concepts": [
+    "idéal d'un anneau",
+    "idéal engendré par un polynôme",
+    "inclusion d'idéaux",
+    "polynôme irréductible",
+    "factorisation de polynômes",
+    "division euclidienne dans ℝ[X]"
+  ],
+  "methods": [
+    "factorisation de polynômes",
+    "identification des idéaux maximaux",
+    "comparaison d'idéaux",
+    "utilisation du théorème de Bézout"
+  ],
+  "objects": [
+    "idéal I(P)",
+    "polynôme P",
+    "idéal J",
+    "anneau ℝ[X]"
+  ],
+  "content_hash": "eb846c4c482e3bf0eebd012d518142e5fd3897a23d3b966c13d1beb583ec217e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:54:20.613Z"
+}

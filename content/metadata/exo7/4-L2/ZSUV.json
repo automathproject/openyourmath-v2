@@ -1,0 +1,29 @@
+{
+  "uuid": "ZSUV",
+  "source_path": "exo7/4-L2/ZSUV.tex",
+  "summary": "L'exercice demande de déterminer la matrice d'un endomorphisme f de l'espace vectoriel ℝₙ[X] dans une base canonique, puis d'identifier son image, son noyau et ses éléments propres.",
+  "concepts": [
+    "endomorphisme",
+    "base canonique",
+    "matrice d'un endomorphisme",
+    "image d'un endomorphisme",
+    "noyau d'un endomorphisme",
+    "valeur propre",
+    "vecteur propre",
+    "polynôme annulateur"
+  ],
+  "methods": [
+    "calcul de la matrice d'un endomorphisme",
+    "détermination de l'image et du noyau",
+    "recherche des valeurs propres et vecteurs propres"
+  ],
+  "objects": [
+    "endomorphisme f",
+    "base (Xᵏ)₀₌ₖ₌ₙ",
+    "polynômes de ℝₙ[X]",
+    "matrice M"
+  ],
+  "content_hash": "1cd3079e3f19e8b13c3c1c08875bc27e602ac37e87bec634b48dac0c544017a4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:55:45.666Z"
+}

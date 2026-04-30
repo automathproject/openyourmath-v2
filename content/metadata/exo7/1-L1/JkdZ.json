@@ -1,0 +1,28 @@
+{
+  "uuid": "JkdZ",
+  "source_path": "exo7/1-L1/JkdZ.tex",
+  "summary": "Résoudre dans l'ensemble des nombres complexes l'équation $(z^2+1)^n-(z-1)^{2n}=0$. L'exercice demande de trouver toutes les racines complexes de cette équation polynomiale.",
+  "concepts": [
+    "racines n-ièmes de l'unité",
+    "polynôme à coefficients complexes",
+    "racines d'un polynôme",
+    "équation algébrique",
+    "développement binomial",
+    "discriminant d'une équation du second degré"
+  ],
+  "methods": [
+    "développement limité",
+    "résolution d'équation polynomiale",
+    "changement de variable",
+    "calcul de discriminant"
+  ],
+  "objects": [
+    "équation polynomiale",
+    "racines complexes",
+    "polynôme P",
+    "racines carrées de nombres complexes"
+  ],
+  "content_hash": "6367c26eaba11e79db151ced3d2060143f392cbcad57188493623887d1e4919f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T06:40:18.676Z"
+}

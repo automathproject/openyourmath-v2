@@ -1,0 +1,27 @@
+{
+  "uuid": "hUGA",
+  "source_path": "exo7/16-L3/hUGA.tex",
+  "summary": "Démontrer l'égalité de l'intégrale de la fonction sin(x)/x de 0 à l'infini en utilisant le théorème des résidus et un contour adapté.",
+  "concepts": [
+    "théorème des résidus",
+    "intégrale de contour",
+    "fonction méromorphe",
+    "singularité évitable",
+    "principe de l'argument",
+    "convergence d'intégrale impropre"
+  ],
+  "methods": [
+    "déformation de contour",
+    "calcul de résidus",
+    "passage à la limite",
+    "utilisation de la formule de Jordan"
+  ],
+  "objects": [
+    "intégrale de fonction trigonométrique",
+    "contour complexe",
+    "fonction exponentielle complexe"
+  ],
+  "content_hash": "344ca919b3b7897444df6bf2a78d9c192393b7ed257c9f72a8733be37b3a438f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:19:20.917Z"
+}

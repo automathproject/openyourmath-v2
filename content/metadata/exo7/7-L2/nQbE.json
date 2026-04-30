@@ -1,0 +1,27 @@
+{
+  "uuid": "nQbE",
+  "source_path": "exo7/7-L2/nQbE.tex",
+  "summary": "Estimer la proportion d'albinos dans une population à partir d'un échantillon de 12 000 individus dont 13 sont albinos. Comparaison des méthodes d'approximation des lois réelles par des lois classiques.",
+  "concepts": [
+    "estimation ponctuelle",
+    "intervalle de confiance",
+    "loi normale",
+    "inégalité de Bienaymé-Tchebychev",
+    "proportion",
+    "variance d'une proportion",
+    "approximation gaussienne"
+  ],
+  "methods": [
+    "approximation normale",
+    "calcul d'intervalle de confiance",
+    "application de l'inégalité de Bienaymé-Tchebychev"
+  ],
+  "objects": [
+    "proportion",
+    "échantillon",
+    "intervalle de confiance"
+  ],
+  "content_hash": "88cb23114b5686a8fe223f88aa4cb559938a967e437342b4eba1eb925c567b8d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:51:37.828Z"
+}

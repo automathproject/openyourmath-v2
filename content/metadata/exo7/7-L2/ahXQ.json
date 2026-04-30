@@ -1,0 +1,26 @@
+{
+  "uuid": "ahXQ",
+  "source_path": "exo7/7-L2/ahXQ.tex",
+  "summary": "Un candidat répond au hasard à 20 questions de QCM à 4 choix. On demande de définir une variable aléatoire associée au nombre de bonnes réponses et d'en donner la loi de probabilité ainsi que son espérance.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "loi binomiale",
+    "probabilité de succès",
+    "espérance mathématique",
+    "épreuves indépendantes",
+    "répétition d'épreuves aléatoires"
+  ],
+  "methods": [
+    "définition de variable aléatoire",
+    "calcul de l'espérance",
+    "identification de la loi binomiale"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "nombre de bonnes réponses",
+    "probabilité de succès"
+  ],
+  "content_hash": "b9bc43bc44598d160aaa389f92f367a46be6a079570c7a501a0b736cfe93fedc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:32:43.767Z"
+}

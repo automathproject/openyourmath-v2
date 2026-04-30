@@ -1,0 +1,28 @@
+{
+  "uuid": "hJ1M",
+  "source_path": "exo7/13-L3/hJ1M.tex",
+  "summary": "L'exercice demande de prouver que la solution maximale d'une équation différentielle donnée est identiquement nulle sur un intervalle et de déterminer explicitement cette solution. L'équation différentielle considérée est x' = 3x^(2/3) avec une condition initiale x(0) = 0.",
+  "concepts": [
+    "équation différentielle",
+    "solution maximale",
+    "lipschitzianité",
+    "continuité des solutions",
+    "extremum d'une fonction",
+    "solution identiquement nulle"
+  ],
+  "methods": [
+    "analyse des extrema",
+    "passage à la limite",
+    "vérification de solutions candidates",
+    "utilisation de la condition initiale"
+  ],
+  "objects": [
+    "équation différentielle non linéaire",
+    "solution maximale",
+    "intervalle de définition",
+    "fonction lipschitzienne"
+  ],
+  "content_hash": "f256bdee5e1ae261d1667cb61232184c1c72dc4fb5483f6133efbd21ecb5dcea",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T11:46:46.984Z"
+}

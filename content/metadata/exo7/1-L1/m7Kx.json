@@ -1,0 +1,28 @@
+{
+  "uuid": "m7Kx",
+  "source_path": "exo7/1-L1/m7Kx.tex",
+  "summary": "Trouver le plus grand diviseur commun des polynômes X^n-1 et X^m-1 pour des entiers naturels non nuls m et n.",
+  "concepts": [
+    "division euclidienne",
+    "algèbre des polynômes",
+    "plus grand commun diviseur",
+    "relation de Bézout",
+    "algèbre commutative",
+    "polynôme unitaire"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "division polynomiale",
+    "réduction modulo un polynôme",
+    "propriétés des racines de l'unité"
+  ],
+  "objects": [
+    "polynômes",
+    "entiers naturels",
+    "pgcd",
+    "relation de divisibilité"
+  ],
+  "content_hash": "e667a817e240e24b2125c179390168c211a1b3829844eca06033afc07f86245e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T08:19:36.299Z"
+}

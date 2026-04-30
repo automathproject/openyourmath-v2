@@ -1,0 +1,27 @@
+{
+  "uuid": "FIgO",
+  "source_path": "amscc/FIgO.tex",
+  "summary": "L'exercice étudie la distribution du nombre de clients à un comptoir spécifique dans un fast food avec N comptoirs, où les clients choisissent un comptoir au hasard. On demande la loi du nombre de clients à un comptoir donné et le coefficient de corrélation entre deux comptoirs distincts.",
+  "concepts": [
+    "loi de Poisson",
+    "loi binomiale",
+    "loi conditionnelle",
+    "loi conjointe",
+    "indépendance statistique",
+    "coefficient de corrélation linéaire"
+  ],
+  "methods": [
+    "conditionnement",
+    "calcul de loi conjointe",
+    "calcul d'espérance conditionnelle",
+    "calcul de covariance"
+  ],
+  "objects": [
+    "variable aléatoire de Poisson",
+    "variable aléatoire binomiale",
+    "coefficient de corrélation"
+  ],
+  "content_hash": "af8e013afc561f7f00a66dbbc0ee74f7b02564bcb461c641e42f5aaa80ea8f41",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:21:53.708Z"
+}

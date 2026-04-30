@@ -1,0 +1,27 @@
+{
+  "uuid": "RRf3",
+  "source_path": "exo7/4-L2/RRf3.tex",
+  "summary": "On considère un endomorphisme a d'un espace vectoriel de dimension finie ayant n valeurs propres distinctes. On définit l'ensemble C des endomorphismes qui commutent avec a. L'exercice demande de montrer que tout sous-espace propre de a est stable par un élément u de C, puis d'en déduire que u est diagonalisable.",
+  "concepts": [
+    "endomorphisme",
+    "valeur propre",
+    "espace vectoriel de dimension finie",
+    "commutateur d'endomorphismes",
+    "sous-espace stable",
+    "diagonalisation"
+  ],
+  "methods": [
+    "utilisation des valeurs propres distinctes",
+    "stabilité des sous-espaces propres",
+    "diagonalisation par commutation"
+  ],
+  "objects": [
+    "endomorphisme a",
+    "espace vectoriel E",
+    "sous-espace propre",
+    "élément u de C"
+  ],
+  "content_hash": "d622fd4d3e77769ed559b7e7d00867c18c5470828b290b0a751445b5d5265f39",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T10:44:51.881Z"
+}

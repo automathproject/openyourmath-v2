@@ -1,0 +1,27 @@
+{
+  "uuid": "NVxb",
+  "source_path": "exo7/2-L1/NVxb.tex",
+  "summary": "Étudier la convergence et trouver un équivalent asymptotique de la suite récurrente non linéaire définie par u₀=1 et uₙ₊₁ = uₙ + 2/uₙ. L'énoncé suggère d'utiliser la transformation vₙ = uₙ²/4 pour simplifier l'étude.",
+  "concepts": [
+    "suite récurrente",
+    "convergence",
+    "équivalent asymptotique",
+    "transformation de variable",
+    "limite de suite",
+    "analyse asymptotique"
+  ],
+  "methods": [
+    "changement de variable",
+    "étude de la différence vₙ₊₁ - vₙ",
+    "approximation affine",
+    "calcul de limite"
+  ],
+  "objects": [
+    "suite récurrente non linéaire",
+    "suite transformée vₙ",
+    "équivalent de suite"
+  ],
+  "content_hash": "ac896e0e3c3478ff7530b9a2c71b27f158df8c55fbf7519df0dbc7033b232292",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T13:15:02.581Z"
+}

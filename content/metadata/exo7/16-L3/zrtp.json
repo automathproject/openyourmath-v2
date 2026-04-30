@@ -1,0 +1,28 @@
+{
+  "uuid": "zrtp",
+  "source_path": "exo7/16-L3/zrtp.tex",
+  "summary": "Calculer la valeur de la fonction Gamma en 1/2 via une intégrale impropre, puis prouver une relation entre deux intégrales semi-convergentes en utilisant le théorème des résidus avec un contour spécifique.",
+  "concepts": [
+    "fonction Gamma",
+    "théorème des résidus",
+    "intégrale semi-convergente",
+    "changement de variable",
+    "intégrale de Fresnel",
+    "fonction exponentielle complexe"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration complexe",
+    "contour de Jordan",
+    "décomposition en parties réelle et imaginaire"
+  ],
+  "objects": [
+    "fonction Gamma",
+    "intégrale impropre",
+    "contour d'intégration",
+    "fonction exponentielle complexe"
+  ],
+  "content_hash": "c2c21f5c423b627769c913a545f24e1e4c7136cd7c96982742d5c36a851f1842",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:29:19.209Z"
+}

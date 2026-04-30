@@ -1,0 +1,28 @@
+{
+  "uuid": "tSVB",
+  "source_path": "amscc/tSVB.tex",
+  "summary": "Deux généraux arrivent indépendamment à un rendez-vous entre 20h et 21h avec une loi uniforme. On cherche la probabilité qu'ils se rencontrent dans un intervalle de 10 minutes, modélisée par une intégrale double.",
+  "concepts": [
+    "variable aléatoire uniforme",
+    "indépendance",
+    "intégrale double",
+    "densité conjointe",
+    "géométrie intégrale",
+    "translation de variable"
+  ],
+  "methods": [
+    "calcul d'intégrale double",
+    "changement de variable",
+    "décomposition d'intégrale",
+    "calcul géométrique d'aire"
+  ],
+  "objects": [
+    "variable aléatoire à densité",
+    "intervalle de temps",
+    "densité conjointe",
+    "région d'intégration"
+  ],
+  "content_hash": "a9e066656948d2fe10eff39812e21f69041940af3617ae9b3f1f3d2de80599dc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:08:26.219Z"
+}

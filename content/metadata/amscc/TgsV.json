@@ -1,0 +1,25 @@
+{
+  "uuid": "TgsV",
+  "source_path": "amscc/TgsV.tex",
+  "summary": "L'exercice demande de calculer la probabilité conditionnelle qu'une carte défectueuse provienne de l'atelier A, puis de déterminer si les événements 'provenir de l'atelier A' et 'être défectueuse' sont indépendants.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "indépendance de deux événements",
+    "probabilité totale",
+    "loi de probabilité discrète",
+    "théorème de Bayes"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "application de la formule des probabilités totales",
+    "test d'indépendance"
+  ],
+  "objects": [
+    "événements aléatoires",
+    "probabilités marginales",
+    "probabilités conditionnelles"
+  ],
+  "content_hash": "30e58c6289fd30b471976788d511a1f3be311e23fd14ecbee334e5eb68f477c1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T09:27:54.913Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "tn85",
+  "source_path": "amscc/tn85.tex",
+  "summary": "L'exercice demande de déterminer la loi suivie par des combinaisons de variables aléatoires normales centrées réduites et de calculer des quantiles associés. Il mobilise les lois du chi-deux et de Student.",
+  "concepts": [
+    "loi du chi-deux",
+    "loi de Student",
+    "variable aléatoire normale centrée réduite",
+    "quantile",
+    "indépendance de variables aléatoires",
+    "standardisation"
+  ],
+  "methods": [
+    "calcul de quantile",
+    "standardisation",
+    "reconnaissance de loi de Student"
+  ],
+  "objects": [
+    "somme de carrés de variables normales",
+    "variable aléatoire de Student",
+    "variable aléatoire normale"
+  ],
+  "content_hash": "fa1339fb099ace13f8537906bb95d584a14204ee5dda8d1edf1170088de0b440",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T12:58:57.493Z"
+}

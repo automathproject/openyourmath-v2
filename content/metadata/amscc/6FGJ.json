@@ -1,0 +1,32 @@
+{
+  "uuid": "6FGJ",
+  "source_path": "amscc/6FGJ.tex",
+  "summary": "L'exercice demande de calculer l'effectif théorique de mots de passe de 8 caractères dans un échantillon de 200 mots de passe, puis d'estimer la proportion de ces mots de passe via un intervalle de confiance à 95%. Enfin, il s'agit de tester l'adéquation de la distribution observée des longueurs de mots de passe avec une distribution théorique à l'aide d'un test du chi-deux.",
+  "concepts": [
+    "test d'adéquation du chi-deux",
+    "loi multinomiale",
+    "intervalle de confiance",
+    "proportion",
+    "hypothèse nulle",
+    "statistique de test",
+    "p-valeur",
+    "distribution théorique"
+  ],
+  "methods": [
+    "calcul d'effectifs théoriques",
+    "construction d'intervalle de confiance",
+    "calcul de la statistique du chi-deux",
+    "comparaison avec la loi du chi-deux",
+    "estimation de la p-valeur"
+  ],
+  "objects": [
+    "effectifs observés",
+    "effectifs théoriques",
+    "proportion théorique",
+    "proportion estimée",
+    "statistique de test du chi-deux"
+  ],
+  "content_hash": "2c0fdb88b0e17692ac8ac4ae20999365acde7f6bc10301b42eb05225918b7b8e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T15:42:15.896Z"
+}

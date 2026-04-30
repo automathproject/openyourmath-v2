@@ -1,0 +1,25 @@
+{
+  "uuid": "CKaM",
+  "source_path": "exo7/8-L3/CKaM.tex",
+  "summary": "Montrer que l'ensemble des matrices carrées de taille n×n à déterminant non nul forme un groupe pour l'opération de multiplication.",
+  "concepts": [
+    "groupe",
+    "matrice inversible",
+    "déterminant",
+    "élément inversible",
+    "structure algébrique",
+    "axiomes de groupe"
+  ],
+  "methods": [
+    "vérification des axiomes de groupe",
+    "utilisation de la propriété du déterminant"
+  ],
+  "objects": [
+    "matrice carrée",
+    "ensemble de matrices",
+    "opération de multiplication"
+  ],
+  "content_hash": "bcda3bef85ed5edb592ef2fcc2ecc86594adcf7ae7e2cf03c86addc100c5f6b5",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T07:12:18.158Z"
+}

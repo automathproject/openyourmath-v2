@@ -1,0 +1,29 @@
+{
+  "uuid": "GHXA",
+  "source_path": "exo7/16-L3/GHXA.tex",
+  "summary": "Calcul d'intégrales réelles impropres en utilisant le théorème des résidus appliqué à des fonctions complexes. Le premier exercice porte sur l'intégrale de sin(x)/x sur ℝ, et le second sur une intégrale similaire avec un facteur supplémentaire (x²-1)/(x²+1).",
+  "concepts": [
+    "théorème des résidus",
+    "intégrale de Cauchy",
+    "fonction méromorphe",
+    "singularité isolée",
+    "pôle simple",
+    "intégrale impropre",
+    "analyse complexe"
+  ],
+  "methods": [
+    "choix de contour",
+    "calcul de résidus",
+    "théorème des résidus",
+    "décomposition en éléments simples"
+  ],
+  "objects": [
+    "fonction complexe",
+    "intégrale sur ℝ",
+    "pôle simple",
+    "résidu"
+  ],
+  "content_hash": "2e1e5475b36cf3fa1c8a5439a717cf90afe817160dc8a832864f9281450720f1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-04-29T16:11:44.831Z"
+}
