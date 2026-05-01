@@ -6,7 +6,7 @@
   import EmptyState from '$lib/components/search/EmptyState.svelte';
   import BreadcrumbNav from '$lib/components/search/BreadcrumbNav.svelte';
   import ActiveFilters from '$lib/components/search/active-filters.svelte';
-  import SearchToolbar from '$lib/components/search/SearchToolbar.svelte';
+  import SearchSemantic from '$lib/components/search/SearchSemantic.svelte';
   import ResultsGrid from '$lib/components/search/ResultsGrid.svelte';
   import MobileExercisePreview from '$lib/components/search/MobileExercisePreview.svelte';
   import RandomExercisesCarousel from '$lib/components/search/RandomExercisesCarousel.svelte';
@@ -41,7 +41,7 @@
   let resultsScrollEl;
   const HEADER_COLLAPSE_THRESHOLD = 24;
 
-  const debouncedSearch = useDebounce(searchActions.search, 300);
+  // debouncedSearch supprimé — SearchSemantic gère son propre dispatch FTS/hybride.
 
   onMount(() => {
     suggestionActions.loadSuggestions();
@@ -276,14 +276,8 @@
     <div class="search-page-main">
       <div class="search-controls-sticky" class:search-controls-sticky--scrolled={isHeaderCollapsed}>
 
-        <!-- Barre de recherche + popover (ancré dans SearchToolbar via position:relative sur .toolbar) -->
-        <SearchToolbar
-          searchQueryStore={searchQuery}
-          onSearchInput={debouncedSearch}
-          loading={$loading}
-          hasResults={$hasResults}
-          filtersButtonLabel={filtersButtonLabel}
-          showFiltersButton={true}
+        <!-- Barre de recherche + mode sémantique (drop-in de SearchToolbar) -->
+        <SearchSemantic
           onToggleFilters={toggleFiltersPanel}
           hasSolution={$filters.hasSolution}
           hasIndication={$filters.hasIndication}
