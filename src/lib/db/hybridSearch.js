@@ -70,6 +70,60 @@ function buildFilterConditions(filters) {
       }
     }
   }
+  if (f.author) {
+    const trimmed = f.author.trim();
+    if (trimmed) {
+      const like = `%${escapeLike(trimmed)}%`;
+      conditions.push(`EXISTS (
+        SELECT 1 FROM exercise_authors ea
+        WHERE ea.uuid = e.uuid
+          AND (UPPER(ea.author_display) LIKE UPPER(?) ESCAPE '\\' OR UPPER(ea.author_pseudo) LIKE UPPER(?) ESCAPE '\\')
+      )`);
+      params.push(like, like);
+    }
+  }
+  if (f.organization) {
+    const trimmed = f.organization.trim();
+    if (trimmed) {
+      conditions.push("UPPER(e.organization) LIKE UPPER(?) ESCAPE '\\'");
+      params.push(`%${escapeLike(trimmed)}%`);
+    }
+  }
+  if (f.createdFrom) {
+    conditions.push('DATE(e.created_at) >= DATE(?)');
+    params.push(f.createdFrom);
+  }
+  if (f.createdTo) {
+    conditions.push('DATE(e.created_at) <= DATE(?)');
+    params.push(f.createdTo);
+  }
+  if (f.updatedFrom) {
+    conditions.push('DATE(e.updated_at) >= DATE(?)');
+    params.push(f.updatedFrom);
+  }
+  if (f.updatedTo) {
+    conditions.push('DATE(e.updated_at) <= DATE(?)');
+    params.push(f.updatedTo);
+  }
+  if (typeof f.hasSolution === 'boolean') {
+    conditions.push('e.hasSolution = ?');
+    params.push(f.hasSolution ? 1 : 0);
+  }
+  if (typeof f.hasIndication === 'boolean') {
+    conditions.push('e.hasIndication = ?');
+    params.push(f.hasIndication ? 1 : 0);
+  }
+  if (f.hasVideo !== undefined && f.hasVideo !== null && f.hasVideo !== '') {
+    let wantsVideo = f.hasVideo;
+    if (typeof wantsVideo !== 'boolean') {
+      wantsVideo = String(wantsVideo).toLowerCase() === '1' || String(wantsVideo).toLowerCase() === 'true';
+    }
+    if (wantsVideo) {
+      conditions.push("(e.video_id IS NOT NULL AND TRIM(e.video_id) != '')");
+    } else {
+      conditions.push("(e.video_id IS NULL OR TRIM(e.video_id) = '')");
+    }
+  }
 
   return { conditions, params };
 }
