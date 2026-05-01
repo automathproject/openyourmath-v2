@@ -8,7 +8,7 @@ export const MODELS = {
 
 export const EMBEDDING_DIMENSION = 1024;
 
-async function albertFetch(endpoint, body, method = 'POST') {
+async function albertFetch(endpoint, body, method = 'POST', timeoutMs = 60_000) {
   const apiKey = process.env.ALBERT_API_KEY;
   const baseUrl = process.env.ALBERT_BASE_URL || 'https://albert.api.etalab.gouv.fr/v1';
 
@@ -16,6 +16,7 @@ async function albertFetch(endpoint, body, method = 'POST') {
 
   const options = {
     method,
+    signal: AbortSignal.timeout(timeoutMs),
     headers: {
       'Authorization': `Bearer ${apiKey}`,
       'Content-Type': 'application/json'
