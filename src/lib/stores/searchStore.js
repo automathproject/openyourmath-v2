@@ -176,6 +176,35 @@ function resolveSortParam(currentFilters = {}) {
 
 export const filterCounts = writable(createEmptyFilterCounts());
 
+// Comptages hiérarchiques dérivés des résultats courants (compatibles hybride et FTS).
+// Clés composées "level|module|chapter|subchapter" pour distinguer les homonymes inter-niveaux.
+export const resultPathCounts = derived(results, ($results) => {
+  if (!$results || $results.length === 0) return null;
+  const levels = {}, modules = {}, chapters = {}, subchapters = {};
+  for (const r of $results) {
+    const lv = r.level || '';
+    const mo = r.module || '';
+    const ch = r.chapter || '';
+    const sc = r.subchapter || '';
+    if (lv) {
+      levels[lv] = (levels[lv] || 0) + 1;
+      if (mo) {
+        const mk = `${lv}|${mo}`;
+        modules[mk] = (modules[mk] || 0) + 1;
+        if (ch) {
+          const ck = `${lv}|${mo}|${ch}`;
+          chapters[ck] = (chapters[ck] || 0) + 1;
+          if (sc) {
+            const sk = `${lv}|${mo}|${ch}|${sc}`;
+            subchapters[sk] = (subchapters[sk] || 0) + 1;
+          }
+        }
+      }
+    }
+  }
+  return { levels, modules, chapters, subchapters };
+});
+
 // Actions pour gérer la recherche
 export const searchActions = {
   // Mettre à jour un filtre spécifique

@@ -27,7 +27,8 @@
     previewState,
     previewActions,
     loadingMore,
-    layoutConfig
+    layoutConfig,
+    resultPathCounts
   } from '$lib/stores/searchStore.js';
   import { previewPanelOpen, uiActions } from '$lib/stores/uiStore.ts';
 
@@ -325,6 +326,7 @@
               <BreadcrumbNav
                 query={$searchQuery}
                 filters={$filters}
+                resultPathCounts={$resultPathCounts}
                 on:navigate={handleChapterNavigation}
               />
             {/if}
@@ -355,6 +357,7 @@
             <BreadcrumbNav
               query={$searchQuery}
               filters={$filters}
+              resultPathCounts={$resultPathCounts}
               on:navigate={handleChapterNavigation}
             />
           {/if}

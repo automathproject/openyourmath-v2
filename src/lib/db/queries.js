@@ -463,11 +463,10 @@ export async function getChapterStructure() {
         chapter,
         subchapter,
         COUNT(*) as exerciseCount
-      FROM exercises 
-      WHERE 
-        level IS NOT NULL 
-        AND module IS NOT NULL 
-        AND chapter IS NOT NULL
+      FROM exercises
+      WHERE
+        level IS NOT NULL
+        AND module IS NOT NULL
       GROUP BY level, module, chapter, subchapter
       ORDER BY 
         CASE 
@@ -516,30 +515,31 @@ export async function getChapterStructure() {
       const moduleObj = levelObj.modules.get(module);
       moduleObj.exerciseCount += count;
       
-      // Chapitre dans le module
-      if (!moduleObj.chapters.has(chapter)) {
-        moduleObj.chapters.set(chapter, {
-          name: chapter,
-          exerciseCount: 0,
-          subchapters: new Map()
-        });
-      }
-      
-      const chapterObj = moduleObj.chapters.get(chapter);
-      chapterObj.exerciseCount += count;
-      
-      // Sous-chapitre dans le chapitre (si existe)
-      if (subchapter) {
-        if (!chapterObj.subchapters.has(subchapter)) {
-          chapterObj.subchapters.set(subchapter, {
-            name: subchapter,
-            exerciseCount: 0
+      // Chapitre dans le module (ignoré si null — exercice sans chapitre)
+      if (chapter) {
+        if (!moduleObj.chapters.has(chapter)) {
+          moduleObj.chapters.set(chapter, {
+            name: chapter,
+            exerciseCount: 0,
+            subchapters: new Map()
           });
         }
-        chapterObj.subchapters.get(subchapter).exerciseCount += count;
+
+        const chapterObj = moduleObj.chapters.get(chapter);
+        chapterObj.exerciseCount += count;
+
+        if (subchapter) {
+          if (!chapterObj.subchapters.has(subchapter)) {
+            chapterObj.subchapters.set(subchapter, {
+              name: subchapter,
+              exerciseCount: 0
+            });
+          }
+          chapterObj.subchapters.get(subchapter).exerciseCount += count;
+        }
       }
     });
-    
+
     // Convertir en arrays et trier
     const result = Array.from(hierarchy.entries()).map(([levelName, levelData]) => ({
       name: levelName,
@@ -706,9 +706,8 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
         COUNT(*) as exerciseCount
       FROM exercises e
       WHERE ${baseWhere}
-        AND e.level IS NOT NULL 
-        AND e.module IS NOT NULL 
-        AND e.chapter IS NOT NULL
+        AND e.level IS NOT NULL
+        AND e.module IS NOT NULL
       GROUP BY e.level, e.module, e.chapter, e.subchapter
     `;
 
@@ -735,17 +734,19 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
       const moduleObj = levelObj.modules.get(module);
       moduleObj.exerciseCount += count;
 
-      if (!moduleObj.chapters.has(chapter)) {
-        moduleObj.chapters.set(chapter, { name: chapter, exerciseCount: 0, subchapters: new Map() });
-      }
-      const chapterObj = moduleObj.chapters.get(chapter);
-      chapterObj.exerciseCount += count;
-
-      if (subchapter) {
-        if (!chapterObj.subchapters.has(subchapter)) {
-          chapterObj.subchapters.set(subchapter, { name: subchapter, exerciseCount: 0 });
+      if (chapter) {
+        if (!moduleObj.chapters.has(chapter)) {
+          moduleObj.chapters.set(chapter, { name: chapter, exerciseCount: 0, subchapters: new Map() });
         }
-        chapterObj.subchapters.get(subchapter).exerciseCount += count;
+        const chapterObj = moduleObj.chapters.get(chapter);
+        chapterObj.exerciseCount += count;
+
+        if (subchapter) {
+          if (!chapterObj.subchapters.has(subchapter)) {
+            chapterObj.subchapters.set(subchapter, { name: subchapter, exerciseCount: 0 });
+          }
+          chapterObj.subchapters.get(subchapter).exerciseCount += count;
+        }
       }
     });
 

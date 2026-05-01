@@ -4,6 +4,8 @@
 
   export let query = '';
   export let filters = {};
+  // Comptages issus des résultats courants (null = pas de recherche active → fallback structure).
+  export let resultPathCounts = null;
 
   const dispatch = createEventDispatcher();
 
@@ -18,7 +20,6 @@
 
   function buildFiltersKey() {
     return JSON.stringify({
-      q: (query || '').trim(),
       difficulty: filters?.difficulty || '',
       author: filters?.author || '',
       organization: filters?.organization || '',
@@ -38,7 +39,8 @@
     try {
       const params = new URLSearchParams();
       params.set('type', 'structure');
-      if ((query || '').trim()) params.set('q', query.trim());
+      // Ne pas envoyer la requête texte : les comptages sont basés sur les catégories
+      // (indépendants du mode FTS/hybride pour éviter la divergence avec le vectoriel).
       if (filters?.difficulty) params.set('difficulty', String(filters.difficulty));
       if (filters?.author) params.set('author', filters.author);
       if (filters?.organization) params.set('organization', filters.organization);
@@ -95,28 +97,50 @@
     }
   }
 
-  $: levelOptions = structure.map((level) => ({
-    name: level.name,
-    count: level.exerciseCount
-  }));
+  // Quand resultPathCounts est disponible, les comptages viennent des résultats de recherche
+  // (FTS + vectoriel). Sinon, fallback sur les totaux de la structure.
+  // Les options à 0 sont masquées quand on est en mode recherche active.
+  $: levelOptions = structure
+    .map((level) => ({
+      name: level.name,
+      count: resultPathCounts
+        ? (resultPathCounts.levels[level.name] ?? 0)
+        : level.exerciseCount
+    }))
+    .filter((opt) => !resultPathCounts || opt.count > 0);
 
   $: selectedLevelObj = structure.find((level) => level.name === (filters?.level || ''));
-  $: moduleOptions = (selectedLevelObj?.modules || []).map((module) => ({
-    name: module.name,
-    count: module.exerciseCount
-  }));
 
-  $: selectedModuleObj = selectedLevelObj?.modules?.find((module) => module.name === (filters?.module || ''));
-  $: chapterOptions = (selectedModuleObj?.chapters || []).map((chapter) => ({
-    name: chapter.name,
-    count: chapter.exerciseCount
-  }));
+  $: moduleOptions = (selectedLevelObj?.modules || [])
+    .map((mod) => ({
+      name: mod.name,
+      count: resultPathCounts
+        ? (resultPathCounts.modules[`${filters?.level || ''}|${mod.name}`] ?? 0)
+        : mod.exerciseCount
+    }))
+    .filter((opt) => !resultPathCounts || opt.count > 0);
 
-  $: selectedChapterObj = selectedModuleObj?.chapters?.find((chapter) => chapter.name === (filters?.chapter || ''));
-  $: subchapterOptions = (selectedChapterObj?.subchapters || []).map((subchapter) => ({
-    name: subchapter.name,
-    count: subchapter.exerciseCount
-  }));
+  $: selectedModuleObj = selectedLevelObj?.modules?.find((mod) => mod.name === (filters?.module || ''));
+
+  $: chapterOptions = (selectedModuleObj?.chapters || [])
+    .map((ch) => ({
+      name: ch.name,
+      count: resultPathCounts
+        ? (resultPathCounts.chapters[`${filters?.level || ''}|${filters?.module || ''}|${ch.name}`] ?? 0)
+        : ch.exerciseCount
+    }))
+    .filter((opt) => !resultPathCounts || opt.count > 0);
+
+  $: selectedChapterObj = selectedModuleObj?.chapters?.find((ch) => ch.name === (filters?.chapter || ''));
+
+  $: subchapterOptions = (selectedChapterObj?.subchapters || [])
+    .map((sc) => ({
+      name: sc.name,
+      count: resultPathCounts
+        ? (resultPathCounts.subchapters[`${filters?.level || ''}|${filters?.module || ''}|${filters?.chapter || ''}|${sc.name}`] ?? 0)
+        : sc.exerciseCount
+    }))
+    .filter((opt) => !resultPathCounts || opt.count > 0);
 
   function toggleMenu(menuId) {
     openMenu = openMenu === menuId ? null : menuId;

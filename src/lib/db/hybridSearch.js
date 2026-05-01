@@ -341,8 +341,20 @@ export async function hybridSearch({
     const reranked = await rerankDocuments(trimmedQuery, candidates);
     if (_timing) _timing.rerankMs = Date.now() - rerankStart;
 
+    const topScore = reranked[0]?.rerankScore ?? null;
+    const threshold = topScore !== null ? topScore * 0.05 : null;
+    const filtered = threshold !== null
+      ? reranked.filter(r => r.rerankScore !== null && r.rerankScore >= threshold)
+      : reranked;
+
+    console.log(`[rerank] top=${topScore?.toFixed(4) ?? 'null'} seuil=${threshold?.toFixed(4) ?? 'null'} (${filtered.length}/${reranked.length} retenus)`);
+    reranked.forEach((r, i) => {
+      const kept = threshold === null || (r.rerankScore !== null && r.rerankScore >= threshold);
+      console.log(`  ${String(i + 1).padStart(2)}. [${r.rerankScore?.toFixed(4) ?? 'null'}] rrf=${r.rrfScore?.toFixed(4) ?? '-'} ${kept ? '✓' : '✗'} | ${r.uuid} "${r.title?.slice(0, 60)}"`);
+    });
+
     const t0 = Date.now();
-    const results = hydrate(db, reranked.slice(0, limit));
+    const results = hydrate(db, filtered.slice(0, limit));
     if (_timing) _timing.hydrateMs = Date.now() - t0;
     return results;
   } finally {

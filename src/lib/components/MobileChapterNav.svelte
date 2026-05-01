@@ -54,19 +54,27 @@
       // Utiliser l'API chapters avec le bon type + recherche/filters courants
       const params = new URLSearchParams();
       params.set('type', 'structure');
-      if (query && query.trim()) params.set('q', query.trim());
+      // Ne pas envoyer la requête texte pour éviter la divergence FTS vs hybride.
       if (activeFilters?.level) params.set('level', activeFilters.level);
       if (activeFilters?.module) params.set('module', activeFilters.module);
       if (activeFilters?.chapter) params.set('chapter', activeFilters.chapter);
       if (activeFilters?.subchapter) params.set('subchapter', activeFilters.subchapter);
       if (activeFilters?.difficulty) params.set('difficulty', String(activeFilters.difficulty));
       if (activeFilters?.author) params.set('author', activeFilters.author);
+      if (activeFilters?.organization) params.set('organization', activeFilters.organization);
       if (activeFilters?.hasSolution !== '' && activeFilters?.hasSolution !== undefined && activeFilters?.hasSolution !== null) {
         params.set('hasSolution', String(activeFilters.hasSolution));
       }
       if (activeFilters?.hasIndication !== '' && activeFilters?.hasIndication !== undefined && activeFilters?.hasIndication !== null) {
         params.set('hasIndication', String(activeFilters.hasIndication));
       }
+      if (activeFilters?.hasVideo !== '' && activeFilters?.hasVideo !== undefined && activeFilters?.hasVideo !== null) {
+        params.set('hasVideo', String(activeFilters.hasVideo));
+      }
+      if (activeFilters?.createdFrom) params.set('createdFrom', activeFilters.createdFrom);
+      if (activeFilters?.createdTo) params.set('createdTo', activeFilters.createdTo);
+      if (activeFilters?.updatedFrom) params.set('updatedFrom', activeFilters.updatedFrom);
+      if (activeFilters?.updatedTo) params.set('updatedTo', activeFilters.updatedTo);
       const response = await fetch(`/api/chapters?${params.toString()}`);
       
       if (response.ok) {
@@ -84,24 +92,28 @@
     }
   }
 
-  function buildParamsKey(qParam, filtersParam) {
-    const q = (qParam || '').trim();
+  function buildParamsKey(filtersParam) {
     const f = filtersParam || {};
     return JSON.stringify({
-      q,
       level: f.level || '',
       module: f.module || '',
       chapter: f.chapter || '',
       subchapter: f.subchapter || '',
       difficulty: f.difficulty || '',
       author: f.author || '',
+      organization: f.organization || '',
       hasSolution: f.hasSolution ?? '',
-      hasIndication: f.hasIndication ?? ''
+      hasIndication: f.hasIndication ?? '',
+      hasVideo: f.hasVideo ?? '',
+      createdFrom: f.createdFrom || '',
+      createdTo: f.createdTo || '',
+      updatedFrom: f.updatedFrom || '',
+      updatedTo: f.updatedTo || ''
     });
   }
 
   // Initialiser la clé pour éviter un double chargement après onMount
-  lastParamsKey = buildParamsKey(query, activeFilters);
+  lastParamsKey = buildParamsKey(activeFilters);
 
   onDestroy(() => {
     if (debounceTimer) clearTimeout(debounceTimer);
@@ -110,7 +122,7 @@
   // Recharger la structure quand la requête ou les filtres changent
   $: {
     // Référencer explicitement `query` et `activeFilters` pour la réactivité
-    const key = buildParamsKey(query, activeFilters);
+    const key = buildParamsKey(activeFilters);
     if (key !== lastParamsKey) {
       lastParamsKey = key;
       if (debounceTimer) clearTimeout(debounceTimer);
