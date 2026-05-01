@@ -1,0 +1,476 @@
+<!-- src/lib/components/search/SearchSemantic.svelte
+     Drop-in replacement for <SearchToolbar> with hybrid (FTS5 + vectoriel + rerank) support.
+
+     Swap in +page.svelte :
+       1. import SearchSemantic from '$lib/components/search/SearchSemantic.svelte'
+       2. Remplacer <SearchToolbar onSearchInput={debouncedSearch} …> par <SearchSemantic …>
+          (supprimer le prop onSearchInput ; le composant gère ses propres appels)
+       3. Supprimer `const debouncedSearch = useDebounce(…)` devenu inutile.
+-->
+<script>
+  import { onMount, onDestroy } from 'svelte';
+  import { get } from 'svelte/store';
+  import { goto } from '$app/navigation';
+  import { page } from '$app/stores';
+  import SearchToolbar from '$lib/components/search/SearchToolbar.svelte';
+  import {
+    searchQuery,
+    results,
+    loading,
+    error,
+    searchMeta,
+    filters,
+    filterCounts,
+    searchActions
+  } from '$lib/stores/searchStore.js';
+  import { useDebounce } from '$lib/hooks/useDebounce.js';
+
+  // ── Props — même interface que SearchToolbar (sans onSearchInput) ─────────
+  export let advancedFiltersOpen = false;
+  export let onToggleFilters    = () => {};
+  export let onCloseAdvancedFilters = () => {};
+  export let filtersExpanded    = true;
+  export let onToggleExpanded   = () => {};
+  export let hasSolution        = '';
+  export let hasIndication      = '';
+  export let onToggleSolution   = () => {};
+  export let onToggleIndication = () => {};
+  export let canTogglePreview   = false;
+  export let previewToggleLabel = '';
+  export let isPreviewOpen      = false;
+  export let onTogglePreview    = () => {};
+
+  // ── État sémantique ────────────────────────────────────────────────────────
+  let mode          = 'fts';   // 'fts' | 'hybrid'
+  let hybridLoading = false;
+  /** @type {AbortController|null} */
+  let abortCtrl     = null;
+  // Pas d'éviction pour l'instant : acceptable pour une session courte (~20-30 queries).
+  // Si des soucis mémoire apparaissent en prod (session longue, 200+ queries), capper à
+  // 50-100 entrées avec LRU : remplacer Map par une classe LRUCache(maxSize) qui, à chaque
+  // set(), supprime l'entrée la moins récemment utilisée quand maxSize est atteint.
+  /** @type {Map<string, {results: any[], meta: any, timing: any}>} */
+  const hybridCache = new Map();
+  let timingInfo    = null;    // debug: retourné par ?debug=true
+  let showSuggest   = false;   // Scénario B : proposer le mode hybride
+
+  $: debugMode = $page.url.searchParams.get('debug') === 'true';
+
+  // ── Construction des paramètres URL vers l'API ─────────────────────────────
+  function buildParams({ semantic = false, rerank = false, debug = false } = {}) {
+    const q = get(searchQuery).trim();
+    const f = get(filters);
+    const p = new URLSearchParams();
+
+    if (q) p.set('q', q);
+
+    if (f.subchapter) {
+      p.set('subchapter', f.subchapter);
+      if (f.chapter) p.set('chapter', f.chapter);
+    } else if (f.chapter) {
+      p.set('chapter', f.chapter);
+    }
+    if (f.level)        p.set('level', f.level);
+    if (f.module)       p.set('module', f.module);
+    if (f.author)       p.set('author', f.author);
+    if (f.organization) p.set('organization', f.organization);
+    if (f.difficulty)   p.set('difficulty', f.difficulty);
+    if (f.createdFrom)  p.set('createdFrom', f.createdFrom);
+    if (f.createdTo)    p.set('createdTo', f.createdTo);
+    if (f.updatedFrom)  p.set('updatedFrom', f.updatedFrom);
+    if (f.updatedTo)    p.set('updatedTo', f.updatedTo);
+    if (f.hasSolution  != null && f.hasSolution  !== '') p.set('hasSolution',  String(f.hasSolution));
+    if (f.hasIndication!= null && f.hasIndication !== '') p.set('hasIndication', String(f.hasIndication));
+    if (f.hasVideo     != null && f.hasVideo      !== '') p.set('hasVideo',      String(f.hasVideo));
+
+    if (f.sort && f.sort !== 'relevance') {
+      p.set('sort', `${f.sort}_${f.sortDirection || 'desc'}`);
+    }
+
+    p.set('limit', '20');
+    p.set('offset', '0');
+    if (semantic) p.set('semantic', 'true');
+    if (rerank)   p.set('rerank',   'true');
+    if (debug)    p.set('debug',    'true');
+    return p;
+  }
+
+  // ── Synchronisation URL ────────────────────────────────────────────────────
+  function syncUrl() {
+    const q = get(searchQuery).trim();
+    const f = get(filters);
+    const u = new URL($page.url.href);
+
+    if (q) u.searchParams.set('q', q); else u.searchParams.delete('q');
+    if (mode === 'hybrid') u.searchParams.set('mode', 'hybrid');
+    else                   u.searchParams.delete('mode');
+
+    for (const key of ['level', 'module', 'chapter', 'subchapter']) {
+      if (f[key]) u.searchParams.set(key, f[key]);
+      else        u.searchParams.delete(key);
+    }
+
+    goto(u.pathname + u.search, { replaceState: true, noScroll: true, keepFocus: true });
+  }
+
+  // ── Mode FTS (rapide) ──────────────────────────────────────────────────────
+  async function runFts() {
+    const q = get(searchQuery).trim();
+
+    if (!q) {
+      results.set([]);
+      searchMeta.set(null);
+      error.set(null);
+      filterCounts.set({ module: {}, level: {}, difficulty: {}, author: {}, organization: {} });
+      showSuggest = false;
+      syncUrl();
+      return;
+    }
+
+    abortCtrl?.abort();
+    abortCtrl = new AbortController();
+    const { signal } = abortCtrl;
+
+    loading.set(true);
+    error.set(null);
+
+    try {
+      const res = await fetch(`/api/search?${buildParams()}`, { signal });
+      if (res.ok) {
+        const data = await res.json();
+        results.set(data.results || []);
+        searchMeta.set(data.meta || null);
+        if (data.meta?.filterCounts) filterCounts.set(data.meta.filterCounts);
+        // Scénario B : zéro résultat → proposer l'hybride
+        showSuggest = (data.results || []).length === 0 && q.length >= 3;
+      } else {
+        const d = await res.json().catch(() => ({}));
+        error.set(d.message || 'Erreur de recherche');
+        results.set([]);
+      }
+    } catch (e) {
+      if (e.name !== 'AbortError') { error.set('Erreur de connexion'); results.set([]); }
+    } finally {
+      loading.set(false);
+    }
+
+    syncUrl();
+  }
+
+  const debouncedFts = useDebounce(runFts, 250);
+
+  // ── Mode hybride (intelligent) ─────────────────────────────────────────────
+  async function runHybrid() {
+    const q = get(searchQuery).trim();
+    if (!q) return;
+
+    // Cache — même requête + mêmes filtres → pas de nouvel appel réseau
+    const cacheKey = q + '|' + JSON.stringify(get(filters));
+    if (hybridCache.has(cacheKey)) {
+      const c = hybridCache.get(cacheKey);
+      results.set(c.results);
+      searchMeta.set(c.meta);
+      timingInfo = c.timing;
+      mode       = 'hybrid';
+      showSuggest = false;
+      syncUrl();
+      return;
+    }
+
+    abortCtrl?.abort();
+    abortCtrl = new AbortController();
+    const { signal } = abortCtrl;
+
+    hybridLoading = true;
+    loading.set(true);
+    error.set(null);
+    const t0 = Date.now();
+
+    try {
+      const res = await fetch(
+        `/api/search?${buildParams({ semantic: true, rerank: true, debug: debugMode })}`,
+        { signal }
+      );
+
+      // Affichage du spinner au moins 200 ms pour éviter un flash
+      const elapsed = Date.now() - t0;
+      if (elapsed < 200) await new Promise(r => setTimeout(r, 200 - elapsed));
+
+      if (res.ok) {
+        const data = await res.json();
+        const entry = {
+          results: data.results || [],
+          meta:    data.meta   || null,
+          timing:  data.debug  || null
+        };
+        hybridCache.set(cacheKey, entry);
+        results.set(entry.results);
+        searchMeta.set(entry.meta);
+        timingInfo  = entry.timing;
+        mode        = 'hybrid';
+        showSuggest = false;
+      } else {
+        const d = await res.json().catch(() => ({}));
+        error.set(d.message || 'Erreur de recherche hybride');
+        results.set([]);
+      }
+    } catch (e) {
+      if (e.name !== 'AbortError') { error.set('Erreur de connexion'); results.set([]); }
+    } finally {
+      hybridLoading = false;
+      loading.set(false);
+    }
+
+    syncUrl();
+  }
+
+  // ── Gestionnaire d'entrée (délégué à SearchToolbar via onSearchInput) ──────
+  // Svelte passe l'InputEvent quand l'événement vient de `on:input`,
+  // et appelle la fonction sans argument depuis handleSubmitKey (Enter).
+  function handleSearchInput(event) {
+    if (event?.type === 'input') {
+      // Frappe au clavier — Scénario A : si hybride actif, revenir en FTS
+      if (mode === 'hybrid') {
+        mode       = 'fts';
+        timingInfo = null;
+        showSuggest = false;
+      }
+      debouncedFts();
+    } else {
+      // Enter / bouton Clear (pas d'event) → hybride si query non vide
+      const q = get(searchQuery).trim();
+      if (q) {
+        runHybrid();
+      } else {
+        mode = 'fts';
+        results.set([]);
+        searchMeta.set(null);
+        error.set(null);
+        showSuggest = false;
+        syncUrl();
+      }
+    }
+  }
+
+  // ── Interception de searchActions.search pour les changements de filtre ────
+  //
+  // DETTE TECHNIQUE — à formaliser via searchActions.setSearchHandler() un jour.
+  //
+  // Contexte : les handlers du parent (+page.svelte) qui déclenchent une recherche
+  // après un changement de filtre (chips hasSolution/hasIndication, tri, breadcrumb)
+  // appellent tous searchActions.search(). Ce store ne connaît pas le mode hybride ;
+  // il ferait toujours du FTS5 pur, cassant le Scénario C ("filtre changé en mode hybride
+  // → relancer en hybride").
+  //
+  // Solution retenue : remplacement temporaire de la fonction pendant le montage du
+  // composant, avec restauration à la destruction. C'est réversible et transparent
+  // pour le parent, mais fragile si plusieurs instances coexistent ou si quelqu'un
+  // "nettoie" ce bloc sans comprendre pourquoi il est là.
+  //
+  // Migration propre à prévoir : ajouter dans searchStore.js —
+  //   let _searchHandler = null;
+  //   searchActions.setSearchHandler = (fn) => { _searchHandler = fn; };
+  //   searchActions.search = (...args) => (_searchHandler ?? _defaultSearch)(...args);
+  // Ce composant appellerait alors searchActions.setSearchHandler(ourSearch) au montage
+  // et searchActions.setSearchHandler(null) à la destruction.
+  const _originalSearch = searchActions.search.bind(searchActions);
+  searchActions.search = () => (mode === 'hybrid' ? runHybrid() : runFts());
+
+  // ── Initialisation depuis l'URL ────────────────────────────────────────────
+  onMount(() => {
+    const u = $page.url;
+    const urlQ    = u.searchParams.get('q') || '';
+    const urlMode = u.searchParams.get('mode') || '';
+
+    if (urlQ && !get(searchQuery)) searchQuery.set(urlQ);
+    if (urlMode === 'hybrid') mode = 'hybrid';
+
+    const level      = u.searchParams.get('level')      || '';
+    const chapter    = u.searchParams.get('chapter')    || '';
+    const subchapter = u.searchParams.get('subchapter') || '';
+    const module_    = u.searchParams.get('module')     || '';
+    if (level || chapter || subchapter || module_) {
+      filters.update(f => ({ ...f, level, chapter, subchapter, module: module_ }));
+    }
+
+    if (urlQ) {
+      if (urlMode === 'hybrid') runHybrid();
+      else                      runFts();
+    }
+  });
+
+  onDestroy(() => {
+    searchActions.search = _originalSearch;
+    abortCtrl?.abort();
+  });
+</script>
+
+<!-- ── Barre de recherche (SearchToolbar existant, réutilisé tel quel) ──────── -->
+<SearchToolbar
+  searchQueryStore={searchQuery}
+  onSearchInput={handleSearchInput}
+  loading={$loading || hybridLoading}
+  hasResults={$results.length > 0}
+  filtersButtonLabel="Filtres"
+  showFiltersButton={true}
+  {advancedFiltersOpen}
+  {onToggleFilters}
+  {onCloseAdvancedFilters}
+  {filtersExpanded}
+  {onToggleExpanded}
+  {hasSolution}
+  {hasIndication}
+  {onToggleSolution}
+  {onToggleIndication}
+  {canTogglePreview}
+  {previewToggleLabel}
+  {isPreviewOpen}
+  {onTogglePreview}
+/>
+
+<!-- ── Barre de mode (badge + suggestion hybride) ─────────────────────────── -->
+<div class="mode-bar" class:mode-bar--visible={hybridLoading || mode === 'hybrid' || showSuggest || ($results.length > 0 && mode === 'fts' && !$loading)}>
+
+  {#if hybridLoading}
+    <span class="mode-badge mode-badge--loading" role="status" aria-live="polite">
+      <span class="mode-spinner" aria-hidden="true"></span>
+      Recherche intelligente…
+    </span>
+
+  {:else if mode === 'hybrid'}
+    <span class="mode-badge mode-badge--hybrid" title="Résultats fusionnés : BM25 + vectoriel + rerank Albert">
+      Hybride
+    </span>
+    <button type="button" class="mode-link" on:click={() => { mode = 'fts'; runFts(); }}>
+      Mode rapide
+    </button>
+
+  {:else if showSuggest}
+    <span class="mode-hint">Aucun résultat exact —</span>
+    <button type="button" class="mode-link mode-link--suggest" on:click={runHybrid}>
+      Essayer la recherche intelligente
+    </button>
+
+  {:else if $results.length > 0 && mode === 'fts' && !$loading}
+    <span class="mode-badge mode-badge--fts" title="Recherche textuelle BM25 — Appuyez sur Entrée pour la version sémantique">
+      Rapide
+    </span>
+    <button type="button" class="mode-link" on:click={runHybrid} title="Relancer avec IA sémantique + rerank">
+      Recherche intelligente
+    </button>
+  {/if}
+
+</div>
+
+<!-- ── Panneau debug timing (affiché uniquement si ?debug=true) ────────────── -->
+{#if debugMode && timingInfo && mode === 'hybrid'}
+  <div class="debug-panel" aria-label="Détails de performance">
+    {#each Object.entries(timingInfo) as [key, val]}
+      <span class="debug-stat">
+        <code>{key}</code>{typeof val === 'number' ? ` ${val} ms` : ` ${val}`}
+      </span>
+    {/each}
+  </div>
+{/if}
+
+<style>
+  /* ── Barre de mode ─────────────────────────────────────────────────────── */
+  .mode-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 1.5rem;
+    margin-top: 0.3rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 150ms ease;
+  }
+  .mode-bar--visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mode-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 9999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    line-height: 1.6;
+  }
+
+  .mode-badge--fts {
+    @apply bg-sky-50 text-sky-700 border border-sky-200;
+  }
+  .mode-badge--hybrid {
+    @apply bg-violet-100 text-violet-700 border border-violet-200;
+  }
+  .mode-badge--loading {
+    @apply bg-violet-50 text-violet-600 border border-violet-200;
+  }
+
+  .mode-spinner {
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 1.5px solid transparent;
+    border-bottom-color: currentColor;
+    border-radius: 9999px;
+    animation: modeSpin 0.75s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes modeSpin { to { transform: rotate(360deg); } }
+
+  .mode-link {
+    font-size: 0.75rem;
+    color: theme('colors.brand.600', #2563eb);
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+  .mode-link:hover {
+    color: theme('colors.brand.800', #1e40af);
+    text-decoration-style: solid;
+  }
+  .mode-link--suggest {
+    font-weight: 500;
+  }
+
+  .mode-hint {
+    font-size: 0.8rem;
+    color: #6b7280;
+    white-space: nowrap;
+  }
+
+  /* ── Panneau debug ─────────────────────────────────────────────────────── */
+  .debug-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    padding: 0.3rem 0.6rem;
+    margin-top: 0.35rem;
+    border-radius: 0.375rem;
+    font-size: 0.68rem;
+    @apply bg-amber-50 border border-amber-200 text-amber-800;
+  }
+  .debug-stat {
+    display: inline-flex;
+    gap: 0.2rem;
+    align-items: baseline;
+  }
+  .debug-stat code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.67rem;
+    color: #92400e;
+  }
+</style>

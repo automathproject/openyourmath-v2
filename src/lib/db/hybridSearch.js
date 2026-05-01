@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 import { embed } from '../ia/albert.js';
 import { cosineTopK, loadVectorStore } from './vectorStore.js';
+import { rerankDocuments } from '../ia/rerank.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const DEFAULT_DB_PATH = path.resolve(__dirname, '../../../data/exercises.sqlite');
@@ -128,28 +129,51 @@ function hydrate(db, merged) {
   const uuids = merged.map(r => r.uuid);
   const placeholders = uuids.map(() => '?').join(',');
   const rows = db.prepare(`
-    SELECT uuid, title, level, module, chapter, subchapter, theme, difficulty, preview, summary
+    SELECT uuid, title, level, module, chapter, subchapter, theme, difficulty,
+           preview, summary, author, organization, license_code, license_url,
+           video_id, created_at, updated_at, hasIndication, hasSolution
     FROM exercises WHERE uuid IN (${placeholders})
   `).all(...uuids);
   const byUuid = new Map(rows.map(r => [r.uuid, r]));
-  return merged.map(({ uuid, rrfScore, rankBM25, scoreVector }) => {
+  return merged.map(({ uuid, rrfScore, rankBM25, scoreVector, rerankScore }) => {
     const row = byUuid.get(uuid);
     return {
       uuid,
-      title: row?.title ?? '',
-      level: row?.level ?? null,
-      module: row?.module ?? null,
-      chapter: row?.chapter ?? null,
-      subchapter: row?.subchapter ?? null,
-      theme: row?.theme ?? null,
-      difficulty: row?.difficulty ?? null,
-      preview: row?.preview ?? null,
-      summary: row?.summary ?? null,
-      score: rrfScore,
-      scoreBM25: rankBM25,
-      scoreVector
+      title:        row?.title        ?? '',
+      level:        row?.level        ?? null,
+      module:       row?.module       ?? null,
+      chapter:      row?.chapter      ?? null,
+      subchapter:   row?.subchapter   ?? null,
+      theme:        row?.theme        ?? null,
+      difficulty:   row?.difficulty   ?? null,
+      preview:      row?.preview      ?? null,
+      summary:      row?.summary      ?? null,
+      author:       row?.author       ?? null,
+      organization: row?.organization ?? null,
+      license_code: row?.license_code ?? null,
+      license_url:  row?.license_url  ?? null,
+      video_id:     row?.video_id     ?? null,
+      created_at:   row?.created_at   ?? null,
+      updated_at:   row?.updated_at   ?? null,
+      hasIndication: row?.hasIndication ?? 0,
+      hasSolution:   row?.hasSolution   ?? 0,
+      // scores intermédiaires — toujours présents, l'endpoint décide quoi exposer
+      score:        rrfScore,
+      scoreBM25:    rankBM25,
+      scoreVector,
+      rerankScore:  rerankScore ?? null
     };
   });
+}
+
+// Lecture légère title+summary pour les candidats du rerank (évite d'hydrater les colonnes inutiles).
+function lightFetch(db, uuids) {
+  if (uuids.length === 0) return new Map();
+  const placeholders = uuids.map(() => '?').join(',');
+  const rows = db.prepare(
+    `SELECT uuid, title, summary FROM exercises WHERE uuid IN (${placeholders})`
+  ).all(...uuids);
+  return new Map(rows.map(r => [r.uuid, r]));
 }
 
 function fetchByFiltersOnly(db, filters, limit) {
@@ -170,11 +194,28 @@ function fetchByFiltersOnly(db, filters, limit) {
  * @param {{ query?: string, filters?: object, limit?: number, retrievalK?: number }} options
  * @returns {Promise<Array>}
  */
+/**
+ * Recherche hybride FTS5 + vectorielle avec fusion RRF, et rerank optionnel.
+ *
+ * @param {{
+ *   query?: string,
+ *   filters?: object,
+ *   limit?: number,
+ *   retrievalK?: number,
+ *   rerank?: boolean,
+ *   rerankCandidates?: number,
+ *   _timing?: object  // optionnel : objet à peupler avec les temps par étape (pour le debug)
+ * }} options
+ * @returns {Promise<Array>}
+ */
 export async function hybridSearch({
   query = '',
   filters = {},
   limit = 20,
-  retrievalK = 50
+  retrievalK = 50,
+  rerank = false,
+  rerankCandidates = 50,
+  _timing = null
 } = {}) {
   const db = openDb();
   try {
@@ -185,7 +226,10 @@ export async function hybridSearch({
 
     // Query vide ou trop courte → résultats par filtres SQL uniquement
     if (!ftsQuery) {
-      return fetchByFiltersOnly(db, filters, limit);
+      const t0 = Date.now();
+      const results = fetchByFiltersOnly(db, filters, limit);
+      if (_timing) _timing.hydrateMs = Date.now() - t0;
+      return results;
     }
 
     // Filtrage SQL → Set d'UUIDs autorisés pour la recherche vectorielle
@@ -197,13 +241,18 @@ export async function hybridSearch({
     // Phase 2a + 2b en parallèle :
     // embed() lance une requête HTTP (async), BM25 s'exécute en synchrone pendant que
     // la requête est en vol — total ≈ max(BM25, embed) plutôt que BM25 + embed.
+    const embedStart = Date.now();
     const embedPromise = embed(trimmedQuery).catch(err => {
       console.warn('⚠️ Embed Albert échoué, continuation sans vectoriel:', err.message);
       return null;
     });
 
+    const bm25Start = Date.now();
     const bm25Results = runBM25(db, ftsQuery, filters, retrievalK);
+    if (_timing) _timing.bm25Ms = Date.now() - bm25Start;
+
     const queryVector = await embedPromise;
+    if (_timing) _timing.embedMs = Date.now() - embedStart;
 
     const vectorResults = queryVector
       ? cosineTopK(queryVector, retrievalK, allowedUuids)
@@ -213,8 +262,35 @@ export async function hybridSearch({
       return [];
     }
 
-    const merged = rrfMerge(bm25Results, vectorResults, limit);
-    return hydrate(db, merged);
+    // Taille du pool intermédiaire : rerankCandidates si rerank activé, sinon limit.
+    const poolSize = rerank ? rerankCandidates : limit;
+    const merged = rrfMerge(bm25Results, vectorResults, poolSize);
+    if (_timing) _timing.candidatesAfterRRF = merged.length;
+
+    if (!rerank) {
+      const t0 = Date.now();
+      const results = hydrate(db, merged);
+      if (_timing) _timing.hydrateMs = Date.now() - t0;
+      return results;
+    }
+
+    // Rerank : lecture légère title+summary pour les candidats uniquement,
+    // puis hydratation complète seulement pour les finalTopK retenus.
+    const lightMap = lightFetch(db, merged.map(r => r.uuid));
+    const candidates = merged.map(r => ({
+      ...r,
+      title:   lightMap.get(r.uuid)?.title   ?? '',
+      summary: lightMap.get(r.uuid)?.summary ?? ''
+    }));
+
+    const rerankStart = Date.now();
+    const reranked = await rerankDocuments(trimmedQuery, candidates);
+    if (_timing) _timing.rerankMs = Date.now() - rerankStart;
+
+    const t0 = Date.now();
+    const results = hydrate(db, reranked.slice(0, limit));
+    if (_timing) _timing.hydrateMs = Date.now() - t0;
+    return results;
   } finally {
     db.close();
   }
