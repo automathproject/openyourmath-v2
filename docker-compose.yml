@@ -30,6 +30,8 @@ services:
       - NODE_ENV=production
       - ORIGIN=https://openyourmath.org
       - PUBLIC_APP_VERSION=${APP_VERSION}
+      - ALBERT_API_KEY=${ALBERT_API_KEY}
+      - ALBERT_BASE_URL=${ALBERT_BASE_URL}
 
 # Définir les volumes nommés pour que Docker les gère automatiquement.
 volumes:
