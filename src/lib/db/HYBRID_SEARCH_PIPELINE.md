@@ -23,7 +23,12 @@ requête utilisateur
                        top-N              Albert API
                           │         (BAAI/bge-reranker-v2-m3)
                           │                    │
-                          │               re-tri + top-N
+                          │            re-tri des 50
+                          │                    │
+                          │          seuil relatif : score >= top * 0.05
+                          │          (élimine les hors-sujet)
+                          │                    │
+                          │               top-N restants
                           │                    │
                           └─────────┬──────────┘
                                     │
@@ -48,5 +53,6 @@ requête utilisateur
 - **Parallélisme** : `embed()` démarre avant `runBM25()` (synchrone). Le coût total est `max(BM25, embed)` et non `BM25 + embed`.
 - **Pool intermédiaire** : BM25 et vecteur récupèrent chacun top-50, RRF en fusionne ≤ 100, rerank en re-trie 50, hydrate en retourne N.
 - **Dégradation gracieuse** : si l'embed échoue (timeout, quota), la recherche continue sur BM25 seul. Si le rerank échoue, l'ordre RRF est conservé.
+- **Seuil dynamique rerank** : après le tri du cross-encoder, seuls les résultats avec `rerankScore >= topScore * 0.05` sont conservés. Cela élimine les résultats hors-sujet sans fixer de seuil absolu (le seuil s'adapte au score du meilleur résultat).
 - **Filtrages** : les filtres SQL s'appliquent côté BM25 (clause `WHERE`) et côté vectoriel (filtre `allowedUuids` en mémoire avant `cosineTopK`).
 - **Document rerank** : `"${title}\n${summary}"` — ~80 tokens, dans la fenêtre 512 du cross-encoder.
