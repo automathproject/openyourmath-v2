@@ -2,14 +2,15 @@
 <script>
   import '../app.css';
   import { env } from '$env/dynamic/public';
-  import { 
-    listCount, 
+  import {
+    listCount,
     listActions,
     exerciseList
   } from '$lib/stores/listStore.js';
   import { page } from '$app/stores';
   import { onMount } from 'svelte';
-  
+  import { goto } from '$app/navigation';
+
   let listUrl = '/exercise/list';
   let mobileMenuOpen = false;
   let headerScrolled = false;
@@ -56,10 +57,19 @@
   onMount(() => {
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('click', handleClickOutside);
-    
+
+    function handleKeydown(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        goto('/');
+      }
+    }
+    window.addEventListener('keydown', handleKeydown);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('click', handleClickOutside);
+      window.removeEventListener('keydown', handleKeydown);
     };
   });
 </script>
@@ -72,74 +82,65 @@
     class:header-scrolled={headerScrolled}
   >
     <div class="header-content">
+      <!-- Brand -->
       <div class="header-brand">
         <h1 class="brand-title">
           <a href="/" class="brand-link">
             <span class="brand-icon" aria-hidden="true"></span>
             <span>OpenYourMath</span>
-            <span class="brand-version">v{APP_VERSION}</span>
           </a>
         </h1>
       </div>
-      
-      <!-- Navigation desktop -->
-      <nav class="desktop-nav">
-        <a 
-          href="/" 
-          class="nav-link"
-          class:nav-link--active={isHomePage}
-          aria-label="Rechercher des exercices"
-          title="Rechercher des exercices"
-        >
-          <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          <span class="nav-text">Rechercher</span>
-        </a>
-        
-        <a 
+
+      <!-- Barre de recherche centrale -->
+      <a
+        href="/"
+        class="header-search-btn"
+        aria-label="Rechercher un exercice"
+      >
+        <svg class="header-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <span class="header-search-placeholder">Rechercher un exercice...</span>
+        <kbd class="header-search-kbd">⌘K</kbd>
+      </a>
+
+      <div class="header-actions">
+        <!-- À propos (desktop) -->
+        <a
           href="/about"
-          class="nav-link"
+          class="nav-link desktop-about-link"
           class:nav-link--active={$page.route.id === '/about'}
         >
           <span class="nav-text">À propos</span>
         </a>
-              </nav>
 
-      <div class="header-actions">
-        <!-- Lien recherche visible sur mobile (icône seule) -->
-        <a 
-          href="/"
-          class="nav-link mobile-search-link"
-          aria-label="Rechercher des exercices"
-          title="Rechercher des exercices"
-        >
-          <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          <span class="nav-text">Rechercher</span>
-        </a>
-        <a 
+        <!-- CTA Ma liste -->
+        <a
           href={listUrl}
-          class="nav-link nav-link--list"
-          class:nav-link--active={isListPage}
+          class="header-cta-btn"
+          class:header-cta-btn--active={isListPage}
           title={listDescription}
         >
-          <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-          
-          <span class="nav-text">Ma liste</span>
-          
+          <span>Ma liste</span>
           {#if $listCount > 0}
-            <span class="list-counter">
-              {$listCount}
-            </span>
+            <span class="header-cta-badge">{$listCount}</span>
           {/if}
         </a>
 
+        <!-- Bouton recherche mobile (icône seule) -->
+        <a
+          href="/"
+          class="mobile-search-icon-btn mobile-nav-visible"
+          aria-label="Rechercher un exercice"
+        >
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </a>
+
         <!-- Bouton menu mobile -->
-        <button 
+        <button
           class="mobile-menu-button mobile-nav"
           class:mobile-menu-button--open={mobileMenuOpen}
           on:click={() => mobileMenuOpen = !mobileMenuOpen}
@@ -152,30 +153,18 @@
       </div>
     </div>
 
-    <!-- Menu mobile -->
+    <!-- Menu mobile : À propos uniquement -->
     {#if mobileMenuOpen}
       <div class="mobile-menu mobile-nav">
         <div class="mobile-menu-content">
-          <a 
-            href="/" 
-            class="mobile-nav-link"
-            class:mobile-nav-link--active={isHomePage}
-            on:click={() => mobileMenuOpen = false}
-          >
-            <svg class="mobile-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <span>Recherche</span>
-          </a>
-          
-          <a 
+          <a
             href="/about"
             class="mobile-nav-link"
             class:mobile-nav-link--active={$page.route.id === '/about'}
             on:click={() => mobileMenuOpen = false}
           >
             <svg class="mobile-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             <span>À propos</span>
           </a>
@@ -330,20 +319,63 @@
   }
   
   /* ==============================================
-     DESKTOP NAVIGATION & ACTIONS
+     HEADER SEARCH BAR
      ============================================== */
-  
-  .desktop-nav {
+
+  .header-search-btn {
+    flex: 1;
+    max-width: 380px;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 0.5rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    background: white;
+    cursor: text;
+    text-align: left;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    @apply border-gray-200 hover:border-brand-primary;
   }
-  
-  /* NOUVEAU STYLE : Conteneur pour les actions à droite */
+
+  .header-search-btn:hover {
+    box-shadow: 0 0 0 3px theme('colors.brand.50');
+    @apply border-brand-primary;
+  }
+
+  .header-search-icon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    @apply text-gray-400;
+  }
+
+  .header-search-placeholder {
+    flex: 1;
+    font-size: 0.875rem;
+    @apply text-gray-400;
+  }
+
+  .header-search-kbd {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.25rem;
+    font-size: 0.7rem;
+    font-family: monospace;
+    line-height: 1.4;
+    @apply bg-gray-100 text-gray-400 border border-gray-200;
+  }
+
+  /* ==============================================
+     HEADER ACTIONS (right side)
+     ============================================== */
+
   .header-actions {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Espace entre l'icône liste et le bouton hamburger */
+    gap: 0.5rem;
+    flex-shrink: 0;
   }
 
   .nav-link {
@@ -357,52 +389,59 @@
     transition: color 0.2s ease;
     @apply text-interface-text-secondary hover:text-interface-text-primary;
   }
-  
+
   .nav-link--active {
     @apply text-brand-primary;
   }
-  
-  .nav-link--active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: theme('colors.brand.primary');
-    border-radius: 1px;
-  }
-  
-  .nav-link--list {
-    position: relative;
-  }
-  
-  .nav-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    flex-shrink: 0;
-  }
-  
+
   .nav-text {
     font-size: 0.875rem;
   }
 
-  .list-counter {
-    /* Style pour le compteur, vous pouvez l'ajuster */
-    position: absolute;
-    top: -2px;
-    right: -8px;
-    background-color: theme('colors.brand.primary');
-    @apply text-white;
-    border-radius: 50%;
-    width: 1rem;
-    height: 1rem;
-    font-size: 0.625rem;
-    display: flex;
+  /* CTA "Ma liste" */
+  .header-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    @apply bg-brand-500 text-white hover:bg-brand-600;
+  }
+
+  .header-cta-btn--active {
+    @apply bg-brand-600;
+  }
+
+  .header-cta-badge {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
-    border: 1px solid white;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    padding: 0 0.25rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    @apply bg-white text-brand-600;
+  }
+
+  /* Bouton recherche mobile (icône seule) */
+  .mobile-search-icon-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+    @apply text-interface-text-secondary hover:bg-gray-100 hover:text-interface-text-primary;
   }
   
   /* ==============================================
@@ -697,55 +736,59 @@
   
   /* Mobile: < 768px */
   @media (max-width: 767px) {
-    .desktop-nav {
+    .header-search-btn {
       display: none;
-    }
-    
-    .mobile-menu-button {
-      display: flex; /* Le bouton hamburger devient visible */
     }
 
-    /* MODIFIÉ : On masque le texte du lien de la liste, mais pas l'icône */
-    .nav-link--list .nav-text {
+    .mobile-search-icon-btn {
+      display: flex;
+    }
+
+    .mobile-menu-button {
+      display: flex;
+    }
+
+    .desktop-about-link {
       display: none;
     }
-    
+
+    /* Sur mobile, masquer le texte "Ma liste" pour économiser l'espace */
+    .header-cta-btn span:first-child {
+      display: none;
+    }
+
     .header-content {
       padding: 0 1rem;
-      gap: 0.75rem;
+      gap: 0.5rem;
     }
-    
+
     .main-content {
       padding: 0;
     }
-    
+
     .brand-title {
       font-size: 1.25rem;
     }
-    
+
     .header-scrolled .brand-title {
       font-size: 1.125rem;
     }
-
-    /* Lien recherche mobile visible (icône), texte masqué */
-    .mobile-search-link { display: flex !important; }
-    .mobile-search-link .nav-text { display: none; }
   }
-  
+
   /* Tablet: 768px - 1023px */
   @media (min-width: 768px) and (max-width: 1023px) {
-    .nav-link--list .nav-text {
+    .header-search-btn {
+      max-width: 260px;
+    }
+
+    .header-search-kbd {
       display: none;
     }
-    
-    .desktop-nav {
-      gap: 1.5rem;
-    }
-    
+
     .header-content {
       padding: 0 1.5rem;
     }
-    
+
     .main-content {
       padding: 0;
     }
@@ -762,9 +805,6 @@
     }
   }
 
-  /* Masquer le lien recherche mobile par défaut (affiché via MQ mobile) */
-  .mobile-search-link { display: none; }
-  
   /* Large screens: ≥ 1280px */
   @media (min-width: 1280px) {
     .header-content {

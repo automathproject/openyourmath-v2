@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte';
   import AdvancedFiltersPopover from '$lib/components/search/AdvancedFiltersPopover.svelte';
 
   export let searchQueryStore;
@@ -22,6 +23,8 @@
   export let onToggleExpanded = () => {};
 
   let inputEl;
+
+  onMount(() => inputEl?.focus());
 
   function clearSearch() {
     searchQueryStore.set('');
