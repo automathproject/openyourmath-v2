@@ -1,0 +1,17 @@
+node_modules
+.pnpm-store
+--force
+
+build
+.svelte-kit
+package
+
+cache
+data
+static/artifacts
+
+content
+reports
+
+*.log
+pnpm-lock.yaml

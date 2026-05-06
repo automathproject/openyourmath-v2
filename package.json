@@ -38,6 +38,10 @@
     "cache:embeddings:restore": "node scripts/ia/restore-embedding-cache.js",
     "cache:embeddings:stats": "node scripts/ia/cache-stats.js",
     "cache:embeddings:check": "node scripts/ia/cache-stats.js --verbose",
+    "db:snapshot:pack": "node scripts/ia/db-snapshot.js pack",
+    "db:snapshot:publish": "node scripts/ia/db-snapshot.js publish",
+    "db:snapshot:download": "node scripts/ia/db-snapshot.js download",
+    "db:snapshot:restore": "node scripts/ia/db-snapshot.js restore && pnpm cache:embeddings:restore",
     "test": "vitest",
     "test:build": "vitest run tests/build/",
     "test:integration": "playwright test",
@@ -45,7 +49,9 @@
     "docker:push": "docker push ghcr.io/automathproject/openyourmath:$npm_package_version",
     "docker:release": "pnpm docker:build && pnpm docker:push",
     "docker:dev": "APP_VERSION=$npm_package_version docker compose up",
-    "docker:prod": "APP_VERSION=$npm_package_version docker compose up -d"
+    "docker:prod": "APP_VERSION=$npm_package_version docker compose up -d",
+    "format": "prettier --write --ignore-unknown .",
+    "format:check": "prettier --check --ignore-unknown ."
   },
   "_comment_devDependencies": "SvelteKit + Tailwind + Vite + tests",
   "devDependencies": {
@@ -58,6 +64,8 @@
     "autoprefixer": "^10.4.20",
     "dotenv": "^17.4.2",
     "postcss": "^8.4.49",
+    "prettier": "^3.8.3",
+    "prettier-plugin-svelte": "^3.5.1",
     "svelte": "^5.14.3",
     "tailwindcss": "^3.4.17",
     "vite": "^5.4.19",

@@ -18,6 +18,7 @@ cache/embeddings/
 
 Chaque fichier de cache contient le `content_hash` (SHA256 des blocs sémantiques
 de l'exercice). Lors du chargement, ce hash est comparé à celui en base :
+
 - **Correspondance** → embedding utilisé tel quel
 - **Divergence** → cache ignoré, l'embedding sera recalculé au prochain `pnpm index:exercises`
 
@@ -28,15 +29,40 @@ Cela garantit qu'un exercice modifié ne réutilisera pas un embedding périmé.
 La DB contient déjà tous les vecteurs. Le script `cache:embeddings:restore` les exporte
 vers `cache/embeddings/` sans aucun appel API :
 
-```bash
-# 1. Récupérer la DB depuis la machine de référence
-rsync -avz machine1:~/openyourmath-v2/data/exercises.sqlite data/
+Prérequis :
 
-# 2. Reconstruire le cache local depuis la DB
-pnpm cache:embeddings:restore
+- Node 22 actif (`source ~/.nvm/nvm.sh && nvm use`)
+- dépendances installées (`pnpm install`)
+- GitHub CLI installé et connecté (`gh auth login`)
+
+```bash
+# 1. Ancienne machine : créer et publier un snapshot GitHub Release
+pnpm build:content
+pnpm index:exercises
+pnpm db:snapshot:pack
+pnpm db:snapshot:publish
+
+# 2. Nouvelle machine : télécharger la DB et restaurer le cache local
+pnpm db:snapshot:download
+pnpm db:snapshot:restore
 
 # 3. Lancer l'indexation — les exercices déjà embeddés sont skippés
 pnpm index:exercises
+```
+
+Par défaut, ces commandes utilisent le tag `db-snapshot-dev` et l'archive
+`data/openyourmath-db-snapshot.tgz`. Le snapshot est une copie SQLite cohérente
+produite avec `VACUUM INTO`, ce qui évite les problèmes liés aux fichiers WAL
+(`data/exercises.sqlite-wal`, `data/exercises.sqlite-shm`).
+
+Pour nommer un snapshot daté :
+
+```bash
+pnpm db:snapshot:pack data/openyourmath-db-20260506.tgz
+pnpm db:snapshot:publish db-snapshot-20260506 data/openyourmath-db-20260506.tgz
+
+pnpm db:snapshot:download db-snapshot-20260506 data/openyourmath-db-20260506.tgz
+pnpm db:snapshot:restore data/openyourmath-db-20260506.tgz
 ```
 
 ## Alternative : rsync du cache
@@ -75,11 +101,11 @@ Exemple de sortie :
 
 ## Ce qui est versionné vs ce qui ne l'est pas
 
-| Artefact | Versionné Git | Cache local | Régénérable |
-|---|---|---|---|
-| `content/metadata/**/*.json` | ✅ oui | — | Via LLM (Ollama ou Albert) |
-| `cache/embeddings/{uuid}.json` | ❌ non | ✅ oui | Via `pnpm cache:embeddings:restore` (depuis DB) ou Ollama/Albert |
-| `data/exercises.sqlite` | ❌ non | — | Via `pnpm build:db` + `pnpm index:exercises` |
+| Artefact                       | Versionné Git | Cache local | Régénérable                                                      |
+| ------------------------------ | ------------- | ----------- | ---------------------------------------------------------------- |
+| `content/metadata/**/*.json`   | ✅ oui        | —           | Via LLM (Ollama ou Albert)                                       |
+| `cache/embeddings/{uuid}.json` | ❌ non        | ✅ oui      | Via `pnpm cache:embeddings:restore` (depuis DB) ou Ollama/Albert |
+| `data/exercises.sqlite`        | ❌ non        | —           | Via `pnpm build:db` + `pnpm index:exercises`                     |
 
 ## Régénération complète sans cache
 

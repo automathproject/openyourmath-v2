@@ -56,6 +56,7 @@ docker compose down
 ```
 
 Notes:
+
 - `pnpm docker:build` et `pnpm docker:push` existent aussi si vous voulez séparer les étapes.
 - Le tag Docker et la version affichée dans l'UI sont pilotés par `package.json` (`version`), sans variable `VERSION=...` à saisir manuellement.
 
@@ -91,6 +92,40 @@ node scripts/index-exercises.js --dry-run   # simuler sans écrire
 
 Les résumés générés sont versionnés dans `content/metadata/` et commités dans git.
 Les embeddings restent en local dans `cache/embeddings/` et dans la DB.
+
+## Changement de machine
+
+Les fichiers `data/` et `cache/` ne sont pas versionnés. Pour éviter de recalculer
+tous les embeddings sur une nouvelle machine, transférer un snapshot de la DB via
+une GitHub Release :
+
+```bash
+# Ancienne machine
+source ~/.nvm/nvm.sh
+nvm use
+pnpm install
+pnpm build:content
+pnpm index:exercises
+pnpm db:snapshot:pack
+pnpm db:snapshot:publish
+```
+
+```bash
+# Nouvelle machine
+source ~/.nvm/nvm.sh
+nvm use
+pnpm install
+pnpm db:snapshot:download
+pnpm db:snapshot:restore
+pnpm cache:embeddings:stats
+pnpm dev
+```
+
+Prérequis : Node 22 (`.nvmrc`) et `gh` connecté (`gh auth login`). Par défaut,
+les commandes utilisent le tag `db-snapshot-dev` et l'archive locale ignorée par
+Git `data/openyourmath-db-snapshot.tgz`.
+
+Voir aussi : [docs/embeddings-sync.md](docs/embeddings-sync.md).
 
 ## Structure
 

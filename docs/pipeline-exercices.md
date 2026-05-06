@@ -11,6 +11,7 @@ Sources LaTeX → Parsing → Cache → Compilation TikZ → Base SQLite → [Op
 ```
 
 **Caractéristiques principales :**
+
 - Construction incrémentale basée sur des hash SHA256 (ne retraite que les fichiers modifiés)
 - Double pipeline : Pipeline A (traitement du contenu) et Pipeline B (indexation sémantique)
 - Traçabilité du fichier primaire via `source_path`, conservée dans le cache, la base SQLite et les métadonnées sémantiques
@@ -22,6 +23,7 @@ Sources LaTeX → Parsing → Cache → Compilation TikZ → Base SQLite → [Op
 ## 1. Sources de données
 
 ### Exercices LaTeX
+
 **Chemin :** [content/exercises/](content/exercises/)
 
 Chaque exercice est un fichier `.tex` organisé par dossier (ex. `amscc/`, `exo7/`). Structure d'un fichier `.tex` :
@@ -56,19 +58,21 @@ Chaque exercice est un fichier `.tex` organisé par dossier (ex. `amscc/`, `exo7
 Le chemin relatif au dossier `content/exercises/` est conservé comme identifiant de provenance `source_path`.
 Exemples :
 
-| Fichier primaire | `source_path` |
-|---|---|
-| `content/exercises/amscc/2F9q.tex` | `amscc/2F9q.tex` |
+| Fichier primaire                       | `source_path`        |
+| -------------------------------------- | -------------------- |
+| `content/exercises/amscc/2F9q.tex`     | `amscc/2F9q.tex`     |
 | `content/exercises/exo7/8-L3/0VzY.tex` | `exo7/8-L3/0VzY.tex` |
 
 Ce chemin sert ensuite à rattacher le cache, les images et les métadonnées sémantiques au même fichier source.
 
 ### Métadonnées auteurs
+
 **Fichier :** [content/authors.json](content/authors.json)
 
 Contient pour chaque auteur : pseudo, prénom, nom, email, organisation, code licence et URL licence. Utilisé pour la résolution des noms lors de la construction de la base.
 
 ### Variables d'environnement
+
 **Fichier :** `.env`
 
 ```env
@@ -99,13 +103,13 @@ Ollama est interrogé en priorité au démarrage de `index-exercises.js`. Si le 
 
 2. **Extraction des blocs de contenu** dans l'ordre d'apparition :
 
-   | Commande LaTeX | Type de bloc |
-   |---|---|
-   | `\texte{...}` | `text` |
-   | `\question{...}` | `question` |
+   | Commande LaTeX     | Type de bloc |
+   | ------------------ | ------------ |
+   | `\texte{...}`      | `text`       |
+   | `\question{...}`   | `question`   |
    | `\indication{...}` | `indication` |
-   | `\reponse{...}` | `reponse` |
-   | `\code{...}` | `code` |
+   | `\reponse{...}`    | `reponse`    |
+   | `\code{...}`       | `code`       |
 
 3. **Traitement des artefacts** :
    - **TikZ** : extraction des environnements `tikzpicture` → stockage en JSON, placeholder `<img>` pour compilation ultérieure
@@ -155,28 +159,28 @@ Pour chaque bloc TikZ référencé dans les artefacts, le script compile le code
 
 #### Table `exercises`
 
-| Colonne | Type | Description |
-|---|---|---|
-| `uuid` | TEXT PK | Identifiant unique de l'exercice |
-| `title` | TEXT | Titre |
-| `chapter` | TEXT | Chapitre |
-| `subchapter` | TEXT | Sous-chapitre |
-| `theme` | TEXT | Thèmes (séparés par virgule) |
-| `level` | TEXT | Niveau (L1, L2, L3, ...) |
-| `difficulty` | INTEGER | Difficulté (1–5) |
-| `module` | TEXT | Module |
-| `content_json` | TEXT | Blocs de contenu sérialisés en JSON |
-| `source_path` | TEXT | Chemin relatif du `.tex` source depuis `content/exercises/` |
-| `source_hash` | TEXT | Hash SHA256 du fichier `.tex` |
-| `content_hash` | TEXT | Hash SHA256 des blocs sémantiques (Pipeline A) |
-| `summary` | TEXT | Résumé généré par LLM (Pipeline B) |
-| `concepts` | TEXT | Concepts théoriques en JSON (Pipeline B) |
-| `methods` | TEXT | Méthodes de résolution en JSON (Pipeline B) |
-| `objects` | TEXT | Objets mathématiques en JSON (Pipeline B) |
-| `indexed_at` | TEXT | Timestamp de dernière indexation sémantique |
-| `preview` | TEXT | Aperçu HTML du premier bloc |
-| `hasIndication` | INTEGER | Flag booléen |
-| `hasSolution` | INTEGER | Flag booléen |
+| Colonne         | Type    | Description                                                 |
+| --------------- | ------- | ----------------------------------------------------------- |
+| `uuid`          | TEXT PK | Identifiant unique de l'exercice                            |
+| `title`         | TEXT    | Titre                                                       |
+| `chapter`       | TEXT    | Chapitre                                                    |
+| `subchapter`    | TEXT    | Sous-chapitre                                               |
+| `theme`         | TEXT    | Thèmes (séparés par virgule)                                |
+| `level`         | TEXT    | Niveau (L1, L2, L3, ...)                                    |
+| `difficulty`    | INTEGER | Difficulté (1–5)                                            |
+| `module`        | TEXT    | Module                                                      |
+| `content_json`  | TEXT    | Blocs de contenu sérialisés en JSON                         |
+| `source_path`   | TEXT    | Chemin relatif du `.tex` source depuis `content/exercises/` |
+| `source_hash`   | TEXT    | Hash SHA256 du fichier `.tex`                               |
+| `content_hash`  | TEXT    | Hash SHA256 des blocs sémantiques (Pipeline A)              |
+| `summary`       | TEXT    | Résumé généré par LLM (Pipeline B)                          |
+| `concepts`      | TEXT    | Concepts théoriques en JSON (Pipeline B)                    |
+| `methods`       | TEXT    | Méthodes de résolution en JSON (Pipeline B)                 |
+| `objects`       | TEXT    | Objets mathématiques en JSON (Pipeline B)                   |
+| `indexed_at`    | TEXT    | Timestamp de dernière indexation sémantique                 |
+| `preview`       | TEXT    | Aperçu HTML du premier bloc                                 |
+| `hasIndication` | INTEGER | Flag booléen                                                |
+| `hasSolution`   | INTEGER | Flag booléen                                                |
 
 #### Table `exercise_authors`
 
@@ -227,9 +231,9 @@ Les appels LLM sont coûteux. Les métadonnées générées (`summary`, `concept
 
 Le rangement suit maintenant l'arborescence du fichier primaire :
 
-| `source_path` | Métadonnée versionnée |
-|---|---|
-| `amscc/2F9q.tex` | `content/metadata/amscc/2F9q.json` |
+| `source_path`        | Métadonnée versionnée                  |
+| -------------------- | -------------------------------------- |
+| `amscc/2F9q.tex`     | `content/metadata/amscc/2F9q.json`     |
 | `exo7/8-L3/0VzY.tex` | `content/metadata/exo7/8-L3/0VzY.json` |
 
 Les anciens fichiers plats `content/metadata/{uuid}.json` restent lisibles par compatibilité, mais les nouvelles générations utilisent l'arborescence miroir.
@@ -259,19 +263,19 @@ Voir [docs/embeddings-sync.md](docs/embeddings-sync.md) pour le workflow multi-m
 
 Au démarrage, `index-exercises.js` interroge Ollama via `checkOllamaAvailable()` :
 
-| Condition | Chat (résumé) | Embedding |
-|---|---|---|
-| Ollama disponible + modèle installé | Ollama (`OLLAMA_CHAT_MODEL`) | Ollama (`OLLAMA_EMBED_MODEL`) |
-| Ollama indisponible ou modèle absent | Albert (`Mistral-Small-3.2-24B`) | Albert (`BAAI/bge-m3`) |
+| Condition                            | Chat (résumé)                    | Embedding                     |
+| ------------------------------------ | -------------------------------- | ----------------------------- |
+| Ollama disponible + modèle installé  | Ollama (`OLLAMA_CHAT_MODEL`)     | Ollama (`OLLAMA_EMBED_MODEL`) |
+| Ollama indisponible ou modèle absent | Albert (`Mistral-Small-3.2-24B`) | Albert (`BAAI/bge-m3`)        |
 
 Les modèles sont configurés dans `.env`. Les vecteurs produits par `bge-m3` via Ollama et via Albert sont identiques (même modèle).
 
 **Modèles Albert de référence :**
 
-| Usage | Modèle |
-|---|---|
-| Embedding | `BAAI/bge-m3` (1024 dims) |
-| Reranker | `BAAI/bge-reranker-v2-m3` |
+| Usage         | Modèle                                          |
+| ------------- | ----------------------------------------------- |
+| Embedding     | `BAAI/bge-m3` (1024 dims)                       |
+| Reranker      | `BAAI/bge-reranker-v2-m3`                       |
 | Chat (résumé) | `mistralai/Mistral-Small-3.2-24B-Instruct-2506` |
 
 ### Processus de résumé
@@ -307,7 +311,13 @@ Les erreurs non-quota sont persistées dans `cache/index-errors.json` après cha
   "run_at": "2026-04-29T10:00:00.000Z",
   "total": 8580,
   "erreurs": [
-    { "position": 148, "uuid": "C6J8", "title": "exo7 323", "message": "...", "at": "..." }
+    {
+      "position": 148,
+      "uuid": "C6J8",
+      "title": "exo7 323",
+      "message": "...",
+      "at": "..."
+    }
   ]
 }
 ```
@@ -324,11 +334,11 @@ Les exercices en erreur gardent `indexed_at IS NULL` et sont automatiquement rep
 
 La base est ouverte en **lecture seule** au runtime (mode WAL + memory mapping).
 
-| Fichier | Rôle |
-|---|---|
-| [connection.js](src/lib/db/connection.js) | Singleton de connexion SQLite |
-| [queries.js](src/lib/db/queries.js) | Recherche FTS5, filtres, pagination |
-| [stats.js](src/lib/db/stats.js) | Statistiques par chapitre/module/niveau |
+| Fichier                                   | Rôle                                    |
+| ----------------------------------------- | --------------------------------------- |
+| [connection.js](src/lib/db/connection.js) | Singleton de connexion SQLite           |
+| [queries.js](src/lib/db/queries.js)       | Recherche FTS5, filtres, pagination     |
+| [stats.js](src/lib/db/stats.js)           | Statistiques par chapitre/module/niveau |
 
 ---
 
@@ -367,6 +377,12 @@ pnpm build:stats          # Compte .tex, .json cache, exercices en DB
 pnpm cache:embeddings:restore   # Reconstruit cache/embeddings/ depuis la DB (utile sur nouvelle machine)
 pnpm cache:embeddings:stats     # Statistiques du cache local
 pnpm cache:embeddings:check     # Rapport détaillé avec incohérences cache ↔ DB
+
+# Snapshot DB pour transfert entre machines (via GitHub Release + gh)
+pnpm db:snapshot:pack           # Crée data/openyourmath-db-snapshot.tgz
+pnpm db:snapshot:publish        # Publie l'archive sur le tag db-snapshot-dev
+pnpm db:snapshot:download       # Télécharge l'archive depuis db-snapshot-dev
+pnpm db:snapshot:restore        # Restaure data/exercises.sqlite puis cache/embeddings/
 
 # Maintenance
 pnpm authors:add-exo7-license   # Mise à jour licences auteurs
@@ -423,20 +439,24 @@ pnpm reset                      # clean + build:content:full
 ## 9. Points d'attention et limites connues
 
 ### Robustesse
+
 - **La compilation TikZ** échoue silencieusement : les erreurs sont capturées mais ne bloquent pas le pipeline. Un exercice avec un TikZ défectueux sera quand même inséré en base, mais sans visuel.
 - **Le Pipeline B n'est pas déclenché automatiquement** : il faut appeler manuellement le script de résumé/embedding. Seul le flag `indexed_at IS NULL` signale les exercices à traiter.
 - **Le parsing des auteurs** comporte plusieurs niveaux de fallback avec une logique d'inversion de nom ajoutée récemment, ce qui indique des cas limites non couverts par le format d'origine.
 
 ### Performance
+
 - Le parsing LaTeX et la construction de la base sont **séquentiels** (pas de parallélisme entre exercices).
 - Le cache incrémental ne détecte que les changements de fichiers `.tex` — une modification de `authors.json` ou de la configuration nécessite un rebuild complet.
 - L'optimisation FTS5 (`optimize`) est effectuée en fin de build ; sur de grandes bases, un rebuild partiel laisse l'index non optimisé.
 
 ### Migration de schéma
+
 - Les migrations de colonnes sont gérées manuellement dans `build-db.js` (fonction `runMigrations`). Il n'y a pas de framework de migration versionné — les évolutions de schéma doivent être ajoutées manuellement à cette fonction.
 - La colonne `source_path` est ajoutée automatiquement aux bases existantes. Pour les caches anciens, `build-db.js` la reconstruit depuis le chemin du JSON sous `cache/exercises/`.
 
 ### Dépendances externes requises
+
 - **Pandoc** : doit être installé sur le système pour la conversion LaTeX → HTML
 - **LaTeX** (pdflatex/lualatex) : requis pour la compilation TikZ → SVG
 - **SQLite avec FTS5** : le fallback sur table indexée classique est prévu mais la recherche plein-texte sera dégradée
