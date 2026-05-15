@@ -3,15 +3,15 @@
 // mais ne les injecte pas dans process.env pour le code SSR. Les modules $lib/ia/*
 // et $lib/db/* lisent process.env (pour fonctionner aussi en scripts Node standalone) —
 // on fait le pont ici, une seule fois au démarrage du serveur.
-import {
-  ALBERT_API_KEY,
-  ALBERT_BASE_URL,
-  OLLAMA_BASE_URL,
-  OLLAMA_CHAT_MODEL,
-  OLLAMA_EMBED_MODEL
-} from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
-const BRIDGE = { ALBERT_API_KEY, ALBERT_BASE_URL, OLLAMA_BASE_URL, OLLAMA_CHAT_MODEL, OLLAMA_EMBED_MODEL };
+const BRIDGE = {
+  ALBERT_API_KEY: env.ALBERT_API_KEY,
+  ALBERT_BASE_URL: env.ALBERT_BASE_URL,
+  OLLAMA_BASE_URL: env.OLLAMA_BASE_URL,
+  OLLAMA_CHAT_MODEL: env.OLLAMA_CHAT_MODEL,
+  OLLAMA_EMBED_MODEL: env.OLLAMA_EMBED_MODEL
+};
 for (const [key, value] of Object.entries(BRIDGE)) {
   if (value && !process.env[key]) process.env[key] = value;
 }
