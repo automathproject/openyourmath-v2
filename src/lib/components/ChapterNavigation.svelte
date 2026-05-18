@@ -230,12 +230,12 @@
   }
 </script>
 
-<div class="p-4 bg-white rounded-lg border shadow-sm">
+<div class="p-4 bg-interface-bg-white rounded-lg border border-interface-border-primary shadow-card">
   <!-- En-tête de la navigation -->
   <div class="flex items-center justify-between mb-4">
-    <h3 class="font-bold text-gray-800">{compact ? 'Navigation' : 'Navigation hiérarchique'}</h3>
+    <h3 class="font-bold text-interface-text-primary">{compact ? 'Navigation' : 'Navigation hiérarchique'}</h3>
     {#if selectedPath.level || selectedPath.module || selectedPath.chapter}
-      <button on:click={clearSelection} class="btn-icon text-gray-500 hover:text-gray-800" title="Effacer la sélection">
+      <button on:click={clearSelection} class="btn-icon text-interface-text-muted hover:text-interface-text-primary" title="Effacer la sélection">
         ✕
       </button>
     {/if}
@@ -243,7 +243,7 @@
 
   <!-- Fil d'Ariane pour la sélection active (non compact) -->
   {#if (selectedPath.level || selectedPath.module || selectedPath.chapter) && !compact}
-    <div class="text-sm text-gray-600 bg-gray-50 p-2 rounded-md mb-4 truncate">
+    <div class="text-sm text-interface-text-secondary bg-interface-bg-secondary p-2 rounded-md mb-4 truncate">
       {#if selectedPath.level}<span class="text-brand-700">🎓 {selectedPath.level}</span>{/if}
       {#if selectedPath.module} › <span class="text-brand-700">📖 {selectedPath.module}</span>{/if}
       {#if selectedPath.chapter} › <span class="text-brand-700">📚 {selectedPath.chapter}</span>{/if}
@@ -254,14 +254,14 @@
   <!-- Contenu principal -->
   <div class="space-y-1">
     {#if loading}
-      <div class="text-center text-gray-500 py-4">Chargement de la hiérarchie...</div>
+      <div class="text-center text-interface-text-muted py-4">Chargement de la hiérarchie...</div>
     {:else if error}
       <div class="p-3 bg-red-50 text-red-700 rounded-md text-sm">
         {error}
         <button on:click={loadHierarchicalStructure} class="font-semibold underline mt-2">Réessayer</button>
       </div>
     {:else if hierarchyStructure.length === 0}
-      <div class="text-center text-gray-500 py-4">Aucune donnée disponible</div>
+      <div class="text-center text-interface-text-muted py-4">Aucune donnée disponible</div>
     {:else}
       <!-- Boucle sur les Niveaux -->
       {#each hierarchyStructure as level (level.name)}
@@ -270,7 +270,7 @@
             {#if level.modules.length > 0}
               <span class="transform transition-transform duration-200">{expandedLevels.has(level.name) ? '▼' : '▶'}</span>
             {:else}
-              <span class="text-gray-300">-</span>
+              <span class="text-interface-text-disabled">-</span>
             {/if}
           </button>
           <div class="nav-item-content" on:click={() => selectPath(level.name)}>
@@ -287,7 +287,7 @@
                   {#if module.chapters.length > 0}
                     <span class="transform transition-transform duration-200">{expandedModules.has(`${level.name}-${module.name}`) ? '▼' : '▶'}</span>
                   {:else}
-                    <span class="text-gray-300">-</span>
+                    <span class="text-interface-text-disabled">-</span>
                   {/if}
                 </button>
                 <div class="nav-item-content" on:click={() => selectPath(level.name, module.name)}>
@@ -304,7 +304,7 @@
                         {#if chapter.subchapters.length > 0}
                           <span class="transform transition-transform duration-200">{expandedChapters.has(`${level.name}-${module.name}-${chapter.name}`) ? '▼' : '▶'}</span>
                         {:else}
-                           <span class="text-gray-300">-</span>
+                           <span class="text-interface-text-disabled">-</span>
                         {/if}
                       </button>
                       <div class="nav-item-content" on:click={() => selectPath(level.name, module.name, chapter.name)}>
@@ -320,7 +320,7 @@
                             class="nav-item" 
                             class:is-active={selectedPath.subchapter === subchapter.name && selectedPath.chapter === chapter.name}
                             on:click={() => selectPath(level.name, module.name, chapter.name, subchapter.name)}>
-                            <span class="w-7 text-center text-gray-300">-</span>
+                            <span class="w-7 text-center text-interface-text-disabled">-</span>
                             <div class="nav-item-content">
                               {subchapter.name} ({subchapter.exerciseCount})
                             </div>
@@ -340,7 +340,7 @@
 
   <!-- Actions (non compact) -->
   {#if !compact && hierarchyStructure.length > 0}
-    <div class="mt-4 pt-4 border-t border-gray-200 flex items-center gap-2">
+    <div class="mt-4 pt-4 border-t border-interface-border-primary flex items-center gap-2">
       <button on:click={expandAll} class="btn-text text-sm">Tout développer</button>
       <button on:click={collapseAll} class="btn-text text-sm">Tout réduire</button>
     </div>
@@ -362,7 +362,7 @@
   }
 
   .nav-item:not(.is-active):hover {
-    @apply bg-gray-100;
+    @apply bg-interface-bg-secondary;
   }
 
   .nav-item.is-active {
@@ -388,6 +388,6 @@
   .nav-sublist {
     margin-left: 1rem;
     padding-left: 0.5rem;
-    @apply border-l-2 border-gray-200;
+    @apply border-l-2 border-interface-border-primary;
   }
 </style>

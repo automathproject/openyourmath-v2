@@ -5,6 +5,8 @@
   import { goto } from '$app/navigation';
   import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
+  import StarsRating from '$lib/components/StarsRating.svelte';
+  import Chip from '$lib/components/Chip.svelte';
   
   let chapterStructure = [];
   let selectedChapter = null;
@@ -218,8 +220,8 @@
 
 <div class="container mx-auto px-4 py-8">
   <header class="mb-8">
-    <h1 class="text-4xl font-bold text-gray-900">Parcourir les exercices</h1>
-    <p class="text-gray-600 mt-2">Explorez les exercices par chapitres, modules et niveaux.</p>
+    <h1 class="text-4xl font-bold text-interface-text-primary" style="font-family: theme('fontFamily.heading')">Parcourir les exercices</h1>
+    <p class="text-interface-text-secondary mt-2">Explorez les exercices par chapitres, modules et niveaux.</p>
     {#if selectedChapter || selectedModule || selectedLevel}
       <!-- CORRECTION : `resetView` remplacé par `clearSelection` -->
       <button on:click={clearSelection} class="btn btn-text text-brand-primary mt-4">
@@ -230,7 +232,7 @@
 
   {#if loading}
     <div class="text-center py-16">
-      <p class="text-gray-500">Chargement...</p>
+      <p class="text-interface-text-muted">Chargement...</p>
     </div>
   {:else if error}
     <div class="empty-state">
@@ -270,28 +272,26 @@
 
     <!-- VUE DÉTAILLÉE (QUAND UN FILTRE EST ACTIF) -->
     {:else}
-      <div class="bg-white p-6 rounded-lg border mb-8">
-        <h2 class="text-2xl font-bold text-gray-800">
-          {#if selectedChapter}📚 {selectedChapter}{#if selectedSubchapter} › {selectedSubchapter}{/if}{/if}
-          {#if selectedModule} • 📖 {selectedModule}{/if}
-          {#if selectedLevel} • 🎓 {selectedLevel}{/if}
+      <div class="card mb-8">
+        <h2 class="text-2xl font-bold text-interface-text-primary" style="font-family: theme('fontFamily.heading')">
+          {#if selectedChapter}{selectedChapter}{#if selectedSubchapter} › {selectedSubchapter}{/if}{/if}
+          {#if selectedModule} · {selectedModule}{/if}
+          {#if selectedLevel} · {selectedLevel}{/if}
         </h2>
-        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-600 mt-4">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-interface-text-secondary mt-4">
           <span class="font-semibold">{selectionStats.total} exercices</span>
           {#if Object.keys(selectionStats.byDifficulty).length > 0}
-            <div>
-              <strong>Niveaux :</strong>
+            <div class="flex flex-wrap gap-1">
               {#each Object.entries(selectionStats.byDifficulty) as [level, count]}
-                <span class="bg-gray-100 px-2 py-1 rounded-full ml-1">{level}: {count}</span>
+                <Chip variant="teal">{level} · {count}</Chip>
               {/each}
             </div>
           {/if}
           {#if selectionStats.authors.length > 0}
-            <div>
-                <strong>Auteurs principaux :</strong>
-                {#each selectionStats.authors.slice(0, 3) as author}
-                    <span class="bg-gray-100 px-2 py-1 rounded-full ml-1">{author.name} ({author.count})</span>
-                {/each}
+            <div class="flex flex-wrap gap-1">
+              {#each selectionStats.authors.slice(0, 3) as author}
+                <Chip variant="soft">{author.name} ({author.count})</Chip>
+              {/each}
             </div>
           {/if}
         </div>
@@ -299,17 +299,17 @@
 
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-2 text-sm">
-          <span class="text-gray-600">Trier par :</span>
-          <button on:click={() => changeSorting('title')} class="btn btn-text" class:font-bold={sortBy === 'title'}>Titre {#if sortBy === 'title'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
-          <button on:click={() => changeSorting('difficulty')} class="btn btn-text" class:font-bold={sortBy === 'difficulty'}>Niveau {#if sortBy === 'difficulty'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
-          <button on:click={() => changeSorting('module')} class="btn btn-text" class:font-bold={sortBy === 'module'}>Module {#if sortBy === 'module'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
-          <button on:click={() => changeSorting('author')} class="btn btn-text" class:font-bold={sortBy === 'author'}>Auteur {#if sortBy === 'author'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
+          <span class="text-interface-text-muted">Trier par :</span>
+          <button on:click={() => changeSorting('title')} class="btn btn-ghost btn-sm" class:font-bold={sortBy === 'title'}>Titre {#if sortBy === 'title'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
+          <button on:click={() => changeSorting('difficulty')} class="btn btn-ghost btn-sm" class:font-bold={sortBy === 'difficulty'}>Niveau {#if sortBy === 'difficulty'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
+          <button on:click={() => changeSorting('module')} class="btn btn-ghost btn-sm" class:font-bold={sortBy === 'module'}>Module {#if sortBy === 'module'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
+          <button on:click={() => changeSorting('author')} class="btn btn-ghost btn-sm" class:font-bold={sortBy === 'author'}>Auteur {#if sortBy === 'author'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
         </div>
-        <p class="text-sm text-gray-500">{exercises.length} exercice{exercises.length > 1 ? 's' : ''} affiché{exercises.length > 1 ? 's' : ''}</p>
+        <p class="text-sm text-interface-text-muted">{exercises.length} exercice{exercises.length > 1 ? 's' : ''} affiché{exercises.length > 1 ? 's' : ''}</p>
       </div>
 
       {#if exercisesLoading}
-        <div class="text-center py-16"><p class="text-gray-500">Chargement des exercices...</p></div>
+        <div class="text-center py-16"><p class="text-interface-text-muted">Chargement des exercices...</p></div>
       {:else if exercises.length === 0}
         <div class="empty-state">
           <div class="empty-state-icon">📚</div>
@@ -317,27 +317,29 @@
           <p class="empty-state-subtitle">Aucun exercice ne correspond aux filtres sélectionnés.</p>
         </div>
       {:else}
-        <div class="grid grid-cols-1 gap-4">
+        <div class="grid grid-cols-1 gap-3">
           {#each exercises as exercise (exercise.uuid)}
-            <div class="result-card">
-              <div class="result-header">
-                <div>
-                  <h3 class="result-title">
-                    <a href="/exercise/{exercise.uuid}" class="hover:underline">
+            <div class="card card-hover">
+              <div class="flex items-start justify-between gap-4">
+                <div class="min-w-0 flex-1">
+                  <h3 class="font-semibold text-interface-text-primary" style="font-family: theme('fontFamily.heading'); font-size: 15px;">
+                    <a href="/exercise/{exercise.uuid}" class="hover:text-brand-600">
                       <MathRenderer content={exercise.title} inline={true} />
                     </a>
                   </h3>
-                  <div class="result-metadata">
-                    {#if exercise.chapter && exercise.chapter !== selectedChapter}<span class="result-badge">📚 {exercise.chapter}</span>{/if}
-                    {#if exercise.module && exercise.module !== selectedModule}<span class="result-badge">📖 {exercise.module}</span>{/if}
-                    {#if exercise.author}<span class="text-gray-500">par {exercise.author}</span>{/if}
-                    {#if exercise.created_at}<span class="text-gray-500">{new Date(exercise.created_at).toLocaleDateString('fr-FR')}</span>{/if}
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    {#if exercise.chapter && exercise.chapter !== selectedChapter}<Chip variant="soft">{exercise.chapter}</Chip>{/if}
+                    {#if exercise.module && exercise.module !== selectedModule}<Chip variant="teal">{exercise.module}</Chip>{/if}
+                    {#if exercise.author}<span class="text-xs text-interface-text-muted">par {exercise.author}</span>{/if}
                   </div>
                 </div>
-                <div class="flex items-center gap-4">
-                  {#if exercise.difficulty}<div class="result-difficulty">{exercise.difficulty}</div>{/if}
-                  <button class="btn btn-secondary">Marquer</button>
-                  <a href="/exercise/{exercise.uuid}" class="btn btn-primary">Voir</a>
+                <div class="flex items-center gap-3 flex-shrink-0">
+                  {#if exercise.difficulty}
+                    <StarsRating n={exercise.difficulty} total={4} />
+                  {:else if exercise.level}
+                    <Chip variant="teal-solid">{exercise.level}</Chip>
+                  {/if}
+                  <a href="/exercise/{exercise.uuid}" class="btn btn-primary btn-sm">Voir</a>
                 </div>
               </div>
             </div>
