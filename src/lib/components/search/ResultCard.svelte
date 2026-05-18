@@ -1,43 +1,32 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
-  import { tick } from 'svelte';
+  import { createEventDispatcher, tick } from 'svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import SearchSnippet from '$lib/components/search/SearchSnippet.svelte';
-  import NameRenderer from '$lib/components/NameRenderer.svelte';
   import AddToListButton from '$lib/components/AddToListButton.svelte';
 
   export let exercise;
   export let activeFilters = {};
-  export let cardMode = 'detailed'; // 'detailed' | 'compact'
+  export let cardMode = 'detailed';
   export let isSelected = false;
 
   const dispatch = createEventDispatcher();
   let cardEl;
 
-  function formatDisplayDate(value) {
+  function formatDate(value) {
     if (!value) return null;
-    const date = new Date(value);
-    if (Number.isNaN(date.getTime())) return null;
-    return date.toLocaleDateString('fr-FR');
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return null;
+    return d.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' });
   }
 
-  $: createdAtLabel = formatDisplayDate(exercise?.created_at ?? exercise?.createdAt);
-  $: updatedAtLabel = formatDisplayDate(exercise?.updated_at ?? exercise?.updatedAt);
-  $: hasDates = Boolean(createdAtLabel || updatedAtLabel);
-  $: hasFooterInfo = Boolean(exercise?.author || exercise?.organization);
+  $: displayDate = formatDate(exercise?.updated_at ?? exercise?.updatedAt ?? exercise?.created_at);
   $: isCompact = cardMode === 'compact';
-  $: showFooter = !isCompact && (hasFooterInfo || hasDates);
-  $: showLevelBadge = Boolean(exercise?.level) && String(activeFilters?.level || '') !== String(exercise?.level || '');
-  $: showModuleBadge = Boolean(exercise?.module) && String(activeFilters?.module || '') !== String(exercise?.module || '');
-  $: showChapterBadge = Boolean(exercise?.chapter) && String(activeFilters?.chapter || '') !== String(exercise?.chapter || '');
-  $: showDifficultyDots = Boolean(exercise?.difficulty) && String(activeFilters?.difficulty || '') !== String(exercise?.difficulty || '');
-  $: showTags = !isCompact && (showLevelBadge || showModuleBadge || showChapterBadge || showDifficultyDots);
-  $: snippetLines = isCompact ? 3 : 6;
+
+  // Suppress unused warning — activeFilters may be used by parent for context
+  $: void activeFilters;
 
   $: if (isSelected && cardEl) {
-    tick().then(() => {
-      cardEl?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
+    tick().then(() => cardEl?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
   }
 
   function handleClick() {
@@ -50,298 +39,238 @@
       window.open(`/exercise/${exercise.uuid}`, '_blank');
     }
   }
+
+  function difficultyStars(n, max = 4) {
+    return Array.from({ length: max }, (_, i) => i < (n ?? 0));
+  }
 </script>
 
-<div
-  class="result-card cursor-pointer transition-all duration-200 {isSelected ? 'result-card--selected' : ''} {isCompact ? 'result-card--compact' : ''}"
+<article
+  class="exo-card {isSelected ? 'exo-card--selected' : ''} {isCompact ? 'exo-card--compact' : ''}"
   role="option"
-  aria-selected={isSelected ? 'true' : 'false'}
+  aria-selected={isSelected}
   tabindex="0"
   bind:this={cardEl}
   on:click={handleClick}
-  on:keydown={(event) => event.key === 'Enter' && handleClick()}
+  on:keydown={(e) => e.key === 'Enter' && handleClick()}
 >
-  {#if isCompact}
-    <!-- Compact : titre + actions sur la même ligne, sans UUID -->
-    <div class="compact-row">
-      <h3 class="result-title compact-title">
-        <MathRenderer content={exercise.title} inline={true} />
-      </h3>
-      <div class="compact-actions">
-        <button
-          type="button"
-          on:click|stopPropagation
-          aria-label="Ajouter à la liste"
-          class="bg-transparent border-none p-0 m-0"
-        >
-          <AddToListButton {exercise} size="small" variant="icon" />
-        </button>
-        {#if isSelected}
-          <div class="selection-indicator">
-            <svg class="w-4 h-4 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-            </svg>
-          </div>
-        {/if}
-        <button
-          type="button"
-          class="external-link-btn"
-          title="Ouvrir dans un nouvel onglet"
-          aria-label="Ouvrir dans un nouvel onglet"
-          on:click={openExternal}
-        >
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  {:else}
-    <!-- Detailed : badges + actions en haut, titre en dessous -->
-    <div class="flex justify-between items-start mb-2">
-      <div class="flex gap-2 items-center">
-        {#if showTags && showLevelBadge}
-          <div class="result-badge">{exercise.level}</div>
-        {/if}
-        {#if showTags && showDifficultyDots}
-          <div class="flex items-center gap-1">
-            {#each Array(5) as _, i}
-              <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-400' : 'bg-gray-200'}"></div>
-            {/each}
-          </div>
-        {/if}
-      </div>
-      <div class="flex items-center gap-2">
-        <button
-          type="button"
-          on:click|stopPropagation
-          aria-label="Ajouter à la liste"
-          class="bg-transparent border-none p-0 m-0"
-        >
-          <AddToListButton {exercise} size="small" variant="icon" />
-        </button>
-        {#if isSelected}
-          <div class="selection-indicator">
-            <svg class="w-4 h-4 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-            </svg>
-          </div>
-        {/if}
-        <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
-        <button
-          type="button"
-          class="external-link-btn"
-          title="Ouvrir dans un nouvel onglet"
-          aria-label="Ouvrir dans un nouvel onglet"
-          on:click={openExternal}
-        >
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        </button>
-      </div>
-    </div>
+  <!-- Meta row: level chip + module chip + difficulty stars + indicators -->
+  <div class="meta-row">
+    {#if exercise.level}
+      <span class="chip-level {isSelected ? 'chip-level--solid' : ''}">{exercise.level}</span>
+    {/if}
+    {#if exercise.module}
+      <span class="chip-module">{exercise.module}</span>
+    {/if}
+    {#if exercise.difficulty}
+      <span class="stars" aria-label="difficulté {exercise.difficulty}/4">
+        {#each difficultyStars(exercise.difficulty) as filled}
+          <span class={filled ? 'star-on' : 'star-off'}>★</span>
+        {/each}
+      </span>
+    {/if}
+    <span class="meta-spacer"></span>
+    {#if exercise.video_id}
+      <span class="indicator indicator--video">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        vidéo
+      </span>
+    {/if}
+    {#if exercise.hasSolution}
+      <span class="indicator indicator--solution">★ solution</span>
+    {/if}
+  </div>
 
-    <div class="result-header">
-      <div>
-        <h3 class="result-title">
-          <MathRenderer content={exercise.title} inline={true} />
-        </h3>
-        {#if showTags}
-          <div class="result-metadata">
-            {#if showModuleBadge}
-              <span class="result-badge">📖 {exercise.module}</span>
-            {/if}
-            {#if showChapterBadge}
-              <span class="result-badge">{exercise.chapter}</span>
-            {/if}
-          </div>
-        {/if}
-      </div>
+  <!-- Title -->
+  <h3 class="exo-title">
+    <MathRenderer content={exercise.title} inline={true} />
+  </h3>
+
+  <!-- Excerpt / preview -->
+  {#if exercise.preview && !isCompact}
+    <div class="exo-excerpt">
+      <SearchSnippet content={exercise.preview} lines={4} />
     </div>
   {/if}
 
-  {#if exercise.preview}
-    <div class="result-preview mt-3">
-      <SearchSnippet content={exercise.preview} lines={snippetLines} />
+  <!-- Footer: author · date + actions -->
+  <div class="exo-footer">
+    <span class="footer-meta">
+      {#if exercise.author}<span>{exercise.author}</span>{/if}
+      {#if exercise.author && displayDate}<span class="sep">·</span>{/if}
+      {#if displayDate}<span>{displayDate}</span>{/if}
+    </span>
+    <span class="meta-spacer"></span>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <div class="footer-actions" on:click|stopPropagation>
+      <AddToListButton {exercise} size="small" variant="icon" />
+      <button class="action-btn" title="Ouvrir dans un nouvel onglet" on:click={openExternal}>
+        Ouvrir →
+      </button>
     </div>
-  {/if}
-
-  {#if isCompact}
-    <div class="compact-uuid">{exercise.uuid.slice(0, 8)}</div>
-  {/if}
-
-  {#if showFooter}
-    <div class="result-footer">
-      {#if hasFooterInfo}
-        <div class="result-footer-left">
-          {#if exercise.author}
-            <NameRenderer
-              author={exercise.author}
-              licenseCode={exercise.license_code}
-              licenseUrl={exercise.license_url}
-              email={exercise.author_email || exercise.authorEmail || ''}
-              variant="footer"
-              className="result-footer-item"
-            />
-          {/if}
-          {#if exercise.author && exercise.organization}
-            <span class="result-footer-sep">•</span>
-          {/if}
-          {#if exercise.organization}
-            <span class="result-footer-item">🏛️ {exercise.organization}</span>
-          {/if}
-        </div>
-      {/if}
-      {#if hasDates}
-        <div class="result-date" role="presentation">
-          {#if createdAtLabel}
-            <span
-              class="result-date-entry"
-              title="Créé"
-              aria-label={`Créé le ${createdAtLabel}`}
-            >
-              <span class="result-date-icon" aria-hidden="true">📅</span>
-              <span class="result-date-text">{createdAtLabel}</span>
-            </span>
-          {/if}
-          {#if updatedAtLabel}
-            <span
-              class="result-date-entry"
-              title="Mis à jour"
-              aria-label={`Mis à jour le ${updatedAtLabel}`}
-            >
-              <span class="result-date-icon" aria-hidden="true">🔄</span>
-              <span class="result-date-text">{updatedAtLabel}</span>
-            </span>
-          {/if}
-        </div>
-      {/if}
-    </div>
-  {/if}
-</div>
+  </div>
+</article>
 
 <style>
-  .result-card {
-    border-radius: 0.75rem;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
-    padding: 1.5rem;
-    transition: box-shadow .2s;
-    @apply border border-gray-200 bg-interface-bg-primary;
-  }
-  .result-card--compact {
-    padding: 0.75rem;
-  }
-  .compact-row {
+  .exo-card {
+    padding: 14px 16px;
+    border: 1px solid var(--oym-line);
+    border-radius: 6px;
+    background: var(--oym-bg);
+    cursor: pointer;
     display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    margin-bottom: 0.25rem;
+    flex-direction: column;
+    gap: 7px;
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
   }
-  .compact-title {
-    flex: 1;
-    min-width: 0;
-    font-size: 1rem;
+
+  .exo-card:hover {
+    border-color: var(--oym-ink-3);
+    box-shadow: var(--oym-sh-1);
   }
-  .compact-actions {
+
+  .exo-card--selected {
+    border-color: var(--oym-teal-700);
+    background: var(--oym-teal-50);
+    box-shadow: 0 0 0 1px var(--oym-teal-700);
+  }
+
+  .exo-card--compact {
+    padding: 10px 12px;
+    gap: 5px;
+  }
+
+  /* Meta row */
+  .meta-row {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
-    flex-shrink: 0;
+    gap: 6px;
+    flex-wrap: wrap;
   }
-  .compact-uuid {
-    margin-top: 0.375rem;
-    text-align: right;
-    font-size: 0.65rem;
-    font-family: monospace;
-    letter-spacing: 0.03em;
-    @apply text-gray-400;
-    user-select: all;
+
+  .meta-spacer { flex: 1; }
+
+  .chip-level {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid var(--oym-teal-300);
+    background: var(--oym-teal-100);
+    color: var(--oym-teal-800);
+    font-family: var(--oym-font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
   }
-  .result-card:hover { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06); }
-  .result-card--selected {
-    box-shadow: 0 4px 10px -2px rgb(0 0 0 / 0.12);
-    border-left-width: 4px;
-    @apply border-brand-primary bg-brand-50;
+
+  .chip-level--solid {
+    background: var(--oym-teal);
+    color: white;
+    border-color: var(--oym-teal);
   }
-  .result-header { display: flex; align-items: start; justify-content: space-between; }
-  .result-title {
-    font-size: 1.125rem;
+
+  .chip-module {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid var(--oym-line-2);
+    background: transparent;
+    color: var(--oym-ink-3);
+    font-family: var(--oym-font-sans);
+    font-size: 11px;
     font-weight: 500;
-    margin-bottom: 0.25rem;
+    white-space: nowrap;
+  }
+
+  .stars {
+    display: inline-flex;
+    gap: 1px;
+    line-height: 1;
+  }
+
+  .star-on  { color: var(--oym-gold); font-size: 12px; }
+  .star-off { color: var(--oym-ink-5); font-size: 12px; }
+
+  .indicator {
+    font-family: var(--oym-font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .indicator--video  { color: var(--oym-accent-700); }
+  .indicator--solution { color: var(--oym-ok); }
+
+  /* Title */
+  .exo-title {
+    font-family: var(--oym-font-serif);
+    font-size: 15px;
+    font-weight: 600;
     line-height: 1.3;
+    color: var(--oym-ink);
+    margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    @apply text-gray-900;
   }
-  .result-metadata {
+
+  /* Excerpt */
+  .exo-excerpt {
+    font-family: var(--oym-font-serif);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--oym-ink-2);
+  }
+
+  /* Footer */
+  .exo-footer {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
+    gap: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--oym-line-soft);
+    margin-top: 2px;
+  }
+
+  .footer-meta {
+    font-family: var(--oym-font-sans);
+    font-size: 11.5px;
+    color: var(--oym-ink-3);
+    display: flex;
+    align-items: center;
+    gap: 4px;
     flex-wrap: wrap;
-    @apply text-gray-600;
-  }
-  .result-badge {
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.375rem;
-    @apply bg-gray-100;
-  }
-  .result-footer {
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
-    display:flex;
-    align-items:center;
-    gap:0.5rem;
-    flex-wrap:wrap;
-    font-size:0.875rem;
-    @apply border-t border-gray-100 text-interface-text-secondary;
-  }
-  .result-footer-left {
-    display:flex;
-    align-items:center;
-    gap:0.5rem;
-    flex-wrap:wrap;
-  }
-  .result-footer-item { white-space: nowrap; }
-  .result-footer-sep { @apply text-gray-300; }
-  .result-date {
-    margin-left:auto;
-    display:flex;
-    align-items:center;
-    gap:0.5rem;
-    font-size:0.75rem;
-    color: rgb(156 163 175);
-    font-weight:500;
-    white-space:nowrap;
   }
 
-  .result-date-entry {
-    display:inline-flex;
-    align-items:center;
-    gap:0.375rem;
-  }
+  .sep { color: var(--oym-ink-5); }
 
-  .result-date-icon {
-    font-size:0.875rem;
-  }
-  .selection-indicator {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 9999px;
+  .footer-actions {
     display: flex;
     align-items: center;
-    justify-content: center;
-    @apply bg-brand-50;
+    gap: 4px;
+    flex-shrink: 0;
   }
-  .external-link-btn {
-    transition: color .2s, background-color .2s;
-    padding: 0.25rem;
-    border-radius: 0.25rem;
-    @apply text-gray-400;
+
+  .action-btn {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: var(--oym-font-sans);
+    font-size: 12px;
+    color: var(--oym-ink-2);
+    cursor: pointer;
+    transition: background 0.1s, color 0.1s;
+    white-space: nowrap;
   }
-  .external-link-btn:hover { @apply text-brand-primary bg-brand-50; }
+
+  .action-btn:hover {
+    background: var(--oym-bg-elev);
+    color: var(--oym-ink);
+  }
 </style>

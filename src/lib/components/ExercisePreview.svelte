@@ -1,15 +1,16 @@
-<!-- src/lib/components/ExercisePreview.svelte -->
+<!-- src/lib/components/ExercisePreview.svelte — PreviewPanel Hi-Fi -->
 <script>
   import { browser } from '$app/environment';
   import ExerciseContent from './ExerciseContent.svelte';
+  import MathRenderer from './MathRenderer.svelte';
   import AddToListButton from './AddToListButton.svelte';
   import { previewState, layoutActions } from '$lib/stores/searchStore.js';
 
-  function formatDisplayDate(value) {
+  function formatDate(value) {
     if (!value) return null;
-    const date = new Date(value);
-    if (Number.isNaN(date.getTime())) return null;
-    return date.toLocaleDateString('fr-FR');
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return null;
+    return d.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' });
   }
 
   function hidePanel() {
@@ -22,193 +23,325 @@
     }
   }
 
-  $: previewUuid = $previewState.exercise?.uuid || null;
-  $: previewDate = formatDisplayDate($previewState.exercise?.updated_at || $previewState.exercise?.created_at);
-  $: previewTitle = $previewState.exercise?.title || "Exercice";
+  $: exo = $previewState.exercise;
+  $: previewDate = formatDate(exo?.updated_at ?? exo?.created_at);
+
+  function difficultyStars(n, max = 4) {
+    return Array.from({ length: max }, (_, i) => i < (n ?? 0));
+  }
 </script>
 
-<div class="exercise-preview">
-  <div class="preview-header">
-    <div class="preview-header-content">
-      <div class="preview-headline">
-        <h2 class="preview-title">{previewTitle}</h2>
-      </div>
-      <div class="preview-actions">
-        {#if $previewState.exercise}
-          <AddToListButton
-            exercise={$previewState.exercise}
-            size="small"
-            variant="icon"
-          />
+<div class="preview-panel">
 
-          <button
-            on:click={goToFullPage}
-            class="preview-btn preview-btn--secondary"
-            title="Ouvrir l'exercice"
-            aria-label="Ouvrir l'exercice"
-          >
-            <span class="preview-btn-icon" aria-hidden="true">↗</span>
-            <span class="preview-btn-label">Ouvrir</span>
-          </button>
+  {#if $previewState.loading}
+    <div class="preview-loading">Chargement…</div>
+
+  {:else if $previewState.error}
+    <div class="preview-error">
+      <p>Erreur de chargement</p>
+      <p class="preview-error-msg">{$previewState.error}</p>
+    </div>
+
+  {:else if exo}
+
+    <!-- Header chips + title + meta -->
+    <div class="preview-head">
+      <div class="preview-chips">
+        {#if exo.level}
+          <span class="chip-level-solid">{exo.level}</span>
         {/if}
+        {#if exo.module}
+          <span class="chip-soft">{exo.module}</span>
+        {/if}
+        {#if exo.difficulty}
+          <span class="stars" aria-label="difficulté {exo.difficulty}/4">
+            {#each difficultyStars(exo.difficulty) as filled}
+              <span class={filled ? 'star-on' : 'star-off'}>★</span>
+            {/each}
+          </span>
+        {/if}
+        <span class="head-spacer"></span>
+        <button class="close-btn" aria-label="Masquer la prévisualisation" on:click={hidePanel}>✕</button>
+      </div>
 
-        <button
-          on:click={hidePanel}
-          class="preview-btn preview-btn--ghost"
-          title="Masquer la prévisualisation"
-          aria-label="Masquer la prévisualisation"
-        >
-          <span class="preview-btn-icon" aria-hidden="true">✕</span>
-        </button>
+      <h2 class="preview-title">{exo.title ?? 'Exercice'}</h2>
+
+      <div class="preview-meta">
+        {#if exo.author}<span>{exo.author}</span>{/if}
+        {#if exo.author && previewDate}<span class="meta-sep">·</span>{/if}
+        {#if previewDate}<span>mis à jour {previewDate}</span>{/if}
+        {#if exo.license_code}
+          <span class="meta-sep">·</span>
+          <span>{exo.license_code}</span>
+        {/if}
       </div>
     </div>
-  </div>
 
-  <div class="preview-content">
-    {#if $previewState.loading}
-      <div class="preview-loading">
-        <div class="flex items-center justify-center py-12">
-          <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-600"></div>
-          <span class="ml-3 text-gray-600">Chargement...</span>
-        </div>
-      </div>
-    {:else if $previewState.error}
-      <div class="preview-error">
-        <div class="text-center py-12">
-          <div class="text-red-500 mb-2">
-            <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-medium text-gray-900 mb-1">Erreur de chargement</h3>
-          <p class="text-gray-600 text-sm">{$previewState.error}</p>
-        </div>
-      </div>
-    {:else if $previewState.exercise}
-      <div class="preview-exercise-content">
+    <!-- Body: exercise content -->
+    <div class="preview-body">
+      {#if exo.content && exo.content.length > 0}
         <ExerciseContent
           variant="preview"
           showGlobalToggles={false}
-          content={$previewState.exercise.content || []}
+          content={exo.content}
         />
-      </div>
-    {:else}
-      <div class="preview-empty">
-        <div class="text-center py-12 text-gray-500">
-          <svg class="w-12 h-12 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-          </svg>
-          <p>Cliquez sur un exercice pour le prévisualiser</p>
+      {:else if exo.preview}
+        <div class="preview-text-excerpt">
+          <div class="section-label">Énoncé</div>
+          <div class="excerpt-text">
+            <MathRenderer content={exo.preview} />
+          </div>
         </div>
-      </div>
-    {/if}
-  </div>
+      {:else}
+        <div class="preview-no-content">Aperçu non disponible.</div>
+      {/if}
+    </div>
 
-  {#if previewUuid}
+    <!-- Sticky footer actions -->
     <div class="preview-footer">
-      <p class="preview-meta">
-        <span class="preview-meta-uuid">{previewUuid}</span>
-        {#if previewDate}
-          <span class="preview-meta-sep">·</span>
-          <span class="preview-meta-date">{previewDate}</span>
-        {/if}
-      </p>
+      <AddToListButton exercise={exo} size="normal" variant="button" />
+      <button class="btn-open" on:click={goToFullPage}>
+        Ouvrir l'exercice complet →
+      </button>
+    </div>
+
+  {:else}
+    <!-- Empty state -->
+    <div class="preview-empty">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+      </svg>
+      <p>Cliquez sur un exercice pour le prévisualiser</p>
     </div>
   {/if}
+
 </div>
 
 <style>
-  .exercise-preview {
-    display:flex;
-    flex-direction:column;
-    @apply bg-interface-bg-primary border-2 border-brand-200 rounded-xl shadow-sm;
-    overflow: hidden;
-  }
-
-  .preview-header {
-    flex-shrink:0;
-    @apply border-b border-gray-200 bg-white;
-  }
-  .preview-header-content {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:0.75rem;
-    padding:0.75rem 0.9rem;
-  }
-  .preview-headline {
+  .preview-panel {
     display: flex;
     flex-direction: column;
-    min-width: 0;
-    flex: 1;
+    height: 100%;
+    background: var(--oym-bg-elev);
+    font-family: var(--oym-font-sans);
   }
-  .preview-title {
-    font-size: 1rem;
-    line-height: 1.3;
-    font-weight: 700;
-    @apply text-gray-900;
+
+  /* ── Header ─────────────────────────────────── */
+  .preview-head {
+    flex-shrink: 0;
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid var(--oym-hairline);
+    background: var(--oym-bg-elev);
   }
-  .preview-meta {
+
+  .preview-chips {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .head-spacer { flex: 1; }
+
+  .chip-level-solid {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    font-size: 0.72rem;
-    line-height: 1.2;
-    @apply text-gray-600;
-  }
-  .preview-meta-uuid {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    @apply text-gray-700;
-  }
-  .preview-meta-sep { @apply text-gray-400; }
-  .preview-meta-date { @apply text-gray-500; }
-  .preview-actions {
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    flex-wrap:nowrap;
-    gap:0.4rem;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--oym-teal);
+    color: white;
+    border: 1px solid var(--oym-teal);
+    font-size: 11px;
+    font-weight: 600;
   }
 
-  .preview-btn {
-    display:inline-flex;
-    align-items:center;
-    gap:0.35rem;
-    padding:0.35rem 0.65rem;
-    border-radius:0.55rem;
-    font-size:0.82rem;
-    font-weight:600;
-    border:1px solid transparent;
-  }
-  .preview-btn--secondary { @apply border border-gray-300 bg-white text-gray-700; }
-  .preview-btn--secondary:hover { @apply bg-gray-100; }
-  .preview-btn--ghost { @apply border border-gray-300 bg-white text-gray-700; }
-  .preview-btn--ghost:hover { @apply bg-gray-100; }
-
-  .preview-btn-icon { line-height:1; }
-  .preview-content { flex:1; overflow-y:auto; }
-
-  .preview-exercise-content {
-    padding:0.8rem;
-    @apply bg-brand-50;
+  .chip-soft {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid var(--oym-line-2);
+    background: transparent;
+    color: var(--oym-ink-3);
+    font-size: 11px;
+    font-weight: 500;
   }
 
+  .stars {
+    display: inline-flex;
+    gap: 1px;
+    line-height: 1;
+  }
+
+  .star-on  { color: var(--oym-gold); font-size: 12px; }
+  .star-off { color: var(--oym-ink-5); font-size: 12px; }
+
+  .close-btn {
+    background: none;
+    border: none;
+    color: var(--oym-ink-3);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    line-height: 1;
+    transition: color 0.1s, background 0.1s;
+    flex-shrink: 0;
+  }
+
+  .close-btn:hover {
+    color: var(--oym-ink);
+    background: var(--oym-bg-tint);
+  }
+
+  .preview-title {
+    font-family: var(--oym-font-serif);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--oym-ink);
+    margin: 0 0 8px;
+    letter-spacing: -0.2px;
+  }
+
+  .preview-meta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: var(--oym-ink-3);
+  }
+
+  .meta-sep { color: var(--oym-ink-5); }
+
+  /* ── Body ────────────────────────────────────── */
+  .preview-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 20px 16px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--oym-ink-3);
+    margin-bottom: 8px;
+  }
+
+  .preview-text-excerpt {
+    margin-bottom: 16px;
+  }
+
+  .excerpt-text {
+    font-family: var(--oym-font-serif);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--oym-ink-2);
+    margin: 0;
+  }
+
+  .preview-no-content {
+    font-size: 13px;
+    color: var(--oym-ink-3);
+    padding: 12px 0;
+  }
+
+  /* ── Loading / Error / Empty ─────────────────── */
+  .preview-loading {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--oym-ink-3);
+    padding: 40px;
+  }
+
+  .preview-error {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .preview-error p {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--oym-ink);
+    margin: 0;
+  }
+
+  .preview-error-msg {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    color: var(--oym-ink-3) !important;
+  }
+
+  .preview-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 48px 24px;
+    color: var(--oym-ink-4);
+    text-align: center;
+  }
+
+  .preview-empty p {
+    font-size: 13px;
+    color: var(--oym-ink-3);
+    margin: 0;
+  }
+
+  /* ── Footer actions ──────────────────────────── */
   .preview-footer {
     flex-shrink: 0;
-    @apply border-t border-gray-200 bg-white;
-    padding: 0.55rem 0.9rem;
+    padding: 14px 20px;
+    border-top: 1px solid var(--oym-hairline);
+    background: var(--oym-bg-elev);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
-  @media (max-width: 1200px) {
-    .preview-btn-label {
-      display: none;
-    }
-    .preview-btn {
-      width: 2rem;
-      height: 2rem;
-      justify-content: center;
-      padding: 0;
-    }
+  .btn-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 9px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--oym-ink);
+    background: var(--oym-bg);
+    color: var(--oym-ink);
+    font-family: var(--oym-font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-open:hover {
+    background: var(--oym-ink);
+    color: var(--oym-bg);
+  }
+
+  /* Make AddToListButton fill full width in this context */
+  :global(.preview-footer .add-to-list-btn),
+  :global(.preview-footer button[class*="add"]) {
+    width: 100%;
+    justify-content: center;
   }
 </style>

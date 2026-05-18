@@ -1,16 +1,12 @@
-<!-- src/routes/+page.svelte -->
+<!-- src/routes/+page.svelte — Recherche Hi-Fi -->
 <script>
   import { onMount } from 'svelte';
-  import { browser } from '$app/environment';
-  import ExercisePreview from '$lib/components/ExercisePreview.svelte';
-  import EmptyState from '$lib/components/search/EmptyState.svelte';
-  import BreadcrumbNav from '$lib/components/search/BreadcrumbNav.svelte';
-  import ActiveFilters from '$lib/components/search/active-filters.svelte';
   import SearchSemantic from '$lib/components/search/SearchSemantic.svelte';
   import ResultsGrid from '$lib/components/search/ResultsGrid.svelte';
-  import MobileExercisePreview from '$lib/components/search/MobileExercisePreview.svelte';
+  import EmptyState from '$lib/components/search/EmptyState.svelte';
   import RandomExercisesCarousel from '$lib/components/search/RandomExercisesCarousel.svelte';
-  import { cycleTri } from '$lib/utils/filterUtils.js';
+  import ExercisePreview from '$lib/components/ExercisePreview.svelte';
+  import SearchPageSidebar from '$lib/components/search/SearchPageSidebar.svelte';
   import { listActions } from '$lib/stores/listStore.js';
 
   import {
@@ -27,134 +23,26 @@
     previewState,
     previewActions,
     loadingMore,
-    layoutConfig,
-    resultPathCounts
   } from '$lib/stores/searchStore.js';
   import { previewPanelOpen, uiActions } from '$lib/stores/uiStore.ts';
 
-  import { useDebounce } from '$lib/hooks/useDebounce.js';
-
   let isDesktop = false;
-  let advancedFiltersOpen = false;
-  let filtersExpanded = true;
-  let manualCardMode = 'auto'; // auto | compact | detailed
-  let isHeaderCollapsed = false;
-  let resultsScrollEl;
-  const HEADER_COLLAPSE_THRESHOLD = 24;
-
-  // debouncedSearch supprimé — SearchSemantic gère son propre dispatch FTS/hybride.
 
   onMount(() => {
     suggestionActions.loadSuggestions();
 
     if (typeof window !== 'undefined') {
-      const mediaQuery = window.matchMedia('(min-width: 1024px)');
-
-      const applyViewportState = (matches) => {
-        isDesktop = matches;
-        syncHeaderCollapsedFromScroll();
-      };
-
-      applyViewportState(mediaQuery.matches);
-      const handleChange = (event) => applyViewportState(event.matches);
-      mediaQuery.addEventListener('change', handleChange);
-
-      return () => {
-        mediaQuery.removeEventListener('change', handleChange);
-      };
+      const mq = window.matchMedia('(min-width: 1024px)');
+      isDesktop = mq.matches;
+      const onChange = (e) => { isDesktop = e.matches; };
+      mq.addEventListener('change', onChange);
+      return () => mq.removeEventListener('change', onChange);
     }
   });
 
-
-  function handleChapterNavigation(event) {
-    const { level, module, chapter, subchapter } = event.detail;
-    searchActions.updateFromNavigation({ level, module, chapter, subchapter });
-    searchActions.search();
-  }
-
   function selectExercise(exercise) {
     previewActions.selectExercise(exercise.uuid);
-  }
-
-  function toggleSolutionChip() {
-    const next = cycleTri($filters.hasSolution);
-    searchActions.updateFilter('hasSolution', next);
-    searchActions.search();
-  }
-
-  function toggleIndicationChip() {
-    const next = cycleTri($filters.hasIndication);
-    searchActions.updateFilter('hasIndication', next);
-    searchActions.search();
-  }
-
-  function toggleFiltersPanel() {
-    advancedFiltersOpen = !advancedFiltersOpen;
-  }
-
-  function toggleDesktopPreviewPanel() {
-    uiActions.togglePreviewPanel();
-  }
-
-  function toggleMobilePreview() {
-    if ($previewState.isOpen) {
-      previewActions.closePreview();
-    } else if ($previewState.selectedUuid) {
-      previewActions.selectExercise($previewState.selectedUuid);
-    }
-  }
-
-  $: canTogglePreview = Boolean($previewState.selectedUuid);
-  $: filtersButtonLabel = 'Filtres';
-  $: previewToggleLabel = $layoutConfig.showPreviewPanel ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation';
-  $: autoCardMode = $previewPanelOpen ? 'compact' : 'detailed';
-  $: cardMode = manualCardMode === 'auto' ? autoCardMode : manualCardMode;
-
-  const sortOptions = [
-    { value: 'relevance', label: 'Pertinence' },
-    { value: 'updated', label: 'Date de mise à jour' },
-    { value: 'created', label: 'Date de création' },
-    { value: 'difficulty', label: 'Difficulté' }
-  ];
-
-  const defaultSortDirections = {
-    relevance: 'desc',
-    updated: 'desc',
-    created: 'desc',
-    difficulty: 'asc'
-  };
-
-  let sortSelection = 'relevance';
-  let sortDirection = 'desc';
-
-  $: sortSelection = $filters.sort ?? 'relevance';
-  $: sortDirection = $filters.sortDirection ?? (defaultSortDirections[sortSelection] ?? 'desc');
-  $: sortDirectionIcon = sortSelection === 'relevance'
-    ? '↕'
-    : sortDirection === 'asc'
-      ? '↑'
-      : '↓';
-
-  function handleSortChange(event) {
-    const nextSort = event.target.value;
-    if (nextSort === ($filters.sort ?? 'relevance')) {
-      return;
-    }
-    const nextDirection = defaultSortDirections[nextSort] ?? 'desc';
-    searchActions.updateFilter('sort', nextSort);
-    searchActions.updateFilter('sortDirection', nextSort === 'relevance' ? 'desc' : nextDirection);
-    searchActions.search();
-  }
-
-  function toggleSortDirection() {
-    const currentSort = $filters.sort ?? 'relevance';
-    if (currentSort === 'relevance') {
-      return;
-    }
-    const currentDirection = $filters.sortDirection === 'asc' ? 'asc' : 'desc';
-    const nextDirection = currentDirection === 'asc' ? 'desc' : 'asc';
-    searchActions.updateFilter('sortDirection', nextDirection);
-    searchActions.search();
+    if (!$previewPanelOpen) uiActions.togglePreviewPanel();
   }
 
   function isFormFieldFocused() {
@@ -166,285 +54,174 @@
     return Boolean(active.isContentEditable);
   }
 
-  function getSelectedResultIndex() {
+  function getSelectedIndex() {
     if (!$results.length || !$previewState.selectedUuid) return -1;
-    return $results.findIndex((exercise) => exercise.uuid === $previewState.selectedUuid);
-  }
-
-  function addSelectedExerciseToList() {
-    const selectedIndex = getSelectedResultIndex();
-    if (selectedIndex < 0 || selectedIndex >= $results.length) return;
-    const exercise = $results[selectedIndex];
-    listActions.addExercise({
-      uuid: exercise.uuid,
-      title: exercise.title,
-      chapter: exercise.chapter,
-      theme: exercise.theme,
-      author: exercise.author,
-      difficulty: exercise.difficulty,
-      level: exercise.level,
-      module: exercise.module
-    });
-  }
-
-  function openSelectedExercise() {
-    const selectedIndex = getSelectedResultIndex();
-    if (selectedIndex < 0 || selectedIndex >= $results.length) return;
-    const exercise = $results[selectedIndex];
-    if (typeof window !== 'undefined') {
-      window.location.href = `/exercise/${exercise.uuid}`;
-    }
+    return $results.findIndex((e) => e.uuid === $previewState.selectedUuid);
   }
 
   function moveSelection(delta) {
     if (!$results.length) return;
-    const currentIndex = getSelectedResultIndex();
-    const startIndex = currentIndex < 0 ? (delta > 0 ? 0 : $results.length - 1) : currentIndex + delta;
-    const nextIndex = Math.max(0, Math.min(startIndex, $results.length - 1));
-    const next = $results[nextIndex];
-    if (!next) return;
-    if (next.uuid !== $previewState.selectedUuid || !$previewState.isOpen) {
-      previewActions.selectExercise(next.uuid);
-    }
+    const cur = getSelectedIndex();
+    const next = Math.max(0, Math.min((cur < 0 ? (delta > 0 ? 0 : $results.length - 1) : cur + delta), $results.length - 1));
+    const exo = $results[next];
+    if (exo) previewActions.selectExercise(exo.uuid);
   }
 
-  function handleResultsKeyboardNav(event) {
+  function openSelected() {
+    const idx = getSelectedIndex();
+    if (idx < 0) return;
+    const exo = $results[idx];
+    if (exo && typeof window !== 'undefined') window.location.href = `/exercise/${exo.uuid}`;
+  }
+
+  function addSelectedToList() {
+    const idx = getSelectedIndex();
+    if (idx < 0) return;
+    const exo = $results[idx];
+    if (exo) listActions.addExercise({ uuid: exo.uuid, title: exo.title, chapter: exo.chapter, theme: exo.theme, author: exo.author, difficulty: exo.difficulty, level: exo.level, module: exo.module });
+  }
+
+  function handleKeydown(event) {
     if (isFormFieldFocused()) return;
     if (!$results.length) return;
-
-    if (event.key === 'ArrowDown') {
-      event.preventDefault();
-      moveSelection(1);
-      return;
-    }
-    if (event.key === 'ArrowUp') {
-      event.preventDefault();
-      moveSelection(-1);
-      return;
-    }
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      openSelectedExercise();
-      return;
-    }
-    if (event.key === 'Escape') {
-      if ($previewState.isOpen) {
-        event.preventDefault();
-        previewActions.closePreview();
-      }
-      return;
-    }
-    if (event.key === 'a' || event.key === 'A' || event.key === '+') {
-      event.preventDefault();
-      addSelectedExerciseToList();
-    }
+    if (event.key === 'ArrowDown') { event.preventDefault(); moveSelection(1); }
+    else if (event.key === 'ArrowUp') { event.preventDefault(); moveSelection(-1); }
+    else if (event.key === 'Enter') { event.preventDefault(); openSelected(); }
+    else if (event.key === 'Escape' && $previewState.isOpen) { event.preventDefault(); previewActions.closePreview(); }
+    else if (event.key === 'a' || event.key === 'A' || event.key === '+') { event.preventDefault(); addSelectedToList(); }
   }
 
-  function handleResultsScroll() {
-    // Not used anymore - keeping for compatibility
+  // Sort
+  const sortOptions = [
+    { value: 'relevance', label: 'Pertinence' },
+    { value: 'updated',   label: 'Date de mise à jour' },
+    { value: 'difficulty', label: 'Difficulté' },
+  ];
+
+  $: currentSort = $filters.sort ?? 'relevance';
+
+  function handleSortChange(event) {
+    const next = event.target.value;
+    if (next === currentSort) return;
+    searchActions.updateFilter('sort', next);
+    searchActions.updateFilter('sortDirection', next === 'relevance' ? 'desc' : 'asc');
+    searchActions.search();
   }
 
-  function handleWindowScroll() {
-    if (typeof window === 'undefined') return;
-    syncHeaderCollapsedFromScroll();
+  function removeFilter(key) {
+    searchActions.updateFilter(key, '');
+    searchActions.search();
   }
 
-  function syncHeaderCollapsedFromScroll() {
-    if (typeof window === 'undefined') return;
-    const pageScrollTop = window.scrollY || document.documentElement.scrollTop || 0;
-    isHeaderCollapsed = pageScrollTop > HEADER_COLLAPSE_THRESHOLD;
+  // Active filter chips derived from the filter store
+  $: activeChips = [
+    $filters.level      && { key: 'level',      label: `Niveau · ${$filters.level}` },
+    $filters.module     && { key: 'module',     label: `Module · ${$filters.module}` },
+    $filters.chapter    && { key: 'chapter',    label: $filters.chapter },
+    $filters.hasSolution === '1'   && { key: 'hasSolution',   label: 'Avec solution' },
+    $filters.hasIndication === '1' && { key: 'hasIndication', label: 'Avec indication' },
+    $filters.hasVideo === '1'      && { key: 'hasVideo',      label: 'Avec vidéo' },
+    $filters.author     && { key: 'author',     label: `Auteur · ${$filters.author}` },
+    $filters.difficulty && { key: 'difficulty', label: `Diff. ≤ ${'★'.repeat(Number($filters.difficulty))}` },
+  ].filter(Boolean);
+
+  function clearAllFilters() {
+    searchActions.clearAllFilters();
+    searchActions.search();
   }
 </script>
 
-<svelte:window on:keydown={handleResultsKeyboardNav} on:scroll={handleWindowScroll} />
+<svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
   <title>Recherche d'exercices - OpenYourMath</title>
 </svelte:head>
 
-<div class="search-page container mx-auto px-3 py-3 sm:px-4 sm:py-4 lg:py-8" class:search-page--scrolled={isHeaderCollapsed}>
-  <div class="hero-block text-center lg:text-left mb-4 sm:mb-6 lg:mb-10" class:hero-block--collapsed={isHeaderCollapsed}>
+<div class="search-page">
+
+  <!-- ── Search hero ────────────────────────────────────── -->
+  <section class="search-hero">
     <div class="hero-inner">
-      <img src="/img/logo1.png" alt="OpenYourMath" class="hidden lg:block w-24 h-auto" loading="eager" />
-      <div>
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Recherchez votre exercice</h1>
-        <p class="text-gray-600 text-sm sm:text-base">Explorez par mots-clés, puis affinez via les filtres.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="search-page-grid" class:search-page-grid--preview-open={isDesktop && $previewPanelOpen}>
-    <div class="search-page-main">
-      <div class="search-controls-sticky" class:search-controls-sticky--scrolled={isHeaderCollapsed}>
-
-        <!-- Barre de recherche + mode sémantique (drop-in de SearchToolbar) -->
+      <!-- Search bar via SearchSemantic (handles FTS/hybrid/stores) -->
+      <div class="hero-input-row">
         <SearchSemantic
-          onToggleFilters={toggleFiltersPanel}
+          advancedFiltersOpen={false}
+          onToggleFilters={() => {}}
+          onCloseAdvancedFilters={() => {}}
+          filtersExpanded={true}
+          onToggleExpanded={() => {}}
           hasSolution={$filters.hasSolution}
           hasIndication={$filters.hasIndication}
-          onToggleSolution={toggleSolutionChip}
-          onToggleIndication={toggleIndicationChip}
-          canTogglePreview={canTogglePreview && !isDesktop}
-          previewToggleLabel={previewToggleLabel}
-          isPreviewOpen={$previewState.isOpen}
-          onTogglePreview={toggleMobilePreview}
-          {advancedFiltersOpen}
-          onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
-          {filtersExpanded}
-          onToggleExpanded={() => (filtersExpanded = !filtersExpanded)}
+          onToggleSolution={() => {}}
+          onToggleIndication={() => {}}
         />
-
-        <!-- Bloc pliant mobile : filtres rapides + hiérarchie -->
-        <div class="mobile-filter-block" class:mobile-filter-block--collapsed={!filtersExpanded}>
-          <!-- Section "Contenu disponible" -->
-          <div class="mfb-section">
-            <span class="mfb-section-label">Contenu disponible</span>
-            <div class="mfb-chips">
-              <button
-                type="button"
-                class="chip {$filters.hasSolution === '1' ? 'chip--on' : $filters.hasSolution === '0' ? 'chip--off' : ''}"
-                on:click={toggleSolutionChip}
-                disabled={$loading}
-              >
-                ✅ Solution{$filters.hasSolution === '1' ? ' • oui' : $filters.hasSolution === '0' ? ' • non' : ''}
-              </button>
-              <button
-                type="button"
-                class="chip {$filters.hasIndication === '1' ? 'chip--on' : $filters.hasIndication === '0' ? 'chip--off' : ''}"
-                on:click={toggleIndicationChip}
-                disabled={$loading}
-              >
-                💡 Indication{$filters.hasIndication === '1' ? ' • oui' : $filters.hasIndication === '0' ? ' • non' : ''}
-              </button>
-            </div>
-          </div>
-
-          <!-- Section "Filtrer par" : hiérarchie en cascade -->
-          <div class="mfb-section">
-            <span class="mfb-section-label">Filtrer par</span>
-            {#if browser}
-              <BreadcrumbNav
-                query={$searchQuery}
-                filters={$filters}
-                resultPathCounts={$resultPathCounts}
-                on:navigate={handleChapterNavigation}
-              />
-            {/if}
-          </div>
-
-          <!-- Filtres actifs (auteur, difficulté, etc.) -->
-          <ActiveFilters />
-
-          <!-- Bouton filtres avancés -->
-          <button
-            type="button"
-            class="mfb-advanced-btn"
-            class:mfb-advanced-btn--active={advancedFiltersOpen}
-            on:click={toggleFiltersPanel}
-            aria-expanded={advancedFiltersOpen}
-          >
-            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L13 10.414V15a1 1 0 01-.553.894l-4 2A1 1 0 017 17v-6.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
-            </svg>
-            Filtres avancés
-          </button>
-        </div>
-
-        <!-- Sur desktop : ActiveFilters + BreadcrumbNav restent sous la toolbar -->
-        <div class="desktop-meta-shell">
-          <ActiveFilters />
-          {#if browser}
-            <BreadcrumbNav
-              query={$searchQuery}
-              filters={$filters}
-              resultPathCounts={$resultPathCounts}
-              on:navigate={handleChapterNavigation}
-            />
-          {/if}
-        </div>
-
       </div>
 
-      <div
-        class="results-section flex-1"
-        style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}
-        bind:this={resultsScrollEl}
-        on:scroll={handleResultsScroll}
-      >
+      <!-- Active filter chips + sort -->
+      {#if activeChips.length > 0}
+        <div class="hero-chips-row">
+          <span class="chips-label">Filtres actifs :</span>
+          {#each activeChips as chip}
+            <span class="filter-chip">
+              {chip.label}
+              <button class="chip-remove" aria-label="Retirer {chip.label}" on:click={() => removeFilter(chip.key)}>×</button>
+            </span>
+          {/each}
+          <button class="clear-all-btn" on:click={clearAllFilters}>tout effacer</button>
+          <span class="spacer"></span>
+          <span class="sort-label">Tri :</span>
+          <select class="sort-select" value={currentSort} on:change={handleSortChange}>
+            {#each sortOptions as opt}
+              <option value={opt.value}>{opt.label}</option>
+            {/each}
+          </select>
+        </div>
+      {:else if $hasResults}
+        <div class="hero-chips-row">
+          <span class="spacer"></span>
+          <span class="sort-label">Tri :</span>
+          <select class="sort-select" value={currentSort} on:change={handleSortChange}>
+            {#each sortOptions as opt}
+              <option value={opt.value}>{opt.label}</option>
+            {/each}
+          </select>
+        </div>
+      {/if}
+    </div>
+  </section>
+
+  <!-- ── 3-column body ──────────────────────────────────── -->
+  <div class="search-body">
+
+    <!-- Left: filter sidebar -->
+    <SearchPageSidebar />
+
+    <!-- Center: results -->
+    <main class="results-pane">
       {#if $error}
-        <div class="search-error">
-          <p class="search-error-text">{$error}</p>
+        <div class="results-error">
+          <p>{$error}</p>
         </div>
       {/if}
 
       {#if $loading && !$hasResults}
-        <div class="text-center py-10">
-          <p class="text-gray-500">Recherche en cours...</p>
-        </div>
+        <div class="results-loading">Recherche en cours…</div>
       {:else if $hasResults}
-        <div class="results-header mb-4">
-          <div class="results-header-row1">
-            <h2 class="results-title">
-              {$searchMeta?.pagination?.totalCount || $results.length}
-              résultat{$results.length > 1 ? 's' : ''} trouvé{$results.length > 1 ? 's' : ''}
-            </h2>
-            <div class="view-mode-toggle" role="group" aria-label="Mode d'affichage des cartes">
-              <button
-                type="button"
-                class={`view-mode-btn ${manualCardMode === 'auto' ? 'view-mode-btn--active' : ''}`}
-                on:click={() => (manualCardMode = 'auto')}
-                title={`Mode auto (${autoCardMode === 'compact' ? 'compact' : 'détaillé'})`}
-              >
-                Auto
-              </button>
-              <button
-                type="button"
-                class={`view-mode-btn ${cardMode === 'compact' && manualCardMode !== 'auto' ? 'view-mode-btn--active' : ''}`}
-                on:click={() => (manualCardMode = 'compact')}
-                title="Mode compact"
-              >
-                ▦
-              </button>
-              <button
-                type="button"
-                class={`view-mode-btn ${cardMode === 'detailed' && manualCardMode !== 'auto' ? 'view-mode-btn--active' : ''}`}
-                on:click={() => (manualCardMode = 'detailed')}
-                title="Mode détaillé"
-              >
-                ☰
-              </button>
-            </div>
-          </div>
-          <div class="sort-control">
-            <label class="sort-label" for="search-sort-select">Trier par</label>
-            <div class="sort-select-group">
-              <select
-                id="search-sort-select"
-                class="sort-select"
-                bind:value={sortSelection}
-                on:change={handleSortChange}
-              >
-                {#each sortOptions as option}
-                  <option value={option.value}>{option.label}</option>
-                {/each}
-              </select>
-              <button
-                type="button"
-                class="sort-direction-button"
-                on:click={toggleSortDirection}
-                aria-label={`Basculer en ordre ${sortDirection === 'asc' ? 'décroissant' : 'croissant'}`}
-                title={`Basculer en ordre ${sortDirection === 'asc' ? 'décroissant' : 'croissant'}`}
-                disabled={sortSelection === 'relevance'}
-              >
-                {sortDirectionIcon}
-              </button>
-            </div>
-          </div>
+        <!-- Results header -->
+        <div class="results-header">
+          <h2 class="results-count">
+            {$searchMeta?.pagination?.totalCount || $results.length}
+            <span class="results-count-label">
+              résultat{$results.length > 1 ? 's' : ''}
+              {#if $searchQuery}· pour « {$searchQuery} »{/if}
+            </span>
+          </h2>
         </div>
+
         <ResultsGrid
           results={$results}
           activeFilters={$filters}
-          {cardMode}
+          cardMode="detailed"
           selectedUuid={$previewState.selectedUuid}
           isPreviewOpen={$previewState.isOpen}
           onSelect={selectExercise}
@@ -452,526 +229,434 @@
           onLoadMore={searchActions.loadMore}
           loadingMore={$loadingMore}
         />
-        <p class="results-keyboard-hint">↑↓ naviguer · Entrée ouvrir · A ajouter · Échap fermer</p>
+
+        <p class="keyboard-hint">↑↓ naviguer · Entrée ouvrir · A ajouter · Échap fermer</p>
+
       {:else if $hasSearched}
         <EmptyState
           title="Aucun exercice trouvé"
           subtitle="Essayez d'ajuster les filtres ou votre requête."
         >
-          <button slot="action" on:click={searchActions.clearAllFilters} class="btn btn-primary mt-4">
+          <button slot="action" on:click={clearAllFilters} class="btn-clear-slot">
             Effacer tous les filtres
           </button>
         </EmptyState>
       {:else}
-        <section class="random-carousel">
+        <section class="random-section">
           <RandomExercisesCarousel
             selectedUuid={$previewState.selectedUuid}
             isPreviewOpen={$previewState.isOpen}
-            on:select={(event) => selectExercise(event.detail.exercise)}
+            on:select={(e) => selectExercise(e.detail.exercise)}
           />
         </section>
       {/if}
-      </div>
-    </div>
+    </main>
 
-    <div class="preview-shell">
-      {#if isDesktop && $previewPanelOpen}
-        <aside class="preview-section" style={`--layout-preview-width: ${$layoutConfig.previewWidth};`}>
-          <div class="preview-sticky">
-            <ExercisePreview />
-          </div>
-        </aside>
-      {/if}
-      {#if isDesktop}
-        <button
-          type="button"
-          class="panel-edge-toggle panel-edge-toggle--preview"
-          aria-label={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
-          title={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
-          on:click={toggleDesktopPreviewPanel}
-        >
-          {$previewPanelOpen ? '›' : '‹'}
-        </button>
-      {/if}
-    </div>
+    <!-- Right: preview panel -->
+    {#if isDesktop && $previewPanelOpen}
+      <aside class="preview-pane">
+        <ExercisePreview />
+      </aside>
+    {/if}
+
+    <!-- Preview edge toggle (desktop) -->
+    {#if isDesktop}
+      <button
+        class="preview-edge-toggle"
+        aria-label={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
+        on:click={() => uiActions.togglePreviewPanel()}
+      >
+        {$previewPanelOpen ? '›' : '‹'}
+      </button>
+    {/if}
+
   </div>
+
 </div>
 
-
-{#if !isDesktop}
-  <MobileExercisePreview />
+<!-- Mobile preview overlay -->
+{#if !isDesktop && $previewState.isOpen}
+  <div class="mobile-preview-overlay">
+    <div class="mobile-preview-header">
+      <h3 class="mobile-preview-title">{$previewState.exercise?.title ?? 'Exercice'}</h3>
+      <button class="mobile-preview-close" on:click={() => previewActions.closePreview()}>✕</button>
+    </div>
+    <div class="mobile-preview-body">
+      <ExercisePreview />
+    </div>
+  </div>
 {/if}
 
 <style>
+  /* ─── Page shell ─────────────────────────────────── */
   .search-page {
-    --results-scroll-height: auto;
+    display: flex;
+    flex-direction: column;
+    /* fill the viewport below the sticky header (4rem) */
+    height: calc(100vh - 4rem);
+    background: var(--oym-bg);
+    font-family: var(--oym-font-sans);
+    /* Override the main-content max-width for a full-bleed layout */
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
+
+  /* ─── Search hero ────────────────────────────────── */
+  .search-hero {
+    flex-shrink: 0;
+    padding: 16px 24px 12px;
+    border-bottom: 1px solid var(--oym-hairline);
+    background: var(--oym-bg);
+  }
+
   .hero-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
-  .hero-block {
-    max-height: 18rem;
-    opacity: 1;
-    overflow: hidden;
-    transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 200ms cubic-bezier(0.4, 0, 0.2, 1),
-                margin 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* Sur mobile, on garde le hero plus longtemps avant collapse */
-  @media (max-width: 1023px) {
-    .hero-inner {
-      padding: 0.5rem 0;
-    }
-    .hero-block h1 {
-      font-size: 1.5rem;
-    }
-    .hero-block p {
-      font-size: 0.875rem;
-    }
-  }
-
-  .hero-block.hero-block--collapsed {
-    max-height: 0;
-    opacity: 0;
-    margin-bottom: 0;
-    pointer-events: none;
-  }
-
-  @media (min-width:1024px) {
-    .hero-inner {
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 1.5rem;
-    }
-    .search-page {
-      --results-scroll-height: calc(100vh - 19rem);
-    }
-    .search-page.search-page--scrolled {
-      --results-scroll-height: calc(100vh - 11rem);
-    }
-  }
-
-  .search-page-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .search-page-main {
-    width: 100%;
-    min-width: 0;
-  }
-
-  :root {
-    --app-header-height: 4rem;
-    --search-controls-height: 6.5rem;
-  }
-
-  .search-controls-sticky {
-    position: sticky;
-    top: var(--app-header-height, 4rem);
-    z-index: 35;
-    padding: 0.75rem;
-    transition: box-shadow 200ms ease, background-color 200ms ease, backdrop-filter 200ms ease, border-color 200ms ease;
+  /* Override SearchSemantic / SearchToolbar internals for the hi-fi design */
+  .hero-input-row :global(.toolbar) {
     background: transparent;
-    @apply border border-gray-200 rounded-lg;
+    border: none;
+    padding: 0;
+    box-shadow: none;
   }
 
-  /* Sur mobile, réduire le padding */
-  @media (max-width: 640px) {
-    .search-controls-sticky {
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-    }
+  .hero-input-row :global(.toolbar-top) {
+    gap: 12px;
   }
 
-  .search-controls-sticky--scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  .hero-input-row :global(.toolbar-search) {
+    flex: 1;
+    height: 50px;
+    border: 1px solid var(--oym-line);
+    border-radius: 8px;
+    background: var(--oym-bg);
+    font-size: 16px;
+    padding: 0 16px;
+    gap: 10px;
+    transition: border-color 0.15s, box-shadow 0.15s;
   }
 
-  /* ─── Bloc filtres mobile (pliant) ─── */
+  .hero-input-row :global(.toolbar-search:focus-within) {
+    border-color: var(--oym-teal);
+    box-shadow: var(--oym-sh-focus);
+  }
 
-  /* Caché sur desktop */
-  .mobile-filter-block {
+  .hero-input-row :global(.search-input) {
+    font-family: var(--oym-font-sans);
+    font-size: 16px;
+    color: var(--oym-ink);
+  }
+
+  .hero-input-row :global(.search-input::placeholder) {
+    color: var(--oym-ink-3);
+  }
+
+  /* Hide the toolbar-actions row (solution chips etc. moved to sidebar) */
+  .hero-input-row :global(.toolbar-actions) {
     display: none;
   }
 
-  @media (max-width: 640px) {
-    .mobile-filter-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      overflow: hidden;
-      max-height: 40rem; /* suffisamment grand */
-      transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                  opacity 200ms ease,
-                  margin-top 200ms ease;
-      opacity: 1;
-      margin-top: 0.6rem;
-    }
-
-    .mobile-filter-block--collapsed {
-      max-height: 0;
-      opacity: 0;
-      margin-top: 0;
-      pointer-events: none;
-    }
+  /* Hide mobile collapse toggle */
+  .hero-input-row :global(.collapse-toggle) {
+    display: none;
   }
 
-  .mfb-section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-
-  .mfb-section-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    @apply text-gray-500;
-  }
-
-  .mfb-chips {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .mfb-chips .chip {
-    flex: 1 1 0;
-    justify-content: center;
-    min-height: 2.25rem;
-    font-size: 0.85rem;
-  }
-
-  .chip {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.875rem;
-    border-radius: 9999px;
-    transition: background-color .2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.2rem;
-    white-space: nowrap;
-    @apply border border-gray-200 bg-gray-100 text-gray-700;
-  }
-  .chip:hover { @apply bg-gray-200; }
-  .chip--on { @apply bg-green-100 text-green-700 border-green-200; }
-  .chip--off { @apply bg-red-100 text-red-800 border-red-200; }
-
-  .mfb-advanced-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.55rem 0.85rem;
-    border-radius: 0.6rem;
-    font-size: 0.85rem;
+  /* Keep the submit/search button from SearchSemantic (if any) */
+  .hero-input-row :global(.toolbar-submit) {
+    background: var(--oym-ink);
+    color: var(--oym-bg);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--oym-font-sans);
+    font-size: 14px;
     font-weight: 600;
-    width: 100%;
+    padding: 0 20px;
+    height: 50px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  /* Active filter chips row */
+  .hero-chips-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .chips-label {
+    font-family: var(--oym-font-sans);
+    font-size: 12px;
+    color: var(--oym-ink-3);
+  }
+
+  .filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px 4px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--oym-ink);
+    background: var(--oym-ink);
+    color: var(--oym-bg);
+    font-family: var(--oym-font-sans);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .chip-remove {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    transition: background-color .15s;
-    @apply border border-gray-300 bg-gray-50 text-gray-700;
-  }
-  .mfb-advanced-btn svg { width: 0.9rem; height: 0.9rem; flex-shrink: 0; }
-  .mfb-advanced-btn:hover { @apply bg-gray-100; }
-  .mfb-advanced-btn--active { @apply bg-brand-50 border-brand-300 text-brand-700; }
-
-  /* ─── Desktop : ActiveFilters + BreadcrumbNav sous la toolbar ─── */
-
-  .desktop-meta-shell {
-    display: none;
-  }
-
-  @media (min-width: 641px) {
-    .desktop-meta-shell {
-      display: block;
-      position: relative;
-      overflow: visible;
-      margin-top: 0.5rem;
-    }
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0.7;
+    padding: 0;
+    line-height: 1;
   }
 
-  .results-section {
-    width: 100%;
-    min-width: 0;
+  .chip-remove:hover { opacity: 1; background: rgba(255,255,255,0.15); }
+
+  .clear-all-btn {
+    background: none;
+    border: none;
+    font-family: var(--oym-font-sans);
+    font-size: 12px;
+    color: var(--oym-ink-3);
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
   }
 
-  .preview-shell {
+  .clear-all-btn:hover { color: var(--oym-ink); }
+
+  .spacer { flex: 1; }
+
+  .sort-label {
+    font-family: var(--oym-font-sans);
+    font-size: 12px;
+    color: var(--oym-ink-3);
+    white-space: nowrap;
+  }
+
+  .sort-select {
+    font-family: var(--oym-font-sans);
+    font-size: 13px;
+    color: var(--oym-ink);
+    border: 1px solid var(--oym-line-2);
+    border-radius: 6px;
+    background: var(--oym-bg);
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  /* ─── 3-column body ──────────────────────────────── */
+  .search-body {
+    flex: 1;
+    min-height: 0;
+    display: flex;
     position: relative;
-    overflow: visible;
+  }
+
+  /* Results pane */
+  .results-pane {
+    flex: 1;
     min-width: 0;
-    width: 100%;
-  }
-
-  @media (min-width:1024px) {
-    .preview-shell {
-      display: block;
-      position: sticky;
-      top: calc(var(--app-header-height, 4rem) + var(--search-controls-height, 6.5rem));
-      align-self: start;
-      z-index: 10;
-      max-height: calc(100vh - var(--app-header-height, 4rem) - var(--search-controls-height, 6.5rem));
-    }
-  }
-
-  .panel-edge-toggle {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1.75rem;
-    height: 4.25rem;
-    border-radius: 0.5rem;
-    font-size: 1.15rem;
-    font-weight: 700;
-    z-index: 20;
-    @apply border border-gray-300 bg-white text-gray-700 shadow-sm transition-colors;
-  }
-  .panel-edge-toggle:hover { @apply bg-gray-100 text-gray-900; }
-  .panel-edge-toggle--preview {
-    left: -0.875rem;
-  }
-
-  @media (min-width:1024px) {
-    .search-page-grid {
-      display: grid;
-      grid-template-areas: "main preview";
-      grid-template-columns: minmax(0, 1fr) 2rem;
-      column-gap: 0;
-      align-items: start;
-      transition: grid-template-columns 200ms ease;
-    }
-
-    .search-page-grid.search-page-grid--preview-open {
-      grid-template-columns: minmax(0, 1fr) minmax(20rem, 28rem);
-    }
-
-    .search-page-main {
-      grid-area: main;
-      min-width: 0;
-    }
-
-    .results-section {
-      min-height: 20rem;
-      padding-bottom: 2rem;
-    }
-
-    .preview-shell {
-      grid-area: preview;
-      min-width: 2rem;
-    }
-  }
-
-  .preview-section {
-    width: 100%;
-    height: 100%;
-    @apply border-l border-gray-200;
-  }
-
-  @media (min-width:1024px) {
-    .preview-section {
-      width: 100%;
-      min-width: 0;
-    }
-  }
-
-  .preview-sticky {
-    max-height: calc(100vh - 2rem);
     overflow-y: auto;
-    padding: 1rem;
-  }
-
-  @media (min-width:1024px) {
-    .preview-sticky {
-      max-height: calc(100vh - var(--app-header-height, 4rem) - var(--search-controls-height, 6.5rem) - 2rem);
-    }
-  }
-
-  .search-error {
-    margin-top: 0.5rem;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    @apply bg-red-50 border border-red-200;
-  }
-  .search-error-text {
-    font-size: 0.875rem;
-    @apply text-red-600;
+    padding: 20px 24px 40px;
+    background: var(--oym-bg);
   }
 
   .results-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    flex-wrap: wrap;
+    margin-bottom: 14px;
+    gap: 12px;
   }
 
-  /* Sur desktop: row1 = titre (flex) + view-mode-toggle, sort-control à droite */
-  .results-header-row1 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex: 1 1 auto;
-  }
-
-  .results-title {
-    font-size: 1.125rem;
+  .results-count {
+    font-family: var(--oym-font-serif);
+    font-size: 22px;
     font-weight: 600;
-    flex: 1 1 auto;
-    min-width: fit-content;
-    @apply text-gray-900;
+    color: var(--oym-ink);
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -0.3px;
   }
 
-  .sort-control {
+  .results-count-label {
+    font-family: var(--oym-font-sans);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--oym-ink-3);
+    margin-left: 4px;
+  }
+
+  .results-loading {
+    padding: 40px 0;
+    text-align: center;
+    font-family: var(--oym-font-sans);
+    font-size: 14px;
+    color: var(--oym-ink-3);
+  }
+
+  .results-error {
+    margin-top: 8px;
+    padding: 12px 14px;
+    border-radius: 6px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    font-size: 14px;
+  }
+
+  .keyboard-hint {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--oym-ink-4);
+    font-family: var(--oym-font-sans);
+  }
+
+  .random-section {
+    padding-top: 8px;
+  }
+
+  /* Preview pane */
+  .preview-pane {
+    width: 360px;
+    flex-shrink: 0;
+    border-left: 1px solid var(--oym-hairline);
+    overflow-y: auto;
+    background: var(--oym-bg-elev);
+    position: relative;
+  }
+
+  .preview-edge-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 56px;
+    border-radius: 6px 0 0 6px;
+    background: var(--oym-bg);
+    border: 1px solid var(--oym-hairline);
+    border-right: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--oym-ink-3);
+    cursor: pointer;
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  /* Sur mobile, ligne 1: titre + view-mode, ligne 2: tri */
-  @media (max-width: 640px) {
-    .results-header {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0.5rem;
-    }
-
-    .results-header-row1 {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-
-    .results-title {
-      font-size: 0.9rem;
-    }
-
-    .sort-control {
-      width: 100%;
-      justify-content: flex-end;
-    }
-
-    .view-mode-toggle {
-      flex: 0 0 auto;
-      margin-right: 0;
-      padding-right: 0;
-      border-right: none;
-    }
-
-    .sort-label {
-      display: none;
-    }
-
-    .sort-select-group {
-      flex: 1 1 auto;
-      justify-content: flex-end;
-    }
-
-    .sort-select {
-      flex: 1 1 auto;
-      max-width: 160px;
-      font-size: 0.8rem;
-      padding: 0.4rem 0.5rem;
-    }
-  }
-
-  .view-mode-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  .view-mode-btn {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    @apply border border-gray-300 bg-white text-gray-600;
-  }
-
-  .view-mode-btn--active {
-    @apply bg-brand-600 border-brand-600 text-white;
-  }
-
-  .sort-label {
-    font-size: 0.875rem;
-    white-space: nowrap;
-    @apply text-gray-600;
-  }
-
-  .sort-select-group {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-  }
-
-  .sort-select {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.875rem;
-    @apply border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-500;
-  }
-
-  .sort-direction-button {
-    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    font-size: 1rem;
-    border-radius: 0.75rem;
-    transition: background-color .2s, color .2s;
-    @apply border border-gray-300 bg-white text-gray-600;
+    z-index: 5;
+    transition: background 0.15s, color 0.15s;
   }
 
-  .sort-direction-button:hover:enabled {
-    @apply bg-gray-100 text-gray-800;
+  .preview-edge-toggle:hover {
+    background: var(--oym-bg-elev);
+    color: var(--oym-ink);
   }
 
-  .sort-direction-button:disabled {
-    @apply opacity-60 cursor-not-allowed;
+  /* Slot action button */
+  .btn-clear-slot {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--oym-ink);
+    background: var(--oym-ink);
+    color: var(--oym-bg);
+    font-family: var(--oym-font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: background 0.15s;
   }
 
-  @media (min-width: 641px) {
-    .results-title {
-      font-size: 1.25rem;
+  .btn-clear-slot:hover { background: var(--oym-teal-700); border-color: var(--oym-teal-700); }
+
+  /* ─── Mobile preview overlay ─────────────────────── */
+  .mobile-preview-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    background: var(--oym-bg-elev);
+  }
+
+  .mobile-preview-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--oym-hairline);
+    background: var(--oym-bg);
+    flex-shrink: 0;
+  }
+
+  .mobile-preview-title {
+    flex: 1;
+    font-family: var(--oym-font-serif);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--oym-ink);
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-preview-close {
+    background: none;
+    border: none;
+    color: var(--oym-ink-3);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .mobile-preview-body {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  /* ─── Responsive ─────────────────────────────────── */
+  @media (max-width: 1023px) {
+    .search-page {
+      height: auto;
+      min-height: calc(100vh - 4rem);
     }
-  }
-  .results-keyboard-hint {
-    margin-top: 0.7rem;
-    font-size: 0.78rem;
-    @apply text-gray-500;
+
+    .search-body {
+      flex-direction: column;
+    }
+
+    /* On tablet/mobile, hide the filter sidebar and preview */
+    .preview-edge-toggle { display: none; }
   }
 
-  /* Masquer les raccourcis clavier sur mobile */
-  @media (max-width: 768px) {
-    .results-keyboard-hint {
-      display: none;
+  @media (max-width: 640px) {
+    .search-hero {
+      padding: 12px 14px 10px;
     }
-  }
-  .empty-state {
-    text-align: center;
-    padding: 3rem 1.5rem;
-    border-radius: 1rem;
-    @apply border border-dashed border-gray-300 bg-gray-50;
-  }
-  .empty-state-title {
-    font-size:1.125rem;
-    font-weight:600;
-    margin-bottom:0.5rem;
-    @apply text-interface-text-primary;
-  }
-  .empty-state-subtitle {
-    font-size:0.95rem;
-    @apply text-interface-text-secondary;
+
+    .results-pane {
+      padding: 14px 14px 40px;
+    }
   }
 </style>
