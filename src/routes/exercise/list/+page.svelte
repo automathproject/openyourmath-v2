@@ -7,9 +7,12 @@
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
   import ExerciseListEditor from '$lib/components/ExerciseListEditor.svelte';
   import LatexExportPanel from '$lib/components/LatexExportPanel.svelte';
-  import { 
-    exerciseList, 
-    selectedExerciseIndex, 
+  import SeanceModeBar from '$lib/components/SeanceModeBar.svelte';
+  import MathRenderer from '$lib/components/MathRenderer.svelte';
+  import StarsRating from '$lib/components/StarsRating.svelte';
+  import {
+    exerciseList,
+    selectedExerciseIndex,
     selectedExercise,
     exerciseLoading,
     exerciseError,
@@ -18,9 +21,72 @@
     listActions,
     listUtils
   } from '$lib/stores/listStore.js';
-  
+
   export let data;
-  
+
+  // Mode séance (URL param)
+  let mode = 'preparer';
+  $: mode = /** @type {'preparer'|'consulter'|'presenter'|'partager'} */ ($page.url.searchParams.get('mode') || 'preparer');
+
+  // Consulter view state
+  let consulterShowHint = false;
+  let consulterShowSolution = false;
+
+  // Presenter view state
+  let presenterQIdx = 0;
+  let presenterShowInd = false;
+  let presenterShowSol = false;
+
+  $: presenterExo = $selectedExercise;
+  $: presenterQuestions = presenterExo?.content?.filter(b => b.type === 'question' || b.type === 'enonce') || [];
+
+  function presenterNext() {
+    if (presenterQIdx < presenterQuestions.length - 1) { presenterQIdx++; presenterShowInd = false; presenterShowSol = false; }
+    else if ($currentPosition.hasNext) { listActions.nextExercise(); presenterQIdx = 0; presenterShowInd = false; presenterShowSol = false; }
+  }
+  function presenterPrev() {
+    if (presenterQIdx > 0) { presenterQIdx--; presenterShowInd = false; presenterShowSol = false; }
+    else if ($currentPosition.hasPrevious) { listActions.previousExercise(); presenterQIdx = 0; presenterShowInd = false; presenterShowSol = false; }
+  }
+  function presenterNextExo() { if ($currentPosition.hasNext) { listActions.nextExercise(); presenterQIdx = 0; presenterShowInd = false; presenterShowSol = false; } }
+  function presenterPrevExo() { if ($currentPosition.hasPrevious) { listActions.previousExercise(); presenterQIdx = 0; presenterShowInd = false; presenterShowSol = false; } }
+
+  function handlePresenterKey(e) {
+    if (e.target?.tagName === 'INPUT' || e.target?.tagName === 'TEXTAREA') return;
+    if (mode !== 'presenter') return;
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); presenterNext(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); presenterPrev(); }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); presenterNextExo(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); presenterPrevExo(); }
+    else if (e.key === 'i' || e.key === 'I') presenterShowInd = !presenterShowInd;
+    else if (e.key === 's' || e.key === 'S') presenterShowSol = !presenterShowSol;
+    else if (/^[1-9]$/.test(e.key)) listActions.selectExercise(parseInt(e.key) - 1);
+  }
+
+  // Partager view state
+  let partagerCopied = '';
+  let partagerSolVisible = false;
+  let partagerIndVisible = true;
+  let partagerNotesVisible = false;
+
+  async function partagerCopyLink() {
+    const url = buildShareUrl(null);
+    try {
+      await navigator.clipboard.writeText(url);
+      partagerCopied = 'link';
+      setTimeout(() => { if (partagerCopied === 'link') partagerCopied = ''; }, 2000);
+    } catch { alert(url); }
+  }
+  async function partagerCopyEmbed() {
+    const url = buildShareUrl(null);
+    const embed = `<iframe src="${url}" width="100%" height="600" frameborder="0"></iframe>`;
+    try {
+      await navigator.clipboard.writeText(embed);
+      partagerCopied = 'embed';
+      setTimeout(() => { if (partagerCopied === 'embed') partagerCopied = ''; }, 2000);
+    } catch { alert(embed); }
+  }
+
   let showHint = false;
   let showSolution = false;
   let isEditMode = false;
@@ -471,8 +537,16 @@
   <meta name="description" content="Liste personnalisée de {$exerciseList.length} exercices de mathématiques" />
 </svelte:head>
 
-<svelte:window on:keydown={handleKeydown} on:resize={checkMobile} />
+<svelte:window on:keydown={(e) => { handleKeydown(e); handlePresenterKey(e); }} on:resize={checkMobile} />
 
+<SeanceModeBar
+  bind:mode
+  title={listTitle || "Liste d'exercices"}
+  subtitle="{$exerciseList.length} exercice{$exerciseList.length !== 1 ? 's' : ''}"
+  breadcrumb={[{ label: 'Mes séances', href: '/exercise/list' }, { label: listTitle || 'Sans titre' }]}
+/>
+
+{#if mode === 'preparer'}
 <div class="exercise-list-page" class:presentation-mode={isPresentationMode} class:full-presentation={isFullPresentation}>
   <!-- Header de la page -->
   <header class="list-header">
@@ -1072,11 +1146,297 @@
   {/if}
 </div>
 
+{:else if mode === 'consulter'}
+<!-- ────────── MODE CONSULTER ────────── -->
+<div class="mode-consulter">
+  {#if !$hasExercises}
+    <div class="empty-state">
+      <div class="empty-state-icon">📚</div>
+      <h2 class="empty-state-title">Aucun exercice</h2>
+      <p class="empty-state-subtitle">Ajoutez des exercices en mode Préparer.</p>
+    </div>
+  {:else}
+    <aside class="consulter-toc">
+      <div class="t-overline mb-3">Sommaire · {$exerciseList.length}</div>
+      <ul class="consulter-list">
+        {#each $exerciseList as e, i}
+          <li>
+            <button
+              class="consulter-item"
+              class:is-selected={i === $selectedExerciseIndex}
+              on:click={() => listActions.selectExercise(i)}
+            >
+              <span class="consulter-num">{String(i + 1).padStart(2, '0')}</span>
+              <div class="consulter-item-body">
+                <div class="consulter-item-title">
+                  <MathRenderer content={e.title || `Exercice ${i+1}`} inline={true} />
+                </div>
+                {#if e.difficulty}<StarsRating n={e.difficulty} total={4} />{/if}
+              </div>
+            </button>
+          </li>
+        {/each}
+      </ul>
+    </aside>
+
+    <main class="consulter-main">
+      <div class="consulter-controls">
+        <span class="text-sm text-interface-text-muted">{$selectedExerciseIndex + 1} / {$exerciseList.length}</span>
+        <span style="flex:1"></span>
+        <button
+          class="btn btn-secondary btn-sm"
+          class:active={consulterShowHint}
+          on:click={() => (consulterShowHint = !consulterShowHint)}
+        >💡 Indications</button>
+        <button
+          class="btn btn-secondary btn-sm"
+          class:active={consulterShowSolution}
+          on:click={() => (consulterShowSolution = !consulterShowSolution)}
+        >★ Solutions</button>
+      </div>
+
+      {#if $exerciseLoading}
+        <div class="text-center py-8 text-interface-text-muted">Chargement...</div>
+      {:else if $selectedExercise}
+        <div class="consulter-exercise card">
+          <ExerciseContent
+            exercise={$selectedExercise}
+            variant="full"
+            showGlobalToggles={false}
+            content={$selectedExercise.content || []}
+            bind:showHint={consulterShowHint}
+            bind:showSolution={consulterShowSolution}
+          />
+        </div>
+        <div class="consulter-nav-btns">
+          <button
+            class="btn btn-secondary"
+            disabled={!$currentPosition.hasPrevious}
+            on:click={listActions.previousExercise}
+          >← Précédent</button>
+          <button
+            class="btn btn-primary"
+            disabled={!$currentPosition.hasNext}
+            on:click={listActions.nextExercise}
+          >Suivant →</button>
+        </div>
+      {:else}
+        <div class="text-center py-8 text-interface-text-muted">Sélectionnez un exercice</div>
+      {/if}
+    </main>
+  {/if}
+</div>
+
+{:else if mode === 'presenter'}
+<!-- ────────── MODE PRÉSENTER ────────── -->
+<div class="mode-presenter">
+  {#if !$hasExercises}
+    <div style="text-align:center; padding: 4rem 2rem; color: rgba(254,252,246,0.5);">
+      <p>Aucun exercice dans la séance.</p>
+    </div>
+  {:else}
+    <div class="presenter-topbar">
+      <span class="presenter-breadcrumb-text">
+        {listTitle || "Liste d'exercices"} · Exercice {$selectedExerciseIndex + 1}/{$exerciseList.length}
+      </span>
+      <div style="flex:1"></div>
+      <span class="presenter-shortcut-hint"><kbd class="presenter-kbd">←</kbd><kbd class="presenter-kbd">→</kbd> questions · <kbd class="presenter-kbd">I</kbd> indice · <kbd class="presenter-kbd">S</kbd> solution</span>
+    </div>
+
+    <div class="presenter-slide">
+      {#if $selectedExercise}
+        <div class="presenter-exo-title">{$selectedExercise.title || ''}</div>
+
+        {#if presenterQuestions.length > 0}
+          {@const q = presenterQuestions[presenterQIdx]}
+          <div class="presenter-slide-inner">
+            <div class="presenter-bignum">{presenterQIdx + 1}.</div>
+            <div class="presenter-body">
+              {#if q?.title}
+                <div class="presenter-q-title">
+                  <MathRenderer content={q.title} inline={true} />
+                </div>
+              {/if}
+              {#if q?.content || q?.body}
+                <div class="presenter-q-body">
+                  <MathRenderer content={q.content || q.body} inline={false} />
+                </div>
+              {/if}
+              <div class="presenter-reveal-btns">
+                <button class="presenter-btn" on:click={() => (presenterShowInd = !presenterShowInd)}>
+                  💡 {presenterShowInd ? 'Masquer' : 'Indication'}
+                </button>
+                <button class="presenter-btn presenter-btn--sol" on:click={() => (presenterShowSol = !presenterShowSol)}>
+                  ★ {presenterShowSol ? 'Masquer' : 'Solution'}
+                </button>
+              </div>
+              {#if presenterShowInd && q?.indication}
+                <div class="presenter-reveal presenter-reveal--ind">
+                  <div class="presenter-reveal-label">💡 Indication</div>
+                  <MathRenderer content={q.indication} inline={false} />
+                </div>
+              {/if}
+              {#if presenterShowSol && q?.solution}
+                <div class="presenter-reveal presenter-reveal--sol">
+                  <div class="presenter-reveal-label">★ Solution</div>
+                  <MathRenderer content={q.solution} inline={false} />
+                </div>
+              {/if}
+            </div>
+          </div>
+          <div class="presenter-q-counter">{presenterQIdx + 1} / {presenterQuestions.length}</div>
+        {:else}
+          <div class="presenter-slide-inner">
+            <div class="presenter-body" style="max-width:720px">
+              <ExerciseContent
+                exercise={$selectedExercise}
+                variant="full"
+                showGlobalToggles={false}
+                content={$selectedExercise.content || []}
+                bind:showHint={presenterShowInd}
+                bind:showSolution={presenterShowSol}
+              />
+            </div>
+          </div>
+        {/if}
+      {/if}
+    </div>
+
+    <div class="presenter-controls">
+      <button class="presenter-nav-btn" disabled={!$currentPosition.hasPrevious && presenterQIdx === 0} on:click={presenterPrev}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        Précédent
+      </button>
+      <div style="flex:1; display:flex; justify-content:center; gap:8px">
+        {#each $exerciseList as _, i}
+          <button
+            class="presenter-dot"
+            class:is-active={i === $selectedExerciseIndex}
+            on:click={() => { listActions.selectExercise(i); presenterQIdx = 0; presenterShowInd = false; presenterShowSol = false; }}
+          ></button>
+        {/each}
+      </div>
+      <button class="presenter-nav-btn" disabled={!$currentPosition.hasNext && presenterQIdx >= presenterQuestions.length - 1} on:click={presenterNext}>
+        Suivant
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  {/if}
+</div>
+
+{:else if mode === 'partager'}
+<!-- ────────── MODE PARTAGER ────────── -->
+<div class="mode-partager">
+  <div class="partager-inner">
+    <h2 class="partager-section-title">Partager la séance</h2>
+
+    <!-- Lien public -->
+    <section class="partager-section">
+      <div class="t-overline mb-3">Lien</div>
+      <div class="partager-link-row">
+        <input
+          class="form-input partager-link-input"
+          readonly
+          value={typeof window !== 'undefined' ? buildShareUrl(null) : ''}
+        />
+        <button
+          class="btn btn-primary"
+          on:click={partagerCopyLink}
+        >{partagerCopied === 'link' ? '✓ Copié !' : 'Copier'}</button>
+      </div>
+    </section>
+
+    <!-- Embed -->
+    <section class="partager-section">
+      <div class="t-overline mb-3">Intégrer (embed)</div>
+      <pre class="partager-embed-pre">&lt;iframe src="{typeof window !== 'undefined' ? buildShareUrl(null) : ''}" width="100%" height="600" frameborder="0"&gt;&lt;/iframe&gt;</pre>
+      <button class="btn btn-secondary btn-sm mt-2" on:click={partagerCopyEmbed}>
+        {partagerCopied === 'embed' ? '✓ Copié !' : 'Copier le code'}
+      </button>
+    </section>
+
+    <!-- Export -->
+    <section class="partager-section">
+      <div class="t-overline mb-3">Exporter</div>
+      <div class="partager-export-grid">
+        <a href="/api/export/pdf?{buildUrl().split('?')[1] || ''}" class="partager-export-card" target="_blank">
+          <span class="partager-export-icon">📄</span>
+          <span class="partager-export-label">PDF feuille TD</span>
+        </a>
+        <a href="/api/export/pdf?{buildUrl().split('?')[1] || ''}&solutions=1" class="partager-export-card" target="_blank">
+          <span class="partager-export-icon">✅</span>
+          <span class="partager-export-label">PDF corrigé</span>
+        </a>
+        <a href="/api/export/latex?{buildUrl().split('?')[1] || ''}" class="partager-export-card" target="_blank">
+          <span class="partager-export-icon">𝐓𝐗</span>
+          <span class="partager-export-label">Source LaTeX (.tex)</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Permissions -->
+    <section class="partager-section">
+      <div class="t-overline mb-3">Permissions du lien</div>
+      <div class="partager-perms">
+        <label class="partager-perm-row">
+          <div class="partager-perm-info">
+            <span class="partager-perm-label">Solutions visibles</span>
+            <span class="partager-perm-desc">Les élèves voient les solutions sans cliquer</span>
+          </div>
+          <input type="checkbox" class="partager-toggle" bind:checked={partagerSolVisible} />
+        </label>
+        <label class="partager-perm-row">
+          <div class="partager-perm-info">
+            <span class="partager-perm-label">Indications visibles</span>
+            <span class="partager-perm-desc">Les élèves voient les indices sans cliquer</span>
+          </div>
+          <input type="checkbox" class="partager-toggle" bind:checked={partagerIndVisible} />
+        </label>
+        <label class="partager-perm-row">
+          <div class="partager-perm-info">
+            <span class="partager-perm-label">Notes personnelles partagées</span>
+            <span class="partager-perm-desc text-error-600">Risqué — partage vos annotations privées</span>
+          </div>
+          <input type="checkbox" class="partager-toggle" bind:checked={partagerNotesVisible} />
+        </label>
+        <div class="partager-perm-row" style="pointer-events:none; opacity:0.7">
+          <div class="partager-perm-info">
+            <span class="partager-perm-label">Accessible sans compte</span>
+            <span class="partager-perm-desc">Toujours actif — aucun compte requis</span>
+          </div>
+          <input type="checkbox" class="partager-toggle" checked disabled />
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="partager-section">
+      <div class="t-overline mb-3">Statistiques</div>
+      <div class="partager-stats-grid">
+        <div class="partager-stat-card">
+          <div class="partager-stat-value">{$exerciseList.length}</div>
+          <div class="partager-stat-label">exercices</div>
+        </div>
+        <div class="partager-stat-card">
+          <div class="partager-stat-value">—</div>
+          <div class="partager-stat-label">vues</div>
+        </div>
+        <div class="partager-stat-card">
+          <div class="partager-stat-value">—</div>
+          <div class="partager-stat-label">téléchargements</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+{/if}
+
 <style>
   /* List page styles (moved from app.css) */
   .exercise-list-page {
     min-height: 100vh;
-    @apply bg-slate-50;
+    @apply bg-interface-bg-primary;
   }
 
   .list-header {
@@ -1084,7 +1444,7 @@
     position: sticky;
     top: 0;
     z-index: 60;
-    @apply bg-interface-bg-primary border-b border-slate-200;
+    @apply bg-interface-bg-primary border-b border-interface-border-primary;
   }
 
   .list-header-content {
@@ -1106,10 +1466,10 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    @apply text-gray-900;
+    @apply text-interface-text-primary;
   }
 
-  .list-count { font-weight: 500; @apply text-gray-500; }
+  .list-count { font-weight: 500; @apply text-interface-text-muted; }
 
   .title-text {
     background: none;
@@ -1131,7 +1491,7 @@
     background: transparent;
     outline: none;
     min-width: 12rem;
-    @apply text-gray-900 border-blue-500;
+    @apply text-interface-text-primary border-brand-500;
   }
 
   .list-warning {
@@ -1189,10 +1549,10 @@
   }
 
   .header-action-btn--secondary { 
-    @apply bg-slate-100 text-slate-600 border-slate-300; 
+    @apply bg-interface-bg-secondary text-interface-text-secondary border-interface-border-primary; 
   }
   .header-action-btn--secondary:hover { 
-    @apply bg-slate-200 border-slate-400; 
+    @apply bg-interface-bg-tertiary border-interface-border-secondary; 
   }
 
   .header-action-btn--active {
@@ -1242,8 +1602,8 @@
   .list-action-btn--primary { @apply bg-brand-600 text-white; }
   .list-action-btn--primary:hover { @apply bg-brand-700; }
 
-  .list-action-btn--secondary { @apply bg-slate-100 text-slate-600; }
-  .list-action-btn--secondary:hover { @apply bg-slate-200; }
+  .list-action-btn--secondary { @apply bg-interface-bg-secondary text-interface-text-secondary; }
+  .list-action-btn--secondary:hover { @apply bg-interface-bg-tertiary; }
 
   .list-action-btn--danger { @apply bg-error-500 text-white; }
   .list-action-btn--danger:hover { @apply bg-error-600; }
@@ -1259,7 +1619,7 @@
     border-radius: 0.75rem;
     box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.3);
     animation: slide-in 0.2s ease-out;
-    @apply bg-interface-bg-primary border border-gray-300;
+    @apply bg-interface-bg-primary border border-interface-border-primary;
   }
 
   .share-panel--mobile {
@@ -1286,7 +1646,7 @@
     gap: 1rem;
     padding: 0.75rem 0;
     border-top: 1px solid;
-    @apply border-gray-100;
+    @apply border-interface-border-primary;
   }
 
   .share-row-info {
@@ -1299,12 +1659,12 @@
   .share-row-label {
     font-size: 0.875rem;
     font-weight: 600;
-    @apply text-gray-900;
+    @apply text-interface-text-primary;
   }
 
   .share-row-desc {
     font-size: 0.75rem;
-    @apply text-gray-500;
+    @apply text-interface-text-muted;
   }
 
   .share-copy-btn {
@@ -1316,11 +1676,11 @@
     cursor: pointer;
     border: 1px solid transparent;
     transition: all 0.15s ease;
-    @apply bg-slate-100 text-slate-700 border-slate-200;
+    @apply bg-interface-bg-secondary text-interface-text-secondary border-interface-border-primary;
   }
 
   .share-copy-btn:hover {
-    @apply bg-slate-200;
+    @apply bg-interface-bg-tertiary;
   }
 
   .share-copy-btn--copied {
@@ -1354,7 +1714,7 @@
     border-radius: 0.75rem;
     box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.3);
     animation: slide-in 0.2s ease-out;
-    @apply bg-interface-bg-primary border border-gray-300;
+    @apply bg-interface-bg-primary border border-interface-border-primary;
   }
 
   .uuid-control-panel--mobile {
@@ -1378,7 +1738,7 @@
     font-size: 1rem;
     font-weight: 600;
     margin: 0;
-    @apply text-gray-900;
+    @apply text-interface-text-primary;
   }
 
   .uuid-control-close {
@@ -1391,7 +1751,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.15s ease;
-    @apply bg-gray-100 text-gray-600;
+    @apply bg-interface-bg-secondary text-interface-text-secondary;
   }
 
   .uuid-control-close:hover {
@@ -1441,7 +1801,7 @@
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    @apply bg-interface-bg-primary border border-gray-300;
+    @apply bg-interface-bg-primary border border-interface-border-primary;
   }
 
   .uuid-input {
@@ -1456,7 +1816,7 @@
 
   .uuid-input::placeholder {
     font-family: ui-sans-serif, system-ui, sans-serif;
-    @apply text-gray-400;
+    @apply text-interface-text-disabled;
   }
 
   .uuid-input--error {
@@ -1464,7 +1824,7 @@
   }
 
   .uuid-input:disabled {
-    @apply bg-gray-50 text-gray-500;
+    @apply bg-interface-bg-secondary text-interface-text-muted;
   }
 
   .uuid-buttons {
@@ -1483,11 +1843,11 @@
     border-radius: 0.375rem;
     cursor: pointer;
     transition: all 0.15s ease;
-    @apply bg-gray-100 text-gray-600;
+    @apply bg-interface-bg-secondary text-interface-text-secondary;
   }
 
   .uuid-btn:hover:not(:disabled) {
-    @apply bg-gray-200 text-gray-700;
+    @apply bg-interface-bg-tertiary text-interface-text-secondary;
   }
 
   .uuid-btn:disabled {
@@ -1549,11 +1909,11 @@
     align-items: center;
     justify-content: center;
     transition: all 0.15s ease;
-    @apply border border-gray-300 rounded-md bg-interface-bg-primary text-gray-600;
+    @apply border border-interface-border-primary rounded-md bg-interface-bg-primary text-interface-text-secondary;
   }
 
   .edit-toggle-btn:hover {
-    @apply bg-gray-100 border-gray-400;
+    @apply bg-interface-bg-secondary border-interface-border-secondary;
   }
 
   .edit-toggle-btn--active {
@@ -1572,7 +1932,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.15s ease;
-    @apply border border-gray-300 rounded-md bg-interface-bg-primary text-gray-600;
+    @apply border border-interface-border-primary rounded-md bg-interface-bg-primary text-interface-text-secondary;
   }
 
   .mobile-close-btn:hover {
@@ -1582,14 +1942,14 @@
   /* Empty state (scoped to list page) */
   .exercise-list-page .empty-state { display:flex; align-items:center; justify-content:center; min-height:60vh; padding:2rem; }
   .exercise-list-page .empty-state-content { text-align:center; max-width:28rem; }
-  .exercise-list-page .empty-state-icon { margin:0 auto 1.5rem; @apply text-gray-400; }
-  .exercise-list-page .empty-state-title { font-size:1.25rem; font-weight:600; margin:0 0 0.5rem; @apply text-gray-700; }
+  .exercise-list-page .empty-state-icon { margin:0 auto 1.5rem; @apply text-interface-text-disabled; }
+  .exercise-list-page .empty-state-title { font-size:1.25rem; font-weight:600; margin:0 0 0.5rem; @apply text-interface-text-secondary; }
   .exercise-list-page .empty-state-description { margin:0 0 2rem; line-height:1.6; @apply text-interface-text-secondary; }
   .exercise-list-page .empty-state-actions { margin-bottom:2rem; }
-  .exercise-list-page .empty-state-help { padding-top:1.5rem; @apply border-t border-gray-200; }
+  .exercise-list-page .empty-state-help { padding-top:1.5rem; @apply border-t border-interface-border-primary; }
   .exercise-list-page .help-details { text-align:left; }
   .exercise-list-page .help-summary { cursor:pointer; font-size:0.875rem; @apply text-interface-text-secondary; }
-  .help-content { margin-top:0.5rem; padding:1rem; border-radius:0.375rem; font-size:0.875rem; @apply bg-gray-50; }
+  .help-content { margin-top:0.5rem; padding:1rem; border-radius:0.375rem; font-size:0.875rem; @apply bg-interface-bg-secondary; }
   .help-code { padding:0.5rem; border-radius:0.25rem; font-family:monospace; display:block; margin:0.5rem 0; @apply bg-gray-900 text-gray-50; }
   .help-note { font-size:0.8rem; margin:0.5rem 0 0; @apply text-interface-text-secondary; }
 
@@ -1601,7 +1961,7 @@
     .list-navigation {
       flex: 0 0 320px;
       max-width: 320px;
-      @apply border-r border-gray-200 bg-interface-bg-primary;
+      @apply border-r border-interface-border-primary bg-interface-bg-primary;
       height: auto;
       overflow: visible; /* pas de scroll sur le conteneur */
     }
@@ -1626,12 +1986,12 @@
   
   .exercise-error { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; padding:2rem; text-align:center; }
   .error-icon { margin-bottom:1rem; @apply text-error-500; }
-  .error-title { font-size:1.125rem; font-weight:600; margin:0 0 0.5rem; @apply text-gray-700; }
+  .error-title { font-size:1.125rem; font-weight:600; margin:0 0 0.5rem; @apply text-interface-text-secondary; }
   .error-message { margin:0 0 1.5rem; @apply text-interface-text-secondary; }
   .error-retry-btn { padding:0.5rem 1rem; border:none; border-radius:0.375rem; cursor:pointer; font-weight:500; transition:background-color .2s; @apply bg-blue-500 text-white; }
   .error-retry-btn:hover { @apply bg-blue-600; }
   
-  .no-selection { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; @apply text-gray-400; }
+  .no-selection { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; @apply text-interface-text-disabled; }
   .no-selection-icon { margin-bottom:1rem; }
   .no-selection-text { font-size:1.125rem; @apply text-interface-text-secondary; }
 
@@ -1650,7 +2010,7 @@
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1);
-    @apply bg-interface-bg-primary border-t border-gray-200;
+    @apply bg-interface-bg-primary border-t border-interface-border-primary;
   }
 
   .mobile-nav-btn {
@@ -1661,11 +2021,11 @@
     align-items: center;
     justify-content: center;
     transition: all 0.15s ease;
-    @apply border border-gray-300 rounded-lg bg-interface-bg-primary text-gray-600;
+    @apply border border-interface-border-primary rounded-lg bg-interface-bg-primary text-interface-text-secondary;
   }
 
   .mobile-nav-btn:hover:not(:disabled) {
-    @apply bg-gray-100 border-gray-400 text-gray-700;
+    @apply bg-interface-bg-secondary border-interface-border-secondary text-interface-text-secondary;
   }
 
   .mobile-nav-btn:disabled {
@@ -1691,7 +2051,7 @@
   .mobile-nav-counter {
     font-size: 1rem;
     font-weight: 600;
-    @apply text-gray-700;
+    @apply text-interface-text-secondary;
   }
 
   .mobile-pres-exit-btn {
@@ -1747,11 +2107,11 @@
     transition: all 0.15s ease;
     font-size: 0.875rem;
     font-weight: 500;
-    @apply bg-interface-bg-primary text-gray-600 border-gray-300;
+    @apply bg-interface-bg-primary text-interface-text-secondary border-interface-border-primary;
   }
 
   .nav-btn:hover:not(:disabled) {
-    @apply bg-gray-100 border-gray-400;
+    @apply bg-interface-bg-secondary border-interface-border-secondary;
   }
 
   .nav-btn:disabled {
@@ -1771,13 +2131,13 @@
     font-size: 1.125rem;
     font-weight: 600;
     margin: 0;
-    @apply text-gray-900;
+    @apply text-interface-text-primary;
   }
 
   .nav-counter {
     font-size: 0.875rem;
     font-weight: 500;
-    @apply text-gray-500;
+    @apply text-interface-text-muted;
   }
 
   /* Responsive : Affichage mobile */
@@ -1803,7 +2163,7 @@
       bottom: 0;
       width: 85%;
       max-width: 400px;
-      @apply bg-interface-bg-primary border-l border-gray-200;
+      @apply bg-interface-bg-primary border-l border-interface-border-primary;
       z-index: 60;
       transform: translateX(100%);
       overflow-y: auto;
@@ -1923,7 +2283,7 @@
 
   /* ── Bouton "Mode présentation" dans le header ─────────────────────────── */
   .list-action-btn--presentation {
-    @apply bg-slate-100 text-slate-600 border border-slate-300;
+    @apply bg-interface-bg-secondary text-interface-text-secondary border border-slate-300;
   }
   .list-action-btn--presentation:hover {
     @apply bg-indigo-50 text-indigo-700 border-indigo-400;
@@ -2015,7 +2375,7 @@
     justify-content: center;
     transition: all 0.15s ease;
     flex-shrink: 0;
-    @apply border-gray-200 bg-interface-bg-primary text-gray-500;
+    @apply border-interface-border-primary bg-interface-bg-primary text-gray-500;
   }
 
   .rail-item:hover {
@@ -2042,7 +2402,7 @@
     border: 1px solid;
     cursor: pointer;
     transition: all 0.2s ease;
-    @apply bg-white/80 border-gray-200 text-gray-500;
+    @apply bg-white/80 border-interface-border-primary text-gray-500;
     backdrop-filter: blur(4px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
@@ -2168,5 +2528,287 @@
   .exercise-content-wrapper--presentation :global([class*="meta"]),
   .exercise-content-wrapper--presentation :global([class*="tag"]) {
     display: none !important;
+  }
+
+  /* ── MODE CONSULTER ──────────────────────────────────────────────────────── */
+  .mode-consulter {
+    display: flex;
+    height: calc(100vh - 80px);
+    background: theme('colors.interface.bg-primary');
+  }
+  .consulter-toc {
+    width: 280px;
+    flex-shrink: 0;
+    padding: 20px 16px;
+    background: theme('colors.interface.bg-secondary');
+    border-right: 1px solid theme('colors.interface.border-primary');
+    overflow-y: auto;
+  }
+  .consulter-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+  .consulter-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.12s;
+    color: theme('colors.interface.text-primary');
+  }
+  .consulter-item:hover { background: theme('colors.interface.bg-tertiary'); }
+  .consulter-item.is-selected { background: theme('colors.brand.100'); color: theme('colors.brand.800'); }
+  .consulter-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: theme('colors.interface.text-muted');
+    min-width: 22px;
+    padding-top: 2px;
+    font-family: theme('fontFamily.mono');
+  }
+  .consulter-item-body { flex: 1; min-width: 0; }
+  .consulter-item-title { font-size: 13px; font-weight: 600; line-height: 1.4; margin-bottom: 4px; }
+  .consulter-main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .consulter-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid theme('colors.interface.border-primary');
+  }
+  .consulter-controls button.active { background: theme('colors.brand.500'); color: white; }
+  .consulter-exercise { padding: 32px 40px; }
+  .consulter-nav-btns {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+  }
+  @media (max-width: 768px) {
+    .mode-consulter { flex-direction: column; height: auto; }
+    .consulter-toc { width: 100%; height: 200px; }
+    .consulter-main { padding: 16px; }
+    .consulter-exercise { padding: 20px 16px; }
+  }
+
+  /* ── MODE PRÉSENTER ──────────────────────────────────────────────────────── */
+  .mode-presenter {
+    min-height: calc(100vh - 80px);
+    background: #0d3c4d;
+    color: #fef9eb;
+    display: flex;
+    flex-direction: column;
+  }
+  .presenter-topbar {
+    display: flex;
+    align-items: center;
+    padding: 14px 32px;
+    background: rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .presenter-breadcrumb-text { font-size: 13px; color: rgba(254,249,235,0.6); }
+  .presenter-shortcut-hint { font-size: 12px; color: rgba(254,249,235,0.4); display: flex; align-items: center; gap: 4px; }
+  .presenter-kbd {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-family: theme('fontFamily.mono');
+    font-size: 11px;
+    color: rgba(254,249,235,0.7);
+  }
+  .presenter-slide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    overflow-y: auto;
+  }
+  .presenter-exo-title {
+    font-family: theme('fontFamily.heading');
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(254,249,235,0.5);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .presenter-slide-inner { display: flex; align-items: flex-start; gap: 24px; max-width: 900px; width: 100%; }
+  .presenter-bignum {
+    font-family: theme('fontFamily.heading');
+    font-size: 110px;
+    font-weight: 800;
+    color: #5bcaca;
+    letter-spacing: -3px;
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 120px;
+    text-align: right;
+  }
+  .presenter-body { flex: 1; min-width: 0; }
+  .presenter-q-title {
+    font-family: theme('fontFamily.heading');
+    font-size: 22px;
+    font-weight: 700;
+    color: #fef9eb;
+    margin-bottom: 12px;
+  }
+  .presenter-q-body { font-size: 18px; line-height: 1.7; color: rgba(254,249,235,0.9); margin-bottom: 20px; }
+  .presenter-reveal-btns { display: flex; gap: 8px; margin-bottom: 16px; }
+  .presenter-btn {
+    padding: 8px 18px;
+    border-radius: theme('borderRadius.pill');
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.08);
+    color: rgba(254,249,235,0.8);
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .presenter-btn:hover { background: rgba(255,255,255,0.15); }
+  .presenter-btn--sol { border-color: #5bcaca; color: #5bcaca; }
+  .presenter-reveal {
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .presenter-reveal--ind { background: rgba(91,202,202,0.1); border: 1px solid rgba(91,202,202,0.3); color: #b2e8e8; }
+  .presenter-reveal--sol { background: rgba(254,249,235,0.06); border: 1px solid rgba(254,249,235,0.15); color: #fef9eb; }
+  .presenter-reveal-label { font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; color: rgba(254,249,235,0.5); }
+  .presenter-q-counter { font-size: 13px; color: rgba(254,249,235,0.4); margin-top: 16px; text-align: center; }
+  .presenter-controls {
+    display: flex;
+    align-items: center;
+    padding: 16px 32px;
+    background: rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .presenter-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: theme('borderRadius.pill');
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.06);
+    color: rgba(254,249,235,0.8);
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .presenter-nav-btn:hover:not(:disabled) { background: rgba(255,255,255,0.12); }
+  .presenter-nav-btn:disabled { opacity: 0.3; cursor: default; }
+  .presenter-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .presenter-dot.is-active { background: #5bcaca; transform: scale(1.4); }
+  @media (max-width: 640px) {
+    .presenter-bignum { font-size: 60px; min-width: 70px; }
+    .presenter-slide { padding: 20px; }
+    .presenter-slide-inner { flex-direction: column; gap: 12px; }
+  }
+
+  /* ── MODE PARTAGER ───────────────────────────────────────────────────────── */
+  .mode-partager {
+    background: theme('colors.interface.bg-primary');
+    min-height: calc(100vh - 80px);
+    padding: 32px 16px 64px;
+  }
+  .partager-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .partager-section-title {
+    font-family: theme('fontFamily.heading');
+    font-size: 28px;
+    font-weight: 800;
+    color: theme('colors.interface.text-primary');
+    margin-bottom: 8px;
+  }
+  .partager-section {
+    background: theme('colors.interface.bg-white');
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 8px;
+    padding: 20px 24px;
+    box-shadow: theme('boxShadow.card');
+  }
+  .partager-link-row { display: flex; gap: 8px; }
+  .partager-link-input { flex: 1; font-size: 13px; font-family: theme('fontFamily.mono'); }
+  .partager-embed-pre {
+    background: theme('colors.interface.bg-secondary');
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 6px;
+    padding: 12px;
+    font-family: theme('fontFamily.mono');
+    font-size: 12px;
+    color: theme('colors.interface.text-secondary');
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin: 0;
+  }
+  .partager-export-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .partager-export-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 8px;
+    text-decoration: none;
+    color: theme('colors.interface.text-primary');
+    transition: background 0.12s, border-color 0.12s;
+  }
+  .partager-export-card:hover { background: theme('colors.interface.bg-secondary'); border-color: theme('colors.brand.300'); }
+  .partager-export-icon { font-size: 28px; }
+  .partager-export-label { font-size: 13px; font-weight: 600; text-align: center; }
+  .partager-perms { display: flex; flex-direction: column; gap: 0; }
+  .partager-perm-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid theme('colors.interface.border-primary');
+    cursor: pointer;
+  }
+  .partager-perm-row:last-child { border-bottom: 0; }
+  .partager-perm-info { display: flex; flex-direction: column; gap: 2px; }
+  .partager-perm-label { font-size: 14px; font-weight: 600; color: theme('colors.interface.text-primary'); }
+  .partager-perm-desc { font-size: 12px; color: theme('colors.interface.text-muted'); }
+  .partager-toggle { width: 36px; height: 20px; flex-shrink: 0; accent-color: theme('colors.brand.500'); }
+  .partager-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .partager-stat-card {
+    text-align: center;
+    padding: 16px;
+    background: theme('colors.interface.bg-secondary');
+    border-radius: 8px;
+    border: 1px solid theme('colors.interface.border-primary');
+  }
+  .partager-stat-value { font-family: theme('fontFamily.heading'); font-size: 28px; font-weight: 800; color: theme('colors.interface.text-primary'); }
+  .partager-stat-label { font-size: 12px; color: theme('colors.interface.text-muted'); margin-top: 4px; }
+  @media (max-width: 640px) {
+    .partager-export-grid { grid-template-columns: 1fr 1fr; }
+    .partager-stats-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
