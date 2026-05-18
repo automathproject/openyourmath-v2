@@ -5,6 +5,7 @@
   import SearchSnippet from '$lib/components/search/SearchSnippet.svelte';
   import NameRenderer from '$lib/components/NameRenderer.svelte';
   import AddToListButton from '$lib/components/AddToListButton.svelte';
+  import StarsRating from '$lib/components/StarsRating.svelte';
 
   export let exercise;
   export let activeFilters = {};
@@ -41,6 +42,11 @@
   }
 
   function handleClick() {
+    dispatch('select', { exercise });
+  }
+
+  function handlePreview(event) {
+    event.stopPropagation();
     dispatch('select', { exercise });
   }
 
@@ -101,17 +107,25 @@
     <div class="flex justify-between items-start mb-2">
       <div class="flex gap-2 items-center">
         {#if showTags && showLevelBadge}
-          <div class="result-badge">{exercise.level}</div>
+          <span class="chip chip-teal">{exercise.level}</span>
         {/if}
         {#if showTags && showDifficultyDots}
-          <div class="flex items-center gap-1">
-            {#each Array(5) as _, i}
-              <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-400' : 'bg-gray-200'}"></div>
-            {/each}
-          </div>
+          <StarsRating n={exercise.difficulty} />
         {/if}
       </div>
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-1">
+        <button
+          type="button"
+          class="btn-icon"
+          aria-label="Aperçu rapide"
+          title="Aperçu"
+          on:click={handlePreview}
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
         <button
           type="button"
           on:click|stopPropagation
@@ -127,7 +141,6 @@
             </svg>
           </div>
         {/if}
-        <span class="text-xs text-gray-400 font-mono">{exercise.uuid}</span>
         <button
           type="button"
           class="external-link-btn"
@@ -224,10 +237,9 @@
 <style>
   .result-card {
     border-radius: 0.75rem;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
     padding: 1.5rem;
-    transition: box-shadow .2s;
-    @apply border border-gray-200 bg-interface-bg-primary;
+    transition: box-shadow .2s, border-color .2s;
+    @apply border border-interface-border-primary bg-interface-bg-white;
   }
   .result-card--compact {
     padding: 0.75rem;
@@ -255,26 +267,29 @@
     font-size: 0.65rem;
     font-family: monospace;
     letter-spacing: 0.03em;
-    @apply text-gray-400;
+    @apply text-interface-text-muted;
     user-select: all;
   }
-  .result-card:hover { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06); }
+  .result-card:hover {
+    @apply border-interface-text-muted shadow-card;
+  }
   .result-card--selected {
     box-shadow: 0 4px 10px -2px rgb(0 0 0 / 0.12);
     border-left-width: 4px;
-    @apply border-brand-primary bg-brand-50;
+    @apply border-brand-600 bg-brand-50;
   }
   .result-header { display: flex; align-items: start; justify-content: space-between; }
   .result-title {
+    font-family: theme('fontFamily.heading');
     font-size: 1.125rem;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 0.25rem;
     line-height: 1.3;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    @apply text-gray-900;
+    @apply text-interface-text-primary;
   }
   .result-metadata {
     display: flex;
@@ -283,12 +298,7 @@
     font-size: 0.875rem;
     margin-bottom: 0.5rem;
     flex-wrap: wrap;
-    @apply text-gray-600;
-  }
-  .result-badge {
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.375rem;
-    @apply bg-gray-100;
+    @apply text-interface-text-secondary;
   }
   .result-footer {
     margin-top: 0.5rem;
@@ -298,7 +308,7 @@
     gap:0.5rem;
     flex-wrap:wrap;
     font-size:0.875rem;
-    @apply border-t border-gray-100 text-interface-text-secondary;
+    @apply border-t border-interface-border-primary text-interface-text-secondary;
   }
   .result-footer-left {
     display:flex;
@@ -307,7 +317,7 @@
     flex-wrap:wrap;
   }
   .result-footer-item { white-space: nowrap; }
-  .result-footer-sep { @apply text-gray-300; }
+  .result-footer-sep { @apply text-interface-text-disabled; }
   .result-date {
     margin-left:auto;
     display:flex;
@@ -341,7 +351,7 @@
     transition: color .2s, background-color .2s;
     padding: 0.25rem;
     border-radius: 0.25rem;
-    @apply text-gray-400;
+    @apply text-interface-text-muted;
   }
-  .external-link-btn:hover { @apply text-brand-primary bg-brand-50; }
+  .external-link-btn:hover { @apply text-brand-600 bg-brand-50; }
 </style>

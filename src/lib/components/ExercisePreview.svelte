@@ -122,13 +122,13 @@
   .exercise-preview {
     display:flex;
     flex-direction:column;
-    @apply bg-interface-bg-primary border-2 border-brand-200 rounded-xl shadow-sm;
+    @apply bg-interface-bg-white border border-interface-border-primary rounded-xl shadow-card;
     overflow: hidden;
   }
 
   .preview-header {
     flex-shrink:0;
-    @apply border-b border-gray-200 bg-white;
+    @apply border-b border-interface-border-primary bg-interface-bg-secondary;
   }
   .preview-header-content {
     display:flex;
@@ -144,10 +144,11 @@
     flex: 1;
   }
   .preview-title {
+    font-family: theme('fontFamily.heading');
     font-size: 1rem;
     line-height: 1.3;
     font-weight: 700;
-    @apply text-gray-900;
+    @apply text-interface-text-primary;
   }
   .preview-meta {
     display: inline-flex;
@@ -155,14 +156,14 @@
     gap: 0.35rem;
     font-size: 0.72rem;
     line-height: 1.2;
-    @apply text-gray-600;
+    @apply text-interface-text-secondary;
   }
   .preview-meta-uuid {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    @apply text-gray-700;
+    @apply text-interface-text-secondary;
   }
-  .preview-meta-sep { @apply text-gray-400; }
-  .preview-meta-date { @apply text-gray-500; }
+  .preview-meta-sep { @apply text-interface-text-disabled; }
+  .preview-meta-date { @apply text-interface-text-muted; }
   .preview-actions {
     display:flex;
     align-items:center;
@@ -181,22 +182,22 @@
     font-weight:600;
     border:1px solid transparent;
   }
-  .preview-btn--secondary { @apply border border-gray-300 bg-white text-gray-700; }
-  .preview-btn--secondary:hover { @apply bg-gray-100; }
-  .preview-btn--ghost { @apply border border-gray-300 bg-white text-gray-700; }
-  .preview-btn--ghost:hover { @apply bg-gray-100; }
+  .preview-btn--secondary { @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-primary; }
+  .preview-btn--secondary:hover { @apply bg-interface-bg-tertiary; }
+  .preview-btn--ghost { @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary; }
+  .preview-btn--ghost:hover { @apply bg-interface-bg-tertiary text-interface-text-primary; }
 
   .preview-btn-icon { line-height:1; }
   .preview-content { flex:1; overflow-y:auto; }
 
   .preview-exercise-content {
     padding:0.8rem;
-    @apply bg-brand-50;
+    @apply bg-interface-bg-white;
   }
 
   .preview-footer {
     flex-shrink: 0;
-    @apply border-t border-gray-200 bg-white;
+    @apply border-t border-interface-border-primary bg-interface-bg-secondary;
     padding: 0.55rem 0.9rem;
   }
 
