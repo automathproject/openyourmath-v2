@@ -6,6 +6,8 @@
   import Breadcrumb from './Breadcrumb.svelte';
   import NameRenderer from './NameRenderer.svelte';
   import MathRenderer from './MathRenderer.svelte';
+  import StarsRating from './StarsRating.svelte';
+  import Chip from './Chip.svelte';
 
   export let exercise = {};
   export let variant = 'full'; // 'full' | 'preview' | 'simple'
@@ -167,20 +169,16 @@
         transition:slide={{ duration: 220, easing: cubicOut }}
       >
         {#if exercise.level}
-          <span class="exercise-badge exercise-badge--level">{exercise.level}</span>
+          <Chip variant="teal-solid">{exercise.level}</Chip>
         {/if}
         {#if exercise.theme}
-          <span class="exercise-badge exercise-badge--theme">{exercise.theme}</span>
+          <Chip variant="info">{exercise.theme}</Chip>
         {/if}
         {#if exercise.difficulty}
           <div class="exercise-difficulty">
-            <div class="flex gap-1">
-              {#each Array(5) as _, i}
-                <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-400' : 'bg-gray-200'}"></div>
-              {/each}
-            </div>
+            <StarsRating n={exercise.difficulty} total={5} />
             {#if variant === 'full'}
-              <span class="text-sm text-gray-500">({exercise.difficulty}/5)</span>
+              <span class="text-sm text-interface-text-muted">({exercise.difficulty}/5)</span>
             {/if}
           </div>
         {/if}
@@ -208,7 +206,7 @@
             </span>
           </button>
           {#if exercise?.uuid}
-            <span class="exercise-uuid text-xs text-gray-400 font-mono">{exercise.uuid}</span>
+            <span class="exercise-uuid text-xs text-interface-text-muted font-mono">{exercise.uuid}</span>
           {/if}
         {/if}
       </div>
@@ -331,9 +329,9 @@
 
 <style>
   .exercise-header {
-    position: relative; /* anchor for absolute right column */
-    border-bottom: 1px solid rgb(229 231 235);
-    @apply bg-brand-100 px-6 py-4 md:px-8 md:py-6 rounded-xl;
+    position: relative;
+    border-bottom: 1px solid theme('colors.interface.border-primary');
+    @apply bg-interface-bg-secondary px-6 py-4 md:px-8 md:py-6 rounded-xl;
     transition: padding 0.2s ease;
   }
 
@@ -344,10 +342,12 @@
   }
 
   .exercise-title {
-    color: rgb(17 24 39);
-    font-weight: 700;
-    margin-bottom: 0.5rem; /* tighter */
-    /* Reserve space on the right so the title never overlaps the pinned block */
+    font-family: theme('fontFamily.heading');
+    font-weight: 800;
+    font-size: 28px;
+    color: theme('colors.interface.text-primary');
+    letter-spacing: -0.3px;
+    margin-bottom: 0.5rem;
     margin-right: clamp(10rem, 28vw, 22rem);
     line-height: 1.2;
   }
@@ -435,7 +435,7 @@
     align-items: center;
     gap: 0.375rem;
     font-size: 0.75rem;
-    color: rgb(75 85 99);
+    color: theme('colors.interface.text-secondary');
     white-space: nowrap;
   }
 
@@ -478,12 +478,12 @@
     border-radius: 0.5rem;
     transition: background-color .2s ease;
   }
-  .action-button--video { background: rgb(219 234 254); color: rgb(30 64 175); }
-  .action-button--video:hover { background: rgb(191 219 254); }
-  .action-button--hint { background: rgb(254 252 232); color: rgb(133 77 14); }
-  .action-button--hint:hover { background: rgb(253 246 178); }
-  .action-button--solution { background: rgb(240 253 244); color: rgb(22 101 52); }
-  .action-button--solution:hover { background: rgb(187 247 208); }
+  .action-button--video { background: theme('colors.info.50'); color: theme('colors.info.700'); }
+  .action-button--video:hover { background: theme('colors.info.100'); }
+  .action-button--hint { background: theme('colors.warning.50'); color: theme('colors.warning.700'); }
+  .action-button--hint:hover { background: theme('colors.warning.100'); }
+  .action-button--solution { background: theme('colors.success.50'); color: theme('colors.success.700'); }
+  .action-button--solution:hover { background: theme('colors.success.100'); }
 
   .header-bottom {
     display: flex;
@@ -498,7 +498,7 @@
     align-items: center;
     gap: 0.375rem;
     font-size: 0.75rem;
-    color: rgb(107 114 128);
+    color: theme('colors.interface.text-muted');
     font-weight: 500;
     white-space: nowrap;
   }

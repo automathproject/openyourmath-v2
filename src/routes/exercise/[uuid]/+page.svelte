@@ -2,6 +2,7 @@
 <script>
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
+  import StarsRating from '$lib/components/StarsRating.svelte';
   import { page } from '$app/stores';
   
   export let data;
@@ -16,39 +17,38 @@
 </svelte:head>
 
 {#if data.exercise}
-  <div class="container max-w-4xl mx-auto px-3 sm:px-6 pt-1 sm:pt-3 pb-6 sm:pb-8">
-    <ExerciseContent 
-      exercise={data.exercise}
-      variant="full"
-      showGlobalToggles={true}
-      content={data.exercise.content || []}
-      bind:showHint
-      bind:showSolution
-    />
-    
+  <div class="exercise-page-wrapper">
+    <div class="exercise-block">
+      <ExerciseContent
+        exercise={data.exercise}
+        variant="full"
+        showGlobalToggles={true}
+        content={data.exercise.content || []}
+        bind:showHint
+        bind:showSolution
+      />
+    </div>
+
     <!-- Exercices similaires -->
     {#if data.similar && data.similar.length > 0}
       <section class="similar-exercises print-hidden">
-        <h2 class="similar-exercises-title">Exercices similaires</h2>
+        <div class="t-overline mb-4">Exercices reliés</div>
         <div class="similar-exercises-grid">
           {#each data.similar as exercise}
-            <a 
+            <a
               href="/exercise/{exercise.uuid}"
-              class="similar-exercise-card"
+              class="card card-hover"
+              style="padding: 14px;"
             >
               <h3 class="similar-exercise-title">
                 <MathRenderer content={exercise.title} inline={true} />
               </h3>
               <div class="similar-exercise-metadata">
-                <span class="similar-exercise-badge">
-                  {exercise.chapter}
-                </span>
+                {#if exercise.chapter}
+                  <span class="chip chip-teal">{exercise.chapter}</span>
+                {/if}
                 {#if exercise.difficulty}
-                  <div class="flex gap-1">
-                    {#each Array(5) as _, i}
-                      <div class="w-2 h-2 rounded-full {i < exercise.difficulty ? 'bg-orange-300' : 'bg-gray-200'}"></div>
-                    {/each}
-                  </div>
+                  <StarsRating n={exercise.difficulty} total={5} />
                 {/if}
               </div>
             </a>
@@ -117,16 +117,49 @@
   }
   }
 
+  /* Page layout */
+  .exercise-page-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+  }
+
+  .exercise-block {
+    background: theme('colors.interface.bg-white');
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 8px;
+    padding: 32px 40px;
+    box-shadow: theme('boxShadow.card');
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 640px) {
+    .exercise-block {
+      padding: 20px 16px;
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+      margin: 0 -1.5rem;
+    }
+    .exercise-page-wrapper { padding: 0.5rem 1.5rem 2rem; }
+  }
+
   /* Similar exercises */
-  .similar-exercises { margin-top: 3rem; }
-  .similar-exercises-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; @apply text-gray-900; }
-  .similar-exercises-grid { display:grid; gap:1rem; grid-template-columns: repeat(1,minmax(0,1fr)); }
-  @media (min-width: 768px) { .similar-exercises-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  .similar-exercises { margin-top: 2rem; }
+  .similar-exercises-grid { display:grid; gap:0.75rem; grid-template-columns: repeat(1,minmax(0,1fr)); }
+  @media (min-width: 640px) { .similar-exercises-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
   @media (min-width: 1024px) { .similar-exercises-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
-  .similar-exercise-card { display:block; border-radius:0.5rem; box-shadow:0 1px 2px rgba(0,0,0,0.05); padding:1rem; @apply bg-interface-bg-primary border border-gray-200; }
-  .similar-exercise-card:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-  .similar-exercise-title { font-weight:600; margin-bottom:0.5rem; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; @apply text-gray-900; }
-  .similar-exercise-metadata { display:flex; align-items:center; gap:0.5rem; font-size:0.875rem; @apply text-gray-600; }
-  .similar-exercise-badge { padding:0.25rem 0.5rem; border-radius:0.25rem; font-size:0.75rem; @apply bg-gray-100; }
+  .similar-exercise-title {
+    font-family: theme('fontFamily.heading');
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    color: theme('colors.interface.text-primary');
+  }
+  .similar-exercise-metadata { display:flex; align-items:center; gap:0.5rem; flex-wrap: wrap; }
 
 </style>
