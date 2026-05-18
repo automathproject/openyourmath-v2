@@ -2,6 +2,42 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* ─── Hi-Fi design tokens (Parcourir + future pages) ────────────── */
+:root {
+  --oym-bg:          #fefcf6;
+  --oym-bg-elev:     #faf6ea;
+  --oym-bg-tint:     #f5efe0;
+  --oym-ink:         #0d3c4d;
+  --oym-ink-2:       #1f5566;
+  --oym-ink-3:       #6b8893;
+  --oym-ink-4:       #a3b4bd;
+  --oym-ink-5:       #c8d3d9;
+  --oym-line:        #ead9b8;
+  --oym-line-2:      #e2d2af;
+  --oym-line-soft:   #f1e6c8;
+  --oym-hairline:    rgba(13, 60, 77, 0.12);
+  --oym-teal:        #3cb3b4;
+  --oym-teal-700:    #2a9495;
+  --oym-teal-800:    #1f7878;
+  --oym-teal-300:    #8dd1d1;
+  --oym-teal-100:    #d6ecec;
+  --oym-teal-50:     #ebf6f6;
+  --oym-accent:      #d97757;
+  --oym-accent-700:  #b85d3f;
+  --oym-accent-100:  #f8e5dc;
+  --oym-accent-50:   #fbf0eb;
+  --oym-gold:        #e8b943;
+  --oym-gold-100:    #faecb8;
+  --oym-ok:          #5a8a3a;
+  --oym-font-serif:  "STIX Two Text", Georgia, "Times New Roman", serif;
+  --oym-font-sans:   "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --oym-font-mono:   "IBM Plex Mono", ui-monospace, monospace;
+  --oym-sh-1:        0 1px 2px rgba(13, 60, 77, 0.06);
+  --oym-sh-2:        0 2px 8px rgba(13, 60, 77, 0.08), 0 1px 2px rgba(13, 60, 77, 0.04);
+  --oym-sh-3:        0 8px 24px rgba(13, 60, 77, 0.10), 0 2px 6px rgba(13, 60, 77, 0.06);
+  --oym-sh-focus:    0 0 0 3px rgba(60, 179, 180, 0.25);
+}
+
 /* KaTeX styles pour le rendu mathématique */
 @import 'katex/dist/katex.min.css';
 
