@@ -14,7 +14,7 @@
 @layer base {
   /* Amélioration de la typographie de base */
   body {
-    @apply text-gray-900 leading-relaxed;
+    @apply bg-interface-bg-primary text-interface-text-primary leading-relaxed;
   }
   
   /* Styles pour les liens */
@@ -136,15 +136,37 @@
   }
   
   .btn-secondary {
-    @apply bg-gray-100 text-gray-800 hover:bg-gray-200 border border-gray-200;
+    @apply bg-interface-bg-tertiary text-interface-text-primary hover:bg-interface-bg-secondary border border-interface-border-primary;
   }
-  
+
+  .btn-accent {
+    @apply bg-accent-500 text-white hover:bg-accent-600 border border-accent-500;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-interface-text-primary border border-interface-text-primary
+           hover:bg-interface-text-primary hover:text-interface-bg-primary;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-interface-text-secondary border border-transparent
+           hover:bg-interface-bg-secondary hover:text-interface-text-primary;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+
   .btn-text {
-    @apply px-2 py-1 text-gray-600 hover:bg-gray-100 hover:text-gray-900;
+    @apply px-2 py-1 text-interface-text-secondary hover:bg-interface-bg-secondary hover:text-interface-text-primary;
   }
 
   .btn-icon {
-    @apply flex items-center justify-center w-8 h-8 rounded-full transition-colors duration-200 hover:bg-gray-100;
+    @apply flex items-center justify-center w-8 h-8 rounded-full transition-colors duration-200 hover:bg-interface-bg-secondary;
   }
 
   /* Legacy aliases */
@@ -155,19 +177,98 @@
      ================== */
 
   .form-input {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-brand-500 focus:border-brand-500;
+    @apply w-full px-3 py-2 bg-interface-bg-white text-interface-text-primary
+           border border-interface-border-primary rounded-lg
+           focus:ring-0 focus:border-brand-500 focus:shadow-focus;
+  }
+
+  .search-input {
+    @apply flex items-center gap-2 h-12 px-5
+           bg-interface-bg-white border border-interface-border-primary
+           rounded-search shadow-search transition-shadow
+           focus-within:shadow-search-hover focus-within:border-brand-300;
+  }
+
+  .search-input input {
+    @apply flex-1 min-w-0 border-0 outline-none bg-transparent text-interface-text-primary;
+  }
+
+  .search-input input::placeholder {
+    @apply text-interface-text-muted;
   }
 
   .filters-bar {
-    @apply flex flex-wrap items-center gap-2 mb-4 p-3 bg-gray-50 rounded-lg border;
+    @apply flex flex-wrap items-center gap-2 mb-4 p-3 bg-interface-bg-secondary rounded-lg border border-interface-border-primary;
   }
-  
+
   .filter-chip {
-    @apply flex items-center gap-2 pl-3 pr-2 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-medium;
+    @apply inline-flex items-center gap-1 pl-3 pr-2 py-1
+           bg-brand-50 text-brand-700 border border-brand-200
+           rounded-pill text-xs font-medium;
   }
-  
+
   .filter-chip-close {
-    @apply w-5 h-5 flex items-center justify-center bg-brand-100 text-brand-700 rounded-full hover:bg-brand-200 transition-colors;
+    @apply w-5 h-5 flex items-center justify-center rounded-full
+           hover:bg-brand-100 transition-colors;
+  }
+
+  /* Chip générique et variantes */
+  .chip {
+    @apply inline-flex items-center gap-1 px-3 py-1
+           bg-interface-bg-white text-interface-text-secondary border border-interface-border-primary
+           rounded-pill text-xs font-medium;
+  }
+
+  .chip-active     { @apply bg-interface-text-primary text-interface-bg-primary border-interface-text-primary; }
+  .chip-teal       { @apply bg-brand-50 text-brand-700 border-brand-200; }
+  .chip-teal-solid { @apply bg-brand-500 text-white border-brand-500; }
+  .chip-accent     { @apply bg-accent-50 text-accent-700 border-accent-200; }
+  .chip-soft       { @apply bg-transparent text-interface-text-muted border-interface-border-primary; }
+  .chip-success    { @apply bg-success-50 text-success-700 border-success-100; }
+  .chip-warning    { @apply bg-warning-50 text-warning-700 border-warning-100; }
+  .chip-error      { @apply bg-error-50 text-error-700 border-error-100; }
+  .chip-info       { @apply bg-info-50 text-info-700 border-info-100; }
+
+  /* Cards */
+  .card {
+    @apply bg-interface-bg-white border border-interface-border-primary rounded-lg p-4 transition-all;
+  }
+
+  .card-hover {
+    @apply hover:border-interface-text-muted hover:shadow-card cursor-pointer;
+  }
+
+  .card-selected {
+    @apply bg-brand-50 border-brand-600;
+    box-shadow: 0 0 0 1px theme('colors.brand.600');
+  }
+
+  /* Overline typographic style */
+  .t-overline {
+    font-family: theme('fontFamily.primary');
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: theme('colors.interface.text-muted');
+  }
+
+  /* Kbd */
+  .kbd {
+    @apply inline-flex items-center justify-center
+           min-w-[20px] h-5 px-1.5
+           font-mono text-[11px]
+           bg-interface-bg-secondary border border-interface-border-primary border-b-2
+           rounded text-interface-text-secondary;
+  }
+
+  /* Stars (remplace difficulty-dots) */
+  .stars {
+    @apply inline-flex gap-0.5 text-accent-500 text-sm leading-none;
+  }
+
+  .stars .star-off {
+    @apply text-interface-text-disabled;
   }
 
   /* ==============================================
@@ -176,9 +277,9 @@
 
   /* Search UI moved to src/routes/+page.svelte */
   
-  /* Difficulty dots override to ensure active/inactive colors win */
-  .difficulty-dot.difficulty-dot--active { @apply bg-warning-400; }
-  .difficulty-dot.difficulty-dot--inactive { @apply bg-gray-200; }
+  /* Difficulty dots — recolorés vers accent (transition vers StarsRating) */
+  .difficulty-dot.difficulty-dot--active   { @apply bg-accent-500; }
+  .difficulty-dot.difficulty-dot--inactive { @apply bg-interface-text-disabled; }
   
   /* Similar exercises styles moved to src/routes/exercise/[uuid]/+page.svelte */
 
@@ -273,11 +374,11 @@
   }
   
   .empty-state-title {
-    @apply text-gray-600 text-lg;
+    @apply text-interface-text-secondary text-lg font-semibold;
   }
-  
+
   .empty-state-subtitle {
-    @apply text-gray-500 text-sm mt-2;
+    @apply text-interface-text-muted text-sm mt-2;
   }
   
   /* ==================
@@ -301,11 +402,11 @@
   }
   
   .error-title {
-    @apply text-3xl font-bold text-gray-900 mb-4;
+    @apply text-3xl font-bold text-interface-text-primary mb-4;
   }
-  
+
   .error-description {
-    @apply text-gray-600 mb-8;
+    @apply text-interface-text-secondary mb-8;
   }
   
   .error-actions {

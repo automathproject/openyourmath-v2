@@ -21,69 +21,84 @@ export default {
 
         // ===== SEMANTIC COLORS =====
         success: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#66bb6a', // Votre vert actuel
-          600: '#4ade80',
-          700: '#22c55e',
-          800: '#16a34a',
-          900: '#15803d',
+          50:  '#f4f7eb',
+          100: '#e3edd1',
+          200: '#cbdda8',
+          300: '#b1ca7d',
+          400: '#93b558',
+          500: '#6e9c3f', // olive sage
+          600: '#587e32',
+          700: '#426027',
+          800: '#2e441b',
+          900: '#1a2810',
         },
-        
+
         warning: {
-          50: '#fefce8',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#ffee58', // Votre jaune actuel
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
+          50:  '#fdf8e7',
+          100: '#faecb8',
+          200: '#f5dc88',
+          300: '#f0cd5e',
+          400: '#ecc44f',
+          500: '#e8b943', // or miel
+          600: '#c69a30',
+          700: '#997725',
+          800: '#6e561a',
+          900: '#423410',
         },
 
         error: {
-          50: '#fef2f2',
-          100: '#fee2e2',
-          200: '#fecaca',
-          300: '#fca5a5',
-          400: '#f87171',
-          500: '#f44336', // Votre rouge actuel
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
+          50:  '#fbeeec',
+          100: '#f3dad6',
+          200: '#e6b4ad',
+          300: '#d98e85',
+          400: '#cd685e',
+          500: '#c43e3a', // brique
+          600: '#a3322f',
+          700: '#802824',
+          800: '#5e1d1a',
+          900: '#391010',
         },
 
         info: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#4285F4', // Votre bleu actuel
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          50:  '#eef5fa',
+          100: '#dceaf2',
+          200: '#b6d2e1',
+          300: '#8bb4cc',
+          400: '#5e96b8',
+          500: '#3a7ca5', // bleu pétrole
+          600: '#2e6488',
+          700: '#234d6a',
+          800: '#18374c',
+          900: '#0d212e',
+        },
+
+        // ===== ACCENT COLORS =====
+        accent: {
+          50:  '#fbf0eb',
+          100: '#f8e5dc',
+          200: '#f0c9b6',
+          300: '#e8ad90',
+          400: '#e0916a',
+          500: '#d97757', // terracotta base
+          600: '#b85d3f',
+          700: '#964a32',
+          800: '#743825',
+          900: '#522518',
         },
 
         // ===== INTERFACE COLORS =====
         interface: {
-          'bg-primary': '#ffffff',
-          'bg-secondary': '#f8f9fa',
-          'bg-tertiary': '#f3f4f6',
-          'bg-overlay': 'rgba(255, 255, 255, 0.95)',
-          'border-primary': '#e2e8f0',
-          'border-secondary': '#d1d5db',
-          'text-primary': 'rgba(0, 0, 0, 0.87)',
-          'text-secondary': 'rgba(0, 0, 0, 0.6)',
-          'text-muted': '#6b7280',
-          'text-disabled': 'rgba(0, 0, 0, 0.38)',
+          'bg-primary':   '#fefcf6',         // crème app
+          'bg-secondary': '#faf6ea',         // cartes
+          'bg-tertiary':  '#f5efe0',         // hover/zones douces
+          'bg-white':     '#ffffff',         // zones éditoriales
+          'bg-overlay':   'rgba(254, 252, 246, 0.95)',
+          'border-primary':   '#ead9b8',     // beige chaud
+          'border-secondary': '#e2d2af',     // beige fort
+          'text-primary':   '#0d3c4d',       // pétrole
+          'text-secondary': '#1f5566',       // pétrole médian
+          'text-muted':     '#6b8893',       // ink-3
+          'text-disabled':  '#a3b4bd',       // ink-4
         },
 
         // ===== SEARCH SPECIFIC =====
@@ -116,10 +131,11 @@ export default {
 
       // ===== SHADOWS =====
       boxShadow: {
-        'card': '0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.06)',
-        'search': '0 1px 6px rgba(32, 33, 36, 0.28)',
-        'search-hover': '0 1px 10px rgba(32, 33, 36, 0.45)',
-        'card-hover': '0 4px 6px rgba(0, 0, 0, 0.1)',
+        'card':         '0 2px 8px rgba(13, 60, 77, 0.08), 0 1px 2px rgba(13, 60, 77, 0.04)',
+        'card-hover':   '0 8px 24px rgba(13, 60, 77, 0.10), 0 2px 6px rgba(13, 60, 77, 0.06)',
+        'search':       '0 1px 6px rgba(32, 33, 36, 0.18)',
+        'search-hover': '0 1px 10px rgba(32, 33, 36, 0.32)',
+        'focus':        '0 0 0 3px rgba(73, 178, 178, 0.30)',
       },
 
       // ===== ANIMATIONS =====
@@ -141,6 +157,7 @@ export default {
       // ===== BORDER RADIUS =====
       borderRadius: {
         'search': '24px',
+        'pill':   '999px',
       }
     },
   },
