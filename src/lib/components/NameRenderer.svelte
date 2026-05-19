@@ -86,7 +86,7 @@
 
   .name-renderer__button:hover,
   .name-renderer--open .name-renderer__button {
-    @apply bg-gray-200 text-gray-700;
+    @apply bg-interface-bg-tertiary text-interface-text-secondary;
   }
 
   .name-renderer--compact .name-renderer__button {
@@ -95,7 +95,7 @@
   }
 
   .name-renderer--footer .name-renderer__button {
-    @apply text-gray-500;
+    @apply text-interface-text-muted;
   }
 
   .name-renderer__icon {
@@ -112,7 +112,7 @@
     font-size: 0.875rem;
     box-shadow: 0 2px 6px rgb(15 23 42 / 0.1);
     z-index: 5;
-    @apply bg-gray-50 border border-gray-200 text-gray-700;
+    @apply bg-interface-bg-secondary border border-interface-border-primary text-interface-text-secondary;
   }
 
   .name-renderer__badge {
@@ -125,11 +125,11 @@
   }
 
   .name-renderer__sep {
-    @apply text-gray-300;
+    @apply text-interface-text-disabled;
   }
 
   .name-renderer__missing {
-    @apply text-gray-500;
+    @apply text-interface-text-muted;
   }
 
   .name-renderer--inline .name-renderer__license,
@@ -150,7 +150,7 @@
   }
 
   .name-renderer--compact .name-renderer__button {
-    @apply text-gray-600;
+    @apply text-interface-text-secondary;
   }
 
   .name-renderer--compact .name-renderer__icon {

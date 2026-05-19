@@ -21,14 +21,14 @@
   .breadcrumb-bar {
     border-radius:0.75rem;
     padding:0.75rem 1rem;
-    @apply bg-gray-50 border border-gray-200;
+    @apply bg-interface-bg-secondary border border-interface-border-primary;
   }
   .breadcrumb-path {
     display:flex;
     align-items:center;
     gap:0.5rem;
     font-size:0.95rem;
-    @apply text-gray-700;
+    @apply text-interface-text-secondary;
   }
   .breadcrumb-actions { display:flex; gap:0.75rem; align-items:center; justify-content:flex-end; }
   .breadcrumb-icon { font-size:1rem; }

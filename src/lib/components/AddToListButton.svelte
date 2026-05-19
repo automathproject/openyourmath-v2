@@ -116,13 +116,13 @@
     transition: all 0.2s ease-in-out;
     position: relative;
     overflow: hidden;
-    @apply border border-gray-300 rounded-md bg-interface-bg-primary text-gray-700;
+    @apply border border-interface-border-primary rounded-md bg-interface-bg-primary text-interface-text-secondary;
   }
   
   .add-to-list-btn:hover:not(:disabled) {
     transform: translateY(-1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    @apply bg-gray-50 border-gray-400;
+    @apply bg-interface-bg-secondary border-interface-border-secondary;
   }
   
   .add-to-list-btn:disabled {
@@ -180,7 +180,7 @@
   }
   
   .add-to-list-btn--loading {
-    @apply bg-gray-100 text-gray-500;
+    @apply bg-interface-bg-tertiary text-interface-text-muted;
   }
   
   .add-to-list-btn--just-added {
