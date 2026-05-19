@@ -50,7 +50,6 @@
 
       const applyViewportState = (matches) => {
         isDesktop = matches;
-        syncHeaderCollapsedFromScroll();
       };
 
       applyViewportState(mediaQuery.matches);
