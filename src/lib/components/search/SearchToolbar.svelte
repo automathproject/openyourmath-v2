@@ -46,7 +46,7 @@
 <div class="toolbar">
   <!-- Ligne de recherche : toujours visible -->
   <div class="toolbar-top">
-    <div class="search-input">
+    <div class="search-input" style="flex:1;min-width:0;font-size:1rem;">
       <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="search-icon-svg">
         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
       </svg>
@@ -181,13 +181,6 @@
     gap: 0.5rem;
     flex: 1 1 auto;
     min-width: 0;
-  }
-
-  /* Overrides on the global .search-input for toolbar context */
-  :global(.toolbar .search-input) {
-    flex: 1 1 auto;
-    min-width: 0;
-    font-size: 1rem;
   }
 
   .search-icon-svg {
