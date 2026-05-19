@@ -1150,78 +1150,119 @@
 <!-- ────────── MODE CONSULTER ────────── -->
 <div class="mode-consulter">
   {#if !$hasExercises}
-    <div class="empty-state">
+    <div class="empty-state" style="margin: 4rem auto">
       <div class="empty-state-icon">📚</div>
       <h2 class="empty-state-title">Aucun exercice</h2>
       <p class="empty-state-subtitle">Ajoutez des exercices en mode Préparer.</p>
     </div>
   {:else}
+    <!-- TOC sidebar -->
     <aside class="consulter-toc">
-      <div class="t-overline mb-3">Sommaire · {$exerciseList.length}</div>
-      <ul class="consulter-list">
+      <div class="t-overline mb-3">Sommaire · {$exerciseList.length} exercices</div>
+      <div class="consulter-list">
         {#each $exerciseList as e, i}
-          <li>
-            <button
-              class="consulter-item"
-              class:is-selected={i === $selectedExerciseIndex}
-              on:click={() => listActions.selectExercise(i)}
-            >
-              <span class="consulter-num">{String(i + 1).padStart(2, '0')}</span>
-              <div class="consulter-item-body">
-                <div class="consulter-item-title">
-                  <MathRenderer content={e.title || `Exercice ${i+1}`} inline={true} />
-                </div>
-                {#if e.difficulty}<StarsRating n={e.difficulty} total={4} />{/if}
+          {@const isSel = i === $selectedExerciseIndex}
+          <button
+            class="consulter-item"
+            class:is-selected={isSel}
+            on:click={() => listActions.selectExercise(i)}
+          >
+            <span class="consulter-num" class:is-selected={isSel}>{String(i + 1).padStart(2, '0')}</span>
+            <div class="consulter-item-body">
+              <div class="consulter-item-title" class:is-selected={isSel}>
+                <MathRenderer content={e.title || `Exercice ${i+1}`} inline={true} />
               </div>
-            </button>
-          </li>
+              <div style="display:flex; align-items:center; gap:6px">
+                {#if e.difficulty}<StarsRating n={e.difficulty} total={4} />{/if}
+                {#if e.estimated_time}<span class="consulter-item-time">· {e.estimated_time}</span>{/if}
+              </div>
+            </div>
+          </button>
         {/each}
-      </ul>
+      </div>
     </aside>
 
+    <!-- Reading panel -->
     <main class="consulter-main">
+      <!-- Controls bar -->
       <div class="consulter-controls">
-        <span class="text-sm text-interface-text-muted">{$selectedExerciseIndex + 1} / {$exerciseList.length}</span>
+        <span class="consulter-pos">
+          <strong style="font-family:var(--font-mono, monospace)">{$selectedExerciseIndex + 1} / {$exerciseList.length}</strong>
+          {#if listTitle} · {listTitle}{/if}
+        </span>
         <span style="flex:1"></span>
+        <span class="consulter-reveal-label">Tout révéler :</span>
         <button
-          class="btn btn-secondary btn-sm"
-          class:active={consulterShowHint}
+          class="btn btn-secondary btn-sm consulter-btn-hint"
+          class:is-active={consulterShowHint}
           on:click={() => (consulterShowHint = !consulterShowHint)}
         >💡 Indications</button>
         <button
-          class="btn btn-secondary btn-sm"
-          class:active={consulterShowSolution}
+          class="btn btn-secondary btn-sm consulter-btn-sol"
+          class:is-active={consulterShowSolution}
           on:click={() => (consulterShowSolution = !consulterShowSolution)}
         >★ Solutions</button>
       </div>
 
+      <!-- Exercise body -->
       {#if $exerciseLoading}
-        <div class="text-center py-8 text-interface-text-muted">Chargement...</div>
+        <div class="consulter-loading">Chargement…</div>
       {:else if $selectedExercise}
-        <div class="consulter-exercise card">
-          <ExerciseContent
-            exercise={$selectedExercise}
-            variant="full"
-            showGlobalToggles={false}
-            content={$selectedExercise.content || []}
-            bind:showHint={consulterShowHint}
-            bind:showSolution={consulterShowSolution}
-          />
-        </div>
-        <div class="consulter-nav-btns">
-          <button
-            class="btn btn-secondary"
-            disabled={!$currentPosition.hasPrevious}
-            on:click={listActions.previousExercise}
-          >← Précédent</button>
-          <button
-            class="btn btn-primary"
-            disabled={!$currentPosition.hasNext}
-            on:click={listActions.nextExercise}
-          >Suivant →</button>
+        <div class="consulter-body">
+          <!-- Meta chips -->
+          <div class="consulter-meta">
+            {#if $exerciseList[$selectedExerciseIndex]?.level}
+              <span class="chip chip-teal-solid">{$exerciseList[$selectedExerciseIndex].level}</span>
+            {/if}
+            {#if $exerciseList[$selectedExerciseIndex]?.module}
+              <span class="chip chip-soft">{$exerciseList[$selectedExerciseIndex].module}</span>
+            {/if}
+            {#if $exerciseList[$selectedExerciseIndex]?.chapter}
+              <span class="chip chip-soft">{$exerciseList[$selectedExerciseIndex].chapter}</span>
+            {/if}
+            {#if $exerciseList[$selectedExerciseIndex]?.difficulty}
+              <StarsRating n={$exerciseList[$selectedExerciseIndex].difficulty} total={4} />
+            {/if}
+          </div>
+
+          <!-- Title -->
+          <h1 class="consulter-exo-title">
+            <MathRenderer content={$selectedExercise.title || ''} inline={true} />
+          </h1>
+
+          <!-- Exercise content via ExerciseContent (renders enoncé + questions) -->
+          <div class="consulter-exercise-block card">
+            <ExerciseContent
+              exercise={$selectedExercise}
+              variant="full"
+              showGlobalToggles={false}
+              content={$selectedExercise.content || []}
+              bind:showHint={consulterShowHint}
+              bind:showSolution={consulterShowSolution}
+            />
+          </div>
+
+          <!-- Bottom navigation -->
+          <div class="consulter-nav-btns">
+            <button
+              class="btn btn-secondary"
+              disabled={!$currentPosition.hasPrevious}
+              on:click={listActions.previousExercise}
+            >← Précédent</button>
+            <span style="flex:1"></span>
+            {#if $currentPosition.hasNext}
+              <button class="btn btn-primary" on:click={listActions.nextExercise}>
+                {$exerciseList[$selectedExerciseIndex + 1]?.title
+                  ? ($exerciseList[$selectedExerciseIndex + 1].title.length > 28
+                    ? $exerciseList[$selectedExerciseIndex + 1].title.slice(0, 28) + '…'
+                    : $exerciseList[$selectedExerciseIndex + 1].title)
+                  : 'Suivant'} →
+              </button>
+            {/if}
+          </div>
         </div>
       {:else}
-        <div class="text-center py-8 text-interface-text-muted">Sélectionnez un exercice</div>
+        <div class="consulter-loading">Sélectionnez un exercice dans le sommaire</div>
       {/if}
     </main>
   {/if}
@@ -1231,21 +1272,40 @@
 <!-- ────────── MODE PRÉSENTER ────────── -->
 <div class="mode-presenter">
   {#if !$hasExercises}
-    <div style="text-align:center; padding: 4rem 2rem; color: rgba(254,252,246,0.5);">
-      <p>Aucun exercice dans la séance.</p>
+    <div style="text-align:center; padding: 4rem 2rem; color: rgba(254,249,235,0.5);">
+      <p>Aucun exercice dans la séance. Ajoutez des exercices en mode Préparer.</p>
     </div>
   {:else}
+    <!-- 42px thin top bar (accent dot + title + counter) -->
     <div class="presenter-topbar">
-      <span class="presenter-breadcrumb-text">
-        {listTitle || "Liste d'exercices"} · Exercice {$selectedExerciseIndex + 1}/{$exerciseList.length}
+      <span class="presenter-topbar-brand">
+        <span class="presenter-accent-dot"></span>
+        OpenYourMath · projection
       </span>
-      <div style="flex:1"></div>
-      <span class="presenter-shortcut-hint"><kbd class="presenter-kbd">←</kbd><kbd class="presenter-kbd">→</kbd> questions · <kbd class="presenter-kbd">I</kbd> indice · <kbd class="presenter-kbd">S</kbd> solution</span>
+      <span class="presenter-topbar-sep">·</span>
+      <span class="presenter-topbar-title">{listTitle || "Liste d'exercices"}</span>
+      <span style="flex:1"></span>
+      <span class="presenter-topbar-counter">
+        Exercice {$selectedExerciseIndex + 1} / {$exerciseList.length}
+        {#if presenterQuestions.length > 0} · Question {presenterQIdx + 1} / {presenterQuestions.length}{/if}
+      </span>
+      <span class="presenter-topbar-sep">·</span>
+      <span class="presenter-topbar-slide-count">Diapo {$selectedExerciseIndex * Math.max(presenterQuestions.length, 1) + presenterQIdx + 1}</span>
     </div>
 
+    <!-- Slide canvas -->
     <div class="presenter-slide">
       {#if $selectedExercise}
-        <div class="presenter-exo-title">{$selectedExercise.title || ''}</div>
+        <!-- Exercise breadcrumb inside slide -->
+        <div class="presenter-slide-breadcrumb">
+          <span class="presenter-exo-label">Exercice {$selectedExerciseIndex + 1}</span>
+          <span class="presenter-slide-sep">·</span>
+          <span class="presenter-exo-name">{$selectedExercise.title || ''}</span>
+          {#if presenterQuestions.length > 0}
+            <span class="presenter-slide-sep">·</span>
+            <span class="presenter-q-label">Question {presenterQIdx + 1} / {presenterQuestions.length}</span>
+          {/if}
+        </div>
 
         {#if presenterQuestions.length > 0}
           {@const q = presenterQuestions[presenterQIdx]}
@@ -1263,31 +1323,33 @@
                 </div>
               {/if}
               <div class="presenter-reveal-btns">
-                <button class="presenter-btn" on:click={() => (presenterShowInd = !presenterShowInd)}>
-                  💡 {presenterShowInd ? 'Masquer' : 'Indication'}
+                <button class="presenter-btn presenter-btn--ind" on:click={() => (presenterShowInd = !presenterShowInd)}>
+                  💡 {presenterShowInd ? 'Masquer' : 'Afficher'} l'indication
+                  <span class="presenter-kbd-hint">I</span>
                 </button>
                 <button class="presenter-btn presenter-btn--sol" on:click={() => (presenterShowSol = !presenterShowSol)}>
-                  ★ {presenterShowSol ? 'Masquer' : 'Solution'}
+                  ★ {presenterShowSol ? 'Masquer' : 'Afficher'} la solution
+                  <span class="presenter-kbd-hint">S</span>
                 </button>
               </div>
               {#if presenterShowInd && q?.indication}
                 <div class="presenter-reveal presenter-reveal--ind">
-                  <div class="presenter-reveal-label">💡 Indication</div>
-                  <MathRenderer content={q.indication} inline={false} />
+                  <div class="presenter-reveal-label">Indication</div>
+                  <div class="presenter-reveal-body"><MathRenderer content={q.indication} inline={false} /></div>
                 </div>
               {/if}
               {#if presenterShowSol && q?.solution}
                 <div class="presenter-reveal presenter-reveal--sol">
-                  <div class="presenter-reveal-label">★ Solution</div>
-                  <MathRenderer content={q.solution} inline={false} />
+                  <div class="presenter-reveal-label">Solution</div>
+                  <div class="presenter-reveal-body"><MathRenderer content={q.solution} inline={false} /></div>
                 </div>
               {/if}
             </div>
           </div>
-          <div class="presenter-q-counter">{presenterQIdx + 1} / {presenterQuestions.length}</div>
         {:else}
+          <!-- No structured questions: show full exercise content -->
           <div class="presenter-slide-inner">
-            <div class="presenter-body" style="max-width:720px">
+            <div class="presenter-body presenter-body--full">
               <ExerciseContent
                 exercise={$selectedExercise}
                 variant="full"
@@ -1302,23 +1364,29 @@
       {/if}
     </div>
 
+    <!-- Bottom controls bar -->
     <div class="presenter-controls">
-      <button class="presenter-nav-btn" disabled={!$currentPosition.hasPrevious && presenterQIdx === 0} on:click={presenterPrev}>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-        Précédent
+      <button class="presenter-exo-btn" disabled={!$currentPosition.hasPrevious} on:click={presenterPrevExo} title="Exercice précédent">
+        ⇇ Exo
       </button>
-      <div style="flex:1; display:flex; justify-content:center; gap:8px">
-        {#each $exerciseList as _, i}
-          <button
-            class="presenter-dot"
-            class:is-active={i === $selectedExerciseIndex}
-            on:click={() => { listActions.selectExercise(i); presenterQIdx = 0; presenterShowInd = false; presenterShowSol = false; }}
-          ></button>
-        {/each}
+      <button class="presenter-nav-btn" disabled={!$currentPosition.hasPrevious && presenterQIdx === 0} on:click={presenterPrev}>
+        ← Précédent
+      </button>
+      <div class="presenter-hints">
+        <span><span class="presenter-kbd">←</span><span class="presenter-kbd">→</span> diapo</span>
+        <span><span class="presenter-kbd">↑</span><span class="presenter-kbd">↓</span> exercice</span>
+        <span><span class="presenter-kbd">I</span> indication</span>
+        <span><span class="presenter-kbd">S</span> solution</span>
       </div>
-      <button class="presenter-nav-btn" disabled={!$currentPosition.hasNext && presenterQIdx >= presenterQuestions.length - 1} on:click={presenterNext}>
-        Suivant
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      <button
+        class="presenter-nav-btn presenter-nav-btn--next"
+        disabled={!$currentPosition.hasNext && presenterQIdx >= presenterQuestions.length - 1}
+        on:click={presenterNext}
+      >
+        Suivant →
+      </button>
+      <button class="presenter-exo-btn" disabled={!$currentPosition.hasNext} on:click={presenterNextExo} title="Exercice suivant">
+        Exo ⇉
       </button>
     </div>
   {/if}
@@ -1328,105 +1396,182 @@
 <!-- ────────── MODE PARTAGER ────────── -->
 <div class="mode-partager">
   <div class="partager-inner">
-    <h2 class="partager-section-title">Partager la séance</h2>
+    <!-- Header -->
+    <header>
+      <h2 class="partager-section-title">Partager cette séance</h2>
+      <p class="partager-section-desc">
+        Distribuez la séance à vos élèves ou à un collègue. Tout exercice partagé reste à jour : si l'auteur modifie un exercice, la séance partagée se met à jour automatiquement.
+      </p>
+    </header>
 
     <!-- Lien public -->
     <section class="partager-section">
-      <div class="t-overline mb-3">Lien</div>
+      <div class="t-overline mb-3">Lien public</div>
       <div class="partager-link-row">
-        <input
-          class="form-input partager-link-input"
-          readonly
-          value={typeof window !== 'undefined' ? buildShareUrl(null) : ''}
-        />
-        <button
-          class="btn btn-primary"
-          on:click={partagerCopyLink}
-        >{partagerCopied === 'link' ? '✓ Copié !' : 'Copier'}</button>
+        <div class="form-input partager-link-display">
+          {typeof window !== 'undefined' ? buildShareUrl(null) : ''}
+        </div>
+        <button class="btn btn-primary" on:click={partagerCopyLink}>
+          {partagerCopied === 'link' ? '✓ Copié !' : 'Copier'}
+        </button>
+      </div>
+      <!-- Always-on toggle row -->
+      <div class="partager-always-on-row">
+        <span class="partager-toggle-pill partager-toggle-pill--on">
+          <span class="partager-toggle-thumb"></span>
+        </span>
+        <span>Accessible sans compte</span>
+        <span style="flex:1"></span>
+        <span class="partager-visibility-label">Visibilité : <strong>publique</strong></span>
       </div>
     </section>
 
-    <!-- Embed -->
-    <section class="partager-section">
-      <div class="t-overline mb-3">Intégrer (embed)</div>
-      <pre class="partager-embed-pre">&lt;iframe src="{typeof window !== 'undefined' ? buildShareUrl(null) : ''}" width="100%" height="600" frameborder="0"&gt;&lt;/iframe&gt;</pre>
-      <button class="btn btn-secondary btn-sm mt-2" on:click={partagerCopyEmbed}>
-        {partagerCopied === 'embed' ? '✓ Copié !' : 'Copier le code'}
-      </button>
-    </section>
+    <!-- QR + Embed 2-column grid -->
+    <div class="partager-qr-embed-grid">
+      <section class="partager-section partager-qr-card">
+        <div class="t-overline mb-3">QR code</div>
+        <div class="partager-qr-placeholder">
+          <!-- QR pattern placeholder -->
+          <svg viewBox="0 0 140 140" width="140" height="140" xmlns="http://www.w3.org/2000/svg">
+            <rect width="140" height="140" fill="white"/>
+            <!-- Top-left finder -->
+            <rect x="10" y="10" width="40" height="40" rx="3" fill="currentColor"/>
+            <rect x="18" y="18" width="24" height="24" rx="2" fill="white"/>
+            <rect x="24" y="24" width="12" height="12" rx="1" fill="currentColor"/>
+            <!-- Top-right finder -->
+            <rect x="90" y="10" width="40" height="40" rx="3" fill="currentColor"/>
+            <rect x="98" y="18" width="24" height="24" rx="2" fill="white"/>
+            <rect x="104" y="24" width="12" height="12" rx="1" fill="currentColor"/>
+            <!-- Bottom-left finder -->
+            <rect x="10" y="90" width="40" height="40" rx="3" fill="currentColor"/>
+            <rect x="18" y="98" width="24" height="24" rx="2" fill="white"/>
+            <rect x="24" y="104" width="12" height="12" rx="1" fill="currentColor"/>
+            <!-- Data modules (simplified pattern) -->
+            {#each [60,70,80,90,100,110,120] as x}
+              {#each [10,20,30,40,50,60] as y}
+                {#if (x + y) % 16 < 8}
+                  <rect x={x} y={y} width="8" height="8" fill="currentColor"/>
+                {/if}
+              {/each}
+            {/each}
+            {#each [10,20,30,40,50] as x}
+              {#each [60,70,80,120,130] as y}
+                {#if (x * 3 + y) % 14 < 6}
+                  <rect x={x} y={y} width="8" height="8" fill="currentColor"/>
+                {/if}
+              {/each}
+            {/each}
+          </svg>
+        </div>
+        <button class="btn btn-secondary btn-sm">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          PNG
+        </button>
+      </section>
+
+      <section class="partager-section">
+        <div class="t-overline mb-3">Intégrer dans un cours / blog</div>
+        <pre class="partager-embed-pre">&lt;iframe src="{typeof window !== 'undefined' ? buildShareUrl(null) : ''}/embed"
+        width="100%" height="600"
+        frameborder="0"&gt;
+&lt;/iframe&gt;</pre>
+        <button class="btn btn-secondary btn-sm mt-2" on:click={partagerCopyEmbed}>
+          {partagerCopied === 'embed' ? '✓ Copié !' : 'Copier le code'}
+        </button>
+      </section>
+    </div>
 
     <!-- Export -->
     <section class="partager-section">
       <div class="t-overline mb-3">Exporter</div>
       <div class="partager-export-grid">
         <a href="/api/export/pdf?{buildUrl().split('?')[1] || ''}" class="partager-export-card" target="_blank">
-          <span class="partager-export-icon">📄</span>
-          <span class="partager-export-label">PDF feuille TD</span>
+          <span class="partager-export-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </span>
+          <span class="partager-export-label">PDF — feuille TD</span>
+          <span class="partager-export-sub">Énoncés sans solutions, 1 colonne</span>
         </a>
         <a href="/api/export/pdf?{buildUrl().split('?')[1] || ''}&solutions=1" class="partager-export-card" target="_blank">
-          <span class="partager-export-icon">✅</span>
-          <span class="partager-export-label">PDF corrigé</span>
+          <span class="partager-export-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </span>
+          <span class="partager-export-label">PDF — corrigé</span>
+          <span class="partager-export-sub">Énoncés + solutions intégrales</span>
         </a>
         <a href="/api/export/latex?{buildUrl().split('?')[1] || ''}" class="partager-export-card" target="_blank">
-          <span class="partager-export-icon">𝐓𝐗</span>
-          <span class="partager-export-label">Source LaTeX (.tex)</span>
+          <span class="partager-export-icon" style="font-family:monospace;font-size:16px">⟨/⟩</span>
+          <span class="partager-export-label">Source LaTeX</span>
+          <span class="partager-export-sub">Archive .tex prête à compiler</span>
         </a>
       </div>
     </section>
 
-    <!-- Permissions -->
+    <!-- Permissions avec CSS toggles -->
     <section class="partager-section">
-      <div class="t-overline mb-3">Permissions du lien</div>
+      <div class="t-overline mb-3">Accès &amp; permissions</div>
       <div class="partager-perms">
         <label class="partager-perm-row">
           <div class="partager-perm-info">
-            <span class="partager-perm-label">Solutions visibles</span>
-            <span class="partager-perm-desc">Les élèves voient les solutions sans cliquer</span>
+            <span class="partager-perm-label">Solutions visibles dans le lien public</span>
           </div>
-          <input type="checkbox" class="partager-toggle" bind:checked={partagerSolVisible} />
+          <button
+            class="partager-toggle-btn"
+            class:is-on={partagerSolVisible}
+            on:click={() => (partagerSolVisible = !partagerSolVisible)}
+            role="switch"
+            aria-checked={partagerSolVisible}
+          >
+            <span class="partager-toggle-btn-thumb"></span>
+          </button>
         </label>
         <label class="partager-perm-row">
           <div class="partager-perm-info">
-            <span class="partager-perm-label">Indications visibles</span>
-            <span class="partager-perm-desc">Les élèves voient les indices sans cliquer</span>
+            <span class="partager-perm-label">Indications visibles dans le lien public</span>
           </div>
-          <input type="checkbox" class="partager-toggle" bind:checked={partagerIndVisible} />
+          <button
+            class="partager-toggle-btn"
+            class:is-on={partagerIndVisible}
+            on:click={() => (partagerIndVisible = !partagerIndVisible)}
+            role="switch"
+            aria-checked={partagerIndVisible}
+          >
+            <span class="partager-toggle-btn-thumb"></span>
+          </button>
         </label>
         <label class="partager-perm-row">
           <div class="partager-perm-info">
             <span class="partager-perm-label">Notes personnelles partagées</span>
-            <span class="partager-perm-desc text-error-600">Risqué — partage vos annotations privées</span>
+            <span class="partager-perm-hint chip chip-warning">Risqué</span>
           </div>
-          <input type="checkbox" class="partager-toggle" bind:checked={partagerNotesVisible} />
+          <button
+            class="partager-toggle-btn"
+            class:is-on={partagerNotesVisible}
+            on:click={() => (partagerNotesVisible = !partagerNotesVisible)}
+            role="switch"
+            aria-checked={partagerNotesVisible}
+          >
+            <span class="partager-toggle-btn-thumb"></span>
+          </button>
         </label>
-        <div class="partager-perm-row" style="pointer-events:none; opacity:0.7">
-          <div class="partager-perm-info">
-            <span class="partager-perm-label">Accessible sans compte</span>
-            <span class="partager-perm-desc">Toujours actif — aucun compte requis</span>
-          </div>
-          <input type="checkbox" class="partager-toggle" checked disabled />
-        </div>
       </div>
     </section>
 
     <!-- Stats -->
-    <section class="partager-section">
-      <div class="t-overline mb-3">Statistiques</div>
-      <div class="partager-stats-grid">
-        <div class="partager-stat-card">
-          <div class="partager-stat-value">{$exerciseList.length}</div>
-          <div class="partager-stat-label">exercices</div>
-        </div>
-        <div class="partager-stat-card">
-          <div class="partager-stat-value">—</div>
-          <div class="partager-stat-label">vues</div>
-        </div>
-        <div class="partager-stat-card">
-          <div class="partager-stat-value">—</div>
-          <div class="partager-stat-label">téléchargements</div>
-        </div>
+    <div class="partager-stats-grid">
+      <div class="partager-stat-card">
+        <div class="partager-stat-value">{$exerciseList.length}</div>
+        <div class="partager-stat-label">exercices</div>
       </div>
-    </section>
+      <div class="partager-stat-card">
+        <div class="partager-stat-value">—</div>
+        <div class="partager-stat-label">Vues uniques</div>
+      </div>
+      <div class="partager-stat-card">
+        <div class="partager-stat-value">—</div>
+        <div class="partager-stat-label">Téléchargements PDF</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -2537,67 +2682,114 @@
     background: theme('colors.interface.bg-primary');
   }
   .consulter-toc {
-    width: 280px;
+    width: 300px;
     flex-shrink: 0;
-    padding: 20px 16px;
+    padding: 16px 14px;
     background: theme('colors.interface.bg-secondary');
     border-right: 1px solid theme('colors.interface.border-primary');
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
-  .consulter-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+  .consulter-list { display: flex; flex-direction: column; gap: 4px; }
   .consulter-item {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
     text-align: left;
     padding: 8px 10px;
     border-radius: 6px;
-    border: none;
+    border-left: 3px solid transparent;
     background: transparent;
     cursor: pointer;
-    transition: background 0.12s;
+    transition: background 0.12s, border-color 0.12s;
     color: theme('colors.interface.text-primary');
   }
   .consulter-item:hover { background: theme('colors.interface.bg-tertiary'); }
-  .consulter-item.is-selected { background: theme('colors.brand.100'); color: theme('colors.brand.800'); }
+  .consulter-item.is-selected {
+    background: theme('colors.brand.50');
+    border-left-color: theme('colors.brand.500');
+  }
   .consulter-num {
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 600;
     color: theme('colors.interface.text-muted');
-    min-width: 22px;
+    min-width: 18px;
     padding-top: 2px;
     font-family: theme('fontFamily.mono');
   }
+  .consulter-item.is-selected .consulter-num { color: theme('colors.brand.700'); }
   .consulter-item-body { flex: 1; min-width: 0; }
-  .consulter-item-title { font-size: 13px; font-weight: 600; line-height: 1.4; margin-bottom: 4px; }
+  .consulter-item-title {
+    font-family: theme('fontFamily.heading');
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 4px;
+    color: theme('colors.interface.text-primary');
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .consulter-item.is-selected .consulter-item-title { font-weight: 700; color: theme('colors.brand.800'); }
+  .consulter-item-time { font-size: 10px; color: theme('colors.interface.text-muted'); }
   .consulter-main {
     flex: 1;
     overflow-y: auto;
     padding: 24px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    background: theme('colors.interface.bg-primary');
   }
   .consulter-controls {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid theme('colors.interface.border-primary');
+    margin-bottom: 18px;
   }
-  .consulter-controls button.active { background: theme('colors.brand.500'); color: white; }
-  .consulter-exercise { padding: 32px 40px; }
+  .consulter-pos { font-size: 12px; color: theme('colors.interface.text-muted'); }
+  .consulter-reveal-label { font-size: 12px; color: theme('colors.interface.text-muted'); }
+  .consulter-btn-hint.is-active {
+    background: theme('colors.warning.50') !important;
+    border-color: theme('colors.warning.200') !important;
+    color: theme('colors.warning.700') !important;
+  }
+  .consulter-btn-sol.is-active {
+    background: theme('colors.brand.50') !important;
+    border-color: theme('colors.brand.200') !important;
+    color: theme('colors.brand.700') !important;
+  }
+  .consulter-body { max-width: 760px; margin: 0 auto; }
+  .consulter-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .consulter-exo-title {
+    font-family: theme('fontFamily.heading');
+    font-weight: 800;
+    font-size: 28px;
+    margin: 0 0 22px;
+    letter-spacing: -0.3px;
+    color: theme('colors.interface.text-primary');
+    line-height: 1.15;
+  }
+  .consulter-exercise-block { margin-bottom: 16px; }
   .consulter-nav-btns {
     display: flex;
-    justify-content: space-between;
-    padding-top: 12px;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 18px;
+    border-top: 1px solid theme('colors.interface.border-primary');
+  }
+  .consulter-loading {
+    padding: 3rem 2rem;
+    text-align: center;
+    color: theme('colors.interface.text-muted');
+    font-size: 14px;
   }
   @media (max-width: 768px) {
     .mode-consulter { flex-direction: column; height: auto; }
     .consulter-toc { width: 100%; height: 200px; }
     .consulter-main { padding: 16px; }
-    .consulter-exercise { padding: 20px 16px; }
   }
 
   /* ── MODE PRÉSENTER ──────────────────────────────────────────────────────── */
@@ -2611,38 +2803,84 @@
   .presenter-topbar {
     display: flex;
     align-items: center;
-    padding: 14px 32px;
-    background: rgba(0,0,0,0.2);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    gap: 10px;
+    height: 42px;
+    padding: 0 24px;
+    background: rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    flex-shrink: 0;
   }
-  .presenter-breadcrumb-text { font-size: 13px; color: rgba(254,249,235,0.6); }
-  .presenter-shortcut-hint { font-size: 12px; color: rgba(254,249,235,0.4); display: flex; align-items: center; gap: 4px; }
-  .presenter-kbd {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 4px;
-    padding: 1px 5px;
-    font-family: theme('fontFamily.mono');
-    font-size: 11px;
+  .presenter-topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 600;
     color: rgba(254,249,235,0.7);
+    letter-spacing: 0.02em;
+  }
+  .presenter-accent-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5bcaca;
+    flex-shrink: 0;
+  }
+  .presenter-topbar-sep { font-size: 12px; color: rgba(254,249,235,0.25); }
+  .presenter-topbar-title {
+    font-size: 12px;
+    color: rgba(254,249,235,0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 280px;
+  }
+  .presenter-topbar-counter {
+    font-size: 12px;
+    color: #5bcaca;
+    font-weight: 600;
+    font-family: theme('fontFamily.mono');
+  }
+  .presenter-topbar-slide-count {
+    font-size: 11px;
+    color: rgba(254,249,235,0.35);
+    font-family: theme('fontFamily.mono');
   }
   .presenter-slide {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 32px;
+    justify-content: flex-start;
+    padding: 28px 32px 16px;
     overflow-y: auto;
   }
-  .presenter-exo-title {
-    font-family: theme('fontFamily.heading');
-    font-size: 16px;
-    font-weight: 600;
-    color: rgba(254,249,235,0.5);
-    margin-bottom: 24px;
-    text-align: center;
+  .presenter-slide-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 28px;
+    width: 100%;
+    max-width: 900px;
   }
+  .presenter-exo-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5bcaca;
+  }
+  .presenter-slide-sep { font-size: 12px; color: rgba(254,249,235,0.25); }
+  .presenter-exo-name {
+    font-size: 13px;
+    color: rgba(254,249,235,0.6);
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .presenter-q-label { font-size: 12px; color: rgba(254,249,235,0.4); font-family: theme('fontFamily.mono'); }
   .presenter-slide-inner { display: flex; align-items: flex-start; gap: 24px; max-width: 900px; width: 100%; }
   .presenter-bignum {
     font-family: theme('fontFamily.heading');
@@ -2656,6 +2894,7 @@
     text-align: right;
   }
   .presenter-body { flex: 1; min-width: 0; }
+  .presenter-body--full { padding-top: 8px; }
   .presenter-q-title {
     font-family: theme('fontFamily.heading');
     font-size: 22px;
@@ -2664,65 +2903,136 @@
     margin-bottom: 12px;
   }
   .presenter-q-body { font-size: 18px; line-height: 1.7; color: rgba(254,249,235,0.9); margin-bottom: 20px; }
-  .presenter-reveal-btns { display: flex; gap: 8px; margin-bottom: 16px; }
+  .presenter-reveal-btns { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
   .presenter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 8px 18px;
     border-radius: theme('borderRadius.pill');
-    border: 1px solid rgba(255,255,255,0.25);
-    background: rgba(255,255,255,0.08);
-    color: rgba(254,249,235,0.8);
-    font-size: 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.07);
+    color: rgba(254,249,235,0.75);
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
     transition: background 0.15s;
   }
-  .presenter-btn:hover { background: rgba(255,255,255,0.15); }
-  .presenter-btn--sol { border-color: #5bcaca; color: #5bcaca; }
+  .presenter-btn:hover { background: rgba(255,255,255,0.14); }
+  .presenter-btn--ind {
+    border-color: rgba(245,197,95,0.4);
+    color: #f5c55f;
+  }
+  .presenter-btn--ind:hover { background: rgba(245,197,95,0.12); }
+  .presenter-btn--sol {
+    border-color: rgba(91,202,202,0.4);
+    color: #5bcaca;
+  }
+  .presenter-btn--sol:hover { background: rgba(91,202,202,0.1); }
+  .presenter-kbd-hint {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: theme('fontFamily.mono');
+    font-size: 10px;
+    color: rgba(254,249,235,0.5);
+  }
   .presenter-reveal {
-    padding: 16px 20px;
+    padding: 14px 18px;
     border-radius: 8px;
     margin-top: 12px;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.65;
   }
-  .presenter-reveal--ind { background: rgba(91,202,202,0.1); border: 1px solid rgba(91,202,202,0.3); color: #b2e8e8; }
-  .presenter-reveal--sol { background: rgba(254,249,235,0.06); border: 1px solid rgba(254,249,235,0.15); color: #fef9eb; }
-  .presenter-reveal-label { font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; color: rgba(254,249,235,0.5); }
-  .presenter-q-counter { font-size: 13px; color: rgba(254,249,235,0.4); margin-top: 16px; text-align: center; }
+  .presenter-reveal--ind {
+    border-left: 3px solid #f5c55f;
+    background: rgba(245,197,95,0.18);
+    border-radius: 0 8px 8px 0;
+  }
+  .presenter-reveal--sol {
+    background: rgba(254,249,235,0.06);
+    border: 1px solid rgba(254,249,235,0.12);
+  }
+  .presenter-reveal-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: rgba(254,249,235,0.45);
+  }
+  .presenter-reveal--ind .presenter-reveal-label { color: #f5c55f; }
+  .presenter-reveal-body { color: rgba(254,249,235,0.9); }
+  .presenter-reveal--ind .presenter-reveal-body { color: #fef9eb; }
   .presenter-controls {
     display: flex;
     align-items: center;
-    padding: 16px 32px;
-    background: rgba(0,0,0,0.2);
-    border-top: 1px solid rgba(255,255,255,0.08);
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(0,0,0,0.25);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    flex-shrink: 0;
   }
+  .presenter-exo-btn {
+    padding: 7px 14px;
+    border-radius: theme('borderRadius.pill');
+    border: 1px solid rgba(255,255,255,0.15);
+    background: transparent;
+    color: rgba(254,249,235,0.5);
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .presenter-exo-btn:hover:not(:disabled) { background: rgba(255,255,255,0.08); color: rgba(254,249,235,0.8); }
+  .presenter-exo-btn:disabled { opacity: 0.3; cursor: default; }
   .presenter-nav-btn {
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 10px 20px;
+    padding: 9px 20px;
     border-radius: theme('borderRadius.pill');
     border: 1px solid rgba(255,255,255,0.2);
     background: rgba(255,255,255,0.06);
     color: rgba(254,249,235,0.8);
     font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
     transition: background 0.15s;
   }
   .presenter-nav-btn:hover:not(:disabled) { background: rgba(255,255,255,0.12); }
   .presenter-nav-btn:disabled { opacity: 0.3; cursor: default; }
-  .presenter-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.25);
-    border: none;
-    cursor: pointer;
-    transition: background 0.15s, transform 0.15s;
+  .presenter-nav-btn--next {
+    background: #5bcaca;
+    border-color: #5bcaca;
+    color: #0d3c4d;
+    font-weight: 600;
   }
-  .presenter-dot.is-active { background: #5bcaca; transform: scale(1.4); }
+  .presenter-nav-btn--next:hover:not(:disabled) { background: #6dd4d4; border-color: #6dd4d4; }
+  .presenter-hints {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: 11px;
+    color: rgba(254,249,235,0.35);
+  }
+  .presenter-hints span { display: flex; align-items: center; gap: 4px; }
+  .presenter-kbd {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-family: theme('fontFamily.mono');
+    font-size: 10px;
+    color: rgba(254,249,235,0.55);
+  }
   @media (max-width: 640px) {
     .presenter-bignum { font-size: 60px; min-width: 70px; }
     .presenter-slide { padding: 20px; }
     .presenter-slide-inner { flex-direction: column; gap: 12px; }
+    .presenter-hints { display: none; }
   }
 
   /* ── MODE PARTAGER ───────────────────────────────────────────────────────── */
@@ -2736,14 +3046,20 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
   }
   .partager-section-title {
     font-family: theme('fontFamily.heading');
     font-size: 28px;
     font-weight: 800;
     color: theme('colors.interface.text-primary');
-    margin-bottom: 8px;
+    margin: 0 0 6px;
+  }
+  .partager-section-desc {
+    font-size: 14px;
+    color: theme('colors.interface.text-muted');
+    line-height: 1.6;
+    margin: 0;
   }
   .partager-section {
     background: theme('colors.interface.bg-white');
@@ -2752,8 +3068,64 @@
     padding: 20px 24px;
     box-shadow: theme('boxShadow.card');
   }
-  .partager-link-row { display: flex; gap: 8px; }
-  .partager-link-input { flex: 1; font-size: 13px; font-family: theme('fontFamily.mono'); }
+  .partager-link-row { display: flex; gap: 8px; align-items: center; }
+  .partager-link-display {
+    flex: 1;
+    font-size: 13px;
+    font-family: theme('fontFamily.mono');
+    color: theme('colors.interface.text-secondary');
+    background: theme('colors.interface.bg-secondary');
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 6px;
+    padding: 8px 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .partager-always-on-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: theme('colors.interface.text-secondary');
+  }
+  .partager-toggle-pill {
+    display: inline-flex;
+    align-items: center;
+    width: 32px;
+    height: 18px;
+    border-radius: 999px;
+    background: theme('colors.interface.border-secondary');
+    padding: 2px;
+    flex-shrink: 0;
+  }
+  .partager-toggle-pill--on { background: theme('colors.brand.500'); }
+  .partager-toggle-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  }
+  .partager-toggle-pill--on .partager-toggle-thumb { margin-left: auto; }
+  .partager-visibility-label { font-size: 12px; color: theme('colors.interface.text-muted'); }
+  /* QR + Embed 2-col */
+  .partager-qr-embed-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .partager-qr-card { display: flex; flex-direction: column; gap: 12px; }
+  .partager-qr-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: theme('colors.interface.text-primary');
+    border-radius: 6px;
+    overflow: hidden;
+  }
   .partager-embed-pre {
     background: theme('colors.interface.bg-secondary');
     border: 1px solid theme('colors.interface.border-primary');
@@ -2764,15 +3136,17 @@
     color: theme('colors.interface.text-secondary');
     white-space: pre-wrap;
     word-break: break-all;
-    margin: 0;
+    margin: 0 0 10px;
   }
+  /* Export */
   .partager-export-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .partager-export-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     padding: 16px 12px;
+    background: theme('colors.interface.bg-primary');
     border: 1px solid theme('colors.interface.border-primary');
     border-radius: 8px;
     text-decoration: none;
@@ -2780,34 +3154,64 @@
     transition: background 0.12s, border-color 0.12s;
   }
   .partager-export-card:hover { background: theme('colors.interface.bg-secondary'); border-color: theme('colors.brand.300'); }
-  .partager-export-icon { font-size: 28px; }
+  .partager-export-icon { color: theme('colors.interface.text-muted'); }
   .partager-export-label { font-size: 13px; font-weight: 600; text-align: center; }
-  .partager-perms { display: flex; flex-direction: column; gap: 0; }
+  .partager-export-sub { font-size: 11px; color: theme('colors.interface.text-muted'); text-align: center; line-height: 1.4; }
+  /* Permissions */
+  .partager-perms { display: flex; flex-direction: column; }
   .partager-perm-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 12px 0;
+    padding: 14px 0;
     border-bottom: 1px solid theme('colors.interface.border-primary');
     cursor: pointer;
   }
   .partager-perm-row:last-child { border-bottom: 0; }
-  .partager-perm-info { display: flex; flex-direction: column; gap: 2px; }
+  .partager-perm-info { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .partager-perm-label { font-size: 14px; font-weight: 600; color: theme('colors.interface.text-primary'); }
-  .partager-perm-desc { font-size: 12px; color: theme('colors.interface.text-muted'); }
-  .partager-toggle { width: 36px; height: 20px; flex-shrink: 0; accent-color: theme('colors.brand.500'); }
+  .partager-perm-hint { font-size: 11px; }
+  /* CSS toggle switch */
+  .partager-toggle-btn {
+    position: relative;
+    width: 36px;
+    height: 20px;
+    border-radius: 999px;
+    border: none;
+    background: theme('colors.interface.border-secondary');
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s;
+    padding: 0;
+  }
+  .partager-toggle-btn.is-on { background: theme('colors.brand.500'); }
+  .partager-toggle-btn-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    transition: left 0.2s;
+  }
+  .partager-toggle-btn.is-on .partager-toggle-btn-thumb { left: 18px; }
+  /* Stats */
   .partager-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .partager-stat-card {
     text-align: center;
-    padding: 16px;
-    background: theme('colors.interface.bg-secondary');
+    padding: 20px 16px;
+    background: theme('colors.interface.bg-white');
     border-radius: 8px;
     border: 1px solid theme('colors.interface.border-primary');
+    box-shadow: theme('boxShadow.card');
   }
   .partager-stat-value { font-family: theme('fontFamily.heading'); font-size: 28px; font-weight: 800; color: theme('colors.interface.text-primary'); }
   .partager-stat-label { font-size: 12px; color: theme('colors.interface.text-muted'); margin-top: 4px; }
   @media (max-width: 640px) {
+    .partager-qr-embed-grid { grid-template-columns: 1fr; }
     .partager-export-grid { grid-template-columns: 1fr 1fr; }
     .partager-stats-grid { grid-template-columns: 1fr 1fr; }
   }
