@@ -69,19 +69,19 @@
       <div class="preview-loading">
         <div class="flex items-center justify-center py-12">
           <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-600"></div>
-          <span class="ml-3 text-gray-600">Chargement...</span>
+          <span class="ml-3 text-interface-text-muted">Chargement...</span>
         </div>
       </div>
     {:else if $previewState.error}
       <div class="preview-error">
         <div class="text-center py-12">
-          <div class="text-red-500 mb-2">
+          <div class="text-error-500 mb-2">
             <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h3 class="text-lg font-medium text-gray-900 mb-1">Erreur de chargement</h3>
-          <p class="text-gray-600 text-sm">{$previewState.error}</p>
+          <h3 class="text-lg font-medium text-interface-text-primary mb-1">Erreur de chargement</h3>
+          <p class="text-interface-text-muted text-sm">{$previewState.error}</p>
         </div>
       </div>
     {:else if $previewState.exercise}
@@ -94,7 +94,7 @@
       </div>
     {:else}
       <div class="preview-empty">
-        <div class="text-center py-12 text-gray-500">
+        <div class="text-center py-12 text-interface-text-muted">
           <svg class="w-12 h-12 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />

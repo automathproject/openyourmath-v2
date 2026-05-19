@@ -349,7 +349,7 @@
     align-items:center;
     gap:0.5rem;
     font-size:0.75rem;
-    color: rgb(156 163 175);
+    color: theme('colors.interface.text-muted');
     font-weight:500;
     white-space:nowrap;
   }

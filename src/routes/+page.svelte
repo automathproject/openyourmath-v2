@@ -364,7 +364,7 @@
 
       {#if $loading && !$hasResults}
         <div class="text-center py-10">
-          <p class="text-gray-500">Recherche en cours...</p>
+          <p class="text-interface-text-muted">Recherche en cours...</p>
         </div>
       {:else if $hasResults}
         <div class="results-header mb-4">
@@ -626,7 +626,7 @@
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    @apply text-gray-500;
+    @apply text-interface-text-muted;
   }
 
   .mfb-chips {
@@ -650,11 +650,11 @@
     align-items: center;
     gap: 0.2rem;
     white-space: nowrap;
-    @apply border border-gray-200 bg-gray-100 text-gray-700;
+    @apply border border-interface-border-primary bg-interface-bg-tertiary text-interface-text-secondary;
   }
-  .chip:hover { @apply bg-gray-200; }
-  .chip--on { @apply bg-green-100 text-green-700 border-green-200; }
-  .chip--off { @apply bg-red-100 text-red-800 border-red-200; }
+  .chip:hover { @apply bg-interface-bg-secondary; }
+  .chip--on { @apply bg-brand-50 text-brand-700 border-brand-200; }
+  .chip--off { @apply bg-error-50 text-error-700 border-error-100; }
 
   .mfb-advanced-btn {
     display: inline-flex;
@@ -667,10 +667,10 @@
     width: 100%;
     justify-content: center;
     transition: background-color .15s;
-    @apply border border-gray-300 bg-gray-50 text-gray-700;
+    @apply border border-interface-border-primary bg-interface-bg-secondary text-interface-text-secondary;
   }
   .mfb-advanced-btn svg { width: 0.9rem; height: 0.9rem; flex-shrink: 0; }
-  .mfb-advanced-btn:hover { @apply bg-gray-100; }
+  .mfb-advanced-btn:hover { @apply bg-interface-bg-tertiary; }
   .mfb-advanced-btn--active { @apply bg-brand-50 border-brand-300 text-brand-700; }
 
   /* ─── Desktop : ActiveFilters + BreadcrumbNav sous la toolbar ─── */
@@ -721,9 +721,9 @@
     font-size: 1.15rem;
     font-weight: 700;
     z-index: 20;
-    @apply border border-gray-300 bg-white text-gray-700 shadow-sm transition-colors;
+    @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary shadow-sm transition-colors;
   }
-  .panel-edge-toggle:hover { @apply bg-gray-100 text-gray-900; }
+  .panel-edge-toggle:hover { @apply bg-interface-bg-tertiary text-interface-text-primary; }
   .panel-edge-toggle--preview {
     left: -0.875rem;
   }
@@ -761,7 +761,7 @@
   .preview-section {
     width: 100%;
     height: 100%;
-    @apply border-l border-gray-200;
+    @apply border-l border-interface-border-primary;
   }
 
   @media (min-width:1024px) {
@@ -787,11 +787,11 @@
     margin-top: 0.5rem;
     padding: 0.75rem;
     border-radius: 0.5rem;
-    @apply bg-red-50 border border-red-200;
+    @apply bg-error-50 border border-error-100;
   }
   .search-error-text {
     font-size: 0.875rem;
-    @apply text-red-600;
+    @apply text-error-700;
   }
 
   .results-header {
@@ -815,7 +815,7 @@
     font-weight: 600;
     flex: 1 1 auto;
     min-width: fit-content;
-    @apply text-gray-900;
+    @apply text-interface-text-primary;
   }
 
   .sort-control {
@@ -885,7 +885,7 @@
     border-radius: 0.5rem;
     font-size: 0.875rem;
     font-weight: 600;
-    @apply border border-gray-300 bg-white text-gray-600;
+    @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary;
   }
 
   .view-mode-btn--active {
@@ -895,7 +895,7 @@
   .sort-label {
     font-size: 0.875rem;
     white-space: nowrap;
-    @apply text-gray-600;
+    @apply text-interface-text-secondary;
   }
 
   .sort-select-group {
@@ -907,7 +907,7 @@
   .sort-select {
     padding: 0.5rem 0.75rem;
     font-size: 0.875rem;
-    @apply border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-500;
+    @apply border border-interface-border-primary rounded-lg bg-interface-bg-white text-interface-text-secondary focus:outline-none focus:ring-2 focus:ring-brand-500;
   }
 
   .sort-direction-button {
@@ -919,11 +919,11 @@
     font-size: 1rem;
     border-radius: 0.75rem;
     transition: background-color .2s, color .2s;
-    @apply border border-gray-300 bg-white text-gray-600;
+    @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary;
   }
 
   .sort-direction-button:hover:enabled {
-    @apply bg-gray-100 text-gray-800;
+    @apply bg-interface-bg-tertiary text-interface-text-primary;
   }
 
   .sort-direction-button:disabled {
@@ -938,7 +938,7 @@
   .results-keyboard-hint {
     margin-top: 0.7rem;
     font-size: 0.78rem;
-    @apply text-gray-500;
+    @apply text-interface-text-muted;
   }
 
   /* Masquer les raccourcis clavier sur mobile */
@@ -951,7 +951,7 @@
     text-align: center;
     padding: 3rem 1.5rem;
     border-radius: 1rem;
-    @apply border border-dashed border-gray-300 bg-gray-50;
+    @apply border border-dashed border-interface-border-secondary bg-interface-bg-secondary;
   }
   .empty-state-title {
     font-size:1.125rem;
