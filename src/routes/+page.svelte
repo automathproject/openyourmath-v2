@@ -283,14 +283,6 @@
 
       <div class="desktop-meta-shell">
         <ActiveFilters />
-        {#if browser}
-          <BreadcrumbNav
-            query={$searchQuery}
-            filters={$filters}
-            resultPathCounts={$resultPathCounts}
-            on:navigate={handleChapterNavigation}
-          />
-        {/if}
       </div>
     </div>
   </div>
@@ -299,6 +291,18 @@
   <div class="search-body">
     <div class="search-page-grid" class:search-page-grid--preview-open={isDesktop && $previewPanelOpen}>
       <div class="search-page-main">
+
+        <!-- BreadcrumbNav desktop (hors sticky band) -->
+        {#if browser}
+          <div class="desktop-breadcrumb-row">
+            <BreadcrumbNav
+              query={$searchQuery}
+              filters={$filters}
+              resultPathCounts={$resultPathCounts}
+              on:navigate={handleChapterNavigation}
+            />
+          </div>
+        {/if}
 
         <!-- Bloc pliant mobile : filtres rapides + hiérarchie -->
         <div class="mobile-filter-block" class:mobile-filter-block--collapsed={!filtersExpanded}>
@@ -499,7 +503,7 @@
   /* ── Hero band ──────────────────────────────────────────────── */
   .search-hero-band {
     position: sticky;
-    top: var(--app-header-height, 4rem);
+    top: 0;
     z-index: 35;
     background: theme('colors.interface.bg-secondary');
     border-bottom: 1px solid theme('colors.interface.border-primary');
@@ -531,6 +535,17 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  /* breadcrumb row lives outside sticky band, shown on desktop only */
+  .desktop-breadcrumb-row {
+    display: none;
+  }
+  @media (min-width: 641px) {
+    .desktop-breadcrumb-row {
+      display: block;
+      margin-bottom: 12px;
+    }
   }
 
   /* ── Body ───────────────────────────────────────────────────── */
@@ -678,10 +693,10 @@
     .preview-shell {
       display: block;
       position: sticky;
-      top: calc(var(--app-header-height, 4rem) + var(--search-controls-height, 6.5rem));
+      top: var(--search-controls-height, 9rem);
       align-self: start;
       z-index: 10;
-      max-height: calc(100vh - var(--app-header-height, 4rem) - var(--search-controls-height, 6.5rem));
+      max-height: calc(100vh - var(--search-controls-height, 9rem));
     }
   }
 
@@ -753,7 +768,7 @@
 
   @media (min-width:1024px) {
     .preview-sticky {
-      max-height: calc(100vh - var(--app-header-height, 4rem) - var(--search-controls-height, 6.5rem) - 2rem);
+      max-height: calc(100vh - var(--search-controls-height, 9rem) - 2rem);
     }
   }
 
