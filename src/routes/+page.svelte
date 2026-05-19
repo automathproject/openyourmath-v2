@@ -38,9 +38,7 @@
   let advancedFiltersOpen = false;
   let filtersExpanded = true;
   let manualCardMode = 'auto'; // auto | compact | detailed
-  let isHeaderCollapsed = false;
   let resultsScrollEl;
-  const HEADER_COLLAPSE_THRESHOLD = 24;
 
   // debouncedSearch supprimé — SearchSemantic gère son propre dispatch FTS/hybride.
 
@@ -245,14 +243,7 @@
   }
 
   function handleWindowScroll() {
-    if (typeof window === 'undefined') return;
-    syncHeaderCollapsedFromScroll();
-  }
-
-  function syncHeaderCollapsedFromScroll() {
-    if (typeof window === 'undefined') return;
-    const pageScrollTop = window.scrollY || document.documentElement.scrollTop || 0;
-    isHeaderCollapsed = pageScrollTop > HEADER_COLLAPSE_THRESHOLD;
+    // retained for compatibility
   }
 </script>
 
@@ -262,41 +253,55 @@
   <title>Recherche d'exercices - OpenYourMath</title>
 </svelte:head>
 
-<div class="search-page container mx-auto px-3 py-3 sm:px-4 sm:py-4 lg:py-8" class:search-page--scrolled={isHeaderCollapsed}>
-  <div class="hero-block text-center lg:text-left mb-4 sm:mb-6 lg:mb-10" class:hero-block--collapsed={isHeaderCollapsed}>
-    <div class="hero-inner">
-      <img src="/img/logo1.png" alt="OpenYourMath" class="hidden lg:block w-24 h-auto" loading="eager" />
-      <div>
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Recherchez votre exercice</h1>
-        <p class="text-gray-600 text-sm sm:text-base">Explorez par mots-clés, puis affinez via les filtres.</p>
+<div class="search-page">
+  <!-- ── Sticky search hero band ──────────────────────────────── -->
+  <div class="search-hero-band">
+    <div class="search-hero-inner">
+      <div class="search-hero-bc">
+        <span>Recherche</span>
+        {#if $searchQuery}
+          <span class="search-hero-bc-sep">›</span>
+          <span class="search-hero-bc-query">{$searchQuery}</span>
+        {/if}
+      </div>
+
+      <SearchSemantic
+        onToggleFilters={toggleFiltersPanel}
+        hasSolution={$filters.hasSolution}
+        hasIndication={$filters.hasIndication}
+        onToggleSolution={toggleSolutionChip}
+        onToggleIndication={toggleIndicationChip}
+        canTogglePreview={canTogglePreview && !isDesktop}
+        previewToggleLabel={previewToggleLabel}
+        isPreviewOpen={$previewState.isOpen}
+        onTogglePreview={toggleMobilePreview}
+        {advancedFiltersOpen}
+        onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
+        {filtersExpanded}
+        onToggleExpanded={() => (filtersExpanded = !filtersExpanded)}
+      />
+
+      <div class="desktop-meta-shell">
+        <ActiveFilters />
+        {#if browser}
+          <BreadcrumbNav
+            query={$searchQuery}
+            filters={$filters}
+            resultPathCounts={$resultPathCounts}
+            on:navigate={handleChapterNavigation}
+          />
+        {/if}
       </div>
     </div>
   </div>
 
-  <div class="search-page-grid" class:search-page-grid--preview-open={isDesktop && $previewPanelOpen}>
-    <div class="search-page-main">
-      <div class="search-controls-sticky" class:search-controls-sticky--scrolled={isHeaderCollapsed}>
-
-        <!-- Barre de recherche + mode sémantique (drop-in de SearchToolbar) -->
-        <SearchSemantic
-          onToggleFilters={toggleFiltersPanel}
-          hasSolution={$filters.hasSolution}
-          hasIndication={$filters.hasIndication}
-          onToggleSolution={toggleSolutionChip}
-          onToggleIndication={toggleIndicationChip}
-          canTogglePreview={canTogglePreview && !isDesktop}
-          previewToggleLabel={previewToggleLabel}
-          isPreviewOpen={$previewState.isOpen}
-          onTogglePreview={toggleMobilePreview}
-          {advancedFiltersOpen}
-          onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
-          {filtersExpanded}
-          onToggleExpanded={() => (filtersExpanded = !filtersExpanded)}
-        />
+  <!-- ── Body ─────────────────────────────────────────────────── -->
+  <div class="search-body">
+    <div class="search-page-grid" class:search-page-grid--preview-open={isDesktop && $previewPanelOpen}>
+      <div class="search-page-main">
 
         <!-- Bloc pliant mobile : filtres rapides + hiérarchie -->
         <div class="mobile-filter-block" class:mobile-filter-block--collapsed={!filtersExpanded}>
-          <!-- Section "Contenu disponible" -->
           <div class="mfb-section">
             <span class="mfb-section-label">Contenu disponible</span>
             <div class="mfb-chips">
@@ -319,7 +324,6 @@
             </div>
           </div>
 
-          <!-- Section "Filtrer par" : hiérarchie en cascade -->
           <div class="mfb-section">
             <span class="mfb-section-label">Filtrer par</span>
             {#if browser}
@@ -332,10 +336,8 @@
             {/if}
           </div>
 
-          <!-- Filtres actifs (auteur, difficulté, etc.) -->
           <ActiveFilters />
 
-          <!-- Bouton filtres avancés -->
           <button
             type="button"
             class="mfb-advanced-btn"
@@ -350,28 +352,13 @@
           </button>
         </div>
 
-        <!-- Sur desktop : ActiveFilters + BreadcrumbNav restent sous la toolbar -->
-        <div class="desktop-meta-shell">
-          <ActiveFilters />
-          {#if browser}
-            <BreadcrumbNav
-              query={$searchQuery}
-              filters={$filters}
-              resultPathCounts={$resultPathCounts}
-              on:navigate={handleChapterNavigation}
-            />
-          {/if}
-        </div>
-
-      </div>
-
-      <div
-        class="results-section flex-1"
-        style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}
-        bind:this={resultsScrollEl}
-        on:scroll={handleResultsScroll}
-      >
-      {#if $error}
+        <div
+          class="results-section flex-1"
+          style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}
+          bind:this={resultsScrollEl}
+          on:scroll={handleResultsScroll}
+        >
+        {#if $error}
         <div class="search-error">
           <p class="search-error-text">{$error}</p>
         </div>
@@ -471,28 +458,29 @@
           />
         </section>
       {/if}
+        </div>
       </div>
-    </div>
 
-    <div class="preview-shell">
-      {#if isDesktop && $previewPanelOpen}
-        <aside class="preview-section" style={`--layout-preview-width: ${$layoutConfig.previewWidth};`}>
-          <div class="preview-sticky">
-            <ExercisePreview />
-          </div>
-        </aside>
-      {/if}
-      {#if isDesktop}
-        <button
-          type="button"
-          class="panel-edge-toggle panel-edge-toggle--preview"
-          aria-label={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
-          title={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
-          on:click={toggleDesktopPreviewPanel}
-        >
-          {$previewPanelOpen ? '›' : '‹'}
-        </button>
-      {/if}
+      <div class="preview-shell">
+        {#if isDesktop && $previewPanelOpen}
+          <aside class="preview-section" style={`--layout-preview-width: ${$layoutConfig.previewWidth};`}>
+            <div class="preview-sticky">
+              <ExercisePreview />
+            </div>
+          </aside>
+        {/if}
+        {#if isDesktop}
+          <button
+            type="button"
+            class="panel-edge-toggle panel-edge-toggle--preview"
+            aria-label={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
+            title={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
+            on:click={toggleDesktopPreviewPanel}
+          >
+            {$previewPanelOpen ? '›' : '‹'}
+          </button>
+        {/if}
+      </div>
     </div>
   </div>
 </div>
@@ -504,57 +492,56 @@
 
 <style>
   .search-page {
-    --results-scroll-height: auto;
+    min-height: 100vh;
+    background: theme('colors.interface.bg-primary');
   }
-  .hero-inner {
+
+  /* ── Hero band ──────────────────────────────────────────────── */
+  .search-hero-band {
+    position: sticky;
+    top: var(--app-header-height, 4rem);
+    z-index: 35;
+    background: theme('colors.interface.bg-secondary');
+    border-bottom: 1px solid theme('colors.interface.border-primary');
+    box-shadow: 0 1px 4px rgba(13, 60, 77, 0.06);
+  }
+  .search-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 40px 14px;
+  }
+  .search-hero-bc {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: theme('colors.interface.text-muted');
+    margin-bottom: 10px;
   }
-
-  .hero-block {
-    max-height: 18rem;
-    opacity: 1;
+  .search-hero-bc-sep { color: theme('colors.interface.border-secondary'); }
+  .search-hero-bc-query {
+    color: theme('colors.interface.text-secondary');
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    max-width: 280px;
+    white-space: nowrap;
     overflow: hidden;
-    transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 200ms cubic-bezier(0.4, 0, 0.2, 1),
-                margin 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    text-overflow: ellipsis;
   }
 
-  /* Sur mobile, on garde le hero plus longtemps avant collapse */
-  @media (max-width: 1023px) {
-    .hero-inner {
-      padding: 0.5rem 0;
-    }
-    .hero-block h1 {
-      font-size: 1.5rem;
-    }
-    .hero-block p {
-      font-size: 0.875rem;
-    }
+  /* ── Body ───────────────────────────────────────────────────── */
+  .search-body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 40px 48px;
   }
-
-  .hero-block.hero-block--collapsed {
-    max-height: 0;
-    opacity: 0;
-    margin-bottom: 0;
-    pointer-events: none;
-  }
-
-  @media (min-width:1024px) {
-    .hero-inner {
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 1.5rem;
-    }
-    .search-page {
-      --results-scroll-height: calc(100vh - 19rem);
-    }
-    .search-page.search-page--scrolled {
-      --results-scroll-height: calc(100vh - 11rem);
-    }
+  @media (max-width: 768px) {
+    .search-hero-inner { padding: 12px 16px 10px; }
+    .search-body { padding: 12px 12px 32px; }
   }
 
   .search-page-grid {
@@ -570,31 +557,7 @@
 
   :root {
     --app-header-height: 4rem;
-    --search-controls-height: 6.5rem;
-  }
-
-  .search-controls-sticky {
-    position: sticky;
-    top: var(--app-header-height, 4rem);
-    z-index: 35;
-    padding: 0.75rem;
-    transition: box-shadow 200ms ease, background-color 200ms ease, backdrop-filter 200ms ease, border-color 200ms ease;
-    background: transparent;
-    @apply border border-gray-200 rounded-lg;
-  }
-
-  /* Sur mobile, réduire le padding */
-  @media (max-width: 640px) {
-    .search-controls-sticky {
-      padding: 0.5rem;
-      border-radius: 0.5rem;
-    }
-  }
-
-  .search-controls-sticky--scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --search-controls-height: 9rem;
   }
 
   /* ─── Bloc filtres mobile (pliant) ─── */
