@@ -123,7 +123,7 @@
     margin-top: 0.5rem;
     padding: 1.5rem;
     border-radius: 1rem;
-    @apply border border-gray-200 bg-white shadow-sm;
+    @apply border border-interface-border-primary bg-interface-bg-white shadow-sm;
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
@@ -139,12 +139,12 @@
   .random-carousel__title {
     font-size: 1.25rem;
     font-weight: 700;
-    @apply text-gray-900;
+    @apply text-interface-text-primary;
   }
   .random-carousel__subtitle {
     margin-top: 0.25rem;
     font-size: 0.95rem;
-    @apply text-gray-600;
+    @apply text-interface-text-secondary;
   }
   .random-carousel__track {
     display: flex;
@@ -170,7 +170,7 @@
   }
   .random-carousel__empty {
     padding: 0.5rem 0.25rem;
-    @apply text-gray-500;
+    @apply text-interface-text-muted;
   }
   .random-card-skeleton {
     flex: 0 0 280px;

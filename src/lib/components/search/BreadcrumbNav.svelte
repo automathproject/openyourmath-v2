@@ -250,7 +250,7 @@
     margin-bottom: 1rem;
     border-radius: 0.75rem;
     padding: 0.7rem 0.9rem;
-    @apply border border-gray-200 bg-gray-50;
+    @apply border border-interface-border-primary bg-interface-bg-secondary;
   }
   .breadcrumb-row {
     display: flex;
@@ -267,12 +267,12 @@
     border-radius: 0.5rem;
     font-size: 0.9rem;
     font-weight: 500;
-    @apply bg-white border border-gray-300 text-gray-800;
+    @apply bg-interface-bg-white border border-interface-border-primary text-interface-text-primary;
   }
-  .crumb-btn:hover:enabled { @apply bg-gray-100; }
+  .crumb-btn:hover:enabled { @apply bg-interface-bg-tertiary; }
   .crumb-btn:disabled { @apply opacity-50 cursor-not-allowed; }
-  .crumb-caret { font-size: 0.75rem; @apply text-gray-500; }
-  .crumb-sep { @apply text-gray-400; }
+  .crumb-caret { font-size: 0.75rem; @apply text-interface-text-muted; }
+  .crumb-sep { @apply text-interface-text-disabled; }
 
   .crumb-menu {
     position: absolute;
@@ -284,7 +284,7 @@
     border-radius: 0.75rem;
     padding: 0.35rem;
     z-index: 60;
-    @apply border border-gray-200 bg-white shadow-lg;
+    @apply border border-interface-border-primary bg-interface-bg-white shadow-lg;
   }
   .crumb-item {
     display: block;
@@ -293,12 +293,12 @@
     padding: 0.5rem 0.6rem;
     border-radius: 0.5rem;
     font-size: 0.88rem;
-    @apply text-gray-700;
+    @apply text-interface-text-secondary;
   }
-  .crumb-item:hover { @apply bg-gray-100; }
+  .crumb-item:hover { @apply bg-interface-bg-tertiary; }
   .crumb-empty {
     padding: 0.6rem;
     font-size: 0.86rem;
-    @apply text-gray-500;
+    @apply text-interface-text-muted;
   }
 </style>

@@ -21,7 +21,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     line-height: 1.4;
-    @apply text-gray-600;
+    @apply text-interface-text-secondary;
   }
   .snippet-content :global(p) {
     margin: 0;

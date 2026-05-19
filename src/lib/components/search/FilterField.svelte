@@ -72,7 +72,7 @@
     width:100%;
     padding:0.6rem 0.75rem;
     border-radius:0.65rem;
-    @apply border border-gray-300 bg-interface-bg-primary text-interface-text-primary;
+    @apply border border-interface-border-primary bg-interface-bg-primary text-interface-text-primary;
   }
   .filters-suggestions {
     position:absolute;
@@ -85,7 +85,7 @@
     max-height:12rem;
     overflow:auto;
     z-index:10;
-    @apply bg-interface-bg-primary border border-gray-200;
+    @apply bg-interface-bg-primary border border-interface-border-primary;
   }
   .filters-suggestions button {
     width:100%;
@@ -94,7 +94,7 @@
     font-size:0.875rem;
     background:transparent;
     border:none;
-    @apply text-gray-800;
+    @apply text-interface-text-primary;
   }
   .filters-suggestions button:hover { @apply bg-brand-50; }
 </style>

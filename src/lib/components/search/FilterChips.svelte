@@ -58,12 +58,12 @@
     display:flex;
     flex-direction:column;
     gap:0.6rem;
-    @apply border border-gray-200 bg-gray-50;
+    @apply border border-interface-border-primary bg-interface-bg-secondary;
   }
   .filters-chips-title {
     font-weight:600;
     font-size:0.9rem;
-    @apply text-gray-800;
+    @apply text-interface-text-primary;
   }
   .filters-chips-list { display:flex; flex-wrap:wrap; gap:0.4rem; }
   .filters-chips-empty {
@@ -79,9 +79,9 @@
     font-size:0.85rem;
     cursor:pointer;
     box-shadow:0 1px 2px rgba(15,23,42,0.08);
-    @apply border border-gray-300 bg-interface-bg-primary text-gray-800;
+    @apply border border-interface-border-primary bg-interface-bg-primary text-interface-text-secondary;
   }
-  .filters-chip:hover { @apply bg-gray-100; }
+  .filters-chip:hover { @apply bg-interface-bg-tertiary; }
   .filters-chip-label { display:flex; align-items:center; gap:0.35rem; }
   .filters-chip-remove {
     display:inline-flex;
@@ -92,9 +92,9 @@
     border-radius:9999px;
     font-weight:600;
     cursor:pointer;
-    @apply bg-gray-200 text-gray-700;
+    @apply bg-interface-bg-tertiary text-interface-text-secondary;
   }
-  .filters-chip-remove:hover { @apply bg-gray-300; }
+  .filters-chip-remove:hover { @apply bg-interface-border-primary; }
   .filters-add-chip {
     align-self:flex-start;
     display:inline-flex;
@@ -104,7 +104,7 @@
     border-radius:0.75rem;
     font-weight:500;
     cursor:pointer;
-    @apply border border-dashed border-slate-400 bg-interface-bg-primary text-gray-800;
+    @apply border border-dashed border-interface-border-secondary bg-interface-bg-primary text-interface-text-secondary;
   }
-  .filters-add-chip:hover { @apply bg-slate-50; }
+  .filters-add-chip:hover { @apply bg-interface-bg-secondary; }
 </style>

@@ -253,7 +253,7 @@
     border-radius: 0.85rem;
     padding: 0.8rem;
     z-index: 50;
-    @apply border border-gray-200 bg-white shadow-xl;
+    @apply border border-interface-border-primary bg-interface-bg-white shadow-xl;
   }
   @media (max-width: 640px) {
     .advanced-popover {
@@ -287,15 +287,15 @@
   .advanced-popover__header h4 {
     font-size: 0.95rem;
     font-weight: 700;
-    @apply text-gray-800;
+    @apply text-interface-text-primary;
   }
   .advanced-popover__close {
     width: 1.75rem;
     height: 1.75rem;
     border-radius: 0.5rem;
-    @apply text-gray-500;
+    @apply text-interface-text-muted;
   }
-  .advanced-popover__close:hover { @apply bg-gray-100 text-gray-700; }
+  .advanced-popover__close:hover { @apply bg-interface-bg-tertiary text-interface-text-secondary; }
 
   .advanced-grid {
     display: grid;
@@ -315,7 +315,7 @@
   .advanced-field span {
     font-size: 0.78rem;
     font-weight: 600;
-    @apply text-gray-600;
+    @apply text-interface-text-secondary;
   }
   .advanced-field input,
   .advanced-field select {
@@ -323,12 +323,12 @@
     padding: 0.45rem 0.55rem;
     border-radius: 0.55rem;
     font-size: 0.86rem;
-    @apply border border-gray-300 bg-white text-gray-800;
+    @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-primary;
   }
   .advanced-dates {
     margin-top: 0.75rem;
     padding-top: 0.75rem;
-    @apply border-t border-gray-200;
+    @apply border-t border-interface-border-primary;
   }
   .advanced-dates__toggle {
     width: 100%;
@@ -339,10 +339,10 @@
     text-align: left;
     padding: 0.65rem 0.75rem;
     border-radius: 0.75rem;
-    @apply bg-gray-50 text-gray-800 border border-gray-200;
+    @apply bg-interface-bg-secondary text-interface-text-primary border border-interface-border-primary;
   }
   .advanced-dates__toggle:hover {
-    @apply bg-gray-100;
+    @apply bg-interface-bg-tertiary;
   }
   .advanced-dates__toggle--active {
     @apply border-brand-200 bg-brand-50;
@@ -353,13 +353,13 @@
   }
   .advanced-dates__toggle-meta {
     font-size: 0.76rem;
-    @apply text-gray-500;
+    @apply text-interface-text-muted;
   }
   .advanced-dates__toggle-icon {
     grid-row: 1 / span 2;
     grid-column: 2;
     font-size: 0.8rem;
-    @apply text-gray-500;
+    @apply text-interface-text-muted;
   }
   .advanced-grid--dates {
     margin-top: 0.75rem;
