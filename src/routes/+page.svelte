@@ -6,6 +6,7 @@
   import EmptyState from '$lib/components/search/EmptyState.svelte';
   import BreadcrumbNav from '$lib/components/search/BreadcrumbNav.svelte';
   import ActiveFilters from '$lib/components/search/active-filters.svelte';
+  import SearchPageSidebar from '$lib/components/search/SearchPageSidebar.svelte';
   import SearchSemantic from '$lib/components/search/SearchSemantic.svelte';
   import ResultsGrid from '$lib/components/search/ResultsGrid.svelte';
   import MobileExercisePreview from '$lib/components/search/MobileExercisePreview.svelte';
@@ -289,19 +290,13 @@
   <!-- ── Body ─────────────────────────────────────────────────── -->
   <div class="search-body">
     <div class="search-page-grid" class:search-page-grid--preview-open={isDesktop && $previewPanelOpen}>
-      <div class="search-page-main">
 
-        <!-- BreadcrumbNav desktop (hors sticky band) -->
-        {#if browser}
-          <div class="desktop-breadcrumb-row">
-            <BreadcrumbNav
-              query={$searchQuery}
-              filters={$filters}
-              resultPathCounts={$resultPathCounts}
-              on:navigate={handleChapterNavigation}
-            />
-          </div>
-        {/if}
+      <!-- Sidebar filtres (desktop uniquement) -->
+      <div class="sidebar-shell">
+        <SearchPageSidebar />
+      </div>
+
+      <div class="search-page-main">
 
         <!-- Bloc pliant mobile : filtres rapides + hiérarchie -->
         <div class="mobile-filter-block" class:mobile-filter-block--collapsed={!filtersExpanded}>
@@ -509,7 +504,7 @@
     box-shadow: 0 1px 4px rgba(13, 60, 77, 0.06);
   }
   .search-hero-inner {
-    max-width: 1100px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 16px 40px 14px;
   }
@@ -536,37 +531,54 @@
     text-overflow: ellipsis;
   }
 
-  /* breadcrumb row lives outside sticky band, shown on desktop only */
-  .desktop-breadcrumb-row {
-    display: none;
-  }
-  @media (min-width: 641px) {
-    .desktop-breadcrumb-row {
-      display: block;
-      margin-bottom: 12px;
-    }
-  }
-
   /* ── Body ───────────────────────────────────────────────────── */
   .search-body {
-    max-width: 1100px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 20px 40px 48px;
+    padding: 0 0 48px;
   }
-  @media (max-width: 768px) {
-    .search-hero-inner { padding: 12px 16px 10px; }
-    .search-body { padding: 12px 12px 32px; }
+  @media (max-width: 1023px) {
+    .search-body { padding: 12px 16px 32px; }
   }
 
   .search-page-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+  }
+  @media (min-width: 1024px) {
+    .search-page-grid {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 0;
+    }
+  }
+
+  /* ── Sidebar filtres ─────────────────────────────────────────── */
+  .sidebar-shell {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .sidebar-shell {
+      display: block;
+      width: 240px;
+      flex-shrink: 0;
+      border-right: 1px solid theme('colors.interface.border-primary');
+      position: sticky;
+      top: var(--search-controls-height, 9rem);
+      max-height: calc(100vh - var(--search-controls-height, 9rem));
+      overflow-y: auto;
+      align-self: flex-start;
+      background: theme('colors.interface.bg-secondary');
+    }
   }
 
   .search-page-main {
-    width: 100%;
+    flex: 1;
     min-width: 0;
+    padding: 20px 32px 0;
+  }
+  @media (max-width: 1023px) {
+    .search-page-main { padding: 0; }
   }
 
   :root {
