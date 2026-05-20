@@ -122,7 +122,12 @@
         <span class="rc-indicator rc-indicator--video">▶ vidéo</span>
       {/if}
       {#if exercise.hasSolution}
-        <span class="rc-indicator rc-indicator--solution">★ solution</span>
+        <span class="rc-indicator rc-indicator--solution" title="Fourni avec la solution">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+          solution
+        </span>
       {/if}
     </div>
 
@@ -258,7 +263,12 @@
     flex-shrink: 0;
   }
   .rc-indicator--video  { color: theme('colors.brand.600'); }
-  .rc-indicator--solution { color: theme('colors.accent.600'); }
+  .rc-indicator--solution {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    color: theme('colors.success.600');
+  }
   .result-title {
     font-family: theme('fontFamily.heading');
     font-size: 1.125rem;
