@@ -235,24 +235,26 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-bottom: 8px;
+    overflow: hidden;
   }
   .rc-chip-module {
-    max-width: 160px;
+    max-width: 140px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-  .rc-badge-ok {
-    font-size: 11px;
-    font-weight: 600;
-    color: theme('colors.success.600', #15803d);
+    flex-shrink: 1;
   }
   .rc-chapter-badge {
     font-size: 11px;
     color: theme('colors.interface.text-muted');
     font-style: italic;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 1;
   }
   .rc-flex-spacer { flex: 1; }
   /* Indicators (vidéo / solution) in top-right of meta row */
