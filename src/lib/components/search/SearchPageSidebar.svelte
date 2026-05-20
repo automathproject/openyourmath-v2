@@ -1,7 +1,15 @@
 <script>
-  import { filters, filterCounts, searchActions } from '$lib/stores/searchStore.js';
+  import { filters, filterCounts, suggestions, searchActions } from '$lib/stores/searchStore.js';
+  import { formatDifficultyLabel } from '$lib/utils/filterUtils.js';
 
   const LEVELS = ['L1', 'L2', 'L3', 'CPGE'];
+
+  let authorInput = '';
+  let organizationInput = '';
+
+  // Sync inputs with store on external filter changes (e.g. URL or clear all)
+  $: authorInput = $filters.author || '';
+  $: organizationInput = $filters.organization || '';
 
   function setLevel(l) {
     const next = $filters.level === l ? '' : l;
@@ -26,9 +34,38 @@
     searchActions.search();
   }
 
+  function setDifficulty(e) {
+    searchActions.updateFilter('difficulty', e.target.value);
+    searchActions.search();
+  }
+
+  function applyAuthor() {
+    searchActions.updateFilter('author', authorInput.trim());
+    searchActions.search();
+  }
+
+  function applyOrganization() {
+    searchActions.updateFilter('organization', organizationInput.trim());
+    searchActions.search();
+  }
+
+  function handleTextKey(e, applyFn) {
+    if (e.key === 'Enter') { e.preventDefault(); applyFn(); }
+    if (e.key === 'Escape') { e.currentTarget.blur(); }
+  }
+
   $: sortedModules = Object.entries($filterCounts?.module ?? {})
     .filter(([, c]) => c > 0)
     .sort((a, b) => b[1] - a[1]);
+
+  $: difficultyOptions = (() => {
+    const entries = new Set(Object.keys($filterCounts?.difficulty ?? {}).filter(v => v && v !== '0'));
+    ($suggestions?.difficulties || []).forEach(e => entries.add(String(e.value ?? e)));
+    return Array.from(entries).sort((a, b) => a.localeCompare(b, 'fr', { numeric: true }));
+  })();
+
+  $: authorSuggestions = ($suggestions?.authors || []).map(e => e.value ?? e).filter(Boolean);
+  $: organizationSuggestions = ($suggestions?.organizations || []).map(e => e.value ?? e).filter(Boolean);
 </script>
 
 <aside class="sps">
@@ -96,6 +133,68 @@
         <span>Avec vidéo</span>
       </button>
     </div>
+  </div>
+
+  {#if difficultyOptions.length > 0}
+    <hr class="sps-hr" />
+    <!-- Difficulté -->
+    <div class="sps-section">
+      <div class="sps-overline">Difficulté</div>
+      <select class="sps-select" value={$filters.difficulty || ''} on:change={setDifficulty}>
+        <option value="">Toutes</option>
+        {#each difficultyOptions as v}
+          <option value={v}>{formatDifficultyLabel(v)}</option>
+        {/each}
+      </select>
+    </div>
+  {/if}
+
+  <hr class="sps-hr" />
+
+  <!-- Auteur -->
+  <div class="sps-section">
+    <div class="sps-overline">Auteur</div>
+    <div class="sps-input-wrap">
+      <input
+        class="sps-input"
+        type="text"
+        placeholder="Nom de l'auteur…"
+        bind:value={authorInput}
+        list="sps-author-list"
+        on:blur={applyAuthor}
+        on:keydown={(e) => handleTextKey(e, applyAuthor)}
+      />
+      {#if authorInput}
+        <button type="button" class="sps-input-clear" on:click={() => { authorInput = ''; applyAuthor(); }} aria-label="Effacer">×</button>
+      {/if}
+    </div>
+    <datalist id="sps-author-list">
+      {#each authorSuggestions as a}<option value={a}></option>{/each}
+    </datalist>
+  </div>
+
+  <hr class="sps-hr" />
+
+  <!-- Organisation -->
+  <div class="sps-section">
+    <div class="sps-overline">Organisation</div>
+    <div class="sps-input-wrap">
+      <input
+        class="sps-input"
+        type="text"
+        placeholder="Nom de l'organisation…"
+        bind:value={organizationInput}
+        list="sps-org-list"
+        on:blur={applyOrganization}
+        on:keydown={(e) => handleTextKey(e, applyOrganization)}
+      />
+      {#if organizationInput}
+        <button type="button" class="sps-input-clear" on:click={() => { organizationInput = ''; applyOrganization(); }} aria-label="Effacer">×</button>
+      {/if}
+    </div>
+    <datalist id="sps-org-list">
+      {#each organizationSuggestions as o}<option value={o}></option>{/each}
+    </datalist>
   </div>
 </aside>
 
@@ -229,4 +328,48 @@
     font-style: italic;
     margin: 0;
   }
+
+  /* ── Difficulté select ── */
+  .sps-select {
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    background: theme('colors.interface.bg-white');
+    color: theme('colors.interface.text-primary');
+    border: 1.5px solid theme('colors.interface.border-secondary');
+    cursor: pointer;
+    appearance: auto;
+  }
+  .sps-select:focus { outline: none; border-color: theme('colors.brand.500'); }
+
+  /* ── Text inputs (Auteur / Organisation) ── */
+  .sps-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .sps-input {
+    width: 100%;
+    padding: 6px 28px 6px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    background: theme('colors.interface.bg-white');
+    color: theme('colors.interface.text-primary');
+    border: 1.5px solid theme('colors.interface.border-secondary');
+  }
+  .sps-input::placeholder { color: theme('colors.interface.text-muted'); }
+  .sps-input:focus { outline: none; border-color: theme('colors.brand.500'); }
+  .sps-input-clear {
+    position: absolute;
+    right: 6px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    color: theme('colors.interface.text-muted');
+    padding: 2px 4px;
+  }
+  .sps-input-clear:hover { color: theme('colors.interface.text-primary'); }
 </style>

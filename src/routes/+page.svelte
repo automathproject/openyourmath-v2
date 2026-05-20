@@ -11,7 +11,6 @@
   import ResultsGrid from '$lib/components/search/ResultsGrid.svelte';
   import MobileExercisePreview from '$lib/components/search/MobileExercisePreview.svelte';
   import RandomExercisesCarousel from '$lib/components/search/RandomExercisesCarousel.svelte';
-  import { cycleTri } from '$lib/utils/filterUtils.js';
   import { listActions } from '$lib/stores/listStore.js';
 
   import {
@@ -33,13 +32,10 @@
   } from '$lib/stores/searchStore.js';
   import { previewPanelOpen, uiActions } from '$lib/stores/uiStore.ts';
 
-  import { useDebounce } from '$lib/hooks/useDebounce.js';
 
   let isDesktop = false;
-  let advancedFiltersOpen = false;
   let filtersExpanded = true;
   let manualCardMode = 'auto'; // auto | compact | detailed
-  let resultsScrollEl;
 
   // debouncedSearch supprimé — SearchSemantic gère son propre dispatch FTS/hybride.
 
@@ -74,22 +70,6 @@
     previewActions.selectExercise(exercise.uuid);
   }
 
-  function toggleSolutionChip() {
-    const next = cycleTri($filters.hasSolution);
-    searchActions.updateFilter('hasSolution', next);
-    searchActions.search();
-  }
-
-  function toggleIndicationChip() {
-    const next = cycleTri($filters.hasIndication);
-    searchActions.updateFilter('hasIndication', next);
-    searchActions.search();
-  }
-
-  function toggleFiltersPanel() {
-    advancedFiltersOpen = !advancedFiltersOpen;
-  }
-
   function toggleDesktopPreviewPanel() {
     uiActions.togglePreviewPanel();
   }
@@ -103,7 +83,6 @@
   }
 
   $: canTogglePreview = Boolean($previewState.selectedUuid);
-  $: filtersButtonLabel = 'Filtres';
   $: previewToggleLabel = $layoutConfig.showPreviewPanel ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation';
   $: autoCardMode = $previewPanelOpen ? 'compact' : 'detailed';
   $: cardMode = manualCardMode === 'auto' ? autoCardMode : manualCardMode;
@@ -266,17 +245,10 @@
       </div>
 
       <SearchSemantic
-        onToggleFilters={toggleFiltersPanel}
-        hasSolution={$filters.hasSolution}
-        hasIndication={$filters.hasIndication}
-        onToggleSolution={toggleSolutionChip}
-        onToggleIndication={toggleIndicationChip}
         canTogglePreview={canTogglePreview && !isDesktop}
         previewToggleLabel={previewToggleLabel}
         isPreviewOpen={$previewState.isOpen}
         onTogglePreview={toggleMobilePreview}
-        {advancedFiltersOpen}
-        onCloseAdvancedFilters={() => (advancedFiltersOpen = false)}
         {filtersExpanded}
         onToggleExpanded={() => (filtersExpanded = !filtersExpanded)}
       />
@@ -298,56 +270,20 @@
 
       <div class="search-page-main">
 
-        <!-- Bloc pliant mobile : filtres rapides + hiérarchie -->
+        <!-- Bloc filtres actifs (mobile uniquement) -->
         <div class="mobile-filter-block" class:mobile-filter-block--collapsed={!filtersExpanded}>
-          <div class="mfb-section">
-            <span class="mfb-section-label">Contenu disponible</span>
-            <div class="mfb-chips">
-              <button
-                type="button"
-                class="chip {$filters.hasSolution === '1' ? 'chip--on' : $filters.hasSolution === '0' ? 'chip--off' : ''}"
-                on:click={toggleSolutionChip}
-                disabled={$loading}
-              >
-                ✅ Solution{$filters.hasSolution === '1' ? ' • oui' : $filters.hasSolution === '0' ? ' • non' : ''}
-              </button>
-              <button
-                type="button"
-                class="chip {$filters.hasIndication === '1' ? 'chip--on' : $filters.hasIndication === '0' ? 'chip--off' : ''}"
-                on:click={toggleIndicationChip}
-                disabled={$loading}
-              >
-                💡 Indication{$filters.hasIndication === '1' ? ' • oui' : $filters.hasIndication === '0' ? ' • non' : ''}
-              </button>
-            </div>
-          </div>
-
-          <div class="mfb-section">
-            <span class="mfb-section-label">Filtrer par</span>
-            {#if browser}
+          {#if browser}
+            <div class="mfb-section">
+              <span class="mfb-section-label">Filtrer par</span>
               <BreadcrumbNav
                 query={$searchQuery}
                 filters={$filters}
                 resultPathCounts={$resultPathCounts}
                 on:navigate={handleChapterNavigation}
               />
-            {/if}
-          </div>
-
+            </div>
+          {/if}
           <ActiveFilters />
-
-          <button
-            type="button"
-            class="mfb-advanced-btn"
-            class:mfb-advanced-btn--active={advancedFiltersOpen}
-            on:click={toggleFiltersPanel}
-            aria-expanded={advancedFiltersOpen}
-          >
-            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L13 10.414V15a1 1 0 01-.553.894l-4 2A1 1 0 017 17v-6.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
-            </svg>
-            Filtres avancés
-          </button>
         </div>
 
         <div
@@ -627,18 +563,6 @@
     @apply text-interface-text-muted;
   }
 
-  .mfb-chips {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .mfb-chips .chip {
-    flex: 1 1 0;
-    justify-content: center;
-    min-height: 2.25rem;
-    font-size: 0.85rem;
-  }
-
   .chip {
     padding: 0.5rem 0.75rem;
     font-size: 0.875rem;
@@ -653,23 +577,6 @@
   .chip:hover { @apply bg-interface-bg-secondary; }
   .chip--on { @apply bg-brand-50 text-brand-700 border-brand-200; }
   .chip--off { @apply bg-error-50 text-error-700 border-error-100; }
-
-  .mfb-advanced-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.55rem 0.85rem;
-    border-radius: 0.6rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    width: 100%;
-    justify-content: center;
-    transition: background-color .15s;
-    @apply border border-interface-border-primary bg-interface-bg-secondary text-interface-text-secondary;
-  }
-  .mfb-advanced-btn svg { width: 0.9rem; height: 0.9rem; flex-shrink: 0; }
-  .mfb-advanced-btn:hover { @apply bg-interface-bg-tertiary; }
-  .mfb-advanced-btn--active { @apply bg-brand-50 border-brand-300 text-brand-700; }
 
   /* ─── Desktop : ActiveFilters + BreadcrumbNav sous la toolbar ─── */
 

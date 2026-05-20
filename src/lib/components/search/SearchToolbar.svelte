@@ -1,24 +1,14 @@
 <script>
   import { onMount } from 'svelte';
-  import AdvancedFiltersPopover from '$lib/components/search/AdvancedFiltersPopover.svelte';
 
   export let searchQueryStore;
   export let onSearchInput = () => {};
   export let loading = false;
   export let hasResults = false;
-  export let filtersButtonLabel = 'Filtres';
-  export let showFiltersButton = true;
-  export let onToggleFilters = () => {};
-  export let hasSolution = '';
-  export let hasIndication = '';
-  export let onToggleSolution = () => {};
-  export let onToggleIndication = () => {};
   export let canTogglePreview = false;
   export let previewToggleLabel = '';
   export let isPreviewOpen = false;
   export let onTogglePreview = () => {};
-  export let advancedFiltersOpen = false;
-  export let onCloseAdvancedFilters = () => {};
   export let filtersExpanded = true;
   export let onToggleExpanded = () => {};
 
@@ -86,42 +76,8 @@
     </button>
   </div>
 
-  <!-- Actions (filtres + chips + preview) : desktop uniquement -->
+  <!-- Actions (preview toggle desktop uniquement) -->
   <div class="toolbar-actions">
-    {#if showFiltersButton}
-      <button
-        type="button"
-        class="btn btn-ghost btn-sm toolbar-button filters-btn"
-        class:toolbar-button--active={advancedFiltersOpen}
-        on:click={onToggleFilters}
-        aria-expanded={advancedFiltersOpen}
-      >
-        <svg class="filters-btn__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L13 10.414V15a1 1 0 01-.553.894l-4 2A1 1 0 017 17v-6.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
-        </svg>
-        <span>{filtersButtonLabel}</span>
-      </button>
-    {/if}
-    <div class="toolbar-chips">
-      <button
-        type="button"
-        class="chip {hasSolution === '1' ? 'chip-teal-solid' : 'chip-soft'}"
-        title="Filtrer par solution (clic pour basculer)"
-        on:click={onToggleSolution}
-        disabled={loading}
-      >
-        ✅ Solution{hasSolution === '1' ? ' • oui' : hasSolution === '0' ? ' • non' : ''}
-      </button>
-      <button
-        type="button"
-        class="chip {hasIndication === '1' ? 'chip-teal-solid' : 'chip-soft'}"
-        title="Filtrer par indication (clic pour basculer)"
-        on:click={onToggleIndication}
-        disabled={loading}
-      >
-        💡 Indication{hasIndication === '1' ? ' • oui' : hasIndication === '0' ? ' • non' : ''}
-      </button>
-    </div>
     {#if canTogglePreview}
       <button
         type="button"
@@ -146,15 +102,6 @@
     {/if}
   </div>
 
-  <!--
-    Le popover est ancré ici (hors de .toolbar-actions) pour rester visible
-    même quand .toolbar-actions est display:none sur mobile.
-    Desktop : position:absolute relative à .toolbar (position:relative).
-    Mobile : position:fixed bottom:0 → indépendant du flux.
-  -->
-  {#if showFiltersButton}
-    <AdvancedFiltersPopover open={advancedFiltersOpen} on:close={onCloseAdvancedFilters} />
-  {/if}
 </div>
 
 <style>
@@ -259,23 +206,6 @@
       flex-shrink: 0;
       justify-content: flex-end;
     }
-  }
-
-  .toolbar-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    white-space: nowrap;
-  }
-  .toolbar-button--active {
-    @apply bg-brand-50 border-brand-300 text-brand-700;
-  }
-
-  .filters-btn__icon { width: 1rem; height: 1rem; flex-shrink: 0; }
-
-  .toolbar-chips {
-    display: flex;
-    gap: 0.5rem;
   }
 
   .preview-toggle-btn { padding: 0.5rem; flex-shrink: 0; }

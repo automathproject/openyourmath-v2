@@ -25,16 +25,9 @@
   } from '$lib/stores/searchStore.js';
   import { useDebounce } from '$lib/hooks/useDebounce.js';
 
-  // ── Props — même interface que SearchToolbar (sans onSearchInput) ─────────
-  export let advancedFiltersOpen = false;
-  export let onToggleFilters    = () => {};
-  export let onCloseAdvancedFilters = () => {};
+  // ── Props ─────────────────────────────────────────────────────────────────
   export let filtersExpanded    = true;
   export let onToggleExpanded   = () => {};
-  export let hasSolution        = '';
-  export let hasIndication      = '';
-  export let onToggleSolution   = () => {};
-  export let onToggleIndication = () => {};
   export let canTogglePreview   = false;
   export let previewToggleLabel = '';
   export let isPreviewOpen      = false;
@@ -311,17 +304,8 @@
   onSearchInput={handleSearchInput}
   loading={$loading || hybridLoading}
   hasResults={$results.length > 0}
-  filtersButtonLabel="Filtres"
-  showFiltersButton={true}
-  {advancedFiltersOpen}
-  {onToggleFilters}
-  {onCloseAdvancedFilters}
   {filtersExpanded}
   {onToggleExpanded}
-  {hasSolution}
-  {hasIndication}
-  {onToggleSolution}
-  {onToggleIndication}
   {canTogglePreview}
   {previewToggleLabel}
   {isPreviewOpen}
