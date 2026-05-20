@@ -560,14 +560,12 @@
   @media (min-width: 1024px) {
     .sidebar-shell {
       display: block;
-      width: 240px;
-      flex-shrink: 0;
       border-right: 1px solid theme('colors.interface.border-primary');
       position: sticky;
       top: var(--search-controls-height, 9rem);
       max-height: calc(100vh - var(--search-controls-height, 9rem));
       overflow-y: auto;
-      align-self: flex-start;
+      align-self: start;
       background: theme('colors.interface.bg-secondary');
     }
   }
@@ -731,15 +729,19 @@
   @media (min-width:1024px) {
     .search-page-grid {
       display: grid;
-      grid-template-areas: "main preview";
-      grid-template-columns: minmax(0, 1fr) 2rem;
+      grid-template-areas: "sidebar main preview";
+      grid-template-columns: 240px minmax(0, 1fr) 2rem;
       column-gap: 0;
       align-items: start;
       transition: grid-template-columns 200ms ease;
     }
 
     .search-page-grid.search-page-grid--preview-open {
-      grid-template-columns: minmax(0, 1fr) minmax(20rem, 28rem);
+      grid-template-columns: 240px minmax(0, 1fr) minmax(20rem, 28rem);
+    }
+
+    .sidebar-shell {
+      grid-area: sidebar;
     }
 
     .search-page-main {
