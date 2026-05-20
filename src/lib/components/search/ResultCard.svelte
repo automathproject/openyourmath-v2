@@ -103,7 +103,7 @@
       </div>
     </div>
   {:else}
-    <!-- Detailed : meta row (chips + stars + actions) then title -->
+    <!-- Detailed : meta row (chips + stars + indicators) then title -->
     <div class="rc-meta-row">
       {#if showLevelBadge}
         <span class="chip {isSelected ? 'chip-teal-solid' : 'chip-teal'}">{exercise.level}</span>
@@ -114,44 +114,16 @@
       {#if showDifficultyDots}
         <StarsRating n={exercise.difficulty} />
       {/if}
-      {#if exercise.hasSolution}
-        <span class="rc-badge-ok">★ solution</span>
-      {/if}
       {#if showChapterBadge}
         <span class="rc-chapter-badge">{exercise.chapter}</span>
       {/if}
       <span class="rc-flex-spacer" />
-      <button
-        type="button"
-        class="rc-action-btn"
-        aria-label="Aperçu rapide"
-        title="Aperçu"
-        on:click={handlePreview}
-      >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-          <circle cx="12" cy="12" r="3"/>
-        </svg>
-      </button>
-      <button
-        type="button"
-        on:click|stopPropagation
-        aria-label="Ajouter à la liste"
-        class="rc-action-btn-wrap"
-      >
-        <AddToListButton {exercise} size="small" variant="icon" />
-      </button>
-      <button
-        type="button"
-        class="rc-action-btn"
-        title="Ouvrir dans un nouvel onglet"
-        aria-label="Ouvrir dans un nouvel onglet"
-        on:click={openExternal}
-      >
-        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
-      </button>
+      {#if exercise.hasVideo}
+        <span class="rc-indicator rc-indicator--video">▶ vidéo</span>
+      {/if}
+      {#if exercise.hasSolution}
+        <span class="rc-indicator rc-indicator--solution">★ solution</span>
+      {/if}
     </div>
 
     <h3 class="result-title">
@@ -169,52 +141,43 @@
     <div class="compact-uuid">{exercise.uuid.slice(0, 8)}</div>
   {/if}
 
-  {#if showFooter}
+  {#if !isCompact}
     <div class="result-footer">
-      {#if hasFooterInfo}
-        <div class="result-footer-left">
-          {#if exercise.author}
-            <NameRenderer
-              author={exercise.author}
-              licenseCode={exercise.license_code}
-              licenseUrl={exercise.license_url}
-              email={exercise.author_email || exercise.authorEmail || ''}
-              variant="footer"
-              className="result-footer-item"
-            />
-          {/if}
-          {#if exercise.author && exercise.organization}
-            <span class="result-footer-sep">•</span>
-          {/if}
-          {#if exercise.organization}
-            <span class="result-footer-item">🏛️ {exercise.organization}</span>
-          {/if}
-        </div>
-      {/if}
-      {#if hasDates}
-        <div class="result-date" role="presentation">
-          {#if createdAtLabel}
-            <span
-              class="result-date-entry"
-              title="Créé"
-              aria-label={`Créé le ${createdAtLabel}`}
-            >
-              <span class="result-date-icon" aria-hidden="true">📅</span>
-              <span class="result-date-text">{createdAtLabel}</span>
-            </span>
-          {/if}
-          {#if updatedAtLabel}
-            <span
-              class="result-date-entry"
-              title="Mis à jour"
-              aria-label={`Mis à jour le ${updatedAtLabel}`}
-            >
-              <span class="result-date-icon" aria-hidden="true">🔄</span>
-              <span class="result-date-text">{updatedAtLabel}</span>
-            </span>
-          {/if}
-        </div>
-      {/if}
+      <!-- Left: author / org / dates -->
+      <div class="result-footer-left">
+        {#if exercise.author}
+          <NameRenderer
+            author={exercise.author}
+            licenseCode={exercise.license_code}
+            licenseUrl={exercise.license_url}
+            email={exercise.author_email || exercise.authorEmail || ''}
+            variant="footer"
+            className="result-footer-item"
+          />
+        {/if}
+        {#if exercise.author && exercise.organization}
+          <span class="result-footer-sep">•</span>
+        {/if}
+        {#if exercise.organization}
+          <span class="result-footer-item">🏛️ {exercise.organization}</span>
+        {/if}
+        {#if hasDates && createdAtLabel}
+          {#if hasFooterInfo}<span class="result-footer-sep">·</span>{/if}
+          <span class="result-date-text">{createdAtLabel}</span>
+        {/if}
+      </div>
+      <!-- Right: actions -->
+      <div class="rc-footer-actions" on:click|stopPropagation>
+        <AddToListButton {exercise} size="small" variant="button" />
+        <button
+          type="button"
+          class="rc-footer-open"
+          on:click={openExternal}
+          aria-label="Ouvrir l'exercice"
+        >
+          Ouvrir →
+        </button>
+      </div>
     </div>
   {/if}
 </div>
@@ -287,32 +250,15 @@
     font-style: italic;
   }
   .rc-flex-spacer { flex: 1; }
-  .rc-action-btn {
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    border: none;
-    background: transparent;
-    color: theme('colors.interface.text-muted');
-    cursor: pointer;
-    transition: background 0.1s, color 0.1s;
+  /* Indicators (vidéo / solution) in top-right of meta row */
+  .rc-indicator {
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
     flex-shrink: 0;
   }
-  .rc-action-btn:hover {
-    background: theme('colors.interface.bg-tertiary');
-    color: theme('colors.interface.text-primary');
-  }
-  .rc-action-btn-wrap {
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
+  .rc-indicator--video  { color: theme('colors.brand.600'); }
+  .rc-indicator--solution { color: theme('colors.accent.600'); }
   .result-title {
     font-family: theme('fontFamily.heading');
     font-size: 1.125rem;
@@ -326,42 +272,67 @@
     @apply text-interface-text-primary;
   }
   .result-footer {
-    margin-top: 0.5rem;
+    margin-top: 0.625rem;
     padding-top: 0.5rem;
-    display:flex;
-    align-items:center;
-    gap:0.5rem;
-    flex-wrap:wrap;
-    font-size:0.875rem;
-    @apply border-t border-interface-border-primary text-interface-text-secondary;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    @apply border-t border-interface-border-primary text-interface-text-muted;
   }
   .result-footer-left {
-    display:flex;
-    align-items:center;
-    gap:0.5rem;
-    flex-wrap:wrap;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    min-width: 0;
   }
   .result-footer-item { white-space: nowrap; }
   .result-footer-sep { @apply text-interface-text-disabled; }
-  .result-date {
-    margin-left:auto;
-    display:flex;
-    align-items:center;
-    gap:0.5rem;
-    font-size:0.75rem;
+  .result-date-text {
+    font-size: 0.75rem;
     color: theme('colors.interface.text-muted');
-    font-weight:500;
-    white-space:nowrap;
+    white-space: nowrap;
   }
-
-  .result-date-entry {
-    display:inline-flex;
-    align-items:center;
-    gap:0.375rem;
+  .rc-footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-shrink: 0;
   }
-
-  .result-date-icon {
-    font-size:0.875rem;
+  /* Compact AddToListButton style inside card footer */
+  .rc-footer-actions :global(.add-to-list-btn) {
+    border: none;
+    background: transparent;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: theme('colors.interface.text-secondary');
+    border-radius: 4px;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .rc-footer-actions :global(.add-to-list-btn:hover:not(:disabled)) {
+    background: theme('colors.interface.bg-tertiary');
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .rc-footer-open {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: theme('colors.interface.text-secondary');
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+    white-space: nowrap;
+  }
+  .rc-footer-open:hover {
+    background: theme('colors.interface.bg-tertiary');
+    color: theme('colors.interface.text-primary');
   }
   .selection-indicator {
     width: 1.5rem;
@@ -372,11 +343,4 @@
     justify-content: center;
     @apply bg-brand-50;
   }
-  .external-link-btn {
-    transition: color .2s, background-color .2s;
-    padding: 0.25rem;
-    border-radius: 0.25rem;
-    @apply text-interface-text-muted;
-  }
-  .external-link-btn:hover { @apply text-brand-600 bg-brand-50; }
 </style>
