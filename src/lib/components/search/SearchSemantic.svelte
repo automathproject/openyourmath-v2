@@ -17,6 +17,7 @@
     searchQuery,
     results,
     loading,
+    loadingMore,
     error,
     searchMeta,
     filters,
@@ -36,6 +37,7 @@
   // ── État sémantique ────────────────────────────────────────────────────────
   let mode          = 'fts';   // 'fts' | 'hybrid'
   let hybridLoading = false;
+  let hybridLimit   = 20;      // augmenté de 20 à chaque loadMore hybride
   /** @type {AbortController|null} */
   let abortCtrl     = null;
   // Pas d'éviction pour l'instant : acceptable pour une session courte (~20-30 queries).
@@ -50,7 +52,7 @@
   $: debugMode = $page.url.searchParams.get('debug') === 'true';
 
   // ── Construction des paramètres URL vers l'API ─────────────────────────────
-  function buildParams({ semantic = false, rerank = false, debug = false } = {}) {
+  function buildParams({ semantic = false, rerank = false, debug = false, limit = 20 } = {}) {
     const q = get(searchQuery).trim();
     const f = get(filters);
     const p = new URLSearchParams();
@@ -80,7 +82,7 @@
       p.set('sort', `${f.sort}_${f.sortDirection || 'desc'}`);
     }
 
-    p.set('limit', '20');
+    p.set('limit', String(limit));
     p.set('offset', '0');
     if (semantic) p.set('semantic', 'true');
     if (rerank)   p.set('rerank',   'true');
@@ -152,17 +154,33 @@
 
   const debouncedFts = useDebounce(runFts, 250);
 
+  // ── Dérive filterCounts depuis une liste de résultats ────────────────────
+  // Utilisé en mode hybride car l'API ne retourne pas filterCounts dans ce mode.
+  function deriveFilterCounts(resultsList) {
+    const module = {}, level = {}, difficulty = {};
+    for (const r of resultsList) {
+      if (r.module) module[r.module] = (module[r.module] || 0) + 1;
+      if (r.level)  level[r.level]   = (level[r.level]   || 0) + 1;
+      if (r.difficulty != null) {
+        const dk = String(r.difficulty);
+        difficulty[dk] = (difficulty[dk] || 0) + 1;
+      }
+    }
+    return { module, level, difficulty, author: {}, organization: {} };
+  }
+
   // ── Mode hybride (intelligent) ─────────────────────────────────────────────
-  async function runHybrid() {
+  async function runHybrid(targetLimit = hybridLimit) {
     const q = get(searchQuery).trim();
     if (!q) return;
 
-    // Cache — même requête + mêmes filtres → pas de nouvel appel réseau
-    const cacheKey = q + '|' + JSON.stringify(get(filters));
+    // Cache — même requête + mêmes filtres + même limite → pas de nouvel appel réseau
+    const cacheKey = q + '|' + JSON.stringify(get(filters)) + '|' + targetLimit;
     if (hybridCache.has(cacheKey)) {
       const c = hybridCache.get(cacheKey);
       results.set(c.results);
       searchMeta.set(c.meta);
+      filterCounts.set(deriveFilterCounts(c.results));
       timingInfo = c.timing;
       mode       = 'hybrid';
       showSuggest = false;
@@ -181,7 +199,7 @@
 
     try {
       const res = await fetch(
-        `/api/search?${buildParams({ semantic: true, rerank: true, debug: debugMode })}`,
+        `/api/search?${buildParams({ semantic: true, rerank: true, debug: debugMode, limit: targetLimit })}`,
         { signal }
       );
 
@@ -199,6 +217,7 @@
         hybridCache.set(cacheKey, entry);
         results.set(entry.results);
         searchMeta.set(entry.meta);
+        filterCounts.set(deriveFilterCounts(entry.results));
         timingInfo  = entry.timing;
         mode        = 'hybrid';
         showSuggest = false;
@@ -266,8 +285,25 @@
   //   searchActions.search = (...args) => (_searchHandler ?? _defaultSearch)(...args);
   // Ce composant appellerait alors searchActions.setSearchHandler(ourSearch) au montage
   // et searchActions.setSearchHandler(null) à la destruction.
-  const _originalSearch = searchActions.search.bind(searchActions);
-  searchActions.search = () => (mode === 'hybrid' ? runHybrid() : runFts());
+  // Charger plus de résultats hybrides : augmente la limite et relance.
+  // Les résultats remplacent la liste courante (pas d'append) car le reranking
+  // est global — les rangs 21-40 peuvent différer d'une exécution à l'autre.
+  async function loadMoreHybrid() {
+    hybridLimit += 20;
+    loadingMore.set(true);
+    try {
+      await runHybrid(hybridLimit);
+    } finally {
+      loadingMore.set(false);
+    }
+  }
+
+  const _originalSearch   = searchActions.search.bind(searchActions);
+  const _originalLoadMore = searchActions.loadMore.bind(searchActions);
+
+  // Chaque changement de filtre (sidebar, tri…) repart de 20 résultats.
+  searchActions.search   = () => { hybridLimit = 20; return mode === 'hybrid' ? runHybrid(20) : runFts(); };
+  searchActions.loadMore = () => mode === 'hybrid' ? loadMoreHybrid() : _originalLoadMore();
 
   // ── Initialisation depuis l'URL ────────────────────────────────────────────
   onMount(() => {
@@ -293,7 +329,8 @@
   });
 
   onDestroy(() => {
-    searchActions.search = _originalSearch;
+    searchActions.search   = _originalSearch;
+    searchActions.loadMore = _originalLoadMore;
     abortCtrl?.abort();
   });
 </script>

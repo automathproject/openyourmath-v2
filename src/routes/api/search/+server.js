@@ -74,7 +74,10 @@ export async function GET(event) {
   let rerankEnabled = parseBool(url.searchParams.get('rerank')) && semantic;
 
   // Pagination et filtres
-  let limit  = Math.max(1, Math.min(parseInt(url.searchParams.get('limit') ?? '20'), 50));
+  // Le mode hybride peut demander jusqu'à 100 résultats ; le FTS reste limité à 50.
+  const rawLimit = parseInt(url.searchParams.get('limit') ?? '20');
+  const semanticRequested = parseBool(url.searchParams.get('semantic'));
+  let limit  = Math.max(1, Math.min(rawLimit, semanticRequested ? 100 : 50));
   let offset = Math.max(0, parseInt(url.searchParams.get('offset') ?? '0'));
 
   const filters = {};
@@ -190,8 +193,10 @@ export async function GET(event) {
     throw error(500, { message: 'Erreur de recherche' });
   }
 
-  // ── Pagination (mode FTS5 / fallback uniquement) ──────────────────────────
-  const hasMore     = !semantic && results.length > limit;
+  // ── Pagination ────────────────────────────────────────────────────────────
+  // FTS : on demande limit+1 pour détecter s'il y a une page suivante.
+  // Hybride : le pool est borné par retrievalK ; hasMore = on a rempli le quota demandé.
+  const hasMore      = semantic ? (results.length >= limit) : (results.length > limit);
   const finalResults = (!semantic && hasMore) ? results.slice(0, limit) : results;
 
   // ── Format réponse ─────────────────────────────────────────────────────────
@@ -212,7 +217,7 @@ export async function GET(event) {
       fallback:  fallback || undefined,
       latencyMs,
       ...(semantic && !fallback
-        ? { count: finalResults.length }
+        ? { count: finalResults.length, hasMore, limit }
         : {
             filters,
             pagination: {

@@ -83,6 +83,8 @@
   }
 
   $: canTogglePreview = Boolean($previewState.selectedUuid);
+  // FTS expose pagination.hasMore ; hybride expose hasMore directement à la racine du méta
+  $: canLoadMore = canLoadMore ?? $searchMeta?.hasMore ?? false;
   $: previewToggleLabel = $layoutConfig.showPreviewPanel ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation';
   $: autoCardMode = $previewPanelOpen ? 'compact' : 'detailed';
   $: cardMode = manualCardMode === 'auto' ? autoCardMode : manualCardMode;
@@ -217,16 +219,9 @@
     }
   }
 
-  function handleResultsScroll() {
-    // Not used anymore - keeping for compatibility
-  }
-
-  function handleWindowScroll() {
-    // retained for compatibility
-  }
 </script>
 
-<svelte:window on:keydown={handleResultsKeyboardNav} on:scroll={handleWindowScroll} />
+<svelte:window on:keydown={handleResultsKeyboardNav} />
 
 <svelte:head>
   <title>Recherche d'exercices - OpenYourMath</title>
@@ -289,8 +284,6 @@
         <div
           class="results-section flex-1"
           style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}
-          bind:this={resultsScrollEl}
-          on:scroll={handleResultsScroll}
         >
         {#if $error}
         <div class="search-error">
@@ -306,9 +299,26 @@
         <div class="results-header mb-4">
           <div class="results-header-row1">
             <h2 class="results-title">
-              {$searchMeta?.pagination?.totalCount || $results.length}
-              résultat{$results.length > 1 ? 's' : ''} trouvé{$results.length > 1 ? 's' : ''}
+              {#if canLoadMore}
+                {$results.length} résultat{$results.length > 1 ? 's' : ''} affichés
+                {#if $searchMeta?.pagination?.totalCount}
+                  <span class="results-title-total">sur {$searchMeta.pagination.totalCount}</span>
+                {/if}
+              {:else}
+                {$searchMeta?.pagination?.totalCount || $results.length}
+                résultat{($searchMeta?.pagination?.totalCount || $results.length) > 1 ? 's' : ''} trouvé{($searchMeta?.pagination?.totalCount || $results.length) > 1 ? 's' : ''}
+              {/if}
             </h2>
+            {#if canLoadMore}
+              <button
+                type="button"
+                class="load-more-header-btn"
+                on:click={searchActions.loadMore}
+                disabled={$loadingMore}
+              >
+                {$loadingMore ? 'Chargement…' : 'Voir plus'}
+              </button>
+            {/if}
             <div class="view-mode-toggle" role="group" aria-label="Mode d'affichage des cartes">
               <button
                 type="button"
@@ -369,7 +379,7 @@
           selectedUuid={$previewState.selectedUuid}
           isPreviewOpen={$previewState.isOpen}
           onSelect={selectExercise}
-          hasMore={$searchMeta?.pagination?.hasMore}
+          hasMore={canLoadMore}
           onLoadMore={searchActions.loadMore}
           loadingMore={$loadingMore}
         />
@@ -711,7 +721,7 @@
     flex-wrap: wrap;
   }
 
-  /* Sur desktop: row1 = titre (flex) + view-mode-toggle, sort-control à droite */
+  /* Sur desktop: row1 = titre + bouton voir-plus + view-mode-toggle (poussé à droite) */
   .results-header-row1 {
     display: flex;
     align-items: center;
@@ -719,12 +729,38 @@
     flex: 1 1 auto;
   }
 
+  .results-header-row1 .view-mode-toggle {
+    margin-left: auto;
+  }
+
   .results-title {
     font-size: 1.125rem;
     font-weight: 600;
-    flex: 1 1 auto;
     min-width: fit-content;
     @apply text-interface-text-primary;
+  }
+
+  .results-title-total {
+    font-size: 0.9rem;
+    font-weight: 400;
+    @apply text-interface-text-muted;
+  }
+
+  .load-more-header-btn {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background-color 0.15s, color 0.15s;
+    @apply border border-brand-300 bg-brand-50 text-brand-700;
+  }
+  .load-more-header-btn:hover:not(:disabled) {
+    @apply bg-brand-100;
+  }
+  .load-more-header-btn:disabled {
+    @apply opacity-60 cursor-not-allowed;
   }
 
   .sort-control {
