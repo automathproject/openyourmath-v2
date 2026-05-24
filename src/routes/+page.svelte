@@ -464,15 +464,11 @@
     box-shadow: 0 1px 4px rgba(13, 60, 77, 0.06);
   }
   .search-hero-inner {
-    max-width: 1280px;
-    margin: 0 auto;
     padding: 12px 40px;
   }
 
   /* ── Body ───────────────────────────────────────────────────── */
   .search-body {
-    max-width: 1280px;
-    margin: 0 auto;
     padding: 0 0 48px;
   }
   @media (max-width: 1023px) {

@@ -33,7 +33,7 @@
   $: showChapterBadge = !isCompact && Boolean(exercise?.chapter) && String(activeFilters?.chapter || '') !== String(exercise?.chapter || '');
   $: showDifficultyDots = !isCompact && Boolean(exercise?.difficulty);
   $: showTags = showLevelBadge || showModuleBadge || showChapterBadge || showDifficultyDots;
-  $: snippetLines = isCompact ? 3 : 6;
+  $: snippetLines = isCompact ? 2 : 3;
 
   $: if (isSelected && cardEl) {
     tick().then(() => {
@@ -240,7 +240,7 @@
     overflow: hidden;
   }
   .rc-chip-module {
-    max-width: 140px;
+    max-width: 30%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -250,7 +250,7 @@
     font-size: 11px;
     color: theme('colors.interface.text-muted');
     font-style: italic;
-    max-width: 120px;
+    max-width: 25%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
