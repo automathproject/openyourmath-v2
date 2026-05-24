@@ -26,6 +26,10 @@ export async function GET({ url }) {
         hasIndication: url.searchParams.get('hasIndication') || '',
         hasVideo: url.searchParams.get('hasVideo') || ''
       };
+      for (const key of ['hasSolution', 'hasIndication']) {
+        if (filters[key] === '1' || filters[key] === 'true') filters[key] = true;
+        else if (filters[key] === '0' || filters[key] === 'false') filters[key] = false;
+      }
 
       const hasQueryOrFilters = q.trim() || Object.values(filters).some(v => v);
       const structure = hasQueryOrFilters
@@ -36,6 +40,27 @@ export async function GET({ url }) {
       // Suggestions pour autocomplétion
       const suggestionType = url.searchParams.get('for') || 'all';
       const limit = parseInt(url.searchParams.get('limit') || '10');
+      const q = url.searchParams.get('q') || '';
+      const filters = {
+        level: url.searchParams.get('level') || '',
+        module: url.searchParams.get('module') || '',
+        chapter: url.searchParams.get('chapter') || '',
+        subchapter: url.searchParams.get('subchapter') || '',
+        difficulty: url.searchParams.get('difficulty') || '',
+        author: url.searchParams.get('author') || '',
+        organization: url.searchParams.get('organization') || '',
+        createdFrom: url.searchParams.get('createdFrom') || '',
+        createdTo: url.searchParams.get('createdTo') || '',
+        updatedFrom: url.searchParams.get('updatedFrom') || '',
+        updatedTo: url.searchParams.get('updatedTo') || '',
+        hasSolution: url.searchParams.get('hasSolution') || '',
+        hasIndication: url.searchParams.get('hasIndication') || '',
+        hasVideo: url.searchParams.get('hasVideo') || ''
+      };
+      for (const key of ['hasSolution', 'hasIndication']) {
+        if (filters[key] === '1' || filters[key] === 'true') filters[key] = true;
+        else if (filters[key] === '0' || filters[key] === 'false') filters[key] = false;
+      }
       
       // MODIFIÉ : Ajouter 'difficulties' à la liste des types valides
       const validTypes = ['all', 'chapters', 'themes', 'authors', 'organizations', 'modules', 'levels', 'difficulties'];
@@ -46,7 +71,7 @@ export async function GET({ url }) {
         );
       }
       
-      const suggestions = await getSuggestions(suggestionType, limit);
+      const suggestions = await getSuggestions(suggestionType, limit, { query: q, filters });
       return json({ suggestions });
     } else {
       return json(

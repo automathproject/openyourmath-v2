@@ -386,6 +386,7 @@
           results={$results}
           activeFilters={$filters}
           {cardMode}
+          compactColumns={manualCardMode === 'compact' ? 'force' : 'auto'}
           selectedUuid={$previewState.selectedUuid}
           isPreviewOpen={$previewState.isOpen}
           onSelect={selectExercise}

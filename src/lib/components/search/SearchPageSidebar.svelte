@@ -4,13 +4,11 @@
 
   const LEVELS = ['L1', 'L2', 'L3', 'CPGE'];
 
-  let authorInput = '';
-  let organizationInput = '';
   let showAllModules = false;
-
-  // Sync inputs with store on external filter changes (e.g. URL or clear all)
-  $: authorInput = $filters.author || '';
-  $: organizationInput = $filters.organization || '';
+  let showAllAuthors = false;
+  let showAllOrganizations = false;
+  let authorSearch = '';
+  let organizationSearch = '';
 
   function setLevel(l) {
     const next = $filters.level === l ? '' : l;
@@ -40,19 +38,60 @@
     searchActions.search();
   }
 
-  function applyAuthor() {
-    searchActions.updateFilter('author', authorInput.trim());
+  function setFacetFilter(key, value) {
+    const next = $filters[key] === value ? '' : value;
+    searchActions.updateFilter(key, next);
     searchActions.search();
   }
 
-  function applyOrganization() {
-    searchActions.updateFilter('organization', organizationInput.trim());
+  function clearFacetFilter(key) {
+    searchActions.updateFilter(key, '');
     searchActions.search();
   }
 
-  function handleTextKey(e, applyFn) {
-    if (e.key === 'Enter') { e.preventDefault(); applyFn(); }
-    if (e.key === 'Escape') { e.currentTarget.blur(); }
+  function buildFacetItems(counts = {}, suggestionEntries = [], activeValue = '') {
+    const byValue = new Map();
+
+    for (const entry of suggestionEntries || []) {
+      const value = String(entry?.value ?? entry ?? '').trim();
+      if (!value) continue;
+      byValue.set(value, {
+        value,
+        count: Number(entry?.count ?? 0) || 0
+      });
+    }
+
+    for (const [value, count] of Object.entries(counts || {})) {
+      const trimmed = String(value).trim();
+      if (!trimmed) continue;
+      byValue.set(trimmed, {
+        value: trimmed,
+        count: Number(count) || byValue.get(trimmed)?.count || 0
+      });
+    }
+
+    if (activeValue && !byValue.has(activeValue)) {
+      byValue.set(activeValue, { value: activeValue, count: 0 });
+    }
+
+    return Array.from(byValue.values())
+      .sort((a, b) => (b.count - a.count) || a.value.localeCompare(b.value, 'fr', { sensitivity: 'base' }));
+  }
+
+  function filterFacetItems(items, searchTerm) {
+    const term = searchTerm.trim().toLowerCase();
+    if (!term) return items;
+    return items.filter((item) => item.value.toLowerCase().includes(term));
+  }
+
+  function handleFacetSearchKey(event, key, items) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      const first = items[0]?.value;
+      if (first) setFacetFilter(key, first);
+    } else if (event.key === 'Escape') {
+      event.currentTarget.blur();
+    }
   }
 
   $: sortedModules = Object.entries($filterCounts?.module ?? {})
@@ -67,8 +106,14 @@
     return Array.from(entries).sort((a, b) => a.localeCompare(b, 'fr', { numeric: true }));
   })();
 
-  $: authorSuggestions = ($suggestions?.authors || []).map(e => e.value ?? e).filter(Boolean);
-  $: organizationSuggestions = ($suggestions?.organizations || []).map(e => e.value ?? e).filter(Boolean);
+  $: authorItems = buildFacetItems($filterCounts?.author, $suggestions?.authors, $filters.author);
+  $: organizationItems = buildFacetItems($filterCounts?.organization, $suggestions?.organizations, $filters.organization);
+  $: filteredAuthorItems = filterFacetItems(authorItems, authorSearch);
+  $: filteredOrganizationItems = filterFacetItems(organizationItems, organizationSearch);
+  $: visibleAuthors = showAllAuthors ? filteredAuthorItems : filteredAuthorItems.slice(0, 8);
+  $: visibleOrganizations = showAllOrganizations ? filteredOrganizationItems : filteredOrganizationItems.slice(0, 8);
+  $: hiddenAuthorCount = Math.max(0, filteredAuthorItems.length - visibleAuthors.length);
+  $: hiddenOrganizationCount = Math.max(0, filteredOrganizationItems.length - visibleOrganizations.length);
 </script>
 
 <aside class="sps">
@@ -122,23 +167,32 @@
   <div class="sps-section">
     <div class="sps-overline">Contenu</div>
     <div class="sps-check-list">
-      <button type="button" class="sps-check-row" on:click={() => toggleFlag('hasSolution')}>
-        <span class="sps-checkbox" class:sps-checkbox--on={$filters.hasSolution === '1'}>
-          {#if $filters.hasSolution === '1'}✓{/if}
-        </span>
-        <span>Avec solution</span>
+      <button
+        type="button"
+        class="sps-check-row"
+        class:sps-check-row--on={$filters.hasSolution === '1'}
+        aria-pressed={$filters.hasSolution === '1'}
+        on:click={() => toggleFlag('hasSolution')}
+      >
+        Solution
       </button>
-      <button type="button" class="sps-check-row" on:click={() => toggleFlag('hasIndication')}>
-        <span class="sps-checkbox" class:sps-checkbox--on={$filters.hasIndication === '1'}>
-          {#if $filters.hasIndication === '1'}✓{/if}
-        </span>
-        <span>Avec indication</span>
+      <button
+        type="button"
+        class="sps-check-row"
+        class:sps-check-row--on={$filters.hasIndication === '1'}
+        aria-pressed={$filters.hasIndication === '1'}
+        on:click={() => toggleFlag('hasIndication')}
+      >
+        Indication
       </button>
-      <button type="button" class="sps-check-row" on:click={() => toggleFlag('hasVideo')}>
-        <span class="sps-checkbox" class:sps-checkbox--on={$filters.hasVideo === '1'}>
-          {#if $filters.hasVideo === '1'}✓{/if}
-        </span>
-        <span>Avec vidéo</span>
+      <button
+        type="button"
+        class="sps-check-row"
+        class:sps-check-row--on={$filters.hasVideo === '1'}
+        aria-pressed={$filters.hasVideo === '1'}
+        on:click={() => toggleFlag('hasVideo')}
+      >
+        Vidéo
       </button>
     </div>
   </div>
@@ -164,27 +218,42 @@
     <div class="sps-overline-row">
       <div class="sps-overline">Auteur</div>
       {#if $filters.author}
-        <span class="sps-active-badge">Actif</span>
+        <button type="button" class="sps-clear-link" on:click={() => clearFacetFilter('author')}>Effacer</button>
       {/if}
     </div>
-    <div class="sps-input-wrap" class:sps-input-wrap--active={$filters.author}>
+    <div class="sps-facet-search">
       <input
-        class="sps-input"
-        class:sps-input--active={$filters.author}
         type="text"
-        placeholder="Nom de l'auteur…"
-        bind:value={authorInput}
-        list="sps-author-list"
-        on:blur={applyAuthor}
-        on:keydown={(e) => handleTextKey(e, applyAuthor)}
+        placeholder="Chercher un auteur"
+        bind:value={authorSearch}
+        on:keydown={(e) => handleFacetSearchKey(e, 'author', filteredAuthorItems)}
       />
-      {#if authorInput}
-        <button type="button" class="sps-input-clear" on:click={() => { authorInput = ''; applyAuthor(); }} aria-label="Effacer le filtre auteur">×</button>
+      {#if authorSearch}
+        <button type="button" on:click={() => (authorSearch = '')} aria-label="Vider la recherche auteur">×</button>
       {/if}
     </div>
-    <datalist id="sps-author-list">
-      {#each authorSuggestions as a}<option value={a}></option>{/each}
-    </datalist>
+    {#if visibleAuthors.length > 0}
+      <div class="sps-facet-list">
+        {#each visibleAuthors as item}
+          <button
+            type="button"
+            class="sps-facet-btn"
+            class:sps-facet-btn--on={$filters.author === item.value}
+            on:click={() => setFacetFilter('author', item.value)}
+          >
+            <span class="sps-facet-name">{item.value}</span>
+            {#if item.count > 0}<span class="sps-facet-count">{item.count}</span>{/if}
+          </button>
+        {/each}
+      </div>
+      {#if filteredAuthorItems.length > 8}
+        <button type="button" class="sps-show-more" on:click={() => (showAllAuthors = !showAllAuthors)}>
+          {showAllAuthors ? 'Voir moins' : `Voir plus (${hiddenAuthorCount})`}
+        </button>
+      {/if}
+    {:else}
+      <p class="sps-empty">Aucun auteur disponible avec ces filtres.</p>
+    {/if}
   </div>
 
   <hr class="sps-hr" />
@@ -194,27 +263,44 @@
     <div class="sps-overline-row">
       <div class="sps-overline">Organisation</div>
       {#if $filters.organization}
-        <span class="sps-active-badge">Actif</span>
+        <button type="button" class="sps-clear-link" on:click={() => clearFacetFilter('organization')}>Effacer</button>
       {/if}
     </div>
-    <div class="sps-input-wrap" class:sps-input-wrap--active={$filters.organization}>
-      <input
-        class="sps-input"
-        class:sps-input--active={$filters.organization}
-        type="text"
-        placeholder="Nom de l'organisation…"
-        bind:value={organizationInput}
-        list="sps-org-list"
-        on:blur={applyOrganization}
-        on:keydown={(e) => handleTextKey(e, applyOrganization)}
-      />
-      {#if organizationInput}
-        <button type="button" class="sps-input-clear" on:click={() => { organizationInput = ''; applyOrganization(); }} aria-label="Effacer le filtre organisation">×</button>
+    {#if organizationItems.length > 8 || organizationSearch}
+      <div class="sps-facet-search">
+        <input
+          type="text"
+          placeholder="Chercher une organisation"
+          bind:value={organizationSearch}
+          on:keydown={(e) => handleFacetSearchKey(e, 'organization', filteredOrganizationItems)}
+        />
+        {#if organizationSearch}
+          <button type="button" on:click={() => (organizationSearch = '')} aria-label="Vider la recherche organisation">×</button>
+        {/if}
+      </div>
+    {/if}
+    {#if visibleOrganizations.length > 0}
+      <div class="sps-facet-list">
+        {#each visibleOrganizations as item}
+          <button
+            type="button"
+            class="sps-facet-btn"
+            class:sps-facet-btn--on={$filters.organization === item.value}
+            on:click={() => setFacetFilter('organization', item.value)}
+          >
+            <span class="sps-facet-name">{item.value}</span>
+            {#if item.count > 0}<span class="sps-facet-count">{item.count}</span>{/if}
+          </button>
+        {/each}
+      </div>
+      {#if filteredOrganizationItems.length > 8}
+        <button type="button" class="sps-show-more" on:click={() => (showAllOrganizations = !showAllOrganizations)}>
+          {showAllOrganizations ? 'Voir moins' : `Voir plus (${hiddenOrganizationCount})`}
+        </button>
       {/if}
-    </div>
-    <datalist id="sps-org-list">
-      {#each organizationSuggestions as o}<option value={o}></option>{/each}
-    </datalist>
+    {:else}
+      <p class="sps-empty">Aucune organisation disponible avec ces filtres.</p>
+    {/if}
   </div>
 </aside>
 
@@ -245,15 +331,6 @@
   }
   .sps-overline-row .sps-overline {
     margin-bottom: 0;
-  }
-  .sps-active-badge {
-    flex-shrink: 0;
-    padding: 2px 6px;
-    border-radius: 9999px;
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 1.2;
-    @apply bg-brand-50 text-brand-700 border border-brand-200;
   }
   .sps-hr {
     border: none;
@@ -353,50 +430,38 @@
 
   /* ── Contenu ── */
   .sps-check-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    overflow: hidden;
+    border: 1.5px solid theme('colors.interface.border-secondary');
+    border-radius: 6px;
   }
   .sps-check-row {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 8px;
-    border: 1px solid theme('colors.interface.border-secondary');
-    border-radius: 9999px;
+    min-width: 0;
+    padding: 7px 4px;
+    border: none;
+    border-right: 1px solid theme('colors.interface.border-secondary');
+    border-radius: 0;
+    background: transparent;
     font-size: 12px;
+    font-weight: 500;
     color: theme('colors.interface.text-secondary');
     cursor: pointer;
-    background: theme('colors.interface.bg-white');
-    text-align: left;
+    text-align: center;
     transition: background 0.1s, border-color 0.1s, color 0.1s;
+    white-space: nowrap;
   }
   .sps-check-row:hover {
     background: theme('colors.interface.bg-tertiary');
     color: theme('colors.interface.text-primary');
   }
-  .sps-check-row:has(.sps-checkbox--on) {
-    border-color: theme('colors.brand.200');
-    background: theme('colors.brand.50');
-    color: theme('colors.brand.800');
+  .sps-check-row:last-child {
+    border-right: none;
   }
-  .sps-checkbox {
-    width: 14px;
-    height: 14px;
-    border-radius: 4px;
-    border: 1.5px solid theme('colors.interface.border-secondary');
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 10px;
-    font-weight: 700;
-    color: white;
-    transition: background 0.12s, border-color 0.12s;
-  }
-  .sps-checkbox--on {
+  .sps-check-row--on {
     background: theme('colors.interface.text-primary');
-    border-color: theme('colors.interface.text-primary');
+    color: white;
   }
 
   .sps-empty {
@@ -420,50 +485,108 @@
   }
   .sps-select:focus { outline: none; border-color: theme('colors.brand.500'); }
 
-  /* ── Text inputs (Auteur / Organisation) ── */
-  .sps-input-wrap {
-    position: relative;
+  /* ── Auteur / Organisation ── */
+  .sps-clear-link {
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 11px;
+    font-weight: 700;
+    color: theme('colors.brand.700');
+    cursor: pointer;
+  }
+  .sps-clear-link:hover {
+    color: theme('colors.brand.900');
+    text-decoration: underline;
+  }
+  .sps-facet-search {
     display: flex;
     align-items: center;
-  }
-  .sps-input-wrap--active::before {
-    content: '';
-    position: absolute;
-    left: 7px;
-    width: 6px;
-    height: 6px;
-    border-radius: 9999px;
-    z-index: 1;
-    @apply bg-brand-600;
-  }
-  .sps-input {
-    width: 100%;
-    padding: 6px 28px 6px 8px;
-    border-radius: 6px;
-    font-size: 13px;
-    background: theme('colors.interface.bg-white');
-    color: theme('colors.interface.text-primary');
+    gap: 4px;
+    margin-bottom: 6px;
+    padding: 0 6px;
     border: 1.5px solid theme('colors.interface.border-secondary');
+    border-radius: 6px;
+    background: theme('colors.interface.bg-white');
   }
-  .sps-input--active {
-    padding-left: 20px;
-    @apply border-brand-300 bg-brand-50 text-brand-800;
+  .sps-facet-search:focus-within {
+    border-color: theme('colors.brand.500');
   }
-  .sps-input::placeholder { color: theme('colors.interface.text-muted'); }
-  .sps-input:focus { outline: none; border-color: theme('colors.brand.500'); }
-  .sps-input-clear {
-    position: absolute;
-    right: 6px;
-    background: none;
+  .sps-facet-search input {
+    min-width: 0;
+    flex: 1;
+    padding: 6px 0;
+    border: 0;
+    outline: 0;
+    font-size: 13px;
+    background: transparent;
+    color: theme('colors.interface.text-primary');
+  }
+  .sps-facet-search input::placeholder {
+    color: theme('colors.interface.text-muted');
+  }
+  .sps-facet-search button {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
     border: none;
+    border-radius: 4px;
+    background: none;
+    color: theme('colors.interface.text-muted');
     font-size: 14px;
     line-height: 1;
     cursor: pointer;
-    color: theme('colors.interface.text-muted');
-    padding: 2px 4px;
   }
-  .sps-input--active + .sps-input-clear {
+  .sps-facet-search button:hover {
+    background: theme('colors.interface.bg-tertiary');
+    color: theme('colors.interface.text-primary');
+  }
+  .sps-facet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .sps-facet-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    min-height: 30px;
+    padding: 6px 10px;
+    border: none;
+    border-left: 2px solid transparent;
+    border-radius: 0 6px 6px 0;
+    background: transparent;
+    color: theme('colors.interface.text-secondary');
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.1s, border-color 0.1s, color 0.1s;
+  }
+  .sps-facet-btn:hover {
+    background: theme('colors.interface.bg-tertiary');
+    color: theme('colors.interface.text-primary');
+  }
+  .sps-facet-btn--on {
+    background: theme('colors.brand.50');
+    border-left-color: theme('colors.brand.500');
+    color: theme('colors.brand.800');
+    font-weight: 600;
+  }
+  .sps-facet-name {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .sps-facet-count {
+    flex: 0 0 auto;
+    font-size: 11px;
+    color: theme('colors.interface.text-muted');
+  }
+  .sps-facet-btn--on .sps-facet-count {
     color: theme('colors.brand.700');
   }
-  .sps-input-clear:hover { color: theme('colors.interface.text-primary'); }
 </style>

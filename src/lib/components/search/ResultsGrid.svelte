@@ -5,6 +5,7 @@
   export let results = [];
   export let activeFilters = {};
   export let cardMode = 'detailed';
+  export let compactColumns = 'auto'; // auto | force
   export let selectedUuid = null;
   export let isPreviewOpen = false;
   export let onSelect = () => {};
@@ -12,9 +13,11 @@
   export let onLoadMore = () => {};
   export let loadingMore = false;
 
-  const COMPACT_TWO_COLUMN_MIN_WIDTH = 680;
+  const AUTO_COMPACT_TWO_COLUMN_MIN_WIDTH = 680;
+  const FORCED_COMPACT_TWO_COLUMN_MIN_WIDTH = 480;
   let gridEl;
-  let compactCanSplit = false;
+  let compactCanAutoSplit = false;
+  let compactCanForceSplit = false;
 
   function handleSelect(event) {
     onSelect(event.detail.exercise);
@@ -22,8 +25,11 @@
 
   function updateCompactLayout() {
     if (!gridEl) return;
-    compactCanSplit = gridEl.clientWidth >= COMPACT_TWO_COLUMN_MIN_WIDTH;
+    compactCanAutoSplit = gridEl.clientWidth >= AUTO_COMPACT_TWO_COLUMN_MIN_WIDTH;
+    compactCanForceSplit = gridEl.clientWidth >= FORCED_COMPACT_TWO_COLUMN_MIN_WIDTH;
   }
+
+  $: compactCanSplit = compactColumns === 'force' ? compactCanForceSplit : compactCanAutoSplit;
 
   onMount(() => {
     updateCompactLayout();

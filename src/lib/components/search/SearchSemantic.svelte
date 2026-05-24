@@ -22,7 +22,8 @@
     searchMeta,
     filters,
     filterCounts,
-    searchActions
+    searchActions,
+    suggestionActions
   } from '$lib/stores/searchStore.js';
   import { useDebounce } from '$lib/hooks/useDebounce.js';
 
@@ -110,6 +111,13 @@
     );
   }
 
+  function refreshSuggestions() {
+    suggestionActions.loadSuggestions({
+      query: get(searchQuery),
+      filters: get(filters)
+    });
+  }
+
   // ── Synchronisation URL ────────────────────────────────────────────────────
   function syncUrl() {
     const q = get(searchQuery).trim();
@@ -139,6 +147,7 @@
       error.set(null);
       filterCounts.set({ module: {}, level: {}, difficulty: {}, author: {}, organization: {} });
       showSuggest = false;
+      refreshSuggestions();
       syncUrl();
       return;
     }
@@ -157,6 +166,7 @@
         results.set(data.results || []);
         searchMeta.set(data.meta || null);
         if (data.meta?.filterCounts) filterCounts.set(data.meta.filterCounts);
+        refreshSuggestions();
         // Scénario B : zéro résultat → proposer l'hybride
         showSuggest = (data.results || []).length === 0 && q.length >= 3;
       } else {
@@ -207,6 +217,7 @@
       results.set(c.results);
       searchMeta.set(c.meta);
       filterCounts.set(deriveFilterCounts(c.results));
+      refreshSuggestions();
       timingInfo = c.timing;
       mode       = 'hybrid';
       showSuggest = false;
@@ -244,6 +255,7 @@
         results.set(entry.results);
         searchMeta.set(entry.meta);
         filterCounts.set(deriveFilterCounts(entry.results));
+        refreshSuggestions();
         timingInfo  = entry.timing;
         mode        = 'hybrid';
         showSuggest = false;

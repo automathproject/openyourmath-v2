@@ -910,11 +910,80 @@ export async function getFilterCounts(query = '', filters = {}) {
     if (db) db.close();
   }
 }
-export async function getSuggestions(type = 'all', limit = 10) {
+export async function getSuggestions(type = 'all', limit = 10, context = {}) {
   let db;
   try {
     db = new Database(DB_PATH, { readonly: true });
-    
+
+    const contextualTypes = new Set(['authors', 'organizations', 'modules', 'levels', 'difficulties']);
+    if (contextualTypes.has(type) && (context.query || Object.values(context.filters || {}).some(Boolean))) {
+      const searchContext = buildSearchContext(context.query || '', context.filters || {});
+
+      switch (type) {
+        case 'authors':
+          return db.prepare(`
+            SELECT ea.author_display as value, COUNT(DISTINCT e.uuid) as count
+            ${searchContext.fromClause}
+            JOIN exercise_authors ea ON ea.uuid = e.uuid
+            WHERE ${searchContext.whereClause}
+              AND ea.author_display IS NOT NULL
+              AND TRIM(ea.author_display) != ''
+            GROUP BY ea.author_display
+            ORDER BY count DESC, ea.author_display
+            LIMIT ?
+          `).all(...searchContext.params, limit);
+
+        case 'organizations':
+          return db.prepare(`
+            SELECT e.organization as value, COUNT(*) as count
+            ${searchContext.fromClause}
+            WHERE ${searchContext.whereClause}
+              AND e.organization IS NOT NULL
+              AND TRIM(e.organization) != ''
+            GROUP BY e.organization
+            ORDER BY count DESC, e.organization
+            LIMIT ?
+          `).all(...searchContext.params, limit);
+
+        case 'modules': {
+          const rows = db.prepare(`
+            SELECT e.module as value, COUNT(*) as count
+            ${searchContext.fromClause}
+            WHERE ${searchContext.whereClause}
+              AND e.module IS NOT NULL
+              AND TRIM(e.module) != ''
+            GROUP BY e.module
+            ORDER BY count DESC, e.module
+            LIMIT ?
+          `).all(...searchContext.params, limit);
+          return mergeNormalizedModuleCounts(rows).slice(0, limit);
+        }
+
+        case 'levels':
+          return db.prepare(`
+            SELECT e.level as value, COUNT(*) as count
+            ${searchContext.fromClause}
+            WHERE ${searchContext.whereClause}
+              AND e.level IS NOT NULL
+              AND TRIM(e.level) != ''
+            GROUP BY e.level
+            ORDER BY count DESC, e.level
+            LIMIT ?
+          `).all(...searchContext.params, limit);
+
+        case 'difficulties':
+          return db.prepare(`
+            SELECT e.difficulty as value, COUNT(*) as count
+            ${searchContext.fromClause}
+            WHERE ${searchContext.whereClause}
+              AND e.difficulty IS NOT NULL
+            GROUP BY e.difficulty
+            ORDER BY e.difficulty
+            LIMIT ?
+          `).all(...searchContext.params, limit);
+      }
+    }
+
     let query = '';
     
     switch (type) {
