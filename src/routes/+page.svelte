@@ -84,8 +84,8 @@
   }
 
   $: canTogglePreview = Boolean($previewState.selectedUuid);
-  // FTS expose pagination.hasMore ; hybride expose hasMore directement à la racine du méta
-  $: canLoadMore = canLoadMore ?? $searchMeta?.hasMore ?? false;
+  // FTS expose pagination.hasMore ; hybride expose hasMore directement à la racine du méta.
+  $: canLoadMore = Boolean($searchMeta?.pagination?.hasMore ?? $searchMeta?.hasMore);
   $: previewToggleLabel = $layoutConfig.showPreviewPanel ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation';
   $: autoCardMode = $previewPanelOpen ? 'compact' : 'detailed';
   $: cardMode = manualCardMode === 'auto' ? autoCardMode : manualCardMode;
@@ -334,7 +334,7 @@
                 on:click={searchActions.loadMore}
                 disabled={$loadingMore}
               >
-                {$loadingMore ? 'Chargement…' : 'Voir plus'}
+                {$loadingMore ? 'Chargement…' : 'Afficher plus de résultats'}
               </button>
             {/if}
             <div class="view-mode-toggle" role="group" aria-label="Mode d'affichage des cartes">

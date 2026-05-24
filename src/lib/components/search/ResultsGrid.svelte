@@ -33,7 +33,7 @@
 {#if hasMore}
   <div class="results-pagination text-center mt-4">
     <button class="btn btn-secondary" on:click={onLoadMore} disabled={loadingMore}>
-      {loadingMore ? 'Chargement…' : 'Voir plus'}
+      {loadingMore ? 'Chargement…' : 'Afficher plus de résultats'}
     </button>
   </div>
 {/if}
