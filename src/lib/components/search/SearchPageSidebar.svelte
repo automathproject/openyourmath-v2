@@ -6,6 +6,7 @@
 
   let authorInput = '';
   let organizationInput = '';
+  let showAllModules = false;
 
   // Sync inputs with store on external filter changes (e.g. URL or clear all)
   $: authorInput = $filters.author || '';
@@ -57,6 +58,8 @@
   $: sortedModules = Object.entries($filterCounts?.module ?? {})
     .filter(([, c]) => c > 0)
     .sort((a, b) => b[1] - a[1]);
+  $: visibleModules = showAllModules ? sortedModules : sortedModules.slice(0, 6);
+  $: hiddenModuleCount = Math.max(0, sortedModules.length - visibleModules.length);
 
   $: difficultyOptions = (() => {
     const entries = new Set(Object.keys($filterCounts?.difficulty ?? {}).filter(v => v && v !== '0'));
@@ -91,7 +94,7 @@
     <div class="sps-overline">Module</div>
     {#if sortedModules.length > 0}
       <div class="sps-module-list">
-        {#each sortedModules as [name, count]}
+        {#each visibleModules as [name, count]}
           <button
             type="button"
             class="sps-module-btn"
@@ -103,6 +106,11 @@
           </button>
         {/each}
       </div>
+      {#if sortedModules.length > 6}
+        <button type="button" class="sps-show-more" on:click={() => (showAllModules = !showAllModules)}>
+          {showAllModules ? 'Voir moins' : `Voir plus (${hiddenModuleCount})`}
+        </button>
+      {/if}
     {:else}
       <p class="sps-empty">Lancez une recherche pour filtrer par module.</p>
     {/if}
@@ -214,6 +222,11 @@
   .sps {
     padding: 20px 16px 32px;
   }
+  @media (min-width: 641px) and (max-width: 1023px) {
+    .sps {
+      padding: 14px 14px 16px;
+    }
+  }
   .sps-section { margin-bottom: 2px; }
   .sps-overline {
     font-size: 10px;
@@ -247,17 +260,27 @@
     border-top: 1px solid theme('colors.interface.border-primary');
     margin: 16px 0;
   }
+  @media (min-width: 641px) and (max-width: 1023px) {
+    .sps-hr {
+      margin: 10px 0;
+    }
+  }
 
   /* ── Niveau ── */
   .sps-level-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-  }
-  .sps-level-btn {
-    padding: 7px 0;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    overflow: hidden;
     border: 1.5px solid theme('colors.interface.border-secondary');
     border-radius: 6px;
+  }
+  .sps-level-btn {
+    min-width: 0;
+    padding: 7px 0;
+    border: none;
+    border-right: 1px solid theme('colors.interface.border-secondary');
+    border-radius: 0;
     background: transparent;
     font-size: 13px;
     font-weight: 500;
@@ -269,9 +292,11 @@
   .sps-level-btn:hover {
     background: theme('colors.interface.bg-tertiary');
   }
+  .sps-level-btn:last-child {
+    border-right: none;
+  }
   .sps-level-btn--on {
     background: theme('colors.interface.text-primary');
-    border-color: theme('colors.interface.text-primary');
     color: white;
   }
 
@@ -313,30 +338,51 @@
     flex-shrink: 0;
   }
   .sps-module-btn--on .sps-module-count { color: theme('colors.brand.600'); }
+  .sps-show-more {
+    margin-top: 0.45rem;
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary;
+  }
+  .sps-show-more:hover {
+    @apply bg-interface-bg-tertiary text-interface-text-primary;
+  }
 
   /* ── Contenu ── */
   .sps-check-list {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 6px;
   }
   .sps-check-row {
     display: flex;
     align-items: center;
-    gap: 9px;
-    font-size: 13px;
+    gap: 6px;
+    padding: 5px 8px;
+    border: 1px solid theme('colors.interface.border-secondary');
+    border-radius: 9999px;
+    font-size: 12px;
     color: theme('colors.interface.text-secondary');
     cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
+    background: theme('colors.interface.bg-white');
     text-align: left;
-    transition: color 0.1s;
+    transition: background 0.1s, border-color 0.1s, color 0.1s;
   }
-  .sps-check-row:hover { color: theme('colors.interface.text-primary'); }
+  .sps-check-row:hover {
+    background: theme('colors.interface.bg-tertiary');
+    color: theme('colors.interface.text-primary');
+  }
+  .sps-check-row:has(.sps-checkbox--on) {
+    border-color: theme('colors.brand.200');
+    background: theme('colors.brand.50');
+    color: theme('colors.brand.800');
+  }
   .sps-checkbox {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 4px;
     border: 1.5px solid theme('colors.interface.border-secondary');
     display: flex;

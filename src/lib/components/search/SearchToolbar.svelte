@@ -10,6 +10,7 @@
   export let isPreviewOpen = false;
   export let onTogglePreview = () => {};
   export let filtersExpanded = true;
+  export let activeFilterCount = 0;
   export let onToggleExpanded = () => {};
   /** Affiche un badge "↵" dans le champ pour indiquer que Enter déclenche la recherche intelligente */
   export let showEnterHint = false;
@@ -128,6 +129,12 @@
       aria-label={filtersExpanded ? 'Réduire les filtres' : 'Afficher les filtres'}
       title={filtersExpanded ? 'Réduire les filtres' : 'Afficher les filtres'}
     >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="collapse-toggle-filter-icon">
+        <path d="M3 5h18" />
+        <path d="M6 12h12" />
+        <path d="M10 19h4" />
+      </svg>
+      <span class="collapse-toggle-label">Filtres{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class:rotated={!filtersExpanded}>
         <polyline points="18 15 12 9 6 15" />
       </svg>
@@ -320,10 +327,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.35rem;
     flex-shrink: 0;
-    width: 2.5rem;
+    min-width: 2.5rem;
     height: 2.5rem;
+    padding: 0 0.7rem;
     border-radius: 0.75rem;
+    font-size: 0.82rem;
+    font-weight: 600;
     transition: background-color .15s;
     @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary;
   }
@@ -333,7 +344,19 @@
     height: 1.1rem;
     transition: transform 200ms ease;
   }
+  .collapse-toggle-filter-icon {
+    transform: none !important;
+  }
+  .collapse-toggle-label {
+    white-space: nowrap;
+  }
   .collapse-toggle svg.rotated { transform: rotate(180deg); }
+
+  @media (max-width: 430px) {
+    .collapse-toggle-label { display: none; }
+    .collapse-toggle { padding: 0; width: 2.5rem; }
+    .collapse-toggle-filter-icon { display: none; }
+  }
 
   @media (min-width: 1024px) {
     .collapse-toggle { display: none; }

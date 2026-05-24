@@ -30,6 +30,51 @@ function escapeLikePattern(value) {
   return value.replace(/[%_\\]/g, (ch) => `\\${ch}`);
 }
 
+function normalizeModuleLabel(value) {
+  const label = String(value ?? '').trim();
+  if (!label) return '';
+
+  const key = label
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+
+  if (key.includes('probabil') || key.includes('statistique')) {
+    return 'Probabilité et statistique';
+  }
+
+  return label;
+}
+
+function getModuleFilterAliases(value) {
+  const normalized = normalizeModuleLabel(value);
+  if (normalized === 'Probabilité et statistique') {
+    return [
+      'Probabilité et statistique',
+      'Probabilités et Statistiques',
+      'Probabilités et Statistique',
+      'Probabilités',
+      'Probabilités et statistiques',
+      'Statistique',
+      'Statistiques',
+      'Statistiques inférentielles'
+    ];
+  }
+  return [String(value ?? '').trim()].filter(Boolean);
+}
+
+function mergeNormalizedModuleCounts(rows = []) {
+  const merged = new Map();
+  for (const row of rows) {
+    const key = normalizeModuleLabel(row.value);
+    if (!key) continue;
+    merged.set(key, (merged.get(key) || 0) + row.count);
+  }
+  return Array.from(merged.entries()).map(([value, count]) => ({ value, count }));
+}
+
 function buildAuthorFilterClause(authorValue, tableAlias = 'e', includeLeadingAnd = true) {
   const trimmed = (authorValue ?? '').trim();
   if (!trimmed) {
@@ -168,8 +213,9 @@ function buildSearchContext(query = '', filters = {}, sortOption = null) {
   }
 
   if (filterValues.module) {
-    whereClauses.push('UPPER(e.module) = UPPER(?)');
-    params.push(filterValues.module);
+    const aliases = getModuleFilterAliases(filterValues.module);
+    whereClauses.push(`UPPER(e.module) IN (${aliases.map(() => 'UPPER(?)').join(', ')})`);
+    params.push(...aliases);
   }
 
   if (filterValues.level) {
@@ -632,8 +678,9 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
       params.push(filters.chapter);
     }
     if (filters.module) {
-      baseWhere += ' AND UPPER(e.module) = UPPER(?)';
-      params.push(filters.module);
+      const aliases = getModuleFilterAliases(filters.module);
+      baseWhere += ` AND UPPER(e.module) IN (${aliases.map(() => 'UPPER(?)').join(', ')})`;
+      params.push(...aliases);
     }
     if (filters.level) {
       baseWhere += ' AND UPPER(e.level) = UPPER(?)';
@@ -1158,7 +1205,10 @@ export async function getContextualFilterCounts(query = '', filters = {}) {
       }
 
       try {
-        const rows = db.prepare(sql).all(...params);
+        const rawRows = db.prepare(sql).all(...params);
+        const rows = excludeFilter === 'module'
+          ? mergeNormalizedModuleCounts(rawRows)
+          : rawRows;
         
         // Transformer les résultats
         rows.forEach(({ value, count }) => {

@@ -47,6 +47,7 @@
 
       const applyViewportState = (matches) => {
         isDesktop = matches;
+        filtersExpanded = matches;
       };
 
       applyViewportState(mediaQuery.matches);
@@ -113,6 +114,22 @@
     : sortDirection === 'asc'
       ? '↑'
       : '↓';
+  $: activeFilterCount = [
+    $filters.level,
+    $filters.module,
+    $filters.chapter,
+    $filters.subchapter,
+    $filters.difficulty,
+    $filters.author,
+    $filters.organization,
+    $filters.createdFrom,
+    $filters.createdTo,
+    $filters.updatedFrom,
+    $filters.updatedTo,
+    $filters.hasSolution,
+    $filters.hasIndication,
+    $filters.hasVideo
+  ].filter((value) => value !== '' && value !== null && value !== undefined).length;
 
   function handleSortChange(event) {
     const nextSort = event.target.value;
@@ -245,6 +262,7 @@
         isPreviewOpen={$previewState.isOpen}
         onTogglePreview={toggleMobilePreview}
         {filtersExpanded}
+        {activeFilterCount}
         onToggleExpanded={() => (filtersExpanded = !filtersExpanded)}
       />
 
@@ -491,6 +509,11 @@
     display: flex;
     flex-direction: column;
   }
+  @media (min-width: 641px) and (max-width: 1023px) {
+    .search-page-grid {
+      position: relative;
+    }
+  }
   @media (min-width: 1024px) {
     .search-page-grid {
       flex-direction: row;
@@ -506,24 +529,27 @@
   @media (min-width: 641px) and (max-width: 1023px) {
     .sidebar-shell {
       display: block;
-      overflow: hidden;
-      max-height: 52rem;
-      margin-bottom: 1rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(24rem, calc(100vw - 2rem));
+      max-height: min(34rem, calc(100vh - var(--search-controls-height, 9rem) - 1.25rem));
+      overflow-y: auto;
+      overflow-x: hidden;
+      z-index: 30;
       border: 1px solid theme('colors.interface.border-primary');
       border-radius: 0.75rem;
       background: theme('colors.interface.bg-secondary');
-      transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                  opacity 200ms ease,
-                  margin-bottom 200ms ease;
+      box-shadow: 0 18px 44px rgba(13, 60, 77, 0.18);
+      transform: translateY(0);
+      transition: transform 200ms ease, opacity 160ms ease;
       opacity: 1;
     }
 
     .sidebar-shell--collapsed {
-      max-height: 0;
+      transform: translateY(-0.35rem);
       opacity: 0;
-      margin-bottom: 0;
       pointer-events: none;
-      border-width: 0;
     }
   }
   @media (min-width: 1024px) {

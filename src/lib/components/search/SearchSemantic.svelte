@@ -28,6 +28,7 @@
 
   // ── Props ─────────────────────────────────────────────────────────────────
   export let filtersExpanded    = true;
+  export let activeFilterCount  = 0;
   export let onToggleExpanded   = () => {};
   export let canTogglePreview   = false;
   export let previewToggleLabel = '';
@@ -381,6 +382,7 @@
   onToggleMode={handleToggleMode}
   suggestIA={showSuggest}
   {filtersExpanded}
+  {activeFilterCount}
   {onToggleExpanded}
   {canTogglePreview}
   {previewToggleLabel}
