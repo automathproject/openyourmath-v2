@@ -1,5 +1,5 @@
 <script>
-  import { filters, searchActions } from '$lib/stores/searchStore.js';
+  import { filters, searchActions, hasActiveFilters } from '$lib/stores/searchStore.js';
   import { formatDifficultyLabel } from '$lib/utils/filterUtils.js';
   import Chip from '$lib/components/Chip.svelte';
 
@@ -61,32 +61,34 @@
   $: hasAny = structuralChips.length > 0 || hasAuthor || hasOrganization;
 </script>
 
-{#if hasAny}
+{#if $hasActiveFilters}
   <div class="active-filters" aria-live="polite">
-    <div class="active-filters-scroll">
-      {#if hasAuthor}
-        <Chip variant="teal" removable onremove={() => removeFilterChip('author')}>Auteur : {$filters.author}</Chip>
-      {/if}
-      {#if hasOrganization}
-        <Chip variant="info" removable onremove={() => removeFilterChip('organization')}>Organisation : {$filters.organization}</Chip>
-      {/if}
-      {#if structuralChips.length > 0}
+    {#if hasAny}
+      <div class="active-filters-scroll">
+        {#if hasAuthor}
+          <Chip variant="teal" removable onremove={() => removeFilterChip('author')}>Auteur : {$filters.author}</Chip>
+        {/if}
+        {#if hasOrganization}
+          <Chip variant="info" removable onremove={() => removeFilterChip('organization')}>Organisation : {$filters.organization}</Chip>
+        {/if}
         {#each structuralChips as chip}
           <Chip variant="teal" removable onremove={() => removeFilterChip(chip.key)}>{chip.label}</Chip>
         {/each}
-      {/if}
-    </div>
+      </div>
+    {/if}
 
     <button
       type="button"
-      class="clear-all-button"
-      on:click={clearAllFilterChips}
-      aria-label="Effacer tous les filtres"
-      title="Effacer tous les filtres"
+      class="reset-all-button"
+      on:click={() => searchActions.clearAllFilters()}
+      aria-label="Réinitialiser la recherche"
+      title="Réinitialiser la recherche"
     >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" aria-hidden="true">
-        <path d="M6 6l12 12M18 6L6 18" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+        <path d="M3 3v5h5"/>
       </svg>
+      Réinitialiser
     </button>
   </div>
 {/if}
@@ -118,25 +120,29 @@
     flex: 0 0 auto;
   }
 
-  .clear-all-button {
+  .reset-all-button {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.3rem;
     flex: 0 0 auto;
-    width: 28px;
-    height: 28px;
+    padding: 0.25rem 0.6rem;
     border-radius: 0.45rem;
     border: 1px solid transparent;
+    font-size: 0.78rem;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
     transition: background 0.12s, border-color 0.12s, color 0.12s;
-    @apply text-interface-text-muted;
+    @apply text-interface-text-muted bg-transparent;
   }
 
-  .clear-all-button:hover {
+  .reset-all-button:hover {
     @apply border-interface-border-secondary bg-interface-bg-tertiary text-interface-text-primary;
   }
 
-  .clear-all-button svg {
-    width: 15px;
-    height: 15px;
+  .reset-all-button svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
   }
 </style>
