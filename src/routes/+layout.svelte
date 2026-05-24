@@ -276,4 +276,52 @@
     @apply text-gray-400;
   }
 
+  @media (max-width: 767px) {
+    .footer-content {
+      padding: 1.4rem 1.25rem 1rem;
+    }
+
+    .footer-grid {
+      gap: 1.2rem;
+    }
+
+    .footer-identity {
+      gap: 0.25rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .footer-nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.45rem 1rem;
+    }
+
+    .footer-nav-heading {
+      flex-basis: 100%;
+      margin-bottom: 0;
+    }
+
+    .footer-actions-col {
+      gap: 0.65rem;
+    }
+
+    .footer-cta {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.82rem;
+    }
+
+    .footer-tech {
+      line-height: 1.45;
+    }
+
+    .footer-bottom {
+      margin-top: 1.25rem;
+      padding-top: 0.8rem;
+    }
+  }
+
 </style>

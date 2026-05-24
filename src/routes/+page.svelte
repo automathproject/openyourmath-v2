@@ -296,7 +296,7 @@
   <title>Recherche d'exercices - OpenYourMath</title>
 </svelte:head>
 
-<div class="search-page">
+<div class="search-page" class:search-page--landing={isLanding}>
   {#if isLanding}
     <!-- ── Landing hero ──────────────────────────────────────────── -->
     <section
@@ -304,33 +304,49 @@
       out:fly={{ y: -60, duration: 350, easing: cubicIn }}
     >
       <div class="landing-hero-inner">
-        <h1 class="landing-title">Trouvez l'exercice qu'il vous faut</h1>
-        <p class="landing-subtitle">Plus de 5 000 exercices de mathématiques, librement accessibles</p>
+        <div class="landing-hero-layout">
+          <img
+            class="landing-logo"
+            src="/img/logo_big.png"
+            alt="OpenYourMath"
+            width="1254"
+            height="1254"
+          />
+          <div class="landing-content">
+            <div class="landing-copy">
+              <h1 class="landing-title">Trouvez l'exercice qu'il vous faut</h1>
+              <p class="landing-subtitle">Plus de 5 000 exercices de mathématiques, librement accessibles</p>
+            </div>
 
-        <div class="landing-search-box">
-          <div class="landing-input-wrap">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="landing-search-icon">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <input
-              type="search"
-              bind:value={localLandingQuery}
-              on:keydown={(e) => { if (e.key === 'Enter') handleLandingSearch(); }}
-              placeholder="Cherche un exercice, une notion, un théorème…"
-              aria-label="Rechercher des exercices"
-              use:focusInput
-            />
+            <div class="landing-search-box">
+              <div class="landing-input-wrap">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="landing-search-icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input
+                  type="search"
+                  bind:value={localLandingQuery}
+                  on:keydown={(e) => { if (e.key === 'Enter') handleLandingSearch(); }}
+                  placeholder="Cherche un exercice, une notion, un théorème…"
+                  aria-label="Rechercher des exercices"
+                  use:focusInput
+                />
+              </div>
+              <button class="landing-search-btn" on:click={handleLandingSearch}>
+                <svg class="landing-search-btn-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <span class="landing-search-btn-label">Rechercher</span>
+              </button>
+            </div>
+
+            <div class="popular-row">
+              <span class="popular-label">Populaires :</span>
+              {#each popularQueries as pq}
+                <button class="popular-chip" on:click={() => handlePopularQuery(pq)}>{pq}</button>
+              {/each}
+            </div>
           </div>
-          <button class="landing-search-btn" on:click={handleLandingSearch}>
-            Rechercher
-          </button>
-        </div>
-
-        <div class="popular-row">
-          <span class="popular-label">Populaires :</span>
-          {#each popularQueries as pq}
-            <button class="popular-chip" on:click={() => handlePopularQuery(pq)}>{pq}</button>
-          {/each}
         </div>
       </div>
     </section>
@@ -550,6 +566,10 @@
     background: theme('colors.interface.bg-primary');
   }
 
+  .search-page--landing {
+    min-height: auto;
+  }
+
   /* ── Landing hero ───────────────────────────────────────────── */
   .landing-hero {
     background: theme('colors.interface.bg-secondary');
@@ -561,13 +581,37 @@
   }
 
   .landing-hero-inner {
-    max-width: 600px;
+    max-width: 860px;
     width: 100%;
+  }
+
+  .landing-hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .landing-logo {
+    width: clamp(9.5rem, 18vw, 14rem);
+    height: auto;
+    flex: 0 0 auto;
+    border-radius: 1.75rem;
+    filter: drop-shadow(0 18px 32px rgba(13, 60, 77, 0.12));
+  }
+
+  .landing-content {
+    min-width: 0;
+    flex: 1 1 34rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
     gap: 1.25rem;
+  }
+
+  .landing-copy {
+    min-width: 0;
+    text-align: left;
   }
 
   .landing-title {
@@ -599,13 +643,7 @@
     height: 3rem;
     border-radius: 0.75rem;
     gap: 0.5rem;
-    transition: border-color 0.15s, box-shadow 0.15s;
     @apply border border-interface-border-primary bg-interface-bg-white;
-  }
-
-  .landing-input-wrap:focus-within {
-    @apply border-brand-400;
-    box-shadow: 0 0 0 3px theme('colors.brand.100');
   }
 
   .landing-search-icon {
@@ -623,11 +661,21 @@
     @apply text-interface-text-primary;
   }
 
+  .landing-input-wrap input:focus {
+    outline: none;
+    box-shadow: none;
+    --tw-ring-shadow: 0 0 #0000;
+  }
+
   .landing-input-wrap input::placeholder {
     @apply text-interface-text-muted;
   }
 
   .landing-search-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
     height: 3rem;
     padding: 0 1.5rem;
     font-size: 0.95rem;
@@ -641,6 +689,11 @@
 
   .landing-search-btn:hover {
     @apply bg-brand-700 border-brand-700;
+  }
+
+  .landing-search-btn-icon {
+    display: none;
+    flex-shrink: 0;
   }
 
   .popular-row {
@@ -675,23 +728,45 @@
 
   @media (max-width: 640px) {
     .landing-hero {
-      padding: 48px 20px 40px;
+      padding: 24px 20px 18px;
+    }
+    .landing-hero-layout {
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .landing-logo {
+      width: 5.5rem;
+      border-radius: 1.25rem;
+    }
+    .landing-content {
+      flex: 0 1 auto;
+      width: 100%;
+      gap: 0.8rem;
+    }
+    .landing-copy {
+      text-align: center;
     }
     .landing-title {
-      font-size: 1.6rem;
+      font-size: 1.45rem;
+    }
+    .landing-subtitle {
+      font-size: 0.92rem;
+      margin-top: -0.35rem;
     }
     .landing-search-box {
-      flex-direction: column;
+      flex-direction: row;
     }
     .landing-input-wrap {
-      width: 100%;
+      min-width: 0;
     }
     .landing-search-btn {
-      width: 100%;
-      justify-content: center;
+      width: 3rem;
+      padding: 0;
     }
+    .landing-search-btn-icon { display: block; }
+    .landing-search-btn-label { display: none; }
     .landing-discover {
-      padding: 1.25rem 1rem 2rem;
+      padding: 0.75rem 1rem 2rem;
     }
   }
 
