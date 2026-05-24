@@ -289,6 +289,9 @@
             </div>
           {/if}
           <ActiveFilters />
+          <div class="mobile-sidebar-shell">
+            <SearchPageSidebar />
+          </div>
         </div>
 
         <div
@@ -563,7 +566,7 @@
       flex-direction: column;
       gap: 0.6rem;
       overflow: visible;
-      max-height: 40rem; /* suffisamment grand */
+      max-height: none;
       transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1),
                   opacity 200ms ease,
                   margin-top 200ms ease;
@@ -577,6 +580,24 @@
       opacity: 0;
       margin-top: 0;
       pointer-events: none;
+    }
+  }
+
+  .mobile-sidebar-shell {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .mobile-sidebar-shell {
+      display: block;
+      overflow: visible;
+      border: 1px solid theme('colors.interface.border-primary');
+      border-radius: 0.75rem;
+      background: theme('colors.interface.bg-secondary');
+    }
+
+    .mobile-sidebar-shell :global(.sps) {
+      padding: 14px 14px 16px;
     }
   }
 
