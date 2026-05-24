@@ -2,6 +2,8 @@
 <script>
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
+  import { fly } from 'svelte/transition';
+  import { cubicIn, cubicOut } from 'svelte/easing';
   import ExercisePreview from '$lib/components/ExercisePreview.svelte';
   import EmptyState from '$lib/components/search/EmptyState.svelte';
   import BreadcrumbNav from '$lib/components/search/BreadcrumbNav.svelte';
@@ -36,6 +38,36 @@
   let isDesktop = false;
   let filtersExpanded = true;
   let manualCardMode = 'auto'; // auto | compact | detailed
+
+  // ── Landing ────────────────────────────────────────────────────
+  let localLandingQuery = '';
+  $: isLanding = !$hasSearched;
+  $: if (!$hasSearched) localLandingQuery = '';
+
+  const popularQueries = [
+    'intégrale par parties',
+    'suites récurrentes',
+    'espaces vectoriels',
+    'probabilités conditionnelles',
+    'séries entières'
+  ];
+
+  function handleLandingSearch() {
+    const q = localLandingQuery.trim();
+    if (!q) return;
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'instant' });
+    searchQuery.set(q);
+  }
+
+  function handlePopularQuery(query) {
+    localLandingQuery = query;
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'instant' });
+    searchQuery.set(query);
+  }
+
+  function focusInput(node) {
+    node.focus();
+  }
 
   // debouncedSearch supprimé — SearchSemantic gère son propre dispatch FTS/hybride.
 
@@ -245,202 +277,246 @@
 </svelte:head>
 
 <div class="search-page">
-  <!-- ── Sticky search hero band ──────────────────────────────── -->
-  <div class="search-hero-band">
-    <div class="search-hero-inner">
-      <SearchSemantic
-        canTogglePreview={canTogglePreview && !isDesktop}
-        previewToggleLabel={previewToggleLabel}
+  {#if isLanding}
+    <!-- ── Landing hero ──────────────────────────────────────────── -->
+    <section
+      class="landing-hero"
+      out:fly={{ y: -60, duration: 350, easing: cubicIn }}
+    >
+      <div class="landing-hero-inner">
+        <h1 class="landing-title">Trouvez l'exercice qu'il vous faut</h1>
+        <p class="landing-subtitle">Plus de 5 000 exercices de mathématiques, librement accessibles</p>
+
+        <div class="landing-search-box">
+          <div class="landing-input-wrap">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="landing-search-icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input
+              type="search"
+              bind:value={localLandingQuery}
+              on:keydown={(e) => { if (e.key === 'Enter') handleLandingSearch(); }}
+              placeholder="Cherche un exercice, une notion, un théorème…"
+              aria-label="Rechercher des exercices"
+              use:focusInput
+            />
+          </div>
+          <button class="landing-search-btn" on:click={handleLandingSearch}>
+            Rechercher
+          </button>
+        </div>
+
+        <div class="popular-row">
+          <span class="popular-label">Populaires :</span>
+          {#each popularQueries as pq}
+            <button class="popular-chip" on:click={() => handlePopularQuery(pq)}>{pq}</button>
+          {/each}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Landing carousel ───────────────────────────────────────── -->
+    <div class="landing-discover">
+      <RandomExercisesCarousel
+        selectedUuid={$previewState.selectedUuid}
         isPreviewOpen={$previewState.isOpen}
-        onTogglePreview={toggleMobilePreview}
-        {filtersExpanded}
-        {activeFilterCount}
-        onToggleExpanded={() => (filtersExpanded = !filtersExpanded)}
+        on:select={(event) => selectExercise(event.detail.exercise)}
       />
-
-      <div class="desktop-meta-shell">
-        <ActiveFilters />
-      </div>
     </div>
-  </div>
 
-  <!-- ── Body ─────────────────────────────────────────────────── -->
-  <div class="search-body">
-    <div class="search-page-grid" class:search-page-grid--preview-open={isDesktop && $previewPanelOpen}>
-
-      <!-- Sidebar filtres (desktop uniquement) -->
-      <div class="sidebar-shell" class:sidebar-shell--collapsed={!filtersExpanded}>
-        <SearchPageSidebar />
-      </div>
-
-      <div class="search-page-main">
-
-        <!-- Bloc filtres actifs (mobile uniquement) -->
-        <div class="mobile-filter-block" class:mobile-filter-block--collapsed={!filtersExpanded}>
-          {#if browser}
-            <div class="mfb-section">
-              <span class="mfb-section-label">Filtrer par</span>
-              <BreadcrumbNav
-                query={$searchQuery}
-                filters={$filters}
-                resultPathCounts={$resultPathCounts}
-                on:navigate={handleChapterNavigation}
-              />
-            </div>
-          {/if}
-          <ActiveFilters />
-          <div class="mobile-sidebar-shell">
-            <SearchPageSidebar />
-          </div>
-        </div>
-
-        <div
-          class="results-section flex-1"
-          style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}
-        >
-        {#if $error}
-        <div class="search-error">
-          <p class="search-error-text">{$error}</p>
-        </div>
-      {/if}
-
-      {#if $loading && !$hasResults}
-        <div class="text-center py-10">
-          <p class="text-interface-text-muted">Recherche en cours...</p>
-        </div>
-      {:else if $hasResults}
-        <div class="results-header mb-4">
-          <div class="results-header-row1">
-            <h2 class="results-title">
-              {#if canLoadMore}
-                {$results.length} résultat{$results.length > 1 ? 's' : ''} affichés
-                {#if $searchMeta?.pagination?.totalCount}
-                  <span class="results-title-total">sur {$searchMeta.pagination.totalCount}</span>
-                {/if}
-              {:else}
-                {$searchMeta?.pagination?.totalCount || $results.length}
-                résultat{($searchMeta?.pagination?.totalCount || $results.length) > 1 ? 's' : ''} trouvé{($searchMeta?.pagination?.totalCount || $results.length) > 1 ? 's' : ''}
-              {/if}
-            </h2>
-            {#if canLoadMore}
-              <button
-                type="button"
-                class="load-more-header-btn"
-                on:click={searchActions.loadMore}
-                disabled={$loadingMore}
-              >
-                {$loadingMore ? 'Chargement…' : 'Afficher plus de résultats'}
-              </button>
-            {/if}
-            <div class="view-mode-toggle" role="group" aria-label="Mode d'affichage des cartes">
-              <button
-                type="button"
-                class={`view-mode-btn ${manualCardMode === 'auto' ? 'view-mode-btn--active' : ''}`}
-                on:click={() => (manualCardMode = 'auto')}
-                title={`Mode auto (${autoCardMode === 'compact' ? 'compact' : 'détaillé'})`}
-              >
-                Auto
-              </button>
-              <button
-                type="button"
-                class={`view-mode-btn ${cardMode === 'compact' && manualCardMode !== 'auto' ? 'view-mode-btn--active' : ''}`}
-                on:click={() => (manualCardMode = 'compact')}
-                title="Mode compact"
-              >
-                ▦
-              </button>
-              <button
-                type="button"
-                class={`view-mode-btn ${cardMode === 'detailed' && manualCardMode !== 'auto' ? 'view-mode-btn--active' : ''}`}
-                on:click={() => (manualCardMode = 'detailed')}
-                title="Mode détaillé"
-              >
-                ☰
-              </button>
-            </div>
-          </div>
-          <div class="sort-control">
-            <label class="sort-label" for="search-sort-select">Trier par</label>
-            <div class="sort-select-group">
-              <select
-                id="search-sort-select"
-                class="sort-select"
-                bind:value={sortSelection}
-                on:change={handleSortChange}
-              >
-                {#each sortOptions as option}
-                  <option value={option.value}>{option.label}</option>
-                {/each}
-              </select>
-              <button
-                type="button"
-                class="sort-direction-button"
-                on:click={toggleSortDirection}
-                aria-label={`Basculer en ordre ${sortDirection === 'asc' ? 'décroissant' : 'croissant'}`}
-                title={`Basculer en ordre ${sortDirection === 'asc' ? 'décroissant' : 'croissant'}`}
-                disabled={sortSelection === 'relevance'}
-              >
-                {sortDirectionIcon}
-              </button>
-            </div>
-          </div>
-        </div>
-        <ResultsGrid
-          results={$results}
-          activeFilters={$filters}
-          {cardMode}
-          compactColumns={manualCardMode === 'compact' ? 'force' : 'auto'}
-          selectedUuid={$previewState.selectedUuid}
+  {:else}
+    <!-- ── Sticky search hero band ──────────────────────────────── -->
+    <div
+      class="search-hero-band"
+      in:fly={{ y: -30, duration: 300, easing: cubicOut }}
+    >
+      <div class="search-hero-inner">
+        <SearchSemantic
+          canTogglePreview={canTogglePreview && !isDesktop}
+          previewToggleLabel={previewToggleLabel}
           isPreviewOpen={$previewState.isOpen}
-          onSelect={selectExercise}
-          hasMore={canLoadMore}
-          onLoadMore={searchActions.loadMore}
-          loadingMore={$loadingMore}
+          onTogglePreview={toggleMobilePreview}
+          {filtersExpanded}
+          {activeFilterCount}
+          onToggleExpanded={() => (filtersExpanded = !filtersExpanded)}
         />
-        <p class="results-keyboard-hint">↑↓ naviguer · Entrée ouvrir · A ajouter · Échap fermer</p>
-      {:else if $hasSearched}
-        <EmptyState
-          title="Aucun exercice trouvé"
-          subtitle="Essayez d'ajuster les filtres ou votre requête."
-        >
-          <button slot="action" on:click={searchActions.clearAllFilters} class="btn btn-primary mt-4">
-            Effacer tous les filtres
-          </button>
-        </EmptyState>
-      {:else}
-        <section class="random-carousel">
-          <RandomExercisesCarousel
-            selectedUuid={$previewState.selectedUuid}
-            isPreviewOpen={$previewState.isOpen}
-            on:select={(event) => selectExercise(event.detail.exercise)}
-          />
-        </section>
-      {/if}
+
+        <div class="desktop-meta-shell">
+          <ActiveFilters />
         </div>
       </div>
+    </div>
 
-      <div class="preview-shell">
-        {#if isDesktop && $previewPanelOpen}
-          <aside class="preview-section" style={`--layout-preview-width: ${$layoutConfig.previewWidth};`}>
-            <div class="preview-sticky">
-              <ExercisePreview />
+    <!-- ── Body ─────────────────────────────────────────────────── -->
+    <div class="search-body">
+      <div class="search-page-grid" class:search-page-grid--preview-open={isDesktop && $previewPanelOpen}>
+
+        <!-- Sidebar filtres (desktop uniquement) -->
+        <div class="sidebar-shell" class:sidebar-shell--collapsed={!filtersExpanded}>
+          <SearchPageSidebar />
+        </div>
+
+        <div class="search-page-main">
+
+          <!-- Bloc filtres actifs (mobile uniquement) -->
+          <div class="mobile-filter-block" class:mobile-filter-block--collapsed={!filtersExpanded}>
+            {#if browser}
+              <div class="mfb-section">
+                <span class="mfb-section-label">Filtrer par</span>
+                <BreadcrumbNav
+                  query={$searchQuery}
+                  filters={$filters}
+                  resultPathCounts={$resultPathCounts}
+                  on:navigate={handleChapterNavigation}
+                />
+              </div>
+            {/if}
+            <ActiveFilters />
+            <div class="mobile-sidebar-shell">
+              <SearchPageSidebar />
             </div>
-          </aside>
-        {/if}
-        {#if isDesktop}
-          <button
-            type="button"
-            class="panel-edge-toggle panel-edge-toggle--preview"
-            aria-label={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
-            title={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
-            on:click={toggleDesktopPreviewPanel}
+          </div>
+
+          <div
+            class="results-section flex-1"
+            style={`--layout-results-width: ${$layoutConfig.resultsWidth};`}
           >
-            {$previewPanelOpen ? '›' : '‹'}
-          </button>
-        {/if}
+            {#if $error}
+              <div class="search-error">
+                <p class="search-error-text">{$error}</p>
+              </div>
+            {/if}
+
+            {#if $loading && !$hasResults}
+              <div class="text-center py-10">
+                <p class="text-interface-text-muted">Recherche en cours...</p>
+              </div>
+            {:else if $hasResults}
+              <div class="results-header mb-4">
+                <div class="results-header-row1">
+                  <h2 class="results-title">
+                    {#if canLoadMore}
+                      {$results.length} résultat{$results.length > 1 ? 's' : ''} affichés
+                      {#if $searchMeta?.pagination?.totalCount}
+                        <span class="results-title-total">sur {$searchMeta.pagination.totalCount}</span>
+                      {/if}
+                    {:else}
+                      {$searchMeta?.pagination?.totalCount || $results.length}
+                      résultat{($searchMeta?.pagination?.totalCount || $results.length) > 1 ? 's' : ''} trouvé{($searchMeta?.pagination?.totalCount || $results.length) > 1 ? 's' : ''}
+                    {/if}
+                  </h2>
+                  {#if canLoadMore}
+                    <button
+                      type="button"
+                      class="load-more-header-btn"
+                      on:click={searchActions.loadMore}
+                      disabled={$loadingMore}
+                    >
+                      {$loadingMore ? 'Chargement…' : 'Afficher plus de résultats'}
+                    </button>
+                  {/if}
+                  <div class="view-mode-toggle" role="group" aria-label="Mode d'affichage des cartes">
+                    <button
+                      type="button"
+                      class={`view-mode-btn ${manualCardMode === 'auto' ? 'view-mode-btn--active' : ''}`}
+                      on:click={() => (manualCardMode = 'auto')}
+                      title={`Mode auto (${autoCardMode === 'compact' ? 'compact' : 'détaillé'})`}
+                    >
+                      Auto
+                    </button>
+                    <button
+                      type="button"
+                      class={`view-mode-btn ${cardMode === 'compact' && manualCardMode !== 'auto' ? 'view-mode-btn--active' : ''}`}
+                      on:click={() => (manualCardMode = 'compact')}
+                      title="Mode compact"
+                    >
+                      ▦
+                    </button>
+                    <button
+                      type="button"
+                      class={`view-mode-btn ${cardMode === 'detailed' && manualCardMode !== 'auto' ? 'view-mode-btn--active' : ''}`}
+                      on:click={() => (manualCardMode = 'detailed')}
+                      title="Mode détaillé"
+                    >
+                      ☰
+                    </button>
+                  </div>
+                </div>
+                <div class="sort-control">
+                  <label class="sort-label" for="search-sort-select">Trier par</label>
+                  <div class="sort-select-group">
+                    <select
+                      id="search-sort-select"
+                      class="sort-select"
+                      bind:value={sortSelection}
+                      on:change={handleSortChange}
+                    >
+                      {#each sortOptions as option}
+                        <option value={option.value}>{option.label}</option>
+                      {/each}
+                    </select>
+                    <button
+                      type="button"
+                      class="sort-direction-button"
+                      on:click={toggleSortDirection}
+                      aria-label={`Basculer en ordre ${sortDirection === 'asc' ? 'décroissant' : 'croissant'}`}
+                      title={`Basculer en ordre ${sortDirection === 'asc' ? 'décroissant' : 'croissant'}`}
+                      disabled={sortSelection === 'relevance'}
+                    >
+                      {sortDirectionIcon}
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ResultsGrid
+                results={$results}
+                activeFilters={$filters}
+                {cardMode}
+                compactColumns={manualCardMode === 'compact' ? 'force' : 'auto'}
+                selectedUuid={$previewState.selectedUuid}
+                isPreviewOpen={$previewState.isOpen}
+                onSelect={selectExercise}
+                hasMore={canLoadMore}
+                onLoadMore={searchActions.loadMore}
+                loadingMore={$loadingMore}
+              />
+              <p class="results-keyboard-hint">↑↓ naviguer · Entrée ouvrir · A ajouter · Échap fermer</p>
+            {:else if $hasSearched}
+              <EmptyState
+                title="Aucun exercice trouvé"
+                subtitle="Essayez d'ajuster les filtres ou votre requête."
+              >
+                <button slot="action" on:click={searchActions.clearAllFilters} class="btn btn-primary mt-4">
+                  Effacer tous les filtres
+                </button>
+              </EmptyState>
+            {/if}
+          </div>
+        </div>
+
+        <div class="preview-shell">
+          {#if isDesktop && $previewPanelOpen}
+            <aside class="preview-section" style={`--layout-preview-width: ${$layoutConfig.previewWidth};`}>
+              <div class="preview-sticky">
+                <ExercisePreview />
+              </div>
+            </aside>
+          {/if}
+          {#if isDesktop}
+            <button
+              type="button"
+              class="panel-edge-toggle panel-edge-toggle--preview"
+              aria-label={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
+              title={$previewPanelOpen ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation'}
+              on:click={toggleDesktopPreviewPanel}
+            >
+              {$previewPanelOpen ? '›' : '‹'}
+            </button>
+          {/if}
+        </div>
       </div>
     </div>
-  </div>
+  {/if}
 </div>
 
 
@@ -452,6 +528,151 @@
   .search-page {
     min-height: 100vh;
     background: theme('colors.interface.bg-primary');
+  }
+
+  /* ── Landing hero ───────────────────────────────────────────── */
+  .landing-hero {
+    background: theme('colors.interface.bg-secondary');
+    border-bottom: 1px solid theme('colors.interface.border-primary');
+    padding: 72px 24px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .landing-hero-inner {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .landing-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    @apply text-interface-text-primary;
+  }
+
+  .landing-subtitle {
+    font-size: 1rem;
+    margin-top: -0.5rem;
+    @apply text-interface-text-secondary;
+  }
+
+  .landing-search-box {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .landing-input-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    gap: 0.5rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    @apply border border-interface-border-primary bg-interface-bg-white;
+  }
+
+  .landing-input-wrap:focus-within {
+    @apply border-brand-400;
+    box-shadow: 0 0 0 3px theme('colors.brand.100');
+  }
+
+  .landing-search-icon {
+    flex-shrink: 0;
+    @apply text-interface-text-muted;
+  }
+
+  .landing-input-wrap input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    background: transparent;
+    min-width: 0;
+    @apply text-interface-text-primary;
+  }
+
+  .landing-input-wrap input::placeholder {
+    @apply text-interface-text-muted;
+  }
+
+  .landing-search-btn {
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background-color 0.15s;
+    @apply bg-brand-600 text-white border border-brand-600;
+  }
+
+  .landing-search-btn:hover {
+    @apply bg-brand-700 border-brand-700;
+  }
+
+  .popular-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .popular-label {
+    font-size: 0.875rem;
+    @apply text-interface-text-secondary;
+  }
+
+  .popular-chip {
+    padding: 0.35rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+    @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary;
+  }
+
+  .popular-chip:hover {
+    @apply bg-brand-50 border-brand-200 text-brand-700;
+  }
+
+  .landing-discover {
+    padding: 2rem 2rem 3rem;
+  }
+
+  @media (max-width: 640px) {
+    .landing-hero {
+      padding: 48px 20px 40px;
+    }
+    .landing-title {
+      font-size: 1.6rem;
+    }
+    .landing-search-box {
+      flex-direction: column;
+    }
+    .landing-input-wrap {
+      width: 100%;
+    }
+    .landing-search-btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .landing-discover {
+      padding: 1.25rem 1rem 2rem;
+    }
   }
 
   /* ── Hero band ──────────────────────────────────────────────── */

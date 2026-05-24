@@ -356,8 +356,9 @@
     const u = $page.url;
     const urlQ    = u.searchParams.get('q') || '';
     const urlMode = u.searchParams.get('mode') || '';
+    const storeQ  = get(searchQuery);
 
-    if (urlQ && !get(searchQuery)) searchQuery.set(urlQ);
+    if (urlQ && !storeQ) searchQuery.set(urlQ);
     if (urlMode === 'hybrid') mode = 'hybrid';
 
     const level      = u.searchParams.get('level')      || '';
@@ -369,7 +370,8 @@
       filters.update(f => ({ ...f, level, chapter, subchapter, module: module_ }));
     }
 
-    if (urlQ || hasUrlFilters) {
+    const effectiveQ = urlQ || storeQ;
+    if (effectiveQ || hasUrlFilters) {
       if (urlMode === 'hybrid') runHybrid();
       else                      runFts();
     }

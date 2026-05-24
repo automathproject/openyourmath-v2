@@ -74,17 +74,30 @@
   function handleSelect(exercise) {
     dispatch('select', { exercise });
   }
+
+  function scrollPrev() {
+    if (!carouselTrack) return;
+    const cardWidth = carouselTrack.firstElementChild?.getBoundingClientRect().width || 300;
+    carouselTrack.scrollBy({ left: -(cardWidth + 16), behavior: 'smooth' });
+  }
+
+  function scrollNext() {
+    if (!carouselTrack) return;
+    const cardWidth = carouselTrack.firstElementChild?.getBoundingClientRect().width || 300;
+    carouselTrack.scrollBy({ left: cardWidth + 16, behavior: 'smooth' });
+  }
 </script>
 
 <section class="random-carousel">
   <div class="random-carousel__header">
     <div>
-      <h2 class="random-carousel__title">Envie de piocher au hasard ?</h2>
-      <p class="random-carousel__subtitle">Faites défiler horizontalement ces propositions sélectionnées aléatoirement.</p>
+      <h2 class="random-carousel__title">À découvrir</h2>
+      <p class="random-carousel__subtitle">Une sélection aléatoire parmi nos exercices</p>
     </div>
-    <button class="btn btn-secondary" on:click={loadRandomExercises} disabled={randomLoading}>
-      {randomLoading ? 'Chargement…' : 'Nouveau tirage'}
-    </button>
+    <div class="random-carousel__nav">
+      <button class="carousel-nav-btn" on:click={scrollPrev} aria-label="Précédent" disabled={randomLoading}>←</button>
+      <button class="carousel-nav-btn" on:click={scrollNext} aria-label="Suivant" disabled={randomLoading}>→</button>
+    </div>
   </div>
 
   {#if randomError}
@@ -109,6 +122,7 @@
         <div class="random-carousel__item">
           <ResultCard
             {exercise}
+            simplified={true}
             isSelected={isPreviewOpen && selectedUuid === exercise.uuid}
             on:select={() => handleSelect(exercise)}
           />
@@ -120,17 +134,11 @@
 
 <style>
   .random-carousel {
-    margin-top: 0.5rem;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    @apply border border-interface-border-primary bg-interface-bg-white shadow-sm;
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0;
   }
   .random-carousel__header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
@@ -143,8 +151,31 @@
   }
   .random-carousel__subtitle {
     margin-top: 0.25rem;
-    font-size: 0.95rem;
-    @apply text-interface-text-secondary;
+    font-size: 0.875rem;
+    @apply text-interface-text-muted;
+  }
+  .random-carousel__nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .carousel-nav-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s;
+    @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary;
+  }
+  .carousel-nav-btn:hover:not(:disabled) {
+    @apply bg-interface-bg-tertiary text-interface-text-primary;
+  }
+  .carousel-nav-btn:disabled {
+    @apply opacity-40 cursor-not-allowed;
   }
   .random-carousel__track {
     display: flex;

@@ -11,6 +11,7 @@
   export let activeFilters = {};
   export let cardMode = 'detailed'; // 'detailed' | 'compact'
   export let isSelected = false;
+  export let simplified = false;
 
   const dispatch = createEventDispatcher();
   let cardEl;
@@ -147,7 +148,7 @@
   {/if}
 
   {#if !isCompact}
-    <div class="result-footer">
+    <div class="result-footer" class:result-footer--simplified={simplified}>
       <!-- Left: author / org / dates -->
       <div class="result-footer-left">
         {#if exercise.author}
@@ -156,6 +157,7 @@
             licenseCode={exercise.license_code}
             licenseUrl={exercise.license_url}
             email={exercise.author_email || exercise.authorEmail || ''}
+            icon={simplified ? '' : undefined}
             variant="footer"
             className="result-footer-item"
           />
@@ -164,25 +166,27 @@
           <span class="result-footer-sep">•</span>
         {/if}
         {#if exercise.organization}
-          <span class="result-footer-item">🏛️ {exercise.organization}</span>
+          <span class="result-footer-item">{simplified ? '' : '🏛️ '}{exercise.organization}</span>
         {/if}
         {#if hasDates && createdAtLabel}
           {#if hasFooterInfo}<span class="result-footer-sep">·</span>{/if}
           <span class="result-date-text">{createdAtLabel}</span>
         {/if}
       </div>
-      <!-- Right: actions -->
-      <div class="rc-footer-actions" on:click|stopPropagation>
-        <AddToListButton {exercise} size="small" variant="button" />
-        <button
-          type="button"
-          class="rc-footer-open"
-          on:click={openExternal}
-          aria-label="Ouvrir l'exercice"
-        >
-          Ouvrir →
-        </button>
-      </div>
+      <!-- Right: actions (masqués en mode simplifié) -->
+      {#if !simplified}
+        <div class="rc-footer-actions" on:click|stopPropagation>
+          <AddToListButton {exercise} size="small" variant="button" />
+          <button
+            type="button"
+            class="rc-footer-open"
+            on:click={openExternal}
+            aria-label="Ouvrir l'exercice"
+          >
+            Ouvrir →
+          </button>
+        </div>
+      {/if}
     </div>
   {/if}
 </div>
@@ -292,6 +296,10 @@
     gap: 0.5rem;
     font-size: 0.78rem;
     @apply border-t border-interface-border-primary text-interface-text-muted;
+  }
+  .result-footer--simplified {
+    font-size: 0.72rem;
+    opacity: 0.7;
   }
   .result-footer-left {
     display: flex;
