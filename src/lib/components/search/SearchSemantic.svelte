@@ -285,6 +285,18 @@
   //   searchActions.search = (...args) => (_searchHandler ?? _defaultSearch)(...args);
   // Ce composant appellerait alors searchActions.setSearchHandler(ourSearch) au montage
   // et searchActions.setSearchHandler(null) à la destruction.
+  // ── Bascule de mode (appelée par le toggle dans SearchToolbar) ────────────
+  function handleToggleMode(targetMode) {
+    if (targetMode === 'hybrid' && mode !== 'hybrid') {
+      runHybrid();
+    } else if (targetMode === 'fts' && mode !== 'fts') {
+      mode = 'fts';
+      timingInfo = null;
+      showSuggest = false;
+      runFts();
+    }
+  }
+
   // Charger plus de résultats hybrides : augmente la limite et relance.
   // Les résultats remplacent la liste courante (pas d'append) car le reranking
   // est global — les rangs 21-40 peuvent différer d'une exécution à l'autre.
@@ -335,12 +347,17 @@
   });
 </script>
 
-<!-- ── Barre de recherche (SearchToolbar existant, réutilisé tel quel) ──────── -->
+<!-- ── Barre de recherche ────────────────────────────────────────────────── -->
 <SearchToolbar
   searchQueryStore={searchQuery}
   onSearchInput={handleSearchInput}
   loading={$loading || hybridLoading}
   hasResults={$results.length > 0}
+  showEnterHint={mode === 'fts' && !!$searchQuery}
+  searchMode={mode}
+  modeLoading={hybridLoading}
+  onToggleMode={handleToggleMode}
+  suggestIA={showSuggest}
   {filtersExpanded}
   {onToggleExpanded}
   {canTogglePreview}
@@ -348,40 +365,6 @@
   {isPreviewOpen}
   {onTogglePreview}
 />
-
-<!-- ── Barre de mode (badge + suggestion hybride) ─────────────────────────── -->
-<div class="mode-bar" class:mode-bar--visible={hybridLoading || mode === 'hybrid' || showSuggest || ($results.length > 0 && mode === 'fts' && !$loading)}>
-
-  {#if hybridLoading}
-    <span class="mode-badge mode-badge--loading" role="status" aria-live="polite">
-      <span class="mode-spinner" aria-hidden="true"></span>
-      Recherche intelligente…
-    </span>
-
-  {:else if mode === 'hybrid'}
-    <span class="mode-badge mode-badge--hybrid" title="Résultats fusionnés : BM25 + vectoriel + rerank Albert">
-      Hybride
-    </span>
-    <button type="button" class="mode-link" on:click={() => { mode = 'fts'; runFts(); }}>
-      Mode rapide
-    </button>
-
-  {:else if showSuggest}
-    <span class="mode-hint">Aucun résultat exact —</span>
-    <button type="button" class="mode-link mode-link--suggest" on:click={runHybrid}>
-      Essayer la recherche intelligente
-    </button>
-
-  {:else if $results.length > 0 && mode === 'fts' && !$loading}
-    <span class="mode-badge mode-badge--fts" title="Recherche textuelle BM25 — Appuyez sur Entrée pour la version sémantique">
-      Rapide
-    </span>
-    <button type="button" class="mode-link" on:click={runHybrid} title="Relancer avec IA sémantique + rerank">
-      Recherche intelligente
-    </button>
-  {/if}
-
-</div>
 
 <!-- ── Panneau debug timing (affiché uniquement si ?debug=true) ────────────── -->
 {#if debugMode && timingInfo && mode === 'hybrid'}
@@ -395,84 +378,6 @@
 {/if}
 
 <style>
-  /* ── Barre de mode ─────────────────────────────────────────────────────── */
-  .mode-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    min-height: 1.5rem;
-    margin-top: 0.3rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 150ms ease;
-  }
-  .mode-bar--visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .mode-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.15rem 0.55rem;
-    border-radius: 9999px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    white-space: nowrap;
-    line-height: 1.6;
-  }
-
-  .mode-badge--fts {
-    @apply bg-sky-50 text-sky-700 border border-sky-200;
-  }
-  .mode-badge--hybrid {
-    @apply bg-violet-100 text-violet-700 border border-violet-200;
-  }
-  .mode-badge--loading {
-    @apply bg-violet-50 text-violet-600 border border-violet-200;
-  }
-
-  .mode-spinner {
-    display: inline-block;
-    width: 0.7rem;
-    height: 0.7rem;
-    border: 1.5px solid transparent;
-    border-bottom-color: currentColor;
-    border-radius: 9999px;
-    animation: modeSpin 0.75s linear infinite;
-    flex-shrink: 0;
-  }
-  @keyframes modeSpin { to { transform: rotate(360deg); } }
-
-  .mode-link {
-    font-size: 0.75rem;
-    color: theme('colors.brand.600', #2563eb);
-    text-decoration: underline;
-    text-decoration-style: dashed;
-    text-underline-offset: 2px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    line-height: 1.5;
-    white-space: nowrap;
-  }
-  .mode-link:hover {
-    color: theme('colors.brand.800', #1e40af);
-    text-decoration-style: solid;
-  }
-  .mode-link--suggest {
-    font-weight: 500;
-  }
-
-  .mode-hint {
-    font-size: 0.8rem;
-    color: #6b7280;
-    white-space: nowrap;
-  }
-
   /* ── Panneau debug ─────────────────────────────────────────────────────── */
   .debug-panel {
     display: flex;

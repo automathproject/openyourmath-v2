@@ -11,6 +11,16 @@
   export let onTogglePreview = () => {};
   export let filtersExpanded = true;
   export let onToggleExpanded = () => {};
+  /** Affiche un badge "↵" dans le champ pour indiquer que Enter déclenche la recherche intelligente */
+  export let showEnterHint = false;
+  /** Mode actuel : 'fts' | 'hybrid' */
+  export let searchMode = 'fts';
+  /** true pendant le chargement hybride */
+  export let modeLoading = false;
+  /** Appelé avec 'fts' ou 'hybrid' quand l'utilisateur bascule */
+  export let onToggleMode = (_mode) => {};
+  /** true quand FTS n'a trouvé aucun résultat → suggère de passer en IA */
+  export let suggestIA = false;
 
   let inputEl;
 
@@ -22,12 +32,19 @@
     if (inputEl) inputEl.focus();
   }
 
-  function handleSubmitKey(event) {
+  function handleInputKeydown(event) {
     const key = event.key;
     if (key === 'Enter' || key === 'Go' || key === 'Search') {
       event.preventDefault();
       onSearchInput();
-      if (inputEl) inputEl.blur();
+      // Pas de blur : l'utilisateur reste dans le champ pour affiner
+    } else if (key === 'Escape') {
+      event.preventDefault();
+      if ($searchQueryStore) {
+        clearSearch();           // Escape efface la requête
+      } else {
+        inputEl?.blur();         // Escape sur champ vide = quitter le focus
+      }
     }
   }
 </script>
@@ -44,13 +61,16 @@
         type="search"
         bind:value={$searchQueryStore}
         on:input={onSearchInput}
-        on:keydown={handleSubmitKey}
-        placeholder="Ex: intégrale, matrice, probabilité..."
-        aria-label="Rechercher"
+        on:keydown={handleInputKeydown}
+        placeholder="Ex: intégrale, matrice, probabilité…"
+        aria-label="Rechercher des exercices"
         bind:this={inputEl}
       />
       {#if loading && !hasResults}
         <div class="search-spinner-wrap"><div class="search-spinner"></div></div>
+      {/if}
+      {#if showEnterHint && $searchQueryStore && !loading}
+        <kbd class="enter-hint" aria-hidden="true" title="Appuyez sur Entrée pour la recherche intelligente">↵</kbd>
       {/if}
       {#if $searchQueryStore}
         <button type="button" class="search-clear-btn" on:click={clearSearch} aria-label="Effacer la recherche">
@@ -59,6 +79,44 @@
           </svg>
         </button>
       {/if}
+    </div>
+
+    <!-- Toggle mode Rapide / IA -->
+    <div class="mode-toggle" role="group" aria-label="Mode de recherche">
+      <button
+        type="button"
+        class="mode-btn"
+        class:mode-btn--active={searchMode === 'fts' && !modeLoading}
+        on:click={() => onToggleMode('fts')}
+        title="Mode rapide — recherche textuelle"
+        aria-pressed={searchMode === 'fts'}
+      >
+        <!-- Éclair -->
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+        <span class="mode-btn-label">Rapide</span>
+      </button>
+      <button
+        type="button"
+        class="mode-btn mode-btn--ia"
+        class:mode-btn--active={searchMode === 'hybrid' && !modeLoading}
+        class:mode-btn--suggest={suggestIA && searchMode !== 'hybrid'}
+        on:click={() => onToggleMode('hybrid')}
+        title="Recherche intelligente — IA sémantique + reranking"
+        aria-pressed={searchMode === 'hybrid'}
+      >
+        {#if modeLoading}
+          <span class="mode-btn-spinner" aria-hidden="true"></span>
+        {:else}
+          <!-- Étincelles -->
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+            <path d="M20 3v4m2-2h-4"/>
+          </svg>
+        {/if}
+        <span class="mode-btn-label">IA</span>
+      </button>
     </div>
 
     <!-- Chevron collapse (mobile uniquement) -->
@@ -149,6 +207,94 @@
     border-bottom-color: theme('colors.brand.600');
   }
   @keyframes toolbarSpin { to { transform: rotate(360deg); } }
+
+  /* ── Toggle mode Rapide / IA ──────────────────────────────────────────── */
+  .mode-toggle {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 2px;
+    gap: 1px;
+    border-radius: 0.6rem;
+    @apply bg-interface-bg-tertiary border border-interface-border-primary;
+  }
+
+  .mode-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.28rem;
+    padding: 0.32rem 0.55rem;
+    border-radius: 0.42rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s, box-shadow 0.12s;
+    white-space: nowrap;
+    @apply text-interface-text-muted;
+  }
+  .mode-btn:hover:not(.mode-btn--active) {
+    @apply bg-interface-bg-secondary text-interface-text-secondary;
+  }
+  .mode-btn--active {
+    @apply bg-interface-bg-white text-interface-text-primary;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+  }
+  .mode-btn--ia.mode-btn--active {
+    @apply bg-brand-600 text-white;
+  }
+  .mode-btn--suggest:not(.mode-btn--active) {
+    @apply text-brand-600;
+    animation: suggestPulse 2s ease-in-out infinite;
+  }
+  @keyframes suggestPulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.6; }
+  }
+
+  .mode-btn-label {
+    display: none;
+  }
+  @media (min-width: 500px) {
+    .mode-btn-label { display: inline; }
+  }
+
+  .mode-btn-spinner {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border: 1.5px solid transparent;
+    border-bottom-color: currentColor;
+    border-radius: 9999px;
+    animation: btnSpin 0.75s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes btnSpin { to { transform: rotate(360deg); } }
+
+  /* Masquer le bouton natif "×" des navigateurs pour type="search" */
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .enter-hint {
+    flex-shrink: 0;
+    font-family: ui-monospace, monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 2px 5px 3px;
+    border-radius: 4px;
+    color: theme('colors.interface.text-muted');
+    background: theme('colors.interface.bg-tertiary');
+    border: 1px solid theme('colors.interface.border-primary');
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
 
   .search-clear-btn {
     flex-shrink: 0;
