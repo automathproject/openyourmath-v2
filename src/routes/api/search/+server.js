@@ -58,9 +58,6 @@ export async function GET(event) {
   const rawQ  = url.searchParams.get('q') ?? '';
   const q     = rawQ.trim();
 
-  if (!q) {
-    throw error(400, { message: 'Paramètre q requis' });
-  }
   if (q.length > 500) {
     throw error(400, { message: 'Paramètre q trop long (max 500 caractères)' });
   }
@@ -123,6 +120,16 @@ export async function GET(event) {
       if (v === '1' || v === 'true')  filters[key] = true;
       else if (v === '0' || v === 'false') filters[key] = false;
     }
+  }
+
+  const hasEffectiveFilters = Object.keys(filters).some((key) => key !== 'sort');
+  if (!q && !hasEffectiveFilters) {
+    throw error(400, { message: 'Paramètre q ou filtre requis' });
+  }
+
+  if (!q) {
+    semantic = false;
+    rerankEnabled = false;
   }
 
   // ── Quota Albert → dégradation gracieuse ─────────────────────────────────

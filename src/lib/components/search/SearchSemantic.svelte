@@ -90,6 +90,25 @@
     return p;
   }
 
+  function hasEffectiveFilterCriteria(f) {
+    return Boolean(
+      f?.chapter ||
+      f?.subchapter ||
+      f?.level ||
+      f?.difficulty ||
+      f?.module ||
+      f?.author ||
+      f?.organization ||
+      f?.createdFrom ||
+      f?.createdTo ||
+      f?.updatedFrom ||
+      f?.updatedTo ||
+      (f?.hasSolution != null && f.hasSolution !== '') ||
+      (f?.hasIndication != null && f.hasIndication !== '') ||
+      (f?.hasVideo != null && f.hasVideo !== '')
+    );
+  }
+
   // ── Synchronisation URL ────────────────────────────────────────────────────
   function syncUrl() {
     const q = get(searchQuery).trim();
@@ -111,8 +130,9 @@
   // ── Mode FTS (rapide) ──────────────────────────────────────────────────────
   async function runFts() {
     const q = get(searchQuery).trim();
+    const hasFilters = hasEffectiveFilterCriteria(get(filters));
 
-    if (!q) {
+    if (!q && !hasFilters) {
       results.set([]);
       searchMeta.set(null);
       error.set(null);
@@ -172,7 +192,12 @@
   // ── Mode hybride (intelligent) ─────────────────────────────────────────────
   async function runHybrid(targetLimit = hybridLimit) {
     const q = get(searchQuery).trim();
-    if (!q) return;
+    if (!q) {
+      mode = 'fts';
+      timingInfo = null;
+      showSuggest = false;
+      return runFts();
+    }
 
     // Cache — même requête + mêmes filtres + même limite → pas de nouvel appel réseau
     const cacheKey = q + '|' + JSON.stringify(get(filters)) + '|' + targetLimit;
@@ -255,11 +280,7 @@
         runHybrid();
       } else {
         mode = 'fts';
-        results.set([]);
-        searchMeta.set(null);
-        error.set(null);
-        showSuggest = false;
-        syncUrl();
+        runFts();
       }
     }
   }
@@ -330,11 +351,12 @@
     const chapter    = u.searchParams.get('chapter')    || '';
     const subchapter = u.searchParams.get('subchapter') || '';
     const module_    = u.searchParams.get('module')     || '';
-    if (level || chapter || subchapter || module_) {
+    const hasUrlFilters = Boolean(level || chapter || subchapter || module_);
+    if (hasUrlFilters) {
       filters.update(f => ({ ...f, level, chapter, subchapter, module: module_ }));
     }
 
-    if (urlQ) {
+    if (urlQ || hasUrlFilters) {
       if (urlMode === 'hybrid') runHybrid();
       else                      runFts();
     }
