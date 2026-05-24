@@ -87,7 +87,7 @@
   // FTS expose pagination.hasMore ; hybride expose hasMore directement à la racine du méta.
   $: canLoadMore = Boolean($searchMeta?.pagination?.hasMore ?? $searchMeta?.hasMore);
   $: previewToggleLabel = $layoutConfig.showPreviewPanel ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation';
-  $: autoCardMode = $previewPanelOpen ? 'compact' : 'detailed';
+  $: autoCardMode = isDesktop && $previewPanelOpen ? 'compact' : 'detailed';
   $: cardMode = manualCardMode === 'auto' ? autoCardMode : manualCardMode;
 
   const sortOptions = [
