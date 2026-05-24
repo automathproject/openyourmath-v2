@@ -1,6 +1,7 @@
 <!-- src/routes/+page.svelte -->
 <script>
   import { onMount } from 'svelte';
+  import { get } from 'svelte/store';
   import { browser } from '$app/environment';
   import { fly } from 'svelte/transition';
   import { cubicIn, cubicOut } from 'svelte/easing';
@@ -101,6 +102,25 @@
 
   function selectExercise(exercise) {
     previewActions.selectExercise(exercise.uuid);
+  }
+
+  function handleCarouselSelect(exercise) {
+    // Applique un filtre contextuel pour sortir du landing et alimenter les résultats
+    if (exercise.module) {
+      searchActions.updateFilter('module', exercise.module);
+    } else if (exercise.level) {
+      searchActions.updateFilter('level', exercise.level);
+    } else {
+      searchQuery.set(exercise.title || '');
+    }
+    // Lance la recherche via le store (SearchSemantic n'est pas encore monté)
+    searchActions.search();
+    // Sélectionne l'exercice pour la prévisualisation
+    previewActions.selectExercise(exercise.uuid);
+    // Ouvre le panneau de prévisualisation sur desktop s'il est fermé
+    if (isDesktop && !get(previewPanelOpen)) {
+      uiActions.togglePreviewPanel();
+    }
   }
 
   function toggleDesktopPreviewPanel() {
@@ -320,7 +340,7 @@
       <RandomExercisesCarousel
         selectedUuid={$previewState.selectedUuid}
         isPreviewOpen={$previewState.isOpen}
-        on:select={(event) => selectExercise(event.detail.exercise)}
+        on:select={(event) => handleCarouselSelect(event.detail.exercise)}
       />
     </div>
 
