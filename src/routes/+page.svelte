@@ -248,14 +248,6 @@
   <!-- ── Sticky search hero band ──────────────────────────────── -->
   <div class="search-hero-band">
     <div class="search-hero-inner">
-      <div class="search-hero-bc">
-        <span>Recherche</span>
-        {#if $searchQuery}
-          <span class="search-hero-bc-sep">›</span>
-          <span class="search-hero-bc-query">{$searchQuery}</span>
-        {/if}
-      </div>
-
       <SearchSemantic
         canTogglePreview={canTogglePreview && !isDesktop}
         previewToggleLabel={previewToggleLabel}
@@ -591,7 +583,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
-      overflow: hidden;
+      overflow: visible;
       max-height: 40rem; /* suffisamment grand */
       transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1),
                   opacity 200ms ease,
@@ -602,6 +594,7 @@
 
     .mobile-filter-block--collapsed {
       max-height: 0;
+      overflow: hidden;
       opacity: 0;
       margin-top: 0;
       pointer-events: none;

@@ -246,7 +246,7 @@
 <style>
   .breadcrumb-nav {
     position: relative;
-    z-index: 45;
+    z-index: 80;
     margin-bottom: 1rem;
     border-radius: 0.75rem;
     padding: 0.7rem 0.9rem;
@@ -285,6 +285,18 @@
     padding: 0.35rem;
     z-index: 60;
     @apply border border-interface-border-primary bg-interface-bg-white shadow-lg;
+  }
+  @media (max-width: 640px) {
+    .breadcrumb-nav {
+      overflow: visible;
+    }
+    .crumb-menu {
+      left: 0;
+      right: 0;
+      min-width: 0;
+      width: 100%;
+      max-height: min(18rem, 46vh);
+    }
   }
   .crumb-item {
     display: block;
