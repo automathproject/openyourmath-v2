@@ -462,29 +462,7 @@
   .search-hero-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 16px 40px 14px;
-  }
-  .search-hero-bc {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: theme('colors.interface.text-muted');
-    margin-bottom: 10px;
-  }
-  .search-hero-bc-sep { color: theme('colors.interface.border-secondary'); }
-  .search-hero-bc-query {
-    color: theme('colors.interface.text-secondary');
-    font-weight: 500;
-    letter-spacing: 0;
-    text-transform: none;
-    max-width: 280px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    padding: 12px 40px;
   }
 
   /* ── Body ───────────────────────────────────────────────────── */
