@@ -259,7 +259,7 @@
     <div class="search-page-grid" class:search-page-grid--preview-open={isDesktop && $previewPanelOpen}>
 
       <!-- Sidebar filtres (desktop uniquement) -->
-      <div class="sidebar-shell">
+      <div class="sidebar-shell" class:sidebar-shell--collapsed={!filtersExpanded}>
         <SearchPageSidebar />
       </div>
 
@@ -502,6 +502,29 @@
   /* ── Sidebar filtres ─────────────────────────────────────────── */
   .sidebar-shell {
     display: none;
+  }
+  @media (min-width: 641px) and (max-width: 1023px) {
+    .sidebar-shell {
+      display: block;
+      overflow: hidden;
+      max-height: 52rem;
+      margin-bottom: 1rem;
+      border: 1px solid theme('colors.interface.border-primary');
+      border-radius: 0.75rem;
+      background: theme('colors.interface.bg-secondary');
+      transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 200ms ease,
+                  margin-bottom 200ms ease;
+      opacity: 1;
+    }
+
+    .sidebar-shell--collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin-bottom: 0;
+      pointer-events: none;
+      border-width: 0;
+    }
   }
   @media (min-width: 1024px) {
     .sidebar-shell {

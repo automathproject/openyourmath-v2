@@ -126,8 +126,11 @@
     </div>
 
     <div class="advanced-grid">
-      <label class="advanced-field">
-        <span>Auteur</span>
+      <label class="advanced-field" class:advanced-field--active={draft.author}>
+        <span class="advanced-field__label">
+          Auteur
+          {#if draft.author}<em>Actif</em>{/if}
+        </span>
         <input
           list="advanced-author-list"
           bind:value={draft.author}
@@ -140,8 +143,11 @@
         {/each}
       </datalist>
 
-      <label class="advanced-field">
-        <span>Organisation</span>
+      <label class="advanced-field" class:advanced-field--active={draft.organization}>
+        <span class="advanced-field__label">
+          Organisation
+          {#if draft.organization}<em>Actif</em>{/if}
+        </span>
         <input
           list="advanced-organization-list"
           bind:value={draft.organization}
@@ -312,10 +318,25 @@
     flex-direction: column;
     gap: 0.25rem;
   }
-  .advanced-field span {
+  .advanced-field > span,
+  .advanced-field__label {
     font-size: 0.78rem;
     font-weight: 600;
     @apply text-interface-text-secondary;
+  }
+  .advanced-field__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .advanced-field__label em {
+    font-style: normal;
+    padding: 0.08rem 0.38rem;
+    border-radius: 9999px;
+    font-size: 0.65rem;
+    line-height: 1.2;
+    @apply bg-brand-50 text-brand-700 border border-brand-200;
   }
   .advanced-field input,
   .advanced-field select {
@@ -324,6 +345,9 @@
     border-radius: 0.55rem;
     font-size: 0.86rem;
     @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-primary;
+  }
+  .advanced-field--active input {
+    @apply border-brand-300 bg-brand-50 text-brand-800;
   }
   .advanced-dates {
     margin-top: 0.75rem;

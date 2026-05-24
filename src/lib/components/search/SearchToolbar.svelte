@@ -315,7 +315,7 @@
     color: theme('colors.interface.text-primary');
   }
 
-  /* Bouton chevron collapse — mobile only */
+  /* Bouton chevron collapse — mobile/tablette */
   .collapse-toggle {
     display: inline-flex;
     align-items: center;
@@ -335,7 +335,7 @@
   }
   .collapse-toggle svg.rotated { transform: rotate(180deg); }
 
-  @media (min-width: 641px) {
+  @media (min-width: 1024px) {
     .collapse-toggle { display: none; }
   }
 

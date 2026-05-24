@@ -153,10 +153,16 @@
 
   <!-- Auteur -->
   <div class="sps-section">
-    <div class="sps-overline">Auteur</div>
-    <div class="sps-input-wrap">
+    <div class="sps-overline-row">
+      <div class="sps-overline">Auteur</div>
+      {#if $filters.author}
+        <span class="sps-active-badge">Actif</span>
+      {/if}
+    </div>
+    <div class="sps-input-wrap" class:sps-input-wrap--active={$filters.author}>
       <input
         class="sps-input"
+        class:sps-input--active={$filters.author}
         type="text"
         placeholder="Nom de l'auteur…"
         bind:value={authorInput}
@@ -165,7 +171,7 @@
         on:keydown={(e) => handleTextKey(e, applyAuthor)}
       />
       {#if authorInput}
-        <button type="button" class="sps-input-clear" on:click={() => { authorInput = ''; applyAuthor(); }} aria-label="Effacer">×</button>
+        <button type="button" class="sps-input-clear" on:click={() => { authorInput = ''; applyAuthor(); }} aria-label="Effacer le filtre auteur">×</button>
       {/if}
     </div>
     <datalist id="sps-author-list">
@@ -177,10 +183,16 @@
 
   <!-- Organisation -->
   <div class="sps-section">
-    <div class="sps-overline">Organisation</div>
-    <div class="sps-input-wrap">
+    <div class="sps-overline-row">
+      <div class="sps-overline">Organisation</div>
+      {#if $filters.organization}
+        <span class="sps-active-badge">Actif</span>
+      {/if}
+    </div>
+    <div class="sps-input-wrap" class:sps-input-wrap--active={$filters.organization}>
       <input
         class="sps-input"
+        class:sps-input--active={$filters.organization}
         type="text"
         placeholder="Nom de l'organisation…"
         bind:value={organizationInput}
@@ -189,7 +201,7 @@
         on:keydown={(e) => handleTextKey(e, applyOrganization)}
       />
       {#if organizationInput}
-        <button type="button" class="sps-input-clear" on:click={() => { organizationInput = ''; applyOrganization(); }} aria-label="Effacer">×</button>
+        <button type="button" class="sps-input-clear" on:click={() => { organizationInput = ''; applyOrganization(); }} aria-label="Effacer le filtre organisation">×</button>
       {/if}
     </div>
     <datalist id="sps-org-list">
@@ -210,6 +222,25 @@
     text-transform: uppercase;
     color: theme('colors.interface.text-muted');
     margin-bottom: 10px;
+  }
+  .sps-overline-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .sps-overline-row .sps-overline {
+    margin-bottom: 0;
+  }
+  .sps-active-badge {
+    flex-shrink: 0;
+    padding: 2px 6px;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+    @apply bg-brand-50 text-brand-700 border border-brand-200;
   }
   .sps-hr {
     border: none;
@@ -349,6 +380,16 @@
     display: flex;
     align-items: center;
   }
+  .sps-input-wrap--active::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    z-index: 1;
+    @apply bg-brand-600;
+  }
   .sps-input {
     width: 100%;
     padding: 6px 28px 6px 8px;
@@ -357,6 +398,10 @@
     background: theme('colors.interface.bg-white');
     color: theme('colors.interface.text-primary');
     border: 1.5px solid theme('colors.interface.border-secondary');
+  }
+  .sps-input--active {
+    padding-left: 20px;
+    @apply border-brand-300 bg-brand-50 text-brand-800;
   }
   .sps-input::placeholder { color: theme('colors.interface.text-muted'); }
   .sps-input:focus { outline: none; border-color: theme('colors.brand.500'); }
@@ -370,6 +415,9 @@
     cursor: pointer;
     color: theme('colors.interface.text-muted');
     padding: 2px 4px;
+  }
+  .sps-input--active + .sps-input-clear {
+    color: theme('colors.brand.700');
   }
   .sps-input-clear:hover { color: theme('colors.interface.text-primary'); }
 </style>
