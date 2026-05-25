@@ -27,6 +27,13 @@
     searchActions.search();
   }
 
+  function clearModule() {
+    searchActions.updateFilter('module', '');
+    searchActions.updateFilter('chapter', '');
+    searchActions.updateFilter('subchapter', '');
+    searchActions.search();
+  }
+
   function toggleFlag(key) {
     const cur = $filters[key];
     searchActions.updateFilter(key, cur === '1' ? '' : '1');
@@ -94,9 +101,25 @@
     }
   }
 
-  $: sortedModules = Object.entries($filterCounts?.module ?? {})
-    .filter(([, c]) => c > 0)
-    .sort((a, b) => b[1] - a[1]);
+  $: sortedModules = (() => {
+    const byName = new Map();
+
+    for (const [name, count] of Object.entries($filterCounts?.module ?? {})) {
+      const trimmed = String(name).trim();
+      if (!trimmed || count <= 0) continue;
+      byName.set(trimmed, Number(count) || 0);
+    }
+
+    if ($filters.module && !byName.has($filters.module)) {
+      byName.set($filters.module, 0);
+    }
+
+    return Array.from(byName.entries()).sort((a, b) => {
+      if (a[0] === $filters.module) return -1;
+      if (b[0] === $filters.module) return 1;
+      return (b[1] - a[1]) || a[0].localeCompare(b[0], 'fr', { sensitivity: 'base' });
+    });
+  })();
   $: visibleModules = showAllModules ? sortedModules : sortedModules.slice(0, 6);
   $: hiddenModuleCount = Math.max(0, sortedModules.length - visibleModules.length);
 
@@ -136,7 +159,12 @@
 
   <!-- Module -->
   <div class="sps-section">
-    <div class="sps-overline">Module</div>
+    <div class="sps-overline-row">
+      <div class="sps-overline">Module</div>
+      {#if $filters.module}
+        <button type="button" class="sps-clear-link" on:click={clearModule}>Effacer</button>
+      {/if}
+    </div>
     {#if sortedModules.length > 0}
       <div class="sps-module-list">
         {#each visibleModules as [name, count]}

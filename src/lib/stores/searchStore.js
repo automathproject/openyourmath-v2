@@ -99,6 +99,7 @@ export const hasActiveFilters = derived(
     return !!(
       $searchQuery || 
       $filters.chapter || 
+      $filters.subchapter ||
       $filters.level || 
       $filters.difficulty ||
       $filters.module || 
@@ -185,6 +186,13 @@ function resetPreviewState() {
     isOpen: false
   });
   uiActions.setPreviewPanelOpen(false);
+}
+
+function clearSearchUrl() {
+  if (typeof window === 'undefined') return;
+
+  const nextUrl = `${window.location.pathname}${window.location.hash || ''}`;
+  window.history.replaceState(window.history.state, '', nextUrl);
 }
 
 // Comptages hiérarchiques dérivés des résultats courants (compatibles hybride et FTS).
@@ -306,6 +314,7 @@ export const searchActions = {
 
   // Effacer tous les filtres
   clearAllFilters() {
+    clearSearchUrl();
     searchQuery.set('');
     filters.set({
       chapter: '',

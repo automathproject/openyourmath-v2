@@ -5,7 +5,7 @@
   import ExerciseContent from './ExerciseContent.svelte';
   import AddToListButton from './AddToListButton.svelte';
   import StarsRating from './StarsRating.svelte';
-  import { previewState, layoutActions } from '$lib/stores/searchStore.js';
+  import { previewState } from '$lib/stores/searchStore.js';
 
   let previewContentEl;
   let previewContentInnerEl;
@@ -19,10 +19,6 @@
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return null;
     return date.toLocaleDateString('fr-FR');
-  }
-
-  function hidePanel() {
-    layoutActions.setPreviewPanelVisible(false);
   }
 
   function goToFullPage() {
@@ -178,13 +174,13 @@
     {#if $previewState.exercise}
       <AddToListButton
         exercise={$previewState.exercise}
-        size="small"
-        variant="icon"
+        size="normal"
+        variant="button"
       />
 
       <button
         on:click={goToFullPage}
-        class="preview-btn preview-btn--secondary"
+        class="preview-btn preview-btn--open"
         title="Ouvrir l'exercice"
         aria-label="Ouvrir l'exercice"
       >
@@ -192,16 +188,6 @@
         <span class="preview-btn-label">Ouvrir</span>
       </button>
     {/if}
-
-    <button
-      on:click={hidePanel}
-      class="preview-btn preview-btn--ghost"
-      title="Masquer la prévisualisation"
-      aria-label="Masquer la prévisualisation"
-    >
-      <span class="preview-btn-icon" aria-hidden="true">✕</span>
-      <span class="preview-btn-label">Masquer</span>
-    </button>
   </div>
 </div>
 
@@ -335,10 +321,21 @@
     font-weight:600;
     border:1px solid transparent;
   }
-  .preview-btn--secondary { @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-primary; }
-  .preview-btn--secondary:hover { @apply bg-interface-bg-tertiary; }
-  .preview-btn--ghost { @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary; }
-  .preview-btn--ghost:hover { @apply bg-interface-bg-tertiary text-interface-text-primary; }
+  .preview-btn--open {
+    min-height: 2.25rem;
+    padding: 0.45rem 0.9rem;
+    border-color: #3a8f8f;
+    background: #3a8f8f;
+    color: #ffffff;
+    font-weight: 800;
+    box-shadow: 0 1px 3px rgba(31, 83, 83, 0.14);
+    transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .preview-btn--open:hover {
+    border-color: #2f7373;
+    background: #2f7373;
+    box-shadow: 0 3px 8px rgba(31, 83, 83, 0.2);
+  }
 
   .preview-btn-icon { line-height:1; }
   .preview-content {
@@ -413,6 +410,30 @@
     gap: 0.4rem;
     padding: 0.55rem 0.9rem;
     @apply border-t border-interface-border-primary bg-interface-bg-white;
+  }
+
+  .preview-footer-actions :global(.add-to-list-btn) {
+    min-height: 2.25rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 0.6rem;
+    font-size: 0.84rem;
+    font-weight: 800;
+    box-shadow: 0 1px 3px rgba(26, 40, 16, 0.12);
+    transform: none !important;
+    @apply bg-success-700 border-success-700 text-white;
+  }
+
+  .preview-footer-actions :global(.add-to-list-btn:hover:not(:disabled)) {
+    box-shadow: 0 3px 8px rgba(26, 40, 16, 0.18);
+    @apply bg-success-800 border-success-800 text-white;
+  }
+
+  .preview-footer-actions :global(.add-to-list-btn--in-list) {
+    @apply bg-error-50 border-error-200 text-error-700;
+  }
+
+  .preview-footer-actions :global(.add-to-list-btn--in-list:hover:not(:disabled)) {
+    @apply bg-error-100 border-error-300 text-error-800;
   }
 
   @media (max-width: 1200px) {

@@ -5,6 +5,22 @@
 
   function removeFilterChip(key) {
     switch (key) {
+      case 'level':
+        searchActions.updateFilter('level', '');
+        searchActions.updateFilter('module', '');
+        searchActions.updateFilter('chapter', '');
+        searchActions.updateFilter('subchapter', '');
+        break;
+      case 'module':
+        searchActions.updateFilter('module', '');
+        searchActions.updateFilter('chapter', '');
+        searchActions.updateFilter('subchapter', '');
+        break;
+      case 'chapter':
+        searchActions.updateFilter('chapter', '');
+        searchActions.updateFilter('subchapter', '');
+        break;
+      case 'subchapter':
       case 'difficulty':
       case 'hasSolution':
       case 'hasIndication':
@@ -23,21 +39,16 @@
     searchActions.search();
   }
 
-  function clearAllFilterChips() {
-    searchActions.updateFilter('difficulty', '');
-    searchActions.updateFilter('hasSolution', '');
-    searchActions.updateFilter('hasIndication', '');
-    searchActions.updateFilter('hasVideo', '');
-    searchActions.updateFilter('author', '');
-    searchActions.updateFilter('organization', '');
-    searchActions.updateFilter('createdFrom', '');
-    searchActions.updateFilter('createdTo', '');
-    searchActions.updateFilter('updatedFrom', '');
-    searchActions.updateFilter('updatedTo', '');
-    searchActions.search();
-  }
+  $: pathChips = (() => {
+    const entries = [];
+    if ($filters.level) entries.push({ key: 'level', label: `Niveau : ${$filters.level}` });
+    if ($filters.module) entries.push({ key: 'module', label: `Module : ${$filters.module}` });
+    if ($filters.chapter) entries.push({ key: 'chapter', label: `Chapitre : ${$filters.chapter}` });
+    if ($filters.subchapter) entries.push({ key: 'subchapter', label: `Sous-chapitre : ${$filters.subchapter}` });
+    return entries;
+  })();
 
-  // Chips "structurels" : difficulté, solution, indication, vidéo, dates
+  // Chips "structurels" : chemin, difficulté, solution, indication, vidéo, dates
   $: structuralChips = (() => {
     const entries = [];
     if ($filters.difficulty && $filters.difficulty !== '') {
@@ -58,7 +69,7 @@
 
   $: hasAuthor = Boolean($filters.author);
   $: hasOrganization = Boolean($filters.organization);
-  $: hasAny = structuralChips.length > 0 || hasAuthor || hasOrganization;
+  $: hasAny = pathChips.length > 0 || structuralChips.length > 0 || hasAuthor || hasOrganization;
 </script>
 
 {#if $hasActiveFilters}
@@ -71,6 +82,9 @@
         {#if hasOrganization}
           <Chip variant="info" removable onremove={() => removeFilterChip('organization')}>Organisation : {$filters.organization}</Chip>
         {/if}
+        {#each pathChips as chip}
+          <Chip variant="info" removable onremove={() => removeFilterChip(chip.key)}>{chip.label}</Chip>
+        {/each}
         {#each structuralChips as chip}
           <Chip variant="teal" removable onremove={() => removeFilterChip(chip.key)}>{chip.label}</Chip>
         {/each}

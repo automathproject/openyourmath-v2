@@ -146,23 +146,6 @@
           {/if}
         </div>
 
-        <div class="mobile-preview__actions">
-          {#if currentExercise}
-            <AddToListButton exercise={currentExercise} size="small" variant="icon" />
-            <button
-              type="button"
-              class="mobile-preview__action-btn"
-              on:click={goToFullPage}
-              aria-label="Ouvrir l'exercice"
-              title="Ouvrir l'exercice"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M14 4h6m0 0v6m0-6L10 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-          {/if}
-        </div>
       </div>
     </header>
 
@@ -192,35 +175,54 @@
       {/if}
     </div>
 
-    {#if totalResults > 1}
+    {#if currentExercise || totalResults > 1}
       <footer class="mobile-preview__footer">
-        <div class="mobile-preview__nav" aria-label="Navigation entre les exercices">
-          <button
-            type="button"
-            class="mobile-preview__nav-btn"
-            on:click={() => navigateTo(-1)}
-            disabled={!hasPrevious}
-            aria-label="Exercice précédent"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-          <span class="mobile-preview__nav-status">
-            {currentIndex >= 0 ? currentIndex + 1 : '—'} / {totalResults > 0 ? totalResults : '—'}
-          </span>
-          <button
-            type="button"
-            class="mobile-preview__nav-btn"
-            on:click={() => navigateTo(1)}
-            disabled={!hasNext}
-            aria-label="Exercice suivant"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
+        {#if currentExercise}
+          <div class="mobile-preview__footer-actions">
+            <AddToListButton exercise={currentExercise} size="normal" variant="button" />
+            <button
+              type="button"
+              class="mobile-preview__open-btn"
+              on:click={goToFullPage}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M14 4h6m0 0v6m0-6L10 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>Ouvrir</span>
+            </button>
+          </div>
+        {/if}
+
+        {#if totalResults > 1}
+          <div class="mobile-preview__nav" aria-label="Navigation entre les exercices">
+            <button
+              type="button"
+              class="mobile-preview__nav-btn"
+              on:click={() => navigateTo(-1)}
+              disabled={!hasPrevious}
+              aria-label="Exercice précédent"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <span class="mobile-preview__nav-status">
+              {currentIndex >= 0 ? currentIndex + 1 : '—'} / {totalResults > 0 ? totalResults : '—'}
+            </span>
+            <button
+              type="button"
+              class="mobile-preview__nav-btn"
+              on:click={() => navigateTo(1)}
+              disabled={!hasNext}
+              aria-label="Exercice suivant"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        {/if}
       </footer>
     {/if}
   </div>
@@ -250,7 +252,6 @@
   .mobile-preview__header-top {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 0.75rem;
     padding: 0.75rem 0.9rem;
   }
@@ -363,36 +364,6 @@
     background: #e5e7eb;
   }
 
-  .mobile-preview__actions {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    flex-shrink: 0;
-  }
-
-  .mobile-preview__action-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 0.5rem;
-    border: 1px solid #d1d5db;
-    background: #ffffff;
-    color: #374151;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-  }
-
-  .mobile-preview__action-btn svg {
-    width: 1rem;
-    height: 1rem;
-  }
-
-  .mobile-preview__action-btn:active {
-    background: #f3f4f6;
-    border-color: #9ca3af;
-  }
-
   /* Body */
   .mobile-preview__body {
     flex: 1;
@@ -433,11 +404,92 @@
   .mobile-preview__footer {
     flex-shrink: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.55rem 0.9rem;
+    gap: 0.5rem;
+    padding: 0.65rem 0.9rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
     border-top: 1px solid #e5e7eb;
     background: #ffffff;
+    box-shadow: 0 -8px 22px rgba(17, 24, 39, 0.08);
+  }
+
+  .mobile-preview__footer-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(7rem, 0.85fr);
+    gap: 0.55rem;
+    width: 100%;
+  }
+
+  .mobile-preview__footer-actions :global(.add-to-list-btn) {
+    width: 100% !important;
+    height: 2.75rem !important;
+    min-width: 0;
+    justify-content: center !important;
+    border-radius: 0.65rem !important;
+    padding: 0 0.75rem !important;
+    border-color: #426027 !important;
+    background: #426027 !important;
+    color: #ffffff !important;
+    font-size: 0.86rem !important;
+    font-weight: 800 !important;
+    box-shadow: 0 6px 14px rgba(66, 96, 39, 0.22);
+  }
+
+  .mobile-preview__footer-actions :global(.add-to-list-btn:active:not(:disabled)) {
+    background: #334d1f !important;
+    border-color: #334d1f !important;
+    transform: translateY(1px);
+  }
+
+  .mobile-preview__footer-actions :global(.add-to-list-btn--in-list) {
+    border-color: #fecaca !important;
+    background: #fef2f2 !important;
+    color: #b91c1c !important;
+    box-shadow: none;
+  }
+
+  .mobile-preview__footer-actions :global(.add-to-list-text) {
+    display: inline !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-preview__open-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    height: 2.75rem;
+    min-width: 0;
+    border-radius: 0.65rem;
+    border: 1px solid #3a8f8f;
+    background: #3a8f8f;
+    color: #ffffff;
+    font-size: 0.86rem;
+    font-weight: 800;
+    box-shadow: 0 6px 14px rgba(58, 143, 143, 0.2);
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .mobile-preview__open-btn svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+  }
+
+  .mobile-preview__open-btn span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-preview__open-btn:active {
+    background: #2f7373;
+    border-color: #2f7373;
+    transform: translateY(1px);
   }
 
   .mobile-preview__metadata {
