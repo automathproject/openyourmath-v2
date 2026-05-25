@@ -11,6 +11,7 @@
   export let position = null; // { current, total }
   export let showGlobalToggles = false;
   export let studentMode = 'normal'; // 'normal' | 'student' | 'student-hints'
+  export let showHeader = true;
   $: isPreview = variant === 'preview';
   
   // État local pour contrôler l'affichage individuel des solutions et indications
@@ -204,7 +205,7 @@
 </script>
 
 <div class="exercise-content" class:exercise-content--preview={isPreview}>
-  {#if exercise && variant !== 'preview'}
+  {#if showHeader && exercise && variant !== 'preview'}
     <ExerciseHeader
       {exercise}
       {variant}
@@ -217,12 +218,12 @@
   {/if}
   
   <!-- Affichage séquentiel des blocs organisés -->
-  {#each organizedContent.blocks as contentBlock}
+  {#each organizedContent.blocks as contentBlock, blockIndex}
     {#if contentBlock.type === 'standalone-text'}
       {#each [contentBlock.block] as block}
         {@const processed = processContentBlock(block)}
         <!-- Bloc de texte standalone -->
-        <div class="content-block">
+        <div class="content-block" id={!isPreview ? `section-${blockIndex + 1}` : undefined}>
           <MathRenderer content={processed.html} />
         </div>
       {/each}
@@ -267,7 +268,11 @@
       
     {:else if contentBlock.type === 'question-group'}
       <!-- Groupe question/indication/réponse -->
-      <div class="question-response-pair" class:question-response-pair--preview={isPreview}>
+      <div
+        class="question-response-pair"
+        class:question-response-pair--preview={isPreview}
+        id={!isPreview ? `question-${contentBlock.questionIndex + 1}` : undefined}
+      >
         {#each [contentBlock.question] as question}
           {@const processedQ = processContentBlock(question)}
           <!-- Question avec icônes d'actions -->

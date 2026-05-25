@@ -1,0 +1,387 @@
+<!-- src/lib/components/LectureSubheader.svelte -->
+<script>
+  import AddToListButton from './AddToListButton.svelte';
+  import MathRenderer from './MathRenderer.svelte';
+  import StarsRating from './StarsRating.svelte';
+  import { generateLatexDocument, downloadTexFile } from '$lib/latex/export.js';
+
+  export let exercise = {};
+  export let mode = 'classic';
+  export let showHint = false;
+  export let showSolution = false;
+  export let questionCount = 0;
+  export let estimatedTime = '';
+
+  let shareLabel = 'Partager';
+
+  $: isImmersive = mode === 'immersive';
+  $: titleSizeClass = isImmersive ? 'lecture-title--immersive' : 'lecture-title--classic';
+  $: difficulty = Math.min(Number(exercise?.difficulty) || 0, 4);
+  $: timeAndCount = [
+    estimatedTime,
+    questionCount > 0 ? `${questionCount} question${questionCount > 1 ? 's' : ''}` : ''
+  ].filter(Boolean);
+
+  async function shareExercise() {
+    if (typeof window === 'undefined') return;
+
+    const url = window.location.href;
+    const title = exercise?.title || 'Exercice OpenYourMath';
+
+    try {
+      if (navigator?.share) {
+        await navigator.share({ title, url });
+      } else if (navigator?.clipboard) {
+        await navigator.clipboard.writeText(url);
+        shareLabel = 'Lien copié';
+        setTimeout(() => {
+          shareLabel = 'Partager';
+        }, 1600);
+      }
+    } catch (err) {
+      if (navigator?.clipboard) {
+        await navigator.clipboard.writeText(url);
+        shareLabel = 'Lien copié';
+        setTimeout(() => {
+          shareLabel = 'Partager';
+        }, 1600);
+      }
+    }
+  }
+
+  function downloadLatex() {
+    if (!exercise) return;
+    const content = generateLatexDocument([exercise], exercise.title || 'Exercice', {
+      includeHints: true,
+      includeSolutions: true
+    });
+    downloadTexFile(content, exercise.title || exercise.uuid || 'exercice');
+  }
+</script>
+
+<section class="lecture-subheader" class:lecture-subheader--immersive={isImmersive}>
+  <div class="lecture-nav-band">
+    <div class="lecture-breadcrumb" aria-hidden="true"></div>
+    <div class="lecture-spacer"></div>
+
+    <div class="mode-switch" aria-label="Mode de lecture">
+      <button
+        type="button"
+        class:active={mode === 'classic'}
+        aria-pressed={mode === 'classic'}
+        on:click={() => mode = 'classic'}
+      >
+        Classique
+      </button>
+      <button
+        type="button"
+        class:active={mode === 'immersive'}
+        aria-pressed={mode === 'immersive'}
+        on:click={() => mode = 'immersive'}
+      >
+        Immersif
+      </button>
+    </div>
+
+    <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
+      <span aria-hidden="true">↗</span>
+      <span>{shareLabel}</span>
+    </button>
+
+    <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={downloadLatex}>
+      <span aria-hidden="true">⤓</span>
+      <span>LaTeX</span>
+    </button>
+
+    <div class="lecture-primary-action">
+      <AddToListButton {exercise} size="normal" />
+    </div>
+  </div>
+
+  <div class="lecture-title-band">
+    <div class="lecture-title-inner">
+      <div class="lecture-metadata">
+        {#if exercise?.level}
+          <span class="chip chip-teal-solid">{exercise.level}</span>
+        {/if}
+        {#if exercise?.module}
+          <span class="chip chip-soft">{exercise.module}</span>
+        {/if}
+        {#if exercise?.chapter}
+          <span class="chip chip-soft">{exercise.chapter}</span>
+        {/if}
+        {#if difficulty > 0}
+          <span class="lecture-stars">
+            <StarsRating n={difficulty} total={4} />
+          </span>
+        {/if}
+        {#if timeAndCount.length > 0}
+          <span class="t-caption lecture-facts">
+            {timeAndCount.join(' · ')}
+          </span>
+        {/if}
+      </div>
+
+      <h1 class="t-display lecture-title {titleSizeClass}">
+        <MathRenderer content={exercise?.title || 'Exercice'} inline={true} />
+      </h1>
+
+      <div class="reveal-controls" aria-label="Contrôles de révélation du contenu">
+        {#if exercise?.hasIndication}
+          <button
+            type="button"
+            class="reveal-button reveal-button--hint"
+            class:active={showHint}
+            aria-pressed={showHint}
+            on:click={() => showHint = !showHint}
+          >
+            <span>Tout révéler : indices</span>
+            {#if showHint}<span class="reveal-check" aria-hidden="true">✓</span>{/if}
+          </button>
+        {/if}
+
+        {#if exercise?.hasSolution}
+          <button
+            type="button"
+            class="reveal-button reveal-button--solution"
+            class:active={showSolution}
+            aria-pressed={showSolution}
+            on:click={() => showSolution = !showSolution}
+          >
+            <span>Tout révéler : solutions</span>
+            {#if showSolution}<span class="reveal-check" aria-hidden="true">✓</span>{/if}
+          </button>
+        {/if}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .lecture-subheader {
+    --bg: theme('colors.interface.bg-white');
+    --sh-1: 0 1px 3px rgba(13, 60, 77, 0.12);
+    --r-pill: theme('borderRadius.pill');
+    --gold: theme('colors.warning.500');
+    --gold-100: theme('colors.warning.100');
+    --teal: theme('colors.brand.600');
+    --teal-50: theme('colors.brand.50');
+    background: theme('colors.interface.bg-primary');
+    border-bottom: 1px solid theme('colors.interface.border-primary');
+  }
+
+  .lecture-nav-band {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 22px;
+    border-bottom: 1px dashed theme('colors.interface.border-primary');
+  }
+
+  .lecture-breadcrumb {
+    min-width: 1px;
+  }
+
+  .lecture-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mode-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 3px;
+    border-radius: var(--r-pill);
+    background: theme('colors.interface.bg-tertiary');
+    border: 1px solid theme('colors.interface.border-primary');
+  }
+
+  .mode-switch button {
+    min-height: 30px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: var(--r-pill);
+    background: transparent;
+    color: theme('colors.interface.text-secondary');
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
+  }
+
+  .mode-switch button.active {
+    background: var(--bg);
+    box-shadow: var(--sh-1);
+    color: theme('colors.interface.text-primary');
+    font-weight: 600;
+  }
+
+  .lecture-action {
+    height: 34px;
+    gap: 5px;
+    white-space: nowrap;
+  }
+
+  .lecture-primary-action {
+    display: inline-flex;
+  }
+
+  .lecture-primary-action :global(.add-to-list-btn) {
+    min-height: 34px;
+    border-color: theme('colors.brand.600');
+    background: theme('colors.brand.600');
+    color: white;
+    box-shadow: none;
+  }
+
+  .lecture-primary-action :global(.add-to-list-btn:hover:not(:disabled)) {
+    background: theme('colors.brand.700');
+    border-color: theme('colors.brand.700');
+    color: white;
+  }
+
+  .lecture-title-band {
+    padding: 32px 22px 22px;
+  }
+
+  .lecture-title-inner {
+    max-width: none;
+  }
+
+  .lecture-subheader--immersive .lecture-title-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .lecture-metadata {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .lecture-stars {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .lecture-facts {
+    color: theme('colors.interface.text-muted');
+  }
+
+  .lecture-title {
+    max-width: 880px;
+    margin: 0;
+    color: theme('colors.interface.text-primary');
+    line-height: 1.08;
+  }
+
+  .lecture-title--classic {
+    font-size: 36px;
+  }
+
+  .lecture-title--immersive {
+    font-size: 44px;
+  }
+
+  .reveal-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .reveal-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 0 12px;
+    border-radius: var(--r-pill);
+    border: 1px solid transparent;
+    background: theme('colors.interface.bg-white');
+    color: theme('colors.interface.text-secondary');
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.16s ease, color 0.16s ease, border-color 0.16s ease;
+  }
+
+  .reveal-button--hint {
+    border-color: theme('colors.warning.200');
+    color: theme('colors.warning.700');
+  }
+
+  .reveal-button--hint.active {
+    background: var(--gold-100);
+    border-color: var(--gold);
+    color: theme('colors.warning.800');
+  }
+
+  .reveal-button--solution {
+    border-color: theme('colors.brand.200');
+    color: theme('colors.brand.700');
+  }
+
+  .reveal-button--solution.active {
+    background: var(--teal-50);
+    border-color: var(--teal);
+    color: theme('colors.brand.800');
+  }
+
+  .reveal-check {
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  @media (max-width: 860px) {
+    .lecture-nav-band {
+      min-height: auto;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 10px 16px;
+    }
+
+    .lecture-spacer {
+      display: none;
+    }
+
+    .mode-switch {
+      order: 1;
+      width: 100%;
+    }
+
+    .mode-switch button {
+      flex: 1;
+    }
+
+    .lecture-action,
+    .lecture-primary-action {
+      order: 2;
+    }
+
+    .lecture-primary-action :global(.add-to-list-btn) {
+      width: auto;
+      height: 34px;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+    }
+
+    .lecture-primary-action :global(.add-to-list-text) {
+      display: inline;
+    }
+
+    .lecture-title-band {
+      padding: 24px 16px 18px;
+    }
+
+    .lecture-title--classic,
+    .lecture-title--immersive {
+      font-size: clamp(28px, 8vw, 36px);
+    }
+  }
+</style>
