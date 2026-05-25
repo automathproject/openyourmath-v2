@@ -1,7 +1,7 @@
 <!--
   AppHeader — barre de navigation persistante sur toutes les routes.
   PAS de bouton Connexion (pas de compte utilisateur).
-  Les "Mes séances" sont locales (localStorage) ; le compteur reflète ce stockage.
+  "Ma liste" est locale (localStorage) ; le compteur reflète ce stockage.
 
   Usage dans +layout.svelte :
     <AppHeader />
@@ -16,7 +16,7 @@
 
   /**
    * @typedef {Object} Props
-   * @property {number} [seanceCount] - badge sur "Mes séances", calculé depuis localStorage ou store
+   * @property {number} [seanceCount] - badge sur "Ma liste", calculé depuis localStorage ou store
    */
   /** @type {Props} */
   let { seanceCount = 0 } = $props();
@@ -57,7 +57,7 @@
           <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
           <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
         </svg>
-        Mes séances
+        Ma liste
         {#if seanceCount > 0}
           <span class="list-counter">{seanceCount}</span>
         {/if}
@@ -67,7 +67,6 @@
 
   <div class="app-header-right">
     <a href="/about" class="btn btn-ghost btn-sm">À propos</a>
-    <a href="/docs" class="btn btn-ghost btn-sm">Documentation</a>
     <button type="button" class="btn-icon" aria-label="Aide">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <circle cx="12" cy="12" r="10"/>
