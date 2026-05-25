@@ -17,14 +17,8 @@
     return content.filter((block) => (block?.type || 'text') === 'question').length;
   }
 
-  function getEstimatedTime(questionCount) {
-    const minutes = Math.max(8, questionCount * 4 + 4);
-    return `≈ ${minutes} min`;
-  }
-
   $: content = data.exercise?.content || [];
   $: questionCount = getQuestionCount(content);
-  $: estimatedTime = getEstimatedTime(questionCount);
   $: isImmersive = readingMode === 'immersive';
   $: immersiveMode.set(isImmersive);
 
@@ -53,7 +47,6 @@
       bind:showHint
       bind:showSolution
       {questionCount}
-      {estimatedTime}
     />
 
     <div class="exercise-reading-layout">

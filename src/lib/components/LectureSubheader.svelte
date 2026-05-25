@@ -10,7 +10,6 @@
   export let showHint = false;
   export let showSolution = false;
   export let questionCount = 0;
-  export let estimatedTime = '';
 
   let shareLabel = 'Partager';
 
@@ -18,7 +17,6 @@
   $: titleSizeClass = isImmersive ? 'lecture-title--immersive' : 'lecture-title--classic';
   $: difficulty = Math.min(Number(exercise?.difficulty) || 0, 4);
   $: timeAndCount = [
-    estimatedTime,
     questionCount > 0 ? `${questionCount} question${questionCount > 1 ? 's' : ''}` : ''
   ].filter(Boolean);
 
