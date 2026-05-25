@@ -314,8 +314,18 @@
           />
           <div class="landing-content">
             <div class="landing-copy">
-              <h1 class="landing-title">Trouvez l'exercice qu'il vous faut</h1>
-              <p class="landing-subtitle">Plus de 5 000 exercices de mathématiques, librement accessibles</p>
+              <h1 class="landing-title">
+                <span class="sr-only">OpenYourMath.org</span>
+                <img
+                  class="landing-title-logo"
+                  src="/img/logo_wordmark.png"
+                  alt=""
+                  width="1145"
+                  height="220"
+                  aria-hidden="true"
+                />
+              </h1>
+              <p class="landing-subtitle">Plus de 8 000 exercices de mathématiques, librement accessibles</p>
             </div>
 
             <div class="landing-search-box">
@@ -611,20 +621,25 @@
 
   .landing-copy {
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
     text-align: left;
   }
 
   .landing-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    @apply text-interface-text-primary;
+    width: min(100%, 34rem);
+  }
+
+  .landing-title-logo {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   .landing-subtitle {
     font-size: 1rem;
-    margin-top: -0.5rem;
+    margin: 0;
     @apply text-interface-text-secondary;
   }
 
@@ -735,7 +750,7 @@
       gap: 0.65rem;
     }
     .landing-logo {
-      width: 5.5rem;
+      width: 8.25rem;
       border-radius: 1.25rem;
     }
     .landing-content {
@@ -744,14 +759,14 @@
       gap: 0.8rem;
     }
     .landing-copy {
+      gap: 0.35rem;
       text-align: center;
     }
     .landing-title {
-      font-size: 1.45rem;
+      display: none;
     }
     .landing-subtitle {
       font-size: 0.92rem;
-      margin-top: -0.35rem;
     }
     .landing-search-box {
       flex-direction: row;
