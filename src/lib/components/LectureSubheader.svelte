@@ -60,10 +60,102 @@
 </script>
 
 <section class="lecture-subheader" class:lecture-subheader--immersive={isImmersive}>
+
+  {#if isImmersive}
+    <div class="lecture-immersive-bar">
+      <button type="button" class="immersive-exit-btn" on:click={() => mode = 'classic'}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+        Classique
+      </button>
+
+      <div class="immersive-bar-right">
+        {#if exercise?.hasSolution}
+          <button
+            type="button"
+            class="btn btn-ghost btn-sm lecture-action"
+            class:immersive-action--active={showSolution}
+            on:click={() => showSolution = !showSolution}
+          >
+            {showSolution ? 'Masquer solutions' : 'Solutions'}
+          </button>
+        {/if}
+        <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
+          <span aria-hidden="true">↗</span>
+          <span>{shareLabel}</span>
+        </button>
+        <div class="lecture-primary-action">
+          <AddToListButton {exercise} size="normal" />
+        </div>
+      </div>
+    </div>
+  {/if}
+
   <div class="lecture-title-band">
     <div class="lecture-title-inner">
-      <div class="lecture-top-row">
-        <div class="lecture-metadata">
+
+      {#if !isImmersive}
+        <div class="lecture-top-row">
+          <div class="lecture-metadata">
+            {#if exercise?.level}
+              <span class="chip chip-teal-solid">{exercise.level}</span>
+            {/if}
+            {#if exercise?.module}
+              <span class="chip chip-soft">{exercise.module}</span>
+            {/if}
+            {#if exercise?.chapter}
+              <span class="chip chip-soft">{exercise.chapter}</span>
+            {/if}
+            {#if difficulty > 0}
+              <span class="lecture-stars">
+                <StarsRating n={difficulty} total={4} />
+              </span>
+            {/if}
+            {#if timeAndCount.length > 0}
+              <span class="t-caption lecture-facts">
+                {timeAndCount.join(' · ')}
+              </span>
+            {/if}
+          </div>
+
+          <div class="lecture-actions">
+            <div class="mode-switch" aria-label="Mode de lecture">
+              <button
+                type="button"
+                class:active={mode === 'classic'}
+                aria-pressed={mode === 'classic'}
+                on:click={() => mode = 'classic'}
+              >
+                Classique
+              </button>
+              <button
+                type="button"
+                class:active={mode === 'immersive'}
+                aria-pressed={mode === 'immersive'}
+                on:click={() => mode = 'immersive'}
+              >
+                Immersif
+              </button>
+            </div>
+
+            <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
+              <span aria-hidden="true">↗</span>
+              <span>{shareLabel}</span>
+            </button>
+
+            <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={downloadLatex}>
+              <span aria-hidden="true">⤓</span>
+              <span>LaTeX</span>
+            </button>
+
+            <div class="lecture-primary-action">
+              <AddToListButton {exercise} size="normal" />
+            </div>
+          </div>
+        </div>
+      {:else}
+        <div class="lecture-metadata lecture-metadata--immersive">
           {#if exercise?.level}
             <span class="chip chip-teal-solid">{exercise.level}</span>
           {/if}
@@ -84,42 +176,7 @@
             </span>
           {/if}
         </div>
-
-        <div class="lecture-actions">
-          <div class="mode-switch" aria-label="Mode de lecture">
-            <button
-              type="button"
-              class:active={mode === 'classic'}
-              aria-pressed={mode === 'classic'}
-              on:click={() => mode = 'classic'}
-            >
-              Classique
-            </button>
-            <button
-              type="button"
-              class:active={mode === 'immersive'}
-              aria-pressed={mode === 'immersive'}
-              on:click={() => mode = 'immersive'}
-            >
-              Immersif
-            </button>
-          </div>
-
-          <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
-            <span aria-hidden="true">↗</span>
-            <span>{shareLabel}</span>
-          </button>
-
-          <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={downloadLatex}>
-            <span aria-hidden="true">⤓</span>
-            <span>LaTeX</span>
-          </button>
-
-          <div class="lecture-primary-action">
-            <AddToListButton {exercise} size="normal" />
-          </div>
-        </div>
-      </div>
+      {/if}
 
       <h1 class="t-display lecture-title {titleSizeClass}">
         <MathRenderer content={exercise?.title || 'Exercice'} inline={true} />
@@ -248,6 +305,60 @@
     color: white;
   }
 
+  /* ── Immersive sticky bar ─────────────────── */
+  .lecture-immersive-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0 24px;
+    height: 44px;
+    background: rgba(251, 248, 239, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid theme('colors.interface.border-primary');
+  }
+
+  .immersive-exit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: var(--r-pill);
+    background: transparent;
+    color: theme('colors.interface.text-secondary');
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .immersive-exit-btn:hover {
+    background: theme('colors.interface.bg-tertiary');
+    color: theme('colors.interface.text-primary');
+  }
+
+  .immersive-bar-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .immersive-action--active {
+    background: theme('colors.brand.50') !important;
+    color: theme('colors.brand.700') !important;
+  }
+
+  .lecture-metadata--immersive {
+    margin-bottom: 12px;
+  }
+
+  /* ── Title band ───────────────────────────── */
   .lecture-title-band {
     padding: 20px 32px 24px;
   }
@@ -259,6 +370,10 @@
   .lecture-subheader--immersive .lecture-title-inner {
     max-width: 720px;
     margin: 0 auto;
+  }
+
+  .lecture-subheader--immersive .lecture-title-band {
+    padding: 32px 32px 28px;
   }
 
   .lecture-stars {
@@ -337,6 +452,10 @@
   }
 
   @media (max-width: 860px) {
+    .lecture-immersive-bar {
+      padding: 0 16px;
+    }
+
     .lecture-top-row {
       flex-direction: column;
       align-items: flex-start;

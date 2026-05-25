@@ -1,5 +1,7 @@
 import { writable, type Writable } from 'svelte/store';
 
+export const immersiveMode = writable(false);
+
 const PREVIEW_PANEL_KEY = 'search-ui:preview-panel-open';
 
 function createPersistedBooleanStore(storageKey: string, defaultValue: boolean): Writable<boolean> {

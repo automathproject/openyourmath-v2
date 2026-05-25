@@ -11,6 +11,7 @@
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
   import AppHeader from '$lib/components/AppHeader.svelte';
+  import { immersiveMode } from '$lib/stores/uiStore.ts';
 
   const APP_VERSION = env.PUBLIC_APP_VERSION || 'dev';
   const currentYear = new Date().getFullYear();
@@ -27,13 +28,15 @@
   });
 </script>
 
-<AppHeader seanceCount={$listCount} />
+<div class="header-shell" class:header-shell--hidden={$immersiveMode}>
+  <AppHeader seanceCount={$listCount} />
+</div>
 
 <main class="main-content">
   <slot />
 </main>
 
-<footer class="footer print-hidden">
+<footer class="footer print-hidden" class:footer--hidden={$immersiveMode}>
     <div class="footer-content">
       <div class="footer-grid">
 
@@ -93,6 +96,23 @@
   /* ==============================================
      MAIN CONTENT
      ============================================== */
+
+  .header-shell {
+    max-height: 4rem;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s ease;
+    opacity: 1;
+  }
+
+  .header-shell--hidden {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .footer--hidden {
+    display: none;
+  }
 
   .main-content {
     padding: 0;

@@ -4,9 +4,11 @@
   import LectureSidebar from '$lib/components/LectureSidebar.svelte';
   import LectureSubheader from '$lib/components/LectureSubheader.svelte';
   import { page } from '$app/stores';
-  
+  import { onMount, onDestroy } from 'svelte';
+  import { immersiveMode } from '$lib/stores/uiStore.ts';
+
   export let data;
-  
+
   let showHint = false;
   let showSolution = false;
   let readingMode = 'classic';
@@ -24,6 +26,18 @@
   $: questionCount = getQuestionCount(content);
   $: estimatedTime = getEstimatedTime(questionCount);
   $: isImmersive = readingMode === 'immersive';
+  $: immersiveMode.set(isImmersive);
+
+  function handleKeydown(e) {
+    if (e.key === 'Escape' && isImmersive) readingMode = 'classic';
+  }
+
+  onMount(() => {
+    window.addEventListener('keydown', handleKeydown);
+    return () => window.removeEventListener('keydown', handleKeydown);
+  });
+
+  onDestroy(() => immersiveMode.set(false));
 </script>
 
 <svelte:head>
