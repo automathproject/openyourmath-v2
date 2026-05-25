@@ -1,216 +1,76 @@
-<!-- src/routes/browse/+page.svelte - CORRIGÉ -->
 <script>
-  import { onMount } from 'svelte';
-  import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import StarsRating from '$lib/components/StarsRating.svelte';
   import Chip from '$lib/components/Chip.svelte';
-  
-  let chapterStructure = [];
-  let selectedChapter = null;
-  let selectedSubchapter = null;
-  let selectedModule = null;
-  let selectedLevel = null;
-  let exercises = [];
-  let loading = true;
-  let exercisesLoading = false;
-  let error = null;
-  let sortBy = 'title';
-  let sortOrder = 'asc';
-  
-  let selectionStats = {
-    total: 0,
-    byDifficulty: {},
-    byModule: {},
-    authors: []
+  import SearchSnippet from '$lib/components/search/SearchSnippet.svelte';
+
+  export let data;
+
+  const sortOptions = [
+    { value: 'title', label: 'Titre' },
+    { value: 'level', label: 'Niveau' },
+    { value: 'module', label: 'Module' },
+    { value: 'difficulty', label: 'Difficulté' },
+    { value: 'author', label: 'Auteur' },
+    { value: 'updated', label: 'Mise à jour' }
+  ];
+
+  $: selection = data.selection || {};
+  $: activeFilters = {
+    level: selection.level || '',
+    module: selection.module || '',
+    chapter: selection.chapter || '',
+    subchapter: selection.subchapter || ''
   };
-  
-  $: pageTitle = (() => {
-    const titleParts = [];
-    if (selectedChapter) titleParts.push(selectedChapter);
-    if (selectedModule) titleParts.push(selectedModule);
-    if (selectedLevel) titleParts.push(selectedLevel);
-    
-    return titleParts.length > 0 
-      ? `${titleParts.join(' • ')} - Parcourir les exercices - OpenYourMath`
-      : 'Parcourir les exercices - OpenYourMath';
-  })();
-  
-  onMount(async () => {
-    await loadChapterStructure();
-    
-    const urlParams = $page.url.searchParams;
-    const chapter = urlParams.get('chapter');
-    const subchapter = urlParams.get('subchapter');
-    const module = urlParams.get('module');
-    const level = urlParams.get('level');
-    
-    if (chapter || module || level) {
-      selectFilters(chapter, subchapter, module, level);
-    }
-  });
-  
-  async function loadChapterStructure() {
-    loading = true; // S'assurer que le chargement est bien indiqué
-    error = null;   // Réinitialiser les erreurs
-    try {
-      const response = await fetch('/api/chapters?type=structure');
-      if (response.ok) {
-        const data = await response.json();
-        chapterStructure = data.structure || [];
-      } else {
-        error = 'Impossible de charger les chapitres';
-      }
-    } catch (err) {
-      error = 'Erreur de connexion';
-      console.error('Failed to load chapters:', err);
-    } finally {
-      loading = false;
-    }
+  $: pathParts = [selection.level, selection.module, selection.chapter, selection.subchapter].filter(Boolean);
+  $: pageTitle = pathParts.length
+    ? `${pathParts.join(' • ')} - Parcourir les exercices - OpenYourMath`
+    : 'Parcourir les exercices - OpenYourMath';
+  $: totalExercises = (data.structure || []).reduce((sum, level) => sum + (level.exerciseCount || 0), 0);
+  $: moduleCount = (data.structure || []).reduce((sum, level) => sum + (level.modules?.length || 0), 0);
+  $: chapterCount = (data.structure || []).reduce(
+    (sum, level) => sum + (level.modules || []).reduce((moduleSum, module) => moduleSum + (module.chapters?.length || 0), 0),
+    0
+  );
+
+  function buildUrl(nextSelection = selection, sortBy = data.sortBy, sortOrder = data.sortOrder) {
+    const params = new URLSearchParams();
+
+    if (nextSelection.level) params.set('level', nextSelection.level);
+    if (nextSelection.module) params.set('module', nextSelection.module);
+    if (nextSelection.chapter) params.set('chapter', nextSelection.chapter);
+    if (nextSelection.subchapter) params.set('subchapter', nextSelection.subchapter);
+    if (sortBy && sortBy !== 'title') params.set('sort', sortBy);
+    if (sortOrder && sortOrder !== 'asc') params.set('order', sortOrder);
+
+    const query = params.toString();
+    return query ? `/browse?${query}` : '/browse';
   }
 
-  // NOUVELLE FONCTION AJOUTÉE POUR LA CORRECTION
-  function reloadData() {
-    loadChapterStructure();
+  function navigateTo(nextSelection) {
+    goto(buildUrl(nextSelection), { noScroll: true });
   }
-  
-  async function selectFilters(chapterName = null, subchapterName = null, moduleName = null, levelName = null) {
-    selectedChapter = chapterName;
-    selectedSubchapter = subchapterName;
-    selectedModule = moduleName;
-    selectedLevel = levelName;
-    exercisesLoading = true;
-    
-    const params = new URLSearchParams();
-    if (chapterName) params.set('chapter', chapterName);
-    if (subchapterName) params.set('subchapter', subchapterName);
-    if (moduleName) params.set('module', moduleName);
-    if (levelName) params.set('level', levelName);
-    
-    const paramString = params.toString();
-    goto(paramString ? `/browse?${paramString}` : '/browse', { replaceState: true, noScroll: true });
-    
-    try {
-      const searchParams = new URLSearchParams();
-      if (chapterName) searchParams.set('chapter', chapterName);
-      if (subchapterName) searchParams.set('subchapter', subchapterName);
-      if (moduleName) searchParams.set('module', moduleName);
-      if (levelName) searchParams.set('difficulty', levelName);
-      searchParams.set('limit', '100');
-      
-      const response = await fetch(`/api/search?${searchParams.toString()}`);
-      
-      if (response.ok) {
-        const data = await response.json();
-        exercises = data.results || [];
-        calculateSelectionStats(exercises);
-        sortExercises();
-      } else {
-        exercises = [];
-        selectionStats = { total: 0, byDifficulty: {}, byModule: {}, authors: [] };
-      }
-    } catch (err) {
-      console.error('Failed to load exercises:', err);
-      exercises = [];
-    } finally {
-      exercisesLoading = false;
-    }
+
+  function handleNavigation(event) {
+    navigateTo(event.detail);
   }
-  
-  function selectChapter(chapterName, subchapterName = null) {
-    selectFilters(chapterName, subchapterName, selectedModule, selectedLevel);
-  }
-  
-  function calculateSelectionStats(exerciseList) {
-    selectionStats = {
-      total: exerciseList.length,
-      byDifficulty: {},
-      byModule: {},
-      authors: []
-    };
-    
-    exerciseList.forEach(ex => {
-      if (ex.difficulty) {
-        selectionStats.byDifficulty[ex.difficulty] = (selectionStats.byDifficulty[ex.difficulty] || 0) + 1;
-      }
-      if (ex.module) {
-        selectionStats.byModule[ex.module] = (selectionStats.byModule[ex.module] || 0) + 1;
-      }
-    });
-    
-    const authorCounts = {};
-    exerciseList.forEach(ex => {
-      if (ex.author) {
-        authorCounts[ex.author] = (authorCounts[ex.author] || 0) + 1;
-      }
-    });
-    
-    selectionStats.authors = Object.entries(authorCounts)
-      .map(([name, count]) => ({ name, count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 5);
-  }
-  
-  function changeSorting(newSortBy) {
-    if (sortBy === newSortBy) {
-      sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
-    } else {
-      sortBy = newSortBy;
-      sortOrder = 'asc';
-    }
-    sortExercises();
-  }
-  
-  function sortExercises() {
-    exercises.sort((a, b) => {
-      let comparison = 0;
-      switch (sortBy) {
-        case 'title':
-          comparison = a.title.localeCompare(b.title);
-          break;
-        case 'difficulty':
-          const getDifficultyOrder = (value) => {
-            if (value === null || value === undefined || value === '') return 999;
-            const normalized = String(value).trim().toUpperCase();
-            if (normalized === 'PCSI') return -1;
-            if (normalized.startsWith('L')) return parseInt(normalized.substring(1), 10) || 0;
-            if (normalized.startsWith('M')) return 100 + (parseInt(normalized.substring(1), 10) || 0);
-            const numeric = Number(value);
-            if (!Number.isNaN(numeric)) return 200 + numeric;
-            return 500;
-          };
-          comparison = getDifficultyOrder(a.difficulty) - getDifficultyOrder(b.difficulty);
-          break;
-        case 'date':
-          comparison = new Date(a.created_at || 0) - new Date(b.created_at || 0);
-          break;
-        case 'author':
-          comparison = (a.author || '').localeCompare(b.author || '');
-          break;
-        case 'module':
-          comparison = (a.module || '').localeCompare(b.module || '');
-          break;
-      }
-      return sortOrder === 'desc' ? -comparison : comparison;
-    });
-    exercises = exercises;
-  }
-  
+
   function clearSelection() {
-    selectedChapter = null;
-    selectedSubchapter = null;
-    selectedModule = null;
-    selectedLevel = null;
-    exercises = [];
-    selectionStats = { total: 0, byDifficulty: {}, byModule: {}, authors: [] };
-    goto('/browse', { replaceState: true, noScroll: true });
+    goto('/browse', { noScroll: true });
   }
-  
-  function handleNavigationEvent(event) {
-    const { chapter, subchapter, module, level } = event.detail;
-    selectFilters(chapter, subchapter, module, level);
+
+  function updateSort(sortBy) {
+    const nextOrder = sortBy === data.sortBy && data.sortOrder === 'asc' ? 'desc' : 'asc';
+    goto(buildUrl(selection, sortBy, nextOrder), { noScroll: true });
+  }
+
+  function formatDate(value) {
+    if (!value) return '';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return '';
+    return date.toLocaleDateString('fr-FR');
   }
 </script>
 
@@ -218,134 +78,518 @@
   <title>{pageTitle}</title>
 </svelte:head>
 
-<div class="container mx-auto px-4 py-8">
-  <header class="mb-8">
-    <h1 class="text-4xl font-bold text-interface-text-primary" style="font-family: theme('fontFamily.heading')">Parcourir les exercices</h1>
-    <p class="text-interface-text-secondary mt-2">Explorez les exercices par chapitres, modules et niveaux.</p>
-    {#if selectedChapter || selectedModule || selectedLevel}
-      <!-- CORRECTION : `resetView` remplacé par `clearSelection` -->
-      <button on:click={clearSelection} class="btn btn-text text-brand-primary mt-4">
-        &larr; Retour à la vue générale
+<main class="browse-page">
+  <header class="browse-header">
+    <div>
+      <p class="t-overline">Catalogue</p>
+      <h1>Parcourir les exercices</h1>
+      <p class="browse-subtitle">Explorez la bibliothèque par niveau, module, chapitre et sous-chapitre.</p>
+    </div>
+
+    {#if data.selected}
+      <button type="button" class="btn btn-secondary" on:click={clearSelection}>
+        Vue générale
       </button>
     {/if}
   </header>
 
-  {#if loading}
-    <div class="text-center py-16">
-      <p class="text-interface-text-muted">Chargement...</p>
-    </div>
-  {:else if error}
-    <div class="empty-state">
-      <h3 class="empty-state-title text-red-600">Erreur de chargement</h3>
-      <p class="empty-state-subtitle">{error}</p>
-      <!-- CORRECTION : `reloadData` est maintenant défini -->
-      <button on:click={reloadData} class="btn btn-primary mt-4">Réessayer</button>
-    </div>
-  {:else}
-    <!-- VUE D'ENSEMBLE (QUAND RIEN N'EST SÉLECTIONNÉ) -->
-    {#if !selectedChapter && !selectedModule && !selectedLevel}
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {#each chapterStructure as chapter}
-          <div class="content-card flex flex-col">
-            <div class="flex-grow">
-              <h3 class="content-card-title">{chapter.name}</h3>
-              <p class="content-card-meta">{chapter.exerciseCount} exercices</p>
-              {#if chapter.subchapters && chapter.subchapters.length > 0}
-                <div class="text-sm text-gray-500 space-y-1 mt-2">
-                  {#each chapter.subchapters.slice(0, 3) as sub}
-                    <p class="truncate">&bull; {sub.name}</p>
-                  {/each}
-                  {#if chapter.subchapters.length > 3}
-                    <p class="text-gray-400 italic">+{chapter.subchapters.length - 3} autres</p>
-                  {/if}
-                </div>
-              {/if}
+  {#if data.error}
+    <section class="empty-state">
+      <h2 class="empty-state-title text-red-700">Erreur de chargement</h2>
+      <p class="empty-state-subtitle">{data.error}</p>
+      <a class="btn btn-primary mt-4" href="/browse">Réessayer</a>
+    </section>
+  {:else if !data.selected}
+    <section class="overview-stats" aria-label="Statistiques du catalogue">
+      <div>
+        <strong>{totalExercises}</strong>
+        <span>exercices</span>
+      </div>
+      <div>
+        <strong>{data.structure.length}</strong>
+        <span>niveaux</span>
+      </div>
+      <div>
+        <strong>{moduleCount}</strong>
+        <span>modules</span>
+      </div>
+      <div>
+        <strong>{chapterCount}</strong>
+        <span>chapitres</span>
+      </div>
+    </section>
+
+    <section class="overview-grid" aria-label="Niveaux disponibles">
+      {#each data.structure as level (level.name)}
+        <article class="level-card">
+          <div class="level-card-head">
+            <div>
+              <h2>{level.name}</h2>
+              <p>{level.exerciseCount} exercice{level.exerciseCount > 1 ? 's' : ''}</p>
             </div>
-            <div class="content-card-footer">
-              <button on:click={() => selectChapter(chapter.name)} class="btn btn-primary w-full">
-                Explorer
-              </button>
+            <button type="button" class="btn btn-primary btn-sm" on:click={() => navigateTo({ level: level.name })}>
+              Explorer
+            </button>
+          </div>
+
+          {#if level.modules?.length}
+            <div class="module-list">
+              {#each level.modules.slice(0, 6) as module (module.name)}
+                <button
+                  type="button"
+                  class="module-pill"
+                  on:click={() => navigateTo({ level: level.name, module: module.name })}
+                >
+                  <span>{module.name}</span>
+                  <small>{module.exerciseCount}</small>
+                </button>
+              {/each}
+            </div>
+            {#if level.modules.length > 6}
+              <p class="more-count">+{level.modules.length - 6} module{level.modules.length - 6 > 1 ? 's' : ''}</p>
+            {/if}
+          {/if}
+        </article>
+      {/each}
+    </section>
+  {:else}
+    <div class="browse-layout">
+      <aside class="browse-sidebar">
+        <ChapterNavigation
+          selectedLevel={selection.level}
+          selectedModule={selection.module}
+          selectedChapter={selection.chapter}
+          selectedSubchapter={selection.subchapter}
+          {activeFilters}
+          on:navigate={handleNavigation}
+        />
+      </aside>
+
+      <section class="browse-results">
+        <div class="results-head">
+          <div>
+            <p class="t-overline">Sélection</p>
+            <h2>{pathParts.join(' / ')}</h2>
+            <div class="active-path">
+              {#if selection.level}<Chip variant="teal-solid">{selection.level}</Chip>{/if}
+              {#if selection.module}<Chip variant="teal">{selection.module}</Chip>{/if}
+              {#if selection.chapter}<Chip variant="soft">{selection.chapter}</Chip>{/if}
+              {#if selection.subchapter}<Chip variant="soft">{selection.subchapter}</Chip>{/if}
             </div>
           </div>
-        {/each}
-      </div>
 
-    <!-- VUE DÉTAILLÉE (QUAND UN FILTRE EST ACTIF) -->
-    {:else}
-      <div class="card mb-8">
-        <h2 class="text-2xl font-bold text-interface-text-primary" style="font-family: theme('fontFamily.heading')">
-          {#if selectedChapter}{selectedChapter}{#if selectedSubchapter} › {selectedSubchapter}{/if}{/if}
-          {#if selectedModule} · {selectedModule}{/if}
-          {#if selectedLevel} · {selectedLevel}{/if}
-        </h2>
-        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-interface-text-secondary mt-4">
-          <span class="font-semibold">{selectionStats.total} exercices</span>
-          {#if Object.keys(selectionStats.byDifficulty).length > 0}
-            <div class="flex flex-wrap gap-1">
-              {#each Object.entries(selectionStats.byDifficulty) as [level, count]}
-                <Chip variant="teal">{level} · {count}</Chip>
-              {/each}
+          <div class="result-count">
+            <strong>{data.totalCount}</strong>
+            <span>exercice{data.totalCount > 1 ? 's' : ''}</span>
+          </div>
+        </div>
+
+        <div class="summary-row">
+          {#if Object.keys(data.stats.byDifficulty || {}).length}
+            <div class="summary-group">
+              <span>Difficulté</span>
+              <div>
+                {#each Object.entries(data.stats.byDifficulty) as [difficulty, count]}
+                  <Chip variant="soft">{difficulty} · {count}</Chip>
+                {/each}
+              </div>
             </div>
           {/if}
-          {#if selectionStats.authors.length > 0}
-            <div class="flex flex-wrap gap-1">
-              {#each selectionStats.authors.slice(0, 3) as author}
-                <Chip variant="soft">{author.name} ({author.count})</Chip>
-              {/each}
+
+          {#if data.stats.authors?.length}
+            <div class="summary-group">
+              <span>Auteurs</span>
+              <div>
+                {#each data.stats.authors.slice(0, 3) as author}
+                  <Chip variant="soft">{author.name} · {author.count}</Chip>
+                {/each}
+              </div>
             </div>
           {/if}
         </div>
-      </div>
 
-      <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center gap-2 text-sm">
-          <span class="text-interface-text-muted">Trier par :</span>
-          <button on:click={() => changeSorting('title')} class="btn btn-ghost btn-sm" class:font-bold={sortBy === 'title'}>Titre {#if sortBy === 'title'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
-          <button on:click={() => changeSorting('difficulty')} class="btn btn-ghost btn-sm" class:font-bold={sortBy === 'difficulty'}>Niveau {#if sortBy === 'difficulty'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
-          <button on:click={() => changeSorting('module')} class="btn btn-ghost btn-sm" class:font-bold={sortBy === 'module'}>Module {#if sortBy === 'module'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
-          <button on:click={() => changeSorting('author')} class="btn btn-ghost btn-sm" class:font-bold={sortBy === 'author'}>Auteur {#if sortBy === 'author'}{sortOrder === 'asc' ? '↑' : '↓'}{/if}</button>
+        <div class="sort-row">
+          <div class="sort-buttons" aria-label="Tri des résultats">
+            {#each sortOptions as option}
+              <button
+                type="button"
+                class="btn btn-ghost btn-sm"
+                class:is-current={data.sortBy === option.value}
+                on:click={() => updateSort(option.value)}
+              >
+                {option.label}
+                {#if data.sortBy === option.value}
+                  <span aria-hidden="true">{data.sortOrder === 'asc' ? '↑' : '↓'}</span>
+                {/if}
+              </button>
+            {/each}
+          </div>
+          <p>
+            {data.exercises.length} affiché{data.exercises.length > 1 ? 's' : ''}
+            {#if data.hasMore}sur les {data.totalCount}{/if}
+          </p>
         </div>
-        <p class="text-sm text-interface-text-muted">{exercises.length} exercice{exercises.length > 1 ? 's' : ''} affiché{exercises.length > 1 ? 's' : ''}</p>
-      </div>
 
-      {#if exercisesLoading}
-        <div class="text-center py-16"><p class="text-interface-text-muted">Chargement des exercices...</p></div>
-      {:else if exercises.length === 0}
-        <div class="empty-state">
-          <div class="empty-state-icon">📚</div>
-          <h3 class="empty-state-title">Aucun exercice trouvé</h3>
-          <p class="empty-state-subtitle">Aucun exercice ne correspond aux filtres sélectionnés.</p>
-        </div>
-      {:else}
-        <div class="grid grid-cols-1 gap-3">
-          {#each exercises as exercise (exercise.uuid)}
-            <div class="card card-hover">
-              <div class="flex items-start justify-between gap-4">
-                <div class="min-w-0 flex-1">
-                  <h3 class="font-semibold text-interface-text-primary" style="font-family: theme('fontFamily.heading'); font-size: 15px;">
-                    <a href="/exercise/{exercise.uuid}" class="hover:text-brand-600">
+        {#if data.exercises.length === 0}
+          <section class="empty-state">
+            <h3 class="empty-state-title">Aucun exercice trouvé</h3>
+            <p class="empty-state-subtitle">Cette entrée de la hiérarchie ne contient pas encore d’exercice indexé.</p>
+          </section>
+        {:else}
+          <div class="exercise-list">
+            {#each data.exercises as exercise (exercise.uuid)}
+              <article class="exercise-card">
+                <div class="exercise-main">
+                  <div class="exercise-meta">
+                    {#if exercise.level}<Chip variant="teal-solid">{exercise.level}</Chip>{/if}
+                    {#if exercise.module}<Chip variant="teal">{exercise.module}</Chip>{/if}
+                    {#if exercise.difficulty}<StarsRating n={exercise.difficulty} />{/if}
+                    {#if exercise.hasSolution}<Chip variant="success">solution</Chip>{/if}
+                  </div>
+
+                  <h3>
+                    <a href="/exercise/{exercise.uuid}">
                       <MathRenderer content={exercise.title} inline={true} />
                     </a>
                   </h3>
-                  <div class="flex flex-wrap gap-1 mt-1">
-                    {#if exercise.chapter && exercise.chapter !== selectedChapter}<Chip variant="soft">{exercise.chapter}</Chip>{/if}
-                    {#if exercise.module && exercise.module !== selectedModule}<Chip variant="teal">{exercise.module}</Chip>{/if}
-                    {#if exercise.author}<span class="text-xs text-interface-text-muted">par {exercise.author}</span>{/if}
+
+                  {#if exercise.preview}
+                    <div class="exercise-preview">
+                      <SearchSnippet content={exercise.preview} lines={2} />
+                    </div>
+                  {/if}
+
+                  <div class="exercise-foot">
+                    {#if exercise.chapter}<span>{exercise.chapter}</span>{/if}
+                    {#if exercise.subchapter}<span>{exercise.subchapter}</span>{/if}
+                    {#if exercise.author}<span>{exercise.author}</span>{/if}
+                    {#if exercise.updated_at}<span>Maj {formatDate(exercise.updated_at)}</span>{/if}
                   </div>
                 </div>
-                <div class="flex items-center gap-3 flex-shrink-0">
-                  {#if exercise.difficulty}
-                    <StarsRating n={exercise.difficulty} total={4} />
-                  {:else if exercise.level}
-                    <Chip variant="teal-solid">{exercise.level}</Chip>
-                  {/if}
-                  <a href="/exercise/{exercise.uuid}" class="btn btn-primary btn-sm">Voir</a>
-                </div>
-              </div>
-            </div>
-          {/each}
-        </div>
-      {/if}
-    {/if}
+
+                <a class="btn btn-primary btn-sm" href="/exercise/{exercise.uuid}">Voir</a>
+              </article>
+            {/each}
+          </div>
+
+          {#if data.hasMore}
+            <p class="result-limit">
+              Les {data.maxResults} premiers résultats sont affichés. Affinez la sélection pour réduire la liste.
+            </p>
+          {/if}
+        {/if}
+      </section>
+    </div>
   {/if}
-</div>
+</main>
+
+<style>
+  .browse-page {
+    width: min(1180px, calc(100vw - 2rem));
+    margin: 0 auto;
+    padding: 2rem 0 3rem;
+  }
+
+  .browse-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .browse-header h1 {
+    margin-top: 0.25rem;
+    font-family: theme('fontFamily.heading');
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .browse-subtitle {
+    margin-top: 0.6rem;
+    color: theme('colors.interface.text-secondary');
+  }
+
+  .overview-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .overview-stats > div {
+    padding: 1rem;
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 8px;
+    background: theme('colors.interface.bg-white');
+  }
+
+  .overview-stats strong {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .overview-stats span {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+    color: theme('colors.interface.text-secondary');
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .level-card,
+  .exercise-card {
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 8px;
+    background: theme('colors.interface.bg-white');
+  }
+
+  .level-card {
+    padding: 1rem;
+  }
+
+  .level-card-head,
+  .exercise-card,
+  .results-head,
+  .sort-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .level-card h2,
+  .results-head h2,
+  .exercise-card h3 {
+    font-family: theme('fontFamily.heading');
+    letter-spacing: 0;
+  }
+
+  .level-card h2 {
+    font-size: 1.35rem;
+  }
+
+  .level-card p,
+  .sort-row p,
+  .result-limit {
+    color: theme('colors.interface.text-muted');
+    font-size: 0.875rem;
+  }
+
+  .module-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .module-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    max-width: 100%;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 999px;
+    background: theme('colors.interface.bg-secondary');
+    font-size: 0.82rem;
+  }
+
+  .module-pill:hover {
+    border-color: theme('colors.brand.400');
+    color: theme('colors.brand.700');
+  }
+
+  .module-pill span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .module-pill small {
+    color: theme('colors.interface.text-muted');
+  }
+
+  .more-count {
+    margin-top: 0.75rem;
+  }
+
+  .browse-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 330px) minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .browse-sidebar {
+    position: sticky;
+    top: 1rem;
+  }
+
+  .browse-results {
+    min-width: 0;
+  }
+
+  .results-head {
+    padding: 1rem;
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 8px;
+    background: theme('colors.interface.bg-white');
+  }
+
+  .results-head h2 {
+    margin-top: 0.2rem;
+    font-size: 1.5rem;
+  }
+
+  .active-path,
+  .summary-group > div,
+  .sort-buttons,
+  .exercise-meta,
+  .exercise-foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+  }
+
+  .active-path {
+    margin-top: 0.8rem;
+  }
+
+  .result-count {
+    text-align: right;
+    min-width: 5.5rem;
+  }
+
+  .result-count strong {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .result-count span {
+    color: theme('colors.interface.text-secondary');
+    font-size: 0.85rem;
+  }
+
+  .summary-row {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  .summary-group {
+    display: grid;
+    grid-template-columns: 6rem minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+    font-size: 0.875rem;
+  }
+
+  .summary-group > span {
+    color: theme('colors.interface.text-muted');
+  }
+
+  .sort-row {
+    align-items: center;
+    margin-bottom: 0.9rem;
+  }
+
+  .sort-buttons .is-current {
+    color: theme('colors.brand.700');
+    background: theme('colors.brand.50');
+    border-color: theme('colors.brand.200');
+  }
+
+  .exercise-list {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .exercise-card {
+    padding: 1rem;
+  }
+
+  .exercise-main {
+    min-width: 0;
+  }
+
+  .exercise-card h3 {
+    margin-top: 0.55rem;
+    font-size: 1rem;
+  }
+
+  .exercise-card h3 a:hover {
+    color: theme('colors.brand.700');
+  }
+
+  .exercise-preview {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .exercise-foot {
+    margin-top: 0.7rem;
+    color: theme('colors.interface.text-muted');
+    font-size: 0.78rem;
+  }
+
+  .exercise-foot span:not(:last-child)::after {
+    content: '·';
+    margin-left: 0.45rem;
+  }
+
+  .result-limit {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .browse-layout,
+    .overview-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .browse-sidebar {
+      position: static;
+    }
+
+    .overview-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .browse-page {
+      width: min(100% - 1rem, 1180px);
+      padding-top: 1rem;
+    }
+
+    .browse-header,
+    .results-head,
+    .sort-row,
+    .exercise-card {
+      display: grid;
+    }
+
+    .overview-stats {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .summary-group {
+      grid-template-columns: 1fr;
+    }
+
+    .result-count {
+      text-align: left;
+    }
+  }
+</style>
