@@ -33,7 +33,10 @@
   <div class="app-header-left">
     <a class="app-brand" href="/" aria-label="OpenYourMath — accueil">
       <span class="app-brand-mark">O</span>
-      <span class="app-brand-name">OpenYourMath</span>
+      <span class="app-brand-name" aria-hidden="true">
+        <span>open</span><span class="app-brand-name-accent">your</span><span>math</span>
+      </span>
+      <span class="sr-only">OpenYourMath</span>
     </a>
 
     <nav class="app-nav" aria-label="Navigation principale">
@@ -118,10 +121,17 @@
   }
 
   .app-brand-name {
-    font-family: theme('fontFamily.heading');
-    font-weight: 800;
-    font-size: 16px;
+    font-family: "Avenir Next", "Nunito", "Segoe UI", system-ui, sans-serif;
+    font-weight: 650;
+    font-size: 17px;
+    line-height: 1;
+    letter-spacing: 0;
     color: theme('colors.interface.text-primary');
+    text-transform: lowercase;
+  }
+
+  .app-brand-name-accent {
+    color: theme('colors.brand.500');
   }
 
   .app-nav {
