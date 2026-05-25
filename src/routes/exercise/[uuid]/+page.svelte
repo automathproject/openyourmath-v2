@@ -1,9 +1,8 @@
 <!-- src/routes/exercise/[uuid]/+page.svelte -->
 <script>
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
+  import LectureSidebar from '$lib/components/LectureSidebar.svelte';
   import LectureSubheader from '$lib/components/LectureSubheader.svelte';
-  import MathRenderer from '$lib/components/MathRenderer.svelte';
-  import StarsRating from '$lib/components/StarsRating.svelte';
   import { page } from '$app/stores';
   
   export let data;
@@ -11,12 +10,6 @@
   let showHint = false;
   let showSolution = false;
   let readingMode = 'classic';
-
-  const answerTypes = new Set(['hint', 'indication', 'reponse', 'solution', 'answer']);
-
-  function sortedContent(content = []) {
-    return [...content].sort((a, b) => (a.order || 0) - (b.order || 0));
-  }
 
   function getQuestionCount(content = []) {
     return content.filter((block) => (block?.type || 'text') === 'question').length;
@@ -27,54 +20,9 @@
     return `≈ ${minutes} min`;
   }
 
-  function buildToc(content = []) {
-    const items = [];
-    let questionIndex = 0;
-    let blockIndex = 0;
-    let currentQuestionGroup = false;
-    let hasIntro = false;
-
-    for (const block of sortedContent(content)) {
-      const type = block?.type || 'text';
-
-      if (type === 'question') {
-        if (currentQuestionGroup) blockIndex += 1;
-        questionIndex += 1;
-        currentQuestionGroup = true;
-        items.push({
-          href: `#question-${questionIndex}`,
-          label: `Question ${questionIndex}`
-        });
-        continue;
-      }
-
-      if (answerTypes.has(type)) {
-        if (!currentQuestionGroup) blockIndex += 1;
-        continue;
-      }
-
-      if (currentQuestionGroup) {
-        blockIndex += 1;
-        currentQuestionGroup = false;
-      }
-
-      blockIndex += 1;
-      if (!hasIntro) {
-        hasIntro = true;
-        items.unshift({
-          href: `#section-${blockIndex}`,
-          label: 'Énoncé'
-        });
-      }
-    }
-
-    return items;
-  }
-
   $: content = data.exercise?.content || [];
   $: questionCount = getQuestionCount(content);
   $: estimatedTime = getEstimatedTime(questionCount);
-  $: tocItems = buildToc(content);
   $: isImmersive = readingMode === 'immersive';
 </script>
 
@@ -108,47 +56,13 @@
         </div>
       </article>
 
-      {#if !isImmersive && tocItems.length > 0}
-        <aside class="exercise-sidebar print-hidden" aria-label="Table des matières de l'exercice">
-          <div class="toc-panel">
-            <div class="t-overline toc-heading">Dans l'exercice</div>
-            <nav class="toc-nav">
-              {#each tocItems as item}
-                <a href={item.href}>{item.label}</a>
-              {/each}
-            </nav>
-          </div>
-        </aside>
+      {#if !isImmersive}
+        <LectureSidebar
+          exercise={data.exercise}
+          similar={data.similar || []}
+        />
       {/if}
     </div>
-
-    <!-- Exercices similaires -->
-    {#if data.similar && data.similar.length > 0}
-      <section class="similar-exercises print-hidden">
-        <div class="t-overline mb-4">Exercices reliés</div>
-        <div class="similar-exercises-grid">
-          {#each data.similar as exercise}
-            <a
-              href="/exercise/{exercise.uuid}"
-              class="card card-hover"
-              style="padding: 14px;"
-            >
-              <h3 class="similar-exercise-title">
-                <MathRenderer content={exercise.title} inline={true} />
-              </h3>
-              <div class="similar-exercise-metadata">
-                {#if exercise.chapter}
-                  <span class="chip chip-teal">{exercise.chapter}</span>
-                {/if}
-                {#if exercise.difficulty}
-                  <StarsRating n={exercise.difficulty} total={5} />
-                {/if}
-              </div>
-            </a>
-          {/each}
-        </div>
-      </section>
-    {/if}
   </div>
 
 {:else}
@@ -187,108 +101,80 @@
 
   /* Page layout */
   .exercise-page-shell {
-    background: theme('colors.interface.bg-primary');
+    background: #fbf8ef;
     min-height: calc(100vh - theme('spacing.header'));
   }
 
   .exercise-reading-layout {
     display: grid;
-    grid-template-columns: minmax(0, 720px) minmax(210px, 260px);
-    gap: 42px;
-    align-items: start;
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 32px 24px 48px;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 0;
+    align-items: stretch;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid theme('colors.interface.border-primary');
+  }
+
+  .exercise-reading-column {
+    background: #fffdf8;
+    padding: 32px 48px 72px 32px;
   }
 
   .exercise-page-shell--immersive .exercise-reading-layout {
     display: block;
     max-width: 720px;
+    margin: 0 auto;
+    padding: 36px 24px 72px;
+    border-top: 0;
+  }
+
+  .exercise-page-shell--immersive .exercise-reading-column {
+    padding: 0;
+    background: transparent;
   }
 
   .exercise-block {
-    background: theme('colors.interface.bg-white');
-    border: 1px solid theme('colors.interface.border-primary');
-    border-radius: 8px;
-    padding: 30px 34px;
-    box-shadow: theme('boxShadow.card');
+    max-width: 880px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
   }
 
-  .exercise-sidebar {
-    position: sticky;
-    top: calc(theme('spacing.header') + 24px);
+  .exercise-block :global(.exercise-content) {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
   }
 
-  .toc-panel {
-    border-left: 1px solid theme('colors.interface.border-primary');
-    padding-left: 18px;
+  .exercise-block :global(.question-response-pair) {
+    border-left: 0;
+    padding-left: 0 !important;
   }
 
-  .toc-heading {
-    margin-bottom: 12px;
+  .exercise-block :global(.question-block) {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
   }
 
-  .toc-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
+  @media (max-width: 900px) {
+    .exercise-reading-layout {
+      display: block;
+      padding: 0;
+      border-top: 1px solid theme('colors.interface.border-primary');
+    }
 
-  .toc-nav a {
-    display: block;
-    padding: 6px 0;
-    color: theme('colors.interface.text-muted');
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1.25;
-    text-decoration: none;
-  }
+    .exercise-reading-column {
+      padding: 24px 16px 40px;
+    }
 
-  .toc-nav a:hover {
-    color: theme('colors.interface.text-primary');
-  }
-
-  @media (max-width: 640px) {
     .exercise-block {
-      padding: 18px 14px;
       border-radius: 0;
       border-left: 0;
       border-right: 0;
     }
-    .exercise-reading-layout {
-      display: block;
-      padding: 0 0 28px;
-    }
-    .exercise-sidebar {
-      display: none;
-    }
   }
-
-  /* Similar exercises */
-  .similar-exercises {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 24px 48px;
-  }
-
-  .exercise-page-shell--immersive .similar-exercises {
-    max-width: 720px;
-  }
-
-  .similar-exercises-grid { display:grid; gap:0.75rem; grid-template-columns: repeat(1,minmax(0,1fr)); }
-  @media (min-width: 640px) { .similar-exercises-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-  @media (min-width: 1024px) { .similar-exercises-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
-  .similar-exercise-title {
-    font-family: theme('fontFamily.heading');
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 0.5rem;
-    display:-webkit-box;
-    -webkit-line-clamp:2;
-    -webkit-box-orient:vertical;
-    overflow:hidden;
-    color: theme('colors.interface.text-primary');
-  }
-  .similar-exercise-metadata { display:flex; align-items:center; gap:0.5rem; flex-wrap: wrap; }
-
 </style>

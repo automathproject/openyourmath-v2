@@ -60,66 +60,65 @@
 </script>
 
 <section class="lecture-subheader" class:lecture-subheader--immersive={isImmersive}>
-  <div class="lecture-nav-band">
-    <div class="lecture-breadcrumb" aria-hidden="true"></div>
-    <div class="lecture-spacer"></div>
-
-    <div class="mode-switch" aria-label="Mode de lecture">
-      <button
-        type="button"
-        class:active={mode === 'classic'}
-        aria-pressed={mode === 'classic'}
-        on:click={() => mode = 'classic'}
-      >
-        Classique
-      </button>
-      <button
-        type="button"
-        class:active={mode === 'immersive'}
-        aria-pressed={mode === 'immersive'}
-        on:click={() => mode = 'immersive'}
-      >
-        Immersif
-      </button>
-    </div>
-
-    <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
-      <span aria-hidden="true">↗</span>
-      <span>{shareLabel}</span>
-    </button>
-
-    <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={downloadLatex}>
-      <span aria-hidden="true">⤓</span>
-      <span>LaTeX</span>
-    </button>
-
-    <div class="lecture-primary-action">
-      <AddToListButton {exercise} size="normal" />
-    </div>
-  </div>
-
   <div class="lecture-title-band">
     <div class="lecture-title-inner">
-      <div class="lecture-metadata">
-        {#if exercise?.level}
-          <span class="chip chip-teal-solid">{exercise.level}</span>
-        {/if}
-        {#if exercise?.module}
-          <span class="chip chip-soft">{exercise.module}</span>
-        {/if}
-        {#if exercise?.chapter}
-          <span class="chip chip-soft">{exercise.chapter}</span>
-        {/if}
-        {#if difficulty > 0}
-          <span class="lecture-stars">
-            <StarsRating n={difficulty} total={4} />
-          </span>
-        {/if}
-        {#if timeAndCount.length > 0}
-          <span class="t-caption lecture-facts">
-            {timeAndCount.join(' · ')}
-          </span>
-        {/if}
+      <div class="lecture-top-row">
+        <div class="lecture-metadata">
+          {#if exercise?.level}
+            <span class="chip chip-teal-solid">{exercise.level}</span>
+          {/if}
+          {#if exercise?.module}
+            <span class="chip chip-soft">{exercise.module}</span>
+          {/if}
+          {#if exercise?.chapter}
+            <span class="chip chip-soft">{exercise.chapter}</span>
+          {/if}
+          {#if difficulty > 0}
+            <span class="lecture-stars">
+              <StarsRating n={difficulty} total={4} />
+            </span>
+          {/if}
+          {#if timeAndCount.length > 0}
+            <span class="t-caption lecture-facts">
+              {timeAndCount.join(' · ')}
+            </span>
+          {/if}
+        </div>
+
+        <div class="lecture-actions">
+          <div class="mode-switch" aria-label="Mode de lecture">
+            <button
+              type="button"
+              class:active={mode === 'classic'}
+              aria-pressed={mode === 'classic'}
+              on:click={() => mode = 'classic'}
+            >
+              Classique
+            </button>
+            <button
+              type="button"
+              class:active={mode === 'immersive'}
+              aria-pressed={mode === 'immersive'}
+              on:click={() => mode = 'immersive'}
+            >
+              Immersif
+            </button>
+          </div>
+
+          <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
+            <span aria-hidden="true">↗</span>
+            <span>{shareLabel}</span>
+          </button>
+
+          <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={downloadLatex}>
+            <span aria-hidden="true">⤓</span>
+            <span>LaTeX</span>
+          </button>
+
+          <div class="lecture-primary-action">
+            <AddToListButton {exercise} size="normal" />
+          </div>
+        </div>
       </div>
 
       <h1 class="t-display lecture-title {titleSizeClass}">
@@ -166,25 +165,32 @@
     --gold-100: theme('colors.warning.100');
     --teal: theme('colors.brand.600');
     --teal-50: theme('colors.brand.50');
-    background: theme('colors.interface.bg-primary');
-    border-bottom: 1px solid theme('colors.interface.border-primary');
+    background: #fbf8ef;
+    border-bottom: 0;
   }
 
-  .lecture-nav-band {
-    min-height: 44px;
+  .lecture-top-row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .lecture-metadata {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
-    padding: 0 22px;
-    border-bottom: 1px dashed theme('colors.interface.border-primary');
+    margin-bottom: 0;
   }
 
-  .lecture-breadcrumb {
-    min-width: 1px;
-  }
-
-  .lecture-spacer {
-    flex: 1 1 auto;
+  .lecture-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
   }
 
   .mode-switch {
@@ -243,7 +249,7 @@
   }
 
   .lecture-title-band {
-    padding: 32px 22px 22px;
+    padding: 20px 32px 24px;
   }
 
   .lecture-title-inner {
@@ -253,14 +259,6 @@
   .lecture-subheader--immersive .lecture-title-inner {
     max-width: 720px;
     margin: 0 auto;
-  }
-
-  .lecture-metadata {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 12px;
   }
 
   .lecture-stars {
@@ -292,7 +290,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 18px;
+    margin-top: 26px;
   }
 
   .reveal-button {
@@ -339,29 +337,22 @@
   }
 
   @media (max-width: 860px) {
-    .lecture-nav-band {
-      min-height: auto;
+    .lecture-top-row {
+      flex-direction: column;
       align-items: flex-start;
-      flex-wrap: wrap;
-      padding: 10px 16px;
+      gap: 10px;
     }
 
-    .lecture-spacer {
-      display: none;
+    .lecture-actions {
+      flex-wrap: wrap;
     }
 
     .mode-switch {
-      order: 1;
       width: 100%;
     }
 
     .mode-switch button {
       flex: 1;
-    }
-
-    .lecture-action,
-    .lecture-primary-action {
-      order: 2;
     }
 
     .lecture-primary-action :global(.add-to-list-btn) {
@@ -376,7 +367,7 @@
     }
 
     .lecture-title-band {
-      padding: 24px 16px 18px;
+      padding: 24px 16px 20px;
     }
 
     .lecture-title--classic,

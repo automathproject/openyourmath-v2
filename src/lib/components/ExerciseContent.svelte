@@ -271,7 +271,7 @@
       <div
         class="question-response-pair"
         class:question-response-pair--preview={isPreview}
-        id={!isPreview ? `question-${contentBlock.questionIndex + 1}` : undefined}
+        id={!isPreview ? `q${contentBlock.questionIndex + 1}` : undefined}
       >
         {#each [contentBlock.question] as question}
           {@const processedQ = processContentBlock(question)}
@@ -372,8 +372,12 @@
     @apply mt-6;
   }
   
-  /* Les questions consécutives n'ont aucun espace */
-  .exercise-content > :global(.question-response-pair + .question-response-pair) {
+  /* Questions consécutives : espacement en mode full, aucun en preview */
+  .exercise-content:not(.exercise-content--preview) > :global(.question-response-pair + .question-response-pair) {
+    margin-top: 1.25rem;
+  }
+
+  .exercise-content--preview > :global(.question-response-pair + .question-response-pair) {
     @apply mt-0;
   }
   
@@ -393,9 +397,9 @@
   }
   
   .question-block {
-    @apply bg-brand-50 rounded-lg p-2;
-    /* Réduction du padding de p-4 à p-2 */
-    margin-bottom: 0 !important; /* Annuler le margin-bottom global */
+    @apply bg-brand-50 rounded-lg;
+    padding: 0.5rem 0.5rem 0.75rem;
+    margin-bottom: 0 !important;
   }
 
   .question-block--preview {
