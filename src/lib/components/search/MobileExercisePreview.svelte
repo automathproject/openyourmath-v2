@@ -2,6 +2,7 @@
   import { fly } from 'svelte/transition';
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
   import AddToListButton from '$lib/components/AddToListButton.svelte';
+  import StarsRating from '$lib/components/StarsRating.svelte';
   import { previewState, previewActions, results, layoutState } from '$lib/stores/searchStore.js';
 
   let showHint = false;
@@ -25,6 +26,10 @@
   $: previewTitle = currentExercise?.title || "Exercice";
   $: previewUuid = currentExercise?.uuid || null;
   $: previewDate = formatDisplayDate(currentExercise?.updated_at || currentExercise?.created_at);
+  $: previewAuthor = currentExercise?.author || null;
+  $: previewOrganization = currentExercise?.organization || null;
+  $: hasPreviewMeta = Boolean(previewAuthor || previewOrganization || previewDate || previewUuid);
+  $: showTopMeta = Boolean(currentExercise?.level || currentExercise?.module || currentExercise?.difficulty || currentExercise?.chapter || currentExercise?.hasVideo);
 
   $: if ($previewState.selectedUuid && $previewState.selectedUuid !== lastUuid) {
     showHint = false;
@@ -101,7 +106,44 @@
         </button>
 
         <div class="mobile-preview__title-wrapper">
+          {#if showTopMeta}
+            <div class="mobile-preview__card-meta">
+              {#if currentExercise?.level}
+                <span class="mobile-preview__chip mobile-preview__chip--level">{currentExercise.level}</span>
+              {/if}
+              {#if currentExercise?.module}
+                <span class="mobile-preview__chip mobile-preview__chip--soft">{currentExercise.module}</span>
+              {/if}
+              {#if currentExercise?.difficulty}
+                <StarsRating n={currentExercise.difficulty} />
+              {/if}
+              {#if currentExercise?.chapter}
+                <span class="mobile-preview__chapter">{currentExercise.chapter}</span>
+              {/if}
+              <span class="mobile-preview__meta-spacer"></span>
+              {#if currentExercise?.hasVideo}
+                <span class="mobile-preview__indicator mobile-preview__indicator--video">▶ vidéo</span>
+              {/if}
+            </div>
+          {/if}
           <h2 class="mobile-preview__title">{previewTitle}</h2>
+          {#if hasPreviewMeta}
+            <div class="mobile-preview__title-separator"></div>
+            <p class="mobile-preview__metadata mobile-preview__metadata--header">
+              {#if previewAuthor}
+                <span class="mobile-preview__meta-item mobile-preview__meta-author">{previewAuthor}</span>
+              {/if}
+              {#if previewOrganization}
+                <span class="mobile-preview__meta-item">{previewOrganization}</span>
+              {/if}
+              {#if previewDate}
+                <span class="mobile-preview__meta-item">{previewDate}</span>
+              {/if}
+              {#if previewUuid}
+                <span class="mobile-preview__meta-item mobile-preview__uuid">{previewUuid}</span>
+              {/if}
+            </p>
+          {/if}
         </div>
 
         <div class="mobile-preview__actions">
@@ -150,45 +192,35 @@
       {/if}
     </div>
 
-    {#if previewUuid}
+    {#if totalResults > 1}
       <footer class="mobile-preview__footer">
-        <div class="mobile-preview__metadata">
-          <span class="mobile-preview__uuid">{previewUuid}</span>
-          {#if previewDate}
-            <span class="mobile-preview__separator">·</span>
-            <span class="mobile-preview__date">{previewDate}</span>
-          {/if}
+        <div class="mobile-preview__nav" aria-label="Navigation entre les exercices">
+          <button
+            type="button"
+            class="mobile-preview__nav-btn"
+            on:click={() => navigateTo(-1)}
+            disabled={!hasPrevious}
+            aria-label="Exercice précédent"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <span class="mobile-preview__nav-status">
+            {currentIndex >= 0 ? currentIndex + 1 : '—'} / {totalResults > 0 ? totalResults : '—'}
+          </span>
+          <button
+            type="button"
+            class="mobile-preview__nav-btn"
+            on:click={() => navigateTo(1)}
+            disabled={!hasNext}
+            aria-label="Exercice suivant"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
         </div>
-
-        {#if totalResults > 1}
-          <div class="mobile-preview__nav" aria-label="Navigation entre les exercices">
-            <button
-              type="button"
-              class="mobile-preview__nav-btn"
-              on:click={() => navigateTo(-1)}
-              disabled={!hasPrevious}
-              aria-label="Exercice précédent"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M15 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-            <span class="mobile-preview__nav-status">
-              {currentIndex >= 0 ? currentIndex + 1 : '—'} / {totalResults > 0 ? totalResults : '—'}
-            </span>
-            <button
-              type="button"
-              class="mobile-preview__nav-btn"
-              on:click={() => navigateTo(1)}
-              disabled={!hasNext}
-              aria-label="Exercice suivant"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-          </div>
-        {/if}
       </footer>
     {/if}
   </div>
@@ -250,6 +282,7 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
+    gap: 0.22rem;
   }
 
   .mobile-preview__title {
@@ -260,6 +293,74 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  .mobile-preview__card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .mobile-preview__chip {
+    display: inline-flex;
+    align-items: center;
+    max-width: 38%;
+    padding: 0.08rem 0.4rem;
+    border-radius: 999px;
+    font-size: 0.66rem;
+    font-weight: 700;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-preview__chip--level {
+    color: #ffffff;
+    background: #3a8f8f;
+    border: 1px solid #3a8f8f;
+  }
+
+  .mobile-preview__chip--soft {
+    color: #6b8893;
+    background: #ffffff;
+    border: 1px solid #ead9b8;
+  }
+
+  .mobile-preview__chapter {
+    min-width: 0;
+    max-width: 24%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.66rem;
+    font-style: italic;
+    color: #6b8893;
+  }
+
+  .mobile-preview__meta-spacer {
+    flex: 1 1 auto;
+    min-width: 0.2rem;
+  }
+
+  .mobile-preview__indicator {
+    flex-shrink: 0;
+    font-size: 0.66rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .mobile-preview__indicator--video {
+    color: #3a8f8f;
+  }
+
+  .mobile-preview__title-separator {
+    height: 1px;
+    width: 100%;
+    margin: 0.02rem 0 0;
+    background: #e5e7eb;
   }
 
   .mobile-preview__actions {
@@ -297,7 +398,11 @@
     flex: 1;
     overflow-y: auto;
     padding: 0.8rem;
-    background: #eff6ff;
+    background: #faf6ea;
+  }
+
+  .mobile-preview__body :global(.exercise-content) {
+    background: #faf6ea;
   }
 
   .mobile-preview__state {
@@ -329,17 +434,17 @@
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
+    justify-content: center;
     padding: 0.55rem 0.9rem;
     border-top: 1px solid #e5e7eb;
     background: #ffffff;
   }
 
   .mobile-preview__metadata {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 0.35rem;
+    flex-wrap: nowrap;
+    gap: 0.22rem 0.5rem;
     font-size: 0.72rem;
     line-height: 1.2;
     color: #6b7280;
@@ -347,20 +452,37 @@
     overflow: hidden;
   }
 
-  .mobile-preview__uuid {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    color: #374151;
+  .mobile-preview__metadata--header {
+    max-height: 1.2rem;
+    overflow: hidden;
+  }
+
+  .mobile-preview__meta-item {
+    min-width: 0;
+    flex-shrink: 1;
+    max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
-  .mobile-preview__separator {
+  .mobile-preview__meta-item:not(:first-child)::before {
+    content: "·";
+    margin-right: 0.5rem;
     color: #9ca3af;
   }
 
-  .mobile-preview__date {
+  .mobile-preview__meta-author {
+    color: #374151;
+    font-weight: 600;
+  }
+
+  .mobile-preview__uuid {
+    flex-shrink: 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     color: #6b7280;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
   }
 

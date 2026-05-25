@@ -231,7 +231,8 @@
     @apply border-interface-border-secondary shadow-card;
   }
   .result-card--selected {
-    border-left: 3px solid theme('colors.brand.500');
+    border-color: theme('colors.brand.500');
+    border-left: 6px solid theme('colors.brand.500');
     @apply bg-brand-50;
   }
   /* ── Meta row (detailed mode) ── */

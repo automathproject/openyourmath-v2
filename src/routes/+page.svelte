@@ -563,7 +563,7 @@
 <style>
   .search-page {
     min-height: 100vh;
-    background: theme('colors.interface.bg-primary');
+    background: theme('colors.interface.bg-white');
   }
 
   .search-page--landing {
@@ -572,7 +572,7 @@
 
   /* ── Landing hero ───────────────────────────────────────────── */
   .landing-hero {
-    background: theme('colors.interface.bg-secondary');
+    background: theme('colors.interface.bg-white');
     border-bottom: 1px solid theme('colors.interface.border-primary');
     padding: 72px 24px 56px;
     display: flex;
@@ -775,7 +775,7 @@
     position: sticky;
     top: 0;
     z-index: 35;
-    background: theme('colors.interface.bg-secondary');
+    background: theme('colors.interface.bg-white');
     border-bottom: 1px solid theme('colors.interface.border-primary');
     box-shadow: 0 1px 4px rgba(13, 60, 77, 0.06);
   }
@@ -825,7 +825,7 @@
       z-index: 30;
       border: 1px solid theme('colors.interface.border-primary');
       border-radius: 0.75rem;
-      background: theme('colors.interface.bg-secondary');
+      background: theme('colors.interface.bg-white');
       box-shadow: 0 18px 44px rgba(13, 60, 77, 0.18);
       transform: translateY(0);
       transition: transform 200ms ease, opacity 160ms ease;
@@ -847,7 +847,7 @@
       max-height: calc(100vh - var(--search-controls-height, 9rem));
       overflow-y: auto;
       align-self: start;
-      background: theme('colors.interface.bg-secondary');
+      background: theme('colors.interface.bg-white');
     }
   }
 
@@ -905,7 +905,7 @@
       overflow: visible;
       border: 1px solid theme('colors.interface.border-primary');
       border-radius: 0.75rem;
-      background: theme('colors.interface.bg-secondary');
+      background: theme('colors.interface.bg-white');
     }
 
     .mobile-sidebar-shell :global(.sps) {
@@ -1250,7 +1250,7 @@
     text-align: center;
     padding: 3rem 1.5rem;
     border-radius: 1rem;
-    @apply border border-dashed border-interface-border-secondary bg-interface-bg-secondary;
+    @apply border border-dashed border-interface-border-secondary bg-interface-bg-white;
   }
   .empty-state-title {
     font-size:1.125rem;
