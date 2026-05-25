@@ -32,7 +32,7 @@
   $: showLevelBadge = !isCompact && Boolean(exercise?.level);
   $: showModuleBadge = !isCompact && Boolean(exercise?.module);
   $: showChapterBadge = !isCompact && Boolean(exercise?.chapter) && String(activeFilters?.chapter || '') !== String(exercise?.chapter || '');
-  $: showDifficultyDots = !isCompact && Boolean(exercise?.difficulty);
+  $: showDifficultyDots = !isCompact && !simplified && Boolean(exercise?.difficulty);
   $: showTags = showLevelBadge || showModuleBadge || showChapterBadge || showDifficultyDots;
   $: snippetLines = isCompact ? 2 : 3;
 
