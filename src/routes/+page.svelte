@@ -305,13 +305,16 @@
     >
       <div class="landing-hero-inner">
         <div class="landing-hero-layout">
-          <img
-            class="landing-logo"
-            src="/img/logo_big.png"
-            alt="OpenYourMath"
-            width="1254"
-            height="1254"
-          />
+          <picture class="landing-logo-picture">
+            <source media="(max-width: 640px)" srcset="/img/logo_big.png" />
+            <img
+              class="landing-logo"
+              src="/img/logo_illustration.png"
+              alt="OpenYourMath"
+              width="990"
+              height="950"
+            />
+          </picture>
           <div class="landing-content">
             <div class="landing-copy">
               <h1 class="landing-title">
@@ -602,10 +605,15 @@
     gap: 2rem;
   }
 
+  .landing-logo-picture {
+    display: block;
+    flex: 0 0 auto;
+  }
+
   .landing-logo {
+    display: block;
     width: clamp(9.5rem, 18vw, 14rem);
     height: auto;
-    flex: 0 0 auto;
     border-radius: 1.75rem;
     filter: drop-shadow(0 18px 32px rgba(13, 60, 77, 0.12));
   }
@@ -629,6 +637,7 @@
 
   .landing-title {
     width: min(100%, 34rem);
+    margin: 0;
   }
 
   .landing-title-logo {
@@ -763,6 +772,17 @@
       text-align: center;
     }
     .landing-title {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .landing-title-logo {
       display: none;
     }
     .landing-subtitle {
