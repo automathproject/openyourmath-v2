@@ -176,6 +176,17 @@ function resolveSortParam(currentFilters = {}) {
 
 export const filterCounts = writable(createEmptyFilterCounts());
 
+function resetPreviewState() {
+  previewState.set({
+    selectedUuid: null,
+    exercise: null,
+    loading: false,
+    error: null,
+    isOpen: false
+  });
+  uiActions.setPreviewPanelOpen(false);
+}
+
 // Comptages hiérarchiques dérivés des résultats courants (compatibles hybride et FTS).
 // Clés composées "level|module|chapter|subchapter" pour distinguer les homonymes inter-niveaux.
 export const resultPathCounts = derived(results, ($results) => {
@@ -318,6 +329,7 @@ export const searchActions = {
     searchMeta.set(null);
     error.set(null);
     filterCounts.set(createEmptyFilterCounts());
+    resetPreviewState();
   },
 
   // Mettre à jour depuis la navigation hiérarchique
@@ -358,6 +370,7 @@ export const searchActions = {
       searchMeta.set(null);
       error.set(null);
       filterCounts.set(createEmptyFilterCounts());
+      resetPreviewState();
       return;
     }
 
@@ -641,29 +654,41 @@ export const previewActions = {
       
       if (response.ok) {
         const data = await response.json();
-        previewState.update(current => ({
-          ...current,
-          exercise: data.exercise,
-          loading: false,
-          error: null
-        }));
+        previewState.update(current => (
+          current.selectedUuid === uuid
+            ? {
+                ...current,
+                exercise: data.exercise,
+                loading: false,
+                error: null
+              }
+            : current
+        ));
       } else {
         const errorData = await response.json().catch(() => ({}));
-        previewState.update(current => ({
-          ...current,
-          exercise: null,
-          loading: false,
-          error: errorData.error || 'Erreur de chargement'
-        }));
+        previewState.update(current => (
+          current.selectedUuid === uuid
+            ? {
+                ...current,
+                exercise: null,
+                loading: false,
+                error: errorData.error || 'Erreur de chargement'
+              }
+            : current
+        ));
       }
     } catch (err) {
       console.error('Erreur chargement exercice:', err);
-      previewState.update(current => ({
-        ...current,
-        exercise: null,
-        loading: false,
-        error: 'Erreur de connexion'
-      }));
+      previewState.update(current => (
+        current.selectedUuid === uuid
+          ? {
+              ...current,
+              exercise: null,
+              loading: false,
+              error: 'Erreur de connexion'
+            }
+          : current
+      ));
     }
   },
 
@@ -678,14 +703,7 @@ export const previewActions = {
 
   // Effacer complètement la prévisualisation
   clearPreview() {
-    previewState.set({
-      selectedUuid: null,
-      exercise: null,
-      loading: false,
-      error: null,
-      isOpen: false
-    });
-    uiActions.setPreviewPanelOpen(false);
+    resetPreviewState();
   }
 };
 

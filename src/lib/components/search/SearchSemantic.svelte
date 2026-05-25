@@ -23,7 +23,8 @@
     filters,
     filterCounts,
     searchActions,
-    suggestionActions
+    suggestionActions,
+    previewActions
   } from '$lib/stores/searchStore.js';
   import { useDebounce } from '$lib/hooks/useDebounce.js';
 
@@ -146,6 +147,7 @@
       searchMeta.set(null);
       error.set(null);
       filterCounts.set({ module: {}, level: {}, difficulty: {}, author: {}, organization: {} });
+      previewActions.clearPreview();
       showSuggest = false;
       refreshSuggestions();
       syncUrl();
