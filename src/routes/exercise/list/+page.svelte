@@ -42,6 +42,35 @@
   let presenterShowSol = false;
   let presenterLightMode = false;
   let presenterRoot;
+  let presenterSlideEl;
+  let presenterCanScrollUp = false;
+  let presenterCanScrollDown = false;
+  let presenterScrollRaf = null;
+
+  function checkPresenterOverflow() {
+    if (!presenterSlideEl) return;
+    const { scrollTop, scrollHeight, clientHeight } = presenterSlideEl;
+    presenterCanScrollUp = scrollTop > 2;
+    presenterCanScrollDown = scrollTop + clientHeight < scrollHeight - 2;
+  }
+
+  function startPresenterScroll(dir) {
+    if (typeof cancelAnimationFrame === 'undefined') return;
+    cancelAnimationFrame(presenterScrollRaf);
+    function tick() {
+      if (!presenterSlideEl) return;
+      presenterSlideEl.scrollTop += dir * 2.5;
+      checkPresenterOverflow();
+      presenterScrollRaf = requestAnimationFrame(tick);
+    }
+    presenterScrollRaf = requestAnimationFrame(tick);
+  }
+
+  function stopPresenterScroll() {
+    if (typeof cancelAnimationFrame === 'undefined') return;
+    cancelAnimationFrame(presenterScrollRaf);
+    presenterScrollRaf = null;
+  }
 
   const presenterQuestionTypes = new Set(['question', 'enonce']);
   const presenterStandaloneStatementTypes = new Set(['texte', 'text', 'statement']);
@@ -61,6 +90,8 @@
   function resetPresenterRevealState() {
     presenterShowInd = false;
     presenterShowSol = false;
+    if (presenterSlideEl) presenterSlideEl.scrollTop = 0;
+    if (typeof requestAnimationFrame !== 'undefined') requestAnimationFrame(checkPresenterOverflow);
   }
 
   function buildPresenterSlides(content = []) {
@@ -411,14 +442,22 @@
   $: if (typeof document !== 'undefined') {
     document.body.classList.toggle('presentation-mode', isPresentationMode);
     document.body.classList.toggle('presentation-mode-full', isFullPresentation);
+    document.body.classList.toggle('presenter-active', mode === 'presenter');
+  }
+
+  // Re-check overflow when presenter content changes (reveal, slide change)
+  $: if (presenterShowInd || presenterShowSol || presenterQIdx !== undefined) {
+    if (typeof requestAnimationFrame !== 'undefined') requestAnimationFrame(checkPresenterOverflow);
   }
 
   onDestroy(() => {
     if (typeof document !== 'undefined') {
       document.body.classList.remove('presentation-mode');
       document.body.classList.remove('presentation-mode-full');
+      document.body.classList.remove('presenter-active');
     }
     immersiveMode.set(false);
+    stopPresenterScroll();
   });
 
   // Réactivité pour mettre à jour le champ UUID
@@ -681,6 +720,8 @@
       togglePresentationMode();
       return;
     }
+
+    if (mode === 'presenter') return;
 
     if (isPresentationMode) {
       if (event.key === 'ArrowLeft' && $currentPosition.hasPrevious) {
@@ -1693,7 +1734,8 @@
     </div>
 
     <!-- Slide canvas -->
-    <div class="presenter-slide">
+    <div class="presenter-slide-wrap">
+    <div class="presenter-slide" bind:this={presenterSlideEl} on:scroll={checkPresenterOverflow}>
       {#if $selectedExercise}
         {#if presenterSlides.length > 0}
           {@const slide = presenterSlides[presenterQIdx]}
@@ -1797,6 +1839,29 @@
           </div>
         {/if}
       {/if}
+    </div>
+    {#if presenterCanScrollUp}
+      <div class="presenter-scroll-nudge presenter-scroll-nudge--up"
+        on:mouseenter={() => startPresenterScroll(-1)}
+        on:mouseleave={stopPresenterScroll}
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 15l-6-6-6 6"/>
+        </svg>
+      </div>
+    {/if}
+    {#if presenterCanScrollDown}
+      <div class="presenter-scroll-nudge presenter-scroll-nudge--down"
+        on:mouseenter={() => startPresenterScroll(1)}
+        on:mouseleave={stopPresenterScroll}
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </div>
+    {/if}
     </div>
 
     <!-- Bottom controls bar -->
@@ -3415,12 +3480,29 @@
   }
 
   /* ── MODE PRÉSENTER ──────────────────────────────────────────────────────── */
+  :global(body.presenter-active) {
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  :global(body.presenter-active .header-shell) { flex-shrink: 0; }
+  :global(body.presenter-active .footer) { display: none; }
+  :global(body.presenter-active main.main-content) {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
   .mode-presenter {
-    min-height: calc(100vh - 80px);
+    flex: 1;
+    min-height: 0;
     background: #0b4250;
     color: #fef9eb;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
   .presenter-topbar {
     display: flex;
@@ -3501,14 +3583,61 @@
     background: rgba(133,232,232,0.18);
     border-color: rgba(133,232,232,0.55);
   }
+  .presenter-slide-wrap {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
   .presenter-slide {
     flex: 1;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding: 42px 32px 40px;
     overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .presenter-slide::-webkit-scrollbar { display: none; }
+  .presenter-scroll-nudge {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: all;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  .presenter-scroll-nudge--up {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(8, 54, 70, 0.85) 0%, transparent 100%);
+    animation: nudge-fade-in 0.3s ease forwards;
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+  .presenter-scroll-nudge--down {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(8, 54, 70, 0.85) 0%, transparent 100%);
+    animation: nudge-fade-in 0.3s ease forwards;
+    align-items: flex-end;
+    padding-bottom: 10px;
+  }
+  @keyframes nudge-fade-in {
+    to { opacity: 0.55; }
+  }
+  .presenter-scroll-nudge:hover { opacity: 1 !important; }
+  .presenter-scroll-nudge svg {
+    width: 22px;
+    height: 22px;
+    color: #85e8e8;
   }
   .presenter-slide-inner {
     display: flex;
@@ -3914,6 +4043,15 @@
     background: rgba(11, 66, 80, 0.06);
     border-color: rgba(11, 66, 80, 0.16);
     color: rgba(11, 51, 64, 0.72);
+  }
+  .mode-presenter.is-light .presenter-scroll-nudge--up {
+    background: linear-gradient(to bottom, rgba(247, 243, 232, 0.9) 0%, transparent 100%);
+  }
+  .mode-presenter.is-light .presenter-scroll-nudge--down {
+    background: linear-gradient(to top, rgba(247, 243, 232, 0.9) 0%, transparent 100%);
+  }
+  .mode-presenter.is-light .presenter-scroll-nudge svg {
+    color: #0b8f96;
   }
   @media (max-width: 640px) {
     .presenter-slide { padding: 24px 18px; }
