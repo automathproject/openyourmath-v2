@@ -40,19 +40,82 @@
   let presenterShowInd = false;
   let presenterShowSol = false;
 
+  const presenterQuestionTypes = new Set(['question', 'enonce']);
+  const presenterHintTypes = new Set(['hint', 'indication']);
+  const presenterSolutionTypes = new Set(['reponse', 'solution', 'answer']);
+
+  function getPresenterBlockContent(block) {
+    if (!block) return '';
+    if (block.html) return block.html;
+    if (block.latex) return block.latex;
+    if (block.content) return block.content;
+    if (block.body) return block.body;
+    if (block.text) return `<p>${block.text}</p>`;
+    return '';
+  }
+
+  function resetPresenterRevealState() {
+    presenterShowInd = false;
+    presenterShowSol = false;
+  }
+
+  function buildPresenterSlides(content = []) {
+    const sortedBlocks = [...content].sort((a, b) => (a?.order || 0) - (b?.order || 0));
+    const slides = [];
+    let currentSlide = null;
+    let pendingContext = [];
+
+    for (const block of sortedBlocks) {
+      const type = block?.type || 'text';
+
+      if (presenterQuestionTypes.has(type)) {
+        if (currentSlide) slides.push(currentSlide);
+        currentSlide = {
+          question: block,
+          context: slides.length === 0 ? pendingContext : [],
+          hints: [],
+          solutions: []
+        };
+        pendingContext = [];
+      } else if (presenterHintTypes.has(type)) {
+        if (currentSlide) currentSlide.hints.push(block);
+      } else if (presenterSolutionTypes.has(type)) {
+        if (currentSlide) currentSlide.solutions.push(block);
+      } else {
+        if (currentSlide) {
+          slides.push(currentSlide);
+          currentSlide = null;
+        }
+        pendingContext.push(block);
+      }
+    }
+
+    if (currentSlide) slides.push(currentSlide);
+    return slides;
+  }
+
   $: presenterExo = $selectedExercise;
-  $: presenterQuestions = presenterExo?.content?.filter(b => b.type === 'question' || b.type === 'enonce') || [];
+  $: presenterSlides = buildPresenterSlides(presenterExo?.content || []);
+  $: presenterQuestions = presenterSlides;
+  $: if (presenterQIdx >= presenterSlides.length && presenterSlides.length > 0) {
+    presenterQIdx = presenterSlides.length - 1;
+    resetPresenterRevealState();
+  }
+  $: if (presenterQIdx < 0) {
+    presenterQIdx = 0;
+    resetPresenterRevealState();
+  }
 
   function presenterNext() {
-    if (presenterQIdx < presenterQuestions.length - 1) { presenterQIdx++; presenterShowInd = false; presenterShowSol = false; }
-    else if ($currentPosition.hasNext) { listActions.nextExercise(); presenterQIdx = 0; presenterShowInd = false; presenterShowSol = false; }
+    if (presenterQIdx < presenterSlides.length - 1) { presenterQIdx++; resetPresenterRevealState(); }
+    else if ($currentPosition.hasNext) { listActions.nextExercise(); presenterQIdx = 0; resetPresenterRevealState(); }
   }
   function presenterPrev() {
-    if (presenterQIdx > 0) { presenterQIdx--; presenterShowInd = false; presenterShowSol = false; }
-    else if ($currentPosition.hasPrevious) { listActions.previousExercise(); presenterQIdx = 0; presenterShowInd = false; presenterShowSol = false; }
+    if (presenterQIdx > 0) { presenterQIdx--; resetPresenterRevealState(); }
+    else if ($currentPosition.hasPrevious) { listActions.previousExercise(); presenterQIdx = 0; resetPresenterRevealState(); }
   }
-  function presenterNextExo() { if ($currentPosition.hasNext) { listActions.nextExercise(); presenterQIdx = 0; presenterShowInd = false; presenterShowSol = false; } }
-  function presenterPrevExo() { if ($currentPosition.hasPrevious) { listActions.previousExercise(); presenterQIdx = 0; presenterShowInd = false; presenterShowSol = false; } }
+  function presenterNextExo() { if ($currentPosition.hasNext) { listActions.nextExercise(); presenterQIdx = 0; resetPresenterRevealState(); } }
+  function presenterPrevExo() { if ($currentPosition.hasPrevious) { listActions.previousExercise(); presenterQIdx = 0; resetPresenterRevealState(); } }
 
   function handlePresenterKey(e) {
     if (e.target?.tagName === 'INPUT' || e.target?.tagName === 'TEXTAREA') return;
@@ -61,9 +124,9 @@
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); presenterPrev(); }
     else if (e.key === 'ArrowDown') { e.preventDefault(); presenterNextExo(); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); presenterPrevExo(); }
-    else if (e.key === 'i' || e.key === 'I') presenterShowInd = !presenterShowInd;
-    else if (e.key === 's' || e.key === 'S') presenterShowSol = !presenterShowSol;
-    else if (/^[1-9]$/.test(e.key)) listActions.selectExercise(parseInt(e.key) - 1);
+    else if ((e.key === 'i' || e.key === 'I') && presenterSlides[presenterQIdx]?.hints?.length) presenterShowInd = !presenterShowInd;
+    else if ((e.key === 's' || e.key === 'S') && presenterSlides[presenterQIdx]?.solutions?.length) presenterShowSol = !presenterShowSol;
+    else if (/^[1-9]$/.test(e.key)) { listActions.selectExercise(parseInt(e.key) - 1); presenterQIdx = 0; resetPresenterRevealState(); }
   }
 
   // Partager view state
@@ -1483,41 +1546,65 @@
           {/if}
         </div>
 
-        {#if presenterQuestions.length > 0}
-          {@const q = presenterQuestions[presenterQIdx]}
+        {#if presenterSlides.length > 0}
+          {@const slide = presenterSlides[presenterQIdx]}
+          {@const q = slide?.question}
           <div class="presenter-slide-inner">
             <div class="presenter-bignum">{presenterQIdx + 1}.</div>
             <div class="presenter-body">
+              {#if slide?.context?.length}
+                <div class="presenter-context">
+                  {#each slide.context as contextBlock}
+                    <MathRenderer content={getPresenterBlockContent(contextBlock)} inline={false} />
+                  {/each}
+                </div>
+              {/if}
               {#if q?.title}
                 <div class="presenter-q-title">
                   <MathRenderer content={q.title} inline={true} />
                 </div>
               {/if}
-              {#if q?.content || q?.body}
+              {#if getPresenterBlockContent(q)}
                 <div class="presenter-q-body">
-                  <MathRenderer content={q.content || q.body} inline={false} />
+                  <MathRenderer content={getPresenterBlockContent(q)} inline={false} />
                 </div>
               {/if}
               <div class="presenter-reveal-btns">
-                <button class="presenter-btn presenter-btn--ind" on:click={() => (presenterShowInd = !presenterShowInd)}>
+                <button
+                  class="presenter-btn presenter-btn--ind"
+                  disabled={!slide?.hints?.length}
+                  on:click={() => (presenterShowInd = !presenterShowInd)}
+                >
                   💡 {presenterShowInd ? 'Masquer' : 'Afficher'} l'indication
                   <span class="presenter-kbd-hint">I</span>
                 </button>
-                <button class="presenter-btn presenter-btn--sol" on:click={() => (presenterShowSol = !presenterShowSol)}>
+                <button
+                  class="presenter-btn presenter-btn--sol"
+                  disabled={!slide?.solutions?.length}
+                  on:click={() => (presenterShowSol = !presenterShowSol)}
+                >
                   ★ {presenterShowSol ? 'Masquer' : 'Afficher'} la solution
                   <span class="presenter-kbd-hint">S</span>
                 </button>
               </div>
-              {#if presenterShowInd && q?.indication}
+              {#if presenterShowInd && slide?.hints?.length}
                 <div class="presenter-reveal presenter-reveal--ind">
                   <div class="presenter-reveal-label">Indication</div>
-                  <div class="presenter-reveal-body"><MathRenderer content={q.indication} inline={false} /></div>
+                  <div class="presenter-reveal-body">
+                    {#each slide.hints as hint}
+                      <MathRenderer content={getPresenterBlockContent(hint)} inline={false} />
+                    {/each}
+                  </div>
                 </div>
               {/if}
-              {#if presenterShowSol && q?.solution}
+              {#if presenterShowSol && slide?.solutions?.length}
                 <div class="presenter-reveal presenter-reveal--sol">
                   <div class="presenter-reveal-label">Solution</div>
-                  <div class="presenter-reveal-body"><MathRenderer content={q.solution} inline={false} /></div>
+                  <div class="presenter-reveal-body">
+                    {#each slide.solutions as solution}
+                      <MathRenderer content={getPresenterBlockContent(solution)} inline={false} />
+                    {/each}
+                  </div>
                 </div>
               {/if}
             </div>
@@ -3183,6 +3270,14 @@
   }
   .presenter-body { flex: 1; min-width: 0; }
   .presenter-body--full { padding-top: 8px; }
+  .presenter-context {
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(254,249,235,0.12);
+    color: rgba(254,249,235,0.72);
+    font-size: 16px;
+    line-height: 1.65;
+  }
   .presenter-q-title {
     font-family: theme('fontFamily.heading');
     font-size: 22px;
@@ -3207,6 +3302,13 @@
     transition: background 0.15s;
   }
   .presenter-btn:hover { background: rgba(255,255,255,0.14); }
+  .presenter-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+  .presenter-btn:disabled:hover {
+    background: rgba(255,255,255,0.07);
+  }
   .presenter-btn--ind {
     border-color: rgba(245,197,95,0.4);
     color: #f5c55f;
