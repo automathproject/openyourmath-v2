@@ -180,33 +180,35 @@
         <MathRenderer content={exercise?.title || 'Exercice'} inline={true} />
       </h1>
 
-      <div class="reveal-controls" aria-label="Contrôles de révélation du contenu">
-        {#if exercise?.hasIndication}
-          <button
-            type="button"
-            class="reveal-button reveal-button--hint"
-            class:active={showHint}
-            aria-pressed={showHint}
-            on:click={() => showHint = !showHint}
-          >
-            <span>Tout révéler : indices</span>
-            {#if showHint}<span class="reveal-check" aria-hidden="true">✓</span>{/if}
-          </button>
-        {/if}
+      {#if isImmersive}
+        <div class="reveal-controls" aria-label="Contrôles de révélation du contenu">
+          {#if exercise?.hasIndication}
+            <button
+              type="button"
+              class="reveal-button reveal-button--hint"
+              class:active={showHint}
+              aria-pressed={showHint}
+              on:click={() => showHint = !showHint}
+            >
+              <span>Tout révéler : indices</span>
+              {#if showHint}<span class="reveal-check" aria-hidden="true">✓</span>{/if}
+            </button>
+          {/if}
 
-        {#if exercise?.hasSolution}
-          <button
-            type="button"
-            class="reveal-button reveal-button--solution"
-            class:active={showSolution}
-            aria-pressed={showSolution}
-            on:click={() => showSolution = !showSolution}
-          >
-            <span>Tout révéler : solutions</span>
-            {#if showSolution}<span class="reveal-check" aria-hidden="true">✓</span>{/if}
-          </button>
-        {/if}
-      </div>
+          {#if exercise?.hasSolution}
+            <button
+              type="button"
+              class="reveal-button reveal-button--solution"
+              class:active={showSolution}
+              aria-pressed={showSolution}
+              on:click={() => showSolution = !showSolution}
+            >
+              <span>Tout révéler : solutions</span>
+              {#if showSolution}<span class="reveal-check" aria-hidden="true">✓</span>{/if}
+            </button>
+          {/if}
+        </div>
+      {/if}
     </div>
   </div>
 </section>

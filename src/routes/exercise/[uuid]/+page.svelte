@@ -67,6 +67,8 @@
         <LectureSidebar
           exercise={data.exercise}
           similar={data.similar || []}
+          bind:showHint
+          bind:showSolution
         />
       {/if}
     </div>

@@ -4,6 +4,8 @@
 
   export let exercise = {};
   export let similar = [];
+  export let showHint = false;
+  export let showSolution = false;
 
   function formatDisplayDate(value) {
     if (!value) return '';
@@ -46,6 +48,39 @@
 </script>
 
 <aside class="lecture-sidebar print-hidden" aria-label="Informations de l'exercice">
+  {#if exercise?.hasIndication || exercise?.hasSolution}
+    <section class="sidebar-section reveal-section" aria-labelledby="lecture-reveal-title">
+      <h2 id="lecture-reveal-title" class="t-overline sidebar-heading">Révélation</h2>
+      <div class="reveal-controls" aria-label="Contrôles de révélation du contenu">
+        {#if exercise?.hasIndication}
+          <button
+            type="button"
+            class="reveal-button reveal-button--hint"
+            class:active={showHint}
+            aria-pressed={showHint}
+            on:click={() => showHint = !showHint}
+          >
+            <span>Tout révéler : indices</span>
+            {#if showHint}<span class="reveal-check" aria-hidden="true">✓</span>{/if}
+          </button>
+        {/if}
+
+        {#if exercise?.hasSolution}
+          <button
+            type="button"
+            class="reveal-button reveal-button--solution"
+            class:active={showSolution}
+            aria-pressed={showSolution}
+            on:click={() => showSolution = !showSolution}
+          >
+            <span>Tout révéler : solutions</span>
+            {#if showSolution}<span class="reveal-check" aria-hidden="true">✓</span>{/if}
+          </button>
+        {/if}
+      </div>
+    </section>
+  {/if}
+
   <section class="sidebar-section" aria-labelledby="lecture-meta-title">
     <h2 id="lecture-meta-title" class="t-overline sidebar-heading">Métadonnées</h2>
     <dl class="metadata-grid">
@@ -122,6 +157,10 @@
 
 <style>
   .lecture-sidebar {
+    --gold: theme('colors.warning.500');
+    --gold-100: theme('colors.warning.100');
+    --teal: theme('colors.brand.600');
+    --teal-50: theme('colors.brand.50');
     width: 300px;
     position: sticky;
     top: 0;
@@ -150,6 +189,64 @@
 
   .sidebar-heading {
     margin: 0 0 12px;
+  }
+
+  .reveal-section {
+    padding-top: 0;
+  }
+
+  .reveal-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .reveal-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: theme('colors.interface.bg-white');
+    color: theme('colors.interface.text-secondary');
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.16s ease, color 0.16s ease, border-color 0.16s ease;
+  }
+
+  .reveal-button--hint {
+    border-color: theme('colors.warning.200');
+    color: theme('colors.warning.700');
+  }
+
+  .reveal-button--hint.active {
+    background: var(--gold-100);
+    border-color: var(--gold);
+    color: theme('colors.warning.800');
+  }
+
+  .reveal-button--solution {
+    border-color: theme('colors.brand.200');
+    color: theme('colors.brand.700');
+  }
+
+  .reveal-button--solution.active {
+    background: var(--teal-50);
+    border-color: var(--teal);
+    color: theme('colors.brand.800');
+  }
+
+  .reveal-check {
+    flex: 0 0 auto;
+    font-weight: 800;
+    line-height: 1;
   }
 
   .metadata-grid {
