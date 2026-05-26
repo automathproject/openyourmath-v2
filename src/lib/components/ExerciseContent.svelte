@@ -12,6 +12,7 @@
   export let showGlobalToggles = false;
   export let studentMode = 'normal'; // 'normal' | 'student' | 'student-hints'
   export let showHeader = true;
+  export let showInlineControls = true;
   $: isPreview = variant === 'preview';
   
   // État local pour contrôler l'affichage individuel des solutions et indications
@@ -288,38 +289,40 @@
                   <MathRenderer content={processedQ.html} />
                 </div>
               </div>
-              <div class="question-actions" class:question-actions--preview={isPreview}>
-                {#if contentBlock.hints.length > 0 && studentMode !== 'student'}
-                  <button
-                    class="question-action-btn question-action-btn--hint"
-                    class:question-action-btn--active={(hintStates[contentBlock.questionIndex] || showHint) && !hiddenHintStates[contentBlock.questionIndex]}
-                    class:question-action-btn--preview={isPreview}
-                    on:click={() => toggleHint(contentBlock.questionIndex)}
-                    title={(hintStates[contentBlock.questionIndex] || showHint) && !hiddenHintStates[contentBlock.questionIndex] ? 'Masquer l\'indication' : 'Voir l\'indication'}
-                  >
-                    {#if isPreview}
-                      Ind.
-                    {:else}
-                      💡
-                    {/if}
-                  </button>
-                {/if}
-                {#if contentBlock.solutions.length > 0 && studentMode === 'normal'}
-                  <button
-                    class="question-action-btn question-action-btn--solution"
-                    class:question-action-btn--active={(solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex]}
-                    class:question-action-btn--preview={isPreview}
-                    on:click={() => toggleSolution(contentBlock.questionIndex)}
-                    title={(solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex] ? 'Masquer la solution' : 'Voir la solution'}
-                  >
-                    {#if isPreview}
-                      {(solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex] ? '✔' : 'Sol.'}
-                    {:else}
-                      ✅
-                    {/if}
-                  </button>
-                {/if}
-              </div>
+              {#if showInlineControls}
+                <div class="question-actions" class:question-actions--preview={isPreview}>
+                  {#if contentBlock.hints.length > 0 && studentMode !== 'student'}
+                    <button
+                      class="question-action-btn question-action-btn--hint"
+                      class:question-action-btn--active={(hintStates[contentBlock.questionIndex] || showHint) && !hiddenHintStates[contentBlock.questionIndex]}
+                      class:question-action-btn--preview={isPreview}
+                      on:click={() => toggleHint(contentBlock.questionIndex)}
+                      title={(hintStates[contentBlock.questionIndex] || showHint) && !hiddenHintStates[contentBlock.questionIndex] ? 'Masquer l\'indication' : 'Voir l\'indication'}
+                    >
+                      {#if isPreview}
+                        Ind.
+                      {:else}
+                        💡
+                      {/if}
+                    </button>
+                  {/if}
+                  {#if contentBlock.solutions.length > 0 && studentMode === 'normal'}
+                    <button
+                      class="question-action-btn question-action-btn--solution"
+                      class:question-action-btn--active={(solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex]}
+                      class:question-action-btn--preview={isPreview}
+                      on:click={() => toggleSolution(contentBlock.questionIndex)}
+                      title={(solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex] ? 'Masquer la solution' : 'Voir la solution'}
+                    >
+                      {#if isPreview}
+                        {(solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex] ? '✔' : 'Sol.'}
+                      {:else}
+                        ✅
+                      {/if}
+                    </button>
+                  {/if}
+                </div>
+              {/if}
             </div>
           </div>
         {/each}

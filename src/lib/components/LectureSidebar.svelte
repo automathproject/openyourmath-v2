@@ -6,6 +6,7 @@
   export let similar = [];
   export let showHint = false;
   export let showSolution = false;
+  export let showInlineControls = true;
 
   function formatDisplayDate(value) {
     if (!value) return '';
@@ -49,9 +50,15 @@
 
 <aside class="lecture-sidebar print-hidden" aria-label="Informations de l'exercice">
   {#if exercise?.hasIndication || exercise?.hasSolution}
-    <section class="sidebar-section reveal-section" aria-labelledby="lecture-reveal-title">
-      <h2 id="lecture-reveal-title" class="t-overline sidebar-heading">Révélation</h2>
-      <div class="reveal-controls" aria-label="Contrôles de révélation du contenu">
+    <section class="sidebar-section display-section" aria-labelledby="lecture-display-title">
+      <h2 id="lecture-display-title" class="t-overline sidebar-heading">Affichage</h2>
+      <div class="display-controls" aria-label="Contrôles d'affichage du contenu">
+        <label class="display-toggle">
+          <span>Boutons individuels</span>
+          <input type="checkbox" bind:checked={showInlineControls} />
+          <span class="display-switch" aria-hidden="true"></span>
+        </label>
+
         {#if exercise?.hasIndication}
           <button
             type="button"
@@ -191,14 +198,74 @@
     margin: 0 0 12px;
   }
 
-  .reveal-section {
+  .display-section {
     padding-top: 0;
   }
 
-  .reveal-controls {
+  .display-controls {
     display: flex;
     flex-direction: column;
     gap: 8px;
+  }
+
+  .display-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 36px;
+    padding: 0 12px;
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.58);
+    color: theme('colors.interface.text-secondary');
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .display-toggle input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .display-switch {
+    position: relative;
+    flex: 0 0 auto;
+    width: 34px;
+    height: 20px;
+    border-radius: 999px;
+    background: theme('colors.interface.border-primary');
+    transition: background 0.16s ease;
+  }
+
+  .display-switch::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(13, 60, 77, 0.2);
+    transition: transform 0.16s ease;
+  }
+
+  .display-toggle input:checked + .display-switch {
+    background: var(--teal);
+  }
+
+  .display-toggle input:checked + .display-switch::after {
+    transform: translateX(14px);
+  }
+
+  .display-toggle:focus-within {
+    outline: 2px solid theme('colors.brand.300');
+    outline-offset: 2px;
   }
 
   .reveal-button {

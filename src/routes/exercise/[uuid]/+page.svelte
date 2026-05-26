@@ -11,6 +11,7 @@
 
   let showHint = false;
   let showSolution = false;
+  let showInlineControls = true;
   let readingMode = 'classic';
 
   function getQuestionCount(content = []) {
@@ -59,6 +60,7 @@
             content={content}
             bind:showHint
             bind:showSolution
+            {showInlineControls}
           />
         </div>
       </article>
@@ -69,6 +71,7 @@
           similar={data.similar || []}
           bind:showHint
           bind:showSolution
+          bind:showInlineControls
         />
       {/if}
     </div>
