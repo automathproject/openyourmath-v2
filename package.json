@@ -74,7 +74,8 @@
   "_comment_dependencies": "Runtime deps (SQLite + KaTeX)",
   "dependencies": {
     "better-sqlite3": "^11.10.0",
-    "katex": "^0.16.22"
+    "katex": "^0.16.22",
+    "qrcode": "^1.5.4"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

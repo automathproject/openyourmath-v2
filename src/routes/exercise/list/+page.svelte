@@ -12,6 +12,7 @@
   import SeanceModeBar from '$lib/components/SeanceModeBar.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import StarsRating from '$lib/components/StarsRating.svelte';
+  import QRCode from 'qrcode';
   import { immersiveMode } from '$lib/stores/uiStore.ts';
   import {
     exerciseList,
@@ -134,9 +135,47 @@
   let partagerSolVisible = false;
   let partagerIndVisible = true;
   let partagerNotesVisible = false;
+  let partagerTargetMode = 'consulter';
+  let partagerButtonsVisible = true;
+  let partagerQrDataUrl = '';
+  let partagerQrError = '';
+  let partagerQrRequestId = 0;
+  let showQrModal = false;
+
+  $: partagerUrlView = partagerSolVisible ? null : (partagerIndVisible ? 'student-hints' : 'student');
+  $: partagerShareUrl = buildShareUrl(partagerUrlView, {
+    mode: partagerTargetMode,
+    buttonsVisible: partagerButtonsVisible
+  });
+  $: updatePartagerQrCode(partagerShareUrl);
+
+  async function updatePartagerQrCode(url) {
+    if (typeof window === 'undefined' || !url) return;
+    const requestId = ++partagerQrRequestId;
+    try {
+      const dataUrl = await QRCode.toDataURL(url, {
+        errorCorrectionLevel: 'M',
+        margin: 2,
+        scale: 8,
+        color: {
+          dark: '#111827',
+          light: '#ffffff'
+        }
+      });
+      if (requestId === partagerQrRequestId) {
+        partagerQrDataUrl = dataUrl;
+        partagerQrError = '';
+      }
+    } catch (err) {
+      if (requestId === partagerQrRequestId) {
+        partagerQrDataUrl = '';
+        partagerQrError = 'QR code indisponible';
+      }
+    }
+  }
 
   async function partagerCopyLink() {
-    const url = buildShareUrl(null);
+    const url = partagerShareUrl;
     try {
       await navigator.clipboard.writeText(url);
       partagerCopied = 'link';
@@ -144,7 +183,7 @@
     } catch { alert(url); }
   }
   async function partagerCopyEmbed() {
-    const url = buildShareUrl(null);
+    const url = partagerShareUrl;
     const embed = `<iframe src="${url}" width="100%" height="600" frameborder="0"></iframe>`;
     try {
       await navigator.clipboard.writeText(embed);
@@ -166,6 +205,7 @@
     : $page.url.searchParams.get('view') === 'student-hints'
       ? 'student-hints'
       : 'normal';
+  $: sharedButtonsVisible = $page.url.searchParams.get('buttons') !== '0';
 
   // Titre personnalisé
   let listTitle = data.title || '';
@@ -483,16 +523,20 @@
     let url = base;
     if (listTitle) url += `${url.includes('?') ? '&' : '?'}title=${encodeURIComponent(listTitle)}`;
     if (studentMode !== 'normal') url += `${url.includes('?') ? '&' : '?'}view=${studentMode}`;
+    if (mode !== 'preparer') url += `${url.includes('?') ? '&' : '?'}mode=${mode}`;
+    if (!sharedButtonsVisible) url += `${url.includes('?') ? '&' : '?'}buttons=0`;
     return url;
   }
 
-  function buildShareUrl(viewOverride) {
+  function buildShareUrl(viewOverride, options = {}) {
     const origin = typeof window !== 'undefined' ? window.location.origin : '';
     const base = listUtils.getShareableUrl(origin);
     let url = base;
     if (listTitle) url += `${url.includes('?') ? '&' : '?'}title=${encodeURIComponent(listTitle)}`;
-    const view = viewOverride ?? (studentMode !== 'normal' ? studentMode : null);
+    const view = viewOverride !== undefined ? viewOverride : (studentMode !== 'normal' ? studentMode : null);
     if (view) url += `${url.includes('?') ? '&' : '?'}view=${view}`;
+    if (options.mode) url += `${url.includes('?') ? '&' : '?'}mode=${options.mode}`;
+    if (options.buttonsVisible === false) url += `${url.includes('?') ? '&' : '?'}buttons=0`;
     return url;
   }
 
@@ -583,7 +627,10 @@
       event.preventDefault();
       listActions.nextExercise();
     } else if (event.key === 'Escape') {
-      if (isMobileNavOpen) {
+      if (showQrModal) {
+        event.preventDefault();
+        showQrModal = false;
+      } else if (isMobileNavOpen) {
         event.preventDefault();
         closeMobileNav();
       } else if (showUuidControl) {
@@ -617,35 +664,38 @@
 
 <svelte:window on:keydown={(e) => { handleKeydown(e); handlePresenterKey(e); }} on:resize={checkMobile} />
 
-<SeanceModeBar
-  bind:mode
-  title={listTitle || "Liste d'exercices"}
-  subtitle="{$exerciseList.length} exercice{$exerciseList.length !== 1 ? 's' : ''}"
-  breadcrumb={[{ label: 'Mes séances', href: '/exercise/list' }, { label: listTitle || 'Sans titre' }]}
->
-  <svelte:fragment slot="title">
-    <h1 class="list-title">
-      {#if isEditingTitle}
-        <input
-          class="title-edit-input"
-          type="text"
-          bind:value={titleDraft}
-          on:keydown={handleTitleKeydown}
-          on:blur={saveTitle}
-          placeholder="Titre de la liste..."
-          use:focusInput
-        />
-      {:else}
-        <button class="title-text" on:click={startEditTitle} title="Cliquer pour modifier le titre">
-          {listTitle || "Liste d'exercices"}
-        </button>
-      {/if}
-    </h1>
-  </svelte:fragment>
+{#if sharedButtonsVisible || mode === 'partager'}
+  <SeanceModeBar
+    bind:mode
+    title={listTitle || "Liste d'exercices"}
+    subtitle="{$exerciseList.length} exercice{$exerciseList.length !== 1 ? 's' : ''}"
+    breadcrumb={[{ label: 'Mes séances', href: '/exercise/list' }, { label: listTitle || 'Sans titre' }]}
+  >
+    <svelte:fragment slot="title">
+      <h1 class="list-title">
+        {#if isEditingTitle && sharedButtonsVisible}
+          <input
+            class="title-edit-input"
+            type="text"
+            bind:value={titleDraft}
+            on:keydown={handleTitleKeydown}
+            on:blur={saveTitle}
+            placeholder="Titre de la liste..."
+            use:focusInput
+          />
+        {:else if sharedButtonsVisible}
+          <button class="title-text" on:click={startEditTitle} title="Cliquer pour modifier le titre">
+            {listTitle || "Liste d'exercices"}
+          </button>
+        {:else}
+          <span class="title-text">{listTitle || "Liste d'exercices"}</span>
+        {/if}
+      </h1>
+    </svelte:fragment>
 
-  <svelte:fragment slot="actions">
-    {#if mode === 'preparer'}
-      <div class="list-actions">
+    <svelte:fragment slot="actions">
+      {#if mode === 'preparer' && sharedButtonsVisible}
+        <div class="list-actions">
         <div class="uuid-control-desktop">
           <div class="uuid-input-wrapper">
             <input 
@@ -734,10 +784,11 @@
             <span class="list-action-btn__label">Vider</span>
           </button>
         {/if}
-      </div>
-    {/if}
-  </svelte:fragment>
-</SeanceModeBar>
+        </div>
+      {/if}
+    </svelte:fragment>
+  </SeanceModeBar>
+{/if}
 
 {#if mode === 'preparer'}
 <div class="exercise-list-page" class:presentation-mode={isPresentationMode} class:full-presentation={isFullPresentation}>
@@ -762,7 +813,7 @@
     <div class="list-header-content">
       <div class="list-header-info">
         <h1 class="list-title">
-          {#if isEditingTitle}
+          {#if isEditingTitle && sharedButtonsVisible}
             <input
               class="title-edit-input"
               type="text"
@@ -772,10 +823,17 @@
               placeholder="Titre de la liste..."
               use:focusInput
             />
-          {:else}
+          {:else if sharedButtonsVisible}
             <button class="title-text" on:click={startEditTitle} title="Cliquer pour modifier le titre">
               {listTitle || "Liste d'exercices"}
             </button>
+          {:else}
+            <span class="title-text">{listTitle || "Liste d'exercices"}</span>
+            {#if $hasExercises}
+              <span class="list-count">({$exerciseList.length})</span>
+            {/if}
+          {/if}
+          {#if sharedButtonsVisible}
             {#if $hasExercises}
               <span class="list-count">({$exerciseList.length})</span>
             {/if}
@@ -795,6 +853,7 @@
         {/if}
       </div>
       
+      {#if sharedButtonsVisible}
       <div class="list-actions">
         <!-- Contrôle UUID desktop (toujours visible) -->
         <div class="uuid-control-desktop">
@@ -914,6 +973,7 @@
           </div>
         {/if}
       </div>
+      {/if}
     </div>
     
     <!-- NOUVEAU : Panneau de contrôle UUID (conditionnel) -->
@@ -1102,7 +1162,7 @@
         class:list-navigation--mobile-open={isMobileNavOpen}
         class:list-navigation--rail={isPresentationMode && !isMobile}
       >
-        {#if isPresentationMode && !isMobile}
+        {#if isPresentationMode && !isMobile && sharedButtonsVisible}
           <!-- Rail d'icônes numérotées en mode présentation -->
           <nav class="exercise-rail" aria-label="Navigation exercices">
             {#if isFullPresentation}
@@ -1127,6 +1187,7 @@
           <!-- Navigation complète (mode normal) -->
           <div class="nav-header">
             <h2 class="nav-title">Exercices</h2>
+            {#if sharedButtonsVisible}
             <div class="nav-header-actions">
               {#if $currentPosition.total > 0}
                 <span class="nav-counter">
@@ -1165,9 +1226,10 @@
                 {/if}
               </button>
             </div>
+            {/if}
           </div>
 
-          {#if !isEditMode}
+          {#if !isEditMode && sharedButtonsVisible}
             <div class="nav-controls">
               <button
                 on:click={listActions.previousExercise}
@@ -1198,7 +1260,7 @@
             <ExerciseListEditor
               exercises={$exerciseList}
               selectedIndex={$selectedExerciseIndex}
-              {isEditMode}
+              isEditMode={sharedButtonsVisible ? isEditMode : false}
               on:reorder={handleReorder}
               on:deleteMultiple={handleDeleteMultiple}
               on:select={handleSelectFromEditor}
@@ -1209,12 +1271,12 @@
       </aside>
       
       <!-- Overlay pour mobile (navigation, UUID control, partage) -->
-      {#if (isMobileNavOpen || showUuidControl || showSharePanel) && isMobile}
+      {#if sharedButtonsVisible && (isMobileNavOpen || showUuidControl || showSharePanel) && isMobile}
         <div class="mobile-overlay" on:click={handleOverlayClick}></div>
       {/if}
 
       <!-- Overlay pour UUID control / partage sur desktop -->
-      {#if (showUuidControl || showSharePanel) && !isMobile}
+      {#if sharedButtonsVisible && (showUuidControl || showSharePanel) && !isMobile}
         <div class="desktop-uuid-overlay" on:click={handleOverlayClick}></div>
       {/if}
       
@@ -1254,7 +1316,7 @@
                   exercise={$selectedExercise}
                   position={$currentPosition}
                   variant="full"
-                  showGlobalToggles={true}
+                  showGlobalToggles={sharedButtonsVisible}
                   content={$selectedExercise.content || []}
                   bind:showHint
                   bind:showSolution
@@ -1287,13 +1349,13 @@
                       content={selectedContent}
                       bind:showHint
                       bind:showSolution
-                      bind:showInlineControls
+                      showInlineControls={sharedButtonsVisible ? showInlineControls : false}
                       {studentMode}
                     />
                   </div>
                 </article>
 
-                {#if readingMode !== 'immersive'}
+                {#if readingMode !== 'immersive' && sharedButtonsVisible}
                   <LectureSidebar
                     exercise={$selectedExercise}
                     similar={[]}
@@ -1318,7 +1380,7 @@
       </main>
 
       <!-- Mode présentation : grandes flèches tactiles et indicateur de position -->
-      {#if isPresentationMode && !isMobile && $hasExercises}
+      {#if isPresentationMode && !isMobile && $hasExercises && sharedButtonsVisible}
         <button
           class="pres-arrow pres-arrow--prev"
           on:click={listActions.previousExercise}
@@ -1347,7 +1409,7 @@
       {/if}
       
       <!-- Barre de navigation mobile fixe en bas -->
-      {#if isMobile && $hasExercises}
+      {#if isMobile && $hasExercises && sharedButtonsVisible}
         <div class="mobile-nav-bar">
           <button
             on:click={listActions.previousExercise}
@@ -1426,6 +1488,7 @@
     <!-- Reading panel -->
     <main class="consulter-main">
       <!-- Controls bar -->
+      {#if sharedButtonsVisible}
       <div class="consulter-controls">
         <span class="consulter-pos">
           <strong style="font-family:var(--font-mono, monospace)">{$selectedExerciseIndex + 1} / {$exerciseList.length}</strong>
@@ -1444,6 +1507,7 @@
           on:click={() => (consulterShowSolution = !consulterShowSolution)}
         >★ Solutions</button>
       </div>
+      {/if}
 
       <!-- Exercise body -->
       {#if $exerciseLoading}
@@ -1461,7 +1525,7 @@
               showShareAction={false}
               showLatexAction={false}
               showPrimaryAction={false}
-              showRevealControls={false}
+              showRevealControls={sharedButtonsVisible}
             />
 
             <div class="exercise-reading-layout">
@@ -1474,7 +1538,7 @@
                     content={selectedContent}
                     bind:showHint={consulterShowHint}
                     bind:showSolution={consulterShowSolution}
-                    bind:showInlineControls
+                    showInlineControls={sharedButtonsVisible ? showInlineControls : false}
                   />
                 </div>
               </article>
@@ -1482,6 +1546,7 @@
           </div>
 
           <!-- Bottom navigation -->
+          {#if sharedButtonsVisible}
           <div class="consulter-nav-btns">
             <button
               class="btn btn-secondary"
@@ -1499,6 +1564,7 @@
               </button>
             {/if}
           </div>
+          {/if}
         </div>
       {:else}
         <div class="consulter-loading">Sélectionnez un exercice dans le sommaire</div>
@@ -1569,24 +1635,26 @@
                   <MathRenderer content={getPresenterBlockContent(q)} inline={false} />
                 </div>
               {/if}
-              <div class="presenter-reveal-btns">
-                <button
-                  class="presenter-btn presenter-btn--ind"
-                  disabled={!slide?.hints?.length}
-                  on:click={() => (presenterShowInd = !presenterShowInd)}
-                >
-                  💡 {presenterShowInd ? 'Masquer' : 'Afficher'} l'indication
-                  <span class="presenter-kbd-hint">I</span>
-                </button>
-                <button
-                  class="presenter-btn presenter-btn--sol"
-                  disabled={!slide?.solutions?.length}
-                  on:click={() => (presenterShowSol = !presenterShowSol)}
-                >
-                  ★ {presenterShowSol ? 'Masquer' : 'Afficher'} la solution
-                  <span class="presenter-kbd-hint">S</span>
-                </button>
-              </div>
+              {#if sharedButtonsVisible}
+                <div class="presenter-reveal-btns">
+                  <button
+                    class="presenter-btn presenter-btn--ind"
+                    disabled={!slide?.hints?.length}
+                    on:click={() => (presenterShowInd = !presenterShowInd)}
+                  >
+                    💡 {presenterShowInd ? 'Masquer' : 'Afficher'} l'indication
+                    <span class="presenter-kbd-hint">I</span>
+                  </button>
+                  <button
+                    class="presenter-btn presenter-btn--sol"
+                    disabled={!slide?.solutions?.length}
+                    on:click={() => (presenterShowSol = !presenterShowSol)}
+                  >
+                    ★ {presenterShowSol ? 'Masquer' : 'Afficher'} la solution
+                    <span class="presenter-kbd-hint">S</span>
+                  </button>
+                </div>
+              {/if}
               {#if presenterShowInd && slide?.hints?.length}
                 <div class="presenter-reveal presenter-reveal--ind">
                   <div class="presenter-reveal-label">Indication</div>
@@ -1620,6 +1688,7 @@
                 content={$selectedExercise.content || []}
                 bind:showHint={presenterShowInd}
                 bind:showSolution={presenterShowSol}
+                showInlineControls={sharedButtonsVisible}
               />
             </div>
           </div>
@@ -1628,6 +1697,7 @@
     </div>
 
     <!-- Bottom controls bar -->
+    {#if sharedButtonsVisible}
     <div class="presenter-controls">
       <button class="presenter-exo-btn" disabled={!$currentPosition.hasPrevious} on:click={presenterPrevExo} title="Exercice précédent">
         ⇇ Exo
@@ -1652,6 +1722,7 @@
         Exo ⇉
       </button>
     </div>
+    {/if}
   {/if}
 </div>
 
@@ -1672,69 +1743,100 @@
       <div class="t-overline mb-3">Lien public</div>
       <div class="partager-link-row">
         <div class="form-input partager-link-display">
-          {typeof window !== 'undefined' ? buildShareUrl(null) : ''}
+          {typeof window !== 'undefined' ? partagerShareUrl : ''}
         </div>
         <button class="btn btn-primary" on:click={partagerCopyLink}>
           {partagerCopied === 'link' ? '✓ Copié !' : 'Copier'}
         </button>
       </div>
-      <!-- Always-on toggle row -->
-      <div class="partager-always-on-row">
-        <span class="partager-toggle-pill partager-toggle-pill--on">
-          <span class="partager-toggle-thumb"></span>
-        </span>
-        <span>Accessible sans compte</span>
-        <span style="flex:1"></span>
-        <span class="partager-visibility-label">Visibilité : <strong>publique</strong></span>
+    </section>
+
+    <section class="partager-section">
+      <div class="t-overline mb-3">Options de la liste partagée</div>
+      <div class="partager-option-block">
+        <span class="partager-option-label">Mode d'ouverture</span>
+        <div class="partager-segmented" role="group" aria-label="Mode d'ouverture du lien">
+          <button
+            type="button"
+            class:active={partagerTargetMode === 'preparer'}
+            on:click={() => (partagerTargetMode = 'preparer')}
+          >Préparer</button>
+          <button
+            type="button"
+            class:active={partagerTargetMode === 'consulter'}
+            on:click={() => (partagerTargetMode = 'consulter')}
+          >Consulter</button>
+          <button
+            type="button"
+            class:active={partagerTargetMode === 'presenter'}
+            on:click={() => (partagerTargetMode = 'presenter')}
+          >Présenter</button>
+        </div>
+      </div>
+      <div class="partager-option-block">
+        <span class="partager-option-label">Interface</span>
+        <div class="partager-perm-row partager-perm-row--compact">
+          <div class="partager-perm-info">
+            <span class="partager-perm-label">Afficher les boutons et contrôles</span>
+          </div>
+          <button
+            class="partager-toggle-btn"
+            class:is-on={partagerButtonsVisible}
+            on:click={() => (partagerButtonsVisible = !partagerButtonsVisible)}
+            role="switch"
+            aria-checked={partagerButtonsVisible}
+            aria-label="Afficher les boutons et contrôles dans le lien partagé"
+          >
+            <span class="partager-toggle-btn-thumb"></span>
+          </button>
+        </div>
       </div>
     </section>
 
     <!-- QR + Embed 2-column grid -->
     <div class="partager-qr-embed-grid">
       <section class="partager-section partager-qr-card">
-        <div class="t-overline mb-3">QR code</div>
-        <div class="partager-qr-placeholder">
-          <!-- QR pattern placeholder -->
-          <svg viewBox="0 0 140 140" width="140" height="140" xmlns="http://www.w3.org/2000/svg">
-            <rect width="140" height="140" fill="white"/>
-            <!-- Top-left finder -->
-            <rect x="10" y="10" width="40" height="40" rx="3" fill="currentColor"/>
-            <rect x="18" y="18" width="24" height="24" rx="2" fill="white"/>
-            <rect x="24" y="24" width="12" height="12" rx="1" fill="currentColor"/>
-            <!-- Top-right finder -->
-            <rect x="90" y="10" width="40" height="40" rx="3" fill="currentColor"/>
-            <rect x="98" y="18" width="24" height="24" rx="2" fill="white"/>
-            <rect x="104" y="24" width="12" height="12" rx="1" fill="currentColor"/>
-            <!-- Bottom-left finder -->
-            <rect x="10" y="90" width="40" height="40" rx="3" fill="currentColor"/>
-            <rect x="18" y="98" width="24" height="24" rx="2" fill="white"/>
-            <rect x="24" y="104" width="12" height="12" rx="1" fill="currentColor"/>
-            <!-- Data modules (simplified pattern) -->
-            {#each [60,70,80,90,100,110,120] as x}
-              {#each [10,20,30,40,50,60] as y}
-                {#if (x + y) % 16 < 8}
-                  <rect x={x} y={y} width="8" height="8" fill="currentColor"/>
-                {/if}
-              {/each}
-            {/each}
-            {#each [10,20,30,40,50] as x}
-              {#each [60,70,80,120,130] as y}
-                {#if (x * 3 + y) % 14 < 6}
-                  <rect x={x} y={y} width="8" height="8" fill="currentColor"/>
-                {/if}
-              {/each}
-            {/each}
-          </svg>
+        <div class="partager-qr-card-header">
+          <div class="t-overline">QR code</div>
+          <button
+            type="button"
+            class="partager-qr-fullscreen-btn"
+            disabled={!partagerQrDataUrl}
+            on:click={() => (showQrModal = true)}
+            aria-label="Afficher le QR code en grand format"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 3H5a2 2 0 0 0-2 2v3" />
+              <path d="M21 8V5a2 2 0 0 0-2-2h-3" />
+              <path d="M3 16v3a2 2 0 0 0 2 2h3" />
+              <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+            </svg>
+          </button>
         </div>
-        <button class="btn btn-secondary btn-sm">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          PNG
-        </button>
+        <div class="partager-qr-placeholder">
+          {#if partagerQrDataUrl}
+            <img src={partagerQrDataUrl} alt="QR code du lien public" width="160" height="160" />
+          {:else}
+            <span class="partager-qr-status">{partagerQrError || 'Génération...'}</span>
+          {/if}
+        </div>
+        <div class="partager-qr-actions">
+          <a
+            class="btn btn-secondary btn-sm"
+            class:partager-download-disabled={!partagerQrDataUrl}
+            href={partagerQrDataUrl || undefined}
+            download="openyourmath-seance-qr.png"
+            aria-disabled={!partagerQrDataUrl}
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            PNG
+          </a>
+        </div>
       </section>
 
       <section class="partager-section">
         <div class="t-overline mb-3">Intégrer dans un cours / blog</div>
-        <pre class="partager-embed-pre">&lt;iframe src="{typeof window !== 'undefined' ? buildShareUrl(null) : ''}/embed"
+        <pre class="partager-embed-pre">&lt;iframe src="{typeof window !== 'undefined' ? partagerShareUrl : ''}/embed"
         width="100%" height="600"
         frameborder="0"&gt;
 &lt;/iframe&gt;</pre>
@@ -1774,7 +1876,7 @@
     <section class="partager-section">
       <div class="t-overline mb-3">Accès &amp; permissions</div>
       <div class="partager-perms">
-        <label class="partager-perm-row">
+        <div class="partager-perm-row">
           <div class="partager-perm-info">
             <span class="partager-perm-label">Solutions visibles dans le lien public</span>
           </div>
@@ -1784,11 +1886,12 @@
             on:click={() => (partagerSolVisible = !partagerSolVisible)}
             role="switch"
             aria-checked={partagerSolVisible}
+            aria-label="Afficher les solutions dans le lien public"
           >
             <span class="partager-toggle-btn-thumb"></span>
           </button>
-        </label>
-        <label class="partager-perm-row">
+        </div>
+        <div class="partager-perm-row">
           <div class="partager-perm-info">
             <span class="partager-perm-label">Indications visibles dans le lien public</span>
           </div>
@@ -1798,25 +1901,27 @@
             on:click={() => (partagerIndVisible = !partagerIndVisible)}
             role="switch"
             aria-checked={partagerIndVisible}
+            aria-label="Afficher les indications dans le lien public"
           >
             <span class="partager-toggle-btn-thumb"></span>
           </button>
-        </label>
-        <label class="partager-perm-row">
+        </div>
+        <div class="partager-perm-row">
           <div class="partager-perm-info">
             <span class="partager-perm-label">Notes personnelles partagées</span>
-            <span class="partager-perm-hint chip chip-warning">Risqué</span>
+            <span class="partager-perm-hint chip chip-warning">Indisponible</span>
           </div>
           <button
             class="partager-toggle-btn"
             class:is-on={partagerNotesVisible}
-            on:click={() => (partagerNotesVisible = !partagerNotesVisible)}
+            disabled
             role="switch"
             aria-checked={partagerNotesVisible}
+            aria-label="Partager les notes personnelles"
           >
             <span class="partager-toggle-btn-thumb"></span>
           </button>
-        </label>
+        </div>
       </div>
     </section>
 
@@ -1835,6 +1940,26 @@
         <div class="partager-stat-label">Téléchargements PDF</div>
       </div>
     </div>
+
+    {#if showQrModal}
+      <div class="partager-qr-modal-backdrop" role="presentation" on:click|self={() => (showQrModal = false)}>
+        <div class="partager-qr-modal" role="dialog" aria-modal="true" aria-label="QR code grand format" tabindex="-1">
+          <div class="partager-qr-modal-header">
+            <div>
+              <div class="t-overline">QR code</div>
+              <div class="partager-qr-modal-title">{listTitle || "Liste d'exercices"}</div>
+            </div>
+            <button type="button" class="partager-qr-modal-close" on:click={() => (showQrModal = false)} aria-label="Fermer">
+              ×
+            </button>
+          </div>
+          <div class="partager-qr-modal-body">
+            <img src={partagerQrDataUrl} alt="QR code du lien public" width="420" height="420" />
+          </div>
+          <div class="partager-qr-modal-url">{partagerShareUrl}</div>
+        </div>
+      </div>
+    {/if}
   </div>
 </div>
 
@@ -3472,34 +3597,46 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .partager-always-on-row {
+  .partager-option-block {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 12px;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 0;
+  }
+  .partager-option-block + .partager-option-block {
+    border-top: 1px solid theme('colors.interface.border-primary');
+    margin-top: 8px;
+    padding-top: 16px;
+  }
+  .partager-option-label {
     font-size: 13px;
-    color: theme('colors.interface.text-secondary');
+    font-weight: 700;
+    color: theme('colors.interface.text-primary');
   }
-  .partager-toggle-pill {
+  .partager-segmented {
     display: inline-flex;
-    align-items: center;
-    width: 32px;
-    height: 18px;
-    border-radius: 999px;
-    background: theme('colors.interface.border-secondary');
-    padding: 2px;
-    flex-shrink: 0;
+    align-self: flex-start;
+    gap: 3px;
+    padding: 3px;
+    border-radius: 8px;
+    background: theme('colors.interface.bg-secondary');
+    border: 1px solid theme('colors.interface.border-primary');
   }
-  .partager-toggle-pill--on { background: theme('colors.brand.500'); }
-  .partager-toggle-thumb {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
+  .partager-segmented button {
+    border: 0;
+    border-radius: 6px;
+    padding: 7px 12px;
+    background: transparent;
+    color: theme('colors.interface.text-secondary');
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .partager-segmented button.active {
     background: white;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    color: theme('colors.brand.700');
+    box-shadow: theme('boxShadow.sm');
   }
-  .partager-toggle-pill--on .partager-toggle-thumb { margin-left: auto; }
-  .partager-visibility-label { font-size: 12px; color: theme('colors.interface.text-muted'); }
   /* QR + Embed 2-col */
   .partager-qr-embed-grid {
     display: grid;
@@ -3508,13 +3645,64 @@
     align-items: start;
   }
   .partager-qr-card { display: flex; flex-direction: column; gap: 12px; }
+  .partager-qr-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 160px;
+  }
   .partager-qr-placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: theme('colors.interface.text-primary');
+    width: 160px;
+    height: 160px;
+    background: white;
+    border: 1px solid theme('colors.interface.border-primary');
+    color: theme('colors.interface.text-muted');
     border-radius: 6px;
     overflow: hidden;
+  }
+  .partager-qr-placeholder img {
+    display: block;
+    width: 160px;
+    height: 160px;
+  }
+  .partager-qr-fullscreen-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 6px;
+    background: white;
+    color: theme('colors.interface.text-secondary');
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .partager-qr-fullscreen-btn:hover {
+    border-color: theme('colors.brand.300');
+    background: white;
+    color: theme('colors.brand.600');
+  }
+  .partager-qr-fullscreen-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  .partager-qr-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .partager-qr-status {
+    font-size: 12px;
+    color: theme('colors.interface.text-muted');
+  }
+  .partager-download-disabled {
+    opacity: 0.5;
+    pointer-events: none;
   }
   .partager-embed-pre {
     background: theme('colors.interface.bg-secondary');
@@ -3558,6 +3746,10 @@
     border-bottom: 1px solid theme('colors.interface.border-primary');
     cursor: pointer;
   }
+  .partager-perm-row--compact {
+    border-bottom: 0;
+    padding: 4px 0 0;
+  }
   .partager-perm-row:last-child { border-bottom: 0; }
   .partager-perm-info { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .partager-perm-label { font-size: 14px; font-weight: 600; color: theme('colors.interface.text-primary'); }
@@ -3576,6 +3768,10 @@
     padding: 0;
   }
   .partager-toggle-btn.is-on { background: theme('colors.brand.500'); }
+  .partager-toggle-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
   .partager-toggle-btn-thumb {
     position: absolute;
     top: 2px;
@@ -3600,6 +3796,71 @@
   }
   .partager-stat-value { font-family: theme('fontFamily.heading'); font-size: 28px; font-weight: 800; color: theme('colors.interface.text-primary'); }
   .partager-stat-label { font-size: 12px; color: theme('colors.interface.text-muted'); margin-top: 4px; }
+  .partager-qr-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15, 23, 42, 0.72);
+  }
+  .partager-qr-modal {
+    width: min(560px, 100%);
+    max-height: calc(100vh - 48px);
+    overflow: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 24px 80px rgba(15, 23, 42, 0.35);
+    padding: 20px;
+  }
+  .partager-qr-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .partager-qr-modal-title {
+    font-family: theme('fontFamily.heading');
+    font-size: 20px;
+    font-weight: 800;
+    color: theme('colors.interface.text-primary');
+  }
+  .partager-qr-modal-close {
+    width: 32px;
+    height: 32px;
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 6px;
+    background: theme('colors.interface.bg-secondary');
+    color: theme('colors.interface.text-primary');
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .partager-qr-modal-body {
+    display: flex;
+    justify-content: center;
+    padding: 18px;
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 8px;
+    background: white;
+  }
+  .partager-qr-modal-body img {
+    width: min(420px, 100%);
+    height: auto;
+  }
+  .partager-qr-modal-url {
+    margin-top: 14px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: theme('colors.interface.bg-secondary');
+    color: theme('colors.interface.text-muted');
+    font-family: theme('fontFamily.mono');
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
   @media (max-width: 640px) {
     .partager-qr-embed-grid { grid-template-columns: 1fr; }
     .partager-export-grid { grid-template-columns: 1fr 1fr; }
