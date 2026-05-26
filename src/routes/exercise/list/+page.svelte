@@ -40,6 +40,7 @@
   let presenterQIdx = 0;
   let presenterShowInd = false;
   let presenterShowSol = false;
+  let presenterLightMode = false;
   let presenterRoot;
 
   const presenterQuestionTypes = new Set(['question', 'enonce']);
@@ -1651,7 +1652,7 @@
 
 {:else if mode === 'presenter'}
 <!-- ────────── MODE PRÉSENTER ────────── -->
-<div class="mode-presenter" bind:this={presenterRoot}>
+<div class="mode-presenter" class:is-light={presenterLightMode} bind:this={presenterRoot}>
   {#if !$hasExercises}
     <div style="text-align:center; padding: 4rem 2rem; color: rgba(254,249,235,0.5);">
       <p>Aucun exercice dans la séance. Ajoutez des exercices en mode Préparer.</p>
@@ -1673,6 +1674,14 @@
         </span>
         <span class="presenter-topbar-slide-count">Diapo {presenterSlideNumber}/{presenterTotalSlides || 1}</span>
         {#if sharedButtonsVisible}
+          <button
+            class="presenter-topbar-btn presenter-theme-toggle"
+            type="button"
+            aria-pressed={presenterLightMode}
+            on:click={() => (presenterLightMode = !presenterLightMode)}
+          >
+            {presenterLightMode ? 'Mode sombre' : 'Mode clair'}
+          </button>
           <button class="presenter-topbar-btn" type="button" on:click={togglePresenterFullscreen}>
             ⛶ Plein écran
           </button>
@@ -3488,6 +3497,10 @@
     border-color: rgba(91,202,202,0.4);
     color: #fef9eb;
   }
+  .presenter-theme-toggle[aria-pressed="true"] {
+    background: rgba(133,232,232,0.18);
+    border-color: rgba(133,232,232,0.55);
+  }
   .presenter-slide {
     flex: 1;
     display: flex;
@@ -3802,6 +3815,105 @@
     font-family: theme('fontFamily.mono');
     font-size: 10px;
     color: rgba(254,249,235,0.55);
+  }
+  .mode-presenter.is-light {
+    background: #f7f3e8;
+    color: #0b3340;
+  }
+  .mode-presenter.is-light .presenter-topbar,
+  .mode-presenter.is-light .presenter-controls {
+    background: #fffaf0;
+    border-color: rgba(11, 66, 80, 0.16);
+  }
+  .mode-presenter.is-light .presenter-topbar-brand,
+  .mode-presenter.is-light .presenter-topbar-title,
+  .mode-presenter.is-light .presenter-topbar-slide-count,
+  .mode-presenter.is-light .presenter-slide-meta,
+  .mode-presenter.is-light .presenter-question-chip-label,
+  .mode-presenter.is-light .presenter-question-chip-total,
+  .mode-presenter.is-light .presenter-hints,
+  .mode-presenter.is-light .presenter-progress-exercise {
+    color: rgba(11, 51, 64, 0.72);
+  }
+  .mode-presenter.is-light .presenter-topbar-counter,
+  .mode-presenter.is-light .presenter-slide-kicker,
+  .mode-presenter.is-light .presenter-question-chip,
+  .mode-presenter.is-light .presenter-progress-exercise.is-active {
+    color: #0b7f86;
+  }
+  .mode-presenter.is-light .presenter-accent-dot,
+  .mode-presenter.is-light .presenter-progress-dot.is-current {
+    background: #0b8f96;
+  }
+  .mode-presenter.is-light .presenter-topbar-sep {
+    color: rgba(11, 51, 64, 0.28);
+  }
+  .mode-presenter.is-light .presenter-topbar-btn,
+  .mode-presenter.is-light .presenter-nav-btn,
+  .mode-presenter.is-light .presenter-exo-btn,
+  .mode-presenter.is-light .presenter-btn {
+    border-color: rgba(11, 66, 80, 0.18);
+    background: rgba(11, 66, 80, 0.04);
+    color: #0b3340;
+  }
+  .mode-presenter.is-light .presenter-topbar-btn:hover,
+  .mode-presenter.is-light .presenter-nav-btn:hover:not(:disabled),
+  .mode-presenter.is-light .presenter-exo-btn:hover:not(:disabled),
+  .mode-presenter.is-light .presenter-btn:hover {
+    background: rgba(11, 143, 150, 0.1);
+    border-color: rgba(11, 143, 150, 0.28);
+    color: #082b36;
+  }
+  .mode-presenter.is-light .presenter-theme-toggle[aria-pressed="true"],
+  .mode-presenter.is-light .presenter-progress-exercise.is-active,
+  .mode-presenter.is-light .presenter-question-chip {
+    border-color: rgba(11, 143, 150, 0.34);
+    background: rgba(11, 143, 150, 0.08);
+  }
+  .mode-presenter.is-light .presenter-heading-line {
+    background: rgba(11, 143, 150, 0.34);
+  }
+  .mode-presenter.is-light .presenter-main-title,
+  .mode-presenter.is-light .presenter-q-title,
+  .mode-presenter.is-light .presenter-context,
+  .mode-presenter.is-light .presenter-reveal-body {
+    color: #082b36;
+  }
+  .mode-presenter.is-light .presenter-context {
+    border-color: rgba(11, 66, 80, 0.18);
+  }
+  .mode-presenter.is-light .presenter-q-body {
+    border-left-color: #0b8f96;
+    background: #fffaf0;
+    color: #082b36;
+    box-shadow: inset 0 0 0 1px rgba(11, 66, 80, 0.14);
+  }
+  .mode-presenter.is-light .presenter-q-body :global(.katex-display),
+  .mode-presenter.is-light .presenter-btn--sol {
+    color: #087b82;
+  }
+  .mode-presenter.is-light .presenter-reveal--sol {
+    background: #fffaf0;
+    border-color: rgba(11, 66, 80, 0.14);
+  }
+  .mode-presenter.is-light .presenter-nav-btn--next {
+    background: #0b8f96;
+    border-color: #0b8f96;
+    color: white;
+  }
+  .mode-presenter.is-light .presenter-nav-btn--next:hover:not(:disabled) {
+    background: #087b82;
+    border-color: #087b82;
+    color: white;
+  }
+  .mode-presenter.is-light .presenter-progress-dot {
+    background: rgba(11, 66, 80, 0.24);
+  }
+  .mode-presenter.is-light .presenter-kbd,
+  .mode-presenter.is-light .presenter-kbd-hint {
+    background: rgba(11, 66, 80, 0.06);
+    border-color: rgba(11, 66, 80, 0.16);
+    color: rgba(11, 51, 64, 0.72);
   }
   @media (max-width: 640px) {
     .presenter-slide { padding: 24px 18px; }
