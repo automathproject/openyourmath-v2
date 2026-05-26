@@ -45,6 +45,7 @@
   $: licenseLabel = exercise?.license_code || exercise?.license || '';
   $: videoId = extractYoutubeId(exercise);
   $: videoUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : '';
+  $: videoEmbedUrl = videoId ? `https://www.youtube-nocookie.com/embed/${videoId}` : '';
   $: visibleSimilar = (similar || []).slice(0, 5);
 </script>
 
@@ -54,7 +55,7 @@
       <h2 id="lecture-display-title" class="t-overline sidebar-heading">Affichage</h2>
       <div class="display-controls" aria-label="Contrôles d'affichage du contenu">
         <label class="display-toggle">
-          <span>Boutons individuels</span>
+          <span>Boutons</span>
           <input type="checkbox" bind:checked={showInlineControls} />
           <span class="display-switch" aria-hidden="true"></span>
         </label>
@@ -127,16 +128,17 @@
   {#if videoUrl}
     <section class="sidebar-section" aria-labelledby="lecture-video-title">
       <h2 id="lecture-video-title" class="t-overline sidebar-heading">Vidéo associée</h2>
-      <a class="video-thumb" href={videoUrl} target="_blank" rel="noopener noreferrer">
-        <span class="video-play" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </span>
-        <span class="video-meta">
-          <span class="video-title">Voir la vidéo</span>
-          <span class="video-duration">YouTube</span>
-        </span>
+      <div class="video-embed">
+        <iframe
+          src={videoEmbedUrl}
+          title="Vidéo associée à l'exercice"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <a class="video-direct-link" href={videoUrl} target="_blank" rel="noopener noreferrer">
+        Ouvrir sur YouTube
       </a>
     </section>
   {/if}
@@ -355,56 +357,36 @@
     color: theme('colors.interface.text-muted') !important;
   }
 
-  .video-thumb {
+  .video-embed {
     position: relative;
     display: block;
-    height: 120px;
+    aspect-ratio: 16 / 9;
     border-radius: 8px;
     overflow: hidden;
-    cursor: pointer;
-    text-decoration: none;
-    background: linear-gradient(135deg, theme('colors.brand.100'), theme('colors.brand.50'));
+    background: theme('colors.interface.bg-tertiary');
+    box-shadow: inset 0 0 0 1px theme('colors.interface.border-primary');
   }
 
-  .video-play {
+  .video-embed iframe {
     position: absolute;
     inset: 0;
-    width: 44px;
-    height: 44px;
-    margin: auto;
-    display: grid;
-    place-items: center;
-    border-radius: 999px;
-    background: white;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .video-direct-link {
+    display: inline-flex;
+    margin-top: 8px;
     color: theme('colors.brand.700');
-    box-shadow: 0 8px 24px rgba(13, 60, 77, 0.16), 0 2px 6px rgba(13, 60, 77, 0.08);
-  }
-
-  .video-play svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-    transform: translateX(1px);
-  }
-
-  .video-meta {
-    position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 8px;
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-    color: theme('colors.brand.800');
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
+    line-height: 1.3;
+    text-decoration: none;
   }
 
-  .video-title,
-  .video-duration {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .video-direct-link:hover {
+    text-decoration: underline;
   }
 
   .similar-list {
