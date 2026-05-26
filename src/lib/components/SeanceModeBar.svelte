@@ -18,15 +18,10 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/stores';
 
-  /**
-   * @typedef {Object} Props
-   * @property {'preparer'|'consulter'|'presenter'|'partager'} mode
-   * @property {string} [title]
-   * @property {string} [subtitle]
-   * @property {{ label: string; href?: string }[]} [breadcrumb]
-   */
-  /** @type {Props} */
-  let { mode = $bindable('preparer'), title = '', subtitle = '', breadcrumb = [] } = $props();
+  export let mode = 'preparer';
+  export let title = '';
+  export let subtitle = '';
+  export let breadcrumb = [];
 
   const modes = [
     { id: 'preparer', label: 'Préparer' },
@@ -57,27 +52,33 @@
         {/each}
       </nav>
     {/if}
-    {#if title}
-      <h1 class="seance-title">{title}</h1>
-    {/if}
+    <slot name="title">
+      {#if title}
+        <h1 class="seance-title">{title}</h1>
+      {/if}
+    </slot>
     {#if subtitle}
       <div class="seance-subtitle">{subtitle}</div>
     {/if}
   </div>
 
-  <div class="seance-mode-tabs" role="tablist" aria-label="Mode de la séance">
-    {#each modes as m}
-      <button
-        type="button"
-        role="tab"
-        class="seance-mode-tab"
-        class:is-active={mode === m.id}
-        aria-selected={mode === m.id}
-        onclick={() => setMode(m.id)}
-      >
-        {m.label}
-      </button>
-    {/each}
+  <div class="seance-mode-bar-controls">
+    <slot name="actions"></slot>
+
+    <div class="seance-mode-tabs" role="tablist" aria-label="Mode de la séance">
+      {#each modes as m}
+        <button
+          type="button"
+          role="tab"
+          class="seance-mode-tab"
+          class:is-active={mode === m.id}
+          aria-selected={mode === m.id}
+          on:click={() => setMode(m.id)}
+        >
+          {m.label}
+        </button>
+      {/each}
+    </div>
   </div>
 </div>
 
@@ -136,6 +137,13 @@
     color: theme('colors.interface.text-muted');
   }
 
+  .seance-mode-bar-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
   .seance-mode-tabs {
     display: flex;
     gap: 4px;
@@ -171,6 +179,7 @@
 
   @media (max-width: 720px) {
     .seance-mode-bar { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 16px; }
+    .seance-mode-bar-controls { flex-wrap: wrap; }
     .seance-mode-tabs { overflow-x: auto; }
   }
 </style>

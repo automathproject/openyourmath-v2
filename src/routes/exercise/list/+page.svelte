@@ -7,9 +7,12 @@
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
   import ExerciseListEditor from '$lib/components/ExerciseListEditor.svelte';
   import LatexExportPanel from '$lib/components/LatexExportPanel.svelte';
+  import LectureSidebar from '$lib/components/LectureSidebar.svelte';
+  import LectureSubheader from '$lib/components/LectureSubheader.svelte';
   import SeanceModeBar from '$lib/components/SeanceModeBar.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import StarsRating from '$lib/components/StarsRating.svelte';
+  import { immersiveMode } from '$lib/stores/uiStore.ts';
   import {
     exerciseList,
     selectedExerciseIndex,
@@ -89,6 +92,8 @@
 
   let showHint = false;
   let showSolution = false;
+  let showInlineControls = true;
+  let readingMode = 'classic';
   let isEditMode = false;
   let showSharePanel = false;
 
@@ -147,6 +152,15 @@
       isFullPresentation = false;
     }
   }
+
+  function getQuestionCount(content = []) {
+    return content.filter((block) => (block?.type || 'text') === 'question').length;
+  }
+
+  $: selectedContent = $selectedExercise?.content || [];
+  $: selectedQuestionCount = getQuestionCount(selectedContent);
+  $: isReadingImmersive = mode === 'preparer' && !isPresentationMode && readingMode === 'immersive' && Boolean($selectedExercise);
+  $: immersiveMode.set(isReadingImmersive);
   
   // État pour le champ UUID
   let uuidInputValue = '';
@@ -224,6 +238,7 @@
       document.body.classList.remove('presentation-mode');
       document.body.classList.remove('presentation-mode-full');
     }
+    immersiveMode.set(false);
   });
 
   // Réactivité pour mettre à jour le champ UUID
@@ -544,10 +559,141 @@
   title={listTitle || "Liste d'exercices"}
   subtitle="{$exerciseList.length} exercice{$exerciseList.length !== 1 ? 's' : ''}"
   breadcrumb={[{ label: 'Mes séances', href: '/exercise/list' }, { label: listTitle || 'Sans titre' }]}
-/>
+>
+  <svelte:fragment slot="title">
+    <h1 class="list-title">
+      {#if isEditingTitle}
+        <input
+          class="title-edit-input"
+          type="text"
+          bind:value={titleDraft}
+          on:keydown={handleTitleKeydown}
+          on:blur={saveTitle}
+          placeholder="Titre de la liste..."
+          use:focusInput
+        />
+      {:else}
+        <button class="title-text" on:click={startEditTitle} title="Cliquer pour modifier le titre">
+          {listTitle || "Liste d'exercices"}
+        </button>
+      {/if}
+    </h1>
+  </svelte:fragment>
+
+  <svelte:fragment slot="actions">
+    {#if mode === 'preparer'}
+      <div class="list-actions">
+        <div class="uuid-control-desktop">
+          <div class="uuid-input-wrapper">
+            <input 
+              type="text"
+              bind:value={uuidInputValue}
+              on:input={analyzeUuidInput}
+              on:blur={handleUuidBlur}
+              on:keydown={handleUuidKeydown}
+              placeholder="uuid1,uuid2,uuid3..."
+              class="uuid-input"
+              class:uuid-input--error={uuidInputError}
+              disabled={uuidInputLoading}
+            />
+            
+            <div class="uuid-buttons">
+              <button 
+                on:click={copyUuidInput}
+                class="uuid-btn uuid-btn--copy"
+                disabled={!uuidInputValue.trim() || uuidInputLoading}
+                aria-label="Copier la liste d'UUIDs"
+                title="Copier la liste d'UUIDs"
+              >
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </button>
+              
+              <button 
+                on:click={loadFromUuidInput}
+                class="uuid-btn uuid-btn--load"
+                disabled={uuidInputLoading}
+                aria-label="Charger cette liste d'UUIDs"
+                title="Charger cette liste d'UUIDs"
+              >
+                {#if uuidInputLoading}
+                  <div class="loading-spinner-small"></div>
+                {:else}
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                {/if}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {#if isMobile}
+          <button 
+            on:click={toggleUuidControl}
+            class="header-action-btn header-action-btn--secondary"
+            class:header-action-btn--active={showUuidControl}
+            title="Gérer les UUIDs"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+            <span class="header-action-btn__label">UUIDs</span>
+          </button>
+        {/if}
+
+        {#if isMobile && $hasExercises}
+          <button 
+            on:click={toggleMobileNav}
+            class="header-action-btn header-action-btn--primary"
+            title="Ouvrir la liste d'exercices"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <span class="header-action-btn__label">Liste</span>
+            {#if $currentPosition.total > 0}
+              <span class="header-nav-badge">{$currentPosition.current}/{$currentPosition.total}</span>
+            {/if}
+          </button>
+        {/if}
+
+        {#if $hasExercises}
+          <button 
+            on:click={clearList}
+            class="list-action-btn list-action-btn--danger"
+            aria-label="Vider la liste d'exercices"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+            <span class="list-action-btn__label">Vider</span>
+          </button>
+        {/if}
+      </div>
+    {/if}
+  </svelte:fragment>
+</SeanceModeBar>
 
 {#if mode === 'preparer'}
 <div class="exercise-list-page" class:presentation-mode={isPresentationMode} class:full-presentation={isFullPresentation}>
+  {#if data.meta?.errors > 0 || data.meta?.wasLimited}
+    <div class="list-notices">
+      {#if data.meta?.errors > 0}
+        <div class="list-warning">
+          ⚠️ {data.meta.errors} exercice{data.meta.errors > 1 ? 's' : ''} n'ont pas pu être chargé{data.meta.errors > 1 ? 's' : ''}
+        </div>
+      {/if}
+      
+      {#if data.meta?.wasLimited}
+        <div class="list-info">
+          ℹ️ Liste limitée à {data.meta.total} exercices (sur {data.meta.originalCount} demandés)
+        </div>
+      {/if}
+    </div>
+  {/if}
+
   <!-- Header de la page -->
   <header class="list-header">
     <div class="list-header-content">
@@ -607,6 +753,7 @@
                 on:click={copyUuidInput}
                 class="uuid-btn uuid-btn--copy"
                 disabled={!uuidInputValue.trim() || uuidInputLoading}
+                aria-label="Copier la liste d'UUIDs"
                 title="Copier la liste d'UUIDs"
               >
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -618,6 +765,7 @@
                 on:click={loadFromUuidInput}
                 class="uuid-btn uuid-btn--load"
                 disabled={uuidInputLoading}
+                aria-label="Charger cette liste d'UUIDs"
                 title="Charger cette liste d'UUIDs"
               >
                 {#if uuidInputLoading}
@@ -740,6 +888,7 @@
                 on:click={copyUuidInput}
                 class="uuid-btn uuid-btn--copy"
                 disabled={!uuidInputValue.trim() || uuidInputLoading}
+                aria-label="Copier la liste d'UUIDs"
                 title="Copier la liste d'UUIDs"
               >
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -751,6 +900,7 @@
                 on:click={loadFromUuidInput}
                 class="uuid-btn uuid-btn--load"
                 disabled={uuidInputLoading}
+                aria-label="Charger cette liste d'UUIDs"
                 title="Charger cette liste d'UUIDs"
               >
                 {#if uuidInputLoading}
@@ -1051,18 +1201,45 @@
             {/key}
             </div>
           {:else}
-            <article class="exercise-content-wrapper">
-              <ExerciseContent
+            <div class="exercise-page-shell" class:exercise-page-shell--immersive={readingMode === 'immersive'}>
+              <LectureSubheader
                 exercise={$selectedExercise}
-                position={$currentPosition}
-                variant="full"
-                showGlobalToggles={true}
-                content={$selectedExercise.content || []}
+                bind:mode={readingMode}
                 bind:showHint
                 bind:showSolution
-                {studentMode}
+                questionCount={selectedQuestionCount}
+                showModeSwitch={false}
+                showShareAction={false}
+                showLatexAction={false}
               />
-            </article>
+
+              <div class="exercise-reading-layout">
+                <article class="exercise-reading-column">
+                  <div class="exercise-block">
+                    <ExerciseContent
+                      exercise={$selectedExercise}
+                      variant="full"
+                      showHeader={false}
+                      content={selectedContent}
+                      bind:showHint
+                      bind:showSolution
+                      bind:showInlineControls
+                      {studentMode}
+                    />
+                  </div>
+                </article>
+
+                {#if readingMode !== 'immersive'}
+                  <LectureSidebar
+                    exercise={$selectedExercise}
+                    similar={[]}
+                    bind:showHint
+                    bind:showSolution
+                    bind:showInlineControls
+                  />
+                {/if}
+              </div>
+            </div>
           {/if}
         {:else}
           <div class="no-selection">
@@ -1585,21 +1762,11 @@
   }
 
   .list-header {
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 60;
-    @apply bg-interface-bg-primary border-b border-interface-border-primary;
+    display: contents;
   }
 
   .list-header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+    display: none;
   }
 
   .list-header-info { flex: 1; }
@@ -1655,6 +1822,11 @@
     align-items: center;
     gap: 0.25rem;
     @apply text-brand-primary;
+  }
+
+  .list-notices {
+    padding: 0.5rem 1.75rem;
+    @apply bg-interface-bg-primary border-b border-interface-border-primary;
   }
 
   .list-actions {
@@ -2125,6 +2297,67 @@
     /* Let the page scroll; avoid inner scrollbar */
     overflow: visible;
   }
+
+  .exercise-display .exercise-page-shell {
+    background: #fbf8ef;
+    min-height: 100%;
+  }
+
+  .exercise-display .exercise-reading-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 0;
+    align-items: stretch;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid theme('colors.interface.border-primary');
+  }
+
+  .exercise-display .exercise-reading-column {
+    background: #fffdf8;
+    padding: 32px 48px 72px 32px;
+    min-width: 0;
+  }
+
+  .exercise-display .exercise-page-shell--immersive .exercise-reading-layout {
+    display: block;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 36px 24px 72px;
+    border-top: 0;
+  }
+
+  .exercise-display .exercise-page-shell--immersive .exercise-reading-column {
+    padding: 0;
+    background: transparent;
+  }
+
+  .exercise-display .exercise-block {
+    max-width: 880px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .exercise-display .exercise-block :global(.exercise-content) {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .exercise-display .exercise-block :global(.question-response-pair) {
+    border-left: 0;
+    padding-left: 0 !important;
+  }
+
+  .exercise-display .exercise-block :global(.question-block) {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
   
   .exercise-loading { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; @apply text-interface-text-secondary; }
   .loading-spinner { width:2rem; height:2rem; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:1rem; border:2px solid theme('colors.gray.200'); border-top:2px solid theme('colors.blue.500'); }
@@ -2335,6 +2568,22 @@
       display: block;
     }
 
+    .exercise-display .exercise-reading-layout {
+      display: block;
+      padding: 0;
+      border-top: 1px solid theme('colors.interface.border-primary');
+    }
+
+    .exercise-display .exercise-reading-column {
+      padding: 24px 16px 40px;
+    }
+
+    .exercise-display .exercise-block {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+
     /* Ajustements des boutons */
     .header-action-btn,
     .list-action-btn {
@@ -2423,6 +2672,21 @@
       min-width: 100%;
       justify-content: flex-end;
       margin-top: 0.5rem;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .exercise-display .exercise-reading-layout {
+      display: block;
+    }
+
+    .exercise-display :global(.lecture-sidebar) {
+      position: static;
+      width: auto;
+      max-height: none;
+      min-height: 0;
+      border-left: 0;
+      border-top: 1px solid theme('colors.interface.border-primary');
     }
   }
 

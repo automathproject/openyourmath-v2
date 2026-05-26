@@ -10,6 +10,9 @@
   export let showHint = false;
   export let showSolution = false;
   export let questionCount = 0;
+  export let showModeSwitch = true;
+  export let showShareAction = true;
+  export let showLatexAction = true;
 
   let shareLabel = 'Partager';
 
@@ -118,34 +121,40 @@
           </div>
 
           <div class="lecture-actions">
-            <div class="mode-switch" aria-label="Mode de lecture">
-              <button
-                type="button"
-                class:active={mode === 'classic'}
-                aria-pressed={mode === 'classic'}
-                on:click={() => mode = 'classic'}
-              >
-                Classique
-              </button>
-              <button
-                type="button"
-                class:active={mode === 'immersive'}
-                aria-pressed={mode === 'immersive'}
-                on:click={() => mode = 'immersive'}
-              >
-                Immersif
-              </button>
-            </div>
+            {#if showModeSwitch}
+              <div class="mode-switch" aria-label="Mode de lecture">
+                <button
+                  type="button"
+                  class:active={mode === 'classic'}
+                  aria-pressed={mode === 'classic'}
+                  on:click={() => mode = 'classic'}
+                >
+                  Classique
+                </button>
+                <button
+                  type="button"
+                  class:active={mode === 'immersive'}
+                  aria-pressed={mode === 'immersive'}
+                  on:click={() => mode = 'immersive'}
+                >
+                  Immersif
+                </button>
+              </div>
+            {/if}
 
-            <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
-              <span aria-hidden="true">↗</span>
-              <span>{shareLabel}</span>
-            </button>
+            {#if showShareAction}
+              <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
+                <span aria-hidden="true">↗</span>
+                <span>{shareLabel}</span>
+              </button>
+            {/if}
 
-            <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={downloadLatex}>
-              <span aria-hidden="true">⤓</span>
-              <span>LaTeX</span>
-            </button>
+            {#if showLatexAction}
+              <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={downloadLatex}>
+                <span aria-hidden="true">⤓</span>
+                <span>LaTeX</span>
+              </button>
+            {/if}
 
             <div class="lecture-primary-action">
               <AddToListButton {exercise} size="normal" />
