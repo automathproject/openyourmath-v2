@@ -40,8 +40,10 @@
   let presenterQIdx = 0;
   let presenterShowInd = false;
   let presenterShowSol = false;
+  let presenterRoot;
 
   const presenterQuestionTypes = new Set(['question', 'enonce']);
+  const presenterStandaloneStatementTypes = new Set(['texte', 'text', 'statement']);
   const presenterHintTypes = new Set(['hint', 'indication']);
   const presenterSolutionTypes = new Set(['reponse', 'solution', 'answer']);
 
@@ -62,6 +64,7 @@
 
   function buildPresenterSlides(content = []) {
     const sortedBlocks = [...content].sort((a, b) => (a?.order || 0) - (b?.order || 0));
+    const hasExplicitQuestions = sortedBlocks.some((block) => presenterQuestionTypes.has(block?.type || 'text'));
     const slides = [];
     let currentSlide = null;
     let pendingContext = [];
@@ -81,23 +84,63 @@
       } else if (presenterHintTypes.has(type)) {
         if (currentSlide) currentSlide.hints.push(block);
       } else if (presenterSolutionTypes.has(type)) {
+        if (!hasExplicitQuestions && !currentSlide && pendingContext.length) {
+          currentSlide = {
+            question: pendingContext.pop(),
+            context: pendingContext,
+            hints: [],
+            solutions: []
+          };
+          pendingContext = [];
+        }
         if (currentSlide) currentSlide.solutions.push(block);
       } else {
-        if (currentSlide) {
+        if (!hasExplicitQuestions && !currentSlide && presenterStandaloneStatementTypes.has(type) && pendingContext.length === 0) {
+          currentSlide = {
+            question: block,
+            context: [],
+            hints: [],
+            solutions: []
+          };
+        } else if (currentSlide) {
           slides.push(currentSlide);
           currentSlide = null;
+          pendingContext.push(block);
+        } else {
+          pendingContext.push(block);
         }
-        pendingContext.push(block);
       }
     }
 
     if (currentSlide) slides.push(currentSlide);
+    if (!slides.length && pendingContext.length) {
+      slides.push({
+        question: pendingContext[pendingContext.length - 1],
+        context: pendingContext.slice(0, -1),
+        hints: [],
+        solutions: []
+      });
+    }
     return slides;
+  }
+
+  function getPresenterSlideCount(exercise) {
+    const fullExercise = exercise?.fullExercise || exercise;
+    return Math.max(buildPresenterSlides(fullExercise?.content || []).length, 1);
   }
 
   $: presenterExo = $selectedExercise;
   $: presenterSlides = buildPresenterSlides(presenterExo?.content || []);
   $: presenterQuestions = presenterSlides;
+  $: presenterSlideCounts = $exerciseList.map((exercise, index) => (
+    index === $selectedExerciseIndex
+      ? Math.max(presenterSlides.length, 1)
+      : getPresenterSlideCount(exercise)
+  ));
+  $: presenterTotalSlides = presenterSlideCounts.reduce((sum, count) => sum + count, 0);
+  $: presenterSlideNumber = presenterSlideCounts
+    .slice(0, $selectedExerciseIndex)
+    .reduce((sum, count) => sum + count, 0) + presenterQIdx + 1;
   $: if (presenterQIdx >= presenterSlides.length && presenterSlides.length > 0) {
     presenterQIdx = presenterSlides.length - 1;
     resetPresenterRevealState();
@@ -118,10 +161,43 @@
   function presenterNextExo() { if ($currentPosition.hasNext) { listActions.nextExercise(); presenterQIdx = 0; resetPresenterRevealState(); } }
   function presenterPrevExo() { if ($currentPosition.hasPrevious) { listActions.previousExercise(); presenterQIdx = 0; resetPresenterRevealState(); } }
 
+  function selectPresenterExercise(index) {
+    listActions.selectExercise(index);
+    presenterQIdx = 0;
+    resetPresenterRevealState();
+  }
+
+  async function togglePresenterFullscreen() {
+    if (typeof document === 'undefined') return;
+    if (!document.fullscreenElement) {
+      await presenterRoot?.requestFullscreen?.();
+    } else {
+      await document.exitFullscreen?.();
+    }
+  }
+
+  function quitPresenter() {
+    mode = 'consulter';
+    updateUrl();
+  }
+
+  async function handlePresenterQuit() {
+    if (typeof document !== 'undefined' && document.fullscreenElement) {
+      await document.exitFullscreen?.();
+      return;
+    }
+    quitPresenter();
+  }
+
   function handlePresenterKey(e) {
     if (e.target?.tagName === 'INPUT' || e.target?.tagName === 'TEXTAREA') return;
     if (mode !== 'presenter') return;
-    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); presenterNext(); }
+    if (e.key === 'Escape') {
+      if (typeof document !== 'undefined' && document.fullscreenElement) return;
+      e.preventDefault();
+      quitPresenter();
+    }
+    else if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); presenterNext(); }
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); presenterPrev(); }
     else if (e.key === 'ArrowDown') { e.preventDefault(); presenterNextExo(); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); presenterPrevExo(); }
@@ -1575,49 +1651,68 @@
 
 {:else if mode === 'presenter'}
 <!-- ────────── MODE PRÉSENTER ────────── -->
-<div class="mode-presenter">
+<div class="mode-presenter" bind:this={presenterRoot}>
   {#if !$hasExercises}
     <div style="text-align:center; padding: 4rem 2rem; color: rgba(254,249,235,0.5);">
       <p>Aucun exercice dans la séance. Ajoutez des exercices en mode Préparer.</p>
     </div>
   {:else}
-    <!-- 42px thin top bar (accent dot + title + counter) -->
     <div class="presenter-topbar">
-      <span class="presenter-topbar-brand">
-        <span class="presenter-accent-dot"></span>
-        OpenYourMath · projection
-      </span>
-      <span class="presenter-topbar-sep">·</span>
-      <span class="presenter-topbar-title">{listTitle || "Liste d'exercices"}</span>
-      <span style="flex:1"></span>
-      <span class="presenter-topbar-counter">
-        Exercice {$selectedExerciseIndex + 1} / {$exerciseList.length}
-        {#if presenterQuestions.length > 0} · Question {presenterQIdx + 1} / {presenterQuestions.length}{/if}
-      </span>
-      <span class="presenter-topbar-sep">·</span>
-      <span class="presenter-topbar-slide-count">Diapo {$selectedExerciseIndex * Math.max(presenterQuestions.length, 1) + presenterQIdx + 1}</span>
+      <div class="presenter-topbar-left">
+        <span class="presenter-topbar-brand">
+          <span class="presenter-accent-dot"></span>
+          OpenYourMath · projection
+        </span>
+        <span class="presenter-topbar-sep">·</span>
+        <span class="presenter-topbar-title">{listTitle || "Liste d'exercices"}</span>
+      </div>
+      <div class="presenter-topbar-right">
+        <span class="presenter-topbar-counter">
+          Exercice {$selectedExerciseIndex + 1} / {$exerciseList.length}
+          {#if presenterQuestions.length > 0} · Énoncé {presenterQIdx + 1} / {presenterQuestions.length}{/if}
+        </span>
+        <span class="presenter-topbar-slide-count">Diapo {presenterSlideNumber}/{presenterTotalSlides || 1}</span>
+        {#if sharedButtonsVisible}
+          <button class="presenter-topbar-btn" type="button" on:click={togglePresenterFullscreen}>
+            ⛶ Plein écran
+          </button>
+          <button class="presenter-topbar-btn" type="button" on:click={handlePresenterQuit}>
+            esc Quitter
+          </button>
+        {/if}
+      </div>
     </div>
 
     <!-- Slide canvas -->
     <div class="presenter-slide">
       {#if $selectedExercise}
-        <!-- Exercise breadcrumb inside slide -->
-        <div class="presenter-slide-breadcrumb">
-          <span class="presenter-exo-label">Exercice {$selectedExerciseIndex + 1}</span>
-          <span class="presenter-slide-sep">·</span>
-          <span class="presenter-exo-name">{$selectedExercise.title || ''}</span>
-          {#if presenterQuestions.length > 0}
-            <span class="presenter-slide-sep">·</span>
-            <span class="presenter-q-label">Question {presenterQIdx + 1} / {presenterQuestions.length}</span>
-          {/if}
-        </div>
-
         {#if presenterSlides.length > 0}
           {@const slide = presenterSlides[presenterQIdx]}
           {@const q = slide?.question}
-          <div class="presenter-slide-inner">
-            <div class="presenter-bignum">{presenterQIdx + 1}.</div>
+          <div class="presenter-slide-inner presenter-slide-inner--structured">
             <div class="presenter-body">
+              <div class="presenter-slide-heading">
+                <div class="presenter-slide-kicker">
+                  <span>Exercice {$selectedExerciseIndex + 1}</span>
+                  <span class="presenter-heading-line"></span>
+                  <span class="presenter-slide-meta">
+                    {$selectedExercise.level || 'Niveau'} · {$selectedExercise.author || 'OpenYourMath'}
+                    {#if presenterQuestions.length > 1} · {presenterQuestions.length} questions{/if}
+                    {#if $selectedExercise.uuid} · {$selectedExercise.uuid}{/if}
+                  </span>
+                </div>
+                <div class="presenter-title-row">
+                  <h2 class="presenter-main-title">{$selectedExercise.title || `Exercice ${$selectedExerciseIndex + 1}`}</h2>
+                  {#if presenterQuestions.length > 1}
+                    <div class="presenter-question-chip" aria-label="Question {presenterQIdx + 1} sur {presenterQuestions.length}">
+                      <span class="presenter-question-chip-label">Question</span>
+                      <span class="presenter-question-chip-value">{presenterQIdx + 1}</span>
+                      <span class="presenter-question-chip-total">/{presenterQuestions.length}</span>
+                    </div>
+                  {/if}
+                </div>
+              </div>
+
               {#if slide?.context?.length}
                 <div class="presenter-context">
                   {#each slide.context as contextBlock}
@@ -1678,7 +1773,6 @@
             </div>
           </div>
         {:else}
-          <!-- No structured questions: show full exercise content -->
           <div class="presenter-slide-inner">
             <div class="presenter-body presenter-body--full">
               <ExerciseContent
@@ -1706,10 +1800,29 @@
         ← Précédent
       </button>
       <div class="presenter-hints">
-        <span><span class="presenter-kbd">←</span><span class="presenter-kbd">→</span> diapo</span>
-        <span><span class="presenter-kbd">↑</span><span class="presenter-kbd">↓</span> exercice</span>
-        <span><span class="presenter-kbd">I</span> indication</span>
-        <span><span class="presenter-kbd">S</span> solution</span>
+        <div class="presenter-progress">
+          {#each $exerciseList as exercise, exerciseIndex}
+            {@const slideCount = presenterSlideCounts[exerciseIndex] || 1}
+            <button
+              type="button"
+              class="presenter-progress-exercise"
+              class:is-active={exerciseIndex === $selectedExerciseIndex}
+              on:click={() => selectPresenterExercise(exerciseIndex)}
+              title={exercise.title || `Exercice ${exerciseIndex + 1}`}
+            >
+              <span class="presenter-progress-index">{exerciseIndex + 1}</span>
+              <span class="presenter-progress-dots">
+                {#each Array(slideCount) as _, dotIndex}
+                  <span class="presenter-progress-dot" class:is-current={exerciseIndex === $selectedExerciseIndex && dotIndex === presenterQIdx}></span>
+                {/each}
+              </span>
+            </button>
+          {/each}
+        </div>
+        <div class="presenter-shortcuts">
+          <span><span class="presenter-kbd">←</span><span class="presenter-kbd">→</span> diapo</span>
+          <span><span class="presenter-kbd">↑</span><span class="presenter-kbd">↓</span> exercice</span>
+        </div>
       </div>
       <button
         class="presenter-nav-btn presenter-nav-btn--next"
@@ -3295,7 +3408,7 @@
   /* ── MODE PRÉSENTER ──────────────────────────────────────────────────────── */
   .mode-presenter {
     min-height: calc(100vh - 80px);
-    background: #0d3c4d;
+    background: #0b4250;
     color: #fef9eb;
     display: flex;
     flex-direction: column;
@@ -3303,12 +3416,20 @@
   .presenter-topbar {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 16px;
     height: 42px;
     padding: 0 24px;
-    background: rgba(0,0,0,0.25);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    background: #083646;
+    border-bottom: 1px solid rgba(100, 217, 217, 0.15);
     flex-shrink: 0;
+  }
+  .presenter-topbar-left,
+  .presenter-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
   }
   .presenter-topbar-brand {
     display: flex;
@@ -3316,7 +3437,7 @@
     gap: 7px;
     font-size: 12px;
     font-weight: 600;
-    color: rgba(254,249,235,0.7);
+    color: rgba(255,252,242,0.84);
     letter-spacing: 0.02em;
   }
   .presenter-accent-dot {
@@ -3329,7 +3450,7 @@
   .presenter-topbar-sep { font-size: 12px; color: rgba(254,249,235,0.25); }
   .presenter-topbar-title {
     font-size: 12px;
-    color: rgba(254,249,235,0.5);
+    color: rgba(255,252,242,0.7);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3337,14 +3458,35 @@
   }
   .presenter-topbar-counter {
     font-size: 12px;
-    color: #5bcaca;
+    color: #7de3e3;
     font-weight: 600;
     font-family: theme('fontFamily.mono');
+    white-space: nowrap;
   }
   .presenter-topbar-slide-count {
     font-size: 11px;
-    color: rgba(254,249,235,0.35);
+    color: rgba(255,252,242,0.62);
     font-family: theme('fontFamily.mono');
+    white-space: nowrap;
+  }
+  .presenter-topbar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(254, 249, 235, 0.18);
+    background: rgba(255,255,255,0.03);
+    color: rgba(255,252,242,0.92);
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .presenter-topbar-btn:hover {
+    background: rgba(91,202,202,0.1);
+    border-color: rgba(91,202,202,0.4);
+    color: #fef9eb;
   }
   .presenter-slide {
     flex: 1;
@@ -3352,66 +3494,124 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 28px 32px 16px;
+    padding: 42px 32px 40px;
     overflow-y: auto;
   }
-  .presenter-slide-breadcrumb {
+  .presenter-slide-inner {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 28px;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 1050px;
     width: 100%;
-    max-width: 900px;
   }
-  .presenter-exo-label {
-    font-size: 11px;
+  .presenter-slide-inner--structured { display: block; }
+  .presenter-body { flex: 1; min-width: 0; }
+  .presenter-body--full { padding-top: 8px; }
+  .presenter-slide-heading {
+    margin-bottom: 30px;
+  }
+  .presenter-slide-kicker {
+    display: grid;
+    grid-template-columns: auto minmax(80px, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+    color: #85e8e8;
+    font-family: theme('fontFamily.heading');
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #5bcaca;
   }
-  .presenter-slide-sep { font-size: 12px; color: rgba(254,249,235,0.25); }
-  .presenter-exo-name {
-    font-size: 13px;
-    color: rgba(254,249,235,0.6);
-    flex: 1;
-    min-width: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .presenter-heading-line {
+    height: 1px;
+    background: rgba(133, 232, 232, 0.5);
   }
-  .presenter-q-label { font-size: 12px; color: rgba(254,249,235,0.4); font-family: theme('fontFamily.mono'); }
-  .presenter-slide-inner { display: flex; align-items: flex-start; gap: 24px; max-width: 900px; width: 100%; }
-  .presenter-bignum {
+  .presenter-slide-meta {
+    color: rgba(255,252,242,0.68);
+    font-family: theme('fontFamily.sans');
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: none;
+  }
+  .presenter-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .presenter-main-title {
+    max-width: 980px;
+    margin: 0;
+    color: #fffdf5;
     font-family: theme('fontFamily.heading');
-    font-size: 110px;
+    font-size: clamp(32px, 3.8vw, 48px);
     font-weight: 800;
-    color: #5bcaca;
-    letter-spacing: -3px;
-    line-height: 1;
-    flex-shrink: 0;
-    min-width: 120px;
-    text-align: right;
+    line-height: 1.12;
   }
-  .presenter-body { flex: 1; min-width: 0; }
-  .presenter-body--full { padding-top: 8px; }
+  .presenter-question-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: 1px solid rgba(133,232,232,0.5);
+    border-radius: 999px;
+    background: rgba(133,232,232,0.1);
+    color: #93eeee;
+    flex-shrink: 0;
+  }
+  .presenter-question-chip-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,252,242,0.72);
+  }
+  .presenter-question-chip-value {
+    font-family: theme('fontFamily.mono');
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .presenter-question-chip-total {
+    font-family: theme('fontFamily.mono');
+    font-size: 12px;
+    color: rgba(255,252,242,0.68);
+  }
   .presenter-context {
     padding-bottom: 18px;
-    margin-bottom: 18px;
-    border-bottom: 1px solid rgba(254,249,235,0.12);
-    color: rgba(254,249,235,0.72);
-    font-size: 16px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid rgba(255,252,242,0.2);
+    color: rgba(255,252,242,0.9);
+    font-size: 20px;
     line-height: 1.65;
   }
   .presenter-q-title {
     font-family: theme('fontFamily.heading');
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
-    color: #fef9eb;
-    margin-bottom: 12px;
+    color: #fffdf5;
+    margin-bottom: 16px;
   }
-  .presenter-q-body { font-size: 18px; line-height: 1.7; color: rgba(254,249,235,0.9); margin-bottom: 20px; }
-  .presenter-reveal-btns { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .presenter-q-body {
+    margin: 28px 0 22px;
+    padding: 30px 36px;
+    border-left: 4px solid #85e8e8;
+    border-radius: 0 7px 7px 0;
+    background: rgba(8, 54, 70, 0.86);
+    color: #fffdf5;
+    box-shadow: inset 0 0 0 1px rgba(133,232,232,0.16);
+    font-size: 24px;
+    line-height: 1.62;
+  }
+  .presenter-q-body :global(.katex-display) {
+    margin: 1.05em 0;
+    color: #93eeee;
+    font-size: 1.18em;
+  }
+  .presenter-reveal-btns { display: flex; gap: 8px; margin: 22px 0 16px; flex-wrap: wrap; }
   .presenter-btn {
     display: inline-flex;
     align-items: center;
@@ -3420,7 +3620,7 @@
     border-radius: theme('borderRadius.pill');
     border: 1px solid rgba(255,255,255,0.2);
     background: rgba(255,255,255,0.07);
-    color: rgba(254,249,235,0.75);
+    color: rgba(255,252,242,0.9);
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
@@ -3440,8 +3640,8 @@
   }
   .presenter-btn--ind:hover { background: rgba(245,197,95,0.12); }
   .presenter-btn--sol {
-    border-color: rgba(91,202,202,0.4);
-    color: #5bcaca;
+    border-color: rgba(133,232,232,0.55);
+    color: #93eeee;
   }
   .presenter-btn--sol:hover { background: rgba(91,202,202,0.1); }
   .presenter-kbd-hint {
@@ -3454,10 +3654,10 @@
     color: rgba(254,249,235,0.5);
   }
   .presenter-reveal {
-    padding: 14px 18px;
+    padding: 22px 26px;
     border-radius: 8px;
-    margin-top: 12px;
-    font-size: 16px;
+    margin-top: 18px;
+    font-size: 19px;
     line-height: 1.65;
   }
   .presenter-reveal--ind {
@@ -3466,8 +3666,8 @@
     border-radius: 0 8px 8px 0;
   }
   .presenter-reveal--sol {
-    background: rgba(254,249,235,0.06);
-    border: 1px solid rgba(254,249,235,0.12);
+    background: rgba(255,252,242,0.1);
+    border: 1px solid rgba(255,252,242,0.22);
   }
   .presenter-reveal-label {
     font-size: 10px;
@@ -3475,18 +3675,19 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 6px;
-    color: rgba(254,249,235,0.45);
+    color: rgba(255,252,242,0.68);
   }
   .presenter-reveal--ind .presenter-reveal-label { color: #f5c55f; }
-  .presenter-reveal-body { color: rgba(254,249,235,0.9); }
+  .presenter-reveal-body { color: #fffdf5; }
   .presenter-reveal--ind .presenter-reveal-body { color: #fef9eb; }
   .presenter-controls {
     display: flex;
     align-items: center;
     gap: 8px;
+    min-height: 84px;
     padding: 12px 24px;
-    background: rgba(0,0,0,0.25);
-    border-top: 1px solid rgba(255,255,255,0.07);
+    background: #083646;
+    border-top: 1px solid rgba(100, 217, 217, 0.15);
     flex-shrink: 0;
   }
   .presenter-exo-btn {
@@ -3494,7 +3695,7 @@
     border-radius: theme('borderRadius.pill');
     border: 1px solid rgba(255,255,255,0.15);
     background: transparent;
-    color: rgba(254,249,235,0.5);
+    color: rgba(255,252,242,0.7);
     font-size: 12px;
     cursor: pointer;
     transition: background 0.15s, color 0.15s;
@@ -3509,7 +3710,7 @@
     border-radius: theme('borderRadius.pill');
     border: 1px solid rgba(255,255,255,0.2);
     background: rgba(255,255,255,0.06);
-    color: rgba(254,249,235,0.8);
+    color: rgba(255,252,242,0.92);
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -3518,22 +3719,81 @@
   .presenter-nav-btn:hover:not(:disabled) { background: rgba(255,255,255,0.12); }
   .presenter-nav-btn:disabled { opacity: 0.3; cursor: default; }
   .presenter-nav-btn--next {
-    background: #5bcaca;
-    border-color: #5bcaca;
-    color: #0d3c4d;
+    background: #85e8e8;
+    border-color: #85e8e8;
+    color: #083646;
     font-weight: 600;
   }
-  .presenter-nav-btn--next:hover:not(:disabled) { background: #6dd4d4; border-color: #6dd4d4; }
+  .presenter-nav-btn--next:hover:not(:disabled) { background: #a1f2f2; border-color: #a1f2f2; }
   .presenter-hints {
     flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 12px;
     font-size: 11px;
-    color: rgba(254,249,235,0.35);
+    color: rgba(255,252,242,0.62);
+    min-width: 0;
   }
   .presenter-hints span { display: flex; align-items: center; gap: 4px; }
+  .presenter-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 0 12px 2px;
+  }
+  .presenter-progress-exercise {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 28px;
+    padding: 5px 9px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: transparent;
+    color: rgba(255,252,242,0.68);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .presenter-progress-exercise:hover {
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,252,242,0.9);
+  }
+  .presenter-progress-exercise.is-active {
+    border-color: rgba(133,232,232,0.58);
+    background: rgba(133,232,232,0.14);
+    color: #93eeee;
+  }
+  .presenter-progress-index {
+    font-family: theme('fontFamily.mono');
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .presenter-progress-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .presenter-progress-dot {
+    display: block;
+    width: 8px;
+    height: 14px;
+    border-radius: 999px;
+    background: rgba(255,252,242,0.34);
+  }
+  .presenter-progress-dot.is-current {
+    background: #93eeee;
+  }
+  .presenter-shortcuts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+  }
   .presenter-kbd {
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.18);
@@ -3544,9 +3804,15 @@
     color: rgba(254,249,235,0.55);
   }
   @media (max-width: 640px) {
-    .presenter-bignum { font-size: 60px; min-width: 70px; }
-    .presenter-slide { padding: 20px; }
+    .presenter-slide { padding: 24px 18px; }
     .presenter-slide-inner { flex-direction: column; gap: 12px; }
+    .presenter-title-row { flex-direction: column; gap: 14px; }
+    .presenter-main-title { font-size: 30px; }
+    .presenter-slide-kicker { grid-template-columns: 1fr; gap: 8px; font-size: 16px; }
+    .presenter-heading-line { display: none; }
+    .presenter-q-body { padding: 22px 18px; font-size: 19px; }
+    .presenter-topbar { height: auto; min-height: 42px; flex-wrap: wrap; padding: 8px 14px; }
+    .presenter-topbar-right { flex-wrap: wrap; }
     .presenter-hints { display: none; }
   }
 
