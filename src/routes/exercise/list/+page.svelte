@@ -1211,6 +1211,7 @@
                 showModeSwitch={false}
                 showShareAction={false}
                 showLatexAction={false}
+                showPrimaryAction={false}
               />
 
               <div class="exercise-reading-layout">
@@ -1385,38 +1386,36 @@
       {#if $exerciseLoading}
         <div class="consulter-loading">Chargement…</div>
       {:else if $selectedExercise}
-        <div class="consulter-body">
-          <!-- Meta chips -->
-          <div class="consulter-meta">
-            {#if $exerciseList[$selectedExerciseIndex]?.level}
-              <span class="chip chip-teal-solid">{$exerciseList[$selectedExerciseIndex].level}</span>
-            {/if}
-            {#if $exerciseList[$selectedExerciseIndex]?.module}
-              <span class="chip chip-soft">{$exerciseList[$selectedExerciseIndex].module}</span>
-            {/if}
-            {#if $exerciseList[$selectedExerciseIndex]?.chapter}
-              <span class="chip chip-soft">{$exerciseList[$selectedExerciseIndex].chapter}</span>
-            {/if}
-            {#if $exerciseList[$selectedExerciseIndex]?.difficulty}
-              <StarsRating n={$exerciseList[$selectedExerciseIndex].difficulty} total={4} />
-            {/if}
-          </div>
-
-          <!-- Title -->
-          <h1 class="consulter-exo-title">
-            <MathRenderer content={$selectedExercise.title || ''} inline={true} />
-          </h1>
-
-          <!-- Exercise content via ExerciseContent (renders enoncé + questions) -->
-          <div class="consulter-exercise-block card">
-            <ExerciseContent
+        <div class="consulter-body consulter-body--immersive">
+          <div class="exercise-page-shell exercise-page-shell--immersive">
+            <LectureSubheader
               exercise={$selectedExercise}
-              variant="full"
-              showGlobalToggles={false}
-              content={$selectedExercise.content || []}
+              mode="immersive"
               bind:showHint={consulterShowHint}
               bind:showSolution={consulterShowSolution}
+              questionCount={selectedQuestionCount}
+              showModeSwitch={false}
+              showShareAction={false}
+              showLatexAction={false}
+              showPrimaryAction={false}
+              showRevealControls={false}
             />
+
+            <div class="exercise-reading-layout">
+              <article class="exercise-reading-column">
+                <div class="exercise-block">
+                  <ExerciseContent
+                    exercise={$selectedExercise}
+                    variant="full"
+                    showHeader={false}
+                    content={selectedContent}
+                    bind:showHint={consulterShowHint}
+                    bind:showSolution={consulterShowSolution}
+                    bind:showInlineControls
+                  />
+                </div>
+              </article>
+            </div>
           </div>
 
           <!-- Bottom navigation -->
@@ -3024,18 +3023,43 @@
     border-color: theme('colors.brand.200') !important;
     color: theme('colors.brand.700') !important;
   }
-  .consulter-body { max-width: 760px; margin: 0 auto; }
-  .consulter-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-  .consulter-exo-title {
-    font-family: theme('fontFamily.heading');
-    font-weight: 800;
-    font-size: 28px;
-    margin: 0 0 22px;
-    letter-spacing: -0.3px;
-    color: theme('colors.interface.text-primary');
-    line-height: 1.15;
+  .consulter-body { max-width: 860px; margin: 0 auto; }
+  .consulter-body--immersive .exercise-page-shell {
+    background: #fbf8ef;
   }
-  .consulter-exercise-block { margin-bottom: 16px; }
+  .consulter-body--immersive .exercise-reading-layout {
+    display: block;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 36px 24px 72px;
+    border-top: 0;
+  }
+  .consulter-body--immersive .exercise-reading-column {
+    padding: 0;
+    background: transparent;
+  }
+  .consulter-body--immersive .exercise-block {
+    max-width: 880px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  .consulter-body--immersive .exercise-block :global(.exercise-content) {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
+  .consulter-body--immersive .exercise-block :global(.question-response-pair) {
+    border-left: 0;
+    padding-left: 0 !important;
+  }
+  .consulter-body--immersive .exercise-block :global(.question-block) {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
   .consulter-nav-btns {
     display: flex;
     align-items: center;

@@ -13,6 +13,8 @@
   export let showModeSwitch = true;
   export let showShareAction = true;
   export let showLatexAction = true;
+  export let showPrimaryAction = true;
+  export let showRevealControls = true;
 
   let shareLabel = 'Partager';
 
@@ -62,14 +64,16 @@
 
 <section class="lecture-subheader" class:lecture-subheader--immersive={isImmersive}>
 
-  {#if isImmersive}
+  {#if isImmersive && (showModeSwitch || showShareAction || showPrimaryAction)}
     <div class="lecture-immersive-bar">
-      <button type="button" class="immersive-exit-btn" on:click={() => mode = 'classic'}>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-          <path d="M19 12H5M12 5l-7 7 7 7"/>
-        </svg>
-        Classique
-      </button>
+      {#if showModeSwitch}
+        <button type="button" class="immersive-exit-btn" on:click={() => mode = 'classic'}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M19 12H5M12 5l-7 7 7 7"/>
+          </svg>
+          Classique
+        </button>
+      {/if}
 
       <div class="immersive-bar-right">
         {#if exercise?.hasSolution}
@@ -82,13 +86,17 @@
             {showSolution ? 'Masquer solutions' : 'Solutions'}
           </button>
         {/if}
-        <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
-          <span aria-hidden="true">↗</span>
-          <span>{shareLabel}</span>
-        </button>
-        <div class="lecture-primary-action">
-          <AddToListButton {exercise} size="normal" />
-        </div>
+        {#if showShareAction}
+          <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
+            <span aria-hidden="true">↗</span>
+            <span>{shareLabel}</span>
+          </button>
+        {/if}
+        {#if showPrimaryAction}
+          <div class="lecture-primary-action">
+            <AddToListButton {exercise} size="normal" />
+          </div>
+        {/if}
       </div>
     </div>
   {/if}
@@ -156,9 +164,11 @@
               </button>
             {/if}
 
-            <div class="lecture-primary-action">
-              <AddToListButton {exercise} size="normal" />
-            </div>
+            {#if showPrimaryAction}
+              <div class="lecture-primary-action">
+                <AddToListButton {exercise} size="normal" />
+              </div>
+            {/if}
           </div>
         </div>
       {:else}
@@ -189,7 +199,7 @@
         <MathRenderer content={exercise?.title || 'Exercice'} inline={true} />
       </h1>
 
-      {#if isImmersive}
+      {#if isImmersive && showRevealControls}
         <div class="reveal-controls" aria-label="Contrôles de révélation du contenu">
           {#if exercise?.hasIndication}
             <button
