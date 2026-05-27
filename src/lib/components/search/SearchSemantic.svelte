@@ -353,7 +353,12 @@
   const _originalLoadMore = searchActions.loadMore.bind(searchActions);
 
   // Chaque changement de filtre (sidebar, tri…) repart de 20 résultats.
-  searchActions.search   = () => { hybridLimit = 20; return mode === 'hybrid' ? runHybrid(20) : runFts(); };
+  searchActions.search   = (targetMode) => {
+    hybridLimit = 20;
+    if (targetMode === 'hybrid') return runHybrid(20);
+    if (targetMode === 'fts') return runFts();
+    return mode === 'hybrid' ? runHybrid(20) : runFts();
+  };
   searchActions.loadMore = () => mode === 'hybrid' ? loadMoreHybrid() : _originalLoadMore();
 
   // ── Initialisation depuis l'URL ────────────────────────────────────────────

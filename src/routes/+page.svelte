@@ -76,6 +76,11 @@
     suggestionActions.loadSuggestions();
 
     if (typeof window !== 'undefined') {
+      const urlQuery = new URL(window.location.href).searchParams.get('q') || '';
+      if (urlQuery) {
+        searchQuery.set(urlQuery);
+      }
+
       const mediaQuery = window.matchMedia('(min-width: 1024px)');
 
       const applyViewportState = (matches) => {
@@ -535,9 +540,16 @@
                 title="Aucun exercice trouvé"
                 subtitle="Essayez d'ajuster les filtres ou votre requête."
               >
-                <button slot="action" on:click={searchActions.clearAllFilters} class="btn btn-primary mt-4">
-                  Effacer tous les filtres
-                </button>
+                <div slot="action" class="empty-state-actions">
+                  {#if $searchQuery}
+                    <button type="button" on:click={() => searchActions.search('hybrid')} class="btn btn-primary">
+                      Essayer la recherche intelligente
+                    </button>
+                  {/if}
+                  <button type="button" on:click={searchActions.clearAllFilters} class="btn btn-secondary">
+                    Effacer tous les filtres
+                  </button>
+                </div>
               </EmptyState>
             {/if}
           </div>
@@ -1296,5 +1308,12 @@
   .empty-state-subtitle {
     font-size:0.95rem;
     @apply text-interface-text-secondary;
+  }
+  .empty-state-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
   }
 </style>

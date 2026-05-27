@@ -520,6 +520,36 @@
     return normalized;
   }
 
+  function getUuidInputTokens(str) {
+    return str && typeof str === 'string'
+      ? str.trim().split(/[\s,]+/).filter(Boolean)
+      : [];
+  }
+
+  function isExpectedUuidToken(token) {
+    const cleanToken = token.trim();
+    const shortUuidRegex = /^[a-zA-Z0-9]{4}$/;
+    const standardUuidRegex = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
+    return shortUuidRegex.test(cleanToken) || standardUuidRegex.test(cleanToken);
+  }
+
+  function getUuidInputStats() {
+    const tokens = getUuidInputTokens(uuidInputValue);
+    const validTokens = tokens.filter(isExpectedUuidToken);
+    return {
+      total: tokens.length,
+      valid: validTokens.length,
+      invalid: Math.max(0, tokens.length - validTokens.length),
+      validTokens
+    };
+  }
+
+  function redirectUuidInputToSearch() {
+    const query = uuidInputValue.trim();
+    if (!query) return;
+    goto(`/?q=${encodeURIComponent(query)}`);
+  }
+
   // Analyser le contenu du champ UUID en temps réel
   function analyzeUuidInput() {
     if (!uuidInputValue.trim()) {
@@ -528,13 +558,13 @@
       return;
     }
     
-    const stats = listUtils.countValidUuids(uuidInputValue);
+    const stats = getUuidInputStats();
     
     if (stats.valid === 0) {
-      uuidInputFeedback = 'Aucun UUID valide détecté';
+      uuidInputFeedback = 'Recherche détectée : Entrée lancera la recherche';
       uuidInputError = true;
     } else if (stats.invalid > 0) {
-      uuidInputFeedback = `${stats.valid} UUID${stats.valid > 1 ? 's' : ''} valide${stats.valid > 1 ? 's' : ''}, ${stats.invalid} invalide${stats.invalid > 1 ? 's' : ''}`;
+      uuidInputFeedback = 'Format UUID incomplet : Entrée lancera la recherche';
       uuidInputError = true;
     } else {
       uuidInputFeedback = `${stats.valid} UUID${stats.valid > 1 ? 's' : ''} détecté${stats.valid > 1 ? 's' : ''}`;
@@ -544,14 +574,20 @@
 
   // Normaliser au blur ou Enter, pas à chaque frappe
   function handleUuidBlur() {
-    uuidInputValue = normalizeUuidString(uuidInputValue);
+    const stats = getUuidInputStats();
+    if (stats.total > 0 && stats.invalid === 0) {
+      uuidInputValue = normalizeUuidString(uuidInputValue);
+    }
     analyzeUuidInput();
   }
 
   function handleUuidKeydown(event) {
     if (event.key === 'Enter') {
       event.preventDefault();
-      uuidInputValue = normalizeUuidString(uuidInputValue);
+      const stats = getUuidInputStats();
+      if (stats.total > 0 && stats.invalid === 0) {
+        uuidInputValue = normalizeUuidString(uuidInputValue);
+      }
       analyzeUuidInput();
       if (!uuidInputLoading) {
         loadFromUuidInput();
@@ -569,10 +605,9 @@
       return;
     }
     
-    const stats = listUtils.countValidUuids(uuidInputValue);
-    if (stats.valid === 0) {
-      uuidInputFeedback = 'Aucun UUID valide à charger';
-      uuidInputError = true;
+    const stats = getUuidInputStats();
+    if (stats.invalid > 0 || stats.valid === 0) {
+      redirectUuidInputToSearch();
       return;
     }
     
@@ -581,7 +616,7 @@
     uuidInputError = false;
     
     try {
-      await listActions.loadFromUuidString(uuidInputValue);
+      await listActions.loadFromUuids(stats.validTokens);
       updateUrl();
       uuidInputFeedback = `${stats.valid} exercice${stats.valid > 1 ? 's' : ''} chargé${stats.valid > 1 ? 's' : ''}`;
       uuidInputError = false;
