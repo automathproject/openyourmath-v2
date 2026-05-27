@@ -41,7 +41,7 @@
   let presenterQIdx = 0;
   let presenterShowInd = false;
   let presenterShowSol = false;
-  let presenterLightMode = false;
+  let presenterDarkMode = false;
   let presenterRoot;
   let presenterSlideEl;
   let presenterCanScrollUp = false;
@@ -1824,7 +1824,7 @@
 
 {:else if mode === 'presenter'}
 <!-- ────────── MODE PRÉSENTER ────────── -->
-<div class="mode-presenter" class:is-light={presenterLightMode} bind:this={presenterRoot}>
+<div class="mode-presenter" class:is-light={!presenterDarkMode} bind:this={presenterRoot}>
   {#if !$hasExercises}
     <div style="text-align:center; padding: 4rem 2rem; color: rgba(254,249,235,0.5);">
       <p>Aucun exercice dans la séance. Ajoutez des exercices en mode Préparer.</p>
@@ -1849,10 +1849,10 @@
           <button
             class="presenter-topbar-btn presenter-theme-toggle"
             type="button"
-            aria-pressed={presenterLightMode}
-            on:click={() => (presenterLightMode = !presenterLightMode)}
+            aria-pressed={presenterDarkMode}
+            on:click={() => (presenterDarkMode = !presenterDarkMode)}
           >
-            {presenterLightMode ? 'Mode sombre' : 'Mode clair'}
+            {presenterDarkMode ? 'Mode clair' : 'Mode sombre'}
           </button>
           <button class="presenter-topbar-btn" type="button" on:click={togglePresenterFullscreen}>
             ⛶ Plein écran
@@ -1860,12 +1860,12 @@
           <button
             class="presenter-topbar-btn presenter-mobile-theme-toggle"
             type="button"
-            aria-pressed={presenterLightMode}
-            aria-label={presenterLightMode ? 'Activer le mode sombre' : 'Activer le mode clair'}
-            title={presenterLightMode ? 'Mode sombre' : 'Mode clair'}
-            on:click={() => (presenterLightMode = !presenterLightMode)}
+            aria-pressed={presenterDarkMode}
+            aria-label={presenterDarkMode ? 'Activer le mode clair' : 'Activer le mode sombre'}
+            title={presenterDarkMode ? 'Mode clair' : 'Mode sombre'}
+            on:click={() => (presenterDarkMode = !presenterDarkMode)}
           >
-            {presenterLightMode ? 'Sombre' : 'Clair'}
+            {presenterDarkMode ? 'Clair' : 'Sombre'}
           </button>
           <button class="presenter-topbar-btn presenter-quit-btn" type="button" on:click={handlePresenterQuit}>
             esc Quitter
