@@ -9,6 +9,25 @@ import { rerankDocuments } from '../ia/rerank.js';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const DEFAULT_DB_PATH = path.resolve(__dirname, '../../../data/exercises.sqlite');
 const K_RRF = 60;
+const LOW_CONFIDENCE_RERANK_TOP_SCORE = 0.01;
+
+const QUERY_SUPPORT_TERMS = [
+  {
+    match: ['intelligence', 'artificielle'],
+    terms: [
+      'intelligence artificielle',
+      'réseau de neurones',
+      'reseau de neurones',
+      'neurone',
+      'neurones',
+      'rétropropagation',
+      'retropropagation',
+      'apprentissage',
+      'machine learning',
+      'deep learning'
+    ]
+  }
+];
 
 function openDb() {
   const dbPath = process.env.DATABASE_PATH || DEFAULT_DB_PATH;
@@ -32,6 +51,29 @@ function prepareSearchQuery(query) {
 
 function escapeLike(v) {
   return v.replace(/[%_\\]/g, ch => `\\${ch}`);
+}
+
+function normalizeSearchText(value) {
+  return String(value ?? '')
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase();
+}
+
+function getQuerySupportTerms(query) {
+  const normalizedQuery = normalizeSearchText(query);
+  const terms = normalizedQuery
+    .split(/\s+/)
+    .map(t => t.replace(/[^\p{L}\p{N}]+/gu, ''))
+    .filter(t => t.length >= 3);
+
+  for (const entry of QUERY_SUPPORT_TERMS) {
+    if (entry.match.every(term => normalizedQuery.includes(normalizeSearchText(term)))) {
+      terms.push(...entry.terms.map(normalizeSearchText));
+    }
+  }
+
+  return Array.from(new Set(terms));
 }
 
 function buildFilterConditions(filters) {
@@ -176,6 +218,14 @@ function rrfMerge(bm25Results, vectorResults, limit) {
     .map(([uuid, s]) => ({ uuid, ...s }))
     .sort((a, b) => b.rrfScore - a.rrfScore)
     .slice(0, limit);
+}
+
+function hasQuerySupport(candidate, supportTerms) {
+  if (candidate.rankBM25 !== null && candidate.rankBM25 !== undefined) return true;
+  if (!supportTerms || supportTerms.length === 0) return false;
+
+  const haystack = normalizeSearchText(`${candidate.title ?? ''}\n${candidate.summary ?? ''}`);
+  return supportTerms.some(term => haystack.includes(term));
 }
 
 function hydrate(db, merged) {
@@ -353,13 +403,19 @@ export async function hybridSearch({
 
     const topScore = reranked[0]?.rerankScore ?? null;
     const threshold = topScore !== null ? topScore * 0.05 : null;
-    const filtered = threshold !== null
+    const scoreFiltered = threshold !== null
       ? reranked.filter(r => r.rerankScore !== null && r.rerankScore >= threshold)
       : reranked;
+    const lowConfidence = topScore !== null && topScore < LOW_CONFIDENCE_RERANK_TOP_SCORE;
+    const supportTerms = lowConfidence ? getQuerySupportTerms(trimmedQuery) : [];
+    const supported = lowConfidence
+      ? scoreFiltered.filter(r => hasQuerySupport(r, supportTerms))
+      : [];
+    const filtered = supported.length > 0 ? supported : scoreFiltered;
 
-    console.log(`[rerank] top=${topScore?.toFixed(4) ?? 'null'} seuil=${threshold?.toFixed(4) ?? 'null'} (${filtered.length}/${reranked.length} retenus)`);
+    console.log(`[rerank] top=${topScore?.toFixed(4) ?? 'null'} seuil=${threshold?.toFixed(4) ?? 'null'}${lowConfidence ? ' low-confidence' : ''} (${filtered.length}/${reranked.length} retenus)`);
     reranked.forEach((r, i) => {
-      const kept = threshold === null || (r.rerankScore !== null && r.rerankScore >= threshold);
+      const kept = filtered.some(item => item.uuid === r.uuid);
       console.log(`  ${String(i + 1).padStart(2)}. [${r.rerankScore?.toFixed(4) ?? 'null'}] rrf=${r.rrfScore?.toFixed(4) ?? '-'} ${kept ? '✓' : '✗'} | ${r.uuid} "${r.title?.slice(0, 60)}"`);
     });
 
