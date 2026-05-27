@@ -47,6 +47,9 @@
   let presenterCanScrollUp = false;
   let presenterCanScrollDown = false;
   let presenterScrollRaf = null;
+  let presenterTouchStartX = 0;
+  let presenterTouchStartY = 0;
+  let presenterTouchStartTime = 0;
 
   function checkPresenterOverflow() {
     if (!presenterSlideEl) return;
@@ -237,6 +240,30 @@
     else if ((e.key === 'i' || e.key === 'I') && presenterSlides[presenterQIdx]?.hints?.length) presenterShowInd = !presenterShowInd;
     else if ((e.key === 's' || e.key === 'S') && presenterSlides[presenterQIdx]?.solutions?.length) presenterShowSol = !presenterShowSol;
     else if (/^[1-9]$/.test(e.key)) { listActions.selectExercise(parseInt(e.key) - 1); presenterQIdx = 0; resetPresenterRevealState(); }
+  }
+
+  function handlePresenterTouchStart(event) {
+    if (event.touches.length !== 1) return;
+    const touch = event.touches[0];
+    presenterTouchStartX = touch.clientX;
+    presenterTouchStartY = touch.clientY;
+    presenterTouchStartTime = Date.now();
+  }
+
+  function handlePresenterTouchEnd(event) {
+    if (!presenterTouchStartTime || event.changedTouches.length !== 1) return;
+    const target = event.target;
+    if (target?.closest?.('button, a, input, textarea, select')) return;
+
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - presenterTouchStartX;
+    const dy = touch.clientY - presenterTouchStartY;
+    const elapsed = Date.now() - presenterTouchStartTime;
+    presenterTouchStartTime = 0;
+
+    if (elapsed > 700 || Math.abs(dx) < 54 || Math.abs(dx) < Math.abs(dy) * 1.4) return;
+    if (dx < 0) presenterNext();
+    else presenterPrev();
   }
 
   // Partager view state
@@ -815,7 +842,7 @@
     title={listTitle || "Liste d'exercices"}
     subtitle="{$exerciseList.length} exercice{$exerciseList.length !== 1 ? 's' : ''}"
     breadcrumb={[{ label: 'Mes séances', href: '/exercise/list' }, { label: listTitle || 'Sans titre' }]}
-    compactMobile={mode === 'consulter'}
+    compactMobile={mode === 'consulter' || mode === 'presenter'}
   >
     <svelte:fragment slot="title">
       <h1 class="list-title">
@@ -1823,7 +1850,17 @@
           <button class="presenter-topbar-btn" type="button" on:click={togglePresenterFullscreen}>
             ⛶ Plein écran
           </button>
-          <button class="presenter-topbar-btn" type="button" on:click={handlePresenterQuit}>
+          <button
+            class="presenter-topbar-btn presenter-mobile-theme-toggle"
+            type="button"
+            aria-pressed={presenterLightMode}
+            aria-label={presenterLightMode ? 'Activer le mode sombre' : 'Activer le mode clair'}
+            title={presenterLightMode ? 'Mode sombre' : 'Mode clair'}
+            on:click={() => (presenterLightMode = !presenterLightMode)}
+          >
+            {presenterLightMode ? 'Sombre' : 'Clair'}
+          </button>
+          <button class="presenter-topbar-btn presenter-quit-btn" type="button" on:click={handlePresenterQuit}>
             esc Quitter
           </button>
         {/if}
@@ -1832,7 +1869,13 @@
 
     <!-- Slide canvas -->
     <div class="presenter-slide-wrap">
-    <div class="presenter-slide" bind:this={presenterSlideEl} on:scroll={checkPresenterOverflow}>
+    <div
+      class="presenter-slide"
+      bind:this={presenterSlideEl}
+      on:scroll={checkPresenterOverflow}
+      on:touchstart={handlePresenterTouchStart}
+      on:touchend={handlePresenterTouchEnd}
+    >
       {#if $selectedExercise}
         {#if presenterSlides.length > 0}
           {@const slide = presenterSlides[presenterQIdx]}
@@ -3831,6 +3874,9 @@
     background: rgba(133,232,232,0.18);
     border-color: rgba(133,232,232,0.55);
   }
+  .presenter-mobile-theme-toggle {
+    display: none;
+  }
   .presenter-slide-wrap {
     flex: 1;
     min-height: 0;
@@ -4302,16 +4348,138 @@
     color: #0b8f96;
   }
   @media (max-width: 640px) {
-    .presenter-slide { padding: 24px 18px; }
+    :global(body.presenter-active .header-shell),
+    :global(body.presenter-active .seance-mode-bar) {
+      display: none;
+    }
+
+    .presenter-slide { padding: 16px 14px 18px; touch-action: pan-y; }
     .presenter-slide-inner { flex-direction: column; gap: 12px; }
-    .presenter-title-row { flex-direction: column; gap: 14px; }
-    .presenter-main-title { font-size: 30px; }
-    .presenter-slide-kicker { grid-template-columns: 1fr; gap: 8px; font-size: 16px; }
+    .presenter-slide-heading { margin-bottom: 16px; }
+    .presenter-title-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
+      gap: 10px;
+    }
+    .presenter-main-title { font-size: clamp(24px, 7vw, 30px); }
+    .presenter-slide-kicker {
+      grid-template-columns: 1fr;
+      gap: 5px;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .presenter-slide-meta {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     .presenter-heading-line { display: none; }
-    .presenter-q-body { padding: 22px 18px; font-size: 19px; }
-    .presenter-topbar { height: auto; min-height: 42px; flex-wrap: wrap; padding: 8px 14px; }
-    .presenter-topbar-right { flex-wrap: wrap; }
-    .presenter-hints { display: none; }
+    .presenter-question-chip {
+      padding: 5px 8px;
+      border-radius: 10px;
+    }
+    .presenter-question-chip-label { display: none; }
+    .presenter-question-chip-value { font-size: 18px; }
+    .presenter-context {
+      margin-bottom: 12px;
+      padding-left: 12px;
+      font-size: 15px;
+    }
+    .presenter-q-body {
+      padding: 16px 14px;
+      font-size: 17px;
+      line-height: 1.5;
+      border-left-width: 3px;
+    }
+    .presenter-reveal-btns {
+      margin: 12px 0;
+      gap: 6px;
+    }
+    .presenter-btn {
+      min-height: 34px;
+      padding: 0 10px;
+      font-size: 12px;
+    }
+    .presenter-reveal {
+      margin-top: 12px;
+      padding: 12px 14px;
+    }
+    .presenter-topbar {
+      height: 38px;
+      min-height: 38px;
+      flex-wrap: nowrap;
+      padding: 0 10px;
+      gap: 8px;
+    }
+    .presenter-topbar-left,
+    .presenter-topbar-title,
+    .presenter-topbar-sep,
+    .presenter-theme-toggle,
+    .presenter-topbar-btn:not(.presenter-quit-btn) {
+      display: none;
+    }
+    .presenter-mobile-theme-toggle {
+      display: inline-flex !important;
+    }
+    .presenter-topbar-right {
+      width: 100%;
+      justify-content: space-between;
+      gap: 8px;
+      min-width: 0;
+    }
+    .presenter-topbar-counter {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 11px;
+    }
+    .presenter-topbar-slide-count {
+      display: none;
+    }
+    .presenter-mobile-theme-toggle,
+    .presenter-quit-btn {
+      height: 28px;
+      padding: 0 10px;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+    .presenter-controls {
+      min-height: 52px;
+      padding: 7px 8px max(7px, env(safe-area-inset-bottom));
+      gap: 6px;
+    }
+    .presenter-exo-btn,
+    .presenter-shortcuts {
+      display: none;
+    }
+    .presenter-nav-btn {
+      min-height: 38px;
+      padding: 0 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .presenter-hints {
+      flex: 1 1 auto;
+      min-width: 0;
+      gap: 0;
+    }
+    .presenter-progress {
+      width: 100%;
+      justify-content: flex-start;
+      gap: 8px;
+      padding: 0 4px;
+    }
+    .presenter-progress-exercise {
+      min-height: 26px;
+      padding: 4px 7px;
+      gap: 5px;
+    }
+    .presenter-progress-dot {
+      width: 7px;
+      height: 12px;
+    }
   }
 
   /* ── MODE PARTAGER ───────────────────────────────────────────────────────── */
