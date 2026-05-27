@@ -21,7 +21,6 @@
   export let mode = 'preparer';
   export let title = '';
   export let subtitle = '';
-  export let breadcrumb = [];
   export let compactMobile = false;
 
   const modes = [
@@ -41,18 +40,6 @@
 
 <div class="seance-mode-bar" class:seance-mode-bar--compact-mobile={compactMobile}>
   <div class="seance-mode-bar-meta">
-    {#if breadcrumb.length}
-      <nav class="seance-breadcrumb" aria-label="Fil d'ariane">
-        {#each breadcrumb as crumb, i}
-          {#if i < breadcrumb.length - 1}
-            <a href={crumb.href ?? '#'}>{crumb.label}</a>
-            <span class="sep" aria-hidden="true">›</span>
-          {:else}
-            <span class="current">{crumb.label}</span>
-          {/if}
-        {/each}
-      </nav>
-    {/if}
     <slot name="title">
       {#if title}
         <h1 class="seance-title">{title}</h1>
@@ -96,35 +83,11 @@
 
   .seance-mode-bar-meta { min-width: 0; flex: 1; }
 
-  .seance-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    color: theme('colors.interface.text-muted');
-  }
-  .seance-breadcrumb a {
-    color: theme('colors.interface.text-secondary');
-    text-decoration: none;
-    padding: 3px 6px;
-    border-radius: 4px;
-  }
-  .seance-breadcrumb a:hover {
-    background: theme('colors.interface.bg-tertiary');
-    color: theme('colors.interface.text-primary');
-  }
-  .seance-breadcrumb .sep { color: theme('colors.interface.text-disabled'); }
-  .seance-breadcrumb .current {
-    color: theme('colors.interface.text-primary');
-    font-weight: 600;
-    padding: 3px 6px;
-  }
-
   .seance-title {
     font-family: theme('fontFamily.heading');
     font-weight: 800;
     font-size: 22px;
-    margin: 6px 0 0;
+    margin: 0;
     color: theme('colors.interface.text-primary');
     letter-spacing: -0.3px;
     white-space: nowrap;

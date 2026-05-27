@@ -456,6 +456,14 @@
       } else {
         listActions.selectExercise(0);
       }
+    } else if (!$page.url.searchParams.get('list') && $exerciseList.length > 0) {
+      selectedExerciseIndex.set(0);
+      if ($exerciseList[0].fullExercise) {
+        selectedExercise.set($exerciseList[0].fullExercise);
+      } else {
+        listActions.selectExercise(0);
+      }
+      updateUrl();
     } else {
       selectedExercise.set(null);
       selectedExerciseIndex.set(0);
@@ -841,7 +849,6 @@
     bind:mode
     title={listTitle || "Liste d'exercices"}
     subtitle="{$exerciseList.length} exercice{$exerciseList.length !== 1 ? 's' : ''}"
-    breadcrumb={[{ label: 'Mes séances', href: '/exercise/list' }, { label: listTitle || 'Sans titre' }]}
     compactMobile={mode === 'consulter' || mode === 'presenter'}
   >
     <svelte:fragment slot="title">

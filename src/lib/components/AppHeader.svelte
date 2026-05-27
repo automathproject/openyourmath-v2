@@ -17,9 +17,10 @@
   /**
    * @typedef {Object} Props
    * @property {number} [seanceCount] - badge sur "Ma liste", calculé depuis localStorage ou store
+   * @property {string} [listHref] - URL de la liste courante avec ses paramètres
    */
   /** @type {Props} */
-  let { seanceCount = 0 } = $props();
+  let { seanceCount = 0, listHref = '/exercise/list' } = $props();
 
   let pathname = $derived($page.url.pathname);
 
@@ -52,7 +53,7 @@
         </svg>
         Parcourir
       </a>
-      <a href="/exercise/list" class:is-active={isActive('/exercise/list')}>
+      <a href={listHref} class:is-active={isActive('/exercise/list')}>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
           <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>

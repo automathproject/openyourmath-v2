@@ -15,6 +15,9 @@
 
   const APP_VERSION = env.PUBLIC_APP_VERSION || 'dev';
   const currentYear = new Date().getFullYear();
+  $: listHref = $exerciseList.length > 0
+    ? listActions.getCurrentListUrl()
+    : '/exercise/list';
 
   onMount(() => {
     function handleKeydown(e) {
@@ -29,7 +32,7 @@
 </script>
 
 <div class="header-shell" class:header-shell--hidden={$immersiveMode}>
-  <AppHeader seanceCount={$listCount} />
+  <AppHeader seanceCount={$listCount} {listHref} />
 </div>
 
 <main class="main-content">
