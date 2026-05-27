@@ -606,7 +606,9 @@ export const searchActions = {
 // Actions pour gérer la prévisualisation
 export const previewActions = {
   // Sélectionner un exercice pour prévisualisation
-  async selectExercise(uuid) {
+  async selectExercise(uuid, options = {}) {
+    const revealPanel = options?.revealPanel !== false;
+
     // Si c'est le même exercice, on ferme/ouvre la preview
     let panelVisible = true;
     const unsubscribeLayout = previewPanelOpen.subscribe((value) => (panelVisible = value));
@@ -617,7 +619,7 @@ export const previewActions = {
     previewState.update(current => {
       if (current.selectedUuid === uuid && current.isOpen) {
         if (!panelVisible) {
-          reopenedHidden = true;
+          reopenedHidden = revealPanel;
           return current;
         }
         closedExisting = true;
@@ -645,7 +647,9 @@ export const previewActions = {
       return;
     }
 
-    uiActions.setPreviewPanelOpen(true);
+    if (revealPanel) {
+      uiActions.setPreviewPanelOpen(true);
+    }
 
     // Si on ferme juste la preview, pas besoin de charger
     let shouldLoad = true;

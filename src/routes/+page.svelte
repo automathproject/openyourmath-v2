@@ -3,8 +3,6 @@
   import { onMount } from 'svelte';
   import { get } from 'svelte/store';
   import { browser } from '$app/environment';
-  import { fly } from 'svelte/transition';
-  import { cubicIn, cubicOut } from 'svelte/easing';
   import ExercisePreview from '$lib/components/ExercisePreview.svelte';
   import EmptyState from '$lib/components/search/EmptyState.svelte';
   import BreadcrumbNav from '$lib/components/search/BreadcrumbNav.svelte';
@@ -60,6 +58,12 @@
     searchQuery.set(q);
   }
 
+  function handleLandingInput() {
+    if (!localLandingQuery.trim()) return;
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'instant' });
+    searchQuery.set(localLandingQuery);
+  }
+
   function handlePopularQuery(query) {
     localLandingQuery = query;
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'instant' });
@@ -106,7 +110,9 @@
   }
 
   function selectExercise(exercise) {
-    previewActions.selectExercise(exercise.uuid);
+    previewActions.selectExercise(exercise.uuid, {
+      revealPanel: !isDesktop || get(previewPanelOpen)
+    });
   }
 
   function handleCarouselSelect(exercise) {
@@ -304,10 +310,7 @@
 <div class="search-page" class:search-page--landing={isLanding}>
   {#if isLanding}
     <!-- ── Landing hero ──────────────────────────────────────────── -->
-    <section
-      class="landing-hero"
-      out:fly={{ y: -60, duration: 350, easing: cubicIn }}
-    >
+    <section class="landing-hero">
       <div class="landing-hero-inner">
         <div class="landing-hero-layout">
           <picture class="landing-logo-picture">
@@ -344,6 +347,7 @@
                 <input
                   type="search"
                   bind:value={localLandingQuery}
+                  on:input={handleLandingInput}
                   on:keydown={(e) => { if (e.key === 'Enter') handleLandingSearch(); }}
                   placeholder="Cherche un exercice, une notion, un théorème…"
                   aria-label="Rechercher des exercices"
@@ -380,10 +384,7 @@
 
   {:else}
     <!-- ── Sticky search hero band ──────────────────────────────── -->
-    <div
-      class="search-hero-band"
-      in:fly={{ y: -30, duration: 300, easing: cubicOut }}
-    >
+    <div class="search-hero-band">
       <div class="search-hero-inner">
         <SearchSemantic
           canTogglePreview={canTogglePreview && !isDesktop}
