@@ -337,7 +337,10 @@
   // Les résultats remplacent la liste courante (pas d'append) car le reranking
   // est global — les rangs 21-40 peuvent différer d'une exécution à l'autre.
   async function loadMoreHybrid() {
-    hybridLimit += 20;
+    const currentTotal = get(searchMeta)?.pagination?.totalCount;
+    hybridLimit = typeof currentTotal === 'number'
+      ? Math.min(hybridLimit + 20, currentTotal)
+      : hybridLimit + 20;
     loadingMore.set(true);
     try {
       await runHybrid(hybridLimit);

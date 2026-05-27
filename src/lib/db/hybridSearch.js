@@ -242,6 +242,13 @@ function fetchByFiltersOnly(db, filters, limit) {
   return rows.map(row => ({ ...row, score: 0, scoreBM25: null, scoreVector: null }));
 }
 
+function countByFiltersOnly(db, filters) {
+  const { conditions, params } = buildFilterConditions(filters);
+  const where = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
+  const row = db.prepare(`SELECT COUNT(*) AS count FROM exercises e ${where}`).get(...params);
+  return row?.count ?? 0;
+}
+
 /**
  * Recherche hybride FTS5 + vectorielle avec fusion RRF.
  *
@@ -258,9 +265,10 @@ function fetchByFiltersOnly(db, filters, limit) {
  *   retrievalK?: number,
  *   rerank?: boolean,
  *   rerankCandidates?: number,
+ *   withTotal?: boolean,
  *   _timing?: object  // optionnel : objet à peupler avec les temps par étape (pour le debug)
  * }} options
- * @returns {Promise<Array>}
+ * @returns {Promise<Array|{results: Array, totalCount: number}>}
  */
 export async function hybridSearch({
   query = '',
@@ -269,6 +277,7 @@ export async function hybridSearch({
   retrievalK = 50,
   rerank = false,
   rerankCandidates = 50,
+  withTotal = false,
   _timing = null
 } = {}) {
   const db = openDb();
@@ -282,14 +291,15 @@ export async function hybridSearch({
     if (!ftsQuery) {
       const t0 = Date.now();
       const results = fetchByFiltersOnly(db, filters, limit);
+      const totalCount = withTotal ? countByFiltersOnly(db, filters) : null;
       if (_timing) _timing.hydrateMs = Date.now() - t0;
-      return results;
+      return withTotal ? { results, totalCount } : results;
     }
 
     // Filtrage SQL → Set d'UUIDs autorisés pour la recherche vectorielle
     const allowedUuids = buildAllowedUuids(db, filters);
     if (allowedUuids !== null && allowedUuids.size === 0) {
-      return [];
+      return withTotal ? { results: [], totalCount: 0 } : [];
     }
 
     // Phase 2a + 2b en parallèle :
@@ -313,19 +323,19 @@ export async function hybridSearch({
       : [];
 
     if (bm25Results.length === 0 && vectorResults.length === 0) {
-      return [];
+      return withTotal ? { results: [], totalCount: 0 } : [];
     }
 
     // Taille du pool intermédiaire : rerankCandidates si rerank activé, sinon limit.
-    const poolSize = rerank ? rerankCandidates : limit;
+    const poolSize = rerank ? Math.max(rerankCandidates, limit) : Math.max(retrievalK, limit);
     const merged = rrfMerge(bm25Results, vectorResults, poolSize);
     if (_timing) _timing.candidatesAfterRRF = merged.length;
 
     if (!rerank) {
       const t0 = Date.now();
-      const results = hydrate(db, merged);
+      const results = hydrate(db, merged.slice(0, limit));
       if (_timing) _timing.hydrateMs = Date.now() - t0;
-      return results;
+      return withTotal ? { results, totalCount: merged.length } : results;
     }
 
     // Rerank : lecture légère title+summary pour les candidats uniquement,
@@ -356,7 +366,7 @@ export async function hybridSearch({
     const t0 = Date.now();
     const results = hydrate(db, filtered.slice(0, limit));
     if (_timing) _timing.hydrateMs = Date.now() - t0;
-    return results;
+    return withTotal ? { results, totalCount: filtered.length } : results;
   } finally {
     db.close();
   }

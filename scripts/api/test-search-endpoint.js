@@ -41,6 +41,9 @@ async function testHybrid() {
   assert(body?.meta?.mode === 'hybrid', `meta.mode=hybrid (got ${body?.meta?.mode})`);
   assert(body?.meta?.semantic === true, 'meta.semantic=true');
   assert(Array.isArray(body?.results) && body.results.length > 0, 'résultats présents');
+  assert(body?.meta?.pagination !== undefined, 'meta.pagination présent en mode hybride');
+  assert(typeof body?.meta?.pagination?.totalCount === 'number', 'meta.pagination.totalCount est un nombre');
+  assert(body?.meta?.pagination?.hasMore === (body.meta.pagination.totalCount > body.results.length), 'hasMore cohérent avec totalCount');
   const cc = (await get('/api/search?q=test&semantic=true')).headers['cache-control'] ?? '';
   assert(cc.includes('max-age=30'), `Cache-Control max-age=30 en mode hybrid (got "${cc}")`);
 }

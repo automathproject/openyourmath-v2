@@ -167,15 +167,18 @@ export async function GET(event) {
       if (rerankEnabled) trackAlbertRerank();
 
       try {
-        results = await hybridSearch({
+        const hybridResult = await hybridSearch({
           query: q,
           filters,
           limit,
-          retrievalK: 50,
+          retrievalK: Math.max(50, limit),
           rerank: rerankEnabled,
-          rerankCandidates: 50,
+          rerankCandidates: Math.max(50, limit),
+          withTotal: true,
           _timing: debugMode ? timing : null
         });
+        results = hybridResult.results;
+        totalCount = hybridResult.totalCount;
       } catch (hybridErr) {
         // Fallback FTS5 si l'embed échoue (timeout, quota dépassé, etc.)
         console.error('[search] hybridSearch échoué, fallback FTS5:', hybridErr.message);
@@ -202,8 +205,9 @@ export async function GET(event) {
 
   // ── Pagination ────────────────────────────────────────────────────────────
   // FTS : on demande limit+1 pour détecter s'il y a une page suivante.
-  // Hybride : le pool est borné par retrievalK ; hasMore = on a rempli le quota demandé.
-  const hasMore      = semantic ? (results.length >= limit) : (results.length > limit);
+  // Hybride : le moteur retourne le nombre de candidats disponibles dans son pool
+  // reranké. On l'utilise pour éviter de proposer une page suivante inexistante.
+  const hasMore      = semantic ? ((totalCount ?? results.length) > results.length) : (results.length > limit);
   const finalResults = (!semantic && hasMore) ? results.slice(0, limit) : results;
 
   // ── Format réponse ─────────────────────────────────────────────────────────
@@ -224,7 +228,18 @@ export async function GET(event) {
       fallback:  fallback || undefined,
       latencyMs,
       ...(semantic && !fallback
-        ? { count: finalResults.length, hasMore, limit }
+        ? {
+            count: finalResults.length,
+            hasMore,
+            limit,
+            pagination: {
+              limit,
+              offset,
+              count: finalResults.length,
+              hasMore,
+              totalCount: totalCount ?? finalResults.length
+            }
+          }
         : {
             filters,
             pagination: {
