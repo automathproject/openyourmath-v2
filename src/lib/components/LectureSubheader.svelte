@@ -15,6 +15,7 @@
   export let showLatexAction = true;
   export let showPrimaryAction = true;
   export let showRevealControls = true;
+  export let compactMobile = false;
 
   let shareLabel = 'Partager';
 
@@ -62,7 +63,11 @@
   }
 </script>
 
-<section class="lecture-subheader" class:lecture-subheader--immersive={isImmersive}>
+<section
+  class="lecture-subheader"
+  class:lecture-subheader--immersive={isImmersive}
+  class:lecture-subheader--compact-mobile={compactMobile}
+>
 
   {#if isImmersive && (showModeSwitch || showShareAction || showPrimaryAction)}
     <div class="lecture-immersive-bar">
@@ -508,9 +513,24 @@
       padding: 24px 16px 20px;
     }
 
+    .lecture-subheader--compact-mobile .lecture-title-band,
+    .lecture-subheader--compact-mobile.lecture-subheader--immersive .lecture-title-band {
+      padding: 18px 16px 14px;
+    }
+
+    .lecture-subheader--compact-mobile .lecture-metadata--immersive {
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
     .lecture-title--classic,
     .lecture-title--immersive {
       font-size: clamp(28px, 8vw, 36px);
+    }
+
+    .lecture-subheader--compact-mobile .lecture-title--classic,
+    .lecture-subheader--compact-mobile .lecture-title--immersive {
+      font-size: clamp(26px, 7vw, 34px);
     }
   }
 </style>

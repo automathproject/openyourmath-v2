@@ -22,6 +22,7 @@
   export let title = '';
   export let subtitle = '';
   export let breadcrumb = [];
+  export let compactMobile = false;
 
   const modes = [
     { id: 'preparer', label: 'Préparer' },
@@ -38,7 +39,7 @@
   }
 </script>
 
-<div class="seance-mode-bar">
+<div class="seance-mode-bar" class:seance-mode-bar--compact-mobile={compactMobile}>
   <div class="seance-mode-bar-meta">
     {#if breadcrumb.length}
       <nav class="seance-breadcrumb" aria-label="Fil d'ariane">
@@ -181,5 +182,31 @@
     .seance-mode-bar { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 16px; }
     .seance-mode-bar-controls { flex-wrap: wrap; }
     .seance-mode-tabs { overflow-x: auto; }
+
+    .seance-mode-bar--compact-mobile {
+      gap: 0;
+      padding: 8px 10px;
+    }
+
+    .seance-mode-bar--compact-mobile .seance-mode-bar-meta {
+      display: none;
+    }
+
+    .seance-mode-bar--compact-mobile .seance-mode-bar-controls {
+      display: block;
+    }
+
+    .seance-mode-bar--compact-mobile .seance-mode-tabs {
+      width: 100%;
+      justify-content: space-between;
+      padding: 3px;
+    }
+
+    .seance-mode-bar--compact-mobile .seance-mode-tab {
+      flex: 1;
+      padding: 5px 8px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
   }
 </style>

@@ -35,6 +35,7 @@
   // Consulter view state
   let consulterShowHint = false;
   let consulterShowSolution = false;
+  let consulterMainEl;
 
   // Presenter view state
   let presenterQIdx = 0;
@@ -623,6 +624,32 @@
       closeMobileNav();
     }
   }
+
+  function scrollConsulterToTop() {
+    if (typeof requestAnimationFrame === 'undefined') return;
+    requestAnimationFrame(() => {
+      consulterMainEl?.scrollTo?.({ top: 0, behavior: 'smooth' });
+      if (isMobile && typeof window !== 'undefined') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+
+  function selectConsulterExercise(index) {
+    listActions.selectExercise(index);
+    closeMobileNav();
+    scrollConsulterToTop();
+  }
+
+  function previousConsulterExercise() {
+    listActions.previousExercise();
+    scrollConsulterToTop();
+  }
+
+  function nextConsulterExercise() {
+    listActions.nextExercise();
+    scrollConsulterToTop();
+  }
   
   function removeExercise(index) {
     listActions.removeExercise(index);
@@ -788,6 +815,7 @@
     title={listTitle || "Liste d'exercices"}
     subtitle="{$exerciseList.length} exercice{$exerciseList.length !== 1 ? 's' : ''}"
     breadcrumb={[{ label: 'Mes séances', href: '/exercise/list' }, { label: listTitle || 'Sans titre' }]}
+    compactMobile={mode === 'consulter'}
   >
     <svelte:fragment slot="title">
       <h1 class="list-title">
@@ -1578,15 +1606,24 @@
     </div>
   {:else}
     <!-- TOC sidebar -->
-    <aside class="consulter-toc">
-      <div class="t-overline mb-3">Sommaire · {$exerciseList.length} exercices</div>
+    <aside class="consulter-toc" class:consulter-toc--mobile-open={isMobileNavOpen}>
+      <div class="consulter-toc-header">
+        <div class="t-overline">Sommaire · {$exerciseList.length} exercices</div>
+        {#if isMobile}
+          <button class="mobile-close-btn" on:click={closeMobileNav} aria-label="Fermer le sommaire">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        {/if}
+      </div>
       <div class="consulter-list">
         {#each $exerciseList as e, i}
           {@const isSel = i === $selectedExerciseIndex}
           <button
             class="consulter-item"
             class:is-selected={isSel}
-            on:click={() => listActions.selectExercise(i)}
+            on:click={() => selectConsulterExercise(i)}
           >
             <span class="consulter-num" class:is-selected={isSel}>{String(i + 1).padStart(2, '0')}</span>
             <div class="consulter-item-body">
@@ -1603,8 +1640,37 @@
       </div>
     </aside>
 
+    {#if isMobile && isMobileNavOpen}
+      <button type="button" class="mobile-overlay" on:click={handleOverlayClick} aria-label="Fermer le sommaire"></button>
+    {/if}
+
     <!-- Reading panel -->
-    <main class="consulter-main">
+    <main class="consulter-main" bind:this={consulterMainEl}>
+      {#if isMobile && sharedButtonsVisible}
+        <div class="consulter-mobile-topbar">
+          <button class="consulter-mobile-summary-btn" on:click={toggleMobileNav} aria-label="Ouvrir le sommaire">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            Sommaire
+          </button>
+          <span class="consulter-mobile-pos">{$selectedExerciseIndex + 1} / {$exerciseList.length}</span>
+          <span class="consulter-mobile-spacer"></span>
+          <button
+            class="consulter-mobile-toggle consulter-btn-hint"
+            class:is-active={consulterShowHint}
+            on:click={() => (consulterShowHint = !consulterShowHint)}
+            aria-label="Afficher ou masquer les indications"
+          >Ind.</button>
+          <button
+            class="consulter-mobile-toggle consulter-btn-sol"
+            class:is-active={consulterShowSolution}
+            on:click={() => (consulterShowSolution = !consulterShowSolution)}
+            aria-label="Afficher ou masquer les solutions"
+          >Sol.</button>
+        </div>
+      {/if}
+
       <!-- Controls bar -->
       {#if sharedButtonsVisible}
       <div class="consulter-controls">
@@ -1643,7 +1709,8 @@
               showShareAction={false}
               showLatexAction={false}
               showPrimaryAction={false}
-              showRevealControls={sharedButtonsVisible}
+              showRevealControls={!isMobile && sharedButtonsVisible}
+              compactMobile={isMobile}
             />
 
             <div class="exercise-reading-layout">
@@ -1669,11 +1736,11 @@
             <button
               class="btn btn-secondary"
               disabled={!$currentPosition.hasPrevious}
-              on:click={listActions.previousExercise}
+              on:click={previousConsulterExercise}
             >← Précédent</button>
             <span style="flex:1"></span>
             {#if $currentPosition.hasNext}
-              <button class="btn btn-primary" on:click={listActions.nextExercise}>
+              <button class="btn btn-primary" on:click={nextConsulterExercise}>
                 {$exerciseList[$selectedExerciseIndex + 1]?.title
                   ? ($exerciseList[$selectedExerciseIndex + 1].title.length > 28
                     ? $exerciseList[$selectedExerciseIndex + 1].title.slice(0, 28) + '…'
@@ -1686,6 +1753,36 @@
         </div>
       {:else}
         <div class="consulter-loading">Sélectionnez un exercice dans le sommaire</div>
+      {/if}
+
+      {#if isMobile && sharedButtonsVisible}
+        <div class="consulter-mobile-nav">
+          <button
+            class="consulter-mobile-nav-btn"
+            disabled={!$currentPosition.hasPrevious}
+            on:click={previousConsulterExercise}
+            aria-label="Exercice précédent"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Précédent</span>
+          </button>
+          <button class="consulter-mobile-nav-center" on:click={toggleMobileNav} aria-label="Ouvrir le sommaire">
+            {$selectedExerciseIndex + 1} / {$exerciseList.length}
+          </button>
+          <button
+            class="consulter-mobile-nav-btn consulter-mobile-nav-btn--primary"
+            disabled={!$currentPosition.hasNext}
+            on:click={nextConsulterExercise}
+            aria-label="Exercice suivant"
+          >
+            <span>Suivant</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       {/if}
     </main>
   {/if}
@@ -2480,6 +2577,8 @@
     left: 0;
     right: 0;
     bottom: 0;
+    padding: 0;
+    border: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: 55; /* Sous le header (60), au-dessus du contenu */
   }
@@ -3354,6 +3453,13 @@
     flex-direction: column;
     gap: 8px;
   }
+  .consulter-toc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
   .consulter-list { display: flex; flex-direction: column; gap: 4px; }
   .consulter-item {
     display: flex;
@@ -3403,6 +3509,10 @@
     overflow-y: auto;
     padding: 24px 32px;
     background: theme('colors.interface.bg-primary');
+  }
+  .consulter-mobile-topbar,
+  .consulter-mobile-nav {
+    display: none;
   }
   .consulter-controls {
     display: flex;
@@ -3474,9 +3584,147 @@
     font-size: 14px;
   }
   @media (max-width: 768px) {
-    .mode-consulter { flex-direction: column; height: auto; }
-    .consulter-toc { width: 100%; height: 200px; }
-    .consulter-main { padding: 16px; }
+    .mode-consulter {
+      display: block;
+      height: auto;
+      min-height: calc(100dvh - 72px);
+    }
+
+    .consulter-toc {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(88vw, 420px);
+      height: auto;
+      z-index: 60;
+      padding: 16px;
+      border-right: 0;
+      border-left: 1px solid theme('colors.interface.border-primary');
+      box-shadow: -8px 0 20px rgb(15 23 42 / 0.18);
+      transform: translateX(100%);
+      transition: transform 0.24s ease;
+    }
+
+    .consulter-toc--mobile-open {
+      transform: translateX(0);
+    }
+
+    .consulter-main {
+      min-height: calc(100dvh - 72px);
+      overflow: visible;
+      padding: 0 0 88px;
+    }
+
+    .consulter-mobile-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      background: color-mix(in srgb, theme('colors.interface.bg-primary') 94%, white);
+      border-bottom: 1px solid theme('colors.interface.border-primary');
+      box-shadow: 0 2px 8px rgb(15 23 42 / 0.06);
+    }
+
+    .consulter-mobile-summary-btn,
+    .consulter-mobile-toggle,
+    .consulter-mobile-nav-btn,
+    .consulter-mobile-nav-center {
+      min-height: 36px;
+      border-radius: 8px;
+      border: 1px solid theme('colors.interface.border-primary');
+      background: theme('colors.interface.bg-primary');
+      color: theme('colors.interface.text-secondary');
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .consulter-mobile-summary-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 10px;
+    }
+
+    .consulter-mobile-pos {
+      font-family: theme('fontFamily.mono');
+      font-size: 12px;
+      font-weight: 700;
+      color: theme('colors.interface.text-muted');
+      white-space: nowrap;
+    }
+
+    .consulter-mobile-spacer {
+      flex: 1;
+    }
+
+    .consulter-mobile-toggle {
+      min-width: 46px;
+      padding: 0 8px;
+    }
+
+    .consulter-controls,
+    .consulter-nav-btns {
+      display: none;
+    }
+
+    .consulter-body {
+      max-width: none;
+    }
+
+    .consulter-body--immersive .exercise-reading-layout {
+      max-width: none;
+      padding: 14px 16px 36px;
+    }
+
+    .consulter-body--immersive .exercise-page-shell {
+      min-height: calc(100dvh - 129px);
+    }
+
+    .consulter-mobile-nav {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 45;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: 8px;
+      align-items: center;
+      padding: 10px 12px max(10px, env(safe-area-inset-bottom));
+      background: theme('colors.interface.bg-primary');
+      border-top: 1px solid theme('colors.interface.border-primary');
+      box-shadow: 0 -8px 18px rgb(15 23 42 / 0.10);
+    }
+
+    .consulter-mobile-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 0 10px;
+    }
+
+    .consulter-mobile-nav-btn--primary {
+      background: theme('colors.brand.600');
+      border-color: theme('colors.brand.600');
+      color: white;
+    }
+
+    .consulter-mobile-nav-btn:disabled {
+      opacity: 0.42;
+      cursor: not-allowed;
+    }
+
+    .consulter-mobile-nav-center {
+      min-width: 58px;
+      padding: 0 10px;
+      font-family: theme('fontFamily.mono');
+      color: theme('colors.interface.text-muted');
+    }
   }
 
   /* ── MODE PRÉSENTER ──────────────────────────────────────────────────────── */
