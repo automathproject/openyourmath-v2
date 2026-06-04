@@ -110,6 +110,12 @@
       byName.set(trimmed, Number(count) || 0);
     }
 
+    for (const entry of $suggestions?.modules || []) {
+      const name = String(entry?.value ?? entry ?? '').trim();
+      if (!name || byName.has(name)) continue;
+      byName.set(name, Number(entry?.count ?? 0) || 0);
+    }
+
     if ($filters.module && !byName.has($filters.module)) {
       byName.set($filters.module, 0);
     }

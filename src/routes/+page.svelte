@@ -39,10 +39,11 @@
   let isDesktop = false;
   let filtersExpanded = true;
   let manualCardMode = 'auto'; // auto | compact | detailed
+  let searchInterfaceOpened = false;
 
   // ── Landing ────────────────────────────────────────────────────
   let localLandingQuery = '';
-  $: isLanding = !$hasSearched;
+  $: isLanding = !$hasSearched && !searchInterfaceOpened;
   $: if (!$hasSearched) localLandingQuery = '';
 
   const popularQueries = [
@@ -55,14 +56,16 @@
 
   function handleLandingSearch() {
     const q = localLandingQuery.trim();
-    if (!q) return;
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'instant' });
+    searchInterfaceOpened = true;
+    if (!q) return;
     searchQuery.set(q);
   }
 
   function handlePopularQuery(query) {
     localLandingQuery = query;
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'instant' });
+    searchInterfaceOpened = true;
     searchQuery.set(query);
   }
 
@@ -101,6 +104,7 @@
 
   function handleChapterNavigation(event) {
     const { level, module, chapter, subchapter } = event.detail;
+    searchInterfaceOpened = true;
     searchActions.updateFromNavigation({ level, module, chapter, subchapter });
     searchActions.search();
   }
@@ -118,6 +122,7 @@
     } else {
       searchQuery.set(exercise.title || '');
     }
+    searchInterfaceOpened = true;
     // Lance la recherche via le store (SearchSemantic n'est pas encore monté)
     searchActions.search();
     // Sélectionne l'exercice pour la prévisualisation
