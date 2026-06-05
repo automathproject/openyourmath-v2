@@ -453,12 +453,12 @@
             title={isHybridSearchMode ? 'Mode IA activé' : 'Mode rapide activé'}
           >
             <span class="mobile-mode-switch-thumb" aria-hidden="true"></span>
-            <span class="mobile-mode-icon" aria-hidden="true">
+            <span class="mobile-mode-icon mobile-mode-icon--fast" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
               </svg>
             </span>
-            <span class="mobile-mode-icon" aria-hidden="true">
+            <span class="mobile-mode-icon mobile-mode-icon--ia" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
               </svg>
@@ -1296,15 +1296,15 @@
       height: 0.92rem;
     }
 
-    .mobile-mode-icon:first-of-type {
+    .mobile-mode-icon--fast {
       @apply text-interface-text-primary;
     }
 
-    .mobile-mode-switch--hybrid .mobile-mode-icon:first-of-type {
+    .mobile-mode-switch--hybrid .mobile-mode-icon--fast {
       @apply text-interface-text-muted;
     }
 
-    .mobile-mode-switch--hybrid .mobile-mode-icon:nth-of-type(2) {
+    .mobile-mode-switch--hybrid .mobile-mode-icon--ia {
       @apply text-white;
     }
 
