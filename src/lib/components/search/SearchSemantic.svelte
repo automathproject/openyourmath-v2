@@ -56,8 +56,9 @@
 
   // ── Construction des paramètres URL vers l'API ─────────────────────────────
   function buildParams({ semantic = false, rerank = false, debug = false, limit = 20 } = {}) {
-    const q = get(searchQuery).trim();
+    const rawQ = get(searchQuery).trim();
     const f = get(filters);
+    const q = isQueryCoveredByAuthor(rawQ, f.author) ? '' : rawQ;
     const p = new URLSearchParams();
 
     if (q) p.set('q', q);
@@ -119,17 +120,54 @@
     });
   }
 
+  function normalizeIntentText(value) {
+    return String(value ?? '')
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '')
+      .toLowerCase()
+      .replace(/[^\p{L}\p{N}]+/gu, ' ')
+      .trim()
+      .replace(/\s+/g, ' ');
+  }
+
+  function isQueryCoveredByAuthor(query, author) {
+    const normalizedQuery = normalizeIntentText(query);
+    const normalizedAuthor = normalizeIntentText(author);
+    if (!normalizedQuery || !normalizedAuthor) return false;
+    if (normalizedQuery === normalizedAuthor) return true;
+    const authorTokens = new Set(normalizedAuthor.split(' ').filter(Boolean));
+    return normalizedQuery
+      .split(' ')
+      .filter(Boolean)
+      .every((token) => authorTokens.has(token));
+  }
+
+  function applyInterpretedQuery(meta) {
+    const interpreted = meta?.interpretedQuery;
+    if (interpreted?.type !== 'author' || !interpreted.author) return false;
+
+    filters.update((currentFilters) => ({
+      ...currentFilters,
+      author: currentFilters.author || interpreted.author
+    }));
+
+    searchQuery.set('');
+
+    return true;
+  }
+
   // ── Synchronisation URL ────────────────────────────────────────────────────
   function syncUrl() {
-    const q = get(searchQuery).trim();
     const f = get(filters);
+    const rawQ = get(searchQuery).trim();
+    const q = isQueryCoveredByAuthor(rawQ, f.author) ? '' : rawQ;
     const u = new URL($page.url.href);
 
     if (q) u.searchParams.set('q', q); else u.searchParams.delete('q');
     if (mode === 'hybrid') u.searchParams.set('mode', 'hybrid');
     else                   u.searchParams.delete('mode');
 
-    for (const key of ['level', 'module', 'chapter', 'subchapter']) {
+    for (const key of ['level', 'module', 'chapter', 'subchapter', 'author', 'organization', 'difficulty']) {
       if (f[key]) u.searchParams.set(key, f[key]);
       else        u.searchParams.delete(key);
     }
@@ -165,6 +203,7 @@
       const res = await fetch(`/api/search?${buildParams()}`, { signal });
       if (res.ok) {
         const data = await res.json();
+        applyInterpretedQuery(data.meta);
         results.set(data.results || []);
         searchMeta.set(data.meta || null);
         if (data.meta?.filterCounts) filterCounts.set(data.meta.filterCounts);
@@ -248,6 +287,20 @@
 
       if (res.ok) {
         const data = await res.json();
+        const interpreted = applyInterpretedQuery(data.meta);
+
+        if (interpreted && data.meta?.mode === 'fts') {
+          results.set(data.results || []);
+          searchMeta.set(data.meta || null);
+          if (data.meta?.filterCounts) filterCounts.set(data.meta.filterCounts);
+          refreshSuggestions();
+          timingInfo = data.debug || null;
+          mode = 'fts';
+          showSuggest = false;
+          syncUrl();
+          return;
+        }
+
         const entry = {
           results: data.results || [],
           meta:    data.meta   || null,
@@ -375,9 +428,12 @@
     const chapter    = u.searchParams.get('chapter')    || '';
     const subchapter = u.searchParams.get('subchapter') || '';
     const module_    = u.searchParams.get('module')     || '';
-    const hasUrlFilters = Boolean(level || chapter || subchapter || module_);
+    const author     = u.searchParams.get('author')     || '';
+    const organization = u.searchParams.get('organization') || '';
+    const difficulty = u.searchParams.get('difficulty') || '';
+    const hasUrlFilters = Boolean(level || chapter || subchapter || module_ || author || organization || difficulty);
     if (hasUrlFilters) {
-      filters.update(f => ({ ...f, level, chapter, subchapter, module: module_ }));
+      filters.update(f => ({ ...f, level, chapter, subchapter, module: module_, author, organization, difficulty }));
     }
 
     const effectiveQ = urlQ || storeQ;

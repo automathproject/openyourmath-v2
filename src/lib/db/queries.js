@@ -75,6 +75,36 @@ function mergeNormalizedModuleCounts(rows = []) {
   return Array.from(merged.entries()).map(([value, count]) => ({ value, count }));
 }
 
+function normalizeAuthorIntentText(value) {
+  return String(value ?? '')
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
+function uniqueAuthorMatch(matches) {
+  const byDisplay = new Map();
+  for (const match of matches) {
+    const display = String(match.author_display ?? '').trim();
+    if (!display) continue;
+    const key = normalizeAuthorIntentText(display);
+    if (!byDisplay.has(key)) {
+      byDisplay.set(key, {
+        author: display,
+        authorPseudo: String(match.author_pseudo ?? '').trim() || null,
+        count: 0
+      });
+    }
+    byDisplay.get(key).count += Number(match.count ?? 0);
+  }
+
+  if (byDisplay.size !== 1) return null;
+  return byDisplay.values().next().value;
+}
+
 function buildAuthorFilterClause(authorValue, tableAlias = 'e', includeLeadingAnd = true) {
   const trimmed = (authorValue ?? '').trim();
   if (!trimmed) {
@@ -362,6 +392,70 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
   } catch (error) {
     console.error('Database error in searchExercises:', error);
     throw new Error('Erreur de recherche');
+  } finally {
+    if (db) db.close();
+  }
+}
+
+export async function detectAuthorIntent(query = '', filters = {}) {
+  const trimmedQuery = String(query ?? '').trim();
+  if (!trimmedQuery || filters?.author) return null;
+
+  const normalizedQuery = normalizeAuthorIntentText(trimmedQuery);
+  if (!normalizedQuery || normalizedQuery.length < 3) return null;
+
+  const queryTokens = normalizedQuery.split(' ').filter(Boolean);
+  if (queryTokens.length > 3) return null;
+
+  let db;
+  try {
+    db = new Database(DB_PATH, { readonly: true });
+    const rows = db.prepare(`
+      SELECT
+        author_display,
+        author_pseudo,
+        COUNT(DISTINCT uuid) AS count
+      FROM exercise_authors
+      WHERE author_display IS NOT NULL
+        AND TRIM(author_display) != ''
+      GROUP BY author_display, author_pseudo
+    `).all();
+
+    const exactMatches = rows.filter((row) => (
+      normalizeAuthorIntentText(row.author_display) === normalizedQuery ||
+      normalizeAuthorIntentText(row.author_pseudo) === normalizedQuery
+    ));
+    const exactMatch = uniqueAuthorMatch(exactMatches);
+    if (exactMatch) {
+      return {
+        type: 'author',
+        originalQuery: trimmedQuery,
+        author: exactMatch.author,
+        authorPseudo: exactMatch.authorPseudo,
+        reason: 'exact'
+      };
+    }
+
+    if (queryTokens.length !== 1 || normalizedQuery.length < 4) return null;
+
+    const tokenMatches = rows.filter((row) => {
+      const displayTokens = normalizeAuthorIntentText(row.author_display).split(' ').filter(Boolean);
+      const pseudoTokens = normalizeAuthorIntentText(row.author_pseudo).split(' ').filter(Boolean);
+      return displayTokens.includes(normalizedQuery) || pseudoTokens.includes(normalizedQuery);
+    });
+    const tokenMatch = uniqueAuthorMatch(tokenMatches);
+    if (!tokenMatch) return null;
+
+    return {
+      type: 'author',
+      originalQuery: trimmedQuery,
+      author: tokenMatch.author,
+      authorPseudo: tokenMatch.authorPseudo,
+      reason: 'unique-token'
+    };
+  } catch (error) {
+    console.error('Database error in detectAuthorIntent:', error);
+    return null;
   } finally {
     if (db) db.close();
   }

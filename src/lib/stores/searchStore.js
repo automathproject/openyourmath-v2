@@ -195,6 +195,18 @@ function clearSearchUrl() {
   window.history.replaceState(window.history.state, '', nextUrl);
 }
 
+function syncInterpretedQuery(meta) {
+  const interpreted = meta?.interpretedQuery;
+  if (interpreted?.type !== 'author' || !interpreted.author) return;
+
+  filters.update((currentFilters) => ({
+    ...currentFilters,
+    author: currentFilters.author || interpreted.author
+  }));
+
+  searchQuery.set('');
+}
+
 // Comptages hiérarchiques dérivés des résultats courants (compatibles hybride et FTS).
 // Clés composées "level|module|chapter|subchapter" pour distinguer les homonymes inter-niveaux.
 export const resultPathCounts = derived(results, ($results) => {
@@ -455,6 +467,7 @@ export const searchActions = {
       if (response.ok) {
         const data = await response.json();
         const nextResults = data.results || [];
+        syncInterpretedQuery(data.meta);
         results.set(nextResults);
         searchMeta.set(data.meta || null);
         
@@ -562,6 +575,7 @@ export const searchActions = {
       if (response.ok) {
         const data = await response.json();
         const newResults = data.results || [];
+        syncInterpretedQuery(data.meta);
         
         // Pour loadMore, on garde les filterCounts existants du premier appel
         // car les comptages contextuels ne changent pas avec la pagination

@@ -1,6 +1,6 @@
 // src/routes/api/search/+server.js
 import { json, error } from '@sveltejs/kit';
-import { searchExercises, getExerciseCount, getContextualFilterCounts } from '$lib/db/queries.js';
+import { searchExercises, getExerciseCount, getContextualFilterCounts, detectAuthorIntent } from '$lib/db/queries.js';
 import { hybridSearch } from '$lib/db/hybridSearch.js';
 import { checkRateLimit } from '$lib/server/rateLimiter.js';
 import { trackAlbertEmbed, trackAlbertRerank, isEmbedThrottled, isRerankThrottled } from '$lib/server/albertQuota.js';
@@ -56,7 +56,7 @@ export async function GET(event) {
 
   // ── Paramètres de base ────────────────────────────────────────────────────
   const rawQ  = url.searchParams.get('q') ?? '';
-  const q     = rawQ.trim();
+  let q       = rawQ.trim();
 
   if (q.length > 500) {
     throw error(400, { message: 'Paramètre q trop long (max 500 caractères)' });
@@ -120,6 +120,13 @@ export async function GET(event) {
       if (v === '1' || v === 'true')  filters[key] = true;
       else if (v === '0' || v === 'false') filters[key] = false;
     }
+  }
+
+  const interpretedQuery = await detectAuthorIntent(q, filters);
+  if (interpretedQuery?.type === 'author') {
+    filters.author = interpretedQuery.author;
+    q = '';
+    offset = 0;
   }
 
   const hasEffectiveFilters = Object.keys(filters).some((key) => key !== 'sort');
@@ -226,6 +233,7 @@ export async function GET(event) {
       semantic:  semantic && !fallback,
       rerank:    rerankEnabled && !fallback,
       fallback:  fallback || undefined,
+      interpretedQuery: interpretedQuery || undefined,
       latencyMs,
       ...(semantic && !fallback
         ? {
