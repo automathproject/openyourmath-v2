@@ -48,6 +48,10 @@
       }
     }
   }
+
+  function toggleMode() {
+    onToggleMode(searchMode === 'hybrid' ? 'fts' : 'hybrid');
+  }
 </script>
 
 <!-- position:relative pour ancrer le popover desktop -->
@@ -83,42 +87,37 @@
     </div>
 
     <!-- Toggle mode Rapide / IA -->
-    <div class="mode-toggle" role="group" aria-label="Mode de recherche">
-      <button
-        type="button"
-        class="mode-btn"
-        class:mode-btn--active={searchMode === 'fts' && !modeLoading}
-        on:click={() => onToggleMode('fts')}
-        title="Mode rapide — recherche textuelle"
-        aria-pressed={searchMode === 'fts'}
-      >
-        <!-- Éclair -->
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <button
+      type="button"
+      class="mode-switch"
+      class:mode-switch--hybrid={searchMode === 'hybrid'}
+      class:mode-switch--loading={modeLoading}
+      class:mode-switch--suggest={suggestIA && searchMode !== 'hybrid'}
+      on:click={toggleMode}
+      role="switch"
+      aria-checked={searchMode === 'hybrid'}
+      aria-label={searchMode === 'hybrid' ? 'Mode IA activé' : 'Mode rapide activé'}
+      title={searchMode === 'hybrid' ? 'Recherche intelligente — IA sémantique + reranking' : 'Mode rapide — recherche textuelle'}
+    >
+      <span class="mode-switch-thumb" aria-hidden="true"></span>
+      <span class="mode-switch-segment mode-switch-segment--fast" aria-hidden="true">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
         </svg>
-        <span class="mode-btn-label">Rapide</span>
-      </button>
-      <button
-        type="button"
-        class="mode-btn mode-btn--ia"
-        class:mode-btn--active={searchMode === 'hybrid' && !modeLoading}
-        class:mode-btn--suggest={suggestIA && searchMode !== 'hybrid'}
-        on:click={() => onToggleMode('hybrid')}
-        title="Recherche intelligente — IA sémantique + reranking"
-        aria-pressed={searchMode === 'hybrid'}
-      >
+        <span>Rapide</span>
+      </span>
+      <span class="mode-switch-segment mode-switch-segment--ia" aria-hidden="true">
         {#if modeLoading}
-          <span class="mode-btn-spinner" aria-hidden="true"></span>
+          <span class="mode-switch-spinner" aria-hidden="true"></span>
         {:else}
-          <!-- Étincelles -->
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
             <path d="M20 3v4m2-2h-4"/>
           </svg>
         {/if}
-        <span class="mode-btn-label">IA</span>
-      </button>
-    </div>
+        <span>IA</span>
+      </span>
+    </button>
 
     <!-- Chevron collapse (mobile uniquement) -->
     <button
@@ -195,6 +194,22 @@
     min-width: 0;
   }
 
+  @media (max-width: 640px) {
+    .toolbar-top {
+      display: block;
+      align-items: center;
+    }
+
+    .search-input {
+      width: 100%;
+    }
+
+    .mode-switch,
+    .collapse-toggle {
+      display: none;
+    }
+  }
+
   .search-icon-svg {
     flex-shrink: 0;
     color: theme('colors.interface.text-muted');
@@ -215,60 +230,97 @@
   }
   @keyframes toolbarSpin { to { transform: rotate(360deg); } }
 
-  /* ── Toggle mode Rapide / IA ──────────────────────────────────────────── */
-  .mode-toggle {
-    display: flex;
+  /* ── Switch mode Rapide / IA ──────────────────────────────────────────── */
+  .mode-switch {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     flex-shrink: 0;
+    min-width: 8.35rem;
+    height: 2.15rem;
     padding: 2px;
-    gap: 1px;
-    border-radius: 0.6rem;
-    @apply bg-interface-bg-tertiary border border-interface-border-primary;
+    border-radius: 9999px;
+    isolation: isolate;
+    transition: border-color 0.14s, background 0.14s;
+    @apply bg-interface-bg-tertiary border border-interface-border-primary text-interface-text-muted;
   }
 
-  .mode-btn {
-    display: flex;
+  .mode-switch--hybrid {
+    @apply bg-brand-50 border-brand-300;
+  }
+
+  .mode-switch-thumb {
+    position: absolute;
+    z-index: 0;
+    left: 2px;
+    top: 2px;
+    width: calc(50% - 2px);
+    height: calc(100% - 4px);
+    border-radius: 9999px;
+    transform: translateX(0);
+    transition: transform 0.16s ease, background 0.14s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+    @apply bg-interface-bg-white;
+  }
+
+  .mode-switch--hybrid .mode-switch-thumb,
+  .mode-switch--loading .mode-switch-thumb {
+    transform: translateX(100%);
+    @apply bg-brand-600;
+  }
+
+  .mode-switch-segment {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.28rem;
-    padding: 0.32rem 0.55rem;
-    border-radius: 0.42rem;
+    min-width: 0;
+    height: 100%;
+    padding: 0 0.55rem;
+    border-radius: 9999px;
     font-size: 0.78rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    transition: background 0.12s, color 0.12s, box-shadow 0.12s;
+    transition: color 0.14s;
     white-space: nowrap;
+  }
+
+  .mode-switch-segment svg {
+    flex-shrink: 0;
+  }
+
+  .mode-switch-segment--fast {
+    @apply text-interface-text-primary;
+  }
+
+  .mode-switch--hybrid .mode-switch-segment--fast,
+  .mode-switch--loading .mode-switch-segment--fast {
     @apply text-interface-text-muted;
   }
-  .mode-btn:hover:not(.mode-btn--active) {
-    @apply bg-interface-bg-secondary text-interface-text-secondary;
+
+  .mode-switch--hybrid .mode-switch-segment--ia,
+  .mode-switch--loading .mode-switch-segment--ia {
+    @apply text-white;
   }
-  .mode-btn--active {
-    @apply bg-interface-bg-white text-interface-text-primary;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.10);
-  }
-  .mode-btn--ia.mode-btn--active {
-    @apply bg-brand-600 text-white;
-  }
-  .mode-btn--suggest:not(.mode-btn--active) {
+
+  .mode-switch--suggest:not(.mode-switch--hybrid) .mode-switch-segment--ia {
     @apply text-brand-600;
     animation: suggestPulse 2s ease-in-out infinite;
   }
+
+  .mode-switch:hover {
+    @apply border-brand-200;
+  }
+
   @keyframes suggestPulse {
     0%, 100% { opacity: 1; }
     50%       { opacity: 0.6; }
   }
 
-  .mode-btn-label {
-    display: none;
-  }
-  @media (min-width: 500px) {
-    .mode-btn-label { display: inline; }
-  }
-
-  .mode-btn-spinner {
+  .mode-switch-spinner {
     display: inline-block;
     width: 13px;
     height: 13px;
@@ -379,4 +431,19 @@
 
   .preview-toggle-btn { padding: 0.5rem; flex-shrink: 0; }
   .preview-toggle-btn svg { width: 1.25rem; height: 1.25rem; display: block; }
+
+  @media (max-width: 640px) {
+    .toolbar-top {
+      display: block;
+    }
+
+    .search-input {
+      width: 100%;
+    }
+
+    .mode-switch,
+    .collapse-toggle {
+      display: none !important;
+    }
+  }
 </style>

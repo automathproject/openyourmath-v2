@@ -118,7 +118,7 @@
       {#if showChapterBadge}
         <span class="rc-chapter-badge">{exercise.chapter}</span>
       {/if}
-      <span class="rc-flex-spacer" />
+      <span class="rc-flex-spacer"></span>
       {#if exercise.hasVideo}
         <span class="rc-indicator rc-indicator--video">▶ vidéo</span>
       {/if}
@@ -183,7 +183,7 @@
             on:click={openExternal}
             aria-label="Ouvrir l'exercice"
           >
-            Ouvrir →
+            Ouvrir l'exercice →
           </button>
         </div>
       {/if}
@@ -363,5 +363,143 @@
     align-items: center;
     justify-content: center;
     @apply bg-brand-50;
+  }
+
+  @media (max-width: 640px) {
+    .result-card {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+      padding: 0.85rem 0.8rem;
+      box-shadow: none;
+    }
+
+    .result-card:hover {
+      box-shadow: none;
+    }
+
+    .result-card--selected {
+      border-left: 0;
+      background: theme('colors.interface.bg-white');
+    }
+
+    .rc-meta-row {
+      gap: 0.3rem;
+      margin-bottom: 0.45rem;
+      overflow-x: hidden;
+    }
+
+    .rc-meta-row :global(.chip),
+    .chip,
+    .rc-chapter-badge,
+    .rc-indicator {
+      font-size: 0.64rem;
+      line-height: 1;
+    }
+
+    .rc-chip-module {
+      max-width: 34%;
+    }
+
+    .rc-indicator--solution {
+      padding: 0.25rem 0.45rem;
+      border-radius: 9999px;
+      background: theme('colors.success.100');
+      color: theme('colors.success.700');
+    }
+
+    .result-title {
+      font-size: 1rem;
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+    }
+
+    .result-preview {
+      margin-top: 0.35rem;
+      font-size: 0.78rem;
+      line-height: 1.35;
+    }
+
+    .result-footer {
+      margin-top: 0.45rem;
+      padding-top: 0;
+      border-top: 0;
+      display: block;
+      font-size: 0.63rem;
+    }
+
+    .result-footer-left {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      white-space: nowrap;
+      min-width: 0;
+    }
+
+    .result-footer-left :global(.name-renderer),
+    .result-footer-item,
+    .result-date-text {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.63rem;
+      color: theme('colors.interface.text-muted');
+    }
+
+    .result-footer-sep {
+      flex: 0 0 auto;
+    }
+
+    .rc-footer-actions {
+      display: flex;
+      align-items: stretch;
+      gap: 0.55rem;
+      width: 100%;
+      margin-top: 0.55rem;
+      min-width: 0;
+    }
+
+    .rc-footer-open {
+      order: 1;
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 2.75rem;
+      width: 100%;
+      border-radius: 0.5rem;
+      font-size: 0.82rem;
+      background: theme('colors.brand.50');
+      color: theme('colors.brand.700');
+      text-align: center;
+    }
+
+    .rc-footer-open:hover {
+      background: theme('colors.brand.100');
+      color: theme('colors.brand.800');
+    }
+
+    .rc-footer-actions :global(.add-to-list-btn) {
+      order: 2;
+      flex: 0 0 2.75rem;
+      width: 2.75rem;
+      height: 2.75rem;
+      min-height: 2.75rem;
+      padding: 0;
+      border-radius: 0.55rem;
+      border: 1px solid theme('colors.interface.border-primary');
+      background: theme('colors.interface.bg-white');
+      color: theme('colors.interface.text-secondary');
+      justify-content: center;
+    }
+
+    .rc-footer-actions :global(.add-to-list-text) {
+      display: none;
+    }
+
+    .rc-footer-actions :global(.add-to-list-svg) {
+      width: 1.05rem;
+      height: 1.05rem;
+    }
   }
 </style>

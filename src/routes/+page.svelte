@@ -176,6 +176,8 @@
     : sortDirection === 'asc'
       ? '↑'
       : '↓';
+  $: currentSortLabel = sortOptions.find((option) => option.value === sortSelection)?.label ?? 'Pertinence';
+  $: isHybridSearchMode = Boolean($searchMeta?.semantic || String($searchMeta?.mode || '').startsWith('hybrid'));
   $: activeFilterCount = [
     $filters.level,
     $filters.module,
@@ -213,6 +215,10 @@
     const nextDirection = currentDirection === 'asc' ? 'desc' : 'asc';
     searchActions.updateFilter('sortDirection', nextDirection);
     searchActions.search();
+  }
+
+  function toggleMobileSearchMode() {
+    searchActions.search(isHybridSearchMode ? 'fts' : 'hybrid');
   }
 
   function isFormFieldFocused() {
@@ -399,6 +405,67 @@
           {activeFilterCount}
           onToggleExpanded={() => (filtersExpanded = !filtersExpanded)}
         />
+
+        <div class="mobile-search-chips" aria-label="Contrôles de recherche mobile">
+          <button
+            type="button"
+            class="mobile-control-chip"
+            class:mobile-control-chip--active={activeFilterCount > 0}
+            on:click={() => (filtersExpanded = !filtersExpanded)}
+            aria-expanded={filtersExpanded}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 5h18" />
+              <path d="M6 12h12" />
+              <path d="M10 19h4" />
+            </svg>
+            Filtres{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}
+          </button>
+
+          <label class="mobile-control-chip mobile-sort-chip" aria-label="Trier les résultats">
+            <span>{currentSortLabel}</span>
+            <select bind:value={sortSelection} on:change={handleSortChange}>
+              {#each sortOptions as option}
+                <option value={option.value}>{option.label}</option>
+              {/each}
+            </select>
+          </label>
+
+          <button
+            type="button"
+            class="mobile-control-chip"
+            class:mobile-control-chip--disabled={sortSelection === 'relevance'}
+            on:click={toggleSortDirection}
+            disabled={sortSelection === 'relevance'}
+            aria-label={`Ordre ${sortDirection === 'asc' ? 'croissant' : 'décroissant'}`}
+          >
+            {sortDirectionIcon} {sortDirection === 'asc' ? 'Croissant' : 'Décroissant'}
+          </button>
+
+          <button
+            type="button"
+            class="mobile-mode-switch"
+            class:mobile-mode-switch--hybrid={isHybridSearchMode}
+            on:click={toggleMobileSearchMode}
+            role="switch"
+            aria-checked={isHybridSearchMode}
+            aria-label={isHybridSearchMode ? 'Mode IA activé' : 'Mode rapide activé'}
+            title={isHybridSearchMode ? 'Mode IA activé' : 'Mode rapide activé'}
+          >
+            <span class="mobile-mode-switch-thumb" aria-hidden="true"></span>
+            <span class="mobile-mode-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </span>
+            <span class="mobile-mode-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+              </svg>
+            </span>
+            <span class="mobile-mode-label">{isHybridSearchMode ? 'Mode IA' : 'Mode rapide'}</span>
+          </button>
+        </div>
 
         <div class="desktop-meta-shell">
           <ActiveFilters />
@@ -1119,6 +1186,151 @@
     @apply text-error-700;
   }
 
+  .mobile-search-chips {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .mobile-search-chips {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.55rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 0.05rem;
+    }
+
+    .mobile-search-chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-control-chip {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      flex: 0 0 auto;
+      min-height: 2.35rem;
+      padding: 0 0.7rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary;
+    }
+
+    .mobile-control-chip svg {
+      width: 0.95rem;
+      height: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .mobile-control-chip--active {
+      @apply border-brand-300 bg-brand-50 text-brand-700;
+    }
+
+    .mobile-control-chip--ia {
+      @apply text-brand-700;
+    }
+
+    .mobile-control-chip--disabled {
+      opacity: 0.62;
+    }
+
+    .mobile-mode-switch {
+      position: relative;
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      flex: 0 0 auto;
+      width: 4.25rem;
+      height: 2.35rem;
+      padding: 0.16rem;
+      border-radius: 9999px;
+      isolation: isolate;
+      transition: border-color 0.14s, background 0.14s;
+      @apply border border-interface-border-primary bg-interface-bg-tertiary text-interface-text-muted;
+    }
+
+    .mobile-mode-switch--hybrid {
+      @apply border-brand-300 bg-brand-50;
+    }
+
+    .mobile-mode-switch-thumb {
+      position: absolute;
+      z-index: 0;
+      left: 0.16rem;
+      top: 0.16rem;
+      width: calc(50% - 0.16rem);
+      height: calc(100% - 0.32rem);
+      border-radius: 9999px;
+      transform: translateX(0);
+      transition: transform 0.16s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      @apply bg-interface-bg-white;
+    }
+
+    .mobile-mode-switch--hybrid .mobile-mode-switch-thumb {
+      transform: translateX(100%);
+      @apply bg-brand-600;
+    }
+
+    .mobile-mode-icon {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 9999px;
+      transition: color 0.14s;
+    }
+
+    .mobile-mode-icon svg {
+      width: 0.92rem;
+      height: 0.92rem;
+    }
+
+    .mobile-mode-icon:first-of-type {
+      @apply text-interface-text-primary;
+    }
+
+    .mobile-mode-switch--hybrid .mobile-mode-icon:first-of-type {
+      @apply text-interface-text-muted;
+    }
+
+    .mobile-mode-switch--hybrid .mobile-mode-icon:nth-of-type(2) {
+      @apply text-white;
+    }
+
+    .mobile-mode-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .mobile-sort-chip select {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      cursor: pointer;
+    }
+  }
+
   .results-header {
     display: flex;
     align-items: center;
@@ -1196,15 +1408,11 @@
     }
 
     .sort-control {
-      width: 100%;
-      justify-content: flex-end;
+      display: none;
     }
 
     .view-mode-toggle {
-      flex: 0 0 auto;
-      margin-right: 0;
-      padding-right: 0;
-      border-right: none;
+      display: none;
     }
 
     .sort-label {
@@ -1320,5 +1528,24 @@
     justify-content: center;
     gap: 0.75rem;
     margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .results-header {
+      margin-bottom: 0.55rem;
+    }
+
+    .results-header-row1 .view-mode-toggle,
+    .sort-control {
+      display: none !important;
+    }
+
+    .results-header-row1 {
+      justify-content: flex-start;
+    }
+
+    .load-more-header-btn {
+      display: none;
+    }
   }
 </style>

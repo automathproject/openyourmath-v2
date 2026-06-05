@@ -68,10 +68,10 @@
   
   // Texte du bouton
   $: buttonText = (() => {
-    if (isAdding) return variant === 'icon' ? '⏳' : 'Ajout...';
-    if (justAdded) return variant === 'icon' ? '✅' : 'Ajouté !';
-    if (isInList) return variant === 'icon' ? '−' : 'Retirer de ma liste';
-    return variant === 'icon' ? '+' : 'Ajouter à ma liste';
+    if (isAdding) return variant === 'icon' ? '' : 'Ajout...';
+    if (justAdded) return variant === 'icon' ? '' : 'Ajouté !';
+    if (isInList) return variant === 'icon' ? '' : 'Retirer de ma liste';
+    return variant === 'icon' ? '' : 'Ajouter à ma liste';
   })();
   
   // Titre du bouton (tooltip)
@@ -91,15 +91,17 @@
   aria-pressed={isInList}
 >
   {#if variant === 'icon'}
-    <span class="add-to-list-icon">{buttonText}</span>
+    <svg class="add-to-list-svg" fill={isInList ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 4.75A2.75 2.75 0 018.75 2h6.5A2.75 2.75 0 0118 4.75V21l-6-3.5L6 21V4.75z" />
+    </svg>
   {:else}
     <svg class="add-to-list-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       {#if isInList}
-        <!-- Icône retirer (signe moins) -->
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+        <!-- Icône marque-page -->
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 4.75A2.75 2.75 0 018.75 2h6.5A2.75 2.75 0 0118 4.75V21l-6-3.5L6 21V4.75z" />
       {:else}
-        <!-- Icône ajouter (plus) -->
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        <!-- Icône marque-page -->
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 4.75A2.75 2.75 0 018.75 2h6.5A2.75 2.75 0 0118 4.75V21l-6-3.5L6 21V4.75z" />
       {/if}
     </svg>
     <span class="add-to-list-text">{buttonText}</span>
