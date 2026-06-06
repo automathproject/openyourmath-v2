@@ -1,26 +1,27 @@
 {
   "uuid": "bdFO",
   "source_path": "exo7/2-L1/bdFO.tex",
-  "summary": "Étudier la courbe décrite par un point M' d'affixe z' = e^z lorsque M d'affixe z = x + iy décrit différentes droites dans le plan complexe.",
+  "summary": "Étudier la courbe décrite par le point M' d'affixe z' = e^z lorsque M d'affixe z = x + iy parcourt une droite verticale, horizontale ou quelconque dans le plan complexe.",
   "concepts": [
     "fonction exponentielle complexe",
     "représentation géométrique des nombres complexes",
-    "courbe paramétrée",
-    "droite affine dans le plan complexe",
-    "module et argument d'un nombre complexe"
+    "paramétrisation de courbes",
+    "fonction de variable complexe",
+    "limite de suite complexe"
   ],
   "methods": [
-    "paramétrisation de courbe",
+    "paramétrisation de trajectoire",
     "calcul de module et argument",
-    "analyse de cas particuliers"
+    "étude de cas particuliers",
+    "représentation graphique"
   ],
   "objects": [
-    "nombre complexe",
-    "fonction exponentielle",
-    "droite affine",
-    "courbe paramétrée"
+    "fonction exponentielle complexe",
+    "droite du plan complexe",
+    "courbe paramétrée",
+    "affixe d'un point"
   ],
-  "content_hash": "1408c3c578e5dd16f955521632ad30880f46791721400cdfb102f594825994ca",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:24:10.630Z"
+  "content_hash": "31a3f23d45ccc8d758c53a8d67b6c9be38d8840e195eac4f84e3495178f486c5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:12.846Z"
 }

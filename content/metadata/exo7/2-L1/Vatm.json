@@ -1,28 +1,27 @@
 {
   "uuid": "Vatm",
   "source_path": "exo7/2-L1/Vatm.tex",
-  "summary": "L'exercice demande de calculer la limite en +∞ d'une fraction impliquant des puissances exponentielles de x. L'énoncé met en jeu des expressions de la forme x^x et leurs variations.",
+  "summary": "L'exercice demande de calculer la limite en l'infini d'une fraction impliquant des puissances exponentielles de x. L'expression combine des termes de la forme x^x élevés à la puissance x et x élevé à la puissance x^x.",
   "concepts": [
-    "limite de fonctions réelles",
+    "limite de fonctions exponentielles",
     "croissance comparée",
-    "fonctions exponentielles",
-    "notation exponentielle",
-    "limite infinie",
-    "comparaison de termes dominants"
+    "comportement asymptotique",
+    "fonctions logarithmes",
+    "exponentielle de fonctions"
   ],
   "methods": [
-    "simplification exponentielle",
-    "analyse asymptotique",
-    "comparaison de termes",
-    "linéarisation de l'argument exponentiel"
+    "réécriture exponentielle",
+    "analyse de termes dominants",
+    "approximation de termes négligeables",
+    "étude de la limite d'une fonction composée"
   ],
   "objects": [
     "fonction exponentielle",
-    "puissance exponentielle",
-    "limite infinie",
-    "expression algébrique complexe"
+    "fonction logarithme",
+    "puissance itérée",
+    "limite infinie"
   ],
-  "content_hash": "57674c8b858d6028b728baa7e310e46f35916852fed703bdf9c9539755fdc10c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:19:13.822Z"
+  "content_hash": "8c633c57b807f1fac32e8bb4d52c437ae5fb3f3590de1a7cb2c56d50c85b546e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:03.501Z"
 }

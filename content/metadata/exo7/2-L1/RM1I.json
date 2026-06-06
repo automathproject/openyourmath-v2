@@ -1,27 +1,31 @@
 {
   "uuid": "RM1I",
   "source_path": "exo7/2-L1/RM1I.tex",
-  "summary": "L'exercice demande de déterminer des équivalents simples de fonctions en plusieurs points de convergence (0, 1, 2, +∞, -∞). Les fonctions étudiées incluent des expressions algébriques et trigonométriques.",
+  "summary": "L'exercice demande de déterminer des équivalents simples de fonctions en plusieurs points de convergence (0, 1, 2, +∞, -∞). Les fonctions étudiées incluent des expressions polynomiales, des racines carrées, des fonctions trigonométriques et exponentielles.",
   "concepts": [
     "développement limité",
-    "équivalent simple",
-    "convergence de fonctions",
+    "équivalent asymptotique",
+    "limite de fonctions",
     "développement de Taylor",
+    "fonctions trigonométriques",
+    "fonctions exponentielles",
     "approximation polynomiale"
   ],
   "methods": [
-    "développement limité",
-    "approximation polynomiale",
-    "calcul de reste",
+    "développement limité à l'ordre 3, 5, 7",
+    "standardisation",
+    "approximation de Taylor",
+    "manipulation algébrique",
     "comparaison de termes dominants"
   ],
   "objects": [
     "fonction polynomiale",
-    "fonction trigonométrique",
+    "fonction racine carrée",
     "fonction exponentielle",
-    "fonction hyperbolique"
+    "fonction trigonométrique",
+    "fonction composée"
   ],
-  "content_hash": "bcd3901ad0f5bad7c628e27038f3f8cbf478e77fb74de6b18c6f960249fa5877",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:31:31.825Z"
+  "content_hash": "a4759406702222832960a60e11424d49c69a0a09c35ac683e45959af098f9ffd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:00.044Z"
 }

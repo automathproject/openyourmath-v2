@@ -1,0 +1,31 @@
+{
+  "uuid": "Lq8D",
+  "source_path": "amscc/Lq8D.tex",
+  "summary": "L'exercice demande de calculer le nombre de paramètres dans trois architectures de réseaux de neurones récurrents (RNN simple, LSTM, GRU) en analysant leur structure mathématique. Il s'agit de décomposer les contributions des matrices de poids et des biais, puis d'ajouter la couche de sortie linéaire pour obtenir le nombre total de paramètres.",
+  "concepts": [
+    "réseau de neurones récurrents",
+    "architecture LSTM",
+    "architecture GRU",
+    "couche de sortie linéaire",
+    "paramètres d'un modèle",
+    "complexité computationnelle",
+    "porte de réinitialisation",
+    "porte de mise à jour"
+  ],
+  "methods": [
+    "décomposition des matrices de poids",
+    "calcul de la dimension des paramètres",
+    "analyse structurelle des architectures",
+    "application numérique"
+  ],
+  "objects": [
+    "matrice de poids",
+    "biais",
+    "état caché",
+    "entrée",
+    "sortie"
+  ],
+  "content_hash": "25f9a017b8b149a3fb80415e7af403a27552c49aa189e3fa5a13cbcd7d01bf96",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:31.195Z"
+}

@@ -1,31 +1,31 @@
 {
   "uuid": "BA22",
   "source_path": "amscc/BA22.tex",
-  "summary": "L'exercice demande de calculer des statistiques descriptives (moyenne et écart-type) à partir d'un échantillon de données, d'estimer sans biais la moyenne et l'écart-type de la population, de construire un intervalle de confiance pour la moyenne de la population avec un niveau de confiance de 95%, et de réaliser un test d'hypothèse pour comparer la moyenne observée à une valeur donnée.",
+  "summary": "L'exercice demande de calculer des statistiques descriptives (moyenne et écart-type) à partir d'un échantillon, d'estimer sans biais la moyenne et l'écart-type de la population, de construire un intervalle de confiance pour la moyenne avec un niveau de confiance de 95%, et de réaliser un test d'hypothèse unilatéral pour comparer la moyenne observée à une valeur donnée.",
   "concepts": [
     "estimation ponctuelle sans biais",
     "intervalle de confiance",
     "test d'hypothèse",
     "loi de Student",
-    "variance",
-    "moyenne",
-    "écart-type"
+    "moyenne échantillonale",
+    "variance échantillonale",
+    "risque de première espèce"
   ],
   "methods": [
-    "calcul de la moyenne échantillon",
-    "calcul de l'écart-type échantillon",
-    "estimation sans biais de la variance",
-    "construction d'un intervalle de confiance pour petite taille d'échantillon",
+    "calcul de la moyenne échantillonale",
+    "calcul de la variance échantillonale",
+    "correction de Bessel",
+    "construction d'intervalle de confiance pour petite taille d'échantillon",
     "test de conformité pour une moyenne"
   ],
   "objects": [
-    "échantillon de données",
+    "échantillon aléatoire",
     "moyenne de la population",
     "écart-type de la population",
     "intervalle de confiance",
-    "hypothèses statistiques"
+    "variable de décision"
   ],
-  "content_hash": "8261fad081174f3c727f868ac4633573a87042d52069b04c2de19789a50c81dc",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:35:58.350Z"
+  "content_hash": "5215e55228e080bd10040c0657d1cb524891a32e23adc91d4382a2ca3de6a33c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:55.442Z"
 }

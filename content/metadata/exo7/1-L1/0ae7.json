@@ -1,25 +1,28 @@
 {
   "uuid": "0ae7",
   "source_path": "exo7/1-L1/0ae7.tex",
-  "summary": "Étudier l'image d'une fraction rationnelle complexe sur l'ensemble des complexes privé de ses pôles.",
+  "summary": "Étudier l'image d'une fraction rationnelle complexe sur son ensemble de définition, c'est-à-dire sur l'ensemble des complexes privés de ses pôles.",
   "concepts": [
     "fraction rationnelle",
     "pôle",
     "image d'une fonction",
     "polynôme",
-    "division euclidienne de polynômes"
+    "division euclidienne de polynômes",
+    "théorème des zéros de polynômes"
   ],
   "methods": [
     "décomposition en éléments simples",
-    "analyse des cas selon le degré",
-    "comparaison des polynômes"
+    "analyse des cas selon le PGCD des polynômes",
+    "étude des valeurs prises par la fonction"
   ],
   "objects": [
     "fraction rationnelle",
     "polynôme du numérateur",
-    "polynôme du dénominateur"
+    "polynôme du dénominateur",
+    "ensemble des pôles",
+    "image d'une fonction"
   ],
-  "content_hash": "276c312d4ccf738c13628717e9702ee4208bd56e890807a5cf9f26c4276fb8fa",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:30:36.519Z"
+  "content_hash": "1078f79648eba5e28ab09594a015f4367d086f6ade8faac3aeb8a86cbce43c15",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:45.339Z"
 }

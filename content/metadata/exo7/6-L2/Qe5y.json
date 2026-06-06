@@ -4,24 +4,28 @@
   "summary": "Dans l'espace ℝ³, on donne deux droites (D) et (D') définies par des systèmes d'équations cartésiennes. L'exercice demande de calculer la distance entre ces deux droites puis de déterminer leur perpendiculaire commune.",
   "concepts": [
     "géométrie affine",
+    "distance entre droites",
     "produit vectoriel",
     "produit mixte",
-    "distance entre droites",
-    "perpendiculaire commune"
+    "colinéarité",
+    "repère de droite affine",
+    "système d'équations cartésiennes"
   ],
   "methods": [
-    "calcul de repère de droite",
     "calcul de produit vectoriel",
     "calcul de produit mixte",
-    "résolution de système d'équations"
+    "résolution de système d'équations linéaires",
+    "paramétrisation de droite affine",
+    "calcul de distance minimale"
   ],
   "objects": [
-    "droites de l'espace",
+    "droites affines dans ℝ³",
     "vecteurs directeurs",
-    "points de l'espace",
-    "perpendiculaire commune"
+    "points de passage",
+    "perpendiculaire commune",
+    "matrices 3x3"
   ],
-  "content_hash": "e8bf43dbf0f8942ceab4d4074247421f48f9eb0e91dc19ce5afa1414c36e3a74",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:52:51.552Z"
+  "content_hash": "b87e5097a6ae265df584cc3fdb1f34dcce697faea31f0324703d89545d78ca79",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:08.414Z"
 }

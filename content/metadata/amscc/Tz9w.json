@@ -1,0 +1,32 @@
+{
+  "uuid": "Tz9w",
+  "source_path": "amscc/Tz9w.tex",
+  "summary": "Calculer les états cachés et les sorties d'un réseau de neurones récurrents (RNN) scalaire pour une séquence donnée, puis déterminer les gradients des paramètres par rétropropagation à travers le temps (BPTT). L'exercice aborde la disparition du gradient pour les séquences longues.",
+  "concepts": [
+    "réseau de neurones récurrents",
+    "fonction d'activation tanh",
+    "règle de dérivation en chaîne",
+    "rétropropagation à travers le temps",
+    "disparition du gradient",
+    "calcul de gradient",
+    "fonction de perte quadratique",
+    "propagation des erreurs"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "application de la règle de dérivation en chaîne",
+    "calcul récurrent des gradients",
+    "analyse de la stabilité des gradients"
+  ],
+  "objects": [
+    "séquence d'entrée",
+    "états cachés",
+    "sorties du réseau",
+    "paramètres du RNN",
+    "gradient de la perte",
+    "terme de rétropropagation"
+  ],
+  "content_hash": "637d9e43410e47cbf8e21a4403cf19411799c185a8b27b4c7dd2f1dbdd6dd4c6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:34.572Z"
+}

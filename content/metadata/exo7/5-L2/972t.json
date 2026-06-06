@@ -1,31 +1,32 @@
 {
   "uuid": "972t",
   "source_path": "exo7/5-L2/972t.tex",
-  "summary": "Développer en série de Fourier une fonction 2π-périodique définie par f(x) = cos(αx) sur [-π, π], puis en déduire des expressions pour π/sin(πz) et πcot(πz).",
+  "summary": "Développer en série de Fourier une fonction 2π-périodique définie par cos(αx) sur [-π, π], puis en déduire des expressions pour π/sin(πz) et πcot(πz) où z est un complexe non entier.",
   "concepts": [
     "série de Fourier",
     "théorème de Dirichlet",
     "fonction paire",
-    "intégration par parties",
+    "coefficient de Fourier",
+    "intégrale trigonométrique",
     "fonction périodique",
-    "fonction continue par morceaux",
-    "fonction de classe C¹"
+    "convergence uniforme"
   ],
   "methods": [
-    "développement en série de Fourier",
     "calcul des coefficients de Fourier",
-    "intégration trigonométrique",
-    "utilisation de la parité",
-    "substitution de variables"
+    "intégration par parties",
+    "utilisation de la périodicité",
+    "substitution de variables",
+    "simplification trigonométrique"
   ],
   "objects": [
-    "fonction périodique",
-    "coefficient de Fourier",
-    "série trigonométrique",
-    "fonction cosinus",
-    "variable complexe"
+    "fonction 2π-périodique",
+    "coefficient an(f)",
+    "somme de séries",
+    "fonction cos(αx)",
+    "fonction sin(πz)",
+    "fonction cot(πz)"
   ],
-  "content_hash": "9d77dd0fff9013859bc3a6a34f93ed5387992bee0a141a658c8400f55fb8629c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:18:56.604Z"
+  "content_hash": "5b06a0ab22ce7d47b2c1398623e58a8cc41cb9bb866c7f3ab3d30979a05a20ba",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:10.203Z"
 }

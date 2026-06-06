@@ -1,14 +1,14 @@
 {
   "uuid": "gWAF",
   "source_path": "exo7/5-L2/gWAF.tex",
-  "summary": "Développer en série de Fourier une fonction périodique définie par f(x) = x - E(x) - 1/2, où E(x) est la partie entière de x. L'exercice demande de calculer les coefficients de Fourier de cette fonction.",
+  "summary": "Développer en série de Fourier la fonction f(x) = x - E(x) - 1/2, où E(x) est la partie entière de x. L'exercice demande de calculer les coefficients de Fourier de cette fonction périodique.",
   "concepts": [
     "série de Fourier",
     "fonction périodique",
-    "coefficient de Fourier",
     "fonction continue par morceaux",
     "théorème de Dirichlet",
-    "convergence de série de Fourier",
+    "coefficient de Fourier",
+    "intégrale de Riemann",
     "fonction impaire"
   ],
   "methods": [
@@ -20,10 +20,10 @@
   "objects": [
     "fonction périodique",
     "coefficient de Fourier",
-    "série de Fourier",
+    "intégrale sur un intervalle",
     "fonction impaire"
   ],
-  "content_hash": "b083b82eb097d3049dbc4afe6a7a746c3716bb2051d652eef1a36cda3605de15",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:27:18.588Z"
+  "content_hash": "87595013df0d8b694718acf2760c892734676869b5765c0fd8cad2b7c556b4bc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:23.808Z"
 }

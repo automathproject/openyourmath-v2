@@ -1,28 +1,31 @@
 {
   "uuid": "F0dH",
   "source_path": "exo7/19-L3/F0dH.tex",
-  "summary": "L'exercice demande de montrer que le maximum d'une suite de variables aléatoires indépendantes et identiquement distribuées selon une loi normale centrée réduite, normalisé par √(2ln n), converge vers 1 en probabilité.",
+  "summary": "L'exercice demande d'abord de majorer et minorer une intégrale de la fonction gaussienne. Ensuite, il s'agit de montrer que le maximum d'une suite de variables aléatoires indépendantes et identiquement distribuées selon la loi normale centrée réduite, normalisé par √(2ln n), converge vers 1 en probabilité.",
   "concepts": [
     "convergence en probabilité",
     "loi normale centrée réduite",
-    "variable aléatoire maximale",
-    "intégrale de fonction exponentielle",
-    "inégalité de probabilité"
+    "intégrale de la fonction gaussienne",
+    "inégalité de probabilité",
+    "majoration/minoration d'intégrale",
+    "variable aléatoire indépendante et identiquement distribuée",
+    "loi des grands nombres"
   ],
   "methods": [
     "intégration par parties",
-    "estimation d'intégrale",
+    "approximation de l'intégrale gaussienne",
     "analyse asymptotique",
-    "décomposition d'événement",
-    "utilisation de la fonction de répartition"
+    "découpage d'événements",
+    "utilisation de la fonction exponentielle"
   ],
   "objects": [
-    "suite de variables aléatoires indépendantes",
+    "intégrale de la fonction gaussienne",
+    "suite de variables aléatoires",
     "maximum de variables aléatoires",
-    "intégrale de fonction exponentielle",
-    "probabilité de convergence"
+    "probabilité de convergence",
+    "fonction exponentielle"
   ],
-  "content_hash": "fb7197fe8b043ee58b411d5cfe64198939591604ebd352e5ebd1decdf4a73c67",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:38:53.512Z"
+  "content_hash": "cd42350154f8523fa0e70c24e860ecedeea20e93c12a6e6ad8d51738743f38cd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:22.109Z"
 }

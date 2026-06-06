@@ -1,7 +1,7 @@
 {
   "uuid": "lxXI",
   "source_path": "exo7/16-L3/lxXI.tex",
-  "summary": "L'exercice demande de montrer que l'application homographique Φₐ envoie le cercle unité dans lui-même et est une bijection du disque unité sur lui-même. Ensuite, il s'agit de prouver que tout biholomorphisme du disque unité est, à une rotation près, de la forme Φₐ.",
+  "summary": "L'exercice demande de montrer que l'application homographique Φₐ envoie le cercle unité dans lui-même et est une bijection du disque unité sur lui-même, puis de prouver que les seuls biholomorphismes du disque unité sont les applications Φₐ à une rotation près.",
   "concepts": [
     "application homographique",
     "bijection",
@@ -14,15 +14,17 @@
   "methods": [
     "étude des propriétés d'une application",
     "démonstration de bijection",
+    "utilisation de la réciproque",
     "analyse des transformations géométriques"
   ],
   "objects": [
     "application homographique Φₐ",
     "disque unité D",
     "cercle unité C",
-    "biholomorphisme f"
+    "biholomorphisme f",
+    "point a ∈ D"
   ],
-  "content_hash": "64c29ff62ffd36901a1541b2c4f561992ed2990b101433a5acf2b5310933529d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:42:09.244Z"
+  "content_hash": "8a0096a32395c34ddb0133e5a19bf5a8dc6270de128f315a8ba6668dbcc0d85b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:38.788Z"
 }

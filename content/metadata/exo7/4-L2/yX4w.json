@@ -1,31 +1,32 @@
 {
   "uuid": "yX4w",
   "source_path": "exo7/4-L2/yX4w.tex",
-  "summary": "L'exercice demande de reconnaître le type d'endomorphisme de ℝ³ défini par des systèmes d'équations linéaires dans la base canonique, en identifiant s'il s'agit d'une rotation, d'une symétrie ou d'une symétrie-rotation autour d'un axe donné avec un angle spécifique.",
+  "summary": "L'exercice demande de reconnaître et d'identifier la nature des endomorphismes de ℝ³ définis par des systèmes d'équations linéaires dans la base canonique. Les solutions sont des rotations, symétries ou projections autour d'axes ou de plans spécifiques.",
   "concepts": [
     "espace vectoriel euclidien",
     "endomorphisme",
     "rotation",
     "symétrie",
-    "symétrie-rotation",
-    "angle de rotation",
-    "axe de rotation",
-    "projection orthogonale"
+    "projection",
+    "base canonique",
+    "matrice de passage",
+    "géométrie vectorielle"
   ],
   "methods": [
-    "identification de l'axe de rotation",
-    "calcul de l'angle de rotation",
-    "détermination du plan de symétrie",
-    "analyse des coefficients matriciels"
+    "reconnaissance de transformations géométriques",
+    "calcul de matrice associée",
+    "identification d'axes de symétrie",
+    "détermination d'angles de rotation",
+    "analyse de systèmes linéaires"
   ],
   "objects": [
     "système d'équations linéaires",
-    "matrice de transformation",
-    "axe de rotation",
-    "angle de rotation",
-    "plan de symétrie"
+    "matrice carrée 3x3",
+    "vecteur directeur",
+    "plan de symétrie",
+    "angle de rotation"
   ],
-  "content_hash": "b9efee3407e01d9de85d58417838e8c0470d007bfcfb20b031138c9bdfb23efd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:04:34.000Z"
+  "content_hash": "7be0c3b1aafd4dee1429f703a0c60df8f24d9b68432732a07054204ebf04c461",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:48.971Z"
 }

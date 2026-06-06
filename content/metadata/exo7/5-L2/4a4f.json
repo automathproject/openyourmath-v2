@@ -1,31 +1,34 @@
 {
   "uuid": "4a4f",
   "source_path": "exo7/5-L2/4a4f.tex",
-  "summary": "L'exercice demande de démontrer une formule intégrale pour les coefficients d'une série entière d'une fonction analytique complexe, puis d'étudier les propriétés analytiques de certaines intégrales associées. Il s'applique ensuite ces résultats pour prouver des théorèmes classiques comme celui de Liouville ou d'Alembert-Gauss.",
+  "summary": "L'exercice demande de démontrer la formule intégrale des coefficients d'une série entière représentant une fonction analytique complexe, puis d'étudier l'analycité d'une application liée à cette intégrale. Il explore ensuite les propriétés de la fonction définie par une intégrale de Cauchy et ses relations avec la fonction d'origine.",
   "concepts": [
     "fonction analytique",
     "série entière",
     "rayon de convergence",
+    "développement en série de Taylor",
     "prolongement analytique",
+    "intégrale de Cauchy",
     "théorème de Liouville",
     "théorème de d'Alembert-Gauss",
     "théorème de Weierstrass"
   ],
   "methods": [
+    "développement en série entière",
     "intégration complexe",
-    "développement en série de Taylor",
     "majoration des coefficients",
     "recouvrement ouvert",
-    "passage à la limite uniforme"
+    "passage à la limite uniforme",
+    "composée de fonctions analytiques"
   ],
   "objects": [
-    "fonction complexe",
+    "fonction analytique complexe",
     "série entière",
     "coefficient de série entière",
-    "intégrale complexe",
-    "polynôme complexe"
+    "intégrale sur un cercle",
+    "fonction définie par intégrale de Cauchy"
   ],
-  "content_hash": "e01d1b95f9964d5eabd946d1eb6b76381cc1f28403382f6353b2caaafe142a52",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:34:29.060Z"
+  "content_hash": "97b3408f7bcfdddd11fa27c0d64a689017316238069c92570807c90cc08b4ffd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:32.882Z"
 }

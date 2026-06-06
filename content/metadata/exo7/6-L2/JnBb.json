@@ -1,7 +1,7 @@
 {
   "uuid": "JnBb",
   "source_path": "exo7/6-L2/JnBb.tex",
-  "summary": "L'exercice demande de prouver qu'un triangle formé par les projections orthogonales de deux points sur une droite et le milieu de ces points est isocèle.",
+  "summary": "On considère une droite et deux points extérieurs à cette droite, avec leurs projetés orthogonaux. On doit montrer qu'un triangle formé par ces points et le milieu du segment joignant les deux points initiaux est isocèle.",
   "concepts": [
     "géométrie affine euclidienne",
     "projection orthogonale",
@@ -13,17 +13,17 @@
   ],
   "methods": [
     "complétion d'une figure géométrique",
-    "utilisation des propriétés des rectangles",
+    "utilisation des propriétés des diagonales d'un rectangle",
     "symétrie"
   ],
   "objects": [
     "droite",
     "points",
-    "projections orthogonales",
-    "milieu d'un segment",
+    "projetés orthogonaux",
+    "segment",
     "triangle isocèle"
   ],
-  "content_hash": "b8d01d1d5061a49d9a66f7debc348b7b9e96d5f83f2ef889a8481f0a84b70a80",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:32:31.414Z"
+  "content_hash": "ce26c3b5825acb8e82893dfa42d6245158cea0020b50611123e5b2b3a4096ad5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:45.994Z"
 }

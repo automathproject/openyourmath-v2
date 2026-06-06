@@ -1,27 +1,28 @@
 {
   "uuid": "H30c",
   "source_path": "amscc/H30c.tex",
-  "summary": "L'exercice demande de déterminer si un dé est truqué en analysant la distribution des résultats obtenus lors de 60 lancers. On compare les effectifs observés à ceux attendus pour un dé équilibré.",
+  "summary": "L'exercice demande de déterminer si un dé est truqué en analysant la distribution des résultats obtenus lors de 60 lancers. Il s'agit d'un test d'adéquation utilisant une table de fréquences observées et théoriques.",
   "concepts": [
-    "test du chi-deux d'adéquation",
-    "distribution uniforme",
+    "test d'adéquation du chi-carré",
     "hypothèse nulle",
     "risque de première espèce",
-    "loi du chi-deux",
-    "intervalle de rejet"
+    "loi du chi-carré",
+    "distribution uniforme",
+    "intervalle de rejet",
+    "statistique de test"
   ],
   "methods": [
-    "calcul de la statistique du chi-deux",
-    "comparaison avec la table du chi-deux",
+    "calcul de la statistique du chi-carré",
+    "comparaison avec la table du chi-carré",
     "test d'hypothèses"
   ],
   "objects": [
+    "table de fréquences",
     "effectifs observés",
     "effectifs théoriques",
-    "variable de décision Q",
-    "tableau de fréquences"
+    "variable aléatoire de décision"
   ],
-  "content_hash": "2e630dd819fb2ce97a7000960589acf7f15c41b6cbb95764a6959d3ffff0da55",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:38:44.072Z"
+  "content_hash": "75afc1927941f848a5d6fc617ca499dbdd730aa2879f55ffcd8002ce093023c0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:06.290Z"
 }

@@ -1,27 +1,30 @@
 {
   "uuid": "i9sy",
   "source_path": "exo7/4-L2/i9sy.tex",
-  "summary": "Déterminer les valeurs et vecteurs propres de l'endomorphisme de ℝ³ défini par f(x) = a ∧ (a ∧ x), où a est un vecteur donné.",
+  "summary": "L'exercice demande de déterminer les valeurs et vecteurs propres d'un endomorphisme de ℝ³ défini par f(x) = a ∧ (a ∧ x), où a est un vecteur donné. Il s'agit d'étudier les propriétés spectrales d'un opérateur construit à partir du produit vectoriel.",
   "concepts": [
-    "produit vectoriel",
+    "endomorphisme",
     "valeur propre",
     "vecteur propre",
+    "produit vectoriel",
     "sous-espace propre",
     "diagonalisation",
-    "endomorphisme symétrique"
+    "orthogonalité",
+    "espace vectoriel euclidien"
   ],
   "methods": [
     "calcul de produit vectoriel",
-    "analyse de cas",
-    "détermination de sous-espaces propres",
-    "vérification de la diagonalisabilité"
+    "détermination des sous-espaces propres",
+    "utilisation de la formule du double produit vectoriel",
+    "analyse de la dimension des sous-espaces"
   ],
   "objects": [
     "endomorphisme de ℝ³",
     "vecteur a",
-    "sous-espaces propres"
+    "sous-espaces propres",
+    "spectre d'un endomorphisme"
   ],
-  "content_hash": "781f2d20f87bd61abfd3dffaa3019243149d6a98688cbb8040a840f3a1d33d5e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:46:04.962Z"
+  "content_hash": "e0ffd54efaf1cd9fd9f11195e58a6d84bc4dee4de0dbd4fb20307f1070849c55",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:14.843Z"
 }

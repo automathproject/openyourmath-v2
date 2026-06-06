@@ -1,25 +1,27 @@
 {
   "uuid": "Re8d",
   "source_path": "exo7/2-L1/Re8d.tex",
-  "summary": "L'exercice demande de montrer qu'un nombre décimal construit à partir des chiffres des unités des coefficients binomiaux C_n^k est rationnel, en exploitant la périodicité de la suite de ces chiffres.",
+  "summary": "L'exercice demande de montrer qu'un nombre décimal construit à partir des chiffres des unités des coefficients binomiaux C_n^k est rationnel, en exploitant la périodicité de la suite des chiffres des unités.",
   "concepts": [
     "nombre rationnel",
     "périodicité des suites",
-    "coefficient binomial",
     "chiffre des unités",
-    "divisibilité"
+    "coefficient binomial",
+    "divisibilité",
+    "arithmétique modulaire"
   ],
   "methods": [
-    "étude de la périodicité",
+    "périodicité par translation",
     "calcul de coefficient binomial",
-    "analyse de la divisibilité"
+    "divisibilité par 10",
+    "analyse des chiffres des unités"
   ],
   "objects": [
-    "suite numérique",
+    "suite (u_n)",
     "coefficient binomial C_n^k",
-    "chiffre des unités"
+    "nombre décimal"
   ],
-  "content_hash": "1309dc945f8dc3e256b3e3eda95c4efe207b79ac952e57154958c3b52babbfe7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:53:38.833Z"
+  "content_hash": "7b5c0ec5887274ea1cd805fdcf91af6a4af49c2ea75e71457cf4030cb393db66",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:03.714Z"
 }

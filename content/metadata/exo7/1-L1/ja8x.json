@@ -1,28 +1,28 @@
 {
   "uuid": "ja8x",
   "source_path": "exo7/1-L1/ja8x.tex",
-  "summary": "L'exercice demande de démontrer une équivalence entre la somme de deux projecteurs étant un projecteur et la commutativité de leur composition, puis d'établir des relations entre les noyaux et images de ces projecteurs.",
+  "summary": "L'exercice demande de démontrer l'équivalence entre trois propriétés concernant deux projecteurs p et q d'un espace vectoriel complexe : que p+q soit un projecteur, que p et q commutent et s'annulent, et que leurs images soient incluses dans les noyaux de l'autre. Il faut ensuite déterminer le noyau et l'image de p+q dans le cas où c'est un projecteur.",
   "concepts": [
     "projecteur",
-    "application linéaire",
-    "noyau",
-    "image",
-    "somme directe",
+    "espace vectoriel complexe",
     "commutativité",
-    "sous-espace vectoriel"
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "somme directe d'espaces vectoriels"
   ],
   "methods": [
-    "composition d'applications linéaires",
-    "démonstration d'équivalence",
-    "inclusion d'espaces vectoriels"
+    "décomposition en projecteurs",
+    "calcul de noyau et image",
+    "utilisation de la relation de projecteur (p² = p)",
+    "manipulation d'inclusions d'espaces vectoriels"
   ],
   "objects": [
-    "projecteurs",
-    "noyaux",
-    "images",
-    "somme de projecteurs"
+    "projecteurs p et q",
+    "application linéaire p+q",
+    "noyau Ker(p+q)",
+    "image Im(p+q)"
   ],
-  "content_hash": "2d207360445c6c0d5b864e542f6fecdc23ade7be93202fbf00e52373168be079",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:37:24.694Z"
+  "content_hash": "29a0befb4cec5743b1cba5c8cbfdb1d8be7f9f232acdd89c6f1d12fb5aff3fb4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:47.581Z"
 }

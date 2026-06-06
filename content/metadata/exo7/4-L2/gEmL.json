@@ -1,19 +1,20 @@
 {
   "uuid": "gEmL",
   "source_path": "exo7/4-L2/gEmL.tex",
-  "summary": "L'exercice demande de calculer la norme au carré de la somme de deux vecteurs orthogonaux et d'illustrer le résultat. Il étudie ensuite la projection orthogonale sur un sous-espace d'un espace euclidien, en montrant ses propriétés linéaires et en établissant la distance d'un vecteur à ce sous-espace.",
+  "summary": "L'exercice demande de calculer la norme au carré de la somme de deux vecteurs orthogonaux dans un espace euclidien, puis d'étudier les propriétés de la projection orthogonale sur un sous-espace. Il aborde la linéarité de la projection, la distance d'un vecteur à un sous-espace, et l'expression de la projection en coordonnées dans une base orthonormée.",
   "concepts": [
     "théorème de Pythagore",
     "projection orthogonale",
-    "somme directe orthogonale",
-    "application linéaire",
-    "distance à un sous-espace",
+    "somme directe",
+    "orthogonalité",
+    "espace euclidien",
     "base orthonormée",
-    "orthogonalité"
+    "distance à un sous-espace",
+    "application linéaire"
   ],
   "methods": [
-    "calcul de norme",
     "décomposition en somme directe",
+    "calcul de norme",
     "vérification de linéarité",
     "utilisation de l'orthogonalité",
     "expression en coordonnées"
@@ -23,9 +24,9 @@
     "sous-espace vectoriel",
     "projection orthogonale",
     "base orthonormée",
-    "distance"
+    "distance à un sous-espace"
   ],
-  "content_hash": "0718386d6fae52b017a7bf1c19a83be1c0c0b56531aad0a51718450e0d6ca1d8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:43:34.709Z"
+  "content_hash": "bc7f81586869330cafac60be7807710ae91ee69ce767e6c630b5365e05a2330e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:08.721Z"
 }

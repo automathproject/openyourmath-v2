@@ -1,28 +1,28 @@
 {
   "uuid": "nTb3",
   "source_path": "exo7/1-L1/nTb3.tex",
-  "summary": "Calculer trois intégrales impliquant des produits de fonctions trigonométriques cosinus et sinus avec des arguments multiples de x, puis montrer que la famille de ces fonctions est libre dans un espace vectoriel approprié.",
+  "summary": "Calculer trois intégrales impliquant des produits de fonctions trigonométriques cosinus et sinus avec des arguments multiples d'une variable. Montrer que la famille de fonctions (cos(px)) et (sin(qx)) est libre dans un espace vectoriel approprié.",
   "concepts": [
+    "intégrale de fonctions trigonométriques",
     "produit scalaire",
     "famille libre",
     "orthogonalité",
-    "fonctions trigonométriques",
-    "intégrales de fonctions périodiques",
+    "fonctions périodiques",
     "espace vectoriel de fonctions"
   ],
   "methods": [
-    "utilisation de la formule d'Euler",
-    "séparation des cas p=q et p≠q",
+    "décomposition en parties réelles et imaginaires",
+    "utilisation des exponentielles complexes",
     "calcul d'intégrales trigonométriques",
-    "définition de produit scalaire"
+    "vérification de l'orthogonalité"
   ],
   "objects": [
     "intégrales trigonométriques",
-    "fonctions cosinus et sinus",
-    "famille de fonctions",
-    "espace vectoriel de fonctions périodiques"
+    "famille de fonctions trigonométriques",
+    "espace vectoriel de fonctions continues et périodiques",
+    "produit scalaire"
   ],
-  "content_hash": "f65a7e0f9d09144e4a0beb6dfed46242f4a368c4615e3661f187082b9d89c947",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:08:55.801Z"
+  "content_hash": "6f2122df14a7ee00928db8d21dd730564ed6e17f0f8494d0d4c229fc5989c381",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:02.988Z"
 }

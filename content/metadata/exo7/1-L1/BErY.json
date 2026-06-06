@@ -1,26 +1,31 @@
 {
   "uuid": "BErY",
   "source_path": "exo7/1-L1/BErY.tex",
-  "summary": "L'exercice demande de démontrer des propriétés sur le pgcd de deux suites d'entiers relatifs et d'établir l'existence de coefficients de Bézout pour le pgcd de deux entiers relatifs.",
+  "summary": "L'exercice étudie des suites définies par l'algorithme d'Euclide étendu pour deux entiers relatifs a et b. Il demande de montrer que le pgcd reste invariant le long des suites, que la suite des restes est strictement décroissante, et d'en déduire l'existence de coefficients de Bézout pour le pgcd.",
   "concepts": [
     "pgcd",
-    "ppcm",
     "algorithme d'Euclide",
-    "identité de Bézout",
-    "suite d'entiers",
-    "divisibilité dans Z"
+    "division euclidienne",
+    "relation de Bézout",
+    "suite numérique",
+    "invariance du pgcd",
+    "propriétés des entiers relatifs"
   ],
   "methods": [
     "récurrence",
-    "algorithme d'Euclide",
-    "calcul de coefficients de Bézout"
+    "division euclidienne",
+    "calcul de pgcd",
+    "démonstration par l'absurde",
+    "utilisation des propriétés de divisibilité"
   ],
   "objects": [
-    "suite d'entiers",
-    "pgcd de deux entiers",
+    "suite récurrente",
+    "entiers relatifs",
+    "reste de division",
+    "pgcd",
     "coefficients de Bézout"
   ],
-  "content_hash": "32f9ffba6b23853089e96081cd139c03ec186d95de127242fd8ae0129bdf7af6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:41:15.244Z"
+  "content_hash": "8992bd4962c3fea96d4503a25a7b7eed7131697152bf7b46b11504bfc1998296",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:34:27.160Z"
 }

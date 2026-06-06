@@ -1,30 +1,31 @@
 {
   "uuid": "kBNi",
   "source_path": "exo7/1-L1/kBNi.tex",
-  "summary": "L'exercice demande de montrer qu'une relation définie sur ℝ est une relation d'équivalence, puis de déterminer le nombre d'éléments de la classe d'équivalence d'un réel x fixé.",
+  "summary": "L'exercice demande de montrer qu'une relation définie sur ℝ par xeᵧ = yeˣ est une relation d'équivalence, puis de déterminer le nombre d'éléments de la classe d'équivalence d'un réel x fixé.",
   "concepts": [
     "relation d'équivalence",
     "réflexivité",
     "symétrie",
     "transitivité",
-    "fonction croissante",
-    "fonction décroissante",
+    "fonction strictement croissante",
+    "fonction strictement décroissante",
     "limite de fonction",
     "antécédent"
   ],
   "methods": [
+    "vérification des propriétés d'équivalence",
     "étude de fonction",
     "calcul de dérivée",
-    "analyse de limites",
+    "analyse des limites",
     "résolution d'équation"
   ],
   "objects": [
     "relation binaire",
     "fonction réelle",
     "classe d'équivalence",
-    "réel"
+    "antécédent"
   ],
-  "content_hash": "71320182344bf18d1018e19daa648de23a56b6d58da99a2511d23c9fe08e5855",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:23:54.604Z"
+  "content_hash": "9fc4e3bff5d6f90c8e0497c811efb9797ccbb4a60f0b383ef594b3f720d6a59a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:33.339Z"
 }

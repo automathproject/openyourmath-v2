@@ -1,30 +1,28 @@
 {
   "uuid": "QcIp",
   "source_path": "exo7/4-L2/QcIp.tex",
-  "summary": "Calculer le déterminant de la matrice d'une permutation et montrer que l'ensemble des matrices de permutations forme un groupe isomorphe au groupe symétrique.",
+  "summary": "L'exercice demande de calculer le déterminant de la matrice de permutation associée à une permutation σ ∈ Sₙ, puis de montrer que le produit de deux telles matrices correspond à la matrice de la composition des permutations, et enfin de prouver que l'ensemble de ces matrices forme un groupe isomorphe à Sₙ.",
   "concepts": [
     "déterminant de matrice",
     "permutation",
-    "groupe symétrique",
-    "isomorphisme de groupes",
     "matrice de permutation",
+    "groupe",
+    "isomorphisme de groupes",
     "sous-groupe",
     "groupe linéaire général"
   ],
   "methods": [
-    "calcul de déterminant par définition",
-    "propriété des permutations",
-    "vérification des axiomes de groupe",
-    "démonstration d'isomorphisme"
+    "calcul du déterminant par la formule de Leibniz",
+    "propriété des matrices de permutation",
+    "vérification de l'isomorphisme de groupes"
   ],
   "objects": [
     "matrice de permutation",
-    "groupe symétrique",
-    "groupe linéaire général",
-    "permutation",
-    "matrice carrée"
+    "groupe symétrique Sₙ",
+    "groupe (G, ×)",
+    "matrice identité Iₙ"
   ],
-  "content_hash": "859ce5acc5166edaf37f70c8cd285042f5e63d3b28dc4afc935745e9c8fe7f6a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:43:18.633Z"
+  "content_hash": "11bfee98c07a5a0f765447a2186fe7fbff9fe8babbcc90861d5e9ae47885a33b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:51.847Z"
 }

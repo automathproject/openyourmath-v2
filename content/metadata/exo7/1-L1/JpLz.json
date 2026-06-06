@@ -1,28 +1,30 @@
 {
   "uuid": "JpLz",
   "source_path": "exo7/1-L1/JpLz.tex",
-  "summary": "L'exercice demande de comparer par inclusion des ensembles obtenus par l'application d'une fonction à des unions, intersections, et compléments d'ensembles, dans le cadre de la théorie des ensembles et des applications.",
+  "summary": "L'exercice demande de comparer par inclusion des images directes et inverses d'unions, intersections et compléments d'ensembles via une application f entre deux ensembles E et F. Il s'agit d'établir des relations entre les opérations sur les ensembles et leur comportement sous l'action d'une application.",
   "concepts": [
-    "théorie des ensembles",
     "application entre ensembles",
+    "image directe",
+    "image inverse",
     "union d'ensembles",
     "intersection d'ensembles",
     "complément d'ensemble",
-    "inclusion d'ensembles"
+    "inclusion d'ensembles",
+    "logique des prédicats"
   ],
   "methods": [
     "raisonnement par équivalence logique",
-    "utilisation de la définition d'une application",
-    "manipulation des quantificateurs"
+    "utilisation de la définition d'image directe",
+    "utilisation de la définition d'image inverse",
+    "contre-exemple pour inclusion stricte"
   ],
   "objects": [
     "famille d'ensembles",
-    "application",
-    "union d'ensembles",
-    "intersection d'ensembles",
-    "complément d'ensemble"
+    "application f",
+    "ensembles E et F",
+    "parties d'ensembles"
   ],
-  "content_hash": "fa858782e3b7920f9d3f267525f41a1a90f854438d052dfe36bdd65409a07932",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:12:06.686Z"
+  "content_hash": "5cb96a194d9cb755bed747b49671d297649fa885d167c9c316e44e4ffeee62e0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:24.821Z"
 }

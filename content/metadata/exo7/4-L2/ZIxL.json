@@ -1,22 +1,23 @@
 {
   "uuid": "ZIxL",
   "source_path": "exo7/4-L2/ZIxL.tex",
-  "summary": "Réduire une forme quadratique en base orthonormée dans un espace euclidien de dimension 2 ou 3. Application à des exemples concrets de formes quadratiques.",
+  "summary": "L'exercice demande de réduire en base orthonormée trois formes quadratiques définies sur ℝ² ou ℝ³, en exploitant leur représentation matricielle et les propriétés des espaces euclidiens.",
   "concepts": [
     "forme quadratique",
     "base orthonormée",
     "valeurs propres",
     "vecteurs propres",
-    "changement de base",
-    "polynôme caractéristique",
-    "espace euclidien"
+    "matrice symétrique",
+    "diagonalisation",
+    "produit scalaire",
+    "changement de base"
   ],
   "methods": [
-    "diagonalisation",
+    "diagonalisation de matrice",
     "calcul de polynôme caractéristique",
-    "détermination de vecteurs propres",
-    "changement de variable",
-    "orthonormalisation de Gram-Schmidt"
+    "résolution de systèmes linéaires",
+    "orthonormalisation de Gram-Schmidt",
+    "changement de variable"
   ],
   "objects": [
     "forme quadratique",
@@ -25,7 +26,7 @@
     "vecteurs propres",
     "valeurs propres"
   ],
-  "content_hash": "b1b7ce5ec8d0fc4e2a637709935a3bb1607998f94f048c6e5a198ba10d5d99d4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:35:43.095Z"
+  "content_hash": "468d2e76c443d4d6364dcae48ec7fcfa09bb394525225239a37077f93d02c7f9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:54.239Z"
 }

@@ -1,29 +1,30 @@
 {
   "uuid": "jNx3",
   "source_path": "exo7/2-L1/jNx3.tex",
-  "summary": "Détermination du développement limité à l'ordre 4 de la somme infinie 1/k² à partir du terme k=n+1, lorsque n tend vers l'infini.",
+  "summary": "Déterminer le développement limité à l'ordre 4 de la somme infinie 1/k² à partir du terme k=n+1 lorsque n tend vers l'infini. L'exercice étudie le comportement asymptotique d'une série numérique.",
   "concepts": [
-    "somme infinie",
+    "série numérique",
     "développement limité",
-    "équivalence de suites",
+    "équivalence asymptotique",
     "règle de l'équivalence des restes",
     "somme télescopique",
-    "développement asymptotique"
+    "ordre de grandeur o petit"
   ],
   "methods": [
-    "approximation par équivalence",
     "décomposition en éléments simples",
-    "téléscopage",
+    "approximation par équivalence",
+    "calcul de somme télescopique",
     "développement de Taylor",
-    "calcul de reste"
+    "estimation d'erreur"
   ],
   "objects": [
-    "somme de Riemann",
+    "somme infinie",
     "suite numérique",
     "terme général",
-    "développement limité"
+    "développement limité",
+    "ordre de grandeur"
   ],
-  "content_hash": "3d3d4486a66f9b6affc4303389c5082d5b059d060a951141eeabb4a2112ff6df",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:29:37.141Z"
+  "content_hash": "f8b134d08fc48522c924654b3f6f5f7ac23ea9a00625064d3a423ed9db6c129a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:22.720Z"
 }

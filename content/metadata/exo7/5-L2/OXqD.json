@@ -1,25 +1,28 @@
 {
   "uuid": "OXqD",
   "source_path": "exo7/5-L2/OXqD.tex",
-  "summary": "Trouver les fonctions dérivables sur ℝ vérifiant l'équation différentielle f'(x) + f(-x) = e^x pour tout x réel.",
+  "summary": "Trouver les fonctions dérivables sur ℝ vérifiant l'équation différentielle f'(x) + f(-x) = e^x pour tout x réel. L'énoncé demande de résoudre une équation différentielle non linéaire impliquant la fonction et sa dérivée.",
   "concepts": [
     "équation différentielle linéaire",
-    "dérivabilité",
-    "fonction paire et impaire",
-    "fonctions trigonométriques hyperboliques",
-    "solution générale d'équation différentielle"
+    "fonction dérivable",
+    "fonction paire/impaire",
+    "solution générale",
+    "théorème de Cauchy-Lipschitz",
+    "fonctions trigonométriques hyperboliques"
   ],
   "methods": [
-    "dérivation",
+    "dérivation successive",
     "résolution d'équation différentielle linéaire d'ordre 2",
-    "méthode de variation des constantes"
+    "méthode de variation des constantes",
+    "identification des solutions particulières"
   ],
   "objects": [
     "fonction dérivable",
     "équation différentielle",
-    "fonction trigonométrique hyperbolique"
+    "solution générale",
+    "fonctions trigonométriques hyperboliques"
   ],
-  "content_hash": "fc9b54efda83a6dbc50014b8086adeb584d4a159d18f84e3902dee821717f4cd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:26:35.072Z"
+  "content_hash": "4b31820acce22c9cc3e49a709e09ff37547a61e667fe8ae742b2eba85a2dadfb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:32.662Z"
 }

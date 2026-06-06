@@ -1,27 +1,30 @@
 {
   "uuid": "PA24",
   "source_path": "exo7/1-L1/PA24.tex",
-  "summary": "L'exercice demande de prouver qu'un triangle est équilatéral direct si et seulement si ses affixes vérifient une relation algébrique donnée. Il généralise ensuite ce résultat à une configuration de points sur un cercle.",
+  "summary": "L'exercice demande de prouver qu'un triangle est équilatéral direct si et seulement si les affixes de ses sommets vérifient une relation algébrique donnée. Dans un second temps, il s'agit de montrer qu'un triangle formé par les milieux de segments sur un cercle est équilatéral direct.",
   "concepts": [
     "rotation dans le plan complexe",
     "affixe d'un point",
     "triangle équilatéral direct",
     "repère orthonormé direct",
-    "relation algébrique sur les affixes",
-    "milieu d'un segment"
+    "propriétés des racines cubiques de l'unité",
+    "milieu d'un segment",
+    "relation vectorielle"
   ],
   "methods": [
-    "utilisation des propriétés des racines cubiques de l'unité",
-    "calcul algébrique sur les affixes",
-    "géométrie dans le plan complexe"
+    "utilisation des affixes pour représenter des rotations",
+    "calcul algébrique avec les nombres complexes",
+    "propriétés des puissances de j",
+    "détermination des milieux par affixes"
   ],
   "objects": [
-    "triangle ABC",
-    "affixes a, b, c",
-    "points sur un cercle",
-    "milieux M, N, P"
+    "triangle équilatéral",
+    "affixes de points",
+    "cercle",
+    "milieux de segments",
+    "vecteurs dans le plan complexe"
   ],
-  "content_hash": "7fcf78013e766107934aa715c140b06e95b46c4066945c7fe76b3e94052bd052",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:44:49.715Z"
+  "content_hash": "c0c9a2d32269cc741103470df90264129ea6c943efaacba046715053b7ea0fd8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:52.766Z"
 }

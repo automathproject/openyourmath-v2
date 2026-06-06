@@ -1,26 +1,29 @@
 {
   "uuid": "5I4k",
   "source_path": "exo7/1-L1/5I4k.tex",
-  "summary": "L'exercice demande d'établir les formules d'Euler reliant les exponentielles complexes aux fonctions trigonométriques, puis de les utiliser pour linéariser des produits trigonométriques. Il demande aussi de retrouver les formules d'addition et de double angle, ainsi que les formules de demi-angle et la formule de Moivre.",
+  "summary": "L'exercice demande d'établir les formules d'Euler reliant les exponentielles complexes aux fonctions trigonométriques, puis de les utiliser pour linéariser des produits trigonométriques. Il aborde aussi les formules d'addition et de double angle, ainsi que les formules de Moivre pour les puissances de nombres complexes.",
   "concepts": [
     "formule d'Euler",
-    "formule de Moivre",
+    "linéarisation trigonométrique",
     "formules d'addition trigonométrique",
     "formules de double angle",
-    "formules de demi-angle",
-    "linéarisation de produits trigonométriques"
+    "formule de Moivre",
+    "exponentielle complexe",
+    "fonctions trigonométriques"
   ],
   "methods": [
-    "manipulation d'exponentielles complexes",
-    "développement binomial",
-    "identification des parties réelles et imaginaires"
+    "développement algébrique",
+    "identification des parties réelle et imaginaire",
+    "utilisation des propriétés exponentielles",
+    "substitution trigonométrique"
   ],
   "objects": [
     "exponentielle complexe",
-    "fonctions trigonométriques",
-    "polynôme de degré n"
+    "fonctions cosinus et sinus",
+    "produits trigonométriques",
+    "puissances de nombres complexes"
   ],
-  "content_hash": "b1fecba096e7ea69c3ef0718bd12ba5ab6afb6e454db5c89646db49e9499bab6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:31:37.550Z"
+  "content_hash": "a3c8b6fef580a87d728ff356df8f8c524d2b716349aa162e6edcbd3b209a3f3a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:21.965Z"
 }

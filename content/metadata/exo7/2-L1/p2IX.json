@@ -1,29 +1,28 @@
 {
   "uuid": "p2IX",
   "source_path": "exo7/2-L1/p2IX.tex",
-  "summary": "Calcul de la valeur d'une intégrale impliquant des fonctions circulaires inverses et des bornes trigonométriques. L'exercice demande d'établir l'existence et la valeur constante de cette intégrale pour tout réel x.",
+  "summary": "Calculer la valeur de l'intégrale composée de deux termes impliquant les fonctions arcsinus et arccosinus, avec des bornes dépendant de sin²x et cos²x. L'exercice demande d'établir une expression simplifiée de cette intégrale pour tout réel x.",
   "concepts": [
-    "fonctions circulaires inverses",
-    "intégration",
-    "dérivation sous l'intégrale",
+    "fonction continue",
+    "fonction dérivable",
+    "intégrale dépendant d'un paramètre",
     "périodicité",
-    "parité d'une fonction",
-    "continuité",
-    "dérivabilité"
+    "parité",
+    "fonction circulaire inverse"
   ],
   "methods": [
     "dérivation sous l'intégrale",
-    "étude de la périodicité",
-    "étude de la parité",
-    "calcul de primitive"
+    "simplification d'expression trigonométrique",
+    "utilisation de la périodicité",
+    "calcul d'intégrale constante"
   ],
   "objects": [
-    "fonction intégrale",
-    "fonction trigonométrique",
-    "fonction continue",
-    "fonction dérivable"
+    "intégrale paramétrique",
+    "fonction arcsinus",
+    "fonction arccosinus",
+    "fonction trigonométrique"
   ],
-  "content_hash": "809d483875c65f47dda357d2e3c8111f3e7b94020bdb424a80e6f402c16e2e11",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:06:19.972Z"
+  "content_hash": "a497e2ff00b1c89a84672ab89bcc6d66ff5b5dfc3c4b56ae857ff3b4febaf75f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:05.919Z"
 }

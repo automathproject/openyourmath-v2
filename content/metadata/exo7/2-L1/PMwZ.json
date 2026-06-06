@@ -1,28 +1,31 @@
 {
   "uuid": "PMwZ",
   "source_path": "exo7/2-L1/PMwZ.tex",
-  "summary": "Étudier l'existence de quatre intégrales impropres en déterminant les conditions sur les paramètres réels a et b pour lesquelles ces intégrales convergent.",
+  "summary": "Étudier l'existence des intégrales impropres en analysant leur convergence au voisinage des bornes de l'intervalle d'intégration. Les intégrales concernent des fonctions rationnelles ou exponentielles avec paramètres variables.",
   "concepts": [
     "intégrale impropre",
     "convergence d'intégrale",
-    "théorèmes de croissances comparées",
+    "théorème de croissances comparées",
     "changement de variable",
     "intégrabilité",
-    "comportement asymptotique"
+    "comparaison asymptotique",
+    "fonction continue"
   ],
   "methods": [
-    "analyse de comportement asymptotique",
+    "comparaison asymptotique",
     "changement de variable",
-    "comparaison de fonctions",
-    "étude de limites"
+    "analyse des bornes d'intégration",
+    "développement limité",
+    "intégration par parties"
   ],
   "objects": [
     "intégrale de Bertrand",
-    "fonction trigonométrique",
+    "fonction rationnelle",
     "fonction exponentielle",
-    "fonction rationnelle"
+    "fonction trigonométrique",
+    "suite numérique"
   ],
-  "content_hash": "c3e20fc3675874891749f7a581341860613a594b66e9596be218884d147cd905",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:38:03.299Z"
+  "content_hash": "e78d8510c5b1d58fe209572705a0f9f71df40b43a793416712c922f3e10e7b07",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:50.731Z"
 }

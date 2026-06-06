@@ -1,25 +1,28 @@
 {
   "uuid": "q9oo",
   "source_path": "exo7/15-L3/q9oo.tex",
-  "summary": "Montrer l'existence et l'unicité d'un point fixe pour une application f définie sur un espace métrique complet, sous l'hypothèse qu'une de ses itérées est strictement contractante.",
+  "summary": "Montrer qu'une application d'un espace métrique complet vers lui-même, dont une itérée est strictement contractante, admet un unique point fixe. L'exercice demande d'établir l'existence et l'unicité de ce point fixe pour l'application originale.",
   "concepts": [
     "théorème du point fixe de Banach",
-    "application strictement contractante",
     "espace métrique complet",
+    "application strictement contractante",
+    "point fixe",
     "itération d'application",
     "unicité du point fixe"
   ],
   "methods": [
+    "itération d'application",
     "composition d'applications",
     "raisonnement par unicité",
-    "utilisation de l'hypothèse de contraction"
+    "utilisation du théorème du point fixe"
   ],
   "objects": [
-    "application f",
-    "espace métrique complet X",
-    "point fixe"
+    "espace métrique complet",
+    "application d'un espace vers lui-même",
+    "point fixe",
+    "itérée d'application"
   ],
-  "content_hash": "e6ba4011eea8293608c0a2ad5e435bd4fa37df4952b7e3793b2474e0d0b7f3f8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:32:21.166Z"
+  "content_hash": "fd6d572afc8d2c38353f352588ea19b1d5c3f1cc024198414d55696dbdb1c7af",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:51.163Z"
 }

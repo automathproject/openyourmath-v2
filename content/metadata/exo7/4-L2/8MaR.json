@@ -1,29 +1,30 @@
 {
   "uuid": "8MaR",
   "source_path": "exo7/4-L2/8MaR.tex",
-  "summary": "Calculer le déterminant d'une matrice par blocs et déterminer ses éléments propres. Étudier la diagonalisabilité de cette matrice en fonction de celle d'une matrice donnée.",
+  "summary": "Calculer le déterminant d'une matrice par blocs M définie à partir d'une matrice A. Déterminer les valeurs propres de M et montrer que M est diagonalisable si et seulement si A l'est.",
   "concepts": [
-    "matrice par blocs",
-    "déterminant",
-    "valeur propre",
-    "sous-espace propre",
-    "diagonalisabilité",
+    "déterminant de matrice",
+    "diagonalisation",
+    "valeurs propres",
     "polynôme caractéristique",
-    "semblabilité de matrices"
+    "semblabilité de matrices",
+    "sous-espaces propres"
   ],
   "methods": [
-    "calcul de déterminant par opérations sur les lignes",
-    "diagonalisation de matrice",
-    "étude des sous-espaces propres",
-    "utilisation de la semblabilité"
+    "calcul par blocs",
+    "réduction de matrice",
+    "conjugaison par matrice inversible",
+    "étude des vecteurs propres",
+    "discussion par cas"
   ],
   "objects": [
-    "matrice carrée complexe",
     "matrice par blocs",
-    "vecteur propre",
-    "sous-espace propre"
+    "matrice carrée",
+    "valeurs propres",
+    "vecteurs propres",
+    "polynôme caractéristique"
   ],
-  "content_hash": "5e4300efc98fae66a252a5d75ad7039cf8b6be0f6efb2cc43f563908bfa7664b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:17:18.484Z"
+  "content_hash": "176238381b84437775363cb1ec5480b66dc4d8db869cbf819796504665278ee0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:41.971Z"
 }

@@ -1,32 +1,30 @@
 {
   "uuid": "bhiT",
   "source_path": "exo7/4-L2/bhiT.tex",
-  "summary": "L'exercice demande de déterminer les valeurs propres d'une matrice réelle 3x3, de prouver sa diagonalisabilité, de trouver une base de vecteurs propres et une matrice de passage, puis d'exprimer la puissance k-ième de la matrice en fonction de sa forme diagonale.",
+  "summary": "L'exercice demande de déterminer les valeurs propres d'une matrice réelle 3×3, de prouver sa diagonalisabilité, de trouver une base de vecteurs propres et la matrice de passage associée, puis d'exprimer la puissance k-ième de la matrice en fonction de sa forme diagonale.",
   "concepts": [
-    "valeur propre",
     "polynôme caractéristique",
+    "valeur propre",
     "diagonalisation",
     "sous-espace propre",
-    "vecteur propre",
     "matrice de passage",
     "puissance de matrice"
   ],
   "methods": [
     "calcul du polynôme caractéristique",
     "détermination des valeurs propres",
-    "vérification de la diagonalisabilité",
-    "calcul des vecteurs propres",
-    "construction de la matrice de passage",
-    "calcul de la puissance d'une matrice diagonale"
+    "recherche de vecteurs propres",
+    "inversion de matrice",
+    "calcul de puissance de matrice"
   ],
   "objects": [
-    "matrice réelle 3x3",
+    "matrice 3×3",
     "valeurs propres",
     "vecteurs propres",
-    "matrice de passage",
-    "matrice diagonale"
+    "matrice diagonale",
+    "matrice de passage"
   ],
-  "content_hash": "f0a9586be585f76aa1d4819efd6efaeaa1fc45e73120df0fc0e77413b5742b25",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:58:38.559Z"
+  "content_hash": "dcf982925485102cbd1b5592400d7986099398cda24078cde398a8f727ba3063",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:15.322Z"
 }

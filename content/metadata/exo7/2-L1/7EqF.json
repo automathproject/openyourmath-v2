@@ -1,27 +1,29 @@
 {
   "uuid": "7EqF",
   "source_path": "exo7/2-L1/7EqF.tex",
-  "summary": "L'exercice étudie deux suites de points (aₙ) et (bₙ) dans le plan, définies par récurrence avec des conditions géométriques. On demande de prouver des propriétés d'ordre et de croissance, puis d'analyser la convergence vers √2.",
+  "summary": "L'exercice étudie deux suites de nombres réels (aₙ et bₙ) définies récursivement dans le plan, avec des relations algébriques entre leurs termes. On demande de prouver des propriétés monotones, d'établir une relation entre les écarts aₙ - bₙ, et d'analyser la convergence vers √2.",
   "concepts": [
-    "suite numérique",
-    "récurrence",
-    "inégalité",
-    "convergence",
-    "nombre irrationnel",
-    "propriété d'ordre"
+    "suite récurrente",
+    "relation de récurrence",
+    "inégalité triangulaire",
+    "monotonie des suites",
+    "convergence des suites",
+    "borne supérieure",
+    "borne inférieure"
   ],
   "methods": [
     "raisonnement par récurrence",
+    "calcul algébrique",
     "analyse d'inégalités",
-    "calcul explicite de termes"
+    "estimation d'erreur"
   ],
   "objects": [
-    "suite (aₙ)",
-    "suite (bₙ)",
-    "rectangle",
-    "écart aₙ - bₙ"
+    "suite numérique",
+    "termes de suite",
+    "écart entre termes",
+    "nombre irrationnel"
   ],
-  "content_hash": "27363ce0668657ac03fe481fa8b5bc3e7ce3a48532c094b172efb18296916161",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:47:37.603Z"
+  "content_hash": "eb012253ded7f5d5963322e6480c0cce5f082d4c907d0ea7f9b0fbc4410cebdc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:50.820Z"
 }

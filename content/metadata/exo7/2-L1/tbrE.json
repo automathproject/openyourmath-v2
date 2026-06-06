@@ -1,25 +1,28 @@
 {
   "uuid": "tbrE",
   "source_path": "exo7/2-L1/tbrE.tex",
-  "summary": "Soit une suite de n nombres réels entre -1 et 1 dont la somme est nulle. Montrer que la valeur absolue de la somme pondérée par les indices est inférieure ou égale à la partie entière de n²/4.",
+  "summary": "Soit une suite de nombres réels bornés entre -1 et 1 dont la somme est nulle. Montrer que la valeur absolue de la somme pondérée par les entiers naturels est majorée par la partie entière de n²/4.",
   "concepts": [
-    "inégalité",
-    "somme pondérée",
-    "partie entière",
     "majoration",
-    "cas par cas"
+    "partie entière",
+    "somme pondérée",
+    "inégalité triangulaire",
+    "cas par cas selon la parité",
+    "somme de termes bornés"
   ],
   "methods": [
-    "découpage en cas pairs et impairs",
-    "majoration terme à terme",
-    "réécriture de la somme pondérée"
+    "décomposition en sommes partielles",
+    "utilisation de l'inégalité triangulaire",
+    "analyse par cas (n pair/impair)",
+    "calcul explicite des bornes"
   ],
   "objects": [
     "suite numérique",
-    "somme de nombres réels",
-    "partie entière"
+    "somme de termes pondérés",
+    "partie entière",
+    "entier naturel"
   ],
-  "content_hash": "045b249432ec027d2863e8fbe3dcea15a475dc2439ac08778d96babe1e2b3069",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:04:25.268Z"
+  "content_hash": "e31dbc5ac5f7aca04a7f361273b6d7399fe373ca9e6620d75b7b01c4269540e6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:27.703Z"
 }

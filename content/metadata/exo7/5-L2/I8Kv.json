@@ -1,28 +1,30 @@
 {
   "uuid": "I8Kv",
   "source_path": "exo7/5-L2/I8Kv.tex",
-  "summary": "Développer en série trigonométrique la fonction f(t) = 1/(a - cos t) en utilisant la racine de plus petit module d'une équation quadratique. Vérifier si la série obtenue est la série de Fourier de f.",
+  "summary": "Développer en série trigonométrique la fonction f(t) = 1/(a - cos t) pour a complexe hors de l'intervalle [-1,1], en utilisant la racine de plus petit module d'une équation quadratique. Vérifier si cette série est la série de Fourier de f.",
   "concepts": [
-    "séries trigonométriques",
-    "séries de Fourier",
-    "convergence uniforme",
+    "développement en série trigonométrique",
+    "série de Fourier",
     "convergence normale",
-    "fonctions périodiques",
-    "développement en série"
+    "convergence uniforme",
+    "équation quadratique complexe",
+    "racine de plus petit module",
+    "fonction périodique"
   ],
   "methods": [
-    "développement en fractions partielles",
+    "décomposition en éléments simples",
     "développement en série entière",
-    "utilisation de la formule de Fourier",
-    "analyse de convergence"
+    "calcul des coefficients de Fourier",
+    "utilisation de la convergence normale pour justifier la série de Fourier"
   ],
   "objects": [
-    "fonction périodique",
+    "fonction complexe",
     "série trigonométrique",
-    "équation quadratique",
-    "racine complexe"
+    "coefficient de Fourier",
+    "somme de séries entières",
+    "segment d'intégration"
   ],
-  "content_hash": "046c7adff3eac806234a980bd14cacbdbb4b8b2e2036906e4bd3ba44fb03f7ad",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:20:30.965Z"
+  "content_hash": "f26fa82ee3427ca48179d5f7f9d966ef67408a52fe4727b64f2eee185c078491",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:15.505Z"
 }

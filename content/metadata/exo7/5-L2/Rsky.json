@@ -1,29 +1,30 @@
 {
   "uuid": "Rsky",
   "source_path": "exo7/5-L2/Rsky.tex",
-  "summary": "Étude de l'existence et de la valeur éventuelle de la limite en (0,0) de six fonctions de deux variables différentes.",
+  "summary": "Étude de l'existence et de la valeur éventuelle de la limite en (0,0) de six fonctions de deux variables. Les fonctions sont des fractions rationnelles ou impliquent des trigonométriques.",
   "concepts": [
     "limite de fonction de deux variables",
     "continuité",
     "inégalité triangulaire",
-    "développement limité",
-    "comparaison de termes dominants",
-    "encadrement"
+    "majoration",
+    "équivalence asymptotique",
+    "théorème des gendarmes"
   ],
   "methods": [
-    "approche par chemin",
-    "changement de variable",
-    "encadrement",
-    "développement limité",
-    "comparaison de termes dominants"
+    "approche par chemins",
+    "majoration",
+    "inégalité de Cauchy-Schwarz",
+    "théorème des gendarmes",
+    "développement limité"
   ],
   "objects": [
     "fonction de deux variables",
     "limite en un point",
     "inégalité",
+    "majoration",
     "développement limité"
   ],
-  "content_hash": "18200645bf4dc295e9f78ce277e55b9a9b84a5b7cf93c64c48e851d8041ea4f2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:01:49.308Z"
+  "content_hash": "dbe627fa8f9296abfe10c0a3bfe3b79887a7e085aed2f3dc968a31053c1d109a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:09.850Z"
 }

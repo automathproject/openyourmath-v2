@@ -1,0 +1,30 @@
+{
+  "uuid": "uI4M",
+  "source_path": "amscc/uI4M.tex",
+  "summary": "L'exercice étudie la reconstruction d'une fonction périodique impaire (f(x) = x sur [-π, π]) à l'aide des fonctions trigonométriques de base (sin(nx)). Il aborde l'approximation par minimisation de l'erreur quadratique intégrale et l'orthogonalité des fonctions trigonométriques.",
+  "concepts": [
+    "séries de Fourier",
+    "orthogonalité",
+    "approximation trigonométrique",
+    "fonction périodique",
+    "fonction impaire",
+    "erreur quadratique intégrale",
+    "théorème de Dirichlet"
+  ],
+  "methods": [
+    "intégration par parties",
+    "minimisation d'une fonction quadratique",
+    "calcul des coefficients de Fourier",
+    "utilisation de la formule produit-en-somme"
+  ],
+  "objects": [
+    "fonction périodique",
+    "fonctions trigonométriques",
+    "coefficient de Fourier",
+    "erreur quadratique intégrale",
+    "somme infinie de sinus"
+  ],
+  "content_hash": "ebed0789037325d42988e6c02e21f2faf37dc83f4605c2abd91f4fae4eed4659",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:26.970Z"
+}

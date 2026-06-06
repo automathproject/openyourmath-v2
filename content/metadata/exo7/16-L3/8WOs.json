@@ -1,25 +1,25 @@
 {
   "uuid": "8WOs",
   "source_path": "exo7/16-L3/8WOs.tex",
-  "summary": "Montrer qu'une fonction rationnelle de deux fonctions holomorphes est elle-même holomorphe au point considéré, et calculer sa dérivée.",
+  "summary": "Montrer qu'une fonction rationnelle de deux fonctions holomorphes est elle-même holomorphe en un point, sous condition que le dénominateur ne s'annule pas en ce point.",
   "concepts": [
     "fonction holomorphe",
     "dérivabilité complexe",
     "développement limité",
     "fonction rationnelle",
-    "dérivée complexe"
+    "continuité complexe"
   ],
   "methods": [
-    "développement limité",
-    "calcul de dérivée complexe",
-    "manipulation algébrique"
+    "développement limité au premier ordre",
+    "manipulation algébrique de fractions",
+    "utilisation de la dérivabilité des fonctions composées"
   ],
   "objects": [
     "fonction complexe",
     "dérivée complexe",
-    "fonction rationnelle"
+    "point de dérivabilité"
   ],
-  "content_hash": "0b6224bca868b34f4be721e3a84ea33e0f0f064eae347b9f7682326d2899a6fb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:28:51.533Z"
+  "content_hash": "c21bd304210b233357d56250bafb3dee3a467664a519ee36cbe8fff00ae5883e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:59.003Z"
 }

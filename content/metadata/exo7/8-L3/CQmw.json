@@ -1,27 +1,27 @@
 {
   "uuid": "CQmw",
   "source_path": "exo7/8-L3/CQmw.tex",
-  "summary": "L'exercice demande de démontrer que le groupe alterné An est engendré par les 3-cycles et d'étudier la structure du groupe engendré par certains 3-cycles spécifiques.",
+  "summary": "L'exercice demande de montrer que le produit de deux transpositions distinctes est un 3-cycle ou un produit de deux 3-cycles, puis d'en déduire que le groupe alterné An est engendré par les 3-cycles. La deuxième partie consiste à prouver que An est engendré par les 3-cycles de la forme (123), (124), ..., (12n).",
   "concepts": [
+    "transposition",
+    "3-cycle",
     "groupe alterné",
-    "3-cycles",
-    "transpositions",
-    "permutations paires",
-    "génération de groupe",
-    "action de groupe"
+    "générateur de groupe",
+    "permutation paire",
+    "conjugaison dans un groupe"
   ],
   "methods": [
-    "décomposition en produits de transpositions",
+    "décomposition en produit de transpositions",
     "conjugaison de permutations",
     "vérification de relations de groupe"
   ],
   "objects": [
-    "permutations",
+    "transpositions",
     "3-cycles",
     "groupe alterné An",
-    "transpositions"
+    "permutations paires"
   ],
-  "content_hash": "5d84d56615a2e8d3376694cf595bde00f041e3b9947831ae7d77a620b4efcf35",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:25:51.419Z"
+  "content_hash": "5c5f183434926e6e7d21161cc00537fd605e091bcd374687085813b258f6d9e6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:32:09.954Z"
 }

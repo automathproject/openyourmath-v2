@@ -6,8 +6,9 @@
     "théorème des valeurs intermédiaires",
     "continuité",
     "point fixe",
-    "fonction bornée",
-    "intervalle borné"
+    "fonction continue",
+    "intervalle borné",
+    "application d'un intervalle dans lui-même"
   ],
   "methods": [
     "application du théorème des valeurs intermédiaires",
@@ -15,10 +16,10 @@
   ],
   "objects": [
     "fonction continue",
-    "intervalle [a, b]",
-    "fonction auxiliaire g(x) = f(x) - x"
+    "intervalle borné",
+    "point fixe"
   ],
-  "content_hash": "301aa521f9b59ccbc29f5e61378a41d1b4b4aad35fa3e9ee19c5be6686109969",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:18:27.605Z"
+  "content_hash": "718fd34ce73fccd5c02838ff5b4324f1ac02090917323ffb70d57ca9f7bd01d1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:01.273Z"
 }

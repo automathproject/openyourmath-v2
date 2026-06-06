@@ -1,28 +1,29 @@
 {
   "uuid": "EXyV",
   "source_path": "amscc/EXyV.tex",
-  "summary": "L'exercice demande de calculer les coefficients de Fourier d'une fonction impaire et 2π-périodique définie par morceaux, puis d'exprimer sa série de Fourier.",
+  "summary": "L'exercice demande d'exprimer deux fonctions périodiques impaires définies par morceaux sur l'intervalle [0, π] et de calculer leurs coefficients de Fourier pour obtenir leur série de Fourier correspondante.",
   "concepts": [
     "fonction périodique",
     "fonction impaire",
+    "séries de Fourier",
     "coefficient de Fourier",
-    "série de Fourier",
-    "intégrale définie",
-    "fonction définie par morceaux"
+    "intégrale de Riemann",
+    "décomposition en série trigonométrique"
   ],
   "methods": [
     "calcul des coefficients de Fourier",
     "intégration par parties",
     "utilisation de la périodicité",
-    "utilisation de la parité"
+    "propriétés des fonctions impaires"
   ],
   "objects": [
-    "fonction périodique",
+    "fonction définie par morceaux",
     "coefficient de Fourier",
     "série de Fourier",
-    "intégrale définie"
+    "fonction périodique",
+    "fonction impaire"
   ],
-  "content_hash": "28a3f7c4d4326bddfa82b503b82a728757fd4a493d97511763fce2e6a1e736b9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:20:15.176Z"
+  "content_hash": "e34ee4e16f1bea6058adfedcdb37fb28680e10e62d2462a734deea4cd43048b7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:12.666Z"
 }

@@ -1,0 +1,31 @@
+{
+  "uuid": "BVLI",
+  "source_path": "amscc/BVLI.tex",
+  "summary": "L'exercice demande de montrer l'existence de constantes α et β telles que la fonction f(x,y) = x⁴ + y⁴ - 2(x - y)² soit majorée par une forme quadratique, puis d'étudier la convexité de f et de déterminer ses points critiques et leur nature pour résoudre le problème d'optimisation.",
+  "concepts": [
+    "coercivité",
+    "théorème de Weierstrass",
+    "convexité",
+    "matrice hessienne",
+    "points critiques",
+    "minimum local",
+    "point-selle",
+    "semi-définie positive"
+  ],
+  "methods": [
+    "calcul de gradient",
+    "calcul de hessienne",
+    "analyse des valeurs propres",
+    "résolution de système non linéaire",
+    "inégalité de Cauchy-Schwarz"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "matrice hessienne 2x2",
+    "points critiques",
+    "norme euclidienne"
+  ],
+  "content_hash": "47c3cce4a11957872df4f19a080d39be10a93d352b1b7f0dab5dc18c23e85c11",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:50.435Z"
+}

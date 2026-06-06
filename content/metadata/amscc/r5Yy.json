@@ -1,28 +1,30 @@
 {
   "uuid": "r5Yy",
   "source_path": "amscc/r5Yy.tex",
-  "summary": "L'exercice demande de construire un estimateur convergent et centré pour le paramètre λ d'une loi de Poisson, puis de tester l'hypothèse nulle λ=1 contre l'alternative λ>1 à partir d'un échantillon de 100 clients.",
+  "summary": "L'exercice demande d'estimer le paramètre λ d'une loi de Poisson modélisant le nombre d'incidents de paiement pour des crédits à la consommation, puis de tester l'hypothèse nulle λ=1 contre l'alternative λ>1 à partir d'un échantillon de 100 clients. Une représentation graphique comparative est également requise.",
   "concepts": [
     "loi de Poisson",
-    "estimateur convergent",
-    "estimateur centré",
+    "estimation ponctuelle",
     "test d'hypothèses",
     "risque de première espèce",
-    "hypothèse nulle",
-    "hypothèse alternative"
+    "intervalle de confiance",
+    "statistique d'échantillonnage"
   ],
   "methods": [
-    "estimation par la moyenne empirique",
+    "méthode des moments",
+    "estimation par maximum de vraisemblance",
     "test du rapport de vraisemblance",
-    "comparaison graphique de distributions"
+    "construction d'histogramme",
+    "superposition de distributions"
   ],
   "objects": [
-    "loi de Poisson",
-    "paramètre λ",
-    "échantillon de clients",
-    "histogramme des effectifs"
+    "paramètre de Poisson",
+    "échantillon d'effectifs",
+    "histogramme des fréquences",
+    "loi de Poisson de paramètre 1",
+    "estimateur convergent"
   ],
-  "content_hash": "747fcacccf50dec0f797f4023210deaef2658735c77a0aca00f03f242683119d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:54:32.966Z"
+  "content_hash": "593c907c7a77d14cb7c686b6f77f27a1ec7c0b09ecbf5cfbad158094237dd1a7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:54.273Z"
 }

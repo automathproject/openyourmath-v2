@@ -1,26 +1,26 @@
 {
   "uuid": "dPvd",
   "source_path": "crouzet/pcsi/01/dPvd.tex",
-  "summary": "L'exercice demande de calculer des opérations ensemblistes de base (intersection, union) et des complémentaires d'ensembles donnés dans un ensemble de référence.",
+  "summary": "L'exercice demande de calculer les intersections et unions d'ensembles finis donnés, ainsi que leurs complémentaires dans un ensemble universel. Les ensembles sont définis par énumération explicite de leurs éléments.",
   "concepts": [
     "ensemble",
     "intersection",
     "union",
     "complémentaire d'un ensemble",
-    "inclusion",
-    "relation d'appartenance"
+    "ensemble universel",
+    "opérations ensemblistes"
   ],
   "methods": [
     "calcul d'intersection",
     "calcul d'union",
-    "détermination de complémentaire"
+    "détermination de la complémentaire"
   ],
   "objects": [
     "ensemble fini",
-    "ensemble de référence",
-    "sous-ensembles"
+    "ensemble universel",
+    "complémentaire"
   ],
-  "content_hash": "5d0c5c3de630268cce187019f18c3a694f15e7ab5b463130c54b70be1f158e20",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:29:13.445Z"
+  "content_hash": "edf16ef71b7624e5168293b90278edac82f7140415d50760ae4a9c1640ef29e9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:15:07.216Z"
 }

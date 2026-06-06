@@ -1,33 +1,32 @@
 {
   "uuid": "vi5M",
   "source_path": "exo7/4-L2/vi5M.tex",
-  "summary": "L'exercice demande de vérifier la non-diagonalisabilité d'une matrice 3x3 donnée, de déterminer le noyau d'une puissance de cette matrice, de montrer sa similarité à une matrice triangulaire par blocs, et de calculer ses puissances successives.",
+  "summary": "L'exercice demande de vérifier la non-diagonalisabilité d'une matrice 3x3 donnée, de déterminer son noyau itéré, de montrer sa similarité à une matrice triangulaire par blocs, et de calculer sa puissance n-ième. L'étude repose sur le polynôme caractéristique et la décomposition de l'espace en sous-espaces propres.",
   "concepts": [
     "polynôme caractéristique",
+    "diagonalisabilité",
     "valeurs propres",
-    "vecteurs propres",
-    "diagonalisation",
+    "sous-espaces propres",
     "théorème de Cayley-Hamilton",
-    "décomposition des noyaux",
+    "décomposition en noyaux",
     "matrice triangulaire par blocs",
-    "formule du binôme de Newton"
+    "similarité de matrices"
   ],
   "methods": [
-    "calcul de polynôme caractéristique",
-    "détermination des valeurs propres",
-    "calcul de noyau de matrice",
+    "calcul du polynôme caractéristique",
+    "détermination des sous-espaces propres",
+    "décomposition en noyaux",
     "similarité de matrices",
-    "décomposition en matrices diagonale et nilpotente",
-    "calcul de puissances de matrices"
+    "formule du binôme de Newton pour les matrices nilpotentes"
   ],
   "objects": [
     "matrice 3x3",
     "polynôme annulateur",
-    "noyau de matrice",
+    "noyau itéré",
     "matrice triangulaire par blocs",
-    "puissances de matrice"
+    "puissance de matrice"
   ],
-  "content_hash": "1b78aff83ab7819ec1c5edb7e2a6aca62b0d435b7e5b8bd9c9762f679401ccc4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:25:50.419Z"
+  "content_hash": "78c0696a155f66c5aba6094f0e63e9e19a7d5ab92601aa259d925420cb9aafd5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:12.351Z"
 }

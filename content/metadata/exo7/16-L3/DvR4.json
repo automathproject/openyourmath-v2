@@ -1,28 +1,31 @@
 {
   "uuid": "DvR4",
   "source_path": "exo7/16-L3/DvR4.tex",
-  "summary": "Calcul d'intégrales le long du bord d'un carré dans le plan complexe, avec des fonctions polynomiales et des puissances de z. Le carré est défini par ses sommets complexes.",
+  "summary": "Calculer diverses intégrales le long du bord d'un carré dans le plan complexe, incluant des intégrales de formes différentielles et de fonctions holomorphes. L'exercice explore les propriétés des intégrales de fonctions de variable complexe sur un contour fermé.",
   "concepts": [
     "intégrale de contour",
     "fonction holomorphe",
     "primitive d'une fonction",
-    "formule de Cauchy",
+    "théorème de Cauchy",
     "paramétrisation de courbe",
-    "changement de variable"
+    "intégrale complexe",
+    "convergence uniforme"
   ],
   "methods": [
-    "décomposition en segments",
-    "calcul direct par paramétrisation",
-    "utilisation de la formule de Cauchy",
-    "intégration complexe"
+    "paramétrisation de courbe",
+    "calcul direct par morceaux",
+    "application du théorème de Cauchy",
+    "intégration par parties",
+    "changement de variable"
   ],
   "objects": [
-    "courbe fermée",
-    "fonction polynomiale",
-    "puissance de z",
-    "carré dans le plan complexe"
+    "carré dans le plan complexe",
+    "fonction holomorphe",
+    "contour fermé",
+    "intégrale de forme différentielle",
+    "fonction puissance"
   ],
-  "content_hash": "f455cf202b216f633b3ee7d06a07892beeff78ab57f0095f7afe7bd4450b016e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:33:24.755Z"
+  "content_hash": "f1b9687842c72666ea325e02aa7dc83fca3fa9c0801facbe4a6ef427290179d5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:27.232Z"
 }

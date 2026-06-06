@@ -1,28 +1,29 @@
 {
   "uuid": "AhYE",
   "source_path": "exo7/2-L1/AhYE.tex",
-  "summary": "L'exercice demande de démontrer l'inégalité de Cauchy-Schwarz pour des sommes de produits de nombres réels, puis d'en déduire l'inégalité de Minkowski.",
+  "summary": "L'exercice demande de démontrer l'inégalité de Cauchy-Schwarz pour des sommes de carrés de nombres réels, puis d'en déduire l'inégalité de Minkowski. L'énoncé manipule des suites de nombres réels et des fonctions quadratiques.",
   "concepts": [
     "inégalité de Cauchy-Schwarz",
     "inégalité de Minkowski",
-    "fonction polynomiale du second degré",
-    "discriminant",
+    "discriminant d'un polynôme du second degré",
+    "fonction quadratique",
     "produit scalaire",
     "norme euclidienne",
     "inégalité triangulaire"
   ],
   "methods": [
+    "développement d'une fonction quadratique",
     "analyse du discriminant",
-    "développement d'expression polynomiale",
-    "utilisation de l'inégalité de Cauchy-Schwarz"
+    "utilisation de l'inégalité de Cauchy-Schwarz",
+    "développement algébrique"
   ],
   "objects": [
-    "somme de produits de nombres réels",
+    "somme de carrés de nombres réels",
     "fonction quadratique",
-    "discriminant",
-    "norme euclidienne"
+    "polynôme du second degré",
+    "suite de nombres réels"
   ],
-  "content_hash": "f8cbce6cb2059b8c30895e84b383ed164bb3de629c9542771b276d5adba54b5e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:48:03.581Z"
+  "content_hash": "ca6550853d74895a02efcf7209f7299c29289c511a3f0fb172f43add927b2059",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:53.770Z"
 }

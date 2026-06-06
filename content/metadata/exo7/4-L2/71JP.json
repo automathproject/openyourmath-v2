@@ -1,27 +1,32 @@
 {
   "uuid": "71JP",
   "source_path": "exo7/4-L2/71JP.tex",
-  "summary": "Montrer qu'une matrice de Hilbert est définie positive en utilisant ses propriétés de symétrie et d'intégration.",
+  "summary": "Montrer qu'une matrice de Hilbert, définie par des coefficients inversement proportionnels à la somme de leurs indices, est définie positive. L'exercice s'appuie sur les propriétés des matrices symétriques réelles.",
   "concepts": [
     "matrice symétrique",
-    "matrice définie positive",
+    "forme quadratique",
+    "définie positivité",
     "intégration de fonctions polynomiales",
     "produit scalaire",
-    "forme quadratique"
+    "inégalité de Cauchy-Schwarz",
+    "polynôme non nul",
+    "fonction continue positive"
   ],
   "methods": [
     "calcul de forme quadratique",
     "intégration par parties",
-    "analyse de polynômes",
+    "décomposition en produit de sommes",
+    "analyse de l'intégrale d'une fonction polynomiale",
     "utilisation de la continuité"
   ],
   "objects": [
     "matrice de Hilbert",
     "vecteur colonne",
     "polynôme",
-    "fonction continue positive"
+    "fonction sur [0,1]",
+    "forme quadratique"
   ],
-  "content_hash": "80934ee3cb506fe9cc9eecb725a5ab54bedf7e2793917e00aa0973ccce049762",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:02:49.902Z"
+  "content_hash": "b9b0c67ce45484adb3bda0674971e4ec2a74a88864120c339a223d1f0060aaf5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:52.339Z"
 }

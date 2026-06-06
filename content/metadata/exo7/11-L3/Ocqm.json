@@ -1,28 +1,30 @@
 {
   "uuid": "Ocqm",
   "source_path": "exo7/11-L3/Ocqm.tex",
-  "summary": "L'exercice demande d'établir l'identité d'Euler pour un polynôme homogène, puis de montrer qu'une hypersurface définie par ce polynôme est une sous-variété de dimension n-1 et d'étudier les difféomorphismes entre ces sous-variétés.",
+  "summary": "L'exercice demande d'établir l'identité d'Euler pour un polynôme homogène, puis de montrer qu'un ensemble de niveau d'un tel polynôme est une sous-variété de dimension n-1 et que deux telles sous-variétés sont difféomorphes. Il aborde aussi la relation entre les espaces tangents sous un difféomorphisme.",
   "concepts": [
     "polynôme homogène",
     "identité d'Euler",
     "sous-variété",
     "difféomorphisme",
     "espace tangent",
+    "dimension d'une sous-variété",
     "dérivée directionnelle"
   ],
   "methods": [
-    "calcul de dérivée",
-    "utilisation de la linéarité de la dérivée",
-    "théorème des fonctions implicites",
-    "analyse de la dimension des sous-variétés"
+    "calcul de dérivée partielle",
+    "application du théorème des fonctions implicites",
+    "utilisation de la linéarité de la différentielle",
+    "transformation des espaces tangents"
   ],
   "objects": [
-    "polynôme à n variables",
-    "hypersurface",
-    "espace tangent",
-    "difféomorphisme"
+    "polynôme homogène à n variables",
+    "ensemble de niveau d'une fonction",
+    "sous-variété de dimension n-1",
+    "difféomorphisme de R^n",
+    "espace tangent à une sous-variété"
   ],
-  "content_hash": "c4add41050672eb6c31ddb4579b4bc58aff9f18c5e5cdcf985c1880d3e79eede",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:18:39.492Z"
+  "content_hash": "cbb916cfb664bf8249324843aea51a9e1605d7480715473a7317c671160ca041",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:20.104Z"
 }

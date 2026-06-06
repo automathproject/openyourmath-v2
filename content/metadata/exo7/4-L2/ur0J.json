@@ -1,7 +1,7 @@
 {
   "uuid": "ur0J",
   "source_path": "exo7/4-L2/ur0J.tex",
-  "summary": "L'exercice demande de déterminer et factoriser le polynôme caractéristique d'une matrice 3x3 donnée, puis de démontrer que cette matrice est diagonalisable en trouvant une matrice diagonale et une matrice de passage inversible. Ensuite, il faut déterminer le polynôme minimal de la matrice sans calcul, et enfin calculer la puissance n-ième de la matrice.",
+  "summary": "L'exercice demande de déterminer et factoriser le polynôme caractéristique d'une matrice 3x3, puis de démontrer sa diagonalisabilité en trouvant ses valeurs propres et sous-espaces propres, d'en déduire son polynôme minimal, et enfin de calculer sa puissance n-ième.",
   "concepts": [
     "polynôme caractéristique",
     "valeur propre",
@@ -13,19 +13,20 @@
   ],
   "methods": [
     "calcul de déterminant",
-    "factorisation de polynôme",
     "résolution de système linéaire",
-    "construction de matrice de passage",
+    "factorisation de polynôme",
+    "décomposition spectrale",
     "calcul de puissance de matrice"
   ],
   "objects": [
     "matrice 3x3",
     "polynôme caractéristique",
+    "valeurs propres",
+    "sous-espaces propres",
     "matrice diagonale",
-    "matrice inversible",
-    "polynôme minimal"
+    "matrice de passage"
   ],
-  "content_hash": "5530cbe4c94bbb79639339a4519ca36585f059e1128e1eed5e71c676f9f39f6b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:24:06.493Z"
+  "content_hash": "7ba8632b92f9f8e42c38e78cf2cbc3c11fe56d486a4f701a83dcb0efc9ff8361",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:09.088Z"
 }

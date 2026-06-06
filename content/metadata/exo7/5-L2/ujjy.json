@@ -1,9 +1,9 @@
 {
   "uuid": "ujjy",
   "source_path": "exo7/5-L2/ujjy.tex",
-  "summary": "Résoudre deux équations différentielles du deuxième ordre en utilisant des changements de variable spécifiques. La première équation est résolue en posant x = e^t, et la seconde en posant x = tan t, avec une analyse en fonction du paramètre m.",
+  "summary": "Résoudre deux équations différentielles du second ordre en utilisant un changement de variable spécifique. La première équation est définie sur ]0;+∞[ avec x = e^t, et la seconde sur ℝ avec x = tan t, en fonction du paramètre m.",
   "concepts": [
-    "équation différentielle du deuxième ordre",
+    "équation différentielle linéaire du second ordre",
     "changement de variable",
     "bijectivité",
     "fonctions trigonométriques",
@@ -12,16 +12,17 @@
   ],
   "methods": [
     "changement de variable",
-    "détermination de la solution générale",
-    "analyse de cas selon le paramètre"
+    "calcul des dérivées successives",
+    "résolution d'équation différentielle linéaire à coefficients constants",
+    "distinction de cas selon le paramètre"
   ],
   "objects": [
-    "équation différentielle",
+    "équation différentielle du second ordre",
     "fonction y(x)",
-    "variable t",
+    "fonction z(t)",
     "paramètre m"
   ],
-  "content_hash": "0efe15ecddb1e586d8aa8018c54ae7b958db1ee1a77c57c433e80827ca573064",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:49:47.242Z"
+  "content_hash": "cccd969c44e009832e14bdf0f3df90618a384e1bc63d644597406c4b5303062d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:18.428Z"
 }

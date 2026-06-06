@@ -1,33 +1,31 @@
 {
   "uuid": "SOOi",
   "source_path": "exo7/2-L1/SOOi.tex",
-  "summary": "L'exercice demande de montrer que l'intégrale impropre $\\int_{0}^{+\\infty} \\frac{\\sin t}{t} dt$ n'est pas absolument convergente, puis d'établir sa convergence conditionnelle. Il utilise ensuite des techniques d'analyse pour calculer sa valeur exacte.",
+  "summary": "L'exercice demande de montrer la non-absolue convergence de l'intégrale de Dirichlet, puis sa convergence conditionnelle. Il utilise des techniques d'intégration par parties, des formules de la moyenne et des critères de convergence pour intégrales généralisées.",
   "concepts": [
     "intégrale impropre",
     "convergence absolue",
     "convergence conditionnelle",
     "théorème des valeurs intermédiaires",
     "critère de Cauchy",
-    "formule de la moyenne",
-    "continuité uniforme",
-    "dérivabilité"
+    "intégration par parties",
+    "formule de la moyenne"
   ],
   "methods": [
     "intégration par parties",
-    "changement de variable",
-    "encadrement d'intégrales",
+    "application du critère de Cauchy",
     "utilisation de la formule de la moyenne",
-    "étude de la convergence uniforme",
-    "calcul de limite"
+    "encadrement d'intégrales",
+    "étude de la continuité uniforme"
   ],
   "objects": [
     "intégrale de Dirichlet",
     "fonction décroissante",
     "primitive",
-    "fonction exponentielle",
-    "fonction sinus"
+    "intégrale généralisée",
+    "fonction exponentielle"
   ],
-  "content_hash": "3ea03d45f8c6d0b4ff80698512b754447bef7ba7129184c8bbee464df07088a0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:44:17.060Z"
+  "content_hash": "6d75f27a954b2557ca01c3bceaff899f36b23eafc8cce4c84dc6597317ecea92",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:56.272Z"
 }

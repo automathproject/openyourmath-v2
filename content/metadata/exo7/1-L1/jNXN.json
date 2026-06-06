@@ -1,26 +1,28 @@
 {
   "uuid": "jNXN",
   "source_path": "exo7/1-L1/jNXN.tex",
-  "summary": "L'exercice demande de démontrer plusieurs propriétés des nombres complexes, notamment des relations entre leurs modules et des inégalités. Il s'agit aussi de montrer que l'ensemble des nombres complexes muni de la distance définie par le module de la différence est un espace métrique.",
+  "summary": "L'exercice demande de démontrer quatre propriétés des nombres complexes : l'identité de la norme au carré, l'inégalité triangulaire, et la distance entre deux complexes. Il s'agit ensuite de montrer que l'ensemble des nombres complexes muni de la distance associée forme un espace métrique en vérifiant les quatre axiomes correspondants.",
   "concepts": [
     "module d'un nombre complexe",
-    "partie réelle d'un nombre complexe",
+    "partie réelle",
     "conjugué d'un nombre complexe",
+    "inégalité triangulaire",
     "espace métrique",
-    "distance dans l'espace des complexes",
-    "inégalité triangulaire"
+    "distance",
+    "axiomes de distance"
   ],
   "methods": [
     "développement algébrique",
     "utilisation des propriétés du module",
-    "vérification des axiomes d'un espace métrique"
+    "vérification des axiomes métriques"
   ],
   "objects": [
     "nombres complexes",
-    "module de nombres complexes",
-    "distance dans l'espace des complexes"
+    "module",
+    "distance",
+    "espace métrique"
   ],
-  "content_hash": "95c5c4398122cc9c114019052992f269dc473861a96a09cd31d5b6cd8818e88f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:57:14.781Z"
+  "content_hash": "5986c39218b249d044ed1bd7e1189830cae6f4671d39e55c297ea3dcc05bd4d5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:02.962Z"
 }

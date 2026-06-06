@@ -1,25 +1,27 @@
 {
   "uuid": "IKLP",
   "source_path": "exo7/1-L1/IKLP.tex",
-  "summary": "Comparer deux sous-espaces vectoriels de ℝ⁴ définis par des familles de vecteurs génératrices.",
+  "summary": "Comparer deux sous-espaces vectoriels F et G de ℝ⁴ définis par des familles génératrices. Déterminer si F est inclus dans G, G inclus dans F, ou si les deux sont égaux.",
   "concepts": [
     "sous-espace vectoriel",
     "famille génératrice",
+    "inclusion de sous-espaces",
     "dimension d'un espace vectoriel",
     "base d'un espace vectoriel",
-    "espace vectoriel de dimension finie"
+    "combinaison linéaire"
   ],
   "methods": [
-    "comparaison de sous-espaces vectoriels",
-    "détermination de la dimension",
-    "recherche d'une base"
+    "détermination d'une base",
+    "calcul de dimension",
+    "comparaison de familles génératrices",
+    "vérification d'inclusion"
   ],
   "objects": [
-    "sous-espace vectoriel",
-    "famille de vecteurs génératrice",
-    "vecteurs de ℝ⁴"
+    "sous-espace vectoriel de ℝ⁴",
+    "famille de vecteurs",
+    "combinaison linéaire"
   ],
-  "content_hash": "48c4d7facc8d30f86dcbe72062e9f14605a161268314beafed53dab68b3a8b4c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:45:19.549Z"
+  "content_hash": "a0eb7281ae60bb9957bf7709d94c4411dc5453208ef19db51b24e9e8e5361fd7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:26.768Z"
 }

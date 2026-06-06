@@ -1,13 +1,14 @@
 {
   "uuid": "KkoI",
   "source_path": "exo7/4-L2/KkoI.tex",
-  "summary": "L'exercice demande de calculer les valeurs propres d'une matrice 3x3, de déterminer si l'endomorphisme associé est diagonalisable, et d'exprimer la puissance n-ième de cette matrice en utilisant différentes méthodes. Il explore aussi la construction d'une base adaptée pour représenter cet endomorphisme.",
+  "summary": "L'exercice demande de calculer les valeurs propres d'une matrice 3x3, d'étudier sa diagonalisabilité, et d'exprimer sa puissance n-ième à l'aide de différentes méthodes. Il explore ensuite la construction d'une base adaptée pour exprimer l'endomorphisme associé.",
   "concepts": [
     "valeur propre",
     "diagonalisation",
     "polynôme annulateur",
     "sous-espace vectoriel",
-    "base de vecteurs propres",
+    "base adaptée",
+    "endomorphisme",
     "matrice de passage",
     "algèbre linéaire"
   ],
@@ -21,11 +22,11 @@
   "objects": [
     "matrice 3x3",
     "endomorphisme de ℝ³",
-    "vecteurs propres",
-    "vecteurs propres généralisés",
-    "polynôme caractéristique"
+    "vecteur propre",
+    "sous-espace image",
+    "base de ℝ³"
   ],
-  "content_hash": "81814d4a462391539a68fab3b854037e1770cfd44ce0c60b83edcc9d84716586",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:34:48.639Z"
+  "content_hash": "677e6395df278fca905c89d6a2b7583853454255ebfa160bdc9a62a0a87717ae",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:18.767Z"
 }

@@ -1,28 +1,29 @@
 {
   "uuid": "7LuQ",
   "source_path": "exo7/5-L2/7LuQ.tex",
-  "summary": "Montrer qu'une application linéaire définie sur un espace vectoriel normé est un homéomorphisme entre cet espace et une boule ouverte unitaire.",
+  "summary": "Montrer qu'une application linéaire définie sur un espace vectoriel normé est un homéomorphisme entre cet espace et la boule ouverte unitaire. L'énoncé demande de prouver la bijectivité et la continuité de l'application ainsi que de son inverse.",
   "concepts": [
     "espace vectoriel normé",
     "boule ouverte",
     "application bijective",
     "continuité",
     "homéomorphisme",
-    "norme"
+    "norme",
+    "inverse d'une application"
   ],
   "methods": [
-    "étude de la bijectivité",
-    "inversion d'application",
-    "continuité de la norme",
-    "continuité de l'inverse"
+    "preuve de bijectivité",
+    "calcul de norme",
+    "continuité de l'inverse",
+    "utilisation de la définition d'homéomorphisme"
   ],
   "objects": [
     "application linéaire",
     "espace vectoriel normé",
     "boule ouverte",
-    "norme"
+    "inverse d'une application"
   ],
-  "content_hash": "bbc5aadd222f4d9580efd8b4142712174753cf6dbb00da547ee823adbbd5ef41",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:44:38.673Z"
+  "content_hash": "7184179f5d0081506a28fc312a0ade598048450c9896dcaa2f75146fa857b625",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:37.167Z"
 }

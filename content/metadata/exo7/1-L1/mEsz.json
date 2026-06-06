@@ -1,24 +1,27 @@
 {
   "uuid": "mEsz",
   "source_path": "exo7/1-L1/mEsz.tex",
-  "summary": "Montrer une identité trigonométrique sur la somme de cosinus de combinaisons linéaires de n angles avec des signes variables.",
+  "summary": "Montrer une identité trigonométrique pour la somme de cosinus de combinaisons linéaires de n angles, avec des signes variables devant chaque angle.",
   "concepts": [
     "formule d'Euler",
-    "récurrence mathématique",
     "partie réelle d'un nombre complexe",
-    "fonction cosinus"
+    "récurrence mathématique",
+    "identité trigonométrique",
+    "somme de cosinus"
   ],
   "methods": [
-    "récurrence forte",
+    "récurrence",
     "développement en série complexe",
-    "identification de la partie réelle"
+    "utilisation de la formule d'Euler",
+    "extraction de la partie réelle"
   ],
   "objects": [
     "somme de cosinus",
     "nombre complexe",
-    "suite de nombres complexes"
+    "suite récurrente",
+    "expression trigonométrique"
   ],
-  "content_hash": "e68315f479faf4702528a1c03d0abf4e200409e925cccaa45b4e2ecc25f96e29",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:59:04.973Z"
+  "content_hash": "5f48c44aaf2eceab61b8032f92f5bd336cd8a43163bfdd9ec7c94605b4658761",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:10.949Z"
 }

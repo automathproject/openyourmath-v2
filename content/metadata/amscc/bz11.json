@@ -1,27 +1,31 @@
 {
   "uuid": "bz11",
   "source_path": "amscc/bz11.tex",
-  "summary": "L'exercice demande de tester l'adéquation d'une loi binomiale au nombre de garçons dans des familles de 7 enfants, à partir de données observées sur 1883 familles. Il s'agit de vérifier si ces données suivent une loi binomiale avec un paramètre p, au risque d'erreur de 5%.",
+  "summary": "L'exercice demande de tester l'adéquation d'une loi binomiale au nombre de garçons dans des familles de 7 enfants, à partir d'un échantillon de 1883 familles. Il s'agit de vérifier si les effectifs observés suivent une loi binomiale de paramètre p, avec un risque d'erreur de 5%.",
   "concepts": [
-    "test d'adéquation du chi-deux",
+    "test d'adéquation",
     "loi binomiale",
+    "paramètre p",
+    "risque d'erreur",
+    "intervalle de confiance",
+    "statistique d'ajustement",
     "hypothèse nulle",
-    "risque d'erreur de première espèce",
-    "statistique de test",
-    "intervalle de confiance"
+    "hypothèse alternative"
   ],
   "methods": [
+    "test du chi-deux",
+    "estimation du paramètre p",
     "calcul de la statistique de test",
-    "comparaison avec la loi du chi-deux",
-    "estimation du paramètre p"
+    "comparaison avec la loi du chi-deux"
   ],
   "objects": [
     "tableau de fréquences",
-    "nombre de garçons",
+    "effectifs observés",
     "loi binomiale",
-    "paramètre p"
+    "paramètre p",
+    "statistique de test"
   ],
-  "content_hash": "e64d9f614990d555213692552c87d9d9674d71d9ff34605e2d3ce1fbf87c3eeb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:46:19.714Z"
+  "content_hash": "7f1e3f79261d4db50e339fe0d66dccb0e75f413fbe7c17bc43e766c81f63eb7a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:39.066Z"
 }

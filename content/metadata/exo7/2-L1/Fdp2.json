@@ -1,32 +1,31 @@
 {
   "uuid": "Fdp2",
   "source_path": "exo7/2-L1/Fdp2.tex",
-  "summary": "L'exercice demande de déterminer la nature (convergence ou divergence) de plusieurs séries numériques de termes généraux donnés, en analysant leur comportement asymptotique.",
+  "summary": "L'exercice demande de déterminer la nature (convergence ou divergence) de plusieurs séries numériques de termes généraux variés, incluant des fonctions trigonométriques, logarithmiques et exponentielles.",
   "concepts": [
     "série numérique",
+    "convergence de série",
     "critère spécial aux séries alternées",
-    "critère de Cauchy",
-    "développement limité",
     "équivalence asymptotique",
-    "convergence absolue",
-    "polynôme",
-    "fonction exponentielle"
+    "transformation d'Abel",
+    "développement limité",
+    "critère de comparaison"
   ],
   "methods": [
+    "développement limité",
     "transformation d'Abel",
-    "développement asymptotique",
-    "analyse de la décroissance",
-    "comparaison de termes",
-    "étude de la limite du terme général"
+    "critère spécial aux séries alternées",
+    "comparaison asymptotique",
+    "analyse de la suite partielle"
   ],
   "objects": [
-    "série de termes alternés",
-    "série de termes complexes",
-    "série de termes logarithmiques",
-    "série de termes trigonométriques",
-    "polynôme rationnel"
+    "série alternée",
+    "terme général de série",
+    "fonction trigonométrique",
+    "fonction logarithmique",
+    "fonction exponentielle"
   ],
-  "content_hash": "a18afa0a8fc28bb58f828b0157db6cccea092c6e61e39faefac5cffd7d059670",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:07:39.374Z"
+  "content_hash": "3e1334d034f4118cc8270b23066aef37b84731b02fff2ec921a1cd54ea700bc1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:36.515Z"
 }

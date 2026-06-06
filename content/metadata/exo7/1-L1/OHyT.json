@@ -1,7 +1,7 @@
 {
   "uuid": "OHyT",
   "source_path": "exo7/1-L1/OHyT.tex",
-  "summary": "L'exercice demande de déterminer le nombre de solutions de l'équation trigonométrique tan(x) + tan(2x) + tan(3x) + tan(4x) = 0 dans l'intervalle [0, π].",
+  "summary": "L'exercice demande de déterminer le nombre de solutions de l'équation $\\tan x + \\tan(2x) + \\tan(3x) + \\tan(4x) = 0$ dans l'intervalle $[0, \\pi]$.",
   "concepts": [
     "fonction tangente",
     "continuité",
@@ -12,16 +12,16 @@
   ],
   "methods": [
     "analyse des points de discontinuité",
-    "étude de la croissance",
+    "étude de la monotonie",
     "application du théorème des valeurs intermédiaires",
-    "étude des limites"
+    "limites aux bornes d'intervalles"
   ],
   "objects": [
     "fonction trigonométrique",
     "intervalle de solutions",
-    "points de discontinuité"
+    "somme de fonctions"
   ],
-  "content_hash": "8787470dfe5bf04c50a3cadcca7d20c3c83c94c7e3ee3331a32bbb7438b01368",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:43:18.105Z"
+  "content_hash": "6ef4f28dc5fb3c479474841ea16fd6265c1505c4bf09ff1c9010a339d17e9cc4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:47.110Z"
 }

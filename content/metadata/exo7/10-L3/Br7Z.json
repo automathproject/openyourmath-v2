@@ -1,29 +1,32 @@
 {
   "uuid": "Br7Z",
   "source_path": "exo7/10-L3/Br7Z.tex",
-  "summary": "L'exercice demande de caractériser l'irréductibilité des polynômes de degré 2 ou 3 sur un corps K, puis de déterminer tous les polynômes irréductibles de degrés 2, 3, 4 et 5 sur ℤ/2ℤ. Enfin, il s'agit de prouver l'irréductibilité de deux polynômes spécifiques dans ℤ[X].",
+  "summary": "L'exercice demande de caractériser l'irréductibilité des polynômes de degré 2 ou 3 sur un corps, puis de déterminer tous les polynômes irréductibles de degrés 2, 3, 4 et 5 sur ℤ/2ℤ. Il aborde aussi la démonstration de l'irréductibilité de deux polynômes spécifiques dans ℤ[X].",
   "concepts": [
     "polynôme irréductible",
-    "racine d'un polynôme",
     "corps",
-    "anneau ℤ/2ℤ",
-    "anneau ℤ[X]",
-    "décomposition en facteurs irréductibles",
-    "application quotient"
+    "racine d'un polynôme",
+    "factorisation de polynômes",
+    "anneau quotient ℤ/2ℤ",
+    "théorème des racines",
+    "homomorphisme d'anneaux",
+    "degré d'un polynôme"
   ],
   "methods": [
     "réduction modulo un nombre premier",
     "vérification des racines",
-    "analyse des degrés des facteurs",
-    "calcul des valeurs en points spécifiques"
+    "factorisation en produit de polynômes irréductibles",
+    "utilisation de l'homomorphisme de réduction",
+    "calcul des valeurs du polynôme"
   ],
   "objects": [
     "polynôme de degré 2 ou 3",
-    "polynôme de degré 4 ou 5",
-    "polynôme dans ℤ/2ℤ[X]",
-    "polynôme dans ℤ[X]"
+    "polynôme de ℤ[X]",
+    "polynôme de ℤ/2ℤ[X]",
+    "racine dans un corps",
+    "factorisation de polynômes"
   ],
-  "content_hash": "ba6d5cb7cb8d9852e6f3e8504470d1defb64d0559eaf845af1ecbfb86a6a3a3e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:20:41.544Z"
+  "content_hash": "7e436140a07a8b6f926ca200248d8dc4acf01c58073af82b4317b407d5b589ba",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:37.143Z"
 }

@@ -1,0 +1,32 @@
+{
+  "uuid": "h8cy",
+  "source_path": "amscc/h8cy.tex",
+  "summary": "L'exercice demande de dériver terme à terme la série entière de la fonction 1/(1-x) pour obtenir celle de 1/(1-x)², puis d'en déduire les développements en série entière de plusieurs fonctions rationnelles. Il s'agit d'identifier les coefficients selon la parité de l'indice et de déterminer les rayons de convergence.",
+  "concepts": [
+    "série entière",
+    "dérivation terme à terme",
+    "série géométrique",
+    "rayon de convergence",
+    "développement en série entière",
+    "parité des coefficients",
+    "convergence normale"
+  ],
+  "methods": [
+    "dérivation terme à terme",
+    "substitution dans une série",
+    "multiplication par un polynôme",
+    "addition de séries",
+    "identification des coefficients"
+  ],
+  "objects": [
+    "série entière de 1/(1-x)",
+    "série entière de 1/(1-x)²",
+    "série entière de x/(1-x)²",
+    "série entière de 1/(1-x²)",
+    "série entière de x/(1-x²)",
+    "série entière de (1+x)/(1-x²)"
+  ],
+  "content_hash": "986129b2ca3bd6a282f4bc42691d4dfb189a756d2347c79e28827e67849ded5e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:15.321Z"
+}

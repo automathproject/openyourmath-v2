@@ -1,30 +1,32 @@
 {
   "uuid": "fKrW",
   "source_path": "exo7/2-L1/fKrW.tex",
-  "summary": "L'exercice demande d'étudier le comportement asymptotique de deux séries numériques lorsque n tend vers l'infini. La première série est alternée et implique des termes logarithmiques, tandis que la seconde série est une somme de termes positifs croissants exponentiellement.",
+  "summary": "L'exercice demande de déterminer la partie principale de deux séries numériques lorsque n tend vers l'infini : une série alternée avec logarithme et une série de termes positifs en p^p.",
   "concepts": [
     "série numérique",
-    "série alternée",
     "critère spécial aux séries alternées",
+    "convergence de séries",
+    "équivalence asymptotique",
     "règle de l'équivalence des restes",
-    "série télescopique",
-    "comportement asymptotique",
-    "équivalence de fonctions"
+    "fonction décroissante",
+    "développement limité",
+    "série télescopique"
   ],
   "methods": [
-    "étude de la fonction dérivée",
-    "association des termes",
-    "développement limité",
-    "règle de l'équivalence des sommes partielles",
-    "téléscopage"
+    "étude de fonction",
+    "association de termes",
+    "développement asymptotique",
+    "téléscopage",
+    "approximation de Taylor"
   ],
   "objects": [
-    "série alternée de terme général (-1)^p * ln(p)/p",
-    "série de terme général p^p",
-    "fonction x -> ln(x)/x",
-    "suite (ln(n)/n)"
+    "série alternée",
+    "série de termes positifs",
+    "fonction ln(x)/x",
+    "suite numérique",
+    "reste de série"
   ],
-  "content_hash": "037a01c74ad5c650dbe3c05b5c05ab21da90f6ba7de98afb7181363f49c3ef32",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:27:10.531Z"
+  "content_hash": "78b9d4f211fcccbd177849fee8809ae71ef026a613739293e4782ecd0010b1c1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:17.879Z"
 }

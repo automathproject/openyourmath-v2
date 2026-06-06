@@ -1,12 +1,12 @@
 {
   "uuid": "Oemy",
   "source_path": "exo7/1-L1/Oemy.tex",
-  "summary": "L'exercice demande de démontrer l'équivalence entre une condition sur les applications linéaires et la bijectivité d'une application linéaire f, puis de calculer la dimension d'un espace d'applications linéaires vérifiant une condition spécifique.",
+  "summary": "L'exercice demande de démontrer l'équivalence entre une condition sur les applications linéaires et la bijectivité d'une application linéaire f, puis de calculer la dimension d'un ensemble d'applications linéaires g vérifiant une condition spécifique. L'énoncé s'appuie sur des espaces vectoriels E et F et une application linéaire f entre eux.",
   "concepts": [
     "application linéaire",
     "noyau d'une application linéaire",
     "image d'une application linéaire",
-    "isomorphisme",
+    "isomorphisme d'espaces vectoriels",
     "sous-espace vectoriel",
     "dimension d'un espace vectoriel",
     "théorème du rang",
@@ -14,20 +14,19 @@
   ],
   "methods": [
     "raisonnement par l'absurde",
-    "utilisation de la définition du noyau",
-    "utilisation de la définition de l'image",
+    "utilisation de la dimension",
     "construction d'un supplémentaire",
-    "calcul de dimension d'un espace de matrices"
+    "calcul de dimension d'un espace d'applications linéaires"
   ],
   "objects": [
     "application linéaire f",
-    "application linéaire g",
+    "espace vectoriel E",
+    "espace vectoriel F",
+    "ensemble d'applications linéaires g",
     "noyau de f",
-    "image de f",
-    "espace des applications linéaires de F dans E",
-    "sous-espace vectoriel de L(F,E)"
+    "image de f"
   ],
-  "content_hash": "d3c5438585bb8a6c5bbbc522f9b82fc2ce82a6d24c509dc4da0764b9691c652b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:36:13.351Z"
+  "content_hash": "599a7938ba0e95d51d1a4b14084fa85aebb74edf2d2ef9b1818da5a6480dab01",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:33.611Z"
 }

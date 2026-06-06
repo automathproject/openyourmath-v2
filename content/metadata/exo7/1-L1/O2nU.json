@@ -4,24 +4,26 @@
   "summary": "Soit G un sous-groupe fini de GL(E) où E est un espace vectoriel de dimension n. On considère l'ensemble F des vecteurs de E fixes par tous les éléments de G. L'exercice demande de montrer que la dimension de F est égale à la moyenne des traces des matrices de G.",
   "concepts": [
     "sous-groupe",
+    "groupe linéaire",
     "espace vectoriel",
     "trace d'une matrice",
     "projecteur",
     "rang d'une application linéaire",
-    "dimension d'un sous-espace vectoriel"
+    "image d'une application linéaire"
   ],
   "methods": [
     "calcul de trace",
     "utilisation de projecteurs",
-    "étude des éléments fixes"
+    "démonstration d'égalité d'ensembles",
+    "calcul de dimension par rang"
   ],
   "objects": [
     "sous-groupe de GL(E)",
     "espace vectoriel E",
-    "ensemble F des vecteurs fixes",
+    "ensemble des vecteurs fixes F",
     "matrices de G"
   ],
-  "content_hash": "b6ab05a5eae26f30bcde265521ec1c5166898e638bfaabc2ae66e65ae2d1e31e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:55:27.023Z"
+  "content_hash": "b8bc577bb8a6c2c8aded4008c5f3a8e4b68307e891ad893eb8b6bc19244f6e3f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:26.347Z"
 }

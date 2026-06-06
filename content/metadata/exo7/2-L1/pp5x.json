@@ -1,28 +1,30 @@
 {
   "uuid": "pp5x",
   "source_path": "exo7/2-L1/pp5x.tex",
-  "summary": "Calculer des primitives de six fonctions différentes, dont certaines impliquent des fonctions trigonométriques, hyperboliques et exponentielles.",
+  "summary": "Calculer les primitives de six fonctions différentes impliquant des combinaisons de polynômes, exponentielles, trigonométriques et hyperboliques.",
   "concepts": [
     "primitive d'une fonction",
-    "fonction exponentielle",
-    "fonction trigonométrique",
-    "fonction hyperbolique",
+    "intégration de fonctions trigonométriques",
+    "intégration de fonctions hyperboliques",
+    "changement de variable",
     "intégration par parties",
-    "changement de variable"
+    "décomposition de fraction rationnelle"
   ],
   "methods": [
-    "intégration par parties",
     "changement de variable",
-    "simplification algébrique",
-    "décomposition en fractions partielles"
+    "intégration par parties",
+    "décomposition de fraction rationnelle",
+    "identités trigonométriques",
+    "identités hyperboliques"
   ],
   "objects": [
     "fonction polynomiale",
+    "fonction exponentielle",
     "fonction trigonométrique",
     "fonction hyperbolique",
-    "fonction rationnelle"
+    "primitive"
   ],
-  "content_hash": "656b37f32f282f51c5595aebea2fdce399e70ace8dd643ff43813d0f68444ccc",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:47:45.807Z"
+  "content_hash": "ffa13458c811d5999dc17978720d04fdf8e1115be8e5b02c7696ff2500fd603c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:21.070Z"
 }

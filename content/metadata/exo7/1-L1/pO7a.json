@@ -1,24 +1,27 @@
 {
   "uuid": "pO7a",
   "source_path": "exo7/1-L1/pO7a.tex",
-  "summary": "On étudie une suite définie par récurrence et on doit montrer trois inégalités successives puis déterminer sa convergence. La suite est définie par x₀=4 et xₙ₊₁=(2xₙ²-3)/(xₙ+2).",
+  "summary": "On étudie une suite définie par récurrence et on doit démontrer trois inégalités successives par récurrence, puis déterminer sa convergence. La suite est définie par x₀ = 4 et xₙ₊₁ = (2xₙ² - 3)/(xₙ + 2).",
   "concepts": [
     "récurrence",
     "inégalité",
+    "suite numérique",
     "limite de suite",
-    "convergence"
+    "divergence",
+    "fonction polynomiale"
   ],
   "methods": [
     "récurrence simple",
     "récurrence forte",
-    "étude de signe"
+    "étude de signe",
+    "calcul algébrique"
   ],
   "objects": [
-    "suite numérique",
-    "inégalité de récurrence",
+    "suite définie par récurrence",
+    "inégalités",
     "limite infinie"
   ],
-  "content_hash": "63a2e1eca73affbad7d61169ee798e04e8136696cdb82e7d10046f95f93e6042",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:27:33.127Z"
+  "content_hash": "030e404bcd8d5feea3802caef7187f727072c1e94fdce3cf22984f8e330f883a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:36.341Z"
 }

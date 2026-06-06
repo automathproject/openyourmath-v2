@@ -1,30 +1,31 @@
 {
   "uuid": "0VQv",
   "source_path": "exo7/2-L1/0VQv.tex",
-  "summary": "L'exercice demande de développer à l'ordre 1/n² la n-ième racine positive xₙ de l'équation tan(x) = x. Il s'agit d'une étude asymptotique des solutions de cette équation trigonométrique.",
+  "summary": "L'exercice demande de développer à l'ordre 1/n² la n-ième racine positive xₙ de l'équation tan(x) = x, en utilisant des approximations asymptotiques.",
   "concepts": [
     "fonction tangente",
     "fonction Arctangente",
     "développement asymptotique",
     "théorème des valeurs intermédiaires",
-    "fonction dérivable",
-    "limite de suite",
-    "équation trigonométrique"
+    "limite de suites",
+    "équation différentielle",
+    "approximation de Taylor"
   ],
   "methods": [
-    "développement limité",
     "approximation asymptotique",
-    "théorème des valeurs intermédiaires",
+    "développement limité",
     "changement de variable",
-    "analyse de comportement en infinie"
+    "analyse de comportement aux limites",
+    "utilisation de théorèmes d'existence et d'unicité"
   ],
   "objects": [
-    "racine de l'équation tan(x) = x",
-    "suite (xₙ)",
-    "fonction f(x) = tan(x) - x",
-    "intervalle Iₙ"
+    "suite numérique",
+    "fonction trigonométrique",
+    "intervalle de définition",
+    "racine d'équation",
+    "développement asymptotique"
   ],
-  "content_hash": "f9a31de5c81bab811991988d7372ced69f9024c0ac47f02ae511f210286d2415",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:53:11.594Z"
+  "content_hash": "d019aad2865fff6aeece10115326d3c0ea4e25cc34db339ff96b2399665a43e1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:23.211Z"
 }

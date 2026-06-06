@@ -1,27 +1,28 @@
 {
   "uuid": "Bd39",
   "source_path": "exo7/2-L1/Bd39.tex",
-  "summary": "L'exercice demande de calculer le développement limité d'ordre n en 0 d'une fonction rationnelle, puis d'interpréter combinatoirement les coefficients obtenus comme le nombre de solutions entières d'une équation linéaire.",
+  "summary": "L'exercice demande le développement limité à l'ordre n en 0 d'une fonction rationnelle, puis montre que les coefficients de ce développement comptent les solutions entières d'une équation linéaire.",
   "concepts": [
     "développement limité",
     "séries entières",
     "décomposition en éléments simples",
     "unicité des coefficients",
-    "combinatoire",
-    "équation diophantienne"
+    "combinaisons linéaires",
+    "fonction génératrice"
   ],
   "methods": [
     "décomposition en fractions partielles",
-    "calcul de séries génératrices",
-    "interprétation combinatoire des coefficients"
+    "développement en série géométrique",
+    "calcul de coefficients par identification",
+    "somme de séries"
   ],
   "objects": [
     "fonction rationnelle",
     "développement limité",
     "coefficient de série",
-    "équation p+2q=k"
+    "équation diophantienne"
   ],
-  "content_hash": "802760c258bacd460309bb3e330f921d8f6639e118a5670be55cb0623acd6c10",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:27:09.753Z"
+  "content_hash": "f21ed362c72d0ec13e11fb3ecb261e1434cbf637589c552a2da042ae8d3973a6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:46.092Z"
 }

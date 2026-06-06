@@ -1,7 +1,7 @@
 {
   "uuid": "roGH",
   "source_path": "exo7/1-L1/roGH.tex",
-  "summary": "L'exercice demande de déterminer les dimensions des sous-espaces vectoriels F et G de ℝ⁴, ainsi que celles de leur somme et de leur intersection. Les vecteurs générateurs de F et G sont donnés explicitement.",
+  "summary": "L'exercice demande de déterminer les dimensions des sous-espaces vectoriels F et G de ℝ⁴, ainsi que celles de leur somme et de leur intersection. F est engendré par trois vecteurs, G par deux vecteurs.",
   "concepts": [
     "famille libre",
     "famille génératrice",
@@ -12,16 +12,15 @@
   ],
   "methods": [
     "résolution de système d'équations linéaires",
-    "détermination de la dimension par la liberté d'une famille",
-    "utilisation de la formule de dimension pour l'intersection"
+    "vérification de linéarité",
+    "calcul de dimension par inclusion"
   ],
   "objects": [
-    "sous-espaces vectoriels",
-    "vecteurs de ℝ⁴",
+    "sous-espace vectoriel",
     "famille de vecteurs",
     "système d'équations linéaires"
   ],
-  "content_hash": "73a53b1d5de67955973e0fe5ee4b983fc467d0430ef0f5f4aa848ee452db91da",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:11:01.601Z"
+  "content_hash": "dd34ad34d235c80e93e632a70c9e564dc9322c0130e981298a63720af9222715",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:05.414Z"
 }

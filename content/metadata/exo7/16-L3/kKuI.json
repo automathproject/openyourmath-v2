@@ -1,28 +1,28 @@
 {
   "uuid": "kKuI",
   "source_path": "exo7/16-L3/kKuI.tex",
-  "summary": "L'exercice demande de prouver que le rayon de convergence de la série définissant les fonctions de Bessel est infini, puis d'établir des relations de récurrence entre ces fonctions et de déduire l'équation différentielle de Bessel.",
+  "summary": "L'exercice demande de prouver que le rayon de convergence de la série définissant les fonctions de Bessel est infini, puis d'établir des relations de récurrence par dérivation terme à terme. Il s'ensuit la dérivation de l'équation différentielle de Bessel et la démonstration de l'unicité de la solution série pour les indices entiers.",
   "concepts": [
     "fonction holomorphe",
     "rayon de convergence",
-    "série entière",
-    "équation différentielle",
-    "fonctions de Bessel",
     "dérivation terme à terme",
+    "équation différentielle linéaire",
+    "fonctions de Bessel",
     "unicité de la solution"
   ],
   "methods": [
     "calcul du rayon de convergence",
-    "dérivation terme à terme",
+    "dérivation formelle de séries",
     "manipulation d'équations différentielles",
-    "simplification algébrique"
+    "élimination de termes"
   ],
   "objects": [
-    "fonctions de Bessel",
     "série entière",
-    "équation différentielle de Bessel"
+    "fonction de Bessel",
+    "équation différentielle de Bessel",
+    "opérateur différentiel"
   ],
-  "content_hash": "cf17de5ef530784f4d6e9d76a34a2b9173df5ae707bff4fc681d089407225781",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:40:22.605Z"
+  "content_hash": "19a2ac741daeef1f7d1ce1e93da37986b484f048e5adbb1b20b0b5c34d863b33",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:12.924Z"
 }

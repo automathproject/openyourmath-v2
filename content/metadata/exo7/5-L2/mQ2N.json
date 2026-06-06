@@ -1,28 +1,29 @@
 {
   "uuid": "mQ2N",
   "source_path": "exo7/5-L2/mQ2N.tex",
-  "summary": "Étudier la continuité d'une fonction de deux variables définie par morceaux, puis analyser l'existence et les valeurs des dérivées partielles d'ordre 1 et 2, en montrant que certaines dérivées secondes ne commutent pas en un point particulier.",
+  "summary": "Étudier la continuité d'une fonction de deux variables définie par morceaux, puis déterminer l'existence et les valeurs des dérivées partielles d'ordre 1 et 2 en un point particulier, en montrant que les dérivées croisées n'y sont pas égales.",
   "concepts": [
-    "continuité",
+    "continuité d'une fonction de plusieurs variables",
     "dérivées partielles",
+    "dérivées partielles d'ordre 2",
     "théorème de Schwarz",
-    "classe C²",
-    "limite",
-    "fonction de plusieurs variables"
+    "limite de fonctions de plusieurs variables",
+    "fonction de classe C²"
   ],
   "methods": [
-    "étude de la continuité par la limite",
+    "étude de la continuité par définition",
     "calcul des dérivées partielles",
     "application du théorème de Schwarz",
-    "évaluation des limites de dérivées partielles"
+    "évaluation des limites",
+    "définition des dérivées partielles en un point"
   ],
   "objects": [
     "fonction de deux variables",
     "dérivées partielles premières",
     "dérivées partielles secondes",
-    "point critique"
+    "point critique (0,0)"
   ],
-  "content_hash": "106339c4a58807d2d2e39dd55ae360ff493d142c4e35bf9601acf11420587bf9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:17:25.146Z"
+  "content_hash": "cc7c711ccd94ee9143cf0fdd0d3cf5282577560fa48c9689845eb51caf34604e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:36.167Z"
 }

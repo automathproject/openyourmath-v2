@@ -1,26 +1,28 @@
 {
   "uuid": "dkYm",
   "source_path": "exo7/6-L2/dkYm.tex",
-  "summary": "Trouver l'équation d'un plan P dans ℝ³ parallèle à la droite (Oy) et passant par deux points donnés A et B.",
+  "summary": "Trouver l'équation d'un plan P dans ℝ³ parallèle à la droite (Oy) et passant par deux points donnés A et B. L'énoncé fournit les coordonnées des points et la direction de la droite.",
   "concepts": [
     "géométrie affine",
     "plan affine",
     "vecteur normal",
     "produit vectoriel",
-    "sous-espace affine"
+    "sous-espace affine",
+    "parallélisme en géométrie affine"
   ],
   "methods": [
-    "calcul de vecteur normal",
-    "produit vectoriel",
-    "équation cartésienne d'un plan"
+    "calcul du vecteur normal par produit vectoriel",
+    "détermination d'une équation de plan",
+    "vérification de l'appartenance d'un point à un plan"
   ],
   "objects": [
     "plan affine",
     "vecteur directeur",
     "vecteur normal",
-    "équation cartésienne"
+    "points de l'espace",
+    "droite (Oy)"
   ],
-  "content_hash": "767d17fa1b10306f6e2f4ceb3493a623521b664ff2d14864dc7ab149c1667cab",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:01:37.367Z"
+  "content_hash": "f836e98f7dd0a106a3fb2514180b121d1cfe03127905f1bb6261ac65338977e4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:25.819Z"
 }

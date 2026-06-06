@@ -1,25 +1,28 @@
 {
   "uuid": "F10v",
   "source_path": "exo7/2-L1/F10v.tex",
-  "summary": "L'exercice demande de déterminer la plus grande valeur de la suite √[n]{n} pour n ∈ ℕ*. Il s'agit d'étudier le comportement de cette suite à l'infini.",
+  "summary": "L'exercice demande de déterminer la plus grande valeur de la suite $\\sqrt[n]{n}$ pour $n$ entier naturel non nul. Il s'agit d'étudier le comportement d'une suite définie par une racine n-ième.",
   "concepts": [
     "suite numérique",
     "fonction exponentielle",
     "dérivation",
-    "limite de suite",
-    "maximum d'une suite"
+    "extremum",
+    "croissance et décroissance de fonctions",
+    "limite de suite"
   ],
   "methods": [
     "étude de la dérivée",
     "comparaison de termes",
+    "calcul de limite",
     "analyse du signe de la dérivée"
   ],
   "objects": [
-    "suite √[n]{n}",
-    "fonction f(x) = x^(1/x)",
-    "dérivée f'(x)"
+    "suite $\\sqrt[n]{n}$",
+    "fonction $f(x) = x^{1/x}$",
+    "dérivée $f'(x)$",
+    "valeurs maximales"
   ],
-  "content_hash": "006a914128be8cb549434acef208a89ec697430a6053728025a31c24dacd9970",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:15:35.494Z"
+  "content_hash": "3d8b3d70a29d12358c9b1bd52a70e8b408c9444b203e51d7617ab0b1ba509880",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:56.587Z"
 }

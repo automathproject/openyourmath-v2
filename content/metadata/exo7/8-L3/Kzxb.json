@@ -1,29 +1,31 @@
 {
   "uuid": "Kzxb",
   "source_path": "exo7/8-L3/Kzxb.tex",
-  "summary": "L'exercice demande de déduire que HK=G et que H/(H∩K) est isomorphe à G/K, en utilisant les propriétés des actions de groupe et des sous-groupes. Il s'appuie sur un contexte où H est un sous-groupe distingué de G et K est le fixateur d'un élément x∈X.",
+  "summary": "L'exercice étudie les propriétés des actions de groupes sur des ensembles transitifs. Il introduit les notions d'actions imprimitives et primitives, et explore leurs relations avec les sous-groupes du groupe agissant. Les questions demandent de prouver des propriétés sur les partitions des ensembles, les sous-groupes et les fixateurs.",
   "concepts": [
     "action de groupe",
+    "G-ensemble transitif",
+    "partition invariante",
     "sous-groupe distingué",
     "fixateur d'un élément",
-    "sous-groupe maximal",
     "isomorphisme de G-ensembles",
     "théorème d'isomorphisme"
   ],
   "methods": [
     "utilisation de la transitivité",
-    "analyse des sous-groupes",
-    "construction de bijection",
-    "vérification de la compatibilité des actions"
+    "construction de sous-groupes",
+    "analyse des partitions",
+    "application du théorème d'isomorphisme",
+    "étude des fixateurs"
   ],
   "objects": [
-    "sous-groupe H",
-    "sous-groupe K",
-    "ensemble X",
-    "classes d'équivalence",
-    "orbites"
+    "groupe fini",
+    "G-ensemble",
+    "partition de l'ensemble",
+    "sous-groupe propre",
+    "fixateur d'un élément"
   ],
-  "content_hash": "de4c8db1bfbfeee5f76c103dbe76853a41603133ac558a525794c72ca5288ddd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:28:57.571Z"
+  "content_hash": "b7e0b98c0eeb7e37ffc1c5d27e9979c61f6a07efc75405039d91100f316a8ddd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:32:18.870Z"
 }

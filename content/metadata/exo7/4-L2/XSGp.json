@@ -1,26 +1,30 @@
 {
   "uuid": "XSGp",
   "source_path": "exo7/4-L2/XSGp.tex",
-  "summary": "Montrer qu'une famille de vecteurs unitaires dans un espace préhilbertien est une base orthonormée, en utilisant la condition donnée sur la norme des vecteurs.",
+  "summary": "Montrer qu'une famille de vecteurs unitaires dans un espace préhilbertien est une base orthonormée, étant donné que la norme au carré de tout vecteur est égale à la somme des carrés de ses produits scalaires avec les vecteurs de la famille.",
   "concepts": [
     "espace préhilbertien",
     "famille orthonormale",
-    "sous-espace vectoriel",
+    "base orthonormée",
     "projection orthogonale",
     "théorème de Pythagore",
-    "base orthonormée"
+    "sous-espace vectoriel",
+    "norme euclidienne",
+    "produit scalaire"
   ],
   "methods": [
     "calcul de produit scalaire",
     "vérification de l'orthogonalité",
-    "projection sur un sous-espace vectoriel"
+    "projection sur un sous-espace",
+    "utilisation du théorème de Pythagore"
   ],
   "objects": [
     "famille de vecteurs unitaires",
     "sous-espace vectoriel",
-    "projection orthogonale"
+    "projection orthogonale",
+    "vecteur de l'espace préhilbertien"
   ],
-  "content_hash": "78f1ff773ad9559072d47de530305248ced8b1c367f61374f7a6d4067ea6931e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:33:40.457Z"
+  "content_hash": "e61f999cec8b56b15d53f1b6128e0e6772759371afb83457566de936d498230e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:49.286Z"
 }

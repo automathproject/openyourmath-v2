@@ -1,14 +1,15 @@
 {
   "uuid": "UdQo",
   "source_path": "exo7/15-L3/UdQo.tex",
-  "summary": "L'exercice demande de prouver la linéarité d'une application bornée en montrant que f(λx) = λf(x) pour tout λ ∈ ℝ et x ∈ E, en passant par les cas λ ∈ ℕ, ℤ, ℚ.",
+  "summary": "Soient E et F deux espaces normés réels. On considère une application f : E → F bornée sur la boule unité de E et vérifiant f(x+y) = f(x) + f(y) pour tout x, y ∈ E. On demande de montrer que f est linéaire continue.",
   "concepts": [
     "application linéaire",
     "continuité",
     "bornitude",
-    "récurrence",
-    "densité des rationnels dans les réels",
-    "limite"
+    "espace normé",
+    "additivité",
+    "homogénéité",
+    "densité des rationnels dans les réels"
   ],
   "methods": [
     "récurrence",
@@ -17,13 +18,12 @@
     "utilisation de la bornitude"
   ],
   "objects": [
-    "application linéaire bornée",
-    "réels",
-    "rationnels",
-    "entiers",
-    "nombres naturels"
+    "application bornée",
+    "boule unité",
+    "espace normé",
+    "application additive"
   ],
-  "content_hash": "7eec4f772644b10f54309090c71ab6a51d18942a8466153237efe81fe2ebfcbb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:40:02.869Z"
+  "content_hash": "bc2354443e5575e58a61181807948d25170df646c7603ccfda247ef850a7a20e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:34:14.741Z"
 }

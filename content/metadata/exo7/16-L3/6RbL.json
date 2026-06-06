@@ -7,20 +7,21 @@
     "équations de Cauchy-Riemann",
     "connexe",
     "constante",
-    "partie réelle et imaginaire d'une fonction complexe"
+    "partie réelle et imaginaire d'une fonction complexe",
+    "dérivée complexe"
   ],
   "methods": [
-    "analyse des conditions de Cauchy-Riemann",
-    "dérivation partielle",
-    "étude de la dérivée complexe"
+    "application des équations de Cauchy-Riemann",
+    "analyse des conditions de nullité des dérivées partielles",
+    "utilisation de la connexité de l'ouvert"
   ],
   "objects": [
     "fonction complexe",
-    "partie réelle",
-    "partie imaginaire",
+    "partie réelle d'une fonction complexe",
+    "partie imaginaire d'une fonction complexe",
     "ouvert connexe"
   ],
-  "content_hash": "daaecc18ecb4fd819905dd7c2cf6d5a56023323789898b92807642afab2b01ba",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:28:04.992Z"
+  "content_hash": "9bd34009bf35789bc98c6ec1f02bc5289cb6758c1680c0767b2fe5790d2bb12b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:57.038Z"
 }

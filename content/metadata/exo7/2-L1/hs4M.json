@@ -1,28 +1,33 @@
 {
   "uuid": "hs4M",
   "source_path": "exo7/2-L1/hs4M.tex",
-  "summary": "Simplifier des expressions impliquant des fonctions circulaires et hyperboliques inverses, ainsi que des combinaisons de ces fonctions.",
+  "summary": "Simplifier des expressions impliquant des fonctions circulaires et hyperboliques inverses, ainsi que des combinaisons logarithmiques et exponentielles. Les expressions font appel à des identités trigonométriques et hyperboliques.",
   "concepts": [
     "fonctions circulaires inverses",
     "fonctions hyperboliques inverses",
     "identités trigonométriques",
     "identités hyperboliques",
-    "logarithme",
-    "fonctions exponentielles"
+    "fonctions logarithmes",
+    "fonctions exponentielles",
+    "domaine de définition"
   ],
   "methods": [
-    "simplification d'expressions trigonométriques",
-    "simplification d'expressions hyperboliques",
-    "utilisation des propriétés des fonctions inverses",
-    "manipulation algébrique"
+    "simplification d'expressions",
+    "utilisation d'identités trigonométriques",
+    "utilisation d'identités hyperboliques",
+    "développement algébrique",
+    "logarithmation"
   ],
   "objects": [
-    "fonctions circulaires inverses",
-    "fonctions hyperboliques inverses",
-    "expressions algébriques",
-    "logarithmes"
+    "fonction arcsinus",
+    "fonction arccosinus",
+    "fonction argument sinus hyperbolique",
+    "fonction argument cosinus hyperbolique",
+    "fonction argument tangente hyperbolique",
+    "fonction cosinus hyperbolique",
+    "fonction sinus hyperbolique"
   ],
-  "content_hash": "f383e9d7a9962c3f429cb059a86f16690368c87a06347cfb26a3aa5063fe2761",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:04:44.930Z"
+  "content_hash": "e4fdcc2f35e8a2fde5db35d0c343a982b19a00382c98218be48cc02125e1e115",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:00.813Z"
 }

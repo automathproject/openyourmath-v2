@@ -1,25 +1,29 @@
 {
   "uuid": "Vg02",
   "source_path": "exo7/4-L2/Vg02.tex",
-  "summary": "Calculer le déterminant d'une matrice complexe A de taille n×n, dépendant de paramètres a₀, ..., aₙ₋₁, et d'une variable x. La matrice A est une matrice de Toeplitz avec une structure particulière.",
+  "summary": "Calculer le déterminant d'une matrice carrée complexe de taille n, de la forme d'une matrice de compagnon, moins x fois la matrice identité. L'exercice demande d'exprimer ce déterminant sous forme polynomiale.",
   "concepts": [
     "déterminant",
-    "matrice de Toeplitz",
+    "matrice de compagnon",
+    "polynôme caractéristique",
     "développement de Laplace",
     "déterminant par blocs",
-    "polynôme caractéristique"
+    "matrice identité",
+    "valeurs propres"
   ],
   "methods": [
     "développement suivant une colonne",
     "déterminant par blocs",
-    "calcul de polynôme caractéristique"
+    "calcul de polynôme caractéristique",
+    "réduction de matrice"
   ],
   "objects": [
     "matrice carrée",
     "polynôme",
-    "variable complexe"
+    "matrice identité",
+    "déterminant"
   ],
-  "content_hash": "03fd3ede9a05101eca5192902ffa0d3ddb67c572a5cd69f5bd4257a62080dda3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:52:58.793Z"
+  "content_hash": "3fe6354a5bb1cb8710329184ed2b5428c8efaa05063b3bc3bccf3b6e802cb132",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:40:54.916Z"
 }

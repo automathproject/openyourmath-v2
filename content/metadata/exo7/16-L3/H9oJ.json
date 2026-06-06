@@ -1,7 +1,7 @@
 {
   "uuid": "H9oJ",
   "source_path": "exo7/16-L3/H9oJ.tex",
-  "summary": "L'exercice demande de déterminer et représenter l'ensemble des nombres complexes dont le cube appartient au demi-plan négatif, puis d'étudier le prolongement par continuité d'une fonction logarithmique définie sur cet ensemble. Il compare ensuite cette fonction avec la fonction logarithme classique sur leur intersection de domaine.",
+  "summary": "L'exercice demande de déterminer et représenter l'ensemble des nombres complexes dont le cube est dans le demi-plan négatif, puis d'étudier le prolongement par continuité d'une fonction logarithme complexe définie sur cet ensemble. Enfin, il s'agit de comparer cette fonction avec la fonction logarithme classique sur leur intersection de domaine.",
   "concepts": [
     "fonction logarithme complexe",
     "argument principal",
@@ -9,19 +9,21 @@
     "continuité d'une fonction",
     "prolongement par continuité",
     "branche principale du logarithme",
-    "saut de discontinuité"
+    "représentation géométrique des nombres complexes"
   ],
   "methods": [
-    "représentation polaire des nombres complexes",
-    "analyse de l'argument",
-    "comparaison de fonctions"
+    "détermination de l'argument",
+    "analyse de la continuité",
+    "comparaison de fonctions",
+    "représentation graphique dans le plan complexe"
   ],
   "objects": [
     "ensemble de nombres complexes",
     "fonction complexe",
-    "demi-droite dans le plan complexe"
+    "demi-droite dans le plan complexe",
+    "branche principale du logarithme"
   ],
-  "content_hash": "204e1e3d5fe8d63cbd44bb2f5ccf4f08899ee6bf72a256d2bf5361f8332d9cd5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:17:50.722Z"
+  "content_hash": "ff1770e561047de045e8a191a337a2d62b92781fd2a788827280affd438c995d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:04.428Z"
 }

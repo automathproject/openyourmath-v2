@@ -1,28 +1,28 @@
 {
   "uuid": "ZflC",
   "source_path": "exo7/6-L2/ZflC.tex",
-  "summary": "Trouver toutes les droites du plan ou de l'espace qui sont sécantes à quatre droites données par leurs équations.",
+  "summary": "Trouver toutes les droites de l'espace qui sont sécantes à quatre droites données dans le plan et l'espace, définies par leurs équations cartésiennes.",
   "concepts": [
     "géométrie affine",
     "droites dans l'espace",
     "sécance de droites",
     "système d'équations cartésiennes",
-    "paramétrisation de droites",
-    "conditions d'existence de solutions"
+    "paramétrisation de droite",
+    "résolution de systèmes linéaires"
   ],
   "methods": [
     "résolution de systèmes d'équations",
+    "paramétrisation de droite",
     "analyse de conditions d'intersection",
-    "paramétrisation de droites",
     "substitution algébrique"
   ],
   "objects": [
-    "droites dans l'espace",
+    "droites de l'espace",
     "systèmes d'équations cartésiennes",
-    "points d'intersection",
-    "vecteurs directeurs"
+    "vecteurs directeurs",
+    "points d'intersection"
   ],
-  "content_hash": "66663e48f6187abf78f1953e5ca6dd96b431b0c950ca428acf7d84997827a121",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:59:09.741Z"
+  "content_hash": "9d6e35a2a6e0d1b26e6775a9983613be5f22da820b1318fe18ee4a69b1d2e355",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:20.643Z"
 }

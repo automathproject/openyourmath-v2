@@ -1,28 +1,30 @@
 {
   "uuid": "k8cC",
   "source_path": "exo7/5-L2/k8cC.tex",
-  "summary": "L'exercice demande d'étudier la convergence et de calculer la somme de la série de terme général A^n, où A est une matrice 2x2 donnée.",
+  "summary": "L'exercice demande d'étudier la convergence et de calculer la somme de la série de matrices de terme général $A^n$, où $A$ est une matrice carrée donnée. On s'appuie sur la diagonalisation de $A$ pour résoudre le problème.",
   "concepts": [
     "diagonalisation de matrice",
-    "convergence de série de matrices",
-    "somme de série de matrices",
+    "série de matrices",
+    "convergence de série",
     "polynôme caractéristique",
     "valeurs propres",
-    "matrices semblables"
+    "matrice inversible",
+    "continuité des applications linéaires"
   ],
   "methods": [
     "calcul du polynôme caractéristique",
     "diagonalisation",
-    "somme de séries géométriques",
-    "utilisation de la continuité de l'application linéaire"
+    "calcul de la somme d'une série géométrique",
+    "application de la continuité linéaire"
   ],
   "objects": [
     "matrice 2x2",
     "série de matrices",
+    "valeurs propres",
     "matrice diagonale",
     "matrice de passage"
   ],
-  "content_hash": "aba65372b073228c334218a5aa3781f19d2035569d7ed828f8ff0428d273f1d3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:01:56.053Z"
+  "content_hash": "3f289cbd3a8aa58c7a907c43c74183103a67aa1887d850c0e9230ac7de957cef",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:40.221Z"
 }

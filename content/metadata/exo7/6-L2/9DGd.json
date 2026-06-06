@@ -1,31 +1,32 @@
 {
   "uuid": "9DGd",
   "source_path": "exo7/6-L2/9DGd.tex",
-  "summary": "Trouver les droites qui sont à la fois tangentes et orthogonales à une courbe paramétrée donnée par x(t) = 3t² et y(t) = 4t³.",
+  "summary": "Trouver les droites qui sont à la fois tangentes et orthogonales à une courbe paramétrée donnée par $x(t)=3t^2$ et $y(t)=4t^3$.",
   "concepts": [
     "courbe paramétrée",
     "tangente à une courbe",
     "orthogonalité de droites",
     "vecteur tangent",
-    "condition d'orthogonalité",
     "équation cartésienne de droite",
-    "polynôme",
-    "racine de polynôme"
+    "condition d'orthogonalité",
+    "élimination de paramètre"
   ],
   "methods": [
     "calcul de dérivées",
+    "détermination de vecteurs tangents",
+    "condition d'orthogonalité de vecteurs",
     "élimination de paramètre",
-    "résolution d'équation polynomiale",
-    "analyse de variations de fonction"
+    "résolution d'équation polynomiale"
   ],
   "objects": [
     "courbe paramétrée",
-    "droite tangente",
     "vecteur tangent",
+    "droite tangente",
+    "droite orthogonale",
     "point de la courbe",
-    "polynôme"
+    "équation cartésienne"
   ],
-  "content_hash": "a28aacc66501ba48a5da05e97b2c60f8fcf29238f6ae45272088c0d60ca1a1a7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:44:06.720Z"
+  "content_hash": "6607e1801d5c017282123c5fe035213632cd592427be45bf96848909cf8b3e1d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:38.942Z"
 }

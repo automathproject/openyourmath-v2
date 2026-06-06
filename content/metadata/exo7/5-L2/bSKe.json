@@ -1,31 +1,31 @@
 {
   "uuid": "bSKe",
   "source_path": "exo7/5-L2/bSKe.tex",
-  "summary": "Trouver toutes les applications continues de ℝ dans ℝ vérifiant pour tout couple (x, y) ∈ ℝ² l'équation fonctionnelle f(x)f(y) = ∫[x-y, x+y] f(t) dt.",
+  "summary": "Trouver toutes les fonctions continues de la droite réelle dans elle-même vérifiant une relation fonctionnelle impliquant un produit de valeurs de la fonction et une intégrale de la fonction sur un intervalle centré.",
   "concepts": [
-    "équation différentielle linéaire",
     "fonction continue",
     "fonction impaire",
-    "fonction dérivable",
-    "équation différentielle du second ordre",
-    "fonctions trigonométriques",
-    "fonctions hyperboliques"
+    "équation différentielle linéaire",
+    "dérivation sous le signe intégral",
+    "classe C²",
+    "solution générale d'équation différentielle",
+    "relation fonctionnelle"
   ],
   "methods": [
-    "dérivation sous l'intégrale",
-    "résolution d'équation différentielle linéaire",
+    "dérivation par rapport à un paramètre",
     "analyse de la parité",
+    "résolution d'équation différentielle linéaire",
     "intégration de fonctions trigonométriques",
-    "intégration de fonctions hyperboliques"
+    "vérification de solutions candidates"
   ],
   "objects": [
-    "fonction continue",
-    "équation différentielle",
-    "fonction impaire",
-    "fonction dérivable",
-    "intégrale"
+    "fonction réelle",
+    "intégrale définie",
+    "équation différentielle du second ordre",
+    "fonction sinus",
+    "fonction hyperbolique sinus"
   ],
-  "content_hash": "5def390729baa231a016a367c275812c4a407628e0cb5c792aa32ff41f857a58",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:36:42.034Z"
+  "content_hash": "3e0d6151e77ac3e2a9ca154bf11d41c35cf98b950d583c1412a1dc04caa25781",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:51.343Z"
 }

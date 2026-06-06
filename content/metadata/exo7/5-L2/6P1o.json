@@ -1,27 +1,29 @@
 {
   "uuid": "6P1o",
   "source_path": "exo7/5-L2/6P1o.tex",
-  "summary": "L'exercice demande de déterminer les rayons de convergence et les sommes des séries entières $\\sum_{n=0}^{+\\infty}\\frac{a_n}{n!}x^n$ et $\\sum_{n=0}^{+\\infty}\\frac{b_n}{n!}x^n$ définies par des suites récurrentes linéaires.",
+  "summary": "L'exercice demande de déterminer le rayon de convergence et la somme des séries entières $\\sum_{n=0}^{+\\infty}\\frac{a_n}{n!}x^n$ et $\\sum_{n=0}^{+\\infty}\\frac{b_n}{n!}x^n$, où les suites $(a_n)$ et $(b_n)$ sont définies par une relation de récurrence linéaire.",
   "concepts": [
     "séries entières",
     "rayon de convergence",
     "fonction génératrice",
-    "système d'équations récurrentes",
+    "relation de récurrence linéaire",
     "vecteurs propres",
-    "matrice transposée"
+    "matrice de transition",
+    "somme d'une série entière"
   ],
   "methods": [
-    "résolution de système récurent linéaire",
-    "calcul de rayon de convergence",
-    "somme de séries entières",
-    "combinaison linéaire"
+    "résolution de système linéaire",
+    "combinaison linéaire de suites",
+    "calcul explicite de termes de suite",
+    "identification de fonction exponentielle"
   ],
   "objects": [
     "suite récurrente",
-    "séries entières",
-    "fonction exponentielle"
+    "série entière",
+    "fonction génératrice",
+    "matrice 2x2"
   ],
-  "content_hash": "0ed3d933ae3694a7fc26bc587867245ea1bc0aa8a7071295b069c85d36bf35ad",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:35:18.932Z"
+  "content_hash": "1ff57b7c93e1bd89a2607af48ba615174ffd0efd23a6dac71c2f08306dcdf8cc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:41.355Z"
 }

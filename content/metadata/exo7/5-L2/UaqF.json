@@ -1,25 +1,33 @@
 {
   "uuid": "UaqF",
   "source_path": "exo7/5-L2/UaqF.tex",
-  "summary": "L'exercice étudie une fonction F(x) définie comme une intégrale de Riemann dépendant d'un paramètre x, avec un noyau logarithmique. Il demande de prouver des propriétés de F (parité, définition, continuité, dérivabilité) et de déterminer sa limite en l'infini ainsi que son expression explicite.",
+  "summary": "L'exercice étudie la fonction F(x) définie comme une intégrale de Riemann dépendant du paramètre x, avec un noyau logarithmique. Il demande de prouver la parité, la continuité et la dérivabilité de F, puis de calculer sa dérivée et sa limite en l'infini pour finalement déterminer l'expression explicite de F(x).",
   "concepts": [
     "intégrale de Riemann dépendant d'un paramètre",
-    "fonction paire",
+    "parité d'une fonction",
     "continuité uniforme",
     "dérivabilité",
-    "limite de fonction",
     "changement de variable",
     "décomposition en éléments simples",
-    "intégration de fractions rationnelles",
-    "fonction constante sur un intervalle",
-    "propriétés des fonctions logarithmes",
-    "parité des fonctions",
-    "intégration par parties",
-    "théorème fondamental de l'analyse"
+    "limite de fonctions"
   ],
-  "methods": [],
-  "objects": [],
-  "content_hash": "e07c4860759ecb904d3985ed4597c06a46716cb6f19cdc7c2a363d6415e48d0a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T11:41:00.736Z"
+  "methods": [
+    "changement de variable",
+    "décomposition en éléments simples",
+    "intégration par parties",
+    "analyse de parité",
+    "étude de continuité",
+    "calcul de dérivée"
+  ],
+  "objects": [
+    "fonction définie par intégrale",
+    "fonction paire",
+    "fonction continue",
+    "fonction dérivable",
+    "intégrale paramétrique",
+    "limite de fonction"
+  ],
+  "content_hash": "ec874cff21ab83951ea33fb750c9953b5f7518d3498b98d0422f5f1e2895f527",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:44.512Z"
 }

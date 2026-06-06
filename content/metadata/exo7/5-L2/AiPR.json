@@ -1,25 +1,29 @@
 {
   "uuid": "AiPR",
   "source_path": "exo7/5-L2/AiPR.tex",
-  "summary": "L'exercice demande de montrer qu'un polynôme P_n, défini comme une somme partielle de la série exponentielle, n'a pas de racine dans un disque fermé de rayon R pour n suffisamment grand.",
+  "summary": "Montrer qu'à partir d'un certain rang, un polynôme P_n défini comme la somme partielle de la série entière de l'exponentielle n'a pas de racine dans un disque fermé centré en 0 de rayon R donné.",
   "concepts": [
     "convergence uniforme",
     "fonction exponentielle",
-    "polynôme de Taylor",
+    "série entière",
+    "polynôme",
     "disque fermé",
-    "racine d'un polynôme"
+    "racine d'un polynôme",
+    "inégalité triangulaire"
   ],
   "methods": [
-    "convergence uniforme",
+    "convergence uniforme de polynômes",
     "estimation d'erreur",
+    "inégalité triangulaire",
     "majoration"
   ],
   "objects": [
     "polynôme P_n",
     "disque fermé D_R",
-    "fonction exponentielle"
+    "fonction exponentielle",
+    "suite de polynômes (P_n)"
   ],
-  "content_hash": "ca81d47d09982784e612c41dd6dc7a87ee8dfa39eab802196956870d4c70a7a1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:37:32.249Z"
+  "content_hash": "c1e0284d3445b17bcc559317c3ac4359d2364a2f549d8d684d16f6d649f157d5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:49.181Z"
 }

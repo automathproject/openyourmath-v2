@@ -1,25 +1,29 @@
 {
   "uuid": "VFPD",
   "source_path": "exo7/2-L1/VFPD.tex",
-  "summary": "L'exercice demande de déterminer la limite d'une suite de moyennes de parties entières de multiples d'un réel x, lorsque n tend vers l'infini.",
+  "summary": "L'exercice demande de déterminer la limite d'une suite définie comme la moyenne des parties entières de kx pour k allant de 1 à n, divisée par n², lorsque n tend vers l'infini.",
   "concepts": [
-    "fonction partie entière",
+    "partie entière",
+    "inégalité",
     "encadrement",
     "théorème des gendarmes",
     "limite de suite",
-    "inégalité arithmétique"
+    "somme de termes arithmétiques",
+    "inégalité triangulaire"
   ],
   "methods": [
-    "encadrement de la fonction partie entière",
-    "sommation d'inégalités",
-    "application du théorème des gendarmes"
+    "encadrement par inégalités",
+    "somme de termes",
+    "application du théorème des gendarmes",
+    "calcul de limite"
   ],
   "objects": [
-    "suite de parties entières",
-    "moyenne arithmétique",
+    "suite numérique",
+    "partie entière",
+    "somme de parties entières",
     "limite de suite"
   ],
-  "content_hash": "d725d54468134912758159774955df66a48f7de32df1aeefdc8e06f538bc2255",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:20:01.312Z"
+  "content_hash": "1a4b0ca6aa950de6e1aab68ad96824f0d0d74313e70e98d2e34b4d828239598d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:24.530Z"
 }

@@ -1,25 +1,28 @@
 {
   "uuid": "2NWT",
   "source_path": "exo7/5-L2/2NWT.tex",
-  "summary": "On étudie la limite uniforme d'une suite de polynômes sur ℝ. L'exercice demande de prouver que cette limite est nécessairement un polynôme.",
+  "summary": "On considère une suite de polynômes convergeant uniformément sur ℝ vers une fonction f. On demande de prouver que f est nécessairement un polynôme.",
   "concepts": [
     "convergence uniforme",
     "critère de Cauchy",
     "limite de suite de fonctions",
     "polynôme",
-    "fonction bornée"
+    "fonction bornée",
+    "fonction constante"
   ],
   "methods": [
-    "critère de Cauchy pour la convergence uniforme",
-    "étude de la limite simple",
-    "analyse des polynômes constants"
+    "application du critère de Cauchy",
+    "analyse de la limite ponctuelle",
+    "comparaison des polynômes",
+    "passage à la limite dans une égalité"
   ],
   "objects": [
     "suite de polynômes",
     "fonction limite",
-    "polynôme constant"
+    "polynôme constant",
+    "suite numérique"
   ],
-  "content_hash": "fbf02902c91803e0dbae6778491d9d5da55da0d3f961e626326452c1ef8a006e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:45:13.005Z"
+  "content_hash": "f546b622c70b34d966204c3ff92cf94f71164b92df00377e0817cd76a45b031e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:46.005Z"
 }

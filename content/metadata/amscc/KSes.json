@@ -1,7 +1,7 @@
 {
   "uuid": "KSes",
   "source_path": "amscc/KSes.tex",
-  "summary": "L'exercice demande de modéliser une intégrale par des espérances de variables aléatoires normales ou uniformes, puis d'utiliser la méthode de Monte Carlo pour l'approximer et construire des intervalles de confiance. Il explore la convergence presque sûre et la loi faible des grands nombres.",
+  "summary": "L'exercice demande d'approximer une intégrale impliquant la fonction de densité d'une loi normale à l'aide de méthodes de Monte Carlo. Il s'agit de définir des fonctions adaptées, de construire des intervalles de confiance et de comparer l'efficacité de deux approches basées sur des variables normales et uniformes.",
   "concepts": [
     "loi normale",
     "loi uniforme",
@@ -14,19 +14,20 @@
   ],
   "methods": [
     "méthode de Monte Carlo",
-    "standardisation",
-    "approximation gaussienne",
+    "approximation par échantillonnage",
     "calcul d'espérance",
-    "construction d'intervalle de confiance"
+    "construction d'intervalle de confiance",
+    "comparaison de variances"
   ],
   "objects": [
+    "intégrale de fonction de densité",
     "variable aléatoire normale",
     "variable aléatoire uniforme",
     "fonction indicatrice",
-    "suite de variables i.i.d.",
-    "intégrale de fonction densité"
+    "suite de variables iid",
+    "intervalle de confiance"
   ],
-  "content_hash": "2dca057970d44dd68980d426dd1cb97050bd51399344e02a839b308c80e2fee4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:45:46.813Z"
+  "content_hash": "3a50901ebb23345986534d225c0f0909370cc5683ccd81e3e8d5d2079b8091c8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:30.945Z"
 }

@@ -1,27 +1,27 @@
 {
   "uuid": "L3GE",
   "source_path": "exo7/2-L1/L3GE.tex",
-  "summary": "Résoudre une équation impliquant une somme de fonctions hyperboliques sinus. L'équation est donnée sous forme discrète avec un paramètre réel.",
+  "summary": "Résoudre dans ℝ une équation impliquant une somme de fonctions hyperboliques sinus (sh) avec des arguments linéaires en x. L'équation est de la forme Σ sh(2 + kx) pour k allant de 1 à 100.",
   "concepts": [
     "fonction hyperbolique sinus",
     "somme de fonctions",
-    "équation algébrique",
+    "équation trigonométrique hyperbolique",
     "exponentielle",
-    "polynôme caractéristique",
+    "somme géométrique",
     "résolution d'équation"
   ],
   "methods": [
-    "téléscopage",
-    "factorisation",
+    "développement en exponentielles",
+    "somme de séries géométriques",
     "simplification algébrique",
     "résolution d'équation exponentielle"
   ],
   "objects": [
     "somme de fonctions hyperboliques",
-    "équation à une inconnue",
+    "équation à une variable",
     "exponentielle complexe"
   ],
-  "content_hash": "f3b895084c634b8f0e3788cd2d0dcfa129929a3e440a64ace1aebc7ec07c5041",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:59:08.522Z"
+  "content_hash": "355f4428e05fc7f21d4604d8b36974c46d4b77a1afd1498b796a0873c89454ad",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:44.980Z"
 }

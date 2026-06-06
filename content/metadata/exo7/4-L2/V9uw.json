@@ -1,20 +1,20 @@
 {
   "uuid": "V9uw",
   "source_path": "exo7/4-L2/V9uw.tex",
-  "summary": "L'exercice demande de démontrer que la valeur absolue de la somme des coefficients d'une matrice orthogonale est inférieure ou égale à la dimension de la matrice, et d'étudier le cas d'égalité lorsque tous les coefficients sont positifs.",
+  "summary": "Soit A une matrice orthogonale. Montrer que la valeur absolue de la somme de ses coefficients est inférieure ou égale à n. Étudier le cas d'égalité lorsque tous les coefficients sont positifs.",
   "concepts": [
     "matrice orthogonale",
     "inégalité de Cauchy-Schwarz",
     "produit scalaire",
     "valeur propre",
     "famille liée",
-    "vecteur propre"
+    "norme vectorielle"
   ],
   "methods": [
-    "utilisation de l'inégalité de Cauchy-Schwarz",
+    "application de l'inégalité de Cauchy-Schwarz",
+    "calcul de produit scalaire",
     "analyse des valeurs propres",
-    "étude des vecteurs propres",
-    "calcul de produit scalaire"
+    "étude de cas d'égalité"
   ],
   "objects": [
     "matrice orthogonale",
@@ -22,7 +22,7 @@
     "famille de vecteurs",
     "valeurs propres"
   ],
-  "content_hash": "d5d5b1d771e414c6b908b454b9534fee419e9765d5147af76a90225c7131b616",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:29:45.969Z"
+  "content_hash": "44130ccbe7f3b7aa83c0a78951c9b6951340adf7d267e6d99ff0fe68da052488",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:34.682Z"
 }

@@ -1,24 +1,30 @@
 {
   "uuid": "oiu8",
   "source_path": "exo7/5-L2/oiu8.tex",
-  "summary": "Trouver les extrema locaux de la fonction f : ℝ² → ℝ définie par f(x,y) = x⁴ + y⁴ - 4xy.",
+  "summary": "Trouver les extrema locaux de deux fonctions de deux variables définies sur ℝ². La première fonction est quadratique, la seconde est un polynôme de degré 4.",
   "concepts": [
     "extremum local",
     "point critique",
     "fonction de classe C¹",
-    "symétrie des fonctions"
+    "minimum global",
+    "système d'équations différentielles partielles",
+    "développement en carré",
+    "inégalité de forme quadratique"
   ],
   "methods": [
     "calcul des dérivées partielles",
-    "analyse des points critiques",
-    "étude de la symétrie"
+    "résolution de système linéaire",
+    "complétion du carré",
+    "analyse de signe",
+    "étude de la parité"
   ],
   "objects": [
     "fonction de deux variables",
-    "points critiques",
-    "voisinage de points critiques"
+    "point critique",
+    "développement quadratique",
+    "inégalité"
   ],
-  "content_hash": "a929c8fbd2e61f6fa9c1aa2443f517e113910a807362f811eb0a880ccb42b1bc",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:20:22.462Z"
+  "content_hash": "676956ce485fdaa2ccbb2d450fad8123b9ef8912cf73e7569f5eb0bbffecddfa",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:46.916Z"
 }

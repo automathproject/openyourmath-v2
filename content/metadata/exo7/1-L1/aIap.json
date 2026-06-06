@@ -1,27 +1,28 @@
 {
   "uuid": "aIap",
   "source_path": "exo7/1-L1/aIap.tex",
-  "summary": "L'exercice demande de calculer les valeurs exactes de cos(2π/5) et sin(2π/5) en utilisant les propriétés des nombres complexes et des formules d'Euler. On introduit des variables a et b définies à partir de cosinus et une variable z définie comme une racine primitive 5ème de l'unité.",
+  "summary": "L'exercice demande de calculer les valeurs exactes de cos(2π/5) et sin(2π/5) en utilisant les propriétés des racines de l'unité et des nombres complexes. On introduit des variables a et b définies à partir de cosinus et un nombre complexe z = e^(2iπ/5).",
   "concepts": [
-    "formules d'Euler",
     "racines de l'unité",
+    "formules d'Euler",
     "polynôme minimal",
     "équation du second degré",
-    "trigonométrie des angles remarquables"
+    "trigonométrie des angles remarquables",
+    "conjugaison complexe"
   ],
   "methods": [
     "développement en série exponentielle",
-    "factorisation de polynôme",
-    "résolution d'équation du second degré",
-    "utilisation des propriétés des racines de l'unité"
+    "utilisation de la somme géométrique",
+    "résolution d'équation quadratique",
+    "identification de racines conjuguées"
   ],
   "objects": [
     "nombre complexe",
-    "racine primitive 5ème de l'unité",
     "polynôme de degré 2",
-    "cosinus d'angle"
+    "cosinus d'angle",
+    "somme de racines"
   ],
-  "content_hash": "e7342cade1c6a9b93589f5cb4176680fd8667ca0ce803ffbf6552e1d80c433f3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:51:00.032Z"
+  "content_hash": "bd94fbf31b7819387e2e2d6bb3a9ace57a4ce770d33865a84c446473d88714eb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:57.337Z"
 }

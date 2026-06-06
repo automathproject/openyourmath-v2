@@ -1,24 +1,26 @@
 {
   "uuid": "Jl2n",
   "source_path": "exo7/2-L1/Jl2n.tex",
-  "summary": "L'exercice demande de comparer quatre assertions concernant une fonction bornée sur un intervalle [a, b] : l'existence d'une primitive, l'intégrabilité, la continuité et la dérivabilité.",
+  "summary": "L'exercice demande de comparer quatre assertions concernant une fonction bornée sur un intervalle fermé : l'existence d'une primitive, l'intégrabilité, la continuité et la dérivabilité.",
   "concepts": [
-    "fonction bornée",
     "primitive d'une fonction",
-    "intégrabilité",
+    "intégrabilité de Riemann",
     "continuité",
     "dérivabilité",
-    "théorèmes de passage à la limite sous le signe intégral"
+    "fonction bornée",
+    "théorème fondamental de l'analyse"
   ],
   "methods": [
-    "analyse des implications logiques",
-    "comparaison des propriétés des fonctions"
+    "comparaison d'implications logiques",
+    "application des théorèmes d'analyse"
   ],
   "objects": [
     "fonction bornée",
-    "intervalle [a, b]"
+    "intervalle fermé",
+    "primitive",
+    "intégrale de Riemann"
   ],
-  "content_hash": "eb3a01d6603c5b18627b8d8a448399fded9b7eacbf33dfe9b1c1a42c697b6800",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:35:16.966Z"
+  "content_hash": "3fa63872abba34f8e65b6e0e464ac5053c77472628c0b7dd6d5829bab6703959",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:43.014Z"
 }

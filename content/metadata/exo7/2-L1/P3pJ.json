@@ -1,28 +1,30 @@
 {
   "uuid": "P3pJ",
   "source_path": "exo7/2-L1/P3pJ.tex",
-  "summary": "Calculer des primitives de fonctions trigonométriques et algébriques. Les fonctions à intégrer présentent des dénominateurs complexes et des radicaux imbriqués.",
+  "summary": "Calculer les primitives de quatre fonctions différentes, dont certaines impliquent des expressions trigonométriques complexes ou des radicaux imbriqués.",
   "concepts": [
+    "primitive d'une fonction",
+    "intégration rationnelle",
     "intégration de fonctions trigonométriques",
-    "intégration de fonctions rationnelles",
-    "intégration de fonctions algébriques",
     "changement de variable",
-    "intégration par parties",
-    "primitive d'une fonction"
+    "décomposition en éléments simples",
+    "intégration de fonctions algébriques"
   ],
   "methods": [
-    "changement de variable",
+    "décomposition en fractions partielles",
+    "changement de variable trigonométrique",
     "intégration par parties",
-    "décomposition en éléments simples",
-    "simplification algébrique"
+    "substitution algébrique",
+    "simplification d'expression"
   ],
   "objects": [
     "fonction trigonométrique",
     "fonction rationnelle",
     "fonction algébrique",
-    "primitive"
+    "radical imbriqué",
+    "polynôme"
   ],
-  "content_hash": "8f93e874a6529ec1aed7a60d0255ffa0f72db069626445fe1734926ebc06bc09",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:37:34.547Z"
+  "content_hash": "085245958fcdfe6071eeb92e6de5b2b0938f7f24d2f884acb342e0a85b0bf0cf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:48.138Z"
 }

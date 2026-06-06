@@ -1,29 +1,30 @@
 {
   "uuid": "kT51",
   "source_path": "exo7/1-L1/kT51.tex",
-  "summary": "Étudier les variations de la fonction f_k(x) = sin(x) / sqrt(1 - 2k cos(x) + k²) et calculer son intégrale sur l'intervalle [0, π] pour un réel k différent de -1 et 1.",
+  "summary": "Étudier les variations de la fonction f_k(x) = sin(x) / sqrt(1 - 2k cos(x) + k²) pour k réel distinct de -1 et 1, puis calculer son intégrale sur [0, π]. La fonction est définie pour tout réel x et k ≠ ±1.",
   "concepts": [
     "fonction trigonométrique",
     "dérivée",
     "intégrale définie",
     "périodicité",
     "fonction impaire",
-    "variations de fonction"
+    "variations de fonction",
+    "changement de variable"
   ],
   "methods": [
     "détermination du domaine de définition",
     "calcul de dérivée",
     "analyse de signe",
-    "intégration par changement de variable",
-    "simplification d'expression"
+    "intégration par parties",
+    "changement de variable dans une intégrale"
   ],
   "objects": [
     "fonction de variable réelle",
-    "intégrale",
-    "dérivée",
-    "intervalle de définition"
+    "intégrale définie",
+    "dérivée première",
+    "expression trigonométrique"
   ],
-  "content_hash": "4c6c9d9e4039a5a303b3f3e299203fb540cb538c8ea0289f81bfa50c3e03886f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:58:02.415Z"
+  "content_hash": "85da2c5244052a310b9fe140b2b7b994a0eb96b0848cb89ae3cba8d363f41405",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:08.886Z"
 }

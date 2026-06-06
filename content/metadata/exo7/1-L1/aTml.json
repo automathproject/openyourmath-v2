@@ -1,27 +1,28 @@
 {
   "uuid": "aTml",
   "source_path": "exo7/1-L1/aTml.tex",
-  "summary": "L'exercice demande de prouver que si une fraction rationnelle p/q (avec p et q premiers entre eux) est racine d'un polynôme P, alors p divise le terme constant a0 et q divise le coefficient dominant an. Application à la résolution d'une équation polynomiale de degré 4.",
+  "summary": "L'exercice demande de démontrer que si une fraction rationnelle irréductible p/q est racine d'un polynôme P à coefficients entiers, alors p divise le terme constant a₀ et q divise le coefficient dominant aₙ. Il applique ensuite ce résultat pour résoudre une équation polynomiale de degré 4 dans ℂ.",
   "concepts": [
     "racine rationnelle d'un polynôme",
     "théorème de Gauss",
-    "polynôme unitaire",
-    "divisibilité dans Z",
+    "polynôme à coefficients entiers",
+    "divisibilité dans ℤ",
+    "fraction irréductible",
     "factorisation de polynôme"
   ],
   "methods": [
-    "utilisation du théorème de Gauss",
-    "recherche des racines rationnelles possibles",
-    "factorisation par identification",
+    "test de divisibilité",
+    "factorisation",
+    "recherche des racines rationnelles",
     "division polynomiale"
   ],
   "objects": [
-    "polynôme à coefficients entiers",
+    "polynôme unitaire",
     "racine rationnelle",
     "fraction irréductible",
     "équation polynomiale"
   ],
-  "content_hash": "5c460a370e101e6a01d5b59e43b6718f57cb51c84993e5966d8ad85775aa3719",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:06:24.747Z"
+  "content_hash": "f32c5f78e88c9b387f41e606375bc5efa87fbd77c797be6a145d98bd071236e1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:04.843Z"
 }

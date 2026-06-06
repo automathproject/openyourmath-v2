@@ -1,0 +1,27 @@
+{
+  "uuid": "LtKv",
+  "source_path": "amscc/LtKv.tex",
+  "summary": "L'exercice demande de vérifier l'inverse d'une matrice donnée, puis de calculer la matrice triangulaire supérieure T obtenue par changement de base, et enfin de décomposer T en une somme d'une matrice diagonale D et d'une matrice nilpotente N.",
+  "concepts": [
+    "changement de base",
+    "matrice de passage",
+    "matrice triangulaire supérieure",
+    "matrice diagonale",
+    "matrice nilpotente",
+    "décomposition D+N"
+  ],
+  "methods": [
+    "calcul de l'inverse d'une matrice",
+    "multiplication matricielle",
+    "décomposition en matrice diagonale et nilpotente"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice triangulaire",
+    "matrice nilpotente",
+    "matrice diagonale"
+  ],
+  "content_hash": "1076fc2fe0e9deefd50ea7e0a75397bba9b4d486ed2cb30529d0c7c5032d69c6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:22.366Z"
+}

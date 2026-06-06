@@ -1,26 +1,30 @@
 {
   "uuid": "tCv2",
   "source_path": "exo7/6-L2/tCv2.tex",
-  "summary": "L'exercice demande de construire géométriquement la longueur √(ab) à la règle et au compas, à partir de deux longueurs données a et b. Il questionne aussi sur le choix des longueurs considérées.",
+  "summary": "L'exercice demande de construire géométriquement, à la règle et au compas, la longueur √(ab) à partir de deux longueurs données a et b. Il s'interroge également sur le choix de construire des longueurs comme √(ab) plutôt que d'autres combinaisons.",
   "concepts": [
     "géométrie affine euclidienne",
     "construction géométrique",
-    "longueur",
-    "moyenne géométrique",
     "théorème de Pythagore",
-    "perpendiculaire"
+    "perpendiculaire",
+    "cercle",
+    "longueur géométrique",
+    "construction à la règle et au compas"
   ],
   "methods": [
-    "construction à la règle et au compas",
+    "construction de la moyenne géométrique",
+    "tracé de cercle",
+    "tracé de perpendiculaire",
     "utilisation du théorème de Pythagore"
   ],
   "objects": [
     "longueur",
     "segment",
     "cercle",
-    "perpendiculaire"
+    "perpendiculaire",
+    "point"
   ],
-  "content_hash": "9e2950c0d650ff52b6d746b5f29cf134a51042dd8d8383b2c4e51b443b33041d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:59:40.017Z"
+  "content_hash": "206353f22b36226b54acfab45dfc996b5f9e47baefa138935ab49e26110da334",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:46.480Z"
 }

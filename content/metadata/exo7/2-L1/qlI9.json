@@ -1,25 +1,25 @@
 {
   "uuid": "qlI9",
   "source_path": "exo7/2-L1/qlI9.tex",
-  "summary": "On définit une fonction f(x) comme la distance d'un point x à une partie A de ℝ. L'exercice demande de prouver que cette fonction est continue en tout point de ℝ.",
+  "summary": "On définit une fonction f(x) comme la distance d'un point x à un ensemble A de réels. L'exercice demande de prouver que cette fonction est continue en tout point de ℝ.",
   "concepts": [
-    "distance d'un point à un ensemble",
     "continuité",
+    "distance d'un point à un ensemble",
     "fonction Lipschitzienne",
     "inégalité triangulaire",
-    "minorant"
+    "infimum"
   ],
   "methods": [
     "utilisation de l'inégalité triangulaire",
-    "preuve par minoration",
-    "démonstration de la lipschitzianité"
+    "majoration de la différence de fonctions",
+    "preuve par échange de rôles"
   ],
   "objects": [
-    "fonction distance",
+    "fonction distance à un ensemble",
     "partie non vide de ℝ",
-    "point réel"
+    "fonction réelle"
   ],
-  "content_hash": "452a1fafde8a19bf7fb1830bf0467ad763bc39cf7737cfa97315fa1f34e42047",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:25:32.782Z"
+  "content_hash": "0efe70e52c2c3e7a2d672631fdd858df79d2c8306e380e316323108e3d4f294a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:07.971Z"
 }

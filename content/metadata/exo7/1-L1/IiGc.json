@@ -1,28 +1,27 @@
 {
   "uuid": "IiGc",
   "source_path": "exo7/1-L1/IiGc.tex",
-  "summary": "L'exercice demande de démontrer une identité algébrique sur les nombres complexes et d'en déduire une formule pour la somme de puissances de nombres complexes. Ensuite, il s'agit de vérifier une identité trigonométrique complexe et de calculer la somme de cosinus et sinus de multiples d'un angle réel.",
+  "summary": "L'exercice demande de démontrer une identité algébrique sur les nombres complexes, puis d'utiliser cette identité pour calculer une somme de puissances de nombres complexes et en déduire les sommes trigonométriques associées.",
   "concepts": [
-    "nombres complexes",
     "formule d'Euler",
     "somme géométrique",
+    "nombres complexes",
     "fonctions trigonométriques",
-    "identités trigonométriques",
-    "exponentielle complexe"
+    "identité algébrique",
+    "racines n-ième de l'unité"
   ],
   "methods": [
     "développement algébrique",
     "utilisation de la formule d'Euler",
-    "somme de séries finies",
-    "séparation en parties réelle et imaginaire"
+    "séparation en partie réelle et imaginaire"
   ],
   "objects": [
-    "somme de puissances de nombres complexes",
-    "exponentielle complexe",
+    "somme géométrique de nombres complexes",
+    "fonction exponentielle complexe",
     "somme de cosinus",
     "somme de sinus"
   ],
-  "content_hash": "8870119e9a49c6f9f83d1940150b25e4f0abea9acddfa971205ef6a7b5145d48",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:39:18.805Z"
+  "content_hash": "b88e79bbf8dd1efcce08f7872e9378adc440d8d308fa0eb820032dd48cbecaad",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:36.914Z"
 }

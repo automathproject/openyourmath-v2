@@ -1,27 +1,27 @@
 {
   "uuid": "5sHJ",
   "source_path": "amscc/5sHJ.tex",
-  "summary": "Calculer l'espérance de gain d'un joueur au loto en fonction du nombre de bons numéros trouvés, avec des gains spécifiques pour 3, 4, 5 et 6 numéros corrects.",
+  "summary": "Calculer l'espérance de gain d'un joueur au loto en fonction du nombre de bons numéros trouvés, avec des gains prédéfinis pour 3, 4, 5 et 6 numéros corrects. La variable aléatoire modélise le nombre de numéros gagnants parmi 6 tirés sans remise parmi 49.",
   "concepts": [
     "loi hypergéométrique",
-    "espérance mathématique",
-    "variable aléatoire discrète",
+    "espérance d'une variable aléatoire discrète",
+    "probabilité discrète",
     "tirage sans remise",
-    "probabilité conditionnelle",
-    "combinatoire"
+    "variable aléatoire discrète",
+    "calcul de probabilités"
   ],
   "methods": [
-    "calcul de probabilités par loi hypergéométrique",
-    "calcul d'espérance discrète",
-    "utilisation de coefficients binomiaux"
+    "calcul de coefficients binomiaux",
+    "application de la formule de l'espérance",
+    "calcul de probabilités conditionnelles"
   ],
   "objects": [
     "variable aléatoire discrète",
-    "tableau de gains",
-    "coefficient binomial",
-    "espérance de gain"
+    "loi hypergéométrique",
+    "espérance mathématique",
+    "tableau de gains"
   ],
-  "content_hash": "96227c259281535dd5fababbd6ec18dd8afdbc5911bf631e32c41cbaa07215e5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:16:16.633Z"
+  "content_hash": "e6f26c5ea96ca522eb4d791791c3e00c141737498c87593c3262e8e64176919b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:01.474Z"
 }

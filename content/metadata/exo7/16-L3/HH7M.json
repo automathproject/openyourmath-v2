@@ -1,29 +1,28 @@
 {
   "uuid": "HH7M",
   "source_path": "exo7/16-L3/HH7M.tex",
-  "summary": "L'exercice demande de démontrer que le résidu à l'infini d'une fonction analytique est indépendant du rayon du cercle d'intégration et de prouver que la somme de tous les résidus d'une fonction holomorphe, y compris celui à l'infini, est nulle.",
+  "summary": "L'exercice demande de démontrer que le résidu à l'infini d'une fonction analytique en dehors d'un disque est indépendant du rayon du cercle d'intégration, puis d'établir que la somme de tous les résidus (y compris celui à l'infini) d'une fonction holomorphe sur le plan complexe à l'exception de singularités isolées est nulle.",
   "concepts": [
     "fonction analytique",
     "singularité isolée",
     "résidu",
+    "résidu à l'infini",
     "théorème des résidus",
     "intégrale de contour",
-    "holomorphie",
-    "convergence uniforme"
+    "holomorphie"
   ],
   "methods": [
-    "intégration par parties",
-    "changement de variable",
-    "analyse asymptotique",
-    "théorème des résidus"
+    "intégration sur un contour",
+    "analyse de la dépendance au paramètre",
+    "calcul de résidus"
   ],
   "objects": [
-    "fonction analytique",
-    "résidu à l'infini",
+    "fonction holomorphe",
     "cercle d'intégration",
+    "résidu à l'infini",
     "singularités isolées"
   ],
-  "content_hash": "27d80245177692e969b129c4492919b362cba3b47a8f3b3ba2e5e49142a5adbf",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:12:03.746Z"
+  "content_hash": "68f319ed1986269e582551e29e62811a417324a61cc0bb914b845ded4a310ebd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:25.395Z"
 }

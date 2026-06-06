@@ -1,26 +1,31 @@
 {
   "uuid": "00Fy",
   "source_path": "exo7/6-L2/00Fy.tex",
-  "summary": "L'exercice demande de montrer qu'une courbe donnée par une équation quadratique dans le plan est une parabole, puis de trouver un repère orthonormé dans lequel cette parabole a une équation standard.",
+  "summary": "L'exercice demande de montrer qu'une courbe plane donnée par une équation du second degré est une parabole, puis de déterminer un repère orthonormé dans lequel cette parabole a une équation canonique de la forme x² = 2py.",
   "concepts": [
     "géométrie affine",
     "courbe conique",
     "parabole",
+    "équation canonique",
     "repère orthonormé",
     "changement de repère",
-    "équation canonique"
+    "forme quadratique"
   ],
   "methods": [
-    "identification de la nature d'une conique",
-    "calcul du sommet d'une parabole",
-    "transformation de coordonnées"
+    "réduction de l'équation du second degré",
+    "identification des coefficients",
+    "calcul du sommet",
+    "détermination de l'axe de symétrie",
+    "transformation affine"
   ],
   "objects": [
-    "courbe conique",
+    "courbe plane",
+    "équation quadratique",
     "repère orthonormé",
-    "équation quadratique"
+    "parabole",
+    "axe de symétrie"
   ],
-  "content_hash": "8b88385205e7d117b1f2998e76454fed5a70d28187f0ef02c54c88696aa36bfa",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:35:28.722Z"
+  "content_hash": "956dff86574a80f418c3204afc01396ae4e1a5dab12adc56191e692e6ba1ef3d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:51:28.304Z"
 }

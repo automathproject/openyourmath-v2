@@ -1,27 +1,28 @@
 {
   "uuid": "B3ac",
   "source_path": "amscc/B3ac.tex",
-  "summary": "L'exercice demande de calculer des probabilités pour une variable aléatoire suivant une loi de Poisson de paramètre 16, puis d'approcher cette loi par une loi normale pour estimer des probabilités.",
+  "summary": "L'exercice demande de calculer des probabilités pour une variable aléatoire suivant une loi de Poisson de paramètre 16, puis d'approcher cette loi par une loi normale pour estimer des probabilités. Il utilise un tableau de valeurs cumulées de la loi de Poisson.",
   "concepts": [
     "loi de Poisson",
     "loi normale",
     "approximation de Poisson par la loi normale",
     "correction de continuité",
     "standardisation",
-    "variable aléatoire"
+    "probabilité conditionnelle"
   ],
   "methods": [
     "calcul de probabilité par différence",
     "standardisation",
-    "correction de continuité",
-    "approximation gaussienne"
+    "approximation gaussienne",
+    "correction de continuité"
   ],
   "objects": [
     "variable aléatoire de Poisson",
     "variable aléatoire normale",
-    "table de probabilités"
+    "table de probabilités cumulées",
+    "intervalle de confiance"
   ],
-  "content_hash": "a9f796d41b5b95bb31f6a7a3ad93891ba700039ae37c3ca190a570d4875121ea",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:41:53.322Z"
+  "content_hash": "d55725292bd7ec40193938e028456f7f6f358609afe0aa52c5319169c52d4168",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:27.611Z"
 }

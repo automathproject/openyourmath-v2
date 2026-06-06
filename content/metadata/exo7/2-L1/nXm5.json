@@ -1,26 +1,26 @@
 {
   "uuid": "nXm5",
   "source_path": "exo7/2-L1/nXm5.tex",
-  "summary": "L'exercice demande de prouver une identité trigonométrique impliquant des fonctions Arctan et d'en déduire une expression simplifiée pour la somme Sn de termes Arctan, puis de calculer sa limite infinie.",
+  "summary": "Montrer une identité trigonométrique impliquant des fonctions arctangente, puis en déduire une expression simplifiée d'une somme de termes arctangente et calculer sa limite infinie.",
   "concepts": [
-    "fonction Arctan",
-    "dérivation",
-    "fonction constante",
+    "fonction arctangente",
+    "fonction dérivable",
     "limite de fonction",
-    "téléscopage de somme"
-  ],
-  "methods": [
-    "dérivation",
-    "simplification algébrique",
-    "téléscopage",
-    "calcul de limite"
-  ],
-  "objects": [
-    "fonction Arctan",
-    "somme de termes Arctan",
+    "téléscopie",
     "limite infinie"
   ],
-  "content_hash": "facc656ba066b2bf3a03979a55f16530811d0f792b166e1000e7a06eb47304a2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:05:47.525Z"
+  "methods": [
+    "détermination de fonction constante",
+    "téléscopie de somme",
+    "calcul de limite",
+    "changement d'indice de sommation"
+  ],
+  "objects": [
+    "fonction arctangente",
+    "somme de termes arctangente",
+    "limite infinie de somme"
+  ],
+  "content_hash": "d9894179081a9ac0c712151d29fe5d70eba091bacaa18e96787aba9572086dd7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:03.139Z"
 }

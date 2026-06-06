@@ -1,26 +1,22 @@
 {
   "uuid": "gL00",
   "source_path": "exo7/6-L2/gL00.tex",
-  "summary": "Dans un triangle ABC, démontrer la concourance des médianes, médiatrices, hauteurs et bissectrices intérieures, et établir la relation d'Euler entre l'orthocentre, le centre de gravité et le centre du cercle circonscrit.",
+  "summary": "L'exercice demande de démontrer la concourance des médianes, médiatrices, hauteurs et bissectrices d'un triangle en utilisant les propriétés de l'isobarycentre, du centre du cercle circonscrit, de l'orthocentre et du centre du cercle inscrit. Il aborde également la relation d'Euler entre ces points.",
   "concepts": [
-    "géométrie affine",
     "isobarycentre",
-    "barycentre partiel",
     "médiatrice",
     "cercle circonscrit",
-    "hauteur",
     "orthocentre",
+    "hauteur",
     "bissectrice",
     "cercle inscrit",
-    "relation d'Euler",
-    "homothétie"
+    "relation d'Euler"
   ],
   "methods": [
     "théorème du barycentre partiel",
-    "propriétés des médiatrices",
-    "construction de l'orthocentre",
-    "homothétie géométrique",
-    "alignement de points"
+    "homothétie",
+    "concourance de droites",
+    "distance à un côté"
   ],
   "objects": [
     "triangle",
@@ -33,7 +29,7 @@
     "centre du cercle circonscrit",
     "centre du cercle inscrit"
   ],
-  "content_hash": "a37780f51a0861a0413da8fc6b4b535ec16dddb64cca2d92de2e92fc15014ffd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:02:32.464Z"
+  "content_hash": "f19c89a3d9fcf7aa0b9a0e4407598a95e86a3e7012be7905543fc9cf34c9f435",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:31.887Z"
 }

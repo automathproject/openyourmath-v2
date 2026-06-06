@@ -1,29 +1,28 @@
 {
   "uuid": "SSaf",
   "source_path": "exo7/11-L3/SSaf.tex",
-  "summary": "L'exercice demande de calculer les longueurs de deux courbes : une courbe plane C' projetée sur le plan z=0, et sa courbe correspondante C tracée sur une surface donnée. Il s'agit ensuite de comparer ces longueurs.",
+  "summary": "L'exercice demande de calculer les longueurs de deux courbes : une courbe plane C' paramétrée par x=t, y=t² et sa projection C sur une surface donnée par 3z=xy+x³. Il s'agit ensuite de comparer ces longueurs.",
   "concepts": [
     "paramétrisation de courbe",
-    "vecteur vitesse",
-    "norme d'un vecteur",
-    "intégrale de longueur d'arc",
+    "projection orthogonale",
+    "longueur d'arc",
     "changement de variable",
-    "fonctions hyperboliques"
+    "fonctions hyperboliques",
+    "inégalité de comparaison"
   ],
   "methods": [
     "calcul de vecteur vitesse",
-    "intégration de norme de vecteur",
+    "intégration de norme de vecteur vitesse",
     "changement de variable hyperbolique",
     "comparaison d'intégrales"
   ],
   "objects": [
     "courbe paramétrée",
     "surface",
-    "projection orthogonale",
     "vecteur vitesse",
-    "intégrale de longueur"
+    "intégrale de longueur d'arc"
   ],
-  "content_hash": "4b67cc82ca872c59626357dfbbbf899ba707e4a02fc1bb9040a46e544d956083",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:20:19.081Z"
+  "content_hash": "a8e3efbb190358a6f48f69c820a700806562d95aec4a883d0152b24155d062ce",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:22.594Z"
 }

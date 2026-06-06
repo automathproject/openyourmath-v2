@@ -1,32 +1,29 @@
 {
   "uuid": "ZRnD",
   "source_path": "exo7/5-L2/ZRnD.tex",
-  "summary": "L'exercice demande d'étudier la convergence d'une série numérique de terme général u_n et de calculer sa somme. La série est définie à partir d'une suite u_n impliquant une somme de termes rationnels.",
+  "summary": "L'exercice demande d'étudier la convergence d'une série numérique de terme général alterné et de calculer sa somme, puis d'en déduire le rayon de convergence d'une série entière associée et d'exprimer sa dérivée sous forme de produit de séries.",
   "concepts": [
     "série numérique",
+    "série alternée",
+    "critère de convergence des séries alternées",
     "série entière",
-    "convergence absolue",
-    "critère spécial aux séries alternées",
     "rayon de convergence",
-    "convergence uniforme",
-    "fonction continue",
-    "développement en série entière"
+    "produit de Cauchy de séries",
+    "décomposition en éléments simples"
   ],
   "methods": [
-    "critère de convergence des séries alternées",
-    "majoration de reste de série alternée",
-    "calcul de rayon de convergence",
-    "développement en série entière",
-    "intégration de séries entières"
+    "comparaison série-intégrale",
+    "décomposition en éléments simples",
+    "calcul de dérivée de série entière",
+    "utilisation du produit de Cauchy"
   ],
   "objects": [
     "série numérique de terme général u_n",
-    "série entière",
-    "fonction f(x)",
-    "fonction k(X)",
-    "rayon de convergence"
+    "série entière associée",
+    "fonction dérivée f'(x)",
+    "polynôme caractéristique"
   ],
-  "content_hash": "bf765a72a9f46ec436b7d4e1b5dec6fbf0f31ef41289c7fd9a75caf86370f3ea",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:47:22.283Z"
+  "content_hash": "f1d2b53824021c9e1134ac3b839b480e5cb230e6b9e0a6dc2ee2b7e3e6a59ed1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:02.503Z"
 }

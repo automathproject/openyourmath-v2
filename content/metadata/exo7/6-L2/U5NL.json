@@ -1,26 +1,27 @@
 {
   "uuid": "U5NL",
   "source_path": "exo7/6-L2/U5NL.tex",
-  "summary": "On considère deux cercles sécants en deux points et deux droites passant par chacun de ces points. On doit prouver que deux segments formés par ces droites et les cercles sont parallèles.",
+  "summary": "Soient deux cercles sécants en A et B, et deux droites passant respectivement par A et B, coupant les cercles en C, E et D, F. Montrer que les droites (CD) et (EF) sont parallèles.",
   "concepts": [
     "géométrie affine euclidienne",
     "théorème de l'angle inscrit",
     "cercles sécants",
-    "alignement de points",
-    "parallélisme"
+    "parallélisme",
+    "angles de droites",
+    "quadrilatère inscriptible"
   ],
   "methods": [
-    "utilisation des angles inscrits",
-    "analyse des configurations géométriques",
+    "utilisation du théorème de l'angle inscrit",
+    "analyse des angles de droites",
     "démonstration par égalité d'angles"
   ],
   "objects": [
-    "cercles",
+    "cercles sécants",
     "droites",
-    "segments",
-    "points d'intersection"
+    "points d'intersection",
+    "angles géométriques"
   ],
-  "content_hash": "20f69a142b4227da14380bf0414e262db0f37e413d9809191199f27670625ed0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:40:36.399Z"
+  "content_hash": "7c871d082e9a5986d6200cb5433af34d8e3146448e5b931c0fdbc706e73d6788",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:03.133Z"
 }

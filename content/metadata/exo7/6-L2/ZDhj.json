@@ -1,25 +1,26 @@
 {
   "uuid": "ZDhj",
   "source_path": "exo7/6-L2/ZDhj.tex",
-  "summary": "Déterminer le rayon R d'un cylindre de révolution dont l'axe est donné par un système d'équations, de sorte que l'axe Oz soit tangent au cylindre.",
+  "summary": "Déterminer le rayon R d'un cylindre de révolution dont l'axe est donné par un système d'équations, de sorte que l'axe Oz soit tangent à ce cylindre. L'énoncé mobilise des notions de géométrie analytique dans l'espace.",
   "concepts": [
     "équation cartésienne d'une quadrique",
     "distance d'un point à une droite",
     "produit vectoriel",
     "déterminant",
-    "tangence"
+    "tangence entre une droite et une surface"
   ],
   "methods": [
     "calcul de produit vectoriel",
-    "calcul de déterminant",
-    "résolution d'équation"
+    "calcul de distance entre une droite et une droite",
+    "résolution d'un système d'équations"
   ],
   "objects": [
     "cylindre de révolution",
     "droite dans l'espace",
+    "équation cartésienne",
     "vecteur directeur"
   ],
-  "content_hash": "118ba770f655ed8146e30492414e073e22fddeb33c07be7fe56fe28ea4d3875b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:06:26.476Z"
+  "content_hash": "5fc09a45740431f7fd2b2a23e9bd3b6ec007db65328e07a7554337014936b382",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:26.198Z"
 }

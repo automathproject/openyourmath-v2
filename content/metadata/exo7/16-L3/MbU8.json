@@ -1,30 +1,30 @@
 {
   "uuid": "MbU8",
   "source_path": "exo7/16-L3/MbU8.tex",
-  "summary": "L'exercice demande de prouver qu'une fonction holomorphe sur un ouvert connexe, dont la dérivée est identiquement nulle, est constante. Il explore aussi le cas où l'ouvert n'est pas connexe.",
+  "summary": "Prouver qu'une fonction holomorphe sur un ouvert connexe, dont la dérivée est identiquement nulle, est constante. Étudier le cas où l'ouvert n'est pas connexe.",
   "concepts": [
     "fonction holomorphe",
     "dérivée identiquement nulle",
     "connexe",
     "continuité",
+    "intégrale de fonction complexe",
     "propriété ouverte",
     "fermé",
     "composantes connexes"
   ],
   "methods": [
-    "intégration complexe",
+    "intégration sur un chemin",
     "paramétrisation de segment",
-    "raisonnement par l'absurde",
-    "utilisation de la topologie"
+    "raisonnement par continuité",
+    "utilisation de la topologie des ouverts/fermés"
   ],
   "objects": [
-    "fonction holomorphe",
+    "fonction complexe",
     "ouvert connexe",
     "dérivée",
-    "segment",
-    "intégrale"
+    "segment dans le plan complexe"
   ],
-  "content_hash": "e93a78b23f0c6f87645b9d6177d5bd10ca2062239419559f12b0016bac4452b8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:33:32.162Z"
+  "content_hash": "f77793191a2c64cff68564d095e2fbc695e7447a214424277bf8043b2a1133f3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:03.794Z"
 }

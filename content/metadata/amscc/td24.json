@@ -1,11 +1,36 @@
 {
   "uuid": "td24",
   "source_path": "amscc/td24.tex",
-  "summary": "This exercise involves estimating the parameter θ of an exponential distribution using the method of moments and analyzing the properties of the estimators Yₙ and Zₙ. The key steps include demonstrating consistency, calculating asymptotic normality using the Delta method, constructing confidence intervals, and performing hypothesis tests. The exercise also compares the estimators based on their mean squared error.",
-  "concepts": [],
-  "methods": [],
-  "objects": [],
-  "content_hash": "7dc3cd77567700aa65b08daad79456f29ab2e988bde168750e8a17f52a27c73a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:03:00.363Z"
+  "summary": "L'exercice porte sur l'estimation du paramètre θ d'une loi exponentielle à partir d'un échantillon i.i.d. Il propose plusieurs estimateurs (Yₙ et Zₙ) et demande d'étudier leurs propriétés (consistance, convergence, biais, risque quadratique). Il aborde aussi la construction d'intervalles de confiance et de tests d'hypothèses asymptotiques pour θ.",
+  "concepts": [
+    "loi exponentielle",
+    "estimateur par la méthode des moments",
+    "consistance",
+    "théorème central limite",
+    "convergence en loi",
+    "convergence en probabilité",
+    "intervalle de confiance asymptotique",
+    "test d'hypothèses asymptotique",
+    "risque quadratique",
+    "lemme de Slutsky"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de l'espérance et de la variance",
+    "utilisation de la fonction caractéristique",
+    "décomposition biais-variance",
+    "application du théorème de continuité"
+  ],
+  "objects": [
+    "échantillon i.i.d.",
+    "estimateur Yₙ",
+    "estimateur Zₙ",
+    "variable aléatoire exponentielle",
+    "intervalle de confiance",
+    "test statistique"
+  ],
+  "content_hash": "62a730ee100dee01e85f1f69a71286a6ac2f60a0ac0fd319900c0fe1655e5d01",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:01.449Z"
 }

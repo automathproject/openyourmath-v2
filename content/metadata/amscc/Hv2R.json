@@ -1,0 +1,31 @@
+{
+  "uuid": "Hv2R",
+  "source_path": "amscc/Hv2R.tex",
+  "summary": "L'exercice étudie la propagation du gradient dans un réseau de neurones récurrents (RNN) simple sans entrée, en analysant comment la dérivée partielle de l'état caché à l'instant T par rapport à l'état initial décroît exponentiellement. Il explore les causes du gradient vanishing et les conditions pour l'éviter, ainsi que l'impact sur l'apprentissage des dépendances à long terme.",
+  "concepts": [
+    "règle de dérivation en chaîne",
+    "fonction tanh",
+    "gradient vanishing",
+    "gradient exploding",
+    "réseau de neurones récurrents",
+    "propagation du gradient",
+    "fonction composée",
+    "dérivée partielle"
+  ],
+  "methods": [
+    "dérivation en chaîne",
+    "analyse de la décroissance exponentielle",
+    "calcul numérique de produits",
+    "analyse des conditions de stabilité"
+  ],
+  "objects": [
+    "fonction tanh",
+    "état caché d'un RNN",
+    "dérivée partielle",
+    "produit de facteurs",
+    "gradient de perte"
+  ],
+  "content_hash": "14d2dcd0085eb1b0b71c7c1cec1eda9e777f842bf9486bb92209c59400ff3ff4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:28.319Z"
+}

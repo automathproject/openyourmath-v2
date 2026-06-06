@@ -1,27 +1,28 @@
 {
   "uuid": "lSSp",
   "source_path": "exo7/2-L1/lSSp.tex",
-  "summary": "L'exercice demande de compter des entiers naturels dans divers intervalles et de résoudre des équations diophantiennes. Il aborde aussi des problèmes de dénombrement concrets comme le paiement d'une somme avec des pièces de différentes valeurs.",
+  "summary": "L'exercice demande de compter des entiers naturels dans divers intervalles (bornes entières ou réelles) et de déterminer le nombre de solutions entières naturelles à des équations diophantiennes linéaires. Il aborde aussi un problème concret de dénombrement de combinaisons de pièces de monnaie.",
   "concepts": [
     "partie entière",
-    "équation diophantienne",
+    "entiers naturels",
+    "équations diophantiennes",
     "parité",
     "dénombrement",
-    "arithmétique des entiers naturels"
+    "arithmétique élémentaire"
   ],
   "methods": [
     "utilisation de la fonction partie entière",
-    "résolution d'équations linéaires à coefficients entiers",
+    "résolution d'équations diophantiennes",
     "analyse de parité",
     "dénombrement par cas"
   ],
   "objects": [
     "entiers naturels",
+    "équations linéaires à coefficients entiers",
     "partie entière d'un réel",
-    "équation linéaire",
-    "couples d'entiers solutions"
+    "multiples d'un entier"
   ],
-  "content_hash": "5e29abfbc964130a7ba99ef2ff28f6929ceb4f2001bac36f3dddc5f070412b05",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:01:38.526Z"
+  "content_hash": "52838dfda21f2d540d5f45c63ed0acb5a06c8f66796aa3878f7af92acad9c004",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:20.066Z"
 }

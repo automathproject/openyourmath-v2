@@ -1,26 +1,27 @@
 {
   "uuid": "oMVr",
   "source_path": "exo7/5-L2/oMVr.tex",
-  "summary": "Montrer que la norme L2 d'une solution d'une équation différentielle linéaire X' = AX, où A est une matrice symétrique définie positive, est une fonction croissante sur R.",
+  "summary": "Montrer que la norme euclidienne d'une solution d'une équation différentielle linéaire X' = AX, où A est une matrice symétrique définie positive, est une fonction croissante du temps.",
   "concepts": [
     "équation différentielle linéaire",
     "matrice symétrique définie positive",
+    "norme euclidienne",
     "dérivée d'une fonction composée",
     "inégalité de forme quadratique",
-    "norme L2"
+    "croissance d'une fonction"
   ],
   "methods": [
     "calcul de la dérivée",
-    "utilisation de la définition de la dérivée",
-    "analyse de la positivité de la dérivée"
+    "utilisation de la norme",
+    "analyse de la positivité d'une forme quadratique"
   ],
   "objects": [
-    "solution d'équation différentielle",
-    "fonction norme L2",
+    "solution d'une équation différentielle",
     "matrice A",
-    "fonction g(t) = ||X(t)||_2^2"
+    "fonction g(t) = ||X(t)||²",
+    "fonction croissante"
   ],
-  "content_hash": "d0cba2c160d624faed659d4c24062291ed713ec65576dc3373b2cab3cdb161cd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:46:12.658Z"
+  "content_hash": "07a9f86bff04473479b224a5dac86dace97cb68ccb91c1792b8f4ff43c06266e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:06.490Z"
 }

@@ -1,7 +1,7 @@
 {
   "uuid": "Earu",
   "source_path": "exo7/5-L2/Earu.tex",
-  "summary": "Résoudre cinq équations différentielles linéaires à coefficients constants sur ℝ, avec des seconds membres variés (constante, fonction trigonométrique, produit de fonctions exponentielle et trigonométrique).",
+  "summary": "Résoudre six équations différentielles linéaires du premier et second ordre à coefficients constants sur ℝ, avec des seconds membres constants, trigonométriques ou exponentiels.",
   "concepts": [
     "équation différentielle linéaire",
     "solution générale",
@@ -9,24 +9,24 @@
     "équation caractéristique",
     "racine simple",
     "racine double",
-    "principe de superposition des solutions",
-    "méthode de variation de la constante"
+    "principe de superposition",
+    "formule de Leibniz"
   ],
   "methods": [
-    "résolution de l'équation homogène associée",
-    "méthode de la forme particulière",
-    "formule de Leibniz",
+    "méthode de variation de la constante",
+    "méthode des coefficients indéterminés",
+    "standardisation",
     "intégration complexe",
-    "décomposition en parties réelles et imaginaires"
+    "résolution d'équation caractéristique"
   ],
   "objects": [
-    "fonction dérivable",
+    "équation différentielle linéaire d'ordre 1",
+    "équation différentielle linéaire d'ordre 2",
     "solution affine",
-    "solution exponentielle",
-    "solution trigonométrique",
-    "solution polynomiale exponentielle"
+    "solution particulière exponentielle",
+    "solution particulière trigonométrique"
   ],
-  "content_hash": "5cab76c5388b1dd46b461e9a85b4615fdb0db8c9e88b094afa36c159b0914a39",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:21:37.593Z"
+  "content_hash": "11746b6c6208e6834548b961f8249129313713f2c71467ffa6a791c7a6259a85",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:29.966Z"
 }

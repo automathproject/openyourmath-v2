@@ -1,27 +1,28 @@
 {
   "uuid": "KfO9",
   "source_path": "exo7/2-L1/KfO9.tex",
-  "summary": "L'exercice demande de démontrer deux propriétés des différences finies pour une fonction infiniment dérivable. La première question porte sur l'existence d'un point θ où la différence finie s'exprime comme la dérivée de la fonction en un point voisin. La seconde question généralise ce résultat en intégrant un terme d'erreur lié à la dérivée troisième.",
+  "summary": "L'exercice demande de démontrer deux propriétés des différences finies d'une fonction infiniment dérivable. La première question établit une relation entre la différence finie et la dérivée en un point voisin. La seconde question approfondit cette relation en introduisant un développement limité du second ordre.",
   "concepts": [
     "développement limité",
     "formule de Taylor",
+    "différence finie",
     "dérivée",
-    "dérivée troisième",
     "théorème des accroissements finis",
-    "fonction de classe C^∞"
+    "fonction de classe C^∞",
+    "approximation locale"
   ],
   "methods": [
-    "développement de Taylor",
     "application du théorème des accroissements finis",
-    "estimation de l'erreur de Taylor"
+    "développement de Taylor au second ordre",
+    "manipulation algébrique de différences finies"
   ],
   "objects": [
-    "différence finie",
     "fonction infiniment dérivable",
+    "différence finie",
     "dérivée première",
     "dérivée troisième"
   ],
-  "content_hash": "2eed7d675fe1018899e9130e92d3739a343a3f2f7d7d194d977ea08e8f126a10",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:28:41.794Z"
+  "content_hash": "1ae754a1856a5c5a7bf432dec50d98f09aa0978689454d3b4b189a1c3444459d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:51.375Z"
 }

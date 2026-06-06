@@ -7,19 +7,22 @@
     "équation cartésienne",
     "transformation de coordonnées",
     "analyse de courbes planes",
-    "équation polaire"
+    "équation polaire",
+    "symétrie des courbes"
   ],
   "methods": [
     "changement de coordonnées",
     "simplification d'équation",
-    "analyse de solutions"
+    "analyse de cas",
+    "symétrie par rotation"
   ],
   "objects": [
     "courbe plane",
     "équation cartésienne",
-    "coordonnées polaires"
+    "équation polaire",
+    "point origine"
   ],
-  "content_hash": "bf63010ec6a3fee051908a218957905e19f463037466098938b41ecac4ca437d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:04:53.409Z"
+  "content_hash": "6d965d9291596a99a839616b2c9dadad79d7b60f700dda97fb1375cce62453f7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:16.975Z"
 }

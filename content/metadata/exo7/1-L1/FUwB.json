@@ -1,26 +1,27 @@
 {
   "uuid": "FUwB",
   "source_path": "exo7/1-L1/FUwB.tex",
-  "summary": "L'exercice demande de représenter graphiquement cinq ensembles de points du plan définis par des inégalités impliquant les coordonnées (x,y). Il s'agit ensuite d'utiliser ces représentations pour démontrer géométriquement une équivalence entre deux conditions.",
+  "summary": "L'exercice demande de représenter graphiquement cinq ensembles de points du plan définis par des inégalités impliquant les coordonnées (x, y). Il s'agit ensuite d'établir une équivalence géométrique entre deux conditions sur x et y.",
   "concepts": [
     "ensemble de points dans le plan",
-    "inégalités cartésiennes",
+    "inégalité",
     "représentation graphique",
     "équivalence logique",
     "géométrie analytique",
-    "inégalités absolues"
+    "distance",
+    "norme"
   ],
   "methods": [
     "représentation graphique d'inégalités",
-    "analyse géométrique de conditions",
-    "démonstration par équivalence"
+    "analyse d'équivalences",
+    "visualisation géométrique"
   ],
   "objects": [
-    "ensemble de points",
-    "inégalités cartésiennes",
-    "conditions géométriques"
+    "ensemble de points du plan",
+    "inégalités",
+    "conditions sur les coordonnées"
   ],
-  "content_hash": "4774a74a5de7683cbb2db68979fe49dedab025b2333c8519b73c2e533d8e9053",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:09:25.066Z"
+  "content_hash": "ef78f36661ab55222ed9f41b43c14d95c2de14fe4bc042e61d6826d598427cd7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:21.966Z"
 }

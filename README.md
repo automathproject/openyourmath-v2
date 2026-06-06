@@ -93,33 +93,44 @@ node scripts/index-exercises.js --dry-run   # simuler sans écrire
 Les résumés générés sont versionnés dans `content/metadata/` et commités dans git.
 Les embeddings restent en local dans `cache/embeddings/` et dans la DB.
 
-## Changement de machine
+## Métadonnées IA et changement de machine
 
-Les fichiers `data/` et `cache/` ne sont pas versionnés. Pour éviter de recalculer
-tous les embeddings sur une nouvelle machine, transférer un snapshot de la DB via
-une GitHub Release :
+Trois artefacts cohabitent :
+
+- `content/metadata/**/*.json` : résumés, concepts, méthodes et objets générés par LLM. Ils sont versionnés dans Git et doivent être commités après `pnpm index:exercises`.
+- `data/exercises.sqlite` : base locale non versionnée. Elle contient les exercices, les métadonnées chargées depuis Git et les embeddings.
+- `cache/embeddings/*.json` : cache local non versionné. Il évite de rappeler Ollama/Albert et peut être reconstruit depuis la DB.
+
+Règle pratique : Git transporte les métadonnées textuelles, le snapshot transporte la DB et les embeddings. Le cache local est seulement une copie de travail.
 
 ```bash
-# Ancienne machine
+# Machine qui a indexé
 source ~/.nvm/nvm.sh
 nvm use
 pnpm install
 pnpm build:content
 pnpm index:exercises
+git status --short
+# commiter les content/metadata/**/*.json modifiés
 pnpm db:snapshot:pack
 pnpm db:snapshot:publish
 ```
 
 ```bash
-# Nouvelle machine
+# Autre machine
 source ~/.nvm/nvm.sh
 nvm use
 pnpm install
+git pull
 pnpm db:snapshot:download
 pnpm db:snapshot:restore
 pnpm cache:embeddings:stats
 pnpm dev
 ```
+
+`pnpm db:snapshot:restore` restaure `data/exercises.sqlite` puis reconstruit
+`cache/embeddings/` depuis la DB. Si un fichier de cache existait déjà mais avec
+un `content_hash` différent, il est remplacé.
 
 Prérequis : Node 22 (`.nvmrc`) et `gh` connecté (`gh auth login`). Par défaut,
 les commandes utilisent le tag `db-snapshot-dev` et l'archive locale ignorée par

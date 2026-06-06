@@ -1,28 +1,29 @@
 {
   "uuid": "gmOc",
   "source_path": "exo7/16-L3/gmOc.tex",
-  "summary": "Calculer des intégrales de fonctions puissances de z et de sa conjugaison sur un cercle et un carré, et comparer les résultats. L'énoncé demande d'identifier les cas d'égalité ou d'inégalité entre ces intégrales.",
+  "summary": "Calculer des intégrales complexes de la forme z^n et z̅^n le long d'un cercle et d'un carré, et comparer les résultats. L'énoncé demande d'identifier les cas d'égalité ou d'inégalité entre ces intégrales.",
   "concepts": [
     "formule de Cauchy",
-    "intégrale complexe",
     "fonction holomorphe",
+    "intégrale complexe",
     "conjugaison complexe",
     "théorème de Cauchy-Goursat",
-    "paramétrisation de courbes"
+    "continuité analytique"
   ],
   "methods": [
-    "paramétrisation du cercle et du carré",
-    "calcul direct d'intégrales",
-    "comparaison d'intégrales sur différents chemins",
+    "paramétrisation de contour",
+    "calcul d'intégrale complexe",
+    "comparaison de chemins d'intégration",
     "utilisation de la formule de Cauchy"
   ],
   "objects": [
-    "intégrale de fonction puissance de z",
-    "intégrale de fonction puissance de la conjugaison de z",
+    "intégrale de fonction complexe",
     "cercle unité",
-    "bord d'un carré"
+    "carré dans le plan complexe",
+    "fonction z^n",
+    "fonction z̅^n"
   ],
-  "content_hash": "2a403a10585ae4024b10702a3b906ec9b70311ad357465bea59389105b1e2d01",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:40:43.757Z"
+  "content_hash": "5fe6101931f9737e75989dc898499a4847bf00754ad7e6e2e4f6dacc2269e709",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:32.761Z"
 }

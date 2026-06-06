@@ -1,24 +1,27 @@
 {
   "uuid": "lZwk",
   "source_path": "exo7/1-L1/lZwk.tex",
-  "summary": "Trouver la matrice d'une application linéaire définie sur l'espace des matrices carrées de taille n à coefficients complexes, qui à une matrice M associe le produit MA.",
+  "summary": "Trouver la matrice d'une application linéaire $f$ définie par $f(M) = MA$ pour toute matrice $M$ dans l'espace $\\mathcal{M}_n(\\mathbb{C})$, dans la base canonique de cet espace.",
   "concepts": [
     "application linéaire",
-    "matrice carrée",
+    "matrice d'une application linéaire",
     "base canonique",
     "espace vectoriel de matrices",
-    "transposée d'une matrice"
+    "transposée d'une matrice",
+    "matrice par blocs"
   ],
   "methods": [
     "calcul de l'image des vecteurs de la base",
-    "remplissage coefficient par coefficient"
+    "remplissage coefficient par coefficient",
+    "construction de matrice par blocs"
   ],
   "objects": [
     "matrice carrée",
     "application linéaire",
-    "base canonique de l'espace des matrices"
+    "base canonique de $\\mathcal{M}_n(\\mathbb{C})$",
+    "matrice par blocs"
   ],
-  "content_hash": "cb3feb1cea4e872c9b18a515e43fedaf3ac0bc8b4edda32a3cb5ebb81e1f45ea",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:14:58.965Z"
+  "content_hash": "6e5869c5a3c2a52855405e266a5b5991ab337e29d75ae937606f0dc9a70326a7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:00.235Z"
 }

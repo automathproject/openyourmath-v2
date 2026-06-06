@@ -1,26 +1,27 @@
 {
   "uuid": "7Soh",
   "source_path": "exo7/6-L2/7Soh.tex",
-  "summary": "L'exercice demande de démontrer que la puissance d'un point P par rapport à un cercle de centre O et de rayon r est égale à OP² - r², et d'étudier si cette puissance dépend de la droite choisie.",
+  "summary": "L'exercice demande de démontrer que la puissance d'un point P par rapport à un cercle de centre O et de rayon r est égale à OP² - r², en utilisant le théorème de Pythagore. Il s'agit d'étudier cette puissance et sa dépendance par rapport à la droite choisie.",
   "concepts": [
     "géométrie affine euclidienne",
     "puissance d'un point par rapport à un cercle",
-    "produit scalaire",
     "théorème de Pythagore",
+    "produit scalaire",
     "distance d'un point à un centre"
   ],
   "methods": [
-    "utilisation du théorème de Pythagore",
+    "application du théorème de Pythagore",
     "calcul de produit scalaire",
-    "analyse de dépendance géométrique"
+    "utilisation de la définition de la puissance d'un point"
   ],
   "objects": [
     "cercle",
     "point",
     "droite",
-    "vecteurs"
+    "vecteurs",
+    "produit scalaire"
   ],
-  "content_hash": "484979a62786aaaf3da470b876a5ec00d3b8b0d98eac46592e4663f0591a0e19",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:23:44.894Z"
+  "content_hash": "e364045750e9aaf69228472aa2b4bafcfdb5065597fd34419fd5a0a1dc0147eb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:16.132Z"
 }

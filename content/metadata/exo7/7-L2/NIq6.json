@@ -1,27 +1,29 @@
 {
   "uuid": "NIq6",
   "source_path": "exo7/7-L2/NIq6.tex",
-  "summary": "L'exercice demande de modéliser le poids des paquets par une loi de probabilité et de calculer des probabilités associées à des intervalles de poids spécifiques. Le contexte concret est celui d'une machine produisant des paquets de 500g avec une variabilité modélisée par un écart-type de 25g.",
+  "summary": "L'exercice modélise le poids de paquets par une loi normale d'espérance 500g et d'écart-type 25g. Il demande de calculer des probabilités d'intervalles et de quantiles pour estimer le nombre de paquets dans des plages de poids données.",
   "concepts": [
     "loi normale",
-    "espérance",
-    "écart-type",
     "standardisation",
     "probabilité conditionnelle",
-    "intervalle de confiance"
+    "quantile",
+    "intervalle de confiance",
+    "espérance",
+    "écart-type"
   ],
   "methods": [
     "standardisation",
     "utilisation de la table de la loi normale centrée réduite",
     "calcul de probabilités par symétrie",
-    "recherche de quantiles"
+    "recherche de quantile"
   ],
   "objects": [
     "variable aléatoire normale",
-    "intervalle de poids",
-    "quantile"
+    "intervalle de confiance",
+    "quantile",
+    "probabilité conditionnelle"
   ],
-  "content_hash": "c6ca0d479a43c4822952f28710b04097062a0cbc52b99bb9a76e0fdeca94efe3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:48:03.506Z"
+  "content_hash": "3145da88a08768a5c8212793d04d401146608fefe47f9d2755dd2dcff0b8773b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:35.743Z"
 }

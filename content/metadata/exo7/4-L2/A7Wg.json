@@ -1,29 +1,32 @@
 {
   "uuid": "A7Wg",
   "source_path": "exo7/4-L2/A7Wg.tex",
-  "summary": "L'exercice demande de montrer qu'une famille d'applications définies par évaluation en des points distincts forme une base de l'espace dual d'un espace de polynômes complexes, puis d'exprimer une intégrale de polynômes comme combinaison linéaire de leurs valeurs en ces points.",
+  "summary": "L'exercice demande de montrer qu'une famille d'évaluations en des points distincts forme une base de l'espace dual d'un espace de polynômes complexes, puis d'exprimer une intégrale de polynômes comme une combinaison linéaire de leurs valeurs en ces points.",
   "concepts": [
     "espace vectoriel",
     "espace dual",
     "forme linéaire",
     "base d'un espace vectoriel",
     "famille libre",
-    "dimension d'un espace vectoriel",
-    "intégrale de fonction"
+    "famille génératrice",
+    "polynôme de Lagrange",
+    "intégrale de fonction polynomiale"
   ],
   "methods": [
-    "vérification de la liberté d'une famille",
-    "construction explicite de la préduale",
-    "expression d'une forme linéaire dans une base duale",
-    "calcul de coefficients par évaluation"
+    "vérification de linéarité",
+    "construction de la base duale",
+    "utilisation des polynômes de Lagrange",
+    "décomposition en base duale",
+    "calcul d'intégrale de polynôme"
   ],
   "objects": [
     "espace des polynômes complexes",
-    "famille d'évaluations en des points distincts",
-    "intégrale de polynômes",
-    "polynômes de Lagrange"
+    "famille d'évaluations",
+    "forme linéaire d'intégration",
+    "polynômes de Lagrange",
+    "combinaison linéaire de valeurs"
   ],
-  "content_hash": "52e8d0e3ffea9c97e116adbe2f0bd230ff30e779f2d4ef5ecc98bf8329ce0709",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:06:03.506Z"
+  "content_hash": "d59c239ae11275e48929d88d1c05eaf5b512bf12f118a270aed2587fde2f9fd1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:57.724Z"
 }

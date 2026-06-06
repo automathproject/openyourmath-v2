@@ -1,29 +1,32 @@
 {
   "uuid": "hJu9",
   "source_path": "exo7/5-L2/hJu9.tex",
-  "summary": "Montrer que deux applications continues d'un espace vectoriel normé dans un autre, qui coïncident sur une partie dense, sont égales. Déterminer tous les morphismes continus de (ℝ,+) dans lui-même.",
+  "summary": "L'exercice demande de prouver l'unicité de deux applications continues égales sur une partie dense, puis de déterminer tous les morphismes continus de (ℝ,+) dans lui-même. Le premier cas utilise la densité et la continuité, le second exploite la structure additive de ℝ.",
   "concepts": [
-    "espace vectoriel normé",
-    "application continue",
-    "partie dense",
+    "densité d'une partie",
+    "continuité d'une application",
     "morphisme de groupe",
-    "continuité",
-    "densité",
-    "limite de suite"
+    "structure additive de ℝ",
+    "unicité d'une application continue",
+    "linéarité",
+    "groupe additif"
   ],
   "methods": [
     "utilisation de la densité",
     "passage à la limite",
-    "linéarité",
-    "continuité séquentielle"
+    "récurrence",
+    "extension par continuité",
+    "vérification de la linéarité"
   ],
   "objects": [
-    "applications continues",
+    "espace vectoriel normé",
+    "application continue",
     "partie dense",
-    "morphismes de groupe",
-    "suites convergentes"
+    "morphisme de groupe",
+    "groupe additif (ℝ,+)",
+    "application linéaire"
   ],
-  "content_hash": "600297d72ced850230debe8a5a62893facd16bef6258c38d5a4aff7f4b35555f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:04:16.371Z"
+  "content_hash": "2968189cf87fe132da5e0428b9f252c2cfdd541a80b1d9e197f7ccafbf245e43",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:27.093Z"
 }

@@ -1,29 +1,30 @@
 {
   "uuid": "5RrY",
   "source_path": "exo7/1-L1/5RrY.tex",
-  "summary": "L'exercice demande de montrer que quatre fonctions spécifiques sont linéairement indépendantes dans l'espace vectoriel des fonctions réelles indéfiniment dérivables, puis de déterminer la matrice d'un endomorphisme dans la base formée par ces fonctions et de calculer sa puissance n-ième.",
+  "summary": "L'exercice demande de montrer que quatre fonctions composées de cosinus/hyperbolique et sinus/hyperbolique sont linéairement indépendantes et appartiennent à l'espace des fonctions indéfiniment dérivables. Il s'agit ensuite de déterminer la matrice d'un endomorphisme (la dérivée) dans la base formée par ces fonctions et de calculer sa puissance n-ième.",
   "concepts": [
     "espace vectoriel",
-    "fonction dérivable",
-    "indépendance linéaire",
-    "sous-espace vectoriel",
+    "linéaire indépendance",
     "endomorphisme",
-    "stabilité par un endomorphisme",
-    "matrice d'un endomorphisme"
+    "sous-espace stable",
+    "matrice d'application linéaire",
+    "dérivation",
+    "base d'un espace vectoriel"
   ],
   "methods": [
+    "vérification de linéaire indépendance",
     "calcul de dérivées",
-    "vérification d'indépendance linéaire",
     "détermination de la matrice d'un endomorphisme",
     "calcul de puissance de matrice"
   ],
   "objects": [
-    "fonctions réelles indéfiniment dérivables",
-    "sous-espace vectoriel engendré",
+    "fonctions indéfiniment dérivables",
+    "sous-espace vectoriel",
     "endomorphisme de dérivation",
-    "matrice d'un endomorphisme"
+    "matrice carrée 4x4",
+    "base de fonctions"
   ],
-  "content_hash": "6d6f192674027b23fd4fc87738acb928bc63b83b81f56c3c35670c3539bd6826",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:41:51.769Z"
+  "content_hash": "8dae0552bcbaade1e79039730553ce995afccbd471562ec3834e55d2abc50196",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:48.059Z"
 }

@@ -1,23 +1,25 @@
 {
   "uuid": "K6cU",
   "source_path": "exo7/8-L3/K6cU.tex",
-  "summary": "Montrer qu'un groupe d'ordre p², où p est un nombre premier, est abélien en utilisant la non-trivialité du centre d'un p-groupe.",
+  "summary": "Montrer qu'un groupe d'ordre p², où p est un nombre premier, est abélien en utilisant la propriété que le centre d'un p-groupe est non trivial.",
   "concepts": [
     "groupe abélien",
+    "groupe d'ordre fini",
     "p-groupe",
     "centre d'un groupe",
-    "formule des classes",
-    "sous-groupe distingué"
+    "sous-groupe distingué",
+    "formule des classes"
   ],
   "methods": [
     "utilisation du centre d'un groupe",
-    "application de la formule des classes"
+    "application de propriétés des p-groupes"
   ],
   "objects": [
     "groupe d'ordre p²",
-    "centre d'un groupe"
+    "centre d'un groupe",
+    "sous-groupe distingué"
   ],
-  "content_hash": "7519ab490d5cc16200abb46223d690fb58af71267dfbfead8f8743c5a799615a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:56:43.881Z"
+  "content_hash": "ebf8f8985f98ba26cafc9f9a09e6ec157b8dd367ad4107914d42a51fee4355ce",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:53.014Z"
 }

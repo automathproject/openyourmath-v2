@@ -1,0 +1,30 @@
+{
+  "uuid": "N94v",
+  "source_path": "amscc/N94v.tex",
+  "summary": "L'exercice porte sur le décodage de messages encodés par une transformation linéaire représentée par une matrice. Il demande de calculer le déterminant d'une matrice pour en déduire son inversibilité, puis d'utiliser la méthode de Gauss-Jordan pour trouver son inverse. Enfin, il s'agit de décoder des vecteurs codés et d'analyser un système de codage défaillant.",
+  "concepts": [
+    "déterminant d'une matrice",
+    "inversibilité d'une matrice",
+    "matrice inversible",
+    "application linéaire",
+    "dépendance linéaire",
+    "système de codage",
+    "matrice de transformation"
+  ],
+  "methods": [
+    "développement du déterminant",
+    "méthode de Gauss-Jordan",
+    "calcul de produit matriciel",
+    "analyse de dépendance linéaire"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "vecteur de R^3",
+    "matrice inverse",
+    "système linéaire",
+    "vecteurs codés"
+  ],
+  "content_hash": "2d58a136952cf0c1edba3893686666dc211368c144c3c2b0e809e1115f6dfd56",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:20.781Z"
+}

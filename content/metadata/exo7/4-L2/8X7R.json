@@ -1,30 +1,32 @@
 {
   "uuid": "8X7R",
   "source_path": "exo7/4-L2/8X7R.tex",
-  "summary": "Calculer la puissance n-ième d'une matrice donnée pour tout entier relatif n en utilisant trois méthodes différentes.",
+  "summary": "Calculer la puissance n-ième d'une matrice symétrique 3x3 donnée, pour tout entier relatif n, en utilisant trois méthodes distinctes : décomposition binomiale, diagonalisation et polynôme annulateur.",
   "concepts": [
+    "matrice symétrique",
+    "valeur propre",
+    "sous-espace propre",
+    "polynôme caractéristique",
     "polynôme annulateur",
-    "valeurs propres",
-    "vecteurs propres",
-    "théorème de Cayley-Hamilton",
     "décomposition spectrale",
     "binôme de Newton",
-    "trace d'une matrice",
-    "rang d'une matrice"
+    "commutativité des matrices"
   ],
   "methods": [
-    "décomposition en matrices élémentaires",
+    "décomposition binomiale",
     "diagonalisation",
-    "division euclidienne de polynômes",
     "calcul de polynôme caractéristique",
-    "utilisation de la formule du binôme"
+    "inversion de matrice",
+    "calcul de sous-espaces propres"
   ],
   "objects": [
-    "matrice carrée",
-    "polynôme caractéristique",
-    "base de vecteurs propres"
+    "matrice 3x3",
+    "puissance de matrice",
+    "valeurs propres",
+    "sous-espaces propres",
+    "polynôme caractéristique"
   ],
-  "content_hash": "f5e0a233c6edca65727a4dea9355486f8d041cb17396b2bed3ee45f84331c1c3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:17:53.577Z"
+  "content_hash": "b37f5fe10c614b1447eb0476b89890eed85beae0ba6e25b88793505ebb8a949a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:44.766Z"
 }

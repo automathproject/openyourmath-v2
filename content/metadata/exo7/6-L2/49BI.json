@@ -1,27 +1,30 @@
 {
   "uuid": "49BI",
   "source_path": "exo7/6-L2/49BI.tex",
-  "summary": "Dans un triangle rectangle non isocèle ABC, on montre que le triangle IDE est rectangle isocèle en I, où I est l'intersection de la médiatrice de BC et du demi-cercle circonscrit, et D, E sont des points sur AB et AC vérifiant BD = CE.",
+  "summary": "Dans un triangle rectangle non isocèle ABC, on considère la médiatrice de [BC] et le demi-cercle circonscrit. On place des points D et E sur [AB] et [AC] tels que BD = CE. L'exercice demande de prouver que le triangle IDE est rectangle isocèle en I.",
   "concepts": [
     "géométrie affine euclidienne",
     "similitude directe",
     "isométrie",
     "rotation",
     "angle géométrique",
-    "triangle rectangle"
+    "médiatrice d'un segment",
+    "demi-cercle circonscrit"
   ],
   "methods": [
-    "utilisation de similitudes",
-    "propriétés des rotations",
-    "calcul d'angle entre vecteurs"
+    "identification de similitude",
+    "détermination du centre de rotation",
+    "calcul d'angle entre vecteurs",
+    "utilisation des propriétés des rotations"
   ],
   "objects": [
     "triangle rectangle",
-    "médiatrice",
+    "médiatrice d'un segment",
     "demi-cercle circonscrit",
-    "points D et E sur les côtés"
+    "points D et E sur les côtés",
+    "triangle IDE"
   ],
-  "content_hash": "252d8f9cab03a0a5847553d4c93c09a74ad8d145ab5bfd0006ed9397d1c47a74",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:20:54.754Z"
+  "content_hash": "e1f256c546fe6cb2378c6f401680cd8f4741920c3dfb6b742485fd1e445430ba",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:08.356Z"
 }

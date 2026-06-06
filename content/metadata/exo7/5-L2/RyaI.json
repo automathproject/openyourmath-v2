@@ -1,27 +1,30 @@
 {
   "uuid": "RyaI",
   "source_path": "exo7/5-L2/RyaI.tex",
-  "summary": "Calculer le logarithme matriciel d'une matrice identité plus un multiple d'une matrice donnée, en déterminant le domaine de convergence de la série associée.",
+  "summary": "Calculer le logarithme matriciel ln(I₃ + tA) sous forme de série entière et déterminer le domaine de convergence de cette série, où A est une matrice 3x3 donnée.",
   "concepts": [
     "polynôme caractéristique",
     "décomposition spectrale",
     "série entière de matrices",
     "convergence de série entière",
-    "logarithme matriciel"
+    "valeurs propres",
+    "diagonalisation"
   ],
   "methods": [
     "calcul du polynôme caractéristique",
     "division euclidienne de polynômes",
+    "résolution de système linéaire",
     "développement en série entière",
-    "évaluation en racines"
+    "évaluation en points particuliers"
   ],
   "objects": [
-    "matrice carrée",
+    "matrice 3x3",
     "polynôme caractéristique",
     "série entière de matrices",
-    "logarithme matriciel"
+    "valeurs propres",
+    "matrice identité"
   ],
-  "content_hash": "e357e0548c2458f7dd94b47d31631c12021edf9dc635acdf965f9333d336e147",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:56:09.295Z"
+  "content_hash": "fe03bf401f7ec55e9f619b9aecc3597a8007d2f9d3d652aaad5ae94b81d9adea",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:16.632Z"
 }

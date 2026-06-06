@@ -1,26 +1,28 @@
 {
   "uuid": "Igie",
   "source_path": "exo7/4-L2/Igie.tex",
-  "summary": "Montrer une identité sur le déterminant d'une matrice 3x3 symétrique dépendant de trois paramètres réels a, b, c.",
+  "summary": "Montrer l'égalité d'un déterminant 3x3 spécifique à une expression factorisée en produit de trois termes linéaires. L'exercice demande de prouver une identité algébrique impliquant des déterminants.",
   "concepts": [
     "déterminant",
     "polynôme en une variable",
     "racines d'un polynôme",
-    "continuité",
-    "limite"
+    "symétrie des variables",
+    "continuité des fonctions",
+    "limite de fonctions"
   ],
   "methods": [
-    "factorisation",
+    "factorisation de polynômes",
     "évaluation en points particuliers",
-    "symétrie des rôles des variables",
-    "passage à la limite"
+    "développement de déterminant",
+    "raisonnement par continuité",
+    "analyse des cas particuliers"
   ],
   "objects": [
     "matrice 3x3",
     "polynôme de degré 2",
-    "fonction continue"
+    "fonction déterminant"
   ],
-  "content_hash": "e83db6ed190ec79021ee8fb713b3b14623742c17fa6871950986c131f680b007",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:43:52.021Z"
+  "content_hash": "b48a21ab67ea056e985d9fa4dfa9064d42fc377a7004aac6e86eafa568c1fd61",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:40:31.378Z"
 }

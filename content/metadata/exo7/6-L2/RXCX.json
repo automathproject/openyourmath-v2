@@ -9,15 +9,24 @@
     "primitive d'une forme différentielle",
     "facteur intégrant",
     "classe C^1",
-    "ouvert étoilé"
+    "ouvert étoilé",
+    "convexité"
   ],
-  "methods": [],
+  "methods": [
+    "calcul des dérivées partielles",
+    "intégration de formes différentielles",
+    "recherche de facteur intégrant",
+    "vérification de l'exactitude",
+    "utilisation du théorème de Schwarz"
+  ],
   "objects": [
-    "formes différentielles",
-    "primitives",
+    "forme différentielle",
+    "fonction de classe C^1",
+    "ouvert étoilé",
+    "primitive",
     "facteur intégrant"
   ],
-  "content_hash": "9b5e75bde7f5d0865612bbbba23470a03c2b27d6a5434eef2c99ca24be7beacb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:43:21.429Z"
+  "content_hash": "64b94f62e2cb8d38c2f52a284cd32a3e80dcfa6552eb7cd739a04479ead8b2a2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:32:36.444Z"
 }

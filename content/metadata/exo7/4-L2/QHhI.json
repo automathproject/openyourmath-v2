@@ -1,7 +1,7 @@
 {
   "uuid": "QHhI",
   "source_path": "exo7/4-L2/QHhI.tex",
-  "summary": "L'exercice demande de vérifier qu'une application linéaire définie sur l'espace des polynômes de degré 3 à coefficients réels est un endomorphisme, puis de déterminer son noyau, son image et ses valeurs et vecteurs propres.",
+  "summary": "L'exercice demande de vérifier qu'une application linéaire définie par un reste de division euclidienne est un endomorphisme d'un espace de polynômes, puis de déterminer son noyau, son image et ses valeurs/vecteurs propres. L'application est définie sur l'espace des polynômes réels de degré ≤ 3.",
   "concepts": [
     "endomorphisme",
     "noyau d'un endomorphisme",
@@ -10,23 +10,23 @@
     "vecteur propre",
     "polynôme annulateur",
     "diagonalisation",
-    "polynôme de Lagrange"
+    "polynôme caractéristique"
   ],
   "methods": [
-    "division euclidienne",
+    "division euclidienne de polynômes",
     "calcul de polynôme caractéristique",
-    "détermination de valeurs propres",
+    "recherche de valeurs propres",
     "détermination de vecteurs propres",
-    "factorisation de polynômes"
+    "calcul de noyau et image"
   ],
   "objects": [
     "espace vectoriel de polynômes",
     "matrice d'endomorphisme",
     "polynôme caractéristique",
     "vecteurs propres",
-    "polynôme de Lagrange"
+    "noyau et image d'endomorphisme"
   ],
-  "content_hash": "74364e9ef575f5d5f3bbe0715090ec17159ac358ee3693cd6c0703acd0405cb6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:42:28.344Z"
+  "content_hash": "aca1c1d1f9eaab379ee60b3742ce1365e4e46e0d22b42c3c136c7cc15d44d982",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:49.061Z"
 }

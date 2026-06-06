@@ -1,20 +1,21 @@
 {
   "uuid": "ARHJ",
   "source_path": "exo7/14-L3/ARHJ.tex",
-  "summary": "L'exercice demande de démontrer une égalité d'intégrales impliquant la transformée de Fourier de deux fonctions intégrables selon la mesure de Lebesgue, puis de prouver une relation entre la transformée de Fourier d'une convolution et le produit des transformées de Fourier.",
+  "summary": "L'exercice demande de démontrer deux propriétés de la transformée de Fourier dans l'espace L^1. La première égalité relie l'intégrale d'une fonction avec sa transformée de Fourier, et la seconde montre que la transformée de Fourier d'une convolution est le produit des transformées de Fourier des fonctions originales.",
   "concepts": [
     "transformée de Fourier",
-    "mesure de Lebesgue",
-    "intégrabilité",
-    "théorème de Fubini",
+    "intégrale de Lebesgue",
     "convolution",
-    "produit scalaire"
+    "théorème de Fubini",
+    "espace L^1",
+    "produit scalaire",
+    "intégrabilité"
   ],
   "methods": [
-    "intégration par parties",
     "changement de variable",
-    "application du théorème de Fubini",
-    "définition de la transformée de Fourier"
+    "intégration par parties",
+    "théorème de Fubini",
+    "décomposition d'intégrales"
   ],
   "objects": [
     "fonction intégrable",
@@ -22,7 +23,7 @@
     "convolution de fonctions",
     "produit scalaire"
   ],
-  "content_hash": "58f5848161930a3e95b8c7eadb52d00cdc9fa5e61a276e1dfca8f556a4321759",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:24:17.807Z"
+  "content_hash": "4dc16a6ec3770b46695ffce5a5dd8ac4d7b6822c5890b4efd90082c7eeb0a9de",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:16.178Z"
 }

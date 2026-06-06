@@ -1,30 +1,29 @@
 {
   "uuid": "tYHb",
   "source_path": "exo7/2-L1/tYHb.tex",
-  "summary": "L'exercice demande de déterminer la nature de la série de terme général v_n en fonction de la nature de la série de terme général u_n, puis d'en calculer la somme en cas de convergence. La suite u_n est composée de réels positifs.",
+  "summary": "L'exercice demande de déterminer la nature de la série de terme général v_n = u_n / [(1+u_1)...(1+u_n)] en fonction de la nature de la série de terme général u_n, puis d'en calculer la somme si elle converge. La suite (u_n) est une suite de réels positifs.",
   "concepts": [
     "série numérique",
     "série à termes positifs",
-    "convergence de série",
+    "convergence de séries",
     "somme télescopique",
     "équivalence asymptotique",
-    "limite de suite",
-    "produit de termes"
+    "limite de suites",
+    "produit infini"
   ],
   "methods": [
     "décomposition en différences",
     "téléscopage",
     "équivalence asymptotique",
-    "calcul de limite de suite",
-    "convergence de produit"
+    "étude de la limite de suites"
   ],
   "objects": [
     "suite numérique",
     "série numérique",
-    "terme général",
-    "produit de termes"
+    "produit de termes",
+    "somme télescopique"
   ],
-  "content_hash": "db8f54367cd2d5e73bb77d8272e4899c2b6dfa32f6b7a48e049d210835a03f5b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:35:14.147Z"
+  "content_hash": "158c1e8bfbb3e121589bc9b74f2acb5cdc30aaf24e23d8de2abc976e73e372b4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:30.559Z"
 }

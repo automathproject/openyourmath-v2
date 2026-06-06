@@ -1,34 +1,32 @@
 {
   "uuid": "bzou",
   "source_path": "amscc/bzou.tex",
-  "summary": "Un chercheur en psychologie cognitive compare l'efficacité de 5 méthodes d'apprentissage sur la mémorisation de mots. Il analyse les scores de rappel de 30 étudiants répartis en 5 groupes. L'exercice demande de formuler des hypothèses statistiques, calculer des statistiques descriptives, réaliser une ANOVA à un facteur et interpréter la taille d'effet.",
+  "summary": "Un chercheur étudie l'impact de cinq méthodes d'apprentissage sur les performances de mémorisation de 30 étudiants répartis en groupes. L'exercice demande de formuler les hypothèses d'un test ANOVA, de calculer des statistiques descriptives, d'effectuer une ANOVA à un facteur et d'interpréter la taille d'effet.",
   "concepts": [
-    "analyse de variance (ANOVA)",
-    "hypothèses statistiques",
-    "moyenne",
-    "variance",
-    "taille d'effet",
     "test d'hypothèses",
-    "comparaison de moyennes",
-    "modèle linéaire"
+    "ANOVA à un facteur",
+    "hypothèse nulle",
+    "hypothèse alternative",
+    "variance",
+    "moyenne",
+    "taille d'effet",
+    "degrés de liberté"
   ],
   "methods": [
     "calcul de moyenne",
     "calcul de variance",
-    "calcul des sommes de carrés",
+    "calcul de somme des carrés",
     "calcul de la statistique F",
-    "calcul de la taille d'effet (η²)",
-    "interprétation des résultats statistiques"
+    "interprétation de la taille d'effet"
   ],
   "objects": [
-    "moyennes par groupe",
-    "variances par groupe",
+    "moyennes de groupes",
+    "variances de groupes",
     "somme des carrés inter-groupe",
     "somme des carrés intra-groupe",
-    "statistique F",
-    "taille d'effet (η²)"
+    "statistique F"
   ],
-  "content_hash": "b7611d20a1073ea57a28d549a92891a70621b89ddbaeaeb04a2671e499c790af",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:46:52.223Z"
+  "content_hash": "4a457bcf0ba0a9a6babec88c3bd76c3f8009d0cae5fbb249e96becfb437e10f7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:42.256Z"
 }

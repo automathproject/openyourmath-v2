@@ -1,24 +1,27 @@
 {
   "uuid": "ntZk",
   "source_path": "exo7/6-L2/ntZk.tex",
-  "summary": "Montrer qu'une courbe continue dans le plan complexe peut être approchée uniformément par une courbe qui évite un point donné.",
+  "summary": "Montrer qu'une courbe continue dans le plan complexe peut être approchée uniformément par une courbe continue ne passant pas par un point donné. L'énoncé demande de construire une fonction continue modifiée évitant un point z tout en restant proche de la courbe originale.",
   "concepts": [
     "continuité uniforme",
-    "approximation uniforme",
-    "fonction continue",
-    "espace métrique",
-    "topologie de la droite réelle"
+    "approximation de fonctions continues",
+    "topologie de la droite réelle",
+    "propriété de séparation des espaces métriques",
+    "densité des ouverts dans ℂ"
   ],
   "methods": [
     "approximation par fonctions continues",
-    "construction explicite de fonction"
+    "construction explicite de fonction",
+    "utilisation de la continuité",
+    "argument par densité"
   ],
   "objects": [
-    "courbe continue",
-    "fonction complexe",
-    "point du plan complexe"
+    "fonction continue de [0,1] dans ℂ",
+    "point du plan complexe",
+    "courbe plane",
+    "distance dans ℂ"
   ],
-  "content_hash": "b1640319c14ac5ea105ede442953771bd7a6ade712856e759bc69520cc7838b5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:04:31.697Z"
+  "content_hash": "8f6fd5f234aceb4e3072e7cd6dbc03d8b46dc033dc3db27da20e008958d1322d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:14.695Z"
 }

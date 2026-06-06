@@ -1,30 +1,29 @@
 {
   "uuid": "XrD2",
   "source_path": "exo7/2-L1/XrD2.tex",
-  "summary": "L'exercice demande d'étudier les propriétés de la borne supérieure des ensembles A ∩ B, A ∪ B, A + B et AB, où A et B sont deux parties non vides et majorées de ℝ.",
+  "summary": "L'exercice demande d'étudier les propriétés de la borne supérieure des intersections, unions, sommes et produits de deux parties non vides et majorées de ℝ. Il s'agit d'exprimer sup(A∩B), sup(A∪B), sup(A+B) et sup(AB) en fonction des bornes supérieures de A et B.",
   "concepts": [
     "borne supérieure",
-    "ensemble majoré",
+    "majoration",
     "intersection d'ensembles",
-    "réunion d'ensembles",
+    "union d'ensembles",
     "somme d'ensembles",
     "produit d'ensembles",
     "propriétés de ℝ"
   ],
   "methods": [
-    "comparaison de bornes supérieures",
-    "utilisation de la définition de la borne supérieure",
-    "construction d'exemples"
+    "comparaison de bornes",
+    "construction d'exemples",
+    "utilisation de la définition de borne supérieure"
   ],
   "objects": [
     "parties de ℝ",
-    "borne supérieure d'un ensemble",
-    "intersection A ∩ B",
-    "réunion A ∪ B",
-    "somme A + B",
-    "produit AB"
+    "intersection d'ensembles",
+    "union d'ensembles",
+    "somme d'ensembles",
+    "produit d'ensembles"
   ],
-  "content_hash": "f504e5d2410f1bb5d181d1f477041fc73c38750992a660f2c7407f0123a840a8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:56:49.420Z"
+  "content_hash": "0e14fd107762a665eb99e81802b9a7c4de743c38edc1605ee947202a6deac114",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:13.592Z"
 }

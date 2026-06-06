@@ -1,29 +1,31 @@
 {
   "uuid": "KeW3",
   "source_path": "exo7/4-L2/KeW3.tex",
-  "summary": "L'exercice demande de déterminer l'orthogonal d'un sous-espace de matrices antisymétriques dans l'espace des matrices carrées réelles, puis de calculer la distance d'une matrice donnée à ce sous-espace.",
+  "summary": "L'exercice demande de déterminer l'orthogonal d'un sous-espace de matrices antisymétriques dans l'espace des matrices 3x3, puis de calculer la distance d'une matrice donnée à ce sous-espace.",
   "concepts": [
     "produit scalaire",
     "orthogonal d'un sous-espace",
-    "trace d'une matrice",
-    "projection orthogonale",
-    "distance dans un espace euclidien",
+    "matrice symétrique",
     "matrice antisymétrique",
-    "matrice symétrique"
+    "projection orthogonale",
+    "norme d'une matrice",
+    "trace d'une matrice",
+    "dimension d'un espace vectoriel"
   ],
   "methods": [
     "calcul de trace",
-    "détermination de l'orthogonal",
-    "projection orthogonale",
-    "calcul de norme"
+    "décomposition en partie symétrique et antisymétrique",
+    "calcul de norme matricielle",
+    "utilisation de la dimension pour identifier l'orthogonal"
   ],
   "objects": [
-    "espace des matrices carrées",
-    "sous-espace de matrices antisymétriques",
+    "espace vectoriel de matrices 3x3",
+    "sous-espace des matrices antisymétriques",
     "matrice donnée",
-    "projection symétrique"
+    "projection orthogonale",
+    "partie symétrique d'une matrice"
   ],
-  "content_hash": "54f34b6325447efa4d362b25c504fa2ff1e34fb75b834cf9f3b66b2d77628e39",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:16:23.749Z"
+  "content_hash": "6fb872f95fef30810a8e594432074987d166abb60906e9d1b4e524375a0cc7cf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:11.121Z"
 }

@@ -1,7 +1,7 @@
 {
   "uuid": "LIH1",
   "source_path": "exo7/2-L1/LIH1.tex",
-  "summary": "L'exercice demande d'étudier l'existence d'un développement limité d'ordre 0 et 1 pour la fonction Arccos en 1 à gauche, puis de déterminer un équivalent simple de Arccos x en 1.",
+  "summary": "L'exercice demande d'étudier l'existence d'un développement limité d'ordre 0 et 1 pour la fonction Arccos en 1 à gauche, puis de déterminer un équivalent simple de Arccos x au voisinage de 1.",
   "concepts": [
     "développement limité",
     "ordre d'un développement limité",
@@ -11,15 +11,15 @@
   ],
   "methods": [
     "étude de la dérivabilité",
-    "comparaison asymptotique",
-    "approximation d'ordre 0"
+    "comparaison des ordres de grandeur",
+    "approximation d'équivalent"
   ],
   "objects": [
     "fonction Arccos",
     "développement limité",
-    "équivalent simple"
+    "équivalent asymptotique"
   ],
-  "content_hash": "1a61ec3bd26545259592bbf5cc9c457d3093b3074a1dbc45dd72e71fe84a7b43",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:28:52.671Z"
+  "content_hash": "560272ac3fe024c3ad18309bd170af47d01afa66abe32a7aeb975b5101deec78",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:53.527Z"
 }

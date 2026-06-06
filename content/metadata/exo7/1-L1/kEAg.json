@@ -1,29 +1,27 @@
 {
   "uuid": "kEAg",
   "source_path": "exo7/1-L1/kEAg.tex",
-  "summary": "Résoudre une équation matricielle linéaire de la forme aM + Tr(M)A = B dans l'espace des matrices carrées réelles de taille n. L'énoncé demande de déterminer l'ensemble des solutions M selon les valeurs de a, Tr(A) et Tr(B).",
+  "summary": "Résoudre dans l'ensemble des matrices carrées réelles de taille n une équation linéaire de la forme aM + Tr(M)A = B, où a est un réel non nul et A, B sont des matrices données.",
   "concepts": [
     "trace d'une matrice",
-    "espace vectoriel de matrices",
-    "équation matricielle linéaire",
-    "système d'équations linéaires",
-    "condition d'existence de solution",
-    "sous-espace affine"
+    "équation matricielle",
+    "système linéaire",
+    "espace vectoriel des matrices",
+    "condition d'existence de solution"
   ],
   "methods": [
     "calcul de trace",
     "résolution d'équation matricielle",
-    "analyse de cas",
-    "substitution",
+    "discrimination de cas",
     "vérification de solution"
   ],
   "objects": [
     "matrice carrée réelle",
     "trace de matrice",
     "solution matricielle",
-    "système d'équations"
+    "paramètre scalaire"
   ],
-  "content_hash": "a4a77823cbc160bcc5227a044ea1384132b6577034ea9d9814860e245fc2f6d9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:14:03.828Z"
+  "content_hash": "2648134ab6295cdd51c378f4f328b0ffe229ef059e5ae0e46c1b5ee54757d839",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:57.264Z"
 }

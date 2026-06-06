@@ -1,32 +1,34 @@
 {
   "uuid": "D4RO",
   "source_path": "exo7/6-L2/D4RO.tex",
-  "summary": "Étude et traçage de trois courbes planes paramétrées : l'astroïde, une courbe impliquant la fonction hyperbolique tangente inverse et la fonction hyperbolique cosinus, et la cycloïde.",
+  "summary": "Étudier et tracer trois courbes planes paramétrées : l'astroïde, une courbe impliquant la fonction hyperbolique tangente, et la cycloïde. L'analyse porte sur la réduction de l'intervalle d'étude, les symétries, les variations conjointes des fonctions paramétriques, les points particuliers et les tangentes.",
   "concepts": [
     "courbe paramétrée",
     "périodicité",
     "symétrie",
-    "tableau de variations",
-    "points particuliers",
-    "tangente",
-    "points singuliers"
+    "fonction dérivée",
+    "point singulier",
+    "tangente à une courbe",
+    "variations conjointes",
+    "équivalents asymptotiques"
   ],
   "methods": [
     "réduction de l'intervalle d'étude",
     "analyse des symétries",
     "calcul des dérivées",
-    "étude des variations conjointes",
-    "calcul des points particuliers",
-    "détermination des tangentes"
+    "étude des variations",
+    "détermination des points particuliers",
+    "calcul de la tangente en un point"
   ],
   "objects": [
-    "courbe paramétrée",
-    "fonctions trigonométriques",
-    "fonctions hyperboliques",
+    "fonction paramétrique",
     "tableau de variations",
-    "points singuliers"
+    "point singulier",
+    "tangente",
+    "courbe astroïde",
+    "cycloïde"
   ],
-  "content_hash": "1db97c3a57b71f8fc5492ac9c819c5bd4c3b01fb93fcc60d8e9285b3e4ab08f1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:47:30.795Z"
+  "content_hash": "abc36fc7295f85d1a6532e41f824e5794c6f34825fd9541e31f2d7eef645f0b5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:42.167Z"
 }

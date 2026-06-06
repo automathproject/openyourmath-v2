@@ -1,27 +1,29 @@
 {
   "uuid": "gIxq",
   "source_path": "exo7/6-L2/gIxq.tex",
-  "summary": "L'exercice demande de calculer les différents angles d'un tétraèdre régulier, incluant les angles entre deux arêtes, entre une arête et une face, et entre deux faces.",
+  "summary": "L'exercice demande de calculer les différents angles d'un tétraèdre régulier : entre deux faces, entre deux arêtes et entre une arête et une face. Le tétraèdre est défini par ses faces triangulaires équilatérales.",
   "concepts": [
     "géométrie affine",
     "tétraèdre régulier",
+    "angle dièdre",
+    "angle entre arête et face",
     "triangle équilatéral",
-    "angle géométrique",
     "cosinus d'un angle",
     "sinus d'un angle"
   ],
   "methods": [
-    "calcul d'angle dans un triangle équilatéral",
+    "calcul d'angle à partir de distances",
     "utilisation de la fonction arccosinus",
-    "utilisation de la fonction arcsinus"
+    "utilisation de la fonction arcsinus",
+    "propriétés des triangles équilatéraux"
   ],
   "objects": [
     "tétraèdre régulier",
-    "arêtes",
-    "faces",
-    "angles"
+    "arête",
+    "face triangulaire",
+    "angle géométrique"
   ],
-  "content_hash": "237c91aecede23b385df7c433a7447038ece02d06d220cee33af0d08b0afb187",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:02:11.025Z"
+  "content_hash": "a773b614f26c6f26ff33e87623d4b50dfc2a91affe4a9d8bf02d025c090f88fd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:28.633Z"
 }

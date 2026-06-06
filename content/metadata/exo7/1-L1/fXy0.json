@@ -1,26 +1,29 @@
 {
   "uuid": "fXy0",
   "source_path": "exo7/1-L1/fXy0.tex",
-  "summary": "L'exercice demande de montrer que pour un nombre premier p et un entier k compris entre 1 et p-1, p divise le coefficient binomial Cp^k. Ensuite, il faut en déduire que pour tout entier n, np est congru à n modulo p.",
+  "summary": "Montrer que pour un nombre premier p, les coefficients binomiaux Cp^k sont divisibles par p lorsque 1 ≤ k ≤ p-1. En déduire le petit théorème de Fermat selon lequel tout entier n est congru à sa p-ième puissance modulo p.",
   "concepts": [
     "nombre premier",
     "coefficient binomial",
     "divisibilité",
-    "congruence",
+    "petit théorème de Fermat",
     "arithmétique modulaire",
-    "théorème de Fermat"
+    "division euclidienne",
+    "congruence"
   ],
   "methods": [
-    "raisonnement par divisibilité",
-    "utilisation des propriétés des coefficients binomiaux",
-    "développement binomial"
+    "raisonnement par récurrence",
+    "utilisation des propriétés des nombres premiers",
+    "développement binomial",
+    "calcul de congruences"
   ],
   "objects": [
     "coefficient binomial Cp^k",
+    "entier naturel n",
     "nombre premier p",
-    "entier n"
+    "congruence mod p"
   ],
-  "content_hash": "8a4bf5fd56fafd1b4ecfe740d3784af07e74365937a618e23f38fd7b0f7638df",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:09:09.200Z"
+  "content_hash": "7decabadf05bb7990db3e1b5d0980e2408bb191d6e203883f8a3a9b4e233b3c3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:34:37.147Z"
 }

@@ -1,29 +1,32 @@
 {
   "uuid": "QrPs",
   "source_path": "exo7/5-L2/QrPs.tex",
-  "summary": "L'exercice demande de démontrer deux égalités impliquant des séries infinies et des intégrales. La première égalité concerne le développement en série de la fonction logarithme. La seconde égalité établit une relation entre une intégrale impliquant des fonctions logarithmes et une série numérique.",
+  "summary": "L'exercice demande de démontrer deux égalités impliquant des séries et des intégrales. La première égalité relie le logarithme à une série entière, et la seconde établit une relation entre une intégrale de fonctions logarithmiques et une série numérique.",
   "concepts": [
     "série entière",
     "convergence uniforme",
     "théorème d'intégration terme à terme",
-    "intégration par parties",
     "intégrale impropre",
-    "fonction intégrable",
-    "convergence simple"
+    "développement en série de Taylor",
+    "intégration par parties",
+    "convergence simple",
+    "intégrabilité"
   ],
   "methods": [
     "développement en série",
     "intégration terme à terme",
     "intégration par parties",
-    "étude de la convergence d'une série"
+    "convergence normale",
+    "limite de fonctions"
   ],
   "objects": [
     "série de fonctions",
-    "intégrale de fonction",
+    "intégrale de fonction continue",
     "fonction logarithme",
-    "série numérique"
+    "série numérique",
+    "fonction intégrable"
   ],
-  "content_hash": "f4ab0992d932d78e27b22b43f97a9153b494597392e81cf9378250f5877e3cc2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:55:26.344Z"
+  "content_hash": "14f2193cf1cd55d27681b231aab9f66ec4a37860b91ed10b49bc210379d50ad9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:14.173Z"
 }

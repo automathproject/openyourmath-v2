@@ -1,28 +1,26 @@
 {
   "uuid": "di6Q",
   "source_path": "exo7/2-L1/di6Q.tex",
-  "summary": "L'exercice demande de déterminer la convergence ou la divergence de quatre intégrales impropres sans les calculer explicitement. Les intégrales portent sur des intervalles infinis ou des points de singularité.",
+  "summary": "L'exercice demande de déterminer la convergence ou la divergence de quatre intégrales impropres sans les calculer explicitement. Les intégrales portent sur des intervalles infinis ou en présence de singularités.",
   "concepts": [
     "intégrale impropre",
-    "convergence",
-    "divergence",
-    "comparaison asymptotique",
+    "convergence d'intégrale",
     "critère de comparaison",
-    "comportement asymptotique"
+    "comportement asymptotique",
+    "singularité intégrale"
   ],
   "methods": [
-    "analyse du comportement asymptotique",
-    "comparaison avec des intégrales de référence",
-    "étude des singularités"
+    "analyse du comportement aux bornes",
+    "comparaison avec intégrales de référence",
+    "décomposition en parties simples"
   ],
   "objects": [
-    "intégrale impropre",
-    "fonction rationnelle",
-    "fonction logarithmique",
-    "fonction trigonométrique",
-    "fonction hyperbolique"
+    "intégrale de fonction rationnelle",
+    "intégrale de fonction logarithmique",
+    "intégrale de fonction trigonométrique",
+    "intégrale de fonction hyperbolique"
   ],
-  "content_hash": "54c783686e48afd888589f5da6868c11d0a4950b474f4c56d348fbb4808f17c9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:42:39.496Z"
+  "content_hash": "800f542856088fc00b92f67d84b7c5c828d7cade76be643c55a3e84e62162ddc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:05.621Z"
 }

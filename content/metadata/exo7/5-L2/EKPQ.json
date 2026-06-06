@@ -1,26 +1,28 @@
 {
   "uuid": "EKPQ",
   "source_path": "exo7/5-L2/EKPQ.tex",
-  "summary": "On considère une fonction de classe C² vérifiant une inégalité différentielle. On demande de prouver une inégalité globale impliquant la fonction et son décalage de π.",
+  "summary": "Soit une fonction de classe C² vérifiant f(x) + f''(x) ≥ 0 pour tout x réel. Montrer que f(x) + f(x + π) ≥ 0 pour tout x réel.",
   "concepts": [
-    "équation différentielle linéaire",
-    "solution générale",
+    "équation différentielle linéaire du second ordre",
     "méthode de variation des constantes",
     "formules de Cramer",
-    "intégrale à paramètre"
+    "solution générale d'une équation différentielle",
+    "intégrale impropre",
+    "fonction continue positive"
   ],
   "methods": [
-    "résolution d'équation différentielle",
+    "résolution d'équation différentielle linéaire",
     "variation des constantes",
     "changement de variable",
     "intégration par parties"
   ],
   "objects": [
     "fonction de classe C²",
-    "solution particulière",
-    "intégrale dépendant d'un paramètre"
+    "solution particulière d'équation différentielle",
+    "intégrale dépendant d'un paramètre",
+    "fonction trigonométrique"
   ],
-  "content_hash": "b2e9b0f3177fba0aabe8285a5ad58bac354827bb6a84e40d10f1a2bad58a4d45",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:20:55.326Z"
+  "content_hash": "a957741fa3bfeea884d3fcdf355a5fd49ecedb42fac668798087929f83a3fb3c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:27.247Z"
 }

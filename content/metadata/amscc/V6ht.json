@@ -1,0 +1,32 @@
+{
+  "uuid": "V6ht",
+  "source_path": "amscc/V6ht.tex",
+  "summary": "L'exercice demande de déterminer le reste de la division euclidienne d'un polynôme P_n(X) = X^n + 3X - 2 par D(X) = (X-1)^2, puis d'étudier la factorisation et la décomposition en éléments simples d'un autre polynôme Q(X) = X^3 - 5X^2 + 8X - 6.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "racine simple",
+    "factorisation de polynômes",
+    "irréductibilité dans ℝ[X]",
+    "décomposition en éléments simples",
+    "limite de fractions rationnelles",
+    "discriminant d'un polynôme du second degré"
+  ],
+  "methods": [
+    "identification des coefficients",
+    "évaluation en un point",
+    "dérivation formelle",
+    "calcul de limite",
+    "décomposition en facteurs irréductibles",
+    "décomposition en éléments simples"
+  ],
+  "objects": [
+    "polynôme P_n(X)",
+    "polynôme D(X)",
+    "polynôme Q(X)",
+    "polynôme S(X)",
+    "fraction rationnelle 1/Q(X)"
+  ],
+  "content_hash": "c73ae45627bee25ccd71e514755f1ade5d36f1579c50774bbaf7ec228e180e3b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:01.448Z"
+}

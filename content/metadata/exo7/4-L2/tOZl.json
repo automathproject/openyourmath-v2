@@ -1,31 +1,30 @@
 {
   "uuid": "tOZl",
   "source_path": "exo7/4-L2/tOZl.tex",
-  "summary": "L'exercice demande d'analyser les propriétés structurelles de groupes finis, notamment les ordres des éléments, les éléments inversibles, les générateurs et la cyclicité de groupes de type (ℤ/nℤ)⁺.",
+  "summary": "L'exercice aborde plusieurs questions sur les groupes finis, notamment les ordres possibles des éléments d'un groupe d'ordre 6, les éléments inversibles dans Z/7Z, la construction de la table de multiplication du groupe multiplicatif (Z/7Z)*, la recherche de générateurs, et l'étude de la cyclicité de certains groupes produits.",
   "concepts": [
     "théorème de Lagrange",
     "groupe cyclique",
-    "élément inversible",
     "ordre d'un élément",
-    "groupe produit",
-    "isomorphisme de groupes",
+    "groupe multiplicatif d'un anneau quotient",
     "théorème des restes chinois",
+    "isomorphisme de groupes",
     "fonction indicatrice d'Euler"
   ],
   "methods": [
-    "calcul des diviseurs",
-    "vérification de la cyclicité",
-    "détermination des générateurs",
-    "analyse de l'ordre des éléments"
+    "calcul d'ordre d'un élément",
+    "construction de table de multiplication",
+    "identification de générateurs",
+    "décomposition en produit de groupes cycliques",
+    "vérification de la cyclicité"
   ],
   "objects": [
     "groupe d'ordre 6",
-    "ℤ/7ℤ⁺",
-    "ℤ/2ℤ × ℤ/4ℤ",
-    "ℤ/20ℤ⁺",
-    "table de multiplication"
+    "groupe (Z/7Z)*, groupe (Z/20Z)*, groupe Z/2Z × Z/4Z",
+    "éléments inversibles",
+    "générateur de groupe"
   ],
-  "content_hash": "5fe8025070acc9cc5f40a5a599fe5af7f9e930533a02ee581d00abf45ccb7fa0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:17:25.455Z"
+  "content_hash": "b18716a881b94d406007c15dbf00fa687c98bb0fb990431adeea5e5e097b1237",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:51:11.583Z"
 }

@@ -1,28 +1,30 @@
 {
   "uuid": "5nl8",
   "source_path": "exo7/5-L2/5nl8.tex",
-  "summary": "Développer en série entière la fonction F(x) définie par une intégrale impliquant une exponentielle et une fonction sinus, puis en déduire une expression alternative pour F(x).",
+  "summary": "Développer en série entière la fonction F(x) définie par une intégrale impliquant une exponentielle et une fonction sinus, puis établir une relation entre cette série et une autre intégrale. L'exercice mobilise des techniques d'analyse avancée pour manipuler des séries et des intégrales.",
   "concepts": [
     "séries entières",
     "intégration terme à terme",
-    "développement en série de Taylor",
-    "fonction intégrable",
+    "convergence simple",
+    "convergence absolue",
     "règle de d'Alembert",
-    "équation différentielle"
+    "fonction intégrable",
+    "intégration par parties"
   ],
   "methods": [
-    "développement en série de Taylor",
-    "intégration par parties",
+    "développement en série entière",
     "intégration terme à terme",
-    "résolution d'équation différentielle"
+    "intégration par parties",
+    "application de la règle de d'Alembert",
+    "étude de la négligeabilité"
   ],
   "objects": [
-    "fonction définie par intégrale",
-    "série entière",
-    "fonction dérivée",
-    "intégrale impropre"
+    "fonction intégrale",
+    "série de fonctions",
+    "intégrale impropre",
+    "somme de séries"
   ],
-  "content_hash": "9a4b7bb17ae6cdc17fc9e8a0cb684d6b930e9e2f01d87380c641f7e2782a2f66",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:35:04.276Z"
+  "content_hash": "2292a7b66dfe87df6fed200f9764d1aa91c63697dd4c60229b36d8e4d59b1b95",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:38.474Z"
 }

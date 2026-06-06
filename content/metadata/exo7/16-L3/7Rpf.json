@@ -1,29 +1,28 @@
 {
   "uuid": "7Rpf",
   "source_path": "exo7/16-L3/7Rpf.tex",
-  "summary": "L'exercice demande de prouver une égalité entre une norme L² moyenne de la fonction holomorphe et une somme de coefficients de sa série de Taylor, puis d'en déduire des propriétés de continuité et de croissance d'une fonction associée, et enfin d'établir les inégalités de Cauchy.",
+  "summary": "L'exercice demande de prouver une égalité entre une norme L² moyenne de la fonction holomorphe f sur un cercle de rayon r et la norme L² de sa série de Taylor, puis d'en déduire la continuité et la croissance de cette norme L², et enfin d'établir les inégalités de Cauchy.",
   "concepts": [
     "fonction holomorphe",
     "série de Taylor",
     "norme L²",
     "inégalités de Cauchy",
     "continuité",
-    "croissance d'une fonction"
+    "croissance des fonctions"
   ],
   "methods": [
     "développement en série entière",
-    "intégration sur le cercle",
-    "inégalités de Cauchy",
-    "analyse de la continuité",
-    "analyse de la croissance"
+    "intégration sur un cercle",
+    "inégalités de Cauchy-Schwarz",
+    "passage à la limite sous le signe somme"
   ],
   "objects": [
     "fonction holomorphe",
     "série de Taylor",
     "norme L² moyenne",
-    "fonction continue croissante"
+    "rayon de convergence"
   ],
-  "content_hash": "c93b4671d223998c46500ca64915094c0445bfa8d87950aab433d6867c857c9a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:32:03.650Z"
+  "content_hash": "8b10fb18e7062114e7e29ec6e86b29e46a625635c923350f4f8c90d58f6f582d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:24.314Z"
 }

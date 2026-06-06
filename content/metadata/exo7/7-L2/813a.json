@@ -1,29 +1,29 @@
 {
   "uuid": "813a",
   "source_path": "exo7/7-L2/813a.tex",
-  "summary": "L'exercice demande de réaliser un test d'indépendance du khi-deux pour étudier la liaison entre le tabagisme et le cancer de la gorge sur une population de 1000 personnes, à partir d'un tableau de contingence observé.",
+  "summary": "L'exercice demande de réaliser un test d'indépendance du khi-deux pour étudier la liaison entre le tabagisme et le cancer de la gorge sur un échantillon de 1000 personnes, à partir d'un tableau de contingence 2x2.",
   "concepts": [
     "test d'indépendance du khi-deux",
     "tableau de contingence",
     "hypothèse nulle",
     "risque de première espèce",
-    "distribution du khi-deux",
-    "probabilité conditionnelle",
-    "indépendance statistique"
+    "probabilité conjointe",
+    "loi du khi-deux",
+    "statistique de test"
   ],
   "methods": [
-    "calcul des effectifs théoriques sous hypothèse d'indépendance",
-    "calcul de la statistique du khi-deux",
+    "calcul des effectifs théoriques sous H0",
+    "calcul de la statistique de khi-deux",
     "comparaison avec la loi du khi-deux",
     "rejet de l'hypothèse nulle"
   ],
   "objects": [
-    "tableau de contingence",
+    "tableau de contingence 2x2",
     "effectifs observés",
     "effectifs théoriques",
-    "statistique du khi-deux"
+    "statistique de khi-deux"
   ],
-  "content_hash": "b85a7acef9a1b51feb06e01476df9cc3f5aa0aaf74fa6d8b5c901b83ea8fa74d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:34:37.460Z"
+  "content_hash": "952e64639f137707d940e77f3e61decb68e6b41f459370830a3b3a5b7208fbe7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:52.070Z"
 }

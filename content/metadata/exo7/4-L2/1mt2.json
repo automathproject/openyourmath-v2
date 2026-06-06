@@ -1,32 +1,35 @@
 {
   "uuid": "1mt2",
   "source_path": "exo7/4-L2/1mt2.tex",
-  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3, de déterminer ses sous-espaces propres et caractéristiques, de trouver une base de diagonalisation partielle, d'écrire la décomposition de Dunford d'une matrice et de résoudre des systèmes différentiels associés.",
+  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3, de déterminer ses sous-espaces propres et caractéristiques, de diagonaliser une matrice par changement de base, d'écrire la décomposition de Dunford d'une matrice, de calculer son exponentielle et de résoudre des systèmes différentiels linéaires associés.",
   "concepts": [
     "polynôme caractéristique",
-    "valeurs propres",
-    "sous-espaces propres",
-    "sous-espaces caractéristiques",
+    "valeur propre",
+    "sous-espace propre",
+    "sous-espace caractéristique",
     "diagonalisation",
     "décomposition de Dunford",
+    "exponentielle de matrice",
     "système différentiel linéaire"
   ],
   "methods": [
     "calcul de déterminant",
-    "résolution de systèmes linéaires",
-    "construction de base adaptée",
-    "exponentielle de matrice",
-    "changement de base"
+    "factorisation de polynôme",
+    "recherche de vecteurs propres",
+    "changement de base",
+    "décomposition en partie diagonale et nilpotente",
+    "calcul de l'exponentielle matricielle"
   ],
   "objects": [
     "matrice 3x3",
     "polynôme caractéristique",
     "sous-espaces propres",
     "sous-espaces caractéristiques",
+    "matrice diagonalisable",
     "matrice exponentielle",
-    "système différentiel"
+    "système différentiel linéaire"
   ],
-  "content_hash": "4b548f9237fd8586850fa8d9d797a8ea0dbdb2ba248903e03cb2ae3d11ebaee4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:10:16.398Z"
+  "content_hash": "471d8226b4079e15b562d0471bf3efcf1b0f56def276b4f4f29089cf1d729928",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:33.695Z"
 }

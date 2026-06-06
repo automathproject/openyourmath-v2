@@ -1,29 +1,32 @@
 {
   "uuid": "MqWU",
   "source_path": "exo7/1-L1/MqWU.tex",
-  "summary": "L'exercice demande de démontrer l'équivalence entre la condition f²=0 et l'inclusion de l'image de f dans son noyau, puis d'étudier les propriétés du rang de f. Il explore ensuite la construction d'une base adaptée pour un endomorphisme vérifiant f²=0 et détermine une condition pour que l'image et le noyau de f coïncident. Un exemple illustre ces concepts avec une matrice spécifique dans ℝ³.",
+  "summary": "L'exercice demande de démontrer l'équivalence entre la condition $f^2=0$ pour un endomorphisme $f$ et l'inclusion $\\mbox{Im} f \\subset \\ker f$, puis d'étudier les propriétés du rang de $f$. Il s'ensuit des questions sur la construction d'une base adaptée et la forme de la matrice de $f$ dans cette base, ainsi qu'une condition pour que $\\mbox{Im} f = \\ker f$. Un exemple illustre ces concepts avec une matrice spécifique dans $\\mathbb{R}^3$.",
   "concepts": [
     "endomorphisme",
-    "image d'un endomorphisme",
-    "noyau d'un endomorphisme",
-    "rang d'un endomorphisme",
+    "image d'une application linéaire",
+    "noyau d'une application linéaire",
+    "rang d'une application linéaire",
+    "supplémentaire d'un sous-espace",
     "base d'un espace vectoriel",
-    "matrice d'un endomorphisme",
-    "supplémentaire d'un sous-espace vectoriel"
+    "matrice d'une application linéaire",
+    "dimension d'un espace vectoriel"
   ],
   "methods": [
-    "décomposition d'un espace vectoriel en somme directe",
+    "décomposition en sous-espaces",
     "construction de base adaptée",
     "calcul de matrice dans une base donnée",
-    "utilisation de la condition f²=0 pour déterminer des propriétés"
+    "vérification de l'inclusion de sous-espaces",
+    "utilisation de la relation $f^2=0$"
   ],
   "objects": [
-    "endomorphisme f",
-    "espace vectoriel E",
-    "sous-espace supplémentaire E₁",
-    "matrice d'endomorphisme"
+    "endomorphisme $f$",
+    "espace vectoriel $E$",
+    "matrice d'application linéaire",
+    "base de sous-espace supplémentaire",
+    "famille de vecteurs libres"
   ],
-  "content_hash": "37668c54f8fdb8057caecc89c3c2f3d24f62738daddd2d25a0ee7e870fbfc569",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:53:31.403Z"
+  "content_hash": "debf206d81e21691e037557195a294c4fbce1f3253097a91e53fc3c909d511d7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:17.679Z"
 }

@@ -1,28 +1,31 @@
 {
   "uuid": "PDt8",
   "source_path": "exo7/5-L2/PDt8.tex",
-  "summary": "Résoudre trois équations aux dérivées partielles en utilisant des changements de variables appropriés. La première équation est résolue par un changement de variables linéaires, la deuxième par passage en coordonnées polaires, et la troisième par un changement de variables non linéaires.",
+  "summary": "Résoudre trois équations aux dérivées partielles (EDP) en utilisant des changements de variables appropriés. La première EDP est résolue par un changement de variables linéaire, la deuxième en coordonnées polaires, et la troisième par un changement de variables non linéaire.",
   "concepts": [
     "équation aux dérivées partielles",
     "changement de variables",
     "difféomorphisme",
     "coordonnées polaires",
     "théorème de Schwarz",
-    "fonction de classe C^2"
+    "fonction de classe C^1 ou C^2",
+    "automorphisme"
   ],
   "methods": [
     "changement de variables",
     "calcul des dérivées partielles",
+    "application du théorème de Schwarz",
     "passage en coordonnées polaires",
-    "application du théorème de Schwarz"
+    "résolution d'équations différentielles ordinaires"
   ],
   "objects": [
     "fonction de deux variables",
     "dérivées partielles premières et secondes",
     "changement de variables linéaire",
-    "changement de variables non linéaire"
+    "changement de variables non linéaire",
+    "coordonnées polaires"
   ],
-  "content_hash": "7f5c3899b8b2aa34c2ab2877a3e78f87f961b70b309df9d82d887303e7d2a7a6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:27:00.098Z"
+  "content_hash": "4092992bf0d0e9e4cb3e8926e29351a0e8f659d4f069c2bc80d98500c9d6622c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:35.857Z"
 }

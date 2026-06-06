@@ -1,25 +1,24 @@
 {
   "uuid": "7R8x",
   "source_path": "exo7/6-L2/7R8x.tex",
-  "summary": "Deux cercles s'intersectent en A et B et ont une tangente commune CD. On demande de prouver que la droite AB coupe le segment CD en son milieu.",
+  "summary": "Soient deux cercles s'intersectant en A et B, et une tangente commune CD. Montrer que la droite AB coupe le segment CD en son milieu.",
   "concepts": [
-    "géométrie affine euclidienne",
     "puissance d'un point par rapport à un cercle",
     "tangente à un cercle",
-    "alignement de points",
-    "milieu d'un segment"
+    "propriété des points d'intersection de cercles",
+    "géométrie affine euclidienne du plan"
   ],
   "methods": [
-    "calcul de puissance d'un point",
+    "calcul de la puissance d'un point",
     "utilisation des propriétés des tangentes"
   ],
   "objects": [
-    "deux cercles",
+    "deux cercles sécants",
     "tangente commune",
-    "segment CD",
-    "droite AB"
+    "droite d'intersection",
+    "segment de tangente"
   ],
-  "content_hash": "4b4f5f73a53396a41370ee38e54521ac0628e37cd48fa08fd6036b0b26388dfc",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:23:22.177Z"
+  "content_hash": "393fd710891f95356b10fc7ecd2842df722631c091adf520d2b1f60619304af2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:13.575Z"
 }

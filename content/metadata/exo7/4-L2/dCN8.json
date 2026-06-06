@@ -1,29 +1,31 @@
 {
   "uuid": "dCN8",
   "source_path": "exo7/4-L2/dCN8.tex",
-  "summary": "Dans un espace euclidien de dimension n, on définit une famille de vecteurs comme obtusangle si tous les produits scalaires entre vecteurs distincts sont strictement négatifs. L'exercice demande de prouver que le nombre maximal de vecteurs dans une telle famille est n+1.",
+  "summary": "Soit une famille de vecteurs dans un espace euclidien de dimension n. On définit une famille obtusangle comme une famille où tout couple de vecteurs a un produit scalaire strictement négatif. L'exercice demande de montrer que le nombre maximal de vecteurs dans une telle famille est n+1.",
   "concepts": [
     "espace euclidien",
     "produit scalaire",
-    "famille libre de vecteurs",
+    "famille libre",
     "orthogonalité",
     "projection orthogonale",
-    "récurrence",
-    "dimension d'un espace vectoriel"
+    "dimension d'un espace vectoriel",
+    "inégalité de Cauchy-Schwarz"
   ],
   "methods": [
     "raisonnement par l'absurde",
     "récurrence sur la dimension",
-    "construction de sous-espace orthogonal",
-    "calcul de produit scalaire"
+    "construction de sous-espaces orthogonaux",
+    "calcul de produit scalaire",
+    "utilisation de la liberté d'une famille"
   ],
   "objects": [
     "famille de vecteurs",
+    "espace vectoriel",
     "sous-espace orthogonal",
     "projection orthogonale",
     "produit scalaire"
   ],
-  "content_hash": "b6fccf394d091a7c72f1bd94b09298a00a51d6d0f3ac23a6f75b756269212b84",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:40:28.052Z"
+  "content_hash": "b202821c44b75ebda42ab3594f61ce5630f4e9c598ac1918492d308f7e7170a7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:02.389Z"
 }

@@ -1,28 +1,31 @@
 {
   "uuid": "wsvy",
   "source_path": "exo7/4-L2/wsvy.tex",
-  "summary": "L'exercice demande de montrer que les images dans le plan complexe des valeurs propres d'une matrice A sont cocycliques, où A est une matrice carrée de taille n avec des coefficients spécifiques en fonction de deux réels a et b.",
+  "summary": "Soit une matrice A de taille n×n avec des coefficients a et b tels que |a| ≠ |b|. On demande de montrer que les valeurs propres de A, représentées dans le plan complexe, sont cocycliques, c'est-à-dire qu'elles appartiennent à un même cercle.",
   "concepts": [
     "valeur propre",
     "polynôme caractéristique",
     "déterminant",
     "cercle d'Apollonius",
-    "géométrie complexe",
-    "matrice carrée"
+    "endomorphisme",
+    "matrice",
+    "géométrie complexe"
   ],
   "methods": [
     "calcul de polynôme caractéristique",
     "linéarité du déterminant",
-    "formules de Cramer",
-    "géométrie des cercles"
+    "résolution d'un système linéaire",
+    "géométrie des nombres complexes",
+    "utilisation des formules de Cramer"
   ],
   "objects": [
-    "matrice A",
-    "valeurs propres",
+    "matrice carrée",
+    "valeur propre",
     "plan complexe",
-    "cercle d'Apollonius"
+    "cercle d'Apollonius",
+    "polynôme caractéristique"
   ],
-  "content_hash": "43e27407f9ac479cac51209940288daeac02092922c6b58240f8de25470bfb48",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:28:11.348Z"
+  "content_hash": "07aaca2ba52588b92243ff9738cfe8c7d60868f70dcf0878f4bd3ae3ce326bb1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:15.090Z"
 }

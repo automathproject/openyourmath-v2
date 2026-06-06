@@ -1,31 +1,32 @@
 {
   "uuid": "IAxn",
   "source_path": "exo7/2-L1/IAxn.tex",
-  "summary": "L'exercice demande de déterminer la forme explicite d'une suite récurrente linéaire d'ordre 2 ou supérieur, en fonction de son indice et de ses premiers termes. Plusieurs cas sont traités, incluant des équations homogènes, non homogènes avec second membre constant ou polynomial, et des suites à coefficients complexes.",
+  "summary": "L'exercice demande de déterminer la forme explicite d'une suite récurrente linéaire d'ordre 2 ou 3, en fonction de son indice et de ses premiers termes. Les suites sont définies par des relations de récurrence linéaires homogènes ou non homogènes, avec ou sans second membre.",
   "concepts": [
-    "suite récurrente linéaire",
-    "équation caractéristique",
+    "équation de récurrence linéaire",
     "solution générale",
     "solution particulière",
-    "racine simple",
-    "racine double",
-    "polynôme caractéristique"
+    "équation caractéristique",
+    "racines complexes",
+    "méthode de variation des constantes",
+    "polynôme caractéristique",
+    "solution homogène"
   ],
   "methods": [
-    "résolution d'équation caractéristique",
-    "méthode de variation des constantes",
-    "détermination de solutions particulières",
-    "calcul de coefficients par identification",
-    "traitement des racines complexes"
+    "résolution par équation caractéristique",
+    "méthode de la solution particulière",
+    "détermination des coefficients par identification",
+    "traitement des racines multiples",
+    "manipulation algébrique de polynômes"
   ],
   "objects": [
-    "suite récurrente",
+    "suite récurrente linéaire",
+    "équation de récurrence",
     "polynôme caractéristique",
     "solution générale",
-    "solution particulière",
-    "second membre polynomial"
+    "solution particulière"
   ],
-  "content_hash": "7da850df97819db7546f331a638bd82e098af7c882a616b73ce18fa91623319d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:11:38.556Z"
+  "content_hash": "721558a468a1256302c4ecec0ac1618af7bde1ad5af5085bbeab4ace1413e152",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:18.824Z"
 }

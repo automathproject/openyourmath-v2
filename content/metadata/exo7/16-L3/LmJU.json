@@ -1,28 +1,28 @@
 {
   "uuid": "LmJU",
   "source_path": "exo7/16-L3/LmJU.tex",
-  "summary": "Calculer une intégrale complexe sur le contour d'un disque centré en 1 de rayon 2, avec une fraction rationnelle comme intégrande.",
+  "summary": "Calculer une intégrale complexe sur le contour d'un disque centré en 1 de rayon 2, pour une fonction rationnelle de variable complexe.",
   "concepts": [
-    "intégrale de contour",
     "décomposition en éléments simples",
     "théorème de Cauchy",
     "pôles simples",
+    "intégrale sur un chemin fermé",
     "fonction holomorphe",
-    "application exacte"
+    "théorème des résidus"
   ],
   "methods": [
-    "décomposition en éléments simples",
-    "théorème de Cauchy sur les disques",
-    "calcul des résidus",
-    "intégration de formes différentielles exactes"
+    "décomposition en fractions partielles",
+    "application du théorème de Cauchy",
+    "calcul de résidus",
+    "intégration de forme exacte"
   ],
   "objects": [
-    "intégrale de contour",
-    "fraction rationnelle",
+    "intégrale complexe",
+    "fonction rationnelle",
     "disque dans le plan complexe",
     "pôles simples"
   ],
-  "content_hash": "a1a41d2d114b24cd954d1fdc3daeb7e7150c7443906c4bc20167466d34147ed2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:18:37.521Z"
+  "content_hash": "66d10111c701da31e5f1465d9b08150b6a22fa47200553f30d9782919c36ff52",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:06.608Z"
 }

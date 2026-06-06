@@ -1,28 +1,30 @@
 {
   "uuid": "Ajfy",
   "source_path": "amscc/Ajfy.tex",
-  "summary": "Calcul de la probabilité de refus d'une rondelle métallique dont le diamètre suit une loi normale, puis approximation de la distribution du nombre de pièces refusées dans un échantillon de 100 et 1000 pièces en utilisant les lois de Poisson et normale.",
+  "summary": "Calculer la probabilité qu'une rondelle soit refusée en utilisant une loi normale, puis approximer la distribution du nombre de rondelles refusées dans un échantillon de 100 et 1000 pièces respectivement par des lois de Poisson et normale.",
   "concepts": [
     "loi normale",
-    "approximation de loi binomiale par la loi de Poisson",
-    "approximation de loi binomiale par la loi normale",
     "standardisation",
+    "loi binomiale",
+    "loi de Poisson",
+    "approximation par la loi normale",
+    "espérance d'une variable aléatoire",
     "correction de continuité"
   ],
   "methods": [
     "standardisation",
     "approximation par la loi de Poisson",
     "approximation par la loi normale",
-    "calcul de probabilité conditionnelle"
+    "calcul de probabilité à partir d'une loi binomiale"
   ],
   "objects": [
     "variable aléatoire normale",
     "variable aléatoire binomiale",
     "variable aléatoire de Poisson",
-    "probabilité de refus",
+    "probabilité de refus d'une pièce",
     "nombre de pièces refusées"
   ],
-  "content_hash": "1971d43975a1061706396479c48138a5dccc5b8ee4143a681cf67b201e540d82",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:41:19.580Z"
+  "content_hash": "af46cb48b5be41c1d5bfc2950043f4550f8e544062f303926ca54935b8e9f59b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:25.163Z"
 }

@@ -1,28 +1,30 @@
 {
   "uuid": "apbJ",
   "source_path": "exo7/1-L1/apbJ.tex",
-  "summary": "L'exercice demande de justifier l'existence de deux matrices A et B de formats respectifs 3x2 et 2x3 dont le produit AB est donné, puis de calculer le produit BA.",
+  "summary": "L'exercice demande de justifier l'existence de deux matrices A (3x2) et B (2x3) dont le produit AB est donné, puis de calculer le produit BA. Le contexte implique des propriétés de rang et d'inversibilité des matrices.",
   "concepts": [
-    "produit de matrices",
     "rang d'une matrice",
-    "application linéaire",
+    "produit de matrices",
     "inversibilité",
-    "relation de dépendance linéaire",
-    "déterminant"
+    "application linéaire",
+    "dimension d'un espace vectoriel",
+    "relation de dépendance linéaire"
   ],
   "methods": [
-    "calcul de déterminant",
-    "analyse du rang",
-    "construction explicite de matrices",
-    "utilisation de la relation de dépendance"
+    "calcul du déterminant",
+    "vérification de la dépendance linéaire",
+    "utilisation des propriétés du rang",
+    "multiplication matricielle",
+    "résolution d'équations matricielles"
   ],
   "objects": [
     "matrice 3x2",
     "matrice 2x3",
-    "produit de matrices",
-    "matrice carrée inversible"
+    "matrice carrée",
+    "application linéaire",
+    "base canonique"
   ],
-  "content_hash": "6a5ffe9d88b0157ffb096cdb24ba517848bd55928f054c0db12b843f749b7b48",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:05:44.896Z"
+  "content_hash": "9b1507155dce04360a30a08a52c66bf1f2f29966ecec5a2f7a24ba817939fbf7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:50.037Z"
 }

@@ -1,27 +1,29 @@
 {
   "uuid": "wWtk",
   "source_path": "exo7/5-L2/wWtk.tex",
-  "summary": "Trouver une fonction non constante de classe C² définie sur l'intervalle ]-1,1[ telle que la fonction g(x,y) = f(cos(2x)/ch(2y)) ait un laplacien nul sur un ensemble à préciser.",
+  "summary": "Trouver une fonction non constante de classe C² sur l'intervalle ]-1,1[ telle que la fonction g(x,y) = f(cos(2x)/ch(2y)) ait un laplacien nul sur un ensemble à préciser. La fonction g est définie sur ℝ² et le laplacien est donné par la somme des dérivées secondes partielles.",
   "concepts": [
     "fonction harmonique",
     "laplacien",
-    "différentielle seconde",
+    "dérivée seconde partielle",
     "fonction de classe C²",
     "équation différentielle",
-    "fonction hyperbolique",
-    "fonction non constante"
+    "fonction argument hyperbolique",
+    "changement de variable"
   ],
   "methods": [
-    "calcul des dérivées partielles",
+    "calcul de dérivées partielles",
     "résolution d'équation différentielle",
-    "analyse de laplacien"
+    "analyse de régularité",
+    "simplification algébrique"
   ],
   "objects": [
     "fonction de deux variables",
     "fonction de classe C²",
-    "équation différentielle ordinaire"
+    "équation différentielle ordinaire",
+    "fonction argument hyperbolique"
   ],
-  "content_hash": "d921b14ad08293093962799ab7ccf50920720a481fd8737ce93c93f706ccbaa8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:25:08.131Z"
+  "content_hash": "58f3de3bb79762eaf7ef2e375a005fb2df3675b5c3067e9497c73263d357b068",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:54.734Z"
 }

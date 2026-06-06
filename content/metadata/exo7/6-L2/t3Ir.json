@@ -7,20 +7,22 @@
     "symétrie orthogonale",
     "projection orthogonale",
     "construction géométrique",
-    "droite",
-    "point"
+    "propriétés des cercles",
+    "alignement de points"
   ],
   "methods": [
     "construction au compas seul",
-    "construction à la règle et au compas"
+    "utilisation de la règle et du compas",
+    "tracé de cercles",
+    "intersection de cercles"
   ],
   "objects": [
     "point",
     "droite",
-    "symétrique",
+    "symétrique d'un point",
     "projeté orthogonal"
   ],
-  "content_hash": "0fbac47ca0da232b7c345e3557ce8c50a219dfb2b6ef7eb86a509ed13192aea4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:59:08.778Z"
+  "content_hash": "6570baacfb11f5369105cb64bdd76032a0055c532e02b0fc3db9e34d7d15b94c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:43.806Z"
 }

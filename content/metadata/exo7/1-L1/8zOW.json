@@ -1,27 +1,26 @@
 {
   "uuid": "8zOW",
   "source_path": "exo7/1-L1/8zOW.tex",
-  "summary": "L'exercice demande de déterminer tous les idéaux bilatères de l'anneau des matrices carrées d'ordre n sur un corps commutatif K. Un idéal bilatère est défini comme un sous-ensemble stable par addition et par multiplication à gauche et à droite par n'importe quelle matrice.",
+  "summary": "L'exercice demande de déterminer tous les idéaux bilatères de l'anneau des matrices carrées d'ordre n sur un corps K. Un idéal bilatère est défini comme un sous-ensemble stable par addition et par multiplication à gauche et à droite par toute matrice.",
   "concepts": [
     "idéal bilatère",
     "anneau de matrices",
     "sous-ensemble stable",
-    "matrice élémentaire",
-    "corps commutatif",
+    "matrices élémentaires",
     "structure algébrique"
   ],
   "methods": [
-    "manipulation de matrices élémentaires",
-    "génération de l'anneau entier",
-    "preuve par exhaustivité"
+    "décomposition en matrices élémentaires",
+    "génération de l'anneau par des matrices",
+    "utilisation de la base canonique"
   ],
   "objects": [
     "idéal bilatère",
-    "matrice carrée",
-    "matrice élémentaire",
-    "anneau de matrices"
+    "anneau de matrices",
+    "matrices élémentaires",
+    "matrice carrée"
   ],
-  "content_hash": "66c9c4c8433477696860d378875f630453a4d82af825aad5fdfd78022c148268",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:44:56.967Z"
+  "content_hash": "6fa276825db96dc8591822e7166470b686d9db4209fdf79cb20b50887fd64a8c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:55.700Z"
 }

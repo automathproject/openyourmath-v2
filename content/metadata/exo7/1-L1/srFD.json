@@ -1,29 +1,30 @@
 {
   "uuid": "srFD",
   "source_path": "exo7/1-L1/srFD.tex",
-  "summary": "L'exercice demande de caractériser les endomorphismes d'un espace vectoriel E qui commutent avec tous les endomorphismes de E. Il s'agit de déterminer quels morphismes particuliers satisfont cette condition de commutation.",
+  "summary": "Trouver les endomorphismes (ou automorphismes) d'un espace vectoriel de dimension finie qui commutent avec tous les endomorphismes (ou automorphismes) de cet espace. L'exercice s'appuie sur la notion de centre d'un groupe et les propriétés des symétries vectorielles.",
   "concepts": [
-    "groupe",
-    "sous-groupe",
-    "centre d'un groupe",
     "endomorphisme",
     "automorphisme",
+    "commutativité",
     "symétrie vectorielle",
     "homothétie",
-    "commutation d'applications linéaires"
+    "centre d'un groupe",
+    "espace vectoriel de dimension finie",
+    "sous-groupe"
   ],
   "methods": [
-    "caractérisation par symétries",
-    "analyse de la commutation",
-    "utilisation de la structure de groupe"
+    "étude de la commutativité",
+    "utilisation des symétries",
+    "caractérisation des homothéties"
   ],
   "objects": [
-    "espace vectoriel",
     "endomorphisme",
-    "symétrie",
+    "automorphisme",
+    "espace vectoriel",
+    "sous-espace vectoriel",
     "homothétie"
   ],
-  "content_hash": "ceb0db4ca2d21d027039627a73fff325b8c54b44219e922f45335fce9ffabc79",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:38:27.902Z"
+  "content_hash": "4525294f276695d9cf5ec80a309c364768e1a04f849bc768a10176996f1ba366",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:58.467Z"
 }

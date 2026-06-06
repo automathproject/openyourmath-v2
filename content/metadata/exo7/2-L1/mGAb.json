@@ -1,26 +1,28 @@
 {
   "uuid": "mGAb",
   "source_path": "exo7/2-L1/mGAb.tex",
-  "summary": "Calculer l'intégrale impropre d'une fonction rationnelle sur l'intervalle ]0,1[ en utilisant des changements de variable et des encadrements.",
+  "summary": "Calculer l'intégrale impropre d'une fonction rationnelle impliquant un logarithme naturel, en décomposant l'intégrande et en utilisant un changement de variable. L'exercice demande d'évaluer la limite d'une intégrale sur l'intervalle [0,1] où la fonction présente une singularité.",
   "concepts": [
     "intégrale impropre",
-    "continuité",
+    "continuité par prolongement",
     "changement de variable",
     "croissance de l'intégrale",
-    "limite de fonction"
+    "limite de fonction",
+    "inégalité d'encadrement"
   ],
   "methods": [
+    "décomposition de l'intégrande",
     "changement de variable",
-    "encadrement d'intégrale",
-    "calcul de limite",
-    "intégration par parties"
+    "encadrement par intégrales",
+    "calcul de limite"
   ],
   "objects": [
     "fonction rationnelle",
-    "intégrale sur ]0,1[",
-    "limite en 1"
+    "intégrale sur intervalle borné",
+    "limite d'intégrale",
+    "inégalité intégrale"
   ],
-  "content_hash": "dfa3aaa727839eb365eaf93e3d84069aefeb090834dd441038cfebfe33e2ae66",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:46:22.793Z"
+  "content_hash": "eba539c5e92dcfc9c13564b813f4749af95c2820e49ce9883c6ee8ec964cf0b1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:18.714Z"
 }

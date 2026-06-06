@@ -1,10 +1,10 @@
 {
   "uuid": "5m2q",
   "source_path": "exo7/15-L3/5m2q.tex",
-  "summary": "L'exercice demande de montrer que la suite de polynômes définie par récurrence converge vers la fonction valeur absolue sur l'intervalle [-1,1], puis d'en déduire que les polynômes sont denses dans l'espace des fonctions continues sur cet intervalle.",
+  "summary": "L'exercice demande de montrer que la suite de polynômes définis par récurrence converge vers la fonction valeur absolue sur l'intervalle [-1,1], puis d'en déduire que les polynômes sont denses dans l'espace des fonctions continues sur cet intervalle.",
   "concepts": [
-    "convergence uniforme",
     "densité dans un espace de fonctions",
+    "convergence uniforme",
     "fonction continue",
     "polynôme",
     "espace métrique",
@@ -12,16 +12,16 @@
   ],
   "methods": [
     "récurrence",
-    "approximation de fonctions par des polynômes",
-    "limite de suite de fonctions"
+    "approximation de fonctions par morceaux",
+    "limite de suites de fonctions"
   ],
   "objects": [
     "suite de polynômes",
     "fonction valeur absolue",
     "fonction affine par morceaux",
-    "fonction continue"
+    "fonction continue sur un intervalle"
   ],
-  "content_hash": "b8f0acad8748a64eb80e07313e569bce44c909256322969b9db81e64d003c8d6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:19:30.272Z"
+  "content_hash": "85d40f7df8f4767f57e18a20f7bfd36827851c760e7e98afd9ddd6393fd73dd8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:08.686Z"
 }

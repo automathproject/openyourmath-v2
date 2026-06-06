@@ -1,29 +1,29 @@
 {
   "uuid": "UE5m",
   "source_path": "exo7/5-L2/UE5m.tex",
-  "summary": "L'exercice demande de prouver l'égalité entre une intégrale impropre et une série numérique infinie, en utilisant des propriétés de convergence et d'intégration terme à terme.",
+  "summary": "L'exercice demande de prouver l'égalité entre une intégrale impropre et une série infinie, en reliant une fonction rationnelle exponentielle à une somme de termes en 1/n³.",
   "concepts": [
     "intégrale impropre",
-    "série numérique",
+    "série de fonctions",
     "convergence simple",
-    "intégration terme à terme",
-    "fonction intégrable",
+    "intégrabilité",
     "développement en série entière",
+    "théorème d'intégration terme à terme",
     "fonction continue"
   ],
   "methods": [
     "développement en série entière",
     "intégration terme à terme",
-    "comparaison de termes",
-    "calcul d'intégrale impropre"
+    "comparaison asymptotique",
+    "calcul d'intégrale par changement de variable"
   ],
   "objects": [
-    "intégrale impropre",
-    "série numérique",
     "fonction de variable réelle",
+    "série numérique",
+    "intégrale impropre",
     "fonction intégrable"
   ],
-  "content_hash": "eb8e70934a705e55e9515eb666af0158f8d6d2db20cc8ecf7d365dff72148765",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:56:44.638Z"
+  "content_hash": "fcbf4d09bed7480fe6a96622adda6860f9a29ff447e5ab1db773daebb3a2aeae",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:19.011Z"
 }

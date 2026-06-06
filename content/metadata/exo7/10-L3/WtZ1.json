@@ -1,27 +1,30 @@
 {
   "uuid": "WtZ1",
   "source_path": "exo7/10-L3/WtZ1.tex",
-  "summary": "L'exercice demande de prouver la divisibilité de 20^15 - 1 par le produit de trois nombres premiers et de calculer le reste de la division de 2^6754 par 1155.",
+  "summary": "L'exercice demande de démontrer la divisibilité de 20^15 - 1 par le produit de trois nombres premiers, puis de calculer le reste de la division de 2^6754 par 1155. Il s'agit d'appliquer des propriétés arithmétiques sur les congruences et les puissances modulo des nombres premiers.",
   "concepts": [
     "petit théorème de Fermat",
     "théorème de Wilson",
     "congruences",
-    "factorisation en nombres premiers",
-    "système de congruences"
+    "divisibilité",
+    "arithmétique modulaire",
+    "factorisation en nombres premiers"
   ],
   "methods": [
-    "factorisation",
+    "décomposition en facteurs premiers",
     "calcul de congruences",
-    "résolution de système de congruences",
-    "utilisation du théorème de Wilson"
+    "utilisation du théorème de Wilson",
+    "application du petit théorème de Fermat",
+    "système de congruences"
   ],
   "objects": [
-    "nombre entier",
-    "congruences modulo un nombre premier",
+    "puissance entière",
+    "nombre premier",
+    "congruence",
     "système de congruences",
     "reste de division"
   ],
-  "content_hash": "ce73d2c1b045a15f9faae775410bf0c7254b4f78ce005dc82fa070846b4ec978",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:33:00.753Z"
+  "content_hash": "fab77b8633c6d10cab931f591b60eaee29795776aa1fd5b856a42ba00c61f3e9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:01.025Z"
 }

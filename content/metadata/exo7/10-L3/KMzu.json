@@ -1,24 +1,27 @@
 {
   "uuid": "KMzu",
   "source_path": "exo7/10-L3/KMzu.tex",
-  "summary": "L'exercice demande de démontrer qu'un polynôme irréductible f divise un polynôme g lorsque f et g partagent une racine commune α.",
+  "summary": "L'exercice demande de démontrer qu'un polynôme irréductible f sur Q[X] qui partage une racine commune α avec un autre polynôme g sur Q[X] doit nécessairement diviser g.",
   "concepts": [
     "polynôme irréductible",
     "racine commune",
     "polynômes premiers entre eux",
     "identité de Bézout",
-    "anneau des polynômes"
+    "corps de rupture",
+    "division euclidienne des polynômes"
   ],
   "methods": [
     "utilisation de l'identité de Bézout",
+    "évaluation en un point",
     "raisonnement par l'absurde",
-    "évaluation en un point"
+    "propriété des polynômes irréductibles"
   ],
   "objects": [
-    "polynômes à coefficients rationnels",
-    "racine complexe"
+    "polynôme sur Q[X]",
+    "racine complexe",
+    "polynômes premiers entre eux"
   ],
-  "content_hash": "1132daec7f1d79230de5216f3805cb7c371dd62dad63ed963c6534e10c567633",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:22:20.086Z"
+  "content_hash": "0309f7c333df9198e451a9633ffc53d8d2198b74cafd928eef40ca5856f232f5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:39.952Z"
 }

@@ -1,11 +1,12 @@
 {
   "uuid": "3FM1",
   "source_path": "exo7/5-L2/3FM1.tex",
-  "summary": "Développer en série entière plusieurs fonctions rationnelles ou composées, dont certaines dépendent de paramètres réels. Les exercices couvrent des cas variés comme les fractions rationnelles, les fonctions trigonométriques inverses et les intégrales.",
+  "summary": "Développer en série entière diverses fonctions, dont des fractions rationnelles, des fonctions trigonométriques et des intégrales. L'exercice couvre des cas simples et complexes avec des paramètres réels.",
   "concepts": [
     "développement en série entière",
     "fraction rationnelle",
     "rayon de convergence",
+    "pôles d'une fonction",
     "fonctions trigonométriques inverses",
     "intégrale impropre",
     "fonctions hyperboliques"
@@ -13,18 +14,18 @@
   "methods": [
     "décomposition en éléments simples",
     "standardisation",
-    "changement de variable",
     "séries géométriques",
-    "développement en série de Taylor"
+    "changement de variable",
+    "intégration par parties"
   ],
   "objects": [
-    "fonction rationnelle",
-    "série entière",
-    "fonction trigonométrique inverse",
+    "fraction rationnelle",
+    "fonction trigonométrique",
+    "fonction hyperbolique",
     "intégrale",
-    "fonction hyperbolique"
+    "série entière"
   ],
-  "content_hash": "df6eb3009ebee30fb0b07e0fa5150fd05773c1612f7a39ec3601b03d58de14a6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:05:43.194Z"
+  "content_hash": "c38839e3f480f5ea326fa27153e759424931397144df0e00314f949f4e812ac2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:29.502Z"
 }

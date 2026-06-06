@@ -1,24 +1,26 @@
 {
   "uuid": "GumU",
   "source_path": "exo7/1-L1/GumU.tex",
-  "summary": "Résoudre dans l'ensemble des nombres complexes une équation du quatrième degré à coefficients complexes.",
+  "summary": "Résoudre dans l'ensemble des nombres complexes une équation du quatrième degré à coefficients complexes, en utilisant la substitution d'une variable pour la réduire à une équation du second degré.",
   "concepts": [
     "équation du second degré à coefficients complexes",
     "discriminant",
-    "racine carrée dans C",
+    "racine carrée dans les complexes",
+    "substitution de variable",
     "résolution d'équation polynomiale"
   ],
   "methods": [
+    "substitution",
     "calcul du discriminant",
-    "résolution d'équation quadratique",
-    "identification de racines carrées"
+    "résolution d'équation du second degré",
+    "identification de racines carrées complexes"
   ],
   "objects": [
     "équation polynomiale de degré 4",
-    "racines complexes",
-    "discriminant complexe"
+    "nombre complexe",
+    "racine carrée d'un nombre complexe"
   ],
-  "content_hash": "a8f4d59f32a77de73e7fc9a076023342bf8b8f6cd0f6bd282377ff723d291aaa",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:37:39.323Z"
+  "content_hash": "b4cca0445a850f7e877bb22e8da6f6d1a1546be0152ed6da250ecf536a018333",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:34.455Z"
 }

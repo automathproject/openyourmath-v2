@@ -1,27 +1,28 @@
 {
   "uuid": "igQp",
   "source_path": "exo7/1-L1/igQp.tex",
-  "summary": "Calculer le produit de cosinus d'angles en progression géométrique et déterminer la limite d'une somme de logarithmes de ces cosinus. L'exercice utilise une identité trigonométrique clé.",
+  "summary": "Calculer le produit de cosinus $\\prod_{k=1}^{n}\\cos\\left(\\frac{a}{2^k}\\right)$ pour $a$ dans $]0,\\pi[$ et déterminer la limite de la somme des logarithmes de ces cosinus quand $n$ tend vers l'infini.",
   "concepts": [
-    "identité trigonométrique",
+    "formule trigonométrique double angle",
     "limite de suite",
+    "limite de fonction",
     "fonction sinus",
-    "fonction cosinus",
     "produit infini",
-    "limite de fonction"
+    "logarithme"
   ],
   "methods": [
     "téléscopage",
-    "identité sin(2x)",
-    "développement en produit",
-    "limite standard sin(x)/x"
+    "utilisation de la formule $\\sin(2x)=2\\sin x\\cos x$",
+    "limite de $\\frac{\\sin x}{x}$ quand $x$ tend vers 0",
+    "linéarisation du produit par le logarithme"
   ],
   "objects": [
     "produit de cosinus",
     "somme de logarithmes",
-    "angle dans ]0,π["
+    "limite de suite",
+    "fonction sinus"
   ],
-  "content_hash": "c09acbb2381e2ef555dee61df42a4c3e67dd264b520f76ae76e492b1ffe5fa01",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:56:48.114Z"
+  "content_hash": "d4a6235fbff03d340ecaa2768ccb0025958231c716feb13cbfaded6af7e99d15",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:00.382Z"
 }

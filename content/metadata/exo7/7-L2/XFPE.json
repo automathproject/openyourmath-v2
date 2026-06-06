@@ -1,31 +1,32 @@
 {
   "uuid": "XFPE",
   "source_path": "exo7/7-L2/XFPE.tex",
-  "summary": "L'exercice demande de tester l'hypothèse selon laquelle deux lots de boulons proviennent de la même population, en comparant leurs taux de résistance à la rupture au seuil de 5%.",
+  "summary": "L'exercice demande de tester l'hypothèse selon laquelle deux lots de boulons proviennent de la même population, en comparant leurs taux de résistance à la rupture au seuil de 5%. Il s'agit d'un test d'homogénéité de proportions.",
   "concepts": [
     "test d'hypothèse",
+    "proportion",
     "loi binomiale",
     "loi normale",
-    "variable de Bernoulli",
-    "estimation de paramètre",
-    "intervalle de confiance",
-    "hypothèse nulle"
+    "approximation gaussienne",
+    "intervalle de fluctuation",
+    "hypothèse nulle",
+    "fonction discriminante"
   ],
   "methods": [
-    "approximation normale de la loi binomiale",
-    "calcul de la variance",
-    "standardisation",
     "test du chi-deux",
-    "comparaison de fréquences"
+    "standardisation",
+    "approximation normale de la binomiale",
+    "estimation ponctuelle",
+    "calcul de variance"
   ],
   "objects": [
-    "fréquence observée",
-    "taux de résistance",
+    "proportion observée",
+    "échantillon",
+    "variable de Bernoulli",
     "différence de proportions",
-    "variable aléatoire binomiale",
-    "échantillon indépendant"
+    "statistique de test"
   ],
-  "content_hash": "61509b0d4a9a623f55989c252a2cb16f95faf48d25a6ef95eb38911c9d3df568",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:43:37.959Z"
+  "content_hash": "a43b437af11ac6eaa1df3bb9e1ef00ec1e5a32d2f8eabbcdca5ae7852a32ee40",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:24.549Z"
 }

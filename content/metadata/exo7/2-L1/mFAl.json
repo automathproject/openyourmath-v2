@@ -1,25 +1,28 @@
 {
   "uuid": "mFAl",
   "source_path": "exo7/2-L1/mFAl.tex",
-  "summary": "L'exercice demande de montrer qu'une fonction définie comme une intégrale à bornes dépendant d'une variable est dérivable et de calculer sa dérivée. Il s'applique ensuite ce résultat à un cas particulier.",
+  "summary": "L'exercice demande de montrer qu'une fonction définie comme une intégrale à bornes dépendant d'une variable est dérivable, puis de calculer sa dérivée. Il applique ensuite ce résultat à un cas particulier avec une intégrale spécifique.",
   "concepts": [
-    "intégrale dépendant d'un paramètre",
-    "dérivabilité",
-    "primitive",
-    "composition de fonctions",
-    "théorème fondamental de l'analyse"
+    "dérivabilité des fonctions composées",
+    "primitive d'une fonction continue",
+    "théorème fondamental de l'analyse",
+    "dérivée d'une intégrale à bornes variables",
+    "continuité des fonctions intégrées"
   ],
   "methods": [
-    "définition de la dérivée par le taux d'accroissement",
-    "composition de fonctions dérivables",
-    "calcul de dérivée d'une intégrale à bornes variables"
+    "décomposition en intégrales élémentaires",
+    "calcul de dérivée par composition",
+    "application du théorème fondamental de l'analyse",
+    "évaluation de la dérivée d'une primitive"
   ],
   "objects": [
-    "fonction définie par une intégrale",
+    "fonction intégrale à bornes variables",
     "fonction dérivable",
-    "primitive d'une fonction continue"
+    "fonction continue",
+    "primitive d'une fonction",
+    "taux d'accroissement"
   ],
-  "content_hash": "6b397c3b8c2ab161aade5b8ca77937770f90513f658b0491b2ec81a2d848fa67",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:46:09.943Z"
+  "content_hash": "2043520d5762841078c7897df1d09ee3182eec4d770101bdbd0f3b36b6fcedf5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:16.168Z"
 }

@@ -1,28 +1,29 @@
 {
   "uuid": "7Ulz",
   "source_path": "exo7/16-L3/7Ulz.tex",
-  "summary": "L'exercice demande de justifier deux formules pour le calcul du résidu d'une fonction en un point où elle présente un pôle simple ou un pôle d'ordre au plus N.",
+  "summary": "L'exercice demande de justifier deux formules pour le calcul du résidu d'une fonction complexe en un pôle simple ou d'ordre N, en utilisant les développements en série de Laurent.",
   "concepts": [
     "pôle simple",
     "pôle d'ordre N",
     "développement en série de Laurent",
-    "résidu d'une fonction",
+    "résidu d'une fonction holomorphe",
     "fonction holomorphe",
-    "zéro simple"
+    "théorème des résidus",
+    "limite de fonctions complexes"
   ],
   "methods": [
     "développement en série de Laurent",
-    "calcul de la dérivée",
-    "limite",
-    "théorème des résidus"
+    "calcul de dérivées successives",
+    "limite de fonctions",
+    "factorisation de fonctions holomorphes"
   ],
   "objects": [
-    "fonction holomorphe",
+    "fonction complexe",
     "pôle d'une fonction",
     "résidu",
     "développement en série de Laurent"
   ],
-  "content_hash": "924e1e849bb5d8a638c6a2bede8abf9190bffd17d08f9e44990bf3fc66eb6d90",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:08:01.594Z"
+  "content_hash": "a884eb7af5e86804ae077419f0277d110cf40acd8d0190d6955fb3f1f1eaedc9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:18.177Z"
 }

@@ -1,31 +1,31 @@
 {
   "uuid": "JrE0",
   "source_path": "exo7/1-L1/JrE0.tex",
-  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une base de polynômes de degré n dans l'espace vectoriel des polynômes complexes de degré ≤ n, vérifiant des conditions d'évaluation spécifiques. Il s'agit ensuite d'exprimer un polynôme P de degré ≤ n vérifiant des conditions d'interpolation données.",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une famille de polynômes de degré n vérifiant des conditions d'interpolation, puis de prouver que cette famille forme une base de l'espace vectoriel des polynômes complexes de degré ≤ n. Enfin, il s'agit d'expliciter le polynôme interpolateur unique passant par n+1 points donnés.",
   "concepts": [
     "polynôme interpolateur",
     "base d'un espace vectoriel",
-    "espace vectoriel de polynômes",
-    "unicité d'une solution",
-    "interpolation de Lagrange",
-    "divisibilité de polynômes",
-    "racines d'un polynôme"
+    "famille libre",
+    "dimension d'un espace vectoriel",
+    "polynôme de Lagrange",
+    "interpolation polynomiale",
+    "racine d'un polynôme"
   ],
   "methods": [
     "construction explicite de polynômes",
-    "vérification des conditions d'interpolation",
-    "démonstration de liberté d'une famille",
-    "expression d'un polynôme dans une base",
-    "utilisation de la divisibilité"
+    "preuve d'unicité par division polynomiale",
+    "preuve de liberté par évaluation",
+    "interpolation de Lagrange",
+    "décomposition dans une base"
   ],
   "objects": [
-    "polynômes de degré n",
+    "polynôme de degré n",
     "famille de polynômes",
-    "espace vectoriel de polynômes complexes",
-    "polynôme interpolateur",
-    "polynôme de Lagrange"
+    "espace vectoriel des polynômes complexes",
+    "points d'interpolation",
+    "polynôme interpolateur"
   ],
-  "content_hash": "763ecee3aa12fe3d72aba124dfb4d0cffbf8765e3304d57312365e3c95b043e7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:46:33.613Z"
+  "content_hash": "55c6bd313ae7336f3b22c77ac0992f054f86463a1b5ae3a1b7cdd3195a67b507",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:32.326Z"
 }

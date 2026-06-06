@@ -1,30 +1,34 @@
 {
   "uuid": "EAoY",
   "source_path": "exo7/2-L1/EAoY.tex",
-  "summary": "L'exercice demande de démontrer par récurrence et par des méthodes directes la formule de la somme des premiers entiers naturels, puis d'étendre cette approche aux sommes des carrés, cubes et quatrièmes puissances. Il propose ensuite d'établir une relation de récurrence générale pour les sommes de puissances entières.",
+  "summary": "L'exercice demande de démontrer par récurrence la formule de la somme des entiers de 1 à n, puis de calculer directement les sommes des carrés, cubes et puissances quatrièmes des entiers de 1 à n. Enfin, il s'agit d'établir une relation de récurrence pour calculer les sommes des puissances p-èmes de proche en proche.",
   "concepts": [
     "récurrence",
-    "somme de puissances entières",
+    "somme des entiers",
+    "somme des carrés",
+    "somme des cubes",
+    "somme des puissances",
     "relation de récurrence",
-    "triangle de Pascal",
-    "binôme de Newton",
-    "développement algébrique"
+    "téléscopie",
+    "triangle de Pascal"
   ],
   "methods": [
     "récurrence mathématique",
-    "démonstration directe",
-    "téléscopage",
-    "utilisation des coefficients binomiaux",
-    "calcul algébrique"
+    "téléscopie",
+    "décomposition algébrique",
+    "symétrisation",
+    "comptage géométrique",
+    "utilisation des coefficients binomiaux"
   ],
   "objects": [
-    "somme des premiers entiers",
+    "somme des entiers",
     "somme des carrés",
     "somme des cubes",
-    "somme des quatrièmes puissances",
-    "relation de récurrence pour les sommes de puissances"
+    "somme des puissances",
+    "relation de récurrence",
+    "triangle de Pascal"
   ],
-  "content_hash": "694b855c156b3bfd034b116833fb3506c81ff188a2f5df5ade1497ab24a2d49e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:06:45.296Z"
+  "content_hash": "d6b32137959b8cb9a1d3fe44a0f336ad0ff19836f37a4fbc457d28ba044aa306",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:33.956Z"
 }

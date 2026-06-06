@@ -1,32 +1,33 @@
 {
   "uuid": "gTsQ",
   "source_path": "exo7/4-L2/gTsQ.tex",
-  "summary": "Déterminer le rang et la signature de diverses formes quadratiques définies sur des espaces euclidiens de dimension 3, 4 ou n, en utilisant des méthodes algébriques comme la diagonalisation de matrices ou la réduction de Gauss.",
+  "summary": "L'exercice demande de déterminer le rang et la signature de plusieurs formes quadratiques définies sur des espaces vectoriels réels de dimensions 3, 4 ou 5, et pour un cas général en dimension n. Les formes quadratiques sont données par des expressions polynomiales en plusieurs variables.",
   "concepts": [
     "forme quadratique",
     "matrice symétrique",
     "valeur propre",
+    "polynôme caractéristique",
     "signature d'une forme quadratique",
     "rang d'une forme quadratique",
     "diagonalisation",
-    "réduction de Gauss",
-    "forme linéaire"
+    "définie positive",
+    "définie négative"
   ],
   "methods": [
     "calcul du polynôme caractéristique",
-    "diagonalisation de matrice",
     "réduction de Gauss",
-    "calcul de signature",
+    "diagonalisation de matrice",
+    "calcul de valeurs propres",
     "décomposition en carrés"
   ],
   "objects": [
-    "matrice symétrique",
-    "forme quadratique",
+    "matrice de forme quadratique",
+    "forme quadratique en plusieurs variables",
     "valeurs propres",
-    "forme linéaire",
-    "espace euclidien"
+    "polynôme caractéristique",
+    "base canonique"
   ],
-  "content_hash": "fb064d69fb39987f4ead40bb2066f3b3b76037b3d2d055eb6ec3e6041845fb01",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:43:58.912Z"
+  "content_hash": "744d6cfceefb05005627b97add51bbfd14dcd910d3494ad3036f9b0e347e9c79",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:11.918Z"
 }

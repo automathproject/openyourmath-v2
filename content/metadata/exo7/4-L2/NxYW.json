@@ -1,24 +1,26 @@
 {
   "uuid": "NxYW",
   "source_path": "exo7/4-L2/NxYW.tex",
-  "summary": "On considère un endomorphisme diagonalisable d'un espace vectoriel de dimension finie non nulle et un sous-espace stable par cet endomorphisme. On demande de montrer que la restriction de l'endomorphisme à ce sous-espace est diagonalisable.",
+  "summary": "Soit un endomorphisme diagonalisable d'un espace vectoriel de dimension finie. On considère un sous-espace stable par cet endomorphisme. On demande de montrer que la restriction de l'endomorphisme à ce sous-espace est elle-même diagonalisable.",
   "concepts": [
     "endomorphisme diagonalisable",
     "sous-espace stable",
     "polynôme annulateur",
     "polynôme scindé à racines simples",
-    "restriction d'endomorphisme"
+    "restriction d'endomorphisme",
+    "espace vectoriel de dimension finie"
   ],
   "methods": [
-    "utilisation de la diagonalisabilité",
-    "construction de polynôme annulateur"
+    "utilisation du polynôme annulateur",
+    "restriction d'application linéaire",
+    "diagonalisation"
   ],
   "objects": [
     "endomorphisme",
     "sous-espace vectoriel",
-    "polynôme"
+    "polynôme annulateur"
   ],
-  "content_hash": "f9a4d1c5c2c1516b1301f012e7cbb00510999e4b535f3938f4c6b233d2ec7927",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:39:01.252Z"
+  "content_hash": "d94136b5110d8f07c3a565008cfceed10a311c65399cbc881ee70967bbd39c96",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:27.835Z"
 }

@@ -1,25 +1,28 @@
 {
   "uuid": "6BXW",
   "source_path": "exo7/1-L1/6BXW.tex",
-  "summary": "Résoudre un système d'équations trigonométriques en cosinus et sinus de trois réels a, b, c.",
+  "summary": "Résoudre un système d'équations trigonométriques en cosinus et sinus de trois variables réelles a, b, c. Trouver toutes les solutions réelles satisfaisant simultanément les deux équations.",
   "concepts": [
     "nombre complexe",
     "module d'un nombre complexe",
     "forme exponentielle",
-    "identités trigonométriques",
-    "équation trigonométrique"
+    "identité trigonométrique",
+    "équation trigonométrique",
+    "périodicité des fonctions trigonométriques"
   ],
   "methods": [
-    "passage par les nombres complexes",
-    "utilisation de la forme exponentielle",
+    "passage en forme exponentielle",
+    "calcul de module",
+    "identité trigonométrique fondamentale",
     "résolution d'équation trigonométrique"
   ],
   "objects": [
-    "équations trigonométriques",
-    "réels a, b, c",
-    "nombres complexes e^{ia}, e^{ib}, e^{ic}"
+    "équation trigonométrique",
+    "nombre complexe",
+    "fonction cosinus",
+    "fonction sinus"
   ],
-  "content_hash": "c42dd9d9bea051c2cec03157f50163158a15fc66d1defa542f2c5474dd67475e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:32:50.375Z"
+  "content_hash": "c47b685fba2dd5830a07692cebb0cc9388f30ac23bf92215362950a4b197134c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:24.347Z"
 }

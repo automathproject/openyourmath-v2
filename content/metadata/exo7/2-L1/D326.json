@@ -1,22 +1,26 @@
 {
   "uuid": "D326",
   "source_path": "exo7/2-L1/D326.tex",
-  "summary": "L'exercice demande de déterminer le nombre de chiffres d'un entier naturel non nul n en base 10, en fonction de n.",
+  "summary": "L'exercice demande de déterminer le nombre de chiffres d'un entier naturel non nul n en base 10, c'est-à-dire de trouver l'entier p tel que 10^p ≤ n < 10^{p+1}.",
   "concepts": [
     "logarithme",
     "fonction partie entière",
-    "encadrement",
-    "notation décimale"
+    "encadrement d'un nombre",
+    "représentation en base 10",
+    "inégalités logarithmiques",
+    "unicité de la représentation décimale"
   ],
   "methods": [
     "utilisation des propriétés des logarithmes",
-    "encadrement par des puissances de 10"
+    "calcul de la partie entière",
+    "résolution d'inégalités"
   ],
   "objects": [
     "entier naturel",
-    "nombre de chiffres"
+    "nombre de chiffres",
+    "puissance de 10"
   ],
-  "content_hash": "c2af9bb1fcfe4ed6b27ecd609e0020774f65733d1b6cd52e4153ac722a92fffd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:48:38.752Z"
+  "content_hash": "e1c0c3f7f8d65ec01265a04db709cf68d72780a772abd52b0ff9d41c1842ad02",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:56.471Z"
 }

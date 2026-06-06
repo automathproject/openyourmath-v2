@@ -1,26 +1,30 @@
 {
   "uuid": "mumT",
   "source_path": "exo7/7-L2/mumT.tex",
-  "summary": "L'exercice demande de tester l'hypothèse d'un tirage uniforme sur les chiffres 0 à 9 à partir de 1000 tirages observés, en utilisant un test du chi-deux au niveau de signification de 5%.",
+  "summary": "L'exercice demande de tester l'hypothèse d'un générateur de chiffres aléatoires simulant une loi uniforme sur les entiers de 0 à 9, à partir de 1000 tirages observés. Il s'agit d'un test du chi-carré d'ajustement au niveau de signification de 5%.",
   "concepts": [
-    "test d'hypothèses",
+    "test du chi-carré d'ajustement",
     "loi uniforme discrète",
-    "test du chi-deux",
-    "approximation par la loi du chi-deux",
+    "hypothèse nulle",
     "niveau de signification",
-    "hypothèse nulle"
+    "approximation par la loi du chi-carré",
+    "degrés de liberté",
+    "fonction de répartition"
   ],
   "methods": [
-    "calcul de la statistique du chi-deux",
-    "approximation de la loi du chi-deux",
-    "comparaison avec la table de la loi du chi-deux"
+    "calcul de la statistique du chi-carré",
+    "approximation par la loi du chi-carré",
+    "comparaison avec les tables de la loi du chi-carré",
+    "test d'hypothèses"
   ],
   "objects": [
     "fréquences observées",
     "statistique de test",
-    "loi du chi-deux"
+    "loi du chi-carré",
+    "hypothèse nulle",
+    "niveau de signification"
   ],
-  "content_hash": "d56f48c6cbc25bae2c48bc7692c808b143509bb99463cbdd0e790a64c49e3bc1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:50:58.662Z"
+  "content_hash": "985cf3a2f0f2bf90ea0f91475f3e391b7b8fa3f1d0c47f069c6d043809ac13e2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:48.288Z"
 }

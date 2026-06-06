@@ -1,28 +1,27 @@
 {
   "uuid": "ZKIm",
   "source_path": "exo7/5-L2/ZKIm.tex",
-  "summary": "L'exercice demande de montrer qu'une fonction de deux variables, définie par morceaux, est de classe C^1 sur ℝ². La fonction est nulle en (0,0) et rationnelle ailleurs.",
+  "summary": "L'exercice demande de montrer qu'une fonction de deux variables, définie par morceaux en (0,0), est de classe C^1 sur ℝ². La fonction est une fraction rationnelle hors de l'origine.",
   "concepts": [
-    "fonction de plusieurs variables",
-    "différentiabilité",
     "continuité",
     "dérivées partielles",
     "classe C^1",
     "limite de fonction",
-    "fonction rationnelle"
+    "fonction de plusieurs variables",
+    "continuité des dérivées partielles"
   ],
   "methods": [
-    "étude de continuité",
-    "calcul de dérivées partielles",
-    "étude de la limite",
-    "démonstration de continuité des dérivées partielles"
+    "étude de la continuité en un point",
+    "calcul des dérivées partielles",
+    "utilisation de la symétrie",
+    "étude de la limite d'une fraction rationnelle"
   ],
   "objects": [
     "fonction de deux variables",
     "dérivées partielles premières",
-    "limite de fonction"
+    "fonction définie par morceaux"
   ],
-  "content_hash": "01a5d26de25f95ebc88a5e7b1bc78bfc01e380064ae0c4f9d66d6b8acaade91c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:08:39.780Z"
+  "content_hash": "7d3281e5ac918f1b919b59f8dd99b16c2ff2a2b40b0e3c147638af34fdabdef5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:23.366Z"
 }

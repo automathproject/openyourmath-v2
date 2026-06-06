@@ -1,7 +1,7 @@
 {
   "uuid": "9tOz",
   "source_path": "exo7/5-L2/9tOz.tex",
-  "summary": "Résoudre numériquement un système d'équations différentielles non linéaires avec des conditions initiales données, en utilisant la méthode d'Euler avec un pas de 0.1, puis comparer avec la solution analytique.",
+  "summary": "Résoudre numériquement un système d'équations différentielles linéaires à l'aide de la méthode d'Euler avec un pas de 0,1 et comparer avec la solution analytique exacte.",
   "concepts": [
     "équation différentielle linéaire",
     "système d'équations différentielles",
@@ -11,14 +11,15 @@
   ],
   "methods": [
     "méthode d'Euler",
-    "résolution analytique"
+    "résolution analytique",
+    "calcul de solution exacte"
   ],
   "objects": [
     "système d'équations différentielles",
     "fonctions y(x) et z(x)",
-    "conditions initiales"
+    "tableau de valeurs numériques"
   ],
-  "content_hash": "62a17dd1b4d661e3293c462aec535fecf2db4eaa02061060ef26ef256ad1b9c6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:18:42.335Z"
+  "content_hash": "a411a7178f3eb915c08fdffc60cb7cc391e568d71742789a7c33dad45ac6f60e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:24.674Z"
 }

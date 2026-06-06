@@ -1,31 +1,34 @@
 {
   "uuid": "6lUg",
   "source_path": "exo7/4-L2/6lUg.tex",
-  "summary": "L'exercice demande de déterminer une matrice A telle que la suite de Fibonacci puisse être exprimée comme une puissance de cette matrice appliquée à un vecteur initial. Il s'agit ensuite d'étudier les propriétés spectrales de cette matrice et d'en déduire une formule explicite pour les termes de la suite de Fibonacci.",
+  "summary": "L'exercice demande de déterminer une matrice A telle que la suite de Fibonacci puisse être exprimée comme une puissance de cette matrice appliquée à un vecteur initial. Il s'ensuit des questions sur les valeurs propres, les vecteurs propres, la décomposition du vecteur initial dans une base de vecteurs propres, et l'équivalent asymptotique de la suite de Fibonacci.",
   "concepts": [
     "suite récurrente linéaire",
-    "matrice de passage",
+    "matrice de récurrence",
     "valeur propre",
     "vecteur propre",
     "polynôme caractéristique",
     "diagonalisation",
-    "formule explicite"
-  ],
-  "methods": [
-    "réduction de matrice",
-    "calcul de polynôme caractéristique",
-    "diagonalisation",
     "décomposition spectrale",
     "équivalent asymptotique"
+  ],
+  "methods": [
+    "résolution d'une relation de récurrence",
+    "calcul du polynôme caractéristique",
+    "recherche de vecteurs propres",
+    "décomposition dans une base de vecteurs propres",
+    "récurrence sur les matrices",
+    "analyse asymptotique"
   ],
   "objects": [
     "suite de Fibonacci",
     "matrice 2x2",
     "vecteur propre",
-    "valeurs propres",
-    "base de vecteurs propres"
+    "valeurs propres réelles distinctes",
+    "base de vecteurs propres",
+    "polynôme caractéristique"
   ],
-  "content_hash": "3fa4075dbeafdc4df702905ffe4da49c661b02411368c6ebd76b5cf1252da0f0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:16:00.036Z"
+  "content_hash": "3f5dffda8bbe16b159747c3dab558d4b1d1ff060bad155a528ab1c8a34e9713b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:39.576Z"
 }

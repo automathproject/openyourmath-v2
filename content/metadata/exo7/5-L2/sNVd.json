@@ -1,7 +1,7 @@
 {
   "uuid": "sNVd",
   "source_path": "exo7/5-L2/sNVd.tex",
-  "summary": "Résoudre plusieurs systèmes d'équations différentielles linéaires à coefficients constants, avec ou sans second membre, en déterminant les solutions générales ou particulières. Certains systèmes incluent des conditions initiales.",
+  "summary": "Résoudre plusieurs systèmes d'équations différentielles linéaires à coefficients constants, avec ou sans second membre, en déterminant les solutions générales ou particulières. Certains systèmes sont homogènes, d'autres non, et l'un impose des conditions initiales.",
   "concepts": [
     "équation différentielle linéaire",
     "système d'équations différentielles",
@@ -15,21 +15,21 @@
   ],
   "methods": [
     "diagonalisation",
-    "changement de base",
+    "résolution de système homogène",
     "méthode de variation de la constante",
-    "résolution du système homogène associé",
     "calcul de polynôme caractéristique",
-    "détermination des solutions réelles à partir des solutions complexes"
+    "détermination de solutions réelles à partir de solutions complexes",
+    "résolution par combinaison linéaire"
   ],
   "objects": [
-    "système d'équations différentielles",
     "matrice carrée",
-    "vecteur propre",
-    "valeur propre",
-    "solution affine",
-    "solution particulière"
+    "système d'équations différentielles linéaires",
+    "solution vectorielle",
+    "valeurs propres complexes",
+    "second membre continu",
+    "conditions initiales"
   ],
-  "content_hash": "4b52d3469204e8a917c041d38cc3cf280cfda173b77d471135169822bfaa805d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:53:05.987Z"
+  "content_hash": "3b69ebd5c5866d6e89e541c4fa3963511a803b95230c559e10c51febb5616895",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:15.793Z"
 }

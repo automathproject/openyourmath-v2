@@ -1,7 +1,7 @@
 {
   "uuid": "THaN",
   "source_path": "exo7/1-L1/THaN.tex",
-  "summary": "L'exercice demande de démontrer que l'espace vectoriel E est la somme directe du noyau et de l'image d'une application linéaire f telle que f² = f. Ensuite, dans le cas où E est de dimension finie, il s'agit de construire une base adaptée et de déterminer la matrice de f dans cette base.",
+  "summary": "L'exercice demande de démontrer que l'espace vectoriel E est la somme directe du noyau et de l'image d'une application linéaire f telle que f² = f. Dans le cas où E est de dimension finie, il faut construire une base adaptée et déterminer la matrice de f dans cette base.",
   "concepts": [
     "application linéaire",
     "noyau d'une application linéaire",
@@ -12,9 +12,9 @@
     "matrice d'une application linéaire"
   ],
   "methods": [
-    "décomposition d'un vecteur en composantes",
-    "utilisation de la condition f² = f",
-    "construction explicite d'une base"
+    "décomposition d'un vecteur en somme d'un vecteur du noyau et d'un vecteur de l'image",
+    "construction d'une base adaptée",
+    "calcul de la matrice d'une application linéaire dans une base donnée"
   ],
   "objects": [
     "espace vectoriel",
@@ -24,7 +24,7 @@
     "base",
     "matrice"
   ],
-  "content_hash": "e38e482cc8981cae8912972aac399eb6135d38be3b48b57cc9485a3115c1ac71",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:00:48.416Z"
+  "content_hash": "a3ac0deff24ccc1bdd76c8aea6089598acd10fbecc1ad3e908485d174ee5ff00",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:38.409Z"
 }

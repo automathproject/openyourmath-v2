@@ -1,28 +1,31 @@
 {
   "uuid": "H9R3",
   "source_path": "exo7/2-L1/H9R3.tex",
-  "summary": "Calculer la limite d'une somme de termes positifs lorsque n tend vers l'infini, où chaque terme est l'inverse de la somme des carrés des entiers de 1 à k.",
+  "summary": "Calculer la limite d'une somme de termes de la forme 1/(1² + 2² + ... + k²) lorsque n tend vers l'infini. L'exercice mobilise la formule de la somme des carrés des entiers et des développements asymptotiques de séries harmoniques.",
   "concepts": [
-    "somme de carrés",
+    "somme des carrés des entiers",
     "décomposition en éléments simples",
-    "séries divergentes",
-    "limite de suites",
-    "fonction harmonique",
-    "constante d'Euler-Mascheroni"
+    "séries harmoniques",
+    "développement asymptotique",
+    "limite de suite",
+    "séries numériques",
+    "comparaison de termes"
   ],
   "methods": [
     "décomposition en fractions partielles",
     "téléscopage",
     "approximation logarithmique",
-    "comparaison asymptotique"
+    "calcul de coefficients par identification",
+    "utilisation de la constante d'Euler-Mascheroni"
   ],
   "objects": [
-    "somme de termes positifs",
-    "somme de carrés",
-    "fonction harmonique",
-    "limite infinie"
+    "somme de termes rationnels",
+    "suite de sommes partielles",
+    "somme des inverses des carrés",
+    "somme harmonique",
+    "terme général d'une série"
   ],
-  "content_hash": "cbf3e5b291d8dfd2c74b0bf564a126b65721e145f2b3534173d257c9b5e1846e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:08:53.537Z"
+  "content_hash": "5efa4c39986de35db650f4013922cb0178877116f58f2fb47bb8096728ab9de5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:44.503Z"
 }

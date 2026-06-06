@@ -1,31 +1,31 @@
 {
   "uuid": "PcQm",
   "source_path": "exo7/2-L1/PcQm.tex",
-  "summary": "L'exercice demande de montrer l'existence et l'unicité de solutions pour l'équation tan(x) = x dans des intervalles spécifiques, puis d'établir une relation entre x_n et arctan(x_n), et enfin de déterminer un développement limité de x_n en fonction de n à l'ordre 2.",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une solution x_n pour l'équation tan(x) = x dans chaque intervalle ]nπ - π/2, nπ + π/2[ (n ∈ ℕ), puis d'établir une relation entre x_n et arctan(x_n), et enfin d'obtenir un développement limité de x_n en fonction de n à l'ordre 0 puis à l'ordre 2 lorsque n tend vers l'infini.",
   "concepts": [
     "théorème des valeurs intermédiaires",
     "fonction continue et dérivable",
     "fonction strictement croissante",
+    "bijection réciproque",
     "développement limité",
-    "fonction réciproque",
-    "limite de fonction",
-    "bijection"
+    "asymptotique",
+    "relation fonctionnelle"
   ],
   "methods": [
     "étude de la dérivée",
-    "théorème des valeurs intermédiaires",
-    "développement limité d'ordre 2",
-    "approximation de fonctions trigonométriques",
+    "standardisation",
+    "approximation de Taylor",
+    "développement limité à l'ordre 2",
     "manipulation d'équations trigonométriques"
   ],
   "objects": [
-    "équation tan(x) = x",
-    "solution x_n",
-    "fonction f(x) = tan(x) - x",
+    "équation trigonométrique",
+    "solution unique",
     "développement limité de x_n",
-    "fonction arctan"
+    "fonction arctan",
+    "intervalle de définition"
   ],
-  "content_hash": "593d49571130ad4b969c5a9bba831190aa338b970a04f4c94585ae5b82017762",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:30:34.227Z"
+  "content_hash": "da88ba49961719c89b1a6c4f383930762229d4121674ddedf8c49461ff4876f1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:57.003Z"
 }

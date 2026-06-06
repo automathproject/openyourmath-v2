@@ -1,29 +1,30 @@
 {
   "uuid": "WLQ9",
   "source_path": "exo7/4-L2/WLQ9.tex",
-  "summary": "Soit un espace vectoriel réel muni d'une norme vérifiant l'identité du parallélogramme. Montrer que cette norme est hilbertienne, c'est-à-dire associée à un produit scalaire.",
+  "summary": "Soit un espace vectoriel réel muni d'une norme vérifiant l'identité du parallélogramme. On demande de montrer que cette norme est hilbertienne, c'est-à-dire qu'elle est associée à un produit scalaire.",
   "concepts": [
     "identité du parallélogramme",
     "norme hilbertienne",
     "produit scalaire",
-    "forme bilinéaire symétrique",
-    "forme définie positive",
-    "continuité des normes",
-    "densité des rationnels dans les réels"
+    "bilinéarité",
+    "forme quadratique",
+    "espace euclidien",
+    "espace normé"
   ],
   "methods": [
-    "construction explicite d'un produit scalaire",
-    "vérification des propriétés de bilinéarité",
-    "passage de la linéarité sur les rationnels à la linéarité sur les réels",
-    "utilisation de la continuité des normes"
+    "définition d'un produit scalaire à partir d'une norme",
+    "vérification de la bilinéarité",
+    "récurrence sur les entiers",
+    "extension aux rationnels",
+    "densité des rationnels dans les réels"
   ],
   "objects": [
     "espace vectoriel normé",
     "produit scalaire",
-    "forme bilinéaire",
-    "suite de rationnels"
+    "norme",
+    "forme bilinéaire"
   ],
-  "content_hash": "585abb15cc88e121685a027f7c2836f95581b52d52a283eaa7c915b619c60eb2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:31:29.173Z"
+  "content_hash": "c9ed29bbf904c98334c83cee8144774424ffae1e2cf0085457df002f738bd892",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:40.027Z"
 }

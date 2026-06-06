@@ -1,28 +1,33 @@
 {
   "uuid": "cOiT",
   "source_path": "exo7/1-L1/cOiT.tex",
-  "summary": "L'exercice demande de démontrer plusieurs propriétés sur les ensembles, notamment des égalités impliquant la différence symétrique (Δ) et les opérations d'union (∪) et d'intersection (∩).",
+  "summary": "L'exercice demande de démontrer plusieurs propriétés des ensembles, notamment sur la différence symétrique (Δ) et les opérations d'union et d'intersection. Il s'agit de prouver des équivalences et des égalités entre ensembles en utilisant des raisonnements logiques et des propriétés algébriques des opérations ensemblistes.",
   "concepts": [
     "différence symétrique",
     "union d'ensembles",
     "intersection d'ensembles",
     "inclusion d'ensembles",
     "équivalence logique",
-    "distributivité"
+    "lois de De Morgan",
+    "distributivité de l'intersection sur l'union",
+    "parties d'un ensemble"
   ],
   "methods": [
-    "raisonnement par contraposée",
-    "raisonnement par cas",
-    "utilisation de la distributivité",
-    "preuve par double implication"
+    "raisonnement par l'absurde",
+    "double implication",
+    "utilisation des propriétés de la différence symétrique",
+    "distributivité",
+    "inclusion réciproque",
+    "définition par les éléments"
   ],
   "objects": [
     "ensembles A, B, C",
+    "parties d'un ensemble E",
     "différence symétrique AΔB",
     "union A∪B",
     "intersection A∩B"
   ],
-  "content_hash": "8bada8f81a6819841c1333069be92c1356880d2e6255eac4e41b8f04f0961084",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:20:37.037Z"
+  "content_hash": "3f299264059de375d84c1b6939a6743359fff57efbe4382859f62a60aa57c83b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:30.077Z"
 }

@@ -1,32 +1,31 @@
 {
   "uuid": "08zF",
   "source_path": "exo7/14-L3/08zF.tex",
-  "summary": "L'exercice demande de montrer qu'une fonction positive ou nulle définie sur ℕ est mesurable par rapport à la tribu des parties de ℕ et à la tribu borélienne de ℝ, puis d'établir l'égalité entre son intégrale de Lebesgue et la somme de ses valeurs en chaque entier naturel.",
+  "summary": "L'exercice demande de montrer qu'une fonction positive définie sur ℕ est mesurable par rapport à la tribu discrète et de calculer son intégrale de Lebesgue par rapport à la mesure de comptage, en établissant l'égalité avec la somme infinie de ses valeurs.",
   "concepts": [
-    "mesurabilité d'une fonction",
+    "mesurabilité",
+    "tribu discrète",
     "mesure de comptage",
     "intégrale de Lebesgue",
-    "tribu borélienne",
+    "fonction mesurable",
     "σ-additivité",
-    "fonction positive ou nulle",
     "ensemble dénombrable",
-    "union disjointe"
+    "fonction positive"
   ],
   "methods": [
-    "définition de la mesurabilité par réciproque",
-    "définition de l'intégrale de Lebesgue",
-    "utilisation des ensembles de niveau",
+    "définition de la mesurabilité",
+    "calcul de l'intégrale via les ensembles de niveau",
     "σ-additivité de la mesure",
-    "passage à la limite dans l'intégrale"
+    "décomposition en cas disjointe"
   ],
   "objects": [
-    "fonction mesurable",
+    "fonction ℕ → ℝ",
     "mesure de comptage",
-    "ensemble dénombrable",
-    "ensemble de niveau",
-    "intégrale de Lebesgue"
+    "tribu discrète",
+    "intégrale de Lebesgue",
+    "ensembles de niveau"
   ],
-  "content_hash": "eae4d2cf4d5d2fa4d4b9a0c5167d3d3d1d4abb713fd887ecff0b6e071b8dffed",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:24:21.359Z"
+  "content_hash": "ac6ec684868e5f85a1811f8b802e3fbbf473f373d6e03bbb8f7ae835cc6fcfa0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:51.291Z"
 }

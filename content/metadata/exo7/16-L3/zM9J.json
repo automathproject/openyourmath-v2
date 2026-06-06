@@ -1,25 +1,26 @@
 {
   "uuid": "zM9J",
   "source_path": "exo7/16-L3/zM9J.tex",
-  "summary": "Calculer la transformée de Fourier d'une fonction porte symétrique définie par morceaux et vérifier que cette fonction satisfait aux conditions de Dirichlet.",
+  "summary": "Calculer la transformée de Fourier d'une fonction porte symétrique définie par morceaux. Vérifier les conditions de Dirichlet et déterminer la définition de la fonction aux points de discontinuité pour assurer la convergence de l'intégrale de Fourier.",
   "concepts": [
     "transformée de Fourier",
-    "fonction définie par morceaux",
+    "fonction porte",
     "conditions de Dirichlet",
     "convergence de l'intégrale de Fourier",
-    "fonction porte"
+    "fonction définie par morceaux",
+    "symétrie"
   ],
   "methods": [
     "calcul de transformée de Fourier",
     "vérification des conditions de Dirichlet",
-    "analyse de convergence d'intégrale"
+    "analyse de convergence ponctuelle"
   ],
   "objects": [
     "fonction porte symétrique",
-    "transformée de Fourier",
-    "conditions de Dirichlet"
+    "fonction définie par morceaux",
+    "transformée de Fourier"
   ],
-  "content_hash": "c0cb9b6826994a398af9c69832da7ab262a5a4ab43d842bc3c69923ae9456207",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:23:17.213Z"
+  "content_hash": "cda6a4852a51120c6e83e29699e7882f39288d322f199cedbe4c82396d3ed3fc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:48.414Z"
 }

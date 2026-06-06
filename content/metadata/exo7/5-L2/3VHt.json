@@ -1,31 +1,31 @@
 {
   "uuid": "3VHt",
   "source_path": "exo7/5-L2/3VHt.tex",
-  "summary": "Étudier la convergence simple, uniforme et localement uniforme de trois suites de fonctions définies sur ℝ vers la fonction nulle.",
+  "summary": "Étudier la convergence simple, uniforme et localement uniforme de trois suites de fonctions définies sur ℝ, en analysant leur comportement vers la fonction nulle ou une autre fonction limite.",
   "concepts": [
     "convergence simple",
     "convergence uniforme",
     "convergence localement uniforme",
-    "fonction impaire",
-    "bornitude",
-    "dérivation",
-    "extremum"
+    "fonction nulle",
+    "fonction constante",
+    "limite de suite de fonctions",
+    "supremum de fonction"
   ],
   "methods": [
     "étude de la limite ponctuelle",
-    "analyse de la bornitude",
-    "dérivation",
-    "recherche d'extremum",
-    "comparaison asymptotique"
+    "analyse de la dérivée",
+    "recherche du maximum de la fonction",
+    "comparaison avec la fonction exponentielle",
+    "étude de la convergence uniforme sur des intervalles"
   ],
   "objects": [
     "suite de fonctions",
-    "fonction nulle",
-    "fonction constante",
-    "segment de ℝ",
-    "intervalle de ℝ"
+    "fonction définie sur ℝ",
+    "fonction impaire",
+    "fonction dérivable",
+    "fonction croissante/décroissante"
   ],
-  "content_hash": "a7e7487d7cc13f3f627cfe0c35c9f0f6f84fff6b8c41c2b7969d37ac7780a445",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:46:12.406Z"
+  "content_hash": "e8ab2f9b299caa02949ba6d016b0ced0d9707dd51aa5fe8b5c310a92356b0acc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:51.198Z"
 }

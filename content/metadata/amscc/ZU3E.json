@@ -8,21 +8,21 @@
     "théorème central limite",
     "espérance",
     "variance",
-    "approximation normale",
+    "standardisation",
     "fonction de répartition"
   ],
   "methods": [
-    "minoration par inégalité",
-    "approximation par table de répartition",
+    "approximation par inégalité",
+    "lecture de table de répartition",
     "standardisation",
     "approximation gaussienne"
   ],
   "objects": [
-    "variable aléatoire de Poisson",
+    "variable aléatoire discrète",
     "somme de variables aléatoires indépendantes",
     "loi normale centrée réduite"
   ],
-  "content_hash": "b3aabac768b30c72e6d2cf71bc99677f94adc9c637e8c0365afea1635bc0c2b9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:32:02.833Z"
+  "content_hash": "ab32dfd2fc6f7ac6d5b956ff9b9662d58d8473879cacf0d816c78737f1d5d122",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:30.416Z"
 }

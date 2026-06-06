@@ -1,30 +1,31 @@
 {
   "uuid": "YQ8k",
   "source_path": "exo7/4-L2/YQ8k.tex",
-  "summary": "Calculer des déterminants de matrices particulières en utilisant des propriétés algébriques et des transformations de lignes/colonnes. Les matrices présentent des motifs symétriques ou des valeurs spécifiques.",
+  "summary": "Calculer des déterminants de matrices particulières : matrice symétrique avec des coefficients non nuls sur la diagonale et l'antidiagonale, matrices avec des motifs spécifiques de zéros et de uns, et matrice de Toeplitz. Les méthodes de résolution impliquent des opérations sur les lignes et colonnes et l'utilisation de la linéarité du déterminant.",
   "concepts": [
     "déterminant",
     "linéarité du déterminant",
     "matrice symétrique",
-    "transformation de lignes/colonnes",
-    "déterminant triangulaire",
-    "propriété multiplicative des déterminants"
+    "matrice triangulaire",
+    "opérations élémentaires sur les lignes/colonnes",
+    "matrice de Toeplitz",
+    "déterminant triangulaire"
   ],
   "methods": [
-    "transformation de colonnes",
-    "transformation de lignes",
-    "factorisation par linéarité",
-    "réduction en déterminant triangulaire",
-    "soustraction de colonnes/lignes"
+    "opérations sur les lignes/colonnes",
+    "linéarité du déterminant",
+    "factorisation",
+    "réduction à une matrice triangulaire",
+    "utilisation de la symétrie"
   ],
   "objects": [
     "matrice carrée",
     "déterminant",
-    "colonnes/ligne égales",
     "matrice symétrique",
-    "matrice triangulaire"
+    "matrice triangulaire",
+    "matrice de Toeplitz"
   ],
-  "content_hash": "14211325a8b253230d19ad2e53392599cd7ee3af88a2a033eedd20e4214f4384",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:56:14.677Z"
+  "content_hash": "c5b74fb909303dfc8d4c9720aba61ebc989cddaf2ad92a821ade26d8aff88a79",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:07.019Z"
 }

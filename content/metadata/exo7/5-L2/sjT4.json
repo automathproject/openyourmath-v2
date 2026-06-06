@@ -1,28 +1,32 @@
 {
   "uuid": "sjT4",
   "source_path": "exo7/5-L2/sjT4.tex",
-  "summary": "Déterminer le rayon de convergence de six séries entières différentes en utilisant des techniques d'analyse. Chaque cas nécessite une approche spécifique pour évaluer la convergence.",
+  "summary": "Déterminer le rayon de convergence de six séries entières différentes en utilisant des techniques d'analyse asymptotique et des critères de convergence. Les séries impliquent des termes complexes avec des fonctions logarithmes, factoriels, polynômes, et combinaisons trigonométriques.",
   "concepts": [
     "rayon de convergence",
     "série entière",
-    "convergence grossière",
-    "formule de Stirling",
+    "équivalence asymptotique",
     "règle de d'Alembert",
-    "développement asymptotique"
+    "formule de Stirling",
+    "croissance comparée",
+    "limite de suites"
   ],
   "methods": [
-    "analyse de la limite de la suite générale",
-    "approximation asymptotique",
+    "développement asymptotique",
+    "comparaison de séries",
     "règle de d'Alembert",
-    "développement asymptotique de fonctions"
+    "approximation de Stirling",
+    "analyse de la limite de termes généraux"
   ],
   "objects": [
     "série entière",
     "suite numérique",
-    "fonction génératrice",
-    "développement asymptotique"
+    "fonction logarithme",
+    "factorielles",
+    "polynômes",
+    "combinaisons trigonométriques"
   ],
-  "content_hash": "c735d47d2150c9fd988d5fdabf744bc4e517046be79d65baffcaaf04e4554c89",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:54:10.265Z"
+  "content_hash": "d8086db0b1d262598367ba08ca130bdf4da1a223b9f2b2c8bc08672561f9d887",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:21.817Z"
 }

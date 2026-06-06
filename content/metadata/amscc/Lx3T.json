@@ -1,0 +1,34 @@
+{
+  "uuid": "Lx3T",
+  "source_path": "amscc/Lx3T.tex",
+  "summary": "L'exercice demande de réaliser deux tests statistiques sur la moyenne d'un échantillon gaussien pour comparer les mesures de Michelson à deux valeurs de référence de la vitesse de la lumière. Il faut construire les statistiques de test, déterminer les régions de rejet et conclure. Une question supplémentaire porte sur l'approximation du quantile d'une loi du chi-deux et le calcul du risque de seconde espèce pour un test sur l'écart-type.",
+  "concepts": [
+    "test d'hypothèses sur la moyenne",
+    "test de Student",
+    "loi du chi-deux",
+    "approximation de Fisher",
+    "quantile d'ordre",
+    "risque de première espèce",
+    "risque de seconde espèce",
+    "puissance d'un test"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de statistique de test",
+    "détermination de région de rejet",
+    "approximation de quantile par transformation de Fisher",
+    "calcul de risque de seconde espèce"
+  ],
+  "objects": [
+    "échantillon gaussien",
+    "statistique de Student",
+    "statistique du chi-deux",
+    "quantile de loi normale",
+    "risque de première espèce",
+    "risque de seconde espèce"
+  ],
+  "content_hash": "3ab2b4fb57f80cd0eb8ee783808abd8e1e5ee16242b6375f8d41e081918077ac",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:01.014Z"
+}

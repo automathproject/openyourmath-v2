@@ -1,28 +1,30 @@
 {
   "uuid": "RrAz",
   "source_path": "exo7/6-L2/RrAz.tex",
-  "summary": "L'exercice demande de montrer que trois plans donnés admettent une parallèle commune, formant ainsi un prisme, puis de déterminer l'aire d'une section perpendiculaire à cette parallèle.",
+  "summary": "L'exercice demande de montrer que trois plans donnés admettent une droite parallèle commune, formant ainsi un prisme, puis de calculer l'aire d'une section perpendiculaire à cette droite.",
   "concepts": [
     "géométrie affine",
     "plan affine",
     "droite affine",
-    "section droite de prisme",
     "produit vectoriel",
-    "norme de vecteur"
+    "section plane",
+    "prisme",
+    "intersection de plans"
   ],
   "methods": [
     "résolution de systèmes d'équations linéaires",
     "calcul de produit vectoriel",
-    "calcul de norme de vecteur",
-    "détermination de section perpendiculaire"
+    "détermination de section plane",
+    "calcul de norme vectorielle"
   ],
   "objects": [
     "plans affines",
     "droite affine",
-    "section droite",
-    "vecteurs"
+    "section plane",
+    "vecteurs",
+    "produit vectoriel"
   ],
-  "content_hash": "21779fd72779b69e7cd0c13ddcbd716a181921af0be7cfc37fa0dd0b63834697",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:53:25.737Z"
+  "content_hash": "144456beead3272b13c30d9b0d304d0d3b30f6999baa6d57f34c058d8e20fc65",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:12.847Z"
 }

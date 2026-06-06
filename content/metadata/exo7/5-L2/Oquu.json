@@ -5,21 +5,21 @@
   "concepts": [
     "norme sur un espace vectoriel",
     "norme sous-multiplicative",
-    "norme équivalente",
+    "équivalence de normes",
     "espace vectoriel de dimension finie",
     "continuité des applications linéaires"
   ],
   "methods": [
     "utilisation de normes équivalentes",
-    "majoration par une norme sous-multiplicative",
-    "construction d'une nouvelle norme sous-multiplicative"
+    "majoration par la norme 1",
+    "construction d'une constante de majoration"
   ],
   "objects": [
     "norme sur l'espace des matrices",
-    "matrices réelles",
+    "matrices carrées réelles",
     "produit de matrices"
   ],
-  "content_hash": "f7e97044b0968ddd947202164530162b0516cd9324c92f6e9b14fec3af8405dd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:49:59.939Z"
+  "content_hash": "d80b15d265ef58120a9ad25cd6f7339465ab48b91ae929a09963c2910ac6bef6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:07.005Z"
 }

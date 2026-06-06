@@ -1,0 +1,36 @@
+{
+  "uuid": "mK9p",
+  "source_path": "amscc/mK9p.tex",
+  "summary": "L'exercice propose de tester des hypothèses statistiques sur deux situations distinctes : d'abord, comparer la moyenne de temps de révision d'étudiants à une valeur hypothétique (3 heures) en utilisant un test de Student, puis évaluer la puissance de ce test pour une alternative spécifique. Ensuite, il s'agit de tester l'adéquation d'une distribution de notes à une loi binomiale via un test du chi-deux d'adéquation.",
+  "concepts": [
+    "test d'hypothèses",
+    "test de Student",
+    "test du chi-deux d'adéquation",
+    "loi normale",
+    "loi binomiale",
+    "puissance d'un test",
+    "intervalle de confiance",
+    "statistique de test"
+  ],
+  "methods": [
+    "calcul de la moyenne empirique",
+    "calcul de l'écart-type corrigé",
+    "standardisation",
+    "calcul de la statistique de Student",
+    "calcul de la statistique du chi-deux",
+    "regroupement de classes",
+    "calcul de la puissance d'un test"
+  ],
+  "objects": [
+    "échantillon",
+    "moyenne",
+    "variance",
+    "statistique de test",
+    "effectifs observés",
+    "effectifs théoriques",
+    "loi binomiale"
+  ],
+  "content_hash": "5740068cf83d79fdebae564a5f8977a2c71a3417d9484f5715618b49e56a6297",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:04.745Z"
+}

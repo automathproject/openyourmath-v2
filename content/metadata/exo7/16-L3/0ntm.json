@@ -1,28 +1,28 @@
 {
   "uuid": "0ntm",
   "source_path": "exo7/16-L3/0ntm.tex",
-  "summary": "Calculer une intégrale complexe sur un cercle selon le rayon, en utilisant soit le théorème des résidus, soit la décomposition en éléments simples.",
+  "summary": "Calculer l'intégrale complexe d'une fonction rationnelle sur un cercle centré en l'origine, selon le rayon du cercle par rapport aux pôles de la fonction. L'exercice demande d'utiliser le théorème des résidus ou une décomposition en éléments simples.",
   "concepts": [
     "théorème des résidus",
     "pôle simple",
-    "résidu",
     "fonction holomorphe",
     "intégrale complexe",
+    "résidu",
     "décomposition en éléments simples"
   ],
   "methods": [
     "calcul de résidus",
-    "théorème des résidus",
-    "décomposition en éléments simples",
-    "intégration sur un cercle"
+    "théorème de Cauchy",
+    "intégration sur un contour",
+    "décomposition en fractions partielles"
   ],
   "objects": [
-    "intégrale complexe",
-    "cercle dans le plan complexe",
     "fonction rationnelle",
-    "pôles simples"
+    "cercle dans le plan complexe",
+    "pôle simple",
+    "intégrale de contour"
   ],
-  "content_hash": "0b03f5b4deba51f69adf0b6b3e9b180acf9dbb7f91c9583abaa360508ebc2027",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:04:59.142Z"
+  "content_hash": "b7fff842ec16f8972ae3db24898ce714a8b042b744fd281293d1e0711f1fc999",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:15.762Z"
 }

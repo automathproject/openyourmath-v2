@@ -1,11 +1,31 @@
 {
   "uuid": "mzGA",
   "source_path": "exo7/6-L2/mzGA.tex",
-  "summary": "Le document présente plusieurs exemples de surfaces quadriques en trois dimensions, avec leurs équations cartésiennes et leurs classifications. Les méthodes utilisées incluent la diagonalisation de matrices, le changement de repère, et la réduction des équations. Les surfaces analysées sont un cône, un hyperboloïde à deux nappes, un cylindre de révolution, un cylindre parabolique, un paraboloïde hyperbolique, et une surface de type conique. Les techniques mathématiques employées sont la diagonalisation de matrices, le calcul des valeurs propres et vecteurs propres, et la transformation des équations pour les mettre sous forme réduite. Les résultats montrent comment ces surfaces peuvent être classées et étudiées en utilisant des outils algébriques et géométriques.",
-  "concepts": [],
-  "methods": [],
-  "objects": [],
-  "content_hash": "89283406a04f166343516c4731a06181cf173c22176dc479c9c7a670957b068d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:47:05.348Z"
+  "summary": "L'exercice demande de déterminer la nature et les éléments caractéristiques de diverses quadriques définies par des équations cartésiennes dans l'espace 3D. Il s'agit d'identifier le type de surface (paraboloïde, hyperboloïde, cône, cylindre) et leurs propriétés géométriques à partir de leur équation.",
+  "concepts": [
+    "quadrique",
+    "classification des quadriques",
+    "changement de repère",
+    "diagonalisation de forme quadratique",
+    "signature d'une forme quadratique",
+    "équation réduite",
+    "géométrie différentielle"
+  ],
+  "methods": [
+    "diagonalisation de matrice",
+    "changement de variable",
+    "complétion du carré",
+    "calcul de polynôme caractéristique",
+    "détermination de vecteurs propres"
+  ],
+  "objects": [
+    "forme quadratique",
+    "matrice symétrique",
+    "repère orthonormé",
+    "équation cartésienne",
+    "surface de l'espace"
+  ],
+  "content_hash": "adedab1c16e15ad1ab878842bbec963132fc31e5bbad6d309acf26587a42d772",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:37.381Z"
 }

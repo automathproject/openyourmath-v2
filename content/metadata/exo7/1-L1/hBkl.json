@@ -1,7 +1,7 @@
 {
   "uuid": "hBkl",
   "source_path": "exo7/1-L1/hBkl.tex",
-  "summary": "Démontrer la formule de dimension pour la somme de deux sous-espaces vectoriels dans un espace vectoriel de dimension finie.",
+  "summary": "Démontrer la formule de dimension pour la somme de deux sous-espaces vectoriels F et G dans un espace vectoriel de dimension finie.",
   "concepts": [
     "théorème du rang",
     "somme de sous-espaces vectoriels",
@@ -12,17 +12,18 @@
   ],
   "methods": [
     "utilisation du théorème du rang",
+    "construction d'un isomorphisme",
     "analyse du noyau d'une application linéaire",
-    "construction d'un isomorphisme"
+    "démonstration par équivalence"
   ],
   "objects": [
     "sous-espaces vectoriels",
     "espace vectoriel de dimension finie",
     "application linéaire",
-    "noyau d'une application linéaire",
-    "image d'une application linéaire"
+    "noyau d'une application",
+    "image d'une application"
   ],
-  "content_hash": "e6db65cf2a684f6bb336030e0746d9920627b1cb9e140b513d1f325bb35d705a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:02:53.701Z"
+  "content_hash": "9ae40e5b4e0f48ac0e06d172b9692bbe2236c3525b628500118faf83ce146c66",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:53.267Z"
 }

@@ -1,31 +1,30 @@
 {
   "uuid": "UMMH",
   "source_path": "exo7/4-L2/UMMH.tex",
-  "summary": "Montrer l'équivalence entre l'existence d'une combinaison linéaire de formes linéaires et l'inclusion de leur intersection de noyaux dans le noyau d'une autre forme linéaire. Application à la détermination d'une équation de plan en géométrie vectorielle.",
+  "summary": "L'exercice demande de démontrer une équivalence entre l'existence d'une combinaison linéaire de formes linéaires et l'inclusion de l'intersection de leurs noyaux dans le noyau d'une autre forme linéaire. Il illustre ensuite ce résultat en trouvant l'équation d'un plan contenant une droite donnée et un vecteur donné dans ℝ³.",
   "concepts": [
-    "espace vectoriel",
     "forme linéaire",
     "noyau d'une application linéaire",
+    "espace vectoriel dual",
+    "base duale",
     "combinaison linéaire",
-    "dual d'un espace vectoriel",
-    "famille libre",
-    "famille génératrice",
-    "théorie des faisceaux"
+    "théorie des faisceaux",
+    "intersection de sous-espaces vectoriels"
   ],
   "methods": [
     "manipulation de noyaux",
     "complétion en base",
     "utilisation de la préduale",
-    "analyse de cas de liberté/génératrice"
+    "résolution d'équations linéaires"
   ],
   "objects": [
-    "formes linéaires",
-    "noyaux",
-    "espace vectoriel de dimension finie",
+    "forme linéaire sur un espace vectoriel",
+    "noyau d'une forme linéaire",
     "plan affine",
-    "vecteur"
+    "droite affine",
+    "vecteur de ℝ³"
   ],
-  "content_hash": "62935fa8baacf30b3738129a4dac42d1a5ae04c5c53e529cc16b8785f3eba9ab",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:27:59.425Z"
+  "content_hash": "43c72b0ec088e105baedc3458f57cb67ca05acbc84989e05a26e69c63fea9a06",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:29.646Z"
 }

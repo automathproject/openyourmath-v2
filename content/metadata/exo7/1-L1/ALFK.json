@@ -1,31 +1,29 @@
 {
   "uuid": "ALFK",
   "source_path": "exo7/1-L1/ALFK.tex",
-  "summary": "Déterminer le rang de six matrices différentes en fonction de paramètres variables. L'exercice demande d'analyser la structure linéaire de matrices de tailles variées avec des éléments dépendant de paramètres.",
+  "summary": "Déterminer le rang de six matrices différentes, dont certaines dépendent de paramètres. L'exercice couvre des matrices de tailles variées avec des structures spécifiques.",
   "concepts": [
     "rang d'une matrice",
-    "opérations élémentaires sur les lignes/colonnes",
     "inversibilité d'une matrice",
-    "système linéaire",
+    "opérations élémentaires sur les lignes/colonnes",
     "matrice symétrique",
-    "matrice circulante"
+    "matrice circulante",
+    "matrice de Toeplitz"
   ],
   "methods": [
-    "réduction par le pivot de Gauss",
-    "manipulation de lignes/colonnes",
-    "analyse de cas",
+    "réduction par opérations élémentaires",
     "calcul de déterminant",
-    "comparaison de vecteurs colonnes"
+    "analyse des cas selon les valeurs des paramètres",
+    "utilisation de la structure matricielle"
   ],
   "objects": [
-    "matrice carrée",
     "matrice 3x3",
     "matrice 4x4",
-    "matrice circulante",
-    "matrice symétrique",
-    "paramètres variables"
+    "matrice n x n",
+    "matrice à coefficients polynomiaux",
+    "matrice à coefficients trigonométriques"
   ],
-  "content_hash": "659652fdd0bad0fbebb32167f329afc203cdde604af59d350b14499716a3b883",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:56:46.611Z"
+  "content_hash": "c72ce4562f4e5afb6b44688cf176a68ed0a708129b46212bd2027a7f7c27bb47",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:58.362Z"
 }

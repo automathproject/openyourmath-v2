@@ -1,22 +1,22 @@
 {
   "uuid": "uVBn",
   "source_path": "amscc/uVBn.tex",
-  "summary": "L'exercice étudie deux stratégies (A et B) appliquées à trois nombres réels tirés uniformément dans [0,1]. La stratégie A consiste à choisir le maximum des trois nombres, tandis que la stratégie B choisit la somme des deux plus petits. L'objectif est de comparer ces stratégies en analysant les lois de probabilité associées.",
+  "summary": "L'exercice étudie deux stratégies (A et B) appliquées à trois nombres aléatoires uniformes dans [0,1]. La stratégie A consiste à choisir le maximum des trois nombres, tandis que la stratégie B prend la somme des deux plus petits. On demande d'analyser les lois de probabilité associées et de comparer les espérances des deux stratégies.",
   "concepts": [
     "loi uniforme",
-    "variable aléatoire absolument continue",
+    "variable aléatoire maximale",
+    "variable aléatoire minimale",
     "fonction de répartition",
     "densité de probabilité",
     "espérance mathématique",
-    "intégration multiple",
-    "probabilité conditionnelle"
+    "intégration sur un domaine"
   ],
   "methods": [
     "calcul de la fonction de répartition",
-    "détermination de la densité de probabilité",
-    "calcul d'espérance",
-    "intégration sur un domaine défini",
-    "comparaison de stratégies"
+    "détermination de la densité par dérivation",
+    "calcul d'espérance par intégration",
+    "intégration sur un domaine symétrique",
+    "comparaison de stratégies par probabilité"
   ],
   "objects": [
     "variable aléatoire uniforme",
@@ -25,7 +25,7 @@
     "fonction de répartition",
     "densité de probabilité"
   ],
-  "content_hash": "260afd95a4c18d592652c4e9b4b58ede6a2168d66f95277328d55086e9977408",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:09:39.089Z"
+  "content_hash": "b5bcfc420c7d9e6d3d4056432d6750f6cf570b475e21b66cde6aa956db3a8e91",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:52.562Z"
 }

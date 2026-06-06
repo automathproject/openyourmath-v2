@@ -1,29 +1,32 @@
 {
   "uuid": "bdzr",
   "source_path": "exo7/1-L1/bdzr.tex",
-  "summary": "L'exercice demande de démontrer une caractérisation des triplets pythagoriciens primitifs et non primitifs dans ℕ³, en montrant l'équivalence entre l'équation x² + y² = z² et l'existence d'un triplet primitif multiplié par un entier naturel.",
+  "summary": "L'exercice demande de démontrer une caractérisation des triplets pythagoriciens primitifs et non primitifs dans ℕ³, puis d'étudier les propriétés de parité et de divisibilité de ces triplets. Il explore aussi la paramétrisation des solutions.",
   "concepts": [
     "nombres premiers entre eux",
     "pgcd",
-    "triplet pythagoricien",
     "parité",
-    "divisibilité dans ℤ",
-    "factorisation",
-    "équation diophantienne"
+    "divisibilité",
+    "paramétrisation des triplets pythagoriciens",
+    "théorème de Gauss",
+    "identité de Pythagore",
+    "arithmétique dans ℤ"
   ],
   "methods": [
     "décomposition en facteurs premiers",
     "analyse de parité",
-    "construction explicite",
-    "utilisation du pgcd"
+    "construction de solutions paramétriques",
+    "utilisation de la relation de Bézout",
+    "réduction à un cas primitif"
   ],
   "objects": [
-    "triplet (x, y, z) ∈ ℕ³",
+    "triplet pythagoricien",
     "entiers naturels",
-    "pgcd(x, y, z)",
-    "facteur commun"
+    "pgcd(x,y,z)",
+    "suite de nombres pairs/impairs",
+    "paramètres m et n"
   ],
-  "content_hash": "15b5a10716bfba68820ab7596c33342413bb723c9d1320ec793fd5cf92b02041",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:42:01.907Z"
+  "content_hash": "fcd8a478480a55cd1b893a41ae505e982aec52f63bb8abc33218b8cfe4bc2414",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:34:34.749Z"
 }

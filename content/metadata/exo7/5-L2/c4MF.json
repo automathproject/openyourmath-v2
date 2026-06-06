@@ -1,32 +1,31 @@
 {
   "uuid": "c4MF",
   "source_path": "exo7/5-L2/c4MF.tex",
-  "summary": "Résoudre plusieurs équations différentielles linéaires du premier ordre sur des intervalles spécifiés, avec des conditions de régularité et de continuité.",
+  "summary": "Résoudre plusieurs équations différentielles linéaires du premier ordre sur des intervalles donnés, avec des conditions de continuité ou de dérivabilité en des points particuliers.",
   "concepts": [
     "équation différentielle linéaire du premier ordre",
     "espace vectoriel de solutions",
     "continuité des coefficients",
     "dérivabilité en un point",
     "changement de variable",
-    "intégration de fonctions rationnelles",
-    "fonction exponentielle",
-    "fonction logarithme"
+    "intégration",
+    "fonction solution"
   ],
   "methods": [
-    "factorisation par un facteur intégrant",
-    "changement de variable pour simplifier l'intégrale",
-    "résolution sur des intervalles disjoints",
-    "analyse de la dérivabilité en un point critique",
-    "détermination de la dimension de l'espace des solutions"
+    "factorisation",
+    "changement de variable",
+    "intégration",
+    "analyse de la dérivabilité en un point",
+    "résolution d'équation différentielle linéaire"
   ],
   "objects": [
-    "fonction dérivable sur un intervalle",
-    "solution d'une équation différentielle",
+    "équation différentielle linéaire",
+    "fonction solution",
     "espace vectoriel de solutions",
-    "fonction continue sur un intervalle",
-    "primitive d'une fonction rationnelle"
+    "intervalle de définition",
+    "point de discontinuité"
   ],
-  "content_hash": "289a7adb6da670c727595e0bf14eaad9229e7192e3eb9baff570ee810eb31a8c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:52:08.797Z"
+  "content_hash": "04ad756108a52a42074e7294f9b197ad8bd66c3e44263faf70d1e17318b433a2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:54.092Z"
 }

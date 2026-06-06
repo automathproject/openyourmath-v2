@@ -1,25 +1,25 @@
 {
   "uuid": "VUIy",
   "source_path": "exo7/2-L1/VUIy.tex",
-  "summary": "Calculer la somme des fonctions Arctan de fractions de la forme 2/k² pour k allant de 1 à n, puis déterminer la limite de cette somme quand n tend vers l'infini.",
+  "summary": "Calculer la somme $u_n = \\sum_{k=1}^n \\Arctan\\left(\\frac{2}{k^2}\\right)$ pour un entier naturel $n$ non nul, puis déterminer sa limite lorsque $n$ tend vers l'infini.",
   "concepts": [
     "fonction Arctan",
-    "somme télescopique",
+    "téléscopie",
     "limite de suite",
-    "fonction circulaire inverse",
-    "propriété de l'Arctan"
+    "formule d'addition pour l'Arctan",
+    "propriétés trigonométriques inverses"
   ],
   "methods": [
     "téléscopage",
-    "calcul de limite",
-    "utilisation de la formule de soustraction pour l'Arctan"
+    "utilisation de la formule d'addition",
+    "calcul de limite de suite"
   ],
   "objects": [
     "somme de termes Arctan",
     "suite numérique",
     "limite infinie"
   ],
-  "content_hash": "cd182afe4d82c277fef90ee6fdf9275d6841495a7034cd82ea836180efb8f757",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:00:56.951Z"
+  "content_hash": "8363437ddc2ceb518bf9f8ce55c829840a1e7d11041133471d547757da57104a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:50.203Z"
 }

@@ -1,34 +1,32 @@
 {
   "uuid": "MX2V",
   "source_path": "exo7/5-L2/MX2V.tex",
-  "summary": "Calculer la somme de séries entières dans leur intervalle de convergence après avoir déterminé leur rayon de convergence. Les séries impliquent des termes polynomiaux, factoriels et exponentiels.",
+  "summary": "Calculer la somme d'une série entière dans son intervalle de convergence, après avoir déterminé son rayon de convergence. Les séries proposées incluent des termes polynomiaux, factoriels et exponentiels, avec des relations de récurrence dans certains cas.",
   "concepts": [
     "série entière",
     "rayon de convergence",
-    "intervalle de convergence",
+    "règle de d'Alembert",
     "fonction génératrice",
     "développement en série",
-    "règle de d'Alembert",
-    "fonction logarithme",
-    "fonction hyperbolique"
+    "fonctions spéciales",
+    "relation de récurrence"
   ],
   "methods": [
     "détermination du rayon de convergence",
-    "développement en série de Taylor",
+    "décomposition en séries simples",
     "intégration terme à terme",
-    "dérivation terme à terme",
-    "séparation des termes",
-    "utilisation de séries connues"
+    "changement de variable",
+    "utilisation de séries connues",
+    "somme de séries géométriques"
   ],
   "objects": [
     "série entière",
-    "fonction dérivée",
-    "fonction intégrée",
+    "fonction génératrice",
+    "suite récurrente",
     "somme de termes rationnels",
-    "somme de termes exponentiels",
     "somme de termes factoriels"
   ],
-  "content_hash": "d6639c5b5ca46ca0d8a2ca7326b01c8db4718a987208022f29e59de477265986",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:06:03.591Z"
+  "content_hash": "7bfdb434889ecfd41043d58dde076903eb01257caddb13a699981438f50412bd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:54.817Z"
 }

@@ -5,22 +5,27 @@
   "concepts": [
     "suite récurrente",
     "convergence de suite",
-    "valeur d'adhérence",
-    "limite de suite",
+    "point fixe",
     "fonction rationnelle",
-    "point fixe"
+    "limite de suite",
+    "stabilité",
+    "valeur propre"
   ],
   "methods": [
     "recherche de point fixe",
     "analyse de la fonction itérée",
-    "étude de la convergence"
+    "linéarisation",
+    "calcul de limite",
+    "étude de la dérivée"
   ],
   "objects": [
     "suite complexe",
     "relation de récurrence",
-    "fonction rationnelle"
+    "fonction itérée",
+    "point fixe",
+    "valeur initiale"
   ],
-  "content_hash": "7fd25aba644d5f29f10e497d390805238bdc6f73885804c2532f3a35abb0ec23",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:02:37.072Z"
+  "content_hash": "62d04eb1244333999b4d864608de5a17beafa15fff22877692bedf8a7bbf1c6c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:07.450Z"
 }

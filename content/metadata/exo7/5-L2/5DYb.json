@@ -1,27 +1,29 @@
 {
   "uuid": "5DYb",
   "source_path": "exo7/5-L2/5DYb.tex",
-  "summary": "On considère une série entière de rayon R > 0 avec a₀ = 1. L'exercice demande de montrer l'existence et l'unicité d'une suite (bₙ) vérifiant une relation de convolution discrète avec la suite (aₙ), puis de prouver que la série entière associée à (bₙ) a un rayon de convergence strictement positif.",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une suite (b_n) telle que la convolution discrète avec une suite donnée (a_n) soit égale à la fonction delta de Kronecker, puis de prouver que la série entière associée à (b_n) a un rayon de convergence strictement positif.",
   "concepts": [
     "série entière",
     "rayon de convergence",
     "convolution discrète",
+    "fonction delta de Kronecker",
     "récurrence",
-    "inégalité de Cauchy",
-    "développement en série entière"
+    "bornitude des coefficients",
+    "inversion formelle de séries"
   ],
   "methods": [
-    "récurrence forte",
-    "majoration terme à terme",
-    "estimation de la croissance des coefficients"
+    "récurrence",
+    "majoration des coefficients",
+    "calcul explicite des premiers termes",
+    "utilisation du rayon de convergence"
   ],
   "objects": [
-    "suite (aₙ)",
-    "suite (bₙ)",
-    "série entière associée à (bₙ)",
-    "rayon de convergence R"
+    "suite (a_n)",
+    "suite (b_n)",
+    "série entière",
+    "fonction delta de Kronecker"
   ],
-  "content_hash": "76e0aa2bbd278986964019afc96becd3c9d35fe6eb5dd996ff5badeaa71b69f3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:34:47.045Z"
+  "content_hash": "34f28bd8307566cf4546caee422438a2e7d8c5c112c8cc3906844098a0ff0e36",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:35.645Z"
 }

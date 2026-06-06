@@ -1,26 +1,28 @@
 {
   "uuid": "dORp",
   "source_path": "exo7/5-L2/dORp.tex",
-  "summary": "Trouver toutes les applications de classe C² de ℝ dans ℝ telles que la fonction f(x,y) = φ(y/x) vérifie l'équation aux dérivées partielles ∂²f/∂x² - ∂²f/∂y² = y/x³ sur le domaine U = {(x,y) ∈ ℝ² | x ≠ 0}.",
+  "summary": "Trouver toutes les fonctions dérivables deux fois de ℝ dans ℝ telles que la fonction f(x,y) = φ(y/x) vérifie l'équation aux dérivées partielles ∂²f/∂x² - ∂²f/∂y² = y/x³ sur le domaine U = {(x,y) ∈ ℝ² | x ≠ 0}.",
   "concepts": [
     "équation aux dérivées partielles",
+    "dérivées partielles secondes",
     "fonction de classe C²",
     "changement de variable",
-    "dérivées partielles secondes",
-    "continuité des dérivées"
+    "continuité des dérivées",
+    "équation différentielle ordinaire"
   ],
   "methods": [
-    "changement de variable",
     "calcul des dérivées partielles",
+    "changement de variable t = y/x",
     "résolution d'équation différentielle",
-    "analyse de continuité"
+    "analyse de la continuité des dérivées"
   ],
   "objects": [
     "fonction de deux variables",
-    "application de classe C²",
-    "équation différentielle"
+    "fonction dérivable deux fois",
+    "équation différentielle",
+    "changement de variable"
   ],
-  "content_hash": "7b55995db95009a4f7c5d324526776a49d1d930a806bc258f0e1d0d0096ff270",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:10:58.914Z"
+  "content_hash": "17defb1e1f1312d77393e6cbdfe73b02ee0d1af076e2e958f5a007532a86c7f1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:30.126Z"
 }

@@ -1,28 +1,30 @@
 {
   "uuid": "x2t9",
   "source_path": "exo7/10-L3/x2t9.tex",
-  "summary": "L'exercice demande de démontrer une propriété sur les racines rationnelles d'un polynôme à coefficients entiers et d'appliquer ce résultat pour trouver les racines rationnelles de deux polynômes donnés.",
+  "summary": "L'exercice demande de démontrer qu'un diviseur d'une racine rationnelle d'un polynôme à coefficients entiers divise aussi le polynôme évalué en tout entier. Il applique ensuite cette propriété pour trouver les racines rationnelles de deux polynômes cubiques donnés.",
   "concepts": [
-    "racine rationnelle",
-    "polynôme à coefficients entiers",
-    "divisibilité dans les polynômes",
-    "théorème des racines rationnelles",
+    "racine rationnelle d'un polynôme",
+    "polynôme primitif",
     "contenu d'un polynôme",
-    "polynôme primitif"
+    "divisibilité dans Z[X]",
+    "théorème des racines rationnelles",
+    "polynôme irréductible sur Z"
   ],
   "methods": [
     "réduction au même dénominateur",
     "division euclidienne de polynômes",
     "analyse des contenus",
-    "test des valeurs possibles pour les racines"
+    "test des valeurs entières",
+    "factorisation par (X - a/b)"
   ],
   "objects": [
-    "polynôme P ∈ ℤ[x]",
-    "racine rationnelle a/b",
-    "polynôme f(x) = x³ - 6x² + 15x - 14",
-    "polynôme g(x) = 2x³ + 3x² + 6x - 4"
+    "polynôme à coefficients entiers",
+    "racine rationnelle",
+    "diviseur d'un polynôme",
+    "polynôme primitif",
+    "valeurs entières du polynôme"
   ],
-  "content_hash": "69fb1709da629262783112ae022b3a256fbd740dd775d06c0cfe4085f7f2dc85",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:29:12.867Z"
+  "content_hash": "f179ce71e018bbad33060c21649800f46f80305e8ac92bed9ea20c18ff9cdbc3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:43.104Z"
 }

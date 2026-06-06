@@ -1,30 +1,29 @@
 {
   "uuid": "UnQn",
   "source_path": "exo7/7-L2/UnQn.tex",
-  "summary": "L'exercice demande de construire un intervalle de confiance pour une grandeur physique mesurée avec un appareil de précision connue ou inconnue, en supposant que les mesures suivent une loi normale.",
+  "summary": "L'exercice demande de construire un intervalle de confiance pour une grandeur physique mesurée, d'abord avec une mesure unique et un écart-type connu, puis avec plusieurs mesures pour estimer à la fois la grandeur et son écart-type. Le contexte est celui de la mesure physique avec des erreurs aléatoires.",
   "concepts": [
     "loi normale",
     "intervalle de confiance",
-    "écart-type",
     "estimation ponctuelle",
-    "estimation par intervalle",
-    "variance",
-    "moyenne empirique"
+    "écart-type",
+    "moyenne empirique",
+    "variance empirique",
+    "théorème central limite"
   ],
   "methods": [
-    "estimation de la moyenne",
-    "calcul de l'écart-type empirique",
     "standardisation",
-    "approximation gaussienne"
+    "approximation gaussienne",
+    "estimation par la moyenne",
+    "estimation par la variance empirique"
   ],
   "objects": [
-    "mesure unique",
-    "mesures répétées",
-    "grandeur physique",
+    "mesure physique",
     "écart-type connu",
-    "écart-type inconnu"
+    "échantillon de mesures",
+    "intervalle de confiance"
   ],
-  "content_hash": "c2f784150746f7e15269ae9042d73e1e764031fee44369c14e3fb7af00e8dd81",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:42:40.278Z"
+  "content_hash": "bbf04425ecb5bd13d5279973183971459ed7cd29af6d09daac54a8f5392459e3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:18.796Z"
 }

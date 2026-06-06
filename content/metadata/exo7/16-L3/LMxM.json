@@ -1,19 +1,20 @@
 {
   "uuid": "LMxM",
   "source_path": "exo7/16-L3/LMxM.tex",
-  "summary": "L'exercice demande de prouver une formule de limite d'intégrale sur un arc de cercle centré en un pôle simple d'une fonction, et d'étudier le cas où le pôle est d'ordre supérieur.",
+  "summary": "L'exercice demande de prouver une formule de limite d'intégrale sur un arc de cercle centré en un pôle simple d'une fonction, en utilisant le théorème des résidus. Il s'interroge aussi sur le cas d'un pôle d'ordre supérieur.",
   "concepts": [
+    "théorème des résidus",
     "pôle simple",
     "série de Laurent",
     "convergence normale",
-    "résidu",
     "intégrale complexe",
+    "résidu",
     "singularité isolée"
   ],
   "methods": [
     "développement en série de Laurent",
     "passage à la limite dans une intégrale",
-    "estimation de reste",
+    "estimation de termes",
     "calcul de résidu"
   ],
   "objects": [
@@ -22,7 +23,7 @@
     "intégrale curviligne",
     "série de Laurent"
   ],
-  "content_hash": "d98f7bfc1f17e80c2929e853cc9d744a9cb9c7a25506cc48c7e71c6a00e7e080",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:12:57.225Z"
+  "content_hash": "0ce8ed4febf6236d254103f36baed9ccb9e7445e8304444bf3670171465e8410",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:30.754Z"
 }

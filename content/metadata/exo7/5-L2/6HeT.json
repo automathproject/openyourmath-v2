@@ -1,10 +1,10 @@
 {
   "uuid": "6HeT",
   "source_path": "exo7/5-L2/6HeT.tex",
-  "summary": "Calculer une intégrale double sur une ellipse définie par x²/a² + y²/b² ≤ 1 de la fonction x² - y².",
+  "summary": "Calculer l'intégrale double d'une fonction polynomiale sur une ellipse centrée à l'origine. L'énoncé demande d'évaluer une intégrale multiple sur un domaine elliptique.",
   "concepts": [
     "intégrale double",
-    "changement de variables",
+    "changement de variable",
     "coordonnées polaires",
     "intégration sur un disque",
     "symétrie des intégrales"
@@ -12,16 +12,16 @@
   "methods": [
     "changement de variable affine",
     "passage en coordonnées polaires",
-    "intégration par parties",
-    "utilisation de la symétrie"
+    "décomposition de l'intégrande",
+    "intégration par parties"
   ],
   "objects": [
     "intégrale double",
-    "ellipse",
+    "domaine elliptique",
     "fonction polynomiale",
     "coordonnées polaires"
   ],
-  "content_hash": "be97207dcedada8371721e56158e66298636f1bac42254089c4db52459d8973f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:27:46.102Z"
+  "content_hash": "4b895590534715e341732b1c26ff083fe9d6dbeb3eedf71f07cb5816ce157280",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:28.782Z"
 }

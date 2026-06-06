@@ -1,26 +1,29 @@
 {
   "uuid": "6d67",
   "source_path": "exo7/5-L2/6d67.tex",
-  "summary": "Étudier la convergence simple et uniforme de la série de fonctions définie par f_n(t) = (-1)^n * ln(1 + t² / (n(1 + t²))) et la continuité de sa somme f. Ensuite, déterminer la limite de f en +∞ en utilisant la formule de Stirling.",
+  "summary": "Étudier la convergence simple et uniforme d'une série de fonctions définies par $f_n(t) = (-1)^n \\ln(1 + t^2/(n(1 + t^2)))$, puis la continuité de la somme $f$. Montrer que la limite de $f(t)$ en $+\\infty$ vaut $\\ln(2/\\pi)$ en utilisant la formule de Stirling.",
   "concepts": [
     "convergence simple",
     "convergence uniforme",
-    "série de fonctions",
-    "continuité uniforme",
+    "série alternée",
     "théorème d'interversion des limites",
+    "continuité uniforme",
+    "limite de fonctions",
     "formule de Stirling"
   ],
   "methods": [
     "critère spécial aux séries alternées",
-    "majoration du reste d'une série alternée",
-    "limite uniforme de fonctions continues"
+    "majoration du reste",
+    "limite uniforme",
+    "interversion limite-somme"
   ],
   "objects": [
     "série de fonctions",
     "fonction continue",
-    "limite en +∞"
+    "suite numérique",
+    "limite en $+\\infty$"
   ],
-  "content_hash": "241d18699c4e9aafc53aa4bab67c4fffdefc0a061e218b381b63ce71919f92b4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:48:01.634Z"
+  "content_hash": "ec8e97b33c4fc75b2da1a78bb95c1a632368ed1330ed06387e335f08ec5e543a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:54.008Z"
 }

@@ -1,29 +1,31 @@
 {
   "uuid": "nIQ2",
   "source_path": "exo7/4-L2/nIQ2.tex",
-  "summary": "L'exercice demande de démontrer que l'application f, définie à partir d'une norme vérifiant l'identité du parallélogramme, est un produit scalaire. Il s'agit de prouver les propriétés de bilinéarité, de symétrie et de définie positivité de f.",
+  "summary": "L'exercice demande de démontrer que l'application f, définie à partir d'une norme vérifiant l'identité du parallélogramme, est bilinéaire et symétrique, puis d'en déduire que cette norme est associée à un produit scalaire (norme euclidienne).",
   "concepts": [
     "identité du parallélogramme",
     "produit scalaire",
-    "forme bilinéaire",
-    "symétrie",
-    "définie positivité",
     "norme euclidienne",
-    "continuité"
+    "forme bilinéaire",
+    "forme symétrique",
+    "définie positive",
+    "linéarité",
+    "récurrence"
   ],
   "methods": [
+    "développement algébrique",
     "récurrence",
+    "substitution",
     "linéarité",
-    "symétrie",
-    "définie positivité"
+    "symétrie"
   ],
   "objects": [
-    "norme",
     "application bilinéaire",
+    "norme sur un espace vectoriel",
     "espace vectoriel de dimension finie",
-    "produit scalaire"
+    "forme quadratique"
   ],
-  "content_hash": "8dd15560136fbaa5d272580fb50881acba2ce28e7d1db2b8569f4050388580f1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:51:58.710Z"
+  "content_hash": "97a3d130cef1989b4b12ac567316adef9261ea05dfe4da003499295e677c54f9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:32.850Z"
 }

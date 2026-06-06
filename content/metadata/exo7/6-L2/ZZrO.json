@@ -1,30 +1,32 @@
 {
   "uuid": "ZZrO",
   "source_path": "exo7/6-L2/ZZrO.tex",
-  "summary": "Étudier et construire la courbe paramétrée définie par x = a cos³t et y = a sin³t, appelée astroïde. L'exercice demande d'analyser les propriétés géométriques et les symétries de cette courbe.",
+  "summary": "Étudier et construire la courbe paramétrée par x = a cos³t et y = a sin³t, puis calculer la longueur du segment A(t)B(t) formé par les intersections de la tangente en M(t) avec les axes (Ox) et (Oy) pour t ∈ ]0, π/2[.",
   "concepts": [
     "courbe paramétrée",
     "symétrie géométrique",
     "point singulier",
-    "tangente en un point",
-    "point de rebroussement",
-    "variation de fonctions"
+    "tangente à une courbe",
+    "équation cartésienne de droite",
+    "variations de fonctions",
+    "périodicité"
   ],
   "methods": [
     "étude de la périodicité",
     "analyse des symétries",
-    "calcul de la dérivée",
-    "détermination des tangentes",
-    "calcul de limites"
+    "calcul de dérivées",
+    "détermination de points singuliers",
+    "équation de la tangente",
+    "calcul de distance entre points"
   ],
   "objects": [
-    "courbe paramétrée",
-    "tangente",
-    "point singulier",
-    "segment de droite",
-    "vecteur directeur"
+    "courbe astroïde",
+    "paramétrisation trigonométrique",
+    "tangente à un point courant",
+    "points d'intersection avec les axes",
+    "segment de longueur"
   ],
-  "content_hash": "49b7bce4f36e3e8aa675f393eee71c7a21a3489f465af66004ded6e488f7781e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:58:07.675Z"
+  "content_hash": "653de30ad8dacd3247271816e0ed6892af37d2d72c7b99724277c0c644b5012e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:56.540Z"
 }

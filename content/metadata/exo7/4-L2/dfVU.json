@@ -1,32 +1,32 @@
 {
   "uuid": "dfVU",
   "source_path": "exo7/4-L2/dfVU.tex",
-  "summary": "Trouver tous les endomorphismes de ℝ³ vérifiant la condition f(x∧y) = f(x)∧f(y) pour tout couple de vecteurs (x,y) de ℝ³.",
+  "summary": "Trouver tous les endomorphismes de ℝ³ qui préservent le produit vectoriel, c'est-à-dire tels que f(x∧y) = f(x)∧f(y) pour tous x, y ∈ ℝ³.",
   "concepts": [
-    "espace vectoriel euclidien",
     "produit vectoriel",
+    "endomorphisme",
     "base orthonormée directe",
     "automorphisme orthogonal",
-    "rotation vectorielle",
+    "rotation",
     "famille libre",
     "famille orthogonale",
-    "famille orthonormée"
+    "norme vectorielle"
   ],
   "methods": [
     "linéarité",
     "orthogonalité",
-    "norme vectorielle",
-    "base de changement de coordonnées",
-    "vérification par cas"
+    "calcul de produit vectoriel",
+    "vérification de base orthonormée",
+    "détermination de la norme"
   ],
   "objects": [
-    "endomorphisme",
-    "vecteur",
+    "endomorphisme de ℝ³",
+    "produit vectoriel",
     "base orthonormée",
     "rotation",
-    "produit vectoriel"
+    "vecteurs orthogonaux"
   ],
-  "content_hash": "a240eef49050d19ca5967c7d097c072067223795d0527694fa28a59fe516f6f4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:40:54.782Z"
+  "content_hash": "74848bd9dd5446a215dbb0c317b9243a6cfebb4e7def19f81e9ea34b656e286c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:05.371Z"
 }

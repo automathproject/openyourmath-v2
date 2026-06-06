@@ -1,25 +1,25 @@
 {
   "uuid": "C5gB",
   "source_path": "exo7/6-L2/C5gB.tex",
-  "summary": "Étant donnés trois points non alignés A, B, C, construire le point D pour former un parallélogramme ABCD en utilisant uniquement un compas.",
+  "summary": "Construire le quatrième sommet D d'un parallélogramme ABCD à partir de trois points non alignés A, B et C, en utilisant uniquement un compas.",
   "concepts": [
     "géométrie affine euclidienne",
     "parallélogramme",
     "construction géométrique",
-    "propriétés des parallélogrammes",
+    "propriétés des vecteurs",
     "alignement de points"
   ],
   "methods": [
     "construction au compas seul",
     "utilisation des propriétés des parallélogrammes",
-    "symétrie centrale"
+    "translations géométriques"
   ],
   "objects": [
-    "points non alignés",
+    "points du plan",
     "parallélogramme",
-    "compas"
+    "segments de droite"
   ],
-  "content_hash": "533d738d62e17de41f7e9777fbb7803107f114b9ecde3e16ded22dbc608544c9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:27:01.273Z"
+  "content_hash": "57a8c68d3df4e72e12520ea74082d2b6283155811e360026af88db01c0160e74",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:31.800Z"
 }

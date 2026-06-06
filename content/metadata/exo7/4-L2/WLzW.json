@@ -1,31 +1,31 @@
 {
   "uuid": "WLzW",
   "source_path": "exo7/4-L2/WLzW.tex",
-  "summary": "Calculer le déterminant d'une matrice A dont les coefficients sont de la forme 1/(a_i + b_j), en généralisant la méthode utilisée pour le déterminant de Vandermonde. Le cas particulier où a_i = b_i = i est également traité.",
+  "summary": "Calculer le déterminant d'une matrice A dont les coefficients sont de la forme 1/(a_i + b_j), où a_i et b_j sont des réels deux à deux distincts. Le cas particulier où a_i = b_i = i est également traité.",
   "concepts": [
     "déterminant",
     "matrice de Vandermonde",
     "décomposition en éléments simples",
     "pôles simples",
-    "déterminant de Hilbert",
-    "factorielles",
-    "produit de termes"
+    "récurrence",
+    "produit de facteurs",
+    "déterminant de Hilbert"
   ],
   "methods": [
-    "développement selon une colonne",
+    "déterminant par développement selon une colonne",
+    "choix d'une fraction rationnelle",
     "décomposition en éléments simples",
-    "réduction par récurrence",
-    "calcul de limite",
-    "simplification de produits"
+    "récurrence sur la taille de la matrice",
+    "simplification de produits factoriels"
   ],
   "objects": [
     "matrice A",
-    "déterminant Δ_n",
+    "matrice B",
+    "fraction rationnelle R",
     "déterminant de Vandermonde",
-    "déterminant de Hilbert H_n",
-    "polynôme R"
+    "déterminant de Hilbert"
   ],
-  "content_hash": "0a5f654aacd36a101655e9c97e15fc19bdd71308fdc7a830780f7b67bfd5fa4b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:53:35.584Z"
+  "content_hash": "a39953ca7276a77621f2e321d2d8f98e6e08b868af4d8decb626df7ad6408569",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:40:57.827Z"
 }

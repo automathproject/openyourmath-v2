@@ -1,27 +1,30 @@
 {
   "uuid": "Ws1v",
   "source_path": "exo7/2-L1/Ws1v.tex",
-  "summary": "L'exercice demande d'exprimer sous forme algébrique des fonctions circulaires inverses composées avec des fonctions circulaires directes, comme sin(Arccos x), cos(Arcsin x), et cos(2 Arcsin x). Il s'agit de simplifier ces expressions en utilisant des identités trigonométriques.",
+  "summary": "L'exercice demande d'exprimer algébriquement des fonctions circulaires composées avec leurs inverses, comme sin(Arccos x) ou cos(2Arcsin x), en utilisant des identités trigonométriques.",
   "concepts": [
     "fonctions circulaires inverses",
     "identités trigonométriques",
-    "intervalle de définition",
     "linéarisation",
-    "formule de Moivre"
+    "formule de Moivre",
+    "intervalle de définition",
+    "valeur absolue",
+    "relation trigonométrique fondamentale"
   ],
   "methods": [
-    "utilisation des identités trigonométriques",
-    "détermination des signes",
-    "linéarisation des fonctions trigonométriques",
-    "développement complexe"
+    "utilisation de l'identité sin²y + cos²y = 1",
+    "détermination des signes par l'intervalle de définition",
+    "linéarisation de sin(3y)",
+    "développement avec nombres complexes"
   ],
   "objects": [
-    "fonctions circulaires inverses",
-    "expressions algébriques",
-    "identités trigonométriques",
-    "nombres complexes"
+    "fonction Arccos",
+    "fonction Arcsin",
+    "fonction Arctan",
+    "fonction circulaire composée",
+    "expression algébrique"
   ],
-  "content_hash": "c184e89f32614b8a4298c2af3ac7315f55f262b695718e87a59c9b8c9cecdc71",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:01:37.701Z"
+  "content_hash": "3261055376707a94bea5192a29365b7576b2df7751f6bd85b37cff961505746c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:53.031Z"
 }

@@ -1,31 +1,31 @@
 {
   "uuid": "FL8T",
   "source_path": "exo7/1-L1/FL8T.tex",
-  "summary": "Calculer trois produits trigonométriques impliquant des fonctions sinus, cosinus et tangente avec des arguments dépendant d'un entier n et d'un paramètre a. L'exercice demande d'éliminer les cas particuliers concernant a.",
+  "summary": "Calculer les produits $a_n = \\prod_{k=1}^n \\sin\\frac{k\\pi}{n}$, $b_n = \\prod_{k=1}^n \\cos(a + \\frac{k\\pi}{n})$ et $c_n = \\prod_{k=1}^n \\tan(a + \\frac{k\\pi}{n})$ pour un entier $n \\geq 2$, en éliminant les cas particuliers concernant $a$.",
   "concepts": [
     "racines n-ième de l'unité",
     "polynômes",
-    "produits trigonométriques",
+    "produit de termes trigonométriques",
+    "développement en série",
     "fonctions exponentielles complexes",
-    "trigonométrie des angles complexes",
-    "développement polynomial",
-    "racines de polynômes"
+    "trigonométrie complexe",
+    "produit de nombres complexes"
   ],
   "methods": [
     "factorisation de polynômes",
-    "calcul de produits trigonométriques",
-    "manipulation d'exponentielles complexes",
-    "évaluation de polynômes",
-    "utilisation des propriétés des racines de l'unité"
+    "utilisation des racines de l'unité",
+    "développement exponentiel des fonctions trigonométriques",
+    "calcul de produits finis",
+    "évaluation de polynômes"
   ],
   "objects": [
-    "produits trigonométriques",
-    "polynômes de degré n",
-    "racines n-ième de l'unité",
-    "fonctions sinus et cosinus",
-    "fonctions exponentielles complexes"
+    "produit de sinus",
+    "produit de cosinus",
+    "produit de tangentes",
+    "polynôme unitaire",
+    "nombres complexes"
   ],
-  "content_hash": "58def7998befa076080d4b51fdbbb043a331c13751bd8c821f4a54b5e2d5737e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:36:36.559Z"
+  "content_hash": "bd25997d5e140f50c2206ab0aa283ea88cc4f9f577377f9d2351d63e36bf725a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:31.927Z"
 }

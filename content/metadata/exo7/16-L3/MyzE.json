@@ -1,24 +1,25 @@
 {
   "uuid": "MyzE",
   "source_path": "exo7/16-L3/MyzE.tex",
-  "summary": "L'exercice demande de démontrer la formule de la dérivée d'une fonction composée de deux fonctions holomorphes.",
+  "summary": "L'exercice demande de démontrer la formule de dérivation d'une fonction composée de deux fonctions holomorphes. Il s'agit d'établir que la dérivée de la composition g∘f est le produit des dérivées de g et f.",
   "concepts": [
     "fonction holomorphe",
-    "dérivée complexe",
+    "dérivée d'une fonction composée",
     "limite",
-    "composition de fonctions",
+    "continuité",
     "définition de la dérivée"
   ],
   "methods": [
-    "définition de la dérivée",
-    "approximation linéaire",
-    "manipulation de limites"
+    "définition par la limite",
+    "développement en incréments",
+    "utilisation de l'erreur epsilon"
   ],
   "objects": [
     "fonction composée",
-    "dérivée de fonction composée"
+    "dérivée",
+    "incrément"
   ],
-  "content_hash": "2ada4e1ccd974bf83552b3ef0a8ea98adf873fe944c6229dd9f0e86ad0f0b5d8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:33:41.131Z"
+  "content_hash": "d4af041e010dfff282c09eb35d78ae0d82ce4c61017bca5bd4a1093878ca59a2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:05.938Z"
 }

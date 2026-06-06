@@ -1,7 +1,7 @@
 {
   "uuid": "BvlG",
   "source_path": "exo7/4-L2/BvlG.tex",
-  "summary": "L'exercice demande de vérifier qu'une application linéaire définie sur l'espace des polynômes réels de degré inférieur ou égal à 2n est un endomorphisme, puis de déterminer ses valeurs et vecteurs propres, et enfin de vérifier sa diagonalisabilité.",
+  "summary": "L'exercice demande de vérifier qu'une application linéaire définie sur l'espace des polynômes réels de degré ≤ 2n est un endomorphisme, puis de déterminer ses valeurs et vecteurs propres, et enfin d'étudier sa diagonalisabilité.",
   "concepts": [
     "endomorphisme",
     "valeur propre",
@@ -12,18 +12,19 @@
     "espace vectoriel de polynômes"
   ],
   "methods": [
-    "vérification de la linéarité",
-    "recherche de valeurs propres",
+    "identification de racines",
     "décomposition en éléments simples",
-    "identification de polynômes propres"
+    "calcul de dérivée",
+    "vérification de linéarité",
+    "analyse de multiplicité des valeurs propres"
   ],
   "objects": [
     "application linéaire",
     "polynôme de degré 2n",
-    "vecteurs propres",
-    "valeurs propres"
+    "sous-espaces propres",
+    "vecteurs propres"
   ],
-  "content_hash": "eb2b6d8e9c69cb16fdc84b70f1a3cb52d57c5b903e882666294b91d3c524a37d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:23:18.890Z"
+  "content_hash": "89384108371624f6aeedfe70ae3934468091682a4aad7739b4a4369fd41deb73",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:50.447Z"
 }

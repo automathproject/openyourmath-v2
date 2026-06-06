@@ -1,32 +1,31 @@
 {
   "uuid": "v78r",
   "source_path": "exo7/19-L3/v78r.tex",
-  "summary": "L'exercice étudie le temps d'attente $T_n$ pour obtenir $n$ succès dans une suite de variables aléatoires de Bernoulli indépendantes. Il demande de montrer que $T_1$ est fini presque sûrement, de déterminer sa loi et son espérance, puis d'étendre ces résultats aux variables $T_n$ et aux différences $T_{n+1}-T_n$.",
+  "summary": "L'exercice étudie une suite de variables aléatoires de Bernoulli indépendantes et identiquement distribuées. Il demande de montrer que le temps d'attente pour le premier succès est fini presque sûrement, d'en déterminer la loi et l'espérance, puis d'étendre ces résultats à des temps d'attente successifs et d'en déduire la loi de ces temps.",
   "concepts": [
     "variable aléatoire de Bernoulli",
     "indépendance",
     "loi géométrique",
     "espérance mathématique",
     "probabilité conditionnelle",
-    "loi binomiale",
-    "théorème de récurrence",
-    "somme de variables aléatoires indépendantes"
+    "récurrence",
+    "loi binomiale"
   ],
   "methods": [
-    "calcul de probabilité conditionnelle",
+    "calcul de probabilité par indépendance",
     "formule des probabilités totales",
     "séries dérivées",
     "récurrence mathématique",
     "calcul de coefficient binomial"
   ],
   "objects": [
-    "suite de variables aléatoires indépendantes",
-    "temps d'arrêt",
-    "variable aléatoire de Bernoulli",
-    "loi géométrique",
-    "loi binomiale"
+    "suite de variables aléatoires",
+    "temps d'attente",
+    "variable aléatoire discrète",
+    "loi de probabilité",
+    "espérance"
   ],
-  "content_hash": "ff513ad95ae484a08cc139c8d1c087ae6db6f6b4661229bbc71630fdaa05f773",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:35:28.945Z"
+  "content_hash": "2a8229f99616f91d604e640fad5f68274fe53ad2e29c946e5721b465957bbb2e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:41.894Z"
 }

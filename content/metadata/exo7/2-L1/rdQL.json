@@ -1,25 +1,28 @@
 {
   "uuid": "rdQL",
   "source_path": "exo7/2-L1/rdQL.tex",
-  "summary": "Montrer une égalité impliquant la partie entière et une somme de parties entières décalées. L'énoncé demande de prouver une relation entre la partie entière d'un multiple et une somme de parties entières de termes uniformément espacés.",
+  "summary": "Montrer une égalité impliquant la partie entière d'un nombre réel et une somme de parties entières de nombres réels décalés par des fractions. L'énoncé demande de prouver que la somme des parties entières de x + k/n pour k de 0 à n-1 est égale à n fois la partie entière de x.",
   "concepts": [
     "partie entière",
     "division euclidienne",
-    "entiers naturels",
-    "propriétés arithmétiques",
-    "somme de parties entières"
+    "propriétés des entiers naturels",
+    "somme discrète",
+    "fonction indicatrice",
+    "inégalité de Bernoulli"
   ],
   "methods": [
-    "décomposition en cas d'entiers pairs et impairs",
+    "décomposition en cas d'entiers",
     "utilisation de la définition de la partie entière",
-    "analyse des entiers compris dans un intervalle"
+    "comptage d'entiers dans un intervalle",
+    "manipulation d'inégalités"
   ],
   "objects": [
     "partie entière d'un réel",
     "somme de parties entières",
-    "entiers naturels"
+    "entiers naturels",
+    "intervalle de réels"
   ],
-  "content_hash": "525e2386c67b28ea40870b40ef605ff742f8527ebd39a2bc98651aec464aa68c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:03:45.710Z"
+  "content_hash": "a5f25a8b70a70adbf3bad000fa5d1444c6c382a2719d4731f3c84e7fcfa609ea",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:25.236Z"
 }

@@ -1,27 +1,29 @@
 {
   "uuid": "t9Ib",
   "source_path": "exo7/2-L1/t9Ib.tex",
-  "summary": "Calcul de quatre intégrales définies utilisant différentes techniques d'intégration. Les intégrales impliquent des fonctions rationnelles, trigonométriques et des racines carrées.",
+  "summary": "Calculer quatre intégrales définies impliquant des fonctions rationnelles, trigonométriques et composées. Les intégrales couvrent des cas variés nécessitant des techniques spécifiques.",
   "concepts": [
     "intégrale définie",
-    "fonction continue",
-    "primitive",
+    "fonction composée",
+    "fonction rationnelle",
+    "fonction trigonométrique",
     "changement de variable",
     "intégration par parties"
   ],
   "methods": [
     "intégration par parties",
     "changement de variable",
-    "intégration de fonctions rationnelles",
-    "intégration de fonctions trigonométriques"
+    "substitution trigonométrique",
+    "intégration de fonctions rationnelles"
   ],
   "objects": [
     "intégrale définie",
     "fonction polynomiale",
-    "fonction trigonométrique",
-    "fonction racine carrée"
+    "fonction racine carrée",
+    "fonction sinus",
+    "fonction cosinus"
   ],
-  "content_hash": "1adc4abc44b544ff7ce65ff862bc331b712129371738fd7d7319dd5f201eced8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:49:14.941Z"
+  "content_hash": "44c93743fdac62ceea21bd89573f52b302af98c8438dea832be6ccb9e5690253",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:26.360Z"
 }

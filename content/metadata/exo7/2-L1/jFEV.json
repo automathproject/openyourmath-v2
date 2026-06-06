@@ -1,27 +1,31 @@
 {
   "uuid": "jFEV",
   "source_path": "exo7/2-L1/jFEV.tex",
-  "summary": "On étudie une suite définie par la relation de récurrence $u_{n+1} = \\sin(u_n)$ avec $u_0 \\in \\left]0,\\frac{\\pi}{2}\\right]$. On doit montrer que cette suite est strictement positive, décroissante et converge vers 0, puis déterminer un équivalent simple de $u_n$.",
+  "summary": "On étudie une suite définie par récurrence $u_{n+1} = \\sin(u_n)$ avec $u_0 \\in \\left]0, \\frac{\\pi}{2}\\right]$. On doit montrer que la suite est strictement positive et converge vers 0, puis déterminer un réel $\\alpha$ pour que $u_{n+1}^\\alpha - u_n^\\alpha$ ait une limite finie non nulle, et enfin trouver un équivalent simple de $u_n$ en utilisant le lemme de Cesaro.",
   "concepts": [
-    "suite numérique",
-    "relation de récurrence",
-    "convergence",
-    "continuité",
+    "suite définie par récurrence",
+    "strictement décroissante",
+    "convergence de suite",
+    "limite de suite",
     "développement limité",
-    "lemme de Cesaro"
+    "lemme de Cesaro",
+    "équivalent asymptotique",
+    "continuité"
   ],
   "methods": [
-    "étude de la monotonie",
+    "comparaison de termes",
     "développement limité",
     "application du lemme de Cesaro",
-    "calcul d'équivalent"
+    "calcul d'équivalent asymptotique",
+    "utilisation de la continuité"
   ],
   "objects": [
-    "suite définie par récurrence",
+    "suite numérique",
     "fonction sinus",
-    "développement limité de la fonction sinus"
+    "limite finie",
+    "équivalent simple"
   ],
-  "content_hash": "ba1e2fa7184ae01a49e7023c6f67c2bdba9bc94eca3932a3677022620c56432a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:30:49.942Z"
+  "content_hash": "f9725ca623beeb91a3a4194a888808d602fe5a0cd346a366a4c752214fd44bc2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:27.974Z"
 }

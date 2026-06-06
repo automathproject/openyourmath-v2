@@ -1,32 +1,34 @@
 {
   "uuid": "jjUc",
   "source_path": "exo7/2-L1/jjUc.tex",
-  "summary": "L'exercice demande d'étudier la nature (convergence ou divergence) de neuf séries numériques différentes, chacune définie par un terme général spécifique. Les séries impliquent des expressions algébriques, des fonctions transcendantes et des propriétés arithmétiques.",
+  "summary": "Étude de la nature (convergence ou divergence) de neuf séries numériques de termes généraux variés, incluant des expressions polynomiales, exponentielles, logarithmiques, et des produits. Certains termes dépendent de propriétés arithmétiques comme les nombres premiers ou le nombre de chiffres en base 10.",
   "concepts": [
     "série numérique",
     "convergence",
-    "divergence",
-    "équivalent asymptotique",
-    "comparaison de séries",
-    "polynôme unitaire",
-    "développement limité",
-    "théorème d'Al-Kashi"
+    "divergence grossière",
+    "équivalence asymptotique",
+    "comparaison série-intégrale",
+    "théorème des séries alternées",
+    "croissance des nombres premiers",
+    "développement limité"
   ],
   "methods": [
     "développement asymptotique",
     "comparaison terme à terme",
-    "utilisation de l'équivalent",
-    "étude de la limite du terme général",
-    "majoration"
+    "critère de d'Alembert",
+    "critère de Cauchy",
+    "estimation d'erreur",
+    "utilisation de la fonction logarithme"
   ],
   "objects": [
-    "série de terme général",
-    "polynôme",
-    "nombre premier",
+    "série de terme général polynomial",
+    "série de terme général exponentiel",
+    "série de terme général logarithmique",
     "suite récurrente",
-    "fonction arctangente"
+    "nombre premier",
+    "nombre de chiffres d'un entier"
   ],
-  "content_hash": "cac46cd5f14a58f84846cb5502c3add0fe24e7e002baa8a6a69e70294ad8cfd5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:06:40.704Z"
+  "content_hash": "8d229a711a8180f020f00ef736dc13ed174118b5aa75375ef6356cc6be0fb094",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:25.860Z"
 }

@@ -1,28 +1,30 @@
 {
   "uuid": "JB5N",
   "source_path": "exo7/11-L3/JB5N.tex",
-  "summary": "L'exercice demande de montrer qu'une application définie sur le plan privé de l'origine est un difféomorphisme local en chaque point, puis d'étudier si elle est un difféomorphisme global.",
+  "summary": "L'exercice demande de montrer qu'une application du plan privé de l'origine vers lui-même, définie par des polynômes du second degré, est un difféomorphisme local en tout point. Il s'agit ensuite de déterminer si cette application est un difféomorphisme global sur l'ensemble du domaine.",
   "concepts": [
-    "difféomorphisme",
+    "difféomorphisme local",
+    "difféomorphisme global",
     "application différentiable",
-    "voisinage",
-    "application bijective",
-    "continuité",
-    "dérivabilité"
+    "inversibilité locale",
+    "théorème d'inversion locale",
+    "continuité différentielle",
+    "application injective",
+    "application surjective"
   ],
   "methods": [
-    "étude de la bijectivité locale",
-    "inversibilité locale",
-    "calcul de la différentielle",
-    "théorème d'inversion locale"
+    "calcul du jacobien",
+    "vérification de l'inversibilité locale",
+    "application du théorème d'inversion locale",
+    "analyse de la bijectivité globale"
   ],
   "objects": [
-    "application de R² dans R²",
-    "point critique",
-    "voisinage d'un point",
-    "application f(x,y) = (x²-y², 2xy)"
+    "application polynomiale",
+    "plan privé de l'origine",
+    "matrice jacobienne",
+    "voisinage d'un point"
   ],
-  "content_hash": "ea90381232efb4297794c9512e9631a6e049b61b90721a15914247b9877c63d0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:17:05.863Z"
+  "content_hash": "f714d4cce76d482436d5385bfb92c717bffd24633cfb120be05cc311457bab19",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:16.807Z"
 }

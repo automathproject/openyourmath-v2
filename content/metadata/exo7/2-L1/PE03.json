@@ -1,30 +1,32 @@
 {
   "uuid": "PE03",
   "source_path": "exo7/2-L1/PE03.tex",
-  "summary": "Calculer la somme de séries numériques à termes positifs en démontrant leur convergence. Les séries concernent des expressions rationnelles et des suites géométriques.",
+  "summary": "Calculer la somme de trois séries numériques à termes positifs en démontrant leur convergence. Les séries impliquent des termes rationnels et des puissances de n.",
   "concepts": [
     "série numérique",
-    "série à termes positifs",
     "convergence de série",
     "décomposition en éléments simples",
     "somme télescopique",
-    "suite géométrique",
-    "limite de suite"
+    "série géométrique",
+    "limite de suite",
+    "identification de coefficients"
   ],
   "methods": [
     "décomposition en éléments simples",
-    "réindexation de sommes",
     "télescopage",
-    "calcul de limite",
-    "identification de coefficients"
+    "réindexation de sommes",
+    "identification de coefficients",
+    "calcul de limite de suite",
+    "somme de série géométrique"
   ],
   "objects": [
-    "série numérique",
-    "expression rationnelle",
-    "suite géométrique",
+    "série à termes positifs",
+    "termes rationnels",
+    "polynôme du second degré",
+    "polynôme du troisième degré",
     "somme partielle"
   ],
-  "content_hash": "79670344ce5cdd447b49e505b9390e0274daa103d4a042b2d47184b2667581c6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:15:21.792Z"
+  "content_hash": "d953436fb682bc56a4db015da146ab58ef0da95f0f6b9d80152535bec833184c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:55.031Z"
 }

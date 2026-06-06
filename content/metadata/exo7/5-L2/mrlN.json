@@ -1,28 +1,30 @@
 {
   "uuid": "mrlN",
   "source_path": "exo7/5-L2/mrlN.tex",
-  "summary": "L'exercice demande de montrer que la convolution de deux fonctions continues et T-périodiques est définie, continue et T-périodique, puis de prouver la commutativité de cette opération.",
+  "summary": "L'exercice demande de montrer qu'une fonction définie par une intégrale de convolution de deux fonctions continues et périodiques est elle-même continue et périodique, puis de prouver la commutativité de cette opération de convolution.",
   "concepts": [
-    "intégrale dépendant d'un paramètre",
+    "intégrale de Riemann dépendant d'un paramètre",
     "continuité uniforme",
-    "périodicité",
+    "périodicité des fonctions",
     "théorème de continuité des intégrales à paramètres",
     "loi interne",
-    "commutativité"
+    "commutativité",
+    "espace vectoriel de fonctions"
   ],
   "methods": [
     "changement de variable",
     "intégration par parties",
-    "majoration",
-    "périodisation"
+    "majoration des fonctions",
+    "utilisation de la périodicité",
+    "application du théorème de continuité des intégrales à paramètres"
   ],
   "objects": [
-    "fonction continue",
-    "fonction périodique",
-    "convolution",
-    "espace vectoriel de fonctions"
+    "fonction continue et périodique",
+    "intégrale de convolution",
+    "espace vectoriel de fonctions",
+    "fonction à deux variables"
   ],
-  "content_hash": "5228b62015cfeac3dd63a643e54a70a138a845c44b0711780b703a8ff229f9f5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:48:06.800Z"
+  "content_hash": "58ff578d31f5f1c2c845c2d88a0f7bd9b8f21c7cf26630c6ebf430656671a3f5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:05.435Z"
 }

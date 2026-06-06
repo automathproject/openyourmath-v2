@@ -1,26 +1,29 @@
 {
   "uuid": "pL3m",
   "source_path": "amscc/pL3m.tex",
-  "summary": "Calculer la taille de sortie d'une convolution 2D en utilisant la formule donnée, pour différentes configurations de taille d'entrée, noyau, padding et stride. Identifier le type de padding permettant de conserver la taille de l'entrée.",
+  "summary": "Calculer la taille de sortie d'une convolution 2D en utilisant la formule standard avec différents paramètres (taille d'entrée, noyau, padding, stride). Analyser les cas particuliers où la taille de sortie est égale à la taille d'entrée et identifier le concept de padding 'same'.",
   "concepts": [
     "convolution 2D",
     "padding",
     "stride",
     "taille de sortie",
-    "fonction partie entière",
-    "réseaux de neurones"
+    "padding same",
+    "formule de dimensionnalité",
+    "réseau de neurones",
+    "traitement du signal"
   ],
   "methods": [
-    "application de formule",
-    "calcul algébrique",
-    "identification de cas particuliers"
+    "application de formule de dimensionnalité",
+    "calcul d'arrondi inférieur",
+    "analyse de cas particuliers"
   ],
   "objects": [
     "matrice d'entrée",
     "noyau de convolution",
-    "taille de sortie"
+    "taille de sortie",
+    "paramètres de convolution"
   ],
-  "content_hash": "0b8a61bb1585d4cf9f19f058346aec1ea216cc7b83c1fed2c2ac20e451f25a65",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:36:42.696Z"
+  "content_hash": "aa6fd5a7b350954bfdc208c496216aa1f64920f6e73cfddfe2793a41204b2261",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:25.091Z"
 }

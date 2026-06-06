@@ -1,28 +1,32 @@
 {
   "uuid": "R3uF",
   "source_path": "exo7/2-L1/R3uF.tex",
-  "summary": "Étude de l'existence de 12 intégrales impropres différentes, avec des bornes de variation et des fonctions intégrandes variées.",
+  "summary": "Étudier l'existence de 12 intégrales impropres en analysant la convergence des intégrales sur des intervalles non bornés ou avec des singularités. Les intégrales impliquent des fonctions rationnelles, exponentielles, logarithmiques et trigonométriques.",
   "concepts": [
     "intégrale impropre",
-    "continuité",
-    "comportement asymptotique",
-    "comparaison de fonctions",
-    "intégrabilité"
+    "convergence d'intégrale",
+    "comparaison asymptotique",
+    "continuité de fonction",
+    "croissance comparée",
+    "négligeabilité",
+    "intégration sur intervalle non borné"
   ],
   "methods": [
-    "étude des limites",
+    "développement limité",
     "comparaison de fonctions",
-    "développement asymptotique",
-    "analyse de l'intégrabilité"
+    "analyse des comportements aux bornes",
+    "intégration par parties",
+    "changement de variable"
   ],
   "objects": [
     "fonction continue",
     "fonction positive",
-    "fonction négligeable",
-    "intégrande",
-    "bornes d'intégration"
+    "fonction exponentielle",
+    "fonction logarithmique",
+    "fonction rationnelle",
+    "fonction trigonométrique"
   ],
-  "content_hash": "69e1b1d2eee17e2fb26c0c83e620e37e5e1281e9617c5f6f52dccb02cb0f155d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:43:45.213Z"
+  "content_hash": "abf0c7d55a22bd37f2181af6ebb4641fb6eeecc0f9c0b68cd1b83396257d704e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:53.436Z"
 }

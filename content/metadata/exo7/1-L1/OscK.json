@@ -1,28 +1,28 @@
 {
   "uuid": "OscK",
   "source_path": "exo7/1-L1/OscK.tex",
-  "summary": "L'exercice demande d'écrire en coordonnées complexes les deux similitudes (directe et indirecte) qui transforment les points d'affixes 2 et 3 en ceux d'affixes i et 3i, puis de déterminer leurs éléments caractéristiques.",
+  "summary": "L'exercice demande d'exprimer en coordonnées complexes les deux similitudes (directe et indirecte) transformant les points d'affixes 2 et 3 en ceux d'affixes i et 3i, puis d'en déterminer les éléments caractéristiques (angle, centre, axe).",
   "concepts": [
     "similitude directe",
     "similitude indirecte",
     "point fixe",
-    "symétrie",
     "conjugaison complexe",
+    "transformation géométrique",
     "équation d'affixe"
   ],
   "methods": [
-    "détermination de l'angle de similitude",
-    "calcul du coefficient de similitude",
     "composition de transformations",
-    "résolution d'équation complexe"
+    "résolution d'équation complexe",
+    "calcul d'affixe de point fixe",
+    "utilisation de la symétrie"
   ],
   "objects": [
     "affixe de point",
-    "coefficient de similitude",
-    "point fixe",
-    "axe de symétrie"
+    "droite géométrique",
+    "vecteur directeur",
+    "équation complexe"
   ],
-  "content_hash": "a31535ade5d5fb91c74e5017542cffd25dd50cd528ada1eab64f08b9dcef7e74",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:44:24.946Z"
+  "content_hash": "fbd8902b54716acf1f77f0cfc7b85d85969b5664ec66c479d3b20610bd8efcde",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:49.629Z"
 }

@@ -1,25 +1,26 @@
 {
   "uuid": "DlAQ",
   "source_path": "exo7/4-L2/DlAQ.tex",
-  "summary": "Démontrer que le groupe symétrique Sn est engendré par les transpositions τ1,k pour k allant de 2 à n.",
+  "summary": "Démontrer que le groupe symétrique Sn est engendré par les transpositions τ1,2, τ1,3, ..., τ1,n. L'exercice porte sur la génération d'un groupe de permutations par un ensemble spécifique de transpositions.",
   "concepts": [
     "groupe symétrique",
     "transposition",
-    "générateur de groupe",
+    "génération d'un groupe",
+    "permutation",
     "relation de conjugaison",
     "ordre d'un élément"
   ],
   "methods": [
     "décomposition en transpositions",
-    "calcul de conjugaison",
-    "vérification de l'engendrement"
+    "conjugaison",
+    "calcul de produit de permutations"
   ],
   "objects": [
     "groupe de permutation",
     "transposition",
-    "produit de transpositions"
+    "élément du groupe symétrique"
   ],
-  "content_hash": "70e414cb017005994bc30ffdfd4256f5a234cfe094f34a6a69bee71560229a41",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T01:28:33.134Z"
+  "content_hash": "94054575b0d37fca02031b07205e9bae2be1b55936e12ff356b1b6d58439c258",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:56.316Z"
 }

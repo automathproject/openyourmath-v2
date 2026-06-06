@@ -1,14 +1,15 @@
 {
   "uuid": "a1ba",
   "source_path": "amscc/a1ba.tex",
-  "summary": "L'exercice demande de tester l'hypothèse d'une distribution uniforme des tirages d'un générateur de nombres aléatoires à partir de 200 observations. Il s'agit de déterminer si certains nombres apparaissent significativement plus souvent que d'autres avec un seuil de confiance de 95%.",
+  "summary": "L'exercice demande de tester l'hypothèse d'une distribution uniforme des tirages d'un générateur de nombres aléatoires à partir de 200 observations. Il s'agit de déterminer si les écarts observés par rapport à l'uniformité sont statistiquement significatifs avec un seuil de confiance de 95%.",
   "concepts": [
-    "test d'ajustement",
+    "test d'hypothèse",
     "loi uniforme",
-    "hypothèse nulle",
-    "seuil de signification",
-    "statistique de test",
-    "test du chi-deux"
+    "statistique d'ordre",
+    "test du chi-deux",
+    "niveau de signification",
+    "intervalle de confiance",
+    "fréquence d'apparition"
   ],
   "methods": [
     "test du chi-deux d'ajustement",
@@ -18,11 +19,11 @@
   ],
   "objects": [
     "tableau de fréquences",
-    "distribution observée",
-    "distribution attendue",
-    "statistique de test"
+    "distribution empirique",
+    "statistique de test",
+    "valeur critique"
   ],
-  "content_hash": "3c6ee40fed1a72aa1519b4cab3b94769600a6b149ce843bc15451b466fe9f040",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:44:50.821Z"
+  "content_hash": "793705b332b4a3c7d7e002311f6021a39fabd8b9b943370215084f0418ad78b7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:30.442Z"
 }

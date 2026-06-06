@@ -1,27 +1,31 @@
 {
   "uuid": "sIog",
   "source_path": "exo7/2-L1/sIog.tex",
-  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une solution pour l'équation x + ln(x) = k dans ]0, +∞[ pour un k réel donné, puis de déterminer un développement limité de cette solution x_k lorsque k tend vers +∞.",
+  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une solution pour l'équation x + ln x = k sur ]0, +∞[ pour un réel k donné, puis d'établir un développement asymptotique de cette solution x_k lorsque k tend vers +∞.",
   "concepts": [
     "fonction continue",
     "fonction strictement croissante",
     "bijection",
     "théorèmes de croissances comparées",
-    "développement limité",
-    "asymptotique"
+    "développement asymptotique",
+    "équation différentielle implicite",
+    "limite de fonction"
   ],
   "methods": [
     "étude de la monotonie",
-    "limites de fonctions",
-    "développement asymptotique",
-    "changement de variable"
+    "comparaison de croissances",
+    "développement limité",
+    "changement de variable",
+    "approximation logarithmique"
   ],
   "objects": [
     "fonction réelle",
     "solution d'équation",
-    "développement limité"
+    "développement asymptotique",
+    "limite de suite",
+    "fonction composée"
   ],
-  "content_hash": "be11bc0e4dd2dc5f35075b41b6aab1d729a2e9faa2372a66b408bf335a2e35df",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:42:13.816Z"
+  "content_hash": "13207e34416ffa31b1de229ee37cde219d35e12f33ee97edaa85ad1ae3cd7ff3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:07.842Z"
 }

@@ -1,28 +1,29 @@
 {
   "uuid": "3YAJ",
   "source_path": "exo7/2-L1/3YAJ.tex",
-  "summary": "Calcul du développement asymptotique d'une fonction rationnelle impliquant une exponentielle et d'une expression logarithmique, avec des précisions d'ordre différent selon le point de développement.",
+  "summary": "Calculer le développement asymptotique de deux fonctions à des précisions différentes : l'une en 0 et l'autre en +∞. Le premier exercice porte sur une expression rationnelle impliquant une exponentielle, tandis que le second concerne une combinaison de logarithmes.",
   "concepts": [
     "développement limité",
     "développement asymptotique",
     "fonction exponentielle",
-    "fonction logarithmique",
-    "équivalent",
+    "fonction logarithme",
+    "équivalents asymptotiques",
+    "polynôme de Taylor",
     "ordre de grandeur"
   ],
   "methods": [
     "développement en série entière",
-    "approximation polynomiale",
+    "approximation de Taylor",
     "manipulation algébrique",
-    "simplification d'expression"
+    "simplification d'expressions"
   ],
   "objects": [
     "fonction rationnelle",
-    "fonction exponentielle",
-    "fonction logarithmique",
+    "fonction composée",
+    "expression logarithmique",
     "développement asymptotique"
   ],
-  "content_hash": "5dd484fca4c0e4d264eb6c815fe831b313d53553e46cdd1e636af39a5d60f134",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:22:00.093Z"
+  "content_hash": "42d15fbc3e0db5b3513f6dfa57f693a2467e17656412de590c385df24cafa9c8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:37.558Z"
 }

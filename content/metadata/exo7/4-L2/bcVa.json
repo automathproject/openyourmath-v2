@@ -1,31 +1,32 @@
 {
   "uuid": "bcVa",
   "source_path": "exo7/4-L2/bcVa.tex",
-  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3, de déterminer ses sous-espaces propres et caractéristiques, puis de démontrer l'existence d'une base de Jordan pour l'endomorphisme associé. Le contexte porte sur la réduction de Jordan d'une matrice.",
+  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3, de déterminer ses sous-espaces propres et caractéristiques, de trouver une base de réduction de Jordan et d'écrire la décomposition de Dunford d'une matrice de Jordan.",
   "concepts": [
     "polynôme caractéristique",
     "valeur propre",
     "sous-espace propre",
     "sous-espace caractéristique",
     "réduction de Jordan",
-    "théorème de Hamilton-Cayley",
     "décomposition de Dunford",
+    "théorème de Hamilton-Cayley",
     "matrice nilpotente"
   ],
   "methods": [
-    "calcul du déterminant",
-    "résolution de systèmes linéaires",
+    "calcul de déterminant",
+    "résolution de système linéaire",
     "construction de base de Jordan",
-    "décomposition matricielle"
+    "décomposition en partie diagonalisable et nilpotente"
   ],
   "objects": [
     "matrice 3x3",
     "endomorphisme de ℝ³",
     "polynôme annulateur",
-    "base de Jordan",
-    "matrice de Dunford"
+    "matrice de Jordan",
+    "sous-espace propre",
+    "sous-espace caractéristique"
   ],
-  "content_hash": "71cfc43be04de4b1e651aaf4238962bb608d71155067f8f0c418a0dc663257df",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:57:50.821Z"
+  "content_hash": "5b3b2478862a98d07a57f92e537207179bc0419bcb0c9cf0b674e696db106ca6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:12.682Z"
 }

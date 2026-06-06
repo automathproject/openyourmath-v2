@@ -1,7 +1,7 @@
 {
   "uuid": "ruyx",
   "source_path": "exo7/5-L2/ruyx.tex",
-  "summary": "L'exercice demande de justifier l'existence de la distance d'un point à une partie non vide d'un espace vectoriel normé, puis d'établir une équivalence entre la nullité de cette distance et l'appartenance du point à la partie fermée, et enfin de prouver l'existence d'un point réalisant cette distance dans le cas d'un espace de dimension finie.",
+  "summary": "L'exercice demande de justifier l'existence de la distance d'un point à une partie non vide d'un espace vectoriel normé, puis d'établir deux propriétés : l'équivalence entre distance nulle et appartenance à la partie (si celle-ci est fermée), et l'existence d'un point réalisant cette distance (si l'espace est de dimension finie et la partie fermée).",
   "concepts": [
     "espace vectoriel normé",
     "distance à une partie",
@@ -9,21 +9,21 @@
     "partie fermée",
     "théorème de Bolzano-Weierstrass",
     "continuité de la norme",
-    "limite de suite"
+    "convergence de suite"
   ],
   "methods": [
     "utilisation de la définition de borne inférieure",
     "raisonnement par voisinages",
     "extraction de suite convergente",
-    "passage à la limite"
+    "application de la continuité de la norme"
   ],
   "objects": [
     "distance d'un point à une partie",
     "suite bornée",
-    "suite convergente",
-    "partie fermée"
+    "partie fermée",
+    "espace vectoriel de dimension finie"
   ],
-  "content_hash": "f82dbb899ebc6006e56ab232a29e604f3b9a3793356507dcfa6875cecde3f5aa",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:13:14.368Z"
+  "content_hash": "a71594e57d26bc780ed132d5f4b44da27f08f22f711409701cc6d1259664db4a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:38.582Z"
 }

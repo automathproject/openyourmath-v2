@@ -1,26 +1,26 @@
 {
   "uuid": "hJcp",
   "source_path": "exo7/19-L3/hJcp.tex",
-  "summary": "Montrer que la probabilité que deux variables aléatoires réelles indépendantes continues soient égales est nulle.",
+  "summary": "Montrer que la probabilité que deux variables aléatoires réelles indépendantes et continues soient égales est nulle.",
   "concepts": [
-    "variable aléatoire réelle",
-    "indépendance",
-    "densité de probabilité",
+    "variable aléatoire indépendante",
     "loi continue",
+    "densité de probabilité",
     "changement de variable",
-    "convolution"
+    "loi de la somme de variables aléatoires",
+    "intégrale de densité"
   ],
   "methods": [
     "changement de variable",
     "calcul de densité de probabilité",
-    "intégration"
+    "intégration sur un singleton"
   ],
   "objects": [
-    "variable aléatoire indépendante",
+    "variable aléatoire réelle",
     "densité de probabilité",
-    "loi continue"
+    "loi de la somme de variables aléatoires"
   ],
-  "content_hash": "8c70ce51a25172338a21b1d0130ee6b1cf5c7e0db812130fe483e10a667899f3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:34:11.256Z"
+  "content_hash": "65f86a5cfcc3e6e96ed1852597ab8b222e49f1ffb4364b44379310792144c2bf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:38.749Z"
 }

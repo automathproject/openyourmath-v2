@@ -13,14 +13,14 @@
   "methods": [
     "vérification des axiomes de distance",
     "construction explicite de suites",
-    "analyse de la complétude"
+    "analyse des propriétés topologiques"
   ],
   "objects": [
     "distance sur ℕ",
     "suite de boules fermées",
-    "entiers naturels"
+    "espace métrique complet"
   ],
-  "content_hash": "2899a7592776be316b71caba8ea2991c1722cccfc2f5b25582b757728d9149f0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:12:53.827Z"
+  "content_hash": "dec6817535c17e05a3b42c5dbfb7f5e03d450db98e9eab39cad6057e7808eaad",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:03.649Z"
 }

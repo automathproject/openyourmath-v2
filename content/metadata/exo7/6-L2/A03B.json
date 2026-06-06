@@ -1,29 +1,29 @@
 {
   "uuid": "A03B",
   "source_path": "exo7/6-L2/A03B.tex",
-  "summary": "On considère un cercle avec une corde BC et un point A tel que les arcs AB et AC soient égaux. Deux autres cordes AD et AE coupent BC en F et G. On doit prouver que le quadrilatère DEFG est inscriptible.",
+  "summary": "Dans un cercle, on considère une corde [BC] et un point A tel que les arcs AB et AC soient égaux. Deux autres cordes [AD] et [AE] coupent [BC] en F et G. On doit prouver que le quadrilatère DEFG est inscriptible.",
   "concepts": [
     "géométrie affine euclidienne",
-    "angles inscrits",
+    "cercle",
+    "angle inscrit",
     "quadrilatère inscriptible",
-    "propriétés des angles",
-    "cercle et cordes",
     "angles supplémentaires",
-    "angles de droites"
+    "angles de droites",
+    "propriétés des cordes"
   ],
   "methods": [
     "utilisation des angles de droites",
     "propriétés des quadrilatères cycliques",
-    "calcul d'angles",
-    "utilisation des propriétés des cercles"
+    "calcul d'angles à partir de configurations géométriques",
+    "utilisation de l'isométrie des angles"
   ],
   "objects": [
     "cercle",
     "cordes",
     "points d'intersection",
-    "quadrilatère"
+    "quadrilatère DEFG"
   ],
-  "content_hash": "82ae62f3e6ab200fa85a0b6d3d9f07a0dd7af23950539750f04fbbecb12192e2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:25:03.715Z"
+  "content_hash": "563846e2baba0bd25741ee928544827fd337c536a33b648f49f335393acdeca2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:21.437Z"
 }

@@ -1,31 +1,30 @@
 {
   "uuid": "uzLm",
   "source_path": "exo7/2-L1/uzLm.tex",
-  "summary": "L'exercice demande d'étudier la convergence et de calculer la valeur de l'intégrale impropre $\\int_{1}^{+\\infty}\\frac{(-1)^{E(x)}}{x}\\;dx$. La fonction intégrée est définie par une alternance de signes liée à la partie entière de $x$.",
+  "summary": "L'exercice demande d'étudier la convergence et de calculer la valeur de l'intégrale impropre $\\int_{1}^{+\\infty}\\frac{(-1)^{E(x)}}{x}\\;dx$. La fonction intégrée alterne en fonction de la partie entière de $x$.",
   "concepts": [
     "intégrale impropre",
+    "convergence d'intégrale",
     "fonction continue par morceaux",
-    "intégrabilité locale",
-    "série alternée",
     "critère spécial aux séries alternées",
     "formule de Stirling",
-    "convergence de série"
+    "somme de séries alternées"
   ],
   "methods": [
     "décomposition en intégrales sur intervalles unitaires",
-    "estimation d'intégrales",
-    "calcul de limite de série",
+    "estimation d'intégrale",
+    "telescopage",
     "approximation asymptotique",
-    "téléscopage"
+    "calcul de limite de suite"
   ],
   "objects": [
     "intégrale impropre",
-    "fonction à partie entière",
     "série alternée",
+    "fonction de la partie entière",
     "suite numérique",
-    "factorielles"
+    "produit de factoriels"
   ],
-  "content_hash": "6cf0c4c6a404db008c9321879db555f64697e6489a338672c937f46cbc0fcd25",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:51:11.143Z"
+  "content_hash": "95debb582530ebc598a268fca78e0f943a7e272a4be9a203dbc8a5524304b2ae",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:34.370Z"
 }

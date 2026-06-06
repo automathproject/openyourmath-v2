@@ -1,7 +1,7 @@
 {
   "uuid": "Ypyt",
   "source_path": "exo7/16-L3/Ypyt.tex",
-  "summary": "L'exercice demande de déterminer le rayon de convergence des séries définissant les fonctions cosinus hyperbolique et sinus hyperbolique, puis d'exprimer ces fonctions à l'aide de l'exponentielle complexe. Il s'agit ensuite de démontrer leurs formules d'addition et leurs relations avec les fonctions trigonométriques classiques.",
+  "summary": "L'exercice demande de déterminer le rayon de convergence des séries définissant les fonctions cosinus hyperbolique et sinus hyperbolique, puis d'exprimer ces fonctions à l'aide de l'exponentielle complexe. Il s'ensuit la démonstration de leurs formules d'addition et de leur relation avec les fonctions trigonométriques complexes.",
   "concepts": [
     "fonction exponentielle complexe",
     "rayon de convergence",
@@ -13,16 +13,17 @@
   "methods": [
     "calcul du rayon de convergence",
     "développement en série entière",
-    "utilisation des propriétés exponentielles",
-    "démonstration algébrique"
+    "utilisation des propriétés de l'exponentielle",
+    "démonstration par identification"
   ],
   "objects": [
     "fonction cosh",
     "fonction sinh",
-    "nombre complexe",
-    "séries de Taylor"
+    "fonction exponentielle",
+    "séries entières",
+    "fonctions trigonométriques"
   ],
-  "content_hash": "73b83c71dd26a1487725956dc95999b8d3e2dc492c43d8d6dc54228ba78da0ba",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:50:08.817Z"
+  "content_hash": "995eb192782fe745b2bb06c4ad172ce90412e506add0e4caa5f1a2c06b6c70e5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:20.594Z"
 }

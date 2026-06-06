@@ -1,29 +1,32 @@
 {
   "uuid": "qR9K",
   "source_path": "exo7/4-L2/qR9K.tex",
-  "summary": "L'exercice demande d'étudier le rang de la comatrice d'une matrice carrée en fonction du rang de cette matrice.",
+  "summary": "Étudier le rang de la comatrice d'une matrice carrée en fonction du rang de la matrice initiale. L'exercice demande d'analyser les cas possibles selon la valeur du rang de la matrice.",
   "concepts": [
     "rang d'une matrice",
     "comatrice",
     "déterminant",
     "famille libre",
     "famille liée",
-    "mineurs d'une matrice",
-    "inversibilité"
+    "sous-espace vectoriel",
+    "noyau d'une matrice",
+    "mineurs d'une matrice"
   ],
   "methods": [
-    "étude des mineurs",
-    "transposition de matrice",
-    "analyse de l'image et du noyau",
-    "utilisation de la dimension de l'espace vectoriel"
+    "analyse des mineurs",
+    "utilisation de la transposée",
+    "étude de l'image et du noyau",
+    "calcul de déterminant",
+    "manipulation de matrices"
   ],
   "objects": [
     "matrice carrée",
     "comatrice",
-    "mineurs de format n-1",
-    "famille de colonnes"
+    "mineurs",
+    "matrice transposée",
+    "sous-matrices"
   ],
-  "content_hash": "9b5d067f1aa35525d37436c09a9d7f6433e749715f9f805ef3aa855725a4a551",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:12:57.031Z"
+  "content_hash": "0e37b2b204e57809c501ffd3814e77d7d9b4eaba98e3a1a49dfd24ff6fb26dd9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:19.710Z"
 }

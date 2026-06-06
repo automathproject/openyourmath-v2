@@ -13,14 +13,16 @@
   "methods": [
     "décomposition en produit de matrices",
     "analyse du polynôme caractéristique",
-    "utilisation de la symétrie"
+    "utilisation de la symétrie",
+    "propriétés des valeurs propres"
   ],
   "objects": [
-    "matrices symétriques réelles positives",
-    "valeurs propres",
-    "polynôme caractéristique"
+    "matrices symétriques réelles",
+    "matrices positives",
+    "produit de matrices",
+    "valeurs propres"
   ],
-  "content_hash": "b99badd7d1601fea83d978240f58d3da36d43da9b8591d2939bdf0a5b0db4be6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:46:39.678Z"
+  "content_hash": "62332ae059a49436c516c03d636ee26539ea1e7dc60c0b149b6133e51ee3d130",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:16.830Z"
 }

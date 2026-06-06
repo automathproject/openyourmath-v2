@@ -1,27 +1,30 @@
 {
   "uuid": "KE7m",
   "source_path": "exo7/6-L2/KE7m.tex",
-  "summary": "Trouver l'équation cartésienne d'une parabole tangente aux axes (Ox) et (Oy) respectivement en (1,0) et (0,2).",
+  "summary": "Trouver l'équation cartésienne d'une parabole tangente aux axes (Ox) en (1,0) et (Oy) en (0,2). L'exercice demande de déterminer les coefficients d'une équation générale de conique sous contraintes.",
   "concepts": [
     "équation cartésienne de conique",
     "tangente à une courbe",
     "changement de repère",
     "parabole",
-    "courbe du second degré",
-    "système d'équations"
+    "système d'équations linéaires",
+    "condition de tangence",
+    "forme canonique de conique"
   ],
   "methods": [
     "résolution de système d'équations",
     "changement de variable",
-    "vérification de la nature d'une conique"
+    "vérification de condition de tangence",
+    "simplification d'équation"
   ],
   "objects": [
     "parabole",
     "équation cartésienne",
     "tangente",
-    "système d'équations"
+    "système d'équations",
+    "changement de repère"
   ],
-  "content_hash": "a063d2c42292311fe0a15b962da753afaa6ad89fd4e7b3d6a536ce89a1cb6ff6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:03:23.519Z"
+  "content_hash": "64e518950231110fac017dcb4432153350bc07d4e0ad4d6bc4826a11f037ccd6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:08.434Z"
 }

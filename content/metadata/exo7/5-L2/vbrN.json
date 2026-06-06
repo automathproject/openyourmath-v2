@@ -1,26 +1,29 @@
 {
   "uuid": "vbrN",
   "source_path": "exo7/5-L2/vbrN.tex",
-  "summary": "Calculer la limite d'une suite de matrices lorsque l'entier p tend vers l'infini. L'exercice demande d'exprimer cette limite en fonction de l'exponentielle de la matrice A.",
+  "summary": "Calculer la limite d'une suite de matrices de la forme (I_n + A/p)^p lorsque p tend vers l'infini, où A est une matrice carrée complexe. L'exercice vise à exprimer cette limite en fonction de l'exponentielle de matrice.",
   "concepts": [
     "exponentielle de matrice",
     "norme sous-multiplicative",
     "convergence de suites de matrices",
     "développement en série entière",
+    "inégalité triangulaire",
     "limite de suites"
   ],
   "methods": [
     "comparaison terme à terme",
     "estimation d'erreur",
-    "développement de Taylor",
-    "utilisation de la norme matricielle"
+    "développement binomial",
+    "convergence uniforme",
+    "utilisation de la norme"
   ],
   "objects": [
-    "matrice carrée complexe",
     "suite de matrices",
-    "exponentielle de matrice"
+    "matrice carrée complexe",
+    "exponentielle de matrice",
+    "développement de Taylor"
   ],
-  "content_hash": "72ede64a8be087b0c7cdbed53855c03ae9e815f13ff6e6699f6f00b45dd38ac6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:05:11.065Z"
+  "content_hash": "381a43fe89e6834c0a925d14f2a2c85030f4322a0859139a8e18443958ed5eea",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:53.907Z"
 }

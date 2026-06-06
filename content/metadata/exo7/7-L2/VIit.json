@@ -1,26 +1,30 @@
 {
   "uuid": "VIit",
   "source_path": "exo7/7-L2/VIit.tex",
-  "summary": "L'exercice demande de tester l'indépendance de deux caractères génétiques (couleur et forme du pollen) chez des pois hybrides, à partir d'un tableau de contingence. Il s'agit de vérifier si les allèles sont transmis de manière indépendante, sous l'hypothèse d'équiprobabilité des combinaisons génétiques.",
+  "summary": "L'exercice propose d'analyser des données de croisement de pois de senteur pour tester l'indépendance de deux caractères génétiques (couleur et forme du pollen). Il s'agit de déterminer si les gènes contrôlant ces caractères sont transmis indépendamment, en utilisant un tableau de contingence.",
   "concepts": [
-    "test d'indépendance du khi-deux",
+    "test d'indépendance du chi-deux",
     "tableau de contingence",
-    "hypothèse d'indépendance",
+    "hypothèse nulle",
     "probabilité conditionnelle",
     "lois de Mendel",
-    "allèles dominants et récessifs"
+    "allèles dominants et récessifs",
+    "modèle de transmission génétique"
   ],
   "methods": [
-    "test du khi-deux",
+    "test du chi-deux d'indépendance",
     "calcul des fréquences attendues",
-    "comparaison des fréquences observées et attendues"
+    "comparaison des fréquences observées et attendues",
+    "interprétation des résultats statistiques"
   ],
   "objects": [
     "tableau de contingence 2x2",
     "fréquences observées",
-    "fréquences attendues"
+    "fréquences attendues",
+    "statistique de test",
+    "niveau de signification"
   ],
-  "content_hash": "fde2f72ab64d57d2ebff8e5a1c4009ec6fc3bc7e8f160c140444de0ed750e1ad",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:42:55.242Z"
+  "content_hash": "1724d07851ea51ce746b1be32d692add45e4f45fd7afc14a71cd5487b7644b9c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:21.750Z"
 }

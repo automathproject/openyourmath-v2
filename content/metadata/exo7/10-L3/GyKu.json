@@ -1,26 +1,28 @@
 {
   "uuid": "GyKu",
   "source_path": "exo7/10-L3/GyKu.tex",
-  "summary": "L'exercice demande de montrer qu'une courbe plane donnée par une équation quadratique est une parabole, puis de trouver un repère orthonormé dans lequel cette parabole a une équation standard.",
+  "summary": "L'exercice demande de montrer qu'une courbe plane donnée par une équation quadratique est une parabole, puis de trouver un repère orthonormé dans lequel cette parabole a une équation canonique de la forme x² = 2py.",
   "concepts": [
     "forme quadratique",
     "forme bilinéaire",
-    "diagonalisation",
-    "changement de repère",
     "classification des coniques",
-    "parabole"
+    "changement de repère",
+    "diagonalisation de forme quadratique",
+    "équation canonique de parabole"
   ],
   "methods": [
-    "changement de base",
-    "diagonalisation de matrice",
-    "reconnaissance de forme canonique"
+    "réduction de forme quadratique",
+    "changement de base orthonormée",
+    "calcul de matrice associée à une forme bilinéaire",
+    "identification de la nature d'une conique"
   ],
   "objects": [
-    "courbe quadratique",
-    "matrice associée à une forme quadratique",
-    "repère orthonormé"
+    "forme quadratique à deux variables",
+    "matrice symétrique",
+    "repère orthonormé",
+    "courbe conique"
   ],
-  "content_hash": "f13fb3fe5afa59e9382fde345858683914f36297a852f0b8189703e427bef7fd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:19:38.186Z"
+  "content_hash": "40bcabdfac7853bbc6366c6fb60a4273105bea50e4b44af7c60342b38ad592ad",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:21.661Z"
 }

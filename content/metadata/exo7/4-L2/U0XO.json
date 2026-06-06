@@ -1,27 +1,28 @@
 {
   "uuid": "U0XO",
   "source_path": "exo7/4-L2/U0XO.tex",
-  "summary": "Trouver tous les couples d'entiers (x, y) tels que x - y = 1 et xy = 72. L'exercice utilise les propriétés des nombres premiers entre eux et des diviseurs.",
+  "summary": "Résoudre dans ℕ*² des systèmes d'équations impliquant le PGCD (x∧y) et le PPCM (x∨y) de deux entiers naturels. Les systèmes combinent des relations entre PGCD, PPCM, somme et différence des variables.",
   "concepts": [
-    "pgcd",
-    "ppcm",
-    "nombres premiers entre eux",
+    "PGCD",
+    "PPCM",
     "diviseurs d'un entier",
-    "équation diophantienne",
-    "factorisation en nombres premiers"
+    "théorème de Bézout",
+    "décomposition en facteurs premiers",
+    "propriétés arithmétiques des entiers"
   ],
   "methods": [
     "décomposition en facteurs premiers",
-    "résolution d'équation diophantienne",
-    "analyse des diviseurs consécutifs"
+    "recherche des diviseurs consécutifs",
+    "résolution d'équations du second degré",
+    "utilisation des propriétés du PGCD et PPCM"
   ],
   "objects": [
+    "système d'équations arithmétiques",
     "entiers naturels",
-    "couples d'entiers",
-    "diviseurs",
-    "équation linéaire"
+    "PGCD de deux entiers",
+    "PPCM de deux entiers"
   ],
-  "content_hash": "dc8364795bc70cee57cb2b6a4406caa90e9b1611af46c2f1db2face15b06d8ac",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:40:31.113Z"
+  "content_hash": "2328743d453a84e158c1d0e770262111fa67836c359034c59aca6fe8ce2eea77",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:34:19.498Z"
 }

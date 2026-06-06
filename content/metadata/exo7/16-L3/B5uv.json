@@ -1,28 +1,33 @@
 {
   "uuid": "B5uv",
   "source_path": "exo7/16-L3/B5uv.tex",
-  "summary": "L'exercice demande de prouver la convergence normale d'une série de fonctions sur tout compact de ℂ, d'en déduire que la fonction définie par cette série est méromorphe et vérifie une relation de périodicité. Il s'agit ensuite de déterminer les résidus de cette fonction en ses pôles, d'étudier son comportement à l'infini, et enfin d'établir une formule explicite pour cette fonction en utilisant le théorème de Liouville pour en déduire la valeur de la somme des inverses des carrés des entiers naturels.",
+  "summary": "L'exercice étudie la série $\\sum_{n\\in \\mathbb{Z}} \\frac{1}{(z-n)^2}$ définie sur le plan complexe. Il demande de prouver sa convergence normale sur tout compact, d'en déduire que la fonction associée est méromorphe et périodique, puis de déterminer ses résidus et son comportement à l'infini. Enfin, il s'agit d'exprimer cette fonction en termes de sinus et d'en déduire la valeur de la série des inverses des carrés des entiers.",
   "concepts": [
     "convergence normale",
     "fonction méromorphe",
     "théorème des résidus",
     "pôle d'une fonction méromorphe",
+    "périodicité",
     "théorème de Liouville",
-    "somme des inverses des carrés"
+    "convergence uniforme",
+    "série de Fourier"
   ],
   "methods": [
     "étude de la convergence normale",
-    "détermination des résidus",
+    "calcul des résidus",
     "analyse du comportement à l'infini",
-    "utilisation du théorème de Liouville"
+    "identification de fonctions méromorphes",
+    "utilisation du théorème de Liouville",
+    "développement en série"
   ],
   "objects": [
-    "série de fonctions",
+    "série complexe",
     "fonction méromorphe",
-    "pôles",
-    "somme des inverses des carrés des entiers naturels"
+    "pôle simple",
+    "fonction périodique",
+    "série des inverses des carrés des entiers"
   ],
-  "content_hash": "81a401e827ed3323796774e313e5f0c4d19e3f9ae69964b517853067bf46c4a7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:09:11.276Z"
+  "content_hash": "74a877f4c48bb5edc95427b9ddd59e0941bfb0679f5fe272395b86cfcec5ce6b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:22.642Z"
 }

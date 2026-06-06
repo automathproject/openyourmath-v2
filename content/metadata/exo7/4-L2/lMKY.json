@@ -1,29 +1,30 @@
 {
   "uuid": "lMKY",
   "source_path": "exo7/4-L2/lMKY.tex",
-  "summary": "L'exercice demande de montrer qu'une famille de polynômes $(L_n)$ forme une base orthogonale d'un espace préhilbertien de polynômes munis d'un produit scalaire défini par intégration, puis de déterminer la norme de chaque $L_n$.",
+  "summary": "L'exercice demande de montrer qu'une famille de polynômes dérivés $(L_n)_{n\\in\\N}$ forme une base orthogonale de l'espace préhilbertien $\\mathbb{R}[X]$ muni d'un produit scalaire défini par intégration, puis de déterminer la norme de chaque $L_n$.",
   "concepts": [
     "produit scalaire",
     "base orthogonale",
-    "espace préhilbertien",
-    "polynômes",
+    "polynôme orthogonal",
     "intégration par parties",
     "récurrence",
-    "intégrales de Wallis"
+    "intégrales de Wallis",
+    "norme dans un espace préhilbertien"
   ],
   "methods": [
     "intégration par parties",
     "récurrence",
+    "calcul de dérivées successives",
     "changement de variable",
-    "calcul de norme"
+    "utilisation des intégrales de Wallis"
   ],
   "objects": [
-    "polynômes",
+    "polynôme de $\\mathbb{R}[X]$",
+    "famille de polynômes $(L_n)$",
     "produit scalaire",
-    "famille orthogonale",
     "norme de polynôme"
   ],
-  "content_hash": "2b4f2e331279c024d1c33dc07161bbf727c353898360febe8cfce89f560a37ba",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:53:29.748Z"
+  "content_hash": "cdd411b0a598e8430481afdcc4d2977842bbcfa942005099ce52740957fbd5f2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:25.530Z"
 }

@@ -1,14 +1,15 @@
 {
   "uuid": "8ufJ",
   "source_path": "exo7/2-L1/8ufJ.tex",
-  "summary": "L'exercice demande de montrer que xf(x) tend vers 0 quand x tend vers +∞ pour une fonction f continue, positive, décroissante et intégrable sur [1,+∞[, puis de calculer l'intégrale impropre ∫₁⁺∞ x(f(x+1)-f(x)) dx.",
+  "summary": "L'exercice demande de montrer que le produit xf(x) tend vers 0 quand x tend vers l'infini, puis d'étudier l'existence et le calcul d'une intégrale impropre impliquant une fonction f continue, positive, décroissante et intégrable sur [1, +∞[.",
   "concepts": [
-    "intégrabilité",
-    "fonction décroissante",
     "intégrale impropre",
+    "fonction continue",
+    "fonction décroissante",
+    "intégrabilité",
     "limite de fonction",
-    "comparaison intégrale-somme",
-    "convergence d'intégrale"
+    "comparaison intégrale",
+    "théorème de convergence dominée"
   ],
   "methods": [
     "encadrement par intégrales",
@@ -17,12 +18,12 @@
     "passage à la limite sous le signe intégral"
   ],
   "objects": [
-    "fonction positive et décroissante",
+    "fonction positive décroissante",
     "intégrale impropre",
-    "expression xf(x)",
-    "fonction x(f(x+1)-f(x))"
+    "produit xf(x)",
+    "fonction x(f(x) - f(x+1))"
   ],
-  "content_hash": "e1eb1d173396454a3afeaed6687389536977f1578cf3a8228d0ec415f8a9cfd8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:30:52.092Z"
+  "content_hash": "fe508b65a35c1859d7588d612ec4b9793e54ce237c6e273a9e2da10f99c3d37e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:38.968Z"
 }

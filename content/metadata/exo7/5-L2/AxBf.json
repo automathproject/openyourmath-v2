@@ -1,31 +1,31 @@
 {
   "uuid": "AxBf",
   "source_path": "exo7/5-L2/AxBf.tex",
-  "summary": "Étudier la convergence simple, absolue, uniforme et normale de trois séries de fonctions définies sur des intervalles de ℝ⁺, avec des termes généraux spécifiques.",
+  "summary": "Étudier les différents types de convergence (simple, absolue, uniforme, normale) de trois séries de fonctions définies sur des intervalles de ℝ⁺, avec des termes généraux spécifiques.",
   "concepts": [
     "convergence simple",
     "convergence normale",
     "convergence uniforme",
-    "série de fonctions",
     "critère spécial aux séries alternées",
     "suite géométrique",
-    "majoration du reste"
+    "majoration du reste",
+    "bornitude des fonctions"
   ],
   "methods": [
-    "analyse des limites",
-    "étude de la dérivée",
-    "majoration des termes",
-    "utilisation de la parité",
-    "comparaison avec une suite géométrique"
+    "analyse des limites de termes généraux",
+    "étude des maxima de fonctions",
+    "majoration des restes de séries",
+    "utilisation de la décroissance des suites",
+    "comparaison avec des séries numériques"
   ],
   "objects": [
     "série de fonctions",
     "fonction définie sur ℝ⁺",
-    "terme général",
+    "terme général d'une série",
     "reste d'une série",
-    "suite numérique"
+    "suite géométrique"
   ],
-  "content_hash": "f681f3ce386f9849daf4e7abaf9acc7116db6b8808feff8087709905b0d14ca1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:50:00.057Z"
+  "content_hash": "4a02e68c04348ea3025365c89ac8711f1ae279749e835882efbceee34943b939",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:02.378Z"
 }

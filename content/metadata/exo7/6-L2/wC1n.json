@@ -1,28 +1,28 @@
 {
   "uuid": "wC1n",
   "source_path": "exo7/6-L2/wC1n.tex",
-  "summary": "L'exercice demande de déterminer la droite perpendiculaire commune à deux droites données dans l'espace, en utilisant leurs représentations paramétriques.",
+  "summary": "Trouver la droite perpendiculaire commune à deux droites données dans l'espace, définies par des systèmes d'équations cartésiennes et paramétriques.",
   "concepts": [
     "géométrie affine",
     "droites de l'espace",
     "produit vectoriel",
     "colinéarité",
     "déterminant",
-    "système d'équations cartésiennes"
+    "repère de droite affine"
   ],
   "methods": [
-    "paramétrisation de droites",
     "calcul de produit vectoriel",
-    "utilisation de déterminants",
-    "résolution de systèmes d'équations"
+    "résolution de système d'équations",
+    "calcul de déterminant",
+    "paramétrisation de droite"
   ],
   "objects": [
     "droites de l'espace",
     "vecteurs directeurs",
-    "vecteur normal",
+    "point de droite",
     "perpendiculaire commune"
   ],
-  "content_hash": "4f4baaa4a31712da90ca3a7f00f345f60db36ebd33e87121bef1f7d3524ec8ba",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:15:17.621Z"
+  "content_hash": "f3d35c6909057a48246b95910c44b77491e03bc0a3e4508b9f0d69159b7c2532",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:48.940Z"
 }

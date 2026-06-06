@@ -1,28 +1,31 @@
 {
   "uuid": "qSd8",
   "source_path": "exo7/6-L2/qSd8.tex",
-  "summary": "L'exercice demande de montrer qu'une courbe paramétrée possède un point double et que les tangentes en ce point sont perpendiculaires. La courbe est définie par des fonctions rationnelles en t.",
+  "summary": "L'exercice demande de montrer qu'une courbe paramétrée possède un point double et que les tangentes en ce point sont perpendiculaires. La courbe est définie par deux fonctions rationnelles de la variable paramétrique t.",
   "concepts": [
     "courbe paramétrée",
     "point double",
     "tangente à une courbe",
     "orthogonalité",
     "système d'équations",
-    "racines d'un polynôme"
+    "racines d'un polynôme",
+    "produit scalaire"
   ],
   "methods": [
     "résolution de système d'équations",
     "calcul de dérivées",
-    "produit scalaire",
-    "analyse de continuité et dérivabilité"
+    "recherche de points d'intersection",
+    "calcul de vecteurs tangents",
+    "vérification d'orthogonalité"
   ],
   "objects": [
     "courbe paramétrée",
     "point double",
-    "vecteur dérivé",
-    "tangente"
+    "vecteurs tangents",
+    "polynôme du second degré",
+    "produit scalaire"
   ],
-  "content_hash": "58f975ba5ce3c76dc3f2a8ca655c307953396287e2b5d83fda462105d71abac5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:05:55.236Z"
+  "content_hash": "c78f2a1e5a6efbcd0a53e1869f415b47b16cc1fcdcb03f436332223ccad5346a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:22.464Z"
 }

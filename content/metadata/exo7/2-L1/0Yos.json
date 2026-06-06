@@ -7,20 +7,21 @@
     "formules d'addition",
     "formules de duplication",
     "formules de linéarisation",
-    "identités trigonométriques hyperboliques"
+    "identités trigonométriques hyperboliques",
+    "exponentielle complexe"
   ],
   "methods": [
     "développement exponentiel",
-    "division par un terme non nul",
+    "division de fractions",
     "substitution",
-    "addition de formules"
+    "identités remarquables"
   ],
   "objects": [
     "fonctions hyperboliques",
     "expressions exponentielles",
     "identités algébriques"
   ],
-  "content_hash": "5c4639f7f445a1cd3ef4e3fff69c6b92851985f72c0b487b473ad811bbbd8563",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:53:25.451Z"
+  "content_hash": "4031af4a50f355f9124bf8f9b70211c0d2c9220e40e370a398de360f65ade81a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:25.437Z"
 }

@@ -1,7 +1,7 @@
 {
   "uuid": "pvVs",
   "source_path": "exo7/1-L1/pvVs.tex",
-  "summary": "L'exercice demande de prouver deux implications concernant les applications composées : la composition g∘f injective implique f injective, et la composition g∘f surjective implique g surjective.",
+  "summary": "L'exercice demande de prouver deux implications concernant les applications composées : si la composée g∘f est injective, alors f est injective, et si g∘f est surjective, alors g est surjective.",
   "concepts": [
     "injection",
     "surjection",
@@ -16,12 +16,13 @@
     "utilisation de la définition de surjection"
   ],
   "objects": [
-    "applications f et g",
-    "éléments de l'ensemble E",
-    "éléments de l'ensemble G",
-    "éléments de l'ensemble H"
+    "application f",
+    "application g",
+    "composée g∘f",
+    "éléments de l'ensemble de départ",
+    "éléments de l'ensemble d'arrivée"
   ],
-  "content_hash": "fab9dd82029c89bf32986df60205f01adeb029b98fdc0f971f65cb0deb02eac9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:21:40.147Z"
+  "content_hash": "9d7e3ae39e60cb88a6a1647762096e78b12056db57fd8930d70738ece9b872f6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:08.495Z"
 }

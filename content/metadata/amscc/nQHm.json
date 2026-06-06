@@ -1,33 +1,35 @@
 {
   "uuid": "nQHm",
   "source_path": "amscc/nQHm.tex",
-  "summary": "L'exercice demande d'étudier les extremums d'une fonction de deux variables définie sur un domaine compact. Il s'agit d'analyser la nature topologique du domaine, de représenter graphiquement des sous-ensembles, et de déterminer les maximum et minimum globaux de la fonction en utilisant des techniques d'optimisation.",
+  "summary": "L'exercice étudie les extremums d'une fonction de deux variables définie sur un domaine compact. Il demande de représenter graphiquement le domaine, de vérifier des inclusions d'ensembles, d'appliquer le théorème des valeurs extrêmes, d'analyser les points critiques, et de déterminer les extremums globaux en utilisant des restrictions de la fonction à des sous-ensembles.",
   "concepts": [
-    "théorème des valeurs extrêmes",
-    "fonction de deux variables",
+    "fonction de plusieurs variables",
     "domaine compact",
+    "théorème des valeurs extrêmes",
     "extremums globaux",
     "dérivées partielles",
     "gradient",
-    "point critique",
-    "continuité"
+    "continuité",
+    "bornitude",
+    "fermeture"
   ],
   "methods": [
     "représentation graphique",
     "calcul de dérivées partielles",
-    "analyse des variations",
+    "analyse de points critiques",
+    "restriction de fonction",
     "tableau de variation",
-    "recherche de points critiques",
-    "application du théorème des extrema"
+    "calcul de valeurs extrêmes"
   ],
   "objects": [
-    "fonction polynomiale de deux variables",
+    "fonction de deux variables",
     "domaine fermé borné",
-    "sous-ensembles paramétrés",
+    "ensemble compact",
+    "gradient",
     "tableau de variation",
-    "gradient"
+    "points critiques"
   ],
-  "content_hash": "cb93ed5fc67504d72b86050bb6d04176dc4efc9a0f1b007892223736530300a2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:54:30.417Z"
+  "content_hash": "c3a1556484209066e30fc26a58387a05c1b8c25712bcb031d2ef68fb6ea19c46",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:39.585Z"
 }

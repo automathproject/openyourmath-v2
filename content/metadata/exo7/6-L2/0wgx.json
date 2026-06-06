@@ -1,19 +1,21 @@
 {
   "uuid": "0wgx",
   "source_path": "exo7/6-L2/0wgx.tex",
-  "summary": "L'exercice étudie les propriétés de l'inversion dans le plan affine euclidien. Il demande de prouver que l'inversion est involutive, que ses points fixes forment un cercle, et d'analyser l'image de cercles et de droites par cette transformation.",
+  "summary": "L'exercice étudie les propriétés de l'inversion dans le plan affine euclidien. Il demande de prouver que l'inversion est involutive, de déterminer les points fixes d'une inversion, et d'analyser l'image d'un cercle ou d'une droite par une inversion.",
   "concepts": [
-    "géométrie affine euclidienne",
     "inversion géométrique",
     "bijection involutive",
     "point fixe",
     "puissance d'un point par rapport à un cercle",
-    "homothétie"
+    "géométrie affine euclidienne",
+    "homothétie",
+    "produit scalaire"
   ],
   "methods": [
-    "démonstration par construction",
+    "preuve par construction",
     "utilisation de la puissance d'un point",
     "application d'une homothétie",
+    "calcul de produit scalaire",
     "analyse des points fixes"
   ],
   "objects": [
@@ -21,9 +23,10 @@
     "cercle",
     "droite",
     "point",
-    "centre d'inversion"
+    "vecteur",
+    "plan affine euclidien"
   ],
-  "content_hash": "8a9cb89ef82f7705fd952c4b19105c05b4e6d6c44ccb787a37887bf5c05949ad",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:18:19.481Z"
+  "content_hash": "c6e9ccdeaefcc2b1e1b977dccd0fd5269cc2f6e378f66212b7e9a864b7f765ee",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:56.058Z"
 }

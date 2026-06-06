@@ -1,27 +1,31 @@
 {
   "uuid": "wRCB",
   "source_path": "exo7/10-L3/wRCB.tex",
-  "summary": "L'exercice demande d'analyser la structure d'anneaux et de corps de plusieurs ensembles de nombres, en vérifiant leurs propriétés d'addition, de multiplication et d'inversibilité.",
+  "summary": "L'exercice demande de déterminer si des sous-ensembles donnés de ℂ sont des anneaux ou des corps. Les sous-ensembles considérés incluent des ensembles de nombres à développement décimal fini, des fractions avec conditions sur le dénominateur, et des extensions d'anneaux et de corps par des racines carrées.",
   "concepts": [
     "anneau",
     "corps",
     "stabilité par addition",
-    "inversibilité",
-    "nombre premier",
-    "développement décimal"
+    "stabilité par multiplication",
+    "élément inversible",
+    "extension d'anneau",
+    "extension de corps",
+    "division euclidienne"
   ],
   "methods": [
-    "vérification de la stabilité par addition",
+    "vérification des axiomes d'anneau",
+    "vérification des axiomes de corps",
     "analyse des éléments inversibles",
-    "utilisation du théorème de Gauss"
+    "décomposition en facteurs premiers"
   ],
   "objects": [
-    "ensemble des nombres à développement décimal fini",
-    "ensemble des fractions irréductibles sans facteur premier p",
-    "anneaux de nombres algébriques",
-    "corps de nombres algébriques"
+    "sous-ensemble de ℂ",
+    "nombres à développement décimal fini",
+    "fractions avec conditions sur le dénominateur",
+    "extensions par racines carrées",
+    "éléments inversibles"
   ],
-  "content_hash": "7e06b9082901a22530cf8b489aee1dac155ccaca976ca2a0c1426e3a7213a4b2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:34:32.191Z"
+  "content_hash": "5731d8ae8e0ff2a102d98b9fea8e1cc4674fedefa256833fa530df0d2415218d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:15.027Z"
 }

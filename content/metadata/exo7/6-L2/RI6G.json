@@ -1,30 +1,31 @@
 {
   "uuid": "RI6G",
   "source_path": "exo7/6-L2/RI6G.tex",
-  "summary": "Étude des courbes paramétrées définies par $y=f(x)$ avec représentation graphique, détermination de l'équation de leur tangente au point d'abscisse $x=0$ et analyse de la position de la courbe par rapport à cette tangente.",
+  "summary": "L'exercice demande de représenter graphiquement deux fonctions $y=f(x)$, de déterminer l'équation de leur tangente au point d'abscisse $x=0$ et d'analyser la position de la courbe par rapport à cette tangente. Les fonctions étudiées sont $f(x)=\\sin^2x+\\cos x$ et $f(x)=x+\\ln(1+e^x)$.",
   "concepts": [
     "fonction dérivable",
     "tangente à une courbe",
     "position d'une courbe par rapport à sa tangente",
     "variations d'une fonction",
-    "équation cartésienne",
-    "périodicité",
-    "symétrie"
+    "points critiques",
+    "symétrie d'une fonction",
+    "périodicité"
   ],
   "methods": [
     "calcul de dérivée",
     "étude du signe de la dérivée",
     "analyse des variations",
-    "résolution d'équation trigonométrique",
-    "détermination de tangente horizontale"
+    "détermination des tangentes horizontales",
+    "étude de la position relative courbe/tangente"
   ],
   "objects": [
     "fonction trigonométrique",
-    "courbe plane",
+    "fonction composée",
+    "courbe paramétrée",
     "tangente",
-    "point d'abscisse nulle"
+    "point critique"
   ],
-  "content_hash": "edbdc43569e9ec2017ab339e8ce6be27e4145c3963dafc2675a2525d8bb43f96",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:48:15.430Z"
+  "content_hash": "69fd0f7839487ceaaf87c39ab3ffee622bcfa1beb15ef1406eb3de3f9f6bac7b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:53.319Z"
 }

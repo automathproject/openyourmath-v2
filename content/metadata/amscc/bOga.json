@@ -1,29 +1,31 @@
 {
   "uuid": "bOga",
   "source_path": "amscc/bOga.tex",
-  "summary": "L'exercice demande d'identifier le domaine de définition d'une densité conjointe de deux variables aléatoires, de déterminer la constante de normalisation pour que cette densité soit valide, d'en déduire les lois marginales, de calculer la covariance entre les deux variables et d'étudier leur indépendance.",
+  "summary": "L'exercice demande d'identifier le domaine de définition d'une densité conjointe de deux variables aléatoires, de déterminer la constante de normalisation, d'en déduire les lois marginales, de calculer la covariance et d'étudier l'indépendance des variables.",
   "concepts": [
-    "densité conjointe",
+    "densité de probabilité conjointe",
     "loi marginale",
     "covariance",
     "indépendance de variables aléatoires",
     "intégrale double",
     "fonction indicatrice",
-    "théorème de Fubini"
+    "espérance conditionnelle"
   ],
   "methods": [
-    "calcul d'intégrale",
-    "normalisation de densité",
-    "calcul de covariance",
-    "vérification d'indépendance"
+    "calcul d'intégrale par décomposition",
+    "théorème de Fubini",
+    "formule de Huygens",
+    "calcul de densité marginale",
+    "vérification d'indépendance par produit de densités"
   ],
   "objects": [
     "densité conjointe",
-    "loi marginale",
+    "lois marginales",
     "covariance",
-    "variables aléatoires"
+    "domaine de définition",
+    "constante de normalisation"
   ],
-  "content_hash": "67957d31c744de80398faea7d878f7db7c2128e29dd069b9db7239b429a46a07",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:56:52.834Z"
+  "content_hash": "ba0538140870f0b56753863fcfaf4a34a6b79b4a59af5a81e99684c0e24cffca",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:42.130Z"
 }

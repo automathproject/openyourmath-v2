@@ -1,32 +1,31 @@
 {
   "uuid": "qwQb",
   "source_path": "exo7/6-L2/qwQb.tex",
-  "summary": "Étude des propriétés géométriques de trois courbes planes définies en coordonnées polaires : analyse de leur domaine de définition, passages par l'origine, variations, tangentes et branches infinies.",
+  "summary": "Étude des propriétés géométriques de trois courbes planes définies en coordonnées polaires : analyse de leur domaine de définition, comportement à l'origine, variations, branches infinies et asymptotes.",
   "concepts": [
     "coordonnées polaires",
     "domaine de définition",
-    "passage par l'origine",
+    "limite de fonction",
     "variations de fonction",
-    "tangente à une courbe",
-    "branche infinie",
-    "symétrie d'une courbe"
+    "asymptote",
+    "tangente en un point",
+    "point limite"
   ],
   "methods": [
     "passage en coordonnées cartésiennes",
     "étude des limites",
     "analyse des variations",
-    "détermination de la tangente",
-    "symétrie par réflexion",
-    "symétrie par rotation"
+    "détermination des asymptotes",
+    "symétrie par réflexion"
   ],
   "objects": [
     "courbe polaire",
     "fonction polaire",
-    "tangente",
     "branche infinie",
-    "symétrie"
+    "tangente",
+    "asymptote"
   ],
-  "content_hash": "e347883c33156d5a488135cbaa0744d27e21e3a2027b4a2cfc8bce9d314fb989",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:06:41.903Z"
+  "content_hash": "de15bd7d9a54b17e1098469516d05cd248c93121e62f9ea4b7fdd2ac97caf050",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:25.011Z"
 }

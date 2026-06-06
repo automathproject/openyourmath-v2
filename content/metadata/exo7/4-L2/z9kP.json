@@ -1,25 +1,27 @@
 {
   "uuid": "z9kP",
   "source_path": "exo7/4-L2/z9kP.tex",
-  "summary": "Soit E un espace vectoriel et φ et ψ deux formes linéaires sur E. On suppose que pour tout x de E, φ(x)ψ(x) = 0. Montrer que φ= 0 ou ψ= 0.",
+  "summary": "Soit E un espace vectoriel et φ, ψ deux formes linéaires sur E. On suppose que pour tout x de E, le produit φ(x)ψ(x) est nul. Montrer que φ ou ψ est identiquement nulle.",
   "concepts": [
-    "sous-espace vectoriel",
     "forme linéaire",
     "noyau d'une application linéaire",
+    "sous-espace vectoriel",
     "produit de formes linéaires",
-    "inclusion de sous-espaces"
+    "inclusion de sous-espaces vectoriels",
+    "contradiction"
   ],
   "methods": [
     "raisonnement par l'absurde",
     "utilisation des noyaux",
-    "analyse des cas d'inclusion"
+    "analyse des inclusions de noyaux",
+    "manipulation d'équations linéaires"
   ],
   "objects": [
     "espace vectoriel",
     "forme linéaire",
-    "noyau d'une application linéaire"
+    "noyau d'une forme linéaire"
   ],
-  "content_hash": "2005931f179bf03fe4d94c3c587e16b78b08b72c934deca05140e7cd3fae83c3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:06:00.195Z"
+  "content_hash": "7bf18c8e609028c059d2da9ef5c959bdb113edcf5706d2cd2d72bedd1bbccc8b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:58.610Z"
 }

@@ -1,9 +1,9 @@
 {
   "uuid": "QL2T",
   "source_path": "exo7/2-L1/QL2T.tex",
-  "summary": "L'exercice demande de déterminer la limite en 1 par la droite de (x-1)ζ(x), où ζ(x) est la fonction zêta de Riemann définie pour x > 1. L'approche consiste à encadrer la série par des intégrales.",
+  "summary": "L'exercice demande de déterminer la limite en 1+ de (x-1)ζ(x), où ζ(x) est la série de Riemann définie pour x > 1. La résolution s'appuie sur une comparaison entre la série et une intégrale impropre.",
   "concepts": [
-    "fonction zêta de Riemann",
+    "série de Riemann",
     "intégrale impropre",
     "théorème des gendarmes",
     "convergence de série",
@@ -11,18 +11,17 @@
     "limite de fonction"
   ],
   "methods": [
-    "encadrement par intégrales",
-    "calcul d'intégrale",
-    "passage à la limite",
-    "application du théorème des gendarmes"
+    "comparaison terme à terme",
+    "intégration",
+    "encadrement",
+    "passage à la limite"
   ],
   "objects": [
-    "fonction zêta de Riemann",
     "série numérique",
-    "intégrale impropre",
-    "limite de fonction"
+    "fonction de variable réelle",
+    "intégrale"
   ],
-  "content_hash": "e3b1d98bf5c333ed4528fdbfd5cd4866304c139729171743756cca78a932419e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:17:39.188Z"
+  "content_hash": "f97f68447c4950e2b2a723e9a65574c5b50e782a6e561ecf404f37373a7b46ff",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:02.769Z"
 }

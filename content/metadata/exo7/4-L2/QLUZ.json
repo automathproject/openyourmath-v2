@@ -1,27 +1,30 @@
 {
   "uuid": "QLUZ",
   "source_path": "exo7/4-L2/QLUZ.tex",
-  "summary": "Calculer le déterminant d'une matrice symétrique particulière et en dériver une formule explicite pour tout entier naturel n. L'exercice demande de manipuler des déterminants de matrices dépendant d'un paramètre et d'utiliser des techniques de récurrence.",
+  "summary": "Calculer la dérivée du déterminant d'une matrice dont les coefficients sont des fonctions dérivables. Application au calcul explicite de deux déterminants particuliers de matrices symétriques.",
   "concepts": [
     "déterminant",
-    "matrice symétrique",
-    "polynôme",
+    "dérivée de fonction matricielle",
+    "polynôme caractéristique",
     "récurrence",
-    "développement par rapport à une colonne",
-    "linéarité du déterminant"
-  ],
-  "methods": [
-    "développement de déterminant",
-    "récurrence",
-    "intégration",
+    "linéarité du déterminant",
     "formule de Taylor"
   ],
-  "objects": [
-    "matrice carrée",
-    "polynôme de degré n",
-    "déterminant de matrice"
+  "methods": [
+    "développement par rapport à une colonne",
+    "récurrence mathématique",
+    "linéarité du déterminant",
+    "calcul de dérivée matricielle",
+    "intégration"
   ],
-  "content_hash": "478feecef2fb84f3c859a276f32e0c872f6f52018bdfa810f58b4637e40b7430",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:49:52.594Z"
+  "objects": [
+    "matrice symétrique",
+    "déterminant de matrice",
+    "polynôme",
+    "suite récurrente",
+    "fonction dérivable"
+  ],
+  "content_hash": "214fa398f8e9c399033d62ebe17757f2950d56d2ef813631ed206a923200c7a3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:40:46.985Z"
 }

@@ -1,24 +1,26 @@
 {
   "uuid": "jdbB",
   "source_path": "exo7/1-L1/jdbB.tex",
-  "summary": "L'exercice demande de démontrer une inégalité sur la dimension de la somme de sous-espaces vectoriels et les conditions d'égalité, en utilisant la récurrence.",
+  "summary": "L'exercice demande de démontrer une inégalité sur la dimension de la somme de sous-espaces vectoriels dans un espace vectoriel de dimension finie, et de caractériser la condition d'égalité en termes de somme directe.",
   "concepts": [
     "sous-espace vectoriel",
-    "dimension d'un espace vectoriel",
     "somme directe",
+    "dimension d'un espace vectoriel",
     "récurrence mathématique",
-    "inclusion de sous-espaces"
+    "inégalité dimensionnelle",
+    "intersection de sous-espaces"
   ],
   "methods": [
     "récurrence",
-    "utilisation de la formule de dimension pour la somme de deux sous-espaces"
+    "utilisation de la formule de dimension pour la somme de deux sous-espaces",
+    "raisonnement par contraposée"
   ],
   "objects": [
     "sous-espaces vectoriels",
-    "espace vectoriel de dimension finie",
-    "somme de sous-espaces"
+    "somme de sous-espaces",
+    "dimension d'un espace vectoriel"
   ],
-  "content_hash": "ac13621ea46cc7caabacb7eeac717e2031b81d48aca31924b98f278f2e7558ba",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:05:33.327Z"
+  "content_hash": "54a9ef99c5825a0e8d9f869b02f1ba05db8a391dcb7bb3f830d8eb6e65c3d808",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:55.699Z"
 }

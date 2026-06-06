@@ -1,33 +1,33 @@
 {
   "uuid": "ttM3",
   "source_path": "exo7/4-L2/ttM3.tex",
-  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3, de déterminer ses sous-espaces propres et caractéristiques, de trouver une base de réduction et une matrice de passage pour mettre la matrice sous forme de Jordan, puis d'appliquer la décomposition de Dunford et de calculer l'exponentielle de la matrice de Jordan obtenue.",
+  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3, de déterminer ses sous-espaces propres et caractéristiques, de trouver une base de réduction de Jordan, d'écrire la décomposition de Dunford d'une matrice donnée et de calculer son exponentielle.",
   "concepts": [
     "polynôme caractéristique",
-    "valeurs propres",
-    "sous-espaces propres",
-    "sous-espaces caractéristiques",
+    "valeur propre",
+    "sous-espace propre",
+    "sous-espace caractéristique",
     "réduction de Jordan",
     "décomposition de Dunford",
-    "exponentielle de matrice"
+    "exponentielle de matrice",
+    "nilpotence"
   ],
   "methods": [
     "calcul de déterminant",
-    "résolution de systèmes linéaires",
-    "construction de base de réduction",
+    "résolution de système linéaire",
+    "construction de base de Jordan",
     "décomposition en partie diagonale et nilpotente",
-    "calcul de l'exponentielle de matrice"
+    "calcul de l'exponentielle matricielle"
   ],
   "objects": [
     "matrice 3x3",
-    "polynôme caractéristique",
-    "sous-espaces propres",
-    "sous-espaces caractéristiques",
+    "endomorphisme de ℝ³",
+    "polynôme annulateur",
     "matrice de Jordan",
     "matrice diagonale",
     "matrice nilpotente"
   ],
-  "content_hash": "a8b0a625d0a559f014817080674460da3faaaa3ea16ab38d281e2379e3c88529",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:21:55.557Z"
+  "content_hash": "5d5ebdeccc8ab06eecb35d5829eb55a58e4a6bdb9176365978cb1d3fa5168fa5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:03.943Z"
 }

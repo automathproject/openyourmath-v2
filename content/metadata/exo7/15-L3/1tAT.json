@@ -1,13 +1,13 @@
 {
   "uuid": "1tAT",
   "source_path": "exo7/15-L3/1tAT.tex",
-  "summary": "L'exercice demande de démontrer trois propriétés fondamentales de l'adhérence d'un ensemble dans un espace topologique : l'idempotence, la croissance et la compatibilité avec l'union.",
+  "summary": "L'exercice demande de démontrer trois propriétés fondamentales de l'adhérence d'un ensemble dans un espace topologique : l'idempotence, la monotonie et la stabilité par union.",
   "concepts": [
     "adhérence d'un ensemble",
     "espace topologique",
     "inclusion d'ensembles",
     "union d'ensembles",
-    "propriétés topologiques"
+    "propriétés de l'adhérence"
   ],
   "methods": [
     "raisonnement par inclusion",
@@ -15,11 +15,11 @@
     "manipulation des ensembles"
   ],
   "objects": [
-    "adhérence",
-    "ensemble",
-    "espace topologique"
+    "adhérence d'un ensemble",
+    "ensemble inclus",
+    "union d'ensembles"
   ],
-  "content_hash": "019be3a4f836d0e98e19fa1ef2aef395f20766bb97b32821c8857adcb265283e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:16:53.486Z"
+  "content_hash": "6cdb27a1536f9b5beae889fda75f1b2ddcb73253e43f2e17f871cf65961433c4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:05.737Z"
 }

@@ -1,25 +1,27 @@
 {
   "uuid": "vUFN",
   "source_path": "amscc/vUFN.tex",
-  "summary": "L'exercice demande de déterminer la loi conjointe d'un couple de variables aléatoires discrètes sous forme de tableau, puis d'en déduire les lois marginales, les espérances mathématiques et l'indépendance des variables.",
+  "summary": "L'exercice demande de déterminer la loi conjointe d'un couple de variables aléatoires discrètes sous forme de tableau, puis d'en déduire les lois marginales et les espérances. Il s'agit ensuite de vérifier l'indépendance des variables et d'étudier la loi d'une nouvelle variable définie comme leur différence.",
   "concepts": [
-    "variable aléatoire discrète",
     "loi conjointe",
     "loi marginale",
-    "espérance mathématique",
-    "indépendance de variables aléatoires"
+    "espérance d'une variable aléatoire",
+    "indépendance de variables aléatoires",
+    "tableau de probabilités"
   ],
   "methods": [
-    "construction de tableau de probabilités",
+    "calcul de probabilités marginales",
     "calcul d'espérance",
-    "test d'indépendance"
+    "vérification d'indépendance par produit des probabilités",
+    "construction de loi de variable transformée"
   ],
   "objects": [
+    "variable aléatoire discrète",
     "couple de variables aléatoires",
-    "tableau de probabilités conjointes",
-    "espérances mathématiques"
+    "tableau de loi conjointe",
+    "espérance mathématique"
   ],
-  "content_hash": "87fd908abc22081b3264131ecded3e193538cd3f9e790a1277a75556abeadb9f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:42:42.111Z"
+  "content_hash": "0065bd2a7fad383064f8ee98eb21ce4b7e7c6636e25a37fcb26b3ad54659afc7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:48.222Z"
 }

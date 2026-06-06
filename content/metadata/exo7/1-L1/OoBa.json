@@ -1,18 +1,21 @@
 {
   "uuid": "OoBa",
   "source_path": "exo7/1-L1/OoBa.tex",
-  "summary": "Montrer que le rang d'une matrice H de M_n(C) est inférieur ou égal à 1, sous une condition multiplicative spécifique impliquant toutes les matrices de M_n(C).",
+  "summary": "Montrer que le rang d'une matrice H de M_n(C) est inférieur ou égal à 1, sous la condition que pour toute matrice A, il existe un scalaire λ_A tel que HAH = λ_AH.",
   "concepts": [
     "rang d'une matrice",
-    "matrice inversible",
+    "matrice de rang 1",
     "décomposition en blocs",
-    "colinéarité",
-    "matrice scalaire"
+    "matrices inversibles",
+    "matrices scalaires",
+    "colinéarité de matrices",
+    "algèbre linéaire"
   ],
   "methods": [
     "décomposition par matrices inversibles",
     "calcul par blocs",
-    "réduction au cas particulier"
+    "réduction au cas de rang 1",
+    "analyse de la structure de la matrice"
   ],
   "objects": [
     "matrice carrée",
@@ -20,7 +23,7 @@
     "matrice J_r",
     "matrice B"
   ],
-  "content_hash": "e98b16cf0dd96c681c8ea8a35c0349da3821d711b469665dc63b19ac063e6f0e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:56:15.104Z"
+  "content_hash": "76b481e6186f235cfe58a7b77f64c91aa9f7cc6aa330ec91077a97d74b7c64a7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:28.726Z"
 }

@@ -1,27 +1,30 @@
 {
   "uuid": "bR1F",
   "source_path": "crouzet/pcsi/10/bR1F.tex",
-  "summary": "On étudie une suite définie par récurrence et on montre qu'elle est décroissante, bornée et converge vers 0. La suite est définie par une fonction rationnelle et on utilise des propriétés de monotonie et de point fixe.",
+  "summary": "Étude d'une suite définie par récurrence et convergence vers un point fixe. La suite est définie par $u_{n+1} = \\frac{u_n}{u_n + 1}$ avec $u_0 = 1$. On doit montrer qu'elle est décroissante, bornée, et déterminer sa limite.",
   "concepts": [
-    "suite numérique",
+    "suite définie par récurrence",
     "monotonie",
-    "bornes",
-    "convergence",
+    "bornes d'une suite",
+    "convergence d'une suite",
     "point fixe",
-    "théorème de la limite monotone"
+    "théorème de la limite monotone",
+    "fonction croissante"
   ],
   "methods": [
     "récurrence",
-    "étude de la dérivée",
-    "calcul de limite",
+    "étude de la monotonie",
+    "calcul de dérivée",
+    "passage à la limite dans une relation de récurrence",
     "théorème du point fixe"
   ],
   "objects": [
-    "suite définie par récurrence",
+    "suite numérique",
     "fonction rationnelle",
+    "point fixe",
     "limite de suite"
   ],
-  "content_hash": "3b38c567d6574664d3dbbb82476443a1cadbc73d275f10fc2810378f3a0a11ad",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:37:39.433Z"
+  "content_hash": "9ce1620e94f754fe0010427692d396cb95459ca67b2ddfb7d478e4f1043d1bae",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:16.702Z"
 }

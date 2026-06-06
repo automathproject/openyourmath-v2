@@ -1,25 +1,26 @@
 {
   "uuid": "5K10",
   "source_path": "exo7/12-L3/5K10.tex",
-  "summary": "L'exercice demande de définir une sous-variété de dimension k dans R^n et d'énoncer le théorème des fonctions implicites. Il s'agit ensuite d'appliquer ce théorème pour démontrer qu'un ensemble M défini par f(x) = 0 est une sous-variété de dimension k = n - p.",
+  "summary": "L'exercice demande de définir une sous-variété de dimension k dans R^n, d'énoncer le théorème des fonctions implicites, puis de démontrer qu'un ensemble M défini comme l'ensemble des zéros d'une fonction C^1 de R^n dans R^p est une sous-variété de dimension n-p, sous condition de rang constant de la matrice jacobienne.",
   "concepts": [
     "sous-variété",
     "théorème des fonctions implicites",
     "fonction de classe C^1",
     "matrice jacobienne",
     "rang d'une matrice",
-    "dimension d'un espace"
+    "dimension d'une sous-variété"
   ],
   "methods": [
     "énoncé de théorème",
-    "application du théorème des fonctions implicites"
+    "application du théorème des fonctions implicites",
+    "analyse du rang de la matrice jacobienne"
   ],
   "objects": [
-    "sous-variété M",
-    "fonction f",
-    "matrice jacobienne J(x)"
+    "fonction de R^n dans R^p",
+    "ensemble des zéros d'une fonction",
+    "matrice jacobienne"
   ],
-  "content_hash": "016df6f954a4bfa0212a7381685e81fdc2d72ca646405d71ee50ecaa5f88d6b9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:12:15.889Z"
+  "content_hash": "24150bdbffe30cfe752cee03cfa00546f2a194325c46705cb661216b987a2259",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:34.557Z"
 }

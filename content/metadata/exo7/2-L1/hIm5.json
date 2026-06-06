@@ -1,26 +1,29 @@
 {
   "uuid": "hIm5",
   "source_path": "exo7/2-L1/hIm5.tex",
-  "summary": "L'exercice demande de déterminer la borne supérieure et la borne inférieure d'un ensemble A défini par une suite de termes dépendant de n. L'ensemble A est construit à partir d'une combinaison de 1/n et (-1)^n pour n ∈ ℕ*.",
+  "summary": "L'exercice demande de déterminer la borne supérieure et la borne inférieure d'un ensemble A défini par une suite de termes de la forme 1/n + (-1)^n pour n ∈ ℕ*.",
   "concepts": [
     "borne supérieure",
     "borne inférieure",
     "suite numérique",
-    "limite d'une suite",
-    "maximum d'un ensemble",
-    "minimum d'un ensemble"
+    "convergence",
+    "majoration",
+    "minoration",
+    "existence des bornes"
   ],
   "methods": [
-    "encadrement de termes de suite",
+    "encadrement de termes",
     "limite de suite",
-    "comparaison de termes"
+    "comparaison de termes pairs et impairs",
+    "passage à la limite"
   ],
   "objects": [
     "ensemble de nombres réels",
-    "suite définie par récurrence",
-    "termes de suite"
+    "suite (u_n)",
+    "borne supérieure",
+    "borne inférieure"
   ],
-  "content_hash": "9a196242aeab55c3d052c2a092f4328d8ad20c70ee3a8a75d4ff67781eb10345",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:00:27.265Z"
+  "content_hash": "797db49af218efdb02d90caff60ae6a3f6f9615d5b47dcaef2c44ce84d486954",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:17.362Z"
 }

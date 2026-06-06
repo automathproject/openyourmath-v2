@@ -1,28 +1,31 @@
 {
   "uuid": "1Jc2",
   "source_path": "exo7/4-L2/1Jc2.tex",
-  "summary": "L'exercice demande de déterminer la projection d'une droite (D) sur un plan (P) parallèlement à une droite (Δ) dans ℝ³. Il s'agit de trouver les équations cartésiennes de la droite projetée.",
+  "summary": "L'exercice demande de déterminer la projection d'une droite (D) sur un plan (P) dans ℝ³, parallèlement à une droite (Δ). Il s'agit de trouver l'intersection du plan (P) avec un autre plan contenant (D) et parallèle à (Δ).",
   "concepts": [
-    "espace vectoriel",
+    "espace euclidien",
+    "projection orthogonale",
     "droite affine",
     "plan affine",
-    "projection orthogonale",
-    "colinéarité",
+    "colinéarité vectorielle",
+    "système d'équations cartésiennes",
     "intersection de plans"
   ],
   "methods": [
     "paramétrisation de droite",
     "détermination de repère",
     "calcul de déterminant",
-    "résolution de système d'équations linéaires"
+    "résolution de système linéaire",
+    "construction de plan parallèle"
   ],
   "objects": [
     "droite affine",
     "plan affine",
     "vecteur directeur",
-    "système d'équations cartésiennes"
+    "point de l'espace",
+    "système d'équations"
   ],
-  "content_hash": "45fbcc450775ed55763b180a306148b87dbef4b5f56fd37d24b65a51ca1b67b9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:57:36.013Z"
+  "content_hash": "2be2479e388b3d90c1bb0361d766ba92ff47f13ddc720e24d37a4afbe0dddff1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:36.071Z"
 }

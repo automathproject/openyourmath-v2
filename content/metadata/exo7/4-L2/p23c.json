@@ -6,13 +6,14 @@
     "morphisme d'anneaux",
     "structure d'anneau",
     "base canonique",
-    "linéarité",
-    "multiplicativité"
+    "multiplicativité",
+    "unité d'un anneau",
+    "application linéaire"
   ],
   "methods": [
     "analyse de la multiplicativité",
-    "identification des coefficients",
-    "vérification de la condition unité"
+    "identification de l'unité",
+    "détermination des coefficients"
   ],
   "objects": [
     "morphisme d'anneaux",
@@ -20,7 +21,7 @@
     "ℤ",
     "base canonique"
   ],
-  "content_hash": "862bb3555240e3e7fbf85f295d0359cb15bd20f4609aa77fb7c356f44bedf44a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:12:19.405Z"
+  "content_hash": "ce41b9331a5122f703bf59d02514a15c007ca34f808b7b8c30c9c3626d5f1f24",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:51:07.989Z"
 }

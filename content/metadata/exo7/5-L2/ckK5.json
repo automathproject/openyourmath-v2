@@ -1,30 +1,28 @@
 {
   "uuid": "ckK5",
   "source_path": "exo7/5-L2/ckK5.tex",
-  "summary": "L'exercice demande de vérifier qu'une application linéaire définie par le produit vectoriel appartient à l'espace des matrices antisymétriques, puis de montrer la réciproque : toute matrice antisymétrique est définie par un produit vectoriel avec un vecteur unique.",
+  "summary": "L'exercice demande de montrer qu'une application linéaire antisymétrique de ℝ³ dans ℝ³ est nécessairement un produit vectoriel par un vecteur fixe, et réciproquement. Il s'agit d'établir une bijection entre les vecteurs de ℝ³ et les endomorphismes antisymétriques.",
   "concepts": [
+    "endomorphisme antisymétrique",
     "produit vectoriel",
-    "matrice antisymétrique",
-    "endomorphisme",
-    "application linéaire",
-    "isomorphisme",
-    "dimension d'un espace vectoriel",
-    "injectivité",
-    "bilinéarité"
+    "isomorphisme d'espaces vectoriels",
+    "linéarité",
+    "antisymétrie",
+    "dimension d'un espace vectoriel"
   ],
   "methods": [
-    "vérification de l'antisymétrie",
-    "utilisation de la dimension d'un espace vectoriel",
+    "vérification de la linéarité",
+    "utilisation de la dimension finie",
     "démonstration d'injectivité",
-    "linéarité"
+    "application du théorème du rang"
   ],
   "objects": [
-    "vecteur de ℝ³",
-    "application linéaire",
-    "matrice antisymétrique",
-    "espace vectoriel ℝ³"
+    "endomorphisme de ℝ³",
+    "produit vectoriel",
+    "espace vectoriel ℝ³",
+    "application linéaire antisymétrique"
   ],
-  "content_hash": "bb09df8b81f1037b6e24424ade56880e884436f652386cc9f36c660eda5caa58",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:58:40.521Z"
+  "content_hash": "30d386b8799b07907408bc81e6bf78d8a775e7268256cd2abd1f8f838b104e28",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:21.814Z"
 }

@@ -1,7 +1,7 @@
 {
   "uuid": "8kxs",
   "source_path": "exo7/6-L2/8kxs.tex",
-  "summary": "Calculer la distance d'un point à une droite dans l'espace définie par deux plans. Déterminer ensuite une équation cartésienne d'un cylindre de révolution ayant cette droite comme axe et de rayon donné.",
+  "summary": "L'exercice demande de calculer la distance d'un point M à une droite D définie par un système de deux équations planes, puis d'établir l'équation cartésienne d'un cylindre de révolution d'axe D et de rayon 2.",
   "concepts": [
     "géométrie affine",
     "distance d'un point à une droite",
@@ -12,14 +12,15 @@
   "methods": [
     "paramétrisation d'une droite",
     "calcul de distance par produit vectoriel",
-    "résolution d'équation"
+    "résolution de système d'équations linéaires"
   ],
   "objects": [
-    "point dans l'espace",
-    "droite définie par deux plans",
-    "cylindre de révolution"
+    "point de l'espace",
+    "droite dans l'espace",
+    "cylindre de révolution",
+    "repère orthonormé"
   ],
-  "content_hash": "1ce1345ba12ee85999bb67ef26afcf0ccbccca134ec3576bc94c5d168391c445",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:38:44.609Z"
+  "content_hash": "9e64a953a2384b2445f14cd41c88f02a21838c55d1fd0d5f211c5e1d6c12b5ce",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:51:33.667Z"
 }

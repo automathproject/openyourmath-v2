@@ -1,25 +1,26 @@
 {
   "uuid": "sltn",
   "source_path": "exo7/16-L3/sltn.tex",
-  "summary": "L'exercice demande de déterminer si une fonction réelle donnée, définie sur ℝ² privé de l'origine, est harmonique sur son domaine de définition en utilisant les équations de Cauchy-Riemann en coordonnées polaires.",
+  "summary": "L'exercice demande de déterminer si une fonction réelle donnée, définie sur ℝ² privé de l'origine, est harmonique sur son domaine. Il s'agit d'utiliser les équations de Cauchy-Riemann en coordonnées polaires pour vérifier l'existence d'une fonction holomorphe dont cette fonction est la partie réelle.",
   "concepts": [
-    "équations de Cauchy-Riemann",
+    "équations de Cauchy-Riemann en coordonnées polaires",
     "fonction harmonique",
-    "coordonnées polaires",
     "fonction holomorphe",
-    "fonction complexe",
+    "partie réelle d'une fonction complexe",
+    "coordonnées polaires",
     "analyse complexe"
   ],
   "methods": [
-    "utilisation des équations de Cauchy-Riemann",
-    "analyse de la condition d'holomorphie"
+    "vérification des équations de Cauchy-Riemann",
+    "analyse en coordonnées polaires",
+    "détermination de l'existence d'une fonction holomorphe"
   ],
   "objects": [
     "fonction réelle u(x,y) = log(x² + y²)",
     "fonction complexe f = u + iv",
     "domaine ℝ² - {(0,0)}"
   ],
-  "content_hash": "7fc8c7b9dc1b2cfbb79b767adc5c86d7b5a51b6507226650cd6bc63e3cea22d8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:25:21.163Z"
+  "content_hash": "7a5d2df6dadee10034b23a5ab603e0b292f0c440261f0f00b0aeae83d9fe6c2c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:27.240Z"
 }

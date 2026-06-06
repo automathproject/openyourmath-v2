@@ -1,28 +1,31 @@
 {
   "uuid": "aqd6",
   "source_path": "exo7/17-L3/aqd6.tex",
-  "summary": "L'exercice porte sur les propriétés des matrices obtenues lors de l'élimination de Gauss sur une matrice symétrique définie positive. Il demande d'établir une identité vectorielle, de prouver la symétrie et la positivité définie des matrices partielles, et d'établir des inégalités sur les éléments diagonaux.",
+  "summary": "L'exercice porte sur les propriétés des matrices obtenues lors de l'élimination de Gauss sur une matrice symétrique définie positive. Il demande d'établir une identité vectorielle, de prouver la symétrie et la positivité définie des sous-matrices, et d'établir des inégalités sur les éléments diagonaux et hors-diagonaux.",
   "concepts": [
     "élimination de Gauss",
     "matrice symétrique",
     "matrice définie positive",
     "produit scalaire euclidien",
     "récurrence",
-    "inégalités matricielles"
+    "inégalités matricielles",
+    "propriétés des sous-matrices"
   ],
   "methods": [
     "récurrence",
     "calcul matriciel",
-    "manipulation algébrique",
-    "raisonnement par l'absurde"
+    "manipulation d'inégalités",
+    "construction de vecteurs tests",
+    "développement d'identité vectorielle"
   ],
   "objects": [
     "matrice carrée",
+    "sous-matrice",
     "vecteur",
     "éléments diagonaux",
-    "sous-matrice"
+    "éléments hors-diagonaux"
   ],
-  "content_hash": "e0c77c72a92fd602f00cad76404ae08b01f9fb2052876fbd3d9cf57451de69fc",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:21:04.657Z"
+  "content_hash": "d128f556067708093d05bc5e7d2961a99793b3712b117e1f11259b4aa8a03750",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:14.404Z"
 }

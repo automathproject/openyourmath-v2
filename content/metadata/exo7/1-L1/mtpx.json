@@ -1,35 +1,35 @@
 {
   "uuid": "mtpx",
   "source_path": "exo7/1-L1/mtpx.tex",
-  "summary": "L'exercice demande de déterminer la dimension d'un espace vectoriel V engendré par quatre vecteurs de ℝ⁴, de vérifier si ces vecteurs forment un système libre et générateur, de compléter une base de V en une base de ℝ⁴, de trouver des équations cartésiennes pour V, d'analyser un sous-espace H défini par une équation linéaire, et d'étudier les intersections et sommes d'espaces vectoriels.",
+  "summary": "L'exercice porte sur l'étude d'un espace vectoriel V engendré par quatre vecteurs de ℝ⁴. Il demande de déterminer la dimension de V, de vérifier la liberté et la génératrice du système de vecteurs, de compléter une base de V en une base de ℝ⁴, d'établir des équations cartésiennes pour V, d'analyser un sous-espace vectoriel H défini par une équation linéaire, et d'étudier les intersections et sommes d'espaces vectoriels.",
   "concepts": [
-    "espace vectoriel",
+    "sous-espace vectoriel",
     "dimension d'un espace vectoriel",
     "base d'un espace vectoriel",
-    "système libre",
-    "système générateur",
-    "équations cartésiennes",
-    "sous-espace vectoriel",
-    "intersection de sous-espaces vectoriels",
-    "somme de sous-espaces vectoriels",
+    "indépendance linéaire",
+    "génératrice d'un espace vectoriel",
+    "équations cartésiennes d'un sous-espace",
+    "représentation paramétrique d'un sous-espace",
     "formule de Grassmann"
   ],
   "methods": [
     "réduction de matrice",
-    "complétion de base",
-    "recherche de relations de dépendance linéaire",
-    "représentation paramétrique",
-    "calcul de rang de matrice",
-    "utilisation de la formule de Grassmann"
+    "calcul de rang",
+    "complétion d'une base",
+    "résolution de système d'équations linéaires",
+    "vérification d'appartenance à un sous-espace"
   ],
   "objects": [
     "vecteurs de ℝ⁴",
     "système de vecteurs",
+    "sous-espace vectoriel V",
     "sous-espace vectoriel H",
-    "intersection V ∩ H",
-    "somme V + H"
+    "base de V",
+    "base de H",
+    "intersection de sous-espaces",
+    "somme de sous-espaces"
   ],
-  "content_hash": "41d0d70c79b8487624599c41655d93276cd4ee4dddd7639f0a11296f435dd4d4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:08:08.164Z"
+  "content_hash": "ceef13e048adc58dbabce52d2f84a8d93692737a865006449addd1fc415d3e0b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:00.176Z"
 }

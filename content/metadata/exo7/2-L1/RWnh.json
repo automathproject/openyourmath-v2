@@ -1,28 +1,30 @@
 {
   "uuid": "RWnh",
   "source_path": "exo7/2-L1/RWnh.tex",
-  "summary": "Trouver le développement limité à l'ordre 4 d'une expression impliquant la constante e et une somme de factoriels inverses lorsque n tend vers l'infini.",
+  "summary": "Trouver le développement limité à l'ordre 4 en l'infini de l'expression $(e - \\sum_{k=0}^{n}\\frac{1}{k!})\\times(n+1)!$. L'exercice porte sur l'approximation asymptotique d'une suite liée à la série exponentielle.",
   "concepts": [
     "développement limité",
-    "factorielle",
-    "constante e",
-    "somme infinie",
-    "équivalent asymptotique",
+    "série exponentielle",
+    "approximation asymptotique",
+    "suite numérique",
     "petit o",
-    "développement de Taylor"
+    "factorielle",
+    "développement en série entière"
   ],
   "methods": [
-    "développement asymptotique",
-    "approximation polynomiale",
-    "manipulation algébrique",
-    "estimation d'erreur"
+    "développement en série de Taylor",
+    "approximation des termes restants",
+    "manipulation algébrique de fractions",
+    "développement de polynômes inverses"
   ],
   "objects": [
-    "suite numérique",
-    "somme de termes factoriels",
-    "expression polynomiale"
+    "suite $(u_n)$",
+    "factorielle $(n+1)!$",
+    "série exponentielle",
+    "termes restants",
+    "développement limité"
   ],
-  "content_hash": "cd3f748b40f55a28183c07d6b63d4a3fc4338c2cb251bc584c4dc0bb8ff58d51",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:18:14.367Z"
+  "content_hash": "b5d4bfc0c10d2ad2e9cdd678d269c9782a9cb0e35fd4850d56bb303e842a77b4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:05.589Z"
 }

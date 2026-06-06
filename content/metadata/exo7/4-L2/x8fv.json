@@ -1,7 +1,7 @@
 {
   "uuid": "x8fv",
   "source_path": "exo7/4-L2/x8fv.tex",
-  "summary": "L'exercice demande de montrer que 1 est valeur propre d'une matrice A à coefficients dans [0,1] avec des lignes sommant à 1, puis d'étudier les propriétés des autres valeurs propres de A.",
+  "summary": "On considère une matrice réelle A dont les coefficients sont dans [0,1] et dont les lignes somment à 1. On demande de montrer que 1 est valeur propre de A, puis que les autres valeurs propres sont dans le disque unité, et enfin d'établir une inégalité géométrique sur leur position.",
   "concepts": [
     "valeur propre",
     "vecteur propre",
@@ -11,17 +11,18 @@
     "disque dans le plan complexe"
   ],
   "methods": [
-    "recherche de vecteur propre associé",
+    "recherche de vecteur propre",
     "utilisation de l'inégalité triangulaire",
-    "analyse géométrique des valeurs propres"
+    "analyse des coefficients d'une matrice",
+    "géométrie des nombres complexes"
   ],
   "objects": [
-    "matrice carrée réelle",
-    "vecteur propre",
-    "valeur propre",
-    "disque dans le plan complexe"
+    "matrice réelle",
+    "vecteur propre associé à 1",
+    "valeurs propres de A",
+    "disque de centre a_{i0,i0} et rayon 1-a_{i0,i0}"
   ],
-  "content_hash": "6f5e85c1fe1870e436aca1eafa05b24827672bb6aef867b19ebc1a071a55cc8a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:28:25.863Z"
+  "content_hash": "7197d28f59c03c4d2e9b0596aedbd6942653f83dbd93d3d713d60ec4e9df1368",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:18.025Z"
 }

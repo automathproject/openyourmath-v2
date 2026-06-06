@@ -1,27 +1,31 @@
 {
   "uuid": "EofR",
   "source_path": "exo7/1-L1/EofR.tex",
-  "summary": "L'exercice demande de prouver que la somme de deux matrices nilpotentes commutantes est nilpotente et que leur exponentielle se factorise, puis de montrer l'inversibilité de l'exponentielle d'une matrice nilpotente, et enfin de calculer explicitement cette exponentielle pour une matrice nilpotente donnée.",
+  "summary": "L'exercice demande de prouver des propriétés de l'exponentielle d'une matrice nilpotente, notamment la nilpotence de la somme de deux matrices nilpotentes commutantes, la relation entre leurs exponentielles, et l'inversibilité de l'exponentielle. Il inclut aussi le calcul explicite de l'exponentielle d'une matrice nilpotente particulière.",
   "concepts": [
     "matrice nilpotente",
-    "indice de nilpotence",
     "commutativité de matrices",
     "exponentielle de matrice",
+    "indice de nilpotence",
+    "formule du binôme de Newton",
     "inversibilité de matrice",
-    "formule du binôme de Newton"
+    "séries finies de matrices"
   ],
   "methods": [
     "développement en série entière",
-    "utilisation de la nilpotence",
-    "factorisation de l'exponentielle",
-    "calcul de puissances de matrices"
+    "utilisation de la commutativité",
+    "calcul de puissances de matrices",
+    "application de la formule du binôme",
+    "vérification de l'inversibilité"
   ],
   "objects": [
     "matrice nilpotente",
     "exponentielle de matrice",
-    "matrice triangulaire"
+    "somme de matrices",
+    "matrice triangulaire supérieure",
+    "matrice d'indice de nilpotence"
   ],
-  "content_hash": "8e9e2a8a65aae388e7dddc37415c1875da305de699ec202828d5e8c7f6e361a6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:48:14.982Z"
+  "content_hash": "a51141e34b1ddaa10e7e3b094d9b8f4e167c7c317a53dac9827280e96c113193",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:03.918Z"
 }

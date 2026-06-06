@@ -1,29 +1,29 @@
 {
   "uuid": "3WGA",
   "source_path": "amscc/3WGA.tex",
-  "summary": "Un joueur tire 5 boules avec remise dans une urne contenant 2 boules noires et 8 boules blanches. On définit une variable aléatoire X représentant le nombre de points obtenus selon le nombre de boules blanches tirées. L'exercice demande de déterminer la loi de probabilité de X, puis son espérance et sa variance.",
+  "summary": "Un joueur tire 5 boules avec remise dans une urne contenant 2 boules noires et 8 boules blanches. On définit une variable aléatoire X représentant le gain total en fonction du nombre de boules blanches tirées. On demande de déterminer la loi de X, son espérance et sa variance. Une seconde partie étudie la variable Y, le plus grand numéro parmi 5 boules tirées simultanément dans une urne de 10 boules numérotées.",
   "concepts": [
+    "loi binomiale",
     "variable aléatoire discrète",
-    "loi de probabilité",
     "espérance",
     "variance",
-    "tirage avec remise",
-    "combinaisons",
-    "probabilité conditionnelle"
+    "fonction de répartition",
+    "probabilité conditionnelle",
+    "combinaisons"
   ],
   "methods": [
     "calcul de probabilités par dénombrement",
-    "calcul de l'espérance",
-    "calcul de la variance",
-    "utilisation des coefficients binomiaux"
+    "utilisation des coefficients binomiaux",
+    "calcul de l'espérance et de la variance",
+    "détermination de la loi d'une variable maximale"
   ],
   "objects": [
-    "variable aléatoire X",
-    "urne avec boules noires et blanches",
-    "tirage de 5 boules",
-    "tableau de loi de probabilité"
+    "variable aléatoire binomiale",
+    "variable aléatoire discrète",
+    "urne de boules",
+    "numéros de boules"
   ],
-  "content_hash": "b1de66854397025f074822bdeb6f8bdbcbe327b9f21b509728d4dcefab5cb128",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:15:18.535Z"
+  "content_hash": "63e6eb5b78627691941999b3e40f43d6138e7a364a9f251abee2ef99f5aa672e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:58.760Z"
 }

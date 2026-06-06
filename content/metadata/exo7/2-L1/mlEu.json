@@ -1,25 +1,25 @@
 {
   "uuid": "mlEu",
   "source_path": "exo7/2-L1/mlEu.tex",
-  "summary": "L'exercice demande de prouver une égalité impliquant la somme de termes de la forme 1/(u_k * u_{k+1}) pour une suite arithmétique non nulle. Le contexte est la manipulation de suites arithmétiques et de sommes finies.",
+  "summary": "L'exercice demande de prouver une égalité entre une somme de fractions de termes consécutifs d'une suite arithmétique non nulle et une expression simplifiée. La suite est arithmétique et ne s'annule pas.",
   "concepts": [
     "suite arithmétique",
     "somme télescopique",
     "propriété des suites arithmétiques",
-    "somme finie",
-    "relation de récurrence"
+    "raison d'une suite",
+    "terminaison de série"
   ],
   "methods": [
     "téléscopage",
     "manipulation algébrique",
-    "utilisation de la raison d'une suite arithmétique"
+    "sommation de termes consécutifs"
   ],
   "objects": [
     "suite arithmétique",
-    "somme de termes rationnels",
-    "termes de suite"
+    "somme de fractions",
+    "termes consécutifs"
   ],
-  "content_hash": "a73fb93df85f648a72476f27839c8cc58ef3d38c2260a29525bcd69d9359826c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:32:38.794Z"
+  "content_hash": "325ade1a513279fb6b719ef09d11080fee14a2c72ac9d126ddd3720b08188c89",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:27.963Z"
 }

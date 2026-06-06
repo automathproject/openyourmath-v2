@@ -1,30 +1,30 @@
 {
   "uuid": "acya",
   "source_path": "amscc/acya.tex",
-  "summary": "L'exercice demande d'analyser un système linéaire dépendant d'un paramètre réel m. Il faut écrire le système sous forme matricielle, calculer le déterminant de la matrice des coefficients, identifier les valeurs de m pour lesquelles le système n'a pas de solution unique, et résoudre le système pour les autres valeurs de m.",
+  "summary": "L'exercice demande d'analyser un système linéaire paramétré par un réel m. Il s'agit d'écrire le système sous forme matricielle, de calculer le déterminant de la matrice associée, d'étudier l'existence et l'unicité des solutions selon les valeurs de m, et de résoudre le système dans les cas particuliers.",
   "concepts": [
     "système linéaire",
-    "matrice des coefficients",
+    "matrice carrée",
     "déterminant",
     "rang d'une matrice",
-    "inversibilité d'une matrice",
+    "inversibilité",
     "solution unique",
     "solution infinie",
     "solution sans solution"
   ],
   "methods": [
-    "écriture sous forme matricielle",
     "calcul de déterminant",
-    "analyse de cas selon la valeur du paramètre",
-    "résolution de système linéaire"
+    "réduction de matrice",
+    "résolution de système linéaire",
+    "analyse de cas selon paramètres"
   ],
   "objects": [
-    "système linéaire à 3 inconnues",
-    "matrice carrée 3x3",
-    "vecteur colonne des inconnues",
-    "vecteur colonne des constantes"
+    "matrice 3x3",
+    "vecteur colonne",
+    "système d'équations linéaires",
+    "paramètre réel"
   ],
-  "content_hash": "16c94b531266c91f9fdc34e1c72110a5662b7cfd02ded010ddb6e3238dacf78d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:57:09.482Z"
+  "content_hash": "a961678ef3175c0ac2b92fd652eb39218ae35cfaeaa831c2de5133038275e9f0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:09.711Z"
 }

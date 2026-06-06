@@ -1,32 +1,32 @@
 {
   "uuid": "j7Wm",
   "source_path": "exo7/11-L3/j7Wm.tex",
-  "summary": "L'exercice demande de représenter l'image d'une application paramétrée et de montrer que cette image forme une surface régulière dans ℝ³. Il nécessite ensuite de calculer la courbure de Gauss de cette surface et d'évaluer une intégrale de cette courbure sur la surface.",
+  "summary": "L'exercice demande de représenter l'image d'une application paramétrique dans ℝ³, de prouver que cette image est une surface régulière, de calculer sa courbure de Gauss à l'aide de la première forme fondamentale, puis d'intégrer cette courbure sur la surface.",
   "concepts": [
     "surface régulière",
     "paramétrage",
     "courbure de Gauss",
     "première forme fondamentale",
     "endomorphisme de Weingarten",
-    "intégration sur une variété",
-    "champ de vecteurs normaux"
+    "intégration sur une surface",
+    "valeurs propres d'un endomorphisme"
   ],
   "methods": [
-    "calcul du rang de l'application différentielle",
-    "détermination de la matrice de la première forme fondamentale",
-    "calcul du champ de vecteurs normaux",
-    "détermination des valeurs propres de l'endomorphisme de Weingarten",
-    "intégration sur un domaine paramétré"
+    "calcul du rang d'une application",
+    "détermination d'un champ de vecteurs normaux",
+    "calcul de la première forme fondamentale",
+    "détermination des valeurs propres d'un endomorphisme",
+    "intégration par changement de variable"
   ],
   "objects": [
-    "application paramétrée",
-    "surface régulière",
-    "courbure de Gauss",
+    "application paramétrique",
+    "surface dans ℝ³",
     "champ de vecteurs normaux",
-    "endomorphisme de Weingarten",
-    "intégrale sur une variété"
+    "matrice de la première forme fondamentale",
+    "courbure de Gauss",
+    "intégrale sur une surface"
   ],
-  "content_hash": "d83a64b8980f39ab6cd246aebd1040b9c4f0ea29b6f6786003c5a9b888c941b1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:24:47.841Z"
+  "content_hash": "574d535bb9f3914e652ea85fe07f875081f0450aab211452a61ab5fffd8973a0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:32.635Z"
 }

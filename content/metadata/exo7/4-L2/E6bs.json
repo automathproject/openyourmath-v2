@@ -1,7 +1,7 @@
 {
   "uuid": "E6bs",
   "source_path": "exo7/4-L2/E6bs.tex",
-  "summary": "Calculer le polynôme caractéristique et les valeurs propres d'une matrice 2x2. Déterminer une base de vecteurs propres avec des coordonnées spécifiques. Étudier la convergence d'une suite de vecteurs sous itération de la matrice.",
+  "summary": "L'exercice demande de calculer le polynôme caractéristique d'une matrice 2x2, d'en déduire ses valeurs propres, puis de déterminer une base de vecteurs propres avec des coordonnées spécifiques. Il s'ensuit une étude de la puissance n-ième de la matrice appliquée à un vecteur, aboutissant à une approximation rationnelle de √2.",
   "concepts": [
     "polynôme caractéristique",
     "valeur propre",
@@ -9,23 +9,23 @@
     "sous-espace propre",
     "diagonalisation",
     "convergence de suite",
-    "matrice"
+    "approximation rationnelle"
   ],
   "methods": [
     "calcul de déterminant",
     "résolution d'équation du second degré",
-    "détermination de base de sous-espace propre",
-    "itération de matrice",
-    "analyse de convergence"
+    "recherche de vecteurs propres",
+    "récurrence",
+    "décomposition en base propre"
   ],
   "objects": [
     "matrice 2x2",
     "polynôme du second degré",
-    "vecteurs propres",
-    "suite de vecteurs",
-    "coordonnées dans une base"
+    "suite numérique",
+    "vecteur propre",
+    "base de vecteurs propres"
   ],
-  "content_hash": "dc84ed92f0149b139d4ee6f8ce7bc183e5f587a7d85491451878af1c7f2ad4a2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:25:47.074Z"
+  "content_hash": "e04e0b61a70fd7122e80f50f25bc4ee52f6810c25afae63aaf41b57b39d92fd3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:00.932Z"
 }

@@ -1,28 +1,27 @@
 {
   "uuid": "dCHn",
   "source_path": "amscc/dCHn.tex",
-  "summary": "L'exercice demande de calculer diverses probabilités conditionnelles et marginales concernant le fonctionnement de deux machines en panne. Il s'agit d'appliquer la formule des probabilités conditionnelles et des probabilités composées.",
+  "summary": "L'exercice étudie les probabilités conditionnelles et conjointes de pannes de deux machines. Il demande de calculer la probabilité que les deux machines tombent en panne simultanément, puis d'en déduire d'autres probabilités comme celle qu'au moins une machine fonctionne ou qu'une seule machine soit en panne.",
   "concepts": [
     "probabilité conditionnelle",
-    "probabilité composée",
-    "événements indépendants",
-    "système complet d'événements",
-    "lois de probabilité discrètes",
-    "formule de Bayes"
-  ],
-  "methods": [
-    "formule des probabilités conditionnelles",
+    "probabilité conjointe",
+    "probabilité d'événements complémentaires",
     "formule des probabilités totales",
-    "calcul de probabilités marginales",
-    "utilisation de systèmes complets d'événements"
-  ],
-  "objects": [
-    "événements de panne de machines",
-    "probabilités conditionnelles",
-    "probabilités marginales",
     "système complet d'événements"
   ],
-  "content_hash": "3812c87bd7b55c9751f96802a16ce0d03c2da4d56474020c7b0a601e362c706b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:33:35.605Z"
+  "methods": [
+    "formule de la probabilité conditionnelle",
+    "calcul de probabilité conjointe",
+    "utilisation de la formule de l'inclusion-exclusion",
+    "décomposition d'événements"
+  ],
+  "objects": [
+    "événements indépendants",
+    "probabilités marginales",
+    "probabilités conditionnelles",
+    "système complet d'événements"
+  ],
+  "content_hash": "968d644641cf47c922bad2ef15c33ba13167930996c02c8fcc66d6ee8a72f547",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:33.645Z"
 }

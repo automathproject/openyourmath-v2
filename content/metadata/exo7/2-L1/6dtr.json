@@ -1,33 +1,32 @@
 {
   "uuid": "6dtr",
   "source_path": "exo7/2-L1/6dtr.tex",
-  "summary": "L'exercice demande de montrer l'unicité de la solution de l'équation tan(x) = x dans l'intervalle [nπ, (n+1)π] pour un entier naturel n donné, puis de trouver un développement asymptotique de cette solution xn à la précision 1/n².",
+  "summary": "L'exercice demande de montrer l'unicité de la solution de l'équation $\\tan x = x$ dans chaque intervalle $[n\\pi, (n+1)\\pi]$ pour $n$ entier naturel, puis d'établir un développement asymptotique de cette solution $x_n$ à l'ordre $\\frac{1}{n^2}$.",
   "concepts": [
-    "équation différentielle",
     "fonction strictement croissante",
     "bijection",
     "développement asymptotique",
-    "approximation de fonctions trigonométriques",
-    "limite de suites",
-    "développement limité"
+    "équation différentielle",
+    "limite de suite",
+    "approximation de Taylor",
+    "fonction continue",
+    "théorème des valeurs intermédiaires"
   ],
   "methods": [
     "étude de la dérivée",
-    "analyse de la croissance",
     "changement de variable",
-    "approximation de Taylor",
-    "développement asymptotique"
+    "approximation de la fonction arctangente",
+    "développement limité",
+    "analyse asymptotique"
   ],
   "objects": [
-    "fonction tan(x) - x",
-    "solution xn",
-    "suite numérique",
-    "intervalle I_n",
-    "variable y_n",
-    "variable z_n",
-    "variable t_n"
+    "fonction $f(x) = \\tan x - x$",
+    "suite $(x_n)$",
+    "intervalle $I_n$",
+    "variable $y_n = x_n - n\\pi$",
+    "variable $z_n = y_n - \\frac{\\pi}{2}$"
   ],
-  "content_hash": "7881562b84582a11ab22ae27127af76da10e5a6cb8756c790cae32d2e43f5625",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:23:37.676Z"
+  "content_hash": "5fdf5c8631a3a51e0f10ad0b6bcda83e1fcb0506366a9319c5afae5358a019ad",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:41.054Z"
 }

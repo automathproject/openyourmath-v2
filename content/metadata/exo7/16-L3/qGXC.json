@@ -1,27 +1,30 @@
 {
   "uuid": "qGXC",
   "source_path": "exo7/16-L3/qGXC.tex",
-  "summary": "L'exercice demande de prouver qu'une fonction analytique dans un disque s'annule au moins une fois dans le disque ouvert sous certaines conditions, puis d'appliquer ce résultat au théorème de Hurwitz concernant la convergence uniforme de fonctions holomorphes.",
+  "summary": "L'exercice demande de démontrer l'existence d'au moins une racine d'une fonction analytique dans un disque ouvert, puis d'appliquer ce résultat au théorème de Hurwitz pour montrer qu'une suite de fonctions holomorphes convergeant uniformément vers une limite ayant une racine dans le disque doit elle-même avoir une racine pour un grand n.",
   "concepts": [
     "fonction analytique",
     "principe du maximum",
     "théorème de Hurwitz",
     "convergence uniforme",
-    "zéros de fonctions holomorphes",
-    "disque ouvert"
+    "zéro d'une fonction holomorphe",
+    "disque ouvert",
+    "fonction holomorphe"
   ],
   "methods": [
     "application du principe du maximum",
     "raisonnement par l'absurde",
-    "analyse des zéros de fonctions"
+    "utilisation de la fonction réciproque",
+    "analyse de la limite de suites de fonctions"
   ],
   "objects": [
-    "fonction analytique",
-    "fonctions holomorphes",
-    "disque ouvert",
-    "zéros de fonctions"
+    "fonction analytique f",
+    "suite de fonctions holomorphes f_n",
+    "fonction limite F",
+    "disque D(z_0, R)",
+    "cercle |z|=1"
   ],
-  "content_hash": "b0eb546abc23656768f05ffe1a0189f54d459dd6970c6823a5bad6464ccbfe2d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:23:12.019Z"
+  "content_hash": "e3297df7f5cfce83719ac6c836bc93e6ae239f8dbb4e7e754c39be7b4d6252e5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:42.975Z"
 }

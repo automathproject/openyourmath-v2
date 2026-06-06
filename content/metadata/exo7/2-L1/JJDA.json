@@ -1,28 +1,27 @@
 {
   "uuid": "JJDA",
   "source_path": "exo7/2-L1/JJDA.tex",
-  "summary": "Calculer des sommes de séries numériques finies impliquant des fractions rationnelles, des puissances entières et des fonctions trigonométriques inverses. Les questions portent sur des sommes spécifiques de termes algébriques et trigonométriques.",
+  "summary": "Calculer des sommes de termes rationnels ou impliquant des fonctions trigonométriques, en utilisant des techniques de décomposition et de télescopage. Les questions portent sur des sommes de fractions rationnelles, des puissances entières et des arctangentes.",
   "concepts": [
-    "somme de séries finies",
     "décomposition en éléments simples",
-    "polynôme de degré p+1",
-    "fonction Arctan",
-    "identités trigonométriques"
+    "somme télescopique",
+    "polynôme d'interpolation",
+    "fonction arctangente",
+    "somme de puissances entières"
   ],
   "methods": [
+    "décomposition partielle",
     "téléscopage",
-    "recherche de polynôme de récurrence",
-    "décomposition en différences finies",
-    "utilisation d'identités trigonométriques"
+    "recherche de polynôme par différences finies",
+    "identité trigonométrique"
   ],
   "objects": [
     "somme de fractions rationnelles",
     "polynôme de degré p+1",
-    "fonction Arctan",
     "somme de puissances entières",
-    "somme de termes trigonométriques"
+    "fonction arctangente"
   ],
-  "content_hash": "08d59ab6542078e861e9aeaa2f51d58dd506c68c6228250838893c7a52f38420",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:11:18.175Z"
+  "content_hash": "af288fd63f928bafeaff2a1aa77c24f1de9613ffb336d42e58c97d90b9b09e12",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:50.114Z"
 }

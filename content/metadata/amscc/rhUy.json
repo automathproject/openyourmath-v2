@@ -1,32 +1,34 @@
 {
   "uuid": "rhUy",
   "source_path": "amscc/rhUy.tex",
-  "summary": "Comparaison des consommations moyennes de chauffage entre deux régions A et B à l'aide d'un test de Welch pour moyennes indépendantes avec variances inégales. Analyse descriptive préalable incluant calculs de différences de moyennes et coefficients de variation.",
+  "summary": "L'exercice demande de comparer la consommation énergétique moyenne entre deux régions A et B en utilisant des tests statistiques. Il s'agit d'analyser des données descriptives, de tester l'égalité des variances avec un test de Fisher, puis de comparer les moyennes avec un test de Welch adapté aux variances inégales. L'objectif est de déterminer si l'écart observé est statistiquement significatif.",
   "concepts": [
+    "test d'hypothèses",
     "test de Student",
     "test de Welch",
     "test de Fisher",
+    "loi normale",
     "intervalle de confiance",
-    "hypothèse nulle",
-    "test bilatéral",
-    "loi de Student",
-    "loi de Fisher"
+    "coefficient de variation",
+    "hypothèse nulle"
   ],
   "methods": [
-    "test d'égalité des variances",
+    "test bilatéral",
     "calcul de la statistique de test",
-    "calcul des degrés de liberté de Welch-Satterthwaite",
-    "construction d'intervalle de confiance",
-    "analyse descriptive des données"
+    "calcul des degrés de liberté",
+    "comparaison de variances",
+    "interprétation de la p-valeur",
+    "construction d'intervalle de confiance"
   ],
   "objects": [
-    "moyennes échantillonnales",
-    "variances empiriques",
+    "moyenne échantillon",
+    "variance empirique",
+    "écart-type",
     "coefficient de variation",
-    "statistique t de Student",
-    "statistique F de Fisher"
+    "statistique de test",
+    "degrés de liberté"
   ],
-  "content_hash": "eb5cf539748dbe3936068259e5e73a318f7080158d361786bfe58fce90a003d9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:01:58.629Z"
+  "content_hash": "2b933503c03b5585bc13c071f914a6683e2161f15cde2f9908656a67a388ff10",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:57.606Z"
 }

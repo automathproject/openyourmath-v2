@@ -1,27 +1,26 @@
 {
   "uuid": "VRzm",
   "source_path": "exo7/4-L2/VRzm.tex",
-  "summary": "L'exercice demande d'étudier les propriétés géométriques de l'ensemble des matrices orthogonales réelles de taille n. Il pose deux questions : la convexité de cet ensemble et l'existence de trois points alignés dans cet ensemble.",
+  "summary": "L'exercice demande d'étudier les propriétés géométriques de l'ensemble des matrices orthogonales réelles de taille n×n : d'une part sa convexité, d'autre part l'existence de trois points alignés dans cet ensemble.",
   "concepts": [
-    "matrice orthogonale",
     "convexité",
+    "matrice orthogonale",
+    "norme euclidienne",
     "inégalité de Minkowski",
-    "colinéarité",
-    "vecteur unitaire",
-    "norme euclidienne"
+    "colinéarité vectorielle",
+    "vecteur unitaire"
   ],
   "methods": [
     "raisonnement par l'absurde",
     "utilisation de l'inégalité de Minkowski",
-    "analyse de colinéarité"
+    "analyse de la norme des colonnes"
   ],
   "objects": [
     "matrice orthogonale",
-    "vecteur unitaire",
-    "colonne de matrice",
-    "norme euclidienne"
+    "combinaison convexe de matrices",
+    "vecteurs unitaires"
   ],
-  "content_hash": "71dce7ea6f32c2e7561d0d13b021f6a18ee9f09c0fd7cd93b044e8cee8ec363e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:30:21.527Z"
+  "content_hash": "c6fad4585d3c7780b672440ebc91aee7dfcd1d70c2a993278982b70a67f7a4c7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:37.144Z"
 }

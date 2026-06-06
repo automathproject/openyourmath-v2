@@ -1,30 +1,32 @@
 {
   "uuid": "DkOf",
   "source_path": "amscc/DkOf.tex",
-  "summary": "L'exercice demande de tester si le nombre d'entretiens d'embauche obtenus par des demandeurs d'emploi suit une loi de Poisson, en utilisant un test du chi-deux avec un seuil de significativité de 5%. Les données observées sont fournies sous forme de tableau d'effectifs.",
+  "summary": "L'exercice demande de tester l'adéquation d'une distribution empirique de nombres d'entretiens d'embauche à une loi de Poisson, en utilisant un test du chi-deux avec un seuil de significativité de 5%. Les données fournies sont les effectifs observés pour différentes classes de nombres d'entretiens.",
   "concepts": [
     "test d'adéquation du chi-deux",
     "loi de Poisson",
     "hypothèse nulle",
     "hypothèse alternative",
-    "test bilatéral",
-    "effectifs observés",
+    "paramètre lambda",
     "effectifs théoriques",
+    "probabilité conditionnelle",
     "seuil de significativité"
   ],
   "methods": [
-    "estimation du paramètre lambda",
+    "estimation du paramètre par la moyenne empirique",
     "calcul des probabilités de Poisson",
+    "calcul des effectifs théoriques",
     "calcul de la statistique du chi-deux",
     "comparaison avec la valeur critique"
   ],
   "objects": [
     "variable aléatoire discrète",
-    "tableau de fréquences",
+    "effectifs observés",
+    "effectifs théoriques",
     "statistique de test",
     "valeur critique"
   ],
-  "content_hash": "a05943245c40ca58c1b89348787aaf57939c31c26311ce19203e6f21842e60d2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:00:36.113Z"
+  "content_hash": "fc8f79c1e20302ffb33c6c03c52739b64b1399cb9b7e9d22c1baeb43077f9429",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:58.653Z"
 }

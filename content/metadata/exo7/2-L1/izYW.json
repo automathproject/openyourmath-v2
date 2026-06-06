@@ -1,31 +1,31 @@
 {
   "uuid": "izYW",
   "source_path": "exo7/2-L1/izYW.tex",
-  "summary": "Étude complète de la fonction f(x) = ((a^x + b^x)/2)^(1/x) pour 0 < a < b, incluant son prolongement par continuité en 0, ses limites aux infinis, sa dérivabilité et ses variations.",
+  "summary": "Étude complète d'une fonction définie par une moyenne géométrique pondérée par une puissance variable, avec analyse des limites en 0, +∞ et -∞, ainsi que des variations via la dérivée.",
   "concepts": [
     "développement limité",
+    "limite de fonction",
     "continuité",
     "dérivabilité",
-    "limites de fonctions",
-    "fonctions exponentielles",
-    "fonctions logarithmes",
-    "inégalités classiques"
+    "fonction exponentielle",
+    "fonction logarithme",
+    "équation différentielle"
   ],
   "methods": [
-    "développement limité d'ordre 2",
+    "développement en série de Taylor",
+    "standardisation",
     "étude de limites",
-    "analyse de dérivées",
-    "prolongement par continuité",
-    "étude de variations"
+    "calcul de dérivée",
+    "analyse de variations"
   ],
   "objects": [
-    "fonction exponentielle de fonction",
-    "fonction composée",
-    "fonction dérivée",
-    "limites aux infinis",
-    "fonction strictement croissante"
+    "fonction réelle",
+    "limite en 0",
+    "limite en l'infini",
+    "dérivée première",
+    "fonction composée"
   ],
-  "content_hash": "c7c86ebbbf6aa93ac407a4b2e2283042e5a193d36c957be1038705622d8dba3a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:38:21.517Z"
+  "content_hash": "9b3f726b76fd94645bf524a63eb59ca0ae15f0afbe87e6f8145e8a0abe22978d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:02.517Z"
 }

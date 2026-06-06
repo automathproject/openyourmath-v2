@@ -1,30 +1,31 @@
 {
   "uuid": "A4g6",
   "source_path": "exo7/6-L2/A4g6.tex",
-  "summary": "Trouver l'équation d'un cône de sommet S circonscrit à une surface (S). Deux cas sont étudiés : une sphère et une quadrique générale.",
+  "summary": "Trouver l'équation d'un cône de sommet S circonscrit à une surface (S) donnée, dans deux cas : une sphère et une quadrique. Pour le second cas, préciser la courbe de contact entre le cône et la surface.",
   "concepts": [
-    "géométrie analytique",
-    "cône de sommet",
-    "surface de second degré",
+    "équation d'un cône",
+    "surface du second degré",
     "plan tangent",
     "courbe de contact",
     "quadrique",
-    "équation cartésienne"
+    "géométrie affine",
+    "produit vectoriel",
+    "distance"
   ],
   "methods": [
-    "calcul de distance",
-    "produit vectoriel",
+    "calcul de produit vectoriel",
     "équation du plan tangent",
-    "détermination de la directrice"
+    "résolution d'équations cartésiennes",
+    "dédoublement des termes"
   ],
   "objects": [
-    "cône",
+    "cône de sommet S",
     "sphère",
     "quadrique",
     "plan tangent",
     "courbe de contact"
   ],
-  "content_hash": "806ca5cdb05225d3b54560cceec6a5451cde8dda4b5aa8928407dd6e44620904",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:01:43.415Z"
+  "content_hash": "f7c1a4897cb57dae651cbe24976401f8ea947c5c9c576218221afb8ba683ad41",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:58.052Z"
 }

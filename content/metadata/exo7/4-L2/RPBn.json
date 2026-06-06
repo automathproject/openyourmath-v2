@@ -1,33 +1,31 @@
 {
   "uuid": "RPBn",
   "source_path": "exo7/4-L2/RPBn.tex",
-  "summary": "L'exercice demande de déterminer les valeurs propres et les sous-espaces propres d'une matrice 4x4 donnée, puis de montrer que cette matrice est diagonalisable. Ensuite, il s'agit de trouver une base de vecteurs propres et la matrice de passage associée, et enfin d'exprimer une puissance de la matrice en fonction de la matrice diagonale correspondante.",
+  "summary": "L'exercice demande de déterminer les valeurs propres et les sous-espaces propres d'une matrice 4x4 donnée, de prouver sa diagonalisabilité, de trouver une base de vecteurs propres et la matrice de passage associée, puis d'exprimer une puissance de la matrice en fonction de sa forme diagonale.",
   "concepts": [
     "valeur propre",
     "vecteur propre",
     "sous-espace propre",
     "diagonalisation",
     "matrice de passage",
-    "puissance de matrice",
-    "base de vecteurs propres",
-    "endomorphisme"
+    "polynôme caractéristique",
+    "endomorphisme diagonalisable",
+    "base de vecteurs propres"
   ],
   "methods": [
     "calcul du polynôme caractéristique",
     "résolution de systèmes linéaires",
-    "vérification de l'indépendance linéaire",
-    "construction de la matrice diagonale",
-    "calcul de l'inverse d'une matrice"
+    "construction de la matrice de passage",
+    "calcul de puissances de matrices via diagonalisation"
   ],
   "objects": [
     "matrice 4x4",
-    "valeurs propres",
+    "valeurs propres réelles",
     "sous-espaces propres",
-    "vecteurs propres",
-    "matrice diagonale",
-    "matrice de passage"
+    "base de vecteurs propres",
+    "matrice diagonale"
   ],
-  "content_hash": "4e0671d6f6b6ff5b2dfaca2c8bd21637d491d4cde51aef4c0db0d306ee3684de",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:44:37.721Z"
+  "content_hash": "efa5c454587c857c0fc550cca7cca0380c2c18a8864bd871fce8fa77009b4cf9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:58.159Z"
 }

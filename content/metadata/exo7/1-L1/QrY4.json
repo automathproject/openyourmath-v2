@@ -1,25 +1,29 @@
 {
   "uuid": "QrY4",
   "source_path": "exo7/1-L1/QrY4.tex",
-  "summary": "Montrer qu'une famille de trois vecteurs est libre dans un espace vectoriel réel de dimension infinie sur les rationnels.",
+  "summary": "Montrer qu'une famille de trois vecteurs (1, √2, √3) est libre dans l'espace vectoriel ℝ considéré comme un ℚ-espace vectoriel.",
   "concepts": [
     "famille libre",
-    "espace vectoriel sur un corps",
+    "espace vectoriel",
     "irrationnalité",
-    "indépendance linéaire",
-    "corps des rationnels"
+    "algèbre sur un corps",
+    "combinaison linéaire",
+    "corps de nombres",
+    "racines carrées"
   ],
   "methods": [
-    "raisonnement par l'absurde",
+    "réduction à l'absurde",
+    "manipulation d'équations algébriques",
     "utilisation de l'irrationnalité de √2 et √3",
-    "développement algébrique"
+    "analyse des exposants dans les factorisations"
   ],
   "objects": [
     "famille de vecteurs",
-    "espace vectoriel ℝ sur ℚ",
-    "combinaison linéaire"
+    "ℚ-espace vectoriel",
+    "combinaison linéaire nulle",
+    "nombres irrationnels"
   ],
-  "content_hash": "1a5bab8ecea9714e7229889f87893d9832dcd18eb8ade868c482241b5d20be34",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:51:16.974Z"
+  "content_hash": "689b9977ce0fbf3a7adc2d6792a6234172126f92d2d5598bd552bff3a2f0fa09",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:37.931Z"
 }

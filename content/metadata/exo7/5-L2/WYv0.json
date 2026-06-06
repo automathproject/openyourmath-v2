@@ -1,26 +1,40 @@
 {
   "uuid": "WYv0",
   "source_path": "exo7/5-L2/WYv0.tex",
-  "summary": "L'exercice demande de démontrer diverses propriétés topologiques des ensembles de matrices, notamment l'ouverture, la densité, la fermeture, la compacité, la convexité et la connexité par arcs de sous-ensembles spécifiques de l'espace des matrices carrées.",
+  "summary": "L'exercice demande de démontrer diverses propriétés topologiques des ensembles de matrices, notamment l'ouverture, la densité, la fermeture, la compacité, la convexité et la connexité par arcs de sous-ensembles de l'espace des matrices réelles ou complexes.",
   "concepts": [
-    "continuité des applications linéaires et bilinéaires",
-    "image réciproque d'un ouvert ou d'un fermé par une application continue",
-    "théorème de Borel-Lebesgue",
-    "normes sur les espaces de matrices",
-    "triangulation des matrices",
-    "valeurs propres distinctes",
-    "densité d'un ensemble",
-    "sous-espaces vectoriels fermés"
+    "espace vectoriel normé",
+    "application continue",
+    "image réciproque",
+    "fermeté",
+    "compacité",
+    "convexité",
+    "connexité par arcs",
+    "densité",
+    "déterminant",
+    "matrice orthogonale",
+    "matrice stochastique"
   ],
-  "methods": [],
+  "methods": [
+    "utilisation de la continuité du déterminant",
+    "application du théorème de Borel-Lebesgue",
+    "construction de suites convergentes",
+    "analyse des mineurs",
+    "triangulation de matrices",
+    "perturbation des valeurs propres",
+    "utilisation de normes matricielles"
+  ],
   "objects": [
-    "espace des matrices carrées",
-    "groupe orthogonal",
+    "espace des matrices réelles",
+    "espace des matrices complexes",
+    "groupe linéaire",
+    "matrices orthogonales",
     "matrices symétriques",
     "matrices diagonalisables",
-    "mineurs d'une matrice"
+    "matrices stochastiques",
+    "formes quadratiques"
   ],
-  "content_hash": "c27d90438e6d6a0cf3bacc418d0c835ba275d3d7973cd6aa1990e0ae1be210ad",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:07:30.976Z"
+  "content_hash": "20b8eb83bbcd04b4b6ce97e65a8c1e187331c98c514dbca3046e997a7a1f26be",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:18.723Z"
 }

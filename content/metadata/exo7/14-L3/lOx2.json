@@ -1,27 +1,28 @@
 {
   "uuid": "lOx2",
   "source_path": "exo7/14-L3/lOx2.tex",
-  "summary": "Calculer la transformée de Fourier de la fonction gaussienne définie par f(x) = e^{-a|x|²/2} pour x ∈ ℝⁿ, où a > 0.",
+  "summary": "Calculer la transformée de Fourier d'une fonction gaussienne définie sur ℝⁿ, en utilisant le théorème de convergence dominée et en résolvant une équation différentielle.",
   "concepts": [
     "transformée de Fourier",
     "théorème de convergence dominée",
     "équation différentielle",
-    "intégrale de fonction exponentielle",
-    "produit de fonctions intégrables"
+    "intégrale de Lebesgue",
+    "fonction gaussienne",
+    "produit de convolution"
   ],
   "methods": [
     "intégration par parties",
-    "résolution d'équation différentielle",
     "changement de variable",
+    "résolution d'équation différentielle",
     "séparation des variables"
   ],
   "objects": [
-    "fonction gaussienne",
-    "transformée de Fourier",
+    "fonction exponentielle",
     "intégrale multiple",
-    "équation différentielle linéaire"
+    "variable complexe",
+    "solution d'équation différentielle"
   ],
-  "content_hash": "5a44ba0bc19343425881fdb2c426c88fc92c2ee7e7e822f2e57fb30cf0ff3f11",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:25:03.675Z"
+  "content_hash": "3f26c362255da5606dbd2b4da8c6b63bcb17a5864c3d01215faad9dc76676fc6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:20.926Z"
 }

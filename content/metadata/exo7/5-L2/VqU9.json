@@ -1,29 +1,31 @@
 {
   "uuid": "VqU9",
   "source_path": "exo7/5-L2/VqU9.tex",
-  "summary": "L'exercice demande de déterminer le développement limité d'ordre 3 en 0 d'une fonction définie implicitement par l'équation e^{x+y} + y - 1 = 0.",
+  "summary": "L'exercice demande de déterminer le développement limité d'ordre 3 en 0 d'une fonction définie implicitement par l'équation e^{x+y} + y - 1 = 0. Il s'agit d'appliquer le théorème des fonctions implicites pour étudier la régularité et les dérivées de la fonction solution.",
   "concepts": [
     "fonction implicite",
-    "développement limité",
     "théorème des fonctions implicites",
+    "développement limité",
     "classe C^∞",
-    "dérivabilité",
+    "dérivées successives",
     "bijection",
-    "fonction continue",
-    "fonction strictement croissante"
+    "fonction continue et strictement croissante"
   ],
   "methods": [
-    "développement limité de Taylor-Young",
+    "développement limité",
     "dérivation implicite",
-    "récurrence",
-    "approximation des fonctions exponentielles"
+    "récurrence sur la régularité",
+    "calcul des dérivées successives",
+    "approximation polynomiale"
   ],
   "objects": [
     "fonction de deux variables",
     "fonction dérivable",
-    "développement limité d'ordre 3"
+    "développement limité d'ordre 3",
+    "équation implicite",
+    "dérivées partielles"
   ],
-  "content_hash": "0200119ec43531505ac31a2332cab0a99ab7ea70eb3f3c96968593aa34e24f5c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:04:13.966Z"
+  "content_hash": "1d9a1aba93010831359d7edac840e12ac8fe3795d727338e0b00d4d9ab118477",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:12.943Z"
 }

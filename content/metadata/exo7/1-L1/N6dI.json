@@ -1,28 +1,29 @@
 {
   "uuid": "N6dI",
   "source_path": "exo7/1-L1/N6dI.tex",
-  "summary": "L'exercice demande de prouver deux propriétés sur les sous-espaces vectoriels. La première établit une équivalence entre l'union de deux sous-espaces étant un sous-espace et l'inclusion de l'un dans l'autre. La seconde prouve une égalité d'intersection de sous-espaces sous une condition d'inclusion.",
+  "summary": "L'exercice demande de prouver deux propriétés sur les sous-espaces vectoriels : d'abord que l'union de deux sous-espaces est un sous-espace si et seulement si l'un est inclus dans l'autre, puis que l'intersection d'un sous-espace avec la somme de deux autres vérifie une relation d'inclusion lorsque l'un est inclus dans l'autre.",
   "concepts": [
     "sous-espace vectoriel",
     "inclusion d'espaces vectoriels",
     "union d'ensembles",
     "intersection d'ensembles",
+    "somme d'espaces vectoriels",
     "raisonnement par l'absurde",
-    "double inclusion",
-    "somme de sous-espaces"
+    "double inclusion"
   ],
   "methods": [
     "raisonnement par l'absurde",
     "double inclusion",
-    "manipulation de vecteurs",
-    "utilisation des propriétés de sous-espaces"
+    "manipulation d'éléments",
+    "utilisation des propriétés des sous-espaces"
   ],
   "objects": [
     "sous-espaces vectoriels",
-    "espace vectoriel",
-    "vecteurs"
+    "union de sous-espaces",
+    "intersection de sous-espaces",
+    "somme de sous-espaces"
   ],
-  "content_hash": "9247d0669fe15ef8ed9f9f67c70cd3eb92a7c5327ca6a30d40cb9d81899b4ec7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:48:39.971Z"
+  "content_hash": "f239d593bc38c5f35dfbc04c1e7b806d247f51d6f5efc3c6b387959a878397ca",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:35.379Z"
 }

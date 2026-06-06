@@ -1,28 +1,31 @@
 {
   "uuid": "6Um5",
   "source_path": "exo7/2-L1/6Um5.tex",
-  "summary": "Résoudre dans ℝ trois équations impliquant des fonctions circulaires inverses (Arcsin) et la fonction cosinus hyperbolique inverse (Argch).",
+  "summary": "Résoudre trois équations impliquant des fonctions circulaires et hyperboliques inverses : une équation avec la fonction cosinus hyperbolique, une équation avec la fonction arcsinus, et une équation avec une relation entre arcsinus.",
   "concepts": [
-    "fonction cosinus hyperbolique inverse",
-    "fonction sinus inverse",
+    "fonction cosinus hyperbolique",
+    "fonction arcsinus",
+    "fonction arcsinus hyperbolique",
     "équation trigonométrique",
     "domaine de définition",
     "identités trigonométriques",
-    "résolution d'équation"
+    "inégalités trigonométriques"
   ],
   "methods": [
-    "utilisation des propriétés des fonctions circulaires inverses",
-    "simplification d'équations trigonométriques",
-    "résolution d'équations polynomiales",
-    "vérification des solutions"
+    "résolution d'équation trigonométrique",
+    "utilisation d'identités trigonométriques",
+    "analyse de domaine de définition",
+    "simplification algébrique",
+    "résolution d'équation polynomiale"
   ],
   "objects": [
-    "équation impliquant Arcsin",
-    "équation impliquant Argch",
+    "fonction circulaire inverse",
+    "fonction hyperbolique inverse",
+    "équation trigonométrique",
     "intervalle de définition",
-    "solutions réelles"
+    "solution réelle"
   ],
-  "content_hash": "60a9c7c9b5fe94030eb6eed7d125d783abbbc1610f5f45e4288a0920c4302f03",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:55:43.968Z"
+  "content_hash": "7228a050a92100f7c01b714858ac07af65215fb3ec32b20956e5bf1e045e79df",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:36.937Z"
 }

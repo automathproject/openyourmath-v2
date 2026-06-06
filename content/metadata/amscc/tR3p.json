@@ -1,0 +1,29 @@
+{
+  "uuid": "tR3p",
+  "source_path": "amscc/tR3p.tex",
+  "summary": "Calculer deux intégrales définies : l'une d'une expression polynomiale multipliée par une racine carrée, l'autre d'une fraction rationnelle nécessitant une décomposition en éléments simples.",
+  "concepts": [
+    "intégrale définie",
+    "décomposition en éléments simples",
+    "division euclidienne",
+    "primitive de fonction rationnelle",
+    "intégration terme à terme",
+    "logarithme naturel"
+  ],
+  "methods": [
+    "décomposition en éléments simples",
+    "division euclidienne",
+    "identification des coefficients",
+    "intégration directe",
+    "linéarisation"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "fonction rationnelle",
+    "racine carrée",
+    "logarithme"
+  ],
+  "content_hash": "4b957734c94bec5d5329416a5be867f300c933070d3179707d85009040e46bdb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:31.456Z"
+}

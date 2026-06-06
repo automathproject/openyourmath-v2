@@ -1,23 +1,27 @@
 {
   "uuid": "ohGc",
   "source_path": "exo7/2-L1/ohGc.tex",
-  "summary": "L'exercice demande de démontrer une égalité trigonométrique pour le cosinus et le sinus d'un angle de la forme π/2^n, puis d'en déduire la limite d'une expression impliquant des radicaux imbriqués.",
+  "summary": "L'exercice demande de démontrer par récurrence une égalité trigonométrique impliquant des cosinus et sinus de $\\frac{\\pi}{2^n}$ avec des expressions à radicaux imbriqués, puis d'en déduire la limite d'une expression similaire lorsque $n$ tend vers l'infini.",
   "concepts": [
-    "formules de demi-angle",
     "récurrence",
+    "formules trigonométriques",
     "limite de suite",
-    "fonctions trigonométriques"
+    "identités trigonométriques",
+    "développement en série"
   ],
   "methods": [
     "récurrence",
-    "formules de demi-angle",
-    "approximation linéaire"
+    "identités trigonométriques",
+    "approximation linéaire",
+    "simplification d'expression"
   ],
   "objects": [
-    "suite de fonctions trigonométriques",
-    "expression à radicaux imbriqués"
+    "suite trigonométrique",
+    "expression à radicaux imbriqués",
+    "limite de suite",
+    "fonctions cosinus et sinus"
   ],
-  "content_hash": "e1dff8deff14267eb0c3083c26aa6ba4d2caf8bd8851dc361a52f3ae296a5ddd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:35:03.981Z"
+  "content_hash": "6e811c331ea8e3d25e450412304b2c2282b3c6ca42c402429d4d1f35f1356297",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:36.192Z"
 }

@@ -1,20 +1,20 @@
 {
   "uuid": "zmRX",
   "source_path": "exo7/6-L2/zmRX.tex",
-  "summary": "Calcul de l'intégrale d'une forme différentielle le long d'un chemin donné dans le plan ou l'espace, avec trois exemples distincts : une parabole, un cercle et une courbe paramétrée.",
+  "summary": "Calculer l'intégrale d'une forme différentielle le long d'un contour orienté dans trois cas distincts : une parabole, un cercle et une courbe paramétrée en 3D.",
   "concepts": [
     "forme différentielle",
     "intégrale curviligne",
     "paramétrisation de courbe",
     "fonction impaire",
-    "changement de variable",
-    "identités trigonométriques"
+    "identités trigonométriques",
+    "intégration par parties"
   ],
   "methods": [
-    "paramétrisation",
-    "intégration par parties",
+    "paramétrisation de contour",
+    "intégration directe",
     "simplification trigonométrique",
-    "évaluation d'intégrale"
+    "intégration par substitution"
   ],
   "objects": [
     "forme différentielle",
@@ -23,7 +23,7 @@
     "parabole",
     "intégrale curviligne"
   ],
-  "content_hash": "e26b031a0616b85cbf09cbd8cda2197198342dd56abddd2e3abe159ce613720e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:31:13.008Z"
+  "content_hash": "ed2287cd6f454cffb72eefd34369ad1c2496e92d2c74beb80c22a97bbf42242e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:32:41.048Z"
 }

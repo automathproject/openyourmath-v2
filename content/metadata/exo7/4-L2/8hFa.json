@@ -1,28 +1,32 @@
 {
   "uuid": "8hFa",
   "source_path": "exo7/4-L2/8hFa.tex",
-  "summary": "L'exercice demande de montrer une propriété linéaire sur les vecteurs transformés par une matrice 2x2 spécifique, puis d'identifier un vecteur propre et sa valeur propre, de déterminer le polynôme caractéristique et ses racines, et enfin de diagonaliser la matrice dans une base adaptée.",
+  "summary": "L'exercice porte sur une matrice 2x2 réelle A avec des conditions spécifiques sur ses coefficients. Il demande de montrer une relation linéaire entre les composantes des vecteurs transformés, de vérifier qu'un vecteur donné est propre, de déterminer le polynôme caractéristique et ses racines, puis de diagonaliser l'endomorphisme associé dans une base adaptée.",
   "concepts": [
     "matrice carrée",
     "vecteur propre",
     "valeur propre",
     "polynôme caractéristique",
     "diagonalisation",
-    "endomorphisme"
+    "endomorphisme",
+    "base de vecteurs propres",
+    "relation linéaire"
   ],
   "methods": [
     "calcul matriciel",
     "détermination de vecteurs propres",
     "calcul de polynôme caractéristique",
-    "diagonalisation"
+    "diagonalisation d'une matrice",
+    "résolution de système linéaire"
   ],
   "objects": [
     "matrice 2x2",
     "vecteur propre",
     "polynôme caractéristique",
-    "base de vecteurs propres"
+    "base de vecteurs propres",
+    "endomorphisme"
   ],
-  "content_hash": "b1ba96fbdc6185d0ea203ae0545fc334e76457da8bcba82dd89d0e97ff44eb0d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:18:13.262Z"
+  "content_hash": "e5a09a79f1fd896fd94bd2ad85eb77561b4f0481e6d87c0949b0400e257409c1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:47.719Z"
 }

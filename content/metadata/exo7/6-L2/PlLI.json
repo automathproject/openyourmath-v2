@@ -1,7 +1,7 @@
 {
   "uuid": "PlLI",
   "source_path": "exo7/6-L2/PlLI.tex",
-  "summary": "L'exercice demande de démontrer deux identités vectorielles sous les conditions de la formule de Green : la première relie l'intégrale du gradient d'une fonction scalaire sur un volume à une intégrale de surface, et la seconde relie l'intégrale du rotationnel d'un champ vectoriel sur un volume à une intégrale de surface.",
+  "summary": "L'exercice demande de démontrer deux identités vectorielles sous les conditions de la formule de Green : la relation entre l'intégrale du gradient d'une fonction scalaire sur un volume et l'intégrale de surface de la fonction, et la relation entre l'intégrale du rotationnel d'un champ vectoriel sur un volume et l'intégrale de surface du produit vectoriel du champ avec la normale.",
   "concepts": [
     "formule de Green",
     "gradient",
@@ -9,22 +9,24 @@
     "intégrale de surface",
     "intégrale de volume",
     "champ vectoriel",
-    "fonction différentiable"
+    "fonction scalaire",
+    "produit vectoriel"
   ],
   "methods": [
     "intégration par parties",
     "théorème de Stokes",
-    "théorème de la divergence"
+    "transformation d'intégrales de volume en intégrales de surface"
   ],
   "objects": [
     "champ vectoriel",
     "fonction scalaire",
-    "volume",
-    "surface",
     "gradient",
-    "rotationnel"
+    "rotationnel",
+    "normale à une surface",
+    "volume",
+    "surface"
   ],
-  "content_hash": "155218c81129e8c664d2ac0e99766f2952e4f26e3c2ac36694ae74e6a666e704",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:45:34.272Z"
+  "content_hash": "1a67b1a4806d2c8177bcf0d8ddc9fc8f0e8654fad5a0509af745f121da092042",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:32:33.492Z"
 }

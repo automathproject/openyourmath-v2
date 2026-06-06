@@ -1,7 +1,7 @@
 {
   "uuid": "RgwX",
   "source_path": "exo7/1-L1/RgwX.tex",
-  "summary": "L'exercice demande de montrer qu'un ensemble de polynômes de degré inférieur ou égal à n forme un sous-espace vectoriel et de déterminer une base pour cet espace. Ensuite, il s'agit d'étudier la linéarité, l'injectivité, la surjectivité et les noyaux de trois applications définies sur l'espace des polynômes, ainsi que leurs restrictions à l'espace des polynômes de degré n.",
+  "summary": "L'exercice demande de montrer que l'ensemble des polynômes réels de degré ≤ n est un sous-espace vectoriel de l'espace des polynômes réels, et que la famille (1, X, ..., X^n) en forme une base. Il s'intéresse ensuite aux propriétés d'applications linéaires définies sur cet espace, notamment leur linéarité, injectivité, surjectivité, et la détermination de leurs noyaux et images. Enfin, il étudie les restrictions de ces applications à l'espace des polynômes de degré ≤ n et calcule leurs matrices dans des bases canoniques.",
   "concepts": [
     "sous-espace vectoriel",
     "base d'un espace vectoriel",
@@ -9,22 +9,24 @@
     "injectivité",
     "surjectivité",
     "noyau d'une application linéaire",
-    "image d'une application linéaire"
+    "image d'une application linéaire",
+    "matrice d'une application linéaire"
   ],
   "methods": [
     "vérification des propriétés de sous-espace vectoriel",
     "détermination d'une base",
     "vérification de la linéarité",
-    "calcul de noyau et d'image",
-    "restriction d'application"
+    "calcul de noyau et image",
+    "calcul de matrice d'application linéaire"
   ],
   "objects": [
     "espace vectoriel de polynômes",
-    "polynôme de degré n",
-    "application linéaire",
-    "matrice d'application linéaire"
+    "famille de polynômes (1, X, ..., X^n)",
+    "applications linéaires f et g",
+    "restrictions f_n et g_n",
+    "matrices d'applications linéaires"
   ],
-  "content_hash": "d65bb3bd75aec0e9cfa13b0dc91aa709b7091e063310c6775cd9f9c0bd967bc3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:58:17.098Z"
+  "content_hash": "8fcb2871a1f69ceed506181836762e846a8ddf7e2525efe73462fa69107e4371",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:32.768Z"
 }

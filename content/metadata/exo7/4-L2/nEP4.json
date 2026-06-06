@@ -1,29 +1,32 @@
 {
   "uuid": "nEP4",
   "source_path": "exo7/4-L2/nEP4.tex",
-  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3 dépendant d'un paramètre réel, puis d'en déduire les valeurs propres et leur multiplicité, les conditions de diagonalisabilité de la matrice, et enfin son polynôme minimal selon la valeur du paramètre.",
+  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3 dépendant d'un paramètre réel, puis d'en déduire les valeurs propres et leur multiplicité selon la valeur du paramètre. Il s'agit ensuite de déterminer pour quelles valeurs du paramètre la matrice est diagonalisable et d'expliciter son polynôme minimal.",
   "concepts": [
     "polynôme caractéristique",
     "valeur propre",
     "multiplicité d'une valeur propre",
     "diagonalisation",
     "polynôme minimal",
-    "sous-espace propre"
+    "sous-espace propre",
+    "matrice inversible",
+    "algèbre linéaire"
   ],
   "methods": [
     "calcul de déterminant",
     "factorisation de polynôme",
     "calcul de discriminant",
-    "analyse de cas selon un paramètre",
-    "détermination de sous-espace propre"
+    "résolution d'équations linéaires",
+    "analyse de cas selon un paramètre"
   ],
   "objects": [
     "matrice 3x3",
     "polynôme caractéristique",
     "valeurs propres",
-    "sous-espace propre"
+    "sous-espace propre",
+    "polynôme minimal"
   ],
-  "content_hash": "ccae5d96e17efd7e31b09debbc1e32274281cbc9faa187257f1ba5682bd5394f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:12:23.446Z"
+  "content_hash": "8570eda0acdc541a459a030f222dcce37c56571224e6fe61a4c7cc1bec6a150f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:50.798Z"
 }

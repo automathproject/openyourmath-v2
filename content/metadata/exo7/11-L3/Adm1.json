@@ -1,27 +1,28 @@
 {
   "uuid": "Adm1",
   "source_path": "exo7/11-L3/Adm1.tex",
-  "summary": "L'exercice demande de calculer la matrice de la première forme fondamentale pour deux paramétrages différents du plan z=0, puis de déterminer la matrice de changement de base entre ces deux paramétrages.",
+  "summary": "L'exercice demande de calculer la matrice de la première forme fondamentale pour deux paramétrages différents du plan z=0, puis de déterminer la matrice de changement de base entre ces deux paramétrages au point (1,0,0).",
   "concepts": [
     "première forme fondamentale",
     "paramétrage d'une surface",
     "changement de base",
     "géométrie différentielle",
-    "matrice de passage"
+    "matrice de Gram",
+    "différentielle d'une application"
   ],
   "methods": [
-    "calcul de dérivées partielles",
-    "construction de base tangentielle",
-    "produit scalaire",
-    "matrice de Gram"
+    "calcul de la différentielle",
+    "construction de la matrice de Gram",
+    "changement de base linéaire",
+    "évaluation en un point"
   ],
   "objects": [
     "plan affine",
-    "paramétrage cartésien",
-    "paramétrage polaire",
-    "matrice carrée 2x2"
+    "paramétrage local",
+    "matrice carrée 2x2",
+    "base de l'espace tangent"
   ],
-  "content_hash": "c42cd0031d91a2112a03baa6b4218190bb6217e47980b32dc7fb5a63ba3c3545",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:14:15.564Z"
+  "content_hash": "14ffa06bc8ce0098746ae2b804e10ae8a441346486169a4287a1555790d953e8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:13.903Z"
 }

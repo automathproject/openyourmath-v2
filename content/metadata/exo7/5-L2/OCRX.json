@@ -1,7 +1,7 @@
 {
   "uuid": "OCRX",
   "source_path": "exo7/5-L2/OCRX.tex",
-  "summary": "L'exercice étudie la continuité, les dérivées partielles, la différentiabilité et le plan tangent d'une fonction de deux variables définie par une fraction rationnelle. Il explore aussi la réciproque locale d'une fonction vectorielle associée.",
+  "summary": "L'exercice étudie la continuité, les dérivées partielles, la différentiabilité et le plan tangent d'une fonction de deux variables définie par une fraction rationnelle. Il aborde aussi la réciproque locale d'une fonction vectorielle associée.",
   "concepts": [
     "continuité en un point",
     "dérivée partielle",
@@ -10,25 +10,23 @@
     "dérivée directionnelle",
     "matrice jacobienne",
     "réciproque locale",
-    "fonction de deux variables"
+    "limite de fonction"
   ],
   "methods": [
     "changement de coordonnées polaires",
-    "calcul de limites",
     "calcul de dérivées partielles",
-    "détermination de l'équation du plan tangent",
-    "calcul de la matrice jacobienne",
+    "test de différentiabilité par les dérivées directionnelles",
+    "équation du plan tangent",
     "inversibilité de matrice"
   ],
   "objects": [
     "fonction de deux variables",
     "dérivées partielles",
-    "plan tangent",
     "matrice jacobienne",
     "fonction vectorielle",
-    "réciproque locale"
+    "plan tangent"
   ],
-  "content_hash": "7e26efa3d674acc814575160f843168bdf224c973747c932cf95dcb26076faca",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:59:11.439Z"
+  "content_hash": "1cfdca2de3b3034c7bfc5fcd3491ada301809ca7edcdc4df945af113cd5acf99",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:07.222Z"
 }

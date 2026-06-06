@@ -1,26 +1,28 @@
 {
   "uuid": "6IcI",
   "source_path": "exo7/1-L1/6IcI.tex",
-  "summary": "L'exercice demande de démontrer que l'espace vectoriel E est la somme directe des noyaux des applications linéaires f-2Id et f-3Id, en utilisant les propriétés de f.",
+  "summary": "Soit un endomorphisme f d'un espace vectoriel E vérifiant une équation polynomiale. On demande de montrer que E est la somme directe des noyaux de f-2Id et f-3Id.",
   "concepts": [
-    "application linéaire",
+    "endomorphisme",
     "noyau d'une application linéaire",
     "somme directe d'espaces vectoriels",
+    "polynôme annulateur",
     "théorème du rang",
-    "endomorphisme"
+    "sous-espaces supplémentaires"
   ],
   "methods": [
     "décomposition en noyaux",
-    "utilisation de la relation fonctionnelle",
-    "vérification de l'orthogonalité"
+    "résolution de système linéaire",
+    "utilisation de l'équation polynomiale",
+    "vérification de l'intersection des noyaux"
   ],
   "objects": [
+    "endomorphisme",
     "espace vectoriel",
-    "application linéaire",
-    "noyaux",
-    "endomorphisme"
+    "noyau d'un endomorphisme",
+    "somme directe"
   ],
-  "content_hash": "a08712dac0d59c30aedfd286ac9288dbd90f88259049b63bc57a4dbf84a00bbe",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:34:46.217Z"
+  "content_hash": "4829a5c2eec432fa3cace2723bf9ec4ead62c10b9648e498595119b571232af1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:17.452Z"
 }

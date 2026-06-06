@@ -1,30 +1,30 @@
 {
   "uuid": "MtWS",
   "source_path": "exo7/6-L2/MtWS.tex",
-  "summary": "L'exercice demande de démontrer trois identités vectorielles sous les conditions du théorème de Stokes, impliquant des champs de vecteurs, des fonctions différentiables et des intégrales de surface.",
+  "summary": "L'exercice demande de démontrer trois identités vectorielles sous les conditions du théorème de Stokes, impliquant des champs de vecteurs, des fonctions différentiables et des intégrales de surface et de ligne.",
   "concepts": [
     "théorème de Stokes",
     "forme différentielle",
     "champ de vecteurs",
     "intégrale de surface",
+    "intégrale de ligne",
     "produit extérieur",
-    "gradient",
-    "différentielle exacte"
+    "gradient"
   ],
   "methods": [
-    "intégration par parties",
     "application du théorème de Stokes",
     "calcul de produit extérieur",
-    "linéarisation de formes différentielles"
+    "intégration sur une surface",
+    "intégration sur un contour"
   ],
   "objects": [
     "champ de vecteurs",
-    "surface orientée",
-    "courbe de bord",
     "fonction C^1",
-    "forme différentielle"
+    "surface orientée",
+    "bord d'une surface",
+    "gradient d'une fonction"
   ],
-  "content_hash": "5d2def917559a10614a6e422b46a79de5b9d4c1d0c3524c98e9b91adff916d40",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:45:12.673Z"
+  "content_hash": "26774da78da89946407366bd141a9aebf80cd7a9c3fde3916ca12dc2e8611f82",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:32:27.107Z"
 }

@@ -1,25 +1,26 @@
 {
   "uuid": "JPqf",
   "source_path": "exo7/4-L2/JPqf.tex",
-  "summary": "Montrer qu'une matrice carrée réelle symétrique définie positive a un déterminant inférieur ou égal au produit de ses coefficients diagonaux.",
+  "summary": "Soit A une matrice carrée réelle symétrique définie positive. On demande de prouver que son déterminant est inférieur ou égal au produit de ses coefficients diagonaux.",
   "concepts": [
     "matrice symétrique",
     "matrice définie positive",
     "déterminant",
     "factorisation de Cholesky",
-    "inégalité de Hadamard"
+    "inégalité matricielle",
+    "produit de coefficients diagonaux"
   ],
   "methods": [
     "factorisation triangulaire",
     "calcul de déterminant",
-    "comparaison terme à terme"
+    "inégalité de Cauchy-Schwarz"
   ],
   "objects": [
     "matrice carrée",
     "matrice triangulaire supérieure",
     "coefficient diagonal"
   ],
-  "content_hash": "31bdb64cad0ca2ebcc92afea341c26c9a494b00d94e8423b71d29afcf4aff177",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:15:02.397Z"
+  "content_hash": "28f74772c777cdd019a44ec037a4ae86963eb18ec40394b769ebe63119f12896",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:08.151Z"
 }

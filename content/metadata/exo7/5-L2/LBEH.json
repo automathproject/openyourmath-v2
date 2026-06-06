@@ -1,27 +1,31 @@
 {
   "uuid": "LBEH",
   "source_path": "exo7/5-L2/LBEH.tex",
-  "summary": "Montrer l'égalité de deux intégrales dépendant d'un paramètre réel strictement positif, puis en déduire la valeur d'une intégrale impliquant la fonction sinus.",
+  "summary": "Montrer l'égalité de deux intégrales impropres dépendant d'un paramètre réel positif, puis en déduire la valeur d'une intégrale classique. L'énoncé demande d'établir une relation entre une intégrale exponentielle et une intégrale trigonométrique, en utilisant une équation différentielle du second ordre.",
   "concepts": [
     "intégrale de Riemann dépendant d'un paramètre",
-    "continuité d'une intégrale à paramètre",
+    "intégrale impropre",
+    "fonction continue par morceaux",
+    "théorème de continuité des intégrales à paramètres",
     "dérivation sous le signe intégrale",
     "équation différentielle du second ordre",
-    "intégrabilité",
-    "théorème de continuité des intégrales à paramètres"
+    "limite de fonctions"
   ],
   "methods": [
     "dérivation sous le signe intégrale",
     "résolution d'équation différentielle",
-    "étude de la continuité d'une intégrale à paramètre",
-    "comparaison de fonctions pour l'intégrabilité"
+    "théorème de continuité des intégrales à paramètres",
+    "comparaison de fonctions pour l'intégrabilité",
+    "passage à la limite"
   ],
   "objects": [
-    "intégrale paramétrique",
-    "fonction définie par une intégrale",
-    "équation différentielle du second ordre"
+    "fonction intégrale",
+    "intégrale paramétrée",
+    "équation différentielle",
+    "fonction exponentielle",
+    "fonction trigonométrique"
   ],
-  "content_hash": "be5b92f35090def5c118659fb60f42c3d9c8615886a002cc9b13c4a56d12e637",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:54:55.995Z"
+  "content_hash": "80fd8c6b342e39749182629a9f754db114ffcbba86a97b623953c13644e68c0e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:38.024Z"
 }

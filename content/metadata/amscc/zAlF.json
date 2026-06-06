@@ -1,18 +1,19 @@
 {
   "uuid": "zAlF",
   "source_path": "amscc/zAlF.tex",
-  "summary": "L'exercice demande de déterminer si des fractions rationnelles données sont des éléments simples dans le corps des fractions rationnelles réelles. Chaque fraction est analysée en examinant la nature du dénominateur et du numérateur.",
+  "summary": "L'exercice demande de déterminer si des fractions rationnelles données sont des éléments simples dans le corps des fractions rationnelles sur les réels. Chaque fraction est analysée en vérifiant l'irréductibilité du dénominateur et la comparaison des degrés du numérateur et du dénominateur.",
   "concepts": [
     "fraction rationnelle",
+    "élément simple",
     "polynôme irréductible",
     "degré d'un polynôme",
     "corps des fractions rationnelles",
-    "élément simple",
     "factorisation de polynôme"
   ],
   "methods": [
-    "analyse du degré du numérateur et du dénominateur",
-    "vérification de l'irréductibilité des polynômes"
+    "analyse de l'irréductibilité",
+    "comparaison des degrés",
+    "factorisation de polynôme"
   ],
   "objects": [
     "fraction rationnelle",
@@ -20,7 +21,7 @@
     "numérateur",
     "dénominateur"
   ],
-  "content_hash": "d84f9305336186031456901fe484a58f58763d46972082ba8e6e07d52802b0ad",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:33:46.787Z"
+  "content_hash": "2af2d943439c69da732dec728c908a47e31f7b839ff592b76989fce449710268",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:22.224Z"
 }

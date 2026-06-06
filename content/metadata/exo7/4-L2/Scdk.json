@@ -1,27 +1,32 @@
 {
   "uuid": "Scdk",
   "source_path": "exo7/4-L2/Scdk.tex",
-  "summary": "L'exercice demande de montrer qu'un déterminant de fonctions dérivables est dérivable et de calculer sa dérivée. Ensuite, il propose une application pour calculer un déterminant spécifique d'une matrice particulière.",
+  "summary": "L'exercice demande de montrer qu'un déterminant de fonctions dérivables est dérivable et d'exprimer sa dérivée. Il propose ensuite de calculer explicitement un déterminant particulier d'une matrice symétrique et de déterminer sa dérivée.",
   "concepts": [
     "déterminant",
-    "fonction dérivable",
-    "combinaison linéaire",
+    "dérivabilité des fonctions",
+    "combinaison linéaire de fonctions dérivables",
     "développement par rapport à une colonne",
     "récurrence",
-    "polynôme"
+    "polynôme unitaire",
+    "racine d'un polynôme",
+    "ordre de multiplicité d'une racine"
   ],
   "methods": [
-    "développement du déterminant",
+    "développement du déterminant selon une permutation",
     "calcul de la dérivée d'un déterminant",
+    "développement par rapport à une colonne",
     "récurrence",
-    "intégration"
+    "intégration",
+    "réduction de matrice"
   ],
   "objects": [
-    "matrice de fonctions dérivables",
-    "déterminant",
-    "polynôme"
+    "déterminant de fonctions",
+    "matrice symétrique",
+    "polynôme",
+    "fonction dérivable"
   ],
-  "content_hash": "c7bd98f0717bd470618b1f4023c259b50aae9bcdda6c338afb3af6548d38dfbe",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:51:10.646Z"
+  "content_hash": "ce33738ca5d07085a763764ed0082c6fcb687e02f077993b56c5ee0923309276",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:40:52.638Z"
 }

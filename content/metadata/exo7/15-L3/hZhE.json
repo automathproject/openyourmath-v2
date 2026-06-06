@@ -1,28 +1,31 @@
 {
   "uuid": "hZhE",
   "source_path": "exo7/15-L3/hZhE.tex",
-  "summary": "On considère une application d'un espace métrique complet dans lui-même vérifiant une condition de contraction dépendant d'une suite de coefficients positifs à somme convergente. On demande de prouver l'existence et l'unicité d'un point fixe, la convergence des itérées vers ce point fixe, et une estimation de la vitesse de convergence.",
+  "summary": "On considère une application d'un espace métrique complet dans lui-même, vérifiant une condition de contraction itérée par des coefficients positifs dont la série converge. On demande de montrer l'existence et l'unicité d'un point fixe, la convergence des itérées vers ce point fixe, et une estimation de la vitesse de convergence.",
   "concepts": [
-    "théorème du point fixe de Banach",
+    "théorème du point fixe",
     "espace métrique complet",
     "suite de Cauchy",
-    "convergence",
-    "point fixe",
-    "application contractante"
+    "convergence de suites",
+    "continuité",
+    "contraction itérée",
+    "unicité du point fixe"
   ],
   "methods": [
-    "démonstration par l'absurde",
+    "raisonnement par l'absurde",
     "estimation de distance",
+    "utilisation de la complétude",
     "passage à la limite",
-    "utilisation de la complétude"
+    "majoration de la vitesse de convergence"
   ],
   "objects": [
-    "espace métrique complet",
-    "application itérée",
-    "suite de coefficients positifs",
-    "point fixe"
+    "application d'un espace métrique",
+    "suite d'itérées",
+    "point fixe",
+    "série convergente",
+    "distance métrique"
   ],
-  "content_hash": "3a4036ce44d8f8979b659f98aa1d8e7402180ba5886f648469349ab8d9530f9d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:31:43.273Z"
+  "content_hash": "fc2367c96f492fad427d186ec5fd433d41709b0c881a28f0729a28bc393e58a3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:48.635Z"
 }

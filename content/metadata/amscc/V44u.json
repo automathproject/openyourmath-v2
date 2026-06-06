@@ -1,27 +1,30 @@
 {
   "uuid": "V44u",
   "source_path": "amscc/V44u.tex",
-  "summary": "L'exercice demande de calculer des probabilités liées à une variable aléatoire suivant une loi de Poisson, puis d'approcher cette loi par une loi normale pour estimer des probabilités dans un contexte logistique.",
+  "summary": "L'exercice porte sur une variable aléatoire X suivant une loi de Poisson de paramètre λ=16, modélisant le nombre de camions arrivant à un poste logistique. Il demande de calculer des probabilités exactes et approchées via une loi normale, avec correction de continuité.",
   "concepts": [
     "loi de Poisson",
     "loi normale",
     "approximation de Poisson par la loi normale",
     "correction de continuité",
     "standardisation",
-    "table de répartition"
+    "table de répartition",
+    "probabilité conditionnelle"
   ],
   "methods": [
-    "calcul de probabilité discrète",
-    "approximation gaussienne",
+    "calcul de probabilité par différence",
     "standardisation",
-    "correction de continuité"
+    "approximation gaussienne",
+    "correction de continuité",
+    "utilisation de tables normales"
   ],
   "objects": [
     "variable aléatoire de Poisson",
     "variable aléatoire normale",
-    "table de répartition"
+    "table de répartition",
+    "intervalle de confiance"
   ],
-  "content_hash": "ea69625c52f722a302f36a14129e0c64810e213bf8ae06ed5bbaaba3777d0856",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:51:48.406Z"
+  "content_hash": "6075c12a5c3b5d6c74a28ddf72b0fdd86102758514a819c6b2a9c9928e3339e0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:38.934Z"
 }

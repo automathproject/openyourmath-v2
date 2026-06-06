@@ -1,30 +1,31 @@
 {
   "uuid": "L7r1",
   "source_path": "exo7/8-L3/L7r1.tex",
-  "summary": "L'exercice demande de démontrer des propriétés structurelles d'un groupe d'ordre pq où p et q sont des nombres premiers distincts. Il s'agit d'étudier l'unicité et la distinction d'un q-Sylow, la décomposition du groupe en produit semi-direct, et les conditions pour que ce produit soit direct.",
+  "summary": "L'exercice demande de démontrer les propriétés d'un groupe d'ordre pq (où p et q sont des nombres premiers distincts) : unicité et distinction du q-Sylow, décomposition en produit semi-direct, et conditions pour que ce produit soit direct.",
   "concepts": [
     "théorèmes de Sylow",
-    "groupe d'ordre fini",
     "sous-groupe de Sylow",
     "groupe cyclique",
     "produit semi-direct",
     "produit direct",
-    "automorphisme de groupe"
+    "automorphisme de groupe",
+    "action de groupe"
   ],
   "methods": [
+    "classification des groupes d'ordre pq",
     "analyse des sous-groupes de Sylow",
-    "décomposition en produit semi-direct",
-    "étude des actions de groupe",
-    "utilisation des propriétés des automorphismes"
+    "étude de l'action par conjugaison",
+    "calcul du groupe des automorphismes"
   ],
   "objects": [
     "groupe d'ordre pq",
     "q-Sylow",
     "p-Sylow",
-    "groupe cyclique d'ordre q",
-    "groupe cyclique d'ordre p"
+    "produit semi-direct de groupes",
+    "groupe cyclique d'ordre p",
+    "groupe cyclique d'ordre q"
   ],
-  "content_hash": "4676efe67f26b0ee377fc6b5460460956be0c05c65f7f930007c400f38f84fec",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:54:58.436Z"
+  "content_hash": "5a83224c3da0a5d6e590872bcd5fd3cd91d754ce6e1e670c23cde211cf35521d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:07.550Z"
 }

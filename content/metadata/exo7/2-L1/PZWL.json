@@ -1,27 +1,31 @@
 {
   "uuid": "PZWL",
   "source_path": "exo7/2-L1/PZWL.tex",
-  "summary": "Trouver deux réels α et β tels qu'une intégrale spécifique soit égale à 1/n² pour tout entier n positif, puis en déduire la somme de la série 1/n².",
+  "summary": "L'exercice demande de déterminer deux réels α et β tels que l'intégrale d'une fonction linéaire en t multipliée par cos(nt) sur [0,π] vaille 1/n² pour tout n entier positif. Il s'ensuit le calcul de la somme des inverses des carrés des entiers naturels.",
   "concepts": [
     "intégration par parties",
     "somme de séries",
-    "fonction continue",
-    "limite d'intégrales trigonométriques",
-    "somme des inverses des carrés"
+    "fonction trigonométrique",
+    "limite de suite",
+    "intégrale définie",
+    "somme infinie",
+    "fonction périodique"
   ],
   "methods": [
     "intégration par parties",
-    "changement de variable",
-    "calcul de limite d'intégrales",
-    "développement en série trigonométrique"
+    "développement en série",
+    "passage à la limite",
+    "identification de coefficients",
+    "utilisation de formules trigonométriques"
   ],
   "objects": [
-    "intégrale trigonométrique",
+    "intégrale de fonction trigonométrique",
     "somme de cosinus",
     "fonction polynomiale",
-    "série numérique"
+    "série numérique",
+    "fonction cotangente"
   ],
-  "content_hash": "eb1fe7249e8dad147a44158429a5f9b3d5dcade3d6441b0044a092e71c43fd7f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:15:53.872Z"
+  "content_hash": "bca573bbd72dbccd8488cf766433b1f229474c966676342ff9d2dd79f21a932e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:58.100Z"
 }

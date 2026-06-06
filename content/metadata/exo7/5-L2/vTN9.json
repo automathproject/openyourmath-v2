@@ -1,28 +1,29 @@
 {
   "uuid": "vTN9",
   "source_path": "exo7/5-L2/vTN9.tex",
-  "summary": "L'exercice demande de calculer la borne inférieure de la fonction qui, à un angle α dans l'intervalle ]0, π[, associe la borne supérieure de la suite des valeurs absolues de sin(nα) pour n entier relatif.",
+  "summary": "Calculer l'infimum sur l'intervalle ]0, π[ de la borne supérieure de la suite |sin(nα)| pour n entier relatif. L'exercice explore les propriétés de la fonction sinus et les extrema sur des intervalles.",
   "concepts": [
     "borne supérieure",
-    "borne inférieure",
-    "fonction trigonométrique",
-    "symétrie",
-    "optimisation",
-    "partie entière"
+    "infimum",
+    "fonction sinus",
+    "symétrie des fonctions",
+    "extremum",
+    "propriétés trigonométriques",
+    "suite numérique"
   ],
   "methods": [
     "symétrisation",
-    "majoration",
-    "existence d'entier",
-    "calcul de valeurs critiques"
+    "recherche d'extremum",
+    "utilisation de propriétés trigonométriques",
+    "majoration par des valeurs remarquables"
   ],
   "objects": [
-    "fonction de deux variables",
-    "suite trigonométrique",
+    "fonction de variable réelle",
+    "suite de valeurs absolues",
     "intervalle ouvert",
-    "valeur absolue"
+    "valeurs remarquables du sinus"
   ],
-  "content_hash": "95456736a781c558f5372ccc6a918ccef5ee53a6670e52d54d3486478a2a6c0f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:15:30.062Z"
+  "content_hash": "5c1ca0a5e756b8fd4b56b100dd901a67e483e6251d77fcedb6f46dbcf99a52f5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:43.232Z"
 }

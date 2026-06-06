@@ -1,28 +1,28 @@
 {
   "uuid": "zGDZ",
   "source_path": "exo7/2-L1/zGDZ.tex",
-  "summary": "L'exercice demande de montrer que trois suites définies par des relations de récurrence distinctes, avec des conditions initiales ordonnées, convergent vers une même limite commune. Les suites sont définies par des combinaisons harmonique, géométrique et arithmétique des termes précédents.",
+  "summary": "On considère trois suites réelles strictement positives définies par récurrence à partir de conditions initiales $0 < u_0 < v_0 < w_0$. On doit montrer que ces suites convergent vers une même limite commune, sans la déterminer.",
   "concepts": [
-    "inégalité arithmético-géométrique-harmonique",
-    "convergence de suites",
-    "relation de récurrence",
-    "limite commune",
-    "croissance et décroissance de suites",
-    "passage à la limite"
+    "inégalité arithmético-géométrique",
+    "inégalité harmonique-arithmétique",
+    "convergence des suites",
+    "récurrence",
+    "limite de suite",
+    "système d'équations"
   ],
   "methods": [
-    "récurrence",
     "étude de la monotonie",
-    "majoration et minoration",
+    "encadrement de suites",
     "passage à la limite",
-    "résolution d'un système d'équations"
+    "résolution de système d'équations",
+    "utilisation des inégalités classiques"
   ],
   "objects": [
-    "suite numérique",
-    "relation de récurrence",
-    "limite commune"
+    "suite récurrente",
+    "inégalités entre moyennes",
+    "système d'équations non linéaires"
   ],
-  "content_hash": "5bd05026fb4d7505c96d71b2a26a2edef89e9681b041ca26b18aa4cf921b0a55",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:44:39.042Z"
+  "content_hash": "bbaf15f6c0dce57c02b673df4bd20c81058889e21ef4f584acdddc1f55b74f06",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:44.014Z"
 }

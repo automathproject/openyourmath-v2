@@ -1,31 +1,32 @@
 {
   "uuid": "D5EP",
   "source_path": "exo7/5-L2/D5EP.tex",
-  "summary": "Calculer des intégrales multiples sur des domaines définis dans le plan ou l'espace, avec des fonctions intégrandes variées (polynômes, fonctions rationnelles, etc.). Les domaines sont décrits par des inégalités impliquant des paraboles, des cercles ou des conditions de symétrie.",
+  "summary": "Calculer six intégrales multiples impliquant des fonctions polynomiales, exponentielles ou rationnelles sur des domaines définis par des inégalités linéaires, quadratiques ou circulaires. Les domaines incluent des régions polygonales, des secteurs circulaires et des volumes bornés.",
   "concepts": [
     "intégrale multiple",
     "changement de variable",
     "coordonnées polaires",
-    "domaine d'intégration",
     "symétrie",
-    "intégration par tranches",
-    "intégration itérée"
+    "domaine d'intégration",
+    "intégration par parties",
+    "intégration par tranches"
   ],
   "methods": [
-    "intégration par parties",
+    "décomposition en intégrales itérées",
     "changement de variable en polaires",
-    "intégration itérée",
-    "utilisation de la symétrie",
-    "intégration par tranches"
+    "exploitation de symétries",
+    "intégration par parties",
+    "sommation par tranches"
   ],
   "objects": [
     "intégrale double",
     "intégrale triple",
-    "domaine borné",
-    "fonction de deux variables",
-    "fonction de trois variables"
+    "domaine polygonal",
+    "disque unité",
+    "volume borné",
+    "fonction rationnelle"
   ],
-  "content_hash": "74d09a79918a37c3b5d2866d45d8d1d1a5589145f9ff922c025db0a5fb837a62",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:30:52.808Z"
+  "content_hash": "3398e38e2cdfc5d1754ac19411c882ed255b6891afb9545d4b3d13758627791a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:31.743Z"
 }

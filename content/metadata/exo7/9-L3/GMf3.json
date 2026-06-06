@@ -1,28 +1,29 @@
 {
   "uuid": "GMf3",
   "source_path": "exo7/9-L3/GMf3.tex",
-  "summary": "L'exercice demande de démontrer l'existence d'une isométrie β dans le groupe des isométries de ℝ² telle que la conjugaison de la rotation R(a,α) par β appartienne au groupe spécial orthogonal SO(2). Il explore également la décomposition d'une rotation en deux translations et les conditions de conjugaison entre translations.",
+  "summary": "L'exercice demande de démontrer l'existence d'une isométrie β telle que βR(a,α)β⁻¹ appartienne au groupe spécial orthogonal SO(2), puis d'exprimer la rotation R(a,α) comme une composition de deux réflexions τₗ et τₘ, et enfin de caractériser la conjugaison de deux translations t_b et t_c.",
   "concepts": [
     "isométrie euclidienne",
     "rotation",
     "translation",
-    "conjugaison d'isométries",
     "groupe spécial orthogonal SO(2)",
-    "décomposition d'isométrie"
+    "conjugaison d'isométries",
+    "réflexion",
+    "composition d'isométries"
   ],
   "methods": [
     "conjugaison d'isométries",
-    "décomposition en translations",
-    "analyse de conditions de conjugaison"
+    "décomposition en réflexions",
+    "calcul de normes vectorielles"
   ],
   "objects": [
     "rotation R(a,α)",
     "translation t_b",
     "isométrie β",
-    "droite m",
-    "droite l"
+    "droites l et m",
+    "vecteurs b et c"
   ],
-  "content_hash": "af45357853c30279377ec6c202f8ab6056e7c71381b00914b7a2513888965912",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:56:15.592Z"
+  "content_hash": "20d2db1b3bafc38ab650631788912053d51dea09136b47ff56cef0e648fea481",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:15.599Z"
 }

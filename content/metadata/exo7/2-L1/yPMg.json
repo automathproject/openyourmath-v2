@@ -1,28 +1,31 @@
 {
   "uuid": "yPMg",
   "source_path": "exo7/2-L1/yPMg.tex",
-  "summary": "Étudier la fonction f(x) = ln(ch x) - x, en analysant son comportement, ses dérivées et ses asymptotes.",
+  "summary": "Étudier la fonction f(x) = ln(ch x) - x, définie sur ℝ, en analysant sa continuité, sa dérivabilité, son comportement aux limites et ses asymptotes.",
   "concepts": [
     "fonction hyperbolique",
     "continuité",
     "dérivabilité",
-    "limite",
+    "limite de fonction",
     "asymptote",
-    "croissance décroissance"
+    "croissance décroissance",
+    "fonction composée"
   ],
   "methods": [
-    "étude de la dérivée",
     "développement en série",
-    "analyse des limites",
-    "comparaison de fonctions"
+    "comparaison de termes dominants",
+    "étude de limite",
+    "calcul de dérivée",
+    "analyse de comportement asymptotique"
   ],
   "objects": [
     "fonction réelle",
     "fonction hyperbolique",
-    "asymptote",
-    "courbe représentative"
+    "asymptote oblique",
+    "limite infinie",
+    "dérivée"
   ],
-  "content_hash": "d84987ef90d28b8fa2e25e8128d5817eebff3fe0dbe761aa236d49b6539d55b6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:08:10.963Z"
+  "content_hash": "fc7efb6ca11a22d0296539f6a13cd241fdf8cd46bc392ddddcea704d3a368e9b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:13.100Z"
 }

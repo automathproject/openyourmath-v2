@@ -1,25 +1,26 @@
 {
   "uuid": "xYXS",
   "source_path": "exo7/6-L2/xYXS.tex",
-  "summary": "L'exercice demande de déterminer l'intersection d'une droite et d'un plan dans l'espace ℝ³. La droite est définie par un système d'équations paramétriques et le plan par une équation cartésienne.",
+  "summary": "Déterminer l'intersection d'une droite et d'un plan dans l'espace affine ℝ³. La droite est paramétrée par un vecteur directeur et un point, le plan est défini par une équation cartésienne.",
   "concepts": [
     "géométrie affine",
     "droite affine",
     "plan affine",
+    "équation cartésienne",
     "intersection de sous-espaces affines",
-    "système d'équations paramétriques",
-    "équation cartésienne"
+    "système d'équations linéaires"
   ],
   "methods": [
-    "substitution",
-    "résolution d'équation linéaire"
+    "substitution paramétrique",
+    "résolution d'équation linéaire",
+    "calcul de coordonnées"
   ],
   "objects": [
-    "droite affine",
-    "plan affine",
+    "droite paramétrée",
+    "plan cartésien",
     "point d'intersection"
   ],
-  "content_hash": "345e909aa440088c5d20769bc03aff5c3452146811e89e81cbf2cfe53b7a562c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:15:48.291Z"
+  "content_hash": "322b2df2f099719f598c54a820b83a89b443436754c7212254d995a214515b16",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:51.125Z"
 }

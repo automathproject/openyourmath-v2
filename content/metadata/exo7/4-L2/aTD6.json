@@ -1,30 +1,31 @@
 {
   "uuid": "aTD6",
   "source_path": "exo7/4-L2/aTD6.tex",
-  "summary": "L'exercice demande de déterminer les valeurs propres et les sous-espaces propres d'une matrice 3x3, de vérifier sa diagonalisabilité, d'identifier les sous-espaces caractéristiques, de trouver une base de diagonalisation et d'appliquer ces résultats à la résolution d'un système différentiel linéaire.",
+  "summary": "L'exercice demande de déterminer les valeurs propres et les sous-espaces propres d'une matrice 3x3, de vérifier sa diagonalisabilité, d'identifier ses sous-espaces caractéristiques, de trouver une base pour une matrice associée et de résoudre un système différentiel linéaire correspondant.",
   "concepts": [
     "valeur propre",
     "sous-espace propre",
     "diagonalisation",
     "sous-espace caractéristique",
     "décomposition de Dunford",
-    "système différentiel linéaire"
+    "système différentiel linéaire",
+    "polynôme annulateur"
   ],
   "methods": [
     "calcul du polynôme caractéristique",
-    "détermination des vecteurs propres",
+    "détermination des sous-espaces propres",
     "vérification de la diagonalisabilité",
-    "construction d'une base adaptée",
+    "décomposition de Dunford",
     "résolution de système différentiel"
   ],
   "objects": [
     "matrice 3x3",
-    "système différentiel linéaire",
-    "sous-espaces propres",
-    "sous-espaces caractéristiques",
-    "base de diagonalisation"
+    "sous-espace propre",
+    "sous-espace caractéristique",
+    "base de ℝ³",
+    "système différentiel linéaire"
   ],
-  "content_hash": "f66c50131236f867cefc34e8ccfad803faea6cab0ad068ad0268e1075efd5753",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:57:06.675Z"
+  "content_hash": "d5045b500821494e92fe249b3cafa38f5d03f7f1b8c8bcd1fb7fddc834b05167",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:09.675Z"
 }

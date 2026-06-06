@@ -1,27 +1,29 @@
 {
   "uuid": "ZN1W",
   "source_path": "exo7/8-L3/ZN1W.tex",
-  "summary": "L'exercice demande de démontrer des propriétés structurelles de morphismes de groupes sur des corps finis et de déterminer le nombre d'automorphismes d'espaces vectoriels sur ces corps.",
+  "summary": "L'exercice demande de démontrer que tout morphisme de groupes entre des espaces vectoriels sur un corps fini est linéaire, puis d'établir un isomorphisme entre le groupe des automorphismes d'un groupe cyclique et le groupe multiplicatif du corps fini, et enfin de déterminer le nombre d'automorphismes d'un espace vectoriel de dimension finie sur un corps fini.",
   "concepts": [
     "morphisme de groupes",
     "espace vectoriel sur un corps fini",
     "automorphisme de groupe",
     "isomorphisme de groupes",
-    "corps fini",
-    "linéarité sur un corps"
+    "groupe multiplicatif",
+    "groupe cyclique",
+    "base d'un espace vectoriel"
   ],
   "methods": [
-    "utilisation de la compatibilité des lois externes",
-    "construction explicite d'un isomorphisme",
+    "démonstration de linéarité",
+    "construction d'un morphisme injectif",
     "comptage des bases d'un espace vectoriel"
   ],
   "objects": [
     "morphisme de groupes",
     "automorphisme de groupe",
-    "espace vectoriel sur un corps fini",
-    "groupe multiplicatif d'un corps fini"
+    "espace vectoriel de dimension finie",
+    "groupe multiplicatif",
+    "groupe cyclique"
   ],
-  "content_hash": "679ecd0405f711771038def04fc54132c25a4cd7a73f8b44b96cb7511017f6de",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:00:22.487Z"
+  "content_hash": "83a9e990614bd9a98d8ebaf5ea9bc68e3716718584f7f721edbdcf12ee427b7a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:58.793Z"
 }

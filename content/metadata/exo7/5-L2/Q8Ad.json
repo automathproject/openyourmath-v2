@@ -1,20 +1,20 @@
 {
   "uuid": "Q8Ad",
   "source_path": "exo7/5-L2/Q8Ad.tex",
-  "summary": "L'exercice demande de montrer la convergence d'une série de matrices et d'exprimer son somme comme l'inverse d'une matrice. Il s'agit ensuite d'établir une inégalité sur la norme de la différence entre cette inverse et une autre matrice.",
+  "summary": "On considère une matrice A de norme strictement inférieure à 1 dans l'espace des matrices carrées réelles. L'exercice demande de montrer la convergence de la série de terme général A^n, puis d'établir que la somme de cette série est l'inverse de I - A. Enfin, on doit déduire une inégalité sur la norme de (I - A)^(-1) - (I + A).",
   "concepts": [
-    "série de matrices",
     "convergence absolue",
     "complétude des espaces de dimension finie",
     "inversibilité des matrices",
     "norme sous-multiplicative",
-    "limite de suite de matrices"
+    "série de matrices",
+    "continuité des applications linéaires"
   ],
   "methods": [
-    "majoration de la norme d'une puissance de matrice",
-    "utilisation de la continuité de l'application linéaire",
-    "calcul de la somme d'une série de matrices",
-    "estimation de la norme d'une série de matrices"
+    "majoration des termes d'une série",
+    "utilisation de la complétude",
+    "calcul de l'inverse d'une matrice",
+    "estimation de la norme d'une série"
   ],
   "objects": [
     "matrice carrée",
@@ -22,7 +22,7 @@
     "norme matricielle",
     "inverse d'une matrice"
   ],
-  "content_hash": "fb90b21bc5a43951f4f52e81d7027af5982e6e8eb7164b209505c5e707823b46",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:55:09.847Z"
+  "content_hash": "5dc9fd81bf10e60964aa5551a407a6541f07b49c5e562ea445ad37c796ce974c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:11.077Z"
 }

@@ -1,30 +1,32 @@
 {
   "uuid": "uz69",
   "source_path": "exo7/4-L2/uz69.tex",
-  "summary": "Résoudre un système linéaire MX = U où M est une matrice de Vandermonde et U un vecteur colonne spécifique. Le contexte est purement algébrique.",
+  "summary": "Résoudre un système linéaire MX = U où M est une matrice de Vandermonde généralisée et U est un vecteur colonne spécifique. L'exercice demande de déterminer les solutions du système en exploitant ses propriétés.",
   "concepts": [
     "système de Cramer",
     "déterminant de Vandermonde",
-    "formules de Cramer",
     "matrice de Vandermonde",
-    "développement par blocs",
-    "n-linéarité",
-    "coefficient binomial"
+    "rang d'une matrice",
+    "formules de Cramer",
+    "combinaison linéaire",
+    "déterminant",
+    "système linéaire"
   ],
   "methods": [
     "calcul de déterminant",
-    "développement selon une colonne",
-    "simplification par n-linéarité",
-    "application des formules de Cramer"
+    "développement par cofacteurs",
+    "n-linéarité du déterminant",
+    "application des formules de Cramer",
+    "simplification algébrique"
   ],
   "objects": [
-    "système linéaire",
-    "matrice de Vandermonde",
+    "matrice carrée",
     "vecteur colonne",
-    "déterminant",
+    "déterminant de Vandermonde",
+    "système linéaire",
     "coefficient binomial"
   ],
-  "content_hash": "80f99e5cd0479bfad58d91b693b1328b11641a8d3174bbbae116da2ab7dc7a64",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:18:44.392Z"
+  "content_hash": "e3ecf0196a8a1456de6d24ff4b88728b7e33d01cdc8ebe6f6c5629eae0238e51",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:29.902Z"
 }

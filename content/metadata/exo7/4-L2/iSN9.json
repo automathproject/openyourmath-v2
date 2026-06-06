@@ -1,25 +1,28 @@
 {
   "uuid": "iSN9",
   "source_path": "exo7/4-L2/iSN9.tex",
-  "summary": "Calculer le déterminant d'une matrice de taille n×n dont les coefficients sont de la forme a_i + b_j, où a_i et b_j sont des complexes donnés.",
+  "summary": "Calculer le déterminant d'une matrice carrée de taille n×n dont les coefficients sont de la forme a_i + b_j, où a_i et b_j sont des nombres complexes donnés. L'exercice demande d'exprimer ce déterminant en fonction des paramètres a_i et b_j.",
   "concepts": [
     "déterminant",
     "espace vectoriel",
     "dimension d'un espace",
     "linéaire combinaison",
-    "matrice"
+    "matrice colonne",
+    "rang d'une matrice"
   ],
   "methods": [
-    "réduction de matrice",
-    "calcul de déterminant 2x2",
-    "analyse de dépendance linéaire"
+    "décomposition des colonnes",
+    "calcul du rang",
+    "utilisation de la dimension de l'espace engendré",
+    "calcul explicite pour n=2"
   ],
   "objects": [
     "matrice carrée",
     "vecteurs colonnes",
-    "combinaison linéaire"
+    "combinaison linéaire",
+    "déterminant"
   ],
-  "content_hash": "378e9088fbf2605a232cd17caa4053abba1d04ae1eab110e8cc2aae9c73a6444",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:04:43.295Z"
+  "content_hash": "fe66c35c398cb5ed056a03b950e8ce0eb924a3ce6c45df1231c07679f39f96bc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:14.754Z"
 }

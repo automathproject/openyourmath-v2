@@ -1,28 +1,31 @@
 {
   "uuid": "qGeV",
   "source_path": "exo7/5-L2/qGeV.tex",
-  "summary": "Résoudre plusieurs équations différentielles linéaires du second ordre à coefficients variables sur des intervalles spécifiques. L'énoncé demande de trouver les solutions générales de ces équations.",
+  "summary": "Résoudre six équations différentielles linéaires du second ordre à coefficients variables, sur des intervalles donnés. Certaines sont homogènes, d'autres non homogènes avec second membre.",
   "concepts": [
-    "équation différentielle linéaire",
+    "équation différentielle linéaire d'ordre 2",
     "solution polynomiale",
     "solution exponentielle",
     "système fondamental de solutions",
     "continuité des coefficients",
-    "espace vectoriel de solutions"
+    "espace vectoriel des solutions",
+    "théorème de Cauchy-Lipschitz"
   ],
   "methods": [
-    "recherche de solutions polynomiales",
-    "recherche de solutions exponentielles",
+    "recherche de solutions particulières",
+    "méthode de variation des constantes",
     "calcul du wronskien",
-    "analyse de la dimension de l'espace des solutions"
+    "analyse du degré des polynômes",
+    "vérification de la forme exponentielle"
   ],
   "objects": [
-    "équation différentielle du second ordre",
-    "polynôme solution",
-    "fonction exponentielle solution",
-    "wronskien"
+    "équation différentielle homogène",
+    "équation différentielle non homogène",
+    "solution polynomiale",
+    "solution exponentielle",
+    "fonction définie par morceaux"
   ],
-  "content_hash": "f0667b9945ae7b51f856cb7e4f7876a728f2de34e9d3a4f6bfb43c2b507c0ac2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:52:35.397Z"
+  "content_hash": "81f0a592d887e649604013db02ff362350a528d8bb98d930fb15d8813bca1d16",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:12.471Z"
 }

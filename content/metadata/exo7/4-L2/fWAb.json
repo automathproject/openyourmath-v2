@@ -1,28 +1,27 @@
 {
   "uuid": "fWAb",
   "source_path": "exo7/4-L2/fWAb.tex",
-  "summary": "L'exercice demande de démontrer une formule de calcul de déterminant pour une matrice par blocs 2x2, sous l'hypothèse que deux matrices C et D commutent, d'abord lorsque D est inversible puis en généralisant au cas où D n'est pas inversible.",
+  "summary": "L'exercice demande de démontrer une formule de calcul de déterminant pour une matrice par blocs 2x2, sous l'hypothèse que deux de ses sous-matrices commutent. La preuve doit couvrir les cas où la sous-matrice inférieure droite est inversible ou non.",
   "concepts": [
-    "déterminant de matrice",
-    "matrice par blocs",
+    "déterminant de matrice par blocs",
     "commutativité de matrices",
-    "polynôme caractéristique",
     "inversibilité de matrice",
-    "déterminant de produit de matrices"
+    "polynôme caractéristique",
+    "continuité des polynômes"
   ],
   "methods": [
-    "calcul par blocs",
-    "utilisation de l'inverse",
-    "polynôme en une variable",
-    "limite de polynômes"
+    "décomposition par blocs",
+    "calcul de déterminant de produit",
+    "utilisation de la continuité des polynômes",
+    "substitution de valeurs"
   ],
   "objects": [
-    "matrice carrée",
-    "matrice inversible",
     "matrice par blocs 2x2",
-    "polynôme en x"
+    "matrice inversible",
+    "polynôme en une variable",
+    "matrice carrée"
   ],
-  "content_hash": "dae2327d4983a71f66a5c056edf9d8b4c1efe62b571d3e1a496f3319705449bb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:02:04.064Z"
+  "content_hash": "db8ebf1b39526f9e84befd7ea1409442afc01ae3c132ca3ff7c36f9963979830",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:12.299Z"
 }

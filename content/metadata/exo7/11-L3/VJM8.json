@@ -1,20 +1,25 @@
 {
   "uuid": "VJM8",
   "source_path": "exo7/11-L3/VJM8.tex",
-  "summary": "Calculer le nombre de rotation d'une courbe régulière fermée donnée par une image.",
+  "summary": "Calculer le nombre de rotation d'une courbe régulière fermée donnée par une image. Le nombre de rotation mesure le nombre de tours effectués par le vecteur tangent le long de la courbe.",
   "concepts": [
     "courbe régulière",
     "courbe fermée",
     "nombre de rotation",
-    "géométrie différentielle"
+    "vecteur tangent",
+    "intégrale de courbure totale"
   ],
   "methods": [
-    "calcul du nombre de rotation"
+    "calcul du nombre de rotation",
+    "intégration de la courbure",
+    "paramétrisation de la courbe"
   ],
   "objects": [
-    "courbe régulière fermée"
+    "courbe régulière fermée",
+    "vecteur tangent",
+    "courbure"
   ],
-  "content_hash": "d75e037931cac491a95bdb95cf7ffe9fa9ee06cd6dcfa7464eedaa70a93e195b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:21:00.500Z"
+  "content_hash": "3704033d46c5d02041c0bcc5ab5358900418b76d7a1336343cbd70eb19a242b5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:24.511Z"
 }

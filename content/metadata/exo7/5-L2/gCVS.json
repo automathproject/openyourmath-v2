@@ -1,30 +1,33 @@
 {
   "uuid": "gCVS",
   "source_path": "exo7/5-L2/gCVS.tex",
-  "summary": "L'exercice demande de montrer l'existence d'une suite de polynômes à coefficients entiers naturels dont les dérivées successives de la fonction tangente sont composées, puis d'établir le développement en série entière de la tangente et de calculer ses premiers coefficients.",
+  "summary": "L'exercice demande de démontrer l'existence d'une suite de polynômes à coefficients entiers naturels liés aux dérivées successives de la fonction tangente, puis d'établir le développement en série entière de la tangente sur l'intervalle ]-π/2, π/2[ en utilisant la formule de Taylor-Laplace. Il s'agit ensuite de calculer les premiers coefficients de cette série et d'étudier le développement en série entière de la fonction hyperbolique tangente.",
   "concepts": [
     "développement en série entière",
-    "fonction dérivable",
-    "polynôme à coefficients entiers",
-    "rayon de convergence",
     "formule de Taylor-Laplace",
+    "rayon de convergence",
+    "fonction dérivable",
+    "polynômes à coefficients entiers",
+    "relation de récurrence sur les coefficients",
     "fonction impaire",
     "fonction hyperbolique"
   ],
   "methods": [
     "récurrence",
     "formule de Leibniz",
-    "formule de Taylor-Laplace",
-    "comparaison série intégrale",
-    "identification de fonction composée"
+    "intégration par parties",
+    "comparaison série-intégrale",
+    "identification de série entière",
+    "changement de variable complexe"
   ],
   "objects": [
     "fonction tangente",
     "suite de polynômes",
-    "coefficient de série entière",
+    "coefficients de Taylor",
+    "série entière",
     "fonction hyperbolique tangente"
   ],
-  "content_hash": "72cef8b440a6b6ac5bf6ffbe37cf9b0b45f9d833d79573f9bfaeb2283cfe45a7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:49:34.322Z"
+  "content_hash": "5da7f8d1a447ee17c91fbd28eb45698133a9391a2afc29ed42a44119b4291cc3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:11.898Z"
 }

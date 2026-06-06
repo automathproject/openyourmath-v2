@@ -1,27 +1,30 @@
 {
   "uuid": "QqHC",
   "source_path": "amscc/QqHC.tex",
-  "summary": "On tire sans remise toutes les boules d'une urne contenant n boules blanches numérotées et 2 boules noires. On définit deux variables aléatoires discrètes X (rang de la première boule blanche) et Y (rang du premier numéro 1). L'exercice demande de déterminer la loi de X, d'étudier l'indépendance des événements {X=1} et {Y=1}, de vérifier l'indépendance des variables X et Y, et de montrer que X et Y ont même loi lorsque n=2.",
+  "summary": "L'exercice étudie des variables aléatoires discrètes définies sur un tirage successif sans remise de boules dans une urne contenant des boules blanches et noires. Il demande d'analyser les lois de probabilité, l'indépendance d'événements et de variables aléatoires, ainsi que la loi conjointe de deux variables aléatoires.",
   "concepts": [
     "variable aléatoire discrète",
     "loi de probabilité",
     "indépendance d'événements",
     "indépendance de variables aléatoires",
     "loi conjointe",
-    "probabilité conditionnelle"
+    "probabilité conditionnelle",
+    "tirage sans remise"
   ],
   "methods": [
     "calcul de probabilités par dénombrement",
     "vérification de l'indépendance par égalité de produits",
+    "construction de la loi conjointe",
     "comparaison de lois de probabilité"
   ],
   "objects": [
-    "variable aléatoire discrète X",
-    "variable aléatoire discrète Y",
-    "urne avec boules blanches et noires",
-    "loi conjointe de (X,Y)"
+    "variable aléatoire de rang d'apparition",
+    "urne à boules",
+    "loi de probabilité discrète",
+    "événements élémentaires",
+    "couple de variables aléatoires"
   ],
-  "content_hash": "deca007a902f4ac68de2c6a0ab1fcfa238a9b02eac0000987adfacd7d3ecda2a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:26:36.710Z"
+  "content_hash": "7c7f4c99e96a01244ee628051bbef3a344612e4e1cf0958f6fe4bb491fff1284",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:22.577Z"
 }

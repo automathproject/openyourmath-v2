@@ -1,29 +1,30 @@
 {
   "uuid": "1e6A",
   "source_path": "exo7/2-L1/1e6A.tex",
-  "summary": "L'exercice demande de montrer la convergence de l'intégrale impropre de la dérivée d'une fonction en utilisant la convergence de l'intégrale de la fonction elle-même et la limite de la fonction en l'infini.",
+  "summary": "L'exercice demande de montrer la convergence de l'intégrale impropre de la dérivée d'une fonction en lien avec la limite de cette fonction à l'infini. Il explore aussi les conditions de convergence des intégrales de la fonction et de sa dérivée seconde pour déduire la limite de la fonction elle-même.",
   "concepts": [
     "intégrale impropre",
     "convergence d'intégrale",
     "limite de fonction",
+    "théorème de Taylor-Lagrange",
     "fonction de classe C^1",
     "fonction de classe C^2",
-    "formule de Taylor-Lagrange",
-    "théorème fondamental du calcul intégral"
+    "primitive d'une fonction"
   ],
   "methods": [
-    "utilisation de la formule de Taylor-Lagrange",
     "intégration par parties",
-    "analyse de la limite de fonctions",
-    "application du théorème fondamental du calcul intégral"
+    "utilisation du théorème de Taylor-Lagrange",
+    "analyse des limites de fonctions",
+    "relation entre intégrale et limite de fonction"
   ],
   "objects": [
     "fonction dérivable",
-    "intégrale convergente",
-    "limite de fonction",
-    "fonction de classe C^2"
+    "dérivée première",
+    "dérivée seconde",
+    "intégrale impropre",
+    "limite de fonction"
   ],
-  "content_hash": "e803b00dc88dfaf79b9be66a74984d360dbfe9e073718f452fbabe1ed116791c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:27:40.730Z"
+  "content_hash": "6a6e3fd6df1f2545cd6e4f63f671f03c9cf95505459ce57c728c1fa158afdf6d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:30.199Z"
 }

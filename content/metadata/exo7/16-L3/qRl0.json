@@ -1,28 +1,30 @@
 {
   "uuid": "qRl0",
   "source_path": "exo7/16-L3/qRl0.tex",
-  "summary": "L'exercice demande de démontrer qu'une fonction holomorphe avec un point singulier essentiel n'est pas injective dans aucun voisinage pointé de ce point. On utilise le théorème de Casorati-Weierstrass et la propriété d'ouverture des fonctions holomorphes.",
+  "summary": "L'exercice demande de démontrer qu'une fonction holomorphe avec un point singulier essentiel n'est pas injective dans aucun voisinage pointé de ce point. Il utilise le théorème de Casorati-Weierstrass et la propriété d'ouverture des fonctions holomorphes.",
   "concepts": [
     "point singulier essentiel",
     "fonction holomorphe",
     "théorème de Casorati-Weierstrass",
     "propriété d'ouverture des fonctions holomorphes",
     "injectivité",
-    "disque ouvert",
-    "limite de suite"
+    "voisinage pointé",
+    "disque ouvert"
   ],
   "methods": [
     "raisonnement par l'absurde",
     "construction par récurrence",
+    "limite de suite",
     "utilisation de la propriété d'ouverture"
   ],
   "objects": [
     "fonction holomorphe",
-    "disque pointé",
+    "point singulier essentiel",
     "suite de points",
+    "disque pointé",
     "disque ouvert"
   ],
-  "content_hash": "73ea087c1b58d369b2876419b23df9267f86a1f63caff9045de1b1691788065c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:24:57.291Z"
+  "content_hash": "8f2d3c32e0799d97ed836e5f79b2ec3b0bac3ae2d30793412ad077e44d6307e0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:24.478Z"
 }

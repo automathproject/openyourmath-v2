@@ -9,21 +9,22 @@
     "matrice par blocs",
     "linéarité",
     "alternance",
-    "dimension d'un espace vectoriel"
+    "déterminant d'une matrice triangulaire"
   ],
   "methods": [
+    "construction d'une application multilinéaire alternée",
     "utilisation de la base canonique",
-    "application de la définition du déterminant",
-    "propriété de multilinéarité",
-    "propriété d'alternance"
+    "identification de la forme déterminant",
+    "évaluation sur la matrice identité"
   ],
   "objects": [
-    "matrice carrée",
     "matrice par blocs",
-    "forme déterminant",
-    "espace vectoriel"
+    "matrice carrée",
+    "matrice identité",
+    "forme multilinéaire alternée",
+    "déterminant"
   ],
-  "content_hash": "c77ffa17b02b4f600104b22d71f675e6e42fa7ed6e2cda60ca007b91ec9ff82f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:16:43.084Z"
+  "content_hash": "f3b541a35c56b96198e00df78d7980fe7243749e6b1bcc273082d90af7b00f0e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:22.261Z"
 }

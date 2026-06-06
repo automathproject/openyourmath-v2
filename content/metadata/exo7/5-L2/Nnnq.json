@@ -6,21 +6,25 @@
     "norme sur un espace vectoriel",
     "continuité d'une application linéaire",
     "norme subordonnée",
-    "endomorphisme",
-    "espace vectoriel normé",
-    "polynôme"
+    "espace des polynômes",
+    "supremum",
+    "inégalité triangulaire",
+    "homogénéité d'une norme"
   ],
   "methods": [
-    "vérification des propriétés d'une norme",
+    "vérification des axiomes de norme",
     "calcul de la norme d'un endomorphisme",
-    "utilisation de la définition de la continuité linéaire"
+    "utilisation de la définition de la continuité linéaire",
+    "comparaison de normes"
   ],
   "objects": [
+    "espace vectoriel normé",
+    "endomorphisme linéaire",
+    "polynôme",
     "norme infinie",
-    "endomorphisme de multiplication par X",
-    "espace des polynômes réels"
+    "norme subordonnée"
   ],
-  "content_hash": "25a40d47677401eed8bfa6861534c31c168242ac7e87b1cbea2babe999f3a7b9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:48:18.598Z"
+  "content_hash": "687ce7d4cbff5f80deaa3038ed80358d3d5f75f13c3388b8513f74529c0ddfb6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:04.665Z"
 }

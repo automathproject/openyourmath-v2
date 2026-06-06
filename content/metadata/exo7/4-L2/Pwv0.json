@@ -1,28 +1,29 @@
 {
   "uuid": "Pwv0",
   "source_path": "exo7/4-L2/Pwv0.tex",
-  "summary": "Résoudre dans l'ensemble des matrices carrées d'ordre 3 à coefficients réels l'équation matricielle X² = A, où A est une matrice donnée.",
+  "summary": "Résoudre dans l'espace des matrices 3x3 réelles l'équation matricielle X² = A, où A est une matrice donnée. L'exercice demande de trouver toutes les matrices X vérifiant cette relation.",
   "concepts": [
     "diagonalisation",
     "valeurs propres",
     "sous-espaces propres",
     "commutativité de matrices",
-    "matrices diagonalisables",
-    "polynôme annulateur"
+    "polynôme annulateur",
+    "matrice inversible",
+    "matrice diagonale"
   ],
   "methods": [
-    "diagonalisation",
-    "calcul des valeurs propres",
-    "recherche de matrices commutantes",
-    "construction de solutions par changement de base"
+    "diagonalisation simultanée",
+    "calcul de valeurs propres",
+    "détermination de sous-espaces propres",
+    "conjugaison par matrice inversible"
   ],
   "objects": [
-    "matrice carrée",
+    "matrice 3x3",
     "matrice diagonale",
     "matrice inversible",
-    "vecteurs propres"
+    "sous-espaces propres"
   ],
-  "content_hash": "0c1fae137613e472fa4ae5fcd7b1d92d243cd4d3abc6bce635802b92c1b8d9f6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:42:10.638Z"
+  "content_hash": "8bfb9b2eece0315802820f23d596fd2e5e83be683735946d4e64d3e4c13e8633",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:45.819Z"
 }

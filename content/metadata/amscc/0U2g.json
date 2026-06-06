@@ -1,28 +1,29 @@
 {
   "uuid": "0U2g",
   "source_path": "amscc/0U2g.tex",
-  "summary": "L'exercice demande de tester l'indépendance entre deux variables catégorielles (couleur des cheveux et couleur des yeux) pour les femmes et les hommes séparément, puis entre le sexe et la couleur des yeux ou des cheveux. Les données proviennent d'un sondage sur 592 étudiants.",
+  "summary": "L'exercice demande d'analyser des données de sondage sur 592 étudiants pour tester l'indépendance entre des variables catégorielles : couleur des cheveux et couleur des yeux chez les femmes et les hommes, puis entre le sexe et la couleur des yeux ou des cheveux. Il s'agit d'appliquer des tests du chi-carré d'indépendance avec un risque de 5%.",
   "concepts": [
-    "test du chi-deux d'indépendance",
-    "hypothèse d'indépendance",
+    "test du chi-carré d'indépendance",
+    "hypothèse nulle",
     "tableau de contingence",
-    "loi du chi-deux",
+    "loi du chi-carré",
     "risque de première espèce",
-    "zone de rejet",
-    "effectifs théoriques"
+    "effectifs théoriques",
+    "statistique de test"
   ],
   "methods": [
-    "calcul de la statistique du chi-deux",
+    "calcul de la statistique de test",
     "comparaison avec la zone de rejet",
-    "construction de tableaux d'effectifs adaptés"
+    "construction du tableau d'effectifs",
+    "calcul des effectifs théoriques"
   ],
   "objects": [
-    "tableau de contingence",
-    "statistique du chi-deux",
+    "tableau de contingence 2x3",
+    "variable catégorielle",
     "effectifs observés",
     "effectifs théoriques"
   ],
-  "content_hash": "39be148457e3d30eb3d075eb932d0ab1ef871772fc34b09c34f89def817c24ff",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:28:57.686Z"
+  "content_hash": "43044bed360f806507abc16e7da371d49a2454d722b9e7f706767c51ca771215",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:40.823Z"
 }

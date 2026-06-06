@@ -7,21 +7,22 @@
     "valeur propre",
     "polynôme caractéristique",
     "théorème spectral",
+    "semblance orthogonale",
     "matrice orthogonale",
-    "semblance orthogonale"
+    "diagonalisation"
   ],
   "methods": [
     "diagonalisation de matrices symétriques",
-    "utilisation du théorème spectral",
-    "comparaison des polynômes caractéristiques"
+    "comparaison de polynômes caractéristiques",
+    "utilisation de la transposition"
   ],
   "objects": [
     "matrice carrée réelle",
     "matrice symétrique",
     "matrice orthogonale",
-    "valeurs propres"
+    "polynôme caractéristique"
   ],
-  "content_hash": "505d4253b74158e374f8541eb7d553a9085d53725c8e69992e3ebe98cb918373",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:01:48.619Z"
+  "content_hash": "1a3dd35f389a24313d119c8e64e83bb2e75fc0b424a67c6d932740c87a8afd15",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:49.586Z"
 }

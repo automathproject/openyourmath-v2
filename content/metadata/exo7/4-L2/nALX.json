@@ -1,27 +1,32 @@
 {
   "uuid": "nALX",
   "source_path": "exo7/4-L2/nALX.tex",
-  "summary": "Comparer les polynômes caractéristiques de deux matrices rectangulaires AB et BA de formats différents. L'énoncé demande une analyse des propriétés algébriques de ces matrices.",
+  "summary": "L'exercice demande de comparer les polynômes caractéristiques des produits de matrices AB et BA, où A est une matrice p×q et B une matrice q×p. Il s'agit d'étendre un résultat connu pour les matrices carrées au cas rectangulaire.",
   "concepts": [
     "polynôme caractéristique",
     "matrice carrée",
     "matrice rectangulaire",
-    "complétion de matrice",
+    "théorème de Cayley-Hamilton",
+    "réduction d'endomorphisme",
     "calcul par blocs",
-    "théorème de Cayley-Hamilton"
+    "déterminant",
+    "polynôme annulateur"
   ],
   "methods": [
-    "complétion de matrice",
-    "calcul par blocs",
-    "comparaison de polynômes caractéristiques"
+    "complétion de matrices",
+    "calcul de polynôme caractéristique",
+    "comparaison de polynômes",
+    "manipulation algébrique"
   ],
   "objects": [
-    "matrice rectangulaire",
-    "polynôme caractéristique",
-    "matrices carrées",
-    "blocs de matrices"
+    "matrice A",
+    "matrice B",
+    "matrice A'",
+    "matrice B'",
+    "produit de matrices AB",
+    "produit de matrices BA"
   ],
-  "content_hash": "6ca38208e47faa8062a90e7707cf9e0c9f9e4945cd5f08d14fcfbe90051d2a9c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:12:06.189Z"
+  "content_hash": "3f529a723d589a834f710a3bdcdce1f4d78c359a24c9d439b229b1864dd2f099",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:28.744Z"
 }

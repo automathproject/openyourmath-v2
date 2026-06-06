@@ -1,19 +1,21 @@
 {
   "uuid": "hp54",
   "source_path": "exo7/14-L3/hp54.tex",
-  "summary": "L'exercice demande de démontrer que l'intégrale d'une fonction simple positive par rapport à une mesure est égale à la somme des valeurs pondérées par les mesures des ensembles correspondants. Il faut aussi construire une suite de fonctions simples positives croissantes qui converge vers une fonction mesurable positive donnée.",
+  "summary": "L'exercice demande de démontrer que l'intégrale d'une fonction simple positive par rapport à une mesure est égale à la somme des produits de ses valeurs par les mesures de leurs ensembles de définition. Il faut aussi construire une suite de fonctions simples croissantes convergeant vers une fonction mesurable positive donnée.",
   "concepts": [
     "fonction mesurable",
     "fonction simple",
     "intégrale de Lebesgue",
     "mesure",
-    "espace mesurable",
+    "tribu",
     "convergence simple",
-    "suite croissante"
+    "suite croissante",
+    "partition de l'espace mesurable"
   ],
   "methods": [
     "décomposition en indicateurs",
-    "construction explicite de suite",
+    "intégration par parties",
+    "construction explicite de suite de fonctions",
     "utilisation de la définition de l'intégrale de Lebesgue"
   ],
   "objects": [
@@ -23,7 +25,7 @@
     "suite de fonctions simples",
     "fonction mesurable positive"
   ],
-  "content_hash": "5868842cbbaf438d6fe107a511061b222ffddc43a90540641c2e550ed243802e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:25:32.080Z"
+  "content_hash": "72eaa58dbbd94b790b8bc47c4e5fb0b482abc0a4f30c52e117e39d34f7c796c0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:15:01.639Z"
 }

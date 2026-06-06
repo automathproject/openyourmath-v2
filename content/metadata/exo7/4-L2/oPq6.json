@@ -1,30 +1,32 @@
 {
   "uuid": "oPq6",
   "source_path": "exo7/4-L2/oPq6.tex",
-  "summary": "L'exercice demande de démontrer que l'existence d'une matrice A telle que A² = -Iₙ implique que la dimension n de l'espace vectoriel E est paire. Il explore ensuite les propriétés de l'endomorphisme f associé à cette matrice.",
+  "summary": "L'exercice demande de démontrer que la dimension d'un espace vectoriel réel est paire si cet espace admet un endomorphisme dont le carré est l'application identité négative. Pour un espace de dimension 4, il faut prouver l'indépendance linéaire de vecteurs spécifiques et construire une base à partir de ces vecteurs.",
   "concepts": [
-    "matrice carrée",
     "endomorphisme",
+    "matrice carrée",
     "déterminant",
     "sous-espace vectoriel",
-    "base d'un espace vectoriel",
     "stabilité par endomorphisme",
-    "indépendance linéaire"
+    "base d'un espace vectoriel",
+    "indépendance linéaire",
+    "polynôme annulateur"
   ],
   "methods": [
     "calcul de déterminant",
-    "manipulation de vecteurs",
-    "démonstration par l'absurde",
-    "construction de base"
+    "manipulation d'équations vectorielles",
+    "construction de base",
+    "preuve par contradiction",
+    "utilisation de la stabilité"
   ],
   "objects": [
-    "matrice A",
+    "espace vectoriel de dimension n",
     "endomorphisme f",
-    "vecteurs x₁ et x₂",
+    "matrice A",
     "sous-espace vectoriel F",
-    "base B"
+    "vecteurs x1, x2, f(x1), f(x2)"
   ],
-  "content_hash": "eae802e2d95f590eb2af2faca07f58ba0a8e22e96a5c1176a0cbe07238c25e1b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:14:39.634Z"
+  "content_hash": "ba0bbe1fbfaf516c2abb4ec35199c383e3314f73944f4dae093ee85a22c71bde",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:57.004Z"
 }

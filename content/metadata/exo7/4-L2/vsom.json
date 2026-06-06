@@ -1,7 +1,7 @@
 {
   "uuid": "vsom",
   "source_path": "exo7/4-L2/vsom.tex",
-  "summary": "L'exercice demande de montrer qu'une forme Q définie sur l'espace des polynômes réels est une forme quadratique, puis de déterminer sa signature en étudiant ses restrictions à des sous-espaces de polynômes pairs et impairs.",
+  "summary": "L'exercice demande de montrer qu'une forme quadratique Q définie sur l'espace vectoriel des polynômes réels est bien une forme quadratique, puis de déterminer sa signature en étudiant ses propriétés sur les sous-espaces de polynômes pairs et impairs.",
   "concepts": [
     "forme quadratique",
     "forme bilinéaire symétrique",
@@ -9,20 +9,22 @@
     "définie positive",
     "définie négative",
     "orthogonalité",
-    "signature d'une forme quadratique"
+    "signature d'une forme quadratique",
+    "théorème de croissances comparées"
   ],
   "methods": [
     "décomposition en polynômes pairs et impairs",
-    "étude de la restriction d'une forme quadratique",
-    "calcul de la signature"
+    "calcul de la signature",
+    "utilisation de la base adaptée",
+    "étude de la positivité/définie positive"
   ],
   "objects": [
-    "espace vectoriel de polynômes",
-    "forme quadratique",
-    "sous-espaces vectoriels pairs et impairs",
-    "base orthonormale"
+    "espace vectoriel de polynômes réels",
+    "forme quadratique Q",
+    "sous-espaces de polynômes pairs et impairs",
+    "forme bilinéaire symétrique B"
   ],
-  "content_hash": "5c01684b6a5c1242c8784ae1960eec30e3159f8548a5193bbf6bac1245a77eef",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:59:36.621Z"
+  "content_hash": "5b720701a717e907dc39c54a08f16931b8a28fed629d93d6537d6cd836f1c0d4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:41.202Z"
 }

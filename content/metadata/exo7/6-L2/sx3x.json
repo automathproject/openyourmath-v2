@@ -1,28 +1,30 @@
 {
   "uuid": "sx3x",
   "source_path": "exo7/6-L2/sx3x.tex",
-  "summary": "L'exercice demande de montrer qu'une courbe de degré inférieur ou égal à 2 admet une représentation paramétrique spécifique et réciproquement. Il étudie ensuite une courbe donnée par une telle paramétrisation.",
+  "summary": "L'exercice demande de montrer qu'une courbe de degré inférieur ou égal à 2 admet une représentation paramétrique rationnelle avec des polynômes de degré 2, et réciproquement. Il étudie ensuite une courbe spécifique donnée par une telle paramétrisation.",
   "concepts": [
     "courbe algébrique",
     "degré d'une courbe",
     "représentation paramétrique",
     "polynôme de degré 2",
+    "conique",
     "équation cartésienne",
-    "conique"
+    "dépendance linéaire",
+    "espace vectoriel de polynômes"
   ],
   "methods": [
-    "paramétrisation rationnelle",
     "élimination des paramètres",
-    "linéaire dépendance",
-    "construction de l'équation cartésienne"
+    "construction d'une équation cartésienne",
+    "analyse de dépendance linéaire",
+    "manipulation de polynômes"
   ],
   "objects": [
-    "courbe de degré 2",
+    "courbe paramétrée",
     "polynômes P, Q, R",
-    "équation cartésienne",
-    "paramétrisation rationnelle"
+    "équation cartésienne de degré 2",
+    "conique"
   ],
-  "content_hash": "a51eed623b23e7823836d7c2836a654729561957c74c99429c6e889ca44219a3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:09:48.499Z"
+  "content_hash": "f1503d1d07fa32a63748356540375b43438d97c568901c0d604172ad3fb06d8a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:46.252Z"
 }

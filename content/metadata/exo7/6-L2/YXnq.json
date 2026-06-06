@@ -1,27 +1,30 @@
 {
   "uuid": "YXnq",
   "source_path": "exo7/6-L2/YXnq.tex",
-  "summary": "L'exercice demande de déterminer la valeur réelle a pour laquelle deux droites données dans l'espace affine ℝ³ sont coplanaires, puis de trouver une équation du plan les contenant.",
+  "summary": "Déterminer la valeur réelle a pour que deux droites données dans ℝ³ affine soient coplanaires, puis trouver une équation du plan les contenant. Les droites sont définies par des systèmes d'équations linéaires.",
   "concepts": [
     "géométrie affine",
     "droites coplanaires",
     "plan contenant deux droites",
-    "colinéarité",
-    "déterminant"
+    "colinéarité de vecteurs directeurs",
+    "repère affine",
+    "déterminant pour équation de plan"
   ],
   "methods": [
     "paramétrisation de droites",
     "calcul de vecteurs directeurs",
+    "condition de coplanarité",
     "équation cartésienne de plan",
-    "condition de coplanarité"
+    "résolution d'équation linéaire"
   ],
   "objects": [
-    "droites affines dans ℝ³",
+    "droites dans ℝ³",
     "vecteurs directeurs",
     "point d'intersection",
-    "plan affine"
+    "plan affine",
+    "système d'équations linéaires"
   ],
-  "content_hash": "72165c795d9d3366d3b69f9a45728f086d5e6e0b1b9750658ad9a74c6c7b96e1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:58:07.172Z"
+  "content_hash": "be044f9474ae09b2f2d0f19bb24cd12d3ecbca492d028ee70596e2f25fa9681c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:18.317Z"
 }

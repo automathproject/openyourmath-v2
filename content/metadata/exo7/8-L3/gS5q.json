@@ -1,25 +1,27 @@
 {
   "uuid": "gS5q",
   "source_path": "exo7/8-L3/gS5q.tex",
-  "summary": "Soit G un groupe fini et H un sous-groupe distingué d'ordre n et d'indice m, avec m et n premiers entre eux. Montrer que H est l'unique sous-groupe de G d'ordre n.",
+  "summary": "Soit G un groupe fini avec H sous-groupe distingué d'ordre n et d'indice m premiers entre eux. Montrer que H est l'unique sous-groupe de G d'ordre n.",
   "concepts": [
     "sous-groupe distingué",
-    "ordre d'un groupe",
+    "ordre d'un sous-groupe",
     "indice d'un sous-groupe",
     "premiers entre eux",
-    "unicité d'un sous-groupe"
+    "théorème de Lagrange",
+    "relation de Bézout",
+    "inclusion de sous-groupes"
   ],
   "methods": [
-    "utilisation de l'identité de Bézout",
-    "inclusion de sous-groupes",
-    "comparaison des ordres"
+    "utilisation de la relation de Bézout",
+    "comparaison des ordres de sous-groupes",
+    "inclusion de sous-groupes"
   ],
   "objects": [
     "groupe fini",
     "sous-groupe distingué",
     "entiers premiers entre eux"
   ],
-  "content_hash": "bacbd774d202ef0c8c36f4065e96093d5391920343d29fe30a9a79dc10fc0ae2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:01:52.570Z"
+  "content_hash": "eb923df5cf447f2b374b380566712f9adcad5099780d915ae39c21c5b38f29a5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:04.815Z"
 }

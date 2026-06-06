@@ -1,26 +1,30 @@
 {
   "uuid": "b06M",
   "source_path": "exo7/6-L2/b06M.tex",
-  "summary": "L'exercice demande si, pour n points donnés dans le plan, il existe n autres points tels que chaque point initial soit le milieu du segment reliant deux points consécutifs de la seconde série, avec une condition cyclique.",
+  "summary": "L'exercice demande de déterminer s'il existe n points B₁, B₂, ..., Bₙ dans le plan tels que chaque point Aᵢ soit le milieu du segment [Bᵢ, B_{i+1}], avec B_{n+1} = B₁, pour n ≥ 2 points donnés A₁, A₂, ..., Aₙ.",
   "concepts": [
     "symétrie centrale",
-    "composition de transformations",
+    "composée de transformations",
     "translation",
     "point invariant",
-    "géométrie affine"
+    "géométrie affine",
+    "vecteur nul",
+    "identité"
   ],
   "methods": [
-    "analyse des transformations géométriques",
-    "composition de symétries centrales",
-    "étude des points fixes"
+    "composition de symétries",
+    "analyse de cas selon la parité de n",
+    "calcul de vecteur résultant",
+    "recherche de points fixes"
   ],
   "objects": [
     "points du plan",
     "symétries centrales",
-    "translations",
-    "vecteurs"
+    "translation",
+    "vecteur",
+    "composée de transformations"
   ],
-  "content_hash": "70b528280baf06c851dbc393276c9d21196da4ecd8fe08cc390ff4977acdb570",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:59:32.495Z"
+  "content_hash": "9fa7b69ba1d4c46b4d925cd25aa7865441efc197fb9804e3a791788ead4de328",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:23.396Z"
 }

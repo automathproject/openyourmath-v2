@@ -1,30 +1,30 @@
 {
   "uuid": "dpSR",
   "source_path": "exo7/2-L1/dpSR.tex",
-  "summary": "Montrer l'égalité entre l'intégrale moyenne d'une fonction intégrable et une limite de sommes de Riemann. En déduire trois limites de sommes spécifiques.",
+  "summary": "Montrer l'égalité entre l'intégrale de Riemann d'une fonction intégrable et la limite d'une somme de Riemann associée. En déduire trois limites de sommes impliquant des fonctions trigonométriques et logarithmiques.",
   "concepts": [
-    "intégrabilité au sens de Riemann",
+    "intégrale de Riemann",
     "somme de Riemann",
-    "limite de suites",
-    "intégrale définie",
+    "limite de suite",
+    "fonction intégrable",
     "subdivision d'un intervalle",
-    "inégalités de Darboux",
+    "inégalités de Riemann",
     "convergence des sommes de Riemann"
   ],
   "methods": [
-    "construction de subdivision presque régulière",
-    "calcul des sommes inférieures et supérieures",
+    "approximation par les sommes de Riemann",
+    "utilisation des inégalités de Riemann",
     "passage à la limite",
-    "application du théorème fondamental du calcul intégral"
+    "calcul de limites de suites"
   ],
   "objects": [
     "fonction intégrable",
     "somme de Riemann",
-    "subdivision d'intervalle",
-    "somme de termes trigonométriques",
-    "somme de termes logarithmiques"
+    "suite de points d'échantillonnage",
+    "subdivision régulière",
+    "intégrale définie"
   ],
-  "content_hash": "62b884f29a98f27d4a07f1f62d41442abe2a1a8b50045355988060168efb8458",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:42:55.542Z"
+  "content_hash": "e09f81e196d6309ee322fa9d68053bf56d7a83807ac514623bd8b2fea8bbc312",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:08.372Z"
 }

@@ -1,29 +1,28 @@
 {
   "uuid": "TcjC",
   "source_path": "exo7/5-L2/TcjC.tex",
-  "summary": "Calculer la dérivée d'une intégrale de Riemann dépendant d'un paramètre, puis en déduire la valeur d'une intégrale spécifique.",
+  "summary": "L'exercice demande de calculer la dérivée d'une fonction d'intégrale dépendant d'un paramètre, puis d'en déduire la valeur d'une intégrale spécifique. La fonction I_n(x) est définie comme une intégrale de Riemann sur [0, +∞[ d'une fonction dépendant de x.",
   "concepts": [
     "intégrale de Riemann dépendant d'un paramètre",
-    "théorème de Leibniz",
-    "dérivation sous le signe intégrale",
-    "fonction de classe C^1",
-    "intégrale impropre",
+    "théorème de dérivation sous le signe intégrale (Leibniz)",
     "continuité par morceaux",
-    "intégrabilité"
+    "intégrabilité",
+    "dérivée partielle",
+    "fonction de classe C^1"
   ],
   "methods": [
-    "dérivation partielle",
-    "application du théorème de Leibniz",
-    "calcul de primitive",
-    "récurrence sur les indices"
+    "dérivation sous le signe intégrale",
+    "calcul de dérivée partielle",
+    "intégration par parties",
+    "utilisation de la formule de dérivation"
   ],
   "objects": [
-    "intégrale paramétrique I_n(x)",
-    "fonction F_n(x,t)",
-    "dérivée partielle",
-    "intégrale impropre"
+    "fonction d'intégrale paramétrée I_n(x)",
+    "intégrale impropre",
+    "dérivée I_n'(x)",
+    "fonction F_n(x,t)"
   ],
-  "content_hash": "411fd6914e4767c36d2cd6dc4441f3d3d5c0d60a17262dc2e783f78a6a1d710f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:39:35.788Z"
+  "content_hash": "93e5e28377b26cd72442cf09e9ddbe0a603cd31a646214060579593ffeb5ba1e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:41.167Z"
 }

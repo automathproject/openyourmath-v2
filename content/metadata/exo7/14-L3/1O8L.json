@@ -1,28 +1,31 @@
 {
   "uuid": "1O8L",
   "source_path": "exo7/14-L3/1O8L.tex",
-  "summary": "L'exercice demande de démontrer qu'une application λ, définie comme l'intégrale d'une fonction mesurable positive f sur un ensemble mesurable E, constitue une mesure sur un espace mesuré (Ω, Σ, μ).",
+  "summary": "L'exercice demande de démontrer qu'une application λ, définie comme l'intégrale d'une fonction mesurable positive f sur un ensemble mesurable E, constitue une mesure sur un espace mesuré donné (Ω, Σ, μ).",
   "concepts": [
-    "espace mesuré",
-    "fonction mesurable",
     "mesure",
-    "σ-additivité",
+    "fonction mesurable",
     "intégrale de Lebesgue",
+    "σ-additivité",
     "fonction simple",
-    "supremum de fonctions"
+    "espace mesuré",
+    "tribu",
+    "convergence monotone"
   ],
   "methods": [
     "décomposition en fonctions simples",
-    "utilisation de la σ-additivité",
-    "intégration sur des ensembles mesurables"
+    "linéarité de l'intégrale",
+    "passage à la limite sous l'intégrale",
+    "vérification des propriétés de mesure"
   ],
   "objects": [
-    "espace mesuré (Ω, Σ, μ)",
+    "mesure λ",
     "fonction mesurable positive f",
-    "application λ",
-    "ensembles mesurables E"
+    "ensemble mesurable E",
+    "tribu Σ",
+    "espace mesuré (Ω, Σ, μ)"
   ],
-  "content_hash": "259073d985892dd6d3ee77ff4d116e0e385eb4409e4f020fd31355d7b9b3e3aa",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:24:35.628Z"
+  "content_hash": "50be7b9d9e177c1024e3789aef0bfee17d6cfc9e0c4adb1045f401c32a6f034e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:53.896Z"
 }

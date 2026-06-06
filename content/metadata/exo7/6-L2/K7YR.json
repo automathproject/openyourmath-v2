@@ -1,25 +1,26 @@
 {
   "uuid": "K7YR",
   "source_path": "exo7/6-L2/K7YR.tex",
-  "summary": "L'exercice demande de construire la médiatrice d'un segment donné à la règle et au compas, puis d'utiliser cette technique pour déterminer le centre d'un cercle dont on ne connaît pas le centre.",
+  "summary": "L'exercice demande de construire la médiatrice d'un segment donné à la règle et au compas, puis d'appliquer cette méthode pour déterminer le centre d'un cercle dont on ne connaît pas le centre.",
   "concepts": [
     "géométrie affine euclidienne",
     "médiatrice d'un segment",
     "construction géométrique",
-    "équidistance",
-    "cercle",
-    "centre d'un cercle"
+    "propriétés des cercles",
+    "équidistance"
   ],
   "methods": [
     "construction à la règle et au compas",
-    "utilisation de points équidistants"
+    "utilisation des propriétés de symétrie",
+    "construction de points équidistants"
   ],
   "objects": [
-    "segment",
+    "segment de droite",
     "médiatrice",
-    "cercle"
+    "cercle",
+    "points équidistants"
   ],
-  "content_hash": "48804df2b049212608a5e86d5e225fa14b0ab659ba08acb177bcdaf00d354e3a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:33:05.994Z"
+  "content_hash": "fdf1d1811fc90df818816fa3801363e9fce261623a477306fb2a8644534a4240",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:50.745Z"
 }

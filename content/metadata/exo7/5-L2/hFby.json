@@ -1,30 +1,28 @@
 {
   "uuid": "hFby",
   "source_path": "exo7/5-L2/hFby.tex",
-  "summary": "Montrer l'égalité entre une intégrale impropre de fonction trigonométrique et une série alternée pour tout réel x.",
+  "summary": "Montrer l'égalité entre une intégrale impropre de fonction trigonométrique et une série infinie de termes rationnels, pour tout réel x. L'intégrale implique une fonction cosinus divisée par le cosinus hyperbolique.",
   "concepts": [
     "intégrale impropre",
-    "série alternée",
     "convergence de série",
-    "fonction intégrable",
+    "critère des séries alternées",
     "développement en série",
-    "fonction cosinus",
-    "fonction hyperbolique"
+    "fonction cosinus hyperbolique",
+    "intégrabilité"
   ],
   "methods": [
-    "critère spécial aux séries alternées",
-    "intégration de fonction exponentielle complexe",
-    "développement en série de fonction",
-    "passage à la limite sous le signe intégral"
+    "développement en série entière",
+    "intégration terme à terme",
+    "passage à la limite sous le signe intégral",
+    "calcul d'intégrale de fonction exponentielle"
   ],
   "objects": [
     "intégrale impropre",
-    "série alternée",
+    "série infinie",
     "fonction cosinus",
-    "fonction hyperbolique",
-    "fonction exponentielle complexe"
+    "fonction cosinus hyperbolique"
   ],
-  "content_hash": "0246124e2ccc2e94bb6a19251d27f6708d2d24ec98876877fbc96dd9529257a2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:00:40.597Z"
+  "content_hash": "7c29fbb4bfc046bb1e58b621e572b547188f87c2eda938ca6ca145cafb60c2b8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:37.646Z"
 }

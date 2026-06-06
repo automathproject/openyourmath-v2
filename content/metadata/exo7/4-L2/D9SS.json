@@ -1,7 +1,7 @@
 {
   "uuid": "D9SS",
   "source_path": "exo7/4-L2/D9SS.tex",
-  "summary": "L'exercice demande de montrer que la matrice S = tAA est symétrique positive pour une matrice carrée réelle A, puis de prouver la réciproque et d'étudier les propriétés de A et S. Il explore aussi la notion de racine carrée d'une matrice symétrique positive.",
+  "summary": "L'exercice demande de démontrer des propriétés des matrices symétriques positives définies comme produit d'une matrice par sa transposée. Il aborde l'existence et l'unicité de telles matrices, leur relation avec l'inversibilité, leur rang, et la notion de racine carrée matricielle.",
   "concepts": [
     "matrice symétrique positive",
     "théorème spectral",
@@ -9,23 +9,23 @@
     "noyau d'une matrice",
     "théorème du rang",
     "matrice inversible",
-    "racine carrée matricielle"
+    "racine carrée d'une matrice"
   ],
   "methods": [
     "diagonalisation",
+    "décomposition spectrale",
+    "calcul de noyau",
     "utilisation de la norme euclidienne",
-    "analyse du noyau",
-    "calcul des valeurs propres",
-    "construction explicite de matrices"
+    "preuve par équivalence"
   ],
   "objects": [
     "matrice carrée réelle",
     "matrice symétrique positive",
-    "matrice inversible",
+    "matrice orthogonale",
     "matrice diagonale",
-    "matrice orthogonale"
+    "racine carrée matricielle"
   ],
-  "content_hash": "38b85d28bc78b102b1feaddcba323a9909dd8ab629596959658ffdfe6741f93b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:09:13.895Z"
+  "content_hash": "9e78621ff37643022a20fca7ba7f734fddf1251032c7ccc76cf937a05c72b30e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:03.731Z"
 }

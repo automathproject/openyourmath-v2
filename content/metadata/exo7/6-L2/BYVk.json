@@ -1,27 +1,30 @@
 {
   "uuid": "BYVk",
   "source_path": "exo7/6-L2/BYVk.tex",
-  "summary": "L'exercice demande de vérifier que deux droites données dans ℝ³ ne sont pas parallèles, puis de déterminer les valeurs de paramètres a et b pour que ces droites soient sécantes, et enfin de former une équation cartésienne du plan contenant ces deux droites.",
+  "summary": "Dans l'espace affine ℝ³, on donne deux droites (D) et (D') définies par des systèmes d'équations cartésiennes. L'exercice demande de vérifier qu'elles ne sont pas parallèles, puis de déterminer les valeurs de a et b pour lesquelles elles sont sécantes, et enfin d'établir une équation cartésienne du plan contenant ces deux droites.",
   "concepts": [
     "géométrie affine",
     "droites dans l'espace",
     "colinéarité de vecteurs",
     "plan contenant deux droites",
-    "équation cartésienne d'un plan"
+    "équation cartésienne d'un plan",
+    "sécance de droites"
   ],
   "methods": [
-    "paramétrisation de droites",
+    "paramétrisation de droite",
     "détermination de vecteurs directeurs",
-    "calcul de condition de sécance",
-    "construction d'équation de plan"
+    "calcul de condition de colinéarité",
+    "équation cartésienne de plan par déterminant",
+    "résolution de système linéaire"
   ],
   "objects": [
     "droites dans ℝ³",
     "vecteurs directeurs",
     "point d'intersection",
-    "plan"
+    "plan contenant deux droites",
+    "équation cartésienne"
   ],
-  "content_hash": "dfb989a6d5a9bb560c9f4109627aaea27109930b558bef204eaded648e03a095",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:40:41.324Z"
+  "content_hash": "eab9c7362899dc1ac56b16214a7183dbb42feddf8681355c38db3fb0710bdc0c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:51:38.994Z"
 }

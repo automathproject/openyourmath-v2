@@ -1,28 +1,29 @@
 {
   "uuid": "MzAb",
   "source_path": "amscc/MzAb.tex",
-  "summary": "L'exercice demande d'étudier l'ensemble de définition, la continuité et la différentiabilité d'une fonction de deux variables définie par une racine cinquième. La fonction est donnée par f(x,y) = (2x³ + y²)^(1/5).",
+  "summary": "L'exercice demande d'étudier l'ensemble de définition, la continuité et la différentiabilité d'une fonction de deux variables à valeurs réelles définie par une racine cinquième. La fonction est composée d'un polynôme et d'une fonction puissance fractionnaire.",
   "concepts": [
     "fonction de plusieurs variables",
     "continuité",
     "différentiabilité",
     "dérivées partielles",
     "théorème de différentiabilité",
-    "ensemble de définition"
+    "composée de fonctions continues",
+    "domaine de définition"
   ],
   "methods": [
-    "étude de la continuité",
+    "étude de la continuité par composition",
     "calcul des dérivées partielles",
-    "application du théorème de différentiabilité",
-    "analyse des limites"
+    "analyse des limites de taux d'accroissement",
+    "application du théorème de différentiabilité"
   ],
   "objects": [
-    "fonction f: ℝ² → ℝ",
-    "surface représentative",
-    "dérivées partielles",
+    "fonction de deux variables",
+    "racine cinquième",
+    "polynôme",
     "taux d'accroissement"
   ],
-  "content_hash": "b0d5a71554babf72ca8875519e9ded11d69b6c8063636fee00867bcf089e8a2a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:06:26.008Z"
+  "content_hash": "7bdba9c69cd5bd4193524a8172d9dfb2c3596c965e092a2b00246a8bf869bb1a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:50.584Z"
 }

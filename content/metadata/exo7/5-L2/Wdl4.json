@@ -1,28 +1,31 @@
 {
   "uuid": "Wdl4",
   "source_path": "exo7/5-L2/Wdl4.tex",
-  "summary": "Trouver une fonction de classe C² sur un intervalle I de ℝ à valeurs dans ℝ telle que la fonction g(x,y) = f(cos(2x)/ch(2y)) soit non constante et ait un laplacien nul sur un sous-ensemble maximal de ℝ².",
+  "summary": "Trouver une fonction de classe C² sur un intervalle I de ℝ à valeurs dans ℝ, telle que la fonction g(x,y) = f(cos(2x)/ch(2y)) soit non constante et ait un laplacien nul sur le plus grand sous-ensemble possible de ℝ². Une fonction de laplacien nul est dite harmonique.",
   "concepts": [
     "fonction harmonique",
     "laplacien",
     "dérivée partielle",
     "fonction de classe C²",
     "équation différentielle",
-    "fonction argument hyperbolique"
+    "fonction argument hyperbolique",
+    "fonction composée",
+    "continuité"
   ],
   "methods": [
     "calcul de dérivées partielles",
     "résolution d'équation différentielle",
     "simplification algébrique",
-    "analyse de domaine de définition"
+    "intégration"
   ],
   "objects": [
     "fonction de deux variables",
-    "laplacien",
+    "fonction réelle",
+    "intervalle de définition",
     "fonction argument hyperbolique",
-    "équation différentielle"
+    "fonction composée"
   ],
-  "content_hash": "dd1ad27cb7c8191e6d9074c0a8adf089ac728b3e46206a2a5c789c9549cfb8cc",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:05:55.378Z"
+  "content_hash": "07ee39381a14a772f1a7cfd7806174e9e3b4f09e48ccb68ef1b03f775bfea4ad",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:18.007Z"
 }

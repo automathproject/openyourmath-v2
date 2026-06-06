@@ -1,31 +1,32 @@
 {
   "uuid": "CzBz",
   "source_path": "exo7/16-L3/CzBz.tex",
-  "summary": "L'exercice demande de démontrer une identité de produit infini reliant une fonction trigonométrique à une série infinie de termes rationnels. Il explore les propriétés de fonctions méromorphes et entières en utilisant des outils d'analyse complexe.",
+  "summary": "L'exercice demande de démontrer l'égalité entre un produit infini de fonctions rationnelles et la fonction sinus divisée par son argument, en utilisant des propriétés de fonctions méromorphes et entières. Il explore également des décompositions en produits infinis de fonctions hyperboliques et trigonométriques.",
   "concepts": [
     "fonction méromorphe",
     "fonction entière",
     "produit infini",
-    "fonction trigonométrique",
     "développement en série",
-    "analyse complexe",
-    "identité trigonométrique"
+    "fonction sinus",
+    "fonction hyperbolique",
+    "décomposition en produit",
+    "théorème de Weierstrass"
   ],
   "methods": [
-    "développement en série de Fourier",
-    "calcul de résidus",
-    "argument de parité",
-    "dérivation logarithmique",
-    "analyse asymptotique"
+    "analyse de singularités",
+    "calcul de dérivée logarithmique",
+    "utilisation de la parité",
+    "comparaison de séries",
+    "développement en produit infini"
   ],
   "objects": [
-    "fonction $F(z)$",
-    "produit infini",
-    "fonction $\\sin(\\pi z)$",
-    "fonction $\\tan(\\pi z)$",
-    "fonction $f_n(z)$"
+    "produit infini de fonctions rationnelles",
+    "fonction sinus",
+    "fonction hyperbolique",
+    "série de Laurent",
+    "fonction méromorphe"
   ],
-  "content_hash": "afa6dffa02402467bdbd7bb5f51bd17bdaba643eae76367afcb78b4e50e2aace",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:15:58.393Z"
+  "content_hash": "46bd783394531877e412ab4b850b91ab10c1fa057774a30a4d6eeaab3586ad4d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:34:53.142Z"
 }

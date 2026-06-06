@@ -1,29 +1,31 @@
 {
   "uuid": "w4A4",
   "source_path": "exo7/5-L2/w4A4.tex",
-  "summary": "L'exercice demande d'étudier la fonction f(x) définie par une série infinie de termes alternés. On cherche d'abord son domaine de définition, puis on analyse sa continuité, ses limites et sa dérivabilité sur l'intervalle ]1, +∞[.",
+  "summary": "L'exercice demande d'étudier la fonction définie par une série infinie de termes alternés en 1/ln(nx). On étudie son domaine de définition, sa continuité, ses limites en 1 et +∞, puis sa dérivabilité et son tableau de variations sur ]1,+∞[.",
   "concepts": [
-    "série numérique",
     "série de fonctions",
     "convergence uniforme",
     "continuité uniforme",
-    "théorème de dérivation terme à terme",
+    "théorème d'interversion des limites",
+    "dérivation terme à terme",
     "critère spécial aux séries alternées",
-    "limite de fonction"
+    "limite de fonctions"
   ],
   "methods": [
-    "majoration de reste",
-    "interversion de limites",
-    "dérivation terme à terme",
-    "étude de signe de série alternée"
+    "majoration de reste de série alternée",
+    "étude de la convergence uniforme",
+    "application du théorème de dérivation terme à terme",
+    "calcul de limite de fonction",
+    "analyse de la monotonie"
   ],
   "objects": [
-    "fonction définie par série",
-    "série alternée",
+    "série de fonctions",
+    "fonction définie par une série",
     "domaine de définition",
-    "fonction dérivée"
+    "limite de fonction",
+    "dérivée de fonction"
   ],
-  "content_hash": "477c298aa3c43d20bcc46b0f2487f81b0d8f8bdc42dd704b5997589d763e9cda",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:05:30.524Z"
+  "content_hash": "424ef4b5ba35edd849a0fa0b924bca3f8acd510a0d2be0303272c5fdf48c14ea",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:57.061Z"
 }

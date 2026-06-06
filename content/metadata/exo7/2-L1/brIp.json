@@ -1,29 +1,30 @@
 {
   "uuid": "brIp",
   "source_path": "exo7/2-L1/brIp.tex",
-  "summary": "L'exercice demande de démontrer que la borne supérieure d'une fonction continue sur un intervalle ouvert est égale à celle sur l'intervalle fermé correspondant. Il illustre ensuite par un contre-exemple où la continuité est absente.",
+  "summary": "L'exercice demande de démontrer que la borne supérieure d'une fonction continue sur un intervalle ouvert est égale à celle sur l'intervalle fermé correspondant. Il illustre ensuite la nécessité de la continuité à travers un contre-exemple.",
   "concepts": [
     "continuité",
     "borne supérieure",
-    "intervalle fermé",
-    "intervalle ouvert",
+    "intervalle fermé borné",
     "théorème des bornes atteintes",
     "limite de suite",
-    "continuité en un point"
+    "convergence",
+    "fonction bornée"
   ],
   "methods": [
-    "raisonnement par cas",
-    "étude de suite convergente",
-    "utilisation de la définition de la continuité",
-    "comparaison de bornes supérieures"
+    "raisonnement par suite",
+    "utilisation de la continuité",
+    "comparaison de bornes supérieures",
+    "analyse par cas"
   ],
   "objects": [
     "fonction continue",
-    "intervalle borné",
-    "suite de réels",
-    "borne supérieure"
+    "intervalle fermé borné",
+    "borne supérieure",
+    "suite convergente",
+    "fonction discontinue"
   ],
-  "content_hash": "69fda98ccb8f9cda5f4fbaba4733dd2fd9a03352aa8984b2841abd6e61020b8f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:20:57.496Z"
+  "content_hash": "253c2616406790668f548513e58c20284e6e10ae4d826e5e76366ccd9e2a3718",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:05.901Z"
 }

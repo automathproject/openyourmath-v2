@@ -1,25 +1,28 @@
 {
   "uuid": "Ugfe",
   "source_path": "exo7/1-L1/Ugfe.tex",
-  "summary": "L'exercice demande de déterminer le rang d'une matrice carrée d'ordre n dont les coefficients sont donnés par la formule i + j + ij. L'énoncé ne fournit pas de contexte concret.",
+  "summary": "L'exercice demande de déterminer le rang d'une matrice carrée de taille n×n dont les coefficients sont donnés par la formule i+j+ij pour 1 ≤ i,j ≤ n. L'analyse porte sur la structure des colonnes de la matrice et leur dépendance linéaire.",
   "concepts": [
     "rang d'une matrice",
     "colinéarité",
+    "espace vectoriel engendré",
+    "déterminant",
     "sous-espace vectoriel",
-    "combinaison linéaire",
-    "déterminant"
+    "combinaison linéaire"
   ],
   "methods": [
-    "décomposition en vecteurs",
+    "décomposition des colonnes",
     "calcul de déterminant",
-    "analyse de colinéarité"
+    "analyse de dépendance linéaire",
+    "comparaison de vecteurs"
   ],
   "objects": [
     "matrice carrée",
     "colonnes de matrice",
-    "vecteurs"
+    "vecteurs U et V",
+    "déterminant 2x2"
   ],
-  "content_hash": "34a67134e2598e6530953573cb16c651729a7b69090fdbde84cee2885413983e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:01:29.187Z"
+  "content_hash": "a38e0b0a2ffe5e780a92499fd2dc29cabd40cbfed0a7a484939ed91861750394",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:41.487Z"
 }

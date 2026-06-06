@@ -1,30 +1,30 @@
 {
   "uuid": "i1gN",
   "source_path": "exo7/7-L2/i1gN.tex",
-  "summary": "Calculer la probabilité qu'un couple n'ait aucun animal domestique, puis déterminer la loi de probabilité du nombre total d'animaux, son espérance et son écart-type. Établir la loi conjointe de deux variables aléatoires discrètes et vérifier leur indépendance.",
+  "summary": "Calculer la probabilité qu'un couple n'ait aucun animal, puis déterminer la loi de probabilité du nombre total d'animaux Z, son espérance et son écart-type. Établir la loi jointe de (X,Y) et vérifier l'indépendance des variables aléatoires X et Y.",
   "concepts": [
     "probabilité conditionnelle",
     "probabilité conjointe",
-    "espérance d'une variable aléatoire",
-    "variance d'une variable aléatoire",
-    "loi de probabilité conjointe",
+    "loi de probabilité discrète",
+    "espérance mathématique",
+    "variance",
     "indépendance de variables aléatoires"
   ],
   "methods": [
     "calcul de probabilité conjointe",
     "calcul d'espérance",
     "calcul de variance",
-    "construction de tableau de probabilités conjointes",
-    "test d'indépendance"
+    "construction de tableau de probabilités jointes",
+    "vérification d'indépendance"
   ],
   "objects": [
     "variable aléatoire discrète",
-    "probabilité conditionnelle",
+    "loi de probabilité",
+    "tableau de contingence",
     "espérance",
-    "écart-type",
-    "loi de probabilité conjointe"
+    "écart-type"
   ],
-  "content_hash": "ed341bcde2186e91a8744a538982223fc29b6104412e4286c972c537a34e3edc",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:36:45.199Z"
+  "content_hash": "41dd68fc312d25b7da40e4d276546fdf461f2e0316777ef5a1b64cb892cc413b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:41.850Z"
 }

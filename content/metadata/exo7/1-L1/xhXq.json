@@ -1,26 +1,29 @@
 {
   "uuid": "xhXq",
   "source_path": "exo7/1-L1/xhXq.tex",
-  "summary": "Calculer les racines carrées du nombre complexe 1+i par deux méthodes différentes et en déduire les valeurs exactes de cos(π/8) et sin(π/8).",
+  "summary": "L'exercice demande de calculer les racines carrées du nombre complexe 1+i par deux méthodes différentes (forme polaire et forme cartésienne) et d'en déduire les valeurs exactes des fonctions trigonométriques cos(π/8) et sin(π/8).",
   "concepts": [
     "nombre complexe",
-    "forme exponentielle",
+    "forme polaire",
     "forme cartésienne",
-    "racine carrée d'un complexe",
-    "identification des parties réelles et imaginaires"
+    "racine carrée dans les complexes",
+    "identité trigonométrique",
+    "module d'un complexe",
+    "argument d'un complexe"
   ],
   "methods": [
-    "passage en forme exponentielle",
+    "développement en forme polaire",
     "résolution d'un système d'équations",
-    "identification des parties réelles et imaginaires"
+    "identification des parties réelles et imaginaires",
+    "utilisation des propriétés des exponentielles complexes"
   ],
   "objects": [
     "nombre complexe 1+i",
-    "racines carrées d'un complexe",
-    "cos(π/8)",
-    "sin(π/8)"
+    "racines carrées complexes",
+    "fonctions cosinus et sinus",
+    "angle π/8"
   ],
-  "content_hash": "c447d17b34f561785632951c51323d5eb3f5c3466621a4087c8ca8ff2449a3b2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:07:24.161Z"
+  "content_hash": "caed9323de61f27a6b27fb1c7d52f70cd92f5a52873c903bff8821cf831f9721",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:23.563Z"
 }

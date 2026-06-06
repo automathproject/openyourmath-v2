@@ -1,19 +1,33 @@
 {
   "uuid": "7K8k",
   "source_path": "exo7/2-L1/7K8k.tex",
-  "summary": "Étude de la limite de plusieurs expressions impliquant des fonctions trigonométriques, exponentielles et logarithmiques, avec des formes indéterminées du type 0/0, ∞/∞, 0×∞, etc. Utilisation de développements limités et de changements de variables pour résoudre ces limites.",
+  "summary": "Étude de la limite de diverses fonctions en des points critiques, incluant des formes indéterminées et des expressions exponentielles ou trigonométriques.",
   "concepts": [
-    "Limites de fonctions",
-    "Formes indéterminées",
-    "Développements limités",
-    "Changement de variable",
-    "Fonctions trigonométriques",
-    "Fonctions exponentielles",
-    "Fonctions logarithmiques"
+    "développement limité",
+    "forme indéterminée",
+    "limite de suite",
+    "limite de fonction",
+    "équivalents asymptotiques",
+    "croissance comparée",
+    "fonctions trigonométriques",
+    "fonctions exponentielles"
   ],
-  "methods": [],
-  "objects": [],
-  "content_hash": "4e1231d4c91c41d9d4b5c52ca5340854a49558347d7d2da54abc5d12cb844067",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:49:54.804Z"
+  "methods": [
+    "développement limité",
+    "standardisation",
+    "approximation affine",
+    "changement de variable",
+    "linéarisation",
+    "comparaison de termes dominants"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "suite numérique",
+    "limite de fonction",
+    "forme indéterminée"
+  ],
+  "content_hash": "ecd30cbe2a48dbaa685ad8506cda6b81bf7cdb0f3b852c3e8d1c486220ff176a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:43.680Z"
 }

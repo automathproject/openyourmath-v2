@@ -1,19 +1,19 @@
 {
   "uuid": "v7iD",
   "source_path": "exo7/6-L2/v7iD.tex",
-  "summary": "Trouver les équations cartésiennes d'une droite (Δ) parallèle à une droite (D) donnée et sécante à deux autres droites (D₁) et (D₂) dans l'espace.",
+  "summary": "Trouver les équations cartésiennes d'une droite (Δ) dans l'espace, parallèle à une droite donnée (D) et sécante à deux autres droites (D₁) et (D₂).",
   "concepts": [
     "géométrie affine",
     "droites parallèles",
-    "sécance de droites",
-    "équations paramétriques",
-    "équations cartésiennes",
-    "vecteur directeur"
+    "systèmes d'équations paramétriques",
+    "systèmes d'équations cartésiennes",
+    "vecteur directeur",
+    "intersection de droites"
   ],
   "methods": [
-    "détermination de vecteur directeur",
     "paramétrisation de droite",
-    "résolution de système d'équations"
+    "résolution de systèmes d'équations",
+    "calcul de conditions d'intersection"
   ],
   "objects": [
     "droites dans l'espace",
@@ -21,7 +21,7 @@
     "équations paramétriques",
     "équations cartésiennes"
   ],
-  "content_hash": "b66c599d821b408968a673907fda42ce581ca5bfc24e283df187a43de16b165f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:14:25.855Z"
+  "content_hash": "c34093e0bcddf571cdc541b8749e918228f73eeca71965247ab7059306185081",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:46.781Z"
 }

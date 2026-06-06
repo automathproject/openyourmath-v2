@@ -1,36 +1,36 @@
 {
   "uuid": "PNI6",
   "source_path": "exo7/4-L2/PNI6.tex",
-  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3, de déterminer ses sous-espaces propres et caractéristiques, de trouver une base de réduction et une matrice de passage pour une forme triangulaire, d'écrire la décomposition de Dunford, et de résoudre des systèmes différentiels associés.",
+  "summary": "L'exercice demande de factoriser le polynôme caractéristique d'une matrice 3x3, de déterminer ses sous-espaces propres et caractéristiques, de trouver une base de réduction et une matrice de passage pour une matrice triangulaire, d'écrire la décomposition de Dunford d'une matrice, de calculer son exponentielle et de résoudre des systèmes différentiels linéaires associés.",
   "concepts": [
     "polynôme caractéristique",
     "valeur propre",
     "sous-espace propre",
     "sous-espace caractéristique",
     "théorème de Hamilton-Cayley",
-    "décomposition de Dunford",
     "matrice triangulaire",
-    "nilpotence",
+    "décomposition de Dunford",
+    "exponentielle de matrice",
     "système différentiel linéaire"
   ],
   "methods": [
-    "calcul du déterminant",
+    "calcul de déterminant",
     "factorisation de polynôme",
     "recherche de vecteurs propres",
     "construction de base de réduction",
-    "exponentielle de matrice",
+    "décomposition en partie diagonale et nilpotente",
+    "calcul de l'exponentielle matricielle",
     "résolution de système différentiel"
   ],
   "objects": [
     "matrice 3x3",
-    "polynôme caractéristique",
-    "sous-espaces propres",
-    "sous-espaces caractéristiques",
-    "matrice triangulaire",
-    "matrice exponentielle",
-    "système différentiel"
+    "polynôme annulateur",
+    "sous-espace vectoriel",
+    "matrice triangulaire supérieure",
+    "matrice nilpotente",
+    "système différentiel linéaire"
   ],
-  "content_hash": "a0f1d3a693c7f0e55e5b7fd4aeb113e568a12876c192a2987ddcad09e2f7e79c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:41:21.054Z"
+  "content_hash": "d04ea034ce704c7481934c5d81c3037361bda7176a148fb39761c8dcb71ee107",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:43.258Z"
 }

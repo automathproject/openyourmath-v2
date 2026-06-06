@@ -1,28 +1,37 @@
 {
   "uuid": "6VKd",
   "source_path": "exo7/2-L1/6VKd.tex",
-  "summary": "Calculer des primitives de fonctions variées, incluant des fonctions trigonométriques, hyperboliques, et des expressions algébriques avec radicaux.",
+  "summary": "Calculer les primitives de onze fonctions différentes, incluant des fonctions trigonométriques, hyperboliques, algébriques et radicales.",
   "concepts": [
     "primitive d'une fonction",
-    "fonction trigonométrique",
-    "fonction hyperbolique",
-    "intégration de radicaux",
-    "changement de variable",
-    "intégration par parties"
+    "intégration",
+    "fonctions trigonométriques",
+    "fonctions hyperboliques",
+    "fonctions algébriques",
+    "fonctions radicales",
+    "changement de variable"
   ],
   "methods": [
     "intégration par parties",
     "changement de variable",
-    "simplification algébrique",
-    "intégration de fonctions rationnelles"
+    "décomposition en fractions partielles",
+    "substitution trigonométrique",
+    "simplification algébrique"
   ],
   "objects": [
-    "fonction trigonométrique",
-    "fonction hyperbolique",
-    "expression algébrique avec radicaux",
-    "fonction rationnelle"
+    "fonction tan(t)",
+    "fonction arg sinh(t)",
+    "fonction tan³(t)/cos⁶(t)",
+    "fonction 1/(√t + ³√t)",
+    "fonction 1/(2√t + √(t+2))",
+    "fonction t√[n](1+t)",
+    "fonction cosh³(t)",
+    "fonction t³/(a²-t²)³/²",
+    "fonction √[3](1+√[4]t)/√t",
+    "fonction √(t√(t√t))",
+    "fonction (1/t²)√[4]((t+1)/(t-1))"
   ],
-  "content_hash": "67bf569337e6e34cde6cf3a66a165a4e7a5e5a6cac869e23f0163d83f996d27b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:29:18.055Z"
+  "content_hash": "d7055ab7ffe3a846ae0d7cb91ff26a75aec14b3f343f3d500e4a8130f53d11bd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:36.201Z"
 }

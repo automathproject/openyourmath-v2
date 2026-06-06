@@ -1,7 +1,7 @@
 {
   "uuid": "UhhP",
   "source_path": "exo7/4-L2/UhhP.tex",
-  "summary": "Montrer l'existence et l'unicité d'une décomposition d'un endomorphisme en une partie diagonalisable et une partie nilpotente, sous l'hypothèse que son polynôme caractéristique est scindé.",
+  "summary": "Soit un espace vectoriel de dimension finie et un endomorphisme dont le polynôme caractéristique est scindé. Montrer l'existence et l'unicité d'une décomposition de cet endomorphisme en une somme d'un endomorphisme diagonalisable et d'un endomorphisme nilpotent qui commutent.",
   "concepts": [
     "polynôme caractéristique",
     "valeur propre",
@@ -9,21 +9,24 @@
     "théorème de décomposition des noyaux",
     "endomorphisme diagonalisable",
     "endomorphisme nilpotent",
-    "décomposition additive"
+    "polynôme annulateur",
+    "commutativité d'endomorphismes"
   ],
   "methods": [
     "décomposition en sous-espaces caractéristiques",
-    "construction de la partie diagonalisable",
-    "construction de la partie nilpotente",
-    "preuve d'unicité par commutation"
+    "construction par restriction",
+    "utilisation de la nilpotence",
+    "preuve d'unicité par commutativité"
   ],
   "objects": [
+    "espace vectoriel de dimension finie",
     "endomorphisme",
-    "polynôme annulateur",
-    "sous-espace vectoriel",
-    "homothétie"
+    "polynôme caractéristique",
+    "sous-espace caractéristique",
+    "endomorphisme diagonalisable",
+    "endomorphisme nilpotent"
   ],
-  "content_hash": "b970e66b992ad7f21ba3b0259aa39df848a4201f5491d64d75b290608a914c94",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:48:35.696Z"
+  "content_hash": "e12b163540d96c3f931533dca03950c70a3c68d60d292831d9156fdb3d19c0e6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:01.309Z"
 }

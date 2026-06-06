@@ -1,26 +1,26 @@
 {
   "uuid": "IBcz",
   "source_path": "exo7/4-L2/IBcz.tex",
-  "summary": "On définit une suite à partir d'intégrales de puissances d'une fonction continue strictement positive. On doit montrer que cette suite est définie et croissante.",
+  "summary": "On considère une fonction continue et strictement positive sur [0,1]. Pour chaque entier naturel n, on définit I_n comme l'intégrale de f^n sur [0,1]. L'exercice demande de montrer que la suite u_n = I_{n+1}/I_n est définie et croissante.",
   "concepts": [
     "inégalité de Cauchy-Schwarz",
     "produit scalaire",
     "fonction continue",
     "fonction strictement positive",
-    "intégrale sur un intervalle",
+    "intégrale sur un segment",
     "suite numérique"
   ],
   "methods": [
     "application de l'inégalité de Cauchy-Schwarz",
     "comparaison d'intégrales",
-    "analyse de la positivité"
+    "utilisation de la positivité de la fonction"
   ],
   "objects": [
-    "fonction continue strictement positive",
-    "suite définie par intégrales",
-    "intégrales de puissances de fonction"
+    "fonction continue",
+    "suite numérique",
+    "intégrale de fonction puissance"
   ],
-  "content_hash": "785b88e1e57163e22ef9a6fee7e7b4129cf4be21b8b2ed31fd4721d4dce42fb1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:13:46.879Z"
+  "content_hash": "a23fadf95297a61f3e4e0120188609c468bb64fe1d56862b64b1b8b42e84ea03",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:06.196Z"
 }

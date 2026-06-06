@@ -1,7 +1,7 @@
 {
   "uuid": "Gu7D",
   "source_path": "exo7/4-L2/Gu7D.tex",
-  "summary": "L'exercice demande d'étudier la parité du polynôme caractéristique d'une matrice antisymétrique réelle, en fonction de la dimension de la matrice.",
+  "summary": "Étudier la parité du polynôme caractéristique d'une matrice antisymétrique réelle, en fonction de la dimension de la matrice.",
   "concepts": [
     "matrice antisymétrique",
     "polynôme caractéristique",
@@ -13,14 +13,14 @@
   "methods": [
     "calcul de déterminant",
     "transposition de matrice",
-    "propriétés des matrices antisymétriques"
+    "propriétés des polynômes caractéristiques"
   ],
   "objects": [
-    "matrice réelle",
+    "matrice carrée réelle",
     "polynôme caractéristique",
-    "dimension de matrice"
+    "déterminant d'une matrice"
   ],
-  "content_hash": "d7f5b963911cfeccc5df064a2dce28ab2d01542432fa8a473ba3ec0ef25865e3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:30:41.460Z"
+  "content_hash": "a291cfc7d2d9a64c76f9ec38985993f317cfd16e17b35cf96caa8e4274ca21b8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:09.462Z"
 }

@@ -1,28 +1,29 @@
 {
   "uuid": "ffCu",
   "source_path": "exo7/5-L2/ffCu.tex",
-  "summary": "L'exercice demande de développer une fonction F(x) en série entière par deux méthodes différentes et de montrer une identité combinatoire impliquant des factoriels et des puissances de 2.",
+  "summary": "L'exercice demande de développer la fonction F(x) = e^{-x^2} ∫₀ˣ e^{t²} dt en série entière par deux méthodes différentes (produit de Cauchy et équation différentielle) et d'en déduire une identité combinatoire sur les coefficients binomiaux et factoriels.",
   "concepts": [
     "séries entières",
-    "fonction impaire",
-    "équation différentielle linéaire",
     "produit de Cauchy",
-    "unicité des coefficients d'une série entière",
-    "développement en série entière"
+    "équation différentielle linéaire",
+    "développement en série entière",
+    "fonction impaire",
+    "unicité des coefficients",
+    "récurrence sur les coefficients"
   ],
   "methods": [
     "développement en série entière",
     "résolution d'équation différentielle",
-    "calcul des coefficients de série",
-    "produit de Cauchy de séries"
+    "calcul de coefficients par produit de séries",
+    "récurrence sur les coefficients"
   ],
   "objects": [
     "fonction F(x)",
-    "coefficients de série entière",
-    "équation différentielle",
-    "séries formelles"
+    "séries entières",
+    "coefficients de développement",
+    "équation différentielle du premier ordre"
   ],
-  "content_hash": "00a8ff206978fc464a898460e91fb86304bb8e7aee80830f5195277a670f67ae",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:49:12.486Z"
+  "content_hash": "f60b5995da340486d5fd5e9566024467d01907511fe9c13f4df2b74bf24fc7c5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:08.096Z"
 }

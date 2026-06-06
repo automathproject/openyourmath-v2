@@ -1,29 +1,30 @@
 {
   "uuid": "dudh",
   "source_path": "exo7/4-L2/dudh.tex",
-  "summary": "L'exercice demande de déterminer le nombre de chiffres d'un entier non nul en base 10 en fonction de n, puis d'étudier les propriétés de la suite formée par le rapport des sommes des chiffres de n+1 et n. On doit montrer que cette suite est bornée, étudier sa convergence, et établir des inégalités sur la somme des chiffres.",
+  "summary": "L'exercice demande de déterminer le nombre de chiffres d'un entier naturel non nul en base 10, puis d'étudier les propriétés de la somme de ses chiffres. Il aborde la bornitude et la convergence de suites associées à cette somme.",
   "concepts": [
-    "représentation en base 10",
     "fonction partie entière",
     "logarithme",
-    "suite numérique",
-    "convergence",
-    "bornes supérieures et inférieures"
+    "somme des chiffres",
+    "suite bornée",
+    "convergence de suites",
+    "inégalités"
   ],
   "methods": [
     "décomposition en base 10",
-    "calcul de la partie entière",
-    "encadrement par des logarithmes",
+    "encadrement",
     "étude de suites extraites",
-    "comparaison de limites"
+    "limite de suites",
+    "calcul de logarithme"
   ],
   "objects": [
-    "entier naturel non nul",
+    "entier naturel",
+    "suite numérique",
     "somme des chiffres",
-    "suite de rapports",
-    "racine n-ième"
+    "nombre de chiffres",
+    "fonction logarithme"
   ],
-  "content_hash": "5fecf73ebea7e4a69661db3f9c39e8892c7160297391509c368eb8a6a257c744",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:40:49.817Z"
+  "content_hash": "0c5057a4f655df9ae5740d4ef47f104b52341c4f5508f8e4b97466ce7ec4db20",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:34:21.850Z"
 }

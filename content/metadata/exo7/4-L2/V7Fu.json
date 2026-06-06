@@ -1,7 +1,7 @@
 {
   "uuid": "V7Fu",
   "source_path": "exo7/4-L2/V7Fu.tex",
-  "summary": "L'exercice demande de montrer que l'ensemble des suites réelles de carrés sommables forme un espace vectoriel réel et que l'application définie par le produit scalaire usuel est bien un produit scalaire sur cet espace.",
+  "summary": "L'exercice demande de montrer que l'ensemble des suites réelles de carrés sommables forme un espace vectoriel réel et que l'application définie par la somme infinie des produits terme à terme de deux suites est un produit scalaire.",
   "concepts": [
     "espace vectoriel",
     "sous-espace vectoriel",
@@ -12,18 +12,19 @@
     "positivité définie"
   ],
   "methods": [
-    "vérification des propriétés d'espace vectoriel",
+    "vérification des axiomes d'espace vectoriel",
     "utilisation de l'inégalité de Cauchy-Schwarz",
-    "démonstration de la convergence absolue",
-    "vérification des propriétés de produit scalaire"
+    "démonstration de la convergence d'une série",
+    "vérification des propriétés d'un produit scalaire"
   ],
   "objects": [
     "suite réelle",
     "espace vectoriel",
     "produit scalaire",
+    "sous-espace vectoriel",
     "forme bilinéaire"
   ],
-  "content_hash": "8d59984a41043d9a542aa639bd392ddd64f222b9bc9a08a49554b140d5f84434",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:29:31.009Z"
+  "content_hash": "5ccbd3504cfc865c577cc817d5704426d9851c392fa8fb3dd2bee076d7a5afa8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:32.252Z"
 }

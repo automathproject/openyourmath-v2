@@ -1,27 +1,29 @@
 {
   "uuid": "v5Gx",
   "source_path": "exo7/4-L2/v5Gx.tex",
-  "summary": "Calculer le déterminant d'une matrice de Vandermonde définie par des puissances de nombres complexes. L'exercice demande d'exprimer ce déterminant comme un produit de différences de ces nombres.",
+  "summary": "Calculer le déterminant d'une matrice de Vandermonde de taille n×n, dont les coefficients sont les puissances successives de n nombres complexes. L'exercice demande d'exprimer ce déterminant comme un produit de différences de ces nombres.",
   "concepts": [
     "déterminant",
     "matrice de Vandermonde",
     "polynôme unitaire",
-    "récurrence",
-    "combinaison linéaire",
-    "propriété de déterminant"
+    "relation de récurrence",
+    "combinaison linéaire de lignes",
+    "développement par une ligne",
+    "induction mathématique"
   ],
   "methods": [
-    "réduction de ligne",
-    "développement suivant une ligne",
-    "récurrence forte",
-    "choix de polynôme"
+    "opérations élémentaires sur les lignes",
+    "développement d'un déterminant",
+    "récurrence",
+    "choix stratégique de polynôme"
   ],
   "objects": [
-    "matrice carrée",
+    "matrice de Vandermonde",
     "polynôme de degré n",
-    "déterminant de Vandermonde"
+    "déterminant de taille n×n",
+    "suite de nombres complexes"
   ],
-  "content_hash": "27bd6fd168f974bc16929694118759b64b7e9f17a5af7554a541be22fd0dc8c1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:18:57.769Z"
+  "content_hash": "585638d16035e0f7943fac539e345fbc02139e7ae7efe000f1c01016c59c48d1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:32.492Z"
 }

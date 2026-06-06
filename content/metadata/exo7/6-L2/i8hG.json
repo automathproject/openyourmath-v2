@@ -1,29 +1,31 @@
 {
   "uuid": "i8hG",
   "source_path": "exo7/6-L2/i8hG.tex",
-  "summary": "L'exercice demande de montrer qu'une courbe paramétrée admet un unique point singulier et de tracer son allure au voisinage de ce point. La courbe est définie par deux fonctions paramétriques x(t) et y(t).",
+  "summary": "L'exercice demande de montrer qu'une courbe paramétrée admet un unique point singulier et d'en tracer l'allure au voisinage de ce point. La courbe est définie par deux fonctions paramétriques en t.",
   "concepts": [
-    "courbe paramétrée",
     "point singulier",
     "développement limité",
-    "tangente en un point",
-    "point de rebroussement",
+    "tangente à une courbe paramétrée",
+    "rebroussement de première espèce",
     "classe C^1",
-    "vecteur dérivé"
+    "système d'équations",
+    "continuité différentielle"
   ],
   "methods": [
     "calcul de dérivées",
     "résolution de système d'équations",
     "développement limité d'ordre 3",
-    "analyse de la tangente"
+    "analyse de la tangente",
+    "changement de variable (t=2+h)"
   ],
   "objects": [
     "courbe paramétrée",
-    "point singulier",
+    "point M(t)",
+    "vecteur dérivé",
     "développement limité vectoriel",
     "tangente"
   ],
-  "content_hash": "ff0eec7bfb7c46bf1163b45f377fff4747147911407115c3cacd418150396bf2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:01:35.045Z"
+  "content_hash": "2111ed99e12c76522aa33ef40ce75c7554fc2e7b7f1c17428a2eb1d945db0791",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:05.644Z"
 }

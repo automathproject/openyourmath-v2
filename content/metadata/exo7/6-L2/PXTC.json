@@ -1,7 +1,7 @@
 {
   "uuid": "PXTC",
   "source_path": "exo7/6-L2/PXTC.tex",
-  "summary": "L'exercice demande de démontrer une identité trigonométrique pour le cosinus de 5θ, puis d'en déduire les valeurs exactes de cosinus et sinus pour des angles spécifiques. Il utilise ces résultats pour calculer les longueurs des côtés d'un pentagone et d'un décagone réguliers inscrits dans un cercle unité, et pour analyser une construction géométrique impliquant des cercles et des diamètres orthogonaux.",
+  "summary": "L'exercice demande de démontrer une identité trigonométrique pour cos(5θ), puis d'en déduire les valeurs exactes de cos(π/5), cos(3π/5), sin(π/10) et sin(3π/10). Il s'ensuit des questions sur les longueurs des côtés d'un pentagone et d'un décagone réguliers inscrits dans un cercle de rayon 1, et une construction géométrique impliquant des cercles et des diamètres orthogonaux.",
   "concepts": [
     "identité trigonométrique",
     "polynôme minimal",
@@ -9,24 +9,26 @@
     "géométrie affine euclidienne",
     "pentagone régulier",
     "décagone régulier",
-    "angles trigonométriques exacts",
-    "construction géométrique"
+    "construction géométrique",
+    "angles dans un cercle"
   ],
   "methods": [
-    "factorisation de polynôme",
-    "résolution d'équation trigonométrique",
-    "calcul de longueur de côté de polygone régulier",
-    "analyse de construction géométrique"
+    "développement en cosinus multiples",
+    "factorisation de polynômes",
+    "calcul de longueurs dans un cercle",
+    "utilisation des propriétés des angles",
+    "construction géométrique avec cercles"
   ],
   "objects": [
     "fonction cosinus",
-    "fonction sinus",
+    "polynôme de degré 5",
     "pentagone régulier",
     "décagone régulier",
-    "cercles concentriques",
-    "diamètres orthogonaux"
+    "cercle de rayon 1",
+    "diamètres orthogonaux",
+    "points d'intersection de cercles"
   ],
-  "content_hash": "dd8a24ecbd1391b9a06b0bd1db484751316fbd474b5637adb5695a8f2e46eaa4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:37:46.520Z"
+  "content_hash": "01175cfb9e2aeec2afe481b91ecc6e33435dfa5347160686304b27daedb50dc0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:57.320Z"
 }

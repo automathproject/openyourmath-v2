@@ -1,29 +1,30 @@
 {
   "uuid": "Fau2",
   "source_path": "exo7/5-L2/Fau2.tex",
-  "summary": "L'exercice demande de montrer que trois applications définies sur l'espace des fonctions deux fois continûment dérivables sur [0,1] sont des normes, puis de les comparer. On étudie les propriétés de ces normes et leur équivalence.",
+  "summary": "L'exercice demande de montrer que trois applications définies sur l'espace des fonctions deux fois continûment dérivables sur [0,1] sont des normes, puis de les comparer. Il s'agit d'étudier les propriétés de normes sur un espace vectoriel normé.",
   "concepts": [
-    "espace vectoriel normé",
     "norme",
-    "équivalence de normes",
+    "espace vectoriel normé",
     "continuité",
     "intégrabilité",
     "inégalité triangulaire",
+    "équivalence de normes",
     "convergence de suites"
   ],
   "methods": [
     "vérification des propriétés de norme",
+    "utilisation de l'inégalité triangulaire",
     "comparaison de normes",
-    "étude de la convergence de suites",
-    "utilisation de l'inégalité triangulaire"
+    "étude de la convergence de suites"
   ],
   "objects": [
-    "fonction dérivable",
-    "norme",
-    "suite de fonctions",
-    "espace vectoriel normé"
+    "fonction deux fois dérivable",
+    "norme L1",
+    "norme dérivée",
+    "norme dérivée seconde",
+    "suite de fonctions"
   ],
-  "content_hash": "97113f794010f696437a7db46089c33fecb33b3fa7c5cecf978726739987b42c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:41:14.566Z"
+  "content_hash": "ecb510b98bf7637b69fcdb2c85650a101daa5978f768cf126dfb956d3877bf1e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:56.553Z"
 }

@@ -1,27 +1,28 @@
 {
   "uuid": "31dl",
   "source_path": "exo7/6-L2/31dl.tex",
-  "summary": "L'exercice demande de prouver le sens direct du théorème de Ptolémée pour un quadrilatère convexe et direct cocyclique. Il s'agit de montrer que le produit des diagonales est égal à la somme des produits des côtés opposés.",
+  "summary": "L'exercice demande de prouver le sens direct du théorème de Ptolémée pour un quadrilatère convexe et direct cocyclique. Il s'agit de démontrer que le produit des longueurs des diagonales est égal à la somme des produits des longueurs des côtés opposés, en utilisant des propriétés de similitude de triangles.",
   "concepts": [
     "théorème de Ptolémée",
     "quadrilatère cocyclique",
     "similitude de triangles",
     "angles inscrits",
-    "propriétés des angles"
+    "propriétés des angles dans un quadrilatère cyclique",
+    "rapport de similitude"
   ],
   "methods": [
-    "utilisation du théorème de l'angle inscrit",
-    "construction de points par angles",
-    "démonstration de similitude de triangles",
-    "calcul de rapports de similitude"
+    "construction géométrique de points",
+    "démonstration par similitude",
+    "calcul de rapports de similitude",
+    "utilisation des propriétés des angles inscrits"
   ],
   "objects": [
     "quadrilatère convexe",
-    "diagonales de quadrilatère",
+    "diagonales d'un quadrilatère",
     "triangles semblables",
     "points d'intersection de diagonales"
   ],
-  "content_hash": "7b2de88c0d5f0104b19c63650b4283c0d776d00a13a493df772d440b394e55b3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:20:26.774Z"
+  "content_hash": "df449e304a00b26ff928f413c6845717709f18e2c1fc0598f064d05f580341d9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:02.429Z"
 }

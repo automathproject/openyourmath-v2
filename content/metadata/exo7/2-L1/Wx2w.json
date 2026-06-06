@@ -4,21 +4,23 @@
   "summary": "Montrer une inégalité entre la somme de n réels strictement positifs et la somme de leurs inverses, en développant le produit des deux sommes et en utilisant les propriétés d'une fonction auxiliaire.",
   "concepts": [
     "inégalité arithmético-géométrique",
-    "fonction dérivable",
+    "fonction convexe",
     "minimum d'une fonction",
+    "dérivation",
     "somme de réels positifs"
   ],
   "methods": [
     "développement d'un produit de sommes",
     "étude des variations d'une fonction",
-    "utilisation d'une fonction auxiliaire"
+    "utilisation d'une fonction auxiliaire",
+    "calcul de dérivée"
   ],
   "objects": [
     "somme de réels strictement positifs",
-    "inverses de réels strictement positifs",
-    "fonction f(x) = x + 1/x"
+    "fonction f(x) = x + 1/x",
+    "produit de sommes"
   ],
-  "content_hash": "d9cd7f68a99f1732ccac9e6e0ab77af5f169beb6acbeca2a492fc1a64317aa47",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:20:53.306Z"
+  "content_hash": "f390c5c54dfafe1e1d4b8b67f7e2b9c3c00c473ba00523f14b335070eca2530e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:08.027Z"
 }

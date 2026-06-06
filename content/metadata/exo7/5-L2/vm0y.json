@@ -1,28 +1,29 @@
 {
   "uuid": "vm0y",
   "source_path": "exo7/5-L2/vm0y.tex",
-  "summary": "L'exercice demande de déterminer la différentielle en tout point de deux fonctions de deux variables vectorielles de ℝ³ : le produit scalaire et le produit vectoriel.",
+  "summary": "L'exercice demande de déterminer la différentielle des fonctions f et g définies sur ℝ³×ℝ³ vers ℝ, où f est le produit scalaire et g le produit vectoriel de deux vecteurs de ℝ³.",
   "concepts": [
     "différentiabilité",
     "produit scalaire",
     "produit vectoriel",
     "application linéaire",
     "norme",
-    "limite"
+    "limite",
+    "différentielle"
   ],
   "methods": [
     "définition de la différentielle",
-    "estimation de la différence",
-    "linéarité",
-    "calcul de la norme"
+    "linéarisation",
+    "estimation d'erreur",
+    "calcul de limite"
   ],
   "objects": [
     "fonction de deux variables vectorielles",
+    "vecteurs de ℝ³",
     "produit scalaire",
-    "produit vectoriel",
-    "application linéaire"
+    "produit vectoriel"
   ],
-  "content_hash": "c1aa4740ac5c263adb469a3a4d8d4becf610a7d48c9db1ebd437853a5dc7ad11",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:24:36.188Z"
+  "content_hash": "4b0bbce3004ef5775ba77ea57bfc50db78100bd85a1f9137486f4aee2d5fac30",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:49.226Z"
 }

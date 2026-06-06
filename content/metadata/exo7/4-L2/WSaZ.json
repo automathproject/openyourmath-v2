@@ -1,28 +1,33 @@
 {
   "uuid": "WSaZ",
   "source_path": "exo7/4-L2/WSaZ.tex",
-  "summary": "Calculer les déterminants de matrices carrées de tailles variées avec des structures spécifiques (tridiagonale, circulant, etc.). Les matrices contiennent des paramètres algébriques et des coefficients binomiaux.",
+  "summary": "Calculer les déterminants de matrices carrées de tailles variées, incluant des matrices tridiagonales, circulaires, et des matrices avec des coefficients symétriques ou spécifiques. Les exercices couvrent des cas particuliers et des relations de récurrence.",
   "concepts": [
-    "déterminant de matrice",
+    "déterminant",
     "matrice tridiagonale",
-    "matrice circulant",
-    "coefficient binomial",
-    "relation de récurrence linéaire",
-    "racines d'un polynôme caractéristique"
+    "matrice circulaire",
+    "relation de récurrence",
+    "polynôme caractéristique",
+    "racines complexes",
+    "déterminant de Vandermonde",
+    "déterminant circulant"
   ],
   "methods": [
-    "calcul direct de déterminant",
-    "utilisation de relations de récurrence",
-    "factorisation de polynômes",
-    "propriétés des matrices spéciales"
+    "développement par rapport à une ligne ou une colonne",
+    "utilisation de la relation de récurrence",
+    "factorisation",
+    "reconnaissance de motifs",
+    "calcul des racines d'un polynôme caractéristique"
   ],
   "objects": [
     "matrice carrée",
+    "matrice tridiagonale",
+    "matrice circulaire",
     "polynôme caractéristique",
-    "coefficient binomial",
-    "racines complexes"
+    "déterminant de Vandermonde",
+    "déterminant circulant"
   ],
-  "content_hash": "7e518f3ba59f0237e7fd162c29b6acf789c79be70a0f4688296a3c25fee664f8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:53:52.568Z"
+  "content_hash": "d787f3eba61409d393188006c90f6249dc311fcfc1fef059bda952fa0f37b64b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:00.997Z"
 }

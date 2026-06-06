@@ -1,7 +1,7 @@
 {
   "uuid": "V0pN",
   "source_path": "exo7/4-L2/V0pN.tex",
-  "summary": "L'exercice demande de montrer que l'application φ définie sur l'espace des fonctions continues de ℝ dans ℝ est un endomorphisme, puis d'étudier son injectivité et sa surjectivité, et enfin de déterminer ses éléments propres.",
+  "summary": "L'exercice demande de montrer que l'application φ, définie par une intégrale divisée par x pour x non nul et par f(0) en 0, est un endomorphisme de l'espace des fonctions continues sur ℝ. Il faut ensuite étudier son injectivité et sa surjectivité, puis déterminer ses éléments propres.",
   "concepts": [
     "endomorphisme",
     "espace vectoriel de fonctions continues",
@@ -9,23 +9,24 @@
     "surjectivité",
     "valeur propre",
     "vecteur propre",
-    "polynôme annulateur"
+    "polynôme annulateur",
+    "continuité"
   ],
   "methods": [
     "linéarité",
     "primitive de fonction",
     "dérivation",
-    "étude de la continuité",
-    "résolution d'équation différentielle"
+    "résolution d'équation différentielle",
+    "analyse de limite"
   ],
   "objects": [
     "application φ",
-    "fonction continue",
-    "noyau d'un endomorphisme",
-    "image d'un endomorphisme",
-    "sous-espace propre"
+    "fonction continue sur ℝ",
+    "sous-espace propre",
+    "fonction constante",
+    "fonction puissance"
   ],
-  "content_hash": "81a6a08b1cec0c5363485a5b2660e94392948b31e133308bc399b541925a955d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:49:08.067Z"
+  "content_hash": "89b0961b9c2d3ef0c66450032dbcdf0a1fabff8614c867fe1829d1a6855e6932",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:04.084Z"
 }

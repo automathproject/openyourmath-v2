@@ -1,32 +1,33 @@
 {
   "uuid": "rgDO",
   "source_path": "exo7/4-L2/rgDO.tex",
-  "summary": "L'exercice étudie un endomorphisme u d'un espace vectoriel E de dimension finie n. Il demande de montrer que le sous-espace F engendré par les itérés de u appliqués à un vecteur non nul x0 est stable par u, puis d'établir l'existence d'un polynôme annulateur P0 pour u restreint à F, et enfin de déduire la forme de la matrice de u dans une base adaptée.",
+  "summary": "L'exercice étudie un endomorphisme u d'un espace vectoriel E de dimension finie, en considérant la suite des itérés de u appliqués à un vecteur non nul x₀. Il demande de montrer que le sous-espace F engendré par cette suite est stable par u, puis d'établir l'existence d'un polynôme annulateur P₀ pour u appliqué à x₀. Enfin, il conduit à la construction d'une base de E dans laquelle la matrice de u est une matrice par blocs de matrices compagnon.",
   "concepts": [
+    "endomorphisme",
     "sous-espace vectoriel",
-    "famille libre",
-    "famille liée",
+    "stabilité par endomorphisme",
     "polynôme annulateur",
     "matrice compagnon",
-    "réduction d'endomorphisme",
     "base d'un espace vectoriel",
-    "polynôme caractéristique"
+    "polynôme caractéristique",
+    "division euclidienne des polynômes"
   ],
   "methods": [
     "combinaison linéaire",
     "récurrence",
-    "division euclidienne",
     "construction de base",
-    "restriction d'endomorphisme"
+    "calcul de matrice de restriction",
+    "décomposition en blocs de matrices"
   ],
   "objects": [
+    "espace vectoriel de dimension finie",
     "endomorphisme",
-    "sous-espace vectoriel",
-    "famille de vecteurs",
-    "polynôme",
+    "sous-espace vectoriel stable",
+    "suite de vecteurs itérés",
+    "polynôme annulateur",
     "matrice compagnon"
   ],
-  "content_hash": "4a9a0d5866c558cb42be31c27a25df64a1e701e2525a79d47aa4fed0aeb99d94",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:19:21.596Z"
+  "content_hash": "9d18eee02cebfa764eceb2b805344da8b587feea057a140eb5a075da75850c97",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:00.780Z"
 }

@@ -1,25 +1,27 @@
 {
   "uuid": "XiXr",
   "source_path": "exo7/2-L1/XiXr.tex",
-  "summary": "L'exercice demande de démontrer une identité trigonométrique hyperbolique pour tout réel non nul, puis d'en déduire la valeur d'une suite définie par une somme de termes hyperboliques et de calculer sa limite.",
+  "summary": "L'exercice demande de démontrer une identité trigonométrique hyperbolique pour tout réel non nul, puis d'en déduire la valeur d'une suite définie par une somme de termes hyperboliques et d'étudier sa limite.",
   "concepts": [
-    "fonctions hyperboliques",
-    "identités trigonométriques hyperboliques",
+    "fonction hyperbolique",
+    "tangente hyperbolique",
+    "identité trigonométrique",
+    "suite numérique",
     "limite de suite",
-    "somme télescopique",
-    "convergence de suite"
+    "téléscopage"
   ],
   "methods": [
     "téléscopage",
-    "identité hyperbolique",
-    "calcul de limite"
+    "manipulation algébrique",
+    "étude de limite"
   ],
   "objects": [
-    "fonction hyperbolique tangente",
+    "fonction hyperbolique",
     "suite numérique",
-    "somme de termes hyperboliques"
+    "somme finie",
+    "limite de suite"
   ],
-  "content_hash": "22c79fbd8710ddd3dd404efa1f897be51edae8ad4ae09e7d55fa94ab5ebd7bae",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:01:58.518Z"
+  "content_hash": "bdc7414c5a5768755bf5271513ff3a6921d980a4bc04d5019cef99c0758f5863",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:55.283Z"
 }

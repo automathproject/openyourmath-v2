@@ -1,28 +1,27 @@
 {
   "uuid": "YBwt",
   "source_path": "amscc/YBwt.tex",
-  "summary": "L'exercice demande de calculer des probabilités à partir d'une loi conjointe donnée sous forme de tableau, d'en déduire les lois marginales, de vérifier l'indépendance de deux variables aléatoires discrètes, et de déterminer la loi, l'espérance et la variance de leur somme.",
+  "summary": "L'exercice demande de manipuler un tableau de loi conjointe de deux variables aléatoires discrètes X et Y pour calculer une probabilité spécifique, déterminer leurs lois marginales, vérifier leur indépendance, et étudier la loi, l'espérance et la variance de leur somme.",
   "concepts": [
     "loi de probabilité conjointe",
-    "lois marginales",
+    "loi marginale",
     "indépendance de variables aléatoires",
     "espérance",
     "variance",
     "variable aléatoire discrète"
   ],
   "methods": [
-    "calcul de probabilités marginales",
-    "vérification d'indépendance",
-    "calcul de loi de somme de variables aléatoires",
-    "calcul d'espérance",
-    "calcul de variance"
+    "calcul de probabilité conjointe",
+    "sommation des probabilités marginales",
+    "test d'indépendance",
+    "calcul de l'espérance et de la variance"
   ],
   "objects": [
     "tableau de loi conjointe",
     "variables aléatoires discrètes",
     "somme de variables aléatoires"
   ],
-  "content_hash": "f48259d85edacdc5fa35698d9cd6f2652793e734b9e7515e37fe14c04575e27a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:30:33.514Z"
+  "content_hash": "bc5f4764b3acfed461d8cb6062838289efaef524fac058581fe7dd684db815e8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:27.621Z"
 }

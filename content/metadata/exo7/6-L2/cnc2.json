@@ -1,20 +1,22 @@
 {
   "uuid": "cnc2",
   "source_path": "exo7/6-L2/cnc2.tex",
-  "summary": "L'exercice demande de démontrer que la somme des angles de vecteurs entre trois points distincts d'un plan affine euclidien est un angle plat, puis d'étudier les propriétés d'alignement de points obtenus par rotation.",
+  "summary": "L'exercice demande de démontrer des propriétés géométriques dans un plan affine euclidien : la somme des angles formés par trois points distincts est un angle plat, et l'alignement de points obtenus par rotation d'un cercle.",
   "concepts": [
     "géométrie affine euclidienne",
-    "angle de vecteurs",
-    "symétrie centrale",
+    "angle plat",
     "rotation",
+    "cercle",
     "alignement de points",
-    "propriété des angles inscrits"
+    "propriété des angles inscrits",
+    "symétrie centrale"
   ],
   "methods": [
-    "réécriture d'angles de vecteurs",
-    "utilisation de la symétrie centrale",
-    "analyse des propriétés géométriques",
-    "application des angles inscrits"
+    "symétrie centrale",
+    "propriété des angles inscrits",
+    "utilisation des diamètres",
+    "orthogonalité des droites",
+    "somme d'angles"
   ],
   "objects": [
     "points distincts",
@@ -22,9 +24,9 @@
     "cercle",
     "rotation",
     "diamètre",
-    "points alignés"
+    "droites"
   ],
-  "content_hash": "af374a7b1a1e7ac51c59f123686b005c69c371db14af9404b8e9ed11d51205f2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:49:01.178Z"
+  "content_hash": "31b65a3fe2a81941e6455c3d643b3421a4079cdae61dfc1c9ff957f2c5166187",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:31.870Z"
 }

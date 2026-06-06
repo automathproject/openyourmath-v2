@@ -1,29 +1,27 @@
 {
   "uuid": "9ebH",
   "source_path": "exo7/1-L1/9ebH.tex",
-  "summary": "L'exercice demande de déterminer le nombre de diviseurs normalisés de trois polynômes donnés, puis de calculer leur PGCD et PPCM par paires et pour les trois ensemble.",
+  "summary": "L'exercice demande de déterminer le nombre de diviseurs normalisés de trois polynômes donnés, puis de calculer leur pgcd et ppcm par paires et pour les trois ensemble.",
   "concepts": [
-    "polynôme",
+    "polynôme irréductible",
     "diviseur normalisé",
-    "PGCD",
-    "PPCM",
-    "factorisation",
-    "algèbre commutative",
-    "anneau euclidien"
+    "pgcd de polynômes",
+    "ppcm de polynômes",
+    "factorisation en produit de facteurs irréductibles",
+    "algèbre des polynômes"
   ],
   "methods": [
-    "factorisation en facteurs irréductibles",
-    "calcul de PGCD",
-    "calcul de PPCM",
+    "factorisation",
+    "calcul du pgcd",
+    "calcul du ppcm",
     "décomposition en facteurs premiers"
   ],
   "objects": [
-    "polynômes de degré supérieur",
-    "diviseurs normalisés",
-    "PGCD",
-    "PPCM"
+    "polynôme de degré 10",
+    "polynôme de degré 9",
+    "polynôme de degré 8"
   ],
-  "content_hash": "7c35e0e68e016f6228242f10763def63d33ac51917929524a52c91708636aec9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:38:24.995Z"
+  "content_hash": "e5897aea526235de9e3e2114ec334726b6c004be2b9aed624ba5cbeb56c595e8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:47.632Z"
 }

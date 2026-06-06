@@ -1,25 +1,28 @@
 {
   "uuid": "47oB",
   "source_path": "exo7/2-L1/47oB.tex",
-  "summary": "L'exercice demande de déterminer la convergence ou la divergence de trois intégrales impropres sans les calculer explicitement.",
+  "summary": "L'exercice demande de déterminer la convergence ou la divergence de trois intégrales impropres sans les calculer explicitement. Les intégrales portent sur des intervalles bornés ou semi-infinis avec des singularités.",
   "concepts": [
     "intégrale impropre",
-    "convergence",
-    "divergence",
+    "convergence d'intégrale",
+    "singularité",
     "comparaison d'intégrales",
+    "critère de comparaison",
     "comportement asymptotique"
   ],
   "methods": [
-    "comparaison avec intégrales de référence",
     "analyse des singularités",
-    "critères de convergence"
+    "comparaison avec intégrales de référence",
+    "critère de Riemann",
+    "critère de comparaison asymptotique"
   ],
   "objects": [
     "intégrale impropre",
-    "fonction rationnelle",
-    "fonction trigonométrique"
+    "fonction à singularité",
+    "intervalle borné",
+    "intervalle semi-infini"
   ],
-  "content_hash": "037f5f6450de841090b20609e0255a48c6be6b9df1df2f5631a285fc01dc112a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:28:55.163Z"
+  "content_hash": "e44d717db570713ff8d088eb61fe81cc8301a79d2c1c745a4243ef690116faa5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:32.387Z"
 }

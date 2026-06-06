@@ -5,24 +5,24 @@
   "concepts": [
     "déterminant",
     "base d'un espace vectoriel",
-    "combinaison linéaire",
     "polynômes de degré donné",
-    "matrice de coefficients binomiaux",
-    "linéarité du déterminant"
+    "combinaison linéaire",
+    "propriétés des coefficients binomiaux",
+    "van der Monde"
   ],
   "methods": [
-    "réduction de matrice par lignes",
-    "calcul de déterminant",
-    "combinaison linéaire de lignes",
-    "utilisation de la base des polynômes de Falling Factorial"
+    "développement par lignes",
+    "réduction de matrice",
+    "linéarité du déterminant",
+    "calcul de polynômes de base"
   ],
   "objects": [
     "matrice de coefficients binomiaux",
     "produit de termes rationnels",
-    "polynômes de degré n-1",
-    "entiers naturels strictement croissants"
+    "polynômes de la base standard",
+    "déterminant de Vandermonde"
   ],
-  "content_hash": "25b5287ea2e2a7093c63ede33fab95802ddc08aa2262a7a64ef4a4fd7c603ba9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:30:36.529Z"
+  "content_hash": "f021826ead7c420fd212f7dbbea0b3b922bb9e0b1f76830a64d945ac8af3324d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:40:03.240Z"
 }

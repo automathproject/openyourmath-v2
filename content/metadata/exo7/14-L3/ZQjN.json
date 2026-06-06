@@ -1,27 +1,28 @@
 {
   "uuid": "ZQjN",
   "source_path": "exo7/14-L3/ZQjN.tex",
-  "summary": "L'exercice demande de démontrer le théorème de dérivation sous le signe intégrale pour une fonction de deux variables, en utilisant le théorème des accroissements finis.",
+  "summary": "L'exercice demande de démontrer le théorème de dérivation sous le signe intégrale pour une fonction de deux variables, en utilisant le théorème des accroissements finis. La fonction doit satisfaire des conditions d'intégrabilité et de dérivabilité presque partout, avec une majoration uniforme de sa dérivée.",
   "concepts": [
     "théorème de convergence dominée",
-    "intégrale de Lebesgue",
-    "dérivation sous le signe intégrale",
-    "fonction mesurable",
+    "intégrabilité",
+    "dérivabilité presque partout",
     "théorème des accroissements finis",
-    "intégrabilité"
+    "fonction mesurable",
+    "intégrale de Lebesgue",
+    "majoration uniforme"
   ],
   "methods": [
-    "utilisation du théorème de convergence dominée",
-    "application du théorème des accroissements finis",
-    "analyse de la dérivabilité presque partout"
+    "application du théorème de convergence dominée",
+    "utilisation du théorème des accroissements finis",
+    "passage à la limite sous le signe intégrale"
   ],
   "objects": [
     "fonction de deux variables",
+    "dérivée partielle",
     "fonction intégrable",
-    "fonction dérivable",
-    "fonction dominée"
+    "fonction majorée"
   ],
-  "content_hash": "0119493ee738b836b35f4d8f58c17a996e40b16465ffaf2f027cf1d6f5865f04",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:03:39.710Z"
+  "content_hash": "da815c403fca2c58e6ed2125872bdb84feae2bca82a3cf81444ea4d7b9f1b56b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:13.254Z"
 }

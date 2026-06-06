@@ -1,28 +1,29 @@
 {
   "uuid": "OH6X",
   "source_path": "exo7/16-L3/OH6X.tex",
-  "summary": "Trouver toutes les solutions complexes de l'équation cosinus hyperbolique de z égale à 4i. Trouver toutes les solutions complexes de l'équation z puissance i égale à -1.",
+  "summary": "Trouver toutes les solutions complexes de deux équations : cosinus hyperbolique égal à 4i et z puissance i égal à -1.",
   "concepts": [
     "fonction cosinus hyperbolique",
-    "équation exponentielle",
+    "fonction exponentielle complexe",
     "logarithme complexe",
+    "équation exponentielle",
     "argument principal",
-    "équation différentielle",
-    "fonction exponentielle complexe"
+    "multiplicité des solutions"
   ],
   "methods": [
     "définition de la fonction cosinus hyperbolique",
     "résolution d'équation quadratique",
+    "manipulation de l'exponentielle complexe",
     "utilisation du logarithme complexe",
-    "détermination des solutions complexes"
+    "résolution d'équation trigonométrique"
   ],
   "objects": [
-    "équation cosinus hyperbolique",
-    "équation exponentielle",
-    "fonction exponentielle complexe",
-    "logarithme complexe"
+    "équation complexe",
+    "fonction exponentielle",
+    "logarithme complexe",
+    "nombre complexe"
   ],
-  "content_hash": "db715c87768ed02a135ae50d6fc35742455e6fbf5c540155a50880eba0ef8551",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:19:00.092Z"
+  "content_hash": "e52f94f6959e38bfc25d9f43311e1fd095c8692445e7b4f466bed4b65896b4df",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:08.793Z"
 }

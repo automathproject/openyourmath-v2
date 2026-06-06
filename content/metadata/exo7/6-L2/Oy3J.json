@@ -1,28 +1,28 @@
 {
   "uuid": "Oy3J",
   "source_path": "exo7/6-L2/Oy3J.tex",
-  "summary": "L'exercice demande de montrer qu'une courbe plane définie par une équation quadratique possède un centre de symétrie et de déterminer son équation dans un nouveau repère centré sur ce point. Ensuite, il faut en déduire que la courbe est la réunion de deux droites et donner leurs équations.",
+  "summary": "L'exercice demande de montrer qu'une courbe plane définie par une équation du second degré possède un centre de symétrie, puis de déterminer son équation dans un nouveau repère centré sur ce point. Ensuite, il faut en déduire que la courbe est la réunion de deux droites et donner leurs équations.",
   "concepts": [
     "géométrie affine",
-    "symétrie centrale",
     "centre de symétrie",
-    "équation de conique",
-    "réduction de conique",
-    "droites dans le plan"
+    "équation cartésienne de conique",
+    "réduction d'équation quadratique",
+    "droites dans le plan",
+    "changement de repère"
   ],
   "methods": [
     "recherche de centre de symétrie",
-    "changement de repère",
-    "factorisation d'équation quadratique"
+    "complétion du carré",
+    "factorisation d'équation quadratique",
+    "changement de variable"
   ],
   "objects": [
     "courbe plane",
-    "équation quadratique",
+    "équation du second degré",
     "repère orthonormé",
-    "centre de symétrie",
     "droites"
   ],
-  "content_hash": "ab7bbaa507ce663b48771136e79dca7d45c218e5831c6b57dee6aae62e92ede5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:51:03.442Z"
+  "content_hash": "5662fe1623f84ac2a1a5bd8132607c65dc61a08ee9da6126ddca73c0b466ef5e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:04.957Z"
 }

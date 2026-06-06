@@ -1,31 +1,32 @@
 {
   "uuid": "iifM",
   "source_path": "exo7/4-L2/iifM.tex",
-  "summary": "L'exercice demande de déterminer les valeurs de paramètres a et b pour lesquelles une matrice donnée admet une décomposition de Dunford spécifique. Il étudie ensuite les sous-espaces propres et caractéristiques de cette matrice, et cherche une décomposition en une partie diagonalisable et une partie nilpotente commutant entre elles.",
+  "summary": "L'exercice demande de déterminer les valeurs des paramètres a et b pour lesquelles une matrice donnée admet une décomposition de Dunford spécifique. Ensuite, pour b=1 et a≠0, il s'agit de trouver les sous-espaces propres et caractéristiques de la matrice, puis de décomposer cette matrice en une partie diagonalisable et une partie nilpotente commutant entre elles.",
   "concepts": [
     "décomposition de Dunford",
     "matrice nilpotente",
     "valeurs propres",
-    "sous-espaces propres",
-    "sous-espaces caractéristiques",
-    "matrice diagonalisable",
-    "commutation de matrices"
+    "sous-espace propre",
+    "sous-espace caractéristique",
+    "diagonalisation",
+    "commutation de matrices",
+    "polynôme annulateur"
   ],
   "methods": [
-    "calcul de puissances de matrices",
-    "vérification de nilpotence",
-    "commutation de matrices",
-    "détermination de noyaux",
-    "décomposition matricielle"
+    "calcul de la nilpotence",
+    "vérification de la commutation",
+    "détermination des sous-espaces propres",
+    "calcul du noyau d'une matrice",
+    "décomposition de Dunford"
   ],
   "objects": [
     "matrice 3x3",
-    "sous-espaces propres",
-    "sous-espaces caractéristiques",
-    "matrice nilpotente",
-    "matrice diagonalisable"
+    "sous-espace propre",
+    "sous-espace caractéristique",
+    "matrice diagonalisable",
+    "matrice nilpotente"
   ],
-  "content_hash": "8a15583aa304d694021d78bd1aa76feae92c5db4fb3977a43faeb596ce7ed9a3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:07:14.541Z"
+  "content_hash": "7fac45e1f90b5b382af5770e93dd22df404a034ca481def95046340282dc7509",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:23.285Z"
 }

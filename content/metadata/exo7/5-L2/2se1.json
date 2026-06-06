@@ -1,29 +1,30 @@
 {
   "uuid": "2se1",
   "source_path": "exo7/5-L2/2se1.tex",
-  "summary": "L'exercice demande de montrer la convergence uniforme sur ℝ⁺ d'une suite de fonctions définies par morceaux vers la fonction exponentielle décroissante, puis d'utiliser cette suite pour calculer l'intégrale de Gauss.",
+  "summary": "L'exercice demande de démontrer la convergence uniforme sur ℝ⁺ d'une suite de fonctions définies par morceaux, puis d'utiliser cette suite pour calculer l'intégrale de Gauss ∫₀⁺∞ e⁻ˣ² dx.",
   "concepts": [
     "convergence simple",
     "convergence uniforme",
-    "intégrabilité",
-    "intégrale de Gauss",
+    "fonction exponentielle",
     "inégalité de convexité",
-    "intégrales de Wallis"
+    "maximum d'une fonction",
+    "intégrale de Gauss"
   ],
   "methods": [
+    "développement limité",
     "étude de la dérivée",
     "recherche de maximum",
-    "changement de variable",
-    "approximation asymptotique",
-    "estimation d'erreur d'intégration"
+    "comparaison de fonctions",
+    "intégration par parties"
   ],
   "objects": [
     "suite de fonctions",
-    "fonction exponentielle",
-    "intégrale impropre",
-    "bornes supérieures"
+    "fonction définie par morceaux",
+    "fonction continue",
+    "fonction dérivable",
+    "intégrale impropre"
   ],
-  "content_hash": "541266049b85f7b2af555886be370d206d34e639b9f3e11d7f149949ee1d83ad",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:45:45.993Z"
+  "content_hash": "6dd585b7c67396c9d0b3d5253678fc86e292c680524e10297226050d53a1f947",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:48.539Z"
 }

@@ -1,27 +1,29 @@
 {
   "uuid": "kxGc",
   "source_path": "exo7/2-L1/kxGc.tex",
-  "summary": "On étudie la suite définie par une relation de récurrence non linéaire et on cherche son équivalent simple lorsque n tend vers l'infini.",
+  "summary": "On étudie la suite définie par une relation de récurrence non linéaire et on détermine son équivalent simple lorsque n tend vers l'infini. La suite est strictement positive et décroissante.",
   "concepts": [
     "suite numérique",
     "convergence",
     "relation de récurrence",
+    "limite de suite",
     "équivalent asymptotique",
-    "croissance comparée"
+    "inégalité exponentielle"
   ],
   "methods": [
     "raisonnement par récurrence",
     "étude de la monotonie",
-    "limite de suite",
+    "calcul de limite",
     "développement limité",
-    "comparaison de termes"
+    "approximation d'ordre dominant"
   ],
   "objects": [
     "suite définie par récurrence",
-    "terme général",
-    "équivalent simple"
+    "terme général de suite",
+    "limite de suite",
+    "équivalent asymptotique"
   ],
-  "content_hash": "a5040941ed521bb71db5fbbeda456010ed3c55bd0d19ec6da9b7220d3f8b3f11",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:32:02.102Z"
+  "content_hash": "fa1f2e63ab5d37b30491e79f45c2b7c54fd3573e94e342cbdc4000556e023365",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:30.267Z"
 }

@@ -1,29 +1,29 @@
 {
   "uuid": "VQ2w",
   "source_path": "exo7/4-L2/VQ2w.tex",
-  "summary": "L'exercice demande de diagonaliser une matrice circulaire J_n et d'en déduire la valeur du déterminant d'une matrice circulant donnée.",
+  "summary": "L'exercice demande de diagonaliser une matrice circulaire J_n de taille n×n, puis d'en déduire le déterminant d'une matrice circulant donnée. Le contexte est purement algébrique, sans application concrète.",
   "concepts": [
-    "diagonalisation",
+    "diagonalisation de matrice",
     "valeurs propres",
     "polynôme annulateur",
     "matrice de Vandermonde",
-    "déterminant",
-    "matrice circulant",
-    "racines de l'unité"
+    "racines de l'unité",
+    "semblable",
+    "déterminant de matrice"
   ],
   "methods": [
-    "diagonalisation par similarité",
-    "calcul des valeurs propres",
-    "utilisation de la matrice de Vandermonde",
-    "évaluation de polynômes"
+    "recherche des valeurs propres",
+    "construction de la matrice de passage",
+    "calcul du polynôme caractéristique",
+    "utilisation de la diagonalisation pour le déterminant"
   ],
   "objects": [
     "matrice circulaire",
     "matrice circulant",
-    "polynôme annulateur",
-    "racines n-èmes de l'unité"
+    "matrice diagonale",
+    "polynôme à coefficients complexes"
   ],
-  "content_hash": "3059c7bbc7c3d3a4c6dc1631a32a9d8778654489a8be72d63beb33a6f90df5b9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:49:34.064Z"
+  "content_hash": "69bdc6408f4fe182a208137278a634bdc266e6e7004492602ada97d9a7bee99c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:06.726Z"
 }

@@ -1,15 +1,33 @@
 {
   "uuid": "mK7w",
   "source_path": "amscc/mK7w.tex",
-  "summary": "L'exercice demande de construire un réseau de neurones à propagation avant pour détecter si un point appartient à un triangle donné du plan. Il s'agit de déterminer les équations des droites formant les côtés du triangle, de caractériser les demi-plans contenant le triangle, et de concevoir une architecture de réseau de neurones utilisant des fonctions d'activation Heaviside pour implémenter la fonction indicatrice du triangle.",
+  "summary": "L'exercice demande de construire un réseau de neurones à propagation avant utilisant des fonctions d'activation Heaviside pour détecter si un point appartient à un triangle donné du plan. Il s'agit de déterminer les équations des droites formant les côtés du triangle, de caractériser les demi-plans contenant le triangle, puis de concevoir une architecture de réseau de neurones capable d'implémenter cette détection.",
   "concepts": [
-    "détection de points dans un triangle",
-    "combinaison logique de détecteurs",
-    "architecture multi-couches de réseaux de neurones"
+    "fonction d'activation Heaviside",
+    "séparation linéaire",
+    "région convexe",
+    "fonction indicatrice",
+    "réseau de neurones à propagation avant",
+    "intersection de demi-plans",
+    "non-convexité",
+    "combinaison logique de détecteurs"
   ],
-  "methods": [],
-  "objects": [],
-  "content_hash": "c578255889c5c2900083b36a4bb670d21868c0e6ea0026965d35bc225cce6396",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:59:28.507Z"
+  "methods": [
+    "détermination d'équations de droites",
+    "calcul de vecteurs normaux",
+    "construction de demi-plans",
+    "combinaison de neurones pour implémenter une fonction logique",
+    "vérification de points par évaluation des neurones"
+  ],
+  "objects": [
+    "triangle du plan",
+    "fonction indicatrice",
+    "neurones à activation Heaviside",
+    "demi-plans",
+    "réseau de neurones multicouche",
+    "union de régions non convexes"
+  ],
+  "content_hash": "477627e1e78b62cb6fe5afbbef13c3cc95ebce849dddf710b0f57cbb21bc9d5a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:22.650Z"
 }

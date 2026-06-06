@@ -1,7 +1,7 @@
 {
   "uuid": "MBON",
   "source_path": "exo7/6-L2/MBON.tex",
-  "summary": "Trouver le point sur la courbe y = ln(x) où la valeur absolue du rayon de courbure est minimale.",
+  "summary": "Trouver le point sur la courbe $y = \\ln x$ où la valeur absolue du rayon de courbure est minimale. L'exercice demande d'analyser les propriétés métriques de la courbe.",
   "concepts": [
     "courbure",
     "rayon de courbure",
@@ -11,18 +11,20 @@
     "fonction dérivée"
   ],
   "methods": [
-    "calcul de la dérivée première",
-    "calcul de la dérivée seconde",
-    "optimisation par annulation de la dérivée",
-    "calcul du rayon de courbure"
+    "calcul de la dérivée",
+    "paramétrisation d'une courbe",
+    "calcul du rayon de courbure",
+    "optimisation par dérivée",
+    "résolution d'équation"
   ],
   "objects": [
     "courbe plane",
     "fonction logarithme",
     "rayon de courbure",
-    "point de minimum"
+    "fonction dérivée",
+    "point critique"
   ],
-  "content_hash": "c048dcca66bcc7d2a5af38170f5fad6e8e47729d9a7f6ddb8175a19ed91495ef",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:50:53.615Z"
+  "content_hash": "afa0ad56876d011a9bed0b427b6e6f834c96b4c3ffb58b58b23355b0a22540a7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:49.991Z"
 }

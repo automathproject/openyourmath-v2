@@ -1,33 +1,34 @@
 {
   "uuid": "wUxg",
   "source_path": "exo7/2-L1/wUxg.tex",
-  "summary": "L'exercice demande de déterminer la nature (convergence ou divergence) de onze séries numériques de termes généraux différents, en analysant leur comportement asymptotique.",
+  "summary": "L'exercice demande de déterminer la nature (convergence ou divergence) de onze séries numériques de termes généraux variés, incluant des expressions logarithmiques, trigonométriques, exponentielles et intégrales.",
   "concepts": [
     "série numérique",
-    "convergence de série",
-    "divergence de série",
-    "comparaison asymptotique",
-    "règle de d'Alembert",
-    "série de Riemann",
-    "équivalent asymptotique",
-    "intégrale généralisée"
+    "convergence de séries",
+    "divergence de séries",
+    "comparaison de séries",
+    "équivalence asymptotique",
+    "théorème de Riemann",
+    "intégrale généralisée",
+    "développement limité"
   ],
   "methods": [
+    "comparaison avec une série de Riemann",
+    "équivalence asymptotique",
     "développement limité",
-    "comparaison de séries",
-    "règle de d'Alembert",
-    "intégration terme à terme",
-    "approximation gaussienne",
-    "standardisation"
+    "intégration par parties",
+    "étude de la limite du terme général",
+    "utilisation de la fonction logarithme"
   ],
   "objects": [
     "série numérique",
     "terme général",
-    "fonction intégrande",
-    "développement asymptotique",
-    "intégrale généralisée"
+    "fonction logarithme",
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "intégrale"
   ],
-  "content_hash": "47e7e1ef7a45c645d05e21394c4fa64ee117613d34437498e8cf7c571f32e264",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:38:38.844Z"
+  "content_hash": "47860590fa2e58840d2729b41d5bc4ec8c8f4e8d979bfcfc291a2ac79441897a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:35.949Z"
 }

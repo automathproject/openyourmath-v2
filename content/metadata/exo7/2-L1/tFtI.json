@@ -1,34 +1,32 @@
 {
   "uuid": "tFtI",
   "source_path": "exo7/2-L1/tFtI.tex",
-  "summary": "Étude complète de la fonction f(x) = ∫(x à x²) (1/ln t) dt, incluant son domaine de définition, sa dérivabilité, ses variations, son comportement aux bornes, sa convexité et son graphe.",
+  "summary": "Étude complète d'une fonction définie comme une intégrale impropre dépendant d'un paramètre, avec analyse de son domaine de définition, de sa dérivabilité, de ses variations, et de ses limites en 0, 1 et +∞.",
   "concepts": [
     "intégrale impropre",
     "domaine de définition",
+    "continuité",
     "dérivabilité",
-    "variations de fonction",
+    "primitive",
     "limite de fonction",
-    "convexité",
     "prolongement par continuité",
-    "théorème de dérivabilité"
+    "théorème de dérivation sous l'intégrale"
   ],
   "methods": [
-    "étude de continuité",
+    "analyse de continuité",
     "calcul de dérivée",
     "encadrement d'intégrale",
-    "analyse de convexité",
-    "développement limité",
-    "étude asymptotique"
+    "étude de limites",
+    "prolongement par continuité"
   ],
   "objects": [
-    "fonction définie par intégrale",
-    "primitive de fonction",
+    "fonction intégrale paramétrée",
+    "primitive d'une fonction",
     "domaine de définition",
-    "dérivée première",
-    "dérivée seconde",
-    "graphe de fonction"
+    "limites de fonction",
+    "dérivée"
   ],
-  "content_hash": "46d9e9d310fce3148094199faeba3d7366049c34c70b83c9213be910beaa82a4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:49:47.503Z"
+  "content_hash": "f3be29cde5ff1ca96e527220aa9147944e93ce726c1d7a1adc54944849f6dba4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:29.184Z"
 }

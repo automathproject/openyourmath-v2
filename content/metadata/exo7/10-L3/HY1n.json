@@ -1,28 +1,29 @@
 {
   "uuid": "HY1n",
   "source_path": "exo7/10-L3/HY1n.tex",
-  "summary": "L'exercice demande de montrer qu'une application de puissance cinquième dans le corps fini ℤ₂₅ est un automorphisme involutif, puis d'analyser la σ-sesquilinéarité de trois formes bilinéaires sur ℤ₂₅³ et de déterminer leur équivalence.",
+  "summary": "L'exercice demande de montrer qu'une application d'exponentiation dans un corps fini est un automorphisme involutif, puis d'analyser la sesquilinéarité de trois formes bilinéaires sur un espace vectoriel de dimension 3, et enfin de déterminer l'équivalence entre ces formes.",
   "concepts": [
     "automorphisme de corps",
     "corps fini",
     "forme sesquilinéaire",
     "involutivité",
+    "espace vectoriel sur un corps",
     "équivalence de formes bilinéaires",
-    "application polynomiale"
+    "application linéaire"
   ],
   "methods": [
     "vérification de l'involutivité",
-    "analyse de la sesquilinéarité",
-    "comparaison d'équivalence"
+    "test de sesquilinéarité",
+    "comparaison de formes bilinéaires",
+    "utilisation de la structure multiplicative du corps"
   ],
   "objects": [
-    "application polynomiale",
-    "forme bilinéaire",
-    "automorphisme involutif",
-    "corps fini ℤ₂₅",
-    "espace vectoriel ℤ₂₅³"
+    "application $\\sigma : \\mathbb{F}_{25} \\to \\mathbb{F}_{25}$",
+    "formes bilinéaires $f_1$, $f_2$, $f_3$",
+    "espace vectoriel $\\mathbb{F}_{25}^3$",
+    "automorphisme involutif"
   ],
-  "content_hash": "99a8026ab7d44acbb98dcf0fccc6ea2ad4ee37403d8c72ffb1750dd3cc812489",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:32:46.214Z"
+  "content_hash": "48907576975762c881da3e112c55bb8bc7cb0173f973250eb29b8fc9059ac71d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:32:58.220Z"
 }

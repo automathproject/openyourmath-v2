@@ -1,7 +1,7 @@
 {
   "uuid": "kk4y",
   "source_path": "exo7/6-L2/kk4y.tex",
-  "summary": "Calculer l'abscisse curviligne d'une courbe plane définie par y=ln(cos x) et déterminer la relation entre le rayon de courbure R et l'abscisse curviligne s. Tracer la courbe et sa développée.",
+  "summary": "Calculer l'abscisse curviligne d'une courbe paramétrée par y = ln(cos x) et déterminer la relation entre le rayon de courbure R et l'abscisse curviligne s. Tracer la courbe et sa développée.",
   "concepts": [
     "courbe paramétrée",
     "abscisse curviligne",
@@ -9,14 +9,16 @@
     "rayon de courbure",
     "développée d'une courbe",
     "tangente unitaire",
-    "normale unitaire"
+    "normale unitaire",
+    "intégrale d'une fonction trigonométrique"
   ],
   "methods": [
-    "calcul de la dérivée",
-    "intégration",
-    "détermination du vecteur tangent",
-    "détermination du vecteur normal",
-    "calcul du rayon de courbure"
+    "calcul de la dérivée d'une courbe paramétrée",
+    "calcul du vecteur tangent",
+    "calcul du vecteur normal",
+    "calcul de la courbure",
+    "intégration pour l'abscisse curviligne",
+    "construction de la développée"
   ],
   "objects": [
     "courbe plane",
@@ -25,7 +27,7 @@
     "rayon de courbure",
     "développée"
   ],
-  "content_hash": "b98482c6f342f7a19ceb0d28b314462b8bd3eab9680e8a98e4e8dd6379b36a77",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:03:01.100Z"
+  "content_hash": "c08a33651c474ce90d37c5d52954ef948a720d9019ad8b537e3f27e829c4a31a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:08.786Z"
 }

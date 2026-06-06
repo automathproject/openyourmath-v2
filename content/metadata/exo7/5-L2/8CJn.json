@@ -1,21 +1,21 @@
 {
   "uuid": "8CJn",
   "source_path": "exo7/5-L2/8CJn.tex",
-  "summary": "L'exercice demande de déterminer le plus grand sous-ensemble de ℝ² sur lequel une fonction de deux variables est de classe C¹, puis de vérifier que les dérivées secondes croisées en un point particulier existent mais sont différentes.",
+  "summary": "L'exercice demande de déterminer le plus grand sous-ensemble de ℝ² sur lequel une fonction de deux variables est de classe C¹, puis de vérifier que les dérivées secondes croisées en (0,0) existent mais sont différentes.",
   "concepts": [
     "fonction de plusieurs variables",
     "classe C¹",
-    "dérivées partielles",
     "continuité",
+    "dérivées partielles",
     "dérivées secondes croisées",
     "théorème de Schwarz",
     "limite de fonctions"
   ],
   "methods": [
-    "étude de la continuité",
+    "étude de continuité",
     "calcul de dérivées partielles",
-    "analyse des limites",
-    "vérification des dérivées secondes croisées"
+    "analyse de limites",
+    "vérification de la classe de régularité"
   ],
   "objects": [
     "fonction de deux variables",
@@ -23,7 +23,7 @@
     "dérivées partielles secondes",
     "point critique"
   ],
-  "content_hash": "04aa1d2ec8fa4f61c124cd9cf6df97ffc7b9e022df769863587cadf53668cd92",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:45:54.848Z"
+  "content_hash": "ad7cb1de7b8923ba645665425d2b5ef64db94c43004bfaacab70311572d363b5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:42.373Z"
 }

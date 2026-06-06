@@ -1,27 +1,28 @@
 {
   "uuid": "xOYO",
   "source_path": "exo7/2-L1/xOYO.tex",
-  "summary": "Calculer deux sommes doubles impliquant des fractions rationnelles et en déduire une propriété de sommabilité d'une suite double.",
+  "summary": "Calculer deux sommes doubles impliquant des fractions rationnelles de la forme 1/(n² - p²) pour n et p entiers naturels distincts, et en déduire une propriété sur la sommabilité de la suite double associée.",
   "concepts": [
-    "somme double",
-    "sommabilité",
-    "limite de suite",
     "décomposition en éléments simples",
-    "série de Riemann"
+    "somme de Riemann",
+    "convergence de séries",
+    "sommabilité de suites doubles",
+    "série de Fourier",
+    "série des inverses des carrés"
   ],
   "methods": [
-    "décomposition en éléments simples",
+    "décomposition en fractions partielles",
     "téléscopage",
-    "passage à la limite",
-    "calcul de série de Riemann"
+    "limite de sommes partielles",
+    "calcul de série convergente"
   ],
   "objects": [
     "somme double",
     "fraction rationnelle",
     "suite double",
-    "série de Riemann"
+    "série numérique"
   ],
-  "content_hash": "25770691e4c4698e61a040de2ce3cffc717861734fa8f050b5de80c594cfbf16",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:39:28.120Z"
+  "content_hash": "d8ca6b1a19454e634b8c18262c2cb6a7087a6ad97e73ba8eef62e9ea9579a72e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:38.406Z"
 }

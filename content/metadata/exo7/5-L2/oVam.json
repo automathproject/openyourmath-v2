@@ -1,30 +1,32 @@
 {
   "uuid": "oVam",
   "source_path": "exo7/5-L2/oVam.tex",
-  "summary": "L'exercice demande de montrer que si une fonction de classe C^1 tend vers une limite ℓ quand x tend vers +∞ pour une équation différentielle linéaire du premier ordre, alors la fonction elle-même tend vers ℓ/α. Le corrigé utilise des techniques d'intégration et de manipulation d'équations différentielles.",
+  "summary": "L'exercice étudie le comportement asymptotique de fonctions solutions d'équations différentielles linéaires. Il demande de montrer que si une combinaison linéaire des dérivées d'une fonction tend vers une limite, alors la fonction elle-même tend vers une limite déterminée, sous certaines conditions sur les coefficients.",
   "concepts": [
     "équation différentielle linéaire",
     "limite de fonction",
-    "intégration",
-    "fonction exponentielle",
-    "partie réelle d'un nombre complexe",
-    "théorème de convergence"
+    "opérateur de dérivation",
+    "polynôme caractéristique",
+    "stabilité asymptotique",
+    "théorème de convergence des solutions",
+    "fonction de classe C^n"
   ],
   "methods": [
-    "changement de variable",
+    "résolution d'équation différentielle linéaire",
     "intégration par parties",
-    "manipulation d'équations différentielles",
+    "changement de variable",
     "récurrence mathématique",
+    "factorisation de polynôme",
     "analyse asymptotique"
   ],
   "objects": [
-    "fonction de classe C^1",
-    "polynôme de degré n",
-    "opérateur de dérivation",
-    "limite de fonction",
-    "équation différentielle linéaire"
+    "fonction dérivable",
+    "opérateur différentiel",
+    "polynôme unitaire",
+    "limite de suite",
+    "solution d'équation différentielle"
   ],
-  "content_hash": "3768b43f7eff9b2803bb9f07fc8f5f6d1f84b2ee0c185c1563ed9d57187d8644",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:46:34.745Z"
+  "content_hash": "cd396c948d65de420cfa3c329392e6d496dd21d8883e554aff21cc23ae07f47a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:09.644Z"
 }

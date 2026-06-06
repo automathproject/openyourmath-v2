@@ -1,23 +1,26 @@
 {
   "uuid": "lR40",
   "source_path": "crouzet/pcsi/09/lR40.tex",
-  "summary": "L'exercice demande de déterminer si trois suites données sont arithmétiques, géométriques, ou ni l'un ni l'autre. Les suites sont définies par des formules explicites.",
+  "summary": "L'exercice demande de déterminer si trois suites données sont arithmétiques, géométriques, ou ni l'une ni l'autre. Les suites sont définies par des formules explicites en fonction de n.",
   "concepts": [
     "suite arithmétique",
     "suite géométrique",
     "raison d'une suite",
-    "premier terme d'une suite"
+    "premier terme d'une suite",
+    "calcul de termes consécutifs"
   ],
   "methods": [
-    "calcul de la différence consécutive",
-    "calcul du rapport consécutif",
-    "vérification des premiers termes"
+    "calcul de la différence entre termes consécutifs",
+    "calcul du rapport entre termes consécutifs",
+    "vérification de la constance de la raison"
   ],
   "objects": [
     "suite numérique",
-    "terme général de suite"
+    "termes consécutifs",
+    "raison",
+    "premier terme"
   ],
-  "content_hash": "70aeb6e0d125126f291483cd6c07c6085bd51ec1806b612cee89b887040d6886",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:34:20.802Z"
+  "content_hash": "0adf8f589491307d1173475c23400f6eeec58c6321cf00519c45e06b9fd91d34",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:51:25.354Z"
 }

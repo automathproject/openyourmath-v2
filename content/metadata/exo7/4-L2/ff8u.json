@@ -1,24 +1,27 @@
 {
   "uuid": "ff8u",
   "source_path": "exo7/4-L2/ff8u.tex",
-  "summary": "L'exercice demande de développer un polynôme en puissances de X et d'exprimer des combinaisons de puissances de variables comme des polynômes à coefficients entiers en utilisant les polynômes symétriques élémentaires.",
+  "summary": "L'exercice demande de développer un polynôme en puissances de X et d'exprimer diverses sommes de puissances de variables comme des polynômes à coefficients entiers en polynômes symétriques élémentaires.",
   "concepts": [
     "polynômes symétriques élémentaires",
     "développement de polynôme",
-    "algèbre des polynômes",
-    "indéterminées",
-    "coefficients entiers"
+    "relations de Newton",
+    "polynômes en plusieurs variables",
+    "symétrie des polynômes",
+    "algèbre des polynômes"
   ],
   "methods": [
-    "développement en puissances de X",
-    "expression en termes de polynômes symétriques"
+    "développement par identification",
+    "expression en termes de polynômes symétriques",
+    "calcul de puissances symétriques"
   ],
   "objects": [
-    "polynôme F(X)",
-    "polynômes symétriques s1, s2, s3",
-    "puissances de variables"
+    "polynôme symétrique",
+    "polynôme en plusieurs variables",
+    "somme de puissances de variables",
+    "polynôme à coefficients entiers"
   ],
-  "content_hash": "cbb00efaa29891cf1ac3a40634574c4ec51c7d92ca1f5ccb2cbc828ef1e341a8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:04:32.862Z"
+  "content_hash": "501cfc33141f7a0bda7c18128574b505d47c77c63e6708286c42bb6b455af539",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:51:05.847Z"
 }

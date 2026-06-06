@@ -1,28 +1,30 @@
 {
   "uuid": "1Ozf",
   "source_path": "exo7/6-L2/1Ozf.tex",
-  "summary": "L'exercice demande de paramétrer une courbe définie par une équation cartésienne en précisant le domaine de variation du paramètre. Il s'agit ensuite de montrer qu'une courbe paramétrée donnée ne peut pas être décrite par une équation de la forme y = f(x), et enfin de démontrer qu'une autre courbe paramétrée est le graphe d'une fonction que l'on doit identifier.",
+  "summary": "L'exercice demande de paramétriser une courbe d'équation cartésienne, de montrer qu'une courbe paramétrée n'est pas le graphe d'une fonction, et de déterminer si une autre courbe paramétrée est le graphe d'une fonction en précisant cette fonction et son domaine.",
   "concepts": [
     "courbe paramétrée",
+    "graphe de fonction",
     "équation cartésienne",
     "domaine de définition",
-    "graphe de fonction",
-    "cercle",
-    "parabole"
+    "fonction",
+    "paramétrisation",
+    "courbe plane"
   ],
   "methods": [
-    "paramétrisation standard",
-    "analyse de la bijection entre paramètre et abscisse",
+    "transformation d'équation cartésienne en paramétrisation",
+    "analyse de l'injectivité",
     "élimination du paramètre",
-    "identification de la fonction associée"
+    "substitution trigonométrique"
   ],
   "objects": [
-    "courbe plane",
+    "courbe paramétrée",
     "équation cartésienne",
-    "paramétrisation",
-    "graphe de fonction"
+    "fonction",
+    "domaine de définition",
+    "paramètre"
   ],
-  "content_hash": "4b4c12bddaf544743ab653f27bdc5b62c05556782313f8a7b3d0d42ed7d96758",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:40:26.287Z"
+  "content_hash": "c811c2e7cfddfb9f14a46135f8295f73ca74228a9672c708fb0b79781fa91601",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:30.342Z"
 }

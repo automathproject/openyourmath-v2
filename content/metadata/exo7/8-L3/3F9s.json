@@ -1,7 +1,7 @@
 {
   "uuid": "3F9s",
   "source_path": "exo7/8-L3/3F9s.tex",
-  "summary": "Montrer qu'un élément d'un groupe appartient à un sous-groupe distingué d'indice fini. Exemple de sous-groupe non distingué où la propriété n'est pas vérifiée.",
+  "summary": "Montrer qu'un élément d'un groupe appartient à un sous-groupe distingué d'indice fini, puis fournir un contre-exemple avec un sous-groupe non distingué.",
   "concepts": [
     "sous-groupe distingué",
     "indice d'un sous-groupe",
@@ -10,17 +10,17 @@
     "propriété universelle des sous-groupes distingués"
   ],
   "methods": [
-    "utilisation de la structure de groupe quotient",
-    "calcul des puissances d'éléments",
-    "contre-exemple par construction explicite"
+    "utilisation des classes à gauche",
+    "calcul d'indice",
+    "contre-exemple par construction"
   ],
   "objects": [
-    "groupe fini",
+    "groupe",
     "sous-groupe distingué",
-    "élément du groupe",
-    "groupe symétrique Sn"
+    "élément d'un groupe",
+    "permutation"
   ],
-  "content_hash": "bfb24f790806c127361b3784b7f5c6c216def5f515255a9f9adb5feb9bd42986",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:53:18.037Z"
+  "content_hash": "62856a418eec56c8b1d19221f8d831d7c69fd595272db3ee920aaae2530d7d2b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:46.032Z"
 }

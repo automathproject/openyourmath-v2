@@ -1,24 +1,27 @@
 {
   "uuid": "lI9G",
   "source_path": "crouzet/pcsi/10/lI9G.tex",
-  "summary": "On considère deux suites définies par des sommes partielles de la série de Riemann et on demande de montrer qu'elles sont adjacentes, puis d'en déduire leur convergence commune.",
+  "summary": "On considère deux suites définies par des sommes partielles de séries et une correction. Il faut montrer qu'elles sont adjacentes et en déduire leur convergence vers une limite commune.",
   "concepts": [
     "suite croissante",
     "suite décroissante",
     "suites adjacentes",
     "convergence de suites",
-    "théorème des suites adjacentes"
+    "théorème des suites adjacentes",
+    "limite d'une suite"
   ],
   "methods": [
+    "comparaison de termes consécutifs",
+    "calcul de différence finie",
     "étude de la monotonie",
-    "calcul de la différence de termes consécutifs",
-    "limite de suite"
+    "étude de la limite"
   ],
   "objects": [
     "suite numérique",
-    "somme partielle de série"
+    "somme partielle de série",
+    "différence finie"
   ],
-  "content_hash": "9a48c3dd1b00f7d680bf23973e32621d9d7a28d0dee8a264cfe610d4ba005cda",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:38:36.580Z"
+  "content_hash": "5a6583ed0b7a030ef1570c82104aa1dc6fc9e6c247eb91de0262a0cb63017e75",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:18.791Z"
 }

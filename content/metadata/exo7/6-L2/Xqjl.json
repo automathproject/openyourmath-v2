@@ -1,32 +1,33 @@
 {
   "uuid": "Xqjl",
   "source_path": "exo7/6-L2/Xqjl.tex",
-  "summary": "L'exercice demande de construire les points d'intersection d'un cercle et d'une droite dans le plan euclidien, en utilisant uniquement un compas. Deux cas sont considérés : lorsque le centre du cercle n'appartient pas à la droite et lorsque le centre appartient à la droite.",
+  "summary": "L'exercice demande de construire au compas seul les points d'intersection d'un cercle et d'une droite dans le plan affine euclidien, en distinguant les cas où le centre du cercle appartient ou non à la droite. La construction utilise des symétries, des inversions et des propriétés géométriques des cercles.",
   "concepts": [
     "géométrie affine euclidienne",
-    "inversion",
-    "symétrie",
-    "puissance d'un point",
-    "médiatrice",
-    "perpendicularité",
-    "construction géométrique au compas"
+    "symétrie par rapport à une droite",
+    "inversion géométrique",
+    "puissance d'un point par rapport à un cercle",
+    "orthogonalité de droites",
+    "construction au compas seul",
+    "médiatrice d'un segment"
   ],
   "methods": [
-    "construction géométrique au compas seul",
+    "construction géométrique au compas",
     "utilisation de l'inversion",
-    "symétrie par rapport à une droite",
-    "construction de la médiatrice",
-    "construction de la perpendiculaire"
+    "symétrie orthogonale",
+    "construction de cercles tangents",
+    "intersection de cercles"
   ],
   "objects": [
     "cercle",
     "droite",
-    "points d'intersection",
+    "point",
     "symétrique d'un point",
     "triangle équilatéral",
-    "médiatrice d'un segment"
+    "médiatrice",
+    "perpendiculaire"
   ],
-  "content_hash": "9ccde317d6b71af992787cbfc8d063b404a5315a5918184697b9bc84cf084998",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:44:22.154Z"
+  "content_hash": "7e438ac47dcc4403077274cd0f0e1ea4f1c110f2c1251e6fa6c6e0826a466f72",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:14.839Z"
 }

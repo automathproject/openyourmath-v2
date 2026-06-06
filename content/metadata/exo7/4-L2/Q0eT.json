@@ -1,28 +1,30 @@
 {
   "uuid": "Q0eT",
   "source_path": "exo7/4-L2/Q0eT.tex",
-  "summary": "Calculer le déterminant d'une matrice circulaire A de taille n×n à coefficients complexes, en utilisant les propriétés d'une matrice P liée aux racines n-èmes de l'unité.",
+  "summary": "Calculer le déterminant d'une matrice circulaire A à coefficients périodiques en utilisant les propriétés de la matrice P définie par des racines n-èmes de l'unité. L'exercice demande d'étudier les produits P² et PA pour en déduire le déterminant de A.",
   "concepts": [
     "matrice circulaire",
     "racines de l'unité",
     "déterminant",
     "matrice de permutation",
     "produit matriciel",
-    "propriétés des matrices unitaires"
+    "inversion matricielle",
+    "propriétés des racines de l'unité"
   ],
   "methods": [
     "calcul de produit matriciel",
     "utilisation des propriétés des racines de l'unité",
-    "développement par blocs",
+    "déterminant d'un produit de matrices",
     "linéarité du déterminant"
   ],
   "objects": [
     "matrice circulaire",
     "matrice P",
+    "matrice identité",
     "racines n-èmes de l'unité",
-    "déterminant de matrice"
+    "déterminant"
   ],
-  "content_hash": "d1a02bedb176e0709cc24dd9e188a4ffbf074b1382374ba8ac2bb2cbe90c842a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:49:27.785Z"
+  "content_hash": "f8ad2533f0b3d69e1593b20337cd32077514e7195006df5b2116732283fc0f39",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:40:44.359Z"
 }

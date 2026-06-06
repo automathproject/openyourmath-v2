@@ -1,28 +1,30 @@
 {
   "uuid": "jgqL",
   "source_path": "exo7/1-L1/jgqL.tex",
-  "summary": "L'exercice étudie les propriétés géométriques et algébriques d'un parallélogramme direct dans le plan complexe. Il demande de montrer que la composition de symétries centrales aboutit à l'identité, de prouver une inégalité sur les modules de nombres complexes, et de minimiser le périmètre d'un quadrilatère construit à partir de symétries.",
+  "summary": "L'exercice étudie les propriétés géométriques et algébriques d'un parallélogramme dans le plan complexe. Il demande de montrer que la composition de symétries centrales aboutit à l'identité, de prouver une inégalité sur les modules de nombres complexes, d'exprimer les coordonnées d'un quadrilatère en fonction de paramètres donnés, et de minimiser son périmètre.",
   "concepts": [
     "symétrie centrale",
     "composition de transformations",
     "inégalité triangulaire",
     "module d'un nombre complexe",
+    "parallélogramme",
     "translation",
-    "rotation"
+    "théorème de Thalès"
   ],
   "methods": [
-    "utilisation du théorème de Thalès",
+    "calcul de module",
     "inégalité triangulaire",
-    "analyse de cas particuliers",
+    "expression algébrique de coordonnées",
     "minimisation de fonction"
   ],
   "objects": [
-    "parallélogramme direct",
     "nombres complexes",
     "quadrilatère",
-    "symétries centrales"
+    "symétries centrales",
+    "périmètre",
+    "parallélogramme"
   ],
-  "content_hash": "5b6153d61119e5ddcb1fbb56caeaf255b491deadb26cb9449d151e8804eaa899",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:57:31.254Z"
+  "content_hash": "88b5ae73c98de16e43cf49270186b21c16d0a103f170520583accb60535473c2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:06.057Z"
 }

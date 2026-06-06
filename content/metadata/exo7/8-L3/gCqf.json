@@ -1,25 +1,27 @@
 {
   "uuid": "gCqf",
   "source_path": "exo7/8-L3/gCqf.tex",
-  "summary": "Montrer qu'un groupe dont tout élément est d'ordre 2 est commutatif, puis en déduire que son ordre est une puissance de 2 s'il est fini.",
+  "summary": "Montrer qu'un groupe dont tout élément est d'ordre 2 est commutatif, puis en déduire que si le groupe est fini, son ordre est une puissance de 2.",
   "concepts": [
     "groupe commutatif",
     "ordre d'un élément",
-    "espace vectoriel sur un corps",
+    "groupe fini",
+    "espace vectoriel sur un corps fini",
     "isomorphisme de groupes",
     "dimension d'un espace vectoriel"
   ],
   "methods": [
     "manipulation des relations de groupe",
-    "considération comme espace vectoriel",
+    "utilisation de la structure d'espace vectoriel",
     "calcul de l'ordre d'un groupe"
   ],
   "objects": [
-    "groupe fini",
-    "élément d'ordre 2",
-    "espace vectoriel sur ℤ/2ℤ"
+    "groupe G",
+    "élément x",
+    "élément y",
+    "corps Z/2Z"
   ],
-  "content_hash": "fbc8853d6e721efa2f4796e436473ea115b93fbae0239713e0aa9c673b38bd6f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:15:12.725Z"
+  "content_hash": "c1784c449a7a7e93b502e47a18509bd17184708aed8571b27cc7296a15e84b9d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:27.961Z"
 }

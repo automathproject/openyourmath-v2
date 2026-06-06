@@ -1,29 +1,29 @@
 {
   "uuid": "AB4A",
   "source_path": "exo7/6-L2/AB4A.tex",
-  "summary": "Dans un triangle non rectangle, on montre que les hauteurs du triangle initial deviennent les bissectrices du triangle orthique formé par leurs pieds.",
+  "summary": "Dans un triangle non rectangle, on considère le triangle orthique formé par les pieds des hauteurs. L'exercice demande de prouver que les hauteurs du triangle initial sont les bissectrices du triangle orthique.",
   "concepts": [
     "géométrie affine euclidienne",
     "triangle orthique",
     "cocyclicité",
     "théorème de l'angle inscrit",
-    "angles droits",
-    "bissectrice"
+    "hauteur d'un triangle",
+    "quadrilatère inscriptible",
+    "angle droit"
   ],
   "methods": [
     "utilisation de la cocyclicité",
-    "propriétés des angles inscrits",
+    "application du théorème de l'angle inscrit",
     "analyse des angles droits",
-    "démonstration par égalité d'angles"
+    "propriétés des quadrilatères inscriptibles"
   ],
   "objects": [
     "triangle non rectangle",
-    "hauteurs",
+    "hauteurs d'un triangle",
     "triangle orthique",
-    "pieds des hauteurs",
     "quadrilatères inscriptibles"
   ],
-  "content_hash": "0be7fbd4e496771f830e3b2065c43cbf8ce4fb17161017468682b2337e148331",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:25:16.479Z"
+  "content_hash": "f8579e7c9cb67f5ca760472e8e5cd39b198941746cc0f5b6dd7e9e30e2a6617e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:23.902Z"
 }

@@ -1,27 +1,28 @@
 {
   "uuid": "yRNj",
   "source_path": "exo7/2-L1/yRNj.tex",
-  "summary": "L'exercice demande de calculer la dérivée n-ième en 0 d'une fonction rationnelle, puis la dérivée n-ième de cette fonction pour tout x hors de -1 et 1.",
+  "summary": "L'exercice demande de calculer la n-ième dérivée de la fonction f(x) = x / (1 - x²) en 0, puis d'exprimer cette dérivée pour tout x ≠ ±1. La fonction est une fraction rationnelle et le développement limité est utilisé pour résoudre le problème.",
   "concepts": [
     "développement limité",
     "formule de Taylor-Young",
     "unicité des coefficients d'un développement limité",
-    "fonction de classe C^∞",
+    "dérivées successives",
     "fraction rationnelle",
-    "dérivée d'ordre n"
+    "classe C^∞"
   ],
   "methods": [
     "développement limité en 0",
-    "calcul des coefficients de Taylor",
-    "dérivation successive",
-    "formule de dérivation d'une fraction"
+    "calcul des dérivées successives",
+    "formule de Taylor-Young",
+    "décomposition en éléments simples"
   ],
   "objects": [
     "fonction rationnelle",
-    "dérivée n-ième",
-    "développement limité"
+    "dérivées n-ième",
+    "développement limité",
+    "série de Taylor"
   ],
-  "content_hash": "9640a3dfa9b2c328ec93d8205e5774954af8462ff4c59e3c22afc0ffbe183852",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:44:14.640Z"
+  "content_hash": "33f73768ca7ff9642e82a0f938916a41b3a50fc1ab12274a2e0f712cc284db59",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:10.452Z"
 }

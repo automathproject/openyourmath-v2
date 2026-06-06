@@ -1,28 +1,31 @@
 {
   "uuid": "e2zP",
   "source_path": "exo7/14-L3/e2zP.tex",
-  "summary": "L'exercice demande de démontrer l'inclusion stricte des espaces L^p dans les espaces L^q pour q < p, en utilisant des exemples de fonctions spécifiques dans le cas de la boule unité de R^n.",
+  "summary": "L'exercice demande de démontrer l'inclusion stricte des espaces L^p pour des indices p et q vérifiant q ≤ p, en utilisant des fonctions spécifiques sur une boule unité. Il illustre la hiérarchie des espaces L^p et la stricte inclusion pour des indices différents.",
   "concepts": [
     "espace L^p",
-    "mesure de Lebesgue",
-    "inclusion d'espaces",
+    "inclusion d'espaces de fonctions",
     "inégalité de Hölder",
+    "mesure de Lebesgue",
     "fonction intégrable",
-    "norme L^p"
+    "norme p",
+    "convergence en norme"
   ],
   "methods": [
     "découpage d'intégrale",
     "application de l'inégalité de Hölder",
-    "analyse de convergence d'intégrales",
-    "comparaison de normes"
+    "calcul de norme p",
+    "analyse de convergence des intégrales",
+    "utilisation de la mesure finie"
   ],
   "objects": [
+    "fonction |x|^(-α)",
     "boule unité de R^n",
-    "fonction f_α(x) = |x|^(-α)",
     "espace L^p(Ω)",
-    "espace L^q(Ω)"
+    "norme p",
+    "intégrale de Lebesgue"
   ],
-  "content_hash": "08dc728c9c4ab6fdc6518f43629838c56e41efda5cb415bd271da699f96d7b25",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:55:40.715Z"
+  "content_hash": "9863697deca1ecbdaee98eb58faeed43fa3c2854820f16c69e7abaf8ca741acc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:27.733Z"
 }

@@ -1,20 +1,20 @@
 {
   "uuid": "RpMh",
   "source_path": "exo7/1-L1/RpMh.tex",
-  "summary": "Décomposer quatre fractions rationnelles en éléments simples sur ℝ par identification des coefficients. Les dénominateurs sont de degrés variables, nécessitant parfois une division euclidienne préalable.",
+  "summary": "Décomposer quatre fractions rationnelles en éléments simples sur ℝ par identification des coefficients. Les dénominateurs présentent des racines réelles ou complexes, nécessitant des factorisations adaptées.",
   "concepts": [
     "décomposition en éléments simples",
-    "identification des coefficients",
-    "division euclidienne",
+    "division euclidienne de polynômes",
     "factorisation de polynômes",
     "racines complexes",
+    "identification des coefficients",
     "polynômes irréductibles sur ℝ"
   ],
   "methods": [
     "identification des coefficients",
     "division euclidienne",
     "factorisation de polynômes",
-    "identification des coefficients",
+    "réduction au même dénominateur",
     "résolution de systèmes linéaires"
   ],
   "objects": [
@@ -23,7 +23,7 @@
     "racines complexes",
     "système d'équations linéaires"
   ],
-  "content_hash": "2f31a2c2aadd6d713d47192beb4a36c23aaa18ec5936740d16b088c2fcb58788",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:58:51.452Z"
+  "content_hash": "fdeacc76d149a74955ad87c5567a59bbf80a781461bfaf708564b480fda76a64",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:57.896Z"
 }

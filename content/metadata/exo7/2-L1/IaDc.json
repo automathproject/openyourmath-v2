@@ -1,27 +1,30 @@
 {
   "uuid": "IaDc",
   "source_path": "exo7/2-L1/IaDc.tex",
-  "summary": "L'exercice demande d'étudier une suite définie par une relation de récurrence homographique. Il faut transformer cette relation selon le nombre de points fixes de la transformation homographique associée, puis calculer explicitement le terme général de la suite dans chaque cas.",
+  "summary": "L'exercice demande d'étudier une suite définie par une relation de récurrence homographique. Il faut transformer cette relation selon le nombre de points fixes de la transformation associée, puis calculer explicitement le terme général de la suite dans les deux cas. Enfin, on applique cette méthode à quatre exemples concrets de suites.",
   "concepts": [
-    "relation de récurrence",
     "transformation homographique",
     "point fixe",
+    "relation de récurrence",
     "suite récurrente",
     "convergence de suite",
-    "limite de suite"
+    "limite de suite",
+    "fonction rationnelle"
   ],
   "methods": [
-    "transformation de relation de récurrence",
+    "transformation de Möbius",
     "calcul de points fixes",
-    "linéarisation de suite récurrente",
-    "calcul explicite de terme général"
+    "linéarisation de relation de récurrence",
+    "résolution de suite récurrente non linéaire",
+    "analyse de cas selon les points fixes"
   ],
   "objects": [
     "suite récurrente homographique",
     "points fixes",
-    "relation de récurrence non linéaire"
+    "relation de récurrence non linéaire",
+    "fonction rationnelle"
   ],
-  "content_hash": "e9a66a1162a99dc2f9af4bd29b70c973117a045bc2718025bd90703e58677bad",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:12:16.103Z"
+  "content_hash": "4a57c375ed478252d9ba6c5cfa9842df1687e56884ceec70e02e566c4e67ef3b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:21.921Z"
 }

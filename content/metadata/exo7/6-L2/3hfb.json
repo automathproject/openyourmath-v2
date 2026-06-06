@@ -1,28 +1,30 @@
 {
   "uuid": "3hfb",
   "source_path": "exo7/6-L2/3hfb.tex",
-  "summary": "L'exercice demande de démontrer que la puissance d'un point P par rapport à un cercle C est égale au produit scalaire des vecteurs PE et PF, où E est un point d'intersection d'une droite passant par P avec le cercle, et F le point diamétralement opposé à E.",
+  "summary": "Soit un cercle et un point du plan. On considère une droite passant par ce point et intersectant le cercle. On montre que le produit scalaire des vecteurs entre le point et deux points particuliers du cercle est égal à la puissance du point par rapport au cercle.",
   "concepts": [
     "géométrie affine euclidienne",
-    "puissance d'un point par rapport à un cercle",
     "produit scalaire",
+    "puissance d'un point par rapport à un cercle",
     "projection orthogonale",
-    "tangente à un cercle",
-    "diamètre d'un cercle"
+    "théorème de la puissance d'un point",
+    "diamètre d'un cercle",
+    "tangente à un cercle"
   ],
   "methods": [
     "décomposition vectorielle",
-    "analyse de cas",
-    "utilisation de la puissance d'un point"
+    "cas d'étude",
+    "utilisation de la projection orthogonale",
+    "calcul de produit scalaire"
   ],
   "objects": [
     "cercle",
-    "point",
+    "point du plan",
     "droite",
     "vecteurs",
-    "projection orthogonale"
+    "projeté orthogonal"
   ],
-  "content_hash": "79fedaa477f25ee2c8de2516c297f8a975e587d47f2a63ad11479b16871da7a5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:20:41.054Z"
+  "content_hash": "1bb411745db1e27ad4ed433d609a551bd43eefdc4bff016a92475ce955f72eab",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:05.227Z"
 }

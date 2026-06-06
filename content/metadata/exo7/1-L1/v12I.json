@@ -1,31 +1,30 @@
 {
   "uuid": "v12I",
   "source_path": "exo7/1-L1/v12I.tex",
-  "summary": "L'exercice demande de démontrer qu'une application linéaire q, définie comme une moyenne de conjugaisons d'une projection p par les éléments d'un groupe G, est un projecteur dont l'image est un sous-espace vectoriel F invariant.",
+  "summary": "Soit E un espace vectoriel, G un sous-groupe fini de GL(E) et F un sous-espace stable par G. On considère un projecteur p d'image F et on doit montrer que la moyenne des conjugués de p par les éléments de G est un projecteur d'image F.",
   "concepts": [
-    "application linéaire",
-    "projecteur",
     "sous-espace vectoriel",
-    "groupe",
-    "conjugaison",
-    "invariance",
-    "image d'une application",
-    "somme directe"
+    "sous-groupe",
+    "groupe linéaire",
+    "projecteur",
+    "stabilité d'un sous-espace",
+    "conjugaison d'applications linéaires",
+    "moyenne d'applications linéaires"
   ],
   "methods": [
-    "démonstration par double inclusion",
-    "utilisation de la linéarité",
-    "analyse de l'image",
-    "manipulation algébrique de conjugaisons"
+    "calcul de la composée d'applications linéaires",
+    "vérification de l'idempotence",
+    "étude de l'image d'un projecteur",
+    "utilisation de la stabilité d'un sous-espace"
   ],
   "objects": [
-    "application q",
-    "application p",
-    "groupe G",
-    "sous-espace vectoriel F",
-    "vecteur x"
+    "espace vectoriel",
+    "sous-groupe fini",
+    "projecteur",
+    "sous-espace stable",
+    "conjugué d'un projecteur"
   ],
-  "content_hash": "03d7e93a6b3f3eac09f2f2865e9d2c8cc33efb19299db7e34fabf574a80569ab",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:39:01.791Z"
+  "content_hash": "741c8e0f17018af818f28b3bfaabaca72e5afc2d4b04bc9ab71f3f0128857b07",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:34:04.284Z"
 }

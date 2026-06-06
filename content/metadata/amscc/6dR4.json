@@ -1,24 +1,28 @@
 {
   "uuid": "6dR4",
   "source_path": "amscc/6dR4.tex",
-  "summary": "L'exercice propose d'associer quatre fonctions de deux variables à leurs courbes de niveau respectives parmi quatre représentations graphiques données. Il s'agit d'identifier la famille de courbes de niveau correspondant à chaque fonction.",
+  "summary": "L'exercice demande d'associer quatre fonctions de deux variables à leurs courbes de niveau respectives parmi quatre représentations graphiques données. Il s'agit d'identifier la forme des courbes de niveau pour chaque fonction et de justifier les associations.",
   "concepts": [
     "courbe de niveau",
     "fonction de deux variables",
     "représentation graphique",
-    "analyse des formes géométriques"
+    "équation cartésienne",
+    "géométrie analytique",
+    "famille de courbes"
   ],
   "methods": [
-    "analyse des équations de courbes",
-    "comparaison des formes géométriques",
-    "identification des familles de courbes"
+    "analyse des équations",
+    "comparaison de formes géométriques",
+    "identification de symétries",
+    "tracé de courbes"
   ],
   "objects": [
-    "fonctions de deux variables",
+    "fonction de deux variables",
     "courbes de niveau",
-    "graphiques en deux dimensions"
+    "graphiques",
+    "équations cartésiennes"
   ],
-  "content_hash": "fffa4418560cdaa7f6a0401cfa0da3687eac23cfa9eb43ce00cd9c6d4d7a8020",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:40:04.528Z"
+  "content_hash": "f5fb2f135da1fa02027df755faa8e864ed7b9ae92028fb615bc0a7ddcf00ba0c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:27.516Z"
 }

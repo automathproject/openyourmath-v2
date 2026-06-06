@@ -1,27 +1,31 @@
 {
   "uuid": "9F2e",
   "source_path": "amscc/9F2e.tex",
-  "summary": "L'exercice demande de déterminer la valeur d'un paramètre a dans la loi jointe d'un couple de variables aléatoires discrètes, puis d'analyser les propriétés de ce couple (lois marginales, espérance, variance, indépendance). Il étudie ensuite les transformations linéaires de ces variables et leurs propriétés.",
+  "summary": "L'exercice étudie un couple de variables aléatoires discrètes définies par une loi jointe donnée sous forme de tableau. Il demande de déterminer la valeur d'un paramètre, d'analyser les lois marginales, de calculer espérance et variance, et d'étudier l'indépendance entre les variables ainsi que leurs transformations.",
   "concepts": [
     "loi jointe",
     "loi marginale",
     "espérance",
     "variance",
     "indépendance de variables aléatoires",
-    "transformation linéaire de variables aléatoires"
+    "variable aléatoire discrète",
+    "transformation de variables aléatoires"
   ],
   "methods": [
     "calcul de probabilités marginales",
-    "calcul d'espérance",
-    "calcul de variance",
-    "test d'indépendance"
+    "vérification d'indépendance",
+    "calcul d'espérance et variance",
+    "détermination de loi jointe par transformation"
   ],
   "objects": [
-    "couple de variables aléatoires discrètes",
     "tableau de loi jointe",
-    "variables aléatoires transformées"
+    "variable aléatoire discrète",
+    "espérance",
+    "variance",
+    "loi marginale",
+    "transformation linéaire de variables aléatoires"
   ],
-  "content_hash": "530bdebd12a83c1a86222e71de9552c294bb0a36684b23f90a1555f5ab990a1f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:18:56.165Z"
+  "content_hash": "aa6c3d3cec2681430011cf600c7b700dd867e20d39798704ce128ab52d4560b4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:12.917Z"
 }

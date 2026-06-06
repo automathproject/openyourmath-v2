@@ -1,29 +1,27 @@
 {
   "uuid": "Upn1",
   "source_path": "exo7/1-L1/Upn1.tex",
-  "summary": "L'exercice demande de déterminer si plusieurs affirmations concernant les espaces vectoriels et leurs sous-espaces sont vraies ou fausses.",
+  "summary": "L'exercice propose une série de questions vraies ou fausses sur les propriétés des espaces vectoriels et de leurs sous-espaces. Il aborde notamment la structure de l'ensemble {0}, l'existence de sous-espaces stricts, et les opérations d'intersection, réunion et somme entre sous-espaces.",
   "concepts": [
     "espace vectoriel",
     "sous-espace vectoriel",
+    "sous-espace strict",
     "intersection de sous-espaces",
     "réunion de sous-espaces",
     "somme de sous-espaces",
     "produit cartésien d'espaces vectoriels"
   ],
   "methods": [
-    "vérification des propriétés d'espace vectoriel",
-    "analyse des sous-espaces"
+    "vérification des axiomes d'espace vectoriel",
+    "analyse des propriétés structurelles"
   ],
   "objects": [
     "ensemble {0}",
     "ensemble {0,1}",
     "sous-espaces vectoriels",
-    "intersection de sous-espaces",
-    "réunion de sous-espaces",
-    "somme de sous-espaces",
     "produit cartésien d'espaces vectoriels"
   ],
-  "content_hash": "ee6eb72003b80c8cab915c5c658bfcd1a359d804d423ede698b93c45066f24ec",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:54:21.310Z"
+  "content_hash": "525ca9b8758e473ea45758d5901f5e6404f81021559068b391e1d5ac33397f8b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:43.219Z"
 }

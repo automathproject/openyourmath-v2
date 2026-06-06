@@ -1,27 +1,26 @@
 {
   "uuid": "vAIA",
   "source_path": "exo7/1-L1/vAIA.tex",
-  "summary": "Résoudre deux inéquations trigonométriques dans ℝ : une inégalité impliquant la somme de cosinus et une inégalité quadratique en cosinus(x).",
+  "summary": "Résoudre deux inéquations trigonométriques en cosinus dans ℝ. La première combine des cosinus de multiples angles, la seconde est une inéquation du second degré en cos(x).",
   "concepts": [
-    "fonction cosinus",
-    "identités trigonométriques",
+    "formules d'addition trigonométrique",
     "inéquation trigonométrique",
+    "équation du second degré",
     "résolution d'inéquation",
-    "périodicité des fonctions trigonométriques",
-    "angles associés"
+    "périodicité des fonctions trigonométriques"
   ],
   "methods": [
     "factorisation",
-    "identité de factorisation des cosinus",
-    "résolution d'inéquation quadratique",
-    "résolution d'inéquation trigonométrique"
+    "résolution d'inéquation du second degré",
+    "utilisation des formules trigonométriques",
+    "linéarisation de cosinus"
   ],
   "objects": [
     "fonction cosinus",
     "inéquation trigonométrique",
-    "angle réel"
+    "équation du second degré"
   ],
-  "content_hash": "3d2b6489c677160d4cef5a8d2a4898f37b75380f528a071ce355b9e46cd46096",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:05:46.397Z"
+  "content_hash": "927d0e3a346ed675a92153485882f6d6bf2ea0a340ec7b3ee65284652de4e394",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:18.823Z"
 }

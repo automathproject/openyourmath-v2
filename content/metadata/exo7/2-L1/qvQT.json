@@ -1,27 +1,27 @@
 {
   "uuid": "qvQT",
   "source_path": "exo7/2-L1/qvQT.tex",
-  "summary": "Simplifier une expression impliquant des fonctions hyperboliques et déterminer ses limites aux infinis.",
+  "summary": "Simplifier une expression impliquant des fonctions hyperboliques cosinus et sinus, puis déterminer ses limites aux bornes de l'intervalle réel.",
   "concepts": [
     "fonctions hyperboliques",
-    "limites de fonctions",
-    "relations de croissance comparées",
+    "définition exponentielle des fonctions hyperboliques",
     "propriétés logarithmiques",
-    "définition des fonctions hyperboliques"
+    "relations de croissance comparée",
+    "limite de fonctions"
   ],
   "methods": [
-    "développement algébrique",
-    "simplification d'expression",
-    "calcul de limites",
-    "utilisation des propriétés logarithmiques"
+    "développement exponentiel",
+    "simplification algébrique",
+    "utilisation des propriétés du logarithme",
+    "analyse des limites"
   ],
   "objects": [
     "fonction hyperbolique cosinus",
     "fonction hyperbolique sinus",
-    "expression algébrique",
-    "limites infinies"
+    "expression rationnelle",
+    "limite infinie"
   ],
-  "content_hash": "69abcff6db2b89b356080171fb7570ccca63203e9e82e6282f124b0f88a1505c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:06:41.749Z"
+  "content_hash": "5b2f607556fb5c57dd4b8d1bc88148b620487ca9f543f5ee013e6c4af5b074ed",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:08.306Z"
 }

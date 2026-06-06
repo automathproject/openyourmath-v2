@@ -1,28 +1,30 @@
 {
   "uuid": "2Xwj",
   "source_path": "exo7/1-L1/2Xwj.tex",
-  "summary": "Calculer des sommes trigonométriques de cosinus et sinus de multiples d'un angle, avec et sans coefficients binomiaux. L'exercice demande d'exprimer ces sommes en fonction de n et x.",
+  "summary": "Calculer les sommes de cosinus et sinus de multiples d'un angle, ainsi que leurs carrés et leurs combinaisons pondérées par des coefficients binomiaux. L'exercice explore des cas particuliers selon la valeur de l'angle.",
   "concepts": [
     "formule d'Euler",
     "identités trigonométriques",
     "somme de séries trigonométriques",
-    "nombre complexe",
-    "angle multiple",
-    "identification partie réelle et imaginaire"
+    "développement binomial",
+    "identification partie réelle et imaginaire",
+    "formule de la somme géométrique"
   ],
   "methods": [
-    "décomposition en série géométrique",
-    "identification des parties réelles et imaginaires",
+    "identification partie réelle et imaginaire",
+    "développement en série",
     "utilisation des identités trigonométriques",
-    "téléscopage"
+    "somme télescopique",
+    "développement binomial"
   ],
   "objects": [
-    "somme trigonométrique",
-    "nombre complexe",
-    "angle",
-    "coefficient binomial"
+    "somme de cosinus",
+    "somme de sinus",
+    "somme de carrés de cosinus",
+    "somme de carrés de sinus",
+    "somme pondérée par des coefficients binomiaux"
   ],
-  "content_hash": "d0c6b7f7f23e8f51ecb665131d9d30c7cafe55a6e7789ba076e541352e00649f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:28:45.184Z"
+  "content_hash": "154bbe85dd4aae76fac522be2673fddf47cd9e765c668dd3614f3b626d5f1a1b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:13.593Z"
 }

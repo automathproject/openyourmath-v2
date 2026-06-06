@@ -1,23 +1,25 @@
 {
   "uuid": "XNff",
   "source_path": "exo7/9-L3/XNff.tex",
-  "summary": "L'exercice demande de démontrer trois relations trigonométriques sphériques entre les angles et les côtés d'un triangle sphérique, en utilisant les résultats et notations d'un exercice précédent.",
+  "summary": "L'exercice demande de démontrer trois relations trigonométriques sphériques entre les angles et les côtés d'un triangle sphérique, en utilisant les résultats d'un exercice précédent.",
   "concepts": [
-    "trigonométrie sphérique",
-    "lois des cosinus sphériques",
+    "théorème des cosinus sphérique",
+    "relations fondamentales de la trigonométrie sphérique",
     "triangle sphérique",
-    "angles et côtés d'un triangle sphérique"
+    "angles et côtés d'un triangle sphérique",
+    "formules de conversion sphérique"
   ],
   "methods": [
-    "démonstration par utilisation de résultats antérieurs",
-    "manipulation d'équations trigonométriques"
+    "développement trigonométrique",
+    "utilisation de relations connues",
+    "substitution algébrique"
   ],
   "objects": [
     "triangle sphérique",
     "angles d'un triangle sphérique",
     "côtés d'un triangle sphérique"
   ],
-  "content_hash": "65a628c8214e594fab7d1b10791f04ec086231b0339b7bc63b4c2982ff277bec",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:07:19.924Z"
+  "content_hash": "0a32676e2ed437eea9cfb4e043b1f23bbe309bd6ea00ff4601e449e5fd003d4f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:58.677Z"
 }

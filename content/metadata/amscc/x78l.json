@@ -1,24 +1,25 @@
 {
   "uuid": "x78l",
   "source_path": "amscc/x78l.tex",
-  "summary": "Calculer des statistiques descriptives (moyenne, variance, écart-type) à partir d'un échantillon de 25 mesures de temps d'efficacité d'un médicament. Comparer la moyenne empirique à une valeur théorique, estimer des probabilités sous hypothèse de normalité, construire un intervalle de confiance pour la moyenne, et déterminer la taille d'échantillon nécessaire pour réduire la largeur de l'intervalle.",
+  "summary": "L'exercice demande d'analyser un échantillon de 25 mesures de temps d'efficacité d'un médicament, supposées suivre une loi normale. Il s'agit de calculer des statistiques descriptives (moyenne, variance, écart-type), d'évaluer des probabilités associées à cette loi, de construire un intervalle de confiance pour la moyenne, et d'en interpréter les résultats par rapport à une affirmation du laboratoire.",
   "concepts": [
     "loi normale",
-    "intervalle de confiance",
-    "écart-type",
     "moyenne empirique",
+    "variance empirique",
+    "écart-type",
+    "intervalle de confiance",
     "quantile",
     "loi de Student",
-    "estimation ponctuelle",
-    "estimation par intervalle"
+    "estimation par intervalle",
+    "probabilité conditionnelle"
   ],
   "methods": [
-    "calcul de moyenne",
-    "calcul de variance",
-    "calcul de quantile",
-    "construction d'intervalle de confiance",
+    "calcul de statistiques descriptives",
     "standardisation",
-    "calcul de taille d'échantillon"
+    "calcul de quantiles",
+    "construction d'intervalle de confiance",
+    "interprétation d'intervalle de confiance",
+    "calcul de taille d'échantillon pour précision donnée"
   ],
   "objects": [
     "échantillon de données",
@@ -26,9 +27,10 @@
     "variance",
     "écart-type",
     "intervalle de confiance",
-    "quantile"
+    "quantile de Student",
+    "probabilité"
   ],
-  "content_hash": "72c061f48e2b3a0a5a9fc69a2e03f0a20129ab6a24a6b6d283cc6ba61e6f396c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:27:41.705Z"
+  "content_hash": "7e624f4a26747c767bb090be545e36a39de31a9e1a6c63aef8866552017b756a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:15:05.221Z"
 }

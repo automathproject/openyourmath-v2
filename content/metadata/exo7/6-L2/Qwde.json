@@ -8,12 +8,12 @@
     "repère d'une droite",
     "formules de Cramer",
     "déterminant",
-    "vecteur directeur"
+    "sous-espace affine"
   ],
   "methods": [
     "résolution de système linéaire",
     "calcul de déterminant",
-    "application des formules de Cramer"
+    "paramétrisation de droite affine"
   ],
   "objects": [
     "droite affine",
@@ -21,7 +21,7 @@
     "vecteur directeur",
     "point de la droite"
   ],
-  "content_hash": "f23ecbd8f67139849e390ab374a93eabb6e1cbee73075293f58e2f3cd7605682",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:53:11.488Z"
+  "content_hash": "a798200eda11c8a52adcced2feeab458aa82c49ce23d13c8dbbacf11ad4fb3fd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:10.573Z"
 }

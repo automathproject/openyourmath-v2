@@ -1,32 +1,34 @@
 {
   "uuid": "IjIT",
   "source_path": "exo7/5-L2/IjIT.tex",
-  "summary": "Développer en série de Fourier des fonctions périodiques définies sur un intervalle, puis utiliser ces développements pour calculer des sommes infinies de séries numériques. Les fonctions sont soit paires, soit impaires, et les sommes à déterminer impliquent des puissances paires et impaires d'entiers.",
+  "summary": "Développer en série de Fourier des fonctions périodiques définies sur un intervalle, puis utiliser ces développements pour calculer des sommes infinies de séries numériques. Les fonctions sont soit paires, soit impaires, ou générales, et les sommes à déterminer impliquent des puissances paires et impaires d'entiers.",
   "concepts": [
     "série de Fourier",
     "théorème de Dirichlet",
     "formule de Parseval",
     "fonction paire",
     "fonction impaire",
-    "intégration par parties",
+    "intégrale de Fourier",
     "convergence uniforme",
     "coefficient de Fourier"
   ],
   "methods": [
     "calcul des coefficients de Fourier",
     "intégration par parties",
+    "utilisation de la parité",
     "application de la formule de Parseval",
     "développement en série trigonométrique",
-    "évaluation en points particuliers"
+    "séparation des sommes paires et impaires"
   ],
   "objects": [
     "fonction périodique",
-    "somme infinie",
     "coefficient de Fourier",
-    "intégrale définie",
-    "série trigonométrique"
+    "série numérique",
+    "intégrale sur un intervalle",
+    "fonction cosinus",
+    "fonction sinus"
   ],
-  "content_hash": "0c4323fd4cc2073a4d0c72b0cbd7892d1834109dde67cec6fa42acbc0ad1bc03",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:04:46.423Z"
+  "content_hash": "b16a4d5e9b801a4cc8f87f9cb6d0f3427d90d3f3639be26e29cf3d9f9cf7f719",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:18.765Z"
 }

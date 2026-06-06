@@ -3,26 +3,25 @@
   "source_path": "exo7/14-L3/OcLM.tex",
   "summary": "L'exercice demande de montrer l'intégrabilité d'une fonction de deux variables sur un domaine donné, puis d'en déduire la valeur d'une intégrale impliquant des fonctions trigonométriques et exponentielles.",
   "concepts": [
-    "intégrabilité",
-    "mesure de Lebesgue",
+    "intégrabilité de Lebesgue",
     "théorème de Tonelli",
     "théorème de Fubini",
     "intégrale multiple",
-    "fonction exponentielle",
-    "fonction trigonométrique"
+    "mesure de Lebesgue",
+    "fonction intégrable"
   ],
   "methods": [
-    "intégration par parties",
-    "changement de variable",
-    "évaluation d'intégrale"
+    "application du théorème de Tonelli",
+    "application du théorème de Fubini",
+    "intégration par parties"
   ],
   "objects": [
     "fonction de deux variables",
-    "intégrale sur un domaine",
+    "intégrale sur un produit d'intervalles",
     "fonction exponentielle",
-    "fonction trigonométrique"
+    "fonction sinus"
   ],
-  "content_hash": "3d067bc1dce9db2054c459bb7f3dcc3d34bdb1f21fc96bfdce74230fb19925ca",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:24:31.593Z"
+  "content_hash": "ae41b0135f64ba22b59e1160436e29d0812426b732e15705d842ff4aafa4ea81",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:18.575Z"
 }

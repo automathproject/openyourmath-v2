@@ -1,28 +1,29 @@
 {
   "uuid": "ovua",
   "source_path": "amscc/ovua.tex",
-  "summary": "L'exercice demande de tester l'adéquation d'un échantillon de dépenses mensuelles à une loi normale donnée, en utilisant un test non paramétrique au seuil de 5%. Les données sont fournies sous forme de tableau de fréquences.",
+  "summary": "L'exercice demande de tester l'adéquation d'un échantillon de dépenses mensuelles de produits surgelés à une loi normale de paramètres donnés, en utilisant un test non paramétrique au seuil de 5%. Les données sont fournies sous forme de tableau de fréquences.",
   "concepts": [
     "test d'adéquation",
     "loi normale",
     "test non paramétrique",
-    "hypothèse nulle",
     "risque de première espèce",
-    "statistique de test",
-    "distribution empirique"
+    "statistique d'échantillon",
+    "hypothèse nulle",
+    "hypothèse alternative"
   ],
   "methods": [
     "test du chi-deux",
     "comparaison de fréquences observées et théoriques",
     "calcul de la statistique de test",
-    "consultation de la table critique"
+    "consultation de la table de distribution du chi-deux"
   ],
   "objects": [
     "tableau de fréquences",
-    "distribution des dépenses mensuelles",
-    "loi normale spécifiée"
+    "dépenses mensuelles",
+    "loi normale de paramètres fixés",
+    "échantillon de 500 ménages"
   ],
-  "content_hash": "287a6681c0017eb1a11289c952accee948b8ea9a092c458b0073b6c6c3c106d8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:52:18.236Z"
+  "content_hash": "3e042bb38838b33e5ba5953b1ed7d369a94c6c25f444ac25103f3f80e8c65ea6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:51.289Z"
 }

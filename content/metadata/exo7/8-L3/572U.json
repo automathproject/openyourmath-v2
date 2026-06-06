@@ -1,30 +1,31 @@
 {
   "uuid": "572U",
   "source_path": "exo7/8-L3/572U.tex",
-  "summary": "L'exercice étudie le groupe engendré par les permutations circulaires d'un ensemble de cardinal n et détermine sa relation avec le groupe alterné An et le groupe symétrique Sn selon la parité de n.",
+  "summary": "L'exercice demande de montrer que les permutations circulaires engendrent le groupe symétrique Sn si n est pair, et le groupe alterné An si n est impair.",
   "concepts": [
-    "groupe alterné",
+    "action de groupe",
     "groupe symétrique",
+    "groupe alterné",
     "permutation circulaire",
     "3-cycle",
     "signature d'une permutation",
-    "sous-groupe engendré",
+    "groupe engendré",
     "indice d'un sous-groupe"
   ],
   "methods": [
-    "analyse de cas",
-    "vérification de relations",
-    "utilisation de propriétés de signature",
-    "comparaison d'indices de sous-groupes"
+    "décomposition en cycles",
+    "calcul de signature",
+    "analyse de l'indice d'un sous-groupe",
+    "génération de sous-groupes"
   ],
   "objects": [
-    "permutations circulaires",
-    "groupe PCn",
-    "groupe An",
-    "groupe Sn",
-    "3-cycles"
+    "permutation circulaire",
+    "groupe symétrique Sn",
+    "groupe alterné An",
+    "3-cycle",
+    "sous-groupe engendré"
   ],
-  "content_hash": "9cae022261f8f5c1b1fbfff3904ef2bf826b02ce7ccb383988f52906b0fb8700",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:24:58.267Z"
+  "content_hash": "f98b6743dc01c61f0addff02b6734adf3912dd74218f0d0397813dc12a574399",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:32:01.476Z"
 }

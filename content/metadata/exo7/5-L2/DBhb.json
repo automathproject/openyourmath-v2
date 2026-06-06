@@ -1,29 +1,31 @@
 {
   "uuid": "DBhb",
   "source_path": "exo7/5-L2/DBhb.tex",
-  "summary": "L'exercice demande de montrer qu'une application linéaire définie sur le groupe linéaire général de matrices carrées inversibles est différentiable en tout point et de déterminer sa différentielle.",
+  "summary": "L'exercice demande de montrer la différentiabilité d'une application qui à une matrice inversible associe son inverse, et de déterminer sa différentielle. Le contexte est celui des matrices carrées réelles.",
   "concepts": [
     "différentiabilité",
-    "application linéaire",
-    "groupe linéaire général",
     "matrice inversible",
+    "application linéaire",
     "norme sous-multiplicative",
     "continuité du déterminant",
-    "limite de fonctions"
+    "formule de l'inverse par comatrice",
+    "limite de fonctions vectorielles"
   ],
   "methods": [
-    "développement en série",
-    "estimation de norme",
+    "développement en série de Taylor",
+    "estimation de reste",
+    "calcul de la différentielle",
     "utilisation de la formule de l'inverse",
-    "calcul de la différentielle"
+    "passage à la limite"
   ],
   "objects": [
-    "application de matrices",
-    "matrice carrée inversible",
+    "application de $\\mathcal{M}_n(\\mathbb{R})$ dans $\\mathcal{M}_n(\\mathbb{R})$",
+    "matrice carrée",
+    "matrice inversible",
     "différentielle",
-    "norme de matrice"
+    "perturbation matricielle"
   ],
-  "content_hash": "295e19191abeba25e56f477f00aefbe5368a4437b84d7a9d94b8d7ccbf453305",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:50:04.652Z"
+  "content_hash": "8676eecd8366fbdd520be41234851e20687018ea11636757da7be2b97b26db67",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:56.555Z"
 }

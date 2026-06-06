@@ -1,21 +1,22 @@
 {
   "uuid": "QQOK",
   "source_path": "exo7/6-L2/QQOK.tex",
-  "summary": "Déterminer les valeurs de λ pour lesquelles la surface d'équation x(λ−y)+y(λ−z)+z(λ−x)−λ=0 est un cône du second degré, puis identifier son sommet et une directrice.",
+  "summary": "Déterminer les valeurs de λ pour lesquelles la surface d'équation x(λ−y)+y(λ−z)+z(λ−x)−λ=0 est un cône du second degré, puis préciser son sommet et une directrice dans ces cas.",
   "concepts": [
+    "quadrique",
+    "cône du second degré",
     "forme quadratique",
     "valeurs propres",
     "rang d'une matrice",
     "signature d'une forme quadratique",
-    "centre de symétrie",
     "point critique",
-    "cône du second degré"
+    "centre de symétrie"
   ],
   "methods": [
+    "calcul des dérivées partielles",
+    "résolution d'un système linéaire",
     "diagonalisation de matrice",
-    "calcul de dérivées partielles",
-    "résolution de système d'équations linéaires",
-    "transformation de coordonnées"
+    "changement de repère"
   ],
   "objects": [
     "surface quadratique",
@@ -23,7 +24,7 @@
     "point critique",
     "cône de révolution"
   ],
-  "content_hash": "222681900650d2012aa81e80a1c39ccf398d14ec36351f095b3bad4be24e48ac",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:05:01.654Z"
+  "content_hash": "1538355278051e04ce0214331d4856df505c2a15b84526d92ca9025972b2f41f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:18.500Z"
 }

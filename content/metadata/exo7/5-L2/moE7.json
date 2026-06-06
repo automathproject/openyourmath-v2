@@ -1,29 +1,31 @@
 {
   "uuid": "moE7",
   "source_path": "exo7/5-L2/moE7.tex",
-  "summary": "L'exercice demande de montrer qu'une fonction définie par une série de fonctions est de classe C^1 sur l'intervalle ]-1,1[ et d'en déduire son expression explicite.",
+  "summary": "L'exercice demande de montrer qu'une fonction définie par une série de fonctions est de classe C¹ sur l'intervalle ]-1,1[, puis d'en calculer la dérivée et d'en déduire une expression simplifiée de la fonction sous forme d'une arctangente.",
   "concepts": [
     "série de fonctions",
     "convergence uniforme",
-    "dérivation terme à terme",
-    "fonction de classe C^1",
-    "fonction complexe",
-    "partie réelle et imaginaire"
+    "théorème de dérivation terme à terme",
+    "classe C¹",
+    "fonction dérivable",
+    "partie réelle et imaginaire d'un nombre complexe",
+    "primitive d'une fonction"
   ],
   "methods": [
     "dérivation terme à terme",
-    "convergence normale",
     "calcul de dérivée",
     "intégration",
-    "identification de primitive"
+    "décomposition en partie réelle et imaginaire",
+    "utilisation de la formule de dérivation de l'arctangente"
   ],
   "objects": [
     "série de fonctions",
     "fonction dérivée",
-    "fonction complexe",
-    "fonction Arctan"
+    "fonction arctangente",
+    "nombre complexe",
+    "primitive"
   ],
-  "content_hash": "fb8f931ad4844d12cc21a14d48e5b0db137a45cae9fe7cdf588e74fe82a1dd2d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:02:38.614Z"
+  "content_hash": "f5c8f075c7cbc89da6511274471d32e9c801d439f872f427b5862bb93e8808b3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:43.170Z"
 }

@@ -1,23 +1,28 @@
 {
   "uuid": "MbYD",
   "source_path": "exo7/1-L1/MbYD.tex",
-  "summary": "Calculer le cardinal de l'union de plusieurs ensembles finis, en utilisant des formules spécifiques pour 3 et 4 ensembles, puis généraliser pour n ensembles.",
+  "summary": "L'exercice demande de calculer le cardinal de l'union de 3 puis 4 ensembles finis, puis de conjecturer une formule générale pour l'union de n ensembles. Le contexte est purement algébrique, sans application concrète.",
   "concepts": [
     "principe d'inclusion-exclusion",
     "cardinal d'un ensemble",
-    "formule de généralisation pour unions d'ensembles"
+    "union d'ensembles",
+    "combinaisons",
+    "formule de récurrence",
+    "somme alternée"
   ],
   "methods": [
-    "formule de l'inclusion-exclusion",
-    "calcul par récurrence",
-    "généralisation par induction"
+    "principe d'inclusion-exclusion",
+    "calcul de combinaisons",
+    "conjecture par généralisation",
+    "somme de séries finies"
   ],
   "objects": [
     "ensembles finis",
-    "union d'ensembles",
-    "cardinal"
+    "cardinal d'union",
+    "formule de récurrence",
+    "somme alternée"
   ],
-  "content_hash": "2ebb7844e9332e3f6dd2ed1cc7578ccdd57efdc3dcb785bcc8de6237ffc879c2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:42:35.663Z"
+  "content_hash": "53b12b874bb7b5c26bd414d523f7eb092cd5f9512496be9eb6553b9e5f224e37",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:40.107Z"
 }

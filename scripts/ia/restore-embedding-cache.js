@@ -45,16 +45,41 @@ if (DRY_RUN) console.log('   (dry-run : aucune écriture)');
 if (!DRY_RUN) fs.mkdirSync(CACHE_ROOT, { recursive: true });
 
 let restored = 0, skipped = 0, errors = 0;
+let overwritten = 0;
+
+function expectedDimension(row) {
+  return row.dimension ?? Math.floor(Buffer.from(row.embedding_summary).byteLength / 4);
+}
+
+function shouldOverwriteCache(filePath, row) {
+  if (!fs.existsSync(filePath)) return true;
+
+  try {
+    const cached = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    return (
+      cached.content_hash !== row.content_hash ||
+      cached.model !== row.model_version ||
+      cached.dimension !== expectedDimension(row)
+    );
+  } catch {
+    return true;
+  }
+}
 
 for (const row of rows) {
   const filePath = path.join(CACHE_ROOT, `${row.uuid}.json`);
+  const exists = fs.existsSync(filePath);
 
-  if (fs.existsSync(filePath)) {
+  if (!shouldOverwriteCache(filePath, row)) {
     skipped++;
     continue;
   }
 
-  if (DRY_RUN) { restored++; continue; }
+  if (DRY_RUN) {
+    if (exists) overwritten++;
+    else restored++;
+    continue;
+  }
 
   try {
     const buf = Buffer.from(row.embedding_summary);
@@ -62,17 +87,18 @@ for (const row of rows) {
     const data = {
       uuid:             row.uuid,
       model:            row.model_version,
-      dimension:        row.dimension ?? vector.length,
+      dimension:        expectedDimension(row),
       content_hash:     row.content_hash,
       embedding_base64: buf.toString('base64'),
       created_at:       new Date().toISOString()
     };
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
-    restored++;
+    if (exists) overwritten++;
+    else restored++;
   } catch (err) {
     console.warn(`⚠️  ${row.uuid} : ${err.message}`);
     errors++;
   }
 }
 
-console.log(`✅ ${restored} restauré(s)  |  ${skipped} déjà présent(s)  |  ${errors} erreur(s)`);
+console.log(`✅ ${restored} restauré(s)  |  ${overwritten} remplacé(s)  |  ${skipped} déjà cohérent(s)  |  ${errors} erreur(s)`);

@@ -1,13 +1,12 @@
 {
   "uuid": "7mML",
   "source_path": "exo7/10-L3/7mML.tex",
-  "summary": "L'exercice étudie les propriétés des éléments inversibles et irréductibles dans l'anneau ℤ[√d], notamment pour d = -5. Il demande de déterminer les éléments inversibles, de prouver des critères d'irréductibilité, et d'analyser la structure factorielle de l'anneau ℤ[√-5].",
+  "summary": "L'exercice étudie les propriétés d'inversibilité et d'irréductibilité dans l'anneau $\\mathbb{Z}[\\sqrt{d}]$. Il demande de déterminer les éléments inversibles, d'identifier les éléments irréductibles pour diverses valeurs de $d$, et d'analyser les propriétés de factorisation dans $\\mathbb{Z}[\\sqrt{-5}]$.",
   "concepts": [
-    "anneau",
-    "corps",
-    "élément inversible",
-    "norme d'un élément",
-    "élément irréductible",
+    "anneau d'entiers quadratiques",
+    "inversibilité",
+    "irréductibilité",
+    "norme dans $\\mathbb{Z}[\\sqrt{d}]$",
     "factorisation",
     "idéal principal",
     "anneau factoriel",
@@ -15,20 +14,20 @@
     "ppcm"
   ],
   "methods": [
-    "utilisation de la norme",
-    "factorisation en irréductibles",
+    "calcul de la norme",
+    "factorisation dans $\\mathbb{Z}[\\sqrt{d}]$",
+    "utilisation de la norme pour prouver l'irréductibilité",
     "analyse des diviseurs",
-    "preuve par contradiction",
-    "calcul de la norme"
+    "recherche de pgcd et ppcm"
   ],
   "objects": [
-    "élément de ℤ[√d]",
-    "élément de ℤ[√-5]",
-    "idéal de ℤ[√-5]",
-    "pgcd",
-    "ppcm"
+    "élément de $\\mathbb{Z}[\\sqrt{d}]$",
+    "norme $N_d(z)$",
+    "idéal $(3, 2+\\sqrt{-5})$",
+    "élément irréductible",
+    "diviseur dans $\\mathbb{Z}[\\sqrt{-5}]$"
   ],
-  "content_hash": "914a1b5f4d390e925bc2af4f6f19af10f69a12a0506f2ceb614847d422ed874a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:32:09.002Z"
+  "content_hash": "15ea8e23a8d18f837abfdb832c3a6dbc618d40b38e0bbd8f8c8c984bcf994319",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:32:48.912Z"
 }

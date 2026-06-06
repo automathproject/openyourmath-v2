@@ -1,7 +1,7 @@
 {
   "uuid": "GqTh",
   "source_path": "exo7/5-L2/GqTh.tex",
-  "summary": "L'exercice demande de déterminer le rayon de convergence et la somme de la série entière associée à la suite des intégrales W_n définies par l'intégrale de cos^n(t) de 0 à π/2.",
+  "summary": "L'exercice demande de déterminer le rayon de convergence et la somme de la série entière associée à la suite des intégrales $W_n = \\int_{0}^{\\pi/2} \\cos^n t \\,dt$ pour $n \\in \\mathbb{N}$.",
   "concepts": [
     "série entière",
     "rayon de convergence",
@@ -12,18 +12,18 @@
     "changement de variable"
   ],
   "methods": [
-    "intégration par parties",
-    "changement de variable",
+    "application de la règle de d'Alembert",
     "intégration terme à terme",
-    "approximation asymptotique"
+    "changement de variable trigonométrique",
+    "calcul d'intégrale rationnelle"
   ],
   "objects": [
-    "intégrale de cos^n(t)",
+    "suite d'intégrales $W_n$",
     "série entière",
-    "fonction de variable complexe",
-    "changement de variable trigonométrique"
+    "fonction $t \\mapsto \\cos^n t$",
+    "intégrale sur $[0, \\pi/2]$"
   ],
-  "content_hash": "6a74b6703c0bde4cbe2806863d1711fb33c62ee526c9b2908d09a554e5ceb8a1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:39:16.403Z"
+  "content_hash": "c7b52155a4696bf4f135f505791bf14f60e6574702c4a13d65d51a6351a6df5b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:51.979Z"
 }

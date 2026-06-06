@@ -1,28 +1,29 @@
 {
   "uuid": "JEdv",
   "source_path": "exo7/1-L1/JEdv.tex",
-  "summary": "L'exercice demande de déterminer le noyau et l'image d'une application linéaire u définie sur l'espace des polynômes de degré au plus n, puis de trouver une base dans laquelle la matrice de u est une matrice de décalage.",
+  "summary": "L'exercice demande de déterminer le noyau et l'image d'un endomorphisme u défini sur l'espace vectoriel des polynômes de degré au plus n, puis de trouver une base dans laquelle la matrice de u est une matrice de permutation circulaire.",
   "concepts": [
-    "application linéaire",
+    "endomorphisme",
     "noyau d'une application linéaire",
     "image d'une application linéaire",
     "théorème du rang",
     "base d'un espace vectoriel",
-    "matrice d'une application linéaire"
+    "polynôme",
+    "espace vectoriel de polynômes"
   ],
   "methods": [
-    "détermination du noyau",
-    "détermination de l'image",
-    "construction de base par récurrence",
-    "calcul de coefficients polynomiaux"
+    "détermination du noyau par annulation",
+    "détermination de l'image par dimension",
+    "construction explicite d'une base adaptée",
+    "calcul de coefficients par identification"
   ],
   "objects": [
-    "polynôme",
-    "espace vectoriel de polynômes",
-    "matrice de décalage",
+    "endomorphisme de l'espace des polynômes",
+    "polynôme de degré n",
+    "matrice de permutation circulaire",
     "famille de polynômes échelonnés"
   ],
-  "content_hash": "4f17209c395dea8feac3e67ddab3e9ad62019fce486742f86c1d26ce6e759d01",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:35:29.796Z"
+  "content_hash": "d977498530bceb688f5cdf60de55725735d862a974524e1ba7eca06b225e0609",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:25.962Z"
 }

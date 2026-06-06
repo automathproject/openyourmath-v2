@@ -1,30 +1,30 @@
 {
   "uuid": "RCEp",
   "source_path": "exo7/4-L2/RCEp.tex",
-  "summary": "L'exercice demande de déterminer les valeurs propres d'une matrice 3x3, puis de trouver des vecteurs propres associés sans calculs, de démontrer qu'une famille de vecteurs forme une base de ℝ³ et d'écrire la matrice de l'endomorphisme dans cette base, enfin de justifier la non-diagonalisabilité de la matrice.",
+  "summary": "L'exercice demande de déterminer les valeurs propres d'une matrice 3x3, d'identifier des vecteurs propres associés à une valeur propre double, de démontrer qu'une famille de vecteurs forme une base de ℝ³ et d'écrire la matrice de l'endomorphisme dans cette base, puis de justifier la non-diagonalisabilité de la matrice.",
   "concepts": [
     "valeur propre",
     "vecteur propre",
     "polynôme caractéristique",
-    "sous-espace propre",
     "base d'un espace vectoriel",
-    "matrice de passage",
-    "diagonalisation"
+    "diagonalisation",
+    "multiplicité d'une valeur propre",
+    "sous-espace propre"
   ],
   "methods": [
     "calcul du polynôme caractéristique",
     "résolution d'un système linéaire",
     "vérification de l'indépendance linéaire",
-    "écriture de la matrice dans une nouvelle base",
-    "critère de diagonalisabilité"
+    "écriture de la matrice d'un endomorphisme dans une base"
   ],
   "objects": [
     "matrice 3x3",
     "endomorphisme de ℝ³",
     "vecteurs propres",
-    "base de ℝ³"
+    "base de ℝ³",
+    "sous-espace propre"
   ],
-  "content_hash": "d891d397eeefca11ae048765aa54a7ef94f2592f5665dba00373a483cd427cff",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:44:02.494Z"
+  "content_hash": "f3aa652a477f0800a727217a02827a1dfb2b86739f830343101862b5139847e7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:54.954Z"
 }

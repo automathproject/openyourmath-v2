@@ -1,29 +1,31 @@
 {
   "uuid": "hF9B",
   "source_path": "exo7/2-L1/hF9B.tex",
-  "summary": "L'exercice demande d'établir des équivalents asymptotiques pour trois intégrales impropres différentes. La première concerne un produit d'une exponentielle et d'une intégrale gaussienne, la deuxième porte sur une intégrale de cosinus sur x, et la troisième traite d'une intégrale rationnelle.",
+  "summary": "L'exercice demande d'établir des équivalents asymptotiques pour trois intégrales impropres : un équivalent de l'intégrale de la gaussienne en +∞ multipliée par e^(x²), un équivalent de l'intégrale de cos(x)/x en 0+ et un équivalent de l'intégrale de 1/(x³ + a²) en +∞.",
   "concepts": [
     "intégrale impropre",
     "équivalent asymptotique",
     "théorème de sommation des relations de comparaison",
     "intégration par parties",
     "continuité",
-    "intégrabilité"
+    "intégrabilité",
+    "développement limité"
   ],
   "methods": [
     "comparaison d'intégrales",
-    "développement asymptotique",
     "intégration par parties",
+    "développement limité",
     "estimation d'erreur",
-    "prolongement par continuité"
+    "changement de variable"
   ],
   "objects": [
-    "intégrale gaussienne",
+    "intégrale de la gaussienne",
     "fonction cosinus",
     "fonction rationnelle",
+    "intégrale impropre",
     "équivalent asymptotique"
   ],
-  "content_hash": "94deaba0c88b4d034c3eafcffb589e22ac3e99a3ec3342b81b78a8e96884e707",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:43:42.341Z"
+  "content_hash": "6f93329112956759f5ddfa70bfdd97895c8c92b824bc03e7e457ccc3d7aaf2dc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:11.443Z"
 }

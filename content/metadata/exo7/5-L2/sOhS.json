@@ -1,29 +1,31 @@
 {
   "uuid": "sOhS",
   "source_path": "exo7/5-L2/sOhS.tex",
-  "summary": "Calcul des polynômes de Bernstein associés à des fonctions constantes, linéaires et quadratiques sur l'intervalle [0,1], puis démonstration d'une identité impliquant ces polynômes.",
+  "summary": "L'exercice demande de calculer les polynômes de Bernstein associés à trois fonctions simples (constante, linéaire, quadratique) sur l'intervalle [0,1], puis d'en déduire une identité algébrique impliquant une somme pondérée par des coefficients binomiaux.",
   "concepts": [
     "polynôme de Bernstein",
-    "fonction continue",
     "binôme de Newton",
-    "algèbre des polynômes",
-    "somme discrète pondérée",
-    "identité algébrique"
+    "somme discrète",
+    "identité algébrique",
+    "fonction polynomiale",
+    "coefficient binomial",
+    "développement binomial"
   ],
   "methods": [
     "développement binomial",
     "manipulation algébrique",
     "réécriture d'expression",
-    "simplification de somme"
+    "calcul de somme discrète",
+    "factorisation"
   ],
   "objects": [
     "polynôme de Bernstein",
-    "fonction constante",
-    "fonction linéaire",
-    "fonction quadratique",
-    "somme pondérée"
+    "fonction polynomiale",
+    "coefficient binomial",
+    "somme pondérée",
+    "expression algébrique"
   ],
-  "content_hash": "9d67c452d0b5a5ab45ca429a540de7185c3a82884784966651e8af7b7b66540f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:04:07.171Z"
+  "content_hash": "d5b9b57df7a882300af10c2d7b8247a1bad8c9c157c206aac28743a77de143b3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:48.803Z"
 }

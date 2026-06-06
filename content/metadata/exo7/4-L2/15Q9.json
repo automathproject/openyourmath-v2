@@ -1,21 +1,21 @@
 {
   "uuid": "15Q9",
   "source_path": "exo7/4-L2/15Q9.tex",
-  "summary": "L'exercice demande de montrer qu'une forme quadratique Q, définie à partir d'intégrales de produits de fonctions continues, est positive et de déterminer quand elle est définie positive. Il étudie aussi la matrice de Q dans un cas particulier.",
+  "summary": "L'exercice demande de montrer qu'une forme quadratique Q, définie par une intégrale de produits de fonctions continues, est positive et de caractériser sa définie positivité par la liberté de la famille de fonctions. Il s'agit ensuite d'expliciter la matrice de Q dans un cas particulier où les fonctions sont des monômes.",
   "concepts": [
     "forme quadratique",
-    "positivité",
-    "définie positive",
+    "définie positivité",
     "famille libre de fonctions",
-    "matrice de Gram",
     "intégrale de fonctions continues",
-    "base canonique"
+    "matrice de Gram",
+    "produit scalaire",
+    "fonction positive"
   ],
   "methods": [
     "calcul d'intégrale",
     "développement d'un carré",
-    "équivalence logique",
-    "analyse de la nullité d'une forme quadratique"
+    "caractérisation de la liberté d'une famille",
+    "construction de la matrice associée à une forme quadratique"
   ],
   "objects": [
     "forme quadratique Q",
@@ -23,7 +23,7 @@
     "matrice de Hilbert",
     "base canonique de ℝⁿ"
   ],
-  "content_hash": "2eebb466815273fe62b53e55f0965c4e42020f1bd4c606b8cdf6485fedae7d94",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:57:06.489Z"
+  "content_hash": "1d8bfe128cdf8f9549673092c797111dc6ac36484cba8bf06e34c91b42ad64d3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:33.366Z"
 }

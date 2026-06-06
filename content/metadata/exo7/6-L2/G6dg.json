@@ -8,17 +8,20 @@
     "vecteur normal",
     "angle entre plans",
     "produit scalaire",
-    "norme vectorielle"
+    "norme vectorielle",
+    "fonction arccosinus"
   ],
   "methods": [
-    "calcul de l'angle entre vecteurs normaux",
-    "standardisation de l'angle"
+    "calcul du produit scalaire",
+    "calcul de la norme",
+    "formule de l'angle entre vecteurs"
   ],
   "objects": [
     "vecteurs normaux",
-    "plans affine"
+    "équations de plans",
+    "angle géométrique"
   ],
-  "content_hash": "33691171d48f59410995cb71c10784b0cb5dbb7dba483c65d9e6b92f8c1e9b23",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:45:13.134Z"
+  "content_hash": "7d4d74f784057b4221968b18f4386c500e0c684a797846567f604a715b8abc39",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:51:46.563Z"
 }

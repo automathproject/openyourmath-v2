@@ -1,25 +1,31 @@
 {
   "uuid": "rvC6",
   "source_path": "amscc/rvC6.tex",
-  "summary": "L'exercice demande de construire graphiquement les premières itérations de la méthode de la corde pour résoudre l'équation f(x)=0 avec f(x)=x² et x₀=1. Il s'agit ensuite d'identifier la méthode générale dont la méthode de la corde est un cas particulier et d'en déduire son ordre minimal de convergence.",
+  "summary": "L'exercice demande d'étudier une méthode numérique pour approcher la racine carrée d'un nombre positif A, en analysant un algorithme itératif spécifique. Il s'agit de comprendre la méthode de la corde comme cas particulier d'une méthode plus générale et d'en déterminer l'ordre de convergence.",
   "concepts": [
     "méthode de point fixe",
     "convergence d'une suite",
     "ordre de convergence",
-    "fonction dérivée",
-    "équation non linéaire"
+    "méthode de Newton",
+    "fonction itérative",
+    "équation non linéaire",
+    "racine d'une fonction"
   ],
   "methods": [
-    "construction graphique d'itérations",
+    "construction de suite itérative",
     "analyse de convergence",
-    "détermination de l'ordre de convergence"
+    "détermination de l'ordre de convergence",
+    "méthode de la corde",
+    "méthode de point fixe"
   ],
   "objects": [
-    "suite définie par récurrence",
+    "suite numérique",
     "fonction quadratique",
+    "racine carrée",
+    "point d'intersection",
     "droite tangente"
   ],
-  "content_hash": "3c8b3cc9d7bf80d3757ea44758aff836ab33b6d8137360a81be866bea21db148",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:26:16.125Z"
+  "content_hash": "72c65ff5d52008fa2e12607cc0c0f906665e37d7c932d5ba6593d5a0ca783128",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:10.693Z"
 }

@@ -1,29 +1,29 @@
 {
   "uuid": "KYZn",
   "source_path": "exo7/5-L2/KYZn.tex",
-  "summary": "Trouver le maximum du produit des distances d'un point intérieur M à un triangle ABC aux côtés de ce triangle. On modélise le problème en optimisant une fonction de deux variables définie sur un domaine triangulaire.",
+  "summary": "Trouver le maximum du produit des distances d'un point intérieur M à un triangle ABC aux trois côtés de ce triangle. L'énoncé se traduit par un problème d'optimisation d'une fonction de deux variables sur un domaine triangulaire.",
   "concepts": [
     "extremum local",
     "fonction de plusieurs variables",
-    "compact",
     "théorème de Borel-Lebesgue",
+    "continuité",
     "point critique",
-    "optimisation sous contrainte",
-    "aire d'un triangle"
+    "optimisation sous contraintes",
+    "polynôme à plusieurs variables"
   ],
   "methods": [
     "calcul des dérivées partielles",
     "recherche de points critiques",
-    "analyse de la frontière d'un domaine",
-    "utilisation de la continuité"
+    "analyse de la frontière du domaine",
+    "utilisation de la compacité"
   ],
   "objects": [
-    "fonction polynomiale de deux variables",
+    "fonction de deux variables",
     "domaine triangulaire",
-    "point intérieur à un triangle",
-    "distances à des droites"
+    "aire de sous-triangles",
+    "produit de distances"
   ],
-  "content_hash": "be2ff698ef6825a9b01b86e3818749b0d320fbfe84c263e4b6b335193a90330d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:56:14.903Z"
+  "content_hash": "ca399c9c7262696a6fdd93353504ce8de88eb20bceeeb63ae0eea1206be0da34",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:04.335Z"
 }

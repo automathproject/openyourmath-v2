@@ -1,28 +1,31 @@
 {
   "uuid": "jflr",
   "source_path": "exo7/4-L2/jflr.tex",
-  "summary": "L'exercice demande de vérifier qu'une application Q définie sur l'espace des endomorphismes de ℝ² est une forme quadratique, puis de déterminer son rang et sa signature en fonction de paramètres λ et μ.",
+  "summary": "L'exercice demande de vérifier qu'une application Q définie sur l'espace des endomorphismes de ℝ² est une forme quadratique, puis de déterminer son rang et sa signature en fonction des paramètres λ et μ. L'analyse porte sur des cas particuliers comme (1,0) et (0,1).",
   "concepts": [
     "forme quadratique",
+    "espace euclidien",
+    "trace d'une matrice",
+    "déterminant",
     "polynôme homogène",
-    "matrice d'une application linéaire",
     "rang d'une forme quadratique",
     "signature d'une forme quadratique",
-    "espace euclidien"
+    "matrice symétrique"
   ],
   "methods": [
     "décomposition en carrés",
-    "analyse de linéaire indépendance",
+    "diagonalisation de forme quadratique",
+    "calcul de trace",
     "calcul de déterminant",
-    "calcul de trace"
+    "analyse de linéaire indépendance"
   ],
   "objects": [
     "endomorphisme de ℝ²",
     "matrice 2x2",
-    "forme quadratique",
-    "coordonnées dans une base canonique"
+    "forme quadratique sur un espace vectoriel",
+    "polynôme homogène de degré 2"
   ],
-  "content_hash": "e83987d08f13084bb7f535d115011634a674fea12929387c49ddc812a6d8bfbe",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:47:37.707Z"
+  "content_hash": "f10d6fc137b681031873726a38b2df711805cdb33dbbf1024e931f16927bacfb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:22.439Z"
 }

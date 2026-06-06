@@ -1,27 +1,30 @@
 {
   "uuid": "cCZc",
   "source_path": "exo7/4-L2/cCZc.tex",
-  "summary": "L'exercice demande de démontrer qu'une matrice donnée est diagonalisable et de trouver une matrice de passage P telle que P⁻¹AP soit diagonale.",
+  "summary": "L'exercice demande de démontrer qu'une matrice 3x3 donnée est diagonalisable et de trouver une matrice de passage P telle que P⁻¹AP soit diagonale.",
   "concepts": [
     "diagonalisation",
-    "valeur propre",
-    "multiplicité d'une valeur propre",
-    "sous-espace propre",
     "polynôme caractéristique",
-    "base d'un espace vectoriel"
+    "valeur propre",
+    "sous-espace propre",
+    "multiplicité d'une valeur propre",
+    "base d'un espace vectoriel",
+    "endomorphisme"
   ],
   "methods": [
     "calcul du polynôme caractéristique",
     "détermination des sous-espaces propres",
-    "construction de la matrice de passage"
+    "construction de la matrice de passage",
+    "vérification de la diagonalisation"
   ],
   "objects": [
     "matrice 3x3",
-    "sous-espace propre",
-    "valeurs propres",
-    "matrice diagonale"
+    "polynôme caractéristique",
+    "sous-espaces propres",
+    "matrice diagonale",
+    "matrice de passage"
   ],
-  "content_hash": "d99a0385145dd575157bfce71e30e176045b792ac6200a3ccae00df918e4c0d2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:59:03.248Z"
+  "content_hash": "90c40fa14c8ad0bbc2d7777717aee16bdc147791e90b4687c98d41ce5d29dcb3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:17.697Z"
 }

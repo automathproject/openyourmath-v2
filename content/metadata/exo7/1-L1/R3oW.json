@@ -1,23 +1,24 @@
 {
   "uuid": "R3oW",
   "source_path": "exo7/1-L1/R3oW.tex",
-  "summary": "Calcul des valeurs exactes de cosinus et sinus de π/8 en utilisant des identités trigonométriques.",
+  "summary": "Calculer les valeurs exactes de cosinus et sinus de π/8 à l'aide de formules trigonométriques.",
   "concepts": [
-    "identités trigonométriques",
     "formules de duplication",
+    "identités trigonométriques",
+    "racine carrée",
     "valeurs remarquables"
   ],
   "methods": [
-    "formules de duplication",
-    "simplification algébrique",
-    "extraction de racines carrées"
+    "utilisation des formules de duplication",
+    "simplification d'expression",
+    "résolution d'équation trigonométrique"
   ],
   "objects": [
     "cosinus d'un angle",
     "sinus d'un angle",
-    "angle π/8"
+    "angle de π/8"
   ],
-  "content_hash": "5cf3a4435b7746629930eeee3ee6d426dc1f0184d538a04df0d1d9c7e310a203",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:46:13.092Z"
+  "content_hash": "f5ba77309e8d524094d06636a9372ba45fcae3b2cd71c6b58729e9a872fcdb14",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:54.606Z"
 }

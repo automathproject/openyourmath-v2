@@ -1,31 +1,32 @@
 {
   "uuid": "dtEc",
   "source_path": "exo7/5-L2/dtEc.tex",
-  "summary": "L'exercice demande de démontrer deux égalités entre une intégrale et une série infinie : l'intégrale de la fonction x^{-x} de 0 à 1 est égale à la somme des termes 1/n^n, et l'intégrale de la fonction x^{x} de 0 à 1 est égale à la somme des termes (-1)^n/n^n.",
+  "summary": "L'exercice demande de démontrer deux égalités entre une intégrale et une série infinie : l'intégrale de x^{-x} de 0 à 1 est égale à la somme de 1/n^n, et l'intégrale de x^x de 0 à 1 est égale à la somme alternée de (-1)^n/n^n.",
   "concepts": [
     "fonction continue",
-    "intégrale sur un segment",
+    "intégrabilité sur un segment",
     "série de fonctions",
     "convergence normale",
     "convergence uniforme",
     "théorème d'intégration terme à terme",
-    "fonction Gamma"
+    "fonction gamma",
+    "changement de variable"
   ],
   "methods": [
+    "définition par prolongement par continuité",
     "développement en série entière",
-    "changement de variable",
     "intégration par parties",
-    "récurrence",
-    "calcul d'intégrale à paramètre"
+    "changement de variable",
+    "calcul d'intégrale à l'aide de la fonction gamma"
   ],
   "objects": [
     "fonction x^{-x}",
-    "fonction x^{x}",
-    "série numérique",
-    "intégrale impropre",
-    "fonction Gamma"
+    "fonction x^x",
+    "série de fonctions",
+    "intégrale sur [0,1]",
+    "fonction gamma"
   ],
-  "content_hash": "9c23e2acf43671fa7ae2bfe68cbece9d189617781566694f3e1920c28064a2fd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:59:19.968Z"
+  "content_hash": "541dcee7f6efbd4132c4a5e851a703c1c9562b61ae4f1a45aa38c18a8b4df271",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:24.991Z"
 }

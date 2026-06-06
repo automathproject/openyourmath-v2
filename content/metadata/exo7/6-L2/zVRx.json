@@ -3,28 +3,30 @@
   "source_path": "exo7/6-L2/zVRx.tex",
   "summary": "Dans un quadrilatère convexe inscriptible à diagonales perpendiculaires, on montre que l'intersection d'une droite orthogonale avec un côté est le milieu de l'autre côté en établissant une égalité de distances.",
   "concepts": [
-    "géométrie affine euclidienne",
     "quadrilatère inscriptible",
     "diagonales perpendiculaires",
     "projeté orthogonal",
     "médiatrice d'un segment",
+    "triangle rectangle",
     "cercle circonscrit",
-    "angle inscrit"
+    "propriété des angles"
   ],
   "methods": [
-    "utilisation de la propriété du milieu de l'hypoténuse",
-    "calcul d'angles avec Chasles",
-    "utilisation de la perpendicularité des diagonales",
+    "utilisation de la relation de Chasles",
+    "calcul d'angles",
+    "propriété du centre du cercle circonscrit",
     "démonstration par égalité de distances"
   ],
   "objects": [
-    "quadrilatère convexe inscriptible",
-    "diagonales perpendiculaires",
+    "quadrilatère convexe",
+    "diagonales",
+    "point d'intersection",
     "projeté orthogonal",
-    "médiatrice d'un segment",
-    "cercle circonscrit"
+    "segment",
+    "médiatrice",
+    "triangle rectangle"
   ],
-  "content_hash": "1e8f64b5a0071a161a10607f0896f8bc55a9b3a64c936a5559093fac9876cbeb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:03:33.860Z"
+  "content_hash": "6fb4989721a2838614874fd5086b21f32739db42a9c16a48cd6850d691898694",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:53.891Z"
 }

@@ -1,28 +1,29 @@
 {
   "uuid": "gKcH",
   "source_path": "exo7/16-L3/gKcH.tex",
-  "summary": "Calculer trois intégrales complexes le long d'un contour donné, impliquant des fonctions rationnelles et trigonométriques. Le contour Γ est une courbe fermée avec des points singuliers w₁, w₂, w₃.",
+  "summary": "Calculer trois intégrales complexes le long d'un contour fermé Γ passant par les points w₁, w₂, w₃. Les intégrales concernent une fraction rationnelle, la fonction sinus et une combinaison des deux.",
   "concepts": [
     "théorème de Cauchy",
     "résidu d'une fonction méromorphe",
     "indice d'un point par rapport à un contour",
+    "fonction holomorphe",
     "théorème de Cauchy pour les dérivées",
-    "fonction holomorphe"
+    "pôle simple"
   ],
   "methods": [
     "calcul de résidus",
     "application du théorème de Cauchy",
     "évaluation de l'indice d'un point",
-    "intégration de fonctions holomorphes"
+    "intégration d'une fonction holomorphe"
   ],
   "objects": [
     "intégrale complexe",
     "fonction méromorphe",
-    "pôle simple",
-    "fonction trigonométrique",
-    "contour fermé"
+    "fonction sinus",
+    "contour fermé",
+    "pôle simple"
   ],
-  "content_hash": "fd15e96eca41b4387767088fa6ffba6269de1368c3cac2236df5475aeba59abf",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:22:02.199Z"
+  "content_hash": "b2ecb0c940fbec196aa88dd5c3afdfc8806c37eb1d296b6746099b165e09c728",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:17.170Z"
 }

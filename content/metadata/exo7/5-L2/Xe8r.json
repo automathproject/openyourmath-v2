@@ -1,30 +1,32 @@
 {
   "uuid": "Xe8r",
   "source_path": "exo7/5-L2/Xe8r.tex",
-  "summary": "Montrer qu'une application de classe C² dont la différentielle en tout point est une rotation est elle-même une rotation affine.",
+  "summary": "Montrer qu'une application de classe C² de ℝ² dans ℝ², dont la différentielle en tout point est une rotation, est nécessairement une rotation affine.",
   "concepts": [
-    "différentielle d'une application",
-    "rotation affine",
+    "différentielle",
     "théorème de Schwarz",
-    "fonction de classe C²",
     "matrice jacobienne",
-    "colinéarité de vecteurs",
-    "orthogonalité de vecteurs"
+    "rotation",
+    "fonction de classe C²",
+    "colinéarité",
+    "orthogonalité",
+    "application affine"
   ],
   "methods": [
     "calcul de dérivées partielles",
-    "dérivation de conditions",
-    "analyse de matrices jacobiennes",
-    "utilisation du théorème de Schwarz",
-    "étude de la colinéarité et orthogonalité"
+    "théorème de Schwarz",
+    "dérivation de l'identité trigonométrique",
+    "analyse de la matrice jacobienne",
+    "construction d'une application affine"
   ],
   "objects": [
-    "application de classe C²",
+    "application de ℝ² dans ℝ²",
     "matrice jacobienne",
-    "rotation affine",
-    "vecteurs dérivés"
+    "fonctions cosinus et sinus",
+    "vecteurs orthogonaux",
+    "rotation affine"
   ],
-  "content_hash": "2efc22c85bcae5f19a4e5f14e00c60bf54b8e6c67fd5e94420cbebbe2452abc6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:07:02.476Z"
+  "content_hash": "3d53327df2be93a1bb15e3ac068f9763e6b2a7af248f1f7f1ccd6f6b077236b0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:20.728Z"
 }

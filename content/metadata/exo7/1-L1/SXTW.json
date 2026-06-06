@@ -1,27 +1,30 @@
 {
   "uuid": "SXTW",
   "source_path": "exo7/1-L1/SXTW.tex",
-  "summary": "L'exercice demande de montrer que le rang d'une matrice 3x4 est au moins 2, puis de déterminer pour quelles valeurs des paramètres a et b ce rang est exactement 2.",
+  "summary": "L'exercice demande de montrer que le rang d'une matrice 3x4 est au moins 2, puis de déterminer les valeurs des paramètres réels a et b pour lesquelles ce rang est exactement 2.",
   "concepts": [
     "rang d'une matrice",
-    "sous-espace vectoriel",
+    "sous-matrice",
+    "déterminant",
+    "espace vectoriel engendré",
     "indépendance linéaire",
-    "système d'équations linéaires",
-    "dimension d'un espace vectoriel"
+    "dimension d'un espace vectoriel",
+    "transposée d'une matrice"
   ],
   "methods": [
     "calcul de déterminant",
-    "analyse de colonnes linéairement indépendantes",
-    "analyse de lignes linéairement indépendantes",
-    "résolution de système linéaire"
+    "analyse de l'indépendance linéaire des colonnes",
+    "analyse de l'indépendance linéaire des lignes",
+    "résolution d'un système linéaire"
   ],
   "objects": [
     "matrice 3x4",
+    "sous-matrice 2x2",
     "vecteurs colonnes",
     "vecteurs lignes",
-    "sous-matrice 2x2"
+    "système d'équations linéaires"
   ],
-  "content_hash": "4e86d0f0c62104dbc5287c8d4c1bd173230e9cb6e178d098cf1a323dd5a541f9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:59:05.419Z"
+  "content_hash": "6d9c15960550e2cfa10cabb9667fa771c818c6d7d5ffe7560e11fb3bbdf3017c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:35.390Z"
 }

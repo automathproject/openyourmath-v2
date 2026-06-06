@@ -1,32 +1,34 @@
 {
   "uuid": "5Pit",
   "source_path": "exo7/4-L2/5Pit.tex",
-  "summary": "L'exercice demande de démontrer des propriétés liées à la matrice de Gram et au déterminant de Gram d'une famille de vecteurs dans un espace euclidien. Il explore la relation entre le rang de la matrice de Gram et la famille de vecteurs, ainsi que les conditions de linéaire indépendance et de projection orthogonale.",
+  "summary": "L'exercice porte sur les propriétés de la matrice de Gram et du déterminant de Gram associés à une famille de vecteurs dans un espace euclidien. Il demande de montrer des relations entre le rang de la matrice de Gram et la liberté de la famille, puis d'établir une formule pour la distance d'un point à un sous-espace vectoriel en utilisant ces déterminants.",
   "concepts": [
     "espace vectoriel euclidien",
     "matrice de Gram",
     "déterminant de Gram",
-    "rang d'une matrice",
-    "famille de vecteurs liée",
-    "famille de vecteurs libre",
     "projection orthogonale",
-    "distance à un sous-espace"
+    "distance à un sous-espace",
+    "théorème du rang",
+    "famille libre",
+    "famille liée",
+    "théorème de Pythagore"
   ],
   "methods": [
-    "théorème du rang",
-    "théorème de Pythagore",
+    "calcul de rang",
+    "détermination de noyau",
     "développement de déterminant",
-    "utilisation de la base orthonormée",
-    "calcul de noyau"
+    "projection orthogonale",
+    "utilisation de la base orthonormée"
   ],
   "objects": [
     "matrice de Gram",
     "déterminant de Gram",
     "famille de vecteurs",
+    "sous-espace vectoriel",
     "projection orthogonale",
     "distance à un sous-espace"
   ],
-  "content_hash": "4a474a777f0a02e20b9b1d87dcc45c3ce5fa0fd6b509b0cbac6f54d474c5bfe3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:01:08.759Z"
+  "content_hash": "88809a2afd73e55b093edaf83b76123161994e108a64b35c05c2fd11ce58a612",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:47.486Z"
 }

@@ -1,31 +1,29 @@
 {
   "uuid": "KunL",
   "source_path": "exo7/5-L2/KunL.tex",
-  "summary": "On considère l'espace des fonctions continues sur [0,1] muni d'une norme L1. On définit un endomorphisme T comme une intégration partielle et on demande de prouver sa continuité et de déterminer sa norme.",
+  "summary": "L'exercice demande de démontrer la continuité d'un endomorphisme T défini sur l'espace des fonctions continues sur [0,1] muni de la norme L1, puis de déterminer sa norme. Il faut aussi vérifier que cette norme n'est pas atteinte.",
   "concepts": [
-    "application linéaire continue",
-    "norme matricielle",
-    "intégrale de fonctions continues",
+    "continuité d'application linéaire",
+    "norme d'opérateur",
+    "espace de Banach",
+    "intégrale de fonction continue",
     "inégalité de Cauchy-Schwarz",
-    "continuité uniforme",
-    "norme L1",
-    "endomorphisme"
+    "limite supérieure"
   ],
   "methods": [
-    "inégalité triangulaire",
-    "calcul de norme",
+    "majoration d'intégrale",
     "construction de suite témoin",
-    "dérivation sous l'intégrale",
-    "analyse de cas limite"
+    "passage à la limite",
+    "utilisation de la densité des polynômes"
   ],
   "objects": [
-    "espace de fonctions continues",
+    "endomorphisme",
+    "fonction continue",
     "norme L1",
-    "endomorphisme T",
-    "suite de fonctions",
-    "intégrale partielle"
+    "intégrale de fonction",
+    "suite de fonctions"
   ],
-  "content_hash": "25c2de1b3ecc71daca97461da5da776b256f7f669e0aa55df5acc5f46cc97d18",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:45:23.176Z"
+  "content_hash": "7b67b6a021a3c6e7b656df285c2000cc82f6e1b9366762dc79878e981170d76b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:01.736Z"
 }

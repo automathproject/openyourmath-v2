@@ -1,28 +1,31 @@
 {
   "uuid": "v6dn",
   "source_path": "exo7/4-L2/v6dn.tex",
-  "summary": "Soient A et B deux matrices carrées réelles symétriques positives. Montrer que det(A) + det(B) ≤ det(A+B).",
+  "summary": "Soient A et B deux matrices carrées réelles symétriques positives. Montrer que le déterminant de A plus le déterminant de B est inférieur ou égal au déterminant de la somme A+B.",
   "concepts": [
     "matrice symétrique",
     "matrice définie positive",
-    "valeurs propres",
+    "valeur propre",
     "déterminant",
     "produit de matrices",
-    "espace vectoriel"
+    "inversibilité",
+    "espace vectoriel euclidien"
   ],
   "methods": [
-    "diagonalisation",
-    "changement de base",
-    "utilisation de la factorisation de Cholesky",
-    "inégalité de Minkowski pour les déterminants"
+    "décomposition de Cholesky",
+    "calcul de valeurs propres",
+    "utilisation de la positivité définie",
+    "factorisation matricielle",
+    "inégalité de déterminant"
   ],
   "objects": [
-    "matrices symétriques réelles positives",
-    "déterminant de matrice",
+    "matrice carrée",
+    "matrice symétrique positive",
+    "déterminant",
     "valeurs propres",
     "matrice identité"
   ],
-  "content_hash": "1bea49c8769ee5975e07143ca14a8cab376762f10c957a413574180196cd7945",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:57:50.663Z"
+  "content_hash": "8393e5491403a9397b1a38d28f68cc022f4b920bf9d14d92726443458061a52b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:38.218Z"
 }

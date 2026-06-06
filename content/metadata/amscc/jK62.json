@@ -1,29 +1,33 @@
 {
   "uuid": "jK62",
   "source_path": "amscc/jK62.tex",
-  "summary": "On tire 4 boules avec remise dans une urne contenant des boules numérotées de 1 à 5. On définit des variables aléatoires indicatrices pour chaque numéro gagnant. L'exercice demande de calculer des probabilités, lois, espérances et variances de ces variables, ainsi que leur indépendance et leur loi jointe.",
+  "summary": "L'exercice modélise un jeu de boules avec remise où l'on tire 4 boules numérotées de 1 à 5. Il demande de calculer des probabilités, lois, espérances et variances de variables aléatoires indicatrices de valeurs gagnantes, ainsi que leur indépendance et leur loi jointe. La dernière question porte sur la somme de ces variables aléatoires.",
   "concepts": [
-    "variable aléatoire discrète",
+    "variable aléatoire indicatrice",
     "loi binomiale",
     "probabilité conditionnelle",
     "indépendance de variables aléatoires",
     "loi jointe",
-    "espérance mathématique",
-    "variance"
+    "espérance",
+    "variance",
+    "somme de variables aléatoires"
   ],
   "methods": [
     "calcul de probabilité par complémentaire",
     "détermination de la loi d'une variable aléatoire",
     "calcul d'espérance et de variance",
-    "test d'indépendance",
-    "construction de loi jointe"
+    "vérification d'indépendance",
+    "construction de la loi jointe"
   ],
   "objects": [
+    "variable aléatoire discrète",
     "variable aléatoire indicatrice",
-    "urne à boules numérotées",
-    "variable aléatoire somme de variables indicatrices"
+    "loi de probabilité",
+    "espérance mathématique",
+    "variance",
+    "loi jointe"
   ],
-  "content_hash": "d7047de030a8ab44061ce4f7f7530bc92bbfac5afca18d3b65d37ca75dffe63d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:37:04.615Z"
+  "content_hash": "bd048291b2b67e2a74f1e566a610cce69f2cc60d6b0a4306ebb5141093d822d9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:45.534Z"
 }

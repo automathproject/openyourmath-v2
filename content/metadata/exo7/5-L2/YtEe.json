@@ -1,27 +1,30 @@
 {
   "uuid": "YtEe",
   "source_path": "exo7/5-L2/YtEe.tex",
-  "summary": "Montrer que pour deux réels distincts, il existe un nombre rationnel entre eux, ce qui équivaut à prouver que l'ensemble des rationnels est dense dans l'ensemble des réels.",
+  "summary": "Montrer que l'ensemble des nombres rationnels est dense dans la droite réelle, c'est-à-dire qu'entre deux réels distincts, il existe toujours un nombre rationnel.",
   "concepts": [
     "densité d'un ensemble",
     "limite de suite",
-    "nombre rationnel",
-    "nombre réel",
+    "propriété de l'ensemble des rationnels",
     "topologie de la droite réelle",
+    "continuité de la droite réelle",
+    "approximation rationnelle",
     "partie dense"
   ],
   "methods": [
-    "construction explicite",
-    "approximation par des décimaux",
-    "utilisation de la fonction partie entière"
+    "construction explicite d'un rationnel intermédiaire",
+    "utilisation de la division euclidienne",
+    "approche par les suites",
+    "limite de suite de rationnels"
   ],
   "objects": [
-    "ensemble des rationnels",
-    "ensemble des réels",
+    "nombres rationnels",
+    "nombres réels",
     "suite de rationnels",
-    "suite de décimaux"
+    "entiers naturels",
+    "partie dense d'un espace topologique"
   ],
-  "content_hash": "f21f1e04eab7882541773a040b43e0269bafd0d0eae2e5354ca8a2d4ccf0367d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:58:51.956Z"
+  "content_hash": "4c16923f75f271db6cb5c19ac3b1730109eeeba713c125cabf5c36e7e1867a7d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:21.281Z"
 }

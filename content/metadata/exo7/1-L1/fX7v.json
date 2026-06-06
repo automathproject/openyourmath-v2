@@ -1,27 +1,29 @@
 {
   "uuid": "fX7v",
   "source_path": "exo7/1-L1/fX7v.tex",
-  "summary": "L'exercice demande de déterminer le rang d'une matrice par blocs en fonction du rang d'une matrice carrée donnée. La matrice par blocs est construite en répétant la matrice carrée donnée le long de sa diagonale.",
+  "summary": "L'exercice demande de déterminer le rang d'une matrice par blocs B, composée de p copies de la matrice A sur sa diagonale, en fonction du rang de A. Le contexte est purement algébrique, sans application concrète.",
   "concepts": [
     "rang d'une matrice",
     "matrice par blocs",
     "matrice inversible",
     "déterminant",
     "équivalence de matrices",
-    "matrice identité"
+    "forme canonique de rang"
   ],
   "methods": [
-    "réduction par blocs",
-    "calcul du déterminant",
-    "suppression de lignes et colonnes nulles"
+    "décomposition en blocs",
+    "réduction par matrices inversibles",
+    "calcul de déterminant",
+    "élimination des lignes et colonnes nulles"
   ],
   "objects": [
     "matrice carrée",
-    "matrice par blocs",
+    "matrice rectangulaire",
     "matrice identité",
-    "matrice diagonale"
+    "matrice nulle",
+    "matrice diagonale par blocs"
   ],
-  "content_hash": "b20b1fa41e1e927d0de1640742e93a74a3b95e81a47a92059dd5b8aa73db16b7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:10:16.087Z"
+  "content_hash": "962c3ba939e4ca5f33ba73647b4b7331831937517ddecf2b58defa9aca055980",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:52.446Z"
 }

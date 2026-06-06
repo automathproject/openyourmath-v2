@@ -1,27 +1,28 @@
 {
   "uuid": "AGbd",
   "source_path": "exo7/6-L2/AGbd.tex",
-  "summary": "L'exercice demande de déterminer l'orthoptique d'une parabole, c'est-à-dire l'ensemble des points du plan par lesquels passent deux tangentes à la parabole, perpendiculaires l'une à l'autre.",
+  "summary": "L'exercice demande de déterminer l'orthoptique d'une parabole, c'est-à-dire l'ensemble des points du plan par lesquels passent deux tangentes à la parabole perpendiculaires entre elles.",
   "concepts": [
-    "équation cartésienne d'une parabole",
+    "parabole",
     "tangente à une courbe",
-    "condition de perpendicularité",
+    "orthoptique",
+    "équation cartésienne",
     "directrice d'une parabole",
-    "limite de fonction"
+    "condition de perpendicularité"
   ],
   "methods": [
     "équation de la tangente",
-    "condition de perpendicularité des droites",
-    "résolution d'un système d'équations",
-    "étude de la continuité et des limites"
+    "système d'équations paramétré",
+    "résolution de système linéaire",
+    "limite de fonction"
   ],
   "objects": [
     "parabole",
     "tangente",
-    "orthoptique",
+    "point d'intersection",
     "droite"
   ],
-  "content_hash": "e2a45bdc7c1c9e031cf7833d3ed8aed5797336ad3896bdf9e21965bb05cca438",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:01:57.846Z"
+  "content_hash": "5e2ac325c54bed648eb295dd4a46ef1f7ef2f4817ff6f71d3446869d3a0b2799",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:00.177Z"
 }

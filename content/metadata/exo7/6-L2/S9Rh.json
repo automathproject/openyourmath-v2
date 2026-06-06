@@ -1,28 +1,30 @@
 {
   "uuid": "S9Rh",
   "source_path": "exo7/6-L2/S9Rh.tex",
-  "summary": "Dans l'espace euclidien, on donne les coordonnées de trois points A, B et C. L'exercice demande de déterminer l'orthocentre, le centre de gravité, les centres des cercles circonscrit et inscrit du triangle ABC.",
+  "summary": "Dans l'espace euclidien ℝ³, on donne les coordonnées de trois points A, B et C. L'exercice demande de déterminer les centres remarquables du triangle ABC : orthocentre, centre de gravité, centre du cercle circonscrit et centre du cercle inscrit.",
   "concepts": [
     "géométrie affine",
-    "géométrie euclidienne",
     "centre de gravité",
     "orthocentre",
-    "cercle circonscrit",
-    "cercle inscrit",
-    "relation d'Euler"
+    "centre du cercle circonscrit",
+    "centre du cercle inscrit",
+    "relation d'Euler",
+    "barycentre",
+    "équation de plan"
   ],
   "methods": [
     "calcul de barycentre",
-    "résolution de système d'équations linéaires",
+    "résolution de système linéaire",
     "calcul de distances",
     "utilisation de la relation d'Euler"
   ],
   "objects": [
-    "triangle dans l'espace",
+    "triangle dans ℝ³",
     "points de coordonnées",
-    "centres de cercles"
+    "vecteurs",
+    "équation de plan"
   ],
-  "content_hash": "a8f6c43fa7d06e20f4630909d56aac702ff3fb765caeff4cbf962f9893dbd77a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:53:55.508Z"
+  "content_hash": "81edb29140e98dd2c878169e9879d36fb25f8ed2bffc1aa6ca3226fa3d5b5b19",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:15.610Z"
 }

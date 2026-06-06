@@ -1,29 +1,30 @@
 {
   "uuid": "wkYI",
   "source_path": "crouzet/pcsi/03/wkYI.tex",
-  "summary": "Calculer quatre sommes impliquant des coefficients binomiaux et des termes polynomiaux, avec des variations de bornes et de coefficients multiplicatifs.",
+  "summary": "Calculer quatre sommes impliquant des coefficients binomiaux et des termes polynomiaux en k, avec des puissances de 2 et des alternances de signes. L'exercice exploite des propriétés combinatoires et algébriques des coefficients binomiaux.",
   "concepts": [
-    "coefficient binomial",
     "formule du binôme de Newton",
+    "coefficient binomial",
     "somme discrète",
-    "changement d'indice",
-    "linéarité de la somme",
+    "identité combinatoire",
+    "développement en série entière",
     "dérivation formelle"
   ],
   "methods": [
     "formule du chef",
-    "changement de variable",
-    "utilisation de la formule du binôme",
-    "dérivation d'une série entière",
-    "traitement des bornes"
+    "changement d'indice de sommation",
+    "linéarité de la somme",
+    "dérivation de séries génératrices",
+    "traitement des bornes de sommation"
   ],
   "objects": [
-    "somme de coefficients binomiaux",
-    "termes polynomiaux",
-    "indice de sommation",
-    "bornes de sommation"
+    "coefficient binomial",
+    "somme de termes binomiaux",
+    "polynôme en k",
+    "puissance de 2",
+    "somme alternée"
   ],
-  "content_hash": "374813189cc064c30f3a43877ad636d1f1013fcf3b8c409607fff418c73a89ae",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:52:00.491Z"
+  "content_hash": "f5baeb2a2b4ae6461609a431d09423f3e22003c6efeae6cb8fcc75809c11c0a1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:44.048Z"
 }

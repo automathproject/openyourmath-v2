@@ -1,26 +1,28 @@
 {
   "uuid": "avVb",
   "source_path": "exo7/10-L3/avVb.tex",
-  "summary": "Montrer qu'un élément non nul d'un anneau intègre et fini admet un inverse à gauche, en utilisant les propriétés d'injectivité et de finitude.",
+  "summary": "Démontrer que tout anneau intègre fini est un corps. L'exercice porte sur les propriétés structurelles des anneaux et des corps.",
   "concepts": [
     "anneau intègre",
-    "inverse à gauche",
+    "corps",
     "application linéaire",
     "injectivité",
-    "finitude d'un ensemble",
-    "propriété d'anneau"
+    "surjectivité",
+    "cardinal fini",
+    "inversibilité"
   ],
   "methods": [
-    "démonstration par injectivité",
-    "utilisation de la finitude",
-    "manipulation d'équations dans un anneau"
+    "utilisation de l'application de multiplication",
+    "preuve par injectivité et surjectivité",
+    "raisonnement par l'absurde"
   ],
   "objects": [
-    "élément non nul d'un anneau",
-    "application linéaire",
-    "inverse à gauche"
+    "anneau",
+    "corps",
+    "application",
+    "élément non nul"
   ],
-  "content_hash": "19173403a5dedbeaeb52e8f9ab7b5add4621c174503396e8ff19b0fda8e04276",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:33:11.874Z"
+  "content_hash": "f0bae2bd918cf9f4279f61cc3a0753b15641a8f72292cd2a51e766ec079fee2c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:02.780Z"
 }

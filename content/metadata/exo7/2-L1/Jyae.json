@@ -1,27 +1,29 @@
 {
   "uuid": "Jyae",
   "source_path": "exo7/2-L1/Jyae.tex",
-  "summary": "L'exercice demande de montrer qu'une fonction définie par morceaux admet un développement limité d'ordre 2 en 0, puis de prouver qu'elle est dérivable sur ℝ, et enfin de démontrer que sa dérivée n'admet aucun développement limité en 0.",
+  "summary": "L'exercice demande de montrer qu'une fonction définie par morceaux admet un développement limité d'ordre 2 en 0, puis qu'elle est dérivable sur ℝ, et enfin que sa dérivée n'admet aucun développement limité en 0.",
   "concepts": [
     "développement limité",
     "continuité",
     "dérivabilité",
-    "limite",
-    "ordre de développement limité",
+    "limite de fonctions",
+    "notation o petit",
+    "notation O grand",
     "fonction définie par morceaux"
   ],
   "methods": [
-    "approximation o(x^n)",
-    "développement limité d'ordre 1",
-    "développement limité d'ordre 2",
-    "étude de la dérivée"
+    "comparaison de termes dominants",
+    "calcul de limite",
+    "utilisation de la définition de la dérivée",
+    "analyse de la continuité"
   ],
   "objects": [
-    "fonction f(x)",
-    "dérivée f'(x)",
-    "développement limité"
+    "fonction d'une variable réelle",
+    "développement limité d'ordre 2",
+    "dérivée première",
+    "limite en 0"
   ],
-  "content_hash": "965e0dd87b7bbea0f9e5f60db9b5f18eea124f34d568cbe04fffa2e0c3cf9876",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:28:09.830Z"
+  "content_hash": "dff1fe4e87288f1911aed35ca69e8997df5e6153702dc48ea9f5628f2ec3061a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:48.609Z"
 }

@@ -1,27 +1,29 @@
 {
   "uuid": "JA0o",
   "source_path": "exo7/1-L1/JA0o.tex",
-  "summary": "Étude de la liberté linéaire des fonctions f₁(x) = ln(1+x), f₂ = f∘f et f₃ = f∘f∘f dans l'espace vectoriel des fonctions définies sur [0, +∞[.",
+  "summary": "Étudier la liberté linéaire des fonctions composées f₁(x) = ln(1+x), f₂ = f∘f et f₃ = f∘f∘f sur l'intervalle [0, +∞[.",
   "concepts": [
-    "espace vectoriel de fonctions",
-    "combinaison linéaire",
+    "fonction composée",
     "développement limité",
+    "système linéaire",
     "déterminant",
-    "système d'équations linéaires"
+    "fonction logarithme",
+    "indépendance linéaire",
+    "équivalence asymptotique"
   ],
   "methods": [
+    "développement limité",
     "identification des coefficients",
     "calcul de déterminant",
-    "développement limité au voisinage de 0",
     "analyse des comportements asymptotiques"
   ],
   "objects": [
-    "fonctions composées",
-    "développement limité",
+    "fonction composée",
     "système d'équations linéaires",
+    "développement limité",
     "matrice carrée"
   ],
-  "content_hash": "bc1fa8000750188044879f902d847172c5079fd565a8eeb339944baa5079cc43",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:45:47.926Z"
+  "content_hash": "fe2cc6c45489e163be80065a26b48f48eff2b55dd30fcb1c8a981d8cadc74f23",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:29.148Z"
 }

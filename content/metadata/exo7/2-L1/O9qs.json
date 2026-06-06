@@ -1,29 +1,31 @@
 {
   "uuid": "O9qs",
   "source_path": "exo7/2-L1/O9qs.tex",
-  "summary": "Calculer l'intégrale impropre ∫₀¹ (ln t)/(t-1) dt en utilisant un développement de 1/(1-t). La fonction intégrande est continue et positive sur ]0,1[ et intégrable sur cet intervalle.",
+  "summary": "Calculer l'intégrale impropre ∫₀¹ (ln t)/(t-1) dt en utilisant le développement en série de 1/(1-t). L'énoncé demande d'exploiter une série entière pour transformer l'intégrande.",
   "concepts": [
     "intégrale impropre",
-    "développement en série entière",
-    "convergence simple",
+    "série entière",
+    "développement en série",
+    "convergence uniforme",
     "intégration terme à terme",
-    "négligeabilité",
-    "continuité uniforme",
-    "série numérique"
+    "théorème de convergence dominée",
+    "fonction continue"
   ],
   "methods": [
     "développement en série",
     "intégration par parties",
-    "théorème d'intégration terme à terme",
-    "majoration",
-    "limite de suite"
+    "passage à la limite sous le signe intégrale",
+    "majoration d'intégrale",
+    "convergence de série"
   ],
   "objects": [
-    "fonction de variable réelle",
-    "série entière",
-    "intégrale de fonction"
+    "intégrale impropre",
+    "série de fonctions",
+    "fonction logarithme",
+    "fonction rationnelle",
+    "série numérique"
   ],
-  "content_hash": "dcb6cad93805392b0d2389bf2b5654d6f35fe753da53b0ee275c759faf6d82a5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:37:15.246Z"
+  "content_hash": "620cba9e052668aa97ee7094521a99a2e000f156131a471e637563128409d21e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:45.736Z"
 }

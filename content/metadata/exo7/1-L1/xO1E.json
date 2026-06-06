@@ -1,30 +1,31 @@
 {
   "uuid": "xO1E",
   "source_path": "exo7/1-L1/xO1E.tex",
-  "summary": "Montrer l'existence et l'unicité d'un polynôme P à coefficients complexes tel que P(z + 1/z) = zn + 1/zn pour tout z non nul complexe. Ensuite, prouver que toutes les racines de P sont réelles, simples et comprises dans l'intervalle [-2, 2].",
+  "summary": "Montrer l'existence et l'unicité d'un polynôme P à coefficients complexes tel que P(z + 1/z) = zn + 1/zn pour tout z complexe non nul. Ensuite, prouver que toutes les racines de P sont réelles, simples et comprises dans l'intervalle [-2, 2].",
   "concepts": [
-    "polynôme à coefficients complexes",
+    "polynôme unitaire",
     "racine d'un polynôme",
-    "unicité d'un polynôme",
-    "racine réelle simple",
+    "unicité d'une solution",
+    "récurrence forte",
+    "fonction trigonométrique",
     "théorème des valeurs intermédiaires",
-    "fonction cosinus"
+    "racine simple"
   ],
   "methods": [
     "récurrence forte",
-    "décomposition polynomiale",
-    "changement de variable trigonométrique",
+    "décomposition en facteurs irréductibles",
     "analyse de la dérivée",
-    "tableau de signe"
+    "utilisation de la fonction cosinus",
+    "étude des variations"
   ],
   "objects": [
     "polynôme P",
-    "racines de P",
+    "racines réelles",
     "intervalle [-2, 2]",
     "fonction cosinus",
     "polynôme dérivée"
   ],
-  "content_hash": "eeacf1dec99f0fe59edae5b0a515ec4232e0ff76e690e07787870aa3d6caec6d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:31:53.681Z"
+  "content_hash": "1753ffa9e5be05441fd64470202d6d3cbf96c7bfbc0bd49b51d4eb33d058792b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:19.642Z"
 }

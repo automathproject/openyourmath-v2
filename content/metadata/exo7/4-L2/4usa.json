@@ -1,27 +1,29 @@
 {
   "uuid": "4usa",
   "source_path": "exo7/4-L2/4usa.tex",
-  "summary": "L'exercice demande de déterminer la projetée orthogonale d'une droite donnée sur un plan donné dans l'espace euclidien.",
+  "summary": "L'exercice demande de déterminer la projetée orthogonale d'une droite donnée par un système d'équations cartésiennes sur un plan défini par une équation cartésienne.",
   "concepts": [
     "projection orthogonale",
     "droite affine",
     "plan affine",
-    "colinéarité",
-    "système d'équations cartésiennes",
-    "vecteur normal"
+    "colinéarité vectorielle",
+    "intersection de plans",
+    "repère d'un sous-espace affine"
   ],
   "methods": [
     "calcul de vecteur normal",
-    "détermination de plan contenant une droite",
-    "intersection de plans"
+    "construction de repère affine",
+    "détermination d'équation de plan",
+    "calcul de déterminant pour équation cartésienne"
   ],
   "objects": [
     "droite affine",
     "plan affine",
     "vecteur normal",
+    "repère affine",
     "système d'équations cartésiennes"
   ],
-  "content_hash": "534cc21b94db75fc4869013256f354034fac3f696f63ac30af1166cdb264f6ad",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:00:47.613Z"
+  "content_hash": "1878c34030d62253ffbf6612ef8dfa9f803a0dc0e841d69540396d1659a9ac65",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:44.058Z"
 }

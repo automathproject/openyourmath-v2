@@ -1,28 +1,29 @@
 {
   "uuid": "jSyS",
   "source_path": "exo7/5-L2/jSyS.tex",
-  "summary": "Trouver les solutions développables en série entière d'équations différentielles linéaires du second ordre à coefficients variables et résoudre complètement ces équations.",
+  "summary": "Trouver les solutions développables en série entière de six équations différentielles linéaires du second ordre, puis résoudre complètement ces équations. Les équations présentent des coefficients variables et des termes non homogènes.",
   "concepts": [
     "équation différentielle linéaire",
     "développement en série entière",
-    "fonctions spéciales",
     "solution générale",
-    "changement de variable",
+    "fonctions spéciales",
+    "équation de Bessel",
     "fonctions hyperboliques"
   ],
   "methods": [
     "méthode de Frobenius",
-    "résolution par série entière",
-    "intégration de fonctions exponentielles",
-    "manipulation algébrique de séries"
+    "résolution par séries entières",
+    "changement de variable",
+    "intégration par parties"
   ],
   "objects": [
     "équation différentielle linéaire du second ordre",
     "solution développable en série entière",
-    "fonctions trigonométriques et hyperboliques",
-    "fonctions exponentielles"
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "fonction hyperbolique"
   ],
-  "content_hash": "c2da9729f32f49ff858a5fa17f05e9becc77892ecca3929c7ad31d82b5a46f1c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:41:33.157Z"
+  "content_hash": "402555380ab33ca85b8cbc02911970e52432b52b68a1810669b06ca78f56e740",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:01.665Z"
 }

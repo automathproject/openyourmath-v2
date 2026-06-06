@@ -1,7 +1,7 @@
 {
   "uuid": "0wvO",
   "source_path": "exo7/9-L3/0wvO.tex",
-  "summary": "L'exercice étudie les propriétés des homographies du plan projectif admettant une droite de points fixes. Il demande de montrer l'existence d'un centre pour ces homographies, de construire une homographie spécifique à partir de conditions données, et d'analyser des cas particuliers illustrés par des figures.",
+  "summary": "L'exercice étudie les homographies du plan projectif avec une droite de points fixes. Il demande de montrer l'existence d'un centre pour ces homographies, de caractériser leur action géométrique, et de construire explicitement une homographie donnée dans un repère adapté.",
   "concepts": [
     "géométrie projective",
     "homographie",
@@ -10,22 +10,25 @@
     "centre d'homographie",
     "repère projectif",
     "coordonnées homogènes",
-    "involution"
+    "transvection",
+    "dilatation"
   ],
   "methods": [
     "choix de repère adapté",
-    "analyse de cas (dilatation, transvection)",
+    "analyse des points fixes",
+    "construction explicite d'homographie",
     "vérification de propriétés projectives",
-    "construction explicite de matrice"
+    "utilisation de coordonnées homogènes"
   ],
   "objects": [
     "homographie",
     "plan projectif",
     "droite de points fixes",
     "centre d'homographie",
-    "repère projectif"
+    "repère projectif",
+    "coordonnées homogènes"
   ],
-  "content_hash": "7b434a835ffcd94e0a64301f37f7c3477f02e05acd55f5730243c3d3a3c1a672",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:07:52.804Z"
+  "content_hash": "c7120add347f723e75d6b66d49c1842df025c4aad1c005255980ce5633d9b8ee",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:01.558Z"
 }

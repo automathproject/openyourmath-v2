@@ -1,29 +1,30 @@
 {
   "uuid": "HovQ",
   "source_path": "exo7/2-L1/HovQ.tex",
-  "summary": "L'exercice demande d'étudier la convergence et de calculer la somme éventuelle de deux séries numériques de terme général donné. La première série est définie par un polynôme au numérateur et une factorielle au dénominateur, tandis que la seconde série implique une factorielle au numérateur et un produit de termes linéaires au dénominateur.",
+  "summary": "L'exercice demande d'étudier la convergence et de calculer la somme éventuelle de deux séries numériques de terme général donné. La première série implique un polynôme au numérateur et une factorielle au dénominateur, tandis que la seconde fait intervenir une factorielle et un produit de termes linéaires.",
   "concepts": [
     "série numérique",
     "convergence de série",
     "somme de série",
-    "développement en série",
+    "développement en série entière",
     "comparaison de termes",
-    "limite de suite"
+    "limite de suite",
+    "majoration de termes"
   ],
   "methods": [
     "décomposition en éléments simples",
     "téléscopage",
     "comparaison asymptotique",
-    "calcul de limite",
-    "réarrangement algébrique"
+    "majoration",
+    "calcul de limite"
   ],
   "objects": [
-    "série de terme général polynomial/factoriel",
+    "série de terme général polynomial sur factorielle",
+    "série de terme général factorielle sur produit linéaire",
     "suite de sommes partielles",
-    "produit de termes linéaires",
-    "factorielle"
+    "limite de produit"
   ],
-  "content_hash": "eb759765f19aaad2233079f89521f23d589676f84b3c895ec2e899c30eeb55d7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:09:25.766Z"
+  "content_hash": "0c82bebe4202617718b6df550e3d18c1043d8bc4503b78e6f5e119a7dc968e45",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:47.287Z"
 }

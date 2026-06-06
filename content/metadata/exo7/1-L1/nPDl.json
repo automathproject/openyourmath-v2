@@ -1,25 +1,28 @@
 {
   "uuid": "nPDl",
   "source_path": "exo7/1-L1/nPDl.tex",
-  "summary": "Montrer qu'une forme linéaire sur l'espace des matrices carrées complexes vérifiant f(AB) = f(BA) pour toutes matrices A et B est proportionnelle à la trace.",
+  "summary": "Montrer qu'une forme linéaire sur l'espace des matrices carrées complexes, vérifiant la condition f(AB) = f(BA) pour toutes matrices A et B, est nécessairement proportionnelle à la trace.",
   "concepts": [
     "forme linéaire",
     "trace d'une matrice",
     "matrice élémentaire",
-    "propriété de linéarité",
+    "espace vectoriel de matrices",
+    "linéarité",
     "invariance par conjugaison"
   ],
   "methods": [
-    "décomposition en matrices élémentaires",
-    "calcul de coefficients de forme linéaire",
-    "utilisation de la trace"
+    "décomposition sur une base",
+    "calcul des coefficients de linéarité",
+    "utilisation des matrices élémentaires",
+    "identification de la trace"
   ],
   "objects": [
-    "forme linéaire sur l'espace des matrices",
+    "forme linéaire sur M_n(C)",
     "matrice carrée complexe",
-    "trace d'une matrice"
+    "trace d'une matrice",
+    "matrices élémentaires E_{i,j}"
   ],
-  "content_hash": "52209520293996d19116c16a725f6eb783f66012df52ac1aa2fe63ec31911797",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:16:25.831Z"
+  "content_hash": "cbe52fcb8a71215519c7f11ce8f4aa1bb3a7be62aa6dd59a0ee0ff1cbbb1a7d4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:02.750Z"
 }

@@ -1,22 +1,20 @@
 {
   "uuid": "SMUH",
   "source_path": "exo7/5-L2/SMUH.tex",
-  "summary": "Trouver toutes les fonctions dérivables sur l'intervalle ]0, +∞[ vérifiant une équation différentielle fonctionnelle donnée.",
+  "summary": "Trouver toutes les fonctions dérivables sur ]0, +∞[ vérifiant une équation différentielle fonctionnelle de la forme f'(x) = f(3/(16x)). L'exercice conduit à résoudre une équation différentielle linéaire du second ordre.",
   "concepts": [
     "équation différentielle linéaire",
-    "espace vectoriel de solutions",
     "système fondamental de solutions",
     "wronskien",
-    "solution particulière",
-    "dérivabilité",
-    "équation différentielle fonctionnelle"
+    "espace vectoriel de solutions",
+    "équation différentielle fonctionnelle",
+    "solution particulière de la forme x^α"
   ],
   "methods": [
+    "résolution d'équation différentielle linéaire",
     "recherche de solutions de la forme x^α",
     "calcul du wronskien",
-    "résolution d'équation différentielle linéaire",
-    "dérivation",
-    "identification des constantes"
+    "vérification de la condition initiale"
   ],
   "objects": [
     "fonction dérivable",
@@ -24,7 +22,7 @@
     "solution particulière",
     "système fondamental de solutions"
   ],
-  "content_hash": "3c13c03d98e401d8707859da2102d53a284296e87383cb8827941ec773d7486c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:29:18.616Z"
+  "content_hash": "1d6b4bcf5ba3dc185996ff45f9ca1ff8fae7d647dc48a1fa58ddbd78fbd0c708",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:38.562Z"
 }

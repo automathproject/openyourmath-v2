@@ -1,28 +1,28 @@
 {
   "uuid": "y3WJ",
   "source_path": "exo7/2-L1/y3WJ.tex",
-  "summary": "On considère une suite réelle et sa suite des moyennes partielles. L'exercice demande de montrer que la convergence de la série des carrés des termes de la suite implique la convergence de la série des carrés des moyennes partielles, avec une majoration de la somme infinie.",
+  "summary": "On considère une suite réelle (u_n) et on définit la suite (v_n) comme la moyenne des n premiers termes de (u_n). L'exercice demande de montrer que si la série des carrés de (u_n) converge, alors la série des carrés de (v_n) converge aussi et d'établir une majoration de cette dernière série par un multiple de la première.",
   "concepts": [
     "série numérique",
-    "suite numérique",
-    "moyenne partielle",
-    "inégalité de Cauchy-Schwarz",
     "convergence de série",
-    "majoration"
+    "inégalité de Cauchy-Schwarz",
+    "majoration",
+    "suite de moyennes",
+    "somme partielle"
   ],
   "methods": [
-    "majoration",
+    "majoration terme à terme",
     "inégalité de Cauchy-Schwarz",
     "téléscopage",
-    "passage à la limite"
+    "raisonnement par l'absurde"
   ],
   "objects": [
     "suite réelle",
-    "suite des moyennes partielles",
+    "série de termes positifs",
     "somme partielle",
-    "série de termes positifs"
+    "moyenne arithmétique"
   ],
-  "content_hash": "bfcbd5b96d29058c0f038f1bd854788a55cae8f2e922dc9b77815a859301d92c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:40:17.994Z"
+  "content_hash": "7acc6bfb911694160ed1c613fd4f1680b110fb42a75f494201b59ac7ccae8f09",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:44.071Z"
 }

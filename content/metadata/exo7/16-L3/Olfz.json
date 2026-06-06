@@ -1,27 +1,29 @@
 {
   "uuid": "Olfz",
   "source_path": "exo7/16-L3/Olfz.tex",
-  "summary": "L'exercice demande de montrer l'égalité de deux sommes de séries de Taylor d'une fonction holomorphe sur un ouvert convexe, sous certaines conditions de rayons de convergence. Il requiert aussi de fournir un contre-exemple sans l'hypothèse de convexité.",
+  "summary": "Soit une fonction holomorphe sur un ouvert convexe U. On considère deux points z₁ et z₂ de U et leurs séries de Taylor respectives. On définit g₁ et g₂ comme les sommes de ces séries sur leurs disques de convergence. L'exercice demande de montrer que g₁ et g₂ coïncident sur l'intersection non vide de ces disques. Une contre-exemple est également à fournir pour un ouvert non convexe.",
   "concepts": [
     "fonction holomorphe",
     "série de Taylor",
-    "rayon de convergence",
     "principe du prolongement analytique",
     "convexité",
     "connexe",
-    "disque ouvert"
+    "disque de convergence",
+    "rayon de convergence"
   ],
   "methods": [
     "utilisation du principe du prolongement analytique",
-    "construction de contre-exemple"
+    "construction de contre-exemple",
+    "analyse de l'intersection de disques"
   ],
   "objects": [
     "fonction holomorphe",
     "série de Taylor",
-    "disque ouvert",
-    "ouvert convexe"
+    "disque de convergence",
+    "ouvert convexe",
+    "fonction Log"
   ],
-  "content_hash": "17f60a9606f6b0c83d4c4dfacdcfd3c4b05fddabe371f3cd8bb235f9c8777937",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:14:02.178Z"
+  "content_hash": "931bfaf5f293d6974291950bae4eb42a42f9ea524b7e28625828fc98561fa2e9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:36.322Z"
 }

@@ -1,28 +1,28 @@
 {
   "uuid": "VmVa",
   "source_path": "exo7/1-L1/VmVa.tex",
-  "summary": "L'exercice demande de déterminer si une matrice A, définie avec des paramètres réels non nuls, est inversible et, si oui, d'exprimer son inverse. La matrice A est donnée sous une forme spécifique avec des éléments diagonaux et hors diagonaux particuliers.",
+  "summary": "L'exercice demande de déterminer si une matrice symétrique particulière est inversible et, le cas échéant, d'exprimer son inverse. La matrice est définie par des coefficients diagonaux de la forme 1 + a_i et des coefficients hors diagonale tous égaux à 1.",
   "concepts": [
-    "inversibilité d'une matrice",
+    "matrice inversible",
     "base de vecteurs",
     "matrice de passage",
-    "famille libre de vecteurs",
-    "système linéaire",
-    "déterminant"
+    "famille libre",
+    "famille liée",
+    "système linéaire"
   ],
   "methods": [
-    "interprétation géométrique de la matrice",
-    "calcul de vecteurs en base canonique",
-    "résolution d'équations linéaires",
-    "expression de l'inverse par combinaison linéaire"
+    "méthode de Gauss",
+    "calcul de déterminant",
+    "manipulation de vecteurs",
+    "résolution de système linéaire"
   ],
   "objects": [
-    "matrice carrée",
+    "matrice symétrique",
     "vecteurs de base",
-    "famille de vecteurs",
-    "matrice inverse"
+    "matrice de passage",
+    "système d'équations linéaires"
   ],
-  "content_hash": "64da88457f054040e9b829e4f1a0930931da1fabd3000536531ae00458e3fda8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:02:25.892Z"
+  "content_hash": "c320a8566bfedd17d467e9f71224400d0c08073af94b8d5fb2b5d776a6b586d5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:44.075Z"
 }

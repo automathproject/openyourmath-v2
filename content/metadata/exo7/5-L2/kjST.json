@@ -1,30 +1,32 @@
 {
   "uuid": "kjST",
   "source_path": "exo7/5-L2/kjST.tex",
-  "summary": "Calculer la somme d'une série entière pour x dans ]-1,1[ et en déduire les valeurs des sommes pour x=1 et x=-1.",
+  "summary": "Calculer la somme d'une série entière $\\sum_{n=0}^{+\\infty}\\frac{x^n}{4n^2-1}$ pour $x$ dans $]-1,1[$ et en déduire les valeurs des sommes $\\sum_{n=0}^{+\\infty}\\frac{1}{4n^2-1}$ et $\\sum_{n=0}^{+\\infty}\\frac{(-1)^n}{4n^2-1}$ en exploitant la continuité de la somme.",
   "concepts": [
     "série entière",
     "rayon de convergence",
     "convergence normale",
-    "continuité des séries entières",
-    "séries télescopiques",
-    "fonction logarithme",
-    "fonction Arctangente"
+    "continuité de la somme",
+    "téléscopie",
+    "fonction génératrice",
+    "limite de suite",
+    "intégrale impropre"
   ],
   "methods": [
-    "développement en série entière",
-    "limite de fonction",
-    "téléscopage",
+    "décomposition en éléments simples",
     "changement de variable",
-    "évaluation en points particuliers"
+    "passage à la limite",
+    "somme télescopique",
+    "calcul de limite de fonction"
   ],
   "objects": [
     "série entière",
-    "fonction définie par une série entière",
+    "fonction génératrice",
     "somme de termes rationnels",
-    "limites aux bornes de l'intervalle"
+    "limite de suite",
+    "intégrale impropre"
   ],
-  "content_hash": "ee297d7d66a88d1b072018e1d5b780f8946c76535d3a246cf7cd99af56812ce8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:51:39.137Z"
+  "content_hash": "86a55033509f9aa83b6454e7e2b6018d85983e661f5eee1b492ed9cbad4e7c3f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:18.968Z"
 }

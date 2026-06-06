@@ -1,20 +1,31 @@
 {
   "uuid": "1sC6",
   "source_path": "exo7/5-L2/1sC6.tex",
-  "summary": "Résoudre trois systèmes d'équations différentielles linéaires à deux variables, avec des conditions spécifiques pour le troisième système.",
+  "summary": "Résoudre trois systèmes d'équations différentielles linéaires à deux variables, avec des conditions spécifiques pour le troisième système. Le premier système est défini sur ]0,+∞[, le deuxième sur ℝ, et le troisième impose une contrainte xy=1.",
   "concepts": [
     "système d'équations différentielles linéaires",
     "espace affine de solutions",
     "système fondamental de solutions",
     "méthode de variation de la constante",
-    "formules de Cramer",
-    "intégration de fonctions rationnelles",
-    "factorisation de polynômes",
+    "solution particulière",
+    "théorème de Cramer",
     "fonctions hyperboliques"
   ],
-  "methods": [],
-  "objects": [],
-  "content_hash": "83be53e41a2739c9509bb675f706067bc3125801bbc8de6ab9cb779002f70a25",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T11:38:55.920Z"
+  "methods": [
+    "résolution du système homogène associé",
+    "recherche de solutions particulières",
+    "intégration par parties",
+    "factorisation de polynômes",
+    "utilisation de la condition initiale"
+  ],
+  "objects": [
+    "système d'équations différentielles",
+    "matrice de coefficients",
+    "fonctions solutions",
+    "solution particulière",
+    "condition xy=1"
+  ],
+  "content_hash": "4373ce76d34eae347d130164cc71897a12297ba5cd19bf224d100c5103b9ce2a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:22.515Z"
 }

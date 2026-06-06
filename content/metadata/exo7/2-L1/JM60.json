@@ -1,29 +1,31 @@
 {
   "uuid": "JM60",
   "source_path": "exo7/2-L1/JM60.tex",
-  "summary": "Simplifier des expressions impliquant des fonctions circulaires inverses (Arcsin, Arccos, Arctan) avec des arguments rationnels. L'exercice demande de trouver des relations entre ces fonctions.",
+  "summary": "Simplifier quatre expressions impliquant des fonctions circulaires inverses (Arcsin, Arccos, Arctan) en utilisant des identités trigonométriques et des propriétés de dérivabilité.",
   "concepts": [
     "fonctions circulaires inverses",
-    "domaine de définition",
-    "continuité",
+    "identités trigonométriques",
     "dérivabilité",
+    "continuité",
+    "limites",
     "fonctions impaires",
-    "équations trigonométriques",
-    "identités trigonométriques"
+    "équations différentielles"
   ],
   "methods": [
     "dérivation",
-    "changement de variable",
-    "utilisation de propriétés trigonométriques",
-    "résolution d'équations différentielles"
+    "standardisation",
+    "utilisation de la dérivée pour identifier une fonction",
+    "limites de fonctions",
+    "identités trigonométriques"
   ],
   "objects": [
-    "fonctions Arcsin",
-    "fonctions Arccos",
-    "fonctions Arctan",
-    "expressions rationnelles"
+    "fonction Arcsin",
+    "fonction Arccos",
+    "fonction Arctan",
+    "fonction dérivable",
+    "fonction continue"
   ],
-  "content_hash": "6abf2fd1789027ee54b677f404dff738db76ae63293e2c720f2c730a10e8c03e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:58:42.135Z"
+  "content_hash": "8c55e64f238e9a70e934bf5deabbea0006d7d42c3e71ce6259899c39542bf551",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:42.503Z"
 }

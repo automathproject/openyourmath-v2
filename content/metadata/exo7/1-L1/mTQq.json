@@ -1,31 +1,32 @@
 {
   "uuid": "mTQq",
   "source_path": "exo7/1-L1/mTQq.tex",
-  "summary": "Décomposer quatre fractions rationnelles en éléments simples sur ℝ, en utilisant la méthode de substitution pour déterminer les coefficients. Les fractions présentent des dénominateurs avec facteurs linéaires et quadratiques, certains irréductibles sur ℝ.",
+  "summary": "Décomposer en éléments simples sur ℝ des fractions rationnelles, en déterminant les coefficients par substitution. Les fractions peuvent avoir une partie polynomiale et des dénominateurs avec racines réelles ou irréductibles sur ℝ.",
   "concepts": [
     "décomposition en éléments simples",
     "division euclidienne de polynômes",
-    "factorisation de polynômes",
+    "racines réelles",
     "polynômes irréductibles sur ℝ",
-    "substitution pour identification des coefficients",
-    "partie polynomiale d'une fraction rationnelle"
+    "substitution pour calcul de coefficients",
+    "partie polynomiale d'une fraction rationnelle",
+    "factorisation de polynômes"
   ],
   "methods": [
-    "méthode de substitution",
+    "substitution pour déterminer les coefficients",
     "division euclidienne",
     "factorisation",
-    "identification des coefficients par substitution",
-    "calcul de limites pour déterminer des coefficients"
+    "calcul de limites",
+    "résolution de systèmes linéaires"
   ],
   "objects": [
     "fraction rationnelle",
     "polynôme",
-    "facteurs linéaires",
-    "facteurs quadratiques",
+    "racines réelles",
+    "polynômes irréductibles",
     "partie polynomiale",
-    "éléments simples"
+    "dénominateur factorisé"
   ],
-  "content_hash": "f2c86f971be1f0f03ce82c5d66972cbe0d689e53b4daded29416047bc0fc1d57",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:20:47.751Z"
+  "content_hash": "89a25faa28b7fd4017dfe688292ef17220a5adf4a1649cb2d67ca7078aa4e9ad",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:11.279Z"
 }

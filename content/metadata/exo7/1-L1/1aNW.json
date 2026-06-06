@@ -1,26 +1,26 @@
 {
   "uuid": "1aNW",
   "source_path": "exo7/1-L1/1aNW.tex",
-  "summary": "L'exercice demande de déterminer les inclusions entre des ensembles E_i définis par des propriétés arithmétiques sur les entiers naturels, puis d'exprimer l'intersection de deux de ces ensembles sous une forme spécifique et de prouver son égalité avec un troisième ensemble.",
+  "summary": "L'exercice demande de déterminer les inclusions entre trois ensembles de nombres naturels définis par des conditions de divisibilité (multiples de 7, 4 ou 28), puis d'exprimer l'intersection de deux de ces ensembles sous forme canonique et de prouver son égalité avec le troisième.",
   "concepts": [
     "divisibilité dans Z",
-    "division euclidienne",
-    "ensembles définis par propriétés arithmétiques",
+    "ensemble des multiples",
     "inclusion d'ensembles",
     "intersection d'ensembles",
-    "propriétés des entiers naturels"
+    "critère de divisibilité"
   ],
   "methods": [
-    "analyse des conditions de divisibilité",
-    "comparaison d'ensembles",
-    "détermination d'intersections"
+    "définition d'ensemble par compréhension",
+    "vérification d'inclusion",
+    "caractérisation des multiples communs"
   ],
   "objects": [
-    "ensembles d'entiers naturels",
-    "propriétés arithmétiques",
-    "conditions de divisibilité"
+    "ensemble de nombres naturels",
+    "multiple de 7",
+    "multiple de 4",
+    "multiple de 28"
   ],
-  "content_hash": "5a714b30909768c756170bc81416d11986ae6fe297ece895c76c33edff765082",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:41:03.292Z"
+  "content_hash": "0d6301b27295c12478843db9a5cbe3a915b651aa4de3116e743ea03774b15267",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:34:24.151Z"
 }

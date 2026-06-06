@@ -1,24 +1,25 @@
 {
   "uuid": "cnvO",
   "source_path": "exo7/15-L3/cnvO.tex",
-  "summary": "Montrer que deux compacts disjoints dans un espace topologique séparé admettent des voisinages ouverts disjoints.",
+  "summary": "Montrer que deux compacts disjoints dans un espace topologique séparé admettent des voisinages ouverts disjoints. L'énoncé suggère de traiter d'abord le cas où l'un des compacts est réduit à un point.",
   "concepts": [
     "espace topologique séparé",
     "compact",
     "voisinage ouvert",
     "disjoint",
-    "topologie"
+    "théorème de séparation des compacts"
   ],
   "methods": [
     "raisonnement par cas",
+    "utilisation des propriétés de séparation",
     "construction de voisinages disjoints"
   ],
   "objects": [
     "espace topologique",
-    "compacts disjoints",
+    "parties compactes",
     "voisinages ouverts"
   ],
-  "content_hash": "6256ec439bf3c88797131b0603eb8cc922945068a5fcc0c51d75d532e530c8c9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:58:54.356Z"
+  "content_hash": "d16aaf9b4f5609305dd4fe618085e2530fefb8b165bdd7c565f6cb4c1e25ba40",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:49.992Z"
 }

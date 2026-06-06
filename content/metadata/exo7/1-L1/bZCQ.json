@@ -1,26 +1,27 @@
 {
   "uuid": "bZCQ",
   "source_path": "exo7/1-L1/bZCQ.tex",
-  "summary": "L'exercice demande de déterminer quels sous-ensembles de ℝⁿ sont des sous-espaces vectoriels parmi cinq cas donnés, en vérifiant les propriétés structurelles requises.",
+  "summary": "L'exercice demande de déterminer quels sous-ensembles de ℝⁿ munis des lois usuelles sont des sous-espaces vectoriels, parmi cinq ensembles définis par des conditions sur les coordonnées.",
   "concepts": [
     "sous-espace vectoriel",
+    "vecteur nul",
     "forme linéaire",
     "noyau d'une application linéaire",
     "combinaison linéaire",
     "espace vectoriel"
   ],
   "methods": [
-    "vérification de la stabilité par combinaison linéaire",
+    "vérification des propriétés de sous-espace vectoriel",
     "utilisation du noyau d'une forme linéaire",
     "représentation par vecteurs générateurs"
   ],
   "objects": [
     "sous-ensemble de ℝⁿ",
-    "vecteur nul",
     "forme linéaire",
-    "vecteurs générateurs"
+    "vecteur nul",
+    "combinaison linéaire"
   ],
-  "content_hash": "3cac2d80b036c4743b5bc74d0a5cbd7b479cd4a152f824aee188f783731fb0b0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:59:09.699Z"
+  "content_hash": "993e454e8fb70725539432b29545198770c0bf9d451fa6a708f1084948d32050",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:48.626Z"
 }

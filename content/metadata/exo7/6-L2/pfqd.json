@@ -1,27 +1,30 @@
 {
   "uuid": "pfqd",
   "source_path": "exo7/6-L2/pfqd.tex",
-  "summary": "L'exercice demande de démontrer une relation angulaire entre une tangente à un cercle et une corde, en utilisant des propriétés de triangles isocèles et rectangles.",
+  "summary": "Démontrer que l'angle entre une tangente à un cercle et une corde est la moitié de l'angle au centre intercepté par cette corde. L'énoncé utilise un cercle, une corde et sa tangente.",
   "concepts": [
     "géométrie affine euclidienne",
-    "angle orienté",
-    "tangente à un cercle",
-    "triangle isocèle",
+    "angle au centre",
+    "angle entre tangente et corde",
+    "relation d'Euler",
     "triangle rectangle",
+    "triangle isocèle",
     "propriétés des angles"
   ],
   "methods": [
-    "calcul d'angles orientés",
-    "utilisation de la relation de Chasles",
-    "analyse de triangles rectangles"
+    "utilisation des angles droits",
+    "relation de Chasles pour les angles",
+    "calcul d'angles dans un triangle",
+    "propriétés des tangentes"
   ],
   "objects": [
     "cercle",
     "tangente",
     "corde",
-    "angle orienté"
+    "angle au centre",
+    "angle entre tangente et corde"
   ],
-  "content_hash": "e5f9467371196b9f19868d8280afae890a8932176baabea6ce90efd5d6107d5f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:56:40.160Z"
+  "content_hash": "b9cedc20ef56763a638e0745aa6092266de59b9d927a2c386064c462ad70d6a8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:39.286Z"
 }

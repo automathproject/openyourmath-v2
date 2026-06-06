@@ -1,11 +1,19 @@
-# Synchronisation du cache d'embeddings entre machines
+# Synchronisation des métadonnées IA entre machines
 
 ## Principe
 
+Le pipeline IA produit deux familles de données :
+
+| Artefact                       | Rôle                                                          | Versionné Git |
+| ------------------------------ | ------------------------------------------------------------- | ------------- |
+| `content/metadata/**/*.json`   | Résumés, concepts, méthodes, objets, `content_hash`, modèle   | oui           |
+| `data/exercises.sqlite`        | Base locale avec exercices, métadonnées et embeddings         | non           |
+| `cache/embeddings/{uuid}.json` | Cache local des vecteurs, reconstruit depuis SQLite si besoin | non           |
+
 Les embeddings vectoriels (BAAI/bge-m3, 1024 dims) sont stockés à deux endroits :
 
-- **`data/exercises.sqlite`** (table `exercise_embeddings`) — source de vérité, baked dans l'image Docker
-- **`cache/embeddings/{uuid}.json`** — cache local exclu de Git, utilisé par `index-exercises.js` pour éviter de rappeler l'API
+- **`data/exercises.sqlite`** (table `exercise_embeddings`) — source de vérité locale pour les vecteurs
+- **`cache/embeddings/{uuid}.json`** — cache local exclu de Git, utilisé par `index-exercises.js` pour éviter de rappeler Ollama/Albert
 
 ```
 cache/embeddings/
@@ -17,12 +25,23 @@ cache/embeddings/
 ## Garde-fou : content_hash
 
 Chaque fichier de cache contient le `content_hash` (SHA256 des blocs sémantiques
-de l'exercice). Lors du chargement, ce hash est comparé à celui en base :
+de l'exercice). Lors du chargement par `index-exercises.js`, ce hash est comparé
+au hash courant :
 
 - **Correspondance** → embedding utilisé tel quel
 - **Divergence** → cache ignoré, l'embedding sera recalculé au prochain `pnpm index:exercises`
 
 Cela garantit qu'un exercice modifié ne réutilisera pas un embedding périmé.
+Lors de `pnpm cache:embeddings:restore`, un fichier de cache local déjà présent
+est aussi remplacé si son hash, son modèle ou sa dimension ne correspond plus à
+la DB restaurée.
+
+## Règle de source de vérité
+
+- Les métadonnées textuelles (`summary`, `concepts`, `methods`, `objects`) se déplacent par Git via `content/metadata/`.
+- Les embeddings se déplacent par snapshot SQLite, pas par Git.
+- `cache/embeddings/` n'est pas une source de vérité : c'est une accélération locale.
+- Après une indexation réussie, il faut à la fois commiter les `content/metadata/**/*.json` modifiés et publier un nouveau snapshot si une autre machine doit récupérer les embeddings sans les recalculer.
 
 ## Workflow recommandé : nouvelle machine
 
@@ -39,15 +58,19 @@ Prérequis :
 # 1. Ancienne machine : créer et publier un snapshot GitHub Release
 pnpm build:content
 pnpm index:exercises
+git status --short
+# commiter les content/metadata/**/*.json modifiés
 pnpm db:snapshot:pack
 pnpm db:snapshot:publish
 
 # 2. Nouvelle machine : télécharger la DB et restaurer le cache local
+git pull
 pnpm db:snapshot:download
 pnpm db:snapshot:restore
 
-# 3. Lancer l'indexation — les exercices déjà embeddés sont skippés
-pnpm index:exercises
+# 3. Vérifier la cohérence, puis travailler normalement
+pnpm cache:embeddings:stats
+pnpm dev
 ```
 
 Par défaut, ces commandes utilisent le tag `db-snapshot-dev` et l'archive
@@ -64,6 +87,40 @@ pnpm db:snapshot:publish db-snapshot-20260506 data/openyourmath-db-20260506.tgz
 pnpm db:snapshot:download db-snapshot-20260506 data/openyourmath-db-20260506.tgz
 pnpm db:snapshot:restore data/openyourmath-db-20260506.tgz
 ```
+
+## Quand relancer quoi ?
+
+Après modification d'un `.tex` :
+
+```bash
+pnpm build:content
+pnpm index:exercises
+```
+
+Si `index:exercises` modifie des fichiers dans `content/metadata/`, les commiter.
+Si une autre machine doit profiter des nouveaux embeddings sans recalcul, publier
+aussi un snapshot.
+
+Après simple changement de machine sans modification de contenu :
+
+```bash
+git pull
+pnpm db:snapshot:download
+pnpm db:snapshot:restore
+pnpm cache:embeddings:stats
+```
+
+Si `pnpm cache:embeddings:stats` affiche `Hash incohérent (contenu modifié)`,
+relancer :
+
+```bash
+pnpm cache:embeddings:restore
+pnpm cache:embeddings:stats
+```
+
+Si l'incohérence persiste, la DB locale et le contenu Git ne correspondent
+probablement pas au même état. Refaire d'abord `git pull`, puis restaurer le
+snapshot correspondant.
 
 ## Alternative : rsync du cache
 

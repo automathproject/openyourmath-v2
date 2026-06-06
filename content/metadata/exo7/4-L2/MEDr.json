@@ -1,32 +1,33 @@
 {
   "uuid": "MEDr",
   "source_path": "exo7/4-L2/MEDr.tex",
-  "summary": "L'exercice demande de montrer l'égalité des rangs entre la matrice de Gram et la famille de vecteurs, puis d'établir des conditions sur le déterminant de Gram pour la liberté ou la liaison de la famille. Enfin, il s'agit de relier le déterminant de Gram à la distance d'un vecteur à un sous-espace.",
+  "summary": "L'exercice porte sur les propriétés de la matrice de Gram et du déterminant de Gram dans un espace préhilbertien réel. Il demande de montrer des relations entre le rang de la matrice de Gram et celui de la famille de vecteurs, puis entre la liberté/liaison de la famille et la valeur du déterminant de Gram. Enfin, il s'agit d'exprimer la distance d'un vecteur à un sous-espace vectoriel en fonction des déterminants de Gram.",
   "concepts": [
     "espace préhilbertien",
     "matrice de Gram",
     "déterminant de Gram",
     "projection orthogonale",
     "distance à un sous-espace",
+    "théorème du rang",
     "théorème de Pythagore",
-    "système de Cramer",
-    "théorème du rang"
+    "système de Cramer"
   ],
   "methods": [
-    "orthonormalisation",
     "calcul de noyau",
-    "déterminant de matrice",
+    "détermination de rang",
+    "développement de déterminant",
     "projection orthogonale",
     "résolution de système linéaire"
   ],
   "objects": [
     "matrice de Gram",
+    "déterminant de Gram",
     "famille de vecteurs",
+    "sous-espace vectoriel",
     "projection orthogonale",
-    "distance à un sous-espace",
-    "déterminant de Gram"
+    "distance à un sous-espace"
   ],
-  "content_hash": "8b8639ba02171359def0029892693e8d838b17673a7347b8866bf4a0b89c3c6e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:19:37.324Z"
+  "content_hash": "8a5bb4e6b93a38628406a1a075eb19f438adb14248e696b271615bf2e866f5a0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:17.695Z"
 }

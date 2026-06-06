@@ -1,27 +1,29 @@
 {
   "uuid": "z6rN",
   "source_path": "exo7/5-L2/z6rN.tex",
-  "summary": "Calculer la somme d'une série entière de terme général $\\frac{1}{n}\\cos\\left(\\frac{2n\\pi}{3}\\right)x^n$ pour $x$ dans l'intervalle $]-1,1[$.",
+  "summary": "Calculer la somme d'une série entière de la forme $\\sum_{n=1}^{+\\infty}\\frac{1}{n}\\cos\\left(\\frac{2n\\pi}{3}\\right)x^n$ pour $x$ dans l'intervalle $]-1,1[$. L'exercice demande de déterminer le rayon de convergence et d'exprimer la somme sous forme fermée.",
   "concepts": [
     "série entière",
     "rayon de convergence",
     "fonction dérivable",
-    "partie réelle d'un nombre complexe",
-    "intégration de fonctions"
+    "partie réelle d'une série complexe",
+    "intégration terme à terme",
+    "développement en série entière"
   ],
   "methods": [
-    "développement en série entière",
+    "détermination du rayon de convergence",
+    "décomposition en partie réelle",
     "calcul de la dérivée d'une série entière",
-    "intégration terme à terme",
+    "intégration pour retrouver la primitive",
     "manipulation de nombres complexes"
   ],
   "objects": [
     "série entière",
-    "fonction dérivable",
-    "nombre complexe",
-    "intégrale"
+    "fonction complexe",
+    "fonction réelle",
+    "intégrale indéfinie"
   ],
-  "content_hash": "a7dc70ecdb25ecc60dc64b0319b7a7e20f6010c3d677720fef5ce222fc00ef7b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:57:28.143Z"
+  "content_hash": "937935580a226647f8d43c10b47416531cadfffde81f2adcec46d444c2355e7f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:27.994Z"
 }

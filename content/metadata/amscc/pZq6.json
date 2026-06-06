@@ -1,18 +1,20 @@
 {
   "uuid": "pZq6",
   "source_path": "amscc/pZq6.tex",
-  "summary": "Effectuer la division euclidienne de deux polynômes donnés, c'est-à-dire trouver le quotient et le reste de la division de A(X) par B(X).",
+  "summary": "L'exercice demande d'effectuer la division euclidienne de deux polynômes donnés, en trouvant le quotient et le reste. Il s'agit de deux cas concrets de division de polynômes à coefficients entiers.",
   "concepts": [
     "division euclidienne des polynômes",
     "algèbre des polynômes",
     "quotient et reste",
     "polynôme unitaire",
-    "degré d'un polynôme"
+    "degré d'un polynôme",
+    "identité de Bézout"
   ],
   "methods": [
     "algorithme de la division euclidienne",
-    "réduction terme à terme",
-    "identification du quotient et du reste"
+    "soustraction successive",
+    "réduction du degré",
+    "identification du reste"
   ],
   "objects": [
     "polynôme de degré 4",
@@ -20,7 +22,7 @@
     "polynôme de degré 5",
     "polynôme de degré 3"
   ],
-  "content_hash": "03540574f4f731a70d0201c47a6490f9958e4bbd5226bbf7578b2663ea8f2ff6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:23:05.940Z"
+  "content_hash": "84dcb8ce958faeedbcad4e4400e13488a956a1871986dae43b2be12c48c0493e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:13.897Z"
 }

@@ -3,26 +3,27 @@
   "source_path": "exo7/2-L1/wRv5.tex",
   "summary": "L'exercice demande de démontrer quatre propriétés fondamentales des fonctions intégrables au sens de Riemann : l'additivité, l'homogénéité, l'ordre et la stabilité par limite uniforme.",
   "concepts": [
-    "intégrabilité au sens de Riemann",
+    "intégrabilité de Riemann",
+    "somme de Riemann",
     "subdivision d'un intervalle",
-    "somme inférieure et supérieure de Riemann",
-    "limite uniforme de fonctions",
+    "limite uniforme",
     "inégalités de Riemann",
     "théorème de l'intégrale de Riemann"
   ],
   "methods": [
     "construction de subdivisions fines",
-    "manipulation des sommes de Riemann",
-    "utilisation de l'inégalité triangulaire",
+    "calcul des sommes de Riemann",
+    "utilisation des inégalités sup/inf",
     "passage à la limite uniforme"
   ],
   "objects": [
-    "fonction intégrable au sens de Riemann",
-    "subdivision d'un intervalle",
-    "somme inférieure et supérieure de Riemann",
-    "suite de fonctions convergeant uniformément"
+    "fonction intégrable",
+    "somme supérieure",
+    "somme inférieure",
+    "suite de fonctions",
+    "intervalle borné"
   ],
-  "content_hash": "a0bcebe36e526b1c5f52c970eb926a934519eee123cf48942a3616a8cea9b112",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:46:06.877Z"
+  "content_hash": "74d3c92da15204a2fe9f0f93e0060dfb7521405a9dc13b3dbffcb30f1b10efe1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:36.905Z"
 }

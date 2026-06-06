@@ -1,31 +1,31 @@
 {
   "uuid": "WCam",
   "source_path": "exo7/1-L1/WCam.tex",
-  "summary": "L'exercice demande de déterminer une base de ℂ⁴ formée de vecteurs colinéaires à leurs images par un endomorphisme u de matrice A, puis d'écrire les formules de changement de base correspondantes et de calculer An pour n entier naturel.",
+  "summary": "L'exercice demande de déterminer une base de $\\mathbb{C}^4$ formée de vecteurs colinéaires à leurs images par l'endomorphisme $u$ de matrice $A$, puis d'écrire les formules de changement de base correspondantes et d'en déduire le calcul de $A^n$ pour $n$ entier naturel.",
   "concepts": [
-    "valeurs propres",
-    "vecteurs propres",
+    "valeur propre",
+    "vecteur propre",
     "diagonalisation",
-    "changement de base",
     "polynôme caractéristique",
-    "déterminant d'une matrice",
-    "endomorphisme"
+    "endomorphisme",
+    "changement de base",
+    "puissance de matrice"
   ],
   "methods": [
     "calcul du polynôme caractéristique",
+    "résolution de systèmes linéaires",
     "détermination des valeurs propres",
     "construction d'une base de vecteurs propres",
-    "diagonalisation d'une matrice",
-    "calcul de puissances de matrices"
+    "diagonalisation de matrice"
   ],
   "objects": [
-    "matrice A",
-    "endomorphisme u",
-    "base de ℂ⁴",
-    "matrice diagonale D",
-    "matrice de passage P"
+    "matrice carrée",
+    "endomorphisme",
+    "base de vecteurs propres",
+    "polynôme caractéristique",
+    "puissance de matrice"
   ],
-  "content_hash": "abf66373476a2851a531265d7c525845e14e4bffdc822dd0f4425e075a591e3d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:03:16.495Z"
+  "content_hash": "84ae580d9b3a1c9e0c881118b276b35d842a494fd762cbdce89c01e28c4446d2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:47.140Z"
 }

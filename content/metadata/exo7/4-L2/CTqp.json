@@ -1,29 +1,30 @@
 {
   "uuid": "CTqp",
   "source_path": "exo7/4-L2/CTqp.tex",
-  "summary": "L'exercice demande de montrer qu'une norme définie sur l'espace des matrices carrées réelles vérifie l'inégalité de submultiplicité et de déterminer si cette norme est associée à un produit scalaire.",
+  "summary": "L'exercice demande de montrer qu'une norme définie par la trace de la matrice transposée multipliée par la matrice est bien une norme, qu'elle vérifie l'inégalité sous-multiplicative, et de déterminer si elle est associée à un produit scalaire.",
   "concepts": [
     "produit scalaire",
     "norme",
     "inégalité de Cauchy-Schwarz",
     "trace d'une matrice",
+    "matrice carrée",
     "espace euclidien",
     "bilinéarité",
-    "symétrie",
-    "définie positive"
+    "symétrie"
   ],
   "methods": [
+    "définition de produit scalaire",
     "calcul de trace",
-    "vérification des propriétés d'un produit scalaire",
     "application de l'inégalité de Cauchy-Schwarz",
-    "définition de norme associée à un produit scalaire"
+    "vérification des propriétés de norme"
   ],
   "objects": [
     "matrice carrée",
     "produit scalaire canonique",
-    "norme submultiplicative"
+    "norme associée",
+    "trace de matrice"
   ],
-  "content_hash": "9e8717c83fbd594226cae12de1006623efd9d337b7959467fd48b35b4ac8607c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:08:12.383Z"
+  "content_hash": "1dfce87e195bbe67dcb27619f6a65271593d11e929e2b27fb7c71b64802cc629",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:00.771Z"
 }

@@ -1,28 +1,31 @@
 {
   "uuid": "vyyp",
   "source_path": "exo7/5-L2/vyyp.tex",
-  "summary": "Recherche des extremums locaux et globaux de deux fonctions de deux variables. La première fonction est un polynôme de degré 3 en x et 1 en y, la seconde est une combinaison de termes quadratiques et quartiques.",
+  "summary": "Recherche des extremums locaux et globaux de deux fonctions de deux variables. La première fonction est un polynôme de degré 3, la seconde combine des termes quadratiques et quartiques.",
   "concepts": [
-    "différentiabilité",
     "extremum local",
     "extremum global",
     "point critique",
+    "différentiabilité",
     "hessien",
-    "forme quadratique"
+    "classe C^1",
+    "classe C^2",
+    "minimum global"
   ],
   "methods": [
     "calcul des dérivées partielles",
-    "résolution de systèmes d'équations",
+    "résolution de système d'équations",
     "analyse du hessien",
+    "étude de la symétrie",
     "comparaison de valeurs"
   ],
   "objects": [
     "fonction de deux variables",
-    "point critique",
+    "polynôme à plusieurs variables",
     "hessien",
-    "minimum global"
+    "point critique"
   ],
-  "content_hash": "e8f6de881e3838620974ea5b34951f451d2935b99eda3781a0446cd62f793e99",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:24:51.388Z"
+  "content_hash": "f110b20a441fed3d3b1df9b0442dc1170d3fe1cbbcf7501b049f919d93bfc026",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:51.753Z"
 }

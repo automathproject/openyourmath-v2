@@ -1,29 +1,31 @@
 {
   "uuid": "P6Td",
   "source_path": "exo7/6-L2/P6Td.tex",
-  "summary": "Calculer l'intégrale d'une forme différentielle le long d'un contour orienté, puis en déduire la valeur d'une intégrale impliquant la fonction sinus sur cosinus. Le contexte utilise un contour spécifique dans le plan.",
+  "summary": "Calculer l'intégrale d'une forme différentielle le long d'un contour orienté, puis en déduire la valeur de l'intégrale de $\\frac{\\sin x}{x}$ sur $[0, +\\infty[$. L'exercice utilise des techniques d'analyse vectorielle et de calcul intégral.",
   "concepts": [
-    "forme différentielle exacte",
-    "forme différentielle fermée",
+    "forme différentielle",
+    "intégrale curviligne",
     "théorème de Schwarz",
-    "intégrale de ligne",
-    "continuité des intégrales à paramètres",
+    "forme exacte",
+    "forme fermée",
+    "théorème de continuité des intégrales à paramètres",
     "convergence d'intégrales impropres"
   ],
   "methods": [
     "calcul des dérivées partielles",
-    "vérification de l'exactitude d'une forme différentielle",
-    "théorème de Green",
-    "changement de variable",
-    "étude de la limite d'intégrales"
+    "intégration par parties",
+    "utilisation de la parité d'une fonction",
+    "passage à la limite dans une intégrale",
+    "application du théorème de Schwarz"
   ],
   "objects": [
-    "forme différentielle",
-    "contour orienté",
-    "intégrale impropre",
-    "fonction continue par morceaux"
+    "forme différentielle $\\omega$",
+    "contour $\\Gamma$",
+    "intégrale $\\int_{0}^{+\\infty} \\frac{\\sin x}{x}\\;dx$",
+    "fonction $F(r,t)$",
+    "arcs $\\Gamma_1$, $\\Gamma_2$, $\\Gamma_3$, $\\Gamma_4$"
   ],
-  "content_hash": "968f416b16ef5f5b5b3dc173c31848f3c9d4adafbeeebf06432c0911f319a87a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:29:59.963Z"
+  "content_hash": "5fc8f9200ea3927faa3f10b55b67bf70e705f8cc603c1b8414c763bc593948d5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:32:30.667Z"
 }

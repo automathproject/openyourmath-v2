@@ -1,29 +1,31 @@
 {
   "uuid": "wC5C",
   "source_path": "exo7/5-L2/wC5C.tex",
-  "summary": "L'exercice demande de déterminer le rayon de convergence d'une série entière et de calculer sa somme sur l'intervalle de convergence. Il s'agit ensuite d'en déduire la valeur d'une série numérique particulière.",
+  "summary": "L'exercice demande de déterminer le rayon de convergence d'une série entière puis d'en calculer la somme sur son intervalle de convergence. Il s'agit ensuite d'évaluer cette somme en un point particulier pour obtenir la valeur d'une série numérique associée.",
   "concepts": [
     "série entière",
     "rayon de convergence",
-    "règle de d'Alembert",
+    "critère de d'Alembert",
     "équation différentielle linéaire",
-    "critère spécial aux séries alternées",
-    "convergence uniforme",
-    "continuité de fonctions définies par des séries"
+    "théorème de Leibniz",
+    "formule de Stirling",
+    "convergence uniforme"
   ],
   "methods": [
-    "calcul de rapport de termes consécutifs",
+    "calcul du rapport des termes consécutifs",
     "résolution d'équation différentielle",
-    "utilisation de la formule de Stirling",
-    "majoration du reste d'une série alternée"
+    "intégration terme à terme",
+    "application du critère spécial aux séries alternées",
+    "approximation asymptotique"
   ],
   "objects": [
     "série entière",
-    "fonction définie par une série entière",
-    "série numérique alternée",
-    "suite de coefficients binomiaux"
+    "fonction génératrice",
+    "suite numérique",
+    "coefficient binomial",
+    "intervalle de convergence"
   ],
-  "content_hash": "8bccb54f55e913fcaa179e5a4e3c9e31926adfec22083d5d347d6f022cdbae10",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:50:37.917Z"
+  "content_hash": "b3d95aa7ff613a78c8c6d62f81f7c0eadbfcf704661dea5d54dd72fd04b2960a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:21.198Z"
 }

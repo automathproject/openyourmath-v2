@@ -1,25 +1,28 @@
 {
   "uuid": "avh9",
   "source_path": "exo7/1-L1/avh9.tex",
-  "summary": "Trouver le plus grand commun diviseur (pgcd) de trois polynômes donnés. Les polynômes sont de degrés 5, 2 et 3 respectivement.",
+  "summary": "Trouver le plus grand commun diviseur (pgcd) de trois polynômes donnés. L'exercice demande d'appliquer l'algorithme d'Euclide étendu aux polynômes.",
   "concepts": [
     "pgcd de polynômes",
-    "division euclidienne",
-    "algèbre des polynômes",
-    "algorithme d'Euclide",
+    "algorithme d'Euclide étendu",
+    "division euclidienne des polynômes",
+    "polynôme irréductible",
+    "division polynomiale",
     "propriétés des polynômes"
   ],
   "methods": [
     "algorithme d'Euclide",
     "division polynomiale",
-    "réduction successive"
+    "recherche de diviseurs communs",
+    "factorisation de polynômes"
   ],
   "objects": [
     "polynôme de degré 5",
     "polynôme de degré 2",
-    "polynôme de degré 3"
+    "polynôme de degré 3",
+    "pgcd de polynômes"
   ],
-  "content_hash": "32605c2613d2e0b6391dd0f9cf23e3e6273eb9bdf76227aadae511145ff09049",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:07:20.423Z"
+  "content_hash": "102523efcbf4bd69ec1bec417b8eed9f5b0df88cc7ad28f72ae1c752ec17028f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:00:07.771Z"
 }

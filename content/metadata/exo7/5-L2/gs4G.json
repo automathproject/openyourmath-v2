@@ -9,23 +9,24 @@
     "ensemble ouvert",
     "ensemble fermé",
     "inclusion d'ensembles",
-    "opérateurs topologiques"
+    "opérateurs topologiques",
+    "espace vectoriel normé"
   ],
   "methods": [
-    "utilisation de la définition de l'adhérence",
-    "utilisation de la définition de l'intérieur",
+    "utilisation des définitions d'adhérence et d'intérieur",
     "manipulation d'inclusions",
-    "preuve par double inclusion",
-    "exemple contre-exemple"
+    "propriétés des ouverts et fermés",
+    "construction d'exemples pour inclusions strictes",
+    "raisonnement par double inclusion"
   ],
   "objects": [
     "parties d'un espace vectoriel normé",
     "adhérence d'un ensemble",
     "intérieur d'un ensemble",
-    "fermeté d'un ensemble",
-    "ouverts et fermés"
+    "boules ouvertes",
+    "complémentaire d'un ensemble"
   ],
-  "content_hash": "212c4e7f167ab6e7be5f9aba387bed95e2b052b3f76dbd8e44aef3d6670f0434",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:03:51.452Z"
+  "content_hash": "37f0d764713d3b9efd379b77f28bb445c0e1bbf6e186072380113790026eaa97",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:24.245Z"
 }

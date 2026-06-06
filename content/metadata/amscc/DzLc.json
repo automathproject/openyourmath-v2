@@ -1,30 +1,29 @@
 {
   "uuid": "DzLc",
   "source_path": "amscc/DzLc.tex",
-  "summary": "L'exercice demande de réaliser un test du χ² pour déterminer si les réponses des sujets dépendent de leur âge, puis de comparer les réponses entre différentes classes d'âge.",
+  "summary": "L'exercice demande de réaliser des tests du χ² pour déterminer si les réponses des sujets dépendent de leur classe d'âge, puis de comparer spécifiquement les deux dernières classes d'âge et les extrêmes d'âge.",
   "concepts": [
-    "test du χ²",
-    "hypothèse d'indépendance",
-    "tableau de contingence",
+    "test du χ² d'indépendance",
+    "hypothèse nulle",
     "effectifs théoriques",
-    "contributions au χ²",
+    "degrés de liberté",
     "seuil de signification",
-    "degrés de liberté"
+    "table de distribution du χ²",
+    "statistique d'observation"
   ],
   "methods": [
     "calcul des effectifs théoriques",
-    "calcul des contributions au χ²",
-    "comparaison avec la valeur critique du χ²",
+    "calcul de la statistique χ²",
+    "comparaison avec la table critique",
     "interprétation des résultats"
   ],
   "objects": [
     "tableau de contingence",
-    "valeur observée du χ²",
-    "valeur critique du χ²",
     "classes d'âge",
-    "réponses des sujets"
+    "réponses catégorielles",
+    "statistique χ²"
   ],
-  "content_hash": "6db900c63c7a22d234f972c685218bee3e3904c04de216d1742e2df3f42f1517",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:37:29.139Z"
+  "content_hash": "fcecba5cd93c06fcf3f4cfe8d132075566e30d820f112db90404526200732fe8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:03.797Z"
 }

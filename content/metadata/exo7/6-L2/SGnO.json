@@ -7,21 +7,23 @@
     "tangente à un axe",
     "condition de tangence",
     "forme canonique de parabole",
-    "système d'équations"
+    "système d'équations non linéaires",
+    "résolution de système algébrique"
   ],
   "methods": [
-    "analyse des conditions de tangence",
-    "résolution de système d'équations",
-    "détermination des coefficients",
+    "détermination des conditions de tangence",
+    "résolution par substitution",
+    "analyse des contraintes algébriques",
     "vérification des solutions"
   ],
   "objects": [
     "parabole",
+    "équation cartésienne",
+    "tangente",
     "axes de coordonnées",
-    "points de tangence",
-    "équation cartésienne"
+    "points de tangence"
   ],
-  "content_hash": "671d631431e1d22f600b4cc160453b7aa016925c47722df592126f209f466fa0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:05:15.559Z"
+  "content_hash": "3446ca3c1c29028e9bf5362c1e250ae95ecb433eb24c71abdb1828fa4bd0d86e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:20.840Z"
 }

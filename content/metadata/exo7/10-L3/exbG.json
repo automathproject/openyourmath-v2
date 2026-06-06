@@ -1,33 +1,31 @@
 {
   "uuid": "exbG",
   "source_path": "exo7/10-L3/exbG.tex",
-  "summary": "L'exercice demande d'analyser la structure des anneaux quotients de polynômes sur différents corps, en déterminant leurs éléments, diviseurs de zéro, éléments nilpotents, idéaux et le nombre d'éléments du groupe multiplicatif.",
+  "summary": "L'exercice demande d'analyser la structure d'anneaux quotients de polynômes sur différents corps, en déterminant leurs éléments, diviseurs de zéro et éléments nilpotents, ainsi que leurs idéaux. Il aborde aussi le cardinal du groupe multiplicatif de tels anneaux et une généralisation à plusieurs polynômes irréductibles.",
   "concepts": [
     "anneau quotient",
     "polynôme irréductible",
     "lemme chinois",
     "diviseur de zéro",
     "élément nilpotent",
-    "idéal principal",
+    "morphisme d'anneau",
     "corps fini",
-    "groupe multiplicatif",
-    "morphisme d'anneau"
+    "factorisation de polynômes"
   ],
   "methods": [
-    "factorisation de polynômes",
+    "décomposition en facteurs irréductibles",
     "application du lemme chinois",
     "construction de morphismes d'anneaux",
-    "calcul de la cardinalité du groupe multiplicatif",
-    "analyse des idéaux principaux"
+    "calcul de cardinal de groupe multiplicatif"
   ],
   "objects": [
     "anneau quotient de polynômes",
-    "polynôme irréductible",
-    "corps fini",
-    "idéal principal",
+    "polynôme sur un corps",
+    "idéal maximal",
+    "élément nilpotent",
     "groupe multiplicatif"
   ],
-  "content_hash": "8eb7c436107b6b1aaa715ce186a7f773449a678c551f96505c438cd309b7b336",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:33:52.587Z"
+  "content_hash": "6317707822db6ee5b5253332a9d49b869899c074fe6aed84e7beb5a6f2b4f477",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:08.284Z"
 }

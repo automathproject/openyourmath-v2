@@ -1,28 +1,31 @@
 {
   "uuid": "76hL",
   "source_path": "exo7/5-L2/76hL.tex",
-  "summary": "L'exercice demande de montrer la convergence simple d'une suite de fonctions définies par morceaux vers une fonction exponentielle, puis d'utiliser cette convergence pour calculer l'intégrale de Gauss.",
+  "summary": "L'exercice demande de montrer la convergence simple d'une suite de fonctions définies par morceaux vers la fonction exponentielle $e^{-x^2}$ sur $\\mathbb{R}^+$, puis d'utiliser cette suite pour calculer l'intégrale de Gauss $\\int_{0}^{+\\infty} e^{-x^2} dx$ via un changement de variable et les intégrales de Wallis.",
   "concepts": [
     "convergence simple",
     "intégrabilité",
     "théorème de convergence dominée",
-    "intégrale de Gauss",
+    "changement de variable",
     "intégrales de Wallis",
-    "changement de variable"
+    "fonction continue par morceaux",
+    "majoration uniforme"
   ],
   "methods": [
     "comparaison terme à terme",
-    "passage à la limite sous l'intégrale",
-    "changement de variable",
-    "approximation asymptotique"
+    "changement de variable trigonométrique",
+    "approximation asymptotique",
+    "intégration par parties implicite",
+    "utilisation de la convexité exponentielle"
   ],
   "objects": [
     "suite de fonctions",
     "fonction exponentielle",
     "intégrale impropre",
-    "intégrales de Wallis"
+    "intégrale de Wallis",
+    "fonction définie par morceaux"
   ],
-  "content_hash": "1b99c06fd0b0de960fbac1a8eace7aeec5af81ce0a91785b1ac0635fab802547",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:48:17.003Z"
+  "content_hash": "6b1b729b8697b0ed26be528734b0d705c007f8d8cffb99f830fb5e630461c005",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:57.095Z"
 }

@@ -1,15 +1,15 @@
 {
   "uuid": "oN7A",
   "source_path": "exo7/5-L2/oN7A.tex",
-  "summary": "L'exercice demande de montrer que deux fonctions définies par des intégrales dépendant d'un paramètre sont de classe C^1 sur ℝ, d'en déterminer leurs dérivées, puis de prouver que leur somme est constante. Enfin, il s'agit de déterminer une limite et d'en déduire une intégrale impropre classique.",
+  "summary": "L'exercice demande de montrer que deux fonctions définies par des intégrales dépendant d'un paramètre sont de classe C¹, d'en déterminer les dérivées, de prouver que leur somme est constante, puis d'en déduire une limite et une intégrale remarquable.",
   "concepts": [
     "intégrale de Riemann dépendant d'un paramètre",
-    "théorème de Leibniz",
-    "classe C^1",
-    "dérivation sous le signe intégrale",
+    "théorème de dérivation des intégrales à paramètres (Leibniz)",
+    "classe C¹",
+    "dérivée partielle",
+    "continuité uniforme",
     "intégrale impropre",
-    "limite de fonction",
-    "constante"
+    "limite de fonctions"
   ],
   "methods": [
     "dérivation sous le signe intégrale",
@@ -19,13 +19,12 @@
     "utilisation de la continuité"
   ],
   "objects": [
-    "fonction définie par une intégrale",
-    "dérivée d'une fonction",
-    "somme de fonctions",
-    "limite de fonction",
-    "intégrale impropre"
+    "fonction définie par une intégrale paramétrée",
+    "fonction composée",
+    "intégrale de Gauss",
+    "fonction continue"
   ],
-  "content_hash": "16f9d6b646a562486bef27776cc22fbc90ea940069c1a2748e831c3ba845daee",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:49:18.573Z"
+  "content_hash": "fd1266973f0c8a996f85a932c9c9a8e2a0a0001da6d714ec531c7ddd2efe9366",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:09.242Z"
 }

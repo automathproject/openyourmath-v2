@@ -1,0 +1,35 @@
+{
+  "uuid": "Rw4k",
+  "source_path": "amscc/Rw4k.tex",
+  "summary": "L'exercice porte sur l'estimation du paramètre θ d'une loi de Rayleigh à partir d'un échantillon i.i.d. Il demande de calculer l'espérance et la variance de X₁², de déterminer l'estimateur du maximum de vraisemblance, de prouver ses propriétés (sans biais, convergence en moyenne quadratique), d'établir des intervalles de confiance exacts et asymptotiques, et d'appliquer l'inégalité de Bienaymé-Tchebychev.",
+  "concepts": [
+    "loi de Rayleigh",
+    "maximum de vraisemblance",
+    "estimateur sans biais",
+    "convergence en moyenne quadratique",
+    "loi exponentielle",
+    "loi du chi-deux",
+    "théorème central limite",
+    "inégalité de Bienaymé-Tchebychev",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "calcul d'espérance et de variance",
+    "détermination de l'estimateur du maximum de vraisemblance",
+    "preuve de convergence en moyenne quadratique",
+    "standardisation",
+    "approximation gaussienne",
+    "application de l'inégalité de Bienaymé-Tchebychev"
+  ],
+  "objects": [
+    "variable aléatoire de loi de Rayleigh",
+    "échantillon i.i.d.",
+    "log-vraisemblance",
+    "estimateur du maximum de vraisemblance",
+    "intervalle de confiance",
+    "statistique du chi-deux"
+  ],
+  "content_hash": "df083e4648abcb2715ba3bda0885829dc6dd092f7ec4770f8e4874bb72d22a82",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:16.520Z"
+}

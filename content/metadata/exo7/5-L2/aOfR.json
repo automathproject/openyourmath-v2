@@ -1,32 +1,30 @@
 {
   "uuid": "aOfR",
   "source_path": "exo7/5-L2/aOfR.tex",
-  "summary": "Résoudre six équations différentielles du premier ordre sur des intervalles spécifiés. Les équations sont de types variés, incluant des équations linéaires et non linéaires.",
+  "summary": "Résoudre six équations différentielles du premier ordre sur des intervalles donnés, avec des formes variées (linéaires, non linéaires, à coefficients variables).",
   "concepts": [
     "équation différentielle linéaire du premier ordre",
-    "méthode de variation de la constante",
-    "intégration par parties",
-    "factorisation",
-    "équation homogène associée",
+    "équation différentielle à coefficients variables",
     "solution générale",
     "solution particulière",
-    "fonction exponentielle"
+    "factorisation",
+    "intégration",
+    "fonction continue"
   ],
   "methods": [
     "factorisation",
     "intégration par parties",
-    "méthode de variation de la constante",
     "changement de variable",
+    "méthode du facteur intégrant",
     "résolution d'équation différentielle linéaire"
   ],
   "objects": [
-    "équation différentielle linéaire",
     "fonction dérivable",
-    "solution générale",
-    "solution particulière",
-    "primitive"
+    "solution d'équation différentielle",
+    "intervalle de définition",
+    "fonction continue"
   ],
-  "content_hash": "03850003246a2c283381786a69612a0fd9795c374d74e67c0e09d24025930772",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:35:27.614Z"
+  "content_hash": "c55bb953db3794bca9d2c5a1d7c02716805b7cc45dad42e85635fdabdf3ebdab",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:44.215Z"
 }

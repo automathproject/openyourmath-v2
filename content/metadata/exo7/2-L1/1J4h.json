@@ -1,28 +1,29 @@
 {
   "uuid": "1J4h",
   "source_path": "exo7/2-L1/1J4h.tex",
-  "summary": "Calculer les sommes $C_n = \\sum_{k=1}^n \text{ch}(kx)$ et $S_n = \\sum_{k=1}^n \text{sh}(kx)$ pour un réel $x$ fixé et $n \\in \\mathbb{N}^*$.",
+  "summary": "Calculer les sommes $C_n = \\sum_{k=1}^n \text{ch}(kx)$ et $S_n = \\sum_{k=1}^n \text{sh}(kx)$ pour un réel $x$ fixé et $n \\in \\mathbb{N}^*$. L'exercice demande d'exploiter les propriétés des fonctions hyperboliques et des suites géométriques.",
   "concepts": [
     "fonctions hyperboliques",
-    "somme de termes de suite géométrique",
+    "suites géométriques",
+    "somme de termes d'une suite",
     "identités hyperboliques",
-    "formules d'Euler pour les fonctions hyperboliques",
+    "formule de la somme géométrique",
     "cas particulier $x=0$"
   ],
   "methods": [
+    "décomposition en sommes partielles",
     "utilisation des identités hyperboliques",
-    "calcul de sommes géométriques",
-    "manipulation algébrique",
-    "simplification exponentielle",
-    "traitement des cas particuliers"
+    "calcul de somme géométrique",
+    "simplification algébrique",
+    "manipulation exponentielle"
   ],
   "objects": [
     "somme de fonctions hyperboliques",
     "suite géométrique",
-    "exponentielle complexe",
+    "fonction exponentielle",
     "fonctions hyperboliques inverses"
   ],
-  "content_hash": "827ac35d7bee14539edbfe24ecdc0e840227e14191e7420c9414aeeb1ccd8ba0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:54:02.063Z"
+  "content_hash": "a1ea15961d9b5d4ce9fd08123330b51ad16a9ba96680fe17cfe9f0b7029f8ebd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:31.811Z"
 }

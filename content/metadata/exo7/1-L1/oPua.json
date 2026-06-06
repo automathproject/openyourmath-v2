@@ -1,28 +1,31 @@
 {
   "uuid": "oPua",
   "source_path": "exo7/1-L1/oPua.tex",
-  "summary": "Pour chaque fonction donnée, déterminer son image sur un intervalle spécifié, vérifier qu'elle réalise une bijection entre cet intervalle et son image, puis déterminer sa fonction réciproque.",
+  "summary": "Pour chaque fonction définie sur un intervalle donné, déterminer son image, vérifier qu'elle est bijective sur son image, puis en déterminer la bijection réciproque. Les fonctions sont polynomiales, rationnelles ou impliquent des racines carrées.",
   "concepts": [
     "bijection",
+    "image d'une fonction",
     "fonction réciproque",
     "continuité",
     "monotonie",
     "limite de fonction",
-    "image d'un intervalle"
+    "équation fonctionnelle"
   ],
   "methods": [
     "étude de la dérivée",
     "résolution d'équations",
-    "manipulation algébrique",
-    "analyse de la parité"
+    "calcul de limites",
+    "vérification de la bijectivité",
+    "détermination de la réciproque"
   ],
   "objects": [
     "fonction polynomiale",
     "fonction rationnelle",
-    "fonction racine carrée",
-    "fonction avec valeur absolue"
+    "fonction avec racine carrée",
+    "intervalle de définition",
+    "image d'une fonction"
   ],
-  "content_hash": "6dbf434cb9e65885f234c059ea7c309b45e0c90b4f7c56ffbe51607026b7159a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:21:08.517Z"
+  "content_hash": "637331cc21c733395dd42711da1243f0441dd4597984b11eb7adc324bcab069a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:06.271Z"
 }

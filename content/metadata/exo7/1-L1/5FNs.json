@@ -1,26 +1,30 @@
 {
   "uuid": "5FNs",
   "source_path": "exo7/1-L1/5FNs.tex",
-  "summary": "Calculer tan(3θ) en fonction de tanθ, puis résoudre une équation trigonométrique impliquant cette relation.",
+  "summary": "L'exercice demande d'abord de calculer tan(3θ) en fonction de tan(θ) en utilisant des identités trigonométriques. Ensuite, il s'agit de résoudre une équation rationnelle en x, avec deux méthodes proposées : une méthode algébrique par factorisation et une méthode trigonométrique utilisant la formule établie en première question.",
   "concepts": [
     "formule de Moivre",
-    "identité trigonométrique",
+    "identités trigonométriques",
     "tangente d'un angle triple",
-    "résolution d'équation trigonométrique"
+    "équation rationnelle",
+    "factorisation",
+    "résolution d'équation"
   ],
   "methods": [
+    "développement binomial",
     "identification des parties réelles et imaginaires",
-    "division par le cosinus",
-    "résolution algébrique",
-    "utilisation de la fonction Arctan"
+    "factorisation",
+    "substitution trigonométrique",
+    "calcul de discriminant"
   ],
   "objects": [
-    "angle triple",
-    "tangente",
-    "équation trigonométrique",
-    "réel a"
+    "fonction tangente",
+    "équation algébrique",
+    "racine d'équation",
+    "angle trigonométrique",
+    "polynôme du second degré"
   ],
-  "content_hash": "4ddc3d5c1bc8d63717f094891ad94392abb8a266fa3831a5c1cd2abccf104a0c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:31:21.687Z"
+  "content_hash": "d03b9830ebcab08a56f379cc47d11693675813b279f033a97dcabbe36cf3b34e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:19.093Z"
 }

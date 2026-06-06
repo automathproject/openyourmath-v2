@@ -5,24 +5,25 @@
   "concepts": [
     "limite de suite",
     "nombre complexe",
-    "forme exponentielle",
     "fonction exponentielle complexe",
     "développement en série entière",
-    "convergence uniforme"
+    "convergence uniforme",
+    "module d'un nombre complexe",
+    "argument d'un nombre complexe"
   ],
   "methods": [
-    "décomposition en partie réelle et imaginaire",
-    "approximation de Taylor",
+    "décomposition en module et argument",
+    "approximation par développement limité",
     "comparaison terme à terme",
-    "utilisation de la forme exponentielle"
+    "utilisation de la série entière de l'exponentielle"
   ],
   "objects": [
     "suite de nombres complexes",
-    "nombre complexe z",
     "fonction exponentielle",
-    "développement en série entière"
+    "développement en série entière",
+    "module et argument d'un nombre complexe"
   ],
-  "content_hash": "4d2a69fcdb2488238a61e6a14db979b21838a79ce72510da7679fff13a96e1d1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:02:12.506Z"
+  "content_hash": "78670206c977a2d405ec45cf31cd11044560ecad3089ac7de178c7013d8030b7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:57.712Z"
 }

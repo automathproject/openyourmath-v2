@@ -1,30 +1,30 @@
 {
   "uuid": "pS2N",
   "source_path": "exo7/6-L2/pS2N.tex",
-  "summary": "Étude complète d'une courbe plane définie en coordonnées polaires par l'équation r = (2cosθ + 1)/(2sinθ + 1). L'exercice demande d'analyser le domaine de définition, le signe de r, ses variations, ses asymptotes et ses points multiples.",
+  "summary": "Étude complète d'une courbe plane définie en coordonnées polaires par l'équation r = (2cosθ + 1)/(2sinθ + 1). L'exercice demande d'analyser le domaine de définition, le signe de r, ses variations, et les asymptotes de la courbe.",
   "concepts": [
     "coordonnées polaires",
     "domaine de définition",
-    "fonction dérivable",
     "limites de fonctions",
     "asymptotes",
-    "points multiples",
-    "variations de fonctions"
+    "dérivation",
+    "variations de fonctions",
+    "équations de droites"
   ],
   "methods": [
-    "étude du signe",
-    "calcul de dérivée",
-    "analyse des limites",
-    "recherche de points doubles",
-    "étude des asymptotes"
+    "calcul de dérivées",
+    "étude de limites",
+    "développement limité",
+    "analyse de variations",
+    "détermination d'asymptotes"
   ],
   "objects": [
-    "courbe polaire",
-    "fonction r(θ)",
+    "courbe plane",
+    "fonction polaire r(θ)",
     "droites asymptotes",
-    "points doubles"
+    "intervalle de définition"
   ],
-  "content_hash": "8445c4ca3c63fdcc8ad521b5199709f81d32baf3dfc6a03e34b03abf0f48bc72",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:05:28.173Z"
+  "content_hash": "2316734ad9aaa1bb582e5825cea36827408d381d314fef6b4706950534c65050",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:19.738Z"
 }

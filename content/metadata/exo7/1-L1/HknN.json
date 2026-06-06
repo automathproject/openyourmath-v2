@@ -1,29 +1,30 @@
 {
   "uuid": "HknN",
   "source_path": "exo7/1-L1/HknN.tex",
-  "summary": "L'exercice demande de démontrer une double inégalité sur le rang de la composée de deux applications linéaires entre espaces vectoriels.",
+  "summary": "L'exercice demande de démontrer une double inégalité sur les rangs de la composition de deux applications linéaires entre espaces vectoriels. Il s'agit d'établir des bornes pour le rang de la composée g∘f en fonction des rangs de f et g, ainsi que de la dimension de l'espace intermédiaire F.",
   "concepts": [
     "théorème du rang",
-    "rang d'une application linéaire",
+    "application linéaire",
+    "rang d'une application",
     "dimension d'un espace vectoriel",
-    "image d'une application linéaire",
-    "noyau d'une application linéaire",
-    "composition d'applications linéaires"
+    "composition d'applications",
+    "noyau d'une application",
+    "image d'une application"
   ],
   "methods": [
     "utilisation du théorème du rang",
-    "restriction d'une application linéaire",
+    "restriction d'application",
     "inclusion d'espaces vectoriels",
     "calcul de dimension"
   ],
   "objects": [
     "application linéaire",
     "espace vectoriel",
-    "rang",
+    "composition d'applications",
     "noyau",
     "image"
   ],
-  "content_hash": "412ce8c0f00177a54c8f6d6c03922ee9354e4c087e9db50a60d257efc5bb4350",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:45:09.411Z"
+  "content_hash": "7b48b6cfade3d60df03124e6c8c8950da287324488aa392eb9cbaa63aa1c87d5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:24.251Z"
 }

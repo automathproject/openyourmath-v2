@@ -1,28 +1,28 @@
 {
   "uuid": "7c0m",
   "source_path": "exo7/5-L2/7c0m.tex",
-  "summary": "L'exercice demande d'étudier la continuité d'une fonction F définie comme le supremum d'une famille de fonctions linéaires en t, paramétrées par (x,y). La fonction F est définie sur ℝ² et son comportement est analysé selon les valeurs de x et y.",
+  "summary": "L'exercice demande d'étudier la continuité d'une fonction F définie comme le supremum d'une famille de fonctions linéaires en t, paramétrées par (x,y). La fonction F est définie sur ℝ² et son expression explicite est déterminée par cas selon les valeurs de x et y.",
   "concepts": [
-    "continuité d'une fonction",
-    "supremum",
-    "fonction de deux variables",
-    "limite de fonction",
+    "continuité d'une fonction de plusieurs variables",
+    "supremum d'une famille de fonctions",
+    "limite de fonctions",
     "discontinuité",
+    "fonction définie par cas",
     "théorèmes généraux de continuité"
   ],
   "methods": [
-    "analyse de cas",
-    "calcul de maximum",
-    "étude de limite",
+    "détermination du supremum",
+    "analyse par cas",
+    "étude de la limite",
     "comparaison de termes"
   ],
   "objects": [
     "fonction de deux variables",
-    "supremum de fonction",
-    "limite de fonction",
-    "point de discontinuité"
+    "supremum",
+    "fonction linéaire",
+    "fonction définie par morceaux"
   ],
-  "content_hash": "89c1290c9018d035659b500e7a70d478d4e8341ec457578f878e55be17f4a59c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:45:03.422Z"
+  "content_hash": "b7cd4b6186b35b5c65b15a57a8c05d9cbb92f7549afa79406b98e7518f19ddab",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:39.865Z"
 }

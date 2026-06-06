@@ -1,29 +1,30 @@
 {
   "uuid": "UKuS",
   "source_path": "exo7/6-L2/UKuS.tex",
-  "summary": "Dans un triangle ABC, on considère son orthocentre H et son cercle circonscrit C. La hauteur issue de B recoupe C en H'. On doit montrer que H' est le symétrique de H par rapport à la droite AC.",
+  "summary": "Dans un triangle ABC, on considère son orthocentre H et son cercle circonscrit. La hauteur issue de B coupe à nouveau le cercle en H'. On doit montrer que H' est le symétrique de H par rapport à la droite AC.",
   "concepts": [
     "géométrie affine euclidienne",
     "orthocentre",
     "cercle circonscrit",
-    "hauteur d'un triangle",
-    "symétrie par rapport à une droite",
+    "symétrie orthogonale",
+    "triangle isocèle",
     "angles orientés",
-    "théorème de Chasles"
+    "relation de Chasles"
   ],
   "methods": [
-    "utilisation des propriétés des triangles isocèles",
-    "analyse des angles",
-    "application du théorème de Chasles"
+    "utilisation des propriétés des angles orientés",
+    "application de la relation de Chasles",
+    "analyse des configurations géométriques",
+    "utilisation des propriétés des triangles isocèles"
   ],
   "objects": [
     "triangle",
     "orthocentre",
     "cercle circonscrit",
     "hauteur",
-    "symétrique d'un point"
+    "symétrique d'un point par rapport à une droite"
   ],
-  "content_hash": "5f33bece9502ab0d7ab0fa41da55521ad74e4c45a61ad7be9ea6c3bb451d38cb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:41:04.870Z"
+  "content_hash": "839e62a62f7b2098747ff45d239564211344258b4bd933496387be6310640c13",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:05.808Z"
 }

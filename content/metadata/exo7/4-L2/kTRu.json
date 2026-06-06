@@ -1,31 +1,31 @@
 {
   "uuid": "kTRu",
   "source_path": "exo7/4-L2/kTRu.tex",
-  "summary": "L'exercice demande de déterminer et factoriser le polynôme caractéristique d'une matrice 3x3, puis d'identifier ses valeurs propres et les sous-espaces propres associés. Enfin, il s'agit de démontrer la diagonalisabilité de la matrice et de trouver une matrice de passage pour la diagonaliser.",
+  "summary": "L'exercice demande de déterminer et factoriser le polynôme caractéristique d'une matrice 3x3, d'en déduire ses valeurs propres et ses sous-espaces propres, puis de démontrer la diagonalisabilité de la matrice et d'en construire une base de diagonalisation.",
   "concepts": [
     "polynôme caractéristique",
     "valeur propre",
     "sous-espace propre",
     "diagonalisation",
-    "matrice de passage",
-    "algèbre linéaire",
-    "endomorphisme"
+    "multiplicité d'une racine",
+    "endomorphisme",
+    "matrice de passage"
   ],
   "methods": [
     "calcul de déterminant",
     "factorisation de polynôme",
     "résolution de système linéaire",
-    "construction de base de sous-espace propre"
+    "construction de base de sous-espace propre",
+    "vérification de diagonalisabilité"
   ],
   "objects": [
     "matrice 3x3",
     "polynôme caractéristique",
-    "valeurs propres",
     "sous-espaces propres",
-    "matrice diagonale",
-    "matrice de passage"
+    "base de vecteurs propres",
+    "matrice diagonale"
   ],
-  "content_hash": "3ceae6c71528683b580019cdc154172e1c0902feebaa632f966519d6ed9a092d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:09:31.531Z"
+  "content_hash": "8bdd21e6dfa215ad894aa4beabc66b6a14a9280f05568671aa9bca5d944ca02b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:04:26.057Z"
 }

@@ -1,7 +1,7 @@
 {
   "uuid": "0lF4",
   "source_path": "exo7/2-L1/0lF4.tex",
-  "summary": "Résoudre trois équations impliquant les fonctions circulaires inverses Arccos, Arcsin et Arctan. Chaque équation met en jeu une combinaison de ces fonctions avec des arguments constants.",
+  "summary": "Résolution de trois équations impliquant les fonctions circulaires inverses Arccos, Arcsin et Arctan. Les équations font intervenir des combinaisons de ces fonctions et nécessitent de vérifier l'existence des solutions avant de les calculer.",
   "concepts": [
     "fonction Arccos",
     "fonction Arcsin",
@@ -10,7 +10,7 @@
     "formule d'addition du sinus",
     "formule d'addition de la tangente",
     "théorème des valeurs intermédiaires",
-    "continuité"
+    "continuité des fonctions"
   ],
   "methods": [
     "composition par la fonction cosinus",
@@ -18,15 +18,16 @@
     "composition par la fonction tangente",
     "utilisation des formules trigonométriques",
     "résolution d'équation du second degré",
-    "étude de la continuité et de la croissance"
+    "étude de la monotonie"
   ],
   "objects": [
     "équation impliquant Arccos",
     "équation impliquant Arcsin",
     "équation impliquant Arctan",
-    "fonction composée"
+    "fonction continue",
+    "solution unique"
   ],
-  "content_hash": "3ebcf6e0e484595c3b800157cef37b381ba3e89db3526a6541ac17efb768c2be",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:53:45.191Z"
+  "content_hash": "1196da76de94f5dd89f7a8b3d1dee2f7bc2c10ce2a2834a2efcd0c5110d3dff9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:28.618Z"
 }

@@ -1,25 +1,26 @@
 {
   "uuid": "ktFi",
   "source_path": "exo7/16-L3/ktFi.tex",
-  "summary": "L'exercice demande de démontrer la formule de Leibniz généralisée pour la dérivée n-ième du produit de deux fonctions n-fois dérivables au sens complexe sur un ouvert non vide.",
+  "summary": "Montrer la formule de Leibniz généralisée pour la dérivée n-ième du produit de deux fonctions n fois dérivables au sens complexe sur un ouvert U. L'énoncé rappelle que la dérivabilité une fois suffit pour la dérivabilité à tout ordre.",
   "concepts": [
-    "fonction dérivable au sens complexe",
-    "dérivabilité multiple",
+    "fonction holomorphe",
+    "dérivabilité complexe",
     "formule de Leibniz",
     "récurrence mathématique",
-    "coefficient binomial"
+    "coefficient binomial",
+    "dérivée d'ordre supérieur"
   ],
   "methods": [
     "récurrence",
     "calcul de dérivée",
-    "manipulation algébrique"
+    "manipulation de coefficients binomiaux"
   ],
   "objects": [
-    "fonction holomorphe",
+    "fonction complexe",
     "dérivée n-ième",
     "produit de fonctions"
   ],
-  "content_hash": "5c48ae025c7363a9a4add7f6425c604166e89c733a3e9853f1c3d2bfbf4b093a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:40:46.433Z"
+  "content_hash": "c8f65c711e308d378fc6c502ce776463080ef91fc09f3af282eaebf923233f5b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:15.090Z"
 }

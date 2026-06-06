@@ -1,28 +1,31 @@
 {
   "uuid": "IaVr",
   "source_path": "exo7/8-L3/IaVr.tex",
-  "summary": "L'exercice demande de déterminer les sous-groupes distingués non triviaux du groupe symétrique S₅ en utilisant les classes de conjugaison des permutations. Il s'appuie sur la caractérisation des permutations par leur type en cycles disjoints.",
+  "summary": "L'exercice demande de démontrer des propriétés des cycles dans les permutations, de décomposer des permutations en cycles, et d'étudier les classes de conjugaison et les sous-groupes distingués dans le groupe symétrique S₅. Il aborde notamment la structure des orbites sous l'action d'un sous-groupe engendré par une permutation.",
   "concepts": [
     "action de groupe",
-    "sous-groupe distingué",
+    "orbite",
+    "cycle dans une permutation",
+    "sous-groupe engendré",
     "conjugaison de permutations",
-    "classes de conjugaison",
+    "classe de conjugaison",
     "groupe symétrique",
-    "décomposition en cycles disjoints",
-    "type de permutation"
+    "sous-groupe distingué"
   ],
   "methods": [
-    "analyse des classes de conjugaison",
     "décomposition en cycles disjoints",
-    "caractérisation des sous-groupes distingués"
+    "analyse des orbites",
+    "conjugaison de permutations",
+    "classification des types de permutations"
   ],
   "objects": [
-    "permutations",
-    "sous-groupes de S₅",
-    "classes de conjugaison",
-    "cycles disjoints"
+    "permutation",
+    "cycle",
+    "sous-groupe de Sₙ",
+    "classe de conjugaison",
+    "groupe symétrique S₅"
   ],
-  "content_hash": "0603428d12d28042c155064c6bc321e91dc08c2161e2d5d01fdd67f81ddd9a67",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:26:06.194Z"
+  "content_hash": "788adcb189da2d157ca70d92431719c99107a6430c94b4faf8e7e9816e5d0d32",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:32:12.973Z"
 }

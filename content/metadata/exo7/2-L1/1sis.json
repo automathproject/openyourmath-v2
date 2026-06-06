@@ -1,32 +1,31 @@
 {
   "uuid": "1sis",
   "source_path": "exo7/2-L1/1sis.tex",
-  "summary": "L'exercice demande de démontrer des inégalités encadrant la série harmonique H_n par des logarithmes et d'en déduire sa limite. Il introduit ensuite les suites u_n et v_n pour étudier la convergence vers la constante d'Euler γ.",
+  "summary": "L'exercice demande de démontrer des inégalités encadrant la série harmonique H_n par des logarithmes, puis d'étudier la convergence des suites u_n = H_n - ln(n) et v_n = H_n - ln(n+1) vers la constante d'Euler γ, avec une estimation numérique de γ.",
   "concepts": [
     "série harmonique",
-    "fonction continue et décroissante",
+    "fonction logarithme",
     "intégrale de Riemann",
-    "suites adjacentes",
+    "inégalité intégrale",
+    "suite adjacente",
     "constante d'Euler",
-    "convergence de suites",
-    "inégalités intégrales",
-    "limite de suite"
+    "convergence de suites"
   ],
   "methods": [
     "comparaison intégrale",
-    "encadrement par intégrales",
+    "sommation d'inégalités",
     "étude de la monotonie",
     "calcul de limite",
     "approximation numérique"
   ],
   "objects": [
     "série harmonique H_n",
-    "suites u_n et v_n",
+    "suite u_n",
+    "suite v_n",
     "constante d'Euler γ",
-    "fonction 1/x",
-    "intégrales de 1/x"
+    "fonction 1/x"
   ],
-  "content_hash": "c4279f5564e04f3352a5cb75632da795b8adab2d07f52e80934313fff2a5cfa1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:02:10.975Z"
+  "content_hash": "d66d7e84a11af716e71b1f0f48dafd41668f59e9f7a32ae39d504b0569c4b57c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:04.439Z"
 }

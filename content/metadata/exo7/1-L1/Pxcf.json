@@ -1,28 +1,30 @@
 {
   "uuid": "Pxcf",
   "source_path": "exo7/1-L1/Pxcf.tex",
-  "summary": "L'exercice demande de démontrer qu'une application linéaire est une homothétie si et seulement si pour tout vecteur de l'espace, le vecteur et son image par l'application forment une famille liée.",
+  "summary": "Soit un espace vectoriel non nul E et un endomorphisme f de E tel que pour tout vecteur x de E, la famille (x, f(x)) soit liée. Montrer que f est une homothétie.",
   "concepts": [
-    "application linéaire",
+    "endomorphisme",
     "famille liée",
     "homothétie",
-    "base d'un espace vectoriel",
-    "famille libre",
-    "famille liée",
-    "espace vectoriel"
+    "espace vectoriel",
+    "base d'un sous-espace vectoriel",
+    "linéarité",
+    "scalaire"
   ],
   "methods": [
     "raisonnement par cas",
     "utilisation de la linéarité",
-    "analyse de la liberté/liaison des familles"
+    "définition de famille liée",
+    "détermination de la constante d'homothétie"
   ],
   "objects": [
-    "application linéaire",
-    "vecteur",
-    "famille de vecteurs",
-    "espace vectoriel"
+    "espace vectoriel E",
+    "endomorphisme f",
+    "famille (x, f(x))",
+    "scalaires λ_x",
+    "vecteurs x"
   ],
-  "content_hash": "c41cd51747523d627735c4e4de5188714cbb27bd1db99ff0507ed6eaa11a5bfd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:36:25.954Z"
+  "content_hash": "11de92d9b83f46b8361631307d2d271c7a5755dc43da0785ba8f1a23ba7289a9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:36.166Z"
 }

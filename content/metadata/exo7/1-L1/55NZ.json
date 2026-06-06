@@ -1,29 +1,29 @@
 {
   "uuid": "55NZ",
   "source_path": "exo7/1-L1/55NZ.tex",
-  "summary": "L'exercice demande de prouver une inégalité sur la somme des valeurs absolues des cosinus d'entiers naturels. Il utilise une propriété trigonométrique élémentaire pour établir un encadrement.",
+  "summary": "Montrer qu'une inégalité portant sur la somme des valeurs absolues des cosinus d'entiers naturels est vérifiée pour tout entier naturel non nul. L'énoncé suggère d'utiliser une propriété des réels dans l'intervalle [0,1].",
   "concepts": [
     "fonction cosinus",
     "somme de termes trigonométriques",
-    "partie réelle d'un nombre complexe",
     "inégalité trigonométrique",
+    "partie réelle d'un nombre complexe",
     "formule de somme géométrique",
-    "module d'un nombre complexe"
+    "identité trigonométrique"
   ],
   "methods": [
     "développement en série trigonométrique",
-    "encadrement par des inégalités",
     "utilisation de la partie réelle",
-    "calcul de somme géométrique complexe",
-    "estimation par cas particuliers"
+    "calcul de somme géométrique",
+    "estimation d'erreur",
+    "cas particuliers"
   ],
   "objects": [
     "somme de cosinus",
     "nombre complexe",
-    "partie réelle",
-    "module de cosinus"
+    "suite trigonométrique",
+    "inégalité"
   ],
-  "content_hash": "e2c1f0120c730f18741bc33d665ef169a73f0160f69043bcf9467976e2d460a9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:30:39.332Z"
+  "content_hash": "1cf78bea80b3fe0f1bb6d55b534b77ec7b42793002a0c3232839150fc46b79cb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:16.146Z"
 }

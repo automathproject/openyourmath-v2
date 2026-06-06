@@ -1,28 +1,29 @@
 {
   "uuid": "QUVz",
   "source_path": "exo7/10-L3/QUVz.tex",
-  "summary": "L'exercice demande de montrer qu'un ensemble d'applications affines forme un groupe sous la composition, puis d'identifier deux sous-groupes isomorphes à des structures données, et enfin de prouver que le groupe initial est un produit semi-direct de ces sous-groupes.",
+  "summary": "L'exercice demande de montrer qu'un ensemble d'applications affines forme un groupe sous la composition, puis d'identifier deux sous-groupes isomorphes à GL(V) et à V, et enfin de prouver que ce groupe est un produit semi-direct de ces deux sous-groupes.",
   "concepts": [
     "groupe",
     "automorphisme linéaire",
     "espace vectoriel",
     "isomorphisme de groupes",
     "produit semi-direct",
-    "groupe affine"
+    "groupe affine",
+    "sous-groupe"
   ],
   "methods": [
     "vérification des axiomes de groupe",
     "identification de sous-groupes",
-    "preuve d'isomorphisme",
-    "construction de produit semi-direct"
+    "construction de morphismes de groupes",
+    "preuve de produit semi-direct"
   ],
   "objects": [
-    "groupe des transformations affines",
-    "sous-groupes isomorphes",
-    "espace vectoriel",
-    "automorphismes linéaires"
+    "groupe affine",
+    "sous-groupe de GL(V)",
+    "sous-groupe de V",
+    "application affine"
   ],
-  "content_hash": "74900f988d2217820c85c8bb0eea4ebcdab1dee54c58ccbd9ec72f3209218f80",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:58:25.215Z"
+  "content_hash": "a4b88695aac8ee0584083a9b88b2aa830ee10051c55ec4a0343ec5f48fd2ad00",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:48.158Z"
 }

@@ -1,9 +1,9 @@
 {
   "uuid": "8BOI",
   "source_path": "exo7/4-L2/8BOI.tex",
-  "summary": "Soit A une matrice carrée réelle symétrique positive de format n. Montrer que 1 + la racine n-ième du déterminant de A est inférieure ou égale à la racine n-ième du déterminant de la matrice identité plus A.",
+  "summary": "Soit A une matrice carrée réelle symétrique positive de taille n. Montrer que 1 + la racine n-ième du déterminant de A est inférieur ou égal à la racine n-ième du déterminant de l'identité plus A.",
   "concepts": [
-    "matrice symétrique réelle positive",
+    "matrice symétrique positive",
     "valeurs propres",
     "déterminant",
     "convexité",
@@ -12,17 +12,17 @@
   ],
   "methods": [
     "diagonalisation",
-    "utilisation des valeurs propres",
-    "analyse de la convexité",
-    "calcul de dérivées"
+    "calcul de déterminant via valeurs propres",
+    "étude de convexité par dérivées secondes",
+    "application de l'inégalité de Jensen"
   ],
   "objects": [
-    "matrice carrée",
-    "déterminant",
+    "matrice carrée réelle",
+    "valeurs propres",
     "fonction convexe",
-    "valeurs propres"
+    "déterminant"
   ],
-  "content_hash": "215253429bafa76ced455ecf65e3c421488334609e37be544037a3becfd9bb4e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:04:14.251Z"
+  "content_hash": "6a0ea5667bb096a8d3bcf71664c8040bea72917c0b2fcd139f083bdc61902bbf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:54.747Z"
 }

@@ -1,27 +1,30 @@
 {
   "uuid": "lwZu",
   "source_path": "exo7/11-L3/lwZu.tex",
-  "summary": "Calculer l'aire d'un ellipsoïde défini par une équation cartésienne donnée.",
+  "summary": "Calculer l'aire d'un ellipsoïde défini par l'équation x² + y² + 5z² = 1 en utilisant des techniques de géométrie différentielle.",
   "concepts": [
-    "paramétrisation de surface",
-    "forme fondamentale",
+    "sous-variété",
+    "paramétrisation",
+    "première forme fondamentale",
+    "élément de volume",
     "intégrale de surface",
-    "coordonnées sphériques",
-    "élément de volume"
+    "changement de variable"
   ],
   "methods": [
-    "paramétrisation locale",
-    "calcul de vecteurs tangents",
-    "intégration sur un domaine",
-    "changement de variable"
+    "paramétrisation en coordonnées sphériques",
+    "calcul des vecteurs tangents",
+    "détermination de la matrice de la première forme fondamentale",
+    "intégration sur une surface paramétrée",
+    "changement de variable dans une intégrale"
   ],
   "objects": [
     "ellipsoïde",
-    "plan tangent",
+    "paramétrisation",
+    "vecteurs tangents",
     "matrice de la première forme fondamentale",
-    "élément de volume"
+    "intégrale de surface"
   ],
-  "content_hash": "981b9ca00e0dc1a40f1c6802c2996095535ba47f9072a9da0823471c50ec00c1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:25:14.253Z"
+  "content_hash": "5c1619f73807a6afbae86cb47e73b5092b1d460ea75a8dd79c26f9b1bd8f5ee8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:35.187Z"
 }

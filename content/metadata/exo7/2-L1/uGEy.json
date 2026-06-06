@@ -1,23 +1,24 @@
 {
   "uuid": "uGEy",
   "source_path": "exo7/2-L1/uGEy.tex",
-  "summary": "Calculer la somme de trois fonctions Arctan de fractions simples.",
+  "summary": "Calculer la somme de trois fonctions arctangente de fractions simples. L'exercice demande d'évaluer une expression impliquant des fonctions circulaires inverses.",
   "concepts": [
-    "fonction Arctan",
+    "fonction arctangente",
     "formule d'addition des tangentes",
     "intervalle de définition",
-    "propriété de la tangente"
+    "valeur principale de l'arctangente"
   ],
   "methods": [
-    "utilisation de la formule d'addition des tangentes",
-    "simplification d'expression",
+    "utilisation de la formule d'addition pour la tangente",
+    "simplification d'expression trigonométrique",
     "résolution d'équation trigonométrique"
   ],
   "objects": [
-    "fonction Arctan",
-    "somme de fonctions circulaires inverses"
+    "fonction arctangente",
+    "expression trigonométrique",
+    "angle principal"
   ],
-  "content_hash": "0b5f5202b36fa6f8837709313c5e8914aed7c101ee02da73cfdee485721d455e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:07:19.198Z"
+  "content_hash": "0a9e0724a4d8207ee76547d2a95c64d30c9efeb5740cd31be61d2f586394fb8d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:10.519Z"
 }

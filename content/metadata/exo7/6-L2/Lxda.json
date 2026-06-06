@@ -1,29 +1,29 @@
 {
   "uuid": "Lxda",
   "source_path": "exo7/6-L2/Lxda.tex",
-  "summary": "L'exercice demande de montrer que l'équation P(x) = P(y) pour un polynôme cubique P à coefficients réels représente généralement la réunion d'une droite et d'une ellipse d'excentricité fixe dans un repère orthonormé.",
+  "summary": "L'exercice demande de montrer que l'équation P(x) = P(y), où P est un polynôme du troisième degré, représente généralement la réunion d'une droite et d'une ellipse d'excentricité fixe dans un repère orthonormé.",
   "concepts": [
     "polynôme de degré 3",
     "courbe algébrique",
-    "droite affine",
     "ellipse",
     "excentricité",
     "changement de repère",
-    "équation cartésienne de conique"
+    "équation cartésienne de conique",
+    "réduction d'équation quadratique"
   ],
   "methods": [
     "factorisation",
     "changement de variable",
-    "réduction d'équation",
+    "réduction d'équation quadratique",
     "calcul d'excentricité"
   ],
   "objects": [
-    "polynôme cubique",
-    "courbe d'équation P(x) = P(y)",
-    "droite y = x",
-    "ellipse dans un repère orthonormé"
+    "polynôme P(x)",
+    "droite d'équation y = x",
+    "ellipse",
+    "repère orthonormé"
   ],
-  "content_hash": "47f588908f65a840ad0171234898ed8aced6433722fde981a87e95b29cad1139",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:03:39.180Z"
+  "content_hash": "92a6b9d20fd49188c917912e557b63aaf70426810eda45d765951b8eb84fba92",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:10.935Z"
 }

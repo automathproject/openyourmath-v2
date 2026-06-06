@@ -1,27 +1,29 @@
 {
   "uuid": "3nIC",
   "source_path": "exo7/2-L1/3nIC.tex",
-  "summary": "Étudier la dérivabilité en des points particuliers de trois fonctions définies par morceaux, avec des comportements différents selon le point considéré.",
+  "summary": "Étudier la dérivabilité de trois fonctions en des points particuliers (0 ou 1) en analysant leur taux d'accroissement. Les fonctions présentent des discontinuités ou des comportements oscillatoires.",
   "concepts": [
     "dérivabilité",
     "taux d'accroissement",
-    "limite de fonction",
     "continuité",
+    "limite de fonction",
     "composition de fonctions",
-    "fonction définie par morceaux"
+    "produit de fonctions",
+    "fonction absolue"
   ],
   "methods": [
-    "calcul de taux d'accroissement",
-    "étude de la limite",
-    "analyse de la continuité",
-    "simplification d'expression"
+    "calcul du taux d'accroissement",
+    "analyse de la limite",
+    "simplification d'expression",
+    "étude de cas par intervalles"
   ],
   "objects": [
-    "fonction réelle",
-    "point critique",
-    "taux d'accroissement"
+    "fonction définie par morceaux",
+    "fonction trigonométrique",
+    "fonction polynomiale",
+    "fonction rationnelle"
   ],
-  "content_hash": "de13ee1fbe6ab8c0b039ddc6b60e5b429ffc5f05a474d2905f46de85c3940732",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:55:44.486Z"
+  "content_hash": "5c8b6f20ff1d2cd8e80005d3a907ced9430abf7a383c65119a43cfa61f3d4634",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:47.098Z"
 }

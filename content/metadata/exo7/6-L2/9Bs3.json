@@ -1,31 +1,32 @@
 {
   "uuid": "9Bs3",
   "source_path": "exo7/6-L2/9Bs3.tex",
-  "summary": "L'exercice demande de déterminer le lieu des centres de courbure des courbes paramétrées par y = λxe⁻ˣ en O, lorsque λ décrit ℝ. Il s'agit d'une étude géométrique des propriétés métriques des courbes planes.",
+  "summary": "L'exercice demande de déterminer le lieu des centres de courbure des courbes paramétrées par y = λxe⁻ˣ en O, lorsque λ parcourt ℝ. Il s'agit d'étudier la géométrie différentielle de ces courbes planes.",
   "concepts": [
     "courbure",
     "centre de courbure",
-    "rayon de courbure",
-    "paramétrisation de courbe",
+    "courbe paramétrée",
     "tangente",
     "normale",
-    "courbe plane"
+    "rayon de courbure",
+    "géométrie différentielle",
+    "paramétrisation"
   ],
   "methods": [
     "calcul de la dérivée",
     "calcul du vecteur tangent",
     "calcul du vecteur normal",
-    "calcul de l'angle de courbure",
-    "calcul du rayon de courbure"
+    "calcul du rayon de courbure",
+    "paramétrisation des courbes"
   ],
   "objects": [
-    "courbe paramétrée",
+    "courbe plane",
     "centre de courbure",
     "vecteur tangent",
     "vecteur normal",
     "rayon de courbure"
   ],
-  "content_hash": "9d23f108bef1dd23947e1b6e476dcba6f2c068d8879f2549da804a90798884df",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:43:48.354Z"
+  "content_hash": "1705fab2d81651a4b91f58e1dd4b000726281ec0b3ec8cadc7e71e49614f320d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:38:35.995Z"
 }

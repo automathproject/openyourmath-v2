@@ -1,24 +1,30 @@
 {
   "uuid": "IxMl",
   "source_path": "crouzet/pcsi/02/IxMl.tex",
-  "summary": "Résoudre deux inéquations impliquant des valeurs absolues : une inéquation de comparaison de valeurs absolues et une inéquation de bornage de valeur absolue.",
+  "summary": "Résoudre deux inéquations impliquant des valeurs absolues : la première compare deux expressions linéaires, la seconde porte sur un polynôme du second degré.",
   "concepts": [
     "valeur absolue",
     "inéquation",
-    "trinôme du second degré",
+    "polynôme du second degré",
     "tableau de signes",
-    "résolution d'inéquation"
+    "résolution d'inéquation",
+    "propriétés des valeurs absolues",
+    "discriminant"
   ],
   "methods": [
-    "élimination de la valeur absolue par élévation au carré",
-    "résolution d'inéquation produit",
-    "résolution d'inéquation trinôme"
+    "élimination des valeurs absolues par élévation au carré",
+    "factorisation",
+    "résolution d'inéquation du second degré",
+    "analyse de signe",
+    "intersection d'intervalles"
   ],
   "objects": [
-    "inéquation de valeur absolue",
-    "polynôme du second degré"
+    "inéquation à valeur absolue",
+    "polynôme quadratique",
+    "intervalle de solutions",
+    "tableau de signes"
   ],
-  "content_hash": "8958aa0dfabdf437db5c65907f4ef5ed010a3054e0fa3b568f3dd423e7167541",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:29:56.721Z"
+  "content_hash": "6c8cfe6bae201b7485fa9b4389a42295e8c002338c3d57bd28630575bb23283a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:51:19.991Z"
 }

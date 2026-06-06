@@ -1,28 +1,30 @@
 {
   "uuid": "Xjbh",
   "source_path": "exo7/11-L3/Xjbh.tex",
-  "summary": "L'exercice demande d'analyser la régularité de plusieurs ensembles définis par des équations dans ℝ³ et de les décrire. Il inclut également une question spécifique sur les chemins entre deux points dans un cône.",
+  "summary": "L'exercice demande de déterminer si divers ensembles définis par des équations dans ℝ³ sont des surfaces régulières et de les décrire. Il inclut aussi une question spécifique sur les chemins entre deux points dans un cône.",
   "concepts": [
-    "sous-variété",
     "surface régulière",
-    "différentiabilité",
     "immersion",
-    "dimension",
+    "sous-variété",
     "gradient",
-    "équation cartésienne"
+    "différentiabilité",
+    "équation cartésienne",
+    "topologie différentielle"
   ],
   "methods": [
-    "analyse du gradient",
-    "description géométrique",
-    "étude des chemins dans une variété"
+    "calcul du gradient",
+    "analyse de la différentiabilité",
+    "vérification de la condition de régularité",
+    "description géométrique"
   ],
   "objects": [
     "sphère",
     "cône",
     "quadrique",
-    "ensemble algébrique"
+    "ensemble algébrique",
+    "chemin dans ℝ³"
   ],
-  "content_hash": "beeb9421e6129cb0ec201b4d66bd266ca242001a82e168debf08b013c7b79244",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:21:29.646Z"
+  "content_hash": "b756f7d8aeb9ff2706dd08de2e0cc0e9212c33e4da3a452902f09153f542bcc2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:26.814Z"
 }

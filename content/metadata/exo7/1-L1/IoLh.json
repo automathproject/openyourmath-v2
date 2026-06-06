@@ -1,25 +1,28 @@
 {
   "uuid": "IoLh",
   "source_path": "exo7/1-L1/IoLh.tex",
-  "summary": "Montrer l'inversibilité d'une matrice complexe $A$ de taille $n \times n$ dont les coefficients sont des racines de l'unité, et calculer son inverse.",
+  "summary": "Soit A une matrice carrée de taille n×n dont les coefficients sont des puissances de ω = e^(2iπ/n). Montrer que A est inversible et calculer son inverse.",
   "concepts": [
-    "racines de l'unité",
-    "matrice inversible",
+    "matrice carrée",
+    "inversibilité",
     "conjugaison complexe",
+    "racines n-ièmes de l'unité",
     "produit matriciel",
-    "somme de termes géométriques"
-  ],
-  "methods": [
-    "calcul de produit matriciel",
-    "somme de termes géométriques",
-    "inversibilité par produit à gauche"
-  ],
-  "objects": [
-    "matrice complexe",
-    "racines de l'unité",
     "matrice identité"
   ],
-  "content_hash": "7cac1f85d56801f628de71ae2a7b7ce7036f773462ef73e54d0085b268fce90c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:50:31.236Z"
+  "methods": [
+    "calcul du produit matriciel",
+    "utilisation de la conjugaison",
+    "somme géométrique",
+    "identification de la matrice identité"
+  ],
+  "objects": [
+    "matrice A",
+    "racine primitive n-ième de l'unité",
+    "matrice identité",
+    "conjugué complexe"
+  ],
+  "content_hash": "1a11ce7ce84dd3b36d9324d96fd8fb7937ebad80fbff5b757a4181dd84ce2784",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:08.839Z"
 }

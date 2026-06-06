@@ -1,28 +1,29 @@
 {
   "uuid": "yohs",
   "source_path": "exo7/14-L3/yohs.tex",
-  "summary": "Démonstration des théorèmes de Riesz sur la complétude de l'espace L^p(μ) et la convergence ponctuelle presque partout d'une suite de Cauchy dans L^p(μ). L'exercice se concentre sur le cas particulier de L^∞(μ).",
+  "summary": "Démontrer la complétude de l'espace L^∞(μ) en montrant qu'une suite de Cauchy dans L^∞(μ) converge uniformément vers une fonction limite appartenant à L^∞(μ). L'exercice utilise des propriétés de la norme infinie et des ensembles de mesure nulle.",
   "concepts": [
     "complétude d'un espace normé",
-    "convergence ponctuelle presque partout",
-    "suite de Cauchy",
     "norme infinie",
-    "σ-sous-additivité de la mesure",
-    "convergence uniforme"
+    "convergence uniforme",
+    "mesure nulle",
+    "σ-sous-additivité",
+    "espace L^p",
+    "suite de Cauchy"
   ],
   "methods": [
-    "utilisation de la définition de la norme infinie",
-    "σ-sous-additivité de la mesure",
-    "convergence uniforme sur un ensemble de mesure pleine",
-    "extension d'une fonction par continuité"
+    "construction d'ensembles de mesure nulle",
+    "passage à la limite uniforme",
+    "extension par continuité",
+    "utilisation de la σ-sous-additivité"
   ],
   "objects": [
-    "espace L^∞(μ)",
     "suite de Cauchy dans L^∞(μ)",
     "fonction limite",
-    "ensemble de mesure nulle"
+    "ensemble de mesure nulle",
+    "norme infinie"
   ],
-  "content_hash": "ded64fc1fec408091dbb89310d0528980a4277433cb49c6a1cd8d5174aec3d77",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:55:59.467Z"
+  "content_hash": "96ff1c50896c486e3442ca405f73f128e21c37710377fe35e9fe2c20fcdd2ae0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:30.538Z"
 }

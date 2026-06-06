@@ -1,33 +1,34 @@
 {
   "uuid": "E7Wx",
   "source_path": "exo7/4-L2/E7Wx.tex",
-  "summary": "Calculer plusieurs déterminants de matrices particulières, dont certaines avec des motifs symétriques ou des coefficients spécifiques. L'exercice explore des propriétés algébriques et des techniques de calcul pour des matrices carrées.",
+  "summary": "Calculer le déterminant de plusieurs matrices particulières, dont certaines à structure symétrique ou tridiagonale, en exploitant des propriétés algébriques et des techniques de récurrence.",
   "concepts": [
     "déterminant",
     "matrice symétrique",
-    "récurrence",
-    "polynôme caractéristique",
-    "rang d'une matrice",
-    "développement par blocs",
+    "matrice tridiagonale",
+    "récurrence linéaire",
     "linéarité du déterminant",
-    "matrice triangulaire"
+    "rang d'une matrice",
+    "polynôme caractéristique",
+    "développement de Laplace"
   ],
   "methods": [
-    "développement de Laplace",
-    "récurrence linéaire",
-    "changement de base",
-    "factorisation",
-    "calcul de polynômes",
-    "déterminant triangulaire"
+    "opérations sur les lignes/colonnes",
+    "développement par rapport à une ligne/colonne",
+    "récurrence",
+    "linéarité du déterminant",
+    "déterminant triangulaire",
+    "calcul de polynômes"
   ],
   "objects": [
     "matrice carrée",
     "déterminant",
     "polynôme",
     "suite récurrente",
-    "matrice triangulaire"
+    "matrice tridiagonale",
+    "matrice symétrique"
   ],
-  "content_hash": "4359dc41c41e6270c2cdac43433ccd879ee21db60d8a78fb6113287d98f31282",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:39:49.774Z"
+  "content_hash": "0694ff187fd6912a26b44816a0ce16aef37c2dff985cfd2f93fcb04b025f54dc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:40:19.515Z"
 }

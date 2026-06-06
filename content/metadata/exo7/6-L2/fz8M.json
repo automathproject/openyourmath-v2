@@ -1,18 +1,21 @@
 {
   "uuid": "fz8M",
   "source_path": "exo7/6-L2/fz8M.tex",
-  "summary": "Calcul de la longueur d'arc pour différentes courbes planes paramétrées : astroïde, cycloïde, parabole et cardioïde.",
+  "summary": "Calculer la longueur d'arc de quatre courbes planes données par leur représentation paramétrique ou cartésienne : astroïde, cycloïde, parabole et cardioïde. L'exercice demande d'appliquer la formule de la longueur d'arc dans différents systèmes de coordonnées.",
   "concepts": [
-    "représentation paramétrique",
     "longueur d'arc",
-    "intégrale de ligne",
+    "représentation paramétrique",
+    "coordonnées cartésiennes",
     "coordonnées polaires",
-    "changement de variable"
+    "intégrale de ligne",
+    "changement de variable",
+    "fonctions trigonométriques"
   ],
   "methods": [
-    "calcul de la dérivée",
+    "calcul de dérivée",
     "norme d'un vecteur",
-    "intégration par parties",
+    "intégration",
+    "changement de variable d'intégration",
     "simplification trigonométrique"
   ],
   "objects": [
@@ -20,9 +23,10 @@
     "cycloïde",
     "parabole",
     "cardioïde",
-    "vecteur dérivée"
+    "vecteur dérivée",
+    "intégrale de norme de vecteur"
   ],
-  "content_hash": "119a899563f7ed0cd3f92aa6fbe68ac2434dfa3c8b7305bb25b95cbdf997f8b8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:00:40.794Z"
+  "content_hash": "dccd229ff947d6987f63d8cdfedd1b19bd2681e220f7331283dbe6a02a3007cb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:02.790Z"
 }

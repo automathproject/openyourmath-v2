@@ -1,31 +1,32 @@
 {
   "uuid": "UETo",
   "source_path": "exo7/4-L2/UETo.tex",
-  "summary": "Dans le groupe symétrique S₇, on étudie deux permutations α et β. L'exercice demande de montrer qu'elles commutent, de déterminer leurs ordres, leurs inverses, de prouver qu'un ensemble S généré par ces permutations est un sous-groupe, et d'analyser ses propriétés.",
+  "summary": "L'exercice porte sur deux permutations spécifiques dans le groupe symétrique S₇. Il demande de montrer leur commutation, de déterminer leurs ordres, d'étudier le sous-groupe engendré par ces permutations, et d'analyser ses propriétés.",
   "concepts": [
     "groupe symétrique",
     "permutation",
     "sous-groupe",
     "ordre d'un élément",
-    "inverse d'un élément",
-    "ppcm",
+    "commutation",
     "support disjoint",
+    "ppcm",
     "groupe cyclique"
   ],
   "methods": [
     "décomposition en cycles",
     "calcul de l'ordre d'une permutation",
     "inversion d'une permutation",
-    "vérification des propriétés de sous-groupe",
-    "génération de sous-groupe"
+    "vérification des axiomes de sous-groupe",
+    "utilisation du ppcm pour l'ordre"
   ],
   "objects": [
-    "permutation α",
-    "permutation β",
-    "sous-groupe S",
-    "groupe symétrique S₇"
+    "permutation",
+    "sous-groupe",
+    "groupe symétrique S₇",
+    "élément d'ordre",
+    "groupe engendré"
   ],
-  "content_hash": "3edde442e800ec7f4776ae415466055832078b90a8ef189153f9a09124b8a31c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T01:49:22.596Z"
+  "content_hash": "3112afa9435dc70f74b1fc02f74d3d73d6077479209999d3b2f884d56aabafe7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:51:03.481Z"
 }

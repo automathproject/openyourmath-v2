@@ -1,27 +1,33 @@
 {
   "uuid": "LUxw",
   "source_path": "exo7/1-L1/LUxw.tex",
-  "summary": "L'exercice propose une série de décompositions en éléments simples de fractions rationnelles, avec des exemples variés selon le type de dénominateur (éléments de première et deuxième espèce, racines de l'unité, polynômes de Tchebychev).",
+  "summary": "Exercice de décomposition en éléments simples de fractions rationnelles, avec des exemples variés incluant des polynômes de degré élevé, des racines complexes et des cas particuliers comme les racines de l'unité ou les polynômes de Tchebychev.",
   "concepts": [
     "décomposition en éléments simples",
-    "fraction rationnelle",
-    "polynôme",
+    "racines complexes",
     "racines de l'unité",
     "polynômes de Tchebychev",
-    "conjugaison complexe"
+    "fraction rationnelle",
+    "polynôme minimal",
+    "conjugaison complexe",
+    "somme de fractions partielles"
   ],
   "methods": [
-    "décomposition partielle",
-    "identification des pôles",
-    "somme de fractions partielles"
+    "décomposition en fractions partielles",
+    "utilisation des racines complexes",
+    "somme géométrique",
+    "formules de Tchebychev",
+    "manipulation algébrique de polynômes"
   ],
   "objects": [
     "fraction rationnelle",
     "polynôme",
-    "racines complexes",
-    "polynôme de Tchebychev"
+    "racine complexe",
+    "racine de l'unité",
+    "polynôme de Tchebychev",
+    "somme de fractions"
   ],
-  "content_hash": "03d3093c0b3b47392d7862ccb809bfd3a2e42882ca049e12d0a17dd30f813963",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:52:16.057Z"
+  "content_hash": "075127a7815941ce53a20ef241a39197973ed4cb6e2751252dcbd6370d718f09",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:55.435Z"
 }

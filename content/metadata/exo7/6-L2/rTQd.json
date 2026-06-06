@@ -1,31 +1,33 @@
 {
   "uuid": "rTQd",
   "source_path": "exo7/6-L2/rTQd.tex",
-  "summary": "L'exercice demande de déterminer l'équation cartésienne de la surface de révolution obtenue en faisant tourner une droite donnée autour d'une autre droite dans l'espace. Le contexte géométrique implique des transformations et des intersections de surfaces.",
+  "summary": "L'exercice demande de déterminer l'équation cartésienne de la surface de révolution obtenue en faisant tourner une droite donnée autour d'une autre droite dans l'espace. Il s'agit d'identifier la nature de cette surface.",
   "concepts": [
     "surface de révolution",
+    "quadrique",
     "équation cartésienne",
-    "géométrie affine",
     "forme quadratique",
     "valeurs propres",
     "diagonalisation",
-    "hyperboloïde à une nappe"
+    "géométrie affine",
+    "géométrie projective"
   ],
   "methods": [
-    "rotation d'une droite autour d'une autre",
+    "paramétrisation de droite",
     "intersection de surfaces",
-    "calcul de valeurs propres",
+    "changement de repère",
     "diagonalisation de matrice",
+    "calcul de valeurs propres",
     "simplification d'équation"
   ],
   "objects": [
     "droite affine",
-    "surface de révolution",
+    "quadrique",
     "matrice symétrique",
-    "forme quadratique",
-    "hyperboloïde"
+    "repère orthonormé",
+    "hyperboloïde à une nappe"
   ],
-  "content_hash": "fb54c840a509b3437bf7a1f3389d769a761fce8b4e580b1063e9d518ad1e5eea",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:09:20.862Z"
+  "content_hash": "8836dc898c301f38d21d329b1a8481d7c3415b88e866795fca31c73cf35a7281",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:43.433Z"
 }

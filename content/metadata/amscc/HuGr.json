@@ -1,0 +1,29 @@
+{
+  "uuid": "HuGr",
+  "source_path": "amscc/HuGr.tex",
+  "summary": "L'exercice demande d'étudier un système linéaire paramétré par un réel λ. Il s'agit de déterminer la matrice et le vecteur associés, de calculer le déterminant en fonction de λ, d'analyser l'existence et l'unicité des solutions selon les valeurs de λ, et de résoudre explicitement le système pour des valeurs particulières de λ.",
+  "concepts": [
+    "système linéaire",
+    "matrice associée",
+    "déterminant",
+    "rang d'une matrice",
+    "solution unique",
+    "solution paramétrée",
+    "incompatibilité d'un système"
+  ],
+  "methods": [
+    "développement du déterminant",
+    "résolution par substitution",
+    "analyse de compatibilité",
+    "paramétrisation des solutions"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "vecteur colonne",
+    "système d'équations linéaires",
+    "paramètre réel"
+  ],
+  "content_hash": "78d47814a5e56075278b16ace7178c96f0eb9134a2c5f13b248066ea44066500",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:40:28.914Z"
+}

@@ -1,28 +1,29 @@
 {
   "uuid": "VbQK",
   "source_path": "exo7/6-L2/VbQK.tex",
-  "summary": "L'exercice demande de prouver que deux segments sont perpendiculaires et de même longueur, puis de démontrer qu'un quadrilatère formé par les milieux des côtés de deux triangles est un carré.",
+  "summary": "L'exercice demande de prouver que les droites (AC) et (BD) sont perpendiculaires et de même longueur, puis de montrer que le quadrilatère IJKL, formé des milieux des côtés des triangles AOB et COD, est un carré.",
   "concepts": [
     "rotation dans le plan",
     "géométrie affine euclidienne",
     "théorème de Varignon",
-    "théorème de Thalès",
+    "théorème des milieux",
     "parallélogramme",
-    "carré"
+    "carré",
+    "vecteurs colinéaires"
   ],
   "methods": [
-    "utilisation des propriétés des rotations",
+    "utilisation de la rotation",
     "application du théorème de Varignon",
-    "application du théorème de Thalès",
-    "calcul vectoriel"
+    "calcul vectoriel",
+    "propriétés des milieux"
   ],
   "objects": [
     "triangles isocèles rectangles",
-    "segments",
-    "milieux de segments",
-    "quadrilatère"
+    "quadrilatère IJKL",
+    "droites (AC) et (BD)",
+    "vecteurs directeurs"
   ],
-  "content_hash": "18ef424192cc5efa9e52f65617da41cf1a001e0f4d92016d0cacd873abe29822",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:43:02.821Z"
+  "content_hash": "072913886f03e68396db8865c6e87e90374bfc1c7a507e85a7d138fdbeed99c6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:11.618Z"
 }

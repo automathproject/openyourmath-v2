@@ -1,26 +1,27 @@
 {
   "uuid": "tLxt",
   "source_path": "amscc/tLxt.tex",
-  "summary": "L'exercice demande de modéliser les ventes d'une buvette sous forme de matrices et de calculer le bénéfice journalier et total en utilisant des produits matriciels. Il propose ensuite d'évaluer l'impact d'une baisse de prix et d'une augmentation des ventes sur le bénéfice total.",
+  "summary": "L'exercice demande de modéliser les ventes et les prix d'une buvette sous forme de matrices, puis de calculer le bénéfice total en utilisant un produit matriciel. Il propose ensuite d'évaluer l'impact d'une baisse de 20% des prix et d'une augmentation de 20% des ventes sur le bénéfice total.",
   "concepts": [
     "produit matriciel",
     "matrice",
     "calcul de bénéfice",
-    "modélisation algébrique",
-    "opérations sur matrices"
+    "modélisation linéaire",
+    "opérations sur matrices",
+    "somme de vecteurs"
   ],
   "methods": [
     "multiplication de matrices",
     "calcul de bénéfice par produit matriciel",
-    "transformation de matrices"
+    "application de coefficients multiplicatifs"
   ],
   "objects": [
     "matrice de ventes",
     "matrice de prix",
-    "matrice de bénéfices",
-    "produit matriciel"
+    "vecteur bénéfice",
+    "matrice de coefficients"
   ],
-  "content_hash": "e3f203aabd72a802f5fa9185293ade334bbf7b14743f3c34e234d1e4f3415c8c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:19:06.212Z"
+  "content_hash": "843e42b2fe33d2a80a09e7a512abed574c4c5b1a6508b71f689ad5ba5fe540b5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:07.803Z"
 }

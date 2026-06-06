@@ -1,30 +1,27 @@
 {
   "uuid": "yTbX",
   "source_path": "exo7/2-L1/yTbX.tex",
-  "summary": "Montrer l'unicité de la solution de l'équation Argsh(x) + Argch(x) = 1 et la déterminer. L'exercice demande d'étudier la fonction f(x) = Argsh(x) + Argch(x) sur son domaine de définition.",
+  "summary": "Montrer l'existence et l'unicité d'une solution à l'équation $\\Argsh x + \\Argch x = 1$, puis déterminer cette solution. L'exercice s'appuie sur les propriétés des fonctions hyperboliques inverses.",
   "concepts": [
     "fonction hyperbolique inverse",
     "continuité",
-    "monotonie",
+    "monotonie stricte",
     "théorème des valeurs intermédiaires",
-    "fonction strictement croissante",
-    "limite infinie",
-    "identités hyperboliques"
+    "identités hyperboliques",
+    "limite de fonction"
   ],
   "methods": [
-    "tableau de variations",
     "étude de la monotonie",
     "application du théorème des valeurs intermédiaires",
-    "utilisation des identités hyperboliques",
+    "manipulation d'identités hyperboliques",
     "résolution d'équation"
   ],
   "objects": [
-    "fonction Argsh(x)",
-    "fonction Argch(x)",
-    "fonction f(x) = Argsh(x) + Argch(x)",
-    "solution unique de l'équation"
+    "fonction composée",
+    "solution unique",
+    "fonction $f(x) = \\Argsh x + \\Argch x$"
   ],
-  "content_hash": "a26377a44fcecc171a8d92dc292e2964f5a070ba98bbc1a1b9537a25cfa35966",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:08:29.415Z"
+  "content_hash": "7a7435eb145a73c15ed5650f9b1f0f07b907129798880c89370d1a771975d153",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:50:15.598Z"
 }

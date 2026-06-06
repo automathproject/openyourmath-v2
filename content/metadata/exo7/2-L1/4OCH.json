@@ -1,25 +1,29 @@
 {
   "uuid": "4OCH",
   "source_path": "exo7/2-L1/4OCH.tex",
-  "summary": "Étudier le domaine de définition de la fonction f(x) = Argch[(1/2)(x + 1/x)] et simplifier son expression lorsque cela est possible.",
+  "summary": "Étudier le domaine de définition de la fonction composée impliquant l'argument hyperbolique cosinus inverse et simplifier son expression. La fonction est définie par une combinaison linéaire de x et de son inverse.",
   "concepts": [
     "fonction hyperbolique inverse",
     "domaine de définition",
-    "inégalité",
+    "inégalité rationnelle",
+    "simplification d'expression",
     "fonction logarithme",
     "valeur absolue"
   ],
   "methods": [
     "résolution d'inéquation",
-    "simplification d'expression",
-    "distinction de cas"
+    "simplification algébrique",
+    "distinction de cas",
+    "utilisation de la définition de la fonction Argch"
   ],
   "objects": [
+    "fonction composée",
+    "expression rationnelle",
     "fonction Argch",
-    "fonction f(x)",
-    "expression algébrique"
+    "fonction logarithme",
+    "valeur absolue"
   ],
-  "content_hash": "be95306b12ec00db2158cff929d3800cec8e62abc113506175d38776de5a5ea8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:55:15.279Z"
+  "content_hash": "de6a2ba69c865503bf7ec0606e7fbb5692d353a606193c5cc18d1f021e054401",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:49:34.100Z"
 }

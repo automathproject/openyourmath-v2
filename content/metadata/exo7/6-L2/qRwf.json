@@ -1,25 +1,28 @@
 {
   "uuid": "qRwf",
   "source_path": "exo7/6-L2/qRwf.tex",
-  "summary": "Trouver les équations cartésiennes des plans bissecteurs de deux plans donnés dans l'espace.",
+  "summary": "Trouver les équations cartésiennes des plans bissecteurs de deux plans donnés dans l'espace, en utilisant la condition d'égalité des distances d'un point à ces deux plans.",
   "concepts": [
     "géométrie affine",
     "distance d'un point à un plan",
     "plan bissecteur",
     "équation cartésienne d'un plan",
-    "produit de deux expressions algébriques"
+    "produit de conjugués",
+    "résolution d'équation absolue"
   ],
   "methods": [
-    "calcul de distance",
-    "résolution d'équation absolue",
-    "factorisation d'expression algébrique"
+    "calcul de distance point-plan",
+    "manipulation d'équations absolues",
+    "factorisation par produit de conjugués",
+    "résolution d'équation polynomiale"
   ],
   "objects": [
-    "plans dans l'espace",
-    "équations cartésiennes de plans",
-    "point M(x,y,z)"
+    "plan affine",
+    "point de l'espace",
+    "équation cartésienne",
+    "distance"
   ],
-  "content_hash": "3cf05c734e6bfcd9c4cf66a837e98c81a5559eb7575f70c8eaafc06610ab6311",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:10:46.520Z"
+  "content_hash": "543252d85b707865719a324337ad4f310c5349a70747b6b7bb25f65b6421d4a8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:38.615Z"
 }

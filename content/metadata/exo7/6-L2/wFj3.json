@@ -1,29 +1,27 @@
 {
   "uuid": "wFj3",
   "source_path": "exo7/6-L2/wFj3.tex",
-  "summary": "L'exercice demande de construire à la règle et au compas une longueur proportionnelle au produit de deux longueurs données divisé par une troisième, en utilisant une figure géométrique spécifique.",
+  "summary": "L'exercice demande de construire à la règle et au compas une longueur proportionnelle au produit de deux longueurs données, divisé par une troisième longueur donnée. Le contexte géométrique implique l'utilisation de droites parallèles et de triangles semblables.",
   "concepts": [
     "géométrie affine euclidienne",
-    "construction géométrique",
     "théorème de Thalès",
-    "proportionnalité",
-    "alignement de points",
-    "parallélisme"
+    "construction géométrique",
+    "droites parallèles",
+    "triangles semblables",
+    "proportionnalité"
   ],
   "methods": [
     "construction à la règle et au compas",
     "utilisation du théorème de Thalès",
-    "tracé de parallèles",
-    "mesure de distances"
+    "tracé de droites parallèles"
   ],
   "objects": [
-    "longueurs",
-    "points",
+    "longueur",
     "droites",
-    "segments",
-    "figure géométrique"
+    "points",
+    "triangles"
   ],
-  "content_hash": "a95992bb952d90d9a70ceed2de455ab59f52bef65c385ee80e3311e29bb1f2aa",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:01:51.122Z"
+  "content_hash": "ea77e1d8495ab446af256f89d564436c34f467bd2345ad45c6d25d7378732489",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:48.703Z"
 }

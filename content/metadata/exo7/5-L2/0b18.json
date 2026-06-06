@@ -1,30 +1,29 @@
 {
   "uuid": "0b18",
   "source_path": "exo7/5-L2/0b18.tex",
-  "summary": "L'exercice demande d'étudier l'existence et de calculer l'intégrale paramétrique $\\int_{0}^{1}\\frac{t-1}{\\ln t}t^x\\;dt$ pour $x \\in \\mathbb{R}$. Il s'agit d'une intégrale de Riemann dépendant d'un paramètre.",
+  "summary": "L'exercice demande de démontrer l'existence de l'intégrale de Riemann dépendant d'un paramètre $\\int_{0}^{1}\\frac{t-1}{\\ln t}t^x\\;dt$ pour $x > -1$, puis de calculer cette intégrale.",
   "concepts": [
     "intégrale de Riemann dépendant d'un paramètre",
     "intégrabilité",
+    "continuité par morceaux",
     "dérivation sous le signe intégrale",
     "théorème de Leibniz",
-    "continuité par morceaux",
-    "limite de fonctions",
-    "prolongement par continuité"
+    "équivalence asymptotique",
+    "intégrale impropre"
   ],
   "methods": [
-    "étude des limites en 0 et 1",
-    "dérivation sous l'intégrale",
-    "calcul de primitive",
-    "utilisation du théorème de Leibniz",
-    "majoration de l'intégrale"
+    "étude des équivalents asymptotiques",
+    "dérivation sous le signe intégrale",
+    "intégration directe",
+    "comparaison d'intégrales"
   ],
   "objects": [
-    "fonction intégrable",
+    "fonction de deux variables",
     "intégrale paramétrique",
-    "fonction dérivée partielle",
-    "fonction bornée"
+    "fonction intégrable",
+    "dérivée partielle"
   ],
-  "content_hash": "6c974d83aec0abb6720887540b94c633bd8af065a0c0cdc9c550d14e7d356422",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:25:58.044Z"
+  "content_hash": "203f837090b808b8d6928384e407de6a48a35470d9db2f49aec35b671d7de51b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:26.605Z"
 }

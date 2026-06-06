@@ -1,29 +1,30 @@
 {
   "uuid": "z1QF",
   "source_path": "exo7/2-L1/z1QF.tex",
-  "summary": "Calcul de sept intégrales définies utilisant différentes techniques d'intégration. Les intégrales impliquent des fonctions polynomiales, logarithmiques, exponentielles, trigonométriques et des racines.",
+  "summary": "Calculer sept intégrales définies impliquant des fonctions polynomiales, logarithmiques, exponentielles, trigonométriques et des racines carrées. Les intégrales couvrent divers cas d'intégration par parties et changements de variable.",
   "concepts": [
-    "intégrale définie",
-    "fonction polynomiale",
-    "fonction logarithmique",
+    "intégration par parties",
+    "changement de variable",
+    "fonction composée",
+    "fonction racine carrée",
+    "fonction logarithme",
     "fonction exponentielle",
-    "fonction trigonométrique",
-    "fonction racine"
+    "fonction trigonométrique"
   ],
   "methods": [
     "intégration par parties",
     "changement de variable",
-    "réduction de puissance"
+    "décomposition en fractions partielles",
+    "simplification d'expression"
   ],
   "objects": [
     "intégrale définie",
     "fonction polynomiale",
     "fonction logarithmique",
     "fonction exponentielle",
-    "fonction trigonométrique",
-    "fonction racine"
+    "fonction trigonométrique"
   ],
-  "content_hash": "868aee92bdc2cf09d5d12108c2b7e32ccb9dbeb59216e03e8810fba0f0fd514c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:55:23.144Z"
+  "content_hash": "6d5a8a31edc9b3df4f2c56d2cd23dec3bd711717eeab44d21d528f02589ce265",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:46.139Z"
 }

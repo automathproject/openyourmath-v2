@@ -1,23 +1,25 @@
 {
   "uuid": "8CDV",
   "source_path": "exo7/7-L2/8CDV.tex",
-  "summary": "L'exercice demande d'identifier parmi quatre propositions celles qui définissent une probabilité sur un espace fini Ω = {1, 2, 3, 4}. Chaque proposition associe une valeur de probabilité à chaque élément de Ω.",
+  "summary": "L'exercice demande d'identifier parmi quatre propositions celles qui définissent une probabilité valide sur un espace fini Ω = {1, 2, 3, 4}. Il s'agit de vérifier les propriétés fondamentales d'une mesure de probabilité.",
   "concepts": [
-    "probabilité",
-    "espace probabilisé",
+    "probabilité discrète",
     "mesure de probabilité",
-    "axiomes de la probabilité",
-    "variable aléatoire discrète"
+    "espace probabilisé",
+    "axiomes de Kolmogorov",
+    "fonction de masse de probabilité"
   ],
   "methods": [
-    "vérification des axiomes de la probabilité",
-    "somme des probabilités"
+    "vérification de la positivité",
+    "vérification de la somme à 1",
+    "analyse des conditions de validité"
   ],
   "objects": [
     "espace fini",
-    "probabilité sur un ensemble fini"
+    "probabilité sur un ensemble fini",
+    "valeurs de probabilité"
   ],
-  "content_hash": "a99d4b83853476855e147af3ff0cb5b2e17a9297840b286c8c2f56e43aa9e867",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:18:09.626Z"
+  "content_hash": "8b5f741ce28f9e734f4a6f6c7e403d9d137d45d75aae00ae939f9c07b9dd4ebd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:07.263Z"
 }

@@ -1,28 +1,32 @@
 {
   "uuid": "G7dF",
   "source_path": "exo7/15-L3/G7dF.tex",
-  "summary": "L'exercice demande de montrer qu'une application linéaire L continue implique que son noyau H est un sous-espace fermé, puis d'établir une relation entre la distance d'un point a à H et la norme de L. La réciproque est également à démontrer, ainsi qu'une généralisation à des applications linéaires entre espaces normés.",
+  "summary": "L'exercice demande de montrer que le noyau d'une forme linéaire continue est un sous-espace fermé, puis d'établir une relation entre la distance d'un point à ce noyau et la norme de la forme linéaire. La réciproque est également à démontrer, ainsi qu'une généralisation à des applications linéaires entre espaces normés.",
   "concepts": [
-    "application linéaire bornée",
-    "sous-espace fermé",
-    "distance dans un espace normé",
-    "norme d'une application linéaire",
+    "espace normé",
+    "forme linéaire",
     "noyau d'une application linéaire",
-    "continuité des applications linéaires"
+    "sous-espace fermé",
+    "distance à un sous-espace",
+    "continuité d'une application linéaire",
+    "norme d'une application linéaire",
+    "décomposition d'espace vectoriel"
   ],
   "methods": [
-    "décomposition d'espace vectoriel",
+    "décomposition en somme directe",
     "calcul de norme d'application linéaire",
     "utilisation de la distance à un sous-espace",
-    "preuve par contraposée"
+    "preuve par contraposée",
+    "contre-exemple"
   ],
   "objects": [
-    "application linéaire L",
-    "sous-espace H",
-    "point a dans X",
-    "espace normé X"
+    "forme linéaire non nulle",
+    "noyau d'une application linéaire",
+    "sous-espace fermé",
+    "espace normé",
+    "application linéaire bornée"
   ],
-  "content_hash": "b36df77e9c7924e496886f384c72d6a65bd0d45b27a2deb4154084167f570dbb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:39:48.515Z"
+  "content_hash": "801e289c1125c1663428f6c4ffc3ae6b9d042bea68e4691c45f2d2af18530524",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:34:12.291Z"
 }

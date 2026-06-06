@@ -1,27 +1,28 @@
 {
   "uuid": "Gs2x",
   "source_path": "exo7/2-L1/Gs2x.tex",
-  "summary": "L'exercice demande de démontrer une inégalité impliquant des sommes de produits de réels, en utilisant des propriétés de polynômes du second degré.",
+  "summary": "L'exercice demande de démontrer une double inégalité impliquant des sommes de produits de réels, en utilisant une approche polynomiale et les propriétés des trinômes du second degré. Il s'agit d'établir une relation entre les sommes de produits et les sommes de carrés.",
   "concepts": [
     "inégalité de Cauchy-Schwarz",
     "discriminant d'un polynôme du second degré",
-    "signe d'un trinôme du second degré",
+    "signe d'un trinôme",
     "somme de carrés",
-    "valeur absolue"
+    "valeur absolue",
+    "polynôme quadratique"
   ],
   "methods": [
     "développement d'un polynôme",
     "analyse du discriminant",
-    "utilisation des propriétés des polynômes du second degré",
-    "substitution de variables"
+    "utilisation des propriétés des trinômes du second degré",
+    "remplacement par des valeurs absolues"
   ],
   "objects": [
     "somme de produits de réels",
-    "polynôme du second degré",
-    "trinôme du second degré",
-    "discriminant"
+    "somme de carrés de réels",
+    "polynôme quadratique",
+    "trinôme du second degré"
   ],
-  "content_hash": "ecafb0d92ff7f408c3b98307484564b62e8a4d5ba7c75d7f9ed4467eda624955",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:08:27.995Z"
+  "content_hash": "7aaf9621cb6074005e8ce5ed8582ddd1e5385db0a236c9ea00bed8db9ef33cb7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:11:41.510Z"
 }

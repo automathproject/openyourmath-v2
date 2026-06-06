@@ -1,26 +1,28 @@
 {
   "uuid": "K0XH",
   "source_path": "exo7/1-L1/K0XH.tex",
-  "summary": "Résoudre une équation trigonométrique $\\cos(3x)=\\sin(2x)$ dans $\\mathbb{R}$ et en déduire les valeurs de $\\sin x$ et $\\cos x$ pour des angles spécifiques.",
+  "summary": "Résoudre l'équation trigonométrique cos(3x) = sin(2x) dans ℝ, puis déterminer les valeurs de sin(x) et cos(x) pour x appartenant à un ensemble de valeurs spécifiques.",
   "concepts": [
     "équation trigonométrique",
     "identités trigonométriques",
-    "résolution d'équation",
-    "formules de trigonométrie",
-    "angles remarquables"
+    "formule de trigonométrie",
+    "équation du second degré",
+    "racines d'une équation",
+    "formule d'addition"
   ],
   "methods": [
     "transformation d'équation trigonométrique",
-    "résolution d'équation polynomiale",
-    "utilisation de formules trigonométriques",
-    "calcul de valeurs trigonométriques exactes"
+    "résolution d'équation du second degré",
+    "utilisation de la formule de cos(3x)",
+    "simplification d'expression trigonométrique"
   ],
   "objects": [
-    "équation $\\cos(3x)=\\sin(2x)$",
-    "angles $\\frac{\\pi}{10}$, $\\frac{\\pi}{5}$, $\\frac{3\\pi}{10}$",
-    "valeurs de $\\sin x$ et $\\cos x$"
+    "équation cos(3x) = sin(2x)",
+    "valeurs de sin(x) et cos(x)",
+    "solutions réelles",
+    "expressions trigonométriques"
   ],
-  "content_hash": "363345bf56db739d0c2ca969fd727698d707dbbbab7b8e1cffca2ecffb950f43",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:40:49.202Z"
+  "content_hash": "a1f64466e1d9f8c52f01f3d57811734d8d12532bc556d2b5228b6ff80628ddfe",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:58:41.603Z"
 }

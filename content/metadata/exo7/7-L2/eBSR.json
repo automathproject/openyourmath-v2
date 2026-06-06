@@ -1,25 +1,25 @@
 {
   "uuid": "eBSR",
   "source_path": "exo7/7-L2/eBSR.tex",
-  "summary": "L'exercice demande de calculer la probabilité qu'un enfant pris au hasard ait une réaction positive à un test, puis la probabilité qu'un enfant ayant une réaction positive soit atteint par une maladie M. Le contexte implique une population avec une certaine prévalence de la maladie et des probabilités conditionnelles de résultats de test.",
+  "summary": "Calculer la probabilité qu'un enfant ait une réaction positive à un test, puis la probabilité qu'il soit atteint d'une maladie M sachant qu'il a une réaction positive. Contexte : test médical pour une maladie rare.",
   "concepts": [
     "probabilité conditionnelle",
-    "probabilité conjointe",
-    "formule de Bayes",
+    "formule des probabilités totales",
     "événements indépendants",
-    "probabilité totale"
+    "probabilité conjointe",
+    "loi de probabilité discrète"
   ],
   "methods": [
-    "décomposition de la probabilité totale",
-    "calcul de probabilité conditionnelle",
-    "application de la formule de Bayes"
+    "décomposition de probabilité",
+    "application de la formule de Bayes",
+    "calcul de probabilité conjointe"
   ],
   "objects": [
     "événements aléatoires",
     "probabilités conditionnelles",
-    "probabilités conjointes"
+    "probabilités marginales"
   ],
-  "content_hash": "9cc0546df23373a9d5859d64913683244394162e99f448b5242f3ee395d8f2c9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:34:14.904Z"
+  "content_hash": "830a537b13687027ab88ac720f1ca970d36cbf81d078ad4d5d9f455c9c0c0232",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:35.953Z"
 }

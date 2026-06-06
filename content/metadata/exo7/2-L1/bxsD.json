@@ -1,27 +1,30 @@
 {
   "uuid": "bxsD",
   "source_path": "exo7/2-L1/bxsD.tex",
-  "summary": "L'exercice demande de déterminer un équivalent simple d'une fraction impliquant un facteur factoriel et un produit de termes linéaires en n, lorsque n tend vers l'infini.",
+  "summary": "L'exercice demande de déterminer un équivalent simple d'une fraction impliquant une factorielle et un produit de termes linéaires en n, lorsque n tend vers l'infini. Le contexte mathématique porte sur une série numérique à termes positifs.",
   "concepts": [
     "série numérique",
+    "termes positifs",
     "équivalent asymptotique",
     "développement limité",
     "règle de Raabe-Duhamel",
     "croissance comparée",
-    "facteur factoriel",
+    "factorielle",
     "produit de termes linéaires"
   ],
   "methods": [
     "développement asymptotique",
-    "comparaison de termes dominants",
-    "application de la règle de Raabe-Duhamel"
+    "comparaison de termes",
+    "application de la règle de Raabe-Duhamel",
+    "approximation polynomiale"
   ],
   "objects": [
-    "facteur factoriel",
+    "suite numérique",
+    "factorielle",
     "produit de termes linéaires",
-    "suite numérique"
+    "équivalent simple"
   ],
-  "content_hash": "0a415ec00e151ea5f0bd1e892df6f093b7b60dd5c0552fb431829fe8beee7929",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:24:39.585Z"
+  "content_hash": "8cb8396ea95d9c7ee12a1df3809bf21528b0c5220a031847e7bdf8ba3a0a33fc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:15.327Z"
 }

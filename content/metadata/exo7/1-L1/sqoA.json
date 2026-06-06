@@ -1,31 +1,31 @@
 {
   "uuid": "sqoA",
   "source_path": "exo7/1-L1/sqoA.tex",
-  "summary": "L'exercice étudie une application f de [0,+∞[×[0,2π[ dans ℝ² et explore ses propriétés d'injectivité et de surjectivité. Il demande ensuite de montrer des propriétés algébriques sur des combinaisons linéaires de fonctions trigonométriques et de déterminer des sous-espaces vectoriels associés.",
+  "summary": "L'exercice étudie une application $f$ de $\\mathbb{R}^+\\times[0,2\\pi[$ dans $\\mathbb{R}^2$ et ses propriétés d'injectivité et de surjectivité. Il demande ensuite de montrer l'existence d'une combinaison linéaire de cosinus déphasés, de vérifier qu'un ensemble d'applications trigonométriques forme un sous-espace vectoriel, et d'étudier l'appartenance de certaines fonctions à cet espace.",
   "concepts": [
     "application injective",
     "application surjective",
-    "sous-espace vectoriel",
-    "famille libre",
-    "fonctions trigonométriques",
     "combinaison linéaire",
+    "sous-espace vectoriel",
+    "fonctions trigonométriques",
+    "famille libre",
     "dérivation"
   ],
   "methods": [
-    "vérification d'injectivité",
-    "vérification de surjectivité",
-    "décomposition en série de Fourier",
-    "utilisation de la dérivée",
-    "preuve par contradiction"
+    "décomposition en cosinus déphasés",
+    "vérification de l'injectivité",
+    "vérification de la surjectivité",
+    "preuve par l'absurde",
+    "dérivation successive"
   ],
   "objects": [
-    "application f",
-    "sous-espace vectoriel F",
+    "application $f$ de $\\mathbb{R}^+\\times[0,2\\pi[$ dans $\\mathbb{R}^2$",
+    "combinaison de cosinus",
+    "sous-espace vectoriel $F$",
     "fonctions trigonométriques",
-    "famille de vecteurs",
-    "combinaison linéaire de cosinus"
+    "famille de vecteurs"
   ],
-  "content_hash": "3fe8777e0f87e7a342ed4316359e15a3b318a31439c0a8057fe0e3ac206b699c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:11:32.949Z"
+  "content_hash": "d036021a0c0ff2fe730b35716b653c5616bb78d1df422e8d7aff1358818e4794",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:09.203Z"
 }

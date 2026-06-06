@@ -1,24 +1,26 @@
 {
   "uuid": "oMoe",
   "source_path": "exo7/5-L2/oMoe.tex",
-  "summary": "L'exercice demande de démontrer l'identité d'Euler pour une fonction positivement homogène de degré r, en utilisant les dérivées partielles.",
+  "summary": "L'exercice demande de démontrer l'identité d'Euler pour une fonction positivement homogène de degré r, en utilisant ses dérivées partielles. Il s'agit d'une propriété fondamentale des fonctions homogènes en analyse des fonctions de plusieurs variables.",
   "concepts": [
     "fonction homogène",
     "dérivée partielle",
-    "fonction de plusieurs variables",
-    "classe C^1",
-    "identité d'Euler"
+    "identité d'Euler",
+    "fonction de classe C^1",
+    "homogénéité positive",
+    "théorème de dérivation sous le signe somme"
   ],
   "methods": [
     "dérivation par rapport à un paramètre",
-    "substitution"
+    "évaluation en un point particulier",
+    "utilisation de la définition de l'homogénéité"
   ],
   "objects": [
-    "fonction de classe C^1",
+    "fonction de plusieurs variables",
     "dérivées partielles",
-    "fonction homogène"
+    "paramètre de dilatation λ"
   ],
-  "content_hash": "bd4d04b00126a65b34156a47d2f4b3c049a2b81b1548429f9b22e89ef2dd69ee",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:19:43.763Z"
+  "content_hash": "b179a47e7c1b5bbab6ebb29b83b5cca9a582fff17d15f3dc7a4773fd5bdf3c85",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:48:41.990Z"
 }

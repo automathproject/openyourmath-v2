@@ -1,30 +1,30 @@
 {
   "uuid": "pl6B",
   "source_path": "exo7/16-L3/pl6B.tex",
-  "summary": "L'exercice demande de démontrer une équivalence entre une équation trigonométrique complexe et une équation polynomiale, puis d'étudier les solutions réelles de l'équation sin z = c pour c dans [-1,1]. Il aborde aussi les formules d'addition pour les fonctions exponentielles complexes et la résolution d'une équation trigonométrique complexe.",
+  "summary": "L'exercice demande de démontrer des propriétés de la fonction sinus complexe, notamment une équivalence algébrique, la réalité des solutions pour des valeurs réelles de c, et des formules de calcul pour des combinaisons de nombres complexes. Il inclut aussi la résolution d'une équation impliquant sinus et cosinus.",
   "concepts": [
-    "fonction exponentielle complexe",
     "fonction sinus complexe",
-    "équation polynomiale",
+    "fonction exponentielle complexe",
+    "équation quadratique",
     "module d'un nombre complexe",
-    "formules d'addition trigonométrique",
-    "solution complexe d'équation"
+    "logarithme complexe",
+    "formule d'addition trigonométrique"
   ],
   "methods": [
-    "manipulation d'équations complexes",
-    "résolution d'équation polynomiale",
-    "utilisation des formules d'Euler",
-    "calcul du module",
-    "logarithme complexe"
+    "développement exponentiel",
+    "résolution d'équation quadratique",
+    "utilisation du module",
+    "développement en série",
+    "identités trigonométriques"
   ],
   "objects": [
     "nombre complexe",
-    "fonction sinus",
     "fonction exponentielle",
-    "équation trigonométrique",
-    "solution complexe"
+    "équation différentielle",
+    "solution complexe",
+    "logarithme complexe"
   ],
-  "content_hash": "ed81e6c5f294f92364b5633fa12d968e7251183c6823806c67d91b8c7aa787a7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:24:11.019Z"
+  "content_hash": "c393ccb7adf919ed3bac0a26b1cf42b3f0a44c011245b804b59de06c387503bb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:21.859Z"
 }

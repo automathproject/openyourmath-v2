@@ -1,27 +1,28 @@
 {
   "uuid": "In48",
   "source_path": "exo7/5-L2/In48.tex",
-  "summary": "Déterminer la limite d'une suite de matrices 2x2 lorsque la puissance tend vers l'infini, avec des éléments dépendant de 1/n.",
+  "summary": "Déterminer la limite d'une suite de matrices 2x2 lorsque la dimension tend vers l'infini, où les éléments hors diagonale sont proportionnels à l'inverse de la dimension.",
   "concepts": [
     "suite de matrices",
     "limite de matrices",
-    "rotation matricielle",
+    "rotation",
+    "fonction trigonométrique",
     "développement asymptotique",
-    "fonction trigonométrique"
+    "convergence matricielle"
   ],
   "methods": [
     "décomposition trigonométrique",
-    "approximation de logarithme",
-    "calcul de limite de suite",
-    "utilisation de l'exponentielle"
+    "approximation de l'arctangente",
+    "développement limité",
+    "exponentiation matricielle"
   ],
   "objects": [
     "matrice 2x2",
     "suite de matrices",
-    "angle de rotation",
-    "fonction arctangente"
+    "fonction arctangente",
+    "fonction exponentielle"
   ],
-  "content_hash": "2ed09aa750ba7765b5eb9689b4bc85f3316b1fccd19ef92071681c88ee8826c5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:52:07.548Z"
+  "content_hash": "c516a1425730e2a82afcffef27e1c49e01fc3223354ed1b161c2a4a8637136de",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:04.839Z"
 }

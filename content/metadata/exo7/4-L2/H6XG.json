@@ -1,33 +1,31 @@
 {
   "uuid": "H6XG",
   "source_path": "exo7/4-L2/H6XG.tex",
-  "summary": "L'exercice demande de déterminer la matrice d'un endomorphisme dans une base donnée, d'identifier son noyau et son image, de vérifier si une famille de vecteurs forme une base, de calculer la matrice de l'endomorphisme dans cette nouvelle base, et de déterminer ses valeurs propres et vecteurs propres.",
+  "summary": "L'exercice demande de déterminer la matrice d'un endomorphisme dans une base donnée, d'identifier son noyau et son image, de vérifier qu'une famille de vecteurs forme une base, de calculer la matrice de l'endomorphisme dans cette nouvelle base, et de trouver ses valeurs propres et vecteurs propres associés.",
   "concepts": [
-    "espace vectoriel",
-    "application linéaire",
-    "matrice d'un endomorphisme",
+    "endomorphisme",
+    "matrice d'application linéaire",
     "noyau d'un endomorphisme",
     "image d'un endomorphisme",
     "base d'un espace vectoriel",
-    "valeurs propres",
-    "vecteurs propres",
-    "déterminant"
+    "valeur propre",
+    "vecteur propre",
+    "diagonalisation"
   ],
   "methods": [
     "calcul de la matrice d'un endomorphisme",
     "détermination du noyau et de l'image",
-    "vérification de l'indépendance linéaire",
-    "calcul de la matrice dans une nouvelle base",
-    "identification des valeurs propres et vecteurs propres"
+    "vérification de l'indépendance linéaire par le déterminant",
+    "calcul des valeurs propres et vecteurs propres"
   ],
   "objects": [
     "espace vectoriel de dimension 3",
-    "endomorphisme",
-    "matrice",
-    "vecteurs propres",
-    "valeurs propres"
+    "matrice 3x3",
+    "famille de vecteurs",
+    "base de vecteurs",
+    "vecteurs propres"
   ],
-  "content_hash": "42a59a183f190f1ef6a33795d2e6a0be5535482c18671120fc11d882eade977b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:31:30.609Z"
+  "content_hash": "861a73a605414b549132fdde8d64bcbc39e4f5d04f4a1d104eec4e64f8f74e04",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:03:12.661Z"
 }

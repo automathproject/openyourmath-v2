@@ -1,26 +1,28 @@
 {
   "uuid": "hzO4",
   "source_path": "exo7/2-L1/hzO4.tex",
-  "summary": "Calculer la somme d'une série numérique alternée de terme général (-1)^n / (3n + 1). L'énoncé demande d'évaluer cette série infinie.",
+  "summary": "Calculer la somme d'une série numérique alternée de terme général $\\frac{(-1)^n}{3n+1}$ en utilisant le critère de convergence des séries alternées et en exprimant cette somme comme une intégrale.",
   "concepts": [
+    "série numérique",
     "série alternée",
-    "critère spécial aux séries alternées",
+    "critère de convergence des séries alternées",
     "intégrale impropre",
     "décomposition en éléments simples",
     "fonction rationnelle"
   ],
   "methods": [
-    "critère de convergence des séries alternées",
-    "intégration terme à terme",
+    "critère spécial aux séries alternées",
     "décomposition en fractions partielles",
-    "évaluation d'intégrales"
+    "intégration de fonctions rationnelles",
+    "limite de suite intégrale"
   ],
   "objects": [
-    "série numérique",
-    "fonction rationnelle",
-    "intégrale"
+    "série alternée",
+    "intégrale de fonction rationnelle",
+    "suite numérique",
+    "terme général"
   ],
-  "content_hash": "81b71f76abbe28ad418afa64e299e72f735d5eff8347cfbfb7aa0771d1e385d2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:28:45.676Z"
+  "content_hash": "6cf1acd3a87263300aa20c9872bac3e9022146d70229974919a1f1999113e12a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:20.202Z"
 }

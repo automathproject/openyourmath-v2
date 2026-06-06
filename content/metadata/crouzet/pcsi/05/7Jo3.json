@@ -1,29 +1,35 @@
 {
   "uuid": "7Jo3",
   "source_path": "crouzet/pcsi/05/7Jo3.tex",
-  "summary": "L'exercice demande de démontrer la dénombrabilité de plusieurs ensembles : les entiers naturels non nuls, les entiers relatifs, le produit cartésien de deux ensembles dénombrables, et les nombres rationnels. Il utilise des bijections explicites pour établir ces résultats.",
+  "summary": "L'exercice demande de démontrer la dénombrabilité des ensembles $\\N^*$, $\\Z$, $\\N^2$, $\\Z \\times \\N^*$ et $\\Q$ en utilisant des bijections avec des parties de $\\N$. Il explore les propriétés des ensembles dénombrables et les techniques de construction d'injections.",
   "concepts": [
-    "dénombrabilité",
+    "ensemble dénombrable",
     "bijection",
     "injection",
-    "surjection",
-    "ensemble quotient",
-    "théorème de Cantor-Schröder-Bernstein"
+    "cardinal d'un ensemble",
+    "propriété archimédienne",
+    "théorème de Cantor",
+    "relation d'équivalence",
+    "partition d'un ensemble"
   ],
   "methods": [
     "construction explicite de bijection",
-    "utilisation de la composition de fonctions",
-    "réduction à un cas connu",
-    "argument par cas"
+    "décomposition en facteurs premiers",
+    "utilisation de la définition de la dénombrabilité",
+    "composition de fonctions",
+    "réduction à l'absurde",
+    "preuve par cas"
   ],
   "objects": [
-    "ensemble dénombrable",
-    "ensemble infini",
-    "bijection",
-    "injection",
-    "nombre rationnel"
+    "ensemble $\\N^*$",
+    "ensemble $\\Z$",
+    "ensemble $\\N^2$",
+    "ensemble $\\Z \\times \\N^*$",
+    "ensemble $\\Q$",
+    "application injective",
+    "application surjective"
   ],
-  "content_hash": "3e58a625a1b4dbb5e241dae1e283866f8580bbd55bd901148aa829e2a14303ea",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:06:06.994Z"
+  "content_hash": "932e25a6259ccfc237841d50e4c4a90a84af794201deb2fe549c6f808c5bb4fa",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:16.933Z"
 }

@@ -1,26 +1,27 @@
 {
   "uuid": "F3kN",
   "source_path": "exo7/1-L1/F3kN.tex",
-  "summary": "L'exercice demande de prouver que deux suites spécifiques de polynômes non nuls sont libres : la première ayant des degrés deux à deux distincts, la seconde ayant des valuations deux à deux distinctes.",
+  "summary": "L'exercice demande de prouver que deux suites de polynômes non nuls sont libres : la première lorsque les degrés sont deux à deux distincts, la seconde lorsque les valuations sont deux à deux distinctes.",
   "concepts": [
     "espace vectoriel",
     "famille libre",
     "degré d'un polynôme",
     "valuation d'un polynôme",
     "polynôme non nul",
-    "somme de polynômes"
+    "combinaison linéaire"
   ],
   "methods": [
     "raisonnement par l'absurde",
     "analyse du degré maximal",
-    "analyse de la valuation minimale"
+    "analyse de la valuation minimale",
+    "manipulation de combinaisons linéaires"
   ],
   "objects": [
     "suite de polynômes",
     "polynôme de degré donné",
     "polynôme de valuation donnée"
   ],
-  "content_hash": "8a26e2fd4ce342a6155a5754206cc6d4b7eea3afe948f5d993a9f6e345488b0a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:44:21.757Z"
+  "content_hash": "ae1a044b333e49f39e061cfd8e2666de5b1373f95ffc5af971f8f6fb3c2d7e0d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:46:21.533Z"
 }

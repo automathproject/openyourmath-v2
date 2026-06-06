@@ -1,26 +1,28 @@
 {
   "uuid": "a3Ec",
   "source_path": "crouzet/pcsi/09/a3Ec.tex",
-  "summary": "L'exercice demande de déterminer si deux suites numériques sont majorées, minorées ou bornées. La première suite est définie par un quotient linéaire, la seconde par un quotient polynomial.",
+  "summary": "L'exercice demande de déterminer si deux suites numériques sont majorées, minorées ou bornées. La première suite est définie par un quotient linéaire, la seconde par un quotient où le numérateur est un polynôme du second degré.",
   "concepts": [
     "suite numérique",
     "majoration",
     "minoration",
-    "bornes de suite",
+    "bornes d'une suite",
     "comparaison de suites",
-    "limite de suite"
+    "limite d'une suite",
+    "inégalité"
   ],
   "methods": [
-    "calcul de termes initiaux",
-    "étude du signe de différence",
+    "calcul des premiers termes",
+    "étude du signe d'une différence",
     "comparaison terme à terme",
     "simplification d'expression"
   ],
   "objects": [
-    "suite définie par quotient",
-    "suite polynomiale"
+    "suite (u_n)",
+    "suite (v_n)",
+    "suite (w_n)"
   ],
-  "content_hash": "0db8cf297aaf95a5b9bb4fa99938fd62a1f245b17967d78e9a5cf3c840c590b9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:33:53.791Z"
+  "content_hash": "6d6d22c84905096bc287cfcecb9d011d8706aa7dc5bb0181600939a5f36166bf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:51:22.529Z"
 }

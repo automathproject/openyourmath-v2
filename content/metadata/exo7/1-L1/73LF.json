@@ -1,31 +1,31 @@
 {
   "uuid": "73LF",
   "source_path": "exo7/1-L1/73LF.tex",
-  "summary": "L'exercice demande de montrer que l'ensemble E des matrices de la forme xI + yJ est un ℝ-espace vectoriel et de préciser sa dimension. Ensuite, il faut prouver que (E, +, ×) est un anneau commutatif, identifier les éléments inversibles de cet anneau, et résoudre plusieurs équations matricielles dans E.",
+  "summary": "L'exercice demande de montrer que l'ensemble E des matrices de la forme xI + yJ forme un ℝ-espace vectoriel et un anneau commutatif, puis de déterminer ses éléments inversibles et de résoudre trois équations matricielles dans E.",
   "concepts": [
     "espace vectoriel",
-    "dimension d'un espace vectoriel",
+    "sous-espace vectoriel",
     "famille libre",
-    "sous-anneau",
+    "dimension d'un espace vectoriel",
     "anneau commutatif",
     "élément inversible",
-    "système d'équations linéaires"
+    "système linéaire"
   ],
   "methods": [
     "vérification des axiomes d'espace vectoriel",
-    "calcul de la dimension",
-    "vérification des propriétés d'anneau",
-    "résolution de systèmes linéaires",
-    "calcul matriciel"
+    "vérification des axiomes d'anneau",
+    "résolution de système linéaire",
+    "calcul matriciel",
+    "utilisation de la liberté d'une famille"
   ],
   "objects": [
-    "matrices 2x2",
-    "famille de matrices (I, J)",
-    "sous-espace vectoriel",
-    "anneau commutatif",
-    "équations matricielles"
+    "matrice 2x2",
+    "espace vectoriel de matrices",
+    "anneau de matrices",
+    "élément inversible",
+    "équation matricielle"
   ],
-  "content_hash": "db42d37ec265394c9486f34409266c70d836b60f64110bf1fe758f42ddb758c8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:44:01.911Z"
+  "content_hash": "cec70e8caafb0e66e347110c5874da55ab7031a42e5c3349b7ec98e4ce2d9f18",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:56:50.896Z"
 }

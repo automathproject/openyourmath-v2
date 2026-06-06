@@ -1,27 +1,27 @@
 {
   "uuid": "k6Qz",
   "source_path": "exo7/8-L3/k6Qz.tex",
-  "summary": "Montrer l'existence d'éléments d'ordre 5 et 7 dans un groupe d'ordre 35. L'énoncé demande d'analyser les ordres possibles des éléments du groupe.",
+  "summary": "Montrer l'existence d'éléments d'ordre 5 et 7 dans un groupe d'ordre 35, en exploitant les propriétés des sous-groupes et les diviseurs de l'ordre du groupe.",
   "concepts": [
     "ordre d'un élément",
     "sous-groupe",
-    "groupe cyclique",
     "théorème de Lagrange",
-    "diviseurs d'ordre",
-    "groupe fini"
+    "diviseurs de l'ordre d'un groupe",
+    "groupe cyclique",
+    "théorème de Cauchy"
   ],
   "methods": [
-    "analyse des ordres possibles",
+    "analyse des diviseurs de l'ordre du groupe",
     "contradiction",
-    "utilisation des sous-groupes"
+    "utilisation des propriétés des sous-groupes d'ordre premier"
   ],
   "objects": [
     "groupe d'ordre 35",
     "élément d'ordre 5",
     "élément d'ordre 7",
-    "sous-groupes d'ordre 5"
+    "sous-groupes d'ordre 5 ou 7"
   ],
-  "content_hash": "63447ddb8d2c7b40551e2f13206eab21ccd1d3aac81ea69bfedfc3f15612aa8e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:15:48.293Z"
+  "content_hash": "5a27b2bc21fa4493b118bdeae41e540170d3af22ff43622c1c6f3639415d50e9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:30.490Z"
 }

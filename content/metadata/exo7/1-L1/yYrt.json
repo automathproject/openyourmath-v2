@@ -1,25 +1,25 @@
 {
   "uuid": "yYrt",
   "source_path": "exo7/1-L1/yYrt.tex",
-  "summary": "Montrer par récurrence sur n que la cardinalité de l'union de n ensembles est égale à une somme alternée de cardinalités d'intersections de ces ensembles.",
+  "summary": "Montrer par récurrence sur n que la cardinalité de l'union de n sous-ensembles d'un ensemble E est égale à une somme alternée de cardinalités d'intersections de ces sous-ensembles.",
   "concepts": [
     "principe d'inclusion-exclusion",
     "récurrence",
-    "cardinalité d'un ensemble",
+    "cardinal d'un ensemble",
     "union d'ensembles",
-    "intersection d'ensembles"
+    "intersection d'ensembles",
+    "somme alternée"
   ],
   "methods": [
     "récurrence",
     "principe d'inclusion-exclusion"
   ],
   "objects": [
-    "ensembles",
-    "cardinalités",
-    "unions",
-    "intersections"
+    "sous-ensembles d'un ensemble",
+    "cardinal d'union",
+    "intersections de sous-ensembles"
   ],
-  "content_hash": "0ba609c84af00c93b0122e9cbb0dcc35aca76c2890638304577e0a38d8c9f6ec",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:52:42.506Z"
+  "content_hash": "3f262a79b994239b90c9a4edbb3a3d5632b3e92f3b405bf05a447927c91ab6a4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:44.784Z"
 }

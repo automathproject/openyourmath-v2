@@ -8,20 +8,23 @@
     "matrice inversible",
     "famille libre",
     "base d'un espace vectoriel",
-    "matrice nulle"
+    "matrice nulle",
+    "propriété universelle"
   ],
   "methods": [
     "raisonnement par l'absurde",
-    "utilisation de propriétés du déterminant",
-    "construction explicite de contre-exemple"
+    "utilisation de la linéarité du déterminant",
+    "construction explicite de contre-exemple",
+    "analyse des colonnes d'une matrice"
   ],
   "objects": [
-    "matrice carrée",
+    "matrice carrée d'ordre n",
     "déterminant",
-    "matrice nulle",
-    "famille de vecteurs"
+    "matrice inversible",
+    "famille de vecteurs",
+    "base de l'espace vectoriel des colonnes"
   ],
-  "content_hash": "a49a1852f7270dad0df0d41418b7501323d005d127c96f8a00da5a30bd95655c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:20:02.169Z"
+  "content_hash": "c1a765a55650d88a8b7adc5842236a81fec7e2342e5df7e667081882ddd6062a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:35.030Z"
 }

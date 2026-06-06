@@ -1,30 +1,32 @@
 {
   "uuid": "xMLU",
   "source_path": "exo7/2-L1/xMLU.tex",
-  "summary": "Étude de la convergence de plusieurs suites définies par des relations de récurrence non linéaires. Chaque question propose une suite distincte avec des conditions initiales et des relations de récurrence variées.",
+  "summary": "Étudier la convergence de différentes suites définies par des relations de récurrence, avec des conditions initiales variées. Les suites présentent des comportements divers (convergence vers un point fixe, divergence, suite finie) selon les paramètres.",
   "concepts": [
     "suite numérique",
-    "convergence",
     "point fixe",
+    "convergence",
+    "divergence",
     "relation de récurrence",
     "théorème du point fixe",
     "limite de suite",
-    "suite monotone"
+    "fonction itérée"
   ],
   "methods": [
-    "étude de la monotonie",
+    "analyse de la monotonie",
     "recherche de points fixes",
     "estimation d'erreur",
-    "analyse de la convergence",
-    "comparaison de suites"
+    "étude de la limite",
+    "analyse des cas selon les paramètres"
   ],
   "objects": [
     "suite récurrente",
+    "fonction de récurrence",
     "point fixe",
     "limite de suite",
-    "suite monotone"
+    "paramètre de la suite"
   ],
-  "content_hash": "f46571cbdcbe32a65f2f3d64f6e184939e1f673a919985cdac9aabe8a96954e9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:42:16.434Z"
+  "content_hash": "5df7e367316587551158554e33d0a947cd9c28696636a7d86d5f4065be2c788f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:41.427Z"
 }

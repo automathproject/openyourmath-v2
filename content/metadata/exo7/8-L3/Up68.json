@@ -1,26 +1,29 @@
 {
   "uuid": "Up68",
   "source_path": "exo7/8-L3/Up68.tex",
-  "summary": "L'exercice demande de montrer que l'ordre de l'image d'un sous-groupe par un morphisme de groupes divise les ordres du sous-groupe et du groupe d'arrivée.",
+  "summary": "Soit un morphisme de groupes finis entre deux groupes G et H. On considère un sous-groupe G' de G. L'exercice demande de montrer que l'ordre de l'image de G' par le morphisme divise à la fois l'ordre de G' et l'ordre de H.",
   "concepts": [
     "morphisme de groupes",
     "sous-groupe",
     "ordre d'un groupe",
     "image d'un morphisme",
-    "noyau d'un morphisme",
+    "théorème du quotient",
+    "sous-groupe distingué",
     "isomorphisme de groupes"
   ],
   "methods": [
-    "utilisation des propriétés des morphismes de groupes",
-    "calcul d'ordre de sous-groupes",
+    "utilisation du théorème du quotient",
+    "calcul d'ordre de sous-groupe",
+    "analyse de l'image d'un morphisme",
     "comparaison des ordres"
   ],
   "objects": [
     "morphisme de groupes",
     "sous-groupe",
-    "groupe quotient"
+    "groupe quotient",
+    "image d'un morphisme"
   ],
-  "content_hash": "a222ce98271750900c092555fab8f967232736a94110637bad3eb67c211e6c31",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:59:21.987Z"
+  "content_hash": "41e70f0bc1a3980bf64e0b5359708fb563384088e9bc59a2fd5e3652ddb34604",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:55.678Z"
 }

@@ -1,34 +1,35 @@
 {
   "uuid": "s0JY",
   "source_path": "exo7/6-L2/s0JY.tex",
-  "summary": "L'exercice demande de déterminer et construire la développée de trois courbes planes données par leurs équations paramétriques ou cartésiennes. La première courbe est une spirale logarithmique, la deuxième une cycloïde, et la troisième une cubique.",
+  "summary": "L'exercice demande de déterminer et construire la développée de trois courbes planes paramétrées ou cartésiennes : une courbe logarithmique, une cycloïde et une cubique. Le corrigé montre l'application de propriétés métriques comme la courbure et le rayon de courbure.",
   "concepts": [
     "courbe paramétrée",
-    "développée d'une courbe",
     "courbure",
     "rayon de courbure",
-    "tangente",
-    "normale",
+    "développée d'une courbe",
+    "symétrie",
     "changement de paramètre",
-    "symétrie"
+    "chaînette",
+    "cycloïde"
   ],
   "methods": [
     "calcul de la dérivée",
     "détermination du vecteur tangent",
     "calcul du rayon de courbure",
-    "construction de la développée",
     "changement de variable",
-    "utilisation des symétries"
+    "symétrie par réflexion",
+    "paramétrisation de la développée"
   ],
   "objects": [
-    "courbe spirale logarithmique",
-    "cycloïde",
-    "cubique",
-    "centre de courbure",
+    "courbe paramétrée",
     "vecteur tangent",
-    "vecteur normal"
+    "vecteur normal",
+    "rayon de courbure",
+    "développée",
+    "chaînette",
+    "cycloïde"
   ],
-  "content_hash": "55050107b211fc70b4995e981759b26a53b9d9723b616e588cd66efc90c4598e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:08:19.859Z"
+  "content_hash": "3338b1eee6d737c2c1ec31884af3feb2c3e5370507a714797884290e694a0376",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:39:28.462Z"
 }

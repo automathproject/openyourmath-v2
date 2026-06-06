@@ -1,28 +1,29 @@
 {
   "uuid": "qAIX",
   "source_path": "exo7/1-L1/qAIX.tex",
-  "summary": "Résoudre cinq équations du second degré à coefficients complexes en trouvant les racines dans ℂ. Les équations incluent des cas avec discriminant négatif, des formes factorisées et des coefficients complexes.",
+  "summary": "Résoudre cinq équations du second degré à coefficients complexes dans l'ensemble des nombres complexes. Les équations incluent des cas particuliers et des formes factorisables.",
   "concepts": [
     "équation du second degré à coefficients complexes",
     "discriminant",
     "racines complexes conjuguées",
-    "forme factorisée",
-    "module et argument",
-    "identité remarquable"
+    "factorisation de polynômes",
+    "module et argument d'un nombre complexe",
+    "forme exponentielle des nombres complexes"
   ],
   "methods": [
     "calcul du discriminant",
-    "factorisation",
-    "identification de racines évidentes",
-    "utilisation des identités remarquables"
+    "résolution par factorisation",
+    "identification de carrés parfaits",
+    "utilisation de la forme exponentielle"
   ],
   "objects": [
     "équation du second degré",
-    "racines complexes",
+    "nombre complexe",
     "discriminant",
-    "coefficient complexe"
+    "racines complexes",
+    "polynôme de degré 2"
   ],
-  "content_hash": "74d8504a8b3805560b0ffe5b704700f46df6af36291da84ce24658fdd25273df",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:02:14.558Z"
+  "content_hash": "7a6d94f65c3959186298e5109c81cf13c381105a1fe8f8046c1b69bbf6cf1f6a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:13.216Z"
 }

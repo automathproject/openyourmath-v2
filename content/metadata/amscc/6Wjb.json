@@ -1,28 +1,29 @@
 {
   "uuid": "6Wjb",
   "source_path": "amscc/6Wjb.tex",
-  "summary": "L'exercice demande de déterminer la loi conjointe d'un couple de variables aléatoires discrètes (X, Y) où X indique si un dé sort 6 et Y représente le gain associé à une boule tirée d'une urne. Il faut ensuite en déduire les lois marginales et vérifier l'indépendance des variables.",
+  "summary": "L'exercice demande de déterminer la loi conjointe d'un couple de variables aléatoires discrètes (X, Y), où X indique si un dé sort 6 et Y représente le gain obtenu en fonction de l'urne tirée. Il faut ensuite en déduire les lois marginales et vérifier l'indépendance des variables.",
   "concepts": [
+    "variable aléatoire discrète",
     "loi conjointe",
     "loi marginale",
     "indépendance de variables aléatoires",
-    "variable aléatoire discrète",
     "formule de Bayes",
     "loi de Bernoulli",
     "probabilité conditionnelle"
   ],
   "methods": [
-    "calcul de probabilités conjointes",
-    "vérification d'indépendance",
-    "somme de probabilités conditionnelles"
+    "calcul de probabilités conditionnelles",
+    "construction de loi conjointe",
+    "vérification d'indépendance par égalité des probabilités",
+    "somme de probabilités pour loi marginale"
   ],
   "objects": [
-    "variable aléatoire discrète",
-    "loi conjointe",
-    "loi marginale",
-    "couple de variables aléatoires"
+    "variable aléatoire binaire",
+    "variable aléatoire de gain",
+    "tableau de probabilités conjointes",
+    "loi de Bernoulli"
   ],
-  "content_hash": "3fef328eb8e5738fb1d20887e09174dfcbeab950608300259cf5cf1616e35f2d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:17:03.972Z"
+  "content_hash": "981a9961855c722e3f2213f5795c1b46ec3f5197a895d36b036d6612f7e2c646",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:01:04.366Z"
 }

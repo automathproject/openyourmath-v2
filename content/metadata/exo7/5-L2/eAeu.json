@@ -1,29 +1,31 @@
 {
   "uuid": "eAeu",
   "source_path": "exo7/5-L2/eAeu.tex",
-  "summary": "Calculer deux intégrales impliquant la fonction ln(x)/(1+x²) : une sur l'intervalle [0,1] et une sur [0,+∞[. L'énoncé demande d'évaluer ces intégrales en exploitant leurs propriétés.",
+  "summary": "Calculer deux intégrales impliquant la fonction ln(x)/(1+x²) : l'une sur l'intervalle [0,1], l'autre sur [0,+∞[. L'énoncé demande d'évaluer ces intégrales en exploitant des propriétés de convergence et des techniques d'intégration.",
   "concepts": [
     "intégrabilité",
+    "convergence uniforme",
     "intégration terme à terme",
+    "développement en série",
     "intégration par parties",
-    "changement de variable",
-    "convergence de série numérique",
-    "fonction continue"
+    "comparaison asymptotique",
+    "série numérique"
   ],
   "methods": [
-    "développement en série",
-    "majoration",
+    "développement en série entière",
     "intégration par parties",
-    "changement de variable",
-    "étude de l'intégrabilité"
+    "comparaison asymptotique",
+    "passage à la limite sous le signe intégral",
+    "majoration d'intégrale"
   ],
   "objects": [
-    "intégrale impropre",
     "fonction ln(x)/(1+x²)",
     "série numérique",
-    "fonction continue"
+    "intégrale impropre",
+    "développement en série de fonctions",
+    "fonction bornée"
   ],
-  "content_hash": "7b13e51a26882e118f59062e1e2fa59e15c249f8ed48feaa4da256a73e5da1a0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:59:39.629Z"
+  "content_hash": "98951bbc2434cc5a48f222bd84f0b36741f71b9433b9ca9c0fbea41db4bd76fe",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:09:27.937Z"
 }

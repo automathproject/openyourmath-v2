@@ -1,30 +1,31 @@
 {
   "uuid": "aUn2",
   "source_path": "amscc/aUn2.tex",
-  "summary": "L'exercice demande de tester l'hypothèse que l'épaisseur moyenne des pièces métalliques est conforme à l'objectif de 5 mm, à partir d'un échantillon de 50 pièces, en utilisant un intervalle de confiance à 99%. Il s'agit d'un test d'hypothèses bilatéral avec une hypothèse nulle de moyenne égale à 5 mm.",
+  "summary": "Un échantillon de 50 pièces métalliques est analysé pour vérifier si l'épaisseur moyenne est conforme à l'objectif de 5 mm, avec un seuil de confiance de 99%. L'exercice demande de conclure sur la conformité et de déterminer le risque de première espèce nécessaire pour changer la décision.",
   "concepts": [
-    "test d'hypothèses",
-    "intervalle de confiance",
+    "test d'hypothèse",
     "hypothèse nulle",
     "risque de première espèce",
+    "intervalle de confiance",
+    "estimation ponctuelle",
     "loi normale",
     "statistique de test"
   ],
   "methods": [
-    "calcul de la moyenne échantillonnale",
-    "calcul de la variance échantillonnale",
+    "calcul de la moyenne échantillon",
+    "calcul de la variance échantillon",
     "standardisation",
     "test bilatéral",
     "lecture de table de la loi normale"
   ],
   "objects": [
-    "échantillon",
-    "moyenne échantillonnale",
-    "variance échantillonnale",
+    "moyenne échantillon",
+    "variance échantillon",
+    "variable aléatoire normale",
     "statistique de test Z",
-    "valeur critique"
+    "échantillon de taille 50"
   ],
-  "content_hash": "411e01ccb0b9cb330592f70bb29d14d7324c8d553e88ed82bb2ab81476ee1d52",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:45:24.958Z"
+  "content_hash": "af5cc757ec1167ed4025f82b448e2c1d0b7063c5b797d68adf45023c7dde80c1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:07:33.599Z"
 }

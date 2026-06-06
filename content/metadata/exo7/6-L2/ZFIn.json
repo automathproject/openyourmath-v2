@@ -1,27 +1,28 @@
 {
   "uuid": "ZFIn",
   "source_path": "exo7/6-L2/ZFIn.tex",
-  "summary": "L'exercice demande de déterminer le barycentre de deux points massiques dans le plan affine euclidien, puis d'étudier une relation métrique impliquant ces points et leur barycentre. Il s'agit d'appliquer les propriétés des barycentres et des distances dans un repère orthonormé.",
+  "summary": "L'exercice demande de déterminer le barycentre de deux points massiques dans le plan affine euclidien, puis d'étudier des relations métriques impliquant ces points et leur barycentre. Il s'agit ensuite de caractériser géométriquement un ensemble de points vérifiant une condition de distance.",
   "concepts": [
     "barycentre",
-    "distance euclidienne",
-    "repère orthonormé",
+    "produit scalaire",
+    "distance dans le plan euclidien",
     "géométrie affine",
-    "géométrie euclidienne",
-    "produit scalaire"
+    "relation métrique",
+    "cercle"
   ],
   "methods": [
     "calcul de coordonnées barycentriques",
-    "développement d'expression vectorielle",
-    "identification de lieu géométrique"
+    "développement d'identité remarquable",
+    "utilisation de la relation de Chasles",
+    "résolution d'équation vectorielle"
   ],
   "objects": [
     "points massiques",
     "barycentre",
     "vecteurs de position",
-    "cercle"
+    "cercle de centre donné"
   ],
-  "content_hash": "0f2f10b75630f8e1c77dfad670d978688978a2e508bf8d0957a845781e928f8a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:44:48.373Z"
+  "content_hash": "8827795ec62a6b9ae670ba965d948721baf06fa942aed6368e493b273b6535e8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:17.630Z"
 }

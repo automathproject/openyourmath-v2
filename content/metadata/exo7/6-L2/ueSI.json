@@ -1,28 +1,31 @@
 {
   "uuid": "ueSI",
   "source_path": "exo7/6-L2/ueSI.tex",
-  "summary": "L'exercice demande de calculer la distance entre deux droites concourantes dans un espace affine euclidien de dimension 3. Il utilise des décompositions vectorielles et des propriétés de produits scalaires pour établir des conditions nécessaires et suffisantes sur la distance minimale entre les droites.",
+  "summary": "L'exercice demande de calculer la distance entre deux droites concourantes dans un espace affine euclidien de dimension 3. Il explore les propriétés géométriques et algébriques de cette distance, notamment en utilisant des décompositions vectorielles et des conditions orthogonales.",
   "concepts": [
     "espace affine euclidien",
-    "droites concourantes",
-    "produit scalaire",
+    "distance entre droites",
     "décomposition vectorielle",
-    "distance minimale",
-    "orthogonalité"
+    "orthogonalité",
+    "produit scalaire",
+    "déterminant de Gram",
+    "sous-espace vectoriel"
   ],
   "methods": [
     "décomposition orthogonale",
-    "calcul de distance",
-    "utilisation de la condition nécessaire et suffisante",
-    "calcul de déterminant de Gram"
+    "calcul de distance minimale",
+    "utilisation du produit scalaire",
+    "calcul de déterminant de Gram",
+    "résolution de système d'équations linéaires"
   ],
   "objects": [
-    "droites affines",
+    "droites concourantes",
     "vecteurs directeurs",
-    "points des droites",
-    "produits scalaires"
+    "vecteurs orthogonaux",
+    "matrice de Gram",
+    "système d'équations cartésiennes"
   ],
-  "content_hash": "8c379c99a7366047b87327efa1a0c171e3eafef90d6b1d78e101404f4074ab4e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:14:02.729Z"
+  "content_hash": "6d3f90f593db0edfb4e392c3304167f6b240f6a80041aa5011c9ab4aee34c57f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:52:44.490Z"
 }

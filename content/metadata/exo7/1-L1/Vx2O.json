@@ -1,29 +1,33 @@
 {
   "uuid": "Vx2O",
   "source_path": "exo7/1-L1/Vx2O.tex",
-  "summary": "L'exercice demande de déterminer le noyau et l'image d'une application linéaire définie sur ℝ⁴, en utilisant le théorème du rang.",
+  "summary": "Déterminer le noyau et l'image d'un endomorphisme de ℝ⁴ défini par son action sur la base canonique. L'exercice applique le théorème du rang pour caractériser l'image.",
   "concepts": [
-    "application linéaire",
+    "endomorphisme",
     "noyau d'une application linéaire",
     "image d'une application linéaire",
     "théorème du rang",
     "base d'un espace vectoriel",
-    "dimension d'un espace vectoriel"
+    "système d'équations linéaires",
+    "dimension d'un espace vectoriel",
+    "sous-espace vectoriel"
   ],
   "methods": [
-    "résolution de système d'équations linéaires",
-    "détermination de la dimension du noyau",
-    "détermination de la dimension de l'image",
-    "construction d'une base de l'image"
+    "résolution de système linéaire",
+    "détermination de base par combinaison linéaire",
+    "application du théorème du rang",
+    "calcul de noyau par annulation",
+    "caractérisation de l'image par résolution"
   ],
   "objects": [
-    "application linéaire",
-    "espace vectoriel ℝ⁴",
-    "noyau",
-    "image",
-    "base vectorielle"
+    "endomorphisme de ℝ⁴",
+    "base canonique de ℝ⁴",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "système d'équations linéaires",
+    "vecteurs générateurs"
   ],
-  "content_hash": "eb4d1f9c447c77f0c94041154bd7ed8c7e8e6a84636987deb669bb83a8399e85",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:36:56.425Z"
+  "content_hash": "c97089dc2f503110050f559b58ccdfb645f8f39633b97094a4afd8dfa5e38678",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:41.755Z"
 }

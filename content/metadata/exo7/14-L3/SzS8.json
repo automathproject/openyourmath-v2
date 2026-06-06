@@ -1,32 +1,31 @@
 {
   "uuid": "SzS8",
   "source_path": "exo7/14-L3/SzS8.tex",
-  "summary": "L'exercice étudie les propriétés des espaces L^p de fonctions intégrables selon la mesure de Lebesgue sur ℝⁿ. Il demande de déterminer les conditions d'appartenance de fonctions spécifiques à ces espaces, de construire des exemples de fonctions dans L^q mais pas L^p et réciproquement, et d'analyser les relations entre ces espaces via des inégalités et des propriétés de convergence.",
+  "summary": "L'exercice étudie l'appartenance de fonctions spécifiques à des espaces L^p, puis explore les propriétés des intersections d'espaces L^p et L^q. Il demande de déterminer les conditions sur les paramètres α et β pour que des fonctions données soient intégrables en norme L^p, et d'établir des relations entre les normes dans les espaces d'intersection.",
   "concepts": [
     "espace L^p",
-    "mesure de Lebesgue",
-    "intégrabilité",
+    "intégrabilité en norme L^p",
     "inégalité de Hölder",
-    "convergence dans L^p",
-    "norme de Banach",
-    "sous-espace vectoriel",
-    "fonction intégrable"
+    "convergence dans les espaces de Banach",
+    "norme conjuguée",
+    "sous-espace de Banach",
+    "convergence presque partout"
   ],
   "methods": [
-    "calcul d'intégrale",
+    "calcul d'intégrales impropres",
     "application de l'inégalité de Hölder",
-    "analyse de convergence",
     "optimisation de paramètres",
-    "construction explicite d'exemples"
+    "utilisation de la convergence de suites de Cauchy",
+    "décomposition en sous-intervalles"
   ],
   "objects": [
     "fonction intégrable",
-    "espace L^p",
     "norme L^p",
+    "espace d'intersection L^p ∩ L^q",
     "suite de Cauchy",
-    "fonction de ℝⁿ dans ℂ"
+    "fonction de poids"
   ],
-  "content_hash": "3ddc3c713cfc0810afa95bb0388b9c38661ef43cbd1c2c6565dd58aec1a01e6d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:54:46.000Z"
+  "content_hash": "5c1b310eb5f184ef1e7bebbfc6df95956a55faf296e4f6c705183aa3ae8c2fca",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:43:24.720Z"
 }

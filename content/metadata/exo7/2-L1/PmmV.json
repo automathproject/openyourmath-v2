@@ -1,27 +1,29 @@
 {
   "uuid": "PmmV",
   "source_path": "exo7/2-L1/PmmV.tex",
-  "summary": "L'exercice demande de déterminer la nature de convergence d'une série numérique dont le terme général est une fonction sinus impliquant une suite exponentielle.",
+  "summary": "L'exercice demande de déterminer la nature (convergence ou divergence) d'une série numérique dont le terme général est une fonction sinus impliquant une suite exponentielle. Le contexte mathématique repose sur des propriétés trigonométriques et des suites réelles.",
   "concepts": [
-    "série numérique",
-    "convergence absolue",
-    "suite exponentielle",
+    "séries numériques",
+    "convergence de séries",
+    "fonction sinus",
+    "suites réelles",
     "formule du binôme de Newton",
     "conjugué algébrique",
-    "approximation affine"
+    "approximation asymptotique"
   ],
   "methods": [
-    "développement en série entière",
-    "étude de la limite du terme général",
-    "comparaison avec une série géométrique"
+    "développement binomial",
+    "calcul de conjugué",
+    "approximation de termes dominants",
+    "comparaison avec série géométrique"
   ],
   "objects": [
-    "terme général d'une série",
-    "fonction sinus",
-    "suite $(2+\\sqrt{3})^n$",
-    "suite $(2-\\sqrt{3})^n$"
+    "série numérique",
+    "terme général",
+    "suite exponentielle",
+    "fonction trigonométrique"
   ],
-  "content_hash": "9e303abc3da2f16a773131492b09faca4f6024d90663474e8e22a6cdb87fa984",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:16:18.275Z"
+  "content_hash": "6d26f99f076d64c7e155e7b9f2d82ed9fef89e218fad88f90cf9f74210d5c1f6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:12:00.474Z"
 }

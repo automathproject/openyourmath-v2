@@ -1,7 +1,7 @@
 {
   "uuid": "3IbW",
   "source_path": "exo7/6-L2/3IbW.tex",
-  "summary": "L'exercice demande de déterminer l'orthoptique d'une parabole, c'est-à-dire l'ensemble des points du plan par lesquels passent deux tangentes à la parabole qui sont perpendiculaires.",
+  "summary": "L'exercice demande de déterminer l'orthoptique d'une parabole, c'est-à-dire l'ensemble des points du plan par lesquels passent deux tangentes à la parabole qui sont perpendiculaires entre elles.",
   "concepts": [
     "parabole",
     "tangente à une parabole",
@@ -9,7 +9,8 @@
     "directrice d'une parabole",
     "homothétie",
     "rectangle",
-    "équation cartésienne"
+    "équation cartésienne d'une parabole",
+    "tangente au sommet"
   ],
   "methods": [
     "construction géométrique",
@@ -25,7 +26,7 @@
     "rectangle",
     "équation cartésienne"
   ],
-  "content_hash": "50e553e83b31d8631f98d734af055eab95acddcea13a6009920544c3c4b47c31",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:01:02.085Z"
+  "content_hash": "a3a74ccf7669297d7c3e672330266e43d7ffc6d9fd79b47e4920c43c70157749",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:55.598Z"
 }

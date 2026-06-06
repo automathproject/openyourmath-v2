@@ -1,27 +1,27 @@
 {
   "uuid": "xlOX",
   "source_path": "exo7/6-L2/xlOX.tex",
-  "summary": "Dans un triangle isocèle ABC en A, on considère les pieds des hauteurs A' et B', puis les milieux I et J de segments construits à partir de ces points. L'exercice demande de prouver que les droites (BI) et (AJ) sont orthogonales.",
+  "summary": "Dans un triangle isocèle ABC en A, on considère les pieds des hauteurs A' et B' issus de A et B, puis les milieux I et J de segments construits à partir de ces hauteurs. L'exercice demande de prouver l'orthogonalité des droites (BI) et (AJ).",
   "concepts": [
     "similitude",
     "triangle isocèle",
     "hauteur d'un triangle",
     "milieu d'un segment",
-    "orthogonalité de droites"
+    "orthogonalité de droites",
+    "géométrie affine euclidienne"
   ],
   "methods": [
-    "construction géométrique",
-    "propriétés des similitudes",
+    "identification de similitudes",
+    "transformation géométrique",
     "analyse des angles"
   ],
   "objects": [
     "triangle isocèle",
-    "hauteurs",
-    "segments",
-    "milieux",
-    "droites"
+    "hauteurs d'un triangle",
+    "milieux de segments",
+    "droites du plan"
   ],
-  "content_hash": "73cbf229c80db9cf7f4561821da62974137ab0f32511112b70d5ce62e8b682ae",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:03:03.399Z"
+  "content_hash": "871d1016b55ad732f12cb79e30224135541cb3d5b96a4a4acb859cf2d36ae54d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:51.118Z"
 }

@@ -1,28 +1,28 @@
 {
   "uuid": "uZO2",
   "source_path": "exo7/4-L2/uZO2.tex",
-  "summary": "Factoriser un déterminant d'ordre 4 à coefficients symétriques dépendant de variables X, a, b, c. L'énoncé demande de trouver les facteurs linéaires du polynôme associé au déterminant.",
+  "summary": "Factoriser le déterminant d'une matrice symétrique 4x4 à coefficients variables X, a, b, c, où a, b, c sont deux à deux distincts.",
   "concepts": [
     "déterminant",
     "polynôme unitaire",
     "factorisation",
-    "divisibilité",
+    "divisibilité polynomiale",
+    "linéarité par rapport à une colonne",
     "racines d'un polynôme",
-    "linéarité",
-    "symétrie"
+    "continuité par rapport à un paramètre"
   ],
   "methods": [
     "opérations sur les colonnes",
-    "remplacement de colonnes",
-    "factorisation par racines",
-    "analyse de cas"
+    "linéarité du déterminant",
+    "recherche de racines évidentes",
+    "factorisation par continuité"
   ],
   "objects": [
-    "déterminant 4x4",
+    "matrice symétrique",
     "polynôme de degré 4",
     "facteurs linéaires"
   ],
-  "content_hash": "9ccbdfad12b518d61ee3da1745715d6737d4efb60ad8b0830daa21bd3608bb16",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:18:21.068Z"
+  "content_hash": "528d595e039ad1d252c2f6f54a44e04e2979d0ae347e1e927aa61c62f0f3abd6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:41:26.767Z"
 }

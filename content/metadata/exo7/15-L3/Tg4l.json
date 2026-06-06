@@ -1,27 +1,29 @@
 {
   "uuid": "Tg4l",
   "source_path": "exo7/15-L3/Tg4l.tex",
-  "summary": "L'exercice demande de démontrer trois propriétés de la connexité dans les espaces métriques : une caractérisation par les applications continues à valeurs dans {0,1}, la stabilité par inclusion intermédiaire, et la stabilité par union d'une suite d'ensembles connexes deux à deux non disjoints.",
+  "summary": "L'exercice demande de démontrer trois propriétés fondamentales sur la connexité dans un espace métrique : l'équivalence entre connexité et absence d'application continue non constante vers {0,1}, la connexité des parties intermédiaires entre une partie connexe et son adhérence, et la connexité de l'union d'une suite de parties connexes à intersection non vide.",
   "concepts": [
+    "espace métrique",
     "connexité",
     "application continue",
-    "fermeture d'un ensemble",
+    "adhérence d'un ensemble",
     "suite d'ensembles",
-    "propriété topologique"
+    "propriété récursive"
   ],
   "methods": [
-    "caractérisation par les applications constantes",
-    "restriction d'application",
-    "limite de suite",
+    "raisonnement par l'absurde",
+    "utilisation de la définition de la continuité",
+    "passage à la limite",
     "récurrence"
   ],
   "objects": [
-    "espace métrique",
-    "ensemble connexe",
-    "application continue",
-    "suite d'ensembles connexes"
+    "espace métrique X",
+    "application f:X→{0,1}",
+    "partie connexe A",
+    "adhérence A̅",
+    "suite de parties connexes (A_n)"
   ],
-  "content_hash": "07436eaeaa2d989a0bfeec6b4317b73410eb60e1625c7af5b8a602b23536ee24",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:10:39.773Z"
+  "content_hash": "29f20629b18e1686f0b10115d1066f82a8de37129d59b7b70c3e1917d0a0f7e0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:52.135Z"
 }

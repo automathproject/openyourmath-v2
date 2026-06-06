@@ -1,25 +1,26 @@
 {
   "uuid": "mD0u",
   "source_path": "exo7/2-L1/mD0u.tex",
-  "summary": "Calcul de trois intégrales définies sur des intervalles donnés, impliquant des fonctions trigonométriques et des radicaux.",
+  "summary": "Calculer trois intégrales définies impliquant des fonctions trigonométriques et des racines carrées. Les intégrales présentent des structures variées nécessitant des techniques d'intégration adaptées.",
   "concepts": [
-    "intégration par parties",
+    "intégrale définie",
     "fonctions trigonométriques",
-    "intégrales définies",
-    "changement de variable",
-    "intégrales rationnelles"
+    "fonctions rationnelles",
+    "intégration de fonctions composées",
+    "simplification d'intégrandes"
   ],
   "methods": [
     "intégration par parties",
     "changement de variable",
-    "simplification algébrique"
+    "rationalisation",
+    "décomposition en fractions partielles"
   ],
   "objects": [
-    "intégrale définie",
-    "fonction trigonométrique",
-    "radical"
+    "intégrale de fonction trigonométrique",
+    "intégrale de fonction rationnelle",
+    "intégrale de fonction composée"
   ],
-  "content_hash": "e25b7f00efbe32be537ce776fdf798d52b40a9c1cea0d688ac6c652cc80b4451",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:45:55.834Z"
+  "content_hash": "219b729bcc9b3e44aea31395d73407c08824c3b617289284b6cac928a3455f87",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:13.463Z"
 }

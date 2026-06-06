@@ -1,0 +1,32 @@
+{
+  "uuid": "pK4m",
+  "source_path": "amscc/pK4m.tex",
+  "summary": "L'exercice demande de calculer pas à pas l'état caché d'un réseau de neurones récurrents (RNN) simple à partir d'une séquence d'entrées, en appliquant la fonction d'activation tanh. Il s'agit ensuite d'en déduire les sorties et d'analyser qualitativement l'évolution de l'état caché. Une question bonus explore l'impact du remplacement de tanh par la fonction identité.",
+  "concepts": [
+    "réseau de neurones récurrents",
+    "fonction d'activation",
+    "fonction tanh",
+    "propriété impaire",
+    "récurrence linéaire",
+    "moyenne exponentielle",
+    "matrice diagonale",
+    "séquence temporelle"
+  ],
+  "methods": [
+    "calcul itératif de récurrence",
+    "application de fonction d'activation",
+    "développement de série",
+    "analyse de structure antisymétrique",
+    "calcul de combinaison linéaire"
+  ],
+  "objects": [
+    "état caché",
+    "matrice de poids",
+    "séquence d'entrée",
+    "fonction d'activation",
+    "sortie du réseau"
+  ],
+  "content_hash": "f9b107cb2f09c37b0d9191a7e10ed777b030018d5d789b804083d5ecb90daff9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:05:41.226Z"
+}

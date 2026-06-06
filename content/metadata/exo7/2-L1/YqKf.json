@@ -5,18 +5,20 @@
   "concepts": [
     "densité d'un ensemble",
     "croissance stricte d'une fonction",
-    "fonction cube",
-    "propriété de densité de Q dans R"
+    "fonction puissance",
+    "propriétés de Q dans R"
   ],
   "methods": [
     "utilisation de la densité de Q dans R",
-    "argument par croissance stricte"
+    "argument par epsilon",
+    "application de la croissance stricte"
   ],
   "objects": [
     "ensemble des cubes de rationnels",
-    "fonction t → t³"
+    "fonction t^3",
+    "réels positifs"
   ],
-  "content_hash": "05ff19eb9c36ffd07def409f15061fe3d94bd30a3ab208fefb178fb460587e7e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:57:09.085Z"
+  "content_hash": "4761cbd99097d2b3897e0e3226169c1f87c03617e439e4da9084712ceee31b50",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:15.315Z"
 }

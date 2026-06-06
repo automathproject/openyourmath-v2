@@ -8,20 +8,23 @@
     "équation cartésienne",
     "surface de révolution",
     "invariance par rotation",
-    "isométrie"
+    "isométrie",
+    "polynôme du second degré"
   ],
   "methods": [
-    "analyse des symétries",
-    "réécriture en termes de polynômes symétriques",
-    "utilisation des propriétés des rotations"
+    "utilisation des fonctions symétriques",
+    "analyse de l'invariance par rotation",
+    "transformation d'équation cartésienne",
+    "propriétés des isométries"
   ],
   "objects": [
     "équation du second degré",
-    "surface quadratique",
-    "axe de révolution",
-    "rotation"
+    "surface de révolution",
+    "droite d'axe",
+    "rotation",
+    "point de coordonnées"
   ],
-  "content_hash": "b8d71228af87e287891d1233b8c753ab98230e5ae18b7e3db420722cb9040fae",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:07:39.142Z"
+  "content_hash": "0624086db7ef37bd0e238ae34f75b493e5e319ebb4b01758b03711f71ca37d86",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:37:34.299Z"
 }

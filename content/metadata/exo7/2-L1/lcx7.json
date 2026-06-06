@@ -1,25 +1,28 @@
 {
   "uuid": "lcx7",
   "source_path": "exo7/2-L1/lcx7.tex",
-  "summary": "L'exercice demande de démontrer trois propriétés de la fonction partie entière E(x) sur les réels. La première propriété concerne l'additivité de la fonction partie entière, la deuxième propriété est une inégalité impliquant la somme de deux parties entières, et la troisième propriété est une inégalité plus complexe impliquant la somme de trois parties entières.",
+  "summary": "L'exercice demande de démontrer trois propriétés de la fonction partie entière E(x) sur les réels : l'additivité par translation, une inégalité additive, et une inégalité combinant deux variables.",
   "concepts": [
     "fonction partie entière",
     "inégalités",
-    "propriétés des entiers",
-    "découpage en cas",
-    "majoration/minoration"
+    "propriétés arithmétiques",
+    "entiers relatifs",
+    "majoration/minoration",
+    "partition de cas"
   ],
   "methods": [
-    "découpage en cas",
-    "majoration/minoration",
-    "utilisation de la définition de la partie entière"
+    "découpage en intervalles",
+    "analyse de cas",
+    "utilisation des propriétés de la partie entière",
+    "inégalités élémentaires"
   ],
   "objects": [
     "fonction partie entière",
     "réels",
-    "entiers relatifs"
+    "entiers relatifs",
+    "inégalités"
   ],
-  "content_hash": "6c5b202c0b4c260795d505bca9fcc6e7fffb607093449e80f916d9a93b3be89c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:01:54.114Z"
+  "content_hash": "791c0dededeaaf5a1da6268204817d9660bc75d3421485feb426ddd6a50919a6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:02:22.387Z"
 }

@@ -1,27 +1,28 @@
 {
   "uuid": "ElRu",
   "source_path": "exo7/16-L3/ElRu.tex",
-  "summary": "L'exercice demande de montrer que l'application linéaire fractionnaire associée à une matrice de SL(2,ℝ) préserve le demi-plan de Poincaré ℍ, puis d'établir qu'elle permet d'envoyer i sur tout point de ℍ.",
+  "summary": "L'exercice demande de montrer que l'application linéaire fractionnaire associée à une matrice de SL(2,ℝ) envoie le demi-plan de Poincaré ℍ sur lui-même, puis d'établir qu'il existe une telle matrice envoyant i sur tout point z de ℍ.",
   "concepts": [
     "application linéaire fractionnaire",
     "demi-plan de Poincaré",
     "matrice de SL(2,ℝ)",
-    "partie imaginaire",
+    "partie imaginaire d'un nombre complexe",
     "conjugaison complexe",
-    "déterminant"
+    "déterminant d'une matrice"
   ],
   "methods": [
     "calcul de la partie imaginaire",
-    "manipulation d'équations complexes",
-    "construction explicite de matrice"
+    "manipulation de fractions complexes",
+    "construction explicite de matrice",
+    "vérification de la condition de déterminant"
   ],
   "objects": [
     "matrice 2x2",
-    "application fractionnaire",
-    "demi-plan de Poincaré",
-    "nombre complexe"
+    "application de Möbius",
+    "nombre complexe dans ℍ",
+    "élément i du demi-plan supérieur"
   ],
-  "content_hash": "2789e387d900d5eda1d32eb9e51941e8a05a269eda16754ece8378fe1709948b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:16:55.457Z"
+  "content_hash": "9a5ba5e28522c5221d16442bcf52544c5ac707128cdaf2b8564b622930d1930c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:35:01.640Z"
 }

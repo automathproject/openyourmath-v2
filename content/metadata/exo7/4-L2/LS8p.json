@@ -1,19 +1,19 @@
 {
   "uuid": "LS8p",
   "source_path": "exo7/4-L2/LS8p.tex",
-  "summary": "Montrer une inégalité sur le déterminant d'un n-uplet de vecteurs dans une base orthonormée d'un espace euclidien, et déterminer les cas d'égalité.",
+  "summary": "Dans un espace euclidien de dimension finie, montrer que le module du déterminant d'un n-uplet de vecteurs est majoré par le produit de leurs normes. Étudier les cas d'égalité.",
   "concepts": [
     "espace euclidien",
     "base orthonormée",
     "déterminant",
+    "inégalité de Hadamard",
+    "inégalité de Cauchy-Schwarz",
     "famille libre",
     "famille liée",
-    "orthonormalisation de Schmidt",
-    "inégalité de Cauchy-Schwarz",
-    "inégalité de Hadamard"
+    "orthonormalisation de Schmidt"
   ],
   "methods": [
-    "orthonormalisation",
+    "orthonormalisation de Schmidt",
     "calcul de déterminant",
     "application de l'inégalité de Cauchy-Schwarz"
   ],
@@ -21,9 +21,10 @@
     "espace euclidien",
     "base orthonormée",
     "n-uplet de vecteurs",
-    "famille de vecteurs"
+    "déterminant",
+    "norme de vecteur"
   ],
-  "content_hash": "b0e4590fd4bcb29286af07289cdd021764bb3fd416282407cfc4399e579fc4a8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:18:01.461Z"
+  "content_hash": "ca1097a47abe8573ece661c84dbfb0130a4f80bfb787cdd3265c47d8b1b2a793",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:14.038Z"
 }

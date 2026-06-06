@@ -1,31 +1,32 @@
 {
   "uuid": "5Ur1",
   "source_path": "exo7/4-L2/5Ur1.tex",
-  "summary": "Calculer le déterminant d'une matrice symétrique 3x3 définie par des paramètres réels vérifiant une condition quadratique. Déterminer les sous-espaces vectoriels noyau et image de cette matrice. Calculer des produits de matrices et caractériser géométriquement les matrices P et Q.",
+  "summary": "Calculer le déterminant d'une matrice symétrique 3x3 définie par des réels vérifiant a² + b² + c² = 1. Déterminer les sous-espaces vectoriels noyau et image de cette matrice, puis étudier les propriétés algébriques et géométriques des matrices P et Q = I - P.",
   "concepts": [
     "déterminant d'une matrice",
-    "sous-espace vectoriel",
     "noyau d'un endomorphisme",
     "image d'un endomorphisme",
     "projecteur",
-    "dimension d'un espace vectoriel",
-    "matrice symétrique"
+    "dimension d'un sous-espace vectoriel",
+    "matrice symétrique",
+    "relation de rang",
+    "projection vectorielle"
   ],
   "methods": [
-    "calcul de déterminant",
-    "résolution de système linéaire",
-    "factorisation de vecteurs colonnes",
-    "calcul de produits matriciels",
-    "caractérisation géométrique de matrices"
+    "développement par blocs",
+    "calcul de vecteurs colonnes",
+    "utilisation de la relation de rang",
+    "identification de projecteurs",
+    "calcul matriciel"
   ],
   "objects": [
     "matrice 3x3",
-    "sous-espaces vectoriels",
-    "vecteurs colonnes",
-    "matrice identité",
-    "projecteurs"
+    "sous-espaces vectoriels de ℝ³",
+    "projecteurs",
+    "vecteur (a, b, c)",
+    "plan d'équation ax + by + cz = 0"
   ],
-  "content_hash": "1f6da172a077e00f2208c6d9d64a5020fd2c4053ad39c6d19071919533da9799",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:32:07.413Z"
+  "content_hash": "34954baee2864b9049d63b62d4393016ea99d3d587653819812137421a32c34a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:40:10.646Z"
 }

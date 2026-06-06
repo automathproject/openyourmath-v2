@@ -1,29 +1,33 @@
 {
   "uuid": "a1iN",
   "source_path": "exo7/2-L1/a1iN.tex",
-  "summary": "Calcul et étude de l'existence de plusieurs intégrales impropres de fonctions rationnelles, trigonométriques et exponentielles.",
+  "summary": "Calcul et étude de l'existence de plusieurs intégrales impropres, dont certaines impliquent des fonctions rationnelles, des fonctions trigonométriques et des logarithmes. Les intégrales couvrent des cas variés comme des fractions rationnelles, des intégrales avec des fonctions hyperboliques et des intégrales paramétriques.",
   "concepts": [
     "intégrale impropre",
     "convergence d'intégrale",
     "fonction rationnelle",
     "fonction trigonométrique",
-    "fonction exponentielle",
+    "fonction hyperbolique",
     "changement de variable",
-    "intégration par parties"
+    "intégration par parties",
+    "décomposition en éléments simples"
   ],
   "methods": [
     "changement de variable",
     "intégration par parties",
     "décomposition en éléments simples",
+    "standardisation",
     "comparaison d'intégrales"
   ],
   "objects": [
     "intégrale impropre",
     "fonction rationnelle",
     "fonction trigonométrique",
-    "fonction exponentielle"
+    "fonction hyperbolique",
+    "logarithme",
+    "polynôme"
   ],
-  "content_hash": "ca992f2972f8149f4404a760bad847985dba447dc868ba9102583fca845a08e0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:42:12.482Z"
+  "content_hash": "cbfd7c00145912409d1eea79003303e33fca4752a990cfaef64108ee98ef3c1f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:02.429Z"
 }

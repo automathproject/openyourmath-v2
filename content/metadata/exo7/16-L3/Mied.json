@@ -1,27 +1,30 @@
 {
   "uuid": "Mied",
   "source_path": "exo7/16-L3/Mied.tex",
-  "summary": "Calculer l'intégrale d'une fonction holomorphe sur le bord d'un domaine, avec deux pôles simples. Étudier la limite lorsque les deux pôles coïncident.",
+  "summary": "Calculer l'intégrale d'une fonction holomorphe divisée par un produit de deux polynômes du premier degré sur le bord d'un domaine, et déterminer sa limite quand les deux pôles coïncident.",
   "concepts": [
     "théorème des résidus",
     "fonction holomorphe",
-    "pôle simple",
-    "résidu",
     "intégrale de contour",
-    "limite de fonction"
+    "résidu d'une fonction",
+    "développement en série de Laurent",
+    "pôle simple",
+    "dérivée complexe"
   ],
   "methods": [
-    "calcul de résidu",
+    "calcul des résidus",
     "décomposition en parties simples",
-    "passage à la limite"
+    "limite de fonctions holomorphes",
+    "application du théorème des résidus"
   ],
   "objects": [
     "intégrale de contour",
     "fonction holomorphe",
     "pôles simples",
-    "résidus"
+    "domaine borné",
+    "cycle orienté"
   ],
-  "content_hash": "564ed96cc1bed4e678bbc4a111ba0df33b0887a8df3eb13e1e7e6a781c6f51c6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:13:31.973Z"
+  "content_hash": "5dc945e11773d8e4cc07a09524bf89cb291c7e46174a97a335bec76c9ec10de4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:33.334Z"
 }

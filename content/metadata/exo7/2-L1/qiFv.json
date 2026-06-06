@@ -1,26 +1,29 @@
 {
   "uuid": "qiFv",
   "source_path": "exo7/2-L1/qiFv.tex",
-  "summary": "L'exercice demande de déterminer le développement asymptotique à la précision 1/n³ d'une suite définie par une somme de factoriels divisée par un factoriel.",
+  "summary": "L'exercice demande de déterminer le développement asymptotique à l'ordre 1/n³ d'une suite définie par une somme de factoriels divisée par un autre factoriel. Le contexte mathématique porte sur l'analyse des comportements asymptotiques de suites numériques.",
   "concepts": [
     "développement asymptotique",
+    "comportement en o petit",
     "factorielle",
-    "somme de termes",
-    "équivalent",
-    "o petit",
-    "notation asymptotique"
+    "suite numérique",
+    "approximation de Taylor",
+    "équivalents asymptotiques",
+    "somme de termes"
   ],
   "methods": [
-    "développement en série",
+    "développement limité",
     "estimation d'erreur",
-    "simplification de termes dominants"
+    "approximation polynomiale",
+    "manipulation algébrique"
   ],
   "objects": [
-    "suite numérique",
+    "suite u_n",
     "somme de factoriels",
-    "termes asymptotiques"
+    "termes négligeables",
+    "polynôme d'approximation"
   ],
-  "content_hash": "4f0e10a6954d69bc1ba1b4c733620d93a275530a8b81fe7b311f470f10dcd243",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:41:28.582Z"
+  "content_hash": "982b44f40af1742aa53a5a901db6b160ac793961af9c29e18f9d066addb042a4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:04.958Z"
 }

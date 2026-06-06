@@ -1,31 +1,31 @@
 {
   "uuid": "ySw3",
   "source_path": "exo7/5-L2/ySw3.tex",
-  "summary": "L'exercice demande de déterminer les normes matricielles associées aux normes vectorielles 1 et infinie sur l'espace des matrices carrées réelles. Il s'agit d'exprimer ces normes en fonction des normes des colonnes ou des lignes de la matrice.",
+  "summary": "L'exercice demande de déterminer les normes matricielles associées aux normes vectorielles L1 et L∞ sur ℝⁿ, en utilisant les propriétés de continuité des applications linéaires. Il s'agit de trouver les normes subordonnées pour les matrices carrées réelles.",
   "concepts": [
-    "norme matricielle",
+    "norme subordonnée",
+    "application linéaire continue",
     "norme vectorielle",
-    "norme 1",
-    "norme infinie",
-    "application linéaire",
-    "continuité",
-    "espace vectoriel normé",
-    "inégalité de Cauchy-Schwarz"
+    "norme matricielle",
+    "inégalité de Cauchy-Schwarz",
+    "continuité des applications linéaires",
+    "norme L1",
+    "norme L∞"
   ],
   "methods": [
-    "majoration",
-    "construction d'un vecteur extrémal",
-    "utilisation de la définition de la norme subordonnée",
-    "calcul de maximum"
+    "majoration par la norme L1",
+    "construction de vecteur extrémal",
+    "utilisation de la définition de norme subordonnée",
+    "calcul de norme de colonnes/lignes"
   ],
   "objects": [
     "matrice carrée",
     "vecteur colonne",
-    "norme subordonnée",
-    "colonnes d'une matrice",
-    "lignes d'une matrice"
+    "norme L1",
+    "norme L∞",
+    "norme matricielle subordonnée"
   ],
-  "content_hash": "4892439252273bb5e6348279814b6f9ab18949328472c1fc2429c87112055b5a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:18:02.042Z"
+  "content_hash": "a0839be6b29ce9bc6bab9e0c1952586127c8debf0ee646a25de8cc805efdcc9f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:46.147Z"
 }

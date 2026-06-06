@@ -1,12 +1,13 @@
 {
   "uuid": "GgvY",
   "source_path": "exo7/15-L3/GgvY.tex",
-  "summary": "On considère une application continue d'un espace métrique compact dans lui-même, contractante au sens où elle réduit les distances. On demande de prouver l'existence et l'unicité d'un point fixe pour cette application.",
+  "summary": "On considère un espace métrique compact et une application continue contractante. On demande de prouver l'existence et l'unicité d'un point fixe pour cette application.",
   "concepts": [
-    "espace métrique compact",
+    "espace métrique",
+    "compacité",
     "application continue",
-    "point fixe",
     "contraction",
+    "point fixe",
     "théorème du point fixe de Banach"
   ],
   "methods": [
@@ -15,11 +16,11 @@
     "utilisation de la compacité"
   ],
   "objects": [
+    "espace métrique compact",
     "application contractante",
-    "point fixe",
-    "espace métrique"
+    "point fixe"
   ],
-  "content_hash": "f066fdf3296439a966a670004a4db9adff44c1488741c8e3e16d9a5824d071c2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T14:57:11.172Z"
+  "content_hash": "4eee7e9d98f292a911bc93ee7e745fea716f076228e671384cc6475df817f187",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:36:47.905Z"
 }

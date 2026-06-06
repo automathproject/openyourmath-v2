@@ -1,28 +1,31 @@
 {
   "uuid": "MSSM",
   "source_path": "exo7/1-L1/MSSM.tex",
-  "summary": "L'exercice demande de montrer qu'une matrice triangulaire particulière est inversible et de calculer son inverse en utilisant la méthode de Gauss.",
+  "summary": "On considère une matrice carrée A de taille n×n définie par des coefficients spécifiques. L'exercice demande de prouver que cette matrice est inversible et de calculer son inverse.",
   "concepts": [
-    "inversibilité d'une matrice",
-    "matrice triangulaire",
+    "matrice inversible",
     "nilpotence",
     "décomposition matricielle",
+    "inverse d'une matrice",
+    "matrice triangulaire",
     "polynôme caractéristique",
-    "méthode de Gauss"
+    "matrice nilpotente"
   ],
   "methods": [
     "décomposition en matrices élémentaires",
     "calcul de puissances de matrices",
-    "récurrence sur les puissances de matrices",
-    "formule explicite de l'inverse"
+    "récurrence sur les matrices",
+    "méthode de Gauss",
+    "calcul explicite de l'inverse"
   ],
   "objects": [
-    "matrice triangulaire",
+    "matrice carrée",
     "matrice nilpotente",
     "matrice identité",
-    "matrice inverse"
+    "matrice triangulaire inférieure",
+    "matrice de permutation"
   ],
-  "content_hash": "c568d83ce962e3c587466db5275b059a90c22df6ee3c6a2a809f3d0be5459039",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:52:39.919Z"
+  "content_hash": "45c58ca1225b33cb30908dd32ffe1ddd54ff0e74f28b6e534ec69cdf55204fbf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:57:13.597Z"
 }

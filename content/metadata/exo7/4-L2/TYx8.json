@@ -1,27 +1,29 @@
 {
   "uuid": "TYx8",
   "source_path": "exo7/4-L2/TYx8.tex",
-  "summary": "L'exercice demande de déterminer la matrice d'une rotation d'angle π/3 autour d'un vecteur donné dans un espace euclidien orienté de dimension 3.",
+  "summary": "Déterminer la matrice de la rotation d'angle π/3 autour d'un vecteur donné dans un espace euclidien orienté de dimension 3, en utilisant une base orthonormée directe.",
   "concepts": [
-    "espace euclidien orienté",
-    "base orthonormée directe",
     "rotation vectorielle",
+    "base orthonormée",
+    "espace euclidien orienté",
     "produit scalaire",
     "produit vectoriel",
-    "matrice de transformation"
+    "matrice de transformation linéaire",
+    "décomposition de Rodrigues"
   ],
   "methods": [
-    "décomposition de la rotation",
-    "calcul du produit scalaire",
-    "calcul du produit vectoriel",
-    "matricialisation de la transformation"
+    "décomposition en composantes",
+    "calcul de produit scalaire",
+    "calcul de produit vectoriel",
+    "application de la formule de rotation"
   ],
   "objects": [
-    "vecteur de rotation",
-    "matrice de rotation",
-    "vecteur général dans l'espace"
+    "vecteur directeur de rotation",
+    "matrice 3x3",
+    "vecteur dans l'espace euclidien",
+    "base orthonormée"
   ],
-  "content_hash": "f134d542fdb883130c243e95128eb92c3d5cc4b46f4ca4dc9ee576739645a0cf",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:26:49.753Z"
+  "content_hash": "1fbe0bb6354b25ab499169e639f148c3bc29a9828bde169d9ea0c95fcc8dd23e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:44:26.575Z"
 }

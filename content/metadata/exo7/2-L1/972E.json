@@ -1,28 +1,30 @@
 {
   "uuid": "972E",
   "source_path": "exo7/2-L1/972E.tex",
-  "summary": "On définit deux suites récurrentes (uₙ) et (vₙ) à partir de deux réels a et b avec 0 < a < b. On demande de montrer que ces suites sont adjacentes et de déterminer leur limite commune.",
+  "summary": "On définit deux suites récurrentes $(u_n)$ et $(v_n)$ à partir de deux réels $a$ et $b$ avec $0 < a < b$. On demande de montrer que ces suites sont adjacentes et de déterminer leur limite commune, exprimée en fonction de $a$ et $b$.",
   "concepts": [
     "suites adjacentes",
     "limite de suite",
     "récurrence",
     "trigonométrie",
-    "produit de cosinus",
-    "approximation asymptotique"
+    "produit infini",
+    "équivalence asymptotique",
+    "fonctions trigonométriques inverses"
   ],
   "methods": [
-    "récurrence forte",
-    "approximation de séries trigonométriques",
-    "calcul de limite",
-    "utilisation de formules trigonométriques"
+    "récurrence",
+    "calcul de produit trigonométrique",
+    "équivalence asymptotique",
+    "étude de monotonie"
   ],
   "objects": [
-    "suites récurrentes",
+    "suite récurrente",
     "produit infini",
-    "limite commune",
-    "fonctions trigonométriques"
+    "fonction cosinus",
+    "fonction sinus",
+    "fonction Arccos"
   ],
-  "content_hash": "3cbfafa5c605de62d9e808d3c04da255f15642ef9b7016ccb9027389878a9094",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:06:01.446Z"
+  "content_hash": "42ddc5e90861e87ca171caab22b0d73ad223ffeb011b16285d24c1ff3d6be339",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:08:11.874Z"
 }

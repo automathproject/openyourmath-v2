@@ -1,27 +1,26 @@
 {
   "uuid": "xFKl",
   "source_path": "exo7/1-L1/xFKl.tex",
-  "summary": "L'exercice demande de déterminer si une courbe définie par une équation quadratique dans le plan a des points d'intersection avec deux rectangles donnés, l'un ouvert et l'autre fermé.",
+  "summary": "L'exercice demande de déterminer si une courbe définie par une équation cartésienne du second degré intersecte deux rectangles donnés dans le plan, l'un ouvert et l'autre fermé.",
   "concepts": [
-    "équation cartésienne de courbe",
+    "équation cartésienne",
+    "courbe algébrique",
     "géométrie analytique",
-    "points d'intersection",
     "rectangle ouvert",
     "rectangle fermé",
-    "système d'équations"
+    "intersection de courbes"
   ],
   "methods": [
-    "résolution de système d'équations",
+    "résolution d'équations",
     "analyse des conditions d'intersection",
     "étude des bornes"
   ],
   "objects": [
-    "courbe quadratique",
+    "courbe définie par x² - xy + y² = 0",
     "rectangle ouvert",
-    "rectangle fermé",
-    "points d'intersection"
+    "rectangle fermé"
   ],
-  "content_hash": "a543e9647aff8f4fac93af52a9db8407ea32aa4f0642b139f1b19e9a0b0072e6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:07:01.394Z"
+  "content_hash": "939dd3e9f3619b3e6c4888d9820c4b57a28728b62e6b2752dab7944a762cad44",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:59:20.906Z"
 }

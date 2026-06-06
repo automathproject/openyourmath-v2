@@ -1,29 +1,31 @@
 {
   "uuid": "Pg86",
   "source_path": "exo7/5-L2/Pg86.tex",
-  "summary": "Calcul du rayon de convergence et de la somme de la série entière associée à la suite des nombres d'involutions normalisés par les factoriels.",
+  "summary": "L'exercice demande de déterminer le rayon de convergence et la somme de la série entière associée à la suite (I_n/n!)_n où I_n est le nombre d'involutions de l'ensemble [1, n].",
   "concepts": [
     "séries entières",
     "rayon de convergence",
     "fonction génératrice",
     "relation de récurrence",
     "développement en série entière",
-    "intégration de fonctions exponentielles"
+    "intégration terme à terme",
+    "fonction exponentielle"
   ],
   "methods": [
     "résolution de relation de récurrence",
     "calcul de rayon de convergence",
     "détermination de la somme d'une série entière",
     "intégration par parties",
-    "manipulation de séries formelles"
+    "manipulation algébrique de séries"
   ],
   "objects": [
     "suite d'involutions",
     "série entière",
     "fonction génératrice",
-    "fonction exponentielle"
+    "fonction exponentielle",
+    "intégrale de fonction exponentielle"
   ],
-  "content_hash": "46278f8a94a6f38de5c15f1726d3539e700195ac7e269c6f163896d009020f4a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:42:48.731Z"
+  "content_hash": "dd0cfcaa8c06a167452a885496f4b96a594d36f75ccc211bd41fa0ed126d0931",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:57.482Z"
 }

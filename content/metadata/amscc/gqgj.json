@@ -1,0 +1,32 @@
+{
+  "uuid": "gqgj",
+  "source_path": "amscc/gqgj.tex",
+  "summary": "L'exercice demande de déterminer l'estimateur du maximum de vraisemblance d'un paramètre λ d'une loi de Weibull, puis d'étudier la loi d'une transformation de cette variable aléatoire et d'en déduire les propriétés de l'estimateur (biais, variance, convergence).",
+  "concepts": [
+    "loi de Weibull",
+    "maximum de vraisemblance",
+    "loi du chi-deux",
+    "estimateur sans biais",
+    "convergence en moyenne quadratique",
+    "vraisemblance",
+    "log-vraisemblance",
+    "changement de variable"
+  ],
+  "methods": [
+    "calcul de la dérivée de la log-vraisemblance",
+    "annulation de la dérivée pour maximisation",
+    "calcul de la dérivée seconde",
+    "changement de variable pour calcul d'espérance",
+    "utilisation des propriétés de la loi du chi-deux"
+  ],
+  "objects": [
+    "variable aléatoire de Weibull",
+    "échantillon i.i.d.",
+    "estimateur du maximum de vraisemblance",
+    "transformation de variable aléatoire",
+    "loi du chi-deux"
+  ],
+  "content_hash": "5872c16412c7a8e986d2de725e31b0c269f862a10eacf9ec28591930527097ec",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:19.814Z"
+}

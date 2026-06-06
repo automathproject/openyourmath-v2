@@ -1,20 +1,20 @@
 {
   "uuid": "ZvhB",
   "source_path": "exo7/6-L2/ZvhB.tex",
-  "summary": "Dans un triangle ABC, on considère le pied de la hauteur issue de A et les milieux des côtés. On doit prouver que le quadrilatère formé par ces milieux est un trapèze isocèle.",
+  "summary": "Dans un triangle ABC, on considère le pied P de la hauteur issue de A et les milieux I, J, K des côtés. L'exercice demande de prouver que le quadrilatère IPJK est un trapèze isocèle.",
   "concepts": [
-    "géométrie affine euclidienne",
     "symétrie centrale",
     "réflexion orthogonale",
-    "milieux des côtés d'un triangle",
-    "propriétés des trapèzes isocèles",
-    "hauteur d'un triangle"
+    "milieu d'un segment",
+    "trapèze isocèle",
+    "hauteur d'un triangle",
+    "propriétés des milieux dans un triangle"
   ],
   "methods": [
     "utilisation des propriétés des milieux",
-    "analyse des symétries",
-    "calcul des distances",
-    "démonstration géométrique"
+    "construction de symétries",
+    "calcul de distances",
+    "analyse des angles"
   ],
   "objects": [
     "triangle",
@@ -23,7 +23,7 @@
     "quadrilatère",
     "trapèze isocèle"
   ],
-  "content_hash": "3024fd841f1591d2ca5c1d9f606a0cb6f67a59af1978346d5dddeb99d5bd01f0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:45:20.821Z"
+  "content_hash": "87dc9ed7483d1a1881a5ed43c67e9ca2ca25610692c36c0c696080de5d3960f7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:20.461Z"
 }

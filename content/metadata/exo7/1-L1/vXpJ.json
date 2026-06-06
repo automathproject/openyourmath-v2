@@ -1,26 +1,30 @@
 {
   "uuid": "vXpJ",
   "source_path": "exo7/1-L1/vXpJ.tex",
-  "summary": "L'exercice demande de montrer qu'une fonction complexe f(z) = (z + i)/(z - i) réalise une bijection entre le disque unité D (z ∈ ℂ, |z| < 1) et le demi-plan P (z ∈ ℂ, Re(z) < 0), puis de préciser son inverse.",
+  "summary": "On considère la fonction complexe f(z) = (z + i)/(z - i) définie pour z ≠ i. L'exercice demande de montrer que la restriction de f à l'ensemble D (disque unité) est une bijection sur P (demi-plan gauche), puis de déterminer son inverse.",
   "concepts": [
     "bijection",
     "injection",
     "surjection",
     "fonction complexe",
     "partie réelle d'un nombre complexe",
-    "module d'un nombre complexe"
+    "module d'un nombre complexe",
+    "application réciproque"
   ],
   "methods": [
+    "calcul de la partie réelle",
+    "résolution d'équation complexe",
     "vérification de l'injectivité",
     "vérification de la surjectivité",
-    "calcul de l'inverse d'une fonction"
+    "calcul explicite de l'inverse"
   ],
   "objects": [
     "fonction complexe",
-    "disque unité",
-    "demi-plan complexe"
+    "ensemble D (disque unité)",
+    "ensemble P (demi-plan gauche)",
+    "application réciproque"
   ],
-  "content_hash": "073ef3ba910261265476cc43fc1e3439ad2b568a1d075e1fd3310255a94a5954",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:22:28.993Z"
+  "content_hash": "8f4331170de89c3cb0ca80db1f312e56dd0afb266348b0700f76c5ef7f3e02e5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:55:11.223Z"
 }

@@ -1,25 +1,29 @@
 {
   "uuid": "bI85",
   "source_path": "exo7/10-L3/bI85.tex",
-  "summary": "L'exercice demande de démontrer deux propriétés fondamentales en arithmodique modulo un nombre premier p : la compatibilité de la congruence avec la multiplication et le caractère multiplicatif de la permutation des éléments non nuls modulo p.",
+  "summary": "L'exercice demande de démontrer trois propriétés liées à un nombre premier p et un entier a premier avec p : l'équivalence de congruences, la permutation des multiples de a modulo p, et la généralisation du petit théorème de Fermat.",
   "concepts": [
-    "congruence arithmétique",
-    "nombre premier",
-    "permutation",
+    "petit théorème de Fermat",
+    "congruence modulo un nombre premier",
+    "permutation d'ensembles",
     "inverses multiplicatifs",
-    "théorème de Fermat-Euler"
+    "structure multiplicative des entiers modulo p",
+    "corps fini"
   ],
   "methods": [
     "manipulation de congruences",
     "raisonnement par l'absurde",
-    "utilisation de la définition de permutation"
+    "utilisation de la structure multiplicative",
+    "application du théorème de Fermat"
   ],
   "objects": [
-    "congruences modulo p",
-    "suite de nombres entiers",
-    "inverses multiplicatifs"
+    "nombre premier",
+    "congruence modulo p",
+    "suite de multiples",
+    "inverse multiplicatif",
+    "éléments non nuls de Z/pZ"
   ],
-  "content_hash": "dc14dc5bdb3f2e13118b82bf9d3276fd79442367da39f9e001a32ea07bfa2a1d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:33:23.252Z"
+  "content_hash": "9b9d57bfd7c1bb8f884195849267e35dd6c71066a32d16531c1548ec64e18ba3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:33:05.283Z"
 }

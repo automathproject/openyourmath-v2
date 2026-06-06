@@ -1,25 +1,28 @@
 {
   "uuid": "BAmc",
   "source_path": "amscc/BAmc.tex",
-  "summary": "L'exercice demande de déterminer l'ensemble de dérivabilité d'une fonction de deux variables et de calculer ses dérivées partielles par rapport à chaque variable. La fonction est définie par une expression rationnelle en x et y.",
+  "summary": "L'exercice demande de déterminer l'ensemble de dérivabilité d'une fonction de deux variables et de calculer ses dérivées partielles par rapport à chaque variable. Il propose ensuite de retrouver ces résultats en utilisant une décomposition fonctionnelle et la règle de dérivation composée.",
   "concepts": [
-    "fonction de plusieurs variables",
     "dérivée partielle",
     "dérivabilité",
+    "fonction de plusieurs variables",
     "règle de dérivation composée",
-    "fonction rationnelle"
+    "changement de variable",
+    "fonction dérivable"
   ],
   "methods": [
     "calcul de dérivées partielles",
-    "règle de dérivation composée",
+    "application de la règle des chaînes",
+    "décomposition fonctionnelle",
     "simplification algébrique"
   ],
   "objects": [
     "fonction de deux variables",
     "dérivées partielles",
-    "fonction composée"
+    "fonction composée",
+    "variable indépendante"
   ],
-  "content_hash": "781855116b873b486d8db458d94f50a268d27dab04a85a6836e2cc67c0ad65ea",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:48:12.369Z"
+  "content_hash": "9d0d683fcdbf45e6e783b9e71919cd741489e6ad4c62151ec4a33e479100c714",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:47.379Z"
 }

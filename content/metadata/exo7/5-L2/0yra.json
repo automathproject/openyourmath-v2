@@ -1,27 +1,32 @@
 {
   "uuid": "0yra",
   "source_path": "exo7/5-L2/0yra.tex",
-  "summary": "Résoudre trois équations différentielles linéaires du second ordre à coefficients constants, avec des seconds membres spécifiques.",
+  "summary": "Résoudre trois équations différentielles linéaires du second ordre à coefficients constants, avec des seconds membres de formes différentes (polynôme, exponentielle, produit d'exponentielle et trigonométrique).",
   "concepts": [
-    "équation différentielle linéaire",
-    "équation différentielle à coefficients constants",
+    "équation différentielle linéaire du second ordre",
+    "coefficient constant",
     "solution générale",
     "solution particulière",
     "méthode de variation de la constante",
-    "fonction exponentielle",
-    "fonction trigonométrique"
+    "fonction trigonométrique",
+    "fonction exponentielle"
   ],
   "methods": [
     "méthode de l'équation caractéristique",
     "méthode de variation de la constante",
-    "résolution par cas particuliers"
+    "superposition des solutions",
+    "résolution par cas d'exponentielle",
+    "résolution par cas de polynôme"
   ],
   "objects": [
-    "équation différentielle du second ordre",
+    "équation différentielle linéaire",
     "solution générale",
-    "solution particulière"
+    "solution particulière",
+    "second membre polynomial",
+    "second membre exponentiel",
+    "second membre trigonométrique"
   ],
-  "content_hash": "6df4ee13a7f884cbc286759db7dc6bcd1616ddedff54ebb040786e5756cdf825",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:12:46.998Z"
+  "content_hash": "18beca505a4683e19dd6c28423ccf40db5eaf9a247f222163cf90a7ffa836a86",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:19.529Z"
 }

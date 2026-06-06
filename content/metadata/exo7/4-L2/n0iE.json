@@ -1,14 +1,14 @@
 {
   "uuid": "n0iE",
   "source_path": "exo7/4-L2/n0iE.tex",
-  "summary": "Montrer l'existence d'une matrice triangulaire inversible T telle que A = T transposée T pour une matrice carrée réelle symétrique définie positive A.",
+  "summary": "Montrer l'existence d'une matrice triangulaire inversible T telle que A = TᵀT pour une matrice carrée réelle symétrique définie positive A.",
   "concepts": [
-    "matrice symétrique",
-    "matrice définie positive",
+    "matrice symétrique définie positive",
     "produit scalaire",
     "orthonormalisation de Schmidt",
     "changement de base",
-    "matrice de passage"
+    "matrice de passage",
+    "matrice triangulaire inversible"
   ],
   "methods": [
     "orthonormalisation de Schmidt",
@@ -16,12 +16,12 @@
     "calcul de matrice de passage"
   ],
   "objects": [
-    "matrice carrée réelle",
+    "matrice carrée réelle symétrique définie positive",
     "matrice triangulaire inversible",
     "base orthonormée",
-    "produit scalaire"
+    "matrice de passage"
   ],
-  "content_hash": "ed4f8201c628cf3622a1cef467b264f03c18d3dcbd60de0b42ab9e7b1f6f768a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T20:51:05.291Z"
+  "content_hash": "ce9e483aa751e7449a6c4fc2706aeee7eb652461dac29dcbcd1f8681e6d45c29",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:45:30.112Z"
 }

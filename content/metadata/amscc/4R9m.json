@@ -1,27 +1,32 @@
 {
   "uuid": "4R9m",
   "source_path": "amscc/4R9m.tex",
-  "summary": "L'exercice demande de déterminer les courbes de niveaux de trois fonctions de deux variables et d'en esquisser une représentation graphique. Les fonctions étudiées sont $f(x,y) = x+y-1$, $f(x,y) = e^{y-x^2}$ et $f(x,y) = \\ln(x+2y)$.",
+  "summary": "L'exercice demande de déterminer les courbes de niveaux de trois fonctions de deux variables et d'en esquisser une représentation graphique. Les fonctions considérées sont linéaire, exponentielle et logarithmique.",
   "concepts": [
     "courbe de niveau",
     "fonction de deux variables",
     "équation cartésienne",
     "représentation graphique",
-    "domaine de définition"
+    "domaine de définition",
+    "fonction affine",
+    "fonction exponentielle",
+    "fonction logarithmique"
   ],
   "methods": [
     "résolution d'équation implicite",
-    "analyse de cas",
-    "représentation paramétrique"
+    "représentation graphique de courbes",
+    "analyse de cas selon paramètres",
+    "manipulation d'équations"
   ],
   "objects": [
     "fonction affine",
     "fonction exponentielle",
     "fonction logarithmique",
+    "courbe de niveau",
     "droite",
     "parabole"
   ],
-  "content_hash": "fdca407d8adfb7e6c7c3423bafda2542d45d9a283985348fa0ba512cfafd25f5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:42:20.556Z"
+  "content_hash": "3c8972028557f0d670079d28b797971374b23f0a2ee8f00254dc0a8e4c1568a1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:47:32.862Z"
 }

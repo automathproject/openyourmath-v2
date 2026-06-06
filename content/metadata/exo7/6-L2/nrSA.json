@@ -4,27 +4,25 @@
   "summary": "Trouver la matrice de la rotation vectorielle dans ℝ³ autour de l'axe (1,2,2) qui transforme le vecteur j en k, en utilisant la base canonique orthonormée directe.",
   "concepts": [
     "rotation vectorielle",
-    "base canonique orthonormée",
     "produit mixte",
     "produit vectoriel",
+    "base orthonormée",
     "angle de rotation",
     "matrice de transformation"
   ],
   "methods": [
     "calcul du produit mixte",
     "calcul du produit vectoriel",
-    "résolution d'équations trigonométriques",
     "détermination de l'angle de rotation",
     "construction de la matrice de rotation"
   ],
   "objects": [
     "vecteur unitaire",
-    "vecteur j",
-    "vecteur k",
-    "matrice de rotation",
-    "vecteur de rotation"
+    "matrice 3x3",
+    "vecteurs j et k",
+    "axe de rotation"
   ],
-  "content_hash": "8e03fbf4b0bd34acbff3d26e0793ec6fbc3373e2aa2440d89eb03d7c44b84043",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:55:45.693Z"
+  "content_hash": "a1224e96fa8610947baec5194a2b5bff692839f0e50e23c9798684c59981f1a3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:36.827Z"
 }

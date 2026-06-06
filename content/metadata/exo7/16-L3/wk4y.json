@@ -1,28 +1,28 @@
 {
   "uuid": "wk4y",
   "source_path": "exo7/16-L3/wk4y.tex",
-  "summary": "L'exercice demande de montrer que l'intégrale d'une fonction complexe sur un demi-cercle de rayon tendant vers l'infini tend vers 0, sous certaines conditions de décroissance de la fonction.",
+  "summary": "L'exercice demande de montrer que l'intégrale d'une fonction complexe sur un demi-cercle de rayon tendant vers l'infini tend vers 0, sous certaines conditions de décroissance. La fonction est définie et continue dans le demi-plan supérieur ou sur une suite de demi-cercles de rayons croissants.",
   "concepts": [
+    "théorème des résidus",
     "intégrale complexe",
-    "fonction continue",
-    "limite de fonction",
-    "demi-cercle dans le plan complexe",
-    "estimation d'intégrale",
-    "inégalité trigonométrique"
+    "limite d'intégrale",
+    "fonction holomorphe",
+    "module d'une fonction complexe",
+    "inégalité de décroissance exponentielle"
   ],
   "methods": [
     "estimation d'intégrale",
     "changement de variable",
-    "utilisation d'inégalité trigonométrique",
-    "passage à la limite"
+    "utilisation d'une inégalité trigonométrique",
+    "majoration uniforme"
   ],
   "objects": [
     "fonction complexe",
-    "demi-cercle",
+    "demi-cercle dans le plan complexe",
     "intégrale curviligne",
-    "variable complexe"
+    "module d'une fonction"
   ],
-  "content_hash": "1e539df8212f1979bd9fc2d6c93457c2084230f6df16a1082523f3293b2b6f66",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:27:31.905Z"
+  "content_hash": "33d6912122ad4652fe7585459bb911ae865ee78cecc56efff865af905ee6a250",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:13:45.686Z"
 }

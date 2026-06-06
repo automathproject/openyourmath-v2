@@ -1,30 +1,31 @@
 {
   "uuid": "aQXL",
   "source_path": "exo7/6-L2/aQXL.tex",
-  "summary": "Dans un triangle ABC non isocèle en A, la bissectrice intérieure de l'angle BAC coupe le côté BC en A1 et le cercle circonscrit en A2. On considère D, le symétrique de B par rapport à cette bissectrice. L'exercice demande de justifier que D appartient à la droite AC, puis de montrer que les points A1, A2, C et D sont cocycliques, et enfin de prouver une relation de puissance entre les longueurs AA1, AA2, AB et AC.",
+  "summary": "Dans un triangle ABC non isocèle en A, on considère la bissectrice intérieure de l'angle BAC, qui coupe le côté BC en A1 et le cercle circonscrit en A2. On définit D comme le symétrique de B par rapport à cette bissectrice. L'exercice demande de montrer que D appartient à la droite AC, puis que le quadrilatère A1A2CD est inscriptible, et enfin que le produit AA1·AA2 est égal au produit AB·AC.",
   "concepts": [
     "bissectrice d'un angle",
-    "cercle circonscrit",
     "symétrie orthogonale",
-    "cocyclicité",
+    "cercle circonscrit",
     "puissance d'un point par rapport à un cercle",
-    "semblable",
-    "angles égaux"
+    "angles inscrits",
+    "triangles semblables",
+    "propriétés des quadrilatères cycliques"
   ],
   "methods": [
-    "réflexion orthogonale",
-    "preuve de cocyclicité par angles",
-    "utilisation de la puissance d'un point",
-    "comparaison de rapports de côtés"
+    "symétrie par rapport à une droite",
+    "calcul d'angles",
+    "utilisation des propriétés des quadrilatères cycliques",
+    "comparaison de rapports de côtés",
+    "utilisation de la puissance d'un point"
   ],
   "objects": [
     "triangle",
     "bissectrice intérieure",
     "cercle circonscrit",
     "symétrique d'un point",
-    "points cocycliques"
+    "quadrilatère"
   ],
-  "content_hash": "c16c2c7940d865d8912efbbecbaa73c705d034950915d646d81cbcce600b6b55",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:45:56.523Z"
+  "content_hash": "94b14c57813351be16c81bb60e5b2a572f476a7a274e1e431f6d6e21eded3a8f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:54:26.850Z"
 }

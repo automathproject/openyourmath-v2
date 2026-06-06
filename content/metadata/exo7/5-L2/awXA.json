@@ -1,28 +1,30 @@
 {
   "uuid": "awXA",
   "source_path": "exo7/5-L2/awXA.tex",
-  "summary": "Montrer l'égalité de deux intégrales impropres pour tout x strictement positif. La première intégrale implique une fonction exponentielle et la seconde une fonction trigonométrique.",
+  "summary": "Montrer l'égalité de deux intégrales impropres pour tout x > 0 : l'une impliquant une exponentielle décroissante et l'autre un sinus divisé par une fonction linéaire.",
   "concepts": [
     "intégrale impropre",
-    "théorème de dérivation des intégrales à paramètres",
+    "théorème de dérivation sous le signe intégrale",
     "équation différentielle linéaire",
-    "convergence d'intégrales",
-    "intégration par parties",
-    "fonctions continues"
+    "fonction dérivable",
+    "intégrabilité",
+    "dérivée partielle",
+    "théorème de Leibniz"
   ],
   "methods": [
     "dérivation sous le signe intégrale",
     "intégration par parties",
     "résolution d'équation différentielle linéaire",
-    "étude de la limite d'une fonction"
+    "étude de l'intégrabilité"
   ],
   "objects": [
-    "intégrale de fonction exponentielle",
-    "intégrale de fonction trigonométrique",
+    "intégrale à paramètre",
     "fonction définie par une intégrale",
-    "équation différentielle du second ordre"
+    "équation différentielle du second ordre",
+    "fonction exponentielle",
+    "fonction sinus"
   ],
-  "content_hash": "edc0c776e3f7ba9618c31229a36f7853f49483b5d33347a58e342204dba94453",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:35:58.276Z"
+  "content_hash": "c881e8a8c0ea1a0b3bbd24344b4a2b7cbd6666a71efb9048e20fecc16547598b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:42:46.897Z"
 }

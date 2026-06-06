@@ -1,15 +1,16 @@
 {
   "uuid": "uw07",
   "source_path": "exo7/5-L2/uw07.tex",
-  "summary": "On considère une suite bornée dans un espace vectoriel normé de dimension finie ayant une unique valeur d'adhérence. On demande de montrer que cette suite converge.",
+  "summary": "On considère une suite bornée dans un espace vectoriel normé de dimension finie, ayant une unique valeur d'adhérence. On doit démontrer que cette suite converge.",
   "concepts": [
     "espace vectoriel normé",
     "suite bornée",
     "valeur d'adhérence",
     "convergence de suite",
     "théorème de Bolzano-Weierstrass",
+    "dimension finie",
     "récurrence",
-    "contradiction"
+    "absurde"
   ],
   "methods": [
     "raisonnement par l'absurde",
@@ -19,9 +20,9 @@
   "objects": [
     "suite bornée",
     "valeur d'adhérence",
-    "espace vectoriel normé de dimension finie"
+    "espace vectoriel normé"
   ],
-  "content_hash": "d785216ada1f887ead20aae2ff2f5f9065965d5d6914e395540d8bb3d0a37bfc",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:14:56.103Z"
+  "content_hash": "c700bfb732465087980109f75c2be19a5dd0a5285eb6f3cb2af25bab10afd875",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:14:40.875Z"
 }

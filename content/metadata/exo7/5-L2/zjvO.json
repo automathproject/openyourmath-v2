@@ -1,32 +1,32 @@
 {
   "uuid": "zjvO",
   "source_path": "exo7/5-L2/zjvO.tex",
-  "summary": "Étude complète de la fonction f définie comme la somme d'une série de fonctions fn(t) = Arctan(nt)/n². L'exercice demande d'analyser le domaine de définition, la parité, les limites, la continuité, la dérivabilité (notamment l'absence de dérivabilité en 0) et l'allure du graphe de f.",
+  "summary": "Étude complète d'une série de fonctions définie par $f(t) = \\sum_{n=1}^{+\\infty} \frac{\\Arctan(nt)}{n^2}$ : domaine de définition, parité, limites, continuité, dérivabilité (avec vérification de la non-dérivabilité en 0) et allure du graphe.",
   "concepts": [
     "série de fonctions",
     "convergence normale",
     "convergence uniforme",
     "théorème d'interversion des limites",
     "continuité uniforme",
-    "dérivation terme à terme",
-    "théorème des accroissements finis",
-    "fonction impaire"
+    "dérivabilité",
+    "parité",
+    "limite de fonction"
   ],
   "methods": [
     "étude de la convergence absolue",
-    "vérification de la parité",
-    "analyse de la continuité par convergence uniforme",
-    "dérivation terme à terme",
-    "étude de la dérivabilité en un point"
+    "interversion série-limite",
+    "convergence normale pour la dérivabilité",
+    "calcul de limite de série",
+    "vérification de la parité"
   ],
   "objects": [
     "série de fonctions",
-    "fonction définie par une série",
-    "fonction impaire",
+    "fonction arctangente",
     "limite de fonction",
-    "dérivée de fonction"
+    "fonction continue",
+    "fonction dérivable"
   ],
-  "content_hash": "b211ccf01652f531a96d56ddcd5b72a2209c6a4415af6763afba24c2c101fbcf",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:07:09.272Z"
+  "content_hash": "adc7aa970aeb2e458514e55590709b6a9819fd1ede030f3cf958a05929ae2f8a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:10:02.407Z"
 }

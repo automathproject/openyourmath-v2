@@ -1,7 +1,7 @@
 {
   "uuid": "a8JU",
   "source_path": "exo7/8-L3/a8JU.tex",
-  "summary": "L'exercice demande de déterminer tous les morphismes de groupe entre deux groupes cycliques finis Z/mZ et Z/nZ, puis de caractériser les automorphismes de Z/nZ.",
+  "summary": "L'exercice demande de déterminer tous les morphismes de groupe entre deux groupes cycliques finis Z/mZ et Z/nZ, puis de caractériser les automorphismes de Z/nZ. L'énoncé s'inscrit dans l'étude des propriétés structurelles des groupes abéliens finis.",
   "concepts": [
     "morphisme de groupe",
     "groupe cyclique",
@@ -9,20 +9,24 @@
     "isomorphisme de groupes",
     "groupe abélien",
     "groupe multiplicatif des inversibles",
-    "pgcd"
+    "pgcd",
+    "structure de groupe"
   ],
   "methods": [
-    "détermination des morphismes via l'image de l'unité",
-    "utilisation de la surjection canonique",
-    "identification des automorphismes via les inversibles"
+    "détermination des morphismes par image de générateurs",
+    "utilisation du théorème de structure des groupes abéliens finis",
+    "identification des automorphismes via inversibilité",
+    "correspondance entre morphismes et sous-groupes"
   ],
   "objects": [
-    "groupes cycliques finis",
-    "morphismes de groupe",
-    "automorphismes de groupe",
-    "sous-groupe additif"
+    "groupe Z/mZ",
+    "groupe Z/nZ",
+    "morphisme de groupe",
+    "automorphisme de groupe",
+    "sous-groupe n'Z/n'Z",
+    "groupe (Z/nZ)×"
   ],
-  "content_hash": "cbada33e34cb3931a228529f25f40cbf90071f7a2a5c1bd955a71eb3514fbee5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:00:36.328Z"
+  "content_hash": "22523a5875ffd2745b67617ceb110eaf2aa0ca4b5c4e381fdb8d3c7daad51b8e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T15:06:02.358Z"
 }

@@ -1,18 +1,20 @@
 {
   "uuid": "BB1Z",
   "source_path": "exo7/6-L2/BB1Z.tex",
-  "summary": "L'exercice demande de démontrer deux égalités impliquant les longueurs des côtés d'un triangle, son demi-périmètre et le produit scalaire de deux vecteurs, puis d'en déduire la formule de l'aire du triangle en fonction de ses côtés.",
+  "summary": "L'exercice demande de démontrer deux égalités vectorielles impliquant les longueurs des côtés d'un triangle et le produit scalaire de deux vecteurs, puis d'en déduire la formule de l'aire du triangle en fonction de son demi-périmètre et de ses côtés.",
   "concepts": [
     "géométrie affine euclidienne",
     "produit scalaire",
-    "aire d'un triangle",
+    "formule de l'aire d'un triangle",
     "demi-périmètre",
-    "formule de Héron"
+    "relation métrique dans un triangle",
+    "identités trigonométriques"
   ],
   "methods": [
-    "algorithme de calcul d'aire",
+    "développement d'expression vectorielle",
+    "utilisation de la formule du produit scalaire",
     "manipulation algébrique",
-    "identités trigonométriques"
+    "identification de relations métriques"
   ],
   "objects": [
     "triangle",
@@ -21,7 +23,7 @@
     "longueurs des côtés",
     "demi-périmètre"
   ],
-  "content_hash": "783e32f6c93466b0b2cdeaa160304c633dadae31598ea48516f3df638dfcc7e6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:26:25.327Z"
+  "content_hash": "12f841ea99f99ddc817cb036749184274afa65ee59ae2ecf8a7f870db1c3dfb2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-06-05T14:53:29.834Z"
 }
