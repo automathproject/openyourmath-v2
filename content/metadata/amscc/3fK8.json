@@ -1,0 +1,29 @@
+{
+  "uuid": "3fK8",
+  "source_path": "amscc/3fK8.tex",
+  "summary": "L'exercice demande de déterminer les développements en série entière au voisinage de 0 de trois fonctions : g(x) = ln(1+x)/x, h(x) = 1/(1+x), et f(x) = 1/(3 + x/2), ainsi que leurs rayons de convergence. Il s'agit d'appliquer des développements connus et de manipuler des séries entières.",
+  "concepts": [
+    "développement en série entière",
+    "rayon de convergence",
+    "série géométrique",
+    "dérivation de série entière",
+    "singularité d'une fonction"
+  ],
+  "methods": [
+    "développement en série de ln(1+x)",
+    "changement de variable dans une série",
+    "développement de 1/(1+x)",
+    "développement de 1/(1+x)^2 par dérivation",
+    "calcul du rayon de convergence"
+  ],
+  "objects": [
+    "fonction g(x) = ln(1+x)/x",
+    "fonction h(x) = 1/(1+x)",
+    "fonction f(x) = 1/(3 + x/2)",
+    "série entière",
+    "rayon de convergence"
+  ],
+  "content_hash": "e047e8c6fd49883d5b7c5cc6cbda01d247ee7c0ccf9a1d28d49712c5ba76df38",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-06-20T20:39:05.449Z"
+}
