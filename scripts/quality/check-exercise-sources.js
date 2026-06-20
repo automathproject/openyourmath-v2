@@ -37,6 +37,36 @@ const TOP_LEVEL_COMMANDS = new Set([
 
 const CONTENT_COMMANDS = new Set(['texte', 'question', 'indication', 'reponse']);
 
+const IGNORED_CONTENT_ENVIRONMENTS = new Set([
+  'center',
+  'tabular',
+  'tabularx',
+  'array',
+  'tikzpicture',
+  'Piton',
+  'minipage',
+  'multicols'
+]);
+
+const IGNORED_CONTENT_COMMANDS = new Set([
+  'colonnes',
+  'fincolonnes',
+  'setcounter',
+  'smallskip',
+  'medskip',
+  'bigskip',
+  'vspace',
+  'hspace',
+  'paragraph',
+  'subsection',
+  'subsubsection',
+  'href',
+  'includegraphics',
+  'hfill',
+  'renewcommand',
+  'label'
+]);
+
 function isEscaped(source, index) {
   let slashCount = 0;
   for (let i = index - 1; i >= 0 && source[i] === '\\'; i--) slashCount++;
@@ -142,6 +172,71 @@ function blankRange(chars, start, end) {
   }
 }
 
+function skipWhitespace(source, index) {
+  while (index < source.length && /\s/.test(source[index])) index++;
+  return index;
+}
+
+function parseBracketArgument(source, openBracketIndex) {
+  if (source[openBracketIndex] !== '[') return null;
+
+  let depth = 1;
+  for (let i = openBracketIndex + 1; i < source.length; i++) {
+    if (source[i] === '\\') {
+      i++;
+      continue;
+    }
+    if (source[i] === '[') depth++;
+    if (source[i] === ']') depth--;
+    if (depth === 0) {
+      return {
+        bodyStart: openBracketIndex + 1,
+        end: i + 1
+      };
+    }
+  }
+
+  return null;
+}
+
+function blankIgnoredContentCommands(chars, source) {
+  const commandRegex = /\\([A-Za-z][A-Za-z0-9]*)\*?/g;
+  let match;
+
+  while ((match = commandRegex.exec(source)) !== null) {
+    if (isEscaped(source, match.index) || !IGNORED_CONTENT_COMMANDS.has(match[1])) {
+      continue;
+    }
+
+    let end = match.index + match[0].length;
+    let consumedArgument = false;
+
+    while (true) {
+      end = skipWhitespace(source, end);
+
+      if (source[end] === '[') {
+        const argument = parseBracketArgument(source, end);
+        if (!argument) break;
+        end = argument.end;
+        consumedArgument = true;
+        continue;
+      }
+
+      if (source[end] === '{') {
+        const argument = parseBracedArgument(source, end);
+        if (!argument) break;
+        end = argument.end;
+        consumedArgument = true;
+        continue;
+      }
+
+      break;
+    }
+
+    blankRange(chars, match.index, consumedArgument ? end : match.index + match[0].length);
+  }
+}
+
 function summarizeChunk(chunk) {
   return chunk.replace(/\s+/g, ' ').trim().slice(0, 90);
 }
@@ -152,6 +247,14 @@ function findRawTextChunks(source, baseOffset, typedCommandCalls) {
   for (const call of typedCommandCalls) {
     blankRange(chars, call.start - baseOffset, call.end - baseOffset);
   }
+
+  for (const environment of IGNORED_CONTENT_ENVIRONMENTS) {
+    for (const block of findEnvironmentBlocks(source, environment)) {
+      blankRange(chars, block.start, block.end);
+    }
+  }
+
+  blankIgnoredContentCommands(chars, source);
 
   const masked = chars
     .join('')
