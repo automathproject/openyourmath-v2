@@ -82,6 +82,12 @@ const LATEX_MACROS = [
   '\\newcommand{\\dlim}{\\displaystyle\\lim}',
 ];
 
+// Nom de macro extrait de sa définition, pour la détection d'usage
+const MACRO_DEFS = LATEX_MACROS.map((def) => {
+  const m = def.match(/\\(?:re)?newcommand\{\\([a-zA-Z]+)\}/);
+  return { name: m ? m[1] : null, def };
+}).filter((d) => d.name);
+
 /**
  * Extrait le contenu textuel/LaTeX brut d'un bloc de contenu.
  * Priorité : latex > text > html (strippé)
@@ -166,13 +172,63 @@ export function groupContentBlocks(content) {
   return groups;
 }
 
+/** Contenu (blocs) d'un exercice, quel que soit son niveau de chargement. */
+function exerciseContent(ex) {
+  return ex?.fullExercise?.content || ex?.content || [];
+}
+
+/** Concaténation du LaTeX brut de tous les blocs d'un exercice. */
+function exerciseRawLatex(ex) {
+  return exerciseContent(ex).map((b) => b.latex || '').join('\n');
+}
+
+/**
+ * Indique si un exercice référence des ressources externes (images, blocs de
+ * code SaveVerbatim) nécessitant le chargement de son fichier d'artifacts.
+ * @param {Object} ex
+ * @returns {boolean}
+ */
+export function exerciseNeedsArtifacts(ex) {
+  return /\\(?:BUseVerbatim|includegraphics)\b/.test(exerciseRawLatex(ex));
+}
+
+/**
+ * Charge les fichiers d'artifacts (/artifacts/<uuid>.json) des exercices qui
+ * en ont besoin (images \includegraphics, blocs de code SaveVerbatim).
+ * @param {Object[]} exercises
+ * @param {typeof fetch} [fetchFn]
+ * @returns {Promise<Record<string, Object>>} map uuid → artifacts
+ */
+export async function fetchArtifactsMap(exercises, fetchFn = typeof fetch !== 'undefined' ? fetch : null) {
+  const map = {};
+  if (!fetchFn) return map;
+
+  const targets = (exercises || []).filter((ex) => ex?.uuid && exerciseNeedsArtifacts(ex));
+  await Promise.all(
+    targets.map(async (ex) => {
+      try {
+        const res = await fetchFn(`/artifacts/${ex.uuid}.json`);
+        if (res.ok) {
+          map[ex.uuid] = await res.json();
+        }
+      } catch {
+        // artifacts indisponibles : l'export reste utilisable (chemins d'origine conservés)
+      }
+    })
+  );
+  return map;
+}
+
 /**
  * Options de génération LaTeX.
  * @typedef {Object} LatexExportOptions
- * @property {boolean} [includeHints=true]       — inclure les indications
- * @property {boolean} [includeSolutions=true]    — inclure les solutions
- * @property {string}  [hintLabel='Indication :'] — libellé pour les indications
- * @property {string}  [solutionLabel='Solution :'] — libellé pour les solutions
+ * @property {boolean} [includeHints=true]      — inclure les indications
+ * @property {boolean} [includeSolutions=true]  — inclure les réponses
+ * @property {boolean} [solutionsAtEnd=false]   — regrouper les réponses dans une section finale
+ * @property {Record<string, Object>} [artifactsMap] — artifacts par uuid (images / code)
+ * @property {string}  [origin='']              — origine du site pour les URLs des images
+ * @property {string}  [hintLabel='Indication.']
+ * @property {string}  [solutionLabel='Solution.']
  * @property {string}  [documentClass='article']
  * @property {string}  [fontSize='12pt']
  * @property {string}  [paperSize='a4paper']
@@ -180,19 +236,74 @@ export function groupContentBlocks(content) {
  * @property {string}  [language='french']
  */
 
+const SEPARATOR = '% ' + '='.repeat(68);
+
+/** Ligne de commentaire sûre (sans retour à la ligne). */
+function commentLine(text) {
+  return `% ${String(text).replace(/\s+/g, ' ').trim()}`;
+}
+
 /**
- * Génère un document LaTeX complet à partir d'une liste d'exercices.
- * @param {Object[]} exercises   — liste d'objets exercice (avec .title, .content ou .fullExercise.content)
- * @param {string}   title       — titre de la liste
- * @param {LatexExportOptions} options
- * @returns {string}
+ * Supprime l'indentation commune héritée du fichier source
+ * (la première ligne est déjà trimée par blockToLatex).
  */
-export function generateLatexDocument(exercises, title, options = {}) {
+function dedentLatex(latex) {
+  const lines = latex.split('\n');
+  if (lines.length <= 1) return latex;
+
+  let prefix = null;
+  for (const line of lines.slice(1)) {
+    if (!line.trim()) continue;
+    const ws = line.match(/^[ \t]*/)[0];
+    if (prefix === null) {
+      prefix = ws;
+    } else {
+      let k = 0;
+      while (k < prefix.length && k < ws.length && prefix[k] === ws[k]) k++;
+      prefix = prefix.slice(0, k);
+    }
+    if (!prefix) return latex;
+  }
+  if (!prefix) return latex;
+
+  return lines
+    .map((line, i) => (i === 0 ? line : line.startsWith(prefix) ? line.slice(prefix.length) : line))
+    .join('\n');
+}
+
+/**
+ * Réécrit les chemins \includegraphics d'un exercice vers un dossier local
+ * images/ et renvoie la liste des fichiers à télécharger.
+ */
+function rewriteImagePaths(latex, artifacts) {
+  const images = artifacts?.images || [];
+  const required = [];
+  let out = latex;
+
+  for (const img of images) {
+    if (!img?.originalPath || !img?.url) continue;
+    const localPath = img.url.replace(/^\/artifacts\/images\//, 'images/');
+    if (out.includes(`{${img.originalPath}}`)) {
+      out = out.split(`{${img.originalPath}}`).join(`{${localPath}}`);
+      required.push({ localPath, url: img.url });
+    }
+  }
+  return { latex: out, required };
+}
+
+/** Blocs SaveVerbatim requis par le LaTeX d'un exercice. */
+function requiredCodeBlocks(latex, artifacts) {
+  const codes = artifacts?.code || [];
+  return codes.filter((c) => c?.name && latex.includes(`\\BUseVerbatim{${c.name}}`));
+}
+
+/**
+ * Construit le préambule minimal en fonction du corps du document :
+ * seules les macros réellement utilisées et les packages nécessaires
+ * sont inclus.
+ */
+function buildPreamble(body, docTitle, options) {
   const {
-    includeHints = true,
-    includeSolutions = true,
-    hintLabel = 'Indication :',
-    solutionLabel = 'Solution :',
     documentClass = 'article',
     fontSize = '12pt',
     paperSize = 'a4paper',
@@ -200,73 +311,290 @@ export function generateLatexDocument(exercises, title, options = {}) {
     language = 'french',
   } = options;
 
-  const docTitle = title || "Liste d'exercices";
+  // Macros utilisées dans le corps
+  const usedMacros = MACRO_DEFS.filter(({ name }) =>
+    new RegExp(`\\\\${name}(?![a-zA-Z])`).test(body)
+  ).map(({ def }) => def);
 
-  const lines = [
-    `\\documentclass[${paperSize},${fontSize}]{${documentClass}}`,
-    '\\usepackage[utf8]{inputenc}',
-    '\\usepackage[T1]{fontenc}',
-    `\\usepackage[${language}]{babel}`,
-    '\\usepackage{amsmath,amssymb,amsthm}',
-    '\\usepackage{stmaryrd}',
-    '\\usepackage{mathrsfs}',
-    '\\usepackage{geometry}',
-    `\\geometry{margin=${margin}}`,
-    '',
-    ...LATEX_MACROS,
-    '',
-    `\\title{${latexEscapeText(docTitle)}}`,
-    '\\date{}',
-    '\\author{}',
-    '',
-    '\\begin{document}',
-    '\\maketitle',
-    '',
-  ];
+  // Détection de packages sur corps + macros retenues
+  const scan = body + '\n' + usedMacros.join('\n');
+  const has = (re) => re.test(scan);
 
-  exercises.forEach((ex, i) => {
-    const content = ex.fullExercise?.content || ex.content || [];
-    const exTitle = ex.title
-      ? latexEscapeText(ex.title)
-      : `Exercice ${i + 1}`;
+  const lines = [`\\documentclass[${paperSize},${fontSize}]{${documentClass}}`];
+  lines.push('\\usepackage[utf8]{inputenc}');
+  lines.push('\\usepackage[T1]{fontenc}');
+  lines.push('\\usepackage{lmodern}');
+  lines.push(`\\usepackage[${language}]{babel}`);
+  lines.push('\\usepackage{amsmath,amssymb}');
+  if (has(/\\mathscr\b/)) lines.push('\\usepackage{mathrsfs}');
+  if (has(/\\llbracket|\\rrbracket|\\llparenthesis/)) lines.push('\\usepackage{stmaryrd}');
+  if (has(/\\includegraphics\b/)) lines.push('\\usepackage{graphicx}');
+  if (has(/\\begin\{(?:SaveVerbatim|Verbatim|BVerbatim)\}|\\BUseVerbatim\b/)) {
+    lines.push('\\usepackage{fancyvrb}');
+  }
+  if (has(/\\begin\{tikzpicture\}/)) {
+    lines.push('\\usepackage{tikz}');
+    lines.push('\\usetikzlibrary{arrows,arrows.meta,calc,positioning,shapes,patterns,decorations.markings,decorations.pathmorphing}');
+  } else if (has(/\\textcolor\b|\\definecolor\b|\\color[{[]/)) {
+    lines.push('\\usepackage{xcolor}');
+  }
+  if (has(/\\begin\{multicols\}/)) lines.push('\\usepackage{multicol}');
+  if (has(/\\toprule|\\midrule|\\bottomrule/)) lines.push('\\usepackage{booktabs}');
+  if (has(/\\SI\{|\\si\{|\\num\{/)) lines.push('\\usepackage{siunitx}');
+  lines.push(`\\usepackage[margin=${margin}]{geometry}`);
+  if (has(/\\url\{|\\href\{/)) lines.push('\\usepackage[hidelinks]{hyperref}');
 
-    lines.push(`\\section*{Exercice ${i + 1} -- ${exTitle}}`);
+  if (has(/\\geogebra\b/)) {
     lines.push('');
+    lines.push('% Les animations GeoGebra ne sont visibles qu\'en ligne');
+    lines.push('\\newcommand{\\geogebra}[1]{\\par\\noindent\\emph{[Animation GeoGebra : \\texttt{#1}]}\\par}');
+  }
 
-    const groups = groupContentBlocks(content);
+  if (usedMacros.length > 0) {
+    lines.push('');
+    lines.push('% Macros utilisées par les exercices de cette liste');
+    lines.push(...usedMacros);
+  }
+
+  lines.push('');
+  lines.push(`\\title{${latexEscapeText(docTitle)}}`);
+  lines.push('\\date{}');
+  lines.push('\\author{}');
+
+  return lines;
+}
+
+/**
+ * Génère le document LaTeX complet et les ancres de navigation.
+ *
+ * @param {Object[]} exercises — liste d'objets exercice (format listStore)
+ * @param {string}   title     — titre de la liste
+ * @param {LatexExportOptions} options
+ * @returns {{ source: string, anchors: { uuid: string, title: string, index: number, line: number }[] }}
+ *   `line` : numéro de ligne (1-indexé) du début de l'exercice dans `source`.
+ */
+export function buildLatexExport(exercises, title, options = {}) {
+  const {
+    includeHints = true,
+    includeSolutions = true,
+    solutionsAtEnd = false,
+    artifactsMap = {},
+    origin = '',
+    hintLabel = 'Indication.',
+    solutionLabel = 'Solution.',
+  } = options;
+
+  const docTitle = title || "Liste d'exercices";
+  const list = exercises || [];
+
+  const body = [];
+  const anchors = [];
+  const allImages = [];
+  // Réponses collectées pour la section finale : { num, title, items: [{label, latex}] }
+  const deferredSolutions = [];
+
+  list.forEach((ex, i) => {
+    const num = i + 1;
+    const artifacts = artifactsMap[ex.uuid];
+    const exTitle = ex.title || `Exercice ${num}`;
+
+    if (body.length > 0) body.push('');
+
+    // En-tête de navigation
+    anchors.push({ uuid: ex.uuid, title: exTitle, index: i, line: body.length + 1 });
+    body.push(SEPARATOR);
+    body.push(commentLine(`Exercice ${num} — ${exTitle}  [${ex.uuid}]`));
+    const meta = [ex.chapter, ex.author, ex.level, ex.difficulty ? `difficulté ${ex.difficulty}/5` : '']
+      .filter(Boolean).join(' — ');
+    if (meta) body.push(commentLine(meta));
+    body.push(SEPARATOR);
+
+    // Réécriture des images + collecte des fichiers requis
+    const rewriteBlock = (latex) => {
+      const { latex: rewritten, required } = rewriteImagePaths(latex, artifacts);
+      for (const r of required) {
+        if (!allImages.some((im) => im.localPath === r.localPath)) allImages.push(r);
+      }
+      return rewritten;
+    };
+
+    const rawLatex = exerciseRawLatex(ex);
+
+    // Blocs de code SaveVerbatim requis par cet exercice
+    const codeBlocks = requiredCodeBlocks(rawLatex, artifacts);
+    if (codeBlocks.length > 0) {
+      body.push('');
+      for (const code of codeBlocks) {
+        body.push(commentLine(`Code ${code.language || 'texte'}`));
+        body.push(`\\begin{SaveVerbatim}{${code.name}}`);
+        body.push(...String(code.content || '').split('\n'));
+        body.push('\\end{SaveVerbatim}');
+      }
+    }
+
+    body.push('');
+    body.push(`\\section*{Exercice ${num} — ${latexEscapeText(exTitle)}}`);
+    body.push('');
+
+    const groups = groupContentBlocks(exerciseContent(ex));
+    const isQuestionGroup = (g) => g.question?.type === 'question';
+    const questionIndices = groups
+      .map((g, gi) => (isQuestionGroup(g) ? gi : -1))
+      .filter((gi) => gi >= 0);
+    const useEnumerate = questionIndices.length >= 2;
+    const lastQuestionIndex = questionIndices.length > 0 ? questionIndices[questionIndices.length - 1] : -1;
+
+    const exSolutions = [];
+    let questionNumber = 0;
+    let inEnumerate = false;
+
+    const pushBlockLatex = (block, indent = '') => {
+      let latex = rewriteBlock(dedentLatex(blockToLatex(block)));
+      if (block?.type === 'code') {
+        body.push(`${indent}\\begin{Verbatim}`);
+        body.push(...latex.split('\n'));
+        body.push(`${indent}\\end{Verbatim}`);
+      } else {
+        body.push(...latex.split('\n').map((l) => (l ? indent + l : l)));
+      }
+    };
+
+    const pushLabelled = (label, blocks, indent) => {
+      body.push('');
+      body.push(`${indent}\\par\\medskip\\noindent\\textbf{${label}}`);
+      blocks.forEach((b) => pushBlockLatex(b, indent));
+    };
 
     groups.forEach((group, gi) => {
-      if (gi > 0) lines.push('');
+      const isQuestion = isQuestionGroup(group);
+
+      if (isQuestion) {
+        questionNumber++;
+        if (useEnumerate && !inEnumerate) {
+          body.push('\\begin{enumerate}');
+          inEnumerate = true;
+        }
+        if (useEnumerate) {
+          body.push('');
+          body.push('  \\item');
+        }
+      } else if (inEnumerate && gi > lastQuestionIndex) {
+        // Plus aucune question à venir : on peut refermer la liste
+        body.push('\\end{enumerate}');
+        body.push('');
+        inEnumerate = false;
+      } else if (inEnumerate) {
+        // Texte intercalé entre deux questions : reste dans la liste
+        // pour préserver la numérotation
+        body.push('');
+      }
+
+      const indent = inEnumerate ? '  ' : '';
 
       if (group.question) {
-        lines.push(blockToLatex(group.question));
-        lines.push('');
+        pushBlockLatex(group.question, indent);
+        if (!inEnumerate) body.push('');
       }
 
       if (includeHints && group.hints.length > 0) {
-        lines.push(`\\medskip\\textbf{${hintLabel}}`);
-        lines.push('');
-        group.hints.forEach(h => {
-          lines.push(blockToLatex(h));
-          lines.push('');
-        });
+        pushLabelled(hintLabel, group.hints, indent);
       }
 
       if (includeSolutions && group.solutions.length > 0) {
-        lines.push(`\\medskip\\textbf{${solutionLabel}}`);
-        lines.push('');
-        group.solutions.forEach(s => {
-          lines.push(blockToLatex(s));
-          lines.push('');
-        });
+        if (solutionsAtEnd) {
+          exSolutions.push({
+            label: isQuestion && useEnumerate ? `Question ${questionNumber}.` : '',
+            blocks: group.solutions,
+          });
+        } else {
+          pushLabelled(solutionLabel, group.solutions, indent);
+        }
       }
     });
 
-    lines.push('');
+    if (inEnumerate) {
+      body.push('\\end{enumerate}');
+    }
+
+    if (exSolutions.length > 0) {
+      deferredSolutions.push({ num, title: exTitle, items: exSolutions, rewriteBlock });
+    }
   });
 
-  lines.push('\\end{document}');
-  return lines.join('\n');
+  // Section finale des réponses regroupées
+  if (includeSolutions && solutionsAtEnd && deferredSolutions.length > 0) {
+    body.push('');
+    body.push(SEPARATOR);
+    body.push(commentLine('Réponses'));
+    body.push(SEPARATOR);
+    body.push('');
+    body.push('\\clearpage');
+    body.push('\\section*{Réponses}');
+
+    for (const sol of deferredSolutions) {
+      body.push('');
+      body.push(`\\subsection*{Exercice ${sol.num} — ${latexEscapeText(sol.title)}}`);
+      sol.items.forEach((item, idx) => {
+        if (idx > 0 || item.label) body.push('');
+        if (item.label) {
+          body.push(`\\par\\medskip\\noindent\\textbf{${item.label}}`);
+        }
+        item.blocks.forEach((b) => {
+          const latex = sol.rewriteBlock(dedentLatex(blockToLatex(b)));
+          if (b?.type === 'code') {
+            body.push('\\begin{Verbatim}');
+            body.push(...latex.split('\n'));
+            body.push('\\end{Verbatim}');
+          } else {
+            body.push(...latex.split('\n'));
+          }
+        });
+      });
+    }
+  }
+
+  const bodyText = body.join('\n');
+  const preamble = buildPreamble(bodyText, docTitle, options);
+
+  // En-tête du fichier
+  const header = [SEPARATOR];
+  header.push(commentLine(docTitle));
+  header.push(commentLine(`Généré par OpenYourMath — ${list.length} exercice${list.length > 1 ? 's' : ''}`));
+  const optsDesc = [
+    includeHints ? 'indications incluses' : 'sans indications',
+    includeSolutions ? (solutionsAtEnd ? 'réponses regroupées à la fin' : 'réponses incluses') : 'sans réponses',
+  ].join(', ');
+  header.push(commentLine(optsDesc));
+  if (allImages.length > 0) {
+    header.push('%');
+    header.push(commentLine('Images requises — à placer à côté du fichier .tex :'));
+    for (const img of allImages) {
+      header.push(commentLine(`${img.localPath}  ←  ${origin}${img.url}`));
+    }
+  }
+  header.push(SEPARATOR);
+  header.push('');
+
+  const preambleLines = [...header, ...preamble, '', '\\begin{document}', '\\maketitle', ''];
+
+  const source = [...preambleLines, ...body, '', '\\end{document}', ''].join('\n');
+
+  const offset = preambleLines.length;
+  const shiftedAnchors = anchors.map((a) => ({ ...a, line: a.line + offset }));
+
+  return { source, anchors: shiftedAnchors };
+}
+
+/**
+ * Génère un document LaTeX complet à partir d'une liste d'exercices.
+ * (wrapper rétro-compatible autour de buildLatexExport)
+ * @param {Object[]} exercises
+ * @param {string}   title
+ * @param {LatexExportOptions} options
+ * @returns {string}
+ */
+export function generateLatexDocument(exercises, title, options = {}) {
+  return buildLatexExport(exercises, title, options).source;
 }
 
 /**

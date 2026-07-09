@@ -1,12 +1,13 @@
 <!-- src/routes/exercise/list/+page.svelte -->
 <script>
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy, tick } from 'svelte';
   import { cubicOut, cubicIn } from 'svelte/easing';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
   import ExerciseListEditor from '$lib/components/ExerciseListEditor.svelte';
   import LatexExportPanel from '$lib/components/LatexExportPanel.svelte';
+  import LatexSourceViewer from '$lib/components/LatexSourceViewer.svelte';
   import LectureSidebar from '$lib/components/LectureSidebar.svelte';
   import LectureSubheader from '$lib/components/LectureSubheader.svelte';
   import SeanceModeBar from '$lib/components/SeanceModeBar.svelte';
@@ -276,6 +277,16 @@
   let partagerQrDataUrl = '';
   let partagerQrError = '';
   let partagerQrRequestId = 0;
+  let partagerLatexOpen = false;
+  let partagerLatexSection;
+
+  async function togglePartagerLatex() {
+    partagerLatexOpen = !partagerLatexOpen;
+    if (partagerLatexOpen) {
+      await tick();
+      partagerLatexSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
   let showQrModal = false;
 
   $: partagerUrlView = partagerSolVisible ? null : (partagerIndVisible ? 'student-hints' : 'student');
@@ -2233,13 +2244,39 @@
           <span class="partager-export-label">PDF — corrigé</span>
           <span class="partager-export-sub">Énoncés + solutions intégrales</span>
         </a>
-        <a href="/api/export/latex?{buildUrl().split('?')[1] || ''}" class="partager-export-card" target="_blank">
+        <button
+          type="button"
+          class="partager-export-card"
+          class:is-open={partagerLatexOpen}
+          on:click={togglePartagerLatex}
+          aria-expanded={partagerLatexOpen}
+        >
           <span class="partager-export-icon" style="font-family:monospace;font-size:16px">⟨/⟩</span>
           <span class="partager-export-label">Source LaTeX</span>
-          <span class="partager-export-sub">Archive .tex prête à compiler</span>
-        </a>
+          <span class="partager-export-sub">Document .tex complet, prêt à compiler</span>
+        </button>
       </div>
     </section>
+
+    <!-- Source LaTeX -->
+    {#if partagerLatexOpen}
+      <section class="partager-section" bind:this={partagerLatexSection}>
+        <div class="partager-latex-head">
+          <div class="t-overline">Source LaTeX</div>
+          <button
+            type="button"
+            class="partager-latex-close"
+            on:click={() => (partagerLatexOpen = false)}
+            aria-label="Fermer la source LaTeX"
+          >✕</button>
+        </div>
+        <p class="partager-latex-desc">
+          Document complet avec préambule optimisé : seuls les packages et macros utilisés par
+          les exercices de la liste sont inclus. Les images et blocs de code sont intégrés.
+        </p>
+        <LatexSourceViewer exercises={$exerciseList} title={listTitle} />
+      </section>
+    {/if}
 
     <!-- Permissions avec CSS toggles -->
     <section class="partager-section">
@@ -4706,6 +4743,40 @@
     transition: background 0.12s, border-color 0.12s;
   }
   .partager-export-card:hover { background: theme('colors.interface.bg-secondary'); border-color: theme('colors.brand.300'); }
+  button.partager-export-card { cursor: pointer; font: inherit; }
+  .partager-export-card.is-open {
+    border-color: theme('colors.brand.400');
+    background: theme('colors.interface.bg-secondary');
+  }
+  .partager-latex-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .partager-latex-close {
+    width: 26px;
+    height: 26px;
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 6px;
+    background: white;
+    color: theme('colors.interface.text-secondary');
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .partager-latex-close:hover {
+    border-color: theme('colors.brand.300');
+    color: theme('colors.brand.600');
+  }
+  .partager-latex-desc {
+    font-size: 13px;
+    color: theme('colors.interface.text-muted');
+    line-height: 1.5;
+    margin: 0 0 14px;
+  }
   .partager-export-icon { color: theme('colors.interface.text-muted'); }
   .partager-export-label { font-size: 13px; font-weight: 600; text-align: center; }
   .partager-export-sub { font-size: 11px; color: theme('colors.interface.text-muted'); text-align: center; line-height: 1.4; }
