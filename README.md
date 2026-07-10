@@ -151,3 +151,16 @@ Voir aussi : [docs/embeddings-sync.md](docs/embeddings-sync.md).
 Voir `/docs` pour plus de détails.
 
 - Scripts de debug/maintenance: `docs/debug-scripts.md`
+
+## TODO
+
+- [ ] **Référentiel modules / chapitres / sous-chapitres** : créer un fichier
+  versionné (ex. `content/referentiel.json`, hiérarchie modules → chapitres →
+  sous-chapitres, niveaux optionnels) pour remplacer la taxonomie implicite de
+  la base, aujourd'hui bruitée (doublons de graphie type « Probabilités et
+  Statistique(s) », chapitres promus modules…). À brancher ensuite dans :
+  - les suggestions IA de métadonnées de l'éditeur `/create`
+    (`metadataTask()` dans `src/routes/api/create/assist/+server.js`, la base
+    ne servant plus que de complément) ;
+  - les datalists des champs du formulaire de création ;
+  - à terme, la normalisation des sources existantes (`scripts/quality/`).

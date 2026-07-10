@@ -32,6 +32,8 @@ services:
       - PUBLIC_APP_VERSION=${APP_VERSION}
       - ALBERT_API_KEY=${ALBERT_API_KEY}
       - ALBERT_BASE_URL=${ALBERT_BASE_URL}
+      # Import PDF/image de l'éditeur d'exercices : pages envoyées en base64
+      - BODY_SIZE_LIMIT=8M
 
 # Définir les volumes nommés pour que Docker les gère automatiquement.
 volumes:

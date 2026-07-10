@@ -63,6 +63,14 @@
           <span class="list-counter">{seanceCount}</span>
         {/if}
       </a>
+      <a href="/create" class:is-active={isActive('/create')}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 20h9"/>
+          <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+        Créer
+        <span class="beta-badge">bêta</span>
+      </a>
     </nav>
   </div>
 
@@ -167,6 +175,20 @@
     margin-left: 4px;
     position: static;
     box-shadow: none;
+  }
+
+  .beta-badge {
+    margin-left: 2px;
+    padding: 1px 5px;
+    border-radius: 9999px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.4;
+    color: theme('colors.amber.700');
+    background: theme('colors.amber.50');
+    border: 1px solid theme('colors.amber.200');
   }
 
   .app-header-right {

@@ -1,26 +1,32 @@
 export const MODELS = {
-  embedding: 'BAAI/bge-m3',
-  reranker: 'BAAI/bge-reranker-v2-m3',
-  chat: 'mistralai/Mistral-Small-3.2-24B-Instruct-2506',
-  chatLarge: 'openai/gpt-oss-120b',
-  chatSmall: 'mistralai/Ministral-3-8B-Instruct-2512'
+  embedding: "BAAI/bge-m3",
+  reranker: "BAAI/bge-reranker-v2-m3",
+  chat: "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  chatLarge: "openai/gpt-oss-120b",
+  chatSmall: "mistralai/Ministral-3-8B-Instruct-2512",
 };
 
 export const EMBEDDING_DIMENSION = 1024;
 
-async function albertFetch(endpoint, body, method = 'POST', timeoutMs = 60_000) {
+async function albertFetch(
+  endpoint,
+  body,
+  method = "POST",
+  timeoutMs = 60_000,
+) {
   const apiKey = process.env.ALBERT_API_KEY;
-  const baseUrl = process.env.ALBERT_BASE_URL || 'https://albert.api.etalab.gouv.fr/v1';
+  const baseUrl =
+    process.env.ALBERT_BASE_URL || "https://albert.api.etalab.gouv.fr/v1";
 
-  if (!apiKey) throw new Error('ALBERT_API_KEY manquante');
+  if (!apiKey) throw new Error("ALBERT_API_KEY manquante");
 
   const options = {
     method,
     signal: AbortSignal.timeout(timeoutMs),
     headers: {
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Type': 'application/json'
-    }
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
   };
   if (body !== undefined) options.body = JSON.stringify(body);
 
@@ -35,7 +41,7 @@ async function albertFetch(endpoint, body, method = 'POST', timeoutMs = 60_000) 
 }
 
 export async function listModels() {
-  const data = await albertFetch('/models', undefined, 'GET');
+  const data = await albertFetch("/models", undefined, "GET");
   return data.data;
 }
 
@@ -45,8 +51,8 @@ export async function listModels() {
  * @returns {Promise<{ok: boolean, missing: string[]}>}
  */
 export async function checkModels() {
-  const available = new Set((await listModels()).map(m => m.id));
-  const missing = Object.values(MODELS).filter(id => !available.has(id));
+  const available = new Set((await listModels()).map((m) => m.id));
+  const missing = Object.values(MODELS).filter((id) => !available.has(id));
   return { ok: missing.length === 0, missing };
 }
 
@@ -55,10 +61,15 @@ export async function checkModels() {
  * @returns {Promise<Float32Array>}
  */
 export async function embed(text) {
-  const data = await albertFetch('/embeddings', { model: MODELS.embedding, input: text });
+  const data = await albertFetch("/embeddings", {
+    model: MODELS.embedding,
+    input: text,
+  });
   const vec = new Float32Array(data.data[0].embedding);
   if (vec.length !== EMBEDDING_DIMENSION) {
-    throw new Error(`Dimension inattendue : ${vec.length} (attendu: ${EMBEDDING_DIMENSION})`);
+    throw new Error(
+      `Dimension inattendue : ${vec.length} (attendu: ${EMBEDDING_DIMENSION})`,
+    );
   }
   return vec;
 }
@@ -68,11 +79,16 @@ export async function embed(text) {
  * @returns {Promise<Float32Array[]>}
  */
 export async function embedBatch(texts) {
-  const data = await albertFetch('/embeddings', { model: MODELS.embedding, input: texts });
-  return data.data.map(item => {
+  const data = await albertFetch("/embeddings", {
+    model: MODELS.embedding,
+    input: texts,
+  });
+  return data.data.map((item) => {
     const vec = new Float32Array(item.embedding);
     if (vec.length !== EMBEDDING_DIMENSION) {
-      throw new Error(`Dimension inattendue : ${vec.length} (attendu: ${EMBEDDING_DIMENSION})`);
+      throw new Error(
+        `Dimension inattendue : ${vec.length} (attendu: ${EMBEDDING_DIMENSION})`,
+      );
     }
     return vec;
   });
@@ -85,8 +101,15 @@ export async function embedBatch(texts) {
  */
 export async function rerank(query, documents) {
   if (documents.length === 0) return [];
-  const data = await albertFetch('/rerank', { model: MODELS.reranker, query, documents });
-  return data.results.map(r => ({ index: r.index, score: r.relevance_score }));
+  const data = await albertFetch("/rerank", {
+    model: MODELS.reranker,
+    query,
+    documents,
+  });
+  return data.results.map((r) => ({
+    index: r.index,
+    score: r.relevance_score,
+  }));
 }
 
 /**
@@ -94,20 +117,36 @@ export async function rerank(query, documents) {
  * @param {object} options
  * @returns {Promise<string>}
  */
-export async function chat(prompt, {
-  model = MODELS.chat,
-  temperature = 0,
-  maxTokens = 600,
-  jsonMode = false
-} = {}) {
+export async function chat(prompt, options = {}) {
+  return chatMessages([{ role: "user", content: prompt }], options);
+}
+
+/**
+ * Appel chat/completions avec un tableau de messages arbitraires.
+ * Permet les prompts système et le contenu multimodal (image_url) des
+ * modèles vision (Mistral-Small-3.2, Ministral-3-8B).
+ * @param {Array<{role: string, content: string|Array}>} messages
+ * @param {object} options
+ * @returns {Promise<string>}
+ */
+export async function chatMessages(
+  messages,
+  {
+    model = MODELS.chat,
+    temperature = 0,
+    maxTokens = 600,
+    jsonMode = false,
+    timeoutMs = 60_000,
+  } = {},
+) {
   const body = {
     model,
-    messages: [{ role: 'user', content: prompt }],
+    messages,
     temperature,
-    max_tokens: maxTokens
+    max_tokens: maxTokens,
   };
-  if (jsonMode) body.response_format = { type: 'json_object' };
-  const data = await albertFetch('/chat/completions', body);
+  if (jsonMode) body.response_format = { type: "json_object" };
+  const data = await albertFetch("/chat/completions", body, "POST", timeoutMs);
   return data.choices[0].message.content;
 }
 
@@ -128,7 +167,7 @@ export async function withRetry(fn, { maxAttempts = 3, delayMs = 1000 } = {}) {
       if (isQuotaExceeded(err)) throw err;
       const isTransient = /429|50[0-9]/.test(err.message);
       if (!isTransient || i === maxAttempts - 1) throw err;
-      await new Promise(r => setTimeout(r, delayMs * (i + 1)));
+      await new Promise((r) => setTimeout(r, delayMs * (i + 1)));
     }
   }
   throw lastErr;
@@ -140,5 +179,5 @@ export async function withRetry(fn, { maxAttempts = 3, delayMs = 1000 } = {}) {
  * @returns {boolean}
  */
 export function isQuotaExceeded(err) {
-  return /requests per day exceeded/i.test(err?.message ?? '');
+  return /requests per day exceeded/i.test(err?.message ?? "");
 }
