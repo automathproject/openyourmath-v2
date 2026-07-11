@@ -617,6 +617,25 @@
         </p>
       {/if}
 
+      <div class="editor-ai-panel">
+        <p class="editor-ai-title">✨ Assistant IA de rédaction <span class="editor-ai-model">Albert · gpt-oss-120b</span></p>
+        <div class="editor-ai-row">
+          <input
+            type="text"
+            bind:value={aiInstruction}
+            placeholder="Consigne facultative : « une question sur la convergence, niveau L2 »…"
+            onkeydown={(e) => e.key === 'Enter' && aiNewQuestion()}
+          />
+          <button type="button" class="btn-primary" disabled={aiBusyBlockId !== null} onclick={aiNewQuestion}>
+            {aiBusyBlockId === '__new__' ? 'Génération…' : 'Générer une question'}
+          </button>
+        </div>
+        <p class="editor-ai-hint">
+          Sur chaque bloc : ✨ ouvre la consigne (visible et modifiable) pour rédiger ou améliorer le contenu ;
+          sur une question, 💡 ajoute une indication et ✅ une solution.
+        </p>
+      </div>
+
       <div class="editor-blocks">
         {#each blocks as block, index (block.id)}
           <div class="editor-block editor-block--{block.type}">
@@ -749,25 +768,6 @@
         {#each BLOCK_TYPES as bt}
           <button type="button" class="btn-add" onclick={() => addBlock(bt.type)}>+ {bt.label}</button>
         {/each}
-      </div>
-
-      <div class="editor-ai-panel">
-        <p class="editor-ai-title">✨ Assistant IA de rédaction <span class="editor-ai-model">Albert · gpt-oss-120b</span></p>
-        <div class="editor-ai-row">
-          <input
-            type="text"
-            bind:value={aiInstruction}
-            placeholder="Consigne facultative : « une question sur la convergence, niveau L2 »…"
-            onkeydown={(e) => e.key === 'Enter' && aiNewQuestion()}
-          />
-          <button type="button" class="btn-primary" disabled={aiBusyBlockId !== null} onclick={aiNewQuestion}>
-            {aiBusyBlockId === '__new__' ? 'Génération…' : 'Générer une question'}
-          </button>
-        </div>
-        <p class="editor-ai-hint">
-          Sur chaque bloc : ✨ ouvre la consigne (visible et modifiable) pour rédiger ou améliorer le contenu ;
-          sur une question, 💡 ajoute une indication et ✅ une solution.
-        </p>
       </div>
     </section>
 
