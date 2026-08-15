@@ -5,13 +5,14 @@
     restructuration IA (/api/create/import) vers le format .tex du site.
   - Image : réduite (canvas → JPEG) puis même restructuration IA.
 
-  Callback `onimported(tex, sourceLabel)` avec la source .tex obtenue.
+  Callback `onimported(texSources, sourceLabel)` avec une ou plusieurs sources
+  .tex détectées.
 -->
 
 <script>
   /**
    * @typedef {Object} Props
-   * @property {(tex: string, sourceLabel: string) => void} onimported
+   * @property {(texSources: string[], sourceLabel: string) => void} onimported
    */
   /** @type {Props} */
   let { onimported } = $props();
@@ -25,6 +26,14 @@
   let statusText = $state('');
   let errorText = $state('');
   let fileInput;
+
+  /** Le séparateur est demandé au modèle entre deux exercices autonomes. */
+  function splitExercises(tex) {
+    return String(tex || '')
+      .split(/\n?%\s*===\s*OYM_EXERCISE_BREAK\s*===\s*%\n?/)
+      .map((source) => source.trim())
+      .filter(Boolean);
+  }
 
   function reset() {
     busy = false;
@@ -108,7 +117,7 @@
 
       if (/\.tex$/i.test(name)) {
         const tex = await file.text();
-        onimported?.(tex, name);
+        onimported?.(splitExercises(tex), name);
         return;
       }
 
@@ -123,7 +132,7 @@
       }
 
       const tex = await restructureWithAi(pages);
-      onimported?.(tex, name);
+      onimported?.(splitExercises(tex), name);
     } catch (err) {
       console.error('[import]', err);
       errorText = err.message || "L'import a échoué.";

@@ -16,7 +16,7 @@ const MAX_PAGE_BYTES = 1_500_000; // data-URL ≈ 1,1 Mo d'image
 
 const IMPORT_PROMPT = `Tu es un assistant qui transcrit des exercices de mathématiques vers le format LaTeX de la plateforme OpenYourMath.
 
-Transcris fidèlement l'exercice visible sur ces images (énoncé, questions, indications et solutions si présentes) au format suivant :
+Transcris fidèlement chaque exercice autonome visible sur ces images (énoncé, questions, indications et solutions si présentes) au format suivant :
 
 \\titre{...}
 \\niveau{...}
@@ -47,7 +47,8 @@ Règles impératives :
 - S'il n'y a qu'une seule question, mets \\question{...} directement dans \\contenu{} sans enumerate.
 - N'invente ni indication ni solution : n'inclus \\indication{} et \\reponse{} que si le document en contient.
 - Si le document contient une figure, insère à sa place le commentaire % TODO figure.
-- Réponds UNIQUEMENT avec la source .tex, sans Markdown, sans commentaire.`;
+- Si le document contient plusieurs exercices indépendants, fournis la source complète de chacun et sépare-les uniquement par cette ligne exacte : % === OYM_EXERCISE_BREAK === %. Ne sépare pas les questions d'un même exercice.
+- Réponds UNIQUEMENT avec la ou les sources .tex, sans Markdown ni texte explicatif. Le séparateur demandé est le seul commentaire autorisé.`;
 
 function getClientIp(event) {
   const forwarded = event.request.headers.get("x-forwarded-for");

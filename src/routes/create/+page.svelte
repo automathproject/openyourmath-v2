@@ -23,6 +23,8 @@
   import { DEFAULT_TASKS, buildTaskPrompt, SYSTEM_PROMPT } from '$lib/ia/assistPrompts.js';
 
   const DRAFT_KEY = 'oym-create-draft-v1';
+  const IMPORTED_DRAFTS_KEY = 'oym-create-imported-drafts-v1';
+  const ACTIVE_IMPORTED_DRAFT_KEY = 'oym-create-active-imported-draft-v1';
   const PROMPTS_KEY = 'oym-create-prompts-v1';
   const LEVELS = ['Seconde', 'Première', 'Terminale', 'L1', 'L2', 'L3', 'M1', 'M2'];
 
@@ -76,6 +78,9 @@
   let promptPanel = $state(null);
   let copied = $state(false);
   let importNotice = $state('');
+  let importCandidates = $state([]);
+  let importedDrafts = $state([]);
+  let activeImportedDraftId = $state(null);
 
   // Champ actif pour l'assistant LaTeX
   let activeTextarea = null;
@@ -134,6 +139,33 @@
   let questionCount = $derived(blocks.filter((b) => b.type === 'question' && b.latex.trim()).length);
 
   // ── Brouillon localStorage ────────────────────────────────────────────────
+  function cloneBlocks(source) {
+    const ids = new Map();
+    const cloned = (source || []).map((block) => {
+      const copy = newBlock(block.type || 'text', block.latex || '');
+      if (block.id) ids.set(block.id, copy.id);
+      return copy;
+    });
+    cloned.forEach((block, index) => {
+      const sourceBlock = source[index];
+      block.questionId = ids.get(sourceBlock.questionId) || null;
+    });
+    return cloned;
+  }
+
+  function blocksFromParsed(parsedBlocks) {
+    let lastQuestionId = null;
+    return parsedBlocks.map((block) => {
+      const copy = newBlock(
+        block.type,
+        block.latex,
+        (block.type === 'indication' || block.type === 'reponse') ? lastQuestionId : null,
+      );
+      if (block.type === 'question') lastQuestionId = copy.id;
+      return copy;
+    });
+  }
+
   onMount(() => {
     try {
       const raw = localStorage.getItem(DRAFT_KEY);
@@ -162,6 +194,16 @@
       }
     } catch {
       // consignes corrompues : défauts conservés
+    }
+    try {
+      const rawImported = localStorage.getItem(IMPORTED_DRAFTS_KEY);
+      if (rawImported) {
+        const parsed = JSON.parse(rawImported);
+        if (Array.isArray(parsed)) importedDrafts = parsed;
+      }
+      activeImportedDraftId = localStorage.getItem(ACTIVE_IMPORTED_DRAFT_KEY) || null;
+    } catch {
+      // liste de brouillons importés corrompue : ignorée
     }
     restored = true;
   });
@@ -475,31 +517,86 @@
   }
 
   // ── Import ────────────────────────────────────────────────────────────────
-  function handleImported(tex, sourceLabel) {
-    const { meta: parsedMeta, blocks: parsedBlocks } = parseExerciseTex(tex);
-    if (parsedBlocks.length === 0) {
-      importNotice = `⚠️ Aucun bloc reconnu dans « ${sourceLabel} ».`;
+  function handleImported(texSources, sourceLabel) {
+    const candidates = texSources.map((tex, index) => {
+      const { meta: parsedMeta, blocks: parsedBlocks } = parseExerciseTex(tex);
+      if (parsedBlocks.length === 0) return null;
+      const meta = {
+        ...emptyMeta(),
+        ...parsedMeta,
+        uuid: parsedMeta.uuid || generateShortUuid(),
+        created_at: parsedMeta.created_at || today(),
+      };
+      return {
+        id: crypto.randomUUID(),
+        selected: true,
+        label: parsedMeta.title || `Exercice ${index + 1}`,
+        meta,
+        blocks: blocksFromParsed(parsedBlocks),
+      };
+    }).filter(Boolean);
+    if (!candidates.length) {
+      importNotice = `⚠️ Aucun exercice reconnu dans « ${sourceLabel} ».`;
       return;
     }
+    importCandidates = candidates;
+    importNotice = candidates.length > 1
+      ? `✅ ${candidates.length} exercices détectés dans « ${sourceLabel} » : choisissez les brouillons à conserver.`
+      : `✅ Un exercice détecté dans « ${sourceLabel} » : confirmez sa création.`;
+  }
+
+  function persistImportedDrafts() {
+    try {
+      localStorage.setItem(IMPORTED_DRAFTS_KEY, JSON.stringify(importedDrafts));
+    } catch {
+      aiError = 'Impossible d’enregistrer les brouillons importés localement.';
+    }
+  }
+
+  function openImportedDraft(draft, askConfirmation = true) {
     const hasContent = blocks.some((b) => b.latex.trim()) || meta.title;
-    if (hasContent && !confirm('Remplacer l’exercice en cours par le document importé ?')) {
+    if (askConfirmation && hasContent && !confirm('Remplacer l’exercice en cours par ce brouillon importé ?')) {
       return;
     }
-    meta = {
-      ...emptyMeta(),
-      ...parsedMeta,
-      uuid: parsedMeta.uuid || generateShortUuid(),
-      created_at: parsedMeta.created_at || today(),
-    };
-    let lastQuestionId = null;
-    blocks = parsedBlocks.map((b) => {
-      const block = newBlock(b.type, b.latex, (b.type === 'indication' || b.type === 'reponse') ? lastQuestionId : null);
-      if (b.type === 'question') lastQuestionId = block.id;
-      return block;
-    });
-    importNotice = `✅ « ${sourceLabel} » importé — relisez et corrigez avant export.`;
+    meta = { ...emptyMeta(), ...draft.meta };
+    blocks = cloneBlocks(draft.blocks);
+    activeImportedDraftId = draft.id;
+    try {
+      localStorage.setItem(ACTIVE_IMPORTED_DRAFT_KEY, draft.id);
+    } catch { /* non bloquant */ }
+    importNotice = `✅ Brouillon « ${draft.label} » ouvert — relisez et corrigez avant export.`;
     showImport = false;
     showMeta = true;
+  }
+
+  function saveSelectedImports() {
+    const selected = importCandidates.filter((candidate) => candidate.selected);
+    if (!selected.length) {
+      importNotice = 'Sélectionnez au moins un exercice à conserver.';
+      return;
+    }
+    const savedAt = new Date().toISOString();
+    const drafts = selected.map((candidate) => ({
+      ...candidate,
+      selected: undefined,
+      savedAt,
+    }));
+    importedDrafts = [...drafts, ...importedDrafts];
+    persistImportedDrafts();
+    importCandidates = [];
+    openImportedDraft(drafts[0]);
+    importNotice = `✅ ${drafts.length} brouillon${drafts.length > 1 ? 's' : ''} importé${drafts.length > 1 ? 's' : ''}. Le premier est ouvert.`;
+  }
+
+  function deleteImportedDraft(id) {
+    importedDrafts = importedDrafts.filter((draft) => draft.id !== id);
+    if (activeImportedDraftId === id) {
+      activeImportedDraftId = null;
+      try {
+        localStorage.removeItem(ACTIVE_IMPORTED_DRAFT_KEY);
+      } catch { /* non bloquant */ }
+    }
+    persistImportedDrafts();
   }
 
   // ── Export ────────────────────────────────────────────────────────────────
@@ -525,6 +622,8 @@
     aiError = '';
     try {
       localStorage.removeItem(DRAFT_KEY);
+      localStorage.removeItem(ACTIVE_IMPORTED_DRAFT_KEY);
+      activeImportedDraftId = null;
     } catch { /* ignoré */ }
   }
 
@@ -580,6 +679,49 @@
   {/if}
   {#if importNotice}
     <p class="create-import-notice">{importNotice}</p>
+  {/if}
+  {#if importCandidates.length}
+    <section class="import-candidates" aria-label="Exercices détectés">
+      <div>
+        <h2>Exercices détectés</h2>
+        <p>Sélectionnez les exercices à enregistrer comme brouillons distincts.</p>
+      </div>
+      <div class="import-candidates-list">
+        {#each importCandidates as candidate, index (candidate.id)}
+          <label class="import-candidate">
+            <input type="checkbox" bind:checked={candidate.selected} />
+            <span>
+              <strong>Exercice {index + 1}</strong>
+              <span>{candidate.label}</span>
+              <small>{candidate.blocks.filter((block) => block.type === 'question').length} question{candidate.blocks.filter((block) => block.type === 'question').length > 1 ? 's' : ''}</small>
+            </span>
+          </label>
+        {/each}
+      </div>
+      <div class="import-candidates-actions">
+        <button type="button" class="btn-secondary" onclick={() => (importCandidates = [])}>Annuler</button>
+        <button type="button" class="btn-primary" onclick={saveSelectedImports}>Enregistrer la sélection</button>
+      </div>
+    </section>
+  {/if}
+  {#if importedDrafts.length}
+    <details class="imported-drafts">
+      <summary>Brouillons importés ({importedDrafts.length})</summary>
+      <div class="imported-drafts-list">
+        {#each importedDrafts as draft (draft.id)}
+          <div class="imported-draft" class:imported-draft--active={draft.id === activeImportedDraftId}>
+            <span>
+              {draft.label}
+              {#if draft.id === activeImportedDraftId}<small class="imported-draft-active">Ouvert</small>{/if}
+            </span>
+            <div>
+              <button type="button" class="btn-link" onclick={() => openImportedDraft(draft)}>Ouvrir</button>
+              <button type="button" class="btn-link imported-draft-delete" onclick={() => deleteImportedDraft(draft.id)}>Supprimer</button>
+            </div>
+          </div>
+        {/each}
+      </div>
+    </details>
   {/if}
 
   <div class="create-layout">
@@ -977,6 +1119,59 @@
   .create-import-notice {
     @apply text-sm text-gray-600 mb-3;
   }
+
+  .import-candidates {
+    @apply border border-brand-200 bg-brand-50 rounded-xl p-4 mb-3;
+  }
+
+  .import-candidates h2 {
+    @apply text-base font-semibold text-brand-900 m-0;
+  }
+
+  .import-candidates p {
+    @apply text-sm text-brand-700 mt-1 mb-3;
+  }
+
+  .import-candidates-list {
+    @apply flex flex-col gap-2;
+  }
+
+  .import-candidate {
+    @apply flex gap-2.5 items-start p-2.5 rounded-lg bg-white border border-brand-100 cursor-pointer;
+  }
+
+  .import-candidate input { @apply mt-1; }
+  .import-candidate span > span,
+  .import-candidate small { @apply block text-xs text-gray-500 mt-0.5; }
+  .import-candidate strong { @apply text-sm text-gray-800; }
+
+  .import-candidates-actions {
+    @apply flex justify-end gap-2 mt-3;
+  }
+
+  .imported-drafts {
+    @apply border border-gray-200 rounded-lg bg-white px-3 py-2 mb-3;
+  }
+
+  .imported-drafts summary {
+    @apply cursor-pointer text-sm font-medium text-gray-700;
+  }
+
+  .imported-drafts-list { @apply mt-2 flex flex-col gap-1; }
+
+  .imported-draft {
+    @apply flex items-center justify-between gap-2 text-sm rounded-md bg-gray-50 px-2.5 py-1.5;
+  }
+
+  .imported-draft--active {
+    @apply bg-brand-50 border border-brand-200 text-brand-900;
+  }
+
+  .imported-draft-active {
+    @apply inline-block ml-2 px-1.5 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-semibold;
+  }
+
+  .imported-draft-delete { @apply text-red-600 hover:text-red-800 ml-2; }
 
   .create-layout {
     display: grid;

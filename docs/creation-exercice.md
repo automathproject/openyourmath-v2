@@ -41,7 +41,9 @@ src/routes/api/create/
 - **Import** (`/api/create/import`) : un PDF est converti en images côté
   client (pdfjs-dist, max 4 pages, JPEG ≤1600 px), une image est réduite de
   même, puis le modèle vision transcrit le document au format `.tex` du site.
-  Un fichier `.tex` déposé est chargé directement sans IA.
+  Les exercices indépendants détectés sont présentés à la sélection et
+  enregistrés comme brouillons distincts, accessibles depuis la page. Un
+  fichier `.tex` déposé est chargé directement sans IA.
 - **Export** : `buildExerciseTex()` produit une source conforme au contrôle
   qualité (`pnpm check:tex`) — métadonnées dans l'ordre des sources, questions
   multiples dans un `enumerate` avec `\item`.
