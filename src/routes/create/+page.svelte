@@ -26,14 +26,6 @@
   const PROMPTS_KEY = 'oym-create-prompts-v1';
   const LEVELS = ['Seconde', 'Première', 'Terminale', 'L1', 'L2', 'L3', 'M1', 'M2'];
 
-  const BLOCK_LABELS = {
-    text: 'Description',
-    question: 'Question',
-    indication: 'Indication',
-    reponse: 'Solution',
-    code: 'Code',
-  };
-
   function today() {
     return new Date().toISOString().slice(0, 10);
   }
@@ -55,8 +47,10 @@
     };
   }
 
-  function newBlock(type, latex = '') {
-    return { id: crypto.randomUUID(), type, latex };
+  function newBlock(type, latex = '', questionId = null) {
+    // indication/réponse portent leur question parente : leur sens ne dépend
+    // plus de leur seule position dans la liste.
+    return { id: crypto.randomUUID(), type, latex, questionId };
   }
 
   // ── État ──────────────────────────────────────────────────────────────────
@@ -64,12 +58,13 @@
   let blocks = $state([newBlock('text'), newBlock('question')]);
 
   let rightTab = $state('preview'); // 'preview' | 'source'
-  let showMeta = $state(true);
+  let showMeta = $state(false);
   let showImport = $state(false);
   let showHint = $state(true);
   let showSolution = $state(true);
 
   let aiInstruction = $state('');
+  let aiQuestionCount = $state(3);
   let aiBusyBlockId = $state(null); // id du bloc concerné, ou '__new__'
   let aiMetaBusy = $state(null); // clé du champ de métadonnée en cours de suggestion
   let aiError = $state('');
@@ -88,10 +83,35 @@
 
   let restored = false;
 
+  /** Blocs dans l'ordre pédagogique attendu par l'export et l'IA. */
+  function documentBlocks() {
+    const result = [];
+    const included = new Set();
+    // Les descriptions restent au niveau de l'exercice.
+    for (const block of blocks) {
+      if (block.type === 'text' || block.type === 'code') {
+        result.push(block);
+        included.add(block.id);
+      }
+    }
+    for (const question of blocks.filter((b) => b.type === 'question')) {
+      result.push(question);
+      included.add(question.id);
+      for (const child of blocks) {
+        if (child.questionId === question.id && (child.type === 'indication' || child.type === 'reponse')) {
+          result.push(child);
+          included.add(child.id);
+        }
+      }
+    }
+    // Conserve les contenus importés dont le parent n'a pas été reconnu.
+    return [...result, ...blocks.filter((b) => !included.has(b.id))];
+  }
+
   // ── Aperçu (debounce 300 ms) ──────────────────────────────────────────────
   let previewContent = $state([]);
   $effect(() => {
-    const snapshot = blocks.map((b) => ({ id: b.id, type: b.type, latex: b.latex }));
+    const snapshot = documentBlocks().map((b) => ({ id: b.id, type: b.type, latex: b.latex }));
     const timer = setTimeout(() => {
       previewContent = blocksToPreviewContent(snapshot);
     }, 300);
@@ -107,7 +127,7 @@
   let texSource = $derived(
     buildExerciseTex(
       meta,
-      blocks.map((b) => ({ type: b.type, latex: b.latex }))
+      documentBlocks().map((b) => ({ type: b.type, latex: b.latex }))
     )
   );
 
@@ -121,7 +141,15 @@
         const draft = JSON.parse(raw);
         if (draft?.meta && Array.isArray(draft?.blocks)) {
           meta = { ...emptyMeta(), ...draft.meta };
-          blocks = draft.blocks.map((b) => newBlock(b.type || 'text', b.latex || ''));
+          let lastQuestionId = null;
+          blocks = draft.blocks.map((b) => {
+            const type = b.type || 'text';
+            const block = newBlock(type, b.latex || '', b.questionId || null);
+            if (type === 'question') lastQuestionId = block.id;
+            // Migration des anciens brouillons, où le rattachement était implicite.
+            if ((type === 'indication' || type === 'reponse') && !block.questionId) block.questionId = lastQuestionId;
+            return block;
+          });
         }
       }
     } catch {
@@ -141,7 +169,7 @@
   $effect(() => {
     const payload = JSON.stringify({
       meta: { ...meta },
-      blocks: blocks.map((b) => ({ type: b.type, latex: b.latex })),
+      blocks: blocks.map((b) => ({ type: b.type, latex: b.latex, questionId: b.questionId || null })),
     });
     if (!restored) return;
     const timer = setTimeout(() => {
@@ -155,8 +183,8 @@
   });
 
   // ── Gestion des blocs ─────────────────────────────────────────────────────
-  function addBlock(type, afterId = null) {
-    const block = newBlock(type);
+  function addBlock(type, afterId = null, questionId = null) {
+    const block = newBlock(type, '', questionId);
     if (afterId) {
       const idx = blocks.findIndex((b) => b.id === afterId);
       blocks.splice(idx + 1, 0, block);
@@ -171,19 +199,42 @@
 
   function removeBlock(id) {
     const idx = blocks.findIndex((b) => b.id === id);
-    if (idx !== -1) blocks.splice(idx, 1);
+    if (idx === -1) return;
+    const [removed] = blocks.splice(idx, 1);
+    if (removed.type === 'question') {
+      blocks = blocks.filter((b) => b.questionId !== removed.id);
+    }
   }
 
   function moveBlock(id, delta) {
+    const block = blocks.find((b) => b.id === id);
+    if (!block) return;
+    const siblings = blockSiblings(block);
+    const siblingIndex = siblings.findIndex((b) => b.id === id);
+    const siblingTarget = siblingIndex + delta;
+    if (siblingTarget < 0 || siblingTarget >= siblings.length) return;
+    const target = siblings[siblingTarget];
     const idx = blocks.findIndex((b) => b.id === id);
-    const target = idx + delta;
-    if (idx === -1 || target < 0 || target >= blocks.length) return;
-    const [block] = blocks.splice(idx, 1);
-    blocks.splice(target, 0, block);
+    const targetIndex = blocks.findIndex((b) => b.id === target.id);
+    [blocks[idx], blocks[targetIndex]] = [blocks[targetIndex], blocks[idx]];
+  }
+
+  function blockSiblings(block) {
+    if (block.type === 'question') return blocks.filter((b) => b.type === 'question');
+    if (block.questionId) return blocks.filter((b) => b.questionId === block.questionId);
+    return blocks.filter((b) => !b.questionId && b.type !== 'question');
+  }
+
+  function canMoveBlock(block, delta) {
+    const index = blockSiblings(block).findIndex((b) => b.id === block.id);
+    const target = index + delta;
+    return target >= 0 && target < blockSiblings(block).length;
   }
 
   /** Question précédant le bloc d'index donné (pour indication/solution). */
   function precedingQuestion(index) {
+    const block = blocks[index];
+    if (block?.questionId) return blocks.find((b) => b.id === block.questionId) || null;
     for (let i = index; i >= 0; i--) {
       if (blocks[i].type === 'question' && blocks[i].latex.trim()) return blocks[i];
     }
@@ -192,9 +243,18 @@
 
   /** Index d'insertion après la question `qIndex` et ses indications/solutions. */
   function insertIndexAfterGroup(qIndex) {
+    const question = blocks[qIndex];
     let i = qIndex + 1;
-    while (i < blocks.length && (blocks[i].type === 'indication' || blocks[i].type === 'reponse')) i++;
+    while (i < blocks.length && blocks[i].questionId === question?.id) i++;
     return i;
+  }
+
+  function addChildBlock(questionBlock, type) {
+    const qIndex = blocks.findIndex((b) => b.id === questionBlock.id);
+    if (qIndex === -1) return;
+    const block = newBlock(type, '', questionBlock.id);
+    blocks.splice(insertIndexAfterGroup(qIndex), 0, block);
+    tick().then(() => document.getElementById(`block-ta-${block.id}`)?.focus());
   }
 
   // ── Assistant LaTeX ───────────────────────────────────────────────────────
@@ -230,7 +290,7 @@
       body: JSON.stringify({
         mode,
         meta: { ...meta },
-        blocks: blocks.map((b) => ({ type: b.type, latex: b.latex })),
+        blocks: documentBlocks().map((b) => ({ type: b.type, latex: b.latex })),
         targetLatex,
         instruction,
         taskPrompt,
@@ -268,6 +328,8 @@
    * vient des blocs question eux-mêmes).
    */
   function questionBlocksFromAi(latex) {
+    const separated = String(latex).split(/\n\s*---\s*\n/).map((part) => part.trim()).filter(Boolean);
+    if (separated.length > 1) return { text: null, questions: separated };
     const split = splitEnumerateItems(latex);
     if (!split) return { text: null, questions: [latex] };
     return { text: split.prefix || null, questions: split.items };
@@ -383,7 +445,7 @@
     try {
       const latex = await callAssist(type, { targetLatex: questionBlock.latex });
       const qIndex = blocks.findIndex((b) => b.id === questionBlock.id);
-      blocks.splice(insertIndexAfterGroup(qIndex), 0, newBlock(type, latex));
+      blocks.splice(insertIndexAfterGroup(qIndex), 0, newBlock(type, latex, questionBlock.id));
     } catch (err) {
       aiError = err.message;
     } finally {
@@ -391,13 +453,16 @@
     }
   }
 
-  /** Génère une nouvelle question en fin d'exercice. */
-  async function aiNewQuestion() {
+  /** Génère une séquence de questions cohérentes en fin d'exercice. */
+  async function aiGenerateSequence() {
     if (aiBusyBlockId) return;
     aiError = '';
     aiBusyBlockId = '__new__';
     try {
-      const latex = await callAssist('question', { instruction: aiInstruction });
+      const count = Math.max(1, Math.min(8, Number(aiQuestionCount) || 3));
+      aiQuestionCount = count;
+      const instruction = `${aiInstruction.trim()}\n\nGénère exactement ${count} questions progressives. Sépare chaque question par une ligne contenant uniquement --- .`;
+      const latex = await callAssist('sequence', { instruction });
       const { text, questions } = questionBlocksFromAi(latex);
       if (text) blocks.push(newBlock('text', text));
       for (const q of questions) blocks.push(newBlock('question', q));
@@ -426,7 +491,12 @@
       uuid: parsedMeta.uuid || generateShortUuid(),
       created_at: parsedMeta.created_at || today(),
     };
-    blocks = parsedBlocks.map((b) => newBlock(b.type, b.latex));
+    let lastQuestionId = null;
+    blocks = parsedBlocks.map((b) => {
+      const block = newBlock(b.type, b.latex, (b.type === 'indication' || b.type === 'reponse') ? lastQuestionId : null);
+      if (b.type === 'question') lastQuestionId = block.id;
+      return block;
+    });
     importNotice = `✅ « ${sourceLabel} » importé — relisez et corrigez avant export.`;
     showImport = false;
     showMeta = true;
@@ -606,10 +676,6 @@
         </div>
       </details>
 
-      <div class="editor-toolbar-sticky">
-        <LatexToolbar oninsert={insertSnippet} />
-      </div>
-
       {#if aiError}
         <p class="editor-ai-error" role="alert">
           {aiError}
@@ -618,38 +684,69 @@
       {/if}
 
       <div class="editor-ai-panel">
-        <p class="editor-ai-title">✨ Assistant IA de rédaction <span class="editor-ai-model">Albert · gpt-oss-120b</span></p>
+        <div class="editor-ai-heading">
+          <div>
+            <p class="editor-ai-kicker">Point de départ</p>
+            <p class="editor-ai-title">✨ Composer une séquence d'exercice <span class="editor-ai-model">Albert · gpt-oss-120b</span></p>
+          </div>
+          <span class="editor-ai-badge">Assistant principal</span>
+        </div>
+        <div class="editor-ai-parameters">
+          <label>
+            <span>Niveau</span>
+            <input type="text" bind:value={meta.level} list="create-levels" placeholder="L1, L2…" />
+          </label>
+          <label>
+            <span>Difficulté</span>
+            <select bind:value={meta.difficulty}>
+              <option value="">À définir</option>
+              {#each [1, 2, 3, 4, 5] as d}
+                <option value={String(d)}>{d}/5</option>
+              {/each}
+            </select>
+          </label>
+        </div>
         <div class="editor-ai-row">
-          <input
-            type="text"
+          <textarea
             bind:value={aiInstruction}
-            placeholder="Consigne facultative : « une question sur la convergence, niveau L2 »…"
-            onkeydown={(e) => e.key === 'Enter' && aiNewQuestion()}
-          />
-          <button type="button" class="btn-primary" disabled={aiBusyBlockId !== null} onclick={aiNewQuestion}>
-            {aiBusyBlockId === '__new__' ? 'Génération…' : 'Générer une question'}
-          </button>
+            placeholder="Décrivez l'exercice : notions, objectif pédagogique, contraintes…"
+            rows="3"
+          ></textarea>
+          <div class="editor-ai-generate">
+            <label><span>Questions</span><input type="number" min="1" max="8" bind:value={aiQuestionCount} /></label>
+            <button type="button" class="btn-primary" disabled={aiBusyBlockId !== null} onclick={aiGenerateSequence}>
+              {aiBusyBlockId === '__new__' ? 'Génération…' : `Générer ${aiQuestionCount} questions`}
+            </button>
+          </div>
         </div>
         <p class="editor-ai-hint">
-          Sur chaque bloc : ✨ ouvre la consigne (visible et modifiable) pour rédiger ou améliorer le contenu ;
-          sur une question, 💡 ajoute une indication et ✅ une solution.
+          L'assistant propose une progression cohérente à partir de tout l'exercice. Les retouches locales viennent ensuite.
         </p>
       </div>
 
+      <div class="editor-toolbar-sticky">
+        <LatexToolbar oninsert={insertSnippet} />
+      </div>
+
       <div class="editor-blocks">
-        {#each blocks as block, index (block.id)}
+        {#each documentBlocks() as block (block.id)}
           <div class="editor-block editor-block--{block.type}">
             <div class="editor-block-head">
-              <select
-                class="editor-block-type"
-                bind:value={block.type}
-                aria-label="Type du bloc"
-              >
-                {#each BLOCK_TYPES as bt}
-                  <option value={bt.type}>{bt.label}</option>
-                {/each}
-                {#if block.type === 'code'}<option value="code">Code</option>{/if}
-              </select>
+              <div class="editor-block-label">
+                <select
+                  class="editor-block-type"
+                  bind:value={block.type}
+                  aria-label="Type du bloc"
+                >
+                  {#each BLOCK_TYPES as bt}
+                    <option value={bt.type}>{bt.label}</option>
+                  {/each}
+                  {#if block.type === 'code'}<option value="code">Code</option>{/if}
+                </select>
+                {#if block.questionId}
+                  <span class="editor-block-parent">liée à la question {blocks.filter((b) => b.type === 'question').findIndex((b) => b.id === block.questionId) + 1}</span>
+                {/if}
+              </div>
 
               <div class="editor-block-actions">
                 <button
@@ -679,9 +776,11 @@
                     disabled={aiBusyBlockId !== null}
                     onclick={() => aiAddForQuestion(block, 'reponse')}
                   >✅</button>
+                  <button type="button" class="block-btn" title="Ajouter une indication manuelle" onclick={() => addChildBlock(block, 'indication')}>+💡</button>
+                  <button type="button" class="block-btn" title="Ajouter une solution manuelle" onclick={() => addChildBlock(block, 'reponse')}>+✅</button>
                 {/if}
-                <button type="button" class="block-btn" title="Monter" disabled={index === 0} onclick={() => moveBlock(block.id, -1)}>↑</button>
-                <button type="button" class="block-btn" title="Descendre" disabled={index === blocks.length - 1} onclick={() => moveBlock(block.id, 1)}>↓</button>
+                <button type="button" class="block-btn" title="Monter" disabled={!canMoveBlock(block, -1)} onclick={() => moveBlock(block.id, -1)}>↑</button>
+                <button type="button" class="block-btn" title="Descendre" disabled={!canMoveBlock(block, 1)} onclick={() => moveBlock(block.id, 1)}>↓</button>
                 <button type="button" class="block-btn block-btn--danger" title="Supprimer ce bloc" onclick={() => removeBlock(block.id)}>✕</button>
               </div>
             </div>
@@ -751,9 +850,9 @@
               placeholder={block.type === 'question'
                 ? 'Énoncé de la question (LaTeX, math entre $…$)'
                 : block.type === 'indication'
-                  ? 'Indication pour la question précédente'
+                  ? 'Indication pour la question liée'
                   : block.type === 'reponse'
-                    ? 'Solution détaillée de la question précédente'
+                    ? 'Solution détaillée de la question liée'
                     : 'Mise en situation, définitions, notations…'}
               bind:value={block.latex}
               use:autoResize
@@ -764,10 +863,11 @@
       </div>
 
       <div class="editor-add-row">
-        <span>Ajouter :</span>
-        {#each BLOCK_TYPES as bt}
+        <span>Édition manuelle :</span>
+        {#each BLOCK_TYPES.filter((bt) => bt.type === 'text' || bt.type === 'question') as bt}
           <button type="button" class="btn-add" onclick={() => addBlock(bt.type)}>+ {bt.label}</button>
         {/each}
+        <span class="editor-add-hint">Ajoutez les indications et solutions depuis la question concernée.</span>
       </div>
     </section>
 
@@ -899,6 +999,7 @@
 
   .editor-meta {
     @apply border border-gray-200 rounded-lg bg-white;
+    order: 2;
   }
 
   .editor-meta > summary {
@@ -965,14 +1066,17 @@
     position: sticky;
     top: 0.5rem;
     z-index: 10;
+    order: 3;
   }
 
   .editor-ai-error {
     @apply flex items-start justify-between gap-2 text-sm text-red-700 bg-red-50 border border-red-200 rounded-md px-3 py-2;
+    order: 4;
   }
 
   .editor-blocks {
     @apply flex flex-col gap-2.5;
+    order: 5;
   }
 
   .editor-block {
@@ -988,6 +1092,14 @@
 
   .editor-block-head {
     @apply flex items-center justify-between gap-2 px-2 pt-2;
+  }
+
+  .editor-block-label {
+    @apply flex items-center gap-2 min-w-0;
+  }
+
+  .editor-block-parent {
+    @apply text-[11px] text-gray-500 whitespace-nowrap;
   }
 
   .editor-block-type {
@@ -1081,6 +1193,11 @@
 
   .editor-add-row {
     @apply flex items-center gap-2 flex-wrap text-xs text-gray-500;
+    order: 6;
+  }
+
+  .editor-add-hint {
+    @apply text-[11px] text-gray-400;
   }
 
   .btn-add {
@@ -1089,11 +1206,38 @@
   }
 
   .editor-ai-panel {
-    @apply border border-brand-200 bg-brand-50 rounded-lg px-3 py-2.5;
+    @apply border-2 border-brand-300 bg-brand-50 rounded-xl px-4 py-4 shadow-sm;
+    order: 1;
+  }
+
+  .editor-ai-heading {
+    @apply flex items-start justify-between gap-3 mb-3;
+  }
+
+  .editor-ai-kicker {
+    @apply uppercase tracking-wider text-[10px] font-bold text-brand-600 m-0 mb-0.5;
+  }
+
+  .editor-ai-badge {
+    @apply rounded-full px-2 py-1 text-[10px] font-semibold text-brand-700 bg-white border border-brand-200 whitespace-nowrap;
+  }
+
+  .editor-ai-parameters {
+    @apply flex items-end gap-3 mb-3;
+  }
+
+  .editor-ai-parameters label {
+    @apply flex flex-col gap-0.5 text-xs font-medium text-brand-800;
+  }
+
+  .editor-ai-parameters input,
+  .editor-ai-parameters select {
+    @apply min-w-28 px-2 py-1.5 rounded-md border border-brand-200 bg-white text-sm text-gray-800
+           focus:outline-none focus:ring-2 focus:ring-brand-300;
   }
 
   .editor-ai-title {
-    @apply text-sm font-semibold text-brand-800 m-0 mb-2;
+    @apply text-base font-semibold text-brand-800 m-0;
   }
 
   .editor-ai-model {
@@ -1101,16 +1245,34 @@
   }
 
   .editor-ai-row {
-    @apply flex gap-2;
+    @apply flex gap-3 items-stretch;
   }
 
-  .editor-ai-row input {
+  .editor-ai-row textarea {
     @apply flex-1 min-w-0 px-2.5 py-1.5 rounded-md border border-brand-200 text-sm
-           focus:outline-none focus:ring-2 focus:ring-brand-300;
+           focus:outline-none focus:ring-2 focus:ring-brand-300 resize-y;
+  }
+
+  .editor-ai-generate {
+    @apply flex flex-col justify-between gap-2 min-w-36;
+  }
+
+  .editor-ai-generate label {
+    @apply flex items-center justify-between gap-2 text-xs font-medium text-brand-800;
+  }
+
+  .editor-ai-generate input {
+    @apply w-14 px-2 py-1 rounded-md border border-brand-200 bg-white text-sm text-gray-800;
   }
 
   .editor-ai-hint {
     @apply text-xs text-brand-700 m-0 mt-2;
+  }
+
+  @media (max-width: 640px) {
+    .editor-ai-row { @apply flex-col; }
+    .editor-ai-generate { @apply flex-row items-center; }
+    .editor-ai-parameters { @apply flex-wrap; }
   }
 
   /* ── Colonne aperçu ──────────────────────────────────────────────────── */

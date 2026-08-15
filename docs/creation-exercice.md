@@ -29,10 +29,15 @@ src/routes/api/create/
   mathématiques rendues par KaTeX. Les figures TikZ, images et blocs de code
   sont remplacés par des encarts (elles ne sont rendues qu'à la construction
   du site par le pipeline pandoc).
-- **Assistant IA** (`/api/create/assist`) : génère ou améliore un bloc
-  (✨ sur chaque bloc), ajoute une indication (💡) ou une solution (✅) à une
-  question, ou crée une nouvelle question à partir d'une consigne. Le contexte
-  complet de l'exercice est transmis au modèle.
+- **Assistant IA** (`/api/create/assist`) : point d'entrée principal de la
+  rédaction. À partir d'un brief et d'un nombre de questions, il génère une
+  séquence progressive. Les actions locales restent disponibles ensuite :
+  améliorer un bloc (✨), ajouter une indication (💡) ou une solution (✅).
+  Le contexte complet de l'exercice est transmis au modèle.
+- **Structure des questions** : les indications et solutions conservent dans le
+  brouillon l'identifiant de leur question parente. Leur rattachement ne dépend
+  donc plus de leur position dans l'éditeur ; l'export les remet dans l'ordre
+  pédagogique attendu.
 - **Import** (`/api/create/import`) : un PDF est converti en images côté
   client (pdfjs-dist, max 4 pages, JPEG ≤1600 px), une image est réduite de
   même, puis le modèle vision transcrit le document au format `.tex` du site.
@@ -45,7 +50,7 @@ src/routes/api/create/
 
 ## Garde-fous serveur
 
-- Rate limiting par IP : 6 appels/min pour l'assistant, 3/min pour l'import.
+- Rate limiting par IP : 12 appels/min pour l'assistant, 3/min pour l'import.
 - Quota soft partagé : 15 appels chat Albert/min (`albertQuota.js`).
 - Import : max 4 pages, ~1 Mo par image, data-URL JPEG/PNG/WebP uniquement.
 - En production (adapter-node), `BODY_SIZE_LIMIT=8M` est requis pour l'import

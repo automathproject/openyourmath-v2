@@ -11,7 +11,7 @@ Règles de rédaction impératives :
 - Rédige en français, en LaTeX compatible KaTeX.
 - Mathématiques en ligne entre $...$, formules centrées entre \\[...\\].
 - N'utilise JAMAIS de Markdown (pas de **, pas de #, pas de \`\`\`).
-- N'utilise JAMAIS d'environnement enumerate ou itemize : la plateforme ne les préserve pas (la numérotation des questions vient des blocs eux-mêmes). Rédige UNE seule question à la fois ; pour des sous-parties, intègre-les au texte en (a), (b), (c). Dans une solution, enchaîne les étapes en paragraphes.
+- N'utilise JAMAIS d'environnement enumerate ou itemize : la plateforme ne les préserve pas (la numérotation des questions vient des blocs eux-mêmes). Rédige UNE seule question à la fois, sauf si la consigne demande explicitement une séquence ; dans ce cas sépare les questions exactement comme demandé. Pour des sous-parties, intègre-les au texte en (a), (b), (c). Dans une solution, enchaîne les étapes en paragraphes.
 - Macros disponibles : \\R, \\N, \\Z, \\Q, \\C (ensembles de nombres), \\dx, \\dt (différentielles), \\Vect, \\Ker, \\pgcd.
 - Réponds UNIQUEMENT avec le contenu LaTeX demandé, sans préambule, sans commentaire, sans balise englobante (\\question{}, \\reponse{}...).`;
 
@@ -24,6 +24,8 @@ export const DEFAULT_TASKS = {
   text: "Rédige le texte d'introduction de cet exercice : mise en situation, définitions des objets et notations.",
   question:
     "Rédige UNE nouvelle question pour cet exercice, cohérente avec la description et la progression des questions existantes (difficulté croissante, pas de redite).",
+  sequence:
+    "Conçois une séquence de questions progressives et cohérentes pour cet exercice. Chaque question doit être autonome, sans environnement enumerate ni balise LaTeX englobante. Sépare impérativement chaque question par une ligne contenant uniquement --- .",
   indication:
     "Rédige une indication courte (une à trois phrases) pour aider un étudiant bloqué sur la question concernée, sans dévoiler la solution.",
   reponse:

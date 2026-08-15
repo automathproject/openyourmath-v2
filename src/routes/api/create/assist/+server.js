@@ -21,6 +21,7 @@ import { getChapterStructure } from "$lib/db/queries.js";
 const VALID_MODES = new Set([
   "text",
   "question",
+  "sequence",
   "indication",
   "reponse",
   "metadata",
