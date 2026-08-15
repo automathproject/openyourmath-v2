@@ -13,7 +13,14 @@ Règles de rédaction impératives :
 - N'utilise JAMAIS de Markdown (pas de **, pas de #, pas de \`\`\`).
 - N'utilise JAMAIS d'environnement enumerate ou itemize : la plateforme ne les préserve pas (la numérotation des questions vient des blocs eux-mêmes). Rédige UNE seule question à la fois, sauf si la consigne demande explicitement une séquence ; dans ce cas sépare les questions exactement comme demandé. Pour des sous-parties, intègre-les au texte en (a), (b), (c). Dans une solution, enchaîne les étapes en paragraphes.
 - Macros disponibles : \\R, \\N, \\Z, \\Q, \\C (ensembles de nombres), \\dx, \\dt (différentielles), \\Vect, \\Ker, \\pgcd.
-- Réponds UNIQUEMENT avec le contenu LaTeX demandé, sans préambule, sans commentaire, sans balise englobante (\\question{}, \\reponse{}...).`;
+- Réponds UNIQUEMENT avec le contenu LaTeX demandé, sans préambule, sans commentaire, sans balise englobante (\\question{}, \\reponse{}...), sauf si la consigne demande explicitement du JSON.`;
+
+export const REVISION_TASK = `Répercute la modification demandée par l'auteur sur l'intégralité de l'exercice : introduction, questions, indications et solutions concernées. Conserve les blocs qui ne doivent pas changer et leur ordre pédagogique.
+
+Réponds UNIQUEMENT avec un objet JSON valide, sans Markdown, de la forme :
+{"blocks":[{"type":"text","latex":"..."},{"type":"question","latex":"..."},{"type":"indication","latex":"..."},{"type":"reponse","latex":"..."}]}
+
+Les types autorisés sont text, question, indication et reponse. N'inclus aucune explication hors du JSON.`;
 
 /**
  * Consignes par défaut, par type d'action.

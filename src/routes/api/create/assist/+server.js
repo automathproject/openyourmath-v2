@@ -15,6 +15,7 @@ import {
   SYSTEM_PROMPT,
   buildTaskPrompt,
   META_TASKS,
+  REVISION_TASK,
 } from "$lib/ia/assistPrompts.js";
 import { getChapterStructure } from "$lib/db/queries.js";
 
@@ -22,6 +23,7 @@ const VALID_MODES = new Set([
   "text",
   "question",
   "sequence",
+  "revise",
   "indication",
   "reponse",
   "metadata",
@@ -174,6 +176,27 @@ function cleanModelOutput(text) {
   return out;
 }
 
+function parseRevisionOutput(text) {
+  const cleaned = String(text || "")
+    .trim()
+    .replace(/^```json\s*\n([\s\S]*?)\n```\s*$/i, "$1");
+  const parsed = JSON.parse(cleaned);
+  const allowedTypes = new Set(["text", "question", "indication", "reponse"]);
+  if (!Array.isArray(parsed?.blocks) || !parsed.blocks.length || parsed.blocks.length > 80) {
+    throw new Error("Structure de révision invalide");
+  }
+  const blocks = parsed.blocks.map((block) => {
+    if (!allowedTypes.has(block?.type) || typeof block?.latex !== "string") {
+      throw new Error("Bloc de révision invalide");
+    }
+    return { type: block.type, latex: block.latex.trim() };
+  });
+  if (!blocks.some((block) => block.type === "question")) {
+    throw new Error("La révision ne contient aucune question");
+  }
+  return blocks;
+}
+
 function getClientIp(event) {
   const forwarded = event.request.headers.get("x-forwarded-for");
   if (forwarded) return forwarded.split(",")[0].trim();
@@ -239,6 +262,9 @@ export async function POST(event) {
       message: "targetLatex requis pour ce mode (question concernée)",
     });
   }
+  if (mode === "revise" && !String(instruction).trim()) {
+    throw error(400, { message: "Modification à répercuter requise" });
+  }
   if (String(instruction).length > 2000) {
     throw error(400, { message: "Consigne trop longue (max 2000 caractères)" });
   }
@@ -253,6 +279,8 @@ export async function POST(event) {
   let task;
   if (mode === "metadata") {
     task = await metadataTask(field, meta);
+  } else if (mode === "revise") {
+    task = `${REVISION_TASK}\n\nModification demandée par l'auteur : ${String(instruction).trim()}`;
   } else if (String(taskPrompt).trim()) {
     task = String(taskPrompt).trim();
   } else {
@@ -289,13 +317,11 @@ export async function POST(event) {
       { maxAttempts: 2 },
     );
 
-    const latex =
-      mode === "metadata"
-        ? cleanMetadataValue(cleanModelOutput(raw), field)
-        : cleanModelOutput(raw);
-    if (!latex) {
-      throw new Error("Réponse vide du modèle");
-    }
+    const revisionBlocks = mode === "revise" ? parseRevisionOutput(raw) : null;
+    const latex = mode === "metadata"
+      ? cleanMetadataValue(cleanModelOutput(raw), field)
+      : mode === "revise" ? "[révision structurée]" : cleanModelOutput(raw);
+    if (!latex) throw new Error("Réponse vide du modèle");
 
     console.log(
       JSON.stringify({
@@ -304,12 +330,14 @@ export async function POST(event) {
         mode,
         field: field || undefined,
         latencyMs: Date.now() - t0,
-        outputChars: latex.length,
+        outputChars: mode === "revise" ? JSON.stringify(revisionBlocks).length : latex.length,
         ip: ip.slice(0, 7) + "…",
       }),
     );
 
-    return json({ latex, model: generation.model });
+    return mode === "revise"
+      ? json({ blocks: revisionBlocks, model: generation.model })
+      : json({ latex, model: generation.model });
   } catch (err) {
     console.error("[create/assist] Échec Albert:", err.message);
     if (isQuotaExceeded(err)) {

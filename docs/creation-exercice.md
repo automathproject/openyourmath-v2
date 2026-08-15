@@ -34,6 +34,10 @@ src/routes/api/create/
   séquence progressive. Les actions locales restent disponibles ensuite :
   améliorer un bloc (✨), ajouter une indication (💡) ou une solution (✅).
   Le contexte complet de l'exercice est transmis au modèle.
+- **Révision globale** : une demande telle que « remplacer $a=2$ par $a=3$ et
+  recalculer » génère une proposition structurée pour l'ensemble de l'exercice.
+  Les différences sont affichées avant application ; aucune modification n'est
+  appliquée sans confirmation.
 - **Structure des questions** : les indications et solutions conservent dans le
   brouillon l'identifiant de leur question parente. Leur rattachement ne dépend
   donc plus de leur position dans l'éditeur ; l'export les remet dans l'ordre

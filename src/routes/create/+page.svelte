@@ -70,6 +70,9 @@
   let aiBusyBlockId = $state(null); // id du bloc concerné, ou '__new__'
   let aiMetaBusy = $state(null); // clé du champ de métadonnée en cours de suggestion
   let aiError = $state('');
+  let revisionInstruction = $state('');
+  let revisionBusy = $state(false);
+  let revisionProposal = $state(null);
 
   // Consignes IA par défaut, personnalisables et mémorisées (localStorage)
   let promptTemplates = $state({ ...DEFAULT_TASKS });
@@ -342,6 +345,56 @@
     const data = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(data?.error || `Erreur ${res.status}`);
     return data.latex;
+  }
+
+  async function requestRevision() {
+    if (revisionBusy) return;
+    if (!revisionInstruction.trim()) {
+      aiError = 'Décrivez la modification à répercuter.';
+      return;
+    }
+    if (!blocks.some((block) => block.latex.trim())) {
+      aiError = 'Rédigez ou générez d’abord un exercice à réviser.';
+      return;
+    }
+    aiError = '';
+    revisionBusy = true;
+    try {
+      const res = await fetch('/api/create/assist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          mode: 'revise',
+          meta: { ...meta },
+          blocks: documentBlocks().map((block) => ({ type: block.type, latex: block.latex })),
+          instruction: revisionInstruction,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data?.error || `Erreur ${res.status}`);
+      revisionProposal = { blocks: data.blocks };
+    } catch (err) {
+      aiError = err.message;
+    } finally {
+      revisionBusy = false;
+    }
+  }
+
+  function revisionChanges() {
+    if (!revisionProposal) return [];
+    const before = documentBlocks();
+    return revisionProposal.blocks
+      .map((block, index) => ({ before: before[index], after: block, index }))
+      .filter(({ before, after }) => !before || before.type !== after.type || before.latex.trim() !== after.latex.trim());
+  }
+
+  function applyRevisionProposal() {
+    if (!revisionProposal) return;
+    const changeCount = revisionChanges().length;
+    blocks = blocksFromParsed(revisionProposal.blocks);
+    importNotice = `✅ Modification répercutée sur l’exercice (${changeCount} bloc${changeCount > 1 ? 's' : ''} modifié${changeCount > 1 ? 's' : ''}).`;
+    revisionProposal = null;
+    revisionInstruction = '';
   }
 
   /** Suggère la valeur d'un champ de métadonnée à partir du contenu. */
@@ -865,6 +918,44 @@
           L'assistant propose une progression cohérente à partir de tout l'exercice. Les retouches locales viennent ensuite.
         </p>
       </div>
+
+      <section class="editor-revision-panel" aria-label="Répercuter une modification">
+        <div>
+          <p class="editor-revision-title">↻ Répercuter une modification</p>
+          <p class="editor-revision-hint">Ex. « remplacer $a=2$ par $a=3$ et recalculer les résultats dans les questions et solutions ».</p>
+        </div>
+        {#if !revisionProposal}
+          <div class="editor-revision-row">
+            <input
+              type="text"
+              bind:value={revisionInstruction}
+              placeholder="Décrivez le changement à appliquer à l'ensemble de l'exercice"
+              onkeydown={(event) => event.key === 'Enter' && requestRevision()}
+            />
+            <button type="button" class="btn-secondary" disabled={revisionBusy} onclick={requestRevision}>
+              {revisionBusy ? 'Analyse…' : 'Prévisualiser'}
+            </button>
+          </div>
+        {:else}
+          <div class="revision-preview">
+            <p><strong>Proposition prête :</strong> {revisionChanges().length} bloc{revisionChanges().length > 1 ? 's' : ''} {revisionChanges().length > 1 ? 'seront modifiés' : 'sera modifié'}.</p>
+            <details>
+              <summary>Voir les changements</summary>
+              {#each revisionChanges() as change (change.index)}
+                <div class="revision-change">
+                  <strong>Bloc {change.index + 1} · {change.after.type}</strong>
+                  <del>{change.before?.latex || 'Nouveau bloc'}</del>
+                  <ins>{change.after.latex}</ins>
+                </div>
+              {/each}
+            </details>
+            <div class="revision-preview-actions">
+              <button type="button" class="btn-secondary" onclick={() => (revisionProposal = null)}>Annuler</button>
+              <button type="button" class="btn-primary" onclick={applyRevisionProposal}>Appliquer les changements</button>
+            </div>
+          </div>
+        {/if}
+      </section>
 
       <div class="editor-toolbar-sticky">
         <LatexToolbar oninsert={insertSnippet} />
@@ -1405,6 +1496,48 @@
     order: 1;
   }
 
+  .editor-revision-panel {
+    @apply border border-violet-200 bg-violet-50 rounded-xl px-4 py-3 flex flex-col gap-2;
+    order: 1;
+  }
+
+  .editor-revision-title {
+    @apply text-sm font-semibold text-violet-900 m-0;
+  }
+
+  .editor-revision-hint {
+    @apply text-xs text-violet-700 m-0 mt-0.5;
+  }
+
+  .editor-revision-row {
+    @apply flex gap-2;
+  }
+
+  .editor-revision-row input {
+    @apply flex-1 min-w-0 px-2.5 py-1.5 rounded-md border border-violet-200 bg-white text-sm
+           focus:outline-none focus:ring-2 focus:ring-violet-300;
+  }
+
+  .revision-preview {
+    @apply text-sm text-violet-900;
+  }
+
+  .revision-preview p { @apply m-0; }
+  .revision-preview details { @apply mt-2; }
+  .revision-preview summary { @apply cursor-pointer text-xs font-medium text-violet-700; }
+
+  .revision-change {
+    @apply mt-2 p-2 rounded-md bg-white border border-violet-100 text-xs;
+  }
+
+  .revision-change strong,
+  .revision-change del,
+  .revision-change ins { @apply block; }
+  .revision-change del { @apply mt-1 text-red-700 no-underline line-through; }
+  .revision-change ins { @apply mt-1 text-green-800 no-underline; }
+
+  .revision-preview-actions { @apply flex justify-end gap-2 mt-3; }
+
   .editor-ai-heading {
     @apply flex items-start justify-between gap-3 mb-3;
   }
@@ -1468,6 +1601,7 @@
     .editor-ai-row { @apply flex-col; }
     .editor-ai-generate { @apply flex-row items-center; }
     .editor-ai-parameters { @apply flex-wrap; }
+    .editor-revision-row { @apply flex-col; }
   }
 
   /* ── Colonne aperçu ──────────────────────────────────────────────────── */
