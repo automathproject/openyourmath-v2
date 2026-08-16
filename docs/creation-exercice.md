@@ -28,7 +28,10 @@ src/routes/api/create/
 - **Aperçu** : conversion LaTeX → HTML légère côté client (`texPreview.js`),
   mathématiques rendues par KaTeX. Les figures TikZ, images et blocs de code
   sont remplacés par des encarts (elles ne sont rendues qu'à la construction
-  du site par le pipeline pandoc).
+  du site par le pipeline pandoc). Le bouton **Vérifier le rendu final** lance
+  ponctuellement ce convertisseur de production côté serveur, notamment pour
+  contrôler les tableaux ; toute nouvelle modification revient à l'aperçu
+  instantané.
 - **Assistant IA** (`/api/create/assist`) : point d'entrée principal de la
   rédaction. À partir d'un brief et d'un nombre de questions, il génère une
   séquence progressive. Les actions locales restent disponibles ensuite :

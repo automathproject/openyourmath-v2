@@ -60,6 +60,9 @@
   let blocks = $state([newBlock('text'), newBlock('question')]);
 
   let rightTab = $state('preview'); // 'preview' | 'source'
+  let finalPreview = $state(null);
+  let finalPreviewBusy = $state(false);
+  let finalPreviewError = $state('');
   let showMeta = $state(false);
   let showImport = $state(false);
   let showHint = $state(true);
@@ -124,6 +127,14 @@
       previewContent = blocksToPreviewContent(snapshot);
     }, 300);
     return () => clearTimeout(timer);
+  });
+
+  // Le rendu Pandoc est une vérification ponctuelle : toute modification le
+  // rend obsolète et ramène automatiquement à l'aperçu instantané.
+  $effect(() => {
+    documentBlocks().map((block) => `${block.type}:${block.latex}`);
+    finalPreview = null;
+    finalPreviewError = '';
   });
 
   let previewExercise = $derived({
@@ -325,6 +336,29 @@
         : start + before.length;
       ta.setSelectionRange(cursor, cursor);
     });
+  }
+
+  async function verifyFinalPreview() {
+    if (finalPreviewBusy || !blocks.some((block) => block.latex.trim())) return;
+    finalPreviewBusy = true;
+    finalPreviewError = '';
+    try {
+      const res = await fetch('/api/create/preview', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          blocks: documentBlocks().map((block) => ({ type: block.type, latex: block.latex })),
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data?.error || `Erreur ${res.status}`);
+      finalPreview = data.content;
+      rightTab = 'preview';
+    } catch (err) {
+      finalPreviewError = err.message;
+    } finally {
+      finalPreviewBusy = false;
+    }
   }
 
   // ── Assistant IA (API Albert) ─────────────────────────────────────────────
@@ -1123,11 +1157,32 @@
           class:is-active={rightTab === 'source'}
           onclick={() => (rightTab = 'source')}
         >Source .tex</button>
+        <button
+          type="button"
+          class="preview-validate"
+          disabled={finalPreviewBusy || !blocks.some((block) => block.latex.trim())}
+          onclick={verifyFinalPreview}
+          title="Vérifier le rendu avec le convertisseur de production"
+        >{finalPreviewBusy ? 'Vérification…' : '✓ Vérifier le rendu final'}</button>
       </div>
 
       <div class="preview-body">
         {#if rightTab === 'preview'}
-          {#if previewContent.length === 0}
+          {#if finalPreviewError}
+            <p class="preview-final-error" role="alert">{finalPreviewError} L’aperçu instantané reste affiché.</p>
+          {/if}
+          {#if finalPreview}
+            <p class="preview-final-notice">✓ Rendu de validation (convertisseur de production). Modifiez un bloc pour revenir à l’aperçu instantané.</p>
+            <ExerciseContent
+              exercise={previewExercise}
+              content={finalPreview}
+              variant="full"
+              showHeader={true}
+              showGlobalToggles={false}
+              bind:showHint
+              bind:showSolution
+            />
+          {:else if previewContent.length === 0}
             <div class="preview-empty">
               <p>L'aperçu s'affichera ici au fur et à mesure de votre rédaction.</p>
               <p class="preview-empty-hint">Les figures TikZ et images ne sont rendues qu'à la construction du site.</p>
@@ -1635,6 +1690,11 @@
     @apply text-brand-700 border-brand-500;
   }
 
+  .preview-validate {
+    @apply ml-auto mb-1 px-2 py-1 rounded-md border border-brand-200 bg-brand-50 text-xs font-medium text-brand-700
+           hover:bg-brand-100 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
   .preview-body {
     @apply p-3 overflow-y-auto;
   }
@@ -1645,6 +1705,14 @@
 
   .preview-empty-hint {
     @apply text-xs mt-2;
+  }
+
+  .preview-final-notice {
+    @apply text-xs text-green-800 bg-green-50 border border-green-200 rounded-md px-2.5 py-2 mb-3;
+  }
+
+  .preview-final-error {
+    @apply text-xs text-red-700 bg-red-50 border border-red-200 rounded-md px-2.5 py-2 mb-3;
   }
 
   .preview-source pre {
