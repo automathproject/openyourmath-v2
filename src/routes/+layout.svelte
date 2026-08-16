@@ -101,8 +101,12 @@
      ============================================== */
 
   .header-shell {
+    position: sticky;
+    top: 0;
+    z-index: 70;
     max-height: 4rem;
     overflow: hidden;
+    background: theme('colors.interface.bg-primary');
     transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.25s ease;
     opacity: 1;

@@ -409,8 +409,8 @@
 
   $: selectedContent = $selectedExercise?.content || [];
   $: selectedQuestionCount = getQuestionCount(selectedContent);
-  $: isReadingImmersive = mode === 'preparer' && !isPresentationMode && readingMode === 'immersive' && Boolean($selectedExercise);
-  $: immersiveMode.set(isReadingImmersive);
+  $: isFullscreenMode = mode === 'presenter' || isFullPresentation;
+  $: immersiveMode.set(isFullscreenMode);
   
   // État pour le champ UUID
   let uuidInputValue = '';

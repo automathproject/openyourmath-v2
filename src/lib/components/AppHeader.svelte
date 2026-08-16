@@ -41,41 +41,53 @@
     </a>
 
     <nav class="app-nav" aria-label="Navigation principale">
-      <a href="/" class:is-active={isActive('/') && !isActive('/browse') && !isActive('/exercise')}>
+      <a
+        href="/"
+        class:is-active={isActive('/') && !isActive('/browse') && !isActive('/exercise')}
+        aria-label="Recherche"
+        title="Recherche"
+      >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>
         </svg>
-        Recherche
+        <span class="nav-label">Recherche</span>
       </a>
-      <a href="/browse" class:is-active={isActive('/browse')}>
+      <a href="/browse" class:is-active={isActive('/browse')} aria-label="Parcourir" title="Parcourir">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
         </svg>
-        Parcourir
+        <span class="nav-label">Parcourir</span>
       </a>
-      <a href={listHref} class:is-active={isActive('/exercise/list')}>
+      <a href={listHref} class:is-active={isActive('/exercise/list')} aria-label={`Ma liste${seanceCount > 0 ? `, ${seanceCount} élément${seanceCount > 1 ? 's' : ''}` : ''}`} title="Ma liste">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
           <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
         </svg>
-        Ma liste
+        <span class="nav-label">Ma liste</span>
         {#if seanceCount > 0}
           <span class="list-counter">{seanceCount}</span>
         {/if}
       </a>
-      <a href="/create" class:is-active={isActive('/create')}>
+      <a href="/create" class:is-active={isActive('/create')} aria-label="Créer" title="Créer">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M12 20h9"/>
           <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
         </svg>
-        Créer
+        <span class="nav-label">Créer</span>
         <span class="beta-badge">bêta</span>
       </a>
     </nav>
   </div>
 
   <div class="app-header-right">
-    <a href="/about" class="btn btn-ghost btn-sm">À propos</a>
+    <a href="/about" class="btn btn-ghost btn-sm about-link" aria-label="À propos" title="À propos">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 16v-4"/>
+        <path d="M12 8h.01"/>
+      </svg>
+      <span class="about-label">À propos</span>
+    </a>
     <button type="button" class="btn-icon" aria-label="Aide">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <circle cx="12" cy="12" r="10"/>
@@ -161,6 +173,10 @@
     transition: background 0.15s, color 0.15s;
   }
 
+  .nav-label {
+    white-space: nowrap;
+  }
+
   .app-nav a:hover {
     background: theme('colors.interface.bg-tertiary');
     color: theme('colors.interface.text-primary');
@@ -197,6 +213,10 @@
     gap: 8px;
   }
 
+  .about-link {
+    gap: 6px;
+  }
+
   .btn-icon {
     width: 32px;
     height: 32px;
@@ -215,8 +235,38 @@
   }
 
   @media (max-width: 640px) {
-    .app-header-right :global(.btn-sm) { display: none; }
+    .app-header-right :global(.btn-sm) {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border-radius: 9999px;
+    }
+
+    .about-label {
+      display: none;
+    }
+
     .app-brand-name { display: none; }
-    .app-nav a { padding: 6px 8px; font-size: 12px; }
+    .app-nav {
+      gap: 4px;
+    }
+
+    .app-nav a {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      justify-content: center;
+      font-size: 0;
+      border-radius: 9999px;
+    }
+
+    .app-nav svg {
+      flex-shrink: 0;
+    }
+
+    .nav-label,
+    .beta-badge {
+      display: none;
+    }
   }
 </style>
