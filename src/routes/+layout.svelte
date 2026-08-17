@@ -73,11 +73,13 @@
             class="footer-cta"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Contribuer au projet"
+            title="Contribuer au projet"
           >
             <svg class="footer-cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
-            Contribuer au projet
+            <span class="footer-cta-label">Contribuer au projet</span>
           </a>
           <div class="footer-tech">
             <p>Hébergement OVH (FR) · HTTPS Caddy</p>
@@ -305,20 +307,33 @@
 
   @media (max-width: 767px) {
     .footer-content {
-      padding: 1.4rem 1.25rem 1rem;
+      padding: 1rem 1.25rem 0.75rem;
     }
 
     .footer-grid {
-      gap: 1.2rem;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        "identity actions"
+        "nav nav";
+      column-gap: 0.75rem;
+      row-gap: 0.85rem;
+      align-items: start;
     }
+
+    .footer-identity { grid-area: identity; }
+    .footer-nav { grid-area: nav; }
+    .footer-actions-col { grid-area: actions; }
 
     .footer-identity {
       gap: 0.25rem;
     }
 
     .footer-tagline {
-      font-size: 0.82rem;
-      line-height: 1.4;
+      display: none;
+    }
+
+    .footer-license {
+      font-size: 0.7rem;
     }
 
     .footer-nav {
@@ -328,26 +343,32 @@
     }
 
     .footer-nav-heading {
-      flex-basis: 100%;
-      margin-bottom: 0;
+      display: none;
     }
 
     .footer-actions-col {
-      gap: 0.65rem;
+      gap: 0;
     }
 
     .footer-cta {
-      padding: 0.4rem 0.75rem;
-      font-size: 0.82rem;
+      width: 2.25rem;
+      height: 2.25rem;
+      justify-content: center;
+      padding: 0;
+      border-radius: 9999px;
+    }
+
+    .footer-cta-label {
+      display: none;
     }
 
     .footer-tech {
-      line-height: 1.45;
+      display: none;
     }
 
     .footer-bottom {
-      margin-top: 1.25rem;
-      padding-top: 0.8rem;
+      margin-top: 0.85rem;
+      padding-top: 0.65rem;
     }
   }
 
