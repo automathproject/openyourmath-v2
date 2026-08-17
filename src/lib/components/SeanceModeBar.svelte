@@ -22,6 +22,7 @@
   export let title = '';
   export let subtitle = '';
   export let compactMobile = false;
+  let isModeMenuOpen = false;
 
   const modes = [
     { id: 'preparer', label: 'Préparer' },
@@ -30,7 +31,10 @@
     { id: 'partager', label: 'Partager' },
   ];
 
+  $: activeMode = modes.find((candidate) => candidate.id === mode) ?? modes[0];
+
   function setMode(id) {
+    isModeMenuOpen = false;
     mode = id;
     const url = new URL($page.url);
     url.searchParams.set('mode', id);
@@ -53,19 +57,86 @@
   <div class="seance-mode-bar-controls">
     <slot name="actions"></slot>
 
-    <div class="seance-mode-tabs" role="tablist" aria-label="Mode de la séance">
-      {#each modes as m}
+    <button
+      type="button"
+      class="seance-mode-menu-trigger"
+      aria-label={`Mode actuel : ${activeMode.label}. Changer le mode de la séance`}
+      aria-expanded={isModeMenuOpen}
+      aria-controls="seance-mode-menu"
+      title={`Mode actuel : ${activeMode.label}`}
+      on:click={() => isModeMenuOpen = !isModeMenuOpen}
+    >
+      {#if mode === 'preparer'}
+        <svg class="seance-mode-current-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+        </svg>
+      {:else if mode === 'consulter'}
+        <svg class="seance-mode-current-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+        </svg>
+      {:else if mode === 'presenter'}
+        <svg class="seance-mode-current-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="12" rx="2" />
+          <path stroke-linecap="round" d="M8 21h8M12 15v6" />
+        </svg>
+      {:else}
+        <svg class="seance-mode-current-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="18" cy="5" r="3" />
+          <circle cx="6" cy="12" r="3" />
+          <circle cx="18" cy="19" r="3" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4" />
+        </svg>
+      {/if}
+      <svg class="seance-mode-menu-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M7 10l5 5 5-5" />
+      </svg>
+    </button>
+
+    <div id="seance-mode-menu" class="seance-mode-menu" class:seance-mode-menu--open={isModeMenuOpen}>
+      <div class="seance-mode-tabs" role="tablist" aria-label="Mode de la séance">
+        {#each modes as m}
         <button
           type="button"
           role="tab"
           class="seance-mode-tab"
           class:is-active={mode === m.id}
           aria-selected={mode === m.id}
+          aria-label={m.label}
+          title={m.label}
           on:click={() => setMode(m.id)}
         >
-          {m.label}
+          {#if m.id === 'preparer'}
+            <svg class="seance-mode-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg>
+          {:else if m.id === 'consulter'}
+            <svg class="seance-mode-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+            </svg>
+          {:else if m.id === 'presenter'}
+            <svg class="seance-mode-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="12" rx="2" />
+              <path stroke-linecap="round" d="M8 21h8M12 15v6" />
+            </svg>
+          {:else}
+            <svg class="seance-mode-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4" />
+            </svg>
+          {/if}
+          <span class="seance-mode-tab-label">{m.label}</span>
         </button>
-      {/each}
+        {/each}
+      </div>
+      <div class="seance-mode-menu-actions">
+        <slot name="menu-actions"></slot>
+      </div>
     </div>
   </div>
 </div>
@@ -108,6 +179,23 @@
     flex-shrink: 0;
   }
 
+  .seance-mode-menu-trigger {
+    display: none;
+    appearance: none;
+    border: 1px solid theme('colors.interface.border-primary');
+    background: theme('colors.interface.bg-white');
+    color: theme('colors.interface.text-secondary');
+    border-radius: 9999px;
+    cursor: pointer;
+  }
+
+  .seance-mode-menu-trigger:hover,
+  .seance-mode-menu-trigger[aria-expanded="true"] {
+    color: theme('colors.brand.700');
+    background: theme('colors.brand.50');
+    border-color: theme('colors.brand.200');
+  }
+
   .seance-mode-tabs {
     display: flex;
     gap: 4px;
@@ -117,6 +205,8 @@
     border: 1px solid theme('colors.interface.border-primary');
     flex-shrink: 0;
   }
+
+  .seance-mode-menu-actions { display: none; }
 
   .seance-mode-tab {
     appearance: none;
@@ -141,35 +231,80 @@
     font-weight: 600;
   }
 
+  .seance-mode-tab-icon { display: none; }
+
   @media (max-width: 720px) {
-    .seance-mode-bar { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 16px; }
-    .seance-mode-bar-controls { flex-wrap: wrap; }
-    .seance-mode-tabs { overflow-x: auto; }
-
-    .seance-mode-bar--compact-mobile {
-      gap: 0;
-      padding: 8px 10px;
+    .seance-mode-bar {
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
     }
-
-    .seance-mode-bar--compact-mobile .seance-mode-bar-meta {
-      display: none;
+    .seance-title { font-size: 18px; }
+    .seance-subtitle { display: none; }
+    .seance-mode-bar-controls {
+      position: relative;
+      align-items: center;
+      gap: 6px;
     }
-
-    .seance-mode-bar--compact-mobile .seance-mode-bar-controls {
-      display: block;
-    }
-
-    .seance-mode-bar--compact-mobile .seance-mode-tabs {
-      width: 100%;
-      justify-content: space-between;
-      padding: 3px;
-    }
-
-    .seance-mode-bar--compact-mobile .seance-mode-tab {
-      flex: 1;
-      padding: 5px 8px;
+    .seance-mode-menu-trigger {
+      width: 44px;
+      height: 40px;
+      justify-content: center;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      flex: 0 0 auto;
+      font-family: inherit;
       font-size: 12px;
+      font-weight: 600;
+    }
+    .seance-mode-current-icon { width: 17px; height: 17px; }
+    .seance-mode-menu-chevron { width: 14px; height: 14px; }
+    .seance-mode-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      z-index: 80;
+      display: none;
+      width: auto;
+      flex-direction: row;
+      padding: 4px;
+      gap: 4px;
+      background: theme('colors.interface.bg-white');
+      border: 1px solid theme('colors.interface.border-primary');
+      border-radius: theme('borderRadius.pill');
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.14);
+    }
+    .seance-mode-menu--open { display: flex; }
+    .seance-mode-tabs { position: static; border: 0; }
+    .seance-mode-menu-actions {
+      display: flex;
+      gap: 4px;
+    }
+    .seance-mode-menu-actions :global(.list-action-btn) {
+      width: 40px;
+      height: 38px;
+      justify-content: center;
+      padding: 0;
+      border-radius: 9999px;
+    }
+    .seance-mode-bar-controls :global(.list-actions) {
+      width: auto;
+      flex: 0 0 auto;
+    }
+    .seance-mode-tab {
+      flex: 1;
+      min-width: 40px;
+      height: 38px;
+      padding: 0;
+      display: grid;
+      place-items: center;
       white-space: nowrap;
     }
+
+    .seance-mode-tab-label { display: none; }
+    .seance-mode-tab-icon { display: block; width: 18px; height: 18px; }
+
   }
 </style>

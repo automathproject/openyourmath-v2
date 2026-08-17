@@ -973,6 +973,7 @@
             on:click={toggleUuidControl}
             class="header-action-btn header-action-btn--secondary"
             class:header-action-btn--active={showUuidControl}
+            aria-label="Gérer les UUIDs"
             title="Gérer les UUIDs"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -986,6 +987,7 @@
           <button 
             on:click={toggleMobileNav}
             class="header-action-btn header-action-btn--primary"
+            aria-label="Ouvrir la liste d'exercices"
             title="Ouvrir la liste d'exercices"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -1011,6 +1013,21 @@
           </button>
         {/if}
         </div>
+      {/if}
+    </svelte:fragment>
+
+    <svelte:fragment slot="menu-actions">
+      {#if $hasExercises}
+        <button
+          on:click={clearList}
+          class="list-action-btn list-action-btn--danger"
+          aria-label="Vider la liste d'exercices"
+          title="Vider la liste"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          </svg>
+        </button>
       {/if}
     </svelte:fragment>
   </SeanceModeBar>
@@ -1134,6 +1151,7 @@
             on:click={toggleUuidControl}
             class="header-action-btn header-action-btn--secondary"
             class:header-action-btn--active={showUuidControl}
+            aria-label="Gérer les UUIDs"
             title="Gérer les UUIDs"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -1147,6 +1165,7 @@
           <button 
             on:click={toggleMobileNav}
             class="header-action-btn header-action-btn--primary"
+            aria-label="Ouvrir la liste d'exercices"
             title="Ouvrir la liste d'exercices"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -3147,9 +3166,19 @@
     }
 
     .list-actions {
-      justify-content: center;
-      flex-wrap: wrap;
+      width: auto;
+      display: flex;
+      flex: 0 0 auto;
       gap: 0.5rem;
+    }
+
+    .list-action-buttons {
+      display: contents;
+    }
+
+    .list-actions .list-action-btn--presentation,
+    .list-actions .list-action-btn--danger {
+      display: none;
     }
 
     /* Masquer la navigation par défaut sur mobile */
@@ -3206,8 +3235,11 @@
     /* Ajustements des boutons */
     .header-action-btn,
     .list-action-btn {
-      font-size: 0.875rem;
-      padding: 0.5rem 1rem;
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+      padding: 0;
+      border-radius: 9999px;
     }
 
     /* Responsive pour les labels */
