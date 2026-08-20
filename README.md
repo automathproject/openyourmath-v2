@@ -166,6 +166,7 @@ générés localement et embarqués dans l'image Docker au moment de la construc
 
 Voir `/docs` pour plus de détails.
 
+- [Ajouter et déployer un exercice](docs/ajouter-et-deployer-un-exercice.md) : procédure complète de contribution et publication.
 - Scripts de debug/maintenance: `docs/debug-scripts.md`
 
 ## TODO

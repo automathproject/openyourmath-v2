@@ -4,6 +4,10 @@
 exercice au format de la plateforme et de l'exporter en `.tex` prêt à être
 déposé dans `content/exercises/`.
 
+Après l'export, suivre la procédure [Ajouter et déployer un
+exercice](ajouter-et-deployer-un-exercice.md) pour déposer la source, valider
+les images, reconstruire la base et publier l'exercice.
+
 ## Architecture
 
 ```
