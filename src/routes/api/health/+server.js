@@ -5,7 +5,7 @@ import path from 'path';
 import Database from 'better-sqlite3';
 
 // Configuration cohérente des chemins
-const DB_PATH = path.resolve('data/exercises.sqlite');
+const DB_PATH = path.resolve(process.env.DATABASE_PATH || 'data/exercises.sqlite');
 
 export async function GET() {
   try {

@@ -347,8 +347,9 @@ La base est ouverte en **lecture seule** au runtime (mode WAL + memory mapping).
 ```bash
 # Construction incrémentale (usage normal)
 pnpm build:cache          # Parsing LaTeX → cache JSON
-pnpm build:tikz           # Compilation TikZ → SVG
+pnpm build:tikz           # Compilation TikZ → SVG (à lancer si les sources changées en contiennent)
 pnpm build:db             # Cache → SQLite (charge aussi content/metadata/**/*.json)
+pnpm build:content:incremental:with-tikz # Enchaîne les trois étapes ci-dessus
 
 # Indexation sémantique Pipeline B
 pnpm index:exercises                        # Exercices non indexés (indexed_at IS NULL)
@@ -364,7 +365,8 @@ pnpm build:cache:full     # Parsing complet sans cache
 pnpm build:content:full   # = build:cache:full + build:tikz + build:db
 
 # Raccourcis
-pnpm build:content        # = build:cache + build:db (sans TikZ)
+pnpm build:content        # alias compatible de build:content:incremental (sans TikZ)
+pnpm build:content:incremental # = build:cache + build:db (sans TikZ)
 pnpm build                # = build:content + build:app (Vite/SvelteKit)
 
 # Développement

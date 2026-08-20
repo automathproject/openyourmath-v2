@@ -79,7 +79,7 @@ EXPOSE 3000
 
 # Healthcheck pour vérifier que l'app fonctionne
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:3000/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })" || exit 1
+  CMD node -e "require('http').get('http://localhost:3000/api/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })" || exit 1
 
 # Commande de démarrage avec gestion propre des signaux
 CMD ["node", "build/index.js"]

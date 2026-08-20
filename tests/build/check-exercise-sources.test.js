@@ -1,6 +1,15 @@
 import { describe, expect, it } from 'vitest';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-import { validateSource } from '../../scripts/quality/check-exercise-sources.js';
+import {
+  validateImageReferences,
+  validateSource,
+  validateUuidUniqueness
+} from '../../scripts/quality/check-exercise-sources.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, '../..');
 
 function issueCodes(source) {
   return validateSource(source, 'sample.tex').map(issue => issue.code);
@@ -105,5 +114,64 @@ def f(x):
 }`;
 
     expect(validateSource(source, 'metadata-and-code.tex')).toEqual([]);
+  });
+
+  it('reports every source sharing the same UUID', () => {
+    const source = String.raw`\uuid{same1}\contenu{\question{Question.}}`;
+    const issues = validateUuidUniqueness([
+      { source, filePath: 'content/exercises/a.tex' },
+      { source, filePath: 'content/exercises/b.tex' },
+      { source: String.raw`\uuid{other}\contenu{\question{Autre.}}`, filePath: 'content/exercises/c.tex' }
+    ]);
+
+    expect(issues).toHaveLength(2);
+    expect(issues.map(issue => issue.code)).toEqual(['duplicate-uuid', 'duplicate-uuid']);
+    expect(issues[0].message).toContain('same1');
+    expect(issues.map(issue => issue.filePath)).toEqual([
+      'content/exercises/a.tex',
+      'content/exercises/b.tex'
+    ]);
+  });
+
+  it('ignores UUID commands commented out in a source', () => {
+    const issues = validateUuidUniqueness([
+      { source: String.raw`% \uuid{same1}
+\uuid{first}\contenu{\question{A.}}`, filePath: 'a.tex' },
+      { source: String.raw`\uuid{same1}\contenu{\question{B.}}`, filePath: 'b.tex' }
+    ]);
+
+    expect(issues).toEqual([]);
+  });
+
+  it('accepts an image resolved by the content pipeline', async () => {
+    const issues = await validateImageReferences([{
+      source: String.raw`\includegraphics{pdf/4R9m-tikz-1}`,
+      filePath: 'content/exercises/amscc/4R9m.tex',
+      sourceFilePath: path.join(ROOT, 'content/exercises/amscc/4R9m.tex')
+    }]);
+
+    expect(issues).toEqual([]);
+  });
+
+  it('reports an image that cannot be resolved', async () => {
+    const issues = await validateImageReferences([{
+      source: String.raw`\includegraphics{png/absente-1.png}`,
+      filePath: 'content/exercises/amscc/nouveau.tex',
+      sourceFilePath: path.join(ROOT, 'content/exercises/amscc/nouveau.tex')
+    }]);
+
+    expect(issues).toHaveLength(1);
+    expect(issues[0].code).toBe('missing-image');
+    expect(issues[0].message).toContain('png/absente-1.png');
+  });
+
+  it('ignores image references commented out', async () => {
+    const issues = await validateImageReferences([{
+      source: String.raw`% \includegraphics{png/absente-1.png}`,
+      filePath: 'content/exercises/amscc/nouveau.tex',
+      sourceFilePath: path.join(ROOT, 'content/exercises/amscc/nouveau.tex')
+    }]);
+
+    expect(issues).toEqual([]);
   });
 });

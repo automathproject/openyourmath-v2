@@ -3,6 +3,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { resolveImagePath } from '../utils/image-artifacts.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -375,6 +376,97 @@ function addIssue(issues, source, filePath, index, code, message) {
   });
 }
 
+/**
+ * Détecte les UUID présents plusieurs fois dans un ensemble de sources.
+ *
+ * La validation structurelle reste volontairement locale (et utilisable par
+ * les scripts de correction). Cette validation-ci doit au contraire comparer
+ * les sources entre elles avant leur intégration à la base.
+ *
+ * @param {{ source: string, filePath: string }[]} sources
+ * @returns {{ filePath: string, line: number, column: number, code: string, message: string }[]}
+ */
+export function validateUuidUniqueness(sources) {
+  const byUuid = new Map();
+
+  for (const entry of sources) {
+    const cleanSource = stripCommentsPreserveLength(entry.source);
+    const uuidCall = findCommandCalls(cleanSource, new Set(['uuid']))
+      .find(call => !call.malformed && call.body.trim());
+
+    if (!uuidCall) continue;
+
+    const uuid = uuidCall.body.trim();
+    const entries = byUuid.get(uuid) || [];
+    entries.push({ ...entry, uuidCall });
+    byUuid.set(uuid, entries);
+  }
+
+  const issues = [];
+  for (const [uuid, entries] of byUuid) {
+    if (entries.length < 2) continue;
+
+    const paths = entries.map(entry => entry.filePath).join(', ');
+    for (const entry of entries) {
+      const { line, column } = lineAndColumn(entry.source, entry.uuidCall.start);
+      issues.push({
+        filePath: entry.filePath,
+        line,
+        column,
+        code: 'duplicate-uuid',
+        message: `UUID dupliqué « ${uuid} » : ${paths}.`
+      });
+    }
+  }
+
+  return issues;
+}
+
+/**
+ * Vérifie que chaque image référencée par \includegraphics est résolue avec la
+ * même logique que le parseur de contenu.
+ *
+ * @param {{ source: string, filePath: string, sourceFilePath?: string }[]} sources
+ * @param {{ contentRoot?: string }} options
+ * @returns {Promise<{ filePath: string, line: number, column: number, code: string, message: string }[]>}
+ */
+export async function validateImageReferences(sources, { contentRoot = path.join(ROOT, 'content') } = {}) {
+  const issues = [];
+  const includegraphics = /\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}/g;
+
+  for (const entry of sources) {
+    // Préserver les positions pour fournir une ligne/colonne exacte tout en
+    // ignorant les références désactivées dans des commentaires LaTeX.
+    const cleanSource = stripCommentsPreserveLength(entry.source);
+    let match;
+
+    while ((match = includegraphics.exec(cleanSource)) !== null) {
+      const imagePath = match[1].trim();
+      if (!imagePath) continue;
+
+      const resolvedPath = await resolveImagePath({
+        imagePath,
+        sourceFilePath: entry.sourceFilePath || path.resolve(ROOT, entry.filePath),
+        contentRoot,
+        logger: null
+      });
+
+      if (resolvedPath) continue;
+
+      const { line, column } = lineAndColumn(entry.source, match.index);
+      issues.push({
+        filePath: entry.filePath,
+        line,
+        column,
+        code: 'missing-image',
+        message: `Image introuvable pour \\includegraphics{${imagePath}} dans content/images/.`
+      });
+    }
+  }
+
+  return issues;
+}
+
 function csvEscape(value) {
   const stringValue = String(value ?? '');
   if (/[",\n\r]/.test(stringValue)) {
@@ -519,11 +611,39 @@ async function main() {
   const input = path.resolve(inputArg || DEFAULT_INPUT);
   const files = (await listTexFiles(input)).sort();
   const allIssues = [];
+  const sources = [];
+  const validatedSources = [];
 
   for (const filePath of files) {
     const source = await fs.readFile(filePath, 'utf8');
-    allIssues.push(...validateSource(source, path.relative(ROOT, filePath)));
+    const relativePath = path.relative(ROOT, filePath);
+    const entry = { source, filePath: relativePath, sourceFilePath: filePath };
+    sources.push(entry);
+    validatedSources.push(entry);
+    allIssues.push(...validateSource(source, relativePath));
   }
+
+  // Lorsqu'un seul fichier sous content/exercises est contrôlé, il doit tout de
+  // même être comparé au référentiel complet pour éviter une collision à
+  // l'ajout. Les autres fichiers ne reçoivent pas d'erreur dans ce mode ciblé.
+  const relativeToExercises = path.relative(DEFAULT_INPUT, input);
+  const inputIsInsideExercises = !relativeToExercises.startsWith('..') && !path.isAbsolute(relativeToExercises);
+  if (inputIsInsideExercises && input !== DEFAULT_INPUT) {
+    const registryFiles = (await listTexFiles(DEFAULT_INPUT)).sort();
+    const knownPaths = new Set(files.map(filePath => path.resolve(filePath)));
+    for (const filePath of registryFiles) {
+      if (knownPaths.has(path.resolve(filePath))) continue;
+      sources.push({
+        source: await fs.readFile(filePath, 'utf8'),
+        filePath: path.relative(ROOT, filePath),
+        sourceFilePath: filePath
+      });
+    }
+  }
+
+  const validatedPaths = new Set(files.map(filePath => path.relative(ROOT, filePath)));
+  allIssues.push(...validateUuidUniqueness(sources).filter(issue => validatedPaths.has(issue.filePath)));
+  allIssues.push(...await validateImageReferences(validatedSources));
 
   if (csvOutput) {
     const outputPath = path.resolve(csvOutput);

@@ -10,8 +10,11 @@ Application web pour servir des exercices de mathématiques LaTeX avec recherche
 # Installation des dépendances (Node 22 + pnpm via corepack)
 pnpm install
 
-# Générer le cache JSON et la base SQLite (à relancer quand le LaTeX change)
+# Générer incrémentalement le cache JSON et la base SQLite (sans TikZ)
 pnpm build:content
+
+# Si les sources modifiées contiennent du TikZ, compiler aussi les SVG
+pnpm build:content:incremental:with-tikz
 
 # Démarrer le serveur Vite (http://localhost:5173)
 pnpm dev
@@ -39,8 +42,9 @@ NODE_ENV=production node build
 # 1) Mettre à jour la version dans package.json (champ "version")
 # Exemple: "2.3.2" -> "2.3.3"
 
-# Préparer les artéfacts locaux si vous reconstruisez l'image
-pnpm build:content:full
+# Préparer les artéfacts locaux avant de reconstruire l'image.
+# Utiliser build:content:full après un clean ou sur une nouvelle machine.
+pnpm build:content:incremental:with-tikz
 
 # 2) Construire + pousser l'image GHCR taggée avec package.json:version
 pnpm docker:release
@@ -145,6 +149,18 @@ Voir aussi : [docs/embeddings-sync.md](docs/embeddings-sync.md).
 - `scripts/` : Pipeline de build (LaTeX → JSON → SQLite) et indexation IA
 - `src/` : Application SvelteKit
 - `static/` : Assets statiques et artifacts
+
+## Fichiers à versionner
+
+À commiter avec un nouvel exercice :
+
+- `content/exercises/**/*.tex` : la source de l'exercice ;
+- `content/images/**` : les images sources éventuellement référencées ;
+- `content/metadata/**/*.json` : les métadonnées produites par `pnpm index:exercises` ;
+- `content/authors.json` uniquement si le référentiel d'auteurs a changé.
+
+Ne pas commiter : `data/`, `cache/` et `static/artifacts/`. Ces répertoires sont
+générés localement et embarqués dans l'image Docker au moment de la construction.
 
 ## Documentation
 
