@@ -79,29 +79,32 @@ Les artefacts sous `static/artifacts/` sont produits automatiquement ; ne pas le
 
 ### Valider, construire et générer les métadonnées sémantiques
 
-Remplacer les deux valeurs dans les commandes suivantes :
+Après avoir enregistré la source, lancer :
 
 ```bash
-EXERCISE_PATH=content/exercises/amscc/X7pQ.tex
 EXERCISE_UUID=X7pQ
-METADATA_PATH=content/metadata/amscc/X7pQ.json
-
-# Format LaTeX, UUID unique et présence des images référencées
-pnpm check:tex -- "$EXERCISE_PATH"
-
-# Sans TikZ : parsing incrémental + base SQLite
-pnpm build:content:incremental
-
-# À la place de la commande précédente si la source contient du TikZ
-pnpm build:content:incremental:with-tikz
-
-# Génère les métadonnées sémantiques du seul exercice ajouté ou modifié
-node scripts/index-exercises.js --uuid "$EXERCISE_UUID"
+pnpm exercise:prepare -- "$EXERCISE_UUID"
 ```
 
-La dernière commande utilise Ollama si disponible, sinon Albert, pour produire
-un résumé, les concepts, les méthodes et les objets mathématiques. Elle génère
-aussi l'embedding employé par la recherche sémantique.
+La commande localise la source à partir de son UUID, vérifie son format, son
+unicité et ses images, met à jour le cache et la base, compile TikZ si le
+fichier en contient, puis lance l'indexation ciblée. Cette dernière utilise
+Ollama si disponible, sinon Albert, pour produire un résumé, les concepts, les
+méthodes et les objets mathématiques. Elle génère aussi l'embedding employé par
+la recherche sémantique.
+
+Pour préparer en une fois plusieurs nouveaux exercices, avant de les
+commiter, utiliser :
+
+```bash
+pnpm exercises:prepare
+```
+
+Cette commande cible seulement les fichiers `.tex` ajoutés à Git sous
+`content/exercises/` (non suivis ou ajoutés à l'index Git). Elle valide chaque
+fichier, construit cache et base une seule fois, puis indexe les UUID trouvés.
+Elle n'indexe pas les anciennes sources non indexées. Après un commit, utiliser
+`pnpm exercise:prepare -- <uuid>` pour préparer un exercice individuellement.
 
 Les métadonnées textuelles sont écrites dans un fichier versionné sous
 `content/metadata/`, selon la même arborescence que la source. Pour l'exemple
@@ -136,6 +139,8 @@ content/metadata/<source>/<...>/<uuid>.json
 Ne pas commiter `data/`, `cache/` ni `static/artifacts/` : ils sont générés.
 
 ```bash
+EXERCISE_PATH=content/exercises/amscc/X7pQ.tex
+METADATA_PATH=content/metadata/amscc/X7pQ.json
 git add "$EXERCISE_PATH" \
   content/images/amscc/svg/X7pQ-1.svg \
   "$METADATA_PATH"
@@ -153,17 +158,7 @@ Ces étapes sont à exécuter par la personne qui a l'accès au registre GHCR et
 git switch main
 git pull --ff-only origin main
 pnpm install --frozen-lockfile
-
-# Vérifie les tests et reconstruit incrémentalement cache + base
-pnpm test:build
-pnpm build:content:incremental
-
-# Ajouter cette étape si la release contient un exercice avec du TikZ
-pnpm build:tikz
 ```
-
-Après `pnpm clean` ou sur une nouvelle machine de release, utiliser à la place
-`pnpm build:content:full`, qui reconstruit aussi tous les artefacts TikZ.
 
 Vérifier que les nouveaux exercices ont été indexés avant la release. Si nécessaire, exécuter de nouveau l'indexation ciblée puis commiter les métadonnées :
 
@@ -179,10 +174,13 @@ git push origin main
 Mettre ensuite à jour le champ `version` de `package.json`, commiter ce changement et pousser la branche. Le tag de l'image et la version affichée par l'application proviennent de ce champ.
 
 ```bash
-pnpm docker:release
+pnpm release:content
 ```
 
-Cette commande construit et pousse `ghcr.io/automathproject/openyourmath:<version>`.
+Cette commande exige un dépôt propre sur `main`, exécute les tests de build,
+reconstruit le contenu avec TikZ, puis construit et pousse
+`ghcr.io/automathproject/openyourmath:<version>`. Elle affiche ensuite les
+commandes exactes à lancer sur le serveur.
 
 ### Mettre à jour le serveur
 

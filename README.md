@@ -169,6 +169,14 @@ Voir `/docs` pour plus de détails.
 - [Ajouter et déployer un exercice](docs/ajouter-et-deployer-un-exercice.md) : procédure complète de contribution et publication.
 - Scripts de debug/maintenance: `docs/debug-scripts.md`
 
+Raccourcis associés :
+
+```bash
+pnpm exercise:prepare -- X7pQ  # valide, construit et indexe un exercice
+pnpm exercises:prepare          # prépare tous les nouveaux .tex non commités
+pnpm release:content           # teste, construit et pousse une release GHCR
+```
+
 ## TODO
 
 - [ ] **Référentiel modules / chapitres / sous-chapitres** : créer un fichier
