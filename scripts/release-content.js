@@ -56,7 +56,7 @@ function main() {
   const pnpm = process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm';
   console.log(`\n🚀 Préparation de la release ${version}\n`);
   run(pnpm, ['test:build']);
-  run(pnpm, ['build:content:incremental:with-tikz']);
+  run(pnpm, ['build:content:incremental']);
   run(pnpm, ['docker:release']);
 
   console.log(`\n✅ Image publiée : ghcr.io/automathproject/openyourmath:${version}`);

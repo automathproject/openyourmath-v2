@@ -180,9 +180,11 @@ pnpm release:content
 ```
 
 Cette commande exige un dépôt propre sur `main`, exécute les tests de build,
-reconstruit le contenu avec TikZ, puis construit et pousse
+reconstruit le cache et la base de façon incrémentale, puis construit et pousse
 `ghcr.io/automathproject/openyourmath:<version>`. Elle affiche ensuite les
-commandes exactes à lancer sur le serveur.
+commandes exactes à lancer sur le serveur. Elle ne compile pas TikZ : cette
+étape doit avoir été faite avec `pnpm exercise:prepare` ou
+`pnpm exercises:prepare` avant le commit.
 
 ### Mettre à jour le serveur
 
