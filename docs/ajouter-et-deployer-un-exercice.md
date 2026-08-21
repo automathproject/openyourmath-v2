@@ -88,7 +88,8 @@ pnpm exercise:prepare -- "$EXERCISE_UUID"
 
 La commande localise la source à partir de son UUID, vérifie son format, son
 unicité et ses images, met à jour le cache et la base, compile TikZ si le
-fichier en contient, puis lance l'indexation ciblée. Cette dernière utilise
+fichier en contient (pour cet UUID seulement), puis lance l'indexation ciblée.
+Cette dernière utilise
 Ollama si disponible, sinon Albert, pour produire un résumé, les concepts, les
 méthodes et les objets mathématiques. Elle génère aussi l'embedding employé par
 la recherche sémantique.
@@ -102,8 +103,9 @@ pnpm exercises:prepare
 
 Cette commande cible seulement les fichiers `.tex` ajoutés à Git sous
 `content/exercises/` (non suivis ou ajoutés à l'index Git). Elle valide chaque
-fichier, construit cache et base une seule fois, puis indexe les UUID trouvés.
-Elle n'indexe pas les anciennes sources non indexées. Après un commit, utiliser
+fichier, construit cache et base une seule fois, ne compile que les artefacts
+TikZ de ces nouveaux fichiers, puis indexe les UUID trouvés. Elle n'indexe pas
+les anciennes sources non indexées. Après un commit, utiliser
 `pnpm exercise:prepare -- <uuid>` pour préparer un exercice individuellement.
 
 Les métadonnées textuelles sont écrites dans un fichier versionné sous

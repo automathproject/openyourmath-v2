@@ -77,8 +77,8 @@ async function main() {
   run(pnpm, ['build:cache']);
 
   if (sourceNeedsTikz(source)) {
-    console.log('\n🎨 TikZ détecté : compilation des artefacts.\n');
-    run(pnpm, ['build:tikz']);
+    console.log(`\n🎨 TikZ détecté : compilation de l'artefact ${uuid}.\n`);
+    run(pnpm, ['build:tikz', '--', '--uuid', uuid]);
   }
 
   run(pnpm, ['build:db']);

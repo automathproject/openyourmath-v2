@@ -86,9 +86,42 @@ async function processArtifactFile(jsonFilePath) {
 }
 
 /**
+ * Lit les UUID ciblés depuis la ligne de commande.
+ * Sans option, la compilation conserve son comportement global.
+ *
+ * @param {string[]} args
+ * @returns {string[]}
+ */
+export function parseUuidArgs(args) {
+  const uuids = [];
+
+  for (let index = 0; index < args.length; index++) {
+    const argument = args[index];
+    if (argument === '--uuid') {
+      const uuid = args[++index];
+      if (!uuid || uuid.startsWith('-')) throw new Error('Usage : build:tikz [--uuid <uuid>]');
+      uuids.push(uuid);
+      continue;
+    }
+
+    if (argument.startsWith('--uuid=')) {
+      const uuid = argument.slice('--uuid='.length);
+      if (!uuid) throw new Error('Usage : build:tikz [--uuid <uuid>]');
+      uuids.push(uuid);
+      continue;
+    }
+
+    throw new Error(`Option inconnue : ${argument}`);
+  }
+
+  return [...new Set(uuids)];
+}
+
+/**
  * Point d'entrée principal du script.
  */
 async function main() {
+  const uuids = parseUuidArgs(process.argv.slice(2));
   console.log('🚀 Starting TikZ to SVG compilation process...');
   console.log(`🔍 Scanning for artifact files in: ${ARTIFACTS_JSON_DIR}`);
 
@@ -100,15 +133,25 @@ async function main() {
 
   try {
     const entries = await fsPromises.readdir(ARTIFACTS_JSON_DIR, { withFileTypes: true });
-    const jsonFiles = entries
+    const allJsonFiles = entries
       .filter(entry => entry.isFile() && entry.name.endsWith('.json'))
       .map(entry => path.join(ARTIFACTS_JSON_DIR, entry.name));
+    const jsonFiles = uuids.length === 0
+      ? allJsonFiles
+      : allJsonFiles.filter(filePath => uuids.includes(path.basename(filePath, '.json')));
+
+    const foundUuids = new Set(jsonFiles.map(filePath => path.basename(filePath, '.json')));
+    const missingUuids = uuids.filter(uuid => !foundUuids.has(uuid));
+    if (missingUuids.length > 0) {
+      throw new Error(`Artefact(s) introuvable(s) : ${missingUuids.join(', ')}`);
+    }
 
     if (jsonFiles.length === 0) {
       console.log('No artifact JSON files found. Nothing to do.');
       return;
     }
 
+    if (uuids.length > 0) console.log(`🎯 UUID ciblé(s) : ${uuids.join(', ')}`);
     console.log(`Found ${jsonFiles.length} artifact file(s) to process.`);
 
     for (const file of jsonFiles) {
@@ -142,7 +185,9 @@ async function main() {
 }
 
 // Exécution si appelé directement
-main().catch(error => {
-  console.error('💥 An unexpected error occurred in main:', error);
-  process.exit(1);
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  main().catch(error => {
+    console.error('💥 An unexpected error occurred in main:', error);
+    process.exitCode = 1;
+  });
+}

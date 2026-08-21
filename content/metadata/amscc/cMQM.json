@@ -1,0 +1,26 @@
+{
+  "uuid": "cMQM",
+  "source_path": "amscc/cMQM.tex",
+  "summary": "On tire successivement deux boules avec remise dans une urne choisie au hasard parmi deux urnes contenant des proportions différentes de boules noires et blanches. On demande de déterminer si les événements 'boule blanche au premier tirage' et 'boule blanche au second tirage' sont indépendants.",
+  "concepts": [
+    "probabilité conditionnelle",
+    "indépendance d'événements",
+    "loi de probabilité",
+    "théorème des probabilités totales",
+    "formule de Bayes"
+  ],
+  "methods": [
+    "calcul de probabilités conditionnelles",
+    "application du théorème des probabilités totales",
+    "vérification de l'indépendance par égalité des produits"
+  ],
+  "objects": [
+    "urne",
+    "boules noires et blanches",
+    "événements indépendants",
+    "probabilités conditionnelles"
+  ],
+  "content_hash": "bfc25379f7e4cd0e647d8364a7ccddba1f2111a0e0116633b1c4a4341fb1b76f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-21T07:04:57.308Z"
+}

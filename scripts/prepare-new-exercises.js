@@ -76,9 +76,12 @@ async function main() {
   }
 
   run(pnpm, ['build:cache']);
-  if (exercises.some(exercise => sourceNeedsTikz(exercise.source))) {
-    console.log('\n🎨 TikZ détecté : compilation des artefacts.\n');
-    run(pnpm, ['build:tikz']);
+  const tikzUuids = exercises
+    .filter(exercise => sourceNeedsTikz(exercise.source))
+    .map(exercise => exercise.uuid);
+  if (tikzUuids.length > 0) {
+    console.log(`\n🎨 TikZ détecté : compilation ciblée (${tikzUuids.join(', ')}).\n`);
+    run(pnpm, ['build:tikz', '--', ...tikzUuids.flatMap(uuid => ['--uuid', uuid])]);
   }
   run(pnpm, ['build:db']);
 
