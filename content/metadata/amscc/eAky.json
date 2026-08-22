@@ -1,20 +1,22 @@
 {
   "uuid": "eAky",
   "source_path": "amscc/eAky.tex",
-  "summary": "Trouver les extremums de la fonction f(x,y)=x³+y³ sous la contrainte x²+y²=4 en utilisant la méthode des multiplicateurs de Lagrange.",
+  "summary": "Trouver les extremums de la fonction f(x,y) = x³ + y³ sous la contrainte x² + y² = 4, c'est-à-dire sur le cercle de rayon 2 centré à l'origine.",
   "concepts": [
-    "optimisation sous contrainte",
     "multiplicateurs de Lagrange",
     "points stationnaires",
-    "forme quadratique hessienne",
+    "contrainte d'égalité",
+    "fonction convexe",
+    "hessien",
+    "forme quadratique",
     "espace tangent",
-    "gradient",
-    "contrainte d'égalité"
+    "optimisation sous contrainte"
   ],
   "methods": [
     "méthode des multiplicateurs de Lagrange",
     "calcul des dérivées partielles",
-    "analyse de la forme quadratique hessienne",
+    "résolution de système d'équations",
+    "analyse de la hessienne",
     "détermination de la nature des points stationnaires"
   ],
   "objects": [
@@ -22,10 +24,10 @@
     "contrainte d'égalité",
     "Lagrangien",
     "gradient",
-    "espace tangent",
-    "forme quadratique hessienne"
+    "hessienne",
+    "espace tangent"
   ],
-  "content_hash": "1e353bc941397f695d3999c3c9e6e8e7e6e1a821e137447be1e0d9b937f203d5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:37:28.249Z"
+  "content_hash": "c7400028b2860ed95fdf3b4654cff69d707f8c2d87e2a1e87291639971a1b097",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-22T08:09:26.720Z"
 }

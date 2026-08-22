@@ -10,6 +10,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '..');
 const EXERCISES_PREFIX = 'content/exercises/';
+const EXERCISES_ROOT = path.join(ROOT, 'content/exercises');
+const CACHE_ROOT = path.join(ROOT, 'cache/exercises');
 
 export function addedExercisePaths(statusOutput) {
   const paths = new Set();
@@ -54,6 +56,11 @@ function readUuid(source, filePath) {
   return uuid;
 }
 
+function cacheDirectoryFor(relativePath) {
+  const sourcePath = path.join(ROOT, relativePath);
+  return path.join(CACHE_ROOT, path.dirname(path.relative(EXERCISES_ROOT, sourcePath)));
+}
+
 async function main() {
   const status = capture('git', ['status', '--porcelain=v1', '-z', '--untracked-files=all']);
   const paths = addedExercisePaths(status);
@@ -75,7 +82,15 @@ async function main() {
     run(pnpm, ['check:tex', '--', exercise.relativePath]);
   }
 
-  run(pnpm, ['build:cache']);
+  for (const exercise of exercises) {
+    run(process.execPath, [
+      'scripts/parse-latex.js',
+      exercise.relativePath,
+      path.relative(ROOT, cacheDirectoryFor(exercise.relativePath)),
+      '--incremental',
+      '--force'
+    ]);
+  }
   const tikzUuids = exercises
     .filter(exercise => sourceNeedsTikz(exercise.source))
     .map(exercise => exercise.uuid);

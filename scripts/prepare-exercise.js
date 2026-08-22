@@ -9,6 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '..');
 const EXERCISES_ROOT = path.join(ROOT, 'content/exercises');
+const CACHE_ROOT = path.join(ROOT, 'cache/exercises');
 
 function withoutComments(source) {
   return source.replace(/(?<!\\)%.*$/gm, '');
@@ -16,6 +17,10 @@ function withoutComments(source) {
 
 export function sourceNeedsTikz(source) {
   return /\\begin\s*\{tikzpicture\}/.test(withoutComments(source));
+}
+
+export function prepareUuidArgs(args) {
+  return args.filter(argument => argument !== '--');
 }
 
 async function listTexFiles(directory) {
@@ -53,8 +58,12 @@ function run(command, args) {
   }
 }
 
+function cacheDirectoryFor(filePath) {
+  return path.join(CACHE_ROOT, path.dirname(path.relative(EXERCISES_ROOT, filePath)));
+}
+
 async function main() {
-  const [uuid] = process.argv.slice(2);
+  const [uuid] = prepareUuidArgs(process.argv.slice(2));
   if (!uuid || uuid.startsWith('-')) {
     throw new Error('Usage : pnpm exercise:prepare -- <uuid>');
   }
@@ -74,7 +83,13 @@ async function main() {
 
   console.log(`\n📘 Préparation de ${uuid} (${relativePath})\n`);
   run(pnpm, ['check:tex', '--', relativePath]);
-  run(pnpm, ['build:cache']);
+  run(process.execPath, [
+    'scripts/parse-latex.js',
+    relativePath,
+    path.relative(ROOT, cacheDirectoryFor(filePath)),
+    '--incremental',
+    '--force'
+  ]);
 
   if (sourceNeedsTikz(source)) {
     console.log(`\n🎨 TikZ détecté : compilation de l'artefact ${uuid}.\n`);

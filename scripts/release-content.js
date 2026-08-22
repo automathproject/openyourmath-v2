@@ -57,6 +57,7 @@ function main() {
   console.log(`\n🚀 Préparation de la release ${version}\n`);
   run(pnpm, ['test:build']);
   run(pnpm, ['build:content:incremental']);
+  run(pnpm, ['check:artifacts']);
   run(pnpm, ['docker:release']);
 
   console.log(`\n✅ Image publiée : ghcr.io/automathproject/openyourmath:${version}`);

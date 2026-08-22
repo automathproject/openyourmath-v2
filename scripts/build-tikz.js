@@ -94,11 +94,12 @@ async function processArtifactFile(jsonFilePath) {
  */
 export function parseUuidArgs(args) {
   const uuids = [];
+  const effectiveArgs = args.filter(argument => argument !== '--');
 
-  for (let index = 0; index < args.length; index++) {
-    const argument = args[index];
+  for (let index = 0; index < effectiveArgs.length; index++) {
+    const argument = effectiveArgs[index];
     if (argument === '--uuid') {
-      const uuid = args[++index];
+      const uuid = effectiveArgs[++index];
       if (!uuid || uuid.startsWith('-')) throw new Error('Usage : build:tikz [--uuid <uuid>]');
       uuids.push(uuid);
       continue;

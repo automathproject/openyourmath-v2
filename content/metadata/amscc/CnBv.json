@@ -1,29 +1,29 @@
 {
   "uuid": "CnBv",
   "source_path": "amscc/CnBv.tex",
-  "summary": "L'exercice demande d'étudier les domaines de définition de trois fonctions de deux variables en traçant ces domaines et en déterminant si chacun est ouvert, fermé ou ni l'un ni l'autre. Il utilise ensuite ces fonctions pour des questions sur les dérivées partielles et la continuité.",
+  "summary": "L'exercice demande d'étudier les domaines de définition de trois fonctions de deux variables, de déterminer leur nature (ouvert, fermé ou ni l'un ni l'autre) et de tracer ces domaines. Il aborde également le calcul d'une dérivée partielle via une dérivée composée, la continuité des fonctions admettant des dérivées partielles, et l'identification d'une fonction à partir de son graphe.",
   "concepts": [
     "domaine de définition",
-    "fonction de deux variables",
+    "ensemble ouvert",
+    "ensemble fermé",
     "continuité",
     "dérivées partielles",
-    "limite de fonction",
-    "classe C^1",
-    "dérivation composée"
+    "dérivée composée",
+    "limite de fonction"
   ],
   "methods": [
-    "tracé de domaines",
-    "analyse des conditions de frontière",
-    "calcul de dérivées partielles",
-    "application de la dérivée composée"
+    "tracé de domaines de définition",
+    "analyse de la nature des ensembles",
+    "calcul de dérivée composée",
+    "application du théorème de continuité des dérivées partielles"
   ],
   "objects": [
     "fonction de deux variables",
     "domaine de définition",
-    "dérivées partielles",
-    "limite de fonction"
+    "dérivée partielle",
+    "graphe de fonction"
   ],
-  "content_hash": "ae2d38a7f3037486398bb37dc5c889be4c12aa51d0d885221e6d442644cbd021",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:49:24.902Z"
+  "content_hash": "e8762956e5b405aefa24b44a85e06c9e8cd43d06ab76febea9571652220227ed",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-22T08:10:44.858Z"
 }

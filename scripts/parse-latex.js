@@ -407,8 +407,8 @@ async function parseLatexFile(filePath) {
  */
 async function processFile(inputPath, outputPath, cacheManager, options = {}) {
   try {
-    const { incremental = false } = options;
-    if (incremental && await cacheManager.isUpToDate(inputPath, outputPath)) {
+    const { incremental = false, force = false } = options;
+    if (incremental && !force && await cacheManager.isUpToDate(inputPath, outputPath)) {
       return { skipped: true };
     }
     
@@ -527,6 +527,7 @@ async function main() {
   const [inputArg, outputArg] = positionalArgs;
   const options = {
     incremental: args.includes('--incremental'),
+    force: args.includes('--force'),
     inputPath: inputArg || CONFIG.content.inputDir,
     outputPath: outputArg || CONFIG.content.cacheDir
   };
@@ -535,6 +536,7 @@ async function main() {
   console.log(`📁 Input:  ${options.inputPath}`);
   console.log(`📁 Output: ${options.outputPath}`);
   console.log(`⚡ Mode:   ${options.incremental ? 'incremental' : 'full'}`);
+  if (options.force) console.log('🔄 Force : les fichiers ciblés seront reparsés.');
   
   if (options.incremental) {
     console.log(`📊 Skip reports: every 200 files`);

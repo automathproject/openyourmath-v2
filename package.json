@@ -22,6 +22,7 @@
     "build:content:incremental:with-tikz": "pnpm build:cache && pnpm build:tikz && pnpm build:db",
     "build:tikz": "node scripts/build-tikz.js",
     "check:tex": "node scripts/quality/check-exercise-sources.js",
+    "check:artifacts": "node scripts/quality/check-artifacts.js",
     "test:tex": "node scripts/quality/check-exercise-sources.js",
     "fix:tex:det": "node scripts/quality/fix-exercise-sources-deterministic.js",
     "fix:tex:albert": "node scripts/quality/fix-exercise-sources-with-albert.js",

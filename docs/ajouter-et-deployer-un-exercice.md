@@ -87,8 +87,9 @@ pnpm exercise:prepare -- "$EXERCISE_UUID"
 ```
 
 La commande localise la source à partir de son UUID, vérifie son format, son
-unicité et ses images, met à jour le cache et la base, compile TikZ si le
-fichier en contient (pour cet UUID seulement), puis lance l'indexation ciblée.
+unicité et ses images, reparse la source même si seuls ses fichiers image ont
+changé, met à jour le cache et la base, compile TikZ si le fichier en contient
+(pour cet UUID seulement), puis lance l'indexation ciblée.
 Cette dernière utilise
 Ollama si disponible, sinon Albert, pour produire un résumé, les concepts, les
 méthodes et les objets mathématiques. Elle génère aussi l'embedding employé par
@@ -103,9 +104,9 @@ pnpm exercises:prepare
 
 Cette commande cible seulement les fichiers `.tex` ajoutés à Git sous
 `content/exercises/` (non suivis ou ajoutés à l'index Git). Elle valide chaque
-fichier, construit cache et base une seule fois, ne compile que les artefacts
-TikZ de ces nouveaux fichiers, puis indexe les UUID trouvés. Elle n'indexe pas
-les anciennes sources non indexées. Après un commit, utiliser
+fichier, reparse ces sources et construit la base une seule fois, ne compile
+que les artefacts TikZ de ces nouveaux fichiers, puis indexe les UUID trouvés.
+Elle n'indexe pas les anciennes sources non indexées. Après un commit, utiliser
 `pnpm exercise:prepare -- <uuid>` pour préparer un exercice individuellement.
 
 Les métadonnées textuelles sont écrites dans un fichier versionné sous
@@ -180,7 +181,8 @@ pnpm release:content
 ```
 
 Cette commande exige un dépôt propre sur `main`, exécute les tests de build,
-reconstruit le cache et la base de façon incrémentale, puis construit et pousse
+reconstruit le cache et la base de façon incrémentale, vérifie que toutes les
+images référencées sont bien présentes dans les artefacts Docker, puis construit et pousse
 `ghcr.io/automathproject/openyourmath:<version>`. Elle affiche ensuite les
 commandes exactes à lancer sur le serveur. Elle ne compile pas TikZ : cette
 étape doit avoir été faite avec `pnpm exercise:prepare` ou

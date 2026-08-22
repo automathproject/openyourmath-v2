@@ -1,7 +1,7 @@
 {
   "uuid": "aiup",
   "source_path": "amscc/aiup.tex",
-  "summary": "L'exercice étudie une fonction de deux variables définie par $f(x,y) = x^3 + y^3 - 3xy - 1$. Il demande d'identifier ses points critiques, d'analyser ses extrema locaux et globaux sur $\\mathbb{R}^2$ et sur un domaine fermé borné $D$, et d'interpréter des lignes de niveau.",
+  "summary": "L'exercice étudie une fonction de deux variables définie par $f(x,y) = x^3 + y^3 - 3xy - 1$. Il demande d'identifier ses points critiques, d'analyser ses extrema locaux et globaux sur $\\mathbb{R}^2$ et sur un domaine borné $D$ défini par des contraintes, et d'interpréter des lignes de niveau.",
   "concepts": [
     "fonction de plusieurs variables",
     "point critique",
@@ -9,11 +9,11 @@
     "extremum global",
     "théorème des valeurs intermédiaires",
     "continuité",
-    "domaine fermé borné",
+    "domaine borné",
     "matrice hessienne"
   ],
   "methods": [
-    "calcul des dérivées partielles",
+    "calcul de dérivées partielles",
     "résolution de système d'équations",
     "analyse de la matrice hessienne",
     "étude des limites",
@@ -22,12 +22,12 @@
   ],
   "objects": [
     "fonction de deux variables",
-    "point critique",
-    "domaine fermé borné",
+    "domaine borné",
+    "points critiques",
     "lignes de niveau",
     "matrice hessienne"
   ],
-  "content_hash": "4d434bc455695f47f75d76f577fa42d5bc24d7c2c2dd543574c2d6f5695f9c26",
+  "content_hash": "6bdaab16ab9093b4a0ee4fc86d437b0203c41f32eac452f746340e15328c6f54",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:48:26.805Z"
+  "indexed_at": "2026-08-22T08:01:31.978Z"
 }

@@ -16,6 +16,9 @@ pnpm build:content
 # Si les sources modifiées contiennent du TikZ, compiler aussi les SVG
 pnpm build:content:incremental:with-tikz
 
+# Vérifier que les images des exercices sont bien présentes dans les artefacts servis
+pnpm check:artifacts
+
 # Démarrer le serveur Vite (http://localhost:5173)
 pnpm dev
 
