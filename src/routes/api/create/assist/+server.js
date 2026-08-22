@@ -340,18 +340,28 @@ export async function POST(event) {
   // Les métadonnées et la correction LaTeX sont des tâches courtes et
   // mécaniques (classification, conversion de syntaxe) : le modèle
   // équilibré suffit et répond plus vite que gpt-oss-120b, réservé à la
-  // rédaction créative.
+  // rédaction créative. La révision doit reproduire l'exercice complet
+  // (blocs inchangés compris) en JSON strict : jsonMode force le format et
+  // un budget de tokens plus large évite une troncature sur un gros exercice.
   const generation =
     mode === "metadata"
       ? { model: MODELS.chat, temperature: 0, maxTokens: 80, timeoutMs: 30_000 }
       : mode === "fixlatex"
         ? { model: MODELS.chat, temperature: 0, maxTokens: 1500, timeoutMs: 30_000 }
-        : {
-            model: MODELS.chatLarge,
-            temperature: 0.3,
-            maxTokens: 2000,
-            timeoutMs: 90_000,
-          };
+        : mode === "revise"
+          ? {
+              model: MODELS.chatLarge,
+              temperature: 0.3,
+              maxTokens: 4000,
+              timeoutMs: 90_000,
+              jsonMode: true,
+            }
+          : {
+              model: MODELS.chatLarge,
+              temperature: 0.3,
+              maxTokens: 2000,
+              timeoutMs: 90_000,
+            };
 
   trackAlbertChat();
 
@@ -369,7 +379,26 @@ export async function POST(event) {
       { maxAttempts: 2 },
     );
 
-    const revisionBlocks = mode === "revise" ? parseRevisionOutput(raw) : null;
+    let revisionBlocks = null;
+    if (mode === "revise") {
+      try {
+        revisionBlocks = parseRevisionOutput(raw);
+      } catch (parseErr) {
+        console.error(
+          "[create/assist] Révision : réponse non interprétable:",
+          parseErr.message,
+          "\nRéponse brute (tronquée):",
+          String(raw).slice(0, 2000),
+        );
+        return json(
+          {
+            error:
+              "La réponse de l'IA n'a pas pu être interprétée, réessayez (éventuellement en reformulant la modification).",
+          },
+          { status: 502 },
+        );
+      }
+    }
     const latex = mode === "metadata"
       ? cleanMetadataValue(cleanModelOutput(raw, mode), field)
       : mode === "revise" ? "[révision structurée]" : cleanModelOutput(raw, mode);
