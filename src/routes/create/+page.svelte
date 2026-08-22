@@ -20,7 +20,13 @@
     BLOCK_TYPES,
   } from '$lib/latex/exerciseTex.js';
   import { downloadTexFile } from '$lib/latex/export.js';
-  import { DEFAULT_TASKS, buildTaskPrompt, SYSTEM_PROMPT } from '$lib/ia/assistPrompts.js';
+  import {
+    DEFAULT_TASKS,
+    buildTaskPrompt,
+    buildFixLatexPrompt,
+    SYSTEM_PROMPT,
+    FIX_LATEX_SYSTEM_PROMPT,
+  } from '$lib/ia/assistPrompts.js';
 
   const DRAFT_KEY = 'oym-create-draft-v1';
   const IMPORTED_DRAFTS_KEY = 'oym-create-imported-drafts-v1';
@@ -482,7 +488,7 @@
       return;
     }
 
-    if (promptPanel?.blockId === block.id) {
+    if (promptPanel?.blockId === block.id && promptPanel?.mode === block.type) {
       promptPanel = null; // second clic : referme
       return;
     }
@@ -494,6 +500,37 @@
       isImprove,
       template: promptTemplates[isImprove ? 'improve' : block.type],
       targetLatex: target,
+      currentLatex: block.latex,
+      remember: false,
+    };
+  }
+
+  /**
+   * Ouvre le panneau de consigne pour la correction LaTeX d'un bloc (🧮) :
+   * transforme la notation mathématique informelle en LaTeX correct sans
+   * toucher au contenu. Contrairement à openPromptPanel, aucun contexte
+   * d'exercice n'est joint (voir buildFixLatexPrompt).
+   */
+  function openFixLatexPanel(block) {
+    if (aiBusyBlockId) return;
+    aiError = '';
+
+    if (!block.latex.trim()) {
+      aiError = 'Rédigez d’abord ce bloc avant de corriger son LaTeX.';
+      return;
+    }
+
+    if (promptPanel?.blockId === block.id && promptPanel?.mode === 'fixlatex') {
+      promptPanel = null; // second clic : referme
+      return;
+    }
+
+    promptPanel = {
+      blockId: block.id,
+      mode: 'fixlatex',
+      isImprove: false,
+      template: promptTemplates.fixlatex,
+      targetLatex: block.latex,
       currentLatex: block.latex,
       remember: false,
     };
@@ -531,17 +568,20 @@
     aiError = '';
     aiBusyBlockId = block.id;
     try {
-      const taskPrompt = buildTaskPrompt(panel.mode, {
-        template: panel.template,
-        targetLatex: panel.targetLatex,
-        currentLatex: block.latex,
-      });
+      const isFixLatex = panel.mode === 'fixlatex';
+      const taskPrompt = isFixLatex
+        ? buildFixLatexPrompt({ template: panel.template, content: panel.targetLatex })
+        : buildTaskPrompt(panel.mode, {
+            template: panel.template,
+            targetLatex: panel.targetLatex,
+            currentLatex: block.latex,
+          });
       const latex = await callAssist(panel.mode, {
         targetLatex: panel.targetLatex,
         taskPrompt,
       });
 
-      if (block.type === 'question') {
+      if (!isFixLatex && block.type === 'question') {
         const { text, questions } = questionBlocksFromAi(latex);
         block.latex = questions[0];
         if (text) {
@@ -552,6 +592,8 @@
           blocks.splice(insertAt, 0, ...questions.slice(1).map((q) => newBlock('question', q)));
         }
       } else {
+        // La correction LaTeX ne remplace jamais que le contenu du bloc :
+        // jamais de découpage en plusieurs blocs.
         block.latex = latex;
       }
       promptPanel = null;
@@ -1019,14 +1061,24 @@
                 <button
                   type="button"
                   class="block-btn block-btn--ai"
-                  class:block-btn--ai-open={promptPanel?.blockId === block.id}
+                  class:block-btn--ai-open={promptPanel?.blockId === block.id && promptPanel?.mode === block.type}
                   title={block.latex.trim()
                     ? 'Améliorer ce bloc avec l’IA (voir et modifier la consigne)'
                     : 'Rédiger ce bloc avec l’IA (voir et modifier la consigne)'}
                   disabled={aiBusyBlockId !== null}
                   onclick={() => openPromptPanel(block)}
                 >
-                  {aiBusyBlockId === block.id ? '…' : '✨'}
+                  {aiBusyBlockId === block.id && promptPanel?.mode !== 'fixlatex' ? '…' : '✨'}
+                </button>
+                <button
+                  type="button"
+                  class="block-btn block-btn--ai"
+                  class:block-btn--ai-open={promptPanel?.blockId === block.id && promptPanel?.mode === 'fixlatex'}
+                  title="Corriger la syntaxe LaTeX de ce bloc, sans changer le contenu (IA)"
+                  disabled={aiBusyBlockId !== null || !block.latex.trim()}
+                  onclick={() => openFixLatexPanel(block)}
+                >
+                  {aiBusyBlockId === block.id && promptPanel?.mode === 'fixlatex' ? '…' : '🧮'}
                 </button>
                 {#if block.type === 'question'}
                   <button
@@ -1056,7 +1108,9 @@
               <div class="prompt-panel">
                 <label class="prompt-panel-label" for="prompt-ta-{block.id}">
                   Consigne envoyée à l'IA
-                  {#if promptPanel.isImprove}
+                  {#if promptPanel.mode === 'fixlatex'}
+                    <span class="prompt-panel-tag">correction LaTeX</span>
+                  {:else if promptPanel.isImprove}
                     <span class="prompt-panel-tag">amélioration</span>
                   {:else}
                     <span class="prompt-panel-tag">rédaction</span>
@@ -1072,16 +1126,20 @@
                 <details class="prompt-panel-details">
                   <summary>Joint automatiquement à la consigne</summary>
                   <ul>
-                    <li>Les métadonnées et tous les blocs de l'exercice (contexte).</li>
-                    {#if promptPanel.targetLatex}
-                      <li>La question concernée : <code>{promptPanel.targetLatex.slice(0, 120)}{promptPanel.targetLatex.length > 120 ? '…' : ''}</code></li>
-                    {/if}
-                    {#if promptPanel.isImprove}
-                      <li>Le contenu actuel du bloc (à améliorer).</li>
+                    {#if promptPanel.mode === 'fixlatex'}
+                      <li>Uniquement le texte de ce bloc, sans le reste de l'exercice (pour ne pas inciter le modèle à le réécrire).</li>
+                    {:else}
+                      <li>Les métadonnées et tous les blocs de l'exercice (contexte).</li>
+                      {#if promptPanel.targetLatex}
+                        <li>La question concernée : <code>{promptPanel.targetLatex.slice(0, 120)}{promptPanel.targetLatex.length > 120 ? '…' : ''}</code></li>
+                      {/if}
+                      {#if promptPanel.isImprove}
+                        <li>Le contenu actuel du bloc (à améliorer).</li>
+                      {/if}
                     {/if}
                   </ul>
                   <p class="prompt-panel-system-title">Instructions générales du modèle (fixes) :</p>
-                  <pre class="prompt-panel-system">{SYSTEM_PROMPT}</pre>
+                  <pre class="prompt-panel-system">{promptPanel.mode === 'fixlatex' ? FIX_LATEX_SYSTEM_PROMPT : SYSTEM_PROMPT}</pre>
                 </details>
 
                 <div class="prompt-panel-footer">
@@ -1102,7 +1160,11 @@
                       disabled={aiBusyBlockId !== null || !promptPanel.template.trim()}
                       onclick={() => generateFromPanel(block)}
                     >
-                      {aiBusyBlockId === block.id ? 'Génération…' : '✨ Générer'}
+                      {#if aiBusyBlockId === block.id}
+                        {promptPanel.mode === 'fixlatex' ? 'Correction…' : 'Génération…'}
+                      {:else}
+                        {promptPanel.mode === 'fixlatex' ? '🧮 Corriger' : '✨ Générer'}
+                      {/if}
                     </button>
                   </div>
                 </div>

@@ -13,7 +13,9 @@ import { checkRateLimit } from "$lib/server/rateLimiter.js";
 import { trackAlbertChat, isChatThrottled } from "$lib/server/albertQuota.js";
 import {
   SYSTEM_PROMPT,
+  FIX_LATEX_SYSTEM_PROMPT,
   buildTaskPrompt,
+  buildFixLatexPrompt,
   META_TASKS,
   REVISION_TASK,
 } from "$lib/ia/assistPrompts.js";
@@ -27,6 +29,7 @@ const VALID_MODES = new Set([
   "indication",
   "reponse",
   "metadata",
+  "fixlatex",
 ]);
 
 // ── Taxonomie existante (pour ancrer les suggestions de métadonnées) ─────────
@@ -161,8 +164,40 @@ function describeExercise(meta, blocks) {
     .join("\n\n");
 }
 
+/**
+ * Filet de sécurité contre le Markdown : la consigne système l'interdit,
+ * mais un modèle peut malgré tout en laisser échapper (gras, titres,
+ * puces, liens, code inline). On neutralise ces artefacts sans jamais
+ * toucher aux zones mathématiques ($...$ et \[...\]), où _ et * ont un
+ * sens LaTeX légitime (indices, exposants...).
+ */
+function stripMarkdownArtifacts(text, { allowDashSeparator = false } = {}) {
+  const parts = String(text || "").split(/(\$[^$]*\$|\\\[[\s\S]*?\\\])/g);
+  return parts
+    .map((part, i) => {
+      if (i % 2 === 1) return part; // zone mathématique : inchangée
+      let out = part;
+      out = out.replace(/^#{1,6}[ \t]+/gm, ""); // # Titre
+      out = out.replace(/\*\*([^*\n]+)\*\*/g, "\\textbf{$1}"); // **gras**
+      out = out.replace(/__([^_\n]+)__/g, "\\textbf{$1}"); // __gras__
+      out = out.replace(/^[ \t]*[-*][ \t]+(?!\*\*)/gm, ""); // - puce / * puce
+      out = out.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"); // [texte](url)
+      out = out.replace(/`([^`\n]+)`/g, "$1"); // `code`
+      // Lignes horizontales Markdown (---, ***, ___) : toujours des
+      // artefacts sauf le "---" isolé, qui sert de séparateur protocolaire
+      // entre questions en mode séquence (cf. questionBlocksFromAi).
+      out = out.replace(/^[ \t]*(?:\*{3,}|_{3,})[ \t]*$/gm, "");
+      if (!allowDashSeparator) {
+        out = out.replace(/^[ \t]*-{3,}[ \t]*$/gm, "");
+      }
+      out = out.replace(/\n{3,}/g, "\n\n"); // recolle les lignes vidées
+      return out;
+    })
+    .join("");
+}
+
 /** Nettoie la sortie du modèle : fences Markdown, wrappers \question{...}, etc. */
-function cleanModelOutput(text) {
+function cleanModelOutput(text, mode) {
   let out = (text || "").trim();
 
   const fence = out.match(/^```(?:latex|tex)?\s*\n([\s\S]*?)\n```\s*$/);
@@ -173,7 +208,9 @@ function cleanModelOutput(text) {
   );
   if (wrapper) out = wrapper[1].trim();
 
-  return out;
+  return stripMarkdownArtifacts(out, {
+    allowDashSeparator: mode === "sequence",
+  }).trim();
 }
 
 function parseRevisionOutput(text) {
@@ -189,7 +226,7 @@ function parseRevisionOutput(text) {
     if (!allowedTypes.has(block?.type) || typeof block?.latex !== "string") {
       throw new Error("Bloc de révision invalide");
     }
-    return { type: block.type, latex: block.latex.trim() };
+    return { type: block.type, latex: stripMarkdownArtifacts(block.latex.trim()).trim() };
   });
   if (!blocks.some((block) => block.type === "question")) {
     throw new Error("La révision ne contient aucune question");
@@ -254,12 +291,12 @@ export async function POST(event) {
     throw error(400, { message: `Champ de métadonnée invalide : ${field}` });
   }
   if (
-    (mode === "indication" || mode === "reponse") &&
+    (mode === "indication" || mode === "reponse" || mode === "fixlatex") &&
     !targetLatex.trim() &&
     !String(taskPrompt).trim()
   ) {
     throw error(400, {
-      message: "targetLatex requis pour ce mode (question concernée)",
+      message: "targetLatex requis pour ce mode",
     });
   }
   if (mode === "revise" && !String(instruction).trim()) {
@@ -274,13 +311,23 @@ export async function POST(event) {
     });
   }
 
-  const context = describeExercise(meta, blocks).slice(0, 20_000);
+  // Le correcteur LaTeX ne doit voir que le texte à corriger : lui joindre
+  // tout l'exercice inciterait le modèle à réécrire plutôt qu'à corriger.
+  const context =
+    mode === "fixlatex" ? "" : describeExercise(meta, blocks).slice(0, 20_000);
   // Consigne personnalisée éditée dans l'UI, sinon consigne par défaut
   let task;
   if (mode === "metadata") {
     task = await metadataTask(field, meta);
   } else if (mode === "revise") {
     task = `${REVISION_TASK}\n\nModification demandée par l'auteur : ${String(instruction).trim()}`;
+  } else if (mode === "fixlatex") {
+    task =
+      String(taskPrompt).trim() ||
+      buildFixLatexPrompt({
+        content: String(targetLatex).slice(0, 8000),
+        instruction: String(instruction),
+      });
   } else if (String(taskPrompt).trim()) {
     task = String(taskPrompt).trim();
   } else {
@@ -290,27 +337,32 @@ export async function POST(event) {
     });
   }
 
-  // Les métadonnées sont une tâche courte de classification : le modèle
-  // équilibré suffit et répond plus vite que gpt-oss-120b.
+  // Les métadonnées et la correction LaTeX sont des tâches courtes et
+  // mécaniques (classification, conversion de syntaxe) : le modèle
+  // équilibré suffit et répond plus vite que gpt-oss-120b, réservé à la
+  // rédaction créative.
   const generation =
     mode === "metadata"
       ? { model: MODELS.chat, temperature: 0, maxTokens: 80, timeoutMs: 30_000 }
-      : {
-          model: MODELS.chatLarge,
-          temperature: 0.3,
-          maxTokens: 2000,
-          timeoutMs: 90_000,
-        };
+      : mode === "fixlatex"
+        ? { model: MODELS.chat, temperature: 0, maxTokens: 1500, timeoutMs: 30_000 }
+        : {
+            model: MODELS.chatLarge,
+            temperature: 0.3,
+            maxTokens: 2000,
+            timeoutMs: 90_000,
+          };
 
   trackAlbertChat();
 
   try {
+    const systemPrompt = mode === "fixlatex" ? FIX_LATEX_SYSTEM_PROMPT : SYSTEM_PROMPT;
     const raw = await withRetry(
       () =>
         chatMessages(
           [
-            { role: "system", content: SYSTEM_PROMPT },
-            { role: "user", content: `${context}\n\n${task}` },
+            { role: "system", content: systemPrompt },
+            { role: "user", content: [context, task].filter(Boolean).join("\n\n") },
           ],
           generation,
         ),
@@ -319,8 +371,8 @@ export async function POST(event) {
 
     const revisionBlocks = mode === "revise" ? parseRevisionOutput(raw) : null;
     const latex = mode === "metadata"
-      ? cleanMetadataValue(cleanModelOutput(raw), field)
-      : mode === "revise" ? "[révision structurée]" : cleanModelOutput(raw);
+      ? cleanMetadataValue(cleanModelOutput(raw, mode), field)
+      : mode === "revise" ? "[révision structurée]" : cleanModelOutput(raw, mode);
     if (!latex) throw new Error("Réponse vide du modèle");
 
     console.log(

@@ -10,7 +10,7 @@ export const SYSTEM_PROMPT = `Tu es un enseignant de mathématiques du supérieu
 Règles de rédaction impératives :
 - Rédige en français, en LaTeX compatible KaTeX.
 - Mathématiques en ligne entre $...$, formules centrées entre \\[...\\].
-- N'utilise JAMAIS de Markdown (pas de **, pas de #, pas de \`\`\`).
+- N'utilise JAMAIS de Markdown : ni **gras**, ni titres avec #, ni listes à puces (- ou *), ni liens [texte](url), ni code entre \`backticks\` ou \`\`\`blocs\`\`\`. Pour du texte en gras, utilise \\textbf{...} ; pour de l'italique, \\emph{...}.
 - N'utilise JAMAIS d'environnement enumerate ou itemize : la plateforme ne les préserve pas (la numérotation des questions vient des blocs eux-mêmes). Rédige UNE seule question à la fois, sauf si la consigne demande explicitement une séquence ; dans ce cas sépare les questions exactement comme demandé. Pour des sous-parties, intègre-les au texte en (a), (b), (c). Dans une solution, enchaîne les étapes en paragraphes.
 - Macros disponibles : \\R, \\N, \\Z, \\Q, \\C (ensembles de nombres), \\dx, \\dt (différentielles), \\Vect, \\Ker, \\pgcd.
 - Réponds UNIQUEMENT avec le contenu LaTeX demandé, sans préambule, sans commentaire, sans balise englobante (\\question{}, \\reponse{}...), sauf si la consigne demande explicitement du JSON.`;
@@ -21,6 +21,24 @@ Réponds UNIQUEMENT avec un objet JSON valide, sans Markdown, de la forme :
 {"blocks":[{"type":"text","latex":"..."},{"type":"question","latex":"..."},{"type":"indication","latex":"..."},{"type":"reponse","latex":"..."}]}
 
 Les types autorisés sont text, question, indication et reponse. N'inclus aucune explication hors du JSON.`;
+
+/**
+ * Consigne système du correcteur de syntaxe LaTeX (mode 'fixlatex').
+ * Volontairement distincte de SYSTEM_PROMPT : ce mode ne rédige rien, il ne
+ * fait que traduire en LaTeX correct ce que l'auteur a écrit en langage
+ * naturel ou en notation approximative, sans jamais reformuler le contenu.
+ */
+export const FIX_LATEX_SYSTEM_PROMPT = `Tu es un correcteur de syntaxe LaTeX pour une plateforme d'exercices de mathématiques (rendu KaTeX).
+
+Ta seule tâche est de transformer la notation mathématique informelle ou mal écrite en LaTeX correct, et de corriger la syntaxe LaTeX déjà présente si elle est invalide. Tu ne dois RIEN changer d'autre.
+
+Règles impératives :
+- Ne reformule JAMAIS le texte : aucune paraphrase, aucune correction d'orthographe ou de grammaire hors des formules, aucun ajout ni suppression d'information. Le texte non mathématique doit rester mot pour mot identique.
+- Repère les expressions mathématiques écrites en langage naturel ou en notation approximative (ex. "integrale de 0 à x de exp(-t)ln(t) dt", "racine de 2", "f prime de x", "un suite qui tend vers l'infini") et convertis-les en LaTeX correct entre $...$ pour une formule en ligne, ou \\[...\\] si elle occupait déjà toute une ligne isolée.
+- Corrige les erreurs de syntaxe LaTeX déjà présentes (parenthèses ou accolades non fermées, macros mal orthographiées, symboles manquants) sans changer les nombres, variables ou opérations données par l'auteur.
+- Utilise les macros disponibles quand elles s'appliquent : \\R, \\N, \\Z, \\Q, \\C (ensembles de nombres), \\dx, \\dt (différentielles), \\Vect, \\Ker, \\pgcd. Écris les différentielles avec un d droit, par exemple \\mathrm{d}t ou \\mathrm{d}x si \\dx/\\dt ne conviennent pas.
+- N'utilise JAMAIS d'environnement enumerate ou itemize, JAMAIS de Markdown.
+- Réponds UNIQUEMENT avec le texte corrigé dans son intégralité, sans préambule, sans commentaire, sans balise englobante.`;
 
 /**
  * Consignes par défaut, par type d'action.
@@ -39,6 +57,8 @@ export const DEFAULT_TASKS = {
     "Rédige une solution complète, détaillée et rigoureuse de la question concernée. Justifie chaque étape du raisonnement.",
   improve:
     "Améliore la rédaction de ce bloc : clarté, rigueur mathématique, notations cohérentes avec le reste de l'exercice. Conserve le sens, la structure et le niveau de difficulté.",
+  fixlatex:
+    "Corrige uniquement la syntaxe LaTeX/mathématique de ce texte (notation informelle → LaTeX correct, erreurs de syntaxe existantes) sans changer le contenu, la formulation ni la langue.",
 };
 
 /**
@@ -99,5 +119,27 @@ export function buildTaskPrompt(
   if (String(instruction).trim()) {
     parts.push(`Consigne de l'auteur : ${String(instruction).trim()}`);
   }
+  return parts.join("\n\n");
+}
+
+/**
+ * Consigne pour la correction de syntaxe LaTeX d'un bloc (mode 'fixlatex').
+ * Contrairement à buildTaskPrompt, aucun contexte d'exercice n'est joint par
+ * l'appelant : seul le texte du bloc est transmis, pour que le modèle se
+ * concentre sur la syntaxe sans être tenté de réécrire le contenu.
+ *
+ * @param {Object} options
+ * @param {string} [options.template]    — consigne (défaut : DEFAULT_TASKS.fixlatex)
+ * @param {string} [options.content]     — texte du bloc à corriger
+ * @param {string} [options.instruction] — précision libre de l'auteur
+ * @returns {string}
+ */
+export function buildFixLatexPrompt({ template, content = "", instruction = "" } = {}) {
+  const base = template?.trim() || DEFAULT_TASKS.fixlatex;
+  const parts = [base];
+  if (String(instruction).trim()) {
+    parts.push(`Précision de l'auteur : ${String(instruction).trim()}`);
+  }
+  parts.push(`Texte à corriger :\n${String(content).trim()}`);
   return parts.join("\n\n");
 }
