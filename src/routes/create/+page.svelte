@@ -4,13 +4,23 @@
   indication, solution) avec assistant LaTeX et assistant IA (API Albert) ;
   à droite le rendu tel qu'il apparaîtra sur le site.
   Export .tex au format des sources de content/exercises/.
+
+  La page porte l'état et la logique métier (blocs, IA, import, export) ;
+  chaque section de l'UI est déléguée à un composant dédié sous
+  $lib/components/create/ (MetaFields, AiSequencePanel, RevisionPanel,
+  ImportPanel, BlockCard, BlockAddRow, PreviewPane).
 -->
 
 <script>
   import { tick, onMount } from 'svelte';
-  import ExerciseContent from '$lib/components/ExerciseContent.svelte';
   import LatexToolbar from '$lib/components/create/LatexToolbar.svelte';
-  import ImportDropzone from '$lib/components/create/ImportDropzone.svelte';
+  import MetaFields from '$lib/components/create/MetaFields.svelte';
+  import AiSequencePanel from '$lib/components/create/AiSequencePanel.svelte';
+  import RevisionPanel from '$lib/components/create/RevisionPanel.svelte';
+  import ImportPanel from '$lib/components/create/ImportPanel.svelte';
+  import BlockCard from '$lib/components/create/BlockCard.svelte';
+  import BlockAddRow from '$lib/components/create/BlockAddRow.svelte';
+  import PreviewPane from '$lib/components/create/PreviewPane.svelte';
   import { blocksToPreviewContent } from '$lib/latex/texPreview.js';
   import {
     buildExerciseTex,
@@ -20,13 +30,7 @@
     BLOCK_TYPES,
   } from '$lib/latex/exerciseTex.js';
   import { downloadTexFile } from '$lib/latex/export.js';
-  import {
-    DEFAULT_TASKS,
-    buildTaskPrompt,
-    buildFixLatexPrompt,
-    SYSTEM_PROMPT,
-    FIX_LATEX_SYSTEM_PROMPT,
-  } from '$lib/ia/assistPrompts.js';
+  import { DEFAULT_TASKS, buildTaskPrompt, buildFixLatexPrompt } from '$lib/ia/assistPrompts.js';
 
   const DRAFT_KEY = 'oym-create-draft-v1';
   const IMPORTED_DRAFTS_KEY = 'oym-create-imported-drafts-v1';
@@ -77,6 +81,7 @@
   let aiInstruction = $state('');
   let aiQuestionCount = $state(3);
   let aiBusyBlockId = $state(null); // id du bloc concerné, ou '__new__'
+  let aiBusyKind = $state(null); // mode de l'action IA en cours (pour distinguer les boutons d'un même bloc)
   let aiMetaBusy = $state(null); // clé du champ de métadonnée en cours de suggestion
   let aiError = $state('');
   let revisionInstruction = $state('');
@@ -85,9 +90,12 @@
 
   // Consignes IA par défaut, personnalisables et mémorisées (localStorage)
   let promptTemplates = $state({ ...DEFAULT_TASKS });
-  // Panneau de consigne ouvert par ✨ : { blockId, mode, isImprove, template,
-  // targetLatex, currentLatex, remember }
+  // Panneau de consigne ouvert par ✨ ou TeX : { blockId, mode, isImprove,
+  // template, targetLatex, currentLatex, remember }
   let promptPanel = $state(null);
+  // Texte d'avant correction LaTeX (bouton TeX), pour pouvoir revenir en arrière :
+  // { blockId, previousLatex }
+  let fixLatexUndo = $state(null);
   let copied = $state(false);
   let importNotice = $state('');
   let importCandidates = $state([]);
@@ -157,6 +165,26 @@
   );
 
   let questionCount = $derived(blocks.filter((b) => b.type === 'question' && b.latex.trim()).length);
+  // Liste affichée (ordre pédagogique) : figée une fois par rendu pour que
+  // le repère "dernier bloc d'un groupe de question" (docBlocks[i+1]) reste
+  // cohérent avec ce qui est effectivement affiché.
+  let docBlocks = $derived(documentBlocks());
+
+  /** Vrai si `list[i]` est le dernier bloc du groupe question/indication/solution auquel il appartient. */
+  function isLastOfQuestionGroup(list, i) {
+    const block = list[i];
+    const next = list[i + 1];
+    if (block.type === 'question') return !(next && next.questionId === block.id);
+    if (block.questionId) return !(next && next.questionId === block.questionId);
+    return false;
+  }
+
+  /** Libellé "liée à la question N" affiché sur un bloc rattaché, ou null. */
+  function parentLabelFor(block) {
+    if (!block.questionId) return null;
+    const index = blocks.filter((b) => b.type === 'question').findIndex((b) => b.id === block.questionId);
+    return `liée à la question ${index + 1}`;
+  }
 
   // ── Brouillon localStorage ────────────────────────────────────────────────
   function cloneBlocks(source) {
@@ -266,6 +294,8 @@
     if (removed.type === 'question') {
       blocks = blocks.filter((b) => b.questionId !== removed.id);
     }
+    if (fixLatexUndo?.blockId === id) fixLatexUndo = null;
+    if (promptPanel?.blockId === id) promptPanel = null;
   }
 
   function moveBlock(id, delta) {
@@ -317,6 +347,46 @@
     const block = newBlock(type, '', questionBlock.id);
     blocks.splice(insertIndexAfterGroup(qIndex), 0, block);
     tick().then(() => document.getElementById(`block-ta-${block.id}`)?.focus());
+  }
+
+  /**
+   * Change le type d'un bloc via le sélecteur, en gardant `questionId`
+   * cohérent avec le nouveau type (sinon la mention "liée à la question X"
+   * et le regroupement des blocs peuvent devenir incorrects) :
+   * - un bloc question/texte/code n'est jamais "lié" à une autre question ;
+   * - une indication/solution qui perd son lien (nouveau type, ou question
+   *   parente elle-même requalifiée) se rattache à la question précédente ;
+   * - une question requalifiée libère les blocs qui lui étaient rattachés.
+   */
+  function changeBlockType(block, newType) {
+    const previousType = block.type;
+    if (previousType === newType) return;
+
+    if (previousType === 'question') {
+      for (const child of blocks) {
+        if (child.questionId === block.id) child.questionId = null;
+      }
+    }
+
+    block.type = newType;
+
+    if (newType === 'indication' || newType === 'reponse') {
+      const stillValid =
+        block.questionId && blocks.some((b) => b.id === block.questionId && b.type === 'question');
+      if (!stillValid) {
+        const idx = blocks.findIndex((b) => b.id === block.id);
+        let question = null;
+        for (let i = idx; i >= 0; i--) {
+          if (blocks[i].type === 'question' && blocks[i].latex.trim()) {
+            question = blocks[i];
+            break;
+          }
+        }
+        block.questionId = question ? question.id : null;
+      }
+    } else {
+      block.questionId = null;
+    }
   }
 
   // ── Assistant LaTeX ───────────────────────────────────────────────────────
@@ -428,9 +498,11 @@
       .filter(({ before, after }) => !before || before.type !== after.type || before.latex.trim() !== after.latex.trim());
   }
 
+  let revisionChangesList = $derived(revisionChanges());
+
   function applyRevisionProposal() {
     if (!revisionProposal) return;
-    const changeCount = revisionChanges().length;
+    const changeCount = revisionChangesList.length;
     blocks = blocksFromParsed(revisionProposal.blocks);
     importNotice = `✅ Modification répercutée sur l’exercice (${changeCount} bloc${changeCount > 1 ? 's' : ''} modifié${changeCount > 1 ? 's' : ''}).`;
     revisionProposal = null;
@@ -506,16 +578,58 @@
   }
 
   /**
-   * Ouvre le panneau de consigne pour la correction LaTeX d'un bloc (🧮) :
-   * transforme la notation mathématique informelle en LaTeX correct sans
-   * toucher au contenu. Contrairement à openPromptPanel, aucun contexte
-   * d'exercice n'est joint (voir buildFixLatexPrompt).
+   * Corrige directement la syntaxe LaTeX d'un bloc (bouton TeX), sans passer par le
+   * panneau de consigne : c'est une correction mécanique, pas une rédaction,
+   * inutile de faire valider le prompt à chaque fois. Le texte d'avant
+   * correction reste en mémoire (fixLatexUndo) pour pouvoir revenir en
+   * arrière.
+   */
+  async function aiFixLatex(block) {
+    if (aiBusyBlockId) return;
+    if (!block.latex.trim()) {
+      aiError = 'Rédigez d’abord ce bloc avant de corriger son LaTeX.';
+      return;
+    }
+    aiError = '';
+    aiBusyBlockId = block.id;
+    aiBusyKind = 'fixlatex';
+    const previousLatex = block.latex;
+    try {
+      const taskPrompt = buildFixLatexPrompt({
+        template: promptTemplates.fixlatex,
+        content: previousLatex,
+      });
+      const latex = await callAssist('fixlatex', { targetLatex: previousLatex, taskPrompt });
+      block.latex = latex;
+      fixLatexUndo = { blockId: block.id, previousLatex };
+    } catch (err) {
+      aiError = err.message;
+    } finally {
+      aiBusyBlockId = null;
+      aiBusyKind = null;
+    }
+  }
+
+  /** Revient au texte d'avant la dernière correction LaTeX de ce bloc. */
+  function undoFixLatex(block) {
+    if (fixLatexUndo?.blockId !== block.id) return;
+    block.latex = fixLatexUndo.previousLatex;
+    fixLatexUndo = null;
+  }
+
+  /**
+   * Ouvre le panneau de consigne pour la correction LaTeX d'un bloc :
+   * option pour surcharger le prompt quand le résultat par défaut (TeX) ne
+   * convient pas. Repart du texte d'avant la dernière correction s'il y en
+   * a une en mémoire, sinon du contenu actuel. Aucun contexte d'exercice
+   * n'est joint (voir buildFixLatexPrompt).
    */
   function openFixLatexPanel(block) {
     if (aiBusyBlockId) return;
     aiError = '';
 
-    if (!block.latex.trim()) {
+    const target = fixLatexUndo?.blockId === block.id ? fixLatexUndo.previousLatex : block.latex;
+    if (!target.trim()) {
       aiError = 'Rédigez d’abord ce bloc avant de corriger son LaTeX.';
       return;
     }
@@ -530,7 +644,7 @@
       mode: 'fixlatex',
       isImprove: false,
       template: promptTemplates.fixlatex,
-      targetLatex: block.latex,
+      targetLatex: target,
       currentLatex: block.latex,
       remember: false,
     };
@@ -567,6 +681,7 @@
 
     aiError = '';
     aiBusyBlockId = block.id;
+    aiBusyKind = panel.mode;
     try {
       const isFixLatex = panel.mode === 'fixlatex';
       const taskPrompt = isFixLatex
@@ -591,9 +706,12 @@
           const insertAt = blocks.findIndex((b) => b.id === block.id) + 1;
           blocks.splice(insertAt, 0, ...questions.slice(1).map((q) => newBlock('question', q)));
         }
+      } else if (isFixLatex) {
+        // Repart toujours du texte d'origine (panel.targetLatex), pas du
+        // dernier essai : la correction ne s'accumule jamais.
+        block.latex = latex;
+        fixLatexUndo = { blockId: block.id, previousLatex: panel.targetLatex };
       } else {
-        // La correction LaTeX ne remplace jamais que le contenu du bloc :
-        // jamais de découpage en plusieurs blocs.
         block.latex = latex;
       }
       promptPanel = null;
@@ -601,6 +719,7 @@
       aiError = err.message;
     } finally {
       aiBusyBlockId = null;
+      aiBusyKind = null;
     }
   }
 
@@ -613,6 +732,7 @@
     }
     aiError = '';
     aiBusyBlockId = questionBlock.id;
+    aiBusyKind = type;
     try {
       const latex = await callAssist(type, { targetLatex: questionBlock.latex });
       const qIndex = blocks.findIndex((b) => b.id === questionBlock.id);
@@ -621,6 +741,7 @@
       aiError = err.message;
     } finally {
       aiBusyBlockId = null;
+      aiBusyKind = null;
     }
   }
 
@@ -629,6 +750,7 @@
     if (aiBusyBlockId) return;
     aiError = '';
     aiBusyBlockId = '__new__';
+    aiBusyKind = 'sequence';
     try {
       const count = Math.max(1, Math.min(8, Number(aiQuestionCount) || 3));
       aiQuestionCount = count;
@@ -642,6 +764,7 @@
       aiError = err.message;
     } finally {
       aiBusyBlockId = null;
+      aiBusyKind = null;
     }
   }
 
@@ -755,17 +878,6 @@
       activeImportedDraftId = null;
     } catch { /* ignoré */ }
   }
-
-  /** Auto-redimensionnement des textareas. */
-  function autoResize(node) {
-    const resize = () => {
-      node.style.height = 'auto';
-      node.style.height = `${Math.min(node.scrollHeight + 2, 480)}px`;
-    };
-    node.addEventListener('input', resize);
-    resize();
-    return { destroy: () => node.removeEventListener('input', resize) };
-  }
 </script>
 
 <svelte:head>
@@ -781,13 +893,13 @@
       <span class="create-counter">{questionCount} question{questionCount > 1 ? 's' : ''}</span>
     </div>
     <div class="create-subheader-actions">
-      <button type="button" class="btn-secondary" onclick={() => (showImport = !showImport)}>
+      <button type="button" class="editor-btn-secondary" onclick={() => (showImport = !showImport)}>
         📄 Importer (PDF, image, .tex)
       </button>
-      <button type="button" class="btn-secondary" onclick={copyTex}>
+      <button type="button" class="editor-btn-secondary" onclick={copyTex}>
         {copied ? '✅ Copié' : '⧉ Copier le .tex'}
       </button>
-      <button type="button" class="btn-primary" onclick={exportTex} disabled={!blocks.some((b) => b.latex.trim())}>
+      <button type="button" class="editor-btn-primary" onclick={exportTex} disabled={!blocks.some((b) => b.latex.trim())}>
         ⬇ Exporter .tex
       </button>
       <button type="button" class="btn-ghost-danger" onclick={resetAll} title="Tout effacer">
@@ -801,151 +913,23 @@
     de l'IA méritent une relecture attentive avant publication.
   </p>
 
-  {#if showImport}
-    <div class="create-import">
-      <ImportDropzone onimported={handleImported} />
-    </div>
-  {/if}
-  {#if importNotice}
-    <p class="create-import-notice">{importNotice}</p>
-  {/if}
-  {#if importCandidates.length}
-    <section class="import-candidates" aria-label="Exercices détectés">
-      <div>
-        <h2>Exercices détectés</h2>
-        <p>Sélectionnez les exercices à enregistrer comme brouillons distincts.</p>
-      </div>
-      <div class="import-candidates-list">
-        {#each importCandidates as candidate, index (candidate.id)}
-          <label class="import-candidate">
-            <input type="checkbox" bind:checked={candidate.selected} />
-            <span>
-              <strong>Exercice {index + 1}</strong>
-              <span>{candidate.label}</span>
-              <small>{candidate.blocks.filter((block) => block.type === 'question').length} question{candidate.blocks.filter((block) => block.type === 'question').length > 1 ? 's' : ''}</small>
-            </span>
-          </label>
-        {/each}
-      </div>
-      <div class="import-candidates-actions">
-        <button type="button" class="btn-secondary" onclick={() => (importCandidates = [])}>Annuler</button>
-        <button type="button" class="btn-primary" onclick={saveSelectedImports}>Enregistrer la sélection</button>
-      </div>
-    </section>
-  {/if}
-  {#if importedDrafts.length}
-    <details class="imported-drafts">
-      <summary>Brouillons importés ({importedDrafts.length})</summary>
-      <div class="imported-drafts-list">
-        {#each importedDrafts as draft (draft.id)}
-          <div class="imported-draft" class:imported-draft--active={draft.id === activeImportedDraftId}>
-            <span>
-              {draft.label}
-              {#if draft.id === activeImportedDraftId}<small class="imported-draft-active">Ouvert</small>{/if}
-            </span>
-            <div>
-              <button type="button" class="btn-link" onclick={() => openImportedDraft(draft)}>Ouvrir</button>
-              <button type="button" class="btn-link imported-draft-delete" onclick={() => deleteImportedDraft(draft.id)}>Supprimer</button>
-            </div>
-          </div>
-        {/each}
-      </div>
-    </details>
-  {/if}
+  <ImportPanel
+    show={showImport}
+    notice={importNotice}
+    candidates={importCandidates}
+    {importedDrafts}
+    {activeImportedDraftId}
+    onImported={handleImported}
+    onCancelCandidates={() => (importCandidates = [])}
+    onSaveSelected={saveSelectedImports}
+    onOpenDraft={openImportedDraft}
+    onDeleteDraft={deleteImportedDraft}
+  />
 
   <div class="create-layout">
     <!-- ── Colonne gauche : édition ─────────────────────────────────────── -->
     <section class="create-editor" aria-label="Édition de l'exercice">
-      {#snippet metaAiBtn(field)}
-        <button
-          type="button"
-          class="meta-ai-btn"
-          title="Suggérer avec l'IA (d'après le contenu de l'exercice)"
-          aria-label="Suggérer ce champ avec l'IA"
-          disabled={aiMetaBusy !== null}
-          onclick={(e) => { e.preventDefault(); aiFillMeta(field); }}
-        >
-          {aiMetaBusy === field ? '…' : '✨'}
-        </button>
-      {/snippet}
-
-      <details class="editor-meta" bind:open={showMeta}>
-        <summary>Métadonnées</summary>
-        <div class="editor-meta-grid">
-          <label class="meta-field meta-field--wide">
-            <span>Titre *</span>
-            <span class="meta-input-row">
-              <input type="text" bind:value={meta.title} placeholder="Titre de l'exercice" />
-              {@render metaAiBtn('title')}
-            </span>
-          </label>
-          <label class="meta-field">
-            <span>Niveau</span>
-            <span class="meta-input-row">
-              <input type="text" bind:value={meta.level} list="create-levels" placeholder="L1, L2…" />
-              {@render metaAiBtn('level')}
-            </span>
-            <datalist id="create-levels">
-              {#each LEVELS as level}<option value={level}></option>{/each}
-            </datalist>
-          </label>
-          <label class="meta-field">
-            <span>Difficulté</span>
-            <span class="meta-input-row">
-              <select bind:value={meta.difficulty}>
-                <option value="">—</option>
-                {#each [1, 2, 3, 4, 5] as d}
-                  <option value={String(d)}>{'★'.repeat(d)}{'☆'.repeat(5 - d)}</option>
-                {/each}
-              </select>
-              {@render metaAiBtn('difficulty')}
-            </span>
-          </label>
-          <label class="meta-field">
-            <span>Module</span>
-            <span class="meta-input-row">
-              <input type="text" bind:value={meta.module} placeholder="Analyse, Algèbre…" />
-              {@render metaAiBtn('module')}
-            </span>
-          </label>
-          <label class="meta-field">
-            <span>Chapitre</span>
-            <span class="meta-input-row">
-              <input type="text" bind:value={meta.chapter} placeholder="Suites numériques…" />
-              {@render metaAiBtn('chapter')}
-            </span>
-          </label>
-          <label class="meta-field">
-            <span>Sous-chapitre</span>
-            <span class="meta-input-row">
-              <input type="text" bind:value={meta.subchapter} />
-              {@render metaAiBtn('subchapter')}
-            </span>
-          </label>
-          <label class="meta-field">
-            <span>Thèmes</span>
-            <span class="meta-input-row">
-              <input type="text" bind:value={meta.theme} placeholder="mots-clés, séparés, par, virgules" />
-              {@render metaAiBtn('theme')}
-            </span>
-          </label>
-          <label class="meta-field">
-            <span>Auteur</span>
-            <input type="text" bind:value={meta.author} placeholder="Prénom Nom" />
-          </label>
-          <label class="meta-field">
-            <span>Organisation</span>
-            <input type="text" bind:value={meta.organization} />
-          </label>
-          <label class="meta-field">
-            <span>UUID</span>
-            <span class="meta-uuid">
-              <input type="text" bind:value={meta.uuid} maxlength="12" />
-              <button type="button" title="Régénérer l'identifiant" onclick={() => (meta.uuid = generateShortUuid())}>⟳</button>
-            </span>
-          </label>
-        </div>
-      </details>
+      <MetaFields bind:showMeta {meta} levels={LEVELS} {aiMetaBusy} onSuggest={aiFillMeta} />
 
       {#if aiError}
         <p class="editor-ai-error" role="alert">
@@ -954,240 +938,68 @@
         </p>
       {/if}
 
-      <div class="editor-ai-panel">
-        <div class="editor-ai-heading">
-          <div>
-            <p class="editor-ai-kicker">Point de départ</p>
-            <p class="editor-ai-title">✨ Composer une séquence d'exercice <span class="editor-ai-model">Albert · gpt-oss-120b</span></p>
-          </div>
-          <span class="editor-ai-badge">Assistant principal</span>
-        </div>
-        <div class="editor-ai-parameters">
-          <label>
-            <span>Niveau</span>
-            <input type="text" bind:value={meta.level} list="create-levels" placeholder="L1, L2…" />
-          </label>
-          <label>
-            <span>Difficulté</span>
-            <select bind:value={meta.difficulty}>
-              <option value="">À définir</option>
-              {#each [1, 2, 3, 4, 5] as d}
-                <option value={String(d)}>{d}/5</option>
-              {/each}
-            </select>
-          </label>
-        </div>
-        <div class="editor-ai-row">
-          <textarea
-            bind:value={aiInstruction}
-            placeholder="Décrivez l'exercice : notions, objectif pédagogique, contraintes…"
-            rows="3"
-          ></textarea>
-          <div class="editor-ai-generate">
-            <label><span>Questions</span><input type="number" min="1" max="8" bind:value={aiQuestionCount} /></label>
-            <button type="button" class="btn-primary" disabled={aiBusyBlockId !== null} onclick={aiGenerateSequence}>
-              {aiBusyBlockId === '__new__' ? 'Génération…' : `Générer ${aiQuestionCount} questions`}
-            </button>
-          </div>
-        </div>
-        <p class="editor-ai-hint">
-          L'assistant propose une progression cohérente à partir de tout l'exercice. Les retouches locales viennent ensuite.
-        </p>
-      </div>
+      <AiSequencePanel
+        {meta}
+        bind:aiInstruction
+        bind:aiQuestionCount
+        {aiBusyBlockId}
+        onGenerate={aiGenerateSequence}
+      />
 
-      <section class="editor-revision-panel" aria-label="Répercuter une modification">
-        <div>
-          <p class="editor-revision-title">↻ Répercuter une modification</p>
-          <p class="editor-revision-hint">Ex. « remplacer $a=2$ par $a=3$ et recalculer les résultats dans les questions et solutions ».</p>
-        </div>
-        {#if !revisionProposal}
-          <div class="editor-revision-row">
-            <input
-              type="text"
-              bind:value={revisionInstruction}
-              placeholder="Décrivez le changement à appliquer à l'ensemble de l'exercice"
-              onkeydown={(event) => event.key === 'Enter' && requestRevision()}
-            />
-            <button type="button" class="btn-secondary" disabled={revisionBusy} onclick={requestRevision}>
-              {revisionBusy ? 'Analyse…' : 'Prévisualiser'}
-            </button>
-          </div>
-        {:else}
-          <div class="revision-preview">
-            <p><strong>Proposition prête :</strong> {revisionChanges().length} bloc{revisionChanges().length > 1 ? 's' : ''} {revisionChanges().length > 1 ? 'seront modifiés' : 'sera modifié'}.</p>
-            <details>
-              <summary>Voir les changements</summary>
-              {#each revisionChanges() as change (change.index)}
-                <div class="revision-change">
-                  <strong>Bloc {change.index + 1} · {change.after.type}</strong>
-                  <del>{change.before?.latex || 'Nouveau bloc'}</del>
-                  <ins>{change.after.latex}</ins>
-                </div>
-              {/each}
-            </details>
-            <div class="revision-preview-actions">
-              <button type="button" class="btn-secondary" onclick={() => (revisionProposal = null)}>Annuler</button>
-              <button type="button" class="btn-primary" onclick={applyRevisionProposal}>Appliquer les changements</button>
-            </div>
-          </div>
-        {/if}
-      </section>
+      <RevisionPanel
+        bind:revisionInstruction
+        busy={revisionBusy}
+        proposal={revisionProposal}
+        changes={revisionChangesList}
+        onRequest={requestRevision}
+        onApply={applyRevisionProposal}
+        onCancel={() => (revisionProposal = null)}
+      />
 
       <div class="editor-toolbar-sticky">
         <LatexToolbar oninsert={insertSnippet} />
       </div>
 
       <div class="editor-blocks">
-        {#each documentBlocks() as block (block.id)}
-          <div class="editor-block editor-block--{block.type}">
-            <div class="editor-block-head">
-              <div class="editor-block-label">
-                <select
-                  class="editor-block-type"
-                  bind:value={block.type}
-                  aria-label="Type du bloc"
-                >
-                  {#each BLOCK_TYPES as bt}
-                    <option value={bt.type}>{bt.label}</option>
-                  {/each}
-                  {#if block.type === 'code'}<option value="code">Code</option>{/if}
-                </select>
-                {#if block.questionId}
-                  <span class="editor-block-parent">liée à la question {blocks.filter((b) => b.type === 'question').findIndex((b) => b.id === block.questionId) + 1}</span>
-                {/if}
-              </div>
+        {#each docBlocks as block, i (block.id)}
+          <BlockCard
+            {block}
+            parentLabel={parentLabelFor(block)}
+            {promptPanel}
+            {aiBusyBlockId}
+            {aiBusyKind}
+            {fixLatexUndo}
+            canMoveUp={canMoveBlock(block, -1)}
+            canMoveDown={canMoveBlock(block, 1)}
+            onChangeType={changeBlockType}
+            onOpenPromptPanel={openPromptPanel}
+            onFixLatex={aiFixLatex}
+            onUndoFixLatex={undoFixLatex}
+            onOpenFixLatexPanel={openFixLatexPanel}
+            onClosePromptPanel={() => (promptPanel = null)}
+            onResetPromptTemplate={resetPromptTemplate}
+            onGenerateFromPanel={generateFromPanel}
+            onMoveUp={(b) => moveBlock(b.id, -1)}
+            onMoveDown={(b) => moveBlock(b.id, 1)}
+            onRemove={(b) => removeBlock(b.id)}
+            onFocus={registerFocus}
+            onInput={(b) => { if (fixLatexUndo?.blockId === b.id) fixLatexUndo = null; }}
+          />
 
-              <div class="editor-block-actions">
-                <button
-                  type="button"
-                  class="block-btn block-btn--ai"
-                  class:block-btn--ai-open={promptPanel?.blockId === block.id && promptPanel?.mode === block.type}
-                  title={block.latex.trim()
-                    ? 'Améliorer ce bloc avec l’IA (voir et modifier la consigne)'
-                    : 'Rédiger ce bloc avec l’IA (voir et modifier la consigne)'}
-                  disabled={aiBusyBlockId !== null}
-                  onclick={() => openPromptPanel(block)}
-                >
-                  {aiBusyBlockId === block.id && promptPanel?.mode !== 'fixlatex' ? '…' : '✨'}
-                </button>
-                <button
-                  type="button"
-                  class="block-btn block-btn--ai"
-                  class:block-btn--ai-open={promptPanel?.blockId === block.id && promptPanel?.mode === 'fixlatex'}
-                  title="Corriger la syntaxe LaTeX de ce bloc, sans changer le contenu (IA)"
-                  disabled={aiBusyBlockId !== null || !block.latex.trim()}
-                  onclick={() => openFixLatexPanel(block)}
-                >
-                  {aiBusyBlockId === block.id && promptPanel?.mode === 'fixlatex' ? '…' : '🧮'}
-                </button>
-                {#if block.type === 'question'}
-                  <button
-                    type="button"
-                    class="block-btn"
-                    title="Générer une indication (IA)"
-                    disabled={aiBusyBlockId !== null}
-                    onclick={() => aiAddForQuestion(block, 'indication')}
-                  >💡</button>
-                  <button
-                    type="button"
-                    class="block-btn"
-                    title="Générer une solution (IA)"
-                    disabled={aiBusyBlockId !== null}
-                    onclick={() => aiAddForQuestion(block, 'reponse')}
-                  >✅</button>
-                  <button type="button" class="block-btn" title="Ajouter une indication manuelle" onclick={() => addChildBlock(block, 'indication')}>+💡</button>
-                  <button type="button" class="block-btn" title="Ajouter une solution manuelle" onclick={() => addChildBlock(block, 'reponse')}>+✅</button>
-                {/if}
-                <button type="button" class="block-btn" title="Monter" disabled={!canMoveBlock(block, -1)} onclick={() => moveBlock(block.id, -1)}>↑</button>
-                <button type="button" class="block-btn" title="Descendre" disabled={!canMoveBlock(block, 1)} onclick={() => moveBlock(block.id, 1)}>↓</button>
-                <button type="button" class="block-btn block-btn--danger" title="Supprimer ce bloc" onclick={() => removeBlock(block.id)}>✕</button>
-              </div>
-            </div>
-
-            {#if promptPanel?.blockId === block.id}
-              <div class="prompt-panel">
-                <label class="prompt-panel-label" for="prompt-ta-{block.id}">
-                  Consigne envoyée à l'IA
-                  {#if promptPanel.mode === 'fixlatex'}
-                    <span class="prompt-panel-tag">correction LaTeX</span>
-                  {:else if promptPanel.isImprove}
-                    <span class="prompt-panel-tag">amélioration</span>
-                  {:else}
-                    <span class="prompt-panel-tag">rédaction</span>
-                  {/if}
-                </label>
-                <textarea
-                  id="prompt-ta-{block.id}"
-                  class="prompt-panel-input"
-                  rows="3"
-                  bind:value={promptPanel.template}
-                ></textarea>
-
-                <details class="prompt-panel-details">
-                  <summary>Joint automatiquement à la consigne</summary>
-                  <ul>
-                    {#if promptPanel.mode === 'fixlatex'}
-                      <li>Uniquement le texte de ce bloc, sans le reste de l'exercice (pour ne pas inciter le modèle à le réécrire).</li>
-                    {:else}
-                      <li>Les métadonnées et tous les blocs de l'exercice (contexte).</li>
-                      {#if promptPanel.targetLatex}
-                        <li>La question concernée : <code>{promptPanel.targetLatex.slice(0, 120)}{promptPanel.targetLatex.length > 120 ? '…' : ''}</code></li>
-                      {/if}
-                      {#if promptPanel.isImprove}
-                        <li>Le contenu actuel du bloc (à améliorer).</li>
-                      {/if}
-                    {/if}
-                  </ul>
-                  <p class="prompt-panel-system-title">Instructions générales du modèle (fixes) :</p>
-                  <pre class="prompt-panel-system">{promptPanel.mode === 'fixlatex' ? FIX_LATEX_SYSTEM_PROMPT : SYSTEM_PROMPT}</pre>
-                </details>
-
-                <div class="prompt-panel-footer">
-                  <label class="prompt-panel-remember">
-                    <input type="checkbox" bind:checked={promptPanel.remember} />
-                    Mémoriser comme consigne par défaut
-                  </label>
-                  <div class="prompt-panel-actions">
-                    <button type="button" class="btn-link" onclick={resetPromptTemplate}>
-                      Consigne d'origine
-                    </button>
-                    <button type="button" class="btn-secondary" onclick={() => (promptPanel = null)}>
-                      Annuler
-                    </button>
-                    <button
-                      type="button"
-                      class="btn-primary"
-                      disabled={aiBusyBlockId !== null || !promptPanel.template.trim()}
-                      onclick={() => generateFromPanel(block)}
-                    >
-                      {#if aiBusyBlockId === block.id}
-                        {promptPanel.mode === 'fixlatex' ? 'Correction…' : 'Génération…'}
-                      {:else}
-                        {promptPanel.mode === 'fixlatex' ? '🧮 Corriger' : '✨ Générer'}
-                      {/if}
-                    </button>
-                  </div>
-                </div>
-              </div>
+          {#if isLastOfQuestionGroup(docBlocks, i)}
+            {@const questionBlock = block.type === 'question' ? block : blocks.find((b) => b.id === block.questionId)}
+            {#if questionBlock}
+              <BlockAddRow
+                {questionBlock}
+                {aiBusyBlockId}
+                {aiBusyKind}
+                onGenerateIndication={(qb) => aiAddForQuestion(qb, 'indication')}
+                onGenerateSolution={(qb) => aiAddForQuestion(qb, 'reponse')}
+                onAddIndication={(qb) => addChildBlock(qb, 'indication')}
+                onAddSolution={(qb) => addChildBlock(qb, 'reponse')}
+              />
             {/if}
-
-            <textarea
-              id="block-ta-{block.id}"
-              class="editor-block-input"
-              rows="3"
-              spellcheck="false"
-              placeholder={block.type === 'question'
-                ? 'Énoncé de la question (LaTeX, math entre $…$)'
-                : block.type === 'indication'
-                  ? 'Indication pour la question liée'
-                  : block.type === 'reponse'
-                    ? 'Solution détaillée de la question liée'
-                    : 'Mise en situation, définitions, notations…'}
-              bind:value={block.latex}
-              use:autoResize
-              onfocus={(e) => registerFocus(e, block.id)}
-            ></textarea>
-          </div>
+          {/if}
         {/each}
       </div>
 
@@ -1201,72 +1013,19 @@
     </section>
 
     <!-- ── Colonne droite : rendu ───────────────────────────────────────── -->
-    <section class="create-preview" aria-label="Aperçu du rendu">
-      <div class="preview-tabs" role="tablist">
-        <button
-          type="button"
-          role="tab"
-          aria-selected={rightTab === 'preview'}
-          class="preview-tab"
-          class:is-active={rightTab === 'preview'}
-          onclick={() => (rightTab = 'preview')}
-        >Aperçu</button>
-        <button
-          type="button"
-          role="tab"
-          aria-selected={rightTab === 'source'}
-          class="preview-tab"
-          class:is-active={rightTab === 'source'}
-          onclick={() => (rightTab = 'source')}
-        >Source .tex</button>
-        <button
-          type="button"
-          class="preview-validate"
-          disabled={finalPreviewBusy || !blocks.some((block) => block.latex.trim())}
-          onclick={verifyFinalPreview}
-          title="Vérifier le rendu avec le convertisseur de production"
-        >{finalPreviewBusy ? 'Vérification…' : '✓ Vérifier le rendu final'}</button>
-      </div>
-
-      <div class="preview-body">
-        {#if rightTab === 'preview'}
-          {#if finalPreviewError}
-            <p class="preview-final-error" role="alert">{finalPreviewError} L’aperçu instantané reste affiché.</p>
-          {/if}
-          {#if finalPreview}
-            <p class="preview-final-notice">✓ Rendu de validation (convertisseur de production). Modifiez un bloc pour revenir à l’aperçu instantané.</p>
-            <ExerciseContent
-              exercise={previewExercise}
-              content={finalPreview}
-              variant="full"
-              showHeader={true}
-              showGlobalToggles={false}
-              bind:showHint
-              bind:showSolution
-            />
-          {:else if previewContent.length === 0}
-            <div class="preview-empty">
-              <p>L'aperçu s'affichera ici au fur et à mesure de votre rédaction.</p>
-              <p class="preview-empty-hint">Les figures TikZ et images ne sont rendues qu'à la construction du site.</p>
-            </div>
-          {:else}
-            <ExerciseContent
-              exercise={previewExercise}
-              content={previewContent}
-              variant="full"
-              showHeader={true}
-              showGlobalToggles={false}
-              bind:showHint
-              bind:showSolution
-            />
-          {/if}
-        {:else}
-          <div class="preview-source">
-            <pre>{texSource}</pre>
-          </div>
-        {/if}
-      </div>
-    </section>
+    <PreviewPane
+      bind:rightTab
+      {previewExercise}
+      {previewContent}
+      {finalPreview}
+      {finalPreviewBusy}
+      {finalPreviewError}
+      {texSource}
+      hasContent={blocks.some((b) => b.latex.trim())}
+      bind:showHint
+      bind:showSolution
+      onVerify={verifyFinalPreview}
+    />
   </div>
 </div>
 
@@ -1306,12 +1065,12 @@
     @apply flex items-center gap-2 flex-wrap;
   }
 
-  .btn-primary {
+  .editor-btn-primary {
     @apply px-3 py-1.5 rounded-md bg-brand-600 text-white text-sm font-medium
            hover:bg-brand-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
-  .btn-secondary {
+  .editor-btn-secondary {
     @apply px-3 py-1.5 rounded-md bg-white border border-gray-300 text-gray-700 text-sm font-medium
            hover:bg-gray-50 transition-colors;
   }
@@ -1319,67 +1078,6 @@
   .btn-ghost-danger {
     @apply px-2.5 py-1.5 rounded-md text-gray-400 text-sm hover:text-red-600 hover:bg-red-50 transition-colors;
   }
-
-  .create-import {
-    @apply mb-3;
-  }
-
-  .create-import-notice {
-    @apply text-sm text-gray-600 mb-3;
-  }
-
-  .import-candidates {
-    @apply border border-brand-200 bg-brand-50 rounded-xl p-4 mb-3;
-  }
-
-  .import-candidates h2 {
-    @apply text-base font-semibold text-brand-900 m-0;
-  }
-
-  .import-candidates p {
-    @apply text-sm text-brand-700 mt-1 mb-3;
-  }
-
-  .import-candidates-list {
-    @apply flex flex-col gap-2;
-  }
-
-  .import-candidate {
-    @apply flex gap-2.5 items-start p-2.5 rounded-lg bg-white border border-brand-100 cursor-pointer;
-  }
-
-  .import-candidate input { @apply mt-1; }
-  .import-candidate span > span,
-  .import-candidate small { @apply block text-xs text-gray-500 mt-0.5; }
-  .import-candidate strong { @apply text-sm text-gray-800; }
-
-  .import-candidates-actions {
-    @apply flex justify-end gap-2 mt-3;
-  }
-
-  .imported-drafts {
-    @apply border border-gray-200 rounded-lg bg-white px-3 py-2 mb-3;
-  }
-
-  .imported-drafts summary {
-    @apply cursor-pointer text-sm font-medium text-gray-700;
-  }
-
-  .imported-drafts-list { @apply mt-2 flex flex-col gap-1; }
-
-  .imported-draft {
-    @apply flex items-center justify-between gap-2 text-sm rounded-md bg-gray-50 px-2.5 py-1.5;
-  }
-
-  .imported-draft--active {
-    @apply bg-brand-50 border border-brand-200 text-brand-900;
-  }
-
-  .imported-draft-active {
-    @apply inline-block ml-2 px-1.5 py-0.5 rounded-full bg-brand-600 text-white text-[10px] font-semibold;
-  }
-
-  .imported-draft-delete { @apply text-red-600 hover:text-red-800 ml-2; }
 
   .create-layout {
     display: grid;
@@ -1400,71 +1098,6 @@
     @apply flex flex-col gap-3 min-w-0;
   }
 
-  .editor-meta {
-    @apply border border-gray-200 rounded-lg bg-white;
-    order: 2;
-  }
-
-  .editor-meta > summary {
-    @apply px-3 py-2 text-sm font-semibold text-gray-700 cursor-pointer select-none;
-  }
-
-  .editor-meta-grid {
-    @apply grid grid-cols-2 gap-x-3 gap-y-2 px-3 pb-3;
-  }
-
-  @media (max-width: 640px) {
-    .editor-meta-grid {
-      @apply grid-cols-1;
-    }
-  }
-
-  .meta-field {
-    @apply flex flex-col gap-0.5 text-xs font-medium text-gray-500;
-  }
-
-  .meta-field--wide {
-    @apply col-span-2;
-  }
-
-  @media (max-width: 640px) {
-    .meta-field--wide {
-      @apply col-span-1;
-    }
-  }
-
-  .meta-field input,
-  .meta-field select {
-    @apply px-2 py-1.5 rounded-md border border-gray-300 text-sm text-gray-800 font-normal
-           focus:outline-none focus:ring-2 focus:ring-brand-300 focus:border-brand-400;
-  }
-
-  .meta-input-row {
-    @apply flex gap-1;
-  }
-
-  .meta-input-row input,
-  .meta-input-row select {
-    @apply flex-1 min-w-0;
-  }
-
-  .meta-ai-btn {
-    @apply px-2 rounded-md border border-brand-200 bg-brand-50 text-sm
-           hover:bg-brand-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
-  }
-
-  .meta-uuid {
-    @apply flex gap-1;
-  }
-
-  .meta-uuid input {
-    @apply flex-1 min-w-0 font-mono;
-  }
-
-  .meta-uuid button {
-    @apply px-2 rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50;
-  }
-
   .editor-toolbar-sticky {
     position: sticky;
     top: 0.5rem;
@@ -1482,118 +1115,6 @@
     order: 5;
   }
 
-  .editor-block {
-    @apply border rounded-lg bg-white overflow-hidden border-gray-200;
-    border-left-width: 4px;
-  }
-
-  .editor-block--text { border-left-color: theme('colors.gray.300'); }
-  .editor-block--question { border-left-color: theme('colors.brand.400'); }
-  .editor-block--indication { border-left-color: theme('colors.yellow.400'); }
-  .editor-block--reponse { border-left-color: theme('colors.green.400'); }
-  .editor-block--code { border-left-color: theme('colors.purple.400'); }
-
-  .editor-block-head {
-    @apply flex items-center justify-between gap-2 px-2 pt-2;
-  }
-
-  .editor-block-label {
-    @apply flex items-center gap-2 min-w-0;
-  }
-
-  .editor-block-parent {
-    @apply text-[11px] text-gray-500 whitespace-nowrap;
-  }
-
-  .editor-block-type {
-    @apply text-xs font-semibold text-gray-600 border border-gray-200 rounded-md px-1.5 py-1 bg-gray-50;
-  }
-
-  .editor-block-actions {
-    @apply flex items-center gap-1;
-  }
-
-  .block-btn {
-    @apply w-7 h-7 grid place-items-center rounded-md text-sm text-gray-500 border border-transparent
-           hover:bg-gray-100 transition-colors disabled:opacity-35 disabled:cursor-not-allowed;
-  }
-
-  .block-btn--ai {
-    @apply border-brand-200 bg-brand-50 hover:bg-brand-100;
-  }
-
-  .block-btn--ai-open {
-    @apply bg-brand-100 border-brand-400;
-  }
-
-  /* Panneau de consigne IA */
-  .prompt-panel {
-    @apply mx-2 mt-2 px-3 py-2.5 rounded-lg border border-brand-200 bg-brand-50 flex flex-col gap-2;
-  }
-
-  .prompt-panel-label {
-    @apply flex items-center gap-2 text-xs font-semibold text-brand-800;
-  }
-
-  .prompt-panel-tag {
-    @apply px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-white border border-brand-200 text-brand-600;
-  }
-
-  .prompt-panel-input {
-    @apply w-full px-2.5 py-2 rounded-md border border-brand-200 bg-white text-sm leading-relaxed text-gray-800
-           focus:outline-none focus:ring-2 focus:ring-brand-300 resize-y;
-  }
-
-  .prompt-panel-details {
-    @apply text-xs text-brand-700;
-  }
-
-  .prompt-panel-details summary {
-    @apply cursor-pointer select-none font-medium;
-  }
-
-  .prompt-panel-details ul {
-    @apply list-disc pl-5 mt-1 space-y-0.5;
-  }
-
-  .prompt-panel-details code {
-    @apply bg-white px-1 rounded border border-brand-100 text-[11px];
-  }
-
-  .prompt-panel-system-title {
-    @apply mt-2 mb-1 font-medium;
-  }
-
-  .prompt-panel-system {
-    @apply text-[11px] leading-relaxed bg-white border border-brand-100 rounded-md p-2 whitespace-pre-wrap max-h-44 overflow-y-auto text-gray-600;
-  }
-
-  .prompt-panel-footer {
-    @apply flex items-center justify-between gap-2 flex-wrap;
-  }
-
-  .prompt-panel-remember {
-    @apply flex items-center gap-1.5 text-xs text-brand-800 cursor-pointer;
-  }
-
-  .prompt-panel-actions {
-    @apply flex items-center gap-2;
-  }
-
-  .btn-link {
-    @apply text-xs text-brand-600 underline underline-offset-2 hover:text-brand-800;
-  }
-
-  .block-btn--danger:hover {
-    @apply bg-red-50 text-red-600;
-  }
-
-  .editor-block-input {
-    @apply w-full px-3 py-2 text-sm font-mono leading-relaxed text-gray-800 border-0 resize-none
-           focus:outline-none focus:ring-0;
-    min-height: 4.5rem;
-  }
-
   .editor-add-row {
     @apply flex items-center gap-2 flex-wrap text-xs text-gray-500;
     order: 6;
@@ -1606,187 +1127,5 @@
   .btn-add {
     @apply px-2.5 py-1 rounded-full border border-gray-300 bg-white text-xs font-medium text-gray-600
            hover:border-brand-300 hover:text-brand-700 hover:bg-brand-50 transition-colors;
-  }
-
-  .editor-ai-panel {
-    @apply border-2 border-brand-300 bg-brand-50 rounded-xl px-4 py-4 shadow-sm;
-    order: 1;
-  }
-
-  .editor-revision-panel {
-    @apply border border-violet-200 bg-violet-50 rounded-xl px-4 py-3 flex flex-col gap-2;
-    order: 1;
-  }
-
-  .editor-revision-title {
-    @apply text-sm font-semibold text-violet-900 m-0;
-  }
-
-  .editor-revision-hint {
-    @apply text-xs text-violet-700 m-0 mt-0.5;
-  }
-
-  .editor-revision-row {
-    @apply flex gap-2;
-  }
-
-  .editor-revision-row input {
-    @apply flex-1 min-w-0 px-2.5 py-1.5 rounded-md border border-violet-200 bg-white text-sm
-           focus:outline-none focus:ring-2 focus:ring-violet-300;
-  }
-
-  .revision-preview {
-    @apply text-sm text-violet-900;
-  }
-
-  .revision-preview p { @apply m-0; }
-  .revision-preview details { @apply mt-2; }
-  .revision-preview summary { @apply cursor-pointer text-xs font-medium text-violet-700; }
-
-  .revision-change {
-    @apply mt-2 p-2 rounded-md bg-white border border-violet-100 text-xs;
-  }
-
-  .revision-change strong,
-  .revision-change del,
-  .revision-change ins { @apply block; }
-  .revision-change del { @apply mt-1 text-red-700 no-underline line-through; }
-  .revision-change ins { @apply mt-1 text-green-800 no-underline; }
-
-  .revision-preview-actions { @apply flex justify-end gap-2 mt-3; }
-
-  .editor-ai-heading {
-    @apply flex items-start justify-between gap-3 mb-3;
-  }
-
-  .editor-ai-kicker {
-    @apply uppercase tracking-wider text-[10px] font-bold text-brand-600 m-0 mb-0.5;
-  }
-
-  .editor-ai-badge {
-    @apply rounded-full px-2 py-1 text-[10px] font-semibold text-brand-700 bg-white border border-brand-200 whitespace-nowrap;
-  }
-
-  .editor-ai-parameters {
-    @apply flex items-end gap-3 mb-3;
-  }
-
-  .editor-ai-parameters label {
-    @apply flex flex-col gap-0.5 text-xs font-medium text-brand-800;
-  }
-
-  .editor-ai-parameters input,
-  .editor-ai-parameters select {
-    @apply min-w-28 px-2 py-1.5 rounded-md border border-brand-200 bg-white text-sm text-gray-800
-           focus:outline-none focus:ring-2 focus:ring-brand-300;
-  }
-
-  .editor-ai-title {
-    @apply text-base font-semibold text-brand-800 m-0;
-  }
-
-  .editor-ai-model {
-    @apply text-[0.65rem] font-normal text-brand-600 ml-1;
-  }
-
-  .editor-ai-row {
-    @apply flex gap-3 items-stretch;
-  }
-
-  .editor-ai-row textarea {
-    @apply flex-1 min-w-0 px-2.5 py-1.5 rounded-md border border-brand-200 text-sm
-           focus:outline-none focus:ring-2 focus:ring-brand-300 resize-y;
-  }
-
-  .editor-ai-generate {
-    @apply flex flex-col justify-between gap-2 min-w-36;
-  }
-
-  .editor-ai-generate label {
-    @apply flex items-center justify-between gap-2 text-xs font-medium text-brand-800;
-  }
-
-  .editor-ai-generate input {
-    @apply w-14 px-2 py-1 rounded-md border border-brand-200 bg-white text-sm text-gray-800;
-  }
-
-  .editor-ai-hint {
-    @apply text-xs text-brand-700 m-0 mt-2;
-  }
-
-  @media (max-width: 640px) {
-    .editor-ai-row { @apply flex-col; }
-    .editor-ai-generate { @apply flex-row items-center; }
-    .editor-ai-parameters { @apply flex-wrap; }
-    .editor-revision-row { @apply flex-col; }
-  }
-
-  /* ── Colonne aperçu ──────────────────────────────────────────────────── */
-
-  .create-preview {
-    @apply border border-gray-200 rounded-xl bg-white min-w-0;
-    position: sticky;
-    top: 0.75rem;
-    max-height: calc(100vh - 1.5rem);
-    display: flex;
-    flex-direction: column;
-  }
-
-  @media (max-width: 1023px) {
-    .create-preview {
-      position: static;
-      max-height: none;
-    }
-  }
-
-  .preview-tabs {
-    @apply flex gap-1 px-3 pt-2 border-b border-gray-100 flex-shrink-0;
-  }
-
-  .preview-tab {
-    @apply px-3 py-1.5 text-sm font-medium text-gray-500 border-b-2 border-transparent
-           hover:text-gray-700 transition-colors;
-  }
-
-  .preview-tab.is-active {
-    @apply text-brand-700 border-brand-500;
-  }
-
-  .preview-validate {
-    @apply ml-auto mb-1 px-2 py-1 rounded-md border border-brand-200 bg-brand-50 text-xs font-medium text-brand-700
-           hover:bg-brand-100 disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-
-  .preview-body {
-    @apply p-3 overflow-y-auto;
-  }
-
-  .preview-empty {
-    @apply text-center text-gray-400 text-sm py-16 px-6;
-  }
-
-  .preview-empty-hint {
-    @apply text-xs mt-2;
-  }
-
-  .preview-final-notice {
-    @apply text-xs text-green-800 bg-green-50 border border-green-200 rounded-md px-2.5 py-2 mb-3;
-  }
-
-  .preview-final-error {
-    @apply text-xs text-red-700 bg-red-50 border border-red-200 rounded-md px-2.5 py-2 mb-3;
-  }
-
-  .preview-source pre {
-    @apply text-xs font-mono leading-relaxed text-gray-800 bg-gray-50 rounded-lg p-3 overflow-x-auto whitespace-pre-wrap;
-  }
-
-  /* Encarts d'artefacts dans l'aperçu (générés par texPreview.js) */
-  .preview-body :global(.tex-preview-artifact) {
-    @apply text-xs text-gray-500 bg-gray-100 border border-dashed border-gray-300 rounded-md px-3 py-2 my-2;
-  }
-
-  .preview-body :global(.tex-preview-code) {
-    @apply text-xs font-mono bg-gray-900 text-gray-100 rounded-lg p-3 overflow-x-auto;
   }
 </style>
