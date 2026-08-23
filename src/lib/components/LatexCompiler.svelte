@@ -6,7 +6,6 @@
 <script>
   import { onDestroy, onMount } from "svelte";
   import { parseLatexDiagnostics } from "$lib/latex/diagnostics.js";
-  import LatexContentOptions from "$lib/components/LatexContentOptions.svelte";
 
   /** @type {HTMLElement} */
   let editorHost;
@@ -16,9 +15,6 @@
     assets = [],
     filename = "document.tex",
     endpoint = "/api/latex/compile",
-    includeHints = $bindable(true),
-    includeSolutions = $bindable(true),
-    solutionsAtEnd = $bindable(false),
   } = $props();
 
   let editableSource = $state(source);
@@ -245,12 +241,6 @@
         ? ` ${assets.length} ressource${assets.length > 1 ? "s" : ""} jointe${assets.length > 1 ? "s" : ""}.`
         : ""}
     </p>
-    <LatexContentOptions
-      bind:includeHints
-      bind:includeSolutions
-      bind:solutionsAtEnd
-      compact
-    />
     <div
       bind:this={editorHost}
       class="latex-editor"

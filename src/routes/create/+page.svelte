@@ -22,6 +22,7 @@
   import BlockAddRow from '$lib/components/create/BlockAddRow.svelte';
   import PreviewPane from '$lib/components/create/PreviewPane.svelte';
   import LatexCompiler from '$lib/components/LatexCompiler.svelte';
+  import LatexContentOptions from '$lib/components/LatexContentOptions.svelte';
   import { blocksToPreviewContent } from '$lib/latex/texPreview.js';
   import {
     buildExerciseTex,
@@ -1083,13 +1084,15 @@
           ← Revenir à l’éditeur
         </button>
       </div>
-      <LatexCompiler
-        source={latexDocumentSource}
-        filename={latexDocumentFilename}
-        bind:includeHints={latexContentOptions.includeHints}
-        bind:includeSolutions={latexContentOptions.includeSolutions}
-        bind:solutionsAtEnd={latexContentOptions.solutionsAtEnd}
-      />
+      <div class="compiler-document-options">
+        <LatexContentOptions
+          bind:includeHints={latexContentOptions.includeHints}
+          bind:includeSolutions={latexContentOptions.includeSolutions}
+          bind:solutionsAtEnd={latexContentOptions.solutionsAtEnd}
+          compact
+        />
+      </div>
+      <LatexCompiler source={latexDocumentSource} filename={latexDocumentFilename} />
     </div>
   </div>
 </div>
@@ -1178,6 +1181,10 @@
   .create-compiler-workspace :global(.latex-compiler) {
     max-width: 1800px;
     margin: 0 auto;
+  }
+
+  .compiler-document-options {
+    @apply max-w-[1800px] mx-auto mb-4 rounded-xl border border-gray-200 bg-white px-4 py-3;
   }
 
   @media (max-width: 1023px) {
