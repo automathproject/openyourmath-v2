@@ -164,6 +164,48 @@ describe('generateShortUuid', () => {
 });
 
 describe('generateLatexDocument', () => {
+  it('remplace les apostrophes typographiques dans les titres et le contenu', () => {
+    const source = generateLatexDocument([{
+      uuid: 'Ab3d',
+      title: 'L’intégrale',
+      content: [{ type: 'question', latex: 'Calculer l’intégrale de $f$.' }],
+    }], 'L’intégrale');
+
+    expect(source).toContain("l'intégrale");
+    expect(source).not.toContain('l’intégrale');
+  });
+
+  it('adapte les indications et solutions aux options de contenu', () => {
+    const exercises = [{
+      uuid: 'Ab3d',
+      title: 'Test',
+      content: [
+        { type: 'question', latex: 'Question à résoudre.' },
+        { type: 'indication', latex: 'Indice réservé.' },
+        { type: 'reponse', latex: 'Solution réservée.' },
+      ],
+    }];
+
+    const withoutExtras = generateLatexDocument(exercises, 'Test', {
+      includeHints: false,
+      includeSolutions: false,
+    });
+    expect(withoutExtras).not.toContain('Indice réservé.');
+    expect(withoutExtras).not.toContain('Solution réservée.');
+
+    const solutionsAtEnd = generateLatexDocument(exercises, 'Test', {
+      includeHints: true,
+      includeSolutions: true,
+      solutionsAtEnd: true,
+    });
+    expect(solutionsAtEnd).toContain('Indice réservé.');
+    expect(solutionsAtEnd).toContain('\\small\\textbf{Indication.}');
+    expect(solutionsAtEnd).toContain('\\section*{Réponses}');
+    expect(solutionsAtEnd.indexOf('Solution réservée.')).toBeGreaterThan(
+      solutionsAtEnd.indexOf('\\section*{Réponses}'),
+    );
+  });
+
   it('normalise les erreurs de délimiteurs fréquentes dans un bloc IA', () => {
     const source = generateLatexDocument([{
       uuid: 'Ab3d',

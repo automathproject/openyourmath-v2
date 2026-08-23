@@ -124,13 +124,26 @@ export function blockToLatex(block) {
  */
 export function latexEscapeText(str) {
   if (!str) return '';
-  return str
+  return normalizeLatexTypography(str)
     .replace(/\\/g, '\\textbackslash{}')
     .replace(/\{/g, '\\{').replace(/\}/g, '\\}')
     .replace(/\$/g, '\\$').replace(/%/g, '\\%')
     .replace(/&/g, '\\&').replace(/#/g, '\\#')
     .replace(/_/g, '\\_').replace(/~/g, '\\textasciitilde{}')
     .replace(/\^/g, '\\textasciicircum{}');
+}
+
+/**
+ * Remplace les apostrophes typographiques qu'insèrent fréquemment les IA ou
+ * les traitements de texte par l'apostrophe ASCII, sûre avec tous les moteurs
+ * LaTeX ciblés par l'export. Les lettres accentuées restent quant à elles
+ * inchangées et sont prises en charge par l'encodage UTF-8 du document.
+ *
+ * @param {string} value
+ * @returns {string}
+ */
+export function normalizeLatexTypography(value) {
+  return String(value || '').replace(/[\u2018\u2019\u02BC]/g, "'");
 }
 
 /**
@@ -281,7 +294,7 @@ function dedentLatex(latex) {
  * @returns {string}
  */
 export function normalizeLatexForCompilation(latex) {
-  const corrected = String(latex || '')
+  const corrected = normalizeLatexTypography(latex)
     // `\\textbf` est une double échappement de l'IA. Deux antislashs suivis
     // directement de `textbf` ne forment pas une commande LaTeX valide.
     .replace(/\\\\(textbf|textit|emph|underline)\b/g, '\\$1');
@@ -495,7 +508,10 @@ export function buildLatexExport(exercises, title, options = {}) {
 
     const pushLabelled = (label, blocks, indent) => {
       body.push('');
-      body.push(`${indent}\\par\\medskip\\noindent\\textbf{${label}}`);
+      // L'intitulé est un petit paragraphe autonome : il ne se confond pas
+      // avec le texte qui suit et reste correct si le bloc débute par une
+      // formule affichée, un tableau ou un autre environnement.
+      body.push(`${indent}\\par\\smallskip\\noindent{\\small\\textbf{${label}}}\\par\\nobreak\\smallskip`);
       blocks.forEach((b) => pushBlockLatex(b, indent));
     };
 

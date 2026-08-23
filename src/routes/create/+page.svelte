@@ -79,6 +79,13 @@
   let showHint = $state(true);
   let showSolution = $state(true);
   let compileMode = $state(false);
+  // Configuration du document autonome envoyé au compilateur. Elle est
+  // conservée ici pour que tout changement régénère la source affichée.
+  let latexContentOptions = $state({
+    includeHints: true,
+    includeSolutions: true,
+    solutionsAtEnd: false,
+  });
 
   let aiInstruction = $state('');
   let aiQuestionCount = $state(3);
@@ -181,6 +188,7 @@
         })),
       }],
       meta.title || 'Exercice',
+      latexContentOptions,
     )
   );
   let latexDocumentFilename = $derived(`${(meta.uuid || 'exercice').replace(/[^a-z0-9_-]/gi, '_')}.tex`);
@@ -1075,7 +1083,13 @@
           ← Revenir à l’éditeur
         </button>
       </div>
-      <LatexCompiler source={latexDocumentSource} filename={latexDocumentFilename} />
+      <LatexCompiler
+        source={latexDocumentSource}
+        filename={latexDocumentFilename}
+        bind:includeHints={latexContentOptions.includeHints}
+        bind:includeSolutions={latexContentOptions.includeSolutions}
+        bind:solutionsAtEnd={latexContentOptions.solutionsAtEnd}
+      />
     </div>
   </div>
 </div>

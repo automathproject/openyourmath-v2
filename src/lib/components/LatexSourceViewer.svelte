@@ -15,6 +15,7 @@
     fetchArtifactsMap,
     downloadTexFile,
   } from '$lib/latex/export.js';
+  import LatexContentOptions from '$lib/components/LatexContentOptions.svelte';
 
   /** @type {Object[]} */
   export let exercises = [];
@@ -191,18 +192,7 @@
   {:else}
     <!-- Options -->
     <div class="latex-viewer-options">
-      <label class="lv-option">
-        <input type="checkbox" bind:checked={includeHints} />
-        <span>Indications</span>
-      </label>
-      <label class="lv-option">
-        <input type="checkbox" bind:checked={includeSolutions} />
-        <span>Réponses</span>
-      </label>
-      <label class="lv-option lv-option--sub" class:lv-option--disabled={!includeSolutions}>
-        <input type="checkbox" bind:checked={solutionsAtEnd} disabled={!includeSolutions} />
-        <span>Réponses regroupées en fin de document</span>
-      </label>
+      <LatexContentOptions bind:includeHints bind:includeSolutions bind:solutionsAtEnd compact />
       {#if artifactsLoading}
         <span class="lv-loading">Chargement des ressources…</span>
       {/if}
@@ -301,32 +291,6 @@
     align-items: center;
     gap: 18px;
     flex-wrap: wrap;
-  }
-  .lv-option {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 13px;
-    font-weight: 600;
-    color: theme('colors.interface.text-primary');
-    cursor: pointer;
-  }
-  .lv-option input[type='checkbox'] {
-    accent-color: theme('colors.brand.600');
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-  }
-  .lv-option--sub {
-    font-weight: 500;
-    color: theme('colors.interface.text-secondary');
-  }
-  .lv-option--disabled {
-    opacity: 0.45;
-    cursor: not-allowed;
-  }
-  .lv-option--disabled input {
-    cursor: not-allowed;
   }
   .lv-loading {
     font-size: 12px;

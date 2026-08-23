@@ -11,6 +11,7 @@
 -->
 <script>
   import { generateLatexDocument, downloadTexFile } from '$lib/latex/export.js';
+  import LatexContentOptions from '$lib/components/LatexContentOptions.svelte';
 
   /** @type {Object[]} */
   export let exercises = [];
@@ -21,11 +22,13 @@
   // Options d'export
   let includeHints = true;
   let includeSolutions = true;
+  let solutionsAtEnd = false;
 
   function handleDownload() {
     const content = generateLatexDocument(exercises, title, {
       includeHints,
       includeSolutions,
+      solutionsAtEnd,
     });
     downloadTexFile(content, title || 'exercices');
   }
@@ -35,14 +38,7 @@
   <span class="latex-export-label">Export LaTeX</span>
 
   <div class="latex-export-options">
-    <label class="latex-option">
-      <input type="checkbox" bind:checked={includeHints} />
-      <span>Inclure les indications</span>
-    </label>
-    <label class="latex-option">
-      <input type="checkbox" bind:checked={includeSolutions} />
-      <span>Inclure les solutions</span>
-    </label>
+    <LatexContentOptions bind:includeHints bind:includeSolutions bind:solutionsAtEnd />
   </div>
 
   <button class="latex-download-btn" on:click={handleDownload}>
@@ -72,26 +68,7 @@
     @apply text-gray-400;
   }
 
-  .latex-export-options {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .latex-option {
-    display: flex;
-    align-items: center;
-    gap: 0.375rem;
-    font-size: 0.8rem;
-    cursor: pointer;
-    @apply text-gray-600;
-  }
-
-  .latex-option input[type='checkbox'] {
-    accent-color: #6366f1;
-    width: 0.9rem;
-    height: 0.9rem;
-    cursor: pointer;
-  }
+  .latex-export-options { width: 100%; }
 
   .latex-download-btn {
     display: flex;
