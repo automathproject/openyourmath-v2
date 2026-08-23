@@ -84,6 +84,13 @@ ALBERT_BASE_URL=https://albert.api.etalab.gouv.fr/v1
 
 Ollama est utilisé en priorité pour la génération de résumés et les embeddings. Albert prend le relais si Ollama n'est pas disponible ou si le modèle n'est pas installé. Pour l'indexation sémantique, Ollama seul suffit (gratuit, hors-ligne).
 
+L’onglet « PDF LaTeX » de l’éditeur `/create` utilise le service public
+[TeXLive.net](https://texlive.net/cgi-bin/latexcgi) avec LuaLaTeX. Les sources
+sont donc envoyées à ce service tiers ; ne l’utilisez pas pour un contenu
+confidentiel. Les éventuelles ressources jointes doivent être textuelles (SVG,
+EPS, `.tex`, `.sty`, `.cls`, `.bib` ou `.csv`) : les images binaires ne sont
+pas supportées par ce protocole.
+
 ## Indexation sémantique
 
 ```bash

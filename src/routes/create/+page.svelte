@@ -21,6 +21,7 @@
   import BlockCard from '$lib/components/create/BlockCard.svelte';
   import BlockAddRow from '$lib/components/create/BlockAddRow.svelte';
   import PreviewPane from '$lib/components/create/PreviewPane.svelte';
+  import LatexCompiler from '$lib/components/LatexCompiler.svelte';
   import { blocksToPreviewContent } from '$lib/latex/texPreview.js';
   import {
     buildExerciseTex,
@@ -29,7 +30,7 @@
     splitEnumerateItems,
     BLOCK_TYPES,
   } from '$lib/latex/exerciseTex.js';
-  import { downloadTexFile } from '$lib/latex/export.js';
+  import { downloadTexFile, generateLatexDocument } from '$lib/latex/export.js';
   import { DEFAULT_TASKS, buildTaskPrompt, buildFixLatexPrompt } from '$lib/ia/assistPrompts.js';
 
   const DRAFT_KEY = 'oym-create-draft-v1';
@@ -77,6 +78,7 @@
   let showImport = $state(false);
   let showHint = $state(true);
   let showSolution = $state(true);
+  let compileMode = $state(false);
 
   let aiInstruction = $state('');
   let aiQuestionCount = $state(3);
@@ -163,6 +165,25 @@
       documentBlocks().map((b) => ({ type: b.type, latex: b.latex }))
     )
   );
+
+  // Le format OpenYourMath exporté ci-dessus est volontairement un format de
+  // contenu, pas un document compilable seul. Cette variante est celle envoyée
+  // au compilateur PDF, avec le même contenu et les mêmes macros utiles.
+  let latexDocumentSource = $derived(
+    generateLatexDocument(
+      [{
+        uuid: meta.uuid || 'exercice',
+        title: meta.title || 'Exercice',
+        content: documentBlocks().map((block, index) => ({
+          type: block.type,
+          latex: block.latex,
+          order: index + 1,
+        })),
+      }],
+      meta.title || 'Exercice',
+    )
+  );
+  let latexDocumentFilename = $derived(`${(meta.uuid || 'exercice').replace(/[^a-z0-9_-]/gi, '_')}.tex`);
 
   let questionCount = $derived(blocks.filter((b) => b.type === 'question' && b.latex.trim()).length);
   // Liste affichée (ordre pédagogique) : figée une fois par rendu pour que
@@ -896,6 +917,14 @@
       <button type="button" class="editor-btn-secondary" onclick={() => (showImport = !showImport)}>
         📄 Importer (PDF, image, .tex)
       </button>
+      <button
+        type="button"
+        class="editor-btn-primary"
+        disabled={!blocks.some((b) => b.latex.trim()) && !compileMode}
+        onclick={() => (compileMode = !compileMode)}
+      >
+        {compileMode ? '← Revenir à l’éditeur' : '▣ Compiler le PDF'}
+      </button>
       <button type="button" class="editor-btn-secondary" onclick={copyTex}>
         {copied ? '✅ Copié' : '⧉ Copier le .tex'}
       </button>
@@ -927,8 +956,9 @@
   />
 
   <div class="create-layout">
-    <!-- ── Colonne gauche : édition ─────────────────────────────────────── -->
-    <section class="create-editor" aria-label="Édition de l'exercice">
+    <div class="create-workspace" hidden={compileMode}>
+      <!-- ── Colonne gauche : édition ───────────────────────────────────── -->
+      <section class="create-editor" aria-label="Édition de l'exercice">
       <MetaFields bind:showMeta {meta} levels={LEVELS} {aiMetaBusy} onSuggest={aiFillMeta} />
 
       {#if aiError}
@@ -1010,22 +1040,43 @@
         {/each}
         <span class="editor-add-hint">Ajoutez les indications et solutions depuis la question concernée.</span>
       </div>
-    </section>
+      </section>
 
-    <!-- ── Colonne droite : rendu ───────────────────────────────────────── -->
-    <PreviewPane
-      bind:rightTab
-      {previewExercise}
-      {previewContent}
-      {finalPreview}
-      {finalPreviewBusy}
-      {finalPreviewError}
-      {texSource}
-      hasContent={blocks.some((b) => b.latex.trim())}
-      bind:showHint
-      bind:showSolution
-      onVerify={verifyFinalPreview}
-    />
+      <!-- ── Colonne droite : rendu ─────────────────────────────────────── -->
+      <PreviewPane
+        bind:rightTab
+        {previewExercise}
+        {previewContent}
+        {finalPreview}
+        {finalPreviewBusy}
+        {finalPreviewError}
+        {texSource}
+        hasContent={blocks.some((b) => b.latex.trim())}
+        bind:showHint
+        bind:showSolution
+        onVerify={verifyFinalPreview}
+      />
+    </div>
+
+    <div
+      class="create-compiler-workspace"
+      hidden={!compileMode}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="latex-compiler-title"
+      tabindex="-1"
+    >
+      <div class="compiler-overlay-header">
+        <div>
+          <h2 id="latex-compiler-title">Compilation LaTeX</h2>
+          <p>Vérifiez le source à gauche et le PDF compilé à droite.</p>
+        </div>
+        <button type="button" class="editor-btn-secondary" onclick={() => (compileMode = false)}>
+          ← Revenir à l’éditeur
+        </button>
+      </div>
+      <LatexCompiler source={latexDocumentSource} filename={latexDocumentFilename} />
+    </div>
   </div>
 </div>
 
@@ -1080,14 +1131,43 @@
   }
 
   .create-layout {
+    min-width: 0;
+  }
+
+  .create-workspace {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 1.25rem;
     align-items: start;
   }
 
+  .create-compiler-workspace {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    overflow-y: auto;
+    @apply bg-gray-50 p-4 sm:p-6;
+  }
+
+  .compiler-overlay-header {
+    @apply flex max-w-[1800px] items-start justify-between gap-4 mx-auto mb-4;
+  }
+
+  .compiler-overlay-header h2 {
+    @apply text-lg font-bold text-gray-900;
+  }
+
+  .compiler-overlay-header p {
+    @apply mt-0.5 text-sm text-gray-500;
+  }
+
+  .create-compiler-workspace :global(.latex-compiler) {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+
   @media (max-width: 1023px) {
-    .create-layout {
+    .create-workspace {
       grid-template-columns: minmax(0, 1fr);
     }
   }

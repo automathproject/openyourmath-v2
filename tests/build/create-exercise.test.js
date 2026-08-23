@@ -15,6 +15,7 @@ import {
   splitEnumerateItems,
 } from '../../src/lib/latex/exerciseTex.js';
 import { latexToPreviewHtml, blocksToPreviewContent } from '../../src/lib/latex/texPreview.js';
+import { generateLatexDocument } from '../../src/lib/latex/export.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
@@ -159,6 +160,23 @@ describe('generateShortUuid', () => {
     for (let i = 0; i < 20; i++) {
       expect(generateShortUuid()).toMatch(/^[A-Za-z0-9_-]{4}$/);
     }
+  });
+});
+
+describe('generateLatexDocument', () => {
+  it('normalise les erreurs de délimiteurs fréquentes dans un bloc IA', () => {
+    const source = generateLatexDocument([{
+      uuid: 'Ab3d',
+      title: 'Test',
+      content: [{
+        type: 'reponse',
+        latex: '\\operatorname{cov}(X,Y)=0.\n\\\\textbf{Interprétation.}',
+      }],
+    }], 'Test');
+
+    expect(source).toContain('$\\operatorname{cov}(X,Y)=0.$');
+    expect(source).toContain('\\textbf{Interprétation.}');
+    expect(source).not.toContain('\\\\textbf{Interprétation.}');
   });
 });
 

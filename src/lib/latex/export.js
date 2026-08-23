@@ -272,6 +272,39 @@ function dedentLatex(latex) {
 }
 
 /**
+ * Corrige des erreurs de transcription fréquentes dans les blocs produits par
+ * l'assistant IA avant de construire le document autonome destiné au PDF.
+ * La source OpenYourMath d'origine reste inchangée : cette passe ne s'applique
+ * qu'à l'export compilable.
+ *
+ * @param {string} latex
+ * @returns {string}
+ */
+export function normalizeLatexForCompilation(latex) {
+  const corrected = String(latex || '')
+    // `\\textbf` est une double échappement de l'IA. Deux antislashs suivis
+    // directement de `textbf` ne forment pas une commande LaTeX valide.
+    .replace(/\\\\(textbf|textit|emph|underline)\b/g, '\\$1');
+
+  return corrected.split('\n').map((line) => {
+    const indentation = line.match(/^[ \t]*/)?.[0] || '';
+    const content = line.trim();
+    // Une commande opérateur isolée est une formule, mais l'IA oublie parfois
+    // les délimiteurs. On ne touche pas aux lignes déjà mathématiques ou aux
+    // environnements LaTeX.
+    if (
+      /^\\operatorname\b/.test(content) &&
+      !content.includes('$') &&
+      !content.startsWith('\\[') &&
+      !content.startsWith('\\begin{')
+    ) {
+      return `${indentation}$${content}$`;
+    }
+    return line;
+  }).join('\n');
+}
+
+/**
  * Réécrit les chemins \includegraphics d'un exercice vers un dossier local
  * images/ et renvoie la liste des fichiers à télécharger.
  */
@@ -450,6 +483,7 @@ export function buildLatexExport(exercises, title, options = {}) {
 
     const pushBlockLatex = (block, indent = '') => {
       let latex = rewriteBlock(dedentLatex(blockToLatex(block)));
+      if (block?.type !== 'code') latex = normalizeLatexForCompilation(latex);
       if (block?.type === 'code') {
         body.push(`${indent}\\begin{Verbatim}`);
         body.push(...latex.split('\n'));
@@ -540,7 +574,8 @@ export function buildLatexExport(exercises, title, options = {}) {
           body.push(`\\par\\medskip\\noindent\\textbf{${item.label}}`);
         }
         item.blocks.forEach((b) => {
-          const latex = sol.rewriteBlock(dedentLatex(blockToLatex(b)));
+          let latex = sol.rewriteBlock(dedentLatex(blockToLatex(b)));
+          if (b?.type !== 'code') latex = normalizeLatexForCompilation(latex);
           if (b?.type === 'code') {
             body.push('\\begin{Verbatim}');
             body.push(...latex.split('\n'));
