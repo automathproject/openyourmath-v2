@@ -16,6 +16,7 @@
     downloadTexFile,
   } from '$lib/latex/export.js';
   import LatexContentOptions from '$lib/components/LatexContentOptions.svelte';
+  import LatexCompiler from '$lib/components/LatexCompiler.svelte';
 
   /** @type {Object[]} */
   export let exercises = [];
@@ -169,6 +170,7 @@
   // ── Actions ──
   let copied = false;
   let copyTimer = null;
+  let compileMode = false;
 
   async function copySource() {
     try {
@@ -234,6 +236,9 @@
         </div>
 
         <div class="editor-actions">
+          <button class="editor-action-btn editor-action-btn--primary" on:click={() => (compileMode = true)}>
+            Compiler le PDF
+          </button>
           <button class="editor-action-btn" on:click={copySource}>
             {#if copied}✓ Copié{:else}Copier{/if}
           </button>
@@ -266,12 +271,36 @@
         <span>{hlLines.length} lignes · UTF-8 · LaTeX</span>
         <span class="editor-status-right">
           {exercises.length} exercice{exercises.length > 1 ? 's' : ''}
-          <span class="editor-soon" title="Bientôt disponible">Compilation en ligne — bientôt</span>
+          <span class="editor-soon">Compilation en ligne</span>
         </span>
       </div>
     </div>
   {/if}
 </div>
+
+{#if compileMode}
+  <div
+    class="latex-compiler-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="list-latex-compiler-title"
+    tabindex="-1"
+  >
+    <div class="latex-compiler-overlay-header">
+      <div>
+        <h2 id="list-latex-compiler-title">Compilation LaTeX</h2>
+        <p>Source de la liste à gauche, PDF compilé à droite.</p>
+      </div>
+      <button type="button" class="compiler-close" on:click={() => (compileMode = false)}>
+        ← Revenir à la source
+      </button>
+    </div>
+    <div class="latex-compiler-document-options">
+      <LatexContentOptions bind:includeHints bind:includeSolutions bind:solutionsAtEnd compact />
+    </div>
+    <LatexCompiler source={source} filename={fileName} />
+  </div>
+{/if}
 
 <style>
   .latex-viewer {
@@ -488,6 +517,60 @@
     border-radius: 999px;
     padding: 1px 8px;
     color: var(--ed-muted);
+  }
+
+  .latex-compiler-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    overflow-y: auto;
+    padding: 1rem;
+    background: theme('colors.interface.bg-secondary');
+  }
+  .latex-compiler-overlay-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 1800px;
+    margin: 0 auto 1rem;
+  }
+  .latex-compiler-overlay-header h2 {
+    margin: 0;
+    font-size: 1.125rem;
+    color: theme('colors.interface.text-primary');
+  }
+  .latex-compiler-overlay-header p {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    color: theme('colors.interface.text-muted');
+  }
+  .compiler-close {
+    flex-shrink: 0;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 0.375rem;
+    background: theme('colors.interface.bg-primary');
+    color: theme('colors.interface.text-secondary');
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .compiler-close:hover {
+    border-color: theme('colors.brand.400');
+    color: theme('colors.brand.700');
+  }
+  .latex-compiler-overlay :global(.latex-compiler) {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  .latex-compiler-document-options {
+    max-width: 1800px;
+    margin: 0 auto 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid theme('colors.interface.border-primary');
+    border-radius: 0.75rem;
+    background: theme('colors.interface.bg-primary');
   }
 
   @media (max-width: 640px) {

@@ -146,6 +146,95 @@ export function normalizeLatexTypography(value) {
   return String(value || '').replace(/[\u2018\u2019\u02BC]/g, "'");
 }
 
+const EMBEDDED_BLOCK_COMMANDS = {
+  texte: '',
+  question: '',
+  indication: 'Indication.',
+  hint: 'Indication.',
+  reponse: 'Solution.',
+  solution: 'Solution.',
+  answer: 'Solution.',
+};
+
+/** Présentation commune d'un intitulé court avant une indication ou solution. */
+function labelledBlockPrefix(label) {
+  return `\\par\\smallskip\\noindent{\\small\\textbf{${label}}}\\par\\nobreak\\smallskip\n`;
+}
+
+/**
+ * Déplie les macros de structure OpenYourMath restées à l'intérieur d'un
+ * bloc. Certaines sources anciennes contiennent par exemple une
+ * `\\question{...}` dans un `\\texte{...}` ; ces macros ne font pas partie du
+ * préambule minimal du document autonome et provoquent une erreur de
+ * compilation. La recherche équilibrée des accolades évite de casser les
+ * formules qui contiennent elles-mêmes des arguments LaTeX.
+ */
+function unwrapEmbeddedBlockCommands(source) {
+  const command = /\\(texte|question|indication|hint|reponse|solution|answer)\s*\{/g;
+  let output = '';
+  let cursor = 0;
+  let match;
+
+  while ((match = command.exec(source))) {
+    const openBrace = command.lastIndex - 1;
+    let depth = 0;
+    let closingBrace = -1;
+
+    for (let i = openBrace; i < source.length; i++) {
+      if (source[i] === '\\') {
+        i++;
+        continue;
+      }
+      if (source[i] === '{') depth++;
+      if (source[i] === '}') {
+        depth--;
+        if (depth === 0) {
+          closingBrace = i;
+          break;
+        }
+      }
+    }
+
+    // Une macro incomplète doit rester visible dans le journal LaTeX plutôt
+    // que de supprimer silencieusement une partie du document.
+    if (closingBrace === -1) continue;
+
+    output += source.slice(cursor, match.index);
+    const inner = unwrapEmbeddedBlockCommands(source.slice(openBrace + 1, closingBrace));
+    const label = EMBEDDED_BLOCK_COMMANDS[match[1]];
+    output += label ? labelledBlockPrefix(label) + inner : inner;
+    cursor = closingBrace + 1;
+    command.lastIndex = cursor;
+  }
+
+  return output + source.slice(cursor);
+}
+
+/**
+ * Les blocs de contenu sont indépendants dans un export compilable. Referme
+ * donc les listes éventuellement laissées ouvertes par une source historique
+ * mal découpée, avant que le bloc suivant ne poursuive l'enumerate principal.
+ */
+function closeUnbalancedListEnvironments(source) {
+  const environment = /\\(begin|end)\{(itemize|enumerate)\}/g;
+  const open = [];
+  let match;
+
+  while ((match = environment.exec(source))) {
+    const [, action, name] = match;
+    if (action === 'begin') {
+      open.push(name);
+    } else {
+      const index = open.lastIndexOf(name);
+      if (index !== -1) open.splice(index, 1);
+    }
+  }
+
+  return open.length > 0
+    ? `${source}\n${open.reverse().map((name) => `\\end{${name}}`).join('\n')}`
+    : source;
+}
+
 /**
  * Regroupe les blocs de contenu d'un exercice en groupes question/indications/solutions.
  * Reflète la logique de ExerciseContent.svelte.
@@ -294,7 +383,9 @@ function dedentLatex(latex) {
  * @returns {string}
  */
 export function normalizeLatexForCompilation(latex) {
-  const corrected = normalizeLatexTypography(latex)
+  const corrected = closeUnbalancedListEnvironments(
+    unwrapEmbeddedBlockCommands(normalizeLatexTypography(latex)),
+  )
     // `\\textbf` est une double échappement de l'IA. Deux antislashs suivis
     // directement de `textbf` ne forment pas une commande LaTeX valide.
     .replace(/\\\\(textbf|textit|emph|underline)\b/g, '\\$1');
@@ -511,7 +602,7 @@ export function buildLatexExport(exercises, title, options = {}) {
       // L'intitulé est un petit paragraphe autonome : il ne se confond pas
       // avec le texte qui suit et reste correct si le bloc débute par une
       // formule affichée, un tableau ou un autre environnement.
-      body.push(`${indent}\\par\\smallskip\\noindent{\\small\\textbf{${label}}}\\par\\nobreak\\smallskip`);
+      body.push(`${indent}${labelledBlockPrefix(label).trimEnd()}`);
       blocks.forEach((b) => pushBlockLatex(b, indent));
     };
 

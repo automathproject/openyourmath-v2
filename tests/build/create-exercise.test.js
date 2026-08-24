@@ -175,6 +175,34 @@ describe('generateLatexDocument', () => {
     expect(source).not.toContain('l’intégrale');
   });
 
+  it('déplie les macros OpenYourMath restées dans un bloc texte', () => {
+    const source = generateLatexDocument([{
+      uuid: 'Ab3d',
+      title: 'Test',
+      content: [{
+        type: 'text',
+        latex: '\\begin{itemize}\n\\item \\question{Une sous-question $\\frac{1}{2}$.}\n\\indication{Une piste.}\n\\reponse{Une réponse.}\n\\end{itemize}',
+      }],
+    }], 'Test');
+
+    expect(source).not.toMatch(/\\\\(?:question|indication|reponse)\s*\{/);
+    expect(source).toContain('Une sous-question $\\frac{1}{2}$.');
+    expect(source).toContain('Une piste.');
+    expect(source).toContain('Une réponse.');
+    expect(source).toContain('\\small\\textbf{Indication.}');
+    expect(source).toContain('\\small\\textbf{Solution.}');
+  });
+
+  it('referme une liste laissée ouverte dans un bloc partiellement parsée', () => {
+    const source = generateLatexDocument([{
+      uuid: 'Ab3d',
+      title: 'Test',
+      content: [{ type: 'text', latex: '\\begin{itemize}\n\\item Élément.' }],
+    }], 'Test');
+
+    expect(source).toContain('\\begin{itemize}\n\\item Élément.\n\\end{itemize}');
+  });
+
   it('adapte les indications et solutions aux options de contenu', () => {
     const exercises = [{
       uuid: 'Ab3d',
