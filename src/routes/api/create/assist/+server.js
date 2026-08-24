@@ -18,8 +18,13 @@ import {
   buildFixLatexPrompt,
   META_TASKS,
   REVISION_TASK,
+  LINEAR_STRUCTURE_RETRY_TASK,
 } from "$lib/ia/assistPrompts.js";
 import { getChapterStructure } from "$lib/db/queries.js";
+import {
+  limitedSequenceLatex,
+  questionBlocksFromAi,
+} from "$lib/ia/sequence.js";
 
 const VALID_MODES = new Set([
   "text",
@@ -126,6 +131,48 @@ function cleanMetadataValue(text, field) {
   return out;
 }
 
+/**
+ * Nombre de questions à garantir pour une séquence. Le champ explicite est
+ * utilisé par les nouveaux clients ; l'extraction de la consigne préserve la
+ * garantie lors d'un déploiement progressif avec un client plus ancien.
+ */
+function requestedSequenceCount(questionCount, instruction) {
+  const explicit = Number(questionCount);
+  if (Number.isInteger(explicit) && explicit >= 1 && explicit <= 8)
+    return explicit;
+
+  const match = String(instruction).match(/exactement\s+(\d+)\s+questions?/i);
+  if (!match) return null;
+  const inferred = Number(match[1]);
+  return Number.isInteger(inferred) && inferred >= 1 && inferred <= 8
+    ? inferred
+    : null;
+}
+
+/**
+ * Vrai quand la réponse doit être réécrite par le modèle plutôt que remise à
+ * plat automatiquement : des sous-questions ont été trouvées dans un énoncé
+ * ET le nombre demandé oblige à en supprimer. Seul le modèle peut fusionner
+ * ce que la troncature perdrait — notamment l'objectif final, souvent relégué
+ * en dernière sous-partie.
+ *
+ * Quand la remise à plat suffit (elle tombe juste sur le nombre demandé), on
+ * s'en contente : pas d'appel supplémentaire.
+ *
+ * @param {string} latex
+ * @param {number | null} requestedCount
+ * @returns {boolean}
+ */
+function needsLinearRewrite(latex, requestedCount) {
+  const separated = String(latex)
+    .split(/\n\s*---\s*\n/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const { questions } = questionBlocksFromAi(latex);
+  if (questions.length <= separated.length) return false;
+  return !requestedCount || questions.length > requestedCount;
+}
+
 function describeExercise(meta, blocks) {
   const lines = [];
   if (meta?.title) lines.push(`Titre : ${meta.title}`);
@@ -219,14 +266,21 @@ function parseRevisionOutput(text) {
     .replace(/^```json\s*\n([\s\S]*?)\n```\s*$/i, "$1");
   const parsed = JSON.parse(cleaned);
   const allowedTypes = new Set(["text", "question", "indication", "reponse"]);
-  if (!Array.isArray(parsed?.blocks) || !parsed.blocks.length || parsed.blocks.length > 80) {
+  if (
+    !Array.isArray(parsed?.blocks) ||
+    !parsed.blocks.length ||
+    parsed.blocks.length > 80
+  ) {
     throw new Error("Structure de révision invalide");
   }
   const blocks = parsed.blocks.map((block) => {
     if (!allowedTypes.has(block?.type) || typeof block?.latex !== "string") {
       throw new Error("Bloc de révision invalide");
     }
-    return { type: block.type, latex: stripMarkdownArtifacts(block.latex.trim()).trim() };
+    return {
+      type: block.type,
+      latex: stripMarkdownArtifacts(block.latex.trim()).trim(),
+    };
   });
   if (!blocks.some((block) => block.type === "question")) {
     throw new Error("La révision ne contient aucune question");
@@ -283,6 +337,7 @@ export async function POST(event) {
     instruction = "",
     taskPrompt = "",
     field = "",
+    questionCount = null,
   } = payload || {};
   if (!VALID_MODES.has(mode)) {
     throw error(400, { message: `Mode invalide : ${mode}` });
@@ -310,6 +365,10 @@ export async function POST(event) {
       message: "Consigne personnalisée trop longue (max 12000 caractères)",
     });
   }
+  const sequenceQuestionCount =
+    mode === "sequence"
+      ? requestedSequenceCount(questionCount, instruction)
+      : null;
 
   // Le correcteur LaTeX ne doit voir que le texte à corriger : lui joindre
   // tout l'exercice inciterait le modèle à réécrire plutôt qu'à corriger.
@@ -347,7 +406,12 @@ export async function POST(event) {
     mode === "metadata"
       ? { model: MODELS.chat, temperature: 0, maxTokens: 80, timeoutMs: 30_000 }
       : mode === "fixlatex"
-        ? { model: MODELS.chat, temperature: 0, maxTokens: 1500, timeoutMs: 30_000 }
+        ? {
+            model: MODELS.chat,
+            temperature: 0,
+            maxTokens: 1500,
+            timeoutMs: 30_000,
+          }
         : mode === "revise"
           ? {
               model: MODELS.chatLarge,
@@ -366,18 +430,18 @@ export async function POST(event) {
   trackAlbertChat();
 
   try {
-    const systemPrompt = mode === "fixlatex" ? FIX_LATEX_SYSTEM_PROMPT : SYSTEM_PROMPT;
-    const raw = await withRetry(
-      () =>
-        chatMessages(
-          [
-            { role: "system", content: systemPrompt },
-            { role: "user", content: [context, task].filter(Boolean).join("\n\n") },
-          ],
-          generation,
-        ),
-      { maxAttempts: 2 },
-    );
+    const systemPrompt =
+      mode === "fixlatex" ? FIX_LATEX_SYSTEM_PROMPT : SYSTEM_PROMPT;
+    const baseMessages = [
+      { role: "system", content: systemPrompt },
+      {
+        role: "user",
+        content: [context, task].filter(Boolean).join("\n\n"),
+      },
+    ];
+    const callModel = (messages) =>
+      withRetry(() => chatMessages(messages, generation), { maxAttempts: 2 });
+    const raw = await callModel(baseMessages);
 
     let revisionBlocks = null;
     if (mode === "revise") {
@@ -399,9 +463,36 @@ export async function POST(event) {
         );
       }
     }
-    const latex = mode === "metadata"
-      ? cleanMetadataValue(cleanModelOutput(raw, mode), field)
-      : mode === "revise" ? "[révision structurée]" : cleanModelOutput(raw, mode);
+    let latex =
+      mode === "metadata"
+        ? cleanMetadataValue(cleanModelOutput(raw, mode), field)
+        : mode === "revise"
+          ? "[révision structurée]"
+          : cleanModelOutput(raw, mode);
+    // Le modèle glisse régulièrement des sous-questions ((a), (b), étapes
+    // numérotées) dans un énoncé. La remise à plat côté client en fait des
+    // blocs, mais elle ne peut pas fusionner ce qui aurait dû l'être quand le
+    // nombre demandé ne permet pas de les répartir : une relance corrective,
+    // bornée à un essai, avec la réponse fautive en contexte. Si elle échoue
+    // aussi, la réponse initiale est conservée puis remise à plat : mieux vaut
+    // un énoncé imparfait qu'une erreur affichée à l'auteur.
+    if (
+      mode === "sequence" &&
+      needsLinearRewrite(latex, sequenceQuestionCount)
+    ) {
+      trackAlbertChat();
+      const retryRaw = await callModel([
+        ...baseMessages,
+        { role: "assistant", content: raw },
+        { role: "user", content: LINEAR_STRUCTURE_RETRY_TASK },
+      ]);
+      const retryLatex = cleanModelOutput(retryRaw, mode);
+      if (retryLatex && !needsLinearRewrite(retryLatex, sequenceQuestionCount))
+        latex = retryLatex;
+    }
+    if (mode === "sequence" && sequenceQuestionCount) {
+      latex = limitedSequenceLatex(latex, sequenceQuestionCount);
+    }
     if (!latex) throw new Error("Réponse vide du modèle");
 
     console.log(
@@ -411,7 +502,10 @@ export async function POST(event) {
         mode,
         field: field || undefined,
         latencyMs: Date.now() - t0,
-        outputChars: mode === "revise" ? JSON.stringify(revisionBlocks).length : latex.length,
+        outputChars:
+          mode === "revise"
+            ? JSON.stringify(revisionBlocks).length
+            : latex.length,
         ip: ip.slice(0, 7) + "…",
       }),
     );

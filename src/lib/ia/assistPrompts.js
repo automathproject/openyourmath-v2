@@ -11,7 +11,7 @@ Règles de rédaction impératives :
 - Rédige en français, en LaTeX compatible KaTeX.
 - Mathématiques en ligne entre $...$, formules centrées entre \\[...\\].
 - N'utilise JAMAIS de Markdown : ni **gras**, ni titres avec #, ni listes à puces (- ou *), ni liens [texte](url), ni code entre \`backticks\` ou \`\`\`blocs\`\`\`. Pour du texte en gras, utilise \\textbf{...} ; pour de l'italique, \\emph{...}.
-- N'utilise JAMAIS d'environnement enumerate ou itemize : la plateforme ne les préserve pas (la numérotation des questions vient des blocs eux-mêmes). Rédige UNE seule question à la fois, sauf si la consigne demande explicitement une séquence ; dans ce cas sépare les questions exactement comme demandé. Pour des sous-parties, intègre-les au texte en (a), (b), (c). Dans une solution, enchaîne les étapes en paragraphes.
+- N'utilise JAMAIS d'environnement enumerate ou itemize : la plateforme ne les préserve pas (la numérotation des questions vient des blocs eux-mêmes). Rédige UNE seule question à la fois, sauf si la consigne demande explicitement une séquence ; dans ce cas sépare les questions exactement comme demandé. Le nombre de questions indiqué dans la consigne est une contrainte stricte : n'en produis ni plus ni moins, sans titre, préambule ni conclusion hors des questions. N'utilise JAMAIS de sous-questions ni de sous-parties (a), (b), (c) ni d'étapes numérotées : un exercice est une suite LINÉAIRE de blocs — description ou question — et chaque question porte une consigne unique. Ce qui demanderait une sous-partie doit devenir une question à part entière. Dans une solution, enchaîne les étapes en paragraphes.
 - Macros disponibles : \\R, \\N, \\Z, \\Q, \\C (ensembles de nombres), \\dx, \\dt (différentielles), \\Vect, \\Ker, \\pgcd.
 - Réponds UNIQUEMENT avec le contenu LaTeX demandé, sans préambule, sans commentaire, sans balise englobante (\\question{}, \\reponse{}...), sauf si la consigne demande explicitement du JSON.`;
 
@@ -21,6 +21,13 @@ Réponds UNIQUEMENT avec un objet JSON valide, sans Markdown, de la forme :
 {"blocks":[{"type":"text","latex":"..."},{"type":"question","latex":"..."},{"type":"indication","latex":"..."},{"type":"reponse","latex":"..."}]}
 
 Les types autorisés sont text, question, indication et reponse. N'inclus aucune explication hors du JSON.`;
+
+/**
+ * Relance envoyée quand le modèle a glissé des sous-questions dans un bloc :
+ * sous-parties (a), (b) ou étapes numérotées. Elle est jouée avec la réponse
+ * fautive en contexte, pour que le modèle voie ce qu'il doit remettre à plat.
+ */
+export const LINEAR_STRUCTURE_RETRY_TASK = `Ta réponse contient des sous-questions à l'intérieur d'une question : sous-parties (a), (b) ou étapes numérotées. La plateforme n'affiche que des blocs linéaires : c'est interdit. Recommence en respectant le nombre de questions demandé. Si ce nombre permet de répartir ces sous-parties, fais-en des questions séparées par une ligne contenant uniquement --- . S'il ne le permet pas — en particulier lorsqu'une seule question est demandée — fusionne-les en UNE consigne unique et indivisible qui pose les données puis demande directement l'objectif final : aucune étape intermédiaire, aucun résultat intermédiaire, aucun indice sur la méthode ne doit subsister dans l'énoncé. Réponds uniquement avec les énoncés.`;
 
 /**
  * Consigne système du correcteur de syntaxe LaTeX (mode 'fixlatex').
@@ -48,9 +55,9 @@ Règles impératives :
 export const DEFAULT_TASKS = {
   text: "Rédige le texte d'introduction de cet exercice : mise en situation, définitions des objets et notations.",
   question:
-    "Rédige UNE nouvelle question pour cet exercice, cohérente avec la description et la progression des questions existantes (difficulté croissante, pas de redite).",
+    "Rédige UNE nouvelle question pour cet exercice, cohérente avec la description et la progression des questions existantes (difficulté croissante, pas de redite). Une seule consigne, sans sous-parties (a), (b), (c) ni étapes numérotées.",
   sequence:
-    "Conçois une séquence de questions progressives et cohérentes pour cet exercice. Chaque question doit être autonome, sans environnement enumerate ni balise LaTeX englobante. Sépare impérativement chaque question par une ligne contenant uniquement --- .",
+    "Rédige un exercice complet, autonome et publiable sous la forme d'une séquence de questions progressives. Les données, notations, hypothèses et objectif nécessaires doivent être définis dans le contexte déjà fourni ou dans la première question ; ne propose ni simple plan, ni ébauche, ni question reposant sur un énoncé absent. Chaque question doit faire avancer une progression cohérente, sans redite, et l'ensemble doit aboutir à un objectif mathématique identifiable. La structure est strictement linéaire : aucune sous-question, aucune sous-partie (a), (b), (c), aucune étape numérotée à l'intérieur d'une question — ce qui en demanderait une devient une question à part entière, et si le nombre imposé ne le permet pas, l'énoncé doit être conçu autrement. Si une seule question est demandée, elle doit contenir à la fois la mise en place et l'objectif final en une consigne unique et indivisible, sans étape intermédiaire ni résultat donné en cours de route : l'étudiant doit trouver lui-même le chemin. Le nombre de questions imposé dans la consigne de l'auteur est strict : produis exactement ce nombre de blocs, sans question supplémentaire, titre, préambule ou conclusion. Chaque bloc porte une seule consigne. Pas d'environnement enumerate ni de balise LaTeX englobante. Sépare impérativement chaque question par une ligne contenant uniquement --- .",
   indication:
     "Rédige une indication courte (une à trois phrases) pour aider un étudiant bloqué sur la question concernée, sans dévoiler la solution.",
   reponse:
@@ -134,7 +141,11 @@ export function buildTaskPrompt(
  * @param {string} [options.instruction] — précision libre de l'auteur
  * @returns {string}
  */
-export function buildFixLatexPrompt({ template, content = "", instruction = "" } = {}) {
+export function buildFixLatexPrompt({
+  template,
+  content = "",
+  instruction = "",
+} = {}) {
   const base = template?.trim() || DEFAULT_TASKS.fixlatex;
   const parts = [base];
   if (String(instruction).trim()) {

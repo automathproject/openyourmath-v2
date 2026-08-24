@@ -16,6 +16,14 @@ import {
 } from '../../src/lib/latex/exerciseTex.js';
 import { latexToPreviewHtml, blocksToPreviewContent } from '../../src/lib/latex/texPreview.js';
 import { generateLatexDocument } from '../../src/lib/latex/export.js';
+import {
+  limitedSequenceBlocksFromAi,
+  limitedSequenceLatex,
+  splitNumberedQuestions,
+  splitSubQuestionParts,
+  questionBlocksFromAi,
+} from '../../src/lib/ia/sequence.js';
+import { DEFAULT_TASKS, SYSTEM_PROMPT } from '../../src/lib/ia/assistPrompts.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
@@ -152,6 +160,141 @@ describe('splitEnumerateItems', () => {
         '\\begin{enumerate}\\item A \\begin{enumerate}\\item B\\end{enumerate}\\item C\\end{enumerate}'
       )
     ).toBeNull();
+  });
+});
+
+describe('limitedSequenceBlocksFromAi', () => {
+  it('ne conserve jamais plus de questions que demandé', () => {
+    const result = limitedSequenceBlocksFromAi(
+      'Première question.\n---\nDeuxième question.\n---\nTroisième question.',
+      1,
+    );
+
+    expect(result).toEqual({ text: null, questions: ['Première question.'] });
+  });
+
+  it('applique aussi la limite à un enumerate produit par le modèle', () => {
+    const result = limitedSequenceBlocksFromAi(
+      'Contexte.\n\\begin{enumerate}\n\\item Question 1.\n\\item Question 2.\n\\end{enumerate}',
+      1,
+    );
+
+    expect(result).toEqual({ text: 'Contexte.', questions: ['Question 1.'] });
+  });
+
+  it('limite aussi une séquence que le modèle a numérotée lui-même', () => {
+    const result = limitedSequenceBlocksFromAi(
+      'Soit $f(x)=x^2$.\n\n1. Calculer $f(2)$.\n\n2. Étudier $f$.\n\n3. Conclure.',
+      1,
+    );
+
+    expect(result).toEqual({ text: 'Soit $f(x)=x^2$.', questions: ['Calculer $f(2)$.'] });
+  });
+
+  it('sérialise une réponse API à une question sans conserver un enumerate', () => {
+    const result = limitedSequenceLatex(
+      'Considérer la série $\\sum a_n$.\n\\begin{enumerate}\n\\item\nMontrer que $a_n \\to 0$.\n\\item\nÉtudier la convergence.\n\\end{enumerate}',
+      1,
+    );
+
+    expect(result).toBe('Considérer la série $\\sum a_n$.\n\nMontrer que $a_n \\to 0$.');
+  });
+});
+
+describe('splitNumberedQuestions', () => {
+  it('découpe une numérotation écrite par le modèle dans un bloc unique', () => {
+    const result = splitNumberedQuestions(
+      'Soit $f(x)=x^2$.\n\n1. Calculer $f(2)$.\n\n2. Étudier les variations.\n\n3. Tracer la courbe.',
+    );
+
+    expect(result).toEqual({
+      prefix: 'Soit $f(x)=x^2$.',
+      items: ['Calculer $f(2)$.', 'Étudier les variations.', 'Tracer la courbe.'],
+    });
+  });
+
+  it('reconnaît les marqueurs Question et \\textbf', () => {
+    const result = splitNumberedQuestions(
+      '\\textbf{Question 1.} Calculer $f(2)$.\n\\textbf{Question 2.} Conclure.',
+    );
+
+    expect(result).toEqual({ prefix: '', items: ['Calculer $f(2)$.', 'Conclure.'] });
+  });
+
+  it('ne découpe pas des sous-parties (a), (b), (c)', () => {
+    expect(
+      splitNumberedQuestions('Soit $u_n$.\n(a) Montrer que $u_n>0$.\n(b) Calculer la limite.'),
+    ).toBeNull();
+  });
+
+  it('ne découpe pas une numérotation incomplète ou désordonnée', () => {
+    expect(
+      splitNumberedQuestions('Résoudre le système.\n2. Vérifier.\n5. Conclure.'),
+    ).toBeNull();
+  });
+
+  it('ignore les lignes numérotées situées dans une zone mathématique', () => {
+    expect(
+      splitNumberedQuestions(
+        'Résoudre :\n\\[\n\\begin{cases}\n1. x + y = 2\n2. x - y = 0\n\\end{cases}\n\\]',
+      ),
+    ).toBeNull();
+  });
+});
+
+describe('splitSubQuestionParts', () => {
+  it('remet à plat une question découpée en (a), (b)', () => {
+    const result = splitSubQuestionParts(
+      "Soit $f$ définie sur $\\R$.\n\n(a) Montrer que $f$ est croissante.\n\n(b) En déduire sa limite.",
+    );
+
+    expect(result).toEqual({
+      prefix: 'Soit $f$ définie sur $\\R$.',
+      items: ['Montrer que $f$ est croissante.', 'En déduire sa limite.'],
+    });
+  });
+
+  it('découpe aussi les sous-parties à l\'intérieur d\'un bloc séparé par ---', () => {
+    const { text, questions } = questionBlocksFromAi(
+      'Soit $u_n$ une suite.\n(a) Montrer $u_n>0$.\n(b) Calculer la limite.\n---\nConclure sur la convergence.',
+    );
+
+    expect(text).toBeNull();
+    expect(questions).toEqual([
+      'Soit $u_n$ une suite.\n\nMontrer $u_n>0$.',
+      'Calculer la limite.',
+      'Conclure sur la convergence.',
+    ]);
+  });
+});
+
+describe('splitSubQuestionParts (cas limites)', () => {
+  it('reconnaît les sous-parties mises en forme par \\textbf', () => {
+    expect(
+      splitSubQuestionParts('\\textbf{(a)} Calculer $f(2)$.\n\\textbf{(b)} Conclure.'),
+    ).toEqual({ prefix: '', items: ['Calculer $f(2)$.', 'Conclure.'] });
+  });
+
+  it('ne découpe pas sur une simple référence à un point (b) dans le texte', () => {
+    expect(
+      splitSubQuestionParts("Montrer que la solution (b) de l'équation est unique."),
+    ).toBeNull();
+  });
+
+  it('ne découpe pas une suite de lettres incomplète', () => {
+    expect(splitSubQuestionParts('Soit $f$.\n(b) Calculer.\n(d) Conclure.')).toBeNull();
+  });
+});
+
+describe('prompt de séquence IA', () => {
+  it('demande un exercice complet et le respect strict du nombre de questions', () => {
+    expect(DEFAULT_TASKS.sequence).toContain('exercice complet, autonome et publiable');
+    expect(DEFAULT_TASKS.sequence).toContain('une seule question est demandée');
+    expect(DEFAULT_TASKS.sequence).toContain('exactement ce nombre de blocs');
+    expect(DEFAULT_TASKS.sequence).toContain('structure est strictement linéaire');
+    expect(DEFAULT_TASKS.sequence).toContain('devient une question à part entière');
+    expect(SYSTEM_PROMPT).toContain('suite LINÉAIRE de blocs');
+    expect(DEFAULT_TASKS.sequence).toContain('ligne contenant uniquement ---');
   });
 });
 

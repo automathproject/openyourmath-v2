@@ -28,11 +28,11 @@
     buildExerciseTex,
     parseExerciseTex,
     generateShortUuid,
-    splitEnumerateItems,
     BLOCK_TYPES,
   } from '$lib/latex/exerciseTex.js';
   import { downloadTexFile, generateLatexDocument } from '$lib/latex/export.js';
   import { DEFAULT_TASKS, buildTaskPrompt, buildFixLatexPrompt } from '$lib/ia/assistPrompts.js';
+  import { questionBlocksFromAi, limitedSequenceBlocksFromAi } from '$lib/ia/sequence.js';
 
   const DRAFT_KEY = 'oym-create-draft-v1';
   const IMPORTED_DRAFTS_KEY = 'oym-create-imported-drafts-v1';
@@ -468,7 +468,7 @@
   }
 
   // ── Assistant IA (API Albert) ─────────────────────────────────────────────
-  async function callAssist(mode, { targetLatex = '', instruction = '', taskPrompt = '', field = '' } = {}) {
+  async function callAssist(mode, { targetLatex = '', instruction = '', taskPrompt = '', field = '', questionCount = null } = {}) {
     const res = await fetch('/api/create/assist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -480,6 +480,7 @@
         instruction,
         taskPrompt,
         field,
+        questionCount,
       }),
     });
     const data = await res.json().catch(() => ({}));
@@ -556,20 +557,6 @@
     } finally {
       aiMetaBusy = null;
     }
-  }
-
-  /**
-   * Répartit une réponse IA de type question en blocs : si le modèle a produit
-   * un enumerate malgré la consigne, chaque \item devient une question
-   * distincte (la plateforme ne rend pas les enumerate : la numérotation
-   * vient des blocs question eux-mêmes).
-   */
-  function questionBlocksFromAi(latex) {
-    const separated = String(latex).split(/\n\s*---\s*\n/).map((part) => part.trim()).filter(Boolean);
-    if (separated.length > 1) return { text: null, questions: separated };
-    const split = splitEnumerateItems(latex);
-    if (!split) return { text: null, questions: [latex] };
-    return { text: split.prefix || null, questions: split.items };
   }
 
   /**
@@ -784,12 +771,16 @@
     try {
       const count = Math.max(1, Math.min(8, Number(aiQuestionCount) || 3));
       aiQuestionCount = count;
-      const instruction = `${aiInstruction.trim()}\n\nGénère exactement ${count} questions progressives. Sépare chaque question par une ligne contenant uniquement --- .`;
-      const latex = await callAssist('sequence', { instruction });
-      const { text, questions } = questionBlocksFromAi(latex);
+      const singleQuestionRule = count === 1
+        ? ' Cette question unique réunit les données et l’objectif à démontrer ou calculer, sans étape intermédiaire ni résultat donné en cours de route.'
+        : '';
+      const instruction = `${aiInstruction.trim()}\n\nCONTRAINTE DE SORTIE NON NÉGOCIABLE : rédige un exercice complet avec exactement ${count} questions, ni plus ni moins. Chaque question doit contenir ou exploiter des données et notations déjà définies ; n'ajoute ni titre, ni préambule, ni conclusion, ni question supplémentaire. Structure strictement linéaire : chaque question porte UNE consigne, sans sous-question ni sous-partie (a), (b), (c) ni étape numérotée à l'intérieur d'un énoncé.${singleQuestionRule} Sépare chaque question par une ligne contenant uniquement --- .`;
+      const latex = await callAssist('sequence', { instruction, questionCount: count });
+      const { text, questions } = limitedSequenceBlocksFromAi(latex, count);
       if (text) blocks.push(newBlock('text', text));
       for (const q of questions) blocks.push(newBlock('question', q));
-      aiInstruction = '';
+      // La consigne reste affichée après génération : l'auteur la retouche
+      // pour relancer une variante plutôt que de la retaper.
     } catch (err) {
       aiError = err.message;
     } finally {
