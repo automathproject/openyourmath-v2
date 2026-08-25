@@ -1,32 +1,31 @@
 {
   "uuid": "tSoF",
   "source_path": "amscc/tSoF.tex",
-  "summary": "L'exercice demande de déterminer les équivalents asymptotiques de cinq expressions différentes lorsque x tend vers l'infini. Les expressions impliquent des fractions rationnelles, des fonctions trigonométriques et logarithmiques, ainsi que des racines carrées.",
+  "summary": "Trouver un équivalent simple de cinq fonctions réelles différentes en l'infini positif. Les fonctions incluent des combinaisons de polynômes, logarithmes, et fonctions trigonométriques.",
   "concepts": [
+    "fonction équivalente",
     "limite de fonctions réelles",
-    "équivalent asymptotique",
     "développement limité",
+    "approximation asymptotique",
     "continuité",
     "fonction composée",
-    "fonction rationnelle",
-    "fonction trigonométrique",
-    "fonction logarithme"
+    "fonction rationnelle"
   ],
   "methods": [
-    "simplification algébrique",
     "standardisation",
     "développement limité",
+    "rationalisation",
     "comparaison de termes dominants",
-    "rationalisation"
+    "changement de variable"
   ],
   "objects": [
     "fonction rationnelle",
     "fonction trigonométrique",
-    "fonction logarithme",
-    "racine carrée",
-    "expression algébrique"
+    "fonction logarithmique",
+    "fonction polynomiale",
+    "fonction composée"
   ],
-  "content_hash": "11d7e81cb261d09a36b1f04ce534758a765b1fa763daec22b62e7649573a1fde",
+  "content_hash": "e0b1e5c694053304d889256936bcfb7274658d39fb5d3296d95acfd012defb32",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:48:04.055Z"
+  "indexed_at": "2026-08-25T12:24:12.668Z"
 }

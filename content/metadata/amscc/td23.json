@@ -1,33 +1,33 @@
 {
   "uuid": "td23",
   "source_path": "amscc/td23.tex",
-  "summary": "L'exercice demande de construire un estimateur de la variance d'une loi normale centrée, d'en étudier la loi, puis de construire différents intervalles de confiance pour le paramètre inconnu. Il aborde aussi la comparaison entre intervalles de confiance non asymptotiques et asymptotiques, ainsi que la construction d'un test d'hypothèse.",
+  "summary": "L'exercice demande de construire un estimateur de la variance d'une loi normale centrée, d'en étudier la loi, puis de construire différents intervalles de confiance pour le paramètre inconnu. Il aborde aussi la comparaison entre intervalles de confiance non asymptotiques et asymptotiques, ainsi que la construction d'un test d'hypothèses.",
   "concepts": [
     "loi normale",
-    "estimateur sans biais",
-    "loi du chi-deux",
+    "estimateur du maximum de vraisemblance",
     "intervalle de confiance",
+    "loi du chi-deux",
     "théorème central limite",
-    "test d'hypothèse",
     "convergence en loi",
-    "fonction de répartition"
+    "test d'hypothèses",
+    "fonction de puissance"
   ],
   "methods": [
     "méthode des moments",
     "standardisation",
     "approximation gaussienne",
-    "construction d'intervalle de confiance par quantiles",
-    "calcul de la p-valeur",
-    "comparaison d'intervalles de confiance"
+    "calcul de quantiles",
+    "construction d'intervalle de confiance",
+    "test de niveau"
   ],
   "objects": [
+    "variable aléatoire normale",
     "estimateur de la variance",
-    "variable aléatoire de loi normale",
     "intervalle de confiance",
     "test statistique",
-    "fonction quantile"
+    "p-valeur"
   ],
-  "content_hash": "44cd34593964d5fa335118199632b4fce6ed0234b4b9ba5d685497aabb81dd9d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:02:25.393Z"
+  "content_hash": "3b98934086749886d559400532dd34d829bd1f44588c489b608f015b2aeb9541",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:29:54.863Z"
 }

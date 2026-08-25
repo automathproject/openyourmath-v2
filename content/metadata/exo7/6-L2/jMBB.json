@@ -1,27 +1,29 @@
 {
   "uuid": "jMBB",
   "source_path": "exo7/6-L2/jMBB.tex",
-  "summary": "L'exercice étudie une suite de points construite par itération d'une similitude directe dans le plan. Il demande de tracer une figure et d'analyser la géométrie des triangles formés par ces points, ainsi que la longueur d'une spirale polyédrale formée par leur union.",
+  "summary": "L'exercice étudie une suite de points $(B_n)$ définie par une similitude directe appliquée récursivement dans le plan. Il demande de tracer la figure, de prouver la similarité de triangles consécutifs et d'analyser la longueur d'une spirale polyédrale formée par les segments $[B_nB_{n+1}]$.",
   "concepts": [
     "similitude directe",
-    "suite de points",
     "géométrie affine euclidienne",
-    "triangles semblables",
-    "spirale polyédrale",
-    "longueur de courbe"
+    "suite de points",
+    "triangle semblable",
+    "longueur de courbe",
+    "convergence de suite"
   ],
   "methods": [
-    "itération de transformation géométrique",
-    "analyse de similarité de triangles",
-    "calcul de longueur de spirale"
+    "tracé géométrique",
+    "calcul de rapport de similitude",
+    "démonstration de similarité de triangles",
+    "calcul de somme infinie"
   ],
   "objects": [
-    "suite de points (B_n)",
-    "similitude directe s",
-    "triangles AB_nB_{n+1}",
-    "spirale polyédrale S"
+    "suite de points $(B_n)$",
+    "similitude directe $s$",
+    "triangles $AB_nB_{n+1}$",
+    "spirale polyédrale $S$",
+    "segments $[B_nB_{n+1}]$"
   ],
-  "content_hash": "8fe709a4083b78efaf282a704fef0b9229f69f734172823a52393b6afab60b8b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:53:14.960Z"
+  "content_hash": "98c160891f3dcc592936e96376829b28e710949ccc424be72e050393a1f20731",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:09.029Z"
 }

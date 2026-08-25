@@ -1,27 +1,29 @@
 {
   "uuid": "5UxD",
   "source_path": "exo7/6-L2/5UxD.tex",
-  "summary": "L'exercice demande d'exprimer analytiquement quatre transformations géométriques dans l'espace affine ℝ³ : une homothétie, une symétrie, une affinité et une transvection, toutes définies par rapport à un plan donné et une direction vectorielle.",
+  "summary": "L'exercice demande d'exprimer analytiquement quatre transformations géométriques dans l'espace affine ℝ³ : une homothétie, une symétrie, une affinité et une transvection, toutes définies par rapport à un repère affine donné.",
   "concepts": [
     "géométrie affine",
     "homothétie",
     "symétrie",
     "affinité",
     "transvection",
-    "espace affine",
-    "repère affine"
+    "repère affine",
+    "transformation linéaire"
   ],
   "methods": [
-    "expression analytique de transformations géométriques",
-    "utilisation de repères affines"
+    "expression analytique de transformation",
+    "calcul de matrice de transformation",
+    "utilisation de la base et du rapport"
   ],
   "objects": [
     "espace affine ℝ³",
+    "repère affine",
     "plan affine",
     "vecteur directeur",
-    "transformation géométrique"
+    "point de référence"
   ],
-  "content_hash": "617c7161cbc79b2543b97fc931bb23699711133889b402bf2e934a3844bcc80a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:37:27.614Z"
+  "content_hash": "55680b0c71c8cd9353691916d0e1263b4ef58439b9feb460ac56424461d7b458",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:25.524Z"
 }

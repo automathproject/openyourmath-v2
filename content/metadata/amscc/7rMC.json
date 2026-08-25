@@ -1,23 +1,23 @@
 {
   "uuid": "7rMC",
   "source_path": "amscc/7rMC.tex",
-  "summary": "L'exercice demande de calculer les coefficients de Fourier d'une fonction périodique en utilisant des intégrales et des propriétés d'orthogonalité des fonctions trigonométriques. Il explore la décomposition d'une fonction en série de Fourier sous forme réelle puis complexe.",
+  "summary": "L'exercice demande de calculer les coefficients de Fourier (réels et complexes) d'une fonction périodique en utilisant des intégrales et les propriétés d'orthogonalité des fonctions trigonométriques. Il explore la décomposition d'une fonction en série de Fourier et la transition entre les formes réelles et complexes.",
   "concepts": [
     "séries de Fourier",
     "coefficients de Fourier",
     "orthogonalité des fonctions trigonométriques",
     "formule d'Euler",
-    "fonctions périodiques",
     "intégrales trigonométriques",
-    "coefficients complexes de Fourier",
-    "conjugaison complexe"
+    "fonctions périodiques",
+    "décomposition en série",
+    "coefficients complexes"
   ],
   "methods": [
-    "calcul des coefficients de Fourier par intégration",
+    "calcul intégral",
     "utilisation des relations d'orthogonalité",
-    "décomposition en exponentielles complexes",
-    "comparaison de coefficients",
-    "vérification de cohérence entre formes réelles et complexes"
+    "multiplication par des fonctions trigonométriques",
+    "réécriture en exponentielles complexes",
+    "comparaison de coefficients"
   ],
   "objects": [
     "fonction périodique",
@@ -26,7 +26,7 @@
     "intégrales trigonométriques",
     "exponentielles complexes"
   ],
-  "content_hash": "a481453297e791561fcfdf904a91ad2889f772b08e21d242c0e31bf558f33395",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:04:20.033Z"
+  "content_hash": "7541c178e380a7b7c64a6da1ea66966594a45dd5d13f35e6cdc7bf0095fadf63",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:19.740Z"
 }

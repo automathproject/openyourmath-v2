@@ -1,31 +1,31 @@
 {
   "uuid": "uVBn",
   "source_path": "amscc/uVBn.tex",
-  "summary": "L'exercice étudie deux stratégies (A et B) appliquées à trois nombres aléatoires uniformes dans [0,1]. La stratégie A consiste à choisir le maximum des trois nombres, tandis que la stratégie B prend la somme des deux plus petits. On demande d'analyser les lois de probabilité associées et de comparer les espérances des deux stratégies.",
+  "summary": "L'exercice étudie deux stratégies (A et B) appliquées à trois nombres réels indépendants et uniformément distribués sur [0,1]. La stratégie A consiste à choisir le maximum des trois nombres, tandis que la stratégie B prend la somme des deux plus petits. On demande d'identifier la loi des variables aléatoires, d'exprimer les stratégies en fonction des tirages, de déterminer la fonction de répartition et la densité de la stratégie A, puis de comparer les espérances des deux stratégies.",
   "concepts": [
     "loi uniforme",
-    "variable aléatoire maximale",
-    "variable aléatoire minimale",
+    "variable aléatoire indépendante",
     "fonction de répartition",
     "densité de probabilité",
     "espérance mathématique",
-    "intégration sur un domaine"
+    "variable aléatoire absolument continue",
+    "maximum de variables aléatoires"
   ],
   "methods": [
-    "calcul de la fonction de répartition",
-    "détermination de la densité par dérivation",
+    "calcul de fonction de répartition",
+    "dérivation pour obtenir la densité",
     "calcul d'espérance par intégration",
-    "intégration sur un domaine symétrique",
-    "comparaison de stratégies par probabilité"
+    "intégration sur un domaine défini",
+    "permutation d'indices pour symétrie"
   ],
   "objects": [
     "variable aléatoire uniforme",
-    "maximum de variables aléatoires",
-    "somme de variables aléatoires",
+    "maximum de trois variables",
+    "somme de deux plus petites variables",
     "fonction de répartition",
     "densité de probabilité"
   ],
-  "content_hash": "b5bcfc420c7d9e6d3d4056432d6750f6cf570b475e21b66cde6aa956db3a8e91",
+  "content_hash": "8fdd0dc79e7fa70dd22d97efdf245bca5d89995017ae18552af064d0994a006e",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:00:52.562Z"
+  "indexed_at": "2026-08-25T12:28:27.264Z"
 }

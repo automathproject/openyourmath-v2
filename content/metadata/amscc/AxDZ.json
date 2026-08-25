@@ -1,7 +1,7 @@
 {
   "uuid": "AxDZ",
   "source_path": "amscc/AxDZ.tex",
-  "summary": "L'exercice demande de démontrer que la variable aléatoire |X| suit une loi exponentielle et de calculer la fonction caractéristique de X. Il étudie ensuite la loi du produit de variables normales indépendantes et déduit la loi de la somme de ces produits.",
+  "summary": "L'exercice étudie les propriétés de variables aléatoires suivant une loi de Laplace et une loi normale. Il demande de montrer que la valeur absolue d'une variable de Laplace suit une loi exponentielle, de déterminer la fonction caractéristique de cette variable, puis d'étudier la loi du produit de deux variables normales indépendantes et de leur somme.",
   "concepts": [
     "fonction caractéristique",
     "loi de Laplace",
@@ -13,20 +13,20 @@
     "densité de probabilité"
   ],
   "methods": [
-    "calcul de fonction de répartition",
+    "calcul de fonction caractéristique",
     "intégration par parties",
     "changement de variable",
-    "utilisation de la fonction caractéristique",
-    "linéarité de l'espérance"
+    "utilisation de la fonction de répartition",
+    "propriétés des fonctions caractéristiques"
   ],
   "objects": [
     "variable aléatoire à densité",
     "fonction caractéristique",
     "loi exponentielle",
-    "loi normale",
+    "loi de Laplace",
     "produit de variables aléatoires"
   ],
-  "content_hash": "f50e450b252f36e48ea868b69cdb46d36f254626b1f1a6fcfc2ad0de37321273",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:41:39.312Z"
+  "content_hash": "0e0a91634178bb85b2e3b51997fdf462ed3be6d11db35813bb3a44353c6e6eac",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:27:21.700Z"
 }

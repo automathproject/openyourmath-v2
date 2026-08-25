@@ -1,30 +1,29 @@
 {
   "uuid": "6Aqe",
   "source_path": "amscc/6Aqe.tex",
-  "summary": "L'exercice demande de déterminer la densité conjointe d'un couple de variables aléatoires uniformes sur un triangle, puis d'en déduire les lois marginales, de vérifier leur indépendance et de calculer leur covariance.",
+  "summary": "L'exercice demande de déterminer la densité de probabilité d'un couple de variables aléatoires uniformément distribuées sur un triangle dans le plan, puis d'en déduire les lois marginales, l'indépendance et la covariance des variables.",
   "concepts": [
-    "densité conjointe",
+    "densité de probabilité",
     "loi uniforme",
+    "théorème de Fubini",
     "lois marginales",
     "indépendance de variables aléatoires",
     "covariance",
-    "intégration multiple",
     "espérance mathématique"
   ],
   "methods": [
-    "intégration de Fubini",
-    "calcul de lois marginales",
-    "test d'indépendance",
+    "intégration multiple",
     "calcul d'espérance",
-    "calcul de covariance"
+    "calcul de covariance",
+    "vérification d'indépendance"
   ],
   "objects": [
-    "densité de probabilité",
-    "variables aléatoires",
-    "triangle dans le plan",
-    "espérance conjointe"
+    "variable aléatoire à densité",
+    "couple de variables aléatoires",
+    "fonction indicatrice",
+    "intégrale sur un domaine triangulaire"
   ],
-  "content_hash": "02dc87a3d72f80d796110a34da1e4656b46b7ea82334cc756a75357d7790644e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:38:45.165Z"
+  "content_hash": "0bdbfe14587e9fd92b061f637d7a31703e43dbf5b2f7e49c3c93e8349c8fb905",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:27:18.070Z"
 }

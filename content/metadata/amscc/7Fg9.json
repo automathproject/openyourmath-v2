@@ -1,28 +1,33 @@
 {
   "uuid": "7Fg9",
   "source_path": "amscc/7Fg9.tex",
-  "summary": "Un joueur tire au hasard sur une cible divisée en deux zones. On modélise le numéro de zone touchée par une variable aléatoire discrète X. On étudie ensuite la loi binomiale Y_n du nombre de succès en n tirages, son espérance, sa variance, et on utilise l'inégalité de Bienaymé-Tchebytchev puis une approximation normale pour estimer une probabilité.",
+  "summary": "Un joueur tire au hasard sur une cible divisée en deux zones (disque central et couronne extérieure). On modélise le gain aléatoire du joueur par une variable discrète et on étudie ses propriétés (espérance, loi binomiale, approximation normale) ainsi que la probabilité de gains dans un grand nombre de lancers.",
   "concepts": [
     "variable aléatoire discrète",
+    "loi de probabilité",
+    "espérance mathématique",
+    "loi binomiale",
+    "inégalité de Bienaymé-Tchebytchev",
+    "approximation normale",
+    "variance",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "calcul de probabilités géométriques",
+    "calcul d'espérance",
+    "application de l'inégalité de Bienaymé-Tchebytchev",
+    "standardisation",
+    "approximation gaussienne"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "gain aléatoire",
     "loi binomiale",
     "espérance",
     "variance",
-    "inégalité de Bienaymé-Tchebytchev",
-    "approximation normale"
+    "intervalle de confiance"
   ],
-  "methods": [
-    "calcul de probabilités conditionnelles",
-    "calcul d'espérance",
-    "calcul de variance",
-    "application de l'inégalité de Bienaymé-Tchebytchev",
-    "standardisation"
-  ],
-  "objects": [
-    "variable aléatoire discrète X",
-    "variable aléatoire binomiale Y_n",
-    "gain aléatoire G"
-  ],
-  "content_hash": "890e2640e707d7c074882bbf09932c3074a6cf961c5f7bd86c3178e8daae3448",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:17:23.991Z"
+  "content_hash": "4ba6805784ad1c4e76261fd750db8c5e5c08904c7840aceeea64268cb7f97e82",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:30.919Z"
 }

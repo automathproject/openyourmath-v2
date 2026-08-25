@@ -1,27 +1,28 @@
 {
   "uuid": "8mP4",
   "source_path": "amscc/8mP4.tex",
-  "summary": "L'exercice demande de calculer une dérivée partielle d'une fonction composée, puis d'utiliser une hypothèse sur les dérivées partielles de la fonction originale pour montrer une propriété sur la fonction composée. Enfin, il s'agit de déduire une forme spécifique de la fonction originale et de vérifier cette forme.",
+  "summary": "L'exercice demande de calculer une dérivée partielle d'une fonction composée h(u,v) = f(u+v, u-v) en utilisant les dérivées partielles de f, puis d'utiliser l'hypothèse ∂f/∂x = ∂f/∂y pour montrer que h ne dépend pas de v. Enfin, il s'agit de déduire que f ne dépend que de x+y et de vérifier cette propriété.",
   "concepts": [
-    "dérivation des fonctions composées",
-    "dérivées partielles",
-    "changement de variables",
     "fonction de classe C^1",
+    "dérivée partielle",
+    "fonction composée",
+    "dérivation en chaîne",
     "équation aux dérivées partielles",
-    "fonction dépendant d'une seule variable"
+    "changement de variable"
   ],
   "methods": [
-    "formule de dérivation en chaîne",
-    "changement de variables",
-    "utilisation d'une hypothèse sur les dérivées partielles"
+    "dérivation de fonction composée",
+    "application de la formule de dérivation en chaîne",
+    "changement de variable",
+    "analyse de dépendance fonctionnelle"
   ],
   "objects": [
     "fonction de deux variables",
-    "fonction composée",
     "dérivées partielles",
-    "fonction d'une variable"
+    "fonction composée",
+    "changement de variable"
   ],
-  "content_hash": "f9cd64db5235fc7e5ce07fdbd723ff0ee28ac2a12e6ed371eac5f0d8eda65c32",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:26:39.847Z"
+  "content_hash": "8b7f7d13fd2bea556c93e1c4ba95b9f39c72eca2b587ebe6a570ffd76b0dfcf4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:24:38.312Z"
 }

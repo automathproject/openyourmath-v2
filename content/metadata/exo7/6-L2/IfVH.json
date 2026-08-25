@@ -1,27 +1,30 @@
 {
   "uuid": "IfVH",
   "source_path": "exo7/6-L2/IfVH.tex",
-  "summary": "L'exercice demande de déterminer les caractéristiques géométriques (foyer, directrice, axe focal) de quatre paraboles définies par leurs équations cartésiennes : y² = x, y² = -x, y = x² et y = -x².",
+  "summary": "L'exercice demande d'identifier et de caractériser les éléments géométriques (sommet, axe focal, paramètre, foyer, directrice) de quatre paraboles définies par leurs équations cartésiennes dans un repère orthonormé.",
   "concepts": [
     "parabole",
     "équation cartésienne",
-    "foyer",
-    "directrice",
     "axe focal",
-    "paramètre p",
-    "conique"
+    "paramètre d'une parabole",
+    "foyer d'une parabole",
+    "directrice d'une parabole",
+    "repère orthonormé"
   ],
   "methods": [
-    "identification des paramètres géométriques",
-    "analyse de l'équation standard"
+    "identification des éléments caractéristiques d'une parabole",
+    "calcul du paramètre",
+    "détermination du foyer",
+    "détermination de la directrice"
   ],
   "objects": [
     "parabole",
     "équation cartésienne",
+    "repère orthonormé",
     "foyer",
     "directrice"
   ],
-  "content_hash": "48ed18deda81c9e15489007a66468c25d15a497fd2c8d6a20f3ec561b442d4be",
+  "content_hash": "d75d25c1723685d63f0c4998ad0d19fdfc25be008129c9952b95304b20b24fac",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:39:41.438Z"
+  "indexed_at": "2026-08-25T12:24:04.031Z"
 }

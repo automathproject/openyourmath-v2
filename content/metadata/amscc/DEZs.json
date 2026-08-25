@@ -1,7 +1,7 @@
 {
   "uuid": "DEZs",
   "source_path": "amscc/DEZs.tex",
-  "summary": "L'exercice demande de montrer qu'une fonction donnée est une densité de probabilité, puis de calculer l'espérance et la variance d'une variable aléatoire, d'en déduire des propriétés d'un estimateur, d'approximer sa loi via le théorème central limite, et de construire un intervalle de confiance pour un paramètre.",
+  "summary": "L'exercice porte sur l'analyse d'une famille de densités de probabilité paramétrées par θ ∈ [-1,1]. Il demande de vérifier que ces densités sont bien normalisées, de calculer l'espérance et la variance des variables aléatoires associées, puis d'étudier les propriétés d'un estimateur Tₙ de θ. Enfin, il s'agit d'établir un intervalle de confiance pour θ en utilisant le théorème central limite et l'inégalité de Bienaymé-Tchebichev.",
   "concepts": [
     "densité de probabilité",
     "espérance mathématique",
@@ -9,27 +9,26 @@
     "estimateur sans biais",
     "convergence d'estimateur",
     "théorème central limite",
-    "intervalle de confiance",
-    "inégalité de Bienaymé-Tchebichev"
-  ],
-  "methods": [
-    "intégration",
-    "calcul de moments",
-    "linéarité de l'espérance",
-    "formule de Koenig-Huygens",
-    "standardisation",
-    "approximation gaussienne",
-    "inégalité de concentration"
-  ],
-  "objects": [
-    "densité de probabilité paramétrique",
-    "variable aléatoire indépendante et identiquement distribuée",
-    "espérance",
-    "variance",
-    "estimateur",
+    "inégalité de Bienaymé-Tchebichev",
     "intervalle de confiance"
   ],
-  "content_hash": "ace7d7a4079c1fb5b7b63862ffbce78469a53673931fe226d200fc8b8ace2154",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:36:23.241Z"
+  "methods": [
+    "intégration par parties",
+    "linéarité de l'espérance",
+    "calcul de variance",
+    "standardisation",
+    "approximation gaussienne",
+    "application de l'inégalité de Bienaymé-Tchebichev"
+  ],
+  "objects": [
+    "densité paramétrée",
+    "variable aléatoire indépendante et identiquement distribuée",
+    "espérance conditionnelle",
+    "variance conditionnelle",
+    "estimateur Tₙ",
+    "intervalle de confiance"
+  ],
+  "content_hash": "5700df369a6c6105143b89414aff73b0e2a940f3dd4de4e30d65ceda5481268f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:29:16.007Z"
 }

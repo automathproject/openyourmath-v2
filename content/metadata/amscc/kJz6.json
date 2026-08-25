@@ -1,25 +1,28 @@
 {
   "uuid": "kJz6",
   "source_path": "amscc/kJz6.tex",
-  "summary": "Calcul de diverses probabilités conditionnelles et d'unions d'événements dans un espace probabilisé donné, en utilisant des relations entre événements et leurs complémentaires.",
+  "summary": "Calculer diverses probabilités d'événements à partir des probabilités données de deux événements A et B et de leur union, en utilisant les relations entre événements et leurs complémentaires.",
   "concepts": [
-    "probabilité d'union d'événements",
-    "probabilité d'intersection d'événements",
-    "lois de De Morgan",
+    "probabilité d'un événement",
     "événement complémentaire",
-    "formule de Poincaré"
+    "formule de Poincaré",
+    "lois de De Morgan",
+    "probabilité de l'union",
+    "probabilité de l'intersection"
   ],
   "methods": [
-    "calcul de probabilité complémentaire",
-    "application des lois de De Morgan",
-    "utilisation de la formule de l'union"
+    "calcul de probabilité par complémentaire",
+    "application de la formule de l'union",
+    "utilisation des lois de De Morgan",
+    "calcul de probabilité conditionnelle"
   ],
   "objects": [
-    "événements",
+    "événements A et B",
     "événements complémentaires",
-    "espace probabilisé"
+    "union d'événements",
+    "intersection d'événements"
   ],
-  "content_hash": "31d6d4e25cac0f34ba95a8828fca7653545b5f800e955ffd291fce7a8e3cdbdd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:37:33.846Z"
+  "content_hash": "6fc257f97b5bad6c3c15b89fc362ddd14e10a62cd9bd45d94d5727c19f647cba",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:39.649Z"
 }

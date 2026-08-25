@@ -1,31 +1,31 @@
 {
   "uuid": "md5M",
   "source_path": "exo7/6-L2/md5M.tex",
-  "summary": "Dans un triangle ABC, on considère le centre de gravité G, le centre du cercle circonscrit Ω, l'orthocentre H, et le cercle C' passant par les milieux des côtés. L'exercice demande de montrer que le centre de C' appartient à la droite (GΩ) et de calculer son rayon, puis de prouver que C' coupe les segments reliant les sommets à H en leur milieu.",
+  "summary": "Dans un triangle ABC, on considère le centre de gravité G, le centre du cercle circonscrit Ω et l'orthocentre H. On étudie le cercle C' passant par les milieux des côtés du triangle. L'exercice demande de montrer que le centre de C' appartient à la droite (GΩ) et de calculer son rayon, puis de prouver que C' coupe les segments reliant les sommets à H en leur milieu.",
   "concepts": [
     "homothétie",
     "centre de gravité",
     "centre du cercle circonscrit",
     "orthocentre",
-    "cercle circonscrit",
+    "cercle des neuf points",
     "géométrie affine euclidienne",
     "propriétés des milieux dans un triangle"
   ],
   "methods": [
     "utilisation des homothéties",
-    "calcul de rapports d'homothétie",
-    "propriétés vectorielles des homothéties",
-    "démonstration géométrique"
+    "calcul vectoriel",
+    "composition d'homothéties",
+    "propriétés des transformations géométriques"
   ],
   "objects": [
     "triangle",
     "centre de gravité",
     "centre du cercle circonscrit",
     "orthocentre",
-    "cercle passant par les milieux des côtés",
-    "droite (GΩ)"
+    "cercle des milieux",
+    "segments reliant les sommets à l'orthocentre"
   ],
-  "content_hash": "9277197e547b3d2c4ab4bfd2347a514b3fdff69674c3fdb45e3bd77bd92162a9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:55:19.529Z"
+  "content_hash": "6f57f3ddd26eabddfda7823b14b957ef4f6bd379bfce45107a3b1842502c10d4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:13.937Z"
 }

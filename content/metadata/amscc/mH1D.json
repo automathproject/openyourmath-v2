@@ -1,11 +1,11 @@
 {
   "uuid": "mH1D",
   "source_path": "amscc/mH1D.tex",
-  "summary": "L'exercice demande d'associer six fonctions de deux variables à leurs surfaces représentatives correspondantes. Les fonctions incluent des expressions algébriques, trigonométriques et rationnelles.",
+  "summary": "L'exercice demande d'associer six fonctions de deux variables à leurs surfaces représentatives correspondantes. Les fonctions incluent des expressions polynomiales, trigonométriques et rationnelles.",
   "concepts": [
     "fonction de deux variables",
     "surface représentative",
-    "fonction algébrique",
+    "fonction polynomiale",
     "fonction trigonométrique",
     "fonction rationnelle",
     "valeur absolue"
@@ -17,12 +17,9 @@
   ],
   "objects": [
     "fonction de deux variables",
-    "surface 3D",
-    "valeur absolue",
-    "fonction polynomiale",
-    "fonction trigonométrique"
+    "surface dans l'espace 3D"
   ],
-  "content_hash": "5b95834161e93db8ea35fa3647e537d77fff6a051e9b28c0433dda532b5fea7b",
+  "content_hash": "f262c6ffc2b2f3313ea331e8c7f7a71cb4ce7a3c021cffdbef9cc1bb1e8f7438",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:48:32.827Z"
+  "indexed_at": "2026-08-25T12:25:02.945Z"
 }

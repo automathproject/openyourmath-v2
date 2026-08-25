@@ -1,20 +1,21 @@
 {
   "uuid": "avca",
   "source_path": "amscc/avca.tex",
-  "summary": "L'exercice propose de comparer les dépenses moyennes annuelles en tabac de trois groupes nationaux (Anglais, Allemands, Italiens) à partir d'échantillons. Il s'agit de tester l'égalité des moyennes de ces trois populations.",
+  "summary": "L'exercice demande de tester l'égalité des moyennes de dépenses annuelles en tabac entre trois groupes nationaux (Anglais, Allemands, Italiens) à partir d'échantillons de données. Il s'agit d'une analyse comparative de moyennes par groupes.",
   "concepts": [
     "analyse de variance (ANOVA)",
     "test d'hypothèses",
     "moyenne d'échantillon",
     "variabilité inter-groupes",
     "variabilité intra-groupes",
-    "hypothèse nulle"
+    "hypothèse nulle",
+    "hypothèse alternative"
   ],
   "methods": [
     "calcul des moyennes par groupe",
     "calcul des variances",
-    "test F d'ANOVA",
-    "comparaison des variances inter et intra-groupes"
+    "test ANOVA à un facteur",
+    "comparaison des moyennes"
   ],
   "objects": [
     "tableau de données",
@@ -22,7 +23,7 @@
     "groupes nationaux",
     "moyennes comparées"
   ],
-  "content_hash": "e8e6d5a6f36fcd158f623fab9990857265269d603d9fe2cc1ced2629b6ebc990",
+  "content_hash": "8942744abe90732a3abae4460f717404f02894389e88f5526bd0bdb7e1df7b4e",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:07:36.118Z"
+  "indexed_at": "2026-08-25T12:29:30.156Z"
 }

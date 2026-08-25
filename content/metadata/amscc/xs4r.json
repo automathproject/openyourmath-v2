@@ -1,26 +1,28 @@
 {
   "uuid": "xs4r",
   "source_path": "amscc/xs4r.tex",
-  "summary": "L'exercice demande de déterminer la valeur d'une probabilité manquante dans une loi conjointe de deux variables aléatoires discrètes, puis d'en déduire leurs lois marginales, leur indépendance et la loi d'une variable dérivée.",
+  "summary": "L'exercice porte sur un couple de variables aléatoires discrètes (X, Y) avec des lois marginales données. Il demande de déterminer une probabilité manquante dans la loi conjointe, d'établir les lois marginales, de vérifier l'indépendance des variables et de calculer la loi d'une variable dérivée D = |X - Y|.",
   "concepts": [
     "loi conjointe",
     "loi marginale",
     "indépendance de variables aléatoires",
     "variable aléatoire discrète",
     "probabilité conditionnelle",
-    "somme des probabilités"
+    "loi d'une fonction de variable aléatoire"
   ],
   "methods": [
     "calcul de probabilités marginales",
-    "vérification d'indépendance",
-    "construction de loi de variable dérivée"
+    "vérification de l'indépendance",
+    "calcul de loi d'une fonction de variable aléatoire",
+    "somme de probabilités"
   ],
   "objects": [
-    "loi conjointe de deux variables aléatoires",
-    "lois marginales",
+    "couple de variables aléatoires discrètes",
+    "loi conjointe",
+    "loi marginale",
     "variable aléatoire dérivée"
   ],
-  "content_hash": "d4109dcc14037164029016227de9d9529bfa4eac8648e86cb440f09cbd01fef0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:44:02.001Z"
+  "content_hash": "c58da28dd7b4e6b5dab1643ef10b0f6d830357110367651a9868372c07d8c4f9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:45.920Z"
 }

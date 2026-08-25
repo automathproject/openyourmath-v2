@@ -1,9 +1,10 @@
 {
   "uuid": "td26",
   "source_path": "amscc/td26.tex",
-  "summary": "L'exercice étudie une variable aléatoire exponentielle translatée et son échantillon i.i.d. Il demande de montrer la transformation exponentielle standard, de déterminer la fonction de répartition du minimum de l'échantillon, d'étudier sa convergence en moyenne quadratique et de construire un intervalle de confiance pour le paramètre θ.",
+  "summary": "L'exercice étudie une variable aléatoire exponentielle translatée de paramètre inconnu θ. Il demande de transformer cette variable, d'en déterminer la fonction de répartition du minimum d'un échantillon, d'étudier sa convergence en moyenne quadratique, et de construire un intervalle de confiance pour θ.",
   "concepts": [
-    "variable aléatoire exponentielle",
+    "loi exponentielle",
+    "variable aléatoire",
     "échantillon i.i.d.",
     "fonction de répartition",
     "convergence en moyenne quadratique",
@@ -11,17 +12,18 @@
     "paramètre inconnu"
   ],
   "methods": [
-    "transformation de variable aléatoire",
+    "transformation de variable",
     "calcul de fonction de répartition",
     "étude de convergence",
     "construction d'intervalle de confiance"
   ],
   "objects": [
-    "variable aléatoire exponentielle translatée",
+    "variable aléatoire exponentielle",
     "minimum d'échantillon",
-    "paramètre θ"
+    "paramètre θ",
+    "intervalle de confiance"
   ],
-  "content_hash": "e1a20c9b3984bfceb00204dcb0ade04330d5b8abb54d13aae04a7c32dd17b446",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:58:27.078Z"
+  "content_hash": "f9426e3c1e97a08126c741e548d4c08567f0adc73828d0073f0040eb2ea3f08a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:06.291Z"
 }

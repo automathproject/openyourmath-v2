@@ -1,31 +1,35 @@
 {
   "uuid": "v1bv",
   "source_path": "amscc/v1bv.tex",
-  "summary": "L'exercice demande de construire et analyser des estimateurs du paramètre q d'une loi uniforme sur [0, q] à partir d'un échantillon. Il couvre plusieurs méthodes d'estimation (méthode des moments, maximum de vraisemblance) et leurs propriétés (consistance, normalité asymptotique, intervalles de confiance).",
+  "summary": "L'exercice porte sur l'estimation du paramètre q d'une loi uniforme sur [0, q] à partir d'un échantillon. Il demande de construire des estimateurs par la méthode des moments et par le maximum de vraisemblance, d'étudier leurs propriétés (consistance, normalité asymptotique) et de construire des intervalles de confiance. Une question aborde également la construction d'un test d'hypothèse pour q.",
   "concepts": [
-    "loi uniforme",
     "méthode des moments",
     "maximum de vraisemblance",
-    "consistance",
+    "consistance d'un estimateur",
     "normalité asymptotique",
-    "intervalle de confiance",
+    "intervalle de confiance asymptotique",
+    "test d'hypothèse",
+    "loi exponentielle",
     "théorème central limite",
-    "loi exponentielle"
+    "théorème de Slutsky"
   ],
   "methods": [
     "standardisation",
     "approximation gaussienne",
-    "théorème de continuité",
-    "lemme de Slutsky",
-    "calcul de quantile"
+    "calcul de quantiles",
+    "détermination de zone de rejet",
+    "calcul de risque quadratique",
+    "étude de convergence en loi"
   ],
   "objects": [
     "échantillon de loi uniforme",
-    "estimateur",
-    "statistique d'ordre",
-    "risque quadratique"
+    "estimateur par moments",
+    "estimateur du maximum de vraisemblance",
+    "intervalle de confiance",
+    "test statistique",
+    "statistique d'ordre"
   ],
-  "content_hash": "56686872604ff534949111b6c7dc0e67a09c884eb9aed6c3e927df4ed7550b88",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:59:50.452Z"
+  "content_hash": "830581e47e4061649f2bee47fb74da55cb1412f2e2af66e7005a4d9a2aa78e65",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:12.805Z"
 }

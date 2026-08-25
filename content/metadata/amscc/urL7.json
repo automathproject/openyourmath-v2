@@ -1,32 +1,33 @@
 {
   "uuid": "urL7",
   "source_path": "amscc/urL7.tex",
-  "summary": "Étude de la convergence de différentes séries numériques à termes positifs ou alternées. L'exercice demande de classer chaque série comme absolument convergente, semi-convergente, divergente ou grossièrement divergente.",
+  "summary": "L'exercice demande d'analyser la convergence de huit séries numériques à termes positifs ou alternés, en déterminant si elles sont absolument convergentes, semi-convergentes, divergentes ou grossièrement divergentes.",
   "concepts": [
     "série numérique",
     "série à termes positifs",
     "série télescopique",
-    "série géométrique",
-    "série alternée",
-    "développement limité",
     "équivalence asymptotique",
+    "développement limité",
+    "série de Riemann",
+    "critère des séries alternées",
     "règle de D'Alembert"
   ],
   "methods": [
     "téléscopage",
-    "développement limité",
     "équivalence asymptotique",
-    "règle de D'Alembert",
-    "critère des séries alternées"
+    "développement limité",
+    "critère de convergence absolue",
+    "critère des séries alternées",
+    "règle de D'Alembert"
   ],
   "objects": [
     "série télescopique",
     "série géométrique",
     "série alternée",
-    "terme général de série",
+    "série à termes positifs",
     "suite des sommes partielles"
   ],
-  "content_hash": "dc3a62e7f0da4b53c2f073a16e04b2444d3510735170e4662ff5d227425c9642",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:36:36.994Z"
+  "content_hash": "db09960c1a5db9cb8b7800cf116e286b5ea8690ce70d908bd132dd7bc6594cf8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:31:06.432Z"
 }

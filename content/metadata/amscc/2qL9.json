@@ -1,31 +1,31 @@
 {
   "uuid": "2qL9",
   "source_path": "amscc/2qL9.tex",
-  "summary": "L'exercice demande de montrer la continuité d'une fonction en un point, d'étudier l'existence et le calcul de ses dérivées partielles en ce point, puis de prouver qu'elle n'est pas différentiable en ce point, et d'en déduire son absence de régularité de classe C^1.",
+  "summary": "L'exercice étudie la continuité et la différentiabilité d'une fonction de deux variables en un point. Il demande de montrer la continuité en (0,0), d'étudier l'existence des dérivées partielles en ce point, et de prouver que la fonction n'est pas différentiable en (0,0).",
   "concepts": [
     "continuité en un point",
     "dérivées partielles",
     "différentiabilité",
     "classe C^1",
-    "limite",
-    "fonction de deux variables",
-    "différentielle"
+    "limite de fonctions",
+    "différentielle",
+    "o petit"
   ],
   "methods": [
-    "estimation de module",
     "calcul de limite",
     "définition des dérivées partielles",
-    "test de différentiabilité par la différentielle",
-    "étude de la régularité"
+    "étude de la différentielle",
+    "analyse de la continuité",
+    "comparaison de termes dominants"
   ],
   "objects": [
     "fonction de deux variables",
     "dérivées partielles",
     "différentielle",
     "limite",
-    "classe C^1"
+    "droite de direction"
   ],
-  "content_hash": "b6ad78425bf67c913d199f4fe7b88fd98119cdd5c99057b878b0a4280426de75",
+  "content_hash": "8451112c9949d54a2245187435b8f473512c313e79172ba40e85caf7fde7788b",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:43:09.118Z"
+  "indexed_at": "2026-08-25T12:24:07.293Z"
 }

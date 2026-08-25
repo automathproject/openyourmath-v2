@@ -1,28 +1,30 @@
 {
   "uuid": "bXCC",
   "source_path": "amscc/bXCC.tex",
-  "summary": "L'exercice demande de démontrer l'existence et l'unicité d'un zéro d'une fonction non linéaire sur un intervalle donné, puis d'étudier les propriétés de convergence d'une suite itérative associée à ce zéro.",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité d'un zéro d'une fonction non linéaire sur un intervalle donné, puis d'étudier la convergence d'une suite itérative vers ce zéro en utilisant différentes fonctions itératives. Le contexte mathématique porte sur l'analyse des points fixes et des propriétés de convergence.",
   "concepts": [
     "fonction strictement croissante",
+    "théorème des valeurs intermédiaires",
     "point fixe",
-    "convergence d'une suite",
-    "ordre de convergence",
+    "convergence de suite",
     "fonction lipschitzienne",
-    "algorithme de Newton"
+    "ordre de convergence"
   ],
   "methods": [
-    "théorème des valeurs intermédiaires",
     "étude de la dérivée",
-    "analyse de la convergence locale",
-    "calcul de la constante de Lipschitz"
+    "calcul de point fixe",
+    "analyse de la contraction",
+    "itération de fonctions",
+    "estimation de la précision"
   ],
   "objects": [
-    "fonction non linéaire",
-    "suite itérative",
-    "point fixe",
-    "intervalle de recherche"
+    "fonction réelle",
+    "suite numérique",
+    "intervalle de recherche",
+    "point fixe unique",
+    "fonction itérative"
   ],
-  "content_hash": "474a8bca1c5bbff64d86bef0cb7dd4e40ce770cf11d9dd8f6443dd2dfd1625e0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:25:42.065Z"
+  "content_hash": "b39fe8484a5d45967417567ac613bcd55e0ea9eb1c923236a2830e1f6a9e06e4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:49.146Z"
 }

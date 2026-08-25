@@ -1,29 +1,29 @@
 {
   "uuid": "Y6X6",
   "source_path": "amscc/Y6X6.tex",
-  "summary": "L'exercice demande de dessiner le graphe d'une fonction définie par un réseau de neurones, puis de déterminer un réseau de neurones capable de reproduire une fonction donnée par son graphe. Le contexte implique des fonctions par morceaux et des réseaux à couches.",
+  "summary": "L'exercice demande de déterminer le graphe d'une fonction $F$ obtenue par composition de transformations linéaires et de fonctions d'activation ReLU dans un réseau de neurones à deux couches. Il s'agit ensuite de concevoir un réseau de neurones capable de reproduire une fonction $G$ donnée par son graphe.",
   "concepts": [
-    "fonction par morceaux",
-    "réseau de neurones",
     "fonction d'activation ReLU",
-    "topologie des fonctions",
     "composition de fonctions",
-    "fonction affine"
+    "réseau de neurones",
+    "fonction affine",
+    "fonction par morceaux",
+    "topologie des fonctions continues"
   ],
   "methods": [
-    "décomposition en cas",
+    "analyse des cas par morceaux",
     "construction de réseau de neurones",
-    "utilisation de fonctions d'activation",
-    "calcul de sortie de couche"
+    "détermination de la sortie d'un réseau de neurones",
+    "utilisation de fonctions d'activation"
   ],
   "objects": [
-    "fonction définie par un réseau",
-    "graphe de fonction",
-    "couche de neurones",
-    "fonction ReLU",
+    "fonction $F(x)$",
+    "fonction $G(x)$",
+    "réseau de neurones à deux couches",
+    "fonction par morceaux",
     "fonction affine"
   ],
-  "content_hash": "ffeeeac971b419832bee4251cc851cd929a4f0bf35cfc15b666af03c539518d1",
+  "content_hash": "c8fc8843551f35e05ccf136e8175f3c0a9c8622b33ad34037e458a8587f64e93",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:26:11.804Z"
+  "indexed_at": "2026-08-25T12:23:52.388Z"
 }

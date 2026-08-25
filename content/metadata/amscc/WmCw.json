@@ -1,32 +1,33 @@
 {
   "uuid": "WmCw",
   "source_path": "amscc/WmCw.tex",
-  "summary": "Calcul des dérivées partielles premières et secondes de fonctions de deux variables, avec des exemples variés incluant des fonctions polynomiales, exponentielles, trigonométriques et logarithmiques.",
+  "summary": "Calcul des dérivées partielles premières et secondes d'une fonction de deux variables, avec détermination de l'ensemble de définition. Les fonctions traitées sont polynomiales, rationnelles ou composées avec des fonctions exponentielles, trigonométriques ou logarithmiques.",
   "concepts": [
     "fonction de plusieurs variables",
     "dérivée partielle",
     "dérivée seconde",
+    "ensemble de définition",
     "fonction polynomiale",
-    "fonction exponentielle",
-    "fonction trigonométrique",
-    "fonction logarithme",
-    "domaine de définition"
+    "fonction rationnelle",
+    "fonction composée",
+    "règle de dérivation en chaîne"
   ],
   "methods": [
     "calcul de dérivées partielles",
-    "calcul de dérivées secondes",
-    "règle de dérivation des fonctions composées",
-    "règle de dérivation des fonctions exponentielles",
-    "règle de dérivation des fonctions trigonométriques",
-    "règle de dérivation des fonctions logarithmes"
+    "application de la règle de dérivation en chaîne",
+    "détermination de l'ensemble de définition",
+    "calcul de dérivées secondes"
   ],
   "objects": [
     "fonction de deux variables",
     "dérivées partielles premières",
     "dérivées partielles secondes",
-    "domaine de définition"
+    "fonction polynomiale",
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "fonction logarithmique"
   ],
-  "content_hash": "bd012c607acf9fb5ad64eba62cad463f7eb9377bd1cc1ced6ac40686e11633c1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:06:16.231Z"
+  "content_hash": "c4fabc1fdf7ccf37db91ec290960cd246bc683b1906ad9ed69b6061f77d76f09",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:24:52.653Z"
 }

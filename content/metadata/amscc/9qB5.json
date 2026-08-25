@@ -1,9 +1,10 @@
 {
   "uuid": "9qB5",
   "source_path": "amscc/9qB5.tex",
-  "summary": "L'exercice demande de justifier que le nombre de capteurs défectueux dans un lot suit une loi binomiale, d'en calculer l'espérance et la variance, puis d'approcher cette loi binomiale par une loi normale pour estimer une probabilité.",
+  "summary": "Un exercice sur la loi binomiale appliquée à un lot de capteurs, avec calcul de l'espérance et de la variance, puis approximation normale pour estimer des probabilités. L'énoncé demande de justifier la loi binomiale, de calculer ses paramètres, et d'utiliser l'approximation normale pour estimer une probabilité.",
   "concepts": [
     "loi binomiale",
+    "épreuve de Bernoulli",
     "espérance d'une variable aléatoire",
     "variance d'une variable aléatoire",
     "approximation normale de la loi binomiale",
@@ -14,15 +15,16 @@
     "calcul de l'espérance et de la variance d'une loi binomiale",
     "approximation par une loi normale",
     "standardisation",
-    "utilisation de la table de la loi normale"
+    "utilisation de la fonction de répartition"
   ],
   "objects": [
     "variable aléatoire binomiale",
-    "variable aléatoire normale",
     "espérance",
-    "variance"
+    "variance",
+    "variable aléatoire normale",
+    "probabilité conditionnelle"
   ],
-  "content_hash": "2640661740684b1e484c320f8298cda8113e4a802d3736ee749a10168ba62b90",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:33:09.856Z"
+  "content_hash": "ea4b926e5be1c9bfcb5e21eea3df6d51abf8cc9d15cb25fd48a659527e5c8967",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:26.077Z"
 }

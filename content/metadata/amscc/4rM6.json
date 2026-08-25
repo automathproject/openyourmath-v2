@@ -1,26 +1,29 @@
 {
   "uuid": "4rM6",
   "source_path": "amscc/4rM6.tex",
-  "summary": "L'exercice demande de déterminer le rayon de convergence et le domaine de convergence d'une série entière, puis de calculer sa somme sur cet intervalle.",
+  "summary": "L'exercice demande de déterminer le rayon de convergence et le domaine de convergence d'une série entière, puis de calculer sa somme sur cet intervalle. La série est donnée sous forme explicite avec des coefficients et des puissances de x.",
   "concepts": [
     "série entière",
     "rayon de convergence",
     "domaine de convergence",
     "règle de d'Alembert",
-    "développement en série de Taylor",
-    "fonction logarithme"
+    "développement en série entière",
+    "fonction logarithme",
+    "changement de variable"
   ],
   "methods": [
     "méthode du quotient",
-    "changement de variable",
-    "reconnaissance de série connue"
+    "calcul de limite",
+    "reconnaissance de série connue",
+    "changement de variable"
   ],
   "objects": [
     "série entière",
     "fonction génératrice",
-    "intervalle de convergence"
+    "intervalle de convergence",
+    "somme de série"
   ],
-  "content_hash": "8bb1453aaf3bb39434f6fdda39fe87ed4ffacf0d93517c5011be97470a391777",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-06-20T20:39:45.484Z"
+  "content_hash": "31a4f044208a5c6ddd6511ee429c413ce5908ef35342293a1e6db41336a0a763",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:31:14.956Z"
 }

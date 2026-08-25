@@ -1,31 +1,32 @@
 {
   "uuid": "7cH5",
   "source_path": "amscc/7cH5.tex",
-  "summary": "L'exercice demande de déterminer les extrema globaux d'une fonction de deux variables définie sur un domaine fermé borné, en étudiant les restrictions de la fonction sur les bords du domaine. Le contexte implique une représentation graphique du domaine et l'application du théorème de Weierstrass.",
+  "summary": "L'exercice demande d'étudier les extrema d'une fonction de deux variables sur un domaine fermé défini par une intersection de disque et demi-plan. Il s'agit de déterminer graphiquement le domaine, de prouver l'existence d'extrema globaux, de trouver les points critiques intérieurs, d'étudier les restrictions de la fonction sur les bords du domaine, et d'en déduire les extrema globaux.",
   "concepts": [
     "théorème de Weierstrass",
     "fonction continue",
-    "compact",
-    "extrema globaux",
-    "gradient",
+    "ensemble compact",
+    "extremum global",
     "point critique",
+    "gradient",
     "restriction de fonction",
-    "optimisation sous contrainte"
+    "changement de variable"
   ],
   "methods": [
     "calcul de gradient",
+    "recherche de points critiques",
     "étude des variations",
-    "analyse des points critiques",
-    "comparaison des extrema sur les bords"
+    "comparaison de valeurs extrêmes",
+    "paramétrisation de courbe"
   ],
   "objects": [
     "fonction de deux variables",
     "domaine fermé borné",
     "segment de droite",
     "arc de cercle",
-    "points critiques"
+    "fonction paramétrée"
   ],
-  "content_hash": "35fdd0fda2fb6ce5d8ceb996fc57b547a0ab4d16dcfebdb69b971e0c526d29fe",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:10:27.470Z"
+  "content_hash": "761ae89ed6587230cef080c745db5a2ccaf26163e37442aa1c7ff6fa4bf4e985",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:59.145Z"
 }

@@ -1,25 +1,29 @@
 {
   "uuid": "zIVX",
   "source_path": "exo7/6-L2/zIVX.tex",
-  "summary": "L'exercice demande de déterminer si trois points donnés dans le plan sont alignés et, si c'est le cas, de trouver l'équation cartésienne de la droite qui les contient.",
+  "summary": "L'exercice demande de déterminer si trois points donnés dans le plan sont alignés, et si c'est le cas, de trouver l'équation cartésienne de la droite qui les contient.",
   "concepts": [
     "alignement de points",
-    "équation cartésienne d'une droite",
+    "droite affine",
+    "équation cartésienne",
     "géométrie affine",
     "système d'équations linéaires",
-    "déterminant"
+    "déterminant",
+    "colinéarité"
   ],
   "methods": [
-    "calcul de déterminant",
+    "calcul de vecteurs directeurs",
     "résolution de système linéaire",
-    "vérification d'alignement"
+    "calcul de déterminant",
+    "vérification de colinéarité"
   ],
   "objects": [
     "points du plan",
-    "droite affine",
+    "droite",
+    "vecteurs",
     "équation cartésienne"
   ],
-  "content_hash": "40fcd255a1797b66b1dbe241733cd9afbcd655ddaf928333d2382a6073c99a53",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:17:08.887Z"
+  "content_hash": "d9653135561d65d15752ba0e31c73d3ad7ceb373b9d767737c4918bdda50c68e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:45.908Z"
 }

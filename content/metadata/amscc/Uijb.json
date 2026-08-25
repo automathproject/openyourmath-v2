@@ -1,30 +1,29 @@
 {
   "uuid": "Uijb",
   "source_path": "amscc/Uijb.tex",
-  "summary": "L'exercice demande de montrer l'existence et l'unicité d'une solution positive à l'équation x = -ln(x) dans l'intervalle [1/10, 1], puis d'étudier la convergence d'une méthode itérative pour approcher cette solution.",
+  "summary": "L'exercice étudie la convergence de méthodes numériques pour résoudre l'équation x = -ln(x) sur ]0;+∞[. Il compare une méthode non convergente (point fixe avec φ1(x) = -ln(x)) et une méthode convergente (point fixe avec φ(x) = e⁻ˣ). La question demande d'analyser la convergence et l'ordre de convergence de ces méthodes.",
   "concepts": [
-    "théorème des valeurs intermédiaires",
     "point fixe",
-    "convergence globale du point fixe",
-    "méthode de Newton",
-    "inégalité des accroissements finis",
-    "fonction continue",
-    "fonction strictement croissante",
-    "fonction strictement décroissante"
+    "convergence locale",
+    "convergence globale",
+    "théorème des valeurs intermédiaires",
+    "ordre de convergence",
+    "fonction contractante",
+    "point fixe répulsif"
   ],
   "methods": [
-    "application du théorème des valeurs intermédiaires",
-    "étude de la convergence d'une suite itérative",
-    "calcul de la dérivée",
-    "majoration du nombre d'itérations"
+    "méthode du point fixe",
+    "analyse de la dérivée",
+    "théorème de convergence du point fixe",
+    "calcul de l'ordre de convergence"
   ],
   "objects": [
-    "équation x = -ln(x)",
-    "fonction h(x) = x + ln(x)",
-    "fonction φ(x) = e^{-x}",
-    "suite itérative (x_k)"
+    "fonction φ(x) = e⁻ˣ",
+    "fonction φ1(x) = -ln(x)",
+    "suite récurrente",
+    "solution unique de l'équation x = -ln(x)"
   ],
-  "content_hash": "f67f67ac962911d6801078b255d8dd8afd4f40d16bce61769a446008b19e34de",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:23:20.362Z"
+  "content_hash": "25c0b80395e7eb9cdc23c0771b70405f6709661b6ecf0e86246fd84a2e70cb1b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:18.997Z"
 }

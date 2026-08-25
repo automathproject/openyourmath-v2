@@ -1,27 +1,28 @@
 {
   "uuid": "800X",
   "source_path": "amscc/800X.tex",
-  "summary": "L'exercice demande d'étudier une série entière en déterminant son rayon de convergence et son domaine de convergence. Il nécessite aussi de trouver un équivalent simple d'une fonction trigonométrique.",
+  "summary": "L'exercice demande d'étudier une série entière d'une variable réelle. Il s'agit de déterminer un équivalent de sin(1/√n) quand n tend vers l'infini, puis de trouver le rayon de convergence R de la série et d'analyser sa convergence aux bornes du disque de convergence.",
   "concepts": [
     "série entière",
     "rayon de convergence",
-    "domaine de convergence",
+    "convergence d'une série",
     "équivalent asymptotique",
-    "fonction trigonométrique"
+    "fonction trigonométrique",
+    "domaine de convergence"
   ],
   "methods": [
+    "développement limité",
     "critère de d'Alembert",
     "critère de Cauchy",
-    "développement limité",
-    "comparaison asymptotique"
+    "analyse de la convergence aux bornes"
   ],
   "objects": [
     "série entière",
-    "fonction trigonométrique",
-    "rayon de convergence",
-    "domaine de convergence"
+    "fonction sin(1/√n)",
+    "rayon de convergence R",
+    "disque de convergence"
   ],
-  "content_hash": "ddbb2df297ae6269653e2c5a688ea7b3c2503e2548f0198e9dc5fb0b11aaf485",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:35:54.585Z"
+  "content_hash": "6380e4a4bb076ed33532e7af7f33129a885fc69f4935a43e7295ef010a708ba0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:29.297Z"
 }

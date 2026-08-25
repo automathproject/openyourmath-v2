@@ -1,27 +1,29 @@
 {
   "uuid": "LnaN",
   "source_path": "amscc/LnaN.tex",
-  "summary": "Calculer des probabilités pour une variable aléatoire normale centrée réduite, puis déterminer une transformation linéaire pour ajuster les pourcentages de notes.",
+  "summary": "Calculer des probabilités pour une variable aléatoire normale centrée réduite, puis déterminer une transformation linéaire pour ajuster les notes d'un examen.",
   "concepts": [
     "loi normale",
+    "centrage et réduction",
     "espérance",
     "variance",
-    "standardisation",
-    "transformation linéaire de variable aléatoire",
-    "centrage et réduction"
+    "symétrie de la loi normale",
+    "transformation linéaire de variable aléatoire"
   ],
   "methods": [
     "standardisation",
-    "calcul de probabilité à partir de tables normales",
-    "calcul d'espérance et variance d'une transformation linéaire"
+    "lecture de tables de la loi normale",
+    "calcul d'espérance et de variance",
+    "résolution d'équations de probabilité"
   ],
   "objects": [
     "variable aléatoire normale",
     "transformation linéaire",
-    "espérance",
-    "variance"
+    "probabilité conditionnelle",
+    "écart-type",
+    "moyenne"
   ],
-  "content_hash": "ee6be91dfeb531bc0462353dda775d33ec1d073521f5ae2fa768f18f44ad5ffa",
+  "content_hash": "92408ee74d472a4e3e216161f5fc6f47c52cf220fa80cf97077af12631dacf38",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:00:32.959Z"
+  "indexed_at": "2026-08-25T12:27:30.387Z"
 }

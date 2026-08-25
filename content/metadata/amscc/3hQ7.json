@@ -1,14 +1,14 @@
 {
   "uuid": "3hQ7",
   "source_path": "amscc/3hQ7.tex",
-  "summary": "L'exercice demande de représenter graphiquement la fonction |sin(x/2)| sur [-2π, 2π], de prouver ses propriétés de périodicité et de parité, puis de calculer ses coefficients de Fourier pour écrire sa série de Fourier.",
+  "summary": "L'exercice demande de représenter graphiquement la fonction $x \rightarrow |\\sin(x/2)|$ sur $[-2π, 2π]$, de prouver ses propriétés de périodicité et de parité, puis de calculer ses coefficients de Fourier pour écrire sa série de Fourier.",
   "concepts": [
     "fonction périodique",
     "fonction paire",
-    "séries de Fourier",
+    "série de Fourier",
     "coefficient de Fourier",
     "intégrale de fonction trigonométrique",
-    "formule de trigonométrie"
+    "formule d'addition trigonométrique"
   ],
   "methods": [
     "représentation graphique",
@@ -18,12 +18,13 @@
     "simplification algébrique"
   ],
   "objects": [
-    "fonction périodique",
-    "coefficient de Fourier",
-    "intégrale définie",
-    "fonction trigonométrique"
+    "fonction $f(x) = |\\sin(x/2)|$",
+    "série de Fourier",
+    "coefficient $a_n$",
+    "coefficient $a_0$",
+    "intégrale sur $[-\\pi, \\pi]$"
   ],
-  "content_hash": "077c4e44d7f5f8422a59f72d627cc50148e730ead430f844ac8f07f4204e9376",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-06-20T20:39:31.793Z"
+  "content_hash": "249b1875f76e9dcb707c9a674ada4e6d78129d8cd56e6cdf8b9251ff10abca02",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:31:09.462Z"
 }

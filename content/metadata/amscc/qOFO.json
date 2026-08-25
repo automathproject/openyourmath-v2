@@ -1,27 +1,28 @@
 {
   "uuid": "qOFO",
   "source_path": "amscc/qOFO.tex",
-  "summary": "Détermination du rayon de convergence de deux séries entières différentes en utilisant des théorèmes de convergence.",
+  "summary": "Déterminer le rayon de convergence de deux séries entières réelles en utilisant les théorèmes de Cauchy et d'Alembert.",
   "concepts": [
+    "théorème de Cauchy pour le rayon de convergence",
+    "théorème de d'Alembert",
     "série entière",
     "rayon de convergence",
-    "théorème de Cauchy",
-    "théorème de d'Alembert",
     "limite de suite",
-    "convergence absolue"
+    "croissance des termes"
   ],
   "methods": [
     "application du théorème de Cauchy",
     "application du théorème de d'Alembert",
-    "simplification algébrique",
+    "simplification asymptotique",
     "calcul de limite"
   ],
   "objects": [
     "série entière",
-    "terme général de série entière",
-    "rayon de convergence"
+    "terme général d'une série",
+    "limite de suite",
+    "expression algébrique"
   ],
-  "content_hash": "fe64e3279c30bf5fd6b6b03634aa3175130e197551f2cd0fe5a39100199fece7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:53:35.848Z"
+  "content_hash": "ec04d4e59330d6215800173191823c8e086a8f6bd64fb35bc8c3a17cf3dfbd61",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:46.292Z"
 }

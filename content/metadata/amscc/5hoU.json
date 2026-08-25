@@ -1,27 +1,29 @@
 {
   "uuid": "5hoU",
   "source_path": "amscc/5hoU.tex",
-  "summary": "L'exercice demande de déterminer le plus grand sous-ensemble ouvert d'un domaine D de ℝ² défini par des inégalités, en analysant les propriétés d'ouverture et de fermeture de D.",
+  "summary": "L'exercice demande d'étudier un domaine D de ℝ² défini par x > 0 et x + y ≤ 0. Il s'agit de représenter graphiquement D, de déterminer si D est ouvert ou fermé, de vérifier l'appartenance d'un point à D et de construire une suite convergente vers ce point, et enfin de définir le plus grand ouvert contenu dans D.",
   "concepts": [
     "ensemble ouvert",
     "ensemble fermé",
     "adhérence",
     "intérieur",
-    "convergence de suite",
-    "boule ouverte"
+    "suite convergente",
+    "représentation graphique",
+    "topologie de ℝ²"
   ],
   "methods": [
-    "analyse de l'adhérence",
-    "construction d'un sous-ensemble ouvert",
-    "utilisation de suites pour caractériser l'adhérence"
+    "représentation graphique dans le plan",
+    "vérification d'appartenance à un ensemble",
+    "construction de suite convergente",
+    "détermination de l'intérieur d'un ensemble"
   ],
   "objects": [
     "domaine de ℝ²",
-    "droite affine",
+    "point de ℝ²",
     "suite de points",
-    "boule ouverte"
+    "ensemble ouvert maximal"
   ],
-  "content_hash": "197373e25b09d724e7c4a362ac61299b0ba998943c882676f0c81226cabc9c63",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:36:33.533Z"
+  "content_hash": "299a41f01a3c424046e00f3ff8a4990f7dd22cca01b08fe13e7413f8cc3b7f1d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:31:30.955Z"
 }

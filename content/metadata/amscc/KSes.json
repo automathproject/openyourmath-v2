@@ -1,7 +1,7 @@
 {
   "uuid": "KSes",
   "source_path": "amscc/KSes.tex",
-  "summary": "L'exercice demande d'approximer une intégrale impliquant la fonction de densité d'une loi normale à l'aide de méthodes de Monte Carlo. Il s'agit de définir des fonctions adaptées, de construire des intervalles de confiance et de comparer l'efficacité de deux approches basées sur des variables normales et uniformes.",
+  "summary": "L'exercice demande d'approximer une intégrale impliquant la fonction de densité d'une loi normale à l'aide de méthodes de Monte Carlo. Il s'agit de définir des fonctions adaptées, de construire des intervalles de confiance et de comparer l'efficacité de deux approches basées sur des variables aléatoires normales ou uniformes.",
   "concepts": [
     "loi normale",
     "loi uniforme",
@@ -24,10 +24,9 @@
     "variable aléatoire normale",
     "variable aléatoire uniforme",
     "fonction indicatrice",
-    "suite de variables iid",
-    "intervalle de confiance"
+    "suite de variables aléatoires i.i.d."
   ],
-  "content_hash": "3a50901ebb23345986534d225c0f0909370cc5683ccd81e3e8d5d2079b8091c8",
+  "content_hash": "2544b5f07ae1b03bd743c9ffd5fca2400b07c4063661af14947846c73c88c0d5",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:00:30.945Z"
+  "indexed_at": "2026-08-25T12:27:28.166Z"
 }

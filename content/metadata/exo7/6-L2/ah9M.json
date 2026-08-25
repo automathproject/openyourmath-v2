@@ -1,25 +1,28 @@
 {
   "uuid": "ah9M",
   "source_path": "exo7/6-L2/ah9M.tex",
-  "summary": "Calcul des angles entre des paires de vecteurs donnés dans le plan et des angles d'un triangle défini par ses sommets.",
+  "summary": "L'exercice demande de calculer des angles entre vecteurs dans le plan et les angles d'un triangle donné par ses sommets. Les vecteurs sont définis par leurs coordonnées cartésiennes.",
   "concepts": [
-    "géométrie affine",
     "produit scalaire",
     "angle entre vecteurs",
-    "triangle",
-    "coordonnées cartésiennes"
+    "géométrie affine",
+    "coordonnées cartésiennes",
+    "trigonométrie",
+    "triangle"
   ],
   "methods": [
-    "calcul du cosinus de l'angle",
-    "utilisation du produit scalaire",
-    "formule de l'angle dans un triangle"
+    "calcul du produit scalaire",
+    "formule de l'angle entre vecteurs",
+    "calcul des longueurs de côtés",
+    "loi des cosinus"
   ],
   "objects": [
     "vecteurs du plan",
     "triangle",
-    "coordonnées de points"
+    "coordonnées cartésiennes",
+    "angles"
   ],
-  "content_hash": "568a73131f21d3d40ea4be2865c2deb068d91c0e06f038783293dc5ec88cf5a0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:59:19.783Z"
+  "content_hash": "c7232b0e4f6ec235d599c0da3ff217b05635c7c2a7b3a4c19e480dab5a1c7a63",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:35.124Z"
 }

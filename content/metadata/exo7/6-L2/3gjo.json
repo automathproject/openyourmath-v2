@@ -1,18 +1,19 @@
 {
   "uuid": "3gjo",
   "source_path": "exo7/6-L2/3gjo.tex",
-  "summary": "L'exercice étudie une famille de droites paramétrées par λ dans le plan. Il demande de vérifier qu'elles passent toutes par un point commun, puis d'identifier parmi elles des droites verticales, horizontales, ou ayant des relations de parallélisme, confusion ou perpendicularité avec une droite donnée.",
+  "summary": "L'exercice étudie une famille de droites paramétrées par un réel λ dans le plan. Il demande de vérifier qu'elles passent toutes par un point commun, puis d'identifier parmi elles des droites verticales, horizontales, ou ayant des relations de parallélisme, de confusion ou de perpendicularité avec une droite donnée.",
   "concepts": [
     "géométrie affine",
-    "droites dans le plan",
+    "droites du plan",
     "point d'intersection",
     "parallélisme",
-    "perpendicularité"
+    "perpendicularité",
+    "équation cartésienne de droite"
   ],
   "methods": [
-    "calcul d'intersection de droites",
+    "résolution de système d'équations",
     "analyse de coefficients directeurs",
-    "comparaison d'équations de droites"
+    "identification de cas particuliers"
   ],
   "objects": [
     "famille de droites paramétrées",
@@ -20,7 +21,7 @@
     "droite horizontale",
     "droite de référence"
   ],
-  "content_hash": "04f0c7066c1960d97332bc47733840b7577c13e4aaf0b4f14b26cb929615d2e8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:36:29.578Z"
+  "content_hash": "b10c1e07d9b38f6dbc9660b6fa0bd83cdc5eab69aa31149cc51ed296d0932204",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:19.810Z"
 }

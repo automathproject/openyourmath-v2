@@ -1,7 +1,7 @@
 {
   "uuid": "lZfc",
   "source_path": "amscc/lZfc.tex",
-  "summary": "L'exercice demande de calculer le produit de deux matrices diagonales et d'en déduire la puissance k-ième d'une matrice diagonale. Il aborde ensuite l'inversibilité de cette matrice et le calcul de sa puissance inverse.",
+  "summary": "Calculer le produit de deux matrices diagonales A et B, puis déterminer la puissance k-ième de A. Étudier l'inversibilité de A et calculer son inverse ainsi que ses puissances négatives.",
   "concepts": [
     "matrice diagonale",
     "produit matriciel",
@@ -12,14 +12,14 @@
   "methods": [
     "calcul direct de produit matriciel",
     "récurrence",
-    "inversibilité par coefficients non nuls"
+    "inversion de matrice diagonale"
   ],
   "objects": [
     "matrice diagonale",
-    "puissance de matrice",
-    "inverse de matrice"
+    "puissance d'une matrice",
+    "inverse d'une matrice"
   ],
-  "content_hash": "dbbdc848c887808581840853b406de0af61a894bfe26ec25357aa330e72d0571",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:14:47.912Z"
+  "content_hash": "b89e16682bfcc06c756df936adb552b3986c286c9e9650f9d5241fc57c96b11e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:41.510Z"
 }

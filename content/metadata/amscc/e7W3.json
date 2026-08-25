@@ -1,32 +1,32 @@
 {
   "uuid": "e7W3",
   "source_path": "amscc/e7W3.tex",
-  "summary": "L'exercice étudie la transformation d'une variable aléatoire exponentielle en une variable discrète par la fonction partie entière. Il demande de déterminer la loi de cette nouvelle variable, sa fonction de répartition et les espérances des variables transformées.",
+  "summary": "L'exercice étudie les propriétés de deux variables aléatoires dérivées d'une variable exponentielle : Y comme partie entière de X et Z comme partie fractionnaire de X. Il demande de déterminer la loi de Y, de calculer une probabilité conditionnelle pour X, d'en déduire la fonction de répartition de Z, puis d'évaluer les espérances de Y et Z.",
   "concepts": [
     "loi exponentielle",
     "loi géométrique",
     "variable aléatoire discrète",
+    "variable aléatoire continue",
     "fonction de répartition",
     "espérance mathématique",
     "intégration",
-    "somme infinie",
-    "théorème de transfert"
+    "séries entières"
   ],
   "methods": [
-    "calcul de probabilité conditionnelle",
-    "intégration",
-    "somme infinie",
+    "calcul d'intégrale",
+    "somme de séries",
     "linéarité de l'espérance",
-    "formule de l'espérance d'une loi géométrique"
+    "décomposition en cas",
+    "utilisation de la fonction génératrice"
   ],
   "objects": [
     "variable aléatoire exponentielle",
-    "variable aléatoire discrète",
     "partie entière",
+    "partie fractionnaire",
     "fonction de répartition",
     "espérance"
   ],
-  "content_hash": "684b553778bdba7a7ed1c65543cd24b62f4680bf7d93524478ebd8e91c7cb55d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:58:51.915Z"
+  "content_hash": "7948f7ee6b8d8aa17d85de5b00c5bd4a3cbc05dbfca29429bcd176e32f618536",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:05.263Z"
 }

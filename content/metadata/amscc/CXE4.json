@@ -1,32 +1,32 @@
 {
   "uuid": "CXE4",
   "source_path": "amscc/CXE4.tex",
-  "summary": "Calcul des sorties des neurones d'un réseau de neurones à une couche cachée, puis mise à jour des poids par rétropropagation. L'exercice couvre le calcul des entrées nettes, des sorties via la fonction sigmoïde, de l'erreur quadratique, des gradients et de la mise à jour des poids.",
+  "summary": "Calcul des sorties d'un réseau de neurones à une couche cachée avec fonction d'activation sigmoïde, puis mise à jour des poids par rétropropagation en utilisant une fonction de coût quadratique.",
   "concepts": [
     "fonction d'activation sigmoïde",
-    "fonction de coût quadratique",
+    "erreur quadratique moyenne",
     "rétropropagation",
     "gradient",
-    "apprentissage supervisé",
-    "réseau de neurones à une couche cachée",
-    "optimisation par descente de gradient"
+    "régression linéaire",
+    "optimisation par descente de gradient",
+    "calcul de dérivées partielles",
+    "mise à jour des poids"
   ],
   "methods": [
     "calcul de l'entrée nette",
     "application de la fonction sigmoïde",
     "calcul de l'erreur quadratique",
-    "calcul des gradients par dérivation",
+    "calcul des gradients par rétropropagation",
     "mise à jour des poids avec taux d'apprentissage"
   ],
   "objects": [
-    "neurone caché",
-    "neurone de sortie",
-    "poids synaptiques",
-    "fonction de coût",
-    "gradient",
-    "taux d'apprentissage"
+    "réseau de neurones à une couche cachée",
+    "fonction de coût quadratique",
+    "gradients des poids",
+    "sorties des neurones",
+    "entrée nette"
   ],
-  "content_hash": "3393d36236314f07a6e7bc83a407b1ef6ad3f4442d5ff5b6e965ab3782176fd2",
+  "content_hash": "b4bac58100875f8272e654cd2ec3f7588210f9ad05ec260c44eeaba798d37dec",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:23:22.475Z"
+  "indexed_at": "2026-08-25T12:23:49.336Z"
 }

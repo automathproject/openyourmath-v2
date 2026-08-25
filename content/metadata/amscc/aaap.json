@@ -1,28 +1,29 @@
 {
   "uuid": "aaap",
   "source_path": "amscc/aaap.tex",
-  "summary": "L'exercice demande de déterminer la loi d'une variable aléatoire transformée linéairement à partir d'une loi normale centrée réduite, puis de calculer sa fonction caractéristique. Il s'agit ensuite d'étendre ce résultat à une somme de variables aléatoires indépendantes et d'estimer une probabilité associée.",
+  "summary": "L'exercice demande de déterminer la loi et la fonction caractéristique d'une variable aléatoire obtenue par transformation affine d'une variable normale centrée réduite, puis d'étudier la somme de 5 variables normales indépendantes identiquement distribuées. Il s'agit ensuite de calculer une probabilité associée à cette somme.",
   "concepts": [
-    "fonction caractéristique",
     "loi normale",
-    "transformation linéaire de variable aléatoire",
-    "somme de variables aléatoires indépendantes",
+    "fonction caractéristique",
+    "variable aléatoire indépendante",
+    "variable aléatoire équidistribuée",
+    "transformation affine de variable aléatoire",
     "standardisation",
-    "approximation gaussienne"
+    "théorème central limite"
   ],
   "methods": [
     "calcul de fonction caractéristique",
-    "propriété de la fonction caractéristique pour les sommes",
+    "propriété multiplicative des fonctions caractéristiques",
     "standardisation",
     "approximation gaussienne"
   ],
   "objects": [
     "variable aléatoire normale",
+    "somme de variables aléatoires",
     "fonction caractéristique",
-    "somme de variables aléatoires indépendantes",
     "probabilité conditionnelle"
   ],
-  "content_hash": "2a2e931068e16ec7877a56de187a646cffb6fd3261f26f2ae274d0da194f02c7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:52:52.580Z"
+  "content_hash": "3b9f5bc6755599333649a2dbdbcba3da91c46ad77979e1912347c753aa26b889",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:10.849Z"
 }

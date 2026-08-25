@@ -1,25 +1,27 @@
 {
   "uuid": "HojS",
   "source_path": "amscc/HojS.tex",
-  "summary": "Déterminer le domaine de définition de fonctions de plusieurs variables en identifiant les conditions de validité des expressions (racines, logarithmes, dénominateurs).",
+  "summary": "Déterminer le domaine de définition de quatre fonctions de plusieurs variables en identifiant les conditions d'existence des opérations impliquées (racine carrée, logarithme, division).",
   "concepts": [
     "domaine de définition",
     "fonction de plusieurs variables",
-    "condition d'existence",
     "inégalité",
-    "ensemble de définition"
+    "condition d'existence",
+    "logarithme",
+    "racine carrée",
+    "division"
   ],
   "methods": [
     "résolution d'inégalités",
-    "analyse de conditions de validité",
-    "représentation graphique"
+    "analyse des conditions d'existence"
   ],
   "objects": [
     "fonction de deux variables",
     "fonction de trois variables",
-    "ensemble de points"
+    "inégalités",
+    "domaine de définition"
   ],
-  "content_hash": "573838b2f9a8bb0993593446aef7ce96e17c22a53556fb44e8e2db6305f614c2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:54:17.288Z"
+  "content_hash": "f511fc452bc25db5246fb4907cf4c9446d165ffae80aea393adabd12cfcabd75",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:24:49.162Z"
 }

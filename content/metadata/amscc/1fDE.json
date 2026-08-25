@@ -1,31 +1,31 @@
 {
   "uuid": "1fDE",
   "source_path": "amscc/1fDE.tex",
-  "summary": "L'exercice demande de calculer des probabilités conditionnelles sur des pièces de monnaie avec des proportions de fausses pièces différentes, puis d'approcher une loi binomiale par une loi normale pour estimer une probabilité.",
+  "summary": "L'exercice demande de calculer des probabilités conditionnelles sur un lot de pièces de monnaie avec des proportions de pièces fausses différentes selon leur valeur. Il aborde ensuite l'approximation d'une loi binomiale par une loi normale pour estimer une probabilité.",
   "concepts": [
     "probabilité conditionnelle",
     "loi binomiale",
     "loi normale",
-    "approximation gaussienne",
     "espérance",
     "écart-type",
-    "correction de continuité"
+    "approximation gaussienne",
+    "correction de continuité",
+    "standardisation"
   ],
   "methods": [
-    "formule des probabilités totales",
+    "calcul de probabilité conjointe",
+    "formule de Bayes",
+    "approximation par loi normale",
     "standardisation",
-    "approximation gaussienne",
-    "calcul de l'espérance",
-    "calcul de l'écart-type"
+    "calcul d'espérance et variance"
   ],
   "objects": [
     "variable aléatoire binomiale",
-    "probabilité conditionnelle",
-    "loi normale",
-    "espérance",
-    "écart-type"
+    "proportion",
+    "pièces de monnaie",
+    "variable aléatoire normale"
   ],
-  "content_hash": "279948e4eb291ad2ffbf4a25e7d3c0f5406958dfd29b881cee69290a0a049837",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:36:23.715Z"
+  "content_hash": "b4823d8e0607c16745c91c1dec4a9e5e20c606aab15e20016c578d9022a76c1d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:27:15.526Z"
 }

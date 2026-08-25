@@ -6,19 +6,20 @@
     "quadrilatère inscriptible",
     "angles supplémentaires",
     "trapèze isocèle",
-    "géométrie affine euclidienne",
-    "propriétés des angles dans un trapèze"
+    "propriétés des angles dans un trapèze",
+    "géométrie affine euclidienne"
   ],
   "methods": [
+    "raisonnement par équivalence",
     "utilisation des propriétés des angles opposés",
-    "raisonnement par équivalence"
+    "analyse des angles non adjacents"
   ],
   "objects": [
     "trapèze",
-    "angles",
-    "cercle circonscrit"
+    "quadrilatère",
+    "angles"
   ],
-  "content_hash": "840388887afc54c495d122679159248b700359b87047394114c953f4c54ce4ea",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:33:15.660Z"
+  "content_hash": "84de3eb2fddc82664f0063b5c318b7d00d2e482d9b12575571aacf9cd41d845a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:47.875Z"
 }

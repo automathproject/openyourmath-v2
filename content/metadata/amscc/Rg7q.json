@@ -1,13 +1,13 @@
 {
   "uuid": "Rg7q",
   "source_path": "amscc/Rg7q.tex",
-  "summary": "Calculer trois intégrales définies en reconnaissant des dérivées dans les intégrandes. Les intégrales impliquent des fonctions trigonométriques et logarithmiques.",
+  "summary": "Calculer trois intégrales définies en reconnaissant des dérivées dans les intégrandes. Les intégrales impliquent des fonctions trigonométriques, des polynômes et des logarithmes.",
   "concepts": [
     "intégration directe",
     "changement de variable",
     "primitive d'une fonction",
     "fonction trigonométrique",
-    "fonction logarithme"
+    "fonction logarithmique"
   ],
   "methods": [
     "reconnaissance de dérivées",
@@ -16,10 +16,10 @@
   ],
   "objects": [
     "intégrale définie",
-    "fonction trigonométrique",
-    "fonction logarithme"
+    "fonction composée",
+    "fonction rationnelle"
   ],
-  "content_hash": "79c3203499a906f4dd84a6a3f08dd4f375414e32a0cdd020d47ccc66cc90e46e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:55:13.241Z"
+  "content_hash": "2713f0c1be205f07612c30df446748de9dca03932d8f6c9d0150f70e21d0bd50",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:20.808Z"
 }

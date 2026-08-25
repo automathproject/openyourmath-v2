@@ -1,27 +1,30 @@
 {
   "uuid": "If7x",
   "source_path": "exo7/6-L2/If7x.tex",
-  "summary": "L'exercice demande de déterminer les plans P_m définis par une équation cartésienne paramétrée par m, selon trois conditions différentes : appartenance d'un point A, normalité d'un vecteur n, et directionnalité d'un vecteur v.",
+  "summary": "L'exercice étudie une famille de plans paramétrés par un réel m dans l'espace. Il demande de déterminer les plans P_m pour lesquels un point donné appartient au plan, un vecteur donné est normal au plan, ou un vecteur donné est directeur du plan.",
   "concepts": [
     "géométrie affine",
     "plan cartésien",
     "vecteur normal",
     "vecteur directeur",
+    "appartenance d'un point à un plan",
     "produit scalaire",
     "équation cartésienne"
   ],
   "methods": [
-    "appartenance d'un point à un plan",
-    "comparaison d'équations planes",
-    "produit scalaire"
+    "résolution d'équation polynomiale",
+    "comparaison d'équations à un facteur près",
+    "calcul de produit scalaire",
+    "substitution de coordonnées"
   ],
   "objects": [
     "plan cartésien",
     "vecteur normal",
     "vecteur directeur",
-    "point dans l'espace"
+    "point de l'espace",
+    "famille de plans paramétrée"
   ],
-  "content_hash": "3893c08e4ad8f6b0689078ae7b3013abca0060efc24dc8b243a1d2ebfdb3d331",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:47:29.312Z"
+  "content_hash": "7e731064640ea6d9e669ebc79a96dd957f143159971503d69c700197de2fa53e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:32.517Z"
 }

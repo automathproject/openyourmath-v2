@@ -1,26 +1,27 @@
 {
   "uuid": "T3aW",
   "source_path": "amscc/T3aW.tex",
-  "summary": "L'exercice demande de déterminer la véracité de deux affirmations concernant la convergence et la somme de séries numériques à termes positifs.",
+  "summary": "Deux questions de vrai ou faux sur la convergence de séries numériques à termes positifs. La première concerne une série géométrique et sa somme, la seconde une série dont le terme général est équivalent à 1/n.",
   "concepts": [
-    "série numérique",
     "série géométrique",
-    "série de Riemann",
+    "convergence de séries",
     "comparaison de séries",
-    "équivalence de suites",
-    "convergence de séries"
+    "équivalence asymptotique",
+    "série de Riemann",
+    "terme général d'une série"
   ],
   "methods": [
-    "calcul de somme de série géométrique",
+    "calcul de la somme d'une série géométrique",
     "comparaison de termes généraux",
     "utilisation de l'équivalence asymptotique"
   ],
   "objects": [
-    "série à termes positifs",
+    "série numérique",
     "suite numérique",
-    "terme général"
+    "terme général",
+    "série géométrique"
   ],
-  "content_hash": "db9b10b220cbf3c211b22ceb99f62a6b9aa085c95b2d328c9c5083cd1be61c7b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:18:55.841Z"
+  "content_hash": "d84da2f12c5a8b0ae6eb4a109f023dd8352f463998b85b816087372a9960aba5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:31:00.110Z"
 }

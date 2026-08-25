@@ -1,29 +1,29 @@
 {
   "uuid": "MLRe",
   "source_path": "exo7/6-L2/MLRe.tex",
-  "summary": "L'exercice demande de démontrer des propriétés géométriques liées au découpage d'un triangle équilatéral pour obtenir un rectangle de même aire, en utilisant des propriétés de milieux et de projections orthogonales.",
+  "summary": "L'exercice demande de démontrer des propriétés géométriques liées au découpage d'un triangle équilatéral pour former un rectangle, en utilisant des propriétés de milieux, de projections orthogonales et d'égalité de longueurs.",
   "concepts": [
     "théorème de Bolyai",
     "découpage et recollement de polygones",
-    "milieux d'un segment",
-    "projections orthogonales",
-    "propriétés des triangles équilatéraux",
-    "aire des polygones"
+    "milieu d'un segment",
+    "projection orthogonale",
+    "égalité de longueurs",
+    "géométrie affine euclidienne"
   ],
   "methods": [
     "construction géométrique",
-    "utilisation des propriétés des milieux",
-    "analyse des projections orthogonales",
-    "démonstration par coïncidence de points"
+    "utilisation de propriétés de milieux",
+    "calcul de longueurs",
+    "démonstration par alignement et coïncidence de points"
   ],
   "objects": [
     "triangle équilatéral",
-    "segment",
-    "milieux de segments",
-    "projections orthogonales",
-    "rectangle"
+    "rectangle",
+    "segments de droite",
+    "points milieux",
+    "projections orthogonales"
   ],
-  "content_hash": "531ef50eee1547e72dd1c8cf027404f721f8b0798f9cdcf2358c22911b5c44ee",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:35:12.545Z"
+  "content_hash": "ad830a34c2f2bdbf2ee2da1e3ff838a0805eb0ecd95a2f100739bc4ed1763ea8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:55.122Z"
 }

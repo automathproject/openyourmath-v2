@@ -1,7 +1,7 @@
 {
   "uuid": "fJtB",
   "source_path": "amscc/fJtB.tex",
-  "summary": "L'exercice étudie trois estimateurs d'une espérance μ à partir d'un échantillon. Il demande de vérifier leur absence de biais, de calculer leurs variances, de déterminer l'estimateur le plus efficace parmi ceux sans biais, puis d'analyser leur erreur quadratique moyenne.",
+  "summary": "L'exercice étudie trois estimateurs d'une espérance μ à partir d'un échantillon. Il demande de vérifier leur absence de biais, de calculer leurs variances, de déterminer l'estimateur sans biais le plus efficace, puis d'analyser leur erreur quadratique moyenne (EQM) pour comparer leur performance.",
   "concepts": [
     "estimateur sans biais",
     "convergence en probabilité",
@@ -14,17 +14,17 @@
   "methods": [
     "calcul d'espérance",
     "calcul de variance",
-    "comparaison d'efficacité",
-    "développement algébrique"
+    "décomposition de l'erreur quadratique moyenne",
+    "comparaison d'estimateurs"
   ],
   "objects": [
-    "estimateur",
-    "espérance",
-    "variance",
+    "estimateur de l'espérance",
+    "n-échantillon",
     "erreur quadratique moyenne",
-    "biais"
+    "biais",
+    "variance"
   ],
-  "content_hash": "641548fb95e5664c822df2cfcdc9be37766b5ae26865dddedb476cd7dd74426b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:26:55.797Z"
+  "content_hash": "322ca8b401ed9b1e728056e8be50de5a9dede7d83f9dddb2973e3eb9af677b15",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:31:34.060Z"
 }

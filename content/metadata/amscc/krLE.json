@@ -1,32 +1,34 @@
 {
   "uuid": "krLE",
   "source_path": "amscc/krLE.tex",
-  "summary": "L'exercice demande d'analyser une fonction de deux variables définie sur un domaine borné de ℝ², d'identifier son domaine de définition parmi des graphiques, d'étudier l'existence d'extremums globaux et locaux, et de déterminer les valeurs de ces extremums.",
+  "summary": "L'exercice demande d'identifier le domaine de définition d'une fonction de deux variables, d'étudier ses propriétés topologiques, de rechercher ses extremums globaux et locaux, et d'analyser les variations de ses restrictions au bord du domaine.",
   "concepts": [
-    "extremums locaux",
-    "extremums globaux",
+    "fonction de plusieurs variables",
+    "extremum local",
+    "extremum global",
     "continuité",
     "fermeture d'un ensemble",
-    "bornitude d'un ensemble",
-    "points critiques",
+    "bornitude",
+    "point critique",
     "matrice hessienne",
     "conditions du second ordre"
   ],
   "methods": [
     "calcul de dérivées partielles",
-    "résolution de systèmes d'équations",
-    "analyse des variations de fonctions",
-    "application du théorème des valeurs extrêmes",
-    "étude de la matrice hessienne"
+    "résolution de système d'équations",
+    "analyse des variations",
+    "application du théorème des valeurs intermédiaires",
+    "évaluation de la matrice hessienne",
+    "substitution"
   ],
   "objects": [
     "fonction de deux variables",
-    "domaine borné",
-    "points critiques",
-    "extremums globaux",
-    "extremums locaux"
+    "domaine de définition",
+    "point critique",
+    "restriction de fonction",
+    "fonction polynomiale"
   ],
-  "content_hash": "a58c5ca92ad86682475a0c11eb6aa1dc52e3bd8207f7c8f7007d74a7202032c4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T09:53:58.844Z"
+  "content_hash": "571d4e317f9e5590f996c6bc591a701e910d996e681e761691401a91d58b6bc6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:01.053Z"
 }

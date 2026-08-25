@@ -1,25 +1,30 @@
 {
   "uuid": "Y5Cw",
   "source_path": "amscc/Y5Cw.tex",
-  "summary": "Trois affirmations sur la convergence de séries numériques à termes positifs. Il faut déterminer si chaque affirmation est vraie ou fausse et justifier la réponse.",
+  "summary": "Trois affirmations sur la convergence de séries numériques à termes positifs doivent être évaluées comme vraies ou fausses, avec justification. Les séries considérées sont définies par des termes spécifiques ou des conditions générales.",
   "concepts": [
     "série numérique",
     "série à termes positifs",
     "convergence de série",
     "critère de comparaison",
-    "somme d'une série"
+    "comparaison terme à terme",
+    "somme d'une série",
+    "croissance comparée"
   ],
   "methods": [
-    "comparaison de termes généraux",
-    "calcul de somme explicite",
-    "analyse asymptotique"
+    "comparaison de termes",
+    "utilisation de critères de convergence",
+    "calcul explicite de somme",
+    "approximation de termes"
   ],
   "objects": [
-    "série à termes positifs",
-    "termes généraux",
-    "somme de série"
+    "série numérique",
+    "termes d'une série",
+    "somme d'une série",
+    "fonction logarithme",
+    "suite numérique"
   ],
-  "content_hash": "6e3df1ffdce751f5ec78bb1b1c0a6244179b6e62221b2d651bca62b33e5e654e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:21:03.619Z"
+  "content_hash": "1f351b10f45b0e9a9d90b39d97736245d6b47642ca18ad684a351f7661532cb7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:31:03.036Z"
 }

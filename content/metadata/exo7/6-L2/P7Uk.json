@@ -1,27 +1,27 @@
 {
   "uuid": "P7Uk",
   "source_path": "exo7/6-L2/P7Uk.tex",
-  "summary": "L'exercice demande de démontrer qu'un ensemble donné forme un repère cartésien dans l'espace affine euclidien et d'en déduire les coordonnées de points ainsi qu'une équation cartésienne d'un plan.",
+  "summary": "L'exercice demande de justifier qu'un triplet de vecteurs issus d'un point hors d'un plan forme un repère cartésien, puis d'écrire les coordonnées des points et de déterminer l'équation cartésienne du plan contenant trois points non alignés.",
   "concepts": [
     "géométrie affine euclidienne",
     "repère cartésien",
     "plan affine",
+    "vecteurs libres",
     "coordonnées cartésiennes",
-    "alignement de points",
-    "espace vectoriel"
-  ],
-  "methods": [
-    "détermination de repère cartésien",
-    "calcul de coordonnées",
     "équation cartésienne d'un plan"
   ],
-  "objects": [
-    "points de l'espace",
-    "vecteurs de base",
-    "plan affine",
-    "repère cartésien"
+  "methods": [
+    "vérification de la liberté des vecteurs",
+    "calcul de coordonnées",
+    "détermination d'une équation de plan"
   ],
-  "content_hash": "63ccad21ca31e75bf74bcaed7419c3acf4b8d260a7e82a964ba78895bd44ced0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:37:02.061Z"
+  "objects": [
+    "repère cartésien",
+    "plan affine",
+    "vecteurs",
+    "points de l'espace"
+  ],
+  "content_hash": "0ae6039de1b1ff40aa228f6d1a851b83e41462fc90bbeda3057bdf494eb793e4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:57.881Z"
 }

@@ -1,27 +1,30 @@
 {
   "uuid": "hqXo",
   "source_path": "amscc/hqXo.tex",
-  "summary": "L'exercice étudie la continuité, la différentiabilité et la régularité C^1 d'une fonction f définie sur ℝ². Il demande d'analyser ces propriétés en utilisant des changements de coordonnées polaires et des dérivées partielles.",
+  "summary": "L'exercice étudie la continuité, la différentiabilité et la régularité $C^1$ d'une fonction $f: \\mathbb{R}^2 \to \\mathbb{R}$ définie par morceaux, avec une expression rationnelle hors de l'origine. Il demande d'analyser ces propriétés sur tout $\\mathbb{R}^2$ en exploitant les dérivées partielles et les coordonnées polaires.",
   "concepts": [
-    "continuité",
-    "différentiabilité",
-    "classe C^1",
-    "changement de coordonnées polaires",
+    "continuité en un point",
     "dérivées partielles",
-    "gradient"
+    "gradient",
+    "classe $C^1$",
+    "différentiabilité",
+    "coordonnées polaires",
+    "théorème de différentiabilité des fonctions $C^1$"
   ],
   "methods": [
-    "changement de variable",
-    "majoration",
+    "passage en coordonnées polaires",
     "calcul de dérivées partielles",
-    "passage en coordonnées polaires"
+    "majoration de termes",
+    "limite en 0",
+    "application du théorème de différentiabilité"
   ],
   "objects": [
     "fonction de deux variables",
+    "dérivées partielles",
     "gradient",
-    "dérivées partielles"
+    "coordonnées polaires"
   ],
-  "content_hash": "6e9b2bae1e05187452aa63e1b74e38aa822b5aa419ec3eaefbf2e7ba2d0079b4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:16:37.369Z"
+  "content_hash": "799b12a45537d69c3a4e6049a8f3f7d6b594ada6da96bbc97e6c547f9d3ef414",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:24:34.845Z"
 }

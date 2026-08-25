@@ -1,28 +1,29 @@
 {
   "uuid": "8mM7",
   "source_path": "amscc/8mM7.tex",
-  "summary": "On lance 720 fois un dé équilibré et on étudie la probabilité que le nombre 6 apparaisse entre 100 et 140 fois. L'exercice utilise l'inégalité de Bienaymé-Tchebytchev et une approximation par la loi normale pour estimer cette probabilité.",
+  "summary": "L'exercice demande d'estimer la probabilité que le nombre de 6 apparus lors de 720 lancers de dé équilibré soit compris entre 100 et 140, en utilisant l'inégalité de Bienaymé-Tchebytchev puis une approximation par la loi normale. Il faut aussi déterminer le plus petit entier n tel que la probabilité que le nombre de 6 soit à distance n de 120 soit au moins 0.9, par les deux méthodes.",
   "concepts": [
     "loi binomiale",
     "espérance",
     "variance",
     "inégalité de Bienaymé-Tchebytchev",
-    "théorème central limite",
-    "approximation normale",
-    "variable aléatoire binomiale"
+    "théorème central-limite",
+    "approximation gaussienne",
+    "standardisation"
   ],
   "methods": [
+    "application de l'inégalité de Bienaymé-Tchebytchev",
+    "approximation par la loi normale",
     "standardisation",
-    "approximation gaussienne",
-    "calcul d'espérance",
-    "calcul de variance"
+    "calcul de quantiles"
   ],
   "objects": [
     "variable aléatoire binomiale",
-    "nombre d'apparitions d'un événement",
-    "intervalle de confiance"
+    "espérance",
+    "variance",
+    "loi normale centrée réduite"
   ],
-  "content_hash": "ca7c66f3efec3eeca16c6a97c2e453e6d191ac487c68f9ea3da84b905c81b010",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:18:25.992Z"
+  "content_hash": "3231cf89e0c6ebcfd9f0a23bddc582480bcd9fedffe9cdd6d6e9752e73d9c2c5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:34.177Z"
 }

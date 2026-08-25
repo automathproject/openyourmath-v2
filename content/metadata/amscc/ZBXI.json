@@ -1,32 +1,32 @@
 {
   "uuid": "ZBXI",
   "source_path": "amscc/ZBXI.tex",
-  "summary": "L'exercice demande d'étudier les extrema d'une fonction de deux variables définie sur un domaine triangulaire. Il s'agit de montrer que la fonction est bornée, d'identifier les points stationnaires, de déterminer les extrema locaux et globaux, et de calculer les bornes de la fonction sur le domaine.",
+  "summary": "L'exercice demande d'étudier les extrema d'une fonction de deux variables définie sur un domaine compact. Il s'agit de déterminer les extrema locaux dans l'intérieur du domaine, les extrema sur le bord, puis de conclure sur les bornes globales de la fonction.",
   "concepts": [
-    "fonction de deux variables",
-    "extremums locaux",
+    "fonction de plusieurs variables",
+    "extremum local",
     "théorème des valeurs extrêmes",
     "continuité",
     "compacité",
-    "points stationnaires",
     "matrice hessienne",
-    "optimisation"
+    "déterminant",
+    "forme quadratique"
   ],
   "methods": [
-    "calcul des dérivées partielles",
+    "calcul de dérivées partielles",
     "résolution de système d'équations",
-    "analyse de la matrice hessienne",
-    "étude des extrema sur le bord",
-    "comparaison des valeurs extrêmes"
+    "calcul de la matrice hessienne",
+    "analyse de la forme quadratique",
+    "optimisation sur le bord"
   ],
   "objects": [
     "fonction polynomiale de deux variables",
-    "domaine triangulaire",
+    "domaine compact",
     "points stationnaires",
     "matrice hessienne",
     "extrema locaux et globaux"
   ],
-  "content_hash": "2b6358f0003d31a9345254cc9c0be59276bb66b3d289e7a157e19dff8a8e287f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:08:23.232Z"
+  "content_hash": "9b4704d6e870d2f13b918575f6e6cbfcf4f8ab7ae2831e9f1b191200cda7280e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:24:56.893Z"
 }

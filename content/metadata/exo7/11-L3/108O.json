@@ -1,27 +1,31 @@
 {
   "uuid": "108O",
   "source_path": "exo7/11-L3/108O.tex",
-  "summary": "L'exercice demande de reformuler en termes de quantificateurs trois théorèmes : la longueur d'une ligne polygonale, le théorème des sommes de Riemann pour la norme de la dérivée d'une courbe paramétrée, et la continuité uniforme des fonctions composantes de la dérivée d'une courbe.",
+  "summary": "L'exercice demande de reformuler en termes de quantificateurs trois théorèmes fondamentaux de l'analyse : le théorème des sommes de Riemann pour la norme de la dérivée d'une courbe paramétrée, la continuité uniforme des fonctions composantes de cette dérivée, et le théorème des accroissements finis pour les composantes de la courbe elle-même. Le contexte est celui de la géométrie différentielle, avec des courbes paramétrées dans ℝⁿ.",
   "concepts": [
-    "courbe paramétrée",
-    "longueur d'une courbe",
     "théorème des sommes de Riemann",
     "continuité uniforme",
     "théorème des accroissements finis",
-    "fonction dérivée"
+    "courbe paramétrée",
+    "dérivée d'une courbe",
+    "norme euclidienne",
+    "partition d'un intervalle",
+    "fonction continue"
   ],
   "methods": [
     "reformulation en termes de quantificateurs",
-    "analyse de la norme de la dérivée",
+    "application du théorème des sommes de Riemann",
+    "application de la continuité uniforme",
     "application du théorème des accroissements finis"
   ],
   "objects": [
     "courbe paramétrée",
-    "ligne polygonale",
     "fonction dérivée",
-    "partition d'un intervalle"
+    "partition d'intervalle",
+    "fonction continue",
+    "norme de vecteur"
   ],
-  "content_hash": "36b405b8cd43054df72a1db4b17953140086ca984ff397b95c7fa53bf3795a8e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:10:45.600Z"
+  "content_hash": "a908a8bbc73aeca24220ac29c8c23854bd69fd2c914f1ccdfc82f43941f02ed3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:59.582Z"
 }

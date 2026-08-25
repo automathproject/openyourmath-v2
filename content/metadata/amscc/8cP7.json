@@ -1,28 +1,33 @@
 {
   "uuid": "8cP7",
   "source_path": "amscc/8cP7.tex",
-  "summary": "L'exercice demande d'étudier la continuité d'une fonction de deux variables, de calculer ses dérivées partielles en un point et hors de ce point, puis de déterminer si la fonction est de classe C^1 et différentiable en ce point.",
+  "summary": "Étude de la continuité, des dérivées partielles, de la classe C^1 et de la différentiabilité d'une fonction de deux variables définie par morceaux, avec une singularité en (0,0).",
   "concepts": [
-    "continuité d'une fonction de plusieurs variables",
+    "continuité",
     "dérivées partielles",
     "classe C^1",
     "différentiabilité",
     "limite",
+    "quotient de fonctions",
     "coordonnées polaires",
-    "approximation o"
+    "différentielle"
   ],
   "methods": [
-    "étude de la continuité en un point",
+    "étude de la continuité par encadrement",
     "calcul de dérivées partielles",
-    "analyse de la continuité des dérivées partielles",
+    "définition des dérivées partielles",
+    "formule du quotient",
+    "changement de coordonnées polaires",
     "test de différentiabilité"
   ],
   "objects": [
     "fonction de deux variables",
     "dérivées partielles",
-    "point critique"
+    "différentielle",
+    "limite",
+    "quotient de polynômes"
   ],
-  "content_hash": "1e27f071ab5b656eafd6cce1cd655225f6619b1f288b3a346c74e67458a5d7e0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:32:12.221Z"
+  "content_hash": "008ff72ce9ecd94aed6a2cda809cff0871406d617bf2091e65ffeba4a37bdcf3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:52.073Z"
 }

@@ -1,26 +1,29 @@
 {
   "uuid": "6fT3",
   "source_path": "amscc/6fT3.tex",
-  "summary": "L'exercice demande de déterminer le rayon de convergence et le domaine de convergence d'une série entière, puis de calculer sa somme sur cet intervalle.",
+  "summary": "L'exercice demande de déterminer le rayon de convergence et le domaine de convergence d'une série entière, puis de calculer sa somme sur cet intervalle. La série étudiée est S(x) = Σ (n+2)/(n!) x^n pour n allant de 0 à l'infini.",
   "concepts": [
     "série entière",
     "rayon de convergence",
     "domaine de convergence",
-    "somme de série entière",
     "série exponentielle",
-    "changement d'indice"
+    "changement d'indice",
+    "limite de suite",
+    "convergence absolue"
   ],
   "methods": [
-    "critère de d'Alembert",
+    "critère du quotient",
     "décomposition de série",
-    "changement de variable"
+    "changement de variable",
+    "calcul de somme de série exponentielle"
   ],
   "objects": [
     "série entière",
-    "somme de série",
-    "fonction exponentielle"
+    "suite numérique",
+    "fonction exponentielle",
+    "intervalle de convergence"
   ],
-  "content_hash": "7212829a26770f8718d90fefaaf5269e0823b6ece5c9bfbc3b5307f54768f4ed",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-06-20T20:39:57.693Z"
+  "content_hash": "0a2b6ebfd6a7b45461e8020f89087de494d8aa311647980286860f28e889d189",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:31:17.364Z"
 }

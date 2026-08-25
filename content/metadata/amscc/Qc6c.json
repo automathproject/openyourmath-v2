@@ -1,28 +1,27 @@
 {
   "uuid": "Qc6c",
   "source_path": "amscc/Qc6c.tex",
-  "summary": "Calculer des primitives de fonctions rationnelles impliquant des polynômes du second degré. La première question demande une primitive directe, la seconde établit une relation de dérivation entre deux intégrales, et la troisième en déduit une expression explicite.",
+  "summary": "L'exercice demande de calculer une primitive de la fonction rationnelle 1/(x²+1) puis d'établir une relation entre cette primitive et celle de 1/(x²+1)² en utilisant une identité différentielle. Il s'agit ensuite d'en déduire une expression explicite de la seconde primitive.",
   "concepts": [
-    "intégration de fonctions rationnelles",
-    "primitive d'une fonction",
-    "dérivation",
-    "identité trigonométrique",
-    "intégration par parties",
-    "fonction rationnelle"
+    "primitive d'une fonction rationnelle",
+    "intégration de fonctions trigonométriques inverses",
+    "identité différentielle",
+    "décomposition en éléments simples",
+    "intégration par parties"
   ],
   "methods": [
-    "décomposition en éléments simples",
+    "décomposition d'une fraction rationnelle",
     "intégration directe",
     "utilisation d'une identité différentielle",
-    "détermination de primitive à partir d'une relation de dérivation"
+    "intégration par parties"
   ],
   "objects": [
     "fonction rationnelle",
     "primitive",
-    "intégrale indéfinie",
-    "fonction dérivée"
+    "fonction trigonométrique inverse",
+    "identité différentielle"
   ],
-  "content_hash": "bd2eae225ba36c2aa40b9d492e74c9efcf34c23b3a6636e53c2231375b4d440f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:25:26.615Z"
+  "content_hash": "33fce17bf3e425a2287e027bc061e2b0df1ee8b51b5c2a6ba6ddd7fbaaab6d5b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:46.468Z"
 }

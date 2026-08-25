@@ -1,31 +1,31 @@
 {
   "uuid": "O5Wz",
   "source_path": "amscc/O5Wz.tex",
-  "summary": "Calculer l'espérance et la probabilité de dépassement pour des variables exponentielles indépendantes modélisant des temps entre pannes. Étudier la variable maximale de ces temps et son espérance.",
+  "summary": "Calculer l'espérance et la probabilité de dépassement pour des variables aléatoires exponentielles indépendantes modélisant les temps entre pannes d'une machine. Déterminer la loi de la durée maximale de fonctionnement sans interruption et calculer son espérance.",
   "concepts": [
     "loi exponentielle",
-    "espérance d'une variable exponentielle",
+    "espérance d'une variable aléatoire",
     "fonction de répartition",
     "indépendance de variables aléatoires",
     "variable aléatoire maximale",
-    "densité de probabilité"
+    "densité de probabilité",
+    "intégration par parties"
   ],
   "methods": [
-    "calcul de l'espérance",
-    "calcul de probabilité de dépassement",
-    "utilisation de l'indépendance",
-    "calcul de la fonction de répartition",
-    "dérivation pour obtenir la densité",
+    "calcul de l'espérance d'une loi exponentielle",
+    "utilisation de la fonction de répartition",
+    "détermination de la loi de la variable maximale",
+    "décomposition en intégrales",
     "intégration par parties"
   ],
   "objects": [
-    "variables aléatoires exponentielles",
-    "temps entre pannes",
+    "variable aléatoire exponentielle",
+    "fonction de répartition",
     "variable aléatoire maximale",
-    "fonction densité",
+    "densité de probabilité",
     "espérance"
   ],
-  "content_hash": "efc7de7e879895d569f7d9e6a7d8a4e62970ff5f0c4b657af7dca583fc249149",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:48:24.097Z"
+  "content_hash": "aae4cfcd31ce65b7bc456859f63504121e090f4cb029ffc751f1c3e28cc5a7f9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:27:36.605Z"
 }

@@ -1,27 +1,30 @@
 {
   "uuid": "vUFN",
   "source_path": "amscc/vUFN.tex",
-  "summary": "L'exercice demande de déterminer la loi conjointe d'un couple de variables aléatoires discrètes sous forme de tableau, puis d'en déduire les lois marginales et les espérances. Il s'agit ensuite de vérifier l'indépendance des variables et d'étudier la loi d'une nouvelle variable définie comme leur différence.",
+  "summary": "L'exercice demande de déterminer la loi conjointe d'un couple de variables aléatoires discrètes (X, Y) à partir de probabilités conditionnelles, puis d'en déduire les lois marginales, les espérances mathématiques et de tester leur indépendance. Une question supplémentaire porte sur la loi du couple (X, Z) où Z = X - Y et son indépendance avec X.",
   "concepts": [
+    "variable aléatoire discrète",
     "loi conjointe",
     "loi marginale",
-    "espérance d'une variable aléatoire",
+    "espérance mathématique",
     "indépendance de variables aléatoires",
     "tableau de probabilités"
   ],
   "methods": [
-    "calcul de probabilités marginales",
-    "calcul d'espérance",
-    "vérification d'indépendance par produit des probabilités",
-    "construction de loi de variable transformée"
+    "calcul de probabilités conditionnelles",
+    "construction de tableau de loi conjointe",
+    "calcul d'espérance par sommation",
+    "test d'indépendance par produit de probabilités"
   ],
   "objects": [
-    "variable aléatoire discrète",
-    "couple de variables aléatoires",
-    "tableau de loi conjointe",
-    "espérance mathématique"
+    "variable aléatoire discrète X",
+    "variable aléatoire discrète Y",
+    "variable aléatoire Z = X - Y",
+    "loi conjointe de (X, Y)",
+    "loi marginale de X",
+    "loi marginale de Y"
   ],
-  "content_hash": "0065bd2a7fad383064f8ee98eb21ce4b7e7c6636e25a37fcb26b3ad54659afc7",
+  "content_hash": "884203e8601411d2011384eb0b5b7522461bf2b69d8b217d62a72f0b8bf0b715",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:01:48.222Z"
+  "indexed_at": "2026-08-25T12:28:42.978Z"
 }

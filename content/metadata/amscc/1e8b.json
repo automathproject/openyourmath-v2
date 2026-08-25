@@ -1,25 +1,28 @@
 {
   "uuid": "1e8b",
   "source_path": "amscc/1e8b.tex",
-  "summary": "L'exercice demande de résoudre une équation aux dérivées partielles (EDP) d'ordre 2 en utilisant la règle de la chaîne, à partir d'une fonction définie par deux fonctions g et h de classe C².",
+  "summary": "L'exercice demande de montrer qu'une fonction f(x,y) définie comme combinaison de deux fonctions g et h est de classe C², puis de calculer ses dérivées partielles premières et secondes. Enfin, il faut vérifier que f satisfait une équation aux dérivées partielles (EDP) d'ordre 2.",
   "concepts": [
-    "équation aux dérivées partielles",
-    "règle de la chaîne",
     "fonction de classe C²",
-    "dérivées partielles secondes",
-    "changement de variable"
+    "dérivées partielles",
+    "règle de la chaîne",
+    "équation aux dérivées partielles",
+    "dérivées secondes",
+    "régularité des fonctions"
   ],
   "methods": [
-    "calcul des dérivées partielles",
+    "calcul de dérivées partielles",
     "application de la règle de la chaîne",
-    "changement de variable"
+    "développement des dérivées secondes",
+    "vérification d'une EDP"
   ],
   "objects": [
     "fonction de deux variables",
-    "dérivées partielles",
-    "fonction composée"
+    "dérivées partielles premières",
+    "dérivées partielles secondes",
+    "EDP d'ordre 2"
   ],
-  "content_hash": "c194663dfe3e73b6c6f307bab21a5fc39561fbc5b049f8f3dd3d4eb4bd2da502",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:45:18.433Z"
+  "content_hash": "fd2aa9472abc9f47e7b292839bbc33ac16d778ce8db631eedc039f8973f47393",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:24:41.055Z"
 }

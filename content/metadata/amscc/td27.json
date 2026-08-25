@@ -1,7 +1,7 @@
 {
   "uuid": "td27",
   "source_path": "amscc/td27.tex",
-  "summary": "L'exercice demande d'estimer la probabilité qu'aucune ampoule ne soit défaillante dans une chaîne de fabrication, en utilisant deux méthodes différentes. La première méthode utilise la proportion empirique de jours sans défaillance, tandis que la seconde suppose que le nombre de défaillances suit une loi de Poisson.",
+  "summary": "L'exercice demande d'estimer la probabilité qu'aucune ampoule ne soit défaillante dans une chaîne de fabrication, en utilisant deux méthodes différentes. La première méthode est basée sur un estimateur empirique, tandis que la seconde suppose que les défaillances suivent une loi de Poisson.",
   "concepts": [
     "estimateur sans biais",
     "risque quadratique",
@@ -13,20 +13,20 @@
     "équivalent asymptotique"
   ],
   "methods": [
-    "estimation par proportion empirique",
-    "calcul du risque quadratique",
-    "construction d'intervalle de confiance",
+    "estimation empirique",
     "calcul du biais",
     "calcul de la variance",
-    "analyse asymptotique"
+    "approximation asymptotique",
+    "construction d'intervalle de confiance"
   ],
   "objects": [
-    "estimateur de la probabilité de non-défaillance",
-    "nombre de jours sans défaillance",
-    "moyenne empirique des défaillances",
-    "variable aléatoire de Poisson"
+    "variable aléatoire de Poisson",
+    "estimateur de probabilité",
+    "moyenne empirique",
+    "risque quadratique",
+    "intervalle de confiance"
   ],
-  "content_hash": "0c582383e685789f3188f2108354d2861a9e64cdb599cb31cd6b3b5aaff4ccc1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:58:44.501Z"
+  "content_hash": "97821b4f0bf7b34a9b669e701d6f8bee9361e36112e259070b3a47951e25e763",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:09.115Z"
 }

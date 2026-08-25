@@ -1,25 +1,28 @@
 {
   "uuid": "a40A",
   "source_path": "amscc/a40A.tex",
-  "summary": "L'exercice demande de factoriser un polynôme donné, de trouver ses racines réelles et complexes, puis de décomposer une fraction rationnelle en éléments simples.",
+  "summary": "L'exercice demande de factoriser un polynôme donné, d'en déterminer les racines réelles et complexes, puis de décomposer une fraction rationnelle en éléments simples. Le contexte est purement algébrique.",
   "concepts": [
     "factorisation de polynôme",
     "racines complexes",
+    "discriminant",
+    "fraction rationnelle",
     "décomposition en éléments simples",
-    "polynôme irréductible",
-    "fraction rationnelle"
+    "identité remarquable"
   ],
   "methods": [
-    "factorisation",
-    "calcul de racines",
-    "décomposition partielle"
+    "identification des coefficients",
+    "utilisation de la parité",
+    "calcul du discriminant",
+    "factorisation par différence de carrés"
   ],
   "objects": [
-    "polynôme du quatrième degré",
-    "racines complexes",
-    "fraction rationnelle"
+    "polynôme du second degré",
+    "racines complexes conjuguées",
+    "fraction rationnelle",
+    "polynôme de degré 4"
   ],
-  "content_hash": "e1c1d8143f239b3d727298720a6f67ea0568208f329341c41db284677d71ed31",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:05:25.749Z"
+  "content_hash": "c55167a2504e9a481936e208596a961a93ec369b65ef8b9e975e2adb1214257c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:27:01.372Z"
 }

@@ -1,33 +1,35 @@
 {
   "uuid": "XxlS",
   "source_path": "amscc/XxlS.tex",
-  "summary": "L'exercice demande de montrer que la fonctionnelle quadratique J est de classe C^1, de calculer son gradient, puis de prouver qu'elle est strictement convexe et coercive, et enfin d'établir la convergence géométrique de la méthode de gradient sous certaines conditions sur le pas.",
+  "summary": "L'exercice demande de démontrer que la fonctionnelle quadratique J(v) = (1/2)<Av,v> - <b,v> est de classe C^1, de calculer son gradient, puis d'établir sa stricte convexité, sa coercivité et l'existence d'un unique minimum. Il s'agit ensuite de prouver des inégalités sur le gradient et d'analyser la convergence géométrique de la méthode du gradient sous certaines conditions sur le pas.",
   "concepts": [
     "fonctionnelle quadratique",
-    "classe C^1",
     "gradient",
-    "convexité stricte",
+    "classe C^1",
+    "stricte convexité",
     "coercivité",
-    "valeurs propres",
-    "méthode de gradient",
+    "existence et unicité du minimum",
+    "valeurs propres d'une matrice",
+    "inégalités de Lipschitz",
     "convergence géométrique"
   ],
   "methods": [
-    "calcul de différentielle",
-    "identification du gradient",
-    "utilisation de la symétrie de la matrice",
+    "calcul de la différentielle",
+    "utilisation de la symétrie d'une matrice",
     "inégalité de Cauchy-Schwarz",
-    "quotient de Rayleigh",
-    "majoration de l'erreur"
+    "analyse de la convergence d'une suite récurrente",
+    "majoration d'erreur",
+    "utilisation du quotient de Rayleigh"
   ],
   "objects": [
-    "fonctionnelle J",
-    "matrice symétrique définie positive A",
-    "vecteur b",
-    "suite récurrente (u_k)",
-    "gradient ∇J(v)"
+    "fonctionnelle quadratique",
+    "matrice symétrique définie positive",
+    "gradient",
+    "suite récurrente",
+    "erreur d'itération",
+    "valeurs propres"
   ],
-  "content_hash": "ce2c92fb8133b0080b0286db1f54737adb860448dd709b94e4b77253f0c5902f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:38:05.840Z"
+  "content_hash": "a7d9e83a8fbde4d185d126384c2f4a4fe81f037554a6c32bff703309864a2fb2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:56.132Z"
 }

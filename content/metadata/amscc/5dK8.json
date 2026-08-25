@@ -1,27 +1,29 @@
 {
   "uuid": "5dK8",
   "source_path": "amscc/5dK8.tex",
-  "summary": "L'exercice demande de déterminer la constante de normalisation d'une densité de probabilité définie par morceaux, puis de calculer des probabilités, l'espérance, la variance d'une variable aléatoire associée.",
+  "summary": "L'exercice demande de déterminer la constante de normalisation d'une fonction pour qu'elle soit une densité de probabilité, puis de calculer des probabilités, l'espérance, la variance et l'espérance du carré d'une variable aléatoire continue définie par cette densité sur l'intervalle [0,2].",
   "concepts": [
     "densité de probabilité",
     "intégrale de probabilité",
     "espérance mathématique",
     "variance",
-    "fonction de répartition"
+    "fonction de répartition",
+    "loi absolument continue"
   ],
   "methods": [
-    "intégration",
-    "calcul de probabilité par intégration",
-    "calcul d'espérance",
-    "calcul de variance"
+    "intégration sur un intervalle borné",
+    "calcul de primitive",
+    "utilisation de la formule de la variance",
+    "calcul d'espérance par intégration"
   ],
   "objects": [
-    "variable aléatoire réelle",
-    "densité de probabilité",
+    "variable aléatoire continue",
+    "fonction densité",
     "espérance",
-    "variance"
+    "variance",
+    "probabilité conditionnelle"
   ],
-  "content_hash": "a34458596952c7d29578bc397f0cdbb15a98b83cc9449244e7a64267d86b0df1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:36:13.798Z"
+  "content_hash": "af9316aff7aa3bf2da2bc187c5eedfa5b7d274be887162aeeb434a3c02bc6f27",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:28.774Z"
 }

@@ -1,32 +1,32 @@
 {
   "uuid": "7H9k",
   "source_path": "amscc/7H9k.tex",
-  "summary": "L'exercice demande de construire un estimateur du paramètre θ d'une densité à l'aide de la méthode du maximum de vraisemblance, puis d'étudier les propriétés de cet estimateur. Il utilise une transformation exponentielle pour simplifier l'analyse.",
+  "summary": "L'exercice demande d'estimer un paramètre θ d'une densité exponentielle transformée, en utilisant la méthode du maximum de vraisemblance. Il aborde aussi la simulation numérique de l'estimateur et ses propriétés de convergence.",
   "concepts": [
     "maximum de vraisemblance",
+    "loi exponentielle",
     "estimateur sans biais",
     "convergence en moyenne quadratique",
-    "loi exponentielle",
     "loi forte des grands nombres",
     "transformation de variable aléatoire",
-    "espérance mathématique",
-    "variance"
+    "espérance et variance"
   ],
   "methods": [
-    "maximisation de la vraisemblance",
-    "calcul de l'espérance",
-    "calcul de la variance",
-    "application de la loi forte des grands nombres",
-    "simulation de variables aléatoires exponentielles"
+    "calcul de la vraisemblance",
+    "standardisation",
+    "transformation logarithmique",
+    "calcul d'espérance",
+    "calcul de variance",
+    "simulation de loi exponentielle"
   ],
   "objects": [
     "variable aléatoire absolument continue",
-    "fonction de densité",
     "échantillon aléatoire",
+    "fonction de densité",
     "estimateur du maximum de vraisemblance",
-    "variable aléatoire exponentielle"
+    "suite de variables aléatoires"
   ],
-  "content_hash": "7da59d4b87dea61d83b84d47434ffcf033f1fe9503c569bd6d19f2330b9edaf9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:33:49.102Z"
+  "content_hash": "44b32024747c6394d708eebf246db3eac432130aa201f6001bca0d8072a91928",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:29:11.006Z"
 }

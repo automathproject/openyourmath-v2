@@ -1,25 +1,25 @@
 {
   "uuid": "lJaW",
   "source_path": "amscc/lJaW.tex",
-  "summary": "L'exercice demande de calculer la limite d'une fonction de deux variables le long de deux suites distinctes convergeant vers (0,0), puis d'en déduire si la fonction admet une limite en ce point.",
+  "summary": "L'exercice demande de calculer la limite d'une fonction de deux variables en un point particulier, en utilisant des suites convergentes vers ce point. Il s'agit d'étudier l'existence d'une limite pour une fonction rationnelle en (0,0).",
   "concepts": [
-    "limite de fonction",
-    "suite de points",
-    "convergence",
-    "limite de fonction en un point",
-    "continuité"
+    "limite de fonction de plusieurs variables",
+    "suite convergente",
+    "limite de suite",
+    "continuité",
+    "fonction rationnelle"
   ],
   "methods": [
-    "calcul de limite de suite",
+    "évaluation de la limite par des suites",
     "comparaison de limites",
-    "évaluation de fonction en points particuliers"
+    "calcul de limite de suite"
   ],
   "objects": [
     "fonction de deux variables",
     "suite de points",
-    "limite de fonction"
+    "point de discontinuité"
   ],
-  "content_hash": "b2c2a985dfc156b1aeed9ada203b9ebe294ad904ab66ba135a5ea41c56ddaa19",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:13:13.041Z"
+  "content_hash": "852f36a0b352043e5d983495f5c949236696cc93743bae8615aa78e43f0489e6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:16.367Z"
 }

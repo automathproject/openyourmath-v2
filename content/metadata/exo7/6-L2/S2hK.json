@@ -1,27 +1,28 @@
 {
   "uuid": "S2hK",
   "source_path": "exo7/6-L2/S2hK.tex",
-  "summary": "L'exercice demande de déterminer une équation paramétrique d'une droite passant par un point donné et de direction donnée, puis de trouver l'intersection de cette droite avec une autre droite pour obtenir la projection d'un point sur cette droite selon un vecteur directeur.",
+  "summary": "L'exercice demande de déterminer une équation paramétrique d'une droite passant par un point donné et dirigée par un vecteur, puis de trouver l'intersection de cette droite avec une autre droite donnée. Ensuite, il s'agit de généraliser analytiquement la projection d'un point sur une droite selon un vecteur directeur.",
   "concepts": [
     "géométrie affine euclidienne",
     "droite affine",
     "équation cartésienne",
+    "équation paramétrique",
     "projection orthogonale",
-    "repère cartésien",
+    "intersection de droites",
     "vecteur directeur"
   ],
   "methods": [
-    "équation paramétrique d'une droite",
-    "calcul d'intersection de droites",
-    "projection selon un vecteur"
+    "calcul d'équation paramétrique",
+    "résolution de système d'équations linéaires",
+    "formulation analytique de projection"
   ],
   "objects": [
-    "droite affine",
+    "droite du plan",
     "vecteur directeur",
-    "point",
-    "repère cartésien"
+    "point du plan",
+    "projection d'un point sur une droite"
   ],
-  "content_hash": "70facf6ac31eb444c8d8375d9f1e7d84aee4d159354af2ada7c20cd4794d3efd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:39:03.765Z"
+  "content_hash": "2b294f1ecd36ee37a50c03a1fca202f5a7fc5e36a1f862a4f8602aadbbc98dfa",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:01.449Z"
 }

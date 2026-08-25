@@ -1,29 +1,31 @@
 {
   "uuid": "qM6e",
   "source_path": "amscc/qM6e.tex",
-  "summary": "L'exercice demande de calculer la somme d'une série entière donnée et de déterminer son domaine de convergence. Il s'agit d'une série entière dont le terme général est une fraction rationnelle en n.",
+  "summary": "L'exercice demande de calculer la somme d'une série entière donnée par $S(x) = \\sum_{n=0}^{+\\infty} \\frac{n}{n+2}x^n$. Il faut d'abord vérifier une identité algébrique, déterminer le domaine de convergence, puis calculer une somme intermédiaire et enfin en déduire l'expression de $S(x)$.",
   "concepts": [
     "série entière",
-    "domaine de convergence",
     "rayon de convergence",
-    "critère de d'Alembert",
+    "domaine de convergence",
+    "somme de série entière",
     "changement d'indice",
-    "somme de série",
-    "fonction logarithme"
+    "série du logarithme",
+    "développement limité"
   ],
   "methods": [
     "critère de d'Alembert",
-    "changement d'indice",
-    "développement limité",
-    "vérification de cohérence"
+    "changement de variable",
+    "décomposition en séries connues",
+    "calcul de limite",
+    "vérification par développement limité"
   ],
   "objects": [
     "série entière",
-    "terme général",
-    "fonction logarithme",
+    "fonction génératrice",
+    "somme de termes rationnels",
+    "logarithme naturel",
     "développement limité"
   ],
-  "content_hash": "b2d98972dc7b693d4f66bb9f48eea46fdbd57b6db4f46d8c14d9007d83dbc170",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:53:24.320Z"
+  "content_hash": "e27482bcc1e35fb34c1822565689593d714ae84fb59aa7657b3177708442a190",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:44.138Z"
 }

@@ -1,30 +1,31 @@
 {
   "uuid": "5dA2",
   "source_path": "amscc/5dA2.tex",
-  "summary": "L'exercice demande de déterminer le domaine de définition d'une fonction de deux variables, de représenter cet ensemble dans le plan, et d'étudier la continuité de la fonction ainsi que ses dérivées partielles en certains points.",
+  "summary": "L'exercice demande de déterminer le domaine de définition d'une fonction de deux variables, de représenter cet ensemble dans le plan, d'analyser sa nature (ouvert/fermé), de calculer ses courbes de niveau, d'étudier sa continuité et d'examiner l'existence des dérivées partielles en des points particuliers.",
   "concepts": [
-    "fonction de plusieurs variables",
+    "fonction de deux variables",
     "domaine de définition",
     "courbe de niveau",
     "continuité",
     "dérivée partielle",
     "limite",
-    "composition de fonctions"
+    "composition de fonctions",
+    "ensemble ouvert/fermé"
   ],
   "methods": [
     "résolution d'inéquation",
-    "représentation graphique",
-    "étude de continuité",
     "calcul de dérivées partielles",
-    "étude de limites"
+    "étude de limite",
+    "analyse de continuité par composition"
   ],
   "objects": [
-    "fonction de deux variables",
+    "fonction racine carrée",
     "disque fermé",
     "cercle",
-    "dérivées partielles"
+    "dérivées partielles",
+    "limites directionnelles"
   ],
-  "content_hash": "77c0c933fa887572ff5b7502f932d7cd2e21c57541118b0c6cbe93ce94221fa8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:39:49.971Z"
+  "content_hash": "8f9d032d0c3b14d0d86811e792c157a964f3c8bbe1e464109eb018f78a445fc4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:24:15.651Z"
 }

@@ -1,25 +1,26 @@
 {
   "uuid": "hSGF",
   "source_path": "amscc/hSGF.tex",
-  "summary": "L'exercice demande de déterminer si une fonction de deux variables définie sur ℝ² est continue en un point particulier, en analysant son comportement aux alentours de ce point.",
+  "summary": "L'exercice demande de déterminer la continuité en (0,0) de deux fonctions de deux variables définies par morceaux, avec une expression rationnelle en (x,y)≠(0,0) et f(0,0)=0.",
   "concepts": [
     "continuité en un point",
-    "limite de fonction",
-    "changement de coordonnées",
-    "coordonnées polaires",
+    "limite de fonction de deux variables",
+    "changement de coordonnées polaires",
+    "inégalité triangulaire",
     "suites convergentes"
   ],
   "methods": [
     "changement de variable",
     "passage en coordonnées polaires",
-    "étude de suites convergentes"
+    "utilisation de suites pour étudier la limite",
+    "majoration"
   ],
   "objects": [
     "fonction de deux variables",
-    "point de continuité",
+    "limite de fonction",
     "suites de points"
   ],
-  "content_hash": "03f88eee9444c88e1f8fa742f3bb765077ef6862d5240db1e40d053a26d186be",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:13:02.035Z"
+  "content_hash": "57681c818f879d9f897bb7a286671efb57b76abe51a630c0308707f70735382d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:13.102Z"
 }

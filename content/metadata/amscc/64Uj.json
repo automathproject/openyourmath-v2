@@ -1,29 +1,31 @@
 {
   "uuid": "64Uj",
   "source_path": "amscc/64Uj.tex",
-  "summary": "L'exercice demande de justifier l'existence et l'unicité locale d'une solution d'une équation différentielle, de prouver que cette solution est bornée, et d'analyser la convergence et l'ordre de consistance d'un schéma numérique proposé pour approcher cette solution.",
+  "summary": "L'exercice demande de justifier l'existence et l'unicité locale et globale d'une solution d'une équation différentielle, de prouver la bornitude de la solution, de démontrer la convergence et la consistance d'ordre 2 d'un schéma numérique, et d'implémenter cet algorithme pour approcher la solution en un point donné.",
   "concepts": [
     "théorème de Cauchy-Lipschitz",
-    "existence et unicité locale de solution",
-    "bornitude de solution",
-    "consistance de schéma numérique",
-    "convergence de schéma numérique",
-    "ordre de consistance"
+    "existence et unicité locale",
+    "existence et unicité globale",
+    "principe de prolongement",
+    "bornitude des solutions",
+    "consistance d'un schéma numérique",
+    "convergence d'un schéma numérique"
   ],
   "methods": [
     "application du théorème de Cauchy-Lipschitz",
-    "estimation de bornitude",
-    "principe de prolongement",
-    "vérification de consistance",
-    "calcul de dérivée seconde"
+    "estimation de la dérivée",
+    "vérification de la consistance",
+    "calcul de l'erreur locale",
+    "implémentation d'un algorithme numérique"
   ],
   "objects": [
-    "équation différentielle",
-    "solution de classe C^1",
+    "équation différentielle ordinaire",
     "schéma numérique",
-    "fonction f(t,y)"
+    "solution de classe C^1",
+    "fonction lipschitzienne",
+    "erreur de consistance"
   ],
-  "content_hash": "37d4d288e20affbf91ec2ec3b1fd0ae0d4c859ff51e98262b45ba117cc573c8c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:16:34.162Z"
+  "content_hash": "710380b6633d98e67431bcd2523abae8515b044c13081eb5926c0841c549f42b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:24:44.753Z"
 }

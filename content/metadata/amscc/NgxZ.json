@@ -1,24 +1,26 @@
 {
   "uuid": "NgxZ",
   "source_path": "amscc/NgxZ.tex",
-  "summary": "Calculer une intégrale définie impliquant une fonction logarithme composée avec une racine carrée.",
+  "summary": "Calculer l'intégrale d'une fonction composée impliquant un logarithme et une racine carrée, sur l'intervalle [0,1]. L'énoncé demande une intégration par parties.",
   "concepts": [
     "intégration par parties",
-    "fonction arcsinus hyperbolique",
-    "intégrale définie",
-    "primitive d'une fonction"
+    "fonction réciproque",
+    "fonction hyperbolique",
+    "primitive d'une fonction",
+    "intégrale définie"
   ],
   "methods": [
     "intégration par parties",
     "changement de variable",
-    "calcul de primitive"
+    "simplification algébrique"
   ],
   "objects": [
-    "fonction logarithme",
-    "fonction racine carrée",
-    "intégrale définie"
+    "fonction composée",
+    "intégrale définie",
+    "fonction arsinh",
+    "fonction racine carrée"
   ],
-  "content_hash": "dc9d6c43fc9e5b7eb9706bc6768749b6d3a9a3cf12f4e6e9921f311f1b591244",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:25:12.981Z"
+  "content_hash": "5f3917bd13c63dd5d42636b966301a7866cef7faebd1514d1c4eb3a0d812733d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:43.664Z"
 }

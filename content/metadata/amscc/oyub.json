@@ -1,27 +1,30 @@
 {
   "uuid": "oyub",
   "source_path": "amscc/oyub.tex",
-  "summary": "L'exercice demande de déterminer si l'écart de consommation de chauffage entre deux régions A et B est statistiquement significatif au seuil de 5%, en utilisant des échantillons aléatoires de ménages dont les consommations suivent une loi normale.",
+  "summary": "L'exercice demande de déterminer si l'écart de consommation de chauffage entre deux régions est statistiquement significatif à 5 % près, en comparant deux échantillons issus de lois normales.",
   "concepts": [
-    "test d'hypothèse",
+    "test d'hypothèses",
     "loi normale",
     "variance échantillonnale",
-    "seuil de signification",
-    "écart significatif",
-    "comparaison de moyennes"
+    "niveau de signification",
+    "comparaison de moyennes",
+    "intervalle de confiance",
+    "hypothèse nulle",
+    "puissance d'un test"
   ],
   "methods": [
     "test de Student",
     "calcul de statistique de test",
-    "comparaison avec la loi normale"
+    "comparaison de moyennes",
+    "calcul de p-valeur"
   ],
   "objects": [
+    "échantillon aléatoire",
     "moyenne échantillonnale",
     "variance échantillonnale",
-    "taille d'échantillon",
-    "seuil de confiance"
+    "niveau de confiance"
   ],
-  "content_hash": "ee1b6df4c3d04b81f91705c742a407915d79bdaae4bd024dbd454a2489c49b8a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:52:30.262Z"
+  "content_hash": "387590803c65c544d432c301d9edc12e4239880491918cb8f2a2baa2e2e5c7c2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:29:43.795Z"
 }

@@ -1,25 +1,27 @@
 {
   "uuid": "mDzt",
   "source_path": "amscc/mDzt.tex",
-  "summary": "Calculer la probabilité que deux échantillons de 200 votants présentent une différence de plus de 10 points dans les fréquences de votes pour un candidat ayant obtenu 65% des voix.",
+  "summary": "Calculer la probabilité que deux échantillons indépendants de 200 votants présentent une différence de plus de 10 points dans les fréquences de votes pour un candidat ayant obtenu 65% des voix au total.",
   "concepts": [
     "loi de Bernoulli",
     "théorème central limite",
     "loi normale",
     "somme de variables aléatoires indépendantes",
-    "standardisation"
+    "standardisation",
+    "approximation gaussienne"
   ],
   "methods": [
-    "approximation gaussienne",
     "standardisation",
-    "calcul de probabilité conditionnelle"
+    "approximation gaussienne",
+    "calcul de probabilité pour une loi normale"
   ],
   "objects": [
     "proportion échantillonnale",
     "différence de proportions",
-    "variable aléatoire normale"
+    "variable aléatoire de Bernoulli",
+    "loi normale"
   ],
-  "content_hash": "3a87183756992e6fd7c3715bee7e8bcd7f23927a79912842a3cdb624611142bb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:05:32.594Z"
+  "content_hash": "4d3103d7c6c50031101459f82ef07c90788b4e8b873adc30b0bb98eeedfec7e4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:14.357Z"
 }

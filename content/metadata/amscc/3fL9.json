@@ -1,28 +1,28 @@
 {
   "uuid": "3fL9",
   "source_path": "amscc/3fL9.tex",
-  "summary": "L'exercice demande de justifier l'existence d'un minimum et d'un maximum globaux d'une fonction de deux variables sur un domaine compact, puis de déterminer ces extrema en étudiant les bords du domaine.",
+  "summary": "L'exercice demande de déterminer les extrema globaux d'une fonction de deux variables définie sur un domaine compact de ℝ². Il s'agit d'appliquer le théorème de Weierstrass et d'étudier les points critiques à l'intérieur du domaine ainsi que sur ses bords.",
   "concepts": [
     "théorème de Weierstrass",
-    "continuité",
-    "compacité",
-    "extrema globaux",
-    "points critiques",
+    "extremum global",
+    "fonction continue",
+    "domaine compact",
+    "point critique",
     "optimisation sous contrainte"
   ],
   "methods": [
-    "étude des bords",
-    "calcul des dérivées partielles",
-    "analyse des points critiques",
-    "comparaison des valeurs extrêmes"
+    "calcul de dérivées partielles",
+    "analyse des extrema sur les bords",
+    "étude des points critiques",
+    "développement d'expression polynomiale"
   ],
   "objects": [
     "fonction de deux variables",
-    "domaine compact",
+    "domaine fermé borné",
     "points critiques",
-    "extrema globaux"
+    "bords de domaine"
   ],
-  "content_hash": "8fc8c01900484d3ab89f29d465ce1ad309bc605f01bfcbdac8d8986e5581a310",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:09:27.367Z"
+  "content_hash": "0ca8c7e5b4e0a48903b5c7a98ce9be2a8d44e2c37763016b27f8b32cac12343f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:52.063Z"
 }

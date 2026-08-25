@@ -1,24 +1,24 @@
 {
   "uuid": "ol5R",
   "source_path": "exo7/6-L2/ol5R.tex",
-  "summary": "Trouver l'équation cartésienne d'un plan dans l'espace défini par trois points donnés. L'exercice demande de déterminer les coefficients de l'équation plane à partir des coordonnées des points.",
+  "summary": "L'exercice demande de déterminer l'équation cartésienne d'un plan dans l'espace à partir de trois points distincts appartenant à ce plan.",
   "concepts": [
+    "géométrie affine",
     "équation cartésienne d'un plan",
     "système linéaire",
-    "géométrie affine",
-    "condition linéaire",
-    "inconnues à un facteur multiplicatif près"
+    "condition d'appartenance d'un point à un plan",
+    "unicité de l'équation à un facteur près"
   ],
   "methods": [
     "résolution de système linéaire",
-    "détermination des coefficients du plan"
+    "substitution des coordonnées des points dans l'équation du plan"
   ],
   "objects": [
+    "plan affine",
     "points de l'espace",
-    "équation plane",
-    "coordonnées cartésiennes"
+    "équation linéaire"
   ],
-  "content_hash": "ed40f939ef87f86a9041ee5fecc7d52b3c6311367596a93a2f4a01a7e3e56a59",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:07:53.110Z"
+  "content_hash": "f0e88c374c6ec27e351d54d78c254c7b0732550a565f152fea3fa0565d4fc869",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:25:37.674Z"
 }

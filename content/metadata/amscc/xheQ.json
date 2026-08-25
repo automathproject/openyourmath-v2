@@ -1,36 +1,30 @@
 {
   "uuid": "xheQ",
   "source_path": "amscc/xheQ.tex",
-  "summary": "L'exercice demande de déterminer les lois de plusieurs variables aléatoires, de vérifier l'absence de biais de deux estimateurs et de comparer leur efficacité, puis d'utiliser des tables de valeurs pour trouver un seuil de probabilité pour une variable suivant une loi du chi2 et une loi de Student.",
+  "summary": "L'exercice porte sur des variables aléatoires normales indépendantes et étudie leurs combinaisons linéaires et quadratiques. Il demande de déterminer les lois de variables construites à partir de ces normes, d'évaluer leur biais et efficacité comme estimateurs, et d'utiliser des tables de lois du chi2 et de Student pour des calculs de probabilités.",
   "concepts": [
     "loi normale",
-    "loi du chi2",
-    "loi de Student",
+    "espérance et variance d'une variable aléatoire",
     "estimateur sans biais",
     "efficacité d'un estimateur",
-    "espérance mathématique",
-    "variance",
-    "linéarité de l'espérance",
-    "indépendance de variables aléatoires"
+    "loi du chi2",
+    "loi de Student",
+    "théorème de Fisher"
   ],
   "methods": [
-    "calcul de l'espérance",
-    "calcul de la variance",
-    "comparaison de variances",
+    "linéarité de l'espérance",
+    "calcul de variance pour combinaisons linéaires",
     "standardisation",
-    "utilisation de tables de valeurs",
-    "reconnaissance de lois statistiques"
+    "comparaison de variances",
+    "reconnaissance de loi de Student"
   ],
   "objects": [
-    "variable aléatoire",
-    "estimateur",
-    "espérance",
-    "variance",
-    "loi normale centrée réduite",
-    "loi du chi2",
-    "loi de Student"
+    "variables aléatoires normales indépendantes",
+    "combinaisons linéaires de variables aléatoires",
+    "estimateurs de l'espérance",
+    "statistique de Student"
   ],
-  "content_hash": "cbd9db00a1e06f576ffd0a63b3abc0600303431a74c2a88a52a7d0653c9c54a5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T13:00:42.975Z"
+  "content_hash": "0bab41f03170ecaed6cbc4ce9705556eda7ce3dbfb9eac60a11f00a804505b1b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:16.265Z"
 }

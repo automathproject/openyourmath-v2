@@ -1,26 +1,26 @@
 {
   "uuid": "alNi",
   "source_path": "amscc/alNi.tex",
-  "summary": "L'exercice demande d'appliquer le théorème central limite pour déterminer la distribution d'une variable aléatoire somme de variables indépendantes et identiquement distribuées, puis de calculer une probabilité associée.",
+  "summary": "L'exercice demande d'approximer la distribution d'une somme de 100 variables aléatoires iid par une loi normale grâce au théorème central limite, puis de calculer la probabilité que cette somme soit inférieure à 2900.",
   "concepts": [
     "théorème central limite",
     "loi normale",
     "moyenne d'une variable aléatoire",
     "variance d'une variable aléatoire",
-    "standardisation",
-    "approximation gaussienne"
+    "approximation gaussienne",
+    "standardisation"
   ],
   "methods": [
     "standardisation",
     "approximation gaussienne",
-    "calcul de probabilité"
+    "calcul de probabilité à partir d'une loi normale"
   ],
   "objects": [
-    "variable aléatoire somme",
+    "somme de variables aléatoires iid",
     "variable aléatoire centrée réduite",
-    "loi normale"
+    "loi normale d'une somme"
   ],
-  "content_hash": "9ae93af684d0c1460bc1f8f163fad16d6576d947b3348dda1a9525ae1d00ff74",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:56:02.303Z"
+  "content_hash": "0f04e50b4fb8ef03ddb5ee14d92f05bd25bb84883e9ad890114b8c633f4d242b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:27:55.698Z"
 }

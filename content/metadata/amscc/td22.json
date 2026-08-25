@@ -1,28 +1,29 @@
 {
   "uuid": "td22",
   "source_path": "amscc/td22.tex",
-  "summary": "L'exercice demande d'établir un intervalle de confiance asymptotique pour le paramètre θ d'une loi de Poisson à partir d'échantillons i.i.d., d'abord par application directe du théorème central limite, puis en utilisant une transformation stabilisatrice de la variance. Il compare ensuite les deux résultats obtenus.",
+  "summary": "L'exercice demande d'établir un intervalle de confiance asymptotique pour le paramètre θ d'une loi de Poisson en utilisant deux approches : d'abord via le théorème central limite, puis en appliquant la méthode Delta pour stabiliser la variance. Il faut ensuite vérifier l'équivalence des deux résultats.",
   "concepts": [
     "théorème central limite",
     "intervalle de confiance asymptotique",
-    "loi de Poisson",
-    "convergence en loi",
     "méthode Delta",
-    "stabilisation de la variance"
+    "convergence en loi",
+    "loi de Poisson",
+    "stabilisation de la variance",
+    "approximation gaussienne"
   ],
   "methods": [
     "standardisation",
     "approximation gaussienne",
-    "transformation de la variance",
-    "comparaison d'intervalles de confiance"
+    "méthode Delta",
+    "transformation de variable"
   ],
   "objects": [
-    "estimateur de Poisson",
+    "estimateur de la moyenne",
     "variable aléatoire de Poisson",
     "intervalle de confiance",
     "fonction de transformation"
   ],
-  "content_hash": "2eed44397f62d7cbd73801b28ba5b2c3988121d348803c46cd2ba89eed2d3069",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:56:14.373Z"
+  "content_hash": "7a077f83cf4626288499968c1822642b97532813efed75f5bf0820a4cd0d4f09",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:29:49.180Z"
 }

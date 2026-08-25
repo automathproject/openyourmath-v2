@@ -1,26 +1,28 @@
 {
   "uuid": "kfej",
   "source_path": "exo7/6-L2/kfej.tex",
-  "summary": "L'exercice demande de calculer les différentielles dx, dy, dz et de vérifier l'égalité x dx + y dy + z dz = r dr pour en déduire les dérivées partielles de r par rapport à x, y et z.",
+  "summary": "L'exercice demande de calculer les différentielles dx, dy, dz dans un changement de variables vers les coordonnées sphériques, puis de vérifier une relation impliquant ces différentielles et d'en déduire les dérivées partielles de r par rapport à x, y et z.",
   "concepts": [
-    "différentielle",
+    "changement de variables",
     "coordonnées sphériques",
+    "différentielle",
     "dérivée partielle",
-    "changement de variable",
-    "forme différentielle",
-    "champ de vecteurs"
+    "calcul différentiel",
+    "formes différentielles"
   ],
   "methods": [
     "calcul de différentielles",
-    "développement en coordonnées sphériques",
-    "identification de formes différentielles exactes"
+    "développement en série",
+    "identification de termes",
+    "calcul de dérivées partielles"
   ],
   "objects": [
     "différentielles dx, dy, dz",
-    "coordonnées sphériques (r, θ, φ)",
+    "coordonnées sphériques (r, φ, θ)",
+    "fonction r(x, y, z)",
     "dérivées partielles de r"
   ],
-  "content_hash": "d9dc7f13916d6e1ae90375f5c6cd0dd4544782647922c08428a7bbcf3db20215",
+  "content_hash": "a9be2b9da0cee01639ef4b5678ca38c2db33d92eac7c0b75532dac1a8537edfd",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:06:34.654Z"
+  "indexed_at": "2026-08-25T12:23:40.331Z"
 }

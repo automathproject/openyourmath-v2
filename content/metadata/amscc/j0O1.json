@@ -1,29 +1,33 @@
 {
   "uuid": "j0O1",
   "source_path": "amscc/j0O1.tex",
-  "summary": "L'exercice demande de démontrer que la fonction donnée est une densité de probabilité, d'établir sa fonction de répartition, de simuler une variable aléatoire suivant la loi de Pareto, et d'étudier l'existence de son espérance. Il mobilise la loi de Pareto et ses propriétés.",
+  "summary": "L'exercice demande de démontrer que la fonction donnée est une densité de probabilité, d'en déduire la fonction de répartition, de montrer qu'une transformation d'une variable uniforme suit la loi de Pareto, de simuler cette loi, et d'étudier l'existence de son espérance. Il aborde aussi l'interprétation de simulations numériques.",
   "concepts": [
     "densité de probabilité",
     "fonction de répartition",
     "loi de Pareto",
-    "espérance d'une variable aléatoire",
-    "loi uniforme",
+    "variable aléatoire uniforme",
+    "transformation de variable",
+    "espérance mathématique",
     "loi forte des grands nombres",
     "intégrale impropre"
   ],
   "methods": [
     "intégration",
-    "changement de variable",
-    "simulation de variable aléatoire",
+    "transformation de variable aléatoire",
+    "simulation Monte Carlo",
+    "calcul d'espérance",
     "approximation par la loi forte des grands nombres"
   ],
   "objects": [
-    "fonction de densité",
+    "densité de probabilité",
+    "fonction de répartition",
     "variable aléatoire de Pareto",
     "variable aléatoire uniforme",
-    "espérance mathématique"
+    "espérance",
+    "liste de simulations"
   ],
-  "content_hash": "7ecffae9cab576ab5400f9a6b85fb9899b713ffd4a77b850b44758de381c2393",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:02:36.635Z"
+  "content_hash": "346f89a34b53f7b9bb5907396043d4c4485c9cbd34e24860b646d7fcb03bbdec",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:11.887Z"
 }

@@ -1,30 +1,31 @@
 {
   "uuid": "LHbK",
   "source_path": "amscc/LHbK.tex",
-  "summary": "L'exercice étudie la convergence d'une série numérique à termes positifs en analysant les équivalents asymptotiques de ses termes généraux. Il demande de déterminer les valeurs du paramètre α pour lesquelles la série converge ou diverge, en utilisant des techniques d'équivalents et de comparaison.",
+  "summary": "Étude de la convergence d'une série numérique définie par un produit de termes. L'exercice analyse les équivalents asymptotiques de termes associés et utilise des inégalités pour encadrer le terme général de la série.",
   "concepts": [
     "série numérique",
     "série à termes positifs",
-    "convergence de série",
+    "série de Riemann",
+    "développement limité",
     "équivalent asymptotique",
     "comparaison de séries",
-    "développement limité",
-    "série de Riemann"
+    "inégalité de produit"
   ],
   "methods": [
-    "équivalent asymptotique",
-    "comparaison de séries",
     "développement limité à l'ordre 1",
-    "inégalités de produits",
-    "majoration/minoration de termes"
+    "comparaison de séries",
+    "encadrement par inégalités",
+    "calcul d'équivalent asymptotique",
+    "utilisation de la fonction exponentielle"
   ],
   "objects": [
     "suite numérique",
-    "terme général de série",
-    "paramètre α",
-    "série de Riemann"
+    "produit de termes",
+    "série de Riemann",
+    "développement limité",
+    "inégalités"
   ],
-  "content_hash": "39396d49bb21126d1cd1779fd074e73d7f58e7bad6e55bb331a3d9a2ccdbfefa",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:12:40.679Z"
+  "content_hash": "d5c31e64fea275cdb965d8804e6c603b07d0226d7c695a17591cb1fbdd792d46",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:49.145Z"
 }

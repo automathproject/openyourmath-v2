@@ -1,30 +1,30 @@
 {
   "uuid": "btoa",
   "source_path": "amscc/btoa.tex",
-  "summary": "L'exercice demande de vérifier que 1 est racine d'un polynôme Q et de donner sa décomposition en facteurs irréductibles dans ℝ[X]. Ensuite, il s'agit de décomposer une fraction rationnelle P en éléments simples.",
+  "summary": "L'exercice demande de vérifier que 1 est racine d'un polynôme Q(X) et d'en donner la décomposition en facteurs irréductibles sur ℝ[X]. Ensuite, il s'agit de décomposer une fraction rationnelle P(X) en éléments simples sur ℝ(X).",
   "concepts": [
     "racine d'un polynôme",
-    "polynôme irréductible",
+    "factorisation en facteurs irréductibles",
+    "discriminant",
+    "polynôme irréductible sur ℝ",
     "fraction rationnelle",
     "décomposition en éléments simples",
-    "division euclidienne",
-    "calcul de constantes"
+    "division euclidienne des polynômes"
   ],
   "methods": [
-    "vérification de racine",
-    "factorisation de polynôme",
+    "identification des racines réelles",
+    "calcul du discriminant",
+    "factorisation par racine évidente",
     "décomposition en éléments simples",
-    "division euclidienne",
-    "évaluation en points spécifiques"
+    "division euclidienne pour la partie entière"
   ],
   "objects": [
-    "polynôme Q",
-    "polynôme P",
-    "racines complexes",
-    "facteurs irréductibles",
+    "polynôme de degré 3",
+    "fraction rationnelle",
+    "facteurs irréductibles sur ℝ",
     "éléments simples"
   ],
-  "content_hash": "c7c2da60c56a954eddb7cc12b818af58a92736ac9b20c8bc8258c649fa6a197b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:09:19.957Z"
+  "content_hash": "f4b8a525b934e554080cc7d56a63a41648bbde2b28f15a276a1b623be9f3e4b9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:27:04.198Z"
 }

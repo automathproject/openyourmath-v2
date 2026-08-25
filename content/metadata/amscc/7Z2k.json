@@ -1,22 +1,22 @@
 {
   "uuid": "7Z2k",
   "source_path": "amscc/7Z2k.tex",
-  "summary": "L'exercice demande de montrer que deux ensembles E et F sont des sous-espaces vectoriels de ℝ⁴, d'en déterminer des bases et leurs dimensions, puis d'étudier leur intersection et leur somme directe. E est défini par une équation linéaire et F par deux équations linéaires.",
+  "summary": "L'exercice demande de montrer que deux ensembles E et F de vecteurs de ℝ⁴ sont des sous-espaces vectoriels, d'en déterminer des bases et leurs dimensions, puis d'étudier leur intersection et leur somme directe. E est défini par une équation linéaire homogène, F par deux équations linéaires homogènes.",
   "concepts": [
     "sous-espace vectoriel",
     "base d'un espace vectoriel",
     "dimension d'un espace vectoriel",
     "somme directe d'espaces vectoriels",
-    "intersection de sous-espaces vectoriels",
-    "indépendance linéaire",
-    "système d'équations linéaires"
+    "intersection d'espaces vectoriels",
+    "vecteurs libres",
+    "paramétrisation d'un sous-espace"
   ],
   "methods": [
     "vérification des propriétés de sous-espace vectoriel",
-    "paramétrisation d'un sous-espace",
-    "détermination d'une base par indépendance linéaire",
-    "calcul de dimension par rang",
-    "résolution de systèmes d'équations linéaires"
+    "paramétrisation par équations",
+    "détermination de la dimension par la taille d'une base",
+    "calcul de l'intersection de sous-espaces",
+    "calcul de la dimension de la somme de sous-espaces"
   ],
   "objects": [
     "sous-espace vectoriel de ℝ⁴",
@@ -24,7 +24,7 @@
     "intersection de sous-espaces",
     "somme directe de sous-espaces"
   ],
-  "content_hash": "cdcf239e47b5a0fdc44475d113804e161dd4fd0d91fcdc1130c925cb2e234c92",
+  "content_hash": "aa18ea2600557e04b37f8c8d1da15dbbac907536955489eadfe4271639dab474",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:29:39.223Z"
+  "indexed_at": "2026-08-25T12:23:59.359Z"
 }

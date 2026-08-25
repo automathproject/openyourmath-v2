@@ -1,21 +1,33 @@
 {
   "uuid": "6YqE",
   "source_path": "amscc/6YqE.tex",
-  "summary": "L'exercice porte sur un test d'hypothèse pour une proportion dans le cadre d'un contrôle qualité. On teste si une machine est bien réglée (proportion de pièces défectueuses p0=0.05) ou déréglée (p1=0.10) à partir d'un échantillon de 100 pièces avec 8 défectueuses. Plusieurs questions abordent la justification de la statistique de test, le calcul de la région critique, la prise de décision et l'analyse des risques d'erreur.",
+  "summary": "L'exercice porte sur un test d'hypothèses pour une proportion dans un contexte de contrôle qualité. On souhaite déterminer si une machine est bien réglée (proportion de pièces défectueuses p0=0.05) ou déréglée (p1=0.10) à partir d'un échantillon de 100 pièces. Plusieurs questions abordent la justification de la loi normale asymptotique de la statistique de test, le calcul de la région critique, l'interprétation des résultats et le dimensionnement de l'échantillon.",
   "concepts": [
-    "Test d'hypothèse pour une proportion",
-    "Risque de première espèce (α)",
-    "Risque de seconde espèce (β)",
-    "Puissance d'un test",
-    "Statistique de test normalisée",
-    "p-valeur",
-    "Région critique",
-    "Théorème central limite",
-    "Intervalle de confiance"
+    "test d'hypothèses",
+    "proportion",
+    "théorème central limite",
+    "risque de première espèce",
+    "risque de seconde espèce",
+    "puissance d'un test",
+    "intervalle de confiance",
+    "loi normale",
+    "statistique de test"
   ],
-  "methods": [],
-  "objects": [],
-  "content_hash": "6c64601c803ac4f20da99967808065ec5db74b63350760e77f05a516dc7e9e35",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:00:10.168Z"
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de la p-valeur",
+    "détermination de la région critique",
+    "calcul de la taille d'échantillon"
+  ],
+  "objects": [
+    "proportion observée",
+    "statistique de test",
+    "risque de première espèce",
+    "risque de seconde espèce",
+    "taille d'échantillon"
+  ],
+  "content_hash": "d1707c66db3e184c2328470a920c1b74fb15fbe4bedaa0a1da539c3eb9be446f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:29:08.293Z"
 }

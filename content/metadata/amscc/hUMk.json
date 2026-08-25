@@ -1,30 +1,32 @@
 {
   "uuid": "hUMk",
   "source_path": "amscc/hUMk.tex",
-  "summary": "L'exercice demande de construire un estimateur du maximum de vraisemblance pour un paramètre θ, puis d'étudier les propriétés statistiques de cet estimateur en utilisant des transformations de variables aléatoires et des lois exponentielles et gamma.",
+  "summary": "L'exercice demande de construire un estimateur du maximum de vraisemblance pour un paramètre θ à partir d'un échantillon de variables aléatoires suivant une loi spécifique sur [0,1]. Il explore ensuite les propriétés de cet estimateur en transformant les variables, en étudiant leur loi et en vérifiant le biais de l'estimateur.",
   "concepts": [
     "maximum de vraisemblance",
     "loi exponentielle",
     "loi Gamma",
+    "espérance d'une variable aléatoire",
     "estimateur sans biais",
-    "espérance mathématique",
-    "variable aléatoire indépendante et identiquement distribuée",
-    "fonction de répartition"
+    "transformation de variable aléatoire",
+    "fonction de répartition",
+    "variables aléatoires indépendantes et identiquement distribuées"
   ],
   "methods": [
-    "transformation de variable aléatoire",
+    "calcul de la log-vraisemblance",
+    "annulation de la dérivée",
+    "transformation logarithmique",
     "calcul de l'espérance",
-    "vérification de l'absence de biais",
-    "simulation de variable aléatoire exponentielle"
+    "simulation de variables aléatoires exponentielles"
   ],
   "objects": [
-    "estimateur du maximum de vraisemblance",
+    "fonction de densité de probabilité",
+    "variable aléatoire Gamma",
     "variable aléatoire exponentielle",
     "somme de variables aléatoires i.i.d.",
-    "paramètre θ",
-    "variable aléatoire uniforme"
+    "estimateur ponctuel"
   ],
-  "content_hash": "d24283520044581533fbb2afdfa8c716c683b07a863f2b168195247182592e3c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:49:08.856Z"
+  "content_hash": "047c1752a2ccd2b38246d2b48ff3391081c2931dc7e6acfb385fd034b4f4769b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:29:37.756Z"
 }

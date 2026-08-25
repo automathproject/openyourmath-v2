@@ -1,31 +1,31 @@
 {
   "uuid": "eTDu",
   "source_path": "amscc/eTDu.tex",
-  "summary": "L'exercice propose deux méthodes de Monte Carlo pour estimer π/4 en utilisant des variables aléatoires uniformes. Il demande de déterminer les lois, les espérances, les variances et la convergence presque sûre des estimateurs construits.",
+  "summary": "L'exercice propose d'estimer la valeur de π/4 en utilisant deux méthodes de Monte Carlo : une basée sur des variables indicatrices et l'autre sur une transformation fonctionnelle. Il demande de calculer les espérances, variances et de démontrer la convergence presque sûre des estimateurs, en comparant leur efficacité.",
   "concepts": [
     "loi forte des grands nombres",
     "estimateur sans biais",
     "convergence presque sûre",
     "loi de Bernoulli",
-    "théorème de transfert",
-    "espérance conditionnelle",
-    "variance d'un estimateur"
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "théorème de transfert"
   ],
   "methods": [
     "calcul d'espérance",
     "calcul de variance",
     "intégration de fonction",
     "application de la loi forte des grands nombres",
-    "comparaison de variances"
+    "comparaison d'estimateurs"
   ],
   "objects": [
-    "variable aléatoire de Bernoulli",
+    "variable indicatrice",
     "variable aléatoire uniforme",
-    "estimateur de Monte Carlo",
-    "suite de variables aléatoires",
-    "fonction indicatrice"
+    "suite de variables aléatoires indépendantes",
+    "fonction de transformation",
+    "estimateur de Monte Carlo"
   ],
-  "content_hash": "02e110b91b5dfbf27fb6508931772e9418a35313b63c934d249c5d9a2d7ca9a4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:59:32.104Z"
+  "content_hash": "45b83456cfea6ebc1881e227f25579a6161edbcd38829c39f9fecb1dabb46ce5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:08.285Z"
 }

@@ -1,32 +1,29 @@
 {
   "uuid": "eDzQ",
   "source_path": "amscc/eDzQ.tex",
-  "summary": "L'exercice demande de déterminer les équivalents asymptotiques de suites réelles en utilisant des techniques de simplification et d'approximation pour des limites en l'infini.",
+  "summary": "Trouver un équivalent simple pour cinq suites réelles lorsque n tend vers l'infini, en utilisant des techniques d'approximation des fonctions et des suites.",
   "concepts": [
-    "équivalence asymptotique",
+    "équivalent de suites",
     "limite de suites",
     "développement limité",
     "approximation de fonctions",
-    "continuité",
-    "fonctions trigonométriques",
-    "fonctions logarithmes"
-  ],
-  "methods": [
-    "simplification d'expression",
-    "développement limité",
-    "approximation linéaire",
-    "rationalisation",
-    "standardisation",
     "comparaison de termes dominants"
   ],
+  "methods": [
+    "standardisation",
+    "développement limité",
+    "rationalisation",
+    "comparaison de termes dominants",
+    "approximation de logarithmes"
+  ],
   "objects": [
-    "suite réelle",
+    "suite numérique",
     "fonction trigonométrique",
     "fonction logarithme",
-    "expression rationnelle",
-    "racine carrée"
+    "racine carrée",
+    "fraction rationnelle"
   ],
-  "content_hash": "46e388f27d2b225ebc12fa4552a230d03579a6cc61441b5a735a0aa60bbebc9d",
+  "content_hash": "5c56fea90b466e44e953c52ded1c3b08150c15590a7a0725aa7fdac368801059",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:46:48.716Z"
+  "indexed_at": "2026-08-25T12:24:10.064Z"
 }

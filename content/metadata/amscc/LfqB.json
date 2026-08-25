@@ -1,27 +1,28 @@
 {
   "uuid": "LfqB",
   "source_path": "amscc/LfqB.tex",
-  "summary": "L'exercice propose quatre affirmations à évaluer en vrai ou faux concernant des propriétés de suites et séries numériques, avec des développements limités et des comparaisons de suites.",
+  "summary": "L'exercice propose quatre affirmations à évaluer en vrai ou faux concernant des propriétés de séries numériques et d'équivalents asymptotiques. Les questions portent sur la convergence de séries, les développements limités et les équivalents de fonctions.",
   "concepts": [
     "série numérique",
     "convergence de série",
     "développement limité",
-    "comparaison de suites",
-    "limite de suite",
-    "équivalence de fonctions"
+    "équivalent asymptotique",
+    "comparaison de séries",
+    "limite de fonction"
   ],
   "methods": [
-    "développement limité d'ordre 2",
-    "comparaison terme à terme",
-    "étude de la limite d'une fonction"
+    "développement limité",
+    "comparaison de séries",
+    "calcul de limite",
+    "analyse d'équivalent"
   ],
   "objects": [
-    "suite numérique",
     "série numérique",
-    "fonction exponentielle",
-    "fonction logarithme"
+    "fonction réelle",
+    "développement limité",
+    "équivalent asymptotique"
   ],
-  "content_hash": "755fb0eb599997209ab0443c5c80326de372e1de8a7170c4eb47ed8942fba549",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:12:52.498Z"
+  "content_hash": "3b0d6d0bca069568db3ca1d7ede1560f0f0c562e2b93658026940fb0f2ab7774",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:51.948Z"
 }

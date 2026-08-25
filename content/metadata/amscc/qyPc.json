@@ -1,23 +1,23 @@
 {
   "uuid": "qyPc",
   "source_path": "amscc/qyPc.tex",
-  "summary": "L'exercice demande de simuler des variables aléatoires suivant des lois de Rademacher, Laplace et géométrique à partir d'une variable uniforme sur [0;1]. Il s'agit de déterminer les fonctions de répartition et les densités de probabilité associées, puis de prouver que certaines transformations de variables suivent les lois attendues.",
+  "summary": "L'exercice demande de simuler des variables aléatoires suivant des lois de Rademacher, Laplace et géométrique à partir d'une variable uniforme sur [0,1]. Il s'agit de calculer des probabilités conditionnelles, de déterminer des fonctions de répartition et de prouver la loi suivie par des transformations de variables aléatoires.",
   "concepts": [
-    "loi de Rademacher",
+    "variable aléatoire discrète",
+    "variable aléatoire continue",
+    "densité de probabilité",
+    "fonction de répartition",
     "loi de Laplace",
     "loi géométrique",
-    "fonction de répartition",
-    "densité de probabilité",
-    "théorème des probabilités totales",
-    "variable aléatoire indépendante",
-    "loi uniforme"
+    "loi de Rademacher",
+    "théorème des probabilités totales"
   ],
   "methods": [
     "calcul de probabilité conditionnelle",
-    "théorème des probabilités totales",
     "détermination de la fonction de répartition",
-    "dérivation de la fonction de répartition",
-    "intégration pour calculer une probabilité"
+    "transformation de variable aléatoire",
+    "intégration pour calculer des probabilités",
+    "dérivation de la fonction de répartition"
   ],
   "objects": [
     "variable aléatoire uniforme",
@@ -27,7 +27,7 @@
     "fonction indicatrice",
     "partie entière"
   ],
-  "content_hash": "53dfbc3350877deff10990ae6b840b410a7c3f697ea8fc5b261946c77a0c3f32",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:07:42.410Z"
+  "content_hash": "8cec2a9a6c63123e885f8ac13d29cae5394991c3df335cb9e264be4f76282810",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:21.107Z"
 }

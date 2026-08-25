@@ -1,32 +1,31 @@
 {
   "uuid": "ZZrO",
   "source_path": "exo7/6-L2/ZZrO.tex",
-  "summary": "Étudier et construire la courbe paramétrée par x = a cos³t et y = a sin³t, puis calculer la longueur du segment A(t)B(t) formé par les intersections de la tangente en M(t) avec les axes (Ox) et (Oy) pour t ∈ ]0, π/2[.",
+  "summary": "Étudier et construire la courbe paramétrée par x = a cos³t et y = a sin³t, puis calculer la longueur constante des segments formés par les intersections des tangentes avec les axes.",
   "concepts": [
     "courbe paramétrée",
-    "symétrie géométrique",
+    "symétrie",
     "point singulier",
-    "tangente à une courbe",
-    "équation cartésienne de droite",
-    "variations de fonctions",
-    "périodicité"
+    "tangente",
+    "point de rebroussement",
+    "variation de fonction",
+    "équation cartésienne"
   ],
   "methods": [
-    "étude de la périodicité",
-    "analyse des symétries",
-    "calcul de dérivées",
-    "détermination de points singuliers",
-    "équation de la tangente",
-    "calcul de distance entre points"
+    "étude de domaine de paramétrisation",
+    "calcul de dérivée",
+    "analyse de symétrie",
+    "calcul de limite",
+    "équation de droite"
   ],
   "objects": [
     "courbe astroïde",
-    "paramétrisation trigonométrique",
-    "tangente à un point courant",
-    "points d'intersection avec les axes",
-    "segment de longueur"
+    "tangente",
+    "point courant",
+    "intersection avec axe",
+    "segment de longueur constante"
   ],
-  "content_hash": "653de30ad8dacd3247271816e0ed6892af37d2d72c7b99724277c0c644b5012e",
+  "content_hash": "a96369fe9b0c215be172a1906029f393cd0331c093fc3a507f25d42ce8296eff",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:38:56.540Z"
+  "indexed_at": "2026-08-25T12:24:24.918Z"
 }

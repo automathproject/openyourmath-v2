@@ -1,25 +1,29 @@
 {
   "uuid": "8SbE",
   "source_path": "amscc/8SbE.tex",
-  "summary": "Calculer la série de Fourier trigonométrique d'une fonction périodique paire et en déduire la valeur d'une somme infinie de termes en 1/(2n+1)².",
+  "summary": "Calculer la série de Fourier trigonométrique d'une fonction périodique définie par morceaux, puis utiliser cette série pour déterminer la valeur d'une somme infinie de termes en 1/(2n+1)².",
   "concepts": [
     "séries de Fourier",
     "théorème de Dirichlet",
-    "fonction paire",
+    "fonction périodique",
+    "coefficient de Fourier",
     "intégration par parties",
-    "convergence uniforme"
+    "convergence uniforme",
+    "somme de séries"
   ],
   "methods": [
     "calcul des coefficients de Fourier",
     "intégration par parties",
-    "évaluation en un point particulier"
+    "évaluation en un point particulier",
+    "utilisation de la parité"
   ],
   "objects": [
     "fonction périodique",
+    "série de Fourier",
     "coefficient de Fourier",
     "somme infinie"
   ],
-  "content_hash": "173a9c45b111201bf064b05abfb72651cd4401501875589458efa3bd811f0203",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:18:24.597Z"
+  "content_hash": "ccdd6d6eae68a231a66994d8c9b1bb4727cb796b3b84be575faf838d15ff594d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:22.270Z"
 }

@@ -1,11 +1,11 @@
 {
   "uuid": "r5ft",
   "source_path": "amscc/r5ft.tex",
-  "summary": "L'exercice demande de déterminer toutes les primitives de trois fonctions différentes en utilisant des changements de variables appropriés.",
+  "summary": "L'exercice demande de déterminer toutes les primitives de trois fonctions différentes : une fraction rationnelle avec exponentielle, un produit trigonométrique, et une fraction rationnelle avec racine carrée.",
   "concepts": [
-    "intégration",
-    "changement de variable",
     "primitive d'une fonction",
+    "intégration indéfinie",
+    "changement de variable",
     "fonction exponentielle",
     "fonction trigonométrique",
     "fonction rationnelle"
@@ -20,7 +20,7 @@
     "fonction trigonométrique",
     "fonction rationnelle"
   ],
-  "content_hash": "c7969d61ebee777e62fc35e89384c850819b74ef06c48421958c11fccb114105",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:34:59.046Z"
+  "content_hash": "ccc6b273c94679a1f8a61c576047f47932c3319047576ef3233daf7c908c521f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:27:09.463Z"
 }

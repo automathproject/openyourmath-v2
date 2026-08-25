@@ -1,29 +1,29 @@
 {
   "uuid": "DzLc",
   "source_path": "amscc/DzLc.tex",
-  "summary": "L'exercice demande de réaliser des tests du χ² pour déterminer si les réponses des sujets dépendent de leur classe d'âge, puis de comparer spécifiquement les deux dernières classes d'âge et les extrêmes d'âge.",
+  "summary": "L'exercice demande de réaliser un test du chi-carré pour déterminer si les réponses des sujets sur le SIDA dépendent de leur âge, puis de comparer spécifiquement les réponses des deux dernières classes d'âge et celles des moins de 30 ans avec celles des 60 ans et plus.",
   "concepts": [
-    "test du χ² d'indépendance",
-    "hypothèse nulle",
+    "test du chi-carré",
+    "hypothèse d'indépendance",
+    "tableau de contingence",
     "effectifs théoriques",
     "degrés de liberté",
     "seuil de signification",
-    "table de distribution du χ²",
     "statistique d'observation"
   ],
   "methods": [
-    "calcul des effectifs théoriques",
-    "calcul de la statistique χ²",
-    "comparaison avec la table critique",
-    "interprétation des résultats"
+    "calcul de la statistique du chi-carré",
+    "comparaison avec la loi du chi-carré",
+    "détermination des effectifs théoriques",
+    "interprétation des résultats en termes de dépendance"
   ],
   "objects": [
     "tableau de contingence",
-    "classes d'âge",
-    "réponses catégorielles",
-    "statistique χ²"
+    "effectifs observés",
+    "effectifs théoriques",
+    "statistique du chi-carré"
   ],
-  "content_hash": "fcecba5cd93c06fcf3f4cfe8d132075566e30d820f112db90404526200732fe8",
+  "content_hash": "a5c0368f239c6a2ef25d5d51478ff88c748e2ae474c60e83c31ed73e28be8700",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:07:03.797Z"
+  "indexed_at": "2026-08-25T12:29:23.898Z"
 }

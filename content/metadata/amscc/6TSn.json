@@ -1,32 +1,31 @@
 {
   "uuid": "6TSn",
   "source_path": "amscc/6TSn.tex",
-  "summary": "L'exercice étudie deux méthodes de recherche d'une clé parmi 10. La méthode A consiste à essayer les clés dans un ordre fixe, tandis que la méthode B utilise un tirage aléatoire avec remise. On calcule les probabilités associées à ces méthodes, notamment la probabilité d'essayer plus de 8 clés et la probabilité conditionnelle d'utiliser la méthode B après 8 échecs.",
+  "summary": "Un gardien doit ouvrir une porte avec une clé parmi 10. Deux méthodes sont comparées : essai séquentiel (méthode A) ou essai aléatoire avec remise (méthode B). L'exercice demande d'analyser les lois de probabilité associées à chaque méthode et de calculer des probabilités conditionnelles.",
   "concepts": [
-    "probabilité uniforme",
+    "loi uniforme discrète",
     "loi géométrique",
     "probabilité conditionnelle",
-    "théorème de Bayes",
-    "probabilités totales",
+    "théorème des probabilités totales",
+    "formule de Bayes",
     "variable aléatoire discrète",
-    "permutation",
-    "équiprobabilité"
+    "tirage avec remise"
   ],
   "methods": [
-    "calcul de probabilité élémentaire",
+    "calcul de probabilité par dénombrement",
     "modélisation par loi géométrique",
-    "application du théorème de Bayes",
-    "calcul de probabilités totales",
-    "calcul de somme infinie"
+    "calcul de probabilité conditionnelle",
+    "utilisation de la formule de Bayes",
+    "somme infinie de série géométrique"
   ],
   "objects": [
     "variable aléatoire discrète",
-    "permutation",
+    "loi de probabilité",
     "événement",
-    "loi géométrique",
-    "probabilité conditionnelle"
+    "probabilité conditionnelle",
+    "somme de probabilités"
   ],
-  "content_hash": "b9d7a0ba3e83f5618e3a5e2b8750c04d2d249c2bbb84b319d9effc30bafb9287",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:37:33.371Z"
+  "content_hash": "88bbe1ff6b3b6bdac0632bfef1b340e7b3aa8c3b91702433ce92da49b75256e0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:24:31.610Z"
 }

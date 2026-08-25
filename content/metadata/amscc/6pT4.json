@@ -1,29 +1,30 @@
 {
   "uuid": "6pT4",
   "source_path": "amscc/6pT4.tex",
-  "summary": "Exercice sur une variable aléatoire discrète définie par une loi de probabilité donnée. On détermine une constante inconnue, calcule l'espérance et la variance, puis applique les probabilités conditionnelles et la formule des probabilités totales.",
+  "summary": "Exercice sur une variable aléatoire discrète X prenant des valeurs de 1 à 5 avec des probabilités données. On détermine la constante a par normalisation, calcule l'espérance et la variance de X, puis étudie des probabilités conditionnelles liées à un test de contrôle qualité.",
   "concepts": [
     "variable aléatoire discrète",
     "espérance mathématique",
     "variance",
     "écart-type",
     "probabilité conditionnelle",
-    "formule des probabilités totales",
+    "probabilité totale",
     "formule de Bayes"
   ],
   "methods": [
-    "calcul de probabilité totale",
+    "normalisation d'une loi de probabilité",
     "calcul d'espérance",
     "calcul de variance",
+    "application de la formule des probabilités totales",
     "application de la formule de Bayes"
   ],
   "objects": [
     "loi de probabilité discrète",
-    "constante réelle",
     "événements A et B",
-    "probabilité conditionnelle"
+    "événement D",
+    "probabilité conditionnelle P(A|D)"
   ],
-  "content_hash": "5e5ff9b02e274b12c6fedddc4123c795a33a4ddfae6304b45eecaed7a5a0cc24",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:36:47.620Z"
+  "content_hash": "76ab58b64a0d26e482204a5507ae19f16be1414c4442133bdaba4e1ce9147aab",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:26:31.549Z"
 }

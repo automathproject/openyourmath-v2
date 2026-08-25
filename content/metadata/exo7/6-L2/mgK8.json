@@ -1,19 +1,19 @@
 {
   "uuid": "mgK8",
   "source_path": "exo7/6-L2/mgK8.tex",
-  "summary": "L'exercice demande de déterminer si des formes différentielles données sont exactes en utilisant le théorème de Poincaré, puis de trouver une primitive pour celles qui le sont.",
+  "summary": "L'exercice demande de déterminer si quatre formes différentielles données sont exactes, et dans l'affirmative, de les intégrer pour trouver une primitive. Les formes différentielles sont définies dans des espaces de dimensions 2 ou 3.",
   "concepts": [
-    "forme différentielle",
+    "forme différentielle exacte",
     "théorème de Poincaré",
-    "exactitude d'une forme différentielle",
-    "différentielle d'une fonction",
-    "intégration partielle",
+    "intégration de formes différentielles",
+    "primitive d'une forme différentielle",
+    "différentielle extérieure",
     "conditions de compatibilité"
   ],
   "methods": [
     "calcul des dérivées partielles",
-    "résolution de système d'équations aux dérivées partielles",
-    "intégration par rapport à une variable",
+    "résolution de systèmes d'équations aux dérivées partielles",
+    "intégration par parties",
     "identification de primitives"
   ],
   "objects": [
@@ -22,7 +22,7 @@
     "fonction scalaire primitive",
     "champ de vecteurs"
   ],
-  "content_hash": "59b04749c3e87edb5d66bb2044681d527bf96daccc9134e871923ef2e9048a1d",
+  "content_hash": "b8041b0921f113ff19224387410087c56ca2d60015b5966739b7ad94b6d25133",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:06:37.180Z"
+  "indexed_at": "2026-08-25T12:23:43.301Z"
 }

@@ -1,14 +1,14 @@
 {
   "uuid": "qNxE",
   "source_path": "amscc/qNxE.tex",
-  "summary": "L'exercice demande de calculer des probabilités conditionnelles pour des variables aléatoires Rademacher et uniforme, puis de déterminer la fonction de répartition et la loi de Laplace d'une variable construite à partir de ces variables.",
+  "summary": "L'exercice demande de calculer des probabilités conditionnelles pour des variables aléatoires Rademacher et uniforme, puis de déterminer la fonction de répartition d'une variable transformée U. Enfin, il s'agit de prouver que U suit une loi de Laplace et de simuler cette loi à partir d'une fonction de tirage aléatoire uniforme.",
   "concepts": [
     "variable aléatoire discrète",
     "variable aléatoire continue",
     "loi de Rademacher",
     "loi uniforme",
-    "fonction de répartition",
     "loi de Laplace",
+    "fonction de répartition",
     "théorème des probabilités totales",
     "densité de probabilité"
   ],
@@ -16,15 +16,17 @@
     "calcul de probabilité conditionnelle",
     "application du théorème des probabilités totales",
     "détermination de la fonction de répartition",
-    "dérivation de la fonction de répartition"
+    "dérivation de la fonction de répartition",
+    "simulation de loi"
   ],
   "objects": [
     "variable aléatoire Rademacher",
     "variable aléatoire uniforme",
-    "variable aléatoire U",
-    "fonction de répartition de U"
+    "variable aléatoire transformée",
+    "fonction de répartition",
+    "densité de probabilité"
   ],
-  "content_hash": "39360065d2424cb44c9b38e5786d087cb270ef506f10984f33943c25e3d80a27",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:07:06.598Z"
+  "content_hash": "5d42752bf555d023f60ca65961175f8c91ae9e0a3c3c542afb268927e178abd8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:28:17.467Z"
 }

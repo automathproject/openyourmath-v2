@@ -1,7 +1,7 @@
 {
   "uuid": "cRYI",
   "source_path": "amscc/cRYI.tex",
-  "summary": "L'exercice étudie une variable aléatoire Z définie par sa fonction de répartition F_Z en trois morceaux. Il demande de vérifier que F_Z est bien une fonction de répartition, de calculer des probabilités ponctuelles, de déterminer un paramètre α pour une variable discrète Y, de construire la fonction de répartition de Y, et d'analyser une combinaison linéaire de F_Z et F_Y pour obtenir une nouvelle variable aléatoire X.",
+  "summary": "L'exercice étudie une variable aléatoire Z définie par sa fonction de répartition F_Z en trois morceaux. Il demande de vérifier que F_Z est bien une fonction de répartition, de calculer des probabilités ponctuelles, de déterminer un paramètre α pour une variable discrète Y, de construire la fonction de répartition de Y, puis d'analyser une combinaison linéaire de F_Z et F_Y pour en déduire une nouvelle variable aléatoire X.",
   "concepts": [
     "fonction de répartition",
     "variable aléatoire discrète",
@@ -12,20 +12,20 @@
     "probabilité ponctuelle"
   ],
   "methods": [
-    "calcul de probabilité ponctuelle par différence de fonctions de répartition",
+    "calcul de probabilités ponctuelles par différences de fonctions de répartition",
     "vérification des propriétés d'une fonction de répartition",
-    "détermination de paramètre par équation de probabilité totale",
+    "détermination de paramètres par équations de probabilités",
     "construction de fonction de répartition discrète",
     "dérivation pour obtenir une densité"
   ],
   "objects": [
-    "fonction de répartition par morceaux",
-    "variable aléatoire discrète Y",
-    "variable aléatoire continue Z",
-    "fonction F(x) = F_Z(x) - (5/12)F_Y(x)",
-    "densité de probabilité de X"
+    "fonction de répartition",
+    "variable aléatoire discrète",
+    "variable aléatoire continue",
+    "densité de probabilité",
+    "fonction en morceaux"
   ],
-  "content_hash": "18c8ca4b1391377c2071367402d4668ce4c918ed23358609657474b519af1046",
+  "content_hash": "985d77a9ce9ccab796ada6ea9ddbe2db976b35d94bf9c4a36860e7fef4edc77c",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:00:46.239Z"
+  "indexed_at": "2026-08-25T12:27:59.106Z"
 }

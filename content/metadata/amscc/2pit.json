@@ -1,30 +1,30 @@
 {
   "uuid": "2pit",
   "source_path": "amscc/2pit.tex",
-  "summary": "Résolution d'une équation différentielle linéaire du second ordre par la méthode des séries entières, avec conditions initiales. L'exercice demande d'exprimer les dérivées successives sous forme de série entière, de déterminer les premiers coefficients et d'établir une relation de récurrence pour les coefficients restants.",
+  "summary": "Résolution d'une équation différentielle linéaire du second ordre par la méthode des séries entières, avec conditions initiales. L'exercice demande d'exprimer les dérivées sous forme de séries entières, de déterminer les coefficients initiaux, d'établir une relation de récurrence et d'expliciter la solution sous forme de série entière.",
   "concepts": [
-    "séries entières",
     "équation différentielle linéaire",
-    "conditions initiales",
+    "série entière",
     "relation de récurrence",
-    "convergence de série",
-    "développement en série entière",
-    "somme de séries"
+    "convergence des séries",
+    "conditions initiales",
+    "développement en série de Taylor"
   ],
   "methods": [
     "développement en série entière",
-    "substitution de séries",
-    "ajustement d'indices",
-    "calcul de coefficients",
-    "récurrence"
+    "ajustement des indices de sommation",
+    "identification des coefficients",
+    "résolution de relation de récurrence",
+    "calcul des coefficients par récurrence"
   ],
   "objects": [
     "équation différentielle",
+    "suite de coefficients",
     "série entière",
-    "coefficients de série",
+    "fonction solution",
     "dérivées successives"
   ],
-  "content_hash": "6ac574446e5d2701413e00fb5d985b3c9bd6c99a05c52399b70a26332775d7a4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:33:11.040Z"
+  "content_hash": "806e7a7ea15c3b978bbe1c4a2c0c0900e42f33b92c28bc878a32b93199113d2b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:25.827Z"
 }

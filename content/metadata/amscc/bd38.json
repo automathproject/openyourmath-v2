@@ -1,31 +1,33 @@
 {
   "uuid": "bd38",
   "source_path": "amscc/bd38.tex",
-  "summary": "L'exercice demande de factoriser un polynôme cubique en identifiant une racine simple, puis de déterminer un polynôme quadratique associé, d'étudier son irréductibilité, de trouver ses racines complexes, et enfin de décomposer une fraction rationnelle en éléments simples sur les réels.",
+  "summary": "L'exercice demande de factoriser un polynôme du troisième degré, de déterminer ses racines réelles et complexes, et de décomposer une fraction rationnelle en éléments simples. Il utilise des limites pour déterminer des coefficients dans la décomposition.",
   "concepts": [
-    "racine simple de polynôme",
+    "racine de polynôme",
+    "racine simple",
     "factorisation de polynôme",
     "polynôme irréductible",
-    "racines complexes",
     "décomposition en éléments simples",
     "limite de fonction rationnelle",
-    "comportement asymptotique"
+    "discriminant",
+    "polynôme scindé"
   ],
   "methods": [
     "identification des coefficients",
+    "calcul de limite asymptotique",
     "division euclidienne",
-    "calcul de discriminant",
-    "limite de fonctions rationnelles",
-    "rationalisation de dénominateur"
+    "calcul de dérivée",
+    "rationalisation",
+    "détermination de racines complexes"
   ],
   "objects": [
-    "polynôme cubique",
-    "polynôme quadratique",
-    "racine simple",
+    "polynôme de degré 3",
+    "polynôme de degré 2",
+    "fraction rationnelle",
     "racines complexes",
-    "fraction rationnelle"
+    "décomposition en facteurs irréductibles"
   ],
-  "content_hash": "ff2cc8f0dfc021e69844bae040b351e2b53e34944f81403e78f900bd9384c84c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:34:49.288Z"
+  "content_hash": "02439c3a14139375ac831328858585e3ad7f60148357156932db4f726945292b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:27:07.502Z"
 }

@@ -1,29 +1,30 @@
 {
   "uuid": "3fK8",
   "source_path": "amscc/3fK8.tex",
-  "summary": "L'exercice demande de déterminer les développements en série entière au voisinage de 0 de trois fonctions : g(x) = ln(1+x)/x, h(x) = 1/(1+x), et f(x) = 1/(3 + x/2), ainsi que leurs rayons de convergence. Il s'agit d'appliquer des développements connus et de manipuler des séries entières.",
+  "summary": "L'exercice demande de déterminer les développements en série entière au voisinage de 0 des fonctions g(x) = ln(1+x)/x, h(x) = 1/(1+x), puis de déduire ceux de f(x) = 1/(3 + x/2) et de f(x)², en calculant dans chaque cas le rayon de convergence.",
   "concepts": [
     "développement en série entière",
     "rayon de convergence",
     "série géométrique",
     "dérivation de série entière",
-    "singularité d'une fonction"
+    "changement de variable dans une série",
+    "fonction logarithme",
+    "fonction rationnelle"
   ],
   "methods": [
-    "développement en série de ln(1+x)",
-    "changement de variable dans une série",
-    "développement de 1/(1+x)",
-    "développement de 1/(1+x)^2 par dérivation",
-    "calcul du rayon de convergence"
+    "développement en série connue",
+    "changement de variable",
+    "dérivation formelle de série",
+    "factorisation",
+    "calcul de rayon de convergence par singularité"
   ],
   "objects": [
-    "fonction g(x) = ln(1+x)/x",
-    "fonction h(x) = 1/(1+x)",
-    "fonction f(x) = 1/(3 + x/2)",
+    "fonction rationnelle",
+    "fonction logarithme",
     "série entière",
     "rayon de convergence"
   ],
-  "content_hash": "e047e8c6fd49883d5b7c5cc6cbda01d247ee7c0ccf9a1d28d49712c5ba76df38",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-06-20T20:39:05.449Z"
+  "content_hash": "0d8b924008851c7549d41e06b941b7e0ff4cd1893a304f692436489ed90e7a3f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:31:12.479Z"
 }

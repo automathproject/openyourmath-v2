@@ -1,26 +1,28 @@
 {
   "uuid": "kbR8",
   "source_path": "amscc/kbR8.tex",
-  "summary": "L'exercice demande de calculer le rayon de convergence d'une série entière et de déterminer sa convergence en ce rayon. Il s'agit ensuite de décomposer une fraction rationnelle en éléments simples et de calculer la somme de la série pour les valeurs de x strictement inférieures au rayon de convergence.",
+  "summary": "L'exercice demande de calculer le rayon de convergence d'une série entière et d'étudier sa convergence en son point de frontière. Il nécessite ensuite de décomposer une fraction rationnelle en éléments simples et d'exprimer la somme de la série sous forme close pour les valeurs de x dans le disque de convergence.",
   "concepts": [
-    "série entière",
     "rayon de convergence",
+    "série entière",
     "convergence absolue",
     "décomposition en éléments simples",
     "fonction génératrice",
-    "somme de série"
+    "comparaison asymptotique"
   ],
   "methods": [
     "critère de d'Alembert",
     "décomposition en fractions partielles",
-    "calcul de somme de série entière"
+    "calcul de somme de série entière",
+    "approximation des termes dominants"
   ],
   "objects": [
     "série entière",
     "fraction rationnelle",
+    "fonction logarithme",
     "rayon de convergence"
   ],
-  "content_hash": "59c119caeec2b53c976b01393f5145d8b3d24128cae9040c905c94d1cc1c5524",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:51:22.416Z"
+  "content_hash": "2f2edb14318428a7b48eacdfcfbd40c90856574c579dff41035bed538038f493",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:30:40.640Z"
 }

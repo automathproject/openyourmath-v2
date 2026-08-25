@@ -1,32 +1,36 @@
 {
   "uuid": "CPgC",
   "source_path": "amscc/CPgC.tex",
-  "summary": "L'exercice demande de démontrer des propriétés des fonctions hyperboliques, de tracer des courbes paramétrées et de calculer des longueurs associées, notamment pour la chaînette. Il aborde aussi la conversion entre équations cartésiennes et paramétriques.",
+  "summary": "L'exercice demande de démontrer des propriétés algébriques et différentielles des fonctions hyperboliques cosinus et sinus hyperboliques, d'étudier les courbes paramétrées associées, et d'établir une équation paramétrique pour une chaînette. Il aborde aussi les bijections réciproques des fonctions hyperboliques et leurs dérivées.",
   "concepts": [
     "fonctions hyperboliques",
+    "identité fondamentale des hyperboliques",
     "courbes paramétrées",
     "chaînette",
-    "bijection",
-    "fonction réciproque",
-    "intégration",
+    "bijection réciproque",
     "dérivation",
-    "identités hyperboliques"
+    "intégration",
+    "équation cartésienne",
+    "paramétrisation de courbe"
   ],
   "methods": [
     "développement algébrique",
-    "calcul de dérivées",
-    "intégration par changement de variable",
-    "utilisation de bijections",
-    "résolution d'équations différentielles"
+    "dérivation",
+    "intégration",
+    "utilisation de l'identité hyperbolique fondamentale",
+    "résolution d'équation différentielle",
+    "changement de variable",
+    "calcul de primitive"
   ],
   "objects": [
     "fonctions cosinus hyperbolique",
     "fonctions sinus hyperbolique",
     "courbe paramétrée",
     "chaînette",
+    "fonctions réciproques hyperboliques",
     "intégrale de longueur d'arc"
   ],
-  "content_hash": "73d427ac20097d82da903683f52a9c23f106412bbd751aefad61581ec613c6bb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:45:38.103Z"
+  "content_hash": "f65a4f26c0806ecd97e7ca49038fdc616be57dba6df7b260d773e5a0356f1a78",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:24:22.351Z"
 }

@@ -5,10 +5,10 @@
   "concepts": [
     "variable aléatoire discrète",
     "loi binomiale",
+    "probabilité conditionnelle",
     "indépendance de variables aléatoires",
     "théorème des probabilités totales",
-    "probabilité conditionnelle",
-    "espérance et variance"
+    "variable aléatoire de Bernoulli"
   ],
   "methods": [
     "décomposition de probabilité",
@@ -17,12 +17,12 @@
     "comparaison de probabilités"
   ],
   "objects": [
-    "variable aléatoire de Bernoulli",
     "variable aléatoire binomiale",
+    "variable aléatoire de Bernoulli",
     "probabilité de gain",
     "nombre de succès dans une série de lancers"
   ],
-  "content_hash": "7ebf47cf5934f2893a6aa890151d0899e62a17644863a90fa5128086cafe0d89",
+  "content_hash": "a5939175a6bef821c1f99ffa1467d825bbda8a9f6f49b987731e1bf97e458238",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:01:09.976Z"
+  "indexed_at": "2026-08-25T12:28:36.911Z"
 }

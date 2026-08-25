@@ -1,30 +1,32 @@
 {
   "uuid": "aYzL",
   "source_path": "amscc/aYzL.tex",
-  "summary": "L'exercice demande d'étudier la convergence d'une suite de variables aléatoires définie par une méthode de Monte Carlo pour approximer une intégrale. Il s'agit de démontrer la convergence presque sûre de cette suite et d'analyser ses propriétés statistiques.",
+  "summary": "L'exercice demande d'étudier la convergence d'une méthode de Monte Carlo pour approximer l'intégrale d'une fonction à l'aide de variables aléatoires uniformes. Il aborde la convergence presque sûre, l'estimation de l'erreur et l'approximation de la variance par une méthode de différences.",
   "concepts": [
     "loi forte des grands nombres",
     "théorème central limite",
     "espérance d'une variable aléatoire",
     "variance d'une variable aléatoire",
     "convergence presque sûre",
-    "théorème de transfert",
-    "loi normale centrée réduite"
+    "loi normale centrée réduite",
+    "théorème de transfert"
   ],
   "methods": [
-    "approximation par Monte Carlo",
+    "méthode de Monte Carlo",
+    "standardisation",
+    "approximation gaussienne",
     "calcul d'espérance",
     "calcul de variance",
-    "standardisation",
-    "approximation gaussienne"
+    "estimation par différences"
   ],
   "objects": [
-    "suite de variables aléatoires",
-    "intégrale",
+    "suite de variables aléatoires i.i.d.",
+    "intégrale d'une fonction",
     "variable aléatoire uniforme",
+    "estimateur de Monte Carlo",
     "variable aléatoire gaussienne"
   ],
-  "content_hash": "59aba39dd563f57e4083c56ba85fe129853c1a66d2667d30be4b47de7a59872d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:55:50.049Z"
+  "content_hash": "2ebe89afeeabc9d55093de62433312463cc162c72c2029ca374bc3e2130514f3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-08-25T12:27:53.032Z"
 }
