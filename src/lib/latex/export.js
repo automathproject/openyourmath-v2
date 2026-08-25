@@ -425,7 +425,9 @@ function buildPreamble(body, docTitle, options) {
  * @param {Object[]} exercises — liste d'objets exercice (format listStore)
  * @param {string}   title     — titre de la liste
  * @param {LatexExportOptions} options
- * @returns {{ source: string, anchors: { uuid: string, title: string, index: number, line: number }[] }}
+ * @returns {{ source: string, anchors: { uuid: string, title: string, index: number, line: number }[], images: { localPath: string, url: string }[] }}
+ *   `images` : fichiers à placer à côté du .tex pour que le document compile
+ *   avec ses illustrations.
  *   `line` : numéro de ligne (1-indexé) du début de l'exercice dans `source`.
  */
 export function buildLatexExport(exercises, title, options = {}) {
@@ -642,7 +644,7 @@ export function buildLatexExport(exercises, title, options = {}) {
   const offset = preambleLines.length;
   const shiftedAnchors = anchors.map((a) => ({ ...a, line: a.line + offset }));
 
-  return { source, anchors: shiftedAnchors };
+  return { source, anchors: shiftedAnchors, images: allImages };
 }
 
 /**

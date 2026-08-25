@@ -4,12 +4,22 @@
   la configuration qui lui est propre.
 -->
 <script>
-  export let includeHints = true;
-  export let includeSolutions = true;
-  export let solutionsAtEnd = false;
-  export let compact = false;
+  let {
+    includeHints = $bindable(true),
+    includeSolutions = $bindable(true),
+    solutionsAtEnd = $bindable(false),
+    compact = false,
+  } = $props();
 
-  $: if (!includeSolutions && solutionsAtEnd) solutionsAtEnd = false;
+  /**
+   * Retirer les solutions rend leur position sans objet : on la réinitialise
+   * à la source plutôt que par un effet réactif, pour que l'état ne transite
+   * jamais par une combinaison incohérente.
+   */
+  function toggleSolutions(event) {
+    includeSolutions = event.currentTarget.checked;
+    if (!includeSolutions) solutionsAtEnd = false;
+  }
 </script>
 
 <fieldset
@@ -24,7 +34,11 @@
   </label>
 
   <label class="content-option">
-    <input type="checkbox" bind:checked={includeSolutions} />
+    <input
+      type="checkbox"
+      checked={includeSolutions}
+      onchange={toggleSolutions}
+    />
     <span>Inclure les solutions</span>
   </label>
 

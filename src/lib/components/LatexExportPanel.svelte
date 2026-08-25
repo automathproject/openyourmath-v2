@@ -13,16 +13,17 @@
   import { generateLatexDocument, downloadTexFile } from '$lib/latex/export.js';
   import LatexContentOptions from '$lib/components/LatexContentOptions.svelte';
 
-  /** @type {Object[]} */
-  export let exercises = [];
-
-  /** @type {string} */
-  export let title = '';
+  let {
+    /** @type {Object[]} */
+    exercises = [],
+    /** @type {string} */
+    title = '',
+  } = $props();
 
   // Options d'export
-  let includeHints = true;
-  let includeSolutions = true;
-  let solutionsAtEnd = false;
+  let includeHints = $state(true);
+  let includeSolutions = $state(true);
+  let solutionsAtEnd = $state(false);
 
   function handleDownload() {
     const content = generateLatexDocument(exercises, title, {
@@ -41,7 +42,7 @@
     <LatexContentOptions bind:includeHints bind:includeSolutions bind:solutionsAtEnd />
   </div>
 
-  <button class="latex-download-btn" on:click={handleDownload}>
+  <button class="latex-download-btn" onclick={handleDownload}>
     <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
         d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />

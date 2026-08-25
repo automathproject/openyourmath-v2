@@ -9,60 +9,73 @@
     title      {string}    — titre de la liste (document + nom de fichier)
 -->
 <script>
+  import { untrack } from 'svelte';
   import { browser } from '$app/environment';
   import {
     buildLatexExport,
     fetchArtifactsMap,
     downloadTexFile,
+    latexFileName,
   } from '$lib/latex/export.js';
   import LatexContentOptions from '$lib/components/LatexContentOptions.svelte';
   import LatexCompiler from '$lib/components/LatexCompiler.svelte';
 
-  /** @type {Object[]} */
-  export let exercises = [];
-
-  /** @type {string} */
-  export let title = '';
+  let {
+    /** @type {Object[]} */
+    exercises = [],
+    /** @type {string} */
+    title = '',
+  } = $props();
 
   // Options d'export
-  let includeHints = true;
-  let includeSolutions = true;
-  let solutionsAtEnd = false;
+  let includeHints = $state(true);
+  let includeSolutions = $state(true);
+  let solutionsAtEnd = $state(false);
 
   // Artifacts (images, blocs de code) chargés à la demande
-  let artifactsMap = {};
-  let artifactsLoading = false;
-  let lastUuidsKey = null;
+  let artifactsMap = $state({});
+  let artifactsLoading = $state(false);
 
-  $: uuidsKey = (exercises || []).map((e) => e.uuid).join(',');
-  $: if (browser && uuidsKey !== lastUuidsKey) {
-    lastUuidsKey = uuidsKey;
-    loadArtifacts();
-  }
+  let uuidsKey = $derived((exercises || []).map((e) => e.uuid).join(','));
 
-  async function loadArtifacts() {
-    const key = uuidsKey;
+  // Le rechargement suit la composition de la liste, pas l'identité du tableau
+  // reçu : `uuidsKey` est la seule dépendance suivie, `exercises` est lu hors
+  // du graphe pour qu'un nouveau tableau aux mêmes uuids ne relance rien.
+  $effect(() => {
+    uuidsKey;
+    if (!browser) return;
+
+    let cancelled = false;
     artifactsLoading = true;
-    try {
-      const map = await fetchArtifactsMap(exercises);
-      if (key === uuidsKey) artifactsMap = map;
-    } finally {
-      if (key === uuidsKey) artifactsLoading = false;
-    }
-  }
+    fetchArtifactsMap(untrack(() => exercises))
+      .then((map) => {
+        if (!cancelled) artifactsMap = map;
+      })
+      .finally(() => {
+        if (!cancelled) artifactsLoading = false;
+      });
+
+    // Une liste modifiée pendant le chargement annule le résultat en vol :
+    // sans cela, une réponse lente écraserait les artifacts de la nouvelle.
+    return () => {
+      cancelled = true;
+    };
+  });
 
   // Génération du document
-  $: exportResult = buildLatexExport(exercises || [], title, {
-    includeHints,
-    includeSolutions,
-    solutionsAtEnd,
-    artifactsMap,
-    origin: browser ? window.location.origin : '',
-  });
-  $: source = exportResult.source;
-  $: anchors = exportResult.anchors;
-  $: hlLines = highlightSource(source);
-  $: fileName = `${(title || 'seance').replace(/[^a-z0-9\-_]/gi, '_').toLowerCase()}.tex`;
+  let exportResult = $derived(
+    buildLatexExport(exercises || [], title, {
+      includeHints,
+      includeSolutions,
+      solutionsAtEnd,
+      artifactsMap,
+      origin: browser ? window.location.origin : '',
+    }),
+  );
+  let source = $derived(exportResult.source);
+  let anchors = $derived(exportResult.anchors);
+  let hlLines = $derived(highlightSource(source));
+  let fileName = $derived(`${latexFileName(title, 'seance')}.tex`);
 
   // ── Coloration syntaxique LaTeX (légère, avec suivi du mode math) ──
   function escapeHtml(s) {
@@ -113,10 +126,12 @@
   }
 
   // ── Navigation entre exercices ──
-  let bodyEl;
-  let currentExo = 0;
-  let flashFrom = 0;
-  let flashTo = 0;
+  let bodyEl = $state(null);
+  let currentExo = $state(0);
+  let flashFrom = $state(0);
+  let flashTo = $state(0);
+  // Ni le minuteur ni le verrou d'animation ne sont lus par le rendu :
+  // les garder hors de $state évite des invalidations inutiles.
   let flashTimer = null;
   let scrollTicking = false;
 
@@ -168,9 +183,9 @@
   }
 
   // ── Actions ──
-  let copied = false;
+  let copied = $state(false);
   let copyTimer = null;
-  let compileMode = false;
+  let compileMode = $state(false);
 
   async function copySource() {
     try {
@@ -212,14 +227,14 @@
           <button
             class="editor-nav-btn"
             disabled={currentExo <= 0}
-            on:click={() => gotoExercise(currentExo - 1)}
+            onclick={() => gotoExercise(currentExo - 1)}
             title="Exercice précédent"
             aria-label="Exercice précédent"
           >‹</button>
           <select
             class="editor-nav-select"
             value={currentExo}
-            on:change={handleSelectExo}
+            onchange={handleSelectExo}
             aria-label="Aller à un exercice"
           >
             {#each anchors as a, i}
@@ -229,20 +244,20 @@
           <button
             class="editor-nav-btn"
             disabled={currentExo >= anchors.length - 1}
-            on:click={() => gotoExercise(currentExo + 1)}
+            onclick={() => gotoExercise(currentExo + 1)}
             title="Exercice suivant"
             aria-label="Exercice suivant"
           >›</button>
         </div>
 
         <div class="editor-actions">
-          <button class="editor-action-btn editor-action-btn--primary" on:click={() => (compileMode = true)}>
+          <button class="editor-action-btn editor-action-btn--primary" onclick={() => (compileMode = true)}>
             Compiler le PDF
           </button>
-          <button class="editor-action-btn" on:click={copySource}>
+          <button class="editor-action-btn" onclick={copySource}>
             {#if copied}✓ Copié{:else}Copier{/if}
           </button>
-          <button class="editor-action-btn editor-action-btn--primary" on:click={download}>
+          <button class="editor-action-btn editor-action-btn--primary" onclick={download}>
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
             .tex
           </button>
@@ -252,7 +267,7 @@
       <div
         class="editor-body"
         bind:this={bodyEl}
-        on:scroll={handleScroll}
+        onscroll={handleScroll}
         tabindex="0"
         role="region"
         aria-label="Source LaTeX de la liste d'exercices"
@@ -291,7 +306,7 @@
         <h2 id="list-latex-compiler-title">Compilation LaTeX</h2>
         <p>Source de la liste à gauche, PDF compilé à droite.</p>
       </div>
-      <button type="button" class="compiler-close" on:click={() => (compileMode = false)}>
+      <button type="button" class="compiler-close" onclick={() => (compileMode = false)}>
         ← Revenir à la source
       </button>
     </div>

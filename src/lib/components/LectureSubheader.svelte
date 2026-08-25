@@ -3,28 +3,36 @@
   import AddToListButton from './AddToListButton.svelte';
   import MathRenderer from './MathRenderer.svelte';
   import StarsRating from './StarsRating.svelte';
-  import { generateLatexDocument, downloadTexFile } from '$lib/latex/export.js';
+  import { LatexExport } from '$lib/latex/exportState.svelte.js';
 
-  export let exercise = {};
-  export let mode = 'classic';
-  export let showHint = false;
-  export let showSolution = false;
-  export let questionCount = 0;
-  export let showModeSwitch = true;
-  export let showShareAction = true;
-  export let showLatexAction = true;
-  export let showPrimaryAction = true;
-  export let showRevealControls = true;
-  export let compactMobile = false;
+  let {
+    exercise = {},
+    // Les trois états de lecture sont pilotés depuis l'en-tête mais partagés
+    // avec ExerciseContent : la page parente en reste propriétaire.
+    mode = $bindable('classic'),
+    showHint = $bindable(false),
+    showSolution = $bindable(false),
+    questionCount = 0,
+    showModeSwitch = true,
+    showShareAction = true,
+    showLatexAction = true,
+    showPrimaryAction = true,
+    showRevealControls = true,
+    compactMobile = false,
+  } = $props();
 
-  let shareLabel = 'Partager';
+  let shareLabel = $state('Partager');
 
-  $: isImmersive = mode === 'immersive';
-  $: titleSizeClass = isImmersive ? 'lecture-title--immersive' : 'lecture-title--classic';
-  $: difficulty = Math.min(Number(exercise?.difficulty) || 0, 4);
-  $: timeAndCount = [
-    questionCount > 0 ? `${questionCount} question${questionCount > 1 ? 's' : ''}` : ''
-  ].filter(Boolean);
+  let isImmersive = $derived(mode === 'immersive');
+  let titleSizeClass = $derived(
+    isImmersive ? 'lecture-title--immersive' : 'lecture-title--classic',
+  );
+  let difficulty = $derived(Math.min(Number(exercise?.difficulty) || 0, 4));
+  let timeAndCount = $derived(
+    [
+      questionCount > 0 ? `${questionCount} question${questionCount > 1 ? 's' : ''}` : ''
+    ].filter(Boolean),
+  );
 
   async function shareExercise() {
     if (typeof window === 'undefined') return;
@@ -53,13 +61,18 @@
     }
   }
 
+  // L'export d'un exercice seul passe par la même fabrique que celui d'une
+  // liste : il récupère ainsi les images et les blocs de code que cette action
+  // laissait auparavant de côté sans le signaler.
+  const latexExport = new LatexExport(() => ({
+    exercises: exercise ? [exercise] : [],
+    title: exercise?.title || 'Exercice',
+    fallbackName: exercise?.uuid || 'exercice',
+  }));
+
   function downloadLatex() {
     if (!exercise) return;
-    const content = generateLatexDocument([exercise], exercise.title || 'Exercice', {
-      includeHints: true,
-      includeSolutions: true
-    });
-    downloadTexFile(content, exercise.title || exercise.uuid || 'exercice');
+    latexExport.download();
   }
 </script>
 
@@ -72,7 +85,7 @@
   {#if isImmersive && (showModeSwitch || showShareAction || showPrimaryAction)}
     <div class="lecture-immersive-bar">
       {#if showModeSwitch}
-        <button type="button" class="immersive-exit-btn" on:click={() => mode = 'classic'}>
+        <button type="button" class="immersive-exit-btn" onclick={() => mode = 'classic'}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path d="M19 12H5M12 5l-7 7 7 7"/>
           </svg>
@@ -86,13 +99,13 @@
             type="button"
             class="btn btn-ghost btn-sm lecture-action"
             class:immersive-action--active={showSolution}
-            on:click={() => showSolution = !showSolution}
+            onclick={() => showSolution = !showSolution}
           >
             {showSolution ? 'Masquer solutions' : 'Solutions'}
           </button>
         {/if}
         {#if showShareAction}
-          <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
+          <button type="button" class="btn btn-ghost btn-sm lecture-action" onclick={shareExercise}>
             <span aria-hidden="true">↗</span>
             <span>{shareLabel}</span>
           </button>
@@ -140,7 +153,7 @@
                   type="button"
                   class:active={mode === 'classic'}
                   aria-pressed={mode === 'classic'}
-                  on:click={() => mode = 'classic'}
+                  onclick={() => mode = 'classic'}
                 >
                   Classique
                 </button>
@@ -148,7 +161,7 @@
                   type="button"
                   class:active={mode === 'immersive'}
                   aria-pressed={mode === 'immersive'}
-                  on:click={() => mode = 'immersive'}
+                  onclick={() => mode = 'immersive'}
                 >
                   Immersif
                 </button>
@@ -156,14 +169,14 @@
             {/if}
 
             {#if showShareAction}
-              <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={shareExercise}>
+              <button type="button" class="btn btn-ghost btn-sm lecture-action" onclick={shareExercise}>
                 <span aria-hidden="true">↗</span>
                 <span>{shareLabel}</span>
               </button>
             {/if}
 
             {#if showLatexAction}
-              <button type="button" class="btn btn-ghost btn-sm lecture-action" on:click={downloadLatex}>
+              <button type="button" class="btn btn-ghost btn-sm lecture-action" onclick={downloadLatex}>
                 <span aria-hidden="true">⤓</span>
                 <span>LaTeX</span>
               </button>
@@ -212,7 +225,7 @@
               class="reveal-button reveal-button--hint"
               class:active={showHint}
               aria-pressed={showHint}
-              on:click={() => showHint = !showHint}
+              onclick={() => showHint = !showHint}
             >
               <span>Tout révéler : indices</span>
               {#if showHint}<span class="reveal-check" aria-hidden="true">✓</span>{/if}
@@ -225,7 +238,7 @@
               class="reveal-button reveal-button--solution"
               class:active={showSolution}
               aria-pressed={showSolution}
-              on:click={() => showSolution = !showSolution}
+              onclick={() => showSolution = !showSolution}
             >
               <span>Tout révéler : solutions</span>
               {#if showSolution}<span class="reveal-check" aria-hidden="true">✓</span>{/if}
