@@ -15,7 +15,11 @@ import {
   splitEnumerateItems,
 } from '../../src/lib/latex/exerciseTex.js';
 import { latexToPreviewHtml, blocksToPreviewContent } from '../../src/lib/latex/texPreview.js';
-import { generateLatexDocument } from '../../src/lib/latex/export.js';
+import {
+  generateLatexDocument,
+  buildLatexExport,
+  latexFileName,
+} from '../../src/lib/latex/export.js';
 import {
   limitedSequenceBlocksFromAi,
   limitedSequenceLatex,
@@ -447,5 +451,110 @@ describe('blocksToPreviewContent', () => {
     expect(content[0]).toMatchObject({ id: 'a', type: 'text', order: 1 });
     expect(content[0].html).toContain('$x$');
     expect(content[1].order).toBe(2);
+  });
+});
+
+// Les figures suivent deux chemins distincts : le .tex téléchargé garde ses
+// \includegraphics pour une compilation locale, tandis que le document envoyé
+// au compilateur en ligne doit composer avec un service qui n'accepte que des
+// fichiers texte et range tout dans un répertoire unique.
+describe('buildLatexExport — traitement des images', () => {
+  const exercises = [{
+    uuid: 'zzzz',
+    title: 'Figures',
+    content: [{
+      type: 'question',
+      order: 1,
+      latex:
+        'Photo : \\includegraphics[width=6cm]{fig/photo.jpg}\n' +
+        'Schéma : \\includegraphics{fig/plan.svg}',
+    }],
+  }];
+
+  const artifactsMap = {
+    zzzz: {
+      images: [
+        { originalPath: 'fig/photo.jpg', url: '/artifacts/images/zzzz/photo.jpg' },
+        { originalPath: 'fig/plan.svg', url: '/artifacts/images/zzzz/plan.svg' },
+      ],
+    },
+  };
+
+  it('conserve toutes les figures en mode fichiers (compilation locale)', () => {
+    const result = buildLatexExport(exercises, 'T', { artifactsMap });
+
+    expect(result.source).toContain('\\includegraphics[width=6cm]{images/zzzz/photo.jpg}');
+    expect(result.source).toContain('\\includegraphics{images/zzzz/plan.svg}');
+    expect(result.skippedImages).toEqual([]);
+    expect(result.images.map((i) => i.localPath)).toEqual([
+      'images/zzzz/photo.jpg',
+      'images/zzzz/plan.svg',
+    ]);
+  });
+
+  it('aplatit les noms acceptés et remplace les autres en mode distant', () => {
+    const result = buildLatexExport(exercises, 'T', { artifactsMap, imageMode: 'remote' });
+
+    // Le service range tous les fichiers côte à côte : le chemin disparaît.
+    expect(result.source).toContain('\\includegraphics{zzzz_plan.svg}');
+    expect(result.images.map((i) => i.localPath)).toEqual(['zzzz_plan.svg']);
+
+    // Le JPEG ne survivrait pas au transport : encart plutôt qu'échec. Plus
+    // aucune inclusion ne doit le référencer — l'encart, lui, en cite l'URL.
+    expect(result.source).not.toMatch(/\\includegraphics[^\n]*photo\.jpg/);
+    expect(result.source).toContain('\\imageEnLigne{/artifacts/images/zzzz/photo.jpg}');
+    expect(result.skippedImages).toEqual([
+      { url: '/artifacts/images/zzzz/photo.jpg', extension: '.jpg' },
+    ]);
+  });
+
+  it("ne déclare la macro d'encart que lorsqu'elle sert", () => {
+    const local = buildLatexExport(exercises, 'T', { artifactsMap });
+    const remote = buildLatexExport(exercises, 'T', { artifactsMap, imageMode: 'remote' });
+
+    expect(local.source).not.toContain('\\newcommand{\\imageEnLigne}');
+    expect(remote.source).toContain('\\newcommand{\\imageEnLigne}');
+  });
+
+  it('retire graphicx quand toutes les figures ont été remplacées', () => {
+    const onlyJpeg = [{
+      uuid: 'yyyy',
+      title: 'Photo seule',
+      content: [{ type: 'question', order: 1, latex: '\\includegraphics{fig/photo.jpg}' }],
+    }];
+    const map = {
+      yyyy: { images: [{ originalPath: 'fig/photo.jpg', url: '/artifacts/images/yyyy/photo.jpg' }] },
+    };
+
+    const remote = buildLatexExport(onlyJpeg, 'T', { artifactsMap: map, imageMode: 'remote' });
+    expect(remote.source).not.toContain('\\usepackage{graphicx}');
+    expect(remote.images).toEqual([]);
+  });
+});
+
+describe('latexFileName', () => {
+  it('conserve les lettres accentuées sous leur forme ASCII', () => {
+    expect(latexFileName('Probabilités TD3')).toBe('probabilites_td3');
+    expect(latexFileName('Algèbre linéaire (L2)')).toBe('algebre_lineaire_l2');
+  });
+
+  it("ne perd plus l'initiale d'un titre commençant par une majuscule accentuée", () => {
+    // Le É devenait « _ », que le nettoyage des bords supprimait : le fichier
+    // s'appelait « quations… ».
+    expect(latexFileName('Équations différentielles')).toBe('equations_differentielles');
+  });
+
+  it('translittère les ligatures, que la normalisation ne décompose pas', () => {
+    expect(latexFileName('Théorie des nœuds')).toBe('theorie_des_noeuds');
+    expect(latexFileName('Cœur & âme')).toBe('coeur_ame');
+  });
+
+  it('réduit la ponctuation à des séparateurs simples', () => {
+    expect(latexFileName('Suites — révisions : partie 2')).toBe('suites_revisions_partie_2');
+  });
+
+  it('retombe sur le nom de secours si rien ne subsiste', () => {
+    expect(latexFileName('///', 'seance')).toBe('seance');
+    expect(latexFileName('')).toBe('exercices');
   });
 });

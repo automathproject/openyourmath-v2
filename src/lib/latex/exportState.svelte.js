@@ -24,6 +24,8 @@ import {
  * @property {Object[]} exercises  — exercices à exporter (format listStore)
  * @property {string}   [title]    — titre du document
  * @property {string}   [fallbackName] — nom de fichier si le titre est vide
+ * @property {string}   [fileName] — impose le nom de fichier, quand il ne doit
+ *   pas suivre le titre du document (l'éditeur nomme d'après l'uuid)
  */
 
 export class LatexExport {
@@ -58,6 +60,11 @@ export class LatexExport {
   /** Retour visuel des actions de copie. */
   copied = $state(false);
 
+  /** @type {File[]} ressources téléchargées pour la compilation en ligne */
+  #assets = $state([]);
+  assetsLoading = $state(false);
+  #assetsKey = null;
+
   #input;
   #copyTimer = null;
   /** Empreinte de la liste dont les artifacts sont chargés ou en cours. */
@@ -78,6 +85,50 @@ export class LatexExport {
       this.artifactsKey;
       if (browser) this.syncArtifacts();
     });
+  }
+
+  /**
+   * Télécharge les figures joignables à la compilation en ligne.
+   *
+   * Appelée à l'ouverture du compilateur plutôt qu'au chargement : la plupart
+   * des exports ne sont jamais compilés en ligne, et ces fichiers ne servent
+   * qu'à ce cas. Comme `syncArtifacts`, la garde est portée par la méthode.
+   *
+   * @returns {Promise<void>}
+   */
+  async loadAssets() {
+    const wanted = this.#remoteResult.images;
+    const key = wanted.map((img) => img.localPath).join(',');
+    if (key === this.#assetsKey) return;
+    this.#assetsKey = key;
+
+    if (wanted.length === 0) {
+      this.#assets = [];
+      this.assetsLoading = false;
+      return;
+    }
+
+    this.assetsLoading = true;
+    try {
+      const files = await Promise.all(
+        wanted.map(async (img) => {
+          try {
+            const response = await fetch(img.url);
+            if (!response.ok) return null;
+            const blob = await response.blob();
+            return new File([blob], img.localPath, { type: blob.type });
+          } catch {
+            // Une figure indisponible ne doit pas empêcher la compilation :
+            // le document la référencera sans la trouver, ce que le journal
+            // LaTeX signalera clairement.
+            return null;
+          }
+        }),
+      );
+      if (key === this.#assetsKey) this.#assets = files.filter(Boolean);
+    } finally {
+      if (key === this.#assetsKey) this.assetsLoading = false;
+    }
   }
 
   /** Exercices tels que fournis par le conteneur. */
@@ -140,12 +191,29 @@ export class LatexExport {
     }
   }
 
-  #result = $derived(
-    buildLatexExport(this.exercises, this.title, {
+  #buildOptions() {
+    return {
       ...this.content,
       ...this.layout,
       artifactsMap: this.artifactsMap,
       origin: browser ? window.location.origin : '',
+    };
+  }
+
+  /** Document destiné au téléchargement : images en fichiers joints locaux. */
+  #result = $derived(buildLatexExport(this.exercises, this.title, this.#buildOptions()));
+
+  /**
+   * Document destiné au compilateur en ligne. Il diffère du précédent : les
+   * noms de fichiers y sont aplatis (le service range tout dans un répertoire
+   * unique) et les formats qu'il ne sait pas recevoir sont remplacés par un
+   * encart. La version téléchargée, elle, garde ses \includegraphics intacts
+   * pour une compilation locale.
+   */
+  #remoteResult = $derived(
+    buildLatexExport(this.exercises, this.title, {
+      ...this.#buildOptions(),
+      imageMode: 'remote',
     }),
   );
 
@@ -164,9 +232,31 @@ export class LatexExport {
     return this.#result.images;
   }
 
+  /** Source à envoyer au compilateur en ligne. */
+  get compilerSource() {
+    return this.#remoteResult.source;
+  }
+
+  /**
+   * Figures que le compilateur en ligne ne recevra pas, remplacées par un
+   * encart dans `compilerSource`. À montrer avant de lancer la compilation :
+   * l'utilisateur doit savoir que le PDF sera incomplet, et que télécharger le
+   * .tex reste la voie pour l'obtenir illustré.
+   */
+  get skippedImages() {
+    return this.#remoteResult.skippedImages;
+  }
+
+  /** Ressources jointes à la compilation (formats acceptés uniquement). */
+  get assets() {
+    return this.#assets;
+  }
+
   /** Nom de fichier sans extension, aligné sur celui du téléchargement. */
   get fileName() {
-    return latexFileName(this.title, this.#input()?.fallbackName || 'exercices');
+    const input = this.#input() || {};
+    const fallback = input.fallbackName || 'exercices';
+    return latexFileName(input.fileName || this.title, fallback);
   }
 
   /** Nom de fichier affichable, extension comprise. */

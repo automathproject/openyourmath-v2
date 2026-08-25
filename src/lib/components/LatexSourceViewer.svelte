@@ -1,81 +1,29 @@
 <!-- src/lib/components/LatexSourceViewer.svelte -->
 <!--
-  Visionneuse de source LaTeX pour une liste d'exercices.
-  Affiche le document complet (préambule optimisé, images, blocs de code)
-  dans un cadre façon éditeur, avec navigation exercice par exercice.
+  Visionneuse de source LaTeX : affiche le document complet dans un cadre façon
+  éditeur, avec navigation exercice par exercice, copie, téléchargement et
+  compilation.
+
+  Composant purement présentationnel : l'état vient de LatexExport.svelte, qui
+  est le seul à instancier la fabrique. Rien ici ne doit charger de ressource
+  ni reconstruire le document.
 
   Props:
-    exercises  {Object[]}  — liste d'exercices (format listStore)
-    title      {string}    — titre de la liste (document + nom de fichier)
+    latex  {LatexExport}  — instance partagée (source, ancres, actions)
 -->
 <script>
-  import { untrack } from 'svelte';
-  import { browser } from '$app/environment';
-  import {
-    buildLatexExport,
-    fetchArtifactsMap,
-    downloadTexFile,
-    latexFileName,
-  } from '$lib/latex/export.js';
   import LatexContentOptions from '$lib/components/LatexContentOptions.svelte';
   import LatexCompiler from '$lib/components/LatexCompiler.svelte';
 
   let {
-    /** @type {Object[]} */
-    exercises = [],
-    /** @type {string} */
-    title = '',
+    /** @type {import('$lib/latex/exportState.svelte.js').LatexExport} */
+    latex,
   } = $props();
 
-  // Options d'export
-  let includeHints = $state(true);
-  let includeSolutions = $state(true);
-  let solutionsAtEnd = $state(false);
-
-  // Artifacts (images, blocs de code) chargés à la demande
-  let artifactsMap = $state({});
-  let artifactsLoading = $state(false);
-
-  let uuidsKey = $derived((exercises || []).map((e) => e.uuid).join(','));
-
-  // Le rechargement suit la composition de la liste, pas l'identité du tableau
-  // reçu : `uuidsKey` est la seule dépendance suivie, `exercises` est lu hors
-  // du graphe pour qu'un nouveau tableau aux mêmes uuids ne relance rien.
-  $effect(() => {
-    uuidsKey;
-    if (!browser) return;
-
-    let cancelled = false;
-    artifactsLoading = true;
-    fetchArtifactsMap(untrack(() => exercises))
-      .then((map) => {
-        if (!cancelled) artifactsMap = map;
-      })
-      .finally(() => {
-        if (!cancelled) artifactsLoading = false;
-      });
-
-    // Une liste modifiée pendant le chargement annule le résultat en vol :
-    // sans cela, une réponse lente écraserait les artifacts de la nouvelle.
-    return () => {
-      cancelled = true;
-    };
-  });
-
-  // Génération du document
-  let exportResult = $derived(
-    buildLatexExport(exercises || [], title, {
-      includeHints,
-      includeSolutions,
-      solutionsAtEnd,
-      artifactsMap,
-      origin: browser ? window.location.origin : '',
-    }),
-  );
-  let source = $derived(exportResult.source);
-  let anchors = $derived(exportResult.anchors);
+  let source = $derived(latex.source);
+  let anchors = $derived(latex.anchors);
   let hlLines = $derived(highlightSource(source));
-  let fileName = $derived(`${latexFileName(title, 'seance')}.tex`);
+  let fileName = $derived(latex.texFileName);
 
   // ── Coloration syntaxique LaTeX (légère, avec suivi du mode math) ──
   function escapeHtml(s) {
@@ -183,34 +131,31 @@
   }
 
   // ── Actions ──
-  let copied = $state(false);
-  let copyTimer = null;
   let compileMode = $state(false);
 
-  async function copySource() {
-    try {
-      await navigator.clipboard.writeText(source);
-      copied = true;
-      if (copyTimer) clearTimeout(copyTimer);
-      copyTimer = setTimeout(() => (copied = false), 2000);
-    } catch {
-      /* clipboard indisponible */
-    }
-  }
-
-  function download() {
-    downloadTexFile(source, title || 'seance');
+  /**
+   * Les figures joignables ne sont téléchargées qu'ici : la plupart des
+   * exports partent en .tex sans jamais passer par le compilateur en ligne.
+   */
+  function openCompiler() {
+    compileMode = true;
+    latex.loadAssets();
   }
 </script>
 
 <div class="latex-viewer">
-  {#if !exercises || exercises.length === 0}
+  {#if latex.isEmpty}
     <p class="latex-viewer-empty">Ajoutez des exercices à la liste pour générer la source LaTeX.</p>
   {:else}
     <!-- Options -->
     <div class="latex-viewer-options">
-      <LatexContentOptions bind:includeHints bind:includeSolutions bind:solutionsAtEnd compact />
-      {#if artifactsLoading}
+      <LatexContentOptions
+        bind:includeHints={latex.content.includeHints}
+        bind:includeSolutions={latex.content.includeSolutions}
+        bind:solutionsAtEnd={latex.content.solutionsAtEnd}
+        compact
+      />
+      {#if latex.artifactsLoading}
         <span class="lv-loading">Chargement des ressources…</span>
       {/if}
     </div>
@@ -251,13 +196,13 @@
         </div>
 
         <div class="editor-actions">
-          <button class="editor-action-btn editor-action-btn--primary" onclick={() => (compileMode = true)}>
+          <button class="editor-action-btn editor-action-btn--primary" onclick={openCompiler}>
             Compiler le PDF
           </button>
-          <button class="editor-action-btn" onclick={copySource}>
-            {#if copied}✓ Copié{:else}Copier{/if}
+          <button class="editor-action-btn" onclick={() => latex.copy()}>
+            {#if latex.copied}✓ Copié{:else}Copier{/if}
           </button>
-          <button class="editor-action-btn editor-action-btn--primary" onclick={download}>
+          <button class="editor-action-btn editor-action-btn--primary" onclick={() => latex.download()}>
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
             .tex
           </button>
@@ -285,7 +230,7 @@
       <div class="editor-statusbar">
         <span>{hlLines.length} lignes · UTF-8 · LaTeX</span>
         <span class="editor-status-right">
-          {exercises.length} exercice{exercises.length > 1 ? 's' : ''}
+          {latex.exercises.length} exercice{latex.exercises.length > 1 ? 's' : ''}
           <span class="editor-soon">Compilation en ligne</span>
         </span>
       </div>
@@ -311,9 +256,30 @@
       </button>
     </div>
     <div class="latex-compiler-document-options">
-      <LatexContentOptions bind:includeHints bind:includeSolutions bind:solutionsAtEnd compact />
+      <LatexContentOptions
+        bind:includeHints={latex.content.includeHints}
+        bind:includeSolutions={latex.content.includeSolutions}
+        bind:solutionsAtEnd={latex.content.solutionsAtEnd}
+        compact
+      />
     </div>
-    <LatexCompiler source={source} filename={fileName} />
+
+    {#if latex.skippedImages.length > 0}
+      <p class="compiler-image-warning">
+        <strong>{latex.skippedImages.length}</strong>
+        figure{latex.skippedImages.length > 1 ? 's' : ''}
+        ne peut{latex.skippedImages.length > 1 ? 'vent' : ''} pas être transmise{latex.skippedImages.length > 1 ? 's' : ''}
+        au compilateur en ligne ({[...new Set(latex.skippedImages.map((i) => i.extension))].join(', ')}) :
+        le PDF les remplacera par un encart. Téléchargez le <code>.tex</code> et compilez-le
+        localement pour obtenir le document illustré.
+      </p>
+    {/if}
+
+    <LatexCompiler
+      source={latex.compilerSource}
+      assets={latex.assets}
+      filename={fileName}
+    />
   </div>
 {/if}
 
@@ -586,6 +552,25 @@
     border: 1px solid theme('colors.interface.border-primary');
     border-radius: 0.75rem;
     background: theme('colors.interface.bg-primary');
+  }
+
+  .compiler-image-warning {
+    max-width: 1800px;
+    margin: 0 auto 1rem;
+    padding: 0.7rem 1rem;
+    border: 1px solid theme('colors.amber.300');
+    border-radius: 0.75rem;
+    background: theme('colors.amber.50');
+    color: theme('colors.amber.900');
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .compiler-image-warning code {
+    padding: 0 0.2em;
+    border-radius: 0.2rem;
+    background: theme('colors.amber.100');
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   }
 
   @media (max-width: 640px) {

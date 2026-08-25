@@ -30,7 +30,8 @@
     generateShortUuid,
     BLOCK_TYPES,
   } from '$lib/latex/exerciseTex.js';
-  import { downloadTexFile, generateLatexDocument } from '$lib/latex/export.js';
+  import { downloadTexFile } from '$lib/latex/export.js';
+  import { LatexExport } from '$lib/latex/exportState.svelte.js';
   import { DEFAULT_TASKS, buildTaskPrompt, buildFixLatexPrompt } from '$lib/ia/assistPrompts.js';
   import { questionBlocksFromAi, limitedSequenceBlocksFromAi } from '$lib/ia/sequence.js';
 
@@ -80,13 +81,6 @@
   let showHint = $state(true);
   let showSolution = $state(true);
   let compileMode = $state(false);
-  // Configuration du document autonome envoyé au compilateur. Elle est
-  // conservée ici pour que tout changement régénère la source affichée.
-  let latexContentOptions = $state({
-    includeHints: true,
-    includeSolutions: true,
-    solutionsAtEnd: false,
-  });
 
   let aiInstruction = $state('');
   let aiQuestionCount = $state(3);
@@ -176,23 +170,27 @@
 
   // Le format OpenYourMath exporté ci-dessus est volontairement un format de
   // contenu, pas un document compilable seul. Cette variante est celle envoyée
-  // au compilateur PDF, avec le même contenu et les mêmes macros utiles.
-  let latexDocumentSource = $derived(
-    generateLatexDocument(
-      [{
-        uuid: meta.uuid || 'exercice',
-        title: meta.title || 'Exercice',
-        content: documentBlocks().map((block, index) => ({
-          type: block.type,
-          latex: block.latex,
-          order: index + 1,
-        })),
-      }],
-      meta.title || 'Exercice',
-      latexContentOptions,
-    )
-  );
-  let latexDocumentFilename = $derived(`${(meta.uuid || 'exercice').replace(/[^a-z0-9_-]/gi, '_')}.tex`);
+  // au compilateur PDF, avec le même contenu et les mêmes macros utiles. Elle
+  // passe par la fabrique commune : l'éditeur profite ainsi des mêmes réglages
+  // que les exports de la page liste, sans dupliquer leur logique.
+  const latexExport = new LatexExport(() => ({
+    exercises: [{
+      uuid: meta.uuid || 'exercice',
+      title: meta.title || 'Exercice',
+      content: documentBlocks().map((block, index) => ({
+        type: block.type,
+        latex: block.latex,
+        order: index + 1,
+      })),
+    }],
+    title: meta.title || 'Exercice',
+    // L'éditeur nomme le document d'après l'uuid, pas d'après le titre.
+    fileName: meta.uuid || 'exercice',
+    fallbackName: 'exercice',
+  }));
+
+  let latexDocumentSource = $derived(latexExport.source);
+  let latexDocumentFilename = $derived(latexExport.texFileName);
 
   let questionCount = $derived(blocks.filter((b) => b.type === 'question' && b.latex.trim()).length);
   // Liste affichée (ordre pédagogique) : figée une fois par rendu pour que
@@ -1077,9 +1075,9 @@
       </div>
       <div class="compiler-document-options">
         <LatexContentOptions
-          bind:includeHints={latexContentOptions.includeHints}
-          bind:includeSolutions={latexContentOptions.includeSolutions}
-          bind:solutionsAtEnd={latexContentOptions.solutionsAtEnd}
+          bind:includeHints={latexExport.content.includeHints}
+          bind:includeSolutions={latexExport.content.includeSolutions}
+          bind:solutionsAtEnd={latexExport.content.solutionsAtEnd}
           compact
         />
       </div>

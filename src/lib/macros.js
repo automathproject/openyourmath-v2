@@ -162,5 +162,14 @@ export const macros = Object.fromEntries(
 export const latexMacroDefinitions = MACRO_REGISTRY.map((m) => {
   const command = m.renew ? "renewcommand" : "newcommand";
   const arity = m.args ? `[${m.args}]` : "";
-  return { name: m.name, def: `\\${command}{\\${m.name}}${arity}{${m.value}}` };
+
+  // LaTeX absorbe l'espace qui suit un nom de macro : « les \vas $X_i$ »
+  // donnerait « les variables aléatoiresX_i ». `\xspace` le rétablit, sauf
+  // devant une ponctuation. Il ne concerne que les macros dont le corps est du
+  // texte littéral : celles qui commencent par une commande (\noindent) le
+  // gèrent elles-mêmes, et un espace y serait néfaste.
+  const literalText = m.mode === "text" && !m.value.startsWith("\\");
+  const body = literalText ? `${m.value}\\xspace` : m.value;
+
+  return { name: m.name, def: `\\${command}{\\${m.name}}${arity}{${body}}` };
 });

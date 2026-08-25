@@ -6,8 +6,7 @@
   import { goto } from '$app/navigation';
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
   import ExerciseListEditor from '$lib/components/ExerciseListEditor.svelte';
-  import LatexExportPanel from '$lib/components/LatexExportPanel.svelte';
-  import LatexSourceViewer from '$lib/components/LatexSourceViewer.svelte';
+  import LatexExport from '$lib/components/LatexExport.svelte';
   import LectureSidebar from '$lib/components/LectureSidebar.svelte';
   import LectureSubheader from '$lib/components/LectureSubheader.svelte';
   import SeanceModeBar from '$lib/components/SeanceModeBar.svelte';
@@ -1355,7 +1354,7 @@
         </div>
 
         <!-- Export LaTeX -->
-        <LatexExportPanel exercises={$exerciseList} title={listTitle} />
+        <LatexExport variant="panel" exercises={$exerciseList} title={listTitle} fallbackName="seance" />
       </div>
     {/if}
   </header>
@@ -2254,14 +2253,14 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
           </span>
           <span class="partager-export-label">PDF — feuille TD</span>
-          <span class="partager-export-sub">Énoncés sans solutions, 1 colonne</span>
+          <span class="partager-export-sub">Énoncés seuls · compilation ~10&nbsp;s</span>
         </a>
         <a href="/api/export/pdf?{buildUrl().split('?')[1] || ''}&solutions=1" class="partager-export-card" target="_blank">
           <span class="partager-export-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
           </span>
           <span class="partager-export-label">PDF — corrigé</span>
-          <span class="partager-export-sub">Énoncés + solutions intégrales</span>
+          <span class="partager-export-sub">Énoncés, indications et solutions · ~10&nbsp;s</span>
         </a>
         <button
           type="button"
@@ -2293,7 +2292,7 @@
           Document complet avec préambule optimisé : seuls les packages et macros utilisés par
           les exercices de la liste sont inclus. Les images et blocs de code sont intégrés.
         </p>
-        <LatexSourceViewer exercises={$exerciseList} title={listTitle} />
+        <LatexExport variant="full" exercises={$exerciseList} title={listTitle} fallbackName="seance" />
       </section>
     {/if}
 

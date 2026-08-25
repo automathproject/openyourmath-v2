@@ -3,18 +3,20 @@
 
 import { json } from "@sveltejs/kit";
 import { checkRateLimit } from "$lib/server/rateLimiter.js";
+import { REMOTE_IMAGE_EXTENSIONS } from "$lib/latex/export.js";
+import { compileLatexDocument, MAIN_DOCUMENT_NAME } from "$lib/server/latexCompile.js";
 
-const TEXLIVE_URL = "https://texlive.net/cgi-bin/latexcgi";
 const MAX_SOURCE_BYTES = 120_000;
 const MAX_ASSETS = 8;
 const MAX_ASSET_BYTES = 1_500_000;
 const MAX_TOTAL_ASSET_BYTES = 6_000_000;
 // TeXLive.net reçoit les fichiers auxiliaires via des champs texte
 // `filecontents[]` : les formats binaires (PNG/JPEG/PDF) ne sont donc pas
-// transportables de façon fiable avec ce moteur public.
+// transportables de façon fiable avec ce moteur public. Les formats d'image
+// viennent de l'export, qui remplace les autres par un encart : les deux côtés
+// décrivent ainsi la même contrainte à partir d'une seule liste.
 const ALLOWED_EXTENSIONS = new Set([
-  ".svg",
-  ".eps",
+  ...REMOTE_IMAGE_EXTENSIONS,
   ".tex",
   ".sty",
   ".cls",
@@ -90,7 +92,7 @@ export async function POST(event) {
     );
   }
   // Le service exige que la source soit transmise sous le nom document.tex.
-  const filenames = new Set(["document.tex"]);
+  const filenames = new Set([MAIN_DOCUMENT_NAME]);
   for (const asset of assets) {
     const filename = safeFilename(asset.name, "resource");
     const extension = filename?.slice(filename.lastIndexOf(".")).toLowerCase();
@@ -120,45 +122,29 @@ export async function POST(event) {
     filenames.add(filename);
   }
 
-  // Contrat multipart documenté par TeXLive.net.
-  const upstream = new FormData();
-  upstream.append("filename[]", "document.tex");
-  upstream.append("filecontents[]", await source.text());
-  for (const asset of assets) {
-    upstream.append("filename[]", safeFilename(asset.name, "resource"));
-    upstream.append("filecontents[]", await asset.text());
-  }
-  upstream.append("engine", "lualatex");
-  upstream.append("return", "pdf");
+  const result = await compileLatexDocument({
+    source: await source.text(),
+    assets: await Promise.all(
+      assets.map(async (asset) => ({
+        name: safeFilename(asset.name, "resource"),
+        content: await asset.text(),
+      })),
+    ),
+  });
 
-  let response;
-  try {
-    response = await fetch(TEXLIVE_URL, {
-      method: "POST",
-      body: upstream,
-      signal: AbortSignal.timeout(60_000),
-    });
-  } catch (error) {
-    const message =
-      error?.name === "TimeoutError"
-        ? "Le compilateur a dépassé le délai autorisé."
-        : "Le compilateur distant est indisponible.";
-    return json({ error: message }, { status: 502 });
+  if (!result.ok) {
+    // L'éditeur affiche le journal brut : il alimente les diagnostics ligne à
+    // ligne, que l'enrobage JSON rendrait inexploitables.
+    if (result.status === 422) {
+      return new Response(result.log || "La compilation a échoué sans journal.", {
+        status: 422,
+        headers: { "content-type": "text/plain; charset=utf-8" },
+      });
+    }
+    return json({ error: result.error }, { status: result.status });
   }
 
-  const output = await response.arrayBuffer();
-  const isPdf =
-    output.byteLength >= 5 &&
-    new TextDecoder().decode(output.slice(0, 5)) === "%PDF-";
-  if (!response.ok || !isPdf) {
-    const log = new TextDecoder().decode(output).slice(0, 60_000);
-    return new Response(log || "La compilation a échoué sans journal.", {
-      status: 422,
-      headers: { "content-type": "text/plain; charset=utf-8" },
-    });
-  }
-
-  return new Response(output, {
+  return new Response(result.pdf, {
     headers: {
       "content-type": "application/pdf",
       "content-disposition": 'inline; filename="document.pdf"',

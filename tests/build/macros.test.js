@@ -94,3 +94,22 @@ describe('registre de macros', () => {
     expect(aa.def).toMatch(/^\\renewcommand/);
   });
 });
+
+describe('définitions LaTeX des macros texte', () => {
+  it("rétablit l'espace avalé après les abréviations littérales", () => {
+    // « les \vas $X_i$ » doit donner « les variables aléatoires X_i ».
+    const vas = latexMacroDefinitions.find((d) => d.name === 'vas');
+    expect(vas.def).toBe('\\newcommand{\\vas}{variables aléatoires\\xspace}');
+  });
+
+  it("n'ajoute pas d'espace après une macro qui est déjà une commande", () => {
+    // \noindent suivi d'un espace décalerait le début du paragraphe.
+    const nd = latexMacroDefinitions.find((d) => d.name === 'nd');
+    expect(nd.def).toBe('\\newcommand{\\nd}{\\noindent}');
+  });
+
+  it('laisse les macros mathématiques intactes', () => {
+    const im = latexMacroDefinitions.find((d) => d.name === 'im');
+    expect(im.def).toBe('\\newcommand{\\im}{\\mathrm{i}}');
+  });
+});

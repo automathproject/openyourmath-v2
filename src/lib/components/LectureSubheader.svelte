@@ -3,7 +3,7 @@
   import AddToListButton from './AddToListButton.svelte';
   import MathRenderer from './MathRenderer.svelte';
   import StarsRating from './StarsRating.svelte';
-  import { LatexExport } from '$lib/latex/exportState.svelte.js';
+  import LatexExport from './LatexExport.svelte';
 
   let {
     exercise = {},
@@ -61,19 +61,6 @@
     }
   }
 
-  // L'export d'un exercice seul passe par la même fabrique que celui d'une
-  // liste : il récupère ainsi les images et les blocs de code que cette action
-  // laissait auparavant de côté sans le signaler.
-  const latexExport = new LatexExport(() => ({
-    exercises: exercise ? [exercise] : [],
-    title: exercise?.title || 'Exercice',
-    fallbackName: exercise?.uuid || 'exercice',
-  }));
-
-  function downloadLatex() {
-    if (!exercise) return;
-    latexExport.download();
-  }
 </script>
 
 <section
@@ -176,10 +163,19 @@
             {/if}
 
             {#if showLatexAction}
-              <button type="button" class="btn btn-ghost btn-sm lecture-action" onclick={downloadLatex}>
-                <span aria-hidden="true">⤓</span>
-                <span>LaTeX</span>
-              </button>
+              <LatexExport
+                variant="button"
+                exercises={exercise ? [exercise] : []}
+                title={exercise?.title || 'Exercice'}
+                fallbackName={exercise?.uuid || 'exercice'}
+              >
+                {#snippet trigger(open)}
+                  <button type="button" class="btn btn-ghost btn-sm lecture-action" onclick={open}>
+                    <span aria-hidden="true">⤓</span>
+                    <span>LaTeX</span>
+                  </button>
+                {/snippet}
+              </LatexExport>
             {/if}
 
             {#if showPrimaryAction}

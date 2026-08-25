@@ -254,6 +254,10 @@ export async function fetchArtifactsMap(exercises, fetchFn = typeof fetch !== 'u
  * @property {string}  [paperSize='a4paper']
  * @property {string}  [margin='2.5cm']
  * @property {string}  [language='french']
+ * @property {'files'|'remote'} [imageMode='files'] — `files` conserve les
+ *   \includegraphics vers un dossier images/ local (compilation chez soi) ;
+ *   `remote` aplatit les noms et remplace par un encart les formats que le
+ *   compilateur en ligne ne sait pas recevoir.
  */
 
 const SEPARATOR = '% ' + '='.repeat(68);
@@ -327,23 +331,79 @@ export function normalizeLatexForCompilation(latex) {
 }
 
 /**
- * Réécrit les chemins \includegraphics d'un exercice vers un dossier local
- * images/ et renvoie la liste des fichiers à télécharger.
+ * Formats d'image que le service de compilation distant sait recevoir.
+ *
+ * TeXLive.net transporte les fichiers auxiliaires dans des champs texte : les
+ * formats binaires (PNG, JPEG, PDF) n'y survivent pas. La liste est exportée
+ * pour que le proxy de compilation et la dégradation de l'export décrivent la
+ * même contrainte.
  */
-function rewriteImagePaths(latex, artifacts) {
+export const REMOTE_IMAGE_EXTENSIONS = ['.svg', '.eps'];
+
+/** Extension en minuscules d'une URL de ressource, point compris. */
+export function imageExtension(url) {
+  const name = String(url || '').split('/').pop() || '';
+  const dot = name.lastIndexOf('.');
+  return dot === -1 ? '' : name.slice(dot).toLowerCase();
+}
+
+/**
+ * Nom plat d'une ressource jointe à une compilation distante. Le service place
+ * tous les fichiers dans un même répertoire : le chemin d'origine ne peut pas
+ * être conservé, et deux exercices peuvent porter le même nom de figure.
+ */
+function flatAssetName(url) {
+  return String(url || '')
+    .replace(/^\/artifacts\/images\//, '')
+    .replace(/[^a-zA-Z0-9._-]+/g, '_');
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Réécrit les chemins \includegraphics d'un exercice et renvoie la liste des
+ * fichiers à fournir avec le document.
+ *
+ * En mode `remote`, les formats que le compilateur distant ne sait pas
+ * transporter voient leur inclusion remplacée par un encart : sans cela, la
+ * compilation échouerait sur un fichier introuvable, sans indiquer lequel.
+ *
+ * @param {string} latex
+ * @param {Object} artifacts
+ * @param {'files'|'remote'} imageMode
+ */
+function rewriteImagePaths(latex, artifacts, imageMode) {
   const images = artifacts?.images || [];
   const required = [];
+  const skipped = [];
+  const remote = imageMode === 'remote';
   let out = latex;
 
   for (const img of images) {
     if (!img?.originalPath || !img?.url) continue;
-    const localPath = img.url.replace(/^\/artifacts\/images\//, 'images/');
-    if (out.includes(`{${img.originalPath}}`)) {
-      out = out.split(`{${img.originalPath}}`).join(`{${localPath}}`);
-      required.push({ localPath, url: img.url });
+    if (!out.includes(`{${img.originalPath}}`)) continue;
+
+    const extension = imageExtension(img.url);
+
+    if (remote && !REMOTE_IMAGE_EXTENSIONS.includes(extension)) {
+      const inclusion = new RegExp(
+        `\\\\includegraphics\\s*(?:\\[[^\\]]*\\])?\\s*\\{${escapeRegExp(img.originalPath)}\\}`,
+        'g',
+      );
+      out = out.replace(inclusion, `\\imageEnLigne{${latexEscapeText(img.url)}}`);
+      skipped.push({ url: img.url, extension });
+      continue;
     }
+
+    const localPath = remote
+      ? flatAssetName(img.url)
+      : img.url.replace(/^\/artifacts\/images\//, 'images/');
+    out = out.split(`{${img.originalPath}}`).join(`{${localPath}}`);
+    required.push({ localPath, url: img.url });
   }
-  return { latex: out, required };
+  return { latex: out, required, skipped };
 }
 
 /** Blocs SaveVerbatim requis par le LaTeX d'un exercice. */
@@ -396,6 +456,9 @@ function buildPreamble(body, docTitle, options) {
   if (has(/\\begin\{multicols\}/)) lines.push('\\usepackage{multicol}');
   if (has(/\\toprule|\\midrule|\\bottomrule/)) lines.push('\\usepackage{booktabs}');
   if (has(/\\SI\{|\\si\{|\\num\{/)) lines.push('\\usepackage{siunitx}');
+  // Requis par les abréviations rédactionnelles (\va, \ssi…), qui rétablissent
+  // l'espace que LaTeX avale après un nom de macro.
+  if (has(/\\xspace\b/)) lines.push('\\usepackage{xspace}');
   lines.push(`\\usepackage[margin=${margin}]{geometry}`);
   if (has(/\\url\{|\\href\{/)) lines.push('\\usepackage[hidelinks]{hyperref}');
 
@@ -403,6 +466,16 @@ function buildPreamble(body, docTitle, options) {
     lines.push('');
     lines.push('% Les animations GeoGebra ne sont visibles qu\'en ligne');
     lines.push('\\newcommand{\\geogebra}[1]{\\par\\noindent\\emph{[Animation GeoGebra : \\texttt{#1}]}\\par}');
+  }
+
+  if (has(/\\imageEnLigne\b/)) {
+    lines.push('');
+    lines.push('% Figures que le compilateur en ligne ne peut pas recevoir :');
+    lines.push('% téléchargez le .tex et compilez localement pour les obtenir.');
+    lines.push(
+      '\\newcommand{\\imageEnLigne}[1]{\\par\\noindent\\fbox{\\parbox{0.92\\linewidth}' +
+        '{\\centering\\small Figure disponible en ligne\\\\\\texttt{#1}}}\\par}',
+    );
   }
 
   if (usedMacros.length > 0) {
@@ -425,9 +498,11 @@ function buildPreamble(body, docTitle, options) {
  * @param {Object[]} exercises — liste d'objets exercice (format listStore)
  * @param {string}   title     — titre de la liste
  * @param {LatexExportOptions} options
- * @returns {{ source: string, anchors: { uuid: string, title: string, index: number, line: number }[], images: { localPath: string, url: string }[] }}
- *   `images` : fichiers à placer à côté du .tex pour que le document compile
+ * @returns {{ source: string, anchors: { uuid: string, title: string, index: number, line: number }[], images: { localPath: string, url: string }[], skippedImages: { url: string, extension: string }[] }}
+ *   `images` : fichiers à fournir avec le .tex pour que le document compile
  *   avec ses illustrations.
+ *   `skippedImages` : figures remplacées par un encart faute de format
+ *   transportable (mode `remote` uniquement).
  *   `line` : numéro de ligne (1-indexé) du début de l'exercice dans `source`.
  */
 export function buildLatexExport(exercises, title, options = {}) {
@@ -439,6 +514,7 @@ export function buildLatexExport(exercises, title, options = {}) {
     origin = '',
     hintLabel = 'Indication.',
     solutionLabel = 'Solution.',
+    imageMode = 'files',
   } = options;
 
   const docTitle = title || "Liste d'exercices";
@@ -447,6 +523,7 @@ export function buildLatexExport(exercises, title, options = {}) {
   const body = [];
   const anchors = [];
   const allImages = [];
+  const skippedImages = [];
   // Réponses collectées pour la section finale : { num, title, items: [{label, latex}] }
   const deferredSolutions = [];
 
@@ -468,9 +545,12 @@ export function buildLatexExport(exercises, title, options = {}) {
 
     // Réécriture des images + collecte des fichiers requis
     const rewriteBlock = (latex) => {
-      const { latex: rewritten, required } = rewriteImagePaths(latex, artifacts);
+      const { latex: rewritten, required, skipped } = rewriteImagePaths(latex, artifacts, imageMode);
       for (const r of required) {
         if (!allImages.some((im) => im.localPath === r.localPath)) allImages.push(r);
+      }
+      for (const s of skipped) {
+        if (!skippedImages.some((im) => im.url === s.url)) skippedImages.push(s);
       }
       return rewritten;
     };
@@ -644,7 +724,7 @@ export function buildLatexExport(exercises, title, options = {}) {
   const offset = preambleLines.length;
   const shiftedAnchors = anchors.map((a) => ({ ...a, line: a.line + offset }));
 
-  return { source, anchors: shiftedAnchors, images: allImages };
+  return { source, anchors: shiftedAnchors, images: allImages, skippedImages };
 }
 
 /**
@@ -671,6 +751,17 @@ export function generateLatexDocument(exercises, title, options = {}) {
  */
 export function latexFileName(title, fallback = 'exercices') {
   const slug = String(title || '')
+    // Les ligatures sont des caractères à part entière, sans décomposition
+    // canonique : la normalisation ne les atteint pas, il faut les nommer.
+    .replace(/œ/g, 'oe').replace(/Œ/g, 'OE')
+    .replace(/æ/g, 'ae').replace(/Æ/g, 'AE')
+    .replace(/ß/g, 'ss')
+    // NFD sépare chaque lettre de son diacritique, qui devient un caractère
+    // distinct du bloc U+0300–U+036F et peut donc être retiré seul. Sans cela
+    // « Équations » perdait son initiale : le É devenait un « _ », que le
+    // nettoyage des bords supprimait ensuite.
+    .normalize('NFD')
+    .replace(/[\u0300-\u036F]/g, '')
     .replace(/[^a-z0-9\-_]/gi, '_')
     .replace(/_{2,}/g, '_')
     .replace(/^_+|_+$/g, '')
