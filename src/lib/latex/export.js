@@ -1,92 +1,10 @@
 // src/lib/latex/export.js
 // Utilitaires pour la génération de code LaTeX à partir d'exercices
 
-// Équivalents LaTeX des macros KaTeX définies dans src/lib/macros.js
-const LATEX_MACROS = [
-  // Ensembles de nombres
-  '\\newcommand{\\N}{\\mathbb{N}}',
-  '\\newcommand{\\Nn}{\\mathbb{N}}',
-  '\\newcommand{\\R}{\\mathbb{R}}',
-  '\\newcommand{\\Rr}{\\mathbb{R}}',
-  '\\newcommand{\\Z}{\\mathbb{Z}}',
-  '\\newcommand{\\Zz}{\\mathbb{Z}}',
-  '\\newcommand{\\Kk}{\\mathbb{K}}',
-  '\\newcommand{\\Q}{\\mathbb{Q}}',
-  '\\newcommand{\\Qq}{\\mathbb{Q}}',
-  '\\newcommand{\\Cp}{\\mathbb{C}}',
-  '\\newcommand{\\CC}{\\mathbb{C}}',
-  '\\newcommand{\\Cc}{\\mathbb{C}}',
-  '\\newcommand{\\C}{\\mathbb{C}}',
-  '\\newcommand{\\BB}{\\mathbb{B}}',
-  '\\newcommand{\\DD}{\\mathbb{D}}',
-  '\\newcommand{\\EE}{\\mathbb{E}}',
-  '\\renewcommand{\\AA}{\\mathbb{A}}',
-  // Analyse complexe
-  '\\newcommand{\\RRe}{\\mathrm{Re}}',
-  '\\newcommand{\\IIm}{\\mathrm{Im}}',
-  // Probabilités
-  '\\newcommand{\\E}{\\mathbb{E}}',
-  '\\newcommand{\\EX}{\\mathbb{E}(X)}',
-  '\\newcommand{\\var}{\\mathrm{Var}}',
-  '\\newcommand{\\V}{\\mathrm{V}}',
-  '\\newcommand{\\PP}{\\mathrm{P}}',
-  '\\newcommand{\\prob}{\\mathrm{P}}',
-  '\\newcommand{\\p}{\\mathrm{P}}',
-  // Opérateurs
-  '\\newcommand{\\pgcd}{\\mathrm{pgcd}}',
-  '\\newcommand{\\ppcm}{\\mathrm{ppcm}}',
-  '\\newcommand{\\card}{\\mathrm{card}}',
-  '\\newcommand{\\Vect}{\\mathrm{Vect}}',
-  '\\newcommand{\\Ker}{\\mathrm{Ker}}',
-  '\\newcommand{\\id}{\\mathrm{id}}',
-  '\\newcommand{\\Id}{\\mathrm{Id}}',
-  // Fonctions trigonométriques / hyperboliques
-  '\\newcommand{\\cotan}{\\mathrm{cotan}}',
-  '\\newcommand{\\Arccos}{\\mathrm{Arccos}}',
-  '\\newcommand{\\Arcsin}{\\mathrm{Arcsin}}',
-  '\\newcommand{\\Arctan}{\\mathrm{Arctan}}',
-  '\\newcommand{\\Argch}{\\mathrm{Argch}}',
-  '\\newcommand{\\Argsh}{\\mathrm{Argsh}}',
-  '\\newcommand{\\Argth}{\\mathrm{Argth}}',
-  // Géométrie / vecteurs
-  '\\newcommand{\\uu}{\\overrightarrow{u}}',
-  '\\newcommand{\\vv}{\\overrightarrow{v}}',
-  '\\newcommand{\\ww}{\\overrightarrow{w}}',
-  // Intégrales / différentielles
-  '\\newcommand{\\dx}{\\hspace{.6mm}\\mathrm{d}x}',
-  '\\newcommand{\\dy}{\\hspace{.6mm}\\mathrm{d}y}',
-  '\\newcommand{\\dz}{\\hspace{.6mm}\\mathrm{d}z}',
-  '\\newcommand{\\dt}{\\hspace{.6mm}\\mathrm{d}t}',
-  '\\newcommand{\\du}{\\hspace{.6mm}\\mathrm{d}u}',
-  '\\newcommand{\\dv}{\\hspace{.6mm}\\mathrm{d}v}',
-  '\\newcommand{\\dd}{\\textup{d}}',
-  // Dérivées partielles (avec arguments)
-  '\\newcommand{\\dpa}[2]{\\frac{\\partial #1}{\\partial #2}}',
-  '\\newcommand{\\dpsm}[3]{\\frac{\\partial^2 #1}{\\partial #2 \\, \\partial #3}}',
-  '\\newcommand{\\dpsp}[2]{\\frac{\\partial^2 #1}{\\partial #2^2}}',
-  // Ensembles solutions / parties
-  '\\newcommand{\\Sol}{\\mathscr{S}}',
-  '\\newcommand{\\Pn}{\\mathscr{P}}',
-  '\\newcommand{\\Pnn}{\\mathscr{P}}',
-  // Norme triple
-  '\\newcommand{\\vvvert}{\\vert\\!\\vert\\!\\vert}',
-  // Abréviations logique / texte
-  '\\newcommand{\\et}{\\text{ et }}',
-  '\\newcommand{\\ou}{\\text{ ou }}',
-  '\\newcommand{\\qeq}{\\quad\\text{et}\\quad}',
-  '\\newcommand{\\eq}{\\;\\Leftrightarrow\\;}',
-  '\\newcommand{\\impl}{\\;\\Rightarrow\\;}',
-  '\\newcommand{\\lr}{\\longrightarrow}',
-  '\\newcommand{\\vide}{\\varnothing}',
-  '\\newcommand{\\ep}{\\varepsilon}',
-  '\\newcommand{\\dlim}{\\displaystyle\\lim}',
-];
-
-// Nom de macro extrait de sa définition, pour la détection d'usage
-const MACRO_DEFS = LATEX_MACROS.map((def) => {
-  const m = def.match(/\\(?:re)?newcommand\{\\([a-zA-Z]+)\}/);
-  return { name: m ? m[1] : null, def };
-}).filter((d) => d.name);
+// Le préambule des documents exportés est dérivé du registre unique des
+// macros du site (src/lib/macros.js) : une macro ajoutée là devient
+// disponible à l'affichage KaTeX comme à l'export .tex, sans recopie.
+import { latexMacroDefinitions as MACRO_DEFS } from '$lib/macros.js';
 
 /**
  * Extrait le contenu textuel/LaTeX brut d'un bloc de contenu.
@@ -740,12 +658,31 @@ export function generateLatexDocument(exercises, title, options = {}) {
 }
 
 /**
+ * Nom de fichier d'un export, dérivé de son titre.
+ *
+ * Point unique de normalisation : l'interface qui affiche le nom du document
+ * et le téléchargement qui l'écrit sur le disque doivent s'accorder.
+ *
+ * @param {string} title       — titre de la liste ou de l'exercice
+ * @param {string} [fallback]  — nom utilisé si le titre ne produit rien
+ * @returns {string} nom de fichier sans extension
+ */
+export function latexFileName(title, fallback = 'exercices') {
+  const slug = String(title || '')
+    .replace(/[^a-z0-9\-_]/gi, '_')
+    .replace(/_{2,}/g, '_')
+    .replace(/^_+|_+$/g, '')
+    .toLowerCase();
+  return slug || fallback;
+}
+
+/**
  * Déclenche le téléchargement d'un fichier .tex dans le navigateur.
  * @param {string} content  — contenu LaTeX
  * @param {string} basename — nom de fichier sans extension
  */
 export function downloadTexFile(content, basename = 'exercices') {
-  const filename = basename.replace(/[^a-z0-9\-_]/gi, '_').toLowerCase();
+  const filename = latexFileName(basename);
   const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
