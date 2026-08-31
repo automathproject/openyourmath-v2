@@ -40,6 +40,39 @@ const ARTIFACTS_OUTPUT_DIR = ARTIFACTS_ROOT;
 const CONTENT_ROOT_DIR = CONTENT_ROOT;
 const IMAGES_PUBLIC_BASE_PATH = '/artifacts/images';
 
+async function extractExternalPythonCode(latexContent, sourceFilePath) {
+  const sourcePath = getExerciseSourcePath(sourceFilePath, EXERCISES_ROOT);
+  const sourceName = sourcePath.split('/').filter(Boolean)[0];
+  const blocks = new Map();
+  const pythonCodeRegex = /\\pythoncode(?:\[[^\]]*\])?\{([^}]+)\}/g;
+  let match;
+
+  while ((match = pythonCodeRegex.exec(latexContent)) !== null) {
+    const filename = match[1].trim();
+    if (filename !== path.basename(filename)) {
+      console.warn(`Ignoring unsafe Python source path "${filename}" in ${sourceFilePath}.`);
+      continue;
+    }
+    if (blocks.has(filename)) continue;
+
+    const codePath = path.join(CONTENT_ROOT_DIR, 'code', sourceName, 'python', filename);
+    try {
+      const content = await fsPromises.readFile(codePath, 'utf8');
+      blocks.set(filename, {
+        name: filename,
+        content,
+        language: 'python',
+        source_path: path.relative(CONTENT_ROOT_DIR, codePath)
+      });
+    } catch (error) {
+      if (error.code === 'ENOENT') console.warn(`Python source not found for ${sourcePath}: ${filename}`);
+      else throw error;
+    }
+  }
+
+  return blocks;
+}
+
 const CONFIG = {
   content: {
     inputDir: EXERCISES_ROOT,
@@ -62,7 +95,8 @@ const CONFIG = {
     { name: 'question', jsonKey: 'content', isContent: true, blockType: 'question' },
     { name: 'indication', jsonKey: 'content', isContent: true, blockType: 'indication' },
     { name: 'reponse', jsonKey: 'content', isContent: true, blockType: 'reponse' },
-    { name: 'code', jsonKey: 'content', isContent: true, blockType: 'code', isVerbatim: true }
+    { name: 'code', jsonKey: 'content', isContent: true, blockType: 'code', isVerbatim: true },
+    { name: 'pythoncode', jsonKey: 'content', isContent: true, blockType: 'code' }
   ]
 };
 
@@ -137,8 +171,13 @@ async function parseLatexFile(filePath) {
   const exerciseUuid = uuidMatch ? uuidMatch[1].trim() : generateShortUuid();
   mainData.uuid = exerciseUuid;
 
-  // Extraction des blocs SaveVerbatim (code)
+  // Extraction des blocs SaveVerbatim et des fichiers appelés par \pythoncode.
   const codeBlocks = extractSaveVerbatimBlocks(latexContent);
+  const externalPythonBlocks = await extractExternalPythonCode(latexContent, filePath);
+  for (const [name, block] of externalPythonBlocks) {
+    if (codeBlocks.has(name)) console.warn(`Duplicate code block name "${name}" in ${filePath}; external Python source is used.`);
+    codeBlocks.set(name, block);
+  }
   let codeBlockIndex = 1;
   
   for (const [blockName, blockData] of codeBlocks) {
@@ -149,7 +188,8 @@ async function parseLatexFile(filePath) {
       name: blockName,
       language: blockData.language,
       content: blockData.content.trim(),
-      html: convertCodeToHTML(blockData.content, blockData.language, blockName)
+      html: convertCodeToHTML(blockData.content, blockData.language, blockName),
+      ...(blockData.source_path && { source_path: blockData.source_path })
     });
     
     mainData.artifacts.code.push(codeId);
@@ -207,7 +247,7 @@ async function parseLatexFile(filePath) {
 
   // Parsing du contenu - utiliser le LaTeX ORIGINAL
   const allCommandNames = CONFIG.commands.map(cmd => cmd.name).join('|');
-  const commandRegex = new RegExp(`(?<!\\\\)\\\\(${allCommandNames})\\s*\\{`, 'g');
+  const commandRegex = new RegExp(`(?<!\\\\)\\\\(${allCommandNames})\\s*(?:\\[[^\\]]*\\]\\s*)?\\{`, 'g');
   let blockOrder = 1;
   let cmdMatch;
 
@@ -235,6 +275,22 @@ async function parseLatexFile(filePath) {
     }
     
     if (commandObj.isContent) {
+      if (commandName === 'pythoncode') {
+        const filename = content.trim();
+        const codeBlock = codeBlocks.get(filename);
+        const blockId = `block_${blockOrder++}`;
+        mainData.content.push({
+          id: blockId,
+          type: commandObj.blockType,
+          latex: `\\pythoncode{${filename}}`,
+          html: codeBlock
+            ? convertCodeToHTML(codeBlock.content, codeBlock.language, filename)
+            : '<div class="code-error">Source Python introuvable</div>',
+          order: blockOrder - 1
+        });
+        continue;
+      }
+
       const originalBlockLatex = commandObj.isVerbatim ? content.trim() : stripComments(content.trim());
       let htmlContent = "";
 

@@ -26,6 +26,10 @@ Sources LaTeX → Parsing → Cache → Compilation TikZ → Base SQLite → [Op
 
 **Chemin :** [content/exercises/](content/exercises/)
 
+Les sources éditoriales sont importées depuis exobase ; voir
+[Synchroniser le contenu depuis exobase](sync-exobase.md) avant de modifier ou
+de publier le corpus.
+
 Chaque exercice est un fichier `.tex` organisé par dossier (ex. `amscc/`, `exo7/`). Structure d'un fichier `.tex` :
 
 ```latex
