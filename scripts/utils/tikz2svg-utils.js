@@ -24,6 +24,7 @@ export const defaultConfig = {
     \\usepackage{pgfplots}
     \\usepackage{tikz-cd}
     \\usepackage{circuitikz}
+    \\usepackage{tkz-tab}
     \\usepackage{amsmath}
     \\usepackage{amssymb}
     \\pgfplotsset{compat=1.18}
@@ -108,6 +109,13 @@ async function extractTeXError(logPath) {
       const errorMatch = logContent.match(/^!.*(?:\r\n|\n)/m);
       if (errorMatch) {
         return errorMatch[0];
+      }
+      // With -file-line-error, modern LaTeX usually emits errors in the form
+      // "path/to/file.tex:line: Undefined control sequence." rather than a
+      // line beginning with "!".
+      const fileLineError = logContent.match(/^[^\r\n]+\.tex:\d+: [^\r\n]+(?:\r\n|\n)/m);
+      if (fileLineError) {
+        return fileLineError[0].trim();
       }
       const fatalError = logContent.match(/Fatal error occurred, no output PDF file produced!/);
       if(fatalError) {

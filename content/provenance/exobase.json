@@ -2,5 +2,20 @@
   "source": "exobase",
   "url": "https://github.com/smaxx73/exobase",
   "role": "exobase est l'usine : il possède les sources .tex, les images, les extraits de code et le référentiel auteurs. OpenYourMath ne possède que les données dérivées et les métadonnées sémantiques.",
-  "notes": "Le champ sync est écrit par scripts/sync-exobase.js et enregistre le commit exobase importé."
+  "notes": "Le champ sync est écrit par scripts/sync-exobase.js et enregistre le commit exobase importé.",
+  "sync": {
+    "commit": "e57165fefc54dc0d0b844a2871872d36a5a79d9d",
+    "date": "2026-09-01T12:57:56.085Z",
+    "sources": [
+      "amscc",
+      "crouzet",
+      "exo7"
+    ],
+    "fichiers": {
+      "sources": 8673,
+      "images": 1363,
+      "code": 12,
+      "auteurs": 1
+    }
+  }
 }
