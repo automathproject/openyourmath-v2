@@ -27,6 +27,13 @@ export const defaultConfig = {
     \\usepackage{tkz-tab}
     \\usepackage{amsmath}
     \\usepackage{amssymb}
+    % Common OpenYourMath notation used inside extracted diagrams.  Diagrams
+    % compile in isolation, so they do not inherit the exercise preamble.
+    \\providecommand{\\E}{\\mathrm{e}}
+    \\providecommand{\\eu}[1]{\\mathrm{e}^{#1}}
+    \\providecommand{\\Cc}{\\mathbb{C}}
+    \\providecommand{\\ch}{\\cosh}
+    \\providecommand{\\sh}{\\sinh}
     \\pgfplotsset{compat=1.18}
   `,
   svgOptions: {
@@ -66,9 +73,13 @@ export async function checkDependencies() {
  * CORRIGÉ : N'ajoute l'environnement tikzpicture que s'il est manquant.
  */
 function createTexDocument(tikzContent, config) {
-  // Vérifier si le contenu est déjà un environnement complet.
-  const tikzCode = tikzContent.trim().startsWith('\\begin{tikzpicture}')
-    ? tikzContent
+  const trimmedContent = tikzContent.trim();
+  const beginsTikzPicture = trimmedContent.startsWith('\\begin{tikzpicture}');
+  // An end marker in a comment does not close the environment.  This occurs
+  // in source diagrams that have been deliberately commented out.
+  const endsTikzPicture = /(^|\n)\s*\\end\{tikzpicture\}/.test(trimmedContent);
+  const tikzCode = beginsTikzPicture
+    ? `${tikzContent}${endsTikzPicture ? '' : '\n\\end{tikzpicture}'}`
     : `\\begin{tikzpicture}\n${tikzContent}\n\\end{tikzpicture}`;
 
   return `\\documentclass[crop,tikz,border=2pt]{standalone}
