@@ -1,26 +1,31 @@
 {
   "uuid": "CRuo",
   "source_path": "amscc/CRuo.tex",
-  "summary": "L'exercice demande de calculer la probabilité qu'une variable aléatoire suivant une loi géométrique prenne une valeur paire et de comparer cette probabilité avec celle d'une valeur impaire.",
+  "summary": "L'exercice étudie la variable aléatoire X représentant le rang du premier succès dans une suite d'expériences de Bernoulli indépendantes. Il demande d'interpréter l'événement {X=k}, de calculer les probabilités pour k=1, 2, 3, de démontrer la loi géométrique de X, de vérifier que cette loi est bien normalisée, d'exprimer et d'interpréter P(X>n), et de comparer les probabilités que X soit pair ou impair.",
   "concepts": [
-    "loi géométrique",
     "variable aléatoire discrète",
+    "loi géométrique",
+    "expérience de Bernoulli",
+    "indépendance des essais",
+    "somme infinie de probabilités",
     "probabilité conditionnelle",
-    "somme infinie",
-    "fonction génératrice",
-    "espérance mathématique"
+    "série géométrique"
   ],
   "methods": [
-    "calcul de probabilité par sommation",
-    "simplification d'expression algébrique",
+    "calcul de probabilités élémentaires",
+    "utilisation de l'indépendance",
+    "somme de séries géométriques",
+    "décomposition d'événements",
     "comparaison de probabilités"
   ],
   "objects": [
+    "variable aléatoire de Bernoulli",
     "variable aléatoire géométrique",
-    "somme infinie de probabilités",
-    "valeurs paires et impaires"
+    "somme infinie de termes",
+    "événement {X=k}",
+    "événement {X>n}"
   ],
-  "content_hash": "708b20a77d35f831987623c6378d83618da65f7487eca75f128b528cf4dd10c3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:20:40.210Z"
+  "content_hash": "6ba4034c6df841277e75e9643e3646b8b6f797f0b69e4feb7d3c68a777c5e67f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-01T13:52:06.073Z"
 }

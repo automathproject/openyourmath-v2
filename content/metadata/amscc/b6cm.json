@@ -1,25 +1,26 @@
 {
   "uuid": "b6cm",
   "source_path": "amscc/b6cm.tex",
-  "summary": "L'exercice demande de déterminer la probabilité qu'une variable aléatoire exponentielle soit supérieure à un seuil donné, puis d'étendre ce résultat au minimum de deux variables exponentielles indépendantes.",
+  "summary": "L'exercice demande de calculer la probabilité qu'une variable aléatoire exponentielle soit supérieure à un seuil donné, puis d'étendre ce calcul au minimum de deux variables exponentielles indépendantes.",
   "concepts": [
     "loi exponentielle",
     "densité de probabilité",
-    "variable aléatoire indépendante",
+    "fonction de survie",
+    "indépendance de variables aléatoires",
     "intégrale de probabilité",
-    "fonction de répartition"
+    "variable aléatoire à densité"
   ],
   "methods": [
     "calcul d'intégrale",
     "utilisation de l'indépendance",
-    "calcul de probabilité conditionnelle"
+    "calcul de fonction de survie"
   ],
   "objects": [
     "variable aléatoire exponentielle",
-    "minimum de variables aléatoires",
+    "minimum de deux variables aléatoires",
     "intégrale de densité"
   ],
-  "content_hash": "39a43a99b3e2e3cf93683985765629aade6ecef7c94437ff18ec938837ef893e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:56:14.628Z"
+  "content_hash": "0ae6d3cfbfad479ec686ebba664eb2e6c74955a106259b8d0cd4f489f5efc7fe",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-01T13:52:09.223Z"
 }
