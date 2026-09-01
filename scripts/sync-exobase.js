@@ -3,10 +3,11 @@
 /**
  * Imports versioned editorial content from exobase.
  *
- * exobase is the factory: it owns the .tex sources, images, code snippets and
- * the author registry, for every source it carries. OpenYourMath owns only the
- * derived data and the semantic metadata, and must not edit the sources it
- * receives.
+ * exobase is the shared editorial factory: it owns the .tex sources, images,
+ * code snippets and the author registry, for every source it carries.
+ * OpenYourMath owns the derived data and semantic metadata. Editorial fixes
+ * discovered here may be sent back explicitly with --push; nothing is ever
+ * sent automatically.
  *
  * The comparison is three-way against the exobase commit recorded in
  * content/provenance/exobase.json. A strict mirror would be enough as long as
@@ -44,9 +45,11 @@ const args = new Set(process.argv.slice(2));
 const apply = args.has('--apply');
 const check = args.has('--check');
 const force = args.has('--force');
-const unknownArgs = [...args].filter(arg => !['--apply', '--check', '--force'].includes(arg));
-if (unknownArgs.length || (apply && check)) {
-  console.error('Usage: node scripts/sync-exobase.js [--check | --apply] [--force]');
+const push = args.has('--push');
+const unknownArgs = [...args].filter(arg => !['--apply', '--check', '--force', '--push'].includes(arg));
+if (unknownArgs.length || (apply && check) || (push && force)) {
+  console.error('Usage: node scripts/sync-exobase.js [--push] [--check | --apply] [--force]');
+  console.error('       --force ne peut pas être utilisé avec --push.');
   process.exit(2);
 }
 
@@ -153,6 +156,7 @@ async function planFile(relative, source, kind, base) {
   return {
     source,
     kind,
+    relative,
     sourcePath,
     targetPath,
     relativeTargetPath: path.relative(ROOT, targetPath),
@@ -170,6 +174,31 @@ async function plan(mappings, base) {
     }
   }
   entries.push(await planFile('authors.json', 'commun', 'auteurs', base));
+  return entries;
+}
+
+/** Files created in OpenYourMath that do not yet exist in exobase.
+ * They are never imported or deleted, but --push can propose them for review. */
+async function planLocalOnly(mappings, knownEntries) {
+  const known = new Set(knownEntries.map(entry => entry.relative).filter(Boolean));
+  const entries = [];
+  for (const mapping of mappings) {
+    const directory = path.join(TARGET_CONTENT, mapping.dir);
+    for (const targetPath of await walk(directory, mapping.accept)) {
+      const relative = path.join(mapping.dir, path.relative(directory, targetPath));
+      if (known.has(relative)) continue;
+      entries.push({
+        source: mapping.source,
+        kind: mapping.kind,
+        relative,
+        sourcePath: path.join(SOURCE_CONTENT, relative),
+        targetPath,
+        relativeTargetPath: path.relative(ROOT, targetPath),
+        action: 'local',
+        reason: 'créé dans OpenYourMath'
+      });
+    }
+  }
   return entries;
 }
 
@@ -231,6 +260,7 @@ async function main() {
   console.log(`Sources : ${sources.join(', ')}`);
 
   const entries = await plan(mappings, base);
+  entries.push(...await planLocalOnly(mappings, entries));
   console.log();
   for (const [key, counts] of summarize(entries)) {
     const [source, kind] = key.split(' ');
@@ -263,6 +293,47 @@ async function main() {
     for (const action of ['conflict', 'add', 'update', 'local']) report(entries, action);
   }
 
+  // A correction made in OpenYourMath can be promoted to the shared editorial
+  // base. Only local work is copied: an exobase edit on the same file is a
+  // conflict and must be resolved deliberately. The author registry remains
+  // owned by exobase and is intentionally excluded from this direction.
+  if (push) {
+    const pushable = entries.filter(entry => entry.action === 'local' && entry.kind !== 'auteurs');
+    const conflicts = entries.filter(entry => entry.action === 'conflict');
+    if (conflicts.length) {
+      throw new SyncError(
+        `${conflicts.length} conflit(s) à résoudre avant toute remontée : ` +
+        conflicts.slice(0, 10).map(entry => entry.relativeTargetPath).join(', '));
+    }
+    if (!pushable.length) {
+      console.log('\n✅ Aucune correction OpenYourMath à remonter dans exobase.');
+      return;
+    }
+
+    console.log('\nÀ remonter dans exobase :');
+    for (const entry of pushable.slice(0, 40)) {
+      console.log(`  ↑ content/${entry.relative.split(path.sep).join('/')}`);
+    }
+    if (pushable.length > 40) console.log(`  … et ${pushable.length - 40} autre(s)`);
+
+    if (!apply) {
+      console.log('\nAperçu uniquement. Pour remonter : pnpm sync:exobase:push --apply');
+      if (check) process.exitCode = 1;
+      return;
+    }
+    if (!exobaseIsClean()) {
+      throw new SyncError(
+        'exobase a des modifications non committées : terminez-les ou committez-les avant la remontée.');
+    }
+    for (const entry of pushable) {
+      await fs.mkdir(path.dirname(entry.sourcePath), { recursive: true });
+      await fs.copyFile(entry.targetPath, entry.sourcePath);
+    }
+    console.log(`\n${pushable.length} fichier(s) remonté(s) dans exobase.`);
+    console.log('Relisez et committez dans exobase, puis relancez la synchronisation normale pour enregistrer la nouvelle référence.');
+    return;
+  }
+
   const conflicts = force ? [] : entries.filter(entry => entry.action === 'conflict');
   const copies = [
     ...entries.filter(entry => entry.action === 'add' || entry.action === 'update'),
@@ -276,7 +347,10 @@ async function main() {
     if (copies.length || conflicts.length) {
       console.log('\nAperçu uniquement. Pour appliquer : node scripts/sync-exobase.js --apply');
     } else if (base === head) {
-      console.log('\nOpenYourMath est à jour vis-à-vis d’exobase.');
+      const locals = entries.filter(entry => entry.action === 'local').length;
+      console.log(locals
+        ? `\nAucune mise à jour à importer depuis exobase ; ${locals} modification(s) locale(s) reste(nt) à traiter.`
+        : '\nOpenYourMath est à jour vis-à-vis d’exobase.');
     } else {
       console.log(`\nAucun fichier à copier. Lancez --apply pour enregistrer la référence ${head.slice(0, 7)}.`);
     }
