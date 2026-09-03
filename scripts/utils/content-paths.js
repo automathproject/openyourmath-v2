@@ -6,6 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const PROJECT_ROOT = path.resolve(__dirname, '../..');
 export const CONTENT_ROOT = path.join(PROJECT_ROOT, 'content');
 export const EXERCISES_ROOT = path.join(CONTENT_ROOT, 'exercises');
+export const FICHES_ROOT = path.join(CONTENT_ROOT, 'fiches');
 export const IMAGES_ROOT = path.join(CONTENT_ROOT, 'images');
 export const METADATA_ROOT = path.join(CONTENT_ROOT, 'metadata');
 export const CACHE_ROOT = path.join(PROJECT_ROOT, 'cache/exercises');

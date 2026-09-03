@@ -78,3 +78,39 @@ CREATE INDEX IF NOT EXISTS idx_license_code ON exercises(license_code);
 CREATE INDEX IF NOT EXISTS idx_source_path ON exercises(source_path);
 CREATE INDEX IF NOT EXISTS idx_content_hash ON exercises(content_hash);
 CREATE INDEX IF NOT EXISTS idx_indexed_at ON exercises(indexed_at);
+
+-- Fiches d'exercices : listes thématiques éditorialisées, importées d'exobase
+-- depuis content/fiches/<source>/. Une fiche ne porte aucun énoncé, seulement
+-- un ordre et une structure sur des exercices existants.
+CREATE TABLE IF NOT EXISTS fiches (
+  uuid TEXT PRIMARY KEY,            -- identifiant éditorial, ex. f00012
+  slug TEXT NOT NULL,               -- nom de fichier source, ex. fic00012
+  title TEXT NOT NULL,
+  author TEXT,
+  organization TEXT NOT NULL,
+  created_at TEXT,
+  intro TEXT,                       -- texte libre d'introduction (optionnel)
+  exercise_count INTEGER NOT NULL DEFAULT 0,  -- références résolues
+  missing_count INTEGER NOT NULL DEFAULT 0,   -- références sans exercice au corpus
+  max_depth INTEGER NOT NULL DEFAULT 0,       -- 0 = liste plate
+  source_path TEXT,
+  source_hash TEXT
+);
+
+-- Un enregistrement par référence d'exercice, dans l'ordre de la fiche.
+-- section_path porte le chemin de titres au format JSON : [] pour une fiche
+-- plate, ["Pratique"] pour un niveau, ["Géométrie","Coniques"] au-delà. Un
+-- chemin plutôt qu'un arbre : un titre peut porter à la fois des exercices et
+-- des sous-titres, ce qu'un modèle par feuilles ne représenterait pas.
+CREATE TABLE IF NOT EXISTS fiche_items (
+  fiche_uuid TEXT NOT NULL,
+  position INTEGER NOT NULL,        -- ordre dans la fiche, à partir de 0
+  section_path TEXT NOT NULL DEFAULT '[]',
+  exercise_uuid TEXT,               -- NULL si la référence n'a pas d'exercice
+  source_ref TEXT NOT NULL,         -- référence d'origine, ex. l'id exo7 « 671 »
+  PRIMARY KEY (fiche_uuid, position)
+);
+
+CREATE INDEX IF NOT EXISTS idx_fiche_items_exercise ON fiche_items(exercise_uuid);
+CREATE INDEX IF NOT EXISTS idx_fiches_organization ON fiches(organization);
+CREATE INDEX IF NOT EXISTS idx_fiches_author ON fiches(author);

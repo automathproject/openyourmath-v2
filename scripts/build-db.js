@@ -997,4 +997,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   });
 }
 
-export { createDatabase, loadExercises, insertExercises };
+export { createDatabase, loadExercises, insertExercises, loadDatabaseModule };
