@@ -90,6 +90,30 @@ fidèle à sa source, et la lacune reste réparable sans réimport.
 L'index `idx_fiche_items_exercise` donne la relation inverse — les fiches où
 figure un exercice donné.
 
+## Export LaTeX
+
+Une liste sectionnée s'exporte avec ses sections. Le niveau de titre des
+exercices se règle sur la section la plus profonde de la liste, de sorte qu'un
+exercice se trouve toujours d'un cran sous le titre qui le porte :
+
+| Profondeur de la liste | Sections | Exercices |
+|---|---|---|
+| 0 — liste ordinaire | — | `\section*` |
+| 1 — la plupart des fiches | `\section*` | `\subsection*` |
+| 2 | `\section*`, `\subsection*` | `\subsubsection*` |
+| 3 — `fic00080`, `fic00166` | jusqu'à `\subsubsection*` | `\paragraph*` |
+
+Une liste sans section produit donc exactement le document qu'elle produisait
+avant l'arrivée des fiches. À la profondeur 3, `\paragraph*` est un titre en
+enfilade : c'est le dernier niveau disponible, et la présentation compacte
+convient à ces deux fiches, qui sont des recueils de plus de six cents
+exercices.
+
+Seuls les titres qui changent d'un exercice au suivant sont réimprimés,
+ancêtres compris. Un titre de section est du LaTeX — `Propriétés de $\Nn$` — et
+part donc tel quel dans le document, là où un titre d'exercice, qui est du
+texte, reste échappé.
+
 ## Commandes
 
 ```bash

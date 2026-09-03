@@ -505,6 +505,31 @@ function buildPreamble(body, docTitle, options) {
  *   transportable (mode `remote` uniquement).
  *   `line` : numéro de ligne (1-indexé) du début de l'exercice dans `source`.
  */
+/**
+ * Niveaux de titre LaTeX, du plus englobant au plus fin.
+ *
+ * Une fiche apporte un ou plusieurs niveaux de sections au-dessus des
+ * exercices ; une liste ordinaire n'en apporte aucun, et ses exercices restent
+ * alors en `\section*` — l'export d'une liste sans section est identique à ce
+ * qu'il était.
+ */
+const HEADING_COMMANDS = ['\\section*', '\\subsection*', '\\subsubsection*', '\\paragraph*'];
+
+function headingCommand(level) {
+  return HEADING_COMMANDS[Math.min(level, HEADING_COMMANDS.length - 1)];
+}
+
+/**
+ * Chemin de sections d'une entrée de liste.
+ *
+ * `sectionPath` vient d'une fiche ; `section` seul suffit pour une entrée
+ * ajoutée à la main. Les deux sont facultatifs.
+ */
+function exerciseSectionPath(ex) {
+  const path = Array.isArray(ex?.sectionPath) ? ex.sectionPath : (ex?.section ? [ex.section] : []);
+  return path.filter((part) => typeof part === 'string' && part.trim()).map((part) => part.trim());
+}
+
 export function buildLatexExport(exercises, title, options = {}) {
   const {
     includeHints = true,
@@ -520,6 +545,15 @@ export function buildLatexExport(exercises, title, options = {}) {
   const docTitle = title || "Liste d'exercices";
   const list = exercises || [];
 
+  // La profondeur de sections de la liste décale d'autant le niveau de titre
+  // des exercices : à zéro — une liste ordinaire — rien ne change.
+  const sectionPaths = list.map(exerciseSectionPath);
+  const sectionDepth = Math.min(
+    sectionPaths.reduce((max, path) => Math.max(max, path.length), 0),
+    HEADING_COMMANDS.length - 1,
+  );
+  let previousPath = [];
+
   const body = [];
   const anchors = [];
   const allImages = [];
@@ -533,6 +567,30 @@ export function buildLatexExport(exercises, title, options = {}) {
     const exTitle = ex.title || `Exercice ${num}`;
 
     if (body.length > 0) body.push('');
+
+    // Titres de sections de la fiche. On n'émet que ce qui change depuis
+    // l'exercice précédent, ancêtres compris : deux exercices d'une même
+    // section ne réimpriment pas son titre.
+    const sectionPath = sectionPaths[i];
+    let divergence = 0;
+    while (divergence < sectionPath.length
+      && divergence < previousPath.length
+      && sectionPath[divergence] === previousPath[divergence]) divergence++;
+    // Remonter d'un niveau sans rien émettre laisserait l'exercice sous le
+    // titre plus fin qui précède : dans ce cas, réimprimer le sien.
+    if (divergence === sectionPath.length && previousPath.length > sectionPath.length && sectionPath.length > 0) {
+      divergence = sectionPath.length - 1;
+    }
+    for (let level = divergence; level < sectionPath.length; level++) {
+      body.push(SEPARATOR);
+      body.push(commentLine(sectionPath.slice(0, level + 1).join(' > ')));
+      body.push(SEPARATOR);
+      // Un titre de fiche est déjà du LaTeX — « Propriétés de $\Nn$ » — et ne
+      // doit donc pas être échappé comme le serait un titre d'exercice.
+      body.push(`${headingCommand(level)}{${normalizeLatexTypography(sectionPath[level])}}`);
+      body.push('');
+    }
+    previousPath = sectionPath;
 
     // En-tête de navigation
     anchors.push({ uuid: ex.uuid, title: exTitle, index: i, line: body.length + 1 });
@@ -570,7 +628,7 @@ export function buildLatexExport(exercises, title, options = {}) {
     }
 
     body.push('');
-    body.push(`\\section*{Exercice ${num} — ${latexEscapeText(exTitle)}}`);
+    body.push(`${headingCommand(sectionDepth)}{Exercice ${num} — ${latexEscapeText(exTitle)}}`);
     body.push('');
 
     const groups = groupContentBlocks(exerciseContent(ex));
@@ -701,7 +759,10 @@ export function buildLatexExport(exercises, title, options = {}) {
   // En-tête du fichier
   const header = [SEPARATOR];
   header.push(commentLine(docTitle));
-  header.push(commentLine(`Généré par OpenYourMath — ${list.length} exercice${list.length > 1 ? 's' : ''}`));
+  const sectionCount = sectionPaths.filter(
+    (path, index) => path.length && path.join(' > ') !== sectionPaths[index - 1]?.join(' > ')).length;
+  header.push(commentLine(`Généré par OpenYourMath — ${list.length} exercice${list.length > 1 ? 's' : ''}`
+    + (sectionCount ? ` en ${sectionCount} section${sectionCount > 1 ? 's' : ''}` : '')));
   const optsDesc = [
     includeHints ? 'indications incluses' : 'sans indications',
     includeSolutions ? (solutionsAtEnd ? 'réponses regroupées à la fin' : 'réponses incluses') : 'sans réponses',
