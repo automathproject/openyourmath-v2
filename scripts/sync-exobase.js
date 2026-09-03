@@ -4,7 +4,8 @@
  * Imports versioned editorial content from exobase.
  *
  * exobase is the shared editorial factory: it owns the .tex sources, images,
- * code snippets and the author registry, for every source it carries.
+ * code snippets, exercise sheets and the author registry, for every source it
+ * carries.
  * OpenYourMath owns the derived data and semantic metadata. Editorial fixes
  * discovered here may be sent back explicitly with --push; nothing is ever
  * sent automatically.
@@ -32,6 +33,7 @@ const LABELS = {
   sources: 'Sources .tex',
   images: 'Images et sources graphiques',
   code: 'Extraits Python',
+  fiches: "Fiches d'exercices",
   auteurs: 'Référentiel auteurs'
 };
 const ACTIONS = {
@@ -88,7 +90,8 @@ function mappingsFor(sources) {
   return sources.flatMap(source => [
     { source, kind: 'sources', dir: `exercises/${source}`, accept: name => name.endsWith('.tex') },
     { source, kind: 'images', dir: `images/${source}`, accept: () => true },
-    { source, kind: 'code', dir: `code/${source}/python`, accept: name => name.endsWith('.py') }
+    { source, kind: 'code', dir: `code/${source}/python`, accept: name => name.endsWith('.py') },
+    { source, kind: 'fiches', dir: `fiches/${source}`, accept: name => name.endsWith('.txt') }
   ]);
 }
 

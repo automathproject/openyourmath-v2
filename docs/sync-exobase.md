@@ -12,8 +12,8 @@ Exercices ←→ exobase ←→ OpenYourMath
 ## Responsabilités
 
 - **Exercices** : rédaction et correction des fichiers LaTeX AMSCC, de leurs images et de leurs sources graphiques ;
-- **exobase** : version canonique de **toutes** les sources — `amscc`, `crouzet`, `exo7` et celles à venir — sous `content/exercises/<source>/`, `content/images/<source>/`, `content/code/<source>/python/` et `content/authors.json`. C'est là que se font la normalisation et les corrections de sources ;
-- **OpenYourMath** : fichiers dérivés (`cache/`, `data/`, `static/artifacts/`) et métadonnées sémantiques sous `content/metadata/`. Il peut proposer une correction des sources, images ou scripts Python vers exobase, après relecture.
+- **exobase** : version canonique de **toutes** les sources — `amscc`, `crouzet`, `exo7` et celles à venir — sous `content/exercises/<source>/`, `content/images/<source>/`, `content/code/<source>/python/`, `content/fiches/<source>/` et `content/authors.json`. C'est là que se font la normalisation et les corrections de sources ;
+- **OpenYourMath** : fichiers dérivés (`cache/`, `data/`, `static/artifacts/`) et métadonnées sémantiques sous `content/metadata/`. Il peut proposer une correction des sources, images, scripts Python ou fiches vers exobase, après relecture.
 
 Les métadonnées sémantiques restent dans OpenYourMath parce qu’elles sont
 produites par son pipeline d’indexation et dépendent de son `content_hash`.
@@ -100,9 +100,12 @@ exige aussi un exobase propre, pour que son diff soit relisible. `--force` donne
 autorité à exobase à l'import et ne peut pas être combiné avec `--push`.
 Les sources sont découvertes dans
 `content/exercises/` d'exobase, donc une nouvelle source est prise en compte
-sans toucher au script. Les fichiers qui n'existent que dans OpenYourMath ne
-sont jamais supprimés ; les suppressions et renommages faits dans exobase depuis
-la référence sont signalés, jamais répercutés automatiquement.
+sans toucher au script. Pour chacune, la synchro suit les exercices `.tex`, les
+images, les extraits Python et les fiches `.txt` de `content/fiches/<source>/` ;
+une source sans fiches est simplement ignorée. Les fichiers qui n'existent que
+dans OpenYourMath ne sont jamais supprimés ; les suppressions et renommages
+faits dans exobase depuis la référence sont signalés, jamais répercutés
+automatiquement.
 
 Codes de sortie : `0` succès, `1` écart ou conflit, `2` usage, `3` erreur.
 
