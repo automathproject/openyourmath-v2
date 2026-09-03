@@ -1,11 +1,32 @@
 // src/routes/exercise/list/+page.server.js
 import { error } from '@sveltejs/kit';
 import { getExerciseByUuid } from '$lib/db/queries.js';
+import { getFicheByUuid } from '$lib/db/fiches.js';
 
 export async function load({ url }) {
   try {
     const listParam = url.searchParams.get('list');
+    const ficheParam = url.searchParams.get('fiche');
     const titleParam = url.searchParams.get('title') || '';
+
+    // Une fiche est une liste nommée et sectionnée : elle emprunte cette route
+    // telle quelle. `list=` reste le chemin d'origine, inchangé.
+    if (ficheParam && ficheParam.trim()) {
+      const loaded = await getFicheByUuid(ficheParam.trim());
+      if (!loaded) throw error(404, `Fiche introuvable : ${ficheParam}`);
+      return {
+        exercises: loaded.exercises,
+        uuids: loaded.exercises.map((exercise) => exercise.uuid),
+        title: titleParam || loaded.fiche.title,
+        fiche: loaded.fiche,
+        meta: {
+          total: loaded.meta.total,
+          loaded: loaded.meta.loaded,
+          errors: loaded.meta.missing,
+          failedUuids: loaded.meta.missingRefs.map((entry) => entry.sourceRef)
+        }
+      };
+    }
     
     // Si pas de paramètre list, retourner une liste vide
     if (!listParam || listParam.trim() === '') {

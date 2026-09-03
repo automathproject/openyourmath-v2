@@ -77,6 +77,32 @@ export const listCount = derived(
   ($list) => $list.length
 );
 
+// Regroupement par section : les entrées d'une fiche portent un `section`
+// (dernier titre du chemin) ; celles d'une liste ordinaire n'en portent pas et
+// forment un unique groupe anonyme. Grouper les entrées *contiguës* plutôt que
+// toutes celles de même titre préserve l'ordre voulu par la fiche, y compris
+// quand un même titre revient plus loin.
+export const listSections = derived(
+  exerciseList,
+  ($list) => $list.reduce((groups, exercise, index) => {
+    const title = exercise.section ?? null;
+    const last = groups[groups.length - 1];
+    if (last && last.title === title) {
+      last.items.push({ ...exercise, index });
+    } else {
+      groups.push({ title, path: exercise.sectionPath ?? [], items: [{ ...exercise, index }] });
+    }
+    return groups;
+  }, [])
+);
+
+// Vrai dès qu'au moins une entrée porte une section : la liste s'affiche alors
+// par groupes, sinon exactement comme avant.
+export const hasSections = derived(
+  exerciseList,
+  ($list) => $list.some((exercise) => exercise.section)
+);
+
 export const currentPosition = derived(
   [selectedExerciseIndex, exerciseList],
   ([$index, $list]) => ({
@@ -280,6 +306,32 @@ export const listActions = {
     }
   },
 
+  // Charger une fiche déjà résolue côté serveur. Contrairement à loadFromUuids,
+  // aucun aller-retour réseau : les métadonnées et les sections viennent du
+  // `load` de la page. Le contenu complet reste chargé à la demande par
+  // selectExercise, ce qui rend supportables les fiches de plusieurs milliers
+  // d'exercices.
+  async loadFromFiche(exercises) {
+    if (!Array.isArray(exercises) || exercises.length === 0) {
+      listActions.clearList();
+      return;
+    }
+
+    listLoading.set(true);
+    listError.set(null);
+    try {
+      exerciseList.set(exercises.map((exercise) => ({
+        ...exercise,
+        section: exercise.section ?? null,
+        sectionPath: exercise.sectionPath ?? []
+      })));
+      selectedExerciseIndex.set(0);
+      await listActions.selectExercise(0);
+    } finally {
+      listLoading.set(false);
+    }
+  },
+
   // Charger depuis une chaîne d'UUIDs (CORRIGÉ)
   async loadFromUuidString(uuidString) {
     const uuids = listUtils.parseUuidString(uuidString);
@@ -385,7 +437,9 @@ export const listActions = {
       author: exerciseData.author,
       difficulty: exerciseData.difficulty,
       level: exerciseData.level,
-      module: exerciseData.module
+      module: exerciseData.module,
+      section: exerciseData.section ?? null,
+      sectionPath: exerciseData.sectionPath ?? []
     };
 
     console.log('Adding exercise to list:', newExercise);

@@ -238,6 +238,15 @@
     {/if}
 
     {#each exercises as exercise, index}
+      <!-- En-tête de section d'une fiche. Inséré dans la boucle plate plutôt
+           qu'en groupant les exercices : la numérotation, la sélection et le
+           glisser-déposer restent indexés sur la liste entière. Une liste sans
+           section n'en affiche aucun. -->
+      {#if exercise.section && exercise.section !== exercises[index - 1]?.section}
+        <div class="exercise-section-heading" role="presentation">
+          <MathRenderer content={exercise.section} inline={true} />
+        </div>
+      {/if}
       <div
         class="exercise-item"
         class:exercise-item--selected={index === selectedIndex}
@@ -338,6 +347,21 @@
 </div>
 
 <style>
+  .exercise-section-heading {
+    padding: 0.55rem 0.75rem 0.2rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted, #64748b);
+  }
+
+  .exercise-section-heading:not(:first-child) {
+    margin-top: 0.35rem;
+    border-top: 1px solid var(--color-border, #e2e8f0);
+    padding-top: 0.6rem;
+  }
+
   .exercise-list-editor { 
     height: 100%; 
     display: flex; 

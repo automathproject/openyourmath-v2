@@ -58,6 +58,13 @@
         </svg>
         <span class="nav-label">Parcourir</span>
       </a>
+      <a href="/fiches" class:is-active={isActive('/fiches')} aria-label="Fiches d'exercices" title="Fiches d'exercices">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 4a2 2 0 012-2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 2v6h6"/>
+          <line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/>
+        </svg>
+        <span class="nav-label">Fiches</span>
+      </a>
       <a href={listHref} class:is-active={isActive('/exercise/list')} aria-label={`Ma liste${seanceCount > 0 ? `, ${seanceCount} élément${seanceCount > 1 ? 's' : ''}` : ''}`} title="Ma liste">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
