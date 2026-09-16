@@ -1,0 +1,27 @@
+{
+  "uuid": "XPJd",
+  "source_path": "amscc/XPJd.tex",
+  "summary": "L'exercice demande de calculer la dérivée au sens des distributions de la fonction valeur absolue. Il s'agit d'appliquer la définition de la dérivée d'une distribution régulière à une fonction non dérivable en un point.",
+  "concepts": [
+    "distribution régulière",
+    "dérivation au sens des distributions",
+    "fonction à support compact",
+    "intégration par parties",
+    "fonction signe",
+    "distribution associée à une fonction"
+  ],
+  "methods": [
+    "définition de la dérivée d'une distribution",
+    "intégration par parties",
+    "séparation d'intégrale en parties"
+  ],
+  "objects": [
+    "fonction valeur absolue",
+    "fonction test",
+    "distribution régulière",
+    "fonction signe"
+  ],
+  "content_hash": "a43c8bdcdde7128644925e22f919d9bbfbf54246003cf91eddf390a5505d2a44",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-16T09:31:07.892Z"
+}

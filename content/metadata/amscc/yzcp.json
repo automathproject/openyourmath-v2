@@ -1,0 +1,30 @@
+{
+  "uuid": "yzcp",
+  "source_path": "amscc/yzcp.tex",
+  "summary": "L'exercice demande de résoudre l'équation différentielle de l'oscillateur harmonique avec un second membre de Dirac, en trouvant d'abord la solution fondamentale causale puis en déduisant la solution générale pour un signal extérieur quelconque.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "solution fondamentale",
+    "distribution de Dirac",
+    "convolution de distributions",
+    "problème de Cauchy",
+    "fonction de Heaviside",
+    "solution causale"
+  ],
+  "methods": [
+    "résolution d'équation différentielle linéaire",
+    "méthode des conditions initiales",
+    "convolution de distributions",
+    "analyse des cas particuliers"
+  ],
+  "objects": [
+    "équation différentielle du second ordre",
+    "solution fondamentale causale",
+    "fonction de Heaviside",
+    "distribution de Dirac",
+    "signal extérieur"
+  ],
+  "content_hash": "dbe2022710e33591055d35b4143ad201fd4b031b4088011e86eb6e5e4f479e3e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-16T09:31:17.006Z"
+}

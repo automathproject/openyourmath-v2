@@ -1,0 +1,32 @@
+{
+  "uuid": "w0NX",
+  "source_path": "amscc/w0NX.tex",
+  "summary": "Résoudre une équation différentielle linéaire d'ordre 2 à second membre distributionnel de type δ' - δ''. La solution est recherchée dans l'espace des distributions à support dans ℝ₊. L'exercice mobilise la transformation de Fourier et la convolution avec des dérivées de Dirac.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "distribution",
+    "convolution de distributions",
+    "transformation de Fourier",
+    "fonction de Heaviside",
+    "fonctions hyperboliques",
+    "second membre distributionnel"
+  ],
+  "methods": [
+    "résolution d'équation différentielle",
+    "convolution de distributions",
+    "transformation de Fourier",
+    "inversion de Fourier",
+    "calcul de dérivées de distributions"
+  ],
+  "objects": [
+    "distribution T",
+    "fonction z(t)",
+    "fonction G(t)",
+    "fonction hyperbolique sinh",
+    "fonction exponentielle e^t",
+    "dérivées de Dirac δ' et δ''"
+  ],
+  "content_hash": "a8f87dad2fec7af52bbb7e42632ed68bbc0bdb8d970352eaa171e26f495ec760",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-16T09:31:14.248Z"
+}

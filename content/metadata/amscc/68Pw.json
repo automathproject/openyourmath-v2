@@ -1,0 +1,28 @@
+{
+  "uuid": "68Pw",
+  "source_path": "amscc/68Pw.tex",
+  "summary": "L'exercice demande de démontrer que la dérivée de la fonction logarithme au sens des distributions est la valeur principale de 1/x, puis de montrer que le produit de x par cette valeur principale vaut 1.",
+  "concepts": [
+    "distribution régulière",
+    "dérivation au sens des distributions",
+    "valeur principale",
+    "intégration par parties",
+    "convergence d'intégrales",
+    "produit d'une distribution par une fonction lisse"
+  ],
+  "methods": [
+    "intégration par parties",
+    "définition de la dérivée distributionnelle",
+    "limite d'intégrales",
+    "décomposition de fonction test"
+  ],
+  "objects": [
+    "distribution valeur principale",
+    "fonction logarithme",
+    "fonction test",
+    "produit de distributions"
+  ],
+  "content_hash": "1481c8eb175a7bcfca27e399b1037155fbdbe62768107273dee36e22af15c204",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-16T09:31:04.849Z"
+}

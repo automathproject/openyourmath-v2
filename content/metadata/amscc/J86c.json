@@ -1,0 +1,31 @@
+{
+  "uuid": "J86c",
+  "source_path": "amscc/J86c.tex",
+  "summary": "L'exercice demande de montrer qu'une fonction produit d'une cosinus et d'une exponentielle décroissante appartient à l'espace L¹, puis d'exprimer sa transformée de Fourier comme une convolution de transformées, et enfin de déterminer explicitement cette transformée en utilisant des propriétés de la transformée de Fourier.",
+  "concepts": [
+    "transformée de Fourier",
+    "espace L¹",
+    "distribution tempérée",
+    "convolution de distributions",
+    "translation de fonction",
+    "fonction exponentielle décroissante",
+    "fonction cosinus"
+  ],
+  "methods": [
+    "comparaison d'intégrales",
+    "linéarité de la transformée de Fourier",
+    "propriété de translation",
+    "calcul explicite de transformée de Fourier",
+    "décomposition en exponentielles complexes"
+  ],
+  "objects": [
+    "fonction produit",
+    "transformée de Fourier",
+    "distribution de Dirac",
+    "fonction exponentielle décroissante",
+    "fonction cosinus"
+  ],
+  "content_hash": "e466ffd01432bf13ca8cc2e23f8ffaa9d9f7a1a26f861f9550d48cede05d421c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-16T09:31:27.584Z"
+}

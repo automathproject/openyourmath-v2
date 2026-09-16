@@ -1,0 +1,31 @@
+{
+  "uuid": "dX9G",
+  "source_path": "amscc/dX9G.tex",
+  "summary": "L'exercice demande de déterminer une distribution causale T dans l'espace des distributions à support positif, solution d'une équation différentielle linéaire d'ordre 2 à coefficients constants, dont le second membre est une combinaison linéaire de dérivées de la distribution de Dirac.",
+  "concepts": [
+    "équation différentielle causale",
+    "distribution de Dirac",
+    "solution fondamentale",
+    "convolution de distributions",
+    "problème de Cauchy",
+    "équation caractéristique",
+    "fonction génératrice de solutions"
+  ],
+  "methods": [
+    "résolution d'équation différentielle linéaire",
+    "calcul de solution fondamentale",
+    "convolution de distributions",
+    "application des conditions initiales",
+    "décomposition en valeurs propres"
+  ],
+  "objects": [
+    "distribution causale",
+    "opérateur différentiel",
+    "fonction exponentielle",
+    "fonction de Heaviside",
+    "dérivées de Dirac"
+  ],
+  "content_hash": "156d15aa6da70c5fb8765dd7c9d43069b25fb468b92cf0e4b80ebe88d2ee9730",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-16T09:31:11.117Z"
+}

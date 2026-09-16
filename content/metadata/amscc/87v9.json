@@ -1,0 +1,32 @@
+{
+  "uuid": "87v9",
+  "source_path": "amscc/87v9.tex",
+  "summary": "L'exercice demande de résoudre une équation différentielle linéaire d'ordre 2 associée à un circuit RLC en régime critique, puis de déterminer la réponse impulsionnelle du système sous forme de distribution tempérée causale. Il s'agit ensuite d'exprimer la tension de sortie comme la convolution de la tension d'entrée avec la réponse impulsionnelle.",
+  "concepts": [
+    "équation différentielle linéaire d'ordre 2",
+    "réponse impulsionnelle",
+    "distribution tempérée causale",
+    "convolution",
+    "régime critique",
+    "racine double",
+    "solution générale",
+    "conditions initiales"
+  ],
+  "methods": [
+    "résolution d'équation différentielle linéaire",
+    "calcul de l'équation caractéristique",
+    "détermination de la solution homogène",
+    "convolution de distributions",
+    "détermination de la réponse impulsionnelle"
+  ],
+  "objects": [
+    "équation différentielle",
+    "réponse impulsionnelle G",
+    "tension de sortie v",
+    "tension d'entrée u",
+    "fonction g"
+  ],
+  "content_hash": "eb8c0d405b985e5a070b3a8d56b065402127d04ec48f3b2d3173276390e2b46b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-16T09:31:20.861Z"
+}

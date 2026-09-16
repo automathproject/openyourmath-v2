@@ -1,0 +1,31 @@
+{
+  "uuid": "mTCd",
+  "source_path": "amscc/mTCe.tex",
+  "summary": "Résolution d'une équation différentielle causale de type $G'+G=\\delta$ dans l'espace des distributions à support dans $\\mathbb{R}_+$. Utilisation de la transformée de Fourier pour déterminer la solution fondamentale et vérification de ses propriétés.",
+  "concepts": [
+    "équation différentielle dans les distributions",
+    "solution fondamentale causale",
+    "transformée de Fourier",
+    "fonction de Heaviside",
+    "distribution à support compact",
+    "convolution de distributions",
+    "problème de Cauchy"
+  ],
+  "methods": [
+    "transformée de Fourier",
+    "formule de dérivation des distributions",
+    "résolution d'équation différentielle linéaire",
+    "calcul d'intégrale impropre",
+    "inversion de transformée de Fourier"
+  ],
+  "objects": [
+    "distribution $G$",
+    "fonction de Heaviside $H$",
+    "delta de Dirac $\\delta$",
+    "solution $z(t)=e^{-t}$",
+    "transformée de Fourier $\\widehat{G}$"
+  ],
+  "content_hash": "2e072df168c08399028a58a8af9db9371e9a07c79cacbd9b1f58c73baef8f5d6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-16T09:31:24.340Z"
+}
