@@ -426,11 +426,11 @@
   }
 
   .lecture-title--classic {
-    font-size: 36px;
+    font-size: 26px;
   }
 
   .lecture-title--immersive {
-    font-size: 44px;
+    font-size: 30px;
   }
 
   .reveal-controls {
@@ -534,12 +534,12 @@
 
     .lecture-title--classic,
     .lecture-title--immersive {
-      font-size: clamp(28px, 8vw, 36px);
+      font-size: clamp(21px, 6vw, 26px);
     }
 
     .lecture-subheader--compact-mobile .lecture-title--classic,
     .lecture-subheader--compact-mobile .lecture-title--immersive {
-      font-size: clamp(26px, 7vw, 34px);
+      font-size: clamp(20px, 5.5vw, 24px);
     }
   }
 </style>

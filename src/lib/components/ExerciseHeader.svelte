@@ -344,7 +344,7 @@
   .exercise-title {
     font-family: theme('fontFamily.heading');
     font-weight: 800;
-    font-size: 28px;
+    font-size: 21px;
     color: theme('colors.interface.text-primary');
     letter-spacing: -0.3px;
     margin-bottom: 0.5rem;
