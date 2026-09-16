@@ -8,6 +8,13 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '..');
+const args = new Set(process.argv.slice(2));
+const check = args.has('--check');
+const unknownArgs = [...args].filter(arg => arg !== '--check');
+if (unknownArgs.length) {
+  console.error('Usage : pnpm release:content [--check]');
+  process.exit(2);
+}
 
 export function isReleaseVersion(version) {
   return /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$/.test(String(version));
@@ -51,6 +58,12 @@ function main() {
   const { version } = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
   if (!isReleaseVersion(version)) {
     throw new Error(`Version package.json invalide : « ${version} ».`);
+  }
+
+  if (check) {
+    console.log(`\n✅ Release ${version} prête à être construite.`);
+    console.log('La publication exécutera ensuite les tests, la construction du contenu, la vérification des artefacts et la publication de l’image Docker.');
+    return;
   }
 
   const pnpm = process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm';

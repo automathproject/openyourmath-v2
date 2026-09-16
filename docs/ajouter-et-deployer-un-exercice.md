@@ -177,6 +177,7 @@ git push origin main
 Mettre ensuite à jour le champ `version` de `package.json`, commiter ce changement et pousser la branche. Le tag de l'image et la version affichée par l'application proviennent de ce champ.
 
 ```bash
+pnpm release:content:check  # vérifie les préconditions sans publier
 pnpm release:content
 ```
 

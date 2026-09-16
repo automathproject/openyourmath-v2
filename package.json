@@ -46,6 +46,7 @@
     "exercise:prepare": "node scripts/prepare-exercise.js",
     "exercises:prepare": "node scripts/prepare-new-exercises.js",
     "release:content": "node scripts/release-content.js",
+    "release:content:check": "node scripts/release-content.js --check",
     "cache:embeddings:restore": "node scripts/ia/restore-embedding-cache.js",
     "cache:embeddings:stats": "node scripts/ia/cache-stats.js",
     "cache:embeddings:check": "node scripts/ia/cache-stats.js --verbose",
