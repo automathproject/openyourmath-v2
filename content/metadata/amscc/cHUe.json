@@ -4,12 +4,12 @@
   "summary": "L'exercice demande de réaliser un test d'indépendance du chi-carré pour évaluer si le milieu socio-professionnel des parents influence le type d'études des enfants, à partir d'un tableau de contingence. Il faut interpréter le résultat pour un risque de première espèce de 5% et déterminer la p-valeur associée.",
   "concepts": [
     "test du chi-carré",
-    "indépendance statistique",
     "tableau de contingence",
+    "hypothèse nulle",
+    "hypothèse alternative",
     "risque de première espèce",
     "p-valeur",
-    "hypothèse nulle",
-    "hypothèse alternative"
+    "indépendance statistique"
   ],
   "methods": [
     "calcul de la statistique du chi-carré",
@@ -18,12 +18,12 @@
     "interprétation du test"
   ],
   "objects": [
-    "tableau de contingence",
+    "tableau de contingence 4x4",
     "fréquences observées",
     "fréquences théoriques",
     "statistique de test"
   ],
-  "content_hash": "35476fb0321315e68ec77d43cf7da915a844e808b341f2ccc4f30390821e06de",
+  "content_hash": "c7651b5e41da1e131c42b346f616ba7dfd573696a213371471588a97e1fb1b31",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:07:44.977Z"
+  "indexed_at": "2026-09-16T11:30:38.875Z"
 }

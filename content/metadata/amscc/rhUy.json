@@ -1,7 +1,7 @@
 {
   "uuid": "rhUy",
   "source_path": "amscc/rhUy.tex",
-  "summary": "L'exercice demande de comparer la consommation énergétique moyenne entre deux régions A et B en utilisant des tests statistiques. Il s'agit d'analyser des données descriptives, de tester l'égalité des variances avec un test de Fisher, puis de comparer les moyennes avec un test de Welch adapté aux variances inégales. L'objectif est de déterminer si l'écart observé est statistiquement significatif.",
+  "summary": "Comparaison des consommations énergétiques hivernales entre deux régions à l'aide de tests statistiques. Calcul de différences de moyennes, coefficients de variation, test de Fisher pour l'égalité des variances, test de Welch pour les moyennes, intervalle de confiance et analyse des hypothèses.",
   "concepts": [
     "test d'hypothèses",
     "test de Student",
@@ -10,25 +10,24 @@
     "loi normale",
     "intervalle de confiance",
     "coefficient de variation",
-    "hypothèse nulle"
+    "degrés de liberté"
   ],
   "methods": [
-    "test bilatéral",
-    "calcul de la statistique de test",
-    "calcul des degrés de liberté",
-    "comparaison de variances",
-    "interprétation de la p-valeur",
-    "construction d'intervalle de confiance"
+    "calcul de différence de moyennes",
+    "test d'égalité des variances",
+    "test de Student avec variances inégales",
+    "calcul de p-valeur",
+    "construction d'intervalle de confiance",
+    "formule de Welch-Satterthwaite"
   ],
   "objects": [
     "moyenne échantillon",
     "variance empirique",
-    "écart-type",
-    "coefficient de variation",
     "statistique de test",
-    "degrés de liberté"
+    "degrés de liberté",
+    "intervalle de confiance"
   ],
-  "content_hash": "2b933503c03b5585bc13c071f914a6683e2161f15cde2f9908656a67a388ff10",
+  "content_hash": "eb5cf539748dbe3936068259e5e73a318f7080158d361786bfe58fce90a003d9",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:07:57.606Z"
+  "indexed_at": "2026-09-16T11:31:00.010Z"
 }

@@ -1,7 +1,7 @@
 {
   "uuid": "2Aui",
   "source_path": "amscc/2Aui.tex",
-  "summary": "L'exercice étudie deux variables aléatoires discrètes X et Y définies sur un tirage sans remise de trois boules dans une urne contenant des boules de trois couleurs. Il demande de déterminer leurs lois, leurs espérances, leur loi conjointe, leur indépendance, et la loi d'une variable H définie comme leur produit.",
+  "summary": "L'exercice étudie deux variables aléatoires discrètes X (nombre de boules blanches) et Y (nombre de boules noires) dans un tirage sans remise de trois boules parmi neuf. Il demande de déterminer leurs lois, leur indépendance, et les propriétés de la variable H = X × Y.",
   "concepts": [
     "variable aléatoire discrète",
     "loi hypergéométrique",
@@ -11,11 +11,10 @@
     "probabilité conditionnelle"
   ],
   "methods": [
-    "calcul de probabilités sans remise",
-    "construction de loi conjointe",
-    "vérification d'indépendance",
-    "calcul d'espérance",
-    "énumération des cas"
+    "calcul de loi hypergéométrique",
+    "construction de tableau de loi conjointe",
+    "vérification d'indépendance par produit de probabilités",
+    "calcul d'espérance par définition"
   ],
   "objects": [
     "variable aléatoire discrète",
@@ -23,7 +22,7 @@
     "tableau de loi conjointe",
     "variable aléatoire composée"
   ],
-  "content_hash": "24f804b97fa2f4bf9793d227afe15c96432e9a9439d55a1dab980ddecec4f815",
+  "content_hash": "de12b902dc06df4750bab982c9d4270d03c64d50264c1a687eb5cb5f8d23e3ad",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:00:55.525Z"
+  "indexed_at": "2026-09-16T11:27:56.004Z"
 }

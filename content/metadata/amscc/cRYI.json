@@ -1,7 +1,7 @@
 {
   "uuid": "cRYI",
   "source_path": "amscc/cRYI.tex",
-  "summary": "L'exercice étudie une variable aléatoire Z définie par sa fonction de répartition F_Z en trois morceaux. Il demande de vérifier que F_Z est bien une fonction de répartition, de calculer des probabilités ponctuelles, de déterminer un paramètre α pour une variable discrète Y, de construire la fonction de répartition de Y, puis d'analyser une combinaison linéaire de F_Z et F_Y pour en déduire une nouvelle variable aléatoire X.",
+  "summary": "L'exercice étudie une variable aléatoire Z définie par sa fonction de répartition F_Z en trois morceaux. Il demande de vérifier que F_Z est bien une fonction de répartition, de calculer des probabilités ponctuelles, de déterminer un paramètre α pour une variable discrète Y, de construire la fonction de répartition de Y, et d'analyser une combinaison linéaire de F_Z et F_Y pour obtenir une nouvelle variable aléatoire X.",
   "concepts": [
     "fonction de répartition",
     "variable aléatoire discrète",
@@ -19,13 +19,14 @@
     "dérivation pour obtenir une densité"
   ],
   "objects": [
-    "fonction de répartition",
-    "variable aléatoire discrète",
-    "variable aléatoire continue",
-    "densité de probabilité",
-    "fonction en morceaux"
+    "fonction de répartition F_Z",
+    "variable aléatoire Z",
+    "variable aléatoire discrète Y",
+    "fonction F = F_Z - (5/12)F_Y",
+    "variable aléatoire X",
+    "densité de probabilité f_X"
   ],
-  "content_hash": "985d77a9ce9ccab796ada6ea9ddbe2db976b35d94bf9c4a36860e7fef4edc77c",
+  "content_hash": "8a218abbdd6f1000ec80a33ca0335dfd9a60552f98695e09e9d32b30b81d290d",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:27:59.106Z"
+  "indexed_at": "2026-09-16T11:27:39.591Z"
 }

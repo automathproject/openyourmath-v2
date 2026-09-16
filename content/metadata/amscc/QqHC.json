@@ -1,32 +1,28 @@
 {
   "uuid": "QqHC",
   "source_path": "amscc/QqHC.tex",
-  "summary": "L'exercice étudie des variables aléatoires discrètes définies sur un tirage successif sans remise de boules dans une urne contenant des boules blanches et noires. Il demande d'analyser les lois de probabilité, l'indépendance d'événements et de variables aléatoires, ainsi que la loi conjointe de deux variables aléatoires.",
+  "summary": "L'exercice étudie des variables aléatoires discrètes définies sur un tirage successif sans remise de boules dans une urne contenant des boules blanches et noires. Il demande d'analyser les lois de ces variables, leur indépendance et leur loi conjointe.",
   "concepts": [
     "variable aléatoire discrète",
     "loi de probabilité",
     "indépendance d'événements",
     "indépendance de variables aléatoires",
-    "loi conjointe",
     "probabilité conditionnelle",
-    "tirage sans remise"
+    "loi conjointe"
   ],
   "methods": [
     "calcul de probabilités par dénombrement",
-    "vérification de l'indépendance par égalité de produits",
+    "vérification de l'indépendance par égalité des probabilités",
     "construction de la loi conjointe",
-    "comparaison de lois de probabilité"
+    "comparaison des lois marginales"
   ],
   "objects": [
-    "variable aléatoire de rang d'apparition",
+    "variable aléatoire de rang",
     "urne à boules",
     "loi de probabilité discrète",
-    "événements élémentaires",
-    "couple de variables aléatoires"
+    "tableau de probabilités conjointes"
   ],
-  "content_hash": "f7c619c1b9bcac42604f219ea94cfc58e040eb42856b34db0757e8dfd79e352f",
+  "content_hash": "9c60b25104a3fb5695409394828ecf1e602b4e0b6e98d85cf1e5e810b057d1dc",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:01:22.577Z",
-  "previous_content_hash": "7c7f4c99e96a01244ee628051bbef3a344612e4e1cf0958f6fe4bb491fff1284",
-  "revalidated_at": "2026-09-01T13:56:29.649Z"
+  "indexed_at": "2026-09-16T11:28:30.464Z"
 }

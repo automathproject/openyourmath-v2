@@ -8,25 +8,25 @@
     "indépendance d'événements",
     "indépendance de variables aléatoires",
     "probabilité conditionnelle",
-    "formule de Bayes",
-    "loi uniforme",
-    "loi conjointe"
+    "loi conjointe",
+    "tirage sans remise",
+    "uniformité"
   ],
   "methods": [
     "calcul de probabilités conditionnelles",
-    "application de la formule de Bayes",
-    "comparaison de produits de probabilités",
-    "construction de loi conjointe",
-    "calcul de probabilités marginales"
+    "formule de Bayes",
+    "calcul de loi conjointe",
+    "vérification d'indépendance",
+    "énumération des cas"
   ],
   "objects": [
-    "variable aléatoire de rang d'apparition",
-    "urne à boules numérotées",
+    "variable aléatoire de rang",
+    "urne à boules",
+    "loi uniforme",
     "couple de variables aléatoires",
-    "loi de probabilité discrète",
-    "tableau de probabilités conjointes"
+    "matrice de probabilités conjointes"
   ],
-  "content_hash": "25f014e6534859774b52dd68aa6b7ba1cb3e4ecb07d0ea39c9d0e61439b79710",
+  "content_hash": "fccbea535f5e5154d82a7bad03fc69a5e5bd072c97729f0cc4bc03e2e7b0d963",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:01:19.247Z"
+  "indexed_at": "2026-09-16T11:28:25.545Z"
 }

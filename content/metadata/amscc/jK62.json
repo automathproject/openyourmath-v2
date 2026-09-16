@@ -1,7 +1,7 @@
 {
   "uuid": "jK62",
   "source_path": "amscc/jK62.tex",
-  "summary": "L'exercice modélise un jeu de boules avec remise où l'on tire 4 boules numérotées de 1 à 5. Il demande de calculer des probabilités, lois, espérances et variances de variables aléatoires indicatrices de valeurs gagnantes, ainsi que leur indépendance et leur loi jointe. La dernière question porte sur la somme de ces variables aléatoires.",
+  "summary": "On tire 4 boules avec remise dans une urne contenant 5 boules numérotées. On définit des variables aléatoires indicatrices pour chaque numéro gagnant. L'exercice demande de calculer des probabilités, lois, espérances et variances, et d'étudier l'indépendance et la loi jointe de certaines variables.",
   "concepts": [
     "variable aléatoire indicatrice",
     "loi binomiale",
@@ -10,26 +10,24 @@
     "loi jointe",
     "espérance",
     "variance",
-    "somme de variables aléatoires"
+    "linéarité de l'espérance"
   ],
   "methods": [
     "calcul de probabilité par complémentaire",
-    "détermination de la loi d'une variable aléatoire",
-    "calcul d'espérance et de variance",
-    "vérification d'indépendance",
-    "construction de la loi jointe"
+    "calcul de loi d'une variable indicatrice",
+    "détermination d'indépendance par produit de probabilités",
+    "construction de loi jointe à partir de marginales",
+    "somme de variables aléatoires indicatrices"
   ],
   "objects": [
-    "variable aléatoire discrète",
     "variable aléatoire indicatrice",
-    "loi de probabilité",
-    "espérance mathématique",
-    "variance",
-    "loi jointe"
+    "loi binomiale",
+    "variable aléatoire discrète",
+    "loi jointe",
+    "espérance",
+    "variance"
   ],
-  "content_hash": "a40de27a34d5ccf3cb5896f0b136ddf32bc1990bcb1fab3c75e563fceadea94a",
+  "content_hash": "b940bf5ee04c43da296e443a8c2efd60a31a131c33ecf9fcb95e8fcf96c760cf",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:01:45.534Z",
-  "previous_content_hash": "bd048291b2b67e2a74f1e566a610cce69f2cc60d6b0a4306ebb5141093d822d9",
-  "revalidated_at": "2026-09-01T13:56:31.633Z"
+  "indexed_at": "2026-09-16T11:28:49.388Z"
 }

@@ -8,6 +8,7 @@
     "test d'hypothèses",
     "risque de première espèce",
     "intervalle de confiance",
+    "loi binomiale",
     "statistique d'échantillonnage"
   ],
   "methods": [
@@ -19,12 +20,12 @@
   ],
   "objects": [
     "paramètre de Poisson",
-    "échantillon d'effectifs",
-    "histogramme des fréquences",
+    "échantillon d'observations",
+    "histogramme des effectifs",
     "loi de Poisson de paramètre 1",
     "estimateur convergent"
   ],
-  "content_hash": "593c907c7a77d14cb7c686b6f77f27a1ec7c0b09ecbf5cfbad158094237dd1a7",
+  "content_hash": "747fcacccf50dec0f797f4023210deaef2658735c77a0aca00f03f242683119d",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:07:54.273Z"
+  "indexed_at": "2026-09-16T11:30:55.372Z"
 }

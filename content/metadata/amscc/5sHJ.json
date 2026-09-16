@@ -12,16 +12,16 @@
   ],
   "methods": [
     "calcul de coefficients binomiaux",
-    "application de la formule de l'espérance",
-    "calcul de probabilités conditionnelles"
+    "application de la loi hypergéométrique",
+    "calcul d'espérance par sommation pondérée"
   ],
   "objects": [
     "variable aléatoire discrète",
     "loi hypergéométrique",
-    "espérance mathématique",
-    "tableau de gains"
+    "tableau de gains",
+    "probabilités conditionnelles"
   ],
-  "content_hash": "e6f26c5ea96ca522eb4d791791c3e00c141737498c87593c3262e8e64176919b",
+  "content_hash": "96227c259281535dd5fababbd6ec18dd8afdbc5911bf631e32c41cbaa07215e5",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:01:01.474Z"
+  "indexed_at": "2026-09-16T11:28:04.443Z"
 }

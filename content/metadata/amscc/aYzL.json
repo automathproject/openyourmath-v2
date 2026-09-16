@@ -1,7 +1,7 @@
 {
   "uuid": "aYzL",
   "source_path": "amscc/aYzL.tex",
-  "summary": "L'exercice demande d'étudier la convergence d'une méthode de Monte Carlo pour approximer l'intégrale d'une fonction à l'aide de variables aléatoires uniformes. Il aborde la convergence presque sûre, l'estimation de l'erreur et l'approximation de la variance par une méthode de différences.",
+  "summary": "L'exercice demande d'étudier la convergence d'une méthode de Monte Carlo pour approximer l'intégrale d'une fonction à l'aide de variables aléatoires uniformes. Il aborde la convergence presque sûre, l'estimation de l'erreur et l'approximation de la variance par une méthode de contrôle de variance.",
   "concepts": [
     "loi forte des grands nombres",
     "théorème central limite",
@@ -9,26 +9,24 @@
     "variance d'une variable aléatoire",
     "convergence presque sûre",
     "loi normale centrée réduite",
-    "théorème de transfert"
+    "théorème de transfert",
+    "méthode de Monte Carlo"
   ],
   "methods": [
-    "méthode de Monte Carlo",
+    "approximation par échantillonnage",
     "standardisation",
-    "approximation gaussienne",
-    "calcul d'espérance",
-    "calcul de variance",
-    "estimation par différences"
+    "calcul d'espérance et variance",
+    "estimation par intervalle de confiance",
+    "contrôle de variance"
   ],
   "objects": [
     "suite de variables aléatoires i.i.d.",
     "intégrale d'une fonction",
     "variable aléatoire uniforme",
     "estimateur de Monte Carlo",
-    "variable aléatoire gaussienne"
+    "estimateur de variance"
   ],
-  "content_hash": "e51b31376e27b718c5167befd1f63ad1964d8a6a48376f94aae7ef558f3da72c",
+  "content_hash": "71a2a99184fb4f28bc5acc6c28ffee55f02ed048c789281aafab2e1d476e35ab",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:27:53.032Z",
-  "previous_content_hash": "2ebe89afeeabc9d55093de62433312463cc162c72c2029ca374bc3e2130514f3",
-  "revalidated_at": "2026-09-01T13:56:30.414Z"
+  "indexed_at": "2026-09-16T11:27:30.416Z"
 }

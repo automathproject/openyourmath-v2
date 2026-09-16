@@ -9,8 +9,8 @@
     "écart-type",
     "hypothèse nulle",
     "p-value",
-    "normalité des échantillons",
-    "test de Student"
+    "test de Student",
+    "normalité des échantillons"
   ],
   "methods": [
     "test de Student",
@@ -19,12 +19,12 @@
     "interprétation de la p-value"
   ],
   "objects": [
-    "moyenne échantillonnale",
-    "écart-type échantillonnal",
+    "moyenne échantillon",
+    "écart-type échantillon",
     "taille de tumeur",
     "échantillon indépendant"
   ],
-  "content_hash": "234ecb07d150e9f40775fb8177a9ea1ae205947e8fd12726f0b8696d4c3582c1",
+  "content_hash": "9917775f0f28b71f099637d009b95b582c8def31e2079c612ac0c9bde0c07ade",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:07:01.275Z"
+  "indexed_at": "2026-09-16T11:29:53.700Z"
 }

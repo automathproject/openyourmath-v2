@@ -6,23 +6,22 @@
     "loi marginale",
     "indépendance de variables aléatoires",
     "espérance d'une variable aléatoire",
-    "linéarité de l'espérance",
-    "probabilité conditionnelle"
+    "probabilité conjointe",
+    "linéarité de l'espérance"
   ],
   "methods": [
     "sommation des probabilités conjointes",
-    "calcul de produit de probabilités marginales",
-    "application de la linéarité de l'espérance",
-    "énumération des cas favorables"
+    "calcul de l'espérance à partir de la loi marginale",
+    "vérification de l'indépendance par égalité des probabilités conjointes et marginales",
+    "somme de probabilités pour un événement composé"
   ],
   "objects": [
     "tableau de probabilités conjointes",
     "variables aléatoires discrètes",
-    "lois marginales",
     "espérances",
     "probabilité conditionnelle"
   ],
-  "content_hash": "cf0e1afa4041b260f4e70eb4ed236392fcb11b46fe0103d86be81f4d71f7974f",
+  "content_hash": "3c5a3f94cf7256953a00c5199156aadc4edafb1885ff3fa325e7052eedb5d21a",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:38:25.044Z"
+  "indexed_at": "2026-09-16T11:28:21.859Z"
 }

@@ -1,0 +1,32 @@
+{
+  "uuid": "mTCe",
+  "source_path": "amscc/mTCe.tex",
+  "summary": "Résolution d'une équation différentielle causale de type G'+G=δ en utilisant la transformée de Fourier. On cherche une distribution G à support dans ℝ₊ vérifiant cette équation, puis on généralise à Gₐ'+aGₐ=δ pour a>0.",
+  "concepts": [
+    "équation différentielle linéaire",
+    "distribution",
+    "fonction de Heaviside",
+    "transformée de Fourier",
+    "solution fondamentale causale",
+    "convolution",
+    "problème de Cauchy",
+    "intégrale de Fourier"
+  ],
+  "methods": [
+    "transformée de Fourier",
+    "résolution d'équation différentielle",
+    "calcul de transformée de Fourier explicite",
+    "formule de dérivation des distributions",
+    "inversion de transformée de Fourier"
+  ],
+  "objects": [
+    "distribution G",
+    "fonction de Heaviside H",
+    "solution z(t)",
+    "transformée de Fourier ̂G",
+    "équation différentielle G'+G=δ"
+  ],
+  "content_hash": "2e072df168c08399028a58a8af9db9371e9a07c79cacbd9b1f58c73baef8f5d6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-16T11:31:09.104Z"
+}

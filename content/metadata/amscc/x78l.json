@@ -1,36 +1,34 @@
 {
   "uuid": "x78l",
   "source_path": "amscc/x78l.tex",
-  "summary": "L'exercice demande d'analyser un échantillon de 25 mesures de temps d'efficacité d'un médicament, supposées suivre une loi normale. Il s'agit de calculer des statistiques descriptives (moyenne, variance, écart-type), d'évaluer des probabilités associées à cette loi, de construire un intervalle de confiance pour la moyenne, et d'en interpréter les résultats par rapport à une affirmation du laboratoire.",
+  "summary": "L'exercice demande d'analyser des données de temps d'efficacité d'un médicament sur 25 patients, en calculant des statistiques descriptives (moyenne, variance, écart-type), des probabilités sous hypothèse de normalité, un intervalle de confiance pour la moyenne, et d'interpréter ces résultats par rapport à une affirmation du laboratoire.",
   "concepts": [
     "loi normale",
-    "moyenne empirique",
-    "variance empirique",
-    "écart-type",
     "intervalle de confiance",
+    "écart-type",
+    "moyenne empirique",
     "quantile",
     "loi de Student",
-    "estimation par intervalle",
-    "probabilité conditionnelle"
+    "probabilité conditionnelle",
+    "estimation par intervalle"
   ],
   "methods": [
-    "calcul de statistiques descriptives",
+    "calcul de moyenne",
+    "calcul de variance empirique",
     "standardisation",
-    "calcul de quantiles",
-    "construction d'intervalle de confiance",
-    "interprétation d'intervalle de confiance",
-    "calcul de taille d'échantillon pour précision donnée"
+    "utilisation de tables de Student",
+    "calcul de quantile",
+    "interprétation d'intervalle de confiance"
   ],
   "objects": [
     "échantillon de données",
     "moyenne",
-    "variance",
     "écart-type",
     "intervalle de confiance",
-    "quantile de Student",
-    "probabilité"
+    "probabilité",
+    "quantile"
   ],
-  "content_hash": "7e624f4a26747c767bb090be545e36a39de31a9e1a6c63aef8866552017b756a",
+  "content_hash": "72c061f48e2b3a0a5a9fc69a2e03f0a20129ab6a24a6b6d283cc6ba61e6f396c",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:15:05.221Z"
+  "indexed_at": "2026-09-16T11:31:04.431Z"
 }

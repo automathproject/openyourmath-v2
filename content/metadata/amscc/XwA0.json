@@ -7,24 +7,25 @@
     "loi uniforme discrète",
     "p-valeur",
     "simulation Monte Carlo",
-    "fréquence d'observation",
+    "intervalle de confiance",
     "hypothèse nulle",
-    "statistique de test"
+    "statistique d'ajustement"
   ],
   "methods": [
+    "test d'ajustement",
     "simulation de variables aléatoires",
-    "calcul de la statistique du chi-carré",
-    "comparaison avec la loi du chi-carré",
-    "interprétation de la p-valeur"
+    "calcul de fréquence observée",
+    "construction d'histogramme",
+    "comparaison de distributions"
   ],
   "objects": [
-    "tableur",
-    "nombre entier aléatoire",
+    "variable aléatoire discrète",
+    "tableau de fréquences",
+    "statistique de test",
     "histogramme",
-    "fréquences observées",
-    "fréquences théoriques"
+    "p-valeur"
   ],
-  "content_hash": "6c055d01d805cdf170fcf5789282aad4ace2c4f945f986df364008c42a801444",
+  "content_hash": "5295dad4dc6f4381f28ae9d1cb810bd92fb9edf90c2507b2d2ce21b981a7eb5e",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:07:27.581Z"
+  "indexed_at": "2026-09-16T11:30:14.683Z"
 }

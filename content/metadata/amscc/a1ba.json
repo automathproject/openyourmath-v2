@@ -5,25 +5,26 @@
   "concepts": [
     "test d'hypothèse",
     "loi uniforme",
-    "statistique d'ordre",
     "test du chi-deux",
-    "niveau de signification",
+    "statistique d'ajustement",
+    "seuil de signification",
     "intervalle de confiance",
-    "fréquence d'apparition"
+    "fréquence observée",
+    "fréquence théorique"
   ],
   "methods": [
-    "test du chi-deux d'ajustement",
-    "calcul de la statistique de test",
+    "calcul de la statistique de Pearson",
     "comparaison avec la loi du chi-deux",
-    "détermination de la région critique"
+    "test d'ajustement",
+    "calcul des fréquences attendues"
   ],
   "objects": [
     "tableau de fréquences",
     "distribution empirique",
-    "statistique de test",
-    "valeur critique"
+    "distribution uniforme",
+    "statistique de test"
   ],
-  "content_hash": "793705b332b4a3c7d7e002311f6021a39fabd8b9b943370215084f0418ad78b7",
+  "content_hash": "3c6ee40fed1a72aa1519b4cab3b94769600a6b149ce843bc15451b466fe9f040",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:07:30.442Z"
+  "indexed_at": "2026-09-16T11:30:19.581Z"
 }

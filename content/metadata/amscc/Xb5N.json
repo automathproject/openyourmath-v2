@@ -1,7 +1,7 @@
 {
   "uuid": "Xb5N",
   "source_path": "amscc/Xb5N.tex",
-  "summary": "Calculer les états d'une cellule LSTM (cell state et état caché) à chaque pas de temps pour une séquence d'entrées donnée, en analysant le rôle des portes d'oubli, d'entrée et de sortie. Comparer avec un RNN simple pour comprendre l'avantage de la LSTM en termes de préservation de l'information sur le long terme.",
+  "summary": "L'exercice demande de calculer les états d'une cellule LSTM (cell state et état caché) à chaque pas de temps pour une séquence d'entrées donnée, en utilisant les formules des portes d'oubli, d'entrée, de sortie et du candidat. Il illustre le rôle de ces portes dans la préservation ou l'oubli de l'information.",
   "concepts": [
     "réseau de neurones récurrents",
     "cellule LSTM",
@@ -26,9 +26,10 @@
     "porte d'oubli",
     "porte d'entrée",
     "porte de sortie",
+    "candidat",
     "séquence d'entrées"
   ],
-  "content_hash": "83c4e01fb5d2209c208d53ce6424b14d63ba18fcbefaadafbd375711766351b4",
+  "content_hash": "a78c4f3aa8971bd0439f7c41f6e5dad7da9760d8c9beae05a47c5a8a4e56ab4e",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:05:37.852Z"
+  "indexed_at": "2026-09-16T11:29:02.660Z"
 }

@@ -1,31 +1,31 @@
 {
   "uuid": "aUn2",
   "source_path": "amscc/aUn2.tex",
-  "summary": "Un échantillon de 50 pièces métalliques est analysé pour vérifier si l'épaisseur moyenne est conforme à l'objectif de 5 mm, avec un seuil de confiance de 99%. L'exercice demande de conclure sur la conformité et de déterminer le risque de première espèce nécessaire pour changer la décision.",
+  "summary": "L'exercice demande de tester l'hypothèse que l'épaisseur moyenne des pièces métalliques est conforme à 5 mm, à partir d'un échantillon de 50 pièces, en utilisant un intervalle de confiance à 99%. Il s'agit ensuite de déterminer le risque de première espèce nécessaire pour que la décision soit différente.",
   "concepts": [
     "test d'hypothèse",
-    "hypothèse nulle",
-    "risque de première espèce",
     "intervalle de confiance",
-    "estimation ponctuelle",
+    "risque de première espèce",
     "loi normale",
-    "statistique de test"
+    "estimation ponctuelle",
+    "variance échantillonnale",
+    "moyenne échantillonnale"
   ],
   "methods": [
-    "calcul de la moyenne échantillon",
-    "calcul de la variance échantillon",
+    "calcul de la moyenne échantillonnale",
+    "calcul de la variance échantillonnale",
     "standardisation",
     "test bilatéral",
     "lecture de table de la loi normale"
   ],
   "objects": [
-    "moyenne échantillon",
-    "variance échantillon",
-    "variable aléatoire normale",
-    "statistique de test Z",
-    "échantillon de taille 50"
+    "échantillon",
+    "moyenne",
+    "variance",
+    "variable de décision",
+    "table de la loi normale"
   ],
-  "content_hash": "af5cc757ec1167ed4025f82b448e2c1d0b7063c5b797d68adf45023c7dde80c1",
+  "content_hash": "411e01ccb0b9cb330592f70bb29d14d7324c8d553e88ed82bb2ab81476ee1d52",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:07:33.599Z"
+  "indexed_at": "2026-09-16T11:30:23.638Z"
 }

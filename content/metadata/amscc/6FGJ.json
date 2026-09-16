@@ -1,32 +1,32 @@
 {
   "uuid": "6FGJ",
   "source_path": "amscc/6FGJ.tex",
-  "summary": "L'exercice demande d'analyser la conformité des longueurs de mots de passe à une distribution théorique donnée, en utilisant des tests statistiques et des intervalles de confiance. Il s'agit d'évaluer si les utilisateurs respectent les recommandations de sécurité en matière de longueur de mots de passe.",
+  "summary": "L'exercice demande d'analyser la conformité des longueurs de mots de passe à une distribution théorique donnée, en utilisant des tests statistiques. Il s'agit d'estimer des effectifs théoriques, de construire un intervalle de confiance pour une proportion, et d'effectuer un test du chi-deux pour vérifier l'adéquation de la distribution observée à la distribution attendue.",
   "concepts": [
-    "test d'adéquation du chi-deux",
+    "test du chi-deux",
     "loi multinomiale",
     "intervalle de confiance",
     "proportion",
     "hypothèse nulle",
+    "hypothèse alternative",
     "p-valeur",
-    "statistique de test",
-    "loi du chi-deux"
+    "statistique de test"
   ],
   "methods": [
     "calcul d'effectifs théoriques",
     "construction d'intervalle de confiance",
-    "test du chi-deux",
-    "calcul de la p-valeur",
-    "approximation normale"
+    "test d'adéquation",
+    "calcul de la statistique du chi-deux",
+    "interprétation de la p-valeur"
   ],
   "objects": [
     "proportion théorique",
     "effectif observé",
     "effectif théorique",
-    "statistique de test",
+    "statistique du chi-deux",
     "intervalle de confiance"
   ],
-  "content_hash": "91cd1f7d2cc6ffe91a388bb6bd172fa64064153d5c2476478cd0d733b4298af5",
+  "content_hash": "2c0fdb88b0e17692ac8ac4ae20999365acde7f6bc10301b42eb05225918b7b8e",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:12:57.214Z"
+  "indexed_at": "2026-09-16T11:29:34.239Z"
 }

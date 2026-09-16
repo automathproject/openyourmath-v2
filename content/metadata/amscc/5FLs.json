@@ -1,32 +1,29 @@
 {
   "uuid": "5FLs",
   "source_path": "amscc/5FLs.tex",
-  "summary": "L'exercice demande de réaliser un test d'indépendance du khi-deux pour déterminer si les caractères 'être fumeur' et 'avoir un cancer de la gorge' sont liés, à partir d'un tableau de contingence 2x2. Le contexte est une étude épidémiologique sur 1000 personnes.",
+  "summary": "L'exercice demande de réaliser un test d'indépendance du khi-deux pour déterminer si les caractères <<être fumeur>> et <<avoir un cancer de la gorge>> sont liés, à partir d'un tableau de contingence 2x2. Le contexte est une étude épidémiologique sur 1000 personnes.",
   "concepts": [
     "test d'indépendance du khi-deux",
     "tableau de contingence",
     "hypothèse nulle",
     "risque de première espèce",
+    "probabilité conjointe",
     "loi du khi-deux",
-    "probabilité conditionnelle",
-    "indépendance statistique",
-    "effectif théorique"
+    "degré de liberté"
   ],
   "methods": [
+    "calcul des effectifs théoriques",
     "calcul de la statistique du khi-deux",
-    "comparaison avec la loi du khi-deux",
-    "construction du tableau théorique",
-    "fixation du seuil de signification",
+    "comparaison avec la table de distribution du khi-deux",
     "rejet de l'hypothèse nulle"
   ],
   "objects": [
     "tableau de contingence 2x2",
     "effectifs observés",
     "effectifs théoriques",
-    "statistique de test",
-    "seuil critique"
+    "statistique du khi-deux"
   ],
-  "content_hash": "d3920b60c8e6eadc52d8b713e3839b3e74aaf06fdcedacda31e544dfb0784a85",
+  "content_hash": "3a8f1f1913f6f1a80318e7f622f5d5e405ab54d0b792856dfe2e20c58679cfa1",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:06:46.590Z"
+  "indexed_at": "2026-09-16T11:29:30.330Z"
 }

@@ -3,28 +3,27 @@
   "source_path": "amscc/JABn.tex",
   "summary": "L'exercice demande de tester l'indépendance entre deux caractères qualitatifs (groupe sanguin et facteur Rhésus) à partir d'un tableau de contingence. Il s'agit d'analyser la répartition de 10 000 personnes pour déterminer si ces deux variables sont liées.",
   "concepts": [
-    "test d'indépendance du khi-deux",
+    "test d'indépendance du chi-deux",
     "tableau de contingence",
-    "probabilité conjointe",
+    "probabilité conditionnelle",
     "hypothèse nulle",
     "statistique de test",
-    "loi du khi-deux",
-    "fréquence observée",
-    "fréquence théorique"
+    "loi du chi-deux",
+    "fréquences observées et théoriques"
   ],
   "methods": [
     "calcul des fréquences attendues",
-    "application du test du khi-deux",
-    "comparaison des fréquences observées et théoriques",
+    "application du test du chi-deux",
+    "comparaison avec la loi du chi-deux",
     "calcul de la statistique de test"
   ],
   "objects": [
     "tableau de contingence 2x4",
-    "variable qualitative",
-    "effectifs observés",
-    "effectifs théoriques"
+    "fréquences observées",
+    "fréquences théoriques",
+    "statistique de test"
   ],
-  "content_hash": "8043e065ae878f1cfa4831709c404a4b7f01f69f28aae5ce3326941a867d97d0",
+  "content_hash": "b4a237dab40e3e7568979bc6c988a3d189e29488acf1f727b285c30b1252653b",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:07:09.059Z"
+  "indexed_at": "2026-09-16T11:30:05.645Z"
 }

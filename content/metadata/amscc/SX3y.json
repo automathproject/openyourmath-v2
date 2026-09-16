@@ -3,10 +3,10 @@
   "source_path": "amscc/SX3y.tex",
   "summary": "On lance 3 fois un dé à 6 faces et on forme un polynôme quadratique Q(x) = ax² + bx + c. On demande de calculer les probabilités que Q ait deux racines réelles distinctes, une racine double, ou aucune racine réelle.",
   "concepts": [
-    "probabilité discrète",
-    "polynôme quadratique",
+    "polynôme du second degré",
     "discriminant",
     "racines réelles",
+    "probabilité discrète",
     "dénombrement",
     "système complet d'événements"
   ],
@@ -14,15 +14,15 @@
     "calcul du discriminant",
     "dénombrement des cas favorables",
     "utilisation de l'équiprobabilité",
-    "calcul de probabilités conditionnelles"
+    "calcul de probabilité conditionnelle"
   ],
   "objects": [
     "polynôme quadratique",
-    "discriminant",
-    "univers des possibles",
-    "événements disjoints"
+    "discriminant b²-4ac",
+    "univers des possibles Ω",
+    "événements A, B, C"
   ],
-  "content_hash": "c515eedd74eebd03f43ef47237ca5c5efc374fe4f1f28baf928585062af6f03b",
+  "content_hash": "50c513ce9f8363f3eec318b20a88711b471b9a7ce0a5457086aeeb99588040e5",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:01:25.025Z"
+  "indexed_at": "2026-09-16T11:28:34.026Z"
 }

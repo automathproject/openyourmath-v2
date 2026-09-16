@@ -1,35 +1,32 @@
 {
   "uuid": "j0O1",
   "source_path": "amscc/j0O1.tex",
-  "summary": "L'exercice demande de démontrer que la fonction donnée est une densité de probabilité, d'en déduire la fonction de répartition, de montrer qu'une transformation d'une variable uniforme suit la loi de Pareto, de simuler cette loi, et d'étudier l'existence de son espérance. Il aborde aussi l'interprétation de simulations numériques.",
+  "summary": "L'exercice étudie la loi de Pareto, une loi de probabilité continue. Il demande de vérifier que la fonction proposée est une densité de probabilité, d'en déterminer la fonction de répartition, de simuler cette loi à partir d'une variable uniforme, et d'étudier l'existence de son espérance.",
   "concepts": [
     "densité de probabilité",
     "fonction de répartition",
     "loi de Pareto",
-    "variable aléatoire uniforme",
-    "transformation de variable",
-    "espérance mathématique",
-    "loi forte des grands nombres",
-    "intégrale impropre"
+    "loi uniforme",
+    "espérance d'une variable aléatoire",
+    "simulation de variable aléatoire",
+    "intégrale impropre",
+    "loi forte des grands nombres"
   ],
   "methods": [
     "intégration",
-    "transformation de variable aléatoire",
-    "simulation Monte Carlo",
+    "transformation de variable",
     "calcul d'espérance",
+    "simulation Monte Carlo",
     "approximation par la loi forte des grands nombres"
   ],
   "objects": [
-    "densité de probabilité",
+    "variable aléatoire à densité",
     "fonction de répartition",
-    "variable aléatoire de Pareto",
-    "variable aléatoire uniforme",
     "espérance",
-    "liste de simulations"
+    "variable aléatoire uniforme",
+    "programme de simulation"
   ],
-  "content_hash": "759735c8000fe2880f4165f1ac7e12fb2930bbeefe816554f8a4defaa226b776",
+  "content_hash": "c052c389ea12dd323944800b6c3474a96cbc54623b5c38afe3d703f4b968b9cf",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:28:11.887Z",
-  "previous_content_hash": "346f89a34b53f7b9bb5907396043d4c4485c9cbd34e24860b646d7fcb03bbdec",
-  "revalidated_at": "2026-09-01T13:56:31.585Z"
+  "indexed_at": "2026-09-16T11:27:46.719Z"
 }

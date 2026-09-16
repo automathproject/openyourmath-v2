@@ -1,30 +1,29 @@
 {
   "uuid": "vUFN",
   "source_path": "amscc/vUFN.tex",
-  "summary": "L'exercice demande de déterminer la loi conjointe d'un couple de variables aléatoires discrètes (X, Y) à partir de probabilités conditionnelles, puis d'en déduire les lois marginales, les espérances mathématiques et de tester leur indépendance. Une question supplémentaire porte sur la loi du couple (X, Z) où Z = X - Y et son indépendance avec X.",
+  "summary": "L'exercice demande de déterminer la loi conjointe d'un couple de variables aléatoires discrètes (X, Y), leurs lois marginales, leurs espérances, et d'étudier leur indépendance. Il introduit ensuite une nouvelle variable Z = X - Y et demande d'analyser la loi du couple (X, Z) et leur indépendance.",
   "concepts": [
-    "variable aléatoire discrète",
     "loi conjointe",
     "loi marginale",
     "espérance mathématique",
     "indépendance de variables aléatoires",
+    "variable aléatoire discrète",
     "tableau de probabilités"
   ],
   "methods": [
-    "calcul de probabilités conditionnelles",
+    "calcul de probabilités marginales",
+    "calcul d'espérance",
     "construction de tableau de loi conjointe",
-    "calcul d'espérance par sommation",
-    "test d'indépendance par produit de probabilités"
+    "vérification d'indépendance par produit de probabilités"
   ],
   "objects": [
-    "variable aléatoire discrète X",
-    "variable aléatoire discrète Y",
-    "variable aléatoire Z = X - Y",
-    "loi conjointe de (X, Y)",
-    "loi marginale de X",
-    "loi marginale de Y"
+    "variable aléatoire discrète",
+    "loi conjointe",
+    "loi marginale",
+    "espérance",
+    "tableau de probabilités"
   ],
-  "content_hash": "884203e8601411d2011384eb0b5b7522461bf2b69d8b217d62a72f0b8bf0b715",
+  "content_hash": "706aac1189dc695d160a730f68585da7cd4ed114692fd2ce385e858b00206a7e",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:28:42.978Z"
+  "indexed_at": "2026-09-16T11:28:53.320Z"
 }

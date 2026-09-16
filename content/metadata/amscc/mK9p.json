@@ -9,8 +9,9 @@
     "loi normale",
     "loi binomiale",
     "puissance d'un test",
-    "intervalle de confiance",
-    "statistique de test"
+    "risque de première espèce",
+    "statistique de test",
+    "intervalle de confiance"
   ],
   "methods": [
     "calcul de la moyenne empirique",
@@ -24,13 +25,14 @@
   "objects": [
     "échantillon",
     "moyenne",
-    "variance",
+    "écart-type",
     "statistique de test",
     "effectifs observés",
     "effectifs théoriques",
-    "loi binomiale"
+    "loi binomiale",
+    "loi normale"
   ],
-  "content_hash": "5740068cf83d79fdebae564a5f8977a2c71a3417d9484f5715618b49e56a6297",
+  "content_hash": "105b233ce06a6e2a53f252d5fa8bb977d58c890e9a862f571f6bb0e3b64045f8",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:13:04.745Z"
+  "indexed_at": "2026-09-16T11:30:47.952Z"
 }
