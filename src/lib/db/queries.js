@@ -16,13 +16,15 @@ function prepareSearchQuery(query) {
     .map((t) => t.replace(/[^\p{L}\p{N}]+/gu, ''))
     .filter(Boolean);
 
-  // Garder uniquement les tokens significatifs (≥3) pour FTS
-  const longTokens = tokens.filter((t) => t.length >= 3);
-  if (longTokens.length === 0) return null;
+  // Même les termes courts passent par FTS5 : son tokenizer unicode61 gère la
+  // casse Unicode, contrairement à UPPER()/LIKE de SQLite (ASCII seulement).
+  // Cela évite par exemple que « ÉT » et « ét » produisent des résultats
+  // différents dans le mode rapide.
+  if (tokens.length === 0) return null;
 
   // Construire une requête FTS en AND (ordre libre), préfixe sur TOUS les mots
   // En FTS5, les espaces équivalent à AND
-  const parts = longTokens.map((t) => `${t}*`);
+  const parts = tokens.map((t) => `${t}*`);
   return parts.join(' ');
 }
 

@@ -44,9 +44,11 @@ function prepareSearchQuery(query) {
     .map(t => t.replace(/["']/g, ''))
     .map(t => t.replace(/[^\p{L}\p{N}]+/gu, ''))
     .filter(Boolean);
-  const longTokens = tokens.filter(t => t.length >= 3);
-  if (longTokens.length === 0) return null;
-  return longTokens.map(t => `${t}*`).join(' ');
+  // FTS5 unicode61 garantit une recherche insensible à la casse, y compris
+  // pour les caractères accentués. Ne pas basculer les termes courts vers
+  // SQLite LIKE, qui ne sait replier que la casse ASCII.
+  if (tokens.length === 0) return null;
+  return tokens.map(t => `${t}*`).join(' ');
 }
 
 function escapeLike(v) {
@@ -337,7 +339,7 @@ export async function hybridSearch({
     const trimmedQuery = (query || '').trim();
     const ftsQuery = prepareSearchQuery(trimmedQuery);
 
-    // Query vide ou trop courte → résultats par filtres SQL uniquement
+    // Query vide ou ne contenant aucun token → résultats par filtres SQL uniquement
     if (!ftsQuery) {
       const t0 = Date.now();
       const results = fetchByFiltersOnly(db, filters, limit);
