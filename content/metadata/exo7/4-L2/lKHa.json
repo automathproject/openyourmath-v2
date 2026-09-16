@@ -1,27 +1,29 @@
 {
   "uuid": "lKHa",
   "source_path": "exo7/4-L2/lKHa.tex",
-  "summary": "L'exercice demande de déterminer le centre du groupe symétrique Sn, puis d'étudier les propriétés des produits de groupes et des isomorphismes entre groupes.",
+  "summary": "L'exercice demande de déterminer le centre du groupe symétrique Sn, puis d'étudier les propriétés des produits de groupes et des isomorphismes entre groupes. Il aborde les sous-groupes distingués et les relations entre Sn et le produit de Z/2Z par An.",
   "concepts": [
     "groupe symétrique",
+    "centre d'un groupe",
     "sous-groupe distingué",
     "isomorphisme de groupes",
     "produit direct de groupes",
     "groupe alterné",
-    "centre d'un groupe"
+    "groupe cyclique"
   ],
   "methods": [
-    "analyse des permutations",
+    "identification du centre",
+    "construction de sous-groupe distingué",
     "comparaison de structures de groupes",
-    "utilisation des propriétés du produit direct"
+    "utilisation des propriétés des permutations"
   ],
   "objects": [
     "groupe Sn",
     "groupe G1×G2",
-    "sous-groupe distingué",
+    "sous-groupe distingué isomorphe à G1",
     "groupe Z/2Z×An"
   ],
-  "content_hash": "3cc5332ab23b44728dbd3b148c7f6945835dae14a85a2beac6d8067eb4c91e7f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:09:02.203Z"
+  "content_hash": "8b583c3f6abf61312dfd89604a23d4e6dfb5174004e6959137cec1ff3e271ec7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:30:02.858Z"
 }

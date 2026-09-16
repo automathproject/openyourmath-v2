@@ -1,28 +1,30 @@
 {
   "uuid": "omHx",
   "source_path": "exo7/6-L2/omHx.tex",
-  "summary": "L'exercice demande de démontrer l'existence, l'unicité et les propriétés d'une droite perpendiculaire commune à deux droites données dans l'espace, en utilisant leur produit vectoriel comme vecteur directeur commun.",
+  "summary": "L'exercice demande de démontrer l'existence et l'unicité d'une droite perpendiculaire commune à deux droites données dans l'espace, en utilisant des propriétés de géométrie affine et de produit vectoriel.",
   "concepts": [
     "géométrie affine",
     "produit vectoriel",
     "orthogonalité",
-    "plan affine",
-    "droite affine",
-    "vecteur directeur",
-    "intersection de plans"
+    "plan directeur",
+    "droites coplanaires",
+    "vecteurs directeurs",
+    "perpendicularité"
   ],
   "methods": [
-    "construction de plans à partir de vecteurs directeurs",
-    "démonstration d'orthogonalité",
-    "unicité d'une droite par intersection de plans"
+    "construction de plans directeurs",
+    "analyse de coplanarité",
+    "vérification d'orthogonalité",
+    "unicité par contradiction"
   ],
   "objects": [
-    "droites affines",
+    "droites de l'espace",
     "vecteurs directeurs",
-    "plans affines",
+    "plan directeur",
+    "droite perpendiculaire commune",
     "produit vectoriel"
   ],
-  "content_hash": "1a277f5c6338fc362bea24aeb2492ac9539dce0316047df8046a92ad61f6a351",
+  "content_hash": "da830eea939a4014451dbc24f4df9740fc12b8f26c9f471fb3dfc22844e41ba7",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:25:40.748Z"
+  "indexed_at": "2026-09-15T18:32:32.582Z"
 }

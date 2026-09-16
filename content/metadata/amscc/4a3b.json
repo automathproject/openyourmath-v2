@@ -1,0 +1,25 @@
+{
+  "uuid": "4a3b",
+  "source_path": "amscc/4a3b.tex",
+  "summary": "L'exercice propose trois affirmations sur les sous-espaces vectoriels et les familles libres dans des espaces vectoriels. Il demande de déterminer la validité de chaque affirmation et de justifier la réponse.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "famille libre",
+    "vecteur nul",
+    "stabilité par addition",
+    "inclusion d'espaces vectoriels"
+  ],
+  "methods": [
+    "vérification de l'appartenance du vecteur nul",
+    "contre-exemple",
+    "manipulation de combinaisons linéaires"
+  ],
+  "objects": [
+    "sous-espace vectoriel de ℝ⁴",
+    "union de sous-espaces vectoriels",
+    "famille de vecteurs"
+  ],
+  "content_hash": "d065dfa744dca38b6e01771d8c1dfdfca10af9be955dbe3fe823918d8a2dafa6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:28:40.244Z"
+}

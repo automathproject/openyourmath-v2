@@ -1,26 +1,28 @@
 {
   "uuid": "9ECp",
   "source_path": "exo7/1-L1/9ECp.tex",
-  "summary": "L'exercice demande de montrer que les racines communes des polynômes P=X^m-1 et Q=X^n-1 sont exactement les racines du polynôme D=X^d-1, où d est le PGCD de m et n. L'énoncé utilise des propriétés arithmétiques et algébriques des polynômes.",
+  "summary": "Soient deux polynômes P et Q définis comme X^m - 1 et X^n - 1, avec m et n entiers naturels non nuls. On note d leur PGCD. L'exercice demande de montrer que les racines communes de P et Q sont exactement les racines de D = X^d - 1.",
   "concepts": [
-    "polynôme",
     "racine d'un polynôme",
-    "PGCD dans Z",
-    "égalité de Bézout",
-    "divisibilité des polynômes",
-    "algèbre des polynômes"
+    "polynôme unitaire",
+    "plus grand commun diviseur",
+    "division euclidienne dans Z[X]",
+    "théorème de Bézout",
+    "factorisation dans C[X]"
   ],
   "methods": [
-    "utilisation de l'égalité de Bézout",
-    "analyse des racines communes",
-    "propriétés arithmétiques des entiers"
+    "utilisation de l'identité de Bézout",
+    "division euclidienne de polynômes",
+    "factorisation de X^k - 1",
+    "propriétés des racines de l'unité"
   ],
   "objects": [
-    "polynômes P, Q, D",
-    "racines complexes",
-    "entiers m, n, d"
+    "polynômes X^m - 1 et X^n - 1",
+    "racines communes",
+    "polynôme X^d - 1",
+    "PGCD de m et n"
   ],
-  "content_hash": "a758f98285629e7879103e4e9561d804cc3c92b07ed6db8271ff2b9c0138d531",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T07:38:12.377Z"
+  "content_hash": "8b103b7cc1c5c60a8bac44f5a06107a0563761a6759dc5eb3e496161f55949c0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:33:53.686Z"
 }

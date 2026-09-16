@@ -1,29 +1,29 @@
 {
   "uuid": "jMeP",
   "source_path": "exo7/16-L3/jMeP.tex",
-  "summary": "L'exercice demande de démontrer qu'une application holomorphe du disque unité dans lui-même est décroissante pour la distance de Poincaré, puis d'en déduire que les automorphismes du disque sont des isométries pour cette distance.",
+  "summary": "L'exercice demande de montrer qu'une application holomorphe du disque unité dans lui-même est décroissante pour la distance de Poincaré, puis d'en déduire que les automorphismes du disque sont des isométries pour cette distance.",
   "concepts": [
     "distance de Poincaré",
     "disque de Poincaré",
     "application holomorphe",
-    "automorphisme du disque",
-    "lemme de Schwarz-Pick",
     "géodésique",
-    "longueur hyperbolique",
-    "espace métrique"
+    "lemme de Schwarz-Pick",
+    "automorphisme du disque",
+    "espace métrique",
+    "longueur hyperbolique"
   ],
   "methods": [
     "utilisation du lemme de Schwarz-Pick",
-    "analyse des propriétés des automorphismes",
-    "comparaison des distances"
+    "comparaison de distances",
+    "analyse des propriétés des automorphismes"
   ],
   "objects": [
     "disque unité",
-    "application holomorphe",
     "distance hyperbolique",
+    "application holomorphe",
     "automorphisme du disque"
   ],
-  "content_hash": "f1338ee9f2c0ac343b0666ad90e50ebaa696f0dc2f1dd2bd276385d83f93f17c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:41:54.344Z"
+  "content_hash": "bd97ecef2105b3010cca059f477e9b8fdc0f95f4002e26729d09f69c8d827502",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:11.426Z"
 }

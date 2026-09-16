@@ -1,25 +1,31 @@
 {
   "uuid": "U001",
   "source_path": "crouzet/pcsi/03/U001.tex",
-  "summary": "Calculer diverses sommes doubles d'entiers ou de monômes en utilisant le théorème de Fubini pour séparer les variables d'itération.",
+  "summary": "L'exercice demande de calculer six sommes doubles impliquant des indices entiers, avec des contraintes variées sur les indices (égalité, inégalité, relation linéaire). Les sommes portent sur des expressions polynomiales ou exponentielles des indices.",
   "concepts": [
-    "théorème de Fubini",
     "somme double",
-    "somme arithmétique",
-    "somme géométrique",
-    "linéarité de la somme"
+    "théorème de Fubini",
+    "linéarité de la somme",
+    "somme de termes arithmétiques",
+    "somme de termes géométriques",
+    "formule de la somme des entiers",
+    "formule de la somme des carrés"
   ],
   "methods": [
-    "séparation des variables",
+    "décomposition en sommes simples",
     "changement d'ordre de sommation",
-    "formules de sommes classiques"
+    "utilisation de formules de sommation classiques",
+    "linéarité de la somme",
+    "substitution d'indices"
   ],
   "objects": [
-    "somme double d'entiers",
-    "somme double de monômes",
-    "ensemble de sommation"
+    "somme double",
+    "indices entiers",
+    "expression polynomiale",
+    "expression exponentielle",
+    "ensemble de points (i,j) vérifiant i+j=n"
   ],
-  "content_hash": "f24d0330b2c8838e110069105df72d90fb5ede7ad0431170582189c38836765d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:48:59.379Z"
+  "content_hash": "6d57d45a812bfa3a7a2dc3bc7a0a5e74fe21b0e630e8264375b6bcdaf869261a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:35:31.992Z"
 }

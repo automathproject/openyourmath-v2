@@ -1,25 +1,27 @@
 {
   "uuid": "p31Q",
   "source_path": "exo7/10-L3/p31Q.tex",
-  "summary": "L'exercice demande de démontrer que l'ensemble des matrices de la forme donnée avec p entier forme un sous-groupe abélien de GL(2,ℝ), puis d'étudier sa cyclicité et sa normalité dans GL(2,ℝ).",
+  "summary": "L'exercice demande de démontrer que l'ensemble des matrices triangulaires supérieures unitaires à coefficients entiers forme un sous-groupe abélien de GL(2,ℝ), puis d'étudier sa structure cyclique et sa normalité dans GL(2,ℝ).",
   "concepts": [
     "sous-groupe",
     "groupe abélien",
     "groupe cyclique",
-    "sous-groupe normal",
-    "groupe linéaire général"
+    "groupe normal",
+    "groupe linéaire général",
+    "structure de groupe"
   ],
   "methods": [
     "vérification des axiomes de groupe",
-    "étude de la cyclicité",
-    "vérification de la normalité"
+    "étude de la commutativité",
+    "génération d'un groupe",
+    "critère de normalité"
   ],
   "objects": [
-    "matrice 2x2",
-    "groupe GL(2,ℝ)",
-    "sous-groupe H"
+    "matrice triangulaire supérieure",
+    "sous-groupe de GL(2,ℝ)",
+    "élément générateur"
   ],
-  "content_hash": "e46d3aa5f2e1316739da37e0796a05868554ed83844845f2a20629cc8545b6f6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:52:47.900Z"
+  "content_hash": "b1136d1d2a6d3a2ea387d9b39e200e4d3fb1e591aac015cb1e5b3eb76ad8caed",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:20.469Z"
 }

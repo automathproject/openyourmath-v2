@@ -1,7 +1,7 @@
 {
   "uuid": "HjEH",
   "source_path": "exo7/12-L3/HjEH.tex",
-  "summary": "Montrer l'existence d'un point dans un fermé non vide d'un espace vectoriel de dimension finie qui minimise la distance à un point donné. Application à l'ensemble des matrices réelles 2x2 de déterminant 1 pour trouver la matrice la plus proche de la matrice nulle.",
+  "summary": "L'exercice demande de montrer l'existence d'un point dans un fermé d'un espace vectoriel de dimension finie qui minimise la distance à un point donné, puis d'appliquer ce résultat à l'ensemble des matrices réelles 2x2 de déterminant 1 (SL₂(ℝ)) pour en étudier les propriétés (fermeté, bornitude) et trouver la matrice de SL₂(ℝ) la plus proche de la matrice nulle.",
   "concepts": [
     "espace vectoriel de dimension finie",
     "fermé",
@@ -10,24 +10,25 @@
     "fonction continue",
     "extremum lié",
     "gradient",
-    "condition de Lagrange"
+    "multiplicateur de Lagrange",
+    "déterminant"
   ],
   "methods": [
     "utilisation de la compacité",
-    "recherche de minimum de distance",
+    "application du théorème des valeurs intermédiaires",
     "calcul de gradient",
-    "application des conditions de Lagrange"
+    "méthode des multiplicateurs de Lagrange",
+    "recherche d'extremum"
   ],
   "objects": [
     "espace vectoriel",
     "fermé",
-    "point",
-    "distance",
-    "matrice",
-    "déterminant",
-    "fonction de distance"
+    "matrice 2x2",
+    "fonction distance",
+    "fonction déterminant",
+    "gradient"
   ],
-  "content_hash": "89c6a1b87a8592174a63b92841510d9780293d2471326fc70ae8266dd3e3ee36",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:30:15.637Z"
+  "content_hash": "382b955ce2cb3364213d428153e8632308d2065cbbe8e878fdbc69e5f6ae6a0c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:28:44.144Z"
 }

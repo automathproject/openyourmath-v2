@@ -1,28 +1,32 @@
 {
   "uuid": "oQqn",
   "source_path": "exo7/16-L3/oQqn.tex",
-  "summary": "Calculer l'intégrale réelle I_a = ∫₀⁺∞ x^(a-1)/(1+x) dx en utilisant les propriétés des fonctions méromorphes et le théorème des résidus.",
+  "summary": "L'exercice demande de montrer qu'une fonction complexe définie sur un domaine est méromorphe, d'identifier ses pôles, puis de calculer une intégrale réelle à l'aide d'un contour complexe et du théorème des résidus.",
   "concepts": [
     "fonction méromorphe",
+    "pôle d'une fonction holomorphe",
     "théorème des résidus",
-    "résidu d'une fonction",
     "intégrale de contour",
     "lemmes de Jordan",
-    "pôle d'une fonction"
+    "limite d'intégrales",
+    "fonction exponentielle complexe",
+    "fonction logarithme complexe"
   ],
   "methods": [
     "calcul de résidu",
-    "intégration par parties",
-    "analyse asymptotique",
-    "limite de contour"
+    "décomposition en parties principales",
+    "évaluation de limite d'intégrales",
+    "utilisation des lemmes de Jordan",
+    "linéarisation d'intégrale réelle via contour complexe"
   ],
   "objects": [
-    "fonction complexe",
-    "contour d'intégration",
+    "fonction holomorphe",
+    "contour complexe",
     "intégrale impropre",
-    "pôle simple"
+    "pôle simple",
+    "résidu"
   ],
-  "content_hash": "80d9c0a4cb0e1d6e1b90d0a11c26ed873ffafde8a3bee60c4d569e5bcb9c3cfe",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T23:41:51.720Z"
+  "content_hash": "066282b4a0f52c688fb39880e1b0d603ab71feeef49404254e6efe38c978ce56",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:00.157Z"
 }

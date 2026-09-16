@@ -1,26 +1,30 @@
 {
   "uuid": "MVnD",
   "source_path": "exo7/1-L1/MVnD.tex",
-  "summary": "L'exercice demande de démontrer que trois ensembles munis d'opérations d'addition et de multiplication par un scalaire sont des espaces vectoriels sur ℝ. Les ensembles considérés sont des fonctions définies sur un intervalle, des suites réelles et des polynômes de degré inférieur ou égal à n.",
+  "summary": "L'exercice demande de démontrer que trois ensembles munis d'opérations d'addition et de multiplication par un scalaire sont des espaces vectoriels sur ℝ. Les ensembles considérés sont l'ensemble des fonctions réelles sur [0,1], l'ensemble des suites réelles et l'ensemble des polynômes de degré inférieur ou égal à n.",
   "concepts": [
     "espace vectoriel",
     "groupe abélien",
     "structure algébrique",
     "addition interne",
-    "multiplication par un scalaire",
     "élément neutre",
-    "opposé"
+    "opposé",
+    "commutativité",
+    "distributivité",
+    "associativité"
   ],
   "methods": [
     "vérification des axiomes d'espace vectoriel",
     "démonstration par les propriétés algébriques"
   ],
   "objects": [
-    "ensemble de fonctions",
+    "fonction réelle",
     "suite réelle",
-    "polynôme"
+    "polynôme",
+    "opération d'addition",
+    "multiplication par un scalaire"
   ],
-  "content_hash": "a82067a324cd20dd7a65a9f272986b1c2d946ff49e7bd8cc2d8f937626b2e1fc",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:48:08.754Z"
+  "content_hash": "b9d2be769fb5d5ea6678b50bd08d71b6d0983c7630e67de3f1b8dc17aecad4a1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:28:31.982Z"
 }

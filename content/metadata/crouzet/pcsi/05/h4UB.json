@@ -1,29 +1,29 @@
 {
   "uuid": "h4UB",
   "source_path": "crouzet/pcsi/05/h4UB.tex",
-  "summary": "L'exercice propose plusieurs implications à démontrer concernant des ensembles et leurs opérations (union, intersection, complémentaire, différence). Il s'agit de manipulations algébriques sur des parties d'un ensemble E.",
+  "summary": "Cet exercice propose cinq questions sur les propriétés des ensembles et des opérations ensemblistes (union, intersection, complémentaire, différence). Il s'agit de démontrer des implications ou équivalences entre ces opérations sur des parties d'un ensemble donné.",
   "concepts": [
-    "algèbre des ensembles",
     "inclusion d'ensembles",
     "complémentaire d'un ensemble",
+    "différence ensembliste",
     "produit cartésien",
-    "double inclusion"
+    "parties d'un ensemble",
+    "opérations ensemblistes"
   ],
   "methods": [
     "raisonnement par disjonction de cas",
-    "manipulation d'inclusions",
     "double inclusion",
-    "raisonnement par contraposée"
+    "manipulation d'inclusions",
+    "utilisation de la définition des opérations ensemblistes"
   ],
   "objects": [
     "parties d'un ensemble",
-    "union d'ensembles",
-    "intersection d'ensembles",
     "complémentaire d'un ensemble",
-    "différence d'ensembles",
-    "produit cartésien"
+    "produit cartésien",
+    "union d'ensembles",
+    "intersection d'ensembles"
   ],
-  "content_hash": "0ce06bc446e8cbe38ba49870f186c15224c88839cb9c8a76929f2c5a6a24f13b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:07:39.258Z"
+  "content_hash": "769cc45da778f21248673221d19c58a6dce2a23d2930a881cb84a35722661145",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:27.410Z"
 }

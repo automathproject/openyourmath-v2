@@ -1,12 +1,14 @@
 {
   "uuid": "245Q",
   "source_path": "exo7/2-L1/245Q.tex",
-  "summary": "L'exercice demande de classer dix séries numériques en quatre catégories selon leur comportement (grand divergent, zéro divergent, absolument convergente, semi-convergente). Chaque série doit être analysée pour déterminer sa nature.",
+  "summary": "L'exercice demande de classer dix séries numériques en quatre catégories selon leur comportement : divergence grossière, divergence avec limite nulle, convergence absolue ou convergence semi-convergente. Chaque série doit être analysée en justifiant rigoureusement son appartenance à une catégorie.",
   "concepts": [
     "série numérique",
     "convergence absolue",
-    "semi-convergence",
+    "convergence semi-convergente",
+    "divergence grossière",
     "critère de divergence",
+    "critère de convergence",
     "limite de terme général",
     "comparaison de séries"
   ],
@@ -14,16 +16,18 @@
     "analyse du terme général",
     "comparaison de séries",
     "développement asymptotique",
+    "intégration terme à terme",
     "critère de Leibniz",
     "critère de d'Alembert"
   ],
   "objects": [
     "série numérique",
     "terme général",
-    "limite",
-    "développement asymptotique"
+    "limite de suite",
+    "développement asymptotique",
+    "intégrale impropre"
   ],
-  "content_hash": "8de9b265e444b9f4041788bf8d2c794f846c92987a99ca6a66b426f7a1783a22",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:59:16.495Z"
+  "content_hash": "bab3192df8a37e538905930796e1a9ca8c5ea76a841a2855bb0182ba106eae97",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:36:52.108Z"
 }

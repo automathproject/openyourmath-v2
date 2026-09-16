@@ -1,28 +1,29 @@
 {
   "uuid": "ZS4J",
   "source_path": "exo7/4-L2/ZS4J.tex",
-  "summary": "L'exercice étudie les propriétés d'un endomorphisme de rang 1 dans un espace vectoriel de dimension finie. Il demande de montrer des conditions de diagonalisabilité et d'exprimer le polynôme caractéristique.",
+  "summary": "L'exercice porte sur un endomorphisme de rang 1 dans un espace vectoriel de dimension finie. Il demande de prouver des propriétés liées à sa diagonalisabilité, à sa trace et à son polynôme caractéristique, puis d'appliquer ces résultats à la réduction d'une matrice spécifique.",
   "concepts": [
-    "endomorphisme",
-    "rang d'un endomorphisme",
-    "diagonalisabilité",
+    "endomorphisme diagonalisable",
     "trace d'un endomorphisme",
     "polynôme caractéristique",
+    "rang d'un endomorphisme",
     "valeur propre",
-    "espace vectoriel de dimension finie"
+    "sous-espace propre",
+    "polynôme annulateur"
   ],
   "methods": [
     "calcul de la trace",
     "analyse du polynôme caractéristique",
-    "condition de diagonalisabilité"
+    "critère de diagonalisabilité",
+    "réduction de matrice sans calcul"
   ],
   "objects": [
     "endomorphisme de rang 1",
-    "polynôme caractéristique",
     "matrice 3x3",
-    "sous-espaces vectoriels propres"
+    "polynôme caractéristique",
+    "sous-espaces propres"
   ],
-  "content_hash": "616da6c35ee4f98918d90079640c43809d8b3ffe0f5f95dbd9332150aa0b85b1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:55:30.156Z"
+  "content_hash": "f4b595dab37cd7e21bf96d1bc3faad514038c5f859c366964c2978aeb08c4a6b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:34:51.869Z"
 }

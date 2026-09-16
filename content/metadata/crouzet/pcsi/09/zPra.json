@@ -1,26 +1,29 @@
 {
   "uuid": "zPra",
   "source_path": "crouzet/pcsi/09/zPra.tex",
-  "summary": "L'exercice demande d'étudier le sens de variation de plusieurs suites numériques définies par des formules explicites. On doit démontrer si elles sont croissantes, décroissantes ou constantes.",
+  "summary": "L'exercice demande d'étudier le sens de variation de quatre suites numériques définies par des formules explicites. La première suite est démontrée comme croissante, puis trois autres suites sont analysées pour déterminer si elles sont croissantes ou décroissantes.",
   "concepts": [
     "suite numérique",
     "sens de variation",
     "croissance stricte",
     "décroissance stricte",
     "différence finie",
-    "inégalité"
+    "inégalité",
+    "calcul algébrique"
   ],
   "methods": [
-    "calcul de différence finie",
+    "calcul de la différence finie",
+    "simplification d'expression",
     "analyse du signe",
-    "simplification d'expression rationnelle"
+    "comparaison de termes consécutifs"
   ],
   "objects": [
-    "suite définie par récurrence",
-    "expression rationnelle",
-    "différence finie"
+    "suite définie par une formule explicite",
+    "termes consécutifs",
+    "différence finie",
+    "inégalités"
   ],
-  "content_hash": "57fa4dc9e87fbb04241f274050d045efa3c1bc3f8a18285c48dc6956f67dc3a2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:35:16.974Z"
+  "content_hash": "250a60fc08f2524d35cfd8d22ccce11573261640be45b41dfc1c0b16def5b6ab",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:31:50.589Z"
 }

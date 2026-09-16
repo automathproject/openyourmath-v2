@@ -1,28 +1,29 @@
 {
   "uuid": "EBdB",
   "source_path": "exo7/4-L2/EBdB.tex",
-  "summary": "L'exercice demande de montrer des propriétés de commutation et d'inversibilité pour deux endomorphismes f et g de E, avec g nilpotent. On étudie les puissances itérées de f et g sur un vecteur x, puis l'inversibilité de f+g.",
+  "summary": "L'exercice demande de montrer que si deux endomorphismes commutent et que l'un est nilpotent, alors l'inversibilité de l'un implique celle de la somme. On étudie les puissances d'endomorphismes et leurs propriétés de stabilité.",
   "concepts": [
-    "commutativité d'endomorphismes",
+    "endomorphisme",
+    "commutativité",
     "nilpotence",
-    "inversibilité d'endomorphisme",
+    "inversibilité",
     "sous-espace stable",
     "polynôme annulateur",
     "réduction d'endomorphisme"
   ],
   "methods": [
+    "récurrence",
     "utilisation de la nilpotence",
-    "itération d'endomorphismes",
-    "décomposition en polynômes",
-    "manipulation d'endomorphismes"
+    "décomposition en sous-espaces stables",
+    "manipulation de polynômes annulateurs"
   ],
   "objects": [
-    "endomorphisme",
-    "sous-espace vectoriel",
-    "polynôme annulateur",
-    "puissance d'endomorphisme"
+    "endomorphismes commutants",
+    "somme d'endomorphismes",
+    "puissances d'endomorphismes",
+    "sous-espace stable"
   ],
-  "content_hash": "eb125c5038ff74e6693bca7c6136d1b36c95ce94c21cad2cd935b274357ab8cb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:26:02.028Z"
+  "content_hash": "a6bca03ba9da08b9abcafcfba9697de8685ca87d40386bd4fe8ec4e4f9f0f538",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:34:29.177Z"
 }

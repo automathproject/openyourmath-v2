@@ -1,23 +1,26 @@
 {
   "uuid": "MxEl",
   "source_path": "exo7/1-L1/MxEl.tex",
-  "summary": "L'exercice demande d'identifier l'erreur dans un raisonnement par récurrence affirmant que tous les crayons de couleurs sont de la même couleur, quel que soit leur nombre.",
+  "summary": "L'exercice demande d'identifier l'erreur dans un raisonnement par récurrence qui prétend démontrer que tout ensemble infini dénombrable de crayons est de la même couleur.",
   "concepts": [
     "raisonnement par récurrence",
     "induction mathématique",
+    "principe de récurrence",
+    "erreur de généralisation",
     "logique mathématique",
-    "hypothèse de récurrence",
-    "propriété universelle"
+    "hypothèse de récurrence"
   ],
   "methods": [
     "analyse de raisonnement",
-    "identification d'erreur logique"
+    "identification d'erreur logique",
+    "contre-exemple"
   ],
   "objects": [
-    "proposition mathématique",
-    "crayons de couleurs"
+    "proposition récurrente",
+    "ensemble infini dénombrable",
+    "crayons de couleur"
   ],
-  "content_hash": "fb44090ed8891dc7d638558df0e4314d53a7729e956e46177c5c683598af6aab",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T05:14:22.067Z"
+  "content_hash": "4becb9361a471a727a568f2bd5857fe4bf7c1bd69b93427a6337f6eee31c513d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:33:41.511Z"
 }

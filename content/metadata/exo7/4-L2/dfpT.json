@@ -1,28 +1,32 @@
 {
   "uuid": "dfpT",
   "source_path": "exo7/4-L2/dfpT.tex",
-  "summary": "L'exercice demande de calculer les valeurs propres d'une matrice dépendant d'un paramètre réel et de déterminer pour quelles valeurs du paramètre la matrice est diagonalisable. Il aborde aussi la diagonalisation d'une matrice spécifique et la recherche de ses racines carrées.",
+  "summary": "L'exercice demande de calculer les valeurs propres d'une matrice dépendant d'un paramètre réel, d'étudier sa triangularisabilité et sa diagonalisabilité. Il aborde ensuite la diagonalisation d'une matrice spécifique et la recherche de ses racines carrées, ainsi que l'étude des propriétés d'un endomorphisme dont le carré est cette matrice.",
   "concepts": [
-    "valeurs propres",
-    "triangularisation",
-    "diagonalisation",
-    "racine carrée de matrice",
+    "valeur propre",
+    "triangularisabilité",
+    "diagonalisabilité",
+    "polynôme caractéristique",
     "polynôme minimal",
-    "sous-espaces propres"
+    "racine carrée d'une matrice",
+    "sous-espace propre",
+    "stabilité d'un sous-espace"
   ],
   "methods": [
     "calcul du polynôme caractéristique",
-    "diagonalisation de matrice",
-    "recherche de racines carrées de matrice",
-    "analyse de stabilité de sous-espaces propres"
+    "diagonalisation",
+    "recherche de racines carrées de matrices",
+    "détermination du polynôme minimal",
+    "étude de la stabilité des sous-espaces propres"
   ],
   "objects": [
-    "matrice carrée",
+    "matrice 3x3",
     "endomorphisme linéaire",
-    "polynôme minimal",
-    "sous-espaces propres"
+    "sous-espaces propres",
+    "racine carrée d'une matrice",
+    "polynôme caractéristique"
   ],
-  "content_hash": "86d0ac802f0e72277d7e054b02ad1434ab44b952ec52e308bc303163affd62a5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:00:13.566Z"
+  "content_hash": "cb3486b6991e230773724c2c295a3fa85bfc40b5d9cda1c28f0b46a509538dfe",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:35:01.885Z"
 }

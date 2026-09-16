@@ -1,28 +1,30 @@
 {
   "uuid": "PWRa",
   "source_path": "exo7/4-L2/PWRa.tex",
-  "summary": "L'exercice demande de calculer le produit de deux matrices de permutation et d'en déduire que l'ensemble de ces matrices forme un sous-groupe du groupe linéaire, isomorphe au groupe symétrique.",
+  "summary": "L'exercice demande de calculer le produit de deux matrices de permutation associées à des permutations σ et σ' de Sn, puis d'en déduire que l'ensemble G de ces matrices forme un sous-groupe de GLn(ℝ) isomorphe à Sn.",
   "concepts": [
     "permutation",
     "matrice de permutation",
-    "groupe symétrique",
-    "groupe linéaire",
-    "isomorphisme de groupes",
+    "groupe de permutation",
     "sous-groupe",
+    "isomorphisme de groupes",
+    "groupe linéaire général",
     "morphisme de groupes"
   ],
   "methods": [
-    "calcul de produit de matrices",
-    "vérification de l'inversibilité",
+    "calcul matriciel",
+    "utilisation du symbole de Kronecker",
+    "vérification des propriétés de groupe",
     "démonstration d'isomorphisme"
   ],
   "objects": [
     "matrice carrée",
     "permutation",
-    "groupe de matrices",
-    "groupe symétrique"
+    "groupe Sn",
+    "groupe GLn(ℝ)",
+    "morphisme de groupes"
   ],
-  "content_hash": "f90eaaf4fafabbb1cd402012c4f5537b4dbd83097e3cc7a38146b2832d896a94",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T01:44:57.198Z"
+  "content_hash": "f0709a393a1970b6f4bbfc5c746c549db88dc739cac2410351affd63ba215d50",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:39.935Z"
 }

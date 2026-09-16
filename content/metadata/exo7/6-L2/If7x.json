@@ -1,30 +1,31 @@
 {
   "uuid": "If7x",
   "source_path": "exo7/6-L2/If7x.tex",
-  "summary": "L'exercice étudie une famille de plans paramétrés par un réel m dans l'espace. Il demande de déterminer les plans P_m pour lesquels un point donné appartient au plan, un vecteur donné est normal au plan, ou un vecteur donné est directeur du plan.",
+  "summary": "L'exercice demande de déterminer les plans d'une famille paramétrée (P_m) dans le plan ou l'espace, selon qu'un point donné appartient au plan, qu'un vecteur donné est normal au plan, ou qu'un vecteur donné est directeur du plan.",
   "concepts": [
     "géométrie affine",
-    "plan cartésien",
-    "vecteur normal",
-    "vecteur directeur",
+    "équation cartésienne d'un plan",
+    "vecteur normal à un plan",
+    "vecteur directeur d'un plan",
     "appartenance d'un point à un plan",
     "produit scalaire",
-    "équation cartésienne"
+    "système d'équations linéaires"
   ],
   "methods": [
-    "résolution d'équation polynomiale",
-    "comparaison d'équations à un facteur près",
+    "substitution d'un point dans une équation de plan",
+    "identification d'un vecteur normal",
     "calcul de produit scalaire",
-    "substitution de coordonnées"
+    "résolution d'équations polynomiales",
+    "comparaison d'équations à un facteur près"
   ],
   "objects": [
-    "plan cartésien",
+    "plan affine",
     "vecteur normal",
     "vecteur directeur",
-    "point de l'espace",
-    "famille de plans paramétrée"
+    "point dans l'espace",
+    "équation cartésienne"
   ],
-  "content_hash": "7e731064640ea6d9e669ebc79a96dd957f143159971503d69c700197de2fa53e",
+  "content_hash": "3c31cb1b2cadeb9a59b757842359fabf631af217b15e230e980b8af158c2b049",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:25:32.517Z"
+  "indexed_at": "2026-09-15T18:32:09.236Z"
 }

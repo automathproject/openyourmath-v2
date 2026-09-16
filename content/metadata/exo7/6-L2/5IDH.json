@@ -1,29 +1,28 @@
 {
   "uuid": "5IDH",
   "source_path": "exo7/6-L2/5IDH.tex",
-  "summary": "L'exercice demande de dénombrer et tracer les cercles passant par un point donné A et tangents à deux droites parallèles ou sécantes. Le contexte géométrique implique des propriétés de tangence et de position relative.",
+  "summary": "L'exercice demande de déterminer le nombre de cercles passant par un point donné A et tangents à deux droites parallèles ou sécantes, puis de les tracer. Le contexte géométrique implique des propriétés de tangence et de position relative des droites.",
   "concepts": [
     "géométrie affine euclidienne",
     "tangence",
     "homothétie",
-    "bissectrice",
-    "droites parallèles",
-    "droites sécantes",
-    "analyse-synthèse"
+    "bissectrice d'angle",
+    "propriétés des cercles",
+    "position relative de droites"
   ],
   "methods": [
     "construction géométrique",
     "homothétie",
-    "tracé de bissectrice",
-    "méthode d'analyse-synthèse"
+    "analyse-synthèse",
+    "tracé de bissectrice"
   ],
   "objects": [
-    "cercles tangents",
     "droites parallèles",
     "droites sécantes",
-    "point A"
+    "point A",
+    "cercles tangents"
   ],
-  "content_hash": "06cbc378b8cf97792308ae29077e0afb264dbecf3857b64acc10651168e5de8e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:21:43.366Z"
+  "content_hash": "72444fd789cc73f3cb7d9f7c552c79fb30c47a53225df0e1ee0a60d1ae1bf995",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:32:44.625Z"
 }

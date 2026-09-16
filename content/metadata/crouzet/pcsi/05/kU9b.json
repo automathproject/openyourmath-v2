@@ -1,27 +1,28 @@
 {
   "uuid": "kU9b",
   "source_path": "crouzet/pcsi/05/kU9b.tex",
-  "summary": "L'exercice demande de prouver qu'il n'existe pas de surjection de ℕ vers ℘(ℕ), l'ensemble des parties de ℕ, et d'en déduire que ℘(ℕ) n'est pas dénombrable.",
+  "summary": "L'exercice demande de prouver qu'il n'existe pas de surjection de ℕ vers ℘(ℕ) (l'ensemble des parties de ℕ), puis d'en déduire que ℘(ℕ) n'est pas dénombrable. La démonstration s'appuie sur une construction par l'absurde en introduisant un ensemble spécifique.",
   "concepts": [
-    "dénombrabilité",
+    "ensemble dénombrable",
     "ensemble des parties",
     "surjection",
     "raisonnement par l'absurde",
     "cardinalité",
-    "théorème de Cantor"
+    "théorème de Cantor",
+    "ensemble non dénombrable"
   ],
   "methods": [
-    "argument diagonal",
-    "contradiction",
-    "construction d'un ensemble intermédiaire"
+    "raisonnement par l'absurde",
+    "construction d'un ensemble diagonal",
+    "analyse des cas"
   ],
   "objects": [
-    "ℕ",
-    "℘(ℕ)",
-    "application f",
+    "ensemble ℕ",
+    "ensemble ℘(ℕ)",
+    "application surjective",
     "ensemble A"
   ],
-  "content_hash": "a10d0f752176dfb2829fe97f7882e8b6591b9e5ed06f1737219a818f2078866a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:08:07.400Z"
+  "content_hash": "07bfb5d000eb27346b21ddd8d6733fa1b8d34b4258cc4b957f5b408ab5b85efe",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:33.302Z"
 }

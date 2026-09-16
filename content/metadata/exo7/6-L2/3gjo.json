@@ -1,7 +1,7 @@
 {
   "uuid": "3gjo",
   "source_path": "exo7/6-L2/3gjo.tex",
-  "summary": "L'exercice étudie une famille de droites paramétrées par un réel λ dans le plan. Il demande de vérifier qu'elles passent toutes par un point commun, puis d'identifier parmi elles des droites verticales, horizontales, ou ayant des relations de parallélisme, de confusion ou de perpendicularité avec une droite donnée.",
+  "summary": "L'exercice étudie une famille de droites paramétrées par un réel λ dans le plan. Il demande de vérifier qu'elles passent toutes par un point commun, puis d'identifier parmi elles les droites verticales, horizontales, ou celles parallèles, confondues ou perpendiculaires à une droite donnée.",
   "concepts": [
     "géométrie affine",
     "droites du plan",
@@ -12,16 +12,16 @@
   ],
   "methods": [
     "résolution de système d'équations",
-    "analyse de coefficients directeurs",
-    "identification de cas particuliers"
+    "identification de coefficients",
+    "calcul de pente"
   ],
   "objects": [
     "famille de droites paramétrées",
     "droite verticale",
     "droite horizontale",
-    "droite de référence"
+    "droite Δ"
   ],
-  "content_hash": "b10c1e07d9b38f6dbc9660b6fa0bd83cdc5eab69aa31149cc51ed296d0932204",
+  "content_hash": "8ea27574f94e6382cfed952d6aa8a09200d7678d717c2533625f16bda82051e5",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:25:19.810Z"
+  "indexed_at": "2026-09-15T18:31:57.684Z"
 }

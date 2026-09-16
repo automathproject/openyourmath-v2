@@ -1,26 +1,26 @@
 {
   "uuid": "Tbdq",
   "source_path": "exo7/6-L2/Tbdq.tex",
-  "summary": "L'exercice étudie les propriétés géométriques d'un triangle rectangle construit à partir d'un triangle initial, en analysant la position et la longueur du segment EC formé par les sommets des angles droits de deux triangles rectangles extérieurs.",
+  "summary": "L'exercice étudie les propriétés géométriques d'un triangle BOA et de deux triangles rectangles construits extérieurement sur ses côtés. Il demande d'analyser la position et la longueur du segment EC formé par les sommets des angles droits de ces triangles.",
   "concepts": [
     "géométrie affine",
-    "bissectrice extérieure",
+    "bissectrice d'angle",
     "triangle rectangle",
     "parallélisme",
-    "périmètre"
+    "périmètre d'un triangle"
   ],
   "methods": [
     "construction géométrique",
-    "analyse de propriétés",
+    "analyse de propriétés de parallélisme",
     "calcul de longueur"
   ],
   "objects": [
     "triangle",
     "segment",
-    "bissectrice",
+    "bissectrice extérieure",
     "hypoténuse"
   ],
-  "content_hash": "4b9cf534258fe466e02536677e6764e02a26409e3889d294a28f11f6f81b5adf",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:54:53.168Z"
+  "content_hash": "3124df621138cea663ee9100505071df5150d5f53c9a9a607fa822c71eb01718",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:32:22.017Z"
 }

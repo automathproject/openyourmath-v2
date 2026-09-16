@@ -1,26 +1,28 @@
 {
   "uuid": "lDSy",
   "source_path": "exo7/2-L1/lDSy.tex",
-  "summary": "L'exercice demande de déterminer deux limites de fonctions impliquant une racine carrée et une fonction linéaire, l'une en +∞ et l'autre en -∞. Le contexte est purement algébrique.",
+  "summary": "L'exercice demande de déterminer deux limites d'une expression impliquant une racine carrée et une fonction linéaire, lorsque la variable tend vers plus et moins l'infini. Le contexte est purement algébrique.",
   "concepts": [
-    "limite de fonction",
+    "limite de fonctions",
     "forme indéterminée",
     "développement limité",
-    "ordre de développement",
-    "approximation asymptotique"
+    "asymptotique",
+    "comparaison de croissance",
+    "approximation locale"
   ],
   "methods": [
-    "développement limité en -∞",
-    "standardisation de variable",
-    "approximation des petits termes",
-    "manipulation de la valeur absolue"
+    "développement limité à l'ordre 1",
+    "standardisation",
+    "approximation des racines carrées",
+    "manipulation des équivalents"
   ],
   "objects": [
-    "fonction polynomiale sous racine",
+    "fonction racine carrée",
+    "fonction linéaire",
     "limite infinie",
-    "développement limité d'ordre 1"
+    "développement limité"
   ],
-  "content_hash": "cb87fc3c487f183be95cfb8b2b08ccac4c6da268458ec896c2b827c660e16f54",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:39:37.287Z"
+  "content_hash": "91321d6a0a5966c1a034b54a1966f3944db4878e7da5cd5daa2823a68a3a1d7a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:26:59.511Z"
 }

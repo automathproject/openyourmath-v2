@@ -1,27 +1,28 @@
 {
   "uuid": "FpFh",
   "source_path": "exo7/16-L3/FpFh.tex",
-  "summary": "L'exercice demande de rappeler des définitions fondamentales en analyse complexe (branche principale du logarithme, primitive d'une fonction continue) et d'identifier des exemples ou contre-exemples de fonctions holomorphes entre différents domaines complexes.",
+  "summary": "L'exercice demande de rappeler les définitions de la branche principale du logarithme et d'une primitive d'une fonction continue sur le plan complexe. Il propose ensuite de donner des exemples de fonctions continues non holomorphes admettant une primitive, ainsi que des exemples ou démonstrations d'existence de fonctions holomorphes non constantes entre différents domaines du plan complexe.",
   "concepts": [
-    "fonction holomorphe",
-    "primitive d'une fonction continue",
     "branche principale du logarithme",
+    "primitive d'une fonction continue",
+    "fonction holomorphe",
+    "fonction entière",
     "théorème de Liouville",
-    "application entière bornée",
-    "fonction constante"
+    "domaine de définition"
   ],
   "methods": [
     "définition formelle",
-    "identification de contre-exemples",
+    "démonstration d'existence",
     "application de théorèmes d'analyse complexe"
   ],
   "objects": [
-    "fonction complexe",
-    "domaine complexe",
-    "application holomorphe",
-    "primitive"
+    "fonction continue",
+    "fonction holomorphe",
+    "plan complexe",
+    "domaine Δ",
+    "demi-plan supérieur ℍ"
   ],
-  "content_hash": "c1fa36d109621798340ffb66f1255ccaa6007069efb802338a1f15bed19e1d82",
+  "content_hash": "b858be55266425e3da50cb9897bbe83dfc341ac0e9ff08e2a8b5620b931ff407",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:24:02.901Z"
+  "indexed_at": "2026-09-15T18:24:26.460Z"
 }

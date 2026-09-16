@@ -1,27 +1,28 @@
 {
   "uuid": "gtDb",
   "source_path": "exo7/1-L1/gtDb.tex",
-  "summary": "L'exercice demande de démontrer une propriété des polynômes de Tchebychev de première espèce, de calculer les premiers termes, d'établir une relation de récurrence et d'en déduire le degré de ces polynômes.",
+  "summary": "L'exercice demande de démontrer une relation trigonométrique pour les polynômes de Tchebychev de première espèce, de calculer les premiers termes, d'établir une relation de récurrence et d'en déduire leur nature polynomiale.",
   "concepts": [
     "polynômes de Tchebychev",
     "relation de récurrence",
     "fonction polynomiale",
-    "degré d'un polynôme",
     "trigonométrie",
-    "identités trigonométriques"
+    "définition par récurrence",
+    "propriétés des polynômes"
   ],
   "methods": [
-    "définition par récurrence",
-    "identités trigonométriques",
-    "récurrence forte",
-    "calcul de degré"
+    "substitution trigonométrique",
+    "développement en cosinus",
+    "récurrence",
+    "calcul de degré d'un polynôme"
   ],
   "objects": [
-    "polynôme de Tchebychev",
+    "polynôme T_n(x)",
     "fonction cosinus",
-    "relation de récurrence linéaire"
+    "relation de récurrence",
+    "degré d'un polynôme"
   ],
-  "content_hash": "a45b71045a31c5078a638474dd1b6b0be4e0c8268256450af71156959ca018b7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:14:50.231Z"
+  "content_hash": "f4eec6d5d44c3a1489019e2c51b8998277647c25aae8415dce4733012d206407",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:34:01.757Z"
 }

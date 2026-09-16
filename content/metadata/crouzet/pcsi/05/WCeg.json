@@ -1,21 +1,22 @@
 {
   "uuid": "WCeg",
   "source_path": "crouzet/pcsi/05/WCeg.tex",
-  "summary": "Pour chaque application donnée, déterminer si elle est injective, surjective, bijective, et si possible trouver sa bijection réciproque.",
+  "summary": "L'exercice demande de déterminer si cinq applications données sont injectives, surjectives ou bijectives, et de trouver la bijection réciproque lorsque cela est possible. Les applications concernent des fonctions de l'ensemble des naturels, des réels, et des couples de réels vers des ensembles de réels ou de couples de réels.",
   "concepts": [
     "injectivité",
     "surjectivité",
     "bijectivité",
-    "application réciproque",
-    "système d'équations linéaires",
+    "bijection réciproque",
     "fonction strictement croissante",
-    "limite de fonction"
+    "limite de fonction",
+    "système d'équations linéaires"
   ],
   "methods": [
-    "résolution d'équations",
-    "analyse de la dérivée",
-    "calcul de limites",
-    "résolution de systèmes linéaires"
+    "résolution d'équation",
+    "résolution de système linéaire",
+    "étude de la monotonie",
+    "calcul de limite",
+    "détermination de la bijection réciproque"
   ],
   "objects": [
     "application de ℕ dans ℕ*",
@@ -24,7 +25,7 @@
     "application de ℝ dans ℝ",
     "application de ℝ² dans ℝ²"
   ],
-  "content_hash": "baffd7b99eaa8d1ae7e71c5de3b9ff42f160d2cf00eb5b392a42efddb323dba4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:07:11.260Z"
+  "content_hash": "da374f10ec0dda4f06299de336c38ae81db2e656c2eb639a6ab1bd9ec41061d6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:24.516Z"
 }

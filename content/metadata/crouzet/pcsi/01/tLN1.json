@@ -1,25 +1,26 @@
 {
   "uuid": "tLN1",
   "source_path": "crouzet/pcsi/01/tLN1.tex",
-  "summary": "L'exercice demande de traduire en français et de négationner des propositions logiques impliquant des quantificateurs universels et existentiels. Les propositions concernent des propriétés algébriques et des relations entre ensembles.",
+  "summary": "L'exercice demande de traduire en français des propositions logiques quantifiées et d'en écrire la négation. Les propositions portent sur des propriétés algébriques et d'existence/unicité.",
   "concepts": [
-    "logique des prédicats",
-    "quantificateurs universels et existentiels",
-    "négation de propositions",
+    "quantificateurs universel et existentiel",
+    "négation de propositions logiques",
     "théorème du produit nul",
-    "unicité de solution"
+    "unicité d'une solution",
+    "intégrité d'un corps"
   ],
   "methods": [
     "traduction de formules logiques",
-    "négation de propositions quantifiées",
-    "application du théorème du produit nul"
+    "application des règles de négation",
+    "manipulation de quantificateurs"
   ],
   "objects": [
-    "propositions logiques",
-    "ensembles",
-    "fonctions"
+    "proposition logique",
+    "équation",
+    "solution unique",
+    "produit nul"
   ],
-  "content_hash": "960d1933a20d094d27f0b31c50f0a18dfaad760d2e9f78af246139c96d611338",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:29:37.890Z"
+  "content_hash": "b6184a1738cd6cf68fe2696bbf643fd680ac9aab5ea8c8e179fc409b2a37eb31",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:37:39.037Z"
 }

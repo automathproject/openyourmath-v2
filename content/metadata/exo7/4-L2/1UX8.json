@@ -3,23 +3,24 @@
   "source_path": "exo7/4-L2/1UX8.tex",
   "summary": "L'exercice demande d'effectuer la division euclidienne d'un polynôme de degré 5 par un polynôme de degré 1, puis de présenter les résultats selon la méthode de Hörner, et enfin d'exprimer le polynôme initial dans une base de polynômes en (x-1).",
   "concepts": [
-    "division euclidienne des polynômes",
+    "division euclidienne dans les polynômes",
     "base d'un espace vectoriel",
     "polynôme unitaire",
-    "algèbre des polynômes",
+    "algèbre linéaire",
     "décomposition polynomiale"
   ],
   "methods": [
     "méthode de Hörner",
-    "division euclidienne",
-    "changement de base"
+    "algorithme de division euclidienne",
+    "changement de base polynomiale"
   ],
   "objects": [
     "polynôme de degré 5",
     "polynôme de degré 1",
-    "base de polynômes en (x-1)"
+    "base de polynômes",
+    "quotient et reste de division"
   ],
-  "content_hash": "7680c24e6363889b9b016aef44e3c57759bbd8ed19b93230c0ca4f8484b33409",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T01:14:36.976Z"
+  "content_hash": "dbdd52768fc5b6796bbd09704f7b5c6a936ed2793e285b5b14c35282cb1e1508",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:34.280Z"
 }

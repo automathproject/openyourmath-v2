@@ -1,25 +1,24 @@
 {
   "uuid": "LusY",
   "source_path": "crouzet/pcsi/01/LusY.tex",
-  "summary": "L'exercice demande de démontrer les propriétés algébriques de la conjonction logique (idempotence, commutativité et associativité) en utilisant des tables de vérité.",
+  "summary": "L'exercice demande de démontrer les propriétés algébriques de la conjonction logique (idempotence, commutativité et associativité) en construisant et analysant des tables de vérité.",
   "concepts": [
-    "logique propositionnelle",
     "conjonction logique",
-    "tables de vérité",
-    "propriétés algébriques",
+    "table de vérité",
     "idempotence",
     "commutativité",
-    "associativité"
+    "associativité",
+    "algèbre booléenne"
   ],
   "methods": [
     "construction de tables de vérité",
-    "vérification de propriétés"
+    "vérification de propriétés algébriques"
   ],
   "objects": [
     "propositions logiques",
-    "tables de vérité"
+    "opérateur ET"
   ],
-  "content_hash": "75f0336210336e8f0671b1a82c370bf851ad282ddeea30e6e770110143d04413",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:28:34.276Z"
+  "content_hash": "5758df05adb16c7161acf1c91daaa715f161a29e0c9db783b3a0a4a9d74aa075",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:37:29.221Z"
 }

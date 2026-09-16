@@ -1,25 +1,27 @@
 {
   "uuid": "Oxp7",
   "source_path": "exo7/10-L3/Oxp7.tex",
-  "summary": "L'exercice demande de démontrer qu'un ensemble muni d'une opération binaire vérifiant l'associativité, l'existence d'un élément neutre et d'un inverse pour tout élément est un groupe abélien.",
+  "summary": "L'exercice demande de démontrer qu'un ensemble muni d'une opération binaire vérifiant l'associativité, l'existence d'un élément neutre et l'existence d'un inverse à gauche pour tout élément est un groupe abélien.",
   "concepts": [
+    "groupe",
     "associativité",
     "élément neutre",
     "inverse à gauche",
-    "inverse à droite",
-    "groupe",
-    "groupe abélien"
+    "groupe abélien",
+    "loi de composition interne"
   ],
   "methods": [
     "vérification des axiomes de groupe",
-    "démonstration de la commutativité"
+    "démonstration de l'existence d'un inverse à droite",
+    "démonstration de l'unicité de l'élément neutre",
+    "démonstration de l'unicité de l'inverse"
   ],
   "objects": [
     "ensemble muni d'une opération binaire",
     "élément neutre",
-    "inverse"
+    "inverse d'un élément"
   ],
-  "content_hash": "6a17d77baeb37a0c0c6d6d2372ed6b2e570aedfbc23e3408f9908aa204f8cded",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:50:09.812Z"
+  "content_hash": "bfa5f02142ee3514f6c12621edfcf47cd9422f783da0434760ade43455b3c734",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:14.372Z"
 }

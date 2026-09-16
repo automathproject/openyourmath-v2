@@ -1,18 +1,20 @@
 {
   "uuid": "FEX8",
   "source_path": "exo7/15-L3/FEX8.tex",
-  "summary": "L'exercice demande de caractériser la frontière d'une partie d'un espace métrique en utilisant des suites convergentes et de calculer cette frontière dans un espace topologique spécifique.",
+  "summary": "L'exercice demande de démontrer une caractérisation de la frontière d'une partie d'un espace métrique à l'aide de suites convergentes, puis d'appliquer ce résultat à un exemple concret dans un espace topologique particulier.",
   "concepts": [
     "espace métrique",
     "adhérence d'un ensemble",
     "frontière d'un ensemble",
     "suite convergente",
+    "intérieur d'un ensemble",
     "topologie induite",
-    "intérieur d'un ensemble"
+    "boule ouverte"
   ],
   "methods": [
     "caractérisation par suites",
-    "analyse de convergence",
+    "construction explicite de suites",
+    "analyse de voisinages",
     "comparaison de topologies"
   ],
   "objects": [
@@ -23,7 +25,7 @@
     "frontière de A dans E",
     "frontière de A dans ℝ"
   ],
-  "content_hash": "d8aeeea4dd72eb644fcfa064f52628c2b386c511c9f93c14a7445fa14ff419d6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:22:33.304Z"
+  "content_hash": "9edd65c424d8c8756536025cbc0c33658addfc79b33b751186a039d9cdc652c3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:28:23.118Z"
 }

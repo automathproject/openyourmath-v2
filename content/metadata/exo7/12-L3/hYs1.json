@@ -1,28 +1,31 @@
 {
   "uuid": "hYs1",
   "source_path": "exo7/12-L3/hYs1.tex",
-  "summary": "On considère une fonction de classe C² à trois variables dont la matrice hessienne par rapport aux variables x et y est définie positive. On sait que la fonction atteint un minimum en (x₀, y₀) pour t=0. On demande de montrer que pour t voisin de 0, la fonction atteint son minimum en un point (x(t), y(t)) dépendant de t de manière C¹.",
+  "summary": "On considère une fonction de classe C² en trois variables dont la matrice hessienne par rapport à x et y est définie positive. On sait que la fonction atteint un minimum en (x₀,y₀) pour t=0. On demande de montrer que pour t voisin de 0, la fonction atteint un minimum en (x(t),y(t)), où (x(t),y(t)) est une application de classe C¹.",
   "concepts": [
-    "extremum lié",
+    "extremum conditionnel",
     "matrice hessienne",
     "définie positive",
-    "classe C²",
-    "classe C¹",
-    "continuité des solutions"
+    "théorème des fonctions implicites",
+    "continuité des dérivées partielles",
+    "théorème d'inversion locale",
+    "différentiabilité",
+    "classe C¹"
   ],
   "methods": [
     "analyse des points critiques",
-    "théorème des fonctions implicites",
     "linéarisation",
-    "stabilité des extrema"
+    "application du théorème des fonctions implicites",
+    "étude de la matrice hessienne"
   ],
   "objects": [
     "fonction de plusieurs variables",
     "matrice hessienne",
     "point critique",
-    "solution paramétrée"
+    "application de classe C¹",
+    "voisinage de 0"
   ],
-  "content_hash": "6b1140662e584fee9f757d4a916e18cc5bbc94e6358fb7188d157b7d174ff833",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:33:24.584Z"
+  "content_hash": "863d4bf3b2acd7daab99835066cc60ad327be4766aec9d06d204aee5e6752e57",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:28:47.903Z"
 }

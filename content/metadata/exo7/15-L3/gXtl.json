@@ -1,32 +1,32 @@
 {
   "uuid": "gXtl",
   "source_path": "exo7/15-L3/gXtl.tex",
-  "summary": "L'exercice demande de calculer la norme d'opérateurs linéaires bornés dans divers espaces fonctionnels ou séquentiels, en distinguant les cas selon les propriétés des fonctions ou suites impliquées.",
+  "summary": "Calculer la norme d'opérateurs linéaires bornés définis sur divers espaces fonctionnels ou de suites, en exploitant des propriétés de continuité et des inégalités classiques.",
   "concepts": [
     "application linéaire bornée",
     "norme d'opérateur",
-    "norme infinie",
-    "norme L2",
-    "norme L1",
     "inégalité de Cauchy-Schwarz",
     "convergence uniforme",
-    "fonction continue"
+    "espace de Banach",
+    "espace Lp",
+    "espace des suites convergentes"
   ],
   "methods": [
-    "calcul de norme d'opérateur",
-    "utilisation de l'inégalité de Cauchy-Schwarz",
-    "construction de suite test",
-    "convergence uniforme",
-    "majoration par norme infinie"
+    "majoration par la norme infinie",
+    "construction de suites tests",
+    "utilisation de la continuité",
+    "approximation par des fonctions auxiliaires",
+    "application de l'inégalité de Cauchy-Schwarz"
   ],
   "objects": [
-    "opérateur linéaire",
-    "fonction continue",
-    "suite numérique",
-    "norme d'opérateur",
-    "fonction affine"
+    "opérateur de shift",
+    "application de multiplication",
+    "forme linéaire",
+    "suite dans l^2",
+    "suite dans l^1",
+    "espace des fonctions continues"
   ],
-  "content_hash": "fc1f31af24fdbcd7a32e8e08d6f9fc7d929af32ff1bfbeb6f5268d6eb9efc55d",
+  "content_hash": "0d1d51564501836ffefacfc6d11cb5e90710bf55bb9d528f09b8899a0b2b44e4",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:15:18.199Z"
+  "indexed_at": "2026-09-15T18:24:07.889Z"
 }

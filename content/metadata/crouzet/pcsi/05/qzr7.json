@@ -1,27 +1,29 @@
 {
   "uuid": "qzr7",
   "source_path": "crouzet/pcsi/05/qzr7.tex",
-  "summary": "L'exercice demande de montrer que des paires d'ensembles sont en bijection en explicitant une fonction bijective entre eux. Les ensembles considérés incluent des intervalles réels et des ensembles d'entiers naturels.",
+  "summary": "L'exercice demande de montrer que des paires d'ensembles sont en bijection en explicitant une fonction bijective pour chaque cas. Les ensembles considérés sont des intervalles réels, des intervalles ouverts/fermés, et des ensembles d'entiers naturels pairs ou impairs.",
   "concepts": [
     "bijection",
     "fonction injective",
     "fonction surjective",
+    "intervalle réel",
     "ensemble des entiers naturels",
-    "intervalle réel"
+    "fonction strictement croissante"
   ],
   "methods": [
-    "définition explicite de fonction",
-    "preuve d'injectivité",
-    "preuve de surjectivité"
+    "définition explicite d'une bijection",
+    "vérification de l'injectivité",
+    "vérification de la surjectivité",
+    "calcul de l'image réciproque"
   ],
   "objects": [
-    "ensemble des entiers naturels",
+    "intervalle fermé borné",
+    "intervalle ouvert borné",
     "ensemble des entiers naturels pairs",
     "ensemble des entiers naturels impairs",
-    "intervalle réel",
-    "fonction bijective"
+    "fonction affine"
   ],
-  "content_hash": "224325e2ae2d88575019ca10c3e135f6533b5b57ec9d3ee90bd68483915bf9b1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:08:36.002Z"
+  "content_hash": "0ad1b173a76e66e5d50452a70db9a4f1fb8d42738fb2dd1fa63443f583547fa1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:36.928Z"
 }

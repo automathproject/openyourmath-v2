@@ -5,25 +5,25 @@
   "concepts": [
     "paramétrage de courbe",
     "intégrale complexe",
-    "convergence uniforme",
     "série de fonctions",
-    "fonction holomorphe",
-    "primitive d'une fonction complexe"
+    "convergence uniforme",
+    "primitive d'une fonction",
+    "théorème de Cauchy"
   ],
   "methods": [
     "paramétrage par exponentielle complexe",
+    "développement en série entière",
     "intégration terme à terme",
-    "calcul d'intégrale sur un chemin fermé",
-    "analyse de la convergence d'une série"
+    "calcul d'intégrale sur un chemin fermé"
   ],
   "objects": [
     "cercle unité",
-    "fonction cosh(z)/z",
-    "fonction sinh(z)/z",
-    "intégrale sur un chemin fermé",
-    "plan complexe privé de zéro"
+    "fonction complexe",
+    "intégrale curviligne",
+    "série entière",
+    "plan complexe privé d'un point"
   ],
-  "content_hash": "2465eebd7b480ed0e96227f053c99dc34a1c828d235f8bcc76b2545b032eb425",
+  "content_hash": "7177ddff9976cb10af8bc31bff7f4492152b9b0a612f7795d49e520e674baed4",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:34:50.169Z"
+  "indexed_at": "2026-09-15T18:24:19.580Z"
 }

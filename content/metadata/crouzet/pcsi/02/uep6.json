@@ -1,28 +1,28 @@
 {
   "uuid": "uep6",
   "source_path": "crouzet/pcsi/02/uep6.tex",
-  "summary": "Résoudre trois inéquations impliquant des fonctions exponentielles et des valeurs absolues. La première inéquation combine une exponentielle et une inégalité du second degré, la deuxième est une inéquation du second degré classique, et la troisième combine une valeur absolue et une inégalité du second degré.",
+  "summary": "Résoudre trois inéquations impliquant des exponentielles, des polynômes du second degré et des valeurs absolues. La première inéquation fait intervenir une exponentielle, la deuxième est une inéquation quadratique standard, et la troisième combine un polynôme du second degré et une valeur absolue.",
   "concepts": [
     "inéquation du second degré",
     "changement de variable",
     "fonction exponentielle",
     "valeur absolue",
     "tableau de signes",
-    "résolution d'inéquations"
+    "résolution d'inéquation"
   ],
   "methods": [
     "changement de variable",
-    "résolution d'inéquation du second degré",
+    "résolution d'inéquation quadratique",
     "analyse de signe",
-    "tableau de signes"
+    "substitution"
   ],
   "objects": [
     "inéquation",
     "fonction exponentielle",
     "valeur absolue",
-    "intervalle de solutions"
+    "polynôme du second degré"
   ],
-  "content_hash": "1cbaac57a4532f98314c0d994febc07a7f49ac9332509a2b10677fe40d44bf4a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:31:37.346Z"
+  "content_hash": "eefae8e78eca4cd22d0cf38f29fcf1b42ec5e5e52098b16cc9b37499258fe9eb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:31:14.920Z"
 }

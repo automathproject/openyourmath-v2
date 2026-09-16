@@ -1,30 +1,30 @@
 {
   "uuid": "oHNO",
   "source_path": "exo7/16-L3/oHNO.tex",
-  "summary": "L'exercice demande de démontrer qu'une fonction entière bornée par un polynôme est nécessairement un polynôme de degré au plus n, en utilisant trois approches différentes : une formule intégrale de Cauchy, les dérivées de la fonction en 0, et le théorème de Liouville.",
+  "summary": "L'exercice demande de démontrer qu'une fonction entière bornée par un polynôme est nécessairement un polynôme de degré au plus n, en utilisant trois approches distinctes : une formule intégrale de Cauchy, les dérivées de la fonction en 0, et le théorème de Liouville.",
   "concepts": [
     "fonction entière",
     "polynôme",
-    "formule intégrale de Cauchy",
     "théorème de Liouville",
-    "développement de Taylor",
-    "dérivée n-ième",
-    "bornitude des fonctions entières"
+    "formule intégrale de Cauchy",
+    "dérivées successives",
+    "prolongement holomorphe",
+    "théorème des résidus"
   ],
   "methods": [
-    "formule intégrale de Cauchy",
+    "estimation de l'intégrale de Cauchy",
+    "calcul des dérivées",
     "développement de Taylor",
-    "théorème de Liouville",
-    "estimation des intégrales",
-    "analyse des zéros"
+    "application du théorème de Liouville",
+    "analyse des zéros d'une fonction"
   ],
   "objects": [
-    "fonction entière",
-    "polynôme de degré n",
-    "dérivée n+1-ième",
-    "fonction g(z) = (f(z) - P(z))/z^{n+1}"
+    "fonction entière f(z)",
+    "polynôme P(z)",
+    "dérivées f^(n+1)(z)",
+    "fonction g(z) = (f(z) - P(z))/z^(n+1)"
   ],
-  "content_hash": "75756dfaaaeae1b230ceaa8c8e5d0049ce4b75279254c70482a1d46e981e568d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:22:30.120Z"
+  "content_hash": "201a0a4ebf4d74b07a73378a7e9c4a9a01b830212912470d12de819bf273f87f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:37:13.007Z"
 }

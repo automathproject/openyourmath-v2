@@ -1,28 +1,30 @@
 {
   "uuid": "x8fv",
   "source_path": "exo7/4-L2/x8fv.tex",
-  "summary": "On considère une matrice réelle A dont les coefficients sont dans [0,1] et dont les lignes somment à 1. On demande de montrer que 1 est valeur propre de A, puis que les autres valeurs propres sont dans le disque unité, et enfin d'établir une inégalité géométrique sur leur position.",
+  "summary": "On considère une matrice réelle carrée dont les coefficients sont dans [0,1] et dont les lignes somment à 1. On demande de montrer que 1 est valeur propre, puis que toute valeur propre λ vérifie |λ| ≤ 1, et enfin qu'il existe un réel ω ∈ [0,1] tel que |λ - ω| ≤ 1 - ω.",
   "concepts": [
     "valeur propre",
     "vecteur propre",
     "matrice stochastique",
     "spectre d'une matrice",
     "inégalité triangulaire",
-    "disque dans le plan complexe"
+    "disque dans le plan complexe",
+    "tangence de courbes"
   ],
   "methods": [
-    "recherche de vecteur propre",
-    "utilisation de l'inégalité triangulaire",
-    "analyse des coefficients d'une matrice",
-    "géométrie des nombres complexes"
+    "utilisation d'un vecteur constant",
+    "inégalité triangulaire",
+    "maximisation d'une norme",
+    "analyse des coefficients diagonaux",
+    "géométrie des disques dans le plan complexe"
   ],
   "objects": [
-    "matrice réelle",
+    "matrice carrée réelle",
     "vecteur propre associé à 1",
-    "valeurs propres de A",
-    "disque de centre a_{i0,i0} et rayon 1-a_{i0,i0}"
+    "valeur propre λ",
+    "disque de centre a_{i0,i0} et rayon 1 - a_{i0,i0}"
   ],
-  "content_hash": "7197d28f59c03c4d2e9b0596aedbd6942653f83dbd93d3d713d60ec4e9df1368",
+  "content_hash": "6ecbcb83574c7840150aaa14fd6a0f7fc61f7bb4f5d7b5593054e376f44ded7f",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:05:18.025Z"
+  "indexed_at": "2026-09-15T18:35:22.420Z"
 }

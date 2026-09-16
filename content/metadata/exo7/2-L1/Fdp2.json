@@ -1,31 +1,31 @@
 {
   "uuid": "Fdp2",
   "source_path": "exo7/2-L1/Fdp2.tex",
-  "summary": "L'exercice demande de déterminer la nature (convergence ou divergence) de plusieurs séries numériques de termes généraux variés, incluant des fonctions trigonométriques, logarithmiques et exponentielles.",
+  "summary": "L'exercice demande de déterminer la nature (convergence ou divergence) de sept séries numériques de termes généraux variés, incluant des fonctions trigonométriques, logarithmiques et exponentielles, ainsi que des termes alternés.",
   "concepts": [
     "série numérique",
     "convergence de série",
     "critère spécial aux séries alternées",
-    "équivalence asymptotique",
-    "transformation d'Abel",
     "développement limité",
-    "critère de comparaison"
+    "équivalence de suites",
+    "transformation d'Abel",
+    "critère de Cauchy"
   ],
   "methods": [
-    "développement limité",
+    "développement asymptotique",
     "transformation d'Abel",
-    "critère spécial aux séries alternées",
-    "comparaison asymptotique",
-    "analyse de la suite partielle"
+    "critère de Leibniz",
+    "comparaison de séries",
+    "analyse de la limite du terme général"
   ],
   "objects": [
-    "série alternée",
-    "terme général de série",
-    "fonction trigonométrique",
-    "fonction logarithmique",
-    "fonction exponentielle"
+    "série de terme général trigonométrique",
+    "série de terme général alterné",
+    "série de terme général logarithmique",
+    "série de terme général exponentiel",
+    "suite numérique"
   ],
-  "content_hash": "3e1334d034f4118cc8270b23066aef37b84731b02fff2ec921a1cd54ea700bc1",
+  "content_hash": "99b7f5aaa1e432ca562ae3554098ddd164054ce80b83bd11173b1ee387fb3323",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:11:36.515Z"
+  "indexed_at": "2026-09-15T18:36:55.303Z"
 }

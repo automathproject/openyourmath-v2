@@ -1,22 +1,23 @@
 {
   "uuid": "bR1F",
   "source_path": "crouzet/pcsi/10/bR1F.tex",
-  "summary": "Étude d'une suite définie par récurrence et convergence vers un point fixe. La suite est définie par $u_{n+1} = \\frac{u_n}{u_n + 1}$ avec $u_0 = 1$. On doit montrer qu'elle est décroissante, bornée, et déterminer sa limite.",
+  "summary": "Étude d'une suite définie par récurrence et convergence vers un point fixe. La suite est définie par u₀ = 1 et uₙ₊₁ = uₙ / (uₙ + 1). On montre qu'elle est décroissante, bornée, et on détermine sa limite.",
   "concepts": [
     "suite définie par récurrence",
     "monotonie",
     "bornes d'une suite",
-    "convergence d'une suite",
+    "convergence",
     "point fixe",
     "théorème de la limite monotone",
+    "limite de suite",
     "fonction croissante"
   ],
   "methods": [
     "récurrence",
     "étude de la monotonie",
     "calcul de dérivée",
-    "passage à la limite dans une relation de récurrence",
-    "théorème du point fixe"
+    "tableau de variations",
+    "passage à la limite dans une relation de récurrence"
   ],
   "objects": [
     "suite numérique",
@@ -24,7 +25,7 @@
     "point fixe",
     "limite de suite"
   ],
-  "content_hash": "9ce1620e94f754fe0010427692d396cb95459ca67b2ddfb7d478e4f1043d1bae",
+  "content_hash": "f1e275c2be1ece00609daf72a92c11d6baafee6e3e925cbb03ca02d50613f0c7",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:38:16.702Z"
+  "indexed_at": "2026-09-15T18:25:40.010Z"
 }

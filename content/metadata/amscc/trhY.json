@@ -1,32 +1,33 @@
 {
   "uuid": "trhY",
   "source_path": "amscc/trhY.tex",
-  "summary": "L'exercice demande de déterminer les hypothèses sur la distribution des salaires des femmes pour réaliser des tests statistiques, puis d'analyser les hypothèses alternatives de deux parties (Monsieur A et Madame B) dans le cadre d'une négociation sur la parité des salaires.",
+  "summary": "L'exercice demande d'analyser un sondage sur les salaires des femmes pour déterminer si leur moyenne diffère de celle des hommes (28 000 €). Il s'agit de formuler les hypothèses statistiques, de calculer une statistique de test et d'interpréter les résultats pour trancher entre deux positions opposées.",
   "concepts": [
     "test d'hypothèses",
     "hypothèse nulle",
     "hypothèse alternative",
     "loi normale",
-    "moyenne d'une population",
+    "statistique de test",
     "risque de première espèce",
-    "variable de décision"
+    "région critique",
+    "test bilatéral",
+    "test unilatéral"
   ],
   "methods": [
-    "test bilatéral",
-    "test unilatéral",
-    "calcul de la région critique",
-    "standardisation",
-    "calcul de la moyenne échantillonnale",
-    "calcul de l'écart-type échantillonnal"
+    "formulation des hypothèses",
+    "calcul de la statistique de test",
+    "détermination de la région critique",
+    "lecture de table de Student",
+    "interprétation des résultats"
   ],
   "objects": [
-    "salaire moyen",
+    "moyenne échantillonale",
+    "écart-type échantillonale",
+    "statistique de Student",
     "échantillon de salaires",
-    "variable de décision",
-    "loi de Student",
-    "hypothèses statistiques"
+    "variable de décision"
   ],
-  "content_hash": "e73dc0ef6d2484c4bc9bb0c117c06d9a8fb27f72712a56f51c078907d39b5b4e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:59:14.995Z"
+  "content_hash": "779436342bc48b7ebc2b039e2e352a799e9b63007533e795f840e2b52f1e41bb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:36:01.360Z"
 }

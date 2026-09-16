@@ -1,27 +1,32 @@
 {
   "uuid": "egNH",
   "source_path": "crouzet/pcsi/09/egNH.tex",
-  "summary": "On étudie une suite définie par récurrence et on analyse ses propriétés. On introduit une transformation de la suite pour en déduire une forme explicite.",
+  "summary": "L'exercice étudie une suite récurrente définie par $u_{n+1} = \\frac{2}{1+u_n}$ avec $u_0 = 3$. Il demande d'analyser ses propriétés (arithmétique, géométrique), de démontrer des bornes sur ses termes, et de transformer cette suite en une suite géométrique via un changement de variable.",
   "concepts": [
-    "suite définie par récurrence",
+    "suite récurrente",
     "suite arithmétique",
     "suite géométrique",
     "principe de récurrence",
-    "raison d'une suite géométrique",
-    "transformation de suite"
+    "changement de variable",
+    "fonction affine",
+    "inégalité",
+    "raison d'une suite géométrique"
   ],
   "methods": [
-    "calcul explicite de termes",
+    "calcul explicite des premiers termes",
     "raisonnement par l'absurde",
-    "récurrence forte",
-    "transformation algébrique"
+    "récurrence",
+    "transformation de suite",
+    "calcul de raison"
   ],
   "objects": [
-    "suite numérique",
-    "suite transformée",
-    "termes de suite"
+    "suite $(u_n)$",
+    "suite $(v_n)$",
+    "terme initial $u_0$",
+    "relation de récurrence",
+    "bornes inférieures et supérieures"
   ],
-  "content_hash": "63ec212e285f8497b4763e2984867df04aa7f21087fe761a8c0148d481a0628b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:34:09.612Z"
+  "content_hash": "f7ced25ca12dc6d067a296ba3bbfc3e70693afbb7d5437907678ea56e9d14792",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:31:39.745Z"
 }

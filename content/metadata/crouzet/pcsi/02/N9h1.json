@@ -1,28 +1,30 @@
 {
   "uuid": "N9h1",
   "source_path": "crouzet/pcsi/02/N9h1.tex",
-  "summary": "L'exercice porte sur une équation du second degré à coefficients réels. On demande de montrer l'existence de deux solutions réelles, puis de calculer diverses combinaisons de ces solutions sans les déterminer explicitement.",
+  "summary": "L'exercice demande de montrer l'existence de deux solutions réelles pour une équation du second degré sans les calculer explicitement, puis d'en déduire diverses expressions symétriques (somme, produit, inverses, puissances) en utilisant les relations de Viète.",
   "concepts": [
     "équation du second degré",
     "discriminant",
-    "racines d'une équation",
-    "relation de conjugaison",
-    "identités remarquables"
+    "relations de Viète",
+    "symétrie des racines",
+    "identités remarquables",
+    "factorisation"
   ],
   "methods": [
     "calcul du discriminant",
-    "identification de coefficients",
-    "utilisation des relations de conjugaison",
-    "développement d'identités remarquables"
+    "identification des coefficients",
+    "développement d'identités remarquables",
+    "factorisation de polynômes",
+    "utilisation des relations de Viète"
   ],
   "objects": [
-    "équation du second degré",
+    "équation quadratique",
     "racines d'une équation",
     "somme de racines",
     "produit de racines",
-    "puissances de racines"
+    "expressions symétriques"
   ],
-  "content_hash": "6f2a3c804bd0ba44d185c1b58589141e2f331063a7e5b36c726bf39c4ac733c6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:30:26.393Z"
+  "content_hash": "ffd109c44201cfdfe969711ef113075c52afe32dc88f46e12d1d868f014a5575",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:30:57.840Z"
 }

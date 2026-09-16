@@ -1,33 +1,33 @@
 {
   "uuid": "tWZH",
   "source_path": "exo7/1-L1/tWZH.tex",
-  "summary": "Calculer diverses sommes de coefficients binomiaux, démontrer des identités et relations de récurrence, et interpréter géométriquement dans le triangle de Pascal.",
+  "summary": "L'exercice propose une série de questions sur les propriétés des coefficients binomiaux, incluant des calculs de sommes de combinaisons, des identités algébriques, et des relations de récurrence. Certaines questions s'appuient sur le binôme de Newton et le triangle de Pascal.",
   "concepts": [
     "binôme de Newton",
     "coefficient binomial",
-    "somme de coefficients binomiaux",
+    "somme de combinaisons",
+    "identité algébrique",
     "relation de récurrence",
-    "intégration par parties",
-    "polynôme générateur",
     "triangle de Pascal",
-    "nombre complexe"
+    "intégration par parties",
+    "polynôme générateur"
   ],
   "methods": [
     "développement binomial",
-    "somme alternée",
-    "utilisation de racines de l'unité",
+    "standardisation",
     "intégration par parties",
-    "détermination de polynômes générateurs",
-    "interprétation combinatoire"
+    "calcul de coefficients",
+    "utilisation de racines complexes",
+    "somme de séries"
   ],
   "objects": [
     "coefficient binomial",
-    "somme de coefficients binomiaux",
+    "somme de combinaisons",
     "polynôme",
     "intégrale",
-    "triangle de Pascal"
+    "relation de récurrence"
   ],
-  "content_hash": "f462fb0c8ccfee6ee41418fed528be02e1cd6da3c34fe43db962aee64cae6086",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:51:09.227Z"
+  "content_hash": "8c059d6025bcfd1c5302aebcfe539485750ead839a4bef4d64334a8be4ec0546",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:26:24.551Z"
 }

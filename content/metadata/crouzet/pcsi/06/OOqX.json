@@ -1,7 +1,7 @@
 {
   "uuid": "OOqX",
   "source_path": "crouzet/pcsi/06/OOqX.tex",
-  "summary": "L'exercice demande de déterminer le domaine de définition et une expression des compositions de fonctions g∘f et f∘g pour différentes paires de fonctions f et g.",
+  "summary": "L'exercice demande de déterminer le domaine de définition et l'expression des compositions de fonctions $g \\circ f$ et $f \\circ g$ pour quatre paires de fonctions données, en justifiant les restrictions de domaine.",
   "concepts": [
     "domaine de définition",
     "composition de fonctions",
@@ -12,16 +12,22 @@
     "fonction trigonométrique"
   ],
   "methods": [
-    "analyse du domaine de définition",
-    "calcul de composition de fonctions",
+    "analyse de la continuité",
+    "restriction de domaine",
+    "calcul de composition",
     "simplification d'expression"
   ],
   "objects": [
-    "fonctions réelles",
-    "compositions de fonctions",
-    "expressions algébriques"
+    "fonction $f: x \to x^2$",
+    "fonction $g: x \to \\ln(x)$",
+    "fonction $f: x \to \tan(x)$",
+    "fonction $g: x \to \frac{1}{1+x^2}$",
+    "fonction $f: x \to \\cos(x)$",
+    "fonction $g: x \to \frac{1}{1+x^2}$",
+    "fonction $f: x \to \text{exp}(x)$",
+    "fonction $g: x \to x - \frac{1}{x}$"
   ],
-  "content_hash": "233dcaa13c78533f25cfc85b763b42ac25392bb7f7238442eb81e4da6c3842b0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:27:21.684Z"
+  "content_hash": "a632d6f0d53a2026c65b9c43c1e4cfccfd279cb7e539148dfc3f14c85d08fe24",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:30:29.964Z"
 }

@@ -14,17 +14,17 @@
   "methods": [
     "intégration par parties",
     "récurrence",
-    "calcul de dérivées successives",
     "changement de variable",
-    "utilisation des intégrales de Wallis"
+    "calcul d'intégrale"
   ],
   "objects": [
-    "polynôme de $\\mathbb{R}[X]$",
-    "famille de polynômes $(L_n)$",
+    "polynôme",
+    "famille de polynômes",
+    "espace préhilbertien",
     "produit scalaire",
-    "norme de polynôme"
+    "norme"
   ],
-  "content_hash": "cdd411b0a598e8430481afdcc4d2977842bbcfa942005099ce52740957fbd5f2",
+  "content_hash": "358e8ae17d2ecfec2790b68b79149c5b643cffee801e5b23eb2f8dcb4459bec5",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:45:25.530Z"
+  "indexed_at": "2026-09-15T18:28:20.060Z"
 }

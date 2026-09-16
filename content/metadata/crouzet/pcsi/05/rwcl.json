@@ -1,23 +1,28 @@
 {
   "uuid": "rwcl",
   "source_path": "crouzet/pcsi/05/rwcl.tex",
-  "summary": "L'exercice demande de démontrer des propriétés d'image directe et d'image réciproque d'intersection de parties pour une application donnée. La première question porte sur l'égalité de l'image réciproque d'une intersection avec l'intersection des images réciproques. La seconde question étudie l'image directe d'une intersection et son inclusion dans l'intersection des images directes, avec une égalité sous l'hypothèse d'injectivité.",
+  "summary": "L'exercice demande de démontrer des propriétés d'inclusion entre l'image directe et l'image réciproque d'intersections de parties d'ensembles, avec un cas particulier pour les applications injectives.",
   "concepts": [
     "image directe",
     "image réciproque",
-    "inclusion",
-    "injectivité"
+    "inclusion d'ensembles",
+    "application injective",
+    "double inclusion",
+    "définition d'image directe",
+    "définition d'image réciproque"
   ],
   "methods": [
-    "double inclusion",
-    "raisonnement par définition"
+    "raisonnement par double inclusion",
+    "utilisation de la définition d'image directe",
+    "utilisation de la définition d'image réciproque",
+    "utilisation de l'injectivité"
   ],
   "objects": [
-    "application",
+    "application entre ensembles",
     "parties d'un ensemble",
     "intersection d'ensembles"
   ],
-  "content_hash": "aefc50d2d07ac2be35c557e0686ab47d716777e698cba96283d91ed226615b93",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:09:03.909Z"
+  "content_hash": "fecde97795c3792223e0289b68b20dfcc56d0a207f7b267e162d41d27fa19030",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:39.854Z"
 }

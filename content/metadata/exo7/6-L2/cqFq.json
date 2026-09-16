@@ -1,28 +1,30 @@
 {
   "uuid": "cqFq",
   "source_path": "exo7/6-L2/cqFq.tex",
-  "summary": "L'exercice demande de démontrer une égalité vectorielle impliquant des points cocycliques et des angles dans un cercle, en utilisant des propriétés géométriques affines et euclidiennes du plan.",
+  "summary": "L'exercice demande de démontrer une égalité vectorielle dans un cercle, puis de prouver une relation angulaire entre des points d'un cercle. Le premier problème utilise des sécantes issues d'un point extérieur, tandis que le second implique des angles inscrits et au centre.",
   "concepts": [
     "géométrie affine euclidienne",
-    "cercle",
-    "points cocycliques",
+    "produit scalaire vectoriel",
     "angles inscrits",
     "angles au centre",
-    "produit scalaire",
-    "vecteurs"
+    "propriétés des cercles",
+    "relation de Chasles",
+    "théorème de l'angle inscrit"
   ],
   "methods": [
     "décomposition vectorielle",
-    "utilisation des propriétés des angles",
-    "calcul de produits scalaires"
+    "calcul de produit scalaire",
+    "utilisation de la relation de Chasles",
+    "comparaison d'angles"
   ],
   "objects": [
     "cercle",
+    "sécantes",
     "vecteurs",
-    "points cocycliques",
+    "points",
     "angles"
   ],
-  "content_hash": "18bd0c257995140f34f47a27db6100600824a72405cd1b15ff1b823db9d31871",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:49:13.467Z"
+  "content_hash": "a0a9a2e6a60ea1386baa227f52d449ff146a79210e81cd5c3e14f04b79f39ad5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:33:14.973Z"
 }

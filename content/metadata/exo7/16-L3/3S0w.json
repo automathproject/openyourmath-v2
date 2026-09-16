@@ -1,30 +1,28 @@
 {
   "uuid": "3S0w",
   "source_path": "exo7/16-L3/3S0w.tex",
-  "summary": "L'exercice demande d'énoncer la formule de représentation de Cauchy pour les disques et le théorème des résidus. Il propose ensuite deux démonstrations : montrer qu'une fonction holomorphe prenant des valeurs réelles sur un cercle prend aussi une valeur réelle en son centre, et prouver qu'une fonction holomorphe constante sur un cercle est constante sur le disque fermé correspondant.",
+  "summary": "L'exercice demande d'énoncer la formule de représentation de Cauchy pour les disques et le théorème des résidus. Il propose ensuite deux démonstrations : la première montre qu'une fonction holomorphe prenant des valeurs réelles sur un cercle prend aussi une valeur réelle en son centre, et la seconde prouve qu'une fonction holomorphe constante sur un cercle est constante sur le disque fermé correspondant.",
   "concepts": [
     "fonction holomorphe",
     "formule de représentation de Cauchy",
     "théorème des résidus",
     "intégrale de contour",
-    "propriété des fonctions holomorphes",
-    "valeurs réelles",
-    "constante sur un disque"
+    "propriété des valeurs réelles",
+    "constance d'une fonction"
   ],
   "methods": [
-    "intégration sur un contour",
-    "paramétrisation d'un cercle",
+    "intégration complexe",
+    "paramétrisation de cercle",
     "calcul de résidu",
     "application de la formule de Cauchy"
   ],
   "objects": [
+    "disque dans le plan complexe",
+    "cercle dans le plan complexe",
     "fonction holomorphe",
-    "disque",
-    "cercle",
-    "chemin fermé",
     "intégrale de contour"
   ],
-  "content_hash": "dab271b8d075f9172119e341d2dd9cf490a87e584a5d7d9cdbd97fbef4deb8e9",
+  "content_hash": "4dddae973493a0b7a1bdcf46e6c4ea01a7c360b05ab64272333537112168ad45",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:22:05.187Z"
+  "indexed_at": "2026-09-15T18:24:12.549Z"
 }

@@ -1,27 +1,31 @@
 {
   "uuid": "ekys",
   "source_path": "exo7/4-L2/ekys.tex",
-  "summary": "L'exercice demande de démontrer des propriétés d'un endomorphisme f d'un espace vectoriel de dimension finie, en utilisant son polynôme annulateur f⁴ = f² + f. On doit montrer des relations entre les noyaux et l'image de f.",
+  "summary": "L'exercice demande de démontrer des propriétés de décomposition et d'inclusion pour un endomorphisme f d'un espace vectoriel de dimension finie, vérifiant la relation f⁴ = f² + f. On étudie les noyaux et l'image de f ainsi que leur relation avec le polynôme f³ - f - Id.",
   "concepts": [
     "polynôme annulateur",
     "endomorphisme",
-    "espace vectoriel de dimension finie",
     "noyau d'un endomorphisme",
     "image d'un endomorphisme",
-    "somme directe de sous-espaces"
+    "somme directe d'espaces vectoriels",
+    "décomposition d'espace vectoriel",
+    "relation de récurrence polynomiale"
   ],
   "methods": [
-    "décomposition en noyaux",
-    "utilisation du polynôme annulateur",
+    "factorisation de polynômes",
+    "utilisation de la relation de récurrence",
+    "analyse des noyaux et images",
+    "décomposition en somme directe",
     "inclusion d'espaces vectoriels"
   ],
   "objects": [
-    "endomorphisme f",
-    "espace vectoriel E",
-    "noyau ker(f³ - f - Id)",
-    "image Im f"
+    "endomorphisme d'espace vectoriel",
+    "polynôme annulateur",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "somme directe de noyaux"
   ],
-  "content_hash": "5cfdeb1e659aa23b40861504557da5e05a158f86626854ff5182156610706d96",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:01:24.559Z"
+  "content_hash": "48f46b68e6fde40003d24c0fb68b8f2fe9d2177127237ea1e999e5c4621d26e8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:35:05.940Z"
 }

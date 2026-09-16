@@ -11,18 +11,17 @@
     "géométrie affine euclidienne"
   ],
   "methods": [
-    "utilisation du cas limite du théorème des angles inscrits",
-    "application d'une homothétie",
-    "analyse des angles formés par les tangentes et les cordes"
+    "cas limite du théorème des angles inscrits",
+    "utilisation de la tangente commune",
+    "application d'une homothétie"
   ],
   "objects": [
     "cercles tangents",
     "droites sécantes",
     "points d'intersection",
-    "tangente commune",
-    "droites parallèles"
+    "tangente commune"
   ],
-  "content_hash": "0af50fcfbbe301c65f2aa51339de398b26d66c3f0f7178e2c3771d2329e3d6bc",
+  "content_hash": "3b9cef45c1aeaaf87e90a8106cb2638f4f1dcdb27ca491dacbc452dbfc6875d2",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:53:48.622Z"
+  "indexed_at": "2026-09-15T18:32:58.144Z"
 }

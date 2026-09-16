@@ -1,28 +1,28 @@
 {
   "uuid": "iOpj",
   "source_path": "crouzet/pcsi/10/iOpj.tex",
-  "summary": "Déterminer la limite de trois suites définies par un quotient où le numérateur et le dénominateur tendent vers des valeurs spécifiques.",
+  "summary": "Déterminer la limite (si elle existe) de trois suites définies par des quotients impliquant des termes exponentiels et polynomiaux. Les suites sont de la forme (a^n - c)/(d*n^k + e).",
   "concepts": [
     "limite de suite",
     "convergence d'une suite",
-    "limite de quotient",
-    "limite de somme",
-    "limite de produit",
-    "limite de suite géométrique"
+    "limite d'un quotient",
+    "limite d'une suite géométrique",
+    "limite d'une suite polynomiale",
+    "comparaison de croissance"
   ],
   "methods": [
-    "comparaison de limites",
+    "comparaison de termes dominants",
     "calcul de limite de suite géométrique",
     "calcul de limite de suite polynomiale",
-    "calcul de limite de quotient"
+    "règle de l'infini"
   ],
   "objects": [
     "suite numérique",
-    "quotient de suites",
-    "suite géométrique",
-    "suite polynomiale"
+    "terme exponentiel",
+    "terme polynomiale",
+    "quotient de suites"
   ],
-  "content_hash": "f5faf9014a68644fb0fbe7f377fc8b3e2fb666d373956fde350b074a377ede2b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:38:13.276Z"
+  "content_hash": "cacab1b11bafe0091b0b2e57bf1b03581a6844ca767d6e1895d472709f91c38c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:25:46.771Z"
 }

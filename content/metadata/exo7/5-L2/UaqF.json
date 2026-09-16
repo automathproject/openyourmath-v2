@@ -1,33 +1,31 @@
 {
   "uuid": "UaqF",
   "source_path": "exo7/5-L2/UaqF.tex",
-  "summary": "L'exercice étudie la fonction F(x) définie comme une intégrale de Riemann dépendant du paramètre x, avec un noyau logarithmique. Il demande de prouver la parité, la continuité et la dérivabilité de F, puis de calculer sa dérivée et sa limite en l'infini pour finalement déterminer l'expression explicite de F(x).",
+  "summary": "L'exercice étudie la fonction F(x) définie comme une intégrale de Riemann dépendant du paramètre x. Il demande de montrer que F est paire, définie et continue sur ℝ, dérivable sur ℝ\\[-1,1], puis de calculer sa dérivée et d'en déduire une expression explicite de F(x).",
   "concepts": [
     "intégrale de Riemann dépendant d'un paramètre",
     "parité d'une fonction",
-    "continuité uniforme",
+    "continuité d'une fonction",
     "dérivabilité",
     "changement de variable",
     "décomposition en éléments simples",
-    "limite de fonctions"
+    "limite de fonction"
   ],
   "methods": [
     "changement de variable",
     "décomposition en éléments simples",
     "intégration par parties",
-    "analyse de parité",
-    "étude de continuité",
-    "calcul de dérivée"
+    "calcul de limite",
+    "utilisation de la parité"
   ],
   "objects": [
     "fonction définie par intégrale",
     "fonction paire",
-    "fonction continue",
-    "fonction dérivable",
-    "intégrale paramétrique",
-    "limite de fonction"
+    "dérivée d'une fonction",
+    "limite de fonction",
+    "intégrale paramétrique"
   ],
-  "content_hash": "ec874cff21ab83951ea33fb750c9953b5f7518d3498b98d0422f5f1e2895f527",
+  "content_hash": "350ecbc7abe17ca00c8df283a009f211217613ca88ad3a544f71df214f0e962b",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:55:44.512Z"
+  "indexed_at": "2026-09-15T18:33:37.059Z"
 }

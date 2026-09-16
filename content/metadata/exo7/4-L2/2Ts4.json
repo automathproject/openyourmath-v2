@@ -7,26 +7,27 @@
     "espace préhilbertien",
     "base orthogonale",
     "base orthonormale",
-    "intégrabilité",
+    "intégrale impropre",
     "théorème de croissances comparées",
-    "polynôme",
-    "fonction continue positive"
+    "formule de Leibniz",
+    "polynôme de degré n",
+    "fonction intégrable"
   ],
   "methods": [
     "intégration par parties",
     "récurrence",
-    "formule de Leibniz",
     "calcul de dérivées successives",
-    "utilisation de la fonction Gamma"
+    "utilisation de la formule de Leibniz",
+    "détermination de la valuation d'un polynôme"
   ],
   "objects": [
     "espace des polynômes réels",
     "famille de polynômes",
     "produit scalaire défini par intégrale",
-    "norme d'un polynôme",
-    "dérivées successives"
+    "base orthogonale",
+    "base orthonormale"
   ],
-  "content_hash": "77e5effceac13ded2949c414111ad766c34434141a362f61a5d265acc1ac66b2",
+  "content_hash": "0451a7beb012fea315223878c6b23f1683ac156a26dee8cabf326ec118c40756",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:43:39.250Z"
+  "indexed_at": "2026-09-15T18:28:10.354Z"
 }

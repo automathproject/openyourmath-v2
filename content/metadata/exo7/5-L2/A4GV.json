@@ -1,26 +1,26 @@
 {
   "uuid": "A4GV",
   "source_path": "exo7/5-L2/A4GV.tex",
-  "summary": "L'exercice demande de démontrer une inégalité pour une fonction de deux variables définie par morceaux, puis d'étudier la continuité de cette fonction en un point particulier.",
+  "summary": "L'exercice demande de démontrer une inégalité pour une fonction de deux variables définie par morceaux, puis d'étudier la limite d'une expression liée à cette fonction et sa continuité en un point. La fonction est définie sur ℝ² avec une condition particulière en (0,0).",
   "concepts": [
     "fonction de plusieurs variables",
     "limite de fonction",
     "continuité",
     "inégalité",
     "module",
-    "puissance"
+    "puissance à exposant réel"
   ],
   "methods": [
+    "majoration",
     "étude de limite",
-    "analyse de continuité",
-    "démonstration d'inégalité"
+    "analyse de continuité"
   ],
   "objects": [
     "fonction définie par morceaux",
-    "point critique",
-    "inégalité à démontrer"
+    "expression algébrique",
+    "point critique (0,0)"
   ],
-  "content_hash": "e660ea34c3a9802f552cf6a7d3aca48e463259ad9ec3ac7287c635b16a3d2768",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:47:03.669Z"
+  "content_hash": "2a1703de31338035688214f5a54bb2673161ea12c40d64b451bc384a562a86a9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:28:52.748Z"
 }

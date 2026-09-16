@@ -1,27 +1,31 @@
 {
   "uuid": "Ov62",
   "source_path": "crouzet/pcsi/10/Ov62.tex",
-  "summary": "L'exercice demande de déterminer la limite de trois suites différentes lorsque n tend vers l'infini. Chaque suite est définie comme un produit de termes dont les comportements asymptotiques doivent être analysés.",
+  "summary": "L'exercice demande de déterminer la limite (si elle existe) de trois suites différentes définies par un produit de termes. Les suites combinent des termes exponentiels et polynomiaux avec des comportements variés.",
   "concepts": [
     "limite de suite",
+    "convergence d'une suite",
     "comportement asymptotique",
+    "produit de suites",
     "suite géométrique",
     "suite polynomiale",
-    "produit de suites",
-    "quotient de suites"
+    "comparaison de croissance"
   ],
   "methods": [
-    "analyse du signe de la raison",
-    "comparaison de vitesses de croissance",
-    "utilisation des règles de produit et quotient pour les limites"
+    "comparaison de termes dominants",
+    "calcul de limite de produit",
+    "calcul de limite de somme",
+    "utilisation de la croissance exponentielle",
+    "utilisation de la décroissance exponentielle"
   ],
   "objects": [
     "suite numérique",
-    "terme général de suite",
-    "limite infinie",
-    "limite finie"
+    "terme exponentiel",
+    "terme polynomial",
+    "produit de suites",
+    "somme de suites"
   ],
-  "content_hash": "20d8f9890c0a7bb724592835fbc5776c5e73f8cdaf1ebde3c18ab01e1c85ec94",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:36:36.016Z"
+  "content_hash": "46a1a8370e2ed31d43006895bf6b334891906b846803a09a89448aa6ff9bfca0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:25:30.606Z"
 }

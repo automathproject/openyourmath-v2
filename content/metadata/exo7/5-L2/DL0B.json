@@ -1,28 +1,28 @@
 {
   "uuid": "DL0B",
   "source_path": "exo7/5-L2/DL0B.tex",
-  "summary": "L'exercice demande de démontrer deux propriétés d'une fonction convexe définie sur un ouvert convexe de ℝⁿ : une inégalité liée à la convexité et la continuité de la fonction. Le contexte est purement théorique, sans application concrète.",
+  "summary": "L'exercice demande de démontrer deux propriétés d'une fonction convexe définie sur un ouvert convexe de ℝⁿ : d'abord une inégalité liant les valeurs de la fonction en des points symétriques, puis la continuité de la fonction en raisonnant d'abord en dimension 2 avant de généraliser.",
   "concepts": [
     "fonction convexe",
+    "inégalité des trois cordes",
     "continuité",
-    "inégalité de convexité",
-    "théorème des trois cordes",
     "bornitude",
-    "norme infinie"
+    "norme infinie",
+    "convexité en dimension 1"
   ],
   "methods": [
-    "raisonnement par convexité",
-    "généralisation par récurrence",
-    "utilisation de la définition de la continuité",
-    "application du théorème des trois cordes"
+    "application de l'inégalité des trois cordes",
+    "raisonnement par cas particulier (dimension 2)",
+    "généralisation par densité",
+    "utilisation de la définition de la convexité"
   ],
   "objects": [
     "fonction de plusieurs variables",
     "ouvert convexe",
-    "inégalité",
-    "norme infinie"
+    "inégalité de convexité",
+    "boule fermée"
   ],
-  "content_hash": "369aab94f0029423a7d9563fa5966784fb203475ace50a3e50a9d997f8605a51",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:50:46.461Z"
+  "content_hash": "a785fc8a1a7b3ee68537438b76de757d55f1e8830b0e1a56f9c09bc24b86a07c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:28:56.924Z"
 }

@@ -1,25 +1,25 @@
 {
   "uuid": "FmPI",
   "source_path": "crouzet/pcsi/06/FmPI.tex",
-  "summary": "L'exercice demande de déterminer l'image d'une fonction définie sur les entiers et prenant deux valeurs, puis de trouver l'image réciproque d'un singleton.",
+  "summary": "L'exercice demande de déterminer l'image d'une fonction définie sur les entiers et prenant les valeurs 1 et -1, puis de trouver l'image réciproque de l'ensemble {1}.",
   "concepts": [
     "fonction définie sur les entiers",
     "image d'une fonction",
     "image réciproque",
-    "ensemble des entiers",
-    "ensemble des réels",
-    "fonction indicatrice"
+    "ensemble des valeurs d'une fonction",
+    "parité des entiers"
   ],
   "methods": [
-    "détermination de l'image",
-    "caractérisation de l'image réciproque"
+    "détermination de l'image par évaluation",
+    "caractérisation des antécédents"
   ],
   "objects": [
     "fonction de Z dans R",
+    "ensemble des entiers Z",
     "ensemble {-1, 1}",
-    "ensemble des entiers pairs"
+    "ensemble des entiers pairs 2Z"
   ],
-  "content_hash": "24483896ce297c74dcab5cbaf83debf04aa65c963d93eb518d740d180e23c027",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:27:08.772Z"
+  "content_hash": "4f736c468cc9048b53f2518f119a4633731e49050f186e73132c047a6a82583c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:30:25.523Z"
 }

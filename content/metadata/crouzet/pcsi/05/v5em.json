@@ -1,27 +1,27 @@
 {
   "uuid": "v5em",
   "source_path": "crouzet/pcsi/05/v5em.tex",
-  "summary": "L'exercice demande d'expliciter trois ensembles définis par des intersections et unions d'intervalles. Le premier ensemble est une intersection d'intervalles ouverts centrés en 0, le second une intersection d'intervalles semi-ouverts, et le troisième une union d'unions d'intervalles.",
+  "summary": "L'exercice demande d'expliciter trois ensembles définis par des intersections et une union d'intervalles, en déterminant leur expression simplifiée. Le contexte est purement théorique, sans application concrète.",
   "concepts": [
     "intersection d'ensembles",
     "union d'ensembles",
     "intervalle",
+    "limite de suite",
     "double inclusion",
-    "limite de suites",
-    "passage à la limite"
+    "ensemble des réels"
   ],
   "methods": [
-    "double inclusion",
+    "raisonnement par double inclusion",
     "passage à la limite",
-    "inclusion réciproque"
+    "inclusion d'intervalles"
   ],
   "objects": [
     "ensemble d'intervalles",
-    "réels strictement positifs",
-    "réels strictement négatifs",
-    "ensemble des réels"
+    "ensemble des réels privés de zéro",
+    "singleton",
+    "intervalle semi-ouvert"
   ],
-  "content_hash": "a2e7424b3b06a7b82b2fe68f463ccd8ba8f2a3852548d1c32fe57d7cf423b06b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:09:33.544Z"
+  "content_hash": "2ba7c9d8e1ad0a444561ae61a5f4660333bb61243f75506ff5591c352ed276e1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:42.213Z"
 }

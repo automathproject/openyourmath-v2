@@ -1,32 +1,34 @@
 {
   "uuid": "dVYA",
   "source_path": "exo7/2-L1/dVYA.tex",
-  "summary": "Étude complète d'une fonction rationnelle impliquant l'arc-tangente, incluant prolongement par continuité, dérivabilité, limites aux bornes, variations et asymptotes. La fonction est définie sur ℝ* et présente une symétrie paire.",
+  "summary": "Étude complète de 23 fonctions réelles, incluant analyse de leur domaine de définition, continuité, dérivabilité, limites, variations et asymptotes. Certaines fonctions présentent des propriétés spécifiques comme la parité ou la périodicité.",
   "concepts": [
-    "fonction rationnelle",
-    "prolongement par continuité",
-    "développement limité",
-    "limite en +∞ et -∞",
+    "continuité",
     "dérivabilité",
-    "variations de fonction",
-    "asymptote oblique",
-    "symétrie paire"
+    "limites",
+    "développement limité",
+    "asymptotes",
+    "parité",
+    "périodicité",
+    "variations de fonctions"
   ],
   "methods": [
     "développement limité",
     "standardisation",
-    "calcul de dérivée",
-    "analyse de signe",
-    "étude de limites"
+    "étude de la dérivée",
+    "analyse des limites",
+    "simplification algébrique",
+    "utilisation de théorèmes généraux"
   ],
   "objects": [
-    "fonction rationnelle",
-    "développement limité",
-    "dérivée",
-    "asymptote",
-    "courbe représentative"
+    "fonction réelle",
+    "polynôme",
+    "fonction exponentielle",
+    "fonction logarithmique",
+    "fonction trigonométrique",
+    "fonction rationnelle"
   ],
-  "content_hash": "edf6a1ab93787ece953bbaa0f405a760d029b3e5544ce756a724dd7a9925e939",
+  "content_hash": "c5123d24156f32a8709896bff4b9a22a7fc85a10c7f38482e45f671e12dafce7",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:46:41.622Z"
+  "indexed_at": "2026-09-15T18:25:09.145Z"
 }

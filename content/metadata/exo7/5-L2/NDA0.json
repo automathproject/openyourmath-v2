@@ -1,30 +1,31 @@
 {
   "uuid": "NDA0",
   "source_path": "exo7/5-L2/NDA0.tex",
-  "summary": "L'exercice demande de résoudre une équation différentielle du second ordre à coefficients constants avec second membre. Il s'agit d'abord de résoudre l'équation homogène associée, puis de trouver une solution particulière et la solution générale de l'équation complète. Enfin, on détermine une solution spécifique vérifiant des conditions initiales.",
+  "summary": "Résoudre une équation différentielle linéaire du second ordre à coefficients constants, avec second membre non homogène. Trouver une solution particulière, l'ensemble des solutions générales, puis une solution spécifique vérifiant des conditions initiales. Établir un lien entre cette équation et une autre équation différentielle via un changement de variable.",
   "concepts": [
     "équation différentielle linéaire du second ordre",
     "solution générale",
     "solution particulière",
     "changement de variable",
-    "conditions initiales",
     "polynôme caractéristique",
-    "racines complexes"
+    "racines complexes",
+    "conditions initiales"
   ],
   "methods": [
-    "méthode de variation des constantes",
+    "méthode de variation des paramètres",
     "identification des coefficients",
-    "résolution de l'équation homogène",
-    "changement de variable exponentiel"
+    "résolution d'équation homogène",
+    "changement de variable exponentiel",
+    "calcul des dérivées successives"
   ],
   "objects": [
     "équation différentielle",
     "solution particulière",
-    "solution générale",
-    "fonction dérivable deux fois",
-    "polynôme caractéristique"
+    "fonction solution",
+    "polynôme caractéristique",
+    "changement de variable"
   ],
-  "content_hash": "a885e12b50bc6b8a5cf0f782f2826d4119fa1a9b10c507fa2110821ed64be98e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:26:14.163Z"
+  "content_hash": "b6897afd819c01853feba718bfa05c3d475790ef094260a966cc99524a9f6e8c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:48.185Z"
 }

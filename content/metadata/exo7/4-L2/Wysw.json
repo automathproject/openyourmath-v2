@@ -1,28 +1,30 @@
 {
   "uuid": "Wysw",
   "source_path": "exo7/4-L2/Wysw.tex",
-  "summary": "L'exercice demande d'étudier les propriétés des normes dans l'anneau des entiers de Gauss et d'exprimer certains entiers naturels comme sommes de carrés. Il aborde aussi la caractérisation des entiers naturels qui peuvent s'écrire comme somme de trois carrés.",
+  "summary": "L'exercice demande d'abord de vérifier la multiplicativité de la norme dans l'anneau des entiers de Gauss. Ensuite, il propose de décomposer deux entiers en sommes de deux carrés. Enfin, il explore la possibilité d'écrire tout entier naturel comme somme de trois carrés, avec des questions intermédiaires sur les cas particuliers.",
   "concepts": [
     "norme dans Z[i]",
     "anneau des entiers de Gauss",
-    "somme de carrés",
-    "congruences modulo 8",
-    "congruences modulo 4",
-    "théorème des trois carrés"
+    "décomposition en produit de facteurs premiers",
+    "somme de deux carrés",
+    "somme de trois carrés",
+    "arithmétique modulaire",
+    "parité"
   ],
   "methods": [
     "calcul de norme",
     "décomposition en facteurs premiers",
-    "raisonnement par congruences",
+    "raisonnement modulo 8",
+    "raisonnement modulo 4",
     "analyse de parité"
   ],
   "objects": [
     "entiers de Gauss",
     "entiers naturels",
     "somme de carrés",
-    "congruences"
+    "facteurs premiers"
   ],
-  "content_hash": "c9bb7353cfce5f3940ea1009ec6d603931e6f6aeb00ffaedd751275707e00285",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T01:53:12.889Z"
+  "content_hash": "10103d75632f3e968baf8b6adec7a712d70c1166e40bc7f94a677d27c071f145",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:46.079Z"
 }

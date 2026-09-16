@@ -1,7 +1,7 @@
 {
   "uuid": "YtM6",
   "source_path": "exo7/1-L1/YtM6.tex",
-  "summary": "L'exercice demande de prouver une relation entre les dimensions de n+1 espaces vectoriels liés par des applications linéaires successives, avec des conditions d'injectivité, d'égalité d'image et de noyau, et de surjectivité.",
+  "summary": "L'exercice demande de démontrer une relation entre les dimensions de n+1 espaces vectoriels liés par des applications linéaires successives, sous des conditions d'injectivité, de surjectivité et d'égalité entre image et noyau.",
   "concepts": [
     "dimension d'un espace vectoriel",
     "application linéaire",
@@ -17,11 +17,11 @@
     "propriétés des applications linéaires"
   ],
   "objects": [
-    "espaces vectoriels",
-    "applications linéaires",
-    "dimensions"
+    "suite d'espaces vectoriels",
+    "suite d'applications linéaires",
+    "dimensions des espaces vectoriels"
   ],
-  "content_hash": "0736b1e49a72a1c5dcd8ea66f40039c6645a98a201df9b39c96cc4484efbc88c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:57:22.504Z"
+  "content_hash": "99e8012114b4eae4df4ded3be4db12a03d0f78b96830900bd4c0c87ce71a3800",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:28:34.485Z"
 }

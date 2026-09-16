@@ -1,28 +1,31 @@
 {
   "uuid": "OMwU",
   "source_path": "crouzet/pcsi/10/OMwU.tex",
-  "summary": "On définit deux suites (uₙ) et (vₙ) par récurrence. On pose wₙ = uₙ - vₙ et tₙ = 5uₙ + 24vₙ. L'exercice demande de montrer que (wₙ) est géométrique, de déterminer sa limite, de prouver que (uₙ) est décroissante et (vₙ) croissante, puis que ces deux suites sont adjacentes. Enfin, on étudie la suite (tₙ) pour trouver les expressions explicites de (uₙ) et (vₙ) et leur limite commune.",
+  "summary": "L'exercice étudie deux suites définies par récurrence, $(u_n)$ et $(v_n)$, et introduit une suite auxiliaire $(w_n) = u_n - v_n$. Il demande de montrer que $(w_n)$ est géométrique, d'en déterminer la limite et l'expression explicite, puis d'étudier la monotonie et l'adjacence des suites $(u_n)$ et $(v_n)$. Enfin, une suite constante $(t_n)$ est utilisée pour exprimer $u_n$ et $v_n$ et trouver leur limite commune.",
   "concepts": [
     "suite géométrique",
     "limite de suite",
-    "suites adjacentes",
-    "convergence de suites",
-    "récurrence",
-    "calcul de limite"
+    "suite adjacente",
+    "suite décroissante",
+    "suite croissante",
+    "théorème des suites adjacentes",
+    "convergence de suite"
   ],
   "methods": [
-    "calcul de raison d'une suite géométrique",
-    "étude de la monotonie d'une suite",
-    "démonstration de l'adjacence de deux suites",
-    "résolution d'équation linéaire"
+    "calcul de terme général",
+    "étude de monotonie",
+    "détermination de limite",
+    "résolution de système linéaire",
+    "utilisation de suite auxiliaire"
   ],
   "objects": [
     "suite récurrente",
-    "suite géométrique",
-    "suite adjacente",
+    "suite auxiliaire",
+    "suite constante",
+    "terme général de suite",
     "limite commune"
   ],
-  "content_hash": "baf86a161b5ab2b0118c27a36badb1e4b5851ba0d519345baee85e348d9823c4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:36:01.838Z"
+  "content_hash": "4409208c29967b265b3ae27b335fa517b832094fe16b2e1d7aa03b3a07878a9b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:25:24.459Z"
 }

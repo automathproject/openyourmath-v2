@@ -1,24 +1,26 @@
 {
   "uuid": "kE8E",
   "source_path": "exo7/4-L2/kE8E.tex",
-  "summary": "L'exercice demande de démontrer que l'ensemble des polynômes à coefficients entiers dont la valeur en 0 est paire forme un idéal dans l'anneau des polynômes à coefficients entiers, puis de montrer que cet idéal est engendré par les polynômes 2 et X.",
+  "summary": "L'exercice demande de démontrer que l'ensemble des polynômes à coefficients entiers dont la valeur en 0 est paire forme un idéal dans l'anneau des polynômes à coefficients entiers. Il faut ensuite montrer que cet idéal est engendré par les polynômes constants 2 et X.",
   "concepts": [
     "idéal d'un anneau",
     "polynôme à coefficients entiers",
     "générateur d'idéal",
-    "structure de groupe",
-    "structure d'anneau"
+    "structure d'anneau",
+    "sous-anneau",
+    "division euclidienne dans Z[X]"
   ],
   "methods": [
     "vérification des propriétés d'idéal",
-    "démonstration de génération d'idéal"
+    "construction explicite de générateurs",
+    "utilisation de la division euclidienne"
   ],
   "objects": [
-    "idéal de Z[X]",
-    "polynôme constant",
-    "polynôme linéaire"
+    "idéal J de Z[X]",
+    "polynôme P(X) ∈ Z[X]",
+    "éléments 2 et X de Z[X]"
   ],
-  "content_hash": "d1ab0acbf89e71d26d42e3e35b8dc79285e4d82df47b793b8c682835364fedd1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:07:06.527Z"
+  "content_hash": "0069603ffca4e6513e83d80e465860e3634f624c4ae963f128ab8e1e213768d3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:59.819Z"
 }

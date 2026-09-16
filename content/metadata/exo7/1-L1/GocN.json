@@ -1,31 +1,31 @@
 {
   "uuid": "GocN",
   "source_path": "exo7/1-L1/GocN.tex",
-  "summary": "L'exercice étudie les propriétés des noyaux et images itérés d'un endomorphisme non injectif d'un espace vectoriel de dimension finie. Il demande de montrer des inclusions entre ces noyaux et images, puis d'établir l'existence d'un entier p à partir duquel ces noyaux stabilisent.",
+  "summary": "L'exercice étudie les propriétés des suites de noyaux et d'images itérés d'un endomorphisme non injectif d'un espace vectoriel de dimension finie. Il demande de démontrer des inclusions entre ces ensembles, l'existence d'un entier p à partir duquel les noyaux stabilisent, et une majoration de p par la dimension de l'espace.",
   "concepts": [
     "endomorphisme",
     "noyau d'un endomorphisme",
     "image d'un endomorphisme",
+    "suite d'espaces vectoriels",
     "inclusion d'espaces vectoriels",
     "dimension d'un espace vectoriel",
-    "stabilisation d'une suite d'espaces",
-    "théorème du rang",
-    "suite croissante d'espaces vectoriels"
+    "stabilisation d'une suite",
+    "théorème du rang"
   ],
   "methods": [
     "raisonnement par inclusion",
-    "utilisation de la dimension",
     "récurrence",
-    "argument de dimension"
+    "argument dimensionnel",
+    "utilisation de la non-injectivité"
   ],
   "objects": [
-    "noyau itéré N_k",
-    "image itérée I_k",
-    "endomorphisme non injectif",
     "espace vectoriel de dimension finie",
-    "suite d'espaces vectoriels"
+    "endomorphisme non injectif",
+    "noyaux itérés",
+    "images itérées",
+    "suite de sous-espaces"
   ],
-  "content_hash": "ca2d336f314624a295e3c4bff3c3c30b66a57071528df95545a75320d7c08a1d",
+  "content_hash": "9c762bb7df6943c9305e00809dad6d668339c7478bee86bc7ab21cc94314c0cb",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:20.539Z"
+  "indexed_at": "2026-09-15T18:23:53.529Z"
 }

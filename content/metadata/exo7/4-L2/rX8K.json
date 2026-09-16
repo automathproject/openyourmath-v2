@@ -1,28 +1,32 @@
 {
   "uuid": "rX8K",
   "source_path": "exo7/4-L2/rX8K.tex",
-  "summary": "L'exercice demande de déterminer une matrice A associée à une suite récurrente linéaire d'ordre 2, puis d'étudier la diagonalisation de cette matrice pour analyser le comportement asymptotique de la suite.",
+  "summary": "L'exercice demande de modéliser une suite récurrente linéaire par une matrice A, de déterminer son polynôme caractéristique et ses valeurs propres, puis d'exploiter ces résultats pour exprimer A^n et étudier la convergence de la suite (u_n).",
   "concepts": [
     "suite récurrente linéaire",
     "matrice de récurrence",
     "polynôme caractéristique",
+    "valeurs propres",
     "diagonalisation",
     "convergence de matrices",
     "limite de suite"
   ],
   "methods": [
-    "construction de matrice de récurrence",
+    "modélisation matricielle de suite",
     "calcul de polynôme caractéristique",
+    "résolution d'équation caractéristique",
+    "décomposition spectrale",
     "division euclidienne de polynômes",
-    "décomposition spectrale"
+    "étude de convergence"
   ],
   "objects": [
-    "suite numérique",
+    "suite (u_n)",
     "matrice 2x2",
     "polynôme caractéristique",
-    "matrice puissance"
+    "matrice identité",
+    "reste de division euclidienne"
   ],
-  "content_hash": "4c147f0cc9484ea5956a9dd1e72482e2cb9d9a1bba9409ce3e7734e2230beef5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:18:48.191Z"
+  "content_hash": "5abd792b3131e3ecf66858ff11cf42b37a700fb2dcfa6fe4948f01c725a18a84",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:35:18.843Z"
 }

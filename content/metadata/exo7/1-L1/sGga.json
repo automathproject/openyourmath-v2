@@ -1,31 +1,28 @@
 {
   "uuid": "sGga",
   "source_path": "exo7/1-L1/sGga.tex",
-  "summary": "L'exercice demande de démontrer des propriétés sur les suites d'espaces vectoriels définis par les noyaux et images itérés d'un endomorphisme. Il s'agit d'étudier la monotonie de ces suites, la stabilité des ensembles limites et une implication sur la stabilisation de la suite des noyaux.",
+  "summary": "L'exercice demande de démontrer des propriétés sur les suites de noyaux et d'images itérés d'un endomorphisme d'un espace vectoriel. Il s'agit d'étudier la monotonie de ces suites pour l'inclusion, leur stabilité par l'endomorphisme, et une implication sur la stabilisation de la suite des noyaux.",
   "concepts": [
     "endomorphisme",
     "noyau d'une application linéaire",
     "image d'une application linéaire",
     "suite d'espaces vectoriels",
-    "stabilité par une application",
     "inclusion d'espaces vectoriels",
+    "stabilité par un endomorphisme",
     "monotonie d'une suite"
   ],
   "methods": [
     "raisonnement par inclusion",
-    "utilisation de la linéarité",
-    "manipulation d'itérés d'applications",
-    "argument par existence"
+    "utilisation de la définition du noyau et de l'image",
+    "manipulation d'itérés d'applications linéaires"
   ],
   "objects": [
     "espace vectoriel",
     "endomorphisme",
-    "suite de noyaux",
-    "suite d'images",
-    "nilespace",
-    "cœur d'un endomorphisme"
+    "suite de noyaux itérés",
+    "suite d'images itérés"
   ],
-  "content_hash": "b979093c11a204a10f4b904e17590e60cc446ccbadca9b2991f3894692cc673e",
+  "content_hash": "2c5f694660900bf66f175876bc876c1f74b3d9d9bb997a356c34d99a544e0325",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:55.852Z"
+  "indexed_at": "2026-09-15T18:24:00.874Z"
 }

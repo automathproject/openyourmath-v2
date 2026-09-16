@@ -1,26 +1,28 @@
 {
   "uuid": "KFJI",
   "source_path": "crouzet/pcsi/09/KFJI.tex",
-  "summary": "L'exercice étudie une suite récurrente définie par une relation de récurrence non linéaire. Il demande de démontrer une propriété sur les termes de la suite, puis de transformer cette suite en une suite arithmétique pour en déduire une expression explicite.",
+  "summary": "L'exercice étudie une suite récurrente définie par une relation non linéaire. Il demande d'abord de montrer qu'un terme égal à 1 implique le terme précédent égal à 1, puis d'en déduire que la suite ne prend jamais la valeur 1. Ensuite, on transforme la suite en une suite arithmétique via un changement de variable et on en déduit l'expression explicite du terme général.",
   "concepts": [
     "suite récurrente",
     "raison d'une suite arithmétique",
-    "expression explicite d'une suite",
+    "changement de variable",
     "raisonnement par l'absurde",
-    "relation de récurrence"
+    "suite arithmétique",
+    "terme général d'une suite"
   ],
   "methods": [
-    "transformation de suite",
+    "manipulation algébrique",
     "calcul de différence finie",
-    "résolution de suite arithmétique",
-    "raisonnement par l'absurde"
+    "résolution d'équation",
+    "raisonnement par récurrence inverse"
   ],
   "objects": [
     "suite récurrente",
     "suite arithmétique",
-    "terme général de suite"
+    "terme général",
+    "changement de variable"
   ],
-  "content_hash": "2a6cefe2f3fd0c0d0fa69d110022193c55a07eb4d3db479b57ed880d162d0842",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:33:17.080Z"
+  "content_hash": "ee1dc8a383d911568d408505eddec62299dbadbe0c61c4abbbe2b9b9cb942ab6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:31:32.918Z"
 }

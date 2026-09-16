@@ -1,27 +1,28 @@
 {
   "uuid": "4cWY",
   "source_path": "crouzet/pcsi/02/4cWY.tex",
-  "summary": "L'exercice demande de calculer des expressions impliquant la partie entière de réels, notamment en étudiant les propriétés de la fonction partie entière sous différentes conditions.",
+  "summary": "L'exercice demande d'étudier les propriétés de la fonction partie entière (notée ⌊x⌋) à travers quatre questions : calcul d'une expression impliquant la partie entière, démonstration d'une inégalité, vérification d'une relation de récurrence et détermination d'une condition sur x pour une égalité impliquant la partie entière.",
   "concepts": [
-    "partie entière",
+    "fonction partie entière",
     "inégalités",
     "entiers naturels",
     "réels",
-    "propriétés de la fonction partie entière"
+    "propriétés arithmétiques",
+    "valeur principale"
   ],
   "methods": [
+    "définition de la partie entière",
     "manipulation d'inégalités",
-    "analyse de cas",
+    "raisonnement par cas",
     "utilisation de la définition de la partie entière"
   ],
   "objects": [
-    "partie entière de x",
-    "partie entière de -x",
-    "partie entière de x+y",
-    "partie entière de x+n",
-    "partie entière de nx"
+    "fonction partie entière",
+    "réels",
+    "entiers naturels",
+    "inégalités"
   ],
-  "content_hash": "340683b9dd8151807e9af22534e4cac8798e5373f5a077fee545319278563a5c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:29:03.195Z"
+  "content_hash": "396a1d35b68287474e6410bbd3fcc8e96194c9e90e422a95d47b654f60d9ecbe",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:30:49.321Z"
 }

@@ -1,26 +1,28 @@
 {
   "uuid": "dtx0",
   "source_path": "exo7/6-L2/dtx0.tex",
-  "summary": "L'exercice demande de construire un cercle tangent à une droite en un point donné et passant par un point extérieur, puis de dénombrer et construire les cercles tangents à trois droites dont deux sont parallèles.",
+  "summary": "L'exercice demande de construire un cercle tangent à une droite donnée en un point et passant par un point extérieur, puis de dénombrer et construire les cercles tangents à trois droites dont deux sont parallèles.",
   "concepts": [
     "géométrie affine euclidienne",
     "tangence",
     "distance d'un point à une droite",
     "construction géométrique",
-    "propriétés des cercles"
+    "droites parallèles",
+    "équidistance"
   ],
   "methods": [
-    "construction de cercles tangents",
-    "utilisation de la distance équidistante",
-    "construction de droites parallèles à distance fixe"
+    "construction de cercle tangent",
+    "utilisation de la distance",
+    "construction de droites équidistantes",
+    "analyse de cas géométriques"
   ],
   "objects": [
     "droite",
     "point",
     "cercle",
-    "tangente"
+    "droites parallèles"
   ],
-  "content_hash": "687f5764cf0682a85e9821a39bcc9847533734bd2a6cca94d078ed065b7867e1",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:49:51.764Z"
+  "content_hash": "68420907d1390d705f08dd7043ed037c138580b5d41d5fc45cbaa264176b0942",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:33:17.918Z"
 }

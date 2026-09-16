@@ -1,25 +1,27 @@
 {
   "uuid": "skI3",
   "source_path": "crouzet/pcsi/01/skI3.tex",
-  "summary": "L'exercice demande de démontrer les propriétés algébriques de la disjonction logique (idempotence, commutativité, associativité et tiers exclu) en construisant et analysant des tables de vérité.",
+  "summary": "Démontrer les propriétés algébriques de la disjonction logique (idempotence, commutativité, associativité et tiers exclu) en construisant et analysant des tables de vérité.",
   "concepts": [
-    "logique propositionnelle",
-    "tables de vérité",
-    "disjonction",
+    "disjonction logique",
+    "table de vérité",
     "idempotence",
     "commutativité",
     "associativité",
-    "tiers exclu"
+    "tiers exclu",
+    "algèbre de Boole"
   ],
   "methods": [
     "construction de tables de vérité",
-    "analyse de cas"
+    "analyse de cas exhaustifs",
+    "vérification de propriétés algébriques"
   ],
   "objects": [
     "propositions logiques",
-    "tables de vérité"
+    "valeurs de vérité",
+    "opérateurs booléens"
   ],
-  "content_hash": "c2e770923f54df00d889c1fb2b311043c748c63f6e9e9e0e37e090f65aaf5948",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:29:25.077Z"
+  "content_hash": "0ec766cc5a87891c8ea35d7e21f86a2b839bf6c325ebf6704c3e7508a4bfca9c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:37:36.717Z"
 }

@@ -1,25 +1,27 @@
 {
   "uuid": "3SF0",
   "source_path": "exo7/9-L3/3SF0.tex",
-  "summary": "L'exercice demande de construire l'axe de la projection d'une droite sur une autre depuis un point donné dans le plan projectif, puis de construire une droite passant par un point donné et un point d'intersection hors de la feuille.",
+  "summary": "L'exercice demande de construire l'axe de la projection d'une droite sur une autre dans le plan projectif, puis de construire une droite passant par un point donné et un point à l'infini. Le contexte implique des figures géométriques et des points hors de la feuille.",
   "concepts": [
     "géométrie projective",
     "plan projectif",
-    "projection",
+    "projection centrale",
+    "point à l'infini",
     "axe de projection",
-    "droites dans le plan projectif"
+    "droites du plan projectif"
   ],
   "methods": [
     "construction géométrique",
-    "utilisation de propriétés projectives"
+    "utilisation des propriétés projectives",
+    "traitement des points à l'infini"
   ],
   "objects": [
-    "droites",
+    "droites du plan projectif",
     "point de projection",
     "axe de projection",
-    "point d'intersection"
+    "point à l'infini"
   ],
-  "content_hash": "076d5cee154566c29322151c2c90f3ac68434b2084eacc467534ac249b6cdeb3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:08:14.582Z"
+  "content_hash": "ee7d07502cdb183291581340f1a4a7f618b192d26b4d13d63bf341d5dcb16586",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:33:24.007Z"
 }

@@ -1,25 +1,26 @@
 {
   "uuid": "5R1o",
   "source_path": "crouzet/pcsi/02/5R1o.tex",
-  "summary": "L'exercice demande de démontrer que la somme de deux ensembles majorés de réels admet une borne supérieure et que cette borne est inférieure ou égale à la somme des bornes supérieures des ensembles initiaux. Ensuite, il faut montrer l'égalité de ces bornes supérieures.",
+  "summary": "L'exercice demande de montrer que la somme de deux ensembles majorés de réels admet une borne supérieure et que cette borne est égale à la somme des bornes supérieures des ensembles initiaux. Il s'agit d'une étude des propriétés de la borne supérieure dans le cadre de l'addition d'ensembles.",
   "concepts": [
     "borne supérieure",
-    "majoration d'un ensemble",
+    "ensemble majoré",
     "propriété de la borne supérieure",
-    "inégalité triangulaire",
+    "addition d'ensembles",
+    "inégalité triangulaire pour les bornes supérieures",
     "approximation par des éléments de l'ensemble"
   ],
   "methods": [
     "utilisation de la définition de la borne supérieure",
-    "approximation par des éléments de l'ensemble",
-    "inégalité triangulaire"
+    "approximation par des éléments proches de la borne",
+    "raisonnement par epsilon"
   ],
   "objects": [
-    "parties majorées de ℝ",
-    "somme de deux ensembles",
-    "borne supérieure d'un ensemble"
+    "parties de ℝ",
+    "somme d'ensembles",
+    "bornes supérieures"
   ],
-  "content_hash": "6020593280ab60917d5ff7b2883c27b5a502edfc63add9f0a0aeaa23ba8033ab",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:29:17.459Z"
+  "content_hash": "7316c94c58bfc44d0b63840b7764b8604f38246594eebddf601fda97ba41f0e5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:30:52.369Z"
 }

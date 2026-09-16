@@ -1,11 +1,11 @@
 {
   "uuid": "QcIp",
   "source_path": "exo7/4-L2/QcIp.tex",
-  "summary": "L'exercice demande de calculer le déterminant de la matrice de permutation associée à une permutation σ ∈ Sₙ, puis de montrer que le produit de deux telles matrices correspond à la matrice de la composition des permutations, et enfin de prouver que l'ensemble de ces matrices forme un groupe isomorphe à Sₙ.",
+  "summary": "L'exercice demande de calculer le déterminant de la matrice de permutation associée à une permutation σ ∈ Sₙ, puis de montrer que le produit de deux telles matrices correspond à la matrice de la composition des permutations. Enfin, il s'agit de prouver que l'ensemble de ces matrices forme un groupe isomorphe à Sₙ.",
   "concepts": [
-    "déterminant de matrice",
     "permutation",
     "matrice de permutation",
+    "déterminant",
     "groupe",
     "isomorphisme de groupes",
     "sous-groupe",
@@ -13,16 +13,17 @@
   ],
   "methods": [
     "calcul du déterminant par la formule de Leibniz",
-    "propriété des matrices de permutation",
-    "vérification de l'isomorphisme de groupes"
+    "vérification de la structure de groupe",
+    "démonstration d'isomorphisme"
   ],
   "objects": [
     "matrice de permutation",
     "groupe symétrique Sₙ",
-    "groupe (G, ×)",
-    "matrice identité Iₙ"
+    "groupe linéaire GLₙ(ℝ)",
+    "produit de matrices",
+    "composition de permutations"
   ],
-  "content_hash": "11bfee98c07a5a0f765447a2186fe7fbff9fe8babbcc90861d5e9ae47885a33b",
+  "content_hash": "49fdab20770b03d0d4a375cada7b7130a47155db85ac999cb6120bd4f9e73188",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:03:51.847Z"
+  "indexed_at": "2026-09-15T18:34:48.843Z"
 }

@@ -1,25 +1,28 @@
 {
   "uuid": "xcLe",
   "source_path": "crouzet/pcsi/09/xcLe.tex",
-  "summary": "L'exercice demande d'étudier la monotonie d'une suite récurrente, de démontrer une inégalité par récurrence, et de conjecturer puis prouver une formule explicite pour cette suite.",
+  "summary": "Étude d'une suite récurrente définie par u₀=1 et uₙ₊₁=uₙ+2n+3. Analyse de sa monotonie, démonstration par récurrence d'une inégalité, et conjecture puis preuve d'une formule explicite.",
   "concepts": [
     "suite récurrente",
     "monotonie",
-    "récurrence",
+    "principe de récurrence",
     "inégalité",
-    "formule explicite"
+    "formule explicite",
+    "calcul de termes"
   ],
   "methods": [
-    "étude de la différence",
-    "récurrence forte",
-    "conjecture par calculs initiaux"
+    "raisonnement par récurrence",
+    "calcul de différence finie",
+    "conjecture par calculs initiaux",
+    "développement algébrique"
   ],
   "objects": [
     "suite numérique",
     "terme général",
+    "relation de récurrence",
     "inégalité"
   ],
-  "content_hash": "8d8e262b572304e3b3f6a9e3f2ec308d50e1f068fcccd3cd32f852f6012bf9da",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:35:04.066Z"
+  "content_hash": "e6b2398a926eace8a0f81f37c2a79d6fef50fa0f0dcb2444c3e99531c281a8ae",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:31:47.838Z"
 }

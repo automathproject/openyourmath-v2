@@ -1,28 +1,29 @@
 {
   "uuid": "6Bwc",
   "source_path": "exo7/1-L1/6Bwc.tex",
-  "summary": "L'exercice demande de montrer que l'ensemble A des polynômes réels s'écrivant sous la forme (1-X)Q(X²) est un espace vectoriel et qu'il forme une somme directe avec les polynômes pairs. Il explore aussi la possibilité d'une somme directe avec les polynômes impairs et généralise à des fonctions paires.",
+  "summary": "L'exercice demande de montrer que l'ensemble A des polynômes réels s'écrivant comme (1-X)Q(X²) est un espace vectoriel et qu'il forme une somme directe avec l'ensemble des polynômes pairs. Il interroge aussi sur la possibilité d'une somme directe avec les polynômes impairs et généralise à des fonctions paires.",
   "concepts": [
     "espace vectoriel",
     "somme directe",
     "polynôme pair",
     "polynôme impair",
-    "décomposition de polynôme",
-    "fonction paire"
+    "décomposition de polynômes",
+    "sous-espace vectoriel",
+    "isomorphisme"
   ],
   "methods": [
     "décomposition en polynômes pairs et impairs",
     "vérification de la somme directe",
-    "généralisation à des fonctions"
+    "construction explicite de la décomposition",
+    "utilisation de la linéarité"
   ],
   "objects": [
-    "ensemble de polynômes A",
-    "polynômes réels",
-    "polynômes pairs",
-    "polynômes impairs",
-    "fonctions paires"
+    "polynôme réel",
+    "ensemble A de polynômes",
+    "somme directe de sous-espaces",
+    "fonction paire"
   ],
-  "content_hash": "88c8e2ea0543ef5928829ed40eb7c6592adecb13326d77130f808e543250affa",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T21:37:56.487Z"
+  "content_hash": "0cf5419d6518d797a845888fd4366d5eca4fa9282d81a49a642476f25eb75efa",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:28:28.905Z"
 }

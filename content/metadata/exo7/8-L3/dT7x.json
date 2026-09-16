@@ -1,27 +1,28 @@
 {
   "uuid": "dT7x",
   "source_path": "exo7/8-L3/dT7x.tex",
-  "summary": "L'exercice demande de démontrer qu'un sous-groupe donné de ℤ est ou n'est pas maximal, en utilisant les propriétés des sous-groupes maximaux.",
+  "summary": "L'exercice demande de démontrer que 6ℤ n'est pas un sous-groupe maximal de ℤ, puis que 5ℤ l'est. Il s'agit d'étudier la structure des sous-groupes de ℤ et leurs propriétés maximales.",
   "concepts": [
     "sous-groupe maximal",
     "groupe abélien",
+    "sous-groupe de ℤ",
     "théorème de Lagrange",
-    "structure de groupe",
-    "divisibilité dans ℤ",
-    "sous-groupe additif"
+    "divisibilité",
+    "structure des groupes cycliques"
   ],
   "methods": [
-    "analyse des sous-groupes contenant",
+    "analyse des sous-groupes",
     "utilisation de la divisibilité",
-    "construction explicite de sous-groupes intermédiaires"
+    "comparaison des sous-groupes",
+    "application des propriétés des groupes cycliques"
   ],
   "objects": [
-    "ℤ",
-    "6ℤ",
-    "5ℤ",
-    "sous-groupes additifs de ℤ"
+    "sous-groupe 6ℤ",
+    "sous-groupe 5ℤ",
+    "groupe ℤ",
+    "sous-groupes de ℤ"
   ],
-  "content_hash": "57cfd881ffba7ac252d4043e9c918a9d5eddf1bfb9e7517ad1264874ffc9379f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T01:10:34.696Z"
+  "content_hash": "42814a483419366aee46bb9178a62be1aaa8f9b7090ce2d25a5939ef4f0d7961",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:27.524Z"
 }

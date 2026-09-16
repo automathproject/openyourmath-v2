@@ -1,27 +1,28 @@
 {
   "uuid": "vm7K",
   "source_path": "exo7/10-L3/vm7K.tex",
-  "summary": "L'exercice demande de prouver l'équivalence de trois conditions sur un plan muni d'une forme quadratique, notamment la nature hyperbolique du plan, la non-dégénérescence de la forme quadratique avec un indice spécifique, et la valeur de son discriminant modulo un carré.",
+  "summary": "L'exercice demande de démontrer l'équivalence de trois conditions sur un plan muni d'une forme quadratique : être un plan hyperbolique, avoir une forme quadratique non dégénérée d'indice 1, et avoir un discriminant égal à -1 modulo un carré.",
   "concepts": [
     "forme quadratique",
     "forme bilinéaire",
     "plan hyperbolique",
     "indice d'une forme quadratique",
     "discriminant d'une forme quadratique",
-    "base orthonormée"
+    "base orthonormée",
+    "forme non dégénérée"
   ],
   "methods": [
-    "réduction de forme quadratique",
-    "analyse de dégénérescence",
-    "calcul de discriminant"
+    "équivalence de conditions",
+    "analyse du discriminant",
+    "utilisation de bases orthonormées"
   ],
   "objects": [
-    "forme quadratique",
-    "plan vectoriel",
-    "discriminant",
+    "forme quadratique q",
+    "plan P",
+    "discriminant de q",
     "base orthonormée"
   ],
-  "content_hash": "3bb3ca2ed661f1855b6a6ee6ae6aeefe4c5c7c52be10df0d719e84f42ec13418",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:27:46.560Z"
+  "content_hash": "9199bfc97a83bfc144bcdbfa18d6655465b8ad435b12a6bdc4d7ad775fa63f8f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:05.497Z"
 }

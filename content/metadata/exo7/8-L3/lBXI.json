@@ -1,28 +1,29 @@
 {
   "uuid": "lBXI",
   "source_path": "exo7/8-L3/lBXI.tex",
-  "summary": "L'exercice demande de montrer qu'une application linéaire entre groupes est un morphisme, de déterminer son noyau et de prouver que le groupe quotient associé est isomorphe à un autre groupe.",
+  "summary": "L'exercice demande de montrer qu'une application linéaire entre groupes est un morphisme, de déterminer son noyau et de prouver qu'il n'est pas produit de sous-groupes cycliques, puis d'établir un isomorphisme entre un groupe quotient et un sous-groupe additif de ℤ.",
   "concepts": [
     "morphisme de groupes",
     "noyau d'un morphisme",
     "groupe quotient",
-    "isomorphisme de groupes",
     "théorème de factorisation",
-    "structure de groupe sur ℤ²"
+    "isomorphisme de groupes",
+    "sous-groupe additif de ℤ",
+    "théorème de Lagrange"
   ],
   "methods": [
     "vérification de la compatibilité avec la loi de groupe",
     "détermination du noyau par résolution d'équation",
-    "construction explicite du noyau",
-    "application du théorème de factorisation"
+    "construction explicite d'un isomorphisme",
+    "utilisation du théorème de factorisation"
   ],
   "objects": [
     "morphisme de groupes ℤ² → ℤ",
     "noyau d'un morphisme",
     "groupe quotient ℤ²/ℤ(-2,1)",
-    "groupe 3ℤ"
+    "sous-groupe 3ℤ"
   ],
-  "content_hash": "9f333839875bd6fdefe41946dfe5bd03d3b2f79a9b725655e83a5490f6556c0e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T01:11:37.880Z"
+  "content_hash": "b3d14804337eb80df0d2038d19b71beda4869ed9f6ec1f2221274331f5ba78bf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:31.332Z"
 }

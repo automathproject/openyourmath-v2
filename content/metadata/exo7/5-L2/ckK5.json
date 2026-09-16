@@ -1,19 +1,20 @@
 {
   "uuid": "ckK5",
   "source_path": "exo7/5-L2/ckK5.tex",
-  "summary": "L'exercice demande de montrer qu'une application linéaire antisymétrique de ℝ³ dans ℝ³ est nécessairement un produit vectoriel par un vecteur fixe, et réciproquement. Il s'agit d'établir une bijection entre les vecteurs de ℝ³ et les endomorphismes antisymétriques.",
+  "summary": "L'exercice demande de montrer qu'une application linéaire antisymétrique sur ℝ³ est nécessairement un produit vectoriel par un vecteur fixe, et réciproquement. Il s'agit d'établir une bijection entre les vecteurs de ℝ³ et les endomorphismes antisymétriques.",
   "concepts": [
     "endomorphisme antisymétrique",
     "produit vectoriel",
     "isomorphisme d'espaces vectoriels",
     "linéarité",
     "antisymétrie",
-    "dimension d'un espace vectoriel"
+    "dimension d'un espace vectoriel",
+    "bijection"
   ],
   "methods": [
     "vérification de la linéarité",
     "utilisation de la dimension finie",
-    "démonstration d'injectivité",
+    "preuve par injectivité",
     "application du théorème du rang"
   ],
   "objects": [
@@ -22,7 +23,7 @@
     "espace vectoriel ℝ³",
     "application linéaire antisymétrique"
   ],
-  "content_hash": "30d386b8799b07907408bc81e6bf78d8a775e7268256cd2abd1f8f838b104e28",
+  "content_hash": "acc38891b976cd474bc47e7b3f857049e3d017763e0667595e9fb104530a7946",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:09:21.814Z"
+  "indexed_at": "2026-09-15T18:36:21.510Z"
 }

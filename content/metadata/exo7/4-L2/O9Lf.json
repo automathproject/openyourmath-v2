@@ -1,7 +1,7 @@
 {
   "uuid": "O9Lf",
   "source_path": "exo7/4-L2/O9Lf.tex",
-  "summary": "L'exercice demande de diagonaliser une matrice associée à un système d'équations différentielles modélisant l'évolution de populations de lapins et de loups. Il s'agit ensuite d'exprimer le système dans une base de vecteurs propres, de représenter graphiquement les trajectoires et d'analyser l'évolution des populations selon les conditions initiales.",
+  "summary": "L'exercice demande de diagonaliser une matrice 2x2 associée à un système d'équations différentielles modélisant l'évolution de populations de lapins et de loups. Il faut ensuite exprimer le système dans une base de vecteurs propres, représenter graphiquement les trajectoires et discuter l'évolution des populations selon les conditions initiales.",
   "concepts": [
     "diagonalisation de matrice",
     "valeurs propres",
@@ -16,16 +16,16 @@
     "résolution d'équation polynomiale",
     "détermination de vecteurs propres",
     "changement de base",
-    "intégration d'équations différentielles linéaires"
+    "représentation graphique de trajectoires"
   ],
   "objects": [
     "matrice 2x2",
     "système d'équations différentielles",
     "vecteurs propres",
     "valeurs propres",
-    "trajectoires dans le plan"
+    "base de vecteurs propres"
   ],
-  "content_hash": "a05f4cbb9882f79b1b8f1e1427644129317af897bc0f82a3b29ee8c1a1e41468",
+  "content_hash": "af12db821f51f4ff8eac1450e73307680374116cea44b088af3690c465132b1e",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:03:33.619Z"
+  "indexed_at": "2026-09-15T18:34:45.666Z"
 }

@@ -1,25 +1,26 @@
 {
   "uuid": "OkbT",
   "source_path": "crouzet/pcsi/06/OkbT.tex",
-  "summary": "L'exercice demande de déterminer l'ensemble de définition et l'expression des fonctions composées de trois fonctions données : une fonction quadratique, une fonction racine carrée et une fonction affine.",
+  "summary": "L'exercice demande de déterminer l'ensemble de définition et l'expression des six fonctions composées possibles à partir de trois fonctions données : f(x) = x², g(x) = √x et h(x) = x - 2.",
   "concepts": [
     "composition de fonctions",
     "ensemble de définition",
     "fonction polynomiale",
     "fonction racine carrée",
-    "fonction affine"
+    "fonction affine",
+    "valeur absolue"
   ],
   "methods": [
-    "détermination de l'ensemble de définition",
-    "calcul de la composée de fonctions"
+    "restriction de domaine",
+    "simplification d'expression",
+    "calcul de valeur absolue"
   ],
   "objects": [
-    "fonction quadratique",
-    "fonction racine carrée",
-    "fonction affine",
-    "fonctions composées"
+    "fonction composée",
+    "fonction réelle",
+    "ensemble de définition"
   ],
-  "content_hash": "737be58feef4d5db4283e09b702721a2ca6e83abfd3fac51598e86e6a29dca26",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:27:33.565Z"
+  "content_hash": "bdb75c598d64807da3e46de85e107144cf15954de30db6ba09eb96307ba75d64",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:30:32.117Z"
 }

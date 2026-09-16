@@ -1,20 +1,20 @@
 {
   "uuid": "rWjf",
   "source_path": "exo7/4-L2/rWjf.tex",
-  "summary": "L'exercice demande de calculer les valeurs propres d'une matrice 3x3 donnée, puis de déterminer les bases et dimensions des sous-espaces propres associés. Enfin, il faut justifier la diagonalisabilité de la matrice et la diagonaliser.",
+  "summary": "L'exercice demande de calculer les valeurs propres d'une matrice 3x3 donnée, puis de déterminer les bases et dimensions des sous-espaces propres associés. Enfin, il faut justifier la diagonalisabilité de la matrice et l'exprimer sous forme diagonale.",
   "concepts": [
     "valeur propre",
     "vecteur propre",
     "sous-espace propre",
-    "diagonalisation",
     "polynôme caractéristique",
-    "matrice diagonalisable"
+    "diagonalisation",
+    "endomorphisme"
   ],
   "methods": [
     "calcul du polynôme caractéristique",
     "résolution d'équation polynomiale",
     "détermination des sous-espaces propres",
-    "diagonalisation de matrice"
+    "vérification de la diagonalisabilité"
   ],
   "objects": [
     "matrice 3x3",
@@ -23,7 +23,7 @@
     "sous-espaces propres",
     "matrice diagonale"
   ],
-  "content_hash": "8575bc311bbdf34f612f4c9b6aba95aff083159ce9f7c86f01092e53d5effce7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:18:35.499Z"
+  "content_hash": "a531e86b09c0f679c2c2d99bb15e6522f6ba4aa6a4df0ad95c51272a20c27656",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:35:15.032Z"
 }

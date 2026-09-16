@@ -1,33 +1,33 @@
 {
   "uuid": "ETap",
   "source_path": "exo7/4-L2/ETap.tex",
-  "summary": "L'exercice demande d'étudier un endomorphisme de ℝ² défini par une matrice. On cherche ses vecteurs propres, valeurs propres, et on calcule sa matrice dans une base de vecteurs propres. On explore aussi la relation entre ces matrices et le calcul de puissances de la matrice initiale.",
+  "summary": "L'exercice porte sur une application linéaire de ℝ² dans ℝ² définie par une matrice. Il demande d'identifier des vecteurs propres, de calculer des valeurs propres, de vérifier la base formée par ces vecteurs, et d'exprimer la matrice de l'application dans une nouvelle base. L'exercice aborde aussi la diagonalisation et la puissance d'une matrice.",
   "concepts": [
-    "endomorphisme",
+    "application linéaire",
     "vecteur propre",
     "valeur propre",
-    "base de vecteurs propres",
+    "base d'un espace vectoriel",
+    "matrice de passage",
     "diagonalisation",
-    "matrice inversible",
-    "puissance de matrice"
+    "puissance d'une matrice"
   ],
   "methods": [
-    "calcul de vecteurs propres",
-    "calcul de valeurs propres",
+    "calcul de vecteur propre",
+    "calcul de valeur propre",
     "vérification de base",
+    "changement de base",
     "diagonalisation",
-    "calcul de matrice inversée",
     "calcul de puissance de matrice"
   ],
   "objects": [
-    "matrice carrée",
+    "matrice 2x2",
     "vecteur propre",
     "valeur propre",
     "base de ℝ²",
-    "matrice diagonale",
-    "matrice de passage"
+    "matrice de passage",
+    "matrice diagonale"
   ],
-  "content_hash": "b3515ca2a70e61e650ede39f25891c4aac534dfc73ab911e03f45d30829fc7fc",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:27:00.309Z"
+  "content_hash": "2c1819f13f88dec5e108e3287327c749853b176269ee49c2a36e514a0a1bf00a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:34:32.800Z"
 }

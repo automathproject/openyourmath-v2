@@ -1,28 +1,28 @@
 {
   "uuid": "ifkP",
   "source_path": "exo7/5-L2/ifkP.tex",
-  "summary": "Résoudre des systèmes d'équations différentielles linéaires à coefficients constants. Les systèmes sont de dimensions 3x3 et 2x2, avec des termes constants ou des fonctions trigonométriques.",
+  "summary": "Résoudre plusieurs systèmes d'équations différentielles linéaires à coefficients constants, avec ou sans second membre. Les solutions recherchées sont des combinaisons linéaires de fonctions exponentielles, trigonométriques ou polynomiales.",
   "concepts": [
     "équation différentielle linéaire",
     "système d'équations différentielles",
-    "coefficient constant",
-    "solution générale",
-    "fonctions exponentielles",
-    "fonctions trigonométriques"
+    "second membre",
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "solution générale"
   ],
   "methods": [
-    "résolution par exponentielle complexe",
-    "méthode de variation des constantes",
-    "diagonalisation",
-    "résolution par polynôme caractéristique"
+    "résolution par exponentielle",
+    "méthode des coefficients indéterminés",
+    "détermination des valeurs propres",
+    "décomposition en modes propres"
   ],
   "objects": [
     "système d'équations différentielles",
     "fonctions de variable réelle",
-    "termes constants",
-    "fonctions trigonométriques"
+    "second membre polynomial",
+    "second membre trigonométrique"
   ],
-  "content_hash": "459c8017d958c7dea167739c23028e77eff7eb81e8d47cab871f71d9c306b4a2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:40:50.668Z"
+  "content_hash": "1131bd94f5714757a1bb4b970ac21b969ef6a0d0605616914e38a69128e5844a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:50.811Z"
 }

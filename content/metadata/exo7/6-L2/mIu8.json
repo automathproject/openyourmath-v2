@@ -1,27 +1,29 @@
 {
   "uuid": "mIu8",
   "source_path": "exo7/6-L2/mIu8.tex",
-  "summary": "L'exercice demande d'analyser une courbe paramétrique donnée par des équations trigonométriques. Il s'agit d'exprimer et de factoriser des combinaisons linéaires des coordonnées, puis de transformer ces équations dans un nouveau système de coordonnées obtenu par rotation. Enfin, il faut tracer la courbe et discuter sa forme en fonction d'un paramètre.",
+  "summary": "L'exercice demande d'étudier une courbe plane définie par des équations paramétriques en sinus, avec un paramètre de déphasage φ. Il s'agit d'exprimer et factoriser des combinaisons linéaires des coordonnées, de changer de repère par rotation, et d'analyser géométriquement la courbe pour déterminer φ.",
   "concepts": [
-    "courbe paramétrique",
-    "transformation de coordonnées",
-    "rotation d'axes",
+    "équations paramétriques",
+    "changement de repère",
+    "rotation dans le plan",
+    "analyse géométrique de courbes",
+    "déphasage",
     "fonctions trigonométriques",
-    "analyse géométrique"
+    "transformation linéaire"
   ],
   "methods": [
-    "factorisation d'expressions algébriques",
-    "changement de système de coordonnées",
-    "tracé de courbes",
-    "analyse de paramètres"
+    "factorisation d'expressions trigonométriques",
+    "changement de coordonnées",
+    "analyse graphique",
+    "détermination de paramètres géométriques"
   ],
   "objects": [
-    "équations paramétriques",
-    "coordonnées cartésiennes",
-    "système de coordonnées roté",
-    "courbe plane"
+    "courbe paramétrique",
+    "système de coordonnées",
+    "rotation d'axe",
+    "fonctions sinus déphasées"
   ],
-  "content_hash": "ca19aae1b26dfe3515fd864913d189f1fab493205fe2e50e31cdedb3942c2dc3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:03:52.257Z"
+  "content_hash": "b010a0571ae2bb823210a52a84755783c3dfe8694b24715eff52f252322ddb10",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:26:08.664Z"
 }

@@ -1,7 +1,7 @@
 {
   "uuid": "UzhJ",
   "source_path": "crouzet/pcsi/02/UzhJ.tex",
-  "summary": "L'exercice demande de démontrer que certains ensembles de nombres ne sont pas inclus dans d'autres ensembles de nombres, en fournissant des contre-exemples concrets.",
+  "summary": "L'exercice demande de démontrer que les ensembles des entiers relatifs, des nombres décimaux et des nombres rationnels ne sont pas inclus les uns dans les autres, en fournissant des contre-exemples concrets.",
   "concepts": [
     "ensemble des entiers naturels",
     "ensemble des entiers relatifs",
@@ -14,11 +14,11 @@
     "recherche de contre-exemple"
   ],
   "objects": [
-    "nombres entiers",
+    "nombres entiers relatifs",
     "nombres décimaux",
     "nombres rationnels"
   ],
-  "content_hash": "3712648921d67220f5ab63ec6962213a3959b8ab3eafec08dafd17d096683d29",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:30:58.408Z"
+  "content_hash": "7439d9cd51b4c3bf6368b48a1e71c8cabec7f67aeb86932cd21b0368243d17d7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:31:02.709Z"
 }

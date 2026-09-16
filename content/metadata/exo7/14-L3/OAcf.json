@@ -1,11 +1,12 @@
 {
   "uuid": "OAcf",
   "source_path": "exo7/14-L3/OAcf.tex",
-  "summary": "L'exercice demande de démontrer l'inégalité de Young pour des nombres positifs et des exposants conjugués, puis d'en déduire l'inégalité de Hölder pour les espaces L^p. Il explore ensuite des propriétés des espaces L^p, notamment l'inclusion et la convergence des normes.",
+  "summary": "L'exercice demande de démontrer l'inégalité de Young pour des nombres positifs et des exposants conjugués, puis d'en déduire l'inégalité de Hölder pour les espaces L^p. Il explore également des propriétés des espaces L^p, notamment l'inclusion de L^∞ dans l'intersection des L^p et la convergence des normes L^p vers la norme L^∞.",
   "concepts": [
     "inégalité de Young",
     "inégalité de Hölder",
     "espaces L^p",
+    "exposants conjugués",
     "mesure finie",
     "convergence des normes",
     "fonction dérivable",
@@ -15,17 +16,19 @@
     "dérivation",
     "optimisation",
     "intégration",
-    "utilisation de l'inégalité de Hölder",
-    "découpage d'intégrale"
+    "utilisation de l'inégalité de Young",
+    "passage à la limite",
+    "découpage de l'intégrale"
   ],
   "objects": [
     "fonction θ",
     "fonction Φ",
-    "fonction f et g",
+    "fonctions f et g",
     "mesure μ",
-    "normes L^p"
+    "normes L^p",
+    "indicateurs caractéristiques"
   ],
-  "content_hash": "b261ace6f6eab3ac451a5cbf2383ed65750c95b3f1bc8b88e1fedc8c1ca2b6ce",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:54:00.006Z"
+  "content_hash": "579dcab21824e442f22acf38c86437790d009d888ef146680103305959ca6074",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:28:01.533Z"
 }

@@ -1,31 +1,32 @@
 {
   "uuid": "Rs3w",
   "source_path": "exo7/5-L2/Rs3w.tex",
-  "summary": "L'exercice demande de déterminer la limite en 1 d'une intégrale dépendant d'un paramètre, puis d'étudier complètement la fonction définie par cette intégrale. L'intégrale considérée est de la forme ∫(x à x²) (1/ln t) dt.",
+  "summary": "L'exercice demande de déterminer la limite en 1 d'une intégrale de Riemann dépendant d'un paramètre, puis d'étudier complètement la fonction définie par cette intégrale, notamment sa continuité, sa dérivabilité et son comportement asymptotique.",
   "concepts": [
     "intégrale de Riemann dépendant d'un paramètre",
-    "continuité uniforme",
-    "limite de fonction",
+    "continuité d'une fonction",
     "dérivabilité",
     "prolongement par continuité",
-    "croissance d'une fonction",
-    "comportement asymptotique"
+    "limite de fonction",
+    "fonction strictement croissante",
+    "théorème de dérivation sous le signe intégral"
   ],
   "methods": [
     "encadrement d'intégrale",
     "changement de variable",
-    "étude de la dérivée",
-    "analyse des limites",
-    "comparaison de termes"
+    "calcul de primitive",
+    "étude de limite",
+    "dérivation sous l'intégrale",
+    "analyse des variations"
   ],
   "objects": [
     "fonction définie par une intégrale",
     "limite de fonction",
+    "domaine de définition",
     "dérivée",
-    "intervalle de définition",
-    "comportement asymptotique"
+    "primitive"
   ],
-  "content_hash": "2c69869b85aa562fd550ae4bcc11015e383e1f98917fc8d24d7a6d0413f0ea8d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:38:35.668Z"
+  "content_hash": "d7d04811c37ff4a173cc6c497ab0bc89f63e7446c9568fdea8609b20622ee0d2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:33:33.491Z"
 }

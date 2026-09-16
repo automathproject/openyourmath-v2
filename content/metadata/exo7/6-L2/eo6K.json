@@ -1,25 +1,29 @@
 {
   "uuid": "eo6K",
   "source_path": "exo7/6-L2/eo6K.tex",
-  "summary": "L'exercice demande d'analyser des courbes planes paramétrées pour identifier et caractériser leurs points de rebroussement. Plusieurs exemples de paramétrisations sont donnés, avec des points de rebroussement à déterminer.",
+  "summary": "L'exercice demande d'analyser cinq courbes planes paramétrées pour identifier leurs points de rebroussement et leurs branches paraboliques. Les fonctions paramétriques sont données en termes de t, avec des expressions polynomiales ou trigonométriques.",
   "concepts": [
-    "courbe plane paramétrée",
-    "point de rebroussement",
-    "paramétrisation",
-    "fonctions trigonométriques",
-    "analyse des singularités"
-  ],
-  "methods": [
-    "calcul de dérivées",
-    "identification des points critiques",
-    "analyse des conditions de rebroussement"
-  ],
-  "objects": [
     "courbe paramétrée",
     "point de rebroussement",
-    "fonctions trigonométriques"
+    "branche parabolique",
+    "tangente",
+    "inflexion",
+    "paramétrisation cartésienne"
   ],
-  "content_hash": "c8ccfbbf99b9da84f4f186fa65c0d0c82691a9ac30b693824c8e9beea501c737",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:59:53.213Z"
+  "methods": [
+    "calcul de dérivées premières et secondes",
+    "résolution d'équations trigonométriques",
+    "analyse de la courbure",
+    "identification des points singuliers"
+  ],
+  "objects": [
+    "fonction paramétrique",
+    "courbe plane",
+    "tangente",
+    "branche parabolique",
+    "point d'inflexion"
+  ],
+  "content_hash": "25a1fc755543002e038befaddef2efd374a57c5c172c01dc274e52e77cd00d2e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:26:05.144Z"
 }

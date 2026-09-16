@@ -1,30 +1,30 @@
 {
   "uuid": "btIB",
   "source_path": "exo7/1-L1/btIB.tex",
-  "summary": "L'exercice étudie une transformation géométrique plane définie par une application affine complexe et analyse les propriétés de la suite de points obtenue par itération de cette transformation. On cherche notamment à déterminer la nature de la transformation, la distance entre points itérés et les conditions d'alignement.",
+  "summary": "L'exercice étudie une transformation géométrique du plan complexe définie par une application affine, appliquée itérativement à un point initial. Il demande de déterminer la nature de cette transformation, d'analyser la suite de points obtenus, de calculer des distances et d'identifier les entiers pour lesquels les points sont alignés.",
   "concepts": [
     "similitude directe",
-    "géométrie complexe",
     "suite géométrique",
-    "alignement de points",
     "argument d'un nombre complexe",
-    "transformation affine"
+    "alignement de points",
+    "distance dans le plan complexe",
+    "application affine"
   ],
   "methods": [
-    "calcul d'affixe",
-    "itération de transformation",
-    "calcul de distance",
+    "calcul d'affixe d'un point",
+    "itération d'une transformation",
+    "calcul de distance entre points",
     "résolution d'inéquation logarithmique",
     "analyse d'alignement par argument"
   ],
   "objects": [
-    "points du plan complexe",
-    "affixes complexes",
-    "suite de points itérés",
-    "distance entre points",
-    "disque de centre et rayon donnés"
+    "nombre complexe",
+    "suite de nombres complexes",
+    "application affine du plan",
+    "points alignés",
+    "distance entre points"
   ],
-  "content_hash": "67417c7683356780b7b22a405cec5519864b34118c2a14bec9a1b0ef9433eea3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T06:52:29.023Z"
+  "content_hash": "39bc50aa427fcdb03e514a2a5d02f7bfce6a5afb89bac6c08387292d2c9082d7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:33:50.247Z"
 }

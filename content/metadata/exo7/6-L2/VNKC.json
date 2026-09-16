@@ -1,28 +1,28 @@
 {
   "uuid": "VNKC",
   "source_path": "exo7/6-L2/VNKC.tex",
-  "summary": "L'exercice demande d'analyser deux droites de l'espace euclidien tridimensionnel définies par des systèmes d'équations cartésiennes. Il s'agit de déterminer un point et un vecteur directeur pour chaque droite, d'étudier leur position relative (parallèles, sécantes ou non coplanaires), et de justifier l'existence de deux plans parallèles contenant respectivement chacune des droites.",
+  "summary": "L'exercice demande de déterminer un point et un vecteur directeur pour deux droites données dans l'espace euclidien 3D, puis d'analyser leur position relative (parallèles, sécantes ou non coplanaires). Enfin, il faut justifier l'existence de deux plans parallèles contenant chacune des droites.",
   "concepts": [
     "géométrie affine euclidienne",
-    "droite de l'espace",
-    "plan de l'espace",
+    "droites de l'espace",
     "position relative de droites",
+    "plans parallèles",
     "vecteur directeur",
-    "repère orthonormé direct"
+    "point d'appartenance"
   ],
   "methods": [
     "résolution de systèmes d'équations cartésiennes",
     "détermination de vecteurs directeurs",
     "analyse de coplanarité",
-    "construction de plans parallèles"
+    "construction de plans contenant une droite"
   ],
   "objects": [
     "droites de l'espace",
     "plans de l'espace",
     "vecteurs directeurs",
-    "systèmes d'équations cartésiennes"
+    "points d'appartenance"
   ],
-  "content_hash": "f8e31f83bf7c84a2fe12134ff0f04bab922188dd07e1e85b604a4320b71688ef",
+  "content_hash": "d4906fe6f1c7d0c46f860342ea67017501e6a916d8c84e03d2151e9c3ffa6f4f",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:26:05.996Z"
+  "indexed_at": "2026-09-15T18:33:12.152Z"
 }

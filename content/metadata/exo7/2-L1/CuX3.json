@@ -1,30 +1,31 @@
 {
   "uuid": "CuX3",
   "source_path": "exo7/2-L1/CuX3.tex",
-  "summary": "L'exercice demande de démontrer la dérivabilité d'une fonction définie par morceaux sur ℝ, en particulier en t=0, puis d'étudier l'existence de la dérivée seconde en 0. Ensuite, il s'agit de montrer une formule pour les dérivées d'ordre n de la fonction pour t<0 et de trouver les polynômes P₁ et P₂ associés.",
+  "summary": "L'exercice demande de démontrer la dérivabilité d'une fonction par morceaux sur ℝ, en particulier en 0, puis d'étudier l'existence de sa dérivée seconde en 0. Il s'agit ensuite de déterminer la forme des dérivées successives pour t < 0 et d'établir une relation de récurrence entre les polynômes associés.",
   "concepts": [
     "dérivabilité",
+    "limite de fonction",
     "dérivée seconde",
-    "dérivée d'ordre n",
-    "fonction définie par morceaux",
-    "limite de fonctions",
-    "relation de récurrence",
-    "polynôme"
-  ],
-  "methods": [
-    "étude de la dérivabilité en un point",
-    "calcul de taux d'accroissement",
-    "récurrence",
-    "calcul de dérivée seconde",
-    "formule de Leibniz pour les dérivées"
-  ],
-  "objects": [
-    "fonction exponentielle",
-    "polynôme Pₙ",
-    "dérivée n-ième",
+    "dérivées successives",
+    "fonction par morceaux",
+    "continuité",
     "taux d'accroissement"
   ],
-  "content_hash": "67483cf9681752efea393b6c6e91c6a352e81f7f88fdee06d8a558ec8791f1c0",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:00:23.847Z"
+  "methods": [
+    "calcul de limite",
+    "étude de continuité",
+    "dérivation",
+    "récurrence",
+    "calcul de polynôme caractéristique"
+  ],
+  "objects": [
+    "fonction définie par morceaux",
+    "dérivée première",
+    "dérivée seconde",
+    "polynôme P_n",
+    "taux d'accroissement"
+  ],
+  "content_hash": "15ddc4b2f53aa34bf0518020aea62bb818ac0d029d3091f51e3c84068aaf0aa2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:26:35.265Z"
 }

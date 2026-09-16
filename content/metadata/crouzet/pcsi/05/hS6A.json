@@ -1,26 +1,29 @@
 {
   "uuid": "hS6A",
   "source_path": "crouzet/pcsi/05/hS6A.tex",
-  "summary": "Montrer qu'une application définie sur l'ensemble des suites géométriques est bijective. Étudier l'injectivité, la surjectivité et la bijectivité d'une application entre ensembles de parties.",
+  "summary": "L'exercice demande de démontrer la bijectivité d'une application définie sur des suites géométriques et d'une autre application entre ensembles de parties. Le premier cas concerne une application reliant une suite géométrique à ses deux premiers termes, tandis que le second cas étudie les conditions d'injectivité, de surjectivité et de bijectivité d'une application entre ensembles de parties.",
   "concepts": [
     "application injective",
     "application surjective",
     "application bijective",
     "ensemble des parties",
     "complémentaire d'un ensemble",
-    "distributivité des ensembles"
+    "distributivité des ensembles",
+    "relation d'équivalence"
   ],
   "methods": [
-    "preuve par contraposée",
-    "preuve par construction",
-    "utilisation de la distributivité des ensembles"
+    "raisonnement par contraposée",
+    "utilisation de la distributivité",
+    "construction explicite d'un antécédent",
+    "preuve par l'absurde"
   ],
   "objects": [
     "suite géométrique",
-    "sous-ensembles d'un ensemble",
+    "ensemble de parties",
+    "couple d'ensembles",
     "application entre ensembles de parties"
   ],
-  "content_hash": "fc5d01738eb92c2cdb194e3b39aad65932139763a10673d0ae8af2ee61b9676e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:07:54.355Z"
+  "content_hash": "dadc8ebd58e9a97179d9b8e31acbe1613ca40fb56ee52dd7838c621224414a91",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:30.540Z"
 }

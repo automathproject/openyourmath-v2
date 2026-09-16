@@ -1,7 +1,7 @@
 {
   "uuid": "IN28",
   "source_path": "crouzet/pcsi/10/IN28.tex",
-  "summary": "On étudie la suite définie par la relation de récurrence $u_{n+1} = \\frac{2u_n^2}{1+5u_n}$ avec $u_0 \\geq 0$. L'exercice demande de montrer que la suite est positive, décroissante, et d'en déduire sa limite.",
+  "summary": "Étude d'une suite récurrente définie par $u_{n+1} = \\frac{2u_n^2}{1+5u_n}$ avec $u_0 \\geq 0$. On demande de montrer que la suite est positive, décroissante, puis majorée par une suite géométrique pour en déduire sa limite.",
   "concepts": [
     "suite récurrente",
     "principe de récurrence",
@@ -11,17 +11,17 @@
     "convergence d'une suite"
   ],
   "methods": [
-    "raisonnement par récurrence",
+    "récurrence",
     "étude de la différence $u_{n+1} - u_n$",
-    "majoration",
+    "majoration par une suite géométrique",
     "utilisation de la décroissance de la fonction inverse"
   ],
   "objects": [
     "suite numérique",
-    "relation de récurrence",
-    "limite d'une suite"
+    "suite géométrique",
+    "inégalité de majoration"
   ],
-  "content_hash": "c524ba2198173aa721fc401faccd21968808139bb104c5534e872917236fe7a6",
+  "content_hash": "117fa7a8cf7e6396adb295ced751a6f1fa8f8574bb96d5d7c3debe9bbd31fc4c",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:38:10.803Z"
+  "indexed_at": "2026-09-15T18:25:15.984Z"
 }

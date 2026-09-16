@@ -1,7 +1,7 @@
 {
   "uuid": "Odn4",
   "source_path": "crouzet/pcsi/10/Odn4.tex",
-  "summary": "L'exercice étudie une suite définie par récurrence à partir d'une fonction quadratique. Il demande de mettre la fonction sous forme canonique, de montrer la stabilité d'un intervalle, de prouver que la suite reste dans cet intervalle, d'étudier le signe de la différence fonction-identité, d'analyser la monotonie de la suite et d'en déterminer la limite.",
+  "summary": "Étude d'une suite définie par récurrence à partir d'une fonction quadratique. On demande de mettre la fonction sous forme canonique, de montrer la stabilité d'un intervalle, de prouver que la suite reste dans cet intervalle, d'étudier le signe de f(x)-x, la monotonie de la suite, puis sa convergence et sa limite.",
   "concepts": [
     "forme canonique d'une fonction quadratique",
     "stabilité d'un intervalle",
@@ -13,16 +13,18 @@
   "methods": [
     "complétion du carré",
     "raisonnement par récurrence",
-    "étude de signe d'une fonction quadratique",
-    "passage à la limite dans une relation de récurrence"
+    "étude de signe d'une fonction",
+    "calcul de limite",
+    "résolution d'équation quadratique"
   ],
   "objects": [
     "fonction quadratique",
     "suite définie par récurrence",
     "intervalle stable",
-    "point fixe"
+    "point fixe",
+    "limite de suite"
   ],
-  "content_hash": "3f66081822594b4096b3355c8e12ef545165a6c4e5a1da37d9c137299cc8bbf6",
+  "content_hash": "65df425581d7a22ba6ef7cae3d2cda1e91b1881b2af69ded243215064faf8f7e",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:38:13.788Z"
+  "indexed_at": "2026-09-15T18:25:27.781Z"
 }

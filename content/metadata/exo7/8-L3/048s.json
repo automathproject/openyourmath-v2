@@ -1,31 +1,32 @@
 {
   "uuid": "048s",
   "source_path": "exo7/8-L3/048s.tex",
-  "summary": "L'exercice demande de démontrer des propriétés structurelles d'un groupe non abélien d'ordre p³, où p est un nombre premier. On étudie notamment le centre du groupe, son sous-groupe dérivé, les classes de conjugaison, et la structure du quotient du groupe par son centre.",
+  "summary": "L'exercice étudie un groupe non abélien d'ordre p³ où p est un nombre premier. Il demande de montrer que le centre de G est d'ordre p et égal à son sous-groupe dérivé, puis d'en déduire le nombre de classes de conjugaison. Enfin, il s'agit de prouver que G/Z(G) est isomorphe à Z/pZ × Z/pZ et que tout sous-groupe d'ordre p² contient le centre de G.",
   "concepts": [
     "théorème de Sylow",
     "sous-groupe dérivé",
     "classes de conjugaison",
     "action de groupe",
     "formule de Burnside",
+    "centre d'un groupe",
     "isomorphisme de groupes",
-    "semi-direct produit"
+    "sous-groupe normal"
   ],
   "methods": [
-    "étude des points fixes",
-    "analyse des orbites",
-    "calcul des stabilisateurs",
+    "étude des actions de groupe",
+    "calcul des orbites et stabilisateurs",
     "application de la formule de Burnside",
+    "analyse des sous-groupes normaux",
     "comparaison des ordres de sous-groupes"
   ],
   "objects": [
-    "groupe non abélien d'ordre p³",
+    "groupe d'ordre p³",
     "centre d'un groupe",
     "sous-groupe dérivé",
     "classes de conjugaison",
-    "quotient de groupes"
+    "sous-groupe d'ordre p²"
   ],
-  "content_hash": "036c8f73b2aa9cd7e726bb800175530b62d2250445c52adc4ad4311958242794",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T15:50:00.211Z"
+  "content_hash": "372bfc20fd4185e3b59b45207ac83c779eae11eb2f1e23a75b6e785da1299213",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:37:02.697Z"
 }

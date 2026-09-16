@@ -1,20 +1,22 @@
 {
   "uuid": "iuc7",
   "source_path": "crouzet/pcsi/10/iuc7.tex",
-  "summary": "Déterminer la limite (si elle existe) de suites définies par des polynômes ou des fractions rationnelles lorsque n tend vers l'infini.",
+  "summary": "Déterminer la limite en l'infini de trois suites définies par des polynômes ou des fractions rationnelles. L'exercice demande d'identifier et de lever les indéterminations éventuelles.",
   "concepts": [
     "limite de suite",
     "indétermination",
-    "convergence",
+    "comportement asymptotique",
     "polynôme",
     "fraction rationnelle",
-    "comparaison de croissance"
+    "somme de termes",
+    "produit de termes",
+    "quotient de termes"
   ],
   "methods": [
     "mise en facteur",
     "standardisation",
-    "comparaison de termes dominants",
-    "règle de l'Hôpital"
+    "levée d'indétermination",
+    "calcul de limite terme à terme"
   ],
   "objects": [
     "suite numérique",
@@ -22,7 +24,7 @@
     "fraction rationnelle",
     "termes dominants"
   ],
-  "content_hash": "1db9b1923a01fccdbc568dd54541cd47fea11c1b9383e750abf317f1a7e1e418",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:38:25.136Z"
+  "content_hash": "09ab4e17e05b65e6d55345a3ba4162d585ec51e5df3b8470d61003e6bda6abfa",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:25:49.445Z"
 }

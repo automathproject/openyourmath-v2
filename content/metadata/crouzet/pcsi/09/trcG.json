@@ -1,30 +1,28 @@
 {
   "uuid": "trcG",
   "source_path": "crouzet/pcsi/09/trcG.tex",
-  "summary": "L'exercice demande de déterminer l'expression explicite de suites définies par récurrence, en fonction de l'indice n. Les suites sont de différents types : arithmético-géométriques, arithmétiques, ou récurrentes linéaires d'ordre 2.",
+  "summary": "L'exercice demande de déterminer l'expression explicite de suites définies par récurrence, incluant des suites arithmético-géométriques et des suites récurrentes linéaires d'ordre 2.",
   "concepts": [
     "suite arithmético-géométrique",
+    "suite géométrique",
     "suite arithmétique",
     "suite récurrente linéaire d'ordre 2",
     "équation caractéristique",
-    "solution générale d'une équation de récurrence",
-    "solution particulière d'une équation de récurrence",
-    "système linéaire"
+    "solution générale d'une équation différentielle linéaire"
   ],
   "methods": [
     "recherche de solution particulière",
-    "recherche de solution générale",
+    "transformation en suite géométrique",
     "résolution d'équation caractéristique",
-    "résolution de système linéaire",
-    "transformation en suite géométrique"
+    "méthode des coefficients indéterminés"
   ],
   "objects": [
     "suite numérique",
     "équation de récurrence",
     "solution explicite",
-    "système d'équations"
+    "système linéaire"
   ],
-  "content_hash": "1cb633bb119f5f356a951d5f6302644175b9e0764c2b6581ff346142df2bde9e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:34:51.962Z"
+  "content_hash": "408970060bbabc8cb8f46609669efb6071fd6ca5fb09a1c02f035530922748f6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:31:45.152Z"
 }

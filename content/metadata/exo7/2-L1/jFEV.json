@@ -1,31 +1,31 @@
 {
   "uuid": "jFEV",
   "source_path": "exo7/2-L1/jFEV.tex",
-  "summary": "On étudie une suite définie par récurrence $u_{n+1} = \\sin(u_n)$ avec $u_0 \\in \\left]0, \\frac{\\pi}{2}\\right]$. On doit montrer que la suite est strictement positive et converge vers 0, puis déterminer un réel $\\alpha$ pour que $u_{n+1}^\\alpha - u_n^\\alpha$ ait une limite finie non nulle, et enfin trouver un équivalent simple de $u_n$ en utilisant le lemme de Cesaro.",
+  "summary": "On étudie une suite définie par récurrence $u_{n+1} = \\sin(u_n)$ avec $u_0 \\in \\left]0,\\frac{\\pi}{2}\\right]$. On doit montrer que la suite est strictement positive et converge vers 0, puis déterminer un réel $\\alpha$ pour que $u_{n+1}^\\alpha - u_n^\\alpha$ ait une limite finie non nulle, et enfin trouver un équivalent simple de $u_n$ en utilisant le lemme de Cesaro.",
   "concepts": [
     "suite définie par récurrence",
-    "strictement décroissante",
     "convergence de suite",
     "limite de suite",
-    "développement limité",
     "lemme de Cesaro",
+    "développement limité",
     "équivalent asymptotique",
+    "fonction sinus",
     "continuité"
   ],
   "methods": [
-    "comparaison de termes",
     "développement limité",
     "application du lemme de Cesaro",
-    "calcul d'équivalent asymptotique",
-    "utilisation de la continuité"
+    "étude de la monotonie",
+    "recherche de limite",
+    "approximation d'équivalent"
   ],
   "objects": [
     "suite numérique",
     "fonction sinus",
-    "limite finie",
-    "équivalent simple"
+    "développement limité",
+    "équivalent asymptotique"
   ],
-  "content_hash": "f9725ca623beeb91a3a4194a888808d602fe5a0cd346a366a4c752214fd44bc2",
+  "content_hash": "52c3d3e2d617e14a4600fea70b89b9b3f81acf7df8e32288cc05c22c60311eb8",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:08:27.974Z"
+  "indexed_at": "2026-09-15T18:36:09.425Z"
 }

@@ -1,29 +1,31 @@
 {
   "uuid": "c5V5",
   "source_path": "crouzet/pcsi/04/c5V5.tex",
-  "summary": "Résoudre six systèmes linéaires à coefficients réels, certains homogènes et d'autres non homogènes, en déterminant leur ensemble de solutions.",
+  "summary": "Résoudre six systèmes linéaires à coefficients réels, de tailles variables (3x3 à 4x5), avec des cas particuliers : systèmes compatibles déterminés, incompatibles, et indéterminés.",
   "concepts": [
     "système linéaire",
     "méthode du pivot de Gauss",
-    "système de Cramer",
+    "système compatible déterminé",
+    "système incompatible",
     "système homogène",
-    "système non homogène",
-    "inconnue auxiliaire"
+    "système de Cramer",
+    "inconnue auxiliaire",
+    "espace des solutions"
   ],
   "methods": [
     "élimination de Gauss",
     "pivot de Gauss",
-    "résolution par substitution",
+    "recherche de solutions paramétrées",
     "analyse de compatibilité"
   ],
   "objects": [
     "système linéaire 3x3",
-    "système linéaire 4x4",
+    "système linéaire 4x5",
     "solution unique",
     "solution infinie",
     "solution vide"
   ],
-  "content_hash": "6e7e47e7d76ee584a846da3f4091aa2151bbe384e2898647d117bbdd29f49fe6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:15:26.030Z"
+  "content_hash": "e621ff63f32abf7c57744c57da12a9509e88b93e9f30a12b36dbbe11067ff90c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:36:30.484Z"
 }

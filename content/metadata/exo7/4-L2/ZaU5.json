@@ -1,26 +1,30 @@
 {
   "uuid": "ZaU5",
   "source_path": "exo7/4-L2/ZaU5.tex",
-  "summary": "L'exercice demande de déterminer quels sous-ensembles donnés de matrices complexes inversibles forment des sous-groupes du groupe multiplicatif des matrices complexes d'ordre n.",
+  "summary": "L'exercice demande de déterminer quels sous-ensembles donnés de matrices complexes inversibles forment des sous-groupes du groupe multiplicatif des matrices d'ordre n.",
   "concepts": [
     "groupe",
     "sous-groupe",
     "matrice inversible",
+    "structure algébrique",
+    "propriétés de stabilité",
+    "élément neutre",
+    "inverse"
+  ],
+  "methods": [
+    "vérification des axiomes de sous-groupe",
+    "analyse de la stabilité par multiplication",
+    "vérification de l'existence de l'inverse"
+  ],
+  "objects": [
+    "groupe multiplicatif des matrices",
+    "sous-ensemble de matrices",
+    "matrice inversible",
     "matrice réelle",
-    "matrice diagonale",
     "matrice triangulaire supérieure",
     "matrice hermitienne"
   ],
-  "methods": [
-    "vérification des propriétés de sous-groupe",
-    "analyse des conditions sur les coefficients"
-  ],
-  "objects": [
-    "matrices complexes",
-    "sous-ensembles de matrices",
-    "groupe multiplicatif"
-  ],
-  "content_hash": "f7afb07e8b5936c84d9c08ec54d3847593ac0d6a6ed88347eaafc8468a9aebb9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T01:55:42.899Z"
+  "content_hash": "7d623d56df532fca0dea9ba3bc0d516b302ea5f762323193269706594a02ba8f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:48.656Z"
 }

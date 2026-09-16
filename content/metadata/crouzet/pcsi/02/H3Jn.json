@@ -3,24 +3,24 @@
   "source_path": "crouzet/pcsi/02/H3Jn.tex",
   "summary": "L'exercice demande de déterminer les conditions sur les réels a, b, c et x pour que l'inéquation ax² + bx + c > 0 soit vérifiée, en fonction des valeurs du discriminant Δ = b² - 4ac.",
   "concepts": [
-    "discriminant d'un polynôme du second degré",
-    "inéquation polynomiale",
+    "inéquation du second degré",
+    "discriminant",
+    "fonction polynomiale",
     "racines réelles",
-    "fonction quadratique",
+    "parabole",
     "ensemble de solutions"
   ],
   "methods": [
     "analyse du discriminant",
-    "étude du signe d'une fonction quadratique",
+    "étude du signe d'un trinôme",
     "résolution d'inéquation"
   ],
   "objects": [
-    "polynôme du second degré",
+    "trinôme du second degré",
     "discriminant",
-    "racines réelles",
-    "ensemble de solutions"
+    "réels a, b, c, x"
   ],
-  "content_hash": "6429987e3997605a485c75288950b27306bf005b79e75bba4e892e4c4ef3c884",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:29:44.402Z"
+  "content_hash": "4a0e5020e226a0c2631ef76479a33bd417baa58d3ff34d3c8db9603ac940da2c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:30:54.941Z"
 }

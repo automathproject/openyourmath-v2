@@ -1,24 +1,23 @@
 {
   "uuid": "7Jo3",
   "source_path": "crouzet/pcsi/05/7Jo3.tex",
-  "summary": "L'exercice demande de démontrer la dénombrabilité des ensembles $\\N^*$, $\\Z$, $\\N^2$, $\\Z \\times \\N^*$ et $\\Q$ en utilisant des bijections avec des parties de $\\N$. Il explore les propriétés des ensembles dénombrables et les techniques de construction d'injections.",
+  "summary": "L'exercice demande de démontrer la dénombrabilité des ensembles $\\N^*$, $\\Z$, $\\N^2$, $\\Z \\times \\N^*$ et $\\Q$ en utilisant des bijections avec des parties de $\\N$ ou des ensembles déjà dénombrables. Il explore les propriétés des injections et des bijections entre ensembles.",
   "concepts": [
-    "ensemble dénombrable",
+    "dénombrabilité",
     "bijection",
     "injection",
+    "ensemble dénombrable",
     "cardinal d'un ensemble",
-    "propriété archimédienne",
     "théorème de Cantor",
     "relation d'équivalence",
-    "partition d'un ensemble"
+    "partie infinie"
   ],
   "methods": [
     "construction explicite de bijection",
     "décomposition en facteurs premiers",
-    "utilisation de la définition de la dénombrabilité",
-    "composition de fonctions",
-    "réduction à l'absurde",
-    "preuve par cas"
+    "utilisation de la composition de fonctions",
+    "preuve par injectivité et surjectivité",
+    "réduction à un cas connu"
   ],
   "objects": [
     "ensemble $\\N^*$",
@@ -27,9 +26,9 @@
     "ensemble $\\Z \\times \\N^*$",
     "ensemble $\\Q$",
     "application injective",
-    "application surjective"
+    "application bijective"
   ],
-  "content_hash": "932e25a6259ccfc237841d50e4c4a90a84af794201deb2fe549c6f808c5bb4fa",
+  "content_hash": "bbe6141495901f0ebfec6c379f9b001a9646a3d434222556da82280fbba714d5",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:42:16.933Z"
+  "indexed_at": "2026-09-15T18:27:13.825Z"
 }

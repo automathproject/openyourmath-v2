@@ -1,26 +1,28 @@
 {
   "uuid": "hYfu",
   "source_path": "exo7/4-L2/hYfu.tex",
-  "summary": "L'exercice demande de démontrer une formule de déterminant pour une matrice modifiée par un multiple d'une matrice unitaire, puis d'appliquer ce résultat pour calculer le déterminant d'une matrice spécifique avec des éléments particuliers.",
+  "summary": "L'exercice demande de démontrer une formule de déterminant pour une matrice de la forme A + αU, où U est une matrice de 1, puis d'en déduire la valeur d'un déterminant D(a,b,c) particulier, selon que b ≠ c ou b = c.",
   "concepts": [
     "déterminant",
     "matrice",
     "cofacteur",
-    "développement selon une ligne ou une colonne",
-    "matrice unitaire",
-    "formule de Leibniz"
+    "développement par rapport à une ligne",
+    "polynôme caractéristique",
+    "valeurs propres"
   ],
   "methods": [
     "développement de déterminant",
     "calcul de cofacteurs",
-    "spécialisation de formule"
+    "substitution algébrique",
+    "résolution d'équation polynomiale"
   ],
   "objects": [
     "matrice carrée",
-    "matrice unitaire",
-    "déterminant de matrice"
+    "matrice de 1",
+    "déterminant D(a,b,c)",
+    "polynôme en a, b, c"
   ],
-  "content_hash": "0b7c3be873f4610a798e2cc86149aa578a7ff5ef692505277560cfb3ae13ec7e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:03:57.827Z"
+  "content_hash": "b988f1a4fbd636f553d45f27fa6d2a5dca805094be4af339c6ef2e681b3d8b01",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:26:48.189Z"
 }

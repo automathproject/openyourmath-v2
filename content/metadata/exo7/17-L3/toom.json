@@ -1,29 +1,28 @@
 {
   "uuid": "toom",
   "source_path": "exo7/17-L3/toom.tex",
-  "summary": "L'exercice demande de factoriser une matrice symétrique A sous la forme A = B * B^T en utilisant une factorisation LU et une matrice diagonale Λ. Il illustre la construction de B à partir de la factorisation LU et de la matrice diagonale des signes.",
+  "summary": "L'exercice demande de démontrer qu'une matrice symétrique inversible admettant une factorisation LU peut s'écrire sous la forme A = B * B̃ᵀ, où B est triangulaire inférieure et B̃ est obtenue en changeant éventuellement le signe des colonnes de B. Une application numérique illustre cette décomposition sur une matrice 4x4 donnée.",
   "concepts": [
     "factorisation LU",
     "matrice symétrique",
-    "factorisation de Cholesky",
-    "matrice diagonale",
-    "matrice triangulaire",
+    "matrice triangulaire inférieure",
+    "décomposition de Cholesky",
+    "inversibilité",
     "produit matriciel"
   ],
   "methods": [
-    "factorisation LU",
-    "construction de matrice par blocs",
-    "manipulation de matrices triangulaires",
-    "calcul de produit matriciel"
+    "factorisation matricielle",
+    "manipulation de matrices",
+    "calcul de signe",
+    "construction explicite de matrices"
   ],
   "objects": [
     "matrice symétrique",
-    "matrice triangulaire supérieure",
     "matrice triangulaire inférieure",
     "matrice diagonale",
-    "matrice B"
+    "matrice 4x4"
   ],
-  "content_hash": "e3af26e46d84bf4b472557e84a32d3e843e8a64a80efd66962378b87fb2a8208",
+  "content_hash": "333fbdb0c92d7599dd53b53b3bdf047b87c7380c2e97aaac1a3d84f37b3cd1db",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:28:57.442Z"
+  "indexed_at": "2026-09-15T18:24:36.003Z"
 }

@@ -1,27 +1,28 @@
 {
   "uuid": "Ak8J",
   "source_path": "exo7/6-L2/Ak8J.tex",
-  "summary": "L'exercice demande de construire les courbes planes définies par des équations en coordonnées polaires. Chaque question propose une équation polaire différente à tracer.",
+  "summary": "L'exercice demande de tracer et d'analyser des courbes planes définies en coordonnées polaires par des équations de la forme ρ = f(θ), où f(θ) est une fonction trigonométrique ou logarithmique. Certaines questions incluent des calculs d'asymptotes ou d'aires.",
   "concepts": [
     "coordonnées polaires",
-    "représentation graphique",
-    "équation polaire",
-    "courbe plane",
+    "fonctions trigonométriques",
     "asymptotes",
-    "aire en coordonnées polaires"
+    "aire en coordonnées polaires",
+    "représentation graphique",
+    "limites de fonctions"
   ],
   "methods": [
     "tracé de courbes polaires",
-    "calcul d'aire en coordonnées polaires",
-    "détermination d'asymptotes"
+    "calcul d'asymptotes",
+    "intégration en coordonnées polaires",
+    "analyse de limites"
   ],
   "objects": [
-    "équation polaire",
-    "courbe plane",
-    "asymptotes",
-    "aire"
+    "courbe polaire",
+    "fonction de θ",
+    "asymptote",
+    "aire délimitée"
   ],
-  "content_hash": "751ef476c9983ebed195719cc01cfb19081276c3011e4cd2b3e856b354c0b7e9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:44:44.223Z"
+  "content_hash": "176040d17a99535709ff268ea64020f8fa0e2b1a39dc975c1edb75d9cd4717b7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:25:52.309Z"
 }

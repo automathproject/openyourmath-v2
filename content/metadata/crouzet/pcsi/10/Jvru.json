@@ -1,27 +1,29 @@
 {
   "uuid": "Jvru",
   "source_path": "crouzet/pcsi/10/Jvru.tex",
-  "summary": "L'exercice demande de démontrer par récurrence que les termes d'une suite définie par récurrence restent bornés entre 0 et 3, puis d'étudier une suite transformée géométriquement pour en déduire la limite de la suite initiale.",
+  "summary": "L'exercice demande de démontrer par récurrence que les termes d'une suite définie par récurrence restent bornés entre 0 et 3. Il propose ensuite de transformer cette suite en une suite géométrique, d'en exprimer le terme général et d'en déduire la limite.",
   "concepts": [
     "principe de récurrence",
+    "suite définie par récurrence",
     "suite géométrique",
     "limite de suite",
-    "bornes de suite",
-    "fonction inverse"
+    "fonction inverse",
+    "bornes de suite"
   ],
   "methods": [
     "récurrence",
     "transformation de suite",
-    "calcul de limite",
-    "manipulation algébrique"
+    "calcul de raison",
+    "expression du terme général",
+    "calcul de limite"
   ],
   "objects": [
-    "suite définie par récurrence",
+    "suite numérique",
     "suite géométrique",
-    "termes de suite",
+    "terme général",
     "limite de suite"
   ],
-  "content_hash": "bc50ce2adccdba3c4fc871f4997d88b28a558ba79efaa17ab909366145448260",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:35:17.535Z"
+  "content_hash": "9f911394c6d0a5a11acccd5fddd96ee66310d0802cfc50c2ef6ccd2d583faf23",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:25:18.681Z"
 }

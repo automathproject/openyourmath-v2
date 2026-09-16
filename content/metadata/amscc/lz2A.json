@@ -1,25 +1,26 @@
 {
   "uuid": "lz2A",
   "source_path": "amscc/lz2A.tex",
-  "summary": "L'exercice demande de déterminer l'ensemble de définition d'une fonction logarithme composée, puis de la décomposer en somme de deux logarithmes, et enfin d'en déduire son développement en série entière avec son intervalle de convergence.",
+  "summary": "L'exercice demande de déterminer l'ensemble de définition d'une fonction logarithme composée, puis de la décomposer en somme de deux logarithmes. Enfin, il s'agit d'en déduire un développement en série entière avec son intervalle de convergence.",
   "concepts": [
-    "fonction composée",
+    "fonction logarithme",
     "domaine de définition",
-    "décomposition de logarithmes",
+    "décomposition de fonction",
     "série entière",
     "rayon de convergence"
   ],
   "methods": [
     "détermination du domaine de définition",
-    "décomposition de fonctions logarithmiques",
-    "développement en série entière"
+    "décomposition en logarithmes",
+    "développement en série entière",
+    "calcul du rayon de convergence"
   ],
   "objects": [
-    "fonction logarithme",
+    "fonction d'une variable réelle",
     "série entière",
     "intervalle de convergence"
   ],
-  "content_hash": "fba837c21bc3093853ee6fb093c2816d19480877fcad687813b1fe3f59625484",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:52:00.739Z"
+  "content_hash": "6d8ee88967f102356cdef9f221577b8ebf25374b5d84ea002810e59d5c840880",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:36:48.042Z"
 }

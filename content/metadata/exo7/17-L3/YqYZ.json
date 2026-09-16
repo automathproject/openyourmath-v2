@@ -1,32 +1,32 @@
 {
   "uuid": "YqYZ",
   "source_path": "exo7/17-L3/YqYZ.tex",
-  "summary": "L'exercice demande de démontrer des propriétés liées à la décomposition de Gram-Schmidt d'une matrice, puis de dériver et analyser l'algorithme correspondant, y compris sa version modifiée pour une meilleure stabilité numérique.",
+  "summary": "L'exercice demande de démontrer des propriétés de la factorisation QR d'une matrice A dont les colonnes sont linéairement indépendantes, puis de dériver et analyser l'algorithme de Gram-Schmidt modifié pour calculer cette factorisation de manière stable numériquement.",
   "concepts": [
-    "orthonormalité",
-    "décomposition QR",
+    "factorisation QR",
+    "base orthonormale",
+    "orthogonalité",
     "algorithme de Gram-Schmidt",
-    "factorisation matricielle",
-    "espace vectoriel",
-    "produit scalaire",
+    "stabilité numérique",
+    "complexité algorithmique",
     "matrice triangulaire supérieure",
-    "stabilité numérique"
-  ],
-  "methods": [
-    "orthogonalisation de Gram-Schmidt",
-    "calcul récursif",
-    "factorisation sur place",
-    "calcul de norme",
-    "mise à jour matricielle"
-  ],
-  "objects": [
-    "matrice",
-    "vecteurs orthonormaux",
-    "matrice triangulaire",
-    "sous-espace vectoriel",
     "produit scalaire"
   ],
-  "content_hash": "4b41b223be9857e5053bbc4f733defa0016fb8e4d185b6b261a339ade8b93f97",
+  "methods": [
+    "orthonormalisation de Gram-Schmidt",
+    "calcul récursif de vecteurs orthonormaux",
+    "factorisation matricielle",
+    "calcul de norme",
+    "mise à jour sur place"
+  ],
+  "objects": [
+    "matrice A",
+    "vecteurs orthonormaux q_i",
+    "matrice R triangulaire supérieure",
+    "sous-matrice A^(k)",
+    "vecteur z"
+  ],
+  "content_hash": "cca8088fcee57b0d99cf34c050d03cd3300a309a3a49c0dd709aa1ef3d854ff7",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:26:22.593Z"
+  "indexed_at": "2026-09-15T18:24:30.173Z"
 }

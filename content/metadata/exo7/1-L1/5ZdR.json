@@ -1,28 +1,28 @@
 {
   "uuid": "5ZdR",
   "source_path": "exo7/1-L1/5ZdR.tex",
-  "summary": "L'exercice demande de justifier qu'une application est linéaire, de déterminer sa matrice dans la base canonique de ℝ³, puis d'analyser son noyau (base et dimension) et son injectivité.",
+  "summary": "L'exercice demande de justifier la linéarité d'une application de ℝ³ dans ℝ³ définie par ses coordonnées, puis d'en déterminer la matrice dans la base canonique, une base du noyau et d'en déduire son injectivité.",
   "concepts": [
     "application linéaire",
-    "matrice d'une application linéaire",
+    "matrice associée",
     "noyau d'une application linéaire",
     "injectivité",
-    "dimension d'un espace vectoriel",
-    "base d'un espace vectoriel"
+    "base canonique",
+    "dimension d'un espace vectoriel"
   ],
   "methods": [
-    "vérification des propriétés linéaires",
-    "calcul de la matrice d'une application",
-    "détermination d'une base de noyau",
-    "calcul de la dimension d'un noyau"
+    "vérification des propriétés de linéarité",
+    "construction de la matrice associée",
+    "détermination du noyau",
+    "calcul du rang"
   ],
   "objects": [
-    "application linéaire",
+    "application linéaire de ℝ³ dans ℝ³",
     "matrice 3x3",
-    "noyau d'une application",
-    "espace vectoriel ℝ³"
+    "noyau d'une application linéaire",
+    "base canonique de ℝ³"
   ],
-  "content_hash": "829cf3362a5a5b4d37002681785f25577b6f88c7b4991d6f9387636c55a060e2",
+  "content_hash": "0b736299ed1d5d2854ee24555c3c12bf099e55d88290e4b54d592b8a8c5f40cb",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:09:57.356Z"
+  "indexed_at": "2026-09-15T18:23:49.982Z"
 }

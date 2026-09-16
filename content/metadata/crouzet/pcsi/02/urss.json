@@ -1,0 +1,26 @@
+{
+  "uuid": "urss",
+  "source_path": "crouzet/pcsi/02/urss.tex",
+  "summary": "Simplifier l'expression $\\sqrt[3]{5\\sqrt{2}+7} - \\sqrt[3]{5\\sqrt{2}-7}$ en utilisant les propriétés des racines cubiques.",
+  "concepts": [
+    "racine cubique",
+    "identité remarquable",
+    "équation polynomiale",
+    "discriminant",
+    "factorisation"
+  ],
+  "methods": [
+    "élévation au cube",
+    "développement binomial",
+    "résolution d'équation",
+    "factorisation"
+  ],
+  "objects": [
+    "expression algébrique",
+    "racine cubique",
+    "polynôme du troisième degré"
+  ],
+  "content_hash": "803ec286a227993faac4610f1dcb6b0ab95b9a228b2df9943bc5b7181853135f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:31:17.257Z"
+}

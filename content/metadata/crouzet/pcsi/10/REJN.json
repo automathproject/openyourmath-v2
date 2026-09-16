@@ -8,20 +8,20 @@
     "limite d'une suite",
     "raisonnement par l'absurde",
     "suite extraite",
-    "somme des inverses des entiers"
+    "inégalité de la fonction inverse"
   ],
   "methods": [
-    "comparaison de termes consécutifs",
-    "majoration terme à terme",
-    "utilisation de la décroissance de la fonction inverse",
+    "calcul de la différence de termes consécutifs",
+    "comparaison terme à terme",
+    "passage à la limite",
     "raisonnement par contradiction"
   ],
   "objects": [
     "suite harmonique",
-    "somme partielle",
-    "limite finie ou infinie"
+    "somme des inverses des entiers",
+    "suite extraite (h_{2n})"
   ],
-  "content_hash": "c0b1ed4650d81ce6aa1dc971a48575e7314f77d06078a0e2aa982b356106a608",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:36:50.852Z"
+  "content_hash": "b2951fa8e7118de223ff7bad55afde18fbc5830efe333b81c0d401642ee8c8d0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:25:33.509Z"
 }

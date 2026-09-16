@@ -1,28 +1,31 @@
 {
   "uuid": "uYBb",
   "source_path": "exo7/4-L2/uYBb.tex",
-  "summary": "L'exercice demande de démontrer que l'ensemble des matrices de la forme M_{a,b} est un sous-groupe additif de M₂(ℝ) et que son complémentaire (sans la matrice nulle) est un sous-groupe multiplicatif de GL₂(ℝ).",
+  "summary": "L'exercice demande de démontrer que l'ensemble des matrices de la forme M_{a,b} = (a -b; b a) constitue un sous-groupe du groupe additif des matrices 2x2 réelles, puis que l'ensemble privé de la matrice nulle forme un sous-groupe multiplicatif de GL₂(ℝ).",
   "concepts": [
     "sous-groupe",
     "groupe additif",
     "groupe multiplicatif",
-    "matrice carrée",
+    "matrice 2x2",
+    "isomorphisme",
     "structure de groupe",
-    "isomorphisme"
+    "élément neutre",
+    "inverse"
   ],
   "methods": [
     "vérification des axiomes de groupe",
-    "fermeture pour l'opération",
-    "existence d'élément neutre",
-    "existence d'inverse"
+    "calcul matriciel",
+    "identification de l'élément neutre",
+    "recherche de l'inverse"
   ],
   "objects": [
-    "matrice 2x2",
-    "ensemble de matrices",
-    "groupe additif",
-    "groupe multiplicatif"
+    "matrice M_{a,b}",
+    "ensemble ℝ²",
+    "groupe additif ℳ₂(ℝ)",
+    "groupe multiplicatif GL₂(ℝ)",
+    "application f : ℳ₂(ℝ) → ℂ"
   ],
-  "content_hash": "df8b7d82bb1fcbf00f4479e3b076de066c504bc2e92428882377360838c15d0f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:18:50.912Z"
+  "content_hash": "7b6e7c07a1cc72f8873323edc3d70c4148d98d86d9588e3099dbe830fe76a8ef",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:30:10.532Z"
 }

@@ -10,23 +10,23 @@
     "continuité",
     "limite de suite",
     "théorème de Newton",
-    "groupe des périodes"
+    "groupe additif ℝ"
   ],
   "methods": [
     "utilisation de la borne inférieure",
     "démonstration par cas",
     "approximation par éléments de sous-groupe",
-    "passage à la limite",
-    "utilisation de la continuité"
+    "utilisation de la continuité",
+    "calcul de limite de suite"
   ],
   "objects": [
     "sous-groupe de (ℝ,+)",
     "ensemble dense",
     "fonction périodique",
-    "suite convergente",
-    "nombre réel"
+    "suite (√2 - 1)^n",
+    "ensemble des périodes d'une fonction"
   ],
-  "content_hash": "d088a360fac71f0bb794142e235a0caca3cb6a021010e915bcab973782ffa023",
+  "content_hash": "eef08b44d2deb6e8e8f5283f19285292d166f9f77163a419e20e7a5c284750e0",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:02:07.607Z"
+  "indexed_at": "2026-09-15T18:34:14.509Z"
 }

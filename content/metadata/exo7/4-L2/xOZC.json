@@ -1,30 +1,31 @@
 {
   "uuid": "xOZC",
   "source_path": "exo7/4-L2/xOZC.tex",
-  "summary": "L'exercice demande de démontrer des propriétés d'un endomorphisme antisymétrique dans un espace euclidien, notamment sur son spectre, la stabilité de sous-espaces, et la construction d'une base adaptée.",
+  "summary": "L'exercice porte sur un endomorphisme antisymétrique dans un espace euclidien. Il demande de montrer que ses valeurs propres sont nulles, que certains sous-espaces sont stables, que son carré est symétrique, et de déterminer une base adaptée pour sa restriction à un sous-espace propre.",
   "concepts": [
     "endomorphisme antisymétrique",
-    "espace euclidien",
-    "spectre d'un endomorphisme",
-    "sous-espace orthogonal",
     "valeur propre",
-    "vecteur propre",
-    "stabilité d'un sous-espace"
+    "sous-espace orthogonal",
+    "stabilité par endomorphisme",
+    "symétrie d'un endomorphisme",
+    "sous-espace propre",
+    "matrice d'un endomorphisme"
   ],
   "methods": [
-    "utilisation de la définition d'un endomorphisme antisymétrique",
+    "utilisation de la définition d'endomorphisme antisymétrique",
     "analyse des valeurs propres",
-    "construction de base orthonormée",
-    "restriction d'un endomorphisme à un sous-espace"
+    "construction de sous-espaces stables",
+    "calcul de la symétrie du carré d'un endomorphisme",
+    "détermination d'une base orthonormée"
   ],
   "objects": [
-    "endomorphisme antisymétrique",
     "espace euclidien",
+    "endomorphisme antisymétrique",
     "sous-espace orthogonal",
-    "vecteur propre",
-    "valeur propre"
+    "sous-espace propre",
+    "matrice d'endomorphisme"
   ],
-  "content_hash": "8242d9e95faf725fb3a748e5df7038cef0e38a9dd371c3b669a87ac6ca796e91",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:05:08.945Z"
+  "content_hash": "642ba3cd85ef94becd1e68a58f6b38ea8efcb1f1e83439993d887999bc34ed2b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:09.272Z"
 }

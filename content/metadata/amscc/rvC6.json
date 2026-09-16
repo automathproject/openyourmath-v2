@@ -1,31 +1,29 @@
 {
   "uuid": "rvC6",
   "source_path": "amscc/rvC6.tex",
-  "summary": "L'exercice demande d'étudier une méthode numérique pour approcher la racine carrée d'un nombre positif A, en analysant un algorithme itératif spécifique. Il s'agit de comprendre la méthode de la corde comme cas particulier d'une méthode plus générale et d'en déterminer l'ordre de convergence.",
+  "summary": "L'exercice demande d'étudier une méthode numérique pour approcher la racine carrée d'un nombre positif A, en analysant une suite récurrente spécifique et en la reliant à la méthode de la corde. Il s'agit de construire graphiquement les premières itérations de la méthode et d'en déduire son ordre de convergence.",
   "concepts": [
     "méthode de point fixe",
     "convergence d'une suite",
     "ordre de convergence",
-    "méthode de Newton",
-    "fonction itérative",
+    "méthode de la corde",
+    "fonction réciproque",
     "équation non linéaire",
-    "racine d'une fonction"
+    "approximation numérique"
   ],
   "methods": [
-    "construction de suite itérative",
+    "construction graphique d'itérations",
     "analyse de convergence",
-    "détermination de l'ordre de convergence",
-    "méthode de la corde",
-    "méthode de point fixe"
+    "comparaison de méthodes numériques",
+    "calcul de pente de tangente"
   ],
   "objects": [
-    "suite numérique",
+    "suite récurrente",
     "fonction quadratique",
-    "racine carrée",
-    "point d'intersection",
-    "droite tangente"
+    "droite affine",
+    "point d'intersection"
   ],
-  "content_hash": "72c65ff5d52008fa2e12607cc0c0f906665e37d7c932d5ba6593d5a0ca783128",
+  "content_hash": "0fe9a1e883a9f374c860ecdcc29e868af6cad6f40181c78f5101f4992bd0923e",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:58:10.693Z"
+  "indexed_at": "2026-09-15T18:33:47.193Z"
 }

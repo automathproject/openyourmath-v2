@@ -1,31 +1,31 @@
 {
   "uuid": "LSWd",
   "source_path": "exo7/5-L2/LSWd.tex",
-  "summary": "L'exercice demande de prouver une identité différentielle impliquant une somme de termes dérivés d'une fonction et d'un polynôme, puis d'étudier la prolongeabilité par continuité et la dérivabilité d'une fonction rationnelle, ainsi que les propriétés de ses dérivées successives. Le contexte mathématique porte sur les fonctions de classe C^n+1 et les développements limités.",
+  "summary": "L'exercice demande de prouver une identité différentielle impliquant des dérivées de fonctions et de polynômes, puis d'étudier la prolongeabilité par continuité et la dérivabilité d'une fonction rationnelle, ainsi que les propriétés de ses dérivées successives. Il s'agit d'appliquer des techniques de calcul différentiel et d'analyse des développements limités.",
   "concepts": [
-    "fonction de classe C^n",
     "développement limité",
     "prolongeabilité par continuité",
     "dérivabilité indéfinie",
-    "polynôme de degré n",
-    "identité différentielle",
-    "récurrence mathématique"
+    "polynôme de Taylor",
+    "fonction de classe C^n",
+    "récurrence mathématique",
+    "identité différentielle"
   ],
   "methods": [
     "développement limité",
     "récurrence",
-    "changement d'indice de sommation",
-    "identité algébrique",
-    "dérivation successive"
+    "changement de variable",
+    "dérivation successive",
+    "identité algébrique"
   ],
   "objects": [
-    "fonction de classe C^n+1",
+    "fonction de classe C^n",
     "polynôme de degré n",
-    "fonction rationnelle",
     "dérivées successives",
-    "somme de termes dérivés"
+    "développement limité",
+    "fonction prolongeable par continuité"
   ],
-  "content_hash": "d52e8daf95fef5a2e36c30fff047a5cc6cb00ba0877c688ebbaad2e79b414fd0",
+  "content_hash": "b9176dffc9c470eea2938263348ee7720eff4a72b5d521fe3cdba9960621b1b5",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:09:08.135Z"
+  "indexed_at": "2026-09-15T18:36:18.040Z"
 }

@@ -1,25 +1,28 @@
 {
   "uuid": "zL1k",
   "source_path": "crouzet/pcsi/02/zL1k.tex",
-  "summary": "Résoudre une inéquation rationnelle en déterminant les intervalles où l'expression est strictement positive.",
+  "summary": "Résoudre une inéquation rationnelle en déterminant les intervalles où l'expression est strictement positive, en excluant les valeurs qui annulent le dénominateur.",
   "concepts": [
     "inéquation rationnelle",
     "tableau de signes",
     "valeurs interdites",
-    "ensemble de solutions",
+    "ensemble de définition",
+    "produit de polynômes",
     "analyse de signe"
   ],
   "methods": [
-    "méthode du tableau de signes",
-    "factorisation",
-    "identification des racines et pôles"
+    "dressage de tableau de signes",
+    "identification des racines",
+    "analyse des intervalles",
+    "exclusion des points critiques"
   ],
   "objects": [
     "inéquation",
     "expression rationnelle",
-    "intervalle de solutions"
+    "polynômes du premier degré",
+    "valeurs interdites"
   ],
-  "content_hash": "31431b3f93384920284a8071150932e1fd13836f695a6d53c1e54189008d631f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:32:26.591Z"
+  "content_hash": "7e0b5499f004d16b808316f25c4f6e8d1c81779ef03a1c719f998d30e81f289c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:31:25.858Z"
 }

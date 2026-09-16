@@ -1,13 +1,14 @@
 {
   "uuid": "I2ta",
   "source_path": "exo7/6-L2/I2ta.tex",
-  "summary": "Un segment AB de longueur fixe se déplace dans le plan avec A sur l'axe Ox et B sur l'axe Oy, l'angle θ variant. On cherche les coordonnées d'un point M sur AB et la courbe qu'il décrit. Une partie de l'exercice traite d'un problème de tir entre un chasseur et un oiseau en mouvement rectiligne uniforme.",
+  "summary": "L'exercice modélise le mouvement d'un point M sur un segment AB se déplaçant dans le plan, avec A sur l'axe Ox et B sur l'axe Oy, et détermine la trajectoire de M. Une application numérique concerne un oiseau en mouvement rectiligne uniforme et un chasseur tirant une balle pour l'abattre, avec détermination de la direction de tir et de l'instant d'impact.",
   "concepts": [
     "paramétrisation de courbe plane",
     "mouvement rectiligne uniforme",
-    "équations de trajectoire",
-    "condition de rencontre",
-    "géométrie analytique"
+    "équations paramétriques",
+    "vitesse vectorielle",
+    "condition d'impact",
+    "cinématique du point"
   ],
   "methods": [
     "paramétrisation géométrique",
@@ -17,12 +18,12 @@
   ],
   "objects": [
     "segment mobile",
-    "point mobile M",
+    "point M",
     "vecteur vitesse",
     "vecteur position",
     "courbe plane"
   ],
-  "content_hash": "9efefb75de0b523b6dcf0d53778937480b0030cc00894c8e2d1ce47c8aa5af22",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T15:48:50.579Z"
+  "content_hash": "0b4d5eb2c22bd11d7728658ba9e446ce662d8e6a18c4b8e1263a86c010c5bf2d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:25:55.429Z"
 }

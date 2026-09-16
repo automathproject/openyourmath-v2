@@ -1,31 +1,31 @@
 {
   "uuid": "rz5t",
   "source_path": "exo7/1-L1/rz5t.tex",
-  "summary": "L'exercice demande de démontrer des propriétés d'espaces vectoriels de sous-ensembles d'applications linéaires, puis d'établir des isomorphismes et de calculer des dimensions en utilisant le théorème du rang.",
+  "summary": "L'exercice demande de démontrer que deux ensembles d'applications linéaires sont des sous-espaces vectoriels, d'établir des conditions équivalentes pour l'appartenance à ces ensembles, et de calculer leurs dimensions en utilisant le théorème du rang.",
   "concepts": [
-    "sous-espace vectoriel",
     "application linéaire",
-    "image d'une application",
-    "noyau d'une application",
+    "sous-espace vectoriel",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
     "théorème du rang",
     "isomorphisme d'espaces vectoriels",
-    "dimension d'un espace vectoriel",
-    "supplémentaire d'un sous-espace"
+    "dimension d'un espace vectoriel"
   ],
   "methods": [
-    "détermination de l'image et du noyau",
-    "construction d'un isomorphisme",
-    "calcul de dimension par théorème du rang",
-    "utilisation de supplémentaires"
+    "définition de sous-espace vectoriel",
+    "utilisation du théorème du rang",
+    "construction d'isomorphisme",
+    "calcul de dimension par restriction",
+    "introduction de supplémentaire"
   ],
   "objects": [
+    "application linéaire",
     "sous-espace vectoriel de $\\mathcal{L}(E)$",
-    "application linéaire $g$",
-    "image $\\Im g$",
-    "noyau $\\mathrm{Ker} g$",
-    "supplémentaire $I'$"
+    "noyau",
+    "image",
+    "isomorphisme"
   ],
-  "content_hash": "0d17d96c1633daa6b47f5a73142136a2d5fcbd3927ef3c2fce3b58a38ff2515d",
+  "content_hash": "b3debc6d78f53cfec1963b7ec946ef7f2eee467880b601b2273281a7fc559a6c",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:13:51.060Z"
+  "indexed_at": "2026-09-15T18:23:56.725Z"
 }

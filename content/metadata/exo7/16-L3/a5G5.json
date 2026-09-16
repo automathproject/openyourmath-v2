@@ -1,30 +1,28 @@
 {
   "uuid": "a5G5",
   "source_path": "exo7/16-L3/a5G5.tex",
-  "summary": "L'exercice demande d'étudier une intégrale complexe en utilisant le théorème des résidus. Il s'agit d'abord d'intégrer une fonction exponentielle sur un rectangle, puis d'analyser les pôles d'une fonction complexe et d'évaluer une intégrale sur un parallélogramme. On doit aussi montrer la convergence de certaines intégrales sur des segments.",
+  "summary": "L'exercice demande de calculer une intégrale gaussienne à l'aide du théorème des résidus, puis d'étudier les pôles d'une fonction complexe et d'évaluer une intégrale sur un contour particulier en utilisant des estimations de croissance.",
   "concepts": [
-    "fonction holomorphe",
     "théorème des résidus",
-    "pôle d'une fonction",
+    "intégrale de fonction complexe",
+    "pôles d'une fonction",
     "ordre d'un pôle",
-    "intégrale de contour",
-    "convergence d'intégrales"
+    "intégrale sur un contour",
+    "estimation de croissance"
   ],
   "methods": [
-    "intégration complexe",
-    "calcul de résidus",
-    "estimation de modules",
-    "théorème de Jordan",
-    "limite d'intégrales"
+    "intégration sur un contour rectangulaire",
+    "calcul des pôles",
+    "détermination de l'ordre des pôles",
+    "estimation de l'intégrale sur un segment"
   ],
   "objects": [
     "fonction exponentielle complexe",
     "fonction tangente complexe",
     "parallélogramme dans le plan complexe",
-    "segment orienté",
-    "intégrale de contour"
+    "segment orienté"
   ],
-  "content_hash": "2c0967209b5aee645219f63216655d42ebb8ca6fc46358e1dfb1a52692ac6d15",
+  "content_hash": "f13063611ddafcfd92ff6ed2826c3b150b0ba2dd340eaa850c3354e99c4494aa",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:26:28.758Z"
+  "indexed_at": "2026-09-15T18:24:33.082Z"
 }

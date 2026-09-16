@@ -1,11 +1,30 @@
 {
   "uuid": "IwCg",
   "source_path": "amscc/IwCg.tex",
-  "summary": "L'analyse révèle que la fonction donnée est une fonction paire, ce qui implique que tous ses coefficients de Fourier de type sinus (bₙ) sont nuls. Les coefficients de type cosinus (aₙ) sont calculés en exploitant la parité de la fonction et les propriétés des intégrales. Pour n ≥ 1, aₙ est nul si n est pair, et suit une formule spécifique si n est impair. La valeur moyenne de la fonction sur une période est 1/2, ce qui correspond à l'aire sous la courbe divisée par la longueur de la période.",
-  "concepts": [],
-  "methods": [],
-  "objects": [],
-  "content_hash": "d9043a46dfb85f57a91f968ff39509b68a31acc9a26e9817b847d4e30ba4ad9c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T11:55:40.650Z"
+  "summary": "L'exercice demande de calculer les coefficients de Fourier d'une fonction périodique en créneau définie sur ℝ, d'analyser sa parité et d'interpréter graphiquement le coefficient a₀. La fonction est paire et 2π-périodique, avec des valeurs 1 sur [-π/2, π/2] et 0 ailleurs sur [-π, π].",
+  "concepts": [
+    "fonction périodique",
+    "fonction paire",
+    "série de Fourier",
+    "coefficient de Fourier",
+    "intégrale d'une fonction périodique",
+    "parité des fonctions",
+    "valeur moyenne d'une fonction"
+  ],
+  "methods": [
+    "calcul des coefficients de Fourier",
+    "intégration sur un intervalle symétrique",
+    "utilisation de la parité pour simplifier les intégrales",
+    "discussion des cas selon la parité de n"
+  ],
+  "objects": [
+    "fonction en créneau",
+    "coefficient a₀",
+    "coefficient aₙ",
+    "coefficient bₙ",
+    "intégrale de fonction périodique"
+  ],
+  "content_hash": "2c95ba019a59f23d41b74080d31c9e3d40bd1e427211d8fd9f5f66779383acdf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:36:37.976Z"
 }

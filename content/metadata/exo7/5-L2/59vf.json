@@ -1,30 +1,30 @@
 {
   "uuid": "59vf",
   "source_path": "exo7/5-L2/59vf.tex",
-  "summary": "L'exercice étudie les propriétés de bornitude et de diamètre d'un ensemble borné A dans un espace vectoriel normé, ainsi que celles de son adhérence et de sa frontière. Il demande de comparer les diamètres de A, de son intérieur et de son adhérence, et d'analyser la structure de la frontière de A.",
+  "summary": "L'exercice étudie les propriétés topologiques d'une partie bornée A d'un espace vectoriel normé, notamment la bornitude de son adhérence et de sa frontière, ainsi que les relations entre leurs diamètres. Il explore aussi l'intersection des demi-droites issues de A avec sa frontière.",
   "concepts": [
     "espace vectoriel normé",
-    "ensemble borné",
+    "partie bornée",
     "adhérence",
     "frontière",
-    "intérieur",
     "diamètre d'un ensemble",
-    "demi-droite dans un espace vectoriel"
+    "continuité",
+    "convexité"
   ],
   "methods": [
     "utilisation de la définition de l'adhérence",
     "comparaison de diamètres",
-    "analyse de la structure de la frontière",
-    "utilisation de la définition de la frontière"
+    "étude de demi-droites",
+    "limite supérieure"
   ],
   "objects": [
-    "ensemble borné A",
-    "adhérence de A",
-    "frontière de A",
-    "intérieur de A",
-    "demi-droite issue d'un point de A"
+    "ensemble borné",
+    "adhérence d'un ensemble",
+    "frontière d'un ensemble",
+    "demi-droite",
+    "espace vectoriel normé"
   ],
-  "content_hash": "3cd7c1b33f3640169f4de4417a706d034e90dbef3134dc8064202c055aa218a9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:36:09.346Z"
+  "content_hash": "be50ab4b0c8186fea21f87f7614b8a9e80830d85bbf6464a0ef0d33bc5244d88",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:37:18.407Z"
 }

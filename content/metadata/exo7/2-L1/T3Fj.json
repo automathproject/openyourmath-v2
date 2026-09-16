@@ -1,25 +1,28 @@
 {
   "uuid": "T3Fj",
   "source_path": "exo7/2-L1/T3Fj.tex",
-  "summary": "Calculer l'aire d'une surface de révolution engendrée par une courbe paramétrée, en utilisant une intégrale. La courbe est définie par une équation impliquant un paramètre λ.",
+  "summary": "L'exercice demande de calculer l'aire d'une courbe paramétrée en deux façons : par intégration directe et en exploitant sa nature géométrique. La courbe est définie par des équations paramétriques en fonction de t et d'un paramètre λ.",
   "concepts": [
-    "intégrale de surface",
-    "surface de révolution",
-    "paramétrisation de courbe",
-    "calcul d'aire",
-    "fonction trigonométrique"
+    "courbe paramétrée",
+    "aire sous une courbe",
+    "intégrale paramétrique",
+    "changement de variable",
+    "géométrie différentielle",
+    "paramétrisation cartésienne"
   ],
   "methods": [
     "intégration par paramétrisation",
-    "changement de variable",
-    "calcul d'intégrale impropre"
+    "reconnaissance de conique",
+    "calcul d'intégrale trigonométrique",
+    "simplification algébrique"
   ],
   "objects": [
     "courbe paramétrée",
-    "aire sous une courbe",
+    "aire plane",
+    "intégrale définie",
     "paramètre λ"
   ],
-  "content_hash": "17e906673f65b7f5f39d9e3d6be4c50b6f2c0a4b916f384a4fdfd25adfb05584",
+  "content_hash": "00fec78f1cab9dbfb18156b9220942ac33d925dfbb649db71ab7631a6e5e3df8",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:33:20.154Z"
+  "indexed_at": "2026-09-15T18:24:55.460Z"
 }

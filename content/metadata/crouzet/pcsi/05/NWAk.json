@@ -1,29 +1,31 @@
 {
   "uuid": "NWAk",
   "source_path": "crouzet/pcsi/05/NWAk.tex",
-  "summary": "L'exercice demande d'écrire en compréhension plusieurs ensembles de suites réelles (majorées, bornées, convergentes, etc.) et de démontrer des relations d'inclusion entre eux. Il mobilise des propriétés classiques des suites.",
+  "summary": "L'exercice demande d'écrire en compréhension divers ensembles de suites réelles (majorées, bornées, convergentes, etc.), de démontrer des inclusions strictes entre ces ensembles, et d'étudier leurs intersections ou unions. Il mobilise des propriétés classiques des suites.",
   "concepts": [
     "suite réelle",
-    "suite majorée",
     "suite bornée",
+    "suite majorée",
     "suite convergente",
     "théorème de convergence monotone",
-    "partie d'un ensemble",
+    "ensemble en compréhension",
+    "inclusion stricte",
     "famille de parties disjointes"
   ],
   "methods": [
-    "écriture en compréhension",
+    "écriture d'ensemble en compréhension",
     "démonstration d'inclusion",
     "utilisation de contre-exemples",
-    "double inclusion"
+    "double inclusion",
+    "partie entière"
   ],
   "objects": [
     "suite géométrique",
+    "suite croissante",
     "ensemble de suites",
-    "limite de suite",
-    "raison d'une suite géométrique"
+    "famille de parties"
   ],
-  "content_hash": "2489ffd0cd763d936a7066af1651b8100047f3e24aa9bca0a060674ff97cb795",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:06:52.548Z"
+  "content_hash": "5b9bb4e376e7eb45d82b813a2c5466379c467ce39b79be28f10b6b6dbca784db",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:20.457Z"
 }

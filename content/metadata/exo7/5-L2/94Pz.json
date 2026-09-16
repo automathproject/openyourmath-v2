@@ -1,24 +1,27 @@
 {
   "uuid": "94Pz",
   "source_path": "exo7/5-L2/94Pz.tex",
-  "summary": "L'exercice demande d'étudier la continuité d'une fonction de deux variables définie par morceaux sur ℝ² et d'examiner l'existence de ses dérivées partielles.",
+  "summary": "Étude de la continuité et de l'existence des dérivées partielles d'une fonction de deux variables définie par morceaux sur ℝ².",
   "concepts": [
     "fonction de plusieurs variables",
     "continuité",
     "dérivées partielles",
     "fonction définie par morceaux",
-    "limite en un point"
+    "limite en un point",
+    "continuité en un point",
+    "dérivabilité"
   ],
   "methods": [
-    "étude de continuité",
-    "calcul de dérivées partielles",
-    "analyse de cas"
+    "étude de la continuité par définition",
+    "calcul des limites partielles",
+    "calcul des dérivées partielles"
   ],
   "objects": [
     "fonction de deux variables",
-    "dérivées partielles"
+    "dérivées partielles",
+    "limites partielles"
   ],
-  "content_hash": "0240d806140e6317de841c046721f4f8f629fb37ad9313da9d471a16a7ec2386",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T22:46:36.579Z"
+  "content_hash": "3492b9f69cb6202b11c64c3ae5161699bc526bfd41fb5fa836ef92ff2d220aef",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:28:50.167Z"
 }

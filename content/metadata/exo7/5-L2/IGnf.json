@@ -1,25 +1,27 @@
 {
   "uuid": "IGnf",
   "source_path": "exo7/5-L2/IGnf.tex",
-  "summary": "L'exercice demande de montrer la convergence simple d'une suite de fonctions définies sur [0,1] et d'analyser la nature de cette convergence (uniformité et monotonie).",
+  "summary": "On étudie la convergence simple, uniforme et monotone d'une suite de fonctions définies sur [0,1] par f_n(x) = ((x + x^n)/2)^n. La fonction limite est à déterminer.",
   "concepts": [
     "convergence simple",
     "convergence uniforme",
     "convergence monotone",
+    "fonction limite",
     "continuité",
-    "fonction définie sur un intervalle"
+    "inégalité de majoration"
   ],
   "methods": [
-    "étude limite point par point",
-    "comparaison de fonctions",
-    "analyse de la continuité"
+    "étude point par point",
+    "comparaison de termes",
+    "analyse de la limite",
+    "vérification de la continuité"
   ],
   "objects": [
     "suite de fonctions",
-    "fonction définie sur [0,1]",
-    "limite de fonctions"
+    "fonction définie sur un intervalle",
+    "fonction limite"
   ],
-  "content_hash": "9fecde0447bda49ff5fa2a04570eb3ddc4c9ac2ca0722c8d2c09bcd07259cac8",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T04:33:06.216Z"
+  "content_hash": "7bad48afd1b8da09730285a03b5fca2aa44bb62f3e79c4d6e8baf6eaa3e2a156",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:33:30.091Z"
 }

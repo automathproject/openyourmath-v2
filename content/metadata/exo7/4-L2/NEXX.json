@@ -1,12 +1,12 @@
 {
   "uuid": "NEXX",
   "source_path": "exo7/4-L2/NEXX.tex",
-  "summary": "L'exercice demande de montrer que l'application φ définie par une intégrale sur [-1,1] est un produit scalaire sur l'espace des polynômes réels. Ensuite, il s'agit de prouver que la famille des polynômes de Tchebychev de première espèce forme une base orthogonale de cet espace préhilbertien, et de déterminer la norme de chaque polynôme T_n.",
+  "summary": "L'exercice demande de montrer que l'application φ définie par une intégrale sur [-1,1] est un produit scalaire sur l'espace des polynômes réels. Ensuite, il s'agit de prouver que la famille des polynômes de Tchebychev de première espèce forme une base orthogonale de l'espace préhilbertien associé, et de déterminer la norme de ces polynômes.",
   "concepts": [
     "produit scalaire",
     "espace préhilbertien",
     "base orthogonale",
-    "polynôme de Tchebychev",
+    "polynômes de Tchebychev",
     "intégrabilité",
     "fonction continue",
     "norme d'un vecteur",
@@ -15,17 +15,17 @@
   "methods": [
     "intégration par changement de variable",
     "utilisation des propriétés des polynômes de Tchebychev",
-    "détermination de l'orthogonalité par intégration",
+    "détermination de l'orthogonalité",
     "calcul de norme via intégrale"
   ],
   "objects": [
     "polynôme réel",
     "polynôme de Tchebychev",
-    "produit scalaire φ",
-    "espace E = ℝ[X]",
-    "famille (T_n)"
+    "espace vectoriel de polynômes",
+    "produit scalaire défini par intégrale",
+    "norme de polynôme"
   ],
-  "content_hash": "b7842c4d24f3f374f1948410edd5c6d178024ddeee3ff7347ae656851bbe846f",
+  "content_hash": "1ce4dfa33357f6696257d063d214a2713439bd2743c000949575f33217d0e7b9",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:44:21.166Z"
+  "indexed_at": "2026-09-15T18:28:16.799Z"
 }

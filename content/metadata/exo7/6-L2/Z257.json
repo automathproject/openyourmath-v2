@@ -1,29 +1,27 @@
 {
   "uuid": "Z257",
   "source_path": "exo7/6-L2/Z257.tex",
-  "summary": "L'exercice demande d'identifier et de caractériser les propriétés géométriques de trois coniques données par leurs équations cartésiennes : une parabole, une parabole sous forme implicite et une demi-parabole définie par une racine carrée.",
+  "summary": "L'exercice demande d'identifier et de caractériser les éléments géométriques (sommet, axe focal, foyer, directrice) de trois courbes données par leurs équations cartésiennes dans un repère orthonormé.",
   "concepts": [
-    "équation cartésienne de conique",
     "parabole",
-    "sommet de parabole",
+    "équation cartésienne",
+    "sommet d'une conique",
     "axe focal",
-    "paramètre p",
-    "foyer de parabole",
-    "directrice de parabole",
-    "demi-parabole"
+    "foyer d'une conique",
+    "directrice d'une conique",
+    "paramètre d'une parabole"
   ],
   "methods": [
     "complétion du carré",
-    "identification des éléments caractéristiques",
+    "identification des éléments caractéristiques d'une parabole",
     "transformation d'équation"
   ],
   "objects": [
-    "équation de parabole",
-    "demi-parabole",
-    "foyer",
-    "directrice"
+    "équation cartésienne de parabole",
+    "repère orthonormé",
+    "courbe plane"
   ],
-  "content_hash": "36162022cbc803b24d941ad9e5f91a577b5ee10c42f952463640a8a2cfbf0287",
+  "content_hash": "b9bea5b6e8ec93aa2238c5246fef247aa46f3c133a000e51f056b50004cf4d58",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:40:33.304Z"
+  "indexed_at": "2026-09-15T18:25:00.566Z"
 }

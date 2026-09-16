@@ -1,31 +1,33 @@
 {
   "uuid": "2ynq",
   "source_path": "exo7/11-L3/2ynq.tex",
-  "summary": "L'exercice étudie une courbe paramétrée dans ℝ³. Il demande d'analyser sa régularité, de comparer la longueur d'une portion de la courbe à une valeur de référence, de déterminer une surface quadrique contenant cette courbe, d'identifier une transformation géométrique conservant la courbe, de décrire son allure et de calculer sa fonction torsion.",
+  "summary": "L'exercice étudie une courbe paramétrée dans ℝ³. Il demande d'en analyser la régularité, de comparer la longueur d'une portion de la courbe à une valeur donnée, de déterminer une quadrique contenant cette courbe, d'identifier une isométrie la conservant, d'en décrire l'allure et de calculer sa fonction torsion.",
   "concepts": [
     "courbe paramétrée",
     "régularité d'une courbe",
-    "longueur d'une courbe",
-    "surface quadrique",
-    "isométrie",
-    "torsion d'une courbe",
-    "déplacement dans ℝ³"
-  ],
-  "methods": [
-    "calcul de la dérivée",
-    "intégration",
-    "calcul de déterminant",
-    "produit vectoriel",
-    "analyse de symétrie"
-  ],
-  "objects": [
-    "courbe paramétrée",
-    "portion de courbe",
+    "longueur d'arc",
     "quadrique",
     "isométrie",
-    "fonction torsion"
+    "torsion d'une courbe",
+    "produit vectoriel",
+    "déterminant"
   ],
-  "content_hash": "79ff7284fc36837a2ad3977491909e2db320629d032a7e34c3b2506ee7e2c47b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:12:11.854Z"
+  "methods": [
+    "calcul de dérivées",
+    "intégration de la norme du vecteur vitesse",
+    "identification d'équation de surface",
+    "calcul de la torsion via le produit vectoriel",
+    "détermination d'isométrie"
+  ],
+  "objects": [
+    "courbe paramétrée dans ℝ³",
+    "vecteur vitesse",
+    "vecteur accélération",
+    "vecteur courbure",
+    "quadrique",
+    "isométrie"
+  ],
+  "content_hash": "e9fed74d71b1944da2e8f877583bd8b474a7e6f85dd05dcf5570807f34dc408d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:35:42.103Z"
 }

@@ -1,28 +1,25 @@
 {
   "uuid": "4fdI",
   "source_path": "exo7/5-L2/4fdI.tex",
-  "summary": "L'exercice demande de démontrer deux propriétés fondamentales des bornes supérieures : la relation entre la borne supérieure et un majorant donné, et la monotonie de la borne supérieure par inclusion d'ensembles.",
+  "summary": "L'exercice demande de démontrer deux propriétés fondamentales des bornes supérieures : d'abord que la borne supérieure d'une partie majorée est elle-même majorée, puis que l'inclusion de deux parties majorées préserve l'ordre des bornes supérieures.",
   "concepts": [
     "borne supérieure",
-    "majoration",
+    "partie majorée de ℝ",
     "inclusion d'ensembles",
-    "propriétés des bornes supérieures",
-    "topologie de la droite réelle",
-    "ensembles majorés",
-    "relation d'ordre"
+    "propriété d'ordre",
+    "axiome de la borne supérieure"
   ],
   "methods": [
-    "raisonnement par définition",
-    "utilisation de la définition de la borne supérieure",
-    "manipulation d'inégalités"
+    "raisonnement par l'absurde",
+    "définition de la borne supérieure",
+    "utilisation de l'inclusion"
   ],
   "objects": [
     "parties de ℝ",
     "borne supérieure",
-    "majorant",
-    "ensembles majorés"
+    "inclusion d'ensembles"
   ],
-  "content_hash": "895938c45fd62fbf20dd14099633e8df3d250927a1cc6baaf414f042ba0e56d7",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:35:53.183Z"
+  "content_hash": "f94bce3dc1d8d66533c43f5a6b66ffe98d2be360930ef1838fb7bc1d87c946d4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:37:15.456Z"
 }

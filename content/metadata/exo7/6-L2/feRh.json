@@ -1,26 +1,31 @@
 {
   "uuid": "feRh",
   "source_path": "exo7/6-L2/feRh.tex",
-  "summary": "L'exercice demande de déterminer la condition d'existence d'une homothétie envoyant deux paires de points donnés l'une sur l'autre, puis de construire le centre d'une homothétie ou d'une rotation à partir des images de deux points.",
+  "summary": "L'exercice demande de déterminer la condition nécessaire pour qu'une homothétie existe entre quatre points donnés du plan, puis de construire le centre d'une homothétie ou d'une rotation à partir de deux points et de leurs images.",
   "concepts": [
     "homothétie",
-    "rotation",
     "géométrie affine euclidienne",
+    "rotation",
     "alignement de points",
-    "centre de transformation"
+    "transformation géométrique",
+    "centre d'homothétie",
+    "propriété des homothéties"
   ],
   "methods": [
     "construction géométrique",
-    "analyse de cas",
-    "utilisation de propriétés des transformations"
+    "utilisation des propriétés des homothéties",
+    "tracé de parallèles",
+    "intersection de droites",
+    "distinction des cas"
   ],
   "objects": [
     "points du plan",
     "homothétie",
     "rotation",
-    "centre de transformation"
+    "centre de transformation",
+    "droites parallèles"
   ],
-  "content_hash": "41878a9dcd10ec17f4472f6c28022136938e989e2f417eb81b1d0d0c6226ddd9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T03:50:49.376Z"
+  "content_hash": "6e742e5561f0792db506e69d6df37564c509c815ef4a69d4065538565cbd16f5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:33:20.876Z"
 }

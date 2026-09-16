@@ -1,24 +1,26 @@
 {
   "uuid": "RtEm",
   "source_path": "exo7/6-L2/RtEm.tex",
-  "summary": "L'exercice pose deux questions sur les propriétés des sous-espaces affines dans des espaces vectoriels de dimension finie. La première question concerne l'intersection de deux plans dans ℝ³, et la seconde porte sur la dimension d'un sous-espace affine défini par deux équations affines indépendantes dans ℝⁿ.",
+  "summary": "L'exercice interroge sur l'existence de deux plans dans l'espace affine ℝ³ ayant un unique point d'intersection, puis sur la dimension d'un sous-espace affine défini par deux équations affines indépendantes dans ℝⁿ.",
   "concepts": [
     "géométrie affine",
+    "espace affine",
     "sous-espace affine",
-    "dimension d'un espace vectoriel",
+    "équation affine",
     "indépendance linéaire",
-    "intersection de sous-espaces affines"
+    "dimension d'un espace vectoriel",
+    "intersection de plans"
   ],
   "methods": [
-    "analyse de la dimension",
-    "étude des systèmes d'équations linéaires"
+    "analyse de l'intersection de sous-espaces affines",
+    "calcul de dimension par indépendance des équations"
   ],
   "objects": [
     "plans dans ℝ³",
     "sous-espace affine dans ℝⁿ",
     "équations affines"
   ],
-  "content_hash": "57fbcdc96cd2bb66ab541129084f316beaaaa45e4b06868489600c84ff4a1c36",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:53:38.257Z"
+  "content_hash": "8586786f67c85f12b7f2a86b541d2d89961aa98f4d8c1b21f2da4be02bbae573",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:32:17.222Z"
 }

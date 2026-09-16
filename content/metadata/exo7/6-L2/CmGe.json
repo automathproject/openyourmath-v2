@@ -1,26 +1,27 @@
 {
   "uuid": "CmGe",
   "source_path": "exo7/6-L2/CmGe.tex",
-  "summary": "On considère un cercle avec un diamètre et un point A sur ce diamètre. Une droite est tracée depuis A jusqu'à un point B sur le cercle, formant un angle droit avec le diamètre. La tangente en P coupe le diamètre prolongé en C. On doit démontrer que CA = CP.",
+  "summary": "Dans un cercle, un point A est placé sur le diamètre et B est l'extrémité d'un rayon perpendiculaire à ce diamètre. Une droite (BA) coupe le cercle en P, et la tangente en P coupe le diamètre prolongé en C. Il faut démontrer que CA = CP.",
   "concepts": [
-    "géométrie affine",
     "triangle isocèle",
-    "angles opposés par le sommet",
+    "propriété des angles opposés par le sommet",
     "tangente à un cercle",
-    "propriétés des angles"
+    "angles au centre et à la circonférence",
+    "isométrie"
   ],
   "methods": [
-    "utilisation des angles pour caractériser un triangle isocèle",
-    "analyse des angles dans un triangle",
-    "propriétés des tangentes"
+    "caractérisation des triangles isocèles par les angles",
+    "utilisation des angles opposés par le sommet",
+    "analyse des angles dans un triangle isocèle"
   ],
   "objects": [
     "cercle",
     "diamètre",
+    "rayon",
     "tangente",
-    "triangle isocèle"
+    "triangle"
   ],
-  "content_hash": "c8dc2a7fa895542f42e59f5f6eac9bee33ec8b2977c7ef9412789854cd4ee6bd",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:41:53.056Z"
+  "content_hash": "e314422848dd844ff1bf2f77977fd529ed7dc0910a92da25616c44c94dd96b6b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:32:05.669Z"
 }

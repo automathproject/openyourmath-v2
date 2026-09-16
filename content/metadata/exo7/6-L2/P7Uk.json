@@ -1,7 +1,7 @@
 {
   "uuid": "P7Uk",
   "source_path": "exo7/6-L2/P7Uk.tex",
-  "summary": "L'exercice demande de justifier qu'un triplet de vecteurs issus d'un point hors d'un plan forme un repère cartésien, puis d'écrire les coordonnées des points et de déterminer l'équation cartésienne du plan contenant trois points non alignés.",
+  "summary": "L'exercice demande de justifier pourquoi un triplet de vecteurs issus d'un point hors d'un plan forme un repère cartésien, puis d'écrire les coordonnées de points et de déterminer l'équation cartésienne d'un plan dans cet espace.",
   "concepts": [
     "géométrie affine euclidienne",
     "repère cartésien",
@@ -11,9 +11,9 @@
     "équation cartésienne d'un plan"
   ],
   "methods": [
-    "vérification de la liberté des vecteurs",
+    "détermination de la base vectorielle",
     "calcul de coordonnées",
-    "détermination d'une équation de plan"
+    "écriture d'équation cartésienne"
   ],
   "objects": [
     "repère cartésien",
@@ -21,7 +21,7 @@
     "vecteurs",
     "points de l'espace"
   ],
-  "content_hash": "0ae6039de1b1ff40aa228f6d1a851b83e41462fc90bbeda3057bdf494eb793e4",
+  "content_hash": "118d016f6fcfb11b841c2d9e21beb3dc229f29726d0b62f9f67e63fb71aec07c",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:25:57.881Z"
+  "indexed_at": "2026-09-15T18:33:04.044Z"
 }

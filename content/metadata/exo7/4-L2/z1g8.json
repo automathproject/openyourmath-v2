@@ -1,25 +1,27 @@
 {
   "uuid": "z1g8",
   "source_path": "exo7/4-L2/z1g8.tex",
-  "summary": "L'exercice demande de factoriser le polynôme P(x) = x⁴ + 4x³ - 81x² - 16x + 308 en utilisant la méthode de Hörner pour identifier et factoriser ses racines.",
+  "summary": "L'exercice demande de factoriser le polynôme P(x) = x⁴ + 4x³ - 81x² - 16x + 308 en utilisant la méthode de Hörner pour les divisions successives par (x-2) puis (x+2), après avoir vérifié que ces valeurs sont racines de P(x) ou de ses quotients.",
   "concepts": [
     "racine d'un polynôme",
     "factorisation de polynôme",
     "méthode de Hörner",
-    "polynôme scindé",
-    "division euclidienne des polynômes"
+    "division euclidienne des polynômes",
+    "polynôme scindé"
   ],
   "methods": [
     "méthode de Hörner",
-    "factorisation par racines évidentes",
-    "division polynomiale"
+    "division euclidienne",
+    "recherche de racines",
+    "factorisation successive"
   ],
   "objects": [
     "polynôme de degré 4",
-    "racines du polynôme",
+    "racine entière",
+    "quotient de division",
     "facteurs linéaires"
   ],
-  "content_hash": "97790707a1176cbc6430dd051defbd9f452d749820fd6dade5548427dfa9f9c9",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:24:58.393Z"
+  "content_hash": "b942ed0d0e383b7b6ebdad5c9fe951b74a03dd6e11633d2aaee0bfb490c76738",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:30:17.536Z"
 }

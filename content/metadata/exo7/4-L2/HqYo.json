@@ -1,28 +1,27 @@
 {
   "uuid": "HqYo",
   "source_path": "exo7/4-L2/HqYo.tex",
-  "summary": "Soit un espace vectoriel euclidien E et un endomorphisme f de E tel que la norme de f(x) est inférieure ou égale à la norme de x pour tout x dans E. On demande de montrer une égalité de normes impliquant f(x) et x, puis d'en déduire une inclusion entre noyaux d'endomorphismes.",
+  "summary": "On considère un endomorphisme d'un espace vectoriel euclidien borné par l'identité. On demande de montrer une égalité de normes pour un vecteur fixe de l'adjoint de l'endomorphisme, puis d'en déduire une inclusion entre noyaux.",
   "concepts": [
     "endomorphisme orthogonal",
-    "espace vectoriel euclidien",
     "adjoint d'un endomorphisme",
+    "espace vectoriel euclidien",
     "norme d'un vecteur",
     "noyau d'un endomorphisme",
-    "inégalité de norme"
+    "inclusion d'espaces vectoriels"
   ],
   "methods": [
     "manipulation d'inégalités de normes",
-    "utilisation de l'adjoint",
-    "calcul de normes au carré",
-    "démonstration par inclusion"
+    "utilisation de la définition de l'adjoint",
+    "calcul de normes au carré"
   ],
   "objects": [
-    "endomorphisme f",
-    "vecteur x",
-    "noyau ker(f* - Id)",
-    "noyau ker(f - Id)"
+    "endomorphisme borné",
+    "vecteur fixe",
+    "noyau d'un endomorphisme",
+    "adjoint d'un endomorphisme"
   ],
-  "content_hash": "2b1be8b58747ab1ff5353fafe0fc63e840072f948cf33a5f9cf33c9157ab97c4",
+  "content_hash": "d3ad41c00860b87d134937160b9cd280d75544b3c6ddd96434f3adef323843b2",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:42:13.371Z"
+  "indexed_at": "2026-09-15T18:27:05.579Z"
 }

@@ -1,32 +1,30 @@
 {
   "uuid": "D0OG",
   "source_path": "exo7/4-L2/D0OG.tex",
-  "summary": "L'exercice demande de déterminer le noyau et l'image d'une application linéaire définie par une matrice 3x3, puis d'étudier sa diagonalisation en calculant son polynôme caractéristique, ses valeurs propres, et une base de vecteurs propres.",
+  "summary": "L'exercice demande d'analyser un endomorphisme de ℝ³ défini par une matrice carrée 3x3. Il faut déterminer le noyau et l'image de l'application linéaire, calculer son polynôme caractéristique et ses valeurs propres, justifier sa diagonalisabilité, et trouver une base de vecteurs propres.",
   "concepts": [
+    "endomorphisme",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
     "polynôme caractéristique",
-    "valeurs propres",
+    "valeur propre",
     "diagonalisation",
-    "noyau d'un endomorphisme",
-    "image d'un endomorphisme",
-    "vecteurs propres",
+    "vecteur propre",
     "matrice semblable"
   ],
   "methods": [
     "calcul de polynôme caractéristique",
     "recherche de valeurs propres",
-    "vérification de diagonalisabilité",
-    "construction de base de vecteurs propres"
+    "détermination de sous-espaces propres",
+    "vérification de diagonalisabilité"
   ],
   "objects": [
     "matrice 3x3",
-    "application linéaire",
-    "polynôme caractéristique",
-    "valeurs propres",
-    "vecteurs propres",
-    "noyau",
-    "image"
+    "endomorphisme de ℝ³",
+    "base de vecteurs propres",
+    "matrice diagonale"
   ],
-  "content_hash": "711fddbbe87772203381a531f539a500fff5684c7b0ac5fa200d92a763ec6f32",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T10:24:25.820Z"
+  "content_hash": "5cef4b536ed02c2f7202337a1f406c24c5c6fb7bd1511a1e84d183604b58ce2c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:34:26.329Z"
 }

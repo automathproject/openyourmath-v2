@@ -1,27 +1,31 @@
 {
   "uuid": "idAb",
   "source_path": "crouzet/pcsi/02/idAb.tex",
-  "summary": "Résoudre des équations impliquant des valeurs absolues et des racines carrées, avec des inconnues réelles. L'énoncé demande de trouver les solutions des équations données.",
+  "summary": "Résolution d'équations de divers types (valeur absolue, polynomiale, radicale) avec des inconnues réelles. Les équations impliquent des manipulations algébriques et des propriétés des fonctions.",
   "concepts": [
     "valeur absolue",
+    "équation polynomiale",
     "équation du second degré",
     "discriminant",
     "domaine de définition",
-    "équation polynomiale"
+    "fonction racine carrée",
+    "changement de variable"
   ],
   "methods": [
+    "développement",
     "résolution par cas",
     "calcul du discriminant",
-    "changement de variable",
-    "développement d'expression"
+    "élévation au carré",
+    "restriction du domaine"
   ],
   "objects": [
-    "équation de valeur absolue",
-    "équation polynomiale",
+    "équation à valeur absolue",
+    "équation quadratique",
+    "équation de degré 4",
     "racine carrée",
-    "solution réelle"
+    "polynôme du second degré"
   ],
-  "content_hash": "6f087e366a11b63840a907fb5a5abae2f6e79bb18ce37ac7bbdb1cdcc1a0fdbc",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:31:21.525Z"
+  "content_hash": "d911eb92ea6ce90b23858670d89c9c2b4a58cf5079fef594db65227a1909dcd5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:31:07.466Z"
 }

@@ -1,33 +1,36 @@
 {
   "uuid": "bkxg",
   "source_path": "exo7/10-L3/bkxg.tex",
-  "summary": "L'exercice demande de déterminer le centre de groupes linéaires spéciaux sur des corps finis et de calculer l'ordre de leurs groupes projectifs. Il aborde aussi la conjugaison de matrices et les propriétés des involutions dans ces groupes.",
+  "summary": "L'exercice demande de déterminer le centre et l'ordre de groupes projectifs spécial linéaires sur des corps finis, d'étudier l'ordre et la conjugaison de matrices dans SL(4,ℤ₂), et de prouver que les involutions de PSL(3,ℤ₄) sont associées à des transvections.",
   "concepts": [
-    "groupe linéaire spécial",
-    "groupe projectif linéaire spécial",
+    "groupe fini",
+    "groupe spécial linéaire",
+    "groupe projectif spécial linéaire",
     "centre d'un groupe",
-    "ordre d'un groupe",
+    "ordre d'un élément",
     "conjugaison de matrices",
     "involution",
     "transvection",
-    "homothétie",
-    "théorème de Lagrange"
+    "théorème de Lagrange",
+    "caractéristique d'un corps"
   ],
   "methods": [
     "calcul de l'ordre d'un groupe",
-    "analyse des matrices de conjugaison",
-    "étude des valeurs propres",
+    "détermination du centre d'un groupe",
+    "analyse des valeurs propres",
+    "étude des espaces propres",
     "utilisation des propriétés des corps finis",
-    "détermination du centre d'un groupe"
+    "preuve par contradiction"
   ],
   "objects": [
     "matrice de SL(4,ℤ₂)",
     "matrice de SL(3,ℤ₄)",
-    "groupe PSL(4,ℤ₂)",
-    "groupe PSL(3,ℤ₄)",
-    "homographie involutive"
+    "homographie involutive",
+    "transvection",
+    "plan de points fixes",
+    "groupe projectif spécial linéaire"
   ],
-  "content_hash": "4a8bfd9e8bb3d844b0c6890a7838cbf958d61a769e63acc5d432f8b47ff3b4ef",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T00:59:24.222Z"
+  "content_hash": "92cf9bb747bb4aae49e1865c9c83af92ecb0fa96135df6d92f45f1f7bc27515c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:29:24.386Z"
 }

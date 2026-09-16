@@ -1,26 +1,25 @@
 {
   "uuid": "AHS6",
   "source_path": "exo7/2-L1/AHS6.tex",
-  "summary": "On étudie une fonction positive, bornée, deux fois dérivable sur ℝ+ avec une inégalité différentielle sur sa dérivée seconde. On demande de prouver l'existence et la valeur de la limite de sa dérivée première en +∞, puis de montrer que la fonction est décroissante et tend vers 0 en +∞.",
+  "summary": "On considère une fonction positive, bornée et deux fois dérivable sur ℝ+ vérifiant une inégalité différentielle impliquant sa dérivée seconde. On demande de prouver que sa dérivée première admet une limite en +∞, puis que la fonction elle-même est décroissante et tend vers 0 en +∞.",
   "concepts": [
     "inégalité différentielle",
     "dérivabilité",
     "limite de fonction",
     "fonction bornée",
-    "dérivée seconde"
+    "croissance décroissance"
   ],
   "methods": [
     "analyse asymptotique",
-    "comparaison de termes dominants",
-    "étude de la monotonie"
+    "utilisation de l'inégalité différentielle",
+    "étude des limites"
   ],
   "objects": [
     "fonction dérivable",
-    "dérivée première",
     "dérivée seconde",
     "limite en +∞"
   ],
-  "content_hash": "70ab4bff9bc2ebe9c297f1d678a31f24a139bcc42ea945720043a59705146fe4",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T16:59:03.892Z"
+  "content_hash": "789d8fca62b02e21a6dc7277582585bd1ce6553e9b56bb5977d2cfa8b1dd81f7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:26:30.941Z"
 }

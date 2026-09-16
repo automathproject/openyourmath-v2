@@ -1,7 +1,7 @@
 {
   "uuid": "LAtu",
   "source_path": "crouzet/pcsi/05/LAtu.tex",
-  "summary": "L'exercice demande de démontrer des propriétés d'injectivité et de surjectivité pour des applications composées. Il étudie les implications de ces propriétés sur les applications individuelles.",
+  "summary": "L'exercice demande de démontrer des propriétés d'injectivité, surjectivité et bijectivité pour des compositions d'applications entre ensembles. Il explore les implications de ces propriétés sur les applications composantes.",
   "concepts": [
     "injectivité",
     "surjectivité",
@@ -17,11 +17,11 @@
     "composition d'applications"
   ],
   "objects": [
-    "applications",
-    "ensembles",
-    "composée d'applications"
+    "applications entre ensembles",
+    "composée d'applications",
+    "application réciproque"
   ],
-  "content_hash": "a9eb9091e7905aa7166324c8f072545da97d1fac4d22646ca1d9f8fa1d7694a5",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T19:06:37.349Z"
+  "content_hash": "aa57358bcf5e1ac00cde15255e6dc67d6f2ea7f8d36c16fa1afbb70d944c8214",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:17.146Z"
 }

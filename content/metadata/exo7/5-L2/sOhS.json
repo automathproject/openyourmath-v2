@@ -1,7 +1,7 @@
 {
   "uuid": "sOhS",
   "source_path": "exo7/5-L2/sOhS.tex",
-  "summary": "L'exercice demande de calculer les polynômes de Bernstein associés à trois fonctions simples (constante, linéaire, quadratique) sur l'intervalle [0,1], puis d'en déduire une identité algébrique impliquant une somme pondérée par des coefficients binomiaux.",
+  "summary": "L'exercice demande de calculer le polynôme de Bernstein associé à des fonctions simples (constante, linéaire, quadratique) et d'en déduire une identité algébrique impliquant une somme pondérée par des coefficients binomiaux.",
   "concepts": [
     "polynôme de Bernstein",
     "binôme de Newton",
@@ -14,18 +14,19 @@
   "methods": [
     "développement binomial",
     "manipulation algébrique",
-    "réécriture d'expression",
-    "calcul de somme discrète",
-    "factorisation"
+    "réécriture de sommes",
+    "substitution de variables",
+    "calcul de coefficients"
   ],
   "objects": [
     "polynôme de Bernstein",
-    "fonction polynomiale",
-    "coefficient binomial",
+    "fonction constante",
+    "fonction linéaire",
+    "fonction quadratique",
     "somme pondérée",
-    "expression algébrique"
+    "coefficient binomial"
   ],
-  "content_hash": "d5b9b57df7a882300af10c2d7b8247a1bad8c9c157c206aac28743a77de143b3",
+  "content_hash": "107bb0583c3e6b0c88916644c10adfcb1b42ee668e3c18762d54d835d4c5783e",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:09:48.803Z"
+  "indexed_at": "2026-09-15T18:36:24.828Z"
 }

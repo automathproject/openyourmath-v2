@@ -1,24 +1,30 @@
 {
   "uuid": "t5TT",
   "source_path": "exo7/1-L1/t5TT.tex",
-  "summary": "Construire deux applications linéaires bijectives u et v telles que f = u - v dans trois cas différents : f bijective, Ker f + Im f = E, et f quelconque.",
+  "summary": "Construire deux applications linéaires bijectives u et v telles que f = u - v, où f est une application linéaire d'un espace vectoriel E dans lui-même, dans trois cas distincts : f bijective, Ker(f) + Im(f) = E, et f quelconque.",
   "concepts": [
     "application linéaire",
     "bijectivité",
     "noyau d'une application linéaire",
     "image d'une application linéaire",
     "théorème du rang",
-    "espace vectoriel de dimension finie"
+    "somme de sous-espaces vectoriels",
+    "dimension d'un espace vectoriel"
   ],
   "methods": [
     "décomposition d'une application linéaire",
-    "construction explicite d'applications linéaires"
+    "construction explicite d'applications linéaires",
+    "utilisation de bases adaptées",
+    "vérification de la bijectivité"
   ],
   "objects": [
+    "espace vectoriel",
     "application linéaire",
-    "espace vectoriel de dimension n"
+    "noyau",
+    "image",
+    "somme de sous-espaces"
   ],
-  "content_hash": "9156854e130a08447e4a45bf82011cb611aa4bef5fede332cf39b1842dff166f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T13:57:53.947Z"
+  "content_hash": "e7732ef0a69a7dd9af493c2cc9ac57340ce21ec053e87d37c3af7c2a61fce8ad",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:24:04.086Z"
 }

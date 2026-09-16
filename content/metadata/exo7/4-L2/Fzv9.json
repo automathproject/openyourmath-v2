@@ -1,16 +1,16 @@
 {
   "uuid": "Fzv9",
   "source_path": "exo7/4-L2/Fzv9.tex",
-  "summary": "L'exercice étudie la relation entre deux matrices commutant dans ℝⁿⁿ, l'une ayant n valeurs propres distinctes. Il demande de montrer que tout vecteur propre de la première matrice est aussi vecteur propre de la seconde, puis d'établir une relation polynomiale entre les valeurs propres des deux matrices en utilisant le déterminant de Vandermonde.",
+  "summary": "L'exercice étudie la relation entre deux matrices commutant dans ℝⁿ, l'une ayant n valeurs propres distinctes. Il demande de montrer que tout vecteur propre de la première matrice est aussi vecteur propre de la seconde, puis d'établir une relation polynomiale entre leurs valeurs propres via un système linéaire. Enfin, il s'agit d'exprimer la seconde matrice comme un polynôme de la première.",
   "concepts": [
-    "matrices commutant",
+    "commutativité de matrices",
     "valeurs propres distinctes",
     "vecteurs propres",
-    "déterminant de Vandermonde",
     "polynôme annulateur",
-    "diagonalisation",
+    "déterminant de Vandermonde",
     "système de Cramer",
-    "sous-espaces propres"
+    "diagonalisation de matrices",
+    "algèbre linéaire"
   ],
   "methods": [
     "récurrence",
@@ -23,10 +23,11 @@
     "matrices carrées réelles",
     "valeurs propres",
     "vecteurs propres",
-    "polynôme caractéristique",
+    "polynôme",
+    "système d'équations linéaires",
     "matrices diagonales"
   ],
-  "content_hash": "c08c2ee6816263c7ca58300d1a278dd16f757dc411840db8ca357d57ca1c37d2",
+  "content_hash": "544113b773df39bf52e542a191f64e0ce8362d59398346a45187d01d285b11bd",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T15:03:04.182Z"
+  "indexed_at": "2026-09-15T18:34:36.936Z"
 }

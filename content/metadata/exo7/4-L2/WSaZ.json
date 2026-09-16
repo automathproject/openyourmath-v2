@@ -1,33 +1,32 @@
 {
   "uuid": "WSaZ",
   "source_path": "exo7/4-L2/WSaZ.tex",
-  "summary": "Calculer les déterminants de matrices carrées de tailles variées, incluant des matrices tridiagonales, circulaires, et des matrices avec des coefficients symétriques ou spécifiques. Les exercices couvrent des cas particuliers et des relations de récurrence.",
+  "summary": "Calculer les déterminants de matrices carrées de tailles variées, incluant des matrices tridiagonales, circulaires et à coefficients symétriques. Les matrices présentent des motifs spécifiques comme des coefficients identiques, des relations entre lignes/colonnes, ou des structures circulaires.",
   "concepts": [
     "déterminant",
-    "matrice tridiagonale",
-    "matrice circulaire",
-    "relation de récurrence",
-    "polynôme caractéristique",
-    "racines complexes",
-    "déterminant de Vandermonde",
-    "déterminant circulant"
-  ],
-  "methods": [
-    "développement par rapport à une ligne ou une colonne",
-    "utilisation de la relation de récurrence",
-    "factorisation",
-    "reconnaissance de motifs",
-    "calcul des racines d'un polynôme caractéristique"
-  ],
-  "objects": [
     "matrice carrée",
     "matrice tridiagonale",
     "matrice circulaire",
-    "polynôme caractéristique",
-    "déterminant de Vandermonde",
-    "déterminant circulant"
+    "relation de récurrence",
+    "équation caractéristique",
+    "racines complexes",
+    "polynôme caractéristique"
   ],
-  "content_hash": "d787f3eba61409d393188006c90f6249dc311fcfc1fef059bda952fa0f37b64b",
+  "methods": [
+    "développement par rapport à une ligne ou colonne",
+    "recherche de relation de récurrence",
+    "résolution d'équation caractéristique",
+    "factorisation de polynômes",
+    "utilisation de symétries"
+  ],
+  "objects": [
+    "matrice 4x4",
+    "matrice 3x3",
+    "matrice tridiagonale",
+    "matrice circulaire",
+    "matrice à coefficients symétriques"
+  ],
+  "content_hash": "2bffb871b9f3ad6a5f98d0d5cc1190dbc3b628b4891036a8dcfd6a8a9724a605",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:41:00.997Z"
+  "indexed_at": "2026-09-15T18:26:43.723Z"
 }

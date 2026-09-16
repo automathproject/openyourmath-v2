@@ -1,29 +1,28 @@
 {
   "uuid": "Yo9n",
   "source_path": "exo7/5-L2/Yo9n.tex",
-  "summary": "L'exercice demande de déterminer si trois ensembles spécifiques de ℝ² sont compacts. Les ensembles sont définis par des conditions géométriques et algébriques impliquant des normes et des produits de coordonnées.",
+  "summary": "L'exercice demande de déterminer si trois ensembles de ℝ² sont compacts. Les ensembles A et B sont définis par des conditions sur la norme et le produit des coordonnées, tandis que C est une suite de points avec une coordonnée en cosinus.",
   "concepts": [
     "compacité",
     "espace euclidien",
     "norme",
-    "ensemble borné",
+    "suite bornée",
     "fermeture",
-    "séquence",
-    "convergence"
+    "bornitude",
+    "séquentiellement compact"
   ],
   "methods": [
     "critère de Bolzano-Weierstrass",
-    "analyse des limites",
-    "vérification des propriétés topologiques"
+    "analyse des bornes",
+    "vérification de la fermeture"
   ],
   "objects": [
     "ensemble de ℝ²",
-    "norme euclidienne",
-    "coordonnées (x,y)",
-    "ensemble borné",
-    "ensemble fermé"
+    "courbe définie par xy=1",
+    "suite de points",
+    "intervalle borné"
   ],
-  "content_hash": "aa9b1ae5db2a8cb3c7e6efcfdfc12e562173ef3d1564af7f42dd71fd77d7afb3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T16:58:40.199Z"
+  "content_hash": "7a4b19ab23a3b15d85168bcba891731b5f875125ef4e367687e199c188d49bfc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:37:20.987Z"
 }

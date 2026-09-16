@@ -1,24 +1,28 @@
 {
   "uuid": "8tta",
   "source_path": "exo7/4-L2/8tta.tex",
-  "summary": "On considère un endomorphisme auto-adjoint d'un espace vectoriel euclidien borné. On demande de montrer une égalité de normes et d'en déduire une inclusion entre noyaux.",
+  "summary": "Soit un espace vectoriel euclidien E et un endomorphisme f borné (norme ≤ 1). On considère un vecteur x tel que f* appliqué à x vaut x. On demande de montrer une égalité de normes puis d'en déduire une inclusion entre noyaux.",
   "concepts": [
     "endomorphisme auto-adjoint",
     "espace vectoriel euclidien",
-    "norme d'un vecteur",
-    "bornitude d'un endomorphisme",
-    "noyau d'un endomorphisme"
+    "norme d'un endomorphisme",
+    "adjoint d'un endomorphisme",
+    "noyau d'un endomorphisme",
+    "inégalité de Cauchy-Schwarz"
   ],
   "methods": [
-    "manipulation d'inégalités de normes",
-    "utilisation de la définition d'un endomorphisme auto-adjoint"
+    "calcul de norme",
+    "utilisation de l'adjoint",
+    "manipulation d'inégalités",
+    "démonstration par inclusion"
   ],
   "objects": [
-    "endomorphisme",
-    "espace vectoriel euclidien",
-    "vecteur"
+    "endomorphisme borné",
+    "vecteur x",
+    "noyau d'un endomorphisme",
+    "adjoint d'un endomorphisme"
   ],
-  "content_hash": "d458b04a71087f882aa561f870ac54a7764f856eed304067a68fc87310bbc505",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:48:52.285Z"
+  "content_hash": "e5f9ff505feacb81ee9a7e6739ab4f2532c925485f3a0c62a842e5ffe493ff36",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-15T18:27:02.665Z"
 }
