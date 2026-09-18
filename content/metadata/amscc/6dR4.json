@@ -1,28 +1,24 @@
 {
   "uuid": "6dR4",
   "source_path": "amscc/6dR4.tex",
-  "summary": "L'exercice demande d'associer quatre fonctions de deux variables à leurs courbes de niveau respectives parmi quatre représentations graphiques données. Il s'agit d'identifier la forme géométrique des courbes de niveau pour chaque fonction.",
+  "summary": "L'exercice demande d'associer quatre fonctions de deux variables à leurs courbes de niveau respectives parmi quatre représentations graphiques données. Il s'agit d'identifier la forme des courbes de niveau pour chaque fonction.",
   "concepts": [
     "courbe de niveau",
     "fonction de deux variables",
     "représentation graphique",
-    "équation cartésienne",
-    "géométrie analytique",
-    "famille de courbes"
+    "analyse des formes géométriques"
   ],
   "methods": [
-    "analyse des équations",
-    "comparaison de formes géométriques",
-    "identification de symétries",
-    "tracé de courbes"
+    "analyse des équations implicites",
+    "comparaison des formes géométriques",
+    "identification des isoclines"
   ],
   "objects": [
     "fonction de deux variables",
     "courbes de niveau",
-    "graphiques",
-    "équations cartésiennes"
+    "graphiques en coordonnées cartésiennes"
   ],
-  "content_hash": "fc0700a7c851010d441686206d0a40092282dd3e64b9261e5897eb3e7fdabcf4",
+  "content_hash": "8e2f567be796b781cbccbad3447f2988eea6f57d1ddb9c70c058e44a62b77d01",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:24:18.544Z"
+  "indexed_at": "2026-09-18T12:29:40.520Z"
 }

@@ -1,12 +1,12 @@
 {
   "uuid": "ofSt",
   "source_path": "amscc/ofSt.tex",
-  "summary": "L'exercice demande de déterminer le domaine de définition d'une fonction logarithmique de deux variables, d'identifier une courbe de niveau, de calculer ses dérivées partielles, et de reconnaître son graphe parmi des figures proposées.",
+  "summary": "L'exercice demande de déterminer le domaine de définition d'une fonction logarithmique de deux variables, d'identifier sa courbe de niveau pour k=0, de calculer ses dérivées partielles, et de reconnaître son graphe parmi des figures proposées.",
   "concepts": [
     "fonction de plusieurs variables",
     "domaine de définition",
     "courbe de niveau",
-    "dérivées partielles",
+    "dérivée partielle",
     "fonction logarithmique",
     "géométrie analytique"
   ],
@@ -20,9 +20,9 @@
     "fonction de deux variables",
     "disque ouvert",
     "cercle",
-    "dérivées partielles premières"
+    "dérivées partielles"
   ],
-  "content_hash": "d3b42f14ed890340b58a10fb37c412e4912a56bcff2b974c914a9efcd81d3775",
+  "content_hash": "567503b1520f1c9822668379aa2a8f912aa3f8d676d6b13c4ed30bbff5c33c43",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:25:05.749Z"
+  "indexed_at": "2026-09-18T12:29:43.634Z"
 }
