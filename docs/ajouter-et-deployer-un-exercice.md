@@ -191,24 +191,28 @@ commandes exactes à lancer sur le serveur. Elle ne compile pas TikZ : cette
 
 ### Mettre à jour le serveur
 
-Sur le serveur qui contient `docker-compose.yml` et le `Caddyfile`, définir la version publiée puis tirer et redémarrer le service applicatif :
+Sur le serveur qui contient `docker-compose.yml` et le `Caddyfile` :
 
 ```bash
-export APP_VERSION=2.4.3
-docker compose pull app
-docker compose up -d app
-docker compose ps
+git pull --ff-only origin main
+pnpm deploy:server
 curl --fail --silent --show-error https://openyourmath.org/api/health
 ```
+
+`pnpm deploy:server` écrit d'abord `APP_VERSION` dans `.env` à partir de
+`package.json` (via `pnpm sync:app-version`), puis tire et redémarre le
+service applicatif. Comme la valeur est persistée dans `.env`, un
+`docker compose restart` ou `docker compose up -d` lancé à la main
+ultérieurement reste cohérent, sans dépendre d'un `export` de shell éphémère.
 
 Le healthcheck interne du conteneur vérifie également `/api/health`.
 
 ### Retour arrière
 
-Si la vérification de santé échoue après la mise à jour, relancer le service avec le tag précédemment connu comme sain :
+Si la vérification de santé échoue après la mise à jour, revenir au tag précédemment connu comme sain en éditant `APP_VERSION` dans `.env`, puis :
 
 ```bash
-export APP_VERSION=2.4.2
+sed -i 's/^APP_VERSION=.*/APP_VERSION=2.4.2/' .env
 docker compose up -d app
 curl --fail --silent --show-error https://openyourmath.org/api/health
 ```
