@@ -54,6 +54,7 @@
     "db:snapshot:publish": "node scripts/ia/db-snapshot.js publish",
     "db:snapshot:download": "node scripts/ia/db-snapshot.js download",
     "db:snapshot:restore": "node scripts/ia/db-snapshot.js restore && pnpm cache:embeddings:restore",
+    "db:snapshot:update": "pnpm db:snapshot:download && pnpm db:snapshot:restore",
     "test": "vitest",
     "test:build": "vitest run tests/build/",
     "test:integration": "playwright test",

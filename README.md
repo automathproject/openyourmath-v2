@@ -136,12 +136,12 @@ source ~/.nvm/nvm.sh
 nvm use
 pnpm install
 git pull
-pnpm db:snapshot:download
-pnpm db:snapshot:restore
+pnpm db:snapshot:update
 pnpm cache:embeddings:stats
 pnpm dev
 ```
 
+`pnpm db:snapshot:update` télécharge le snapshot puis le restaure.
 `pnpm db:snapshot:restore` restaure `data/exercises.sqlite` puis reconstruit
 `cache/embeddings/` depuis la DB. Si un fichier de cache existait déjà mais avec
 un `content_hash` différent, il est remplacé.
