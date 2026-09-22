@@ -26,6 +26,19 @@
   let previousShowSolution = showSolution;
   let previousShowHint = showHint;
 
+  // Les états ci-dessus sont indexés par numéro de question : sans remise à zéro
+  // ils seraient réutilisés tels quels par l'exercice suivant. Certains appelants
+  // ne passent que `content`, d'où le repli sur sa référence.
+  let previousExerciseKey = exercise?.uuid ?? content;
+  $: exerciseKey = exercise?.uuid ?? content;
+  $: if (exerciseKey !== previousExerciseKey) {
+    previousExerciseKey = exerciseKey;
+    solutionStates = {};
+    hintStates = {};
+    hiddenHintStates = {};
+    hiddenSolutionStates = {};
+  }
+
   // Réactivité pour détecter les changements d'états globaux
   $: if (showSolution !== previousShowSolution) {
     hiddenSolutionStates = {};
