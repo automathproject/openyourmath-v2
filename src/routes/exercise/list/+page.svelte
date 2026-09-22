@@ -1777,17 +1777,6 @@
           {#if listTitle} · {listTitle}{/if}
         </span>
         <span style="flex:1"></span>
-        <span class="consulter-reveal-label">Tout révéler :</span>
-        <button
-          class="btn btn-secondary btn-sm consulter-btn-hint"
-          class:is-active={consulterShowHint}
-          on:click={() => (consulterShowHint = !consulterShowHint)}
-        >💡 Indications</button>
-        <button
-          class="btn btn-secondary btn-sm consulter-btn-sol"
-          class:is-active={consulterShowSolution}
-          on:click={() => (consulterShowSolution = !consulterShowSolution)}
-        >★ Solutions</button>
       </div>
       {/if}
 
@@ -1807,7 +1796,7 @@
               showShareAction={false}
               showLatexAction={false}
               showPrimaryAction={false}
-              showRevealControls={!isMobile && sharedButtonsVisible}
+              showRevealControls={false}
               compactMobile={isMobile}
             />
 
@@ -1824,30 +1813,40 @@
                     showInlineControls={sharedButtonsVisible ? showInlineControls : false}
                   />
                 </div>
+
+                <!-- Bottom navigation -->
+                {#if sharedButtonsVisible}
+                  <div class="consulter-nav-btns">
+                    <button
+                      class="btn btn-secondary"
+                      disabled={!$currentPosition.hasPrevious}
+                      on:click={previousConsulterExercise}
+                    >← Précédent</button>
+                    <span style="flex:1"></span>
+                    {#if $currentPosition.hasNext}
+                      <button class="btn btn-primary" on:click={nextConsulterExercise}>
+                        {$exerciseList[$selectedExerciseIndex + 1]?.title
+                          ? ($exerciseList[$selectedExerciseIndex + 1].title.length > 28
+                            ? $exerciseList[$selectedExerciseIndex + 1].title.slice(0, 28) + '…'
+                            : $exerciseList[$selectedExerciseIndex + 1].title)
+                          : 'Suivant'} →
+                      </button>
+                    {/if}
+                  </div>
+                {/if}
               </article>
+
+              {#if sharedButtonsVisible}
+                <LectureSidebar
+                  exercise={$selectedExercise}
+                  similar={[]}
+                  bind:showHint={consulterShowHint}
+                  bind:showSolution={consulterShowSolution}
+                  bind:showInlineControls
+                />
+              {/if}
             </div>
           </div>
-
-          <!-- Bottom navigation -->
-          {#if sharedButtonsVisible}
-          <div class="consulter-nav-btns">
-            <button
-              class="btn btn-secondary"
-              disabled={!$currentPosition.hasPrevious}
-              on:click={previousConsulterExercise}
-            >← Précédent</button>
-            <span style="flex:1"></span>
-            {#if $currentPosition.hasNext}
-              <button class="btn btn-primary" on:click={nextConsulterExercise}>
-                {$exerciseList[$selectedExerciseIndex + 1]?.title
-                  ? ($exerciseList[$selectedExerciseIndex + 1].title.length > 28
-                    ? $exerciseList[$selectedExerciseIndex + 1].title.slice(0, 28) + '…'
-                    : $exerciseList[$selectedExerciseIndex + 1].title)
-                  : 'Suivant'} →
-              </button>
-            {/if}
-          </div>
-          {/if}
         </div>
       {:else}
         <div class="consulter-loading">Sélectionnez un exercice dans le sommaire</div>
@@ -3662,8 +3661,10 @@
   .consulter-main {
     flex: 1;
     overflow-y: auto;
-    padding: 24px 32px;
-    background: var(--color-interface-bg-primary);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background: #fbf8ef;
   }
   .consulter-mobile-topbar,
   .consulter-mobile-nav {
@@ -3673,10 +3674,10 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 18px;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--color-interface-border-primary);
   }
   .consulter-pos { font-size: 12px; color: var(--color-interface-text-muted); }
-  .consulter-reveal-label { font-size: 12px; color: var(--color-interface-text-muted); }
   .consulter-btn-hint.is-active {
     background: var(--color-warning-50) !important;
     border-color: var(--color-warning-200) !important;
@@ -3687,23 +3688,47 @@
     border-color: var(--color-brand-200) !important;
     color: var(--color-brand-700) !important;
   }
-  .consulter-body { max-width: 860px; margin: 0 auto; }
+  .consulter-body {
+    --consulter-gutter: clamp(24px, 3vw, 56px);
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
   .consulter-body--immersive .exercise-page-shell {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     background: #fbf8ef;
   }
+  /* Colonne de lecture + rail d'informations, comme en mode Préparer. */
   .consulter-body--immersive .exercise-reading-layout {
-    display: block;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 36px 24px 72px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    align-items: stretch;
+    flex: 1;
+    max-width: none;
+    margin: 0;
+    padding: 0;
     border-top: 0;
   }
+  /* Le bandeau de titre s'aligne sur la colonne de lecture, pas sur le panneau :
+     mêmes gouttières, plus la largeur du rail à droite. */
+  .consulter-body--immersive :global(.lecture-title-band) {
+    padding-left: var(--consulter-gutter);
+    padding-right: calc(300px + var(--consulter-gutter));
+  }
+  .consulter-body--immersive :global(.lecture-title-inner) {
+    max-width: 820px;
+  }
   .consulter-body--immersive .exercise-reading-column {
-    padding: 0;
-    background: transparent;
+    min-width: 0;
+    padding: 40px var(--consulter-gutter) 80px;
+    background: #fffdf8;
   }
   .consulter-body--immersive .exercise-block {
-    max-width: 880px;
+    max-width: 820px;
+    margin: 0 auto;
     background: transparent;
     border: 0;
     border-radius: 0;
@@ -3728,9 +3753,24 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 32px;
+    max-width: 820px;
+    margin: 40px auto 0;
     padding-top: 18px;
     border-top: 1px solid var(--color-interface-border-primary);
+  }
+  /* Le rail n'apparaît que si la colonne de lecture garde au moins sa largeur
+     d'origine (~670px) une fois le sommaire et le rail déduits. En dessous,
+     on revient à la colonne unique centrée. */
+  @media (max-width: 1359px) {
+    .consulter-body--immersive .exercise-reading-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .consulter-body--immersive :global(.lecture-sidebar) {
+      display: none;
+    }
+    .consulter-body--immersive :global(.lecture-title-band) {
+      padding-right: var(--consulter-gutter);
+    }
   }
   .consulter-loading {
     padding: 3rem 2rem;
@@ -3826,13 +3866,15 @@
       display: none;
     }
 
-    .consulter-body {
-      max-width: none;
-    }
-
     .consulter-body--immersive .exercise-reading-layout {
+      display: block;
       max-width: none;
       padding: 14px 16px 36px;
+    }
+
+    .consulter-body--immersive .exercise-reading-column {
+      padding: 0;
+      background: transparent;
     }
 
     .consulter-body--immersive .exercise-page-shell {
