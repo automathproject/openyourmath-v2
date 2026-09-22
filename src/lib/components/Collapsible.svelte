@@ -29,6 +29,8 @@
 </section>
 
 <style>
+  @reference "../../app.css";
+
   .collapsible {
     border-radius: 0.75rem;
     @apply border border-gray-200 bg-white;

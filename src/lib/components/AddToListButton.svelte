@@ -109,6 +109,8 @@
 </button>
 
 <style>
+  @reference "../../app.css";
+
   .add-to-list-btn {
     display: inline-flex;
     align-items: center;

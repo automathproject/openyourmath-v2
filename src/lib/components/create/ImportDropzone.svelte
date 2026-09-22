@@ -199,6 +199,8 @@
 {/if}
 
 <style>
+  @reference "../../../app.css";
+
   .dropzone {
     @apply flex flex-col items-center justify-center gap-1 px-4 py-5 rounded-lg cursor-pointer
            border-2 border-dashed border-gray-300 bg-gray-50 text-gray-500 text-center

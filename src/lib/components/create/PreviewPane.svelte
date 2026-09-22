@@ -105,6 +105,8 @@
 </section>
 
 <style>
+  @reference "../../../app.css";
+
   .create-preview {
     @apply border border-gray-200 rounded-xl bg-white min-w-0;
     position: sticky;

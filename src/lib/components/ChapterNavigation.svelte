@@ -348,6 +348,8 @@
 </div>
 
 <style>
+  @reference "../../app.css";
+
   /* Local styles for hierarchical navigation (moved from app.css) */
   /* fond gris clair pour le conteneur */
 

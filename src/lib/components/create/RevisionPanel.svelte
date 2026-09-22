@@ -66,6 +66,8 @@
 </section>
 
 <style>
+  @reference "../../../app.css";
+
   .editor-revision-panel {
     @apply border border-violet-200 bg-violet-50 rounded-xl px-4 py-3 flex flex-col gap-2;
     order: 1;

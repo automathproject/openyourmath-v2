@@ -482,6 +482,8 @@
 {/if}
 
 <style>
+  @reference "../../../app.css";
+
   /* ── Panneau debug ─────────────────────────────────────────────────────── */
   .debug-panel {
     display: flex;

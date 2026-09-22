@@ -489,6 +489,8 @@
 </div>
 
 <style>
+  @reference "../../app.css";
+
   .mobile-chapter-nav { position: relative; }
   @media (min-width: 1024px) { .mobile-chapter-nav { display: none; } }
   .mobile-nav-trigger { width:100%; padding:1rem; border-radius:0.5rem; box-shadow:0 1px 2px rgba(0,0,0,0.05); @apply bg-interface-bg-primary border border-gray-300; }
@@ -528,7 +530,7 @@
 }
 .mobile-nav-content-wrapper { padding-bottom:0.5rem; }
   .mobile-nav-loading, .mobile-nav-error { display:flex; align-items:center; justify-content:center; gap:0.75rem; padding:1.5rem; @apply text-gray-600; }
-  .mobile-loading-spinner { width:1rem; height:1rem; border-radius:9999px; animation:spin 1s linear infinite; border:2px solid theme('colors.gray.300'); border-top-color: theme('colors.brand.500'); }
+  .mobile-loading-spinner { width:1rem; height:1rem; border-radius:9999px; animation:spin 1s linear infinite; border:2px solid var(--color-gray-300); border-top-color: var(--color-brand-500); }
   .mobile-nav-error button { font-weight:500; @apply text-brand-primary; }
   .mobile-nav-tabs { display:flex; @apply bg-gray-50 border-b border-gray-200; }
   .mobile-nav-tab { flex:1; display:flex; flex-direction:column; align-items:center; padding:0.75rem 0.5rem; font-size:0.875rem; transition:color .2s; }

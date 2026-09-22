@@ -248,13 +248,13 @@
 
 <style>
   .lecture-subheader {
-    --bg: theme('colors.interface.bg-white');
+    --bg: var(--color-interface-bg-white);
     --sh-1: 0 1px 3px rgba(13, 60, 77, 0.12);
-    --r-pill: theme('borderRadius.pill');
-    --gold: theme('colors.warning.500');
-    --gold-100: theme('colors.warning.100');
-    --teal: theme('colors.brand.600');
-    --teal-50: theme('colors.brand.50');
+    --r-pill: var(--radius-pill);
+    --gold: var(--color-warning-500);
+    --gold-100: var(--color-warning-100);
+    --teal: var(--color-brand-600);
+    --teal-50: var(--color-brand-50);
     background: #fbf8ef;
     border-bottom: 0;
   }
@@ -289,8 +289,8 @@
     gap: 2px;
     padding: 3px;
     border-radius: var(--r-pill);
-    background: theme('colors.interface.bg-tertiary');
-    border: 1px solid theme('colors.interface.border-primary');
+    background: var(--color-interface-bg-tertiary);
+    border: 1px solid var(--color-interface-border-primary);
   }
 
   .mode-switch button {
@@ -299,7 +299,7 @@
     border: 0;
     border-radius: var(--r-pill);
     background: transparent;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     font-size: 13px;
     font-weight: 500;
     line-height: 1;
@@ -310,7 +310,7 @@
   .mode-switch button.active {
     background: var(--bg);
     box-shadow: var(--sh-1);
-    color: theme('colors.interface.text-primary');
+    color: var(--color-interface-text-primary);
     font-weight: 600;
   }
 
@@ -326,15 +326,15 @@
 
   .lecture-primary-action :global(.add-to-list-btn) {
     min-height: 34px;
-    border-color: theme('colors.brand.600');
-    background: theme('colors.brand.600');
+    border-color: var(--color-brand-600);
+    background: var(--color-brand-600);
     color: white;
     box-shadow: none;
   }
 
   .lecture-primary-action :global(.add-to-list-btn:hover:not(:disabled)) {
-    background: theme('colors.brand.700');
-    border-color: theme('colors.brand.700');
+    background: var(--color-brand-700);
+    border-color: var(--color-brand-700);
     color: white;
   }
 
@@ -352,7 +352,7 @@
     background: rgba(251, 248, 239, 0.92);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid theme('colors.interface.border-primary');
+    border-bottom: 1px solid var(--color-interface-border-primary);
   }
 
   .immersive-exit-btn {
@@ -364,7 +364,7 @@
     border: 0;
     border-radius: var(--r-pill);
     background: transparent;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
@@ -372,8 +372,8 @@
   }
 
   .immersive-exit-btn:hover {
-    background: theme('colors.interface.bg-tertiary');
-    color: theme('colors.interface.text-primary');
+    background: var(--color-interface-bg-tertiary);
+    color: var(--color-interface-text-primary);
   }
 
   .immersive-bar-right {
@@ -383,8 +383,8 @@
   }
 
   .immersive-action--active {
-    background: theme('colors.brand.50') !important;
-    color: theme('colors.brand.700') !important;
+    background: var(--color-brand-50) !important;
+    color: var(--color-brand-700) !important;
   }
 
   .lecture-metadata--immersive {
@@ -415,13 +415,13 @@
   }
 
   .lecture-facts {
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
   }
 
   .lecture-title {
     max-width: 880px;
     margin: 0;
-    color: theme('colors.interface.text-primary');
+    color: var(--color-interface-text-primary);
     line-height: 1.08;
   }
 
@@ -449,8 +449,8 @@
     padding: 0 12px;
     border-radius: var(--r-pill);
     border: 1px solid transparent;
-    background: theme('colors.interface.bg-white');
-    color: theme('colors.interface.text-secondary');
+    background: var(--color-interface-bg-white);
+    color: var(--color-interface-text-secondary);
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
@@ -458,25 +458,25 @@
   }
 
   .reveal-button--hint {
-    border-color: theme('colors.warning.200');
-    color: theme('colors.warning.700');
+    border-color: var(--color-warning-200);
+    color: var(--color-warning-700);
   }
 
   .reveal-button--hint.active {
     background: var(--gold-100);
     border-color: var(--gold);
-    color: theme('colors.warning.800');
+    color: var(--color-warning-800);
   }
 
   .reveal-button--solution {
-    border-color: theme('colors.brand.200');
-    color: theme('colors.brand.700');
+    border-color: var(--color-brand-200);
+    color: var(--color-brand-700);
   }
 
   .reveal-button--solution.active {
     background: var(--teal-50);
     border-color: var(--teal);
-    color: theme('colors.brand.800');
+    color: var(--color-brand-800);
   }
 
   .reveal-check {

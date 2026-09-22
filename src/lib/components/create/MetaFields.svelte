@@ -112,6 +112,8 @@
 </details>
 
 <style>
+  @reference "../../../app.css";
+
   .editor-meta {
     @apply border border-gray-200 rounded-lg bg-white;
     order: 2;

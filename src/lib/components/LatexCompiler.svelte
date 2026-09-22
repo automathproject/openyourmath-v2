@@ -303,6 +303,8 @@
 </section>
 
 <style>
+  @reference "../../app.css";
+
   .latex-compiler {
     @apply grid grid-cols-1 gap-5 xl:grid-cols-2;
   }
@@ -333,7 +335,7 @@
     @apply border border-gray-300 text-gray-700 hover:bg-gray-50;
   }
   .latex-editor {
-    @apply min-h-[36rem] w-full flex-1;
+    @apply min-h-144 w-full flex-1;
   }
   .compiler-error {
     @apply rounded-md border border-red-200 bg-red-50 px-2.5 py-2 text-xs text-red-700;
@@ -360,7 +362,7 @@
     @apply rounded-md border border-amber-200 bg-amber-50 px-2.5 py-2 text-xs text-amber-800;
   }
   iframe {
-    @apply block h-[42rem] w-full flex-1 rounded-lg border border-gray-200 bg-gray-100;
+    @apply block h-168 w-full flex-1 rounded-lg border border-gray-200 bg-gray-100;
   }
   .pdf-empty {
     @apply py-12 text-center text-sm text-gray-400;

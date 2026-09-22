@@ -244,6 +244,8 @@
 </div>
 
 <style>
+  @reference "../../../app.css";
+
   .breadcrumb-nav {
     position: relative;
     z-index: 80;

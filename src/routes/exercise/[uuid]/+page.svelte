@@ -110,7 +110,7 @@
   /* Page layout */
   .exercise-page-shell {
     background: #fbf8ef;
-    min-height: calc(100vh - theme('spacing.header'));
+    min-height: calc(100vh - var(--spacing-header));
   }
 
   .exercise-reading-layout {
@@ -121,7 +121,7 @@
     max-width: none;
     margin: 0;
     padding: 0;
-    border-top: 1px solid theme('colors.interface.border-primary');
+    border-top: 1px solid var(--color-interface-border-primary);
   }
 
   .exercise-reading-column {
@@ -172,7 +172,7 @@
     .exercise-reading-layout {
       display: block;
       padding: 0;
-      border-top: 1px solid theme('colors.interface.border-primary');
+      border-top: 1px solid var(--color-interface-border-primary);
     }
 
     .exercise-reading-column {

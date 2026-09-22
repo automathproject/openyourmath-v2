@@ -208,16 +208,18 @@
 </div>
 
 <style>
+  @reference "../../../app.css";
+
   .editor-block {
     @apply border rounded-lg bg-white overflow-hidden border-gray-200;
     border-left-width: 4px;
   }
 
-  .editor-block--text { border-left-color: theme('colors.gray.300'); }
-  .editor-block--question { border-left-color: theme('colors.brand.400'); }
-  .editor-block--indication { border-left-color: theme('colors.yellow.400'); }
-  .editor-block--reponse { border-left-color: theme('colors.green.400'); }
-  .editor-block--code { border-left-color: theme('colors.purple.400'); }
+  .editor-block--text { border-left-color: var(--color-gray-300); }
+  .editor-block--question { border-left-color: var(--color-brand-400); }
+  .editor-block--indication { border-left-color: var(--color-yellow-400); }
+  .editor-block--reponse { border-left-color: var(--color-green-400); }
+  .editor-block--code { border-left-color: var(--color-purple-400); }
 
   .editor-block-head {
     @apply flex items-center justify-between gap-2 px-2 pt-2;

@@ -192,6 +192,8 @@
 </div>
 
 <style>
+  @reference "../../app.css";
+
   .exercise-preview {
     display:flex;
     flex-direction:column;
@@ -216,7 +218,7 @@
     gap: 0.28rem;
   }
   .preview-title {
-    font-family: theme('fontFamily.heading');
+    font-family: var(--font-heading);
     font-size: 1rem;
     line-height: 1.3;
     font-weight: 700;
@@ -361,7 +363,7 @@
     bottom: 0;
     height: 4.5rem;
     pointer-events: none;
-    background: linear-gradient(to bottom, rgba(250, 246, 234, 0), theme('colors.interface.bg-secondary'));
+    background: linear-gradient(to bottom, rgba(250, 246, 234, 0), var(--color-interface-bg-secondary));
   }
 
   .preview-content-inner {
@@ -374,7 +376,7 @@
   }
 
   .preview-exercise-content :global(.exercise-content) {
-    background: theme('colors.interface.bg-secondary');
+    background: var(--color-interface-bg-secondary);
   }
 
   .preview-more-row {

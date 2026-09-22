@@ -98,6 +98,8 @@
   </footer>
 
 <style>
+  @reference "../app.css";
+
   /* ==============================================
      MAIN CONTENT
      ============================================== */
@@ -108,7 +110,7 @@
     z-index: 70;
     max-height: 4rem;
     overflow: hidden;
-    background: theme('colors.interface.bg-primary');
+    background: var(--color-interface-bg-primary);
     transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.25s ease;
     opacity: 1;
@@ -175,7 +177,7 @@
   }
 
   .footer-brand:focus-visible {
-    outline: 2px solid theme('colors.brand.primary');
+    outline: 2px solid var(--color-brand-primary);
     outline-offset: 3px;
   }
 
@@ -214,7 +216,7 @@
   }
 
   .footer-link-subtle:focus-visible {
-    outline: 2px solid theme('colors.brand.primary');
+    outline: 2px solid var(--color-brand-primary);
     outline-offset: 2px;
   }
 
@@ -245,7 +247,7 @@
   }
 
   .footer-nav-link:focus-visible {
-    outline: 2px solid theme('colors.brand.primary');
+    outline: 2px solid var(--color-brand-primary);
     outline-offset: 3px;
   }
 
@@ -271,7 +273,7 @@
   }
 
   .footer-cta:focus-visible {
-    outline: 2px solid theme('colors.brand.primary');
+    outline: 2px solid var(--color-brand-primary);
     outline-offset: 3px;
   }
 

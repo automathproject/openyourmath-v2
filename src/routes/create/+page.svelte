@@ -1087,6 +1087,8 @@
 </div>
 
 <style>
+  @reference "../../app.css";
+
   .create-page {
     max-width: 1500px;
     margin: 0 auto;

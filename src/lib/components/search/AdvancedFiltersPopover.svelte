@@ -249,6 +249,8 @@
 {/if}
 
 <style>
+  @reference "../../../app.css";
+
   .advanced-popover {
     position: absolute;
     top: calc(100% + 0.45rem);

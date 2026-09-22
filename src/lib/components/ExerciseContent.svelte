@@ -369,6 +369,8 @@
 </div>
 
 <style>
+  @reference "../../app.css";
+
 
   
   /* Appliquer l'espacement manuellement seulement où nécessaire */

@@ -34,7 +34,7 @@
     gap: 6px;
     flex-wrap: wrap;
     font-size: 13px;
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
   }
   .breadcrumb-left {
     display: flex;
@@ -43,16 +43,16 @@
     flex-wrap: wrap;
   }
   .breadcrumb a {
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     padding: 3px 8px;
     border-radius: 6px;
     text-decoration: none;
     transition: background 0.15s, color 0.15s;
   }
   .breadcrumb a:hover {
-    background: theme('colors.interface.bg-tertiary');
-    color: theme('colors.interface.text-primary');
+    background: var(--color-interface-bg-tertiary);
+    color: var(--color-interface-text-primary);
   }
-  .sep { color: theme('colors.interface.text-disabled'); user-select: none; }
-  .current { color: theme('colors.interface.text-primary'); font-weight: 600; padding: 3px 8px; }
+  .sep { color: var(--color-interface-text-disabled); user-select: none; }
+  .current { color: var(--color-interface-text-primary); font-weight: 600; padding: 3px 8px; }
 </style>

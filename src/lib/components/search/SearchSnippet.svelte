@@ -12,6 +12,8 @@
 </div>
 
 <style>
+  @reference "../../../app.css";
+
   .snippet {
     overflow: hidden;
   }

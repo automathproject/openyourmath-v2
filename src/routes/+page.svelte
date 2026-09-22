@@ -658,9 +658,11 @@
 {/if}
 
 <style>
+  @reference "../app.css";
+
   .search-page {
     min-height: 100vh;
-    background: theme('colors.interface.bg-white');
+    background: var(--color-interface-bg-white);
   }
 
   .search-page--landing {
@@ -669,8 +671,8 @@
 
   /* ── Landing hero ───────────────────────────────────────────── */
   .landing-hero {
-    background: theme('colors.interface.bg-white');
-    border-bottom: 1px solid theme('colors.interface.border-primary');
+    background: var(--color-interface-bg-white);
+    border-bottom: 1px solid var(--color-interface-border-primary);
     padding: 72px 24px 56px;
     display: flex;
     align-items: center;
@@ -894,8 +896,8 @@
     position: sticky;
     top: 0;
     z-index: 35;
-    background: theme('colors.interface.bg-white');
-    border-bottom: 1px solid theme('colors.interface.border-primary');
+    background: var(--color-interface-bg-white);
+    border-bottom: 1px solid var(--color-interface-border-primary);
     box-shadow: 0 1px 4px rgba(13, 60, 77, 0.06);
   }
   .search-hero-inner {
@@ -942,9 +944,9 @@
       overflow-y: auto;
       overflow-x: hidden;
       z-index: 30;
-      border: 1px solid theme('colors.interface.border-primary');
+      border: 1px solid var(--color-interface-border-primary);
       border-radius: 0.75rem;
-      background: theme('colors.interface.bg-white');
+      background: var(--color-interface-bg-white);
       box-shadow: 0 18px 44px rgba(13, 60, 77, 0.18);
       transform: translateY(0);
       transition: transform 200ms ease, opacity 160ms ease;
@@ -960,13 +962,13 @@
   @media (min-width: 1024px) {
     .sidebar-shell {
       display: block;
-      border-right: 1px solid theme('colors.interface.border-primary');
+      border-right: 1px solid var(--color-interface-border-primary);
       position: sticky;
       top: var(--search-controls-height, 9rem);
       max-height: calc(100vh - var(--search-controls-height, 9rem));
       overflow-y: auto;
       align-self: start;
-      background: theme('colors.interface.bg-white');
+      background: var(--color-interface-bg-white);
     }
   }
 
@@ -1022,9 +1024,9 @@
     .mobile-sidebar-shell {
       display: block;
       overflow: visible;
-      border: 1px solid theme('colors.interface.border-primary');
+      border: 1px solid var(--color-interface-border-primary);
       border-radius: 0.75rem;
-      background: theme('colors.interface.bg-white');
+      background: var(--color-interface-bg-white);
     }
 
     .mobile-sidebar-shell :global(.sps) {

@@ -65,6 +65,8 @@
 </div>
 
 <style>
+  @reference "../../../app.css";
+
   .editor-ai-panel {
     @apply border-2 border-brand-300 bg-brand-50 rounded-xl px-4 py-4 shadow-sm;
     order: 1;

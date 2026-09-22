@@ -61,6 +61,8 @@
 {/if}
 
 <style>
+  @reference "../../app.css";
+
   .name-renderer {
     position: relative;
     display: inline-flex;

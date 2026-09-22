@@ -192,6 +192,8 @@
 </div>
 
 <style>
+  @reference "../../../app.css";
+
   .result-card {
     border-radius: 10px;
     padding: 1rem 1.125rem;
@@ -231,8 +233,8 @@
     @apply border-interface-border-secondary shadow-card;
   }
   .result-card--selected {
-    border-color: theme('colors.brand.500');
-    border-left: 6px solid theme('colors.brand.500');
+    border-color: var(--color-brand-500);
+    border-left: 6px solid var(--color-brand-500);
     @apply bg-brand-50;
   }
   /* ── Meta row (detailed mode) ── */
@@ -253,7 +255,7 @@
   }
   .rc-chapter-badge {
     font-size: 11px;
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
     font-style: italic;
     max-width: 25%;
     overflow: hidden;
@@ -269,15 +271,15 @@
     white-space: nowrap;
     flex-shrink: 0;
   }
-  .rc-indicator--video  { color: theme('colors.brand.600'); }
+  .rc-indicator--video  { color: var(--color-brand-600); }
   .rc-indicator--solution {
     display: inline-flex;
     align-items: center;
     gap: 3px;
-    color: theme('colors.success.600');
+    color: var(--color-success-600);
   }
   .result-title {
-    font-family: theme('fontFamily.heading');
+    font-family: var(--font-heading);
     font-size: 1.125rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
@@ -313,7 +315,7 @@
   .result-footer-sep { @apply text-interface-text-disabled; }
   .result-date-text {
     font-size: 0.75rem;
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
     white-space: nowrap;
   }
   .rc-footer-actions {
@@ -329,13 +331,13 @@
     padding: 0.2rem 0.4rem;
     font-size: 0.75rem;
     font-weight: 600;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     border-radius: 4px;
     transform: none !important;
     box-shadow: none !important;
   }
   .rc-footer-actions :global(.add-to-list-btn:hover:not(:disabled)) {
-    background: theme('colors.interface.bg-tertiary');
+    background: var(--color-interface-bg-tertiary);
     transform: none !important;
     box-shadow: none !important;
   }
@@ -346,14 +348,14 @@
     border-radius: 6px;
     border: none;
     background: transparent;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     cursor: pointer;
     transition: background 0.12s, color 0.12s;
     white-space: nowrap;
   }
   .rc-footer-open:hover {
-    background: theme('colors.interface.bg-tertiary');
-    color: theme('colors.interface.text-primary');
+    background: var(--color-interface-bg-tertiary);
+    color: var(--color-interface-text-primary);
   }
   .selection-indicator {
     width: 1.5rem;
@@ -380,7 +382,7 @@
 
     .result-card--selected {
       border-left: 0;
-      background: theme('colors.interface.bg-white');
+      background: var(--color-interface-bg-white);
     }
 
     .rc-meta-row {
@@ -404,8 +406,8 @@
     .rc-indicator--solution {
       padding: 0.25rem 0.45rem;
       border-radius: 9999px;
-      background: theme('colors.success.100');
-      color: theme('colors.success.700');
+      background: var(--color-success-100);
+      color: var(--color-success-700);
     }
 
     .result-title {
@@ -445,7 +447,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       font-size: 0.63rem;
-      color: theme('colors.interface.text-muted');
+      color: var(--color-interface-text-muted);
     }
 
     .result-footer-sep {
@@ -469,14 +471,14 @@
       width: 100%;
       border-radius: 0.5rem;
       font-size: 0.82rem;
-      background: theme('colors.brand.50');
-      color: theme('colors.brand.700');
+      background: var(--color-brand-50);
+      color: var(--color-brand-700);
       text-align: center;
     }
 
     .rc-footer-open:hover {
-      background: theme('colors.brand.100');
-      color: theme('colors.brand.800');
+      background: var(--color-brand-100);
+      color: var(--color-brand-800);
     }
 
     .rc-footer-actions :global(.add-to-list-btn) {
@@ -487,9 +489,9 @@
       min-height: 2.75rem;
       padding: 0;
       border-radius: 0.55rem;
-      border: 1px solid theme('colors.interface.border-primary');
-      background: theme('colors.interface.bg-white');
-      color: theme('colors.interface.text-secondary');
+      border: 1px solid var(--color-interface-border-primary);
+      background: var(--color-interface-bg-white);
+      color: var(--color-interface-text-secondary);
       justify-content: center;
     }
 

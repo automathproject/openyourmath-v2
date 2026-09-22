@@ -47,6 +47,8 @@
 </div>
 
 <style>
+  @reference "../../../app.css";
+
   .block-add-row {
     @apply flex items-center gap-2 -mt-1 pl-2;
   }

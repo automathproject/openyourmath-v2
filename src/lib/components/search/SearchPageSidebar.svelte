@@ -339,6 +339,8 @@
 </aside>
 
 <style>
+  @reference "../../../app.css";
+
   .sps {
     padding: 20px 16px 32px;
   }
@@ -353,7 +355,7 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
     margin-bottom: 10px;
   }
   .sps-overline-row {
@@ -368,7 +370,7 @@
   }
   .sps-hr {
     border: none;
-    border-top: 1px solid theme('colors.interface.border-primary');
+    border-top: 1px solid var(--color-interface-border-primary);
     margin: 16px 0;
   }
   @media (min-width: 641px) and (max-width: 1023px) {
@@ -383,31 +385,31 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0;
     overflow: hidden;
-    border: 1.5px solid theme('colors.interface.border-secondary');
+    border: 1.5px solid var(--color-interface-border-secondary);
     border-radius: 6px;
   }
   .sps-level-btn {
     min-width: 0;
     padding: 7px 0;
     border: none;
-    border-right: 1px solid theme('colors.interface.border-secondary');
+    border-right: 1px solid var(--color-interface-border-secondary);
     border-radius: 0;
     background: transparent;
     font-size: 13px;
     font-weight: 500;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     cursor: pointer;
     text-align: center;
     transition: background 0.12s, border-color 0.12s, color 0.12s;
   }
   .sps-level-btn:hover {
-    background: theme('colors.interface.bg-tertiary');
+    background: var(--color-interface-bg-tertiary);
   }
   .sps-level-btn:last-child {
     border-right: none;
   }
   .sps-level-btn--on {
-    background: theme('colors.interface.text-primary');
+    background: var(--color-interface-text-primary);
     color: white;
   }
 
@@ -428,27 +430,27 @@
     border-radius: 0 6px 6px 0;
     background: transparent;
     font-size: 13px;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     cursor: pointer;
     transition: background 0.1s, color 0.1s, border-color 0.1s;
     text-align: left;
   }
   .sps-module-btn:hover {
-    background: theme('colors.interface.bg-tertiary');
+    background: var(--color-interface-bg-tertiary);
   }
   .sps-module-btn--on {
-    background: theme('colors.brand.50');
-    border-left-color: theme('colors.brand.500');
-    color: theme('colors.brand.800');
+    background: var(--color-brand-50);
+    border-left-color: var(--color-brand-500);
+    color: var(--color-brand-800);
     font-weight: 600;
   }
   .sps-module-name { flex: 1; min-width: 0; }
   .sps-module-count {
     font-size: 11px;
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
     flex-shrink: 0;
   }
-  .sps-module-btn--on .sps-module-count { color: theme('colors.brand.600'); }
+  .sps-module-btn--on .sps-module-count { color: var(--color-brand-600); }
   .sps-show-more {
     margin-top: 0.45rem;
     width: 100%;
@@ -468,39 +470,39 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
     overflow: hidden;
-    border: 1.5px solid theme('colors.interface.border-secondary');
+    border: 1.5px solid var(--color-interface-border-secondary);
     border-radius: 6px;
   }
   .sps-check-row {
     min-width: 0;
     padding: 7px 4px;
     border: none;
-    border-right: 1px solid theme('colors.interface.border-secondary');
+    border-right: 1px solid var(--color-interface-border-secondary);
     border-radius: 0;
     background: transparent;
     font-size: 12px;
     font-weight: 500;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     cursor: pointer;
     text-align: center;
     transition: background 0.1s, border-color 0.1s, color 0.1s;
     white-space: nowrap;
   }
   .sps-check-row:hover {
-    background: theme('colors.interface.bg-tertiary');
-    color: theme('colors.interface.text-primary');
+    background: var(--color-interface-bg-tertiary);
+    color: var(--color-interface-text-primary);
   }
   .sps-check-row:last-child {
     border-right: none;
   }
   .sps-check-row--on {
-    background: theme('colors.interface.text-primary');
+    background: var(--color-interface-text-primary);
     color: white;
   }
 
   .sps-empty {
     font-size: 12px;
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
     font-style: italic;
     margin: 0;
   }
@@ -511,13 +513,13 @@
     padding: 6px 8px;
     border-radius: 6px;
     font-size: 13px;
-    background: theme('colors.interface.bg-white');
-    color: theme('colors.interface.text-primary');
-    border: 1.5px solid theme('colors.interface.border-secondary');
+    background: var(--color-interface-bg-white);
+    color: var(--color-interface-text-primary);
+    border: 1.5px solid var(--color-interface-border-secondary);
     cursor: pointer;
     appearance: auto;
   }
-  .sps-select:focus { outline: none; border-color: theme('colors.brand.500'); }
+  .sps-select:focus { outline: none; border-color: var(--color-brand-500); }
 
   /* ── Auteur / Organisation ── */
   .sps-clear-link {
@@ -527,11 +529,11 @@
     background: transparent;
     font-size: 11px;
     font-weight: 700;
-    color: theme('colors.brand.700');
+    color: var(--color-brand-700);
     cursor: pointer;
   }
   .sps-clear-link:hover {
-    color: theme('colors.brand.900');
+    color: var(--color-brand-900);
     text-decoration: underline;
   }
   .sps-facet-search {
@@ -540,12 +542,12 @@
     gap: 4px;
     margin-bottom: 6px;
     padding: 0 6px;
-    border: 1.5px solid theme('colors.interface.border-secondary');
+    border: 1.5px solid var(--color-interface-border-secondary);
     border-radius: 6px;
-    background: theme('colors.interface.bg-white');
+    background: var(--color-interface-bg-white);
   }
   .sps-facet-search:focus-within {
-    border-color: theme('colors.brand.500');
+    border-color: var(--color-brand-500);
   }
   .sps-facet-search input {
     min-width: 0;
@@ -555,10 +557,10 @@
     outline: 0;
     font-size: 13px;
     background: transparent;
-    color: theme('colors.interface.text-primary');
+    color: var(--color-interface-text-primary);
   }
   .sps-facet-search input::placeholder {
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
   }
   .sps-facet-search button {
     flex: 0 0 auto;
@@ -567,14 +569,14 @@
     border: none;
     border-radius: 4px;
     background: none;
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
     font-size: 14px;
     line-height: 1;
     cursor: pointer;
   }
   .sps-facet-search button:hover {
-    background: theme('colors.interface.bg-tertiary');
-    color: theme('colors.interface.text-primary');
+    background: var(--color-interface-bg-tertiary);
+    color: var(--color-interface-text-primary);
   }
   .sps-facet-list {
     display: flex;
@@ -592,20 +594,20 @@
     border-left: 2px solid transparent;
     border-radius: 0 6px 6px 0;
     background: transparent;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     font-size: 13px;
     text-align: left;
     cursor: pointer;
     transition: background 0.1s, border-color 0.1s, color 0.1s;
   }
   .sps-facet-btn:hover {
-    background: theme('colors.interface.bg-tertiary');
-    color: theme('colors.interface.text-primary');
+    background: var(--color-interface-bg-tertiary);
+    color: var(--color-interface-text-primary);
   }
   .sps-facet-btn--on {
-    background: theme('colors.brand.50');
-    border-left-color: theme('colors.brand.500');
-    color: theme('colors.brand.800');
+    background: var(--color-brand-50);
+    border-left-color: var(--color-brand-500);
+    color: var(--color-brand-800);
     font-weight: 600;
   }
   .sps-facet-name {
@@ -618,9 +620,9 @@
   .sps-facet-count {
     flex: 0 0 auto;
     font-size: 11px;
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
   }
   .sps-facet-btn--on .sps-facet-count {
-    color: theme('colors.brand.700');
+    color: var(--color-brand-700);
   }
 </style>

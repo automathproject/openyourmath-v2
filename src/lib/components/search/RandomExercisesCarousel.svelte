@@ -133,6 +133,8 @@
 </section>
 
 <style>
+  @reference "../../../app.css";
+
   .random-carousel {
     padding: 0;
   }

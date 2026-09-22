@@ -169,6 +169,8 @@
 </div>
 
 <style>
+  @reference "../../../app.css";
+
   .toolbar {
     position: relative; /* ancre le popover desktop */
     display: flex;
@@ -212,7 +214,7 @@
 
   .search-icon-svg {
     flex-shrink: 0;
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
   }
 
   .search-spinner-wrap {
@@ -226,7 +228,7 @@
     height: 1.1rem;
     animation: toolbarSpin 1s linear infinite;
     border: 2px solid transparent;
-    border-bottom-color: theme('colors.brand.600');
+    border-bottom-color: var(--color-brand-600);
   }
   @keyframes toolbarSpin { to { transform: rotate(360deg); } }
 
@@ -347,9 +349,9 @@
     line-height: 1;
     padding: 2px 5px 3px;
     border-radius: 4px;
-    color: theme('colors.interface.text-muted');
-    background: theme('colors.interface.bg-tertiary');
-    border: 1px solid theme('colors.interface.border-primary');
+    color: var(--color-interface-text-muted);
+    background: var(--color-interface-bg-tertiary);
+    border: 1px solid var(--color-interface-border-primary);
     white-space: nowrap;
     pointer-events: none;
     user-select: none;
@@ -364,14 +366,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: theme('colors.interface.bg-tertiary');
-    color: theme('colors.interface.text-muted');
+    background: var(--color-interface-bg-tertiary);
+    color: var(--color-interface-text-muted);
     cursor: pointer;
     transition: background .15s, color .15s;
   }
   .search-clear-btn:hover {
-    background: theme('colors.interface.border-primary');
-    color: theme('colors.interface.text-primary');
+    background: var(--color-interface-border-primary);
+    color: var(--color-interface-text-primary);
   }
 
   /* Bouton chevron collapse — mobile/tablette */

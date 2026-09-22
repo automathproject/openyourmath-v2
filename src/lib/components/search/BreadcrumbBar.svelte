@@ -18,6 +18,8 @@
 </div>
 
 <style>
+  @reference "../../../app.css";
+
   .breadcrumb-bar {
     border-radius:0.75rem;
     padding:0.75rem 1rem;

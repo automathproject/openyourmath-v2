@@ -328,9 +328,11 @@
 {/if}
 
 <style>
+  @reference "../../app.css";
+
   .exercise-header {
     position: relative;
-    border-bottom: 1px solid theme('colors.interface.border-primary');
+    border-bottom: 1px solid var(--color-interface-border-primary);
     @apply bg-interface-bg-secondary px-6 py-4 md:px-8 md:py-6 rounded-xl;
     transition: padding 0.2s ease;
   }
@@ -342,10 +344,10 @@
   }
 
   .exercise-title {
-    font-family: theme('fontFamily.heading');
+    font-family: var(--font-heading);
     font-weight: 800;
     font-size: 21px;
-    color: theme('colors.interface.text-primary');
+    color: var(--color-interface-text-primary);
     letter-spacing: -0.3px;
     margin-bottom: 0.5rem;
     margin-right: clamp(10rem, 28vw, 22rem);
@@ -435,7 +437,7 @@
     align-items: center;
     gap: 0.375rem;
     font-size: 0.75rem;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     white-space: nowrap;
   }
 
@@ -478,12 +480,12 @@
     border-radius: 0.5rem;
     transition: background-color .2s ease;
   }
-  .action-button--video { background: theme('colors.info.50'); color: theme('colors.info.700'); }
-  .action-button--video:hover { background: theme('colors.info.100'); }
-  .action-button--hint { background: theme('colors.warning.50'); color: theme('colors.warning.700'); }
-  .action-button--hint:hover { background: theme('colors.warning.100'); }
-  .action-button--solution { background: theme('colors.success.50'); color: theme('colors.success.700'); }
-  .action-button--solution:hover { background: theme('colors.success.100'); }
+  .action-button--video { background: var(--color-info-50); color: var(--color-info-700); }
+  .action-button--video:hover { background: var(--color-info-100); }
+  .action-button--hint { background: var(--color-warning-50); color: var(--color-warning-700); }
+  .action-button--hint:hover { background: var(--color-warning-100); }
+  .action-button--solution { background: var(--color-success-50); color: var(--color-success-700); }
+  .action-button--solution:hover { background: var(--color-success-100); }
 
   .header-bottom {
     display: flex;
@@ -498,7 +500,7 @@
     align-items: center;
     gap: 0.375rem;
     font-size: 0.75rem;
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
     font-weight: 500;
     white-space: nowrap;
   }

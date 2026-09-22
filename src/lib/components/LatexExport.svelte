@@ -116,6 +116,8 @@
 {/if}
 
 <style>
+  @reference "../../app.css";
+
   /* ── Déclencheur par défaut (variante « button » sans snippet) ── */
   .latex-trigger-btn {
     display: inline-flex;

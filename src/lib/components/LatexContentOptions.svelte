@@ -84,14 +84,14 @@
     margin-bottom: 0.15rem;
     font-size: 0.75rem;
     font-weight: 700;
-    color: theme("colors.gray.600");
+    color: var(--color-gray-600);
   }
 
   .content-option {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    color: theme("colors.gray.700");
+    color: var(--color-gray-700);
     font-size: 0.8rem;
     cursor: pointer;
   }
@@ -99,7 +99,7 @@
   input {
     width: 0.9rem;
     height: 0.9rem;
-    accent-color: theme("colors.brand.600");
+    accent-color: var(--color-brand-600);
     cursor: pointer;
   }
 
@@ -109,11 +109,11 @@
     flex-wrap: wrap;
     gap: 0.5rem;
     padding-left: 1rem;
-    border-left: 1px solid theme("colors.gray.200");
+    border-left: 1px solid var(--color-gray-200);
   }
 
   .solution-placement-label {
-    color: theme("colors.gray.500");
+    color: var(--color-gray-500);
     font-size: 0.75rem;
   }
 

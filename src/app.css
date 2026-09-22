@@ -1,15 +1,843 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
 
 /* KaTeX styles pour le rendu mathématique */
-@import 'katex/dist/katex.min.css';
+@import 'katex/dist/katex.min.css' layer(utilities);
 
 /* ==============================================
    BASE STYLES - Styles fondamentaux
    ============================================== */
 
+@plugin '@tailwindcss/typography';
 
+@theme {
+  --color-brand-50: #f0fafa;
+  --color-brand-100: #ccf2f2;
+  --color-brand-200: #99e5e5;
+  --color-brand-300: #66d9d9;
+  --color-brand-400: #33cccc;
+  --color-brand-500: #49b2b2;
+  --color-brand-600: #3a8f8f;
+  --color-brand-700: #2b6b6b;
+  --color-brand-800: #1c4848;
+  --color-brand-900: #0d2424;
+  --color-brand-primary: #49b2b2;
+
+  --color-success-50: #f4f7eb;
+  --color-success-100: #e3edd1;
+  --color-success-200: #cbdda8;
+  --color-success-300: #b1ca7d;
+  --color-success-400: #93b558;
+  --color-success-500: #6e9c3f;
+  --color-success-600: #587e32;
+  --color-success-700: #426027;
+  --color-success-800: #2e441b;
+  --color-success-900: #1a2810;
+
+  --color-warning-50: #fdf8e7;
+  --color-warning-100: #faecb8;
+  --color-warning-200: #f5dc88;
+  --color-warning-300: #f0cd5e;
+  --color-warning-400: #ecc44f;
+  --color-warning-500: #e8b943;
+  --color-warning-600: #c69a30;
+  --color-warning-700: #997725;
+  --color-warning-800: #6e561a;
+  --color-warning-900: #423410;
+
+  --color-error-50: #fbeeec;
+  --color-error-100: #f3dad6;
+  --color-error-200: #e6b4ad;
+  --color-error-300: #d98e85;
+  --color-error-400: #cd685e;
+  --color-error-500: #c43e3a;
+  --color-error-600: #a3322f;
+  --color-error-700: #802824;
+  --color-error-800: #5e1d1a;
+  --color-error-900: #391010;
+
+  --color-info-50: #eef5fa;
+  --color-info-100: #dceaf2;
+  --color-info-200: #b6d2e1;
+  --color-info-300: #8bb4cc;
+  --color-info-400: #5e96b8;
+  --color-info-500: #3a7ca5;
+  --color-info-600: #2e6488;
+  --color-info-700: #234d6a;
+  --color-info-800: #18374c;
+  --color-info-900: #0d212e;
+
+  --color-accent-50: #fbf0eb;
+  --color-accent-100: #f8e5dc;
+  --color-accent-200: #f0c9b6;
+  --color-accent-300: #e8ad90;
+  --color-accent-400: #e0916a;
+  --color-accent-500: #d97757;
+  --color-accent-600: #b85d3f;
+  --color-accent-700: #964a32;
+  --color-accent-800: #743825;
+  --color-accent-900: #522518;
+
+  --color-interface-bg-primary: #fefcf6;
+  --color-interface-bg-secondary: #faf6ea;
+  --color-interface-bg-tertiary: #f5efe0;
+  --color-interface-bg-white: #ffffff;
+  --color-interface-bg-overlay: rgba(254, 252, 246, 0.95);
+  --color-interface-border-primary: #ead9b8;
+  --color-interface-border-secondary: #e2d2af;
+  --color-interface-text-primary: #0d3c4d;
+  --color-interface-text-secondary: #1f5566;
+  --color-interface-text-muted: #6b8893;
+  --color-interface-text-disabled: #a3b4bd;
+
+  --color-search-icon: #9aa0a6;
+  --color-search-shadow: rgba(32, 33, 36, 0.28);
+  --color-search-shadow-hover: rgba(32, 33, 36, 0.45);
+
+  --color-loader-1: #4285f4;
+  --color-loader-2: #ea4335;
+  --color-loader-3: #fbbc05;
+  --color-loader-4: #34a853;
+
+  --font-primary: Source Sans Pro, sans-serif;
+  --font-heading: Nunito, sans-serif;
+
+  --spacing-header: 3.5rem;
+  --spacing-header-mobile: 3rem;
+
+  --shadow-card:
+    0 2px 8px rgba(13, 60, 77, 0.08), 0 1px 2px rgba(13, 60, 77, 0.04);
+  --shadow-card-hover:
+    0 8px 24px rgba(13, 60, 77, 0.1), 0 2px 6px rgba(13, 60, 77, 0.06);
+  --shadow-search: 0 1px 6px rgba(32, 33, 36, 0.18);
+  --shadow-search-hover: 0 1px 10px rgba(32, 33, 36, 0.32);
+  --shadow-focus: 0 0 0 3px rgba(73, 178, 178, 0.3);
+
+  --animate-loader-bounce: loader-bounce 1.4s ease infinite;
+  --animate-slide-in: slide-in-from-top 0.2s ease-out;
+
+  --radius-search: 24px;
+  --radius-pill: 999px;
+
+  @keyframes loader-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes slide-in-from-top {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility list-counter {
+  /* ==================
+     HEADER / BADGES
+     ================== */
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  @apply bg-error-500 text-white;
+
+  @media (max-width: 640px) {
+    position: static;
+    margin-left: 0.25rem;
+    @apply bg-gray-500;
+  }
+}
+
+@utility katex-display {
+  /* ==================
+     MATH RENDERING
+     ================== */
+
+  /* Removed unused .math-block and .math-inline */
+
+  /* KaTeX overrides and helpers */
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1em 0;
+  margin: 1em 0;
+
+  & > .katex {
+    font-size: 1.2em !important;
+  }
+
+  @media (max-width: 640px) {
+    & > .katex {
+      font-size: 1.1em !important;
+    }
+  }
+}
+
+@utility katex {
+  font-size: 1.1em !important;
+
+  .katex-display > & {
+    font-size: 1.2em !important;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 1em !important;
+    .katex-display > & {
+      font-size: 1.1em !important;
+    }
+  }
+}
+
+@utility exercise {
+  /* ==================
+     EXERCISE LAYOUT
+     ================== */
+  @apply max-w-4xl mx-auto bg-white rounded-lg shadow-xs border;
+}
+
+@utility exercise-content {
+  @apply leading-relaxed;
+}
+
+@utility btn {
+  /* Component-specific exercise header/actions moved to ExerciseHeader.svelte */
+
+  /* Styles à AJOUTER dans app.css - Section @layer components */
+
+  /* ==============================================
+     NOUVELLES CLASSES MUTUALISÉES
+     ============================================== */
+
+  /* ==================
+     BUTTONS - Styles de boutons génériques
+     ================== */
+  @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-brand-500/50;
+}
+
+@utility btn-primary {
+  @apply bg-brand-600 text-white hover:bg-brand-700;
+}
+
+@utility btn-secondary {
+  @apply bg-interface-bg-tertiary text-interface-text-primary hover:bg-interface-bg-secondary border border-interface-border-primary;
+}
+
+@utility btn-accent {
+  @apply bg-accent-500 text-white hover:bg-accent-600 border border-accent-500;
+}
+
+@utility btn-outline {
+  @apply bg-transparent text-interface-text-primary border border-interface-text-primary
+           hover:bg-interface-text-primary hover:text-interface-bg-primary;
+}
+
+@utility btn-ghost {
+  @apply bg-transparent text-interface-text-secondary border border-transparent
+           hover:bg-interface-bg-secondary hover:text-interface-text-primary;
+}
+
+@utility btn-sm {
+  @apply px-3 py-1.5 text-xs;
+}
+
+@utility btn-lg {
+  @apply px-6 py-3 text-base;
+}
+
+@utility btn-text {
+  @apply px-2 py-1 text-interface-text-secondary hover:bg-interface-bg-secondary hover:text-interface-text-primary;
+}
+
+@utility btn-icon {
+  @apply flex items-center justify-center w-8 h-8 rounded-full transition-colors duration-200 hover:bg-interface-bg-secondary;
+}
+
+@utility btn--primary {
+  /* Legacy aliases */
+  @apply bg-brand-600 text-white hover:bg-brand-700;
+}
+
+@utility form-input {
+  /* ==================
+     FORMS & FILTERS
+     ================== */
+  @apply w-full px-3 py-2 bg-interface-bg-white text-interface-text-primary
+           border border-interface-border-primary rounded-lg
+           focus:ring-0 focus:border-brand-500 focus:shadow-focus;
+}
+
+@utility search-input {
+  @apply flex items-center gap-2 h-12 px-5
+           bg-interface-bg-white border border-interface-border-primary
+           rounded-search shadow-search transition-shadow
+           focus-within:shadow-search-hover focus-within:border-brand-300;
+
+  & input {
+    @apply flex-1 min-w-0 border-0 outline-hidden bg-transparent text-interface-text-primary;
+  }
+
+  & input::placeholder {
+    @apply text-interface-text-muted;
+  }
+}
+
+@utility filters-bar {
+  @apply flex flex-wrap items-center gap-2 mb-4 p-3 bg-interface-bg-secondary rounded-lg border border-interface-border-primary;
+}
+
+@utility filter-chip {
+  @apply inline-flex items-center gap-1 pl-3 pr-2 py-1
+           bg-brand-50 text-brand-700 border border-brand-200
+           rounded-pill text-xs font-medium;
+}
+
+@utility filter-chip-close {
+  @apply w-5 h-5 flex items-center justify-center rounded-full
+           hover:bg-brand-100 transition-colors;
+}
+
+@utility chip {
+  /* Chip générique et variantes */
+  @apply inline-flex items-center gap-1 px-3 py-1
+           bg-interface-bg-white text-interface-text-secondary border border-interface-border-primary
+           rounded-pill text-xs font-medium;
+}
+
+@utility chip-active {
+  @apply bg-interface-text-primary text-interface-bg-primary border-interface-text-primary;
+}
+
+@utility chip-teal {
+  @apply bg-brand-50 text-brand-700 border-brand-200;
+}
+
+@utility chip-teal-solid {
+  @apply bg-brand-500 text-white border-brand-500;
+}
+
+@utility chip-accent {
+  @apply bg-accent-50 text-accent-700 border-accent-200;
+}
+
+@utility chip-soft {
+  @apply bg-transparent text-interface-text-muted border-interface-border-primary;
+}
+
+@utility chip-success {
+  @apply bg-success-50 text-success-700 border-success-100;
+}
+
+@utility chip-warning {
+  @apply bg-warning-50 text-warning-700 border-warning-100;
+}
+
+@utility chip-error {
+  @apply bg-error-50 text-error-700 border-error-100;
+}
+
+@utility chip-info {
+  @apply bg-info-50 text-info-700 border-info-100;
+}
+
+@utility card {
+  /* Cards */
+  @apply bg-interface-bg-white border border-interface-border-primary rounded-lg p-4 transition-all;
+}
+
+@utility card-hover {
+  @apply hover:border-interface-text-muted hover:shadow-card cursor-pointer;
+}
+
+@utility card-selected {
+  @apply bg-brand-50 border-brand-600;
+  box-shadow: 0 0 0 1px var(--color-brand-600);
+}
+
+@utility t-overline {
+  /* Overline typographic style */
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-interface-text-muted);
+}
+
+@utility t-display {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+@utility t-caption {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+@utility kbd {
+  /* Kbd */
+  @apply inline-flex items-center justify-center
+           min-w-[20px] h-5 px-1.5
+           font-mono text-[11px]
+           bg-interface-bg-secondary border border-interface-border-primary border-b-2
+           rounded-sm text-interface-text-secondary;
+}
+
+@utility stars {
+  /* Stars (remplace difficulty-dots) */
+  @apply inline-flex gap-0.5 text-accent-500 text-sm leading-none;
+
+  & .star-off {
+    @apply text-interface-text-disabled;
+  }
+}
+
+@utility star-off {
+  .stars & {
+    @apply text-interface-text-disabled;
+  }
+}
+
+@utility difficulty-dot {
+  /* ==============================================
+     FIN DES NOUVELLES CLASSES
+     ============================================== */
+
+  /* Search UI moved to src/routes/+page.svelte */
+
+  /* Difficulty dots — recolorés vers accent (transition vers StarsRating) */
+  &.difficulty-dot--active {
+    @apply bg-accent-500;
+  }
+  &.difficulty-dot--inactive {
+    @apply bg-interface-text-disabled;
+  }
+  @apply w-2 h-2 rounded-full bg-gray-300;
+}
+
+@utility difficulty-dot--active {
+  /* ==============================================
+     FIN DES NOUVELLES CLASSES
+     ============================================== */
+
+  /* Search UI moved to src/routes/+page.svelte */
+
+  /* Difficulty dots — recolorés vers accent (transition vers StarsRating) */
+  &.difficulty-dot {
+    @apply bg-accent-500;
+  }
+  @apply bg-orange-400;
+}
+
+@utility difficulty-dot--inactive {
+  &.difficulty-dot {
+    @apply bg-interface-text-disabled;
+  }
+}
+
+@utility dashboard {
+  /* Similar exercises styles moved to src/routes/exercise/[uuid]/+page.svelte */
+
+  /* Exercise preview styles moved to ExercisePreview.svelte */
+
+  /* ==================
+     DASHBOARD
+     ================== */
+  @apply space-y-8;
+}
+
+@utility dashboard-loading {
+  @apply text-center py-16;
+}
+
+@utility dashboard-error {
+  @apply text-center py-16;
+}
+
+@utility loading-spinner {
+  @apply w-12 h-12 border-4 border-gray-300 border-t-brand-600 rounded-full animate-spin mx-auto mb-4;
+}
+
+@utility retry-button {
+  @apply mt-4 px-6 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors;
+}
+
+@utility dashboard-content {
+  @apply space-y-8;
+}
+
+@utility section-title {
+  @apply text-2xl font-bold text-gray-900 mb-6;
+}
+
+@utility subsection-title {
+  @apply text-xl font-semibold text-gray-800 mb-4;
+}
+
+@utility stats-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6;
+  @media (max-width: 768px) {
+    @apply grid-cols-1 sm:grid-cols-2;
+  }
+}
+
+@utility stat-card {
+  @apply bg-white rounded-xl shadow-xs border p-6 flex items-center gap-4;
+}
+
+@utility stat-card--primary {
+  @apply border-brand-200 bg-linear-to-br from-brand-50 to-white;
+  & .stat-icon {
+    @apply text-brand-600;
+  }
+}
+
+@utility stat-card--success {
+  @apply border-green-200 bg-linear-to-br from-green-50 to-white;
+  & .stat-icon {
+    @apply text-green-600;
+  }
+}
+
+@utility stat-card--info {
+  @apply border-purple-200 bg-linear-to-br from-purple-50 to-white;
+  & .stat-icon {
+    @apply text-purple-600;
+  }
+}
+
+@utility stat-card--warning {
+  @apply border-orange-200 bg-linear-to-br from-orange-50 to-white;
+  & .stat-icon {
+    @apply text-orange-600;
+  }
+}
+
+@utility stat-icon {
+  @apply flex-shrink-0;
+  .stat-card--primary & {
+    @apply text-brand-600;
+  }
+  .stat-card--success & {
+    @apply text-green-600;
+  }
+  .stat-card--info & {
+    @apply text-purple-600;
+  }
+  .stat-card--warning & {
+    @apply text-orange-600;
+  }
+}
+
+@utility stat-content {
+  @apply flex-1;
+}
+
+@utility stat-value {
+  @apply text-3xl font-bold text-gray-900 leading-none;
+}
+
+@utility stat-label {
+  @apply text-sm text-gray-600 mt-1;
+}
+
+@utility difficulty-distribution {
+  @apply bg-white rounded-xl shadow-xs border p-6;
+}
+
+@utility difficulty-chart {
+  @apply space-y-4;
+}
+
+@utility difficulty-bar-container {
+  @apply flex items-center gap-4;
+  @media (max-width: 768px) {
+    @apply flex-col items-start gap-2;
+  }
+}
+
+@utility difficulty-level {
+  @apply flex-shrink-0 w-24;
+  @media (max-width: 768px) {
+    @apply w-auto;
+  }
+}
+
+@utility difficulty-badge {
+  @apply px-2 py-1 rounded-full text-xs font-medium;
+}
+
+@utility difficulty-bar-wrapper {
+  @apply flex-1 flex items-center gap-3;
+  @media (max-width: 768px) {
+    @apply w-full;
+  }
+}
+
+@utility difficulty-bar {
+  @apply h-4 bg-linear-to-r from-brand-400 to-brand-600 rounded-full transition-all duration-500;
+}
+
+@utility difficulty-count {
+  @apply text-sm text-gray-600 font-medium min-w-24;
+}
+
+@utility dashboard-grid {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-8;
+  @media (max-width: 768px) {
+    @apply grid-cols-1;
+  }
+}
+
+@utility dashboard-card {
+  @apply bg-white rounded-xl shadow-xs border p-6;
+}
+
+@utility card-title {
+  @apply text-lg font-semibold text-gray-900 mb-4;
+}
+
+@utility top-list {
+  @apply space-y-3;
+}
+
+@utility top-item {
+  @apply space-y-2;
+}
+
+@utility top-item-content {
+  @apply flex items-center justify-between;
+}
+
+@utility top-item-name {
+  @apply font-medium text-gray-900 truncate flex-1 mr-3;
+}
+
+@utility top-item-count {
+  @apply text-sm text-gray-600 flex-shrink-0;
+}
+
+@utility top-item-bar {
+  @apply w-full bg-gray-200 rounded-full h-2;
+}
+
+@utility top-item-progress {
+  @apply h-full bg-linear-to-r from-brand-400 to-brand-600 rounded-full transition-all duration-500;
+}
+
+@utility top-item-progress--author {
+  @apply from-green-500 to-green-600;
+}
+
+@utility trending-section {
+  @apply bg-linear-to-br from-orange-50 to-red-50 rounded-xl p-6 border border-orange-200;
+}
+
+@utility trending-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4;
+  @media (max-width: 768px) {
+    @apply grid-cols-1;
+  }
+}
+
+@utility trending-card {
+  @apply bg-white rounded-lg shadow-xs border p-4 hover:shadow-md transition-shadow;
+}
+
+@utility trending-card-header {
+  @apply flex items-center justify-between mb-3;
+}
+
+@utility trending-rank {
+  @apply w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold;
+}
+
+@utility trending-difficulty {
+  @apply flex items-center;
+}
+
+@utility difficulty-dots {
+  @apply flex gap-1;
+}
+
+@utility trending-content {
+  @apply mb-3;
+}
+
+@utility trending-title {
+  & a {
+    @apply font-semibold text-gray-900 hover:text-brand-primary transition-colors line-clamp-2;
+  }
+}
+
+@utility trending-meta {
+  @apply flex flex-col gap-1 mt-2 text-sm text-gray-600;
+}
+
+@utility trending-chapter {
+  @apply px-2 py-1 bg-brand-50 text-brand-700 rounded-sm text-xs inline-block;
+}
+
+@utility trending-author {
+  @apply text-xs;
+}
+
+@utility trending-score {
+  @apply pt-3 border-t border-gray-100;
+}
+
+@utility score-indicator {
+  @apply space-y-1;
+}
+
+@utility score-bar {
+  @apply w-full h-1.5 bg-gray-200 rounded-full overflow-hidden;
+}
+
+@utility score-fill {
+  @apply h-full bg-linear-to-r from-orange-400 to-red-500 rounded-full transition-all duration-700;
+}
+
+@utility score-label {
+  @apply text-xs text-gray-500;
+}
+
+@utility line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  /* Utilitaire pour limiter le nombre de lignes affichées */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@utility empty-state {
+  /* ==================
+     EMPTY STATES
+     ================== */
+  @apply text-center py-12;
+}
+
+@utility empty-state-icon {
+  @apply text-gray-400 mb-4;
+
+  & svg {
+    @apply w-16 h-16 mx-auto;
+  }
+}
+
+@utility empty-state-title {
+  @apply text-interface-text-secondary text-lg font-semibold;
+}
+
+@utility empty-state-subtitle {
+  @apply text-interface-text-muted text-sm mt-2;
+}
+
+@utility error-page {
+  /* ==================
+     ERROR PAGES
+     ================== */
+  @apply container mx-auto px-4 py-16 text-center;
+}
+
+@utility error-content {
+  @apply max-w-md mx-auto;
+}
+
+@utility error-icon {
+  @apply text-gray-400 mb-6;
+
+  & svg {
+    @apply w-24 h-24 mx-auto;
+  }
+}
+
+@utility error-title {
+  @apply text-3xl font-bold text-interface-text-primary mb-4;
+}
+
+@utility error-description {
+  @apply text-interface-text-secondary mb-8;
+}
+
+@utility error-actions {
+  @apply space-y-3;
+}
+
+@utility error-uuid {
+  @apply text-sm text-gray-500;
+
+  & code {
+    @apply bg-gray-100 px-2 py-1 rounded-sm;
+  }
+}
+
+@utility line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@utility animate-in {
+  /* Animations personnalisées */
+  animation-fill-mode: both;
+}
+
+@utility slide-in-from-top-1 {
+  animation-name: slide-in-from-top-1;
+
+  /* Styles pour l'impression */
+}
+
+@utility print-hidden {
+  @media print {
+    display: none !important;
+
+    /* Removed unused print-full-width and print-no-shadow */
+  }
+}
 
 @layer base {
   /* Amélioration de la typographie de base */
@@ -26,7 +854,7 @@
   button:focus,
   input:focus,
   summary:focus {
-    @apply outline-none ring-2 ring-brand-500 ring-opacity-50;
+    @apply outline-hidden ring-2 ring-brand-500/50;
   }
 }
 
@@ -35,56 +863,6 @@
    ============================================== */
 
 @layer components {
-  /* ==================
-     HEADER / BADGES
-     ================== */
-  .list-counter {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    min-width: 1.25rem;
-    height: 1.25rem;
-    border-radius: 9999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 0.25rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    @apply bg-error-500 text-white;
-  }
-
-  @media (max-width: 640px) {
-    .list-counter {
-      position: static;
-      margin-left: 0.25rem;
-      @apply bg-gray-500;
-    }
-  }
-  
-  /* ==================
-     MATH RENDERING
-     ================== */
-  
-  /* Removed unused .math-block and .math-inline */
-  
-  /* KaTeX overrides and helpers */
-  .katex-display {
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 1em 0;
-    margin: 1em 0;
-  }
-
-  .katex {
-    font-size: 1.1em !important;
-  }
-
-  .katex-display > .katex {
-    font-size: 1.2em !important;
-  }
-
   /* LaTeX tables defaults */
   table {
     border-collapse: collapse;
@@ -97,342 +875,6 @@
     text-align: center;
     @apply border border-gray-300;
   }
-
-  @media (max-width: 640px) {
-    .katex { font-size: 1em !important; }
-    .katex-display > .katex { font-size: 1.1em !important; }
-  }
-  
-  /* ==================
-     EXERCISE LAYOUT
-     ================== */
-  
-  .exercise {
-    @apply max-w-4xl mx-auto bg-white rounded-lg shadow-sm border;
-  }
-  
-  .exercise-content {
-    @apply leading-relaxed;
-  }
-  
-  /* Component-specific exercise header/actions moved to ExerciseHeader.svelte */
-
-  /* Styles à AJOUTER dans app.css - Section @layer components */
-
-/* ==============================================
-     NOUVELLES CLASSES MUTUALISÉES
-     ============================================== */
-
-  /* ==================
-     BUTTONS - Styles de boutons génériques
-     ================== */
-  
-  .btn {
-    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-opacity-50;
-  }
-  
-  .btn-primary {
-    @apply bg-brand-600 text-white hover:bg-brand-700;
-  }
-  
-  .btn-secondary {
-    @apply bg-interface-bg-tertiary text-interface-text-primary hover:bg-interface-bg-secondary border border-interface-border-primary;
-  }
-
-  .btn-accent {
-    @apply bg-accent-500 text-white hover:bg-accent-600 border border-accent-500;
-  }
-
-  .btn-outline {
-    @apply bg-transparent text-interface-text-primary border border-interface-text-primary
-           hover:bg-interface-text-primary hover:text-interface-bg-primary;
-  }
-
-  .btn-ghost {
-    @apply bg-transparent text-interface-text-secondary border border-transparent
-           hover:bg-interface-bg-secondary hover:text-interface-text-primary;
-  }
-
-  .btn-sm {
-    @apply px-3 py-1.5 text-xs;
-  }
-
-  .btn-lg {
-    @apply px-6 py-3 text-base;
-  }
-
-  .btn-text {
-    @apply px-2 py-1 text-interface-text-secondary hover:bg-interface-bg-secondary hover:text-interface-text-primary;
-  }
-
-  .btn-icon {
-    @apply flex items-center justify-center w-8 h-8 rounded-full transition-colors duration-200 hover:bg-interface-bg-secondary;
-  }
-
-  /* Legacy aliases */
-  .btn--primary { @apply bg-brand-600 text-white hover:bg-brand-700; }
-
-  /* ==================
-     FORMS & FILTERS
-     ================== */
-
-  .form-input {
-    @apply w-full px-3 py-2 bg-interface-bg-white text-interface-text-primary
-           border border-interface-border-primary rounded-lg
-           focus:ring-0 focus:border-brand-500 focus:shadow-focus;
-  }
-
-  .search-input {
-    @apply flex items-center gap-2 h-12 px-5
-           bg-interface-bg-white border border-interface-border-primary
-           rounded-search shadow-search transition-shadow
-           focus-within:shadow-search-hover focus-within:border-brand-300;
-  }
-
-  .search-input input {
-    @apply flex-1 min-w-0 border-0 outline-none bg-transparent text-interface-text-primary;
-  }
-
-  .search-input input::placeholder {
-    @apply text-interface-text-muted;
-  }
-
-  .filters-bar {
-    @apply flex flex-wrap items-center gap-2 mb-4 p-3 bg-interface-bg-secondary rounded-lg border border-interface-border-primary;
-  }
-
-  .filter-chip {
-    @apply inline-flex items-center gap-1 pl-3 pr-2 py-1
-           bg-brand-50 text-brand-700 border border-brand-200
-           rounded-pill text-xs font-medium;
-  }
-
-  .filter-chip-close {
-    @apply w-5 h-5 flex items-center justify-center rounded-full
-           hover:bg-brand-100 transition-colors;
-  }
-
-  /* Chip générique et variantes */
-  .chip {
-    @apply inline-flex items-center gap-1 px-3 py-1
-           bg-interface-bg-white text-interface-text-secondary border border-interface-border-primary
-           rounded-pill text-xs font-medium;
-  }
-
-  .chip-active     { @apply bg-interface-text-primary text-interface-bg-primary border-interface-text-primary; }
-  .chip-teal       { @apply bg-brand-50 text-brand-700 border-brand-200; }
-  .chip-teal-solid { @apply bg-brand-500 text-white border-brand-500; }
-  .chip-accent     { @apply bg-accent-50 text-accent-700 border-accent-200; }
-  .chip-soft       { @apply bg-transparent text-interface-text-muted border-interface-border-primary; }
-  .chip-success    { @apply bg-success-50 text-success-700 border-success-100; }
-  .chip-warning    { @apply bg-warning-50 text-warning-700 border-warning-100; }
-  .chip-error      { @apply bg-error-50 text-error-700 border-error-100; }
-  .chip-info       { @apply bg-info-50 text-info-700 border-info-100; }
-
-  /* Cards */
-  .card {
-    @apply bg-interface-bg-white border border-interface-border-primary rounded-lg p-4 transition-all;
-  }
-
-  .card-hover {
-    @apply hover:border-interface-text-muted hover:shadow-card cursor-pointer;
-  }
-
-  .card-selected {
-    @apply bg-brand-50 border-brand-600;
-    box-shadow: 0 0 0 1px theme('colors.brand.600');
-  }
-
-  /* Overline typographic style */
-  .t-overline {
-    font-family: theme('fontFamily.primary');
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: theme('colors.interface.text-muted');
-  }
-
-  .t-display {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-weight: 650;
-    letter-spacing: 0;
-  }
-
-  .t-caption {
-    font-family: theme('fontFamily.primary');
-    font-size: 12px;
-    line-height: 1.4;
-    font-weight: 500;
-  }
-
-  /* Kbd */
-  .kbd {
-    @apply inline-flex items-center justify-center
-           min-w-[20px] h-5 px-1.5
-           font-mono text-[11px]
-           bg-interface-bg-secondary border border-interface-border-primary border-b-2
-           rounded text-interface-text-secondary;
-  }
-
-  /* Stars (remplace difficulty-dots) */
-  .stars {
-    @apply inline-flex gap-0.5 text-accent-500 text-sm leading-none;
-  }
-
-  .stars .star-off {
-    @apply text-interface-text-disabled;
-  }
-
-  /* ==============================================
-     FIN DES NOUVELLES CLASSES
-     ============================================== */
-
-  /* Search UI moved to src/routes/+page.svelte */
-  
-  /* Difficulty dots — recolorés vers accent (transition vers StarsRating) */
-  .difficulty-dot.difficulty-dot--active   { @apply bg-accent-500; }
-  .difficulty-dot.difficulty-dot--inactive { @apply bg-interface-text-disabled; }
-  
-  /* Similar exercises styles moved to src/routes/exercise/[uuid]/+page.svelte */
-
-  /* Exercise preview styles moved to ExercisePreview.svelte */
-
-  /* ==================
-     DASHBOARD
-     ================== */
-  .dashboard { @apply space-y-8; }
-  .dashboard-loading, .dashboard-error { @apply text-center py-16; }
-  .loading-spinner { @apply w-12 h-12 border-4 border-gray-300 border-t-brand-600 rounded-full animate-spin mx-auto mb-4; }
-  .retry-button { @apply mt-4 px-6 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors; }
-  .dashboard-content { @apply space-y-8; }
-  .section-title { @apply text-2xl font-bold text-gray-900 mb-6; }
-  .subsection-title { @apply text-xl font-semibold text-gray-800 mb-4; }
-  .stats-grid { @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6; }
-  .stat-card { @apply bg-white rounded-xl shadow-sm border p-6 flex items-center gap-4; }
-  .stat-card--primary { @apply border-brand-200 bg-gradient-to-br from-brand-50 to-white; }
-  .stat-card--success { @apply border-green-200 bg-gradient-to-br from-green-50 to-white; }
-  .stat-card--info { @apply border-purple-200 bg-gradient-to-br from-purple-50 to-white; }
-  .stat-card--warning { @apply border-orange-200 bg-gradient-to-br from-orange-50 to-white; }
-  .stat-icon { @apply flex-shrink-0; }
-  .stat-card--primary .stat-icon { @apply text-brand-600; }
-  .stat-card--success .stat-icon { @apply text-green-600; }
-  .stat-card--info .stat-icon { @apply text-purple-600; }
-  .stat-card--warning .stat-icon { @apply text-orange-600; }
-  .stat-content { @apply flex-1; }
-  .stat-value { @apply text-3xl font-bold text-gray-900 leading-none; }
-  .stat-label { @apply text-sm text-gray-600 mt-1; }
-  .difficulty-distribution { @apply bg-white rounded-xl shadow-sm border p-6; }
-  .difficulty-chart { @apply space-y-4; }
-  .difficulty-bar-container { @apply flex items-center gap-4; }
-  .difficulty-level { @apply flex-shrink-0 w-24; }
-  .difficulty-badge { @apply px-2 py-1 rounded-full text-xs font-medium; }
-  .difficulty-bar-wrapper { @apply flex-1 flex items-center gap-3; }
-  .difficulty-bar { @apply h-4 bg-gradient-to-r from-brand-400 to-brand-600 rounded-full transition-all duration-500; }
-  .difficulty-count { @apply text-sm text-gray-600 font-medium min-w-24; }
-  .dashboard-grid { @apply grid grid-cols-1 lg:grid-cols-2 gap-8; }
-  .dashboard-card { @apply bg-white rounded-xl shadow-sm border p-6; }
-  .card-title { @apply text-lg font-semibold text-gray-900 mb-4; }
-  .top-list { @apply space-y-3; }
-  .top-item { @apply space-y-2; }
-  .top-item-content { @apply flex items-center justify-between; }
-  .top-item-name { @apply font-medium text-gray-900 truncate flex-1 mr-3; }
-  .top-item-count { @apply text-sm text-gray-600 flex-shrink-0; }
-  .top-item-bar { @apply w-full bg-gray-200 rounded-full h-2; }
-  .top-item-progress { @apply h-full bg-gradient-to-r from-brand-400 to-brand-600 rounded-full transition-all duration-500; }
-  .top-item-progress--author { @apply from-green-500 to-green-600; }
-  .trending-section { @apply bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6 border border-orange-200; }
-  .trending-grid { @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4; }
-  .trending-card { @apply bg-white rounded-lg shadow-sm border p-4 hover:shadow-md transition-shadow; }
-  .trending-card-header { @apply flex items-center justify-between mb-3; }
-  .trending-rank { @apply w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold; }
-  .trending-difficulty { @apply flex items-center; }
-  .difficulty-dots { @apply flex gap-1; }
-  .difficulty-dot { @apply w-2 h-2 rounded-full bg-gray-300; }
-  .difficulty-dot--active { @apply bg-orange-400; }
-  .trending-content { @apply mb-3; }
-  .trending-title a { @apply font-semibold text-gray-900 hover:text-brand-primary transition-colors line-clamp-2; }
-  .trending-meta { @apply flex flex-col gap-1 mt-2 text-sm text-gray-600; }
-  .trending-chapter { @apply px-2 py-1 bg-brand-50 text-brand-700 rounded text-xs inline-block; }
-  .trending-author { @apply text-xs; }
-  .trending-score { @apply pt-3 border-t border-gray-100; }
-  .score-indicator { @apply space-y-1; }
-  .score-bar { @apply w-full h-1.5 bg-gray-200 rounded-full overflow-hidden; }
-  .score-fill { @apply h-full bg-gradient-to-r from-orange-400 to-red-500 rounded-full transition-all duration-700; }
-  .score-label { @apply text-xs text-gray-500; }
-  @media (max-width: 768px) {
-    .stats-grid { @apply grid-cols-1 sm:grid-cols-2; }
-    .dashboard-grid { @apply grid-cols-1; }
-    .trending-grid { @apply grid-cols-1; }
-    .difficulty-bar-container { @apply flex-col items-start gap-2; }
-    .difficulty-level { @apply w-auto; }
-    .difficulty-bar-wrapper { @apply w-full; }
-  }
-  .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-
-  /* ==================
-     EMPTY STATES
-     ================== */
-  
-  .empty-state {
-    @apply text-center py-12;
-  }
-  
-  .empty-state-icon {
-    @apply text-gray-400 mb-4;
-  }
-  
-  .empty-state-icon svg {
-    @apply w-16 h-16 mx-auto;
-  }
-  
-  .empty-state-title {
-    @apply text-interface-text-secondary text-lg font-semibold;
-  }
-
-  .empty-state-subtitle {
-    @apply text-interface-text-muted text-sm mt-2;
-  }
-  
-  /* ==================
-     ERROR PAGES
-     ================== */
-  
-  .error-page {
-    @apply container mx-auto px-4 py-16 text-center;
-  }
-  
-  .error-content {
-    @apply max-w-md mx-auto;
-  }
-  
-  .error-icon {
-    @apply text-gray-400 mb-6;
-  }
-  
-  .error-icon svg {
-    @apply w-24 h-24 mx-auto;
-  }
-  
-  .error-title {
-    @apply text-3xl font-bold text-interface-text-primary mb-4;
-  }
-
-  .error-description {
-    @apply text-interface-text-secondary mb-8;
-  }
-  
-  .error-actions {
-    @apply space-y-3;
-  }
-  
-  .error-uuid {
-    @apply text-sm text-gray-500;
-  }
-  
-  .error-uuid code {
-    @apply bg-gray-100 px-2 py-1 rounded;
-  }
 }
 
 /* ==============================================
@@ -440,31 +882,6 @@
    ============================================== */
 
 @layer utilities {
-  
-  /* Utilitaire pour limiter le nombre de lignes affichées */
-  .line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
-  /* Animations personnalisées */
-  .animate-in {
-    animation-fill-mode: both;
-  }
-  
-  .slide-in-from-top-1 {
-    animation-name: slide-in-from-top-1;
-  }
-  
   @keyframes slide-in-from-top-1 {
     from {
       opacity: 0;
@@ -474,15 +891,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
-  
-  /* Styles pour l'impression */
-  @media print {
-    .print-hidden {
-      display: none !important;
-    }
-    
-    /* Removed unused print-full-width and print-no-shadow */
   }
 }
 
@@ -536,7 +944,7 @@
 }
 
 .exercise-content :global(code) {
-  @apply bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono;
+  @apply bg-gray-100 text-gray-800 px-2 py-1 rounded-sm text-sm font-mono;
 }
 
 .exercise-content :global(pre) {
@@ -565,7 +973,7 @@
 }
 
 .exercise-content :global(img) {
-  @apply max-w-full h-auto rounded-lg shadow-sm my-4;
+  @apply max-w-full h-auto rounded-lg shadow-xs my-4;
 }
 
 .exercise-content :global(a) {

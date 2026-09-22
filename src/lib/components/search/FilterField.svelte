@@ -57,6 +57,8 @@
 </div>
 
 <style>
+  @reference "../../../app.css";
+
   .filters-field {
     position:relative;
     display:flex;

@@ -300,7 +300,7 @@
 
   .browse-header h1 {
     margin-top: 0.25rem;
-    font-family: theme('fontFamily.heading');
+    font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3.25rem);
     line-height: 1;
     letter-spacing: 0;
@@ -308,7 +308,7 @@
 
   .browse-subtitle {
     margin-top: 0.6rem;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
   }
 
   .overview-stats {
@@ -320,9 +320,9 @@
 
   .overview-stats > div {
     padding: 1rem;
-    border: 1px solid theme('colors.interface.border-primary');
+    border: 1px solid var(--color-interface-border-primary);
     border-radius: 8px;
-    background: theme('colors.interface.bg-white');
+    background: var(--color-interface-bg-white);
   }
 
   .overview-stats strong {
@@ -335,7 +335,7 @@
     display: block;
     margin-top: 0.35rem;
     font-size: 0.85rem;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
   }
 
   .overview-grid {
@@ -346,9 +346,9 @@
 
   .level-card,
   .exercise-card {
-    border: 1px solid theme('colors.interface.border-primary');
+    border: 1px solid var(--color-interface-border-primary);
     border-radius: 8px;
-    background: theme('colors.interface.bg-white');
+    background: var(--color-interface-bg-white);
   }
 
   .level-card {
@@ -368,7 +368,7 @@
   .level-card h2,
   .results-head h2,
   .exercise-card h3 {
-    font-family: theme('fontFamily.heading');
+    font-family: var(--font-heading);
     letter-spacing: 0;
   }
 
@@ -379,7 +379,7 @@
   .level-card p,
   .sort-row p,
   .result-limit {
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
     font-size: 0.875rem;
   }
 
@@ -396,15 +396,15 @@
     gap: 0.45rem;
     max-width: 100%;
     padding: 0.4rem 0.6rem;
-    border: 1px solid theme('colors.interface.border-primary');
+    border: 1px solid var(--color-interface-border-primary);
     border-radius: 999px;
-    background: theme('colors.interface.bg-secondary');
+    background: var(--color-interface-bg-secondary);
     font-size: 0.82rem;
   }
 
   .module-pill:hover {
-    border-color: theme('colors.brand.400');
-    color: theme('colors.brand.700');
+    border-color: var(--color-brand-400);
+    color: var(--color-brand-700);
   }
 
   .module-pill span {
@@ -415,7 +415,7 @@
   }
 
   .module-pill small {
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
   }
 
   .more-count {
@@ -440,9 +440,9 @@
 
   .results-head {
     padding: 1rem;
-    border: 1px solid theme('colors.interface.border-primary');
+    border: 1px solid var(--color-interface-border-primary);
     border-radius: 8px;
-    background: theme('colors.interface.bg-white');
+    background: var(--color-interface-bg-white);
   }
 
   .results-head h2 {
@@ -477,7 +477,7 @@
   }
 
   .result-count span {
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     font-size: 0.85rem;
   }
 
@@ -496,7 +496,7 @@
   }
 
   .summary-group > span {
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
   }
 
   .sort-row {
@@ -505,9 +505,9 @@
   }
 
   .sort-buttons .is-current {
-    color: theme('colors.brand.700');
-    background: theme('colors.brand.50');
-    border-color: theme('colors.brand.200');
+    color: var(--color-brand-700);
+    background: var(--color-brand-50);
+    border-color: var(--color-brand-200);
   }
 
   .exercise-list {
@@ -529,7 +529,7 @@
   }
 
   .exercise-card h3 a:hover {
-    color: theme('colors.brand.700');
+    color: var(--color-brand-700);
   }
 
   .exercise-preview {
@@ -539,7 +539,7 @@
 
   .exercise-foot {
     margin-top: 0.7rem;
-    color: theme('colors.interface.text-muted');
+    color: var(--color-interface-text-muted);
     font-size: 0.78rem;
   }
 

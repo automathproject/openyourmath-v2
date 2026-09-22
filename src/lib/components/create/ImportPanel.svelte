@@ -88,6 +88,8 @@
 {/if}
 
 <style>
+  @reference "../../../app.css";
+
   .create-import {
     @apply mb-3;
   }

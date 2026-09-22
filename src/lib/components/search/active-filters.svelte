@@ -108,6 +108,8 @@
 {/if}
 
 <style>
+  @reference "../../../app.css";
+
   .active-filters {
     display: flex;
     align-items: center;

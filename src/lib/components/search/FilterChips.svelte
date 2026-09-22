@@ -52,6 +52,8 @@
 </div>
 
 <style>
+  @reference "../../../app.css";
+
   .filters-chips {
     border-radius:0.75rem;
     padding:0.75rem;

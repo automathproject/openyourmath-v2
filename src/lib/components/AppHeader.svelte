@@ -109,15 +109,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: theme('spacing.header');
+    height: var(--spacing-header);
     padding: 0 20px;
-    background: theme('colors.interface.bg-primary');
-    border-bottom: 1px solid theme('colors.interface.border-primary');
+    background: var(--color-interface-bg-primary);
+    border-bottom: 1px solid var(--color-interface-border-primary);
     flex-shrink: 0;
   }
 
   @media (max-width: 640px) {
-    .app-header { height: theme('spacing.header-mobile'); padding: 0 12px; }
+    .app-header { height: var(--spacing-header-mobile); padding: 0 12px; }
   }
 
   .app-header-left {
@@ -130,7 +130,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: theme('colors.interface.text-primary');
+    color: var(--color-interface-text-primary);
     text-decoration: none;
   }
 
@@ -138,11 +138,11 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: theme('colors.brand.500');
+    background: var(--color-brand-500);
     display: grid;
     place-items: center;
     color: white;
-    font-family: theme('fontFamily.heading');
+    font-family: var(--font-heading);
     font-weight: 800;
     font-size: 14px;
   }
@@ -153,12 +153,12 @@
     font-size: 17px;
     line-height: 1;
     letter-spacing: 0;
-    color: theme('colors.interface.text-primary');
+    color: var(--color-interface-text-primary);
     text-transform: lowercase;
   }
 
   .app-brand-name-accent {
-    color: theme('colors.brand.500');
+    color: var(--color-brand-500);
   }
 
   .app-nav {
@@ -175,7 +175,7 @@
     border-radius: 6px;
     font-size: 13px;
     font-weight: 500;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     text-decoration: none;
     transition: background 0.15s, color 0.15s;
   }
@@ -185,13 +185,13 @@
   }
 
   .app-nav a:hover {
-    background: theme('colors.interface.bg-tertiary');
-    color: theme('colors.interface.text-primary');
+    background: var(--color-interface-bg-tertiary);
+    color: var(--color-interface-text-primary);
   }
 
   .app-nav a.is-active {
-    background: theme('colors.brand.50');
-    color: theme('colors.brand.700');
+    background: var(--color-brand-50);
+    color: var(--color-brand-700);
   }
 
   .app-nav .list-counter {
@@ -209,9 +209,9 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     line-height: 1.4;
-    color: theme('colors.amber.700');
-    background: theme('colors.amber.50');
-    border: 1px solid theme('colors.amber.200');
+    color: var(--color-amber-700);
+    background: var(--color-amber-50);
+    border: 1px solid var(--color-amber-200);
   }
 
   .app-header-right {
@@ -231,14 +231,14 @@
     place-items: center;
     border-radius: 50%;
     background: transparent;
-    color: theme('colors.interface.text-secondary');
+    color: var(--color-interface-text-secondary);
     border: 0;
     cursor: pointer;
     transition: background 0.15s, color 0.15s;
   }
   .btn-icon:hover {
-    background: theme('colors.interface.bg-tertiary');
-    color: theme('colors.interface.text-primary');
+    background: var(--color-interface-bg-tertiary);
+    color: var(--color-interface-text-primary);
   }
 
   @media (max-width: 640px) {

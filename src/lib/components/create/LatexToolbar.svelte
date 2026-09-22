@@ -177,6 +177,8 @@
 </div>
 
 <style>
+  @reference "../../../app.css";
+
   .latex-toolbar {
     @apply border border-gray-200 rounded-lg bg-white overflow-hidden;
   }
@@ -199,7 +201,7 @@
   }
 
   .latex-toolbar-btn {
-    @apply min-w-[2rem] px-2 py-1 text-sm rounded border border-gray-200 bg-gray-50 text-gray-700
+    @apply min-w-8 px-2 py-1 text-sm rounded border border-gray-200 bg-gray-50 text-gray-700
            hover:bg-brand-50 hover:border-brand-200 hover:text-brand-700 transition-colors;
   }
 </style>
