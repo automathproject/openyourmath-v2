@@ -3772,6 +3772,56 @@
       padding-right: var(--consulter-gutter);
     }
   }
+  /* Lecture en regard : l'énoncé et son indication restent dans le fil de
+     gauche, la solution occupe une colonne alignée d'une question à l'autre.
+     Les préambules, blocs frères des paires, restent pleine largeur.
+
+     Le critère est la largeur de la colonne de lecture, pas celle de la
+     fenêtre : c'est elle qui décide si la colonne de solution reste lisible.
+     Une requête de conteneur interroge la boîte de contenu, gouttières
+     déduites — donc exactement la place offerte au bloc. Mesuré sur deux jeux
+     d'exercices, le bilan devient nul vers 1100px et négatif au-delà ; en
+     dessous, tout se remet à envelopper et la mise en regard coûte plus
+     qu'elle ne rapporte. */
+  .consulter-body--immersive .exercise-reading-column {
+    container-type: inline-size;
+    container-name: lecture;
+  }
+  @container lecture (min-width: 1100px) {
+    .consulter-body--immersive
+      :global(.exercise-block:has(.inline-solution)) {
+      max-width: 1500px;
+    }
+    .consulter-body--immersive
+      :global(.exercise-block:has(.inline-solution) .question-response-pair) {
+      display: grid;
+      grid-template-columns: minmax(0, 32fr) minmax(0, 68fr);
+      /* La rangée souple absorbe la hauteur de la solution, sinon elle
+         repousserait l'indication loin sous son énoncé. */
+      grid-template-rows: min-content 1fr;
+      column-gap: 40px;
+      row-gap: 12px;
+      align-items: start;
+    }
+    /* Le fil de gauche porte aussi les indications : il lui faut plus de place. */
+    .consulter-body--immersive
+      :global(.exercise-block:has(.inline-hint) .question-response-pair) {
+      grid-template-columns: minmax(0, 40fr) minmax(0, 60fr);
+    }
+    .consulter-body--immersive :global(.question-response-pair > .question-block) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .consulter-body--immersive :global(.question-response-pair > .inline-hint) {
+      grid-column: 1;
+      grid-row: 2;
+      align-self: start;
+    }
+    .consulter-body--immersive :global(.question-response-pair > .inline-solution) {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
+  }
   .consulter-loading {
     padding: 3rem 2rem;
     text-align: center;
