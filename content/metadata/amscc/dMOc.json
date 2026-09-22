@@ -1,29 +1,28 @@
 {
   "uuid": "dMOc",
   "source_path": "amscc/dMOc.tex",
-  "summary": "L'exercice demande de déterminer les paramètres μ et σ d'une loi normale modélisant l'heure d'arrivée de soldats pour une cérémonie, puis d'utiliser cette loi pour trouver l'heure d'ouverture des portes et le nombre de soldats ayant manqué le début de la cérémonie en cas de retard.",
+  "summary": "L'exercice modélise l'arrivée de soldats pour une cérémonie par une variable aléatoire normale. Il demande de déterminer les paramètres de la loi normale à partir de probabilités d'arrivée en retard ou en avance, puis de calculer un seuil d'ouverture des portes et le nombre de soldats en retard en cas de retard de la cérémonie.",
   "concepts": [
     "loi normale",
     "fonction de répartition",
     "standardisation",
-    "lecture inverse dans la table de la loi normale centrée réduite",
-    "probabilité conditionnelle",
-    "écart-type",
-    "espérance"
+    "lecture inverse de la table normale",
+    "calcul de probabilités",
+    "modélisation probabiliste"
   ],
   "methods": [
     "standardisation",
-    "lecture inverse dans la table de la loi normale centrée réduite",
-    "calcul de probabilité conditionnelle",
+    "lecture inverse de la table normale",
+    "calcul de probabilités conditionnelles",
     "résolution de système d'équations"
   ],
   "objects": [
     "variable aléatoire normale",
-    "fonction de répartition",
-    "table de la loi normale centrée réduite",
-    "système d'équations"
+    "fonction de répartition Φ",
+    "système d'équations",
+    "probabilité conditionnelle"
   ],
-  "content_hash": "f166f97277bc05f95b60f0c644189dad1193daf629bfd4a1831c733e5a1ed140",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:58:12.906Z"
+  "content_hash": "c421e2b0906537c8ae4d50b104e6f48260397469f1e5ce744e82b9512c1b9b9d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-22T16:33:01.157Z"
 }
