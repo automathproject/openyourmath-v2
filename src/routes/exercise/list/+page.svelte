@@ -226,6 +226,9 @@
   }
 
   function handlePresenterKey(e) {
+    // Même raison : s, i et les chiffres sont des touches nues, Ctrl+S ne doit
+    // pas dévoiler les solutions au moment où l'on enregistre la page.
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
     if (e.target?.tagName === 'INPUT' || e.target?.tagName === 'TEXTAREA') return;
     if (mode !== 'presenter') return;
     if (e.key === 'Escape') {
@@ -819,6 +822,12 @@
 
   // Navigation clavier
   function handleKeydown(event) {
+    // Les raccourcis d'ici sont des touches nues : sans ce garde-fou, Ctrl+F
+    // et Ctrl+P sont happés par le raccourci F / P ci-dessous, et la recherche
+    // comme l'impression du navigateur ne s'ouvrent jamais. Shift reste permis,
+    // les touches sont comparées en minuscules.
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
+
     const isTyping = event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA';
 
     // Raccourcis F / P pour basculer le mode présentation
