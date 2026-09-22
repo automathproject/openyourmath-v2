@@ -92,7 +92,7 @@
   },
   "_comment_dependencies": "Seuls les paquets non bundlés par Vite, donc résolus à l'exécution par build/server (les autres sont en devDependencies)",
   "dependencies": {
-    "better-sqlite3": "^11.10.0",
+    "better-sqlite3": "^13.0.3",
     "katex": "^0.18.7",
     "qrcode": "^1.5.4"
   },
