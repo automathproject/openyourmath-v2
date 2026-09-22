@@ -1802,7 +1802,11 @@
 
             <div class="exercise-reading-layout">
               <article class="exercise-reading-column">
-                <div class="exercise-block">
+                <div
+                  class="exercise-block"
+                  class:en-regard={consulterShowSolution}
+                  class:en-regard--indications={consulterShowSolution && consulterShowHint}
+                >
                   <ExerciseContent
                     exercise={$selectedExercise}
                     variant="full"
@@ -3787,18 +3791,22 @@
      déduites — donc exactement la place offerte au bloc. Mesuré sur deux jeux
      d'exercices, le bilan devient nul vers 1100px et négatif au-delà ; en
      dessous, tout se remet à envelopper et la mise en regard coûte plus
-     qu'elle ne rapporte. */
+     qu'elle ne rapporte.
+
+     Le gabarit suit l'état global de révélation, commandé depuis le rail, et
+     non la présence d'une solution dévoilée. Sinon le premier clic sur le
+     bouton d'une question refluait tout l'exercice et déplaçait ce bouton de
+     638px sous le curseur. Un dévoilement question par question reste donc
+     dans le fil, comme avant. */
   .consulter-body--immersive .exercise-reading-column {
     container-type: inline-size;
     container-name: lecture;
   }
   @container lecture (min-width: 1100px) {
-    .consulter-body--immersive
-      :global(.exercise-block:has(.inline-solution)) {
+    .consulter-body--immersive .exercise-block.en-regard {
       max-width: 1500px;
     }
-    .consulter-body--immersive
-      :global(.exercise-block:has(.inline-solution) .question-response-pair) {
+    .consulter-body--immersive .exercise-block.en-regard :global(.question-response-pair) {
       display: grid;
       grid-template-columns: minmax(0, 32fr) minmax(0, 68fr);
       /* La rangée souple absorbe la hauteur de la solution, sinon elle
@@ -3810,19 +3818,26 @@
     }
     /* Le fil de gauche porte aussi les indications : il lui faut plus de place. */
     .consulter-body--immersive
-      :global(.exercise-block:has(.inline-hint) .question-response-pair) {
+      .exercise-block.en-regard--indications
+      :global(.question-response-pair) {
       grid-template-columns: minmax(0, 40fr) minmax(0, 60fr);
     }
-    .consulter-body--immersive :global(.question-response-pair > .question-block) {
+    .consulter-body--immersive
+      .exercise-block.en-regard
+      :global(.question-response-pair > .question-block) {
       grid-column: 1;
       grid-row: 1;
     }
-    .consulter-body--immersive :global(.question-response-pair > .inline-hint) {
+    .consulter-body--immersive
+      .exercise-block.en-regard
+      :global(.question-response-pair > .inline-hint) {
       grid-column: 1;
       grid-row: 2;
       align-self: start;
     }
-    .consulter-body--immersive :global(.question-response-pair > .inline-solution) {
+    .consulter-body--immersive
+      .exercise-block.en-regard
+      :global(.question-response-pair > .inline-solution) {
       grid-column: 2;
       grid-row: 1 / span 2;
     }
