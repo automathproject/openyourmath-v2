@@ -3597,7 +3597,12 @@
     background: var(--color-interface-bg-primary);
   }
   .consulter-toc {
-    width: 300px;
+    /* À 300px fixes, le sommaire mangeait 38% d'une fenêtre de 780px (demi-
+       écran) contre 24% d'une fenêtre large. Il tient désormais le même ratio
+       de 24% jusqu'à retrouver sa largeur d'origine vers 1250px, au-delà de
+       quoi il s'arrête. Le plancher n'entre en jeu qu'en dessous de 750px,
+       où le sommaire passe de toute façon en tiroir. */
+    width: clamp(180px, 24vw, 300px);
     flex-shrink: 0;
     padding: 16px 14px;
     background: var(--color-interface-bg-secondary);
