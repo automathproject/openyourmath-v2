@@ -36,13 +36,9 @@ RUN pnpm run build:app
 # Ce stage crée l'image finale, propre et légère
 FROM node:22-alpine AS production
 
-# Installer sqlite au runtime, plus les outils de build temporaires pour better-sqlite3
+# Installer sqlite au runtime
 RUN apk add --no-cache \
     sqlite \
-    && apk add --no-cache --virtual .build-deps \
-    python3 \
-    make \
-    g++ \
     && corepack enable \
     && addgroup -g 1001 -S nodejs \
     && adduser -S sveltekit -u 1001
@@ -60,7 +56,11 @@ COPY --chown=sveltekit:nodejs package.json pnpm-lock.yaml ./
 # Installer UNIQUEMENT les dépendances de production
 # Corepack utilisera automatiquement la version pnpm@9 définie dans package.json
 # better-sqlite3 sera installé et compilé pour cet environnement
-RUN pnpm install --frozen-lockfile --prod --ignore-scripts && \
+# Les outils de compilation sont ajoutés et retirés dans ce seul RUN : une couche
+# Docker est additive, donc les supprimer dans un RUN ultérieur les laisserait
+# peser dans l'image (~300 Mo) tout en les rendant invisibles.
+RUN apk add --no-cache --virtual .build-deps python3 make g++ && \
+    pnpm install --frozen-lockfile --prod --ignore-scripts && \
     pnpm rebuild better-sqlite3 && \
     pnpm store prune && \
     rm -rf ~/.pnpm-store && \
