@@ -75,7 +75,7 @@
     "@playwright/test": "^1.63.0",
     "@sveltejs/adapter-node": "^5.5.7",
     "@sveltejs/kit": "^2.70.3",
-    "@sveltejs/vite-plugin-svelte": "^4.0.4",
+    "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@tailwindcss/typography": "^0.5.20",
     "autoprefixer": "^10.6.1",
     "codemirror": "^6.0.2",
@@ -87,8 +87,8 @@
     "prettier-plugin-svelte": "^3.5.2",
     "svelte": "^5.57.1",
     "tailwindcss": "^3.4.19",
-    "vite": "^5.4.21",
-    "vitest": "^2.1.9"
+    "vite": "^8.3.0",
+    "vitest": "^5.0.1"
   },
   "_comment_dependencies": "Seuls les paquets non bundlés par Vite, donc résolus à l'exécution par build/server (les autres sont en devDependencies)",
   "dependencies": {
