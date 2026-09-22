@@ -80,7 +80,7 @@
     "autoprefixer": "^10.6.1",
     "codemirror": "^6.0.2",
     "codemirror-lang-latex": "^0.6.1",
-    "dotenv": "^17.4.2",
+    "dotenv": "^18.0.2",
     "pdfjs-dist": "^6.3.289",
     "postcss": "^8.5.28",
     "prettier": "^3.9.8",
@@ -93,7 +93,7 @@
   "_comment_dependencies": "Seuls les paquets non bundlés par Vite, donc résolus à l'exécution par build/server (les autres sont en devDependencies)",
   "dependencies": {
     "better-sqlite3": "^11.10.0",
-    "katex": "^0.16.47",
+    "katex": "^0.18.7",
     "qrcode": "^1.5.4"
   },
   "pnpm": {
