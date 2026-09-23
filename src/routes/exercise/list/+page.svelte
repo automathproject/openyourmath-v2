@@ -3994,7 +3994,9 @@
 
     .consulter-toc {
       position: fixed;
-      top: 0;
+      /* L'en-tête de l'application est au-dessus du tiroir : sans ce décalage,
+         le titre du sommaire et son bouton de fermeture passaient dessous. */
+      top: var(--spacing-header-mobile);
       right: 0;
       bottom: 0;
       width: min(88vw, 420px);
