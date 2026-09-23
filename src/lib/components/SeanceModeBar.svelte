@@ -154,6 +154,15 @@
 
   .seance-mode-bar-meta { min-width: 0; flex: 1; }
 
+  /* La page fournit son propre titre dans l'emplacement, qui échappe donc aux
+     règles de .seance-title : sans cela il se replie sur trois lignes dès que
+     la barre se resserre, et la fait passer de 94 à 191px de haut. */
+  .seance-mode-bar-meta :global(.list-title) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .seance-title {
     font-family: var(--font-heading);
     font-weight: 800;
@@ -233,7 +242,11 @@
 
   .seance-mode-tab-icon { display: none; }
 
-  @media (max-width: 720px) {
+  /* Les quatre onglets déployés réclament 365px, auxquels s'ajoutent le champ
+     d'UUID et les boutons d'action : en deçà, le titre de la séance n'a plus
+     de place et la barre déborde. Ils se replient donc derrière le bouton de
+     menu bien avant le format téléphone. */
+  @media (max-width: 1024px) {
     .seance-mode-bar {
       align-items: center;
       gap: 8px;

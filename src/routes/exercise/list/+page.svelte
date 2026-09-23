@@ -36,6 +36,48 @@
   let consulterShowHint = false;
   let consulterShowSolution = false;
   let consulterMainEl;
+  let consulterFilter = '';
+  let consulterItemEls = [];
+  let consulterVisited = new Set();
+  let consulterRouleau = false;
+  let consulterRouleauEls = [];
+  let consulterVisibleIndex = 0;
+  let consulterScrollRaf = 0;
+  let consulterRouleauChargement = false;
+
+  // Le contenu des fiches se charge à la demande ; le rouleau doit donc tout
+  // récupérer d'avance. Sur les 167 fiches du corpus, la médiane est à 10
+  // exercices et le 95e centile à 30 : deux seulement dépassent ce plafond,
+  // et pour celles-là le rouleau coûterait des milliers de requêtes.
+  const CONSULTER_ROULEAU_MAX = 50;
+
+  // Comparaison insensible à la casse et aux accents : « probabilite » doit
+  // trouver « Probabilité ».
+  function foldText(value) {
+    return (value ?? '')
+      .toString()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+  }
+
+  // Équivalent de scrollIntoView({ block: 'nearest' }) restreint au sommaire :
+  // la version native fait aussi défiler le document, ce qui escamote la barre
+  // de titre de la fiche dès le chargement.
+  function garderItemEnVue(index) {
+    const item = consulterItemEls[index];
+    const toc = item?.closest('.consulter-toc');
+    if (!item || !toc) return;
+    const bItem = item.getBoundingClientRect();
+    const bToc = toc.getBoundingClientRect();
+    if (bItem.top < bToc.top) toc.scrollTop += bItem.top - bToc.top;
+    else if (bItem.bottom > bToc.bottom) toc.scrollTop += bItem.bottom - bToc.bottom;
+  }
+
+  function markVisited(index) {
+    if (index < 0 || consulterVisited.has(index)) return;
+    consulterVisited = new Set(consulterVisited).add(index);
+  }
 
   // Presenter view state
   let presenterQIdx = 0;
@@ -44,6 +86,8 @@
   let presenterDarkMode = false;
   let presenterRoot;
   let presenterSlideEl;
+  let presenterProgressEl;
+  let presenterProgressEls = [];
   let presenterCanScrollUp = false;
   let presenterCanScrollDown = false;
   let presenterScrollRaf = null;
@@ -226,6 +270,9 @@
   }
 
   function handlePresenterKey(e) {
+    // Même raison : s, i et les chiffres sont des touches nues, Ctrl+S ne doit
+    // pas dévoiler les solutions au moment où l'on enregistre la page.
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
     if (e.target?.tagName === 'INPUT' || e.target?.tagName === 'TEXTAREA') return;
     if (mode !== 'presenter') return;
     if (e.key === 'Escape') {
@@ -407,6 +454,46 @@
   }
 
   $: selectedContent = $selectedExercise?.content || [];
+
+  // Une nouvelle liste repart d'une progression vierge. Déclaré avant le
+  // marquage pour que l'exercice courant soit recompté aussitôt après.
+  $: consulterListKey = $exerciseList.map((exercise) => exercise.uuid).join('|');
+  $: if (consulterListKey !== undefined) {
+    consulterVisited = new Set();
+    consulterFilter = '';
+  }
+  $: if (mode === 'consulter' && $exerciseList.length) markVisited($selectedExerciseIndex);
+  $: consulterIndexCourant = consulterRouleau ? consulterVisibleIndex : $selectedExerciseIndex;
+  $: if (mode === 'presenter' && presenterProgressEls[$selectedExerciseIndex]) {
+    garderExerciceEnVue($selectedExerciseIndex);
+  }
+  $: consulterRouleauPossible =
+    !isMobile && $exerciseList.length > 1 && $exerciseList.length <= CONSULTER_ROULEAU_MAX;
+  // La barre qui porte la bascule est masquée sous 768px : sans ce retour au
+  // un-par-un, un rétrécissement de fenêtre laisserait le rouleau sans commande.
+  $: if (isMobile && consulterRouleau) consulterRouleau = false;
+
+  // En rouleau, tous les exercices sont rendus : le contenu complet est déjà
+  // en mémoire, côté serveur pour les fiches et préchargé pour ?list=.
+  $: consulterRendus = consulterRouleau
+    ? $exerciseList.map((entry, index) => ({ exercise: entry.fullExercise || entry, index }))
+    : $selectedExercise
+      ? [{ exercise: $selectedExercise, index: $selectedExerciseIndex }]
+      : [];
+
+  $: consulterFilterActive = consulterFilter.trim().length > 0;
+  $: consulterEntries = $exerciseList
+    .map((exercise, index) => ({ exercise, index }))
+    .filter(({ exercise, index }) =>
+      !consulterFilterActive ||
+      foldText(exercise.title || `Exercice ${index + 1}`).includes(foldText(consulterFilter))
+    );
+
+  // Garder l'item sélectionné dans le champ du sommaire : au clavier, sur une
+  // fiche longue, la sélection sortait sinon de la zone visible.
+  $: if (!isMobile && consulterItemEls[consulterIndexCourant]) {
+    garderItemEnVue(consulterIndexCourant);
+  }
   $: selectedQuestionCount = getQuestionCount(selectedContent);
   $: isFullscreenMode = mode === 'presenter' || isFullPresentation;
   $: immersiveMode.set(isFullscreenMode);
@@ -705,6 +792,71 @@
     }
   }
 
+  function onRouleauScroll() {
+    if (!consulterRouleau || consulterScrollRaf || typeof window === 'undefined') return;
+    consulterScrollRaf = requestAnimationFrame(() => {
+      consulterScrollRaf = 0;
+      const racine = consulterMainEl?.getBoundingClientRect();
+      if (!racine) return;
+      // L'exercice « courant » est le dernier dont le haut a franchi le premier
+      // quart du panneau : c'est celui qu'on est en train de lire.
+      const seuil = racine.top + racine.height * 0.25;
+      let courant = 0;
+      consulterRouleauEls.forEach((el, index) => {
+        if (el && el.getBoundingClientRect().top <= seuil) courant = index;
+      });
+      consulterVisibleIndex = courant;
+      markVisited(courant);
+    });
+  }
+
+  // scrollIntoView remonterait aussi la fenêtre, ce qui escamote la barre de
+  // titre de la fiche. On ne fait défiler que le panneau, en dégageant la
+  // hauteur de la barre de commandes qui y est collée.
+  function scrollRouleauVers(index, behavior = 'auto') {
+    const cible = consulterRouleauEls[index];
+    if (!cible || !consulterMainEl) return;
+    const barre = consulterMainEl.querySelector('.consulter-controls--collee');
+    const decalage = barre ? barre.getBoundingClientRect().height : 0;
+    const delta =
+      cible.getBoundingClientRect().top - consulterMainEl.getBoundingClientRect().top - decalage;
+    consulterMainEl.scrollTo({ top: consulterMainEl.scrollTop + delta, behavior });
+  }
+
+  async function toggleRouleau() {
+    const cible = consulterRouleau ? consulterVisibleIndex : $selectedExerciseIndex;
+
+    if (!consulterRouleau) {
+      consulterRouleauChargement = true;
+      try {
+        await listActions.loadAllContents();
+      } finally {
+        consulterRouleauChargement = false;
+      }
+    }
+
+    consulterRouleau = !consulterRouleau;
+    await tick();
+    if (consulterRouleau) {
+      consulterVisibleIndex = cible;
+      scrollRouleauVers(cible);
+    } else {
+      await listActions.selectExercise(cible);
+      scrollConsulterToTop();
+    }
+  }
+
+  // Défilement confiné à la bande, comme pour le sommaire de Consulter :
+  // scrollIntoView remonterait aussi la page de projection.
+  function garderExerciceEnVue(index) {
+    const item = presenterProgressEls[index];
+    if (!item || !presenterProgressEl) return;
+    const bItem = item.getBoundingClientRect();
+    const bBande = presenterProgressEl.getBoundingClientRect();
+    if (bItem.left < bBande.left) presenterProgressEl.scrollLeft += bItem.left - bBande.left;
+    else if (bItem.right > bBande.right) presenterProgressEl.scrollLeft += bItem.right - bBande.right;
+  }
+
   function scrollConsulterToTop() {
     if (typeof requestAnimationFrame === 'undefined') return;
     requestAnimationFrame(() => {
@@ -716,8 +868,14 @@
   }
 
   function selectConsulterExercise(index) {
-    listActions.selectExercise(index);
     closeMobileNav();
+    if (consulterRouleau) {
+      consulterVisibleIndex = index;
+      markVisited(index);
+      scrollRouleauVers(index, 'smooth');
+      return;
+    }
+    listActions.selectExercise(index);
     scrollConsulterToTop();
   }
 
@@ -819,6 +977,12 @@
 
   // Navigation clavier
   function handleKeydown(event) {
+    // Les raccourcis d'ici sont des touches nues : sans ce garde-fou, Ctrl+F
+    // et Ctrl+P sont happés par le raccourci F / P ci-dessous, et la recherche
+    // comme l'impression du navigateur ne s'ouvrent jamais. Shift reste permis,
+    // les touches sont comparées en minuscules.
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
+
     const isTyping = event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA';
 
     // Raccourcis F / P pour basculer le mode présentation
@@ -844,6 +1008,9 @@
       }
       return;
     }
+
+    // En rouleau, la page défile : on rend les flèches au navigateur.
+    if (mode === 'consulter' && consulterRouleau) return;
 
     if (event.key === 'ArrowUp' && $currentPosition.hasPrevious) {
       event.preventDefault();
@@ -1715,12 +1882,44 @@
           </button>
         {/if}
       </div>
+      <div class="consulter-progress">
+        <div
+          class="consulter-progress-track"
+          role="progressbar"
+          aria-label="Exercices consultés"
+          aria-valuemin="0"
+          aria-valuemax={$exerciseList.length}
+          aria-valuenow={consulterVisited.size}
+        >
+          <span
+            class="consulter-progress-fill"
+            style="width: {$exerciseList.length ? (100 * consulterVisited.size) / $exerciseList.length : 0}%"
+          ></span>
+        </div>
+        <span class="consulter-progress-label">
+          {consulterVisited.size} / {$exerciseList.length} consultés
+        </span>
+      </div>
+
+      {#if $exerciseList.length > 15}
+        <input
+          class="consulter-filter"
+          type="search"
+          bind:value={consulterFilter}
+          placeholder="Filtrer le sommaire…"
+          aria-label="Filtrer le sommaire"
+        />
+      {/if}
+
       <div class="consulter-list">
-        {#each $exerciseList as e, i}
-          {@const isSel = i === $selectedExerciseIndex}
+        {#each consulterEntries as { exercise: e, index: i } (e.uuid ?? i)}
+          {@const isSel = i === consulterIndexCourant}
+          {@const isVisited = consulterVisited.has(i)}
           <button
             class="consulter-item"
             class:is-selected={isSel}
+            class:is-visited={isVisited && !isSel}
+            bind:this={consulterItemEls[i]}
             on:click={() => selectConsulterExercise(i)}
           >
             <span class="consulter-num" class:is-selected={isSel}>{String(i + 1).padStart(2, '0')}</span>
@@ -1733,8 +1932,14 @@
                 {#if e.estimated_time}<span class="consulter-item-time">· {e.estimated_time}</span>{/if}
               </div>
             </div>
+            {#if isVisited && !isSel}
+              <span class="consulter-item-seen" title="Déjà consulté">✓</span>
+            {/if}
           </button>
         {/each}
+        {#if consulterFilterActive && consulterEntries.length === 0}
+          <p class="consulter-filter-empty">Aucun exercice ne correspond.</p>
+        {/if}
       </div>
     </aside>
 
@@ -1743,7 +1948,7 @@
     {/if}
 
     <!-- Reading panel -->
-    <main class="consulter-main" bind:this={consulterMainEl}>
+    <main class="consulter-main" bind:this={consulterMainEl} on:scroll={onRouleauScroll}>
       {#if isMobile && sharedButtonsVisible}
         <div class="consulter-mobile-topbar">
           <button class="consulter-mobile-summary-btn" on:click={toggleMobileNav} aria-label="Ouvrir le sommaire">
@@ -1771,89 +1976,128 @@
 
       <!-- Controls bar -->
       {#if sharedButtonsVisible}
-      <div class="consulter-controls">
+      <div class="consulter-controls" class:consulter-controls--collee={consulterRouleau}>
         <span class="consulter-pos">
-          <strong style="font-family:var(--font-mono, monospace)">{$selectedExerciseIndex + 1} / {$exerciseList.length}</strong>
+          <strong style="font-family:var(--font-mono, monospace)">{consulterIndexCourant + 1} / {$exerciseList.length}</strong>
           {#if listTitle} · {listTitle}{/if}
         </span>
         <span style="flex:1"></span>
-        <span class="consulter-reveal-label">Tout révéler :</span>
-        <button
-          class="btn btn-secondary btn-sm consulter-btn-hint"
-          class:is-active={consulterShowHint}
-          on:click={() => (consulterShowHint = !consulterShowHint)}
-        >💡 Indications</button>
-        <button
-          class="btn btn-secondary btn-sm consulter-btn-sol"
-          class:is-active={consulterShowSolution}
-          on:click={() => (consulterShowSolution = !consulterShowSolution)}
-        >★ Solutions</button>
+        {#if consulterRouleau}
+          <!-- En rouleau il n'y a pas de rail : les commandes de révélation
+               reviennent ici, dans une barre qui reste à vue. -->
+          <button
+            class="btn btn-secondary btn-sm consulter-btn-hint"
+            class:is-active={consulterShowHint}
+            on:click={() => (consulterShowHint = !consulterShowHint)}
+          >💡 Indications</button>
+          <button
+            class="btn btn-secondary btn-sm consulter-btn-sol"
+            class:is-active={consulterShowSolution}
+            on:click={() => (consulterShowSolution = !consulterShowSolution)}
+          >★ Solutions</button>
+        {/if}
+        {#if consulterRouleauPossible}
+          <button
+            class="btn btn-secondary btn-sm consulter-btn-rouleau"
+            class:is-active={consulterRouleau}
+            aria-pressed={consulterRouleau}
+            disabled={consulterRouleauChargement}
+            on:click={toggleRouleau}
+          >
+            {#if consulterRouleauChargement}
+              Chargement…
+            {:else}
+              {consulterRouleau ? 'Un par un' : 'Tout afficher'}
+            {/if}
+          </button>
+        {/if}
       </div>
       {/if}
 
       <!-- Exercise body -->
-      {#if $exerciseLoading}
+      {#if $exerciseLoading && !consulterRouleau}
         <div class="consulter-loading">Chargement…</div>
-      {:else if $selectedExercise}
-        <div class="consulter-body consulter-body--immersive">
-          <div class="exercise-page-shell exercise-page-shell--immersive">
-            <LectureSubheader
-              exercise={$selectedExercise}
-              mode="immersive"
-              bind:showHint={consulterShowHint}
-              bind:showSolution={consulterShowSolution}
-              questionCount={selectedQuestionCount}
-              showModeSwitch={false}
-              showShareAction={false}
-              showLatexAction={false}
-              showPrimaryAction={false}
-              showRevealControls={!isMobile && sharedButtonsVisible}
-              compactMobile={isMobile}
-            />
+      {:else if consulterRendus.length}
+        <div class="consulter-body consulter-body--immersive" class:consulter-body--rouleau={consulterRouleau}>
+          {#each consulterRendus as { exercise, index } (exercise?.uuid ?? index)}
+            <div
+              class="exercise-page-shell exercise-page-shell--immersive"
+              bind:this={consulterRouleauEls[index]}
+            >
+              <LectureSubheader
+                exercise={exercise}
+                mode="immersive"
+                showHint={consulterShowHint}
+                showSolution={consulterShowSolution}
+                questionCount={getQuestionCount(exercise?.content || [])}
+                showModeSwitch={false}
+                showShareAction={false}
+                showLatexAction={false}
+                showPrimaryAction={false}
+                showRevealControls={false}
+                compactMobile={isMobile}
+              />
 
-            <div class="exercise-reading-layout">
-              <article class="exercise-reading-column">
-                <div class="exercise-block">
-                  <ExerciseContent
-                    exercise={$selectedExercise}
-                    variant="full"
-                    showHeader={false}
-                    content={selectedContent}
+              <div class="exercise-reading-layout">
+                <article class="exercise-reading-column">
+                  <div
+                    class="exercise-block"
+                    class:en-regard={consulterShowSolution}
+                    class:en-regard--indications={consulterShowSolution && consulterShowHint}
+                  >
+                    <ExerciseContent
+                      exercise={exercise}
+                      variant="full"
+                      showHeader={false}
+                      content={exercise?.content || []}
+                      showHint={consulterShowHint}
+                      showSolution={consulterShowSolution}
+                      showInlineControls={sharedButtonsVisible ? showInlineControls : false}
+                    />
+                  </div>
+
+                  <!-- Bottom navigation -->
+                  {#if sharedButtonsVisible && !consulterRouleau}
+                    <div class="consulter-nav-btns">
+                      <button
+                        class="btn btn-secondary"
+                        disabled={!$currentPosition.hasPrevious}
+                        on:click={previousConsulterExercise}
+                      >← Précédent</button>
+                      <span style="flex:1"></span>
+                      {#if $currentPosition.hasNext}
+                        <button class="btn btn-primary" on:click={nextConsulterExercise}>
+                          {$exerciseList[$selectedExerciseIndex + 1]?.title
+                            ? ($exerciseList[$selectedExerciseIndex + 1].title.length > 28
+                              ? $exerciseList[$selectedExerciseIndex + 1].title.slice(0, 28) + '…'
+                              : $exerciseList[$selectedExerciseIndex + 1].title)
+                            : 'Suivant'} →
+                        </button>
+                      {/if}
+                    </div>
+                  {/if}
+                </article>
+
+                <!-- Un rail par exercice ferait autant de panneaux de
+                     métadonnées et d'iframes vidéo qu'il y a d'exercices. -->
+                {#if sharedButtonsVisible && !consulterRouleau}
+                  <LectureSidebar
+                    exercise={exercise}
+                    similar={[]}
                     bind:showHint={consulterShowHint}
                     bind:showSolution={consulterShowSolution}
-                    showInlineControls={sharedButtonsVisible ? showInlineControls : false}
+                    bind:showInlineControls
                   />
-                </div>
-              </article>
+                {/if}
+              </div>
             </div>
-          </div>
-
-          <!-- Bottom navigation -->
-          {#if sharedButtonsVisible}
-          <div class="consulter-nav-btns">
-            <button
-              class="btn btn-secondary"
-              disabled={!$currentPosition.hasPrevious}
-              on:click={previousConsulterExercise}
-            >← Précédent</button>
-            <span style="flex:1"></span>
-            {#if $currentPosition.hasNext}
-              <button class="btn btn-primary" on:click={nextConsulterExercise}>
-                {$exerciseList[$selectedExerciseIndex + 1]?.title
-                  ? ($exerciseList[$selectedExerciseIndex + 1].title.length > 28
-                    ? $exerciseList[$selectedExerciseIndex + 1].title.slice(0, 28) + '…'
-                    : $exerciseList[$selectedExerciseIndex + 1].title)
-                  : 'Suivant'} →
-              </button>
-            {/if}
-          </div>
-          {/if}
+          {/each}
         </div>
       {:else}
         <div class="consulter-loading">Sélectionnez un exercice dans le sommaire</div>
       {/if}
 
-      {#if isMobile && sharedButtonsVisible}
+      {#if isMobile && sharedButtonsVisible && !consulterRouleau}
         <div class="consulter-mobile-nav">
           <button
             class="consulter-mobile-nav-btn"
@@ -1932,7 +2176,7 @@
             {presenterDarkMode ? 'Clair' : 'Sombre'}
           </button>
           <button class="presenter-topbar-btn presenter-quit-btn" type="button" on:click={handlePresenterQuit}>
-            esc Quitter
+            <span class="presenter-kbd">esc</span> Quitter
           </button>
         {/if}
       </div>
@@ -2085,13 +2329,14 @@
         ← Précédent
       </button>
       <div class="presenter-hints">
-        <div class="presenter-progress">
+        <div class="presenter-progress" bind:this={presenterProgressEl}>
           {#each $exerciseList as exercise, exerciseIndex}
             {@const slideCount = presenterSlideCounts[exerciseIndex] || 1}
             <button
               type="button"
               class="presenter-progress-exercise"
               class:is-active={exerciseIndex === $selectedExerciseIndex}
+              bind:this={presenterProgressEls[exerciseIndex]}
               on:click={() => selectPresenterExercise(exerciseIndex)}
               title={exercise.title || `Exercice ${exerciseIndex + 1}`}
             >
@@ -3314,13 +3559,16 @@
     }
   }
 
-  /* Ajustements pour tablettes */
+  /* Ajustements pour tablettes. Le sélecteur doit rester attaché à
+     .list-header-content : .list-actions sert aussi dans la barre de mode, où
+     un min-width de 100% faisait déborder toute la barre et rejetait les
+     onglets Préparer / Consulter / Présenter / Partager hors de l'écran. */
   @media (max-width: 1024px) and (min-width: 768px) {
     .list-header-content {
       flex-wrap: wrap;
     }
 
-    .list-actions {
+    .list-header-content .list-actions {
       min-width: 100%;
       justify-content: flex-end;
       margin-top: 0.5rem;
@@ -3598,7 +3846,12 @@
     background: var(--color-interface-bg-primary);
   }
   .consulter-toc {
-    width: 300px;
+    /* À 300px fixes, le sommaire mangeait 38% d'une fenêtre de 780px (demi-
+       écran) contre 24% d'une fenêtre large. Il tient désormais le même ratio
+       de 24% jusqu'à retrouver sa largeur d'origine vers 1250px, au-delà de
+       quoi il s'arrête. Le plancher n'entre en jeu qu'en dessous de 750px,
+       où le sommaire passe de toute façon en tiroir. */
+    width: clamp(180px, 24vw, 300px);
     flex-shrink: 0;
     padding: 16px 14px;
     background: var(--color-interface-bg-secondary);
@@ -3614,6 +3867,55 @@
     justify-content: space-between;
     gap: 12px;
     margin-bottom: 4px;
+  }
+  .consulter-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .consulter-progress-track {
+    height: 3px;
+    border-radius: 999px;
+    background: var(--color-interface-border-primary);
+    overflow: hidden;
+  }
+  .consulter-progress-fill {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--color-brand-500);
+    transition: width 0.2s ease;
+  }
+  .consulter-progress-label {
+    font-size: 11px;
+    color: var(--color-interface-text-muted);
+  }
+  .consulter-filter {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--color-interface-border-primary);
+    background: var(--color-interface-bg-primary);
+    color: var(--color-interface-text-primary);
+  }
+  .consulter-filter:focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 1px;
+  }
+  .consulter-filter-empty {
+    padding: 10px;
+    font-size: 12px;
+    color: var(--color-interface-text-muted);
+  }
+  .consulter-item-seen {
+    align-self: center;
+    font-size: 11px;
+    line-height: 1;
+    color: var(--color-brand-500);
+  }
+  .consulter-item.is-visited .consulter-item-title {
+    color: var(--color-interface-text-secondary);
   }
   .consulter-list { display: flex; flex-direction: column; gap: 4px; }
   .consulter-item {
@@ -3662,8 +3964,10 @@
   .consulter-main {
     flex: 1;
     overflow-y: auto;
-    padding: 24px 32px;
-    background: var(--color-interface-bg-primary);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background: #fbf8ef;
   }
   .consulter-mobile-topbar,
   .consulter-mobile-nav {
@@ -3673,10 +3977,32 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 18px;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--color-interface-border-primary);
+  }
+  /* En rouleau, la barre porte les seules commandes de révélation : elle doit
+     rester atteignable pendant qu'on fait défiler dix-sept exercices. */
+  .consulter-controls--collee {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #fbf8ef;
+  }
+  .consulter-btn-rouleau.is-active {
+    background: var(--color-brand-50) !important;
+    border-color: var(--color-brand-200) !important;
+    color: var(--color-brand-700) !important;
+  }
+  /* Une séparation franche entre exercices, sinon le rouleau se lit comme un
+     seul énoncé interminable. */
+  .consulter-body--rouleau .exercise-page-shell + .exercise-page-shell {
+    border-top: 2px solid var(--color-interface-border-primary);
+  }
+  .consulter-body--rouleau .exercise-page-shell {
+    flex: none;
+    scroll-margin-top: 48px;
   }
   .consulter-pos { font-size: 12px; color: var(--color-interface-text-muted); }
-  .consulter-reveal-label { font-size: 12px; color: var(--color-interface-text-muted); }
   .consulter-btn-hint.is-active {
     background: var(--color-warning-50) !important;
     border-color: var(--color-warning-200) !important;
@@ -3687,23 +4013,47 @@
     border-color: var(--color-brand-200) !important;
     color: var(--color-brand-700) !important;
   }
-  .consulter-body { max-width: 860px; margin: 0 auto; }
+  .consulter-body {
+    --consulter-gutter: clamp(24px, 3vw, 56px);
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
   .consulter-body--immersive .exercise-page-shell {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     background: #fbf8ef;
   }
+  /* Colonne de lecture + rail d'informations, comme en mode Préparer. */
   .consulter-body--immersive .exercise-reading-layout {
-    display: block;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 36px 24px 72px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    align-items: stretch;
+    flex: 1;
+    max-width: none;
+    margin: 0;
+    padding: 0;
     border-top: 0;
   }
+  /* Le bandeau de titre s'aligne sur la colonne de lecture, pas sur le panneau :
+     mêmes gouttières, plus la largeur du rail à droite. */
+  .consulter-body--immersive :global(.lecture-title-band) {
+    padding-left: var(--consulter-gutter);
+    padding-right: calc(300px + var(--consulter-gutter));
+  }
+  .consulter-body--immersive :global(.lecture-title-inner) {
+    max-width: 820px;
+  }
   .consulter-body--immersive .exercise-reading-column {
-    padding: 0;
-    background: transparent;
+    min-width: 0;
+    padding: 40px var(--consulter-gutter) 80px;
+    background: #fffdf8;
   }
   .consulter-body--immersive .exercise-block {
-    max-width: 880px;
+    max-width: 820px;
+    margin: 0 auto;
     background: transparent;
     border: 0;
     border-radius: 0;
@@ -3728,9 +4078,85 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 32px;
+    max-width: 820px;
+    margin: 40px auto 0;
     padding-top: 18px;
     border-top: 1px solid var(--color-interface-border-primary);
+  }
+  /* Le rail n'apparaît que si la colonne de lecture garde au moins sa largeur
+     d'origine (~670px) une fois le sommaire et le rail déduits. En dessous,
+     on revient à la colonne unique centrée. */
+  @media (max-width: 1359px) {
+    .consulter-body--immersive .exercise-reading-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .consulter-body--immersive :global(.lecture-sidebar) {
+      display: none;
+    }
+    .consulter-body--immersive :global(.lecture-title-band) {
+      padding-right: var(--consulter-gutter);
+    }
+  }
+  /* Lecture en regard : l'énoncé et son indication restent dans le fil de
+     gauche, la solution occupe une colonne alignée d'une question à l'autre.
+     Les préambules, blocs frères des paires, restent pleine largeur.
+
+     Le critère est la largeur de la colonne de lecture, pas celle de la
+     fenêtre : c'est elle qui décide si la colonne de solution reste lisible.
+     Une requête de conteneur interroge la boîte de contenu, gouttières
+     déduites — donc exactement la place offerte au bloc. Mesuré sur deux jeux
+     d'exercices, le bilan devient nul vers 1100px et négatif au-delà ; en
+     dessous, tout se remet à envelopper et la mise en regard coûte plus
+     qu'elle ne rapporte.
+
+     Le gabarit suit l'état global de révélation, commandé depuis le rail, et
+     non la présence d'une solution dévoilée. Sinon le premier clic sur le
+     bouton d'une question refluait tout l'exercice et déplaçait ce bouton de
+     638px sous le curseur. Un dévoilement question par question reste donc
+     dans le fil, comme avant. */
+  .consulter-body--immersive .exercise-reading-column {
+    container-type: inline-size;
+    container-name: lecture;
+  }
+  @container lecture (min-width: 1100px) {
+    .consulter-body--immersive .exercise-block.en-regard {
+      max-width: 1500px;
+    }
+    .consulter-body--immersive .exercise-block.en-regard :global(.question-response-pair) {
+      display: grid;
+      grid-template-columns: minmax(0, 32fr) minmax(0, 68fr);
+      /* La rangée souple absorbe la hauteur de la solution, sinon elle
+         repousserait l'indication loin sous son énoncé. */
+      grid-template-rows: min-content 1fr;
+      column-gap: 40px;
+      row-gap: 12px;
+      align-items: start;
+    }
+    /* Le fil de gauche porte aussi les indications : il lui faut plus de place. */
+    .consulter-body--immersive
+      .exercise-block.en-regard--indications
+      :global(.question-response-pair) {
+      grid-template-columns: minmax(0, 40fr) minmax(0, 60fr);
+    }
+    .consulter-body--immersive
+      .exercise-block.en-regard
+      :global(.question-response-pair > .question-block) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .consulter-body--immersive
+      .exercise-block.en-regard
+      :global(.question-response-pair > .inline-hint) {
+      grid-column: 1;
+      grid-row: 2;
+      align-self: start;
+    }
+    .consulter-body--immersive
+      .exercise-block.en-regard
+      :global(.question-response-pair > .inline-solution) {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
   }
   .consulter-loading {
     padding: 3rem 2rem;
@@ -3747,7 +4173,9 @@
 
     .consulter-toc {
       position: fixed;
-      top: 0;
+      /* L'en-tête de l'application est au-dessus du tiroir : sans ce décalage,
+         le titre du sommaire et son bouton de fermeture passaient dessous. */
+      top: var(--spacing-header-mobile);
       right: 0;
       bottom: 0;
       width: min(88vw, 420px);
@@ -3826,13 +4254,15 @@
       display: none;
     }
 
-    .consulter-body {
-      max-width: none;
-    }
-
     .consulter-body--immersive .exercise-reading-layout {
+      display: block;
       max-width: none;
       padding: 14px 16px 36px;
+    }
+
+    .consulter-body--immersive .exercise-reading-column {
+      padding: 0;
+      background: transparent;
     }
 
     .consulter-body--immersive .exercise-page-shell {
@@ -3925,10 +4355,17 @@
     gap: 10px;
     min-width: 0;
   }
+  /* Le bloc de gauche est le seul à pouvoir céder : il porte la marque et le
+     titre, que l'on peut tronquer, là où la droite porte le compteur et les
+     commandes, qu'on ne peut pas rogner sans les rendre illisibles. */
+  .presenter-topbar-left { flex: 0 1 auto; overflow: hidden; }
+  .presenter-topbar-right { flex: 0 0 auto; }
   .presenter-topbar-brand {
     display: flex;
     align-items: center;
     gap: 7px;
+    white-space: nowrap;
+    flex-shrink: 0;
     font-size: 12px;
     font-weight: 600;
     color: rgba(255,252,242,0.84);
@@ -3949,6 +4386,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 280px;
+    min-width: 0;
   }
   .presenter-topbar-counter {
     font-size: 12px;
@@ -3967,7 +4405,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 6px;
     height: 28px;
+    /* Hauteur figée : sans cela le libellé se replie sur deux lignes dès que
+       la barre se resserre, et déborde du contour de la pastille. Ce sont le
+       titre et le compteur qui doivent céder la place, pas les boutons. */
+    white-space: nowrap;
+    flex-shrink: 0;
     padding: 0 12px;
     border-radius: 999px;
     border: 1px solid rgba(254, 249, 235, 0.18);
@@ -3988,6 +4432,22 @@
   }
   .presenter-mobile-theme-toggle {
     display: none;
+  }
+  /* Ordre d'abandon quand la barre se resserre : la marque, qui est purement
+     décorative et se faisait tronquer en plein mot faute d'ellipse, puis le
+     compteur de diapo, qui redit ce que le compteur d'exercice annonce déjà.
+     Sans quoi « esc Quitter » sortait du cadre entre 641 et 659px, juste
+     au-dessus du seuil de la disposition téléphone. */
+  @media (max-width: 900px) {
+    .presenter-topbar-brand,
+    .presenter-topbar-sep {
+      display: none;
+    }
+  }
+  @media (max-width: 760px) {
+    .presenter-topbar-slide-count {
+      display: none;
+    }
   }
   .presenter-slide-wrap {
     flex: 1;
@@ -4288,7 +4748,11 @@
   .presenter-progress {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* « safe » est indispensable : avec un simple center, le débordement du
+       côté gauche passe en abscisse négative et ne se rattrape pas au
+       défilement. Sur une fiche de dix-sept exercices à 700px, les sept
+       premiers devenaient inatteignables. */
+    justify-content: safe center;
     gap: 14px;
     max-width: 100%;
     overflow-x: auto;

@@ -338,6 +338,37 @@ export const listActions = {
     await listActions.loadFromUuids(uuids);
   },
 
+  // Charger le contenu de tous les exercices de la liste. Le chargement normal
+  // est à la demande — c'est ce qui rend supportables les fiches de plusieurs
+  // milliers d'exercices — mais la lecture en rouleau a besoin de tout d'un
+  // coup. L'appelant borne la taille de la liste avant d'appeler.
+  async loadAllContents({ concurrency = 6 } = {}) {
+    const manquants = globalExerciseList
+      .map((exercise, index) => ({ exercise, index }))
+      .filter(({ exercise }) => exercise?.uuid && !exercise.fullExercise);
+
+    if (manquants.length === 0) return;
+
+    let curseur = 0;
+    const travailleur = async () => {
+      while (curseur < manquants.length) {
+        const { exercise, index } = manquants[curseur++];
+        try {
+          const response = await fetch(`/api/exercise/${exercise.uuid}`);
+          if (!response.ok) continue;
+          const data = await response.json();
+          cacheFullExercise(index, data.exercise);
+        } catch (err) {
+          console.warn(`Contenu indisponible pour ${exercise.uuid}:`, err);
+        }
+      }
+    };
+
+    await Promise.all(
+      Array.from({ length: Math.min(concurrency, manquants.length) }, travailleur)
+    );
+  },
+
   // Sélectionner un exercice par son index
   async selectExercise(index) {
     if (index < 0 || index >= globalExerciseList.length) {
