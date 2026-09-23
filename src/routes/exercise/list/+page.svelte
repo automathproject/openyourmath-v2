@@ -3542,13 +3542,16 @@
     }
   }
 
-  /* Ajustements pour tablettes */
+  /* Ajustements pour tablettes. Le sélecteur doit rester attaché à
+     .list-header-content : .list-actions sert aussi dans la barre de mode, où
+     un min-width de 100% faisait déborder toute la barre et rejetait les
+     onglets Préparer / Consulter / Présenter / Partager hors de l'écran. */
   @media (max-width: 1024px) and (min-width: 768px) {
     .list-header-content {
       flex-wrap: wrap;
     }
 
-    .list-actions {
+    .list-header-content .list-actions {
       min-width: 100%;
       justify-content: flex-end;
       margin-top: 0.5rem;
