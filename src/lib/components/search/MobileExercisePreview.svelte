@@ -1,9 +1,11 @@
 <script>
-  import { fly } from 'svelte/transition';
+  import { onDestroy } from 'svelte';
+  import { fade, fly } from 'svelte/transition';
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
   import AddToListButton from '$lib/components/AddToListButton.svelte';
   import StarsRating from '$lib/components/StarsRating.svelte';
-  import { previewState, previewActions, results, layoutState } from '$lib/stores/searchStore.js';
+  import { previewState, previewActions, results } from '$lib/stores/searchStore.js';
+  import { openExercise, exerciseOpenLabel } from '$lib/utils/exerciseLink.js';
 
   let showHint = false;
   let showSolution = false;
@@ -15,7 +17,9 @@
   let touchEndY = 0;
 
   const SWIPE_THRESHOLD = 80;
-  const SWIPE_VERTICAL_LIMIT = 60;
+  const SWIPE_CROSS_AXIS_LIMIT = 60;
+  /** Corps défilant : on ne ferme au glissé que s'il est déjà en haut. */
+  let bodyEl;
 
   $: currentExercise = $previewState.exercise;
   $: currentIndex = $results.findIndex((exercise) => exercise.uuid === $previewState.selectedUuid);
@@ -31,6 +35,19 @@
   $: hasPreviewMeta = Boolean(previewAuthor || previewOrganization || previewDate || previewUuid);
   $: showTopMeta = Boolean(currentExercise?.level || currentExercise?.module || currentExercise?.difficulty || currentExercise?.chapter || currentExercise?.hasVideo);
 
+  // La feuille ne dépend que de « un exercice est prévisualisé ». Elle était
+  // aussi conditionnée à la préférence de colonne desktop : fermer la feuille
+  // sur téléphone repliait donc la colonne sur ordinateur, et inversement.
+  $: sheetOpen = $previewState.isOpen;
+  $: if (typeof document !== 'undefined') {
+    // La feuille ne couvre plus l'écran : sans ce verrou, la liste défilerait
+    // derrière elle au glissé.
+    document.body.style.overflow = sheetOpen ? 'hidden' : '';
+  }
+  onDestroy(() => {
+    if (typeof document !== 'undefined') document.body.style.overflow = '';
+  });
+
   $: if ($previewState.selectedUuid && $previewState.selectedUuid !== lastUuid) {
     showHint = false;
     showSolution = false;
@@ -45,9 +62,7 @@
   }
 
   function goToFullPage() {
-    if (currentExercise?.uuid) {
-      window.open(`/exercise/${currentExercise.uuid}`, '_blank');
-    }
+    openExercise(currentExercise?.uuid);
   }
 
   function closePreview() {
@@ -60,7 +75,7 @@
     if (nextIndex < 0 || nextIndex >= totalResults) return;
     const nextExercise = $results[nextIndex];
     if (nextExercise) {
-      previewActions.selectExercise(nextExercise.uuid);
+      previewActions.selectExercise(nextExercise.uuid, { revealPanel: false });
     }
   }
 
@@ -83,20 +98,45 @@
   function handleTouchEnd() {
     const deltaX = touchEndX - touchStartX;
     const deltaY = touchEndY - touchStartY;
-    if (deltaX > SWIPE_THRESHOLD && Math.abs(deltaY) < SWIPE_VERTICAL_LIMIT) {
+
+    // Glissé vers la droite : geste d'origine, conservé.
+    if (deltaX > SWIPE_THRESHOLD && Math.abs(deltaY) < SWIPE_CROSS_AXIS_LIMIT) {
+      closePreview();
+      return;
+    }
+
+    // Glissé vers le bas : geste attendu d'une feuille ancrée en bas. Ignoré si
+    // le contenu est déjà défilé, sinon remonter dans l'énoncé fermerait tout.
+    const atTop = !bodyEl || bodyEl.scrollTop <= 0;
+    if (atTop && deltaY > SWIPE_THRESHOLD && Math.abs(deltaX) < SWIPE_CROSS_AXIS_LIMIT) {
       closePreview();
     }
   }
 </script>
 
-{#if $previewState.isOpen && $layoutState.previewPanelVisible}
+{#if sheetOpen}
+  <button
+    type="button"
+    class="mobile-preview__backdrop"
+    aria-label="Fermer la prévisualisation"
+    on:click={closePreview}
+    transition:fade={{ duration: 180 }}
+  ></button>
+  <!-- Devenue une vraie boîte de dialogue modale depuis qu'elle a un fond
+       cliquable et ne couvre plus l'écran entier. -->
   <div
     class="mobile-preview"
-    transition:fly={{ x: 320, duration: 250, opacity: 0.95 }}
+    role="dialog"
+    aria-modal="true"
+    aria-label={previewTitle}
+    tabindex="-1"
+    transition:fly={{ y: 320, duration: 250, opacity: 1 }}
     on:touchstart={handleTouchStart}
     on:touchmove={handleTouchMove}
     on:touchend={handleTouchEnd}
   >
+    <div class="mobile-preview__grabber" aria-hidden="true"></div>
+
     <header class="mobile-preview__header">
       <div class="mobile-preview__header-top">
         <button type="button" class="mobile-preview__back" on:click={closePreview} aria-label="Retour aux résultats">
@@ -149,7 +189,7 @@
       </div>
     </header>
 
-    <div class="mobile-preview__body">
+    <div class="mobile-preview__body" bind:this={bodyEl}>
       {#if $previewState.loading}
         <div class="mobile-preview__state">
           <div class="spinner" aria-hidden="true"></div>
@@ -184,6 +224,7 @@
               type="button"
               class="mobile-preview__open-btn"
               on:click={goToFullPage}
+              aria-label={exerciseOpenLabel()}
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -229,14 +270,39 @@
 {/if}
 
 <style>
-  .mobile-preview {
+  .mobile-preview__backdrop {
     position: fixed;
     inset: 0;
+    z-index: 79;
+    border: 0;
+    padding: 0;
+    background: rgba(17, 24, 39, 0.35);
+  }
+
+  .mobile-preview {
+    position: fixed;
+    /* Feuille ancrée en bas plutôt que surface plein écran : elle épouse son
+       contenu, donc un exercice d'une seule question n'occupe plus tout
+       l'écran, et les résultats restent visibles derrière. */
+    inset: auto 0 0 0;
     z-index: 80;
     display: flex;
     flex-direction: column;
+    max-height: 88vh;
+    max-height: 88dvh;
+    border-radius: 1.1rem 1.1rem 0 0;
     background: #fff;
     color: #111827;
+    box-shadow: 0 -10px 40px rgba(17, 24, 39, 0.22);
+  }
+
+  .mobile-preview__grabber {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 0.25rem;
+    margin: 0.5rem auto 0.15rem;
+    border-radius: 999px;
+    background: #d1d5db;
   }
 
   /* Header */
@@ -366,8 +432,11 @@
 
   /* Body */
   .mobile-preview__body {
-    flex: 1;
+    /* `flex: 1` étirait la zone crème sur toute la hauteur restante : c'est ce
+       qui donnait un grand vide sous les énoncés courts. */
+    flex: 0 1 auto;
     overflow-y: auto;
+    overscroll-behavior: contain;
     padding: 0.8rem;
     background: #faf6ea;
   }

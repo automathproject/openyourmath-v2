@@ -185,7 +185,6 @@ function resetPreviewState() {
     error: null,
     isOpen: false
   });
-  uiActions.setPreviewPanelOpen(false);
 }
 
 function clearSearchUrl() {
@@ -617,30 +616,43 @@ export const searchActions = {
   }
 };
 
-// Actions pour gérer la prévisualisation
+// Actions pour gérer la prévisualisation.
+//
+// Deux états distincts, à ne pas confondre :
+//  • `previewState.isOpen`  — un exercice est en cours de prévisualisation.
+//    Partagé par les deux plateformes ; c'est lui, et lui seul, qui pilote la
+//    feuille mobile.
+//  • `previewPanelOpen`     — préférence DESKTOP persistée : « je veux la
+//    colonne de prévisualisation ». Seules les actions explicites de l'utilisateur
+//    sur desktop (chevron latéral, Échap) l'écrivent.
+//
+// Les mélanger a produit deux bugs : vider le champ de recherche repliait la
+// colonne définitivement, et un aller-retour sur téléphone la repliait aussi.
 export const previewActions = {
   // Sélectionner un exercice pour prévisualisation
   async selectExercise(uuid, options = {}) {
     const revealPanel = options?.revealPanel !== false;
 
-    // Si c'est le même exercice, on ferme/ouvre la preview
     let panelVisible = true;
     const unsubscribeLayout = previewPanelOpen.subscribe((value) => (panelVisible = value));
     unsubscribeLayout();
 
-    let closedExisting = false;
     let reopenedHidden = false;
+    let alreadyPreviewed = false;
     previewState.update(current => {
       if (current.selectedUuid === uuid && current.isOpen) {
+        // Sélectionner est idempotent. Re-cliquer l'exercice déjà prévisualisé
+        // fermait le panneau : geste caché, et surtout la fermeture fait
+        // repasser les cartes de compact à détaillé, donc toute la liste se
+        // réagence sous le curseur. La fermeture reste accessible par le
+        // chevron latéral, Échap, et le bouton œil sur mobile.
         if (!panelVisible) {
           reopenedHidden = revealPanel;
-          return current;
+        } else if (current.exercise || current.loading) {
+          // Rien de chargé (erreur précédente) ⇒ on laisse le clic relancer.
+          alreadyPreviewed = true;
         }
-        closedExisting = true;
-        return {
-          ...current,
-          isOpen: false
-        };
+        return current;
       }
       return {
         ...current,
@@ -656,8 +668,7 @@ export const previewActions = {
       return;
     }
 
-    if (closedExisting) {
-      uiActions.setPreviewPanelOpen(false);
+    if (alreadyPreviewed) {
       return;
     }
 
@@ -720,12 +731,15 @@ export const previewActions = {
   },
 
   // Fermer la prévisualisation
+  // Ferme la prévisualisation en cours SANS toucher à `previewPanelOpen` :
+  // celui-ci est une préférence desktop persistée, que seul le chevron latéral
+  // (ou Échap sur desktop) doit modifier. Replier la colonne relève de
+  // `uiActions.setPreviewPanelOpen`.
   closePreview() {
     previewState.update(current => ({
       ...current,
       isOpen: false
     }));
-    uiActions.setPreviewPanelOpen(false);
   },
 
   // Effacer complètement la prévisualisation

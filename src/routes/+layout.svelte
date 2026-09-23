@@ -35,7 +35,7 @@
   <AppHeader seanceCount={$listCount} {listHref} />
 </div>
 
-<main class="main-content">
+<main class="main-content" class:main-content--immersive={$immersiveMode}>
   <slot />
 </main>
 
@@ -127,6 +127,19 @@
 
   .main-content {
     padding: 0;
+    /* Hauteur occupée par .header-shell (sticky, z-index 70). Les bandeaux
+       sticky des pages s'y ancrent via top: var(--app-header-offset). */
+    --app-header-offset: var(--spacing-header);
+  }
+
+  .main-content--immersive {
+    --app-header-offset: 0px;
+  }
+
+  @media (max-width: 640px) {
+    .main-content {
+      --app-header-offset: var(--spacing-header-mobile);
+    }
   }
 
   /* ==============================================

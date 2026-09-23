@@ -13,6 +13,7 @@
   import MobileExercisePreview from '$lib/components/search/MobileExercisePreview.svelte';
   import RandomExercisesCarousel from '$lib/components/search/RandomExercisesCarousel.svelte';
   import { listActions } from '$lib/stores/listStore.js';
+  import { openExercise } from '$lib/utils/exerciseLink.js';
 
   import {
     searchQuery,
@@ -35,11 +36,17 @@
 
 
   let isDesktop = false;
+  /** Hauteur réelle de la bande de recherche sticky, mesurée au rendu. */
+  let heroBandHeight = 0;
   let filtersExpanded = true;
   let manualCardMode = 'auto'; // auto | compact | detailed
   let searchInterfaceOpened = false;
 
   // ── Landing ────────────────────────────────────────────────────
+  // Longueur minimale avant de basculer automatiquement vers les résultats :
+  // en dessous, une seule lettre ramènerait toute la base (8000+ exercices) et
+  // ferait disparaître le hero avant que l'utilisateur ait fini son premier mot.
+  const MIN_AUTO_QUERY_LENGTH = 3;
   let localLandingQuery = '';
   $: isLanding = !$hasSearched && !searchInterfaceOpened;
   $: if (!$hasSearched) localLandingQuery = '';
@@ -53,6 +60,8 @@
   ];
 
   function handleLandingSearch() {
+    // Validation explicite (Entrée ou bouton) : on part en recherche quelle que
+    // soit la longueur de la requête.
     const q = localLandingQuery.trim();
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'instant' });
     searchInterfaceOpened = true;
@@ -61,8 +70,7 @@
   }
 
   function handleLandingInput() {
-    if (!localLandingQuery.trim()) return;
-    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'instant' });
+    if (localLandingQuery.trim().length < MIN_AUTO_QUERY_LENGTH) return;
     searchQuery.set(localLandingQuery);
   }
 
@@ -113,9 +121,23 @@
     searchActions.search();
   }
 
+  /**
+   * `revealPanel` signifie « déplier la colonne desktop », ce qui écrit une
+   * préférence persistée. Depuis mobile la réponse est donc toujours `false` :
+   * la feuille s'affiche depuis `previewState.isOpen` et n'a pas à décider de
+   * la mise en page de l'ordinateur de l'utilisateur.
+   * @param {{ force?: boolean }} [options] `force` pour une intention explicite
+   *   de montrer la prévisualisation (carrousel), sinon on respecte l'état
+   *   courant de la colonne.
+   */
+  function desktopPanelReveal({ force = false } = {}) {
+    if (!isDesktop) return false;
+    return force || get(previewPanelOpen);
+  }
+
   function selectExercise(exercise) {
     previewActions.selectExercise(exercise.uuid, {
-      revealPanel: !isDesktop || get(previewPanelOpen)
+      revealPanel: desktopPanelReveal()
     });
   }
 
@@ -131,12 +153,11 @@
     searchInterfaceOpened = true;
     // Lance la recherche via le store (SearchSemantic n'est pas encore monté)
     searchActions.search();
-    // Sélectionne l'exercice pour la prévisualisation
-    previewActions.selectExercise(exercise.uuid);
-    // Ouvre le panneau de prévisualisation sur desktop s'il est fermé
-    if (isDesktop && !get(previewPanelOpen)) {
-      uiActions.togglePreviewPanel();
-    }
+    // Sélectionne l'exercice, en dépliant la colonne desktop si besoin :
+    // le clic dans le carrousel est une demande explicite de prévisualisation.
+    previewActions.selectExercise(exercise.uuid, {
+      revealPanel: desktopPanelReveal({ force: true })
+    });
   }
 
   function toggleDesktopPreviewPanel() {
@@ -147,7 +168,7 @@
     if ($previewState.isOpen) {
       previewActions.closePreview();
     } else if ($previewState.selectedUuid) {
-      previewActions.selectExercise($previewState.selectedUuid);
+      previewActions.selectExercise($previewState.selectedUuid, { revealPanel: false });
     }
   }
 
@@ -260,10 +281,7 @@
   function openSelectedExercise() {
     const selectedIndex = getSelectedResultIndex();
     if (selectedIndex < 0 || selectedIndex >= $results.length) return;
-    const exercise = $results[selectedIndex];
-    if (typeof window !== 'undefined') {
-      window.location.href = `/exercise/${exercise.uuid}`;
-    }
+    openExercise($results[selectedIndex].uuid);
   }
 
   function moveSelection(delta) {
@@ -274,7 +292,7 @@
     const next = $results[nextIndex];
     if (!next) return;
     if (next.uuid !== $previewState.selectedUuid || !$previewState.isOpen) {
-      previewActions.selectExercise(next.uuid);
+      previewActions.selectExercise(next.uuid, { revealPanel: desktopPanelReveal() });
     }
   }
 
@@ -298,7 +316,14 @@
       return;
     }
     if (event.key === 'Escape') {
-      if ($previewState.isOpen) {
+      // Sur desktop, « fermer la prévisualisation » veut dire replier la
+      // colonne — c'est une action de mise en page explicite, donc persistée.
+      if (isDesktop) {
+        if ($previewPanelOpen) {
+          event.preventDefault();
+          uiActions.setPreviewPanelOpen(false);
+        }
+      } else if ($previewState.isOpen) {
         event.preventDefault();
         previewActions.closePreview();
       }
@@ -318,7 +343,11 @@
   <title>Recherche d'exercices - OpenYourMath</title>
 </svelte:head>
 
-<div class="search-page" class:search-page--landing={isLanding}>
+<div
+  class="search-page"
+  class:search-page--landing={isLanding}
+  style={`--search-controls-height: calc(var(--app-header-offset, 0px) + ${heroBandHeight}px);`}
+>
   {#if isLanding}
     <!-- ── Landing hero ──────────────────────────────────────────── -->
     <section class="landing-hero">
@@ -395,7 +424,7 @@
 
   {:else}
     <!-- ── Sticky search hero band ──────────────────────────────── -->
-    <div class="search-hero-band">
+    <div class="search-hero-band" bind:clientHeight={heroBandHeight}>
       <div class="search-hero-inner">
         <SearchSemantic
           canTogglePreview={canTogglePreview && !isDesktop}
@@ -895,7 +924,9 @@
   /* ── Hero band ──────────────────────────────────────────────── */
   .search-hero-band {
     position: sticky;
-    top: 0;
+    /* Le header applicatif est lui aussi sticky (top: 0, z-index 70) : sans cet
+       offset la bande glisse dessous et le champ de recherche est amputé. */
+    top: var(--app-header-offset, 0px);
     z-index: 35;
     background: var(--color-interface-bg-white);
     border-bottom: 1px solid var(--color-interface-border-primary);
@@ -903,6 +934,12 @@
   }
   .search-hero-inner {
     padding: 12px 40px;
+  }
+
+  @media (max-width: 640px) {
+    .search-hero-inner {
+      padding: 12px;
+    }
   }
 
   /* ── Body ───────────────────────────────────────────────────── */
@@ -982,10 +1019,6 @@
     .search-page-main { padding: 0; }
   }
 
-  :root {
-    --app-header-height: 4rem;
-    --search-controls-height: 9rem;
-  }
 
   /* ─── Bloc filtres mobile (pliant) ─── */
 
@@ -1194,20 +1227,15 @@
   }
 
   @media (max-width: 640px) {
+    /* Ces contrôles passent à la ligne au lieu de déborder : le commutateur
+       Rapide/IA était sinon hors du conteneur, sans aucun indice de scroll. */
     .mobile-search-chips {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 0.45rem;
       margin-top: 0.55rem;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
       padding-bottom: 0.05rem;
-    }
-
-    .mobile-search-chips::-webkit-scrollbar {
-      display: none;
     }
 
     .mobile-control-chip {

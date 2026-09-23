@@ -1,5 +1,5 @@
 <script>
-  import { filters, searchActions, hasActiveFilters } from '$lib/stores/searchStore.js';
+  import { filters, searchActions } from '$lib/stores/searchStore.js';
   import { formatDifficultyLabel } from '$lib/utils/filterUtils.js';
   import Chip from '$lib/components/Chip.svelte';
 
@@ -72,24 +72,26 @@
   $: hasAny = pathChips.length > 0 || structuralChips.length > 0 || hasAuthor || hasOrganization;
 </script>
 
-{#if $hasActiveFilters}
+<!-- On n'affiche la bande que s'il y a au moins une chip à retirer :
+     `hasActiveFilters` est vrai dès qu'une requête est saisie, ce qui affichait
+     un bandeau pleine largeur ne contenant que le bouton « Réinitialiser ».
+     Pour la seule requête, la croix du champ de recherche suffit. -->
+{#if hasAny}
   <div class="active-filters" aria-live="polite">
-    {#if hasAny}
-      <div class="active-filters-scroll">
-        {#if hasAuthor}
-          <Chip variant="teal" removable onremove={() => removeFilterChip('author')}>Auteur : {$filters.author}</Chip>
-        {/if}
-        {#if hasOrganization}
-          <Chip variant="info" removable onremove={() => removeFilterChip('organization')}>Organisation : {$filters.organization}</Chip>
-        {/if}
-        {#each pathChips as chip}
-          <Chip variant="info" removable onremove={() => removeFilterChip(chip.key)}>{chip.label}</Chip>
-        {/each}
-        {#each structuralChips as chip}
-          <Chip variant="teal" removable onremove={() => removeFilterChip(chip.key)}>{chip.label}</Chip>
-        {/each}
-      </div>
-    {/if}
+    <div class="active-filters-scroll">
+      {#if hasAuthor}
+        <Chip variant="teal" removable onremove={() => removeFilterChip('author')}>Auteur : {$filters.author}</Chip>
+      {/if}
+      {#if hasOrganization}
+        <Chip variant="info" removable onremove={() => removeFilterChip('organization')}>Organisation : {$filters.organization}</Chip>
+      {/if}
+      {#each pathChips as chip}
+        <Chip variant="info" removable onremove={() => removeFilterChip(chip.key)}>{chip.label}</Chip>
+      {/each}
+      {#each structuralChips as chip}
+        <Chip variant="teal" removable onremove={() => removeFilterChip(chip.key)}>{chip.label}</Chip>
+      {/each}
+    </div>
 
     <button
       type="button"

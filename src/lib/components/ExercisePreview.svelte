@@ -6,6 +6,7 @@
   import AddToListButton from './AddToListButton.svelte';
   import StarsRating from './StarsRating.svelte';
   import { previewState } from '$lib/stores/searchStore.js';
+  import { openExercise, exerciseOpenLabel } from '$lib/utils/exerciseLink.js';
 
   let previewContentEl;
   let previewContentInnerEl;
@@ -22,9 +23,7 @@
   }
 
   function goToFullPage() {
-    if ($previewState.exercise?.uuid && browser) {
-      window.open(`/exercise/${$previewState.exercise.uuid}`, '_blank');
-    }
+    if (browser) openExercise($previewState.exercise?.uuid);
   }
 
   function measurePreviewOverflow() {
@@ -181,8 +180,8 @@
       <button
         on:click={goToFullPage}
         class="preview-btn preview-btn--open"
-        title="Ouvrir l'exercice"
-        aria-label="Ouvrir l'exercice"
+        title={exerciseOpenLabel()}
+        aria-label={exerciseOpenLabel()}
       >
         <span class="preview-btn-icon" aria-hidden="true">↗</span>
         <span class="preview-btn-label">Ouvrir</span>

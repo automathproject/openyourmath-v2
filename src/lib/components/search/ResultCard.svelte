@@ -6,6 +6,13 @@
   import NameRenderer from '$lib/components/NameRenderer.svelte';
   import AddToListButton from '$lib/components/AddToListButton.svelte';
   import StarsRating from '$lib/components/StarsRating.svelte';
+  import {
+    exerciseHref,
+    exerciseOpenLabel,
+    isModifiedClick,
+    EXERCISE_LINK_TARGET,
+    EXERCISE_LINK_REL
+  } from '$lib/utils/exerciseLink.js';
 
   export let exercise;
   export let activeFilters = {};
@@ -35,6 +42,7 @@
   $: showDifficultyDots = !isCompact && !simplified && Boolean(exercise?.difficulty);
   $: showTags = showLevelBadge || showModuleBadge || showChapterBadge || showDifficultyDots;
   $: snippetLines = isCompact ? 2 : 3;
+  $: href = exerciseHref(exercise?.uuid);
 
   $: if (isSelected && cardEl) {
     tick().then(() => {
@@ -51,11 +59,16 @@
     dispatch('select', { exercise });
   }
 
-  function openExternal(event) {
+  /**
+   * Le titre est un vrai lien : clic milieu, Ctrl/Cmd+clic, « copier l'adresse »
+   * et l'indexation fonctionnent nativement. Seul le clic gauche simple est
+   * intercepté pour conserver la prévisualisation dans le panneau latéral.
+   */
+  function handleTitleClick(event) {
+    if (isModifiedClick(event)) return;
+    event.preventDefault();
     event.stopPropagation();
-    if (typeof window !== 'undefined') {
-      window.open(`/exercise/${exercise.uuid}`, '_blank');
-    }
+    dispatch('select', { exercise });
   }
 </script>
 
@@ -72,7 +85,9 @@
     <!-- Compact : titre + actions sur la même ligne, sans UUID -->
     <div class="compact-row">
       <h3 class="result-title compact-title">
-        <MathRenderer content={exercise.title} inline={true} />
+        <a class="result-title-link" {href} on:click={handleTitleClick}>
+          <MathRenderer content={exercise.title} inline={true} />
+        </a>
       </h3>
       <div class="compact-actions">
         <button
@@ -90,17 +105,21 @@
             </svg>
           </div>
         {/if}
-        <button
-          type="button"
+        <!-- Action dédiée : ouvrir un onglet est ici l'intention, pas un effet
+             de bord — elle ne suit donc pas la destination par défaut. -->
+        <a
           class="external-link-btn"
+          {href}
+          target="_blank"
+          rel="noopener"
           title="Ouvrir dans un nouvel onglet"
           aria-label="Ouvrir dans un nouvel onglet"
-          on:click={openExternal}
+          on:click|stopPropagation
         >
           <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
-        </button>
+        </a>
       </div>
     </div>
   {:else}
@@ -133,7 +152,9 @@
     </div>
 
     <h3 class="result-title">
-      <MathRenderer content={exercise.title} inline={true} />
+      <a class="result-title-link" {href} on:click={handleTitleClick}>
+        <MathRenderer content={exercise.title} inline={true} />
+      </a>
     </h3>
   {/if}
 
@@ -177,14 +198,25 @@
       {#if !simplified}
         <div class="rc-footer-actions" on:click|stopPropagation>
           <AddToListButton {exercise} size="small" variant="button" />
-          <button
-            type="button"
+          <a
             class="rc-footer-open"
-            on:click={openExternal}
-            aria-label="Ouvrir l'exercice"
+            {href}
+            target={EXERCISE_LINK_TARGET}
+            rel={EXERCISE_LINK_REL}
+            on:click|stopPropagation
+            aria-label={exerciseOpenLabel()}
           >
-            Ouvrir l'exercice →
-          </button>
+            Ouvrir l'exercice
+            {#if EXERCISE_LINK_TARGET}
+              <!-- Même icône « lien externe » que l'action équivalente du mode compact. -->
+              <svg class="rc-footer-open-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" />
+                <path d="M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            {:else}
+              <span class="rc-footer-open-icon" aria-hidden="true">→</span>
+            {/if}
+          </a>
         </div>
       {/if}
     </div>
@@ -290,6 +322,23 @@
     overflow: hidden;
     @apply text-interface-text-primary;
   }
+  .result-title-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .result-title-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .external-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-interface-text-muted);
+  }
+  .external-link-btn:hover {
+    color: var(--color-interface-text-primary);
+  }
   .result-footer {
     margin-top: 0.625rem;
     padding-top: 0.5rem;
@@ -342,6 +391,9 @@
     box-shadow: none !important;
   }
   .rc-footer-open {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0.78rem;
     font-weight: 600;
     padding: 0.25rem 0.6rem;
@@ -349,9 +401,16 @@
     border: none;
     background: transparent;
     color: var(--color-interface-text-secondary);
+    text-decoration: none;
     cursor: pointer;
     transition: background 0.12s, color 0.12s;
     white-space: nowrap;
+  }
+  .rc-footer-open-icon {
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 0.3rem;
+    flex-shrink: 0;
   }
   .rc-footer-open:hover {
     background: var(--color-interface-bg-tertiary);
@@ -465,6 +524,7 @@
 
     .rc-footer-open {
       order: 1;
+      display: flex;
       flex: 1 1 auto;
       min-width: 0;
       min-height: 2.75rem;
@@ -476,7 +536,13 @@
       text-align: center;
     }
 
-    .rc-footer-open:hover {
+    .rc-footer-open-icon {
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 0.3rem;
+    flex-shrink: 0;
+  }
+  .rc-footer-open:hover {
       background: var(--color-brand-100);
       color: var(--color-brand-800);
     }

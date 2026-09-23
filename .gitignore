@@ -38,3 +38,8 @@ lerna-debug.log*
 /cache/
 
 *.synctex.gz
+
+# Outillage local Claude Code : configuration du serveur de dev pour l'aperçu
+# et permissions propres à la machine. Rien de partageable ici pour l'instant ;
+# si un jour on veut versionner un réglage d'équipe, le désigner explicitement.
+/.claude/
