@@ -4338,10 +4338,17 @@
     gap: 10px;
     min-width: 0;
   }
+  /* Le bloc de gauche est le seul à pouvoir céder : il porte la marque et le
+     titre, que l'on peut tronquer, là où la droite porte le compteur et les
+     commandes, qu'on ne peut pas rogner sans les rendre illisibles. */
+  .presenter-topbar-left { flex: 0 1 auto; overflow: hidden; }
+  .presenter-topbar-right { flex: 0 0 auto; }
   .presenter-topbar-brand {
     display: flex;
     align-items: center;
     gap: 7px;
+    white-space: nowrap;
+    flex-shrink: 0;
     font-size: 12px;
     font-weight: 600;
     color: rgba(255,252,242,0.84);
@@ -4362,6 +4369,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 280px;
+    min-width: 0;
   }
   .presenter-topbar-counter {
     font-size: 12px;
@@ -4381,6 +4389,11 @@
     align-items: center;
     justify-content: center;
     height: 28px;
+    /* Hauteur figée : sans cela le libellé se replie sur deux lignes dès que
+       la barre se resserre, et déborde du contour de la pastille. Ce sont le
+       titre et le compteur qui doivent céder la place, pas les boutons. */
+    white-space: nowrap;
+    flex-shrink: 0;
     padding: 0 12px;
     border-radius: 999px;
     border: 1px solid rgba(254, 249, 235, 0.18);
@@ -4401,6 +4414,22 @@
   }
   .presenter-mobile-theme-toggle {
     display: none;
+  }
+  /* Ordre d'abandon quand la barre se resserre : la marque, qui est purement
+     décorative et se faisait tronquer en plein mot faute d'ellipse, puis le
+     compteur de diapo, qui redit ce que le compteur d'exercice annonce déjà.
+     Sans quoi « esc Quitter » sortait du cadre entre 641 et 659px, juste
+     au-dessus du seuil de la disposition téléphone. */
+  @media (max-width: 900px) {
+    .presenter-topbar-brand,
+    .presenter-topbar-sep {
+      display: none;
+    }
+  }
+  @media (max-width: 760px) {
+    .presenter-topbar-slide-count {
+      display: none;
+    }
   }
   .presenter-slide-wrap {
     flex: 1;
