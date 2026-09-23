@@ -10,8 +10,8 @@
     exerciseHref,
     exerciseOpenLabel,
     isModifiedClick,
-    EXERCISE_LINK_TARGET,
-    EXERCISE_LINK_REL
+    exerciseLinkTarget,
+    exerciseLinkRel
   } from '$lib/utils/exerciseLink.js';
 
   export let exercise;
@@ -36,10 +36,10 @@
   $: hasFooterInfo = Boolean(exercise?.author || exercise?.organization);
   $: isCompact = cardMode === 'compact';
   $: showFooter = !isCompact && (hasFooterInfo || hasDates);
-  $: showLevelBadge = !isCompact && Boolean(exercise?.level);
+  $: showLevelBadge = Boolean(exercise?.level);
   $: showModuleBadge = !isCompact && Boolean(exercise?.module);
   $: showChapterBadge = !isCompact && Boolean(exercise?.chapter) && String(activeFilters?.chapter || '') !== String(exercise?.chapter || '');
-  $: showDifficultyDots = !isCompact && !simplified && Boolean(exercise?.difficulty);
+  $: showDifficultyDots = !simplified && Boolean(exercise?.difficulty);
   $: showTags = showLevelBadge || showModuleBadge || showChapterBadge || showDifficultyDots;
   $: snippetLines = isCompact ? 2 : 3;
   $: href = exerciseHref(exercise?.uuid);
@@ -50,7 +50,16 @@
     });
   }
 
-  function handleClick() {
+  /**
+   * Les zones d'action de la carte (ajouter à la liste, ouvrir l'exercice) ont
+   * leur propre effet : on les écarte ici plutôt que d'appeler stopPropagation
+   * sur elles. Ce stopPropagation empêchait le routeur de SvelteKit, qui écoute
+   * les clics au niveau du document, de voir passer le lien — la navigation se
+   * faisait alors par rechargement complet, ce qui détruit l'état mémorisé de
+   * la recherche et ramenait aux 20 premiers résultats au retour.
+   */
+  function handleClick(event) {
+    if (event?.target?.closest?.('.rc-footer-actions, .compact-actions')) return;
     dispatch('select', { exercise });
   }
 
@@ -82,7 +91,10 @@
   on:keydown={(event) => event.key === 'Enter' && handleClick()}
 >
   {#if isCompact}
-    <!-- Compact : titre + actions sur la même ligne, sans UUID -->
+    <!-- Compact : titre + actions sur la même ligne. Les trois signaux qui
+         servent à départager deux résultats (niveau, difficulté, solution)
+         restent visibles : beaucoup de titres se réduisent à « exo7 4305 »,
+         sans eux la liste n'est plus triable à l'œil. -->
     <div class="compact-row">
       <h3 class="result-title compact-title">
         <a class="result-title-link" {href} on:click={handleTitleClick}>
@@ -90,14 +102,7 @@
         </a>
       </h3>
       <div class="compact-actions">
-        <button
-          type="button"
-          on:click|stopPropagation
-          aria-label="Ajouter à la liste"
-          class="bg-transparent border-none p-0 m-0"
-        >
-          <AddToListButton {exercise} size="small" variant="icon" />
-        </button>
+        <AddToListButton {exercise} size="small" variant="icon" />
         {#if isSelected}
           <div class="selection-indicator">
             <svg class="w-4 h-4 text-brand-primary" fill="currentColor" viewBox="0 0 20 20">
@@ -114,7 +119,6 @@
           rel="noopener"
           title="Ouvrir dans un nouvel onglet"
           aria-label="Ouvrir dans un nouvel onglet"
-          on:click|stopPropagation
         >
           <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -165,7 +169,26 @@
   {/if}
 
   {#if isCompact}
-    <div class="compact-uuid">{exercise.uuid.slice(0, 8)}</div>
+    <div class="compact-meta">
+      {#if showLevelBadge}
+        <span class="chip {isSelected ? 'chip-teal-solid' : 'chip-teal'}">{exercise.level}</span>
+      {/if}
+      {#if showDifficultyDots}
+        <StarsRating n={exercise.difficulty} />
+      {/if}
+      <span class="rc-flex-spacer"></span>
+      {#if exercise.hasVideo}
+        <span class="rc-indicator rc-indicator--video">▶ vidéo</span>
+      {/if}
+      {#if exercise.hasSolution}
+        <span class="rc-indicator rc-indicator--solution" title="Fourni avec la solution">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+          solution
+        </span>
+      {/if}
+    </div>
   {/if}
 
   {#if !isCompact}
@@ -196,18 +219,17 @@
       </div>
       <!-- Right: actions (masqués en mode simplifié) -->
       {#if !simplified}
-        <div class="rc-footer-actions" on:click|stopPropagation>
+        <div class="rc-footer-actions">
           <AddToListButton {exercise} size="small" variant="button" />
           <a
             class="rc-footer-open"
             {href}
-            target={EXERCISE_LINK_TARGET}
-            rel={EXERCISE_LINK_REL}
-            on:click|stopPropagation
-            aria-label={exerciseOpenLabel()}
+            target={$exerciseLinkTarget}
+            rel={$exerciseLinkRel}
+            aria-label={$exerciseOpenLabel}
           >
             Ouvrir l'exercice
-            {#if EXERCISE_LINK_TARGET}
+            {#if $exerciseLinkTarget}
               <!-- Même icône « lien externe » que l'action équivalente du mode compact. -->
               <svg class="rc-footer-open-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" />
@@ -252,14 +274,12 @@
     gap: 0.25rem;
     flex-shrink: 0;
   }
-  .compact-uuid {
-    margin-top: 0.375rem;
-    text-align: right;
-    font-size: 0.65rem;
-    font-family: monospace;
-    letter-spacing: 0.03em;
-    @apply text-interface-text-muted;
-    user-select: all;
+  .compact-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
   }
   .result-card:hover {
     @apply border-interface-border-secondary shadow-card;

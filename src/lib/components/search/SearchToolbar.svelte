@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
 
   export let searchQueryStore;
   export let onSearchInput = () => {};
@@ -22,21 +22,133 @@
   export let onToggleMode = (_mode) => {};
   /** true quand FTS n'a trouvé aucun résultat → suggère de passer en IA */
   export let suggestIA = false;
+  /** Appelé quand l'utilisateur retient une suggestion d'autocomplétion. */
+  export let onPickSuggestion = (_suggestion) => {};
 
   let inputEl;
 
+  // ── Autocomplétion ────────────────────────────────────────────────────────
+  // Le vocabulaire mathématique est précis et long à taper : proposer les
+  // chapitres, sous-chapitres, thèmes et auteurs existants évite la requête
+  // approximative qui ne ramène rien.
+  const KIND_LABELS = {
+    chapter: 'Chapitre',
+    subchapter: 'Sous-chapitre',
+    theme: 'Thème',
+    author: 'Auteur'
+  };
+  const TYPEAHEAD_DEBOUNCE_MS = 140;
+
+  /** @type {{kind:string,value:string,count:number}[]} */
+  let typeahead = [];
+  let typeaheadOpen = false;
+  let activeIndex = -1;
+  let typeaheadTimer;
+  /** @type {AbortController|null} */
+  let typeaheadCtrl = null;
+  let lastPicked = '';
+
+  $: listboxId = 'search-typeahead';
+  $: activeOptionId = activeIndex >= 0 ? `${listboxId}-option-${activeIndex}` : undefined;
+
+  async function loadTypeahead(term) {
+    typeaheadCtrl?.abort();
+    typeaheadCtrl = new AbortController();
+    try {
+      const response = await fetch(
+        `/api/chapters?type=typeahead&q=${encodeURIComponent(term)}&limit=8`,
+        { signal: typeaheadCtrl.signal }
+      );
+      if (!response.ok) return;
+      const data = await response.json();
+      typeahead = data.suggestions || [];
+      typeaheadOpen = typeahead.length > 0;
+      activeIndex = -1;
+    } catch (error) {
+      if (error.name !== 'AbortError') typeahead = [];
+    }
+  }
+
+  function scheduleTypeahead() {
+    clearTimeout(typeaheadTimer);
+    const term = ($searchQueryStore || '').trim();
+    // Une suggestion qu'on vient de retenir ne doit pas rouvrir la liste.
+    if (term.length < 2 || term === lastPicked) {
+      typeahead = [];
+      typeaheadOpen = false;
+      return;
+    }
+    typeaheadTimer = setTimeout(() => loadTypeahead(term), TYPEAHEAD_DEBOUNCE_MS);
+  }
+
+  function closeTypeahead() {
+    clearTimeout(typeaheadTimer);
+    typeaheadCtrl?.abort();
+    typeaheadOpen = false;
+    activeIndex = -1;
+  }
+
+  function pickSuggestion(suggestion) {
+    lastPicked = suggestion.value;
+    closeTypeahead();
+    onPickSuggestion(suggestion);
+    inputEl?.focus();
+  }
+
   onMount(() => inputEl?.focus());
+
+  onDestroy(() => {
+    clearTimeout(typeaheadTimer);
+    typeaheadCtrl?.abort();
+  });
 
   function clearSearch() {
     searchQueryStore.set('');
+    lastPicked = '';
+    closeTypeahead();
     onSearchInput();
     if (inputEl) inputEl.focus();
   }
 
+  function handleInput(event) {
+    lastPicked = '';
+    scheduleTypeahead();
+    onSearchInput(event);
+  }
+
   function handleInputKeydown(event) {
     const key = event.key;
+
+    // Tant que la liste est ouverte, les flèches et Entrée lui appartiennent.
+    if (typeaheadOpen && typeahead.length > 0) {
+      if (key === 'ArrowDown' || key === 'ArrowUp') {
+        event.preventDefault();
+        const step = key === 'ArrowDown' ? 1 : -1;
+        const count = typeahead.length;
+        activeIndex = activeIndex < 0
+          ? (step > 0 ? 0 : count - 1)
+          : (activeIndex + step + count) % count;
+        return;
+      }
+      if (key === 'Enter' && activeIndex >= 0) {
+        event.preventDefault();
+        pickSuggestion(typeahead[activeIndex]);
+        return;
+      }
+      if (key === 'Escape') {
+        event.preventDefault();
+        closeTypeahead();        // 1er Échap : refermer la liste seulement
+        return;
+      }
+      if (key === 'Tab') {
+        closeTypeahead();
+        return;
+      }
+    }
+
     if (key === 'Enter' || key === 'Go' || key === 'Search') {
       event.preventDefault();
+      closeTypeahead();
       onSearchInput();
       // Pas de blur : l'utilisateur reste dans le champ pour affiner
     } else if (key === 'Escape') {
@@ -65,10 +177,17 @@
       <input
         type="search"
         bind:value={$searchQueryStore}
-        on:input={onSearchInput}
+        on:input={handleInput}
         on:keydown={handleInputKeydown}
+        on:blur={() => setTimeout(closeTypeahead, 120)}
         placeholder="Ex: intégrale, matrice, probabilité…"
         aria-label="Rechercher des exercices"
+        role="combobox"
+        aria-expanded={typeaheadOpen && typeahead.length > 0}
+        aria-controls={listboxId}
+        aria-activedescendant={activeOptionId}
+        aria-autocomplete="list"
+        autocomplete="off"
         bind:this={inputEl}
       />
       {#if loading && !hasResults}
@@ -83,6 +202,26 @@
             <path d="M6 6l12 12M18 6L6 18" />
           </svg>
         </button>
+      {/if}
+
+      {#if typeaheadOpen && typeahead.length > 0}
+        <ul class="typeahead" id={listboxId} role="listbox" aria-label="Suggestions">
+          {#each typeahead as suggestion, index (suggestion.kind + suggestion.value)}
+            <li
+              id={`${listboxId}-option-${index}`}
+              role="option"
+              aria-selected={index === activeIndex}
+              class="typeahead-option"
+              class:typeahead-option--active={index === activeIndex}
+            >
+              <button type="button" on:mousedown|preventDefault={() => pickSuggestion(suggestion)}>
+                <span class="typeahead-kind">{KIND_LABELS[suggestion.kind] ?? suggestion.kind}</span>
+                <span class="typeahead-value">{suggestion.value}</span>
+                <span class="typeahead-count">{suggestion.count}</span>
+              </button>
+            </li>
+          {/each}
+        </ul>
       {/if}
     </div>
 
@@ -170,6 +309,72 @@
 
 <style>
   @reference "../../../app.css";
+
+  /* ── Autocomplétion ───────────────────────────────────────────────────── */
+
+  /* Le champ sert d'ancre à la liste. */
+  .search-input {
+    position: relative;
+  }
+
+  .typeahead {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    right: 0;
+    z-index: 90;
+    margin: 0;
+    padding: 0.25rem;
+    list-style: none;
+    max-height: 19rem;
+    overflow-y: auto;
+    border-radius: 0.75rem;
+    @apply border border-interface-border-primary bg-interface-bg-white shadow-lg;
+  }
+
+  .typeahead-option button {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.4rem 0.55rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .typeahead-option button:hover,
+  .typeahead-option--active button {
+    @apply bg-brand-50;
+  }
+
+  .typeahead-kind {
+    flex: 0 0 auto;
+    min-width: 6.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    @apply text-brand-700;
+  }
+
+  .typeahead-value {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @apply text-interface-text-primary;
+  }
+
+  .typeahead-count {
+    flex: 0 0 auto;
+    font-size: 0.78rem;
+    @apply text-interface-text-secondary;
+  }
 
   .toolbar {
     position: relative; /* ancre le popover desktop */

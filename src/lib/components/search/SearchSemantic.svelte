@@ -24,7 +24,8 @@
     filterCounts,
     searchActions,
     suggestionActions,
-    previewActions
+    previewActions,
+    searchSession
   } from '$lib/stores/searchStore.js';
   import { useDebounce } from '$lib/hooks/useDebounce.js';
 
@@ -374,6 +375,32 @@
   //   searchActions.search = (...args) => (_searchHandler ?? _defaultSearch)(...args);
   // Ce composant appellerait alors searchActions.setSearchHandler(ourSearch) au montage
   // et searchActions.setSearchHandler(null) à la destruction.
+  // ── Choix d'une suggestion d'autocomplétion ───────────────────────────────
+  // Une suggestion mène quelque part : elle applique le filtre correspondant
+  // plutôt que de recopier son libellé dans le champ, ce qui redonnerait une
+  // recherche plein texte approximative sur un chemin qu'on connaît déjà.
+  function handlePickSuggestion(suggestion) {
+    if (!suggestion?.value) return;
+
+    if (suggestion.kind === 'author') {
+      searchQuery.set('');
+      filters.update((current) => ({ ...current, author: suggestion.value }));
+    } else if (suggestion.kind === 'chapter') {
+      searchQuery.set('');
+      filters.update((current) => ({ ...current, chapter: suggestion.value, subchapter: '' }));
+    } else if (suggestion.kind === 'subchapter') {
+      searchQuery.set('');
+      filters.update((current) => ({ ...current, subchapter: suggestion.value }));
+    } else {
+      // Les thèmes n'ont pas de filtre dédié : ils deviennent la requête.
+      searchQuery.set(suggestion.value);
+    }
+
+    hybridLimit = 20;
+    if (mode === 'hybrid') runHybrid(20);
+    else runFts();
+  }
+
   // ── Bascule de mode (appelée par le toggle dans SearchToolbar) ────────────
   function handleToggleMode(targetMode) {
     if (targetMode === 'hybrid' && mode !== 'hybrid') {
@@ -436,6 +463,17 @@
       filters.update(f => ({ ...f, level, chapter, subchapter, module: module_, author, organization, difficulty }));
     }
 
+    // Retour arrière : on repose l'état affiché au lieu de relancer la requête,
+    // ce qui rendait les pages chargées et la position de défilement.
+    const restored = searchSession.take();
+    if (restored) {
+      searchSession.restore(restored);
+      hybridLimit = Math.max(20, restored.results.length);
+      if (urlMode === 'hybrid') mode = 'hybrid';
+      refreshSuggestions();
+      return;
+    }
+
     const effectiveQ = urlQ || storeQ;
     if (effectiveQ || hasUrlFilters) {
       if (urlMode === 'hybrid') runHybrid();
@@ -461,6 +499,7 @@
   modeLoading={hybridLoading}
   onToggleMode={handleToggleMode}
   suggestIA={showSuggest}
+  onPickSuggestion={handlePickSuggestion}
   {filtersExpanded}
   {activeFilterCount}
   {onToggleExpanded}

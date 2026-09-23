@@ -6,7 +6,7 @@
   import AddToListButton from '$lib/components/AddToListButton.svelte';
   import StarsRating from '$lib/components/StarsRating.svelte';
   import { previewState, previewActions, results } from '$lib/stores/searchStore.js';
-  import { openExercise, exerciseOpenLabel } from '$lib/utils/exerciseLink.js';
+  import { openExercise, exerciseOpenLabel, opensInNewTab } from '$lib/utils/exerciseLink.js';
 
   let showHint = false;
   let showSolution = false;
@@ -280,11 +280,15 @@
               type="button"
               class="mobile-preview__open-btn"
               on:click={goToFullPage}
-              aria-label={exerciseOpenLabel()}
+              aria-label={$exerciseOpenLabel}
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M14 4h6m0 0v6m0-6L10 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                {#if $opensInNewTab}
+                  <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M14 4h6m0 0v6m0-6L10 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                {:else}
+                  <path d="M5 12h14m-6-7 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                {/if}
               </svg>
               <span>Ouvrir</span>
             </button>

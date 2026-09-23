@@ -1435,3 +1435,117 @@ export async function getRandomExercises(limit = 12) {
     if (db) db.close();
   }
 }
+
+// ── Typeahead du champ de recherche ────────────────────────────────────────
+//
+// L'endpoint de suggestions existant (`getSuggestions`) traite `q` comme un
+// CONTEXTE de recherche : « auteurs ayant des exercices qui matchent q ». Pour
+// une autocomplétion il faut l'inverse — les entrées dont le NOM correspond à
+// ce qui est tapé.
+//
+// Le vocabulaire navigable tient en mémoire (142 chapitres, 338 sous-chapitres,
+// 266 thèmes, 61 auteurs, soit ~800 entrées) : on le charge une fois et on
+// filtre en JavaScript, ce qui permet une comparaison sans accents que le LIKE
+// de SQLite ne sait pas faire (il n'est insensible à la casse qu'en ASCII).
+
+/** @type {{ kind: string, value: string, count: number, key: string }[] | null} */
+let typeaheadVocabulary = null;
+
+function normalizeTerm(value) {
+  return String(value ?? '')
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim();
+}
+
+function loadTypeaheadVocabulary() {
+  if (typeaheadVocabulary) return typeaheadVocabulary;
+
+  let db;
+  try {
+    db = new Database(DB_PATH, { readonly: true });
+    const entries = [];
+
+    const collect = (kind, rows) => {
+      for (const row of rows) {
+        const value = String(row.value ?? '').trim();
+        if (!value) continue;
+        entries.push({ kind, value, count: Number(row.count) || 0, key: normalizeTerm(value) });
+      }
+    };
+
+    collect('chapter', db.prepare(`
+      SELECT chapter AS value, COUNT(*) AS count FROM exercises
+      WHERE chapter IS NOT NULL AND TRIM(chapter) != '' GROUP BY chapter
+    `).all());
+
+    collect('subchapter', db.prepare(`
+      SELECT subchapter AS value, COUNT(*) AS count FROM exercises
+      WHERE subchapter IS NOT NULL AND TRIM(subchapter) != '' GROUP BY subchapter
+    `).all());
+
+    collect('theme', db.prepare(`
+      SELECT theme AS value, COUNT(*) AS count FROM exercises
+      WHERE theme IS NOT NULL AND TRIM(theme) != '' GROUP BY theme
+    `).all());
+
+    collect('author', db.prepare(`
+      SELECT author_display AS value, COUNT(DISTINCT uuid) AS count FROM exercise_authors
+      WHERE author_display IS NOT NULL AND TRIM(author_display) != '' GROUP BY author_display
+    `).all());
+
+    typeaheadVocabulary = entries;
+    return entries;
+  } catch (error) {
+    console.error('Database error in loadTypeaheadVocabulary:', error);
+    return [];
+  } finally {
+    if (db) db.close();
+  }
+}
+
+/**
+ * Suggestions d'autocomplétion pour le champ de recherche.
+ *
+ * Classement : un mot qui commence par ce qui est tapé passe avant une
+ * correspondance au milieu d'un mot, et à qualité égale c'est le nombre
+ * d'exercices qui départage — on propose d'abord ce qui mène quelque part.
+ *
+ * @param {string} term ce que l'utilisateur a tapé
+ * @param {number} limit
+ * @returns {{ kind: string, value: string, count: number }[]}
+ */
+export function getTypeaheadSuggestions(term, limit = 8) {
+  const needle = normalizeTerm(term);
+  if (needle.length < 2) return [];
+
+  // Un même libellé est souvent à la fois chapitre et sous-chapitre
+  // (« Formule de Cauchy ») : on ne le propose qu'une fois, sur le niveau le
+  // plus large, sinon deux lignes identiques occupent la liste.
+  const KIND_PRIORITY = { chapter: 0, subchapter: 1, theme: 2, author: 3 };
+  const best = new Map();
+  for (const entry of loadTypeaheadVocabulary()) {
+    const position = entry.key.indexOf(needle);
+    if (position === -1) continue;
+    // 0 = début d'un mot (meilleur), 1 = ailleurs dans le libellé.
+    const startsWord = position === 0 || entry.key[position - 1] === ' ';
+    const candidate = { entry, rank: startsWord ? 0 : 1 };
+    const current = best.get(entry.key);
+    if (!current || KIND_PRIORITY[entry.kind] < KIND_PRIORITY[current.entry.kind]) {
+      best.set(entry.key, candidate);
+    }
+  }
+  const scored = Array.from(best.values());
+
+  scored.sort((a, b) =>
+    (a.rank - b.rank) ||
+    (b.entry.count - a.entry.count) ||
+    a.entry.value.localeCompare(b.entry.value, 'fr', { sensitivity: 'base' })
+  );
+
+  return scored
+    .slice(0, Math.max(1, Math.min(limit, 20)))
+    .map(({ entry }) => ({ kind: entry.kind, value: entry.value, count: entry.count }));
+}

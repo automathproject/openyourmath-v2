@@ -1,6 +1,7 @@
 <!-- src/routes/+page.svelte -->
 <script>
   import { onMount } from 'svelte';
+  import { beforeNavigate } from '$app/navigation';
   import { get } from 'svelte/store';
   import { browser } from '$app/environment';
   import ExercisePreview from '$lib/components/ExercisePreview.svelte';
@@ -30,7 +31,8 @@
     previewActions,
     loadingMore,
     layoutConfig,
-    resultPathCounts
+    resultPathCounts,
+    searchSession
   } from '$lib/stores/searchStore.js';
   import { previewPanelOpen, uiActions } from '$lib/stores/uiStore.ts';
 
@@ -86,6 +88,14 @@
   }
 
   // debouncedSearch supprimé — SearchSemantic gère son propre dispatch FTS/hybride.
+
+  // Mémorise ce qui est affiché avant de quitter la page, pour le reposer au
+  // retour : l'URL ne porte ni la pagination ni le défilement.
+  beforeNavigate(({ to }) => {
+    if (to?.route?.id === '/') return;   // la synchro d'URL de la recherche
+    if (typeof window === 'undefined') return;
+    searchSession.save(window.scrollY);
+  });
 
   onMount(() => {
     suggestionActions.loadSuggestions();
@@ -257,6 +267,15 @@
     return Boolean(active.isContentEditable);
   }
 
+  /** Le champ de recherche est autofocus : sans cette exception, ↑↓ ne
+   *  fonctionnaient jamais avant d'avoir cliqué ailleurs, alors que la page
+   *  les annonce sous les résultats. */
+  function isSearchFieldFocused() {
+    if (typeof document === 'undefined') return false;
+    const active = document.activeElement;
+    return active?.tagName?.toLowerCase() === 'input' && active.type === 'search';
+  }
+
   function getSelectedResultIndex() {
     if (!$results.length || !$previewState.selectedUuid) return -1;
     return $results.findIndex((exercise) => exercise.uuid === $previewState.selectedUuid);
@@ -297,8 +316,16 @@
   }
 
   function handleResultsKeyboardNav(event) {
-    if (isFormFieldFocused()) return;
+    // Déjà traité en amont — typiquement l'autocomplétion, qui s'approprie les
+    // flèches et Entrée tant que sa liste est ouverte.
+    if (event.defaultPrevented) return;
     if (!$results.length) return;
+
+    const searchFieldFocused = isSearchFieldFocused();
+    if (isFormFieldFocused() && !searchFieldFocused) return;
+    // Depuis le champ, seules les flèches parcourent les résultats : Entrée y
+    // lance la recherche et « a » doit rester une lettre.
+    if (searchFieldFocused && event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
 
     if (event.key === 'ArrowDown') {
       event.preventDefault();
@@ -497,7 +524,10 @@
           </button>
         </div>
 
-        <div class="desktop-meta-shell">
+        <!-- Instance unique des filtres actifs : elle était rendue une fois ici
+             et une fois dans le bloc mobile, soit deux régions aria-live pour
+             le même contenu. -->
+        <div class="meta-shell">
           <ActiveFilters />
         </div>
       </div>
@@ -507,31 +537,28 @@
     <div class="search-body">
       <div class="search-page-grid" class:search-page-grid--preview-open={isDesktop && $previewPanelOpen}>
 
-        <!-- Sidebar filtres (desktop uniquement) -->
+        <!-- Panneau de filtres : une seule instance pour toutes les largeurs.
+             Colonne collante sur desktop, popover sur tablette, bloc pliant en
+             tête de page sur mobile — c'est la CSS qui change, pas le DOM.
+             Le fil d'Ariane y entre : il n'existait que dans la variante mobile,
+             si bien qu'au-dessus de 1024 px on ne pouvait pas descendre au
+             chapitre ni au sous-chapitre depuis la recherche. -->
         <div class="sidebar-shell" class:sidebar-shell--collapsed={!filtersExpanded}>
+          {#if browser}
+            <div class="sidebar-breadcrumb">
+              <span class="sidebar-breadcrumb-label">Filtrer par</span>
+              <BreadcrumbNav
+                query={$searchQuery}
+                filters={$filters}
+                resultPathCounts={$resultPathCounts}
+                on:navigate={handleChapterNavigation}
+              />
+            </div>
+          {/if}
           <SearchPageSidebar />
         </div>
 
         <div class="search-page-main">
-
-          <!-- Bloc filtres actifs (mobile uniquement) -->
-          <div class="mobile-filter-block" class:mobile-filter-block--collapsed={!filtersExpanded}>
-            {#if browser}
-              <div class="mfb-section">
-                <span class="mfb-section-label">Filtrer par</span>
-                <BreadcrumbNav
-                  query={$searchQuery}
-                  filters={$filters}
-                  resultPathCounts={$resultPathCounts}
-                  on:navigate={handleChapterNavigation}
-                />
-              </div>
-            {/if}
-            <ActiveFilters />
-            <div class="mobile-sidebar-shell">
-              <SearchPageSidebar />
-            </div>
-          </div>
 
           <div
             class="results-section flex-1"
@@ -1020,61 +1047,77 @@
   }
 
 
-  /* ─── Bloc filtres mobile (pliant) ─── */
-
-  /* Caché sur desktop */
-  .mobile-filter-block {
-    display: none;
-  }
-
+  /* ─── Panneau de filtres sur mobile : bloc pliant en tête de page ─── */
   @media (max-width: 640px) {
-    .mobile-filter-block {
+    .sidebar-shell {
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
       overflow: visible;
       max-height: none;
+      margin-top: 0.6rem;
       transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1),
                   opacity 200ms ease,
                   margin-top 200ms ease;
       opacity: 1;
-      margin-top: 0.6rem;
     }
 
-    .mobile-filter-block--collapsed {
+    .sidebar-shell--collapsed {
       max-height: 0;
       overflow: hidden;
       opacity: 0;
       margin-top: 0;
       pointer-events: none;
     }
-  }
 
-  .mobile-sidebar-shell {
-    display: none;
-  }
-
-  @media (max-width: 640px) {
-    .mobile-sidebar-shell {
-      display: block;
-      overflow: visible;
+    .sidebar-shell :global(.sps) {
+      padding: 14px 14px 16px;
       border: 1px solid var(--color-interface-border-primary);
       border-radius: 0.75rem;
-      background: var(--color-interface-bg-white);
-    }
-
-    .mobile-sidebar-shell :global(.sps) {
-      padding: 14px 14px 16px;
     }
   }
 
-  .mfb-section {
+  .sidebar-breadcrumb {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
   }
 
-  .mfb-section-label {
+  @media (min-width: 641px) {
+    .sidebar-breadcrumb {
+      padding: 0.85rem 0.9rem 0;
+    }
+  }
+
+  /* Le fil d'Ariane était conçu comme une rangée horizontale à défilement
+     caché. Dans une colonne de 240 px les quatre niveaux sont illisibles et le
+     menu débordait : on les empile, ce qui rejoint l'idiome des autres facettes. */
+  .sidebar-breadcrumb :global(.breadcrumb-nav) {
+    margin-bottom: 0;
+  }
+
+  .sidebar-breadcrumb :global(.breadcrumb-row) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.3rem;
+    overflow-x: visible;
+  }
+
+  .sidebar-breadcrumb :global(.crumb-sep) {
+    display: none;
+  }
+
+  .sidebar-breadcrumb :global(.crumb-btn) {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sidebar-breadcrumb :global(.crumb-menu) {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .sidebar-breadcrumb-label {
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -1097,19 +1140,12 @@
   .chip--on { @apply bg-brand-50 text-brand-700 border-brand-200; }
   .chip--off { @apply bg-error-50 text-error-700 border-error-100; }
 
-  /* ─── Desktop : ActiveFilters + BreadcrumbNav sous la toolbar ─── */
+  /* ─── Filtres actifs, sous la barre de recherche, à toutes les largeurs ─── */
 
-  .desktop-meta-shell {
-    display: none;
-  }
-
-  @media (min-width: 641px) {
-    .desktop-meta-shell {
-      display: block;
-      position: relative;
-      overflow: visible;
-      margin-top: 0.5rem;
-    }
+  .meta-shell {
+    position: relative;
+    overflow: visible;
+    margin-top: 0.5rem;
   }
 
   .results-section {

@@ -6,7 +6,7 @@
   import AddToListButton from './AddToListButton.svelte';
   import StarsRating from './StarsRating.svelte';
   import { previewState } from '$lib/stores/searchStore.js';
-  import { openExercise, exerciseOpenLabel } from '$lib/utils/exerciseLink.js';
+  import { openExercise, exerciseOpenLabel, opensInNewTab } from '$lib/utils/exerciseLink.js';
 
   let previewContentEl;
   let previewContentInnerEl;
@@ -180,10 +180,10 @@
       <button
         on:click={goToFullPage}
         class="preview-btn preview-btn--open"
-        title={exerciseOpenLabel()}
-        aria-label={exerciseOpenLabel()}
+        title={$exerciseOpenLabel}
+        aria-label={$exerciseOpenLabel}
       >
-        <span class="preview-btn-icon" aria-hidden="true">↗</span>
+        <span class="preview-btn-icon" aria-hidden="true">{$opensInNewTab ? '↗' : '→'}</span>
         <span class="preview-btn-label">Ouvrir</span>
       </button>
     {/if}

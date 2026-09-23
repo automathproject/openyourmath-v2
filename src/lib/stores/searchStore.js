@@ -1,5 +1,5 @@
 // src/lib/stores/searchStore.js
-import { writable, derived } from 'svelte/store';
+import { writable, derived, get } from 'svelte/store';
 import { previewPanelOpen, uiActions } from '$lib/stores/uiStore.ts';
 
 // État de base de la recherche
@@ -762,6 +762,67 @@ export const layoutActions = {
       ...current,
       previewPanelWidth: Number(width) || current.previewPanelWidth
     }));
+  }
+};
+
+// ── Restauration au retour arrière ─────────────────────────────────────────
+//
+// La requête et les filtres sont dans l'URL, donc rejoués au retour — mais pas
+// la pagination ni la position de défilement : qui avait chargé 60 résultats et
+// ouvert le 47e retombait sur les 20 premiers, en haut de page.
+//
+// On mémorise donc l'état affiché, indexé sur la querystring. Un cache en
+// mémoire plutôt que l'API `snapshot` de SvelteKit : sa restauration intervient
+// après le montage, donc après que la recherche initiale est partie, et les
+// deux se courraient après. Ici SearchSemantic consulte le cache avant de
+// décider s'il interroge le serveur — aucune course possible.
+//
+// Le mode hybride reclasse globalement : on remet donc les résultats mémorisés
+// tels quels, sans rejouer la requête, sinon l'exercice consulté pourrait
+// réapparaître à un autre rang.
+
+const sessionSnapshots = new Map();
+const MAX_SESSION_SNAPSHOTS = 20;
+
+function snapshotKey() {
+  return typeof window === 'undefined' ? '' : window.location.search;
+}
+
+export const searchSession = {
+  save(scrollY = 0) {
+    const currentResults = get(results);
+    if (!currentResults.length) return;
+
+    const key = snapshotKey();
+    // Bornage simple : la plus ancienne entrée saute quand la limite est atteinte.
+    if (!sessionSnapshots.has(key) && sessionSnapshots.size >= MAX_SESSION_SNAPSHOTS) {
+      sessionSnapshots.delete(sessionSnapshots.keys().next().value);
+    }
+    sessionSnapshots.set(key, {
+      results: currentResults,
+      meta: get(searchMeta),
+      counts: get(filterCounts),
+      selectedUuid: get(previewState).selectedUuid,
+      scrollY
+    });
+  },
+
+  take() {
+    return sessionSnapshots.get(snapshotKey()) || null;
+  },
+
+  restore(entry) {
+    if (!entry) return;
+    results.set(entry.results);
+    searchMeta.set(entry.meta);
+    if (entry.counts) filterCounts.set(entry.counts);
+    if (entry.selectedUuid) {
+      previewState.update((current) => ({ ...current, selectedUuid: entry.selectedUuid }));
+    }
+    if (typeof window !== 'undefined' && entry.scrollY) {
+      // Après le rendu des cartes, sans quoi la page n'est pas encore assez haute.
+      requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, entry.scrollY)));
+    }
   }
 };
 

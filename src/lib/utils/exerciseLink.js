@@ -1,3 +1,5 @@
+import { writable, derived, get } from 'svelte/store';
+
 /**
  * Point unique de vérité pour l'ouverture d'un exercice depuis la recherche.
  *
@@ -6,22 +8,51 @@
  * dans l'onglet courant : les boutons et la touche Entrée ne faisaient pas la même
  * chose. Tout passe désormais par ce module.
  *
- * Choix actuel — nouvel onglet : le retour arrière restaure bien la requête et les
- * filtres (ils sont dans l'URL) mais **perd la pagination et la position de scroll**
- * (40 résultats chargés → 20, scroll → 0). Ouvrir sur place ferait donc perdre à
- * l'utilisateur tout son parcours de résultats.
+ * Choix actuel — la destination dépend de la plateforme, parce que le compromis
+ * n'y est pas le même :
  *
- * Le jour où `export const snapshot` restaurera cet état dans `src/routes/+page.svelte`,
- * il suffira de passer OPEN_IN_NEW_TAB à false ici : la navigation redeviendra
- * normale partout, et Ctrl/Cmd+clic restera disponible pour qui veut un onglet.
+ *  • Desktop → nouvel onglet. La liste de résultats reste ouverte, intacte et
+ *    sans dépendre d'aucun cache. C'est précieux quand on prépare une séance,
+ *    d'autant que le panneau de prévisualisation affiche déjà l'exercice
+ *    complet : « Ouvrir » y sert surtout à lire au calme, imprimer ou partager.
+ *
+ *  • Mobile → onglet courant. Le nouvel onglet y est un piège : le geste
+ *    « retour », réflexe universel, ne ramène pas aux résultats — il faut passer
+ *    par le gestionnaire d'onglets. Et le bouton est le gros appel à l'action de
+ *    chaque carte, donc le piège est tendu souvent. Le retour reste sans perte
+ *    grâce à la restauration de l'état dans `searchStore.js`.
+ *
+ * Dans les deux cas, les titres de résultats étant de vraies ancres, Ctrl/Cmd+clic
+ * reste disponible : le choix final appartient à l'utilisateur.
  */
 
-/** @see le commentaire d'en-tête pour la condition de bascule. */
-export const OPEN_IN_NEW_TAB = true;
+const DESKTOP_QUERY = '(min-width: 1024px)';
+
+function detectNewTab() {
+  if (typeof window === 'undefined' || !window.matchMedia) return true;
+  return window.matchMedia(DESKTOP_QUERY).matches;
+}
+
+/** Vrai quand l'ouverture doit se faire dans un nouvel onglet. */
+export const opensInNewTab = writable(detectNewTab());
+
+if (typeof window !== 'undefined' && window.matchMedia) {
+  window
+    .matchMedia(DESKTOP_QUERY)
+    .addEventListener('change', (event) => opensInNewTab.set(event.matches));
+}
 
 /** Valeurs d'attributs pour une ancre ; `null` fait omettre l'attribut par Svelte. */
-export const EXERCISE_LINK_TARGET = OPEN_IN_NEW_TAB ? '_blank' : null;
-export const EXERCISE_LINK_REL = OPEN_IN_NEW_TAB ? 'noopener' : null;
+export const exerciseLinkTarget = derived(opensInNewTab, (newTab) => (newTab ? '_blank' : null));
+export const exerciseLinkRel = derived(opensInNewTab, (newTab) => (newTab ? 'noopener' : null));
+
+/**
+ * Libellé accessible aligné sur la destination réelle : un lien qui ouvre un
+ * onglet doit l'annoncer, un lien qui navigue sur place ne doit pas le prétendre.
+ */
+export const exerciseOpenLabel = derived(opensInNewTab, (newTab) =>
+  newTab ? "Ouvrir l'exercice dans un nouvel onglet" : "Ouvrir l'exercice"
+);
 
 /**
  * @param {string | null | undefined} uuid
@@ -32,15 +63,6 @@ export function exerciseHref(uuid) {
 }
 
 /**
- * Libellé accessible aligné sur la destination réelle : un lien qui ouvre un
- * onglet doit l'annoncer.
- * @param {string} base
- */
-export function exerciseOpenLabel(base = "Ouvrir l'exercice") {
-  return OPEN_IN_NEW_TAB ? `${base} dans un nouvel onglet` : base;
-}
-
-/**
  * Ouverture par programme, pour les déclencheurs qui ne sont pas des ancres
  * (raccourci clavier, boutons des panneaux de prévisualisation).
  * @param {string | null | undefined} uuid
@@ -48,7 +70,7 @@ export function exerciseOpenLabel(base = "Ouvrir l'exercice") {
 export function openExercise(uuid) {
   if (typeof window === 'undefined' || !uuid) return;
   const href = exerciseHref(uuid);
-  if (OPEN_IN_NEW_TAB) window.open(href, '_blank', 'noopener');
+  if (get(opensInNewTab)) window.open(href, '_blank', 'noopener');
   else window.location.href = href;
 }
 

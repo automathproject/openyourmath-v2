@@ -1,6 +1,6 @@
 // src/routes/api/chapters/+server.js
 import { json } from '@sveltejs/kit';
-import { getChapterStructure, getChapterStructureFiltered, getSuggestions } from '$lib/db/queries.js';
+import { getChapterStructure, getChapterStructureFiltered, getSuggestions, getTypeaheadSuggestions } from '$lib/db/queries.js';
 
 export async function GET({ url }) {
   try {
@@ -36,6 +36,12 @@ export async function GET({ url }) {
         ? await getChapterStructureFiltered(q, filters)
         : await getChapterStructure();
       return json({ structure });
+    } else if (type === 'typeahead') {
+      // Autocomplétion du champ de recherche : ici `q` filtre les LIBELLÉS,
+      // au contraire de `type=suggestions` où il sert de contexte de recherche.
+      const q = url.searchParams.get('q') || '';
+      const limit = parseInt(url.searchParams.get('limit') || '8');
+      return json({ suggestions: getTypeaheadSuggestions(q, limit) });
     } else if (type === 'suggestions') {
       // Suggestions pour autocomplétion
       const suggestionType = url.searchParams.get('for') || 'all';
@@ -75,7 +81,7 @@ export async function GET({ url }) {
       return json({ suggestions });
     } else {
       return json(
-        { error: 'Invalid type parameter. Valid types: structure, suggestions' },
+        { error: 'Invalid type parameter. Valid types: structure, suggestions, typeahead' },
         { status: 400 }
       );
     }
