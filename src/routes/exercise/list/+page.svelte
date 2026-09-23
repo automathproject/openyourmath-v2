@@ -39,6 +39,17 @@
   let consulterFilter = '';
   let consulterItemEls = [];
   let consulterVisited = new Set();
+  let consulterRouleau = false;
+  let consulterRouleauEls = [];
+  let consulterVisibleIndex = 0;
+  let consulterScrollRaf = 0;
+  let consulterRouleauChargement = false;
+
+  // Le contenu des fiches se charge à la demande ; le rouleau doit donc tout
+  // récupérer d'avance. Sur les 167 fiches du corpus, la médiane est à 10
+  // exercices et le 95e centile à 30 : deux seulement dépassent ce plafond,
+  // et pour celles-là le rouleau coûterait des milliers de requêtes.
+  const CONSULTER_ROULEAU_MAX = 50;
 
   // Comparaison insensible à la casse et aux accents : « probabilite » doit
   // trouver « Probabilité ».
@@ -48,6 +59,19 @@
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase();
+  }
+
+  // Équivalent de scrollIntoView({ block: 'nearest' }) restreint au sommaire :
+  // la version native fait aussi défiler le document, ce qui escamote la barre
+  // de titre de la fiche dès le chargement.
+  function garderItemEnVue(index) {
+    const item = consulterItemEls[index];
+    const toc = item?.closest('.consulter-toc');
+    if (!item || !toc) return;
+    const bItem = item.getBoundingClientRect();
+    const bToc = toc.getBoundingClientRect();
+    if (bItem.top < bToc.top) toc.scrollTop += bItem.top - bToc.top;
+    else if (bItem.bottom > bToc.bottom) toc.scrollTop += bItem.bottom - bToc.bottom;
   }
 
   function markVisited(index) {
@@ -437,6 +461,20 @@
     consulterFilter = '';
   }
   $: if (mode === 'consulter' && $exerciseList.length) markVisited($selectedExerciseIndex);
+  $: consulterIndexCourant = consulterRouleau ? consulterVisibleIndex : $selectedExerciseIndex;
+  $: consulterRouleauPossible =
+    !isMobile && $exerciseList.length > 1 && $exerciseList.length <= CONSULTER_ROULEAU_MAX;
+  // La barre qui porte la bascule est masquée sous 768px : sans ce retour au
+  // un-par-un, un rétrécissement de fenêtre laisserait le rouleau sans commande.
+  $: if (isMobile && consulterRouleau) consulterRouleau = false;
+
+  // En rouleau, tous les exercices sont rendus : le contenu complet est déjà
+  // en mémoire, côté serveur pour les fiches et préchargé pour ?list=.
+  $: consulterRendus = consulterRouleau
+    ? $exerciseList.map((entry, index) => ({ exercise: entry.fullExercise || entry, index }))
+    : $selectedExercise
+      ? [{ exercise: $selectedExercise, index: $selectedExerciseIndex }]
+      : [];
 
   $: consulterFilterActive = consulterFilter.trim().length > 0;
   $: consulterEntries = $exerciseList
@@ -448,8 +486,8 @@
 
   // Garder l'item sélectionné dans le champ du sommaire : au clavier, sur une
   // fiche longue, la sélection sortait sinon de la zone visible.
-  $: if (!isMobile && consulterItemEls[$selectedExerciseIndex]) {
-    consulterItemEls[$selectedExerciseIndex].scrollIntoView({ block: 'nearest' });
+  $: if (!isMobile && consulterItemEls[consulterIndexCourant]) {
+    garderItemEnVue(consulterIndexCourant);
   }
   $: selectedQuestionCount = getQuestionCount(selectedContent);
   $: isFullscreenMode = mode === 'presenter' || isFullPresentation;
@@ -749,6 +787,60 @@
     }
   }
 
+  function onRouleauScroll() {
+    if (!consulterRouleau || consulterScrollRaf || typeof window === 'undefined') return;
+    consulterScrollRaf = requestAnimationFrame(() => {
+      consulterScrollRaf = 0;
+      const racine = consulterMainEl?.getBoundingClientRect();
+      if (!racine) return;
+      // L'exercice « courant » est le dernier dont le haut a franchi le premier
+      // quart du panneau : c'est celui qu'on est en train de lire.
+      const seuil = racine.top + racine.height * 0.25;
+      let courant = 0;
+      consulterRouleauEls.forEach((el, index) => {
+        if (el && el.getBoundingClientRect().top <= seuil) courant = index;
+      });
+      consulterVisibleIndex = courant;
+      markVisited(courant);
+    });
+  }
+
+  // scrollIntoView remonterait aussi la fenêtre, ce qui escamote la barre de
+  // titre de la fiche. On ne fait défiler que le panneau, en dégageant la
+  // hauteur de la barre de commandes qui y est collée.
+  function scrollRouleauVers(index, behavior = 'auto') {
+    const cible = consulterRouleauEls[index];
+    if (!cible || !consulterMainEl) return;
+    const barre = consulterMainEl.querySelector('.consulter-controls--collee');
+    const decalage = barre ? barre.getBoundingClientRect().height : 0;
+    const delta =
+      cible.getBoundingClientRect().top - consulterMainEl.getBoundingClientRect().top - decalage;
+    consulterMainEl.scrollTo({ top: consulterMainEl.scrollTop + delta, behavior });
+  }
+
+  async function toggleRouleau() {
+    const cible = consulterRouleau ? consulterVisibleIndex : $selectedExerciseIndex;
+
+    if (!consulterRouleau) {
+      consulterRouleauChargement = true;
+      try {
+        await listActions.loadAllContents();
+      } finally {
+        consulterRouleauChargement = false;
+      }
+    }
+
+    consulterRouleau = !consulterRouleau;
+    await tick();
+    if (consulterRouleau) {
+      consulterVisibleIndex = cible;
+      scrollRouleauVers(cible);
+    } else {
+      await listActions.selectExercise(cible);
+      scrollConsulterToTop();
+    }
+  }
+
   function scrollConsulterToTop() {
     if (typeof requestAnimationFrame === 'undefined') return;
     requestAnimationFrame(() => {
@@ -760,8 +852,14 @@
   }
 
   function selectConsulterExercise(index) {
-    listActions.selectExercise(index);
     closeMobileNav();
+    if (consulterRouleau) {
+      consulterVisibleIndex = index;
+      markVisited(index);
+      scrollRouleauVers(index, 'smooth');
+      return;
+    }
+    listActions.selectExercise(index);
     scrollConsulterToTop();
   }
 
@@ -894,6 +992,9 @@
       }
       return;
     }
+
+    // En rouleau, la page défile : on rend les flèches au navigateur.
+    if (mode === 'consulter' && consulterRouleau) return;
 
     if (event.key === 'ArrowUp' && $currentPosition.hasPrevious) {
       event.preventDefault();
@@ -1796,7 +1897,7 @@
 
       <div class="consulter-list">
         {#each consulterEntries as { exercise: e, index: i } (e.uuid ?? i)}
-          {@const isSel = i === $selectedExerciseIndex}
+          {@const isSel = i === consulterIndexCourant}
           {@const isVisited = consulterVisited.has(i)}
           <button
             class="consulter-item"
@@ -1831,7 +1932,7 @@
     {/if}
 
     <!-- Reading panel -->
-    <main class="consulter-main" bind:this={consulterMainEl}>
+    <main class="consulter-main" bind:this={consulterMainEl} on:scroll={onRouleauScroll}>
       {#if isMobile && sharedButtonsVisible}
         <div class="consulter-mobile-topbar">
           <button class="consulter-mobile-summary-btn" on:click={toggleMobileNav} aria-label="Ouvrir le sommaire">
@@ -1859,92 +1960,128 @@
 
       <!-- Controls bar -->
       {#if sharedButtonsVisible}
-      <div class="consulter-controls">
+      <div class="consulter-controls" class:consulter-controls--collee={consulterRouleau}>
         <span class="consulter-pos">
-          <strong style="font-family:var(--font-mono, monospace)">{$selectedExerciseIndex + 1} / {$exerciseList.length}</strong>
+          <strong style="font-family:var(--font-mono, monospace)">{consulterIndexCourant + 1} / {$exerciseList.length}</strong>
           {#if listTitle} · {listTitle}{/if}
         </span>
         <span style="flex:1"></span>
+        {#if consulterRouleau}
+          <!-- En rouleau il n'y a pas de rail : les commandes de révélation
+               reviennent ici, dans une barre qui reste à vue. -->
+          <button
+            class="btn btn-secondary btn-sm consulter-btn-hint"
+            class:is-active={consulterShowHint}
+            on:click={() => (consulterShowHint = !consulterShowHint)}
+          >💡 Indications</button>
+          <button
+            class="btn btn-secondary btn-sm consulter-btn-sol"
+            class:is-active={consulterShowSolution}
+            on:click={() => (consulterShowSolution = !consulterShowSolution)}
+          >★ Solutions</button>
+        {/if}
+        {#if consulterRouleauPossible}
+          <button
+            class="btn btn-secondary btn-sm consulter-btn-rouleau"
+            class:is-active={consulterRouleau}
+            aria-pressed={consulterRouleau}
+            disabled={consulterRouleauChargement}
+            on:click={toggleRouleau}
+          >
+            {#if consulterRouleauChargement}
+              Chargement…
+            {:else}
+              {consulterRouleau ? 'Un par un' : 'Tout afficher'}
+            {/if}
+          </button>
+        {/if}
       </div>
       {/if}
 
       <!-- Exercise body -->
-      {#if $exerciseLoading}
+      {#if $exerciseLoading && !consulterRouleau}
         <div class="consulter-loading">Chargement…</div>
-      {:else if $selectedExercise}
-        <div class="consulter-body consulter-body--immersive">
-          <div class="exercise-page-shell exercise-page-shell--immersive">
-            <LectureSubheader
-              exercise={$selectedExercise}
-              mode="immersive"
-              bind:showHint={consulterShowHint}
-              bind:showSolution={consulterShowSolution}
-              questionCount={selectedQuestionCount}
-              showModeSwitch={false}
-              showShareAction={false}
-              showLatexAction={false}
-              showPrimaryAction={false}
-              showRevealControls={false}
-              compactMobile={isMobile}
-            />
+      {:else if consulterRendus.length}
+        <div class="consulter-body consulter-body--immersive" class:consulter-body--rouleau={consulterRouleau}>
+          {#each consulterRendus as { exercise, index } (exercise?.uuid ?? index)}
+            <div
+              class="exercise-page-shell exercise-page-shell--immersive"
+              bind:this={consulterRouleauEls[index]}
+            >
+              <LectureSubheader
+                exercise={exercise}
+                mode="immersive"
+                showHint={consulterShowHint}
+                showSolution={consulterShowSolution}
+                questionCount={getQuestionCount(exercise?.content || [])}
+                showModeSwitch={false}
+                showShareAction={false}
+                showLatexAction={false}
+                showPrimaryAction={false}
+                showRevealControls={false}
+                compactMobile={isMobile}
+              />
 
-            <div class="exercise-reading-layout">
-              <article class="exercise-reading-column">
-                <div
-                  class="exercise-block"
-                  class:en-regard={consulterShowSolution}
-                  class:en-regard--indications={consulterShowSolution && consulterShowHint}
-                >
-                  <ExerciseContent
-                    exercise={$selectedExercise}
-                    variant="full"
-                    showHeader={false}
-                    content={selectedContent}
+              <div class="exercise-reading-layout">
+                <article class="exercise-reading-column">
+                  <div
+                    class="exercise-block"
+                    class:en-regard={consulterShowSolution}
+                    class:en-regard--indications={consulterShowSolution && consulterShowHint}
+                  >
+                    <ExerciseContent
+                      exercise={exercise}
+                      variant="full"
+                      showHeader={false}
+                      content={exercise?.content || []}
+                      showHint={consulterShowHint}
+                      showSolution={consulterShowSolution}
+                      showInlineControls={sharedButtonsVisible ? showInlineControls : false}
+                    />
+                  </div>
+
+                  <!-- Bottom navigation -->
+                  {#if sharedButtonsVisible && !consulterRouleau}
+                    <div class="consulter-nav-btns">
+                      <button
+                        class="btn btn-secondary"
+                        disabled={!$currentPosition.hasPrevious}
+                        on:click={previousConsulterExercise}
+                      >← Précédent</button>
+                      <span style="flex:1"></span>
+                      {#if $currentPosition.hasNext}
+                        <button class="btn btn-primary" on:click={nextConsulterExercise}>
+                          {$exerciseList[$selectedExerciseIndex + 1]?.title
+                            ? ($exerciseList[$selectedExerciseIndex + 1].title.length > 28
+                              ? $exerciseList[$selectedExerciseIndex + 1].title.slice(0, 28) + '…'
+                              : $exerciseList[$selectedExerciseIndex + 1].title)
+                            : 'Suivant'} →
+                        </button>
+                      {/if}
+                    </div>
+                  {/if}
+                </article>
+
+                <!-- Un rail par exercice ferait autant de panneaux de
+                     métadonnées et d'iframes vidéo qu'il y a d'exercices. -->
+                {#if sharedButtonsVisible && !consulterRouleau}
+                  <LectureSidebar
+                    exercise={exercise}
+                    similar={[]}
                     bind:showHint={consulterShowHint}
                     bind:showSolution={consulterShowSolution}
-                    showInlineControls={sharedButtonsVisible ? showInlineControls : false}
+                    bind:showInlineControls
                   />
-                </div>
-
-                <!-- Bottom navigation -->
-                {#if sharedButtonsVisible}
-                  <div class="consulter-nav-btns">
-                    <button
-                      class="btn btn-secondary"
-                      disabled={!$currentPosition.hasPrevious}
-                      on:click={previousConsulterExercise}
-                    >← Précédent</button>
-                    <span style="flex:1"></span>
-                    {#if $currentPosition.hasNext}
-                      <button class="btn btn-primary" on:click={nextConsulterExercise}>
-                        {$exerciseList[$selectedExerciseIndex + 1]?.title
-                          ? ($exerciseList[$selectedExerciseIndex + 1].title.length > 28
-                            ? $exerciseList[$selectedExerciseIndex + 1].title.slice(0, 28) + '…'
-                            : $exerciseList[$selectedExerciseIndex + 1].title)
-                          : 'Suivant'} →
-                      </button>
-                    {/if}
-                  </div>
                 {/if}
-              </article>
-
-              {#if sharedButtonsVisible}
-                <LectureSidebar
-                  exercise={$selectedExercise}
-                  similar={[]}
-                  bind:showHint={consulterShowHint}
-                  bind:showSolution={consulterShowSolution}
-                  bind:showInlineControls
-                />
-              {/if}
+              </div>
             </div>
-          </div>
+          {/each}
         </div>
       {:else}
         <div class="consulter-loading">Sélectionnez un exercice dans le sommaire</div>
       {/if}
 
-      {#if isMobile && sharedButtonsVisible}
+      {#if isMobile && sharedButtonsVisible && !consulterRouleau}
         <div class="consulter-mobile-nav">
           <button
             class="consulter-mobile-nav-btn"
@@ -3822,6 +3959,28 @@
     gap: 8px;
     padding: 12px 24px;
     border-bottom: 1px solid var(--color-interface-border-primary);
+  }
+  /* En rouleau, la barre porte les seules commandes de révélation : elle doit
+     rester atteignable pendant qu'on fait défiler dix-sept exercices. */
+  .consulter-controls--collee {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #fbf8ef;
+  }
+  .consulter-btn-rouleau.is-active {
+    background: var(--color-brand-50) !important;
+    border-color: var(--color-brand-200) !important;
+    color: var(--color-brand-700) !important;
+  }
+  /* Une séparation franche entre exercices, sinon le rouleau se lit comme un
+     seul énoncé interminable. */
+  .consulter-body--rouleau .exercise-page-shell + .exercise-page-shell {
+    border-top: 2px solid var(--color-interface-border-primary);
+  }
+  .consulter-body--rouleau .exercise-page-shell {
+    flex: none;
+    scroll-margin-top: 48px;
   }
   .consulter-pos { font-size: 12px; color: var(--color-interface-text-muted); }
   .consulter-btn-hint.is-active {
