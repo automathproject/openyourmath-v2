@@ -86,6 +86,8 @@
   let presenterDarkMode = false;
   let presenterRoot;
   let presenterSlideEl;
+  let presenterProgressEl;
+  let presenterProgressEls = [];
   let presenterCanScrollUp = false;
   let presenterCanScrollDown = false;
   let presenterScrollRaf = null;
@@ -462,6 +464,9 @@
   }
   $: if (mode === 'consulter' && $exerciseList.length) markVisited($selectedExerciseIndex);
   $: consulterIndexCourant = consulterRouleau ? consulterVisibleIndex : $selectedExerciseIndex;
+  $: if (mode === 'presenter' && presenterProgressEls[$selectedExerciseIndex]) {
+    garderExerciceEnVue($selectedExerciseIndex);
+  }
   $: consulterRouleauPossible =
     !isMobile && $exerciseList.length > 1 && $exerciseList.length <= CONSULTER_ROULEAU_MAX;
   // La barre qui porte la bascule est masquée sous 768px : sans ce retour au
@@ -839,6 +844,17 @@
       await listActions.selectExercise(cible);
       scrollConsulterToTop();
     }
+  }
+
+  // Défilement confiné à la bande, comme pour le sommaire de Consulter :
+  // scrollIntoView remonterait aussi la page de projection.
+  function garderExerciceEnVue(index) {
+    const item = presenterProgressEls[index];
+    if (!item || !presenterProgressEl) return;
+    const bItem = item.getBoundingClientRect();
+    const bBande = presenterProgressEl.getBoundingClientRect();
+    if (bItem.left < bBande.left) presenterProgressEl.scrollLeft += bItem.left - bBande.left;
+    else if (bItem.right > bBande.right) presenterProgressEl.scrollLeft += bItem.right - bBande.right;
   }
 
   function scrollConsulterToTop() {
@@ -2160,7 +2176,7 @@
             {presenterDarkMode ? 'Clair' : 'Sombre'}
           </button>
           <button class="presenter-topbar-btn presenter-quit-btn" type="button" on:click={handlePresenterQuit}>
-            esc Quitter
+            <span class="presenter-kbd">esc</span> Quitter
           </button>
         {/if}
       </div>
@@ -2313,13 +2329,14 @@
         ← Précédent
       </button>
       <div class="presenter-hints">
-        <div class="presenter-progress">
+        <div class="presenter-progress" bind:this={presenterProgressEl}>
           {#each $exerciseList as exercise, exerciseIndex}
             {@const slideCount = presenterSlideCounts[exerciseIndex] || 1}
             <button
               type="button"
               class="presenter-progress-exercise"
               class:is-active={exerciseIndex === $selectedExerciseIndex}
+              bind:this={presenterProgressEls[exerciseIndex]}
               on:click={() => selectPresenterExercise(exerciseIndex)}
               title={exercise.title || `Exercice ${exerciseIndex + 1}`}
             >
@@ -4388,6 +4405,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 6px;
     height: 28px;
     /* Hauteur figée : sans cela le libellé se replie sur deux lignes dès que
        la barre se resserre, et déborde du contour de la pastille. Ce sont le
@@ -4730,7 +4748,11 @@
   .presenter-progress {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* « safe » est indispensable : avec un simple center, le débordement du
+       côté gauche passe en abscisse négative et ne se rattrape pas au
+       défilement. Sur une fiche de dix-sept exercices à 700px, les sept
+       premiers devenaient inatteignables. */
+    justify-content: safe center;
     gap: 14px;
     max-width: 100%;
     overflow-x: auto;
