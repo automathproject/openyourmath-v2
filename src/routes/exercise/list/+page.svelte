@@ -36,6 +36,24 @@
   let consulterShowHint = false;
   let consulterShowSolution = false;
   let consulterMainEl;
+  let consulterFilter = '';
+  let consulterItemEls = [];
+  let consulterVisited = new Set();
+
+  // Comparaison insensible à la casse et aux accents : « probabilite » doit
+  // trouver « Probabilité ».
+  function foldText(value) {
+    return (value ?? '')
+      .toString()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+  }
+
+  function markVisited(index) {
+    if (index < 0 || consulterVisited.has(index)) return;
+    consulterVisited = new Set(consulterVisited).add(index);
+  }
 
   // Presenter view state
   let presenterQIdx = 0;
@@ -410,6 +428,29 @@
   }
 
   $: selectedContent = $selectedExercise?.content || [];
+
+  // Une nouvelle liste repart d'une progression vierge. Déclaré avant le
+  // marquage pour que l'exercice courant soit recompté aussitôt après.
+  $: consulterListKey = $exerciseList.map((exercise) => exercise.uuid).join('|');
+  $: if (consulterListKey !== undefined) {
+    consulterVisited = new Set();
+    consulterFilter = '';
+  }
+  $: if (mode === 'consulter' && $exerciseList.length) markVisited($selectedExerciseIndex);
+
+  $: consulterFilterActive = consulterFilter.trim().length > 0;
+  $: consulterEntries = $exerciseList
+    .map((exercise, index) => ({ exercise, index }))
+    .filter(({ exercise, index }) =>
+      !consulterFilterActive ||
+      foldText(exercise.title || `Exercice ${index + 1}`).includes(foldText(consulterFilter))
+    );
+
+  // Garder l'item sélectionné dans le champ du sommaire : au clavier, sur une
+  // fiche longue, la sélection sortait sinon de la zone visible.
+  $: if (!isMobile && consulterItemEls[$selectedExerciseIndex]) {
+    consulterItemEls[$selectedExerciseIndex].scrollIntoView({ block: 'nearest' });
+  }
   $: selectedQuestionCount = getQuestionCount(selectedContent);
   $: isFullscreenMode = mode === 'presenter' || isFullPresentation;
   $: immersiveMode.set(isFullscreenMode);
@@ -1724,12 +1765,44 @@
           </button>
         {/if}
       </div>
+      <div class="consulter-progress">
+        <div
+          class="consulter-progress-track"
+          role="progressbar"
+          aria-label="Exercices consultés"
+          aria-valuemin="0"
+          aria-valuemax={$exerciseList.length}
+          aria-valuenow={consulterVisited.size}
+        >
+          <span
+            class="consulter-progress-fill"
+            style="width: {$exerciseList.length ? (100 * consulterVisited.size) / $exerciseList.length : 0}%"
+          ></span>
+        </div>
+        <span class="consulter-progress-label">
+          {consulterVisited.size} / {$exerciseList.length} consultés
+        </span>
+      </div>
+
+      {#if $exerciseList.length > 15}
+        <input
+          class="consulter-filter"
+          type="search"
+          bind:value={consulterFilter}
+          placeholder="Filtrer le sommaire…"
+          aria-label="Filtrer le sommaire"
+        />
+      {/if}
+
       <div class="consulter-list">
-        {#each $exerciseList as e, i}
+        {#each consulterEntries as { exercise: e, index: i } (e.uuid ?? i)}
           {@const isSel = i === $selectedExerciseIndex}
+          {@const isVisited = consulterVisited.has(i)}
           <button
             class="consulter-item"
             class:is-selected={isSel}
+            class:is-visited={isVisited && !isSel}
+            bind:this={consulterItemEls[i]}
             on:click={() => selectConsulterExercise(i)}
           >
             <span class="consulter-num" class:is-selected={isSel}>{String(i + 1).padStart(2, '0')}</span>
@@ -1742,8 +1815,14 @@
                 {#if e.estimated_time}<span class="consulter-item-time">· {e.estimated_time}</span>{/if}
               </div>
             </div>
+            {#if isVisited && !isSel}
+              <span class="consulter-item-seen" title="Déjà consulté">✓</span>
+            {/if}
           </button>
         {/each}
+        {#if consulterFilterActive && consulterEntries.length === 0}
+          <p class="consulter-filter-empty">Aucun exercice ne correspond.</p>
+        {/if}
       </div>
     </aside>
 
@@ -3631,6 +3710,55 @@
     justify-content: space-between;
     gap: 12px;
     margin-bottom: 4px;
+  }
+  .consulter-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .consulter-progress-track {
+    height: 3px;
+    border-radius: 999px;
+    background: var(--color-interface-border-primary);
+    overflow: hidden;
+  }
+  .consulter-progress-fill {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--color-brand-500);
+    transition: width 0.2s ease;
+  }
+  .consulter-progress-label {
+    font-size: 11px;
+    color: var(--color-interface-text-muted);
+  }
+  .consulter-filter {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--color-interface-border-primary);
+    background: var(--color-interface-bg-primary);
+    color: var(--color-interface-text-primary);
+  }
+  .consulter-filter:focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 1px;
+  }
+  .consulter-filter-empty {
+    padding: 10px;
+    font-size: 12px;
+    color: var(--color-interface-text-muted);
+  }
+  .consulter-item-seen {
+    align-self: center;
+    font-size: 11px;
+    line-height: 1;
+    color: var(--color-brand-500);
+  }
+  .consulter-item.is-visited .consulter-item-title {
+    color: var(--color-interface-text-secondary);
   }
   .consulter-list { display: flex; flex-direction: column; gap: 4px; }
   .consulter-item {
