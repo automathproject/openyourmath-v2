@@ -76,7 +76,7 @@ function main() {
   console.log(`\n✅ Image publiée : ghcr.io/automathproject/openyourmath:${version}`);
   console.log('\nSur le serveur de production :');
   console.log('  git pull --ff-only origin main');
-  console.log('  pnpm deploy:server');
+  console.log('  ./scripts/deploy-server.sh');
   console.log('  curl --fail --silent --show-error https://openyourmath.org/api/health');
 }
 

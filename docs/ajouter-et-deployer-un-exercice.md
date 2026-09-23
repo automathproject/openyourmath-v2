@@ -195,13 +195,13 @@ Sur le serveur qui contient `docker-compose.yml` et le `Caddyfile` :
 
 ```bash
 git pull --ff-only origin main
-pnpm deploy:server
+./scripts/deploy-server.sh
 curl --fail --silent --show-error https://openyourmath.org/api/health
 ```
 
-`pnpm deploy:server` écrit d'abord `APP_VERSION` dans `.env` à partir de
-`package.json` (via `pnpm sync:app-version`), puis tire et redémarre le
-service applicatif. Comme la valeur est persistée dans `.env`, un
+`./scripts/deploy-server.sh` lit la version de `package.json`, écrit
+`APP_VERSION` dans `.env`, puis tire et redémarre le service applicatif. Il ne
+requiert ni Node ni pnpm sur le serveur. Comme la valeur est persistée dans `.env`, un
 `docker compose restart` ou `docker compose up -d` lancé à la main
 ultérieurement reste cohérent, sans dépendre d'un `export` de shell éphémère.
 
