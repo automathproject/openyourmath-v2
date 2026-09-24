@@ -26,6 +26,27 @@ pnpm dev
 pnpm dev:full
 ```
 
+### Tests
+
+```bash
+# Tests unitaires (scripts de build, parsing LaTeX, export)
+pnpm test
+
+# Tests d'interface (Playwright) — nécessite le navigateur, une seule fois :
+npx playwright install chromium
+pnpm test:integration
+
+# Un seul projet, ou un seul fichier
+npx playwright test --project=mobile
+npx playwright test tests/e2e/feuille.mobile.spec.js
+```
+
+Les tests d'interface démarrent le serveur de développement au besoin et
+réutilisent celui déjà lancé. Ils sont séparés en deux projets, `desktop` et
+`mobile`, parce que le comportement l'est : la prévisualisation est une colonne
+sur ordinateur et une feuille tactile sur téléphone, et la destination
+d'ouverture d'un exercice en dépend.
+
 ### Production (sans Docker)
 
 ```bash
