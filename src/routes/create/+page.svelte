@@ -775,6 +775,8 @@
       const instruction = `${aiInstruction.trim()}\n\nCONTRAINTE DE SORTIE NON NÉGOCIABLE : rédige un exercice complet avec exactement ${count} questions, ni plus ni moins. Chaque question doit contenir ou exploiter des données et notations déjà définies ; n'ajoute ni titre, ni préambule, ni conclusion, ni question supplémentaire. Structure strictement linéaire : chaque question porte UNE consigne, sans sous-question ni sous-partie (a), (b), (c) ni étape numérotée à l'intérieur d'un énoncé.${singleQuestionRule} Sépare chaque question par une ligne contenant uniquement --- .`;
       const latex = await callAssist('sequence', { instruction, questionCount: count });
       const { text, questions } = limitedSequenceBlocksFromAi(latex, count);
+      // Retire les blocs vides laissés par défaut avant d'ajouter le contenu généré.
+      blocks = blocks.filter((b) => b.latex.trim());
       if (text) blocks.push(newBlock('text', text));
       for (const q of questions) blocks.push(newBlock('question', q));
       // La consigne reste affichée après génération : l'auteur la retouche
