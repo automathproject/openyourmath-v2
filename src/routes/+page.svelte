@@ -188,6 +188,9 @@
   $: previewToggleLabel = $layoutConfig.showPreviewPanel ? 'Masquer la prévisualisation' : 'Afficher la prévisualisation';
   $: autoCardMode = isDesktop && $previewPanelOpen ? 'compact' : 'detailed';
   $: cardMode = manualCardMode === 'auto' ? autoCardMode : manualCardMode;
+  $: autoModeLabel = `Densité automatique — suit la prévisualisation (actuellement ${
+    autoCardMode === 'compact' ? 'compact' : 'détaillé'
+  })`;
 
   const sortOptions = [
     { value: 'relevance', label: 'Pertinence' },
@@ -598,30 +601,54 @@
                       {$loadingMore ? 'Chargement…' : 'Afficher plus de résultats'}
                     </button>
                   {/if}
-                  <div class="view-mode-toggle" role="group" aria-label="Mode d'affichage des cartes">
+                  <!-- radiogroup plutôt qu'un groupe de boutons : les trois
+                       modes s'excluent, et l'état actif n'était jusqu'ici que
+                       visuel — un lecteur d'écran annonçait trois boutons sans
+                       dire lequel était retenu. -->
+                  <div class="view-mode-toggle" role="radiogroup" aria-label="Densité d'affichage des résultats">
                     <button
                       type="button"
-                      class={`view-mode-btn ${manualCardMode === 'auto' ? 'view-mode-btn--active' : ''}`}
+                      role="radio"
+                      aria-checked={manualCardMode === 'auto'}
+                      class="view-mode-btn view-mode-btn--text"
+                      class:view-mode-btn--active={manualCardMode === 'auto'}
                       on:click={() => (manualCardMode = 'auto')}
-                      title={`Mode auto (${autoCardMode === 'compact' ? 'compact' : 'détaillé'})`}
+                      aria-label={autoModeLabel}
+                      title={autoModeLabel}
                     >
                       Auto
                     </button>
                     <button
                       type="button"
-                      class={`view-mode-btn ${cardMode === 'compact' && manualCardMode !== 'auto' ? 'view-mode-btn--active' : ''}`}
+                      role="radio"
+                      aria-checked={manualCardMode === 'compact'}
+                      class="view-mode-btn"
+                      class:view-mode-btn--active={manualCardMode === 'compact'}
                       on:click={() => (manualCardMode = 'compact')}
-                      title="Mode compact"
+                      aria-label="Affichage compact"
+                      title="Affichage compact"
                     >
-                      ▦
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                        <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                        <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                        <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                      </svg>
                     </button>
                     <button
                       type="button"
-                      class={`view-mode-btn ${cardMode === 'detailed' && manualCardMode !== 'auto' ? 'view-mode-btn--active' : ''}`}
+                      role="radio"
+                      aria-checked={manualCardMode === 'detailed'}
+                      class="view-mode-btn"
+                      class:view-mode-btn--active={manualCardMode === 'detailed'}
                       on:click={() => (manualCardMode = 'detailed')}
-                      title="Mode détaillé"
+                      aria-label="Affichage détaillé"
+                      title="Affichage détaillé"
                     >
-                      ☰
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="4" width="18" height="6" rx="1.5" />
+                        <rect x="3" y="14" width="18" height="6" rx="1.5" />
+                      </svg>
                     </button>
                   </div>
                 </div>
@@ -655,7 +682,6 @@
                 results={$results}
                 activeFilters={$filters}
                 {cardMode}
-                compactColumns={manualCardMode === 'compact' ? 'force' : 'auto'}
                 selectedUuid={$previewState.selectedUuid}
                 isPreviewOpen={$previewState.isOpen}
                 onSelect={selectExercise}
@@ -1125,21 +1151,6 @@
     @apply text-interface-text-muted;
   }
 
-  .chip {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.875rem;
-    border-radius: 9999px;
-    transition: background-color .2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.2rem;
-    white-space: nowrap;
-    @apply border border-interface-border-primary bg-interface-bg-tertiary text-interface-text-secondary;
-  }
-  .chip:hover { @apply bg-interface-bg-secondary; }
-  .chip--on { @apply bg-brand-50 text-brand-700 border-brand-200; }
-  .chip--off { @apply bg-error-50 text-error-700 border-error-100; }
-
   /* ─── Filtres actifs, sous la barre de recherche, à toutes les largeurs ─── */
 
   .meta-shell {
@@ -1298,10 +1309,6 @@
 
     .mobile-control-chip--active {
       @apply border-brand-300 bg-brand-50 text-brand-700;
-    }
-
-    .mobile-control-chip--ia {
-      @apply text-brand-700;
     }
 
     .mobile-control-chip--disabled {
@@ -1506,12 +1513,28 @@
   }
 
   .view-mode-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 0.5rem;
     font-size: 0.875rem;
     font-weight: 600;
     @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary;
+  }
+
+  /* Les deux modes manuels étaient des caractères Unicode (▦ ☰) au milieu d'une
+     interface en SVG : ni la même grille optique, ni le même dessin d'une
+     police système à l'autre. */
+  .view-mode-btn svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .view-mode-btn--text {
+    width: auto;
+    padding: 0 0.6rem;
   }
 
   .view-mode-btn--active {
@@ -1572,22 +1595,6 @@
     .results-keyboard-hint {
       display: none;
     }
-  }
-  .empty-state {
-    text-align: center;
-    padding: 3rem 1.5rem;
-    border-radius: 1rem;
-    @apply border border-dashed border-interface-border-secondary bg-interface-bg-white;
-  }
-  .empty-state-title {
-    font-size:1.125rem;
-    font-weight:600;
-    margin-bottom:0.5rem;
-    @apply text-interface-text-primary;
-  }
-  .empty-state-subtitle {
-    font-size:0.95rem;
-    @apply text-interface-text-secondary;
   }
   .empty-state-actions {
     display: flex;

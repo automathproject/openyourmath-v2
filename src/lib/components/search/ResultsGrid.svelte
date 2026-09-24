@@ -5,7 +5,6 @@
   export let results = [];
   export let activeFilters = {};
   export let cardMode = 'detailed';
-  export let compactColumns = 'auto'; // auto | force
   export let selectedUuid = null;
   export let isPreviewOpen = false;
   export let onSelect = () => {};
@@ -13,48 +12,43 @@
   export let onLoadMore = () => {};
   export let loadingMore = false;
 
-  const AUTO_COMPACT_TWO_COLUMN_MIN_WIDTH = 680;
-  const FORCED_COMPACT_TWO_COLUMN_MIN_WIDTH = 480;
-  // En détaillé la carte porte un énoncé avec des formules : en dessous de
-  // ~430 px de colonne elle devient illisible, d'où ce seuil pour deux colonnes.
+  // Le compact se répartit tout seul en CSS (voir .results-grid--compact).
+  // En détaillé la carte porte un énoncé avec des formules et un pied chargé :
+  // en dessous de ~430 px de colonne elle devient illisible, et on plafonne à
+  // deux colonnes — d'où un seuil mesuré plutôt qu'une répartition libre.
   const DETAILED_TWO_COLUMN_MIN_WIDTH = 880;
   let gridEl;
-  let compactCanAutoSplit = false;
-  let compactCanForceSplit = false;
   let detailedCanSplit = false;
 
   function handleSelect(event) {
     onSelect(event.detail.exercise);
   }
 
-  function updateCompactLayout() {
+  function updateDetailedLayout() {
     if (!gridEl) return;
-    compactCanAutoSplit = gridEl.clientWidth >= AUTO_COMPACT_TWO_COLUMN_MIN_WIDTH;
-    compactCanForceSplit = gridEl.clientWidth >= FORCED_COMPACT_TWO_COLUMN_MIN_WIDTH;
     detailedCanSplit = gridEl.clientWidth >= DETAILED_TWO_COLUMN_MIN_WIDTH;
   }
 
-  $: compactCanSplit = compactColumns === 'force' ? compactCanForceSplit : compactCanAutoSplit;
   $: detailedSplit = cardMode !== 'compact' && detailedCanSplit;
 
   onMount(() => {
-    updateCompactLayout();
+    updateDetailedLayout();
 
     if (typeof ResizeObserver !== 'undefined') {
-      const observer = new ResizeObserver(updateCompactLayout);
+      const observer = new ResizeObserver(updateDetailedLayout);
       observer.observe(gridEl);
       return () => observer.disconnect();
     }
 
-    window.addEventListener('resize', updateCompactLayout);
-    return () => window.removeEventListener('resize', updateCompactLayout);
+    window.addEventListener('resize', updateDetailedLayout);
+    return () => window.removeEventListener('resize', updateDetailedLayout);
   });
 </script>
 
 {#if results.length > 0}
   <div
     bind:this={gridEl}
-    class="results-grid {cardMode === 'compact' ? 'results-grid--compact' : ''} {cardMode === 'compact' && compactCanSplit ? 'results-grid--compact-split' : ''} {detailedSplit ? 'results-grid--detailed-split' : ''}"
+    class="results-grid {cardMode === 'compact' ? 'results-grid--compact' : ''} {detailedSplit ? 'results-grid--detailed-split' : ''}"
     role="listbox"
     aria-label="Liste des résultats"
   >
@@ -92,10 +86,12 @@
   .results-grid--detailed-split {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  /* Le compact se répartit seul : « une carte ne descend pas sous 280 px, le
+     navigateur en met autant que ça rentre ». Des seuils en pixels codés en dur
+     ratatient de peu la configuration la plus courante — colonne de 673 px face
+     à un seuil de 680 — et le mode n'apportait alors presque rien. */
   .results-grid--compact {
     gap: 0.625rem;
-  }
-  .results-grid--compact-split {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 </style>
