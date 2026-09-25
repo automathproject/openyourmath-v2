@@ -18,6 +18,9 @@
                 pour un panneau latéral.
        full   — source complète, navigation et compilation.
     label        {string}    — libellé de l'action par défaut, variante « button »
+    prepare      {() => Promise<void>} — attendue avant de télécharger ou
+                               d'ouvrir la source : complète les exercices
+                               dont seules les métadonnées sont chargées.
     onviewsource {Function}  — variante « panel » : remplace le dialogue de
                                « Voir la source » quand l'appelant a son
                                propre écran d'édition (mode Éditer d'une liste) ;
@@ -30,6 +33,7 @@
                                sans dupliquer sa CSS ni la rendre globale.
 -->
 <script>
+  import { tick } from 'svelte';
   import { LatexExport } from '$lib/latex/exportState.svelte.js';
   import LatexContentOptions from '$lib/components/LatexContentOptions.svelte';
   import LatexSourceViewer from '$lib/components/LatexSourceViewer.svelte';
@@ -42,14 +46,36 @@
     label = 'LaTeX',
     trigger = undefined,
     onviewsource = undefined,
+    prepare = undefined,
   } = $props();
 
   const latex = new LatexExport(() => ({ exercises, title, fallbackName }));
 
   let dialogOpen = $state(false);
 
+  let preparing = $state(false);
+
+  /**
+   * Exécute une action sur la liste complète. Le document est dérivé des
+   * exercices reçus : sans cette attente, ceux dont le contenu n'a jamais été
+   * chargé sortiraient vides.
+   * @param {() => void} action
+   */
+  async function withContents(action) {
+    if (prepare) {
+      preparing = true;
+      try {
+        await prepare();
+        await tick();
+      } finally {
+        preparing = false;
+      }
+    }
+    action();
+  }
+
   function openDialog() {
-    dialogOpen = true;
+    withContents(() => (dialogOpen = true));
   }
 </script>
 
@@ -75,19 +101,21 @@
     </div>
 
     <div class="latex-export-actions">
-      <button class="latex-download-btn" onclick={() => latex.download()}>
+      <button class="latex-download-btn" disabled={preparing} onclick={() => withContents(() => latex.download())}>
         <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
         </svg>
         Télécharger .tex
       </button>
-      <button class="latex-preview-btn" onclick={() => (onviewsource ? onviewsource() : (dialogOpen = true))}>
+      <button class="latex-preview-btn" disabled={preparing} onclick={() => (onviewsource ? onviewsource() : openDialog())}>
         {onviewsource ? 'Éditer et compiler' : 'Voir la source'}
       </button>
     </div>
 
-    {#if latex.artifactsLoading}
+    {#if preparing}
+      <span class="latex-export-loading">Chargement des exercices…</span>
+    {:else if latex.artifactsLoading}
       <span class="latex-export-loading">Chargement des ressources…</span>
     {/if}
   </div>

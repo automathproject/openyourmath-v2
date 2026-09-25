@@ -1542,6 +1542,7 @@
           title={listTitle}
           fallbackName="seance"
           onviewsource={studentMode === 'normal' ? viewSourceInEditor : undefined}
+          prepare={listActions.loadAllContents}
         />
       </div>
     {/if}
@@ -2169,7 +2170,7 @@
 
 {:else if mode === 'editer'}
 <!-- ────────── MODE ÉDITER ────────── -->
-<SeanceLatexEditor exercises={$exerciseList} title={listTitle} />
+<SeanceLatexEditor exercises={$exerciseList} title={listTitle} loadContents={listActions.loadAllContents} />
 
 {:else if mode === 'presenter'}
 <!-- ────────── MODE PRÉSENTER ────────── -->

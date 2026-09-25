@@ -13,12 +13,18 @@
   La compilation n'est lancée qu'à la demande : chaque compilation est un
   appel au service externe.
 
+  Une fiche ne charge le contenu d'un exercice qu'à son affichage : le
+  document n'est montré qu'une fois tous les contenus chargés, sans quoi les
+  exercices jamais ouverts sortiraient vides.
+
   Props:
-    exercises {Object[]} — exercices de la liste (format listStore)
-    title     {string}   — titre de la liste, base du nom de fichier
+    exercises    {Object[]} — exercices de la liste (format listStore)
+    title        {string}   — titre de la liste, base du nom de fichier
+    loadContents {() => Promise<void>} — charge le contenu des exercices qui
+                              n'ont que leurs métadonnées
 -->
 <script>
-  import { untrack } from 'svelte';
+  import { tick, untrack } from 'svelte';
   import { browser } from '$app/environment';
   import { LatexExport } from '$lib/latex/exportState.svelte.js';
   import { downloadTexFile } from '$lib/latex/export.js';
@@ -33,7 +39,7 @@
   import LatexContentOptions from '$lib/components/LatexContentOptions.svelte';
   import LatexCompiler from '$lib/components/LatexCompiler.svelte';
 
-  let { exercises = [], title = '' } = $props();
+  let { exercises = [], title = '', loadContents = undefined } = $props();
 
   const latex = new LatexExport(() => ({ exercises, title, fallbackName: 'seance' }));
 
@@ -44,6 +50,10 @@
   /** Brouillon d'une autre composition de la liste, proposé à la reprise. */
   /** @type {import('$lib/latex/listLatexDraft.js').ListLatexDraft | null} */
   let foreignDraft = $state(null);
+  /** Composition dont tous les contenus sont chargés. */
+  let contentsKey = $state(null);
+  /** Composition en cours de chargement : hors $state, seule la garde le lit. */
+  let contentsPendingKey = null;
   /** Composition pour laquelle le brouillon a été recherché. */
   let restoredKey = $state(null);
   let copied = $state(false);
@@ -54,6 +64,7 @@
   let copyTimer = null;
 
   let ready = $derived(restoredKey === draftKey(uuids));
+  let loadedCount = $derived(exercises.filter(hasContent).length);
   let editorSource = $derived(draft ? draft.source : latex.compilerSource);
   let isStale = $derived(Boolean(draft) && draft.base !== latex.compilerSource);
 
@@ -66,13 +77,19 @@
     }
   }
 
-  // Le source dépend des artifacts (images, blocs de code) : on attend qu'ils
-  // soient chargés avant de chercher un brouillon et de montrer l'éditeur.
+  $effect(() => {
+    const key = draftKey(uuids);
+    if (!browser || key === contentsKey || key === contentsPendingKey) return;
+    untrack(() => ensureContents(key));
+  });
+
+  // Le source dépend des contenus puis des artifacts (images, blocs de code) :
+  // on attend les deux avant de chercher un brouillon et de montrer l'éditeur.
   // Sinon le source changerait sous les doigts de l'utilisateur, et un
   // brouillon pris sur la version incomplète paraîtrait aussitôt périmé.
   $effect(() => {
     const key = draftKey(uuids);
-    if (!browser || latex.artifactsLoading || key === restoredKey) return;
+    if (!browser || key !== contentsKey || latex.artifactsLoading || key === restoredKey) return;
     untrack(() => restore(key));
   });
 
@@ -88,6 +105,24 @@
       if (copyTimer) clearTimeout(copyTimer);
     };
   });
+
+  /** @param {Object} ex */
+  function hasContent(ex) {
+    return Boolean(ex?.fullExercise) || (Array.isArray(ex?.content) && ex.content.length > 0);
+  }
+
+  async function ensureContents(key) {
+    contentsPendingKey = key;
+    try {
+      await loadContents?.();
+      // Laisse la liste mise à jour redescendre jusqu'ici, et l'effet des
+      // artifacts démarrer, avant de déclarer les contenus prêts.
+      await tick();
+    } finally {
+      if (contentsPendingKey === key) contentsPendingKey = null;
+    }
+    if (draftKey(uuids) === key) contentsKey = key;
+  }
 
   function restore(key) {
     const found = findDraft(readDrafts(storage()), uuids);
@@ -275,6 +310,14 @@
         </div>
       {/if}
 
+      {#if ready && loadedCount < exercises.length}
+        <p class="sle-warning" role="alert">
+          <strong>{exercises.length - loadedCount}</strong>
+          exercice{exercises.length - loadedCount > 1 ? 's' : ''} n'{exercises.length - loadedCount > 1 ? 'ont' : 'a'} pas pu être chargé{exercises.length - loadedCount > 1 ? 's' : ''} :
+          {exercises.length - loadedCount > 1 ? 'ils apparaissent' : 'il apparaît'} vide{exercises.length - loadedCount > 1 ? 's' : ''} dans le document. Rechargez la page pour réessayer.
+        </p>
+      {/if}
+
       {#if latex.skippedImages.length > 0}
         <p class="sle-warning">
           <strong>{latex.skippedImages.length}</strong>
@@ -298,6 +341,8 @@
           filename={latex.texFileName}
           onedit={handleEdit}
         />
+      {:else if contentsKey !== draftKey(uuids)}
+        <p class="sle-loading">Chargement des exercices… {loadedCount} / {exercises.length}</p>
       {:else}
         <p class="sle-loading">Préparation du document…</p>
       {/if}
