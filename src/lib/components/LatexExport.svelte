@@ -18,6 +18,10 @@
                 pour un panneau latéral.
        full   — source complète, navigation et compilation.
     label        {string}    — libellé de l'action par défaut, variante « button »
+    onviewsource {Function}  — variante « panel » : remplace le dialogue de
+                               « Voir la source » quand l'appelant a son
+                               propre écran d'édition (mode Éditer d'une liste) ;
+                               le bouton devient alors « Éditer et compiler ».
     trigger      {Snippet}   — déclencheur fourni par l'appelant, variante
                                « button ». Reçoit la fonction d'ouverture. Le
                                bouton est alors déclaré chez l'appelant, donc
@@ -37,6 +41,7 @@
     variant = 'panel',
     label = 'LaTeX',
     trigger = undefined,
+    onviewsource = undefined,
   } = $props();
 
   const latex = new LatexExport(() => ({ exercises, title, fallbackName }));
@@ -77,8 +82,8 @@
         </svg>
         Télécharger .tex
       </button>
-      <button class="latex-preview-btn" onclick={() => (dialogOpen = true)}>
-        Voir la source
+      <button class="latex-preview-btn" onclick={() => (onviewsource ? onviewsource() : (dialogOpen = true))}>
+        {onviewsource ? 'Éditer et compiler' : 'Voir la source'}
       </button>
     </div>
 

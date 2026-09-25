@@ -1,6 +1,7 @@
 <!--
   SeanceModeBar — barre de modes pour la route /exercise/list.
-  4 modes : preparer, consulter, presenter, partager.
+  5 modes : preparer, editer, consulter, presenter, partager.
+  `canEdit` masque « Éditer » (vue élève : le source contient les solutions).
 
   Lie le state au query param ?mode= (SvelteKit goto).
 
@@ -22,15 +23,18 @@
   export let title = '';
   export let subtitle = '';
   export let compactMobile = false;
+  export let canEdit = true;
   let isModeMenuOpen = false;
 
   const modes = [
     { id: 'preparer', label: 'Préparer' },
+    { id: 'editer', label: 'Éditer' },
     { id: 'consulter', label: 'Consulter' },
     { id: 'presenter', label: 'Présenter' },
     { id: 'partager', label: 'Partager' },
   ];
 
+  $: visibleModes = canEdit ? modes : modes.filter((candidate) => candidate.id !== 'editer');
   $: activeMode = modes.find((candidate) => candidate.id === mode) ?? modes[0];
 
   function setMode(id) {
@@ -71,6 +75,10 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9" />
           <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
         </svg>
+      {:else if mode === 'editer'}
+        <svg class="seance-mode-current-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16" />
+        </svg>
       {:else if mode === 'consulter'}
         <svg class="seance-mode-current-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20" />
@@ -96,7 +104,7 @@
 
     <div id="seance-mode-menu" class="seance-mode-menu" class:seance-mode-menu--open={isModeMenuOpen}>
       <div class="seance-mode-tabs" role="tablist" aria-label="Mode de la séance">
-        {#each modes as m}
+        {#each visibleModes as m}
         <button
           type="button"
           role="tab"
@@ -111,6 +119,10 @@
             <svg class="seance-mode-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9" />
               <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg>
+          {:else if m.id === 'editer'}
+            <svg class="seance-mode-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16" />
             </svg>
           {:else if m.id === 'consulter'}
             <svg class="seance-mode-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -242,11 +254,12 @@
 
   .seance-mode-tab-icon { display: none; }
 
-  /* Les quatre onglets déployés réclament 365px, auxquels s'ajoutent le champ
-     d'UUID et les boutons d'action : en deçà, le titre de la séance n'a plus
-     de place et la barre déborde. Ils se replient donc derrière le bouton de
-     menu bien avant le format téléphone. */
-  @media (max-width: 1024px) {
+  /* Les cinq onglets déployés réclament 435px, auxquels s'ajoutent le champ
+     d'UUID et les boutons d'action (850px en tout en mode Préparer) : en deçà
+     de 1100px environ, le titre de la séance n'a plus de place et la barre
+     déborde. Ils se replient donc derrière le bouton de menu bien avant le
+     format téléphone. */
+  @media (max-width: 1180px) {
     .seance-mode-bar {
       align-items: center;
       gap: 8px;

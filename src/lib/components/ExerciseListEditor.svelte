@@ -188,7 +188,7 @@
 <div class="exercise-list-editor" class:edit-mode={isEditMode}>
   {#if isEditMode}
     <div class="edit-header">
-      <h3 class="edit-title">Mode édition</h3>
+      <h3 class="edit-title">Réorganisation</h3>
       <div class="edit-actions">
         <button
           class="edit-btn edit-btn--select-all"

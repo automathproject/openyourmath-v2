@@ -10,6 +10,7 @@
   import LectureSidebar from '$lib/components/LectureSidebar.svelte';
   import LectureSubheader from '$lib/components/LectureSubheader.svelte';
   import SeanceModeBar from '$lib/components/SeanceModeBar.svelte';
+  import SeanceLatexEditor from '$lib/components/SeanceLatexEditor.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import StarsRating from '$lib/components/StarsRating.svelte';
   import QRCode from 'qrcode';
@@ -30,7 +31,12 @@
 
   // Mode séance (URL param)
   let mode = 'preparer';
-  $: mode = /** @type {'preparer'|'consulter'|'presenter'|'partager'} */ ($page.url.searchParams.get('mode') || 'preparer');
+  $: {
+    const requestedMode = /** @type {'preparer'|'editer'|'consulter'|'presenter'|'partager'} */ ($page.url.searchParams.get('mode') || 'preparer');
+    // Le source LaTeX contient indications et solutions : la vue élève n'y a pas accès.
+    const isStudentView = ['student', 'student-hints'].includes($page.url.searchParams.get('view') ?? '');
+    mode = requestedMode === 'editer' && isStudentView ? 'preparer' : requestedMode;
+  }
 
   // Consulter view state
   let consulterShowHint = false;
@@ -323,15 +329,19 @@
   let partagerQrDataUrl = '';
   let partagerQrError = '';
   let partagerQrRequestId = 0;
-  let partagerLatexOpen = false;
-  let partagerLatexSection;
 
-  async function togglePartagerLatex() {
-    partagerLatexOpen = !partagerLatexOpen;
-    if (partagerLatexOpen) {
-      await tick();
-      partagerLatexSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  function viewSourceInEditor() {
+    closeSharePanel();
+    openLatexEditor();
+  }
+
+  /** Ouvre le mode Éditer : entrée d'historique propre, le retour ramène au mode d'origine. */
+  function openLatexEditor() {
+    if (isMobile) closeMobileNav();
+    isEditMode = false;
+    const url = new URL($page.url);
+    url.searchParams.set('mode', 'editer');
+    goto(url);
   }
   let showQrModal = false;
 
@@ -983,6 +993,10 @@
     // les touches sont comparées en minuscules.
     if (event.ctrlKey || event.metaKey || event.altKey) return;
 
+    // L'éditeur CodeMirror n'est ni un INPUT ni un TEXTAREA : toute touche
+    // doit lui revenir, sans quoi taper « f » ou « p » lancerait la présentation.
+    if (mode === 'editer') return;
+
     const isTyping = event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA';
 
     // Raccourcis F / P pour basculer le mode présentation
@@ -1062,6 +1076,7 @@
     title={listTitle || "Liste d'exercices"}
     subtitle="{$exerciseList.length} exercice{$exerciseList.length !== 1 ? 's' : ''}"
     compactMobile={mode === 'consulter' || mode === 'presenter'}
+    canEdit={studentMode === 'normal'}
   >
     <svelte:fragment slot="title">
       <h1 class="list-title">
@@ -1521,7 +1536,13 @@
         </div>
 
         <!-- Export LaTeX -->
-        <LatexExport variant="panel" exercises={$exerciseList} title={listTitle} fallbackName="seance" />
+        <LatexExport
+          variant="panel"
+          exercises={$exerciseList}
+          title={listTitle}
+          fallbackName="seance"
+          onviewsource={studentMode === 'normal' ? viewSourceInEditor : undefined}
+        />
       </div>
     {/if}
   </header>
@@ -1619,12 +1640,14 @@
                 </button>
               {/if}
 
-              <!-- Bouton d'édition -->
+              <!-- Réorganisation (ordre, suppression groupée) -->
               <button
                 on:click={toggleEditMode}
                 class="edit-toggle-btn"
                 class:edit-toggle-btn--active={isEditMode}
-                title={isEditMode ? 'Quitter le mode édition' : 'Éditer la liste'}
+                title={isEditMode ? 'Terminer la réorganisation' : 'Réorganiser la liste'}
+                aria-label={isEditMode ? 'Terminer la réorganisation' : 'Réorganiser la liste'}
+                aria-pressed={isEditMode}
               >
                 {#if isEditMode}
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -1632,10 +1655,24 @@
                   </svg>
                 {:else}
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
                   </svg>
                 {/if}
               </button>
+
+              <!-- Édition du LaTeX de la liste -->
+              {#if studentMode === 'normal'}
+                <button
+                  on:click={openLatexEditor}
+                  class="edit-toggle-btn"
+                  title="Éditer le LaTeX de la liste"
+                  aria-label="Éditer le LaTeX de la liste"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                </button>
+              {/if}
             </div>
             {/if}
           </div>
@@ -2130,6 +2167,10 @@
   {/if}
 </div>
 
+{:else if mode === 'editer'}
+<!-- ────────── MODE ÉDITER ────────── -->
+<SeanceLatexEditor exercises={$exerciseList} title={listTitle} />
+
 {:else if mode === 'presenter'}
 <!-- ────────── MODE PRÉSENTER ────────── -->
 <div class="mode-presenter" class:is-light={!presenterDarkMode} bind:this={presenterRoot}>
@@ -2507,39 +2548,20 @@
           <span class="partager-export-label">PDF — corrigé</span>
           <span class="partager-export-sub">Énoncés, indications et solutions · ~10&nbsp;s</span>
         </a>
-        <button
-          type="button"
-          class="partager-export-card"
-          class:is-open={partagerLatexOpen}
-          on:click={togglePartagerLatex}
-          aria-expanded={partagerLatexOpen}
-        >
-          <span class="partager-export-icon" style="font-family:monospace;font-size:16px">⟨/⟩</span>
-          <span class="partager-export-label">Source LaTeX</span>
-          <span class="partager-export-sub">Document .tex complet, prêt à compiler</span>
-        </button>
+        {#if studentMode === 'normal'}
+          <button
+            type="button"
+            class="partager-export-card"
+            on:click={openLatexEditor}
+          >
+            <span class="partager-export-icon" style="font-family:monospace;font-size:16px">⟨/⟩</span>
+            <span class="partager-export-label">Source LaTeX</span>
+            <span class="partager-export-sub">Éditer, compiler et télécharger le .tex</span>
+          </button>
+        {/if}
       </div>
     </section>
 
-    <!-- Source LaTeX -->
-    {#if partagerLatexOpen}
-      <section class="partager-section" bind:this={partagerLatexSection}>
-        <div class="partager-latex-head">
-          <div class="t-overline">Source LaTeX</div>
-          <button
-            type="button"
-            class="partager-latex-close"
-            on:click={() => (partagerLatexOpen = false)}
-            aria-label="Fermer la source LaTeX"
-          >✕</button>
-        </div>
-        <p class="partager-latex-desc">
-          Document complet avec préambule optimisé : seuls les packages et macros utilisés par
-          les exercices de la liste sont inclus. Les images et blocs de code sont intégrés.
-        </p>
-        <LatexExport variant="full" exercises={$exerciseList} title={listTitle} fallbackName="seance" />
-      </section>
-    {/if}
 
     <!-- Permissions avec CSS toggles -->
     <section class="partager-section">
@@ -5241,39 +5263,6 @@
   }
   .partager-export-card:hover { background: var(--color-interface-bg-secondary); border-color: var(--color-brand-300); }
   button.partager-export-card { cursor: pointer; font: inherit; }
-  .partager-export-card.is-open {
-    border-color: var(--color-brand-400);
-    background: var(--color-interface-bg-secondary);
-  }
-  .partager-latex-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 8px;
-  }
-  .partager-latex-close {
-    width: 26px;
-    height: 26px;
-    border: 1px solid var(--color-interface-border-primary);
-    border-radius: 6px;
-    background: white;
-    color: var(--color-interface-text-secondary);
-    font-size: 12px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .partager-latex-close:hover {
-    border-color: var(--color-brand-300);
-    color: var(--color-brand-600);
-  }
-  .partager-latex-desc {
-    font-size: 13px;
-    color: var(--color-interface-text-muted);
-    line-height: 1.5;
-    margin: 0 0 14px;
-  }
   .partager-export-icon { color: var(--color-interface-text-muted); }
   .partager-export-label { font-size: 13px; font-weight: 600; text-align: center; }
   .partager-export-sub { font-size: 11px; color: var(--color-interface-text-muted); text-align: center; line-height: 1.4; }

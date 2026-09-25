@@ -10,11 +10,17 @@
   /** @type {HTMLElement} */
   let editorHost;
   let editor;
+  /** Classe EditorView, retenue pour les effets de défilement. */
+  let EditorViewClass = null;
+  /** Vrai pendant qu'un source venu du parent remplace celui de l'éditeur. */
+  let applyingExternalSource = false;
   let {
     source,
     assets = [],
     filename = "document.tex",
     endpoint = "/api/latex/compile",
+    /** Appelée à chaque modification faite par l'utilisateur, avec le texte complet. */
+    onedit = undefined,
   } = $props();
 
   let editableSource = $state(source);
@@ -28,8 +34,11 @@
 
   $effect(() => {
     if (source !== previousSource) {
-      editableSource = source;
       previousSource = source;
+      // Un parent qui renvoie le texte que l'utilisateur vient de taper (pour
+      // le conserver) ne doit pas effacer les diagnostics à chaque frappe.
+      if (source === editableSource) return;
+      editableSource = source;
       rawLog = "";
       requestError = "";
       replaceEditorSource(source);
@@ -62,6 +71,7 @@
 
       const { EditorState } = stateModule;
       const { EditorView, basicSetup } = codemirrorModule;
+      EditorViewClass = EditorView;
       const { keymap } = viewModule;
       const { latex } = latexModule;
 
@@ -114,8 +124,9 @@
               },
             ]),
             EditorView.updateListener.of((update) => {
-              if (update.docChanged)
-                editableSource = update.state.doc.toString();
+              if (!update.docChanged) return;
+              editableSource = update.state.doc.toString();
+              if (!applyingExternalSource) onedit?.(editableSource);
             }),
             theme,
           ],
@@ -201,11 +212,35 @@
     });
   }
 
+  /**
+   * Place le curseur au début d'une ligne et l'amène en haut de l'éditeur.
+   * @param {number} line — numéro de ligne, 1-indexé
+   */
+  export function revealLine(line) {
+    if (!line || !editor || !EditorViewClass) return;
+    const target = editor.state.doc.line(
+      Math.min(line, editor.state.doc.lines),
+    );
+    editor.dispatch({
+      selection: { anchor: target.from },
+      effects: EditorViewClass.scrollIntoView(target.from, {
+        y: "start",
+        yMargin: 8,
+      }),
+    });
+    editor.focus();
+  }
+
   function replaceEditorSource(nextSource) {
     if (!editor || editor.state.doc.toString() === nextSource) return;
-    editor.dispatch({
-      changes: { from: 0, to: editor.state.doc.length, insert: nextSource },
-    });
+    applyingExternalSource = true;
+    try {
+      editor.dispatch({
+        changes: { from: 0, to: editor.state.doc.length, insert: nextSource },
+      });
+    } finally {
+      applyingExternalSource = false;
+    }
   }
 
   function downloadPdf() {
