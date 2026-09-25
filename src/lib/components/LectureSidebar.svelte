@@ -7,6 +7,9 @@
   export let showHint = false;
   export let showSolution = false;
   export let showInlineControls = true;
+  // Vue élève : les boutons de révélation ne sont proposés que s'ils sont permis.
+  export let canSeeHints = true;
+  export let canSeeSolutions = true;
 
   function formatDisplayDate(value) {
     if (!value) return '';
@@ -60,7 +63,7 @@
           <span class="display-switch" aria-hidden="true"></span>
         </label>
 
-        {#if exercise?.hasIndication}
+        {#if exercise?.hasIndication && canSeeHints}
           <button
             type="button"
             class="reveal-button reveal-button--hint"
@@ -73,7 +76,7 @@
           </button>
         {/if}
 
-        {#if exercise?.hasSolution}
+        {#if exercise?.hasSolution && canSeeSolutions}
           <button
             type="button"
             class="reveal-button reveal-button--solution"

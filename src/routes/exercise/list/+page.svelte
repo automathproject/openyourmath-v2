@@ -30,12 +30,14 @@
   export let data;
 
   // Mode séance (URL param)
+  const MODES = ['preparer', 'editer', 'consulter', 'presenter', 'partager'];
   let mode = 'preparer';
   $: {
-    const requestedMode = /** @type {'preparer'|'editer'|'consulter'|'presenter'|'partager'} */ ($page.url.searchParams.get('mode') || 'preparer');
-    // Le source LaTeX contient indications et solutions : la vue élève n'y a pas accès.
-    const isStudentView = ['student', 'student-hints'].includes($page.url.searchParams.get('view') ?? '');
-    mode = requestedMode === 'editer' && isStudentView ? 'preparer' : requestedMode;
+    const requestedMode = $page.url.searchParams.get('mode');
+    // Le source LaTeX contient indications et solutions, et Partager fabrique
+    // des liens et un corrigé complets : la vue élève n'a accès à aucun des deux.
+    const isBlocked = studentMode !== 'normal' && (requestedMode === 'editer' || requestedMode === 'partager');
+    mode = MODES.includes(requestedMode) && !isBlocked ? requestedMode : 'preparer';
   }
 
   // Consulter view state
@@ -290,8 +292,8 @@
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); presenterPrev(); }
     else if (e.key === 'ArrowDown') { e.preventDefault(); presenterNextExo(); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); presenterPrevExo(); }
-    else if ((e.key === 'i' || e.key === 'I') && presenterSlides[presenterQIdx]?.hints?.length) presenterShowInd = !presenterShowInd;
-    else if ((e.key === 's' || e.key === 'S') && presenterSlides[presenterQIdx]?.solutions?.length) presenterShowSol = !presenterShowSol;
+    else if ((e.key === 'i' || e.key === 'I') && canSeeHints && presenterSlides[presenterQIdx]?.hints?.length) presenterShowInd = !presenterShowInd;
+    else if ((e.key === 's' || e.key === 'S') && canSeeSolutions && presenterSlides[presenterQIdx]?.solutions?.length) presenterShowSol = !presenterShowSol;
     else if (/^[1-9]$/.test(e.key)) { listActions.selectExercise(parseInt(e.key) - 1); presenterQIdx = 0; resetPresenterRevealState(); }
   }
 
@@ -346,10 +348,16 @@
   let showQrModal = false;
 
   $: partagerUrlView = partagerSolVisible ? null : (partagerIndVisible ? 'student-hints' : 'student');
-  $: partagerShareUrl = buildShareUrl(partagerUrlView, {
+  // buildShareUrl lit la liste et le titre sans que Svelte le voie : les citer
+  // ici fait recalculer le lien (et le QR code) quand ils changent. Sans eux,
+  // le lien était figé à l'initialisation, avant le chargement de la liste.
+  $: partagerShareUrl = ($exerciseList, listTitle, buildShareUrl(partagerUrlView, {
     mode: partagerTargetMode,
     buttonsVisible: partagerButtonsVisible
-  });
+  }));
+  // L'API PDF ne lit que `list=` et `title=`, fiche ou pas.
+  $: pdfExportQuery = `list=${$exerciseList.map((exercise) => exercise.uuid).join(',')}`
+    + (listTitle ? `&title=${encodeURIComponent(listTitle)}` : '');
   $: updatePartagerQrCode(partagerShareUrl);
 
   async function updatePartagerQrCode(url) {
@@ -408,6 +416,10 @@
     : $page.url.searchParams.get('view') === 'student-hints'
       ? 'student-hints'
       : 'normal';
+  // Seule source de vérité pour ce que la vue élève laisse dévoiler : tout
+  // bouton, raccourci ou export qui révèle indications ou solutions s'y réfère.
+  $: canSeeHints = studentMode !== 'student';
+  $: canSeeSolutions = studentMode === 'normal';
   $: sharedButtonsVisible = $page.url.searchParams.get('buttons') !== '0';
 
   // Titre personnalisé
@@ -909,26 +921,45 @@
     goto('/exercise/list');
   }
   
-  function buildUrl() {
-    const base = listActions.getCurrentListUrl();
-    let url = base;
-    if (listTitle) url += `${url.includes('?') ? '&' : '?'}title=${encodeURIComponent(listTitle)}`;
-    if (studentMode !== 'normal') url += `${url.includes('?') ? '&' : '?'}view=${studentMode}`;
-    if (mode !== 'preparer') url += `${url.includes('?') ? '&' : '?'}mode=${mode}`;
-    if (!sharedButtonsVisible) url += `${url.includes('?') ? '&' : '?'}buttons=0`;
+  // Tant que la liste reste celle de la fiche ouverte, les liens désignent la
+  // fiche : un `list=` la figerait et perdrait le lien avec elle.
+  const ficheSource = data.fiche
+    ? {
+        ref: ($page.url.searchParams.get('fiche') ?? '').trim(),
+        title: data.fiche.title,
+        uuids: data.uuids.join(',')
+      }
+    : null;
+
+  function isFicheIntact() {
+    return !!ficheSource && $exerciseList.map((exercise) => exercise.uuid).join(',') === ficheSource.uuids;
+  }
+
+  function listUrl(origin, { view, mode: targetMode, buttonsVisible }) {
+    const ficheIntact = isFicheIntact();
+    let url = ficheIntact
+      ? `${origin}/exercise/list?fiche=${encodeURIComponent(ficheSource.ref)}`
+      : listUtils.getShareableUrl(origin);
+    const add = (param) => { url += `${url.includes('?') ? '&' : '?'}${param}`; };
+    if (listTitle && !(ficheIntact && listTitle === ficheSource.title)) add(`title=${encodeURIComponent(listTitle)}`);
+    if (view) add(`view=${view}`);
+    if (targetMode && targetMode !== 'preparer') add(`mode=${targetMode}`);
+    if (buttonsVisible === false) add('buttons=0');
     return url;
+  }
+
+  function buildUrl() {
+    return listUrl('', {
+      view: studentMode !== 'normal' ? studentMode : null,
+      mode,
+      buttonsVisible: sharedButtonsVisible
+    });
   }
 
   function buildShareUrl(viewOverride, options = {}) {
     const origin = typeof window !== 'undefined' ? window.location.origin : '';
-    const base = listUtils.getShareableUrl(origin);
-    let url = base;
-    if (listTitle) url += `${url.includes('?') ? '&' : '?'}title=${encodeURIComponent(listTitle)}`;
     const view = viewOverride !== undefined ? viewOverride : (studentMode !== 'normal' ? studentMode : null);
-    if (view) url += `${url.includes('?') ? '&' : '?'}view=${view}`;
-    if (options.mode) url += `${url.includes('?') ? '&' : '?'}mode=${options.mode}`;
-    if (options.buttonsVisible === false) url += `${url.includes('?') ? '&' : '?'}buttons=0`;
-    return url;
+    return listUrl(origin, { view, mode: options.mode, buttonsVisible: options.buttonsVisible });
   }
 
   function updateUrl() {
@@ -974,8 +1005,9 @@
     shareCopied = '';
   }
 
+  /** @param {'student'|'student-hints'|null} view  null : vue complète, sans paramètre view. */
   async function copyShareUrl(view) {
-    const url = buildShareUrl(view ?? undefined);
+    const url = buildShareUrl(view);
     try {
       await navigator.clipboard.writeText(url);
       shareCopied = view ?? 'normal';
@@ -1077,6 +1109,7 @@
     subtitle="{$exerciseList.length} exercice{$exerciseList.length !== 1 ? 's' : ''}"
     compactMobile={mode === 'consulter' || mode === 'presenter'}
     canEdit={studentMode === 'normal'}
+    canShare={studentMode === 'normal'}
   >
     <svelte:fragment slot="title">
       <h1 class="list-title">
@@ -1489,6 +1522,8 @@
         </div>
 
         <div class="share-rows">
+          <!-- Un lien ne donne jamais plus que la vue courante -->
+          {#if canSeeSolutions}
           <!-- Lien professeur (normal) -->
           <div class="share-row">
             <div class="share-row-info">
@@ -1503,7 +1538,9 @@
               {shareCopied === 'normal' ? '✓ Copié' : 'Copier le lien'}
             </button>
           </div>
+          {/if}
 
+          {#if canSeeHints}
           <!-- Lien élève + indications -->
           <div class="share-row">
             <div class="share-row-info">
@@ -1518,6 +1555,7 @@
               {shareCopied === 'student-hints' ? '✓ Copié' : 'Copier le lien'}
             </button>
           </div>
+          {/if}
 
           <!-- Lien élève strict -->
           <div class="share-row">
@@ -1535,15 +1573,17 @@
           </div>
         </div>
 
-        <!-- Export LaTeX -->
-        <LatexExport
-          variant="panel"
-          exercises={$exerciseList}
-          title={listTitle}
-          fallbackName="seance"
-          onviewsource={studentMode === 'normal' ? viewSourceInEditor : undefined}
-          prepare={listActions.loadAllContents}
-        />
+        <!-- Export LaTeX : ses options incluent les solutions, la vue élève n'y a pas accès -->
+        {#if canSeeSolutions}
+          <LatexExport
+            variant="panel"
+            exercises={$exerciseList}
+            title={listTitle}
+            fallbackName="seance"
+            onviewsource={viewSourceInEditor}
+            prepare={listActions.loadAllContents}
+          />
+        {/if}
       </div>
     {/if}
   </header>
@@ -1811,6 +1851,8 @@
                     bind:showHint
                     bind:showSolution
                     bind:showInlineControls
+                    {canSeeHints}
+                    {canSeeSolutions}
                   />
                 {/if}
               </div>
@@ -1997,18 +2039,22 @@
           </button>
           <span class="consulter-mobile-pos">{$selectedExerciseIndex + 1} / {$exerciseList.length}</span>
           <span class="consulter-mobile-spacer"></span>
-          <button
-            class="consulter-mobile-toggle consulter-btn-hint"
-            class:is-active={consulterShowHint}
-            on:click={() => (consulterShowHint = !consulterShowHint)}
-            aria-label="Afficher ou masquer les indications"
-          >Ind.</button>
-          <button
-            class="consulter-mobile-toggle consulter-btn-sol"
-            class:is-active={consulterShowSolution}
-            on:click={() => (consulterShowSolution = !consulterShowSolution)}
-            aria-label="Afficher ou masquer les solutions"
-          >Sol.</button>
+          {#if canSeeHints}
+            <button
+              class="consulter-mobile-toggle consulter-btn-hint"
+              class:is-active={consulterShowHint}
+              on:click={() => (consulterShowHint = !consulterShowHint)}
+              aria-label="Afficher ou masquer les indications"
+            >Ind.</button>
+          {/if}
+          {#if canSeeSolutions}
+            <button
+              class="consulter-mobile-toggle consulter-btn-sol"
+              class:is-active={consulterShowSolution}
+              on:click={() => (consulterShowSolution = !consulterShowSolution)}
+              aria-label="Afficher ou masquer les solutions"
+            >Sol.</button>
+          {/if}
         </div>
       {/if}
 
@@ -2023,16 +2069,20 @@
         {#if consulterRouleau}
           <!-- En rouleau il n'y a pas de rail : les commandes de révélation
                reviennent ici, dans une barre qui reste à vue. -->
-          <button
-            class="btn btn-secondary btn-sm consulter-btn-hint"
-            class:is-active={consulterShowHint}
-            on:click={() => (consulterShowHint = !consulterShowHint)}
-          >💡 Indications</button>
-          <button
-            class="btn btn-secondary btn-sm consulter-btn-sol"
-            class:is-active={consulterShowSolution}
-            on:click={() => (consulterShowSolution = !consulterShowSolution)}
-          >★ Solutions</button>
+          {#if canSeeHints}
+            <button
+              class="btn btn-secondary btn-sm consulter-btn-hint"
+              class:is-active={consulterShowHint}
+              on:click={() => (consulterShowHint = !consulterShowHint)}
+            >💡 Indications</button>
+          {/if}
+          {#if canSeeSolutions}
+            <button
+              class="btn btn-secondary btn-sm consulter-btn-sol"
+              class:is-active={consulterShowSolution}
+              on:click={() => (consulterShowSolution = !consulterShowSolution)}
+            >★ Solutions</button>
+          {/if}
         {/if}
         {#if consulterRouleauPossible}
           <button
@@ -2091,6 +2141,7 @@
                       showHint={consulterShowHint}
                       showSolution={consulterShowSolution}
                       showInlineControls={sharedButtonsVisible ? showInlineControls : false}
+                      {studentMode}
                     />
                   </div>
 
@@ -2125,6 +2176,8 @@
                     bind:showHint={consulterShowHint}
                     bind:showSolution={consulterShowSolution}
                     bind:showInlineControls
+                    {canSeeHints}
+                    {canSeeSolutions}
                   />
                 {/if}
               </div>
@@ -2278,27 +2331,31 @@
                   <MathRenderer content={getPresenterBlockContent(q)} inline={false} />
                 </div>
               {/if}
-              {#if sharedButtonsVisible}
+              {#if sharedButtonsVisible && (canSeeHints || canSeeSolutions)}
                 <div class="presenter-reveal-btns">
-                  <button
-                    class="presenter-btn presenter-btn--ind"
-                    disabled={!slide?.hints?.length}
-                    on:click={() => (presenterShowInd = !presenterShowInd)}
-                  >
-                    💡 {presenterShowInd ? 'Masquer' : 'Afficher'} l'indication
-                    <span class="presenter-kbd-hint">I</span>
-                  </button>
-                  <button
-                    class="presenter-btn presenter-btn--sol"
-                    disabled={!slide?.solutions?.length}
-                    on:click={() => (presenterShowSol = !presenterShowSol)}
-                  >
-                    ★ {presenterShowSol ? 'Masquer' : 'Afficher'} la solution
-                    <span class="presenter-kbd-hint">S</span>
-                  </button>
+                  {#if canSeeHints}
+                    <button
+                      class="presenter-btn presenter-btn--ind"
+                      disabled={!slide?.hints?.length}
+                      on:click={() => (presenterShowInd = !presenterShowInd)}
+                    >
+                      💡 {presenterShowInd ? 'Masquer' : 'Afficher'} l'indication
+                      <span class="presenter-kbd-hint">I</span>
+                    </button>
+                  {/if}
+                  {#if canSeeSolutions}
+                    <button
+                      class="presenter-btn presenter-btn--sol"
+                      disabled={!slide?.solutions?.length}
+                      on:click={() => (presenterShowSol = !presenterShowSol)}
+                    >
+                      ★ {presenterShowSol ? 'Masquer' : 'Afficher'} la solution
+                      <span class="presenter-kbd-hint">S</span>
+                    </button>
+                  {/if}
                 </div>
               {/if}
-              {#if presenterShowInd && slide?.hints?.length}
+              {#if canSeeHints && presenterShowInd && slide?.hints?.length}
                 <div class="presenter-reveal presenter-reveal--ind">
                   <div class="presenter-reveal-label">Indication</div>
                   <div class="presenter-reveal-body">
@@ -2308,7 +2365,7 @@
                   </div>
                 </div>
               {/if}
-              {#if presenterShowSol && slide?.solutions?.length}
+              {#if canSeeSolutions && presenterShowSol && slide?.solutions?.length}
                 <div class="presenter-reveal presenter-reveal--sol">
                   <div class="presenter-reveal-label">Solution</div>
                   <div class="presenter-reveal-body">
@@ -2331,6 +2388,7 @@
                 bind:showHint={presenterShowInd}
                 bind:showSolution={presenterShowSol}
                 showInlineControls={sharedButtonsVisible}
+                {studentMode}
               />
             </div>
           </div>
@@ -2535,14 +2593,14 @@
     <section class="partager-section">
       <div class="t-overline mb-3">Exporter</div>
       <div class="partager-export-grid">
-        <a href="/api/export/pdf?{buildUrl().split('?')[1] || ''}" class="partager-export-card" target="_blank">
+        <a href="/api/export/pdf?{pdfExportQuery}" class="partager-export-card" target="_blank">
           <span class="partager-export-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
           </span>
           <span class="partager-export-label">PDF — feuille TD</span>
           <span class="partager-export-sub">Énoncés seuls · compilation ~10&nbsp;s</span>
         </a>
-        <a href="/api/export/pdf?{buildUrl().split('?')[1] || ''}&solutions=1" class="partager-export-card" target="_blank">
+        <a href="/api/export/pdf?{pdfExportQuery}&solutions=1" class="partager-export-card" target="_blank">
           <span class="partager-export-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
           </span>
