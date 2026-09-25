@@ -88,7 +88,8 @@
       {/if}
 
       <ol class="fiche-exercises">
-        {#each group.items as exercise (exercise.uuid)}
+        <!-- Sans clé : une fiche peut reprendre un exercice, l'uuid n'est pas unique. -->
+        {#each group.items as exercise}
           <li class="fiche-exercise">
             <a class="fiche-exercise-link" href="/exercise/{exercise.uuid}">
               <span class="fiche-exercise-title"><MathRenderer content={exercise.title} inline={true} /></span>

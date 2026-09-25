@@ -2015,7 +2015,8 @@
       {/if}
 
       <div class="consulter-list">
-        {#each consulterEntries as { exercise: e, index: i } (e.uuid ?? i)}
+        <!-- Clé = rang, pas uuid : une fiche peut reprendre un exercice (fic00007). -->
+        {#each consulterEntries as { exercise: e, index: i } (i)}
           {@const isSel = i === consulterIndexCourant}
           {@const isVisited = consulterVisited.has(i)}
           <button
@@ -2130,7 +2131,7 @@
         <div class="consulter-loading">Chargement…</div>
       {:else if consulterRendus.length}
         <div class="consulter-body consulter-body--immersive" class:consulter-body--rouleau={consulterRouleau}>
-          {#each consulterRendus as { exercise, index } (exercise?.uuid ?? index)}
+          {#each consulterRendus as { exercise, index } (index)}
             <div
               class="exercise-page-shell exercise-page-shell--immersive"
               bind:this={consulterRouleauEls[index]}
