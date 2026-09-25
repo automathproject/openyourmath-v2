@@ -3,7 +3,7 @@
   import { onMount, onDestroy, tick } from 'svelte';
   import { cubicOut, cubicIn } from 'svelte/easing';
   import { page } from '$app/stores';
-  import { goto } from '$app/navigation';
+  import { goto, afterNavigate } from '$app/navigation';
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
   import ExerciseListEditor from '$lib/components/ExerciseListEditor.svelte';
   import LatexExport from '$lib/components/LatexExport.svelte';
@@ -348,10 +348,10 @@
   let showQrModal = false;
 
   $: partagerUrlView = partagerSolVisible ? null : (partagerIndVisible ? 'student-hints' : 'student');
-  // buildShareUrl lit la liste et le titre sans que Svelte le voie : les citer
-  // ici fait recalculer le lien (et le QR code) quand ils changent. Sans eux,
-  // le lien était figé à l'initialisation, avant le chargement de la liste.
-  $: partagerShareUrl = ($exerciseList, listTitle, buildShareUrl(partagerUrlView, {
+  // buildShareUrl lit la liste, le titre et la fiche sans que Svelte le voie :
+  // les citer ici fait recalculer le lien (et le QR code) quand ils changent.
+  // Sans eux, le lien était figé à l'initialisation, avant le chargement de la liste.
+  $: partagerShareUrl = ($exerciseList, listTitle, ficheSource, buildShareUrl(partagerUrlView, {
     mode: partagerTargetMode,
     buttonsVisible: partagerButtonsVisible
   }));
@@ -568,13 +568,7 @@
     checkMobile();
 
     if (data.exercises && data.exercises.length > 0) {
-      exerciseList.set(data.exercises);
-      selectedExerciseIndex.set(0);
-      if (data.exercises[0].fullExercise) {
-        selectedExercise.set(data.exercises[0].fullExercise);
-      } else {
-        listActions.selectExercise(0);
-      }
+      showDataList();
     } else if (!$page.url.searchParams.get('list') && $exerciseList.length > 0) {
       selectedExerciseIndex.set(0);
       if ($exerciseList[0].fullExercise) {
@@ -591,6 +585,31 @@
     updateUuidInput();
 
     return () => unsubAnim();
+  });
+
+  function showDataList() {
+    exerciseList.set(data.exercises);
+    selectedExerciseIndex.set(0);
+    if (data.exercises[0].fullExercise) {
+      selectedExercise.set(data.exercises[0].fullExercise);
+    } else {
+      listActions.selectExercise(0);
+    }
+  }
+
+  // La liste n'est lue dans `data` qu'au montage : sans ce rattrapage, un
+  // Retour après « Vider » ou un lien vers une autre liste changeaient l'URL
+  // sous une page restée figée. Les `goto` de la page elle-même sont écartés :
+  // le store y est déjà à jour, et la réponse d'un `load` arrivée après une
+  // seconde suppression ferait réapparaître l'exercice retiré.
+  afterNavigate(({ type }) => {
+    if (type !== 'popstate' && type !== 'link') return;
+    listTitle = data.title || '';
+    ficheSource = readFicheSource();
+    const dataUuids = (data.exercises ?? []).map((exercise) => exercise.uuid).join(',');
+    if (dataUuids === $exerciseList.map((exercise) => exercise.uuid).join(',')) return;
+    if (data.exercises?.length) showDataList();
+    else listActions.clearList();
   });
   
   // Synchroniser la classe body avec le mode présentation
@@ -923,13 +942,17 @@
   
   // Tant que la liste reste celle de la fiche ouverte, les liens désignent la
   // fiche : un `list=` la figerait et perdrait le lien avec elle.
-  const ficheSource = data.fiche
-    ? {
-        ref: ($page.url.searchParams.get('fiche') ?? '').trim(),
-        title: data.fiche.title,
-        uuids: data.uuids.join(',')
-      }
-    : null;
+  let ficheSource = readFicheSource();
+
+  function readFicheSource() {
+    return data.fiche
+      ? {
+          ref: ($page.url.searchParams.get('fiche') ?? '').trim(),
+          title: data.fiche.title,
+          uuids: data.uuids.join(',')
+        }
+      : null;
+  }
 
   function isFicheIntact() {
     return !!ficheSource && $exerciseList.map((exercise) => exercise.uuid).join(',') === ficheSource.uuids;
