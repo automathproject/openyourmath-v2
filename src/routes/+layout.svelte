@@ -15,9 +15,20 @@
 
   const APP_VERSION = env.PUBLIC_APP_VERSION || 'dev';
   const currentYear = new Date().getFullYear();
-  $: listHref = $exerciseList.length > 0
-    ? listActions.getCurrentListUrl()
-    : '/exercise/list';
+  // Sur la liste elle-même, le lien ramène à Préparer sans rien perdre d'autre :
+  // reconstruit depuis le store, il oubliait la fiche, le titre et la vue
+  // élève, et un élève retrouvait les solutions en un clic. Les paramètres
+  // sont filtrés tels quels pour garder les virgules de `list=` lisibles.
+  $: listHref = $page.url.pathname === '/exercise/list'
+    ? currentListWithoutMode($page.url.search)
+    : $exerciseList.length > 0
+      ? listActions.getCurrentListUrl()
+      : '/exercise/list';
+
+  function currentListWithoutMode(search) {
+    const params = search.slice(1).split('&').filter((param) => param && !param.startsWith('mode='));
+    return params.length ? `/exercise/list?${params.join('&')}` : '/exercise/list';
+  }
 
   onMount(() => {
     function handleKeydown(e) {
