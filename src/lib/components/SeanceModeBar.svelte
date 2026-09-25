@@ -2,6 +2,7 @@
   SeanceModeBar — barre de modes pour la route /exercise/list.
   5 modes : preparer, editer, consulter, presenter, partager.
   `canEdit` masque « Éditer » (vue élève : le source contient les solutions).
+  `canShare` masque « Partager » (vue élève : liens et corrigé complets).
 
   Lie le state au query param ?mode= (SvelteKit goto).
 
@@ -24,6 +25,7 @@
   export let subtitle = '';
   export let compactMobile = false;
   export let canEdit = true;
+  export let canShare = true;
   let isModeMenuOpen = false;
 
   const modes = [
@@ -34,7 +36,9 @@
     { id: 'partager', label: 'Partager' },
   ];
 
-  $: visibleModes = canEdit ? modes : modes.filter((candidate) => candidate.id !== 'editer');
+  $: visibleModes = modes.filter((candidate) =>
+    (canEdit || candidate.id !== 'editer') && (canShare || candidate.id !== 'partager')
+  );
   $: activeMode = modes.find((candidate) => candidate.id === mode) ?? modes[0];
 
   function setMode(id) {
