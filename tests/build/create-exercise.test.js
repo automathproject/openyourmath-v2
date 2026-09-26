@@ -609,6 +609,68 @@ describe('buildLatexExport — environnements des sources', () => {
     const { source } = buildLatexExport(exerciseWith('Soit $x$ un réel.'), 'T');
     expect(source).not.toContain('amsthm');
   });
+
+  it('déclare l\'environnement definition', () => {
+    const { source } = buildLatexExport(exerciseWith('\\begin{definition}Texte.\\end{definition}'), 'T');
+    expect(source).toContain('\\theoremstyle{definition}\n\\newtheorem*{definition}{Définition}');
+  });
+});
+
+describe('buildLatexExport — paquets requis par les sources crouzet', () => {
+  const sourceFor = (latex) => buildLatexExport(
+    [{ uuid: 'cccc', title: 'C', content: [{ type: 'question', order: 1, latex }] }],
+    'T',
+  ).source;
+  const PLAIN = 'Soit $x$ un réel.';
+
+  it('charge enumitem pour une liste à options', () => {
+    expect(sourceFor('\\begin{itemize}[label=\\textbullet]\\item a\\end{itemize}'))
+      .toContain('\\usepackage{enumitem}');
+    expect(sourceFor('\\begin{enumerate} [label=\\alph*)]\\item a\\end{enumerate}'))
+      .toContain('\\usepackage{enumitem}');
+  });
+
+  it('ne charge pas enumitem pour une liste ordinaire', () => {
+    // L'export produit lui-même des enumerate sans options.
+    const source = sourceFor('\\begin{itemize}\\item [a] b\\end{itemize}');
+    expect(source).not.toContain('enumitem');
+    expect(sourceFor(PLAIN)).not.toContain('enumitem');
+  });
+
+  it('charge tkz-tab pour un tableau de variations, dans une tikzpicture ou non', () => {
+    const inPicture = sourceFor('\\begin{tikzpicture}\\tkzTabInit{$x$ / 1}{$0$, $1$}\\tkzTabLine{, +, }\\end{tikzpicture}');
+    expect(inPicture).toContain('\\usepackage{tikz}');
+    expect(inPicture).toContain('\\usepackage{tkz-tab}');
+    expect(sourceFor('\\tkzTabInit{$x$ / 1}{$0$, $1$}')).toContain('\\usepackage{tkz-tab}');
+    expect(sourceFor(PLAIN)).not.toContain('tkz-tab');
+  });
+
+  it('charge colortbl, avec xcolor, pour une colonne colorée', () => {
+    const source = sourceFor('\\[\\begin{array}{|c|>{\\columncolor{gray!20}}c|}a & b\\end{array}\\]');
+    expect(source).toContain('\\usepackage{xcolor}');
+    expect(source).toContain('\\usepackage{colortbl}');
+    expect(source.indexOf('{xcolor}')).toBeLessThan(source.indexOf('{colortbl}'));
+    expect(sourceFor(PLAIN)).not.toContain('colortbl');
+  });
+
+  it('ne recharge pas xcolor quand TikZ le fournit déjà', () => {
+    const source = sourceFor('\\begin{tikzpicture}\\end{tikzpicture}\\[\\begin{array}{>{\\columncolor{gray!20}}c}a\\end{array}\\]');
+    expect(source).not.toContain('\\usepackage{xcolor}');
+    expect(source).toContain('\\usepackage{colortbl}');
+  });
+
+  it('charge systeme pour \\systeme', () => {
+    expect(sourceFor('\\[\\systeme{a+b=1, a-b=0}\\]')).toContain('\\usepackage{systeme}');
+    expect(sourceFor(PLAIN)).not.toContain('systeme');
+  });
+
+  it('définit les intervalles tdsfrmath et charge stmaryrd pour \\interent', () => {
+    const source = sourceFor('$\\interff{1 3}$ et $k \\in \\interent{0 n}$');
+    expect(source).toContain('\\newcommand{\\interff}[1]{');
+    expect(source).toContain('\\newcommand{\\interent}[1]{');
+    expect(source).not.toContain('\\newcommand{\\interoo}');
+    expect(source).toContain('\\usepackage{stmaryrd}');
+  });
 });
 
 describe('extractTikzFigure', () => {
