@@ -467,7 +467,8 @@ describe('buildLatexExport — traitement des images', () => {
       order: 1,
       latex:
         'Photo : \\includegraphics[width=6cm]{fig/photo.jpg}\n' +
-        'Schéma : \\includegraphics{fig/plan.svg}',
+        'Schéma : \\includegraphics{fig/plan.svg}\n' +
+        'Courbe : \\includegraphics{fig/courbe.eps}',
     }],
   }];
 
@@ -476,6 +477,7 @@ describe('buildLatexExport — traitement des images', () => {
       images: [
         { originalPath: 'fig/photo.jpg', url: '/artifacts/images/zzzz/photo.jpg' },
         { originalPath: 'fig/plan.svg', url: '/artifacts/images/zzzz/plan.svg' },
+        { originalPath: 'fig/courbe.eps', url: '/artifacts/images/zzzz/courbe.eps' },
       ],
     },
   };
@@ -489,6 +491,7 @@ describe('buildLatexExport — traitement des images', () => {
     expect(result.images.map((i) => i.localPath)).toEqual([
       'images/zzzz/photo.jpg',
       'images/zzzz/plan.svg',
+      'images/zzzz/courbe.eps',
     ]);
   });
 
@@ -496,15 +499,20 @@ describe('buildLatexExport — traitement des images', () => {
     const result = buildLatexExport(exercises, 'T', { artifactsMap, imageMode: 'remote' });
 
     // Le service range tous les fichiers côte à côte : le chemin disparaît.
-    expect(result.source).toContain('\\includegraphics{zzzz_plan.svg}');
-    expect(result.images.map((i) => i.localPath)).toEqual(['zzzz_plan.svg']);
+    expect(result.source).toContain('\\includegraphics{zzzz_courbe.eps}');
+    expect(result.images.map((i) => i.localPath)).toEqual(['zzzz_courbe.eps']);
 
     // Le JPEG ne survivrait pas au transport : encart plutôt qu'échec. Plus
     // aucune inclusion ne doit le référencer — l'encart, lui, en cite l'URL.
     expect(result.source).not.toMatch(/\\includegraphics[^\n]*photo\.jpg/);
     expect(result.source).toContain('\\imageEnLigne{/artifacts/images/zzzz/photo.jpg}');
+    // Le SVG arriverait intact, mais graphicx ne sait pas le lire : la
+    // compilation échouerait sur l'extension inconnue.
+    expect(result.source).not.toMatch(/\\includegraphics[^\n]*plan\.svg/);
+    expect(result.source).toContain('\\imageEnLigne{/artifacts/images/zzzz/plan.svg}');
     expect(result.skippedImages).toEqual([
       { url: '/artifacts/images/zzzz/photo.jpg', extension: '.jpg' },
+      { url: '/artifacts/images/zzzz/plan.svg', extension: '.svg' },
     ]);
   });
 

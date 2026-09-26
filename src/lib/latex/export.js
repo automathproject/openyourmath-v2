@@ -334,11 +334,14 @@ export function normalizeLatexForCompilation(latex) {
  * Formats d'image que le service de compilation distant sait recevoir.
  *
  * TeXLive.net transporte les fichiers auxiliaires dans des champs texte : les
- * formats binaires (PNG, JPEG, PDF) n'y survivent pas. La liste est exportée
- * pour que le proxy de compilation et la dégradation de l'export décrivent la
- * même contrainte.
+ * formats binaires (PNG, JPEG, PDF) n'y survivent pas. Le SVG, bien que
+ * textuel, en est exclu aussi : `graphicx` ne sait pas le lire (« Unknown
+ * graphics extension: .svg ») et le paquet `svg` exige Inkscape, absent du
+ * service. L'EPS passe, converti à la volée par `epstopdf`. La liste est
+ * exportée pour que le proxy de compilation et la dégradation de l'export
+ * décrivent la même contrainte.
  */
-export const REMOTE_IMAGE_EXTENSIONS = ['.svg', '.eps'];
+export const REMOTE_IMAGE_EXTENSIONS = ['.eps'];
 
 /** Extension en minuscules d'une URL de ressource, point compris. */
 export function imageExtension(url) {
