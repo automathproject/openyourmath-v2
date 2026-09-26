@@ -15,6 +15,7 @@ import {
   splitEnumerateItems,
 } from '../../src/lib/latex/exerciseTex.js';
 import { latexToPreviewHtml, blocksToPreviewContent } from '../../src/lib/latex/texPreview.js';
+import { extractTikzFigure } from '../../scripts/utils/image-artifacts.js';
 import {
   generateLatexDocument,
   buildLatexExport,
@@ -467,7 +468,8 @@ describe('buildLatexExport — traitement des images', () => {
       order: 1,
       latex:
         'Photo : \\includegraphics[width=6cm]{fig/photo.jpg}\n' +
-        'Schéma : \\includegraphics{fig/plan.svg}',
+        'Schéma : \\includegraphics{fig/plan.svg}\n' +
+        'Courbe : \\includegraphics{fig/courbe.eps}',
     }],
   }];
 
@@ -476,6 +478,7 @@ describe('buildLatexExport — traitement des images', () => {
       images: [
         { originalPath: 'fig/photo.jpg', url: '/artifacts/images/zzzz/photo.jpg' },
         { originalPath: 'fig/plan.svg', url: '/artifacts/images/zzzz/plan.svg' },
+        { originalPath: 'fig/courbe.eps', url: '/artifacts/images/zzzz/courbe.eps' },
       ],
     },
   };
@@ -489,6 +492,7 @@ describe('buildLatexExport — traitement des images', () => {
     expect(result.images.map((i) => i.localPath)).toEqual([
       'images/zzzz/photo.jpg',
       'images/zzzz/plan.svg',
+      'images/zzzz/courbe.eps',
     ]);
   });
 
@@ -496,15 +500,20 @@ describe('buildLatexExport — traitement des images', () => {
     const result = buildLatexExport(exercises, 'T', { artifactsMap, imageMode: 'remote' });
 
     // Le service range tous les fichiers côte à côte : le chemin disparaît.
-    expect(result.source).toContain('\\includegraphics{zzzz_plan.svg}');
-    expect(result.images.map((i) => i.localPath)).toEqual(['zzzz_plan.svg']);
+    expect(result.source).toContain('\\includegraphics{zzzz_courbe.eps}');
+    expect(result.images.map((i) => i.localPath)).toEqual(['zzzz_courbe.eps']);
 
     // Le JPEG ne survivrait pas au transport : encart plutôt qu'échec. Plus
     // aucune inclusion ne doit le référencer — l'encart, lui, en cite l'URL.
     expect(result.source).not.toMatch(/\\includegraphics[^\n]*photo\.jpg/);
     expect(result.source).toContain('\\imageEnLigne{/artifacts/images/zzzz/photo.jpg}');
+    // Le SVG arriverait intact, mais graphicx ne sait pas le lire : la
+    // compilation échouerait sur l'extension inconnue.
+    expect(result.source).not.toMatch(/\\includegraphics[^\n]*plan\.svg/);
+    expect(result.source).toContain('\\imageEnLigne{/artifacts/images/zzzz/plan.svg}');
     expect(result.skippedImages).toEqual([
       { url: '/artifacts/images/zzzz/photo.jpg', extension: '.jpg' },
+      { url: '/artifacts/images/zzzz/plan.svg', extension: '.svg' },
     ]);
   });
 
@@ -529,6 +538,107 @@ describe('buildLatexExport — traitement des images', () => {
     const remote = buildLatexExport(onlyJpeg, 'T', { artifactsMap: map, imageMode: 'remote' });
     expect(remote.source).not.toContain('\\usepackage{graphicx}');
     expect(remote.images).toEqual([]);
+  });
+});
+
+// Une figure dont la source TikZ a été retrouvée à la construction n'a plus
+// besoin de son rendu : la source prend sa place, aux dimensions demandées.
+describe('buildLatexExport — figures reconstituées depuis leur source TikZ', () => {
+  const tikz = '\\definecolor{c}{rgb}{0,0,1}\n\\begin{tikzpicture}\\draw[color=c] (0,0)--(1,1);\\end{tikzpicture}';
+  const exercises = [{
+    uuid: 'tttt',
+    title: 'Figure TikZ',
+    content: [{
+      type: 'question',
+      order: 1,
+      latex: 'Figure : \\includegraphics[width=6cm]{../images/pdf/tttt-1.pdf}\nEncore : \\includegraphics{../images/pdf/tttt-1.pdf}',
+    }],
+  }];
+  const artifactsMap = {
+    tttt: {
+      images: [{ originalPath: '../images/pdf/tttt-1.pdf', url: '/artifacts/images/tttt/img_1.jpg', tikz }],
+    },
+  };
+
+  it.each(['files', 'remote'])('remplace le rendu par la figure en mode %s', (imageMode) => {
+    const result = buildLatexExport(exercises, 'T', { artifactsMap, imageMode });
+
+    expect(result.source).not.toContain('\\includegraphics');
+    expect(result.source).not.toContain('\\usepackage{graphicx}');
+    expect(result.source).toContain(`\\resizebox{6cm}{!}{%\n${tikz}%\n}`);
+    expect(result.source).toContain(`Encore : {%\n${tikz}%\n}`);
+    expect(result.source).toContain('\\usepackage{tikz}');
+    expect(result.images).toEqual([]);
+    expect(result.skippedImages).toEqual([]);
+  });
+
+  it('charge pgfplots, et contourlua au besoin, pour une figure qui en dépend', () => {
+    const plot = '\\begin{tikzpicture}\\begin{axis}\\addplot3[contour lua={number=14}] {x*y};\\end{axis}\\end{tikzpicture}';
+    const map = { tttt: { images: [{ ...artifactsMap.tttt.images[0], tikz: plot }] } };
+    const { source } = buildLatexExport(exercises, 'T', { artifactsMap: map });
+
+    expect(source).toContain('\\usepackage{pgfplots}');
+    expect(source).toContain('\\usepgfplotslibrary{contourlua}');
+  });
+});
+
+describe('buildLatexExport — environnements des sources', () => {
+  const exerciseWith = (latex) => [{ uuid: 'eeee', title: 'E', content: [{ type: 'question', order: 1, latex }] }];
+
+  it('déclare les seuls environnements employés, avec amsthm', () => {
+    const { source } = buildLatexExport(
+      exerciseWith('\\begin{theoreme}[Ptolémée] Énoncé.\\end{theoreme}\n\\begin{remarque}Note.\\end{remarque}'),
+      'T',
+    );
+
+    expect(source).toContain('\\usepackage{amsthm}');
+    expect(source).toContain('\\theoremstyle{plain}\n\\newtheorem*{theoreme}{Théorème}');
+    expect(source).toContain('\\theoremstyle{remark}\n\\newtheorem*{remarque}{Remarque}');
+    expect(source).not.toContain('{methode}');
+    expect(source).not.toContain('{attention}');
+  });
+
+  it('charge amsthm pour \\qed, sans déclarer d\'environnement', () => {
+    const { source } = buildLatexExport(exerciseWith('ce qu\'il fallait démontrer.$\\qed$'), 'T');
+
+    expect(source).toContain('\\usepackage{amsthm}');
+    expect(source).not.toContain('\\newtheorem');
+  });
+
+  it('ne charge pas amsthm sans raison', () => {
+    const { source } = buildLatexExport(exerciseWith('Soit $x$ un réel.'), 'T');
+    expect(source).not.toContain('amsthm');
+  });
+});
+
+describe('extractTikzFigure', () => {
+  it("isole le corps d'un document complet", () => {
+    const source = [
+      '\\documentclass{article}',
+      '\\usepackage{pgf,tikz}',
+      '\\begin{document}',
+      '\\definecolor{c}{rgb}{0,0,1}',
+      '',
+      '\\begin{tikzpicture}',
+      '\\draw (0,0)--(1,1);',
+      '\\end{tikzpicture}',
+      '\\end{document}',
+    ].join('\n');
+
+    // Sans ligne vide : la figure doit pouvoir passer en argument à \resizebox.
+    expect(extractTikzFigure(source)).toBe(
+      '\\definecolor{c}{rgb}{0,0,1}\n\\begin{tikzpicture}\n\\draw (0,0)--(1,1);\n\\end{tikzpicture}',
+    );
+  });
+
+  it('accepte une tikzpicture nue', () => {
+    expect(extractTikzFigure('\\begin{tikzpicture}\\draw (0,0)--(1,1);\\end{tikzpicture}\n'))
+      .toBe('\\begin{tikzpicture}\\draw (0,0)--(1,1);\\end{tikzpicture}');
+  });
+
+  it('écarte les figures PSTricks, que LuaLaTeX ne compile pas', () => {
+    const source = '\\begin{document}\\begin{pspicture}(0,0)(1,1)\\psline(0,0)(1,1)\\end{pspicture}\\end{document}';
+    expect(extractTikzFigure(source)).toBeNull();
   });
 });
 

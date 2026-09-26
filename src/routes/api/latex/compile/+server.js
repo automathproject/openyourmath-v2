@@ -105,7 +105,7 @@ export async function POST(event) {
       return json(
         {
           error:
-            "Une ressource est invalide (SVG, EPS, TeX, style, classe, BibTeX ou CSV, 1,5 Mo max).",
+            "Une ressource est invalide (EPS, TeX, style, classe, BibTeX ou CSV, 1,5 Mo max).",
         },
         { status: 400 },
       );

@@ -334,11 +334,14 @@ export function normalizeLatexForCompilation(latex) {
  * Formats d'image que le service de compilation distant sait recevoir.
  *
  * TeXLive.net transporte les fichiers auxiliaires dans des champs texte : les
- * formats binaires (PNG, JPEG, PDF) n'y survivent pas. La liste est exportée
- * pour que le proxy de compilation et la dégradation de l'export décrivent la
- * même contrainte.
+ * formats binaires (PNG, JPEG, PDF) n'y survivent pas. Le SVG, bien que
+ * textuel, en est exclu aussi : `graphicx` ne sait pas le lire (« Unknown
+ * graphics extension: .svg ») et le paquet `svg` exige Inkscape, absent du
+ * service. L'EPS passe, converti à la volée par `epstopdf`. La liste est
+ * exportée pour que le proxy de compilation et la dégradation de l'export
+ * décrivent la même contrainte.
  */
-export const REMOTE_IMAGE_EXTENSIONS = ['.svg', '.eps'];
+export const REMOTE_IMAGE_EXTENSIONS = ['.eps'];
 
 /** Extension en minuscules d'une URL de ressource, point compris. */
 export function imageExtension(url) {
@@ -363,8 +366,31 @@ function escapeRegExp(value) {
 }
 
 /**
+ * Figure TikZ mise à la place d'un \includegraphics, aux dimensions que
+ * celui-ci demandait. Les autres options (angle, trim…) sont sans équivalent
+ * simple et ignorées. Sans dimension, un groupe garde les \definecolor de la
+ * figure locaux.
+ */
+function tikzFigure(code, options = '') {
+  const dims = {};
+  for (const option of String(options).split(',')) {
+    const [key, value] = option.split('=').map((part) => part.trim());
+    if (key && value) dims[key] = value;
+  }
+  if (dims.width || dims.height) {
+    return `\\resizebox{${dims.width || '!'}}{${dims.height || '!'}}{%\n${code}%\n}`;
+  }
+  if (dims.scale) return `\\scalebox{${dims.scale}}{%\n${code}%\n}`;
+  return `{%\n${code}%\n}`;
+}
+
+/**
  * Réécrit les chemins \includegraphics d'un exercice et renvoie la liste des
  * fichiers à fournir avec le document.
+ *
+ * Une figure dont la construction a retrouvé la source TikZ est remplacée par
+ * celle-ci, dans les deux modes : le document reste autonome et la figure
+ * vectorielle, quel que soit le format du rendu publié.
  *
  * En mode `remote`, les formats que le compilateur distant ne sait pas
  * transporter voient leur inclusion remplacée par un encart : sans cela, la
@@ -385,14 +411,20 @@ function rewriteImagePaths(latex, artifacts, imageMode) {
     if (!img?.originalPath || !img?.url) continue;
     if (!out.includes(`{${img.originalPath}}`)) continue;
 
+    const inclusion = new RegExp(
+      `\\\\includegraphics\\s*(?:\\[([^\\]]*)\\])?\\s*\\{${escapeRegExp(img.originalPath)}\\}`,
+      'g',
+    );
+
+    if (img.tikz) {
+      out = out.replace(inclusion, (_, options) => tikzFigure(img.tikz, options));
+      continue;
+    }
+
     const extension = imageExtension(img.url);
 
     if (remote && !REMOTE_IMAGE_EXTENSIONS.includes(extension)) {
-      const inclusion = new RegExp(
-        `\\\\includegraphics\\s*(?:\\[[^\\]]*\\])?\\s*\\{${escapeRegExp(img.originalPath)}\\}`,
-        'g',
-      );
-      out = out.replace(inclusion, `\\imageEnLigne{${latexEscapeText(img.url)}}`);
+      out = out.replace(inclusion, () => `\\imageEnLigne{${latexEscapeText(img.url)}}`);
       skipped.push({ url: img.url, extension });
       continue;
     }
@@ -411,6 +443,18 @@ function requiredCodeBlocks(latex, artifacts) {
   const codes = artifacts?.code || [];
   return codes.filter((c) => c?.name && latex.includes(`\\BUseVerbatim{${c.name}}`));
 }
+
+/**
+ * Environnements de type théorème employés par les sources (exo7, crouzet),
+ * déclarés à la demande. Non numérotés : le numéro dépendrait de la
+ * composition de la liste, et le site n'en affiche pas.
+ */
+const THEOREM_ENVIRONMENTS = [
+  { name: 'theoreme', label: 'Théorème', style: 'plain' },
+  { name: 'methode', label: 'Méthode', style: 'definition' },
+  { name: 'attention', label: 'Attention', style: 'definition' },
+  { name: 'remarque', label: 'Remarque', style: 'remark' },
+];
 
 /**
  * Construit le préambule minimal en fonction du corps du document :
@@ -441,6 +485,9 @@ function buildPreamble(body, docTitle, options) {
   lines.push('\\usepackage{lmodern}');
   lines.push(`\\usepackage[${language}]{babel}`);
   lines.push('\\usepackage{amsmath,amssymb}');
+  const theorems = THEOREM_ENVIRONMENTS.filter(({ name }) => has(new RegExp(`\\\\begin\\{${name}\\}`)));
+  // amsthm fournit aussi \qed et l'environnement proof.
+  if (theorems.length > 0 || has(/\\qed\b|\\begin\{proof\}/)) lines.push('\\usepackage{amsthm}');
   if (has(/\\mathscr\b/)) lines.push('\\usepackage{mathrsfs}');
   if (has(/\\llbracket|\\rrbracket|\\llparenthesis/)) lines.push('\\usepackage{stmaryrd}');
   if (has(/\\includegraphics\b/)) lines.push('\\usepackage{graphicx}');
@@ -450,6 +497,12 @@ function buildPreamble(body, docTitle, options) {
   if (has(/\\begin\{tikzpicture\}/)) {
     lines.push('\\usepackage{tikz}');
     lines.push('\\usetikzlibrary{arrows,arrows.meta,calc,positioning,shapes,patterns,decorations.markings,decorations.pathmorphing}');
+    if (has(/\\begin\{(?:axis|semilogxaxis|semilogyaxis|loglogaxis|polaraxis)\}|\\addplot\b/)) {
+      lines.push('\\usepackage{pgfplots}');
+      lines.push('\\pgfplotsset{compat=1.18}');
+      // Courbes de niveau calculées par LuaTeX, sans programme externe.
+      if (has(/contour lua\b/)) lines.push('\\usepgfplotslibrary{contourlua}');
+    }
   } else if (has(/\\textcolor\b|\\definecolor\b|\\color[{[]/)) {
     lines.push('\\usepackage{xcolor}');
   }
@@ -461,6 +514,15 @@ function buildPreamble(body, docTitle, options) {
   if (has(/\\xspace\b/)) lines.push('\\usepackage{xspace}');
   lines.push(`\\usepackage[margin=${margin}]{geometry}`);
   if (has(/\\url\{|\\href\{/)) lines.push('\\usepackage[hidelinks]{hyperref}');
+
+  if (theorems.length > 0) {
+    lines.push('');
+    lines.push('% Environnements employés par les exercices de cette liste');
+    for (const { name, label, style } of theorems) {
+      lines.push(`\\theoremstyle{${style}}`);
+      lines.push(`\\newtheorem*{${name}}{${label}}`);
+    }
+  }
 
   if (has(/\\geogebra\b/)) {
     lines.push('');
