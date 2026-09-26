@@ -134,6 +134,51 @@ export async function resolveImagePath({ imagePath, sourceFilePath, contentRoot,
   return null;
 }
 
+/**
+ * Isole la figure d'une source TikZ, ou renvoie null si elle n'est pas
+ * réutilisable telle quelle dans un document LuaLaTeX.
+ *
+ * Les sources sont tantôt un document complet (exports GeoGebra d'exo7, dont
+ * les \definecolor suivent \begin{document}), tantôt une tikzpicture nue
+ * (amscc). Le dossier tikz/ d'exo7 range aussi des figures PSTricks, que
+ * LuaLaTeX ne sait pas compiler : elles sont écartées. Les lignes vides sont
+ * retirées pour que la figure puisse être passée en argument à \resizebox.
+ */
+export function extractTikzFigure(source) {
+  const documentBody = String(source || '').match(/\\begin\{document\}([\s\S]*?)\\end\{document\}/);
+  const figure = (documentBody ? documentBody[1] : String(source || '')).trim();
+  if (!/\\begin\{tikzpicture\}/.test(figure)) return null;
+  if (/\\begin\{pspicture\}|\\ps[a-z]+\b|\\[ru]put\b/.test(figure)) return null;
+  return figure.replace(/\n\s*\n/g, '\n');
+}
+
+/**
+ * Source TikZ d'une figure dont le dépôt ne publie que le rendu.
+ *
+ * Elle est rangée dans le dossier tikz/ voisin, sous le même nom (amscc :
+ * `VuTl-tikz-1`) ou avec `-tikz` intercalé avant le numéro (exo7 : la figure
+ * `7R8x-1` a pour source `7R8x-tikz-1`).
+ *
+ * @param {string} resolvedPath — rendu retenu, dans images/<source>/<format>/
+ * @returns {Promise<string|null>}
+ */
+export async function findTikzSource(resolvedPath) {
+  const sourceDir = path.dirname(path.dirname(resolvedPath));
+  const baseName = path.basename(resolvedPath, path.extname(resolvedPath));
+  const names = [baseName];
+  const numbered = baseName.match(/^(.+?)-(\d+)$/);
+  if (numbered && !numbered[1].endsWith('-tikz')) names.push(`${numbered[1]}-tikz-${numbered[2]}`);
+
+  for (const name of names) {
+    for (const dir of formatPath(sourceDir, 'tikz')) {
+      const candidate = path.join(dir, `${name}.tex`);
+      if (!fs.existsSync(candidate)) continue;
+      return extractTikzFigure(await fsPromises.readFile(candidate, 'utf8'));
+    }
+  }
+  return null;
+}
+
 export async function extractIncludegraphicsImages({
   latexContent,
   exerciseUuid,
@@ -194,6 +239,9 @@ export async function extractIncludegraphicsImages({
     }
 
     const relativeSource = path.relative(contentRoot, resolvedPath);
+    // L'export LaTeX préfère la figure d'origine au rendu : vectorielle, elle
+    // n'a pas à accompagner le document ni à franchir le compilateur en ligne.
+    const tikz = await findTikzSource(resolvedPath);
 
     images.push({
       id: imgId,
@@ -202,7 +250,8 @@ export async function extractIncludegraphicsImages({
       sourcePath: relativeSource,
       sourceFilename: path.basename(resolvedPath),
       format: ext,
-      ...(options && { options })
+      ...(options && { options }),
+      ...(tikz && { tikz })
     });
 
     const imgTag = `<img src="${publicUrl}" alt="Image ${index}" class="includegraphics-image">`;

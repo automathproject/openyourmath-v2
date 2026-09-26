@@ -15,6 +15,7 @@ import {
   splitEnumerateItems,
 } from '../../src/lib/latex/exerciseTex.js';
 import { latexToPreviewHtml, blocksToPreviewContent } from '../../src/lib/latex/texPreview.js';
+import { extractTikzFigure } from '../../scripts/utils/image-artifacts.js';
 import {
   generateLatexDocument,
   buildLatexExport,
@@ -537,6 +538,78 @@ describe('buildLatexExport — traitement des images', () => {
     const remote = buildLatexExport(onlyJpeg, 'T', { artifactsMap: map, imageMode: 'remote' });
     expect(remote.source).not.toContain('\\usepackage{graphicx}');
     expect(remote.images).toEqual([]);
+  });
+});
+
+// Une figure dont la source TikZ a été retrouvée à la construction n'a plus
+// besoin de son rendu : la source prend sa place, aux dimensions demandées.
+describe('buildLatexExport — figures reconstituées depuis leur source TikZ', () => {
+  const tikz = '\\definecolor{c}{rgb}{0,0,1}\n\\begin{tikzpicture}\\draw[color=c] (0,0)--(1,1);\\end{tikzpicture}';
+  const exercises = [{
+    uuid: 'tttt',
+    title: 'Figure TikZ',
+    content: [{
+      type: 'question',
+      order: 1,
+      latex: 'Figure : \\includegraphics[width=6cm]{../images/pdf/tttt-1.pdf}\nEncore : \\includegraphics{../images/pdf/tttt-1.pdf}',
+    }],
+  }];
+  const artifactsMap = {
+    tttt: {
+      images: [{ originalPath: '../images/pdf/tttt-1.pdf', url: '/artifacts/images/tttt/img_1.jpg', tikz }],
+    },
+  };
+
+  it.each(['files', 'remote'])('remplace le rendu par la figure en mode %s', (imageMode) => {
+    const result = buildLatexExport(exercises, 'T', { artifactsMap, imageMode });
+
+    expect(result.source).not.toContain('\\includegraphics');
+    expect(result.source).not.toContain('\\usepackage{graphicx}');
+    expect(result.source).toContain(`\\resizebox{6cm}{!}{%\n${tikz}%\n}`);
+    expect(result.source).toContain(`Encore : {%\n${tikz}%\n}`);
+    expect(result.source).toContain('\\usepackage{tikz}');
+    expect(result.images).toEqual([]);
+    expect(result.skippedImages).toEqual([]);
+  });
+
+  it('charge pgfplots, et contourlua au besoin, pour une figure qui en dépend', () => {
+    const plot = '\\begin{tikzpicture}\\begin{axis}\\addplot3[contour lua={number=14}] {x*y};\\end{axis}\\end{tikzpicture}';
+    const map = { tttt: { images: [{ ...artifactsMap.tttt.images[0], tikz: plot }] } };
+    const { source } = buildLatexExport(exercises, 'T', { artifactsMap: map });
+
+    expect(source).toContain('\\usepackage{pgfplots}');
+    expect(source).toContain('\\usepgfplotslibrary{contourlua}');
+  });
+});
+
+describe('extractTikzFigure', () => {
+  it("isole le corps d'un document complet", () => {
+    const source = [
+      '\\documentclass{article}',
+      '\\usepackage{pgf,tikz}',
+      '\\begin{document}',
+      '\\definecolor{c}{rgb}{0,0,1}',
+      '',
+      '\\begin{tikzpicture}',
+      '\\draw (0,0)--(1,1);',
+      '\\end{tikzpicture}',
+      '\\end{document}',
+    ].join('\n');
+
+    // Sans ligne vide : la figure doit pouvoir passer en argument à \resizebox.
+    expect(extractTikzFigure(source)).toBe(
+      '\\definecolor{c}{rgb}{0,0,1}\n\\begin{tikzpicture}\n\\draw (0,0)--(1,1);\n\\end{tikzpicture}',
+    );
+  });
+
+  it('accepte une tikzpicture nue', () => {
+    expect(extractTikzFigure('\\begin{tikzpicture}\\draw (0,0)--(1,1);\\end{tikzpicture}\n'))
+      .toBe('\\begin{tikzpicture}\\draw (0,0)--(1,1);\\end{tikzpicture}');
+  });
+
+  it('écarte les figures PSTricks, que LuaLaTeX ne compile pas', () => {
+    const source = '\\begin{document}\\begin{pspicture}(0,0)(1,1)\\psline(0,0)(1,1)\\end{pspicture}\\end{document}';
+    expect(extractTikzFigure(source)).toBeNull();
   });
 });
 

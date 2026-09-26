@@ -366,8 +366,31 @@ function escapeRegExp(value) {
 }
 
 /**
+ * Figure TikZ mise à la place d'un \includegraphics, aux dimensions que
+ * celui-ci demandait. Les autres options (angle, trim…) sont sans équivalent
+ * simple et ignorées. Sans dimension, un groupe garde les \definecolor de la
+ * figure locaux.
+ */
+function tikzFigure(code, options = '') {
+  const dims = {};
+  for (const option of String(options).split(',')) {
+    const [key, value] = option.split('=').map((part) => part.trim());
+    if (key && value) dims[key] = value;
+  }
+  if (dims.width || dims.height) {
+    return `\\resizebox{${dims.width || '!'}}{${dims.height || '!'}}{%\n${code}%\n}`;
+  }
+  if (dims.scale) return `\\scalebox{${dims.scale}}{%\n${code}%\n}`;
+  return `{%\n${code}%\n}`;
+}
+
+/**
  * Réécrit les chemins \includegraphics d'un exercice et renvoie la liste des
  * fichiers à fournir avec le document.
+ *
+ * Une figure dont la construction a retrouvé la source TikZ est remplacée par
+ * celle-ci, dans les deux modes : le document reste autonome et la figure
+ * vectorielle, quel que soit le format du rendu publié.
  *
  * En mode `remote`, les formats que le compilateur distant ne sait pas
  * transporter voient leur inclusion remplacée par un encart : sans cela, la
@@ -388,14 +411,20 @@ function rewriteImagePaths(latex, artifacts, imageMode) {
     if (!img?.originalPath || !img?.url) continue;
     if (!out.includes(`{${img.originalPath}}`)) continue;
 
+    const inclusion = new RegExp(
+      `\\\\includegraphics\\s*(?:\\[([^\\]]*)\\])?\\s*\\{${escapeRegExp(img.originalPath)}\\}`,
+      'g',
+    );
+
+    if (img.tikz) {
+      out = out.replace(inclusion, (_, options) => tikzFigure(img.tikz, options));
+      continue;
+    }
+
     const extension = imageExtension(img.url);
 
     if (remote && !REMOTE_IMAGE_EXTENSIONS.includes(extension)) {
-      const inclusion = new RegExp(
-        `\\\\includegraphics\\s*(?:\\[[^\\]]*\\])?\\s*\\{${escapeRegExp(img.originalPath)}\\}`,
-        'g',
-      );
-      out = out.replace(inclusion, `\\imageEnLigne{${latexEscapeText(img.url)}}`);
+      out = out.replace(inclusion, () => `\\imageEnLigne{${latexEscapeText(img.url)}}`);
       skipped.push({ url: img.url, extension });
       continue;
     }
@@ -453,6 +482,12 @@ function buildPreamble(body, docTitle, options) {
   if (has(/\\begin\{tikzpicture\}/)) {
     lines.push('\\usepackage{tikz}');
     lines.push('\\usetikzlibrary{arrows,arrows.meta,calc,positioning,shapes,patterns,decorations.markings,decorations.pathmorphing}');
+    if (has(/\\begin\{(?:axis|semilogxaxis|semilogyaxis|loglogaxis|polaraxis)\}|\\addplot\b/)) {
+      lines.push('\\usepackage{pgfplots}');
+      lines.push('\\pgfplotsset{compat=1.18}');
+      // Courbes de niveau calculées par LuaTeX, sans programme externe.
+      if (has(/contour lua\b/)) lines.push('\\usepgfplotslibrary{contourlua}');
+    }
   } else if (has(/\\textcolor\b|\\definecolor\b|\\color[{[]/)) {
     lines.push('\\usepackage{xcolor}');
   }
