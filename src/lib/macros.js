@@ -129,6 +129,56 @@ export const MACRO_REGISTRY = [
   { name: "ep", value: "\\varepsilon" },
   { name: "dlim", value: "\\displaystyle\\lim" },
 
+  // Notations du paquet tdsfrmath (Yvon Henel), employées par les sources
+  // crouzet. Les définitions d'origine sont dans tdsfrmath.sty et, pour
+  // \interent, dans son module taupe.sto.
+  { name: "ds", value: "\\displaystyle" },
+  { name: "eu", value: "\\mathrm{e}^{#1}", args: 1 },
+  { name: "donne", value: "\\longmapsto" },
+  { name: "dans", value: "\\longrightarrow" },
+  { name: "pgq", value: "\\geqslant" },
+  { name: "plusinf", value: "+\\infty" },
+  // Intervalles à la tdsfrmath : les bornes sont séparées par une espace,
+  // « \interff{a b} » ou « \interof{-\infty{} a} ». Le \def auxiliaire, à
+  // paramètres délimités, découpe l'argument comme le fait \TdSMnuplet ; son
+  // premier paramètre, non délimité, saute les espaces de tête. KaTeX et
+  // LaTeX l'acceptent tous deux.
+  {
+    name: "interff",
+    value: "\\def\\oymNuplet##1##2 ##3\\relax{##1##2,\\,##3}\\left[\\oymNuplet#1 \\relax\\right]",
+    args: 1,
+  },
+  {
+    name: "interoo",
+    value: "\\def\\oymNuplet##1##2 ##3\\relax{##1##2,\\,##3}\\left]\\oymNuplet#1 \\relax\\right[",
+    args: 1,
+  },
+  {
+    name: "interof",
+    value: "\\def\\oymNuplet##1##2 ##3\\relax{##1##2,\\,##3}\\left]\\oymNuplet#1 \\relax\\right]",
+    args: 1,
+  },
+  {
+    name: "interfo",
+    value: "\\def\\oymNuplet##1##2 ##3\\relax{##1##2,\\,##3}\\left[\\oymNuplet#1 \\relax\\right[",
+    args: 1,
+  },
+  // Crochets doubles de taille fixe : ni KaTeX ni stmaryrd ne les étirent.
+  {
+    name: "interent",
+    value: "\\def\\oymNuplet##1##2 ##3\\relax{##1##2,\\,##3}\\llbracket\\oymNuplet#1 \\relax\\rrbracket",
+    args: 1,
+  },
+
+  // Autres notations des sources crouzet, absentes de tdsfrmath et dont le
+  // préambule d'origine n'est pas dans le dépôt : valeurs reconstituées
+  // d'après leur emploi. \partie suit \parties du module taupe.sto.
+  { name: "partie", value: "\\mathcal{P}" },
+  { name: "eps", value: "\\varepsilon" },
+  { name: "non", value: "\\text{non }" },
+  { name: "equi", value: "\\mathop{\\sim}\\limits" },
+  { name: "matrice", value: "\\begin{pmatrix}#1\\end{pmatrix}", args: 1 },
+
   // Abréviations rédactionnelles (mode texte)
   { name: "nd", value: "\\noindent", mode: "text" },
   { name: "ssi", value: "si, et seulement si,", mode: "text" },

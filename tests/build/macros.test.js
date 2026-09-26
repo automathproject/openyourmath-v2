@@ -18,7 +18,9 @@ import {
 
 /** Arité réellement employée par le corps d'une macro (#1, #2, …). */
 function bodyArity(value) {
-  const used = [...value.matchAll(/#(\d)/g)].map((m) => Number(m[1]));
+  // « ##1 » est un paramètre du \def auxiliaire des intervalles (\interff…),
+  // pas un argument de la macro elle-même.
+  const used = [...value.matchAll(/(?<!#)#(\d)/g)].map((m) => Number(m[1]));
   return used.length > 0 ? Math.max(...used) : 0;
 }
 
@@ -111,5 +113,29 @@ describe('définitions LaTeX des macros texte', () => {
   it('laisse les macros mathématiques intactes', () => {
     const im = latexMacroDefinitions.find((d) => d.name === 'im');
     expect(im.def).toBe('\\newcommand{\\im}{\\mathrm{i}}');
+  });
+});
+
+describe('intervalles à la tdsfrmath (sources crouzet)', () => {
+  /** Texte rendu par KaTeX, sans balises ni annotation source. */
+  const rendered = (tex) => katex
+    .renderToString(tex, { macros: { ...macros }, throwOnError: true, output: 'mathml' })
+    .replace(/<annotation[\s\S]*<\/annotation>/, '')
+    .replace(/<[^>]+>/g, '');
+
+  it.each([
+    ['\\interff{1 3}', '[1,3]'],
+    ['\\interoo{4 5}', ']4,5['],
+    ['\\interof{-\\infty{} a}', ']−∞,a]'],
+    ['\\interfo{k k+1}', '[k,k+1['],
+    // L'espace de tête ne décale pas le découpage, comme dans tdsfrmath.
+    ['\\interoo{ -\\frac{1}{n} \\frac{1}{n}}', ']−1n,1n['],
+    ['\\interent{0 n}', '⟦0,n⟧'],
+  ])('rend %s', (tex, expected) => {
+    expect(rendered(tex).replace(/\s|⁡/g, '')).toBe(expected);
+  });
+
+  it('découpe chaque intervalle indépendamment dans une même formule', () => {
+    expect(rendered('\\interff{1 3} \\cup \\interoo{4 5}').replace(/\s/g, '')).toBe('[1,3]∪]4,5[');
   });
 });

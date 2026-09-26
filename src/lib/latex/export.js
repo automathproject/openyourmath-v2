@@ -454,6 +454,7 @@ const THEOREM_ENVIRONMENTS = [
   { name: 'methode', label: 'Méthode', style: 'definition' },
   { name: 'attention', label: 'Attention', style: 'definition' },
   { name: 'remarque', label: 'Remarque', style: 'remark' },
+  { name: 'definition', label: 'Définition', style: 'definition' },
 ];
 
 /**
@@ -503,9 +504,18 @@ function buildPreamble(body, docTitle, options) {
       // Courbes de niveau calculées par LuaTeX, sans programme externe.
       if (has(/contour lua\b/)) lines.push('\\usepgfplotslibrary{contourlua}');
     }
-  } else if (has(/\\textcolor\b|\\definecolor\b|\\color[{[]/)) {
+  } else if (has(/\\textcolor\b|\\definecolor\b|\\color[{[]|\\(?:column|row|cell)color\b/)) {
     lines.push('\\usepackage{xcolor}');
   }
+  // Tableaux de variations et de signes (sources crouzet) ; tkz-tab charge
+  // TikZ lui-même, un tableau hors tikzpicture compile donc aussi.
+  if (has(/\\tkzTab[A-Z]/)) lines.push('\\usepackage{tkz-tab}');
+  // Colonnes et cellules colorées de tableau, en « gray!20 » : colortbl
+  // s'appuie sur le xcolor chargé ci-dessus, directement ou par TikZ.
+  if (has(/\\(?:column|row|cell)color\b/)) lines.push('\\usepackage{colortbl}');
+  // Listes à options, « \begin{itemize}[label=\textbullet] ».
+  if (has(/\\begin\{(?:itemize|enumerate|description)\}\s*\[/)) lines.push('\\usepackage{enumitem}');
+  if (has(/\\systeme\b/)) lines.push('\\usepackage{systeme}');
   if (has(/\\begin\{multicols\}/)) lines.push('\\usepackage{multicol}');
   if (has(/\\toprule|\\midrule|\\bottomrule/)) lines.push('\\usepackage{booktabs}');
   if (has(/\\SI\{|\\si\{|\\num\{/)) lines.push('\\usepackage{siunitx}');
