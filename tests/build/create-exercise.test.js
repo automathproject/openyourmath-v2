@@ -582,6 +582,35 @@ describe('buildLatexExport — figures reconstituées depuis leur source TikZ', 
   });
 });
 
+describe('buildLatexExport — environnements des sources', () => {
+  const exerciseWith = (latex) => [{ uuid: 'eeee', title: 'E', content: [{ type: 'question', order: 1, latex }] }];
+
+  it('déclare les seuls environnements employés, avec amsthm', () => {
+    const { source } = buildLatexExport(
+      exerciseWith('\\begin{theoreme}[Ptolémée] Énoncé.\\end{theoreme}\n\\begin{remarque}Note.\\end{remarque}'),
+      'T',
+    );
+
+    expect(source).toContain('\\usepackage{amsthm}');
+    expect(source).toContain('\\theoremstyle{plain}\n\\newtheorem*{theoreme}{Théorème}');
+    expect(source).toContain('\\theoremstyle{remark}\n\\newtheorem*{remarque}{Remarque}');
+    expect(source).not.toContain('{methode}');
+    expect(source).not.toContain('{attention}');
+  });
+
+  it('charge amsthm pour \\qed, sans déclarer d\'environnement', () => {
+    const { source } = buildLatexExport(exerciseWith('ce qu\'il fallait démontrer.$\\qed$'), 'T');
+
+    expect(source).toContain('\\usepackage{amsthm}');
+    expect(source).not.toContain('\\newtheorem');
+  });
+
+  it('ne charge pas amsthm sans raison', () => {
+    const { source } = buildLatexExport(exerciseWith('Soit $x$ un réel.'), 'T');
+    expect(source).not.toContain('amsthm');
+  });
+});
+
 describe('extractTikzFigure', () => {
   it("isole le corps d'un document complet", () => {
     const source = [

@@ -445,6 +445,18 @@ function requiredCodeBlocks(latex, artifacts) {
 }
 
 /**
+ * Environnements de type théorème employés par les sources (exo7, crouzet),
+ * déclarés à la demande. Non numérotés : le numéro dépendrait de la
+ * composition de la liste, et le site n'en affiche pas.
+ */
+const THEOREM_ENVIRONMENTS = [
+  { name: 'theoreme', label: 'Théorème', style: 'plain' },
+  { name: 'methode', label: 'Méthode', style: 'definition' },
+  { name: 'attention', label: 'Attention', style: 'definition' },
+  { name: 'remarque', label: 'Remarque', style: 'remark' },
+];
+
+/**
  * Construit le préambule minimal en fonction du corps du document :
  * seules les macros réellement utilisées et les packages nécessaires
  * sont inclus.
@@ -473,6 +485,9 @@ function buildPreamble(body, docTitle, options) {
   lines.push('\\usepackage{lmodern}');
   lines.push(`\\usepackage[${language}]{babel}`);
   lines.push('\\usepackage{amsmath,amssymb}');
+  const theorems = THEOREM_ENVIRONMENTS.filter(({ name }) => has(new RegExp(`\\\\begin\\{${name}\\}`)));
+  // amsthm fournit aussi \qed et l'environnement proof.
+  if (theorems.length > 0 || has(/\\qed\b|\\begin\{proof\}/)) lines.push('\\usepackage{amsthm}');
   if (has(/\\mathscr\b/)) lines.push('\\usepackage{mathrsfs}');
   if (has(/\\llbracket|\\rrbracket|\\llparenthesis/)) lines.push('\\usepackage{stmaryrd}');
   if (has(/\\includegraphics\b/)) lines.push('\\usepackage{graphicx}');
@@ -499,6 +514,15 @@ function buildPreamble(body, docTitle, options) {
   if (has(/\\xspace\b/)) lines.push('\\usepackage{xspace}');
   lines.push(`\\usepackage[margin=${margin}]{geometry}`);
   if (has(/\\url\{|\\href\{/)) lines.push('\\usepackage[hidelinks]{hyperref}');
+
+  if (theorems.length > 0) {
+    lines.push('');
+    lines.push('% Environnements employés par les exercices de cette liste');
+    for (const { name, label, style } of theorems) {
+      lines.push(`\\theoremstyle{${style}}`);
+      lines.push(`\\newtheorem*{${name}}{${label}}`);
+    }
+  }
 
   if (has(/\\geogebra\b/)) {
     lines.push('');
