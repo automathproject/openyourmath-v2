@@ -458,6 +458,15 @@ const THEOREM_ENVIRONMENTS = [
 ];
 
 /**
+ * Opérateurs que KaTeX connaît nativement (notations française et russe) mais
+ * que LaTeX ignore. Le site les affiche donc sans macro du registre : les
+ * déclarer ici, dans le seul préambule de l'export, laisse le rendu KaTeX
+ * intact. \providecommand évite une double définition si l'un d'eux entre
+ * un jour au registre. \th est écarté : LaTeX le réserve à la lettre « þ ».
+ */
+const KATEX_NATIVE_OPERATORS = ['ch', 'sh', 'tg', 'cotg', 'ctg', 'cth', 'arctg', 'arcctg', 'cosec'];
+
+/**
  * Construit le préambule minimal en fonction du corps du document :
  * seules les macros réellement utilisées et les packages nécessaires
  * sont inclus.
@@ -516,6 +525,9 @@ function buildPreamble(body, docTitle, options) {
   // Listes à options, « \begin{itemize}[label=\textbullet] ».
   if (has(/\\begin\{(?:itemize|enumerate|description)\}\s*\[/)) lines.push('\\usepackage{enumitem}');
   if (has(/\\systeme\b/)) lines.push('\\usepackage{systeme}');
+  // Résultats encadrés d'exo7 ; pandoc, qui produit le HTML du site, se
+  // contente d'en garder le contenu.
+  if (has(/\\shadowbox\b/)) lines.push('\\usepackage{fancybox}');
   if (has(/\\begin\{multicols\}/)) lines.push('\\usepackage{multicol}');
   if (has(/\\toprule|\\midrule|\\bottomrule/)) lines.push('\\usepackage{booktabs}');
   if (has(/\\SI\{|\\si\{|\\num\{/)) lines.push('\\usepackage{siunitx}');
@@ -540,13 +552,26 @@ function buildPreamble(body, docTitle, options) {
     lines.push('\\newcommand{\\geogebra}[1]{\\par\\noindent\\emph{[Animation GeoGebra : \\texttt{#1}]}\\par}');
   }
 
+  const operators = KATEX_NATIVE_OPERATORS.filter((name) => has(new RegExp(`\\\\${name}(?![a-zA-Z])`)));
+  if (operators.length > 0) {
+    lines.push('');
+    lines.push('% Opérateurs connus de KaTeX, absents de LaTeX');
+    for (const name of operators) lines.push(`\\providecommand{\\${name}}{\\operatorname{${name}}}`);
+  }
+
   if (has(/\\imageEnLigne\b/)) {
     lines.push('');
     lines.push('% Figures que le compilateur en ligne ne peut pas recevoir :');
     lines.push('% téléchargez le .tex et compilez localement pour les obtenir.');
     lines.push(
-      '\\newcommand{\\imageEnLigne}[1]{\\par\\noindent\\fbox{\\parbox{0.92\\linewidth}' +
-        '{\\centering\\small Figure disponible en ligne\\\\\\texttt{#1}}}\\par}',
+      '\\newcommand{\\imageEnLigneBoite}[1]{\\fbox{\\parbox{0.92\\linewidth}' +
+        '{\\centering\\small Figure disponible en ligne\\\\\\texttt{#1}}}}',
+    );
+    // exo7 centre ses figures par « $$\includegraphics{…}$$ » : l'encart doit
+    // donc aussi pouvoir prendre place dans une formule, où \par est interdit.
+    lines.push(
+      '\\newcommand{\\imageEnLigne}[1]{\\ifmmode\\mbox{\\imageEnLigneBoite{#1}}' +
+        '\\else\\par\\noindent\\imageEnLigneBoite{#1}\\par\\fi}',
     );
   }
 

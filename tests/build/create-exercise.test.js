@@ -673,6 +673,34 @@ describe('buildLatexExport — paquets requis par les sources crouzet', () => {
   });
 });
 
+describe('buildLatexExport — commandes connues de KaTeX ou de pandoc', () => {
+  const exerciseWith = (latex) => [{ uuid: 'kkkk', title: 'K', content: [{ type: 'question', order: 1, latex }] }];
+
+  it('déclare les seuls opérateurs natifs de KaTeX employés', () => {
+    const { source } = buildLatexExport(exerciseWith('$\\ch x + \\sh x$, $\\cotg y$ et $\\chi$'), 'T');
+
+    expect(source).toContain('\\providecommand{\\ch}{\\operatorname{ch}}');
+    expect(source).toContain('\\providecommand{\\sh}{\\operatorname{sh}}');
+    expect(source).toContain('\\providecommand{\\cotg}{\\operatorname{cotg}}');
+    // \chi n'est pas \ch suivi d'une lettre.
+    expect(source).not.toContain('\\providecommand{\\tg}');
+  });
+
+  it('charge fancybox pour \\shadowbox', () => {
+    expect(buildLatexExport(exerciseWith('\\shadowbox{$x=1$}'), 'T').source).toContain('\\usepackage{fancybox}');
+    expect(buildLatexExport(exerciseWith('$x=1$'), 'T').source).not.toContain('fancybox');
+  });
+
+  it("définit un encart d'image utilisable dans une formule", () => {
+    const exercises = exerciseWith('$$\\includegraphics{fig.jpg}$$');
+    const artifactsMap = { kkkk: { images: [{ originalPath: 'fig.jpg', url: '/artifacts/images/kkkk/img_1.jpg' }] } };
+    const { source } = buildLatexExport(exercises, 'T', { artifactsMap, imageMode: 'remote' });
+
+    expect(source).toContain('$$\\imageEnLigne{/artifacts/images/kkkk/img\\_1.jpg}$$');
+    expect(source).toContain('\\ifmmode\\mbox{\\imageEnLigneBoite{#1}}');
+  });
+});
+
 describe('extractTikzFigure', () => {
   it("isole le corps d'un document complet", () => {
     const source = [
