@@ -202,6 +202,52 @@ function markTextBoxes(content) {
   return output + content.slice(cursor);
 }
 
+const LABEL_OPEN = 'OYMITEMLABELOPENMARK';
+const LABEL_CLOSE = 'OYMITEMLABELCLOSEMARK';
+const LIST_TOKEN = /\\(begin|end)\s*\{(itemize|enumerate|description)\}|\\item(?![A-Za-z])\s*\[/g;
+
+/**
+ * Étiquettes des \item : pandoc garde celles d'une liste description, mais
+ * supprime « \item[\textbf{1er cas.}] » dans itemize et enumerate. Elles sont
+ * entourées de marqueurs, que restoreItemLabels() change en
+ * <span class="item-label">, l'élément de liste perdant sa puce ou son
+ * numéro, comme en LaTeX.
+ */
+export function markItemLabels(content) {
+  const stack = [];
+  let output = '';
+  let cursor = 0;
+  for (const match of content.matchAll(LIST_TOKEN)) {
+    if (match.index < cursor) continue;
+    if (match[1] === 'begin') { stack.push(match[2]); continue; }
+    if (match[1] === 'end') { stack.pop(); continue; }
+    if (stack.at(-1) === 'description') continue;
+    // Étiquette entre crochets, les accolades protégeant un « ] » intérieur.
+    let depth = 0;
+    let end = match.index + match[0].length;
+    for (; end < content.length; end++) {
+      const c = content[end];
+      if (c === '\\') { end++; continue; }
+      if (c === '{') depth++;
+      else if (c === '}') depth--;
+      else if (c === ']' && depth === 0) break;
+    }
+    if (end >= content.length) continue;
+    const label = content.slice(match.index + match[0].length, end);
+    output += content.slice(cursor, match.index) + `\\item ${LABEL_OPEN}${label}${LABEL_CLOSE}`;
+    cursor = end + 1;
+  }
+  return output + content.slice(cursor);
+}
+
+/** Change en étiquettes les marqueurs posés par markItemLabels(). */
+export function restoreItemLabels(html) {
+  return html
+    .replace(new RegExp(`<li>(\\s*(?:<p>)?\\s*)${LABEL_OPEN}`, 'g'), `<li class="item-labelled">$1<span class="item-label">`)
+    .split(LABEL_OPEN).join('<span class="item-label">')
+    .split(LABEL_CLOSE).join('</span>');
+}
+
 /** Change en encadrés les marqueurs posés par markTextBoxes(). */
 function restoreTextBoxes(html) {
   return html.split(BOX_OPEN).join('<span class="fbox">').split(BOX_CLOSE).join('</span>');
@@ -230,7 +276,7 @@ export async function convertLaTeXToHTML(latex) {
       return convertLaTeXToHTMLFallback(latex);
     }
 
-    const latexPreprocessed = preprocessLatex(expandExercicesCommands(latex));
+    const latexPreprocessed = preprocessLatex(markItemLabels(expandExercicesCommands(latex)));
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'latex-convert-'));
     const tempInputPath = path.join(tempDir, 'temp_input.tex');
     const tempOutputPath = path.join(tempDir, 'temp_output.html');
@@ -258,7 +304,7 @@ ${latexPreprocessed}
     await execPromise(pandocCommand);
 
     let html = fs.readFileSync(tempOutputPath, 'utf8');
-    html = restoreTextBoxes(cleanPandocHTML(html));
+    html = restoreItemLabels(restoreTextBoxes(cleanPandocHTML(html)));
 
     fs.unlinkSync(tempInputPath);
     fs.unlinkSync(tempOutputPath);

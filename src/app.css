@@ -900,93 +900,113 @@
    ============================================== */
 
 /* Styles globaux pour le contenu des exercices */
-.exercise-content :global(p) {
+.exercise-content p {
   @apply my-4 text-gray-700;
 }
 
-.exercise-content :global(h1),
-.exercise-content :global(h2),
-.exercise-content :global(h3),
-.exercise-content :global(h4),
-.exercise-content :global(h5),
-.exercise-content :global(h6) {
+.exercise-content h1,
+.exercise-content h2,
+.exercise-content h3,
+.exercise-content h4,
+.exercise-content h5,
+.exercise-content h6 {
   @apply font-semibold text-gray-900 mt-6 mb-4;
 }
 
-.exercise-content :global(h1) { @apply text-2xl; }
-.exercise-content :global(h2) { @apply text-xl; }
-.exercise-content :global(h3) { @apply text-lg; }
-.exercise-content :global(h4) { @apply text-base; }
+.exercise-content h1 { @apply text-2xl; }
+.exercise-content h2 { @apply text-xl; }
+.exercise-content h3 { @apply text-lg; }
+.exercise-content h4 { @apply text-base; }
 
-.exercise-content :global(ul),
-.exercise-content :global(ol) {
+.exercise-content ul,
+.exercise-content ol {
   @apply my-4 ml-6 space-y-2;
 }
 
-.exercise-content :global(ul) {
+.exercise-content ul {
   @apply list-disc;
 }
 
-.exercise-content :global(ol) {
+.exercise-content ol {
   @apply list-decimal;
 }
 
-.exercise-content :global(li) {
+/* \item[…] : l'étiquette remplace la puce ou le numéro, comme en LaTeX */
+.exercise-content li.item-labelled {
+  list-style: none;
+}
+
+.exercise-content .item-label {
+  margin-right: 0.35em;
+}
+
+.exercise-content li {
   @apply text-gray-700;
 }
 
-.exercise-content :global(strong) {
+.exercise-content strong {
   @apply font-semibold text-gray-900;
 }
 
-.exercise-content :global(em) {
+.exercise-content em {
   @apply italic text-gray-600;
 }
 
-.exercise-content :global(code) {
+.exercise-content code {
   @apply bg-gray-100 text-gray-800 px-2 py-1 rounded-sm text-sm font-mono;
 }
 
-.exercise-content :global(pre) {
+.exercise-content pre {
   @apply bg-gray-100 text-gray-800 p-4 rounded-lg overflow-x-auto my-4;
 }
 
-.exercise-content :global(pre code) {
+.exercise-content pre code {
   @apply bg-transparent p-0;
 }
 
-.exercise-content :global(blockquote) {
+.exercise-content blockquote {
   @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4;
 }
 
-.exercise-content :global(table) {
+.exercise-content table {
   @apply w-full border-collapse border border-gray-300 my-4;
 }
 
-.exercise-content :global(th),
-.exercise-content :global(td) {
+.exercise-content th,
+.exercise-content td {
   @apply border border-gray-300 px-3 py-2 text-left;
 }
 
-.exercise-content :global(th) {
+.exercise-content th {
   @apply bg-gray-50 font-semibold;
 }
 
-.exercise-content :global(img) {
+.exercise-content img {
   @apply max-w-full h-auto rounded-lg shadow-xs my-4;
 }
 
-.exercise-content :global(a) {
+.exercise-content a {
   @apply text-brand-primary hover:text-brand-700 underline;
 }
 
 /* Styles spécifiques pour les formules mathématiques */
-.exercise-content :global(.katex) {
+.exercise-content .katex {
   @apply text-gray-900;
 }
 
-.exercise-content :global(.katex-display) {
+.exercise-content .katex-display {
   @apply my-6;
+}
+
+/* Premier et dernier éléments d'un bloc : pas de marge extérieure, pour que
+   le texte reste aligné sur le numéro de la question et que les blocs ne
+   s'écartent pas davantage. */
+.exercise-content :is(p, ul, ol, pre, blockquote, table, .katex-display):first-child {
+  margin-top: 0;
+}
+
+.exercise-content :is(p, ul, ol, pre, blockquote, table, .katex-display):last-child {
+  margin-bottom: 0;
 }
 
 
