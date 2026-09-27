@@ -15,6 +15,7 @@ import {
 import {
   extractSaveVerbatimBlocks,
   replaceBUseVerbatimWithPlaceholders,
+  replacePythonCodeWithPlaceholders,
   restoreCodeBlocksFromPlaceholders,
   convertCodeToHTML
 } from './utils/code2html-utils.js';
@@ -250,6 +251,9 @@ async function parseLatexFile(filePath) {
   const commandRegex = new RegExp(`(?<!\\\\)\\\\(${allCommandNames})\\s*(?:\\[[^\\]]*\\]\\s*)?\\{`, 'g');
   let blockOrder = 1;
   let cmdMatch;
+  // Étendue du contenu de chaque bloc déjà lu : un \pythoncode qui s'y trouve
+  // est rendu à sa place dans ce bloc et n'en forme pas un second.
+  const blockSpans = [];
 
   while ((cmdMatch = commandRegex.exec(latexContent)) !== null) {  // <-- Utiliser latexContent, pas processedLatex
     const commandName = cmdMatch[1];
@@ -276,6 +280,7 @@ async function parseLatexFile(filePath) {
     
     if (commandObj.isContent) {
       if (commandName === 'pythoncode') {
+        if (blockSpans.some(([start, end]) => start <= matchStart && matchStart < end)) continue;
         const filename = content.trim();
         const codeBlock = codeBlocks.get(filename);
         const blockId = `block_${blockOrder++}`;
@@ -291,6 +296,7 @@ async function parseLatexFile(filePath) {
         continue;
       }
 
+      blockSpans.push([startIndex, index]);
       const originalBlockLatex = commandObj.isVerbatim ? content.trim() : stripComments(content.trim());
       let htmlContent = "";
 
@@ -313,6 +319,11 @@ async function parseLatexFile(filePath) {
         const result = replaceBUseVerbatimWithPlaceholders(contentForConversion, codeBlocks);
         contentForConversion = result.content;
         codeReplacements = result.replacements;
+      }
+      if (contentForConversion.includes('\\pythoncode')) {
+        const result = replacePythonCodeWithPlaceholders(contentForConversion, codeBlocks);
+        contentForConversion = result.content;
+        codeReplacements = [...codeReplacements, ...result.replacements];
       }
 
       // Conversion HTML
