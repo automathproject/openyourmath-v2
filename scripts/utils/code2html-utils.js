@@ -163,6 +163,47 @@ export function replaceBUseVerbatimWithPlaceholders(content, codeBlocks) {
 }
 
 /**
+ * Remplace les appels \pythoncode{fichier.py} par un placeholder temporaire.
+ *
+ * Pandoc ignore cette commande : sans placeholder, l'extrait disparaissait du
+ * bloc qui l'appelle et ne subsistait qu'en bloc séparé, affiché après tout le
+ * bloc plutôt qu'à sa place. Le \begin{center} qui l'entoure d'ordinaire est
+ * absorbé avec lui, le bloc de code étant déjà un élément de bloc.
+ *
+ * @param {string} content - Le contenu LaTeX avec les appels
+ * @param {Map} codeBlocks - Extraits disponibles, par nom de fichier
+ * @returns {Object} - { content: string, replacements: Array }
+ */
+export function replacePythonCodeWithPlaceholders(content, codeBlocks) {
+  const replacements = [];
+  const call = String.raw`\\pythoncode\s*(?:\[[^\]]*\])?\s*\{([^}]+)\}`;
+  const patterns = [
+    new RegExp(String.raw`\\begin\{center\}\s*${call}\s*\\end\{center\}`, 'g'),
+    new RegExp(call, 'g')
+  ];
+
+  let processedContent = content;
+  for (const pattern of patterns) {
+    processedContent = processedContent.replace(pattern, (match, rawName) => {
+      const name = rawName.trim();
+      const block = codeBlocks.get(name);
+      const placeholder = `CODEBLOCKPLACEHOLDER${crypto.randomBytes(4).toString('hex')}`;
+      replacements.push({
+        placeholder,
+        html: block
+          ? convertCodeToHTML(block.content, block.language, name)
+          : '<div class="code-error">Source Python introuvable</div>'
+      });
+      // Isolé par des lignes vides, le placeholder forme son propre
+      // paragraphe, que la restauration remplace en entier.
+      return `\n\n${placeholder}\n\n`;
+    });
+  }
+
+  return { content: processedContent, replacements };
+}
+
+/**
  * Restaure les blocs de code HTML à partir des placeholders
  * @param {string} html - Le HTML avec les placeholders
  * @param {Array} replacements - Les remplacements à effectuer
@@ -171,7 +212,21 @@ export function replaceBUseVerbatimWithPlaceholders(content, codeBlocks) {
 export function restoreCodeBlocksFromPlaceholders(html, replacements) {
   let finalHtml = html;
   for (const item of replacements) {
-    finalHtml = finalHtml.replace(item.placeholder, item.html);
+    // Seul sur sa ligne, le placeholder devient un paragraphe : le bloc de
+    // code le remplace entièrement, un <div> ne pouvant figurer dans un <p>.
+    const alone = new RegExp(`<p>\\s*${item.placeholder}\\s*</p>`);
+    // Resté dans un paragraphe (après un « \\ », par exemple), il le scinde.
+    const inParagraph = new RegExp(`(<p>(?:(?!</p>)[\\s\\S])*?)${item.placeholder}((?:(?!<p>)[\\s\\S])*?</p>)`);
+    if (alone.test(finalHtml)) {
+      finalHtml = finalHtml.replace(alone, () => item.html);
+    } else if (inParagraph.test(finalHtml)) {
+      finalHtml = finalHtml
+        .replace(inParagraph, (_, before, after) => `${before}</p>${item.html}<p>${after}`)
+        .replace(/(?:\s*<br\s*\/?>)+\s*<\/p>/g, '</p>')
+        .replace(/<p>\s*<\/p>/g, '');
+    } else {
+      finalHtml = finalHtml.replace(item.placeholder, () => item.html);
+    }
   }
   return finalHtml;
 }

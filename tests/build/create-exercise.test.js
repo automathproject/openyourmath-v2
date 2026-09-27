@@ -19,6 +19,7 @@ import { extractTikzFigure } from '../../scripts/utils/image-artifacts.js';
 import {
   generateLatexDocument,
   buildLatexExport,
+  exerciseNeedsArtifacts,
   latexFileName,
 } from '../../src/lib/latex/export.js';
 import {
@@ -698,6 +699,47 @@ describe('buildLatexExport — commandes connues de KaTeX ou de pandoc', () => {
 
     expect(source).toContain('$$\\imageEnLigne{/artifacts/images/kkkk/img\\_1.jpg}$$');
     expect(source).toContain('\\ifmmode\\mbox{\\imageEnLigneBoite{#1}}');
+  });
+});
+
+// Le parseur laisse \pythoncode dans le texte du bloc qui l'appelle ; il en
+// faisait aussi, et fait encore pour ceux écrits entre deux blocs, un bloc
+// « code » séparé. Le code lui-même est dans l'artefact de l'exercice.
+describe('buildLatexExport — extraits \\pythoncode', () => {
+  const artifactsMap = {
+    pppp: { code: [
+      { name: 'pppp-a.py', language: 'python', content: 'x = 1\nprint(x)' },
+      { name: 'pppp-b.py', language: 'python', content: 'y = 2' },
+    ] },
+  };
+  const exercise = (content) => [{ uuid: 'pppp', title: 'P', content }];
+
+  it("demande l'artefact d'un exercice qui appelle \\pythoncode", () => {
+    expect(exerciseNeedsArtifacts({ content: [{ latex: '\\pythoncode{pppp-a.py}' }] })).toBe(true);
+  });
+
+  it("déclare l'extrait et le rend à sa place, sans doublon", () => {
+    const { source } = buildLatexExport(exercise([
+      { type: 'question', order: 1, latex: 'Soit le programme :\n\\begin{center}\\pythoncode{pppp-a.py}\\end{center}\nQue fait-il ?' },
+      { type: 'code', order: 2, latex: '\\pythoncode{pppp-a.py}' },
+    ]), 'T', { artifactsMap });
+
+    expect(source).toContain('\\begin{SaveVerbatim}{pppp-a.py}\nx = 1\nprint(x)\n\\end{SaveVerbatim}');
+    expect(source).toContain('\\usepackage{fancyvrb}');
+    expect(source).toContain('\\newcommand{\\pythoncode}[2][]{\\ifcsname FV@SV@#2\\endcsname');
+    expect(source.match(/\\pythoncode\{pppp-a\.py\}/g)).toHaveLength(1);
+    expect(source).not.toContain('\\begin{Verbatim}');
+    expect(source).not.toContain('pppp-b.py');
+  });
+
+  it('rend par la même commande un extrait écrit entre deux blocs', () => {
+    const { source } = buildLatexExport(exercise([
+      { type: 'question', order: 1, latex: 'Écrire la fonction.' },
+      { type: 'code', order: 2, latex: '\\pythoncode{pppp-b.py}' },
+    ]), 'T', { artifactsMap });
+
+    expect(source).toContain('\\begin{SaveVerbatim}{pppp-b.py}');
+    expect(source).toContain('\\begin{center}\\pythoncode{pppp-b.py}\\end{center}');
   });
 });
 

@@ -5,6 +5,7 @@
 // macros du site (src/lib/macros.js) : une macro ajoutée là devient
 // disponible à l'affichage KaTeX comme à l'export .tex, sans recopie.
 import { latexMacroDefinitions as MACRO_DEFS } from '$lib/macros.js';
+import { NOTEBOOK_BASE_URL, NOTEBOOK_LINK_LABEL } from '$lib/notebooks.js';
 
 /**
  * Extrait le contenu textuel/LaTeX brut d'un bloc de contenu.
@@ -204,12 +205,13 @@ function exerciseRawLatex(ex) {
 
 /**
  * Indique si un exercice référence des ressources externes (images, blocs de
- * code SaveVerbatim) nécessitant le chargement de son fichier d'artifacts.
+ * code SaveVerbatim, extraits \pythoncode) nécessitant le chargement de son
+ * fichier d'artifacts.
  * @param {Object} ex
  * @returns {boolean}
  */
 export function exerciseNeedsArtifacts(ex) {
-  return /\\(?:BUseVerbatim|includegraphics)\b/.test(exerciseRawLatex(ex));
+  return /\\(?:BUseVerbatim|includegraphics|pythoncode)\b/.test(exerciseRawLatex(ex));
 }
 
 /**
@@ -438,10 +440,42 @@ function rewriteImagePaths(latex, artifacts, imageMode) {
   return { latex: out, required, skipped };
 }
 
-/** Blocs SaveVerbatim requis par le LaTeX d'un exercice. */
+const PYTHON_CODE_CALL = /\\pythoncode\s*(?:\[[^\]]*\])?\s*\{([^}]+)\}/g;
+
+/** Fichiers appelés par \pythoncode dans un LaTeX. */
+function pythonCodeFiles(latex) {
+  return new Set([...String(latex || '').matchAll(PYTHON_CODE_CALL)].map((m) => m[1].trim()));
+}
+
+/**
+ * Blocs à déclarer en SaveVerbatim avant l'exercice : ceux appelés par
+ * \BUseVerbatim, et les extraits \pythoncode, que le préambule affiche à leur
+ * place avec \BUseVerbatim.
+ */
 function requiredCodeBlocks(latex, artifacts) {
   const codes = artifacts?.code || [];
-  return codes.filter((c) => c?.name && latex.includes(`\\BUseVerbatim{${c.name}}`));
+  const pythonFiles = pythonCodeFiles(latex);
+  return codes.filter((c) => c?.name
+    && (latex.includes(`\\BUseVerbatim{${c.name}}`) || pythonFiles.has(c.name)));
+}
+
+/**
+ * Lignes LaTeX d'un bloc de type code.
+ *
+ * Pour un extrait \pythoncode, le parseur crée un bloc « \pythoncode{f} » :
+ * autrefois pour chacun, aujourd'hui pour ceux écrits entre deux blocs. Un
+ * extrait déjà appelé dans le texte d'un autre bloc y est rendu à sa place ;
+ * le bloc séparé, un doublon, est omis. Les autres sont rendus par la même
+ * commande, plutôt que recopiés tels quels dans un Verbatim.
+ *
+ * @param {string} latex
+ * @param {Set<string>} inlinePython — extraits appelés dans le texte des blocs
+ * @param {string} [indent]
+ */
+function codeBlockLines(latex, inlinePython, indent = '') {
+  const call = latex.trim().match(/^\\pythoncode\s*(?:\[[^\]]*\])?\s*\{([^}]+)\}$/);
+  if (call) return inlinePython.has(call[1].trim()) ? [] : [`${indent}\\begin{center}${latex.trim()}\\end{center}`];
+  return [`${indent}\\begin{Verbatim}`, ...latex.split('\n'), `${indent}\\end{Verbatim}`];
 }
 
 /**
@@ -501,7 +535,7 @@ function buildPreamble(body, docTitle, options) {
   if (has(/\\mathscr\b/)) lines.push('\\usepackage{mathrsfs}');
   if (has(/\\llbracket|\\rrbracket|\\llparenthesis/)) lines.push('\\usepackage{stmaryrd}');
   if (has(/\\includegraphics\b/)) lines.push('\\usepackage{graphicx}');
-  if (has(/\\begin\{(?:SaveVerbatim|Verbatim|BVerbatim)\}|\\BUseVerbatim\b/)) {
+  if (has(/\\begin\{(?:SaveVerbatim|Verbatim|BVerbatim)\}|\\BUseVerbatim\b|\\pythoncode\b/)) {
     lines.push('\\usepackage{fancyvrb}');
   }
   if (has(/\\begin\{tikzpicture\}/)) {
@@ -535,7 +569,7 @@ function buildPreamble(body, docTitle, options) {
   // l'espace que LaTeX avale après un nom de macro.
   if (has(/\\xspace\b/)) lines.push('\\usepackage{xspace}');
   lines.push(`\\usepackage[margin=${margin}]{geometry}`);
-  if (has(/\\url\{|\\href\{/)) lines.push('\\usepackage[hidelinks]{hyperref}');
+  if (has(/\\url\{|\\href\{|\\insertnotebook\b/)) lines.push('\\usepackage[hidelinks]{hyperref}');
 
   if (theorems.length > 0) {
     lines.push('');
@@ -544,6 +578,23 @@ function buildPreamble(body, docTitle, options) {
       lines.push(`\\theoremstyle{${style}}`);
       lines.push(`\\newtheorem*{${name}}{${label}}`);
     }
+  }
+
+  if (has(/\\insertnotebook\b/)) {
+    lines.push('');
+    lines.push('% Notebooks archivés dans le dépôt Exercices, comme dans son préambule');
+    lines.push(`\\newcommand{\\insertnotebook}[1]{\\href{${NOTEBOOK_BASE_URL}#1.ipynb}{${NOTEBOOK_LINK_LABEL}}}`);
+  }
+
+  if (has(/\\pythoncode\b/)) {
+    lines.push('');
+    lines.push('% Extraits Python : même présentation que dans Exercices, l\'extrait');
+    lines.push('% étant déclaré en SaveVerbatim avant l\'exercice qui l\'appelle.');
+    lines.push(
+      '\\newcommand{\\pythoncode}[2][]{\\ifcsname FV@SV@#2\\endcsname' +
+        '\\fbox{\\BUseVerbatim[fontsize=\\small,#1]{#2}}' +
+        '\\else\\fbox{\\ttfamily\\detokenize{#2}}\\fi}',
+    );
   }
 
   if (has(/\\geogebra\b/)) {
@@ -711,6 +762,9 @@ export function buildLatexExport(exercises, title, options = {}) {
     };
 
     const rawLatex = exerciseRawLatex(ex);
+    const inlinePython = pythonCodeFiles(
+      exerciseContent(ex).filter((b) => b?.type !== 'code').map((b) => b.latex || '').join('\n'),
+    );
 
     // Blocs de code SaveVerbatim requis par cet exercice
     const codeBlocks = requiredCodeBlocks(rawLatex, artifacts);
@@ -744,9 +798,7 @@ export function buildLatexExport(exercises, title, options = {}) {
       let latex = rewriteBlock(dedentLatex(blockToLatex(block)));
       if (block?.type !== 'code') latex = normalizeLatexForCompilation(latex);
       if (block?.type === 'code') {
-        body.push(`${indent}\\begin{Verbatim}`);
-        body.push(...latex.split('\n'));
-        body.push(`${indent}\\end{Verbatim}`);
+        body.push(...codeBlockLines(latex, inlinePython, indent));
       } else {
         body.push(...latex.split('\n').map((l) => (l ? indent + l : l)));
       }
@@ -813,7 +865,7 @@ export function buildLatexExport(exercises, title, options = {}) {
     }
 
     if (exSolutions.length > 0) {
-      deferredSolutions.push({ num, title: exTitle, items: exSolutions, rewriteBlock });
+      deferredSolutions.push({ num, title: exTitle, items: exSolutions, rewriteBlock, inlinePython });
     }
   });
 
@@ -839,9 +891,7 @@ export function buildLatexExport(exercises, title, options = {}) {
           let latex = sol.rewriteBlock(dedentLatex(blockToLatex(b)));
           if (b?.type !== 'code') latex = normalizeLatexForCompilation(latex);
           if (b?.type === 'code') {
-            body.push('\\begin{Verbatim}');
-            body.push(...latex.split('\n'));
-            body.push('\\end{Verbatim}');
+            body.push(...codeBlockLines(latex, sol.inlinePython));
           } else {
             body.push(...latex.split('\n'));
           }
