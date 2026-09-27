@@ -297,6 +297,33 @@ function dedentLatex(latex) {
     .join('\n');
 }
 
+const MATH_TOKEN = /\\\\|\\\$|\$\$|\$|\\\[|\\\]|\\\(|\\\)|\\(begin|end)\{(?:equation|align|gather|multline|flalign|alignat|eqnarray|displaymath|math)\*?\}|(?<!\\)%.*/g;
+const MATH_CLOSER = { '$$': '$$', $: '$', '\\[': '\\]', '\\(': '\\)' };
+
+/**
+ * Pour chaque ligne, indique si une formule est déjà ouverte à son début :
+ * délimiteurs $, $$, \[…\], \(…\), ou environnement d'affichage.
+ *
+ * @param {string[]} lines
+ * @returns {boolean[]}
+ */
+function mathOpenAtLineStart(lines) {
+  let closer = null;
+  let envDepth = 0;
+  return lines.map((line) => {
+    const open = closer !== null || envDepth > 0;
+    for (const [token, action] of line.matchAll(MATH_TOKEN)) {
+      if (token.startsWith('%') || token === '\\\\' || token === '\\$') continue;
+      if (action === 'begin') envDepth++;
+      else if (action === 'end') envDepth = Math.max(0, envDepth - 1);
+      else if (envDepth > 0) continue;
+      else if (closer === null) closer = MATH_CLOSER[token] ?? null;
+      else if (token === closer) closer = null;
+    }
+    return open;
+  });
+}
+
 /**
  * Corrige des erreurs de transcription fréquentes dans les blocs produits par
  * l'assistant IA avant de construire le document autonome destiné au PDF.
@@ -314,13 +341,17 @@ export function normalizeLatexForCompilation(latex) {
     // directement de `textbf` ne forment pas une commande LaTeX valide.
     .replace(/\\\\(textbf|textit|emph|underline)\b/g, '\\$1');
 
-  return corrected.split('\n').map((line) => {
+  const lines = corrected.split('\n');
+  const inMath = mathOpenAtLineStart(lines);
+  return lines.map((line, index) => {
     const indentation = line.match(/^[ \t]*/)?.[0] || '';
     const content = line.trim();
     // Une commande opérateur isolée est une formule, mais l'IA oublie parfois
-    // les délimiteurs. On ne touche pas aux lignes déjà mathématiques ou aux
-    // environnements LaTeX.
+    // les délimiteurs. On ne touche pas aux lignes déjà mathématiques, y
+    // compris celles d'une formule ouverte plus haut (\[ sur la ligne
+    // précédente), ni aux environnements LaTeX.
     if (
+      !inMath[index] &&
       /^\\operatorname\b/.test(content) &&
       !content.includes('$') &&
       !content.startsWith('\\[') &&
