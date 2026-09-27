@@ -665,12 +665,8 @@ describe('buildLatexExport — paquets requis par les sources crouzet', () => {
     expect(sourceFor(PLAIN)).not.toContain('systeme');
   });
 
-  it('définit les intervalles tdsfrmath et charge stmaryrd pour \\interent', () => {
-    const source = sourceFor('$\\interff{1 3}$ et $k \\in \\interent{0 n}$');
-    expect(source).toContain('\\newcommand{\\interff}[1]{');
-    expect(source).toContain('\\newcommand{\\interent}[1]{');
-    expect(source).not.toContain('\\newcommand{\\interoo}');
-    expect(source).toContain('\\usepackage{stmaryrd}');
+  it('charge stmaryrd pour les intervalles entiers ⟦0, n⟧', () => {
+    expect(sourceFor('$k \\in \\llbracket 0,\\,n\\rrbracket$')).toContain('\\usepackage{stmaryrd}');
   });
 });
 
