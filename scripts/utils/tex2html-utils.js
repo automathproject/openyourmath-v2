@@ -48,14 +48,63 @@ export function stripComments(str) {
   return str.replace(/(?<!\\)%.*$/gm, '').trim();
 }
 
+/** Délimiteurs mathématiques, environnements d'affichage et commentaires. */
+const MATH_TOKEN = /\\\\|\\\$|\$\$|\$|\\\[|\\\]|\\\(|\\\)|\\(begin|end)\{(align\*?|gather\*?|equation\*?)\}|(?<!\\)%[^\n]*/g;
+const MATH_CLOSER = { '$$': '$$', '$': '$', '\\[': '\\]', '\\(': '\\)' };
+/** Forme valable, à l'intérieur d'une formule, des environnements d'affichage. */
+const INNER_FORM = { 'align*': 'aligned', align: 'aligned', 'gather*': 'gathered', gather: 'gathered' };
+
 /**
- * Enveloppe les blocs align* avec $$$ pour KaTeX
+ * Enveloppe les environnements d'affichage avec $$ pour KaTeX.
+ *
+ * Seuls ceux écrits dans le texte le sont : un align* déjà ouvert dans une
+ * formule, « $$\left\{\begin{align*}…\end{align*}\right.$$ », y couperait la
+ * formule en morceaux et séparerait \left de son \right. Il y prend plutôt sa
+ * forme interne, aligned (ou gathered), la seule que LaTeX accepte là.
  */
 export function wrapAlignWithDollar(content) {
-  return content
-    .replace(/\\begin\{align\*\}([\s\S]*?)\\end\{align\*\}/g, '$$$\\begin{align*}$1\\end{align*}$$$')
-    .replace(/\\begin\{equation\*?\}([\s\S]*?)\\end\{equation\*?\}/g, '$$$\\begin{equation}$1\\end{equation}$$$')
-    .replace(/\\begin\{gather\*?\}([\s\S]*?)\\end\{gather\*?\}/g, '$$$\\begin{gather}$1\\end{gather}$$$');
+  const edits = [];
+  const stack = [];
+  let math = null;
+
+  for (const match of content.matchAll(MATH_TOKEN)) {
+    const [token, action, name] = match;
+    if (token.startsWith('%') || token === '\\$' || token === '\\\\') continue;
+
+    if (action === 'begin') {
+      stack.push({ match, name, inner: Boolean(math) || stack.length > 0 });
+      continue;
+    }
+    if (action === 'end') {
+      const open = stack.pop();
+      if (!open) continue;
+      const begin = open.match;
+      const end = match;
+      if (open.inner) {
+        const form = INNER_FORM[open.name];
+        if (form) {
+          edits.push([begin.index, begin.index + begin[0].length, `\\begin{${form}}`]);
+          edits.push([end.index, end.index + end[0].length, `\\end{${form}}`]);
+        }
+      } else if (open.name !== 'align') {
+        // Forme historique : l'étoile d'equation et de gather est retirée.
+        const env = open.name === 'align*' ? 'align*' : open.name.replace('*', '');
+        edits.push([begin.index, begin.index + begin[0].length, `$$\\begin{${env}}`]);
+        edits.push([end.index, end.index + end[0].length, `\\end{${env}}$$`]);
+      }
+      continue;
+    }
+    // Les $ d'un environnement d'affichage ne délimitent pas de formule.
+    if (stack.length > 0) continue;
+    if (math === null) math = MATH_CLOSER[token] ?? null;
+    else if (token === math) math = null;
+  }
+
+  let output = content;
+  for (const [start, end, text] of edits.sort((a, b) => b[0] - a[0])) {
+    output = output.slice(0, start) + text + output.slice(end);
+  }
+  return output;
 }
 
 /**
