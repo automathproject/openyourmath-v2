@@ -44,11 +44,15 @@ export const MACRO_REGISTRY = [
   { name: "RRe", value: "\\mathrm{Re}" },
   { name: "IIm", value: "\\mathrm{Im}" },
   { name: "im", value: "\\mathrm{i}" },
+  // Synonyme de \im dans le préambule d'Exercices (sources amscc).
+  { name: "ii", value: "\\mathrm{i}" },
 
   // Probabilités
   { name: "E", value: "\\mathbb{E}" },
   { name: "EX", value: "\\mathbb{E}(X)" },
   { name: "var", value: "\\mathrm{Var}" },
+  // \DeclareMathOperator{\cov}{Cov} dans le préambule d'Exercices.
+  { name: "cov", value: "\\operatorname{Cov}" },
   { name: "V", value: "\\mathrm{V}" },
   { name: "PP", value: "\\mathrm{P}" },
   { name: "prob", value: "\\mathrm{P}" },
