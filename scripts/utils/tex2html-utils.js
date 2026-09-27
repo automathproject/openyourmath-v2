@@ -119,6 +119,29 @@ export function isCommandCommented(line, commandPosInLine) {
   return false;
 }
 
+/** Nombre groupé par milliers, « 28000 » → « 28\,000 », comme \numprint. */
+function groupThousands(value) {
+  const match = String(value).trim().match(/^(-?)(\d+)([.,]\d+)?$/);
+  if (!match) return value;
+  const [, sign, integer, decimals = ''] = match;
+  return sign + integer.replace(/\B(?=(\d{3})+(?!\d))/g, '\\,') + decimals.replace('.', '{,}').replace(/^,/, '{,}');
+}
+
+/**
+ * Commandes des feuilles d'Exercices (sources amscc) que pandoc ignore.
+ *
+ * \colonnes et \fincolonnes règlent la mise en colonnes selon l'affichage des
+ * solutions : sans objet sur le site, elles y apparaissaient telles quelles.
+ * \numprint disparaissait, et avec lui le nombre qu'il met en forme ; il est
+ * remplacé par ce nombre groupé par milliers, valable en texte comme en
+ * formule.
+ */
+export function expandExercicesCommands(latex) {
+  return String(latex || '')
+    .replace(/\\(?:fin)?colonnes\s*\{[^{}]*\}\s*\{[^{}]*\}\s*\{[^{}]*\}/g, '')
+    .replace(/\\numprint\s*\{([^{}]*)\}/g, (_, number) => groupThousands(number));
+}
+
 /**
  * Vérifie la disponibilité de Pandoc
  */
@@ -142,7 +165,7 @@ export async function convertLaTeXToHTML(latex) {
       return convertLaTeXToHTMLFallback(latex);
     }
 
-    const latexPreprocessed = preprocessLatex(latex);
+    const latexPreprocessed = preprocessLatex(expandExercicesCommands(latex));
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'latex-convert-'));
     const tempInputPath = path.join(tempDir, 'temp_input.tex');
     const tempOutputPath = path.join(tempDir, 'temp_output.html');
