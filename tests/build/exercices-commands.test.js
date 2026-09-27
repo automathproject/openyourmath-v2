@@ -5,7 +5,7 @@
 // y disparaissait avec son nombre.
 
 import { describe, it, expect } from 'vitest';
-import { expandExercicesCommands } from '../../scripts/utils/tex2html-utils.js';
+import { expandExercicesCommands, markItemLabels, restoreItemLabels } from '../../scripts/utils/tex2html-utils.js';
 import { buildLatexExport, normalizeLatexForCompilation } from '../../src/lib/latex/export.js';
 
 const exportOf = (latex) => buildLatexExport(
@@ -29,6 +29,25 @@ describe('expandExercicesCommands (HTML du site)', () => {
     expect(expandExercicesCommands('est de \\numprint{28000} euros')).toBe('est de 28\\,000 euros');
     expect(expandExercicesCommands('$\\numprint{1234567,5}$')).toBe('$1\\,234\\,567{,}5$');
     expect(expandExercicesCommands('\\numprint{12}')).toBe('12');
+  });
+});
+
+describe('étiquettes des \\item, que pandoc supprimait', () => {
+  it('marque les étiquettes des listes itemize et enumerate', () => {
+    expect(markItemLabels('\\begin{itemize}\n\\item[\\textbf{1er cas.}] Si $x=0$.\n\\end{itemize}'))
+      .toBe('\\begin{itemize}\n\\item OYMITEMLABELOPENMARK\\textbf{1er cas.}OYMITEMLABELCLOSEMARK Si $x=0$.\n\\end{itemize}');
+    expect(markItemLabels('\\begin{enumerate}\\item[{$[0,1]$}] a\\end{enumerate}'))
+      .toBe('\\begin{enumerate}\\item OYMITEMLABELOPENMARK{$[0,1]$}OYMITEMLABELCLOSEMARK a\\end{enumerate}');
+  });
+
+  it('laisse celles d’une liste description, que pandoc rend lui-même', () => {
+    const source = '\\begin{description}\\item[Terme] définition\\end{description}';
+    expect(markItemLabels(source)).toBe(source);
+  });
+
+  it("rend l'étiquette et retire la puce de son élément", () => {
+    expect(restoreItemLabels('<li><p>OYMITEMLABELOPENMARK<strong>1er cas.</strong>OYMITEMLABELCLOSEMARK Si</p></li>'))
+      .toBe('<li class="item-labelled"><p><span class="item-label"><strong>1er cas.</strong></span> Si</p></li>');
   });
 });
 
