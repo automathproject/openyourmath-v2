@@ -18,6 +18,13 @@ describe('expandExercicesCommands (HTML du site)', () => {
       .toBe('\n\\begin{enumerate}\n');
   });
 
+  it('marque les encadrés du texte, que pandoc supprimait, mais pas ceux des formules', () => {
+    expect(expandExercicesCommands('Donc \\fbox{$x = 1$ et $y$}.'))
+      .toBe('Donc OYMFBOXOPENMARK$x = 1$ et $y$OYMFBOXCLOSEMARK.');
+    expect(expandExercicesCommands('\\framebox[2cm][c]{ok}')).toBe('OYMFBOXOPENMARKokOYMFBOXCLOSEMARK');
+    expect(expandExercicesCommands('$x = \\fbox{3}$')).toBe('$x = \\fbox{3}$');
+  });
+
   it('garde le nombre de \\numprint, groupé par milliers', () => {
     expect(expandExercicesCommands('est de \\numprint{28000} euros')).toBe('est de 28\\,000 euros');
     expect(expandExercicesCommands('$\\numprint{1234567,5}$')).toBe('$1\\,234\\,567{,}5$');

@@ -137,9 +137,74 @@ function groupThousands(value) {
  * texte comme en formule.
  */
 export function expandExercicesCommands(latex) {
-  return String(latex || '')
+  return markTextBoxes(String(latex || '')
     .replace(/\\(?:fin)?colonnes\s*\{[^{}]*\}\s*\{[^{}]*\}\s*\{[^{}]*\}/g, '')
-    .replace(/\\(?:numprint|nombre)\s*\{([^{}]*)\}/g, (_, number) => groupThousands(number));
+    .replace(/\\(?:numprint|nombre)\s*\{([^{}]*)\}/g, (_, number) => groupThousands(number)));
+}
+
+const BOX_OPEN = 'OYMFBOXOPENMARK';
+const BOX_CLOSE = 'OYMFBOXCLOSEMARK';
+
+/** Positions de la chaîne situées dans une formule. */
+function mathPositions(content) {
+  const inside = new Uint8Array(content.length);
+  let closer = null;
+  let depth = 0;
+  let start = 0;
+  for (const match of content.matchAll(MATH_TOKEN)) {
+    const [token, action] = match;
+    if (token.startsWith('%') || token === '\\$' || token === '\\\\') continue;
+    if (action === 'begin') {
+      if (closer === null && depth === 0) start = match.index + token.length;
+      depth++;
+    } else if (action === 'end') {
+      depth = Math.max(0, depth - 1);
+      if (closer === null && depth === 0) inside.fill(1, start, match.index);
+    } else if (depth > 0) {
+      continue;
+    } else if (closer === null) {
+      closer = MATH_CLOSER[token] ?? null;
+      start = match.index + token.length;
+    } else if (token === closer) {
+      inside.fill(1, start, match.index);
+      closer = null;
+    }
+  }
+  return inside;
+}
+
+/**
+ * Encadrés du texte : pandoc supprimait \fbox et \framebox avec leur contenu,
+ * si bien que les résultats encadrés d'exo7 manquaient au site. Leur contenu
+ * est entouré de marqueurs, que pandoc laisse passer et que
+ * restoreTextBoxes() change en <span class="fbox">. Dans une formule, KaTeX
+ * les connaît et les rend lui-même.
+ */
+function markTextBoxes(content) {
+  const inMath = mathPositions(content);
+  const call = /\\(?:fbox|framebox(?:\s*\[[^\]]*\]){0,2})\s*\{/g;
+  let output = '';
+  let cursor = 0;
+  for (const match of content.matchAll(call)) {
+    if (match.index < cursor || inMath[match.index]) continue;
+    let depth = 1;
+    let end = match.index + match[0].length;
+    for (; end < content.length && depth > 0; end++) {
+      if (content[end] === '\\') { end++; continue; }
+      if (content[end] === '{') depth++;
+      else if (content[end] === '}') depth--;
+    }
+    if (depth > 0) continue;
+    const inner = content.slice(match.index + match[0].length, end - 1);
+    output += content.slice(cursor, match.index) + BOX_OPEN + inner + BOX_CLOSE;
+    cursor = end;
+  }
+  return output + content.slice(cursor);
+}
+
+/** Change en encadrés les marqueurs posés par markTextBoxes(). */
+function restoreTextBoxes(html) {
+  return html.split(BOX_OPEN).join('<span class="fbox">').split(BOX_CLOSE).join('</span>');
 }
 
 /**
@@ -193,7 +258,7 @@ ${latexPreprocessed}
     await execPromise(pandocCommand);
 
     let html = fs.readFileSync(tempOutputPath, 'utf8');
-    html = cleanPandocHTML(html);
+    html = restoreTextBoxes(cleanPandocHTML(html));
 
     fs.unlinkSync(tempInputPath);
     fs.unlinkSync(tempOutputPath);
