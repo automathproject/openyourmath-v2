@@ -21,6 +21,7 @@ import {
 } from './utils/code2html-utils.js';
 
 import { extractIncludegraphicsImages } from './utils/image-artifacts.js';
+import { expandInsertNotebook } from '../src/lib/notebooks.js';
 import { CacheManager } from './utils/cache-manager.js';
 import { generatePreview } from './utils/previewUtils.js';
 import {
@@ -320,6 +321,8 @@ async function parseLatexFile(filePath) {
         contentForConversion = result.content;
         codeReplacements = result.replacements;
       }
+      // Pandoc ignore \insertnotebook : le lien disparaissait du HTML.
+      contentForConversion = expandInsertNotebook(contentForConversion);
       if (contentForConversion.includes('\\pythoncode')) {
         const result = replacePythonCodeWithPlaceholders(contentForConversion, codeBlocks);
         contentForConversion = result.content;

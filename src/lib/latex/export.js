@@ -5,6 +5,7 @@
 // macros du site (src/lib/macros.js) : une macro ajoutée là devient
 // disponible à l'affichage KaTeX comme à l'export .tex, sans recopie.
 import { latexMacroDefinitions as MACRO_DEFS } from '$lib/macros.js';
+import { NOTEBOOK_BASE_URL, NOTEBOOK_LINK_LABEL } from '$lib/notebooks.js';
 
 /**
  * Extrait le contenu textuel/LaTeX brut d'un bloc de contenu.
@@ -568,7 +569,7 @@ function buildPreamble(body, docTitle, options) {
   // l'espace que LaTeX avale après un nom de macro.
   if (has(/\\xspace\b/)) lines.push('\\usepackage{xspace}');
   lines.push(`\\usepackage[margin=${margin}]{geometry}`);
-  if (has(/\\url\{|\\href\{/)) lines.push('\\usepackage[hidelinks]{hyperref}');
+  if (has(/\\url\{|\\href\{|\\insertnotebook\b/)) lines.push('\\usepackage[hidelinks]{hyperref}');
 
   if (theorems.length > 0) {
     lines.push('');
@@ -577,6 +578,12 @@ function buildPreamble(body, docTitle, options) {
       lines.push(`\\theoremstyle{${style}}`);
       lines.push(`\\newtheorem*{${name}}{${label}}`);
     }
+  }
+
+  if (has(/\\insertnotebook\b/)) {
+    lines.push('');
+    lines.push('% Notebooks archivés dans le dépôt Exercices, comme dans son préambule');
+    lines.push(`\\newcommand{\\insertnotebook}[1]{\\href{${NOTEBOOK_BASE_URL}#1.ipynb}{${NOTEBOOK_LINK_LABEL}}}`);
   }
 
   if (has(/\\pythoncode\b/)) {

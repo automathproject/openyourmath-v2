@@ -4,6 +4,7 @@
 
 import { json, error } from '@sveltejs/kit';
 import { checkRateLimit } from '$lib/server/rateLimiter.js';
+import { expandInsertNotebook } from '$lib/notebooks.js';
 import {
   convertLaTeXToHTML,
   wrapAlignWithDollar,
@@ -61,7 +62,7 @@ export async function POST(event) {
       const latex = block.latex.trim();
       const html = block.type === 'code'
         ? `<pre class="tex-preview-code"><code>${escapeHtml(latex)}</code></pre>`
-        : latex ? await convertLaTeXToHTML(wrapAlignWithDollar(latex)) : '';
+        : latex ? await convertLaTeXToHTML(wrapAlignWithDollar(expandInsertNotebook(latex))) : '';
       return { id: String(index), type: block.type, latex, html, order: index + 1 };
     }));
     return json({ content, renderer: 'pandoc' });
