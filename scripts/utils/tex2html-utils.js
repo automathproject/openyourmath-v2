@@ -132,14 +132,14 @@ function groupThousands(value) {
  *
  * \colonnes et \fincolonnes règlent la mise en colonnes selon l'affichage des
  * solutions : sans objet sur le site, elles y apparaissaient telles quelles.
- * \numprint disparaissait, et avec lui le nombre qu'il met en forme ; il est
- * remplacé par ce nombre groupé par milliers, valable en texte comme en
- * formule.
+ * \numprint et \nombre disparaissaient, et avec eux le nombre qu'ils mettent
+ * en forme ; ils sont remplacés par ce nombre groupé par milliers, valable en
+ * texte comme en formule.
  */
 export function expandExercicesCommands(latex) {
   return String(latex || '')
     .replace(/\\(?:fin)?colonnes\s*\{[^{}]*\}\s*\{[^{}]*\}\s*\{[^{}]*\}/g, '')
-    .replace(/\\numprint\s*\{([^{}]*)\}/g, (_, number) => groupThousands(number));
+    .replace(/\\(?:numprint|nombre)\s*\{([^{}]*)\}/g, (_, number) => groupThousands(number));
 }
 
 /**
