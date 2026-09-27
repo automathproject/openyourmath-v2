@@ -382,6 +382,15 @@
     @apply bg-brand-50 rounded-xl p-2 md:p-4;
   }
 
+  /* Encadrés du texte : les \fbox des sources, dont les résultats encadrés
+     d'exo7, que la construction du site rend en <span class="fbox">. */
+  .exercise-content :global(.fbox) {
+    display: inline-block;
+    border: 1px solid currentColor;
+    padding: 0.15em 0.45em;
+    border-radius: 2px;
+  }
+
   .exercise-content > :global(*:not(.question-response-pair) + .question-response-pair) {
     @apply mt-6;
   }

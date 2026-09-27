@@ -53,6 +53,8 @@ export const MACRO_REGISTRY = [
   { name: "var", value: "\\mathrm{Var}" },
   // \DeclareMathOperator{\cov}{Cov} dans le préambule d'Exercices.
   { name: "cov", value: "\\operatorname{Cov}" },
+  // « tend vers quand » : \tvq{limite}{variable}{valeur}, préambule d'Exercices.
+  { name: "tvq", value: "\\underset{#2 \\to #3}{\\longrightarrow} {#1}", args: 3 },
   { name: "V", value: "\\mathrm{V}" },
   { name: "PP", value: "\\mathrm{P}" },
   { name: "prob", value: "\\mathrm{P}" },

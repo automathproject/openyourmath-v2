@@ -605,7 +605,7 @@ function buildPreamble(body, docTitle, options) {
   if (has(/\\shadowbox\b/)) lines.push('\\usepackage{fancybox}');
   if (has(/\\begin\{multicols\}/)) lines.push('\\usepackage{multicol}');
   if (has(/\\toprule|\\midrule|\\bottomrule/)) lines.push('\\usepackage{booktabs}');
-  if (has(/\\SI\{|\\si\{|\\num\{/)) lines.push('\\usepackage{siunitx}');
+  if (has(/\\SI\{|\\si\{|\\num\{|\\nombre\b/)) lines.push('\\usepackage{siunitx}');
   // Requis par les abréviations rédactionnelles (\va, \ssi…), qui rétablissent
   // l'espace que LaTeX avale après un nom de macro.
   if (has(/\\xspace\b/)) lines.push('\\usepackage{xspace}');
@@ -629,6 +629,14 @@ function buildPreamble(body, docTitle, options) {
     ['fincolonnes', 3],
     ['similaire', 1],
   ].filter(([name]) => has(new RegExp(`\\\\${name}(?![a-zA-Z])`)));
+  if (has(/\\nombre\b/)) {
+    lines.push('');
+    lines.push('% Nombre groupé par milliers, comme dans le préambule d\'Exercices ;');
+    lines.push('% babel-french en définit un autre, qu\'il faut remplacer.');
+    lines.push('\\providecommand{\\nombre}{}');
+    lines.push('\\renewcommand{\\nombre}[1]{\\num[group-separator={\\,}, output-decimal-marker={,}]{#1}}');
+  }
+
   if (layout.length > 0) {
     lines.push('');
     lines.push('% Commandes de mise en page d\'Exercices, sans objet ici');
