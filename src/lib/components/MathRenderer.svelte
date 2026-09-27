@@ -1,6 +1,6 @@
 <!-- src/lib/components/MathRenderer.svelte -->
 <script>
-  import { macros } from '../macros.js';
+  import { katexMacros, prepareMathForKatex } from '../katexCompat.js';
   import { onMount, afterUpdate } from 'svelte';
   import renderMathInElement from 'katex/contrib/auto-render';
   
@@ -19,7 +19,8 @@
           {left: '\\[', right: '\\]', display: true}
         ],
         throwOnError: false,
-        macros: macros,
+        macros: katexMacros,
+        preProcess: prepareMathForKatex,
         strict: false
       });
     }
