@@ -198,6 +198,7 @@ générés localement et embarqués dans l'image Docker au moment de la construc
 Voir `/docs` pour plus de détails.
 
 - [Ajouter et déployer un exercice](docs/ajouter-et-deployer-un-exercice.md) : procédure complète de contribution et publication.
+- [Classification CPGE](docs/classification-cpge.md) : conception du rattachement des exercices aux programmes de classes préparatoires (programmes officiels sous `content/referentiels/cpge/`).
 - Scripts de debug/maintenance: `docs/debug-scripts.md`
 
 Raccourcis associés :

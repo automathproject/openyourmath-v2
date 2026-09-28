@@ -48,3 +48,7 @@ lerna-debug.log*
 # et permissions propres à la machine. Rien de partageable ici pour l'instant ;
 # si un jour on veut versionner un réglage d'équipe, le désigner explicitement.
 /.claude/
+
+# PDF officiels des programmes CPGE (liens dans content/referentiels/cpge/sources.json,
+# téléchargement : pnpm fetch:programmes-cpge)
+content/referentiels/cpge/sources/
