@@ -32,6 +32,24 @@ au hash courant :
 - **Divergence** → cache ignoré, l'embedding sera recalculé au prochain `pnpm index:exercises`
 
 Cela garantit qu'un exercice modifié ne réutilisera pas un embedding périmé.
+
+Le résumé et le vecteur sont jugés séparément, parce qu'ils ne voyagent pas de
+la même façon : le résumé par Git (`content/metadata/`), le vecteur par
+instantané de la base.
+
+- **Résumé** : valable si le `content_hash` de ses métadonnées versionnées égale
+  celui du contenu actuel. `build:db` ne remet un exercice en attente que si son
+  contenu a changé *et* que ses métadonnées ne suivent pas.
+- **Vecteur** : valable si sa propre empreinte, `exercise_embeddings.content_hash`,
+  égale celle du contenu actuel. Sinon `index:exercises` le recalcule, même si le
+  résumé est à jour : des métadonnées venues par Git peuvent couvrir un contenu
+  dont le vecteur, venu d'un instantané plus ancien, a été calculé sur une
+  version précédente.
+
+Après la restauration d'un instantané, une seule passe de `build:db` suffit donc
+à rattacher les métadonnées. Pour une base antérieure à la colonne, `build:db`
+en renseigne l'empreinte depuis le cache local quand le vecteur y est identique,
+sinon d'après l'exercice s'il est indexé ; à défaut, le vecteur sera recalculé.
 Lors de `pnpm cache:embeddings:restore`, un fichier de cache local déjà présent
 est aussi remplacé si son hash, son modèle ou sa dimension ne correspond plus à
 la DB restaurée.

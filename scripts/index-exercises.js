@@ -71,8 +71,9 @@ function loadExercisesToIndex(db) {
   if (uuidArg) {
     const row = db.prepare('SELECT * FROM exercises WHERE uuid = ?').get(uuidArg);
     if (!row) throw new Error(`Exercice introuvable : ${uuidArg}`);
-    const hasEmb = !!db.prepare('SELECT 1 FROM exercise_embeddings WHERE uuid = ?').get(uuidArg);
-    return [{ ...row, _needsSummary: FORCE || !row.indexed_at, _needsEmbedding: FORCE || !hasEmb }];
+    const emb = db.prepare('SELECT content_hash FROM exercise_embeddings WHERE uuid = ?').get(uuidArg);
+    const upToDate = emb && emb.content_hash === row.content_hash;
+    return [{ ...row, _needsSummary: FORCE || !row.indexed_at, _needsEmbedding: FORCE || !upToDate }];
   }
   if (FORCE) {
     return db.prepare('SELECT * FROM exercises ORDER BY chapter, uuid').all()
@@ -84,11 +85,15 @@ function loadExercisesToIndex(db) {
     'SELECT * FROM exercises WHERE indexed_at IS NULL ORDER BY chapter, uuid'
   ).all().map(row => ({ ...row, _needsSummary: true, _needsEmbedding: true }));
 
-  // Exercices avec résumé mais sans embedding → Albert Embedding seul
+  // Exercices avec résumé mais sans vecteur à jour → embedding seul. Un vecteur
+  // est à jour si son empreinte égale celle du contenu : des métadonnées venues
+  // par Git peuvent valoir pour un contenu dont le vecteur, venu d'un instantané
+  // plus ancien, a été calculé sur une version précédente.
   const sansEmbedding = db.prepare(`
     SELECT e.* FROM exercises e
     LEFT JOIN exercise_embeddings ee ON e.uuid = ee.uuid
-    WHERE e.indexed_at IS NOT NULL AND ee.uuid IS NULL
+    WHERE e.indexed_at IS NOT NULL
+      AND (ee.uuid IS NULL OR ee.content_hash IS NULL OR ee.content_hash != e.content_hash)
     ORDER BY e.chapter, e.uuid
   `).all().map(row => ({ ...row, _needsSummary: false, _needsEmbedding: true }));
 
@@ -168,7 +173,7 @@ async function indexOne(db, row, stmts, providers) {
     saveEmbeddingCache(row.uuid, vector, contentHash);
   }
   const blob = Buffer.from(vector.buffer);
-  stmts.upsertEmbedding.run(row.uuid, blob, MODELS.embedding, vector.length);
+  stmts.upsertEmbedding.run(row.uuid, blob, MODELS.embedding, vector.length, contentHash);
 
   return summaryObj;
 }
@@ -243,12 +248,13 @@ async function main() {
       WHERE uuid = ?
     `),
     upsertEmbedding: db.prepare(`
-      INSERT INTO exercise_embeddings (uuid, embedding_summary, model_version, dimension)
-      VALUES (?, ?, ?, ?)
+      INSERT INTO exercise_embeddings (uuid, embedding_summary, model_version, dimension, content_hash)
+      VALUES (?, ?, ?, ?, ?)
       ON CONFLICT(uuid) DO UPDATE SET
         embedding_summary = excluded.embedding_summary,
         model_version     = excluded.model_version,
         dimension         = excluded.dimension,
+        content_hash      = excluded.content_hash,
         created_at        = CURRENT_TIMESTAMP
     `)
   };
@@ -336,7 +342,12 @@ async function main() {
   db.close();
 }
 
-main().catch(err => {
-  console.error('Erreur fatale:', err.message);
-  process.exit(1);
-});
+// Exécuter si appelé directement (les tests importent loadExercisesToIndex)
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(err => {
+    console.error('Erreur fatale:', err.message);
+    process.exit(1);
+  });
+}
+
+export { loadExercisesToIndex };

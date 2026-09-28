@@ -207,6 +207,60 @@ function runMigrations(db) {
       console.log(`✅ Migration: added column exercises.${col}`);
     }
   }
+
+  const embeddingsTable = db.prepare(
+    "SELECT 1 FROM sqlite_master WHERE type='table' AND name='exercise_embeddings'"
+  ).get();
+  if (embeddingsTable) {
+    const embCols = new Set(db.prepare('PRAGMA table_info(exercise_embeddings)').all().map(c => c.name));
+    if (!embCols.has('content_hash')) {
+      db.exec('ALTER TABLE exercise_embeddings ADD COLUMN content_hash TEXT');
+      console.log('✅ Migration: added column exercise_embeddings.content_hash');
+    }
+  }
+}
+
+/**
+ * Renseigne l'empreinte des vecteurs qui n'en ont pas encore (bases et
+ * instantanés antérieurs à la colonne exercise_embeddings.content_hash).
+ *
+ * Le cache local garde l'empreinte avec laquelle chaque vecteur a été calculé :
+ * elle est reprise quand son vecteur est identique à celui de la base. À défaut,
+ * un exercice indexé est présumé avoir un vecteur conforme à son empreinte en
+ * base, hypothèse qui prévalait avant la colonne. Sinon l'empreinte reste
+ * inconnue, et index:exercises recalculera le vecteur.
+ *
+ * À appeler avant insertExercises(), qui met exercises.content_hash à jour.
+ * @returns {{ fromCache: number, fromExercise: number, unknown: number }}
+ */
+function backfillEmbeddingHashes(db, cacheRoot = EMBEDDINGS_CACHE_ROOT) {
+  const rows = db.prepare(`
+    SELECT ee.uuid, ee.embedding_summary, e.content_hash, e.indexed_at
+    FROM exercise_embeddings ee JOIN exercises e ON e.uuid = ee.uuid
+    WHERE ee.content_hash IS NULL
+  `).all();
+  const setHash = db.prepare('UPDATE exercise_embeddings SET content_hash = ? WHERE uuid = ?');
+  const result = { fromCache: 0, fromExercise: 0, unknown: 0 };
+
+  db.transaction(() => {
+    for (const { uuid, embedding_summary, content_hash, indexed_at } of rows) {
+      const cachePath = path.join(cacheRoot, `${uuid}.json`);
+      let cached = null;
+      try { cached = JSON.parse(fs.readFileSync(cachePath, 'utf-8')); } catch { /* pas de cache */ }
+      const sameVector = cached?.embedding_base64
+        && Buffer.from(cached.embedding_base64, 'base64').equals(Buffer.from(embedding_summary));
+      if (sameVector && cached.content_hash) {
+        setHash.run(cached.content_hash, uuid);
+        result.fromCache++;
+      } else if (indexed_at && content_hash) {
+        setHash.run(content_hash, uuid);
+        result.fromExercise++;
+      } else {
+        result.unknown++;
+      }
+    }
+  })();
+  return result;
 }
 
 /**
@@ -505,7 +559,7 @@ function resolveAuthor(authorValue, exerciseOrg, authorsIdx) {
 /**
  * Insère les exercices dans la base
  */
-function insertExercises(db, exercises, authorsIdx) {
+function insertExercises(db, exercises, authorsIdx, albertStore = loadAllAlbertMetadata()) {
   console.log(`💾 Inserting ${exercises.length} exercises...`);
 
   const existingHashes = new Map(
@@ -513,9 +567,9 @@ function insertExercises(db, exercises, authorsIdx) {
       .map(r => [r.uuid, r.content_hash])
   );
 
-  // Charger les métadonnées Albert versionnées (content/metadata/*.json).
-  // Elles survivent à pnpm clean et permettent de reconstruire la DB sans rappeler l'API.
-  const albertStore = loadAllAlbertMetadata();
+  // Métadonnées Albert versionnées (content/metadata/*.json), chargées par
+  // défaut : elles survivent à pnpm clean et permettent de reconstruire la DB
+  // sans rappeler l'API.
   if (albertStore.size > 0) {
     console.log(`📚 ${albertStore.size} métadonnées Albert versionnées chargées`);
   }
@@ -658,9 +712,15 @@ function insertExercises(db, exercises, authorsIdx) {
         const wasNew = !existingHashes.has(exercise.uuid);
         const oldHash = existingHashes.get(exercise.uuid);
         const hashChanged = !wasNew && oldHash !== contentHash;
-        if (hashChanged) {
+        // Un contenu modifié n'est à réindexer que si ses métadonnées versionnées
+        // ne suivent pas : résumées ailleurs, ou forme seule mise à jour, elles
+        // valent pour le nouveau contenu. La validité du vecteur, elle, se juge
+        // à son propre content_hash (index:exercises).
+        if (hashChanged && !hasValidAlbert) {
           invalidateIndexing.run(exercise.uuid);
           changedSemantically++;
+        } else if (hashChanged) {
+          unchanged++;
         } else if (wasNew) {
           added++;
         } else {
@@ -746,12 +806,13 @@ function restoreEmbeddingsFromCache(db) {
   if (manquants.length === 0) return 0;
 
   const upsertEmbedding = db.prepare(`
-    INSERT INTO exercise_embeddings (uuid, embedding_summary, model_version, dimension)
-    VALUES (?, ?, ?, ?)
+    INSERT INTO exercise_embeddings (uuid, embedding_summary, model_version, dimension, content_hash)
+    VALUES (?, ?, ?, ?, ?)
     ON CONFLICT(uuid) DO UPDATE SET
       embedding_summary = excluded.embedding_summary,
       model_version     = excluded.model_version,
       dimension         = excluded.dimension,
+      content_hash      = excluded.content_hash,
       created_at        = CURRENT_TIMESTAMP
   `);
 
@@ -767,7 +828,7 @@ function restoreEmbeddingsFromCache(db) {
 
     try {
       const blob = Buffer.from(cached.vector.buffer);
-      upsertEmbedding.run(uuid, blob, cached.model, cached.dimension);
+      upsertEmbedding.run(uuid, blob, cached.model, cached.dimension, content_hash);
       restored++;
     } catch (err) {
       console.warn(`⚠️  Restauration échouée pour ${uuid} : ${err.message}`);
@@ -807,6 +868,12 @@ async function main() {
 
       // Charger les exercices
       console.log('📖 Loading exercises...');
+      const backfill = backfillEmbeddingHashes(db);
+      if (backfill.fromCache + backfill.fromExercise + backfill.unknown > 0) {
+        console.log(`🔑 Empreinte des vecteurs renseignée : ${backfill.fromCache} depuis le cache, ` +
+          `${backfill.fromExercise} présumées d'après l'exercice, ${backfill.unknown} inconnues (à recalculer)`);
+      }
+
       const exercises = await loadExercises(CACHE_DIR);
       
       if (exercises.length === 0) {
@@ -968,6 +1035,11 @@ async function main() {
         console.log(`   ${indexed} exercices indexés (summary + embedding)`);
         console.log(`   ${pending} exercices en attente d'indexation`);
         console.log(`   ${embeddings} embeddings stockés`);
+        const staleVectors = db.prepare(`
+          SELECT COUNT(*) AS count FROM exercise_embeddings ee JOIN exercises e USING(uuid)
+          WHERE ee.content_hash IS NULL OR ee.content_hash != e.content_hash
+        `).get().count;
+        if (staleVectors > 0) console.log(`   ${staleVectors} vecteurs à recalculer (contenu modifié depuis leur calcul)`);
         if (embeddingsRestored > 0) {
           console.log(`   ↑ dont ${embeddingsRestored} restaurés depuis cache/embeddings/`);
         }
@@ -997,4 +1069,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   });
 }
 
-export { createDatabase, loadExercises, insertExercises, loadDatabaseModule };
+export { createDatabase, loadExercises, insertExercises, loadDatabaseModule, backfillEmbeddingHashes, restoreEmbeddingsFromCache };

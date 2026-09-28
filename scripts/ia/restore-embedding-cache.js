@@ -31,7 +31,11 @@ const Database = mod.default || mod;
 const db = new Database(DB_PATH, { readonly: true });
 
 const rows = db.prepare(`
-  SELECT ee.uuid, ee.embedding_summary, ee.model_version, ee.dimension, e.content_hash
+  -- L'empreinte écrite au cache est celle du contenu dont le vecteur est issu,
+  -- non celle du contenu actuel : sans quoi un vecteur périmé passerait pour à
+  -- jour. Pour un vecteur antérieur à la colonne, celle de l'exercice.
+  SELECT ee.uuid, ee.embedding_summary, ee.model_version, ee.dimension,
+         COALESCE(ee.content_hash, e.content_hash) AS content_hash
   FROM exercise_embeddings ee
   JOIN exercises e ON e.uuid = ee.uuid
   WHERE ee.embedding_summary IS NOT NULL
