@@ -1,0 +1,30 @@
+{
+  "uuid": "LT4V",
+  "source_path": "amscc/LT4V.tex",
+  "summary": "L'exercice étudie l'impact de l'initialisation des paramètres sur l'apprentissage d'un réseau de neurones simple avec une fonction d'activation ReLU. Il demande de calculer les sorties et la perte pour deux initialisations différentes, puis d'analyser comment la ReLU inactive peut bloquer la descente de gradient.",
+  "concepts": [
+    "fonction d'activation ReLU",
+    "descente de gradient",
+    "préactivation",
+    "règle de la chaîne",
+    "gradient nul",
+    "initialisation des paramètres",
+    "réseau de neurones à une couche"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "application de la règle de la chaîne",
+    "mise à jour des paramètres par descente de gradient",
+    "évaluation de la fonction de perte"
+  ],
+  "objects": [
+    "fonction de perte quadratique",
+    "gradient",
+    "paramètres du réseau (w, b, v)",
+    "sortie du neurone caché",
+    "préactivation"
+  ],
+  "content_hash": "30500abb28348976a259060acff6eaba3c1f73e1781b41f5fe30831913664c61",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:41:09.870Z"
+}

@@ -1,31 +1,32 @@
 {
   "uuid": "yrEm",
   "source_path": "exo7/5-L2/yrEm.tex",
-  "summary": "L'exercice demande de vérifier plusieurs identités trigonométriques et algébriques complexes, puis d'en déduire des développements en série de la fonction tangente. Les identités impliquent des nombres complexes et des produits infinis.",
+  "summary": "L'exercice propose une série d'identités trigonométriques et algébriques à vérifier, incluant des produits et des sommes infinies. Il culmine avec le développement en série entière de la fonction tangente sur l'intervalle ]-π/2, π/2[.",
   "concepts": [
-    "fonction exponentielle complexe",
     "fonction tangente",
-    "développement en série entière",
+    "fonction cosinus",
     "fonction logarithme",
+    "série entière",
+    "produit infini",
+    "somme de Riemann",
     "fonction zêta de Riemann",
-    "produit infini"
+    "développement en série de Taylor"
   ],
   "methods": [
-    "manipulation algébrique de nombres complexes",
-    "développement en série de Taylor",
-    "utilisation de la fonction zêta de Riemann",
-    "identités trigonométriques"
+    "identités trigonométriques",
+    "manipulation algébrique",
+    "développement en série",
+    "somme de séries infinies",
+    "produit de facteurs"
   ],
   "objects": [
     "identités trigonométriques",
-    "produits infinis",
     "séries entières",
-    "fonction tangente",
-    "fonction logarithme"
+    "fonctions trigonométriques",
+    "fonction zêta",
+    "produits infinis"
   ],
-  "content_hash": "e937ef38ac9c032c38315b6abaf2b3e46785c6e2abe2e3e6f5f41ee841768a74",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:57:13.449Z",
-  "previous_content_hash": "7ad5853a7a42277951364db98b0ace1fd6bfd2b8b8ab9efdefa1a40bae0c8730",
-  "revalidated_at": "2026-09-01T13:56:33.049Z"
+  "content_hash": "65d51b6698b8f49012426bc0b362ee179f3825efba5c91ada889242520b3672f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:41:32.658Z"
 }

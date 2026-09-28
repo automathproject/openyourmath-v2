@@ -1,0 +1,29 @@
+{
+  "uuid": "ClxN",
+  "source_path": "amscc/ClxN.tex",
+  "summary": "L'exercice demande de déterminer le minimum global d'une fonction quadratique de deux variables et le point où il est atteint, sans utiliser de dérivées. Il s'agit ensuite de décrire et tracer les courbes de niveau de cette fonction, de calculer son gradient en un point donné, et d'analyser l'effet de petits déplacements horizontaux et verticaux sur la valeur de la fonction.",
+  "concepts": [
+    "fonction quadratique",
+    "minimum global",
+    "courbes de niveau",
+    "ellipse",
+    "gradient",
+    "dérivées partielles",
+    "optimisation"
+  ],
+  "methods": [
+    "analyse des formes quadratiques",
+    "calcul du gradient",
+    "comparaison des dérivées partielles",
+    "reconnaissance des coniques"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "ellipse",
+    "gradient",
+    "dérivées partielles"
+  ],
+  "content_hash": "e11dbc1c175399d502afcdc31a7ee7a8b79e838a2fe58ea83c7f18c568574946",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:39:57.487Z"
+}

@@ -1,16 +1,16 @@
 {
   "uuid": "7JVX",
   "source_path": "crouzet/pcsi/06/7JVX.tex",
-  "summary": "Étude complète (définition, continuité, dérivabilité, limites, variations, asymptotes) de quatre fonctions réelles : une fonction exponentielle rationnelle, une fonction puissance exponentielle, une fonction hyperbolique et une fonction rationnelle. Représentation graphique attendue.",
+  "summary": "Étude complète (définition, continuité, dérivabilité, limites, variations, asymptotes) et représentation graphique de quatre fonctions réelles : une fonction exponentielle rationnelle, une fonction puissance exponentielle, une fonction paire, et une fonction rationnelle avec asymptote oblique.",
   "concepts": [
     "fonction exponentielle",
     "fonction puissance",
-    "fonction hyperbolique",
     "fonction rationnelle",
     "limite de fonction",
     "continuité",
     "dérivabilité",
-    "asymptote",
+    "asymptote horizontale",
+    "asymptote oblique",
     "tableau de variations"
   ],
   "methods": [
@@ -23,12 +23,13 @@
   ],
   "objects": [
     "fonction réelle",
-    "asymptote horizontale",
-    "dérivée",
+    "asymptote",
     "tableau de variations",
-    "courbe représentative"
+    "courbe représentative",
+    "dérivée",
+    "limite"
   ],
-  "content_hash": "35f4768980056bcf080646ec0b6c43b1b13b23c283baa3e3c4da6e530785df37",
+  "content_hash": "d76c7940d2698df4d365fe906ea3b41566b3cc6f16da764c2aba213c87ce7e47",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-15T18:30:20.728Z"
+  "indexed_at": "2026-09-28T08:40:10.315Z"
 }

@@ -1,28 +1,28 @@
 {
   "uuid": "ptxH",
   "source_path": "amscc/ptxH.tex",
-  "summary": "Calculer l'espérance et la variance d'une proportion de dyslexiques parmi n jeunes examinés, puis déterminer le nombre minimal d'examinés pour que cette proportion soit dans un intervalle donné avec une probabilité supérieure à 0.9.",
+  "summary": "L'exercice demande de calculer l'espérance et la variance d'une proportion de dyslexiques parmi un échantillon de jeunes, puis de déterminer la taille minimale de l'échantillon pour que cette proportion reste dans un intervalle donné avec une probabilité supérieure à 0.9.",
   "concepts": [
     "loi binomiale",
     "espérance d'une variable aléatoire",
     "variance d'une variable aléatoire",
     "inégalité de Bienaymé-Tchebychev",
-    "proportion",
-    "variable aléatoire"
+    "proportion échantillonnale",
+    "estimation par intervalle de confiance"
   ],
   "methods": [
-    "calcul de l'espérance",
-    "calcul de la variance",
-    "application de l'inégalité de Bienaymé-Tchebychev"
+    "calcul de l'espérance et de la variance d'une loi binomiale",
+    "standardisation",
+    "application de l'inégalité de Bienaymé-Tchebychev",
+    "résolution d'inéquation"
   ],
   "objects": [
     "variable aléatoire binomiale",
-    "proportion de dyslexiques",
-    "intervalle de confiance"
+    "proportion échantillonnale",
+    "intervalle de confiance",
+    "taille d'échantillon"
   ],
-  "content_hash": "ee0a6d9423f5722202ba5443f9d683a74c1b7e4d897075ceaf52c962c550ce94",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:53:05.365Z",
-  "previous_content_hash": "0076cb13a69c95050aa18070ef2f6e40c746bad3129afe0ea2073ba66f785190",
-  "revalidated_at": "2026-09-01T13:56:32.344Z"
+  "content_hash": "4a2d4787b61fe6efd4d6921e2de7b7206451d059d21b0b8be33bec4d4842fe8a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:41:23.638Z"
 }

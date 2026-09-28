@@ -1,27 +1,29 @@
 {
   "uuid": "Fe90",
   "source_path": "crouzet/pcsi/06/Fe90.tex",
-  "summary": "Étudier la fonction f(x) = 2sin(x) + x sur différents intervalles, démontrer son invariance par translation, la représenter graphiquement et déterminer ses limites aux infinis.",
+  "summary": "Étudier la fonction f(x) = 2sin(x) + x sur l'intervalle [-π; π], puis montrer l'invariance de sa courbe par translation de vecteur (2π, 2π), la représenter sur [-2π; 4π] et déterminer ses limites aux infinis.",
   "concepts": [
     "fonction impaire",
     "dérivée",
     "variations de fonction",
+    "limites de fonctions",
     "périodicité",
-    "limites de fonctions"
+    "translation de courbe"
   ],
   "methods": [
     "étude de la parité",
     "calcul de dérivée",
-    "analyse des variations",
-    "comparaison de limites"
+    "analyse du signe de la dérivée",
+    "comparaison de limites",
+    "représentation graphique"
   ],
   "objects": [
-    "fonction trigonométrique",
-    "fonction affine",
+    "fonction réelle",
     "intervalle de définition",
-    "courbe représentative"
+    "courbe représentative",
+    "vecteur de translation"
   ],
-  "content_hash": "66668fe1121262bdd2ade3fa551308a07dabe5d2ecc7a80b2447bbe06576bc89",
+  "content_hash": "82de90d1c264fdae9b5345b796d79b608ff1ae8236f06f1110feb395ac325d1f",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-15T18:30:22.939Z"
+  "indexed_at": "2026-09-28T08:40:16.541Z"
 }

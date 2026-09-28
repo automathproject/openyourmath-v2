@@ -1,7 +1,7 @@
 {
   "uuid": "VeJ3",
   "source_path": "exo7/10-L3/VeJ3.tex",
-  "summary": "L'exercice demande de construire un groupe libre à partir d'un ensemble générateur et d'introduire la notion de présentation d'un groupe. Il s'agit de démontrer que la relation d'équivalence sur les mots est bien définie, que chaque classe d'équivalence contient un mot réduit unique, et que l'ensemble quotient muni de l'opération de concaténation forme un groupe.",
+  "summary": "L'exercice demande de construire un groupe libre à partir d'un ensemble d'éléments générateurs et d'introduire la notion de présentation d'un groupe. Il s'agit de définir une relation d'équivalence sur l'ensemble des mots formés par ces générateurs, de montrer que cette relation permet de réduire les mots, et de prouver que l'ensemble quotient muni d'une loi de composition forme un groupe.",
   "concepts": [
     "relation d'équivalence",
     "groupe libre",
@@ -9,14 +9,14 @@
     "mot réduit",
     "classe d'équivalence",
     "homomorphisme de groupes",
-    "isomorphisme de groupes"
+    "isomorphisme de groupes",
+    "générateurs d'un groupe"
   ],
   "methods": [
-    "construction de groupe libre",
+    "construction de groupe quotient",
     "définition de relation d'équivalence",
-    "procédé de réduction de mots",
-    "définition d'opération de groupe",
-    "preuve de bien-définition d'opération",
+    "réduction de mots",
+    "preuve de bien-définition d'une loi de groupe",
     "prolongement d'application en homomorphisme"
   ],
   "objects": [
@@ -24,9 +24,9 @@
     "groupe libre",
     "homomorphisme de groupes",
     "classe d'équivalence de mots",
-    "mot réduit"
+    "système de générateurs"
   ],
-  "content_hash": "fada954d33dc2c66fe19b0bf556b5fad193d35f0b0afc6bb8c22316c14826ba6",
+  "content_hash": "bb0979d93a504bad6bcdca8a626f74684a8ae651e13ab688155c7520fb59f819",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-15T18:29:17.826Z"
+  "indexed_at": "2026-09-28T08:40:04.213Z"
 }

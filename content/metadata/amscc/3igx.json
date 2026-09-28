@@ -1,0 +1,29 @@
+{
+  "uuid": "3igx",
+  "source_path": "amscc/3igx.tex",
+  "summary": "L'exercice demande de démontrer une identité reliant la valeur absolue de la différence de deux mesures à deux fonctions ReLU, puis de concevoir un réseau de neurones à deux neurones cachés calculant ce score de désaccord. Il s'agit ensuite d'évaluer ce score pour des paires de mesures données et de déterminer les conditions de déclenchement d'une alerte.",
+  "concepts": [
+    "fonction ReLU",
+    "valeur absolue",
+    "réseau de neurones",
+    "fonction d'activation",
+    "matrice de poids",
+    "biais",
+    "fonction linéaire"
+  ],
+  "methods": [
+    "décomposition par cas",
+    "calcul de poids et biais",
+    "évaluation de fonction",
+    "construction de réseau de neurones"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "neurones cachés",
+    "matrice de transformation",
+    "score de désaccord"
+  ],
+  "content_hash": "397515bc56ad185ad5b614939b28c2c56ed0006c532bd551e9563c4f636d91f7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:40:56.136Z"
+}

@@ -1,29 +1,27 @@
 {
   "uuid": "SQwv",
   "source_path": "exo7/4-L2/SQwv.tex",
-  "summary": "Discuter la nature des solutions d'un système linéaire de trois équations à trois inconnues en fonction des paramètres α, a, b et c.",
+  "summary": "Discuter la nature des solutions (unicité, infinité, absence) d'un système linéaire de trois équations à trois inconnues, en fonction des paramètres α, a, b et c.",
   "concepts": [
     "système linéaire",
     "rang d'une matrice",
-    "déterminant",
+    "théorème de Rouché-Capelli",
+    "inconnues libres",
     "solution unique",
     "solution paramétrique",
-    "solution infinie",
     "incompatibilité"
   ],
   "methods": [
-    "calcul de déterminant",
-    "analyse de rang",
-    "comparaison des rangs"
+    "calcul du rang",
+    "comparaison des rangs",
+    "analyse des coefficients"
   ],
   "objects": [
-    "système linéaire",
+    "système linéaire 3x3",
     "matrice augmentée",
     "paramètres réels"
   ],
-  "content_hash": "229bbde85ccd48886a9f9aa822fd93230feaefdcc984a3c80bcabdddb5eb39b3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T17:50:55.062Z",
-  "previous_content_hash": "2f3dbd2849c74f2889429f99a4afa942303616f278945d5b7e4201619c24eba4",
-  "revalidated_at": "2026-09-01T13:56:29.777Z"
+  "content_hash": "2a536e18b6b085a5b77d9f11d3a32885082d52455f12b84d4b6af2a5411bc5f9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:39:39.194Z"
 }

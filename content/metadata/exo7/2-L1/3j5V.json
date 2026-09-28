@@ -1,28 +1,25 @@
 {
   "uuid": "3j5V",
   "source_path": "exo7/2-L1/3j5V.tex",
-  "summary": "L'exercice demande de prouver une égalité entre la somme de la partie entière de a, a+1, ..., a+b-1 et la partie entière de a, pour a entier et b naturel non nul, puis pour a réel et b naturel non nul.",
+  "summary": "L'exercice demande de prouver deux égalités impliquant la somme de parties entières consécutives de fractions linéaires. La première version concerne des entiers, la seconde des réels.",
   "concepts": [
     "partie entière",
     "division euclidienne",
-    "somme de termes consécutifs",
-    "propriétés des entiers naturels",
-    "valeur absolue"
+    "somme de termes",
+    "propriété arithmétique"
   ],
   "methods": [
-    "décomposition en cas selon le reste",
-    "somme de termes arithmétiques",
-    "utilisation de la définition de la partie entière"
+    "décomposition en quotient et reste",
+    "somme de termes consécutifs",
+    "calcul algébrique"
   ],
   "objects": [
-    "partie entière d'un nombre réel",
+    "partie entière d'une fraction",
     "somme de parties entières",
     "entier naturel",
     "réel"
   ],
-  "content_hash": "2224b431fce093a3544000f9502a5d8cce24c486f96c21fd48de20c650fbc587",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:46:27.280Z",
-  "previous_content_hash": "a8de95f711d23347decaec08ce8b4e6f84e5a5340a01d42d4ce877d336f4a9b8",
-  "revalidated_at": "2026-09-01T13:56:27.964Z"
+  "content_hash": "c3d14423dbb51d25cf655841afff67d91b60579b99725cbe9c9bd7e4b620aa83",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:40:52.751Z"
 }

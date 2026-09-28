@@ -1,25 +1,25 @@
 {
   "uuid": "FL5j",
   "source_path": "crouzet/pcsi/06/FL5j.tex",
-  "summary": "L'exercice demande de décomposer deux fonctions données en compositions de fonctions plus simples. On cherche à exprimer f et g sous la forme d'une composition de deux fonctions.",
+  "summary": "L'exercice demande de décomposer deux fonctions données en compositions de deux autres fonctions. La première fonction est une fraction rationnelle, et la seconde est une fonction exponentielle.",
   "concepts": [
     "composition de fonctions",
     "fonction exponentielle",
+    "fonction rationnelle",
     "fonction polynomiale",
-    "fonction rationnelle"
+    "fonction réciproque"
   ],
   "methods": [
-    "décomposition en fonctions élémentaires"
+    "décomposition en composition de fonctions",
+    "identification de la structure fonctionnelle"
   ],
   "objects": [
-    "fonction f",
-    "fonction g",
-    "fonction u",
-    "fonction v",
-    "fonction w",
-    "fonction z"
+    "fonction rationnelle",
+    "fonction exponentielle",
+    "fonction polynomiale",
+    "fonction réciproque"
   ],
-  "content_hash": "c54d33b7100d3082243a0c05915b740f7373b124df070c53dc31e578b8430440",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:26:43.231Z"
+  "content_hash": "366d7db198fcd59c0801100de38cf8eb344206d60f4fb763967ca03ae29600ca",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:40:12.913Z"
 }

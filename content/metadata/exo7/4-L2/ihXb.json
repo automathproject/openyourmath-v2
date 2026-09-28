@@ -1,29 +1,30 @@
 {
   "uuid": "ihXb",
   "source_path": "exo7/4-L2/ihXb.tex",
-  "summary": "L'exercice demande de démontrer l'équivalence entre le résultant de deux polynômes non nuls et leur plus grand commun diviseur égal à 1. Il applique ensuite ce résultat pour déterminer la condition nécessaire et suffisante pour qu'un polynôme quartique ait une racine multiple.",
+  "summary": "L'exercice demande de montrer l'équivalence entre la non-nullité du résultant de deux polynômes et leur premier entre eux, puis d'appliquer ce résultat pour déterminer une condition nécessaire et suffisante sur les coefficients d'un polynôme de degré 4 pour qu'il admette une racine multiple.",
   "concepts": [
     "résultant de deux polynômes",
-    "plus grand commun diviseur de polynômes",
+    "premier entre eux",
     "racine multiple",
-    "polynôme unitaire",
-    "algèbre des polynômes"
+    "polynôme irréductible",
+    "condition nécessaire et suffisante",
+    "algèbre des polynômes",
+    "déterminant de Sylvester"
   ],
   "methods": [
-    "détermination du résultant",
-    "analyse du PGCD",
-    "application du théorème de Bézout",
-    "calcul de condition nécessaire et suffisante"
+    "calcul du résultant",
+    "utilisation du théorème de Bézout",
+    "analyse des racines multiples",
+    "détermination des conditions sur les coefficients"
   ],
   "objects": [
     "polynômes à coefficients dans un corps",
     "résultant",
-    "PGCD de polynômes",
+    "premier entre eux",
+    "polynôme de degré 4",
     "racine multiple"
   ],
-  "content_hash": "046d0101c0a2886cdf15fcde628cb8c0a5a1792a38fe4796b5d1b2a917b380b6",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:05:08.755Z",
-  "previous_content_hash": "aabb29a31f5e3a2988e87f103e537eaa270fc4c177f23d9adb9d2af460f7b037",
-  "revalidated_at": "2026-09-01T13:56:31.530Z"
+  "content_hash": "f65ecabef7cf83d504f7d1d8dd99ae8f7c74fb85a9f0eeb961f68e135e68374d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:39:45.856Z"
 }

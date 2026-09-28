@@ -1,0 +1,28 @@
+{
+  "uuid": "IVdd",
+  "source_path": "amscc/IVdd.tex",
+  "summary": "Calcul des sorties d'un réseau de neurones simple avec une fonction ReLU, évaluation de la perte quadratique, calcul des gradients des paramètres par rétropropagation, et mise à jour des poids par descente de gradient.",
+  "concepts": [
+    "fonction d'activation ReLU",
+    "fonction de perte quadratique",
+    "rétropropagation",
+    "descente de gradient",
+    "calcul de dérivées partielles",
+    "chaîne de dérivées"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "règle de la chaîne",
+    "mise à jour des paramètres",
+    "évaluation de fonction d'activation"
+  ],
+  "objects": [
+    "réseau de neurones à une couche cachée",
+    "fonction de sortie",
+    "paramètres de poids et biais",
+    "gradient de la perte"
+  ],
+  "content_hash": "5ecb2f3fb405554e41ed8a29d5f416b1a366f30089f92ac19459c8646070db08",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:41:01.984Z"
+}

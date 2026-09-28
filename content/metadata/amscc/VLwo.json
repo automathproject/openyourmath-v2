@@ -1,0 +1,29 @@
+{
+  "uuid": "VLwo",
+  "source_path": "amscc/VLwo.tex",
+  "summary": "L'exercice demande de représenter une bande du plan définie par la condition |x-y| ≤ 1, de la décomposer en deux inégalités affines, puis de construire un réseau de neurones à deux perceptrons pour reconnaître cette bande. Il s'agit d'illustrer l'incapacité d'un seul perceptron à classer exactement cette région.",
+  "concepts": [
+    "perceptron",
+    "classification binaire",
+    "fonction d'activation",
+    "demi-plan affine",
+    "combinaison de perceptrons",
+    "réseau de neurones",
+    "inégalité affine"
+  ],
+  "methods": [
+    "décomposition d'une condition en inégalités affines",
+    "construction de perceptrons",
+    "combinaison de sorties de perceptrons",
+    "vérification de cas particuliers"
+  ],
+  "objects": [
+    "bande du plan",
+    "fonction d'activation Heaviside",
+    "réseau de neurones à deux couches",
+    "points de test"
+  ],
+  "content_hash": "d365fc09d4c35dff83c95683b61a1dd8f73c85336ebf34a5d0f0be17b3cc3f58",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:41:13.674Z"
+}

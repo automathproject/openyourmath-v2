@@ -1,29 +1,29 @@
 {
   "uuid": "eaDW",
   "source_path": "amscc/eaDW.tex",
-  "summary": "L'exercice demande de déterminer la loi de probabilité d'une variable aléatoire représentant le nombre de terminaux en communication active, puis d'utiliser une approximation normale pour estimer le nombre maximal de connexions supportables avec une probabilité de saturation inférieure à 2.5%.",
+  "summary": "L'exercice modélise le nombre de terminaux en communication active dans un réseau de 5000 terminaux indépendants, chacun ayant une probabilité 0.20 d'être actif. Il demande de déterminer la loi de cette variable aléatoire, son espérance et son écart-type, puis d'approcher sa distribution par une loi normale centrée réduite pour estimer la capacité maximale du réseau avec une probabilité de saturation inférieure à 2.5%.",
   "concepts": [
     "loi binomiale",
     "espérance d'une variable aléatoire",
     "écart-type d'une variable aléatoire",
-    "approximation de la loi binomiale par la loi normale",
-    "standardisation",
-    "quantile de la loi normale"
+    "approximation normale de la loi binomiale",
+    "centrage et réduction",
+    "quantile de la loi normale",
+    "probabilité de saturation"
   ],
   "methods": [
     "calcul de l'espérance et de la variance d'une loi binomiale",
-    "approximation gaussienne",
     "standardisation",
+    "approximation gaussienne",
     "utilisation de tables de la loi normale"
   ],
   "objects": [
     "variable aléatoire binomiale",
-    "variable aléatoire normalisée",
-    "nombre maximal de connexions"
+    "variable aléatoire centrée réduite",
+    "somme de variables de Bernoulli indépendantes",
+    "capacité maximale du réseau"
   ],
-  "content_hash": "d863fe9dfa074c383556403b58fac54234110106bd4614d745b66382461be449",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:34:41.555Z",
-  "previous_content_hash": "92e60f25c9257a914182a136e1f2cad329d54f32bf36f2f93d5a757b294890b0",
-  "revalidated_at": "2026-09-01T13:56:30.885Z"
+  "content_hash": "c6ffe8b404f800736e7a3482997b95eb742e1c5f65b9f5c2a0f12cf7a33fcada",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:40:49.869Z"
 }
