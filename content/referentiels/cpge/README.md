@@ -189,6 +189,15 @@ suivants :
 - que chaque formule se rend avec KaTeX ;
 - l'absence de pieds de page et de césures résiduels.
 
+### Mise en base
+
+`pnpm build:referentiel-cpge` (inclus dans `pnpm build:content`) lit ces
+fichiers et remplit les tables `cpge_programmes`, `cpge_filieres` et
+`cpge_noeuds`. Les identifiants sont figés par l'instantané
+`tests/build/__snapshots__/cpge-identifiants.txt` : en changer un, c'est casser
+les rattachements d'exercices qui y renvoient. Voir
+[docs/classification-cpge.md](../../../docs/classification-cpge.md).
+
 ### Fidélité
 
 Le texte est reproduit intégralement et sans reformulation, typographie

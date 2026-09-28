@@ -1,7 +1,8 @@
 # Classification CPGE des exercices
 
-Proposition de conception. Seule la phase 0 (programmes officiels en Markdown,
-`content/referentiels/cpge/`) est réalisée.
+Conception et état d'avancement. Les phases 0 (programmes officiels en
+Markdown, `content/referentiels/cpge/`) et 1 (référentiel en base) sont
+réalisées.
 
 ## Constat
 
@@ -81,33 +82,56 @@ content/referentiels/cpge/
 │   ├── pt.md               PT         — 2e année
 │   └── bcpst2.md           BCPST      — 2e année
 └── concordance.json        (phase 2) sections voisines entre programmes
+
+content/classifications/cpge/<source>/<uuid>.json   rattachements (phase 2)
 ```
 
-Le Markdown est la source de vérité. Un script de build (phase 1,
-`scripts/build-referentiel-cpge.js`) l'analyse et produit une liste de nœuds :
+Le Markdown est la source de vérité. `scripts/utils/parse-programme-cpge.js`
+l'analyse : chaque titre `###` ou `####` qui porte un identifiant devient un
+nœud.
 
 ```json
 {
   "id": "mpsi-mp2i.nombres-complexes.f",
   "programme": "mpsi-mp2i",
-  "filieres": ["MPSI", "MP2I"],
-  "annee": 1,
+  "type": "sous-section",
+  "parent_id": "mpsi-mp2i.nombres-complexes",
   "partie": "Premier semestre",
-  "section": "mpsi-mp2i.nombres-complexes",
-  "titre": "Racines n-ièmes",
-  "ordre": 57,
-  "contenus": ["Description des racines n-ièmes de l'unité, …"]
+  "semestre": 1,
+  "lettre": "f",
+  "titre": "f) Racines $n$-ièmes",
+  "texte": null,
+  "contenus": [
+    {
+      "contenu": "Description des racines $n$-ièmes de l’unité, …",
+      "commentaire": "Notation $\\mathbb{U}_n$.<br>Représentation géométrique."
+    }
+  ],
+  "ordre": 15
 }
 ```
 
-Quand une section est découpée en parties « A - », « B - » (voir le README du
-référentiel), `section` désigne la partie, et un champ `section_mere` désigne
-la section générale. La navigation peut ainsi afficher les deux niveaux.
+- **Filières et année.** Elles sont portées par le programme (front matter),
+  pas par le nœud.
+- **Parties.** Une partie « A - », « B - » est une section dont `parent_id`
+  désigne la section générale. L'arbre est donc programme → section générale
+  → partie → sous-section, ou programme → section → sous-section.
+- **Contenu du nœud.** `texte` reçoit le bandeau et les notes, en Markdown.
+  `contenus` reçoit les lignes du tableau.
 
-Le script fait échouer le build si un identifiant disparaît alors qu'une
-classification y renvoie. C'est ce qui protège le référentiel lors d'une
-future réforme des programmes : on ajoute alors un nouveau jeu de fichiers
-(par exemple `programmes/2027/`), et l'ancien reste en place tant que des
+Les 9 programmes donnent 881 nœuds : 210 sections et 671 sous-sections.
+
+Deux garde-fous protègent les identifiants :
+
+- **Au build.** `scripts/build-referentiel-cpge.js` échoue si un rattachement
+  renvoie à un identifiant absent du référentiel.
+- **Aux tests.** L'instantané versionné `tests/build/__snapshots__/cpge-identifiants.txt`
+  liste tous les identifiants. Toute modification fait échouer les tests
+  jusqu'à la mise à jour délibérée de l'instantané (`npx vitest run -u`).
+  Elle apparaît alors dans le diff.
+
+Lors d'une future réforme des programmes, on ajoute un nouveau jeu de fichiers
+(par exemple `programmes/2027/`). L'ancien reste en place tant que des
 rattachements pointent dessus.
 
 ### Rattachements : `content/classifications/cpge/<source>/<uuid>.json`
@@ -146,33 +170,36 @@ fusion et suit le même cycle de vie :
 - `content_hash` permet de reclasser les rattachements non validés quand
   l'énoncé change, comme pour l'indexation sémantique.
 
-### SQLite (phase 1)
+### SQLite
 
-```sql
-CREATE TABLE cpge_noeuds (
-  id TEXT PRIMARY KEY,           -- mpsi-mp2i.nombres-complexes.f
-  programme TEXT NOT NULL,       -- mpsi-mp2i
-  annee INTEGER NOT NULL,        -- 1 | 2
-  partie TEXT,                   -- Premier semestre | Programme
-  section_id TEXT NOT NULL,      -- = id pour un nœud de section
-  titre TEXT NOT NULL,
-  ordre INTEGER NOT NULL         -- ordre du texte officiel
-);
-CREATE TABLE cpge_filieres (filiere TEXT, programme TEXT, PRIMARY KEY (filiere, programme));
-CREATE TABLE exercise_cpge (
-  uuid TEXT NOT NULL,
-  noeud_id TEXT NOT NULL,
-  origine TEXT NOT NULL,
-  confiance REAL,
-  valide INTEGER NOT NULL DEFAULT 0,
-  PRIMARY KEY (uuid, noeud_id)
-);
-CREATE INDEX idx_exercise_cpge_noeud ON exercise_cpge(noeud_id);
-```
+Les tables sont définies dans `scripts/schema.sql` et remplies par
+`pnpm build:referentiel-cpge`, dernière étape de `pnpm build:content`.
+`pnpm check:referentiel-cpge` vérifie sans écrire. Chaque construction
+reconstruit les tables entièrement.
+
+| Table             | Contenu                                                                 |
+| ----------------- | ----------------------------------------------------------------------- |
+| `cpge_programmes` | un texte officiel : titre, année, BO, NOR, liens, empreinte du Markdown |
+| `cpge_filieres`   | filière → programme (`MP2I → mpsi-mp2i`, `BCPST → bcpst1` et `bcpst2`)  |
+| `cpge_noeuds`     | les nœuds ci-dessus, `contenus` en JSON                                 |
+| `exercise_cpge`   | rattachement exercice ↔ nœud : origine, confiance, validation           |
 
 `exercise_cpge` est la table d'association, sur le modèle de
-`exercise_authors`. Filtrer une section entière revient à un préfixe :
-`noeud_id = :s OR noeud_id LIKE :s || '.%'`.
+`exercise_authors`. Un rattachement dont l'exercice est absent de la base
+n'est pas écrit. Il reste dans son fichier et revient quand l'exercice est
+publié.
+
+Pour filtrer une section entière, on suit `parent_id`, pas le préfixe de
+l'identifiant : celui d'une partie « A - » ne prolonge pas celui de sa section
+générale.
+
+```sql
+WITH RECURSIVE sous(id) AS (
+  SELECT :section
+  UNION ALL SELECT n.id FROM cpge_noeuds n JOIN sous ON n.parent_id = sous.id
+)
+SELECT uuid FROM exercise_cpge WHERE noeud_id IN (SELECT id FROM sous);
+```
 
 ## Alimentation
 
@@ -216,7 +243,7 @@ section>`. Le bouton « CPGE » de la barre latérale devient « a au moins un
 | Phase | Contenu                                                                                  | État    |
 | ----- | ---------------------------------------------------------------------------------------- | ------- |
 | 0     | Programmes officiels (9 textes, 11 filières) convertis en Markdown structuré             | fait    |
-| 1     | Analyseur Markdown → nœuds, tables SQLite, tests (unicité et stabilité des identifiants) | à faire |
+| 1     | Analyseur Markdown → nœuds, tables SQLite, tests (unicité et stabilité des identifiants) | fait    |
 | 2     | A priori par chapitre, étiquetage LLM, concordance, rattachement de crouzet/pcsi         | à faire |
 | 3     | Navigation « Prépa », filtres de recherche, badges                                       | à faire |
 | 4     | Éditeur `/create` et vue de validation                                                   | à faire |

@@ -9,6 +9,8 @@ export const EXERCISES_ROOT = path.join(CONTENT_ROOT, 'exercises');
 export const FICHES_ROOT = path.join(CONTENT_ROOT, 'fiches');
 export const IMAGES_ROOT = path.join(CONTENT_ROOT, 'images');
 export const METADATA_ROOT = path.join(CONTENT_ROOT, 'metadata');
+export const REFERENTIEL_CPGE_ROOT = path.join(CONTENT_ROOT, 'referentiels/cpge');
+export const CLASSIFICATIONS_CPGE_ROOT = path.join(CONTENT_ROOT, 'classifications/cpge');
 export const CACHE_ROOT = path.join(PROJECT_ROOT, 'cache/exercises');
 export const ARTIFACTS_ROOT = path.join(PROJECT_ROOT, 'static/artifacts');
 

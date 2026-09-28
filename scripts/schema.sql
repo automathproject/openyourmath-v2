@@ -117,3 +117,68 @@ CREATE TABLE IF NOT EXISTS fiche_items (
 CREATE INDEX IF NOT EXISTS idx_fiche_items_exercise ON fiche_items(exercise_uuid);
 CREATE INDEX IF NOT EXISTS idx_fiches_organization ON fiches(organization);
 CREATE INDEX IF NOT EXISTS idx_fiches_author ON fiches(author);
+
+-- Référentiel CPGE : programmes officiels de mathématiques des classes
+-- préparatoires, lus dans content/referentiels/cpge/programmes/*.md par
+-- scripts/build-referentiel-cpge.js (voir docs/classification-cpge.md).
+-- Un programme est un texte officiel ; plusieurs filières peuvent le partager
+-- (MPSI et MP2I), une filière peut en avoir plusieurs (BCPST, un par année).
+CREATE TABLE IF NOT EXISTS cpge_programmes (
+  programme TEXT PRIMARY KEY,       -- ex. mpsi-mp2i, = nom du fichier
+  titre TEXT NOT NULL,
+  annee INTEGER NOT NULL,           -- 1 | 2
+  bo TEXT,                          -- Bulletin officiel de publication
+  nor TEXT,                         -- JSON : liste des NOR
+  arrete TEXT,                      -- date ISO de l'arrêté
+  rentree INTEGER,                  -- année de première application
+  source_url TEXT,                  -- PDF officiel
+  bo_url TEXT,
+  pages TEXT,                       -- pages du PDF converties
+  source_path TEXT,
+  source_hash TEXT
+);
+
+CREATE TABLE IF NOT EXISTS cpge_filieres (
+  filiere TEXT NOT NULL,            -- ex. MP2I
+  programme TEXT NOT NULL,
+  PRIMARY KEY (filiere, programme)
+);
+
+-- Nœuds rattachables : sections (###) et sous-sections lettrées (####) du
+-- texte officiel. Une partie « A - » est une section dont parent_id désigne la
+-- section générale ; une sous-section a pour parent sa section ou sa partie.
+CREATE TABLE IF NOT EXISTS cpge_noeuds (
+  id TEXT PRIMARY KEY,              -- ex. mpsi-mp2i.nombres-complexes.f
+  programme TEXT NOT NULL,
+  type TEXT NOT NULL,               -- section | sous-section
+  parent_id TEXT,
+  partie TEXT,                      -- grande partie : Premier semestre, Programme…
+  semestre INTEGER,                 -- 1 | 2 en première année, sinon NULL
+  lettre TEXT,                      -- a, b… pour une sous-section
+  titre TEXT NOT NULL,              -- titre officiel, LaTeX compris
+  texte TEXT,                       -- bandeau et notes, en Markdown
+  contenus TEXT NOT NULL DEFAULT '[]', -- JSON : [{contenu, commentaire}]
+  ordre INTEGER NOT NULL            -- ordre dans le texte officiel
+);
+
+CREATE INDEX IF NOT EXISTS idx_cpge_noeuds_programme ON cpge_noeuds(programme, ordre);
+CREATE INDEX IF NOT EXISTS idx_cpge_noeuds_parent ON cpge_noeuds(parent_id);
+CREATE INDEX IF NOT EXISTS idx_cpge_filieres_programme ON cpge_filieres(programme);
+
+-- Rattachements des exercices aux nœuds, lus dans
+-- content/classifications/cpge/<source>/<uuid>.json. Filtrer une section
+-- entière suit parent_id, pas le préfixe : l'identifiant d'une partie « A - »
+-- ne prolonge pas celui de sa section générale.
+--   WITH RECURSIVE sous(id) AS (SELECT :id UNION ALL
+--     SELECT n.id FROM cpge_noeuds n JOIN sous ON n.parent_id = sous.id)
+--   SELECT uuid FROM exercise_cpge WHERE noeud_id IN (SELECT id FROM sous)
+CREATE TABLE IF NOT EXISTS exercise_cpge (
+  uuid TEXT NOT NULL,
+  noeud_id TEXT NOT NULL,
+  origine TEXT NOT NULL,            -- manuel | llm | concordance | chapitre
+  confiance REAL,                   -- 0..1, NULL pour un rattachement manuel
+  valide INTEGER NOT NULL DEFAULT 0, -- 1 : relu par un humain
+  PRIMARY KEY (uuid, noeud_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_exercise_cpge_noeud ON exercise_cpge(noeud_id);
