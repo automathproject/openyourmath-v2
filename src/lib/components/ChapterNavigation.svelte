@@ -273,9 +273,9 @@
               <span class="text-interface-text-disabled">-</span>
             {/if}
           </button>
-          <div class="nav-item-content" on:click={() => selectPath(level.name)}>
+          <button type="button" class="nav-item-content" on:click={() => selectPath(level.name)}>
             🎓 {level.name} ({level.exerciseCount})
-          </div>
+          </button>
         </div>
 
         {#if level.modules && expandedLevels.has(level.name)}
@@ -290,9 +290,9 @@
                     <span class="text-interface-text-disabled">-</span>
                   {/if}
                 </button>
-                <div class="nav-item-content" on:click={() => selectPath(level.name, module.name)}>
+                <button type="button" class="nav-item-content" on:click={() => selectPath(level.name, module.name)}>
                   📖 {module.name} ({module.exerciseCount})
-                </div>
+                </button>
               </div>
               
               {#if module.chapters && expandedModules.has(`${level.name}-${module.name}`)}
@@ -307,24 +307,25 @@
                            <span class="text-interface-text-disabled">-</span>
                         {/if}
                       </button>
-                      <div class="nav-item-content" on:click={() => selectPath(level.name, module.name, chapter.name)}>
+                      <button type="button" class="nav-item-content" on:click={() => selectPath(level.name, module.name, chapter.name)}>
                         📚 {chapter.name} ({chapter.exerciseCount})
-                      </div>
+                      </button>
                     </div>
 
                     {#if chapter.subchapters && expandedChapters.has(`${level.name}-${module.name}-${chapter.name}`)}
                       <div class="nav-sublist">
                         <!-- Boucle sur les Sous-chapitres -->
                         {#each chapter.subchapters as subchapter (subchapter.name)}
-                          <div 
-                            class="nav-item" 
+                          <button
+                            type="button"
+                            class="nav-item"
                             class:is-active={selectedPath.subchapter === subchapter.name && selectedPath.chapter === chapter.name}
                             on:click={() => selectPath(level.name, module.name, chapter.name, subchapter.name)}>
                             <span class="w-7 text-center text-interface-text-disabled">-</span>
-                            <div class="nav-item-content">
+                            <span class="nav-item-content">
                               {subchapter.name} ({subchapter.exerciseCount})
-                            </div>
-                          </div>
+                            </span>
+                          </button>
                         {/each}
                       </div>
                     {/if}
@@ -380,10 +381,12 @@
     flex-shrink: 0;
   }
 
+  /* Boutons, pour le clavier : le texte reste aligné à gauche. */
   .nav-item-content {
     flex: 1;
     min-width: 0;
     margin-left: 0.25rem;
+    text-align: left;
     cursor: pointer;
   }
 

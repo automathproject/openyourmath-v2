@@ -296,13 +296,18 @@
 </header>
 
 {#if showVideoModal && canDisplayVideoAction}
-  <div class="video-modal-backdrop" role="presentation" on:click={closeVideoModal}>
+  <!-- Seul un clic sur le fond ferme la vidéo ; Échap est géré par la fenêtre. -->
+  <div
+    class="video-modal-backdrop"
+    role="presentation"
+    on:click={(event) => event.target === event.currentTarget && closeVideoModal()}
+  >
     <div
       class="video-modal-dialog"
       role="dialog"
       aria-modal="true"
       aria-label="Vidéo associée à l'exercice"
-      on:click|stopPropagation
+      tabindex="-1"
     >
       <button
         type="button"
@@ -458,16 +463,6 @@
     margin-bottom: 1rem;
   }
 
-  .exercise-badge {
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-  .exercise-badge--chapter { background: rgb(219 234 254); color: rgb(30 64 175); }
-  .exercise-badge--theme { background: rgb(237 233 254); color: rgb(91 33 182); }
-  .exercise-badge--module { background: rgb(243 244 246); color: rgb(55 65 81); }
-  .exercise-badge--level { background: rgb(240 253 244); color: rgb(22 101 52); }
   .exercise-difficulty { display: flex; align-items: center; gap: 0.5rem; }
 
   .exercise-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
@@ -511,7 +506,6 @@
 
   /* Preview context */
   .exercise-header.is-preview { font-size: 0.9em; }
-  .exercise-header.is-preview .exercise-badge,
   .exercise-header.is-preview .action-button,
   .exercise-header.is-preview .exercise-title,
   .exercise-header.is-preview .exercise-metadata { font-size: inherit !important; }

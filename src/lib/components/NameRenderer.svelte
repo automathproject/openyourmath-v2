@@ -42,7 +42,20 @@
     </button>
 
     {#if open}
-      <div class="name-renderer__license" role="dialog" aria-live="polite" on:click|stopPropagation>
+      <!-- Placé dans une carte cliquable (ResultCard) : ni un clic ni une touche
+           sur la licence ou le lien de contact ne doivent ouvrir l'exercice. -->
+      <div
+        class="name-renderer__license"
+        role="dialog"
+        aria-label={`Licence de ${author}`}
+        aria-live="polite"
+        tabindex="-1"
+        on:click|stopPropagation
+        on:keydown={(event) => {
+          event.stopPropagation();
+          if (event.key === 'Escape') close();
+        }}
+      >
         {#if licenseCode}
           <span class="name-renderer__badge">🔖 </span>
           {#if licenseUrl}

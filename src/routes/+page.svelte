@@ -551,7 +551,6 @@
             <div class="sidebar-breadcrumb">
               <span class="sidebar-breadcrumb-label">Filtrer par</span>
               <BreadcrumbNav
-                query={$searchQuery}
                 filters={$filters}
                 resultPathCounts={$resultPathCounts}
                 on:navigate={handleChapterNavigation}

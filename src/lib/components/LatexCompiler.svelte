@@ -4,7 +4,7 @@
   seule autorisée à joindre le service de compilation configuré.
 -->
 <script>
-  import { onDestroy, onMount } from "svelte";
+  import { onDestroy, onMount, untrack } from "svelte";
   import { parseLatexDiagnostics } from "$lib/latex/diagnostics.js";
 
   /** @type {HTMLElement} */
@@ -23,8 +23,9 @@
     onedit = undefined,
   } = $props();
 
-  let editableSource = $state(source);
-  let previousSource = $state(source);
+  // Valeurs initiales seulement : l'effet ci-dessous suit ensuite source.
+  let editableSource = $state(untrack(() => source));
+  let previousSource = $state(untrack(() => source));
   let pdfUrl = $state("");
   let compiledSource = $state("");
   let rawLog = $state("");

@@ -2,7 +2,6 @@
   import { createEventDispatcher, onDestroy, onMount } from 'svelte';
   import { browser } from '$app/environment';
 
-  export let query = '';
   export let filters = {};
   // Comptages issus des résultats courants (null = pas de recherche active → fallback structure).
   export let resultPathCounts = null;
