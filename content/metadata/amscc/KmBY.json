@@ -1,0 +1,30 @@
+{
+  "uuid": "KmBY",
+  "source_path": "amscc/KmBY.tex",
+  "summary": "L'exercice demande de montrer qu'un perceptron simple ne peut pas réaliser la classification XOR (ou exclusif) en séparant linéairement les points (1,0) et (0,1) d'une part, et (0,0) et (1,1) d'autre part. Ensuite, il s'agit de construire un réseau de neurones multicouche avec une couche cachée pour résoudre ce problème de classification.",
+  "concepts": [
+    "fonction affine",
+    "classification linéaire",
+    "limites des perceptrons",
+    "réseau de neurones multicouche",
+    "fonction d'activation",
+    "biais",
+    "opération logique OU"
+  ],
+  "methods": [
+    "analyse de la linéarité",
+    "construction de neurones cachés",
+    "combinaison de sorties neuronales",
+    "utilisation de la fonction de Heaviside"
+  ],
+  "objects": [
+    "perceptron",
+    "fonction affine",
+    "neurones cachés",
+    "réseau multicouche",
+    "points de classification"
+  ],
+  "content_hash": "265ecf6fe10ae121975eb0987e4977a9116ce97d1e8fd1247e48f92a904127c0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:41:05.969Z"
+}

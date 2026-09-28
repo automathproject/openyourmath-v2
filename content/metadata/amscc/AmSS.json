@@ -1,0 +1,29 @@
+{
+  "uuid": "AmSS",
+  "source_path": "amscc/AmSS.tex",
+  "summary": "L'exercice demande de trouver les extrema d'une fonction de deux variables sur un triangle fermé borné. Il s'agit d'optimiser une fonction quadratique sous contrainte géométrique.",
+  "concepts": [
+    "optimisation sous contrainte",
+    "extrema d'une fonction",
+    "continuité",
+    "compact",
+    "gradient",
+    "frontière d'un domaine",
+    "fonction quadratique"
+  ],
+  "methods": [
+    "étude des extrema sur la frontière",
+    "paramétrisation des côtés",
+    "calcul du gradient",
+    "comparaison des valeurs extrêmes"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "triangle dans le plan",
+    "points critiques",
+    "frontière d'un domaine"
+  ],
+  "content_hash": "bd95a72c38279a539d7d4931aca9f561428b49747e73319c424094882225e48f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:40:35.420Z"
+}

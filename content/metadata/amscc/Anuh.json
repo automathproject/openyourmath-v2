@@ -1,0 +1,28 @@
+{
+  "uuid": "Anuh",
+  "source_path": "amscc/Anuh.tex",
+  "summary": "L'exercice étudie la convergence d'une méthode de descente de gradient à pas constant pour une fonction quadratique de deux variables. Il demande de calculer le gradient, d'établir des relations de récurrence sur les écarts aux coordonnées du minimum, puis d'analyser l'impact du choix du pas d'apprentissage sur la stabilité de l'algorithme.",
+  "concepts": [
+    "gradient",
+    "descente de gradient",
+    "pas d'apprentissage",
+    "convergence d'une suite",
+    "fonction quadratique",
+    "minimum d'une fonction"
+  ],
+  "methods": [
+    "calcul du gradient",
+    "analyse de stabilité",
+    "calcul itératif",
+    "étude de relations de récurrence"
+  ],
+  "objects": [
+    "fonction de deux variables",
+    "suite de points",
+    "écart au minimum",
+    "pas constant"
+  ],
+  "content_hash": "c8d8d4e4b7e3fb5fd430d38637255d4ed7c2045c242d7b86d0024556a4a8d4c1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:40:38.201Z"
+}

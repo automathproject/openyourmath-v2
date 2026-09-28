@@ -1,28 +1,26 @@
 {
   "uuid": "x1xF",
   "source_path": "exo7/4-L2/x1xF.tex",
-  "summary": "L'exercice demande de déterminer la structure de corps à 4 éléments, en identifiant les opérations d'addition et de multiplication sur cet ensemble.",
+  "summary": "L'exercice demande de déterminer les structures de corps à 4 éléments, en explicitant les tables d'addition et de multiplication associées.",
   "concepts": [
     "corps fini",
     "groupe multiplicatif",
-    "table de Cayley",
+    "table de multiplication",
+    "table d'addition",
     "élément neutre",
-    "élément inversible",
-    "structure algébrique"
+    "élément inversible"
   ],
   "methods": [
-    "construction explicite",
-    "vérification des propriétés de corps",
-    "calcul des tables d'addition et de multiplication"
+    "construction explicite des opérations",
+    "vérification des axiomes de corps",
+    "identification des générateurs"
   ],
   "objects": [
     "corps à 4 éléments",
     "éléments {0,1,a,b}",
-    "tables d'opérations"
+    "groupe multiplicatif {1,a,a²}"
   ],
-  "content_hash": "30e4cee937344a7710bfca313f9d0c30b71e0a7f71d7f46d17b11961d372dafb",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:22:07.826Z",
-  "previous_content_hash": "0e8b2110c95d5f32210ebfaa3e40b669f8e3a70d08127843f54cc91bbd426304",
-  "revalidated_at": "2026-09-01T13:56:32.880Z"
+  "content_hash": "bcc85d44c2460416aaefe97acb2745ce754e0dee56de4afc7da04dc00ef85bc2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:40:06.640Z"
 }

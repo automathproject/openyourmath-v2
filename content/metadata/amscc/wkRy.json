@@ -1,0 +1,31 @@
+{
+  "uuid": "wkRy",
+  "source_path": "amscc/wkRy.tex",
+  "summary": "L'exercice demande d'ajuster une droite de régression linéaire aux observations (0,0) et (1,1) en minimisant une fonction de coût incluant un terme de pénalisation sur la pente. Il s'agit d'identifier les composantes de la fonction de coût, de trouver le modèle optimal sans pénalisation, puis d'analyser l'effet de la pénalisation sur la pente et les prédictions.",
+  "concepts": [
+    "régression linéaire",
+    "moindres carrés",
+    "pénalisation",
+    "optimisation",
+    "gradient",
+    "hessienne",
+    "définie positive",
+    "système linéaire"
+  ],
+  "methods": [
+    "calcul de gradient",
+    "résolution de système linéaire",
+    "analyse de la hessienne",
+    "minimisation de fonction quadratique"
+  ],
+  "objects": [
+    "fonction de coût",
+    "droite de régression",
+    "pente",
+    "erreur de prédiction",
+    "matrice hessienne"
+  ],
+  "content_hash": "d69954c72cfbbeba7838937606b30b56b1ca3018b6f44c29fada41d2033a7e5d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:40:41.400Z"
+}

@@ -1,25 +1,28 @@
 {
   "uuid": "3337",
   "source_path": "crouzet/pcsi/04/3337.tex",
-  "summary": "L'exercice demande de déterminer l'existence de polynômes du troisième degré vérifiant des conditions spécifiques sur leurs valeurs et dérivées en certains points.",
+  "summary": "L'exercice demande de déterminer l'existence de polynômes du troisième degré vérifiant des conditions spécifiques sur leurs valeurs et dérivées en certains points. Il explore aussi l'unicité d'un polynôme satisfaisant des contraintes sur ses valeurs en entiers consécutifs.",
   "concepts": [
-    "système d'équations linéaires",
     "polynôme du troisième degré",
-    "conditions initiales",
-    "dérivée première",
-    "algèbre linéaire"
+    "système d'équations linéaires",
+    "conditions de continuité",
+    "dérivée",
+    "unicité de la solution",
+    "interpolation polynomiale"
   ],
   "methods": [
     "résolution de système linéaire",
     "substitution",
-    "élimination de variables"
+    "élimination de variables",
+    "calcul de dérivée"
   ],
   "objects": [
-    "polynôme de degré 3",
+    "polynôme à coefficients réels",
     "système d'équations",
-    "conditions aux limites"
+    "valeurs en points spécifiques",
+    "dérivée première"
   ],
-  "content_hash": "4ea2530e2c8c2fef69df525473d1ddeb29273704a718a446bc2436d3a403e05b",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T14:14:43.829Z"
+  "content_hash": "ab44a7249d410a35f03fee08d1c2df1bfd5c1525c54d717cc2ddfb884881c378",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:41:26.667Z"
 }

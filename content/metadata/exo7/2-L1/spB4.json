@@ -1,36 +1,35 @@
 {
   "uuid": "spB4",
   "source_path": "exo7/2-L1/spB4.tex",
-  "summary": "L'exercice propose d'étudier six fonctions réelles différentes (f1 à f6) en analysant leur domaine de définition, leur continuité, leur dérivabilité, leurs limites, leurs variations et leurs asymptotes. Chaque fonction présente des particularités spécifiques nécessitant des techniques d'analyse adaptées.",
+  "summary": "Étude et traçage des graphes de six fonctions réelles, dont certaines impliquent des valeurs absolues, des logarithmes, des exponentielles, des fonctions trigonométriques et des racines carrées. Les fonctions sont définies sur des intervalles variés et nécessitent l'analyse de leur continuité, dérivabilité, limites et asymptotes.",
   "concepts": [
     "fonction continue",
     "fonction dérivable",
     "limite de fonction",
     "asymptote",
-    "variation de fonction",
-    "domaine de définition",
     "fonction paire",
-    "fonction périodique"
+    "fonction périodique",
+    "fonction strictement croissante/décroissante",
+    "tangente à une courbe"
   ],
   "methods": [
-    "décomposition en cas selon la valeur de x",
-    "étude des limites",
-    "calcul de dérivées",
-    "analyse des variations",
+    "décomposition en cas selon les valeurs de x",
+    "calcul de dérivée",
+    "étude de limites",
+    "analyse de variations",
     "utilisation de la parité",
-    "étude des asymptotes",
+    "linéarisation de logarithmes",
     "simplification algébrique"
   ],
   "objects": [
-    "fonction réelle",
-    "tableau de variations",
-    "courbe représentative",
-    "limite infinie",
-    "tangente",
-    "asymptote oblique",
-    "point de discontinuité"
+    "fonction à valeurs absolues",
+    "fonction logarithme",
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "fonction racine carrée",
+    "fonction rationnelle"
   ],
-  "content_hash": "a685f6ea106401892a85f399f6c92c88881470a2d140ed1d0c6f34e4437c2bdd",
+  "content_hash": "4f34ace56828fef49791f633a1b3b5abfd36143b4af7d08f3ff6c12dbded71a7",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:48:00.967Z"
+  "indexed_at": "2026-09-28T08:39:31.977Z"
 }

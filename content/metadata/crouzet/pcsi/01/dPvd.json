@@ -1,13 +1,14 @@
 {
   "uuid": "dPvd",
   "source_path": "crouzet/pcsi/01/dPvd.tex",
-  "summary": "L'exercice demande de calculer les intersections et unions d'ensembles finis donnés, ainsi que leurs complémentaires dans un ensemble universel. Les ensembles sont définis explicitement par leurs éléments.",
+  "summary": "L'exercice demande de calculer les intersections et unions d'ensembles finis donnés, ainsi que leurs complémentaires dans un ensemble de référence. Les ensembles sont définis explicitement par leurs éléments.",
   "concepts": [
     "ensemble",
     "intersection",
     "union",
-    "complémentaire d'un ensemble",
-    "ensemble universel",
+    "complémentaire",
+    "inclusion",
+    "partie d'un ensemble",
     "opérations ensemblistes"
   ],
   "methods": [
@@ -17,10 +18,10 @@
   ],
   "objects": [
     "ensemble fini",
-    "ensemble universel",
-    "complémentaire"
+    "éléments d'un ensemble",
+    "complémentaire d'un ensemble"
   ],
-  "content_hash": "137c331dbd02a278971e7624c8119b3cc408a47de5313fc6383ecf39f90c6fd0",
+  "content_hash": "e8ca3dbc17b89399740b0cb1722c7104932f22750ca65ee45f3df32d8a9baddd",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-15T18:37:34.333Z"
+  "indexed_at": "2026-09-28T08:41:39.914Z"
 }

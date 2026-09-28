@@ -1,14 +1,14 @@
 {
   "uuid": "ZbmD",
   "source_path": "crouzet/pcsi/06/ZbmD.tex",
-  "summary": "Résoudre six inégalités impliquant des polynômes, des fractions rationnelles, des fonctions logarithmiques et exponentielles. Les inégalités portent sur des expressions algébriques ou transcendantes.",
+  "summary": "Résoudre plusieurs inégalités impliquant des polynômes, des fractions rationnelles, des fonctions exponentielles et logarithmiques. Les inégalités portent sur des expressions algébriques ou transcendantes.",
   "concepts": [
     "inéquation",
     "tableau de signes",
-    "discriminant",
-    "fonction logarithme",
-    "fonction exponentielle",
     "racines d'un polynôme",
+    "discriminant",
+    "fonction exponentielle",
+    "fonction logarithme",
     "croissance stricte"
   ],
   "methods": [
@@ -16,17 +16,16 @@
     "tableau de signes",
     "résolution d'inéquation",
     "utilisation du discriminant",
-    "propriétés des fonctions logarithmes",
-    "propriétés des fonctions exponentielles"
+    "transformation exponentielle-logarithmique"
   ],
   "objects": [
     "polynôme du second degré",
     "fraction rationnelle",
-    "fonction logarithme",
     "fonction exponentielle",
+    "fonction logarithme",
     "inéquation"
   ],
-  "content_hash": "4f9f9887dff06a91055490e6fbd8729eb1bd88b9354b06558300b6695a8de317",
+  "content_hash": "aef57b7a3173d30eb2ec3cc0076e59d37ecfea1c29f2ad38a14303ccae4cb225",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-15T18:30:34.860Z"
+  "indexed_at": "2026-09-28T08:40:19.275Z"
 }

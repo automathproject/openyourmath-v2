@@ -1,21 +1,21 @@
 {
   "uuid": "aOYg",
   "source_path": "amscc/aOYg.tex",
-  "summary": "L'exercice étudie une matrice pentadiagonale Aε et son comportement dans le cadre de la résolution de systèmes linéaires par méthodes itératives. Il demande d'analyser la dominance diagonale, le conditionnement, et la convergence de méthodes itératives comme Jacobi et Gauss-Seidel.",
+  "summary": "L'exercice étudie une matrice pentadiagonale Aε et son système linéaire associé. Il demande d'implémenter des fonctions Python pour générer la matrice et le second membre, d'analyser la dominance diagonale, de calculer le conditionnement, et d'appliquer les méthodes itératives de Jacobi et Gauss-Seidel pour résoudre le système.",
   "concepts": [
     "matrice pentadiagonale",
     "diagonale strictement dominante",
     "rayon spectral",
     "conditionnement d'une matrice",
+    "convergence des méthodes itératives",
     "méthode de Jacobi",
-    "méthode de Gauss-Seidel",
-    "convergence de méthodes itératives"
+    "méthode de Gauss-Seidel"
   ],
   "methods": [
     "calcul du rayon spectral",
     "analyse de la dominance diagonale",
-    "résolution par méthode itérative",
-    "programmation Python pour matrices"
+    "implémentation de méthodes itératives",
+    "résolution numérique de systèmes linéaires"
   ],
   "objects": [
     "matrice pentadiagonale",
@@ -23,9 +23,7 @@
     "matrice d'itération",
     "vecteur solution"
   ],
-  "content_hash": "1ed6bb1274644806be2379a9a1944978a68261a0401cdd0e98b8c68b50549d95",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T11:39:19.905Z",
-  "previous_content_hash": "19da606621f39e995be7c15e8ee7d6337d41dd8497a9168d447bc3cf9c13e915",
-  "revalidated_at": "2026-09-01T13:56:30.405Z"
+  "content_hash": "1f84359cca06d15a9d27a22f377241ceefcb0af6435a7dffe151770d0150005c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:41:17.297Z"
 }

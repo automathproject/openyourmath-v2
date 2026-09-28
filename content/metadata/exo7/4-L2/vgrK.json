@@ -1,30 +1,31 @@
 {
   "uuid": "vgrK",
   "source_path": "exo7/4-L2/vgrK.tex",
-  "summary": "Résolution de deux systèmes linéaires : le premier système à trois variables avec des coefficients hyperboliques, le second système à n variables avec des puissances croissantes de 1 à n-1.",
+  "summary": "Résoudre deux systèmes linéaires : le premier est un système de 3 équations à 3 inconnues avec des coefficients en cosinus hyperbolique, le second est un système de n équations à n inconnues avec des coefficients polynomiaux croissants.",
   "concepts": [
     "système linéaire",
     "rang d'une matrice",
-    "combinaison linéaire",
-    "polynôme caractéristique",
+    "opérateur différentiel",
+    "polynôme",
     "déterminant",
-    "opérateur différentiel"
+    "combinaison linéaire",
+    "système triangulaire"
   ],
   "methods": [
     "réduction de système",
     "opérateur de dérivation",
-    "méthode de récurrence",
-    "calcul de coefficients binomiaux"
+    "méthode des coefficients indéterminés",
+    "calcul de dérivées successives",
+    "résolution par substitution"
   ],
   "objects": [
-    "système linéaire à trois variables",
-    "système linéaire à n variables",
+    "matrice",
     "polynôme",
-    "opérateur T"
+    "système triangulaire",
+    "opérateur différentiel",
+    "suite de coefficients"
   ],
-  "content_hash": "cf2b355132f5932318972011f6461b9b1d58fe95e2211bdbb8d7da2cf349066d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:19:10.623Z",
-  "previous_content_hash": "a5d4a8cdd277baf1d1828b31865daf07715b3e605c906f3250b3afabad5f1a5b",
-  "revalidated_at": "2026-09-01T13:56:32.771Z"
+  "content_hash": "3c5189a50a387e9d711b9cf02171422d44d86c35e3a0924b0dd151b2042ef5de",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:39:48.563Z"
 }

@@ -1,25 +1,26 @@
 {
   "uuid": "CUkc",
   "source_path": "crouzet/pcsi/02/CUkc.tex",
-  "summary": "L'exercice demande de démontrer trois inégalités impliquant deux réels x et y, avec conditions d'égalité. La première inégalité concerne xy et (x²+y²)/2, la deuxième (x+y)² et 2(x²+y²), et la troisième (x/y + y/x) et 2 pour x et y strictement positifs.",
+  "summary": "L'exercice demande de démontrer trois inégalités impliquant deux réels x et y, avec conditions d'égalité. La première inégalité concerne xy et (x²+y²)/2, la seconde (x+y)² et 2(x²+y²), et la troisième (x/y + y/x) et 2 pour x et y strictement positifs.",
   "concepts": [
     "inégalité",
-    "carré d'un réel",
     "identité remarquable",
+    "carré d'un réel",
     "positivité",
-    "égalité si et seulement si"
+    "inégalité de Cauchy-Schwarz"
   ],
   "methods": [
     "développement d'expression",
-    "identité remarquable",
-    "simplification algébrique"
+    "factorisation",
+    "manipulation algébrique",
+    "analyse de signe"
   ],
   "objects": [
     "réels",
-    "expressions algébriques",
-    "inégalités"
+    "expression algébrique",
+    "inégalité"
   ],
-  "content_hash": "9f0245f82315f0466ff7c54949a172ecff32fde7de1c6f7dd61078863f43b238",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T02:29:30.694Z"
+  "content_hash": "30056302b7382aa4617539543d20b49c43124d4e725be3ebc352cf5e876ffb94",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:40:24.409Z"
 }

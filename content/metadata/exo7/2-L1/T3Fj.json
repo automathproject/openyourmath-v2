@@ -1,28 +1,28 @@
 {
   "uuid": "T3Fj",
   "source_path": "exo7/2-L1/T3Fj.tex",
-  "summary": "L'exercice demande de calculer l'aire d'une courbe paramétrée en deux façons : par intégration directe et en exploitant sa nature géométrique. La courbe est définie par des équations paramétriques en fonction de t et d'un paramètre λ.",
+  "summary": "L'exercice demande de calculer l'aire d'une courbe paramétrée en deux façons : par intégration directe et en exploitant sa nature géométrique. La courbe est définie par des fonctions trigonométriques avec un paramètre λ.",
   "concepts": [
     "courbe paramétrée",
     "aire sous une courbe",
     "intégrale paramétrique",
     "changement de variable",
-    "géométrie différentielle",
-    "paramétrisation cartésienne"
+    "paramétrisation cartésienne",
+    "géométrie différentielle"
   ],
   "methods": [
-    "intégration par paramétrisation",
-    "reconnaissance de conique",
-    "calcul d'intégrale trigonométrique",
-    "simplification algébrique"
+    "intégration paramétrique",
+    "changement de variable trigonométrique",
+    "calcul d'aire par paramétrisation",
+    "reconnaissance de conique"
   ],
   "objects": [
     "courbe paramétrée",
-    "aire plane",
     "intégrale définie",
-    "paramètre λ"
+    "paramètre λ",
+    "aire plane"
   ],
-  "content_hash": "00fec78f1cab9dbfb18156b9220942ac33d925dfbb649db71ab7631a6e5e3df8",
+  "content_hash": "abd9d67c92400c082fcfb1c62c46edf2427fc1a1ce0738fcf883e654de5e9ed1",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-15T18:24:55.460Z"
+  "indexed_at": "2026-09-28T08:39:28.010Z"
 }

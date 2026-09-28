@@ -1,15 +1,14 @@
 {
   "uuid": "ZMBI",
   "source_path": "amscc/ZMBI.tex",
-  "summary": "L'exercice demande d'estimer la proportion de filles parmi n naissances en utilisant des propriétés d'espérance et de variance, puis d'appliquer l'inégalité de Bienaymé-Tchebychev pour déterminer un intervalle de confiance et le nombre minimal d'observations nécessaires pour une conclusion statistique fiable.",
+  "summary": "L'exercice demande d'étudier la proportion de filles parmi n naissances, en calculant son espérance et sa variance, puis en utilisant l'inégalité de Bienaymé-Tchebychev pour déterminer un intervalle de confiance et le nombre minimal d'observations nécessaires pour conclure avec une probabilité donnée.",
   "concepts": [
     "loi binomiale",
-    "espérance mathématique",
-    "variance",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
     "inégalité de Bienaymé-Tchebychev",
     "intervalle de confiance",
-    "probabilité conditionnelle",
-    "approximation de loi"
+    "approximation de probabilité"
   ],
   "methods": [
     "calcul d'espérance",
@@ -20,12 +19,10 @@
   "objects": [
     "variable aléatoire binomiale",
     "proportion de filles",
-    "nombre de naissances",
-    "intervalle de confiance"
+    "intervalle de confiance",
+    "nombre de naissances"
   ],
-  "content_hash": "080aa320d43712d4105e2c8e38457ff743cfe84695aedc7af25394c49e774271",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:31:34.078Z",
-  "previous_content_hash": "43b1f3cf63f9f20b98515ef4fe9c413eb44aae6eea10f8da27f85d95daec4c56",
-  "revalidated_at": "2026-09-01T13:56:30.352Z"
+  "content_hash": "499b7a8d16ef301f1a2a1178c8d194bfb15153c121a1ba02d11b5e375f662596",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:41:20.416Z"
 }

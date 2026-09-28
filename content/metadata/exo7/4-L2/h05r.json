@@ -1,25 +1,27 @@
 {
   "uuid": "h05r",
   "source_path": "exo7/4-L2/h05r.tex",
-  "summary": "L'exercice demande de démontrer une relation algébrique entre les déterminants de paires de vecteurs dans un espace vectoriel de dimension 2, puis de montrer l'existence de vecteurs satisfaisant une condition donnée sur ces déterminants.",
+  "summary": "L'exercice demande de démontrer une identité algébrique impliquant des déterminants de paires de vecteurs dans un espace vectoriel de dimension 2, puis de montrer l'existence de vecteurs satisfaisant une condition donnée sur leurs déterminants. Le contexte est purement algébrique.",
   "concepts": [
     "déterminant",
     "espace vectoriel de dimension 2",
-    "famille libre",
-    "relation algébrique",
-    "construction explicite de vecteurs"
+    "base d'un espace vectoriel",
+    "combinaison linéaire",
+    "système d'équations linéaires",
+    "liberté linéaire"
   ],
   "methods": [
     "calcul de déterminant",
-    "construction de vecteurs à partir de conditions",
-    "manipulation algébrique"
+    "combinaison linéaire de vecteurs",
+    "résolution de système linéaire",
+    "construction explicite de vecteurs"
   ],
   "objects": [
-    "vecteurs",
+    "vecteurs d'un espace vectoriel",
     "déterminants de paires de vecteurs",
-    "scalaires"
+    "scalaires associés à des déterminants"
   ],
-  "content_hash": "cbe2fe57312e4b23d4cd8104d882c029232d84ff07d3069704641065313867bf",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-28T18:03:24.389Z"
+  "content_hash": "5895a650199c744a8fd51b7d37c149bb3321b93917f433af4db8d7a70e5cbb1f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:39:42.828Z"
 }

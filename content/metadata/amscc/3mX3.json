@@ -1,0 +1,29 @@
+{
+  "uuid": "3mX3",
+  "source_path": "amscc/3mX3.tex",
+  "summary": "L'exercice compare deux modèles linéaires (f1(x)=x et f2(x)=2x) en utilisant deux critères de perte différents : la somme des carrés des résidus et la somme des valeurs absolues des résidus, sur un jeu de données contenant une mesure aberrante.",
+  "concepts": [
+    "régression linéaire",
+    "résidu",
+    "fonction de perte",
+    "somme des carrés des résidus",
+    "somme des valeurs absolues des résidus",
+    "mesure aberrante",
+    "optimisation"
+  ],
+  "methods": [
+    "calcul de résidus",
+    "évaluation de critères de perte",
+    "comparaison de modèles"
+  ],
+  "objects": [
+    "modèle linéaire",
+    "résidu",
+    "somme des carrés des résidus",
+    "somme des valeurs absolues des résidus",
+    "mesure aberrante"
+  ],
+  "content_hash": "4087f81f6aceba4186e5826a3e4c45fb38816aacb5aa6803de54cbb912eddefd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-09-28T08:40:33.145Z"
+}

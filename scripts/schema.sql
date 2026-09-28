@@ -49,6 +49,9 @@ CREATE TABLE IF NOT EXISTS exercise_embeddings (
   embedding_summary BLOB NOT NULL,
   model_version TEXT NOT NULL DEFAULT 'BAAI/bge-m3',
   dimension INTEGER NOT NULL DEFAULT 1024,
+  -- Empreinte du contenu dont le vecteur est issu : un vecteur est à jour si
+  -- elle égale exercises.content_hash, indépendamment des métadonnées.
+  content_hash TEXT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (uuid) REFERENCES exercises(uuid) ON DELETE CASCADE
 );
