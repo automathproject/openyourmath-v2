@@ -209,6 +209,8 @@
         </div>
       </div>
 
+      <!-- Zone défilante : focusable pour la parcourir au clavier. -->
+      <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
       <div
         class="editor-body"
         bind:this={bodyEl}

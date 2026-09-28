@@ -1784,12 +1784,12 @@
       
       <!-- Overlay pour mobile (navigation, UUID control, partage) -->
       {#if sharedButtonsVisible && (isMobileNavOpen || showUuidControl || showSharePanel) && isMobile}
-        <div class="mobile-overlay" on:click={handleOverlayClick}></div>
+        <div class="mobile-overlay" role="presentation" on:click={handleOverlayClick}></div>
       {/if}
 
       <!-- Overlay pour UUID control / partage sur desktop -->
       {#if sharedButtonsVisible && (showUuidControl || showSharePanel) && !isMobile}
-        <div class="desktop-uuid-overlay" on:click={handleOverlayClick}></div>
+        <div class="desktop-uuid-overlay" role="presentation" on:click={handleOverlayClick}></div>
       {/if}
       
       <!-- Colonne d'affichage -->
@@ -2303,8 +2303,11 @@
 
     <!-- Slide canvas -->
     <div class="presenter-slide-wrap">
+    <!-- Le balayage tactile double les flèches du clavier. -->
     <div
       class="presenter-slide"
+      role="region"
+      aria-label="Diapositive"
       bind:this={presenterSlideEl}
       on:scroll={checkPresenterOverflow}
       on:touchstart={handlePresenterTouchStart}
@@ -2905,9 +2908,6 @@
 
   .list-action-btn--primary { @apply bg-brand-600 text-white; }
   .list-action-btn--primary:hover { @apply bg-brand-700; }
-
-  .list-action-btn--secondary { @apply bg-interface-bg-secondary text-interface-text-secondary; }
-  .list-action-btn--secondary:hover { @apply bg-interface-bg-tertiary; }
 
   .list-action-btn--danger { @apply bg-error-500 text-white; }
   .list-action-btn--danger:hover { @apply bg-error-600; }

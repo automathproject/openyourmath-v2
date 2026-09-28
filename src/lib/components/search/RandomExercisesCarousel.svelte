@@ -104,12 +104,19 @@
     <div class="random-carousel__error">{randomError}</div>
   {/if}
 
+  <!-- Le défilement s'arrête sous la souris comme sous le focus clavier. -->
   <div
     class="random-carousel__track"
+    role="region"
+    aria-label="Exercices au hasard"
     aria-live="polite"
     bind:this={carouselTrack}
     on:mouseenter={stopAutoScroll}
     on:mouseleave={startAutoScroll}
+    on:focusin={stopAutoScroll}
+    on:focusout={(event) => {
+      if (!carouselTrack.contains(event.relatedTarget)) startAutoScroll();
+    }}
   >
     {#if randomLoading && randomExercises.length === 0}
       {#each Array(6) as _}
