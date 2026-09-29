@@ -3,6 +3,10 @@
 // (scripts/utils/parse-programme-cpge.js), cohérence du corpus réel, lecture
 // des rattachements et écriture en base (scripts/build-referentiel-cpge.js).
 //
+// Les programmes viennent d'exobase (content/referentials/cpge/, importé par
+// pnpm sync:exobase), qui en valide la structure. Le rendu KaTeX des formules,
+// qui demande une dépendance absente d'exobase, se vérifie ici.
+//
 // L'instantané __snapshots__/cpge-identifiants.txt fige la liste des
 // identifiants : les rattachements d'exercices en dépendent, toute
 // modification doit donc être délibérée (`npx vitest run -u` après relecture).
@@ -13,6 +17,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import Database from 'better-sqlite3';
+import katex from 'katex';
 
 import { parseProgramme, parseFrontMatter, semestreFromPartie } from '../../scripts/utils/parse-programme-cpge.js';
 import {
@@ -20,6 +25,7 @@ import {
   collectRattachements,
   insertReferentiel
 } from '../../scripts/build-referentiel-cpge.js';
+import { REFERENTIEL_CPGE_ROOT } from '../../scripts/utils/content-paths.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
@@ -171,7 +177,7 @@ Le but de cette section est **substantiel**.
   });
 });
 
-describe('référentiel réel (content/referentiels/cpge)', () => {
+describe('référentiel réel (content/referentials/cpge)', () => {
   const referentiel = collectReferentiel();
 
   it('se lit sans erreur ni avertissement', () => {
@@ -189,6 +195,37 @@ describe('référentiel réel (content/referentiels/cpge)', () => {
       .filter(node => node.type === 'sous-section')
       .filter(node => node.id !== `${node.parent_id}.${node.lettre}`);
     expect(incoherent.map(node => node.id)).toEqual([]);
+  });
+
+  it('rend chaque formule avec KaTeX', () => {
+    const failures = [];
+    const render = (tex, displayMode, where) => {
+      try {
+        katex.renderToString(tex, { displayMode, throwOnError: true, strict: 'ignore' });
+      } catch (error) {
+        failures.push(`${where} : ${error.message.split('\n')[0]}`);
+      }
+    };
+    const dir = path.join(REFERENTIEL_CPGE_ROOT, 'programmes');
+    let count = 0;
+    for (const file of fs.readdirSync(dir).filter(name => name.endsWith('.md'))) {
+      const text = fs.readFileSync(path.join(dir, file), 'utf8').replace(/^---\n[\s\S]*?\n---\n/, '');
+      // Formules isolées d'abord, sur leurs propres lignes, puis formules en ligne.
+      const inline = text.replace(/^\$\$\n([\s\S]*?)\n\$\$$/gm, (_, tex) => {
+        count++;
+        render(tex, true, file);
+        return '';
+      });
+      inline.split('\n').forEach((line, index) => {
+        const parts = line.replace(/\\\$/g, '').split('$');
+        for (let k = 1; k < parts.length; k += 2) {
+          count++;
+          render(parts[k], false, `${file}:${index + 1}`);
+        }
+      });
+    }
+    expect(failures).toEqual([]);
+    expect(count).toBeGreaterThan(5000);
   });
 
   it('garde des identifiants stables (instantané versionné)', async () => {

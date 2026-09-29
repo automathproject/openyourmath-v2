@@ -2,8 +2,10 @@
 
 Ce répertoire contient les programmes officiels de mathématiques des classes
 préparatoires scientifiques, convertis en Markdown structuré. Ils servent de
-base au référentiel de classification CPGE des exercices (voir
-[docs/classification-cpge.md](../../../docs/classification-cpge.md)).
+base à la classification CPGE des exercices : chaque section et sous-section
+porte un identifiant stable auquel un exercice peut être rattaché (voir
+`content/classifications/cpge/README.md` et, pour la conception d'ensemble,
+`openyourmath-v2/docs/classification-cpge.md`).
 
 ## Contenu
 
@@ -26,10 +28,10 @@ Programmes en vigueur depuis la rentrée 2021 (1re année) et 2022 (2e année).
 Les PDF officiels ne sont pas versionnés. `sources.json` donne, pour chaque
 annexe d'arrêté, l'URL du PDF, la page du Bulletin officiel, le NOR, la date
 de l'arrêté et les pages converties. Pour les récupérer localement dans
-`sources/` (ignoré par Git) :
+`sources/raw/cpge/` (ignoré par Git) :
 
 ```bash
-pnpm fetch:programmes-cpge
+node tools/import/fetch_programmes_cpge.mjs
 ```
 
 Chaque PDF est l'annexe complète de l'arrêté (mathématiques, physique-chimie,
@@ -174,29 +176,35 @@ lignes.
 ### Validation
 
 ```bash
-pnpm check:programmes-cpge
+node tools/check_programmes_cpge.mjs
 ```
 
-Le script (`scripts/quality/check-programmes-cpge.js`) vérifie les éléments
-suivants :
+Le script vérifie les éléments suivants :
 
-- le front matter ;
+- le front matter, et son accord avec `sources.json` (PDF cité, pages
+  converties) ;
 - l'unicité et la forme des identifiants, et la cohérence entre la lettre et
   l'identifiant ;
 - la présence d'un identifiant sur toute sous-section lettrée, toute partie
   « A - » et tout titre portant un tableau ;
 - que chaque ligne de tableau a exactement deux cellules ;
-- que chaque formule se rend avec KaTeX ;
+- l'équilibre des accolades dans chaque formule ;
 - l'absence de pieds de page et de césures résiduels.
 
-### Mise en base
+Le script n'a pas de dépendance ; le rendu KaTeX des formules est vérifié en
+aval par les tests d'OpenYourMath (`pnpm test`).
 
-`pnpm build:referentiel-cpge` (inclus dans `pnpm build:content`) lit ces
-fichiers et remplit les tables `cpge_programmes`, `cpge_filieres` et
-`cpge_noeuds`. Les identifiants sont figés par l'instantané
-`tests/build/__snapshots__/cpge-identifiants.txt` : en changer un, c'est casser
-les rattachements d'exercices qui y renvoient. Voir
-[docs/classification-cpge.md](../../../docs/classification-cpge.md).
+### Usage en aval
+
+OpenYourMath importe ce répertoire par `pnpm sync:exobase`, puis
+`pnpm build:referentiel-cpge` (inclus dans `pnpm build:content`) le lit et
+remplit ses tables `cpge_programmes`, `cpge_filieres` et `cpge_noeuds`.
+
+Les identifiants y sont figés par un instantané versionné
+(`tests/build/__snapshots__/cpge-identifiants.txt`). **Changer un identifiant,
+c'est casser les rattachements d'exercices qui y renvoient** : ajouter une
+section ne pose pas de problème, renommer ou supprimer demande de mettre à jour
+les rattachements dans le même commit.
 
 ### Fidélité
 

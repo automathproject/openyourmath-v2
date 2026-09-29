@@ -198,7 +198,7 @@ générés localement et embarqués dans l'image Docker au moment de la construc
 Voir `/docs` pour plus de détails.
 
 - [Ajouter et déployer un exercice](docs/ajouter-et-deployer-un-exercice.md) : procédure complète de contribution et publication.
-- [Classification CPGE](docs/classification-cpge.md) : conception du rattachement des exercices aux programmes de classes préparatoires (programmes officiels sous `content/referentiels/cpge/`).
+- [Classification CPGE](docs/classification-cpge.md) : conception du rattachement des exercices aux programmes de classes préparatoires (programmes officiels sous `content/referentials/cpge/`, importés d'exobase).
 - Scripts de debug/maintenance: `docs/debug-scripts.md`
 
 Raccourcis associés :
@@ -211,11 +211,13 @@ pnpm release:content           # teste, construit et pousse une release GHCR
 
 ## TODO
 
-- [ ] **Référentiel modules / chapitres / sous-chapitres** : créer un fichier
-  versionné (ex. `content/referentiel.json`, hiérarchie modules → chapitres →
-  sous-chapitres, niveaux optionnels) pour remplacer la taxonomie implicite de
-  la base, aujourd'hui bruitée (doublons de graphie type « Probabilités et
-  Statistique(s) », chapitres promus modules…). À brancher ensuite dans :
+- [ ] **Référentiel modules / chapitres / sous-chapitres** : brancher le
+  référentiel canonique d'exobase, désormais importé par la synchronisation
+  (`content/referentials/amscc/referentiel.md`, `content/referentials/exo7/`),
+  comme l'a été le référentiel CPGE (`scripts/build-referentiel-cpge.js`), pour
+  remplacer la taxonomie implicite de la base, aujourd'hui bruitée (doublons
+  de graphie type « Probabilités et Statistique(s) », chapitres promus
+  modules…). À brancher ensuite dans :
   - les suggestions IA de métadonnées de l'éditeur `/create`
     (`metadataTask()` dans `src/routes/api/create/assist/+server.js`, la base
     ne servant plus que de complément) ;

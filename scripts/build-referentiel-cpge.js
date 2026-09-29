@@ -4,8 +4,9 @@
 //
 // Construit le référentiel CPGE dans la base : tables `cpge_programmes`,
 // `cpge_filieres`, `cpge_noeuds` à partir de
-// content/referentiels/cpge/programmes/*.md, et `exercise_cpge` à partir des
-// rattachements de content/classifications/cpge/<source>/<uuid>.json.
+// content/referentials/cpge/programmes/*.md, et `exercise_cpge` à partir des
+// rattachements de content/classifications/cpge/<source>/<uuid>.json. Les deux
+// répertoires sont importés d'exobase par pnpm sync:exobase.
 //
 // Le Markdown fait autorité : un nœud est un titre qui porte un identifiant
 // `{#…}` (voir le README du référentiel et docs/classification-cpge.md). Un

@@ -1,7 +1,7 @@
 // scripts/utils/parse-programme-cpge.js
 //
 // Lit un programme officiel de CPGE converti en Markdown
-// (content/referentiels/cpge/programmes/*.md, format décrit dans le README du
+// (content/referentials/cpge/programmes/*.md, format décrit dans le README du
 // référentiel) et en extrait les nœuds rattachables : les titres qui portent
 // un identifiant `{#…}`.
 //

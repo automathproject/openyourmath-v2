@@ -27,8 +27,6 @@
     "build:tikz": "node scripts/build-tikz.js",
     "check:tex": "node scripts/quality/check-exercise-sources.js",
     "check:artifacts": "node scripts/quality/check-artifacts.js",
-    "check:programmes-cpge": "node scripts/quality/check-programmes-cpge.js",
-    "fetch:programmes-cpge": "node scripts/fetch-programmes-cpge.js",
     "test:tex": "node scripts/quality/check-exercise-sources.js",
     "fix:tex:det": "node scripts/quality/fix-exercise-sources-deterministic.js",
     "fix:tex:albert": "node scripts/quality/fix-exercise-sources-with-albert.js",

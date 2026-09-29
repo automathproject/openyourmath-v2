@@ -1,8 +1,9 @@
 # Classification CPGE des exercices
 
 Conception et état d'avancement. Les phases 0 (programmes officiels en
-Markdown, `content/referentiels/cpge/`) et 1 (référentiel en base) sont
-réalisées.
+Markdown) et 1 (référentiel en base) sont réalisées. Le référentiel et les
+rattachements relus appartiennent à exobase, et OpenYourMath les importe par
+`pnpm sync:exobase` ([sync-exobase.md](sync-exobase.md)).
 
 ## Constat
 
@@ -56,35 +57,49 @@ préparatoires :
    BCPST a un texte par année. On filtre par filière, qui se résout en un ou
    plusieurs programmes : `MP2I → mpsi-mp2i`, `MPI → mp-mpi`,
    `BCPST → bcpst1, bcpst2`.
-6. **Hors des sources `.tex`.** Les `.tex` appartiennent à exobase
-   ([sync-exobase.md](sync-exobase.md)). La classification CPGE est produite et
-   validée dans OpenYourMath, comme les métadonnées sémantiques. Elle est donc
-   versionnée ici, à côté de `content/metadata/`.
+6. **Le contenu à exobase, le dérivé à OpenYourMath.** Un rattachement relu
+   décrit l'exercice, comme `\module{}` ou `\chapitre{}`. Il doit suivre la
+   source vers tous les exports. exobase porte donc le référentiel et les
+   rattachements relus, dans des fichiers à part plutôt que dans les `.tex`.
+   OpenYourMath porte ce qui en dérive : la base, l'affichage et les
+   propositions automatiques tant qu'elles ne sont pas relues, comme les autres
+   métadonnées IA.
+
+| Élément                                         | Dépôt        | Chemin                                                                      |
+| ----------------------------------------------- | ------------ | --------------------------------------------------------------------------- |
+| Programmes, `sources.json`, format              | exobase      | `content/referentials/cpge/`                                                |
+| Validation de structure, téléchargement des PDF | exobase      | `tools/check_programmes_cpge.mjs`, `tools/import/fetch_programmes_cpge.mjs` |
+| Correspondance chapitres → sections (phase 2)   | exobase      | `content/referentials/`, à côté de `amscc-exo7-compatibility.json`          |
+| Rattachements relus                             | exobase      | `content/classifications/cpge/<source>/<uuid>.json`                         |
+| Propositions non relues (phase 2)               | OpenYourMath | `content/metadata/<source>/<uuid>.json`, champ `cpge`                       |
+| Analyseur, tables, build                        | OpenYourMath | `scripts/build-referentiel-cpge.js`                                         |
+| Rendu KaTeX, instantané des identifiants        | OpenYourMath | `tests/build/referentiel-cpge.test.js`                                      |
 
 ## Modèle de données
 
-### Référentiel : `content/referentiels/cpge/`
+### Référentiel : `content/referentials/cpge/`
+
+Importé d'exobase, avec les autres référentiels (AMSCC, Exo7, tables de
+compatibilité) :
 
 ```text
-content/referentiels/cpge/
+content/referentials/cpge/
 ├── README.md               format des programmes
 ├── sources.json            liens vers les annexes officielles (BO 2021)
-├── sources/*.pdf           PDF téléchargés (non versionnés,
-│                           pnpm fetch:programmes-cpge)
-├── programmes/
-│   ├── mpsi-mp2i.md        MPSI, MP2I — 1re année
-│   ├── pcsi.md             PCSI       — 1re année
-│   ├── ptsi.md             PTSI       — 1re année
-│   ├── bcpst1.md           BCPST      — 1re année
-│   ├── mp-mpi.md           MP, MPI    — 2e année
-│   ├── pc.md               PC         — 2e année
-│   ├── psi.md              PSI        — 2e année
-│   ├── pt.md               PT         — 2e année
-│   └── bcpst2.md           BCPST      — 2e année
-└── concordance.json        (phase 2) sections voisines entre programmes
-
-content/classifications/cpge/<source>/<uuid>.json   rattachements (phase 2)
+└── programmes/
+    ├── mpsi-mp2i.md        MPSI, MP2I — 1re année
+    ├── pcsi.md             PCSI       — 1re année
+    ├── ptsi.md             PTSI       — 1re année
+    ├── bcpst1.md           BCPST      — 1re année
+    ├── mp-mpi.md           MP, MPI    — 2e année
+    ├── pc.md               PC         — 2e année
+    ├── psi.md              PSI        — 2e année
+    ├── pt.md               PT         — 2e année
+    └── bcpst2.md           BCPST      — 2e année
 ```
+
+Les PDF officiels ne sont versionnés nulle part. exobase les télécharge au
+besoin dans `sources/raw/cpge/` (répertoire ignoré par Git).
 
 Le Markdown est la source de vérité. `scripts/utils/parse-programme-cpge.js`
 l'analyse : chaque titre `###` ou `####` qui porte un identifiant devient un
@@ -134,41 +149,43 @@ Lors d'une future réforme des programmes, on ajoute un nouveau jeu de fichiers
 (par exemple `programmes/2027/`). L'ancien reste en place tant que des
 rattachements pointent dessus.
 
-### Rattachements : `content/classifications/cpge/<source>/<uuid>.json`
+### Rattachements
 
-Un fichier par exercice, comme `content/metadata/`. Cela évite les conflits de
-fusion et suit le même cycle de vie :
+**Relus : `content/classifications/cpge/<source>/<uuid>.json`, dans exobase.**
+Il y a un fichier par exercice, ce qui évite les conflits de fusion. Le format
+est décrit dans le README de ce répertoire, dans exobase :
 
 ```json
 {
   "uuid": "abcd",
-  "content_hash": "…",
   "rattachements": [
     {
       "noeud": "mpsi-mp2i.nombres-complexes.f",
-      "origine": "llm",
-      "confiance": 0.86
+      "origine": "manuel",
+      "valide": true
     },
     {
       "noeud": "pcsi.nombres-complexes.f",
-      "origine": "concordance",
-      "confiance": 0.7
-    },
-    {
-      "noeud": "mp-mpi.structures-algebriques.a",
-      "origine": "manuel",
+      "origine": "llm",
+      "confiance": 0.86,
       "valide": true
     }
   ]
 }
 ```
 
-- `origine` vaut `manuel`, `llm`, `concordance` ou `chapitre` (a priori déduit
-  du chapitre universitaire).
-- `valide: true` marque une relecture humaine. Un rattachement validé n'est
-  jamais écrasé par un traitement automatique.
-- `content_hash` permet de reclasser les rattachements non validés quand
-  l'énoncé change, comme pour l'indexation sémantique.
+- `origine` dit comment le rattachement a d'abord été proposé : `manuel`,
+  `llm`, `concordance` ou `chapitre` (déduit du chapitre universitaire).
+- `valide: true` marque une relecture humaine : c'est le cas de tout fichier
+  d'exobase.
+
+**Proposés (phase 2) : `content/metadata/<source>/<uuid>.json`, dans
+OpenYourMath.** L'étiquetage automatique écrit ses propositions dans les
+métadonnées sémantiques de l'exercice, sous un champ `cpge`. Elles suivent le
+même cycle de vie que le résumé et les concepts : rattachées au `content_hash`,
+recalculées quand l'énoncé change. Une proposition acceptée à la relecture
+passe dans le fichier d'exobase par `pnpm sync:exobase:push`. Elle n'est
+ensuite plus jamais écrasée par un traitement automatique.
 
 ### SQLite
 
@@ -204,9 +221,11 @@ SELECT uuid FROM exercise_cpge WHERE noeud_id IN (SELECT id FROM sous);
 ## Alimentation
 
 1. **A priori par chapitre.** Une table de correspondance entre chapitres
-   universitaires et sections candidates part de
-   `scripts/chapitres_complet.json`, aujourd'hui inutilisé. Elle est maintenue
-   à la main (environ 140 chapitres) et sert à restreindre les candidats.
+   universitaires et sections candidates, rangée dans exobase à côté de
+   `amscc-exo7-compatibility.json`, sur le même modèle : une décision par
+   chapitre, y compris « pas d'équivalent ». Elle part des référentiels Exo7 et
+   AMSCC, maintenant importés dans `content/referentials/`, et sert à
+   restreindre les candidats.
 2. **Étiquetage par LLM.** On étend le pipeline B (`index-exercises.js`,
    Ollama puis Albert). Le modèle reçoit l'énoncé, le résumé et les concepts
    déjà calculés, ainsi que les seules sous-sections candidates, avec leurs
@@ -215,11 +234,13 @@ SELECT uuid FROM exercise_cpge WHERE noeud_id IN (SELECT id FROM sous);
 3. **Concordance.** On propage les rattachements vers les sections voisines
    des autres programmes, avec une confiance réduite.
 4. **Validation humaine.** Une vue de relecture par section de programme
-   permet d'accepter ou de rejeter les rattachements en série.
+   permet d'accepter ou de rejeter les propositions en série. Les
+   rattachements acceptés remontent dans exobase.
 5. **crouzet/pcsi.** Ces exercices suivent un cours de PCSI. Leurs 9 chapitres
-   se rattachent directement aux sections `pcsi.*` (origine `chapitre`, à
-   valider). La correction `\niveau{PCSI} → L1` se propose ensuite vers
-   exobase. D'ici là, les requêtes traitent `PCSI` comme un alias hérité.
+   se rattachent directement aux sections `pcsi.*` (origine `chapitre`). Ces
+   rattachements sont écrits dans exobase après relecture, avec la correction
+   `\niveau{PCSI} → L1`. D'ici là, les requêtes traitent `PCSI` comme un alias
+   hérité.
 
 ## Intégration dans l'application
 
@@ -227,8 +248,8 @@ SELECT uuid FROM exercise_cpge WHERE noeud_id IN (SELECT id FROM sous);
   niveau. On y parcourt filière → semestre (1re année) → section →
   sous-section, avec des compteurs. La page de section affiche le bandeau du
   programme officiel en introduction, un contenu que l'on a déjà gratuitement.
-- **Recherche** : paramètres `filiere=PCSI` et `cpge=<id de nœud ou de
-section>`. Le bouton « CPGE » de la barre latérale devient « a au moins un
+- **Recherche** : paramètres `filiere=PCSI` et `cpge=<nœud>`, où le nœud est
+  une section ou une sous-section. Le bouton « CPGE » de la barre latérale devient « a au moins un
   rattachement ».
 - **Page d'exercice** : des badges « MPSI · S1 · Nombres complexes — f)
   Racines n-ièmes » renvoient vers le texte du programme.
@@ -252,9 +273,7 @@ section>`. Le bouton « CPGE » de la barre latérale devient « a au moins un
 
 - **Autres filières.** On peut ajouter TSI, TPC, TB ou ECG en ajoutant des
   fichiers de programme, sans changer le modèle.
-- **Classification dans exobase ?** Si les rattachements validés doivent
-  suivre les sources vers d'autres plateformes, il faudra les faire remonter
-  dans exobase, comme `authors.json`. Pour l'instant, ils restent dans
-  OpenYourMath, comme `content/metadata/`.
-- **Le référentiel universitaire** (TODO du README) peut suivre le même
-  modèle : fichier versionné, identifiants stables, table d'association.
+- **Le référentiel universitaire** (TODO du README) existe déjà dans exobase
+  (`content/referentials/amscc/referentiel.md`) et arrive maintenant avec la
+  synchronisation. Il reste à le brancher de la même manière : analyseur,
+  table, identifiants stables.
