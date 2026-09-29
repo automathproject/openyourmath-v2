@@ -3,9 +3,9 @@
 Ce répertoire contient les programmes officiels de mathématiques des classes
 préparatoires scientifiques, convertis en Markdown structuré. Ils servent de
 base à la classification CPGE des exercices : chaque section et sous-section
-porte un identifiant stable auquel un exercice peut être rattaché (voir
-`content/classifications/cpge/README.md` et, pour la conception d'ensemble,
-`openyourmath-v2/docs/classification-cpge.md`).
+porte un identifiant stable auquel un exercice se rattache par la macro
+`\cpge{}` de sa source (voir `content/FORMAT.md` et, pour la conception
+d'ensemble, `openyourmath-v2/docs/classification-cpge.md`).
 
 ## Contenu
 
@@ -203,8 +203,9 @@ remplit ses tables `cpge_programmes`, `cpge_filieres` et `cpge_noeuds`.
 Les identifiants y sont figés par un instantané versionné
 (`tests/build/__snapshots__/cpge-identifiants.txt`). **Changer un identifiant,
 c'est casser les rattachements d'exercices qui y renvoient** : ajouter une
-section ne pose pas de problème, renommer ou supprimer demande de mettre à jour
-les rattachements dans le même commit.
+section ne pose pas de problème, renommer ou supprimer demande de corriger
+dans le même commit les `\cpge{}` des sources concernées, que
+`tools/check_exercise_sources.py` signale (`unknown-cpge-node`).
 
 ### Fidélité
 

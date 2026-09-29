@@ -3,6 +3,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import {
+  loadCpgeNodeIds,
+  validateCpgeReferences,
   validateImageReferences,
   validateSource,
   validateUuidUniqueness
@@ -141,6 +143,32 @@ def f(x):
     ]);
 
     expect(issues).toEqual([]);
+  });
+
+  it('accepts \cpge among the metadata commands', () => {
+    const source = String.raw`\uuid{abcd}
+\niveau{L1}
+\cpge{mpsi-mp2i.nombres-complexes.f, pcsi.nombres-complexes.f}
+\contenu{\question{Question.}}`;
+    expect(validateSource(source, 'cpge.tex')).toEqual([]);
+  });
+
+  it('checks \cpge identifiers against the CPGE referential', async () => {
+    const nodeIds = await loadCpgeNodeIds();
+    expect(nodeIds.has('pcsi.nombres-complexes.f')).toBe(true);
+
+    const valid = String.raw`\uuid{a}\cpge{pcsi.nombres-complexes.f}\contenu{\question{Q.}}`;
+    expect(validateCpgeReferences([{ source: valid, filePath: 'a.tex' }], { nodeIds })).toEqual([]);
+
+    const invalid = String.raw`\uuid{b}
+% \cpge{commenté.ignoré}
+\cpge{pcsi.nombres-complexes.z, PCSI, pcsi.nombres-complexes.f, pcsi.nombres-complexes.f,}
+\contenu{\question{Q.}}`;
+    const issues = validateCpgeReferences([{ source: invalid, filePath: 'b.tex' }], { nodeIds });
+    expect(issues.map(issue => issue.code)).toEqual([
+      'unknown-cpge-node', 'invalid-cpge', 'invalid-cpge', 'invalid-cpge'
+    ]);
+    expect(issues[0].line).toBe(3);
   });
 
   it('accepts an image resolved by the content pipeline', async () => {

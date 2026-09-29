@@ -16,6 +16,9 @@ export const META_FIELDS = [
   { key: "created_at", cmd: "datecreate", label: "Date de création" },
   { key: "organization", cmd: "organisation", label: "Organisation" },
   { key: "difficulty", cmd: "difficulte", label: "Difficulté" },
+  // Rattachements CPGE relus : identifiants du référentiel, séparés par des
+  // virgules. Conservés tels quels à la relecture d'une source existante.
+  { key: "cpge", cmd: "cpge", label: "Programmes CPGE" },
   { key: "video_id", cmd: "video", label: "Vidéo (id YouTube)" },
 ];
 

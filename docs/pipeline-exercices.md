@@ -103,7 +103,7 @@ Ollama est interrogé en priorité au démarrage de `index-exercises.js`. Si le 
 
 ### Traitement
 
-1. **Extraction des métadonnées** via les commandes LaTeX (`\uuid`, `\titre`, `\chapitre`, `\niveau`, `\difficulte`, etc.)
+1. **Extraction des métadonnées** via les commandes LaTeX (`\uuid`, `\titre`, `\chapitre`, `\niveau`, `\difficulte`, etc.). `\cpge` n'est pas extrait ici : `build-referentiel-cpge.js` le lit directement dans les sources ([Classification CPGE](classification-cpge.md)).
 
 2. **Extraction des blocs de contenu** dans l'ordre d'apparition :
 

@@ -59,9 +59,9 @@ préparatoires :
    `BCPST → bcpst1, bcpst2`.
 6. **Le contenu à exobase, le dérivé à OpenYourMath.** Un rattachement relu
    décrit l'exercice, comme `\module{}` ou `\chapitre{}`. Il doit suivre la
-   source vers tous les exports. exobase porte donc le référentiel et les
-   rattachements relus, dans des fichiers à part plutôt que dans les `.tex`.
-   OpenYourMath porte ce qui en dérive : la base, l'affichage et les
+   source vers tous les exports, et se lire en ouvrant le `.tex`. exobase porte
+   donc le référentiel, et les sources portent les rattachements relus dans la
+   macro `\cpge{}`. OpenYourMath porte ce qui en dérive : la base, l'affichage et les
    propositions automatiques tant qu'elles ne sont pas relues, comme les autres
    métadonnées IA.
 
@@ -70,7 +70,8 @@ préparatoires :
 | Programmes, `sources.json`, format              | exobase      | `content/referentials/cpge/`                                                |
 | Validation de structure, téléchargement des PDF | exobase      | `tools/check_programmes_cpge.mjs`, `tools/import/fetch_programmes_cpge.mjs` |
 | Correspondance chapitres → sections (phase 2)   | exobase      | `content/referentials/`, à côté de `amscc-exo7-compatibility.json`          |
-| Rattachements relus                             | exobase      | `content/classifications/cpge/<source>/<uuid>.json`                         |
+| Rattachements relus                             | exobase      | `\cpge{}` des sources `.tex` (`content/FORMAT.md`)                          |
+| Définition de `\cpge` pour la compilation       | Exercices    | `_preambules/general.tex`                                                   |
 | Propositions non relues (phase 2)               | OpenYourMath | `content/metadata/<source>/<uuid>.json`, champ `cpge`                       |
 | Analyseur, tables, build                        | OpenYourMath | `scripts/build-referentiel-cpge.js`                                         |
 | Rendu KaTeX, instantané des identifiants        | OpenYourMath | `tests/build/referentiel-cpge.test.js`                                      |
@@ -151,41 +152,41 @@ rattachements pointent dessus.
 
 ### Rattachements
 
-**Relus : `content/classifications/cpge/<source>/<uuid>.json`, dans exobase.**
-Il y a un fichier par exercice, ce qui évite les conflits de fusion. Le format
-est décrit dans le README de ce répertoire, dans exobase :
+**Relus : la macro `\cpge{}` de la source.** Elle reçoit une liste
+d'identifiants séparés par des virgules, à côté des autres métadonnées :
 
-```json
-{
-  "uuid": "abcd",
-  "rattachements": [
-    {
-      "noeud": "mpsi-mp2i.nombres-complexes.f",
-      "origine": "manuel",
-      "valide": true
-    },
-    {
-      "noeud": "pcsi.nombres-complexes.f",
-      "origine": "llm",
-      "confiance": 0.86,
-      "valide": true
-    }
-  ]
-}
+```latex
+\niveau{L1}
+\module{Algèbre}
+\chapitre{Nombres complexes}
+\cpge{mpsi-mp2i.nombres-complexes.f, pcsi.nombres-complexes.f}
 ```
 
-- `origine` dit comment le rattachement a d'abord été proposé : `manuel`,
-  `llm`, `concordance` ou `chapitre` (déduit du chapitre universitaire).
-- `valide: true` marque une relecture humaine : c'est le cas de tout fichier
-  d'exobase.
+- **Ce que la macro contient.** Seuls les identifiants y figurent, sans
+  origine ni confiance : ce qui est dans la source est relu, par définition.
+- **Validation.** Les deux validateurs de sources, `tools/check_exercise_sources.py`
+  dans exobase et `pnpm test:tex` ici, refusent un identifiant mal formé ou
+  répété (`invalid-cpge`) et un identifiant absent du référentiel
+  (`unknown-cpge-node`).
+- **Compilation.** Le préambule du dépôt Exercices définit `\cpge` comme une
+  commande sans effet. Sans cette définition, un exercice qui la porte ne
+  compile plus.
+- **Analyse et édition.** L'analyseur LaTeX ignore la macro. Le build la lit
+  directement dans les `.tex`, comme les fiches lisent `\exo7id{}`. L'éditeur
+  `/create` la conserve quand il rouvre une source.
+- **En base.** Les rattachements relus prennent l'origine `source`, avec
+  `valide = 1`.
 
 **Proposés (phase 2) : `content/metadata/<source>/<uuid>.json`, dans
 OpenYourMath.** L'étiquetage automatique écrit ses propositions dans les
 métadonnées sémantiques de l'exercice, sous un champ `cpge`. Elles suivent le
 même cycle de vie que le résumé et les concepts : rattachées au `content_hash`,
-recalculées quand l'énoncé change. Une proposition acceptée à la relecture
-passe dans le fichier d'exobase par `pnpm sync:exobase:push`. Elle n'est
-ensuite plus jamais écrasée par un traitement automatique.
+recalculées quand l'énoncé change. `origine` dit comment la proposition a été
+obtenue : `llm`, `concordance` (propagée depuis une filière voisine) ou
+`chapitre` (déduite du chapitre universitaire). Une proposition acceptée à la
+relecture est ajoutée au `\cpge{}` de la source, puis remonte dans exobase par
+`pnpm sync:exobase:push`, comme une correction de source. Elle n'est ensuite
+plus jamais écrasée par un traitement automatique.
 
 ### SQLite
 
@@ -238,7 +239,8 @@ SELECT uuid FROM exercise_cpge WHERE noeud_id IN (SELECT id FROM sous);
    rattachements acceptés remontent dans exobase.
 5. **crouzet/pcsi.** Ces exercices suivent un cours de PCSI. Leurs 9 chapitres
    se rattachent directement aux sections `pcsi.*` (origine `chapitre`). Ces
-   rattachements sont écrits dans exobase après relecture, avec la correction
+   rattachements sont écrits dans leur `\cpge{}` après relecture, avec la
+   correction
    `\niveau{PCSI} → L1`. D'ici là, les requêtes traitent `PCSI` comme un alias
    hérité.
 

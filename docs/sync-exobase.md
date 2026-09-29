@@ -12,7 +12,7 @@ Exercices ←→ exobase ←→ OpenYourMath
 ## Responsabilités
 
 - **Exercices** : rédaction et correction des fichiers LaTeX AMSCC, de leurs images et de leurs sources graphiques ;
-- **exobase** : version canonique de **toutes** les sources — `amscc`, `crouzet`, `exo7` et celles à venir — sous `content/exercises/<source>/`, `content/images/<source>/`, `content/code/<source>/python/`, `content/fiches/<source>/`, `content/classifications/cpge/<source>/` (rattachements CPGE relus) et `content/authors.json`, ainsi que des référentiels communs sous `content/referentials/` (AMSCC, Exo7, tables de compatibilité, programmes CPGE). C'est là que se font la normalisation et les corrections de sources ;
+- **exobase** : version canonique de **toutes** les sources — `amscc`, `crouzet`, `exo7` et celles à venir — sous `content/exercises/<source>/`, `content/images/<source>/`, `content/code/<source>/python/`, `content/fiches/<source>/` et `content/authors.json`, ainsi que des référentiels communs sous `content/referentials/` (AMSCC, Exo7, tables de compatibilité, programmes CPGE). C'est là que se font la normalisation et les corrections de sources ;
 - **OpenYourMath** : fichiers dérivés (`cache/`, `data/`, `static/artifacts/`) et métadonnées sémantiques sous `content/metadata/`, y compris les propositions de classification CPGE non relues. Il peut proposer une correction des sources, images, scripts Python ou fiches vers exobase, après relecture.
 
 Les métadonnées sémantiques restent dans OpenYourMath parce qu’elles sont

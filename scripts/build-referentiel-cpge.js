@@ -5,8 +5,11 @@
 // Construit le référentiel CPGE dans la base : tables `cpge_programmes`,
 // `cpge_filieres`, `cpge_noeuds` à partir de
 // content/referentials/cpge/programmes/*.md, et `exercise_cpge` à partir des
-// rattachements de content/classifications/cpge/<source>/<uuid>.json. Les deux
-// répertoires sont importés d'exobase par pnpm sync:exobase.
+// macros \cpge{} des sources .tex, qui portent les rattachements relus. Les
+// deux viennent d'exobase par pnpm sync:exobase.
+//
+// Les sources sont lues directement, comme pour les fiches : le cache n'est
+// invalidé que par le hash du .tex, et n'a pas à connaître cette macro.
 //
 // Le Markdown fait autorité : un nœud est un titre qui porte un identifiant
 // `{#…}` (voir le README du référentiel et docs/classification-cpge.md). Un
@@ -25,12 +28,14 @@ import crypto from 'crypto';
 import { parseProgramme } from './utils/parse-programme-cpge.js';
 import {
   REFERENTIEL_CPGE_ROOT,
-  CLASSIFICATIONS_CPGE_ROOT,
+  EXERCISES_ROOT,
   PROJECT_ROOT,
   toPosixPath
 } from './utils/content-paths.js';
 
-export const ORIGINES = ['manuel', 'llm', 'concordance', 'chapitre'];
+// `source` : rattachement relu, écrit dans \cpge{} de la source. Les autres
+// origines sont celles des propositions automatiques, non relues.
+export const ORIGINES = ['source', 'llm', 'concordance', 'chapitre'];
 const REQUIRED_META = ['programme', 'titre', 'filieres', 'annee'];
 
 function walkFiles(directory, accept) {
@@ -121,55 +126,66 @@ export function collectReferentiel(root = REFERENTIEL_CPGE_ROOT) {
   return { programmes, nodes, errors, warnings };
 }
 
+/** Retire les commentaires LaTeX (`%` non échappé) d'une ligne. */
+function stripTexComment(line) {
+  for (let i = 0; i < line.length; i++) {
+    if (line[i] !== '%') continue;
+    let slashes = 0;
+    for (let j = i - 1; j >= 0 && line[j] === '\\'; j--) slashes++;
+    if (slashes % 2 === 0) return line.slice(0, i);
+  }
+  return line;
+}
+
 /**
- * Lit les rattachements d'exercices. Un nœud inconnu est une erreur : le
- * référentiel a perdu un identifiant sur lequel repose une classification.
+ * Identifiants portés par les macros \cpge{} d'une source .tex, commentaires
+ * exclus. Les identifiants ne contiennent pas d'accolade : une expression
+ * régulière suffit.
  */
-export function collectRattachements(nodeIds, root = CLASSIFICATIONS_CPGE_ROOT) {
+export function extractCpge(tex) {
+  const clean = tex.split('\n').map(stripTexComment).join('\n');
+  const uuid = clean.match(/\\uuid\s*\{([^}]*)\}/)?.[1].trim() || null;
+  const noeuds = [];
+  for (const match of clean.matchAll(/\\cpge\s*\{([^{}]*)\}/g)) {
+    for (const raw of match[1].split(',')) {
+      const noeud = raw.trim();
+      if (noeud) noeuds.push(noeud);
+    }
+  }
+  return { uuid, noeuds };
+}
+
+/**
+ * Lit les rattachements relus dans les sources. Un nœud inconnu est une
+ * erreur : le référentiel a perdu un identifiant sur lequel repose une
+ * classification (le contrôle des sources la signale aussi, en amont).
+ */
+export function collectRattachements(nodeIds, root = EXERCISES_ROOT) {
   const rattachements = [];
   const errors = [];
   const warnings = [];
 
-  for (const file of walkFiles(root, name => name.endsWith('.json'))) {
+  for (const file of walkFiles(root, name => name.endsWith('.tex'))) {
+    const tex = fs.readFileSync(file, 'utf8');
+    if (!tex.includes('\\cpge')) continue;
     const relative = toPosixPath(path.relative(root, file));
-    let data;
-    try {
-      data = JSON.parse(fs.readFileSync(file, 'utf8'));
-    } catch (error) {
-      errors.push(`${relative} : JSON invalide (${error.message})`);
+    const { uuid, noeuds } = extractCpge(tex);
+    if (!uuid) {
+      warnings.push(`${relative} : \\cpge{} sans \\uuid{}, ignoré`);
       continue;
     }
-
-    const uuid = data.uuid ?? path.basename(file, '.json');
-    if (uuid !== path.basename(file, '.json')) {
-      warnings.push(`${relative} : uuid « ${uuid} » ≠ nom du fichier`);
-    }
     const seen = new Set();
-    for (const entry of data.rattachements ?? []) {
-      if (!nodeIds.has(entry.noeud)) {
-        errors.push(`${relative} : nœud ${entry.noeud} absent du référentiel`);
+    for (const noeud of noeuds) {
+      if (!nodeIds.has(noeud)) {
+        errors.push(`${relative} : nœud ${noeud} absent du référentiel`);
         continue;
       }
-      if (!ORIGINES.includes(entry.origine)) {
-        errors.push(`${relative} : origine « ${entry.origine} » inconnue pour ${entry.noeud}`);
+      if (seen.has(noeud)) {
+        warnings.push(`${relative} : ${noeud} rattaché deux fois, second ignoré`);
         continue;
       }
-      if (seen.has(entry.noeud)) {
-        warnings.push(`${relative} : ${entry.noeud} rattaché deux fois, second ignoré`);
-        continue;
-      }
-      seen.add(entry.noeud);
-      const confiance = typeof entry.confiance === 'number' ? entry.confiance : null;
-      if (confiance !== null && (confiance < 0 || confiance > 1)) {
-        warnings.push(`${relative} : confiance ${confiance} hors de [0, 1] pour ${entry.noeud}`);
-      }
-      rattachements.push({
-        uuid,
-        noeud_id: entry.noeud,
-        origine: entry.origine,
-        confiance,
-        valide: entry.valide === true ? 1 : 0
-      });
+      seen.add(noeud);
+      rattachements.push({ uuid, noeud_id: noeud, origine: 'source', confiance: null, valide: 1 });
     }
   }
 
@@ -235,7 +251,7 @@ function report(referentiel, classification, outcome) {
     const count = nodes.filter(node => node.programme === programme.programme).length;
     console.log(`   ${programme.programme.padEnd(10)} ${programme.filieres.join(', ').padEnd(11)} année ${programme.annee} — ${count} nœud(s)`);
   }
-  console.log(`\n🔗 ${classification.rattachements.length} rattachement(s) d'exercice lu(s)`);
+  console.log(`\n🔗 ${classification.rattachements.length} rattachement(s) relu(s) lu(s) dans les sources`);
 
   const errors = [...referentiel.errors, ...classification.errors];
   const warnings = [...referentiel.warnings, ...classification.warnings];
