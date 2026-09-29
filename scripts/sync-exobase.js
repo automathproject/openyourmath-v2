@@ -4,8 +4,8 @@
  * Imports versioned editorial content from exobase.
  *
  * exobase is the shared editorial factory: it owns the .tex sources, images,
- * code snippets, exercise sheets and the author registry, for every source it
- * carries.
+ * code snippets, exercise sheets, reviewed classifications, the referentials
+ * and the author registry, for every source it carries.
  * OpenYourMath owns the derived data and semantic metadata. Editorial fixes
  * discovered here may be sent back explicitly with --push; nothing is ever
  * sent automatically.
@@ -34,6 +34,8 @@ const LABELS = {
   images: 'Images et sources graphiques',
   code: 'Extraits Python',
   fiches: "Fiches d'exercices",
+  classifications: 'Classifications CPGE relues',
+  referentiels: 'Référentiels',
   auteurs: 'Référentiel auteurs'
 };
 const ACTIONS = {
@@ -87,12 +89,18 @@ async function discoverSources() {
 }
 
 function mappingsFor(sources) {
-  return sources.flatMap(source => [
-    { source, kind: 'sources', dir: `exercises/${source}`, accept: name => name.endsWith('.tex') },
-    { source, kind: 'images', dir: `images/${source}`, accept: () => true },
-    { source, kind: 'code', dir: `code/${source}/python`, accept: name => name.endsWith('.py') },
-    { source, kind: 'fiches', dir: `fiches/${source}`, accept: name => name.endsWith('.txt') }
-  ]);
+  return [
+    ...sources.flatMap(source => [
+      { source, kind: 'sources', dir: `exercises/${source}`, accept: name => name.endsWith('.tex') },
+      { source, kind: 'images', dir: `images/${source}`, accept: () => true },
+      { source, kind: 'code', dir: `code/${source}/python`, accept: name => name.endsWith('.py') },
+      { source, kind: 'fiches', dir: `fiches/${source}`, accept: name => name.endsWith('.txt') },
+      { source, kind: 'classifications', dir: `classifications/cpge/${source}`, accept: name => name.endsWith('.json') }
+    ]),
+    // Taxonomies communes à toutes les sources : référentiels AMSCC et Exo7,
+    // tables de compatibilité, programmes officiels des CPGE.
+    { source: 'commun', kind: 'referentiels', dir: 'referentials', accept: name => /\.(md|json)$/.test(name) }
+  ];
 }
 
 function tracked(repoPath, mappings) {
