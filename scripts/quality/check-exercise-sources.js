@@ -29,6 +29,7 @@ const TOP_LEVEL_COMMANDS = new Set([
   'datecreate',
   'niveau',
   'difficulte',
+  'cpge',
   'module',
   'exo7id',
   'isIndication',
@@ -467,6 +468,70 @@ export async function validateImageReferences(sources, { contentRoot = path.join
   return issues;
 }
 
+const CPGE_PROGRAMMES = path.join(ROOT, 'content/referentials/cpge/programmes');
+const CPGE_NODE_ID = /^[a-z0-9]+(?:-[a-z0-9]+)*(?:\.[a-z0-9]+(?:-[a-z0-9]+)*)+$/;
+
+/**
+ * Identifiants des sections et sous-sections du référentiel CPGE, lus dans les
+ * titres `{#…}` des programmes. null si le référentiel est absent : seule la
+ * forme des identifiants est alors contrôlée.
+ *
+ * @param {string} programmesDir
+ * @returns {Promise<Set<string> | null>}
+ */
+export async function loadCpgeNodeIds(programmesDir = CPGE_PROGRAMMES) {
+  let names;
+  try {
+    names = await fs.readdir(programmesDir);
+  } catch (error) {
+    if (error.code === 'ENOENT') return null;
+    throw error;
+  }
+  const ids = new Set();
+  for (const name of names.filter(name => name.endsWith('.md')).sort()) {
+    const text = await fs.readFile(path.join(programmesDir, name), 'utf8');
+    for (const match of text.matchAll(/^#{3,4} .*\{#([^}\s]+)\}\s*$/gm)) ids.add(match[1]);
+  }
+  return ids;
+}
+
+/**
+ * Contrôle les identifiants de \cpge{} : forme, répétition et présence dans le
+ * référentiel CPGE. Mêmes codes que tools/check_exercise_sources.py d'exobase.
+ *
+ * @param {{ source: string, filePath: string }[]} sources
+ * @param {{ nodeIds?: Set<string> | null }} options
+ * @returns {{ filePath: string, line: number, column: number, code: string, message: string }[]}
+ */
+export function validateCpgeReferences(sources, { nodeIds = null } = {}) {
+  const issues = [];
+  for (const entry of sources) {
+    const cleanSource = stripCommentsPreserveLength(entry.source);
+    for (const call of findCommandCalls(cleanSource, new Set(['cpge']))) {
+      if (call.malformed) continue;
+      const seen = new Set();
+      for (const raw of call.body.split(',')) {
+        const node = raw.trim();
+        let code = null;
+        let message = null;
+        if (!node) {
+          [code, message] = ['invalid-cpge', 'Identifiant vide dans \\cpge{...}.'];
+        } else if (!CPGE_NODE_ID.test(node)) {
+          [code, message] = ['invalid-cpge', `Identifiant CPGE mal formé « ${node} ».`];
+        } else if (seen.has(node)) {
+          [code, message] = ['invalid-cpge', `Identifiant CPGE « ${node} » répété.`];
+        } else if (nodeIds && !nodeIds.has(node)) {
+          [code, message] = ['unknown-cpge-node',
+            `Identifiant CPGE « ${node} » absent du référentiel content/referentials/cpge/.`];
+        }
+        seen.add(node);
+        if (code) addIssue(issues, entry.source, entry.filePath, call.start, code, message);
+      }
+    }
+  }
+  return issues;
+}
+
 function csvEscape(value) {
   const stringValue = String(value ?? '');
   if (/[",\n\r]/.test(stringValue)) {
@@ -644,6 +709,7 @@ async function main() {
   const validatedPaths = new Set(files.map(filePath => path.relative(ROOT, filePath)));
   allIssues.push(...validateUuidUniqueness(sources).filter(issue => validatedPaths.has(issue.filePath)));
   allIssues.push(...await validateImageReferences(validatedSources));
+  allIssues.push(...validateCpgeReferences(validatedSources, { nodeIds: await loadCpgeNodeIds() }));
 
   if (csvOutput) {
     const outputPath = path.resolve(csvOutput);

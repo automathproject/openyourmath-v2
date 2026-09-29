@@ -46,6 +46,17 @@ const META = {
   difficulty: '2',
 };
 
+describe('\\cpge dans l’éditeur', () => {
+  it('conserve les rattachements CPGE d’une source relue puis réécrite', () => {
+    const tex = buildExerciseTex(
+      { ...META, cpge: 'mpsi-mp2i.nombres-complexes.f, pcsi.nombres-complexes.f' },
+      [{ type: 'question', latex: 'Q.' }]
+    );
+    expect(tex).toContain('\\cpge{mpsi-mp2i.nombres-complexes.f, pcsi.nombres-complexes.f}');
+    expect(parseExerciseTex(tex).meta.cpge).toBe('mpsi-mp2i.nombres-complexes.f, pcsi.nombres-complexes.f');
+  });
+});
+
 describe('buildExerciseTex', () => {
   it('sérialise les métadonnées non vides dans l’ordre du site', () => {
     const tex = buildExerciseTex(META, []);

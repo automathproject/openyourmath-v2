@@ -165,8 +165,9 @@ CREATE INDEX IF NOT EXISTS idx_cpge_noeuds_programme ON cpge_noeuds(programme, o
 CREATE INDEX IF NOT EXISTS idx_cpge_noeuds_parent ON cpge_noeuds(parent_id);
 CREATE INDEX IF NOT EXISTS idx_cpge_filieres_programme ON cpge_filieres(programme);
 
--- Rattachements des exercices aux nœuds, lus dans
--- content/classifications/cpge/<source>/<uuid>.json. Filtrer une section
+-- Rattachements des exercices aux nœuds. Les rattachements relus viennent de
+-- la macro \cpge{} des sources (origine « source ») ; les propositions
+-- automatiques, non relues, viendront des métadonnées. Filtrer une section
 -- entière suit parent_id, pas le préfixe : l'identifiant d'une partie « A - »
 -- ne prolonge pas celui de sa section générale.
 --   WITH RECURSIVE sous(id) AS (SELECT :id UNION ALL
@@ -175,8 +176,8 @@ CREATE INDEX IF NOT EXISTS idx_cpge_filieres_programme ON cpge_filieres(programm
 CREATE TABLE IF NOT EXISTS exercise_cpge (
   uuid TEXT NOT NULL,
   noeud_id TEXT NOT NULL,
-  origine TEXT NOT NULL,            -- manuel | llm | concordance | chapitre
-  confiance REAL,                   -- 0..1, NULL pour un rattachement manuel
+  origine TEXT NOT NULL,            -- source | llm | concordance | chapitre
+  confiance REAL,                   -- 0..1, NULL pour un rattachement relu
   valide INTEGER NOT NULL DEFAULT 0, -- 1 : relu par un humain
   PRIMARY KEY (uuid, noeud_id)
 );

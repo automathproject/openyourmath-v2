@@ -46,6 +46,7 @@ dans l'éditeur avant l'export, puis les relire dans le fichier :
 \organisation{...}
 \datecreate{AAAA-MM-JJ}
 \difficulte{1 à 5}
+\cpge{...}              % facultatif : rattachements CPGE relus
 ```
 
 `titre`, `niveau`, `module`, `chapitre`, `thème`, auteur et difficulté sont
@@ -53,6 +54,11 @@ notamment utilisés dans les filtres et la recherche. Réutiliser les graphies
 existantes plutôt que d'en créer de nouvelles. Si l'auteur n'est pas encore
 dans le référentiel, ajouter ses informations et sa licence dans
 `content/authors.json` avant le commit.
+
+`\cpge{}` rattache l'exercice aux programmes de classes préparatoires : une
+liste d'identifiants du référentiel `content/referentials/cpge/`, par exemple
+`\cpge{mpsi-mp2i.nombres-complexes.f, pcsi.nombres-complexes.f}`. Voir
+[Classification CPGE](classification-cpge.md).
 
 ### Ajouter les images éventuelles
 

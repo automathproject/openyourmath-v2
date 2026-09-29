@@ -23,6 +23,7 @@ import { parseProgramme, parseFrontMatter, semestreFromPartie } from '../../scri
 import {
   collectReferentiel,
   collectRattachements,
+  extractCpge,
   insertReferentiel
 } from '../../scripts/build-referentiel-cpge.js';
 import { REFERENTIEL_CPGE_ROOT } from '../../scripts/utils/content-paths.js';
@@ -234,6 +235,25 @@ describe('référentiel réel (content/referentials/cpge)', () => {
   });
 });
 
+describe('extractCpge', () => {
+  it('lit uuid et identifiants, et ignore les macros commentées', () => {
+    const tex = String.raw`\uuid{abcd}
+\niveau{L1}
+\cpge{ mpsi-mp2i.nombres-complexes.f,
+       pcsi.nombres-complexes.f }
+% \cpge{pc.reduction}
+\contenu{\question{Soit $z$ avec 100\% de chances.}}`;
+    expect(extractCpge(tex)).toEqual({
+      uuid: 'abcd',
+      noeuds: ['mpsi-mp2i.nombres-complexes.f', 'pcsi.nombres-complexes.f']
+    });
+  });
+
+  it('ne renvoie rien pour une source sans \\cpge', () => {
+    expect(extractCpge(String.raw`\uuid{abcd}\contenu{\question{Q.}}`).noeuds).toEqual([]);
+  });
+});
+
 describe('collectRattachements', () => {
   let dir;
   beforeEach(() => {
@@ -242,31 +262,26 @@ describe('collectRattachements', () => {
   });
   afterEach(() => fs.rmSync(dir, { recursive: true, force: true }));
 
-  const write = (uuid, rattachements) =>
-    fs.writeFileSync(path.join(dir, 'exo7', `${uuid}.json`), JSON.stringify({ uuid, rattachements }));
+  const write = (name, tex) => fs.writeFileSync(path.join(dir, 'exo7', `${name}.tex`), tex);
 
-  it('lit les rattachements valides et normalise valide/confiance', () => {
-    write('abcd', [
-      { noeud: 'p.s.a', origine: 'llm', confiance: 0.8 },
-      { noeud: 'p.s', origine: 'manuel', valide: true }
-    ]);
-    const { rattachements, errors } = collectRattachements(new Set(['p.s', 'p.s.a']), dir);
+  it('lit les rattachements relus des sources, origine « source »', () => {
+    write('abcd', String.raw`\uuid{abcd}\cpge{p.s.a, p.s}\contenu{\question{Q.}}`);
+    write('efgh', String.raw`\uuid{efgh}\contenu{\question{Sans rattachement.}}`);
+    const { rattachements, errors, warnings } = collectRattachements(new Set(['p.s', 'p.s.a']), dir);
     expect(errors).toEqual([]);
+    expect(warnings).toEqual([]);
     expect(rattachements).toEqual([
-      { uuid: 'abcd', noeud_id: 'p.s.a', origine: 'llm', confiance: 0.8, valide: 0 },
-      { uuid: 'abcd', noeud_id: 'p.s', origine: 'manuel', confiance: null, valide: 1 }
+      { uuid: 'abcd', noeud_id: 'p.s.a', origine: 'source', confiance: null, valide: 1 },
+      { uuid: 'abcd', noeud_id: 'p.s', origine: 'source', confiance: null, valide: 1 }
     ]);
   });
 
-  it('refuse un nœud disparu du référentiel et une origine inconnue', () => {
-    write('abcd', [
-      { noeud: 'p.disparu', origine: 'llm' },
-      { noeud: 'p.s', origine: 'intuition' }
-    ]);
-    const { rattachements, errors } = collectRattachements(new Set(['p.s']), dir);
-    expect(rattachements).toEqual([]);
+  it('refuse un nœud disparu du référentiel et signale un doublon', () => {
+    write('abcd', String.raw`\uuid{abcd}\cpge{p.disparu, p.s, p.s}\contenu{\question{Q.}}`);
+    const { rattachements, errors, warnings } = collectRattachements(new Set(['p.s']), dir);
+    expect(rattachements.map(r => r.noeud_id)).toEqual(['p.s']);
     expect(errors.join(' ')).toMatch(/p\.disparu absent du référentiel/);
-    expect(errors.join(' ')).toMatch(/origine « intuition » inconnue/);
+    expect(warnings.join(' ')).toMatch(/p\.s rattaché deux fois/);
   });
 });
 
@@ -301,7 +316,7 @@ describe('insertReferentiel', () => {
       nodes: parsed.nodes
     };
     const outcome = insertReferentiel(db, referentiel, [
-      { uuid: 'abcd', noeud_id: 'test.reduction.a', origine: 'manuel', confiance: null, valide: 1 },
+      { uuid: 'abcd', noeud_id: 'test.reduction.a', origine: 'source', confiance: null, valide: 1 },
       { uuid: 'zzzz', noeud_id: 'test.reduction', origine: 'llm', confiance: 0.5, valide: 0 },
       { uuid: 'abcd', noeud_id: 'test.series-entieres.a', origine: 'llm', confiance: 0.9, valide: 0 }
     ]);
