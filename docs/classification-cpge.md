@@ -244,6 +244,48 @@ SELECT uuid FROM exercise_cpge WHERE noeud_id IN (SELECT id FROM sous);
    `\niveau{PCSI} → L1`. D'ici là, les requêtes traitent `PCSI` comme un alias
    hérité.
 
+## Pilote de la phase 2
+
+Le pilote porte sur 324 exercices : les 115 exercices crouzet, et un tirage
+reproductible de 70 exercices exo7 de L1 par chapitre (nombres complexes,
+suites, polynômes), réparti au prorata des sous-chapitres.
+
+- **Table de correspondance** : `content/referentials/cpge-correspondances.json`,
+  limitée aux 12 chapitres du pilote. Elle est créée dans OpenYourMath et
+  remontera dans exobase (`pnpm sync:exobase:push`) une fois validée.
+- **Candidats** : `scripts/utils/cpge-candidats.js` déplie la table en
+  sous-sections et les regroupe par famille de programmes (1re année MPSI,
+  PCSI, PTSI ; BCPST1 ; 2e année MP, PC, PSI, PT ; BCPST2).
+  - Dans une famille, les sous-sections de même notion forment un groupe : même
+    titre, ou titre proche par ses mots.
+  - Le modèle choisit un groupe. Le premier programme du groupe reçoit
+    l'origine `llm`, les autres l'origine `concordance`.
+- **Étiquetage** : `pnpm classify:cpge --pilote` avec le modèle local (Ollama),
+  ou `--albert gpt-oss-120b`. Albert est limité à 10 requêtes par minute et à
+  1,28 million de jetons d'entrée par jour, et le script reste sous ce débit.
+  - Les résultats vont dans `reports/cpge-pilote/<modèle>.v<regroupement>.jsonl`,
+    et une exécution interrompue reprend là où elle s'est arrêtée.
+  - Rien n'est écrit dans le contenu.
+- **Bilan** : `pnpm report:cpge-pilote` donne, par modèle et par chapitre, la
+  couverture par filière, le nombre de rattachements, les confiances, les
+  exercices hors programme et l'accord entre modèles.
+- **Relecture humaine** : une page de relecture partagée présente chaque
+  exercice avec les propositions des deux modèles. Chaque relecteur y accepte,
+  rejette ou ajoute des sous-sections, et les décisions servent à mesurer la
+  précision de chaque modèle.
+
+Le premier regroupement (v1, archivé dans `reports/cpge-pilote/v1/`) exigeait
+des titres identiques, sections comprises. Il a mis en évidence deux défauts :
+
+- aucun rattachement PCSI ni PTSI sur les polynômes, dont les titres diffèrent
+  de ceux de MPSI ;
+- BCPST presque jamais retenu (8 %), ses candidats étant relégués en fin de
+  liste.
+
+Le regroupement v2 porte la couverture PCSI et PTSI à 98 % et plus, et la
+couverture BCPST1 à 73 % avec `gpt-oss-120b` et 42 % avec Mistral Small en
+local.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par
@@ -267,7 +309,7 @@ SELECT uuid FROM exercise_cpge WHERE noeud_id IN (SELECT id FROM sous);
 | ----- | ---------------------------------------------------------------------------------------- | ------- |
 | 0     | Programmes officiels (9 textes, 11 filières) convertis en Markdown structuré             | fait    |
 | 1     | Analyseur Markdown → nœuds, tables SQLite, tests (unicité et stabilité des identifiants) | fait    |
-| 2     | A priori par chapitre, étiquetage LLM, concordance, rattachement de crouzet/pcsi         | à faire |
+| 2     | A priori par chapitre, étiquetage LLM, concordance, rattachement de crouzet/pcsi         | pilote  |
 | 3     | Navigation « Prépa », filtres de recherche, badges                                       | à faire |
 | 4     | Éditeur `/create` et vue de validation                                                   | à faire |
 
