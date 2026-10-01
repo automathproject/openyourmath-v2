@@ -26,9 +26,18 @@ import { getMetadataPath, METADATA_ROOT } from './content-paths.js';
 export function saveAlbertMetadata(uuid, data, options = {}) {
   const filePath = getMetadataPath(uuid, options.sourcePath || data.source_path || '');
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  // Les champs absents de `data` sont conservés : le fichier porte aussi des
+  // métadonnées produites par d'autres traitements (propositions CPGE, champ
+  // `cpge`), qu'une réindexation ne doit pas effacer.
+  let previous = {};
+  try {
+    previous = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch {
+    // premier enregistrement, ou fichier illisible remplacé
+  }
   fs.writeFileSync(
     filePath,
-    JSON.stringify(data, null, 2) + '\n'
+    JSON.stringify({ ...previous, ...data }, null, 2) + '\n'
   );
 }
 

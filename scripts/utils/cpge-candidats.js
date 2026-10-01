@@ -1,0 +1,222 @@
+// scripts/utils/cpge-candidats.js
+//
+// Candidats à l'étiquetage CPGE d'un exercice, à partir de la table de
+// correspondance chapitre → nœuds (content/referentials/cpge-correspondances.json)
+// et des nœuds du référentiel (collectReferentiel).
+//
+// Les nœuds de la table sont dépliés jusqu'aux feuilles : une section vaut ses
+// sous-sections. Dans une même famille de programmes (1re année MPSI, PCSI,
+// PTSI, par exemple), les feuilles de même titre forment un groupe (la
+// sous-section « Racines n-ièmes » de MPSI, PCSI et PTSI) : le modèle choisit
+// un groupe, et chaque programme du groupe reçoit le rattachement. C'est la
+// concordance entre filières du document de conception.
+//
+// Le titre de section n'entre pas dans la comparaison : « Polynômes et
+// fractions rationnelles » (MPSI) et « Polynômes » (PCSI) portent les mêmes
+// sous-sections. Une variante de titre (« Anneau des polynômes » / « Ensemble
+// des polynômes ») rejoint le groupe le plus proche par ses mots. Un groupe ne
+// contient jamais deux feuilles d'un même programme.
+//
+// Les familles se présentent séparément au modèle : leurs découpages diffèrent
+// (BCPST rattache des chapitres entiers là où MPSI a des sous-sections), et
+// sans cela le modèle néglige la famille présentée en dernier.
+
+import fs from 'fs';
+
+const PROGRAMME_ORDER = ['mpsi-mp2i', 'pcsi', 'ptsi', 'bcpst1', 'mp-mpi', 'pc', 'psi', 'pt', 'bcpst2'];
+
+/** Version du regroupement, enregistrée avec chaque résultat d'étiquetage. */
+export const REGROUPEMENT_VERSION = 2;
+
+export const FAMILLES = [
+  { id: 'tronc-1', libelle: 'MPSI/MP2I, PCSI, PTSI — 1re année', programmes: ['mpsi-mp2i', 'pcsi', 'ptsi'] },
+  { id: 'bcpst-1', libelle: 'BCPST — 1re année', programmes: ['bcpst1'] },
+  { id: 'tronc-2', libelle: 'MP/MPI, PC, PSI, PT — 2e année', programmes: ['mp-mpi', 'pc', 'psi', 'pt'] },
+  { id: 'bcpst-2', libelle: 'BCPST — 2e année', programmes: ['bcpst2'] }
+];
+const FAMILLE_OF = new Map(FAMILLES.flatMap(f => f.programmes.map(p => [p, f.id])));
+
+// Seuil de similarité (Jaccard sur les mots significatifs) pour rattacher une
+// variante de titre à un groupe existant.
+const SIMILARITE_MIN = 0.5;
+const MOTS_VIDES = new Set(['de', 'des', 'du', 'la', 'le', 'les', 'l', 'd', 'a', 'à', 'au', 'aux', 'en', 'et', 'un', 'une', 'sur', 'par', 'pour', 'dans', 'cas']);
+
+export function loadCorrespondances(file) {
+  const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const table = new Map();
+  for (const entry of data.correspondances ?? []) {
+    table.set(`${entry.source}|${entry.chapitre}`, entry.noeuds ?? []);
+  }
+  return table;
+}
+
+/** Titre sans lettre de sous-section, préfixe de partie ni numéro de chapitre BCPST. */
+function normalizeTitle(titre) {
+  return titre
+    .replace(/^[a-z]\)\s*/, '')
+    .replace(/^[A-Z]\s*[-–]\s*/, '')
+    .replace(/^[\p{L} ]+\d+\s*[-–]\s*/u, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+}
+
+/** Mots significatifs d'un titre, sans accents ni pluriel en -s. */
+function words(titre) {
+  return new Set(normalizeTitle(titre)
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/\$[^$]*\$/g, ' ')
+    .split(/[^a-z0-9]+/)
+    .filter(w => w && !MOTS_VIDES.has(w))
+    .map(w => w.replace(/s$/, '')));
+}
+
+function similarity(a, b) {
+  if (!a.size || !b.size) return 0;
+  const inter = [...a].filter(w => b.has(w)).length;
+  return inter / (a.size + b.size - inter);
+}
+
+/**
+ * Index des nœuds : par identifiant et par parent.
+ * @param {object[]} nodes nœuds de collectReferentiel()
+ */
+export function indexNodes(nodes) {
+  const byId = new Map(nodes.map(node => [node.id, node]));
+  const children = new Map();
+  for (const node of nodes) {
+    if (!node.parent_id) continue;
+    if (!children.has(node.parent_id)) children.set(node.parent_id, []);
+    children.get(node.parent_id).push(node);
+  }
+  return { byId, children };
+}
+
+/** Feuilles sous un nœud : lui-même s'il n'a pas d'enfant. */
+function leavesOf(node, index) {
+  const kids = index.children.get(node.id) ?? [];
+  if (!kids.length) return [node];
+  return kids.flatMap(kid => leavesOf(kid, index));
+}
+
+/**
+ * Groupes de candidats pour une liste de nœuds de la table.
+ * Chaque groupe : { code, titre, section, noeuds: [id…], programmes, contenus }.
+ * `contenus` vient du premier programme du groupe, dans l'ordre PROGRAMME_ORDER.
+ */
+export function buildCandidates(noeudIds, index) {
+  const unknown = noeudIds.filter(id => !index.byId.has(id));
+  if (unknown.length) throw new Error(`nœuds inconnus dans la table de correspondance : ${unknown.join(', ')}`);
+
+  const leaves = new Map();
+  for (const id of noeudIds) {
+    for (const leaf of leavesOf(index.byId.get(id), index)) leaves.set(leaf.id, leaf);
+  }
+
+  const rank = programme => {
+    const i = PROGRAMME_ORDER.indexOf(programme);
+    return i === -1 ? PROGRAMME_ORDER.length : i;
+  };
+  const ordered = [...leaves.values()].sort((x, y) => rank(x.programme) - rank(y.programme) || x.ordre - y.ordre);
+
+  // 1. Titre identique dans une même famille, un seul nœud par programme.
+  const groups = [];
+  const pending = [];
+  for (const leaf of ordered) {
+    const famille = FAMILLE_OF.get(leaf.programme) ?? leaf.programme;
+    const key = normalizeTitle(leaf.titre);
+    const group = groups.find(g => g.famille === famille && g.key === key && !g.leaves.some(l => l.programme === leaf.programme));
+    if (group) group.leaves.push(leaf);
+    else if (groups.some(g => g.famille === famille && g.key === key)) pending.push(leaf);
+    else if (groups.some(g => g.famille === famille) && !isFirstOfFamily(leaf, ordered)) pending.push(leaf);
+    else groups.push({ famille, key, words: words(leaf.titre), leaves: [leaf] });
+  }
+
+  // 2. Variantes de titre : rattachées au groupe le plus proche de la famille
+  // qui n'a pas encore ce programme, sinon groupe à part.
+  for (const leaf of pending) {
+    const famille = FAMILLE_OF.get(leaf.programme) ?? leaf.programme;
+    const exact = groups.find(g => g.famille === famille && g.key === normalizeTitle(leaf.titre) &&
+      !g.leaves.some(l => l.programme === leaf.programme));
+    if (exact) {
+      exact.leaves.push(leaf);
+      continue;
+    }
+    const own = words(leaf.titre);
+    let best = null;
+    let bestScore = SIMILARITE_MIN;
+    for (const g of groups) {
+      if (g.famille !== famille || g.leaves.some(l => l.programme === leaf.programme)) continue;
+      const score = similarity(own, g.words);
+      if (score >= bestScore) {
+        best = g;
+        bestScore = score;
+      }
+    }
+    if (best) best.leaves.push(leaf);
+    else groups.push({ famille, key: normalizeTitle(leaf.titre), words: own, leaves: [leaf] });
+  }
+
+  const familleRank = id => {
+    const i = FAMILLES.findIndex(f => f.id === id);
+    return i === -1 ? FAMILLES.length : i;
+  };
+  return groups
+    .map(group => {
+      group.leaves.sort((x, y) => rank(x.programme) - rank(y.programme));
+      const [first] = group.leaves;
+      const parent = first.parent_id ? index.byId.get(first.parent_id) : null;
+      return {
+        famille: group.famille,
+        section: (parent?.titre ?? '').replace(/^[A-Z]\s*[-–]\s*/, ''),
+        titre: first.titre.replace(/^[a-z]\)\s*/, ''),
+        noeuds: group.leaves.map(leaf => leaf.id),
+        programmes: group.leaves.map(leaf => leaf.programme),
+        contenus: first.contenus,
+        texte: first.texte,
+        _order: familleRank(group.famille) * 1e6 + rank(first.programme) * 1e4 + first.ordre
+      };
+    })
+    .sort((x, y) => x._order - y._order)
+    .map(({ _order, ...group }, i) => ({ code: `G${i + 1}`, ...group }));
+}
+
+/**
+ * Le premier programme d'une famille (dans l'ordre PROGRAMME_ORDER) fonde les
+ * groupes ; les autres s'y rattachent, par titre exact ou par proximité.
+ */
+function isFirstOfFamily(leaf, ordered) {
+  const famille = FAMILLE_OF.get(leaf.programme) ?? leaf.programme;
+  const first = ordered.find(l => (FAMILLE_OF.get(l.programme) ?? l.programme) === famille);
+  return first.programme === leaf.programme;
+}
+
+const LABELS = {
+  'mpsi-mp2i': 'MPSI/MP2I', pcsi: 'PCSI', ptsi: 'PTSI', bcpst1: 'BCPST1',
+  'mp-mpi': 'MP/MPI', pc: 'PC', psi: 'PSI', pt: 'PT', bcpst2: 'BCPST2'
+};
+
+/** Texte d'un contenu de programme, allégé pour le prompt. */
+function compact(markdown) {
+  return markdown.replace(/<br>/g, ' ; ').replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Présentation des groupes pour le prompt : code, filières, titre, puis la
+ * colonne « contenus » du programme, tronquée à `maxChars` caractères.
+ */
+export function formatCandidates(groups, { maxChars = 420 } = {}) {
+  let famille = null;
+  return groups.map(group => {
+    const heading = group.famille !== famille
+      ? `${famille === null ? '' : '\n'}## ${FAMILLES.find(f => f.id === group.famille)?.libelle ?? group.famille}\n`
+      : '';
+    famille = group.famille;
+    const filieres = group.programmes.map(p => LABELS[p] ?? p).join(', ');
+    const head = `${group.code} [${filieres}] ${group.section ? `${group.section} › ` : ''}${group.titre}`;
+    let body = group.contenus.map(row => compact(row.contenu)).filter(Boolean).join(' ; ');
+    if (!body && group.texte) body = compact(group.texte);
+    if (body.length > maxChars) body = `${body.slice(0, maxChars).replace(/\s+\S*$/, '')} …`;
+    return `${heading}${body ? `${head}\n   ${body}` : head}`;
+  }).join('\n');
+}

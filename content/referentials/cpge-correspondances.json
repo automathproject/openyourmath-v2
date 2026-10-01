@@ -1,0 +1,155 @@
+{
+  "schema": "cpge-correspondances/v1",
+  "statut": "pilote : trois chapitres exo7 de L1 et les neuf chapitres crouzet",
+  "politique": "Pour un chapitre d'une source, les nœuds du référentiel CPGE (content/referentials/cpge/) où chercher les rattachements de ses exercices. Une section vaut toutes ses sous-sections. La table restreint les candidats proposés à l'étiquetage ; elle ne rattache rien à elle seule. Une liste vide signifie que le chapitre n'a pas d'équivalent en CPGE, ce que « raison » justifie.",
+  "correspondances": [
+    {
+      "source": "exo7",
+      "chapitre": "Nombres complexes",
+      "noeuds": [
+        "mpsi-mp2i.nombres-complexes",
+        "mpsi-mp2i.calcul-algebrique-trigonometrie.d",
+        "pcsi.nombres-complexes",
+        "pcsi.calcul-algebrique-trigonometrie.d",
+        "ptsi.nombres-complexes",
+        "ptsi.calcul-algebrique-trigonometrie.d",
+        "bcpst1.nombres-complexes",
+        "bcpst1.trigonometrie"
+      ]
+    },
+    {
+      "source": "exo7",
+      "chapitre": "Suite",
+      "noeuds": [
+        "mpsi-mp2i.nombres-reels-suites",
+        "mpsi-mp2i.analyse-asymptotique",
+        "pcsi.nombres-reels-suites",
+        "pcsi.analyse-asymptotique",
+        "ptsi.nombres-reels-suites",
+        "ptsi.analyse-asymptotique",
+        "bcpst1.suites-reelles-usuelles",
+        "bcpst1.suites-reelles"
+      ]
+    },
+    {
+      "source": "exo7",
+      "chapitre": "Polynôme, fraction rationnelle",
+      "noeuds": [
+        "mpsi-mp2i.polynomes-fractions-rationnelles",
+        "pcsi.polynomes",
+        "ptsi.polynomes",
+        "bcpst1.polynomes-reels",
+        "bcpst2.polynomes",
+        "mp-mpi.structures-algebriques.e"
+      ]
+    },
+    {
+      "source": "crouzet",
+      "chapitre": "Éléments de logique et raisonnement",
+      "noeuds": [
+        "mpsi-mp2i.raisonnement-vocabulaire-ensembliste",
+        "pcsi.raisonnement-vocabulaire-ensembliste",
+        "ptsi.raisonnement-vocabulaire-ensembliste",
+        "bcpst1.logique-ensembles-raisonnement"
+      ]
+    },
+    {
+      "source": "crouzet",
+      "chapitre": "Ensembles et applications",
+      "noeuds": [
+        "mpsi-mp2i.raisonnement-vocabulaire-ensembliste",
+        "pcsi.raisonnement-vocabulaire-ensembliste",
+        "ptsi.raisonnement-vocabulaire-ensembliste",
+        "bcpst1.logique-ensembles-raisonnement",
+        "bcpst1.vocabulaire-applications"
+      ]
+    },
+    {
+      "source": "crouzet",
+      "chapitre": "Généralités sur les nombres réels",
+      "noeuds": [
+        "mpsi-mp2i.calcul-algebrique-trigonometrie.c",
+        "mpsi-mp2i.nombres-reels-suites.a",
+        "mpsi-mp2i.nombres-reels-suites.b",
+        "pcsi.calcul-algebrique-trigonometrie.c",
+        "pcsi.raisonnement-vocabulaire-ensembliste.c",
+        "pcsi.nombres-reels-suites.a",
+        "ptsi.calcul-algebrique-trigonometrie.c",
+        "ptsi.raisonnement-vocabulaire-ensembliste.c",
+        "ptsi.nombres-reels-suites.a",
+        "bcpst1.nombres-reels"
+      ]
+    },
+    {
+      "source": "crouzet",
+      "chapitre": "Sommes et produits de réels",
+      "noeuds": [
+        "mpsi-mp2i.calcul-algebrique-trigonometrie.a",
+        "pcsi.calcul-algebrique-trigonometrie.a",
+        "ptsi.calcul-algebrique-trigonometrie.a",
+        "bcpst1.methodes-calcul"
+      ]
+    },
+    {
+      "source": "crouzet",
+      "chapitre": "Systèmes linéaires",
+      "noeuds": [
+        "mpsi-mp2i.calcul-algebrique-trigonometrie.b",
+        "mpsi-mp2i.calcul-matriciel-systemes.c",
+        "pcsi.calcul-algebrique-trigonometrie.b",
+        "pcsi.calcul-matriciel-systemes-lineaires.c",
+        "ptsi.calcul-algebrique-trigonometrie.b",
+        "ptsi.calcul-matriciel-systemes-lineaires.c",
+        "bcpst1.systemes-lineaires"
+      ]
+    },
+    {
+      "source": "crouzet",
+      "chapitre": "Généralités sur les fonctions",
+      "noeuds": [
+        "mpsi-mp2i.fonctions-valeurs-reelles-complexes",
+        "pcsi.techniques-calcul-fonctions",
+        "ptsi.techniques-calcul-fonctions",
+        "bcpst1.fonctions-reelles-usuelles"
+      ]
+    },
+    {
+      "source": "crouzet",
+      "chapitre": "Généralités sur les suites",
+      "noeuds": [
+        "mpsi-mp2i.nombres-reels-suites",
+        "pcsi.nombres-reels-suites",
+        "ptsi.nombres-reels-suites",
+        "bcpst1.suites-reelles-usuelles",
+        "bcpst1.suites-reelles"
+      ]
+    },
+    {
+      "source": "crouzet",
+      "chapitre": "Convergence d'une suite",
+      "noeuds": [
+        "mpsi-mp2i.nombres-reels-suites",
+        "mpsi-mp2i.analyse-asymptotique",
+        "pcsi.nombres-reels-suites",
+        "pcsi.analyse-asymptotique",
+        "ptsi.nombres-reels-suites",
+        "ptsi.analyse-asymptotique",
+        "bcpst1.suites-reelles"
+      ]
+    },
+    {
+      "source": "crouzet",
+      "chapitre": "Nombres complexes",
+      "noeuds": [
+        "mpsi-mp2i.nombres-complexes",
+        "mpsi-mp2i.calcul-algebrique-trigonometrie.d",
+        "pcsi.nombres-complexes",
+        "pcsi.calcul-algebrique-trigonometrie.d",
+        "ptsi.nombres-complexes",
+        "ptsi.calcul-algebrique-trigonometrie.d",
+        "bcpst1.nombres-complexes",
+        "bcpst1.trigonometrie"
+      ]
+    }
+  ]
+}
