@@ -286,6 +286,34 @@ Le regroupement v2 porte la couverture PCSI et PTSI à 98 % et plus, et la
 couverture BCPST1 à 73 % avec `gpt-oss-120b` et 42 % avec Mistral Small en
 local.
 
+Une relecture IA des 324 exercices (Opus 5.5, tenue à part de la relecture
+humaine) a ensuite trouvé trois défauts récurrents :
+
+- des prérequis évidents proposés comme objet de l'exercice ;
+- la 2e année presque toujours proposée à tort (9 % de propositions
+  acceptées) ;
+- des trous dans la table de correspondance : continuité, dérivabilité,
+  séries, arithmétique…
+
+La v3 y répond :
+
+- **Consignes.** Le prompt écarte les prérequis et ne retient une famille que
+  si la notion figure dans ses contenus. Le modèle juge d'après l'énoncé, pas
+  d'après le résumé généré. Un énoncé vide n'est pas soumis au modèle.
+- **Table.** Elle retire la 2e année des chapitres de L1 et ajoute les sections
+  manquantes.
+- **Regroupement.** Deux sous-sections de même titre (« Divisibilité et
+  division euclidienne » dans ℤ et dans K[X]) sont départagées par leur section.
+- **Taille des prompts.** Les extraits de programme sont plus courts, pour
+  tenir dans le contexte du modèle local et dans le quota quotidien d'Albert ;
+  `--estimer` mesure les prompts sans appeler de modèle.
+
+Comparées à la relecture IA, les propositions acceptées passent de 70 % à
+75 % (gpt-oss) et 76 % (Mistral). En contrepartie, les rattachements retrouvés
+passent de 91 % à 86 % (gpt-oss) et de 82 % à 73 % (Mistral, devenu très
+prudent sur BCPST). Les résultats v1 et v2 sont archivés dans
+`reports/cpge-pilote/v1/` et `v2/`.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par

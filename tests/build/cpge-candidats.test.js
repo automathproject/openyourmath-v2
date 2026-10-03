@@ -34,6 +34,11 @@ describe('buildCandidates — variantes de titre', () => {
     expect(groupOf('pcsi.polynomes.b')).toBe(groupOf('mpsi-mp2i.polynomes-fractions-rationnelles.b'));
   });
 
+  it('départage deux sous-sections de même titre par leur section (entiers / polynômes)', () => {
+    expect(groupOf('pcsi.polynomes.b').noeuds).toContain('mpsi-mp2i.polynomes-fractions-rationnelles.b');
+    expect(groupOf('mpsi-mp2i.arithmetique-entiers.a')?.noeuds ?? []).not.toContain('pcsi.polynomes.b');
+  });
+
   it('rapproche une variante de titre (« Anneau » / « Ensemble des polynômes »)', () => {
     expect(groupOf('pcsi.polynomes.a').noeuds).toEqual([
       'mpsi-mp2i.polynomes-fractions-rationnelles.a', 'pcsi.polynomes.a', 'ptsi.polynomes.a'

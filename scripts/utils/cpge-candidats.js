@@ -119,25 +119,38 @@ export function buildCandidates(noeudIds, index) {
   };
   const ordered = [...leaves.values()].sort((x, y) => rank(x.programme) - rank(y.programme) || x.ordre - y.ordre);
 
+  const sectionWords = leaf => words(leaf.parent_id ? index.byId.get(leaf.parent_id)?.titre ?? '' : '');
+  /**
+   * Parmi les groupes de même titre de sous-section, celui dont la section est
+   * la plus proche : « Divisibilité et division euclidienne » existe pour les
+   * entiers et pour les polynômes.
+   */
+  const bestExact = (leaf, famille) => {
+    const key = normalizeTitle(leaf.titre);
+    const matches = groups.filter(g => g.famille === famille && g.key === key && !g.leaves.some(l => l.programme === leaf.programme));
+    if (matches.length <= 1) return matches[0] ?? null;
+    const own = sectionWords(leaf);
+    return matches.reduce((best, g) => (similarity(own, g.section) > similarity(own, best.section) ? g : best));
+  };
+
   // 1. Titre identique dans une même famille, un seul nœud par programme.
   const groups = [];
   const pending = [];
   for (const leaf of ordered) {
     const famille = FAMILLE_OF.get(leaf.programme) ?? leaf.programme;
     const key = normalizeTitle(leaf.titre);
-    const group = groups.find(g => g.famille === famille && g.key === key && !g.leaves.some(l => l.programme === leaf.programme));
-    if (group) group.leaves.push(leaf);
-    else if (groups.some(g => g.famille === famille && g.key === key)) pending.push(leaf);
-    else if (groups.some(g => g.famille === famille) && !isFirstOfFamily(leaf, ordered)) pending.push(leaf);
-    else groups.push({ famille, key, words: words(leaf.titre), leaves: [leaf] });
+    if (isFirstOfFamily(leaf, ordered)) {
+      groups.push({ famille, key, words: words(leaf.titre), section: sectionWords(leaf), leaves: [leaf] });
+    } else {
+      pending.push(leaf);
+    }
   }
 
   // 2. Variantes de titre : rattachées au groupe le plus proche de la famille
   // qui n'a pas encore ce programme, sinon groupe à part.
   for (const leaf of pending) {
     const famille = FAMILLE_OF.get(leaf.programme) ?? leaf.programme;
-    const exact = groups.find(g => g.famille === famille && g.key === normalizeTitle(leaf.titre) &&
-      !g.leaves.some(l => l.programme === leaf.programme));
+    const exact = bestExact(leaf, famille);
     if (exact) {
       exact.leaves.push(leaf);
       continue;
@@ -154,7 +167,7 @@ export function buildCandidates(noeudIds, index) {
       }
     }
     if (best) best.leaves.push(leaf);
-    else groups.push({ famille, key: normalizeTitle(leaf.titre), words: own, leaves: [leaf] });
+    else groups.push({ famille, key: normalizeTitle(leaf.titre), words: own, section: sectionWords(leaf), leaves: [leaf] });
   }
 
   const familleRank = id => {
