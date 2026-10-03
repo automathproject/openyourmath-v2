@@ -16,6 +16,7 @@
 //   node scripts/classify-cpge.js --pilote                       # échantillon du pilote, Ollama
 //   node scripts/classify-cpge.js --pilote --albert gpt-oss-120b # même échantillon, Albert
 //   node scripts/classify-cpge.js --uuid cmlw --afficher         # un exercice, prompt et réponse
+//   node scripts/classify-cpge.js --pilote-l2l3                  # extension L2-L3 (abstention)
 //   node scripts/classify-cpge.js --pilote --estimer             # taille des prompts, sans appel
 //   options : --limit N, --concurrence N, --par-minute N (Albert : 9), --sortie FICHIER
 
@@ -39,6 +40,7 @@ const REPORT_DIR = path.join(PROJECT_ROOT, 'reports/cpge-pilote');
 const args = process.argv.slice(2);
 const option = name => args.find((_, i) => args[i - 1] === name);
 const PILOTE = args.includes('--pilote');
+const PILOTE_L2L3 = args.includes('--pilote-l2l3');
 const AFFICHER = args.includes('--afficher');
 const ESTIMER = args.includes('--estimer');
 const UUID = option('--uuid');
@@ -60,6 +62,19 @@ const SORTIE = option('--sortie') ??
 // sous-chapitres au prorata de leur taille.
 const PILOTE_EXO7 = ['Nombres complexes', 'Suite', 'Polynôme, fraction rationnelle'];
 const PAR_CHAPITRE = 70;
+
+// Extension L2-L3 : des chapitres qui recoupent la 2e année, d'autres qui ne la
+// recoupent qu'en partie, d'autres sans équivalent en CPGE. Elle mesure si la
+// table écarte les derniers et si le modèle sait ne rien retenir.
+const PILOTE_L2L3_CHAPITRES = [
+  ['L2', "Réduction d'endomorphisme, polynôme annulateur"],
+  ['L2', 'Série entière'],
+  ['L2', 'Topologie'],
+  ['L3', 'Espace topologique, espace métrique'],
+  ['L3', 'Fonction holomorphe'],
+  ['L3', 'Théorème de Sylow']
+];
+const PAR_CHAPITRE_L2L3 = 17;
 // Extrait des contenus du programme par candidat : assez pour situer la
 // sous-section, assez court pour tenir dans le contexte et le quota d'Albert.
 const CONTENUS_MAX = 260;
@@ -79,7 +94,8 @@ const hash = value => crypto.createHash('sha1').update(value).digest('hex');
 function selectExercises(db) {
   const columns = 'uuid, title, level, module, chapter, subchapter, summary, concepts, methods, content_json, content_hash, source_path';
   if (UUID) return db.prepare(`SELECT ${columns} FROM exercises WHERE uuid = ?`).all(UUID);
-  if (!PILOTE) throw new Error('Préciser --pilote ou --uuid.');
+  if (PILOTE_L2L3) return sample(db, columns, PILOTE_L2L3_CHAPITRES, PAR_CHAPITRE_L2L3);
+  if (!PILOTE) throw new Error('Préciser --pilote, --pilote-l2l3 ou --uuid.');
 
   const crouzet = db.prepare(`SELECT ${columns} FROM exercises WHERE source_path LIKE 'crouzet/%' ORDER BY source_path`).all();
   const exo7 = [];
@@ -98,6 +114,27 @@ function selectExercises(db) {
     }
   }
   return [...crouzet, ...exo7];
+}
+
+/** Tirage reproductible de `count` exercices exo7 par chapitre, au prorata des sous-chapitres. */
+function sample(db, columns, chapters, count) {
+  const out = [];
+  for (const [level, chapter] of chapters) {
+    const rows = db.prepare(`SELECT ${columns} FROM exercises WHERE organization = 'exo7' AND level = ? AND chapter = ?`).all(level, chapter);
+    const bySub = new Map();
+    for (const row of rows) {
+      const key = row.subchapter || '';
+      if (!bySub.has(key)) bySub.set(key, []);
+      bySub.get(key).push(row);
+    }
+    const picked = [];
+    for (const group of bySub.values()) {
+      group.sort((a, b) => hash(a.uuid).localeCompare(hash(b.uuid)));
+      picked.push(...group.slice(0, Math.max(1, Math.round((count * group.length) / rows.length))));
+    }
+    out.push(...picked.sort((a, b) => hash(a.uuid).localeCompare(hash(b.uuid))).slice(0, count));
+  }
+  return out;
 }
 
 function sourceOf(row) {
@@ -287,7 +324,7 @@ async function main() {
   db.close();
 
   if (ESTIMER) {
-    const sizes = exercises.map(row => {
+    const sizes = exercises.filter(row => table.get(`${sourceOf(row)}|${row.chapter}`)?.length).map(row => {
       const groups = buildCandidates(table.get(`${sourceOf(row)}|${row.chapter}`), index);
       return Math.round((SYSTEM.length + buildPrompt(row, groups).length) / 3.2);
     }).sort((a, b) => a - b);
@@ -330,6 +367,18 @@ async function main() {
         const noeuds = table.get(key);
         if (!noeuds) throw new Error(`chapitre absent de la table de correspondance : ${key}`);
         const groups = buildCandidates(noeuds, index);
+        if (!groups.length) {
+          // Chapitre sans équivalent en CPGE : la table l'écarte, sans appel au modèle.
+          Object.assign(entry, {
+            candidats: 0, propositions: [], rejets: [], hors_programme: true,
+            remarque: 'chapitre sans équivalent en CPGE', exclu_par_table: true
+          });
+          entry.duree_ms = 0;
+          if (!AFFICHER) fs.appendFileSync(SORTIE, `${JSON.stringify(entry)}\n`);
+          finished++;
+          console.log(`[${finished}/${todo.length}] ${row.uuid} — chapitre sans équivalent en CPGE, aucun appel`);
+          continue;
+        }
         if (!hasStatement(row)) {
           // Énoncé vide (brouillon, TODO) : le modèle ne s'appuierait que sur le
           // chapitre et sur un résumé sans fondement.
