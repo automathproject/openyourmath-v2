@@ -16,6 +16,7 @@
 //   node scripts/classify-cpge.js --pilote                       # échantillon du pilote, Ollama
 //   node scripts/classify-cpge.js --pilote --albert gpt-oss-120b # même échantillon, Albert
 //   node scripts/classify-cpge.js --uuid cmlw --afficher         # un exercice, prompt et réponse
+//   node scripts/classify-cpge.js --pilote --estimer             # taille des prompts, sans appel
 //   options : --limit N, --concurrence N, --par-minute N (Albert : 9), --sortie FICHIER
 
 import fs from 'fs';
@@ -39,6 +40,7 @@ const args = process.argv.slice(2);
 const option = name => args.find((_, i) => args[i - 1] === name);
 const PILOTE = args.includes('--pilote');
 const AFFICHER = args.includes('--afficher');
+const ESTIMER = args.includes('--estimer');
 const UUID = option('--uuid');
 const LIMIT = option('--limit') ? Number(option('--limit')) : Infinity;
 const ALBERT_MODEL = option('--albert');
@@ -47,14 +49,20 @@ const MODEL = ALBERT_MODEL ? `albert:${ALBERT_MODEL}` : `ollama:${OLLAMA_MODEL}`
 const CONCURRENCE = Number(option('--concurrence') ?? (ALBERT_MODEL ? 2 : 1));
 // Albert accepte 10 requêtes par minute et par clé : on reste en dessous.
 const PAR_MINUTE = Number(option('--par-minute') ?? (ALBERT_MODEL ? 9 : Infinity));
+// Version du pilote (consignes, table de correspondance et regroupement) : un
+// fichier de résultats par version, pour ne pas mélanger les passages.
+const PILOTE_VERSION = 3;
 const SORTIE = option('--sortie') ??
-  path.join(REPORT_DIR, `${MODEL.replace(/[^a-z0-9.-]+/gi, '_')}.v${REGROUPEMENT_VERSION}.jsonl`);
+  path.join(REPORT_DIR, `${MODEL.replace(/[^a-z0-9.-]+/gi, '_')}.v${PILOTE_VERSION}.jsonl`);
 
 // Échantillon du pilote : tous les exercices crouzet, et dans exo7 L1 un tirage
 // reproductible de PAR_CHAPITRE exercices par chapitre, réparti entre les
 // sous-chapitres au prorata de leur taille.
 const PILOTE_EXO7 = ['Nombres complexes', 'Suite', 'Polynôme, fraction rationnelle'];
 const PAR_CHAPITRE = 70;
+// Extrait des contenus du programme par candidat : assez pour situer la
+// sous-section, assez court pour tenir dans le contexte et le quota d'Albert.
+const CONTENUS_MAX = 260;
 
 const SYSTEM = `Tu es professeur de mathématiques en classes préparatoires scientifiques. \
 Tu situes des exercices dans les programmes officiels de mathématiques des CPGE. \
@@ -113,7 +121,7 @@ function exerciseText(row) {
     if (!block.latex) continue;
     const label = BLOCK_LABELS[block.type] ?? 'Bloc';
     const isAnswer = block.type === 'reponse' || block.type === 'indication';
-    const budget = isAnswer ? 1200 - answers : 2500 - statement;
+    const budget = isAnswer ? 800 - answers : 2000 - statement;
     if (budget <= 0) continue;
     const text = block.latex.replace(/\s+/g, ' ').trim().slice(0, budget);
     if (isAnswer) answers += text.length;
@@ -121,6 +129,17 @@ function exerciseText(row) {
     parts.push(`${label} : ${text}`);
   }
   return parts.join('\n');
+}
+
+/** Vrai si l'exercice a un énoncé, commentaires LaTeX retirés. */
+function hasStatement(row) {
+  let blocks = [];
+  try {
+    blocks = JSON.parse(row.content_json);
+  } catch {
+    return false;
+  }
+  return blocks.some(block => (block.latex ?? '').replace(/(^|[^\\])%.*$/gm, '$1').trim());
 }
 
 function list(value) {
@@ -144,12 +163,17 @@ ${exerciseText(row)}
 
 Sous-sections candidates, par famille de programmes (code, filières, section › sous-section, puis contenus du programme). \
 Les familles découpent différemment les mêmes notions : un groupe vaut pour toutes les filières qu'il cite.
-${formatCandidates(groups)}
+${formatCandidates(groups, { maxChars: CONTENUS_MAX })}
 
 Consignes :
-- Choisis les sous-sections dont les notions sont l'objet de l'exercice ou indispensables pour le résoudre. N'en retiens pas une qui n'est qu'évoquée au passage.
+- Choisis les sous-sections dont les notions sont l'objet de l'exercice ou indispensables pour le résoudre, c'est-à-dire ce que l'exercice fait réellement travailler.
+- Ne retiens pas un simple prérequis : la définition d'une suite ou d'une limite, une fonction usuelle ou une formule de trigonométrie utilisées en passant, une notion qui ne sert qu'à exprimer le résultat.
 - Examine chaque famille séparément : si la notion figure au programme de plusieurs familles, retiens-la dans chacune (par exemple un groupe de la 1re année MPSI, PCSI, PTSI et le chapitre correspondant de BCPST).
+- Ne retiens un groupe que si la notion figure bien dans les contenus affichés pour ce groupe : chaque famille a son propre programme, plus ou moins étendu (BCPST en particulier).
+- Un groupe de 2e année ne se retient que si l'exercice dépasse le programme de 1re année.
 - Dans une famille, le plus souvent une ou deux sous-sections, jamais plus de trois.
+- Juge d'après l'énoncé et la réponse : le résumé, les concepts et les méthodes ont été produits automatiquement et peuvent être inexacts.
+- Si l'énoncé est vide, n'est qu'un texte de remplissage, ou ne relève d'aucune candidate, ne retiens rien.
 - Si l'exercice demande des notions absentes de toutes les candidates (hors programme, ou relevant d'un autre chapitre), dis-le avec "hors_programme": true, et ne retiens que les candidates vraiment pertinentes, éventuellement aucune.
 - "confiance" est entre 0 et 1 : 0.9 et plus si le rattachement est évident, 0.5 s'il est discutable.
 - "justification" : une phrase courte.
@@ -262,6 +286,17 @@ async function main() {
   const exercises = selectExercises(db);
   db.close();
 
+  if (ESTIMER) {
+    const sizes = exercises.map(row => {
+      const groups = buildCandidates(table.get(`${sourceOf(row)}|${row.chapter}`), index);
+      return Math.round((SYSTEM.length + buildPrompt(row, groups).length) / 3.2);
+    }).sort((a, b) => a - b);
+    const total = sizes.reduce((s, x) => s + x, 0);
+    console.log(`${sizes.length} prompts · ≈ ${total} jetons d'entrée en tout · moyenne ${Math.round(total / sizes.length)} · ` +
+      `médiane ${sizes[sizes.length >> 1]} · max ${sizes.at(-1)}`);
+    return;
+  }
+
   fs.mkdirSync(path.dirname(SORTIE), { recursive: true });
   const done = AFFICHER ? new Set() : loadDone(SORTIE);
   const todo = exercises.filter(row => !done.has(row.uuid)).slice(0, LIMIT);
@@ -285,6 +320,7 @@ async function main() {
         sous_chapitre: row.subchapter,
         titre: row.title,
         content_hash: row.content_hash,
+        pilote: PILOTE_VERSION,
         regroupement: REGROUPEMENT_VERSION,
         modele: MODEL,
         date: new Date().toISOString()
@@ -294,6 +330,16 @@ async function main() {
         const noeuds = table.get(key);
         if (!noeuds) throw new Error(`chapitre absent de la table de correspondance : ${key}`);
         const groups = buildCandidates(noeuds, index);
+        if (!hasStatement(row)) {
+          // Énoncé vide (brouillon, TODO) : le modèle ne s'appuierait que sur le
+          // chapitre et sur un résumé sans fondement.
+          Object.assign(entry, { candidats: groups.length, propositions: [], rejets: [], hors_programme: false, remarque: 'énoncé vide' });
+          entry.duree_ms = 0;
+          if (!AFFICHER) fs.appendFileSync(SORTIE, `${JSON.stringify(entry)}\n`);
+          finished++;
+          console.log(`[${finished}/${todo.length}] ${row.uuid} — énoncé vide, aucun appel`);
+          continue;
+        }
         const messages = [{ role: 'system', content: SYSTEM }, { role: 'user', content: buildPrompt(row, groups) }];
         if (AFFICHER) console.log(`\n----- prompt -----\n${messages[1].content}`);
         const raw = await callModel(messages);
