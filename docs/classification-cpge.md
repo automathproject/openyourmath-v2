@@ -314,6 +314,25 @@ passent de 91 % à 86 % (gpt-oss) et de 82 % à 73 % (Mistral, devenu très
 prudent sur BCPST). Les résultats v1 et v2 sont archivés dans
 `reports/cpge-pilote/v1/` et `v2/`.
 
+Tous les exercices de la base ne relèvent pas d'un programme de CPGE. La
+table n'est qu'un accélérateur : un chapitre sans équivalent (fonctions
+holomorphes, théorèmes de Sylow) y figure avec une liste vide, et ses
+exercices sont écartés sans appel au modèle. Pour les autres chapitres, c'est
+au modèle de reconnaître un exercice hors programme.
+
+Une extension L2-L3 du pilote (`pnpm classify:cpge --pilote-l2l3` : 101
+exercices de six chapitres) mesure cette capacité :
+
+- la table écarte bien les 34 exercices des chapitres sans équivalent ;
+- sur les 7 exercices hors CPGE des autres chapitres (topologie générale,
+  espaces métriques…), gpt-oss ne s'abstient que 2 fois ;
+- il ne s'abstient à tort que sur 1 des 55 exercices au programme.
+
+La page de relecture enregistre désormais l'abstention explicitement (« Ne
+relève d'aucun programme de CPGE »). Elle se distingue d'un candidat manquant
+dans la table : un exercice au programme dont la sous-section n'est pas
+proposée.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par

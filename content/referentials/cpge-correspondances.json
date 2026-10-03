@@ -1,6 +1,6 @@
 {
   "schema": "cpge-correspondances/v1",
-  "statut": "pilote v3 : trois chapitres exo7 de L1 et les neuf chapitres crouzet ; sections ajoutées après la relecture de la v2",
+  "statut": "pilote v3 : chapitres exo7 de L1 et crouzet ; extension L2-L3 pour mesurer l’abstention",
   "politique": "Pour un chapitre d'une source, les nœuds du référentiel CPGE (content/referentials/cpge/) où chercher les rattachements de ses exercices. Une section vaut toutes ses sous-sections. La table restreint les candidats proposés à l'étiquetage ; elle ne rattache rien à elle seule. Une liste vide signifie que le chapitre n'a pas d'équivalent en CPGE, ce que « raison » justifie. Les chapitres de L1 ne citent pas les programmes de 2e année.",
   "correspondances": [
     {
@@ -218,6 +218,58 @@
         "ptsi.polynomes.c",
         "bcpst1.polynomes-reels.b"
       ]
+    },
+    {
+      "source": "exo7",
+      "chapitre": "Réduction d'endomorphisme, polynôme annulateur",
+      "noeuds": [
+        "mp-mpi.reduction-endomorphismes",
+        "pc.reduction",
+        "psi.reduction-endomorphismes",
+        "pt.reduction-endomorphismes",
+        "bcpst2.valeurs-propres-vecteurs-propres"
+      ]
+    },
+    {
+      "source": "exo7",
+      "chapitre": "Série entière",
+      "noeuds": [
+        "mp-mpi.series-entieres",
+        "pc.series-entieres",
+        "psi.series-entieres",
+        "pt.series-entieres"
+      ]
+    },
+    {
+      "source": "exo7",
+      "chapitre": "Topologie",
+      "noeuds": [
+        "mp-mpi.topologie-espaces-normes",
+        "pc.espaces-vectoriels-normes",
+        "psi.espaces-vectoriels-normes"
+      ]
+    },
+    {
+      "source": "exo7",
+      "chapitre": "Espace topologique, espace métrique",
+      "noeuds": [
+        "mp-mpi.topologie-espaces-normes",
+        "pc.espaces-vectoriels-normes",
+        "psi.espaces-vectoriels-normes"
+      ],
+      "note": "Ne recoupe qu’en partie la topologie des espaces vectoriels normés de 2e année : espaces métriques et topologiques généraux sont hors programme."
+    },
+    {
+      "source": "exo7",
+      "chapitre": "Fonction holomorphe",
+      "noeuds": [],
+      "raison": "L’analyse complexe (fonctions holomorphes) n’est au programme d’aucune filière de CPGE."
+    },
+    {
+      "source": "exo7",
+      "chapitre": "Théorème de Sylow",
+      "noeuds": [],
+      "raison": "Les théorèmes de Sylow ne sont au programme d’aucune filière de CPGE."
     }
   ]
 }
