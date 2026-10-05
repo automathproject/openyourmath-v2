@@ -18,6 +18,8 @@
 //   node scripts/classify-cpge.js --uuid cmlw --afficher         # un exercice, prompt et réponse
 //   node scripts/classify-cpge.js --pilote-l2l3                  # extension L2-L3 (abstention)
 //   node scripts/classify-cpge.js --pilote --estimer             # taille des prompts, sans appel
+//   node scripts/classify-cpge.js --pilote --albert gpt-oss-120b --repli-local
+//                                         # Albert, et Ollama quand Albert est saturé
 //   options : --limit N, --concurrence N, --par-minute N (Albert : 9), --sortie FICHIER
 
 import fs from 'fs';
@@ -30,7 +32,7 @@ import {
   loadCorrespondances, loadConcordance, indexNodes, buildCandidates, formatCandidates, horsProgramme, REGROUPEMENT_VERSION
 } from './utils/cpge-candidats.js';
 import { PROJECT_ROOT } from './utils/content-paths.js';
-import { chatMessages, withRetry } from '../src/lib/ia/albert.js';
+import { chatMessages, withRetry, isQuotaExceeded } from '../src/lib/ia/albert.js';
 
 const require = createRequire(import.meta.url);
 dotenvConfig({ path: path.join(PROJECT_ROOT, '.env') });
@@ -59,8 +61,17 @@ const PAR_MINUTE = Number(option('--par-minute') ?? (ALBERT_MODEL ? 9 : Infinity
 // Version du pilote (consignes, table de correspondance et regroupement) : un
 // fichier de résultats par version, pour ne pas mélanger les passages.
 const PILOTE_VERSION = 5;
-const SORTIE = option('--sortie') ??
-  path.join(REPORT_DIR, `${MODEL.replace(/[^a-z0-9.-]+/gi, '_')}.v${PILOTE_VERSION}.jsonl`);
+const sortieDe = model => path.join(REPORT_DIR, `${model.replace(/[^a-z0-9.-]+/gi, '_')}.v${PILOTE_VERSION}.jsonl`);
+const SORTIE = option('--sortie') ?? sortieDe(MODEL);
+// --repli-local : quand Albert est saturé (quota journalier, 429 ou 5xx
+// persistants), l'exercice passe au modèle local, dont le résultat va dans son
+// propre fichier. Un exercice traité par l'un ou l'autre n'est pas repris.
+const REPLI_LOCAL = Boolean(ALBERT_MODEL) && args.includes('--repli-local');
+const MODEL_LOCAL = `ollama:${OLLAMA_MODEL}`;
+const SORTIE_LOCAL = sortieDe(MODEL_LOCAL);
+// Albert est réessayé après ce délai : 30 min après un quota épuisé, 5 min sinon.
+const PAUSE_QUOTA_MS = 30 * 60_000;
+const PAUSE_SATURATION_MS = 5 * 60_000;
 
 // Échantillon du pilote : tous les exercices crouzet, et dans exo7 L1 un tirage
 // reproductible de PAR_CHAPITRE exercices par chapitre, réparti entre les
@@ -266,16 +277,39 @@ async function throttle() {
   if (slot > now) await new Promise(resolve => setTimeout(resolve, slot - now));
 }
 
+let albertEnPauseJusqua = 0;
+// Un seul appel local à la fois : le modèle 24B ne tient qu'une fois en mémoire.
+let fileLocale = Promise.resolve();
+function callLocal(messages) {
+  const call = fileLocale.then(() => callOllama(messages));
+  fileLocale = call.catch(() => {});
+  return call;
+}
+
+/** Appelle le modèle ; renvoie la réponse brute et le modèle qui l'a produite. */
 async function callModel(messages) {
+  if (!ALBERT_MODEL) return { raw: await callOllama(messages), model: MODEL };
+  if (REPLI_LOCAL && Date.now() < albertEnPauseJusqua) return { raw: await callLocal(messages), model: MODEL_LOCAL };
   await throttle();
-  if (!ALBERT_MODEL) return callOllama(messages);
-  return withRetry(() => chatMessages(messages, {
-    model: ALBERT_MODEL,
-    temperature: 0,
-    maxTokens: 2000,
-    jsonMode: true,
-    timeoutMs: 180_000
-  }), { maxAttempts: 4, delayMs: 20_000 });
+  try {
+    const raw = await withRetry(() => chatMessages(messages, {
+      model: ALBERT_MODEL,
+      temperature: 0,
+      maxTokens: 2000,
+      jsonMode: true,
+      timeoutMs: 180_000
+    }), { maxAttempts: 4, delayMs: 20_000 });
+    return { raw, model: MODEL };
+  } catch (error) {
+    const quota = isQuotaExceeded(error);
+    if (!REPLI_LOCAL || !(quota || /429|50[0-9]|timeout|aborted/i.test(error.message))) throw error;
+    const pause = quota ? PAUSE_QUOTA_MS : PAUSE_SATURATION_MS;
+    if (Date.now() >= albertEnPauseJusqua) {
+      console.log(`   ⇄ Albert ${quota ? 'a épuisé son quota' : 'est saturé'} : modèle local pendant ${pause / 60_000} min`);
+    }
+    albertEnPauseJusqua = Math.max(albertEnPauseJusqua, Date.now() + pause);
+    return { raw: await callLocal(messages), model: MODEL_LOCAL };
+  }
 }
 
 function parseJson(text) {
@@ -367,10 +401,12 @@ async function main() {
 
   fs.mkdirSync(path.dirname(SORTIE), { recursive: true });
   const done = AFFICHER ? new Set() : loadDone(SORTIE);
+  if (REPLI_LOCAL) for (const uuid of loadDone(SORTIE_LOCAL)) done.add(uuid);
   const todo = exercises.filter(row => !done.has(row.uuid)).slice(0, LIMIT);
   console.log(`🎓 Étiquetage CPGE — ${MODEL}`);
   console.log(`   ${exercises.length} exercice(s) sélectionné(s), ${done.size} déjà traité(s), ${todo.length} à traiter`);
   console.log(`   Sortie : ${path.relative(PROJECT_ROOT, SORTIE)}`);
+  if (REPLI_LOCAL) console.log(`   Repli : ${MODEL_LOCAL} → ${path.relative(PROJECT_ROOT, SORTIE_LOCAL)}`);
 
   let next = 0;
   let finished = 0;
@@ -422,7 +458,8 @@ async function main() {
         }
         const messages = [{ role: 'system', content: SYSTEM }, { role: 'user', content: buildPrompt(row, groups, index) }];
         if (AFFICHER) console.log(`\n----- prompt -----\n${messages[1].content}`);
-        const raw = await callModel(messages);
+        const { raw, model } = await callModel(messages);
+        entry.modele = model;
         if (AFFICHER) console.log(`\n----- réponse -----\n${raw}`);
         const answer = parseJson(raw);
         // Exercice jugé hors CPGE : aucun rattachement, quoi que le modèle liste ensuite.
@@ -441,12 +478,12 @@ async function main() {
         entry.erreur = error.message.slice(0, 300);
       }
       entry.duree_ms = Date.now() - t0;
-      if (!AFFICHER) fs.appendFileSync(SORTIE, `${JSON.stringify(entry)}\n`);
+      if (!AFFICHER) fs.appendFileSync(entry.modele === MODEL_LOCAL && REPLI_LOCAL ? SORTIE_LOCAL : SORTIE, `${JSON.stringify(entry)}\n`);
       finished++;
       const choisis = entry.propositions?.filter(p => p.origine === 'llm').map(p => `${p.noeud} (${p.confiance})`).join(', ');
       const eta = ((Date.now() - started) / finished) * (todo.length - finished) / 60000;
       console.log(`[${finished}/${todo.length}] ${row.uuid} ${entry.erreur ? `✗ ${entry.erreur}` : choisis || '— aucun'}` +
-        `${entry.hors_programme ? ' [hors programme]' : ''} · ${(entry.duree_ms / 1000).toFixed(1)} s · reste ≈ ${eta.toFixed(0)} min`);
+        `${entry.hors_programme ? ' [hors programme]' : ''}${REPLI_LOCAL && entry.modele === MODEL_LOCAL ? ' [local]' : ''} · ${(entry.duree_ms / 1000).toFixed(1)} s · reste ≈ ${eta.toFixed(0)} min`);
     }
   }
 
