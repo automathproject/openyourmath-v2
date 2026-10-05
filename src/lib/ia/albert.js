@@ -179,5 +179,6 @@ export async function withRetry(fn, { maxAttempts = 3, delayMs = 1000 } = {}) {
  * @returns {boolean}
  */
 export function isQuotaExceeded(err) {
-  return /requests per day exceeded/i.test(err?.message ?? "");
+  // Deux quotas journaliers : requêtes et jetons d'entrée.
+  return /(requests|input tokens) per day exceeded/i.test(err?.message ?? "");
 }
