@@ -401,6 +401,38 @@ sont plus rattachés : 219 exercices proposaient BCPST 1re année en v3, 103 en
 v5. Sur 147 propagations, le modèle n'a pas précisé les filières alors que le
 groupe avait des écarts ; elles restent à vérifier.
 
+### v6 : une réponse par famille, étiquetage par Opus
+
+Pour corriger la baisse sur BCPST, la v6 demande une réponse par famille
+affichée, dans l'ordre, avec une liste vide si l'exercice ne relève pas de
+cette famille. Le modèle n'est plus épinglé à un modèle local ou à Albert :
+l'étiquetage est fait par Opus 5.5 dans une session Claude Code.
+`--exporter` écrit les prompts par lots d'un même chapitre, et `--reponses`
+réimporte les réponses avec le même traitement que celui des modèles
+appelés.
+
+Sur le pilote, avec les mêmes contenus que gpt-oss (tronqués à 260
+caractères), et face à la relecture d'Opus 5.5 de la v3 :
+
+| Version        | Précision | Rappel | Hors CPGE écartés | Écartés à tort |
+| -------------- | --------- | ------ | ----------------- | -------------- |
+| v5, gpt-oss    | 70 %      | 69 %   | 6 sur 7           | 7 sur 371      |
+| v6, Opus 5.5   | 91 %      | 78 %   | 7 sur 7           | 5 sur 371      |
+
+La référence est elle aussi une production d'Opus. Ces chiffres mesurent
+donc sa cohérence, pas sa justesse : un contrôle humain sur échantillon reste
+nécessaire. Les cinq exclusions en désaccord sont des cas limites : critère
+de Cauchy, et exercices posés dans un espace topologique général mais
+faisables dans un espace normé.
+
+Les étiqueteurs signalent deux limites du pilote :
+
+- La coupure des contenus à 260 caractères masque environ 40 % du texte des
+  programmes : les coefficients binomiaux, la limite monotone en BCPST, etc.
+- Des candidats manquent dans la table de correspondance : second degré,
+  formule du binôme, division euclidienne, familles libres, sommes
+  télescopiques, lemme de Cesàro, valeurs d'adhérence…
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par

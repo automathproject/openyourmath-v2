@@ -22,7 +22,10 @@
 //                                         # Albert, et Ollama quand Albert est saturé
 //   node scripts/classify-cpge.js --pilote --albert gpt-oss-120b --alterner
 //                                         # Albert et Ollama en parallèle, sur la même file
-//   options : --limit N, --concurrence N, --par-minute N (Albert : 9), --sortie FICHIER
+//   node scripts/classify-cpge.js --pilote --exporter DIR        # prompts par lots, pour un étiquetage hors script
+//   node scripts/classify-cpge.js --pilote --reponses F.json --modele claude:claude-opus-5-5
+//                                         # importe ces réponses (uuid → JSON) au lieu d'appeler un modèle
+//   options : --limit N, --concurrence N, --par-minute N (Albert : 9), --sortie FICHIER, --lot N
 
 import fs from 'fs';
 import path from 'path';
@@ -31,7 +34,8 @@ import { createRequire } from 'module';
 import { config as dotenvConfig } from 'dotenv';
 import { collectReferentiel } from './build-referentiel-cpge.js';
 import {
-  loadCorrespondances, loadConcordance, indexNodes, buildCandidates, formatCandidates, horsProgramme, REGROUPEMENT_VERSION
+  loadCorrespondances, loadConcordance, indexNodes, buildCandidates, formatCandidates, horsProgramme, REGROUPEMENT_VERSION,
+  FAMILLES
 } from './utils/cpge-candidats.js';
 import { PROJECT_ROOT } from './utils/content-paths.js';
 import { chatMessages, withRetry, isQuotaExceeded } from '../src/lib/ia/albert.js';
@@ -56,13 +60,21 @@ const UUIDS = option('--uuids')?.split(',').map(u => u.trim()).filter(Boolean);
 const LIMIT = option('--limit') ? Number(option('--limit')) : Infinity;
 const ALBERT_MODEL = option('--albert');
 const OLLAMA_MODEL = process.env.OLLAMA_CHAT_MODEL || 'mistral-small3.2:24b';
-const MODEL = ALBERT_MODEL ? `albert:${ALBERT_MODEL}` : `ollama:${OLLAMA_MODEL}`;
+// --exporter DIR : écrit les prompts par lots (un chapitre, au plus --lot
+// exercices), pour un étiquetage hors script, par Opus dans une session
+// Claude Code par exemple. --reponses FICHIER : importe ces réponses (objet
+// uuid → réponse JSON) ; le traitement qui suit est celui des modèles appelés.
+const EXPORTER = option('--exporter');
+const LOT = Number(option('--lot') ?? 12);
+const REPONSES_FILE = option('--reponses');
+const MODEL = REPONSES_FILE ? (option('--modele') ?? 'externe')
+  : ALBERT_MODEL ? `albert:${ALBERT_MODEL}` : `ollama:${OLLAMA_MODEL}`;
 const CONCURRENCE = Number(option('--concurrence') ?? (ALBERT_MODEL ? 2 : 1));
 // Albert accepte 10 requêtes par minute et par clé : on reste en dessous.
 const PAR_MINUTE = Number(option('--par-minute') ?? (ALBERT_MODEL ? 9 : Infinity));
 // Version du pilote (consignes, table de correspondance et regroupement) : un
 // fichier de résultats par version, pour ne pas mélanger les passages.
-const PILOTE_VERSION = 5;
+const PILOTE_VERSION = 6;
 const sortieDe = model => path.join(REPORT_DIR, `${model.replace(/[^a-z0-9.-]+/gi, '_')}.v${PILOTE_VERSION}.jsonl`);
 const SORTIE = option('--sortie') ?? sortieDe(MODEL);
 // --repli-local : quand Albert est saturé (quota journalier, 429 ou 5xx
@@ -209,19 +221,51 @@ function list(value) {
   }
 }
 
-function buildPrompt(row, groups, index) {
-  const exclusions = horsProgramme(groups, index);
-  return `Exercice à situer dans les programmes de CPGE.
-
-Titre : ${row.title}
+/** Partie du prompt propre à l'exercice. */
+function exercisePart(row) {
+  return `Titre : ${row.title}
 Classement universitaire : ${row.level} / ${row.module} / ${row.chapter}${row.subchapter ? ` / ${row.subchapter}` : ''}
 Résumé : ${row.summary ?? '(aucun)'}
 Concepts : ${list(row.concepts)}
 Méthodes : ${list(row.methods)}
 
-${exerciseText(row)}
+${exerciseText(row)}`;
+}
 
-Sous-sections candidates, par famille de programmes (code, filières, section › sous-section, puis contenus du programme). \
+function buildPrompt(row, groups, index) {
+  return `Exercice à situer dans les programmes de CPGE.\n\n${exercisePart(row)}\n\n${chapterPart(groups, index)}`;
+}
+
+/** Lot d'exercices d'un même chapitre : candidats et consignes donnés une fois. */
+function formatLot(key, rows, groups, index) {
+  return `${SYSTEM}
+
+Lot d'exercices du chapitre « ${key} ». Traite chaque exercice séparément, avec les candidats et les consignes \
+donnés une seule fois à la fin du lot.
+
+${rows.map(row => `# Exercice ${row.uuid}\n\n${exercisePart(row)}`).join('\n\n')}
+
+# Candidats et consignes, communs aux exercices du lot
+
+${chapterPart(groups, index)}
+
+Pour ce lot, réponds par un seul objet JSON dont les clés sont les identifiants des exercices \
+(${rows.map(row => row.uuid).join(', ')}) et les valeurs la réponse décrite ci-dessus pour chacun.
+`;
+}
+
+/** Partie du prompt commune à un chapitre : candidats, exclusions, consignes. */
+function chapterPart(groups, index) {
+  const exclusions = horsProgramme(groups, index);
+  // Familles affichées, dans l'ordre : le modèle répond pour chacune, sans quoi
+  // il s'arrête à la première (BCPST négligée en v4 et v5).
+  const familles = [...new Set(groups.map(group => group.famille))]
+    .map(id => FAMILLES.find(f => f.id === id)?.libelle ?? id);
+  const exemple = familles.map((famille, i) => ({
+    famille,
+    rattachements: i === 0 ? [{ groupe: 'G3', confiance: 0.9, justification: '…', filieres: ['MP/MPI'] }] : []
+  }));
+  return `Sous-sections candidates, par famille de programmes (code, filières, section › sous-section, puis contenus du programme). \
 Les familles découpent différemment les mêmes notions : un groupe vaut pour toutes les filières qu'il cite.
 ${formatCandidates(groups, { maxChars: CONTENUS_MAX })}
 ${exclusions.length ? `\nPoints que ces programmes déclarent hors programme (chaque mention ne vaut que pour les filières indiquées : une notion exclue d'une filière peut être au programme d'une autre) :\n${exclusions.map(x => `- ${x}`).join('\n')}\n` : ''}
@@ -235,7 +279,7 @@ Question préalable : un élève de CPGE (1re ou 2e année, toutes filières) po
 Consignes, si l'exercice relève de la CPGE :
 - Choisis les sous-sections dont les notions sont l'objet de l'exercice ou indispensables pour le résoudre, c'est-à-dire ce que l'exercice fait réellement travailler.
 - Ne retiens pas un simple prérequis : la définition d'une suite ou d'une limite, une fonction usuelle ou une formule de trigonométrie utilisées en passant, une notion qui ne sert qu'à exprimer le résultat.
-- Examine chaque famille séparément : si la notion figure au programme de plusieurs familles, retiens-la dans chacune (par exemple un groupe de la 1re année MPSI, PCSI, PTSI et le chapitre correspondant de BCPST).
+- Examine chaque famille séparément, dans l'ordre : ${familles.join(' ; ')}. Pour chacune, demande-toi si l'exercice relève de son programme. Si la notion figure dans les contenus affichés pour cette famille, retiens le groupe correspondant, même si tu l'as déjà retenue dans une autre famille. Les programmes n'ont pas la même étendue : une famille peut ne couvrir qu'une partie de l'exercice, ou pas du tout.
 - Ne retiens un groupe que si la notion figure bien dans les contenus affichés pour ce groupe : chaque famille a son propre programme, plus ou moins étendu (BCPST en particulier).
 - Un groupe de 2e année ne se retient que si l'exercice dépasse le programme de 1re année.
 - Dans une famille, le plus souvent une ou deux sous-sections, jamais plus de trois.
@@ -245,8 +289,8 @@ Consignes, si l'exercice relève de la CPGE :
 - "confiance" est entre 0 et 1 : 0.9 et plus si le rattachement est évident, 0.5 s'il est discutable.
 - "justification" : une phrase courte.
 
-Réponds par ce JSON, sans autre texte, en commençant par la question préalable :
-{"releve_cpge": true, "motif": "une phrase", "rattachements": [{"groupe": "G3", "confiance": 0.9, "justification": "…", "filieres": ["MP/MPI"]}], "remarque": ""}`;
+Réponds par ce JSON, sans autre texte, en commençant par la question préalable. "familles" contient une entrée par famille affichée, dans l'ordre, avec ses rattachements (liste vide si l'exercice ne relève pas de cette famille) :
+${JSON.stringify({ releve_cpge: true, motif: 'une phrase', familles: exemple, remarque: '' })}`;
 }
 
 async function callOllama(messages) {
@@ -349,7 +393,12 @@ function toPropositions(answer, groups) {
   const byCode = new Map(groups.map(group => [group.code, group]));
   const propositions = [];
   const rejets = [];
-  for (const item of (answer.rattachements ?? []).slice(0, 10)) {
+  // Réponse par famille (v6) ou liste unique (versions précédentes, modèles qui s'en écartent).
+  const items = [
+    ...(Array.isArray(answer.rattachements) ? answer.rattachements : []),
+    ...(Array.isArray(answer.familles) ? answer.familles.flatMap(f => (Array.isArray(f?.rattachements) ? f.rattachements : [])) : [])
+  ];
+  for (const item of items.slice(0, 12)) {
     // Certains modèles recopient toute la ligne du candidat : seul le code en tête compte.
     const code = String(item.groupe ?? '').trim().match(/^G\d+/)?.[0];
     const group = byCode.get(code);
@@ -396,6 +445,12 @@ async function main() {
   const db = openDb();
   const exercises = selectExercises(db);
   db.close();
+  const reponses = REPONSES_FILE ? JSON.parse(fs.readFileSync(REPONSES_FILE, 'utf8')) : null;
+  // Exercice qui demande un modèle : chapitre avec des candidats, énoncé non vide.
+  const besoinModele = row => {
+    const noeuds = table.get(`${sourceOf(row)}|${row.chapter}`);
+    return Boolean(noeuds && buildCandidates(noeuds, index, { concordance }).length && hasStatement(row));
+  };
 
   if (ESTIMER) {
     const sizes = exercises.filter(row => table.get(`${sourceOf(row)}|${row.chapter}`)?.length).map(row => {
@@ -411,7 +466,29 @@ async function main() {
   fs.mkdirSync(path.dirname(SORTIE), { recursive: true });
   const done = AFFICHER ? new Set() : loadDone(SORTIE);
   if (REPLI_LOCAL) for (const uuid of loadDone(SORTIE_LOCAL)) done.add(uuid);
-  const todo = exercises.filter(row => !done.has(row.uuid)).slice(0, LIMIT);
+  const todo = exercises.filter(row => !done.has(row.uuid))
+    // Import : seulement les exercices qui ont une réponse, et ceux que le script traite seul.
+    .filter(row => !reponses || reponses[row.uuid] !== undefined || !besoinModele(row))
+    .slice(0, LIMIT);
+
+  if (EXPORTER) {
+    fs.mkdirSync(EXPORTER, { recursive: true });
+    const parChapitre = new Map();
+    for (const row of todo.filter(besoinModele)) {
+      const key = `${sourceOf(row)}|${row.chapter}`;
+      (parChapitre.get(key) ?? parChapitre.set(key, []).get(key)).push(row);
+    }
+    let n = 0;
+    for (const [key, rows] of parChapitre) {
+      const groups = buildCandidates(table.get(key), index, { concordance });
+      for (let i = 0; i < rows.length; i += LOT) {
+        const nom = `lot-${String(++n).padStart(3, '0')}.md`;
+        fs.writeFileSync(path.join(EXPORTER, nom), formatLot(key, rows.slice(i, i + LOT), groups, index));
+      }
+    }
+    console.log(`${n} lot(s), ${[...parChapitre.values()].flat().length} exercice(s), écrits dans ${EXPORTER}`);
+    return;
+  }
   console.log(`🎓 Étiquetage CPGE — ${MODEL}`);
   console.log(`   ${exercises.length} exercice(s) sélectionné(s), ${done.size} déjà traité(s), ${todo.length} à traiter`);
   console.log(`   Sortie : ${path.relative(PROJECT_ROOT, SORTIE)}`);
@@ -467,7 +544,9 @@ async function main() {
         }
         const messages = [{ role: 'system', content: SYSTEM }, { role: 'user', content: buildPrompt(row, groups, index) }];
         if (AFFICHER) console.log(`\n----- prompt -----\n${messages[1].content}`);
-        const { raw, model } = await callModel(messages, { local });
+        const { raw, model } = reponses
+          ? { raw: JSON.stringify(reponses[row.uuid]), model: MODEL }
+          : await callModel(messages, { local });
         entry.modele = model;
         if (AFFICHER) console.log(`\n----- réponse -----\n${raw}`);
         const answer = parseJson(raw);
