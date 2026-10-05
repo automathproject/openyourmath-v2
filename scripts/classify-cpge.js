@@ -301,7 +301,9 @@ async function callModel(messages, { local = false } = {}) {
     const raw = await withRetry(() => chatMessages(messages, {
       model: ALBERT_MODEL,
       temperature: 0,
-      maxTokens: 2000,
+      // gpt-oss compte son raisonnement dans ce plafond : à 2000, des réponses
+      // longues arrivaient tronquées ou vides.
+      maxTokens: 4000,
       jsonMode: true,
       timeoutMs: 180_000
     }), { maxAttempts: 4, delayMs: 20_000 });
@@ -319,6 +321,7 @@ async function callModel(messages, { local = false } = {}) {
 }
 
 function parseJson(text) {
+  if (typeof text !== 'string' || !text.trim()) throw new Error('réponse vide');
   const cleaned = text.trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '');
   try {
     return JSON.parse(cleaned);

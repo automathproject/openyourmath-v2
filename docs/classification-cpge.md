@@ -378,6 +378,29 @@ plus discret, comme le théorème de Cayley-Hamilton, absent du programme de PT.
 La 1re année garde le regroupement par titres, en attendant une concordance
 MPSI, PCSI, PTSI construite de la même façon.
 
+### Résultats de la v5
+
+La v5 a tourné sur tout le pilote (L1 et L2-L3). gpt-oss a traité 333
+exercices, et mistral-small3.2 en local 58, en parallèle (`--alterner`). Face
+à la relecture d'Opus 5.5 :
+
+| Version | Précision | Rappel | Hors CPGE écartés | Écartés à tort |
+| ------- | --------- | ------ | ----------------- | -------------- |
+| v3      | 67 %      | 81 %   | 2 sur 7           | 0 sur 371      |
+| v4      | 70 %      | 70 %   | 6 sur 7           | 13 sur 329     |
+| v5      | 70 %      | 69 %   | 6 sur 7           | 7 sur 371      |
+
+Opus a relu les propositions de la v3, ce qui avantage la v3 dans cette
+comparaison. 76 groupes proposés par la v5 sur 1009 n'ont pas d'avis
+d'Opus et comptent ici comme des erreurs. Sur les seuls groupes jugés, la
+précision de la v5 est de 74 %.
+
+La baisse du rappel depuis la v4 vient surtout de BCPST. Des exercices sur
+les suites ou les nombres complexes, au programme de BCPST 1re année, ne lui
+sont plus rattachés : 219 exercices proposaient BCPST 1re année en v3, 103 en
+v5. Sur 147 propagations, le modèle n'a pas précisé les filières alors que le
+groupe avait des écarts ; elles restent à vérifier.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par
