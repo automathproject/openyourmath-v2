@@ -34,8 +34,8 @@ import { createRequire } from 'module';
 import { config as dotenvConfig } from 'dotenv';
 import { collectReferentiel } from './build-referentiel-cpge.js';
 import {
-  loadCorrespondances, loadConcordance, indexNodes, buildCandidates, formatCandidates, horsProgramme, REGROUPEMENT_VERSION,
-  FAMILLES
+  loadCorrespondances, loadConcordance, indexNodes, buildCandidates, formatCandidates, formatSommaire, formatTexteOfficiel,
+  horsProgramme, REGROUPEMENT_VERSION, FAMILLES
 } from './utils/cpge-candidats.js';
 import { PROJECT_ROOT } from './utils/content-paths.js';
 import { chatMessages, withRetry, isQuotaExceeded } from '../src/lib/ia/albert.js';
@@ -67,6 +67,10 @@ const OLLAMA_MODEL = process.env.OLLAMA_CHAT_MODEL || 'mistral-small3.2:24b';
 const EXPORTER = option('--exporter');
 const LOT = Number(option('--lot') ?? 12);
 const REPONSES_FILE = option('--reponses');
+// --direct : pas de table de correspondance ; les candidats sont tous les
+// programmes. Les lots donnent le sommaire, et le texte officiel complet est
+// écrit à côté (texte-officiel.md), à relire pour chaque groupe retenu.
+const DIRECT = args.includes('--direct');
 const MODEL = REPONSES_FILE ? (option('--modele') ?? 'externe')
   : ALBERT_MODEL ? `albert:${ALBERT_MODEL}` : `ollama:${OLLAMA_MODEL}`;
 const CONCURRENCE = Number(option('--concurrence') ?? (ALBERT_MODEL ? 2 : 1));
@@ -76,7 +80,7 @@ const PAR_MINUTE = Number(option('--par-minute') ?? (ALBERT_MODEL ? 9 : Infinity
 // fichier de résultats par version, pour ne pas mélanger les passages.
 const PILOTE_VERSION = 7;
 const sortieDe = model => path.join(REPORT_DIR, `${model.replace(/[^a-z0-9.-]+/gi, '_')}.v${PILOTE_VERSION}.jsonl`);
-const SORTIE = option('--sortie') ?? sortieDe(MODEL);
+const SORTIE = option('--sortie') ?? (DIRECT ? sortieDe(MODEL).replace(/\.jsonl$/, '.direct.jsonl') : sortieDe(MODEL));
 // --repli-local : quand Albert est saturé (quota journalier, 429 ou 5xx
 // persistants), l'exercice passe au modèle local, dont le résultat va dans son
 // propre fichier. Un exercice traité par l'un ou l'autre n'est pas repris.
@@ -241,6 +245,7 @@ function buildPrompt(row, groups, index) {
 
 /** Lot d'exercices d'un même chapitre : candidats et consignes donnés une fois. */
 function formatLot(key, rows, groups, index) {
+  if (DIRECT) return formatLotDirect(rows, groups);
   return `${SYSTEM}
 
 Lot d'exercices du chapitre « ${key} ». Traite chaque exercice séparément, avec les candidats et les consignes \
@@ -257,9 +262,30 @@ Pour ce lot, réponds par un seul objet JSON dont les clés sont les identifiant
 `;
 }
 
+/** Lot de l'étiquetage direct : sommaire de tous les programmes, consignes. */
+function formatLotDirect(rows, groups) {
+  const consignes = chapterPart(groups, null, { direct: true });
+  return `${SYSTEM}
+
+Lot d'exercices à situer dans les programmes de CPGE. Traite chaque exercice séparément, avec le sommaire et les consignes \
+donnés une seule fois à la fin du lot.
+
+${rows.map(row => `# Exercice ${row.uuid}\n\n${exercisePart(row)}`).join('\n\n')}
+
+# Sommaire des programmes et consignes, communs aux exercices du lot
+
+${consignes}
+
+Pour ce lot, réponds par un seul objet JSON dont les clés sont les identifiants des exercices \
+(${rows.map(row => row.uuid).join(', ')}) et les valeurs la réponse décrite ci-dessus pour chacun.
+`;
+}
+
 /** Partie du prompt commune à un chapitre : candidats, exclusions, consignes. */
-function chapterPart(groups, index) {
-  const exclusions = horsProgramme(groups, index);
+function chapterPart(groups, index, { direct = false } = {}) {
+  const exclusions = direct ? [] : horsProgramme(groups, index);
+  // En mode direct, le modèle voit le sommaire et relit le texte officiel.
+  const contenus = direct ? 'le texte officiel' : 'les contenus affichés';
   // Familles affichées, dans l'ordre : le modèle répond pour chacune, sans quoi
   // il s'arrête à la première (BCPST négligée en v4 et v5).
   const familles = [...new Set(groups.map(group => group.famille))]
@@ -268,27 +294,34 @@ function chapterPart(groups, index) {
     famille,
     rattachements: i === 0 ? [{ groupe: 'G3', confiance: 0.9, justification: '…', filieres: ['MP/MPI'] }] : []
   }));
-  return `Sous-sections candidates, par famille de programmes (code, filières, section › sous-section, puis contenus du programme). \
+  const liste = direct
+    ? `Sommaire de tous les programmes de mathématiques de CPGE, par famille (code, filières, section › sous-section). \
+Les familles découpent différemment les mêmes notions : un groupe vaut pour toutes les filières qu'il cite. \
+Le texte officiel complet de chaque groupe (contenus et commentaires, dont les mentions « hors programme ») est dans le fichier \
+texte-officiel.md, sous le titre « ### G… » du groupe : repère d'abord dans le sommaire les groupes plausibles, puis relis leur \
+texte officiel avant de les retenir.
+${formatSommaire(groups)}`
+    : `Sous-sections candidates, par famille de programmes (code, filières, section › sous-section, puis contenus du programme). \
 Les familles découpent différemment les mêmes notions : un groupe vaut pour toutes les filières qu'il cite.
-${formatCandidates(groups, { maxChars: CONTENUS_MAX })}
+${formatCandidates(groups, { maxChars: CONTENUS_MAX })}`;
+  return `${liste}
 ${exclusions.length ? `\nPoints que ces programmes déclarent hors programme (chaque mention ne vaut que pour les filières indiquées : une notion exclue d'une filière peut être au programme d'une autre) :\n${exclusions.map(x => `- ${x}`).join('\n')}\n` : ''}
-Question préalable : un élève de CPGE (1re ou 2e année, toutes filières) pourrait-il traiter cet exercice avec les seuls outils de son programme, tels que les décrivent les contenus ci-dessus ?
+Question préalable : un élève de CPGE (1re ou 2e année, toutes filières) pourrait-il traiter cet exercice avec les seuls outils de son programme, tels que les ${direct ? 'décrit le texte officiel' : 'décrivent les contenus ci-dessus'} ?
 - L'exercice relève de la CPGE s'il est au programme d'AU MOINS UNE filière : une notion exclue d'une filière (PC, PSI…) mais au programme d'une autre (MP…) ne suffit pas à répondre false.
-- Les candidats ne montrent qu'une partie des programmes : une notion absente des extraits affichés (dérivée, discriminant, coefficients binomiaux…) n'est pas pour autant hors programme.
-- Réponds "releve_cpge": false seulement si l'essentiel de l'exercice repose sur une notion déclarée hors programme pour toutes les filières concernées, ou sur une théorie manifestement de niveau licence 3 ou master (espaces métriques ou topologiques généraux, analyse complexe, théorie des groupes avancée…).
+${direct ? '' : "- Les candidats ne montrent qu'une partie des programmes : une notion absente des extraits affichés (dérivée, discriminant, coefficients binomiaux…) n'est pas pour autant hors programme.\n"}- Réponds "releve_cpge": false seulement si l'essentiel de l'exercice repose sur une notion déclarée hors programme pour toutes les filières concernées, ou sur une théorie manifestement de niveau licence 3 ou master (espaces métriques ou topologiques généraux, analyse complexe, théorie des groupes avancée…).
 - Réponds true si l'exercice reste dans le programme, même s'il demande de l'initiative ou si une question isolée le dépasse.
 - Si la réponse est false, ne retiens aucune sous-section.
 
 Consignes, si l'exercice relève de la CPGE :
 - Choisis les sous-sections dont les notions sont l'objet de l'exercice ou indispensables pour le résoudre, c'est-à-dire ce que l'exercice fait réellement travailler.
 - Ne retiens pas un simple prérequis : la définition d'une suite ou d'une limite, une fonction usuelle ou une formule de trigonométrie utilisées en passant, une notion qui ne sert qu'à exprimer le résultat.
-- Examine chaque famille séparément, dans l'ordre : ${familles.join(' ; ')}. Pour chacune, demande-toi si l'exercice relève de son programme. Si la notion figure dans les contenus affichés pour cette famille, retiens le groupe correspondant, même si tu l'as déjà retenue dans une autre famille. Les programmes n'ont pas la même étendue : une famille peut ne couvrir qu'une partie de l'exercice, ou pas du tout.
-- Ne retiens un groupe que si la notion figure bien dans les contenus affichés pour ce groupe : chaque famille a son propre programme, plus ou moins étendu (BCPST en particulier).
+- Examine chaque famille séparément, dans l'ordre : ${familles.join(' ; ')}. Pour chacune, demande-toi si l'exercice relève de son programme. Si la notion figure dans ${contenus} de cette famille, retiens le groupe correspondant, même si tu l'as déjà retenue dans une autre famille. Les programmes n'ont pas la même étendue : une famille peut ne couvrir qu'une partie de l'exercice, ou pas du tout.
+- Ne retiens un groupe que si la notion figure bien dans ${contenus} de ce groupe : chaque famille a son propre programme, plus ou moins étendu (BCPST en particulier).
 - Un groupe de 2e année ne se retient que si l'exercice dépasse le programme de 1re année.
 - Dans une famille, le plus souvent une ou deux sous-sections, jamais plus de trois.
 - Certains groupes indiquent des « écarts entre filières » : des notions au programme de certaines filières du groupe seulement. Pour un tel groupe, donne toujours "filieres" : les filières dont le programme contient tout ce que l'exercice utilise de ce groupe (par exemple ["MP/MPI"] s'il utilise une notion propre à MP/MPI, ou toutes les filières du groupe s'il n'utilise aucune des notions en écart). Pour un groupe sans écart, omets "filieres".
 - Juge d'après l'énoncé et la réponse : le résumé, les concepts et les méthodes ont été produits automatiquement et peuvent être inexacts.
-- Si l'énoncé est vide, n'est qu'un texte de remplissage, ou ne relève d'aucune candidate, ne retiens rien.
+- Si l'énoncé est vide, n'est qu'un texte de remplissage, ou ne relève d'aucun ${direct ? 'groupe' : 'candidat'}, ne retiens rien.
 - "confiance" est entre 0 et 1 : 0.9 et plus si le rattachement est évident, 0.5 s'il est discutable.
 - "justification" : une phrase courte.
 
@@ -442,7 +475,8 @@ async function main() {
   const referentiel = collectReferentiel();
   if (referentiel.errors.length) throw new Error(`référentiel invalide : ${referentiel.errors[0]}`);
   const index = indexNodes(referentiel.nodes);
-  const table = loadCorrespondances(TABLE_PATH);
+  const racines = referentiel.nodes.filter(node => !node.parent_id).map(node => node.id);
+  const table = DIRECT ? { get: () => racines } : loadCorrespondances(TABLE_PATH);
   const concordance = loadConcordance(CONCORDANCE_PATH);
 
   const db = openDb();
@@ -478,16 +512,21 @@ async function main() {
     fs.mkdirSync(EXPORTER, { recursive: true });
     const parChapitre = new Map();
     for (const row of todo.filter(besoinModele)) {
-      const key = `${sourceOf(row)}|${row.chapter}`;
+      // Mode direct : mêmes candidats pour tous, les lots ne suivent pas les chapitres.
+      const key = DIRECT ? 'direct' : `${sourceOf(row)}|${row.chapter}`;
       (parChapitre.get(key) ?? parChapitre.set(key, []).get(key)).push(row);
     }
     let n = 0;
     for (const [key, rows] of parChapitre) {
-      const groups = buildCandidates(table.get(key), index, { concordance });
+      const groups = buildCandidates(DIRECT ? racines : table.get(key), index, { concordance });
       for (let i = 0; i < rows.length; i += LOT) {
         const nom = `lot-${String(++n).padStart(3, '0')}.md`;
         fs.writeFileSync(path.join(EXPORTER, nom), formatLot(key, rows.slice(i, i + LOT), groups, index));
       }
+    }
+    if (DIRECT) {
+      const groups = buildCandidates(racines, index, { concordance });
+      fs.writeFileSync(path.join(EXPORTER, 'texte-officiel.md'), `${formatTexteOfficiel(groups, index)}\n`);
     }
     console.log(`${n} lot(s), ${[...parChapitre.values()].flat().length} exercice(s), écrits dans ${EXPORTER}`);
     return;
@@ -515,6 +554,7 @@ async function main() {
         content_hash: row.content_hash,
         pilote: PILOTE_VERSION,
         contenus: Number.isFinite(CONTENUS_MAX) ? CONTENUS_MAX : 'complets',
+        candidats_par: DIRECT ? 'programmes complets' : 'table de correspondance',
         regroupement: REGROUPEMENT_VERSION,
         modele: MODEL,
         date: new Date().toISOString()

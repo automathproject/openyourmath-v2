@@ -268,6 +268,44 @@ function compact(markdown) {
  * Présentation des groupes pour le prompt : code, filières, titre, puis la
  * colonne « contenus » du programme, tronquée à `maxChars` caractères.
  */
+/**
+ * Sommaire des groupes : une ligne par groupe (code, filières, section ›
+ * sous-section, écarts), sans contenus. Pour l'étiquetage direct, où le
+ * modèle cherche dans tous les programmes.
+ */
+export function formatSommaire(groups) {
+  let famille = null;
+  const lignes = [];
+  for (const group of groups) {
+    if (group.famille !== famille) {
+      famille = group.famille;
+      lignes.push('', `## ${FAMILLES.find(f => f.id === famille)?.libelle ?? famille}`);
+    }
+    const ecarts = group.ecarts?.length
+      ? ` — écarts entre filières : ${group.ecarts.map(e => `${e.notion.slice(0, 70)} (${e.presente.map(p => LABELS[p] ?? p).join(', ')} seulement)`).join(' ; ')}`
+      : '';
+    lignes.push(`${group.code} [${group.programmes.map(p => LABELS[p] ?? p).join(', ')}] ${group.section ? `${group.section} › ` : ''}${group.titre}${ecarts}`);
+  }
+  return lignes.join('\n').trim();
+}
+
+/**
+ * Texte officiel complet des groupes : chaque programme du groupe, avec ses
+ * contenus et ses commentaires, sous un titre « ### G12 ».
+ */
+export function formatTexteOfficiel(groups, index) {
+  const propre = t => String(t ?? '').replace(/<br>/g, ' ').replace(/\s+/g, ' ').trim();
+  return groups.map(group => [
+    `### ${group.code} [${group.programmes.map(p => LABELS[p] ?? p).join(', ')}] ${group.section ? `${group.section} › ` : ''}${group.titre}`,
+    ...group.noeuds.map(id => {
+      const n = index.byId.get(id);
+      const rows = (n.contenus ?? []).map(r => `- ${propre(r.contenu)}${r.commentaire ? ` — commentaire : ${propre(r.commentaire)}` : ''}`);
+      return [`#### ${LABELS[n.programme] ?? n.programme} — ${n.titre} (${id})`, n.texte ? propre(n.texte) : '', ...rows].filter(Boolean).join('\n');
+    }),
+    ...(group.ecarts ?? []).map(e => `Écart entre filières : ${e.notion} — au programme de ${e.presente.map(p => LABELS[p] ?? p).join(', ')}, pas de ${e.absente.map(p => LABELS[p] ?? p).join(', ')} (${e.nature}).`)
+  ].join('\n')).join('\n\n');
+}
+
 export function formatCandidates(groups, { maxChars = 420 } = {}) {
   let famille = null;
   return groups.map(group => {

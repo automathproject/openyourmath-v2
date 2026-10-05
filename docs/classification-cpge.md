@@ -455,6 +455,25 @@ exercices. Ils proposent des rattachements identiques pour 62 % d'entre eux,
 avec un recouvrement moyen de 0,83 (indice de Jaccard). Seul un contrôle
 humain peut maintenant départager les cas où ils divergent.
 
+### Étiquetage direct, sans table de correspondance
+
+Avec `--direct`, les candidats sont tous les programmes : 355 groupes, avec
+les mêmes regroupements entre filières. Les lots donnent le sommaire des
+programmes, et le texte officiel complet (contenus et commentaires) est
+écrit à côté. Le modèle repère les groupes plausibles dans le sommaire, puis
+relit leur texte officiel avant de les retenir. Le chapitre universitaire de
+l'exercice n'intervient plus.
+
+Essai sur les 40 exercices de l'échantillon de contrôle, comparés à la v7 :
+
+- même verdict CPGE pour 39 exercices. XhZo, sur la connexité de l'ensemble
+  des valeurs d'adhérence, est jugé hors CPGE par la v7 et en CPGE en direct ;
+- rattachements identiques pour 22 exercices, recouvrement moyen de 0,74 ;
+- autant de groupes retenus (90 pour la v7, 91 en direct) ;
+- 10 exercices rattachés hors des candidats de la table, dont les exercices
+  mal classés à la source : Pmj5 (fonctions de deux variables), dOCG,
+  7Jo3 (dénombrabilité).
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par
