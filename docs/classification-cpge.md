@@ -433,6 +433,28 @@ Les étiqueteurs signalent deux limites du pilote :
   formule du binôme, division euclidienne, familles libres, sommes
   télescopiques, lemme de Cesàro, valeurs d'adhérence…
 
+### v7 : contenus complets et table complétée
+
+La v7 reprend la consigne de la v6, avec deux changements. Les contenus du
+programme sont complets, et la table est complétée de 68 nœuds, d'après les
+candidats manquants que les étiqueteurs ont signalés. Les notions absentes
+de tous les programmes ne sont pas ajoutées (lemme de Cesàro, valeurs
+d'adhérence, barycentre…). Les chapitres de L2-L3 peuvent maintenant citer
+la 1re année.
+
+| Version | Précision | Précision, groupes jugés | Rappel | Sans rattachement |
+| ------- | --------- | ------------------------ | ------ | ----------------- |
+| v6      | 91 %      | 95 %                     | 78 %   | 12                |
+| v7      | 84 %      | 94 %                     | 78 %   | 7                 |
+
+La précision baisse parce que la référence, faite sur les candidats de la
+v3, ne juge pas 107 groupes de la v7. Parmi eux, 55 portent sur des
+candidats ajoutés à la table. Sur les groupes jugés, la précision est stable.
+Les deux passages d'Opus donnent le même verdict CPGE pour les 391
+exercices. Ils proposent des rattachements identiques pour 62 % d'entre eux,
+avec un recouvrement moyen de 0,83 (indice de Jaccard). Seul un contrôle
+humain peut maintenant départager les cas où ils divergent.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par

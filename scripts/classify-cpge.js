@@ -74,7 +74,7 @@ const CONCURRENCE = Number(option('--concurrence') ?? (ALBERT_MODEL ? 2 : 1));
 const PAR_MINUTE = Number(option('--par-minute') ?? (ALBERT_MODEL ? 9 : Infinity));
 // Version du pilote (consignes, table de correspondance et regroupement) : un
 // fichier de résultats par version, pour ne pas mélanger les passages.
-const PILOTE_VERSION = 6;
+const PILOTE_VERSION = 7;
 const sortieDe = model => path.join(REPORT_DIR, `${model.replace(/[^a-z0-9.-]+/gi, '_')}.v${PILOTE_VERSION}.jsonl`);
 const SORTIE = option('--sortie') ?? sortieDe(MODEL);
 // --repli-local : quand Albert est saturé (quota journalier, 429 ou 5xx
