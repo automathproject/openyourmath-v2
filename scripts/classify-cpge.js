@@ -20,6 +20,8 @@
 //   node scripts/classify-cpge.js --pilote --estimer             # taille des prompts, sans appel
 //   node scripts/classify-cpge.js --pilote --albert gpt-oss-120b --repli-local
 //                                         # Albert, et Ollama quand Albert est saturé
+//   node scripts/classify-cpge.js --pilote --albert gpt-oss-120b --alterner
+//                                         # Albert et Ollama en parallèle, sur la même file
 //   options : --limit N, --concurrence N, --par-minute N (Albert : 9), --sortie FICHIER
 
 import fs from 'fs';
@@ -66,7 +68,10 @@ const SORTIE = option('--sortie') ?? sortieDe(MODEL);
 // --repli-local : quand Albert est saturé (quota journalier, 429 ou 5xx
 // persistants), l'exercice passe au modèle local, dont le résultat va dans son
 // propre fichier. Un exercice traité par l'un ou l'autre n'est pas repris.
-const REPLI_LOCAL = Boolean(ALBERT_MODEL) && args.includes('--repli-local');
+// --alterner : en plus, un worker local puise dans la même file qu'Albert,
+// pour aller plus vite et économiser son quota (implique --repli-local).
+const ALTERNER = Boolean(ALBERT_MODEL) && args.includes('--alterner');
+const REPLI_LOCAL = ALTERNER || (Boolean(ALBERT_MODEL) && args.includes('--repli-local'));
 const MODEL_LOCAL = `ollama:${OLLAMA_MODEL}`;
 const SORTIE_LOCAL = sortieDe(MODEL_LOCAL);
 // Albert est réessayé après ce délai : 30 min après un quota épuisé, 5 min sinon.
@@ -287,8 +292,9 @@ function callLocal(messages) {
 }
 
 /** Appelle le modèle ; renvoie la réponse brute et le modèle qui l'a produite. */
-async function callModel(messages) {
+async function callModel(messages, { local = false } = {}) {
   if (!ALBERT_MODEL) return { raw: await callOllama(messages), model: MODEL };
+  if (local) return { raw: await callLocal(messages), model: MODEL_LOCAL };
   if (REPLI_LOCAL && Date.now() < albertEnPauseJusqua) return { raw: await callLocal(messages), model: MODEL_LOCAL };
   await throttle();
   try {
@@ -412,7 +418,7 @@ async function main() {
   let finished = 0;
   const started = Date.now();
 
-  async function worker() {
+  async function worker(local = false) {
     while (next < todo.length) {
       const row = todo[next++];
       const key = `${sourceOf(row)}|${row.chapter}`;
@@ -458,7 +464,7 @@ async function main() {
         }
         const messages = [{ role: 'system', content: SYSTEM }, { role: 'user', content: buildPrompt(row, groups, index) }];
         if (AFFICHER) console.log(`\n----- prompt -----\n${messages[1].content}`);
-        const { raw, model } = await callModel(messages);
+        const { raw, model } = await callModel(messages, { local });
         entry.modele = model;
         if (AFFICHER) console.log(`\n----- réponse -----\n${raw}`);
         const answer = parseJson(raw);
@@ -487,7 +493,9 @@ async function main() {
     }
   }
 
-  await Promise.all(Array.from({ length: Math.min(CONCURRENCE, todo.length) }, worker));
+  const workers = Array.from({ length: Math.min(CONCURRENCE, todo.length) }, () => worker());
+  if (ALTERNER) workers.push(worker(true));
+  await Promise.all(workers);
 }
 
 main().catch(error => {
