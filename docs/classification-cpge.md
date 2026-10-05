@@ -87,6 +87,7 @@ compatibilité) :
 content/referentials/cpge/
 ├── README.md               format des programmes
 ├── sources.json            liens vers les annexes officielles (BO 2021)
+├── concordance.json        sous-sections équivalentes entre filières, et leurs écarts
 └── programmes/
     ├── mpsi-mp2i.md        MPSI, MP2I — 1re année
     ├── pcsi.md             PCSI       — 1re année
@@ -346,6 +347,36 @@ tort. Deux confusions expliquent ces erreurs :
 
 La v5 corrige la consigne en ce sens. `--uuids` permet de la tester d'abord
 sur un jeu de cas difficiles.
+
+### Concordance de 2e année
+
+Le regroupement par titres rapproche des sous-sections de MP, PC, PSI et PT
+qui portent le même nom sans couvrir les mêmes notions. Le lemme de
+décomposition des noyaux en est un exemple : il est au programme de MP, mais
+pas de PC ni de PSI. La table `cpge/concordance.json` remplace ce
+regroupement pour la famille tronc-2. Elle a été établie par Opus 5.5 à partir
+des programmes officiels, puis relue par une seconde passe d'Opus 5.5. Un
+enseignant en a contrôlé un échantillon de 23 éléments, tous jugés corrects.
+Elle contient :
+
+- 60 groupes de sous-sections équivalentes ;
+- 50 sous-sections propres à un seul programme ;
+- 86 écarts. Chacun indique une notion, les filières où elle figure, celles où
+  elle ne figure pas, la nature de l'écart (contenu absent, hors programme
+  explicite, restriction en commentaire) et la citation du programme.
+
+Elle ne sert qu'à présenter les candidats. Elle ne décide pas si un exercice
+relève de la CPGE, et ne remplace pas la table de correspondance par chapitre.
+
+À l'étiquetage, chaque groupe affiche ses écarts, réduits aux filières
+présentes parmi les candidats. Pour un groupe à écarts, le modèle doit
+indiquer les filières concernées (`filieres`), et seuls leurs nœuds sont
+retenus. S'il ne le fait pas, la propagation est marquée `a_verifier:
+"ecarts"` : un premier essai avec gpt-oss montre que le modèle précise bien
+les filières pour une notion propre à MP, mais pas toujours pour un écart
+plus discret, comme le théorème de Cayley-Hamilton, absent du programme de PT.
+La 1re année garde le regroupement par titres, en attendant une concordance
+MPSI, PCSI, PTSI construite de la même façon.
 
 ## Intégration dans l'application
 

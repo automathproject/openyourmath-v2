@@ -27,7 +27,7 @@ import { createRequire } from 'module';
 import { config as dotenvConfig } from 'dotenv';
 import { collectReferentiel } from './build-referentiel-cpge.js';
 import {
-  loadCorrespondances, indexNodes, buildCandidates, formatCandidates, horsProgramme, REGROUPEMENT_VERSION
+  loadCorrespondances, loadConcordance, indexNodes, buildCandidates, formatCandidates, horsProgramme, REGROUPEMENT_VERSION
 } from './utils/cpge-candidats.js';
 import { PROJECT_ROOT } from './utils/content-paths.js';
 import { chatMessages, withRetry } from '../src/lib/ia/albert.js';
@@ -37,6 +37,7 @@ dotenvConfig({ path: path.join(PROJECT_ROOT, '.env') });
 
 const DB_PATH = path.join(PROJECT_ROOT, 'data/exercises.sqlite');
 const TABLE_PATH = path.join(PROJECT_ROOT, 'content/referentials/cpge-correspondances.json');
+const CONCORDANCE_PATH = path.join(PROJECT_ROOT, 'content/referentials/cpge/concordance.json');
 const REPORT_DIR = path.join(PROJECT_ROOT, 'reports/cpge-pilote');
 
 const args = process.argv.slice(2);
@@ -222,13 +223,14 @@ Consignes, si l'exercice relève de la CPGE :
 - Ne retiens un groupe que si la notion figure bien dans les contenus affichés pour ce groupe : chaque famille a son propre programme, plus ou moins étendu (BCPST en particulier).
 - Un groupe de 2e année ne se retient que si l'exercice dépasse le programme de 1re année.
 - Dans une famille, le plus souvent une ou deux sous-sections, jamais plus de trois.
+- Certains groupes indiquent des « écarts entre filières » : des notions au programme de certaines filières du groupe seulement. Pour un tel groupe, donne toujours "filieres" : les filières dont le programme contient tout ce que l'exercice utilise de ce groupe (par exemple ["MP/MPI"] s'il utilise une notion propre à MP/MPI, ou toutes les filières du groupe s'il n'utilise aucune des notions en écart). Pour un groupe sans écart, omets "filieres".
 - Juge d'après l'énoncé et la réponse : le résumé, les concepts et les méthodes ont été produits automatiquement et peuvent être inexacts.
 - Si l'énoncé est vide, n'est qu'un texte de remplissage, ou ne relève d'aucune candidate, ne retiens rien.
 - "confiance" est entre 0 et 1 : 0.9 et plus si le rattachement est évident, 0.5 s'il est discutable.
 - "justification" : une phrase courte.
 
 Réponds par ce JSON, sans autre texte, en commençant par la question préalable :
-{"releve_cpge": true, "motif": "une phrase", "rattachements": [{"groupe": "G3", "confiance": 0.9, "justification": "…"}], "remarque": ""}`;
+{"releve_cpge": true, "motif": "une phrase", "rattachements": [{"groupe": "G3", "confiance": 0.9, "justification": "…", "filieres": ["MP/MPI"]}], "remarque": ""}`;
 }
 
 async function callOllama(messages) {
@@ -293,6 +295,13 @@ function parseJson(text) {
  * d'un groupe reçoit l'origine « llm », les autres « concordance » : le
  * modèle n'a lu que les contenus du premier.
  */
+const FILIERE_VERS_PROGRAMME = {
+  MP: ['mp-mpi'], MPI: ['mp-mpi'], 'MP/MPI': ['mp-mpi'], PC: ['pc'], PSI: ['psi'], PT: ['pt'],
+  MPSI: ['mpsi-mp2i'], MP2I: ['mpsi-mp2i'], 'MPSI/MP2I': ['mpsi-mp2i'], PCSI: ['pcsi'], PTSI: ['ptsi'],
+  BCPST: ['bcpst1', 'bcpst2'], BCPST1: ['bcpst1'], BCPST2: ['bcpst2']
+};
+const normFiliere = f => String(f).toUpperCase().replace(/\s+/g, '');
+
 function toPropositions(answer, groups) {
   const byCode = new Map(groups.map(group => [group.code, group]));
   const propositions = [];
@@ -306,10 +315,19 @@ function toPropositions(answer, groups) {
       continue;
     }
     const confiance = Math.min(1, Math.max(0, Number(item.confiance) || 0));
-    group.noeuds.forEach((noeud, i) => {
+    // Filières retenues par le modèle pour ce groupe (toutes s'il n'en donne pas).
+    const voulues = Array.isArray(item.filieres) && item.filieres.length
+      ? new Set(item.filieres.flatMap(f => FILIERE_VERS_PROGRAMME[normFiliere(f)] ?? []))
+      : null;
+    const noeuds = voulues ? group.noeuds.filter(n => voulues.has(n.split('.')[0])) : group.noeuds;
+    // Groupe à écarts sans filières précisées : la propagation est à vérifier,
+    // l'exercice peut reposer sur une notion absente d'une des filières.
+    const ecartsNonTranches = !voulues && group.ecarts?.length > 0;
+    (noeuds.length ? noeuds : group.noeuds).forEach((noeud, i) => {
       propositions.push({
         noeud,
         origine: i === 0 ? 'llm' : 'concordance',
+        ...(ecartsNonTranches && i > 0 ? { a_verifier: 'ecarts' } : {}),
         confiance,
         groupe: group.code,
         justification: String(item.justification ?? '').slice(0, 300)
@@ -330,6 +348,7 @@ async function main() {
   if (referentiel.errors.length) throw new Error(`référentiel invalide : ${referentiel.errors[0]}`);
   const index = indexNodes(referentiel.nodes);
   const table = loadCorrespondances(TABLE_PATH);
+  const concordance = loadConcordance(CONCORDANCE_PATH);
 
   const db = openDb();
   const exercises = selectExercises(db);
@@ -337,7 +356,7 @@ async function main() {
 
   if (ESTIMER) {
     const sizes = exercises.filter(row => table.get(`${sourceOf(row)}|${row.chapter}`)?.length).map(row => {
-      const groups = buildCandidates(table.get(`${sourceOf(row)}|${row.chapter}`), index);
+      const groups = buildCandidates(table.get(`${sourceOf(row)}|${row.chapter}`), index, { concordance });
       return Math.round((SYSTEM.length + buildPrompt(row, groups, index).length) / 3.2);
     }).sort((a, b) => a - b);
     const total = sizes.reduce((s, x) => s + x, 0);
@@ -378,7 +397,7 @@ async function main() {
       try {
         const noeuds = table.get(key);
         if (!noeuds) throw new Error(`chapitre absent de la table de correspondance : ${key}`);
-        const groups = buildCandidates(noeuds, index);
+        const groups = buildCandidates(noeuds, index, { concordance });
         if (!groups.length) {
           // Chapitre sans équivalent en CPGE : la table l'écarte, sans appel au modèle.
           Object.assign(entry, {

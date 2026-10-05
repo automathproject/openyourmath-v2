@@ -20,13 +20,18 @@
 // Les familles se présentent séparément au modèle : leurs découpages diffèrent
 // (BCPST rattache des chapitres entiers là où MPSI a des sous-sections), et
 // sans cela le modèle néglige la famille présentée en dernier.
+//
+// Quand une famille a une table de concordance relue
+// (content/referentials/cpge/concordance.json), ses groupes remplacent le
+// regroupement par titres, et chaque groupe porte ses écarts : les notions
+// exigibles dans une filière du groupe et pas dans une autre.
 
 import fs from 'fs';
 
 const PROGRAMME_ORDER = ['mpsi-mp2i', 'pcsi', 'ptsi', 'bcpst1', 'mp-mpi', 'pc', 'psi', 'pt', 'bcpst2'];
 
 /** Version du regroupement, enregistrée avec chaque résultat d'étiquetage. */
-export const REGROUPEMENT_VERSION = 2;
+export const REGROUPEMENT_VERSION = 3;
 
 export const FAMILLES = [
   { id: 'tronc-1', libelle: 'MPSI/MP2I, PCSI, PTSI — 1re année', programmes: ['mpsi-mp2i', 'pcsi', 'ptsi'] },
@@ -40,6 +45,24 @@ const FAMILLE_OF = new Map(FAMILLES.flatMap(f => f.programmes.map(p => [p, f.id]
 // variante de titre à un groupe existant.
 const SIMILARITE_MIN = 0.5;
 const MOTS_VIDES = new Set(['de', 'des', 'du', 'la', 'le', 'les', 'l', 'd', 'a', 'à', 'au', 'aux', 'en', 'et', 'un', 'une', 'sur', 'par', 'pour', 'dans', 'cas']);
+
+/**
+ * Table de concordance : sous-section -> groupe d'équivalents (avec écarts),
+ * et familles qu'elle couvre. Fichier absent : aucune concordance.
+ */
+export function loadConcordance(file) {
+  const byNode = new Map();
+  const familles = new Set();
+  if (!fs.existsSync(file)) return { byNode, familles };
+  const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+  for (const [famille, f] of Object.entries(data.familles ?? {})) {
+    familles.add(famille);
+    for (const g of f.groupes ?? []) {
+      for (const n of g.noeuds) byNode.set(n, { ...g, famille });
+    }
+  }
+  return { byNode, familles };
+}
 
 export function loadCorrespondances(file) {
   const data = JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -104,7 +127,7 @@ function leavesOf(node, index) {
  * Chaque groupe : { code, titre, section, noeuds: [id…], programmes, contenus }.
  * `contenus` vient du premier programme du groupe, dans l'ordre PROGRAMME_ORDER.
  */
-export function buildCandidates(noeudIds, index) {
+export function buildCandidates(noeudIds, index, { concordance = null } = {}) {
   const unknown = noeudIds.filter(id => !index.byId.has(id));
   if (unknown.length) throw new Error(`nœuds inconnus dans la table de correspondance : ${unknown.join(', ')}`);
 
@@ -127,19 +150,39 @@ export function buildCandidates(noeudIds, index) {
    */
   const bestExact = (leaf, famille) => {
     const key = normalizeTitle(leaf.titre);
-    const matches = groups.filter(g => g.famille === famille && g.key === key && !g.leaves.some(l => l.programme === leaf.programme));
+    const matches = groups.filter(g => g.concordance === undefined && g.famille === famille && g.key === key &&
+      !g.leaves.some(l => l.programme === leaf.programme));
     if (matches.length <= 1) return matches[0] ?? null;
     const own = sectionWords(leaf);
     return matches.reduce((best, g) => (similarity(own, g.section) > similarity(own, best.section) ? g : best));
   };
 
-  // 1. Titre identique dans une même famille, un seul nœud par programme.
+  // 0. Familles couvertes par la concordance : ses groupes font autorité.
   const groups = [];
   const pending = [];
+  const parConcordance = new Map();
+  const titled = [];
   for (const leaf of ordered) {
     const famille = FAMILLE_OF.get(leaf.programme) ?? leaf.programme;
+    if (!concordance?.familles.has(famille)) {
+      titled.push(leaf);
+      continue;
+    }
+    const c = concordance.byNode.get(leaf.id);
+    const key = c ? `concordance:${c.id}` : `seule:${leaf.id}`;
+    if (!parConcordance.has(key)) {
+      const group = { famille, key, words: words(leaf.titre), section: sectionWords(leaf), leaves: [], concordance: c ?? null };
+      parConcordance.set(key, group);
+      groups.push(group);
+    }
+    parConcordance.get(key).leaves.push(leaf);
+  }
+
+  // 1. Titre identique dans une même famille, un seul nœud par programme.
+  for (const leaf of titled) {
+    const famille = FAMILLE_OF.get(leaf.programme) ?? leaf.programme;
     const key = normalizeTitle(leaf.titre);
-    if (isFirstOfFamily(leaf, ordered)) {
+    if (isFirstOfFamily(leaf, titled)) {
       groups.push({ famille, key, words: words(leaf.titre), section: sectionWords(leaf), leaves: [leaf] });
     } else {
       pending.push(leaf);
@@ -159,7 +202,7 @@ export function buildCandidates(noeudIds, index) {
     let best = null;
     let bestScore = SIMILARITE_MIN;
     for (const g of groups) {
-      if (g.famille !== famille || g.leaves.some(l => l.programme === leaf.programme)) continue;
+      if (g.concordance !== undefined || g.famille !== famille || g.leaves.some(l => l.programme === leaf.programme)) continue;
       const score = similarity(own, g.words);
       if (score >= bestScore) {
         best = g;
@@ -179,7 +222,14 @@ export function buildCandidates(noeudIds, index) {
       group.leaves.sort((x, y) => rank(x.programme) - rank(y.programme));
       const [first] = group.leaves;
       const parent = first.parent_id ? index.byId.get(first.parent_id) : null;
+      // Écarts réduits aux programmes présents parmi les candidats.
+      const present = new Set(group.leaves.map(leaf => leaf.programme));
+      const ecarts = (group.concordance?.ecarts ?? [])
+        .map(e => ({ ...e, presente: e.presente.filter(p => present.has(p)), absente: e.absente.filter(p => present.has(p)) }))
+        .filter(e => e.presente.length && e.absente.length);
       return {
+        concordance: group.concordance?.id ?? null,
+        ecarts,
         famille: group.famille,
         section: (parent?.titre ?? '').replace(/^[A-Z]\s*[-–]\s*/, ''),
         titre: first.titre.replace(/^[a-z]\)\s*/, ''),
@@ -230,7 +280,12 @@ export function formatCandidates(groups, { maxChars = 420 } = {}) {
     let body = group.contenus.map(row => compact(row.contenu)).filter(Boolean).join(' ; ');
     if (!body && group.texte) body = compact(group.texte);
     if (body.length > maxChars) body = `${body.slice(0, maxChars).replace(/\s+\S*$/, '')} …`;
-    return `${heading}${body ? `${head}\n   ${body}` : head}`;
+    const ecarts = (group.ecarts ?? []).slice(0, 6).map(e => {
+      const notion = e.notion.length > 110 ? `${e.notion.slice(0, 110).replace(/\s+\S*$/, '')} …` : e.notion;
+      return `${notion} : ${e.presente.map(p => LABELS[p] ?? p).join(', ')} seulement`;
+    });
+    const lines = [head, body && `   ${body}`, ecarts.length && `   Écarts entre filières — ${ecarts.join(' ; ')}`].filter(Boolean);
+    return `${heading}${lines.join('\n')}`;
   }).join('\n');
 }
 
