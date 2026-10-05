@@ -233,3 +233,34 @@ export function formatCandidates(groups, { maxChars = 420 } = {}) {
     return `${heading}${body ? `${head}\n   ${body}` : head}`;
   }).join('\n');
 }
+
+/**
+ * Mentions « hors programme » des candidats et de leurs sections (bandeaux,
+ * contenus, commentaires) : les extraits tronqués des candidats les coupent
+ * souvent. Les mentions qui ne visent qu'une démonstration sont écartées.
+ */
+export function horsProgramme(groups, index, { max = 15, maxChars = 170 } = {}) {
+  const seen = new Set();
+  const out = [];
+  const add = (text, label) => {
+    for (const sentence of (text ?? '').replace(/<br>/g, '\n').split(/\n|(?<=\.)\s+/)) {
+      const clean = sentence.replace(/\s+/g, ' ').trim();
+      if (!/hors programme/i.test(clean) || /^(la|leur|sa|les) démonstrations?\b/i.test(clean)) continue;
+      const short = clean.length > maxChars ? `${clean.slice(0, maxChars).replace(/\s+\S*$/, '')} …` : clean;
+      if (seen.has(`${label}|${short.toLowerCase()}`)) continue;
+      seen.add(`${label}|${short.toLowerCase()}`);
+      out.push(`[${label}] ${short}`);
+    }
+  };
+  // Une exclusion ne vaut que pour les filières du programme qui la porte.
+  for (const group of groups) {
+    const node = index.byId.get(group.noeuds[0]);
+    const label = group.programmes.map(p => LABELS[p] ?? p).join(', ');
+    for (let n = node; n; n = n.parent_id ? index.byId.get(n.parent_id) : null) add(n.texte, label);
+    for (const row of node.contenus) {
+      add(row.contenu, label);
+      add(row.commentaire, label);
+    }
+  }
+  return out.slice(0, max);
+}

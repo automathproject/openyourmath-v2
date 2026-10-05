@@ -26,7 +26,9 @@ import crypto from 'crypto';
 import { createRequire } from 'module';
 import { config as dotenvConfig } from 'dotenv';
 import { collectReferentiel } from './build-referentiel-cpge.js';
-import { loadCorrespondances, indexNodes, buildCandidates, formatCandidates, REGROUPEMENT_VERSION } from './utils/cpge-candidats.js';
+import {
+  loadCorrespondances, indexNodes, buildCandidates, formatCandidates, horsProgramme, REGROUPEMENT_VERSION
+} from './utils/cpge-candidats.js';
 import { PROJECT_ROOT } from './utils/content-paths.js';
 import { chatMessages, withRetry } from '../src/lib/ia/albert.js';
 
@@ -44,6 +46,8 @@ const PILOTE_L2L3 = args.includes('--pilote-l2l3');
 const AFFICHER = args.includes('--afficher');
 const ESTIMER = args.includes('--estimer');
 const UUID = option('--uuid');
+// --uuids a,b,c : un jeu d'exercices choisis (cas difficiles d'une version précédente).
+const UUIDS = option('--uuids')?.split(',').map(u => u.trim()).filter(Boolean);
 const LIMIT = option('--limit') ? Number(option('--limit')) : Infinity;
 const ALBERT_MODEL = option('--albert');
 const OLLAMA_MODEL = process.env.OLLAMA_CHAT_MODEL || 'mistral-small3.2:24b';
@@ -53,7 +57,7 @@ const CONCURRENCE = Number(option('--concurrence') ?? (ALBERT_MODEL ? 2 : 1));
 const PAR_MINUTE = Number(option('--par-minute') ?? (ALBERT_MODEL ? 9 : Infinity));
 // Version du pilote (consignes, table de correspondance et regroupement) : un
 // fichier de résultats par version, pour ne pas mélanger les passages.
-const PILOTE_VERSION = 3;
+const PILOTE_VERSION = 5;
 const SORTIE = option('--sortie') ??
   path.join(REPORT_DIR, `${MODEL.replace(/[^a-z0-9.-]+/gi, '_')}.v${PILOTE_VERSION}.jsonl`);
 
@@ -94,6 +98,7 @@ const hash = value => crypto.createHash('sha1').update(value).digest('hex');
 function selectExercises(db) {
   const columns = 'uuid, title, level, module, chapter, subchapter, summary, concepts, methods, content_json, content_hash, source_path';
   if (UUID) return db.prepare(`SELECT ${columns} FROM exercises WHERE uuid = ?`).all(UUID);
+  if (UUIDS) return UUIDS.map(u => db.prepare(`SELECT ${columns} FROM exercises WHERE uuid = ?`).get(u)).filter(Boolean);
   if (PILOTE_L2L3) return sample(db, columns, PILOTE_L2L3_CHAPITRES, PAR_CHAPITRE_L2L3);
   if (!PILOTE) throw new Error('Préciser --pilote, --pilote-l2l3 ou --uuid.');
 
@@ -187,7 +192,8 @@ function list(value) {
   }
 }
 
-function buildPrompt(row, groups) {
+function buildPrompt(row, groups, index) {
+  const exclusions = horsProgramme(groups, index);
   return `Exercice à situer dans les programmes de CPGE.
 
 Titre : ${row.title}
@@ -201,8 +207,15 @@ ${exerciseText(row)}
 Sous-sections candidates, par famille de programmes (code, filières, section › sous-section, puis contenus du programme). \
 Les familles découpent différemment les mêmes notions : un groupe vaut pour toutes les filières qu'il cite.
 ${formatCandidates(groups, { maxChars: CONTENUS_MAX })}
+${exclusions.length ? `\nPoints que ces programmes déclarent hors programme (chaque mention ne vaut que pour les filières indiquées : une notion exclue d'une filière peut être au programme d'une autre) :\n${exclusions.map(x => `- ${x}`).join('\n')}\n` : ''}
+Question préalable : un élève de CPGE (1re ou 2e année, toutes filières) pourrait-il traiter cet exercice avec les seuls outils de son programme, tels que les décrivent les contenus ci-dessus ?
+- L'exercice relève de la CPGE s'il est au programme d'AU MOINS UNE filière : une notion exclue d'une filière (PC, PSI…) mais au programme d'une autre (MP…) ne suffit pas à répondre false.
+- Les candidats ne montrent qu'une partie des programmes : une notion absente des extraits affichés (dérivée, discriminant, coefficients binomiaux…) n'est pas pour autant hors programme.
+- Réponds "releve_cpge": false seulement si l'essentiel de l'exercice repose sur une notion déclarée hors programme pour toutes les filières concernées, ou sur une théorie manifestement de niveau licence 3 ou master (espaces métriques ou topologiques généraux, analyse complexe, théorie des groupes avancée…).
+- Réponds true si l'exercice reste dans le programme, même s'il demande de l'initiative ou si une question isolée le dépasse.
+- Si la réponse est false, ne retiens aucune sous-section.
 
-Consignes :
+Consignes, si l'exercice relève de la CPGE :
 - Choisis les sous-sections dont les notions sont l'objet de l'exercice ou indispensables pour le résoudre, c'est-à-dire ce que l'exercice fait réellement travailler.
 - Ne retiens pas un simple prérequis : la définition d'une suite ou d'une limite, une fonction usuelle ou une formule de trigonométrie utilisées en passant, une notion qui ne sert qu'à exprimer le résultat.
 - Examine chaque famille séparément : si la notion figure au programme de plusieurs familles, retiens-la dans chacune (par exemple un groupe de la 1re année MPSI, PCSI, PTSI et le chapitre correspondant de BCPST).
@@ -211,12 +224,11 @@ Consignes :
 - Dans une famille, le plus souvent une ou deux sous-sections, jamais plus de trois.
 - Juge d'après l'énoncé et la réponse : le résumé, les concepts et les méthodes ont été produits automatiquement et peuvent être inexacts.
 - Si l'énoncé est vide, n'est qu'un texte de remplissage, ou ne relève d'aucune candidate, ne retiens rien.
-- Si l'exercice demande des notions absentes de toutes les candidates (hors programme, ou relevant d'un autre chapitre), dis-le avec "hors_programme": true, et ne retiens que les candidates vraiment pertinentes, éventuellement aucune.
 - "confiance" est entre 0 et 1 : 0.9 et plus si le rattachement est évident, 0.5 s'il est discutable.
 - "justification" : une phrase courte.
 
-Réponds par ce JSON, sans autre texte :
-{"rattachements": [{"groupe": "G3", "confiance": 0.9, "justification": "…"}], "hors_programme": false, "remarque": ""}`;
+Réponds par ce JSON, sans autre texte, en commençant par la question préalable :
+{"releve_cpge": true, "motif": "une phrase", "rattachements": [{"groupe": "G3", "confiance": 0.9, "justification": "…"}], "remarque": ""}`;
 }
 
 async function callOllama(messages) {
@@ -326,7 +338,7 @@ async function main() {
   if (ESTIMER) {
     const sizes = exercises.filter(row => table.get(`${sourceOf(row)}|${row.chapter}`)?.length).map(row => {
       const groups = buildCandidates(table.get(`${sourceOf(row)}|${row.chapter}`), index);
-      return Math.round((SYSTEM.length + buildPrompt(row, groups).length) / 3.2);
+      return Math.round((SYSTEM.length + buildPrompt(row, groups, index).length) / 3.2);
     }).sort((a, b) => a - b);
     const total = sizes.reduce((s, x) => s + x, 0);
     console.log(`${sizes.length} prompts · ≈ ${total} jetons d'entrée en tout · moyenne ${Math.round(total / sizes.length)} · ` +
@@ -389,17 +401,21 @@ async function main() {
           console.log(`[${finished}/${todo.length}] ${row.uuid} — énoncé vide, aucun appel`);
           continue;
         }
-        const messages = [{ role: 'system', content: SYSTEM }, { role: 'user', content: buildPrompt(row, groups) }];
+        const messages = [{ role: 'system', content: SYSTEM }, { role: 'user', content: buildPrompt(row, groups, index) }];
         if (AFFICHER) console.log(`\n----- prompt -----\n${messages[1].content}`);
         const raw = await callModel(messages);
         if (AFFICHER) console.log(`\n----- réponse -----\n${raw}`);
         const answer = parseJson(raw);
-        const { propositions, rejets } = toPropositions(answer, groups);
+        // Exercice jugé hors CPGE : aucun rattachement, quoi que le modèle liste ensuite.
+        const releve = answer.releve_cpge !== false;
+        const { propositions, rejets } = releve ? toPropositions(answer, groups) : { propositions: [], rejets: [] };
         Object.assign(entry, {
           candidats: groups.length,
+          releve_cpge: releve,
+          motif: String(answer.motif ?? '').slice(0, 300),
           propositions,
           rejets,
-          hors_programme: answer.hors_programme === true,
+          hors_programme: !releve || answer.hors_programme === true,
           remarque: String(answer.remarque ?? '').slice(0, 300)
         });
       } catch (error) {

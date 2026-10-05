@@ -8,7 +8,7 @@ import { describe, it, expect } from 'vitest';
 import path from 'path';
 
 import { collectReferentiel } from '../../scripts/build-referentiel-cpge.js';
-import { loadCorrespondances, indexNodes, buildCandidates, formatCandidates } from '../../scripts/utils/cpge-candidats.js';
+import { loadCorrespondances, indexNodes, buildCandidates, formatCandidates, horsProgramme } from '../../scripts/utils/cpge-candidats.js';
 import { CONTENT_ROOT } from '../../scripts/utils/content-paths.js';
 
 const index = indexNodes(collectReferentiel().nodes);
@@ -90,5 +90,18 @@ describe('buildCandidates', () => {
     expect(text).toMatch(/^## MPSI\/MP2I, PCSI, PTSI — 1re année\nG1 \[MPSI\/MP2I, PCSI, PTSI\]/);
     expect(text).toMatch(/\n## BCPST — 1re année\n/);
     for (const line of text.split('\n').filter(l => l.startsWith('   '))) expect(line.length).toBeLessThanOrEqual(3 + 82);
+  });
+});
+
+describe('horsProgramme', () => {
+  const topologie = buildCandidates(table.get('exo7|Espace topologique, espace métrique'), index);
+  const exclusions = horsProgramme(topologie, index);
+
+  it('rappelle les exclusions explicites des programmes candidats, filière en tête', () => {
+    expect(exclusions.some(x => /^\[MP\/MPI\] .*espace métrique.*hors programme/i.test(x))).toBe(true);
+  });
+
+  it('écarte les mentions qui ne visent qu’une démonstration', () => {
+    expect(exclusions.some(x => /\] (la|les) démonstrations? /i.test(x))).toBe(false);
   });
 });

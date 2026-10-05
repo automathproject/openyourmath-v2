@@ -333,6 +333,20 @@ relève d'aucun programme de CPGE »). Elle se distingue d'un candidat manquant
 dans la table : un exercice au programme dont la sous-section n'est pas
 proposée.
 
+La v4 demande d'abord au modèle si l'exercice relève de la CPGE
+(`releve_cpge`, avec un motif), avant tout rattachement. Le prompt rappelle
+aussi les mentions « hors programme » des sections candidates, chacune
+précédée de sa filière. Avec gpt-oss, les exercices hors CPGE écartés passent
+de 2 sur 9 à 6 sur 9, mais 13 exercices au programme sur 329 sont écartés à
+tort. Deux confusions expliquent ces erreurs :
+
+- une exclusion propre à une filière appliquée à toutes ;
+- une notion absente des extraits affichés prise pour une notion hors
+  programme.
+
+La v5 corrige la consigne en ce sens. `--uuids` permet de la tester d'abord
+sur un jeu de cas difficiles.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par
