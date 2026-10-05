@@ -110,7 +110,10 @@ const PILOTE_L2L3_CHAPITRES = [
 const PAR_CHAPITRE_L2L3 = 17;
 // Extrait des contenus du programme par candidat : assez pour situer la
 // sous-section, assez court pour tenir dans le contexte et le quota d'Albert.
-const CONTENUS_MAX = 260;
+// Pour un étiquetage hors script (--exporter, --reponses), les contenus sont
+// complets : coupés, ils masquent 40 % du texte des programmes. --contenus N
+// fixe la coupure.
+const CONTENUS_MAX = Number(option('--contenus') ?? (EXPORTER || REPONSES_FILE ? Infinity : 260));
 
 const SYSTEM = `Tu es professeur de mathématiques en classes préparatoires scientifiques. \
 Tu situes des exercices dans les programmes officiels de mathématiques des CPGE. \
@@ -511,6 +514,7 @@ async function main() {
         titre: row.title,
         content_hash: row.content_hash,
         pilote: PILOTE_VERSION,
+        contenus: Number.isFinite(CONTENUS_MAX) ? CONTENUS_MAX : 'complets',
         regroupement: REGROUPEMENT_VERSION,
         modele: MODEL,
         date: new Date().toISOString()

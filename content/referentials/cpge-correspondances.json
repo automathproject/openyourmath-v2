@@ -1,7 +1,7 @@
 {
   "schema": "cpge-correspondances/v1",
-  "statut": "pilote v3 : chapitres exo7 de L1 et crouzet ; extension L2-L3 pour mesurer l’abstention",
-  "politique": "Pour un chapitre d'une source, les nœuds du référentiel CPGE (content/referentials/cpge/) où chercher les rattachements de ses exercices. Une section vaut toutes ses sous-sections. La table restreint les candidats proposés à l'étiquetage ; elle ne rattache rien à elle seule. Une liste vide signifie que le chapitre n'a pas d'équivalent en CPGE, ce que « raison » justifie. Les chapitres de L1 ne citent pas les programmes de 2e année.",
+  "statut": "pilote v4 : chapitres exo7 de L1 et crouzet ; extension L2-L3 pour mesurer l’abstention ; complétée d’après les candidats manquants signalés par l’étiquetage Opus de la v6",
+  "politique": "Pour un chapitre d'une source, les nœuds du référentiel CPGE (content/referentials/cpge/) où chercher les rattachements de ses exercices. Une section vaut toutes ses sous-sections. La table restreint les candidats proposés à l'étiquetage ; elle ne rattache rien à elle seule. Une liste vide signifie que le chapitre n'a pas d'équivalent en CPGE, ce que « raison » justifie. Les chapitres de L1 ne citent pas les programmes de 2e année ; ceux de L2-L3 peuvent citer la 1re année.",
   "correspondances": [
     {
       "source": "exo7",
@@ -18,7 +18,13 @@
         "mpsi-mp2i.polynomes-fractions-rationnelles.c",
         "pcsi.polynomes.c",
         "ptsi.polynomes.c",
-        "bcpst1.polynomes-reels.b"
+        "bcpst1.polynomes-reels.b",
+        "mpsi-mp2i.calcul-algebrique-trigonometrie.a",
+        "pcsi.calcul-algebrique-trigonometrie.a",
+        "ptsi.calcul-algebrique-trigonometrie.a",
+        "bcpst1.methodes-calcul",
+        "ptsi.geometrie-plan",
+        "bcpst1.geometrie"
       ]
     },
     {
@@ -46,7 +52,11 @@
         "bcpst1.derivation",
         "mpsi-mp2i.procedes-sommatoires-discrets",
         "pcsi.series-numeriques",
-        "ptsi.series-numeriques"
+        "ptsi.series-numeriques",
+        "mpsi-mp2i.integration",
+        "pcsi.integration",
+        "ptsi.integration",
+        "bcpst1.integration-segment"
       ]
     },
     {
@@ -70,7 +80,20 @@
         "ptsi.nombres-complexes.f",
         "mpsi-mp2i.applications-lineaires",
         "pcsi.applications-lineaires",
-        "ptsi.applications-lineaires"
+        "ptsi.applications-lineaires",
+        "mpsi-mp2i.espaces-vectoriels",
+        "pcsi.espaces-vectoriels",
+        "ptsi.espaces-vectoriels",
+        "mpsi-mp2i.dimension-finie",
+        "pcsi.dimension-finie",
+        "ptsi.dimension-finie",
+        "bcpst1.espace-vectoriel-kn",
+        "mpsi-mp2i.integration",
+        "pcsi.integration",
+        "ptsi.integration",
+        "mpsi-mp2i.structures-algebriques.c",
+        "bcpst1.derivation.b",
+        "bcpst1.limites-continuite.c"
       ]
     },
     {
@@ -111,7 +134,19 @@
         "ptsi.calcul-algebrique-trigonometrie.c",
         "ptsi.raisonnement-vocabulaire-ensembliste.c",
         "ptsi.nombres-reels-suites.a",
-        "bcpst1.nombres-reels"
+        "bcpst1.nombres-reels",
+        "mpsi-mp2i.raisonnement-vocabulaire-ensembliste.a",
+        "pcsi.raisonnement-vocabulaire-ensembliste.a",
+        "ptsi.raisonnement-vocabulaire-ensembliste.a",
+        "mpsi-mp2i.arithmetique-entiers.a",
+        "mpsi-mp2i.nombres-complexes.e",
+        "pcsi.nombres-complexes.e",
+        "ptsi.nombres-complexes.e",
+        "bcpst1.nombres-complexes.c",
+        "mpsi-mp2i.fonctions-valeurs-reelles-complexes.c",
+        "pcsi.techniques-calcul-fonctions.c",
+        "ptsi.techniques-calcul-fonctions.c",
+        "bcpst1.logique-ensembles-raisonnement"
       ]
     },
     {
@@ -128,7 +163,11 @@
         "mpsi-mp2i.calcul-algebrique-trigonometrie.c",
         "pcsi.calcul-algebrique-trigonometrie.c",
         "ptsi.calcul-algebrique-trigonometrie.c",
-        "bcpst1.logique-ensembles-raisonnement.c"
+        "bcpst1.logique-ensembles-raisonnement.c",
+        "mpsi-mp2i.denombrement.b",
+        "pcsi.denombrement.b",
+        "ptsi.denombrement.b",
+        "bcpst1.denombrement"
       ]
     },
     {
@@ -141,7 +180,10 @@
         "pcsi.calcul-matriciel-systemes-lineaires.c",
         "ptsi.calcul-algebrique-trigonometrie.b",
         "ptsi.calcul-matriciel-systemes-lineaires.c",
-        "bcpst1.systemes-lineaires"
+        "bcpst1.systemes-lineaires",
+        "mpsi-mp2i.polynomes-fractions-rationnelles.i",
+        "pcsi.polynomes.f",
+        "ptsi.polynomes.f"
       ]
     },
     {
@@ -159,7 +201,14 @@
         "pcsi.raisonnement-vocabulaire-ensembliste.d",
         "ptsi.raisonnement-vocabulaire-ensembliste.d",
         "bcpst1.derivation",
-        "bcpst1.vocabulaire-applications"
+        "bcpst1.vocabulaire-applications",
+        "mpsi-mp2i.nombres-complexes.e",
+        "pcsi.nombres-complexes.e",
+        "ptsi.nombres-complexes.e",
+        "bcpst1.nombres-reels",
+        "bcpst1.nombres-complexes.c",
+        "mpsi-mp2i.convexite",
+        "pcsi.derivabilite.e"
       ]
     },
     {
@@ -216,7 +265,11 @@
         "mpsi-mp2i.polynomes-fractions-rationnelles.c",
         "pcsi.polynomes.c",
         "ptsi.polynomes.c",
-        "bcpst1.polynomes-reels.b"
+        "bcpst1.polynomes-reels.b",
+        "mpsi-mp2i.calcul-algebrique-trigonometrie.a",
+        "pcsi.calcul-algebrique-trigonometrie.a",
+        "ptsi.calcul-algebrique-trigonometrie.a",
+        "bcpst1.methodes-calcul"
       ]
     },
     {
@@ -227,7 +280,15 @@
         "pc.reduction",
         "psi.reduction-endomorphismes",
         "pt.reduction-endomorphismes",
-        "bcpst2.valeurs-propres-vecteurs-propres"
+        "bcpst2.valeurs-propres-vecteurs-propres",
+        "mp-mpi.endomorphismes-euclidien.f",
+        "pc.endomorphismes-euclidiens.d",
+        "psi.endomorphismes-euclidien.f",
+        "pt.isometries-euclidien.e",
+        "bcpst2.produit-scalaire.c",
+        "mp-mpi.equations-differentielles-lineaires.c",
+        "mp-mpi.equations-differentielles-lineaires.d",
+        "mpsi-mp2i.determinants.f"
       ]
     },
     {
@@ -237,7 +298,10 @@
         "mp-mpi.series-entieres",
         "pc.series-entieres",
         "psi.series-entieres",
-        "pt.series-entieres"
+        "pt.series-entieres",
+        "mp-mpi.suites-series-fonctions",
+        "pc.suites-series-fonctions",
+        "psi.suites-series-fonctions"
       ]
     },
     {
@@ -246,7 +310,11 @@
       "noeuds": [
         "mp-mpi.topologie-espaces-normes",
         "pc.espaces-vectoriels-normes",
-        "psi.espaces-vectoriels-normes"
+        "psi.espaces-vectoriels-normes",
+        "mpsi-mp2i.nombres-reels-suites.a",
+        "mpsi-mp2i.nombres-reels-suites.b",
+        "pcsi.nombres-reels-suites.a",
+        "ptsi.nombres-reels-suites.a"
       ]
     },
     {
