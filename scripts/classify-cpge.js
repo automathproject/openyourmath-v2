@@ -92,7 +92,7 @@ const CONCURRENCE = Number(option('--concurrence') ?? (ALBERT_MODEL ? 2 : 1));
 const PAR_MINUTE = Number(option('--par-minute') ?? (ALBERT_MODEL ? 9 : Infinity));
 // Version du pilote (consignes, table de correspondance et regroupement) : un
 // fichier de résultats par version, pour ne pas mélanger les passages.
-const PILOTE_VERSION = 7;
+const PILOTE_VERSION = 8;
 const sortieDe = model => path.join(REPORT_DIR, `${model.replace(/[^a-z0-9.-]+/gi, '_')}.v${PILOTE_VERSION}.jsonl`);
 const SORTIE = option('--sortie') ??
   (DIRECT ? sortieDe(MODEL).replace(/\.jsonl$/, PRESELECTION ? '.preselection.jsonl' : '.direct.jsonl') : sortieDe(MODEL));
@@ -335,9 +335,10 @@ ${formatCandidates(groups, { maxChars: CONTENUS_MAX })}`;
 ${exclusions.length ? `\nPoints que ces programmes déclarent hors programme (chaque mention ne vaut que pour les filières indiquées : une notion exclue d'une filière peut être au programme d'une autre) :\n${exclusions.map(x => `- ${x}`).join('\n')}\n` : ''}
 Question préalable : un élève de CPGE (1re ou 2e année, toutes filières) pourrait-il traiter cet exercice avec les seuls outils de son programme, tels que les ${direct ? 'décrit le texte officiel' : 'décrivent les contenus ci-dessus'} ?
 - L'exercice relève de la CPGE s'il est au programme d'AU MOINS UNE filière : une notion exclue d'une filière (PC, PSI…) mais au programme d'une autre (MP…) ne suffit pas à répondre false.
-${direct ? '' : "- Les candidats ne montrent qu'une partie des programmes : une notion absente des extraits affichés (dérivée, discriminant, coefficients binomiaux…) n'est pas pour autant hors programme.\n"}- Réponds "releve_cpge": false seulement si l'essentiel de l'exercice repose sur une notion déclarée hors programme pour toutes les filières concernées, ou sur une théorie manifestement de niveau licence 3 ou master (espaces métriques ou topologiques généraux, analyse complexe, théorie des groupes avancée…).
-- Réponds true si l'exercice reste dans le programme, même s'il demande de l'initiative ou si une question isolée le dépasse.
-- Si la réponse est false, ne retiens aucune sous-section.
+${direct ? '' : "- Les candidats ne montrent qu'une partie des programmes : une notion absente des extraits affichés (dérivée, discriminant, coefficients binomiaux…) n'est pas pour autant hors programme.\n"}- Réponds "releve_cpge": false dès que l'exercice emploie ou demande un terme, une notion ou un résultat qui ne figure au programme d'aucune filière (par exemple : espace topologique ou métrique général, connexité autre que par arcs, fonction holomorphe, décomposition de Dunford, birapport), même si le reste de l'exercice est au programme. Une seule question suffit.
+- Une méthode de résolution hors programme n'exclut pas l'exercice si une autre voie, au programme, permet de le traiter.
+- Réponds true si tout ce que l'exercice emploie ou demande figure au programme d'au moins une filière, même s'il demande de l'initiative.
+- Si la réponse est false, ne retiens aucune sous-section, et cite dans "motif" le terme ou la notion hors programme.
 
 Consignes, si l'exercice relève de la CPGE :
 - Choisis les sous-sections dont les notions sont l'objet de l'exercice ou indispensables pour le résoudre, c'est-à-dire ce que l'exercice fait réellement travailler.

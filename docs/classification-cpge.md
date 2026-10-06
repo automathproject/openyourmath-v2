@@ -503,6 +503,23 @@ exercices : elles diffèrent sur 21 exercices. En présélection, 99 des 102
 groupes retenus figuraient dans la liste de départ. 11 groupes proposés
 seulement par la présélection n'ont pas encore d'avis.
 
+### v8 : un terme hors programme exclut l'exercice
+
+Jusqu'à la v7, un exercice n'était écarté que si l'essentiel reposait sur une
+notion hors programme, et une question isolée qui dépassait le programme ne
+l'excluait pas. À partir de la v8, un exercice est hors CPGE dès qu'il emploie
+ou demande un terme, une notion ou un résultat qui ne figure au programme
+d'aucune filière : espace topologique général, connexité autre que par arcs,
+fonction holomorphe, décomposition de Dunford, birapport… Une seule question
+suffit. Une méthode de résolution hors programme n'exclut pas l'exercice si
+une autre voie, au programme, permet de le traiter. Une notion au programme
+d'une seule filière (la dénombrabilité en MP, par exemple) ne l'exclut pas
+non plus. Le motif cite le terme en cause.
+
+Un exercice au programme mais trop difficile, ou hors de l'esprit d'une
+filière (BCPST, PTSI…), reste en CPGE. Les pages de relecture permettent de le
+noter filière par filière.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par
