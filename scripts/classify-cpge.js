@@ -25,6 +25,8 @@
 //   node scripts/classify-cpge.js --pilote --exporter DIR        # prompts par lots, pour un étiquetage hors script
 //   node scripts/classify-cpge.js --pilote --reponses F.json --modele claude:claude-opus-5-5
 //                                         # importe ces réponses (uuid → JSON) au lieu d'appeler un modèle
+//   node scripts/classify-cpge.js --uuids a,b --preselection --exporter DIR
+//                                         # tous les programmes, avec une présélection par exercice
 //   options : --limit N, --concurrence N, --par-minute N (Albert : 9), --sortie FICHIER, --lot N
 
 import fs from 'fs';
@@ -39,6 +41,8 @@ import {
 } from './utils/cpge-candidats.js';
 import { PROJECT_ROOT } from './utils/content-paths.js';
 import { chatMessages, withRetry, isQuotaExceeded } from '../src/lib/ia/albert.js';
+import { ollamaEmbed } from '../src/lib/ia/ollama.js';
+import { embeddingsGroupes, plusProches, vecteurBlob } from './utils/cpge-preselection.js';
 
 const require = createRequire(import.meta.url);
 dotenvConfig({ path: path.join(PROJECT_ROOT, '.env') });
@@ -70,7 +74,17 @@ const REPONSES_FILE = option('--reponses');
 // --direct : pas de table de correspondance ; les candidats sont tous les
 // programmes. Les lots donnent le sommaire, et le texte officiel complet est
 // écrit à côté (texte-officiel.md), à relire pour chaque groupe retenu.
-const DIRECT = args.includes('--direct');
+// --preselection : mode direct, plus une courte liste de départ par exercice,
+// les candidats de la table (là où elle existe) et les groupes les plus proches
+// du résumé de l'exercice par embeddings. Elle accélère sans borner : le
+// modèle peut retenir tout groupe du sommaire. Une table vide n'exclut plus
+// le chapitre ; elle signale une exclusion probable.
+const PRESELECTION = args.includes('--preselection');
+const PRESELECTION_K = Number(option('--preselection-k') ?? 15);
+const DIRECT = args.includes('--direct') || PRESELECTION;
+const CACHE_EMBEDDINGS = path.join(PROJECT_ROOT, 'cache/cpge/groupes-embeddings.json');
+/** uuid → { groupes, raison } : présélection de chaque exercice. */
+const PRESELECTIONS = new Map();
 const MODEL = REPONSES_FILE ? (option('--modele') ?? 'externe')
   : ALBERT_MODEL ? `albert:${ALBERT_MODEL}` : `ollama:${OLLAMA_MODEL}`;
 const CONCURRENCE = Number(option('--concurrence') ?? (ALBERT_MODEL ? 2 : 1));
@@ -80,7 +94,8 @@ const PAR_MINUTE = Number(option('--par-minute') ?? (ALBERT_MODEL ? 9 : Infinity
 // fichier de résultats par version, pour ne pas mélanger les passages.
 const PILOTE_VERSION = 7;
 const sortieDe = model => path.join(REPORT_DIR, `${model.replace(/[^a-z0-9.-]+/gi, '_')}.v${PILOTE_VERSION}.jsonl`);
-const SORTIE = option('--sortie') ?? (DIRECT ? sortieDe(MODEL).replace(/\.jsonl$/, '.direct.jsonl') : sortieDe(MODEL));
+const SORTIE = option('--sortie') ??
+  (DIRECT ? sortieDe(MODEL).replace(/\.jsonl$/, PRESELECTION ? '.preselection.jsonl' : '.direct.jsonl') : sortieDe(MODEL));
 // --repli-local : quand Albert est saturé (quota journalier, 429 ou 5xx
 // persistants), l'exercice passe au modèle local, dont le résultat va dans son
 // propre fichier. Un exercice traité par l'un ou l'autre n'est pas repris.
@@ -236,7 +251,17 @@ Résumé : ${row.summary ?? '(aucun)'}
 Concepts : ${list(row.concepts)}
 Méthodes : ${list(row.methods)}
 
-${exerciseText(row)}`;
+${exerciseText(row)}${preselectionPart(row)}`;
+}
+
+/** Présélection de l'exercice, en mode --preselection : point de départ, pas une limite. */
+function preselectionPart(row) {
+  const p = PRESELECTIONS.get(row.uuid);
+  if (!p) return '';
+  const raison = p.raison
+    ? `\nLa table de correspondance ne propose aucun programme pour ce chapitre (${p.raison}) : l'exercice est probablement hors CPGE, à vérifier.`
+    : '';
+  return `\n\nPrésélection pour cet exercice (point de départ, pas une limite) :\n${formatSommaire(p.groupes)}${raison}`;
 }
 
 function buildPrompt(row, groups, index) {
@@ -298,7 +323,9 @@ function chapterPart(groups, index, { direct = false } = {}) {
     ? `Sommaire de tous les programmes de mathématiques de CPGE, par famille (code, filières, section › sous-section). \
 Les familles découpent différemment les mêmes notions : un groupe vaut pour toutes les filières qu'il cite. \
 Le texte officiel complet de chaque groupe (contenus et commentaires, dont les mentions « hors programme ») est dans le fichier \
-texte-officiel.md, sous le titre « ### G… » du groupe : repère d'abord dans le sommaire les groupes plausibles, puis relis leur \
+texte-officiel.md, sous le titre « ### G… » du groupe : ${PRESELECTION
+    ? "pars des groupes présélectionnés pour l'exercice, et cherche dans le sommaire si l'exercice fait travailler une notion qu'ils ne couvrent pas ; relis le"
+    : 'repère d’abord dans le sommaire les groupes plausibles, puis relis leur'} \
 texte officiel avant de les retenir.
 ${formatSommaire(groups)}`
     : `Sous-sections candidates, par famille de programmes (code, filières, section › sous-section, puis contenus du programme). \
@@ -481,7 +508,29 @@ async function main() {
 
   const db = openDb();
   const exercises = selectExercises(db);
+  const vecteurs = PRESELECTION
+    ? new Map(exercises.map(row => [row.uuid, db.prepare('SELECT embedding_summary FROM exercise_embeddings WHERE uuid = ?').get(row.uuid)])
+      .filter(([, r]) => r).map(([uuid, r]) => [uuid, vecteurBlob(r.embedding_summary)]))
+    : null;
   db.close();
+  if (PRESELECTION) {
+    const groups = buildCandidates(racines, index, { concordance });
+    const vecs = await embeddingsGroupes(groups, index, { embed: ollamaEmbed, cacheFile: CACHE_EMBEDDINGS });
+    const correspondances = loadCorrespondances(TABLE_PATH);
+    const raisons = new Map(JSON.parse(fs.readFileSync(TABLE_PATH, 'utf8')).correspondances
+      .map(c => [`${c.source}|${c.chapitre}`, c.raison]));
+    for (const row of exercises) {
+      const key = `${sourceOf(row)}|${row.chapter}`;
+      const noeuds = correspondances.get(key) ?? [];
+      const deTable = groups.filter(g => g.noeuds.some(n => noeuds.some(a => n === a || n.startsWith(`${a}.`))));
+      const proches = vecteurs.has(row.uuid) ? plusProches(vecteurs.get(row.uuid), groups, vecs, PRESELECTION_K) : [];
+      const choisis = new Set([...deTable, ...proches]);
+      PRESELECTIONS.set(row.uuid, {
+        groupes: groups.filter(g => choisis.has(g)),
+        raison: correspondances.has(key) && !noeuds.length ? raisons.get(key) ?? 'sans équivalent' : null
+      });
+    }
+  }
   const reponses = REPONSES_FILE ? JSON.parse(fs.readFileSync(REPONSES_FILE, 'utf8')) : null;
   // Exercice qui demande un modèle : chapitre avec des candidats, énoncé non vide.
   const besoinModele = row => {
@@ -554,7 +603,8 @@ async function main() {
         content_hash: row.content_hash,
         pilote: PILOTE_VERSION,
         contenus: Number.isFinite(CONTENUS_MAX) ? CONTENUS_MAX : 'complets',
-        candidats_par: DIRECT ? 'programmes complets' : 'table de correspondance',
+        candidats_par: PRESELECTION ? 'programmes complets, avec présélection' : DIRECT ? 'programmes complets' : 'table de correspondance',
+        ...(PRESELECTION ? { preselection: PRESELECTIONS.get(row.uuid)?.groupes.map(g => g.noeuds[0]) ?? [] } : {}),
         regroupement: REGROUPEMENT_VERSION,
         modele: MODEL,
         date: new Date().toISOString()

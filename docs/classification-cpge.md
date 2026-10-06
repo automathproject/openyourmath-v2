@@ -474,6 +474,35 @@ Essai sur les 40 exercices de l'échantillon de contrôle, comparés à la v7 :
   mal classés à la source : Pmj5 (fonctions de deux variables), dOCG,
   7Jo3 (dénombrabilité).
 
+### Présélection par embeddings
+
+La table de correspondance ne doit servir qu'à accélérer. `--preselection`
+donne à chaque exercice une liste de départ : les candidats de la table, là
+où elle existe, et les 15 groupes les plus proches de son résumé, par
+similarité entre le vecteur bge-m3 du résumé (stocké en base) et celui du
+texte officiel de chaque groupe. Le lot contient aussi le sommaire de tous
+les programmes et leur texte officiel complet : le modèle peut retenir
+n'importe quel groupe. Une table vide n'écarte plus le chapitre, elle
+signale une exclusion probable.
+
+Les vecteurs des groupes sont gardés en cache (`cache/cpge/`). Sur le pilote,
+la liste de départ contient 97 % des rattachements relus (contre 88 % pour la
+table seule et 81 % pour les 20 plus proches seuls).
+
+Contrôle humain des 40 exercices de l'échantillon, avec les propositions de
+la table et du mode direct présentées ensemble, à l'aveugle :
+
+| Méthode      | Précision | Rappel | Verdict CPGE juste |
+| ------------ | --------- | ------ | ------------------ |
+| table (v7)   | 89 %      | 83 %   | 38 sur 40          |
+| direct       | 88 %      | 83 %   | 39 sur 40          |
+| présélection | 88 %      | 83 %   | 38 sur 40          |
+
+Les trois méthodes se valent, mais ne se trompent pas sur les mêmes
+exercices : elles diffèrent sur 21 exercices. En présélection, 99 des 102
+groupes retenus figuraient dans la liste de départ. 11 groupes proposés
+seulement par la présélection n'ont pas encore d'avis.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par
