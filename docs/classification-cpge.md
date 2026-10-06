@@ -520,6 +520,34 @@ Un exercice au programme mais trop difficile, ou hors de l'esprit d'une
 filière (BCPST, PTSI…), reste en CPGE. Les pages de relecture permettent de le
 noter filière par filière.
 
+### Deux passages et relecture des divergences
+
+Deux chapitres absents de la table ont été étiquetés deux fois, de façon
+indépendante, en mode présélection (v7) : « Injection, surjection,
+bijection » (L1, 39 exercices) et « Système linéaire à coefficients
+constants » (L3, 18 exercices). Les deux passages concordent sur 36
+exercices. Les 21 autres ont été relus, avec 5 exercices concordants tirés
+au hasard comme contrôle.
+
+- Les 5 contrôles concordants sont justes : la concordance des deux passages
+  peut dispenser de relecture.
+- 5 exercices jugés en CPGE par les deux passages sont hors CPGE pour le
+  relecteur, chacun à cause d'un terme hors programme : limsup et lemme de
+  Gronwall (6VBf), puits (LIno), portrait de phase (S8NR), matrice
+  semi-simple (SslJ, ckKK). C'est la règle de la v8.
+- Hors de ces 5 exercices, sur les rattachements :
+
+| Méthode            | Précision | Rappel |
+| ------------------ | --------- | ------ |
+| passage A          | 94 %      | 90 %   |
+| passage B          | 93 %      | 96 %   |
+| union des deux     | 91 %      | 100 %  |
+| intersection       | 96 %      | 86 %   |
+
+Relire les seules divergences (37 % des exercices) donne un étiquetage
+complet. 8 rattachements ont été marqués « trop difficile », dont 7 en
+BCPST 1re année.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par
