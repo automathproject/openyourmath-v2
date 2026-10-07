@@ -516,6 +516,18 @@ une autre voie, au programme, permet de le traiter. Une notion au programme
 d'une seule filière (la dénombrabilité en MP, par exemple) ne l'exclut pas
 non plus. Le motif cite le terme en cause.
 
+Un terme hors programme que l'énoncé définit lui-même n'exclut pas
+l'exercice ; employé sans définition, il l'exclut (la différence
+symétrique, par exemple). Un résultat hors programme établi sans être nommé
+(la décomposition de Dunford démontrée à partir des sous-espaces
+caractéristiques) n'exclut pas non plus l'exercice.
+
+Mesure sur les 63 exercices dont le relecteur a donné le verdict (après
+correction de deux verdicts, XhZo et buqo, à la lumière de la règle) : la
+v8 écarte 11 des 12 exercices hors CPGE, sans écarter à tort aucun des 51
+autres. Le seul manqué est dOCG. Avant la règle, le modèle n'en écartait que
+4 sur 10.
+
 Un exercice au programme mais trop difficile, ou hors de l'esprit d'une
 filière (BCPST, PTSI…), reste en CPGE. Les pages de relecture permettent de le
 noter filière par filière.
