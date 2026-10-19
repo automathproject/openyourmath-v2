@@ -1,27 +1,30 @@
 {
   "uuid": "yTDM",
   "source_path": "amscc/yTDM.tex",
-  "summary": "L'exercice demande de déterminer la loi de la variable aléatoire Y = X², où X est une variable aléatoire absolument continue de densité f(x) = 1/2 sur l'intervalle [-1, 1].",
+  "summary": "L'exercice demande de déterminer la loi de la variable aléatoire Y = X², où X suit une loi uniforme sur l'intervalle [-1, 1]. Il s'agit de trouver la densité de probabilité de Y à partir de la transformation de X.",
   "concepts": [
-    "variable aléatoire absolument continue",
-    "densité de probabilité",
+    "variable aléatoire à densité",
     "fonction de répartition",
-    "changement de variable",
-    "loi de probabilité"
+    "densité de probabilité",
+    "transformation de variable",
+    "loi uniforme",
+    "intégration de la densité",
+    "fonction indicatrice"
   ],
   "methods": [
     "calcul de la fonction de répartition",
-    "intégration",
-    "dérivation",
-    "changement d'intervalle d'intégration"
+    "changement de variable",
+    "intégration par parties",
+    "dérivation de la fonction de répartition"
   ],
   "objects": [
     "variable aléatoire X",
     "variable aléatoire Y = X²",
-    "densité de probabilité f(x)",
-    "fonction de répartition F_Y(t)"
+    "densité f(x)",
+    "fonction de répartition F_Y(t)",
+    "intervalle [-1, 1]"
   ],
-  "content_hash": "1f8afbfbe59eecf549bf5cb9243edfc1926e85f199ef451166ee1b468b90dc7e",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:12:13.036Z"
+  "content_hash": "08d091791ac3565367d8e42e983bec97caff842bf91754e4831d0f270719e372",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:40:51.778Z"
 }

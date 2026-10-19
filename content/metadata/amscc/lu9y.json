@@ -1,0 +1,31 @@
+{
+  "uuid": "lu9y",
+  "source_path": "amscc/lu9y.tex",
+  "summary": "L'exercice étudie les propriétés de la loi log-normale et ses relations avec la loi normale. Il demande de montrer des équivalences entre ces lois via des changements de variable, d'analyser la loi du produit de variables log-normales indépendantes, et de calculer des probabilités pour des variables log-normales spécifiques.",
+  "concepts": [
+    "loi log-normale",
+    "loi normale",
+    "changement de variable",
+    "indépendance de variables aléatoires",
+    "espérance d'une variable aléatoire",
+    "densité de probabilité",
+    "produit de variables aléatoires"
+  ],
+  "methods": [
+    "transformation exponentielle",
+    "standardisation",
+    "calcul d'espérance",
+    "intégration par changement de variable",
+    "propriétés des lois log-normales"
+  ],
+  "objects": [
+    "variable aléatoire log-normale",
+    "variable aléatoire normale",
+    "produit de variables aléatoires",
+    "densité de probabilité",
+    "espérance mathématique"
+  ],
+  "content_hash": "3d09b74e1707def8abda157bc6a00b0207264f6c74a2ba299f142c6272b17a33",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:40:48.403Z"
+}

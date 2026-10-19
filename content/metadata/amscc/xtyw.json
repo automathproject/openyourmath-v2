@@ -1,27 +1,31 @@
 {
   "uuid": "xtyw",
   "source_path": "amscc/xtyw.tex",
-  "summary": "L'exercice demande d'établir la fonction de vraisemblance pour un échantillon de variables aléatoires suivant une loi uniforme sur [0, θ], puis de déterminer l'estimateur du maximum de vraisemblance du paramètre θ. Il aborde ensuite la correction du biais de cet estimateur et une application numérique avec des mesures de corrosion.",
+  "summary": "L'exercice demande d'exprimer la vraisemblance d'un échantillon issu d'une loi uniforme sur [0;θ], d'en déduire l'estimateur du maximum de vraisemblance, d'étudier son biais et de proposer un estimateur sans biais. Le contexte concerne la mesure de corrosion sur des coques de navires.",
   "concepts": [
     "loi uniforme",
-    "fonction de vraisemblance",
-    "estimateur du maximum de vraisemblance",
+    "vraisemblance",
+    "maximum de vraisemblance",
+    "estimateur",
     "biais d'un estimateur",
+    "statistique d'ordre",
     "espérance mathématique",
-    "statistique d'ordre"
+    "correction du biais"
   ],
   "methods": [
     "calcul de la vraisemblance",
-    "étude de la monotonie d'une fonction",
-    "correction du biais d'un estimateur"
+    "étude des variations d'une fonction",
+    "correction du biais par ajustement",
+    "calcul de l'espérance d'un estimateur"
   ],
   "objects": [
     "variable aléatoire uniforme",
     "échantillon indépendant",
-    "estimateur biaisé",
+    "statistique d'ordre",
+    "estimateur du maximum de vraisemblance",
     "estimateur sans biais"
   ],
-  "content_hash": "030c3422792bf04de706a1f1f435df0b56f077e899226556f22798606b849d88",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:27:59.823Z"
+  "content_hash": "7bcff74e97fd3180752bb0f511eec7669e075e234dcd38246e7ee6b907965b35",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:43:55.689Z"
 }

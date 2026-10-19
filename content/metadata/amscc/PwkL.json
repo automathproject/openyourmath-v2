@@ -1,26 +1,31 @@
 {
   "uuid": "PwkL",
   "source_path": "amscc/PwkL.tex",
-  "summary": "L'exercice demande d'estimer les paramètres d'une loi normale à partir d'un échantillon en utilisant la méthode du maximum de vraisemblance. Il s'agit de déterminer les estimateurs des paramètres μ et σ en dérivant la fonction de vraisemblance.",
+  "summary": "L'exercice demande d'exprimer la fonction de vraisemblance et son logarithme pour un échantillon de variables indépendantes suivant une loi normale, puis d'en déduire les estimateurs du maximum de vraisemblance pour les paramètres de moyenne et d'écart-type.",
   "concepts": [
     "loi normale",
-    "maximum de vraisemblance",
-    "densité de probabilité",
     "fonction de vraisemblance",
-    "estimateur",
-    "paramètre statistique"
+    "estimateur du maximum de vraisemblance",
+    "dérivée partielle",
+    "maximum de fonction",
+    "variance",
+    "moyenne empirique"
   ],
   "methods": [
-    "dérivation",
-    "logarithme",
-    "résolution d'équation"
+    "maximisation de vraisemblance",
+    "dérivation partielle",
+    "remplacement de paramètre",
+    "étude de signe de dérivée",
+    "calcul de moyenne et variance échantillon"
   ],
   "objects": [
-    "échantillon",
-    "paramètres μ et σ",
-    "fonction de vraisemblance"
+    "fonction de vraisemblance",
+    "log-vraisemblance",
+    "estimateur de moyenne",
+    "estimateur d'écart-type",
+    "échantillon de variables indépendantes"
   ],
-  "content_hash": "bad81636d96b94c0bc6d8a29492e1b0592394ff47d4d4a8e6fbc04a6be6c7858",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:41:00.701Z"
+  "content_hash": "f22eda19deb3411ce1c3bd313741f392a0e68f80f49e061b6564e02621fc584f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:15.867Z"
 }

@@ -1,33 +1,34 @@
 {
   "uuid": "6YqE",
   "source_path": "amscc/6YqE.tex",
-  "summary": "L'exercice porte sur un test d'hypothèses pour une proportion dans un contexte de contrôle qualité. On souhaite déterminer si une machine est bien réglée (proportion de pièces défectueuses p0=0.05) ou déréglée (p1=0.10) à partir d'un échantillon de 100 pièces. Plusieurs questions abordent la justification de la loi normale asymptotique de la statistique de test, le calcul de la région critique, l'interprétation des résultats et le dimensionnement de l'échantillon.",
+  "summary": "L'exercice porte sur un test d'hypothèses pour une proportion de pièces défectueuses dans un échantillon de production. Il s'agit de déterminer si la machine est bien réglée (proportion p0=0,05) ou déréglée (p1=0,10) en utilisant une statistique de test basée sur la fréquence observée de pièces défectueuses.",
   "concepts": [
     "test d'hypothèses",
     "proportion",
     "théorème central limite",
+    "loi normale",
     "risque de première espèce",
     "risque de seconde espèce",
     "puissance d'un test",
-    "intervalle de confiance",
-    "loi normale",
-    "statistique de test"
+    "approximation normale",
+    "loi binomiale"
   ],
   "methods": [
     "standardisation",
     "approximation gaussienne",
-    "calcul de la p-valeur",
-    "détermination de la région critique",
-    "calcul de la taille d'échantillon"
+    "calcul de quantile",
+    "calcul de p-valeur",
+    "comparaison de modèles exact et approché"
   ],
   "objects": [
-    "proportion observée",
     "statistique de test",
+    "fréquence observée",
+    "échantillon aléatoire",
+    "variable indicatrice",
     "risque de première espèce",
-    "risque de seconde espèce",
-    "taille d'échantillon"
+    "risque de seconde espèce"
   ],
-  "content_hash": "d1707c66db3e184c2328470a920c1b74fb15fbe4bedaa0a1da539c3eb9be446f",
+  "content_hash": "9627cc03b08875c0eb7b2cdefa5370e5b18c0006bf8ef661ff2fb701bb6aae8e",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:29:08.293Z"
+  "indexed_at": "2026-10-19T11:41:29.524Z"
 }

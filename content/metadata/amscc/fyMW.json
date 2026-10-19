@@ -1,0 +1,29 @@
+{
+  "uuid": "fyMW",
+  "source_path": "amscc/fyMW.tex",
+  "summary": "L'exercice demande de déterminer la constante de normalisation d'une densité conjointe sur le carré unité, puis d'en déduire les lois marginales, les espérances et variances des variables, et enfin de vérifier leur indépendance.",
+  "concepts": [
+    "densité conjointe",
+    "loi marginale",
+    "indépendance de variables aléatoires",
+    "espérance",
+    "variance",
+    "intégration sur un domaine borné",
+    "fonction indicatrice"
+  ],
+  "methods": [
+    "normalisation de densité",
+    "calcul d'intégrale double",
+    "calcul d'espérance et variance à partir de la densité",
+    "test d'indépendance par produit des densités marginales"
+  ],
+  "objects": [
+    "densité conjointe de deux variables aléatoires",
+    "lois marginales",
+    "espérances et variances",
+    "fonction indicatrice"
+  ],
+  "content_hash": "d3687896bf898bc53858b256175da8a44a73e449e3cae0816c43e645cf92a100",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:40:42.153Z"
+}

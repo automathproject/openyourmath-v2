@@ -1,0 +1,32 @@
+{
+  "uuid": "j88h",
+  "source_path": "amscc/j88h.tex",
+  "summary": "L'exercice étudie la convergence en loi du maximum de variables exponentielles indépendantes vers une loi de Gumbel. Il demande de calculer des fonctions de répartition, d'établir des relations entre variables transformées, et d'interpréter des résultats dans un contexte de modélisation de crues.",
+  "concepts": [
+    "loi exponentielle",
+    "convergence en loi",
+    "loi de Gumbel",
+    "fonction de répartition",
+    "maximum de variables aléatoires",
+    "indépendance",
+    "théorème de caractérisation de la convergence en loi",
+    "densité de probabilité"
+  ],
+  "methods": [
+    "calcul de fonction de répartition",
+    "transformation de variable",
+    "limite de suite",
+    "approximation exponentielle",
+    "utilisation de la continuité de la fonction de répartition"
+  ],
+  "objects": [
+    "variable exponentielle",
+    "maximum de variables aléatoires",
+    "variable aléatoire transformée",
+    "fonction de répartition",
+    "densité de probabilité"
+  ],
+  "content_hash": "62e992c7972fe3e2e74de090ed39efb470480f67077c3373931c8aebf58c0bbc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:40:45.325Z"
+}

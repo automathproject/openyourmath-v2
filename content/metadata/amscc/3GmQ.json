@@ -1,32 +1,32 @@
 {
   "uuid": "3GmQ",
   "source_path": "amscc/3GmQ.tex",
-  "summary": "L'exercice demande de déterminer le taux critique de pièces défectueuses pour un test d'hypothèse sur une proportion, avec un risque de première espèce fixé à 1%. Il s'agit ensuite d'appliquer ce test à un échantillon pour prendre une décision et calculer le risque de seconde espèce.",
+  "summary": "L'exercice demande de déterminer le taux critique de pièces défectueuses pour un test d'hypothèses sur une proportion, en utilisant une approximation normale. Il faut ensuite appliquer ce test à un échantillon donné et calculer les risques de première et seconde espèce, en comparant les résultats avec une règle exacte.",
   "concepts": [
-    "test d'hypothèse",
-    "proportion",
+    "test d'hypothèses sur une proportion",
     "risque de première espèce",
     "risque de seconde espèce",
-    "loi normale",
-    "variable aléatoire standardisée",
-    "zone de rejet",
-    "hypothèse nulle",
-    "hypothèse alternative"
+    "puissance d'un test",
+    "théorème central limite",
+    "approximation normale",
+    "loi binomiale",
+    "intervalle de confiance"
   ],
   "methods": [
-    "test de conformité d'une proportion",
     "standardisation",
-    "calcul de la zone de rejet",
-    "calcul de la proportion critique",
-    "évaluation de la décision"
+    "calcul de quantile",
+    "approximation gaussienne",
+    "calcul de probabilité binomiale",
+    "comparaison de règles de décision"
   ],
   "objects": [
-    "proportion de pièces défectueuses",
-    "échantillon de pièces",
-    "variable de décision Z",
-    "taux critique de pièces défectueuses"
+    "proportion",
+    "variable aléatoire binomiale",
+    "variable standardisée",
+    "échantillon",
+    "taux critique"
   ],
-  "content_hash": "4dd37f098bb12296af0c638e0fd84961ace960961b0668da186bb7bbb92a76c3",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:30:40.611Z"
+  "content_hash": "82c7f291f36af3414f8b4710296cd39bd1cb4b13908c993c2ff50c7c38809161",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:41:14.306Z"
 }

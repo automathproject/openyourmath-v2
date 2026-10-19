@@ -1,29 +1,31 @@
 {
   "uuid": "DzLc",
   "source_path": "amscc/DzLc.tex",
-  "summary": "L'exercice demande de réaliser un test du chi-carré pour déterminer si les réponses des sujets sur le SIDA dépendent de leur âge, puis de comparer spécifiquement les réponses des deux dernières classes d'âge et celles des moins de 30 ans avec celles des 60 ans et plus.",
+  "summary": "L'exercice demande de réaliser un test du chi-carré d'indépendance au seuil de 1% pour déterminer si les réponses sur le sida sont associées à la classe d'âge, puis de comparer les réponses entre deux paires de classes d'âge au seuil de 5%. L'énoncé fournit un tableau de contingence avec les effectifs observés.",
   "concepts": [
-    "test du chi-carré",
-    "tableau de contingence",
-    "hypothèse d'indépendance",
-    "effectifs théoriques",
-    "degrés de liberté",
-    "seuil de signification",
-    "statistique d'observation"
+    "test du chi-carré d'indépendance",
+    "hypothèse nulle",
+    "hypothèse alternative",
+    "effectifs attendus",
+    "statistique de Pearson",
+    "loi du chi-carré",
+    "p-valeur",
+    "tableau de contingence"
   ],
   "methods": [
-    "calcul de la statistique du chi-carré",
-    "comparaison avec la loi du chi-carré",
-    "détermination des effectifs théoriques",
-    "interprétation des résultats en termes de dépendance"
+    "calcul des effectifs attendus",
+    "calcul des contributions au chi-carré",
+    "comparaison des distributions conditionnelles",
+    "approximation de la loi du chi-carré"
   ],
   "objects": [
     "tableau de contingence",
     "effectifs observés",
-    "effectifs théoriques",
-    "statistique du chi-carré"
+    "effectifs attendus",
+    "statistique de test",
+    "distribution des réponses"
   ],
-  "content_hash": "727aed80ad9c17c0a36ca2b512027f2c3b9a9e2c453c4591b838ebba261bd39c",
+  "content_hash": "dc501f8b236312988387ac4e115ea49e4f0925dfd992149997f94a8dbc226ce9",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-16T11:29:57.338Z"
+  "indexed_at": "2026-10-19T11:41:46.666Z"
 }

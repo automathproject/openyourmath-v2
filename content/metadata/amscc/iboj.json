@@ -1,32 +1,32 @@
 {
   "uuid": "iboj",
   "source_path": "amscc/iboj.tex",
-  "summary": "L'exercice demande de construire un intervalle de confiance pour une proportion de pièces défectueuses dans un lot, puis de déterminer la taille d'échantillon nécessaire pour obtenir un intervalle de confiance d'amplitude donnée.",
+  "summary": "L'exercice demande de construire un intervalle de confiance bilatéral pour une proportion de pièces défectueuses à partir d'un échantillon de 200 pièces, puis de déterminer la taille d'un nouvel échantillon pour obtenir une largeur d'intervalle maximale de 0,04, en utilisant une proportion pilote et le cas le plus défavorable.",
   "concepts": [
     "intervalle de confiance",
-    "proportion",
-    "loi normale centrée réduite",
-    "niveau de confiance",
+    "approximation normale",
+    "estimateur sans biais",
+    "loi binomiale",
+    "valeur critique",
     "marge d'erreur",
-    "estimation ponctuelle",
-    "risque statistique",
-    "amplitude d'intervalle"
+    "proportion pilote",
+    "cas le plus défavorable"
   ],
   "methods": [
-    "standardisation",
+    "approximation gaussienne",
     "calcul de la fréquence observée",
-    "détermination de la valeur critique",
-    "calcul des bornes de l'intervalle de confiance",
-    "optimisation de la taille d'échantillon"
+    "utilisation de la valeur critique",
+    "calcul de la marge d'erreur",
+    "planification d'échantillon"
   ],
   "objects": [
     "proportion de pièces défectueuses",
+    "échantillon aléatoire",
+    "intervalle de Wald",
     "taille d'échantillon",
-    "intervalle de confiance",
-    "valeur critique",
-    "marge d'erreur"
+    "fréquence observée"
   ],
-  "content_hash": "821b49d5ec5e1ccc8363b7fb1a1732dbf8ed1adabdcb9ff5401bc067da3d8d4d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:49:27.751Z"
+  "content_hash": "216e4e5587fe2c0de3f3aed5a63d278f230d36b18255da3448d711a676ef6156",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:43:14.512Z"
 }

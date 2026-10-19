@@ -1,29 +1,29 @@
 {
   "uuid": "jemd",
   "source_path": "amscc/jemd.tex",
-  "summary": "L'exercice demande d'exprimer la fonction de vraisemblance pour un échantillon de variables aléatoires suivant une loi géométrique, puis d'estimer le paramètre p par la méthode du maximum de vraisemblance.",
+  "summary": "L'exercice demande d'exprimer la fonction de vraisemblance pour un échantillon de variables géométriques iid, puis d'en déduire l'estimateur du paramètre p par maximum de vraisemblance. Il aborde aussi le cas particulier où toutes les observations valent 1.",
   "concepts": [
     "loi géométrique",
-    "fonction de vraisemblance",
+    "vraisemblance",
     "maximum de vraisemblance",
     "estimateur",
-    "probabilité discrète",
-    "dérivation",
-    "optimisation"
+    "fonction de densité de probabilité",
+    "optimisation sur un intervalle"
   ],
   "methods": [
     "calcul de la vraisemblance",
-    "maximisation de la vraisemblance",
-    "calcul de dérivée",
-    "résolution d'équation"
+    "maximisation d'une fonction",
+    "étude du signe de la dérivée",
+    "factorisation d'expression"
   ],
   "objects": [
-    "variable aléatoire géométrique",
-    "échantillon",
+    "échantillon de variables iid",
     "paramètre p",
-    "fonction de vraisemblance"
+    "fonction de vraisemblance",
+    "dérivée de la vraisemblance",
+    "statistique d'estimation"
   ],
-  "content_hash": "9f249f5287cea7e06c1dc25ecc9ad02181e52ea9a7ff8d4565e6a2c98e5e3f96",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T09:37:20.504Z"
+  "content_hash": "86b897226be0a6af8c825a5b967b59451001b67ff5e780ed4b2ec33391b80ad9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:43:17.703Z"
 }

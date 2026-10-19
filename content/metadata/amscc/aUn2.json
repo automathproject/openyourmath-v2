@@ -1,31 +1,32 @@
 {
   "uuid": "aUn2",
   "source_path": "amscc/aUn2.tex",
-  "summary": "L'exercice demande de tester l'hypothèse que l'épaisseur moyenne des pièces métalliques est conforme à 5 mm, à partir d'un échantillon de 50 pièces, en utilisant un intervalle de confiance à 99%. Il s'agit ensuite de déterminer le risque de première espèce nécessaire pour que la décision soit différente.",
+  "summary": "L'exercice demande de réaliser un test d'hypothèse sur la moyenne d'un échantillon de 50 pièces métalliques pour vérifier si l'épaisseur moyenne est conforme à l'objectif de 5 mm, en utilisant une approximation normale pour un échantillon de grande taille. Il faut aussi déterminer le seuil de risque de première espèce pour lequel la décision du test changerait.",
   "concepts": [
     "test d'hypothèse",
-    "intervalle de confiance",
+    "approximation normale",
+    "moyenne échantillon",
+    "variance échantillon",
     "risque de première espèce",
-    "loi normale",
-    "estimation ponctuelle",
-    "variance échantillonnale",
-    "moyenne échantillonnale"
+    "p-valeur",
+    "intervalle de confiance",
+    "statistique de test"
   ],
   "methods": [
-    "calcul de la moyenne échantillonnale",
-    "calcul de la variance échantillonnale",
+    "calcul de la moyenne échantillon",
+    "calcul de la variance corrigée",
     "standardisation",
     "test bilatéral",
-    "lecture de table de la loi normale"
+    "calcul de la p-valeur"
   ],
   "objects": [
-    "échantillon",
-    "moyenne",
-    "variance",
-    "variable de décision",
-    "table de la loi normale"
+    "moyenne échantillon",
+    "variance échantillon",
+    "statistique de test",
+    "p-valeur",
+    "échantillon de grande taille"
   ],
-  "content_hash": "411e01ccb0b9cb330592f70bb29d14d7324c8d553e88ed82bb2ab81476ee1d52",
+  "content_hash": "937e7593c8f5acc966856dea2e433ef7f4ebbe1e666aa2303069a4c535175f95",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-16T11:30:23.638Z"
+  "indexed_at": "2026-10-19T11:42:45.955Z"
 }

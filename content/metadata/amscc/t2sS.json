@@ -1,28 +1,33 @@
 {
   "uuid": "t2sS",
   "source_path": "amscc/t2sS.tex",
-  "summary": "L'exercice demande de manipuler des données statistiques sur le ronflement, en les classant par intervalles pour la variable taille, en analysant la distribution des âges, en visualisant la relation taille-poids, et en représentant la répartition hommes/femmes selon la consommation d'alcool.",
+  "summary": "L'exercice demande d'analyser un jeu de données contenant des variables quantitatives (âge, poids, taille, alcool) et qualitatives (sexe, ronflement, tabagisme) pour des personnes. Il s'agit de préparer les données, construire des graphiques (histogrammes, nuages de points) et interpréter des statistiques descriptives (effectifs, fréquences, corrélation) à l'aide d'un tableur.",
   "concepts": [
     "statistique descriptive",
-    "classement en intervalles",
-    "histogramme",
-    "répartition de fréquences",
-    "analyse bivariée"
-  ],
-  "methods": [
-    "classement par intervalles",
-    "construction d'histogramme",
-    "analyse graphique",
-    "représentation de données catégorielles"
-  ],
-  "objects": [
     "variable quantitative",
-    "tableur",
+    "variable qualitative",
     "histogramme",
-    "graphique de dispersion",
+    "corrélation linéaire",
+    "fréquence",
+    "effectif",
     "tableau croisé dynamique"
   ],
-  "content_hash": "f20594b107155f4101ecd412bec3cfc2ecd9035b5a5aeb15ddae67065676c964",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:55:30.877Z"
+  "methods": [
+    "regroupement en classes",
+    "calcul de fréquences",
+    "construction d'histogrammes",
+    "calcul de corrélation",
+    "analyse de tableaux croisés dynamiques"
+  ],
+  "objects": [
+    "tableur",
+    "jeu de données",
+    "variables numériques",
+    "variables catégorielles",
+    "nuage de points",
+    "tableau d'effectifs"
+  ],
+  "content_hash": "51abf38ead8e88ef4c15f30e82f0167ed0c8f278e4612106d58a1a2526b02897",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:43:43.695Z"
 }

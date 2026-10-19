@@ -1,31 +1,31 @@
 {
   "uuid": "r5Yy",
   "source_path": "amscc/r5Yy.tex",
-  "summary": "L'exercice demande d'estimer le paramètre λ d'une loi de Poisson modélisant le nombre d'incidents de paiement pour des crédits à la consommation, puis de tester l'hypothèse nulle λ=1 contre l'alternative λ>1 à partir d'un échantillon de 100 clients. Une représentation graphique comparative est également requise.",
+  "summary": "L'exercice demande d'estimer le paramètre λ d'une loi de Poisson modélisant le nombre d'incidents de paiement, puis de tester l'hypothèse nulle λ=1 contre une alternative unilatérale λ>1 à partir d'un échantillon de 100 clients. Il compare l'approximation normale et le test exact de Poisson, et propose une visualisation graphique des effectifs observés et théoriques.",
   "concepts": [
     "loi de Poisson",
-    "estimation ponctuelle",
-    "test d'hypothèses",
+    "estimateur sans biais",
+    "convergence en probabilité",
+    "théorème central limite",
+    "test d'hypothèses unilatéral",
+    "p-valeur",
     "risque de première espèce",
-    "intervalle de confiance",
-    "loi binomiale",
-    "statistique d'échantillonnage"
+    "standardisation"
   ],
   "methods": [
-    "méthode des moments",
-    "estimation par maximum de vraisemblance",
-    "test du rapport de vraisemblance",
-    "construction d'histogramme",
-    "superposition de distributions"
+    "estimation par la moyenne empirique",
+    "approximation gaussienne",
+    "calcul de la p-valeur",
+    "comparaison de tests exact et approché",
+    "visualisation des effectifs théoriques et observés"
   ],
   "objects": [
-    "paramètre de Poisson",
-    "échantillon d'observations",
-    "histogramme des effectifs",
-    "loi de Poisson de paramètre 1",
-    "estimateur convergent"
+    "variable aléatoire de Poisson",
+    "somme de variables iid",
+    "statistique de test",
+    "graphique de comparaison d'effectifs"
   ],
-  "content_hash": "747fcacccf50dec0f797f4023210deaef2658735c77a0aca00f03f242683119d",
+  "content_hash": "1955810df268a91783ce555234f04cd8df0024d29170d0eef717c34443646aab",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-16T11:30:55.372Z"
+  "indexed_at": "2026-10-19T11:43:36.578Z"
 }

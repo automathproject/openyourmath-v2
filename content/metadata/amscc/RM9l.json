@@ -1,0 +1,29 @@
+{
+  "uuid": "RM9l",
+  "source_path": "amscc/RM9l.tex",
+  "summary": "L'exercice modélise le nombre de décès annuels dans une compagnie d'assurance vie avec N=10 000 clients indépendants, chacun ayant une probabilité p=0,006 de décès. Il demande d'identifier la loi du nombre de décès, puis d'étudier les conditions sur les primes A et B pour contrôler le risque de déficit ou garantir un bénéfice supérieur à 50 000 euros.",
+  "concepts": [
+    "loi binomiale",
+    "approximation par la loi de Poisson",
+    "espérance",
+    "écart-type",
+    "inégalité de Bienaymé-Tchebychev",
+    "probabilité de déficit",
+    "bénéfice annuel"
+  ],
+  "methods": [
+    "calcul de paramètres d'une loi binomiale",
+    "approximation par la loi de Poisson",
+    "calcul de probabilité conditionnelle",
+    "résolution d'inéquation"
+  ],
+  "objects": [
+    "nombre de décès",
+    "prime annuelle",
+    "bénéfice annuel",
+    "probabilité de déficit"
+  ],
+  "content_hash": "24d93df597475a100e83dcce8dc16cadfd9317234558a586a8547368429eccc1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:40:55.054Z"
+}

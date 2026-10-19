@@ -1,0 +1,31 @@
+{
+  "uuid": "Va9e",
+  "source_path": "amscc/Va9e.tex",
+  "summary": "L'exercice demande de calculer des intervalles de confiance pour la moyenne et la variance d'une loi normale à partir d'un échantillon de 20 mesures de taux de cholestérol. Il s'agit d'estimer ces paramètres avec un risque de 1% et d'analyser la symétrie des intervalles obtenus.",
+  "concepts": [
+    "loi normale",
+    "intervalle de confiance",
+    "loi de Student",
+    "loi du chi-deux",
+    "estimateur sans biais",
+    "convergence en probabilité",
+    "quantile"
+  ],
+  "methods": [
+    "calcul de la moyenne empirique",
+    "calcul de la variance corrigée",
+    "standardisation",
+    "utilisation des tables de Student",
+    "utilisation des tables du chi-deux"
+  ],
+  "objects": [
+    "moyenne empirique",
+    "variance corrigée",
+    "échantillon",
+    "pivot de Student",
+    "pivot du chi-deux"
+  ],
+  "content_hash": "bdf2931754d7eaac99481029cece1de1be7a5fbf469fa1ab79d7d524c607d473",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:35.560Z"
+}

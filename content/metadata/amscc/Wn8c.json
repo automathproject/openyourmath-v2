@@ -1,0 +1,30 @@
+{
+  "uuid": "Wn8c",
+  "source_path": "amscc/Wn8c.tex",
+  "summary": "L'exercice demande de déterminer le nombre de portions de risotto à prévoir pour limiter à moins de 10% le risque de rupture de stock, en utilisant l'approximation normale d'une loi binomiale. Il s'agit ensuite d'approcher la loi de la proportion d'étudiants choisissant le risotto et de déterminer un intervalle de confiance à 95%.",
+  "concepts": [
+    "loi binomiale",
+    "loi normale",
+    "approximation normale d'une binomiale",
+    "espérance et variance d'une binomiale",
+    "quantile de la loi normale centrée réduite",
+    "transformation affine d'une variable aléatoire",
+    "intervalle de fluctuation"
+  ],
+  "methods": [
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de quantile",
+    "transformation affine de loi",
+    "centrage-réduction"
+  ],
+  "objects": [
+    "variable aléatoire binomiale",
+    "proportion",
+    "intervalle de confiance",
+    "quantile de la loi normale"
+  ],
+  "content_hash": "f6ec54d14a1c4e09dd4f54279bf7bcf492b17f1550a30afe8a08a322884e4fd4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:39.446Z"
+}

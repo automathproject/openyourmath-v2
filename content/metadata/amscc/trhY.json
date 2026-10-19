@@ -1,33 +1,33 @@
 {
   "uuid": "trhY",
   "source_path": "amscc/trhY.tex",
-  "summary": "L'exercice demande d'analyser un sondage sur les salaires des femmes pour déterminer si leur moyenne diffère de celle des hommes (28 000 €). Il s'agit de formuler les hypothèses statistiques, de calculer une statistique de test et d'interpréter les résultats pour trancher entre deux positions opposées.",
+  "summary": "L'exercice demande d'analyser un sondage sur les salaires féminins par rapport à une moyenne masculine de référence, en effectuant des tests d'hypothèses statistiques (bilatéral et unilatéral) avec une loi de Student. Il s'agit de déterminer les hypothèses alternatives, la variable de décision, les régions critiques, et d'interpréter les résultats pour trancher entre les affirmations de deux parties.",
   "concepts": [
     "test d'hypothèses",
     "hypothèse nulle",
     "hypothèse alternative",
-    "loi normale",
-    "statistique de test",
-    "risque de première espèce",
-    "région critique",
+    "loi de Student",
     "test bilatéral",
-    "test unilatéral"
+    "test unilatéral",
+    "p-valeur",
+    "risque de première espèce",
+    "statistique de Student"
   ],
   "methods": [
-    "formulation des hypothèses",
-    "calcul de la statistique de test",
-    "détermination de la région critique",
-    "lecture de table de Student",
-    "interprétation des résultats"
+    "calcul de la moyenne échantillonale",
+    "estimation de la variance",
+    "standardisation",
+    "détermination des régions critiques",
+    "calcul de la p-valeur"
   ],
   "objects": [
-    "moyenne échantillonale",
-    "écart-type échantillonale",
+    "salaire moyen",
+    "échantillon aléatoire",
     "statistique de Student",
-    "échantillon de salaires",
-    "variable de décision"
+    "variable de décision",
+    "loi de Student"
   ],
-  "content_hash": "c11198efe3362e3ab3d770c7f877c3f8a2a31830536155e3d280da10486652dd",
+  "content_hash": "ddd497b54e5b9bfc4d21373cde2dd6e7c76af4aa7229bb034db4f6169c7c1758",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-15T18:36:01.360Z"
+  "indexed_at": "2026-10-19T11:43:51.606Z"
 }

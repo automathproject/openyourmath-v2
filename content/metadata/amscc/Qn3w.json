@@ -1,0 +1,31 @@
+{
+  "uuid": "Qn3w",
+  "source_path": "amscc/Qn3w.tex",
+  "summary": "L'exercice demande de calculer des quantiles pour des lois d'échantillonnage (Student, khi-deux, Fisher) à partir de probabilités données, en utilisant un tableur. Il aborde aussi la construction d'intervalles de confiance et la symétrie des distributions.",
+  "concepts": [
+    "loi de Student",
+    "loi du khi-deux",
+    "loi de Fisher",
+    "quantile",
+    "probabilité à gauche",
+    "intervalle de confiance",
+    "espérance d'une loi",
+    "symétrie d'une distribution"
+  ],
+  "methods": [
+    "calcul de quantile à gauche",
+    "inversion de la fonction de répartition",
+    "utilisation de fonctions de tableur",
+    "construction d'intervalle central"
+  ],
+  "objects": [
+    "quantile d'une loi",
+    "probabilité",
+    "intervalle de confiance",
+    "fonction de répartition",
+    "tableur"
+  ],
+  "content_hash": "7fb083474f118c09a626928841a71210f94955ea5bb8472ca108c3c8463565e5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:25.578Z"
+}

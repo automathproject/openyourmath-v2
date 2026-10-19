@@ -1,31 +1,32 @@
 {
   "uuid": "XwA0",
   "source_path": "amscc/XwA0.tex",
-  "summary": "L'exercice demande d'évaluer, via un test du chi-carré et une simulation de 500 tirages, si la commande ALEA.ENTRE.BORNES(1;8) d'un tableur simule correctement une loi uniforme discrète sur {1,2,...,8}. La validation s'appuie sur un histogramme et le calcul de la p-valeur.",
+  "summary": "L'exercice demande de simuler 500 tirages indépendants et uniformes sur {1,...,8}, puis de tester leur adéquation à cette loi uniforme au seuil de 5% en calculant la p-valeur et en interprétant le résultat. Il s'agit d'appliquer un test du chi-deux d'adéquation.",
   "concepts": [
-    "test du chi-carré",
-    "loi uniforme discrète",
-    "p-valeur",
-    "simulation Monte Carlo",
-    "intervalle de confiance",
+    "test du chi-deux d'adéquation",
     "hypothèse nulle",
-    "statistique d'ajustement"
+    "hypothèse alternative",
+    "loi du chi-deux",
+    "degrés de liberté",
+    "p-valeur",
+    "risque de première espèce",
+    "loi uniforme discrète"
   ],
   "methods": [
-    "test d'ajustement",
-    "simulation de variables aléatoires",
-    "calcul de fréquence observée",
-    "construction d'histogramme",
-    "comparaison de distributions"
+    "calcul de la statistique de Pearson",
+    "approximation par la loi du chi-deux",
+    "détermination du seuil critique",
+    "calcul de la p-valeur",
+    "simulation de variables aléatoires"
   ],
   "objects": [
-    "variable aléatoire discrète",
-    "tableau de fréquences",
-    "statistique de test",
-    "histogramme",
-    "p-valeur"
+    "statistique de Pearson",
+    "effectifs observés",
+    "effectifs attendus",
+    "loi χ²(7)",
+    "échantillon de tirages"
   ],
-  "content_hash": "5295dad4dc6f4381f28ae9d1cb810bd92fb9edf90c2507b2d2ce21b981a7eb5e",
+  "content_hash": "c0ef21bcb48c49d8a2fc01a261256dcef2588e6263a799dbd596230929561031",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-16T11:30:14.683Z"
+  "indexed_at": "2026-10-19T11:42:42.705Z"
 }

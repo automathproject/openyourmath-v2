@@ -1,28 +1,30 @@
 {
   "uuid": "gk1A",
   "source_path": "amscc/gk1A.tex",
-  "summary": "L'exercice demande de calculer des intervalles de confiance pour l'espérance d'une variable aléatoire normale à partir d'un échantillon de 7 observations de prix. On utilise d'abord les estimateurs classiques pour l'espérance et l'écart-type, puis on construit des intervalles de confiance symétriques aux seuils de 90% et 99% en utilisant la loi de Student.",
+  "summary": "L'exercice demande de calculer des intervalles de confiance pour la moyenne d'une loi normale à partir d'un échantillon de 7 prix de supermarchés. Il faut d'abord estimer la moyenne et l'écart-type, puis déterminer les intervalles de confiance à 90% et 99% en utilisant la loi de Student.",
   "concepts": [
     "loi normale",
-    "intervalle de confiance",
     "loi de Student",
-    "estimation ponctuelle",
-    "variance corrigée",
-    "distribution échantillonnage"
+    "intervalle de confiance",
+    "estimateur sans biais",
+    "convergence en probabilité",
+    "quantile",
+    "variance inconnue"
   ],
   "methods": [
-    "estimation par la moyenne échantillonnale",
+    "estimation par la moyenne empirique",
     "estimation de la variance corrigée",
-    "calcul des intervalles de confiance",
-    "utilisation de la loi de Student"
+    "calcul de quantiles de Student",
+    "construction d'intervalle de confiance"
   ],
   "objects": [
     "échantillon de taille 7",
-    "espérance",
-    "écart-type",
+    "moyenne empirique",
+    "écart-type empirique",
+    "pivot de Student",
     "intervalle de confiance"
   ],
-  "content_hash": "dfb739a8651b4f11e440203d46803ccbfc1d154523d67f2f21c47c4166c53993",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:48:49.476Z"
+  "content_hash": "995a78764cc83047d3e183d5139486ab2490aedd83494fa1809d7bab706d2d19",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:43:06.320Z"
 }

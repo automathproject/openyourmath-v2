@@ -1,26 +1,33 @@
 {
   "uuid": "dXNn",
   "source_path": "amscc/dXNn.tex",
-  "summary": "L'exercice demande de construire un estimateur du paramètre a d'une loi de probabilité discrète sur N, en utilisant la méthode du maximum de vraisemblance, puis de déterminer le biais de cet estimateur.",
+  "summary": "L'exercice demande d'exprimer la vraisemblance d'un échantillon de variables aléatoires discrètes suivant une loi donnée, puis de déterminer l'estimateur du maximum de vraisemblance du paramètre a. Il étudie également l'espérance de la variable et le biais de l'estimateur.",
   "concepts": [
+    "vraisemblance",
     "maximum de vraisemblance",
     "estimateur",
-    "biais d'un estimateur",
     "espérance d'une variable aléatoire",
-    "loi de probabilité discrète",
-    "fonction de vraisemblance"
+    "biais d'un estimateur",
+    "loi discrète",
+    "indépendance statistique",
+    "fonction génératrice"
   ],
   "methods": [
-    "maximisation de la vraisemblance",
-    "calcul de l'espérance",
-    "détermination du biais"
+    "calcul de vraisemblance",
+    "dérivation pour maximisation",
+    "factorisation d'expression",
+    "étude de signe de dérivée",
+    "calcul d'espérance par série",
+    "linéarité de l'espérance"
   ],
   "objects": [
     "variable aléatoire discrète",
-    "paramètre de loi",
-    "estimateur sans biais"
+    "échantillon indépendant",
+    "statistique d'échantillonnage",
+    "estimateur sans biais",
+    "somme de variables aléatoires"
   ],
-  "content_hash": "f1c9d6e39eced5f34d2e5c4d8fb83ceec8d6529c24348ed97365c776e617a1af",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:47:47.697Z"
+  "content_hash": "8b5004b909e886d741941aaa437630631456b99d9888acf216b9d29bbd81e4fb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:59.778Z"
 }

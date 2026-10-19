@@ -1,26 +1,24 @@
 {
   "uuid": "CXUp",
   "source_path": "amscc/CXUp.tex",
-  "summary": "Calcul de probabilités pour une variable aléatoire suivant une loi normale d'espérance 2600 heures et d'écart-type 200 heures. On demande la probabilité de travailler moins de 3000 heures et entre 2500 et 2700 heures.",
+  "summary": "Calculer des probabilités associées à une variable aléatoire suivant une loi normale d'espérance 2600 et d'écart-type 200, dans le contexte de la durée annuelle de travail d'une personne non salariée.",
   "concepts": [
-    "loi normale",
-    "espérance",
-    "écart-type",
-    "probabilité continue",
+    "loi normale centrée réduite",
     "standardisation",
-    "table de valeurs normales"
+    "fonction de répartition",
+    "probabilité conditionnelle"
   ],
   "methods": [
     "standardisation",
-    "utilisation de tables de valeurs",
-    "calcul avec tableur"
+    "utilisation de tables de la loi normale",
+    "calcul de probabilités par différence"
   ],
   "objects": [
     "variable aléatoire normale",
-    "intervalle de confiance",
-    "valeurs critiques"
+    "fonction de répartition",
+    "intervalle de probabilité"
   ],
-  "content_hash": "433ba0476819d05c15e60e75a5e9ffd4515693c3e233ca28ee2bea5552fa2654",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T08:42:35.519Z"
+  "content_hash": "99097c61da4bd22373043cc6b6e298ecbed8cc09acd6cb6b23d32002a3a5576c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:40:33.535Z"
 }

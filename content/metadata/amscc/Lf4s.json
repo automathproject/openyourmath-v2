@@ -1,0 +1,32 @@
+{
+  "uuid": "Lf4s",
+  "source_path": "amscc/Lf4s.tex",
+  "summary": "L'exercice demande de déterminer les lois de différentes statistiques d'échantillonnage (moyenne, variance, rapport de variances) pour des échantillons normaux, puis d'étudier la validité de ces résultats sous l'hypothèse de normalité relâchée. Il aborde aussi l'application du théorème central limite.",
+  "concepts": [
+    "loi normale",
+    "loi du khi-deux",
+    "loi de Student",
+    "loi de Fisher",
+    "théorème central limite",
+    "théorème de Fisher",
+    "statistique d'échantillonnage",
+    "quantile"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de la moyenne empirique",
+    "calcul de la variance empirique",
+    "construction de la statistique de Student",
+    "construction de la statistique de Fisher"
+  ],
+  "objects": [
+    "échantillon indépendant",
+    "moyenne empirique",
+    "variance corrigée",
+    "statistique de Student",
+    "statistique de Fisher"
+  ],
+  "content_hash": "bdb03e08a66a5e857d507c4c09d1fa7e54e2c2fbd3657a38ef49c4483bd83240",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:06.225Z"
+}
