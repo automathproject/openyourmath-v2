@@ -1,0 +1,28 @@
+{
+  "uuid": "u8jz",
+  "source_path": "amscc/u8jz.tex",
+  "summary": "L'exercice demande d'évaluer si une couleur codée par un triplet (r,g,b) est une nuance de rouge en utilisant un perceptron affine avec fonction d'activation de Heaviside. Il s'agit de calculer la sortie du perceptron pour plusieurs couleurs et d'analyser la frontière de décision.",
+  "concepts": [
+    "perceptron affine",
+    "fonction de Heaviside",
+    "frontière de décision",
+    "classification binaire",
+    "poids synaptiques",
+    "biais",
+    "propagation avant"
+  ],
+  "methods": [
+    "calcul de la sortie du perceptron",
+    "analyse de la frontière de décision",
+    "évaluation de la fonction d'activation"
+  ],
+  "objects": [
+    "couleur codée par triplet (r,g,b)",
+    "perceptron à trois entrées",
+    "fonction de Heaviside",
+    "frontière de décision"
+  ],
+  "content_hash": "85edbedbd12477911b3ed7403bbe18192f2b7602bd6c8ceb78b9cfed847b887e",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-10-21T18:17:09.270Z"
+}

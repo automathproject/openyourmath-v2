@@ -1,0 +1,29 @@
+{
+  "uuid": "0unE",
+  "source_path": "amscc/0unE.tex",
+  "summary": "L'exercice demande de calculer la sortie d'un perceptron à trois entrées binaires avec des poids égaux et un biais donné, puis d'analyser sa fonction logique en variant le biais. Le perceptron modélise un vote à la majorité entre trois capteurs.",
+  "concepts": [
+    "perceptron affine",
+    "fonction d'activation",
+    "fonction de Heaviside",
+    "fonction logique",
+    "vote à la majorité",
+    "opérateur ET",
+    "opérateur OU"
+  ],
+  "methods": [
+    "calcul de la somme pondérée",
+    "application de la fonction de Heaviside",
+    "analyse de seuil logique"
+  ],
+  "objects": [
+    "perceptron à trois entrées",
+    "fonction binaire",
+    "biais",
+    "poids",
+    "entrée binaire"
+  ],
+  "content_hash": "b79850f5b47a7ddd4840e456c9a2da994b9afd5aa0d6cea72d640cdf9c2897cd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-10-21T17:59:29.782Z"
+}
