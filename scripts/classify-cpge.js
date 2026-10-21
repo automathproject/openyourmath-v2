@@ -27,6 +27,8 @@
 //                                         # importe ces réponses (uuid → JSON) au lieu d'appeler un modèle
 //   node scripts/classify-cpge.js --uuids a,b --preselection --exporter DIR
 //                                         # tous les programmes, avec une présélection par exercice
+//   node scripts/classify-cpge.js --uuids a,b --preselection --restreindre --albert gpt-oss-120b
+//                                         # candidats limités à la présélection (prompt court)
 //   options : --limit N, --concurrence N, --par-minute N (Albert : 9), --sortie FICHIER, --lot N
 
 import fs from 'fs';
@@ -81,6 +83,10 @@ const REPONSES_FILE = option('--reponses');
 // le chapitre ; elle signale une exclusion probable.
 const PRESELECTION = args.includes('--preselection');
 const PRESELECTION_K = Number(option('--preselection-k') ?? 15);
+// --restreindre : les candidats se limitent à la présélection, avec leurs
+// contenus. Le prompt tient alors dans le quota d'Albert (≈ 10 000 jetons
+// au lieu de 41 000), pour une seconde opinion sur un sous-ensemble.
+const RESTREINDRE = PRESELECTION && args.includes('--restreindre');
 const DIRECT = args.includes('--direct') || PRESELECTION;
 const CACHE_EMBEDDINGS = path.join(PROJECT_ROOT, 'cache/cpge/groupes-embeddings.json');
 /** uuid → { groupes, raison } : présélection de chaque exercice. */
@@ -257,7 +263,7 @@ ${exerciseText(row)}${preselectionPart(row)}`;
 /** Présélection de l'exercice, en mode --preselection : point de départ, pas une limite. */
 function preselectionPart(row) {
   const p = PRESELECTIONS.get(row.uuid);
-  if (!p) return '';
+  if (!p || RESTREINDRE) return '';
   const raison = p.raison
     ? `\nLa table de correspondance ne propose aucun programme pour ce chapitre (${p.raison}) : l'exercice est probablement hors CPGE, à vérifier.`
     : '';
@@ -548,7 +554,8 @@ async function main() {
 
   if (ESTIMER) {
     const sizes = exercises.filter(row => table.get(`${sourceOf(row)}|${row.chapter}`)?.length).map(row => {
-      const groups = buildCandidates(table.get(`${sourceOf(row)}|${row.chapter}`), index, { concordance });
+      const groups = RESTREINDRE ? PRESELECTIONS.get(row.uuid)?.groupes ?? []
+        : buildCandidates(table.get(`${sourceOf(row)}|${row.chapter}`), index, { concordance });
       return Math.round((SYSTEM.length + buildPrompt(row, groups, index).length) / 3.2);
     }).sort((a, b) => a - b);
     const total = sizes.reduce((s, x) => s + x, 0);
@@ -611,7 +618,7 @@ async function main() {
         content_hash: row.content_hash,
         pilote: PILOTE_VERSION,
         contenus: Number.isFinite(CONTENUS_MAX) ? CONTENUS_MAX : 'complets',
-        candidats_par: PRESELECTION ? 'programmes complets, avec présélection' : DIRECT ? 'programmes complets' : 'table de correspondance',
+        candidats_par: RESTREINDRE ? 'présélection seule' : PRESELECTION ? 'programmes complets, avec présélection' : DIRECT ? 'programmes complets' : 'table de correspondance',
         ...(PRESELECTION ? { preselection: PRESELECTIONS.get(row.uuid)?.groupes.map(g => g.noeuds[0]) ?? [] } : {}),
         regroupement: REGROUPEMENT_VERSION,
         modele: MODEL,
@@ -621,7 +628,7 @@ async function main() {
       try {
         const noeuds = table.get(key);
         if (!noeuds) throw new Error(`chapitre absent de la table de correspondance : ${key}`);
-        const groups = buildCandidates(noeuds, index, { concordance });
+        const groups = RESTREINDRE ? PRESELECTIONS.get(row.uuid)?.groupes ?? [] : buildCandidates(noeuds, index, { concordance });
         if (!groups.length) {
           // Chapitre sans équivalent en CPGE : la table l'écarte, sans appel au modèle.
           Object.assign(entry, {

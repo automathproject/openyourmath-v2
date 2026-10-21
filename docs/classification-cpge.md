@@ -653,6 +653,22 @@ Le résultat est
   Zmuc reste en CPGE : son énoncé définit l'enveloppe convexe par les
   barycentres à coefficients positifs.
 
+#### Albert en seconde opinion
+
+Le quota d'Albert (1,28 M de jetons d'entrée par jour) ne permet pas de
+traiter la base avec le prompt de la présélection (41 000 jetons, soit 30
+exercices par jour), et la table ne couvre que 1 100 des exercices restants.
+L'option `--restreindre` limite les candidats aux groupes présélectionnés,
+avec leurs contenus : le prompt tombe à 6 000 à 8 000 jetons, soit environ
+180 exercices par jour.
+
+Calibrage sur l'essai Haiku 5.5 (`albert_gpt-oss-120b.v9.restreint.calibrage.jsonl`) :
+les 26 exercices exclus par Haiku et 14 exercices gardés. Albert garde les
+14, mais n'exclut que 10 des 26 : il garde les divisions suivant les
+puissances croissantes, l'irréductibilité dans Z[X], Argsh et Argch, que les
+règles excluent pourtant. En contre-vérification des exclusions, ses
+désaccords seraient surtout ses propres erreurs.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par
