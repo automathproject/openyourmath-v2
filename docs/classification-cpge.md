@@ -560,6 +560,37 @@ Relire les seules divergences (37 % des exercices) donne un étiquetage
 complet. 8 rattachements ont été marqués « trop difficile », dont 7 en
 BCPST 1re année.
 
+#### Algèbre de L1 : trois chapitres en deux passages (v8)
+
+« Application linéaire » (145 exercices), « Arithmétique dans Z » (164) et
+« Dénombrement » (86) ont été étiquetés en deux passages par Opus. Les deux
+passages concordent sur 209 exercices, qui gardent la proposition de A. Les
+186 exercices divergents ont été confiés à un arbitre, avec la consigne
+`reports/cpge-pilote/arbitrage-algebre-l1/consigne-arbitre.md` : Opus pour
+les lots 1 à 10 (150 exercices), Haiku 5.5 pour les lots 11 à 13 (36
+exercices). Pour chaque groupe proposé par A ou B, l'arbitre décide de le
+garder ou de le retirer. Il précise les filières, note celles où l'exercice
+est trop difficile et marque l'exercice « incertain » quand sa décision
+dépend d'une question de règle encore ouverte.
+
+`scripts/assembler-arbitrage-cpge.js` produit les réponses finales.
+Elles sont importées par `classify-cpge.js --reponses`, puis annotées avec
+l'origine de chaque décision (`decision`), les filières jugées trop
+difficiles (`difficile`) et les cas incertains (`incertain`,
+`raison_incertitude`). Le résultat est
+`reports/cpge-pilote/claude_opus-5-5+haiku-5-5.algebre-l1.final.jsonl`.
+
+- 5 exercices sont hors CPGE : division suivant les puissances croissantes
+  (7tyn), dual E* non défini (fdhp), bornes supérieure et inférieure dans un
+  ensemble ordonné quelconque (qlIT, drxQ), formule du crible nommée et
+  demandée (WXS3).
+- 16 exercices sont incertains, à relire. Les questions ouvertes dont ils
+  dépendent sont « base » et « direction » d'une projection, le dual E*, sup
+  et max dans un ensemble ordonné quelconque, et la formule du crible
+  demandée sans être nommée. S'y ajoutent des énoncés incomplets ou corrompus
+  et la dimension non précisée.
+- 11 exercices ont au moins une filière notée « trop difficile ».
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par

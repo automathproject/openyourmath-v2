@@ -1,0 +1,122 @@
+{
+  "450T": {
+    "releve_cpge": true,
+    "motif": "Bijection de Cantor de N² sur N : injectivité et surjectivité d'une application, au programme MPSI/PCSI/PTSI ; le rattachement BCPST (vocabulaire des applications) est gardé comme difficile.",
+    "groupes": {"G3": "garder", "G1": "retirer", "G151": "garder"},
+    "filieres": {},
+    "difficile": {"G151": ["BCPST1"]},
+    "ajouts": [],
+    "incertain": false,
+    "raison_incertitude": ""
+  },
+  "4FJM": {
+    "releve_cpge": true,
+    "motif": "Équation fonctionnelle f∘f = n+1987 : injectivité, images directes et images réciproques, au programme MPSI/PCSI/PTSI ; l'image réciproque n'étant pas au programme BCPST, aucun rattachement BCPST.",
+    "groupes": {"G3": "garder", "G101": "retirer"},
+    "filieres": {},
+    "difficile": {},
+    "ajouts": [],
+    "incertain": false,
+    "raison_incertitude": ""
+  },
+  "8e3t": {
+    "releve_cpge": true,
+    "motif": "Nombre de parties de E contenant exactement un élément de A : cardinal de l'ensemble des parties, p-combinaisons et principe multiplicatif, au programme des familles 1re année.",
+    "groupes": {"G101": "garder", "G102": "garder", "G152": "garder"},
+    "filieres": {},
+    "difficile": {},
+    "ajouts": [],
+    "incertain": false,
+    "raison_incertitude": ""
+  },
+  "BN6v": {
+    "releve_cpge": true,
+    "motif": "Nombre de partitions d'un ensemble à pq éléments en p classes de q éléments : combinaisons, permutations et notion de partition, la partition étant définie par l'énoncé.",
+    "groupes": {"G102": "garder", "G2": "garder", "G152": "garder"},
+    "filieres": {},
+    "difficile": {},
+    "ajouts": [],
+    "incertain": false,
+    "raison_incertitude": ""
+  },
+  "BqDh": {
+    "releve_cpge": true,
+    "motif": "Démonstration de la formule de Pascal sur les coefficients binomiaux, explicitement au programme (combinatoire et calcul sur les factorielles).",
+    "groupes": {"G102": "garder", "G4": "garder", "G150": "garder", "G152": "garder"},
+    "filieres": {},
+    "difficile": {},
+    "ajouts": [],
+    "incertain": false,
+    "raison_incertitude": ""
+  },
+  "Dniq": {
+    "releve_cpge": true,
+    "motif": "Nombre de diagonales d'un polygone convexe et décompte de leurs intersections par combinaisons et correction de surcomptage, au programme de 1re année ; polygone convexe et diagonale employés sans définition, notion élémentaire absente du texte officiel.",
+    "groupes": {"G102": "garder", "G101": "garder", "G152": "garder"},
+    "filieres": {},
+    "difficile": {},
+    "ajouts": [],
+    "incertain": true,
+    "raison_incertitude": "Règle 2 : polygone convexe et diagonale sont employés sans définition et ne figurent dans aucun programme de CPGE (notion élémentaire de géométrie) ; l'énoncé est aussi ambigu entre droites portant les diagonales et segments diagonaux."
+  },
+  "FCgu": {
+    "releve_cpge": true,
+    "motif": "Existence et unicité de l'écriture d'un entier en base b : division euclidienne (MPSI/MP2I, PCSI, PTSI) et argument de cardinal ; la représentation est définie par l'énoncé.",
+    "groupes": {"G43": "garder", "G23": "garder", "G101": "garder", "G152": "retirer"},
+    "filieres": {"G23": ["PCSI", "PTSI"]},
+    "difficile": {},
+    "ajouts": [],
+    "incertain": false,
+    "raison_incertitude": ""
+  },
+  "HoG9": {
+    "releve_cpge": true,
+    "motif": "Dérangements définis par l'énoncé ; calcul par cardinaux, permutations et probabilité uniforme, au programme. La formule du crible n'est pas nommée et n'est qu'indirectement suggérée (référence à un exercice 105 non fourni).",
+    "groupes": {"G101": "garder", "G102": "garder", "G104": "garder", "G152": "garder", "G199": "garder"},
+    "filieres": {},
+    "difficile": {},
+    "ajouts": [],
+    "incertain": true,
+    "raison_incertitude": "Règle 3 : la formule du crible (hors programme) n'est pas nommée dans l'énoncé mais suggérée par la référence à l'exercice 105 ; la décision dépend de si cette indication vaut demande de la formule."
+  },
+  "LbvB": {
+    "releve_cpge": true,
+    "motif": "Nombre de régions délimitées par des droites puis des plans : raisonnement par récurrence et sommes classiques des entiers et des carrés, au programme ; la géométrie n'est qu'un cadre.",
+    "groupes": {"G4": "garder", "G150": "garder", "G1": "garder", "G144": "garder"},
+    "filieres": {},
+    "difficile": {},
+    "ajouts": [],
+    "incertain": false,
+    "raison_incertitude": ""
+  },
+  "MN3q": {
+    "releve_cpge": true,
+    "motif": "Développement de (a+b+c+d)² et (a+b+c)³ : calcul algébrique, produits de sommes et formule du binôme, au programme.",
+    "groupes": {"G4": "garder", "G150": "garder", "G145": "retirer"},
+    "filieres": {},
+    "difficile": {},
+    "ajouts": [],
+    "incertain": false,
+    "raison_incertitude": ""
+  },
+  "MOyv": {
+    "releve_cpge": true,
+    "motif": "Nombre de n-uplets d'entiers de somme p égal à C(n+p-1,p) : dénombrement de p-uplets, combinaisons et formule de Pascal par disjonction de cas et récurrence, au programme.",
+    "groupes": {"G102": "garder", "G4": "retirer", "G152": "garder", "G150": "garder", "G1": "garder"},
+    "filieres": {},
+    "difficile": {},
+    "ajouts": [],
+    "incertain": false,
+    "raison_incertitude": ""
+  },
+  "OEGX": {
+    "releve_cpge": true,
+    "motif": "Dénombrabilité des ensembles de suites presque nulles et stationnaires, écrits comme réunions dénombrables de produits N^p : relève de la dénombrabilité de 2e année, réservée à MP/MPI hors contexte probabiliste.",
+    "groupes": {"G263": "garder"},
+    "filieres": {"G263": ["MP/MPI"]},
+    "difficile": {},
+    "ajouts": [],
+    "incertain": false,
+    "raison_incertitude": ""
+  }
+}
