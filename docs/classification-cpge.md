@@ -623,6 +623,30 @@ linéaire »), srFD en sort (« magma » en aparté).
   exercices gardés en CPGE peuvent contenir un terme hors programme dans une
   remarque de leur réponse.
 
+### Essai d'étiquetage de masse avec Haiku 5.5 (v9)
+
+Avant d'étiqueter le reste de la base (7 839 exercices), un essai a porté
+sur deux chapitres exo7 de L1 entiers : « Polynôme, fraction rationnelle »
+(213 exercices) et « Fonctions circulaires et hyperboliques inverses » (79).
+Il a été fait en un seul passage, sans arbitrage, par des sous-agents
+Haiku 5.5, avec des lots de 15 exercices et 4 agents en parallèle.
+Le résultat est
+`reports/cpge-pilote/claude_claude-haiku-5-5.v9.exo7-l1-essai.jsonl`.
+
+- Coût : 3,5 M de tokens, soit environ 12 000 par exercice, et un peu plus
+  de 3 minutes par lot.
+- Aucune erreur d'import, aucun groupe rejeté.
+- 18 exercices sont hors CPGE. 9 emploient les fonctions hyperboliques
+  réciproques, que le programme exclut explicitement. Les 9 autres font
+  intervenir l'irréductibilité sur Z ou Q[i], la caractéristique d'un corps,
+  l'anneau principal, l'enveloppe convexe ou la détermination continue de
+  l'argument.
+- En un seul passage, les verdicts ne sont pas toujours cohérents d'un lot
+  à l'autre. Les 7 exercices qui demandent une division suivant les
+  puissances croissantes sont gardés, alors que l'arbitrage de l'algèbre de
+  L1 en a exclu un (7tyn). « Enveloppe convexe » exclut 09nK, mais pas LGKF
+  ni Zmuc.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par
