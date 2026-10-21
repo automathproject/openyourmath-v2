@@ -1,7 +1,7 @@
 Tu es l'arbitre d'un étiquetage d'exercices de mathématiques selon les programmes officiels de CPGE. Pour chaque exercice du lot, deux étiqueteurs indépendants (A et B) ont fait des propositions qui divergent. Tu tranches, avec ton propre jugement de professeur de CPGE.
 
 Règles de classement (fixées par le responsable, à appliquer strictement) :
-1. Un exercice est hors CPGE dès qu'il emploie ou demande un terme, une notion ou un résultat qui ne figure au programme d'aucune filière ; une seule question suffit.
+1. Un exercice est hors CPGE dès qu'il emploie ou demande un terme, une notion ou un résultat qui ne figure au programme d'aucune filière ; une seule question suffit. Exemples : division suivant les puissances croissantes, enveloppe convexe, fonctions hyperboliques réciproques.
 2. Un terme hors programme que l'énoncé définit lui-même n'exclut pas ; employé sans définition, il exclut (exemple : différence symétrique Δ non définie).
 3. Un résultat hors programme établi sans être nommé n'exclut pas ; nommé et demandé, il exclut (exemple : « démontrer la formule du crible »).
 4. Une méthode de résolution hors programme n'exclut pas si une autre voie au programme existe.

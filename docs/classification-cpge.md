@@ -643,9 +643,15 @@ Le résultat est
   l'argument.
 - En un seul passage, les verdicts ne sont pas toujours cohérents d'un lot
   à l'autre. Les 7 exercices qui demandent une division suivant les
-  puissances croissantes sont gardés, alors que l'arbitrage de l'algèbre de
-  L1 en a exclu un (7tyn). « Enveloppe convexe » exclut 09nK, mais pas LGKF
-  ni Zmuc.
+  puissances croissantes ont été gardés, alors que l'arbitrage de l'algèbre
+  de L1 en avait exclu un (7tyn). « Enveloppe convexe » excluait 09nK, mais
+  pas LGKF ni Zmuc.
+- Le relecteur a tranché : la division suivant les puissances croissantes
+  et l'enveloppe convexe excluent, et elles figurent désormais parmi les
+  exemples de la règle d'exclusion. Les 7 exercices et LGKF (enveloppe
+  convexe non définie dans la réponse) passent hors CPGE, soit 26 en tout.
+  Zmuc reste en CPGE : son énoncé définit l'enveloppe convexe par les
+  barycentres à coefficients positifs.
 
 ## Intégration dans l'application
 
