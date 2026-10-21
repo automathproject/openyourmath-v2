@@ -3,15 +3,15 @@
 - Uz6R : « somme directe » pris pour « supplémentaires » (B lot 3)
 - Pxcf / WwuQ : doublon (B lot 3)
 - UnkX : reprend la 1re question de Mb8g (B lot 3)
-- Oemy / XXss : recoupement (A lot 3)
+- Oemy / XXss : recoupement (A lot 3) ; dimension non précisée → exobase#4
 - QxtY, WjAK : « base » d'un projecteur pour son image, terminologie ancienne (A et B lot 3)
-- 2Ks0 : énoncé incomplet, couples (A_i, b_i) « ci-dessous » absents (B lot 1)
+- 2Ks0 : énoncé incomplet, couples (A_i, b_i) « ci-dessous » absents (B lot 1) → exobase#4
 - 2tlU, 7RMA : « base » et « direction » d'une projection, non définies (B lot 1)
 - 5ZdR : coquille « matrice de A » au lieu de « matrice de f » (B lot 1)
 - 7u6E : hypothèse présentée comme une question (B lot 1)
 - HVWQ : question 2, « g injective » sans « linéaire » (A lot 2)
 - LC3n : énoncé incomplet, ensemble E des questions 3 et 4 jamais défini (A lot 2)
-- cWuh : énoncé corrompu, mots remplacés par « b\^\i\^\i… p » (B lot 4)
+- cWuh : énoncé corrompu, mots remplacés par « b\^\i\^\i… p » (B lot 4) → exobase#4
 - gvZt : réponse qui renvoie à un autre exercice (\ref{ex:rou29}) (B lot 4)
 - Ysep : « f ↦ ∫f » ambigu (B lot 4)
 - K6AQ : résumé automatique faux, B est bien donnée (B lot 2) — résumé, pas l'exercice
@@ -53,7 +53,7 @@
 - 4FJM : énoncé tronqué (A lot 13)
 - 8e3t : coquille « k = 0,…,n » au lieu de « k = 0,…,n−p » (A lot 13)
 - MbYD : réponses fausses, reprises d'autres exercices (surjections, dérangements) (A lot 14)
-- Dniq : réponse discutable (droites portant les diagonales vs segments, C(n,4)) et tronquée (A lot 14)
+- Dniq : réponse discutable (droites portant les diagonales vs segments, C(n,4)) et tronquée (A lot 14) → exobase#4
 - MfRw : exercice d'olympiade classé en dénombrement (A lot 14)
 - HoG9 : renvoie à un exercice externe (ex105) (A lot 14)
 - DC9c : cas a = b = 0 non exclu (B lot 13)

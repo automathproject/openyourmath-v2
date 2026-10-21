@@ -341,6 +341,8 @@ ${direct ? '' : "- Les candidats ne montrent qu'une partie des programmes : une 
 - Un terme ancien ou une notation hors programme qui désigne une notion du programme (« projection de base F et de direction G », E* pour les formes linéaires) n'exclut pas l'exercice si celui-ci se rédige entièrement avec les notions du programme.
 - Un terme hors programme présent seulement dans une remarque ou un aparté de la réponse (« magma », par exemple) exclut aussi l'exercice.
 - Borne supérieure ou inférieure dans un ensemble ordonné autre que R, non définie par l'énoncé : exclut. Plus grand ou plus petit élément : n'exclut pas.
+- Un énoncé qui ne précise pas la dimension se lit en dimension finie s'il y est traitable ; si la dimension infinie demande un résultat hors programme, signale-le dans "remarque".
+- Une notion élémentaire de collège ou de lycée employée sans définition (polygone convexe, diagonale…) n'exclut pas l'exercice.
 - Une méthode de résolution hors programme n'exclut pas l'exercice si une autre voie, au programme, permet de le traiter.
 - Réponds true si tout ce que l'exercice emploie ou demande figure au programme d'au moins une filière, même s'il demande de l'initiative.
 - Si la réponse est false, ne retiens aucune sous-section, et cite dans "motif" le terme ou la notion hors programme.

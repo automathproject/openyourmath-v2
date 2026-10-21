@@ -543,6 +543,15 @@ de l'algèbre de L1 :
   de la réponse exclut l'exercice (« (L(E), ∘) est un magma », srFD).
 - Borne supérieure ou inférieure dans un ensemble ordonné autre que R, non
   définie : exclut. Plus grand ou plus petit élément : n'exclut pas.
+- Un énoncé qui ne précise pas la dimension se lit en dimension finie s'il y
+  est traitable. Si la dimension infinie demande un résultat hors programme
+  (l'existence d'un supplémentaire), l'énoncé est signalé.
+- Une notion élémentaire de collège ou de lycée employée sans définition
+  (polygone convexe, diagonale) n'exclut pas.
+
+Un exercice au contenu défectueux (données absentes, mots corrompus, réponse
+fausse) est étiqueté selon son intention, et signalé dans le ticket exobase
+de révision des contenus.
 
 ### Deux passages et relecture des divergences
 
@@ -603,10 +612,12 @@ linéaire »), srFD en sort (« magma » en aparté).
   (7tyn), magma (srFD), bornes supérieure et inférieure dans un ensemble
   ordonné quelconque (qlIT, drxQ), formule du crible nommée et demandée
   (WXS3).
-- 7 exercices restent incertains, tous pour des raisons liées à l'énoncé :
-  données absentes (2Ks0), énoncé corrompu (cWuh), dimension non précisée
-  (Oemy, XXss), polygone et diagonale non définis (Dniq), rattachement
-  discutable (BErY, v8uq).
+- Les 7 derniers incertains ont été tranchés par le relecteur : données
+  absentes (2Ks0), énoncé corrompu (cWuh), dimension non précisée (Oemy,
+  XXss) et réponse fausse (Dniq) sont étiquetés et signalés dans
+  [exobase#4](https://github.com/automathproject/exobase/issues/4) ; les
+  rattachements de BErY et v8uq sont ceux de l'arbitre. Il ne reste aucun
+  exercice incertain.
 - 11 exercices ont au moins une filière notée « trop difficile ».
 - Les arbitres n'appliquaient pas encore la règle de l'aparté : d'autres
   exercices gardés en CPGE peuvent contenir un terme hors programme dans une

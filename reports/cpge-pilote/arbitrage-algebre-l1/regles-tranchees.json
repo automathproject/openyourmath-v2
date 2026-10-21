@@ -1,29 +1,20 @@
 {
- "CLb2": {"incertain": false, "regle": "vocabulaire ancien (base, direction) pour une notion au programme : n'exclut pas"},
- "gBkB": {"incertain": false, "regle": "vocabulaire ancien (base, direction) pour une notion au programme : n'exclut pas"},
- "pr98": {"incertain": false, "regle": "vocabulaire ancien (base, direction) pour une notion au programme : n'exclut pas"},
- "cWuh": {"raison_incertitude": "Énoncé corrompu (« bîîîp ») : les termes masqués ne peuvent pas être vérifiés.", "regle": "vocabulaire ancien (base, direction) pour une notion au programme : n'exclut pas"},
- "YJ7F": {"incertain": false, "regle": "E* non défini : n'exclut pas si l'exercice se rédige avec le programme (β forme linéaire)"},
- "fdhp": {
-  "releve_cpge": true,
-  "motif": "Endomorphisme de carré nul en dimension 3 : rang au plus 1, donc u(x) = f(x)a avec f forme linéaire ; E* se lit « forme linéaire sur E ».",
-  "groupes": {},
-  "ajouts": [
-   {"groupe": "G78", "confiance": 0.85, "justification": "u² = 0 donne Im u ⊂ Ker u, d'où rg u ≤ 1 par le théorème du rang."},
-   {"groupe": "G79", "confiance": 0.7, "justification": "Écriture d'un endomorphisme de rang au plus 1 à l'aide d'une forme linéaire."},
-   {"groupe": "G76", "confiance": 0.6, "justification": "Endomorphisme nilpotent d'indice 2."}
-  ],
-  "regle": "E* non défini : n'exclut pas si l'exercice se rédige avec le programme (f forme linéaire)"
- },
- "srFD": {
-  "releve_cpge": false,
-  "motif": "La correction qualifie (L(E), ∘) de « magma associatif et unitaire », terme hors programme, même en aparté.",
-  "groupes": {},
-  "regle": "terme hors programme dans un aparté de la réponse : exclut"
- },
- "qlIT": {"incertain": false, "regle": "borne supérieure ou inférieure dans un ensemble ordonné quelconque, non définie : exclut"},
- "drxQ": {"incertain": false, "regle": "borne supérieure ou inférieure dans un ensemble ordonné quelconque, non définie : exclut"},
- "XxEa": {"incertain": false, "regle": "maximum (plus grand élément) dans un ensemble ordonné quelconque : n'exclut pas"},
- "yYrt": {"incertain": false, "regle": "résultat hors programme établi sans être nommé (formule du crible) : n'exclut pas"},
- "HoG9": {"incertain": false, "regle": "résultat hors programme établi sans être nommé (formule du crible) : n'exclut pas"}
+ "CLb2": {"incertain":false,"regle":"vocabulaire ancien (base, direction) pour une notion au programme : n'exclut pas"},
+ "gBkB": {"incertain":false,"regle":"vocabulaire ancien (base, direction) pour une notion au programme : n'exclut pas"},
+ "pr98": {"incertain":false,"regle":"vocabulaire ancien (base, direction) pour une notion au programme : n'exclut pas"},
+ "cWuh": {"incertain":false,"regle":"vocabulaire ancien pour une notion au programme : n'exclut pas ; énoncé corrompu signalé (exobase#4)"},
+ "YJ7F": {"incertain":false,"regle":"E* non défini : n'exclut pas si l'exercice se rédige avec le programme (β forme linéaire)"},
+ "fdhp": {"releve_cpge":true,"motif":"Endomorphisme de carré nul en dimension 3 : rang au plus 1, donc u(x) = f(x)a avec f forme linéaire ; E* se lit « forme linéaire sur E ».","groupes":{},"ajouts":[{"groupe":"G78","confiance":0.85,"justification":"u² = 0 donne Im u ⊂ Ker u, d'où rg u ≤ 1 par le théorème du rang."},{"groupe":"G79","confiance":0.7,"justification":"Écriture d'un endomorphisme de rang au plus 1 à l'aide d'une forme linéaire."},{"groupe":"G76","confiance":0.6,"justification":"Endomorphisme nilpotent d'indice 2."}],"regle":"E* non défini : n'exclut pas si l'exercice se rédige avec le programme (f forme linéaire)"},
+ "srFD": {"releve_cpge":false,"motif":"La correction qualifie (L(E), ∘) de « magma associatif et unitaire », terme hors programme, même en aparté.","groupes":{},"regle":"terme hors programme dans un aparté de la réponse : exclut"},
+ "qlIT": {"incertain":false,"regle":"borne supérieure ou inférieure dans un ensemble ordonné quelconque, non définie : exclut"},
+ "drxQ": {"incertain":false,"regle":"borne supérieure ou inférieure dans un ensemble ordonné quelconque, non définie : exclut"},
+ "XxEa": {"incertain":false,"regle":"maximum (plus grand élément) dans un ensemble ordonné quelconque : n'exclut pas"},
+ "yYrt": {"incertain":false,"regle":"résultat hors programme établi sans être nommé (formule du crible) : n'exclut pas"},
+ "HoG9": {"incertain":false,"regle":"résultat hors programme établi sans être nommé (formule du crible) : n'exclut pas"},
+ "2Ks0": {"incertain":false,"regle":"contenu défectueux : étiqueter selon l'intention de l'exercice et signaler (exobase#4)"},
+ "Oemy": {"incertain":false,"regle":"dimension non précisée : lire en dimension finie, et signaler l'énoncé (exobase#4)"},
+ "XXss": {"incertain":false,"regle":"dimension non précisée : lire en dimension finie, et signaler l'énoncé (exobase#4)"},
+ "BErY": {"incertain":false,"regle":"rattachement de l'arbitre confirmé : G23 pour PCSI/PTSI, Bézout établi sans être nommé"},
+ "v8uq": {"incertain":false,"regle":"rattachement de l'arbitre confirmé : pas de groupe BCPST, la récurrence n'est qu'une étape"},
+ "Dniq": {"incertain":false,"regle":"notion élémentaire (collège) non définie : n'exclut pas ; réponse signalée (exobase#4)"}
 }

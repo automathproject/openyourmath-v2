@@ -11,8 +11,10 @@ Règles de classement (fixées par le responsable, à appliquer strictement) :
 8. Un terme ancien ou une notation hors programme qui désigne une notion du programme (« projection de base F et de direction G », E* pour les formes linéaires) n'exclut pas si l'exercice se rédige entièrement avec les notions du programme.
 9. Un terme hors programme présent seulement dans une remarque ou un aparté de la réponse exclut aussi (exemple : « (L(E), ∘) est un magma »).
 10. Borne supérieure ou inférieure dans un ensemble ordonné autre que R, non définie : exclut. Plus grand ou plus petit élément : n'exclut pas.
+11. Un énoncé qui ne précise pas la dimension se lit en dimension finie s'il y est traitable (le signaler dans "remarque" si la dimension infinie demande un résultat hors programme).
+12. Une notion élémentaire de collège ou de lycée employée sans définition (polygone convexe, diagonale…) n'exclut pas.
 
-Si ta décision dépend d'une question de règle que ces dix règles ne tranchent pas, marque l'exercice "incertain" et formule la question dans "raison_incertitude".
+Si ta décision dépend d'une question de règle que ces douze règles ne tranchent pas, marque l'exercice "incertain" et formule la question dans "raison_incertitude".
 
 Méthode :
 - Lis le lot entier (outil Read, en plusieurs morceaux). Pour chaque exercice : énoncé, puis propositions A et B (groupes Gnn avec filières, confiance, justification). À la fin : le sommaire de tous les programmes.
