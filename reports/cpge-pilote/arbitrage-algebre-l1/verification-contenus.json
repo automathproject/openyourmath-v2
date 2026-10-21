@@ -1,0 +1,722 @@
+[
+ {
+  "ids": [
+   "PST8"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/PST8.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "L'énoncé demande $\\text{Im} (g \\circ f) \\subset \\text{Im} (f)$, ce qui est faux en général ; l'inclusion vraie est $\\text{Im} (g \\circ f) \\subset \\text{Im} (g)$. Contre-exemple : $f : \\mathbb{R} \\to \\mathbb{R}^2$, $t \\mapsto (t,0)$, et $g(x,y)=(y,x)$ donnent $\\text{Im}(g\\circ f)=\\{0\\}\\times\\mathbb{R}\\not\\subset\\text{Im}(f)=\\mathbb{R}\\times\\{0\\}$. L'inclusion $\\ker (f) \\subset \\ker (g \\circ f)$ est correcte.",
+  "verification": "Lu l'énoncé entier. Vérifié l'inclusion fausse par le contre-exemple ci-dessus, et que $\\ker f\\subset\\ker(g\\circ f)$ est vraie."
+ },
+ {
+  "ids": [
+   "Uz6R"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/Uz6R.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "L'énoncé dit que $f(E_1)+f(E_2)$ est directe, puis précise « i.e. $f(E_1)$ et $f(E_2)$ sont supplémentaires ». Cette précision est fausse en dimension infinie : pour $f : K[X]\\to K[X]$, $P\\mapsto XP$ (injective, non surjective) et le couple $(E,\\{0\\})$, on a $f(E)=XK[X]\\neq E$. Il faut supprimer le « i.e. » ou supposer $E$ de dimension finie.",
+  "verification": "Lu l'énoncé. Vérifié que l'injectivité entraîne $f(E_1)\\cap f(E_2)=f(E_1\\cap E_2)=\\{0\\}$ et qu'en dimension finie cela donne des supplémentaires ; le contre-exemple en dimension infinie montre que la précision n'est pas vraie en général."
+ },
+ {
+  "ids": [
+   "Pxcf",
+   "WwuQ"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/Pxcf.tex",
+   "content/exercises/exo7/1-L1/WwuQ.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Doublons",
+  "texte": "Pxcf et WwuQ énoncent le même résultat : un endomorphisme $f$ tel que, pour tout $x$, la famille $(x,f(x))$ soit liée (Pxcf), ou tel que pour tout $x$ il existe $\\lambda$ avec $f(x)=\\lambda x$ (WwuQ), est une homothétie. Les deux énoncés sont équivalents et ne diffèrent que par la rédaction.",
+  "verification": "Lu les deux énoncés et la correction de Pxcf. Pour $x$ quelconque, $(x,f(x))$ liée équivaut à l'existence de $\\lambda$ tel que $f(x)=\\lambda x$, donc les énoncés coïncident."
+ },
+ {
+  "ids": [
+   "UnkX"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/UnkX.tex"
+  ],
+  "verdict": "infirmé",
+  "section": "Non retenu",
+  "texte": "UnkX reprend la première question de Mb8g (condition $\\dim F+\\dim G=\\dim E$ pour qu'existe $f$ avec $\\text{Ker} f=F$ et $\\text{Im} f=G$) mais pas la seconde (groupe si et seulement si $H\\oplus K=E$) : c'est un recoupement, non un doublon. La réponse de UnkX est juste.",
+  "verification": "Lu UnkX et Mb8g. Vérifié la réponse : le théorème du rang donne la nécessité ; pour la suffisance, $f_{|F}=0$ et $f_{|F'}$ isomorphisme de $F'$ sur $G$ (supplémentaire $F'$ de $F$) donnent $\\text{Im} f=G$ et $\\text{Ker} f=F$ par dimension."
+ },
+ {
+  "ids": [
+   "5ZdR"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/5ZdR.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Question 2 : « Donner la matrice de $A$ dans la base canonique de $\\mathbb{R}^3$ ». $A$ n'est défini nulle part dans l'énoncé ; il faut lire « la matrice de $f$ ».",
+  "verification": "Lu l'énoncé complet : $f$ est la seule application introduite et $A$ n'apparaît qu'à la question 2. Remarque annexe : les items 3 et 4 contiennent des « [(a)] » et « [(b)] » parasites à retirer."
+ },
+ {
+  "ids": [
+   "7u6E"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/7u6E.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Le deuxième item de l'énoncé ne contient pas de question : « Soit $\\varphi$ un automorphisme d'algèbre de $K^n$. » est une hypothèse, qui devrait figurer dans le texte introductif ou être fusionnée avec la question 3. Le découpage en questions est donc incorrect.",
+  "verification": "Lu l'énoncé. Le second \\question ne contient qu'une hypothèse sans interrogation ; le reste (automorphisme $f_\\sigma$, invariance de la base canonique, conclusion) est cohérent."
+ },
+ {
+  "ids": [
+   "HVWQ"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/HVWQ.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Question 2 : « Soit $g$ une application injective de $\\mathbb{R}^{26}$ dans $\\mathbb{R}^{100}$ ... Quelle est la dimension de l'image de $g$ ? ». Sans « linéaire », la dimension de l'image n'a pas de sens (l'image n'est pas un sous-espace vectoriel en général) ; il faut écrire « application linéaire injective », la réponse attendue étant $26$.",
+  "verification": "Lu les trois questions. Q1 (noyau d'une surjection $\\mathbb{R}^4\\to\\mathbb{R}^2$ : dimension $2$) et Q3 (pas de bijection linéaire entre $\\mathbb{R}^{50}$ et $\\mathbb{R}^{72}$) sont correctes ; seul l'énoncé de Q2 manque « linéaire »."
+ },
+ {
+  "ids": [
+   "LC3n"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/LC3n.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Les questions 3 et 4 portent sur $E$, qui doit être un sous-ensemble de $\\mathbb{R}^4$ (identifié à $\\mathbb{R}^2\\times\\mathbb{R}^2$), mais $E$ n'est défini nulle part : le texte ne définit que $U$, $V$, $H$ et le graphe $\\mathcal{G}_f$. Il manque la définition de $E$.",
+  "verification": "Lu l'énoncé entier. $E$ n'apparaît qu'aux questions 3 et 4 et n'est jamais défini."
+ },
+ {
+  "ids": [
+   "gvZt"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/gvZt.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "La correction de la question 1 renvoie à « D'après le \\ref{ex:rou29} » pour $\\text{Im}(p_1+\\dots+p_n)=\\text{Im}(p_1)\\oplus\\dots\\oplus\\text{Im}(p_n)$ ; ce résultat n'est pas énoncé dans wFUP (il figure seulement dans sa preuve, sous l'hypothèse que la somme est un projecteur, vérifiée ici) : la correction devrait le justifier. Autre coquille, question 2 : « $=q_i(e_j)$ » doit être « $=q_i(e_j')$ ».",
+  "verification": "Lu gvZt et wFUP (label ex:rou29 dans wFUP.tex, ligne 17). Le résultat cité est vrai mais n'est pas l'énoncé de wFUP. Vérifié la question 2 : $p_i(e_j)=\\delta_{ij}e_i$ et $f$ envoie base sur base, la réponse est juste hormis la coquille signalée."
+ },
+ {
+  "ids": [
+   "Ysep"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/Ysep.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Dans la liste, « $f\\mapsto\\int f$ » n'est pas une application bien définie : une primitive n'est déterminée qu'à une constante près. Il faut préciser, par exemple, $f\\mapsto\\left(x\\mapsto\\int_0^x f(t)\\,dt\\right)$.",
+  "verification": "Lu l'énoncé. Vérifié que la primitive dépend d'une constante d'intégration, donc que l'application n'est pas définie sans précision. Remarque hors signalement : $f\\mapsto f+\\phi$ n'est pas linéaire (sauf si $\\phi=0$), donc n'est pas un endomorphisme, à retenir pour la réponse."
+ },
+ {
+  "ids": [
+   "Z4iY"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/Z4iY.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Les questions 2 et 3 ne supposent pas $a\\neq b$, alors que le cas $a=b$ se comporte différemment : pour $n=2$ et $a=b=1$, $u$ n'a que la valeur propre $-2$ (d'ordre 3), avec un sous-espace propre de dimension 1, donc n'est pas diagonalisable. Il faut ajouter l'hypothèse $a\\neq b$ ou traiter le cas $a=b$.",
+  "verification": "Lu l'énoncé. Calcul de $u$ sur $(1,X,X^2)$ pour $n=2$, $a=b=1$ : $u(1)=-2X$, $u(X)=-X^2-2X+1$, $u(X^2)=-4X^2+2X$ ; polynôme caractéristique $-(\\lambda+2)^3$ et rang de $M+2I$ égal à 2, donc sous-espace propre de dimension 1. Pour $n=1$, les valeurs propres sont $-a$ et $-b$."
+ },
+ {
+  "ids": [
+   "3bQA"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/3bQA.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Dans la réponse à la question 1, le produit doit s'arrêter à $p-(i-1)$ et non $p-(i+1)$ : on lit « $C_p^i = \\frac{p(p-1)(p-2)\\ldots(p-(i+1))}{i!}$ » et « $k\\, i! = (p-1)\\ldots(p-(i+1))$ », alors que l'écriture juste est $(p-1)\\ldots(p-(i-1))$. Le raisonnement (lemme de Gauss, $i!$ premier avec $p$) n'en est pas affecté.",
+  "verification": "Lu l'énoncé, la réponse et l'indication. Vérifié $\\frac{p!}{i!(p-i)!}=\\frac{p(p-1)\\cdots(p-i+1)}{i!}$, dont le dernier facteur est $p-(i-1)$. La récurrence de la question 2 est correcte."
+ },
+ {
+  "ids": [
+   "6JIA"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/6JIA.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "La réponse ne traite que la première question (somme $360$) et omet la seconde (pgcd $18$, produit $6480$). Avec $a=18a'$, $b=18b'$, on a $a'b'=6480/18^2=20$ et $a'\\wedge b'=1$, d'où $(1,20)$ et $(4,5)$, soit les couples $(18,360)$ et $(72,90)$.",
+  "verification": "Lu l'énoncé (deux questions) et la réponse. Vérifié le cas somme : $(1,19),(3,17),(7,13),(9,11)$ sont premiers entre eux de somme $20$, donc les couples sont justes. Cas produit recalculé : $a'b'=20$ avec $a'\\wedge b'=1$ donne $(1,20),(4,5)$, d'où $(18,360),(72,90)$."
+ },
+ {
+  "ids": [
+   "2oan"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/2oan.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "La réponse « $x=14k,\\ y=15k$ » ne précise pas le domaine de $k$ : il faut écrire $k\\in\\mathbb{N}$ (ou $k\\in\\mathbb{N}^*$ si l'on exclut $(0,0)$). Le résultat est juste : avec $d=x\\wedge y$, $x=da$, $y=db$, on obtient $ab=210$ et $b-a=1$, donc $a=14$, $b=15$.",
+  "verification": "Lu l'énoncé et la réponse. Vérifié : $\\text{ppcm}(x,y)=dab$ et $x\\vee y=210\\,(x\\wedge y)$ donnent $ab=210$ ; $y-x=d$ donne $b-a=1$ ; d'où $a=14$, $b=15$ et $x=14k$, $y=15k$ avec $k=d$. Seul le domaine de $k$ manque."
+ },
+ {
+  "ids": [
+   "4GXe"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/4GXe.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Dans la correction, la ligne « $7^{7^{7^{7^{7^7}}}}\\equiv 7\\equiv 3 \\pmod 4$ » écrit une tour de six $7$ au lieu de sept, comme dans l'énoncé ; il faut $7^{7^{7^{7^{7^{7^7}}}}}\\equiv 3 \\pmod 4$. Le résultat final, $3$, est juste.",
+  "verification": "Compté les $7$ dans l'énoncé (sept) et dans la ligne de la correction (six). Vérifié le résultat : $7^4\\equiv 1$ modulo 10, la tour d'exposant impair est $\\equiv 3$ modulo 4, donc la tour vaut $\\equiv 7^3\\equiv 3$ modulo 10."
+ },
+ {
+  "ids": [
+   "A4UL"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/A4UL.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "Dans la réponse, la paire $\\{3,32\\}$ ne convient pas : avec $\\mathrm{ppcm}=96$ et $\\mathrm{pgcd}=1$, on obtient $96+11=107\\neq 203$. La paire correcte est $\\{3,64\\}$ ($192+11=203$) ; les quatre paires d'entiers positifs solutions sont $\\{1,192\\},\\{3,64\\},\\{7,126\\},\\{14,63\\}$.",
+  "verification": "Force brute sur $1\\le x\\le y\\le 203$ avec $\\mathrm{ppcm}(x,y)+11\\,\\mathrm{pgcd}(x,y)=203$ : quatre paires, dont $\\{3,64\\}$ et pas $\\{3,32\\}$. Lecture de $\\vee$ comme ppcm et $\\wedge$ comme pgcd, seule lecture qui redonne les paires du corrigé."
+ },
+ {
+  "ids": [
+   "GW9m"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/GW9m.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "La solution générale de $955m+183n=1$ est $(m,n)=(-32+183k,\\,167-955k)$, $k\\in\\mathbb Z$, et non $(m_0-83k,\\,n_0+37k)$. Le couple $(-32,167)$ est bien solution ($955\\cdot(-32)+183\\cdot 167=1$), mais la famille proposée ne l'est pas : pour $k=1$, $(-115,204)$ donne $-72\\,493\\neq 1$.",
+  "verification": "Vérifié $(-32,167)$ : $-30560+30561=1$. La famille $(m_0+183k,n_0-955k)$ donne $1$ pour $k=1$, la famille du corrigé donne $-72493$."
+ },
+ {
+  "ids": [
+   "E9Cy"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/E9Cy.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Dans la correction de la question 2, « Donc $p=ab$ avec $1<p,q<a$ » est une coquille : $q$ n'est pas défini et l'encadrement doit être $1<a,b<p$ (c'est ce que la suite du raisonnement utilise, à savoir $2^a-1<2^p-1$). Le raisonnement lui-même est juste.",
+  "verification": "Lu le fichier entier : la source écrit exactement « $p=ab$ avec $1<p,q<a$ ». La question 1 et la suite de la question 2 sont correctes."
+ },
+ {
+  "ids": [
+   "BErY"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/BErY.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Question 3 : la suite $b_n$ n'est pas strictement décroissante dès le rang $0$ (pour $a=5$, $b=-3$ : $b_0=-3<b_1=2$), elle ne l'est qu'à partir du rang $1$. Surtout, la suite peut atteindre $0$ (ici $b_2=1$, $b_3=0$), alors que « pour tout $n\\in\\mathbb N$ » suppose une division par $b_n\\neq 0$ : l'arrêt de l'algorithme n'est pas précisé. Coquille à part : « questionh » pour « question ».",
+  "verification": "Calculé à la main la suite pour $a=5$, $b=-3$ (restes dans $[0,|b_n|[$) : $-3,2,1,0$. Lu la source : « Montrer que la suite $b_n$ est strictement décroissante » et « questionh précédente »."
+ },
+ {
+  "ids": [
+   "Bu2R"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/Bu2R.tex"
+  ],
+  "verdict": "infirmé",
+  "section": "Non retenu",
+  "texte": "Énoncé correct sous la convention usuelle (un nombre premier est positif). Pour $n\\in\\{1,\\dots,4\\}$ la valeur de $n^4-20n^2+4$ est négative ($-15,-60,-95,-60$), donc non premier. Pour tout $n$, $n^4-20n^2+4=(n^2-4n-2)(n^2+4n-2)$ avec facteurs différents de $\\pm1$.",
+  "verification": "Calculé $n^4-20n^2+4$ pour $n=0$ à $12$ et vérifié l'identité de factorisation. Pour les questions 2 et 3, factorisation de $\\frac14(n^3+(n+2)^3)=\\frac{(n+1)(n^2+2n+4)}{2}$ et de $a^4+4b^4=(a^2+2ab+2b^2)(a^2-2ab+2b^2)$, facteurs non unitaires dans le domaine donné."
+ },
+ {
+  "ids": [
+   "9d2A"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/9d2A.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Question 6 mal découpée : le \\question{...} se ferme après « alors », et la liste des quatre sous-questions ($\\mathrm{pgcd}(a+b,a-b)\\in\\{1,2\\}$, etc.) est placée hors de cette question. L'hypothèse « si $\\mathrm{pgcd}(a,b)=1$, alors » est ainsi séparée de ses sous-questions ; il faut regrouper l'ensemble dans une seule question.",
+  "verification": "Lu le fichier : le \\question de l'item 6 ne contient que « Montrer que si pgcd(a,b)=1, alors », suivi d'un itemize hors question. Les quatre affirmations sont vraies (divisibilité par $\\gcd$ de $a^2+b^2$, $a^2-3ab+b^2$, etc.), donc seul le découpage est en cause."
+ },
+ {
+  "ids": [
+   "rz5t"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/rz5t.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "Dans la réponse à la question sur $\\dim({\\cal K}\\cap{\\cal I})$, la valeur $(\\mathrm{rg} f)^2$ est fausse : il faut $(n-\\mathrm{rg} f)^2=(\\dim \\mathrm{Ker} f)^2$, avec $n=\\dim E$. Pour $f=0$, ${\\cal K}\\cap{\\cal I}=\\mathcal L(E)$ est de dimension $n^2$ alors que $(\\mathrm{rg} f)^2=0$. Cet ensemble est celui de l'exercice mfEY : recoupement, pas doublon.",
+  "verification": "Raisonné : $g$ est nul sur $\\Im f$ et à valeurs dans $\\mathrm{Ker} f$, donc $\\dim=(\\dim\\mathrm{Ker} f)^2$. Vérifié numériquement sur $\\mathcal M_3$ : $f=0$ donne 9, $f=E_{11}$ (rang 1) donne 4, soit $(n-\\mathrm{rg} f)^2$ et non $(\\mathrm{rg} f)^2$."
+ },
+ {
+  "ids": [
+   "nuan"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/nuan.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Question 1 : « pour tout endomorphisme $f$ de $\\Rr^2$ » est une coquille pour « de $E$ » : le reste de l'énoncé et les équivalences portent sur $E$ de dimension $n$.",
+  "verification": "Lu le fichier entier : la source écrit « endomorphisme $f$ de $\\Rr^2$ », alors que $E$ est défini à l'énoncé. Remarque hors lot, non signalée : la preuve prend les scalaires dans $\\Rr$ alors que $\\Kk$ est un sous-corps de $\\Cc$."
+ },
+ {
+  "ids": [
+   "sGga"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/sGga.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Question 2, stabilité de $I$ : dans le corrigé, « $f(y)=f(f^k(x_k))=f^k(f(x))$ » doit s'écrire $f(y)=f^k(f(x_k))$ ; la variable $x$ n'est pas définie à cet endroit.",
+  "verification": "Lu la source : « f(y)=f(f^k(x_k))=f^k(f(x)) » . Le reste de la preuve est correct."
+ },
+ {
+  "ids": [
+   "n08t",
+   "pD4D"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/n08t.tex",
+   "content/exercises/exo7/1-L1/pD4D.tex"
+  ],
+  "verdict": "infirmé",
+  "section": "Non retenu",
+  "texte": "Recoupement, pas doublon : la question « $u^n=0$ pour $u$ nilpotent » de pD4D (question 2) est traitée dans n08t, mais pD4D est un exercice différent (indice de nilpotence, famille libre $(u^k(x))$, rang de $u$). Les deux corrigés sont corrects.",
+  "verification": "Lu les deux fichiers entiers. Preuves de $p\\le n$ (famille libre $(f^k(x_0))_{0\\le k\\le p-1}$) vérifiées. Les énoncés ne sont pas identiques."
+ },
+ {
+  "ids": [
+   "xmZv"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/xmZv.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "La réponse « Non, ils n'ont pas même dimension si $E\\ne\\{\\vec 0\\}$ ou $F\\ne\\{\\vec 0\\}$ » est fausse : il faut « et ». Les dimensions valent $(\\dim E+\\dim F)^2$ et $(\\dim E)^2+(\\dim F)^2$, égales si et seulement si $\\dim E\\cdot\\dim F=0$. Ainsi la réponse est « Non » si $E\\ne\\{\\vec 0\\}$ et $F\\ne\\{\\vec 0\\}$, et « Oui » si l'un des deux est nul (par exemple $\\mathcal L(E\\times\\{\\vec 0\\})\\simeq\\mathcal L(E)$).",
+  "verification": "Calculé les dimensions : pour $\\dim E=1$, $\\dim F=0$, $\\dim\\mathcal L(E\\times F)=1=\\dim \\mathcal L(E)\\times\\mathcal L(F)$, donc isomorphes : le « ou » du corrigé est faux."
+ },
+ {
+  "ids": [
+   "0gkJ"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/0gkJ.tex"
+  ],
+  "verdict": "infirmé",
+  "section": "Non retenu",
+  "texte": "Énoncé correct : le « % » en fin de ligne ne commente que le saut de ligne. Le rendu est « Soit $n$ un nombre premier ... montrer que $n$ divise $C_n^p$ », sans perte.",
+  "verification": "Lu le fichier : la source contient « $n $%» suivi de la ligne « divise $C_{n}^{p}.$ », donc le texte n'est pas masqué. Le résultat ($n\\mid C_n^p$ pour $n$ premier) est classique et vrai."
+ },
+ {
+  "ids": [
+   "Uukn"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/Uukn.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "Le corrigé est incohérent : après avoir obtenu $p\\mid a$ et $p\\mid b$, ce qui contredit $\\mathrm{pgcd}(a,b)=1$ et conclut la preuve, il ajoute un paragraphe « $\\delta$ ne divise pas $b$ ... » avec un symbole $\\delta$ jamais défini, qui reprend le lemme de Gauss pour une autre preuve. Ce paragraphe est à retirer.",
+  "verification": "Lu le fichier : le symbole $\\delta$ apparaît sans définition, et la preuve par $p$ est complète sans ce paragraphe."
+ },
+ {
+  "ids": [
+   "Ye2t"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/Ye2t.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "L'énoncé est faux pour $a=1$ : $1^n+1=2$ est premier pour tout $n$, alors que $n=3$ n'est pas une puissance de $2$. Il faut supposer $a\\ge 2$ et $n\\ge 1$ (le cas $n=0$ donne aussi $2$ premier). « Facteur irréductible » est équivalent à « premier » dans $\\mathbb Z$ et n'est pas fautif.",
+  "verification": "Vérifié le contre-exemple $a=1$, $n=3$, puis $n=0$. Lu la source : « Soit $a\\in\\Nn$ tel que $a^{n}+1$ soit premier ». La conjecture de Fermat est réfutée par $2^{32}+1=641\\times 6700417$, vérifié."
+ },
+ {
+  "ids": [
+   "XUeU"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/XUeU.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "La question « Quelles sont les valeurs possibles pour $n$ ? » est ambiguë : il faut préciser qu'on cherche les $n$ tels que $13$ divise $42n+37$ et $7n+4$. Dans ce cas $n\\equiv 5 \\pmod{13}$ ; $n\\equiv 8\\pmod{13}$ est faux, car pour $n=8$, $7n+4=60\\not\\equiv 0\\pmod{13}$. Aucun corrigé n'est fourni.",
+  "verification": "Identité $42n+37-6(7n+4)=13$ vérifiée. Calcul : $7n+4\\equiv 0 \\pmod{13}$ donne $n\\equiv 5$, et la recherche sur $n$ modulo 13 ne donne que $5$ (vérifié par programme)."
+ },
+ {
+  "ids": [
+   "a0v5"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/a0v5.tex"
+  ],
+  "verdict": "infirmé",
+  "section": "Non retenu",
+  "texte": "Pas de correction nécessaire. Pour $a=b$, la formule donne $0$, égal à $\\text{pgcd}(0,0)=0$ par convention, donc le cas $a=b$ est couvert. La réponse est juste ; la disjonction « ou » gagnerait un critère (3 ne divise pas $(a-b)/(a\\wedge b)$), mais ce n'est pas une erreur.",
+  "verification": "Avec $d=a-b$ et $g=a\\wedge b$, on a $\\text{pgcd}(d^3,a^3-b^3)=|d|\\,\\text{pgcd}(d^2,3ab)=|d|g^2$ ou $3|d|g^2$. Vérifié par script sur les 625 couples $(a,b)\\in[-12,12]^2$ : toujours l'une des deux formules, et $a=b=0$ donne $0$."
+ },
+ {
+  "ids": [
+   "IOuX"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/IOuX.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Coquille dans la réponse à la question 3 : « $1 = -b + 1234679 \\times 10$ ». Il faut « $12345679 \\times 10$ », puisque $1+12345678=12345679$. La ligne suivante utilise déjà $12345679$, et le résultat final $1 = 12345679a - 111111112b$ est juste.",
+  "verification": "Lu le fichier entier. Vérifié numériquement : $a=9b+10$ et $12345679a-111111112b=1$ ; avec $1234679$ l'égalité intermédiaire est fausse ($-111109999$ au lieu de $1$)."
+ },
+ {
+  "ids": [
+   "SVCK"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/SVCK.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Coquille dans la réponse à la question 3 : « $c^2 \\equiv 1 \\pmod{8}$, $c^2 \\equiv 1 \\pmod{8}$ ». Le second membre doit être $b^2 \\equiv 1 \\pmod{8}$. Le reste du calcul, $a^2+b^2+c^2 \\equiv 3$ et $2(ab+bc+ca) \\equiv 6 \\pmod{8}$, est juste.",
+  "verification": "Lu les quatre questions et leurs réponses. Vérifié $n=2p+1 \\Rightarrow n^2=4p(p+1)+1 \\equiv 1 \\pmod 8$ et $2(ab+bc+ca)\\equiv 6 \\pmod 8$ : résultats justes, seule la répétition de $c^2$ est en cause."
+ },
+ {
+  "ids": [
+   "OUwa"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/OUwa.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "La question 2 renvoie à « le a) », mais l'énoncé utilise un environnement enumerate standard, dont les questions s'affichent 1, 2, 3. Le renvoi doit viser la question 1, ou les questions doivent être étiquetées a), b), c) avec \\begin{enumerate}[label=\\alph*)]. Le contenu mathématique est juste.",
+  "verification": "Lu le fichier. Le signalement dit que les questions ne sont pas numérotées : elles le sont (1, 2, 3), seul le renvoi « le a) » est incohérent. Un autre exercice du dépôt (content/exercises/crouzet/pcsi/06/w0qK.tex) met explicitement label=\\alph*) ; ici non."
+ },
+ {
+  "ids": [
+   "kUNR"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/kUNR.tex"
+  ],
+  "verdict": "incertain",
+  "section": "Énoncés à revoir",
+  "texte": "L'opération $\\vee$ n'est pas définie dans l'énoncé. Si $\\vee$ est le ppcm, la réponse « $x=1$ ou $y=1$ » est complète (aucune autre solution dans $[-60,60]^2$). Si $\\vee$ est le pgcd, la réponse est fausse et incomplète : $(x,y)=(-1,3)$ est solution, $(1,3)$ ne l'est pas alors qu'il vérifie « $x=1$ ».",
+  "verification": "Lu le fichier. Aucune définition de $\\vee$ dans la source. Calcul sur $x,y\\in[-60,60]\\setminus\\{0\\}$ : le ppcm ne donne que les cas $x=1$ ou $y=1$, le pgcd donne de nombreuses solutions hors de ces cas. Le signalement n'est fondé que pour le pgcd ; impossible à trancher sans la définition de $\\vee$."
+ },
+ {
+  "ids": [
+   "bdzr"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/bdzr.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Énoncé approximatif. À la question 4, « $(u,v)\\in\\mathbb{N}^*$ » doit être « $(u,v,w)\\in\\mathbb{N}^*$ » (ou $v,w\\in\\mathbb{N}^*$), car la question conclut sur $v$ et $w$. À la question 5, « Montrer que $x=2mn$, $y=m^2-n^2$, $z=m^2+n^2$ » doit devenir « Montrer qu'il existe $m,n$ ... » : tel quel, $x,y,z$ sont déjà fixés par l'hypothèse.",
+  "verification": "Lu l'énoncé entier (aucun corrigé, isCorrection false). Question 4 : $w$ est défini par $z+y=2w$ mais son statut dans $\\mathbb{N}^*$ n'est pas précisé. Question 5 : formulation d'existence manquante, la question est mal posée."
+ },
+ {
+  "ids": [
+   "dHvI"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/dHvI.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Énoncé ambigu : « Calculer le dividende » suppose une réponse unique, or avec $a=45q+q^2$ et $q^2<45$ on a $q\\le 6$, soit 7 dividendes possibles : $0, 46, 94, 144, 196, 250, 306$. Il faut demander l'ensemble des dividendes possibles (6 valeurs si l'on exclut le quotient nul).",
+  "verification": "Lu l'énoncé. Calcul : le reste $r=q^2$ doit être inférieur au diviseur $45$, d'où $q\\in\\{0,\\dots,6\\}$ ; vérifié par script les 7 valeurs $45q+q^2$. Pas de corrigé dans la source."
+ },
+ {
+  "ids": [
+   "f3Ya"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/f3Ya.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Coquille dans l'énoncé : « compris entre entre $0$ et $4000$ ». Il faut lire « compris entre $0$ et $4000$ ».",
+  "verification": "Lu le fichier. Une seule occurrence de la coquille, citée mot pour mot. L'équation elle-même n'a pas été résolue, sans incidence sur ce point."
+ },
+ {
+  "ids": [
+   "reLh"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/reLh.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Hypothèse manquante : l'énoncé ne dit pas que $a$ et $r$ sont des entiers ≥ 2, alors que la réponse le suppose. Sans cela l'énoncé est faux : $a=3$, $r=1$ donne $a^r-1=2$ premier, et $r=1$ n'est pas premier. Il faut écrire « Soient $a,r\\in\\mathbb{N}$ avec $a\\ge 2$ et $r\\ge 2$ ».",
+  "verification": "Lu l'énoncé et la réponse. Le raisonnement de la réponse ($a-1 \\mid a^r-1$ donne $a=2$ ; $r=pq$ donne $2^p-1 \\mid 2^r-1$) est juste. Contre-exemples vérifiés : $a=3$, $r=1$ ; $2^{11}-1=2047=23\\times 89$."
+ },
+ {
+  "ids": [
+   "v7rR"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/v7rR.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "Corrigé imprécis, sans erreur sur le résultat. La divisibilité par 24 est vraie, mais la justification multiplie 2, 3 et 4 comme si les multiples étaient distincts, alors qu'un multiple de 3 peut coïncider avec un multiple de 2 ou de 4 (par exemple 6 ou 12). Il faut raisonner sur les puissances de 2 et de 3. La divisibilité par $120=5!$ de $n(n+1)(n+2)(n+3)(n+4)$ est vraie, mais aucune correction n'est donnée.",
+  "verification": "Lu le fichier. Les deux divisibilités sont vraies (vérifié par script pour $n\\in[0,300]$). La partie 120 n'a pas de réponse. Aucune section ne correspond exactement à un corrigé incomplet : rangé en « Réponses fausses » par défaut, à reclasser si besoin, car rien n'y est faux."
+ },
+ {
+  "ids": [
+   "wya7"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/wya7.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "Erreur dans l'indication et le corrigé : « le reste … est plus petit que le quotient ». C'est le diviseur qui borne le reste ($r<b$). Les divisions écrites sont correctes : $96842 = 256\\times 378+74$ (avec $74<256$) et $96842 = 258\\times 375+92$ (avec $92<375$).",
+  "verification": "Lu le fichier. Vérifié $256\\times378+74=96842$ et $258\\times375+92=96842$, restes inférieurs aux diviseurs. La règle énoncée (reste inférieur au quotient) est fausse ; la règle correcte est reste inférieur au diviseur."
+ },
+ {
+  "ids": [
+   "2yzb"
+  ],
+  "chemins": [
+   "content/exercises/amscc/2yzb.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Question 5 ambiguë : « mot » est défini comme un ensemble de lettres, donc l'ordre ne compte pas et la réponse serait 1 pour un choix donné de 5 lettres. Le sens visé (ordre des lettres) donne $5!=120$ mots : il faut définir « mot » comme une suite de lettres.",
+  "verification": "Lu le fichier. Les questions commentées ne sont pas prises en compte. Les autres questions sont justes ($(n+1)!/(n-1)!=n(n+1)$, $(k+1)!-k!=k\\times k!$). La définition de « mot » contredit la réponse attendue."
+ },
+ {
+  "ids": [
+   "6TSn"
+  ],
+  "chemins": [
+   "content/exercises/amscc/6TSn.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Énoncé corrompu : dans le premier \\texte, les méthodes sont écrites en \\item avec une \\question au milieu de l'itemize, et les balises \\item et \\question apparaissent telles quelles dans l'énoncé. Il faut écrire les deux méthodes en items, sans balises imbriquées parasites.",
+  "verification": "Lu le fichier entier. Le corrigé est juste : $P(X_A=k)=1/10$, $X_B$ suit une loi géométrique de paramètre $1/10$, $P(X_A>8)=1/5$, $P(X_B>8)=(9/10)^8$, $P(B\\mid H)\\approx 0{,}518$, soit $0{,}52$ (vérifié avec node)."
+ },
+ {
+  "ids": [
+   "4FJM"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/4FJM.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Énoncé tronqué : la liste « Démontrer successivement » s'arrête à « $f^{-1}(G)=H$ » (virgule finale), sans la conclusion attendue. Le titre annonce qu'il n'existe pas de $f$ vérifiant $f(f(n))=n+1987$, mais cette question finale n'est pas posée : il faut l'ajouter.",
+  "verification": "Lu le fichier. L'énoncé se termine par quatre étapes sans conclusion ni point final ; le titre annonce l'objectif, qui n'est pas demandé dans la consigne."
+ },
+ {
+  "ids": [
+   "8e3t"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/8e3t.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Coquille dans la réponse : la somme $\\sum C_{n-p}^{k}$ est bornée par « $k = 0,1,\\ldots,n$ » au lieu de « $k = 0,\\dots,n-p$ ». Sans conséquence : $C_{n-p}^{k}=0$ pour $k>n-p$, la somme vaut bien $2^{n-p}$ et la réponse finale $p\\,2^{n-p}$ est juste.",
+  "verification": "Lu le fichier. Vérifié la formule $p\\,2^{n-p}$ (choix de l'élément de $A$, puis sous-ensemble de $E\\setminus A$) ; la coquille ne concerne que les bornes de la somme."
+ },
+ {
+  "ids": [
+   "MbYD"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/MbYD.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "Question 2 : la réponse $\\sum_{k=1}^n \\frac{(-1)^k n!}{k!}$ est négative (elle vaut $-1$ pour $n=1$) : le signe est inversé, il faut $\\sum_{k=1}^n \\frac{(-1)^{k+1} n!}{k!}$, soit $n!-D_n$. Question 1 : la réponse $\\sum_{k=1}^n (-1)^k C_n^k (n-k)^p$ contient un $p$ non défini, reprend la formule des surjections en omettant le terme $k=0$, et ne répond pas à la question.",
+  "verification": "Calculé avec node : pour n=1 à 5 la réponse donne -1, -1, -4, -15, -76 alors que n!-D_n vaut 1, 1, 4, 15, 76. Pour la question 1, la somme vaut -2 pour n=2, p=1 alors que le nombre de surjections vaut 0 (elle n'inclut pas le terme k=0 qui vaut n^p)."
+ },
+ {
+  "ids": [
+   "MfRw"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/MfRw.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Le chapitre est mal classé : l'exercice, un problème d'olympiade sur une équation fonctionnelle ($f(f(n))<f(n+1)$ implique $f=\\mathrm{id}_{\\mathbb{N}}$), est rangé sous \\chapitre{Dénombrement}. Le contenu mathématique (questions et réponse) est correct, seule la classification est en cause.",
+  "verification": "Lu le fichier : la réponse tient (si a>n, f(b)>=n donne f(f(b))>=f(a), contredit f(f(b))<f(a)). Aucune section ne correspond à un défaut de classement ; rangé en Énoncés à revoir faute de mieux."
+ },
+ {
+  "ids": [
+   "HoG9"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/HoG9.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "Question 3 : l'énoncé renvoie à l'exercice \\ref{ex105}, qui est en fait le label de l'exercice yYrt.tex (formule d'inclusion-exclusion pour $\\mathrm{Card}(A_1\\cup\\dots\\cup A_n)$). L'énoncé n'est pas autonome et le numéro affiché n'a pas de sens pour le lecteur : il faut énoncer la formule dans la question ou supprimer le renvoi.",
+  "verification": "Lu HoG9.tex et yYrt.tex ; le label ex105 est dans yYrt.tex. Vérifié que S_n - D_n est l'union des A_i et que D_6/6! = 0,368 proche de 1/e, cohérent avec la question 4."
+ },
+ {
+  "ids": [
+   "DC9c"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/DC9c.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "L'hypothèse $a,b\\in\\mathbb{N}$ n'exclut pas $a=0$ ou $b=0$ : alors $m=\\mathrm{ppcm}(a,b)=0$ et la question 1 demande d'écrire la division euclidienne de $x$ par $m$, ce qui est impossible. Il faut poser $a,b\\in\\mathbb{N}^*$ ; les questions 2 et 3 n'ont pas ce problème.",
+  "verification": "Lu le fichier : la question 1 divise par m. Pour a=b=0, ou a=0 et b non nul, m=0 selon la convention usuelle. Les questions 2 et 3 restent valides."
+ },
+ {
+  "ids": [
+   "UUCh",
+   "U4L1",
+   "JtCW",
+   "UUOs",
+   "QXqT"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/UUCh.tex",
+   "content/exercises/exo7/1-L1/U4L1.tex",
+   "content/exercises/exo7/1-L1/JtCW.tex",
+   "content/exercises/exo7/1-L1/UUOs.tex",
+   "content/exercises/exo7/1-L1/QXqT.tex"
+  ],
+  "verdict": "infirmé",
+  "section": "Non retenu",
+  "texte": "Recoupements sans doublon : UUCh (question 2) et U4L1 reprennent la même identité $kC_n^k=nC_{n-1}^{k-1}$ ; UUCh (question 3) et JtCW (question 3) établissent la même identité $\\sum_k (C_n^k)^2=C_{2n}^n$ ; QXqT reprend deux des quatre sommes de UUOs. Ce sont des questions communes entre exercices distincts, pas des exercices identiques.",
+  "verification": "Lu les cinq fichiers. Vérifié les réponses de UUOs et QXqT (n2^{n-1} et (2^{n+1}-1)/(n+1)) : justes. Aucun couple d'énoncés n'est identique."
+ },
+ {
+  "ids": [
+   "gCCE"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/gCCE.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "La réponse associe mal les assertions : $x=1$ donne $\\sum_k C_n^k=2^n$ et $x=-1$ donne (a). L'assertion (b) ne s'obtient pas par une seule dérivation (f'(1) donne $\\sum_k kC_n^k=n2^{n-1}$) mais par $f'(1)+f''(1)$, soit la dérivée de $xf'(x)$ en $1$. La mention de « (d) », qui n'existe pas, doit être retirée.",
+  "verification": "Lu le fichier. Calcul : f(1)=2^n, f(-1)=0, f'(1)=n2^{n-1}, f'(1)+f''(1)=n(n-1)2^{n-2}+n2^{n-1}, qui vaut bien sum k^2 C(n,k) (vérifié par node pour n=1 à 6)."
+ },
+ {
+  "ids": [
+   "g4zK"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/g4zK.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "L'indication est fausse : $|1+i|=\\sqrt2$, donc $1+i=\\sqrt2\\,e^{i\\pi/4}$, et non $\\frac{\\sqrt2}{2}e^{2i\\pi/4}$ (qui vaut $\\frac{\\sqrt2}{2}i$). Coquille mineure dans la réponse : « et et » avant $S_2$.",
+  "verification": "Lu le fichier. Vérifié le module 2^{n/2}, l'argument nπ/4, S_1 = Re(A), S_2 = Im(A) et S_2 = (B-A)i/2 : la réponse est juste hormis l'indication."
+ },
+ {
+  "ids": [
+   "axB5"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/axB5.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Dans la mise en équation de la réponse, la première ligne écrit $\\binom{n}{2}+\\binom{n}{2}=5n$ ; il faut $\\binom{n}{2}+\\binom{n}{3}$ (la ligne suivante utilise bien $\\frac{n(n-1)(n-2)}{6}$). Le résultat $n=5$ est juste.",
+  "verification": "Lu le fichier. Calcul : en multipliant par 6/n, on obtient n^2+5=30, soit n=5 ; vérifié par node pour n=1 à 10, seule solution n=5."
+ },
+ {
+  "ids": [
+   "jKaO"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/jKaO.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Réponses fausses",
+  "texte": "La réponse est incomplète : pour $n=2m+1$ impair, $C_n^m=C_n^{m+1}$ et les deux valeurs $p=m$ et $p=m+1$ réalisent le maximum (exemple $n=3$ : $C_3^1=C_3^2=3$). La réponse $p=\\lfloor\\frac{n+1}{2}\\rfloor$ n'en donne qu'une ; il faut écrire $p\\in\\{\\lfloor\\frac{n}{2}\\rfloor,\\lfloor\\frac{n+1}{2}\\rfloor\\}$.",
+  "verification": "Lu le fichier. Vérifié par node pour n=1 à 8 : l'ensemble des p maximisant C_n^p contient deux valeurs pour n impair, une seule pour n pair."
+ },
+ {
+  "ids": [
+   "iV7O"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/iV7O.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "La première item, intitulée « Question », ne contient qu'une hypothèse : « Soient $n$, $p$ et $q$ des entiers naturels tels que $0\\le p,q\\le n$ ». Elle est mal découpée et doit être sortie en \\texte ou fusionnée avec la question 2.",
+  "verification": "Lu le fichier : seule la première item n'est pas une question. Les questions 2 et 3 sont cohérentes (C_n^p=C_n^q ssi p=q ou p+q=n est vrai)."
+ },
+ {
+  "ids": [
+   "j9IH"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/j9IH.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "L'énoncé est ambigu : il ne dit pas si une lettre peut être répétée dans un mot. Avec lettres distinctes, le nombre de mots est $7\\times 20\\cdot19\\cdot18\\cdot6\\cdot5=1\\,436\\,400$ ; avec répétitions permises, $7\\times 20^3\\times 6^2=2\\,016\\,000$. Il faut préciser la convention.",
+  "verification": "Lu le fichier. Placements de 2 voyelles sur 5 positions : 10, dont 3 font apparaître 3 consonnes consécutives, donc 7 admissibles. Les deux totaux ont été calculés avec node."
+ },
+ {
+  "ids": [
+   "wn8l"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/wn8l.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Question 1 : la formule est écrite $C_n^m=C_m^{n-m}$ ; il faut $C_n^m=C_n^{n-m}$, ce que conclut d'ailleurs la réponse ($C_n^{n-p}=C_n^p$).",
+  "verification": "Lu le fichier. La preuve conclut bien C_n^{n-p}=C_n^p ; les questions 2 et 3 sont justes (Pascal, et Vandermonde avec C_2^j = 1, 2, 1)."
+ },
+ {
+  "ids": [
+   "mQAV"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/mQAV.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Coquilles",
+  "texte": "Dans la réponse, « Il y a $kP_{n-1}{k}$ telles partitions » : lire $kP_{n-1}^{k}$. Plus loin, le nombre de surjections est écrit $p!P_n^k$ alors que le nombre de classes est $p$ : lire $p!P_n^p$.",
+  "verification": "Lu le fichier. Vérifié la récurrence et le tableau de P_n^k pour n, k <= 5. Pour n=4, p=2 : 2 x 7 = 14 surjections, égal à somme_{k=0}^{2} (-1)^k C_2^k (2-k)^4 = 14."
+ },
+ {
+  "ids": [
+   "wQPr"
+  ],
+  "chemins": [
+   "content/exercises/exo7/1-L1/wQPr.tex"
+  ],
+  "verdict": "confirmé",
+  "section": "Énoncés à revoir",
+  "texte": "L'hypothèse $n<p!$ est trop restrictive : le résultat reste vrai pour $n<(p+1)!$, car $\\sum_{k=1}^p k\\cdot k!=(p+1)!-1$ fait correspondre bijectivement les $p$-uplets à $\\{0,\\dots,(p+1)!-1\\}$. L'énoncé actuel ne couvre pas les $n$ avec $p!\\le n<(p+1)!$ ; il faut écrire $n<(p+1)!$.",
+  "verification": "Lu le fichier. Vérifié que sum_{k=1}^p k k! = (p+1)!-1 ; pour p=3, les 24 représentations sont distinctes et couvrent 0 à 23 (node). L'énoncé est vrai tel quel mais incomplet."
+ }
+]
