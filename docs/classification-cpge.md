@@ -532,6 +532,18 @@ Un exercice au programme mais trop difficile, ou hors de l'esprit d'une
 filière (BCPST, PTSI…), reste en CPGE. Les pages de relecture permettent de le
 noter filière par filière.
 
+La v9 ajoute trois règles que le relecteur a tranchées sur les cas incertains
+de l'algèbre de L1 :
+
+- Un terme ancien ou une notation hors programme qui désigne une notion du
+  programme (« projection de base F et de direction G », E\* pour les formes
+  linéaires) n'exclut pas l'exercice si celui-ci se rédige entièrement avec
+  les notions du programme.
+- Un terme hors programme présent seulement dans une remarque ou un aparté
+  de la réponse exclut l'exercice (« (L(E), ∘) est un magma », srFD).
+- Borne supérieure ou inférieure dans un ensemble ordonné autre que R, non
+  définie : exclut. Plus grand ou plus petit élément : n'exclut pas.
+
 ### Deux passages et relecture des divergences
 
 Deux chapitres absents de la table ont été étiquetés deux fois, de façon
@@ -580,16 +592,25 @@ difficiles (`difficile`) et les cas incertains (`incertain`,
 `raison_incertitude`). Le résultat est
 `reports/cpge-pilote/claude_opus-5-5+haiku-5-5.algebre-l1.final.jsonl`.
 
+16 exercices étaient incertains, dont 9 à cause d'une question de règle
+ouverte. Une fois les règles de la v9 tranchées, les décisions du relecteur
+(`arbitrage-algebre-l1/regles-tranchees.json`, option `--tranchees`)
+remplacent celles des arbitres. Elles s'appliquent aussi à deux exercices où
+les passages concordaient : fdhp revient en CPGE (E\* se lit « forme
+linéaire »), srFD en sort (« magma » en aparté).
+
 - 5 exercices sont hors CPGE : division suivant les puissances croissantes
-  (7tyn), dual E* non défini (fdhp), bornes supérieure et inférieure dans un
-  ensemble ordonné quelconque (qlIT, drxQ), formule du crible nommée et
-  demandée (WXS3).
-- 16 exercices sont incertains, à relire. Les questions ouvertes dont ils
-  dépendent sont « base » et « direction » d'une projection, le dual E*, sup
-  et max dans un ensemble ordonné quelconque, et la formule du crible
-  demandée sans être nommée. S'y ajoutent des énoncés incomplets ou corrompus
-  et la dimension non précisée.
+  (7tyn), magma (srFD), bornes supérieure et inférieure dans un ensemble
+  ordonné quelconque (qlIT, drxQ), formule du crible nommée et demandée
+  (WXS3).
+- 7 exercices restent incertains, tous pour des raisons liées à l'énoncé :
+  données absentes (2Ks0), énoncé corrompu (cWuh), dimension non précisée
+  (Oemy, XXss), polygone et diagonale non définis (Dniq), rattachement
+  discutable (BErY, v8uq).
 - 11 exercices ont au moins une filière notée « trop difficile ».
+- Les arbitres n'appliquaient pas encore la règle de l'aparté : d'autres
+  exercices gardés en CPGE peuvent contenir un terme hors programme dans une
+  remarque de leur réponse.
 
 ## Intégration dans l'application
 

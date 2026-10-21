@@ -14,6 +14,8 @@
 // Étape 2 : ajoute à F.jsonl l'origine de chaque décision, les filières où
 // l'exercice est jugé trop difficile et les cas incertains.
 //   node scripts/assembler-arbitrage-cpge.js --a A.jsonl --b B.jsonl --arbitrages DIR --annoter F.jsonl
+// --tranchees T.json : décisions du relecteur (uuid → champs de la décision
+// d'arbitre à remplacer, plus "regle"), appliquées aux deux étapes.
 
 import fs from 'fs';
 import path from 'path';
@@ -59,6 +61,14 @@ function lireArbitrages(dir) {
   return decisions;
 }
 
+// Décisions du relecteur après qu'il a tranché une question de règle : elles
+// complètent ou remplacent celles des arbitres, exercices concordants compris.
+function appliquerTranchees(decisions, file) {
+  for (const [uuid, t] of Object.entries(JSON.parse(fs.readFileSync(file, 'utf8')))) {
+    decisions.set(uuid, { ...(decisions.get(uuid) ?? { fichier: path.basename(file) }), ...t });
+  }
+}
+
 function reponseArbitree(a, b, d) {
   const ga = groupes(a);
   const gb = groupes(b);
@@ -92,6 +102,7 @@ function main() {
   const A = lireJsonl(option('--a'));
   const B = lireJsonl(option('--b'));
   const decisions = lireArbitrages(option('--arbitrages'));
+  if (option('--tranchees')) appliquerTranchees(decisions, option('--tranchees'));
   const manquants = [...A.keys()].filter(u => !concordent(A.get(u), B.get(u)) && !decisions.has(u));
   if (manquants.length) throw new Error(`${manquants.length} exercices divergents sans arbitrage : ${manquants.join(', ')}`);
 
@@ -118,7 +129,8 @@ function main() {
       if (!d) return { ...entry, decision: 'concordance A/B' };
       return {
         ...entry,
-        decision: `arbitrage ${d.fichier}`,
+        decision: d.fichier.startsWith('arbitrage-') ? `arbitrage ${d.fichier}` : `relecteur ${d.fichier}`,
+        ...(d.regle ? { regle_tranchee: d.regle } : {}),
         ...(Object.keys(d.difficile ?? {}).length ? { difficile: d.difficile } : {}),
         ...(d.incertain ? { incertain: true, raison_incertitude: d.raison_incertitude } : {})
       };

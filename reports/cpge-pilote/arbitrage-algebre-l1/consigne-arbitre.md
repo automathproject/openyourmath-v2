@@ -8,12 +8,11 @@ Règles de classement (fixées par le responsable, à appliquer strictement) :
 5. Une notion au programme d'une seule filière n'exclut pas.
 6. Rattachements : l'objet de l'exercice, pas ses prérequis ; une famille seulement si son texte officiel couvre ce que l'exercice fait travailler ; un groupe de 2e année seulement si l'exercice dépasse la 1re année ; "filieres" quand un groupe a des écarts entre filières.
 7. Un rattachement au programme mais trop difficile ou hors de l'esprit d'une filière (BCPST, PTSI…) est gardé, et la filière est notée dans "difficile".
+8. Un terme ancien ou une notation hors programme qui désigne une notion du programme (« projection de base F et de direction G », E* pour les formes linéaires) n'exclut pas si l'exercice se rédige entièrement avec les notions du programme.
+9. Un terme hors programme présent seulement dans une remarque ou un aparté de la réponse exclut aussi (exemple : « (L(E), ∘) est un magma »).
+10. Borne supérieure ou inférieure dans un ensemble ordonné autre que R, non définie : exclut. Plus grand ou plus petit élément : n'exclut pas.
 
-Questions de règle encore ouvertes : si ta décision dépend de l'une d'elles, marque l'exercice "incertain" et cite la question dans "raison_incertitude" :
-- vocabulaire ancien non défini pour une notion au programme (« base » et « direction » d'une projection pour image et noyau) ;
-- dual E* employé sans définition (la dualité est hors programme) ;
-- terme hors programme présent seulement dans un aparté de la réponse, sans servir à résoudre ;
-- borne supérieure, inférieure ou maximum dans un ensemble ordonné quelconque, non définis.
+Si ta décision dépend d'une question de règle que ces dix règles ne tranchent pas, marque l'exercice "incertain" et formule la question dans "raison_incertitude".
 
 Méthode :
 - Lis le lot entier (outil Read, en plusieurs morceaux). Pour chaque exercice : énoncé, puis propositions A et B (groupes Gnn avec filières, confiance, justification). À la fin : le sommaire de tous les programmes.

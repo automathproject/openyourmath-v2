@@ -92,7 +92,7 @@ const CONCURRENCE = Number(option('--concurrence') ?? (ALBERT_MODEL ? 2 : 1));
 const PAR_MINUTE = Number(option('--par-minute') ?? (ALBERT_MODEL ? 9 : Infinity));
 // Version du pilote (consignes, table de correspondance et regroupement) : un
 // fichier de résultats par version, pour ne pas mélanger les passages.
-const PILOTE_VERSION = 8;
+const PILOTE_VERSION = 9;
 const sortieDe = model => path.join(REPORT_DIR, `${model.replace(/[^a-z0-9.-]+/gi, '_')}.v${PILOTE_VERSION}.jsonl`);
 const SORTIE = option('--sortie') ??
   (DIRECT ? sortieDe(MODEL).replace(/\.jsonl$/, PRESELECTION ? '.preselection.jsonl' : '.direct.jsonl') : sortieDe(MODEL));
@@ -338,6 +338,9 @@ Question préalable : un élève de CPGE (1re ou 2e année, toutes filières) po
 ${direct ? '' : "- Les candidats ne montrent qu'une partie des programmes : une notion absente des extraits affichés (dérivée, discriminant, coefficients binomiaux…) n'est pas pour autant hors programme.\n"}- Réponds "releve_cpge": false dès que l'exercice emploie ou demande un terme, une notion ou un résultat qui ne figure au programme d'aucune filière (par exemple : espace topologique ou métrique général, connexité autre que par arcs, fonction holomorphe, décomposition de Dunford, birapport), même si le reste de l'exercice est au programme. Une seule question suffit.
 - Un terme hors programme que l'énoncé définit lui-même à partir de notions du programme (« involutive », équipotence définie par les bijections…) n'exclut pas l'exercice ; employé sans définition, il l'exclut (différence symétrique Δ, par exemple).
 - Un résultat hors programme que l'exercice établit sans le nommer, avec les outils du programme, n'exclut pas l'exercice.
+- Un terme ancien ou une notation hors programme qui désigne une notion du programme (« projection de base F et de direction G », E* pour les formes linéaires) n'exclut pas l'exercice si celui-ci se rédige entièrement avec les notions du programme.
+- Un terme hors programme présent seulement dans une remarque ou un aparté de la réponse (« magma », par exemple) exclut aussi l'exercice.
+- Borne supérieure ou inférieure dans un ensemble ordonné autre que R, non définie par l'énoncé : exclut. Plus grand ou plus petit élément : n'exclut pas.
 - Une méthode de résolution hors programme n'exclut pas l'exercice si une autre voie, au programme, permet de le traiter.
 - Réponds true si tout ce que l'exercice emploie ou demande figure au programme d'au moins une filière, même s'il demande de l'initiative.
 - Si la réponse est false, ne retiens aucune sous-section, et cite dans "motif" le terme ou la notion hors programme.
