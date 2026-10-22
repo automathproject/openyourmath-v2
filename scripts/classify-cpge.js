@@ -708,6 +708,13 @@ async function main() {
           remarque: String(answer.remarque ?? '').slice(0, 300)
         });
       } catch (error) {
+        // Quota quotidien d'Albert épuisé, sans repli local : on s'arrête là,
+        // la prochaine exécution reprendra cet exercice et les suivants.
+        if (!REPLI_LOCAL && isQuotaExceeded(error)) {
+          if (next < todo.length) console.log(`   ⏸ Quota d'Albert épuisé : arrêt après ${finished} exercice(s), reprise à la prochaine exécution`);
+          next = todo.length;
+          continue;
+        }
         entry.erreur = error.message.slice(0, 300);
       }
       entry.duree_ms = Date.now() - t0;
