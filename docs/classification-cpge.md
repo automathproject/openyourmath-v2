@@ -669,6 +669,30 @@ puissances croissantes, l'irréductibilité dans Z[X], Argsh et Argch, que les
 règles excluent pourtant. En contre-vérification des exclusions, ses
 désaccords seraient surtout ses propres erreurs.
 
+#### Comparaison des modèles sur l'échantillon relu (v9, présélection seule)
+
+Mêmes 40 exercices relus, prompt v9, candidats limités à la présélection
+(`--restreindre`, lots allégés pour Haiku). La précision ne compte que les
+groupes que le relecteur a jugés ; les groupes « sans avis », jamais montrés
+au relecteur, n'y entrent pas.
+
+| Modèle                       | Verdict | Précision | Rappel | Sans avis | Groupes/exercice |
+| ---------------------------- | ------- | --------- | ------ | --------- | ---------------- |
+| Haiku 5.5                    | 37/38   | 88 %      | 77 %   | 30        | 3,3              |
+| deepseek-v4-flash (Albert)   | 36/38   | 88 %      | 78 %   | 62        | 4,3              |
+| mistral-small-3.2 (Albert)   | 36/38   | 88 %      | 76 %   | 121       | 5,8              |
+| gpt-oss-120b (Albert)        | 37/38   | 89 %      | 67 %   | 45        | 3,5              |
+| Haiku 5.5, v8, format complet | 37/38  | 89 %      | 78 %   | 17        | —                |
+
+- Pour Haiku, le format allégé coûte autant que le format complet (15 500
+  jetons par exercice) et donne le même résultat.
+- deepseek-v4-flash atteint le rappel de Haiku, mais propose plus de groupes
+  que le relecteur n'a pas jugés : sa précision réelle est sans doute plus
+  basse. Comme mistral-small, il garde XhZo (connexité). Il met 34 s par
+  exercice.
+- Le quota d'Albert limite chacun de ces modèles à environ 180 exercices
+  par jour.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par

@@ -276,6 +276,7 @@ function buildPrompt(row, groups, index) {
 
 /** Lot d'exercices d'un même chapitre : candidats et consignes donnés une fois. */
 function formatLot(key, rows, groups, index) {
+  if (RESTREINDRE) return formatLotRestreint(rows, index);
   if (DIRECT) return formatLotDirect(rows, groups);
   return `${SYSTEM}
 
@@ -312,9 +313,44 @@ Pour ce lot, réponds par un seul objet JSON dont les clés sont les identifiant
 `;
 }
 
+/**
+ * Lot allégé (--restreindre) : chaque exercice est suivi de sa présélection,
+ * avec les contenus du programme ; ni sommaire ni texte officiel à relire.
+ */
+function formatLotRestreint(rows, index) {
+  const union = [...new Set(rows.flatMap(row => PRESELECTIONS.get(row.uuid)?.groupes ?? []))];
+  const bloc = row => {
+    const groups = PRESELECTIONS.get(row.uuid)?.groupes ?? [];
+    const exclusions = horsProgramme(groups, index);
+    return `# Exercice ${row.uuid}
+
+${exercisePart(row)}
+
+Sous-sections candidates pour cet exercice, par famille de programmes (code, filières, section › sous-section, puis contenus du programme) :
+${formatCandidates(groups, { maxChars: CONTENUS_MAX })}${exclusions.length ? `
+
+Points que ces programmes déclarent hors programme (chaque mention ne vaut que pour les filières indiquées) :
+${exclusions.map(x => `- ${x}`).join('\n')}` : ''}`;
+  };
+  return `${SYSTEM}
+
+Lot d'exercices à situer dans les programmes de CPGE. Chaque exercice est suivi de ses sous-sections candidates ; \
+les consignes, communes, sont données une seule fois à la fin du lot.
+
+${rows.map(bloc).join('\n\n')}
+
+# Consignes, communes aux exercices du lot
+
+${chapterPart(union, index, { sansListe: true })}
+
+Pour ce lot, réponds par un seul objet JSON dont les clés sont les identifiants des exercices \
+(${rows.map(row => row.uuid).join(', ')}) et les valeurs la réponse décrite ci-dessus pour chacun.
+`;
+}
+
 /** Partie du prompt commune à un chapitre : candidats, exclusions, consignes. */
-function chapterPart(groups, index, { direct = false } = {}) {
-  const exclusions = direct ? [] : horsProgramme(groups, index);
+function chapterPart(groups, index, { direct = false, sansListe = false } = {}) {
+  const exclusions = direct || sansListe ? [] : horsProgramme(groups, index);
   // En mode direct, le modèle voit le sommaire et relit le texte officiel.
   const contenus = direct ? 'le texte officiel' : 'les contenus affichés';
   // Familles affichées, dans l'ordre : le modèle répond pour chacune, sans quoi
@@ -337,7 +373,7 @@ ${formatSommaire(groups)}`
     : `Sous-sections candidates, par famille de programmes (code, filières, section › sous-section, puis contenus du programme). \
 Les familles découpent différemment les mêmes notions : un groupe vaut pour toutes les filières qu'il cite.
 ${formatCandidates(groups, { maxChars: CONTENUS_MAX })}`;
-  return `${liste}
+  return `${sansListe ? '' : liste}
 ${exclusions.length ? `\nPoints que ces programmes déclarent hors programme (chaque mention ne vaut que pour les filières indiquées : une notion exclue d'une filière peut être au programme d'une autre) :\n${exclusions.map(x => `- ${x}`).join('\n')}\n` : ''}
 Question préalable : un élève de CPGE (1re ou 2e année, toutes filières) pourrait-il traiter cet exercice avec les seuls outils de son programme, tels que les ${direct ? 'décrit le texte officiel' : 'décrivent les contenus ci-dessus'} ?
 - L'exercice relève de la CPGE s'il est au programme d'AU MOINS UNE filière : une notion exclue d'une filière (PC, PSI…) mais au programme d'une autre (MP…) ne suffit pas à répondre false.
