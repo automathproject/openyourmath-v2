@@ -1308,5 +1308,2275 @@
   "passage": "arbitrage des sources antérieures à la règle",
   "fichier": "deux chapitres (passage A, concordant)",
   "chapitre": "Système linéaire à  coefficients constants"
+ },
+ {
+  "uuid": "ZmWH",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "Le terme « forme quadratique » (et « formes quadratiques sur E ») est employé dans l'énoncé pour définir les ensembles Quad(E), Quad*(E) et Quad_{p,q}(E), puis utilisé dans les questions, sans que l'énoncé ne le définisse. Règle 2 : employé sans définition, il exclut. Terme absent des programmes selon le fait vérifié.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "zzqU",
+  "decision": "garder",
+  "terme": "forme quadratique",
+  "raison": "L'énoncé ne définit pas le terme générique « forme quadratique », mais il définit l'objet employé, q(x_1,...,x_n) = somme de a_{i,j}(x_i-x_j)^2, par une formule explicite construite avec des notions du programme (somme, carré, produit). Règle 2 : un terme hors programme que l'énoncé définit lui-même n'exclut pas. Lecture défendable inverse : le terme est employé sans définition générale et l'exercice serait exclu (règle 2, second cas). Décision retenue : garder, à confirmer par le responsable.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "pwQP",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué ; sous-groupes de Sylow",
+  "raison": "Règle 1 et consigne du fichier : « distingués dans S3 » et « sous-groupes de Sylow » sont demandés dans la question sans définition, termes absents de tous les programmes.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe cyclique"
+ },
+ {
+  "uuid": "PXG0",
+  "decision": "exclure",
+  "terme": "théorème de Stone-Weierstrass",
+  "raison": "Règle 1 : le résultat hors programme est employé dans la réponse pour conclure, sans définition. Il est nommé, mais non demandé, d'où un doute sur la lecture de la règle 3.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Intégration"
+ },
+ {
+  "uuid": "q6Ab",
+  "decision": "exclure",
+  "terme": "forme quadratique (positive)",
+  "raison": "Règle 1 : « forme quadratique positive » figure dans la question et n'est pas définie par l'énoncé.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "q9Y6",
+  "decision": "exclure",
+  "terme": "suite de Cauchy",
+  "raison": "Règle 1 : « ne soit pas une suite de Cauchy » figure dans l'indication sans définition ; terme absent de tous les programmes.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Continuité, uniforme continuité"
+ },
+ {
+  "uuid": "QFbR",
+  "decision": "exclure",
+  "terme": "forme différentielle ; intégrale curviligne",
+  "raison": "Règle 1 : la question demande si la forme différentielle ω est exacte et ses primitives, sans définition du terme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "QHFC",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "Règle 1 : la question demande la signature de formes quadratiques, terme employé sans définition.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Forme bilinéaire"
+ },
+ {
+  "uuid": "QIUh",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué (normal) ; groupe quotient",
+  "raison": "Règle 1 : « K est distingué dans G » figure dans l'énoncé sans définition, et le groupe quotient (HK)/K est demandé dans les questions.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe quotient, théorème de Lagrange"
+ },
+ {
+  "uuid": "Qmjj",
+  "decision": "garder",
+  "terme": "C¹-difféomorphisme ; sous-variété, difféomorphisme, fonctions implicites",
+  "raison": "Règle 8 : « C¹-difféomorphisme » n'est qu'une notation pour une bijection C¹ de réciproque C¹, notion du programme, sans changer l'exercice (exemple explicite du fichier). Doute possible si la preuve suppose le théorème d'inversion locale, hors programme.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "QQOK",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "Règle 1 : la réponse parle de « la matrice de la forme quadratique Q » et de son signe, sans définir le terme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Conique"
+ },
+ {
+  "uuid": "qruA",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "Règle 1 : la question porte sur « une forme quadratique q » sur un R-espace vectoriel, terme non défini (seule la notion de « définie » est précisée).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "Qsth",
+  "decision": "exclure",
+  "terme": "critère d'Eisenstein",
+  "raison": "Règle 1 : le critère d'Eisenstein est employé dans les réponses et demandé pour démontrer l'irréductibilité, sans définition.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Polynôme"
+ },
+ {
+  "uuid": "QUVz",
+  "decision": "exclure",
+  "terme": "produit semi-direct",
+  "raison": "Règle 1 : la question demande de montrer que A est produit semi-direct de deux sous-groupes, terme sans définition.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe fini"
+ },
+ {
+  "uuid": "qZCd",
+  "decision": "exclure",
+  "terme": "homographie ; géométrie projective",
+  "raison": "Règle 1 : la réponse invoque « une homographie » et son effet sur les cercles et droites (résultat non au programme), sans définition. Doute possible au titre de la règle 8, si l'exercice se rédige entièrement avec des fractions rationnelles de degré 1.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Autre"
+ },
+ {
+  "uuid": "rCOT",
+  "decision": "exclure",
+  "terme": "sous-variété ; 1-forme ; champ de vecteurs sur M ; df et dα",
+  "raison": "Règle 1 : l'énoncé suppose que M est une sous-variété, et les questions demandent les définitions de df, dα pour une 1-forme sur M, notions hors programme non définies.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace tangent, application linéaire tangente"
+ },
+ {
+  "uuid": "ro9P",
+  "decision": "exclure",
+  "terme": "idéal maximal",
+  "raison": "Règle 1 : la question demande de trouver les idéaux maximaux de Z/nZ, terme absent de tous les programmes et non défini.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "Xknk",
+  "decision": "exclure",
+  "terme": "homéomorphisme (homéomorphe)",
+  "raison": "Règle 1 et règle 2 : « homéomorphe » et « homéomorphisme » sont employés dans l'énoncé (plan de l'équateur homéomorphe à R^{n-1}, sphère homéomorphe à R^{n-1}, homéomorphisme de S^1 sur R̄) sans être définis, et le terme est signalé hors programme. Les termes « espace complet, Banach, Hilbert » signalés n'apparaissent pas dans le texte extrait.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Continuité, uniforme continuité"
+ },
+ {
+  "uuid": "Xznn",
+  "decision": "exclure",
+  "terme": "lemme de Gronwall",
+  "raison": "Règle 1 : le lemme de Gronwall est employé (« à l'aide de Gronwall ») pour établir la borne et la convergence de z(t) dans une question, sans être défini et hors programme. La règle 3 ne joue pas car le résultat n'est pas seulement établi sans être nommé : il est nommé et utilisé comme outil.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Autre"
+ },
+ {
+  "uuid": "y3Ux",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué, produit semi-direct",
+  "raison": "Règle 1 : « sous-groupe distingué » est demandé dans la question (sous-groupes distingués d'ordres 19 et 133) et « produit semi-direct » figure dans la question finale, sans définition dans l'énoncé et hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe fini"
+ },
+ {
+  "uuid": "YApo",
+  "decision": "exclure",
+  "terme": "forme quadratique, signature",
+  "raison": "Règle 1 : « forme quadratique » et « signature » sont employées sans définition ; l'énoncé donne seulement deux formules q1(A) et q2(A) comme exemples, ce qui ne définit pas le terme. Cas à double lecture : la formule peut être vue comme une définition implicite de l'objet.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Forme bilinéaire"
+ },
+ {
+  "uuid": "YHNn",
+  "decision": "exclure",
+  "terme": "forme quadratique, signature",
+  "raison": "Règle 1 : l'énoncé parle de « matrice représentant une forme quadratique q » et demande la signature de q sans définir la notion de forme quadratique ; les mineurs principaux sont définis, mais pas le terme signalé.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "Yr8F",
+  "decision": "exclure",
+  "terme": "forme quadratique, forme polaire",
+  "raison": "Règle 1 : « forme quadratique » et « forme polaire » sont employées dans l'énoncé et la réponse sans être définies, et le terme est hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "yrbf",
+  "decision": "exclure",
+  "terme": "suite de Cauchy",
+  "raison": "Règle 2 : l'énoncé demande « en déduire que la suite (x_n) est une suite de Cauchy » sans définir la notion ; le terme est hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Suite"
+ },
+ {
+  "uuid": "YsY1",
+  "decision": "exclure",
+  "terme": "groupe simple, p-Sylow",
+  "raison": "Règle 1 : « groupe simple » (question 1) et « p-Sylow » (question 3) sont employés sans définition, et les deux termes sont hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe fini"
+ },
+ {
+  "uuid": "Z8aY",
+  "decision": "exclure",
+  "terme": "espace métrique",
+  "raison": "Règle 9 : « espace métrique » n'apparaît que dans une remarque de la réponse (« toute boule fermée d'un espace métrique est fermée »), sans définition ; une remarque hors programme exclut.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace vectoriel normé"
+ },
+ {
+  "uuid": "zcYq",
+  "decision": "exclure",
+  "terme": "espace métrique, G_δ, F_σ",
+  "raison": "Règle 2 : « espace métrique » est employé dans l'énoncé (« Soit (E,d) un espace métrique ») sans définition ; les notions G_δ et F_σ demandées dans une question sont aussi hors programme et non définies.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Continuité, uniforme continuité"
+ },
+ {
+  "uuid": "ZEaC",
+  "decision": "exclure",
+  "terme": "espace complet, espace vectoriel normé complet, algèbre",
+  "raison": "Règle 1 : « complet » (espace vectoriel normé complet, question 2) et « C-algèbre » / « morphisme d'algèbres » (questions 3 et 4) sont employés sans définition et hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "ZG2y",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "Règle 1 : l'énoncé demande de déterminer une « forme quadratique non nulle sur M_2(C) » sans définir la notion ; le terme est hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "ZIxL",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "Règle 1 : l'énoncé demande de réduire en base orthonormée « les formes quadratiques suivantes » sans définir la notion ; les formules données sont des exemples et ne définissent pas le terme. Cas à double lecture comme YApo.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "ZkXC",
+  "decision": "exclure",
+  "terme": "stabilisateur, orbite, action de groupe, centre d'un groupe",
+  "raison": "Règle 1 : « stabilisateur », « centre de SL(n,R) » et « orbites » de l'action de groupe sont employés et demandés sans définition ; ces notions sont hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Sous-groupe, morphisme"
+ },
+ {
+  "uuid": "zmRX",
+  "decision": "exclure",
+  "terme": "forme différentielle, intégrale curviligne",
+  "raison": "Règle 1 : « forme différentielle ω » et « intégrale curviligne » sont employées et demandées (calcul de l'intégrale le long d'un contour) sans définition ; ces notions sont hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "0ry1",
+  "decision": "exclure",
+  "terme": "sous-groupes distingués ; groupe simple ; sous-groupes de Sylow",
+  "raison": "Règle 1 et règle 2 : le bloc question demande de déterminer les sous-groupes distingués de S4, de montrer que A4 n'est pas simple et de déterminer les Sylow de S4, sans définir ces notions. Sous-groupe distingué, groupe simple et Sylow sont hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe cyclique"
+ },
+ {
+  "uuid": "15Q9",
+  "decision": "exclure",
+  "terme": "forme quadratique (positive, définie positive)",
+  "raison": "Règle 2 : l'énoncé demande de montrer que Q est une forme quadratique positive et définie positive sans définir ce terme. Il donne seulement Q par une expression polynomiale, ce qui peut se lire comme une définition implicite. Deux lectures sont défendables, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "1Ir2",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué ; centre Z(G) ; G/Z(G)",
+  "raison": "Règle 1 et règle 2 : l'exercice demande de montrer que Int(G) est un sous-groupe distingué de Aut(G) et emploie Z(G) et le quotient G/Z(G) sans les définir. Ces notions sont hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe quotient, théorème de Lagrange"
+ },
+ {
+  "uuid": "1P7g",
+  "decision": "exclure",
+  "terme": "intégrale de Lebesgue ; fonction mesurable ; L^1 (transformée de Fourier)",
+  "raison": "Règle 1 et règle 9 : l'énoncé utilise L^1(R) et la transformée de Fourier d'une fonction intégrable, et la réponse emploie « mesurable » sans définition. La mesure et l'intégrale de Lebesgue sont hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Théorème de convergence dominée"
+ },
+ {
+  "uuid": "2037",
+  "decision": "exclure",
+  "terme": "connexe (autre que par arcs)",
+  "raison": "Règle 2 : l'énoncé demande de montrer que A est connexe et que f'(I) est connexe, sans définir « connexe ». La réponse justifie la connexité par la connexité par arcs, qui est au programme, mais la notion de connexité employée dans l'énoncé est hors programme. Lecture défendable en faveur de la connexité par arcs, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Connexité"
+ },
+ {
+  "uuid": "21gj",
+  "decision": "exclure",
+  "terme": "forme différentielle ; intégrale curviligne ; forme exacte",
+  "raison": "Règle 2 : la réponse parle de « la forme différentielle associée » à F, de l'intégrale ∫_H ω et du caractère exact de ω, sans définir ces notions. Forme différentielle et intégrale curviligne sont hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "26B5",
+  "decision": "garder",
+  "terme": "corps fini (F_11 = Z/11Z)",
+  "raison": "Règle 8 : « corps fini Z/11Z » n'est qu'une notation pour Z/pZ, qui est un corps au programme (MP). L'exercice se rédige entièrement avec les notions du programme (ordres, Lagrange, groupe cyclique), ce qui correspond exactement à l'exemple « Z/pZ est un corps fini » de la règle 8.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "2AJk",
+  "decision": "garder",
+  "terme": "C^1-difféomorphisme",
+  "raison": "Règle 8 : l'application (x,y) ↦ (u,v) est une bijection linéaire de R² sur R², de réciproque linéaire, donc C^1 avec réciproque C^1. Il s'agit de l'exemple « C¹-difféomorphisme pour une bijection C¹ de réciproque C¹ » de la consigne. Le reste de l'exercice utilise des notions au programme (changement de variables, polaires, dérivées partielles).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "2BNC",
+  "decision": "garder",
+  "terme": "difféomorphisme",
+  "raison": "Règle 8 : le difféomorphisme (x,y) ↦ (x,1/y) est une bijection de classe C^∞ de réciproque (x,z) ↦ (x,1/z), de classe C^∞. Il sert de changement de variables et peut se remplacer par une bijection C^1 de réciproque C^1 sans changer l'exercice.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Théorème de Cauchy-Lipschitz"
+ },
+ {
+  "uuid": "2T6O",
+  "decision": "exclure",
+  "terme": "espace de Banach (E, F, G complets)",
+  "raison": "Règle 2 : l'énoncé pose « E, F, G des Banach » sans définir ce terme. Espace de Banach est hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Différentielle d'ordre supérieur, formule de Taylor"
+ },
+ {
+  "uuid": "2tT9",
+  "decision": "exclure",
+  "terme": "connexe (autre que par arcs)",
+  "raison": "Règle 2 : l'énoncé demande de montrer que C est connexe sans définir « connexe ». La suite de l'exercice porte sur la connexité par arcs, qui est au programme, mais le terme « connexe » employé dans l'énoncé est hors programme. Lecture défendable où « connexe » désigne la connexité par arcs, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Connexité"
+ },
+ {
+  "uuid": "3AUX",
+  "decision": "exclure",
+  "terme": "espace complet ; théorème du point fixe ; contraction",
+  "raison": "Règle 1 et règle 9 : la réponse invoque la boule fermée « compacte et complète » et « le théorème du point fixe » (de Banach) pour conclure, sans définir ces notions. Le théorème du point fixe et la complétude sont hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Différentiabilité, calcul de différentielles"
+ },
+ {
+  "uuid": "3Lcl",
+  "decision": "exclure",
+  "terme": "connexe (autre que par arcs)",
+  "raison": "Règle 2 : l'énoncé demande de montrer que Ω est connexe sans définir « connexe ». Il s'agit d'une connexité hors programme, sauf si l'on lit « connexe » comme connexité par arcs, ce qui est défendable. D'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Différentiabilité, calcul de différentielles"
+ },
+ {
+  "uuid": "3mk4",
+  "decision": "exclure",
+  "terme": "forme quadratique (définie positive)",
+  "raison": "Règle 2 : l'énoncé demande de montrer que Q est une forme quadratique définie positive sans définir ce terme. Q est donnée par un déterminant, ce qui peut se lire comme une définition implicite. Lecture défendable, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "3QYC",
+  "decision": "garder",
+  "terme": "rayon spectral",
+  "raison": "Règle 8 : « rayon spectral de la matrice A*A » désigne ρ(A*A), c'est-à-dire le maximum des modules des valeurs propres λ_i(A*A), notion au programme. La réponse emploie déjà les valeurs propres, donc l'exercice se rédige avec les notions du programme. Le terme est ancien mais la rédaction ne sort pas du programme. Lecture défendable en sens contraire, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Autre"
+ },
+ {
+  "uuid": "l941",
+  "decision": "exclure",
+  "terme": "produit semi-direct (et sous-groupes cycliques, groupe d'ordre pq)",
+  "raison": "Règle 1 et règle 2 : le terme « produit semi-direct » est hors programme (liste des termes signalés) et est employé dans la question sans être défini par l'énoncé.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe fini"
+ },
+ {
+  "uuid": "LIQc",
+  "decision": "exclure",
+  "terme": "fonction harmonique (analyse complexe)",
+  "raison": "Règle 2 : « biharmonique » est défini dans l'énoncé par Δ(Δf)=0, mais « fonction harmonique » (Δf=0) est employé sans définition. Le terme signalé est « analyse complexe », qui relève de la notion d'harmonicité dans le plan complexe. Lecture défendable : Δf=0 est déductible de la définition donnée pour la biharmonicité, donc le terme serait défini implicitement.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Autre"
+ },
+ {
+  "uuid": "lKHa",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué ; centre d'un groupe",
+  "raison": "Règle 1 et règle 2 : « centre du groupe S_n », « sous-groupe distingué » et « groupe simple » ne sont pas au programme et ne sont pas définis dans l'énoncé.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "lLYP",
+  "decision": "exclure",
+  "terme": "forme quadratique (signature)",
+  "raison": "Règle 1 et règle 2 : « forme quadratique » et « signature » sont demandées dans la question sans être définies par l'énoncé.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "lOx2",
+  "decision": "exclure",
+  "terme": "transformée de Fourier (séries de Fourier signalées)",
+  "raison": "Règle 1 et règle 2 : la transformée de Fourier intégrale est une notion hors programme ; l'énoncé ne la définit pas et la réponse ne fait que poser h(t)=∫f(x)e^{-2πitx}dx. Lecture défendable : la réponse définit l'objet par cette intégrale, et le terme signalé « séries de Fourier » n'est pas employé.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Intégrales multiples, théorème de Fubini"
+ },
+ {
+  "uuid": "LPep",
+  "decision": "exclure",
+  "terme": "forme différentielle ; exactitude ; primitives d'une forme différentielle",
+  "raison": "Règle 1 et règle 2 : « forme différentielle exacte » et « primitives » sont demandées dans l'énoncé sans définition.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "LtzA",
+  "decision": "exclure",
+  "terme": "espace complet ; suite de Cauchy",
+  "raison": "Règle 1 et règle 2 : « E n'est pas complet » est demandé et la réponse utilise « suite de Cauchy », deux notions hors programme non définies.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Différentiabilité, calcul de différentielles"
+ },
+ {
+  "uuid": "lW3X",
+  "decision": "garder",
+  "terme": "enveloppe convexe",
+  "raison": "Règle 2 : l'énoncé définit co(A) comme l'ensemble des combinaisons convexes de points de A, à partir de notions élémentaires. Lecture défendable : la règle 1 cite « enveloppe convexe » comme exemple hors programme, ce qui peut conduire à exclure.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Compacité"
+ },
+ {
+  "uuid": "Lx3T",
+  "decision": "exclure",
+  "terme": "statistique inférentielle (tests d'hypothèses, risque de seconde espèce, p-valeur, loi de Student, loi du χ²)",
+  "raison": "Règle 1 et règle 2 : l'exercice entier repose sur des tests statistiques ; « risque de seconde espèce », « p-valeur », « puissance » et « loi du χ² » sont employés sans définition (seul le quantile est défini). Terme signalé « statistique inférentielle » hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "M4bx",
+  "decision": "exclure",
+  "terme": "action de groupe ; orbite ; stabilisateur ; sous-groupe distingué",
+  "raison": "Règle 1 et règle 2 : « orbite », « stabilisateur » et « sous-groupe distingué » sont demandés dans la question sans être définis par l'énoncé.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe orthogonal et quaternions"
+ },
+ {
+  "uuid": "METO",
+  "decision": "exclure",
+  "terme": "idéal premier ; idéal maximal",
+  "raison": "Règle 1 et règle 2 : « idéal premier » et « idéal maximal » sont employés dans la question et la réponse sans être définis dans l'énoncé.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "mgK8",
+  "decision": "exclure",
+  "terme": "forme différentielle exacte ; intégrale curviligne ; théorème de Poincaré",
+  "raison": "Règle 1 et règle 2 : « formes différentielles exactes » sont demandées sans définition, et la réponse invoque le théorème de Poincaré (domaine étoilé), hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "mIIm",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "Règle 1 et règle 2 : l'énoncé demande de montrer que B est connexe sans définir la notion. La réponse énonce une caractérisation (toute fonction continue B→{0,1} est constante) qui pourrait être lue comme une définition. Le terme signalé est « connexité autre que par arcs », hors programme.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Connexité"
+ },
+ {
+  "uuid": "mK7w",
+  "decision": "garder",
+  "terme": "réseau de neurones (perceptron multicouche, fonction d'activation Heaviside)",
+  "raison": "Règle 2 : l'énoncé définit chaque neurone de Heaviside par H(w1x+w2y+b), avec des notions du programme (fonctions, inégalités, droites). Le réseau est défini par composition de ces neurones. Lecture défendable : « réseau de neurones » reste un terme hors programme, dont la définition n'est que partielle (propagation avant non définie).",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "Mn2I",
+  "decision": "exclure",
+  "terme": "anneau principal ; pgcd dans un anneau principal",
+  "raison": "Règle 1 et règle 2 : « anneau principal » est hors programme et employé dans l'énoncé sans être défini.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "jflr",
+  "decision": "exclure",
+  "terme": "forme quadratique (et rang, signature d'une forme quadratique)",
+  "raison": "Règle 1 et consigne d'en-tête : « forme quadratique » est employée dans les questions et la réponse (« Vérifier que Q est une forme quadratique », « rang et signature de Q ») sans être définie par l'énoncé. Les termes sont absents des programmes 2021.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "jlqU",
+  "decision": "exclure",
+  "terme": "connexité autre que par arcs (« ouvert connexe », « Δr connexe ») ; principe des zéros isolés",
+  "raison": "Consigne d'en-tête : « connexe » est utilisé sans définition dans l'énoncé (« A un ouvert connexe non vide », réponse « somme sur Δr connexe »). La réponse invoque en outre le principe des zéros isolés, résultat d'analyse complexe hors programme, nommé dans la réponse (règle 3 : nommé et utilisé, il exclut). Le terme « Δr » n'est pas non plus défini dans l'énoncé.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Autre"
+ },
+ {
+  "uuid": "jNUi",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué (normal) ; groupe quotient G/D(G)",
+  "raison": "Consigne d'en-tête : « sous-groupe distingué » est employé et demandé (« Montrer que D(G) est distingué dans G », « H distingué ») sans définition ; le groupe quotient G/H est aussi employé. Termes absents des programmes 2021. La définition de D(G) par générateurs ne couvre pas la notion de distingué.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe quotient, théorème de Lagrange"
+ },
+ {
+  "uuid": "JS4O",
+  "decision": "exclure",
+  "terme": "anneau quotient (structure quotient) ; idéal maximal ; idéal principal",
+  "raison": "Consigne d'en-tête : « l'anneau quotient Q[x]/(x^3-x+2) » est au cœur de l'énoncé sans définition. La réponse utilise en outre « idéal maximal », « polynôme primitif » et « irréductible » dans Z[x] (lemme de Gauss) sans définition ni cadre au programme. Règle 1 : une seule notion hors programme suffit.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Polynôme"
+ },
+ {
+  "uuid": "Jzgp",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué ; indice d'un sous-groupe",
+  "raison": "Consigne d'en-tête : « H est un sous-groupe distingué de D∞ » et « sous-groupe cyclique infini d'indice 2 » sont demandés sans définition de distingué ni d'indice. Le groupe diédral infini est bien défini par l'énoncé (règle 2), mais les deux autres notions ne le sont pas.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Sous-groupe, morphisme"
+ },
+ {
+  "uuid": "k2gq",
+  "decision": "exclure",
+  "terme": "homéomorphisme (homéomorphe)",
+  "raison": "Consigne d'en-tête : « le cercle privé d'un point est homéomorphe à ]0,1[ » et « h n'est pas un homéomorphisme » sont demandés sans définition du terme. Remarque : le libellé de terme signalé (« espace complet, Banach, Hilbert ») ne correspond pas au texte, qui emploie « homéomorphisme ». Ce libellé ne change pas la décision.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Continuité, uniforme continuité"
+ },
+ {
+  "uuid": "KCoN",
+  "decision": "exclure",
+  "terme": "fonction harmonique (sur R^3 privé de l'origine)",
+  "raison": "Le terme signalé « analyse complexe » est un faux positif : l'exercice ne traite pas d'analyse complexe. Toutefois « fonctions harmoniques » est employé sans définition et relève d'une notion (Laplacien) dont la présence au programme 2021 n'est pas établie. La radialité est bien définie par l'énoncé (règle 2), mais pas l'harmonicité.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Autre"
+ },
+ {
+  "uuid": "Ki7W",
+  "decision": "exclure",
+  "terme": "forme quadratique (forme bilinéaire symétrique associée)",
+  "raison": "Consigne d'en-tête : « déterminer la forme quadratique qui lui est associée » et « Vérifier que q est une forme quadratique » sont demandés sans définition. Termes absents des programmes 2021. Le produit scalaire et la norme euclidienne sont au programme, mais la forme quadratique non.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "KIsD",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué (normal)",
+  "raison": "Consigne d'en-tête : « ce sous-groupe est un sous-groupe distingué de A4 » est demandé sans définition. Le groupe alterné A4 est au programme (règle 5 non applicable par consigne, mais le terme n'est pas défini). Terme absent des programmes 2021.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "KjmM",
+  "decision": "exclure",
+  "terme": "p-Sylow (théorème de Sylow)",
+  "raison": "Consigne d'en-tête : « Explicitez un 7-Sylow », « nombre de 7-Sylow » et « congruences données par le théorème de Sylow » sont demandés sans définition du terme ni du théorème. Terme absent des programmes 2021.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe fini"
+ },
+ {
+  "uuid": "kkjR",
+  "decision": "garder",
+  "terme": "C¹-difféomorphisme (difféomorphisme)",
+  "raison": "Règle 8 et exemple explicite de la consigne : « C¹-difféomorphisme » pour une bijection C¹ de réciproque C¹ est une notation remplaçable par des notions du programme sans changer l'exercice. L'énoncé est rédigé avec des notions au programme (fonction C¹, lipschitzienne, bijection). Le terme signalé « sous-variété, fonctions implicites » n'apparaît pas dans le texte.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "KmBY",
+  "decision": "garder",
+  "terme": "réseau de neurones (couche cachée, neurone)",
+  "raison": "Le perceptron est défini par l'énoncé (signe d'une fonction affine s(x,y)=ax+by+c) et la fonction de Heaviside H est définie dans l'énoncé. Le réseau à deux couches est entièrement spécifié par la réponse, sans notion hors programme. Le terme « réseau de neurones » n'apparaît que comme intitulé de chapitre. Lecture défendable en sens inverse : l'énoncé demande de « dessiner le réseau » sans le définir.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "KOgy",
+  "decision": "exclure",
+  "terme": "connexité autre que par arcs (« ouvert connexe »)",
+  "raison": "Consigne d'en-tête : « Soit A un ouvert connexe non vide » emploie « connexe » sans définition, notion absente des programmes sous cette forme (seule la connexité par arcs, en MP, est au programme). La question demande de déduire « connexe par arcs », ce qui fait de la comparaison des deux notions le cœur de l'exercice.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Connexité"
+ },
+ {
+  "uuid": "l1b6",
+  "decision": "exclure",
+  "terme": "forme quadratique (forme quadratique à l'infini, homogénéisée) ; géométrie projective (complétion projective)",
+  "raison": "Consigne d'en-tête : « C'est une forme quadratique sur E » et « Q est une forme quadratique sur l'espace projectif » sont employées sans définition, et la complétion projective relève de la géométrie projective, absente des programmes. Le texte définit « quadrique » et la partie homogène de q mais pas la forme quadratique.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Forme bilinéaire"
+ },
+ {
+  "uuid": "l5fz",
+  "decision": "exclure",
+  "terme": "espace complet ; théorème du point fixe (point fixe, contractante)",
+  "raison": "Consigne d'en-tête : « Soit E un espace vectoriel normé complet » est employé sans définition, et « montrer que f admet un unique point fixe » demande le théorème du point fixe, absent des programmes 2021. Le contexte de la réponse (suites de Cauchy implicites) ne suffit pas à définir la complétude.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "bR1F",
+  "decision": "exclure",
+  "terme": "théorème du point fixe",
+  "raison": "Terme hors programme présent seulement dans la remarque finale de la réponse (règle 9), sans être employé dans le raisonnement ; la remarque le décrit mais ne le définit pas au sens de la règle 2 (le texte renvoie à « plus tard dans l'année »).",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Convergence d'une suite"
+ },
+ {
+  "uuid": "Btrd",
+  "decision": "exclure",
+  "terme": "forme différentielle, intégrale curviligne",
+  "raison": "Forme différentielle employée dans l'énoncé (« On considère la forme différentielle ω ») sans définition, et la question demande de montrer qu'elle n'est pas exacte (règles 1 et 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "bVmZ",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "Forme quadratique q(x,y,z) employée dans l'énoncé sans définition ; la notion est hors programme (règles 1 et 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Conique"
+ },
+ {
+  "uuid": "C5m6",
+  "decision": "exclure",
+  "terme": "forme différentielle, intégrale curviligne, théorème de Poincaré",
+  "raison": "Forme différentielle et intégrale curviligne employées sans définition dans l'énoncé ; le théorème de Poincaré est cité dans la réponse (règles 1, 2 et 9).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "ChLx",
+  "decision": "exclure",
+  "terme": "fonctions implicites (théorème des fonctions implicites)",
+  "raison": "La question demande de montrer que l'équation définit implicitement une fonction de classe C^infini, et la réponse emploie le théorème des fonctions implicites, notion hors programme (règle 1).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "cIhh",
+  "decision": "exclure",
+  "terme": "connexité autre que par arcs (composantes connexes)",
+  "raison": "La question demande de démontrer que O(n) contient deux composantes connexes sans définir la notion ; la connexité autre que par arcs est hors programme (règles 1 et 2). La compacité et la norme subordonnée sont au programme et ne suffisent pas à garder l'exercice.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe orthogonal et quaternions"
+ },
+ {
+  "uuid": "CNUr",
+  "decision": "exclure",
+  "terme": "forme quadratique non dégénérée, indice, forme de Lorentz",
+  "raison": "Forme quadratique non dégénérée et indice employés dans la question sans définition (règles 1 et 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Forme bilinéaire"
+ },
+ {
+  "uuid": "CPVb",
+  "decision": "exclure",
+  "terme": "espace complet (espace vectoriel normé complet)",
+  "raison": "Espace vectoriel normé complet employé dans l'énoncé sans définition ; la notion est hors programme (règles 1 et 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "cyEC",
+  "decision": "garder",
+  "terme": "C¹-difféomorphisme (difféomorphisme)",
+  "raison": "Notation remplaçable par une notion du programme sans changer l'exercice : un C¹-difféomorphisme sur un ouvert est une bijection C¹ dont la réciproque est C¹ (règle 8, exemple explicite du barème). Le signalement sous-variété et fonctions implicites ne figure pas dans le texte.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "cYG6",
+  "decision": "exclure",
+  "terme": "forme différentielle, intégrale curviligne",
+  "raison": "Forme différentielle introduite seulement dans la réponse (« la forme différentielle naturellement associée à V ») sans définition, avec évocation de la forme exacte (règles 1, 2 et 9).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "DAup",
+  "decision": "exclure",
+  "terme": "connexe (connexité autre que par arcs)",
+  "raison": "L'énoncé emploie « connexe » pour des parties de R² (images de dérivées vectorielles) sans définition et demande de montrer que l'assertion est fausse ; il s'agit de la connexité générale, hors programme (règles 1 et 2). Lecture alternative : connexe pour des intervalles de R, au programme en MP sous forme d'arcs.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Différentiabilité, calcul de différentielles"
+ },
+ {
+  "uuid": "Ddhi",
+  "decision": "garder",
+  "terme": "forme quadratique (associée à un endomorphisme autoadjoint)",
+  "raison": "L'énoncé définit lui-même la forme quadratique q_i par q_i(x) = (u_i(x) | x), à partir de notions du programme (espace euclidien, endomorphismes autoadjoints) : règle 2, l'exercice n'est pas exclu.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "DGPb",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "L'énoncé définit l'application q(P)=P(0)P(1) mais non la notion de forme quadratique, que la question demande de démontrer pour q (règles 1 et 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "dKch",
+  "decision": "garder",
+  "terme": "espace complet, suite de Cauchy, Banach, Hilbert",
+  "raison": "La suite de Cauchy est définie dans l'énoncé à partir de notions du programme (règle 2). La question d'équivalence entre la propriété de borne supérieure et la convergence des suites de Cauchy relève d'un résultat de complétude hors programme qui n'est pas nommé dans le texte ; lecture défendable dans les deux sens (règle 3).",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Suite"
+ },
+ {
+  "uuid": "DPjZ",
+  "decision": "exclure",
+  "terme": "forme différentielle exacte",
+  "raison": "Forme différentielle et notion d'exactitude employées dans la question (« ω est une forme différentielle exacte sur R² et l'intégrer ») sans définition (règles 1 et 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "a6Zg",
+  "decision": "exclure",
+  "terme": "sous-variété",
+  "raison": "Règle 1 et règle 2 : « sous-variété S » est employée dans la réponse sans être définie, et la notion n'est au programme d'aucune filière. Le terme apparaît dans la réponse elle-même, donc pas une simple remarque.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Différentielle d'ordre supérieur, formule de Taylor"
+ },
+ {
+  "uuid": "aemf",
+  "decision": "exclure",
+  "terme": "structure quotient ; idéal premier",
+  "raison": "Règles 1 et 2 : l'exercice emploie l'anneau quotient Z[√d]/(m) et demande si l'idéal (2) est premier, sans définir ni l'un ni l'autre. Les idéaux premiers et les structures quotients ne figurent pas au programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "AF54",
+  "decision": "exclure",
+  "terme": "forme différentielle, intégrale curviligne",
+  "raison": "Règles 1 et 2 : « forme différentielle », son degré et le produit extérieur dx∧dy sont employés sans définition. L'indication donne des formules de calcul (d(u dx+v dy), dx dy = -dy dx) qui pourraient être lues comme une définition implicite, d'où le doute.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "afRR",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué",
+  "raison": "Règle 1 : la question demande de dire pourquoi SL_n est un sous-groupe distingué de GL_n et de montrer GL_n/SL_n ≅ K*. La notion de sous-groupe distingué n'est définie nulle part et n'est pas au programme. Le groupe quotient est lui aussi hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe quotient, théorème de Lagrange"
+ },
+ {
+  "uuid": "AIFJ",
+  "decision": "garder",
+  "terme": "intégrale de Lebesgue (mesure de Lebesgue)",
+  "raison": "Règle 8 : « mesure de Lebesgue sur le carré » ne désigne que le modèle uniforme sur [0,1]², remplaçable par « loi uniforme sur le carré » sans changer l'exercice. Règle 4 : le calcul de F_Z et la méthode graphique sont au programme, donc la convolution citée comme « résultat du cours » n'exclut pas. Doute sur la convolution des lois, hors programme selon certaines lectures.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Probabilité continue"
+ },
+ {
+  "uuid": "aJCl",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué (G' distingué) ; commutateur",
+  "raison": "Le commutateur est défini dans l'énoncé à partir de notions au programme (règle 2), donc ce terme seul ne suffit pas à exclure. En revanche la question demande de montrer que G' est un sous-groupe distingué, notion non définie et hors programme (règle 1).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Sous-groupe, morphisme"
+ },
+ {
+  "uuid": "ApUI",
+  "decision": "exclure",
+  "terme": "forme différentielle, intégrale curviligne",
+  "raison": "Règles 1 et 2 : « forme différentielle de degré p-1 » et « variété de R^N à bord » sont employées sans définition. La formule de Stokes est nommée et rappelée sans être démontrée, ce qui ne suffit pas à la garder (règle 3).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "aPyV",
+  "decision": "garder",
+  "terme": "forme quadratique ou sesquilinéaire",
+  "raison": "Règle 8 : dans la réponse, « la matrice de la forme quadratique x²+y²/2+… » désigne la matrice symétrique A de la forme x^T A x, notion au programme. Le terme est remplaçable sans changer l'exercice. Doute car « forme quadratique » reste absente du programme.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Intégration"
+ },
+ {
+  "uuid": "ASZr",
+  "decision": "exclure",
+  "terme": "espace complet, Banach",
+  "raison": "Règle 1 : l'énoncé pose « Soit E un espace de Banach » sans définir la notion, qui n'est au programme d'aucune filière. Le cadre est central à l'exercice (exponentielle d'endomorphismes), donc on ne peut pas le retirer.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Différentiabilité, calcul de différentielles"
+ },
+ {
+  "uuid": "aUR0",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "Règle 1 : la question demande de montrer que F(C) est un connexe de R. La connexité n'est pas définie et n'est pas au programme, car seule la connexité par arcs y figure. La démonstration du résultat repose sur ce concept.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Connexité"
+ },
+ {
+  "uuid": "aWHp",
+  "decision": "garder",
+  "terme": "extension de corps, corps fini",
+  "raison": "Règle 8 : « A est un corps fini » est remplaçable par « corps à un nombre fini d'éléments » sans changer l'exercice, comme l'exemple « Z/pZ est un corps fini » du barème. L'exercice reste rédigé avec des notions de programme (anneau, polynôme, fonction polynomiale). Doute car « corps fini » est absent du programme.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Polynôme"
+ },
+ {
+  "uuid": "B5dV",
+  "decision": "exclure",
+  "terme": "espace complet, Banach, Hilbert ; théorème du point fixe",
+  "raison": "Règle 1 et règle 9 : la réponse invoque « le théorème du point fixe s'applique » pour conclure, et ce théorème n'est pas au programme. Il ne s'agit pas d'une simple remarque. Le « C¹-difféomorphisme » seul serait gardé (règle 8), mais le théorème hors programme exclut.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "bkxg",
+  "decision": "exclure",
+  "terme": "géométrie projective, homographie",
+  "raison": "Règle 1 : la question définit F comme « une homographie de PSL(3,F_4) » sans définir l'homographie ni la notion de groupe projectif, qui ne sont pas au programme. Le corps fini F_4 et PSL(3,F_4) sont aussi hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe fini"
+ },
+ {
+  "uuid": "Bn2D",
+  "decision": "garder",
+  "terme": "sous-variété, difféomorphisme, fonctions implicites",
+  "raison": "Règle 8 : « C¹-difféomorphisme de U sur V » désigne une bijection C¹ de réciproque C¹, exactement l'exemple du barème. L'exercice se rédige avec jacobiennes et inversion de matrices, notions au programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "bNge",
+  "decision": "exclure",
+  "terme": "théorie des groupes avancée : sous-groupes de Sylow, sous-groupe distingué",
+  "raison": "Règle 1 : l'énoncé demande de montrer qu'un groupe de cardinal 24 sans sous-groupe de Sylow distingué est isomorphe à S_4. Les sous-groupes de Sylow et la notion de sous-groupe distingué ne sont pas au programme. L'indication (opération sur les 3-Sylow) les emploie aussi.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe fini"
+ },
+ {
+  "uuid": "T3DW",
+  "decision": "garder",
+  "terme": "fonctions implicites (théorème des)",
+  "raison": "Règle 2 : le théorème des fonctions implicites est rappelé en entier dans l'indication de l'énoncé, donc défini par l'énoncé lui-même. Incertain car la question le nomme et le demande (règle 3).",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "TidD",
+  "decision": "exclure",
+  "terme": "espace de Banach",
+  "raison": "Terme employé dans l'énoncé (« Soit E un espace de Banach ») sans être défini ; hors programme (règle 1).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Différentiabilité, calcul de différentielles"
+ },
+ {
+  "uuid": "tM0t",
+  "decision": "exclure",
+  "terme": "anneau principal",
+  "raison": "Terme employé dans la question (« c'est un anneau principal ») sans définition ; hors programme (règle 1).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "tPCs",
+  "decision": "garder",
+  "terme": "rayon spectral",
+  "raison": "Règle 8 : ρ(A) n'est qu'une notation pour le max des modules des valeurs propres ; l'exercice se rédige entièrement avec valeurs propres, spectre et matrice d'itération, qui sont au programme.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Haiku 5.5 v9",
+  "chapitre": "Résolution de systèmes linéaires : méthode itérative"
+ },
+ {
+  "uuid": "txji",
+  "decision": "exclure",
+  "terme": "suite de Cauchy",
+  "raison": "Notion employée dans la question (« ne forment pas une suite de Cauchy ») sans définition ; hors programme (règle 1).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Série numérique"
+ },
+ {
+  "uuid": "tZTI",
+  "decision": "exclure",
+  "terme": "série de Laurent (résidus, analyse complexe)",
+  "raison": "La question demande la série de Laurent de 1/(z²+z³) sans définition ; analyse complexe hors programme (règle 1).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Autre"
+ },
+ {
+  "uuid": "UimZ",
+  "decision": "exclure",
+  "terme": "connexe (connexité autre que par arcs)",
+  "raison": "La question demande les parties connexes et la réponse parle de composantes connexes, sans définition ; seule la connexité par arcs est au programme (MP) (règle 1).",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Connexité"
+ },
+ {
+  "uuid": "uL3l",
+  "decision": "exclure",
+  "terme": "théorème des fonctions implicites",
+  "raison": "Théorème nommé et demandé (« en utilisant le théorème des fonctions implicites ») sans être rappelé dans l'énoncé ; hors programme (règle 3).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Courbes planes"
+ },
+ {
+  "uuid": "ULeB",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué",
+  "raison": "Terme employé dans la question (« est un sous-groupe distingué ») sans définition ; hors programme (règle 1).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Géométrie affine dans le plan et dans l'espace"
+ },
+ {
+  "uuid": "unWM",
+  "decision": "exclure",
+  "terme": "anneau quotient (structure quotient)",
+  "raison": "Terme employé dans la question (« l'anneau quotient B/(B∩I) ») sans définition ; structure quotient hors programme (règle 1).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "UQ72",
+  "decision": "exclure",
+  "terme": "transformée de Fourier (signalé « séries de Fourier »)",
+  "raison": "La question et la réponse emploient la transformée de Fourier sur R³ sans la définir dans l'énoncé ; la définition n'apparaît que dans la réponse. L'étiquette signalée (séries de Fourier) ne correspond pas exactement au terme du texte.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Transformée de Fourier"
+ },
+ {
+  "uuid": "uqdi",
+  "decision": "exclure",
+  "terme": "forme quadratique (positive)",
+  "raison": "Les « formes quadratiques » sont employées sans définition dans l'énoncé. Lecture alternative : les expressions explicites sont des polynômes homogènes de degré 2, ce qui pourrait relever de la règle 8.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "uYQY",
+  "decision": "exclure",
+  "terme": "orbite, stabilisateur (action de groupe)",
+  "raison": "Les notions d'orbite et de stabilisateur apparaissent dans la réponse (« Autre méthode ») sans définition ; hors programme (règle 1). Lecture alternative : la méthode hors programme est une seconde voie, la première étant au programme (règle 4).",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Déterminant, système linéaire"
+ },
+ {
+  "uuid": "vji0",
+  "decision": "exclure",
+  "terme": "rayon spectral",
+  "raison": "Le terme n'apparaît que dans une parenthèse de la réponse (« ρ est le rayon spectral de la matrice A ») ; règle 9 : exclusion. Lecture alternative : ρ n'est qu'une notation pour max des modules des valeurs propres (règle 8).",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Série entière"
+ },
+ {
+  "uuid": "VLwo",
+  "decision": "garder",
+  "terme": "réseau de neurones / perceptron",
+  "raison": "Règle 2 et règle 8 : les neurones sont définis par la fonction de Heaviside H appliquée à des combinaisons affines, qui sont au programme ; l'exercice se rédige entièrement avec ces notions.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "vPhl",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué (et quotient A4/K)",
+  "raison": "Le terme « sous-groupe distingué » est employé dans les questions sans être défini (règle 2). Le quotient de groupes est aussi employé sans définition.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "VqU9",
+  "decision": "exclure",
+  "terme": "fonctions implicites (théorème des)",
+  "raison": "Le « théorème des fonctions implicites » est nommé et employé dans la réponse sans être défini (consigne du fichier : emploi sans définition). La règle 3 ne tranche pas nettement, car le résultat n'est pas demandé.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "vsom",
+  "decision": "exclure",
+  "terme": "forme quadratique (et signature)",
+  "raison": "La question demande de montrer que Q est une forme quadratique et de déterminer sa signature, sans définition dans l'énoncé (règle 2). La réponse la rattache après coup à une forme bilinéaire symétrique.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "VucZ",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "La question porte sur l'équivalence entre connexité et connexité par arcs, avec « connexe » employé sans définition. Le terme est hors programme (seule la connexité par arcs est au programme de MP).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Connexité"
+ },
+ {
+  "uuid": "vVWj",
+  "decision": "exclure",
+  "terme": "espace complet (Baire, Banach)",
+  "raison": "L'énoncé emploie « espace vectoriel normé complet » sans le définir, et la réponse s'appuie sur le théorème de Baire (règle 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "wJdN",
+  "decision": "exclure",
+  "terme": "critère d'Eisenstein",
+  "raison": "Le critère d'Eisenstein est nommé et employé dans les réponses pour conclure à l'irréductibilité, sans être défini (consigne du fichier). La règle 3 laisse une lecture défendable, car le critère n'est pas demandé.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Polynôme"
+ },
+ {
+  "uuid": "wlig",
+  "decision": "garder",
+  "terme": "forme quadratique",
+  "raison": "L'énoncé définit lui-même la forme quadratique Q(u,v) par une expression matricielle à partir de la hessienne, notion de programme (règle 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Haiku 5.5 v9",
+  "chapitre": "Fonction convexe"
+ },
+ {
+  "uuid": "WLm3",
+  "decision": "exclure",
+  "terme": "théorème des fonctions implicites (sous-variété, difféomorphisme)",
+  "raison": "La question demande explicitement d'énoncer le théorème des fonctions implicites, résultat nommé et demandé (règle 3), et le terme est employé sans définition.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "WNsd",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué; Sylow",
+  "raison": "« Sous-groupe distingué » est employé sans définition dans les questions, et « Sylow » apparaît dans une indication (règle 2 et règle 9).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe symétrique, décomposition en cycles disjoints, signature"
+ },
+ {
+  "uuid": "wnV3",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué; p-sous-groupe de Sylow",
+  "raison": "« Sous-groupe distingué » et « p-sous-groupe de Sylow » sont employés dans l'énoncé sans être définis (règle 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe fini"
+ },
+ {
+  "uuid": "WTwm",
+  "decision": "exclure",
+  "terme": "structure quotient (anneau quotient A/I)",
+  "raison": "L'exercice emploie l'anneau quotient A/I et ses idéaux sans définition, et la structure quotient est hors programme (règle 2). Il n'est pas réductible à une notation du programme (règle 8).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "WYv0",
+  "decision": "exclure",
+  "terme": "forme quadratique; « définie »",
+  "raison": "Le passage signalé emploie « forme quadratique » et « soit définie » sans définition ; la forme est donnée par une formule explicite, ce qui pourrait valoir définition (règle 2). Le texte est tronqué dans le fichier, donc la lecture reste incertaine.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "x8rP",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "L'énoncé emploie « connexe » (complémentaire d'un disque est connexe) sans définition, la connexité non par arcs étant hors programme (règle 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Connexité"
+ },
+ {
+  "uuid": "x9OE",
+  "decision": "exclure",
+  "terme": "signature; forme quadratique",
+  "raison": "La forme quadratique est définie par sa matrice, ce qui relève de la règle 2 (garder). Mais la signature et la base q-orthogonale sont employées sans définition, et la théorie des formes quadratiques est hors programme : l'exclusion l'emporte.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "xfwN",
+  "decision": "exclure",
+  "terme": "groupe diédral (D_4)",
+  "raison": "Les quaternions sont définis par leurs matrices (règle 2, garder pour ce terme). Mais D_4 est employé dans la dernière question sans définition, et le groupe diédral est hors programme. La règle 12 (notion de lycée) donne une lecture défendable contraire.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Arithmétique"
+ },
+ {
+  "uuid": "h1gq",
+  "decision": "exclure",
+  "terme": "forme quadratique (et « définie positive »)",
+  "raison": "Le terme est employé dans la réponse (« c est une forme quadratique positive ») sans être défini. La règle de l'en-tête exclut un terme employé sans définition. Lecture défendable : c est défini par l'égalité de développement de la réponse, mais le terme lui-même ne l'est pas.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "HBoj",
+  "decision": "exclure",
+  "terme": "sous-groupe normal",
+  "raison": "La question demande « Est-ce un sous-groupe normal de SL(2,R) ? » sans définir la notion. Le terme est employé et demandé, donc exclu.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe"
+ },
+ {
+  "uuid": "hGun",
+  "decision": "garder",
+  "terme": "transformée de Laplace",
+  "raison": "Règle 2 : l'énoncé définit lui-même L_t(T) = E(e^{-tT}), à partir de l'espérance, notion du programme. Incertitude : le résultat admis (une transformée de Laplace caractérise la loi) est hors programme, employé à la fin sans être nommé ni demandé ; règle 1 et règle 3 peuvent se lire différemment.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Haiku 5.5 v9",
+  "chapitre": "Probabilité continue"
+ },
+ {
+  "uuid": "hGvI",
+  "decision": "garder",
+  "terme": "corps fini",
+  "raison": "Règle 8 : « corps fini de cardinal n » désigne un corps commutatif de cardinal n, notion du programme ; le terme est remplaçable sans changer l'exercice. Incertitude : l'énoncé ne définit pas explicitement « fini », il ne fait que préciser le cardinal.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "hKMj",
+  "decision": "garder",
+  "terme": "forme quadratique",
+  "raison": "Règle 2 : l'énoncé définit lui-même la forme q sur R^n par une formule polynomiale explicite, à partir de notions du programme. Incertitude : le terme « forme quadratique » n'est pas défini en tant que tel.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "hrHb",
+  "decision": "exclure",
+  "terme": "formule de Stokes (forme différentielle, intégrale curviligne)",
+  "raison": "Règle 3 : la formule de Stokes est nommée et demandée (« montrer la forme vectorielle de la formule de Stokes »), donc exclut. La forme différentielle ω n'est pas définie comme notion au programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "HVru",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "La réponse emploie « connexe » au sens général (« l'image d'un connexe par une application continue doit être un connexe », « S^1 est un compact connexe ») sans définir la notion. Lecture défendable : les ensembles en jeu sont connexes par arcs, donc au programme MP.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Connexité"
+ },
+ {
+  "uuid": "iaZW",
+  "decision": "exclure",
+  "terme": "théorème de Baire (espace complet)",
+  "raison": "La question demande « À l'aide du théorème de Baire, montrer… » et la réponse utilise Baire et « espace complet ». Règle 1 : un résultat hors programme employé suffit à exclure.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Théorème de Baire"
+ },
+ {
+  "uuid": "Ifa2",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué",
+  "raison": "Le terme est employé et demandé (« Montrer que c'est un sous-groupe distingué de S4 ») sans être défini. Ce n'est pas une simple notation : la notion n'est pas au programme d'une filière.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Sous-groupe, morphisme"
+ },
+ {
+  "uuid": "Ij69",
+  "decision": "garder",
+  "terme": "caractéristique d'un corps",
+  "raison": "Règle 8 : « caractéristique différente de 2 » se remplace par « 1_K + 1_K ≠ 0 dans K », notion du programme, sans changer l'exercice. Incertitude : le terme n'est pas défini et la rédaction de la règle 8 peut se lire comme exigeant un terme au programme.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Polynôme"
+ },
+ {
+  "uuid": "IJMm",
+  "decision": "garder",
+  "terme": "centre d'un groupe",
+  "raison": "Règle 2 : l'énoncé définit lui-même Z(G) comme l'ensemble des éléments commutant avec tous les éléments de G, à partir de notions du programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Ordre d'un élément"
+ },
+ {
+  "uuid": "IkYE",
+  "decision": "garder",
+  "terme": "difféomorphisme (de classe C^1 / C^infini)",
+  "raison": "Règle 8 (exemple explicite de l'en-tête : « C¹-difféomorphisme » pour une bijection C¹ de réciproque C¹) : la notion est remplaçable par une bijection de classe C^1 à réciproque de classe C^1, sans changer l'exercice.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Autre"
+ },
+ {
+  "uuid": "ilek",
+  "decision": "exclure",
+  "terme": "p-sous-groupe de Sylow",
+  "raison": "Le terme est employé et demandé (« Montrer que tout p-sous-groupe de Sylow distingué de K est distingué dans G ») sans être défini. Règle 1 : exclut.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe fini"
+ },
+ {
+  "uuid": "InCc",
+  "decision": "exclure",
+  "terme": "forme quadratique (associée à une forme bilinéaire symétrique)",
+  "raison": "La question demande « Montrer que φ est une forme quadratique sur E » et l'énoncé parle de « la forme quadratique associée » sans définir le terme. Employé et demandé sans définition, donc exclu.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "iZ4V",
+  "decision": "exclure",
+  "terme": "théorème de convergence monotone (intégrale de Lebesgue)",
+  "raison": "La réponse de la deuxième question emploie le théorème de convergence monotone, résultat de la théorie de Lebesgue absent des programmes. Règle 1 : un résultat hors programme employé suffit à exclure. Le théorème de convergence dominée, lui, peut être au programme.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Théorème de convergence dominée"
+ },
+ {
+  "uuid": "45S8",
+  "decision": "garder",
+  "terme": "corps fini, extension de corps",
+  "raison": "Règle 8 : « Puisque Z/17Z est un corps fini » est une notation remplaçable par « Z/pZ est un corps » (exemple explicite de garder). Le terme n'est pas défini par l'énoncé. Question de lecture : la question « ce groupe est-il cyclique ? » demande un résultat (cyclicité du groupe des inversibles) cité seulement comme « théorème du cours », sans être nommé (règle 3).",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "485v",
+  "decision": "garder",
+  "terme": "rayon spectral, quaternions",
+  "raison": "Règle 2 : l'énoncé définit lui-même le rayon spectral ρ(B) = max{|λ|, λ valeur propre de B} à partir de notions du programme. « Quaternions » n'apparaît pas dans le texte de l'exercice.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur"
+ },
+ {
+  "uuid": "4a4f",
+  "decision": "exclure",
+  "terme": "analyse complexe (fonction analytique sur un ouvert de C, Liouville, Weierstrass, d'Alembert-Gauss)",
+  "raison": "Règle 3 : les théorèmes de Liouville, de d'Alembert-Gauss et de Weierstrass sont nommés et demandés (« Si U=C et f bornée alors f constante (théorème de Liouville) », etc.). La notion de fonction analytique sur un ouvert de C et le prolongement analytique sont employés sans définition (règle 2). Hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Série entière"
+ },
+ {
+  "uuid": "59li",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué",
+  "raison": "Règle 2 : « Montrer que Z(G) est un sous-groupe distingué de G » emploie « distingué » sans le définir. Le centre Z(G) est bien défini par l'énoncé, mais le terme « distingué » ne l'est pas.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe quotient, théorème de Lagrange"
+ },
+ {
+  "uuid": "5GCE",
+  "decision": "garder",
+  "terme": "enveloppe convexe",
+  "raison": "Règle 2 : l'énoncé définit lui-même co(A) comme l'ensemble des combinaisons convexes finies de points de A, à partir de notions du programme. Question de lecture : la règle 1 cite « enveloppe convexe » comme exemple hors CPGE, ce qui peut conduire à exclure.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Compacité"
+ },
+ {
+  "uuid": "5kiZ",
+  "decision": "exclure",
+  "terme": "intégrale de Lebesgue, fonction mesurable, espace mesuré, mesure",
+  "raison": "Règle 1 : l'énoncé emploie espace mesuré (Ω, Σ, μ), fonctions mesurables, presque partout et intégrale de Lebesgue, sans les définir (règle 2). Le théorème de convergence dominée est demandé et nommé (règle 3). Hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Théorème de convergence dominée"
+ },
+ {
+  "uuid": "6ggU",
+  "decision": "exclure",
+  "terme": "espace de Banach",
+  "raison": "Règle 2 : « Soient E et F des espaces de Banach » emploie le terme sans définition. La différentielle seconde D²f sur des espaces de Banach relève aussi d'un cadre hors programme (règle 1).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Différentielle d'ordre supérieur, formule de Taylor"
+ },
+ {
+  "uuid": "7435",
+  "decision": "exclure",
+  "terme": "fonctions implicites (théorème des fonctions implicites)",
+  "raison": "Règle 3 : « Énoncer le théorème des fonctions implicites » demande explicitement un résultat hors programme, nommé et demandé, donc exclu. Les alternatives (i) et (ii) reposent sur ce théorème.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "7Dkk",
+  "decision": "exclure",
+  "terme": "forme différentielle, intégrale curviligne, exacte",
+  "raison": "Règle 2 : « la forme différentielle ω = f(x,y) d(x²+y²) soit exacte » emploie la notion de forme différentielle et d'exactitude sans définition. Hors programme (formes différentielles absentes des programmes 2021).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "7LuQ",
+  "decision": "garder",
+  "terme": "homéomorphisme",
+  "raison": "Règle 8 : « est un homéomorphisme » est une notation remplaçable par « bijection continue de réciproque continue ». L'exercice se rédige entièrement avec ces notions (bijection, continuité, norme), comme pour l'exemple « C¹-difféomorphisme » de la règle 8. Lecture défendable : homéomorphisme est une notion topologique hors programme et non citée dans la règle 8.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "7oso",
+  "decision": "exclure",
+  "terme": "rayon spectral, valeurs singulières, matrice normale, cond_2",
+  "raison": "Règle 9 : « rayon spectral » apparaît seulement dans la réponse (remarque « rayon spectral ») sans définition dans l'énoncé (règle 2). « Valeurs singulières » (μ_1, μ_n) et « matrice normale » sont employées sans définition et ne figurent pas au programme (règle 1).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Autre"
+ },
+ {
+  "uuid": "8IL1",
+  "decision": "garder",
+  "terme": "C¹-difféomorphisme, sous-variété, fonctions implicites",
+  "raison": "Règle 8 : « C¹-difféomorphisme » est l'exemple explicite de notation garder (bijection C¹ de réciproque C¹). La réponse exhibe la bijection et son inverse explicite (ln(z+√(z²+4e^t))), puis conclut via un jacobien non nul sans nommer le théorème d'inversion locale (règle 3).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "9AEq",
+  "decision": "exclure",
+  "terme": "détermination du logarithme (analyse complexe)",
+  "raison": "Règle 2 : « détermination du logarithme » est employée dans la question (« peut-on définir une détermination ... ? ») sans définition préalable dans l'énoncé. La réponse donne une définition implicite par continuité et e^{ℓ(z)} = z. Question de lecture : la notion pourrait être prise comme une notion élémentaire de logarithme complexe.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Autre"
+ },
+ {
+  "uuid": "9bXb",
+  "decision": "exclure",
+  "terme": "transformation de Legendre, difféomorphisme (réponse)",
+  "raison": "Règle 9 : « transformation de Legendre » n'apparaît que dans une remarque de la réponse (« la transformation f ↦ g est appelée transformation de Legendre »), ce qui exclut selon la règle 9. Le terme n'est pas défini par l'énoncé.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "9pZ3",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs), connexe",
+  "raison": "Règle 2 : « Montrer que O_f est compact et connexe » emploie « connexe » sans définition. Lecture défendable : la connexité par arcs (au programme, MP) suffit via l'application continue a ↦ f_a sur R. Le terme général est hors programme.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Continuité, uniforme continuité"
+ },
+ {
+  "uuid": "DSjx",
+  "decision": "garder",
+  "terme": "forme différentielle, intégrale curviligne, formule de Green-Riemann",
+  "raison": "Le théorème de Green-Riemann est énoncé dans l'indication, et la forme différentielle ω=Pdx+Qdy est définie dans l'énoncé (règle 2). La méthode imposée (Green-Riemann) a une autre voie au programme : la réponse calcule directement l'intégrale double (règle 4). Lecture discutable : le résultat est nommé et demandé (règle 3).",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "Dviz",
+  "decision": "exclure",
+  "terme": "homéomorphisme, application ouverte",
+  "raison": "Les termes homéomorphisme et « ouverte » sont employés dans la deuxième question sans être définis, et ne figurent à aucun programme. Ils ne peuvent pas être remplacés sans changer l'exercice. Le libellé signalé (espace complet, Banach, Hilbert) ne figure pas dans l'extrait ; le terme réel est homéomorphisme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Continuité, uniforme continuité"
+ },
+ {
+  "uuid": "dVRI",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué, groupe quotient",
+  "raison": "Les questions demandent de montrer que K/H est un sous-groupe distingué de G/H et emploient les quotients de groupes, sans définition. Ces notions sont absentes de tous les programmes (règle 1 et pas de réduction par la règle 8).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe quotient, théorème de Lagrange"
+ },
+ {
+  "uuid": "dYnM",
+  "decision": "exclure",
+  "terme": "anneau quotient, structure quotient (Z2[x]/(g), Z2[x]/(f))",
+  "raison": "Les anneaux quotients Z2[x]/(g) et Z2[x]/(f) sont employés et étudiés (cardinal, inverse, corps ou non) sans définition. La structure quotient est absente de tous les programmes et ne peut pas être remplacée sans changer l'exercice.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "eAky",
+  "decision": "garder",
+  "terme": "forme quadratique hessienne",
+  "raison": "La réponse introduit explicitement la forme quadratique hessienne Q(u,v) par sa formule, ce qui la définit dans l'exercice (règle 2). L'étude d'extremums sous contrainte est au programme de MP, donc la règle 5 ne s'applique pas. Lecture discutable : la notion de forme quadratique n'est pas définie en tant que telle.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Haiku 5.5 v9",
+  "chapitre": "Fonction convexe"
+ },
+ {
+  "uuid": "eqbj",
+  "decision": "exclure",
+  "terme": "forme quadratique, signature",
+  "raison": "La forme quadratique q et sa signature (n-1,1), ainsi que la signature demandée dans les questions, sont employées sans définition dans l'énoncé. Ces notions sont absentes de tous les programmes.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "ErgM",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué (normal)",
+  "raison": "Les questions demandent de montrer que V est un sous-groupe distingué de A4, puis que <a> est distingué dans V mais non dans A4, sans définir la notion. Le sous-groupe distingué est absent de tous les programmes. Le groupe alterné A4 est au programme, mais ne suffit pas.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "ESW3",
+  "decision": "garder",
+  "terme": "rayon spectral, norme subordonnée",
+  "raison": "Le rayon spectral est défini dans l'énoncé à partir de notions du programme (valeurs propres, sup, module), donc règle 2. La norme subordonnée est au programme. Le théorème du rayon spectral est cité seulement dans la réponse, sans être demandé (règle 3). Lecture discutable sur ce dernier point.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "ETmS",
+  "decision": "exclure",
+  "terme": "anneau quotient (F3[X]/(X²+1), corps F9), forme σ-hermitienne, automorphisme de corps",
+  "raison": "L'anneau quotient F3[X]/(X²+1) est présenté comme corps, avec la notion de structure quotient absente des programmes. La forme σ-hermitienne est employée sans être définie. La notion de corps fini F9 et l'automorphisme de corps sont aussi hors programme. Plusieurs termes non définis, sans réduction possible.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "eu7r",
+  "decision": "exclure",
+  "terme": "forme polaire, signature, forme quadratique",
+  "raison": "Les questions demandent d'expliciter la forme polaire f et de trouver la signature de q, sans définir ces notions. La forme polaire et la signature sont absentes de tous les programmes (règle 1). La définition de q par sa matrice ne suffit pas à définir ces termes.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "exbG",
+  "decision": "exclure",
+  "terme": "structure quotient, extension de corps, corps fini",
+  "raison": "L'exercice demande de déterminer la structure des anneaux quotients K[x]/(...), qui est absente des programmes, et emploie des notions comme les diviseurs de zéro, les nilpotents ou les corps finis sans définition. La réponse utilise des extensions de corps (Q[i], Q[e^{iπ/4}]). Plusieurs termes hors programme sans réduction possible.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "feKJ",
+  "decision": "garder",
+  "terme": "forme différentielle (indication)",
+  "raison": "Le terme n'apparaît que dans l'indication, où la forme différentielle est la différentielle dg = P dx + Q dy d'une fonction de deux variables. Ce terme est remplaçable par la notion de différentielle d'une fonction de deux variables, au programme, sans changer l'exercice (règle 8). Le reste (changement de variables, jacobiennes, bijection) relève du programme. Lecture discutable.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "fnJh",
+  "decision": "exclure",
+  "terme": "espace de Banach, noyau résolvant",
+  "raison": "L'énoncé emploie espace de Banach et noyau résolvant R(t,a) sans les définir. Ces notions sont absentes de tous les programmes et ne peuvent pas être remplacées sans changer l'exercice (le cas général ne se réduit pas à la dimension finie).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Autre"
+ },
+ {
+  "uuid": "fREL",
+  "decision": "garder",
+  "terme": "difféomorphisme (C¹)",
+  "raison": "La question demande un C¹-difféomorphisme croissant de R sur R, ce qui équivaut à une bijection C¹ dont la réciproque est C¹. C'est l'exemple exact de la règle 8 (notation remplaçable). Le reste (polynômes, racines, DL, équivalents) relève du programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Développement limité"
+ },
+ {
+  "uuid": "FRzM",
+  "decision": "exclure",
+  "terme": "composantes connexes, connexité (autre que par arcs)",
+  "raison": "Les questions demandent de montrer que R^n privé d'un hyperplan a deux composantes connexes, et que R^n privé d'un sous-espace de dimension plus petite est connexe, sans définir ces notions. La connexité autre que par arcs est absente de tous les programmes. Un remplacement par la connexité par arcs (au programme de MP) est discutable (règle 8).",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Connexité"
+ },
+ {
+  "uuid": "ROfY",
+  "decision": "exclure",
+  "terme": "structure quotient",
+  "raison": "Les questions demandent des groupes quotients Z/nZ et rappellent que les sous-groupes sont distingués, sans définir ces notions. Z/nZ est l'objet de l'exercice, donc la règle 8 ne s'applique pas. Règle 1 et règle 2 (employé sans définition).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe quotient, théorème de Lagrange"
+ },
+ {
+  "uuid": "rqJP",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "« la forme quadratique associée à f » est employée sans définition. La question demande ensuite la matrice de q et ses valeurs propres. Lecture défendable : q serait seulement la partie homogène de degré 2 de f, ce qui ferait garder.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Conique"
+ },
+ {
+  "uuid": "rsjs",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "« forme quadratique en X » apparaît dans l'indication sans définition. Le problème J(X) = ½⟨AX,X⟩ − ⟨b,X⟩ ne nomme ni ne définit la notion. Lecture défendable : la notion ne serait qu'une écriture de J, ce qui ferait garder.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Haiku 5.5 v9",
+  "chapitre": "Apprentissage automatique"
+ },
+ {
+  "uuid": "rTQd",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "La réponse parle de « la matrice de la forme quadratique » et de sa réduction (valeurs propres, base orthonormée), sans définir la notion. Règle 1 et règle 2.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Conique"
+ },
+ {
+  "uuid": "Rw4k",
+  "decision": "exclure",
+  "terme": "statistique inférentielle",
+  "raison": "L'exercice demande l'estimateur du maximum de vraisemblance, un intervalle de confiance exact et la convergence en moyenne quadratique, toutes notions de statistique inférentielle signalée comme absente des programmes (règle 1). Le texte du fichier est tronqué vers la fin, ce qui n'a pas été vérifié. Une lecture où ces méthodes seraient traitables reste défendable.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "RXCX",
+  "decision": "exclure",
+  "terme": "forme différentielle, intégrale curviligne",
+  "raison": "L'exercice demande si des formes différentielles sont exactes, leurs primitives et un facteur intégrant, sans définir ces notions. Règle 1 et règle 2.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "RzX8",
+  "decision": "exclure",
+  "terme": "anneau principal",
+  "raison": "La question demande de montrer qu'un ensemble de rationnels est un anneau principal, sans définition. La notion est absente des programmes (règle 1 et règle 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "s0JY",
+  "decision": "garder",
+  "terme": "sous-variété, difféomorphisme, fonctions implicites",
+  "raison": "Le seul terme effectivement employé est « C¹-difféomorphisme » dans la réponse, pour le changement de paramètre t ↦ R ln|tan(t/2)| qui est une bijection C¹ de réciproque C¹. C'est le cas exemple de la règle 8. Les notions de développée et de rayon de courbure ne sont pas signalées et n'ont pas été tranchées ici.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Courbes planes"
+ },
+ {
+  "uuid": "S3yI",
+  "decision": "garder",
+  "terme": "sous-variété, difféomorphisme, fonctions implicites",
+  "raison": "« C¹-difféomorphisme » ne désigne qu'une bijection C¹ de réciproque C¹ (règle 8). La question « (pourquoi ?) » demande de justifier ce point, ce qui passe par le théorème d'inversion locale. Ce résultat n'est pas nommé, donc la règle 3 ne fait pas exclure. Une lecture exclusive reste défendable.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Solution maximale"
+ },
+ {
+  "uuid": "S6PX",
+  "decision": "garder",
+  "terme": "sous-variété, difféomorphisme, fonctions implicites",
+  "raison": "Même énoncé que S3yI : « C¹-difféomorphisme » est une notation remplaçable par une bijection C¹ de réciproque C¹ (règle 8). La justification demandée (« pourquoi ? ») relève du théorème d'inversion locale, non nommé (règle 3). Lecture exclusive défendable.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Théorème de Cauchy-Lipschitz"
+ },
+ {
+  "uuid": "SCay",
+  "decision": "exclure",
+  "terme": "espace métrique",
+  "raison": "« Soit X un espace métrique » est posé sans définition. Le terme est signalé comme absent des programmes, mais il n'est pas dans la liste explicite d'absences du lot ; la connexité par arcs, elle, est au programme de MP. Lecture défendable : le contexte métrique ne serait qu'un cadre, ce qui ferait garder.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Connexité"
+ },
+ {
+  "uuid": "SdMW",
+  "decision": "exclure",
+  "terme": "forme quadratique, signature",
+  "raison": "Les questions demandent que ᵗAA soit la matrice d'une forme quadratique positive, puis sa signature, sans définir ces notions. Règle 1 et règle 2.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "si1j",
+  "decision": "garder",
+  "terme": "difféomorphisme",
+  "raison": "« C∞ difféomorphisme » ne désigne ici qu'une bijection C∞ de réciproque C∞ (règle 8). La preuve ne nomme pas de résultat hors programme : la régularité de f découle de f' = f⁻¹, sans théorème d'inversion locale nommé (règle 3).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Dérivabilité des fonctions réelles"
+ },
+ {
+  "uuid": "SQHP",
+  "decision": "exclure",
+  "terme": "espace complet, Banach, Hilbert",
+  "raison": "La question demande de montrer que l'espace E des suites sommables est complet pour la norme de la somme. La notion d'espace complet est signalée comme absente des programmes et elle est demandée (règle 1).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "SxLq",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "« Soit q une forme quadratique sur ℝⁿ » est employé sans définition. La phrase « f la forme bilinéaire symétrique associée » définit f à partir de q, pas la notion de forme quadratique. Lecture défendable : la notion serait implicite via la polarisation, ce qui ferait garder.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "FUh4",
+  "decision": "exclure",
+  "terme": "Sylow (5-Sylow), sous-groupe distingué",
+  "raison": "Règle 1 et règle 3 : le 5-Sylow est nommé et demandé dans la question (combien de 5-Sylow), sans définition. Le « sous-groupe distingué » est employé dans la réponse sans définition, ce qui exclut aussi (règle 9).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe fini"
+ },
+ {
+  "uuid": "fwcn",
+  "decision": "exclure",
+  "terme": "anneau factoriel, anneau principal, idéal principal",
+  "raison": "Règle 1 : l'énoncé pose « Soit A un anneau factoriel » et la question porte sur les idéaux principaux, sans définition de ces notions hors programme.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Polynôme"
+ },
+ {
+  "uuid": "FyuP",
+  "decision": "exclure",
+  "terme": "forme différentielle, forme fermée, intégrale curviligne, champ de gradients",
+  "raison": "Règle 1 : la forme différentielle et la notion de forme fermée sont employées et demandées sans définition ; elles ne se réécrivent pas en notions du programme sans changer l'exercice (règle 8 non applicable).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "FZTC",
+  "decision": "garder",
+  "terme": "homéomorphisme, homéomorphe",
+  "raison": "Règle 8 : « homéomorphe » ne fait que désigner une bijection continue de réciproque continue, notion du programme. L'exercice se réécrit à l'identique avec cette formulation, comme l'exemple du C1-difféomorphisme. Lecture alternative : homéomorphisme comme notion nouvelle, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Continuité, uniforme continuité"
+ },
+ {
+  "uuid": "FzUc",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "Règle 2 : la forme quadratique q est introduite sans définition dans l'énoncé et les questions (injectivité, surjectivité) portent dessus. Le terme ne se remplace pas par une notion du programme sans changer l'exercice.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "G1OC",
+  "decision": "exclure",
+  "terme": "2-Sylow, conjugués, action naturelle de groupe",
+  "raison": "Règle 3 : les 2-Sylow sont nommés et demandés dans la question 3 et 4, sans définition. Les notions de conjugaison et d'action de groupe sont également employées hors programme. Le groupe diédral, lui, est défini dans l'énoncé à partir des isométries, ce qui ne suffit pas à le garder.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Forme bilinéaire"
+ },
+ {
+  "uuid": "g769",
+  "decision": "exclure",
+  "terme": "forme quadratique, signature",
+  "raison": "Règle 3 : la signature est une notion nommée et demandée, hors programme. La forme quadratique n'est pas définie comme notion (seule une expression explicite est donnée). Le rejet tient à la signature.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "g7gd",
+  "decision": "exclure",
+  "terme": "forme différentielle, forme exacte, facteur intégrant",
+  "raison": "Règle 1 et règle 3 : la question demande « à quelle condition ω est-elle exacte », notion nommée et demandée sans définition. La forme différentielle est aussi employée sans définition. Le facteur intégrant est défini dans l'énoncé, mais cela ne sauve pas l'exercice.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "GFrG",
+  "decision": "garder",
+  "terme": "réseau de neurones, ReLU",
+  "raison": "Règle 2 : l'énoncé décrit lui-même le réseau (entrée de dimension 3, couche cachée de 4 neurones ReLU, sortie scalaire), et le calcul ne porte que sur un comptage de paramètres avec des notions élémentaires. La fonction ReLU est nommée sans définition formelle ; d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "GGba",
+  "decision": "exclure",
+  "terme": "sous-groupe distingué, indice d'un sous-groupe",
+  "raison": "Règle 1 et règle 3 : « sous-groupe distingué d'indice 2 » est demandé explicitement dans la question, sans définition. Le groupe alterné est au programme (MP), mais ne suffit pas à garder l'exercice.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Sous-groupe, morphisme"
+ },
+ {
+  "uuid": "gkVL",
+  "decision": "garder",
+  "terme": "réseau de neurones, rétropropagation, ReLU, neurone mort",
+  "raison": "Règle 2 : l'énoncé définit lui-même le réseau (une entrée, deux neurones ReLU cachés, une sortie) par des formules matricielles et par la dérivée de ReLU. Le calcul du gradient n'utilise que dérivées et matrices au programme. Lecture alternative : la rétropropagation est une méthode nommée, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "gTsQ",
+  "decision": "exclure",
+  "terme": "forme quadratique, rang et signature",
+  "raison": "Règle 2 et règle 3 : la forme quadratique n'est pas définie et la signature est nommée et demandée dans l'énoncé (« rang et signature »), sans définition.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "gyCM",
+  "decision": "exclure",
+  "terme": "groupe diédral de degré m, groupe défini par générateurs et relations",
+  "raison": "Règle 1 : D_m est invoqué comme « le groupe diédral de degré m » sans définition, et G est défini par générateurs et relations hors programme, dont la limite m infini. Lecture alternative : D_m comme simple notation d'un groupe d'isométries, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe fini"
+ },
+ {
+  "uuid": "gzVI",
+  "decision": "garder",
+  "terme": "corps fini, extension de corps (F_7)",
+  "raison": "Règle 8 : F_7 est une notation pour Z/7Z, corps fini au programme (MP). La réponse invoque le théorème sur le groupe des inversibles d'un corps fini, mais il n'est pas demandé et une autre voie au programme existe (règle 4, générateur d'ordre 6). La mention de « corps fini » dans la réponse reste une incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "h0J3",
+  "decision": "garder",
+  "terme": "homéomorphisme",
+  "raison": "Règle 8 : « homéomorphisme » désigne une bijection continue de réciproque continue, notion du programme. Les questions se réécrivent à l'identique avec cette formulation, comme pour FZTC. Lecture alternative : notion hors programme nouvelle, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Compacité"
+ },
+ {
+  "uuid": "mQ0S",
+  "decision": "garder",
+  "terme": "corps fini (extension de corps)",
+  "raison": "Le terme « corps fini » n'est pas défini, mais c'est une notation remplaçable par « corps K de cardinal fini » (notions de corps et d'ensemble fini, au programme) sans changer l'exercice, ce qui relève de la règle 8 et du cas « Z/pZ est un corps fini » du cadrage.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "MVjk",
+  "decision": "exclure",
+  "terme": "théorème du point fixe (réponse, espace complet)",
+  "raison": "La réponse emploie « le théorème du point fixe » comme alternative au passage à la limite, sans le définir ni le démontrer ; le cadrage exclut tout terme employé dans la réponse, même en remarque. La règle 4 (une autre voie au programme existe, à savoir le passage à la limite) pourrait être invoquée pour garder, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Probabilité discrète"
+ },
+ {
+  "uuid": "N0FK",
+  "decision": "exclure",
+  "terme": "forme quadratique",
+  "raison": "« Soit q une forme quadratique sur un espace vectoriel E » : le terme est employé dans l'énoncé sans définition et n'est pas au programme d'aucune filière (règle 1 et 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "n0Tn",
+  "decision": "exclure",
+  "terme": "forme quadratique ; signature",
+  "raison": "La forme quadratique est donnée par une formule explicite (q(x)=α‖x‖²+β(x|a)²), ce qui pourrait valoir définition par l'énoncé (règle 2). Mais la question demande de « discuter de la signature », notion hors programme non définie dans l'énoncé : une seule question suffit (règle 1 et 2).",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "n0Uc",
+  "decision": "garder",
+  "terme": "rayon spectral ; norme sous-multiplicative",
+  "raison": "L'énoncé définit lui-même le rayon spectral par ρ(A)=Max{|λ|, λ∈Sp(A)} à partir de notions au programme (règle 2). Le théorème spectral et la norme subordonnée sont au programme. Reste la remarque « norme sous-multiplicative », qui pourrait être hors programme si elle n'est pas comprise dans la notion de norme matricielle.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "nEkp",
+  "decision": "garder",
+  "terme": "réseau de neurones",
+  "raison": "L'énoncé décrit et définit le réseau par son architecture (une couche cachée de h neurones, entrées 1 ou 3, une sortie), et l'exercice est un pur dénombrement de paramètres à partir de cette description, avec des notions au programme (règle 2, règle 8). Les termes « neurone » et « biais » ne sont pas définis formellement, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "ntOd",
+  "decision": "exclure",
+  "terme": "théorème du point fixe ; contractante",
+  "raison": "La réponse conclut la convergence « le théorème du point fixe donne le résultat demandé » sans définir ce théorème, et la question demande de déduire la convergence. Le terme est employé dans la réponse, ce qui exclut selon le cadrage ; la règle 4 n'apporte ici aucune autre voie au programme proposée dans le texte.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Différentiabilité, calcul de différentielles"
+ },
+ {
+  "uuid": "NWAk",
+  "decision": "garder",
+  "terme": "intégrale de Lebesgue, mesure (faux positif : théorème de convergence monotone)",
+  "raison": "Les termes signalés n'apparaissent pas dans le texte. L'expression « théorème de convergence monotone » porte sur des suites réelles bornées ou croissantes majorées : c'est le théorème de la limite monotone, au programme, et non le théorème de Lebesgue. C'est un faux positif (autre sens du mot).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Ensembles et applications"
+ },
+ {
+  "uuid": "OIOG",
+  "decision": "exclure",
+  "terme": "2-Sylow ; action de groupe ; conjugaison",
+  "raison": "Le groupe dihédral est défini par l'énoncé (règle 2, garder à ce titre), mais les questions demandent les 2-Sylow de D_n, sans définition, notion hors programme. Une seule question suffit (règle 1). L'indication « à l'aide d'une action de groupe » et la conjugaison de sous-groupes sont également employées sans définition.",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe cyclique"
+ },
+ {
+  "uuid": "oLBj",
+  "decision": "exclure",
+  "terme": "quaternions (ℍ, j, k)",
+  "raison": "Les quaternions ℍ et les éléments j, k ne sont ni définis dans l'énoncé ni au programme ; l'exercice repose entièrement sur leur multiplication (jqj⁻¹). Employés sans définition, ils excluent (règle 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Groupe orthogonal et quaternions"
+ },
+ {
+  "uuid": "OlvD",
+  "decision": "exclure",
+  "terme": "espace complet ; théorème du point fixe",
+  "raison": "La question demande de « rappeler que (C([a,b]),‖·‖∞) est un espace complet », notion hors programme employée sans définition, et la réponse invoque le théorème du point fixe sans le définir (règles 1 et 2 ; cadrage).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Théorème du point fixe"
+ },
+ {
+  "uuid": "P6Td",
+  "decision": "exclure",
+  "terme": "forme différentielle ; intégrale curviligne ; forme exacte / fermée ; ouvert étoilé",
+  "raison": "L'énoncé emploie « forme différentielle » et « intégrale de la forme différentielle le long du contour » sans définition. La réponse utilise « exacte », « fermée » et « ouvert étoilé » sans les définir, et ces notions ne sont au programme d'aucune filière (règles 1 et 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "pb50",
+  "decision": "exclure",
+  "terme": "anneau factoriel ; anneau principal ; idéal premier ; idéal maximal",
+  "raison": "Les questions demandent de montrer que Z[X] est factoriel, non principal, que (X) est premier mais non maximal, notions hors programme employées sans définition (règles 1 et 2).",
+  "incertain": false,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Anneau, corps"
+ },
+ {
+  "uuid": "PDt8",
+  "decision": "garder",
+  "terme": "difféomorphisme (C¹ / C²) ; sous-variété ; fonctions implicites",
+  "raison": "Les « C¹/C²-difféomorphismes » sont des bijections de classe C^k dont la réciproque est C^k, ce qui est remplaçable par des notions au programme sans changer l'exercice (règle 8, cas cité dans le cadrage). Le texte est tronqué dans le fichier (« [… texte tronqué] » après la réponse de la question sur f(x,y)=g(u,v)), donc un terme signalé pourrait figurer dans la partie absente.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Equation différentielle"
+ },
+ {
+  "uuid": "pIFh",
+  "decision": "exclure",
+  "terme": "connexe (connexité autre que par arcs)",
+  "raison": "La question demande de montrer que Ω est connexe, sans préciser « par arcs ». Au sens topologique, la connexité est hors programme (le programme MP ne retient que la connexité par arcs) ; employée sans définition, elle exclut (règle 2). Si l'on lit « connexe par arcs », l'exercice serait gardé (MP, règle 5), d'où l'incertitude.",
+  "incertain": true,
+  "passage": "arbitrage final (termes de L3, consigne explicite)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Différentiabilité, calcul de différentielles"
  }
 ]

@@ -751,22 +751,21 @@ S'y appliquent ensuite les verdicts que le relecteur a tranchés (XhZo, buqo,
 du modèle dont le chapitre n'a pas d'équivalent dans la table est hors CPGE.
 
 Bilan au 23 octobre 2026 : toute la base (8 716 exercices) est étiquetée, dont
-1 617 hors CPGE. Avant les étiquetages ci-dessous, 6 899 exercices dont 531 hors CPGE.
+1 804 hors CPGE. Il ne reste qu'un énoncé vide.
 
-- Les 36 exercices gardés en CPGE sans aucun groupe (32 venaient d'Albert)
-  ont été réétiquetés par Haiku 5.5 avec la consigne de retenir au moins un
-  groupe : 16 sont rattachés, 20 passent hors CPGE
-  (`claude_claude-haiku-5-5.v9.reprise.jsonl`). OCRy, gardé en CPGE par le
-  relecteur sans groupe (« trop difficile sauf peut-être en MP »), est
-  rattaché au seul nœud MP/MPI de G275 (équations scalaires d'ordre n).
-- Les 12 exercices du pilote v7 et des deux chapitres signalés par le
-  contrôle par mots-clés ont été arbitrés : 8 exclus, 4 gardés (terme défini
-  par l'énoncé). Deux décisions de l'arbitre ont été corrigées par cohérence
-  avec les règles : 3FM1 gardé (Argch posé égal à un logarithme, règle 8,
-  comme qGeV) et CTBb exclu (théorème de Ptolémée nommé et demandé, règle 3).
-- Reste un énoncé vide, et les 1 817 exercices de L3 réservés à Haiku (le M1,
-  7 exercices de distributions et de transformée de Fourier, est hors CPGE
-  par règle).
+- Albert (deepseek-v4-flash) a étiqueté la L1, la L2 et la L3 hors des
+  chapitres exclus par règle ; la répartition saute ces chapitres.
+- Les exercices gardés en CPGE sans aucun groupe (36, puis 18 en L3) ont été
+  réétiquetés par Haiku 5.5 (`claude_claude-haiku-5-5.v9.reprise.jsonl`) :
+  la plupart passent hors CPGE. OCRy est rattaché au seul nœud MP/MPI de
+  G275 sur décision du relecteur.
+- Le contrôle par mots-clés, étendu aux notions de L3, a signalé 358
+  exercices au total ; tous sont arbitrés par Haiku 5.5 avec une consigne qui
+  énumère les termes absents du texte officiel et ceux qui y figurent
+  (`controle-mots-cles.decisions.json`). Les maintiens reposent sur une
+  définition donnée par l'énoncé ou une notation remplaçable (Z/pZ « corps
+  fini », C¹-difféomorphisme), jamais sur une appartenance supposée au
+  programme.
 
 ## Intégration dans l'application
 
