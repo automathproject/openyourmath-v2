@@ -1188,5 +1188,125 @@
   "passage": "réarbitrage",
   "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
   "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "1mt2",
+  "decision": "exclure",
+  "terme": "décomposition de Dunford",
+  "raison": "L'énoncé demande « Ecrire la décomposition de Dunford de B » sans la définir. La définition (D diagonalisable, N nilpotente, qui commutent) n'apparaît que dans la réponse. Lecture défendable selon laquelle la réponse définit le terme.",
+  "incertain": true,
+  "passage": "arbitrage des sources antérieures à la règle",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur"
+ },
+ {
+  "uuid": "1xSa",
+  "decision": "exclure",
+  "terme": "division suivant les puissances croissantes",
+  "raison": "Employée dans la question « utiliser une division suivant les puissances croissantes » sans aucune définition dans l'énoncé.",
+  "incertain": false,
+  "passage": "arbitrage des sources antérieures à la règle",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Polynôme, fraction rationnelle"
+ },
+ {
+  "uuid": "3FM1",
+  "decision": "garder",
+  "terme": "fonction hyperbolique réciproque",
+  "raison": "Corrigé (règle 8, comme qGeV) : la réponse pose Argch t = ln(t + √(t²−1)), notation remplaçable par une notion du programme.",
+  "incertain": false,
+  "passage": "correction (cohérence avec qGeV)",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Série entière"
+ },
+ {
+  "uuid": "3IhB",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque",
+  "raison": "Argth et Argth/Arctan sont employés dans les réponses (Argth √x, Argth u, etc.) sans aucune définition dans l'énoncé.",
+  "incertain": false,
+  "passage": "arbitrage des sources antérieures à la règle",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Série entière"
+ },
+ {
+  "uuid": "90sE",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque",
+  "raison": "Argch est utilisée dans les réponses et la démonstration (primitives, cas x ∈ ]-4,0]) sans être définie ni dans l'énoncé ni dans la réponse.",
+  "incertain": false,
+  "passage": "arbitrage des sources antérieures à la règle",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Série entière"
+ },
+ {
+  "uuid": "CTBb",
+  "decision": "exclure",
+  "terme": "théorème de Ptolémée",
+  "raison": "Corrigé (règle 3) : le birapport est défini par l'énoncé, mais le théorème de Ptolémée, hors programme, est nommé et demandé.",
+  "incertain": false,
+  "passage": "correction (règle 3)",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Nombres complexes"
+ },
+ {
+  "uuid": "GalM",
+  "decision": "exclure",
+  "terme": "division suivant les puissances croissantes",
+  "raison": "Employée dans la réponse (« Soit 2 = A(X)(X−2)^n + X^n B(X) la division suivant les puissances croissantes ... à l'ordre n ») sans définition dans l'énoncé. Lecture défendable : la division pourrait être remplacée par un développement limité, notion au programme (règle 8).",
+  "incertain": true,
+  "passage": "arbitrage des sources antérieures à la règle",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Polynôme, fraction rationnelle"
+ },
+ {
+  "uuid": "kCw0",
+  "decision": "exclure",
+  "terme": "division suivant les puissances croissantes",
+  "raison": "Demandée dans la question elle-même : « Effectuer la division suivant les puissances croissantes à un ordre quelconque de 1−X² par 1−2X cos θ + X² ». Aucune définition.",
+  "incertain": false,
+  "passage": "arbitrage des sources antérieures à la règle",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Polynôme, fraction rationnelle"
+ },
+ {
+  "uuid": "nqfB",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "La question demande de montrer que le complémentaire de Ω est « connexe », sans définir la notion. Lecture défendable : connexe au sens de connexe par arcs, notion au programme de certaines filières (MP, PC, PSI), ce qui pourrait permettre de garder l'exercice.",
+  "incertain": true,
+  "passage": "arbitrage des sources antérieures à la règle",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "uq3f",
+  "decision": "garder",
+  "terme": "différence symétrique",
+  "raison": "L'énoncé définit lui-même A Δ B = (A\\B) ∪ (B\\A), à partir des ensembles et de leurs opérations (règle 2).",
+  "incertain": false,
+  "passage": "arbitrage des sources antérieures à la règle",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Ensembles et applications"
+ },
+ {
+  "uuid": "yPSI",
+  "decision": "garder",
+  "terme": "birapport",
+  "raison": "Le birapport est défini par formule dans le texte de l'énoncé (résultat admis : [a,b,c,d] := (a−c)(b−d)/((b−c)(a−d))), à partir des nombres complexes (règle 2).",
+  "incertain": false,
+  "passage": "arbitrage des sources antérieures à la règle",
+  "fichier": "pilote Opus v7",
+  "chapitre": "Nombres complexes"
+ },
+ {
+  "uuid": "zvcK",
+  "decision": "garder",
+  "terme": "décomposition de Dunford",
+  "raison": "L'énoncé définit la décomposition : P^{-1}AP = D+N avec D semi-simple et N nilpotente, qui commutent. La notion est donc définie dans l'énoncé. Réserve : « semi-simple » n'est pas défini et est proche de la diagonalisabilité, et plusieurs méthodes de résolution au programme sont listées (règle 4).",
+  "incertain": true,
+  "passage": "arbitrage des sources antérieures à la règle",
+  "fichier": "deux chapitres (passage A, concordant)",
+  "chapitre": "Système linéaire à  coefficients constants"
  }
 ]

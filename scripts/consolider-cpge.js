@@ -5,7 +5,8 @@
 // disponible (voir docs/classification-cpge.md), dans cet ordre :
 //   1. la relecture humaine (pages de contrôle, export de leur base) ;
 //   2. l'algèbre de L1 en deux passages arbitrés, avec les règles tranchées ;
-//   3. l'essai Haiku 5.5 (v9), puis 4. la masse Haiku 5.5 (v9) ;
+//   3. la reprise Haiku 5.5 des exercices restés sans rattachement, l'essai
+//      Haiku 5.5 (v9), puis 4. la masse Haiku 5.5 (v9) ;
 //   5. la masse Albert (deepseek-v4-flash, v9) ;
 //   6. les deux chapitres en deux passages (passage A quand A et B concordent) ;
 //   7. le pilote Opus (v7) ;
@@ -41,6 +42,12 @@ const VERDICTS_RELECTEUR = {
   XhZo: 'connexité autre que par arcs',
   buqo: 'différence symétrique Δ employée sans définition',
   '2MXQ': 'différence symétrique Δ employée sans définition'
+};
+
+// Rattachements décidés par le relecteur après sa relecture (nœuds retenus).
+const RATTACHEMENTS_RELECTEUR = {
+  // x⁽⁴⁾ + 2x″ + x = 0 : « trop difficile sauf peut-être en MP » ; seul MP traite l'ordre n.
+  OCRy: ['mp-mpi.equations-differentielles-lineaires.b']
 };
 
 const lireJsonl = f => new Map(fs.readFileSync(path.join(REPORTS, f), 'utf8').split('\n').filter(Boolean)
@@ -109,6 +116,7 @@ for (const [uuid, avis] of Object.entries(lireAvis(option('--avis-divergences'))
 // 2 à 5. Étiquetages v8-v9.
 for (const [f, source] of [
   ['claude_opus-5-5+haiku-5-5.algebre-l1.final.jsonl', 'algèbre de L1 (deux passages Opus, arbitrage)'],
+  ['claude_claude-haiku-5-5.v9.reprise.jsonl', 'Haiku 5.5 v9 (reprise des exercices sans rattachement)'],
   ['claude_claude-haiku-5-5.v9.exo7-l1-essai.jsonl', 'Haiku 5.5 v9 (essai)'],
   ['claude_claude-haiku-5-5.v9.masse.jsonl', 'Haiku 5.5 v9'],
   ['albert_deepseek-v4-flash-0731.v9.masse.jsonl', 'Albert deepseek-v4-flash v9']
@@ -138,6 +146,10 @@ for (const row of db.prepare("SELECT uuid, level, chapter, subchapter, title FRO
 for (const [uuid, terme] of Object.entries(VERDICTS_RELECTEUR)) {
   const e = consolide.get(uuid);
   if (e) Object.assign(e, { releve_cpge: false, propositions: [], motif: `Hors CPGE pour le relecteur : ${terme}.`, verdict_relecteur: true });
+}
+for (const [uuid, noeuds] of Object.entries(RATTACHEMENTS_RELECTEUR)) {
+  const e = consolide.get(uuid);
+  if (e) e.propositions = noeuds.map(noeud => ({ noeud, groupe: groupeDe.get(noeud)?.code, origine: 'relecteur', confiance: 1 }));
 }
 const decisions = JSON.parse(fs.readFileSync(path.join(REPORTS, 'controle-mots-cles.decisions.json'), 'utf8'));
 for (const d of decisions) {

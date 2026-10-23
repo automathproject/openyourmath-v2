@@ -740,15 +740,22 @@ S'y appliquent ensuite les verdicts que le relecteur a tranchés (XhZo, buqo,
 2MXQ) et les décisions du contrôle par mots-clés. Un exercice sans verdict
 du modèle dont le chapitre n'a pas d'équivalent dans la table est hors CPGE.
 
-Bilan au 23 octobre 2026 : 6 899 exercices, dont 504 hors CPGE. Restent à
-traiter :
+Bilan au 23 octobre 2026 : 6 899 exercices, dont 531 hors CPGE.
 
-- 1 817 exercices de L3, réservés à Haiku (le M1, 7 exercices de distributions
-  et de transformée de Fourier, est hors CPGE par règle) ;
-- 37 exercices en CPGE sans aucun groupe (réponse incohérente du modèle,
-  `sans_rattachement`) et un énoncé vide ;
-- 12 exercices signalés par le contrôle par mots-clés dans le pilote v7 et
-  les deux chapitres, antérieurs à la règle d'exclusion, à arbitrer.
+- Les 36 exercices gardés en CPGE sans aucun groupe (32 venaient d'Albert)
+  ont été réétiquetés par Haiku 5.5 avec la consigne de retenir au moins un
+  groupe : 16 sont rattachés, 20 passent hors CPGE
+  (`claude_claude-haiku-5-5.v9.reprise.jsonl`). OCRy, gardé en CPGE par le
+  relecteur sans groupe (« trop difficile sauf peut-être en MP »), est
+  rattaché au seul nœud MP/MPI de G275 (équations scalaires d'ordre n).
+- Les 12 exercices du pilote v7 et des deux chapitres signalés par le
+  contrôle par mots-clés ont été arbitrés : 8 exclus, 4 gardés (terme défini
+  par l'énoncé). Deux décisions de l'arbitre ont été corrigées par cohérence
+  avec les règles : 3FM1 gardé (Argch posé égal à un logarithme, règle 8,
+  comme qGeV) et CTBb exclu (théorème de Ptolémée nommé et demandé, règle 3).
+- Reste un énoncé vide, et les 1 817 exercices de L3 réservés à Haiku (le M1,
+  7 exercices de distributions et de transformée de Fourier, est hors CPGE
+  par règle).
 
 ## Intégration dans l'application
 
