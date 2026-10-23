@@ -740,10 +740,11 @@ S'y appliquent ensuite les verdicts que le relecteur a tranchés (XhZo, buqo,
 2MXQ) et les décisions du contrôle par mots-clés. Un exercice sans verdict
 du modèle dont le chapitre n'a pas d'équivalent dans la table est hors CPGE.
 
-Bilan au 23 octobre 2026 : 6 892 exercices, dont 497 hors CPGE. Restent à
+Bilan au 23 octobre 2026 : 6 899 exercices, dont 504 hors CPGE. Restent à
 traiter :
 
-- 1 824 exercices de L3 et M1, réservés à Haiku ;
+- 1 817 exercices de L3, réservés à Haiku (le M1, 7 exercices de distributions
+  et de transformée de Fourier, est hors CPGE par règle) ;
 - 37 exercices en CPGE sans aucun groupe (réponse incohérente du modèle,
   `sans_rattachement`) et un énoncé vide ;
 - 12 exercices signalés par le contrôle par mots-clés dans le pilote v7 et

@@ -8,7 +8,8 @@
 //   3. l'essai Haiku 5.5 (v9), puis 4. la masse Haiku 5.5 (v9) ;
 //   5. la masse Albert (deepseek-v4-flash, v9) ;
 //   6. les deux chapitres en deux passages (passage A quand A et B concordent) ;
-//   7. le pilote Opus (v7).
+//   7. le pilote Opus (v7) ;
+//   8. pour le niveau M1, hors CPGE par règle, sans appel au modèle.
 // Les décisions du contrôle par mots-clés et les verdicts corrigés par le
 // relecteur s'appliquent ensuite.
 //
@@ -21,6 +22,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { createRequire } from 'module';
 import { collectReferentiel } from './build-referentiel-cpge.js';
 import { loadConcordance, indexNodes, buildCandidates } from './utils/cpge-candidats.js';
 import { PROJECT_ROOT } from './utils/content-paths.js';
@@ -120,6 +122,17 @@ for (const [uuid, a] of A2) {
 
 // 7. Pilote Opus v7.
 for (const [uuid, e] of v7) poser(uuid, e, 'pilote Opus v7');
+
+// 8. Niveau M1 : hors du périmètre des programmes de CPGE, sans appel au modèle.
+const require = createRequire(import.meta.url);
+const mod = require('better-sqlite3');
+const db = new (mod.default || mod)(path.join(PROJECT_ROOT, 'data/exercises.sqlite'), { readonly: true });
+for (const row of db.prepare("SELECT uuid, level, chapter, subchapter, title FROM exercises WHERE level = 'M1'").all()) {
+  poser(row.uuid, {
+    uuid: row.uuid, niveau: row.level, chapitre: row.chapter, sous_chapitre: row.subchapter, titre: row.title,
+    releve_cpge: false, motif: 'Niveau M1 : hors du périmètre des programmes de CPGE.', propositions: []
+  }, 'niveau M1 (règle)');
+}
 
 // Verdicts corrigés par le relecteur, puis contrôle par mots-clés.
 for (const [uuid, terme] of Object.entries(VERDICTS_RELECTEUR)) {

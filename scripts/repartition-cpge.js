@@ -42,7 +42,8 @@ for (const f of fs.readdirSync(REPORTS).filter(f => f.endsWith('.jsonl'))) {
 const mod = require('better-sqlite3');
 const Database = mod.default || mod;
 const db = new Database(path.join(PROJECT_ROOT, 'data/exercises.sqlite'), { readonly: true });
-const restants = db.prepare('SELECT uuid, level, chapter FROM exercises ORDER BY level, chapter, uuid').all()
+// Le M1 est hors CPGE par règle (consolider-cpge.js) : il n'entre dans aucune file.
+const restants = db.prepare("SELECT uuid, level, chapter FROM exercises WHERE level IS NOT 'M1' ORDER BY level, chapter, uuid").all()
   .filter(row => !faits.has(row.uuid));
 const pourAlbert = restants.filter(row => NIVEAUX_ALBERT.has(row.level));
 const fileHaiku = [...restants.filter(row => !NIVEAUX_ALBERT.has(row.level)), ...pourAlbert.toReversed()];
