@@ -1,0 +1,1549 @@
+[
+ {
+  "uuid": "Zmuc",
+  "fichier": "claude_claude-haiku-5-5.v9.exo7-l1-essai.jsonl",
+  "niveau": "L1",
+  "chapitre": "Polynôme, fraction rationnelle",
+  "termes": [
+   {
+    "terme": "enveloppe convexe",
+    "bloc": "X",
+    "extrait": "icients positifs des racines de $P$ (on dit que les racines de $P'$ sont dans l'enveloppe convexe des racines de $P$). Indication : calculer"
+   }
+  ]
+ },
+ {
+  "uuid": "0fdQ",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "niveau": "L3",
+  "chapitre": "Réseaux de neurones",
+  "termes": [
+   {
+    "terme": "réseau de neurones",
+    "bloc": "text",
+    "extrait": "[text] On considère le réseau de neurones à deux couches suivant où la fonction d'a"
+   }
+  ]
+ },
+ {
+  "uuid": "1Lj3",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Probabilité continue",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "indication",
+    "extrait": "a règle $\\var(\\alpha Z)=\\alpha^2\\var(Z)$ et les résultats précédents ; les deux estimateurs ont déjà la même espérance. [reponse] On a $$\\"
+   }
+  ]
+ },
+ {
+  "uuid": "64pg",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "question",
+    "extrait": "$. [question] Vérifier que $\\overline{X} = \\frac{1}{n} \\sum_{i=1}^n X_i$ est un estimateur de $q$ sans biais et convergent. \\reponse{ Chaq"
+   }
+  ]
+ },
+ {
+  "uuid": "CXE4",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "niveau": "L3",
+  "chapitre": "Réseaux de neurones",
+  "termes": [
+   {
+    "terme": "réseau de neurones",
+    "bloc": "text",
+    "extrait": "[text] Vous allez travailler avec un réseau de neurones à une couche cachée, conçu pour effectuer"
+   }
+  ]
+ },
+ {
+  "uuid": "ZMBI",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "indication",
+    "extrait": " se tromper, qu'il naît plus de filles que de garçons ? [indication] Utiliser l'intervalle de confiance de la question précédente : pour con"
+   }
+  ]
+ },
+ {
+  "uuid": "xkLh",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Réseaux de neurones",
+  "termes": [
+   {
+    "terme": "réseau de neurones",
+    "bloc": "question",
+    "extrait": "[question] Expliquer à l'aide d'un graphique ce que réalise le réseau de neurones suivant : \\begin{center} \\begin{tikzpict"
+   }
+  ]
+ },
+ {
+  "uuid": "jNXN",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Nombres complexes",
+  "termes": [
+   {
+    "terme": "espace métrique",
+    "bloc": "question",
+    "extrait": " des nombres complexes muni de la distance définie par $$d(z,w):=|w-z|$$ est un espace métrique, c'est à dire que pour tous $(x,y,z)\\in\\Cc^3"
+   }
+  ]
+ },
+ {
+  "uuid": "z8B0",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Matrice",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "$. Posons $a=\\Argth x$ de sorte que $x=\\mbox{th}a$. On a \n\n$$M(x)=\\frac{1}{\\sqrt{1-x^2}}\\left(\n\\begin{array}{cc}\n1&x\\\\\nx&1\n\\end{array}\n\\right)=\\ch a\\left(\n\\begin{array}{cc}\n1&\\tanh a\\\\\n\\tanh a&1\n\\end{array}\n\\right)=\\left(\n\\begin{array}{cc}\n\\ch a&\\sh a\\\\\n\\sh a&\\ch a\n\\end{array}\n\\right).$$\n\nPosons, pour $a\\in\\Rr$, $N(a)=\\left(\n\\begin{array}{cc}\n\\ch a&\\sh a\\\\\n\\sh a&\\ch a\n\\end{array}\n\\right)$. On a ainsi $\\forall x\\in",
+    "extrait": " Posons ensuite $G=\\{M(x),\\;x\\in]-1,1[\\}$. Soit alors $x\\in]-1,1[$. Posons $a=\\Argth x$ de sorte que $x=\\mbox{th}a$. On a $$M(x)=\\frac{1}"
+   }
+  ]
+ },
+ {
+  "uuid": "0QfV",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Calcul d'intégrales",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "reponse",
+    "extrait": "{}^{}\\frac{1}{\\sqrt{x^2+2x+5}}\\;dx&=\\int_{}^{}\\frac{1}{\\sqrt{(x+1)^2+2^2}}\\;dx=\\Argsh\\frac{x+1}{2}+C\\\\ &=\\ln(\\frac{x+1}{2}+\\sqrt{(\\frac{x+1"
+   }
+  ]
+ },
+ {
+  "uuid": "9axm",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Calcul d'intégrales",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "question",
+    "extrait": " x)- \\frac23 \\ln|1+2\\cos x| \\cr \\frac1{\\cos x\\cos 2x} & \\sqrt2\\Argth(\\sqrt2\\sin x) -\\Argth(\\sin x) \\cr \\frac1{\\sin x\\sqrt{\\"
+   }
+  ]
+ },
+ {
+  "uuid": "F4IT",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Calcul d'intégrales",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "question",
+    "extrait": "ray}{lllll} 1)\\;\\frac{1}{x\\ln x}&2)\\;\\Arcsin x&3)\\;\\Arctan x&4)\\;\\Arccos x&5)\\;\\Argsh x\\\\ 6)\\;\\Argch x&7)\\;\\Argth x&8)\\;\\ln(1+x^2)&9)\\;e^{\\A"
+   }
+  ]
+ },
+ {
+  "uuid": "1rM9",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Continuité, limite et étude de fonctions réelles",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "reponse",
+    "extrait": "ons suivantes : [question] $f(x) = \\frac 1{\\sqrt{x^2+x+1}}$. [reponse] $F(x) = \\Argsh\\left(\\frac{2x+1}{\\sqrt3}\\right)$. [question] $f(x) = \\"
+   }
+  ]
+ },
+ {
+  "uuid": "EdBL",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Continuité, limite et étude de fonctions réelles",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "question",
+    "extrait": "sqrt{x})=0\\Leftrightarrow x=1\\;\\mbox{ou}\\;x=4. \\end{align*} [question] $(**)\\;2\\Argsh x=\\Argch3-\\Argth\\frac{7}{9}$, [reponse] $\\Argch3=\\ln(3"
+   }
+  ]
+ },
+ {
+  "uuid": "cFZg",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Continuité, limite et étude de fonctions réelles",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "question",
+    "extrait": "[question] Simplifier $\\Argth\\left(\\frac {1+3\\tanh x}{3+\\tanh x}\\right)$. [reponse] "
+   }
+  ]
+ },
+ {
+  "uuid": "Xjzo",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Développement limité",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "question",
+    "extrait": "{x^2+1} -2\\sqrt[3]{x^3+x} + \\sqrt[4]{x^4+x^2} \\sim \\frac 1{12x}.$$ [question] $\\Argch\\left(\\frac1{\\cos x}\\right)$, en $0$ [repons"
+   }
+  ]
+ },
+ {
+  "uuid": "nIel",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Développement limité",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "question",
+    "extrait": "verses} \\begin{align*} \\Argth(\\sin x) &= x + x^3/6 + x^5/24 + o(x^5) "
+   }
+  ]
+ },
+ {
+  "uuid": "0unE",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Réseaux de neurones",
+  "termes": [
+   {
+    "terme": "réseau de neurones",
+    "bloc": "text",
+    "extrait": "[text] Trois capteurs renvoient chacun $0$ (pas d'alerte) ou $1$ (alerte). Un perceptron à trois entrées $x_1,x_2,x_3\\in\\{0,1\\}$ est défin"
+   }
+  ]
+ },
+ {
+  "uuid": "Pde0",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Réseaux de neurones",
+  "termes": [
+   {
+    "terme": "réseau de neurones",
+    "bloc": "text",
+    "extrait": "[text] On reprend, sur des données fictives, un perceptron à deux entrées qui reçoit la taille $t$ (en mètre"
+   }
+  ]
+ },
+ {
+  "uuid": "XDVP",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Réseaux de neurones",
+  "termes": [
+   {
+    "terme": "réseau de neurones",
+    "bloc": "text",
+    "extrait": "$ la fonction de Heaviside : $H(t)=1$ si $t\\geq0$ et $H(t)=0$ si $t<0$. Soit le perceptron linéaire à deux entrées de poids $a=3$ et $b=-2$,"
+   }
+  ]
+ },
+ {
+  "uuid": "u8jz",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Réseaux de neurones",
+  "termes": [
+   {
+    "terme": "réseau de neurones",
+    "bloc": "0,1",
+    "extrait": "ne couleur est codée par un triplet $(r,g,b)\\in[0,1]^3$ (rouge, vert, bleu). Un perceptron à trois entrées de poids $2$, $-2$ et $-2$, de bi"
+   }
+  ]
+ },
+ {
+  "uuid": "GgbS",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L1",
+  "chapitre": "Suite",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "question",
+    "extrait": "Arccos\\frac{1}{n}&3)\\;\\ch(\\sqrt{n})&4)\\;\\left(1+\\frac{1}{n}\\right)^n&5)\\;\\frac{\\Argch n}{\\sqrt{n^4+n^2-1}}\\\\ 6)\\;(1+\\sqrt{n})^{-\\sqrt{n}}&7)"
+   }
+  ]
+ },
+ {
+  "uuid": "4vZu",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Analyse vectorielle",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "0,2\\pi",
+    "extrait": "a_n(y')+b_n(x)b_n(y'))\\right)\\;(\\text{par linéarité des coefficients de \\textsc{Fourier}})\\\\ &= \\frac{L}{2}\\sum_{n=1}^{+\\infty}n(a_n(x)b_n("
+   }
+  ]
+ },
+ {
+  "uuid": "HD8C",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Courbes planes",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "reponse",
+    "extrait": "2\\ch^2t-\\frac14\\sh t$, $\\sqrt{x'^2+y'^2}=\\frac{\\ch^2t}{\\sqrt2}$. $L= \\int_{t=-\\Argsh 1}^{\\Argsh1}\\frac{\\ch^2td t}{\\sqrt2}=\\frac{\\ln(1+\\sqrt"
+   }
+  ]
+ },
+ {
+  "uuid": "fz8M",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Courbes planes",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "u\\sqrt{u^2+1}\\right",
+    "extrait": "nt_{0}^{a/p}\\frac{u^2+1-1}{\\sqrt{u^2+1}}\\;du\\\\ &=a\\sqrt{1+\\frac{a^2}{p^2}}-L+p\\Argsh\\left(\\frac{a}{p}\\right), \\end{align*} et donc \\begin{"
+   }
+  ]
+ },
+ {
+  "uuid": "c4MF",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Equation différentielle",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "$.}\n\nDans ce cas, $\\varepsilon =1$ puis $\\int_{}^{} \\frac{\n \\varepsilon}{2\\sqrt{\\varepsilon x}(1-x)}\\;dx=\\int_{}^{} \\frac{1}{1-u^2}\\;du=\\left\\{\n \\begin{array}{l}\n  \\frac{1}{2}\\ln\\left(\n  \\frac{\\sqrt{x}+1}{\\sqrt{x}-1}\\right)\\;\\text{si}\\;x>1\n \\\\\n\\rule{0mm}{5mm} \\Argth(\\sqrt{x})\\;\\text{si}\\;x\\in",
+    "extrait": "ft( \\frac{\\sqrt{x}+1}{\\sqrt{x}-1}\\right)\\;\\text{si}\\;x>1 \\\\ \\rule{0mm}{5mm} \\Argth(\\sqrt{x})\\;\\text{si}\\;x\\in]0,1[ \\end{array} \\right.+"
+   }
+  ]
+ },
+ {
+  "uuid": "foD9",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Equation différentielle",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "reponse",
+    "extrait": " + \\lambda e^{-x}$. [question] $2x(1-x)y' + (1-2x)y = 1$. [reponse] $y = \\frac{\\Argch(1-2x)+\\lambda}{2\\sqrt{x^2-x}}$ pour $x < 0$\\par "
+   }
+  ]
+ },
+ {
+  "uuid": "qGeV",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Equation différentielle",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "}=\\left\\{x\\mapsto\\lambda(2x^2+6x+5)e^{-x}+\\mu e^x+ \\frac{x+1}{2}e^{-x},\\;(\\lambda,\\mu)\\in\\Rr^2\\right\\}$.\n}\n\\end{center}\nPuisque la fonction $x\\mapsto \\frac{e^{-2x}}{\\sqrt{x^2+1}}$ est continue sur $\\Rr$, les solutions de $(E)$ sur $\\Rr$ constituent un $\\Rr$-espace affine de dimension $2$.\n\nL'équation caractéristique de l'équation homogène est $z^2+4z+4=0$. Puisque cette équation admet $-2$ pour racine double, les solutions de l'équation homogène associée sont les fonctions de la forme $x\\mapsto\\lambda e^{-2x}+\\mu xe^{-2x}$, $(\\lambda,\\mu)\\in\\Rr^2$.\n\nD'après la méthode de variation de la constante, il existe une solution particulière de $(E)$ sur $\\Rr$ de la forme $x\\mapsto\\lambda(x)e^{-2x}+\\mu(x)xe^{-2x}$ où $\\lambda$ et $\\mu$ sont deux fonctions dérivables sur $\\Rr$ telles que \n\n\\begin{center}\n$\\left\\{\n\\begin{array}{l}\n\\lambda'(x)e^{-2x}+\\mu'(x)xe^{-2x}=0\\\\\n-2\\lambda'(x)e^{-2x}+\\mu'(x)(-2x+1)e^{-2x}= \\frac{e^{-2x}}{\\sqrt{x^2+1}}\n\\end{array}\n\\right.$.\n\\end{center}\n\nLes formules de \\textsc{Cramer} fournissent $\\lambda'(x)= \\frac{1}{e^{-4x}}\\left|\n\\begin{array}{cc}\n0&xe^{-2x}\\\\\n \\frac{e^{-2x}}{\\sqrt{x^2+1}}&(-2x+1)e^{-2x}\n\\end{array}\n\\right|=- \\frac{x}{\\sqrt{x^2+1}}$ et \n\n$\\mu'(x)= \\frac{1}{e^{-4x}}\\left|\n\\begin{array}{cc}\ne^{-2x}&0\\\\\n-2e^{-2x}& \\frac{e^{-2x}}{\\sqrt{x^2+1}}\n\\end{array}\n\\right|= \\frac{1}{\\sqrt{x^2+1}}$. On peut prendre $\\lambda(x)=-\\sqrt{x^2+1}$ et $\\mu(x)=\\Argsh(x)=\\ln\\left(x+\\sqrt{x^2+1}\\right)$ puis $f_0(x)=\\left(-\\sqrt{x^2+1}+x\\ln\\left(x+\\sqrt{x^2+1}\\right)\\right)e^{-2x}$.\n\n\\begin{center}\n\\fbox{\n$\\mathcal{S}_\\Rr=\\left\\{x\\mapsto\\left(\\lambda+\\mu x+\\left(-\\sqrt{x^2+1}+x\\ln\\left(x+\\sqrt{x^2+1}\\right)\\right)\\right)e^{-2x},\\;(\\lambda,\\mu)\\in\\Rr^2\\right\\}$.\n}\n\\end{center",
+    "extrait": "\\frac{1}{\\sqrt{x^2+1}}$. On peut prendre $\\lambda(x)=-\\sqrt{x^2+1}$ et $\\mu(x)=\\Argsh(x)=\\ln\\left(x+\\sqrt{x^2+1}\\right)$ puis $f_0(x)=\\left("
+   }
+  ]
+ },
+ {
+  "uuid": "MiMx",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Espace euclidien, espace normé",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "0,2\\pi",
+    "extrait": "tion : Soit $f : {[0,2\\pi]} \\to {\\R}$ continue. On appelle {\\it coefficients de Fourier de $f$\\/} les réels : $$ c_k(f) = \\int_{t=0}^{2\\pi}"
+   }
+  ]
+ },
+ {
+  "uuid": "VSe7",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Fonction de plusieurs variables",
+  "termes": [
+   {
+    "terme": "connexité (autre que par arcs)",
+    "bloc": "reponse",
+    "extrait": "pour $r> 0$ $E_r = \\{x\\in\\R^2\\text{ tq }\\|x\\|\\ge r\\}$ : $g(E_r)$ est une partie connexe de $\\R$ donc un intervalle, et $\\sup(g(E_r)) = \\sup("
+   }
+  ]
+ },
+ {
+  "uuid": "Wdl4",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Fonction de plusieurs variables",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": ",\\;f(t)=\\lambda\\Argth t+\\mu.\n\\end{align*",
+    "extrait": "tarrow\\exists(\\lambda,\\mu)\\in\\Rr^*\\times\\Rr/\\;\\forall t\\in]-1,1[,\\;f(t)=\\lambda\\Argth t+\\mu. \\end{align*}"
+   }
+  ]
+ },
+ {
+  "uuid": "wWtk",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Fonction de plusieurs variables",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": ",\\;f(t)=\\lambda\\Argth t+\\mu.\n\\end{align*}\n\nDe plus, $f$ n'est pas constante si et seulement si $\\mu=0$.\n\n\\begin{center}\n\\fbox{\nL'application $t\\mapsto\\Argth t$ convient.\n}\n\\end{center",
+    "extrait": "\\Leftrightarrow\\exists(\\lambda,\\mu)\\in\\Rr^2/\\;\\forall t\\in]-1,1[,\\;f(t)=\\lambda\\Argth t+\\mu. \\end{align*} De plus, $f$ n'est pas constante "
+   }
+  ]
+ },
+ {
+  "uuid": "EVk4",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Groupe, anneau, corps",
+  "termes": [
+   {
+    "terme": "différence symétrique",
+    "bloc": "question",
+    "extrait": "\\mathcal{P}(E)$, on note $A\\Delta B = (A \\cup B) \\setminus (A \\cap B)$ la \\emph{différence symétrique} de $A$ et $B$. Montrer que pour toute"
+   }
+  ]
+ },
+ {
+  "uuid": "FkZW",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Groupe, anneau, corps",
+  "termes": [
+   {
+    "terme": "structure quotient",
+    "bloc": "X",
+    "extrait": "onc $P$ est irréductible. [question] On note $A:=\\mathbb{F}_2[X]/(X^4+X^3+1)$ l'anneau quotient de $\\mathbb{F}_2[X]$ par l'idéal engendré pa"
+   }
+  ]
+ },
+ {
+  "uuid": "OSQD",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Groupe, anneau, corps",
+  "termes": [
+   {
+    "terme": "structure quotient",
+    "bloc": "question",
+    "extrait": "2+X+1).$$ [question] La classe du polynôme $X^2+X+1$ est-elle inversible dans l'anneau quotient\\\\ $\\R[X]/(X^3+X+1)$ ? Si oui, donner son inv"
+   }
+  ]
+ },
+ {
+  "uuid": "PpIe",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Groupe, anneau, corps",
+  "termes": [
+   {
+    "terme": "structure quotient",
+    "bloc": "X",
+    "extrait": "alors $P$ est irréductible. [question] On note $A:=\\mathbb{F}_2[X]/<X^4+X+1>$ l'anneau quotient de $\\mathbb{F}_2[X]$ par l'idéal engendré pa"
+   }
+  ]
+ },
+ {
+  "uuid": "bkES",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Groupe, anneau, corps",
+  "termes": [
+   {
+    "terme": "structure quotient",
+    "bloc": "question",
+    "extrait": " [question] Déterminer la liste des éléments et la table de multiplication de l'anneau quotient $$\\mathbb{F}_2[X]/(X^2+X+1).$$ [question] Mu"
+   }
+  ]
+ },
+ {
+  "uuid": "c90N",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Groupe, anneau, corps",
+  "termes": [
+   {
+    "terme": "idéal premier ou maximal",
+    "bloc": "question",
+    "extrait": " x,y\\in A,\\ xy\\in I \\Rightarrow x\\in I$ ou $y\\in I$. [question] Quels sont les idéaux premiers de $\\Z$ ? [question] Montrer que si $A$ est "
+   }
+  ]
+ },
+ {
+  "uuid": "m5pG",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Groupe, anneau, corps",
+  "termes": [
+   {
+    "terme": "structure quotient",
+    "bloc": "question",
+    "extrait": "athbb{F}_5$ désigne le corps $\\Z/5\\Z$ à cinq éléments. [question] Montrer que l'anneau quotient $\\mathbb{F}_{25}:=\\mathbb{F}_5[X]/(X^2+2X+1)"
+   }
+  ]
+ },
+ {
+  "uuid": "xwlZ",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Groupe, anneau, corps",
+  "termes": [
+   {
+    "terme": "anneau principal, factoriel, euclidien",
+    "bloc": "question",
+    "extrait": "[question] Montrer que $\\Zz{/}n\\Zz$ est un anneau principal."
+   }
+  ]
+ },
+ {
+  "uuid": "5Zub",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Géométrie affine euclidienne",
+  "termes": [
+   {
+    "terme": "enveloppe convexe",
+    "bloc": "text",
+    "extrait": "[text] Soit $\\mathcal C=ABCD$ un carré plein du plan (c'est-à-dire l'enveloppe convexe de ses sommets) et $O$ son centre. [questi"
+   }
+  ]
+ },
+ {
+  "uuid": "Gwtg",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur",
+  "termes": [
+   {
+    "terme": "caractéristique d'un corps",
+    "bloc": "reponse",
+    "extrait": "0$ car $g_1(h)\\in \\Im f = H\\oplus I$. Remarque : la démonstration passe à tout corps de caractéristique différente de $2$."
+   }
+  ]
+ },
+ {
+  "uuid": "PNI6",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur",
+  "termes": [
+   {
+    "terme": "décomposition de Dunford",
+    "bloc": "question",
+    "extrait": "$ on a bien $A=PBP^{-1}$ et $B=P^{-1}AP$. [question] Ecrire la décomposition de Dunford de $B$ (justifier). [reponse] {\\it Ecrivons la décom"
+   }
+  ]
+ },
+ {
+  "uuid": "QLan",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur",
+  "termes": [
+   {
+    "terme": "réduction de Jordan",
+    "bloc": "question",
+    "extrait": "[question] Réduire sous la forme de Jordan les matrices suivantes : $$ \\begin{pmatrix} -1 & 1 &"
+   }
+  ]
+ },
+ {
+  "uuid": "WWrj",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur",
+  "termes": [
+   {
+    "terme": "réduction de Jordan",
+    "bloc": "question",
+    "extrait": "[question] Donner toutes les réduites de Jordan de $\\mathcal{M}_n(\\Cc)$ des endomorphismes nilpotents"
+   }
+  ]
+ },
+ {
+  "uuid": "aTD6",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur",
+  "termes": [
+   {
+    "terme": "décomposition de Dunford",
+    "bloc": "question",
+    "extrait": "atrix}2&0&0 \\\\ 0&1&1 \\\\ 0&0&1\\end{pmatrix}$$ En déduire la décomposition de Dunford de $B$. [question] Résoudre le système différentiel "
+   }
+  ]
+ },
+ {
+  "uuid": "bcVa",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur",
+  "termes": [
+   {
+    "terme": "décomposition de Dunford",
+    "bloc": "question",
+    "extrait": "-1 & 0 \\\\ 0&-1&1 \\\\ 1&0&0\\end{pmatrix}$$ [question] Ecrire la décomposition de Dunford de $B$ (justifier). [reponse] {\\it Décomposition de "
+   }
+  ]
+ },
+ {
+  "uuid": "qph8",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur",
+  "termes": [
+   {
+    "terme": "réduction de Jordan",
+    "bloc": "question",
+    "extrait": "tM$ sont semblables.\\\\ \\emph{Indication} : le montrer d'abord pour des blocs de Jordan n'ayant que des $1$ au-dessus de la diagonale."
+   }
+  ]
+ },
+ {
+  "uuid": "ttM3",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur",
+  "termes": [
+   {
+    "terme": "décomposition de Dunford",
+    "bloc": "question",
+    "extrait": "0&-2 \\\\ 1&0&1 \\\\ -1&1&-1\\end{pmatrix}.$$ [question] Ecrire la décomposition de Dunford de $B$ (justifier). [reponse] {\\it Ecrivons la décom"
+   }
+  ]
+ },
+ {
+  "uuid": "K42b",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "question",
+    "extrait": " pour le taux de cholestérol dans toute l'entreprise. [question] Déterminer un intervalle de confiance pour la moyenne. [question] Détermin"
+   }
+  ]
+ },
+ {
+  "uuid": "Kp7e",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "reponse",
+    "extrait": "atéral de comparaison de deux proportions avec proportion commune estimée et le test du khi-deux de Pearson sont équivalents : le carré d'un"
+   }
+  ]
+ },
+ {
+  "uuid": "Mh2y",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "question",
+    "extrait": "e ce produit et une estimation $s$ de son écart-type $\\sigma$. On précisera les estimateurs choisis et on en donnera les propriétés. [repons"
+   }
+  ]
+ },
+ {
+  "uuid": "Pz5k",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "question",
+    "extrait": "ans biais $s^2$ de $\\sigma^2$, puis une estimation de $\\sigma$. \\item Donner un intervalle de confiance bilatéral de niveau $95\\%$ pour la t"
+   }
+  ]
+ },
+ {
+  "uuid": "RpZE",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "question",
+    "extrait": "ponse] La loi de $X$ est la loi binomiale $n=30$, $p=0.2$. [question] Donner un intervalle de confiance au seuil 95\\%, permettant d'estimer "
+   }
+  ]
+ },
+ {
+  "uuid": "UnQn",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "question",
+    "extrait": "l'appareil de mesure : $\\sigma=4,3.10^{-3}$ (unité arbitraire). Déterminer un intervalle de confiance contenant, avec une probabilité de "
+   }
+  ]
+ },
+ {
+  "uuid": "VX6N",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "question",
+    "extrait": "m_{e}$ de 68kg, avec un écart-type $\\sigma_{e}$ de 7 kg. [question] Définir un intervalle de confiance pour la moyenne des passagers. (On a"
+   }
+  ]
+ },
+ {
+  "uuid": "Wn8c",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "\n\\mathbb P(0{,}4-h\\leq F\\leq0{,}4+h)\\simeq2\\Phi\\left(\\frac h{0{,}02}\\right)-1=0{,}95\n\\iff\\frac h{0{,}02}=\\Phi^{-1}(0{,}975)\\simeq1{,}95996,\n\\",
+    "extrait": "1\\%$ et $43{,}9\\%$ avec une probabilité proche de $95\\%$. Ce calcul prépare les intervalles de confiance d'une proportion, où $p$ est inconn"
+   }
+  ]
+ },
+ {
+  "uuid": "bR2v",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "question",
+    "extrait": "thcal B(p)$. [question] Sur $n=200$ pièces, $24$ sont défectueuses. Exprimer la vraisemblance $L(p)$ de cette observation, puis déterminer l"
+   }
+  ]
+ },
+ {
+  "uuid": "iN4p",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "text",
+    "extrait": "éduite et $V$ suit une loi du khi-deux à un degré de liberté. Donc $R$ suit une loi de Student à un degré de liberté.\\fg [question] Vérifier"
+   }
+  ]
+ },
+ {
+  "uuid": "if79",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "question",
+    "extrait": "ype $1/\\lambda$}). Sur 400 jours, le retard moyen est de 10 minutes. Donner un intervalle de confiance de niveau approximativement 95\\% pou"
+   }
+  ]
+ },
+ {
+  "uuid": "ikX1",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "reponse",
+    "extrait": "t{\\frac{p_{0}(1-p_{0})}{50}}$. A l'aide de la formule de cours, on détermine l'intervalle de confiance associé: $I\\simeq [0.017;0.183]$. On"
+   }
+  ]
+ },
+ {
+  "uuid": "m5dm",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "0,49, 0,55",
+    "extrait": "férieure à 0,05. On conclut que $[0,49, 0,55]$ (autrement dit $52\\pm 3$\\%) est intervalle de confiance relatif à $p$ au seuil de 95\\%."
+   }
+  ]
+ },
+ {
+  "uuid": "m6xz",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "question",
+    "extrait": "loi de Poisson de paramètre $\\lambda $ estimé par $np=12$. [question] Donner un intervalle de confiance pour le nombre moyen d'appels en 4 m"
+   }
+  ]
+ },
+ {
+  "uuid": "nP4w",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "question",
+    "extrait": "n)}$ les statistiques d'ordre associées à l'échantillon. [question] Écrire la vraisemblance $L(\\theta)$ et la log-vraisemblance $\\ell(\\the"
+   }
+  ]
+ },
+ {
+  "uuid": "nQbE",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "reponse",
+    "extrait": "proximation par une loi normale pour la moyenne d'échantillon. On en déduit un intervalle de confiance pour la proportion, au seuil 95\\%: $"
+   }
+  ]
+ },
+ {
+  "uuid": "qT7m",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Statistique",
+  "termes": [
+   {
+    "terme": "statistique inférentielle",
+    "bloc": "indication",
+    "extrait": "e le quantile d'ordre $0{,}975$, et non celui d'ordre $0{,}95$. [indication] La loi de Student est symétrique. Répartir les $5\\%$ de probabi"
+   }
+  ]
+ },
+ {
+  "uuid": "ePnF",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Suite et série de fonctions",
+  "termes": [
+   {
+    "terme": "décomposition de Dunford",
+    "bloc": "reponse",
+    "extrait": "set B_o(0,1)$. On sait (voir exercice \\ref{ex:rou20} : décomposition de \\textsc{Dunford}) qu'il existe deux matrices $D$ et $N$ telles que "
+   }
+  ]
+ },
+ {
+  "uuid": "0Lmc",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "in(pt)\\,d t$ et en déduire que $f$ n'a pas de développement en série de Fourier (et donc n'est pas continue en $0$)."
+   }
+  ]
+ },
+ {
+  "uuid": "0pKt",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "i$-périodique, $F(x) = \\int_{t=0}^x f(t)\\,d t$, $a_n, b_n$ les coefficients de Fourier trigonométriques de $f$ et $C = \\frac1{2\\pi} \\int_{t"
+   }
+  ]
+ },
+ {
+  "uuid": "3hQ7",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "\\right| =f(x). $$ Ainsi, $f$ est paire. [question] Calculer les coefficients de Fourier de $f$ et écrire $S(f)$ la série de Fourier de $f$. "
+   }
+  ]
+ },
+ {
+  "uuid": "4MS9",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "text",
+    "extrait": "$ $2\\pi$-périodique continue par morceaux. Que peut-on dire des coefficients de Fourier de $f$ si l'on a : [question] $\\forall\\ x \\in \\R,\\ f"
+   }
+  ]
+ },
+ {
+  "uuid": "5tyz",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "l que, pour tout $p\\ge 1$, $T_{2^{p^3-1}}\\ge Dp$, et constater que la série de Fourier de $f$ diverge au point $0$."
+   }
+  ]
+ },
+ {
+  "uuid": "6ZNT",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "[question] Donner le développement en série de Fourier de la fonction $f$ $2\\pi$-périodique telle que $"
+   }
+  ]
+ },
+ {
+  "uuid": "8h0r",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "reponse",
+    "extrait": "y=-1}^1 e^{-|y|^\\beta}(1-|y|)e^{-2ik\\pi y}\\,d y$ est le $2k$-ème coefficient de Fourier de la fonction $f$, $2$-périodique, telle que ${f(y)"
+   }
+  ]
+ },
+ {
+  "uuid": "972t",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "f(x)=\\cos(\\alpha x)$. [question] Développer la fonction $f$ en série de \\textsc{Fourier}. [reponse] Soit $\\alpha\\in\\Cc\\setminus\\Zz$. La fonc"
+   }
+  ]
+ },
+ {
+  "uuid": "9yW6",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "nt_{t=0}^{\\pi/2} \\frac{\\sin(nt)}{\\sin t}\\,d t$. En déduire les coefficients de Fourier de $f$ : $f(t) = \\ln|\\tan(t/2)|$. [reponse] $I_{n+1}"
+   }
+  ]
+ },
+ {
+  "uuid": "BC99",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "$.\nSoient $a_n,b_n$ les coefficients de Fourier de $g$.\n[question",
+    "extrait": "odique coïncidant avec $f$ sur $[0,2\\pi[$. Soient $a_n,b_n$ les coefficients de Fourier de $g$. [question] Montrer que $a_n = o\\left(\\frac1"
+   }
+  ]
+ },
+ {
+  "uuid": "D4yI",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "0,2\\pi ",
+    "extrait": " respectivement $(c_n)_{n\\in \\Zz}$ et $(c''_n)_{n\\in \\Zz}$ les coefficients de Fourier (complexes) de $f$ et $f''$. [question] Calculer $c_"
+   }
+  ]
+ },
+ {
+  "uuid": "I8Kv",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "ight)$. } \\end{center} [question] La série obtenue est-elle la série de \\textsc{Fourier} de $f$ ? [reponse] Pour tout réel $t\\in[-\\pi,\\pi]$ "
+   }
+  ]
+ },
+ {
+  "uuid": "IjIT",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "[question] Développer en série de \\textsc{Fourier} les fonctions suivantes puis déterminer la valeur d"
+   }
+  ]
+ },
+ {
+  "uuid": "M22u",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "[question] Donner le développement en série de Fourier de la fonction $2\\pi$-périodique définie sur $]0"
+   }
+  ]
+ },
+ {
+  "uuid": "OAs8",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "[question] Soit $f \\in {\\cal D}$. On note $c_k$ les coefficients de Fourier exponentiels de $f$. Montrer que $f$ est $\\pi$-pério"
+   }
+  ]
+ },
+ {
+  "uuid": "QjDu",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "[question] Développer en série de Fourier $f\\ :\\ t \\mapsto \\frac1{1-\\cos\\alpha\\cos t}$ avec $"
+   }
+  ]
+ },
+ {
+  "uuid": "S9iB",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "que $f(x)=x^2$ si $\\vert x \\vert \\leq \\pi .$ [question] Déterminer la série de Fourier de $f$. [question] Calculer $\\displaystyle{ \\int _{-"
+   }
+  ]
+ },
+ {
+  "uuid": "U3Ks",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "text",
+    "extrait": "e respectivement $(c_n)_{n\\in \\Zz}$ et $(c'_n)_{n\\in \\Zz}$ les coefficients de Fourier (complexes) de $f$ et $f'$. [question] Calculer $c_0"
+   }
+  ]
+ },
+ {
+  "uuid": "UVUl",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "iques, continues par morceaux. On note $c_n(f)$ et $c_n(g)$ les coefficients de Fourier exponentiels de $f$ et $g$. Montrer que : $\\sum_{n="
+   }
+  ]
+ },
+ {
+  "uuid": "UhL0",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "ontrer que $h$ est $2\\pi$-périodique, continue, et calculer les coefficients de Fourier exponentiels de $h$ en fonction de ceux de $f$ et de"
+   }
+  ]
+ },
+ {
+  "uuid": "UkEs",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "in {[-\\pi,\\pi[},\\ f(x) = e^x$. [question] Chercher le développement en série de Fourier de $f$. [reponse] $a_0 = \\frac{2\\sh\\pi}\\pi$, "
+   }
+  ]
+ },
+ {
+  "uuid": "XwQM",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "0,2\\pi",
+    "extrait": "e dont la restriction à $[0,2\\pi]$ est concave. Montrer que les coefficients de Fourier trigonométriques de $f$ vérifient : $a_k \\le 0$ pour"
+   }
+  ]
+ },
+ {
+  "uuid": "ZsaF",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "\\vert x \\vert $ si $\\vert x \\vert \\leq \\pi .$ [question] Déterminer la série de Fourier de $f$. [reponse] $a_0 = \\pi$ et pour $n\\ne 0$, $a_n"
+   }
+  ]
+ },
+ {
+  "uuid": "atds",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "reponse",
+    "extrait": " \\end{align*} Il y a convergence normale car $|a|<1$ et les coefficients de Fourier de $f$ sont bornés. On en déduit que $h$ est"
+   }
+  ]
+ },
+ {
+  "uuid": "dtIL",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": " x 2}\\quad \\text{ si } 0 \\le x < 2\\pi$. [question] Calculer les coefficients de Fourier de $f$. [question] Quelle est la nature de la série "
+   }
+  ]
+ },
+ {
+  "uuid": "gWAF",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "[question] Développer en série de \\textsc{Fourier} la fonction $f : x\\mapsto x-E(x)-\\frac{1}{2}$. [rep"
+   }
+  ]
+ },
+ {
+  "uuid": "gyMl",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "reponse",
+    "extrait": "t_{t=0}^1 f(t)\\,d t$ lorsque $n\\to\\infty$. [reponse] Développer $f$ en série de Fourier. [question] Montrer que le résultat est encore vrai "
+   }
+  ]
+ },
+ {
+  "uuid": "icAN",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "text",
+    "extrait": "ext] Soit $f : \\R \\to \\C$ $2\\pi$-périodique continue, $f_n$ sa $n$-ème somme de Fourier et $g_n = \\frac{f_0 + \\dots + f_n}{n+1}$. [question]"
+   }
+  ]
+ },
+ {
+  "uuid": "igA1",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "e classe $\\mathcal{C}^1$ par morceaux. On note $a_k$, $b_k$ les coefficients de Fourier de $f$. Calculer les coefficients de Fourier de $f'$"
+   }
+  ]
+ },
+ {
+  "uuid": "jC2K",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "reponse",
+    "extrait": "f'^2 + \\int_0^{2\\pi}g'^2$. [reponse] Développer $f$, $f'$ et $g'$ en séries de Fourier et appliquer l'inégalité $2|\\overline a\\,b| \\le |a|^"
+   }
+  ]
+ },
+ {
+  "uuid": "k28s",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "text",
+    "extrait": " \\frac{a_0}{2}+ \\sum _{k=1}^\\infty(a_k \\cos (kx)+ b_k \\sin (kx))}$ sa série de Fourier et on pose, pour tout $n\\in \\Nn : \\displaystyle{ S_n"
+   }
+  ]
+ },
+ {
+  "uuid": "loHS",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "[question] Développer en série de Fourier la fonction : $x \\mapsto |\\sin x|$. [question] Appl"
+   }
+  ]
+ },
+ {
+  "uuid": "pdwN",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "[text] Soit $a \\in \\R\\setminus\\Z$. [question] Développer en série de Fourier la fonction définie sur $[-\\pi,\\pi]$ par : $f(x)"
+   }
+  ]
+ },
+ {
+  "uuid": "qpCU",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "-\\pi,\\pi",
+    "extrait": " $2\\pi$-périodicité. Alors $g$ est paire, continue, et tous ses coefficients de Fourier sont nuls donc $g=0$."
+   }
+  ]
+ },
+ {
+  "uuid": "qqXM",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "reponse",
+    "extrait": " tel que $\\|f\\|_{\\infty}\\le c\\|f''\\|_2$. [reponse] On décompose $f$ en série de Fourier : $f(x) = - \\sum_{n=1}^\\infty \\frac{c_n}{n^2\\pi^"
+   }
+  ]
+ },
+ {
+  "uuid": "s9lj",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "[question] Soit $a\\in\\R$. Développer en série de Fourier la fonction $2\\pi$-périodique valant $e^{ax}$ su"
+   }
+  ]
+ },
+ {
+  "uuid": "uI4M",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "reponse",
+    "extrait": "a formule de Leibniz-Madhava, retrouvée comme cas particulier d'une série de Fourier."
+   }
+  ]
+ },
+ {
+  "uuid": "useL",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "[question] Développer en série de Fourier la fonction $f$, $2\\pi$-périodique telle que $f("
+   }
+  ]
+ },
+ {
+  "uuid": "w7DX",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "ur $\\R$, $2\\pi$-périodique et de classe $\\mathcal{C}^1$. Déterminer sa série de Fourier. [reponse] $c_k = \\frac1{2\\pi} \\int_{x=0}^{2\\pi}\\sum"
+   }
+  ]
+ },
+ {
+  "uuid": "yOl9",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "iste-t-il une fonction $f:\\R \\to \\R$ continue telle que les coefficients de Fourier soient : $a_n = \\frac1{2^n}$ et $b_n = 0$ ? [reponse"
+   }
+  ]
+ },
+ {
+  "uuid": "zFU9",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série de Fourier",
+  "termes": [
+   {
+    "terme": "séries de Fourier",
+    "bloc": "question",
+    "extrait": "re : $f(x) = \\frac1{x+e^a}$. [question] En déduire le développement en série de Fourier de $g(x) = \\frac1{\\cos x + \\ch a}$. [reponse] $g"
+   }
+  ]
+ },
+ {
+  "uuid": "LlDR",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série entière",
+  "termes": [
+   {
+    "terme": "connexité (autre que par arcs)",
+    "bloc": "reponse",
+    "extrait": "p \\Omega ^+)\\subset \\Omega ^+$. [reponse] $\\Im(f)$ est de signe constant sur le connexe $D\\cap \\Omega ^+$ et $f(z)\\sim z$ au voisinage d"
+   }
+  ]
+ },
+ {
+  "uuid": "MX2V",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Série entière",
+  "termes": [
+   {
+    "terme": "fonction hyperbolique réciproque",
+    "bloc": "$.\n\n\\begin{align*}\\ensuremath\n\\sum_{n=0}^{+\\infty}\\frac{x^n}{2n+1}&=\\sum_{n=0}^{+\\infty}\\frac{\\left(\\sqrt{x}\\right)^{2n}}{2n+1}=\\frac{1}{\\sqrt{x}}\\sum_{n=0}^{+\\infty}\\frac{\\left(\\sqrt{x}\\right)^{2n+1}}{2n+1}=\\frac{1}{\\sqrt{x}}(\\ln(1+\\sqrt{x}) -\\ln(1-\\sqrt{x}))\\\\\n &=\\frac{\\Argth(\\sqrt{x})}{\\sqrt{x}}.\n\\end{align*}\t\n\n\\textbullet Soit $x\\in",
+    "extrait": "^{2n+1}}{2n+1}=\\frac{1}{\\sqrt{x}}(\\ln(1+\\sqrt{x}) -\\ln(1-\\sqrt{x}))\\\\ &=\\frac{\\Argth(\\sqrt{x})}{\\sqrt{x}}. \\end{align*} \\textbullet Soit "
+   }
+  ]
+ },
+ {
+  "uuid": "FggU",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Topologie",
+  "termes": [
+   {
+    "terme": "connexité (autre que par arcs)",
+    "bloc": "question",
+    "extrait": "space vectoriel normé et $A \\subset E$ fermé. Montrer que si $\\text{Fr}(A)$ est connexe, alors $A$ est connexe. [reponse] Soient $F_1$, $F_2"
+   }
+  ]
+ },
+ {
+  "uuid": "M63b",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Topologie",
+  "termes": [
+   {
+    "terme": "enveloppe convexe",
+    "bloc": "question",
+    "extrait": "e $G$ est indépendant du paramétrage) [question] Montrer que $G$ appartient à l'enveloppe convexe de la courbe. [question] Montrer que si la"
+   }
+  ]
+ },
+ {
+  "uuid": "Q5oQ",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Topologie",
+  "termes": [
+   {
+    "terme": "connexité (autre que par arcs)",
+    "bloc": "question",
+    "extrait": "terminer l'intérieur, l'adhérence et la frontière de $A$. L'ensemble $A$ est-il connexe ?"
+   }
+  ]
+ },
+ {
+  "uuid": "Rj8P",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Topologie",
+  "termes": [
+   {
+    "terme": "connexité (autre que par arcs)",
+    "bloc": "reponse",
+    "extrait": "fermé. [reponse] Le sens $H$ est fermé $ \\Rightarrow $ $E\\setminus H$ n'est pas connexe (par arcs) est évident. Réciproquement, si $H$ n'est"
+   }
+  ]
+ },
+ {
+  "uuid": "YMcM",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Topologie",
+  "termes": [
+   {
+    "terme": "connexité (autre que par arcs)",
+    "bloc": "reponse",
+    "extrait": " $\\Omega$ n'est pas fermé car $\\varnothing\\ne\\Omega\\ne\\R^n$ et $\\R^n$ est connexe. [question] Notons $f$ : $\\sigma \\mapsto P_\\sigma$."
+   }
+  ]
+ },
+ {
+  "uuid": "h22v",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Topologie",
+  "termes": [
+   {
+    "terme": "limite supérieure ou inférieure",
+    "bloc": "reponse",
+    "extrait": "ue la suite $\\left(\\frac {u_n}n\\right)$ est convergente. [reponse] Soit $\\ell = \\liminf \\frac{u_n}n$ et $\\varepsilon > 0$. Il exist"
+   }
+  ]
+ },
+ {
+  "uuid": "miiX",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Topologie",
+  "termes": [
+   {
+    "terme": "connexité (autre que par arcs)",
+    "bloc": "question",
+    "extrait": " de dimension finie et $F$ un sev propre de $E$. Montrer que $E\\setminus F$ est connexe si et seulement si codim$(F) \\ge 2$. Que peut-on dir"
+   }
+  ]
+ },
+ {
+  "uuid": "mkqr",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Topologie",
+  "termes": [
+   {
+    "terme": "connexité (autre que par arcs)",
+    "bloc": "n\\to\\infty",
+    "extrait": "\\to\\infty]{} 0$. Montrer que l'ensemble des valeurs d'adhérence de la suite est connexe. [reponse] Soient $F_1$, $F_2$ fermés non vides disj"
+   }
+  ]
+ },
+ {
+  "uuid": "zuaj",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "niveau": "L2",
+  "chapitre": "Topologie",
+  "termes": [
+   {
+    "terme": "résidus, série de Laurent",
+    "bloc": "reponse",
+    "extrait": " multiplicité dans $\\overline{B(0,\\delta)}$. Ceci est une conséquence du {\\it théorème des résidus\\/} largement hors programme\\dots"
+   }
+  ]
+ }
+]
