@@ -55,7 +55,18 @@ const TERMES = [
   ['limite supérieure ou inférieure', /\\lim\s*sup|\\limsup|\\liminf|\blim\s*sup\b|\blim\s*inf\b/i],
   ['lemme de Gronwall', /gr[oö]nwall/i],
   ['statistique inférentielle', /intervalles?\s+de\s+confiance|test\s+du\s+(chi|khi|χ)|loi\s+de\s+student|estimateurs?|vraisemblance|p-valeur/i],
-  ['réseau de neurones', /r[ée]seaux?\s+de\s+neurones|perceptron/i]
+  ['réseau de neurones', /r[ée]seaux?\s+de\s+neurones|perceptron/i],
+  // Termes repérés dans les concepts des exercices de L3, vérifiés absents du texte officiel.
+  ['analyse complexe', /formule\s+(int[ée]grale\s+)?de\s+cauchy|liouville|cauchy[\s-]+riemann|fonctions?\s+enti[èe]res?|prolongement\s+analytique|logarithme\s+complexe|d[ée]termination\s+(principale\s+)?du\s+logarithme|singularit[ée]s?\s+isol[ée]es?|int[ée]grales?\s+curvilignes?|int[ée]grales?\s+de\s+contour|fonctions?\s+harmoniques?/i],
+  ['théorie des groupes avancée', /sous[\s-]+groupes?\s+(distingu[ée]s?|normaux|normal)|actions?\s+de\s+groupes?|action\s+d'un\s+groupe|stabilisateur|sylow|\bp-groupes?|semi[\s-]+direct|groupes?\s+(r[ée]solubles?|simples?)|di[ée]dral|centre\s+(d'un|du)\s+groupe|\bcommutateurs?\b|indice\s+d'un\s+sous[\s-]+groupe/i],
+  ['extension de corps, corps fini', /extensions?\s+de\s+corps|degr[ée]\s+d'une\s+extension|corps\s+finis?/i],
+  ['forme quadratique ou sesquilinéaire', /formes?\s+quadratiques?|sesquilin[ée]aires?/i],
+  ['rayon spectral, quaternions', /rayon\s+spectral|quaternions?/i],
+  ['espace complet, Banach, Hilbert', /espaces?\s+(m[ée]triques?\s+|vectoriels?\s+norm[ée]s?\s+)?complets?|banach|suites?\s+de\s+cauchy|espaces?\s+de\s+hilbert|\bbaire\b|ascoli|stone[\s-]+weierstrass|hom[ée]omorphismes?|th[ée]or[èe]me\s+du\s+point\s+fixe/i],
+  ['intégrale de Lebesgue, mesure', /int[ée]grale\s+de\s+lebesgue|mesure\s+de\s+lebesgue|fonctions?\s+mesurables?|\bfatou\b|convergence\s+monotone/i],
+  ['sous-variété, difféomorphisme', /sous[\s-]+vari[ée]t[ée]s?|diff[ée]omorphismes?|inversion\s+locale|fonctions?\s+implicites|formes?\s+diff[ée]rentielles?/i],
+  ['géométrie projective', /g[ée]om[ée]trie\s+projective|espaces?\s+projectifs?|homographies?/i],
+  ['transformée de Laplace', /transform[ée]e\s+de\s+laplace/i]
 ];
 
 // Accents LaTeX des anciennes sources exo7 : {\'e}, \'{e}, \`a, \^o…
