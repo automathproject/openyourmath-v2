@@ -271,8 +271,8 @@ describe('collectRattachements', () => {
     expect(errors).toEqual([]);
     expect(warnings).toEqual([]);
     expect(rattachements).toEqual([
-      { uuid: 'abcd', noeud_id: 'p.s.a', origine: 'source', confiance: null, valide: 1 },
-      { uuid: 'abcd', noeud_id: 'p.s', origine: 'source', confiance: null, valide: 1 }
+      { uuid: 'abcd', noeud_id: 'p.s.a', origine: 'source', confiance: null },
+      { uuid: 'abcd', noeud_id: 'p.s', origine: 'source', confiance: null }
     ]);
   });
 
@@ -316,9 +316,9 @@ describe('insertReferentiel', () => {
       nodes: parsed.nodes
     };
     const outcome = insertReferentiel(db, referentiel, [
-      { uuid: 'abcd', noeud_id: 'test.reduction.a', origine: 'source', confiance: null, valide: 1 },
-      { uuid: 'zzzz', noeud_id: 'test.reduction', origine: 'llm', confiance: 0.5, valide: 0 },
-      { uuid: 'abcd', noeud_id: 'test.series-entieres.a', origine: 'llm', confiance: 0.9, valide: 0 }
+      { uuid: 'abcd', noeud_id: 'test.reduction.a', origine: 'source', confiance: null },
+      { uuid: 'zzzz', noeud_id: 'test.reduction', origine: 'llm', confiance: 0.5 },
+      { uuid: 'abcd', noeud_id: 'test.series-entieres.a', origine: 'llm', confiance: 0.9 }
     ]);
 
     expect(outcome.orphelins).toEqual(['zzzz']);

@@ -2,7 +2,7 @@
 
 Conception et état d'avancement. Les phases 0 (programmes officiels en
 Markdown) et 1 (référentiel en base) sont réalisées. Le référentiel et les
-rattachements relus appartiennent à exobase, et OpenYourMath les importe par
+rattachements appartiennent à exobase, et OpenYourMath les importe par
 `pnpm sync:exobase` ([sync-exobase.md](sync-exobase.md)).
 
 ## Constat
@@ -57,22 +57,19 @@ préparatoires :
    BCPST a un texte par année. On filtre par filière, qui se résout en un ou
    plusieurs programmes : `MP2I → mpsi-mp2i`, `MPI → mp-mpi`,
    `BCPST → bcpst1, bcpst2`.
-6. **Le contenu à exobase, le dérivé à OpenYourMath.** Un rattachement relu
+6. **Le contenu à exobase, le dérivé à OpenYourMath.** Un rattachement
    décrit l'exercice, comme `\module{}` ou `\chapitre{}`. Il doit suivre la
    source vers tous les exports, et se lire en ouvrant le `.tex`. exobase porte
-   donc le référentiel, et les sources portent les rattachements relus dans la
-   macro `\cpge{}`. OpenYourMath porte ce qui en dérive : la base, l'affichage et les
-   propositions automatiques tant qu'elles ne sont pas relues, comme les autres
-   métadonnées IA.
+   donc le référentiel, et les sources portent les rattachements dans la macro
+   `\cpge{}`. OpenYourMath porte ce qui en dérive : la base et l'affichage.
 
 | Élément                                         | Dépôt        | Chemin                                                                      |
 | ----------------------------------------------- | ------------ | --------------------------------------------------------------------------- |
 | Programmes, `sources.json`, format              | exobase      | `content/referentials/cpge/`                                                |
 | Validation de structure, téléchargement des PDF | exobase      | `tools/check_programmes_cpge.mjs`, `tools/import/fetch_programmes_cpge.mjs` |
 | Correspondance chapitres → sections (phase 2)   | exobase      | `content/referentials/`, à côté de `amscc-exo7-compatibility.json`          |
-| Rattachements relus                             | exobase      | `\cpge{}` des sources `.tex` (`content/FORMAT.md`)                          |
+| Rattachements                                   | exobase      | `\cpge{}` des sources `.tex` (`content/FORMAT.md`)                          |
 | Définition de `\cpge` pour la compilation       | Exercices    | `_preambules/general.tex`                                                   |
-| Propositions non relues (phase 2)               | OpenYourMath | `content/metadata/<source>/<uuid>.json`, champ `cpge`                       |
 | Analyseur, tables, build                        | OpenYourMath | `scripts/build-referentiel-cpge.js`                                         |
 | Rendu KaTeX, instantané des identifiants        | OpenYourMath | `tests/build/referentiel-cpge.test.js`                                      |
 
@@ -181,19 +178,10 @@ d'identifiants séparés par des virgules, à côté des autres métadonnées :
 - **Analyse et édition.** L'analyseur LaTeX ignore la macro. Le build la lit
   directement dans les `.tex`, comme les fiches lisent `\exo7id{}`. L'éditeur
   `/create` la conserve quand il rouvre une source.
-- **En base.** Les rattachements relus prennent l'origine `source`, avec
-  `valide = 1`.
-
-**Proposés (phase 2) : `content/metadata/<source>/<uuid>.json`, dans
-OpenYourMath.** L'étiquetage automatique écrit ses propositions dans les
-métadonnées sémantiques de l'exercice, sous un champ `cpge`. Elles suivent le
-même cycle de vie que le résumé et les concepts : rattachées au `content_hash`,
-recalculées quand l'énoncé change. `origine` dit comment la proposition a été
-obtenue : `llm`, `concordance` (propagée depuis une filière voisine) ou
-`chapitre` (déduite du chapitre universitaire). Une proposition acceptée à la
-relecture est ajoutée au `\cpge{}` de la source, puis remonte dans exobase par
-`pnpm sync:exobase:push`, comme une correction de source. Elle n'est ensuite
-plus jamais écrasée par un traitement automatique.
+- **En base.** Les rattachements de `\cpge{}` prennent l'origine `source`,
+  sans confiance. Il n'y a pas de statut « relu » : `\cpge{}` porte la
+  classification de référence, et une erreur se corrige dans la source, au fil
+  des signalements, puis remonte dans exobase.
 
 ### SQLite
 

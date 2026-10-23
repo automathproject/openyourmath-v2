@@ -177,8 +177,7 @@ CREATE TABLE IF NOT EXISTS exercise_cpge (
   uuid TEXT NOT NULL,
   noeud_id TEXT NOT NULL,
   origine TEXT NOT NULL,            -- source | llm | concordance | chapitre
-  confiance REAL,                   -- 0..1, NULL pour un rattachement relu
-  valide INTEGER NOT NULL DEFAULT 0, -- 1 : relu par un humain
+  confiance REAL,                   -- 0..1, NULL pour un rattachement de \cpge{}
   PRIMARY KEY (uuid, noeud_id)
 );
 

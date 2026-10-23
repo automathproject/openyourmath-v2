@@ -33,8 +33,8 @@ import {
   toPosixPath
 } from './utils/content-paths.js';
 
-// `source` : rattachement relu, écrit dans \cpge{} de la source. Les autres
-// origines sont celles des propositions automatiques, non relues.
+// `source` : rattachement écrit dans \cpge{} de la source, la classification de
+// référence. Les autres origines sont réservées aux propositions automatiques.
 export const ORIGINES = ['source', 'llm', 'concordance', 'chapitre'];
 const REQUIRED_META = ['programme', 'titre', 'filieres', 'annee'];
 
@@ -185,7 +185,7 @@ export function collectRattachements(nodeIds, root = EXERCISES_ROOT) {
         continue;
       }
       seen.add(noeud);
-      rattachements.push({ uuid, noeud_id: noeud, origine: 'source', confiance: null, valide: 1 });
+      rattachements.push({ uuid, noeud_id: noeud, origine: 'source', confiance: null });
     }
   }
 
@@ -214,8 +214,8 @@ export function insertReferentiel(db, { programmes, nodes }, rattachements = [])
             @titre, @texte, @contenus, @ordre)
   `);
   const insertRattachement = db.prepare(`
-    INSERT INTO exercise_cpge (uuid, noeud_id, origine, confiance, valide)
-    VALUES (@uuid, @noeud_id, @origine, @confiance, @valide)
+    INSERT INTO exercise_cpge (uuid, noeud_id, origine, confiance)
+    VALUES (@uuid, @noeud_id, @origine, @confiance)
   `);
 
   const orphelins = [];
