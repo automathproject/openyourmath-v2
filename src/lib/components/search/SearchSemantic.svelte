@@ -82,6 +82,9 @@
     if (f.hasSolution  != null && f.hasSolution  !== '') p.set('hasSolution',  String(f.hasSolution));
     if (f.hasIndication!= null && f.hasIndication !== '') p.set('hasIndication', String(f.hasIndication));
     if (f.hasVideo     != null && f.hasVideo      !== '') p.set('hasVideo',      String(f.hasVideo));
+    if (f.filiere)      p.set('filiere', f.filiere);
+    if (f.cpge)         p.set('cpge', f.cpge);
+    if (f.prepa)        p.set('prepa', '1');
 
     if (f.sort && f.sort !== 'relevance') {
       p.set('sort', `${f.sort}_${f.sortDirection || 'desc'}`);
@@ -110,7 +113,10 @@
       f?.updatedTo ||
       (f?.hasSolution != null && f.hasSolution !== '') ||
       (f?.hasIndication != null && f.hasIndication !== '') ||
-      (f?.hasVideo != null && f.hasVideo !== '')
+      (f?.hasVideo != null && f.hasVideo !== '') ||
+      f?.filiere ||
+      f?.cpge ||
+      f?.prepa
     );
   }
 
@@ -168,7 +174,7 @@
     if (mode === 'hybrid') u.searchParams.set('mode', 'hybrid');
     else                   u.searchParams.delete('mode');
 
-    for (const key of ['level', 'module', 'chapter', 'subchapter', 'author', 'organization', 'difficulty']) {
+    for (const key of ['level', 'module', 'chapter', 'subchapter', 'author', 'organization', 'difficulty', 'filiere', 'cpge', 'prepa']) {
       if (f[key]) u.searchParams.set(key, f[key]);
       else        u.searchParams.delete(key);
     }
@@ -185,7 +191,7 @@
       results.set([]);
       searchMeta.set(null);
       error.set(null);
-      filterCounts.set({ module: {}, level: {}, difficulty: {}, author: {}, organization: {} });
+      filterCounts.set({ module: {}, level: {}, difficulty: {}, author: {}, organization: {}, filiere: {} });
       previewActions.clearPreview();
       showSuggest = false;
       refreshSuggestions();
@@ -458,9 +464,12 @@
     const author     = u.searchParams.get('author')     || '';
     const organization = u.searchParams.get('organization') || '';
     const difficulty = u.searchParams.get('difficulty') || '';
-    const hasUrlFilters = Boolean(level || chapter || subchapter || module_ || author || organization || difficulty);
+    const filiere    = u.searchParams.get('filiere')    || '';
+    const cpge       = u.searchParams.get('cpge')       || '';
+    const prepa      = u.searchParams.get('prepa')      ? '1' : '';
+    const hasUrlFilters = Boolean(level || chapter || subchapter || module_ || author || organization || difficulty || filiere || cpge || prepa);
     if (hasUrlFilters) {
-      filters.update(f => ({ ...f, level, chapter, subchapter, module: module_, author, organization, difficulty }));
+      filters.update(f => ({ ...f, level, chapter, subchapter, module: module_, author, organization, difficulty, filiere, cpge, prepa }));
     }
 
     // Retour arrière : on repose l'état affiché au lieu de relancer la requête,

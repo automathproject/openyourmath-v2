@@ -93,6 +93,11 @@ export async function GET(event) {
   const hasSolutionParam  = url.searchParams.get('hasSolution');
   const hasIndicationParam = url.searchParams.get('hasIndication');
   const hasVideoParam     = url.searchParams.get('hasVideo');
+  // Classification CPGE : filière, nœud du programme (section ou sous-section,
+  // descendants compris), ou seulement « rattaché à un programme ».
+  const filiere     = url.searchParams.get('filiere')?.trim()      || '';
+  const cpge        = url.searchParams.get('cpge')?.trim()         || '';
+  const prepaParam  = url.searchParams.get('prepa');
 
   if (chapter)      filters.chapter      = chapter;
   if (subchapter)   filters.subchapter   = subchapter;
@@ -105,6 +110,9 @@ export async function GET(event) {
   if (updatedFrom)  filters.updatedFrom  = updatedFrom;
   if (updatedTo)    filters.updatedTo    = updatedTo;
   if (sort)         filters.sort         = sort;
+  if (filiere)      filters.filiere      = filiere;
+  if (cpge)         filters.cpge         = cpge;
+  if (prepaParam === '1' || prepaParam === 'true') filters.prepa = true;
 
   if (difficultyRaw) {
     if (difficultyRaw === 'null') {

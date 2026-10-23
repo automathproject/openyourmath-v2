@@ -31,6 +31,9 @@
       case 'createdTo':
       case 'updatedFrom':
       case 'updatedTo':
+      case 'prepa':
+      case 'filiere':
+      case 'cpge':
         searchActions.updateFilter(key, '');
         break;
       default:
@@ -64,6 +67,9 @@
     if ($filters.createdTo) entries.push({ key: 'createdTo', label: `Créé ≤ ${$filters.createdTo}` });
     if ($filters.updatedFrom) entries.push({ key: 'updatedFrom', label: `MAJ ≥ ${$filters.updatedFrom}` });
     if ($filters.updatedTo) entries.push({ key: 'updatedTo', label: `MAJ ≤ ${$filters.updatedTo}` });
+    if ($filters.prepa && !$filters.filiere && !$filters.cpge) entries.push({ key: 'prepa', label: 'Prépa (CPGE)' });
+    if ($filters.filiere) entries.push({ key: 'filiere', label: `Filière : ${$filters.filiere}` });
+    if ($filters.cpge) entries.push({ key: 'cpge', label: `Programme : ${$filters.cpge}` });
     return entries;
   })();
 

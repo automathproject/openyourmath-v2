@@ -65,6 +65,9 @@ export const filters = writable({
   hasSolution: '',
   hasIndication: '',
   hasVideo: '',
+  filiere: '',
+  cpge: '',
+  prepa: '',
   sort: 'relevance',
   sortDirection: 'desc'
 });
@@ -105,6 +108,9 @@ export const hasActiveFilters = derived(
       $filters.module || 
       $filters.author ||
       $filters.organization ||
+      $filters.filiere ||
+      $filters.cpge ||
+      $filters.prepa ||
       $filters.createdFrom ||
       $filters.createdTo ||
       $filters.updatedFrom ||
@@ -139,7 +145,8 @@ function createEmptyFilterCounts() {
     level: {},
     difficulty: {},
     author: {},
-    organization: {}
+    organization: {},
+    filiere: {}
   };
 }
 
@@ -342,6 +349,9 @@ export const searchActions = {
       hasSolution: '',
       hasIndication: '',
       hasVideo: '',
+      filiere: '',
+      cpge: '',
+      prepa: '',
       sort: 'relevance',
       sortDirection: 'desc'
     });
@@ -428,6 +438,15 @@ export const searchActions = {
       }
       if (currentFilters.organization) {
         searchParams.set('organization', currentFilters.organization);
+      }
+      if (currentFilters.filiere) {
+        searchParams.set('filiere', currentFilters.filiere);
+      }
+      if (currentFilters.cpge) {
+        searchParams.set('cpge', currentFilters.cpge);
+      }
+      if (currentFilters.prepa) {
+        searchParams.set('prepa', '1');
       }
       if (currentFilters.createdFrom) {
         searchParams.set('createdFrom', currentFilters.createdFrom);
@@ -539,6 +558,15 @@ export const searchActions = {
       }
       if (currentFilters.organization) {
         searchParams.set('organization', currentFilters.organization);
+      }
+      if (currentFilters.filiere) {
+        searchParams.set('filiere', currentFilters.filiere);
+      }
+      if (currentFilters.cpge) {
+        searchParams.set('cpge', currentFilters.cpge);
+      }
+      if (currentFilters.prepa) {
+        searchParams.set('prepa', '1');
       }
       if (currentFilters.createdFrom) {
         searchParams.set('createdFrom', currentFilters.createdFrom);
