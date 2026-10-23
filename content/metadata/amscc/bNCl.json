@@ -1,0 +1,36 @@
+{
+  "uuid": "bNCl",
+  "source_path": "amscc/bNCl.tex",
+  "summary": "L'exercice consiste à implémenter et analyser des réseaux de neurones en Python, en mettant en œuvre la rétropropagation, la descente de gradient, et diverses méthodes d'apprentissage. Il aborde des questions sur la précision des gradients, l'impact de l'initialisation, le choix des mini-lots, la régularisation, et le sur-apprentissage.",
+  "concepts": [
+    "réseau de neurones",
+    "rétropropagation",
+    "descente de gradient",
+    "mini-lots",
+    "sur-apprentissage",
+    "régularisation",
+    "fonction d'activation",
+    "perte quadratique",
+    "initialisation des poids"
+  ],
+  "methods": [
+    "méthode des différences finies",
+    "calcul de gradient",
+    "optimisation par descente de gradient",
+    "évaluation de précision",
+    "arrêt précoce",
+    "régularisation L2"
+  ],
+  "objects": [
+    "réseau de neurones à couches cachées",
+    "fonction de perte",
+    "gradient",
+    "mini-lots de données",
+    "paramètres de réseau",
+    "fonction d'activation sigmoïde",
+    "fonction ReLU"
+  ],
+  "content_hash": "716e624edff61260c8aab2533997dd3e3157f74697951eb11b1a9925ca609646",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-23T12:32:23.259Z"
+}

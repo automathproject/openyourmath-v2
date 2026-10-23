@@ -3578,5 +3578,15 @@
   "passage": "arbitrage final (termes de L3, consigne explicite)",
   "fichier": "Albert deepseek-v4-flash v9",
   "chapitre": "Différentiabilité, calcul de différentielles"
+ },
+ {
+  "uuid": "96ip",
+  "decision": "exclure",
+  "terme": "perceptron, réseau de neurones",
+  "raison": "Règle 2 : l'énoncé emploie perceptron et réseau de neurones sans les définir (les définitions sont dans le notebook, hors de l'énoncé).",
+  "incertain": false,
+  "passage": "arbitrage Opus (cas unique)",
+  "fichier": "Albert deepseek-v4-flash v9",
+  "chapitre": "Réseaux de neurones"
  }
 ]

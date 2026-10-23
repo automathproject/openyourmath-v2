@@ -1,0 +1,36 @@
+{
+  "uuid": "96ip",
+  "source_path": "amscc/96ip.tex",
+  "summary": "L'exercice demande d'implémenter et d'analyser un perceptron et des réseaux de neurones multicouches en Python. Il s'agit de programmer la règle d'apprentissage, la propagation avant, et d'étudier la convergence sur des données séparables et non séparables (XOR). Les questions portent sur le nombre d'époques et de corrections, l'impact du taux d'apprentissage, la reconnaissance de motifs géométriques, et la dérivée numérique de la fonction Heaviside.",
+  "concepts": [
+    "perceptron",
+    "réseau de neurones multicouches",
+    "règle d'apprentissage",
+    "propagation avant",
+    "fonction d'activation Heaviside",
+    "taux d'apprentissage",
+    "convergence d'algorithme",
+    "classification linéaire"
+  ],
+  "methods": [
+    "programmation Python",
+    "calcul de poids et biais",
+    "analyse de convergence",
+    "calcul de dérivée numérique",
+    "modification de paramètres de réseau",
+    "estimation par aire géométrique"
+  ],
+  "objects": [
+    "perceptron",
+    "réseau multicouche",
+    "fonction Heaviside",
+    "données séparables",
+    "problème XOR",
+    "bande géométrique",
+    "triangle géométrique",
+    "vecteur de poids"
+  ],
+  "content_hash": "8634ebe7391a62b2408b7d29eda094da6c40f942ba046b17a21415365f50282d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-23T12:32:12.062Z"
+}
