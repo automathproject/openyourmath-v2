@@ -18,6 +18,7 @@ import fs from 'fs';
 import path from 'path';
 import { createRequire } from 'module';
 import { PROJECT_ROOT } from './utils/content-paths.js';
+import { horsProgrammeParRegle } from './utils/cpge-regles.js';
 
 const require = createRequire(import.meta.url);
 const args = process.argv.slice(2);
@@ -42,9 +43,10 @@ for (const f of fs.readdirSync(REPORTS).filter(f => f.endsWith('.jsonl'))) {
 const mod = require('better-sqlite3');
 const Database = mod.default || mod;
 const db = new Database(path.join(PROJECT_ROOT, 'data/exercises.sqlite'), { readonly: true });
-// Le M1 est hors CPGE par règle (consolider-cpge.js) : il n'entre dans aucune file.
-const restants = db.prepare("SELECT uuid, level, chapter FROM exercises WHERE level IS NOT 'M1' ORDER BY level, chapter, uuid").all()
-  .filter(row => !faits.has(row.uuid));
+// Les exercices hors CPGE par règle (M1, chapitres de L3 hors programme,
+// voir utils/cpge-regles.js) n'entrent dans aucune file.
+const restants = db.prepare('SELECT uuid, level, chapter FROM exercises ORDER BY level, chapter, uuid').all()
+  .filter(row => !faits.has(row.uuid) && !horsProgrammeParRegle(row.level, row.chapter));
 const pourAlbert = restants.filter(row => NIVEAUX_ALBERT.has(row.level));
 const fileHaiku = [...restants.filter(row => !NIVEAUX_ALBERT.has(row.level)), ...pourAlbert.toReversed()];
 

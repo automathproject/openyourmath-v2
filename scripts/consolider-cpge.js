@@ -27,6 +27,7 @@ import { createRequire } from 'module';
 import { collectReferentiel } from './build-referentiel-cpge.js';
 import { loadConcordance, indexNodes, buildCandidates } from './utils/cpge-candidats.js';
 import { PROJECT_ROOT } from './utils/content-paths.js';
+import { CHAPITRES_L3_HORS_PROGRAMME, NIVEAUX_HORS_PROGRAMME, horsProgrammeParRegle } from './utils/cpge-regles.js';
 
 const args = process.argv.slice(2);
 const option = name => {
@@ -43,21 +44,6 @@ const VERDICTS_RELECTEUR = {
   buqo: 'différence symétrique Δ employée sans définition',
   '2MXQ': 'différence symétrique Δ employée sans définition'
 };
-
-// Chapitres de L3 dont l'objet même est hors du programme de toutes les
-// filières : hors CPGE par règle, sauf avis contraire du relecteur. Les
-// chapitres mixtes (compacité, connexité, groupe quotient…) restent jugés
-// exercice par exercice.
-const CHAPITRES_L3_HORS_PROGRAMME = new Set([
-  'Fonction holomorphe', 'Formule de Cauchy', 'Théorème des résidus', 'Singularité',
-  'Sous-variété', "Difféomorphisme, théorème d'inversion locale et des fonctions implicites", 'Forme différentielle',
-  'Sous-groupe distingué', 'Action de groupe', 'Théorème de Sylow', 'Extension de corps', "Extension d'anneau",
-  'Espace topologique, espace métrique', 'Espace métrique complet, espace de Banach',
-  "Théorème de Stone-Weirstrass, théorème d'Ascoli", 'Dualité, topologie faible', 'Espace L^p',
-  'Espace de Hilbert, théorème de projection', 'Lemme de Fatou, convergence monotone', 'Tribu, fonction mesurable',
-  'Mesure', 'Distributions', 'Tranformée de Laplace et de Fourier',
-  'Géométrie projective', 'Géométrie et trigonométrie hyperbolique', 'Géométrie et trigonométrie sphérique'
-]);
 
 // Rattachements décidés par le relecteur après sa relecture (nœuds retenus).
 const RATTACHEMENTS_RELECTEUR = {
@@ -146,15 +132,19 @@ for (const [uuid, a] of A2) {
 // 7. Pilote Opus v7.
 for (const [uuid, e] of v7) poser(uuid, e, 'pilote Opus v7');
 
-// 8. Niveau M1 : hors du périmètre des programmes de CPGE, sans appel au modèle.
+// 8. Exercices hors CPGE par règle (niveau M1, chapitres de L3 hors programme)
+// que personne n'a étiquetés : ajoutés sans appel au modèle.
 const require = createRequire(import.meta.url);
 const mod = require('better-sqlite3');
 const db = new (mod.default || mod)(path.join(PROJECT_ROOT, 'data/exercises.sqlite'), { readonly: true });
-for (const row of db.prepare("SELECT uuid, level, chapter, subchapter, title FROM exercises WHERE level = 'M1'").all()) {
+for (const row of db.prepare('SELECT uuid, level, chapter, subchapter, title FROM exercises').all()) {
+  if (!horsProgrammeParRegle(row.level, row.chapter)) continue;
+  const parNiveau = NIVEAUX_HORS_PROGRAMME.has(row.level);
   poser(row.uuid, {
     uuid: row.uuid, niveau: row.level, chapitre: row.chapter, sous_chapitre: row.subchapter, titre: row.title,
-    releve_cpge: false, motif: 'Niveau M1 : hors du périmètre des programmes de CPGE.', propositions: []
-  }, 'niveau M1 (règle)');
+    releve_cpge: false, propositions: [], regle_chapitre: !parNiveau,
+    motif: parNiveau ? `Niveau ${row.level} : hors du périmètre des programmes de CPGE.` : `Chapitre de L3 hors programme : ${row.chapter}.`
+  }, parNiveau ? `niveau ${row.level} (règle)` : 'chapitre de L3 (règle)');
 }
 
 // Verdicts corrigés par le relecteur, puis contrôle par mots-clés.
