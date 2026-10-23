@@ -708,7 +708,7 @@ absents de tous les programmes, et six corrections vérifiées sur le texte
 officiel donnent la décision finale
 (`reports/cpge-pilote/controle-mots-cles.decisions.json`) :
 
-- 94 exercices passent hors CPGE, dont 88 étiquetés par Albert et 33 marqués
+- 94 exercices passent hors CPGE, dont 91 étiquetés par Albert et 33 marqués
   incertains ;
 - 25 restent en CPGE : le terme est défini par l'énoncé (perceptron,
   espace métrique, différence symétrique…), c'est un faux positif, ou une
