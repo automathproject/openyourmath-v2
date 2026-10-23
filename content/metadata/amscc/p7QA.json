@@ -1,32 +1,32 @@
 {
   "uuid": "p7QA",
   "source_path": "amscc/p7QA.tex",
-  "summary": "L'exercice demande d'étudier un processus industriel modélisé par une variable aléatoire exponentielle. Il s'agit de déterminer un estimateur du paramètre de la loi exponentielle, d'en analyser les propriétés, de construire un intervalle de confiance pour ce paramètre et pour l'espérance, et de tester la conformité aux normes industrielles.",
+  "summary": "L'exercice demande d'étudier la résistance de câbles électriques modélisée par une loi exponentielle. Il s'agit de déterminer la fonction de vraisemblance, d'estimer le paramètre de taux par maximum de vraisemblance, d'analyser le biais de l'estimateur, de construire des intervalles de confiance pour le paramètre et l'espérance, et de vérifier le respect d'un cahier des charges.",
   "concepts": [
     "loi exponentielle",
+    "fonction de vraisemblance",
     "maximum de vraisemblance",
     "estimateur sans biais",
-    "biais d'un estimateur",
+    "inégalité de Jensen",
+    "loi du khi-deux",
     "intervalle de confiance",
-    "loi du chi-deux",
-    "espérance mathématique",
-    "inégalité de Jensen"
+    "pivot statistique"
   ],
   "methods": [
-    "calcul de la fonction de vraisemblance",
-    "méthode du maximum de vraisemblance",
-    "calcul de la moyenne empirique",
-    "inversion d'intervalle de confiance",
-    "test d'hypothèse"
+    "estimation par maximum de vraisemblance",
+    "calcul de l'espérance conditionnelle",
+    "intégration par parties",
+    "utilisation des quantiles de la loi du khi-deux",
+    "transformation d'intervalle de confiance"
   ],
   "objects": [
     "variable aléatoire exponentielle",
     "échantillon aléatoire",
-    "estimateur du paramètre",
-    "intervalle de confiance",
-    "espérance mathématique"
+    "estimateur du paramètre de taux",
+    "intervalle de confiance pour le paramètre",
+    "espérance de la résistance"
   ],
-  "content_hash": "04cf27ed2e82be23dc43c75b01c7f42d8b415a551448f96695517f0edb2b7da2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T17:27:18.146Z"
+  "content_hash": "43c3e9eec18ca13edc8fd4ad03bcd1f5a6d7bfadc9becc73ece13d2f868c3298",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:43:25.641Z"
 }

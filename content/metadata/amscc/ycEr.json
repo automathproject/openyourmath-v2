@@ -1,32 +1,32 @@
 {
   "uuid": "ycEr",
   "source_path": "amscc/ycEr.tex",
-  "summary": "L'exercice demande de démontrer des propriétés mathématiques liées à la régression linéaire simple, notamment l'expression du risque quadratique, son gradient, sa hessienne, l'unicité de son point critique et sa convexité. Il s'agit d'optimiser les coefficients d'une droite de régression en minimisant l'erreur quadratique.",
+  "summary": "L'exercice demande de démontrer des propriétés mathématiques liées à la régression linéaire simple, notamment l'expression du risque quadratique, son gradient, son point critique unique, sa hessienne et sa convexité.",
   "concepts": [
-    "régression linéaire simple",
-    "risque quadratique",
-    "convexité",
+    "régression linéaire",
+    "optimisation",
     "gradient",
     "hessienne",
-    "point critique",
+    "convexité",
     "inégalité de Cauchy-Schwarz",
-    "système linéaire"
+    "système linéaire",
+    "point critique"
   ],
   "methods": [
     "développement algébrique",
     "calcul de dérivées partielles",
     "résolution de système linéaire",
-    "calcul de produit scalaire",
-    "application de l'inégalité de Cauchy-Schwarz"
+    "pivot de Gauss",
+    "produit scalaire"
   ],
   "objects": [
-    "fonction de coût quadratique",
+    "fonction quadratique",
     "gradient",
     "hessienne",
-    "vecteur de paramètres",
-    "système d'équations linéaires"
+    "vecteur",
+    "matrice"
   ],
-  "content_hash": "3aeaa79c9cbf9e9ce9743ddd078c1b681e595a8b0ee00fea4f31e0c9e77f4e4a",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:26:55.592Z"
+  "content_hash": "df44839cf15e01c82bb921f6731e749769f7aeb3d17433452dc1930517fcd95c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-10-21T17:54:35.335Z"
 }

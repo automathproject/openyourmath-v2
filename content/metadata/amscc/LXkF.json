@@ -1,26 +1,34 @@
 {
   "uuid": "LXkF",
   "source_path": "amscc/LXkF.tex",
-  "summary": "L'exercice demande de déterminer le seuil critique d'un test d'hypothèses pour une proportion d'ampoules défectueuses, puis d'évaluer la puissance du test pour différentes valeurs de l'hypothèse alternative.",
+  "summary": "L'exercice porte sur la construction et l'évaluation d'un test d'hypothèses pour la proportion d'ampoules défectueuses. Il demande de déterminer le seuil critique pour une erreur de première espèce, puis de calculer la puissance du test pour différentes hypothèses alternatives.",
   "concepts": [
     "test d'hypothèses",
     "proportion",
     "erreur de première espèce",
     "puissance d'un test",
-    "hypothèse nulle",
-    "hypothèse alternative",
-    "seuil critique"
+    "approximation normale de la loi binomiale",
+    "région critique",
+    "loi binomiale",
+    "fonction de répartition"
   ],
   "methods": [
-    "calcul du seuil critique",
-    "évaluation de la puissance d'un test"
+    "approximation gaussienne",
+    "calcul de la puissance d'un test",
+    "détermination du seuil critique",
+    "standardisation",
+    "utilisation de la fonction quantile"
   ],
   "objects": [
     "proportion d'ampoules défectueuses",
-    "échantillon aléatoire",
-    "hypothèses statistiques"
+    "fréquence empirique",
+    "loi binomiale",
+    "loi normale",
+    "seuil critique",
+    "hypothèse nulle",
+    "hypothèse alternative"
   ],
-  "content_hash": "cdb359e10432dd455588a215251f973c2967a7fad61eb763df9fa8a32eca07c2",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:40:21.241Z"
+  "content_hash": "70d0b8b28701151d287906cfe01b9176427e1795ff6e20d036632992509ac43b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:03.105Z"
 }

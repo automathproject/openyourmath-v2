@@ -1,0 +1,32 @@
+{
+  "uuid": "Pw3n",
+  "source_path": "amscc/Pw3n.tex",
+  "summary": "L'exercice demande de calculer la puissance d'un test d'hypothèse pour une moyenne normale avec écart-type connu, en fonction de la taille d'échantillon et de la valeur alternative. Il s'agit d'exprimer cette puissance à l'aide de la fonction de répartition de la loi normale centrée réduite, puis de déterminer la taille d'échantillon nécessaire pour atteindre une puissance minimale de 90%.",
+  "concepts": [
+    "test d'hypothèse",
+    "puissance d'un test",
+    "risque de première espèce",
+    "risque de deuxième espèce",
+    "loi normale",
+    "moyenne d'échantillon",
+    "standardisation",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de la moyenne critique",
+    "utilisation de la fonction de répartition",
+    "calcul de la taille d'échantillon",
+    "approximation gaussienne"
+  ],
+  "objects": [
+    "moyenne d'échantillon",
+    "écart-type connu",
+    "valeur critique",
+    "courbe de puissance",
+    "taille d'échantillon"
+  ],
+  "content_hash": "42cf1a531933facd5ba0acdaccbecec10f947d9c6a12ed6d925b23f7b49548ff",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:12.996Z"
+}

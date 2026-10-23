@@ -1,0 +1,32 @@
+{
+  "uuid": "tR6m",
+  "source_path": "amscc/tR6m.tex",
+  "summary": "L'exercice demande de simuler des échantillons de tailles variables (n=2, 10, 50) d'une loi exponentielle, de calculer les moyennes échantillonnales et d'étudier leur distribution via des histogrammes. Il s'agit ensuite de construire des intervalles de confiance pour la moyenne et d'analyser leur couverture de la vraie moyenne, en comparant les résultats avec les prédictions théoriques.",
+  "concepts": [
+    "théorème central limite",
+    "loi exponentielle",
+    "moyenne échantillonnale",
+    "écart-type échantillonnal",
+    "intervalle de confiance",
+    "loi de Student",
+    "quantile",
+    "approximation gaussienne"
+  ],
+  "methods": [
+    "simulation Monte Carlo",
+    "calcul de moyenne échantillonnale",
+    "calcul d'écart-type échantillonnal",
+    "construction d'intervalle de confiance",
+    "comparaison de distributions empiriques"
+  ],
+  "objects": [
+    "échantillon aléatoire",
+    "moyenne d'échantillon",
+    "écart-type corrigé",
+    "intervalle de confiance",
+    "histogramme de fréquences"
+  ],
+  "content_hash": "379fa8c4c2492df40bccf58b736ef6808553614d6b6735a4a3485e932627e71e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:43:47.792Z"
+}

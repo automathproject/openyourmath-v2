@@ -1,0 +1,32 @@
+{
+  "uuid": "Mh2y",
+  "source_path": "amscc/Mh2y.tex",
+  "summary": "L'exercice demande d'estimer la moyenne et l'écart-type d'un prix modélisé par une loi normale à partir d'un échantillon de 7 observations. Il s'agit ensuite de construire des intervalles de confiance pour la moyenne, d'abord avec un écart-type connu, puis avec un écart-type estimé, et de comparer les largeurs de ces intervalles.",
+  "concepts": [
+    "loi normale",
+    "intervalle de confiance",
+    "estimateur sans biais",
+    "convergence en probabilité",
+    "loi de Student",
+    "quantile",
+    "variance échantillonnale corrigée"
+  ],
+  "methods": [
+    "estimation par la moyenne échantillonnale",
+    "estimation de la variance par la somme des carrés des écarts",
+    "standardisation",
+    "calcul de quantiles",
+    "construction d'intervalle de confiance"
+  ],
+  "objects": [
+    "échantillon",
+    "moyenne échantillonnale",
+    "écart-type échantillonnal",
+    "intervalle de confiance",
+    "quantile de la loi normale",
+    "quantile de la loi de Student"
+  ],
+  "content_hash": "3af95e68d1483f69f74950ef7f3e76e1f545fdea5c6ba8006b7f3b431d55f5d3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:09.593Z"
+}

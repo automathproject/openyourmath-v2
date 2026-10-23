@@ -1,30 +1,32 @@
 {
   "uuid": "EZfx",
   "source_path": "amscc/EZfx.tex",
-  "summary": "L'exercice demande de déterminer les lois de distribution de différentes statistiques calculées à partir d'un échantillon de 16 bestioles dont les poids suivent une loi normale. Il s'agit de la moyenne échantillonnaire, de la somme des carrés des écarts à la moyenne, et de la statistique de Student.",
+  "summary": "L'exercice demande de déterminer les lois de différentes statistiques calculées à partir d'un échantillon de 16 variables indépendantes suivant une loi normale, puis de trouver des quantiles associés. Les statistiques étudiées sont la moyenne empirique, une somme de carrés centrés, une somme de carrés centrés réduits, et une statistique de Student.",
   "concepts": [
     "loi normale",
-    "loi du chi-deux",
+    "loi du khi-deux",
     "loi de Student",
-    "moyenne échantillonnaire",
-    "variance échantillonnaire",
+    "moyenne empirique",
+    "variance empirique",
     "théorème de Fisher",
-    "somme de variables aléatoires indépendantes"
+    "quantile",
+    "indépendance statistique"
   ],
   "methods": [
     "standardisation",
-    "calcul de l'espérance et de la variance",
-    "utilisation des tables de distribution",
-    "application du théorème de Fisher"
+    "calcul de la moyenne et de la variance",
+    "application du théorème de Fisher",
+    "recherche de quantiles",
+    "construction de la statistique de Student"
   ],
   "objects": [
-    "moyenne échantillonnaire",
-    "somme des carrés des écarts",
+    "échantillon indépendant",
+    "moyenne empirique",
+    "somme de carrés centrés",
     "statistique de Student",
-    "variable aléatoire normale",
-    "variable aléatoire de chi-deux"
+    "quantiles"
   ],
-  "content_hash": "7efbcb15f5b19c55e9d6e8238d9c625105956f62734c4637ce45ab1bfbdb0e04",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:38:01.320Z"
+  "content_hash": "7940e585ff0cadf589f5b9125db3b56de9e25c92d9eacb9d82a17fa5f400044b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:41:50.293Z"
 }

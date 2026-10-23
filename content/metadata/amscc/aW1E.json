@@ -1,29 +1,33 @@
 {
   "uuid": "aW1E",
   "source_path": "amscc/aW1E.tex",
-  "summary": "L'exercice demande d'estimer la moyenne et l'écart-type d'un temps de trajet supposé normalement distribué, puis de tester une hypothèse sur cette moyenne à l'aide d'un test statistique.",
+  "summary": "L'exercice demande d'estimer la moyenne et l'écart-type d'un temps de trajet modélisé par une loi normale, puis de tester l'hypothèse nulle selon laquelle la moyenne est de 25 minutes contre une alternative de 30 minutes, en utilisant un test de Student. Il aborde également le calcul du risque de deuxième espèce et l'interprétation des résultats.",
   "concepts": [
     "loi normale",
     "estimation ponctuelle",
+    "moyenne empirique",
+    "variance corrigée",
     "test d'hypothèse",
+    "statistique de Student",
     "risque de première espèce",
-    "risque de seconde espèce",
-    "région critique",
-    "variable de décision"
+    "risque de deuxième espèce",
+    "puissance d'un test"
   ],
   "methods": [
-    "estimation de la moyenne et de l'écart-type",
-    "test bilatéral",
+    "estimation par la moyenne empirique",
+    "estimation par la variance corrigée",
+    "test unilatéral de Student",
     "calcul de la région critique",
-    "calcul du risque de seconde espèce"
+    "calcul de la puissance d'un test"
   ],
   "objects": [
     "échantillon de temps de trajet",
-    "moyenne empirique",
-    "écart-type empirique",
-    "hypothèses statistiques"
+    "moyenne $\\mu$",
+    "écart-type $\\sigma$",
+    "statistique de test $T$",
+    "quantile de Student"
   ],
-  "content_hash": "f56ad2d639a4dd4936d03c0bd90e585de3f78aed4549f8d904e85c633cb26c9d",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:45:38.253Z"
+  "content_hash": "508ea08c66cfe159f2acf3767a4d943eb0a302f2fef8158f0ba896f5b0e37e66",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:49.435Z"
 }

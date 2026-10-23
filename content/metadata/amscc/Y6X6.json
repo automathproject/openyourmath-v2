@@ -1,29 +1,30 @@
 {
   "uuid": "Y6X6",
   "source_path": "amscc/Y6X6.tex",
-  "summary": "L'exercice demande de déterminer le graphe d'une fonction $F$ obtenue par composition de transformations linéaires et de fonctions d'activation ReLU dans un réseau de neurones à deux couches. Il s'agit ensuite de concevoir un réseau de neurones capable de reproduire une fonction $G$ donnée par son graphe.",
+  "summary": "L'exercice demande de dessiner le graphe d'une fonction F(x) obtenue par un réseau de neurones à deux couches avec des fonctions d'activation ReLU et identité, puis de déterminer un réseau de neurones réalisant une fonction G(x) donnée par son graphe.",
   "concepts": [
-    "fonction d'activation ReLU",
-    "composition de fonctions",
+    "fonction d'activation",
+    "fonction ReLU",
+    "fonction identité",
     "réseau de neurones",
-    "fonction affine",
-    "fonction par morceaux",
-    "topologie des fonctions continues"
+    "fonction composée",
+    "architecture de réseau de neurones",
+    "sortie d'un neurone"
   ],
   "methods": [
-    "analyse des cas par morceaux",
+    "analyse par cas",
+    "composition de fonctions",
     "construction de réseau de neurones",
-    "détermination de la sortie d'un réseau de neurones",
-    "utilisation de fonctions d'activation"
+    "détermination de la sortie d'une couche"
   ],
   "objects": [
-    "fonction $F(x)$",
-    "fonction $G(x)$",
     "réseau de neurones à deux couches",
-    "fonction par morceaux",
-    "fonction affine"
+    "fonction F(x)",
+    "fonction G(x)",
+    "neurones avec fonctions d'activation",
+    "poids de connexion"
   ],
-  "content_hash": "c8fc8843551f35e05ccf136e8175f3c0a9c8622b33ad34037e458a8587f64e93",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:23:52.388Z"
+  "content_hash": "969324b7a991f217282be4d8259456a706af0515139a6e997d8f9219842e3702",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-10-21T18:12:43.223Z"
 }

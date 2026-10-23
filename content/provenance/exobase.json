@@ -4,15 +4,15 @@
   "role": "exobase est l'usine : il possède les sources .tex, les images, les extraits de code, les fiches, les référentiels (dont les programmes CPGE), les classifications relues et le référentiel auteurs. OpenYourMath ne possède que les données dérivées et les métadonnées sémantiques, dont les propositions de classification non relues.",
   "notes": "Le champ sync est écrit par scripts/sync-exobase.js et enregistre le commit exobase importé.",
   "sync": {
-    "commit": "19d4b4c8e3a54c448ab8632812efed5be2c6df3a",
-    "date": "2026-10-19T10:11:11.750Z",
+    "commit": "0f5682e9e5d5383d69e9079734f06ce62c067dd1",
+    "date": "2026-10-21T17:32:49.544Z",
     "sources": [
       "amscc",
       "crouzet",
       "exo7"
     ],
     "fichiers": {
-      "sources": 8712,
+      "sources": 8716,
       "images": 1369,
       "code": 15,
       "fiches": 167,

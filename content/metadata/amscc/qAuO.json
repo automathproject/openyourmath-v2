@@ -1,32 +1,33 @@
 {
   "uuid": "qAuO",
   "source_path": "amscc/qAuO.tex",
-  "summary": "L'exercice demande de comparer l'homogénéité des notes de deux IUT en utilisant des tests statistiques. Il s'agit de calculer des coefficients de variation, de formuler et réaliser un test d'égalité des variances (test de Fisher), d'interpréter les résultats et de construire un intervalle de confiance pour le rapport des variances.",
+  "summary": "L'exercice demande de comparer la dispersion des notes entre deux IUT en calculant des coefficients de variation, en testant l'égalité des variances via un test de Fisher, et en construisant un intervalle de confiance pour le rapport des variances. Le contexte pédagogique est évoqué pour interpréter les résultats.",
   "concepts": [
-    "test d'hypothèses",
     "test de Fisher",
-    "égalité des variances",
-    "coefficient de variation",
-    "intervalle de confiance",
+    "hypothèse nulle",
+    "hypothèse alternative",
     "loi de Fisher",
-    "p-valeur",
-    "hypothèse nulle"
+    "intervalle de confiance",
+    "coefficient de variation",
+    "variance empirique corrigée",
+    "test bilatéral"
   ],
   "methods": [
     "calcul du coefficient de variation",
     "formulation des hypothèses statistiques",
-    "calcul de la statistique de test de Fisher",
+    "calcul de la statistique de test",
     "détermination de la région critique",
+    "calcul de la p-valeur",
     "construction d'un intervalle de confiance pour un rapport de variances"
   ],
   "objects": [
-    "écart-type empirique",
-    "moyenne échantillonnale",
+    "écart-type corrigé",
+    "moyenne observée",
+    "variance empirique",
     "rapport de variances",
-    "statistique de Fisher",
-    "intervalle de confiance"
+    "quantile de la loi de Fisher"
   ],
-  "content_hash": "352a4be10ea00f9d12964b7e6de74919f94b92bc423c448e8773da729f17a68c",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-30T10:01:34.038Z"
+  "content_hash": "88f420f0b3c4641a9fc9b9b145c7b3eef5d17523933618d8db1b499b949cd2bd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:43:29.577Z"
 }

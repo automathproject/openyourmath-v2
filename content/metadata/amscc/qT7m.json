@@ -1,0 +1,32 @@
+{
+  "uuid": "qT7m",
+  "source_path": "amscc/qT7m.tex",
+  "summary": "L'exercice compare les statistiques Z et T pour un échantillon normal, en analysant leurs lois respectives (normale et Student) et leurs quantiles. Il demande de construire un tableau de quantiles pour différentes tailles d'échantillon, de déterminer des intervalles de confiance, et d'évaluer l'approximation normale de la loi de Student.",
+  "concepts": [
+    "loi normale",
+    "loi de Student",
+    "quantile",
+    "statistique d'échantillonnage",
+    "intervalle de confiance",
+    "théorème de Fisher",
+    "convergence en loi",
+    "fonction de répartition"
+  ],
+  "methods": [
+    "calcul de quantiles",
+    "approximation gaussienne",
+    "utilisation de tables statistiques",
+    "calcul de probabilités centrales",
+    "comparaison de lois"
+  ],
+  "objects": [
+    "statistique Z",
+    "statistique T",
+    "écart-type échantillon",
+    "moyenne échantillon",
+    "variable aléatoire normale"
+  ],
+  "content_hash": "208ac9ce8ac222645d88166f52ca9780a00e4573e0f7c3bec868cf81334a0046",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:43:33.020Z"
+}

@@ -48,3 +48,6 @@ lerna-debug.log*
 # et permissions propres à la machine. Rien de partageable ici pour l'instant ;
 # si un jour on veut versionner un réglage d'équipe, le désigner explicitement.
 /.claude/
+
+# Polices temporaires extraites par dvisvgm pendant build:tikz
+font-*.pfa

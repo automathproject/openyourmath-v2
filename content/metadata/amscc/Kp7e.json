@@ -1,0 +1,32 @@
+{
+  "uuid": "Kp7e",
+  "source_path": "amscc/Kp7e.tex",
+  "summary": "L'exercice demande d'estimer des proportions (fumeurs parmi les malades et non-malades) à partir d'un tableau de contingence 2x2, puis de tester l'égalité de deux proportions avec un test du khi-deux ou une approximation normale, et enfin de construire un intervalle de confiance pour la différence de proportions.",
+  "concepts": [
+    "proportion",
+    "test d'hypothèse",
+    "approximation normale",
+    "intervalle de confiance",
+    "tableau de contingence",
+    "statistique du khi-deux",
+    "loi normale",
+    "p-valeur"
+  ],
+  "methods": [
+    "estimation par fréquence",
+    "test bilatéral",
+    "standardisation",
+    "calcul de la statistique de Pearson",
+    "construction d'intervalle de confiance"
+  ],
+  "objects": [
+    "proportion de fumeurs parmi les malades",
+    "proportion de fumeurs parmi les non-malades",
+    "différence de proportions",
+    "tableau 2x2",
+    "statistique Z"
+  ],
+  "content_hash": "78e063e5317be12047d34ef096517039f1f94d4cef96143417c1ba6bc660b437",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:41:59.977Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "bR2v",
+  "source_path": "amscc/bR2v.tex",
+  "summary": "L'exercice demande d'exprimer la vraisemblance d'un échantillon de pièces défectueuses suivant une loi de Bernoulli, de maximiser cette vraisemblance pour estimer la proportion de pièces défectueuses, puis d'étudier les propriétés de l'estimateur obtenu (espérance, variance, biais, convergence) et d'approcher sa loi par le théorème central limite pour un grand échantillon.",
+  "concepts": [
+    "loi de Bernoulli",
+    "vraisemblance",
+    "maximum de vraisemblance",
+    "estimateur sans biais",
+    "convergence en probabilité",
+    "théorème central limite",
+    "intervalle de confiance"
+  ],
+  "methods": [
+    "maximisation de la vraisemblance",
+    "standardisation",
+    "approximation gaussienne",
+    "calcul d'espérance et de variance",
+    "étude de la dérivée"
+  ],
+  "objects": [
+    "proportion",
+    "échantillon binaire",
+    "fréquence empirique",
+    "statistique d'estimation",
+    "loi normale approchée"
+  ],
+  "content_hash": "67fc00f48deb05a281f47a63db9de8045354db60fc67ea002237f03bc74da369",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:52.712Z"
+}

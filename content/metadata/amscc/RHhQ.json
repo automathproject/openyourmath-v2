@@ -1,26 +1,33 @@
 {
   "uuid": "RHhQ",
   "source_path": "amscc/RHhQ.tex",
-  "summary": "L'exercice demande d'analyser un jeu de données contenant des mesures de poids et de taille pour calculer des indicateurs statistiques (position et dispersion) et étudier la corrélation linéaire entre ces deux variables.",
+  "summary": "L'exercice demande d'analyser un jeu de données contenant des mesures de taille et de poids, de convertir ces variables dans des unités métriques, de calculer des indicateurs statistiques descriptifs, de visualiser les distributions et d'étudier leur corrélation linéaire. L'objectif est de comprendre l'effet des unités sur les calculs et les interprétations.",
   "concepts": [
-    "indicateurs de position",
-    "indicateurs de dispersion",
+    "statistiques descriptives",
     "corrélation linéaire",
-    "analyse statistique descriptive",
-    "tableur"
+    "conversion d'unités",
+    "distribution de variables",
+    "variance corrigée",
+    "écart-type corrigé",
+    "quartiles interpolés",
+    "analyse exploratoire de données"
   ],
   "methods": [
-    "calcul de moyennes",
-    "calcul d'écart-types",
-    "régression linéaire",
-    "représentation graphique"
+    "calcul de statistiques de position",
+    "calcul de statistiques de dispersion",
+    "tracé d'histogrammes",
+    "tracé de diagrammes en boîte",
+    "calcul de coefficient de corrélation",
+    "conversion de variables"
   ],
   "objects": [
-    "variable quantitative",
     "tableau de données",
-    "nuages de points"
+    "variables quantitatives",
+    "nuage de points",
+    "indicateurs statistiques",
+    "graphiques descriptifs"
   ],
-  "content_hash": "94ae1d8072e38e9e3655b112e8ea8d713109aebc05b7bed8046764fc07073693",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:41:37.880Z"
+  "content_hash": "1d601c3411d7a072da27f1879275436e20e024bc37c7781db88746ada702cbb2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:28.907Z"
 }

@@ -1,29 +1,29 @@
 {
   "uuid": "5FLs",
   "source_path": "amscc/5FLs.tex",
-  "summary": "L'exercice demande de réaliser un test d'indépendance du khi-deux pour déterminer si les caractères <<être fumeur>> et <<avoir un cancer de la gorge>> sont liés, à partir d'un tableau de contingence 2x2. Le contexte est une étude épidémiologique sur 1000 personnes.",
+  "summary": "L'exercice demande de réaliser un test d'indépendance de Pearson pour étudier la liaison entre le tabagisme et le cancer de la gorge à partir d'un tableau de contingence 2x2. Il s'agit d'interpréter la statistique de Pearson au seuil de 5% et d'en déduire la portée du test.",
   "concepts": [
-    "test d'indépendance du khi-deux",
+    "test d'indépendance de Pearson",
     "tableau de contingence",
     "hypothèse nulle",
     "risque de première espèce",
-    "probabilité conjointe",
-    "loi du khi-deux",
-    "degré de liberté"
+    "loi du chi-deux",
+    "effectifs observés et attendus",
+    "degrés de liberté"
   ],
   "methods": [
-    "calcul des effectifs théoriques",
-    "calcul de la statistique du khi-deux",
-    "comparaison avec la table de distribution du khi-deux",
-    "rejet de l'hypothèse nulle"
+    "calcul des effectifs attendus",
+    "construction de la statistique de Pearson",
+    "approximation par la loi du chi-deux",
+    "comparaison avec le seuil critique"
   ],
   "objects": [
     "tableau de contingence 2x2",
+    "statistique de Pearson",
     "effectifs observés",
-    "effectifs théoriques",
-    "statistique du khi-deux"
+    "effectifs attendus"
   ],
-  "content_hash": "3a8f1f1913f6f1a80318e7f622f5d5e405ab54d0b792856dfe2e20c58679cfa1",
+  "content_hash": "a14c2f13fda11dca21e24c61bea3ad7f157167508c2c9a001bd31abeebc4d5df",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-16T11:29:30.330Z"
+  "indexed_at": "2026-10-19T11:41:21.660Z"
 }

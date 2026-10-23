@@ -1,30 +1,31 @@
 {
   "uuid": "0e0x",
   "source_path": "amscc/0e0x.tex",
-  "summary": "L'exercice demande d'estimer l'espérance et la variance d'une variable aléatoire normale représentant le taux de cholestérol, à partir d'un échantillon de 20 individus. Il faut ensuite construire un intervalle de confiance pour l'espérance au risque de 1%.",
+  "summary": "L'exercice demande d'estimer l'espérance et la variance d'une variable aléatoire normale à partir d'un échantillon de 20 individus, puis de construire un intervalle de confiance pour l'espérance au risque de 1%. Les données sont fournies sous forme de tableau de fréquences.",
   "concepts": [
     "loi normale",
-    "estimateur de l'espérance",
-    "estimateur de la variance",
+    "estimateur sans biais",
+    "convergence en probabilité",
     "intervalle de confiance",
     "loi de Student",
-    "échantillonnage aléatoire",
-    "risque statistique"
+    "quantile",
+    "variance échantillonnale corrigée"
   ],
   "methods": [
-    "calcul de la moyenne empirique",
-    "calcul de la variance empirique corrigée",
+    "calcul de la moyenne échantillonnale",
+    "calcul de la variance échantillonnale",
     "standardisation",
-    "utilisation de la loi de Student"
+    "utilisation de la loi de Student",
+    "construction d'intervalle de confiance"
   ],
   "objects": [
     "variable aléatoire normale",
     "échantillon",
-    "espérance",
-    "variance",
+    "estimateur de l'espérance",
+    "estimateur de la variance",
     "intervalle de confiance"
   ],
-  "content_hash": "33783ca5c8f85615875ea0d41638ac61dcf114d07798a29378d201052b5ad34d",
+  "content_hash": "1ea739b50f28c55a871b17caa716ffe05f9755c37d0a031685f5a516becc3ef7",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-16T11:29:26.808Z"
+  "indexed_at": "2026-10-19T11:40:57.973Z"
 }

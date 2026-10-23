@@ -1,31 +1,28 @@
 {
   "uuid": "5NS7",
   "source_path": "amscc/5NS7.tex",
-  "summary": "Calcul de l'erreur d'un réseau de neurones à deux couches utilisant la fonction ReLU, évaluation de la fonction de perte pour des paramètres donnés, et calcul des dérivées partielles de la fonction de sortie par rapport aux paramètres du réseau.",
+  "summary": "Calcul de l'erreur d'un réseau de neurones à deux couches utilisant la fonction ReLU, évaluation de la fonction de perte pour des paramètres donnés, et calcul des dérivées partielles des paramètres du réseau.",
   "concepts": [
+    "réseau de neurones",
     "fonction ReLU",
     "fonction de perte",
-    "réseau de neurones",
-    "dérivée partielle",
-    "chaînage des dérivées",
-    "fonction d'erreur quadratique",
-    "propagation avant",
-    "propagation arrière"
+    "dérivées partielles",
+    "rétropropagation",
+    "optimisation"
   ],
   "methods": [
     "calcul de dérivées partielles",
-    "chaînage des dérivées",
-    "évaluation de fonction composée",
-    "calcul de somme pondérée"
+    "évaluation de fonction",
+    "application de la règle de la chaîne",
+    "calcul de gradient"
   ],
   "objects": [
-    "fonction de sortie d'un réseau de neurones",
+    "fonction d'erreur",
     "paramètres du réseau",
-    "fonction d'erreur quadratique",
-    "dérivées partielles",
-    "fonction ReLU"
+    "fonction ReLU",
+    "dérivées partielles"
   ],
-  "content_hash": "1ec21d66d1c399966b34ec1786bb9c81439548b284977533fc32a6d1ffc710e6",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-18T12:29:47.306Z"
+  "content_hash": "28c680660236cec4cc7c3274bd830a5954eecd38f4cd3922c7250747b7ff8e8f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-10-21T18:01:45.511Z"
 }

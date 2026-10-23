@@ -1,32 +1,32 @@
 {
   "uuid": "DkOf",
   "source_path": "amscc/DkOf.tex",
-  "summary": "L'exercice demande de tester si le nombre d'entretiens d'embauche obtenus par des demandeurs d'emploi suit une loi de Poisson, en utilisant un test d'adéquation du chi-deux avec un seuil de significativité de 5%. Les données fournies sont les effectifs observés pour différentes classes de nombre d'entretiens.",
+  "summary": "L'exercice demande de tester l'adéquation d'une distribution de fréquences observées (nombre d'entretiens d'embauche) à une loi de Poisson de paramètre inconnu, en utilisant un test du chi-deux. Il faut estimer le paramètre λ par maximisation de vraisemblance, regrouper les classes, calculer les effectifs attendus, et déterminer la p-valeur.",
   "concepts": [
     "test d'adéquation du chi-deux",
     "loi de Poisson",
-    "hypothèse nulle",
-    "hypothèse alternative",
-    "estimation du paramètre",
-    "probabilité conditionnelle",
-    "intervalle de confiance",
-    "test bilatéral"
+    "vraisemblance",
+    "maximisation de vraisemblance",
+    "statistique de Pearson",
+    "quantile de la loi du chi-deux",
+    "p-valeur",
+    "estimation par regroupement de classes"
   ],
   "methods": [
-    "calcul de la moyenne empirique",
-    "estimation du paramètre lambda",
-    "calcul des effectifs théoriques",
-    "calcul de la statistique du chi-deux",
-    "comparaison avec la valeur critique"
+    "estimation du paramètre par maximisation de vraisemblance",
+    "calcul des effectifs attendus",
+    "calcul de la statistique de Pearson",
+    "utilisation du quantile de la loi du chi-deux",
+    "calcul de la p-valeur"
   ],
   "objects": [
-    "variable aléatoire discrète",
-    "effectifs observés",
-    "effectifs théoriques",
-    "statistique de test",
-    "tableau de fréquences"
+    "distribution de fréquences observées",
+    "loi de Poisson",
+    "statistique de Pearson",
+    "quantile de la loi du chi-deux",
+    "effectifs observés et attendus"
   ],
-  "content_hash": "c5710c408e67c4fa29a5f395a7e7ed05d212569badd6f507e795f6d769b36822",
+  "content_hash": "010b7b07d815f679ddb90bf86d2adeedbd104d1a3ca9210bb9c229a2f1ce38b9",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-16T11:29:50.459Z"
+  "indexed_at": "2026-10-19T11:41:41.748Z"
 }

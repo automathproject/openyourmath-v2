@@ -1,29 +1,32 @@
 {
   "uuid": "5cbY",
   "source_path": "amscc/5cbY.tex",
-  "summary": "L'exercice demande d'estimer la moyenne et l'écart-type d'une population à partir d'un échantillon, de construire un intervalle de confiance pour la moyenne, et de déterminer si une usine respecte une réglementation basée sur cet intervalle. Une question supplémentaire demande de calculer la taille d'échantillon nécessaire pour une précision donnée.",
+  "summary": "L'exercice demande d'estimer la moyenne et la variance d'une population à partir d'un échantillon de mesures normales, de construire un intervalle de confiance bilatéral pour la moyenne, et de déterminer le nombre de mesures nécessaires pour atteindre une précision donnée. Le contexte est l'analyse de la pollution d'une rivière.",
   "concepts": [
-    "estimation ponctuelle",
-    "estimation sans biais",
     "intervalle de confiance",
     "loi de Student",
-    "loi normale",
+    "loi normale centrée réduite",
+    "estimateur sans biais",
+    "variance corrigée",
     "quantile",
-    "marge d'erreur"
+    "marge d'erreur",
+    "précision statistique"
   ],
   "methods": [
-    "calcul de l'écart-type corrigé",
+    "standardisation",
+    "calcul de quantile",
+    "estimation ponctuelle",
     "construction d'intervalle de confiance",
-    "utilisation de la loi normale",
-    "résolution d'inéquation"
+    "calcul de taille d'échantillon"
   ],
   "objects": [
+    "variable normale",
     "moyenne échantillon",
     "écart-type échantillon",
-    "taille d'échantillon",
-    "teneur en polluant"
+    "intervalle de confiance",
+    "taille d'échantillon"
   ],
-  "content_hash": "cc969f6162f2c3470e4323aa0c54916aafed9a83fa6151fb605e6c00d96b878f",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:32:21.459Z"
+  "content_hash": "d910b9ad7a043628e8bd5bf07aba49d6750b40fd14fabdc9fb967960d4bfde94",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:41:25.076Z"
 }

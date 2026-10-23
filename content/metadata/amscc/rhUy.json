@@ -1,33 +1,34 @@
 {
   "uuid": "rhUy",
   "source_path": "amscc/rhUy.tex",
-  "summary": "Comparaison des consommations énergétiques hivernales entre deux régions à l'aide de tests statistiques. Calcul de différences de moyennes, coefficients de variation, test de Fisher pour l'égalité des variances, test de Welch pour les moyennes, intervalle de confiance et analyse des hypothèses.",
+  "summary": "Comparer les consommations moyennes de chauffage entre deux régions A et B à partir d'échantillons indépendants. Analyser les données descriptivement, tester l'égalité des moyennes avec le test de Welch, et construire un intervalle de confiance pour la différence des moyennes.",
   "concepts": [
     "test d'hypothèses",
     "test de Student",
-    "test de Welch",
     "test de Fisher",
-    "loi normale",
     "intervalle de confiance",
-    "coefficient de variation",
-    "degrés de liberté"
+    "loi de Student",
+    "loi F de Fisher",
+    "approximation gaussienne",
+    "coefficient de variation"
   ],
   "methods": [
-    "calcul de différence de moyennes",
-    "test d'égalité des variances",
-    "test de Student avec variances inégales",
-    "calcul de p-valeur",
-    "construction d'intervalle de confiance",
-    "formule de Welch-Satterthwaite"
+    "test de Welch",
+    "test de Fisher",
+    "calcul de la statistique t",
+    "estimation des degrés de liberté de Welch-Satterthwaite",
+    "calcul de l'intervalle de confiance",
+    "analyse descriptive des données"
   ],
   "objects": [
-    "moyenne échantillon",
-    "variance empirique",
-    "statistique de test",
-    "degrés de liberté",
-    "intervalle de confiance"
+    "moyenne échantillonale",
+    "variance corrigée",
+    "statistique t de Student",
+    "rapport de Fisher",
+    "différence de moyennes",
+    "coefficient de variation"
   ],
-  "content_hash": "dd6a829b5499574bd8f186712c30b862e00bdf3bb11e60ed6ce4be75a889e3d8",
+  "content_hash": "1ddc66c335ca17cacdb9e2806283a99a815bc859bee5a4ea8c5ec955aa4a56e9",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-16T11:31:00.010Z"
+  "indexed_at": "2026-10-19T11:43:39.809Z"
 }

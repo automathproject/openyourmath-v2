@@ -1,0 +1,31 @@
+{
+  "uuid": "Pde0",
+  "source_path": "amscc/Pde0.tex",
+  "summary": "Calculer le score d'un perceptron sigmoïde pour des personnes données en fonction de leur taille et poids, puis déterminer leur catégorie de classification. Étudier les propriétés de la fonction sigmoïde et comparer avec la fonction de Heaviside.",
+  "concepts": [
+    "fonction sigmoïde",
+    "fonction d'activation",
+    "classification binaire",
+    "seuil de décision",
+    "fonction de Heaviside",
+    "perceptron",
+    "biais",
+    "poids synaptiques"
+  ],
+  "methods": [
+    "calcul de score",
+    "évaluation de fonction",
+    "comparaison de seuils",
+    "analyse de monotonie"
+  ],
+  "objects": [
+    "perceptron",
+    "fonction sigmoïde",
+    "fonction de Heaviside",
+    "score de classification",
+    "catégorie de classification"
+  ],
+  "content_hash": "be61c4f83144693e8397dfaefb76461e54327f01934e4e1f4209a2be03f1d4cf",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-10-21T18:04:11.985Z"
+}

@@ -1,0 +1,31 @@
+{
+  "uuid": "Ua3t",
+  "source_path": "amscc/Ua3t.tex",
+  "summary": "Calculer des probabilités et quantiles pour des variables aléatoires normales, exponentielles et de Poisson à l'aide d'un tableur. Les questions portent sur des probabilités ponctuelles, des probabilités composées et la recherche de quantiles.",
+  "concepts": [
+    "loi normale",
+    "loi exponentielle",
+    "loi de Poisson",
+    "fonction de répartition",
+    "quantile",
+    "standardisation",
+    "écart-type",
+    "moyenne"
+  ],
+  "methods": [
+    "calcul de probabilité à l'aide de la fonction de répartition",
+    "recherche de quantile",
+    "calcul de probabilité complémentaire",
+    "utilisation de formules de tableur"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "variable aléatoire exponentielle",
+    "variable aléatoire de Poisson",
+    "quantile",
+    "intervalle de confiance"
+  ],
+  "content_hash": "1c408384ac2566fdb9ef80610d01843ee910d3b03a20e32b3d4d2c842d4b4d10",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:31.715Z"
+}

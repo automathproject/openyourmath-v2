@@ -1,0 +1,29 @@
+{
+  "uuid": "XDVP",
+  "source_path": "amscc/XDVP.tex",
+  "summary": "L'exercice demande d'évaluer un perceptron linéaire à deux entrées avec et sans biais, en calculant sa sortie pour différentes entrées et en analysant la frontière de décision.",
+  "concepts": [
+    "perceptron linéaire",
+    "fonction de Heaviside",
+    "biais",
+    "frontière de décision",
+    "fonction affine",
+    "géométrie analytique"
+  ],
+  "methods": [
+    "évaluation de fonction",
+    "comparaison de valeurs",
+    "tracé de droite",
+    "analyse de frontière"
+  ],
+  "objects": [
+    "perceptron",
+    "fonction d'activation",
+    "biais",
+    "frontière de décision",
+    "entrée-sortie"
+  ],
+  "content_hash": "782649bc35c92d35b87afea0089ac7a9506defbcc7e6361d6045c9a3db594045",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-10-21T18:09:26.458Z"
+}

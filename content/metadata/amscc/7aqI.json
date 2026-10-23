@@ -1,30 +1,31 @@
 {
   "uuid": "7aqI",
   "source_path": "amscc/7aqI.tex",
-  "summary": "L'exercice demande de tester, avec un intervalle de confiance de 95%, si les distributions des résultats du test de Binet chez des enfants américains et allemands sont cohérentes avec celles observées par Binet chez des enfants français. Les données sont fournies sous forme de fréquences relatives et d'effectifs.",
+  "summary": "L'exercice demande de tester l'adéquation des distributions de résultats d'enfants américains et allemands à une distribution de référence fixée (échelle de Binet) en utilisant un test du chi-carré au seuil de 5%. Il faut vérifier les effectifs attendus et regrouper les classes si nécessaire.",
   "concepts": [
     "test du chi-carré",
     "hypothèse nulle",
-    "erreur de première espèce",
+    "hypothèse alternative",
+    "effectif attendu",
     "loi du chi-carré",
-    "intervalle de confiance",
-    "fréquence relative",
-    "effectif théorique",
-    "test d'ajustement"
+    "degrés de liberté",
+    "p-valeur",
+    "test d'adéquation"
   ],
   "methods": [
-    "calcul des effectifs théoriques",
-    "comparaison avec la valeur critique",
-    "test d'hypothèse",
-    "calcul de la statistique de test"
+    "calcul de la statistique de Pearson",
+    "regroupement de classes",
+    "approximation par la loi du chi-carré",
+    "comparaison avec la valeur critique"
   ],
   "objects": [
-    "distribution de fréquences",
+    "distribution de probabilités",
     "effectifs observés",
-    "effectifs théoriques",
-    "statistique de test"
+    "effectifs attendus",
+    "statistique de Pearson",
+    "valeur critique"
   ],
-  "content_hash": "140b3d77db5135e0edda20c944b565a4d69c3a8ba79b288067dcb3625acc5343",
+  "content_hash": "9990f4e024b45bffcf36cb5096fa3b1badcf57e91a0438e36910f7cdc25231c0",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-09-16T11:29:41.092Z"
+  "indexed_at": "2026-10-19T11:41:33.003Z"
 }

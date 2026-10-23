@@ -1,0 +1,32 @@
+{
+  "uuid": "Dg6r",
+  "source_path": "amscc/Dg6r.tex",
+  "summary": "L'exercice demande d'analyser un jeu de données contenant des variables numériques (âge, poids, taille, alcool) et catégorielles (sexe, ronflement, tabagisme) pour en extraire des statistiques descriptives. Il s'agit de préparer les données, de les regrouper en classes, de calculer des effectifs et fréquences, et d'interpréter des graphiques (histogrammes, barres empilées).",
+  "concepts": [
+    "statistique descriptive",
+    "variable catégorielle",
+    "variable numérique",
+    "effectif",
+    "fréquence",
+    "histogramme",
+    "tableau croisé dynamique",
+    "classes d'intervalle"
+  ],
+  "methods": [
+    "regroupement en classes",
+    "calcul de fréquences",
+    "construction d'histogrammes",
+    "analyse de tableau croisé dynamique",
+    "calcul de pourcentages conditionnels"
+  ],
+  "objects": [
+    "tableau de données",
+    "classes d'intervalle",
+    "graphiques statistiques",
+    "effectifs croisés",
+    "pourcentages conditionnels"
+  ],
+  "content_hash": "01529f5e09d9d50e8d64c1ed4c8e7ee95dbb8c94d6f8c97b6f33261fb6583d66",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:41:36.881Z"
+}

@@ -1,23 +1,30 @@
 {
   "uuid": "c5jf",
   "source_path": "amscc/c5jf.tex",
-  "summary": "Générer une table de probabilités et un diagramme en bâtons pour une loi binomiale $\\mathcal{B}(n;p)$ avec mise à jour automatique des paramètres.",
+  "summary": "L'exercice demande de construire sur tableur une table des probabilités et des probabilités cumulées d'une loi binomiale $\\mathcal B(n,p)$ avec $n=100$ et $p=0,4$, puis d'en tracer le diagramme en bâtons. Les tables et le graphique doivent être dynamiques pour s'adapter aux variations des paramètres $n$ et $p$.",
   "concepts": [
     "loi binomiale",
-    "probabilité cumulative",
-    "représentation graphique"
+    "probabilité",
+    "probabilité cumulée",
+    "tableur",
+    "graphique en bâtons",
+    "paramétrage dynamique"
   ],
   "methods": [
-    "calcul de probabilités binomiales",
-    "mise en forme conditionnelle",
-    "création de graphiques dynamiques"
+    "calcul de probabilités discrètes",
+    "construction de tableau dynamique",
+    "références absolues",
+    "formules matricielles",
+    "visualisation graphique"
   ],
   "objects": [
-    "tableur",
+    "loi binomiale",
     "table de probabilités",
-    "diagramme en bâtons"
+    "diagramme en bâtons",
+    "paramètres $n$ et $p$",
+    "formules Excel"
   ],
-  "content_hash": "a58c62502ba30c9f17da29bb4aa1f34e82287b391f0ff5919dc451044351fd1a",
-  "model": "mistral-small3.2:24b",
-  "indexed_at": "2026-04-29T12:47:05.035Z"
+  "content_hash": "a8dfb4d49155f11149d5ca06d1dddca00db66407bf09f2b6c368f333aabc8b6c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:42:56.502Z"
 }

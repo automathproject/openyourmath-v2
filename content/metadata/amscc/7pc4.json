@@ -1,0 +1,30 @@
+{
+  "uuid": "7pc4",
+  "source_path": "amscc/7pc4.tex",
+  "summary": "L'exercice étudie le maximum de variables aléatoires exponentielles indépendantes et sa normalisation. Il demande de montrer la convergence en loi de cette normalisation vers une loi de Gumbel, avec des applications à la modélisation de la hauteur maximale d'un fleuve.",
+  "concepts": [
+    "loi exponentielle",
+    "maximum de variables aléatoires",
+    "fonction de répartition",
+    "convergence en loi",
+    "loi de Gumbel",
+    "normalisation de variables aléatoires",
+    "indépendance de variables aléatoires"
+  ],
+  "methods": [
+    "calcul de fonction de répartition",
+    "transformation de variables aléatoires",
+    "limite de suites de fonctions de répartition",
+    "approximation par la loi de Gumbel"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "maximum de variables aléatoires",
+    "suite de variables aléatoires",
+    "fonction de répartition",
+    "variable aléatoire de Gumbel"
+  ],
+  "content_hash": "09b408d3808ed811601fc5fd81c51d828076a8488dbb580a9e13db282edd1b93",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-10-19T11:40:31.305Z"
+}
