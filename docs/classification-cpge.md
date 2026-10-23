@@ -718,6 +718,37 @@ Leçon : un arbitre doit avoir sous les yeux le texte officiel ou l'énoncé
 explicite de ce qui est hors programme ; de mémoire, Haiku prête aux
 programmes actuels des notions qui n'y sont plus (séries de Fourier).
 
+### Étiquetage consolidé
+
+`scripts/consolider-cpge.js` produit `reports/cpge-pilote/consolide.jsonl` : un
+exercice par ligne, allégé (verdict, nœuds et groupes, source, drapeaux ; 2,7 Mo).
+La version complète, avec motifs, confiances et justifications, va dans
+`cache/cpge/consolide-complet.jsonl`, non versionné. La source retenue est la
+meilleure disponible, dans cet ordre :
+
+1. la relecture humaine, exportée des pages de contrôle
+   (`reports/cpge-pilote/relecture/`) : l'échantillon de 40 exercices et les
+   26 divergences des deux chapitres, avec les groupes gardés, les ajouts et
+   les filières jugées trop difficiles ;
+2. l'algèbre de L1 en deux passages arbitrés ;
+3. l'essai, puis la masse Haiku 5.5 (v9) ;
+4. la masse Albert (deepseek-v4-flash, v9) ;
+5. les deux chapitres, passage A quand les deux passages concordent ;
+6. le pilote Opus v7.
+
+S'y appliquent ensuite les verdicts que le relecteur a tranchés (XhZo, buqo,
+2MXQ) et les décisions du contrôle par mots-clés. Un exercice sans verdict
+du modèle dont le chapitre n'a pas d'équivalent dans la table est hors CPGE.
+
+Bilan au 23 octobre 2026 : 6 892 exercices, dont 497 hors CPGE. Restent à
+traiter :
+
+- 1 824 exercices de L3 et M1, réservés à Haiku ;
+- 37 exercices en CPGE sans aucun groupe (réponse incohérente du modèle,
+  `sans_rattachement`) et un énoncé vide ;
+- 12 exercices signalés par le contrôle par mots-clés dans le pilote v7 et
+  les deux chapitres, antérieurs à la règle d'exclusion, à arbitrer.
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par
