@@ -164,7 +164,13 @@ d'identifiants séparés par des virgules, à côté des autres métadonnées :
 ```
 
 - **Ce que la macro contient.** Seuls les identifiants y figurent, sans
-  origine ni confiance : ce qui est dans la source est relu, par définition.
+  origine ni confiance. Depuis octobre 2026, elle porte aussi l'étiquetage
+  consolidé de toute la base (`scripts/ecrire-cpge-sources.js`), produit en
+  majorité par des modèles (Albert, Haiku, Opus) et contrôlé par règles et
+  arbitrage, mais pas relu exercice par exercice. La provenance de chaque
+  rattachement (modèle, relecture humaine, règle) est dans
+  `reports/cpge-pilote/consolide.jsonl`. Un exercice hors CPGE n'a pas de
+  `\cpge{}`.
 - **Validation.** Les deux validateurs de sources, `tools/check_exercise_sources.py`
   dans exobase et `pnpm test:tex` ici, refusent un identifiant mal formé ou
   répété (`invalid-cpge`) et un identifiant absent du référentiel
@@ -790,7 +796,7 @@ Bilan au 23 octobre 2026 : toute la base (8 716 exercices) est étiquetée, dont
 | ----- | ---------------------------------------------------------------------------------------- | ------- |
 | 0     | Programmes officiels (9 textes, 11 filières) convertis en Markdown structuré             | fait    |
 | 1     | Analyseur Markdown → nœuds, tables SQLite, tests (unicité et stabilité des identifiants) | fait    |
-| 2     | A priori par chapitre, étiquetage LLM, concordance, rattachement de crouzet/pcsi         | pilote  |
+| 2     | A priori par chapitre, étiquetage LLM, concordance, rattachement de crouzet/pcsi         | fait    |
 | 3     | Navigation « Prépa », filtres de recherche, badges                                       | à faire |
 | 4     | Éditeur `/create` et vue de validation                                                   | à faire |
 
