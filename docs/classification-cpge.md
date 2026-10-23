@@ -750,7 +750,8 @@ S'y appliquent ensuite les verdicts que le relecteur a tranchés (XhZo, buqo,
 2MXQ) et les décisions du contrôle par mots-clés. Un exercice sans verdict
 du modèle dont le chapitre n'a pas d'équivalent dans la table est hors CPGE.
 
-Bilan au 23 octobre 2026 : 6 899 exercices, dont 531 hors CPGE.
+Bilan au 23 octobre 2026 : toute la base (8 716 exercices) est étiquetée, dont
+1 617 hors CPGE. Avant les étiquetages ci-dessous, 6 899 exercices dont 531 hors CPGE.
 
 - Les 36 exercices gardés en CPGE sans aucun groupe (32 venaient d'Albert)
   ont été réétiquetés par Haiku 5.5 avec la consigne de retenir au moins un
