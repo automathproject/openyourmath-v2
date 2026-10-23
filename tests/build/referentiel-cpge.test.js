@@ -264,7 +264,7 @@ describe('collectRattachements', () => {
 
   const write = (name, tex) => fs.writeFileSync(path.join(dir, 'exo7', `${name}.tex`), tex);
 
-  it('lit les rattachements relus des sources, origine « source »', () => {
+  it('lit les rattachements \\cpge{} des sources, origine « source »', () => {
     write('abcd', String.raw`\uuid{abcd}\cpge{p.s.a, p.s}\contenu{\question{Q.}}`);
     write('efgh', String.raw`\uuid{efgh}\contenu{\question{Sans rattachement.}}`);
     const { rattachements, errors, warnings } = collectRattachements(new Set(['p.s', 'p.s.a']), dir);

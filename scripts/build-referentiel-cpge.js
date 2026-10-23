@@ -5,7 +5,7 @@
 // Construit le référentiel CPGE dans la base : tables `cpge_programmes`,
 // `cpge_filieres`, `cpge_noeuds` à partir de
 // content/referentials/cpge/programmes/*.md, et `exercise_cpge` à partir des
-// macros \cpge{} des sources .tex, qui portent les rattachements relus. Les
+// macros \cpge{} des sources .tex, qui portent les rattachements. Les
 // deux viennent d'exobase par pnpm sync:exobase.
 //
 // Les sources sont lues directement, comme pour les fiches : le cache n'est
@@ -156,7 +156,7 @@ export function extractCpge(tex) {
 }
 
 /**
- * Lit les rattachements relus dans les sources. Un nœud inconnu est une
+ * Lit les rattachements \cpge{} des sources. Un nœud inconnu est une
  * erreur : le référentiel a perdu un identifiant sur lequel repose une
  * classification (le contrôle des sources la signale aussi, en amont).
  */
@@ -251,7 +251,7 @@ function report(referentiel, classification, outcome) {
     const count = nodes.filter(node => node.programme === programme.programme).length;
     console.log(`   ${programme.programme.padEnd(10)} ${programme.filieres.join(', ').padEnd(11)} année ${programme.annee} — ${count} nœud(s)`);
   }
-  console.log(`\n🔗 ${classification.rattachements.length} rattachement(s) relu(s) lu(s) dans les sources`);
+  console.log(`\n🔗 ${classification.rattachements.length} rattachement(s) lu(s) dans les sources`);
 
   const errors = [...referentiel.errors, ...classification.errors];
   const warnings = [...referentiel.warnings, ...classification.warnings];
