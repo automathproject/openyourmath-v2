@@ -693,6 +693,31 @@ au relecteur, n'y entrent pas.
 - Le quota d'Albert limite chacun de ces modèles à environ 180 exercices
   par jour.
 
+#### Contrôle par mots-clés et arbitrage
+
+`scripts/controle-mots-cles-cpge.js` relit les étiquetages de masse et signale
+les exercices gardés en CPGE dont le texte emploie un terme absent du texte
+officiel de toutes les filières (séries de Fourier, statistique
+inférentielle, Argsh, Dunford, Jordan, structures quotients…). Sur 6 063
+exercices gardés, 119 sont signalés : 110 étiquetés par Albert, 9 par Haiku.
+
+Un arbitre Haiku 5.5 tranche chaque cas. Au premier passage, privé du texte
+officiel, il a gardé 69 exercices en affirmant à tort que ces notions sont au
+programme : le réarbitrage, avec une consigne qui pose ces termes comme
+absents de tous les programmes, et six corrections vérifiées sur le texte
+officiel donnent la décision finale
+(`reports/cpge-pilote/controle-mots-cles.decisions.json`) :
+
+- 94 exercices passent hors CPGE, dont 88 étiquetés par Albert et 33 marqués
+  incertains ;
+- 25 restent en CPGE : le terme est défini par l'énoncé (perceptron,
+  espace métrique, différence symétrique…), c'est un faux positif, ou une
+  notation remplaçable (Argsh écrit aussi avec ln).
+
+Leçon : un arbitre doit avoir sous les yeux le texte officiel ou l'énoncé
+explicite de ce qui est hors programme ; de mémoire, Haiku prête aux
+programmes actuels des notions qui n'y sont plus (séries de Fourier).
+
 ## Intégration dans l'application
 
 - **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par

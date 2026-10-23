@@ -1,0 +1,1192 @@
+[
+ {
+  "uuid": "atds",
+  "decision": "exclure",
+  "terme": "coefficients de Fourier de f et h",
+  "raison": "Règle 9 : les coefficients de Fourier sont employés dans la réponse sans définition, la réponse en tirant un résultat. Prémisse du fichier à vérifier : les coefficients de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "dtIL",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Règle 1 : « les coefficients de Fourier de f » et « la nature de la série de Fourier S_f » sont demandés dans les questions sans définition. Prémisse du fichier à vérifier : les séries de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "gWAF",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Demandé dans l'énoncé (« Développer en série de Fourier la fonction f ») sans définition, selon la prémisse du fichier.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "gyMl",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Demandé dans la réponse (« Développer f en série de Fourier ») sans définition dans l'énoncé.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "icAN",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Employé dans l'énoncé (« la moyenne des sommes partielles de la série de Fourier de f ») sans définition.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "igA1",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "L'énoncé emploie et demande les « coefficients de Fourier » de f et f' sans les définir.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "jC2K",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Employé seulement dans la méthode de la réponse (« Développer f, f' et g' en séries de Fourier ») sans définition ; une autre voie hors consigne (règle 4) pourrait le sauver.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "k28s",
+  "decision": "garder",
+  "terme": "séries de Fourier",
+  "raison": "L'énoncé définit la série de Fourier par son expression trigonométrique (règle 2), mais les coefficients a_k, b_k ne sont pas définis.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "loHS",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Demandé dans l'énoncé (« Développer en série de Fourier la fonction |sin x| ») sans définition.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "pdwN",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Demandé dans l'énoncé (développer cos(ax) en série de Fourier) sans définition.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "qpCU",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Employé dans la réponse (« tous ses coefficients de Fourier sont nuls ») sans définition ; le résultat n'est pas nommé (règle 3 hors consigne).",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "qqXM",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Employé dans la réponse (décomposition en série de Fourier, c_n non définis) ; la remarque « sans utiliser les séries de Fourier » ne suffit pas à le définir.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "s9lj",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Demandé dans l'énoncé (développer en série de Fourier la fonction 2π-périodique valant e^{ax}) sans définition.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "uI4M",
+  "decision": "garder",
+  "terme": "séries de Fourier",
+  "raison": "L'énoncé construit la notion (approximations en sin(nx), formule de b_n) sans la nommer par une définition ; le terme n'apparaît qu'en titre et dans une remarque de réponse, dont la fin est tronquée dans le fichier.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "useL",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Demandé dans l'énoncé (« Développer en série de Fourier la fonction f, 2π-périodique… ») sans définition.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "9yW6",
+  "decision": "exclure",
+  "terme": "coefficients de Fourier",
+  "raison": "Règle 1 : la question demande d'en déduire les coefficients de Fourier de f, notion hors programme non définie.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "BC99",
+  "decision": "exclure",
+  "terme": "coefficients de Fourier (série de Fourier de g')",
+  "raison": "Règle 1 : la question demande le développement en série de Fourier de g' et l'énoncé emploie les coefficients de Fourier de g sans définition.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "D4yI",
+  "decision": "exclure",
+  "terme": "coefficients de Fourier",
+  "raison": "Règle 2 : l'énoncé nomme les coefficients de Fourier (complexes) de f et f'' sans les définir ; une lecture où le nom vaut définition reste défendable.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "I8Kv",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Règle 1 : « la série de Fourier de f » est employée dans la question sans être définie. Prémisse du fichier à vérifier : les séries de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "IjIT",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Règle 1 : « Développer en série de Fourier » est demandé dans la question sans définition. Prémisse du fichier à vérifier : les séries de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "M22u",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Règle 1 : le développement en série de Fourier est demandé dans la question sans définition. Prémisse du fichier à vérifier : les séries de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "OAs8",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Règle 1 : « la série de Fourier de f » apparaît dans l'aparté de l'énoncé sans définition. Prémisse du fichier à vérifier : les séries de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "QjDu",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Règle 1 : « Développer en série de Fourier f » est demandé dans la question sans définition. Prémisse du fichier à vérifier : les séries de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "S9iB",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Règle 1 : « Déterminer la série de Fourier de f » est demandé dans la question sans définition. Prémisse du fichier à vérifier : les séries de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "U3Ks",
+  "decision": "exclure",
+  "terme": "coefficients de Fourier (séries de Fourier)",
+  "raison": "Règle 1 : les « coefficients de Fourier (complexes) » de f et f' sont employés dans l'énoncé sans définition, seule la notation (c_n) étant introduite. Prémisse du fichier à vérifier : les coefficients de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "UVUl",
+  "decision": "exclure",
+  "terme": "coefficients de Fourier exponentiels",
+  "raison": "Règle 1 : les « coefficients de Fourier exponentiels » sont nommés dans l'énoncé, la notation c_n(f) pouvant être lue comme une définition ; lecture défendable en garder. Prémisse du fichier à vérifier : les coefficients de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "UhL0",
+  "decision": "exclure",
+  "terme": "coefficients de Fourier exponentiels",
+  "raison": "Règle 1 : le calcul des coefficients de Fourier exponentiels de h est demandé dans la question sans définition. Prémisse du fichier à vérifier : les coefficients de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "UkEs",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Règle 1 : « le développement en série de Fourier de f » est demandé dans la question sans définition. Prémisse du fichier à vérifier : les séries de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "XwQM",
+  "decision": "exclure",
+  "terme": "coefficients de Fourier trigonométriques",
+  "raison": "Règle 1 : les « coefficients de Fourier trigonométriques » de f sont employés dans la question sans définition, la formule intégrale n'apparaissant que dans la réponse. Prémisse du fichier à vérifier : les coefficients de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "ZsaF",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Règle 1 : « Déterminer la série de Fourier de f » est demandé dans la question sans définition. Prémisse du fichier à vérifier : les séries de Fourier figurent au programme MP/PSI/PC/PT 2021.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "ikX1",
+  "decision": "exclure",
+  "terme": "intervalle de confiance",
+  "raison": "Règle 1 : la réponse emploie intervalle de confiance (formule de cours) sans définir le terme.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "m5dm",
+  "decision": "exclure",
+  "terme": "intervalle de confiance",
+  "raison": "Règle 1 : la question demande les limites entre lesquelles se situe p avec une probabilité donnée, et la réponse conclut par intervalle de confiance sans définir le terme.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "m6xz",
+  "decision": "exclure",
+  "terme": "statistique inférentielle (intervalle de confiance)",
+  "raison": "Règle 1 : la question demande un intervalle de confiance, notion hors programme que l'énoncé ne définit pas.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "nP4w",
+  "decision": "exclure",
+  "terme": "statistique inférentielle",
+  "raison": "Corrigé : notion absente du texte officiel de toutes les filières ; la vraisemblance est demandée sans définition.",
+  "incertain": false,
+  "passage": "correction (texte officiel vérifié)",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "nQbE",
+  "decision": "exclure",
+  "terme": "statistique inférentielle (intervalle de confiance)",
+  "raison": "Règle 9 : l'intervalle de confiance pour la proportion apparaît dans la réponse sans être défini par l'énoncé.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "qT7m",
+  "decision": "exclure",
+  "terme": "loi de Student (quantiles de Student)",
+  "raison": "Règle 2 : la loi de Student est employée dans la question et la réponse sans définition par l'énoncé, qui ne fait que poser T comme un quotient ; l'autre lecture (la construction de T définit la loi) est défendable.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "ePnF",
+  "decision": "garder",
+  "terme": "décomposition de Dunford",
+  "raison": "La décomposition de Dunford, hors programme, est employée comme outil de la preuve, mais la méthode peut être remplacée par la trigonalisation et la formule du binôme de Newton, au programme (règle 4) ; une lecture stricte de la règle 1 conduirait à exclure.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Suite et série de fonctions"
+ },
+ {
+  "uuid": "0Lmc",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Règle 1 : la question demande de conclure que f n'a pas de développement en série de Fourier, notion hors programme non définie dans l'énoncé.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "0pKt",
+  "decision": "exclure",
+  "terme": "coefficients de Fourier",
+  "raison": "Règle 2 : l'énoncé nomme les coefficients de Fourier de f sans les définir, la notion étant employée sans définition ; une lecture où le nom vaut définition reste défendable.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "3hQ7",
+  "decision": "exclure",
+  "terme": "série de Fourier (coefficients de Fourier)",
+  "raison": "Règle 1 : la question demande les coefficients de Fourier et la série de Fourier de f, notions non définies dans l'énoncé (la définition n'apparaît que dans la réponse).",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "4MS9",
+  "decision": "exclure",
+  "terme": "coefficients de Fourier",
+  "raison": "Règle 1 : la question porte sur les coefficients de Fourier de f, notion hors programme employée sans définition.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "5tyz",
+  "decision": "exclure",
+  "terme": "série de Fourier",
+  "raison": "Règle 1 : la question demande de constater que la série de Fourier de f diverge en 0, notion hors programme non définie.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "6ZNT",
+  "decision": "exclure",
+  "terme": "série de Fourier",
+  "raison": "Règle 1 : la question demande le développement en série de Fourier de f, notion hors programme non définie.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "8h0r",
+  "decision": "exclure",
+  "terme": "coefficient de Fourier",
+  "raison": "Règle 9 : le terme apparaît dans un aparté de la réponse (coefficient de Fourier de f) sans être défini par l'énoncé.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "972t",
+  "decision": "exclure",
+  "terme": "série de Fourier",
+  "raison": "Règle 1 : la question demande de développer f en série de Fourier, notion hors programme non définie dans l'énoncé.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "Wdl4",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argth)",
+  "raison": "Règle 1 : Argth est employé dans la réponse (forme des solutions f = λ Argth + μ) sans être défini, et n'est pas au programme ; une notation en ln ou une primitive de 1/(1-t²) aurait pu servir.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "wWtk",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argth)",
+  "raison": "Règle 1 : Argth figure dans la réponse finale (l'application t ↦ Argth t convient) sans définition et hors programme ; la question elle-même ne le demande pas, d'où l'incertitude.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Fonction de plusieurs variables"
+ },
+ {
+  "uuid": "EVk4",
+  "decision": "garder",
+  "terme": "différence symétrique",
+  "raison": "Règle 2 : la différence symétrique Δ est définie dans l'énoncé lui-même (A Δ B = (A ∪ B) \\ (A ∩ B)).",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "FkZW",
+  "decision": "exclure",
+  "terme": "structure quotient (idéal maximal, idéal premier, anneau principal)",
+  "raison": "Règle 1 et 9 : la réponse emploie « idéal premier », « idéal maximal » et « F_2[X] est principal » sans définition.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "OSQD",
+  "decision": "exclure",
+  "terme": "structure quotient (anneau quotient R[X]/(X^3+X+1))",
+  "raison": "Règle 2 : l'anneau quotient est demandé et utilisé comme simple notation, sans définition dans l'énoncé.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "PpIe",
+  "decision": "garder",
+  "terme": "structure quotient (anneau quotient F_2[X]/<X^4+X+1>)",
+  "raison": "Règle 2 : l'énoncé définit A comme quotient de F_2[X] par l'idéal engendré par P, à partir de notions du programme.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "bkES",
+  "decision": "exclure",
+  "terme": "structure quotient (anneau quotient F_2[X]/(X^2+X+1))",
+  "raison": "Règle 2 : l'énoncé demande de déterminer les éléments et la table de multiplication de l'anneau quotient, sans définir la notion.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "c90N",
+  "decision": "garder",
+  "terme": "idéal premier ou maximal",
+  "raison": "Règle 2 : l'idéal premier est défini dans le bloc [text] de l'énoncé avant son emploi dans les questions.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "m5pG",
+  "decision": "garder",
+  "terme": "structure quotient (anneau quotient F_5[X]/(X^2+2X+1))",
+  "raison": "Règle 2 : l'énoncé définit F_25 := F_5[X]/(X^2+2X+1) par notation explicite à partir de notions du programme ; attention, X^2+2X+1=(X+1)^2 n'est pas irréductible, donc l'affirmation « est un corps » est fausse.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "xwlZ",
+  "decision": "exclure",
+  "terme": "anneau principal",
+  "raison": "Règle 1 et 2 : l'énoncé demande de montrer que Z/nZ est un anneau principal, notion hors programme non définie.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Groupe, anneau, corps"
+ },
+ {
+  "uuid": "5Zub",
+  "decision": "garder",
+  "terme": "enveloppe convexe",
+  "raison": "Règle 2 : l'énoncé définit le carré plein comme l'enveloppe convexe de ses sommets, et la notion de points extrémaux est définie dans la réponse ; notions de collège et de lycée (règle 12).",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Géométrie affine euclidienne"
+ },
+ {
+  "uuid": "Gwtg",
+  "decision": "exclure",
+  "terme": "caractéristique d'un corps",
+  "raison": "Règle 9 : la notion de caractéristique apparaît dans la remarque finale de la réponse sans être définie.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur"
+ },
+ {
+  "uuid": "PNI6",
+  "decision": "exclure",
+  "terme": "décomposition de Dunford",
+  "raison": "Règle 1 et 3 : la décomposition de Dunford est nommée et demandée dans la question (« Écrire la décomposition de Dunford de B »).",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur"
+ },
+ {
+  "uuid": "QLan",
+  "decision": "exclure",
+  "terme": "réduction de Jordan",
+  "raison": "Règle 1 : l'énoncé demande de réduire sous la forme de Jordan sans définir le terme.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur"
+ },
+ {
+  "uuid": "WWrj",
+  "decision": "exclure",
+  "terme": "réduites de Jordan",
+  "raison": "Règle 1 : l'énoncé demande les réduites de Jordan sans définir le terme.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur"
+ },
+ {
+  "uuid": "w7DX",
+  "decision": "exclure",
+  "terme": "séries de Fourier",
+  "raison": "Demandé dans l'énoncé (« Déterminer sa série de Fourier ») sans définition.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "yOl9",
+  "decision": "exclure",
+  "terme": "séries de Fourier (coefficients de Fourier)",
+  "raison": "Règle 1 : la notion (coefficients de Fourier) est employée dans la question sans être définie, et elle ne figure au programme d'aucune filière (règle 5 écartée par consigne).",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "zFU9",
+  "decision": "exclure",
+  "terme": "série de Fourier",
+  "raison": "Règle 1 : « développement en série de Fourier » est demandé dans la question sans définition, et la notion ne figure au programme d'aucune filière (règle 5 écartée par consigne).",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série de Fourier"
+ },
+ {
+  "uuid": "LlDR",
+  "decision": "garder",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "Règle 4 : le mot « connexe » n'apparaît que dans la réponse pour D∩Ω+, qui est convexe donc connexe par arcs, voie au programme.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série entière"
+ },
+ {
+  "uuid": "MX2V",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argth)",
+  "raison": "La réponse emploie Argth(√x), fonction hyperbolique réciproque non définie par l'énoncé et hors programme (exemple explicite de la règle 1).",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Série entière"
+ },
+ {
+  "uuid": "FggU",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "La question demande de montrer que A est connexe, notion générale non définie et hors programme (seule la connexité par arcs est au programme) ; la réponse raisonne avec des fermés disjoints.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "M63b",
+  "decision": "exclure",
+  "terme": "enveloppe convexe",
+  "raison": "La question demande de montrer que G appartient à l'enveloppe convexe de la courbe, notion non définie par l'énoncé (exemple explicite de la règle 1).",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "Q5oQ",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "La question demande si A est connexe, sans définition ; le terme est hors programme sous sa forme générale, mais une lecture « connexe par arcs » reste défendable.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "Rj8P",
+  "decision": "garder",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "Faux positif : toutes les occurrences sont « connexe par arcs », notion au programme, comme dans l'énoncé.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "YMcM",
+  "decision": "garder",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "Règle 4 : « R^n est connexe » n'est qu'une justification ponctuelle, et R^n est connexe par arcs, voie au programme.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "h22v",
+  "decision": "exclure",
+  "terme": "limite supérieure ou inférieure",
+  "raison": "Corrigé : notion absente du texte officiel de toutes les filières ; la limite inférieure (liminf) est employée sans définition dans la réponse.",
+  "incertain": true,
+  "passage": "correction (texte officiel vérifié)",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "miiX",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "La question demande si E\\F est connexe, notion non définie et hors programme sous sa forme générale ; l'équivalence avec la connexité par arcs sur un ouvert reste une lecture défendable.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "mkqr",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "La question demande de montrer que l'ensemble des valeurs d'adhérence est connexe ; la réponse utilise des fermés disjoints, donc la notion générale, hors programme et non définie.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "zuaj",
+  "decision": "exclure",
+  "terme": "résidus, série de Laurent (théorème des résidus)",
+  "raison": "La réponse nomme le théorème des résidus, qu'elle qualifie elle-même de largement hors programme dans une remarque (règle 9).",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Topologie"
+ },
+ {
+  "uuid": "aTD6",
+  "decision": "exclure",
+  "terme": "décomposition de Dunford",
+  "raison": "Règle 1 : la question demande d'en déduire la décomposition de Dunford de B, terme non défini dans l'énoncé.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur"
+ },
+ {
+  "uuid": "bcVa",
+  "decision": "exclure",
+  "terme": "décomposition de Dunford",
+  "raison": "Règle 1 : la question demande d'écrire la décomposition de Dunford sans la définir ; la réponse en donne seulement la caractérisation (D diagonalisable, N nilpotente, commutant), ce qui peut se lire comme une définition.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur"
+ },
+ {
+  "uuid": "qph8",
+  "decision": "garder",
+  "terme": "réduction de Jordan",
+  "raison": "Le terme « blocs de Jordan » n'apparaît que dans l'indication ; une voie au programme (matrice compagnon, polynôme minimal) existe, règle 4.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur"
+ },
+ {
+  "uuid": "ttM3",
+  "decision": "exclure",
+  "terme": "décomposition de Dunford",
+  "raison": "Règle 1 : la question demande d'écrire la décomposition de Dunford de B sans définir le terme, et la réponse ne le définit pas.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réduction d'endomorphisme, polynôme annulateur"
+ },
+ {
+  "uuid": "K42b",
+  "decision": "exclure",
+  "terme": "intervalle de confiance",
+  "raison": "Règle 1 : la question demande un intervalle de confiance pour la moyenne sans définir le terme.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "Kp7e",
+  "decision": "exclure",
+  "terme": "intervalle de confiance",
+  "raison": "Règle 1 : la question demande un intervalle de confiance pour p_C - p_S sans définir le terme (le test du khi-deux de Pearson est aussi employé sans définition).",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "Mh2y",
+  "decision": "exclure",
+  "terme": "intervalle de confiance",
+  "raison": "Règle 1 : les questions demandent des intervalles de confiance et des estimateurs sans les définir ; la notation St(ν) de l'énoncé ne définit pas ces notions.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "Pz5k",
+  "decision": "exclure",
+  "terme": "intervalle de confiance",
+  "raison": "Règle 1 : la question demande un intervalle de confiance bilatéral et une estimation sans biais sans définir ces termes.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "RpZE",
+  "decision": "exclure",
+  "terme": "statistique inférentielle",
+  "raison": "Corrigé : notion absente du texte officiel de toutes les filières ; un intervalle de confiance est demandé sans définition.",
+  "incertain": false,
+  "passage": "correction (texte officiel vérifié)",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "UnQn",
+  "decision": "exclure",
+  "terme": "intervalle de confiance",
+  "raison": "Règle 1 : la question demande un intervalle de confiance contenant G avec une probabilité donnée, sans définir le terme.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "VX6N",
+  "decision": "exclure",
+  "terme": "intervalle de confiance",
+  "raison": "Règle 1 : la question demande de définir un intervalle de confiance pour la moyenne, sans que l'énoncé le définisse.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "Wn8c",
+  "decision": "exclure",
+  "terme": "statistique inférentielle",
+  "raison": "Corrigé : notion absente du texte officiel de toutes les filières ; les intervalles de confiance sont mentionnés en aparté dans la réponse (règle 9).",
+  "incertain": false,
+  "passage": "correction (texte officiel vérifié)",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "bR2v",
+  "decision": "exclure",
+  "terme": "statistique inférentielle",
+  "raison": "Corrigé : notion absente du texte officiel de toutes les filières ; la vraisemblance est demandée sans définition.",
+  "incertain": false,
+  "passage": "correction (texte officiel vérifié)",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "iN4p",
+  "decision": "exclure",
+  "terme": "statistique inférentielle",
+  "raison": "Corrigé : notion absente du texte officiel de toutes les filières ; la loi de Student (et du khi-deux) est employée sans définition.",
+  "incertain": false,
+  "passage": "correction (texte officiel vérifié)",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "if79",
+  "decision": "exclure",
+  "terme": "intervalle de confiance",
+  "raison": "Règle 1 : la question demande un intervalle de confiance pour lambda sans définir le terme.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "Zmuc",
+  "decision": "garder",
+  "terme": "enveloppe convexe",
+  "raison": "Règle 2 : l'énoncé nomme la notion par « on dit que … » et la décrit comme barycentres à coefficients positifs, donc elle est définie dans l'énoncé ; la réponse n'emploie pas le terme.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "claude_claude-haiku-5-5.v9.exo7-l1-essai.jsonl",
+  "chapitre": "Polynôme, fraction rationnelle"
+ },
+ {
+  "uuid": "0fdQ",
+  "decision": "garder",
+  "terme": "réseau de neurones",
+  "raison": "Règle 2 : l'énoncé définit le réseau par sa figure, ses poids et ses fonctions d'activation, donc le terme n'est pas employé sans définition.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "1Lj3",
+  "decision": "exclure",
+  "terme": "statistique inférentielle (estimateurs)",
+  "raison": "Règle 2 : le mot « estimateurs » apparaît dans l'indication sans être défini, donc l'exercice emploie la notion hors programme.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "chapitre": "Probabilité continue"
+ },
+ {
+  "uuid": "64pg",
+  "decision": "exclure",
+  "terme": "statistique inférentielle (estimateur sans biais, convergent, intervalle de confiance)",
+  "raison": "Règle 2 : l'énoncé demande de vérifier un estimateur sans biais et convergent et de construire un intervalle de confiance, sans définir ces notions.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "CXE4",
+  "decision": "garder",
+  "terme": "réseau de neurones",
+  "raison": "Règle 2 : l'énoncé décrit entièrement le réseau (entrée, couche cachée, poids, biais, sigmoïde, coût), le terme est défini par l'énoncé.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "ZMBI",
+  "decision": "exclure",
+  "terme": "statistique inférentielle (intervalle de confiance)",
+  "raison": "Règle 2 : « intervalle de confiance » apparaît dans l'indication sans définition ; l'énoncé décrit l'idée sans nommer ni définir le terme.",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "chapitre": "Statistique"
+ },
+ {
+  "uuid": "xkLh",
+  "decision": "garder",
+  "terme": "réseau de neurones",
+  "raison": "Règle 2 : le réseau est défini par la figure (poids, biais, sorties) et l'exercice se ramène à une combinaison linéaire et une droite du plan ; le terme seul ne fait pas sortir, mais la fonction H n'est pas définie dans l'énoncé.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "jNXN",
+  "decision": "garder",
+  "terme": "espace métrique",
+  "raison": "Règle 2 : l'énoncé définit espace métrique par la liste des axiomes (c'est-à-dire que pour tous x,y,z…), donc le terme est défini par l'énoncé.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "chapitre": "Nombres complexes"
+ },
+ {
+  "uuid": "z8B0",
+  "decision": "garder",
+  "terme": "fonction hyperbolique réciproque (Argth)",
+  "raison": "Règle 4 : Argth n'intervient que comme méthode de la réponse, alors que la vérification directe de M(x)M(y)=M(z) reste au programme ; ni énoncé ni remarque ne demandent la notion.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "claude_claude-haiku-5-5.v9.masse.jsonl",
+  "chapitre": "Matrice"
+ },
+ {
+  "uuid": "0QfV",
+  "decision": "garder",
+  "terme": "fonction hyperbolique réciproque (Argsh)",
+  "raison": "Règle 8 : Argsh n'apparaît que dans la réponse comme notation, et la réponse donne aussi l'expression en ln, donc l'exercice se rédige avec des notions au programme ; l'énoncé ne l'emploie pas.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Calcul d'intégrales"
+ },
+ {
+  "uuid": "9axm",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argth)",
+  "raison": "Règle 1 : la question elle-même contient des primitives exprimées avec Argth, fonction hyperbolique réciproque, employée sans définition dans l'énoncé.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Calcul d'intégrales"
+ },
+ {
+  "uuid": "F4IT",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argsh, Argch, Argth)",
+  "raison": "Règle 1 : la question demande explicitement les primitives de Argsh, Argch et Argth, sans définition, ce qui exclut.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Calcul d'intégrales"
+ },
+ {
+  "uuid": "1rM9",
+  "decision": "garder",
+  "terme": "fonction hyperbolique réciproque (Argsh)",
+  "raison": "Règle 8 : Argsh n'apparaît que dans la réponse comme notation d'une primitive exprimable par ln ; l'énoncé ne l'emploie pas et la réponse ne contient pas de remarque hors programme.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Continuité, limite et étude de fonctions réelles"
+ },
+ {
+  "uuid": "EdBL",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argsh, Argch, Argth)",
+  "raison": "Règle 1 : la question demande de résoudre une équation contenant Argsh, Argch et Argth, sans définition, donc le terme est employé dans l'énoncé.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Continuité, limite et étude de fonctions réelles"
+ },
+ {
+  "uuid": "cFZg",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argth)",
+  "raison": "Règle 1 : la question demande de simplifier une expression en Argth, fonction hyperbolique réciproque, qui figure dans les exemples hors CPGE de la règle 1.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Continuité, limite et étude de fonctions réelles"
+ },
+ {
+  "uuid": "Xjzo",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argch)",
+  "raison": "Règle 1 : Argch est employé dans la question (équivalent de Argch(1/cos x)) sans définition, et les fonctions hyperboliques réciproques sont hors programme.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Développement limité"
+ },
+ {
+  "uuid": "nIel",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argth, Argsh)",
+  "raison": "Règle 1 : Argth(sin x) et Argsh(e^x) figurent dans le contenu de l'exercice sans être définis ; fonctions hyperboliques réciproques hors programme.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Développement limité"
+ },
+ {
+  "uuid": "0unE",
+  "decision": "garder",
+  "terme": "réseau de neurones (perceptron)",
+  "raison": "Règle 2 : le perceptron et la fonction de Heaviside sont entièrement définis par l'énoncé.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "Pde0",
+  "decision": "garder",
+  "terme": "réseau de neurones (perceptron) ; fonction de Heaviside",
+  "raison": "Règle 8 : le perceptron est défini par l'énoncé ; la fonction de Heaviside, non définie ici, est une fonction en escalier (notion au programme).",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "XDVP",
+  "decision": "garder",
+  "terme": "réseau de neurones (perceptron)",
+  "raison": "Règle 2 : perceptron linéaire et fonction de Heaviside définis dans l'énoncé.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "u8jz",
+  "decision": "garder",
+  "terme": "réseau de neurones (perceptron)",
+  "raison": "Règle 2 : perceptron et fonction de Heaviside définis dans l'énoncé.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Réseaux de neurones"
+ },
+ {
+  "uuid": "GgbS",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argch)",
+  "raison": "Règle 1 : Argch est employé dans la question 5 sans définition par l'énoncé ; la réponse ne fait qu'une égalité avec un logarithme.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Suite"
+ },
+ {
+  "uuid": "4vZu",
+  "decision": "exclure",
+  "terme": "séries de Fourier (formule de Parseval, coefficients de Fourier)",
+  "raison": "Règle 1 et 2 : l'énoncé demande d'appliquer la formule de Parseval, notion hors programme non définie.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Analyse vectorielle"
+ },
+ {
+  "uuid": "HD8C",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argsh)",
+  "raison": "Règle 1 : Argsh 1 est employé dans les bornes de l'intégrale sans définition ; la fonction est hors programme et n'est pas une simple notation d'une notion au programme.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Courbes planes"
+ },
+ {
+  "uuid": "fz8M",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argsh)",
+  "raison": "Règle 1 : Argsh figure dans le résultat boxé de la réponse sans définition ; fonctions hyperboliques réciproques hors programme.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Courbes planes"
+ },
+ {
+  "uuid": "c4MF",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argth)",
+  "raison": "Règle 1 : Argth(sqrt x) est employé dans la réponse sur ]0,1[ sans définition ; la forme en logarithme n'est donnée que pour x>1.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Equation différentielle"
+ },
+ {
+  "uuid": "foD9",
+  "decision": "exclure",
+  "terme": "fonction hyperbolique réciproque (Argch)",
+  "raison": "Règle 1 : Argch figure dans les solutions boxées (réponse) sans définition ; fonctions hyperboliques réciproques hors programme.",
+  "incertain": false,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Equation différentielle"
+ },
+ {
+  "uuid": "qGeV",
+  "decision": "garder",
+  "terme": "fonction hyperbolique réciproque (Argsh)",
+  "raison": "Règle 8 : Argsh est posé dans la réponse comme égal à ln(x+sqrt(x^2+1)), notion au programme, et la solution boxée est entièrement écrite avec ln.",
+  "incertain": true,
+  "passage": "premier passage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Equation différentielle"
+ },
+ {
+  "uuid": "MiMx",
+  "decision": "exclure",
+  "terme": "séries de Fourier (inégalité de Bessel)",
+  "raison": "Règle 3 : l'inégalité de Bessel pour les coefficients de Fourier est nommée et demandée (« Démontrer l'inégalité de Bessel »), donc résultat hors programme qui exclut ; les coefficients eux-mêmes sont définis par l'énoncé (règle 2).",
+  "incertain": true,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Espace euclidien, espace normé"
+ },
+ {
+  "uuid": "VSe7",
+  "decision": "exclure",
+  "terme": "connexité (autre que par arcs)",
+  "raison": "Règle 2 : la réponse emploie « partie connexe de R » sans définir la connexité, notion hors programme.",
+  "incertain": false,
+  "passage": "réarbitrage",
+  "fichier": "albert_deepseek-v4-flash-0731.v9.masse.jsonl",
+  "chapitre": "Fonction de plusieurs variables"
+ }
+]
