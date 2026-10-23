@@ -44,6 +44,21 @@ const VERDICTS_RELECTEUR = {
   '2MXQ': 'différence symétrique Δ employée sans définition'
 };
 
+// Chapitres de L3 dont l'objet même est hors du programme de toutes les
+// filières : hors CPGE par règle, sauf avis contraire du relecteur. Les
+// chapitres mixtes (compacité, connexité, groupe quotient…) restent jugés
+// exercice par exercice.
+const CHAPITRES_L3_HORS_PROGRAMME = new Set([
+  'Fonction holomorphe', 'Formule de Cauchy', 'Théorème des résidus', 'Singularité',
+  'Sous-variété', "Difféomorphisme, théorème d'inversion locale et des fonctions implicites", 'Forme différentielle',
+  'Sous-groupe distingué', 'Action de groupe', 'Théorème de Sylow', 'Extension de corps', "Extension d'anneau",
+  'Espace topologique, espace métrique', 'Espace métrique complet, espace de Banach',
+  "Théorème de Stone-Weirstrass, théorème d'Ascoli", 'Dualité, topologie faible', 'Espace L^p',
+  'Espace de Hilbert, théorème de projection', 'Lemme de Fatou, convergence monotone', 'Tribu, fonction mesurable',
+  'Mesure', 'Distributions', 'Tranformée de Laplace et de Fourier',
+  'Géométrie projective', 'Géométrie et trigonométrie hyperbolique', 'Géométrie et trigonométrie sphérique'
+]);
+
 // Rattachements décidés par le relecteur après sa relecture (nœuds retenus).
 const RATTACHEMENTS_RELECTEUR = {
   // x⁽⁴⁾ + 2x″ + x = 0 : « trop difficile sauf peut-être en MP » ; seul MP traite l'ordre n.
@@ -147,6 +162,11 @@ for (const [uuid, terme] of Object.entries(VERDICTS_RELECTEUR)) {
   const e = consolide.get(uuid);
   if (e) Object.assign(e, { releve_cpge: false, propositions: [], motif: `Hors CPGE pour le relecteur : ${terme}.`, verdict_relecteur: true });
 }
+for (const e of consolide.values()) {
+  if (e.niveau === 'L3' && CHAPITRES_L3_HORS_PROGRAMME.has(e.chapitre) && !/relecteur/.test(e.source) && e.releve_cpge !== false) {
+    Object.assign(e, { releve_cpge: false, propositions: [], motif: `Chapitre de L3 hors programme : ${e.chapitre}.`, regle_chapitre: true });
+  }
+}
 for (const [uuid, noeuds] of Object.entries(RATTACHEMENTS_RELECTEUR)) {
   const e = consolide.get(uuid);
   if (e) e.propositions = noeuds.map(noeud => ({ noeud, groupe: groupeDe.get(noeud)?.code, origine: 'relecteur', confiance: 1 }));
@@ -173,6 +193,7 @@ const lignes = [...consolide.values()].sort((a, b) => a.uuid.localeCompare(b.uui
   ...(e.incertain ? { incertain: true, raison_incertitude: e.raison_incertitude } : {}),
   ...(e.remarque_relecteur ? { remarque_relecteur: e.remarque_relecteur } : {}),
   ...(e.verdict_relecteur ? { verdict_relecteur: true } : {}),
+  ...(e.regle_chapitre ? { regle_chapitre: true } : {}),
   ...(e.controle ? { controle: e.controle } : {})
 }));
 fs.mkdirSync(path.dirname(SORTIE_COMPLETE), { recursive: true });
@@ -189,6 +210,7 @@ const leger = e => ({
   ...(e.difficile ? { difficile: e.difficile } : {}),
   ...(e.sans_rattachement ? { sans_rattachement: true } : {}),
   ...(e.enonce_vide ? { enonce_vide: true } : {}),
+  ...(e.regle_chapitre ? { regle_chapitre: true } : {}),
   ...(e.controle ? { controle: e.controle.decision } : {})
 });
 fs.writeFileSync(SORTIE, lignes.map(e => `${JSON.stringify(leger(e))}\n`).join(''));

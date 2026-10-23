@@ -736,6 +736,16 @@ meilleure disponible, dans cet ordre :
 5. les deux chapitres, passage A quand les deux passages concordent ;
 6. le pilote Opus v7.
 
+Deux règles de niveau s'appliquent sans appel au modèle, sauf avis contraire
+du relecteur : le niveau M1 est hors CPGE, et 26 chapitres de L3 dont
+l'objet même est hors de tous les programmes aussi (analyse complexe,
+sous-variétés, difféomorphismes, sous-groupes distingués, actions de groupe,
+Sylow, extensions de corps, topologie générale, espaces complets, Lebesgue,
+distributions, géométries projective, hyperbolique et sphérique : liste dans
+`CHAPITRES_L3_HORS_PROGRAMME`). Albert gardait en CPGE presque tous les
+exercices de ces chapitres. Les chapitres mixtes (compacité, connexité,
+groupe quotient, groupe orthogonal…) restent jugés exercice par exercice.
+
 S'y appliquent ensuite les verdicts que le relecteur a tranchés (XhZo, buqo,
 2MXQ) et les décisions du contrôle par mots-clés. Un exercice sans verdict
 du modèle dont le chapitre n'a pas d'équivalent dans la table est hors CPGE.
