@@ -981,6 +981,19 @@
   @apply bg-gray-50 font-semibold;
 }
 
+/* Téléphone : un tableau plus large que l'écran défile dans son bloc plutôt que
+   d'élargir la page. Les cellules gardent leurs bordures ; le cadre extérieur
+   (qui entourerait le bloc entier) disparaît. */
+@media (max-width: 640px) {
+  .exercise-content table {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    overflow-x: auto;
+    border: 0;
+  }
+}
+
 .exercise-content img {
   @apply max-w-full h-auto rounded-lg shadow-xs my-4;
 }
@@ -996,6 +1009,17 @@
 
 .exercise-content .katex-display {
   @apply my-6;
+}
+
+/* Une formule en bloc plus large que sa colonne défile dans sa ligne, au lieu
+   d'élargir la page. Ce défilement était déclaré dans `@utility katex-display`,
+   que Tailwind n'émet pas (valeur calculée : `visible`) ; il l'est ici en CSS
+   ordinaire, donc partout où KaTeX rend une formule (énoncé, feuille mobile,
+   Ma liste, fiches). */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
 }
 
 /* Premier et dernier éléments d'un bloc : pas de marge extérieure, pour que

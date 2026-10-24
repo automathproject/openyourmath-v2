@@ -444,8 +444,11 @@
     align-items: flex-start;
   }
 
+  /* min-width: 0 : sans lui, ces éléments flex ne rétrécissent pas sous la
+     largeur de leur contenu, et une formule large élargit toute la page. */
   .question-main {
     @apply flex items-start gap-3 flex-1;
+    min-width: 0;
   }
 
   .question-main--preview {
@@ -488,6 +491,7 @@
   
   .question-content {
     @apply flex-1 text-gray-800;
+    min-width: 0;
   }
 
   .question-content--preview {
