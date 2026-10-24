@@ -26,7 +26,6 @@
   export let showUuid = false;
 
   const dispatch = createEventDispatcher();
-  const TITRE_GENERIQUE = /^exo7\s+\d+$/i;
   let cardEl;
 
   // Rendue par le serveur (catalogue /browse), la carte doit s'hydrater à
@@ -56,10 +55,11 @@
   $: showChapterBadge = !isCompact && Boolean(exercise?.chapter) && String(activeFilters?.chapter || '') !== String(exercise?.chapter || '');
   $: showDifficultyDots = !simplified && Boolean(exercise?.difficulty);
   $: showTags = showLevelBadge || showModuleBadge || showChapterBadge || showDifficultyDots;
-  // 91 % des titres se réduisent à « exo7 N » : en mode simplifié (carrousel de
-  // la landing), l'énoncé passe devant et le titre devient une simple référence.
-  $: titreGenerique = simplified && Boolean(exercise?.preview) && TITRE_GENERIQUE.test(String(exercise?.title ?? '').trim());
-  $: snippetLines = isCompact ? 2 : titreGenerique ? 5 : 3;
+  // En mode simplifié (carrousel de la landing), l'énoncé passe devant et le
+  // titre, quel qu'il soit, devient une simple référence en petits caractères
+  // (91 % des titres se réduisent d'ailleurs à « exo7 N »).
+  $: titreDiscret = simplified && Boolean(exercise?.preview);
+  $: snippetLines = isCompact ? 2 : titreDiscret ? 5 : 3;
   $: href = exerciseHref(exercise?.uuid);
 
   $: if (isSelected && cardEl) {
@@ -178,7 +178,7 @@
       {/if}
     </div>
 
-    <h3 class="result-title" class:result-title--generic={titreGenerique}>
+    <h3 class="result-title" class:result-title--discret={titreDiscret}>
       <a class="result-title-link" {href} on:click={handleTitleClick}>
         <MathRenderer content={exercise.title} inline={true} />
       </a>
@@ -186,7 +186,7 @@
   {/if}
 
   {#if exercise.preview}
-    <div class="result-preview mt-3" class:result-preview--lead={titreGenerique}>
+    <div class="result-preview mt-3" class:result-preview--lead={titreDiscret}>
       <SearchSnippet content={exercise.preview} lines={snippetLines} />
     </div>
   {/if}
@@ -369,8 +369,8 @@
     overflow: hidden;
     @apply text-interface-text-primary;
   }
-  /* Titre sans information (« exo7 N ») : référence discrète, l'énoncé prend le relais. */
-  .result-title--generic {
+  /* Titre discret : référence en petits caractères, l'énoncé prend le relais. */
+  .result-title--discret {
     font-family: inherit;
     font-size: 0.75rem;
     font-weight: 500;
@@ -556,7 +556,7 @@
       border-radius: 10px;
     }
 
-    .result-title--generic {
+    .result-title--discret {
       font-size: 0.72rem;
       line-height: 1.2;
     }
