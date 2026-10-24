@@ -190,6 +190,12 @@
       flex-basis: 300px;
     }
   }
+  /* Au toucher, on fait glisser la piste : les flèches n'y servent qu'à occuper une ligne. */
+  @media (max-width: 639px) {
+    .random-carousel__nav {
+      display: none;
+    }
+  }
   .random-carousel__error {
     padding: 0.75rem 1rem;
     border-radius: 0.75rem;

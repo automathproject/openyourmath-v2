@@ -63,3 +63,10 @@ test('un clic sur une carte du carrousel ouvre l’exercice, sans filtre implici
   await carte.locator('.result-preview').click();
   await expect(page).toHaveURL(new RegExp(`${href}$`));
 });
+
+test('la page d’accueil annonce qu’aucun compte n’est nécessaire', async ({ page }) => {
+  await page.goto('/');
+  const faits = page.locator('.landing-facts');
+  await expect(faits).toContainText('Sans compte');
+  await expect(faits).toContainText('Licences libres');
+});
