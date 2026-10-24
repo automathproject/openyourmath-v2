@@ -6,8 +6,11 @@
 <script>
   import { onMount, tick } from 'svelte';
   import { LIMITES, TYPES_PAR_ID, TYPES_SIGNALEMENT, partiesExercice } from '$lib/signalement/types.js';
+  import { exerciceEnRetour, memoriserEnCours, oublierEnCours } from '$lib/signalement/retour.js';
 
-  let { exercise, cpge = [], signalement = { auteur: null, fournisseurs: [] } } = $props();
+  // `cpge` absent (null) : les rattachements sont chargés à la demande, quand
+  // le type « Rattachement CPGE » est choisi (pages de liste).
+  let { exercise, cpge = null, signalement = { auteur: null, fournisseurs: [] } } = $props();
 
   const DEPOTS = { forge: 'automath/exobase sur la forge', github: 'automathproject/exobase sur GitHub' };
   const NOMS = { forge: 'la forge', github: 'GitHub' };
@@ -22,6 +25,7 @@
   let resultat = $state(null);
   let auteur = $state(signalement.auteur);
   let alerteConnexion = $state('');
+  let cpgeCharge = $state(null);
 
   const cleBrouillon = $derived(`oym-signalement:${exercise.uuid}`);
   const type = $derived(TYPES_PAR_ID[brouillon.type]);
@@ -29,6 +33,15 @@
   const parties = $derived(partiesExercice(exercise.content || []));
   const classementActuel = $derived([exercise.level, exercise.module, exercise.chapter, exercise.subchapter].filter(Boolean).join(' › '));
   const disponible = $derived(signalement.fournisseurs.length > 0);
+  const rattachements = $derived(cpge ?? cpgeCharge ?? []);
+
+  $effect(() => {
+    if (brouillon.type !== 'cpge' || cpge || cpgeCharge) return;
+    fetch(`/api/exercise/${encodeURIComponent(exercise.uuid)}`)
+      .then(r => (r.ok ? r.json() : null))
+      .then(d => { cpgeCharge = d?.cpge ?? []; })
+      .catch(() => { cpgeCharge = []; });
+  });
 
   function ouvrir() {
     resultat = null;
@@ -82,6 +95,7 @@
 
   function connexion(fournisseur) {
     sauverBrouillon();
+    memoriserEnCours(exercise.uuid);
     const retour = `${location.pathname}${location.search}`;
     location.href = `/signalement/connexion/${fournisseur}?retour=${encodeURIComponent(retour)}`;
   }
@@ -108,6 +122,7 @@
       }
       resultat = donnees;
       try { sessionStorage.removeItem(cleBrouillon); } catch { /* stockage indisponible */ }
+      oublierEnCours();
     } catch {
       erreur = 'Le signalement n’a pas pu être envoyé. Vérifiez votre connexion.';
     } finally {
@@ -115,11 +130,13 @@
     }
   }
 
-  // Retour de la connexion : on rouvre le formulaire à l'étape d'envoi.
+  // Retour de la connexion : on rouvre le formulaire à l'étape d'envoi, sur
+  // l'exercice qui était en cours de signalement (une liste en montre plusieurs).
   onMount(() => {
     const url = new URL(location.href);
     const statut = url.searchParams.get('signalement');
-    if (!statut) return;
+    const enCours = exerciceEnRetour(url);
+    if (!statut || (enCours && enCours !== exercise.uuid)) return;
     url.searchParams.delete('signalement');
     history.replaceState(history.state, '', `${url.pathname}${url.search}${url.hash}`);
     try {
@@ -223,11 +240,13 @@
             {/if}
 
             {#if champs.includes('cpge')}
-              {#if cpge.length}
+              {#if !cpge && !cpgeCharge}
+                <p class="signalement-info">Chargement des rattachements…</p>
+              {:else if rattachements.length}
                 <fieldset class="signalement-champ">
                   <legend>Rattachements à retirer</legend>
                   <div class="signalement-cpge">
-                    {#each cpge as programme}
+                    {#each rattachements as programme}
                       <p class="signalement-cpge-programme">{programme.titre}</p>
                       {#each programme.noeuds as noeud}
                         <label class="signalement-coche">

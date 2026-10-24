@@ -1,6 +1,7 @@
 # Signalement d'erreur
 
-La page d'exercice propose, sous l'énoncé, « Une erreur dans cet exercice ? ».
+La page d'exercice et « Ma liste » (hors vues élève, puisque le lien demande
+un compte) proposent sous l'exercice un lien discret « Signaler une erreur ».
 Le formulaire guide la personne en trois étapes :
 
 1. **Problème** : erreur dans l'énoncé, dans la correction, coquille,

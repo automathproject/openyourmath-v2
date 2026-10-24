@@ -32,6 +32,19 @@ test.describe('Signalement d’erreur', () => {
     await expect(dialogue.getByRole('button', { name: /Se connecter avec/ }).first()).toBeVisible();
   });
 
+  test('Ma liste propose le signalement de l’exercice affiché, pas la vue élève', async ({ page }) => {
+    await page.goto('/exercise/list?list=Kme5,1IUZ');
+    // L'exercice affiché est chargé côté navigateur.
+    await expect(page.locator('.exercise-block')).toBeVisible();
+    const lien = page.getByRole('button', { name: 'Signaler une erreur' });
+    test.skip(!(await lien.count()), 'aucun fournisseur de connexion configuré');
+    await expect(lien).toBeVisible();
+
+    await page.goto('/exercise/list?list=Kme5,1IUZ&view=student');
+    await expect(page.locator('.exercise-block')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Signaler une erreur' })).toHaveCount(0);
+  });
+
   test('l’envoi sans connexion est refusé', async ({ request }) => {
     const reponse = await request.post('/api/signalement', {
       data: { uuid: 'Kme5', type: 'autre', message: 'Un message assez long.' }
