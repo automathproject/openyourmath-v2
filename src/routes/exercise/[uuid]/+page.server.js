@@ -2,8 +2,9 @@
 import { error } from '@sveltejs/kit';
 import { getExerciseByUuid, getSimilarExercises } from '$lib/db/queries.js';
 import { getExerciseCpge } from '$lib/db/cpge.js';
+import { fournisseursDisponibles } from '$lib/server/signalement/fournisseurs.js';
 
-export async function load({ params }) {
+export async function load({ params, locals }) {
   try {
     const { uuid } = params;
     
@@ -24,10 +25,19 @@ export async function load({ params }) {
     // Rattachements aux programmes de CPGE, groupés par programme.
     const cpge = await getExerciseCpge(uuid);
 
+    // Signalement d'erreur : comptes de connexion proposés, et identité
+    // déjà vérifiée le cas échéant (sans les identifiants internes).
+    const auteur = locals.auteur;
+    const signalement = {
+      fournisseurs: fournisseursDisponibles(),
+      auteur: auteur ? { fournisseur: auteur.fournisseur, login: auteur.login, profil: auteur.profil } : null
+    };
+
     return {
       exercise,
       similar: similar || [],
-      cpge
+      cpge,
+      signalement
     };
     
   } catch (err) {

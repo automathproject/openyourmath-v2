@@ -505,7 +505,7 @@ export async function getExerciseByUuid(uuid) {
         author, organization, license_code, license_url,
         video_id, created_at, updated_at, preview,
         hasIndication, hasSolution,
-        content_json
+        content_json, source_path
       FROM exercises 
       WHERE uuid = ?
     `).get(uuid);
