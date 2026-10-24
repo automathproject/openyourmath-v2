@@ -18,7 +18,11 @@ test.describe('Vue Prépa de /browse', () => {
     await page.locator('.prepa-section', { hasText: 'Nombres complexes' }).click();
     await expect(page).toHaveURL(/noeud=pcsi\.nombres-complexes/);
     await expect(page.locator('.prepa-noeud-head h2')).toContainText('Nombres complexes');
-    await expect(page.locator('.prepa-exercices .exercise-card').first()).toBeVisible();
+    const carte = page.locator('.prepa-exercices .result-card').first();
+    await expect(carte).toBeVisible();
+    // Comme dans la recherche : identifiant visible et ajout à la liste en cours.
+    await expect(carte.locator('.result-uuid')).toHaveText(/^\w{4}$/);
+    await expect(carte.locator('.rc-footer-actions button').first()).toBeVisible();
     // Le titre de la section courante est marqué dans l'arbre.
     await expect(page.locator('.prepa-arbre a[aria-current="page"]')).toContainText('Nombres complexes');
 
@@ -58,5 +62,18 @@ test.describe('Filtres CPGE de la recherche', () => {
     await expect(page).toHaveURL(/filiere=PCSI/);
     await expect(page.locator('.active-filters')).toContainText('Filière : PCSI');
     await expect.poll(total).toBeLessThan(avant);
+  });
+});
+
+test.describe('Catalogue par niveau', () => {
+  test('les cartes montrent l’identifiant et mènent à l’exercice', async ({ page }) => {
+    await page.goto('/browse?level=L1&module=Alg%C3%A8bre');
+    const carte = page.locator('.exercise-list .result-card').first();
+    await expect(carte).toBeVisible();
+    const uuid = (await carte.locator('.result-uuid').textContent()).trim();
+    await expect(carte.locator('.rc-footer-actions button').first()).toBeVisible();
+
+    await carte.locator('.result-title-link').click();
+    await expect(page).toHaveURL(new RegExp(`/exercise/${uuid}`));
   });
 });

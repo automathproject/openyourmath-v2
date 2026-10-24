@@ -1,5 +1,6 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, onMount } from 'svelte';
+  import { goto } from '$app/navigation';
   import { tick } from 'svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import SearchSnippet from '$lib/components/search/SearchSnippet.svelte';
@@ -19,9 +20,22 @@
   export let cardMode = 'detailed'; // 'detailed' | 'compact'
   export let isSelected = false;
   export let simplified = false;
+  // Hors de la recherche (catalogue /browse), il n'y a pas de panneau de
+  // prévisualisation : le titre et la carte mènent directement à l'exercice.
+  export let navigable = false;
+  export let showUuid = false;
 
   const dispatch = createEventDispatcher();
   let cardEl;
+
+  // Rendue par le serveur (catalogue /browse), la carte doit s'hydrater à
+  // l'identique : la destination du lien dépend de la largeur d'écran, que le
+  // serveur ignore. Jusqu'au montage, on garde sa valeur par défaut (nouvel onglet).
+  let monte = false;
+  onMount(() => (monte = true));
+  $: lienCible = monte ? $exerciseLinkTarget : '_blank';
+  $: lienRel = monte ? $exerciseLinkRel : 'noopener';
+  $: lienLabel = monte ? $exerciseOpenLabel : "Ouvrir l'exercice dans un nouvel onglet";
 
   function formatDisplayDate(value) {
     if (!value) return null;
@@ -60,6 +74,11 @@
    */
   function handleClick(event) {
     if (event?.target?.closest?.('.rc-footer-actions, .compact-actions')) return;
+    if (navigable) {
+      if (event?.target?.closest?.('a')) return;
+      goto(href);
+      return;
+    }
     dispatch('select', { exercise });
   }
 
@@ -74,7 +93,7 @@
    * intercepté pour conserver la prévisualisation dans le panneau latéral.
    */
   function handleTitleClick(event) {
-    if (isModifiedClick(event)) return;
+    if (navigable || isModifiedClick(event)) return;
     event.preventDefault();
     event.stopPropagation();
     dispatch('select', { exercise });
@@ -83,9 +102,9 @@
 
 <div
   class="result-card cursor-pointer transition-all duration-200 {isSelected ? 'result-card--selected' : ''} {isCompact ? 'result-card--compact' : ''}"
-  role="option"
-  aria-selected={isSelected ? 'true' : 'false'}
-  tabindex="0"
+  role={navigable ? undefined : 'option'}
+  aria-selected={navigable ? undefined : (isSelected ? 'true' : 'false')}
+  tabindex={navigable ? undefined : 0}
   bind:this={cardEl}
   on:click={handleClick}
   on:keydown={(event) => event.key === 'Enter' && handleClick()}
@@ -216,6 +235,10 @@
           {#if hasFooterInfo}<span class="result-footer-sep">·</span>{/if}
           <span class="result-date-text">{createdAtLabel}</span>
         {/if}
+        {#if showUuid && exercise.uuid}
+          <span class="result-footer-sep">·</span>
+          <span class="result-uuid" title="Identifiant de l'exercice">{exercise.uuid}</span>
+        {/if}
       </div>
       <!-- Right: actions (masqués en mode simplifié) -->
       {#if !simplified}
@@ -224,12 +247,12 @@
           <a
             class="rc-footer-open"
             {href}
-            target={$exerciseLinkTarget}
-            rel={$exerciseLinkRel}
-            aria-label={$exerciseOpenLabel}
+            target={lienCible}
+            rel={lienRel}
+            aria-label={lienLabel}
           >
             Ouvrir l'exercice
-            {#if $exerciseLinkTarget}
+            {#if lienCible}
               <!-- Même icône « lien externe » que l'action équivalente du mode compact. -->
               <svg class="rc-footer-open-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4" />
@@ -381,6 +404,12 @@
     min-width: 0;
   }
   .result-footer-item { white-space: nowrap; }
+  .result-uuid {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    user-select: all;
+  }
   .result-footer-sep { @apply text-interface-text-disabled; }
   .result-date-text {
     font-size: 0.75rem;

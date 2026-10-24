@@ -7,7 +7,7 @@ test.describe('Vue Prépa sur mobile', () => {
   test('la page d’une sous-section ne déborde pas en largeur', async ({ page }) => {
     await page.goto('/browse?vue=prepa&noeud=pcsi.nombres-complexes.f');
     await expect(page.locator('.prepa-noeud-head h2')).toContainText('Racines');
-    await expect(page.locator('.prepa-exercices .exercise-card').first()).toBeVisible();
+    await expect(page.locator('.prepa-exercices .result-card').first()).toBeVisible();
 
     const debordement = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     expect(debordement).toBeLessThanOrEqual(1);

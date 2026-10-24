@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
   import Chip from '$lib/components/Chip.svelte';
-  import ExerciseRowCard from '$lib/components/ExerciseRowCard.svelte';
+  import ResultCard from '$lib/components/search/ResultCard.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import PrepaProgrammes from '$lib/components/prepa/PrepaProgrammes.svelte';
   import PrepaArbre from '$lib/components/prepa/PrepaArbre.svelte';
@@ -298,7 +298,7 @@
         {:else}
           <div class="exercise-list">
             {#each data.exercises as exercise (exercise.uuid)}
-              <ExerciseRowCard {exercise} />
+              <ResultCard {exercise} navigable showUuid />
             {/each}
           </div>
 

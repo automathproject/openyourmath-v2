@@ -25,8 +25,8 @@ export const FILIERES = ['MPSI', 'MP2I', 'PCSI', 'PTSI', 'BCPST', 'MP', 'MPI', '
 
 const ITEM_COLUMNS = `
   e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty,
-  e.module, e.author, e.organization, e.hasIndication, e.hasSolution, e.preview,
-  e.created_at, e.updated_at
+  e.module, e.author, e.organization, e.license_code, e.license_url, e.video_id,
+  e.hasIndication, e.hasSolution, e.preview, e.created_at, e.updated_at
 `;
 
 // Descendants d'un nœud, lui compris, en suivant parent_id (pas le préfixe de

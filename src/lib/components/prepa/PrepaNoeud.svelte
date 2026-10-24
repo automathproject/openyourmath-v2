@@ -3,7 +3,7 @@
      ses subdivisions et les exercices qui s'y rattachent, descendants compris. -->
 <script>
   import MathRenderer from '$lib/components/MathRenderer.svelte';
-  import ExerciseRowCard from '$lib/components/ExerciseRowCard.svelte';
+  import ResultCard from '$lib/components/search/ResultCard.svelte';
   import { celluleCpge, markdownCpge } from '$lib/utils/cpgeTexte.js';
 
   export let noeud;
@@ -86,7 +86,7 @@
   {:else}
     <div class="prepa-exercices">
       {#each noeud.liste.exercices as exercise (exercise.uuid)}
-        <ExerciseRowCard {exercise} />
+        <ResultCard {exercise} navigable showUuid />
       {/each}
     </div>
 
