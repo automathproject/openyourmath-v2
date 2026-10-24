@@ -89,4 +89,29 @@ test.describe('Résultats de recherche', () => {
     await expect(lien).toHaveAttribute('target', '_blank');
     await expect(lien).toHaveAttribute('aria-label', /nouvel onglet/);
   });
+  test('l’en-tête des résultats reste dans sa colonne quand la prévisualisation est ouverte', async ({ page }) => {
+    // Réponse simulée : la colonne n'est étroite qu'avec le panneau ouvert, et
+    // /api/search est limité à 30 requêtes par minute (la suite s'en approche).
+    const resultats = Array.from({ length: 20 }, (_, i) => ({
+      uuid: `FAKE${i}`, title: `Exercice ${i}`, level: 'L2', module: 'Analyse', preview: 'Énoncé.'
+    }));
+    await page.route('**/api/search*', route => route.fulfill({
+      json: {
+        results: resultats,
+        meta: { mode: 'fts', filters: {}, filterCounts: {}, pagination: { limit: 20, offset: 0, count: 20, hasMore: true, totalCount: 3691 } }
+      }
+    }));
+    await preparerPanneau(page, true);
+    await page.setViewportSize({ width: 1150, height: 800 });
+    await page.goto('/?level=L2');
+    await expect(page.locator('.load-more-header-btn')).toBeVisible();
+
+    const colonne = await page.locator('.search-page-main').boundingBox();
+    const panneau = await page.locator('.preview-section').boundingBox();
+    for (const sel of ['.load-more-header-btn', '.view-mode-toggle']) {
+      const b = await page.locator(sel).boundingBox();
+      expect(b.x + b.width, `${sel} dépasse la colonne des résultats`).toBeLessThanOrEqual(colonne.x + colonne.width + 1);
+      expect(b.x + b.width, `${sel} passe sous le panneau`).toBeLessThanOrEqual(panneau.x + 1);
+    }
+  });
 });

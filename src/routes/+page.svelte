@@ -1547,11 +1547,16 @@
   }
 
   /* Sur desktop: row1 = titre + bouton voir-plus + view-mode-toggle (poussé à droite) */
+  /* Elle se replie : avec la prévisualisation ouverte, la colonne des résultats
+     est étroite et le titre, le bouton et la densité n'y tiennent pas sur une
+     ligne. Sans repli, le bouton « Afficher plus » passait sous le panneau. */
   .results-header-row1 {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem 0.5rem;
     flex: 1 1 auto;
+    min-width: 0;
   }
 
   .results-header-row1 .view-mode-toggle {
@@ -1566,6 +1571,7 @@
   }
 
   .results-title-total {
+    white-space: nowrap;
     font-size: 0.9rem;
     font-weight: 400;
     @apply text-interface-text-muted;
