@@ -31,7 +31,6 @@ function hasSelection(selection) {
 function getLevelOrder(value) {
   if (!value) return 1000;
   const label = String(value).trim().toUpperCase();
-  if (label === 'PCSI') return -1;
   if (label.startsWith('L')) return parseInt(label.slice(1), 10) || 0;
   if (label.startsWith('M')) return 100 + (parseInt(label.slice(1), 10) || 0);
   return 1000;

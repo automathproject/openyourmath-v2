@@ -707,7 +707,6 @@ export async function getChapterStructure() {
       // Tri intelligent des niveaux
       const getOrder = (level) => {
         if (!level) return 1000;
-        if (level === 'PCSI') return -1;
         if (level.startsWith('L')) return parseInt(level.substring(1)) || 0;
         if (level.startsWith('M')) return 100 + (parseInt(level.substring(1)) || 0);
         return 1000;
@@ -916,7 +915,6 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
     })).sort((a, b) => {
       const getOrder = (level) => {
         if (!level) return 1000;
-        if (level === 'PCSI') return -1;
         if (level.startsWith('L')) return parseInt(level.substring(1)) || 0;
         if (level.startsWith('M')) return 100 + (parseInt(level.substring(1)) || 0);
         return 1000;
@@ -1152,7 +1150,6 @@ export async function getSuggestions(type = 'all', limit = 10, context = {}) {
           GROUP BY level 
           ORDER BY 
             CASE 
-              WHEN level = 'PCSI' THEN 0
               WHEN level LIKE 'L%' THEN 1
               WHEN level LIKE 'M%' THEN 2
               WHEN level LIKE 'D%' THEN 3
