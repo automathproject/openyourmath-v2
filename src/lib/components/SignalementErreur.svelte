@@ -137,13 +137,14 @@
 </script>
 
 {#if disponible}
-  <section class="signalement" aria-labelledby="signalement-titre">
-    <div>
-      <h2 id="signalement-titre" class="signalement-titre">Une erreur dans cet exercice ?</h2>
-      <p class="signalement-texte">Signalez-la : un ticket public est ouvert dans le dépôt des exercices.</p>
-    </div>
-    <button type="button" class="btn btn-secondary btn-sm" onclick={ouvrir}>Signaler une erreur</button>
-  </section>
+  <p class="signalement">
+    <button type="button" class="signalement-lien" onclick={ouvrir}>
+      <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true">
+        <path d="M3 14V2.5M3 2.5h8.5l-1.75 3 1.75 3H3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+      </svg>
+      Signaler une erreur
+    </button>
+  </p>
 
   <dialog bind:this={dialogue} class="signalement-dialogue" aria-labelledby="signalement-dialogue-titre" onclose={() => (erreur = '')}>
     <form method="dialog" class="signalement-form" onsubmit={e => e.preventDefault()}>
@@ -304,27 +305,26 @@
 {/if}
 
 <style>
+  /* Un simple lien sous l'exercice : présent sans détourner de la lecture. */
   .signalement {
-    display: flex;
+    margin-top: 0.75rem;
+    text-align: right;
+  }
+
+  .signalement-lien {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    padding: 0.9rem 1rem;
-    border: 1px dashed var(--color-interface-border-secondary);
-    border-radius: 8px;
-    background: var(--color-interface-bg-white);
-  }
-
-  .signalement-titre {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--color-interface-text-primary);
-  }
-
-  .signalement-texte {
-    font-size: 0.85rem;
+    gap: 0.3rem;
+    padding: 0.2rem 0.25rem;
+    font-size: 0.78rem;
     color: var(--color-interface-text-muted);
+    cursor: pointer;
+  }
+
+  .signalement-lien:hover,
+  .signalement-lien:focus-visible {
+    color: var(--color-brand-700);
+    text-decoration: underline;
   }
 
   .signalement-dialogue {
@@ -556,11 +556,6 @@
   }
 
   @media (max-width: 640px) {
-    .signalement {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
     .signalement-types,
     .signalement-duo {
       grid-template-columns: 1fr;
