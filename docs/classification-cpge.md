@@ -27,9 +27,10 @@ préparatoires :
   trigonométrie est une sous-section de « Compléments de calcul algébrique et
   de trigonométrie », et les équations différentielles linéaires sont vues dès
   le premier semestre avec les primitives.
-- **Le mélange existe déjà.** Les 115 exercices `crouzet/pcsi` ont
-  `\niveau{PCSI}`, qui mêle niveau et filière. Le bouton « CPGE » de
-  `SearchPageSidebar.svelte` ne filtre rien : aucune valeur `CPGE` n'existe.
+- **Le mélange existait.** Les 115 exercices `crouzet/pcsi` avaient
+  `\niveau{PCSI}`, qui mêlait niveau et filière. Ils ont depuis été rattachés
+  à la taxonomie L1 (module, chapitre et sous-chapitre existants) ; leur
+  place en prépa passe par `\cpge{}` comme pour les autres exercices.
 
 ## Principes
 
