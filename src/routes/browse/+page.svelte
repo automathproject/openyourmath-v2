@@ -78,25 +78,15 @@
 </svelte:head>
 
 <main class="browse-page">
+  <h1 class="sr-only">Parcourir les exercices</h1>
   <header class="browse-header">
-    <div>
-      <p class="t-overline">Catalogue</p>
-      <h1>Parcourir les exercices</h1>
-      <p class="browse-subtitle">
-        {#if estPrepa}
-          Explorez la bibliothèque selon les programmes officiels de mathématiques des classes préparatoires.
-        {:else}
-          Explorez la bibliothèque par niveau, module, chapitre et sous-chapitre.
-        {/if}
-      </p>
-      <nav class="browse-tabs" aria-label="Mode de navigation">
-        <a href="/browse" class:is-current={!estPrepa} aria-current={!estPrepa ? 'page' : undefined}>Par niveau</a>
-        <a href="/browse?vue=prepa" class:is-current={estPrepa} aria-current={estPrepa ? 'page' : undefined}>Prépa (CPGE)</a>
-      </nav>
-    </div>
+    <nav class="browse-tabs" aria-label="Mode de navigation">
+      <a href="/browse" class:is-current={!estPrepa} aria-current={!estPrepa ? 'page' : undefined}>Par niveau</a>
+      <a href="/browse?vue=prepa" class:is-current={estPrepa} aria-current={estPrepa ? 'page' : undefined}>Prépa (CPGE)</a>
+    </nav>
 
     {#if data.selected && !estPrepa}
-      <button type="button" class="btn btn-secondary" on:click={clearSelection}>
+      <button type="button" class="btn btn-secondary btn-sm" on:click={clearSelection}>
         Vue générale
       </button>
     {/if}
@@ -317,29 +307,21 @@
   .browse-page {
     width: min(1180px, calc(100vw - 2rem));
     margin: 0 auto;
-    padding: 2rem 0 3rem;
+    padding: 1rem 0 3rem;
   }
 
+  /* Une seule rangée : le mode de navigation, et le retour à la vue générale. */
   .browse-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .browse-header h1 {
-    margin-top: 0.25rem;
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 3.25rem);
-    line-height: 1;
-    letter-spacing: 0;
+    margin-bottom: 1rem;
   }
 
   .browse-tabs {
     display: inline-flex;
     gap: 0;
-    margin-top: 1rem;
     border: 1.5px solid var(--color-interface-border-secondary);
     border-radius: 6px;
     overflow: hidden;
@@ -402,11 +384,6 @@
   .prepa-section small {
     flex-shrink: 0;
     color: var(--color-interface-text-muted);
-  }
-
-  .browse-subtitle {
-    margin-top: 0.6rem;
-    color: var(--color-interface-text-secondary);
   }
 
   .overview-stats {
@@ -633,7 +610,6 @@
       padding-top: 1rem;
     }
 
-    .browse-header,
     .results-head,
     .sort-row {
       display: grid;
