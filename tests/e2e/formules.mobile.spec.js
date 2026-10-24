@@ -41,4 +41,28 @@ test.describe('Formules larges sur mobile', () => {
     await expect(table).toHaveCSS('overflow-x', 'auto');
     expect(await table.evaluate(el => el.scrollWidth > el.clientWidth)).toBe(true);
   });
+  // Pas des formules, mais le même symptôme : un mot sans espace élargit la page.
+  const MOTS_LONGS = [
+    { uuid: '0U2g', cas: 'URL de 61 caractères dans un paragraphe' },
+    { uuid: 'DnxY', cas: 'URL de 108 caractères dans un paragraphe' },
+    { uuid: 'xheQ', cas: 'ligne de code sans espace' }
+  ];
+  for (const { uuid, cas } of MOTS_LONGS) {
+    test(`un mot sans espace ne fait pas déborder la page : ${cas} (${uuid})`, async ({ page }) => {
+      // 360 px, largeur courante des téléphones Android : la ligne de code de
+      // xheQ ne dépasse l'écran que de 7 px à 375 px et tient dans les 393 px du Pixel 5.
+      await page.setViewportSize({ width: 360, height: 800 });
+      await page.goto(`/exercise/${uuid}`);
+      await expect(page.locator('.exercise-content').first()).toBeVisible();
+      expect(await debordement(page)).toBeLessThanOrEqual(1);
+    });
+  }
+
+  test('le retour à la ligne forcé ne touche pas les formules', async ({ page }) => {
+    await page.goto('/exercise/eTUF');
+    const formule = page.locator('.exercise-content .katex').first();
+    await expect(formule).toBeVisible();
+    await expect(formule).toHaveCSS('overflow-wrap', 'normal');
+    await expect(page.locator('.exercise-content p').first()).toHaveCSS('overflow-wrap', 'anywhere');
+  });
 });

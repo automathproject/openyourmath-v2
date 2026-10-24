@@ -964,6 +964,21 @@
   @apply bg-transparent p-0;
 }
 
+/* Une URL ou une ligne de code sans espace ne peut pas se couper : sur téléphone
+   elle élargit toute la page. `anywhere` (et non `break-word`) compte aussi dans
+   la largeur minimale des éléments flex, qui peuvent ainsi rétrécir. Les blocs
+   `pre` gardent leur défilement (`white-space: pre` ne se coupe pas), les
+   formules KaTeX ne sont pas concernées, et les cellules de tableau non plus :
+   forcées à se couper n'importe où, leurs colonnes s'écraseraient mot à mot au
+   lieu de laisser le tableau défiler. */
+.exercise-content :is(p, li, blockquote, a, code) {
+  overflow-wrap: anywhere;
+}
+
+.exercise-content .katex {
+  overflow-wrap: normal;
+}
+
 .exercise-content blockquote {
   @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4;
 }
