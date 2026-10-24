@@ -1,13 +1,8 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
-  import { createEventDispatcher } from 'svelte';
   import ResultCard from '$lib/components/search/ResultCard.svelte';
 
-  export let selectedUuid = null;
-  export let isPreviewOpen = false;
   export let limit = 12;
-
-  const dispatch = createEventDispatcher();
 
   let randomExercises = [];
   let randomLoading = false;
@@ -71,10 +66,6 @@
     }, 4000);
   }
 
-  function handleSelect(exercise) {
-    dispatch('select', { exercise });
-  }
-
   function scrollPrev() {
     if (!carouselTrack) return;
     const cardWidth = carouselTrack.firstElementChild?.getBoundingClientRect().width || 300;
@@ -127,12 +118,8 @@
     {:else}
       {#each randomExercises as exercise (exercise.uuid)}
         <div class="random-carousel__item">
-          <ResultCard
-            {exercise}
-            simplified={true}
-            isSelected={isPreviewOpen && selectedUuid === exercise.uuid}
-            on:select={() => handleSelect(exercise)}
-          />
+          <!-- La landing n'a pas de panneau de prévisualisation : la carte mène à l'exercice. -->
+          <ResultCard {exercise} simplified={true} navigable />
         </div>
       {/each}
     {/if}

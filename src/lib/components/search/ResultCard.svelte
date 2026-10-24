@@ -26,6 +26,7 @@
   export let showUuid = false;
 
   const dispatch = createEventDispatcher();
+  const TITRE_GENERIQUE = /^exo7\s+\d+$/i;
   let cardEl;
 
   // Rendue par le serveur (catalogue /browse), la carte doit s'hydrater à
@@ -55,7 +56,10 @@
   $: showChapterBadge = !isCompact && Boolean(exercise?.chapter) && String(activeFilters?.chapter || '') !== String(exercise?.chapter || '');
   $: showDifficultyDots = !simplified && Boolean(exercise?.difficulty);
   $: showTags = showLevelBadge || showModuleBadge || showChapterBadge || showDifficultyDots;
-  $: snippetLines = isCompact ? 2 : 3;
+  // 91 % des titres se réduisent à « exo7 N » : en mode simplifié (carrousel de
+  // la landing), l'énoncé passe devant et le titre devient une simple référence.
+  $: titreGenerique = simplified && Boolean(exercise?.preview) && TITRE_GENERIQUE.test(String(exercise?.title ?? '').trim());
+  $: snippetLines = isCompact ? 2 : titreGenerique ? 5 : 3;
   $: href = exerciseHref(exercise?.uuid);
 
   $: if (isSelected && cardEl) {
@@ -174,7 +178,7 @@
       {/if}
     </div>
 
-    <h3 class="result-title">
+    <h3 class="result-title" class:result-title--generic={titreGenerique}>
       <a class="result-title-link" {href} on:click={handleTitleClick}>
         <MathRenderer content={exercise.title} inline={true} />
       </a>
@@ -182,7 +186,7 @@
   {/if}
 
   {#if exercise.preview}
-    <div class="result-preview mt-3">
+    <div class="result-preview mt-3" class:result-preview--lead={titreGenerique}>
       <SearchSnippet content={exercise.preview} lines={snippetLines} />
     </div>
   {/if}
@@ -364,6 +368,20 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     @apply text-interface-text-primary;
+  }
+  /* Titre sans information (« exo7 N ») : référence discrète, l'énoncé prend le relais. */
+  .result-title--generic {
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 500;
+    @apply text-interface-text-muted;
+  }
+  .result-preview--lead {
+    margin-top: 0.25rem;
+    @apply text-interface-text-primary;
+  }
+  .result-preview--lead :global(.snippet-content) {
+    color: inherit;
   }
   .result-title-link {
     color: inherit;

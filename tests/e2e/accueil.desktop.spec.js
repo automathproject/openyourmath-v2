@@ -24,3 +24,42 @@ test("la page d'accueil ne bascule qu'à partir de trois caractères", async ({ 
   await expect(page.locator('.landing-hero')).toHaveCount(0);
   await expect(page).toHaveURL(/q=sui/);
 });
+
+test('les puces de classification ouvrent la recherche filtrée, avec le filtre dans l’URL', async ({ page }) => {
+  // On ne vérifie ici que les filtres, pas les résultats : /api/search est limité
+  // à 30 requêtes par minute et par IP, et la suite entière s'en approche déjà.
+  await page.route('**/api/search*', route => route.abort());
+  await page.goto('/');
+  const puces = page.locator('.browse-rows');
+  await expect(puces).toBeVisible();
+  // Même attente d'hydratation que ci-dessus : sans elle, le clic suit le lien nu.
+  await expect(page.locator('.landing-input-wrap input')).toBeFocused();
+
+  await puces.getByRole('link', { name: 'L2', exact: true }).click();
+  await expect(page).toHaveURL(/[?&]level=L2/);
+  await expect(page.locator('.active-filters')).toContainText('L2');
+  await expect(page.locator('.landing-hero')).toHaveCount(0);
+
+  await page.goto('/');
+  await expect(page.locator('.landing-input-wrap input')).toBeFocused();
+  await page.locator('.browse-rows').getByRole('link', { name: 'PCSI', exact: true }).click();
+  await expect(page).toHaveURL(/[?&]filiere=PCSI/);
+  await expect(page.locator('.active-filters')).toContainText('Filière : PCSI');
+});
+
+test('le lien « Voir les programmes » mène à la vue Prépa du catalogue', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('link', { name: 'Voir les programmes' }).click();
+  await expect(page).toHaveURL(/\/browse\?vue=prepa/);
+});
+
+test('un clic sur une carte du carrousel ouvre l’exercice, sans filtre implicite', async ({ page }) => {
+  await page.goto('/');
+  const carte = page.locator('.random-carousel__item .result-card').first();
+  await expect(carte).toBeVisible();
+  const href = await carte.locator('.result-title-link').getAttribute('href');
+  // Le survol arrête le défilement automatique, qui déplacerait la carte sous le curseur.
+  await carte.hover();
+  await carte.locator('.result-preview').click();
+  await expect(page).toHaveURL(new RegExp(`${href}$`));
+});

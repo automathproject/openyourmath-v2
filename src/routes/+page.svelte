@@ -1,7 +1,7 @@
 <!-- src/routes/+page.svelte -->
 <script>
   import { onMount } from 'svelte';
-  import { beforeNavigate } from '$app/navigation';
+  import { beforeNavigate, goto } from '$app/navigation';
   import { get } from 'svelte/store';
   import { browser } from '$app/environment';
   import ExercisePreview from '$lib/components/ExercisePreview.svelte';
@@ -14,7 +14,7 @@
   import MobileExercisePreview from '$lib/components/search/MobileExercisePreview.svelte';
   import RandomExercisesCarousel from '$lib/components/search/RandomExercisesCarousel.svelte';
   import { listActions } from '$lib/stores/listStore.js';
-  import { openExercise } from '$lib/utils/exerciseLink.js';
+  import { openExercise, isModifiedClick } from '$lib/utils/exerciseLink.js';
 
   import {
     searchQuery,
@@ -60,6 +60,24 @@
     'probabilités conditionnelles',
     'séries entières'
   ];
+
+  // Accès par classification. Les deux classifications du corpus : universitaire
+  // (niveau) et programmes de CPGE (filière).
+  const niveaux = ['L1', 'L2', 'L3'];
+  const filieres = ['MPSI', 'MP2I', 'PCSI', 'PTSI', 'BCPST', 'MP', 'MPI', 'PC', 'PSI', 'PT'];
+
+  // Les puces sont de vrais liens (clic milieu, copier l'adresse). Le clic simple
+  // écrit d'abord l'URL, puis ouvre la recherche : SearchSemantic, monté à ce
+  // moment, lit les filtres dans l'URL et lance la requête. L'adresse reste ainsi
+  // partageable et survit à un rechargement. Pas d'entrée d'historique en plus,
+  // comme pour les autres changements de la recherche (SearchSemantic.syncUrl).
+  async function handleBrowseChip(event, filterKey, value) {
+    if (isModifiedClick(event)) return;
+    event.preventDefault();
+    await goto(`/?${filterKey}=${encodeURIComponent(value)}`, { replaceState: true, noScroll: true });
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'instant' });
+    searchInterfaceOpened = true;
+  }
 
   function handleLandingSearch() {
     // Validation explicite (Entrée ou bouton) : on part en recherche quelle que
@@ -155,25 +173,6 @@
   function selectExercise(exercise) {
     previewActions.selectExercise(exercise.uuid, {
       revealPanel: desktopPanelReveal()
-    });
-  }
-
-  function handleCarouselSelect(exercise) {
-    // Applique un filtre contextuel pour sortir du landing et alimenter les résultats
-    if (exercise.module) {
-      searchActions.updateFilter('module', exercise.module);
-    } else if (exercise.level) {
-      searchActions.updateFilter('level', exercise.level);
-    } else {
-      searchQuery.set(exercise.title || '');
-    }
-    searchInterfaceOpened = true;
-    // Lance la recherche via le store (SearchSemantic n'est pas encore monté)
-    searchActions.search();
-    // Sélectionne l'exercice, en dépliant la colonne desktop si besoin :
-    // le clic dans le carrousel est une demande explicite de prévisualisation.
-    previewActions.selectExercise(exercise.uuid, {
-      revealPanel: desktopPanelReveal({ force: true })
     });
   }
 
@@ -448,6 +447,22 @@
                 <button class="popular-chip" on:click={() => handlePopularQuery(pq)}>{pq}</button>
               {/each}
             </div>
+
+            <nav class="browse-rows" aria-label="Parcourir par classification">
+              <div class="popular-row">
+                <span class="popular-label">Université :</span>
+                {#each niveaux as niveau}
+                  <a class="popular-chip" href="/?level={niveau}" on:click={(e) => handleBrowseChip(e, 'level', niveau)}>{niveau}</a>
+                {/each}
+              </div>
+              <div class="popular-row">
+                <span class="popular-label">Prépa :</span>
+                {#each filieres as filiere}
+                  <a class="popular-chip" href="/?filiere={filiere}" on:click={(e) => handleBrowseChip(e, 'filiere', filiere)}>{filiere}</a>
+                {/each}
+                <a class="browse-all" href="/browse?vue=prepa">Voir les programmes →</a>
+              </div>
+            </nav>
           </div>
         </div>
       </div>
@@ -455,11 +470,7 @@
 
     <!-- ── Landing carousel ───────────────────────────────────────── -->
     <div class="landing-discover">
-      <RandomExercisesCarousel
-        selectedUuid={$previewState.selectedUuid}
-        isPreviewOpen={$previewState.isOpen}
-        on:select={(event) => handleCarouselSelect(event.detail.exercise)}
-      />
+      <RandomExercisesCarousel />
     </div>
 
   {:else}
@@ -922,6 +933,22 @@
 
   .popular-chip:hover {
     @apply bg-brand-50 border-brand-200 text-brand-700;
+  }
+
+  a.popular-chip {
+    text-decoration: none;
+  }
+
+  .browse-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .browse-all {
+    font-size: 0.875rem;
+    text-decoration: underline;
+    @apply text-brand-700;
   }
 
   .landing-discover {
