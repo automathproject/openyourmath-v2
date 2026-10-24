@@ -26,6 +26,8 @@
   export let showUuid = false;
 
   const dispatch = createEventDispatcher();
+  // Titre sans information propre : 91 % des exercices s'appellent « exo7 N ».
+  const TITRE_GENERIQUE = /^exo7\s+\d+$/i;
   let cardEl;
 
   // Rendue par le serveur (catalogue /browse), la carte doit s'hydrater à
@@ -55,11 +57,14 @@
   $: showChapterBadge = !isCompact && Boolean(exercise?.chapter) && String(activeFilters?.chapter || '') !== String(exercise?.chapter || '');
   $: showDifficultyDots = !simplified && Boolean(exercise?.difficulty);
   $: showTags = showLevelBadge || showModuleBadge || showChapterBadge || showDifficultyDots;
-  // En mode simplifié (carrousel de la landing), l'énoncé passe devant et le
-  // titre, quel qu'il soit, devient une simple référence en petits caractères
-  // (91 % des titres se réduisent d'ailleurs à « exo7 N »).
-  $: titreDiscret = simplified && Boolean(exercise?.preview);
-  $: snippetLines = isCompact ? 2 : titreDiscret ? 5 : 3;
+  // L'énoncé passe devant et le titre devient une référence en petits caractères :
+  // pour tous les titres du carrousel de la landing (mode simplifié), et pour les
+  // seuls titres génériques dans les listes, où un vrai titre reste le meilleur
+  // repère. Un titre générique n'est pas non plus un intertitre : on ne le rend
+  // pas en <h3>, sinon le plan de la page est une suite de « exo7 N ».
+  $: titreGenerique = Boolean(exercise?.preview) && TITRE_GENERIQUE.test(String(exercise?.title ?? '').trim());
+  $: titreDiscret = Boolean(exercise?.preview) && (simplified || titreGenerique);
+  $: snippetLines = isCompact ? 2 : simplified && titreDiscret ? 5 : titreDiscret ? 4 : 3;
   $: href = exerciseHref(exercise?.uuid);
 
   $: if (isSelected && cardEl) {
@@ -119,11 +124,11 @@
          restent visibles : beaucoup de titres se réduisent à « exo7 4305 »,
          sans eux la liste n'est plus triable à l'œil. -->
     <div class="compact-row">
-      <h3 class="result-title compact-title">
+      <svelte:element this={titreGenerique ? 'p' : 'h3'} class="result-title compact-title" class:result-title--discret={titreDiscret}>
         <a class="result-title-link" {href} on:click={handleTitleClick}>
           <MathRenderer content={exercise.title} inline={true} />
         </a>
-      </h3>
+      </svelte:element>
       <div class="compact-actions">
         <AddToListButton {exercise} size="small" variant="icon" />
         {#if isSelected}
@@ -178,11 +183,11 @@
       {/if}
     </div>
 
-    <h3 class="result-title" class:result-title--discret={titreDiscret}>
+    <svelte:element this={titreGenerique ? 'p' : 'h3'} class="result-title" class:result-title--discret={titreDiscret}>
       <a class="result-title-link" {href} on:click={handleTitleClick}>
         <MathRenderer content={exercise.title} inline={true} />
       </a>
-    </h3>
+    </svelte:element>
   {/if}
 
   {#if exercise.preview}

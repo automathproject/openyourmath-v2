@@ -114,4 +114,30 @@ test.describe('Résultats de recherche', () => {
       expect(b.x + b.width, `${sel} passe sous le panneau`).toBeLessThanOrEqual(panneau.x + 1);
     }
   });
+  test('un titre générique devient une référence discrète, pas un intertitre', async ({ page }) => {
+    // Réponse simulée : /api/search est limité à 30 requêtes par minute.
+    await page.route('**/api/search*', route => route.fulfill({
+      json: {
+        results: [
+          { uuid: 'GEN1', title: 'exo7 2440', level: 'L2', module: 'Algèbre', preview: 'Soit G un groupe.' },
+          { uuid: 'REAL', title: 'Produit matriciel', level: 'L1', module: 'Algèbre', preview: 'On considère la matrice.' }
+        ],
+        meta: { mode: 'fts', filters: {}, filterCounts: {}, pagination: { limit: 20, offset: 0, count: 2, hasMore: false, totalCount: 2 } }
+      }
+    }));
+    await preparerPanneau(page, false);
+    await page.goto('/?q=matrice');
+    const generique = page.locator('.result-card', { hasText: 'exo7 2440' });
+    const reel = page.locator('.result-card', { hasText: 'Produit matriciel' });
+    await expect(generique).toBeVisible();
+
+    // La référence reste un lien, mais n'est plus un titre de section.
+    await expect(generique.locator('p.result-title a[href="/exercise/GEN1"]')).toBeVisible();
+    await expect(generique.locator('h3')).toHaveCount(0);
+    await expect(generique.locator('.result-title')).toHaveCSS('font-size', '12px');
+
+    // Un vrai titre ne change pas.
+    await expect(reel.locator('h3.result-title')).toBeVisible();
+    await expect(reel.locator('.result-title')).not.toHaveCSS('font-size', '12px');
+  });
 });
