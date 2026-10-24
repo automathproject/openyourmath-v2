@@ -3,6 +3,7 @@
   import ExerciseContent from '$lib/components/ExerciseContent.svelte';
   import LectureSidebar from '$lib/components/LectureSidebar.svelte';
   import LectureSubheader from '$lib/components/LectureSubheader.svelte';
+  import SignalementErreur from '$lib/components/SignalementErreur.svelte';
   import { page } from '$app/stores';
   import { onMount, onDestroy } from 'svelte';
 
@@ -60,6 +61,7 @@
             {showInlineControls}
           />
         </div>
+        <SignalementErreur exercise={data.exercise} cpge={data.cpge || []} signalement={data.signalement} />
       </article>
 
       {#if !isImmersive}

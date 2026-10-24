@@ -1,6 +1,7 @@
 // src/routes/api/exercise/[uuid]/+server.js
 import { json, error } from '@sveltejs/kit';
 import { getExerciseByUuid, getSimilarExercises } from '$lib/db/queries.js';
+import { getExerciseCpge } from '$lib/db/cpge.js';
 
 export async function GET({ params }) {
   try {
@@ -31,6 +32,7 @@ export async function GET({ params }) {
     const response = {
       exercise,
       similar: similarExercises || [],
+      cpge: await getExerciseCpge(uuid.trim()),
       meta: {
         timestamp: new Date().toISOString(),
         uuid: uuid.trim()

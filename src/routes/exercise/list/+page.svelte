@@ -9,6 +9,8 @@
   import LatexExport from '$lib/components/LatexExport.svelte';
   import LectureSidebar from '$lib/components/LectureSidebar.svelte';
   import LectureSubheader from '$lib/components/LectureSubheader.svelte';
+  import SignalementErreur from '$lib/components/SignalementErreur.svelte';
+  import { exerciceEnRetour } from '$lib/signalement/retour.js';
   import SeanceModeBar from '$lib/components/SeanceModeBar.svelte';
   import SeanceLatexEditor from '$lib/components/SeanceLatexEditor.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
@@ -583,6 +585,12 @@
     }
 
     updateUuidInput();
+
+    // Retour de la connexion pendant un signalement : réafficher l'exercice
+    // qui était en cours de signalement, dont le formulaire se rouvre.
+    const enRetour = exerciceEnRetour($page.url);
+    const indexEnRetour = enRetour ? $exerciseList.findIndex(e => e.uuid === enRetour) : -1;
+    if (indexEnRetour > 0) listActions.selectExercise(indexEnRetour);
 
     return () => unsubAnim();
   });
@@ -1865,6 +1873,12 @@
                       {studentMode}
                     />
                   </div>
+                  <!-- Pas dans les vues élève : le lien demande un compte forge ou GitHub. -->
+                  {#if studentMode === 'normal'}
+                    {#key $selectedExercise.uuid}
+                      <SignalementErreur exercise={$selectedExercise} signalement={data.signalement} />
+                    {/key}
+                  {/if}
                 </article>
 
                 {#if readingMode !== 'immersive' && sharedButtonsVisible}

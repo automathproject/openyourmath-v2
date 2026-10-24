@@ -4,6 +4,8 @@
 // et $lib/db/* lisent process.env (pour fonctionner aussi en scripts Node standalone) —
 // on fait le pont ici, une seule fois au démarrage du serveur.
 import { env } from '$env/dynamic/private';
+import { verifier } from '$lib/server/signalement/session.js';
+import { COOKIE_SESSION } from '$lib/server/signalement/cookies.js';
 
 const BRIDGE = {
   ALBERT_API_KEY: env.ALBERT_API_KEY,
@@ -17,4 +19,8 @@ for (const [key, value] of Object.entries(BRIDGE)) {
 }
 
 /** @type {import('@sveltejs/kit').Handle} */
-export const handle = ({ event, resolve }) => resolve(event);
+export const handle = ({ event, resolve }) => {
+  // Identité vérifiée (forge ou GitHub) de la personne qui signale des erreurs.
+  event.locals.auteur = verifier(event.cookies.get(COOKIE_SESSION), env.SIGNALEMENT_SESSION_SECRET);
+  return resolve(event);
+};
