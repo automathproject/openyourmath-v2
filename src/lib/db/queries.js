@@ -1,6 +1,7 @@
 // src/lib/db/queries.js - Version corrigée avec recherche insensible à la casse ET preview
 import Database from 'better-sqlite3';
 import path from 'path';
+import { cpgeFilterClauses } from './cpge.js';
 
 const DB_PATH = path.resolve('data/exercises.sqlite');
 
@@ -321,7 +322,11 @@ function buildSearchContext(query = '', filters = {}, sortOption = null) {
     }
   }
 
-  const selectBase = `SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.video_id, e.created_at, e.updated_at, e.preview,
+  const cpge = cpgeFilterClauses(filterValues, 'e');
+  whereClauses.push(...cpge.clauses);
+  params.push(...cpge.params);
+
+  const selectBase =`SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.video_id, e.created_at, e.updated_at, e.preview,
                 e.hasIndication, e.hasSolution`;
 
   const selectClause = useFts
@@ -1294,11 +1299,12 @@ export async function getContextualFilterCounts(query = '', filters = {}) {
       level: {},
       difficulty: {},
       author: {},
-      organization: {}
+      organization: {},
+      filiere: {}
     };
 
     // Pour chaque type de filtre, on calcule les comptages en excluant ce filtre spécifique
-    const filterTypes = ['module', 'level', 'difficulty', 'author', 'organization'];
+    const filterTypes = ['module', 'level', 'difficulty', 'author', 'organization', 'filiere'];
 
     for (const excludeFilter of filterTypes) {
       // Créer une copie des filtres en excluant le filtre actuel
@@ -1343,6 +1349,12 @@ export async function getContextualFilterCounts(query = '', filters = {}) {
           groupBy = 'e.organization';
           additionalWhere = 'AND e.organization IS NOT NULL AND TRIM(e.organization) != \'\'';
           break;
+
+        case 'filiere':
+          // Filières des programmes CPGE auxquels l'exercice est rattaché.
+          countQuery = 'f.filiere as value';
+          groupBy = 'f.filiere';
+          break;
       }
 
       // Construire la requête SQL
@@ -1357,6 +1369,16 @@ export async function getContextualFilterCounts(query = '', filters = {}) {
           LEFT JOIN exercise_authors ea ON ea.uuid = e.uuid
           WHERE ${context.whereClause}
             ${additionalWhere}
+          GROUP BY ${groupBy}
+        `;
+      } else if (excludeFilter === 'filiere') {
+        sql = `
+          SELECT ${countQuery}, COUNT(DISTINCT e.uuid) as count
+          ${context.fromClause}
+          JOIN exercise_cpge ec ON ec.uuid = e.uuid
+          JOIN cpge_noeuds n ON n.id = ec.noeud_id
+          JOIN cpge_filieres f ON f.programme = n.programme
+          WHERE ${context.whereClause}
           GROUP BY ${groupBy}
         `;
       } else {

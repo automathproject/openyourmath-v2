@@ -2,7 +2,9 @@
   import { filters, filterCounts, suggestions, searchActions } from '$lib/stores/searchStore.js';
   import { formatDifficultyLabel } from '$lib/utils/filterUtils.js';
 
-  const LEVELS = ['L1', 'L2', 'L3', 'CPGE'];
+  const LEVELS = ['L1', 'L2', 'L3'];
+  // Filières des programmes de CPGE (voir src/lib/db/cpge.js).
+  const FILIERES = ['MPSI', 'MP2I', 'PCSI', 'PTSI', 'BCPST', 'MP', 'MPI', 'PC', 'PSI', 'PT'];
 
   let showAllModules = false;
   let showAllAuthors = false;
@@ -31,6 +33,23 @@
     searchActions.updateFilter('module', '');
     searchActions.updateFilter('chapter', '');
     searchActions.updateFilter('subchapter', '');
+    searchActions.search();
+  }
+
+  function togglePrepa() {
+    searchActions.updateFilter('prepa', $filters.prepa ? '' : '1');
+    searchActions.search();
+  }
+
+  function setFiliere(f) {
+    searchActions.updateFilter('filiere', $filters.filiere === f ? '' : f);
+    searchActions.search();
+  }
+
+  function clearCpge() {
+    searchActions.updateFilter('prepa', '');
+    searchActions.updateFilter('filiere', '');
+    searchActions.updateFilter('cpge', '');
     searchActions.search();
   }
 
@@ -159,6 +178,44 @@
         >{l}</button>
       {/each}
     </div>
+  </div>
+
+  <hr class="sps-hr" />
+
+  <!-- Prépa : rattachements aux programmes de CPGE -->
+  <div class="sps-section">
+    <div class="sps-overline-row">
+      <div class="sps-overline">Prépa (CPGE)</div>
+      {#if $filters.prepa || $filters.filiere || $filters.cpge}
+        <button type="button" class="sps-clear-link" on:click={clearCpge}>Effacer</button>
+      {/if}
+    </div>
+    <button
+      type="button"
+      class="sps-prepa-toggle"
+      class:sps-prepa-toggle--on={$filters.prepa || $filters.filiere || $filters.cpge}
+      on:click={togglePrepa}
+      disabled={Boolean($filters.filiere || $filters.cpge)}
+    >Rattachés à un programme</button>
+    <div class="sps-filiere-list">
+      {#each FILIERES as f}
+        <button
+          type="button"
+          class="sps-filiere-btn"
+          class:sps-filiere-btn--on={$filters.filiere === f}
+          on:click={() => setFiliere(f)}
+        >
+          {f}
+          {#if $filterCounts?.filiere?.[f]}<span class="sps-filiere-count">{$filterCounts.filiere[f]}</span>{/if}
+        </button>
+      {/each}
+    </div>
+    {#if $filters.cpge}
+      <p class="sps-cpge-node">
+        Section du programme : <code>{$filters.cpge}</code>
+        <button type="button" class="sps-clear-link" on:click={() => { searchActions.updateFilter('cpge', ''); searchActions.search(); }}>Retirer</button>
+      </p>
+    {/if}
   </div>
 
   <hr class="sps-hr" />
@@ -382,7 +439,7 @@
   /* ── Niveau ── */
   .sps-level-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
     overflow: hidden;
     border: 1.5px solid var(--color-interface-border-secondary);
@@ -411,6 +468,68 @@
   .sps-level-btn--on {
     background: var(--color-interface-text-primary);
     color: white;
+  }
+
+  /* ── Prépa ── */
+  .sps-prepa-toggle {
+    width: 100%;
+    padding: 7px 10px;
+    margin-bottom: 8px;
+    border: 1.5px solid var(--color-interface-border-secondary);
+    border-radius: 6px;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-interface-text-secondary);
+    cursor: pointer;
+    text-align: left;
+  }
+  .sps-prepa-toggle:hover:not(:disabled) {
+    background: var(--color-interface-bg-tertiary);
+  }
+  .sps-prepa-toggle--on {
+    background: var(--color-interface-text-primary);
+    border-color: var(--color-interface-text-primary);
+    color: white;
+  }
+  .sps-prepa-toggle:disabled {
+    cursor: default;
+  }
+  .sps-filiere-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .sps-filiere-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border: 1px solid var(--color-interface-border-secondary);
+    border-radius: 999px;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-interface-text-secondary);
+    cursor: pointer;
+  }
+  .sps-filiere-btn:hover {
+    background: var(--color-interface-bg-tertiary);
+  }
+  .sps-filiere-btn--on {
+    background: var(--color-interface-text-primary);
+    border-color: var(--color-interface-text-primary);
+    color: white;
+  }
+  .sps-filiere-count {
+    font-size: 11px;
+    opacity: 0.7;
+  }
+  .sps-cpge-node {
+    margin: 8px 0 0;
+    font-size: 12px;
+    color: var(--color-interface-text-secondary);
+    overflow-wrap: anywhere;
   }
 
   /* ── Module ── */

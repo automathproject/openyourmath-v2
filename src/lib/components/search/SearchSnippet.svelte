@@ -1,5 +1,6 @@
 <script>
   import MathRenderer from '$lib/components/MathRenderer.svelte';
+  import { fermerBalises } from '$lib/utils/htmlBalises.js';
 
   export let content = '';
   export let lines = 3;
@@ -7,7 +8,8 @@
 
 <div class="snippet" style={`--snippet-lines:${lines};`}>
   <div class="snippet-content">
-    <MathRenderer content={content} />
+    <!-- L'aperçu est tronqué : ses balises restées ouvertes casseraient l'hydratation. -->
+    <MathRenderer content={fermerBalises(content)} />
   </div>
 </div>
 

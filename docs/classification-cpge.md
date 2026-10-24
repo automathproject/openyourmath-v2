@@ -763,20 +763,33 @@ Bilan au 23 octobre 2026 : toute la base (8 716 exercices) est étiquetée, dont
 
 ## Intégration dans l'application
 
-- **Navigation `/browse`** : un onglet « Prépa » en plus de la navigation par
-  niveau. On y parcourt filière → semestre (1re année) → section →
-  sous-section, avec des compteurs. La page de section affiche le bandeau du
-  programme officiel en introduction, un contenu que l'on a déjà gratuitement.
-- **Recherche** : paramètres `filiere=PCSI` et `cpge=<nœud>`, où le nœud est
-  une section ou une sous-section. Le bouton « CPGE » de la barre latérale devient « a au moins un
-  rattachement ».
-- **Page d'exercice** : des badges « MPSI · S1 · Nombres complexes — f)
-  Racines n-ièmes » renvoient vers le texte du programme.
-- **Éditeur `/create`** : un champ de rattachements CPGE avec autocomplétion
-  sur les nœuds, et des suggestions de `metadataTask()` fondées sur le
-  référentiel plutôt que sur la base.
-- **Fiches** : on peut générer automatiquement une fiche par section de
-  programme (les exercices validés dans l'ordre du texte officiel).
+Les rattachements sont lus par `src/lib/db/cpge.js` : liste des programmes,
+arbre d'un programme, nœud avec ses exercices, rattachements d'un exercice, et
+clauses de filtre communes aux deux moteurs de recherche (`queries.js` et
+`hybridSearch.js`). L'unité de navigation est le programme : MPSI et MP2I en
+partagent un, BCPST en a deux. Le compte d'un nœud inclut ses descendants.
+
+- **Navigation `/browse`** : l'onglet « Prépa (CPGE) »
+  (`/browse?vue=prepa`) liste les programmes par année, puis l'arbre d'un
+  programme (`&programme=pcsi`), par semestre en première année, avec des
+  compteurs. La page d'une section ou sous-section (`&noeud=…`) affiche son
+  texte officiel (bandeau et tableau des contenus, rendus par
+  `src/lib/utils/cpgeTexte.js`), ses subdivisions et ses exercices, 50 par
+  page, avec un lien pour chercher dans cette partie du programme.
+- **Recherche** : paramètres `filiere=PCSI`, `cpge=<nœud>` (une section ou
+  sous-section, descendants compris en suivant `parent_id`) et `prepa=1`
+  (au moins un rattachement). La barre latérale a une section « Prépa (CPGE) »
+  avec les filières et leurs comptes (facette `filiere`) ; le faux niveau
+  « CPGE », qui ne renvoyait rien, a disparu. Les filtres passent dans l'URL
+  de la recherche, et un lien qui ne porte qu'un filtre ouvre la recherche.
+- **Page d'exercice** : un badge « Prépa MPSI · MP2I » par programme sous le
+  titre, qui mène à la section dans la vue Prépa, et un encadré « Programmes
+  de CPGE » dans la barre latérale avec chaque section et sous-section.
+- **Tests** : `tests/build/cpge-lecture.test.js` (lecture sur une base de
+  test), `tests/build/cpge-texte.test.js` (rendu des textes officiels) et
+  `tests/e2e/prepa.desktop.spec.js`, `prepa.mobile.spec.js`.
+- **À venir** : un champ de rattachements CPGE dans l'éditeur `/create`, et
+  des fiches générées par section de programme.
 
 ## Phases
 
@@ -785,7 +798,7 @@ Bilan au 23 octobre 2026 : toute la base (8 716 exercices) est étiquetée, dont
 | 0     | Programmes officiels (9 textes, 11 filières) convertis en Markdown structuré             | fait    |
 | 1     | Analyseur Markdown → nœuds, tables SQLite, tests (unicité et stabilité des identifiants) | fait    |
 | 2     | A priori par chapitre, étiquetage LLM, concordance, rattachement de crouzet/pcsi         | fait    |
-| 3     | Navigation « Prépa », filtres de recherche, badges                                       | à faire |
+| 3     | Navigation « Prépa », filtres de recherche, badges                                       | fait    |
 | 4     | Éditeur `/create` et vue de validation                                                   | à faire |
 
 ## Questions ouvertes

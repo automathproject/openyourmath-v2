@@ -1,4 +1,5 @@
 // scripts/utils/previewUtils.js
+import { fermerBalises } from '../../src/lib/utils/htmlBalises.js';
 
 /**
  * Génère une preview d'un contenu en respectant la syntaxe LaTeX
@@ -86,7 +87,7 @@ function getPreview(content, maxLength = 150) {
       safeEnd = Math.min(safeEnd, lastParenOpen);
     }
 
-    return content.slice(0, safeEnd) + ' ...';
+    return fermerBalises(content.slice(0, safeEnd) + ' ...');
   }
 
   function getBlockHtml(block) {

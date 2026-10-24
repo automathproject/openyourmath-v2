@@ -19,7 +19,22 @@
     showPrimaryAction = true,
     showRevealControls = true,
     compactMobile = false,
+    // Rattachements aux programmes de CPGE (src/lib/db/cpge.js), un badge par programme.
+    cpge = [],
   } = $props();
+
+  // Le badge mène à la section du premier rattachement dans la vue Prépa de /browse.
+  function lienCpge(programme) {
+    const premier = programme.noeuds[0];
+    const cible = premier?.sectionId || premier?.id;
+    return cible ? `/browse?vue=prepa&noeud=${encodeURIComponent(cible)}` : `/browse?vue=prepa&programme=${programme.programme}`;
+  }
+
+  function titreCpge(programme) {
+    return programme.noeuds
+      .map(n => (n.section ? `${n.section} — ${n.titre}` : n.titre).replace(/\$/g, ''))
+      .join('\n');
+  }
 
   let shareLabel = $state('Partager');
 
@@ -121,6 +136,11 @@
             {#if exercise?.chapter}
               <span class="chip chip-soft">{exercise.chapter}</span>
             {/if}
+            {#each cpge as programme (programme.programme)}
+              <a class="chip chip-cpge" href={lienCpge(programme)} title={titreCpge(programme)}>
+                Prépa {programme.filieres.join(' · ')}
+              </a>
+            {/each}
             {#if difficulty > 0}
               <span class="lecture-stars">
                 <StarsRating n={difficulty} total={4} />
@@ -274,6 +294,18 @@
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 0;
+  }
+
+  /* Badge « Prépa » : lien vers la section du programme dans /browse. */
+  .chip-cpge {
+    border-color: var(--color-brand-200);
+    background: var(--color-brand-50);
+    color: var(--color-brand-700);
+    text-decoration: none;
+  }
+
+  .chip-cpge:hover {
+    border-color: var(--color-brand-400);
   }
 
   .lecture-actions {

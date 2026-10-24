@@ -1,10 +1,12 @@
 <script>
   import { goto } from '$app/navigation';
   import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
-  import MathRenderer from '$lib/components/MathRenderer.svelte';
-  import StarsRating from '$lib/components/StarsRating.svelte';
   import Chip from '$lib/components/Chip.svelte';
-  import SearchSnippet from '$lib/components/search/SearchSnippet.svelte';
+  import ResultCard from '$lib/components/search/ResultCard.svelte';
+  import MathRenderer from '$lib/components/MathRenderer.svelte';
+  import PrepaProgrammes from '$lib/components/prepa/PrepaProgrammes.svelte';
+  import PrepaArbre from '$lib/components/prepa/PrepaArbre.svelte';
+  import PrepaNoeud from '$lib/components/prepa/PrepaNoeud.svelte';
 
   export let data;
 
@@ -17,6 +19,8 @@
     { value: 'updated', label: 'Mise à jour' }
   ];
 
+  $: estPrepa = data.vue === 'prepa';
+  $: prepa = data.prepa || {};
   $: selection = data.selection || {};
   $: activeFilters = {
     level: selection.level || '',
@@ -25,9 +29,11 @@
     subchapter: selection.subchapter || ''
   };
   $: pathParts = [selection.level, selection.module, selection.chapter, selection.subchapter].filter(Boolean);
-  $: pageTitle = pathParts.length
-    ? `${pathParts.join(' • ')} - Parcourir les exercices - OpenYourMath`
-    : 'Parcourir les exercices - OpenYourMath';
+  $: pageTitle = estPrepa
+    ? `${prepa.noeud ? `${prepa.noeud.titre.replace(/\$/g, '')} • ` : ''}${prepa.arbre ? `${prepa.arbre.filieres.join(' · ')} • ` : ''}Prépa - Parcourir les exercices - OpenYourMath`
+    : pathParts.length
+      ? `${pathParts.join(' • ')} - Parcourir les exercices - OpenYourMath`
+      : 'Parcourir les exercices - OpenYourMath';
   $: totalExercises = (data.structure || []).reduce((sum, level) => sum + (level.exerciseCount || 0), 0);
   $: moduleCount = (data.structure || []).reduce((sum, level) => sum + (level.modules?.length || 0), 0);
   $: chapterCount = (data.structure || []).reduce(
@@ -65,13 +71,6 @@
     const nextOrder = sortBy === data.sortBy && data.sortOrder === 'asc' ? 'desc' : 'asc';
     goto(buildUrl(selection, sortBy, nextOrder), { noScroll: true });
   }
-
-  function formatDate(value) {
-    if (!value) return '';
-    const date = new Date(value);
-    if (Number.isNaN(date.getTime())) return '';
-    return date.toLocaleDateString('fr-FR');
-  }
 </script>
 
 <svelte:head>
@@ -79,25 +78,76 @@
 </svelte:head>
 
 <main class="browse-page">
+  <h1 class="sr-only">Parcourir les exercices</h1>
   <header class="browse-header">
-    <div>
-      <p class="t-overline">Catalogue</p>
-      <h1>Parcourir les exercices</h1>
-      <p class="browse-subtitle">Explorez la bibliothèque par niveau, module, chapitre et sous-chapitre.</p>
-    </div>
+    <nav class="browse-tabs" aria-label="Mode de navigation">
+      <a href="/browse" class:is-current={!estPrepa} aria-current={!estPrepa ? 'page' : undefined}>Par niveau</a>
+      <a href="/browse?vue=prepa" class:is-current={estPrepa} aria-current={estPrepa ? 'page' : undefined}>Prépa (CPGE)</a>
+    </nav>
 
-    {#if data.selected}
-      <button type="button" class="btn btn-secondary" on:click={clearSelection}>
+    {#if data.selected && !estPrepa}
+      <button type="button" class="btn btn-secondary btn-sm" on:click={clearSelection}>
         Vue générale
       </button>
     {/if}
   </header>
 
-  {#if data.error}
+  {#if estPrepa && !data.error}
+    {#if prepa.introuvable}
+      <section class="empty-state">
+        <h2 class="empty-state-title">Partie du programme introuvable</h2>
+        <p class="empty-state-subtitle">Cette référence ne correspond à aucune section des programmes en vigueur.</p>
+        <a class="btn btn-primary mt-4" href="/browse?vue=prepa">Voir les programmes</a>
+      </section>
+    {:else if !prepa.arbre}
+      <PrepaProgrammes programmes={prepa.programmes} />
+    {:else}
+      <div class="browse-layout">
+        <aside class="browse-sidebar">
+          <PrepaArbre
+            arbre={prepa.arbre}
+            actif={prepa.noeud?.id || ''}
+            ouverts={(prepa.noeud?.ancetres || []).map(a => a.id)}
+          />
+        </aside>
+
+        <section class="browse-results">
+          {#if prepa.noeud}
+            <PrepaNoeud noeud={prepa.noeud} page={prepa.page} parPage={prepa.parPage} />
+          {:else}
+            <div class="results-head">
+              <div>
+                <p class="t-overline">{prepa.arbre.annee === 1 ? 'Première' : 'Seconde'} année</p>
+                <h2>{prepa.arbre.titre}</h2>
+                {#if prepa.arbre.source_url}
+                  <p class="prepa-source"><a href={prepa.arbre.source_url} target="_blank" rel="noopener">Texte officiel (PDF)</a></p>
+                {/if}
+              </div>
+              <div class="result-count">
+                <strong>{prepa.arbre.exercices}</strong>
+                <span>exercice{prepa.arbre.exercices > 1 ? 's' : ''}</span>
+              </div>
+            </div>
+            {#each prepa.arbre.parties as partie (partie.nom)}
+              {#if prepa.arbre.parties.length > 1}<p class="t-overline prepa-partie">{partie.nom}</p>{/if}
+              <div class="prepa-sections">
+                {#each partie.sections as section (section.id)}
+                  <a class="prepa-section" href="/browse?vue=prepa&noeud={encodeURIComponent(section.id)}">
+                    <span><MathRenderer content={section.titre} inline={true} /></span>
+                    <small>{section.exercices}</small>
+                  </a>
+                {/each}
+              </div>
+            {/each}
+          {/if}
+        </section>
+      </div>
+    {/if}
+  {:else if data.error}
     <section class="empty-state">
       <h2 class="empty-state-title text-red-700">Erreur de chargement</h2>
       <p class="empty-state-subtitle">{data.error}</p>
-      <a class="btn btn-primary mt-4" href="/browse">Réessayer</a>
+      <a class="btn btn-primary mt-4" href={estPrepa ? '/browse?vue=prepa' : '/browse'}>Réessayer</a>
     </section>
   {:else if !data.selected}
     <section class="overview-stats" aria-label="Statistiques du catalogue">
@@ -238,37 +288,7 @@
         {:else}
           <div class="exercise-list">
             {#each data.exercises as exercise (exercise.uuid)}
-              <article class="exercise-card">
-                <div class="exercise-main">
-                  <div class="exercise-meta">
-                    {#if exercise.level}<Chip variant="teal-solid">{exercise.level}</Chip>{/if}
-                    {#if exercise.module}<Chip variant="teal">{exercise.module}</Chip>{/if}
-                    {#if exercise.difficulty}<StarsRating n={exercise.difficulty} />{/if}
-                    {#if exercise.hasSolution}<Chip variant="success">solution</Chip>{/if}
-                  </div>
-
-                  <h3>
-                    <a href="/exercise/{exercise.uuid}">
-                      <MathRenderer content={exercise.title} inline={true} />
-                    </a>
-                  </h3>
-
-                  {#if exercise.preview}
-                    <div class="exercise-preview">
-                      <SearchSnippet content={exercise.preview} lines={2} />
-                    </div>
-                  {/if}
-
-                  <div class="exercise-foot">
-                    {#if exercise.chapter}<span>{exercise.chapter}</span>{/if}
-                    {#if exercise.subchapter}<span>{exercise.subchapter}</span>{/if}
-                    {#if exercise.author}<span>{exercise.author}</span>{/if}
-                    {#if exercise.updated_at}<span>Maj {formatDate(exercise.updated_at)}</span>{/if}
-                  </div>
-                </div>
-
-                <a class="btn btn-primary btn-sm" href="/exercise/{exercise.uuid}">Voir</a>
-              </article>
+              <ResultCard {exercise} navigable showUuid />
             {/each}
           </div>
 
@@ -287,28 +307,83 @@
   .browse-page {
     width: min(1180px, calc(100vw - 2rem));
     margin: 0 auto;
-    padding: 2rem 0 3rem;
+    padding: 1rem 0 3rem;
   }
 
+  /* Une seule rangée : le mode de navigation, et le retour à la vue générale. */
   .browse-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
-  .browse-header h1 {
-    margin-top: 0.25rem;
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 3.25rem);
-    line-height: 1;
-    letter-spacing: 0;
+  .browse-tabs {
+    display: inline-flex;
+    gap: 0;
+    border: 1.5px solid var(--color-interface-border-secondary);
+    border-radius: 6px;
+    overflow: hidden;
   }
 
-  .browse-subtitle {
-    margin-top: 0.6rem;
+  .browse-tabs a {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
     color: var(--color-interface-text-secondary);
+    text-decoration: none;
+  }
+
+  .browse-tabs a + a {
+    border-left: 1px solid var(--color-interface-border-secondary);
+  }
+
+  .browse-tabs a.is-current {
+    background: var(--color-interface-text-primary);
+    color: white;
+  }
+
+  .prepa-source {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .prepa-source a {
+    color: var(--color-brand-700);
+    text-decoration: underline;
+  }
+
+  .prepa-partie {
+    margin: 1.25rem 0 0.5rem;
+  }
+
+  .prepa-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .prepa-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid var(--color-interface-border-primary);
+    border-radius: 8px;
+    background: var(--color-interface-bg-white);
+    color: inherit;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .prepa-section:hover {
+    border-color: var(--color-brand-300);
+  }
+
+  .prepa-section small {
+    flex-shrink: 0;
+    color: var(--color-interface-text-muted);
   }
 
   .overview-stats {
@@ -344,8 +419,7 @@
     gap: 1rem;
   }
 
-  .level-card,
-  .exercise-card {
+  .level-card {
     border: 1px solid var(--color-interface-border-primary);
     border-radius: 8px;
     background: var(--color-interface-bg-white);
@@ -356,7 +430,6 @@
   }
 
   .level-card-head,
-  .exercise-card,
   .results-head,
   .sort-row {
     display: flex;
@@ -366,8 +439,7 @@
   }
 
   .level-card h2,
-  .results-head h2,
-  .exercise-card h3 {
+  .results-head h2 {
     font-family: var(--font-heading);
     letter-spacing: 0;
   }
@@ -452,9 +524,7 @@
 
   .active-path,
   .summary-group > div,
-  .sort-buttons,
-  .exercise-meta,
-  .exercise-foot {
+  .sort-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 0.45rem;
@@ -515,39 +585,6 @@
     gap: 0.7rem;
   }
 
-  .exercise-card {
-    padding: 1rem;
-  }
-
-  .exercise-main {
-    min-width: 0;
-  }
-
-  .exercise-card h3 {
-    margin-top: 0.55rem;
-    font-size: 1rem;
-  }
-
-  .exercise-card h3 a:hover {
-    color: var(--color-brand-700);
-  }
-
-  .exercise-preview {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  .exercise-foot {
-    margin-top: 0.7rem;
-    color: var(--color-interface-text-muted);
-    font-size: 0.78rem;
-  }
-
-  .exercise-foot span:not(:last-child)::after {
-    content: '·';
-    margin-left: 0.45rem;
-  }
-
   .result-limit {
     margin-top: 1rem;
   }
@@ -573,10 +610,8 @@
       padding-top: 1rem;
     }
 
-    .browse-header,
     .results-head,
-    .sort-row,
-    .exercise-card {
+    .sort-row {
       display: grid;
     }
 

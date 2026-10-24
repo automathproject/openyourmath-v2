@@ -24,7 +24,6 @@
   export let selectedSubchapter = '';
   export let selectedModule = '';
   export let selectedLevel = '';
-  export let compact = false;
   // Nouveau: prise en compte de la requête et filtres pour recalculer les comptages
   export let query = '';
   export let activeFilters = {
@@ -194,16 +193,6 @@
       subchapter
     });
   }
-  
-  function clearSelection() {
-    selectedPath = { level: null, module: null, chapter: null, subchapter: null };
-    dispatch('navigate', { 
-      level: null, 
-      module: null, 
-      chapter: null, 
-      subchapter: null 
-    });
-  }
 
   function expandAll() {
     hierarchyStructure.forEach(level => {
@@ -230,24 +219,11 @@
   }
 </script>
 
-<div class="p-4 bg-interface-bg-white rounded-lg border border-interface-border-primary shadow-card">
-  <!-- En-tête de la navigation -->
-  <div class="flex items-center justify-between mb-4">
-    <h3 class="font-bold text-interface-text-primary">{compact ? 'Navigation' : 'Navigation hiérarchique'}</h3>
-    {#if selectedPath.level || selectedPath.module || selectedPath.chapter}
-      <button on:click={clearSelection} class="btn-icon text-interface-text-muted hover:text-interface-text-primary" title="Effacer la sélection">
-        ✕
-      </button>
-    {/if}
-  </div>
-
-  <!-- Fil d'Ariane pour la sélection active (non compact) -->
-  {#if (selectedPath.level || selectedPath.module || selectedPath.chapter) && !compact}
-    <div class="text-sm text-interface-text-secondary bg-interface-bg-secondary p-2 rounded-md mb-4 truncate">
-      {#if selectedPath.level}<span class="text-brand-700">🎓 {selectedPath.level}</span>{/if}
-      {#if selectedPath.module} › <span class="text-brand-700">📖 {selectedPath.module}</span>{/if}
-      {#if selectedPath.chapter} › <span class="text-brand-700">📚 {selectedPath.chapter}</span>{/if}
-      {#if selectedPath.subchapter} › <span class="text-brand-700">{selectedPath.subchapter}</span>{/if}
+<nav class="p-2 bg-interface-bg-white rounded-lg border border-interface-border-primary shadow-card" aria-label="Niveaux, modules et chapitres">
+  {#if hierarchyStructure.length > 0}
+    <div class="nav-actions">
+      <button on:click={expandAll} class="btn-text">Tout développer</button>
+      <button on:click={collapseAll} class="btn-text">Tout réduire</button>
     </div>
   {/if}
 
@@ -266,15 +242,15 @@
       <!-- Boucle sur les Niveaux -->
       {#each hierarchyStructure as level (level.name)}
         <div class="nav-item" class:is-active={selectedPath.level === level.name && !selectedPath.module}>
-          <button class="btn-icon -ml-1" on:click={() => toggleLevel(level.name)} disabled={level.modules.length === 0}>
+          <button class="btn-icon -ml-1" aria-label="Déplier {level.name}" aria-expanded={expandedLevels.has(level.name)} on:click={() => toggleLevel(level.name)} disabled={level.modules.length === 0}>
             {#if level.modules.length > 0}
-              <span class="transform transition-transform duration-200">{expandedLevels.has(level.name) ? '▼' : '▶'}</span>
+              <span class="nav-chevron" class:is-open={expandedLevels.has(level.name)} aria-hidden="true">▸</span>
             {:else}
               <span class="text-interface-text-disabled">-</span>
             {/if}
           </button>
           <button type="button" class="nav-item-content" on:click={() => selectPath(level.name)}>
-            🎓 {level.name} ({level.exerciseCount})
+            {level.name} <span class="nav-count">{level.exerciseCount}</span>
           </button>
         </div>
 
@@ -283,15 +259,15 @@
             <!-- Boucle sur les Modules -->
             {#each level.modules as module (module.name)}
               <div class="nav-item" class:is-active={selectedPath.module === module.name && selectedPath.level === level.name && !selectedPath.chapter}>
-                <button class="btn-icon -ml-1" on:click={() => toggleModule(level.name, module.name)} disabled={module.chapters.length === 0}>
+                <button class="btn-icon -ml-1" aria-label="Déplier {module.name}" aria-expanded={expandedModules.has(`${level.name}-${module.name}`)} on:click={() => toggleModule(level.name, module.name)} disabled={module.chapters.length === 0}>
                   {#if module.chapters.length > 0}
-                    <span class="transform transition-transform duration-200">{expandedModules.has(`${level.name}-${module.name}`) ? '▼' : '▶'}</span>
+                    <span class="nav-chevron" class:is-open={expandedModules.has(`${level.name}-${module.name}`)} aria-hidden="true">▸</span>
                   {:else}
                     <span class="text-interface-text-disabled">-</span>
                   {/if}
                 </button>
                 <button type="button" class="nav-item-content" on:click={() => selectPath(level.name, module.name)}>
-                  📖 {module.name} ({module.exerciseCount})
+                  {module.name} <span class="nav-count">{module.exerciseCount}</span>
                 </button>
               </div>
               
@@ -300,15 +276,15 @@
                   <!-- Boucle sur les Chapitres -->
                   {#each module.chapters as chapter (chapter.name)}
                     <div class="nav-item" class:is-active={selectedPath.chapter === chapter.name && selectedPath.module === module.name && !selectedPath.subchapter}>
-                      <button class="btn-icon -ml-1" on:click={() => toggleChapter(level.name, module.name, chapter.name)} disabled={chapter.subchapters.length === 0}>
+                      <button class="btn-icon -ml-1" aria-label="Déplier {chapter.name}" aria-expanded={expandedChapters.has(`${level.name}-${module.name}-${chapter.name}`)} on:click={() => toggleChapter(level.name, module.name, chapter.name)} disabled={chapter.subchapters.length === 0}>
                         {#if chapter.subchapters.length > 0}
-                          <span class="transform transition-transform duration-200">{expandedChapters.has(`${level.name}-${module.name}-${chapter.name}`) ? '▼' : '▶'}</span>
+                          <span class="nav-chevron" class:is-open={expandedChapters.has(`${level.name}-${module.name}-${chapter.name}`)} aria-hidden="true">▸</span>
                         {:else}
                            <span class="text-interface-text-disabled">-</span>
                         {/if}
                       </button>
                       <button type="button" class="nav-item-content" on:click={() => selectPath(level.name, module.name, chapter.name)}>
-                        📚 {chapter.name} ({chapter.exerciseCount})
+                        {chapter.name} <span class="nav-count">{chapter.exerciseCount}</span>
                       </button>
                     </div>
 
@@ -323,7 +299,7 @@
                             on:click={() => selectPath(level.name, module.name, chapter.name, subchapter.name)}>
                             <span class="w-7 text-center text-interface-text-disabled">-</span>
                             <span class="nav-item-content">
-                              {subchapter.name} ({subchapter.exerciseCount})
+                              {subchapter.name} <span class="nav-count">{subchapter.exerciseCount}</span>
                             </span>
                           </button>
                         {/each}
@@ -339,14 +315,7 @@
     {/if}
   </div>
 
-  <!-- Actions (non compact) -->
-  {#if !compact && hierarchyStructure.length > 0}
-    <div class="mt-4 pt-4 border-t border-interface-border-primary flex items-center gap-2">
-      <button on:click={expandAll} class="btn-text text-sm">Tout développer</button>
-      <button on:click={collapseAll} class="btn-text text-sm">Tout réduire</button>
-    </div>
-  {/if}
-</div>
+</nav>
 
 <style>
   @reference "../../app.css";
@@ -388,6 +357,32 @@
     margin-left: 0.25rem;
     text-align: left;
     cursor: pointer;
+  }
+
+  .nav-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 0 0.25rem 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  /* ▸ plutôt que ▶, que certains systèmes affichent en emoji. */
+  .nav-chevron {
+    display: inline-block;
+    font-size: 0.8rem;
+    transition: transform 150ms ease;
+    @apply text-interface-text-muted;
+  }
+
+  .nav-chevron.is-open {
+    transform: rotate(90deg);
+  }
+
+  .nav-count {
+    margin-left: 0.25rem;
+    font-size: 0.75rem;
+    @apply text-interface-text-muted;
   }
 
   .nav-sublist {

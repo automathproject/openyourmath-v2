@@ -40,6 +40,7 @@
   <div class="exercise-page-shell" class:exercise-page-shell--immersive={isImmersive}>
     <LectureSubheader
       exercise={data.exercise}
+      cpge={data.cpge || []}
       bind:mode={readingMode}
       bind:showHint
       bind:showSolution
@@ -65,6 +66,7 @@
         <LectureSidebar
           exercise={data.exercise}
           similar={data.similar || []}
+          cpge={data.cpge || []}
           bind:showHint
           bind:showSolution
           bind:showInlineControls

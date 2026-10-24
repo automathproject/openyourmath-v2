@@ -101,9 +101,16 @@
     suggestionActions.loadSuggestions();
 
     if (typeof window !== 'undefined') {
-      const urlQuery = new URL(window.location.href).searchParams.get('q') || '';
+      const urlParams = new URL(window.location.href).searchParams;
+      const urlQuery = urlParams.get('q') || '';
       if (urlQuery) {
         searchQuery.set(urlQuery);
+      }
+      // Un lien qui ne porte qu'un filtre (?cpge=…, ?level=L1) ouvre aussi la
+      // recherche : c'est SearchSemantic, monté avec elle, qui lit les filtres.
+      const URL_FILTERS = ['level', 'module', 'chapter', 'subchapter', 'author', 'organization', 'difficulty', 'filiere', 'cpge', 'prepa'];
+      if (URL_FILTERS.some(key => urlParams.get(key))) {
+        searchInterfaceOpened = true;
       }
 
       const mediaQuery = window.matchMedia('(min-width: 1024px)');
@@ -232,7 +239,10 @@
     $filters.updatedTo,
     $filters.hasSolution,
     $filters.hasIndication,
-    $filters.hasVideo
+    $filters.hasVideo,
+    $filters.prepa,
+    $filters.filiere,
+    $filters.cpge
   ].filter((value) => value !== '' && value !== null && value !== undefined).length;
 
   function handleSortChange(event) {

@@ -165,9 +165,8 @@ CREATE INDEX IF NOT EXISTS idx_cpge_noeuds_programme ON cpge_noeuds(programme, o
 CREATE INDEX IF NOT EXISTS idx_cpge_noeuds_parent ON cpge_noeuds(parent_id);
 CREATE INDEX IF NOT EXISTS idx_cpge_filieres_programme ON cpge_filieres(programme);
 
--- Rattachements des exercices aux nœuds. Les rattachements relus viennent de
--- la macro \cpge{} des sources (origine « source ») ; les propositions
--- automatiques, non relues, viendront des métadonnées. Filtrer une section
+-- Rattachements des exercices aux nœuds, lus dans la macro \cpge{} des
+-- sources (origine « source »). Filtrer une section
 -- entière suit parent_id, pas le préfixe : l'identifiant d'une partie « A - »
 -- ne prolonge pas celui de sa section générale.
 --   WITH RECURSIVE sous(id) AS (SELECT :id UNION ALL

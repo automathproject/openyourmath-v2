@@ -5,6 +5,7 @@ import path from 'path';
 import { embed } from '../ia/albert.js';
 import { cosineTopK, loadVectorStore } from './vectorStore.js';
 import { rerankDocuments } from '../ia/rerank.js';
+import { cpgeFilterClauses } from './cpge.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const DEFAULT_DB_PATH = path.resolve(__dirname, '../../../data/exercises.sqlite');
@@ -168,6 +169,10 @@ function buildFilterConditions(filters) {
       conditions.push("(e.video_id IS NULL OR TRIM(e.video_id) = '')");
     }
   }
+
+  const cpge = cpgeFilterClauses(f, 'e');
+  conditions.push(...cpge.clauses);
+  params.push(...cpge.params);
 
   return { conditions, params };
 }

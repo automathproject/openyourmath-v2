@@ -4,6 +4,8 @@
 
   export let exercise = {};
   export let similar = [];
+  // Rattachements aux programmes de CPGE, groupés par programme (src/lib/db/cpge.js).
+  export let cpge = [];
   export let showHint = false;
   export let showSolution = false;
   export let showInlineControls = true;
@@ -127,6 +129,29 @@
       {/if}
     </dl>
   </section>
+
+  {#if cpge.length > 0}
+    <section class="sidebar-section" aria-labelledby="lecture-cpge-title">
+      <h2 id="lecture-cpge-title" class="t-overline sidebar-heading">Programmes de CPGE</h2>
+      {#each cpge as programme (programme.programme)}
+        <div class="cpge-programme">
+          <p class="cpge-filieres">
+            {programme.filieres.join(' · ')}
+            <span>{programme.annee === 1 ? '1re année' : '2e année'}</span>
+          </p>
+          <ul class="cpge-noeuds">
+            {#each programme.noeuds as noeud (noeud.id)}
+              <li>
+                <a href="/browse?vue=prepa&noeud={encodeURIComponent(noeud.id)}">
+                  {#if noeud.section}<span class="cpge-section"><MathRenderer content={noeud.section} inline={true} />{' — '}</span>{/if}<MathRenderer content={noeud.titre} inline={true} />
+                </a>
+              </li>
+            {/each}
+          </ul>
+        </div>
+      {/each}
+    </section>
+  {/if}
 
   {#if videoUrl}
     <section class="sidebar-section" aria-labelledby="lecture-video-title">
@@ -433,5 +458,46 @@
     .lecture-sidebar {
       display: none;
     }
+  }
+
+  .cpge-programme + .cpge-programme {
+    margin-top: 0.75rem;
+  }
+
+  .cpge-filieres {
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  .cpge-filieres span {
+    margin-left: 0.35rem;
+    color: var(--color-interface-text-muted);
+    font-weight: 400;
+    font-size: 0.75rem;
+  }
+
+  .cpge-noeuds {
+    margin: 0.3rem 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.82rem;
+  }
+
+  .cpge-noeuds li + li {
+    margin-top: 0.25rem;
+  }
+
+  .cpge-noeuds a {
+    color: var(--color-interface-text-secondary);
+    text-decoration: none;
+  }
+
+  .cpge-noeuds a:hover {
+    color: var(--color-brand-700);
+    text-decoration: underline;
+  }
+
+  .cpge-section {
+    color: var(--color-interface-text-muted);
   }
 </style>

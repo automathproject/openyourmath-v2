@@ -4,6 +4,7 @@ import {
   getExerciseCount,
   searchExercises
 } from '$lib/db/queries.js';
+import { getCpgeArbre, getCpgeNoeud, getCpgeProgrammes } from '$lib/db/cpge.js';
 
 const MAX_RESULTS = 100;
 
@@ -125,7 +126,40 @@ function getDbSort(sortBy, sortOrder) {
   return '';
 }
 
+const PREPA_PAR_PAGE = 50;
+
+/**
+ * Vue « Prépa » : programmes de CPGE, arbre d'un programme, puis section avec
+ * son texte officiel et ses exercices. L'état tient dans l'URL :
+ * ?vue=prepa[&programme=pcsi | &noeud=pcsi.nombres-complexes[&page=2]].
+ */
+async function loadPrepa(url) {
+  const noeudId = cleanParam(url, 'noeud');
+  const page = Math.max(1, parseInt(cleanParam(url, 'page') || '1', 10) || 1);
+  try {
+    const programmes = await getCpgeProgrammes();
+    const noeud = noeudId
+      ? await getCpgeNoeud(noeudId, { limit: PREPA_PAR_PAGE, offset: (page - 1) * PREPA_PAR_PAGE })
+      : null;
+    const programme = noeud?.programme?.programme || cleanParam(url, 'programme');
+    const arbre = programme ? await getCpgeArbre(programme) : null;
+    return {
+      vue: 'prepa',
+      prepa: { programmes, arbre, noeud, page, parPage: PREPA_PAR_PAGE, introuvable: Boolean(noeudId && !noeud) },
+      error: null
+    };
+  } catch (err) {
+    console.error('Browse prepa load failed:', err);
+    return {
+      vue: 'prepa',
+      prepa: { programmes: [], arbre: null, noeud: null, page, parPage: PREPA_PAR_PAGE, introuvable: false },
+      error: 'Impossible de charger les programmes de CPGE.'
+    };
+  }
+}
+
 export async function load({ url }) {
+  if (cleanParam(url, 'vue') === 'prepa') return loadPrepa(url);
   const selection = getSelection(url);
   const selected = hasSelection(selection);
   const requestedSort = cleanParam(url, 'sort');

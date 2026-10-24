@@ -1,6 +1,7 @@
 // src/routes/exercise/[uuid]/+page.server.js
 import { error } from '@sveltejs/kit';
 import { getExerciseByUuid, getSimilarExercises } from '$lib/db/queries.js';
+import { getExerciseCpge } from '$lib/db/cpge.js';
 
 export async function load({ params }) {
   try {
@@ -20,10 +21,13 @@ export async function load({ params }) {
     
     // Récupérer des exercices similaires (en parallèle)
     const similar = await getSimilarExercises(uuid, 5);
-    
+    // Rattachements aux programmes de CPGE, groupés par programme.
+    const cpge = await getExerciseCpge(uuid);
+
     return {
       exercise,
-      similar: similar || []
+      similar: similar || [],
+      cpge
     };
     
   } catch (err) {
