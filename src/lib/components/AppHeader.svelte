@@ -241,6 +241,19 @@
     color: var(--color-interface-text-primary);
   }
 
+  /* Tablette : navigation et libellés dépassent 840 px. Le nom de la marque,
+     redondant avec le logo, cède la place (comme sur téléphone). */
+  @media (max-width: 900px) {
+    .app-brand-name { display: none; }
+  }
+
+  /* Entre 641 et 760 px, il manque encore une cinquantaine de pixels : le
+     libellé « À propos » et la pastille « bêta » (l'icône reste) s'effacent. */
+  @media (min-width: 641px) and (max-width: 760px) {
+    .about-label,
+    .beta-badge { display: none; }
+  }
+
   @media (max-width: 640px) {
     .app-header-right :global(.btn-sm) {
       width: 40px;

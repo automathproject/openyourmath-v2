@@ -47,6 +47,9 @@
   function startAutoScroll() {
     stopAutoScroll();
     if (!carouselTrack || !randomExercises || randomExercises.length <= 1) return;
+    // Au toucher on fait glisser soi-même, et un contenu qui bouge tout seul
+    // gêne la lecture ; idem pour qui demande moins de mouvement.
+    if (window.matchMedia('(hover: none), (prefers-reduced-motion: reduce)').matches) return;
 
     autoScrollTimer = setInterval(() => {
       const track = carouselTrack;

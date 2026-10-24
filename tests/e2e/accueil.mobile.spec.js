@@ -29,4 +29,17 @@ test.describe('Accueil sur mobile', () => {
     await expect(page).toHaveURL(/[?&]filiere=PCSI/);
     await expect(page.locator('.active-filters')).toContainText('Filière : PCSI');
   });
+
+  test('les cartes du carrousel gardent leur cadre et ne défilent pas seules', async ({ page }) => {
+    await page.goto('/');
+    const carte = page.locator('.random-carousel__item .result-card').first();
+    await expect(carte).toBeVisible();
+    // Sur mobile, les lignes de liste perdent leurs bords latéraux : pas les cartes du carrousel.
+    await expect(carte).toHaveCSS('border-left-width', '1px');
+
+    const piste = page.locator('.random-carousel__track');
+    const avant = await piste.evaluate(el => el.scrollLeft);
+    await page.waitForTimeout(4800);
+    expect(await piste.evaluate(el => el.scrollLeft)).toBe(avant);
+  });
 });

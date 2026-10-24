@@ -70,3 +70,15 @@ test('la page d’accueil annonce qu’aucun compte n’est nécessaire', async 
   await expect(faits).toContainText('Sans compte');
   await expect(faits).toContainText('Licences libres');
 });
+
+for (const largeur of [768, 700, 660]) {
+  test(`l’en-tête tient en largeur à ${largeur} px`, async ({ page }) => {
+    await page.setViewportSize({ width: largeur, height: 900 });
+    await page.goto('/');
+    const debordement = await page.locator('.app-header').evaluate(el => el.scrollWidth - el.clientWidth);
+    expect(debordement).toBeLessThanOrEqual(0);
+    // « À propos » ne se replie plus sur deux lignes.
+    const hauteur = await page.locator('.about-link').evaluate(el => el.getBoundingClientRect().height);
+    expect(hauteur).toBeLessThanOrEqual(40);
+  });
+}

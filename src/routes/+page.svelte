@@ -50,8 +50,10 @@
   // ferait disparaître le hero avant que l'utilisateur ait fini son premier mot.
   const MIN_AUTO_QUERY_LENGTH = 3;
   let localLandingQuery = '';
-  // Le champ ne fait que ~220 px sur téléphone : le texte complet y est coupé.
-  let compactPlaceholder = false;
+  // Le texte complet exige ~400 px de champ ; en dessous (téléphone, tablette
+  // avec le logo à côté), il est coupé.
+  let landingInputWidth = 0;
+  $: compactPlaceholder = landingInputWidth > 0 && landingInputWidth < 400;
   $: isLanding = !$hasSearched && !searchInterfaceOpened;
   $: if (!$hasSearched) localLandingQuery = '';
 
@@ -142,8 +144,6 @@
       if (URL_FILTERS.some(key => urlParams.get(key))) {
         searchInterfaceOpened = true;
       }
-
-      compactPlaceholder = window.matchMedia('(max-width: 640px)').matches;
 
       const mediaQuery = window.matchMedia('(min-width: 1024px)');
 
@@ -448,6 +448,7 @@
                   bind:value={localLandingQuery}
                   on:input={handleLandingInput}
                   on:keydown={(e) => { if (e.key === 'Enter') handleLandingSearch(); }}
+                  bind:clientWidth={landingInputWidth}
                   placeholder={compactPlaceholder ? 'Un exercice, une notion…' : 'Cherche un exercice, une notion, un théorème…'}
                   aria-label="Rechercher des exercices"
                   use:focusInput
@@ -877,7 +878,7 @@
     gap: 0.15rem 0.6rem;
     margin: 0;
     font-size: 0.85rem;
-    @apply text-interface-text-muted;
+    @apply text-interface-text-secondary;
   }
 
   .landing-facts span + span::before {

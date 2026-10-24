@@ -105,7 +105,7 @@
 </script>
 
 <div
-  class="result-card cursor-pointer transition-all duration-200 {isSelected ? 'result-card--selected' : ''} {isCompact ? 'result-card--compact' : ''}"
+  class="result-card cursor-pointer transition-all duration-200 {isSelected ? 'result-card--selected' : ''} {isCompact ? 'result-card--compact' : ''} {simplified ? 'result-card--simplified' : ''}"
   role={navigable ? undefined : 'option'}
   aria-selected={navigable ? undefined : (isSelected ? 'true' : 'false')}
   tabindex={navigable ? undefined : 0}
@@ -374,7 +374,7 @@
     font-family: inherit;
     font-size: 0.75rem;
     font-weight: 500;
-    @apply text-interface-text-muted;
+    @apply text-interface-text-secondary;
   }
   .result-preview--lead {
     margin-top: 0.25rem;
@@ -546,6 +546,25 @@
       margin-top: 0.35rem;
       font-size: 0.78rem;
       line-height: 1.35;
+    }
+
+    /* Les cartes du carrousel (mode simplifié) ne sont pas des lignes de liste
+       pleine largeur : elles gardent leur cadre, sinon deux cartes voisines se
+       touchent par leurs bords haut et bas seulement. */
+    .result-card--simplified {
+      border: 1px solid var(--color-interface-border-primary);
+      border-radius: 10px;
+    }
+
+    .result-title--generic {
+      font-size: 0.72rem;
+      line-height: 1.2;
+    }
+
+    .result-preview--lead {
+      margin-top: 0.2rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
 
     .result-footer {
