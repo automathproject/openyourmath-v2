@@ -1037,6 +1037,17 @@
   max-width: 100%;
 }
 
+/* KaTeX termine un exposant par une cellule de 2 px (.vlist-s) que sa feuille de
+   style compense par une marge de -2 px. Dans une équation numérotée, qui occupe
+   toute la largeur, cette marge dépasse du bord de 2 px : la règle ci-dessus y
+   faisait apparaître une barre de défilement sous une formule qui tient. Trois
+   pixels de marge intérieure à droite (boîte à bordure incluse, la largeur ne
+   change pas) l'absorbent ; une formule réellement plus large défile toujours. */
+.katex-display > .katex {
+  box-sizing: border-box;
+  padding-right: 3px;
+}
+
 /* Premier et dernier éléments d'un bloc : pas de marge extérieure, pour que
    le texte reste aligné sur le numéro de la question et que les blocs ne
    s'écartent pas davantage. */
