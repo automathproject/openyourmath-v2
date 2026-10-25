@@ -4,7 +4,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { resolveImagePath } from '../utils/image-artifacts.js';
-import { analyzeInlineMath, findInlineMath } from './latex-math-layout.js';
+import { analyzeDisplayMath, analyzeInlineMath, findDisplayMath, findInlineMath } from './latex-math-layout.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -558,11 +558,13 @@ async function writeIssuesCsv(issues, outputPath) {
 }
 
 /**
- * Avertissements de mise en page des formules en ligne (voir latex-math-layout.js).
+ * Avertissements de mise en page des formules (voir latex-math-layout.js).
  *
  * Ce ne sont pas des erreurs de structure : `validateSource` n'en tient pas
  * compte et le code de sortie du contrôle non plus. Ils signalent une formule
- * qui ne peut pas se replier et dépassera de la colonne sur un téléphone.
+ * en ligne qui ne peut pas se replier (codes `inline-math-…`), ou un
+ * enchaînement de relations en formule affichée qu'un align* logerait (code
+ * `display-math-relation-chain`) : dans les deux cas elle dépasse de la colonne.
  *
  * @param {string} source
  * @param {string} [filePath]
@@ -581,6 +583,21 @@ export function validateMathLayout(source, filePath = '<source>') {
         message: issue.message,
         fixable: issue.fixable,
         fixableWithOption: Boolean(issue.fixableWithOption)
+      });
+    }
+  }
+  for (const formula of findDisplayMath(source)) {
+    if (formula.hasComment) continue;
+    for (const issue of analyzeDisplayMath(formula.text)) {
+      const { line, column } = lineAndColumn(source, formula.start);
+      warnings.push({
+        filePath,
+        line,
+        column,
+        code: `display-math-${issue.code}`,
+        message: issue.message,
+        fixable: issue.fixable,
+        fixableWithOption: false
       });
     }
   }
@@ -764,7 +781,7 @@ async function main() {
     }
     const fixable = allWarnings.filter(warning => warning.fixable).length;
     const withOption = allWarnings.filter(warning => warning.fixableWithOption).length;
-    console.error(`${allWarnings.length} avertissement(s) de mise en page des formules en ligne dans ${new Set(allWarnings.map(w => w.filePath)).size} fichier(s)`
+    console.error(`${allWarnings.length} avertissement(s) de mise en page des formules dans ${new Set(allWarnings.map(w => w.filePath)).size} fichier(s)`
       + ` (${fixable} corrigeable(s) par fix:tex:det${withOption ? `, ${withOption} de plus avec --left-right` : ''})${showWarnings ? '' : ' ; --warnings pour le détail'}.`);
   };
 

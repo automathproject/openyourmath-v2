@@ -16,6 +16,9 @@
  * Les autres motifs (hskip-layout, inline-array) demandent de repenser la
  * formule : ils sont signalés, jamais réécrits.
  *
+ * Le module repère aussi, en formule affichée, les enchaînements de relations
+ * (a = b = c ⇒ …) qu'un align* logerait : alerte seule, jamais réécrits (relation-chain).
+ *
  * `\allowbreak`, `\bigl` et `\text` sont du LaTeX standard (amsmath) : le PDF
  * n'est pas modifié là où la formule tient déjà sur la ligne.
  */
@@ -144,7 +147,7 @@ export function findInlineMath(source) {
  * Longueur « visible » d'un fragment : un symbole par commande, le texte au
  * complet, ni accolades, ni indices, ni espaces de la source.
  */
-function visibleLength(fragment) {
+export function visibleLength(fragment) {
   return fragment
     .replace(/\\(?:text|textrm|textit|textbf|mbox)\s*\{([^{}]*)\}/g, (match, inner) => '\u0001'.repeat(inner.length))
     .replace(/\\(?:left|right|bigl|bigr|Bigl|Bigr|displaystyle|textstyle|limits|nolimits)\b\s*/g, '')
@@ -440,6 +443,243 @@ export function analyzeInlineMath(text) {
   }
 
   return issues;
+}
+
+// ---- Formules affichées : enchaînements de relations ----
+
+// KaTeX ne coupe jamais une formule affichée : un enchaînement « a = b = c = … »
+// ou « A ⇒ B ⇒ C ⇒ … » trop long sort de la colonne et défile. Dans un align*, le
+// même enchaînement se lit ligne à ligne, aligné sur sa première relation.
+/** Nombre minimal de relations de premier niveau d'un enchaînement. */
+export const RELATION_CHAIN_MIN_RELATIONS = 2;
+// Réglé sur la largeur mesurée (KaTeX) des 2 594 enchaînements en formule affichée du
+// corpus. Avec ces deux seuils, 378 sont signalés ; 61 % d'entre eux dépassent 560 px (la
+// largeur d'une colonne de lecture sur ordinateur : 592 à 720 px selon la fenêtre) et
+// tiennent dans un align*, et 108 des 138 enchaînements qui dépassent 664 px et que
+// logerait un align* sont repérés. Tous dépassent la colonne d'un téléphone (300 px).
+/** Longueur visible d'un enchaînement au-delà de laquelle on alerte. */
+export const RELATION_CHAIN_MIN_VISIBLE = 60;
+/** Longueur visible maximale de la plus longue ligne une fois l'enchaînement aligné. */
+export const RELATION_CHAIN_MAX_ALIGNED_VISIBLE = 60;
+
+// Groupes qui s'ouvrent et se ferment par une commande : une relation à l'intérieur n'est pas de premier niveau.
+const GROUP_OPENERS = new Set(['llbracket', 'langle', 'lbrace', 'lfloor', 'lceil']);
+const GROUP_CLOSERS = new Set(['rrbracket', 'rangle', 'rbrace', 'rfloor', 'rceil']);
+
+const RELATION_COMMANDS = new Set([
+  'leq', 'le', 'leqslant', 'geq', 'ge', 'geqslant', 'neq', 'ne', 'Leftrightarrow', 'iff', 'Rightarrow', 'implies',
+  'Leftarrow', 'impliedby', 'equiv', 'sim', 'simeq', 'approx', 'cong', 'propto', 'subset', 'subseteq', 'supset',
+  'supseteq', 'll', 'gg'
+]);
+
+/**
+ * Formules affichées (`$$…$$`, `\[…\]`, `equation`) d'une source, hors commentaires
+ * et blocs verbatim.
+ *
+ * @param {string} source
+ * @returns {{ start: number, end: number, text: string, kind: string, hasComment: boolean }[]}
+ */
+export function findDisplayMath(source) {
+  const clean = blankNonMath(source);
+  const found = [];
+  const add = (start, end, kind) => found.push({ start, end, kind });
+  let i = 0;
+
+  while (i < clean.length) {
+    const c = clean[i];
+    if (c === '\\') {
+      if (clean[i + 1] === '[') {
+        const end = clean.indexOf('\\]', i + 2);
+        if (end !== -1) {
+          add(i + 2, end, '\\[');
+          i = end + 2;
+          continue;
+        }
+      }
+      const env = /^\\begin\{(equation\*?)\}/.exec(clean.slice(i, i + 20));
+      if (env) {
+        const endTag = `\\end{${env[1]}}`;
+        const end = clean.indexOf(endTag, i);
+        if (end !== -1) {
+          add(i + env[0].length, end, env[1]);
+          i = end + endTag.length;
+          continue;
+        }
+      }
+      i += 2;
+      continue;
+    }
+    if (c === '$') {
+      if (clean[i + 1] === '$') {
+        const end = clean.indexOf('$$', i + 2);
+        if (end !== -1) {
+          add(i + 2, end, '$$');
+          i = end + 2;
+          continue;
+        }
+      }
+      // Formule en ligne : on saute jusqu'à son délimiteur fermant.
+      let j = i + 1;
+      while (j < clean.length && clean[j] !== '$') {
+        if (clean[j] === '\\') j++;
+        j++;
+      }
+      i = j + 1;
+      continue;
+    }
+    i++;
+  }
+
+  return found.map(({ start, end, kind }) => ({
+    start,
+    end,
+    kind,
+    text: source.slice(start, end),
+    hasComment: source.slice(start, end) !== clean.slice(start, end)
+  }));
+}
+
+/**
+ * Découpe une formule aux relations de premier niveau (hors accolades, parenthèses,
+ * crochets, \left…\right et environnements).
+ *
+ * @param {string} text
+ * @returns {{ members: string[], relations: string[] }}
+ */
+export function splitAtRelations(text) {
+  const members = [];
+  const relations = [];
+  let brace = 0;
+  let paren = 0;
+  let current = '';
+  let i = 0;
+
+  while (i < text.length) {
+    const c = text[i];
+    if (c === '\\') {
+      const word = /^\\([a-zA-Z]+)/.exec(text.slice(i, i + 24));
+      if (word) {
+        const name = word[1];
+        if (name === 'left' || name === 'begin') brace++;
+        else if (name === 'right' || name === 'end') brace = Math.max(0, brace - 1);
+        else if (GROUP_OPENERS.has(name)) paren++;
+        else if (GROUP_CLOSERS.has(name)) paren = Math.max(0, paren - 1);
+        if (brace === 0 && paren === 0 && RELATION_COMMANDS.has(name)) {
+          members.push(current);
+          relations.push(word[0]);
+          current = '';
+          i += word[0].length;
+          continue;
+        }
+        current += word[0];
+        i += word[0].length;
+        if (name === 'left' || name === 'right') {
+          const skip = delimiterLength(text, i);
+          current += text.slice(i, i + skip);
+          i += skip;
+        }
+        continue;
+      }
+      // \{ et \} : accolades affichées, qui délimitent un ensemble ; \, \; … : de l'espace.
+      if (text[i + 1] === '{') paren++;
+      else if (text[i + 1] === '}') paren = Math.max(0, paren - 1);
+      current += text.slice(i, i + 2);
+      i += 2;
+      continue;
+    }
+    if (c === '{') brace++;
+    else if (c === '}') brace = Math.max(0, brace - 1);
+    else if (c === '(' || c === '[') paren++;
+    else if (c === ')' || c === ']') paren = Math.max(0, paren - 1);
+    if (brace === 0 && paren === 0 && (c === '=' || c === '<' || c === '>')) {
+      members.push(current);
+      relations.push(c);
+      current = '';
+      i++;
+      continue;
+    }
+    current += c;
+    i++;
+  }
+  members.push(current);
+  return { members: members.map(member => member.trim()), relations };
+}
+
+/** Une virgule ou un \quad de premier niveau : plusieurs énoncés côte à côte, pas une chaîne. */
+function hasListSeparator(member) {
+  let brace = 0;
+  let paren = 0;
+  let i = 0;
+  while (i < member.length) {
+    const c = member[i];
+    if (c === '\\') {
+      const word = /^\\([a-zA-Z]+)/.exec(member.slice(i, i + 12));
+      if (word) {
+        const name = word[1];
+        if (name === 'left' || name === 'begin') brace++;
+        else if (name === 'right' || name === 'end') brace = Math.max(0, brace - 1);
+        else if (GROUP_OPENERS.has(name)) paren++;
+        else if (GROUP_CLOSERS.has(name)) paren = Math.max(0, paren - 1);
+        if (brace === 0 && paren === 0 && (name === 'quad' || name === 'qquad')) return true;
+        i += word[0].length;
+        continue;
+      }
+      if (member[i + 1] === '{') paren++;
+      else if (member[i + 1] === '}') paren = Math.max(0, paren - 1);
+      i += 2;
+      continue;
+    }
+    if (c === '{') brace++;
+    else if (c === '}') brace = Math.max(0, brace - 1);
+    else if (c === '(' || c === '[') paren++;
+    else if (c === ')' || c === ']') paren = Math.max(0, paren - 1);
+    else if (c === ',' && brace === 0 && paren === 0 && member.slice(i + 1).trim() !== '') return true;
+    i++;
+  }
+  return false;
+}
+
+/**
+ * Mesures d'un enchaînement de relations en formule affichée, ou null si ce n'en
+ * est pas un (environnement, \tag, énoncés côte à côte, une seule relation).
+ *
+ * @param {string} text contenu de la formule, sans délimiteurs
+ */
+export function relationChainFeatures(text) {
+  const compact = text.replace(/\s+/g, ' ').trim();
+  if (/\\begin|\\\\|&|\\tag|\\label|\\cr\b/.test(compact)) return null;
+  const { members, relations } = splitAtRelations(compact);
+  if (relations.length < RELATION_CHAIN_MIN_RELATIONS) return null;
+  if (members.some(member => !member) || members.some(hasListSeparator)) return null;
+
+  const visible = members.map(visibleLength);
+  const [first, ...others] = visible;
+  return {
+    relations: relations.length,
+    visible: visibleLength(compact),
+    // Plus longue ligne d'un align* : le premier membre, la relation, puis un membre.
+    alignedVisible: first + 1 + Math.max(...others)
+  };
+}
+
+/**
+ * Enchaînement de relations qu'un align* logerait : trop long pour la colonne en
+ * formule affichée, mais dont chaque ligne tiendrait une fois alignée.
+ *
+ * @param {string} text contenu de la formule affichée, sans délimiteurs
+ * @returns {{ code: string, message: string, fixable: boolean }[]}
+ */
+export function analyzeDisplayMath(text) {
+  const features = relationChainFeatures(text);
+  if (!features) return [];
+  if (features.visible <= RELATION_CHAIN_MIN_VISIBLE) return [];
+  if (features.alignedVisible > RELATION_CHAIN_MAX_ALIGNED_VISIBLE) return [];
+
+  return [{
+    code: 'relation-chain',
+    fixable: false,
+    message: `Enchaînement de ${features.relations} relations en formule affichée (environ ${features.visible} caractères visibles) : KaTeX ne le coupe pas, il sort de la colonne. L'écrire dans un \\begin{align*} … \\end{align*}, une relation par ligne, aligné sur la première.`
+  }];
 }
 
 // ---- Réécritures ----

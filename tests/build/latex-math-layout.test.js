@@ -272,3 +272,131 @@ Décomposer $${HSKIP}$.
     expect(validateMathLayout(fixed, 'sample.tex').map(w => [w.code, w.fixable])).toEqual([['inline-math-hskip-layout', false]]);
   });
 });
+
+// ---- Formules affichées : enchaînements de relations ----
+
+import {
+  analyzeDisplayMath,
+  findDisplayMath,
+  relationChainFeatures,
+  splitAtRelations
+} from '../../scripts/quality/latex-math-layout.js';
+
+// uG4x : onze relations d'implication et d'égalité, sur une seule ligne.
+const CHAIN_IMPLICATIONS = String.raw`A{^t\mbox{com}A}=0\Rightarrow\mbox{com}A{^tA}=0\Rightarrow\mbox{Im}({^tA})\subset\mbox{Ker}(\mbox{com}A) \Rightarrow\mbox{dim}(\mbox{Ker}(\mbox{com}A))\geq\mbox{rg}({^tA})=\mbox{rg}A=n-1\Rightarrow\mbox{rg}(\mbox{com}A)\leq1,`;
+// 5PeK : égalités et inégalités mêlées.
+const CHAIN_MIXED = String.raw`\left|\int_{a}^{b}f(t)\;dt\right|=|F(b)-F(a)|\leq|F(b)-F(\frac{a+b}{2})|+|F(\frac{a+b}{2})-F(a)|\leq\frac{1}{2}M\frac{(b-a)^2}{4}+\frac{1}{2}M\frac{(b-a)^2}{4}=M\frac{(b-a)^2}{4}.`;
+// H9R3 : deux égalités entre fractions larges.
+const CHAIN_FRACTIONS = String.raw`\frac{a}{k}+\frac{b}{k+1}+\frac{c}{2k+1}=\frac{a(k+1)(2k+1)+bk(2k+1)+ck(k+1)}{k(k+1)(2k+1)}= \frac{(2a+2b+c)k^2+(3a+b+c)k+a}{k(k+1)(2k+1)}.`;
+
+describe('findDisplayMath', () => {
+  it('trouve $$…$$, \\[…\\] et equation, pas les formules en ligne', () => {
+    const source = String.raw`Soit $x=1$. $$a=b$$ puis \[c=d\] et
+\begin{equation*} e=f \end{equation*} enfin \begin{equation} g=h \end{equation}`;
+    const found = findDisplayMath(source);
+    expect(found.map(f => f.text.trim())).toEqual(['a=b', 'c=d', 'e=f', 'g=h']);
+    expect(found.map(f => f.kind)).toEqual(['$$', '\\[', 'equation*', 'equation']);
+    for (const f of found) expect(source.slice(f.start, f.end)).toBe(f.text);
+  });
+
+  it('ignore commentaires et verbatim, et signale un commentaire dans la formule', () => {
+    const source = [
+      String.raw`% $$commentée=1$$`,
+      String.raw`\begin{verbatim}$$brut=1$$\end{verbatim}`,
+      String.raw`$$vraie=2$$`,
+      String.raw`$$a = % reste` + '\n' + String.raw` b$$`
+    ].join('\n');
+    const found = findDisplayMath(source);
+    expect(found.map(f => f.text.trim())).toEqual(['vraie=2', 'a =   \n b'.replace(/ {3}/, ' % reste').replace(/^a = % reste/, 'a = % reste')]);
+    expect(found.map(f => f.hasComment)).toEqual([false, true]);
+  });
+});
+
+describe('splitAtRelations', () => {
+  it('découpe aux relations de premier niveau seulement', () => {
+    const { members, relations } = splitAtRelations(String.raw`f(x)=g(x)\leq \left(a=b\right)\Leftrightarrow \{x\mid y<z\}`);
+    expect(relations).toEqual(['=', String.raw`\leq`, String.raw`\Leftrightarrow`]);
+    expect(members).toEqual(['f(x)', 'g(x)', String.raw`\left(a=b\right)`, String.raw`\{x\mid y<z\}`]);
+  });
+});
+
+describe('relationChainFeatures', () => {
+  it('ne reconnaît pas ce qui n\'est pas un enchaînement', () => {
+    expect(relationChainFeatures('a=b')).toBeNull();                              // une seule relation
+    expect(relationChainFeatures(String.raw`\begin{aligned} a&=b\\ &=c \end{aligned}`)).toBeNull();
+    expect(relationChainFeatures(String.raw`a=b=c \tag{1}`)).toBeNull();           // numérotée
+    expect(relationChainFeatures(String.raw`a=b=c\\ d=e`)).toBeNull();             // déjà sur plusieurs lignes
+  });
+
+  it('ne fond pas plusieurs énoncés côte à côte en une chaîne', () => {
+    expect(relationChainFeatures(String.raw`y_1 = 0 = z_1, \quad y_2 = 1 = z_2`)).toBeNull();
+    expect(relationChainFeatures(String.raw`y_1 = 0 = z_1, y_2 = 1 = z_2`)).toBeNull();
+    // une virgule dans une parenthèse n'est pas un séparateur
+    expect(relationChainFeatures(String.raw`f(x,y)=g(x,y)=h(x,y)`)).not.toBeNull();
+  });
+
+  it('mesure la chaîne et la plus longue ligne d\'un align*', () => {
+    const features = relationChainFeatures(CHAIN_IMPLICATIONS);
+    expect(features.relations).toBe(11);
+    expect(features.visible).toBeGreaterThan(60);
+    // premier membre court : chaque ligne alignée est bien plus courte que la chaîne
+    expect(features.alignedVisible).toBeLessThan(features.visible / 2);
+  });
+});
+
+describe('analyzeDisplayMath', () => {
+  it('signale les enchaînements trop larges que logerait un align*', () => {
+    for (const chain of [CHAIN_IMPLICATIONS, CHAIN_MIXED, CHAIN_FRACTIONS]) {
+      const [issue] = analyzeDisplayMath(chain);
+      expect(issue.code).toBe('relation-chain');
+      expect(issue.fixable).toBe(false);
+      expect(issue.message).toMatch(/align\*/);
+    }
+  });
+
+  it('ne signale pas une chaîne courte, ni une seule relation', () => {
+    expect(analyzeDisplayMath('a=b=c=d')).toEqual([]);
+    expect(analyzeDisplayMath(String.raw`\sum_{k=0}^{n}\binom{n}{k}x^k y^{n-k}=(x+y)^n`)).toEqual([]);
+  });
+
+  it('ne signale pas une chaîne dont un seul membre est déjà trop long', () => {
+    const membreEnorme = Array.from({ length: 14 }, (_, k) => `a_{${k}}x^{${k}}`).join('+');
+    expect(analyzeDisplayMath(`P=${membreEnorme}=Q`)).toEqual([]);
+  });
+
+  it('ignore ce qui est déjà aligné ou numéroté', () => {
+    expect(analyzeDisplayMath(String.raw`\begin{align*} ${CHAIN_IMPLICATIONS} \end{align*}`)).toEqual([]);
+    expect(analyzeDisplayMath(String.raw`${CHAIN_IMPLICATIONS} \tag{1}`)).toEqual([]);
+  });
+});
+
+describe('alerte de contrôle des sources pour les formules affichées', () => {
+  const source = String.raw`\uuid{ZZZ4}
+\titre{Exercice}
+\contenu{
+\question{
+Montrer que
+$$${CHAIN_IMPLICATIONS}$$
+et que $x=1$.
+}
+}`;
+
+  it('signale l\'enchaînement par un avertissement, jamais par une erreur', () => {
+    const warnings = validateMathLayout(source, 'sample.tex');
+    expect(warnings.map(w => w.code)).toEqual(['display-math-relation-chain']);
+    expect(warnings[0]).toMatchObject({ filePath: 'sample.tex', line: 6, fixable: false, fixableWithOption: false });
+    expect(validateSource(source, 'sample.tex')).toEqual([]);
+  });
+
+  it('couvre aussi \\[…\\] et equation, et laisse le correctif déterministe intact', () => {
+    const crochets = source.replace('$$' + CHAIN_IMPLICATIONS + '$$', String.raw`\[${CHAIN_IMPLICATIONS}\]`);
+    const equation = source.replace('$$' + CHAIN_IMPLICATIONS + '$$', String.raw`\begin{equation*}${CHAIN_IMPLICATIONS}\end{equation*}`);
+    for (const variante of [crochets, equation]) {
+      expect(validateMathLayout(variante, 'sample.tex').map(w => w.code)).toEqual(['display-math-relation-chain']);
+    }
+    // le correcteur ne réécrit pas les formules affichées : l'avertissement subsiste
+    const fixed = applyDeterministicFixes(source);
+    expect(fixed).toBe(source);
+    expect(validateMathLayout(fixed, 'sample.tex').map(w => w.code)).toEqual(['display-math-relation-chain']);
+  });
+});
