@@ -19,7 +19,10 @@
     { value: 'updated', label: 'Mise à jour' }
   ];
 
+  const formatCount = n => n.toLocaleString('fr-FR');
+
   $: estPrepa = data.vue === 'prepa';
+  $: tabCounts = data.tabCounts || {};
   $: prepa = data.prepa || {};
   $: selection = data.selection || {};
   $: activeFilters = {
@@ -55,6 +58,16 @@
     return query ? `/browse?${query}` : '/browse';
   }
 
+  // Même sélection dans la recherche : level, module, chapter et subchapter y
+  // sont lus depuis l'URL.
+  $: searchHref = (() => {
+    const params = new URLSearchParams();
+    for (const key of ['level', 'module', 'chapter', 'subchapter']) {
+      if (selection[key]) params.set(key, selection[key]);
+    }
+    return `/?${params.toString()}`;
+  })();
+
   function navigateTo(nextSelection) {
     goto(buildUrl(nextSelection), { noScroll: true });
   }
@@ -81,8 +94,12 @@
   <h1 class="sr-only">Parcourir les exercices</h1>
   <header class="browse-header">
     <nav class="browse-tabs" aria-label="Mode de navigation">
-      <a href="/browse" class:is-current={!estPrepa} aria-current={!estPrepa ? 'page' : undefined}>Par niveau</a>
-      <a href="/browse?vue=prepa" class:is-current={estPrepa} aria-current={estPrepa ? 'page' : undefined}>Prépa (CPGE)</a>
+      <a href="/browse" class:is-current={!estPrepa} aria-current={!estPrepa ? 'page' : undefined}>
+        Université (L1–L3){#if tabCounts.universite != null} <small>{formatCount(tabCounts.universite)}</small>{/if}
+      </a>
+      <a href="/browse?vue=prepa" class:is-current={estPrepa} aria-current={estPrepa ? 'page' : undefined}>
+        Prépa (CPGE){#if tabCounts.prepa != null} <small>{formatCount(tabCounts.prepa)}</small>{/if}
+      </a>
     </nav>
 
     {#if data.selected && !estPrepa}
@@ -226,6 +243,9 @@
               {#if selection.chapter}<Chip variant="soft">{selection.chapter}</Chip>{/if}
               {#if selection.subchapter}<Chip variant="soft">{selection.subchapter}</Chip>{/if}
             </div>
+            {#if data.totalCount > 0}
+              <a class="search-link" href={searchHref}>Rechercher dans cette partie</a>
+            {/if}
           </div>
 
           <div class="result-count">
@@ -342,6 +362,21 @@
   .browse-tabs a.is-current {
     background: var(--color-interface-text-primary);
     color: white;
+  }
+
+  .browse-tabs small {
+    margin-left: 0.2rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.75;
+  }
+
+  .search-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    color: var(--color-brand-700);
+    font-size: 0.85rem;
+    text-decoration: underline;
   }
 
   .prepa-source {

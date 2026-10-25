@@ -5,9 +5,17 @@
  *   - empty-indication  : supprime \indication{} dont le corps est vide
  *   - single-item-enumerate : supprime le wrapper \begin{enumerate}...\end{enumerate}
  *     quand il ne contient qu'un seul \item (uniquement si l'exercice a une seule \question)
+ *   - formules en ligne insécables (voir latex-math-layout.js), pour les seules
+ *     formules signalées : \allowbreak après les virgules d'une longue liste,
+ *     \text{…} long coupé mot à mot. Une correction de mise en page : elle ne
+ *     change pas la mise en forme là où la formule tient. Avec --left-right,
+ *     \left…\right devient aussi \bigl…\bigr (désactivé par défaut : \left( est
+ *     la notation voulue, et \bigl fixe la taille des délimiteurs).
+ *     Les sources canoniques sont dans exobase : y appliquer ces corrections, puis
+ *     resynchroniser (docs/sync-exobase.md).
  *
  * Usage :
- *   node scripts/quality/fix-exercise-sources-deterministic.js [--apply] [--file=<path>] [--limit=N]
+ *   node scripts/quality/fix-exercise-sources-deterministic.js [--apply] [--left-right] [--file=<path>] [--limit=N]
  *
  * Par défaut : mode aperçu (preview) dans reports/deterministic-latex-fixes/
  * Avec --apply : modification directe des fichiers sources
@@ -17,7 +25,8 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { validateSource } from './check-exercise-sources.js';
+import { validateMathLayout, validateSource } from './check-exercise-sources.js';
+import { fixInlineMathLayout } from './latex-math-layout.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -148,10 +157,11 @@ function fixSingleItemEnumerates(source) {
   return result;
 }
 
-export function applyDeterministicFixes(source) {
+export function applyDeterministicFixes(source, { leftRight = false } = {}) {
   let fixed = source;
   fixed = fixEmptyIndications(fixed);
   fixed = fixSingleItemEnumerates(fixed);
+  fixed = fixInlineMathLayout(fixed, { leftRight });
   return fixed;
 }
 
@@ -175,6 +185,7 @@ async function listTexFiles(inputPath) {
 function parseArgs(args) {
   const options = {
     apply: false,
+    leftRight: false,
     fileFilters: [],
     limit: null,
     previewDir: DEFAULT_PREVIEW_DIR
@@ -184,6 +195,8 @@ function parseArgs(args) {
     const arg = args[i];
     if (arg === '--apply') {
       options.apply = true;
+    } else if (arg === '--left-right') {
+      options.leftRight = true;
     } else if (arg === '--file') {
       options.fileFilters.push(args[++i]);
     } else if (arg.startsWith('--file=')) {
@@ -229,17 +242,21 @@ async function main() {
   for (const filePath of files) {
     const source = await fs.readFile(filePath, 'utf8');
     const relPath = path.relative(ROOT, filePath);
-    const fixed = applyDeterministicFixes(source);
+    const fixed = applyDeterministicFixes(source, { leftRight: options.leftRight });
 
     if (fixed === source) {
       unchanged++;
       continue;
     }
 
-    const before = validateSource(source, relPath).length;
-    const after = validateSource(fixed, relPath).length;
+    // Une correction est retenue si les erreurs n'augmentent pas et si erreurs
+    // et avertissements de mise en page diminuent ensemble.
+    const errorsBefore = validateSource(source, relPath).length;
+    const errorsAfter = validateSource(fixed, relPath).length;
+    const before = errorsBefore + validateMathLayout(source, relPath).length;
+    const after = errorsAfter + validateMathLayout(fixed, relPath).length;
 
-    if (after >= before) {
+    if (errorsAfter > errorsBefore || after >= before) {
       console.log(`rejected: ${relPath} (${before} -> ${after})`);
       rejected++;
       continue;

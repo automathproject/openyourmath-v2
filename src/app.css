@@ -964,6 +964,21 @@
   @apply bg-transparent p-0;
 }
 
+/* Une URL ou une ligne de code sans espace ne peut pas se couper : sur téléphone
+   elle élargit toute la page. `anywhere` (et non `break-word`) compte aussi dans
+   la largeur minimale des éléments flex, qui peuvent ainsi rétrécir. Les blocs
+   `pre` gardent leur défilement (`white-space: pre` ne se coupe pas), les
+   formules KaTeX ne sont pas concernées, et les cellules de tableau non plus :
+   forcées à se couper n'importe où, leurs colonnes s'écraseraient mot à mot au
+   lieu de laisser le tableau défiler. */
+.exercise-content :is(p, li, blockquote, a, code) {
+  overflow-wrap: anywhere;
+}
+
+.exercise-content .katex {
+  overflow-wrap: normal;
+}
+
 .exercise-content blockquote {
   @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4;
 }
@@ -981,6 +996,19 @@
   @apply bg-gray-50 font-semibold;
 }
 
+/* Téléphone : un tableau plus large que l'écran défile dans son bloc plutôt que
+   d'élargir la page. Les cellules gardent leurs bordures ; le cadre extérieur
+   (qui entourerait le bloc entier) disparaît. */
+@media (max-width: 640px) {
+  .exercise-content table {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    overflow-x: auto;
+    border: 0;
+  }
+}
+
 .exercise-content img {
   @apply max-w-full h-auto rounded-lg shadow-xs my-4;
 }
@@ -996,6 +1024,28 @@
 
 .exercise-content .katex-display {
   @apply my-6;
+}
+
+/* Une formule en bloc plus large que sa colonne défile dans sa ligne, au lieu
+   d'élargir la page. Ce défilement était déclaré dans `@utility katex-display`,
+   que Tailwind n'émet pas (valeur calculée : `visible`) ; il l'est ici en CSS
+   ordinaire, donc partout où KaTeX rend une formule (énoncé, feuille mobile,
+   Ma liste, fiches). */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+/* KaTeX termine un exposant par une cellule de 2 px (.vlist-s) que sa feuille de
+   style compense par une marge de -2 px. Dans une équation numérotée, qui occupe
+   toute la largeur, cette marge dépasse du bord de 2 px : la règle ci-dessus y
+   faisait apparaître une barre de défilement sous une formule qui tient. Trois
+   pixels de marge intérieure à droite (boîte à bordure incluse, la largeur ne
+   change pas) l'absorbent ; une formule réellement plus large défile toujours. */
+.katex-display > .katex {
+  box-sizing: border-box;
+  padding-right: 3px;
 }
 
 /* Premier et dernier éléments d'un bloc : pas de marge extérieure, pour que

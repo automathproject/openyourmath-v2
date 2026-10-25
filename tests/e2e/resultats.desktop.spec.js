@@ -89,4 +89,55 @@ test.describe('Résultats de recherche', () => {
     await expect(lien).toHaveAttribute('target', '_blank');
     await expect(lien).toHaveAttribute('aria-label', /nouvel onglet/);
   });
+  test('l’en-tête des résultats reste dans sa colonne quand la prévisualisation est ouverte', async ({ page }) => {
+    // Réponse simulée : la colonne n'est étroite qu'avec le panneau ouvert, et
+    // /api/search est limité à 30 requêtes par minute (la suite s'en approche).
+    const resultats = Array.from({ length: 20 }, (_, i) => ({
+      uuid: `FAKE${i}`, title: `Exercice ${i}`, level: 'L2', module: 'Analyse', preview: 'Énoncé.'
+    }));
+    await page.route('**/api/search*', route => route.fulfill({
+      json: {
+        results: resultats,
+        meta: { mode: 'fts', filters: {}, filterCounts: {}, pagination: { limit: 20, offset: 0, count: 20, hasMore: true, totalCount: 3691 } }
+      }
+    }));
+    await preparerPanneau(page, true);
+    await page.setViewportSize({ width: 1150, height: 800 });
+    await page.goto('/?level=L2');
+    await expect(page.locator('.load-more-header-btn')).toBeVisible();
+
+    const colonne = await page.locator('.search-page-main').boundingBox();
+    const panneau = await page.locator('.preview-section').boundingBox();
+    for (const sel of ['.load-more-header-btn', '.view-mode-toggle']) {
+      const b = await page.locator(sel).boundingBox();
+      expect(b.x + b.width, `${sel} dépasse la colonne des résultats`).toBeLessThanOrEqual(colonne.x + colonne.width + 1);
+      expect(b.x + b.width, `${sel} passe sous le panneau`).toBeLessThanOrEqual(panneau.x + 1);
+    }
+  });
+  test('un titre générique devient une référence discrète, pas un intertitre', async ({ page }) => {
+    // Réponse simulée : /api/search est limité à 30 requêtes par minute.
+    await page.route('**/api/search*', route => route.fulfill({
+      json: {
+        results: [
+          { uuid: 'GEN1', title: 'exo7 2440', level: 'L2', module: 'Algèbre', preview: 'Soit G un groupe.' },
+          { uuid: 'REAL', title: 'Produit matriciel', level: 'L1', module: 'Algèbre', preview: 'On considère la matrice.' }
+        ],
+        meta: { mode: 'fts', filters: {}, filterCounts: {}, pagination: { limit: 20, offset: 0, count: 2, hasMore: false, totalCount: 2 } }
+      }
+    }));
+    await preparerPanneau(page, false);
+    await page.goto('/?q=matrice');
+    const generique = page.locator('.result-card', { hasText: 'exo7 2440' });
+    const reel = page.locator('.result-card', { hasText: 'Produit matriciel' });
+    await expect(generique).toBeVisible();
+
+    // La référence reste un lien, mais n'est plus un titre de section.
+    await expect(generique.locator('p.result-title a[href="/exercise/GEN1"]')).toBeVisible();
+    await expect(generique.locator('h3')).toHaveCount(0);
+    await expect(generique.locator('.result-title')).toHaveCSS('font-size', '12px');
+
+    // Un vrai titre ne change pas.
+    await expect(reel.locator('h3.result-title')).toBeVisible();
+    await expect(reel.locator('.result-title')).not.toHaveCSS('font-size', '12px');
+  });
 });

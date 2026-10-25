@@ -4,7 +4,7 @@ import {
   getExerciseCount,
   searchExercises
 } from '$lib/db/queries.js';
-import { getCpgeArbre, getCpgeNoeud, getCpgeProgrammes } from '$lib/db/cpge.js';
+import { getCpgeArbre, getCpgeExerciseCount, getCpgeNoeud, getCpgeProgrammes } from '$lib/db/cpge.js';
 
 const MAX_RESULTS = 100;
 
@@ -125,6 +125,17 @@ function getDbSort(sortBy, sortOrder) {
   return '';
 }
 
+/** Totaux affichés sur les onglets (null si indisponibles : l'onglet reste sans compte). */
+async function getTabCounts() {
+  try {
+    const [universite, prepa] = await Promise.all([getExerciseCount('', {}), getCpgeExerciseCount()]);
+    return { universite, prepa };
+  } catch (err) {
+    console.error('Browse tab counts failed:', err);
+    return { universite: null, prepa: null };
+  }
+}
+
 const PREPA_PAR_PAGE = 50;
 
 /**
@@ -135,6 +146,7 @@ const PREPA_PAR_PAGE = 50;
 async function loadPrepa(url) {
   const noeudId = cleanParam(url, 'noeud');
   const page = Math.max(1, parseInt(cleanParam(url, 'page') || '1', 10) || 1);
+  const tabCounts = await getTabCounts();
   try {
     const programmes = await getCpgeProgrammes();
     const noeud = noeudId
@@ -145,6 +157,7 @@ async function loadPrepa(url) {
     return {
       vue: 'prepa',
       prepa: { programmes, arbre, noeud, page, parPage: PREPA_PAR_PAGE, introuvable: Boolean(noeudId && !noeud) },
+      tabCounts,
       error: null
     };
   } catch (err) {
@@ -152,6 +165,7 @@ async function loadPrepa(url) {
     return {
       vue: 'prepa',
       prepa: { programmes: [], arbre: null, noeud: null, page, parPage: PREPA_PAR_PAGE, introuvable: false },
+      tabCounts,
       error: 'Impossible de charger les programmes de CPGE.'
     };
   }
@@ -165,6 +179,7 @@ export async function load({ url }) {
   const requestedOrder = cleanParam(url, 'order');
   const sortBy = SORTS.has(requestedSort) ? requestedSort : 'title';
   const sortOrder = ORDERS.has(requestedOrder) ? requestedOrder : 'asc';
+  const tabCounts = await getTabCounts();
 
   try {
     const structure = await getChapterStructure();
@@ -202,6 +217,7 @@ export async function load({ url }) {
       stats,
       sortBy,
       sortOrder,
+      tabCounts,
       error: null
     };
   } catch (err) {
@@ -217,6 +233,7 @@ export async function load({ url }) {
       stats: getStats([]),
       sortBy,
       sortOrder,
+      tabCounts,
       error: 'Impossible de charger la navigation des exercices.'
     };
   }

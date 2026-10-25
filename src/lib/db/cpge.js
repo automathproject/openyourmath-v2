@@ -87,6 +87,21 @@ export function cpgeFilterClauses(filters = {}, alias = 'e') {
 }
 
 /**
+ * Nombre d'exercices rattachés à au moins un programme.
+ * @returns {Promise<number>}
+ */
+export async function getCpgeExerciseCount() {
+  let db;
+  try {
+    db = ouvrir();
+    if (!tablesPresentes(db)) return 0;
+    return db.prepare('SELECT COUNT(DISTINCT uuid) AS n FROM exercise_cpge').get().n;
+  } finally {
+    db?.close();
+  }
+}
+
+/**
  * Programmes, avec leurs filières et le nombre d'exercices rattachés.
  * @returns {Promise<{programme: string, titre: string, annee: number, filieres: string[], exercices: number}[]>}
  */

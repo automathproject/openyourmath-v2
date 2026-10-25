@@ -26,6 +26,8 @@
   export let showUuid = false;
 
   const dispatch = createEventDispatcher();
+  // Titre sans information propre : 91 % des exercices s'appellent « exo7 N ».
+  const TITRE_GENERIQUE = /^exo7\s+\d+$/i;
   let cardEl;
 
   // Rendue par le serveur (catalogue /browse), la carte doit s'hydrater à
@@ -55,7 +57,14 @@
   $: showChapterBadge = !isCompact && Boolean(exercise?.chapter) && String(activeFilters?.chapter || '') !== String(exercise?.chapter || '');
   $: showDifficultyDots = !simplified && Boolean(exercise?.difficulty);
   $: showTags = showLevelBadge || showModuleBadge || showChapterBadge || showDifficultyDots;
-  $: snippetLines = isCompact ? 2 : 3;
+  // L'énoncé passe devant et le titre devient une référence en petits caractères :
+  // pour tous les titres du carrousel de la landing (mode simplifié), et pour les
+  // seuls titres génériques dans les listes, où un vrai titre reste le meilleur
+  // repère. Un titre générique n'est pas non plus un intertitre : on ne le rend
+  // pas en <h3>, sinon le plan de la page est une suite de « exo7 N ».
+  $: titreGenerique = Boolean(exercise?.preview) && TITRE_GENERIQUE.test(String(exercise?.title ?? '').trim());
+  $: titreDiscret = Boolean(exercise?.preview) && (simplified || titreGenerique);
+  $: snippetLines = isCompact ? 2 : simplified && titreDiscret ? 5 : titreDiscret ? 4 : 3;
   $: href = exerciseHref(exercise?.uuid);
 
   $: if (isSelected && cardEl) {
@@ -101,7 +110,7 @@
 </script>
 
 <div
-  class="result-card cursor-pointer transition-all duration-200 {isSelected ? 'result-card--selected' : ''} {isCompact ? 'result-card--compact' : ''}"
+  class="result-card cursor-pointer transition-all duration-200 {isSelected ? 'result-card--selected' : ''} {isCompact ? 'result-card--compact' : ''} {simplified ? 'result-card--simplified' : ''}"
   role={navigable ? undefined : 'option'}
   aria-selected={navigable ? undefined : (isSelected ? 'true' : 'false')}
   tabindex={navigable ? undefined : 0}
@@ -115,11 +124,11 @@
          restent visibles : beaucoup de titres se réduisent à « exo7 4305 »,
          sans eux la liste n'est plus triable à l'œil. -->
     <div class="compact-row">
-      <h3 class="result-title compact-title">
+      <svelte:element this={titreGenerique ? 'p' : 'h3'} class="result-title compact-title" class:result-title--discret={titreDiscret}>
         <a class="result-title-link" {href} on:click={handleTitleClick}>
           <MathRenderer content={exercise.title} inline={true} />
         </a>
-      </h3>
+      </svelte:element>
       <div class="compact-actions">
         <AddToListButton {exercise} size="small" variant="icon" />
         {#if isSelected}
@@ -174,15 +183,15 @@
       {/if}
     </div>
 
-    <h3 class="result-title">
+    <svelte:element this={titreGenerique ? 'p' : 'h3'} class="result-title" class:result-title--discret={titreDiscret}>
       <a class="result-title-link" {href} on:click={handleTitleClick}>
         <MathRenderer content={exercise.title} inline={true} />
       </a>
-    </h3>
+    </svelte:element>
   {/if}
 
   {#if exercise.preview}
-    <div class="result-preview mt-3">
+    <div class="result-preview mt-3" class:result-preview--lead={titreDiscret}>
       <SearchSnippet content={exercise.preview} lines={snippetLines} />
     </div>
   {/if}
@@ -365,6 +374,20 @@
     overflow: hidden;
     @apply text-interface-text-primary;
   }
+  /* Titre discret : référence en petits caractères, l'énoncé prend le relais. */
+  .result-title--discret {
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 500;
+    @apply text-interface-text-secondary;
+  }
+  .result-preview--lead {
+    margin-top: 0.25rem;
+    @apply text-interface-text-primary;
+  }
+  .result-preview--lead :global(.snippet-content) {
+    color: inherit;
+  }
   .result-title-link {
     color: inherit;
     text-decoration: none;
@@ -528,6 +551,25 @@
       margin-top: 0.35rem;
       font-size: 0.78rem;
       line-height: 1.35;
+    }
+
+    /* Les cartes du carrousel (mode simplifié) ne sont pas des lignes de liste
+       pleine largeur : elles gardent leur cadre, sinon deux cartes voisines se
+       touchent par leurs bords haut et bas seulement. */
+    .result-card--simplified {
+      border: 1px solid var(--color-interface-border-primary);
+      border-radius: 10px;
+    }
+
+    .result-title--discret {
+      font-size: 0.72rem;
+      line-height: 1.2;
+    }
+
+    .result-preview--lead {
+      margin-top: 0.2rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
 
     .result-footer {

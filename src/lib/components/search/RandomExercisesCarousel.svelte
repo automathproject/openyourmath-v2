@@ -1,13 +1,8 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
-  import { createEventDispatcher } from 'svelte';
   import ResultCard from '$lib/components/search/ResultCard.svelte';
 
-  export let selectedUuid = null;
-  export let isPreviewOpen = false;
   export let limit = 12;
-
-  const dispatch = createEventDispatcher();
 
   let randomExercises = [];
   let randomLoading = false;
@@ -52,6 +47,9 @@
   function startAutoScroll() {
     stopAutoScroll();
     if (!carouselTrack || !randomExercises || randomExercises.length <= 1) return;
+    // Au toucher on fait glisser soi-même, et un contenu qui bouge tout seul
+    // gêne la lecture ; idem pour qui demande moins de mouvement.
+    if (window.matchMedia('(hover: none), (prefers-reduced-motion: reduce)').matches) return;
 
     autoScrollTimer = setInterval(() => {
       const track = carouselTrack;
@@ -69,10 +67,6 @@
         track.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
       }
     }, 4000);
-  }
-
-  function handleSelect(exercise) {
-    dispatch('select', { exercise });
   }
 
   function scrollPrev() {
@@ -127,12 +121,8 @@
     {:else}
       {#each randomExercises as exercise (exercise.uuid)}
         <div class="random-carousel__item">
-          <ResultCard
-            {exercise}
-            simplified={true}
-            isSelected={isPreviewOpen && selectedUuid === exercise.uuid}
-            on:select={() => handleSelect(exercise)}
-          />
+          <!-- La landing n'a pas de panneau de prévisualisation : la carte mène à l'exercice. -->
+          <ResultCard {exercise} simplified={true} navigable />
         </div>
       {/each}
     {/if}
@@ -201,6 +191,12 @@
   @media (min-width: 640px) {
     .random-carousel__item {
       flex-basis: 300px;
+    }
+  }
+  /* Au toucher, on fait glisser la piste : les flèches n'y servent qu'à occuper une ligne. */
+  @media (max-width: 639px) {
+    .random-carousel__nav {
+      display: none;
     }
   }
   .random-carousel__error {
